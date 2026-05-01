@@ -20,6 +20,14 @@ type ElementTagMeta = TagMeta & {
 
 type TenGodGroupScore = Record<TenGodGroup, number>;
 
+type AdvancedPatternConfig = {
+  code: SajuTagCode;
+  severity: SajuTag["severity"];
+  labelKo: string;
+  descriptionKo: string;
+  evidence: string[];
+};
+
 const DAY_MASTER_TAG_META: Record<HeavenlyStem, TagMeta> = {
   甲: {
     code: "DAY_MASTER_GAP_WOOD",
@@ -450,6 +458,217 @@ function createStrengthBalanceTags(scores: TenGodGroupScore): SajuTag[] {
   return tags;
 }
 
+function createAdvancedPatternTag(config: AdvancedPatternConfig): SajuTag {
+  return createTag({
+    code: config.code,
+    category: "ADVANCED_PATTERN",
+    severity: config.severity,
+    confidence: "MEDIUM",
+    labelKo: config.labelKo,
+    descriptionKo: config.descriptionKo,
+    evidence: config.evidence,
+  });
+}
+
+function createAdvancedPatternTags(
+  result: SajuCalcResult,
+  scores: TenGodGroupScore,
+): SajuTag[] {
+  const tags: SajuTag[] = [];
+  const supportScore = scores.PEER + scores.RESOURCE;
+  const wealthScore = scores.WEALTH;
+  const outputScore = scores.OUTPUT;
+  const officerScore = scores.OFFICER;
+  const resourceScore = scores.RESOURCE;
+  const peerScore = scores.PEER;
+  const pyeongwan = result.tenGods.distribution.偏官;
+  const jeonggwan = result.tenGods.distribution.正官;
+  const sanggwan = result.tenGods.distribution.傷官;
+
+  if (wealthScore >= 3) {
+    tags.push(
+      createAdvancedPatternTag({
+        code: "WEALTH_OVERLOAD",
+        severity: "HIGH",
+        labelKo: "재성 과다 후보",
+        descriptionKo:
+          "재성이 강하게 작동하는 구조로, 현실 문제·성과·책임·금전 감각이 크게 의식되는 흐름으로 볼 수 있습니다.",
+        evidence: [
+          "advanced:WEALTH_OVERLOAD",
+          `tenGodGroup:WEALTH=${formatScore(wealthScore)}`,
+        ],
+      }),
+    );
+  }
+
+  if (wealthScore >= 2.5 && supportScore < 2) {
+    tags.push(
+      createAdvancedPatternTag({
+        code: "WEAK_DAYMASTER_WITH_STRONG_WEALTH",
+        severity: "HIGH",
+        labelKo: "재다신약적 구조 후보",
+        descriptionKo:
+          "재성이 강하고 일간을 받쳐주는 기운이 상대적으로 약해, 해야 할 일과 현실 책임이 크게 느껴지는 구조로 볼 수 있습니다.",
+        evidence: [
+          "advanced:WEAK_DAYMASTER_WITH_STRONG_WEALTH",
+          `tenGodGroup:WEALTH=${formatScore(wealthScore)}`,
+          `supportScore=${formatScore(supportScore)}`,
+        ],
+      }),
+    );
+  }
+
+  if (officerScore >= 2.5) {
+    tags.push(
+      createAdvancedPatternTag({
+        code: "OFFICER_PRESSURE_HIGH",
+        severity: "HIGH",
+        labelKo: "관성 압박 후보",
+        descriptionKo:
+          "관성이 강하게 작동하는 구조로, 기준·책임·규칙·평가에 민감하게 반응하는 흐름으로 볼 수 있습니다.",
+        evidence: [
+          "advanced:OFFICER_PRESSURE_HIGH",
+          `tenGodGroup:OFFICER=${formatScore(officerScore)}`,
+        ],
+      }),
+    );
+  }
+
+  if (resourceScore === 0) {
+    tags.push(
+      createAdvancedPatternTag({
+        code: "RESOURCE_SUPPORT_MISSING",
+        severity: "MEDIUM",
+        labelKo: "인성 부족 후보",
+        descriptionKo:
+          "인성이 거의 드러나지 않아 회복·보호·수용·학습의 에너지를 의식적으로 보완할 필요가 있는 구조로 볼 수 있습니다.",
+        evidence: [
+          "advanced:RESOURCE_SUPPORT_MISSING",
+          `tenGodGroup:RESOURCE=${formatScore(resourceScore)}`,
+        ],
+      }),
+    );
+  }
+
+  if (outputScore === 0) {
+    tags.push(
+      createAdvancedPatternTag({
+        code: "EXPRESSION_OUTPUT_MISSING",
+        severity: "MEDIUM",
+        labelKo: "식상 부족 후보",
+        descriptionKo:
+          "식상이 거의 드러나지 않아 감정과 생각을 밖으로 표현하거나 생산적으로 배출하는 방식을 의식적으로 만들 필요가 있는 구조로 볼 수 있습니다.",
+        evidence: [
+          "advanced:EXPRESSION_OUTPUT_MISSING",
+          `tenGodGroup:OUTPUT=${formatScore(outputScore)}`,
+        ],
+      }),
+    );
+  }
+
+  if (outputScore >= 1.5 && wealthScore >= 1.5) {
+    tags.push(
+      createAdvancedPatternTag({
+        code: "FOOD_WEALTH_FLOW",
+        severity: "LOW",
+        labelKo: "식상생재 흐름 후보",
+        descriptionKo:
+          "표현·생산성의 기운이 현실적 결과와 연결되기 쉬운 구조로 볼 수 있습니다.",
+        evidence: [
+          "advanced:FOOD_WEALTH_FLOW",
+          `tenGodGroup:OUTPUT=${formatScore(outputScore)}`,
+          `tenGodGroup:WEALTH=${formatScore(wealthScore)}`,
+        ],
+      }),
+    );
+  }
+
+  if (officerScore >= 1.5 && resourceScore >= 1.5) {
+    tags.push(
+      createAdvancedPatternTag({
+        code: "KILLING_RESOURCE_FLOW",
+        severity: "LOW",
+        labelKo: "살인상생 흐름 후보",
+        descriptionKo:
+          "압박과 기준의 기운이 학습·수용·내적 정리의 기운과 연결되는 구조로 볼 수 있습니다.",
+        evidence: [
+          "advanced:KILLING_RESOURCE_FLOW",
+          `tenGodGroup:OFFICER=${formatScore(officerScore)}`,
+          `tenGodGroup:RESOURCE=${formatScore(resourceScore)}`,
+        ],
+      }),
+    );
+  }
+
+  if (pyeongwan > 0 && jeonggwan > 0) {
+    tags.push(
+      createAdvancedPatternTag({
+        code: "MIXED_OFFICER_KILLING",
+        severity: "MEDIUM",
+        labelKo: "관살혼잡 후보",
+        descriptionKo:
+          "편관과 정관이 함께 드러나 기준·책임·압박을 받아들이는 방식이 복합적으로 나타날 수 있는 구조입니다.",
+        evidence: [
+          "advanced:MIXED_OFFICER_KILLING",
+          `tenGod:偏官=${formatScore(pyeongwan)}`,
+          `tenGod:正官=${formatScore(jeonggwan)}`,
+        ],
+      }),
+    );
+  }
+
+  if (sanggwan > 0 && jeonggwan > 0) {
+    tags.push(
+      createAdvancedPatternTag({
+        code: "HURTING_OFFICER_SEES_OFFICER",
+        severity: "MEDIUM",
+        labelKo: "상관견관 후보",
+        descriptionKo:
+          "표현하고 비판하는 기운과 규칙·평가의 기운이 함께 작동해, 기준에 순응하기보다 문제를 지적하려는 흐름으로 나타날 수 있습니다.",
+        evidence: [
+          "advanced:HURTING_OFFICER_SEES_OFFICER",
+          `tenGod:傷官=${formatScore(sanggwan)}`,
+          `tenGod:正官=${formatScore(jeonggwan)}`,
+        ],
+      }),
+    );
+  }
+
+  if (peerScore >= 3) {
+    tags.push(
+      createAdvancedPatternTag({
+        code: "PEER_OVERLOAD",
+        severity: "MEDIUM",
+        labelKo: "비겁 과다 후보",
+        descriptionKo:
+          "비겁이 강하게 작동해 자기주장·독립성·경쟁심·동료성이 크게 드러나는 구조로 볼 수 있습니다.",
+        evidence: [
+          "advanced:PEER_OVERLOAD",
+          `tenGodGroup:PEER=${formatScore(peerScore)}`,
+        ],
+      }),
+    );
+  }
+
+  if (resourceScore >= 3) {
+    tags.push(
+      createAdvancedPatternTag({
+        code: "RESOURCE_OVERLOAD",
+        severity: "MEDIUM",
+        labelKo: "인성 과다 후보",
+        descriptionKo:
+          "인성이 강하게 작동해 생각·학습·보호·수용의 흐름이 크게 드러나는 구조로 볼 수 있습니다.",
+        evidence: [
+          "advanced:RESOURCE_OVERLOAD",
+          `tenGodGroup:RESOURCE=${formatScore(resourceScore)}`,
+        ],
+      }),
+    );
+  }
+
+  return tags;
+}
+
 function createRelationTags(relations: SajuCalcResult["relations"]): SajuTag[] {
   const tags: SajuTag[] = [];
 
@@ -562,6 +781,7 @@ export function extractSajuTags(result: SajuCalcResult): SajuTag[] {
     createYinYangTag(result.yinYang),
     ...createTenGodGroupTags(tenGodGroupScores),
     ...createStrengthBalanceTags(tenGodGroupScores),
+    ...createAdvancedPatternTags(result, tenGodGroupScores),
     ...createRelationTags(result.relations),
     createBirthTimeTag(result),
     ...createNoticeTags(result.notices),
