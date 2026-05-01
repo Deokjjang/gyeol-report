@@ -9,10 +9,23 @@ type ValidationError = {
   messageKo: string;
 };
 
+type ReportBlock = {
+  kind: string;
+  titleKo?: string;
+  bodyKo?: string;
+  itemsKo?: string[];
+  keyValues?: {
+    keyKo: string;
+    valueKo: string;
+  }[];
+};
+
 type ReportSection = {
   id: string;
+  level: string;
   titleKo: string;
   summaryKo: string;
+  blocks: ReportBlock[];
 };
 
 type ReportPreview = {
@@ -51,6 +64,82 @@ const mbtiTypes = [
   "ESTP",
   "ESFP",
 ] as const;
+
+function renderReportBlock(block: ReportBlock, index: number) {
+  const title = block.titleKo ? (
+    <h4 className="text-sm font-semibold text-neutral-200">
+      {block.titleKo}
+    </h4>
+  ) : null;
+
+  if (block.kind === "KEY_VALUE" && block.keyValues) {
+    return (
+      <div key={index} className="space-y-2">
+        {title}
+        <dl className="divide-y divide-neutral-800 overflow-hidden rounded-xl border border-neutral-800">
+          {block.keyValues.map((item) => (
+            <div
+              key={`${item.keyKo}-${item.valueKo}`}
+              className="grid grid-cols-[6rem_1fr] gap-3 px-3 py-2 text-sm"
+            >
+              <dt className="text-neutral-500">{item.keyKo}</dt>
+              <dd className="text-neutral-200">{item.valueKo}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    );
+  }
+
+  if (block.kind === "BULLET_LIST" && block.itemsKo) {
+    return (
+      <div key={index} className="space-y-2">
+        {title}
+        <ul className="space-y-2 text-sm leading-6 text-neutral-300">
+          {block.itemsKo.map((item, itemIndex) => (
+            <li key={`${item}-${itemIndex}`} className="flex gap-2">
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-500" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+  if (block.kind === "WARNING") {
+    return (
+      <div
+        key={index}
+        className="space-y-2 rounded-xl border border-amber-900/70 bg-amber-950/30 p-3"
+      >
+        {title}
+        <p className="text-sm leading-6 text-amber-100">{block.bodyKo}</p>
+      </div>
+    );
+  }
+
+  if (block.kind === "HIGHLIGHT") {
+    return (
+      <div
+        key={index}
+        className="space-y-2 rounded-xl border border-neutral-700 bg-neutral-800/70 p-3"
+      >
+        {title}
+        <p className="text-base font-semibold text-neutral-100">
+          {block.bodyKo}
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div key={index} className="space-y-2">
+      {title}
+      <p className="text-sm leading-6 text-neutral-300">{block.bodyKo}</p>
+    </div>
+  );
+}
 
 export default function NewReportPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -230,31 +319,49 @@ export default function NewReportPage() {
             <div className="space-y-2">
               <h2 className="text-2xl font-bold">{report.titleKo}</h2>
               <p className="text-neutral-400">{report.subtitleKo}</p>
-            </div>
-
-            <div className="space-y-3">
-              {report.sections.slice(0, 5).map((section) => (
-                <article
-                  key={section.id}
-                  className="rounded-xl border border-neutral-800 bg-neutral-950 p-4"
-                >
-                  <h3 className="font-semibold text-neutral-100">
-                    {section.titleKo}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-neutral-400">
-                    {section.summaryKo}
-                  </p>
-                </article>
-              ))}
+              <p className="text-sm leading-6 text-neutral-500">
+                결제 게이트는 아직 연결되지 않았습니다. 현재는 개발용
+                미리보기로 전체 구조를 확인합니다.
+              </p>
             </div>
 
             {report.notices.length > 0 ? (
-              <ul className="space-y-2 text-sm leading-6 text-neutral-500">
+              <ul className="space-y-2 rounded-xl border border-neutral-800 bg-neutral-950 p-4 text-sm leading-6 text-neutral-400">
                 {report.notices.map((notice) => (
                   <li key={notice}>{notice}</li>
                 ))}
               </ul>
             ) : null}
+
+            <div className="space-y-4">
+              {report.sections.map((section) => (
+                <article
+                  key={section.id}
+                  className="space-y-4 rounded-xl border border-neutral-800 bg-neutral-950 p-4"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="font-semibold text-neutral-100">
+                      {section.titleKo}
+                    </h3>
+                    <span className="shrink-0 rounded-full border border-neutral-700 px-2.5 py-1 text-xs font-medium text-neutral-400">
+                      {section.level === "FREE_PREVIEW"
+                        ? "무료 미리보기"
+                        : "전체 리포트"}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm leading-6 text-neutral-400">
+                    {section.summaryKo}
+                  </p>
+                  {section.blocks.length > 0 ? (
+                    <div className="space-y-4">
+                      {section.blocks.map((block, index) =>
+                        renderReportBlock(block, index),
+                      )}
+                    </div>
+                  ) : null}
+                </article>
+              ))}
+            </div>
           </section>
         ) : null}
 
