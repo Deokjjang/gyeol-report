@@ -1,6 +1,7 @@
 import {
   BRANCH_MAIN_ELEMENT,
   BRANCH_YIN_YANG,
+  HIDDEN_STEMS,
   STEM_ELEMENT,
   STEM_YIN_YANG,
 } from "./constants";
@@ -9,6 +10,7 @@ import type {
   ElementLabel,
   FiveElement,
   HeavenlyStem,
+  HiddenStemEntry,
   Pillar,
   TenGod,
   YinYangLabel,
@@ -36,6 +38,11 @@ export type YinYangAnalysisResult = {
   yin: number;
   yang: number;
   label: YinYangLabel;
+};
+
+export type HiddenStemAnalysisResult = {
+  entries: HiddenStemEntry[];
+  tenGodDistribution: Record<TenGod, number>;
 };
 
 const ELEMENTS = [
@@ -104,20 +111,24 @@ function getExistingPillars(pillars: PillarSet): Pillar[] {
   return existingPillars;
 }
 
-function getElementLabels(
+function createElementLabels(
   counts: Record<FiveElement, number>,
+  mode: "VISIBLE" | "WEIGHTED",
 ): ElementLabel[] {
   const labels: ElementLabel[] = [];
 
   for (const element of ELEMENTS) {
-    const count = counts[element];
+    const value = counts[element];
     const elementLabels = ELEMENT_LABELS[element];
 
-    if (count >= 3) {
+    if (value >= 3) {
       labels.push(elementLabels.strong);
-    } else if (count === 0) {
+    } else if (value === 0) {
       labels.push(elementLabels.missing);
-    } else if (count === 1) {
+    } else if (
+      (mode === "VISIBLE" && value === 1) ||
+      (mode === "WEIGHTED" && value > 0 && value < 1.5)
+    ) {
       labels.push(elementLabels.weak);
     }
   }
@@ -165,7 +176,7 @@ export function analyzeVisibleElements(
   return {
     visible,
     weighted,
-    labels: getElementLabels(visible),
+    labels: createElementLabels(visible, "VISIBLE"),
   };
 }
 
@@ -191,6 +202,87 @@ export function analyzeVisibleTenGods(
 
   return {
     stems,
+    distribution,
+  };
+}
+
+export function analyzeHiddenStems(
+  pillars: PillarSet,
+): HiddenStemAnalysisResult {
+  const dayStem = pillars.day.stem;
+  const entries: HiddenStemEntry[] = [];
+  const tenGodDistribution = createEmptyTenGodDistribution();
+
+  for (const pillar of getExistingPillars(pillars)) {
+    const hiddenStems = HIDDEN_STEMS[pillar.branch];
+
+    for (const hiddenStem of hiddenStems) {
+      const tenGod = getTenGod(dayStem, hiddenStem.stem);
+      const entry: HiddenStemEntry = {
+        branch: pillar.branch,
+        stem: hiddenStem.stem,
+        tenGod,
+        weight: hiddenStem.weight,
+      };
+
+      entries.push(entry);
+      tenGodDistribution[tenGod] += hiddenStem.weight;
+    }
+  }
+
+  return {
+    entries,
+    tenGodDistribution,
+  };
+}
+
+export function analyzeWeightedElements(
+  pillars: PillarSet,
+): Record<FiveElement, number> {
+  const weighted = createEmptyElementCounts();
+
+  for (const pillar of getExistingPillars(pillars)) {
+    weighted[STEM_ELEMENT[pillar.stem]] += 1;
+    weighted[BRANCH_MAIN_ELEMENT[pillar.branch]] += 1;
+
+    for (const hiddenStem of HIDDEN_STEMS[pillar.branch]) {
+      weighted[STEM_ELEMENT[hiddenStem.stem]] += hiddenStem.weight;
+    }
+  }
+
+  return weighted;
+}
+
+export function analyzeFullElements(
+  pillars: PillarSet,
+): ElementAnalysisResult {
+  const visible = analyzeVisibleElements(pillars).visible;
+  const weighted = analyzeWeightedElements(pillars);
+
+  return {
+    visible,
+    weighted,
+    labels: createElementLabels(weighted, "WEIGHTED"),
+  };
+}
+
+export function analyzeFullTenGods(pillars: PillarSet): {
+  stems: VisibleTenGodsResult["stems"];
+  hiddenStems: HiddenStemEntry[];
+  distribution: Record<TenGod, number>;
+} {
+  const visible = analyzeVisibleTenGods(pillars);
+  const hidden = analyzeHiddenStems(pillars);
+  const distribution = createEmptyTenGodDistribution();
+
+  for (const tenGod of TEN_GODS) {
+    distribution[tenGod] += visible.distribution[tenGod];
+    distribution[tenGod] += hidden.tenGodDistribution[tenGod];
+  }
+
+  return {
+    stems: visible.stems,
+    hiddenStems: hidden.entries,
     distribution,
   };
 }
