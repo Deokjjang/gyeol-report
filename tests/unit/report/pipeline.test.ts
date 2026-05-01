@@ -1,0 +1,172 @@
+import { describe, expect, it } from "vitest";
+
+import { createReportFromRawInput } from "@/lib/report/pipeline";
+import type { ReportBlock, ReportSection } from "@/lib/report/types";
+import type { ReportRequestRawInput } from "@/lib/validation/types";
+
+const validRawInput: ReportRequestRawInput = {
+  birthDate: "2024-02-04",
+  birthTime: "17:27",
+  birthTimeUnknown: false,
+  calendarType: "SOLAR",
+  gender: "MALE",
+  timezone: "Asia/Seoul",
+  mbtiType: "ENTJ",
+};
+
+function getSuccessfulReport(raw: ReportRequestRawInput) {
+  const result = createReportFromRawInput(raw);
+
+  expect(result.ok).toBe(true);
+  if (!result.ok) {
+    throw new Error("Expected pipeline to return a report.");
+  }
+
+  return result.report;
+}
+
+function findSection(
+  sections: readonly ReportSection[],
+  id: ReportSection["id"],
+): ReportSection | undefined {
+  return sections.find((section) => section.id === id);
+}
+
+function getFirstBlock(section: ReportSection | undefined): ReportBlock | undefined {
+  return section?.blocks[0];
+}
+
+describe("createReportFromRawInput", () => {
+  it("returns validation errors for invalid input", () => {
+    const result = createReportFromRawInput({});
+
+    expect(result.ok).toBe(false);
+    if (!result.ok) {
+      expect(result.errors.map((error) => error.code)).toEqual([
+        "BIRTH_DATE_REQUIRED",
+        "BIRTH_TIME_UNKNOWN_INVALID",
+        "CALENDAR_TYPE_REQUIRED",
+        "GENDER_REQUIRED",
+        "TIMEZONE_REQUIRED",
+        "MBTI_TYPE_REQUIRED",
+      ]);
+    }
+    expect("report" in result).toBe(false);
+  });
+
+  it("returns report for valid known-time input", () => {
+    const result = createReportFromRawInput(validRawInput);
+
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.report.version).toBe("v1");
+      expect(result.report.titleKo).toBe("결리포트");
+      expect(result.report.subtitleKo).toBe("사주와 MBTI로 읽는 나의 결");
+      expect(result.report.sections).toHaveLength(11);
+    }
+  });
+
+  it("renders expected core pillars for valid known-time input", () => {
+    const report = getSuccessfulReport(validRawInput);
+    const section = findSection(report.sections, "SAJU_CORE");
+    const block = getFirstBlock(section);
+
+    expect(block?.kind).toBe("KEY_VALUE");
+    expect(block?.keyValues).toEqual([
+      { keyKo: "년주", valueKo: "甲辰" },
+      { keyKo: "월주", valueKo: "丙寅" },
+      { keyKo: "일주", valueKo: "丙申" },
+      { keyKo: "시주", valueKo: "丁酉" },
+    ]);
+  });
+
+  it("renders missing hour and notices for valid unknown-time input", () => {
+    const report = getSuccessfulReport({
+      ...validRawInput,
+      birthTime: undefined,
+      birthTimeUnknown: true,
+    });
+    const section = findSection(report.sections, "SAJU_CORE");
+    const block = getFirstBlock(section);
+    const hourValue = block?.keyValues?.find((item) => item.keyKo === "시주");
+
+    expect(hourValue?.valueKo).toBe("모름");
+    expect(report.notices).toContain(
+      "출생시간을 모르면 년·월·일주 중심으로 분석됩니다.",
+    );
+    expect(report.notices).toContain(
+      "출생정보와 해석 결과는 자기이해용 참고자료입니다.",
+    );
+  });
+
+  it("does not throw for invalid mixed input", () => {
+    const raw: ReportRequestRawInput = {
+      birthDate: Symbol("bad"),
+      birthTime: 123,
+      birthTimeUnknown: false,
+      calendarType: "LUNAR",
+      gender: "OTHER",
+      timezone: "UTC",
+      mbtiType: "XXXX",
+    };
+
+    expect(() => createReportFromRawInput(raw)).not.toThrow();
+
+    const result = createReportFromRawInput(raw);
+    expect(result.ok).toBe(false);
+  });
+
+  it("rejects invalid MBTI without report", () => {
+    const result = createReportFromRawInput({
+      ...validRawInput,
+      mbtiType: "ABCD",
+    });
+
+    expect(result.ok).toBe(false);
+    if (!result.ok) {
+      expect(result.errors.map((error) => error.code)).toContain(
+        "MBTI_TYPE_INVALID",
+      );
+    }
+    expect("report" in result).toBe(false);
+  });
+
+  it("rejects lunar calendar without report", () => {
+    const result = createReportFromRawInput({
+      ...validRawInput,
+      calendarType: "LUNAR",
+    });
+
+    expect(result.ok).toBe(false);
+    if (!result.ok) {
+      expect(result.errors.map((error) => error.code)).toContain(
+        "CALENDAR_TYPE_UNSUPPORTED",
+      );
+    }
+    expect("report" in result).toBe(false);
+  });
+
+  it("includes MBTI section for selected type", () => {
+    const report = getSuccessfulReport(validRawInput);
+    const section = findSection(report.sections, "MBTI_PROFILE");
+    const block = section?.blocks.find((item) => item.kind === "HIGHLIGHT");
+
+    expect(block?.bodyKo).toBe("ENTJ");
+  });
+
+  it("includes bridge section", () => {
+    const report = getSuccessfulReport(validRawInput);
+    const section = findSection(report.sections, "SAJU_MBTI_BRIDGE");
+
+    expect(section).toBeDefined();
+    expect(section?.titleKo).toBeTruthy();
+    expect(section?.blocks.length).toBeGreaterThan(0);
+  });
+
+  it("returns deterministic results", () => {
+    expect(createReportFromRawInput(validRawInput)).toEqual(
+      createReportFromRawInput(validRawInput),
+    );
+    expect(createReportFromRawInput({})).toEqual(createReportFromRawInput({}));
+  });
+});
