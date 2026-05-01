@@ -439,3 +439,23 @@ V1 개발은 다음 원칙을 따른다.
 ## 19. Product One-liner
 
 결리포트는 사주와 MBTI를 결합해, 사용자의 타고난 구조와 자기인식이 어디서 겹치고 어긋나는지 읽어주는 초저가 자기서사 리포트 서비스다.
+---
+
+## 20. Domain
+
+Primary domain:
+
+gyeolreport.com
+
+Domain registrar:
+
+Cloudflare Registrar
+
+Registration status:
+
+Purchased
+
+V1 domain policy:
+
+Use gyeolreport.com as the primary production domain.
+.kr domain is optional defensive registration and not required for MVP launch.
