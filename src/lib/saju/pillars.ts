@@ -1,5 +1,8 @@
 import {
+  BRANCH_INDEX,
   HEAVENLY_STEMS,
+  HOUR_BRANCH_RANGES,
+  HOUR_STEM_START_BY_DAY_STEM,
   MONTH_BRANCHES_BY_SOLAR_TERM,
   MONTH_STEM_START_BY_YEAR_STEM,
   SEXAGENARY_CYCLE,
@@ -24,6 +27,11 @@ type ParsedDate = {
   day: number;
 };
 
+type ParsedBirthTime = {
+  hour: number;
+  minute: number;
+};
+
 function parseIsoDateStrict(value: string): ParsedDate {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
 
@@ -46,6 +54,24 @@ function parseIsoDateStrict(value: string): ParsedDate {
   }
 
   return { year, month, day };
+}
+
+function parseBirthTimeStrict(value: string): ParsedBirthTime {
+  const match = /^(\d{2}):(\d{2})$/.exec(value);
+
+  if (!match) {
+    throw new Error("Invalid birth time format. Expected HH:mm.");
+  }
+
+  const [, hourValue, minuteValue] = match;
+  const hour = Number(hourValue);
+  const minute = Number(minuteValue);
+
+  if (hour < 0 || hour > 23 || minute < 0 || minute > 59) {
+    throw new Error("Invalid birth time format. Expected HH:mm.");
+  }
+
+  return { hour, minute };
 }
 
 function toUtcDateMs(date: ParsedDate): number {
@@ -129,5 +155,44 @@ export function getMonthPillarFromSolarDateTime(
   return {
     stem: monthStem,
     branch: monthBranch,
+  };
+}
+
+export function getHourBranchFromBirthTime(birthTime: string): EarthlyBranch {
+  const { hour } = parseBirthTimeStrict(birthTime);
+  const range = HOUR_BRANCH_RANGES.find((item) => {
+    if (item.branch === "子") {
+      return hour === 23 || hour === 0;
+    }
+
+    return hour >= item.startHour && hour <= item.endHour;
+  });
+
+  if (!range) {
+    throw new Error("Failed to resolve hour branch.");
+  }
+
+  return range.branch;
+}
+
+export function getHourPillarFromBirthTime(
+  birthTime: string,
+  dayStem: HeavenlyStem,
+): Pillar {
+  const hourBranch = getHourBranchFromBirthTime(birthTime);
+  const hourBranchIndex = BRANCH_INDEX[hourBranch];
+  const startStem = HOUR_STEM_START_BY_DAY_STEM[dayStem];
+  const startStemIndex = STEM_INDEX[startStem];
+  const hourStem = HEAVENLY_STEMS[
+    (startStemIndex + hourBranchIndex) % HEAVENLY_STEMS.length
+  ];
+
+  if (!hourStem) {
+    throw new Error("Failed to resolve hour stem.");
+  }
+
+  return {
+    stem: hourStem,
+    branch: hourBranch,
   };
 }
