@@ -494,7 +494,7 @@ function createRelationTags(relations: SajuCalcResult["relations"]): SajuTag[] {
         confidence: "HIGH",
         labelKo: "지지충 있음",
         descriptionKo:
-          "지지충은 반드시 나쁜 일이 생긴다는 뜻이 아니라, 방향성의 긴장과 변화 민감성을 뜻할 수 있습니다.",
+          "지지충은 나쁜 일이 생긴다는 뜻이 아니라, 방향성의 긴장과 변화 민감성을 뜻할 수 있습니다.",
         evidence: [`relation:branchClashes=${relations.branchClashes.length}`],
       }),
     );
