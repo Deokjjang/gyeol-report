@@ -1,0 +1,57 @@
+import { evaluateSajuMbtiBridge } from "../bridge/evaluate";
+import { getMbtiProfile } from "../mbti/types";
+import { calculateSaju } from "../saju/calculateSaju";
+import { extractSajuTags } from "../saju/extractTags";
+import { validateReportRequest } from "../validation/reportRequest";
+import type {
+  ReportRequestRawInput,
+  ReportRequestValidationError,
+} from "../validation/types";
+import { buildReport } from "./buildReport";
+import type { ReportOutput } from "./types";
+
+export type ReportPipelineSuccess = {
+  ok: true;
+  report: ReportOutput;
+};
+
+export type ReportPipelineFailure = {
+  ok: false;
+  errors: ReportRequestValidationError[];
+};
+
+export type ReportPipelineResult =
+  | ReportPipelineSuccess
+  | ReportPipelineFailure;
+
+export function createReportFromRawInput(
+  raw: ReportRequestRawInput,
+): ReportPipelineResult {
+  const validation = validateReportRequest(raw);
+
+  if (!validation.ok) {
+    return {
+      ok: false,
+      errors: validation.errors,
+    };
+  }
+
+  const saju = calculateSaju(validation.value.sajuInput);
+  const sajuTags = extractSajuTags(saju);
+  const mbti = getMbtiProfile(validation.value.mbtiType);
+  const bridge = evaluateSajuMbtiBridge({
+    sajuTags,
+    mbtiProfile: mbti,
+  });
+  const report = buildReport({
+    saju,
+    sajuTags,
+    mbti,
+    bridgeSignals: bridge.signals,
+  });
+
+  return {
+    ok: true,
+    report,
+  };
+}
