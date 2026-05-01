@@ -1,0 +1,36 @@
+﻿# dependencies
+node_modules
+.pnpm-store
+
+# next
+.next
+out
+
+# production
+build
+dist
+
+# env
+.env
+.env.local
+.env.*.local
+
+# logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# vercel
+.vercel
+
+# supabase
+.supabase
+
+# tests
+playwright-report
+test-results
+coverage
+
+# system
+.DS_Store
+Thumbs.db
