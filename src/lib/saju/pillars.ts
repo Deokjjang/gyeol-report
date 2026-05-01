@@ -1,9 +1,22 @@
-import { SEXAGENARY_CYCLE } from "./constants";
-import type { Pillar } from "./types";
+import {
+  HEAVENLY_STEMS,
+  MONTH_BRANCHES_BY_SOLAR_TERM,
+  MONTH_STEM_START_BY_YEAR_STEM,
+  SEXAGENARY_CYCLE,
+  STEM_INDEX,
+} from "./constants";
+import {
+  getActiveSolarTermBoundary,
+  isBeforeIpchun,
+} from "./solarTerms";
+import type { EarthlyBranch, HeavenlyStem, Pillar } from "./types";
 
 const DAY_PILLAR_EPOCH_DATE = "1984-02-02";
 const DAY_PILLAR_EPOCH_INDEX = 0;
+const YEAR_PILLAR_REFERENCE_YEAR = 1984;
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
+const KST_DATE_TIME_FORMAT_ERROR =
+  "Invalid KST date-time format. Expected YYYY-MM-DDTHH:mm:ss+09:00.";
 
 type ParsedDate = {
   year: number;
@@ -43,6 +56,16 @@ function positiveModulo(value: number, modulo: number): number {
   return ((value % modulo) + modulo) % modulo;
 }
 
+function getKstYear(solarDateTimeKst: string): number {
+  const match = /^(\d{4})-/.exec(solarDateTimeKst);
+
+  if (!match) {
+    throw new Error(KST_DATE_TIME_FORMAT_ERROR);
+  }
+
+  return Number(match[1]);
+}
+
 export function getDayPillarFromSolarDate(solarDate: string): Pillar {
   const epochMs = toUtcDateMs(parseIsoDateStrict(DAY_PILLAR_EPOCH_DATE));
   const targetMs = toUtcDateMs(parseIsoDateStrict(solarDate));
@@ -58,4 +81,53 @@ export function getDayPillarFromSolarDate(solarDate: string): Pillar {
   }
 
   return pillar;
+}
+
+export function getYearPillarFromSolarDateTime(
+  solarDateTimeKst: string,
+): Pillar {
+  const inputYear = getKstYear(solarDateTimeKst);
+  const sajuYear = isBeforeIpchun(solarDateTimeKst)
+    ? inputYear - 1
+    : inputYear;
+  const cycleIndex = positiveModulo(
+    sajuYear - YEAR_PILLAR_REFERENCE_YEAR,
+    SEXAGENARY_CYCLE.length,
+  );
+  const pillar = SEXAGENARY_CYCLE[cycleIndex];
+
+  if (!pillar) {
+    throw new Error("Failed to resolve year pillar.");
+  }
+
+  return pillar;
+}
+
+export function getMonthPillarFromSolarDateTime(
+  solarDateTimeKst: string,
+): Pillar {
+  const activeBoundary = getActiveSolarTermBoundary(solarDateTimeKst);
+  const monthBranch: EarthlyBranch = activeBoundary.monthBranch;
+  const monthIndex = MONTH_BRANCHES_BY_SOLAR_TERM.indexOf(monthBranch);
+
+  if (monthIndex < 0) {
+    throw new Error("Failed to resolve month branch index.");
+  }
+
+  const yearPillar = getYearPillarFromSolarDateTime(solarDateTimeKst);
+  const yearStem: HeavenlyStem = yearPillar.stem;
+  const startStem = MONTH_STEM_START_BY_YEAR_STEM[yearStem];
+  const startStemIndex = STEM_INDEX[startStem];
+  const monthStem = HEAVENLY_STEMS[
+    (startStemIndex + monthIndex) % HEAVENLY_STEMS.length
+  ];
+
+  if (!monthStem) {
+    throw new Error("Failed to resolve month stem.");
+  }
+
+  return {
+    stem: monthStem,
+    branch: monthBranch,
+  };
 }
