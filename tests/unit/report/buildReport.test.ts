@@ -98,7 +98,7 @@ describe("buildReport", () => {
     expect(report.version).toBe("v1");
     expect(report.titleKo).toBe("결리포트");
     expect(report.subtitleKo).toBe("사주와 MBTI로 읽는 나의 결");
-    expect(report.sections).toHaveLength(11);
+    expect(report.sections).toHaveLength(12);
     expect(report.notices).toContain(
       "출생정보와 해석 결과는 자기이해용 참고자료입니다.",
     );
@@ -114,6 +114,7 @@ describe("buildReport", () => {
       "ELEMENTS",
       "TEN_GODS",
       "ADVANCED_PATTERNS",
+      "SHINSAL",
       "RELATIONS",
       "MBTI_PROFILE",
       "SAJU_MBTI_BRIDGE",
@@ -134,6 +135,7 @@ describe("buildReport", () => {
     expect(levels.ELEMENTS).toBe("PAID_FULL");
     expect(levels.TEN_GODS).toBe("PAID_FULL");
     expect(levels.ADVANCED_PATTERNS).toBe("PAID_FULL");
+    expect(levels.SHINSAL).toBe("PAID_FULL");
     expect(levels.RELATIONS).toBe("PAID_FULL");
     expect(levels.MBTI_PROFILE).toBe("FREE_PREVIEW");
     expect(levels.SAJU_MBTI_BRIDGE).toBe("PAID_FULL");
@@ -215,6 +217,25 @@ describe("buildReport", () => {
     if (advancedLabels.length > 0) {
       expect(section?.blocks[0]?.kind).toBe("BULLET_LIST");
       expect(section?.blocks[0]?.itemsKo).toEqual(advancedLabels);
+    } else {
+      expect(section?.blocks[0]?.kind).toBe("PARAGRAPH");
+    }
+  });
+
+  it("renders shinsal section from shinsal tags", () => {
+    const input = createReportInput();
+    const report = buildReport(input);
+    const section = report.sections.find((item) => item.id === "SHINSAL");
+    const shinsalLabels = input.sajuTags
+      .filter((tag) => tag.category === "SHINSAL")
+      .map((tag) => `${tag.labelKo}: ${tag.descriptionKo}`);
+
+    expect(section).toBeDefined();
+    expect(section?.level).toBe("PAID_FULL");
+    expect(section?.titleKo).toBe("신살·귀인");
+    if (shinsalLabels.length > 0) {
+      expect(section?.blocks[0]?.kind).toBe("BULLET_LIST");
+      expect(section?.blocks[0]?.itemsKo).toEqual(shinsalLabels);
     } else {
       expect(section?.blocks[0]?.kind).toBe("PARAGRAPH");
     }

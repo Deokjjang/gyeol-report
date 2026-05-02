@@ -111,7 +111,7 @@ describe("create report route", () => {
     if (body.ok) {
       expect(body.report.version).toBe("v1");
       expect(body.report.titleKo).toBe("결리포트");
-      expect(body.report.sections).toHaveLength(11);
+      expect(body.report.sections).toHaveLength(12);
     }
   });
 

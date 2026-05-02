@@ -111,6 +111,25 @@ function createAdvancedPatternsBlock(input: ReportInput): ReportBlock {
   };
 }
 
+function createShinsalBlock(input: ReportInput): ReportBlock {
+  const itemsKo = input.sajuTags
+    .filter((tag) => tag.category === "SHINSAL")
+    .map((tag) => `${tag.labelKo}: ${tag.descriptionKo}`);
+
+  if (itemsKo.length > 0) {
+    return {
+      kind: "BULLET_LIST",
+      titleKo: "감지된 신살·귀인",
+      itemsKo,
+    };
+  }
+
+  return {
+    kind: "PARAGRAPH",
+    bodyKo: "현재 기준에서 강하게 표시할 신살·귀인 신호는 없습니다.",
+  };
+}
+
 function createRelationsBlock(input: ReportInput): ReportBlock {
   const { relations } = input.saju;
   const itemsKo = [
@@ -205,6 +224,14 @@ export function buildReport(input: ReportInput): ReportOutput {
       titleKo: "고급 구조 후보",
       summaryKo: "고급 구조 후보는 단정이 아니라 해석을 위한 신호입니다.",
       blocks: [createAdvancedPatternsBlock(input)],
+    }),
+    createSection({
+      id: "SHINSAL",
+      level: "PAID_FULL",
+      titleKo: "신살·귀인",
+      summaryKo:
+        "신살과 귀인은 사주 구조 안에서 특정 성향과 보조 흐름을 읽기 위한 참고 신호입니다.",
+      blocks: [createShinsalBlock(input)],
     }),
     createSection({
       id: "RELATIONS",

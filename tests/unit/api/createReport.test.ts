@@ -76,7 +76,7 @@ describe("createReportApiEnvelopeFromJson", () => {
     if (envelope.body.ok) {
       expect(envelope.body.report.version).toBe("v1");
       expect(envelope.body.report.titleKo).toBe("결리포트");
-      expect(envelope.body.report.sections).toHaveLength(11);
+      expect(envelope.body.report.sections).toHaveLength(12);
     }
   });
 

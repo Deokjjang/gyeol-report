@@ -62,7 +62,7 @@ describe("createReportFromRawInput", () => {
       expect(result.report.version).toBe("v1");
       expect(result.report.titleKo).toBe("결리포트");
       expect(result.report.subtitleKo).toBe("사주와 MBTI로 읽는 나의 결");
-      expect(result.report.sections).toHaveLength(11);
+      expect(result.report.sections).toHaveLength(12);
     }
   });
 

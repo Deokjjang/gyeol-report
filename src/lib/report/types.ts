@@ -10,6 +10,7 @@ export type ReportSectionId =
   | "ELEMENTS"
   | "TEN_GODS"
   | "ADVANCED_PATTERNS"
+  | "SHINSAL"
   | "RELATIONS"
   | "MBTI_PROFILE"
   | "SAJU_MBTI_BRIDGE"
