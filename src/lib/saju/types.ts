@@ -1,3 +1,5 @@
+import type { ShinsalDetection } from "./shinsalTypes";
+
 export const SAJU_CALC_SPEC_VERSION = "SAJU_CALC_SPEC_v0.1" as const;
 
 export type HeavenlyStem =
@@ -121,5 +123,6 @@ export type SajuCalcResult = {
     branchCombinations: string[];
     branchClashes: string[];
   };
+  shinsal: readonly ShinsalDetection[];
   notices: string[];
 };

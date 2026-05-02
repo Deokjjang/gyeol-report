@@ -11,6 +11,7 @@ import {
   getYearPillarFromSolarDateTime,
 } from "./pillars";
 import { analyzeRelations } from "./relations";
+import { detectShinsal } from "./shinsal";
 import type { SajuCalcInput, SajuCalcResult } from "./types";
 
 const BIRTH_TIME_UNKNOWN_NOTICE =
@@ -73,6 +74,7 @@ export function calculateSaju(input: SajuCalcInput): SajuCalcResult {
   const tenGods = analyzeFullTenGods(pillars);
   const yinYang = analyzeVisibleYinYang(pillars);
   const relationAnalysis = analyzeRelations(pillars);
+  const shinsal = detectShinsal(pillars);
 
   if (input.birthTimeUnknown) {
     notices.push(BIRTH_TIME_UNKNOWN_NOTICE);
@@ -97,6 +99,7 @@ export function calculateSaju(input: SajuCalcInput): SajuCalcResult {
         relationAnalysis.branchCombinations.map(formatRelation),
       branchClashes: relationAnalysis.branchClashes.map(formatRelation),
     },
+    shinsal,
     notices,
   };
 }
