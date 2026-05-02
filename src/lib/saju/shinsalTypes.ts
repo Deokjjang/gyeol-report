@@ -33,6 +33,8 @@ export type ShinsalCode =
   | "WOL_DEOK_GWIIN"
   | "CHEON_DEOK_GWIIN";
 
+export type ShinsalRuleTarget = HeavenlyStem | Branch;
+
 export type ShinsalDetectionBasis =
   | {
       kind: "DAY_STEM_TO_BRANCH";
@@ -53,6 +55,16 @@ export type ShinsalDetectionBasis =
       kind: "MONTH_BRANCH_TO_BRANCH";
       monthBranch: Branch;
       matchedBranch: Branch;
+    }
+  | {
+      kind: "MONTH_BRANCH_TO_STEM";
+      monthBranch: Branch;
+      matchedStem: HeavenlyStem;
+    }
+  | {
+      kind: "MONTH_BRANCH_TO_STEM_OR_BRANCH";
+      monthBranch: Branch;
+      matchedTarget: ShinsalRuleTarget;
     }
   | {
       kind: "STEM_BRANCH_PAIR";
@@ -90,6 +102,14 @@ export type BranchSetByStem = Readonly<
 
 export type BranchSetByBranch = Readonly<Record<Branch, readonly Branch[]>>;
 
+export type StemSetByBranch = Readonly<
+  Record<Branch, readonly HeavenlyStem[]>
+>;
+
+export type StemOrBranchSetByBranch = Readonly<
+  Record<Branch, readonly ShinsalRuleTarget[]>
+>;
+
 export type StemBranchPair = {
   stem: HeavenlyStem;
   branch: Branch;
@@ -111,6 +131,14 @@ export type ShinsalRuleSource =
   | {
       kind: "MONTH_BRANCH_TO_BRANCH";
       table: BranchSetByBranch;
+    }
+  | {
+      kind: "MONTH_BRANCH_TO_STEM";
+      table: StemSetByBranch;
+    }
+  | {
+      kind: "MONTH_BRANCH_TO_STEM_OR_BRANCH";
+      table: StemOrBranchSetByBranch;
     }
   | {
       kind: "STEM_BRANCH_PAIR";
