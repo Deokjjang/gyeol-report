@@ -7,6 +7,7 @@ import type {
   YinYangLabel,
 } from "./types";
 import type { SajuTag, SajuTagCode, TenGodGroup } from "./tags";
+import type { ShinsalCode } from "./shinsalTypes";
 
 type TagMeta = {
   code: SajuTagCode;
@@ -26,6 +27,24 @@ type AdvancedPatternConfig = {
   labelKo: string;
   descriptionKo: string;
   evidence: string[];
+};
+
+const SHINSAL_TAG_CODES: Readonly<Record<ShinsalCode, SajuTagCode>> = {
+  HYEONCHIMSAL: "SHINSAL_HYEONCHIMSAL",
+  HONGYEOMSAL: "SHINSAL_HONGYEOMSAL",
+  BAEKHODAESAL: "SHINSAL_BAEKHODAESAL",
+  MANGSINSAL: "SHINSAL_MANGSINSAL",
+  YEOKMASAL: "SHINSAL_YEOKMASAL",
+  DOHWASAL: "SHINSAL_DOHWASAL",
+  HWAGAE: "SHINSAL_HWAGAE",
+  GOSINSAL: "SHINSAL_GOSINSAL",
+  GWASUKSAL: "SHINSAL_GWASUKSAL",
+  CHEON_EUL_GWIIN: "SHINSAL_CHEON_EUL_GWIIN",
+  TAEGEUK_GWIIN: "SHINSAL_TAEGEUK_GWIIN",
+  MUN_CHANG_GWIIN: "SHINSAL_MUN_CHANG_GWIIN",
+  HAK_DANG_GWIIN: "SHINSAL_HAK_DANG_GWIIN",
+  WOL_DEOK_GWIIN: "SHINSAL_WOL_DEOK_GWIIN",
+  CHEON_DEOK_GWIIN: "SHINSAL_CHEON_DEOK_GWIIN",
 };
 
 const DAY_MASTER_TAG_META: Record<HeavenlyStem, TagMeta> = {
@@ -669,6 +688,24 @@ function createAdvancedPatternTags(
   return tags;
 }
 
+function extractShinsalTags(result: SajuCalcResult): SajuTag[] {
+  if (!("shinsal" in result)) {
+    return [];
+  }
+
+  return result.shinsal.map((detection) =>
+    createTag({
+      code: SHINSAL_TAG_CODES[detection.code],
+      category: "SHINSAL",
+      severity: detection.severity,
+      confidence: detection.confidence,
+      labelKo: detection.labelKo,
+      descriptionKo: detection.descriptionKo,
+      evidence: [...detection.evidence],
+    }),
+  );
+}
+
 function createRelationTags(relations: SajuCalcResult["relations"]): SajuTag[] {
   const tags: SajuTag[] = [];
 
@@ -782,6 +819,7 @@ export function extractSajuTags(result: SajuCalcResult): SajuTag[] {
     ...createTenGodGroupTags(tenGodGroupScores),
     ...createStrengthBalanceTags(tenGodGroupScores),
     ...createAdvancedPatternTags(result, tenGodGroupScores),
+    ...extractShinsalTags(result),
     ...createRelationTags(result.relations),
     createBirthTimeTag(result),
     ...createNoticeTags(result.notices),

@@ -7,6 +7,7 @@ export type SajuTagCategory =
   | "YIN_YANG"
   | "STRENGTH_BALANCE"
   | "ADVANCED_PATTERN"
+  | "SHINSAL"
   | "RELATION"
   | "BIRTH_TIME"
   | "NOTICE";
@@ -63,6 +64,23 @@ export type AdvancedPatternTagCode =
   | "PEER_OVERLOAD"
   | "RESOURCE_OVERLOAD";
 
+export type ShinsalTagCode =
+  | "SHINSAL_HYEONCHIMSAL"
+  | "SHINSAL_HONGYEOMSAL"
+  | "SHINSAL_BAEKHODAESAL"
+  | "SHINSAL_MANGSINSAL"
+  | "SHINSAL_YEOKMASAL"
+  | "SHINSAL_DOHWASAL"
+  | "SHINSAL_HWAGAE"
+  | "SHINSAL_GOSINSAL"
+  | "SHINSAL_GWASUKSAL"
+  | "SHINSAL_CHEON_EUL_GWIIN"
+  | "SHINSAL_TAEGEUK_GWIIN"
+  | "SHINSAL_MUN_CHANG_GWIIN"
+  | "SHINSAL_HAK_DANG_GWIIN"
+  | "SHINSAL_WOL_DEOK_GWIIN"
+  | "SHINSAL_CHEON_DEOK_GWIIN";
+
 export type RelationTagCode =
   | "STEM_COMBINATION_PRESENT"
   | "BRANCH_COMBINATION_PRESENT"
@@ -81,6 +99,7 @@ export type SajuTagCode =
   | YinYangTagCode
   | StrengthBalanceTagCode
   | AdvancedPatternTagCode
+  | ShinsalTagCode
   | RelationTagCode
   | BirthTimeTagCode
   | NoticeTagCode;
