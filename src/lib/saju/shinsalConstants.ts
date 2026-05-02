@@ -1,0 +1,403 @@
+import type {
+  ShinsalCode,
+  ShinsalMetadata,
+  ShinsalRuleDefinition,
+} from "./shinsalTypes";
+
+export const SHINSAL_METADATA = {
+  HYEONCHIMSAL: {
+    code: "HYEONCHIMSAL",
+    category: "PRECISION",
+    defaultSeverity: "MEDIUM",
+    labelKo: "현침살",
+    shortDescriptionKo:
+      "현침살은 예리한 관찰력과 날카로운 표현 감각으로 해석할 수 있는 신호입니다.",
+  },
+  HONGYEOMSAL: {
+    code: "HONGYEOMSAL",
+    category: "CHARM",
+    defaultSeverity: "LOW",
+    labelKo: "홍염살",
+    shortDescriptionKo:
+      "홍염살은 감정 표현과 매력, 사람에게 인상을 남기는 힘으로 해석할 수 있는 신호입니다.",
+  },
+  BAEKHODAESAL: {
+    code: "BAEKHODAESAL",
+    category: "INTENSITY",
+    defaultSeverity: "HIGH",
+    labelKo: "백호대살",
+    shortDescriptionKo:
+      "백호대살은 강한 추진력과 극단적 집중성, 위기 대응력을 참고하는 신호입니다.",
+  },
+  MANGSINSAL: {
+    code: "MANGSINSAL",
+    category: "SOCIAL_VISIBILITY",
+    defaultSeverity: "MEDIUM",
+    labelKo: "망신살",
+    shortDescriptionKo:
+      "망신살은 사회적 노출과 평판 민감성을 참고하는 신호입니다.",
+  },
+  YEOKMASAL: {
+    code: "YEOKMASAL",
+    category: "MOVEMENT",
+    defaultSeverity: "LOW",
+    labelKo: "역마살",
+    shortDescriptionKo:
+      "역마살은 이동성, 변화 욕구, 환경 전환의 흐름으로 해석할 수 있는 신호입니다.",
+  },
+  DOHWASAL: {
+    code: "DOHWASAL",
+    category: "CHARM",
+    defaultSeverity: "LOW",
+    labelKo: "도화살",
+    shortDescriptionKo:
+      "도화살은 주목성, 대인 매력, 감정적 반응성을 참고하는 신호입니다.",
+  },
+  HWAGAE: {
+    code: "HWAGAE",
+    category: "STRUCTURAL",
+    defaultSeverity: "LOW",
+    labelKo: "화개",
+    shortDescriptionKo:
+      "화개는 내면성, 예술성, 고독 속에서 깊어지는 사고 흐름으로 해석할 수 있는 신호입니다.",
+  },
+  GOSINSAL: {
+    code: "GOSINSAL",
+    category: "RELATION",
+    defaultSeverity: "MEDIUM",
+    labelKo: "고신살",
+    shortDescriptionKo:
+      "고신살은 관계에서 독립성이나 정서적 거리감을 참고하는 신호입니다.",
+  },
+  GWASUKSAL: {
+    code: "GWASUKSAL",
+    category: "RELATION",
+    defaultSeverity: "MEDIUM",
+    labelKo: "과숙살",
+    shortDescriptionKo:
+      "과숙살은 관계에서 자기보호와 정서적 신중함을 참고하는 신호입니다.",
+  },
+  CHEON_EUL_GWIIN: {
+    code: "CHEON_EUL_GWIIN",
+    category: "NOBLE_HELP",
+    defaultSeverity: "INFO",
+    labelKo: "천을귀인",
+    shortDescriptionKo:
+      "천을귀인은 도움을 얻는 구조와 위기 완충력을 참고하는 귀인 신호입니다.",
+  },
+  TAEGEUK_GWIIN: {
+    code: "TAEGEUK_GWIIN",
+    category: "NOBLE_HELP",
+    defaultSeverity: "INFO",
+    labelKo: "태극귀인",
+    shortDescriptionKo:
+      "태극귀인은 내적 균형감과 큰 흐름을 정리하는 힘으로 해석할 수 있는 귀인 신호입니다.",
+  },
+  MUN_CHANG_GWIIN: {
+    code: "MUN_CHANG_GWIIN",
+    category: "NOBLE_HELP",
+    defaultSeverity: "INFO",
+    labelKo: "문창귀인",
+    shortDescriptionKo:
+      "문창귀인은 학습, 언어, 문서화, 지적 표현 능력을 참고하는 귀인 신호입니다.",
+  },
+  HAK_DANG_GWIIN: {
+    code: "HAK_DANG_GWIIN",
+    category: "NOBLE_HELP",
+    defaultSeverity: "INFO",
+    labelKo: "학당귀인",
+    shortDescriptionKo:
+      "학당귀인은 배움의 지속성과 체계적 학습 역량을 참고하는 귀인 신호입니다.",
+  },
+  WOL_DEOK_GWIIN: {
+    code: "WOL_DEOK_GWIIN",
+    category: "NOBLE_HELP",
+    defaultSeverity: "INFO",
+    labelKo: "월덕귀인",
+    shortDescriptionKo:
+      "월덕귀인은 관계 속 완충력과 부드러운 조율력을 참고하는 귀인 신호입니다.",
+  },
+  CHEON_DEOK_GWIIN: {
+    code: "CHEON_DEOK_GWIIN",
+    category: "NOBLE_HELP",
+    defaultSeverity: "INFO",
+    labelKo: "천덕귀인",
+    shortDescriptionKo:
+      "천덕귀인은 안정감과 보호적 흐름을 참고하는 귀인 신호입니다.",
+  },
+} as const satisfies Readonly<Record<ShinsalCode, ShinsalMetadata>>;
+
+export const SHINSAL_RULES = [
+  {
+    code: "HYEONCHIMSAL",
+    source: {
+      kind: "BRANCH_ONLY",
+      branches: ["卯", "酉"],
+    },
+  },
+  {
+    code: "HONGYEOMSAL",
+    source: {
+      kind: "DAY_STEM_TO_BRANCH",
+      table: {
+        甲: ["午"],
+        乙: ["申"],
+        丙: ["寅"],
+        丁: ["未"],
+        戊: ["辰"],
+        己: ["辰"],
+        庚: ["戌"],
+        辛: ["酉"],
+        壬: ["子"],
+        癸: ["申"],
+      },
+    },
+  },
+  {
+    code: "BAEKHODAESAL",
+    source: {
+      kind: "STEM_BRANCH_PAIR",
+      pairs: [
+        { stem: "甲", branch: "辰" },
+        { stem: "乙", branch: "未" },
+        { stem: "丙", branch: "戌" },
+        { stem: "丁", branch: "丑" },
+        { stem: "戊", branch: "辰" },
+        { stem: "壬", branch: "戌" },
+        { stem: "癸", branch: "丑" },
+      ],
+    },
+  },
+  {
+    code: "MANGSINSAL",
+    source: {
+      kind: "YEAR_BRANCH_TO_BRANCH",
+      table: {
+        亥: ["申"],
+        卯: ["申"],
+        未: ["申"],
+        寅: ["亥"],
+        午: ["亥"],
+        戌: ["亥"],
+        巳: ["寅"],
+        酉: ["寅"],
+        丑: ["寅"],
+        申: ["巳"],
+        子: ["巳"],
+        辰: ["巳"],
+      },
+    },
+  },
+  {
+    code: "YEOKMASAL",
+    source: {
+      kind: "YEAR_BRANCH_TO_BRANCH",
+      table: {
+        亥: ["巳"],
+        卯: ["巳"],
+        未: ["巳"],
+        寅: ["申"],
+        午: ["申"],
+        戌: ["申"],
+        巳: ["亥"],
+        酉: ["亥"],
+        丑: ["亥"],
+        申: ["寅"],
+        子: ["寅"],
+        辰: ["寅"],
+      },
+    },
+  },
+  {
+    code: "DOHWASAL",
+    source: {
+      kind: "YEAR_BRANCH_TO_BRANCH",
+      table: {
+        亥: ["子"],
+        卯: ["子"],
+        未: ["子"],
+        寅: ["卯"],
+        午: ["卯"],
+        戌: ["卯"],
+        巳: ["午"],
+        酉: ["午"],
+        丑: ["午"],
+        申: ["酉"],
+        子: ["酉"],
+        辰: ["酉"],
+      },
+    },
+  },
+  {
+    code: "HWAGAE",
+    source: {
+      kind: "YEAR_BRANCH_TO_BRANCH",
+      table: {
+        亥: ["未"],
+        卯: ["未"],
+        未: ["未"],
+        寅: ["戌"],
+        午: ["戌"],
+        戌: ["戌"],
+        巳: ["丑"],
+        酉: ["丑"],
+        丑: ["丑"],
+        申: ["辰"],
+        子: ["辰"],
+        辰: ["辰"],
+      },
+    },
+  },
+  {
+    code: "GOSINSAL",
+    source: {
+      kind: "YEAR_BRANCH_TO_BRANCH",
+      table: {
+        亥: ["寅"],
+        卯: ["寅"],
+        未: ["寅"],
+        寅: ["巳"],
+        午: ["巳"],
+        戌: ["巳"],
+        巳: ["申"],
+        酉: ["申"],
+        丑: ["申"],
+        申: ["亥"],
+        子: ["亥"],
+        辰: ["亥"],
+      },
+    },
+  },
+  {
+    code: "GWASUKSAL",
+    source: {
+      kind: "YEAR_BRANCH_TO_BRANCH",
+      table: {
+        亥: ["戌"],
+        卯: ["戌"],
+        未: ["戌"],
+        寅: ["丑"],
+        午: ["丑"],
+        戌: ["丑"],
+        巳: ["辰"],
+        酉: ["辰"],
+        丑: ["辰"],
+        申: ["未"],
+        子: ["未"],
+        辰: ["未"],
+      },
+    },
+  },
+  {
+    code: "CHEON_EUL_GWIIN",
+    source: {
+      kind: "DAY_STEM_TO_BRANCH",
+      table: {
+        甲: ["丑", "未"],
+        乙: ["子", "申"],
+        丙: ["亥", "酉"],
+        丁: ["亥", "酉"],
+        戊: ["丑", "未"],
+        己: ["子", "申"],
+        庚: ["丑", "未"],
+        辛: ["寅", "午"],
+        壬: ["卯", "巳"],
+        癸: ["卯", "巳"],
+      },
+    },
+  },
+  {
+    code: "TAEGEUK_GWIIN",
+    source: {
+      kind: "DAY_STEM_TO_BRANCH",
+      table: {
+        甲: ["子", "午"],
+        乙: ["子", "午"],
+        丙: ["卯", "酉"],
+        丁: ["卯", "酉"],
+        戊: ["辰", "戌", "丑", "未"],
+        己: ["辰", "戌", "丑", "未"],
+        庚: ["寅", "亥"],
+        辛: ["寅", "亥"],
+        壬: ["巳", "申"],
+        癸: ["巳", "申"],
+      },
+    },
+  },
+  {
+    code: "MUN_CHANG_GWIIN",
+    source: {
+      kind: "DAY_STEM_TO_BRANCH",
+      table: {
+        甲: ["巳"],
+        乙: ["午"],
+        丙: ["申"],
+        丁: ["酉"],
+        戊: ["申"],
+        己: ["酉"],
+        庚: ["亥"],
+        辛: ["子"],
+        壬: ["寅"],
+        癸: ["卯"],
+      },
+    },
+  },
+  {
+    code: "HAK_DANG_GWIIN",
+    source: {
+      kind: "DAY_STEM_TO_BRANCH",
+      table: {
+        甲: ["亥"],
+        乙: ["午"],
+        丙: ["寅"],
+        丁: ["酉"],
+        戊: ["寅"],
+        己: ["酉"],
+        庚: ["巳"],
+        辛: ["子"],
+        壬: ["申"],
+        癸: ["卯"],
+      },
+    },
+  },
+  {
+    code: "WOL_DEOK_GWIIN",
+    source: {
+      kind: "MONTH_BRANCH_TO_STEM",
+      table: {
+        寅: ["丙"],
+        卯: ["甲"],
+        辰: ["壬"],
+        巳: ["庚"],
+        午: ["丙"],
+        未: ["甲"],
+        申: ["壬"],
+        酉: ["庚"],
+        戌: ["丙"],
+        亥: ["甲"],
+        子: ["壬"],
+        丑: ["庚"],
+      },
+    },
+  },
+  {
+    code: "CHEON_DEOK_GWIIN",
+    source: {
+      kind: "MONTH_BRANCH_TO_STEM_OR_BRANCH",
+      table: {
+        寅: ["丁"],
+        卯: ["申"],
+        辰: ["壬"],
+        巳: ["辛"],
+        午: ["亥"],
+        未: ["甲"],
+        申: ["癸"],
+        酉: ["寅"],
+        戌: ["丙"],
+        亥: ["乙"],
+        子: ["巳"],
+        丑: ["庚"],
+      },
+    },
+  },
+] as const satisfies readonly ShinsalRuleDefinition[];
