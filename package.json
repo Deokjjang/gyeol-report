@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "release:check": "pnpm test && pnpm lint && pnpm build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.105.1",
