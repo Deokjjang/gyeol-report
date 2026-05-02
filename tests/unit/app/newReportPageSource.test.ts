@@ -44,6 +44,41 @@ describe("new report page source", () => {
     expect(pageSource).toContain("report.notices");
   });
 
+  it("supports report block source types", () => {
+    expect(pageSource).toContain("type ReportBlock");
+    expect(pageSource).toContain("keyValues");
+    expect(pageSource).toContain("itemsKo");
+    expect(pageSource).toContain("bodyKo");
+  });
+
+  it("has a report block render helper", () => {
+    expect(pageSource).toContain("function renderReportBlock");
+    expect(pageSource).toContain('block.kind === "KEY_VALUE"');
+    expect(pageSource).toContain('block.kind === "BULLET_LIST"');
+    expect(pageSource).toContain('block.kind === "WARNING"');
+    expect(pageSource).toContain('block.kind === "HIGHLIGHT"');
+  });
+
+  it("renders all report sections", () => {
+    expect(pageSource).toContain("report.sections.map");
+    expect(pageSource).toContain("renderReportBlock");
+    expect(pageSource).not.toContain("slice(0, 5)");
+  });
+
+  it("renders section level pills", () => {
+    expect(pageSource).toContain("FREE_PREVIEW");
+    expect(pageSource).toContain("무료 미리보기");
+    expect(pageSource).toContain("전체 리포트");
+  });
+
+  it("renders development gate notice", () => {
+    const normalizedSource = pageSource.replace(/\s+/g, " ");
+
+    expect(normalizedSource).toContain(
+      "결제 게이트는 아직 연결되지 않았습니다. 현재는 개발용 미리보기로 전체 구조를 확인합니다.",
+    );
+  });
+
   it("does not include persistence auth payment or LLM markers", () => {
     const markers = [
       "supabase",
