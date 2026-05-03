@@ -384,6 +384,105 @@ describe("buildReport", () => {
     expect(blockKinds).toContain("BULLET_LIST");
   });
 
+  it("softens high-tension saju mbti suggestion display", () => {
+    const report = buildReport({
+      ...createReportInput(),
+      mbtiSuggestion: {
+        userType: "ENTJ",
+        axisSuggestions: [
+          {
+            axis: "EI",
+            suggestedSide: "I",
+            strength: "MEDIUM",
+            confidence: "MEDIUM",
+            titleKo: "내면 처리와 독립적 숙고",
+            summaryKo:
+              "외부 반응보다 혼자 정리하고 깊게 생각하는 흐름이 두드러질 수 있습니다.",
+            evidence: [
+              {
+                sajuTagCode: "SHINSAL_HWAGAE",
+                reasonKo: "화개",
+              },
+            ],
+          },
+        ],
+        typeSuggestion: {
+          suggestedType: "INFP",
+          confidence: "MEDIUM",
+          matchedAxes: ["EI", "SN", "TF", "JP"],
+          unresolvedAxes: [],
+          summaryKo:
+            "사주 구조에서 네 가지 MBTI 축을 모두 추정할 수 있어 하나의 후보 유형으로 정리했습니다.",
+        },
+        comparison: {
+          userType: "ENTJ",
+          suggestedType: "INFP",
+          direction: "PARTIAL_MATCH",
+          matchingAxes: [],
+          tensionAxes: ["EI", "SN", "TF", "JP"],
+          summaryKo:
+            "입력한 MBTI와 사주 기반 성향 후보가 일부 축에서는 맞고, 일부 축에서는 다르게 읽힙니다.",
+        },
+        notices: [mbtiSuggestionNotice],
+      },
+    });
+    const section = report.sections.find(
+      (item) => item.id === "SAJU_MBTI_SUGGESTION",
+    );
+    const text = JSON.stringify(section);
+    const keyValueBlocks =
+      section?.blocks.filter((block) => block.kind === "KEY_VALUE") ?? [];
+
+    expect(text).toContain(
+      "하나의 유형명으로 단정하기보다 축별 차이를 중심으로 보는 편이 적절합니다.",
+    );
+    expect(
+      keyValueBlocks.some((block) =>
+        block.keyValues?.some((item) => item.keyKo === "후보 MBTI"),
+      ),
+    ).toBe(false);
+  });
+
+  it("keeps candidate mbti key value for low-tension suggestion display", () => {
+    const report = buildReport({
+      ...createReportInput(),
+      mbtiSuggestion: {
+        userType: "ENTJ",
+        axisSuggestions: [],
+        typeSuggestion: {
+          suggestedType: "ENTJ",
+          confidence: "MEDIUM",
+          matchedAxes: ["EI", "SN", "TF", "JP"],
+          unresolvedAxes: [],
+          summaryKo:
+            "사주 구조에서 네 가지 MBTI 축을 모두 추정할 수 있어 하나의 후보 유형으로 정리했습니다.",
+        },
+        comparison: {
+          userType: "ENTJ",
+          suggestedType: "ENTJ",
+          direction: "MATCH",
+          matchingAxes: ["EI", "SN", "TF", "JP"],
+          tensionAxes: [],
+          summaryKo:
+            "입력한 MBTI와 사주 기반 성향 후보가 전반적으로 잘 맞습니다.",
+        },
+        notices: [mbtiSuggestionNotice],
+      },
+    });
+    const section = report.sections.find(
+      (item) => item.id === "SAJU_MBTI_SUGGESTION",
+    );
+    const candidateBlock = section?.blocks.find(
+      (block) =>
+        block.kind === "KEY_VALUE" &&
+        block.keyValues?.some((item) => item.keyKo === "후보 MBTI"),
+    );
+
+    expect(candidateBlock?.keyValues).toEqual(
+      expect.arrayContaining([{ keyKo: "후보 MBTI", valueKo: "ENTJ" }]),
+    );
+  });
+
   it("deduplicates notices", () => {
     const input = createReportInput();
     const report = buildReport({

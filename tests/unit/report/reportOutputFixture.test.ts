@@ -136,6 +136,24 @@ describe("report output fixture", () => {
     expect(text).toContain("사주 기반");
   });
 
+  it("softens high-tension saju mbti suggestion in fixture output", () => {
+    const report = getFixtureReport();
+    const section = findSection(report, "SAJU_MBTI_SUGGESTION");
+    const text = collectSectionText(section);
+    const keyValueBlocks = section.blocks.filter(
+      (block) => block.kind === "KEY_VALUE",
+    );
+
+    expect(text).toContain(
+      "하나의 유형명으로 단정하기보다 축별 차이를 중심으로 보는 편이 적절합니다.",
+    );
+    expect(
+      keyValueBlocks.some((block) =>
+        block.keyValues?.some((item) => item.keyKo === "후보 MBTI"),
+      ),
+    ).toBe(false);
+  });
+
   it("includes safety and suggestion notices", () => {
     const report = getFixtureReport();
 
