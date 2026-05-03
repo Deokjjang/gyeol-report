@@ -46,6 +46,39 @@ const PILLAR_POSITION_LABELS: Readonly<Record<string, string>> = {
   hour: "시주",
 };
 
+const SHINSAL_NARRATIVE_TEXTS: Readonly<Record<string, string>> = {
+  SHINSAL_HYEONCHIMSAL:
+    "현침살이 보여, 남들이 놓치는 작은 차이를 빠르게 포착하는 예리함이 드러납니다.",
+  SHINSAL_HONGYEOMSAL:
+    "홍염살은 은근히 시선이 가는 매력과 감정 표현의 존재감을 더합니다.",
+  SHINSAL_BAEKHODAESAL:
+    "백호대살은 강한 집중력과 밀어붙이는 힘이 크게 작동할 수 있음을 보여줍니다.",
+  SHINSAL_MANGSINSAL:
+    "망신살은 사회적 노출과 평판에 민감하게 반응하는 흐름을 보여줍니다.",
+  SHINSAL_YEOKMASAL:
+    "역마살은 한곳에 고정되기보다 이동과 변화 속에서 에너지가 살아나는 흐름을 보여줍니다.",
+  SHINSAL_DOHWASAL:
+    "도화살은 사람들의 시선을 끌고 관계 안에서 감정 반응을 일으키는 매력을 더합니다.",
+  SHINSAL_HWAGAE:
+    "화개는 혼자 깊이 파고들 때 살아나는 예술성, 몰입, 내면의 깊이를 보여줍니다.",
+  SHINSAL_GOSINSAL:
+    "고신살은 관계 안에서도 자기만의 거리와 독립성을 지키려는 흐름을 보여줍니다.",
+  SHINSAL_GWASUKSAL:
+    "과숙살은 쉽게 기대기보다 스스로를 보호하고 신중하게 관계를 여는 흐름을 보여줍니다.",
+  SHINSAL_CHEON_EUL_GWIIN:
+    "천을귀인은 어려운 상황에서도 도움의 통로나 완충 장치가 생기기 쉬운 구조로 읽을 수 있습니다.",
+  SHINSAL_TAEGEUK_GWIIN:
+    "태극귀인은 복잡한 상황을 큰 흐름에서 정리하고 균형을 잡으려는 힘을 더합니다.",
+  SHINSAL_MUN_CHANG_GWIIN:
+    "문창귀인은 말, 글, 학습, 문서화에서 강점이 드러날 수 있는 지적 신호입니다.",
+  SHINSAL_HAK_DANG_GWIIN:
+    "학당귀인은 배움의 지속성과 체계적으로 익혀가는 힘을 보여주는 신호입니다.",
+  SHINSAL_WOL_DEOK_GWIIN:
+    "월덕귀인은 관계 안에서 분위기를 부드럽게 만들고 갈등을 완충하는 힘으로 읽을 수 있습니다.",
+  SHINSAL_CHEON_DEOK_GWIIN:
+    "천덕귀인은 안정감과 보호적 흐름이 더해져 위기에서 급격히 흔들리지 않도록 돕는 신호입니다.",
+};
+
 function formatSajuTagLabel(value: string): string {
   return SAJU_TAG_DISPLAY_LABELS[value] ?? value;
 }
@@ -88,6 +121,17 @@ function removeLeadingLabel(text: string, label: string): string {
   }
 
   return text;
+}
+
+function formatShinsalNarrative(tag: {
+  code: string;
+  labelKo: string;
+  descriptionKo: string;
+}): string {
+  return (
+    SHINSAL_NARRATIVE_TEXTS[tag.code] ??
+    `${tag.labelKo}: ${removeLeadingLabel(tag.descriptionKo, tag.labelKo)}`
+  );
 }
 
 function dedupeTagsByCode<T extends { code: string }>(tags: readonly T[]): T[] {
@@ -227,11 +271,7 @@ function createAdvancedPatternsBlock(input: ReportInput): ReportBlock {
 
 function createShinsalBlock(input: ReportInput): ReportBlock {
   const shinsalTags = input.sajuTags.filter((tag) => tag.category === "SHINSAL");
-  const itemsKo = dedupeTagsByCode(shinsalTags)
-    .map(
-      (tag) =>
-        `${tag.labelKo}: ${removeLeadingLabel(tag.descriptionKo, tag.labelKo)}`,
-    );
+  const itemsKo = dedupeTagsByCode(shinsalTags).map(formatShinsalNarrative);
 
   if (itemsKo.length > 0) {
     return {

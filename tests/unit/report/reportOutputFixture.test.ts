@@ -120,13 +120,15 @@ describe("report output fixture", () => {
     }
 
     const woldeokItems = block.itemsKo?.filter((item) =>
-      item.startsWith("월덕귀인:"),
+      item.includes(
+        "월덕귀인은 관계 안에서 분위기를 부드럽게 만들고 갈등을 완충하는 힘으로 읽을 수 있습니다.",
+      ),
     );
 
     expect(woldeokItems).toHaveLength(1);
   });
 
-  it("does not repeat shinsal label at the start of description", () => {
+  it("renders shinsal items as narrative sentences", () => {
     const report = getFixtureReport();
     const section = findSection(report, "SHINSAL");
     const block = section.blocks.find((item) => item.kind === "BULLET_LIST");
@@ -137,10 +139,15 @@ describe("report output fixture", () => {
     }
 
     expect(block.itemsKo).toContain(
-      "현침살: 예리한 관찰력과 날카로운 표현 감각으로 해석할 수 있는 신호입니다.",
+      "현침살이 보여, 남들이 놓치는 작은 차이를 빠르게 포착하는 예리함이 드러납니다.",
     );
-    expect(block.itemsKo).not.toContain(
-      "현침살: 현침살은 예리한 관찰력과 날카로운 표현 감각으로 해석할 수 있는 신호입니다.",
+    expect(block.itemsKo.some((item) => item.includes("현침살: 현침살은"))).toBe(
+      false,
+    );
+    expect(block.itemsKo.some((item) => item.startsWith("현침살:"))).toBe(false);
+    expect(block.itemsKo.some((item) => item.startsWith("홍염살:"))).toBe(false);
+    expect(block.itemsKo.some((item) => item.startsWith("월덕귀인:"))).toBe(
+      false,
     );
   });
 

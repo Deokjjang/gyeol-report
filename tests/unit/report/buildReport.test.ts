@@ -97,35 +97,6 @@ function collectReportText(report: ReturnType<typeof buildReport>): string[] {
   return values;
 }
 
-function dedupeByCode<T extends { code: string }>(items: readonly T[]): T[] {
-  const seen = new Set<string>();
-  const result: T[] = [];
-
-  for (const item of items) {
-    if (seen.has(item.code)) {
-      continue;
-    }
-    seen.add(item.code);
-    result.push(item);
-  }
-
-  return result;
-}
-
-function removeLeadingLabelForTest(text: string, label: string): string {
-  const prefix = `${label}은 `;
-  const alternatePrefix = `${label}는 `;
-
-  if (text.startsWith(prefix)) {
-    return text.slice(prefix.length);
-  }
-  if (text.startsWith(alternatePrefix)) {
-    return text.slice(alternatePrefix.length);
-  }
-
-  return text;
-}
-
 describe("buildReport", () => {
   it("builds basic report output", () => {
     const report = buildReport(createReportInput());
@@ -349,29 +320,21 @@ describe("buildReport", () => {
   });
 
   it("renders shinsal section from shinsal tags", () => {
-    const input = createReportInput();
-    const report = buildReport(input);
+    const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "SHINSAL");
-    const shinsalLabels = dedupeByCode(
-      input.sajuTags.filter((tag) => tag.category === "SHINSAL"),
-    )
-      .map(
-        (tag) =>
-          `${tag.labelKo}: ${removeLeadingLabelForTest(
-            tag.descriptionKo,
-            tag.labelKo,
-          )}`,
-      );
 
     expect(section).toBeDefined();
     expect(section?.level).toBe("PAID_FULL");
     expect(section?.titleKo).toBe("신살·귀인");
-    if (shinsalLabels.length > 0) {
-      expect(section?.blocks[0]?.kind).toBe("BULLET_LIST");
-      expect(section?.blocks[0]?.itemsKo).toEqual(shinsalLabels);
-    } else {
-      expect(section?.blocks[0]?.kind).toBe("PARAGRAPH");
-    }
+    expect(section?.blocks[0]?.kind).toBe("BULLET_LIST");
+    expect(section?.blocks[0]?.itemsKo).toEqual(
+      expect.arrayContaining([
+        "현침살이 보여, 남들이 놓치는 작은 차이를 빠르게 포착하는 예리함이 드러납니다.",
+        "홍염살은 은근히 시선이 가는 매력과 감정 표현의 존재감을 더합니다.",
+        "월덕귀인은 관계 안에서 분위기를 부드럽게 만들고 갈등을 완충하는 힘으로 읽을 수 있습니다.",
+        "천덕귀인은 안정감과 보호적 흐름이 더해져 위기에서 급격히 흔들리지 않도록 돕는 신호입니다.",
+      ]),
+    );
   });
 
   it("uses Korean position labels in the relations section", () => {
