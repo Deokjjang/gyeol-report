@@ -39,12 +39,41 @@ const SAJU_TAG_DISPLAY_LABELS: Readonly<Record<string, string>> = {
   WEAK_DAYMASTER_WITH_STRONG_WEALTH: "재다신약 후보",
 };
 
+const PILLAR_POSITION_LABELS: Readonly<Record<string, string>> = {
+  year: "년주",
+  month: "월주",
+  day: "일주",
+  hour: "시주",
+};
+
 function formatSajuTagLabel(value: string): string {
   return SAJU_TAG_DISPLAY_LABELS[value] ?? value;
 }
 
 function formatScore(value: number): string {
   return Number.isInteger(value) ? String(value) : value.toFixed(1);
+}
+
+function formatPositionPair(value: string): string {
+  const [left, right] = value.split("-");
+
+  return `${PILLAR_POSITION_LABELS[left] ?? left}와 ${
+    PILLAR_POSITION_LABELS[right] ?? right
+  }`;
+}
+
+function formatRelationItem(
+  labelKo: string,
+  value: string,
+  signalKo: string,
+): string {
+  const [positionPair, relationPair] = value.split(":");
+
+  if (!positionPair || !relationPair) {
+    return `${labelKo}: ${value}`;
+  }
+
+  return `${labelKo}: ${formatPositionPair(positionPair)} 사이의 ${relationPair} ${signalKo} 신호`;
 }
 
 function dedupeTagsByCode<T extends { code: string }>(tags: readonly T[]): T[] {
@@ -204,9 +233,15 @@ function createShinsalBlock(input: ReportInput): ReportBlock {
 function createRelationsBlock(input: ReportInput): ReportBlock {
   const { relations } = input.saju;
   const itemsKo = [
-    ...relations.stemCombinations.map((value) => `천간합: ${value}`),
-    ...relations.branchCombinations.map((value) => `지지합: ${value}`),
-    ...relations.branchClashes.map((value) => `지지충: ${value}`),
+    ...relations.stemCombinations.map((value) =>
+      formatRelationItem("천간합", value, "합"),
+    ),
+    ...relations.branchCombinations.map((value) =>
+      formatRelationItem("지지합", value, "합"),
+    ),
+    ...relations.branchClashes.map((value) =>
+      formatRelationItem("지지충", value, "충"),
+    ),
   ];
 
   if (itemsKo.length > 0) {
