@@ -10,7 +10,8 @@ export type ShinsalCategory =
   | "MOVEMENT"
   | "RELATION"
   | "WARNING"
-  | "STRUCTURAL";
+  | "STRUCTURAL"
+  | "TWELVE_SHINSAL";
 
 export type ShinsalSeverity = "INFO" | "LOW" | "MEDIUM" | "HIGH";
 
@@ -31,7 +32,19 @@ export type ShinsalCode =
   | "MUN_CHANG_GWIIN"
   | "HAK_DANG_GWIIN"
   | "WOL_DEOK_GWIIN"
-  | "CHEON_DEOK_GWIIN";
+  | "CHEON_DEOK_GWIIN"
+  | "TWELVE_GEOPSAL"
+  | "TWELVE_JAESAL"
+  | "TWELVE_CHEONSAL"
+  | "TWELVE_JISAL"
+  | "TWELVE_NYEONSAL"
+  | "TWELVE_WOLSAL"
+  | "TWELVE_MANGSINSAL"
+  | "TWELVE_JANGSEONGSAL"
+  | "TWELVE_BANANSAL"
+  | "TWELVE_YEOKMASAL"
+  | "TWELVE_YUKHAESAL"
+  | "TWELVE_HWAGAE";
 
 export type ShinsalRuleTarget = HeavenlyStem | Branch;
 
@@ -54,6 +67,12 @@ export type ShinsalDetectionBasis =
   | {
       kind: "MONTH_BRANCH_TO_BRANCH";
       monthBranch: Branch;
+      matchedBranch: Branch;
+    }
+  | {
+      kind: "BRANCH_GROUP_TO_BRANCH";
+      reference: "YEAR_BRANCH" | "DAY_BRANCH";
+      referenceBranch: Branch;
       matchedBranch: Branch;
     }
   | {
@@ -130,6 +149,11 @@ export type ShinsalRuleSource =
     }
   | {
       kind: "MONTH_BRANCH_TO_BRANCH";
+      table: BranchSetByBranch;
+    }
+  | {
+      kind: "BRANCH_GROUP_TO_BRANCH";
+      reference: "YEAR_BRANCH" | "DAY_BRANCH";
       table: BranchSetByBranch;
     }
   | {

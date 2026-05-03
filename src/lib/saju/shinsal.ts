@@ -149,6 +149,31 @@ function createMonthBranchToBranchDetection(
   });
 }
 
+function createBranchGroupToBranchDetection(
+  rule: ShinsalRuleDefinition,
+  entry: OrderedPillar,
+  reference: "YEAR_BRANCH" | "DAY_BRANCH",
+  referenceBranch: EarthlyBranch,
+  branch: EarthlyBranch,
+): ShinsalDetection {
+  return createDetection({
+    rule,
+    position: entry.position,
+    basis: {
+      kind: "BRANCH_GROUP_TO_BRANCH",
+      reference,
+      referenceBranch,
+      matchedBranch: branch,
+    },
+    evidence: [
+      "source:BRANCH_GROUP_TO_BRANCH",
+      `reference:${reference}`,
+      `referenceBranch:${referenceBranch}`,
+      `branch:${branch}`,
+    ],
+  });
+}
+
 function createStemBranchPairDetection(
   rule: ShinsalRuleDefinition,
   entry: OrderedPillar,
@@ -292,6 +317,32 @@ function matchRule(
               rule,
               entry,
               monthBranch,
+              branch,
+            ),
+          );
+        }
+      }
+
+      return detections;
+    }
+
+    case "BRANCH_GROUP_TO_BRANCH": {
+      const referenceBranch =
+        rule.source.reference === "YEAR_BRANCH"
+          ? pillars.year.branch
+          : pillars.day.branch;
+      const targetBranches = rule.source.table[referenceBranch];
+
+      for (const entry of entries) {
+        const branch = entry.pillar.branch;
+
+        if (targetBranches.includes(branch)) {
+          detections.push(
+            createBranchGroupToBranchDetection(
+              rule,
+              entry,
+              rule.source.reference,
+              referenceBranch,
               branch,
             ),
           );
