@@ -97,6 +97,21 @@ function collectReportText(report: ReturnType<typeof buildReport>): string[] {
   return values;
 }
 
+function dedupeByCode<T extends { code: string }>(items: readonly T[]): T[] {
+  const seen = new Set<string>();
+  const result: T[] = [];
+
+  for (const item of items) {
+    if (seen.has(item.code)) {
+      continue;
+    }
+    seen.add(item.code);
+    result.push(item);
+  }
+
+  return result;
+}
+
 describe("buildReport", () => {
   it("builds basic report output", () => {
     const report = buildReport(createReportInput());
@@ -269,8 +284,9 @@ describe("buildReport", () => {
     const input = createReportInput();
     const report = buildReport(input);
     const section = report.sections.find((item) => item.id === "SHINSAL");
-    const shinsalLabels = input.sajuTags
-      .filter((tag) => tag.category === "SHINSAL")
+    const shinsalLabels = dedupeByCode(
+      input.sajuTags.filter((tag) => tag.category === "SHINSAL"),
+    )
       .map((tag) => `${tag.labelKo}: ${tag.descriptionKo}`);
 
     expect(section).toBeDefined();

@@ -109,6 +109,23 @@ describe("report output fixture", () => {
     expect(text).toContain("천덕귀인");
   });
 
+  it("deduplicates repeated shinsal labels in fixture output", () => {
+    const report = getFixtureReport();
+    const section = findSection(report, "SHINSAL");
+    const block = section.blocks.find((item) => item.kind === "BULLET_LIST");
+
+    expect(block?.kind).toBe("BULLET_LIST");
+    if (block?.kind !== "BULLET_LIST") {
+      throw new Error("missing shinsal bullet list");
+    }
+
+    const woldeokItems = block.itemsKo?.filter((item) =>
+      item.startsWith("월덕귀인:"),
+    );
+
+    expect(woldeokItems).toHaveLength(1);
+  });
+
   it("includes saju mbti suggestion section", () => {
     const report = getFixtureReport();
     const section = findSection(report, "SAJU_MBTI_SUGGESTION");

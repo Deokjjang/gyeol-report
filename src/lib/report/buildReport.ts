@@ -47,6 +47,21 @@ function formatScore(value: number): string {
   return Number.isInteger(value) ? String(value) : value.toFixed(1);
 }
 
+function dedupeTagsByCode<T extends { code: string }>(tags: readonly T[]): T[] {
+  const seen = new Set<string>();
+  const result: T[] = [];
+
+  for (const tag of tags) {
+    if (seen.has(tag.code)) {
+      continue;
+    }
+    seen.add(tag.code);
+    result.push(tag);
+  }
+
+  return result;
+}
+
 function createSajuCoreBlock(input: ReportInput): ReportBlock {
   const { pillars } = input.saju;
 
@@ -132,8 +147,8 @@ function createAdvancedPatternsBlock(input: ReportInput): ReportBlock {
 }
 
 function createShinsalBlock(input: ReportInput): ReportBlock {
-  const itemsKo = input.sajuTags
-    .filter((tag) => tag.category === "SHINSAL")
+  const shinsalTags = input.sajuTags.filter((tag) => tag.category === "SHINSAL");
+  const itemsKo = dedupeTagsByCode(shinsalTags)
     .map((tag) => `${tag.labelKo}: ${tag.descriptionKo}`);
 
   if (itemsKo.length > 0) {
