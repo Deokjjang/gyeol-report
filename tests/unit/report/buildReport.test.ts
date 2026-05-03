@@ -354,6 +354,17 @@ describe("buildReport", () => {
     }
   });
 
+  it("uses Korean position labels in the relations section", () => {
+    const report = buildReport(createReportInput());
+    const section = report.sections.find((item) => item.id === "RELATIONS");
+    const text = JSON.stringify(section);
+
+    expect(text).toContain("지지합: 년주와 시주 사이의 辰酉 합 신호");
+    expect(text).toContain("지지충: 월주와 일주 사이의 寅申 충 신호");
+    expect(text).not.toContain("year-hour");
+    expect(text).not.toContain("month-day");
+  });
+
   it("uses bridge signals in the bridge section", () => {
     const input = createReportInput();
     const report = buildReport(input);

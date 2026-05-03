@@ -166,6 +166,19 @@ describe("report output fixture", () => {
     expect(text).toContain("현실 책임과 성과 압박");
   });
 
+  it("uses Korean relation labels and avoids internal position notation", () => {
+    const report = getFixtureReport();
+    const section = findSection(report, "RELATIONS");
+    const text = collectSectionText(section);
+
+    expect(text).toContain("지지합: 년주와 시주 사이의 辰酉 합 신호");
+    expect(text).toContain("지지충: 월주와 일주 사이의 寅申 충 신호");
+    expect(text).not.toContain("year-hour");
+    expect(text).not.toContain("month-day");
+    expect(text).not.toContain("year-month");
+    expect(text).not.toContain("month-hour");
+  });
+
   it("includes safety and suggestion notices", () => {
     const report = getFixtureReport();
 
