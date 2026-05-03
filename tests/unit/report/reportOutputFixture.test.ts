@@ -130,6 +130,21 @@ describe("report output fixture", () => {
     );
   });
 
+  it("uses normalized display text instead of raw display codes", () => {
+    const report = getFixtureReport();
+    const text = JSON.stringify(report);
+
+    expect(text).toContain("화 기운 강함");
+    expect(text).toContain("금 기운 강함");
+    expect(text).toContain("수 기운 약함");
+    expect(text).not.toContain("FIRE_STRONG");
+    expect(text).not.toContain("METAL_STRONG");
+    expect(text).not.toContain("WATER_WEAK");
+    expect(text).not.toContain("TEN_GOD_OUTPUT_STRONG");
+    expect(text).not.toContain("OFFICER_PRESSURE_HIGH");
+    expect(text).not.toContain("WEALTH_OVERLOAD");
+  });
+
   it("avoids forbidden wording in serialized output", () => {
     const report = getFixtureReport();
     const text = JSON.stringify(report);

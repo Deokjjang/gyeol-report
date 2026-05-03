@@ -193,6 +193,19 @@ describe("buildReport", () => {
     expect(section?.blocks[0]?.bodyKo).toBe(`${input.saju.dayMaster} 일간`);
   });
 
+  it("uses display labels in the elements section", () => {
+    const report = buildReport(createReportInput());
+    const section = report.sections.find((item) => item.id === "ELEMENTS");
+    const text = JSON.stringify(section);
+
+    expect(text).toContain("화 기운 강함");
+    expect(text).toContain("금 기운 강함");
+    expect(text).toContain("수 기운 약함");
+    expect(text).not.toContain("FIRE_STRONG");
+    expect(text).not.toContain("METAL_STRONG");
+    expect(text).not.toContain("WATER_WEAK");
+  });
+
   it("uses deterministic key order for Ten Gods", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "TEN_GODS");
@@ -212,6 +225,17 @@ describe("buildReport", () => {
     ]);
   });
 
+  it("formats Ten God scores cleanly", () => {
+    const report = buildReport(createReportInput());
+    const section = report.sections.find((item) => item.id === "TEN_GODS");
+    const text = JSON.stringify(section);
+
+    expect(text).not.toContain("0.7999999999999999");
+    expect(section?.blocks[0]?.keyValues).toEqual(
+      expect.arrayContaining([{ keyKo: "식신", valueKo: "0.8" }]),
+    );
+  });
+
   it("uses advanced tags in the advanced pattern section", () => {
     const input = createReportInput();
     const report = buildReport(input);
@@ -228,6 +252,17 @@ describe("buildReport", () => {
     } else {
       expect(section?.blocks[0]?.kind).toBe("PARAGRAPH");
     }
+  });
+
+  it("uses Korean labels in the advanced pattern section", () => {
+    const report = buildReport(createReportInput());
+    const section = report.sections.find(
+      (item) => item.id === "ADVANCED_PATTERNS",
+    );
+    const text = JSON.stringify(section);
+
+    expect(text).toContain("관살혼잡 후보");
+    expect(text).not.toContain("MIXED_OFFICER_KILLING_STRUCTURE");
   });
 
   it("renders shinsal section from shinsal tags", () => {
