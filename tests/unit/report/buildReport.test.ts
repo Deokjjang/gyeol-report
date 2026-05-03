@@ -337,6 +337,22 @@ describe("buildReport", () => {
     );
   });
 
+  it("renders Twelve Shinsal narrative text", () => {
+    const report = buildReport(createReportInput());
+    const section = report.sections.find((item) => item.id === "SHINSAL");
+    const text = JSON.stringify(section);
+
+    expect(text).toContain(
+      "지살은 활동 반경이 넓어지고 환경을 바꾸며 기회를 찾는 흐름을 보여줍니다.",
+    );
+    expect(text).toContain(
+      "역마살은 이동과 변화 속에서 에너지가 살아나고 활동 반경이 넓어지는 흐름을 보여줍니다.",
+    );
+    expect(text).toContain(
+      "화개살은 혼자 깊이 몰입하고 의미를 정리하는 과정에서 내면의 깊이가 살아나는 흐름을 보여줍니다.",
+    );
+  });
+
   it("uses Korean position labels in the relations section", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "RELATIONS");

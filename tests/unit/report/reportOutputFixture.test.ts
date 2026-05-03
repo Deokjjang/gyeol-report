@@ -118,6 +118,31 @@ describe("report output fixture", () => {
     expect(twelveTerms.some((term) => text.includes(term))).toBe(true);
   });
 
+  it("shows Twelve Shinsal narrative text in the shinsal section", () => {
+    const report = getFixtureReport();
+    const section = findSection(report, "SHINSAL");
+    const text = collectSectionText(section);
+    const narrativePhrases = [
+      "역마살은 이동과 변화 속에서 에너지가 살아나고 활동 반경이 넓어지는 흐름을 보여줍니다.",
+      "화개살은 혼자 깊이 몰입하고 의미를 정리하는 과정에서 내면의 깊이가 살아나는 흐름을 보여줍니다.",
+    ];
+
+    expect(narrativePhrases.some((phrase) => text.includes(phrase))).toBe(
+      true,
+    );
+  });
+
+  it("does not use fallback colon style for Twelve Shinsal output", () => {
+    const report = getFixtureReport();
+    const section = findSection(report, "SHINSAL");
+    const text = collectSectionText(section);
+
+    expect(text).not.toContain("반안살:");
+    expect(text).not.toContain("화개살:");
+    expect(text).not.toContain("장성살:");
+    expect(text).not.toContain("재살:");
+  });
+
   it("does not expose raw Twelve Shinsal codes in fixture output", () => {
     const report = getFixtureReport();
     const text = JSON.stringify(report);
