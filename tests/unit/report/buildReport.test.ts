@@ -112,6 +112,20 @@ function dedupeByCode<T extends { code: string }>(items: readonly T[]): T[] {
   return result;
 }
 
+function removeLeadingLabelForTest(text: string, label: string): string {
+  const prefix = `${label}은 `;
+  const alternatePrefix = `${label}는 `;
+
+  if (text.startsWith(prefix)) {
+    return text.slice(prefix.length);
+  }
+  if (text.startsWith(alternatePrefix)) {
+    return text.slice(alternatePrefix.length);
+  }
+
+  return text;
+}
+
 describe("buildReport", () => {
   it("builds basic report output", () => {
     const report = buildReport(createReportInput());
@@ -341,7 +355,13 @@ describe("buildReport", () => {
     const shinsalLabels = dedupeByCode(
       input.sajuTags.filter((tag) => tag.category === "SHINSAL"),
     )
-      .map((tag) => `${tag.labelKo}: ${tag.descriptionKo}`);
+      .map(
+        (tag) =>
+          `${tag.labelKo}: ${removeLeadingLabelForTest(
+            tag.descriptionKo,
+            tag.labelKo,
+          )}`,
+      );
 
     expect(section).toBeDefined();
     expect(section?.level).toBe("PAID_FULL");

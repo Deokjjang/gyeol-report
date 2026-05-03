@@ -126,6 +126,24 @@ describe("report output fixture", () => {
     expect(woldeokItems).toHaveLength(1);
   });
 
+  it("does not repeat shinsal label at the start of description", () => {
+    const report = getFixtureReport();
+    const section = findSection(report, "SHINSAL");
+    const block = section.blocks.find((item) => item.kind === "BULLET_LIST");
+
+    expect(block?.kind).toBe("BULLET_LIST");
+    if (block?.kind !== "BULLET_LIST") {
+      throw new Error("missing shinsal bullet list");
+    }
+
+    expect(block.itemsKo).toContain(
+      "현침살: 예리한 관찰력과 날카로운 표현 감각으로 해석할 수 있는 신호입니다.",
+    );
+    expect(block.itemsKo).not.toContain(
+      "현침살: 현침살은 예리한 관찰력과 날카로운 표현 감각으로 해석할 수 있는 신호입니다.",
+    );
+  });
+
   it("includes saju mbti suggestion section", () => {
     const report = getFixtureReport();
     const section = findSection(report, "SAJU_MBTI_SUGGESTION");

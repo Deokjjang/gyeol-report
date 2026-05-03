@@ -76,6 +76,20 @@ function formatRelationItem(
   return `${labelKo}: ${formatPositionPair(positionPair)} 사이의 ${relationPair} ${signalKo} 신호`;
 }
 
+function removeLeadingLabel(text: string, label: string): string {
+  const prefix = `${label}은 `;
+  const alternatePrefix = `${label}는 `;
+
+  if (text.startsWith(prefix)) {
+    return text.slice(prefix.length);
+  }
+  if (text.startsWith(alternatePrefix)) {
+    return text.slice(alternatePrefix.length);
+  }
+
+  return text;
+}
+
 function dedupeTagsByCode<T extends { code: string }>(tags: readonly T[]): T[] {
   const seen = new Set<string>();
   const result: T[] = [];
@@ -214,7 +228,10 @@ function createAdvancedPatternsBlock(input: ReportInput): ReportBlock {
 function createShinsalBlock(input: ReportInput): ReportBlock {
   const shinsalTags = input.sajuTags.filter((tag) => tag.category === "SHINSAL");
   const itemsKo = dedupeTagsByCode(shinsalTags)
-    .map((tag) => `${tag.labelKo}: ${tag.descriptionKo}`);
+    .map(
+      (tag) =>
+        `${tag.labelKo}: ${removeLeadingLabel(tag.descriptionKo, tag.labelKo)}`,
+    );
 
   if (itemsKo.length > 0) {
     return {
