@@ -36,6 +36,19 @@ describe("shinsal tag extraction", () => {
     expect(codes).toContain("SHINSAL_CHEON_DEOK_GWIIN");
   });
 
+  it("emits Twelve Shinsal tag codes in the Shinsal category", () => {
+    const result = calculateSaju(knownTimeInput);
+    const tags = extractSajuTags(result);
+    const twelveShinsalTags = tags.filter((tag) =>
+      tag.code.startsWith("SHINSAL_TWELVE_"),
+    );
+
+    expect(twelveShinsalTags.length).toBeGreaterThan(0);
+    expect(twelveShinsalTags.every((tag) => tag.category === "SHINSAL")).toBe(
+      true,
+    );
+  });
+
   it("preserves detection labels and descriptions", () => {
     const result = calculateSaju(knownTimeInput);
     const tags = extractSajuTags(result);

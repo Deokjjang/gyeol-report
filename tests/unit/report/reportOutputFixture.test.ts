@@ -109,6 +109,23 @@ describe("report output fixture", () => {
     expect(text).toContain("천덕귀인");
   });
 
+  it("shows Twelve Shinsal terms in the shinsal section", () => {
+    const report = getFixtureReport();
+    const section = findSection(report, "SHINSAL");
+    const text = collectSectionText(section);
+    const twelveTerms = ["반안살", "재살", "장성살", "역마살", "화개살"];
+
+    expect(twelveTerms.some((term) => text.includes(term))).toBe(true);
+  });
+
+  it("does not expose raw Twelve Shinsal codes in fixture output", () => {
+    const report = getFixtureReport();
+    const text = JSON.stringify(report);
+
+    expect(text).not.toContain("TWELVE_");
+    expect(text).not.toContain("SHINSAL_TWELVE_");
+  });
+
   it("deduplicates repeated shinsal labels in fixture output", () => {
     const report = getFixtureReport();
     const section = findSection(report, "SHINSAL");

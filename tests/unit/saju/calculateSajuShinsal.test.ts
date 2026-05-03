@@ -41,6 +41,23 @@ describe("calculateSaju shinsal integration", () => {
     expect(codes).toContain("CHEON_DEOK_GWIIN");
   });
 
+  it("includes Twelve Shinsal detections for known-time calculation", () => {
+    const result = calculateSaju(knownTimeInput);
+    const codes = result.shinsal.map((item) => item.code);
+    const expectedTwelveCodes = [
+      "TWELVE_BANANSAL",
+      "TWELVE_JAESAL",
+      "TWELVE_JANGSEONGSAL",
+      "TWELVE_YEOKMASAL",
+      "TWELVE_HWAGAE",
+    ] as const;
+
+    expect(codes.some((code) => code.startsWith("TWELVE_"))).toBe(true);
+    expect(expectedTwelveCodes.some((code) => codes.includes(code))).toBe(
+      true,
+    );
+  });
+
   it("includes hour-based detection for known-time calculation", () => {
     const result = calculateSaju(knownTimeInput);
 
