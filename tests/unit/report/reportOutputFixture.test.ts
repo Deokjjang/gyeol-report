@@ -154,6 +154,18 @@ describe("report output fixture", () => {
     ).toBe(false);
   });
 
+  it("includes core interpretation text in fixture output", () => {
+    const report = getFixtureReport();
+    const text = JSON.stringify(report);
+
+    expect(text).toContain("일간 해석");
+    expect(text).toContain("오행 흐름");
+    expect(text).toContain("십성 흐름");
+    expect(text).toContain("속도 조절과 감정 소모 관리");
+    expect(text).toContain("감정 회복·휴식·유연한 조율");
+    expect(text).toContain("현실 책임과 성과 압박");
+  });
+
   it("includes safety and suggestion notices", () => {
     const report = getFixtureReport();
 

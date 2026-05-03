@@ -208,6 +208,24 @@ describe("buildReport", () => {
     expect(section?.blocks[0]?.bodyKo).toBe(`${input.saju.dayMaster} 일간`);
   });
 
+  it("adds interpretation paragraph to the day master section", () => {
+    const report = buildReport(createReportInput());
+    const section = report.sections.find((item) => item.id === "DAY_MASTER");
+    const text = JSON.stringify(section);
+
+    expect(section?.blocks.some((block) => block.kind === "HIGHLIGHT")).toBe(
+      true,
+    );
+    expect(
+      section?.blocks.some(
+        (block) => block.kind === "PARAGRAPH" && block.titleKo === "일간 해석",
+      ),
+    ).toBe(true);
+    expect(text).toContain(
+      "丙 일간은 밝게 드러나는 화의 성질을 기준으로 자신을 표현합니다.",
+    );
+  });
+
   it("uses display labels in the elements section", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "ELEMENTS");
@@ -219,6 +237,24 @@ describe("buildReport", () => {
     expect(text).not.toContain("FIRE_STRONG");
     expect(text).not.toContain("METAL_STRONG");
     expect(text).not.toContain("WATER_WEAK");
+  });
+
+  it("adds flow paragraph to the elements section", () => {
+    const report = buildReport(createReportInput());
+    const section = report.sections.find((item) => item.id === "ELEMENTS");
+    const text = JSON.stringify(section);
+
+    expect(section?.blocks.some((block) => block.kind === "BULLET_LIST")).toBe(
+      true,
+    );
+    expect(
+      section?.blocks.some(
+        (block) => block.kind === "PARAGRAPH" && block.titleKo === "오행 흐름",
+      ),
+    ).toBe(true);
+    expect(text).toContain(
+      "화와 금의 신호가 비교적 두드러지고, 수 기운은 약하게 표시됩니다.",
+    );
   });
 
   it("uses deterministic key order for Ten Gods", () => {
@@ -248,6 +284,24 @@ describe("buildReport", () => {
     expect(text).not.toContain("0.7999999999999999");
     expect(section?.blocks[0]?.keyValues).toEqual(
       expect.arrayContaining([{ keyKo: "식신", valueKo: "0.8" }]),
+    );
+  });
+
+  it("adds interpretation paragraph to the Ten Gods section", () => {
+    const report = buildReport(createReportInput());
+    const section = report.sections.find((item) => item.id === "TEN_GODS");
+    const text = JSON.stringify(section);
+
+    expect(section?.blocks.some((block) => block.kind === "KEY_VALUE")).toBe(
+      true,
+    );
+    expect(
+      section?.blocks.some(
+        (block) => block.kind === "PARAGRAPH" && block.titleKo === "십성 흐름",
+      ),
+    ).toBe(true);
+    expect(text).toContain(
+      "편인과 비견의 점수가 상대적으로 높게 나타나 자기 기준, 학습성, 독립적 판단이 강하게 작동할 수 있습니다.",
     );
   });
 
