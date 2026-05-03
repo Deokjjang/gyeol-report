@@ -16,6 +16,12 @@ const knownTimeInput: SajuCalcInput = {
   timezone: "Asia/Seoul",
 };
 
+const mbtiSuggestionNotice =
+  "입력한 MBTI는 사용자의 자기보고 정보로 존중하며, 사주 기반 제안은 보조 해석으로만 사용합니다.";
+
+const unresolvedMbtiSuggestionSummary =
+  "현재 사주 태그만으로는 MBTI 축을 충분히 좁히기 어렵습니다.";
+
 const forbiddenWords = [
   "무조" + "건",
   "반드" + "시",
@@ -276,6 +282,48 @@ describe("buildReport", () => {
       "중복 알림",
       "출생정보와 해석 결과는 자기이해용 참고자료입니다.",
     ]);
+  });
+
+  it("forwards mbti suggestion notices", () => {
+    const report = buildReport({
+      ...createReportInput(),
+      mbtiSuggestion: {
+        userType: "ENTJ",
+        axisSuggestions: [],
+        comparison: {
+          userType: "ENTJ",
+          direction: "UNRESOLVED",
+          matchingAxes: [],
+          tensionAxes: [],
+          summaryKo: unresolvedMbtiSuggestionSummary,
+        },
+        notices: [mbtiSuggestionNotice],
+      },
+    });
+
+    expect(report.notices).toContain(mbtiSuggestionNotice);
+  });
+
+  it("deduplicates mbti suggestion notices", () => {
+    const report = buildReport({
+      ...createReportInput(),
+      mbtiSuggestion: {
+        userType: "ENTJ",
+        axisSuggestions: [],
+        comparison: {
+          userType: "ENTJ",
+          direction: "UNRESOLVED",
+          matchingAxes: [],
+          tensionAxes: [],
+          summaryKo: unresolvedMbtiSuggestionSummary,
+        },
+        notices: [mbtiSuggestionNotice, mbtiSuggestionNotice],
+      },
+    });
+
+    expect(
+      report.notices.filter((item) => item === mbtiSuggestionNotice),
+    ).toHaveLength(1);
   });
 
   it("includes disclaimer as warning", () => {

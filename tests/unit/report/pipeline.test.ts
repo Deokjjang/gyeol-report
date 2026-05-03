@@ -14,6 +14,9 @@ const validRawInput: ReportRequestRawInput = {
   mbtiType: "ENTJ",
 };
 
+const mbtiSuggestionNotice =
+  "입력한 MBTI는 사용자의 자기보고 정보로 존중하며, 사주 기반 제안은 보조 해석으로만 사용합니다.";
+
 function getSuccessfulReport(raw: ReportRequestRawInput) {
   const result = createReportFromRawInput(raw);
 
@@ -63,6 +66,15 @@ describe("createReportFromRawInput", () => {
       expect(result.report.titleKo).toBe("결리포트");
       expect(result.report.subtitleKo).toBe("사주와 MBTI로 읽는 나의 결");
       expect(result.report.sections).toHaveLength(12);
+    }
+  });
+
+  it("includes MBTI suggestion notice in report output", () => {
+    const result = createReportFromRawInput(validRawInput);
+
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.report.notices).toContain(mbtiSuggestionNotice);
     }
   });
 
