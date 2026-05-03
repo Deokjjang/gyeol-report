@@ -77,6 +77,30 @@ const SHINSAL_NARRATIVE_TEXTS: Readonly<Record<string, string>> = {
     "월덕귀인은 관계 안에서 분위기를 부드럽게 만들고 갈등을 완충하는 힘으로 읽을 수 있습니다.",
   SHINSAL_CHEON_DEOK_GWIIN:
     "천덕귀인은 안정감과 보호적 흐름이 더해져 위기에서 급격히 흔들리지 않도록 돕는 신호입니다.",
+  SHINSAL_TWELVE_GEOPSAL:
+    "겁살은 외부 압박이나 급한 변화 앞에서 반응 속도와 방어 본능이 올라오는 흐름을 보여줍니다.",
+  SHINSAL_TWELVE_JAESAL:
+    "재살은 경쟁과 견제, 환경적 부담 속에서 스스로를 지키며 대응하는 방식을 보여줍니다.",
+  SHINSAL_TWELVE_CHEONSAL:
+    "천살은 개인의 의지만으로 움직이기보다 큰 흐름과 외부 조건을 읽는 감각을 더합니다.",
+  SHINSAL_TWELVE_JISAL:
+    "지살은 활동 반경이 넓어지고 환경을 바꾸며 기회를 찾는 흐름을 보여줍니다.",
+  SHINSAL_TWELVE_NYEONSAL:
+    "년살은 사람들과의 접점에서 주목을 받거나 인상이 강하게 남는 흐름을 더합니다.",
+  SHINSAL_TWELVE_WOLSAL:
+    "월살은 막힘을 느끼는 상황에서 관점을 바꾸고 다시 회복하는 방식을 보여줍니다.",
+  SHINSAL_TWELVE_MANGSINSAL:
+    "망신살은 사회적 노출과 평판에 민감하게 반응하며, 말과 행동의 파급력을 의식하게 만듭니다.",
+  SHINSAL_TWELVE_JANGSEONGSAL:
+    "장성살은 앞에서 이끌고 책임을 지려는 힘이 강해지는 흐름을 보여줍니다.",
+  SHINSAL_TWELVE_BANANSAL:
+    "반안살은 안정된 기반을 만들고 성취를 정리해 가려는 흐름을 보여줍니다.",
+  SHINSAL_TWELVE_YEOKMASAL:
+    "역마살은 이동과 변화 속에서 에너지가 살아나고 활동 반경이 넓어지는 흐름을 보여줍니다.",
+  SHINSAL_TWELVE_YUKHAESAL:
+    "육해살은 관계나 환경 속에서 소모가 생길 때 조율과 거리감이 중요해지는 흐름을 보여줍니다.",
+  SHINSAL_TWELVE_HWAGAE:
+    "화개살은 혼자 깊이 몰입하고 의미를 정리하는 과정에서 내면의 깊이가 살아나는 흐름을 보여줍니다.",
 };
 
 function formatSajuTagLabel(value: string): string {
