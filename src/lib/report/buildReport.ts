@@ -221,8 +221,16 @@ function createSajuMbtiSuggestionBlocks(input: ReportInput): ReportBlock[] {
       bodyKo: suggestion.comparison.summaryKo,
     },
   ];
+  const isHighTension = suggestion.comparison.tensionAxes.length >= 2;
 
-  if (suggestion.typeSuggestion) {
+  if (suggestion.typeSuggestion && isHighTension) {
+    blocks.push({
+      kind: "PARAGRAPH",
+      titleKo: "사주 기반 성향 후보",
+      bodyKo:
+        "입력한 MBTI와 다른 축이 여러 개 보여, 하나의 유형명으로 단정하기보다 축별 차이를 중심으로 보는 편이 적절합니다.",
+    });
+  } else if (suggestion.typeSuggestion) {
     blocks.push({
       kind: "KEY_VALUE",
       titleKo: "사주 기반 후보 유형",
