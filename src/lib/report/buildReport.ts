@@ -23,8 +23,28 @@ function unique(values: readonly string[]): string[] {
   return result;
 }
 
-function stringifyNumber(value: number): string {
-  return String(value);
+const SAJU_TAG_DISPLAY_LABELS: Readonly<Record<string, string>> = {
+  FIRE_STRONG: "화 기운 강함",
+  METAL_STRONG: "금 기운 강함",
+  WATER_WEAK: "수 기운 약함",
+  WATER_STRONG: "수 기운 강함",
+  EARTH_STRONG: "토 기운 강함",
+  YIN_HEAVY: "음 기운 우세",
+  YANG_HEAVY: "양 기운 우세",
+  TEN_GOD_OUTPUT_STRONG: "식상 강함",
+  TEN_GOD_RESOURCE_WEAK: "인성 약함",
+  WEALTH_OVERLOAD: "재성 과다 후보",
+  OFFICER_PRESSURE_HIGH: "관성 압박 후보",
+  BRANCH_CLASH_PRESENT: "지지충 신호",
+  WEAK_DAYMASTER_WITH_STRONG_WEALTH: "재다신약 후보",
+};
+
+function formatSajuTagLabel(value: string): string {
+  return SAJU_TAG_DISPLAY_LABELS[value] ?? value;
+}
+
+function formatScore(value: number): string {
+  return Number.isInteger(value) ? String(value) : value.toFixed(1);
 }
 
 function createSajuCoreBlock(input: ReportInput): ReportBlock {
@@ -56,7 +76,7 @@ function createSajuCoreBlock(input: ReportInput): ReportBlock {
 }
 
 function createElementsBlock(input: ReportInput): ReportBlock {
-  const { labels } = input.saju.elements;
+  const labels = input.saju.elements.labels.map(formatSajuTagLabel);
 
   if (labels.length > 0) {
     return {
@@ -78,16 +98,16 @@ function createTenGodsBlock(input: ReportInput): ReportBlock {
   return {
     kind: "KEY_VALUE",
     keyValues: [
-      { keyKo: "비견", valueKo: stringifyNumber(distribution.比肩) },
-      { keyKo: "겁재", valueKo: stringifyNumber(distribution.劫財) },
-      { keyKo: "식신", valueKo: stringifyNumber(distribution.食神) },
-      { keyKo: "상관", valueKo: stringifyNumber(distribution.傷官) },
-      { keyKo: "편재", valueKo: stringifyNumber(distribution.偏財) },
-      { keyKo: "정재", valueKo: stringifyNumber(distribution.正財) },
-      { keyKo: "편관", valueKo: stringifyNumber(distribution.偏官) },
-      { keyKo: "정관", valueKo: stringifyNumber(distribution.正官) },
-      { keyKo: "편인", valueKo: stringifyNumber(distribution.偏印) },
-      { keyKo: "정인", valueKo: stringifyNumber(distribution.正印) },
+      { keyKo: "비견", valueKo: formatScore(distribution.比肩) },
+      { keyKo: "겁재", valueKo: formatScore(distribution.劫財) },
+      { keyKo: "식신", valueKo: formatScore(distribution.食神) },
+      { keyKo: "상관", valueKo: formatScore(distribution.傷官) },
+      { keyKo: "편재", valueKo: formatScore(distribution.偏財) },
+      { keyKo: "정재", valueKo: formatScore(distribution.正財) },
+      { keyKo: "편관", valueKo: formatScore(distribution.偏官) },
+      { keyKo: "정관", valueKo: formatScore(distribution.正官) },
+      { keyKo: "편인", valueKo: formatScore(distribution.偏印) },
+      { keyKo: "정인", valueKo: formatScore(distribution.正印) },
     ],
   };
 }
@@ -95,7 +115,7 @@ function createTenGodsBlock(input: ReportInput): ReportBlock {
 function createAdvancedPatternsBlock(input: ReportInput): ReportBlock {
   const labels = input.sajuTags
     .filter((tag) => tag.category === "ADVANCED_PATTERN")
-    .map((tag) => tag.labelKo);
+    .map((tag) => formatSajuTagLabel(tag.labelKo || tag.code));
 
   if (labels.length > 0) {
     return {
