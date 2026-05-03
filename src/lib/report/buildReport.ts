@@ -167,6 +167,70 @@ function createBridgeBlock(input: ReportInput): ReportBlock {
   };
 }
 
+function createSajuMbtiSuggestionBlocks(input: ReportInput): ReportBlock[] {
+  const suggestion = input.mbtiSuggestion;
+
+  if (!suggestion) {
+    return [
+      {
+        kind: "PARAGRAPH",
+        bodyKo: "현재 기준에서 사주 기반 MBTI 보정 정보를 만들 수 없습니다.",
+      },
+    ];
+  }
+
+  const blocks: ReportBlock[] = [
+    {
+      kind: "HIGHLIGHT",
+      titleKo: "입력 MBTI와 사주 기반 후보 비교",
+      bodyKo: suggestion.comparison.summaryKo,
+    },
+  ];
+
+  if (suggestion.typeSuggestion) {
+    blocks.push({
+      kind: "KEY_VALUE",
+      titleKo: "사주 기반 후보 유형",
+      keyValues: [
+        {
+          keyKo: "후보 MBTI",
+          valueKo: suggestion.typeSuggestion.suggestedType,
+        },
+        {
+          keyKo: "신뢰도",
+          valueKo: suggestion.typeSuggestion.confidence,
+        },
+      ],
+    });
+  } else {
+    blocks.push({
+      kind: "PARAGRAPH",
+      titleKo: "후보 유형",
+      bodyKo: "현재 태그만으로는 하나의 MBTI 후보 유형까지 좁히지 않습니다.",
+    });
+  }
+
+  if (suggestion.axisSuggestions.length > 0) {
+    blocks.push({
+      kind: "BULLET_LIST",
+      titleKo: "축별 사주 신호",
+      itemsKo: suggestion.axisSuggestions.map(
+        (item) => `${item.axis} → ${item.suggestedSide}: ${item.summaryKo}`,
+      ),
+    });
+  }
+
+  if (suggestion.notices.length > 0) {
+    blocks.push({
+      kind: "BULLET_LIST",
+      titleKo: "해석 기준",
+      itemsKo: [...suggestion.notices],
+    });
+  }
+
+  return blocks;
+}
+
 export function buildReport(input: ReportInput): ReportOutput {
   const sections: ReportSection[] = [
     createSection({
@@ -268,6 +332,14 @@ export function buildReport(input: ReportInput): ReportOutput {
       summaryKo:
         "사주 구조와 MBTI 자기인식이 겹치거나 어긋나는 지점을 정리합니다.",
       blocks: [createBridgeBlock(input)],
+    }),
+    createSection({
+      id: "SAJU_MBTI_SUGGESTION",
+      level: "PAID_FULL",
+      titleKo: "사주 기반 MBTI 보정",
+      summaryKo:
+        "입력한 MBTI를 존중하되, 사주 구조에서 다르게 읽히는 성향 축이 있는지 비교합니다.",
+      blocks: createSajuMbtiSuggestionBlocks(input),
     }),
     createSection({
       id: "ACTION_GUIDE",

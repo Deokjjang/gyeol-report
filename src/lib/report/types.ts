@@ -15,6 +15,7 @@ export type ReportSectionId =
   | "RELATIONS"
   | "MBTI_PROFILE"
   | "SAJU_MBTI_BRIDGE"
+  | "SAJU_MBTI_SUGGESTION"
   | "ACTION_GUIDE"
   | "DISCLAIMER";
 

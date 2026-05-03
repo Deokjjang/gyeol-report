@@ -104,7 +104,7 @@ describe("buildReport", () => {
     expect(report.version).toBe("v1");
     expect(report.titleKo).toBe("결리포트");
     expect(report.subtitleKo).toBe("사주와 MBTI로 읽는 나의 결");
-    expect(report.sections).toHaveLength(12);
+    expect(report.sections).toHaveLength(13);
     expect(report.notices).toContain(
       "출생정보와 해석 결과는 자기이해용 참고자료입니다.",
     );
@@ -124,6 +124,7 @@ describe("buildReport", () => {
       "RELATIONS",
       "MBTI_PROFILE",
       "SAJU_MBTI_BRIDGE",
+      "SAJU_MBTI_SUGGESTION",
       "ACTION_GUIDE",
       "DISCLAIMER",
     ]);
@@ -145,6 +146,7 @@ describe("buildReport", () => {
     expect(levels.RELATIONS).toBe("PAID_FULL");
     expect(levels.MBTI_PROFILE).toBe("FREE_PREVIEW");
     expect(levels.SAJU_MBTI_BRIDGE).toBe("PAID_FULL");
+    expect(levels.SAJU_MBTI_SUGGESTION).toBe("PAID_FULL");
     expect(levels.ACTION_GUIDE).toBe("PAID_FULL");
     expect(levels.DISCLAIMER).toBe("FREE_PREVIEW");
   });
@@ -262,6 +264,73 @@ describe("buildReport", () => {
     } else {
       expect(section?.blocks[0]?.kind).toBe("PARAGRAPH");
     }
+  });
+
+  it("renders saju mbti suggestion section", () => {
+    const input = createReportInput();
+    const report = buildReport(input);
+    const section = report.sections.find(
+      (item) => item.id === "SAJU_MBTI_SUGGESTION",
+    );
+
+    expect(section).toBeDefined();
+    expect(section?.level).toBe("PAID_FULL");
+    expect(section?.titleKo).toBe("사주 기반 MBTI 보정");
+    expect(section?.summaryKo).toBe(
+      "입력한 MBTI를 존중하되, 사주 구조에서 다르게 읽히는 성향 축이 있는지 비교합니다.",
+    );
+    expect(section?.blocks[0]?.kind).toBe("PARAGRAPH");
+  });
+
+  it("renders saju mbti suggestion details when suggestion exists", () => {
+    const report = buildReport({
+      ...createReportInput(),
+      mbtiSuggestion: {
+        userType: "ENTJ",
+        axisSuggestions: [
+          {
+            axis: "EI",
+            suggestedSide: "E",
+            strength: "MEDIUM",
+            confidence: "MEDIUM",
+            titleKo: "표현성과 외향 흐름",
+            summaryKo: "생각과 감정을 밖으로 드러내는 흐름이 강해질 수 있습니다.",
+            evidence: [
+              {
+                sajuTagCode: "TEN_GOD_OUTPUT_STRONG",
+                reasonKo: "식상 강함",
+              },
+            ],
+          },
+        ],
+        typeSuggestion: {
+          suggestedType: "ENTJ",
+          confidence: "MEDIUM",
+          matchedAxes: ["EI", "SN", "TF", "JP"],
+          unresolvedAxes: [],
+          summaryKo:
+            "사주 구조에서 네 가지 MBTI 축을 모두 추정할 수 있어 하나의 후보 유형으로 정리했습니다.",
+        },
+        comparison: {
+          userType: "ENTJ",
+          suggestedType: "ENTJ",
+          direction: "MATCH",
+          matchingAxes: ["EI", "SN", "TF", "JP"],
+          tensionAxes: [],
+          summaryKo:
+            "입력한 MBTI와 사주 기반 성향 후보가 전반적으로 잘 맞습니다.",
+        },
+        notices: [mbtiSuggestionNotice],
+      },
+    });
+    const section = report.sections.find(
+      (item) => item.id === "SAJU_MBTI_SUGGESTION",
+    );
+    const blockKinds = section?.blocks.map((block) => block.kind) ?? [];
+
+    expect(blockKinds).toContain("HIGHLIGHT");
+    expect(blockKinds).toContain("KEY_VALUE");
+    expect(blockKinds).toContain("BULLET_LIST");
   });
 
   it("deduplicates notices", () => {
