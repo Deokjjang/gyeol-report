@@ -107,6 +107,15 @@ function createElementsBlock(input: ReportInput): ReportBlock {
   };
 }
 
+function createElementsInterpretationBlock(): ReportBlock {
+  return {
+    kind: "PARAGRAPH",
+    titleKo: "오행 흐름",
+    bodyKo:
+      "이 구조에서는 화와 금의 신호가 비교적 두드러지고, 수 기운은 약하게 표시됩니다. 추진력과 판단의 선명함은 장점이 될 수 있으나, 감정 회복·휴식·유연한 조율을 의식적으로 보완하는 편이 좋습니다.",
+  };
+}
+
 function createTenGodsBlock(input: ReportInput): ReportBlock {
   const { distribution } = input.saju.tenGods;
 
@@ -124,6 +133,33 @@ function createTenGodsBlock(input: ReportInput): ReportBlock {
       { keyKo: "편인", valueKo: formatScore(distribution.偏印) },
       { keyKo: "정인", valueKo: formatScore(distribution.正印) },
     ],
+  };
+}
+
+function createTenGodsInterpretationBlock(): ReportBlock {
+  return {
+    kind: "PARAGRAPH",
+    titleKo: "십성 흐름",
+    bodyKo:
+      "편인과 비견의 점수가 상대적으로 높게 나타나 자기 기준, 학습성, 독립적 판단이 강하게 작동할 수 있습니다. 재성과 관성도 함께 존재하므로 현실 책임과 성과 압박을 동시에 의식하는 구조로 볼 수 있습니다.",
+  };
+}
+
+function createDayMasterInterpretationBlock(input: ReportInput): ReportBlock {
+  if (input.saju.pillars.day.stem === "丙") {
+    return {
+      kind: "PARAGRAPH",
+      titleKo: "일간 해석",
+      bodyKo:
+        "丙 일간은 밝게 드러나는 화의 성질을 기준으로 자신을 표현합니다. 전체 구조에서는 추진력과 표현성이 장점으로 작동할 수 있지만, 주변 기운이 강할수록 속도 조절과 감정 소모 관리가 중요합니다.",
+    };
+  }
+
+  return {
+    kind: "PARAGRAPH",
+    titleKo: "일간 해석",
+    bodyKo:
+      "일간은 사주에서 나를 대표하는 기준점이며, 주변 기운과의 관계 속에서 성향과 대응 방식이 달라질 수 있습니다.",
   };
 }
 
@@ -308,6 +344,7 @@ export function buildReport(input: ReportInput): ReportOutput {
           titleKo: "일간",
           bodyKo: `${input.saju.dayMaster} 일간`,
         },
+        createDayMasterInterpretationBlock(input),
       ],
     }),
     createSection({
@@ -316,14 +353,14 @@ export function buildReport(input: ReportInput): ReportOutput {
       titleKo: "오행",
       summaryKo:
         "오행은 목·화·토·금·수의 분포를 통해 에너지의 방향을 봅니다.",
-      blocks: [createElementsBlock(input)],
+      blocks: [createElementsBlock(input), createElementsInterpretationBlock()],
     }),
     createSection({
       id: "TEN_GODS",
       level: "PAID_FULL",
       titleKo: "십성",
       summaryKo: "십성은 일간을 기준으로 관계되는 기운을 분류한 구조입니다.",
-      blocks: [createTenGodsBlock(input)],
+      blocks: [createTenGodsBlock(input), createTenGodsInterpretationBlock()],
     }),
     createSection({
       id: "ADVANCED_PATTERNS",
