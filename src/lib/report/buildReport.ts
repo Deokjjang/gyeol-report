@@ -308,6 +308,7 @@ export function buildReport(input: ReportInput): ReportOutput {
     sections,
     notices: unique([
       ...input.saju.notices,
+      ...(input.mbtiSuggestion?.notices ?? []),
       "출생정보와 해석 결과는 자기이해용 참고자료입니다.",
     ]),
   };

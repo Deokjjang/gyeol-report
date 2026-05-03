@@ -1,4 +1,5 @@
 import { evaluateSajuMbtiBridge } from "../bridge/evaluate";
+import { evaluateSajuMbtiSuggestion } from "../mbti/sajuSuggestion";
 import { getMbtiProfile } from "../mbti/types";
 import { calculateSaju } from "../saju/calculateSaju";
 import { extractSajuTags } from "../saju/extractTags";
@@ -39,6 +40,10 @@ export function createReportFromRawInput(
   const saju = calculateSaju(validation.value.sajuInput);
   const sajuTags = extractSajuTags(saju);
   const mbti = getMbtiProfile(validation.value.mbtiType);
+  const mbtiSuggestion = evaluateSajuMbtiSuggestion({
+    sajuTags,
+    userType: validation.value.mbtiType,
+  });
   const bridge = evaluateSajuMbtiBridge({
     sajuTags,
     mbtiProfile: mbti,
@@ -48,6 +53,7 @@ export function createReportFromRawInput(
     sajuTags,
     mbti,
     bridgeSignals: bridge.signals,
+    mbtiSuggestion,
   });
 
   return {

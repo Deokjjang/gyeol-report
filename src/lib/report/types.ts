@@ -1,4 +1,5 @@
 import type { BridgeSignal } from "../bridge/types";
+import type { SajuMbtiSuggestionResult } from "../mbti/sajuSuggestionTypes";
 import type { MbtiProfile } from "../mbti/types";
 import type { SajuTag } from "../saju/tags";
 import type { SajuCalcResult } from "../saju/types";
@@ -50,6 +51,7 @@ export type ReportInput = {
   sajuTags: readonly SajuTag[];
   mbti: MbtiProfile;
   bridgeSignals: readonly BridgeSignal[];
+  mbtiSuggestion?: SajuMbtiSuggestionResult;
 };
 
 export type ReportOutput = {
