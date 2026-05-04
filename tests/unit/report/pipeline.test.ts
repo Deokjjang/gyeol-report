@@ -69,6 +69,16 @@ describe("createReportFromRawInput", () => {
     }
   });
 
+  it("returns report for fixture with day pillar profile lookup integrated", () => {
+    const result = createReportFromRawInput(validRawInput);
+
+    expect(result.ok).toBe(true);
+    if (!result.ok) {
+      throw new Error("expected valid report");
+    }
+    expect(result.report.sections).toHaveLength(13);
+  });
+
   it("includes MBTI suggestion notice in report output", () => {
     const result = createReportFromRawInput(validRawInput);
 
@@ -90,6 +100,15 @@ describe("createReportFromRawInput", () => {
       { keyKo: "일주", valueKo: "丙申" },
       { keyKo: "시주", valueKo: "丁酉" },
     ]);
+  });
+
+  it("keeps fixture day pillar as Byeongsin", () => {
+    const report = getSuccessfulReport(validRawInput);
+    const section = findSection(report.sections, "SAJU_CORE");
+    const block = getFirstBlock(section);
+    const dayValue = block?.keyValues?.find((item) => item.keyKo === "일주");
+
+    expect(dayValue?.valueKo).toBe("丙申");
   });
 
   it("renders missing hour and notices for valid unknown-time input", () => {

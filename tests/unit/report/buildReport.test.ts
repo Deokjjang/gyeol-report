@@ -3,6 +3,7 @@ import { evaluateSajuMbtiBridge } from "@/lib/bridge/evaluate";
 import { getMbtiProfile } from "@/lib/mbti/types";
 import { buildReport } from "@/lib/report/buildReport";
 import { calculateSaju } from "@/lib/saju/calculateSaju";
+import { getDayPillarProfile } from "@/lib/saju/dayPillarProfile";
 import { extractSajuTags } from "@/lib/saju/extractTags";
 import type { ReportInput } from "@/lib/report/types";
 import type { SajuCalcInput } from "@/lib/saju/types";
@@ -113,6 +114,30 @@ describe("buildReport", () => {
   it("returns section ids in exact order", () => {
     const report = buildReport(createReportInput());
 
+    expect(report.sections.map((section) => section.id)).toEqual([
+      "INTRO",
+      "SAJU_CORE",
+      "DAY_MASTER",
+      "ELEMENTS",
+      "TEN_GODS",
+      "ADVANCED_PATTERNS",
+      "SHINSAL",
+      "RELATIONS",
+      "MBTI_PROFILE",
+      "SAJU_MBTI_BRIDGE",
+      "SAJU_MBTI_SUGGESTION",
+      "ACTION_GUIDE",
+      "DISCLAIMER",
+    ]);
+  });
+
+  it("accepts day pillar profile data without changing section structure", () => {
+    const report = buildReport({
+      ...createReportInput(),
+      dayPillarProfile: getDayPillarProfile("丙申"),
+    });
+
+    expect(report.sections).toHaveLength(13);
     expect(report.sections.map((section) => section.id)).toEqual([
       "INTRO",
       "SAJU_CORE",
