@@ -2,6 +2,10 @@ import { evaluateSajuMbtiBridge } from "../bridge/evaluate";
 import { evaluateSajuMbtiSuggestion } from "../mbti/sajuSuggestion";
 import { getMbtiProfile } from "../mbti/types";
 import { calculateSaju } from "../saju/calculateSaju";
+import {
+  createDayPillarCode,
+  getDayPillarProfile,
+} from "../saju/dayPillarProfile";
 import { extractSajuTags } from "../saju/extractTags";
 import { validateReportRequest } from "../validation/reportRequest";
 import type {
@@ -38,6 +42,12 @@ export function createReportFromRawInput(
   }
 
   const saju = calculateSaju(validation.value.sajuInput);
+  const dayPillarProfile = getDayPillarProfile(
+    createDayPillarCode({
+      stem: saju.pillars.day.stem,
+      branch: saju.pillars.day.branch,
+    }),
+  );
   const sajuTags = extractSajuTags(saju);
   const mbti = getMbtiProfile(validation.value.mbtiType);
   const mbtiSuggestion = evaluateSajuMbtiSuggestion({
@@ -54,6 +64,7 @@ export function createReportFromRawInput(
     mbti,
     bridgeSignals: bridge.signals,
     mbtiSuggestion,
+    dayPillarProfile,
   });
 
   return {

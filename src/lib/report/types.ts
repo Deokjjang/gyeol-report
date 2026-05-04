@@ -1,6 +1,7 @@
 import type { BridgeSignal } from "../bridge/types";
 import type { SajuMbtiSuggestionResult } from "../mbti/sajuSuggestionTypes";
 import type { MbtiProfile } from "../mbti/types";
+import type { DayPillarProfileLookupResult } from "../saju/dayPillarProfileTypes";
 import type { SajuTag } from "../saju/tags";
 import type { SajuCalcResult } from "../saju/types";
 
@@ -53,6 +54,7 @@ export type ReportInput = {
   mbti: MbtiProfile;
   bridgeSignals: readonly BridgeSignal[];
   mbtiSuggestion?: SajuMbtiSuggestionResult;
+  dayPillarProfile?: DayPillarProfileLookupResult;
 };
 
 export type ReportOutput = {
