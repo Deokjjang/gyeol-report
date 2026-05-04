@@ -225,12 +225,36 @@ describe("report output fixture", () => {
     const report = getFixtureReport();
     const text = JSON.stringify(report);
 
-    expect(text).toContain("일간 해석");
+    expect(text).toContain("일주 핵심");
+    expect(text).toContain("일주 구조");
     expect(text).toContain("오행 흐름");
     expect(text).toContain("십성 흐름");
-    expect(text).toContain("속도 조절과 감정 소모 관리");
+    expect(text).toContain(
+      "밝은 태양이 날카로운 금속 위에 비치는 이미지입니다.",
+    );
+    expect(text).toContain(
+      "병신일주는 밝게 드러나는 표현성과 빠른 판단력이 함께 작동하는 구조입니다.",
+    );
     expect(text).toContain("감정 회복·휴식·유연한 조율");
     expect(text).toContain("현실 책임과 성과 압박");
+  });
+
+  it("renders day master profile blocks in fixture output", () => {
+    const report = getFixtureReport();
+    const section = findSection(report, "DAY_MASTER");
+    const text = collectSectionText(section);
+    const blockKinds = section.blocks.map((block) => block.kind);
+
+    expect(blockKinds).toContain("HIGHLIGHT");
+    expect(blockKinds).toContain("KEY_VALUE");
+    expect(blockKinds).toContain("PARAGRAPH");
+    expect(blockKinds).toContain("BULLET_LIST");
+    expect(text).toContain("병신일주");
+    expect(text).toContain("일주 핵심");
+    expect(text).toContain("일주 구조");
+    expect(text).toContain("강점");
+    expect(text).toContain("주의할 흐름");
+    expect(text).toContain("활용 방향");
   });
 
   it("uses Korean relation labels and avoids internal position notation", () => {

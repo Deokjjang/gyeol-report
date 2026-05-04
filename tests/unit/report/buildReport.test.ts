@@ -218,7 +218,29 @@ describe("buildReport", () => {
     expect(section?.blocks[0]?.bodyKo).toBe(`${input.saju.dayMaster} 일간`);
   });
 
-  it("adds interpretation paragraph to the day master section", () => {
+  it("renders day pillar profile in the day master section", () => {
+    const report = buildReport({
+      ...createReportInput(),
+      dayPillarProfile: getDayPillarProfile("丙申"),
+    });
+    const section = report.sections.find((item) => item.id === "DAY_MASTER");
+    const text = JSON.stringify(section);
+
+    expect(text).toContain("丙 일간");
+    expect(text).toContain("병신일주");
+    expect(text).toContain(
+      "밝은 태양이 날카로운 금속 위에 비치는 이미지입니다.",
+    );
+    expect(text).toContain(
+      "병신일주는 밝게 드러나는 표현성과 빠른 판단력이 함께 작동하는 구조입니다.",
+    );
+    expect(text).toContain("丙 화 일간이 申 금 위에 앉은 구조");
+    expect(text).toContain("빠른 판단과 실행");
+    expect(text).toContain("주의할 흐름");
+    expect(text).toContain("활용 방향");
+  });
+
+  it("preserves generic day master fallback when profile is missing", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "DAY_MASTER");
     const text = JSON.stringify(section);
@@ -234,6 +256,33 @@ describe("buildReport", () => {
     expect(text).toContain(
       "丙 일간은 밝게 드러나는 화의 성질을 기준으로 자신을 표현합니다.",
     );
+    expect(text).not.toContain("병신일주");
+  });
+
+  it("preserves generic day master fallback when profile is not found", () => {
+    const input = createReportInput();
+    const report = buildReport({
+      ...input,
+      saju: {
+        ...input.saju,
+        dayMaster: "甲",
+        pillars: {
+          ...input.saju.pillars,
+          day: { stem: "甲", branch: "子" },
+        },
+      },
+      dayPillarProfile: {
+        ok: false,
+        code: "甲子",
+        reason: "PROFILE_NOT_FOUND",
+      },
+    });
+    const section = report.sections.find((item) => item.id === "DAY_MASTER");
+    const text = JSON.stringify(section);
+
+    expect(text).toContain("일간 해석");
+    expect(text).toContain("일간은 사주에서 나를 대표하는 기준점이며");
+    expect(text).not.toContain("병신일주");
   });
 
   it("uses display labels in the elements section", () => {

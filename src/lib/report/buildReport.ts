@@ -274,6 +274,74 @@ function createDayMasterInterpretationBlock(input: ReportInput): ReportBlock {
   };
 }
 
+function createDayMasterBlocks(input: ReportInput): ReportBlock[] {
+  const blocks: ReportBlock[] = [
+    {
+      kind: "HIGHLIGHT",
+      titleKo: "일간",
+      bodyKo: `${input.saju.dayMaster} 일간`,
+    },
+  ];
+  const lookup = input.dayPillarProfile;
+
+  if (!lookup?.ok) {
+    blocks.push(createDayMasterInterpretationBlock(input));
+    return blocks;
+  }
+
+  const { profile } = lookup;
+
+  blocks.push(
+    {
+      kind: "KEY_VALUE",
+      titleKo: "일주",
+      keyValues: [
+        {
+          keyKo: "일주",
+          valueKo: profile.nameKo,
+        },
+        {
+          keyKo: "이미지",
+          valueKo: profile.imageKo,
+        },
+      ],
+    },
+    {
+      kind: "PARAGRAPH",
+      titleKo: "일주 핵심",
+      bodyKo: profile.coreSummaryKo,
+    },
+    {
+      kind: "PARAGRAPH",
+      titleKo: "일주 구조",
+      bodyKo: profile.structureKo,
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "강점",
+      itemsKo: profile.strengthItems.map(
+        (item) => `${item.titleKo}: ${item.bodyKo}`,
+      ),
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "주의할 흐름",
+      itemsKo: profile.cautionItems.map(
+        (item) => `${item.titleKo}: ${item.bodyKo}`,
+      ),
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "활용 방향",
+      itemsKo: profile.developmentItems.map(
+        (item) => `${item.titleKo}: ${item.bodyKo}`,
+      ),
+    },
+  );
+
+  return blocks;
+}
+
 function createAdvancedPatternsBlock(input: ReportInput): ReportBlock {
   const labels = input.sajuTags
     .filter((tag) => tag.category === "ADVANCED_PATTERN")
@@ -454,14 +522,7 @@ export function buildReport(input: ReportInput): ReportOutput {
       level: "FREE_PREVIEW",
       titleKo: "일간",
       summaryKo: "일간은 사주에서 나를 대표하는 기준점입니다.",
-      blocks: [
-        {
-          kind: "HIGHLIGHT",
-          titleKo: "일간",
-          bodyKo: `${input.saju.dayMaster} 일간`,
-        },
-        createDayMasterInterpretationBlock(input),
-      ],
+      blocks: createDayMasterBlocks(input),
     }),
     createSection({
       id: "ELEMENTS",
