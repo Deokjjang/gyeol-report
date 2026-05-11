@@ -3,6 +3,20 @@ import {
   createDayPillarCode,
   getDayPillarProfile,
 } from "@/lib/saju/dayPillarProfile";
+import { DAY_PILLAR_PROFILES } from "@/lib/saju/dayPillarProfiles";
+
+const supportedCodes = [
+  "甲子",
+  "甲午",
+  "乙卯",
+  "乙酉",
+  "丙寅",
+  "丙申",
+  "丁卯",
+  "戊辰",
+  "己未",
+  "庚申",
+] as const;
 
 describe("day pillar profile lookup", () => {
   it("creates day pillar code", () => {
@@ -57,13 +71,40 @@ describe("day pillar profile lookup", () => {
   });
 
   it("returns PROFILE_NOT_FOUND for missing profile", () => {
-    const result = getDayPillarProfile("甲子");
+    const result = getDayPillarProfile("癸亥");
 
     expect(result).toEqual({
       ok: false,
-      code: "甲子",
+      code: "癸亥",
       reason: "PROFILE_NOT_FOUND",
     });
+  });
+
+  it("looks up all supported profile codes", () => {
+    for (const code of supportedCodes) {
+      const result = getDayPillarProfile(code);
+
+      expect(result.ok).toBe(true);
+      if (!result.ok) {
+        throw new Error(`expected profile lookup success: ${code}`);
+      }
+      expect(result.profile.code).toBe(code);
+      expect(result.profile.nameKo).toBeTruthy();
+      expect(result.profile.imageKo).toBeTruthy();
+      expect(result.profile.coreSummaryKo).toBeTruthy();
+      expect(result.profile.structureKo).toBeTruthy();
+      expect(result.profile.strengthItems).toHaveLength(3);
+      expect(result.profile.cautionItems).toHaveLength(2);
+      expect(result.profile.developmentItems).toHaveLength(2);
+      expect(result.profile.mbtiHints.length).toBeGreaterThanOrEqual(2);
+    }
+  });
+
+  it("has unique profile codes", () => {
+    const codes = DAY_PILLAR_PROFILES.map((profile) => profile.code);
+
+    expect(new Set(codes).size).toBe(codes.length);
+    expect(codes).toHaveLength(10);
   });
 
   it("uses safe wording", () => {
