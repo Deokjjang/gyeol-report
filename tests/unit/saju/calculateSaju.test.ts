@@ -38,6 +38,41 @@ describe("calculateSaju", () => {
     expect(result.relations.branchClashes).toBeDefined();
   });
 
+  it("includes structure analysis result", () => {
+    const result = calculateSaju(baseInput);
+
+    expect(result.structureAnalysis).toBeDefined();
+    expect(result.structureAnalysis.dayMasterStrength.labelKo).toBeTruthy();
+    expect(result.structureAnalysis.dayMasterStrength.summaryKo).toBeTruthy();
+    expect(result.structureAnalysis.patterns.length).toBeGreaterThan(0);
+    expect(result.structureAnalysis.summary.titleKo).toBe("사주 구조 요약");
+    expect(result.structureAnalysis.notices.length).toBeGreaterThan(0);
+  });
+
+  it("includes deterministic structure analysis evidence keys", () => {
+    const result = calculateSaju(baseInput);
+
+    expect(
+      result.structureAnalysis.dayMasterStrength.evidence.map(
+        (item) => item.keyKo,
+      ),
+    ).toEqual(["비겁", "인성", "식상", "재성", "관성"]);
+  });
+
+  it("does not expose long float artifacts in structure analysis", () => {
+    const result = calculateSaju(baseInput);
+
+    expect(JSON.stringify(result.structureAnalysis)).not.toContain(
+      "0.7999999999999999",
+    );
+  });
+
+  it("returns deterministic structure analysis through calculateSaju", () => {
+    expect(calculateSaju(baseInput).structureAnalysis).toEqual(
+      calculateSaju(baseInput).structureAnalysis,
+    );
+  });
+
   it("omits hour pillar when birth time is unknown", () => {
     const input: SajuCalcInput = {
       ...baseInput,
