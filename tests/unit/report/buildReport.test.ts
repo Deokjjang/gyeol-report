@@ -23,6 +23,19 @@ const mbtiSuggestionNotice =
 const unresolvedMbtiSuggestionSummary =
   "현재 사주 태그만으로는 MBTI 축을 충분히 좁히기 어렵습니다.";
 
+const supportedDayPillarCodes = [
+  "甲子",
+  "甲午",
+  "乙卯",
+  "乙酉",
+  "丙寅",
+  "丙申",
+  "丁卯",
+  "戊辰",
+  "己未",
+  "庚申",
+] as const;
+
 const forbiddenWords = [
   "무조" + "건",
   "반드" + "시",
@@ -242,6 +255,37 @@ describe("buildReport", () => {
     expect(text).toContain("빠른 판단과 실행");
     expect(text).toContain("주의할 흐름");
     expect(text).toContain("활용 방향");
+  });
+
+  it("renders all supported day pillar profiles in the day master section", () => {
+    for (const code of supportedDayPillarCodes) {
+      const profileResult = getDayPillarProfile(code);
+
+      expect(profileResult.ok).toBe(true);
+      if (!profileResult.ok) {
+        throw new Error(`Expected profile for ${code}`);
+      }
+
+      const report = buildReport({
+        ...createReportInput(),
+        dayPillarProfile: profileResult,
+      });
+      const dayMaster = report.sections.find(
+        (section) => section.id === "DAY_MASTER",
+      );
+      const text = JSON.stringify(dayMaster);
+
+      expect(dayMaster).toBeDefined();
+      expect(report.sections).toHaveLength(13);
+      expect(text).toContain(profileResult.profile.nameKo);
+      expect(text).toContain(profileResult.profile.imageKo);
+      expect(text).toContain(profileResult.profile.coreSummaryKo);
+      expect(text).toContain(profileResult.profile.structureKo);
+      expect(text).toContain("강점");
+      expect(text).toContain("주의할 흐름");
+      expect(text).toContain("활용 방향");
+      expect(text).toContain("丙 일간");
+    }
   });
 
   it("preserves generic day master fallback when profile is missing", () => {
