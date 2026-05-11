@@ -352,8 +352,9 @@ export default function NewReportPage() {
             <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-900/40 p-4 text-sm leading-6 text-neutral-500">
               <p>현재 V1은 양력과 Asia/Seoul 시간대만 지원합니다.</p>
               <p>
-                본 리포트는 자기이해용 콘텐츠이며, 질병·투자·법률 판단이나
-                미래 사건 예측을 제공하지 않습니다.
+                본 리포트는 자기이해를 돕기 위한 참고 콘텐츠이며,
+                의료·투자·법률·관계 선택에 대한 전문 판단이나 미래 사건 예측을
+                제공하지 않습니다.
               </p>
             </div>
           </div>
