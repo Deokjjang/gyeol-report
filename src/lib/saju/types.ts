@@ -1,4 +1,5 @@
 import type { ShinsalDetection } from "./shinsalTypes";
+import type { SajuStructureAnalysis } from "./structureAnalysisTypes";
 
 export const SAJU_CALC_SPEC_VERSION = "SAJU_CALC_SPEC_v0.1" as const;
 
@@ -124,5 +125,6 @@ export type SajuCalcResult = {
     branchClashes: string[];
   };
   shinsal: readonly ShinsalDetection[];
+  structureAnalysis: SajuStructureAnalysis;
   notices: string[];
 };

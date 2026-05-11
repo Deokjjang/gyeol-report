@@ -12,6 +12,7 @@ import {
 } from "./pillars";
 import { analyzeRelations } from "./relations";
 import { detectShinsal } from "./shinsal";
+import { analyzeSajuStructure } from "./structureAnalysis";
 import type { SajuCalcInput, SajuCalcResult } from "./types";
 
 const BIRTH_TIME_UNKNOWN_NOTICE =
@@ -21,6 +22,11 @@ type FormattableRelation = {
   pair: readonly [string, string];
   positions: readonly [string, string];
 };
+
+type SajuCalcResultWithoutStructureAnalysis = Omit<
+  SajuCalcResult,
+  "structureAnalysis"
+>;
 
 function getBirthTimeForSolarTerm(input: SajuCalcInput): string {
   if (input.birthTimeUnknown) {
@@ -80,7 +86,7 @@ export function calculateSaju(input: SajuCalcInput): SajuCalcResult {
     notices.push(BIRTH_TIME_UNKNOWN_NOTICE);
   }
 
-  return {
+  const baseResult: SajuCalcResultWithoutStructureAnalysis = {
     input,
     converted: {
       solarDate: input.birthDate,
@@ -101,5 +107,11 @@ export function calculateSaju(input: SajuCalcInput): SajuCalcResult {
     },
     shinsal,
     notices,
+  };
+  const structureAnalysis = analyzeSajuStructure(baseResult as SajuCalcResult);
+
+  return {
+    ...baseResult,
+    structureAnalysis,
   };
 }
