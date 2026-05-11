@@ -256,6 +256,97 @@ function createTenGodsInterpretationBlock(): ReportBlock {
   };
 }
 
+function buildTenGodsSummaryFromStructure(
+  structureAnalysis: NonNullable<ReportInput["structureAnalysis"]>,
+): string {
+  const strengthLabel = structureAnalysis.dayMasterStrength.labelKo;
+  const patternLabels = structureAnalysis.patterns
+    .slice(0, 2)
+    .map((pattern) => pattern.labelKo);
+
+  if (patternLabels.length > 0) {
+    return `십성 묶음으로 보면 이 사주는 ${strengthLabel} 흐름 위에 ${patternLabels.join(", ")} 신호가 함께 보입니다. 자기 기준과 학습·분석의 힘은 강하게 살아나지만, 재성·관성처럼 현실 성과와 역할을 다루는 기운도 함께 확인해야 합니다.`;
+  }
+
+  return `십성 묶음으로 보면 이 사주는 ${strengthLabel} 흐름을 중심으로 해석할 수 있습니다. 특정 한 기운만 보기보다 비겁·인성·식상·재성·관성의 균형을 함께 보는 편이 적절합니다.`;
+}
+
+function buildTenGodsPointItems(
+  structureAnalysis: NonNullable<ReportInput["structureAnalysis"]>,
+): string[] {
+  const evidence = structureAnalysis.dayMasterStrength.evidence;
+  const pointLabels = [
+    {
+      keyKo: "비겁",
+      bodyKo: "자기 기준, 독립성, 경쟁심, 직접 밀고 나가는 힘을 봅니다.",
+    },
+    {
+      keyKo: "인성",
+      bodyKo: "학습, 분석, 보호 본능, 생각을 정리하는 힘을 봅니다.",
+    },
+    {
+      keyKo: "식상",
+      bodyKo: "표현, 생산, 말과 결과물로 자신을 드러내는 방식을 봅니다.",
+    },
+    {
+      keyKo: "재성",
+      bodyKo: "현실 감각, 성과, 자원 관리, 결과 의식을 봅니다.",
+    },
+    {
+      keyKo: "관성",
+      bodyKo: "책임, 기준, 평가, 역할 의식을 봅니다.",
+    },
+  ] as const;
+  const items: string[] = [];
+
+  for (const point of pointLabels) {
+    const item = evidence.find((entry) => entry.keyKo === point.keyKo);
+
+    if (item) {
+      items.push(`${point.keyKo} ${item.valueKo}: ${point.bodyKo}`);
+    }
+  }
+
+  return items;
+}
+
+function createTenGodsStructureBlocks(
+  structureAnalysis: NonNullable<ReportInput["structureAnalysis"]>,
+): ReportBlock[] {
+  return [
+    {
+      kind: "KEY_VALUE",
+      titleKo: "십성 묶음",
+      keyValues: structureAnalysis.dayMasterStrength.evidence.map((item) => ({
+        keyKo: item.keyKo,
+        valueKo: item.valueKo,
+      })),
+    },
+    {
+      kind: "PARAGRAPH",
+      titleKo: "십성 종합",
+      bodyKo: buildTenGodsSummaryFromStructure(structureAnalysis),
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "십성 해석 포인트",
+      itemsKo: buildTenGodsPointItems(structureAnalysis),
+    },
+  ];
+}
+
+function createTenGodsBlocks(input: ReportInput): ReportBlock[] {
+  const blocks = [createTenGodsBlock(input)];
+
+  if (input.structureAnalysis) {
+    blocks.push(...createTenGodsStructureBlocks(input.structureAnalysis));
+  } else {
+    blocks.push(createTenGodsInterpretationBlock());
+  }
+
+  return blocks;
+}
+
 function createDayMasterInterpretationBlock(input: ReportInput): ReportBlock {
   if (input.saju.pillars.day.stem === "丙") {
     return {
@@ -593,7 +684,7 @@ export function buildReport(input: ReportInput): ReportOutput {
       level: "PAID_FULL",
       titleKo: "십성",
       summaryKo: "십성은 일간을 기준으로 관계되는 기운을 분류한 구조입니다.",
-      blocks: [createTenGodsBlock(input), createTenGodsInterpretationBlock()],
+      blocks: createTenGodsBlocks(input),
     }),
     createSection({
       id: "ADVANCED_PATTERNS",

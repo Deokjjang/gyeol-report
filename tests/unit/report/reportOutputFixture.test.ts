@@ -228,7 +228,9 @@ describe("report output fixture", () => {
     expect(text).toContain("일주 핵심");
     expect(text).toContain("일주 구조");
     expect(text).toContain("오행 흐름");
-    expect(text).toContain("십성 흐름");
+    expect(text).toContain("십성 묶음");
+    expect(text).toContain("십성 종합");
+    expect(text).toContain("십성 해석 포인트");
     expect(text).toContain(
       "밝은 태양이 날카로운 금속 위에 비치는 이미지입니다.",
     );
@@ -236,7 +238,31 @@ describe("report output fixture", () => {
       "병신일주는 밝게 드러나는 표현성과 빠른 판단력이 함께 작동하는 구조입니다.",
     );
     expect(text).toContain("감정 회복·휴식·유연한 조율");
-    expect(text).toContain("현실 책임과 성과 압박");
+    expect(text).toContain("비겁 2.3");
+    expect(text).toContain("인성 1.9");
+    expect(text).toContain("식상 0.8");
+    expect(text).toContain("재성 1.2");
+    expect(text).toContain("관성 0.4");
+  });
+
+  it("renders enhanced Ten Gods blocks in fixture output", () => {
+    const report = getFixtureReport();
+    const section = findSection(report, "TEN_GODS");
+    const text = collectSectionText(section);
+    const blockKinds = section.blocks.map((block) => block.kind);
+
+    expect(blockKinds).toContain("KEY_VALUE");
+    expect(blockKinds).toContain("PARAGRAPH");
+    expect(blockKinds).toContain("BULLET_LIST");
+    expect(text).toContain("십성 묶음");
+    expect(text).toContain("십성 종합");
+    expect(text).toContain("십성 해석 포인트");
+    expect(text).toContain("자기 기준");
+    expect(text).toContain("학습");
+    expect(text).toContain("표현");
+    expect(text).toContain("현실 감각");
+    expect(text).toContain("책임");
+    expect(text).not.toContain("십성 흐름");
   });
 
   it("includes structure analysis in fixture output", () => {
