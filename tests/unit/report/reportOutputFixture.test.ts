@@ -239,6 +239,40 @@ describe("report output fixture", () => {
     expect(text).toContain("현실 책임과 성과 압박");
   });
 
+  it("includes structure analysis in fixture output", () => {
+    const report = getFixtureReport();
+    const text = JSON.stringify(report);
+
+    expect(text).toContain("신강신약");
+    expect(text).toContain("구조 근거");
+    expect(text).toContain("사주 구조 요약");
+    expect(text).toContain("구조 후보");
+    expect(text).toContain("해석 기준");
+    expect(text).toContain("비겁");
+    expect(text).toContain("인성");
+    expect(text).toContain("식상");
+    expect(text).toContain("재성");
+    expect(text).toContain("관성");
+    expect(text).toContain("인성 강한 구조");
+    expect(text).toContain("비겁 강한 구조");
+    expect(text).toContain("관살혼잡 후보");
+  });
+
+  it("renders richer advanced pattern blocks in fixture output", () => {
+    const report = getFixtureReport();
+    const section = findSection(report, "ADVANCED_PATTERNS");
+    const text = collectSectionText(section);
+    const blockKinds = section.blocks.map((block) => block.kind);
+
+    expect(blockKinds).toContain("HIGHLIGHT");
+    expect(blockKinds).toContain("KEY_VALUE");
+    expect(blockKinds).toContain("PARAGRAPH");
+    expect(blockKinds).toContain("BULLET_LIST");
+    expect(text).toContain("신강신약");
+    expect(text).toContain("구조 후보");
+    expect(text).toContain("해석 기준");
+  });
+
   it("renders day master profile blocks in fixture output", () => {
     const report = getFixtureReport();
     const section = findSection(report, "DAY_MASTER");

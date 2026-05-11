@@ -364,6 +364,79 @@ describe("buildReport", () => {
     );
   });
 
+  it("renders structure analysis in the advanced pattern section", () => {
+    const report = buildReport({
+      ...createReportInput(),
+      structureAnalysis: {
+        dayMasterStrength: {
+          level: "WEAK",
+          score: -0.8,
+          labelKo: "신약",
+          summaryKo:
+            "일간을 돕는 힘보다 소모·성과·책임 쪽 신호가 더 강하게 나타납니다.",
+          confidence: "MEDIUM",
+          evidence: [
+            { source: "TEN_GODS", keyKo: "비겁", valueKo: "1.0" },
+            { source: "TEN_GODS", keyKo: "인성", valueKo: "0.5" },
+            { source: "TEN_GODS", keyKo: "식상", valueKo: "1.2" },
+            { source: "TEN_GODS", keyKo: "재성", valueKo: "1.4" },
+            { source: "TEN_GODS", keyKo: "관성", valueKo: "0.8" },
+          ],
+        },
+        patterns: [
+          {
+            code: "WEAK_DAYMASTER_WITH_STRONG_WEALTH",
+            labelKo: "재다신약 후보",
+            summaryKo:
+              "재성 신호가 일간의 힘보다 크게 작동해, 성과·돈·현실 책임을 감당하는 과정에서 부담이 커질 수 있는 구조입니다.",
+            confidence: "MEDIUM",
+            evidence: [{ source: "TEN_GODS", keyKo: "재성", valueKo: "1.4" }],
+          },
+        ],
+        summary: {
+          titleKo: "사주 구조 요약",
+          bodyKo:
+            "이 사주는 신약 흐름을 바탕으로 재다신약 후보 신호가 함께 보입니다.",
+          keywordsKo: ["신약", "재다신약 후보"],
+        },
+        notices: [
+          "신강신약과 구조 후보는 단정이 아니라 현재 계산된 오행·십성 신호를 바탕으로 한 해석 기준입니다.",
+        ],
+      },
+    });
+    const section = report.sections.find(
+      (item) => item.id === "ADVANCED_PATTERNS",
+    );
+    const text = JSON.stringify(section);
+
+    expect(report.sections).toHaveLength(13);
+    expect(text).toContain("신강신약");
+    expect(text).toContain("신약");
+    expect(text).toContain("구조 근거");
+    expect(text).toContain("비겁");
+    expect(text).toContain("인성");
+    expect(text).toContain("식상");
+    expect(text).toContain("재성");
+    expect(text).toContain("관성");
+    expect(text).toContain("사주 구조 요약");
+    expect(text).toContain("구조 후보");
+    expect(text).toContain("재다신약 후보");
+    expect(text).toContain("해석 기준");
+  });
+
+  it("preserves advanced pattern fallback without structure analysis", () => {
+    const report = buildReport(createReportInput());
+    const section = report.sections.find(
+      (item) => item.id === "ADVANCED_PATTERNS",
+    );
+    const text = JSON.stringify(section);
+
+    expect(section?.titleKo).toBe("고급 구조 후보");
+    expect(text).toContain("구조 후보");
+    expect(text).toContain("관살혼잡 후보");
+    expect(text).not.toContain("신강신약");
+  });
+
   it("uses advanced tags in the advanced pattern section", () => {
     const input = createReportInput();
     const report = buildReport(input);
