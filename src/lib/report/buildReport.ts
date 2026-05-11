@@ -103,6 +103,10 @@ const SHINSAL_NARRATIVE_TEXTS: Readonly<Record<string, string>> = {
     "화개살은 혼자 깊이 몰입하고 의미를 정리하는 과정에서 내면의 깊이가 살아나는 흐름을 보여줍니다.",
 };
 
+const SHINSAL_DISPLAY_LIMIT = 10;
+const SHINSAL_LIMIT_NOTICE =
+  "그 밖의 신살 신호도 함께 감지되지만, 리포트에서는 해석 영향이 큰 신호를 중심으로 정리했습니다.";
+
 function formatSajuTagLabel(value: string): string {
   return SAJU_TAG_DISPLAY_LABELS[value] ?? value;
 }
@@ -171,6 +175,118 @@ function dedupeTagsByCode<T extends { code: string }>(tags: readonly T[]): T[] {
   }
 
   return result;
+}
+
+function normalizeShinsalDisplayGroup(itemKo: string): string {
+  if (itemKo.includes("천을귀인")) {
+    return "천을귀인";
+  }
+  if (itemKo.includes("월덕귀인")) {
+    return "월덕귀인";
+  }
+  if (itemKo.includes("천덕귀인")) {
+    return "천덕귀인";
+  }
+  if (itemKo.includes("태극귀인")) {
+    return "태극귀인";
+  }
+  if (itemKo.includes("문창귀인")) {
+    return "문창귀인";
+  }
+  if (itemKo.includes("학당귀인")) {
+    return "학당귀인";
+  }
+  if (itemKo.includes("현침살")) {
+    return "현침살";
+  }
+  if (itemKo.includes("백호대살")) {
+    return "백호대살";
+  }
+  if (itemKo.includes("역마살") || itemKo.includes("역마")) {
+    return "역마";
+  }
+  if (itemKo.includes("화개살") || itemKo.includes("화개")) {
+    return "화개";
+  }
+  if (itemKo.includes("지살")) {
+    return "지살";
+  }
+  if (
+    itemKo.includes("도화살") ||
+    itemKo.includes("도화") ||
+    itemKo.includes("년살") ||
+    itemKo.includes("홍염살") ||
+    itemKo.includes("홍염")
+  ) {
+    return "매력/주목";
+  }
+
+  return "기타";
+}
+
+function getShinsalDisplayPriority(group: string): number {
+  switch (group) {
+    case "천을귀인":
+      return 0;
+    case "월덕귀인":
+      return 1;
+    case "천덕귀인":
+      return 2;
+    case "태극귀인":
+      return 3;
+    case "문창귀인":
+      return 4;
+    case "학당귀인":
+      return 5;
+    case "현침살":
+      return 6;
+    case "백호대살":
+      return 7;
+    case "역마":
+      return 8;
+    case "화개":
+      return 9;
+    case "지살":
+      return 10;
+    case "매력/주목":
+      return 11;
+    default:
+      return 12;
+  }
+}
+
+function selectVisibleShinsalItems(itemsKo: readonly string[]): string[] {
+  const indexed = itemsKo.map((text, index) => ({
+    text,
+    index,
+    group: normalizeShinsalDisplayGroup(text),
+  }));
+  const selected: string[] = [];
+  const seen = new Set<string>();
+
+  indexed.sort((left, right) => {
+    const diff =
+      getShinsalDisplayPriority(left.group) -
+      getShinsalDisplayPriority(right.group);
+
+    return diff === 0 ? left.index - right.index : diff;
+  });
+
+  for (const item of indexed) {
+    if (seen.has(item.group)) {
+      continue;
+    }
+    seen.add(item.group);
+    selected.push(item.text);
+  }
+
+  const limited = selected.slice(0, SHINSAL_DISPLAY_LIMIT);
+
+  if (selected.length > SHINSAL_DISPLAY_LIMIT) {
+    limited.push(SHINSAL_LIMIT_NOTICE);
+  }
+
+  return limited;
 }
 
 function createSajuCoreBlock(input: ReportInput): ReportBlock {
@@ -510,7 +626,9 @@ function createAdvancedPatternsBlocks(input: ReportInput): ReportBlock[] {
 
 function createShinsalBlock(input: ReportInput): ReportBlock {
   const shinsalTags = input.sajuTags.filter((tag) => tag.category === "SHINSAL");
-  const itemsKo = dedupeTagsByCode(shinsalTags).map(formatShinsalNarrative);
+  const itemsKo = selectVisibleShinsalItems(
+    dedupeTagsByCode(shinsalTags).map(formatShinsalNarrative),
+  );
 
   if (itemsKo.length > 0) {
     return {

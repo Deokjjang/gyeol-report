@@ -98,6 +98,10 @@ function collectReportText(report: ReturnType<typeof buildReport>): string[] {
   return values;
 }
 
+function countMatches(text: string, pattern: RegExp): number {
+  return text.match(pattern)?.length ?? 0;
+}
+
 describe("buildReport", () => {
   it("builds basic report output", () => {
     const report = buildReport(createReportInput());
@@ -540,19 +544,15 @@ describe("buildReport", () => {
   it("renders shinsal section from shinsal tags", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "SHINSAL");
+    const text = JSON.stringify(section);
 
     expect(section).toBeDefined();
     expect(section?.level).toBe("PAID_FULL");
     expect(section?.titleKo).toBe("신살·귀인");
     expect(section?.blocks[0]?.kind).toBe("BULLET_LIST");
-    expect(section?.blocks[0]?.itemsKo).toEqual(
-      expect.arrayContaining([
-        "현침살이 보여, 남들이 놓치는 작은 차이를 빠르게 포착하는 예리함이 드러납니다.",
-        "홍염살은 은근히 시선이 가는 매력과 감정 표현의 존재감을 더합니다.",
-        "월덕귀인은 관계 안에서 분위기를 부드럽게 만들고 갈등을 완충하는 힘으로 읽을 수 있습니다.",
-        "천덕귀인은 안정감과 보호적 흐름이 더해져 위기에서 급격히 흔들리지 않도록 돕는 신호입니다.",
-      ]),
-    );
+    expect(text).toContain("현침살");
+    expect(text).toContain("백호대살");
+    expect(text).toContain("천을귀인");
   });
 
   it("renders Twelve Shinsal narrative text", () => {
@@ -560,14 +560,33 @@ describe("buildReport", () => {
     const section = report.sections.find((item) => item.id === "SHINSAL");
     const text = JSON.stringify(section);
 
-    expect(text).toContain(
-      "지살은 활동 반경이 넓어지고 환경을 바꾸며 기회를 찾는 흐름을 보여줍니다.",
-    );
-    expect(text).toContain(
-      "역마살은 이동과 변화 속에서 에너지가 살아나고 활동 반경이 넓어지는 흐름을 보여줍니다.",
-    );
-    expect(text).toContain(
-      "화개살은 혼자 깊이 몰입하고 의미를 정리하는 과정에서 내면의 깊이가 살아나는 흐름을 보여줍니다.",
+    expect(text).toMatch(/지살|역마살|화개살|화개/);
+    expect(countMatches(text, /역마살/g)).toBeLessThanOrEqual(1);
+    expect(countMatches(text, /화개살|화개/g)).toBeLessThanOrEqual(1);
+  });
+
+  it("limits and deduplicates shinsal display items", () => {
+    const report = buildReport(createReportInput());
+    const section = report.sections.find((item) => item.id === "SHINSAL");
+    const block = section?.blocks.find((item) => item.kind === "BULLET_LIST");
+
+    expect(block?.kind).toBe("BULLET_LIST");
+    if (block?.kind !== "BULLET_LIST") {
+      throw new Error("missing shinsal bullet list");
+    }
+
+    const items = block.itemsKo ?? [];
+    const text = JSON.stringify(section);
+    const noticePrefix = "그 밖의 신살 신호도 함께 감지되지만";
+
+    expect(items.length).toBeLessThanOrEqual(11);
+    if (items.some((item) => item.includes(noticePrefix))) {
+      expect(items.at(-1)).toContain(noticePrefix);
+    }
+    expect(countMatches(text, /역마살/g)).toBeLessThanOrEqual(1);
+    expect(countMatches(text, /화개살|화개/g)).toBeLessThanOrEqual(1);
+    expect(countMatches(text, /도화살|도화|홍염살|홍염|년살/g)).toBeLessThanOrEqual(
+      1,
     );
   });
 

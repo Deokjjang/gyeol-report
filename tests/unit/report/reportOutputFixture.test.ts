@@ -57,6 +57,10 @@ function collectSectionText(section: { blocks: readonly unknown[] }): string {
   return JSON.stringify(section);
 }
 
+function countMatches(text: string, pattern: RegExp): number {
+  return text.match(pattern)?.length ?? 0;
+}
+
 describe("report output fixture", () => {
   it("produces stable 13-section report", () => {
     const report = getFixtureReport();
@@ -101,12 +105,14 @@ describe("report output fixture", () => {
     const section = findSection(report, "SHINSAL");
     const text = collectSectionText(section);
 
-    expect(text).toContain("현침살");
-    expect(text).toContain("홍염살");
-    expect(text).toContain("백호대살");
     expect(text).toContain("천을귀인");
     expect(text).toContain("월덕귀인");
     expect(text).toContain("천덕귀인");
+    expect(text).toContain("태극귀인");
+    expect(text).toContain("문창귀인");
+    expect(text).toContain("학당귀인");
+    expect(text).toContain("현침살");
+    expect(text).toContain("백호대살");
   });
 
   it("shows Twelve Shinsal terms in the shinsal section", () => {
@@ -122,14 +128,15 @@ describe("report output fixture", () => {
     const report = getFixtureReport();
     const section = findSection(report, "SHINSAL");
     const text = collectSectionText(section);
-    const narrativePhrases = [
-      "역마살은 이동과 변화 속에서 에너지가 살아나고 활동 반경이 넓어지는 흐름을 보여줍니다.",
-      "화개살은 혼자 깊이 몰입하고 의미를 정리하는 과정에서 내면의 깊이가 살아나는 흐름을 보여줍니다.",
-    ];
+    const block = section.blocks.find((item) => item.kind === "BULLET_LIST");
 
-    expect(narrativePhrases.some((phrase) => text.includes(phrase))).toBe(
-      true,
-    );
+    expect(block?.kind).toBe("BULLET_LIST");
+    if (block?.kind !== "BULLET_LIST") {
+      throw new Error("missing shinsal bullet list");
+    }
+
+    expect(text).toMatch(/지살|역마살|화개살|화개/);
+    expect(block.itemsKo?.length ?? 0).toBeLessThanOrEqual(11);
   });
 
   it("does not use fallback colon style for Twelve Shinsal output", () => {
@@ -168,6 +175,31 @@ describe("report output fixture", () => {
     );
 
     expect(woldeokItems).toHaveLength(1);
+  });
+
+  it("limits and deduplicates shinsal fixture output", () => {
+    const report = getFixtureReport();
+    const section = findSection(report, "SHINSAL");
+    const block = section.blocks.find((item) => item.kind === "BULLET_LIST");
+    const text = collectSectionText(section);
+    const noticePrefix = "그 밖의 신살 신호도 함께 감지되지만";
+
+    expect(block?.kind).toBe("BULLET_LIST");
+    if (block?.kind !== "BULLET_LIST") {
+      throw new Error("missing shinsal bullet list");
+    }
+
+    const items = block.itemsKo ?? [];
+
+    expect(items.length).toBeLessThanOrEqual(11);
+    expect(countMatches(text, /역마살/g)).toBeLessThanOrEqual(1);
+    expect(countMatches(text, /화개살|화개/g)).toBeLessThanOrEqual(1);
+    expect(countMatches(text, /도화살|도화|홍염살|홍염|년살/g)).toBeLessThanOrEqual(
+      1,
+    );
+    if (items.some((item) => item.includes(noticePrefix))) {
+      expect(items.at(-1)).toContain(noticePrefix);
+    }
   });
 
   it("renders shinsal items as narrative sentences", () => {
