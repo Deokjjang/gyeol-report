@@ -44,6 +44,13 @@ describe("new report page source", () => {
     expect(pageSource).toContain("report.notices");
   });
 
+  it("renders product preview header copy", () => {
+    expect(pageSource).toContain("결리포트 미리보기");
+    expect(pageSource).toContain("샘플 리포트를 생성합니다");
+    expect(pageSource).toContain("전체 리포트 섹션을 확인할 수 있으며");
+    expect(pageSource).toContain("자기이해를 돕는 참고");
+  });
+
   it("supports report block source types", () => {
     expect(pageSource).toContain("type ReportBlock");
     expect(pageSource).toContain("keyValues");
@@ -66,6 +73,14 @@ describe("new report page source", () => {
     expect(pageSource).toContain('block.kind === "HIGHLIGHT"');
     expect(pageSource).toContain("block.bodyKo");
     expect(pageSource).toContain('className="text-sm leading-6 text-neutral-300"');
+  });
+
+  it("keeps rich report block field rendering", () => {
+    expect(pageSource).toContain("block.titleKo");
+    expect(pageSource).toContain("block.bodyKo");
+    expect(pageSource).toContain("block.itemsKo");
+    expect(pageSource).toContain("item.keyKo");
+    expect(pageSource).toContain("item.valueKo");
   });
 
   it("renders block-level titles", () => {
@@ -92,6 +107,15 @@ describe("new report page source", () => {
     expect(pageSource).not.toContain("slice(0, 5)");
   });
 
+  it("uses product-style section card structure", () => {
+    expect(pageSource).toContain("report.sections.map");
+    expect(pageSource).toContain("rounded-lg");
+    expect(pageSource).toContain("border border-neutral-800");
+    expect(pageSource).toContain("section.titleKo");
+    expect(pageSource).toContain("section.summaryKo");
+    expect(pageSource).toContain("space-y-5");
+  });
+
   it("does not render raw section id as visible label", () => {
     expect(pageSource).toContain("key={section.id}");
     expect(pageSource).not.toContain("{section.id}</");
@@ -102,6 +126,7 @@ describe("new report page source", () => {
     expect(pageSource).toContain("무료 미리보기");
     expect(pageSource).toContain("전체 리포트");
     expect(pageSource).not.toContain("{section.level}</");
+    expect(pageSource).not.toContain('>"PAID_FULL"<');
   });
 
   it("renders development gate notice", () => {
@@ -110,6 +135,13 @@ describe("new report page source", () => {
     expect(normalizedSource).toContain(
       "결제 게이트는 아직 연결되지 않았습니다. 현재는 개발용 미리보기로 전체 구조를 확인합니다.",
     );
+    expect(pageSource).not.toContain("개발용 오류");
+    expect(pageSource).not.toContain("미리보기 오류");
+  });
+
+  it("does not intentionally truncate long report content", () => {
+    expect(pageSource).not.toContain("line-clamp");
+    expect(pageSource).not.toContain("truncate");
   });
 
   it("does not include persistence auth payment or LLM markers", () => {
