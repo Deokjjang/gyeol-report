@@ -759,6 +759,83 @@ function createSajuMbtiSuggestionBlocks(input: ReportInput): ReportBlock[] {
   return blocks;
 }
 
+function buildStrengthActionGuideItem(labelKo: string): string {
+  if (labelKo.includes("신강")) {
+    return `${labelKo} 흐름은 자기 기준과 추진력이 장점이 되지만, 중요한 선택에서는 주변 피드백을 한 번 거쳐 균형을 잡는 편이 좋습니다.`;
+  }
+
+  if (labelKo.includes("신약")) {
+    return `${labelKo} 흐름은 역할과 외부 요구를 크게 의식하기 쉬우므로, 중요한 선택에서는 맡을 일과 회복 시간을 함께 조율하는 편이 좋습니다.`;
+  }
+
+  return `${labelKo} 흐름은 한쪽으로 치우치기보다 균형을 살피는 해석이 어울리므로, 강점과 부담을 함께 점검하는 편이 좋습니다.`;
+}
+
+function hasStructurePattern(
+  structureAnalysis: NonNullable<ReportInput["structureAnalysis"]>,
+  code: string,
+): boolean {
+  return structureAnalysis.patterns.some((pattern) => pattern.code === code);
+}
+
+function buildDayPillarActionGuideItem(
+  dayPillarProfile: ReportInput["dayPillarProfile"],
+): string | undefined {
+  if (!dayPillarProfile?.ok) {
+    return undefined;
+  }
+
+  const firstStrength = dayPillarProfile.profile.strengthItems[0]?.titleKo;
+  const strengthText = firstStrength ? `${firstStrength}을 살리되` : "강점을 살리되";
+
+  return `${dayPillarProfile.profile.nameKo} 흐름에서는 ${strengthText}, 중요한 선택 전 완충 시간을 두면 실행력과 관계 안정성을 함께 챙기기 좋습니다.`;
+}
+
+function buildActionGuideItems(input: ReportInput): string[] {
+  const structureAnalysis = input.structureAnalysis;
+
+  if (!structureAnalysis) {
+    return [
+      "강하게 나온 기질은 장점과 부담을 함께 봅니다.",
+      "부족하게 나온 기운은 결핍이 아니라 의식적으로 보완할 영역으로 봅니다.",
+      "MBTI와 사주가 겹치는 부분은 반복되는 자기 패턴으로 점검합니다.",
+    ];
+  }
+
+  const items: string[] = [
+    buildStrengthActionGuideItem(structureAnalysis.dayMasterStrength.labelKo),
+  ];
+  const patternLabels = structureAnalysis.patterns
+    .slice(0, 2)
+    .map((pattern) => pattern.labelKo);
+
+  if (patternLabels.length > 0) {
+    items.push(
+      `${patternLabels.join(", ")} 신호가 함께 보이므로, 혼자 판단을 끝내기보다 기록·검토·대화를 통해 생각을 정리하면 강점이 안정적으로 쓰입니다.`,
+    );
+  }
+
+  if (hasStructurePattern(structureAnalysis, "FIRE_METAL_TENSION")) {
+    items.push(
+      "화금 긴장 구조가 보일 때는 빠른 판단과 날카로운 표현이 장점이 되지만, 관계 장면에서는 말의 속도와 강도를 조절하는 것이 도움이 됩니다.",
+    );
+  }
+
+  if (hasStructurePattern(structureAnalysis, "WATER_WEAK_RECOVERY_NEEDED")) {
+    items.push(
+      "수 기운 보완 필요 신호가 보일 때는 휴식, 수면, 감정 회복, 느린 루틴을 의식적으로 넣을수록 전체 균형이 좋아집니다.",
+    );
+  }
+
+  const dayPillarItem = buildDayPillarActionGuideItem(input.dayPillarProfile);
+
+  if (dayPillarItem) {
+    items.push(dayPillarItem);
+  }
+
+  return unique(items).slice(0, 5);
+}
+
 export function buildReport(input: ReportInput): ReportOutput {
   const sections: ReportSection[] = [
     createSection({
@@ -872,11 +949,7 @@ export function buildReport(input: ReportInput): ReportOutput {
         {
           kind: "BULLET_LIST",
           titleKo: "활용 가이드",
-          itemsKo: [
-            "강하게 나온 기질은 장점과 부담을 함께 봅니다.",
-            "부족하게 나온 기운은 결핍이 아니라 의식적으로 보완할 영역으로 봅니다.",
-            "MBTI와 사주가 겹치는 부분은 반복되는 자기 패턴으로 점검합니다.",
-          ],
+          itemsKo: buildActionGuideItems(input),
         },
       ],
     }),
@@ -889,7 +962,7 @@ export function buildReport(input: ReportInput): ReportOutput {
         {
           kind: "WARNING",
           bodyKo:
-            "본 리포트는 운세의 단정, 질병·투자·법률·결혼 판단, 미래 사건 예측을 제공하지 않습니다.",
+            "본 리포트는 자기이해를 돕기 위한 참고 콘텐츠이며, 의료·투자·법률·관계 선택에 대한 전문 판단이나 미래 사건 예측을 제공하지 않습니다.",
         },
       ],
     }),
