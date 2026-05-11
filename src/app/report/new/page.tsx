@@ -215,6 +215,15 @@ export default function NewReportPage() {
               onSubmit={handleSubmit}
               className="space-y-5 rounded-lg border border-neutral-800 bg-neutral-900/80 p-5 shadow-2xl shadow-black/20"
             >
+              <div className="space-y-2">
+                <h2 className="text-lg font-semibold text-neutral-100">
+                  리포트 정보 입력
+                </h2>
+                <p className="text-sm leading-6 text-neutral-400">
+                  출생정보와 MBTI를 입력하면 샘플 리포트를 생성합니다.
+                </p>
+              </div>
+
               <input type="hidden" name="calendarType" value="SOLAR" />
               <input type="hidden" name="timezone" value="Asia/Seoul" />
 
@@ -231,6 +240,9 @@ export default function NewReportPage() {
                   type="date"
                   className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
                 />
+                <p className="text-xs leading-5 text-neutral-500">
+                  양력 기준 생년월일을 입력합니다.
+                </p>
               </div>
 
               <label className="flex items-center gap-3 text-sm font-medium text-neutral-200">
@@ -255,6 +267,9 @@ export default function NewReportPage() {
                   type="time"
                   className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
                 />
+                <p className="text-xs leading-5 text-neutral-500">
+                  출생시간을 모르면 비워 두거나 알 수 없음 옵션을 사용합니다.
+                </p>
               </div>
 
               <div className="space-y-2">
@@ -296,6 +311,9 @@ export default function NewReportPage() {
                     </option>
                   ))}
                 </select>
+                <p className="text-xs leading-5 text-neutral-500">
+                  모르면 임시로 가장 가까운 유형을 선택해도 됩니다.
+                </p>
               </div>
 
               <button
@@ -303,8 +321,13 @@ export default function NewReportPage() {
                 disabled={isSubmitting}
                 className="w-full rounded-lg bg-neutral-50 px-5 py-4 font-semibold text-neutral-950 transition hover:bg-white disabled:cursor-not-allowed disabled:bg-neutral-500"
               >
-                {isSubmitting ? "생성 중..." : "무료 미리보기 생성"}
+                {isSubmitting ? "리포트 생성 중..." : "무료 미리보기 생성"}
               </button>
+              {isSubmitting ? (
+                <p className="text-center text-sm leading-6 text-neutral-400">
+                  사주 구조와 MBTI 입력값을 함께 정리하고 있습니다.
+                </p>
+              ) : null}
             </form>
 
             {errors.length > 0 ? (
@@ -312,6 +335,10 @@ export default function NewReportPage() {
                 <h2 className="font-semibold text-red-100">
                   입력값을 확인해 주세요.
                 </h2>
+                <p className="text-sm leading-6 text-red-100/90">
+                  리포트를 생성하지 못했습니다. 입력값을 확인한 뒤 다시 시도해
+                  주세요.
+                </p>
                 <ul className="space-y-2 text-sm leading-6 text-red-200">
                   {errors.map((error) => (
                     <li key={`${error.field}-${error.code}`}>
@@ -334,6 +361,15 @@ export default function NewReportPage() {
           {report ? (
             <section className="space-y-6">
               <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-900/70 p-5">
+                <div className="rounded-lg border border-emerald-900/40 bg-emerald-950/20 p-4">
+                  <p className="text-sm font-semibold text-emerald-100">
+                    샘플 리포트가 생성되었습니다.
+                  </p>
+                  <p className="mt-1 text-sm leading-6 text-emerald-100/80">
+                    아래 내용은 자기이해용 참고자료입니다.
+                  </p>
+                </div>
+
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div className="space-y-2">
                     <h2 className="text-2xl font-bold">{report.titleKo}</h2>
