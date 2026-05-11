@@ -19,8 +19,14 @@ type ApiError = {
   messageKo: string;
 };
 
+type ApiErrorSummary = {
+  code: "INVALID_REQUEST" | "REPORT_CREATE_FAILED";
+  messageKo: string;
+};
+
 type ApiErrorBody = {
   ok: false;
+  error: ApiErrorSummary;
   errors: ApiError[];
 };
 
@@ -34,6 +40,9 @@ type ApiSuccessBody = {
 };
 
 type ApiResponseBody = ApiErrorBody | ApiSuccessBody;
+
+const apiErrorMessageKo =
+  "리포트를 생성하지 못했습니다. 입력값을 확인한 뒤 다시 시도해 주세요.";
 
 function createJsonRequest(body: unknown): Request {
   return new Request("http://localhost/api/reports/create", {
@@ -68,13 +77,26 @@ function isApiError(value: unknown): value is ApiError {
   );
 }
 
+function isApiErrorSummary(value: unknown): value is ApiErrorSummary {
+  return (
+    isRecord(value) &&
+    (value.code === "INVALID_REQUEST" ||
+      value.code === "REPORT_CREATE_FAILED") &&
+    typeof value.messageKo === "string"
+  );
+}
+
 function isApiResponseBody(value: unknown): value is ApiResponseBody {
   if (!isRecord(value) || typeof value.ok !== "boolean") {
     return false;
   }
 
   if (value.ok === false) {
-    return Array.isArray(value.errors) && value.errors.every(isApiError);
+    return (
+      isApiErrorSummary(value.error) &&
+      Array.isArray(value.errors) &&
+      value.errors.every(isApiError)
+    );
   }
 
   return (
@@ -83,6 +105,14 @@ function isApiResponseBody(value: unknown): value is ApiResponseBody {
     typeof value.report.titleKo === "string" &&
     Array.isArray(value.report.sections)
   );
+}
+
+function expectNoRawInternalLeakage(body: ApiResponseBody): void {
+  const text = JSON.stringify(body);
+
+  expect(text).not.toContain("stack");
+  expect(text).not.toContain("Error:");
+  expect(text).not.toContain("SyntaxError");
 }
 
 async function readApiResponseBody(response: Response): Promise<ApiResponseBody> {
@@ -112,6 +142,8 @@ describe("create report route", () => {
       expect(body.report.version).toBe("v1");
       expect(body.report.titleKo).toBe("결리포트");
       expect(body.report.sections).toHaveLength(13);
+      expect(body.report).toBeDefined();
+      expect("error" in body).toBe(false);
     }
   });
 
@@ -124,6 +156,9 @@ describe("create report route", () => {
 
     expect(body.ok).toBe(false);
     if (!body.ok) {
+      expect(body.error.code).toBe("INVALID_REQUEST");
+      expect(body.error.messageKo).toBe(apiErrorMessageKo);
+      expect(body.errors).toEqual(expect.any(Array));
       expect(body.errors.map((error) => error.code)).toEqual([
         "BIRTH_DATE_REQUIRED",
         "BIRTH_TIME_UNKNOWN_INVALID",
@@ -140,18 +175,17 @@ describe("create report route", () => {
 
     expect(response.status).toBe(400);
 
-    const body: unknown = await response.json();
+    const body = await readApiResponseBody(response);
 
-    expect(body).toEqual({
-      ok: false,
-      errors: [
-        {
-          field: "birthDate",
-          code: "BIRTH_DATE_REQUIRED",
-          messageKo: "요청 JSON을 읽을 수 없습니다.",
-        },
-      ],
-    });
+    expect(body.ok).toBe(false);
+    if (!body.ok) {
+      expect(body.error).toEqual({
+        code: "INVALID_REQUEST",
+        messageKo: apiErrorMessageKo,
+      });
+      expect(body.errors).toEqual(expect.any(Array));
+      expectNoRawInternalLeakage(body);
+    }
   });
 
   it("returns 400 for array JSON", async () => {
@@ -162,6 +196,11 @@ describe("create report route", () => {
     const body = await readApiResponseBody(response);
 
     expect(body.ok).toBe(false);
+    if (!body.ok) {
+      expect(body.error.code).toBe("INVALID_REQUEST");
+      expect(body.error.messageKo).toBe(apiErrorMessageKo);
+      expect(body.errors).toEqual(expect.any(Array));
+    }
   });
 
   it("returns 400 for invalid MBTI", async () => {
@@ -178,6 +217,9 @@ describe("create report route", () => {
 
     expect(body.ok).toBe(false);
     if (!body.ok) {
+      expect(body.error.code).toBe("INVALID_REQUEST");
+      expect(body.error.messageKo).toBe(apiErrorMessageKo);
+      expect(body.errors).toEqual(expect.any(Array));
       expect(body.errors.map((error) => error.code)).toContain(
         "MBTI_TYPE_INVALID",
       );

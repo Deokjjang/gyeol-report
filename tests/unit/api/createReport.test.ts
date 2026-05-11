@@ -21,14 +21,32 @@ const malformedRequestError = [
   },
 ];
 
+const apiErrorMessageKo =
+  "리포트를 생성하지 못했습니다. 입력값을 확인한 뒤 다시 시도해 주세요.";
+
+const invalidRequestError = {
+  code: "INVALID_REQUEST",
+  messageKo: apiErrorMessageKo,
+} as const;
+
 function expectMalformedRequestEnvelope(json: unknown): void {
   const envelope = createReportApiEnvelopeFromJson(json);
 
   expect(envelope.status).toBe(400);
   expect(envelope.body.ok).toBe(false);
   if (!envelope.body.ok) {
+    expect(envelope.body.error).toEqual(invalidRequestError);
+    expect(envelope.body.errors).toEqual(expect.any(Array));
     expect(envelope.body.errors).toEqual(malformedRequestError);
   }
+}
+
+function expectNoRawInternalLeakage(body: unknown): void {
+  const text = JSON.stringify(body);
+
+  expect(text).not.toContain("stack");
+  expect(text).not.toContain("Error:");
+  expect(text).not.toContain("SyntaxError");
 }
 
 describe("createReportApiEnvelopeFromJson", () => {
@@ -57,6 +75,8 @@ describe("createReportApiEnvelopeFromJson", () => {
     expect(envelope.status).toBe(400);
     expect(envelope.body.ok).toBe(false);
     if (!envelope.body.ok) {
+      expect(envelope.body.error).toEqual(invalidRequestError);
+      expect(envelope.body.errors).toEqual(expect.any(Array));
       expect(envelope.body.errors.map((error) => error.code)).toEqual([
         "BIRTH_DATE_REQUIRED",
         "BIRTH_TIME_UNKNOWN_INVALID",
@@ -77,6 +97,8 @@ describe("createReportApiEnvelopeFromJson", () => {
       expect(envelope.body.report.version).toBe("v1");
       expect(envelope.body.report.titleKo).toBe("결리포트");
       expect(envelope.body.report.sections).toHaveLength(13);
+      expect(envelope.body.report).toBeDefined();
+      expect("error" in envelope.body).toBe(false);
     }
   });
 
@@ -89,6 +111,8 @@ describe("createReportApiEnvelopeFromJson", () => {
     expect(envelope.status).toBe(400);
     expect(envelope.body.ok).toBe(false);
     if (!envelope.body.ok) {
+      expect(envelope.body.error).toEqual(invalidRequestError);
+      expect(envelope.body.errors).toEqual(expect.any(Array));
       expect(envelope.body.errors.map((error) => error.code)).toContain(
         "CALENDAR_TYPE_UNSUPPORTED",
       );
@@ -104,9 +128,32 @@ describe("createReportApiEnvelopeFromJson", () => {
     expect(envelope.status).toBe(400);
     expect(envelope.body.ok).toBe(false);
     if (!envelope.body.ok) {
+      expect(envelope.body.error).toEqual(invalidRequestError);
+      expect(envelope.body.errors).toEqual(expect.any(Array));
       expect(envelope.body.errors.map((error) => error.code)).toContain(
         "MBTI_TYPE_INVALID",
       );
+    }
+  });
+
+  it("returns clean 500 envelope for unexpected create failure", () => {
+    const throwingInput = Object.defineProperty({}, "birthDate", {
+      get() {
+        throw new Error("internal failure");
+      },
+    });
+
+    const envelope = createReportApiEnvelopeFromJson(throwingInput);
+
+    expect(envelope.status).toBe(500);
+    expect(envelope.body.ok).toBe(false);
+    if (!envelope.body.ok) {
+      expect(envelope.body.error).toEqual({
+        code: "REPORT_CREATE_FAILED",
+        messageKo: apiErrorMessageKo,
+      });
+      expect(envelope.body.errors).toEqual(expect.any(Array));
+      expectNoRawInternalLeakage(envelope.body);
     }
   });
 

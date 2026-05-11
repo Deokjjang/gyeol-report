@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 
 import { createReportApiEnvelopeFromJson } from "../../../../lib/api/createReport";
 
+const REPORT_CREATE_ERROR_MESSAGE =
+  "리포트를 생성하지 못했습니다. 입력값을 확인한 뒤 다시 시도해 주세요.";
+
 export async function POST(request: Request): Promise<NextResponse> {
   let json: unknown;
 
@@ -11,11 +14,15 @@ export async function POST(request: Request): Promise<NextResponse> {
     return NextResponse.json(
       {
         ok: false,
+        error: {
+          code: "INVALID_REQUEST",
+          messageKo: REPORT_CREATE_ERROR_MESSAGE,
+        },
         errors: [
           {
             field: "birthDate",
             code: "BIRTH_DATE_REQUIRED",
-            messageKo: "요청 JSON을 읽을 수 없습니다.",
+            messageKo: REPORT_CREATE_ERROR_MESSAGE,
           },
         ],
       },
