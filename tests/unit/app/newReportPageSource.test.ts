@@ -59,16 +59,49 @@ describe("new report page source", () => {
     expect(pageSource).toContain('block.kind === "HIGHLIGHT"');
   });
 
+  it("supports rich report block kinds", () => {
+    expect(pageSource).toContain('block.kind === "KEY_VALUE"');
+    expect(pageSource).toContain('block.kind === "BULLET_LIST"');
+    expect(pageSource).toContain('block.kind === "WARNING"');
+    expect(pageSource).toContain('block.kind === "HIGHLIGHT"');
+    expect(pageSource).toContain("block.bodyKo");
+    expect(pageSource).toContain('className="text-sm leading-6 text-neutral-300"');
+  });
+
+  it("renders block-level titles", () => {
+    expect(pageSource).toContain("const title = block.titleKo");
+    expect(pageSource).toContain("{block.titleKo}");
+    expect(pageSource).toContain("{title}");
+  });
+
+  it("renders key value object fields", () => {
+    expect(pageSource).toContain("item.keyKo");
+    expect(pageSource).toContain("item.valueKo");
+    expect(pageSource).not.toContain("keyValues.map(([");
+  });
+
+  it("renders list items", () => {
+    expect(pageSource).toContain("block.itemsKo");
+    expect(pageSource).toContain("block.itemsKo.map");
+    expect(pageSource).toContain("{item}");
+  });
+
   it("renders all report sections", () => {
     expect(pageSource).toContain("report.sections.map");
     expect(pageSource).toContain("renderReportBlock");
     expect(pageSource).not.toContain("slice(0, 5)");
   });
 
+  it("does not render raw section id as visible label", () => {
+    expect(pageSource).toContain("key={section.id}");
+    expect(pageSource).not.toContain("{section.id}</");
+  });
+
   it("renders section level pills", () => {
     expect(pageSource).toContain("FREE_PREVIEW");
     expect(pageSource).toContain("무료 미리보기");
     expect(pageSource).toContain("전체 리포트");
+    expect(pageSource).not.toContain("{section.level}</");
   });
 
   it("renders development gate notice", () => {
