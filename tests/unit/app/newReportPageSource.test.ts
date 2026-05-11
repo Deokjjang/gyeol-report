@@ -35,6 +35,12 @@ describe("new report page source", () => {
     expect(pageSource).toContain('fetch("/api/reports/create"');
   });
 
+  it("keeps create report API request flow", () => {
+    expect(pageSource).toContain('fetch("/api/reports/create"');
+    expect(pageSource).toContain("const json = (await response.json())");
+    expect(pageSource).toContain("setReport(json.report)");
+  });
+
   it("renders error and preview text", () => {
     expect(pageSource).toContain("입력값을 확인해 주세요.");
     expect(pageSource).toContain("무료 미리보기 생성");
@@ -49,6 +55,41 @@ describe("new report page source", () => {
     expect(pageSource).toContain("샘플 리포트를 생성합니다");
     expect(pageSource).toContain("전체 리포트 섹션을 확인할 수 있으며");
     expect(pageSource).toContain("자기이해를 돕는 참고");
+  });
+
+  it("renders creation form helper copy", () => {
+    expect(pageSource).toContain(
+      "출생정보와 MBTI를 입력하면 샘플 리포트를 생성합니다.",
+    );
+    expect(pageSource).toContain("양력 기준 생년월일을 입력합니다.");
+    expect(pageSource).toContain(
+      "출생시간을 모르면 비워 두거나 알 수 없음 옵션을 사용합니다.",
+    );
+    expect(pageSource).toContain(
+      "모르면 임시로 가장 가까운 유형을 선택해도 됩니다.",
+    );
+  });
+
+  it("renders loading state copy and disables submit", () => {
+    expect(pageSource).toContain("isSubmitting");
+    expect(pageSource).toContain("disabled={isSubmitting}");
+    expect(pageSource).toContain("리포트 생성 중...");
+    expect(pageSource).toContain(
+      "사주 구조와 MBTI 입력값을 함께 정리하고 있습니다.",
+    );
+  });
+
+  it("renders calm creation error copy", () => {
+    expect(pageSource).toContain(
+      "리포트를 생성하지 못했습니다. 입력값을 확인한 뒤 다시 시도해",
+    );
+    expect(pageSource).not.toContain(".stack");
+    expect(pageSource).not.toContain("JSON.stringify(error)");
+  });
+
+  it("renders report creation success note", () => {
+    expect(pageSource).toContain("샘플 리포트가 생성되었습니다.");
+    expect(pageSource).toContain("아래 내용은 자기이해용 참고자료입니다.");
   });
 
   it("supports report block source types", () => {
