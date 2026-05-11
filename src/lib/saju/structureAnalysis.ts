@@ -6,7 +6,9 @@ import type {
   StructureAnalysisEvidence,
 } from "./structureAnalysisTypes";
 
-type TenGodKey = keyof SajuCalcResult["tenGods"]["distribution"];
+type SajuStructureAnalysisInput = Pick<SajuCalcResult, "tenGods" | "elements">;
+type TenGodKey =
+  keyof SajuStructureAnalysisInput["tenGods"]["distribution"];
 type DayMasterStrengthLevel = DayMasterStrengthAnalysis["level"];
 type StructurePatternCode = SajuStructurePattern["code"];
 
@@ -27,7 +29,7 @@ const WEALTH_TEN_GODS = ["偏財", "正財"] as const satisfies readonly TenGodK
 const OFFICER_TEN_GODS = ["偏官", "正官"] as const satisfies readonly TenGodKey[];
 
 export function analyzeSajuStructure(
-  result: SajuCalcResult,
+  result: SajuStructureAnalysisInput,
 ): SajuStructureAnalysis {
   const metrics = getStructureMetrics(result);
   const dayMasterStrength = analyzeDayMasterStrength(metrics);
@@ -43,7 +45,7 @@ export function analyzeSajuStructure(
   };
 }
 
-function getStructureMetrics(result: SajuCalcResult): StructureMetrics {
+function getStructureMetrics(result: SajuStructureAnalysisInput): StructureMetrics {
   return {
     peerSupport: sumTenGods(result, PEER_TEN_GODS),
     resourceSupport: sumTenGods(result, RESOURCE_TEN_GODS),
@@ -55,14 +57,20 @@ function getStructureMetrics(result: SajuCalcResult): StructureMetrics {
   };
 }
 
-function sumTenGods(result: SajuCalcResult, tenGods: readonly TenGodKey[]): number {
+function sumTenGods(
+  result: SajuStructureAnalysisInput,
+  tenGods: readonly TenGodKey[],
+): number {
   return tenGods.reduce(
     (total, tenGod) => total + getTenGodCount(result, tenGod),
     0,
   );
 }
 
-function getTenGodCount(result: SajuCalcResult, tenGod: TenGodKey): number {
+function getTenGodCount(
+  result: SajuStructureAnalysisInput,
+  tenGod: TenGodKey,
+): number {
   return result.tenGods.distribution[tenGod];
 }
 
@@ -162,7 +170,7 @@ function getDayMasterStrengthSummary(level: DayMasterStrengthLevel): string {
 }
 
 function detectStructurePatterns(
-  result: SajuCalcResult,
+  result: SajuStructureAnalysisInput,
   metrics: StructureMetrics,
   dayMasterStrength: DayMasterStrengthAnalysis,
 ): SajuStructurePattern[] {
@@ -336,8 +344,8 @@ function elementEvidence(
 }
 
 function hasElementLabel(
-  result: SajuCalcResult,
-  label: SajuCalcResult["elements"]["labels"][number],
+  result: SajuStructureAnalysisInput,
+  label: SajuStructureAnalysisInput["elements"]["labels"][number],
 ): boolean {
   return result.elements.labels.includes(label);
 }

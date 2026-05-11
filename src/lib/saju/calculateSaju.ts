@@ -108,7 +108,7 @@ export function calculateSaju(input: SajuCalcInput): SajuCalcResult {
     shinsal,
     notices,
   };
-  const structureAnalysis = analyzeSajuStructure(baseResult as SajuCalcResult);
+  const structureAnalysis = analyzeSajuStructure(baseResult);
 
   return {
     ...baseResult,
