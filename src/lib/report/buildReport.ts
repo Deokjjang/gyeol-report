@@ -342,7 +342,7 @@ function createDayMasterBlocks(input: ReportInput): ReportBlock[] {
   return blocks;
 }
 
-function createAdvancedPatternsBlock(input: ReportInput): ReportBlock {
+function createAdvancedPatternsFallbackBlock(input: ReportInput): ReportBlock {
   const labels = input.sajuTags
     .filter((tag) => tag.category === "ADVANCED_PATTERN")
     .map((tag) => formatSajuTagLabel(tag.labelKo || tag.code));
@@ -359,6 +359,62 @@ function createAdvancedPatternsBlock(input: ReportInput): ReportBlock {
     kind: "PARAGRAPH",
     bodyKo: "현재 기준에서 강하게 표시할 고급 구조 후보는 없습니다.",
   };
+}
+
+function createAdvancedPatternsBlocks(input: ReportInput): ReportBlock[] {
+  const structureAnalysis = input.structureAnalysis;
+
+  if (!structureAnalysis) {
+    return [createAdvancedPatternsFallbackBlock(input)];
+  }
+
+  const blocks: ReportBlock[] = [
+    {
+      kind: "HIGHLIGHT",
+      titleKo: "신강신약",
+      bodyKo: `${structureAnalysis.dayMasterStrength.labelKo}: ${structureAnalysis.dayMasterStrength.summaryKo}`,
+    },
+    {
+      kind: "KEY_VALUE",
+      titleKo: "구조 근거",
+      keyValues: structureAnalysis.dayMasterStrength.evidence.map((item) => ({
+        keyKo: item.keyKo,
+        valueKo: item.valueKo,
+      })),
+    },
+    {
+      kind: "PARAGRAPH",
+      titleKo: structureAnalysis.summary.titleKo,
+      bodyKo: structureAnalysis.summary.bodyKo,
+    },
+  ];
+
+  if (structureAnalysis.patterns.length > 0) {
+    blocks.push({
+      kind: "BULLET_LIST",
+      titleKo: "구조 후보",
+      itemsKo: structureAnalysis.patterns.map(
+        (pattern) => `${pattern.labelKo}: ${pattern.summaryKo}`,
+      ),
+    });
+  } else {
+    blocks.push({
+      kind: "PARAGRAPH",
+      titleKo: "구조 후보",
+      bodyKo:
+        "현재 계산된 신호만으로는 특정 구조 하나를 강하게 잡기보다 전체 균형을 함께 보는 편이 적절합니다.",
+    });
+  }
+
+  if (structureAnalysis.notices.length > 0) {
+    blocks.push({
+      kind: "BULLET_LIST",
+      titleKo: "해석 기준",
+      itemsKo: [...structureAnalysis.notices],
+    });
+  }
+
+  return blocks;
 }
 
 function createShinsalBlock(input: ReportInput): ReportBlock {
@@ -544,7 +600,7 @@ export function buildReport(input: ReportInput): ReportOutput {
       level: "PAID_FULL",
       titleKo: "고급 구조 후보",
       summaryKo: "고급 구조 후보는 단정이 아니라 해석을 위한 신호입니다.",
-      blocks: [createAdvancedPatternsBlock(input)],
+      blocks: createAdvancedPatternsBlocks(input),
     }),
     createSection({
       id: "SHINSAL",

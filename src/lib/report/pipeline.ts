@@ -65,6 +65,7 @@ export function createReportFromRawInput(
     bridgeSignals: bridge.signals,
     mbtiSuggestion,
     dayPillarProfile,
+    structureAnalysis: saju.structureAnalysis,
   });
 
   return {
