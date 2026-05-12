@@ -74,6 +74,18 @@ describe("app layout metadata source", () => {
     expect(pageSource).toContain("샘플 리포트 생성하기");
   });
 
+  it("renders landing page no-payment preview guard", () => {
+    const expectedValues = [
+      "결제 없는 미리보기",
+      "현재는 실제 결제 없이 리포트 미리보기만 제공합니다.",
+      "정식 결제 및 전체 리포트 잠금 해제는 추후 제공 예정입니다.",
+    ];
+
+    for (const value of expectedValues) {
+      expect(pageSource).toContain(value);
+    }
+  });
+
   it("renders landing page product positioning", () => {
     expect(pageSource).toContain("사주와 MBTI");
     expect(pageSource).toContain("자기이해");
@@ -114,6 +126,21 @@ describe("app layout metadata source", () => {
     expect(pageSource).toContain("mailto:official@dvem.ai");
     expect(pageSource).not.toContain('href="/terms"');
     expect(pageSource).not.toContain('href="/privacy"');
+  });
+
+  it("does not include payment implementation markers", () => {
+    const markers = [
+      "create" + "Payment",
+      "confirm" + "Payment",
+      "Toss" + "Payments",
+      "Pad" + "dle",
+      "process" + ".env",
+      "fetch" + "(",
+    ];
+
+    for (const marker of markers) {
+      expect(pageSource).not.toContain(marker);
+    }
   });
 
   it("does not include unsafe exact wording", () => {

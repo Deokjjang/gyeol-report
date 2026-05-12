@@ -34,14 +34,13 @@ export default function Home() {
 
           <div className="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-5 shadow-2xl shadow-black/20">
             <p className="text-sm font-medium text-neutral-400">
-              정식 출시 준비 중
+              결제 없는 미리보기
             </p>
             <p className="mt-2 text-2xl font-bold text-neutral-50">
-              현재는 샘플 리포트 미리보기로 제공됩니다.
+              현재는 실제 결제 없이 리포트 미리보기만 제공합니다.
             </p>
             <p className="mt-3 text-sm leading-6 text-neutral-400">
-              결제 기능은 아직 연결되어 있지 않으며, 리포트 생성 흐름과 출력
-              품질을 먼저 확인할 수 있습니다.
+              정식 결제 및 전체 리포트 잠금 해제는 추후 제공 예정입니다.
             </p>
           </div>
         </div>
