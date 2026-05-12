@@ -8,8 +8,8 @@ export default function TermsPage() {
           <p className="text-sm font-medium text-neutral-400">Gyeol Report</p>
           <h1 className="text-4xl font-bold tracking-tight">이용약관</h1>
           <p className="text-base leading-8 text-neutral-400">
-            이 문서는 정식 출시 전 placeholder이며, 결제 기능 공개 전에 최종
-            약관으로 정리될 예정입니다.
+            이 문서는 출시 전 초안입니다. 결제 기능 공개 전에 서비스 범위와
+            이용 기준을 다시 정리할 예정입니다.
           </p>
         </header>
 
@@ -23,12 +23,11 @@ export default function TermsPage() {
         <section className="space-y-5 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5">
           <div className="space-y-2">
             <h2 className="text-lg font-semibold text-neutral-100">
-              서비스 성격
+            서비스 성격
             </h2>
             <p className="text-sm leading-7 text-neutral-400">
-              결리포트는 사용자가 입력한 출생정보와 MBTI를 바탕으로 생성되는
-              디지털 자기이해 리포트입니다. 리포트 내용은 자기이해를 돕기 위한
-              참고자료로 제공합니다.
+              결리포트는 사용자가 입력한 정보를 바탕으로 제공되는 디지털 자기 이해 리포트입니다.
+              리포트 내용은 자기이해를 돕기 위한 참고자료로 제공합니다.
             </p>
           </div>
 

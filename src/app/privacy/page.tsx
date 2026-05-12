@@ -10,8 +10,8 @@ export default function PrivacyPage() {
             개인정보 처리방침
           </h1>
           <p className="text-base leading-8 text-neutral-400">
-            이 문서는 정식 출시 전 placeholder이며, 실제 저장과 결제 기능 공개
-            전에 최종 방침으로 정리될 예정입니다.
+            이 문서는 출시 전 초안입니다. 실제 저장과 결제 기능 공개 전에 처리
+            기준을 다시 정리할 예정입니다.
           </p>
         </header>
 
@@ -28,10 +28,9 @@ export default function PrivacyPage() {
               처리할 수 있는 입력값
             </h2>
             <p className="text-sm leading-7 text-neutral-400">
-              리포트 생성을 위해 생년월일, 출생시간, 출생시간 확인 여부,
-              양력/음력 구분, 시간대, 성별 선택값, MBTI 선택값이 사용될 수
-              있습니다. 성별과 MBTI는 서비스 입력 흐름에 따라 선택적으로 다룰
-              수 있습니다.
+              입력 데이터에는 생년월일, 태어난 시간, 양력/음력, 선택 입력인
+              성별과 MBTI가 포함될 수 있습니다. 출생시간 확인 여부와 시간대도
+              리포트 생성을 위해 사용될 수 있습니다.
             </p>
           </div>
 

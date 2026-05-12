@@ -8,15 +8,15 @@ export default function RefundPage() {
           <p className="text-sm font-medium text-neutral-400">Gyeol Report</p>
           <h1 className="text-4xl font-bold tracking-tight">환불 안내</h1>
           <p className="text-base leading-8 text-neutral-400">
-            이 문서는 정식 출시 전 placeholder이며, 실제 결제 기능 공개 전에
-            환불과 실패 처리 기준을 다시 정리할 예정입니다.
+            이 문서는 출시 전 초안입니다. 실제 결제 기능 공개 전에 환불과 실패
+            처리 기준을 다시 정리할 예정입니다.
           </p>
         </header>
 
         <div className="rounded-2xl border border-amber-900/50 bg-amber-950/20 p-5">
           <p className="text-sm leading-6 text-amber-100/90">
-            현재 결제 기능은 활성화되어 있지 않습니다. 유료 출시 전 결제 실패,
-            환불, 고객지원 절차를 별도 안내로 공개합니다.
+            현재 실제 결제는 아직 활성화되어 있지 않습니다. 유료 출시 전 결제
+            실패, 환불, 고객지원 절차를 별도 안내로 공개합니다.
           </p>
         </div>
 
@@ -26,9 +26,8 @@ export default function RefundPage() {
               결제 실패
             </h2>
             <p className="text-sm leading-7 text-neutral-400">
-              결제가 실패하거나 취소된 경우 유료 리포트 접근은 열리지 않는
-              방식으로 설계합니다. 사용자는 다시 시도하거나 고객지원으로 문의할
-              수 있어야 합니다.
+              결제 실패 시 전체 리포트 접근 권한은 열리지 않습니다. 사용자는
+              다시 시도하거나 고객지원으로 문의할 수 있어야 합니다.
             </p>
           </div>
 
