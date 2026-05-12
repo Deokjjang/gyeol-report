@@ -4,6 +4,8 @@ import { describe, expect, it } from "vitest";
 
 const layoutPath = join(process.cwd(), "src/app/layout.tsx");
 const layoutSource = readFileSync(layoutPath, "utf8");
+const pagePath = join(process.cwd(), "src/app/page.tsx");
+const pageSource = readFileSync(pagePath, "utf8");
 
 describe("app layout metadata source", () => {
   it("exports metadata", () => {
@@ -65,6 +67,53 @@ describe("app layout metadata source", () => {
     for (const marker of markers) {
       expect(lowerSource).not.toContain(marker);
     }
+  });
+
+  it("renders landing page primary CTA", () => {
+    expect(pageSource).toContain('href="/report/new"');
+    expect(pageSource).toContain("샘플 리포트 생성하기");
+  });
+
+  it("renders landing page product positioning", () => {
+    expect(pageSource).toContain("사주와 MBTI");
+    expect(pageSource).toContain("자기이해");
+    expect(pageSource).toContain("사주와 MBTI를 함께 보며 자기이해를 돕는 리포트");
+  });
+
+  it("renders landing page report value content", () => {
+    const expectedValues = [
+      "일주",
+      "오행",
+      "십성",
+      "신살",
+      "MBTI",
+      "겹침과 차이",
+      "활용",
+    ];
+
+    for (const value of expectedValues) {
+      expect(pageSource).toContain(value);
+    }
+  });
+
+  it("renders landing page trust and support placeholders", () => {
+    const expectedValues = [
+      "안내",
+      "official@dvem.ai",
+      "이용약관",
+      "개인정보 처리방침",
+      "정식 출시 전 공개 예정",
+    ];
+
+    for (const value of expectedValues) {
+      expect(pageSource).toContain(value);
+    }
+  });
+
+  it("does not link to unsupported policy routes", () => {
+    expect(pageSource).toContain("mailto:official@dvem.ai");
+    expect(pageSource).not.toContain('href="/terms"');
+    expect(pageSource).not.toContain('href="/privacy"');
   });
 
   it("does not include unsafe exact wording", () => {
