@@ -168,12 +168,27 @@ describe("new report page source", () => {
     expect(pageSource).toContain(
       "전체 리포트에서 자세히 확인할 수 있습니다.",
     );
-    expect(pageSource).toContain("전체 리포트 확인하기");
+    expect(pageSource).toContain("정식 결제 연동 후 제공 예정");
+    expect(pageSource).not.toContain("전체 리포트 확인하기");
   });
 
   it("keeps dev full preview mode explicit", () => {
     expect(pageSource).toContain("현재 화면은 개발용 전체");
     expect(pageSource).toContain("미리보기 모드입니다.");
+  });
+
+  it("renders payment inactive guard copy", () => {
+    const guardMarkers = [
+      "결제 비활성 안내",
+      "현재 실제 결제는 아직 활성화되어 있지 않습니다.",
+      "전체 리포트 결제 및 잠금 해제 기능은 정식 결제 연동 이후 제공됩니다.",
+      "지금은 개발용 미리보기로 리포트 구조와 문구를 확인할 수 있습니다.",
+      "정식 결제 연동 후 제공 예정",
+    ];
+
+    for (const marker of guardMarkers) {
+      expect(pageSource).toContain(marker);
+    }
   });
 
   it("keeps section heading outside gated body rendering", () => {
@@ -241,6 +256,20 @@ describe("new report page source", () => {
 
     for (const marker of markers) {
       expect(lowerSource).not.toContain(marker.toLowerCase());
+    }
+  });
+
+  it("does not include payment implementation markers", () => {
+    const markers = [
+      "create" + "Payment",
+      "confirm" + "Payment",
+      "Toss" + "Payments",
+      "Pad" + "dle",
+      "process" + ".env",
+    ];
+
+    for (const marker of markers) {
+      expect(pageSource).not.toContain(marker);
     }
   });
 

@@ -88,9 +88,10 @@ function renderLockedSectionBody() {
       </p>
       <button
         type="button"
-        className="rounded-lg bg-neutral-50 px-4 py-3 text-sm font-semibold text-neutral-950 transition hover:bg-white"
+        disabled
+        className="cursor-not-allowed rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-sm font-semibold text-neutral-300"
       >
-        전체 리포트 확인하기
+        정식 결제 연동 후 제공 예정
       </button>
     </div>
   );
@@ -399,6 +400,21 @@ export default function NewReportPage() {
                   </p>
                   <p className="mt-1 text-sm leading-6 text-emerald-100/80">
                     아래 내용은 자기이해용 참고자료입니다.
+                  </p>
+                </div>
+
+                <div className="space-y-2 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                  <p className="text-sm font-semibold text-neutral-100">
+                    결제 비활성 안내
+                  </p>
+                  <p className="text-sm leading-6 text-neutral-400">
+                    현재 실제 결제는 아직 활성화되어 있지 않습니다.
+                  </p>
+                  <p className="text-sm leading-6 text-neutral-400">
+                    전체 리포트 결제 및 잠금 해제 기능은 정식 결제 연동 이후 제공됩니다.
+                  </p>
+                  <p className="text-sm leading-6 text-neutral-400">
+                    지금은 개발용 미리보기로 리포트 구조와 문구를 확인할 수 있습니다.
                   </p>
                 </div>
 
