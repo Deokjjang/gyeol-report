@@ -148,6 +148,42 @@ describe("new report page source", () => {
     expect(pageSource).not.toContain("slice(0, 5)");
   });
 
+  it("defines report preview gating modes", () => {
+    expect(pageSource).toContain("REPORT_PREVIEW_MODE");
+    expect(pageSource).toContain('"dev_full"');
+    expect(pageSource).toContain('"gated_preview"');
+    expect(pageSource).toContain(
+      'const REPORT_PREVIEW_MODE = "dev_full" as const',
+    );
+  });
+
+  it("defines section body access helper", () => {
+    expect(pageSource).toContain("function canShowSectionBody");
+    expect(pageSource).toContain('mode === "dev_full"');
+    expect(pageSource).toContain('level === "FREE_PREVIEW"');
+  });
+
+  it("keeps locked paid section copy and CTA available", () => {
+    expect(pageSource).toContain("function renderLockedSectionBody");
+    expect(pageSource).toContain(
+      "전체 리포트에서 자세히 확인할 수 있습니다.",
+    );
+    expect(pageSource).toContain("전체 리포트 확인하기");
+  });
+
+  it("keeps dev full preview mode explicit", () => {
+    expect(pageSource).toContain("현재 화면은 개발용 전체");
+    expect(pageSource).toContain("미리보기 모드입니다.");
+  });
+
+  it("keeps section heading outside gated body rendering", () => {
+    expect(pageSource).toContain("section.titleKo");
+    expect(pageSource).toContain("section.summaryKo");
+    expect(pageSource).toContain("canShowSectionBody(");
+    expect(pageSource).toContain("shouldShowSectionBody");
+    expect(pageSource).toContain("renderLockedSectionBody()");
+  });
+
   it("uses product-style section card structure", () => {
     expect(pageSource).toContain("report.sections.map");
     expect(pageSource).toContain("rounded-lg");
@@ -189,7 +225,10 @@ describe("new report page source", () => {
     const markers = [
       "supabase",
       "payment",
+      "paymentIntent",
       "paddle",
+      "checkout",
+      "providerPayment",
       "login",
       "auth",
       "openai",
