@@ -36,6 +36,8 @@ type ReportPreview = {
   notices: string[];
 };
 
+type ReportPreviewMode = "dev_full" | "gated_preview";
+
 type CreateReportResponse =
   | {
       ok: true;
@@ -45,6 +47,8 @@ type CreateReportResponse =
       ok: false;
       errors: ValidationError[];
     };
+
+const REPORT_PREVIEW_MODE = "dev_full" as const satisfies ReportPreviewMode;
 
 const mbtiTypes = [
   "INTJ",
@@ -64,6 +68,33 @@ const mbtiTypes = [
   "ESTP",
   "ESFP",
 ] as const;
+
+function canShowSectionBody(
+  level: ReportSection["level"],
+  mode: ReportPreviewMode,
+): boolean {
+  if (mode === "dev_full") {
+    return true;
+  }
+
+  return level === "FREE_PREVIEW";
+}
+
+function renderLockedSectionBody() {
+  return (
+    <div className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/70 p-5">
+      <p className="text-sm leading-6 text-neutral-300">
+        전체 리포트에서 자세히 확인할 수 있습니다.
+      </p>
+      <button
+        type="button"
+        className="rounded-lg bg-neutral-50 px-4 py-3 text-sm font-semibold text-neutral-950 transition hover:bg-white"
+      >
+        전체 리포트 확인하기
+      </button>
+    </div>
+  );
+}
 
 function renderReportBlock(block: ReportBlock, index: number) {
   const title = block.titleKo ? (
@@ -378,7 +409,8 @@ export default function NewReportPage() {
                   </div>
                   <p className="rounded-full border border-neutral-800 px-3 py-1 text-xs font-medium text-neutral-500">
                     결제 게이트는 아직 연결되지 않았습니다. 현재는 개발용
-                    미리보기로 전체 구조를 확인합니다.
+                    미리보기로 전체 구조를 확인합니다. 현재 화면은 개발용 전체
+                    미리보기 모드입니다.
                   </p>
                 </div>
 
@@ -392,35 +424,43 @@ export default function NewReportPage() {
               </div>
 
               <div className="space-y-5">
-                {report.sections.map((section) => (
-                  <article
-                    key={section.id}
-                    className="space-y-5 rounded-lg border border-neutral-800 bg-neutral-900/60 p-5"
-                  >
-                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                      <div className="space-y-2">
-                        <h3 className="text-lg font-semibold tracking-tight text-neutral-50">
-                          {section.titleKo}
-                        </h3>
-                        <p className="text-sm leading-6 text-neutral-400">
-                          {section.summaryKo}
-                        </p>
+                {report.sections.map((section) => {
+                  const shouldShowSectionBody = canShowSectionBody(
+                    section.level,
+                    REPORT_PREVIEW_MODE,
+                  );
+
+                  return (
+                    <article
+                      key={section.id}
+                      className="space-y-5 rounded-lg border border-neutral-800 bg-neutral-900/60 p-5"
+                    >
+                      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                        <div className="space-y-2">
+                          <h3 className="text-lg font-semibold tracking-tight text-neutral-50">
+                            {section.titleKo}
+                          </h3>
+                          <p className="text-sm leading-6 text-neutral-400">
+                            {section.summaryKo}
+                          </p>
+                        </div>
+                        <span className="shrink-0 rounded-full border border-neutral-700 px-3 py-1 text-xs font-medium text-neutral-400">
+                          {section.level === "FREE_PREVIEW"
+                            ? "무료 미리보기"
+                            : "전체 리포트"}
+                        </span>
                       </div>
-                      <span className="shrink-0 rounded-full border border-neutral-700 px-3 py-1 text-xs font-medium text-neutral-400">
-                        {section.level === "FREE_PREVIEW"
-                          ? "무료 미리보기"
-                          : "전체 리포트"}
-                      </span>
-                    </div>
-                    {section.blocks.length > 0 ? (
+
                       <div className="space-y-5 border-t border-neutral-800 pt-5">
-                        {section.blocks.map((block, index) =>
-                          renderReportBlock(block, index),
-                        )}
+                        {shouldShowSectionBody
+                          ? section.blocks.map((block, index) =>
+                              renderReportBlock(block, index),
+                            )
+                          : renderLockedSectionBody()}
                       </div>
-                    ) : null}
-                  </article>
-                ))}
+                    </article>
+                  );
+                })}
               </div>
             </section>
           ) : (
