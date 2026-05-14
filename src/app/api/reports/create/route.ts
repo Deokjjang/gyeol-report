@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { createReportApiEnvelopeFromJson } from "../../../../lib/api/createReport";
+import type { CreatePersistedReportInput } from "../../../../lib/persistence/reportPersistenceAdapter";
 import { createReportPersistenceRuntime } from "../../../../lib/persistence/reportPersistenceRuntime";
 import { buildReportPersistencePayload } from "../../../../lib/report/reportPersistencePayload";
 
@@ -12,6 +13,7 @@ const REPORT_PERSISTENCE_RUNTIME_FAILED_MESSAGE =
   "리포트 저장 환경을 준비하지 못했습니다.";
 const REPORT_PERSISTENCE_CREATE_FAILED_MESSAGE =
   "리포트를 저장하지 못했습니다.";
+const previewReportIdByRequestKey = new Map<string, string>();
 
 type ReportPersistenceRouteErrorCode =
   | "REPORT_PERSISTENCE_PAYLOAD_FAILED"
@@ -65,6 +67,22 @@ function createPersistenceFailureResponse(
     },
     { status: 500 },
   );
+}
+
+function createPreviewReportIdRequestKey(json: Record<string, unknown>): string {
+  return JSON.stringify(json);
+}
+
+function withReportId(
+  input: CreatePersistedReportInput,
+  reportId: string,
+): CreatePersistedReportInput {
+  return {
+    record: {
+      ...input.record,
+      reportId,
+    },
+  };
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
@@ -143,7 +161,13 @@ export async function POST(request: Request): Promise<NextResponse> {
     );
   }
 
-  const createResult = await runtime.adapter.create(payloadResult.input);
+  const requestKey = createPreviewReportIdRequestKey(json);
+  const cachedReportId = previewReportIdByRequestKey.get(requestKey);
+  const createInput =
+    cachedReportId === undefined
+      ? payloadResult.input
+      : withReportId(payloadResult.input, cachedReportId);
+  const createResult = await runtime.adapter.create(createInput);
 
   if (!createResult.ok) {
     return createPersistenceFailureResponse(
@@ -152,7 +176,15 @@ export async function POST(request: Request): Promise<NextResponse> {
     );
   }
 
-  return NextResponse.json(envelope.body, {
-    status: envelope.status,
-  });
+  previewReportIdByRequestKey.set(requestKey, createResult.record.reportId);
+
+  return NextResponse.json(
+    {
+      ...envelope.body,
+      reportId: createResult.record.reportId,
+    },
+    {
+      status: envelope.status,
+    },
+  );
 }
