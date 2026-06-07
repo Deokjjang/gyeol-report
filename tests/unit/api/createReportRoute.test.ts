@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { POST } from "@/app/api/reports/create/route";
@@ -9,6 +11,16 @@ const validRawInput: ReportRequestRawInput = {
   birthTimeUnknown: false,
   calendarType: "SOLAR",
   gender: "MALE",
+  timezone: "Asia/Seoul",
+  mbtiType: "ENTJ",
+};
+
+const productionUnsupportedYearInput: ReportRequestRawInput = {
+  birthDate: "1996-12-06",
+  birthTime: "14:15",
+  birthTimeUnknown: false,
+  calendarType: "SOLAR",
+  gender: "FEMALE",
   timezone: "Asia/Seoul",
   mbtiType: "ENTJ",
 };
@@ -32,6 +44,7 @@ type ApiErrorBody = {
 
 type ApiSuccessBody = {
   ok: true;
+  reportId: string;
   report: {
     version: string;
     titleKo: string;
@@ -43,6 +56,12 @@ type ApiResponseBody = ApiErrorBody | ApiSuccessBody;
 
 const apiErrorMessageKo =
   "리포트를 생성하지 못했습니다. 입력값을 확인한 뒤 다시 시도해 주세요.";
+const unsupportedSolarTermYearErrorMessageKo =
+  "현재 이 생년월일의 리포트를 생성할 수 없습니다.";
+
+function readFile(relativePath: string): string {
+  return readFileSync(join(process.cwd(), relativePath), "utf8");
+}
 
 function createJsonRequest(body: unknown): Request {
   return new Request("http://localhost/api/reports/create", {
@@ -100,6 +119,7 @@ function isApiResponseBody(value: unknown): value is ApiResponseBody {
   }
 
   return (
+    typeof value.reportId === "string" &&
     isRecord(value.report) &&
     typeof value.report.version === "string" &&
     typeof value.report.titleKo === "string" &&
@@ -143,7 +163,30 @@ describe("create report route", () => {
       expect(body.report.titleKo).toBe("결리포트");
       expect(body.report.sections).toHaveLength(13);
       expect(body.report).toBeDefined();
+      expect(body.reportId).toMatch(/^report_/);
       expect("error" in body).toBe(false);
+    }
+  });
+
+  it("returns honest unsupported solar term year error for production payload", async () => {
+    const response = await POST(createJsonRequest(productionUnsupportedYearInput));
+
+    expect(response.status).toBe(500);
+
+    const body = await readApiResponseBody(response);
+
+    expect(body.ok).toBe(false);
+    if (!body.ok) {
+      const errorCodes = body.errors.map((error) => error.code);
+
+      expect(body.error).toEqual({
+        code: "REPORT_CREATE_FAILED",
+        messageKo: unsupportedSolarTermYearErrorMessageKo,
+      });
+      expect(errorCodes).toContain("SOLAR_TERM_YEAR_UNSUPPORTED");
+      expect(errorCodes).not.toContain("BIRTH_DATE_REQUIRED");
+      expect(errorCodes).not.toContain("MBTI_TYPE_REQUIRED");
+      expect(errorCodes).not.toContain("MBTI_TYPE_INVALID");
     }
   });
 
@@ -232,5 +275,25 @@ describe("create report route", () => {
 
     expect(first.status).toBe(second.status);
     expect(await first.json()).toEqual(await second.json());
+  });
+
+  it("keeps preview-memory persistence and avoids unsafe markers", () => {
+    const source = readFile("src/app/api/reports/create/route.ts");
+    const unsafeMarkers = [
+      "production_supabase",
+      "@supabase/supabase-js",
+      "process.env",
+      "NEXT_PUBLIC",
+      "fetch(",
+      "createClient",
+      "service_role",
+      "password",
+    ];
+
+    expect(source).toContain('mode: "preview_memory"');
+
+    for (const marker of unsafeMarkers) {
+      expect(source).not.toContain(marker);
+    }
   });
 });

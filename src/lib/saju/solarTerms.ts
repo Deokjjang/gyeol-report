@@ -25,6 +25,13 @@ export type SolarTermYearData = {
   boundaries: readonly SolarTermBoundary[];
 };
 
+export class UnsupportedSolarTermYearError extends Error {
+  constructor(readonly year: number) {
+    super(`Solar term data for year ${year} is not available.`);
+    this.name = "UnsupportedSolarTermYearError";
+  }
+}
+
 const KST_DATE_TIME_PATTERN =
   /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})\+09:00$/;
 const KST_DATE_TIME_FORMAT_ERROR =
@@ -478,7 +485,7 @@ export function getSolarTermYearData(year: number): SolarTermYearData {
   const yearData = SOLAR_TERM_YEAR_DATA.find((data) => data.year === year);
 
   if (!yearData) {
-    throw new Error(`Solar term data for year ${year} is not available.`);
+    throw new UnsupportedSolarTermYearError(year);
   }
 
   return yearData;
