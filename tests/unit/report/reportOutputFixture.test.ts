@@ -27,6 +27,24 @@ const forbiddenWords = [
   "틀" + "렸다",
 ] as const;
 
+const expectedSectionIds = [
+  "INTRO",
+  "QUICK_SUMMARY",
+  "SAJU_CORE",
+  "DAY_MASTER",
+  "ELEMENTS",
+  "TEN_GODS",
+  "ADVANCED_PATTERNS",
+  "SHINSAL",
+  "RELATIONS",
+  "PRACTICAL_POINTS",
+  "MBTI_PROFILE",
+  "SAJU_MBTI_BRIDGE",
+  "SAJU_MBTI_SUGGESTION",
+  "ACTION_GUIDE",
+  "DISCLAIMER",
+] as const;
+
 type PipelineResult = ReturnType<typeof createReportFromRawInput>;
 type FixtureReport = Extract<PipelineResult, { ok: true }>["report"];
 type FixtureSection = FixtureReport["sections"][number];
@@ -62,27 +80,15 @@ function countMatches(text: string, pattern: RegExp): number {
 }
 
 describe("report output fixture", () => {
-  it("produces stable 13-section report", () => {
+  it("produces stable 15-section report", () => {
     const report = getFixtureReport();
 
     expect(report.version).toBe("v1");
     expect(report.titleKo).toBe("결리포트");
-    expect(report.sections).toHaveLength(13);
-    expect(report.sections.map((section) => section.id)).toEqual([
-      "INTRO",
-      "SAJU_CORE",
-      "DAY_MASTER",
-      "ELEMENTS",
-      "TEN_GODS",
-      "ADVANCED_PATTERNS",
-      "SHINSAL",
-      "RELATIONS",
-      "MBTI_PROFILE",
-      "SAJU_MBTI_BRIDGE",
-      "SAJU_MBTI_SUGGESTION",
-      "ACTION_GUIDE",
-      "DISCLAIMER",
-    ]);
+    expect(report.sections).toHaveLength(expectedSectionIds.length);
+    expect(report.sections.map((section) => section.id)).toEqual(
+      expectedSectionIds,
+    );
   });
 
   it("shows core pillars", () => {
@@ -92,10 +98,10 @@ describe("report output fixture", () => {
 
     expect(block?.keyValues).toEqual(
       expect.arrayContaining([
-        { keyKo: "년주", valueKo: "甲辰" },
-        { keyKo: "월주", valueKo: "丙寅" },
-        { keyKo: "일주", valueKo: "丙申" },
-        { keyKo: "시주", valueKo: "丁酉" },
+        { keyKo: "년주", valueKo: "甲辰 갑진 — 갑목 + 진토" },
+        { keyKo: "월주", valueKo: "丙寅 병인 — 병화 + 인목" },
+        { keyKo: "일주", valueKo: "丙申 병신 — 병화 + 신금" },
+        { keyKo: "시주", valueKo: "丁酉 정유 — 정화 + 유금" },
       ]),
     );
   });
@@ -259,7 +265,11 @@ describe("report output fixture", () => {
 
     expect(text).toContain("일주 핵심");
     expect(text).toContain("일주 구조");
-    expect(text).toContain("오행 흐름");
+    expect(text).toContain("오행 밸런스");
+    expect(text).toContain("추천 색상·공간·보완 루틴");
+    expect(text).toContain("강하게 보이는 흐름");
+    expect(text).toContain("보완하면 좋은 흐름");
+    expect(text).toContain("내가 움직이는 방식");
     expect(text).toContain("십성 묶음");
     expect(text).toContain("십성 종합");
     expect(text).toContain("십성 해석 포인트");
@@ -269,7 +279,7 @@ describe("report output fixture", () => {
     expect(text).toContain(
       "병신일주는 밝게 드러나는 표현성과 빠른 판단력이 함께 작동하는 구조입니다.",
     );
-    expect(text).toContain("감정 회복·휴식·유연한 조율");
+    expect(text).toContain("물가 산책, 수면 루틴, 반신욕");
     expect(text).toContain("비겁 2.3");
     expect(text).toContain("인성 1.9");
     expect(text).toContain("식상 0.8");
@@ -377,9 +387,9 @@ describe("report output fixture", () => {
     const report = getFixtureReport();
     const text = JSON.stringify(report);
 
-    expect(text).toContain("화 기운 강함");
-    expect(text).toContain("금 기운 강함");
-    expect(text).toContain("수 기운 약함");
+    expect(text).toContain("화: 높음");
+    expect(text).toContain("금: 높음");
+    expect(text).toContain("수: 낮음");
     expect(text).not.toContain("FIRE_STRONG");
     expect(text).not.toContain("METAL_STRONG");
     expect(text).not.toContain("WATER_WEAK");

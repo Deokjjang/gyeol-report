@@ -8,6 +8,7 @@ import type { SajuCalcResult } from "../saju/types";
 
 export type ReportSectionId =
   | "INTRO"
+  | "QUICK_SUMMARY"
   | "SAJU_CORE"
   | "DAY_MASTER"
   | "ELEMENTS"
@@ -15,6 +16,7 @@ export type ReportSectionId =
   | "ADVANCED_PATTERNS"
   | "SHINSAL"
   | "RELATIONS"
+  | "PRACTICAL_POINTS"
   | "MBTI_PROFILE"
   | "SAJU_MBTI_BRIDGE"
   | "SAJU_MBTI_SUGGESTION"

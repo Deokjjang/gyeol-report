@@ -29,6 +29,24 @@ const invalidRequestError = {
   messageKo: apiErrorMessageKo,
 } as const;
 
+const expectedSectionIds = [
+  "INTRO",
+  "QUICK_SUMMARY",
+  "SAJU_CORE",
+  "DAY_MASTER",
+  "ELEMENTS",
+  "TEN_GODS",
+  "ADVANCED_PATTERNS",
+  "SHINSAL",
+  "RELATIONS",
+  "PRACTICAL_POINTS",
+  "MBTI_PROFILE",
+  "SAJU_MBTI_BRIDGE",
+  "SAJU_MBTI_SUGGESTION",
+  "ACTION_GUIDE",
+  "DISCLAIMER",
+] as const;
+
 function expectMalformedRequestEnvelope(json: unknown): void {
   const envelope = createReportApiEnvelopeFromJson(json);
 
@@ -96,7 +114,12 @@ describe("createReportApiEnvelopeFromJson", () => {
     if (envelope.body.ok) {
       expect(envelope.body.report.version).toBe("v1");
       expect(envelope.body.report.titleKo).toBe("결리포트");
-      expect(envelope.body.report.sections).toHaveLength(13);
+      expect(envelope.body.report.sections).toHaveLength(
+        expectedSectionIds.length,
+      );
+      expect(envelope.body.report.sections.map((section) => section.id)).toEqual(
+        expectedSectionIds,
+      );
       expect(envelope.body.report).toBeDefined();
       expect("error" in envelope.body).toBe(false);
     }

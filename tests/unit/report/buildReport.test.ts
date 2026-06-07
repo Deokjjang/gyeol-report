@@ -50,6 +50,24 @@ const forbiddenWords = [
   "항" + "상",
 ] as const;
 
+const expectedSectionIds = [
+  "INTRO",
+  "QUICK_SUMMARY",
+  "SAJU_CORE",
+  "DAY_MASTER",
+  "ELEMENTS",
+  "TEN_GODS",
+  "ADVANCED_PATTERNS",
+  "SHINSAL",
+  "RELATIONS",
+  "PRACTICAL_POINTS",
+  "MBTI_PROFILE",
+  "SAJU_MBTI_BRIDGE",
+  "SAJU_MBTI_SUGGESTION",
+  "ACTION_GUIDE",
+  "DISCLAIMER",
+] as const;
+
 function createReportInput(overrides?: Partial<ReportInput>): ReportInput {
   const saju = calculateSaju(knownTimeInput);
   const sajuTags = extractSajuTags(saju);
@@ -122,7 +140,7 @@ describe("buildReport", () => {
     expect(report.version).toBe("v1");
     expect(report.titleKo).toBe("결리포트");
     expect(report.subtitleKo).toBe("사주와 MBTI로 읽는 나의 결");
-    expect(report.sections).toHaveLength(13);
+    expect(report.sections).toHaveLength(expectedSectionIds.length);
     expect(report.notices).toContain(
       "출생정보와 해석 결과는 자기이해용 참고자료입니다.",
     );
@@ -131,21 +149,9 @@ describe("buildReport", () => {
   it("returns section ids in exact order", () => {
     const report = buildReport(createReportInput());
 
-    expect(report.sections.map((section) => section.id)).toEqual([
-      "INTRO",
-      "SAJU_CORE",
-      "DAY_MASTER",
-      "ELEMENTS",
-      "TEN_GODS",
-      "ADVANCED_PATTERNS",
-      "SHINSAL",
-      "RELATIONS",
-      "MBTI_PROFILE",
-      "SAJU_MBTI_BRIDGE",
-      "SAJU_MBTI_SUGGESTION",
-      "ACTION_GUIDE",
-      "DISCLAIMER",
-    ]);
+    expect(report.sections.map((section) => section.id)).toEqual(
+      expectedSectionIds,
+    );
   });
 
   it("accepts day pillar profile data without changing section structure", () => {
@@ -154,22 +160,10 @@ describe("buildReport", () => {
       dayPillarProfile: getDayPillarProfile("丙申"),
     });
 
-    expect(report.sections).toHaveLength(13);
-    expect(report.sections.map((section) => section.id)).toEqual([
-      "INTRO",
-      "SAJU_CORE",
-      "DAY_MASTER",
-      "ELEMENTS",
-      "TEN_GODS",
-      "ADVANCED_PATTERNS",
-      "SHINSAL",
-      "RELATIONS",
-      "MBTI_PROFILE",
-      "SAJU_MBTI_BRIDGE",
-      "SAJU_MBTI_SUGGESTION",
-      "ACTION_GUIDE",
-      "DISCLAIMER",
-    ]);
+    expect(report.sections).toHaveLength(expectedSectionIds.length);
+    expect(report.sections.map((section) => section.id)).toEqual(
+      expectedSectionIds,
+    );
   });
 
   it("uses correct section levels", () => {
@@ -179,6 +173,7 @@ describe("buildReport", () => {
     );
 
     expect(levels.INTRO).toBe("FREE_PREVIEW");
+    expect(levels.QUICK_SUMMARY).toBe("FREE_PREVIEW");
     expect(levels.SAJU_CORE).toBe("FREE_PREVIEW");
     expect(levels.DAY_MASTER).toBe("FREE_PREVIEW");
     expect(levels.ELEMENTS).toBe("PAID_FULL");
@@ -186,11 +181,24 @@ describe("buildReport", () => {
     expect(levels.ADVANCED_PATTERNS).toBe("PAID_FULL");
     expect(levels.SHINSAL).toBe("PAID_FULL");
     expect(levels.RELATIONS).toBe("PAID_FULL");
+    expect(levels.PRACTICAL_POINTS).toBe("PAID_FULL");
     expect(levels.MBTI_PROFILE).toBe("FREE_PREVIEW");
     expect(levels.SAJU_MBTI_BRIDGE).toBe("PAID_FULL");
     expect(levels.SAJU_MBTI_SUGGESTION).toBe("PAID_FULL");
     expect(levels.ACTION_GUIDE).toBe("PAID_FULL");
     expect(levels.DISCLAIMER).toBe("FREE_PREVIEW");
+  });
+
+  it("renders the new personal hook section", () => {
+    const report = buildReport(createReportInput());
+    const section = report.sections.find((item) => item.id === "QUICK_SUMMARY");
+    const text = JSON.stringify(section);
+
+    expect(section?.titleKo).toBe("한눈에 보는 나의 결");
+    expect(text).toContain("강점");
+    expect(text).toContain("주의할 흐름");
+    expect(text).toContain("키워드");
+    expect(text).toContain("오늘부터 써먹는 루틴");
   });
 
   it("renders core pillars deterministically", () => {
@@ -200,10 +208,10 @@ describe("buildReport", () => {
 
     expect(block?.kind).toBe("KEY_VALUE");
     expect(block?.keyValues).toEqual([
-      { keyKo: "년주", valueKo: "甲辰" },
-      { keyKo: "월주", valueKo: "丙寅" },
-      { keyKo: "일주", valueKo: "丙申" },
-      { keyKo: "시주", valueKo: "丁酉" },
+      { keyKo: "년주", valueKo: "甲辰 갑진 — 갑목 + 진토" },
+      { keyKo: "월주", valueKo: "丙寅 병인 — 병화 + 인목" },
+      { keyKo: "일주", valueKo: "丙申 병신 — 병화 + 신금" },
+      { keyKo: "시주", valueKo: "丁酉 정유 — 정화 + 유금" },
     ]);
   });
 
@@ -232,7 +240,9 @@ describe("buildReport", () => {
       "일간은 사주에서 나를 대표하는 기준점입니다.",
     );
     expect(section?.blocks[0]?.kind).toBe("HIGHLIGHT");
-    expect(section?.blocks[0]?.bodyKo).toBe(`${input.saju.dayMaster} 일간`);
+    expect(section?.blocks[0]?.bodyKo).toBe(
+      "丙火 병화 일간 — 밝게 드러나는 불의 기운",
+    );
   });
 
   it("renders day pillar profile in the day master section", () => {
@@ -243,7 +253,7 @@ describe("buildReport", () => {
     const section = report.sections.find((item) => item.id === "DAY_MASTER");
     const text = JSON.stringify(section);
 
-    expect(text).toContain("丙 일간");
+    expect(text).toContain("丙火 병화 일간");
     expect(text).toContain("병신일주");
     expect(text).toContain(
       "밝은 태양이 날카로운 금속 위에 비치는 이미지입니다.",
@@ -276,7 +286,7 @@ describe("buildReport", () => {
       const text = JSON.stringify(dayMaster);
 
       expect(dayMaster).toBeDefined();
-      expect(report.sections).toHaveLength(13);
+      expect(report.sections).toHaveLength(expectedSectionIds.length);
       expect(text).toContain(profileResult.profile.nameKo);
       expect(text).toContain(profileResult.profile.imageKo);
       expect(text).toContain(profileResult.profile.coreSummaryKo);
@@ -284,7 +294,7 @@ describe("buildReport", () => {
       expect(text).toContain("강점");
       expect(text).toContain("주의할 흐름");
       expect(text).toContain("활용 방향");
-      expect(text).toContain("丙 일간");
+      expect(text).toContain("丙火 병화 일간");
     }
   });
 
@@ -338,15 +348,16 @@ describe("buildReport", () => {
     const section = report.sections.find((item) => item.id === "ELEMENTS");
     const text = JSON.stringify(section);
 
-    expect(text).toContain("화 기운 강함");
-    expect(text).toContain("금 기운 강함");
-    expect(text).toContain("수 기운 약함");
+    expect(text).toContain("오행 밸런스");
+    expect(text).toContain("화: 높음");
+    expect(text).toContain("금: 높음");
+    expect(text).toContain("수: 낮음");
     expect(text).not.toContain("FIRE_STRONG");
     expect(text).not.toContain("METAL_STRONG");
     expect(text).not.toContain("WATER_WEAK");
   });
 
-  it("adds flow paragraph to the elements section", () => {
+  it("adds practical routine markers to the elements section", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "ELEMENTS");
     const text = JSON.stringify(section);
@@ -354,20 +365,18 @@ describe("buildReport", () => {
     expect(section?.blocks.some((block) => block.kind === "BULLET_LIST")).toBe(
       true,
     );
-    expect(
-      section?.blocks.some(
-        (block) => block.kind === "PARAGRAPH" && block.titleKo === "오행 흐름",
-      ),
-    ).toBe(true);
-    expect(text).toContain(
-      "화와 금의 신호가 비교적 두드러지고, 수 기운은 약하게 표시됩니다.",
-    );
+    expect(text).toContain("추천 색상");
+    expect(text).toContain("추천 공간");
+    expect(text).toContain("보완 루틴");
   });
 
   it("uses deterministic key order for Ten Gods", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "TEN_GODS");
-    const keyOrder = section?.blocks[0]?.keyValues?.map((item) => item.keyKo);
+    const scoreBlock = section?.blocks.find(
+      (block) => block.kind === "KEY_VALUE" && block.titleKo === "세부 점수 참고",
+    );
+    const keyOrder = scoreBlock?.keyValues?.map((item) => item.keyKo);
 
     expect(keyOrder).toEqual([
       "비견",
@@ -387,9 +396,12 @@ describe("buildReport", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "TEN_GODS");
     const text = JSON.stringify(section);
+    const scoreBlock = section?.blocks.find(
+      (block) => block.kind === "KEY_VALUE" && block.titleKo === "세부 점수 참고",
+    );
 
     expect(text).not.toContain("0.7999999999999999");
-    expect(section?.blocks[0]?.keyValues).toEqual(
+    expect(scoreBlock?.keyValues).toEqual(
       expect.arrayContaining([{ keyKo: "식신", valueKo: "0.8" }]),
     );
   });
@@ -457,7 +469,7 @@ describe("buildReport", () => {
     const section = report.sections.find((item) => item.id === "TEN_GODS");
     const text = JSON.stringify(section);
 
-    expect(report.sections).toHaveLength(13);
+    expect(report.sections).toHaveLength(expectedSectionIds.length);
     expect(text).toContain("십성 묶음");
     expect(text).toContain("십성 종합");
     expect(text).toContain("십성 해석 포인트");
@@ -528,7 +540,7 @@ describe("buildReport", () => {
     );
     const text = JSON.stringify(section);
 
-    expect(report.sections).toHaveLength(13);
+    expect(report.sections).toHaveLength(expectedSectionIds.length);
     expect(text).toContain("신강신약");
     expect(text).toContain("신약");
     expect(text).toContain("구조 근거");
@@ -583,6 +595,20 @@ describe("buildReport", () => {
 
     expect(text).toContain("관살혼잡 후보");
     expect(text).not.toContain("MIXED_OFFICER_KILLING_STRUCTURE");
+  });
+
+  it("renders high-interest practical work resource and relationship points", () => {
+    const report = buildReport(createReportInput());
+    const section = report.sections.find(
+      (item) => item.id === "PRACTICAL_POINTS",
+    );
+    const text = JSON.stringify(section);
+
+    expect(section?.titleKo).toBe("일·돈·관계 활용 포인트");
+    expect(text).toContain("잘 맞기 쉬운 일의 방식");
+    expect(text).toContain("강점이 살아나는 직무 예시");
+    expect(text).toContain("관계에서 반복되기 쉬운 패턴");
+    expect(text).toContain("오늘부터 써먹는 루틴");
   });
 
   it("renders shinsal section from shinsal tags", () => {
@@ -660,6 +686,27 @@ describe("buildReport", () => {
     } else {
       expect(section?.blocks[0]?.kind).toBe("PARAGRAPH");
     }
+  });
+
+  it("renders MBTI guidance and saju mbti connection markers", () => {
+    const report = buildReport(createReportInput());
+    const mbtiSection = report.sections.find(
+      (item) => item.id === "MBTI_PROFILE",
+    );
+    const bridgeSection = report.sections.find(
+      (item) => item.id === "SAJU_MBTI_BRIDGE",
+    );
+    const text = JSON.stringify([mbtiSection, bridgeSection]);
+
+    expect(text).toContain(
+      "MBTI는 내가 인식하는 나의 모습이 반영되기 쉽습니다.",
+    );
+    expect(text).toContain(
+      "가능하면 나를 오래 본 사람의 피드백이나 여러 번의 검사 결과를 함께 참고하면 더 안정적으로 볼 수 있습니다.",
+    );
+    expect(text).toContain("겹치는 점");
+    expect(text).toContain("다르게 보이는 점");
+    expect(text).toContain("입력 MBTI 안에서의 세부 스타일");
   });
 
   it("renders saju mbti suggestion section", () => {

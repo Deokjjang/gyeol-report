@@ -4,6 +4,13 @@ import type {
   ReportOutput,
   ReportSection,
 } from "./types";
+import type {
+  EarthlyBranch,
+  FiveElement,
+  HeavenlyStem,
+  TenGod,
+} from "../saju/types";
+import type { MbtiType } from "../mbti/types";
 
 function createSection(section: ReportSection): ReportSection {
   return section;
@@ -44,6 +51,252 @@ const PILLAR_POSITION_LABELS: Readonly<Record<string, string>> = {
   month: "월주",
   day: "일주",
   hour: "시주",
+};
+
+const STEM_DISPLAY: Readonly<
+  Record<
+    HeavenlyStem,
+    {
+      readingKo: string;
+      elementKo: string;
+      elementHanja: string;
+      energyKo: string;
+    }
+  >
+> = {
+  甲: {
+    readingKo: "갑",
+    elementKo: "목",
+    elementHanja: "木",
+    energyKo: "곧게 뻗는 나무의 기운",
+  },
+  乙: {
+    readingKo: "을",
+    elementKo: "목",
+    elementHanja: "木",
+    energyKo: "유연하게 자라는 풀과 덩굴의 기운",
+  },
+  丙: {
+    readingKo: "병",
+    elementKo: "화",
+    elementHanja: "火",
+    energyKo: "밝게 드러나는 불의 기운",
+  },
+  丁: {
+    readingKo: "정",
+    elementKo: "화",
+    elementHanja: "火",
+    energyKo: "섬세하게 오래 켜지는 불의 기운",
+  },
+  戊: {
+    readingKo: "무",
+    elementKo: "토",
+    elementHanja: "土",
+    energyKo: "크게 받쳐 주는 산과 대지의 기운",
+  },
+  己: {
+    readingKo: "기",
+    elementKo: "토",
+    elementHanja: "土",
+    energyKo: "차분하게 다듬고 품는 흙의 기운",
+  },
+  庚: {
+    readingKo: "경",
+    elementKo: "금",
+    elementHanja: "金",
+    energyKo: "단단하게 정리하고 자르는 금의 기운",
+  },
+  辛: {
+    readingKo: "신",
+    elementKo: "금",
+    elementHanja: "金",
+    energyKo: "정교하게 다듬는 보석 같은 금의 기운",
+  },
+  壬: {
+    readingKo: "임",
+    elementKo: "수",
+    elementHanja: "水",
+    energyKo: "크게 흐르며 연결하는 물의 기운",
+  },
+  癸: {
+    readingKo: "계",
+    elementKo: "수",
+    elementHanja: "水",
+    energyKo: "조용히 스며들어 회복을 돕는 물의 기운",
+  },
+};
+
+const BRANCH_DISPLAY: Readonly<
+  Record<
+    EarthlyBranch,
+    {
+      readingKo: string;
+      elementKo: string;
+    }
+  >
+> = {
+  子: { readingKo: "자", elementKo: "수" },
+  丑: { readingKo: "축", elementKo: "토" },
+  寅: { readingKo: "인", elementKo: "목" },
+  卯: { readingKo: "묘", elementKo: "목" },
+  辰: { readingKo: "진", elementKo: "토" },
+  巳: { readingKo: "사", elementKo: "화" },
+  午: { readingKo: "오", elementKo: "화" },
+  未: { readingKo: "미", elementKo: "토" },
+  申: { readingKo: "신", elementKo: "금" },
+  酉: { readingKo: "유", elementKo: "금" },
+  戌: { readingKo: "술", elementKo: "토" },
+  亥: { readingKo: "해", elementKo: "수" },
+};
+
+const ELEMENT_DISPLAY: Readonly<
+  Record<
+    FiveElement,
+    {
+      labelKo: string;
+      tendencyKo: string;
+      supplementKo: string;
+      colorsKo: string;
+      placesKo: string;
+      workExamplesKo: string;
+      resourceKo: string;
+      relationKo: string;
+      romanceKo: string;
+    }
+  >
+> = {
+  WOOD: {
+    labelKo: "목",
+    tendencyKo:
+      "기획, 성장, 배움, 글쓰기처럼 방향을 세우고 키워 가는 힘이 살아나기 쉽습니다.",
+    supplementKo: "공원 산책, 식물 돌보기, 긴 호흡으로 계획을 다시 세우기",
+    colorsKo: "그린 계열",
+    placesKo: "공원, 산책로, 식물이 있는 작업 공간",
+    workExamplesKo: "기획, 교육, 글쓰기, 디자인, 코칭",
+    resourceKo:
+      "자원을 급하게 쓰기보다 성장 가능성이 있는 곳에 나누어 배치하는 방식과 잘 맞을 수 있습니다.",
+    relationKo:
+      "관계에서는 상대의 가능성을 먼저 보고 북돋우는 흐름이 살아날 수 있습니다.",
+    romanceKo:
+      "연애에서는 속도를 정하기 전에 서로의 성장 방향을 맞춰 보는 과정이 도움이 됩니다.",
+  },
+  FIRE: {
+    labelKo: "화",
+    tendencyKo:
+      "표현, 전달, 주목도, 빠른 반응에서 강점이 살아나기 쉽습니다.",
+    supplementKo: "햇빛 보기, 가벼운 운동, 발표 연습, 감정을 말로 정리하기",
+    colorsKo: "레드/오렌지 계열",
+    placesKo: "햇빛이 드는 공간, 무대감이 있는 회의실, 운동 공간",
+    workExamplesKo: "발표, 브랜딩, 콘텐츠, 세일즈, 대외 커뮤니케이션",
+    resourceKo:
+      "돈과 자원은 속도감 있게 움직이기 쉬워, 사용 전 우선순위를 한 번 적어 두면 균형을 잡기 좋습니다.",
+    relationKo:
+      "관계에서는 존재감과 반응성이 강점이 되지만 말의 온도를 함께 챙길수록 안정적입니다.",
+    romanceKo:
+      "연애에서는 빠른 표현이 매력이 될 수 있으나, 상대가 따라올 시간을 주면 흐름이 부드러워집니다.",
+  },
+  EARTH: {
+    labelKo: "토",
+    tendencyKo:
+      "운영, 책임, 조율, 안정적인 루틴에서 힘이 살아나기 쉽습니다.",
+    supplementKo: "식사 루틴, 플래너 정리, 책상 위 기준점 만들기",
+    colorsKo: "베이지/브라운 계열",
+    placesKo: "정돈된 책상, 안정감 있는 집 근처 공간, 루틴이 잡힌 장소",
+    workExamplesKo: "운영, 관리, 프로세스 오너십, 안정성 기반 업무",
+    resourceKo:
+      "자원을 한 번에 크게 움직이기보다 기준과 계획을 세워 쌓아 가는 방식과 잘 맞을 수 있습니다.",
+    relationKo:
+      "관계에서는 책임감 있게 챙기는 흐름이 있지만 혼자 떠안지 않는 기준이 필요합니다.",
+    romanceKo:
+      "연애에서는 안정감을 주는 편이나, 부담을 느끼기 전에 역할을 나누는 대화가 좋습니다.",
+  },
+  METAL: {
+    labelKo: "금",
+    tendencyKo:
+      "분석, 기준, 정리, 품질 관리처럼 날카롭게 구분하는 힘이 살아나기 쉽습니다.",
+    supplementKo: "도구 정리, 체크리스트, 파일 정돈, 한 가지 기준으로 리뷰하기",
+    colorsKo: "화이트/실버 계열",
+    placesKo: "정리된 작업실, 조용한 회의 공간, 도구가 잘 갖춰진 자리",
+    workExamplesKo: "전략, 법무, 금융, 품질 관리, 보안, 엔지니어링, 데이터 리뷰",
+    resourceKo:
+      "돈과 자원은 기준을 세워 선별하는 방식과 잘 맞으며, 세부 조건 확인이 강점이 될 수 있습니다.",
+    relationKo:
+      "관계에서는 핵심을 빠르게 짚는 편이라, 표현의 부드러움을 함께 두면 더 잘 전달됩니다.",
+    romanceKo:
+      "연애에서는 솔직함이 강점이 될 수 있으나, 판단보다 공감 순서를 먼저 두면 안정적입니다.",
+  },
+  WATER: {
+    labelKo: "수",
+    tendencyKo:
+      "회복, 관찰, 연구, 연결, 감정 순환에서 균형을 잡는 힘이 살아나기 쉽습니다.",
+    supplementKo: "물가 산책, 수면 루틴, 반신욕, 조용한 기록 시간",
+    colorsKo: "블루/네이비 계열",
+    placesKo: "물가, 조용한 카페, 집중이 되는 어두운 톤의 공간",
+    workExamplesKo: "리서치, 심리, 커뮤니케이션, 기획, 글로벌/네트워크 흐름",
+    resourceKo:
+      "자원은 흐름을 읽고 분산해 두는 방식과 잘 맞을 수 있으며, 회복 예산도 함께 두면 좋습니다.",
+    relationKo:
+      "관계에서는 상대의 감정 흐름을 읽는 감각이 살아날 수 있으나, 말하지 않은 기대를 쌓지 않는 편이 좋습니다.",
+    romanceKo:
+      "연애에서는 깊이 있는 대화가 잘 맞을 수 있고, 감정이 고이면 글로 먼저 정리하는 방식이 도움이 됩니다.",
+  },
+};
+
+const TEN_GOD_GROUPS = [
+  {
+    labelKo: "비겁",
+    tenGods: ["比肩", "劫財"] as const satisfies readonly TenGod[],
+    strongKo: "자기 기준, 독립성, 경쟁심이 살아나기 쉽습니다.",
+    weakKo: "혼자 결정하기보다 내 기준을 말로 정리하는 연습이 도움이 됩니다.",
+    actionKo: "내 기준을 세우고 직접 움직이는 방식",
+  },
+  {
+    labelKo: "식상",
+    tenGods: ["食神", "傷官"] as const satisfies readonly TenGod[],
+    strongKo: "표현, 생산, 말과 결과물로 드러내는 힘이 강점이 될 수 있습니다.",
+    weakKo: "생각을 밖으로 꺼내는 작은 결과물부터 만들면 흐름이 열리기 쉽습니다.",
+    actionKo: "생각을 결과물로 바꾸는 방식",
+  },
+  {
+    labelKo: "재성",
+    tenGods: ["偏財", "正財"] as const satisfies readonly TenGod[],
+    strongKo: "현실 감각, 성과, 자원 관리에 대한 감각이 살아나기 쉽습니다.",
+    weakKo: "돈과 자원은 감각보다 기준표로 관리하면 균형을 잡기 좋습니다.",
+    actionKo: "자원과 결과를 의식하는 방식",
+  },
+  {
+    labelKo: "관성",
+    tenGods: ["偏官", "正官"] as const satisfies readonly TenGod[],
+    strongKo: "책임, 기준, 역할 의식이 강점으로 쓰일 수 있습니다.",
+    weakKo: "외부 기준·규칙·평가를 의식적으로 구조화하는 편이 좋습니다.",
+    actionKo: "역할과 기준 안에서 움직이는 방식",
+  },
+  {
+    labelKo: "인성",
+    tenGods: ["偏印", "正印"] as const satisfies readonly TenGod[],
+    strongKo: "학습, 분석, 생각 정리 능력이 강점이 될 수 있습니다.",
+    weakKo: "쉬기, 배우기, 정리하기를 일정 안에 넣어 두면 안정감을 보완하기 좋습니다.",
+    actionKo: "배우고 정리한 뒤 움직이는 방식",
+  },
+] as const;
+
+const MBTI_STYLE_LABELS: Readonly<Record<MbtiType, string>> = {
+  INTJ: "구조 설계형",
+  INTP: "원리 탐구형",
+  ENTJ: "전략 추진형",
+  ENTP: "가능성 실험형",
+  INFJ: "의미 통찰형",
+  INFP: "가치 탐색형",
+  ENFJ: "관계 리드형",
+  ENFP: "가능성 확장형",
+  ISTJ: "체계 관리형",
+  ISFJ: "안정 지원형",
+  ESTJ: "현실 운영형",
+  ESFJ: "관계 조율형",
+  ISTP: "문제 해결형",
+  ISFP: "감각 조율형",
+  ESTP: "현장 실행형",
+  ESFP: "분위기 표현형",
 };
 
 const SHINSAL_NARRATIVE_TEXTS: Readonly<Record<string, string>> = {
@@ -289,6 +542,210 @@ function selectVisibleShinsalItems(itemsKo: readonly string[]): string[] {
   return limited;
 }
 
+function formatPillarKo(pillar: { stem: HeavenlyStem; branch: EarthlyBranch }): string {
+  const stem = STEM_DISPLAY[pillar.stem];
+  const branch = BRANCH_DISPLAY[pillar.branch];
+
+  return `${pillar.stem}${pillar.branch} ${stem.readingKo}${branch.readingKo} — ${stem.readingKo}${stem.elementKo} + ${branch.readingKo}${branch.elementKo}`;
+}
+
+function formatDayMasterKo(stem: HeavenlyStem): string {
+  const display = STEM_DISPLAY[stem];
+
+  return `${stem}${display.elementHanja} ${display.readingKo}${display.elementKo} 일간 — ${display.energyKo}`;
+}
+
+function getElementEntries(input: ReportInput): {
+  element: FiveElement;
+  value: number;
+}[] {
+  return (Object.keys(ELEMENT_DISPLAY) as FiveElement[])
+    .map((element) => ({
+      element,
+      value: input.saju.elements.weighted[element],
+    }))
+    .sort((left, right) => right.value - left.value);
+}
+
+function getPrimaryElement(input: ReportInput): FiveElement {
+  return getElementEntries(input)[0]?.element ?? "FIRE";
+}
+
+function getWeakElement(input: ReportInput): FiveElement {
+  return [...getElementEntries(input)].reverse()[0]?.element ?? "WATER";
+}
+
+function formatElementLevel(value: number): string {
+  if (value >= 3) {
+    return "높음";
+  }
+  if (value <= 1) {
+    return "낮음";
+  }
+
+  return "중간";
+}
+
+function buildElementBalanceItems(input: ReportInput): string[] {
+  return getElementEntries(input).map(({ element, value }) => {
+    const display = ELEMENT_DISPLAY[element];
+
+    return `${display.labelKo}: ${formatElementLevel(value)} (${formatScore(value)}) — ${display.tendencyKo}`;
+  });
+}
+
+function buildElementPracticalItems(input: ReportInput): string[] {
+  const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
+  const weak = ELEMENT_DISPLAY[getWeakElement(input)];
+
+  return [
+    `많은 기운: ${primary.labelKo} — ${primary.tendencyKo}`,
+    `부족한 기운: ${weak.labelKo} — ${weak.supplementKo}를 보완 루틴으로 두면 좋습니다.`,
+    `추천 색상: ${weak.colorsKo}은 보완을 돕는 상징으로 활용할 수 있습니다.`,
+    `추천 공간: ${weak.placesKo}처럼 몸이 차분해지는 장소가 도움이 될 수 있습니다.`,
+    `보완 루틴: ${weak.supplementKo}`,
+  ];
+}
+
+function sumTenGodGroup(
+  input: ReportInput,
+  tenGods: readonly TenGod[],
+): number {
+  return tenGods.reduce(
+    (total, tenGod) => total + input.saju.tenGods.distribution[tenGod],
+    0,
+  );
+}
+
+function getTenGodGroupEntries(input: ReportInput): {
+  labelKo: string;
+  score: number;
+  strongKo: string;
+  weakKo: string;
+  actionKo: string;
+}[] {
+  return TEN_GOD_GROUPS.map((group) => ({
+    labelKo: group.labelKo,
+    score: sumTenGodGroup(input, group.tenGods),
+    strongKo: group.strongKo,
+    weakKo: group.weakKo,
+    actionKo: group.actionKo,
+  })).sort((left, right) => right.score - left.score);
+}
+
+function buildStrongTenGodItems(input: ReportInput): string[] {
+  return getTenGodGroupEntries(input)
+    .slice(0, 2)
+    .map(
+      (entry) =>
+        `${entry.labelKo}: ${entry.strongKo} 참고 점수 ${formatScore(entry.score)}`,
+    );
+}
+
+function buildWeakTenGodItems(input: ReportInput): string[] {
+  return [...getTenGodGroupEntries(input)]
+    .reverse()
+    .slice(0, 2)
+    .map((entry) => `${entry.labelKo}: ${entry.weakKo}`);
+}
+
+function buildMovementStyleItems(input: ReportInput): string[] {
+  return getTenGodGroupEntries(input)
+    .slice(0, 3)
+    .map((entry) => `${entry.labelKo}: ${entry.actionKo}`);
+}
+
+function getStructureKeywordItems(input: ReportInput): string[] {
+  return unique([
+    ...(input.structureAnalysis?.summary.keywordsKo ?? []),
+    ...input.saju.elements.labels.slice(0, 2).map(formatSajuTagLabel),
+    input.mbti.type,
+    MBTI_STYLE_LABELS[input.mbti.type],
+  ]).slice(0, 5);
+}
+
+function buildHookSummaryItems(input: ReportInput): string[] {
+  const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
+  const weak = ELEMENT_DISPLAY[getWeakElement(input)];
+  const style = MBTI_STYLE_LABELS[input.mbti.type];
+
+  return [
+    `당신은 ${primary.labelKo} 기운의 ${primary.tendencyKo}`,
+    `${input.mbti.type} ${style} 성향과 함께 볼 때, 판단과 실행의 속도를 실전에서 쓰기 쉬운 편으로 읽을 수 있습니다.`,
+    `다만 ${weak.labelKo} 기운의 보완 루틴을 챙길수록 강점이 안정적으로 쓰입니다.`,
+  ];
+}
+
+function buildStrengthItems(input: ReportInput): string[] {
+  const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
+  const tenGod = getTenGodGroupEntries(input)[0];
+  const dayMaster = STEM_DISPLAY[input.saju.dayMaster];
+
+  return unique([
+    `${dayMaster.readingKo}${dayMaster.elementKo} 일간의 ${dayMaster.energyKo}이 자기 표현의 중심으로 작동할 수 있습니다.`,
+    `${primary.labelKo} 기운: ${primary.tendencyKo}`,
+    tenGod
+      ? `${tenGod.labelKo}: ${tenGod.strongKo}`
+      : "상황을 보고 조율하는 힘이 살아날 수 있습니다.",
+  ]).slice(0, 3);
+}
+
+function buildCautionItems(input: ReportInput): string[] {
+  const weak = ELEMENT_DISPLAY[getWeakElement(input)];
+  const tenGod = [...getTenGodGroupEntries(input)].reverse()[0];
+
+  return unique([
+    `${weak.labelKo} 기운 보완: ${weak.supplementKo}`,
+    tenGod
+      ? `${tenGod.labelKo}: ${tenGod.weakKo}`
+      : "속도와 회복의 균형을 함께 보는 편이 좋습니다.",
+    "빠르게 결론을 내릴 때는 말의 온도와 쉬는 시간을 함께 챙기면 좋습니다.",
+  ]).slice(0, 3);
+}
+
+function buildTodayRoutineItems(input: ReportInput): string[] {
+  const weak = ELEMENT_DISPLAY[getWeakElement(input)];
+  const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
+
+  return [
+    `추천 루틴: ${weak.supplementKo}`,
+    `추천 공간: ${weak.placesKo}`,
+    `추천 색상: ${weak.colorsKo}`,
+    `추천 일의 방식: ${primary.workExamplesKo}처럼 강점이 바로 보이는 역할 예시를 참고해 보세요.`,
+    "피하면 좋은 패턴: 회복 없이 속도만 올리는 방식",
+  ];
+}
+
+function createQuickSummaryBlocks(input: ReportInput): ReportBlock[] {
+  return [
+    {
+      kind: "BULLET_LIST",
+      titleKo: "3줄 요약",
+      itemsKo: buildHookSummaryItems(input),
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "강점",
+      itemsKo: buildStrengthItems(input),
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "주의할 흐름",
+      itemsKo: buildCautionItems(input),
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "키워드",
+      itemsKo: getStructureKeywordItems(input),
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "오늘부터 써먹는 루틴",
+      itemsKo: buildTodayRoutineItems(input).slice(0, 3),
+    },
+  ];
+}
+
 function createSajuCoreBlock(input: ReportInput): ReportBlock {
   const { pillars } = input.saju;
 
@@ -297,20 +754,20 @@ function createSajuCoreBlock(input: ReportInput): ReportBlock {
     keyValues: [
       {
         keyKo: "년주",
-        valueKo: `${pillars.year.stem}${pillars.year.branch}`,
+        valueKo: formatPillarKo(pillars.year),
       },
       {
         keyKo: "월주",
-        valueKo: `${pillars.month.stem}${pillars.month.branch}`,
+        valueKo: formatPillarKo(pillars.month),
       },
       {
         keyKo: "일주",
-        valueKo: `${pillars.day.stem}${pillars.day.branch}`,
+        valueKo: formatPillarKo(pillars.day),
       },
       {
         keyKo: "시주",
         valueKo: pillars.hour
-          ? `${pillars.hour.stem}${pillars.hour.branch}`
+          ? formatPillarKo(pillars.hour)
           : "모름",
       },
     ],
@@ -318,28 +775,18 @@ function createSajuCoreBlock(input: ReportInput): ReportBlock {
 }
 
 function createElementsBlock(input: ReportInput): ReportBlock {
-  const labels = input.saju.elements.labels.map(formatSajuTagLabel);
-
-  if (labels.length > 0) {
-    return {
-      kind: "BULLET_LIST",
-      titleKo: "오행 특징",
-      itemsKo: [...labels],
-    };
-  }
-
   return {
-    kind: "PARAGRAPH",
-    bodyKo: "두드러지는 오행 편중이 크게 감지되지 않았습니다.",
+    kind: "BULLET_LIST",
+    titleKo: "오행 밸런스",
+    itemsKo: buildElementBalanceItems(input),
   };
 }
 
-function createElementsInterpretationBlock(): ReportBlock {
+function createElementsInterpretationBlock(input: ReportInput): ReportBlock {
   return {
-    kind: "PARAGRAPH",
-    titleKo: "오행 흐름",
-    bodyKo:
-      "이 구조에서는 화와 금의 신호가 비교적 두드러지고, 수 기운은 약하게 표시됩니다. 추진력과 판단의 선명함은 장점이 될 수 있으나, 감정 회복·휴식·유연한 조율을 의식적으로 보완하는 편이 좋습니다.",
+    kind: "BULLET_LIST",
+    titleKo: "추천 색상·공간·보완 루틴",
+    itemsKo: buildElementPracticalItems(input),
   };
 }
 
@@ -348,6 +795,7 @@ function createTenGodsBlock(input: ReportInput): ReportBlock {
 
   return {
     kind: "KEY_VALUE",
+    titleKo: "세부 점수 참고",
     keyValues: [
       { keyKo: "비견", valueKo: formatScore(distribution.比肩) },
       { keyKo: "겁재", valueKo: formatScore(distribution.劫財) },
@@ -361,6 +809,26 @@ function createTenGodsBlock(input: ReportInput): ReportBlock {
       { keyKo: "정인", valueKo: formatScore(distribution.正印) },
     ],
   };
+}
+
+function createTenGodsUserFacingBlocks(input: ReportInput): ReportBlock[] {
+  return [
+    {
+      kind: "BULLET_LIST",
+      titleKo: "강하게 보이는 흐름",
+      itemsKo: buildStrongTenGodItems(input),
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "보완하면 좋은 흐름",
+      itemsKo: buildWeakTenGodItems(input),
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "내가 움직이는 방식",
+      itemsKo: buildMovementStyleItems(input),
+    },
+  ];
 }
 
 function createTenGodsInterpretationBlock(): ReportBlock {
@@ -452,7 +920,7 @@ function createTenGodsStructureBlocks(
 }
 
 function createTenGodsBlocks(input: ReportInput): ReportBlock[] {
-  const blocks = [createTenGodsBlock(input)];
+  const blocks = [...createTenGodsUserFacingBlocks(input), createTenGodsBlock(input)];
 
   if (input.structureAnalysis) {
     blocks.push(...createTenGodsStructureBlocks(input.structureAnalysis));
@@ -486,7 +954,7 @@ function createDayMasterBlocks(input: ReportInput): ReportBlock[] {
     {
       kind: "HIGHLIGHT",
       titleKo: "일간",
-      bodyKo: `${input.saju.dayMaster} 일간`,
+      bodyKo: formatDayMasterKo(input.saju.dayMaster),
     },
   ];
   const lookup = input.dayPillarProfile;
@@ -633,7 +1101,7 @@ function createShinsalBlock(input: ReportInput): ReportBlock {
   if (itemsKo.length > 0) {
     return {
       kind: "BULLET_LIST",
-      titleKo: "감지된 신살·귀인",
+      titleKo: "핵심 신호 Top",
       itemsKo,
     };
   }
@@ -642,6 +1110,77 @@ function createShinsalBlock(input: ReportInput): ReportBlock {
     kind: "PARAGRAPH",
     bodyKo: "현재 기준에서 강하게 표시할 신살·귀인 신호는 없습니다.",
   };
+}
+
+function createShinsalRepeatedSignalBlock(input: ReportInput): ReportBlock {
+  const counts = new Map<string, { labelKo: string; count: number }>();
+
+  for (const detection of input.saju.shinsal) {
+    const current = counts.get(detection.code);
+
+    counts.set(detection.code, {
+      labelKo: detection.labelKo,
+      count: (current?.count ?? 0) + 1,
+    });
+  }
+
+  const repeated = [...counts.values()]
+    .filter((item) => item.count > 1)
+    .map((item) => `${item.labelKo}: ${item.count}개 위치에서 반복 감지`);
+
+  return {
+    kind: "BULLET_LIST",
+    titleKo: "반복 신호",
+    itemsKo:
+      repeated.length > 0
+        ? repeated
+        : [
+            "현재 계산에서는 같은 신호가 여러 위치에 반복되기보다, 서로 다른 신호가 섞여 보입니다.",
+          ],
+  };
+}
+
+function createShinsalPracticalBlock(input: ReportInput): ReportBlock {
+  const codes = new Set(input.saju.shinsal.map((item) => item.code));
+  const items: string[] = [];
+
+  if (codes.has("HYEONCHIMSAL")) {
+    items.push(
+      "현침살 계열 신호는 작은 차이를 빠르게 포착하는 예리함으로 읽을 수 있습니다.",
+    );
+  }
+  if (codes.has("MUN_CHANG_GWIIN") || codes.has("HAK_DANG_GWIIN")) {
+    items.push(
+      "문창·학당 계열 신호는 말, 글, 학습, 문서화에서 강점이 살아날 수 있습니다.",
+    );
+  }
+  if (codes.has("YEOKMASAL") || codes.has("TWELVE_YEOKMASAL")) {
+    items.push(
+      "역마 계열 신호는 고정된 환경보다 이동과 변화 속에서 에너지가 살아나기 쉽습니다.",
+    );
+  }
+  if (codes.has("CHEON_EUL_GWIIN") || codes.has("WOL_DEOK_GWIIN")) {
+    items.push(
+      "귀인 계열 신호는 관계 안에서 도움을 주고받는 장면을 의식적으로 만드는 편이 좋습니다.",
+    );
+  }
+
+  return {
+    kind: "BULLET_LIST",
+    titleKo: "실전 해석",
+    itemsKo:
+      items.length > 0
+        ? items
+        : ["신살·귀인 신호는 성향을 보조로 읽는 참고값으로 다루는 편이 좋습니다."],
+  };
+}
+
+function createShinsalBlocks(input: ReportInput): ReportBlock[] {
+  return [
+    createShinsalBlock(input),
+    createShinsalRepeatedSignalBlock(input),
+    createShinsalPracticalBlock(input),
+  ];
 }
 
 function createRelationsBlock(input: ReportInput): ReportBlock {
@@ -685,6 +1224,137 @@ function createBridgeBlock(input: ReportInput): ReportBlock {
     kind: "PARAGRAPH",
     bodyKo: "현재 기준에서 강하게 연결되는 사주×MBTI 신호는 없습니다.",
   };
+}
+
+function createMbtiProfileBlocks(input: ReportInput): ReportBlock[] {
+  return [
+    {
+      kind: "KEY_VALUE",
+      titleKo: "입력 MBTI",
+      keyValues: [
+        {
+          keyKo: "입력 MBTI",
+          valueKo: input.mbti.type,
+        },
+        {
+          keyKo: "스타일 이름",
+          valueKo: MBTI_STYLE_LABELS[input.mbti.type],
+        },
+      ],
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "핵심 키워드",
+      itemsKo: input.mbti.traits.map((trait) => trait.labelKo).slice(0, 6),
+    },
+    {
+      kind: "PARAGRAPH",
+      titleKo: "자기보고 안내",
+      bodyKo:
+        "MBTI는 내가 인식하는 나의 모습이 반영되기 쉽습니다. 가능하면 나를 오래 본 사람의 피드백이나 여러 번의 검사 결과를 함께 참고하면 더 안정적으로 볼 수 있습니다.",
+    },
+  ];
+}
+
+function createSajuMbtiConnectionBlocks(input: ReportInput): ReportBlock[] {
+  const suggestion = input.mbtiSuggestion;
+  const matchingAxes = suggestion?.comparison.matchingAxes ?? [];
+  const tensionAxes = suggestion?.comparison.tensionAxes ?? [];
+  const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
+  const strongestTenGod = getTenGodGroupEntries(input)[0]?.labelKo ?? "균형";
+  const style = MBTI_STYLE_LABELS[input.mbti.type];
+
+  return [
+    createBridgeBlock(input),
+    {
+      kind: "BULLET_LIST",
+      titleKo: "겹치는 점",
+      itemsKo:
+        matchingAxes.length > 0
+          ? matchingAxes.map(
+              (axis) =>
+                `${axis} 축은 입력 MBTI와 사주 기반 신호가 비슷하게 보입니다.`,
+            )
+          : [
+              "입력 MBTI는 존중하되, 현재 사주 신호와 겹치는 축은 제한적으로 읽힙니다.",
+            ],
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "다르게 보이는 점",
+      itemsKo:
+        tensionAxes.length > 0
+          ? tensionAxes.map(
+              (axis) =>
+                `${axis} 축은 입력한 MBTI와 사주 구조에서 다르게 보일 수 있습니다.`,
+            )
+          : ["입력 MBTI와 사주 구조 사이의 큰 긴장은 현재 강하게 보이지 않습니다."],
+    },
+    {
+      kind: "PARAGRAPH",
+      titleKo: "사주상 더 강하게 보이는 성향",
+      bodyKo: `${primary.labelKo} 기운과 ${strongestTenGod} 흐름이 함께 보여, ${primary.tendencyKo}`,
+    },
+    {
+      kind: "PARAGRAPH",
+      titleKo: "입력 MBTI 안에서의 세부 스타일",
+      bodyKo:
+        input.mbti.type === "ENTJ"
+          ? "입력 MBTI가 ENTJ라면, 이 리포트에서는 강한 외향 추진형이라기보다 분석과 기준이 강한 전략형 ENTJ에 가깝게 읽을 수 있습니다."
+          : `${input.mbti.type} ${style} 안에서도 사주 구조에 따라 표현 방식과 회복 방식은 다르게 나타날 수 있습니다.`,
+    },
+  ];
+}
+
+function createPracticalPointBlocks(input: ReportInput): ReportBlock[] {
+  const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
+  const weak = ELEMENT_DISPLAY[getWeakElement(input)];
+  const tenGod = getTenGodGroupEntries(input)[0];
+
+  return [
+    {
+      kind: "PARAGRAPH",
+      titleKo: "잘 맞기 쉬운 일의 방식",
+      bodyKo: `${primary.labelKo} 기운이 두드러져 ${primary.tendencyKo} 혼자 오래 버티는 방식보다 강점이 바로 쓰이는 구조를 만드는 편이 좋습니다.`,
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "강점이 살아나는 직무 예시",
+      itemsKo: [
+        `강점이 살아나기 쉬운 분야 예시: ${primary.workExamplesKo}`,
+        "정밀함이 필요한 역할은 분석, 편집, 리뷰, 기술 검토처럼 작은 차이를 보는 방식과 잘 맞을 수 있습니다.",
+        "이동성이 필요한 역할은 현장 업무, 글로벌 협업, 콘텐츠 취재처럼 고정된 자리 밖에서 에너지가 살아날 수 있습니다.",
+      ],
+    },
+    {
+      kind: "PARAGRAPH",
+      titleKo: "자원/돈을 다루는 방식",
+      bodyKo: primary.resourceKo,
+    },
+    {
+      kind: "PARAGRAPH",
+      titleKo: "관계에서 반복되기 쉬운 패턴",
+      bodyKo: `${primary.relationKo} ${
+        tenGod
+          ? tenGod.strongKo
+          : "내 기준과 상대의 속도를 함께 보는 편이 좋습니다."
+      }`,
+    },
+    {
+      kind: "PARAGRAPH",
+      titleKo: "연애에서 주의할 점",
+      bodyKo: primary.romanceKo,
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "오늘부터 써먹는 루틴",
+      itemsKo: [
+        ...buildTodayRoutineItems(input),
+        `보완을 돕는 상징: ${weak.colorsKo}, ${weak.placesKo}`,
+        "리마인드 도구: 하루 끝에 말의 온도와 회복 시간을 함께 점검하기",
+      ],
+    },
+  ];
 }
 
 function createSajuMbtiSuggestionBlocks(input: ReportInput): ReportBlock[] {
@@ -853,6 +1523,14 @@ export function buildReport(input: ReportInput): ReportOutput {
       ],
     }),
     createSection({
+      id: "QUICK_SUMMARY",
+      level: "FREE_PREVIEW",
+      titleKo: "한눈에 보는 나의 결",
+      summaryKo:
+        "계산된 사주·MBTI 신호를 바탕으로 강점, 주의할 흐름, 바로 써먹을 루틴을 먼저 정리합니다.",
+      blocks: createQuickSummaryBlocks(input),
+    }),
+    createSection({
       id: "SAJU_CORE",
       level: "FREE_PREVIEW",
       titleKo: "사주 기본 구조",
@@ -871,8 +1549,8 @@ export function buildReport(input: ReportInput): ReportOutput {
       level: "PAID_FULL",
       titleKo: "오행",
       summaryKo:
-        "오행은 목·화·토·금·수의 분포를 통해 에너지의 방향을 봅니다.",
-      blocks: [createElementsBlock(input), createElementsInterpretationBlock()],
+        "오행은 목·화·토·금·수의 분포를 통해 에너지의 방향과 보완 루틴을 봅니다.",
+      blocks: [createElementsBlock(input), createElementsInterpretationBlock(input)],
     }),
     createSection({
       id: "TEN_GODS",
@@ -894,7 +1572,7 @@ export function buildReport(input: ReportInput): ReportOutput {
       titleKo: "신살·귀인",
       summaryKo:
         "신살과 귀인은 사주 구조 안에서 특정 성향과 보조 흐름을 읽기 위한 참고 신호입니다.",
-      blocks: [createShinsalBlock(input)],
+      blocks: createShinsalBlocks(input),
     }),
     createSection({
       id: "RELATIONS",
@@ -904,25 +1582,20 @@ export function buildReport(input: ReportInput): ReportOutput {
       blocks: [createRelationsBlock(input)],
     }),
     createSection({
+      id: "PRACTICAL_POINTS",
+      level: "PAID_FULL",
+      titleKo: "일·돈·관계 활용 포인트",
+      summaryKo:
+        "일의 방식, 자원/돈을 다루는 방식, 관계와 연애에서 참고할 흐름을 실전 예시로 정리합니다.",
+      blocks: createPracticalPointBlocks(input),
+    }),
+    createSection({
       id: "MBTI_PROFILE",
       level: "FREE_PREVIEW",
       titleKo: "MBTI 프로필",
       summaryKo:
         "MBTI는 스스로 인식하는 사고와 판단 방식을 정리하는 보조 축입니다.",
-      blocks: [
-        {
-          kind: "HIGHLIGHT",
-          titleKo: "MBTI",
-          bodyKo: input.mbti.type,
-        },
-        {
-          kind: "BULLET_LIST",
-          titleKo: "주요 자기인식 특성",
-          itemsKo: input.mbti.traits
-            .map((trait) => trait.labelKo)
-            .slice(0, 6),
-        },
-      ],
+      blocks: createMbtiProfileBlocks(input),
     }),
     createSection({
       id: "SAJU_MBTI_BRIDGE",
@@ -930,7 +1603,7 @@ export function buildReport(input: ReportInput): ReportOutput {
       titleKo: "사주×MBTI 연결",
       summaryKo:
         "사주 구조와 MBTI 자기인식이 겹치거나 어긋나는 지점을 정리합니다.",
-      blocks: [createBridgeBlock(input)],
+      blocks: createSajuMbtiConnectionBlocks(input),
     }),
     createSection({
       id: "SAJU_MBTI_SUGGESTION",

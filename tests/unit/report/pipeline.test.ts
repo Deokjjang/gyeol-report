@@ -17,6 +17,24 @@ const validRawInput: ReportRequestRawInput = {
 const mbtiSuggestionNotice =
   "입력한 MBTI는 사용자의 자기보고 정보로 존중하며, 사주 기반 제안은 보조 해석으로만 사용합니다.";
 
+const expectedSectionIds = [
+  "INTRO",
+  "QUICK_SUMMARY",
+  "SAJU_CORE",
+  "DAY_MASTER",
+  "ELEMENTS",
+  "TEN_GODS",
+  "ADVANCED_PATTERNS",
+  "SHINSAL",
+  "RELATIONS",
+  "PRACTICAL_POINTS",
+  "MBTI_PROFILE",
+  "SAJU_MBTI_BRIDGE",
+  "SAJU_MBTI_SUGGESTION",
+  "ACTION_GUIDE",
+  "DISCLAIMER",
+] as const;
+
 function getSuccessfulReport(raw: ReportRequestRawInput) {
   const result = createReportFromRawInput(raw);
 
@@ -65,7 +83,10 @@ describe("createReportFromRawInput", () => {
       expect(result.report.version).toBe("v1");
       expect(result.report.titleKo).toBe("결리포트");
       expect(result.report.subtitleKo).toBe("사주와 MBTI로 읽는 나의 결");
-      expect(result.report.sections).toHaveLength(13);
+      expect(result.report.sections).toHaveLength(expectedSectionIds.length);
+      expect(result.report.sections.map((section) => section.id)).toEqual(
+        expectedSectionIds,
+      );
     }
   });
 
@@ -76,7 +97,7 @@ describe("createReportFromRawInput", () => {
     if (!result.ok) {
       throw new Error("expected valid report");
     }
-    expect(result.report.sections).toHaveLength(13);
+    expect(result.report.sections).toHaveLength(expectedSectionIds.length);
   });
 
   it("includes MBTI suggestion notice in report output", () => {
@@ -95,10 +116,10 @@ describe("createReportFromRawInput", () => {
 
     expect(block?.kind).toBe("KEY_VALUE");
     expect(block?.keyValues).toEqual([
-      { keyKo: "년주", valueKo: "甲辰" },
-      { keyKo: "월주", valueKo: "丙寅" },
-      { keyKo: "일주", valueKo: "丙申" },
-      { keyKo: "시주", valueKo: "丁酉" },
+      { keyKo: "년주", valueKo: "甲辰 갑진 — 갑목 + 진토" },
+      { keyKo: "월주", valueKo: "丙寅 병인 — 병화 + 인목" },
+      { keyKo: "일주", valueKo: "丙申 병신 — 병화 + 신금" },
+      { keyKo: "시주", valueKo: "丁酉 정유 — 정화 + 유금" },
     ]);
   });
 
@@ -108,7 +129,7 @@ describe("createReportFromRawInput", () => {
     const block = getFirstBlock(section);
     const dayValue = block?.keyValues?.find((item) => item.keyKo === "일주");
 
-    expect(dayValue?.valueKo).toBe("丙申");
+    expect(dayValue?.valueKo).toBe("丙申 병신 — 병화 + 신금");
   });
 
   it("renders missing hour and notices for valid unknown-time input", () => {
@@ -180,9 +201,17 @@ describe("createReportFromRawInput", () => {
   it("includes MBTI section for selected type", () => {
     const report = getSuccessfulReport(validRawInput);
     const section = findSection(report.sections, "MBTI_PROFILE");
-    const block = section?.blocks.find((item) => item.kind === "HIGHLIGHT");
+    const block = section?.blocks.find(
+      (item) => item.kind === "KEY_VALUE" && item.titleKo === "입력 MBTI",
+    );
 
-    expect(block?.bodyKo).toBe("ENTJ");
+    expect(block?.kind).toBe("KEY_VALUE");
+    expect(block?.keyValues).toEqual(
+      expect.arrayContaining([
+        { keyKo: "입력 MBTI", valueKo: "ENTJ" },
+        { keyKo: "스타일 이름", valueKo: "전략 추진형" },
+      ]),
+    );
   });
 
   it("includes bridge section", () => {

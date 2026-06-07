@@ -59,6 +59,24 @@ const apiErrorMessageKo =
 const unsupportedSolarTermYearErrorMessageKo =
   "현재 이 생년월일의 리포트를 생성할 수 없습니다.";
 
+const expectedSectionIds = [
+  "INTRO",
+  "QUICK_SUMMARY",
+  "SAJU_CORE",
+  "DAY_MASTER",
+  "ELEMENTS",
+  "TEN_GODS",
+  "ADVANCED_PATTERNS",
+  "SHINSAL",
+  "RELATIONS",
+  "PRACTICAL_POINTS",
+  "MBTI_PROFILE",
+  "SAJU_MBTI_BRIDGE",
+  "SAJU_MBTI_SUGGESTION",
+  "ACTION_GUIDE",
+  "DISCLAIMER",
+] as const;
+
 function readFile(relativePath: string): string {
   return readFileSync(join(process.cwd(), relativePath), "utf8");
 }
@@ -161,7 +179,14 @@ describe("create report route", () => {
     if (body.ok) {
       expect(body.report.version).toBe("v1");
       expect(body.report.titleKo).toBe("결리포트");
-      expect(body.report.sections).toHaveLength(13);
+      expect(body.report.sections).toHaveLength(expectedSectionIds.length);
+      expect(
+        body.report.sections.map((section) =>
+          isRecord(section) && typeof section.id === "string"
+            ? section.id
+            : "",
+        ),
+      ).toEqual(expectedSectionIds);
       expect(body.report).toBeDefined();
       expect(body.reportId).toMatch(/^report_/);
       expect("error" in body).toBe(false);
