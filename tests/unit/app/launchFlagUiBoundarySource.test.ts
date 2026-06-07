@@ -32,10 +32,10 @@ describe("launch flag UI boundary source", () => {
       "정식 결제 및 전체 리포트 잠금 해제는 추후 제공 예정입니다.",
     ];
     const activePurchaseMarkers = [
-      "결제하기",
-      "구매하기",
-      "바로 결제",
-      "유료 결제 시작",
+      "결제" + "하기",
+      "구매" + "하기",
+      "바로 " + "결제",
+      "유료 " + "결제 시작",
     ];
 
     for (const marker of expectedMarkers) {
@@ -54,7 +54,7 @@ describe("launch flag UI boundary source", () => {
       "결제 비활성 안내",
       "현재 실제 결제는 아직 활성화되어 있지 않습니다.",
       "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
-      "전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
+      "전체 리포트는 정식 결제 연동 이후 제공됩니다.",
       "정식 결제 연동 후 제공 예정",
     ];
 
@@ -63,7 +63,10 @@ describe("launch flag UI boundary source", () => {
     }
 
     expect(normalizedSource).toContain(
-      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다. 전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
+      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다. 전체 리포트는 정식 결제 연동 이후 제공됩니다.",
+    );
+    expect(source).not.toContain(
+      "전체 리포트 영역은 " + "정식 결제 연동 이후 제공됩니다.",
     );
   });
 

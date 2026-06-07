@@ -80,15 +80,43 @@ function canShowSectionBody(
   return level === "FREE_PREVIEW";
 }
 
+function getLockedSectionTeaser(title: string): string {
+  if (title.includes("오행")) {
+    return "오행 밸런스, 보완 루틴, 추천 색상·공간을 전체 리포트에서 확인할 수 있습니다.";
+  }
+
+  if (title.includes("십성")) {
+    return "강하게 쓰는 성향과 보완하면 좋은 흐름을 더 자세히 확인할 수 있습니다.";
+  }
+
+  if (title.includes("신살") || title.includes("귀인")) {
+    return "귀인·신살의 핵심 신호와 실전 활용 포인트를 전체 리포트에서 확인할 수 있습니다.";
+  }
+
+  if (title.includes("일·돈·관계")) {
+    return "일의 방식, 자원 관리, 관계·연애 패턴을 전체 리포트에서 확인할 수 있습니다.";
+  }
+
+  if (title.includes("사주×MBTI")) {
+    return "입력 MBTI와 사주 구조의 공통점과 차이를 전체 리포트에서 확인할 수 있습니다.";
+  }
+
+  if (title.includes("활용 가이드")) {
+    return "오늘부터 써먹을 루틴과 조심할 패턴을 전체 리포트에서 확인할 수 있습니다.";
+  }
+
+  return "이 섹션의 상세 해석은 전체 리포트에서 확인할 수 있습니다.";
+}
+
 function renderLockedSectionBody(section: ReportSection) {
   return (
     <div className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/70 p-5">
       <div className="space-y-2">
         <p className="text-sm font-semibold text-neutral-100">
-          {section.titleKo}
+          전체 리포트 잠금
         </p>
         <p className="text-sm leading-6 text-neutral-400">
-          {section.summaryKo}
+          {getLockedSectionTeaser(section.titleKo)}
         </p>
       </div>
       <p className="rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-sm font-semibold text-neutral-300">
@@ -237,7 +265,7 @@ export default function NewReportPage() {
           <p className="max-w-2xl text-base leading-8 text-neutral-400">
             생년월일, 출생시간, MBTI를 입력하면 사주 구조와 자기인식의
             겹침을 바탕으로 샘플 리포트를 생성합니다. 무료 미리보기에서는
-            핵심 구조 일부를 먼저 확인할 수 있습니다. 전체 리포트 영역은
+            핵심 구조 일부를 먼저 확인할 수 있습니다. 전체 리포트는
             정식 결제 연동 이후 제공됩니다.
           </p>
         </header>
@@ -415,7 +443,7 @@ export default function NewReportPage() {
                     무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.
                   </p>
                   <p className="text-sm leading-6 text-neutral-400">
-                    전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.
+                    전체 리포트는 정식 결제 연동 이후 제공됩니다.
                   </p>
                 </div>
 
@@ -425,8 +453,7 @@ export default function NewReportPage() {
                     <p className="text-neutral-400">{report.subtitleKo}</p>
                   </div>
                   <p className="rounded-full border border-neutral-800 px-3 py-1 text-xs font-medium text-neutral-500">
-                    무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.
-                    전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.
+                    자기이해용 참고자료
                   </p>
                 </div>
 
