@@ -280,11 +280,12 @@ describe("report output fixture", () => {
       "병신일주는 밝게 드러나는 표현성과 빠른 판단력이 함께 작동하는 구조입니다.",
     );
     expect(text).toContain("물가 산책, 수면 루틴, 반신욕");
-    expect(text).toContain("비겁 2.3");
-    expect(text).toContain("인성 1.9");
-    expect(text).toContain("식상 0.8");
-    expect(text).toContain("재성 1.2");
-    expect(text).toContain("관성 0.4");
+    expect(text).toContain("고급 참고 점수");
+    expect(text).toContain("비겁");
+    expect(text).toContain("인성");
+    expect(text).toContain("식상");
+    expect(text).toContain("재성");
+    expect(text).toContain("관성");
   });
 
   it("renders enhanced Ten Gods blocks in fixture output", () => {
@@ -396,6 +397,36 @@ describe("report output fixture", () => {
     expect(text).not.toContain("TEN_GOD_OUTPUT_STRONG");
     expect(text).not.toContain("OFFICER_PRESSURE_HIGH");
     expect(text).not.toContain("WEALTH_OVERLOAD");
+  });
+
+  it("uses polished public copy and mobile-readable labels", () => {
+    const report = getFixtureReport();
+    const text = JSON.stringify(report);
+    const mbtiText = collectSectionText(findSection(report, "MBTI_PROFILE"));
+    const badParticle = "시간" + "를";
+    const oldDevPreviewCopy = "개발용 미리보기로 전체 구조를 " + "확인합니다.";
+    const oldDevModeCopy = "현재 화면은 개발용 전체 미리보기 " + "모드입니다.";
+
+    expect(text).toContain(
+      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
+    );
+    expect(text).toContain(
+      "전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
+    );
+    expect(text).toContain("의식적으로 챙겨야 균형이 맞습니다");
+    expect(text).toContain("고급 참고 점수");
+    expect(text).toContain("잘 맞는 역할");
+    expect(text).toContain("돈과 자원을 다루는 방식");
+    expect(text).toContain("관계에서 자주 생길 수 있는 장면");
+    expect(text).toContain("연애에서 도움이 되는 태도");
+    expect(text).toContain("결과를 보장하는 요소가 아니라");
+    expect(text).toContain("리마인드 도구");
+    expect(text).not.toContain(badParticle);
+    expect(text).not.toContain(oldDevPreviewCopy);
+    expect(text).not.toContain(oldDevModeCopy);
+    expect(mbtiText).toContain("MBTI 기본 정보");
+    expect(mbtiText).toContain("스타일 설명");
+    expect(mbtiText).not.toContain('"titleKo":"입력 MBTI"');
   });
 
   it("avoids forbidden wording in serialized output", () => {

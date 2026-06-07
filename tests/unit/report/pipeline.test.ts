@@ -202,7 +202,7 @@ describe("createReportFromRawInput", () => {
     const report = getSuccessfulReport(validRawInput);
     const section = findSection(report.sections, "MBTI_PROFILE");
     const block = section?.blocks.find(
-      (item) => item.kind === "KEY_VALUE" && item.titleKo === "입력 MBTI",
+      (item) => item.kind === "KEY_VALUE" && item.titleKo === "MBTI 기본 정보",
     );
 
     expect(block?.kind).toBe("KEY_VALUE");

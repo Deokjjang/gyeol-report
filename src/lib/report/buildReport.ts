@@ -299,6 +299,25 @@ const MBTI_STYLE_LABELS: Readonly<Record<MbtiType, string>> = {
   ESFP: "분위기 표현형",
 };
 
+const MBTI_STYLE_DESCRIPTIONS: Readonly<Record<MbtiType, string>> = {
+  INTJ: "큰 그림을 먼저 세우고, 구조 안에서 조용히 완성도를 높이는 구조 설계형에 가깝습니다.",
+  INTP: "원리를 파고들고, 납득되는 기준을 찾을 때 사고가 선명해지는 원리 탐구형에 가깝습니다.",
+  ENTJ: "목표를 세우고, 구조를 만들고, 빠르게 밀고 가는 전략 추진형에 가깝습니다.",
+  ENTP: "가능성을 열어 두고, 새 관점으로 판을 흔들어 보는 가능성 실험형에 가깝습니다.",
+  INFJ: "사람과 흐름의 의미를 읽고, 조용히 방향을 정리하는 내면 통찰형에 가깝습니다.",
+  INFP: "가치와 진정성을 중요하게 보고, 자신만의 기준을 탐색하는 가치 탐색형에 가깝습니다.",
+  ENFJ: "사람의 반응과 팀의 방향을 함께 보며 이끄는 관계 리드형에 가깝습니다.",
+  ENFP: "새 가능성을 빠르게 발견하고 사람과 아이디어를 연결하는 가능성 확장형에 가깝습니다.",
+  ISTJ: "정해진 기준과 절차를 지키며 안정적으로 완성하는 체계 관리형에 가깝습니다.",
+  ISFJ: "주변의 필요를 세심하게 살피고 안정감을 만드는 안정 지원형에 가깝습니다.",
+  ESTJ: "현실 조건을 빠르게 정리하고 실행 구조를 만드는 현실 운영형에 가깝습니다.",
+  ESFJ: "관계의 분위기와 실제 도움을 함께 챙기는 관계 조율형에 가깝습니다.",
+  ISTP: "상황을 관찰한 뒤 필요한 해결책을 빠르게 찾는 문제 해결형에 가깝습니다.",
+  ISFP: "감각과 분위기를 세밀하게 느끼고 자연스럽게 조율하는 감각 조율형에 가깝습니다.",
+  ESTP: "현장에서 바로 판단하고 움직이며 흐름을 만드는 현장 실행형에 가깝습니다.",
+  ESFP: "사람과 분위기 속에서 에너지를 살리고 표현하는 분위기 표현형에 가깝습니다.",
+};
+
 const SHINSAL_NARRATIVE_TEXTS: Readonly<Record<string, string>> = {
   SHINSAL_HYEONCHIMSAL:
     "현침살이 보여, 남들이 놓치는 작은 차이를 빠르게 포착하는 예리함이 드러납니다.",
@@ -589,8 +608,13 @@ function formatElementLevel(value: number): string {
 function buildElementBalanceItems(input: ReportInput): string[] {
   return getElementEntries(input).map(({ element, value }) => {
     const display = ELEMENT_DISPLAY[element];
+    const level = formatElementLevel(value);
 
-    return `${display.labelKo}: ${formatElementLevel(value)} (${formatScore(value)}) — ${display.tendencyKo}`;
+    if (value <= 1) {
+      return `${display.labelKo}: ${level} (${formatScore(value)}) — ${display.supplementKo} 같은 보완 루틴을 의식적으로 챙겨야 균형이 맞습니다.`;
+    }
+
+    return `${display.labelKo}: ${level} (${formatScore(value)}) — ${display.tendencyKo}`;
   });
 }
 
@@ -600,10 +624,11 @@ function buildElementPracticalItems(input: ReportInput): string[] {
 
   return [
     `많은 기운: ${primary.labelKo} — ${primary.tendencyKo}`,
-    `부족한 기운: ${weak.labelKo} — ${weak.supplementKo}를 보완 루틴으로 두면 좋습니다.`,
+    `부족한 기운: ${weak.labelKo} — ${weak.supplementKo}. 의식적으로 챙겨야 균형이 맞습니다.`,
     `추천 색상: ${weak.colorsKo}은 보완을 돕는 상징으로 활용할 수 있습니다.`,
     `추천 공간: ${weak.placesKo}처럼 몸이 차분해지는 장소가 도움이 될 수 있습니다.`,
     `보완 루틴: ${weak.supplementKo}`,
+    "추천 색상과 공간은 결과를 보장하는 요소가 아니라, 부족한 기운을 의식적으로 떠올리는 리마인드 도구로 보는 편이 좋습니다.",
   ];
 }
 
@@ -636,10 +661,7 @@ function getTenGodGroupEntries(input: ReportInput): {
 function buildStrongTenGodItems(input: ReportInput): string[] {
   return getTenGodGroupEntries(input)
     .slice(0, 2)
-    .map(
-      (entry) =>
-        `${entry.labelKo}: ${entry.strongKo} 참고 점수 ${formatScore(entry.score)}`,
-    );
+    .map((entry) => `${entry.labelKo}: ${entry.strongKo}`);
 }
 
 function buildWeakTenGodItems(input: ReportInput): string[] {
@@ -795,7 +817,7 @@ function createTenGodsBlock(input: ReportInput): ReportBlock {
 
   return {
     kind: "KEY_VALUE",
-    titleKo: "세부 점수 참고",
+    titleKo: "고급 참고 점수",
     keyValues: [
       { keyKo: "비견", valueKo: formatScore(distribution.比肩) },
       { keyKo: "겁재", valueKo: formatScore(distribution.劫財) },
@@ -1230,7 +1252,7 @@ function createMbtiProfileBlocks(input: ReportInput): ReportBlock[] {
   return [
     {
       kind: "KEY_VALUE",
-      titleKo: "입력 MBTI",
+      titleKo: "MBTI 기본 정보",
       keyValues: [
         {
           keyKo: "입력 MBTI",
@@ -1241,6 +1263,11 @@ function createMbtiProfileBlocks(input: ReportInput): ReportBlock[] {
           valueKo: MBTI_STYLE_LABELS[input.mbti.type],
         },
       ],
+    },
+    {
+      kind: "PARAGRAPH",
+      titleKo: "스타일 설명",
+      bodyKo: MBTI_STYLE_DESCRIPTIONS[input.mbti.type],
     },
     {
       kind: "BULLET_LIST",
@@ -1314,8 +1341,8 @@ function createPracticalPointBlocks(input: ReportInput): ReportBlock[] {
   return [
     {
       kind: "PARAGRAPH",
-      titleKo: "잘 맞기 쉬운 일의 방식",
-      bodyKo: `${primary.labelKo} 기운이 두드러져 ${primary.tendencyKo} 혼자 오래 버티는 방식보다 강점이 바로 쓰이는 구조를 만드는 편이 좋습니다.`,
+      titleKo: "잘 맞는 역할",
+      bodyKo: `${primary.labelKo} 기운이 두드러져 ${primary.tendencyKo} 앞에서 말하고 설득하거나, 메시지를 정리해 드러내는 역할처럼 강점이 바로 보이는 구조와 잘 맞을 수 있습니다.`,
     },
     {
       kind: "BULLET_LIST",
@@ -1328,13 +1355,13 @@ function createPracticalPointBlocks(input: ReportInput): ReportBlock[] {
     },
     {
       kind: "PARAGRAPH",
-      titleKo: "자원/돈을 다루는 방식",
-      bodyKo: primary.resourceKo,
+      titleKo: "돈과 자원을 다루는 방식",
+      bodyKo: `${primary.resourceKo} 예산, 시간, 체력처럼 제한된 자원은 쓰기 전에 우선순위를 짧게 적어 두면 흐름이 안정됩니다.`,
     },
     {
       kind: "PARAGRAPH",
-      titleKo: "관계에서 반복되기 쉬운 패턴",
-      bodyKo: `${primary.relationKo} ${
+      titleKo: "관계에서 자주 생길 수 있는 장면",
+      bodyKo: `${primary.relationKo} 회의나 대화에서 결론을 빨리 내고 싶어지는 장면이 생길 수 있으니, 상대가 따라올 시간을 먼저 확인하면 좋습니다. ${
         tenGod
           ? tenGod.strongKo
           : "내 기준과 상대의 속도를 함께 보는 편이 좋습니다."
@@ -1342,8 +1369,8 @@ function createPracticalPointBlocks(input: ReportInput): ReportBlock[] {
     },
     {
       kind: "PARAGRAPH",
-      titleKo: "연애에서 주의할 점",
-      bodyKo: primary.romanceKo,
+      titleKo: "연애에서 도움이 되는 태도",
+      bodyKo: `${primary.romanceKo} 바로 해결하려 하기보다 감정 확인, 속도 조절, 쉬운 표현부터 시작하면 관계 흐름이 부드러워질 수 있습니다.`,
     },
     {
       kind: "BULLET_LIST",
@@ -1649,6 +1676,8 @@ export function buildReport(input: ReportInput): ReportOutput {
     notices: unique([
       ...input.saju.notices,
       ...(input.mbtiSuggestion?.notices ?? []),
+      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
+      "전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
       "출생정보와 해석 결과는 자기이해용 참고자료입니다.",
     ]),
   };

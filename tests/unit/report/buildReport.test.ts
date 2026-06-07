@@ -370,11 +370,32 @@ describe("buildReport", () => {
     expect(text).toContain("보완 루틴");
   });
 
+  it("uses polished preview and practical safety copy", () => {
+    const report = buildReport(createReportInput());
+    const text = JSON.stringify(report);
+    const badParticle = "시간" + "를";
+    const oldDevPreviewCopy = "개발용 미리보기로 전체 구조를 " + "확인합니다.";
+    const oldDevModeCopy = "현재 화면은 개발용 전체 미리보기 " + "모드입니다.";
+
+    expect(text).toContain(
+      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
+    );
+    expect(text).toContain(
+      "전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
+    );
+    expect(text).toContain("의식적으로 챙겨야 균형이 맞습니다");
+    expect(text).toContain("결과를 보장하는 요소가 아니라");
+    expect(text).toContain("리마인드 도구");
+    expect(text).not.toContain(badParticle);
+    expect(text).not.toContain(oldDevPreviewCopy);
+    expect(text).not.toContain(oldDevModeCopy);
+  });
+
   it("uses deterministic key order for Ten Gods", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "TEN_GODS");
     const scoreBlock = section?.blocks.find(
-      (block) => block.kind === "KEY_VALUE" && block.titleKo === "세부 점수 참고",
+      (block) => block.kind === "KEY_VALUE" && block.titleKo === "고급 참고 점수",
     );
     const keyOrder = scoreBlock?.keyValues?.map((item) => item.keyKo);
 
@@ -397,7 +418,7 @@ describe("buildReport", () => {
     const section = report.sections.find((item) => item.id === "TEN_GODS");
     const text = JSON.stringify(section);
     const scoreBlock = section?.blocks.find(
-      (block) => block.kind === "KEY_VALUE" && block.titleKo === "세부 점수 참고",
+      (block) => block.kind === "KEY_VALUE" && block.titleKo === "고급 참고 점수",
     );
 
     expect(text).not.toContain("0.7999999999999999");
@@ -605,9 +626,11 @@ describe("buildReport", () => {
     const text = JSON.stringify(section);
 
     expect(section?.titleKo).toBe("일·돈·관계 활용 포인트");
-    expect(text).toContain("잘 맞기 쉬운 일의 방식");
+    expect(text).toContain("잘 맞는 역할");
     expect(text).toContain("강점이 살아나는 직무 예시");
-    expect(text).toContain("관계에서 반복되기 쉬운 패턴");
+    expect(text).toContain("돈과 자원을 다루는 방식");
+    expect(text).toContain("관계에서 자주 생길 수 있는 장면");
+    expect(text).toContain("연애에서 도움이 되는 태도");
     expect(text).toContain("오늘부터 써먹는 루틴");
   });
 
@@ -703,6 +726,10 @@ describe("buildReport", () => {
     );
     expect(text).toContain(
       "가능하면 나를 오래 본 사람의 피드백이나 여러 번의 검사 결과를 함께 참고하면 더 안정적으로 볼 수 있습니다.",
+    );
+    expect(text).toContain("MBTI 기본 정보");
+    expect(text).toContain(
+      "목표를 세우고, 구조를 만들고, 빠르게 밀고 가는 전략 추진형에 가깝습니다.",
     );
     expect(text).toContain("겹치는 점");
     expect(text).toContain("다르게 보이는 점");
@@ -892,6 +919,8 @@ describe("buildReport", () => {
     expect(report.notices).toEqual([
       "중복 알림",
       "출생정보와 해석 결과는 자기이해용 참고자료입니다.",
+      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
+      "전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
     ]);
   });
 
