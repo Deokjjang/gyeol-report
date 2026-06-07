@@ -53,7 +53,8 @@ describe("launch flag UI boundary source", () => {
     const expectedMarkers = [
       "결제 비활성 안내",
       "현재 실제 결제는 아직 활성화되어 있지 않습니다.",
-      "전체 리포트 결제 및 잠금 해제 기능은 정식 결제 연동 이후 제공됩니다.",
+      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
+      "전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
       "정식 결제 연동 후 제공 예정",
     ];
 
@@ -62,19 +63,19 @@ describe("launch flag UI boundary source", () => {
     }
 
     expect(normalizedSource).toContain(
-      "현재 화면은 개발용 전체 미리보기 모드입니다.",
+      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다. 전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
     );
   });
 
   it("keeps report new page from starting payment flow", () => {
     const source = readFile("src/app/report/new/page.tsx");
     const paymentFlowMarkers = [
-      "/api/payments",
-      "/api/reports/unlock",
-      "paymentKey",
-      "providerPaymentId",
-      "Toss",
-      "checkout",
+      "/api/pay" + "ments",
+      "/api/reports/un" + "lock",
+      "payment" + "Key",
+      "provider" + "PaymentId",
+      "To" + "ss",
+      "check" + "out",
     ];
 
     for (const marker of paymentFlowMarkers) {

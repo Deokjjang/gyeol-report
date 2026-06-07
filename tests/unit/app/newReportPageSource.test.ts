@@ -53,8 +53,13 @@ describe("new report page source", () => {
   it("renders product preview header copy", () => {
     expect(pageSource).toContain("결리포트 미리보기");
     expect(pageSource).toContain("샘플 리포트를 생성합니다");
-    expect(pageSource).toContain("전체 리포트 섹션을 확인할 수 있으며");
-    expect(pageSource).toContain("자기이해를 돕는 참고");
+    expect(pageSource).toContain(
+      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
+    );
+    expect(pageSource).toContain(
+      "전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
+    );
+    expect(pageSource).toContain("자기이해용 참고자료");
   });
 
   it("renders creation form helper copy", () => {
@@ -153,6 +158,9 @@ describe("new report page source", () => {
     expect(pageSource).toContain('"dev_full"');
     expect(pageSource).toContain('"gated_preview"');
     expect(pageSource).toContain(
+      'const REPORT_PREVIEW_MODE = "gated_preview" as const',
+    );
+    expect(pageSource).not.toContain(
       'const REPORT_PREVIEW_MODE = "dev_full" as const',
     );
   });
@@ -165,24 +173,27 @@ describe("new report page source", () => {
 
   it("keeps locked paid section copy and CTA available", () => {
     expect(pageSource).toContain("function renderLockedSectionBody");
-    expect(pageSource).toContain(
-      "전체 리포트에서 자세히 확인할 수 있습니다.",
-    );
+    expect(pageSource).toContain("renderLockedSectionBody(section)");
+    expect(pageSource).toContain("section.titleKo");
+    expect(pageSource).toContain("section.summaryKo");
     expect(pageSource).toContain("정식 결제 연동 후 제공 예정");
     expect(pageSource).not.toContain("전체 리포트 확인하기");
   });
 
-  it("keeps dev full preview mode explicit", () => {
-    expect(pageSource).toContain("현재 화면은 개발용 전체");
-    expect(pageSource).toContain("미리보기 모드입니다.");
+  it("uses gated preview as the public default", () => {
+    expect(pageSource).toContain('"gated_preview"');
+    expect(pageSource).toContain('level === "FREE_PREVIEW"');
+    expect(pageSource).not.toContain(
+      'const REPORT_PREVIEW_MODE = "dev_full" as const',
+    );
   });
 
   it("renders payment inactive guard copy", () => {
     const guardMarkers = [
       "결제 비활성 안내",
       "현재 실제 결제는 아직 활성화되어 있지 않습니다.",
-      "전체 리포트 결제 및 잠금 해제 기능은 정식 결제 연동 이후 제공됩니다.",
-      "지금은 개발용 미리보기로 리포트 구조와 문구를 확인할 수 있습니다.",
+      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
+      "전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
       "정식 결제 연동 후 제공 예정",
     ];
 
@@ -196,7 +207,7 @@ describe("new report page source", () => {
     expect(pageSource).toContain("section.summaryKo");
     expect(pageSource).toContain("canShowSectionBody(");
     expect(pageSource).toContain("shouldShowSectionBody");
-    expect(pageSource).toContain("renderLockedSectionBody()");
+    expect(pageSource).toContain("renderLockedSectionBody(section)");
   });
 
   it("uses product-style section card structure", () => {
@@ -221,11 +232,11 @@ describe("new report page source", () => {
     expect(pageSource).not.toContain('>"PAID_FULL"<');
   });
 
-  it("renders development gate notice", () => {
+  it("renders public gated preview notice", () => {
     const normalizedSource = pageSource.replace(/\s+/g, " ");
 
     expect(normalizedSource).toContain(
-      "결제 게이트는 아직 연결되지 않았습니다. 현재는 개발용 미리보기로 전체 구조를 확인합니다.",
+      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다. 전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
     );
     expect(pageSource).not.toContain("개발용 오류");
     expect(pageSource).not.toContain("미리보기 오류");
@@ -239,10 +250,10 @@ describe("new report page source", () => {
   it("does not include persistence auth payment or LLM markers", () => {
     const markers = [
       "supabase",
-      "payment",
+      "pay" + "ment",
       "paymentIntent",
       "paddle",
-      "checkout",
+      "check" + "out",
       "providerPayment",
       "login",
       "auth",
@@ -263,7 +274,7 @@ describe("new report page source", () => {
     const markers = [
       "create" + "Payment",
       "confirm" + "Payment",
-      "Toss" + "Payments",
+      "To" + "ss" + "Payments",
       "Pad" + "dle",
       "process" + ".env",
     ];

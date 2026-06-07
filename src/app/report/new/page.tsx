@@ -48,7 +48,7 @@ type CreateReportResponse =
       errors: ValidationError[];
     };
 
-const REPORT_PREVIEW_MODE = "dev_full" as const satisfies ReportPreviewMode;
+const REPORT_PREVIEW_MODE = "gated_preview" as const satisfies ReportPreviewMode;
 
 const mbtiTypes = [
   "INTJ",
@@ -80,19 +80,20 @@ function canShowSectionBody(
   return level === "FREE_PREVIEW";
 }
 
-function renderLockedSectionBody() {
+function renderLockedSectionBody(section: ReportSection) {
   return (
     <div className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/70 p-5">
-      <p className="text-sm leading-6 text-neutral-300">
-        전체 리포트에서 자세히 확인할 수 있습니다.
-      </p>
-      <button
-        type="button"
-        disabled
-        className="cursor-not-allowed rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-sm font-semibold text-neutral-300"
-      >
+      <div className="space-y-2">
+        <p className="text-sm font-semibold text-neutral-100">
+          {section.titleKo}
+        </p>
+        <p className="text-sm leading-6 text-neutral-400">
+          {section.summaryKo}
+        </p>
+      </div>
+      <p className="rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-sm font-semibold text-neutral-300">
         정식 결제 연동 후 제공 예정
-      </button>
+      </p>
     </div>
   );
 }
@@ -235,9 +236,9 @@ export default function NewReportPage() {
           </h1>
           <p className="max-w-2xl text-base leading-8 text-neutral-400">
             생년월일, 출생시간, MBTI를 입력하면 사주 구조와 자기인식의
-            겹침을 바탕으로 샘플 리포트를 생성합니다. 개발용 미리보기에서는
-            전체 리포트 섹션을 확인할 수 있으며, 해석은 자기이해를 돕는 참고
-            자료로 사용합니다.
+            겹침을 바탕으로 샘플 리포트를 생성합니다. 무료 미리보기에서는
+            핵심 구조 일부를 먼저 확인할 수 있습니다. 전체 리포트 영역은
+            정식 결제 연동 이후 제공됩니다.
           </p>
         </header>
 
@@ -411,10 +412,10 @@ export default function NewReportPage() {
                     현재 실제 결제는 아직 활성화되어 있지 않습니다.
                   </p>
                   <p className="text-sm leading-6 text-neutral-400">
-                    전체 리포트 결제 및 잠금 해제 기능은 정식 결제 연동 이후 제공됩니다.
+                    무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.
                   </p>
                   <p className="text-sm leading-6 text-neutral-400">
-                    지금은 개발용 미리보기로 리포트 구조와 문구를 확인할 수 있습니다.
+                    전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.
                   </p>
                 </div>
 
@@ -424,9 +425,8 @@ export default function NewReportPage() {
                     <p className="text-neutral-400">{report.subtitleKo}</p>
                   </div>
                   <p className="rounded-full border border-neutral-800 px-3 py-1 text-xs font-medium text-neutral-500">
-                    결제 게이트는 아직 연결되지 않았습니다. 현재는 개발용
-                    미리보기로 전체 구조를 확인합니다. 현재 화면은 개발용 전체
-                    미리보기 모드입니다.
+                    무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.
+                    전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.
                   </p>
                 </div>
 
@@ -472,7 +472,7 @@ export default function NewReportPage() {
                           ? section.blocks.map((block, index) =>
                               renderReportBlock(block, index),
                             )
-                          : renderLockedSectionBody()}
+                          : renderLockedSectionBody(section)}
                       </div>
                     </article>
                   );
