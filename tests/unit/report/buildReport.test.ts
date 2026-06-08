@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { evaluateSajuMbtiBridge } from "@/lib/bridge/evaluate";
 import { getMbtiProfile } from "@/lib/mbti/types";
 import { buildReport } from "@/lib/report/buildReport";
+import { createReportFromRawInput } from "@/lib/report/pipeline";
 import { calculateSaju } from "@/lib/saju/calculateSaju";
 import { getDayPillarProfile } from "@/lib/saju/dayPillarProfile";
 import { extractSajuTags } from "@/lib/saju/extractTags";
@@ -69,6 +70,19 @@ const expectedSectionIds = [
   "DISCLAIMER",
 ] as const;
 
+const rawElementCodes = [
+  "WOOD" + "_WEAK",
+  "FIRE" + "_WEAK",
+  "EARTH" + "_WEAK",
+  "METAL" + "_WEAK",
+  "WATER" + "_WEAK",
+  "WOOD" + "_STRONG",
+  "FIRE" + "_STRONG",
+  "EARTH" + "_STRONG",
+  "METAL" + "_STRONG",
+  "WATER" + "_STRONG",
+] as const;
+
 function createReportInput(overrides?: Partial<ReportInput>): ReportInput {
   const saju = calculateSaju(knownTimeInput);
   const sajuTags = extractSajuTags(saju);
@@ -132,6 +146,12 @@ function collectReportText(report: ReturnType<typeof buildReport>): string[] {
 
 function countMatches(text: string, pattern: RegExp): number {
   return text.match(pattern)?.length ?? 0;
+}
+
+function expectNoRawElementCodes(text: string): void {
+  for (const code of rawElementCodes) {
+    expect(text).not.toContain(code);
+  }
 }
 
 describe("buildReport", () => {
@@ -462,26 +482,65 @@ describe("buildReport", () => {
   it("does not expose raw element keywords or old score-table markers", () => {
     const report = buildReport(createReportInput());
     const text = JSON.stringify(report);
-    const rawElementCodes = [
-      "WOOD" + "_WEAK",
-      "FIRE" + "_WEAK",
-      "EARTH" + "_WEAK",
-      "METAL" + "_WEAK",
-      "WATER" + "_WEAK",
-      "WOOD" + "_STRONG",
-      "FIRE" + "_STRONG",
-      "EARTH" + "_STRONG",
-      "METAL" + "_STRONG",
-      "WATER" + "_STRONG",
-    ];
     const oldScoreTitle = "고급 참고 " + "점수";
 
-    for (const code of rawElementCodes) {
-      expect(text).not.toContain(code);
-    }
+    expectNoRawElementCodes(text);
     expect(text).not.toContain(oldScoreTitle);
     expect(text).not.toContain("(4.2)");
     expect(text).not.toContain("(0.1)");
+    expect(text).not.toContain("비견: " + "1.3");
+  });
+
+  it("keeps production-style broad-year report output reader-facing", () => {
+    const result = createReportFromRawInput({
+      displayName: "GYEOLTEST",
+      birthDate: "1996-12-06",
+      birthTime: "14:15",
+      birthTimeUnknown: false,
+      calendarType: "SOLAR",
+      gender: "FEMALE",
+      mbtiType: "ENTJ",
+      timezone: "Asia/Seoul",
+    });
+
+    expect(result.ok).toBe(true);
+    if (!result.ok) {
+      throw new Error("expected production-style fixture report");
+    }
+
+    const report = result.report;
+    const text = JSON.stringify(report);
+    const quickSummary = report.sections.find(
+      (section) => section.id === "QUICK_SUMMARY",
+    );
+    const keywordBlock = quickSummary?.blocks.find(
+      (block) => block.kind === "BULLET_LIST" && block.titleKo === "키워드",
+    );
+    const elements = report.sections.find((section) => section.id === "ELEMENTS");
+    const elementBalanceBlock = elements?.blocks.find(
+      (block) =>
+        block.kind === "BULLET_LIST" && block.titleKo === "오행 밸런스",
+    );
+
+    expect(report.sections.map((section) => section.titleKo)).toEqual(
+      expect.arrayContaining([
+        "한눈에 보는 나의 결",
+        "오행",
+        "십성",
+        "신살·귀인",
+        "일·돈·관계 활용 포인트",
+        "MBTI 프로필",
+      ]),
+    );
+    expect(keywordBlock).toBeDefined();
+    expect(elementBalanceBlock).toBeDefined();
+    expect(JSON.stringify(keywordBlock)).toContain("목 기운 보완 필요");
+    expect(text).toContain("목 기운 보완 필요");
+    expectNoRawElementCodes(text);
+    expect(text).not.toContain("(4.2)");
+    expect(text).not.toContain("(0.1)");
+    expect(text).not.toContain("높음 (");
+    expect(text).not.toContain("낮음 (");
     expect(text).not.toContain("비견: " + "1.3");
   });
 
