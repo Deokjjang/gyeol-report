@@ -1,7 +1,9 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { calculateSaju } from "@/lib/saju/calculateSaju";
-import type { SajuCalcInput } from "@/lib/saju/types";
+import type { Pillar, SajuCalcInput } from "@/lib/saju/types";
 
 const baseInput: SajuCalcInput = {
   birthDate: "2024-02-04",
@@ -11,6 +13,30 @@ const baseInput: SajuCalcInput = {
   gender: "MALE",
   timezone: "Asia/Seoul",
 };
+
+const broadYearProductionInput: SajuCalcInput = {
+  birthDate: "1996-12-06",
+  birthTime: "14:15",
+  birthTimeUnknown: false,
+  calendarType: "SOLAR",
+  gender: "FEMALE",
+  timezone: "Asia/Seoul",
+};
+
+function formatPillar(pillar: Pillar): string {
+  return `${pillar.stem}${pillar.branch}`;
+}
+
+function expectHourPillar(result: ReturnType<typeof calculateSaju>): Pillar {
+  const { hour } = result.pillars;
+
+  expect(hour).toBeDefined();
+  if (!hour) {
+    throw new Error("Expected hour pillar.");
+  }
+
+  return hour;
+}
 
 describe("calculateSaju", () => {
   it("calculates full Saju with known birth time", () => {
@@ -112,14 +138,7 @@ describe("calculateSaju", () => {
   });
 
   it("uses verified calendar engine pillars for broad-year production input", () => {
-    const result = calculateSaju({
-      birthDate: "1996-12-06",
-      birthTime: "14:15",
-      birthTimeUnknown: false,
-      calendarType: "SOLAR",
-      gender: "FEMALE",
-      timezone: "Asia/Seoul",
-    });
+    const result = calculateSaju(broadYearProductionInput);
 
     expect(result.pillars).toEqual({
       year: { stem: "丙", branch: "子" },
@@ -127,7 +146,96 @@ describe("calculateSaju", () => {
       day: { stem: "丁", branch: "丑" },
       hour: { stem: "丁", branch: "未" },
     });
+    expect(formatPillar(result.pillars.year)).toBe("丙子");
+    expect(formatPillar(result.pillars.month)).toBe("己亥");
+    expect(formatPillar(result.pillars.day)).toBe("丁丑");
+    expect(formatPillar(expectHourPillar(result))).toBe("丁未");
     expect(result.dayMaster).toBe("丁");
+    expect(result.input.timezone).toBe("Asia/Seoul");
+  });
+
+  it("uses verified calendar engine year month and day when 1996 birth time is unknown", () => {
+    const result = calculateSaju({
+      ...broadYearProductionInput,
+      birthTime: undefined,
+      birthTimeUnknown: true,
+    });
+    const serializedResult = JSON.stringify(result);
+
+    expect(result.input.timezone).toBe("Asia/Seoul");
+    expect(result.pillars).toEqual({
+      year: { stem: "丙", branch: "子" },
+      month: { stem: "己", branch: "亥" },
+      day: { stem: "丁", branch: "丑" },
+    });
+    expect(result.pillars.hour).toBeUndefined();
+    expect(result.notices).toContain(
+      "출생시간을 모르면 년·월·일주 중심으로 분석됩니다.",
+    );
+    expect(serializedResult).not.toContain("SOLAR_TERM_YEAR_UNSUPPORTED");
+  });
+
+  it("keeps verified solar-term table fixture for 2024 IPCHUN boundary", () => {
+    const result = calculateSaju(baseInput);
+    const serializedResult = JSON.stringify(result);
+
+    expect(result.input.timezone).toBe("Asia/Seoul");
+    expect(result.pillars).toEqual({
+      year: { stem: "甲", branch: "辰" },
+      month: { stem: "丙", branch: "寅" },
+      day: { stem: "丙", branch: "申" },
+      hour: { stem: "丁", branch: "酉" },
+    });
+    expect(serializedResult).not.toContain("SOLAR_TERM_YEAR_UNSUPPORTED");
+  });
+
+  it("handles 1996 Asia/Seoul time-pillar boundary smoke cases", () => {
+    const birthTimes = ["00:30", "01:30", "14:15", "23:30"] as const;
+    const results = birthTimes.map((birthTime) =>
+      calculateSaju({
+        ...broadYearProductionInput,
+        birthTime,
+      }),
+    );
+    const hourCodes = results.map((result) => formatPillar(expectHourPillar(result)));
+
+    for (const result of results) {
+      expect(result.input.timezone).toBe("Asia/Seoul");
+      expect(result.pillars.year).toBeDefined();
+      expect(result.pillars.month).toBeDefined();
+      expect(result.pillars.day).toBeDefined();
+      expect(result.pillars.hour).toBeDefined();
+    }
+
+    expect(hourCodes[0]).not.toBe(hourCodes[1]);
+    expect(new Set(hourCodes).size).toBeGreaterThan(1);
+    expect(JSON.stringify(results)).not.toContain("SOLAR_TERM_YEAR_UNSUPPORTED");
+  });
+
+  it("does not add unsafe broad-year source markers", () => {
+    const sourceFiles = [
+      "src/lib/saju/calculateSaju.ts",
+      "src/lib/saju/lunarJavascriptPillars.ts",
+      "src/lib/saju/pillars.ts",
+      "src/lib/saju/solarTerms.ts",
+    ];
+    const source = sourceFiles
+      .map((relativePath) =>
+        readFileSync(join(process.cwd(), relativePath), "utf8"),
+      )
+      .join("\n");
+    const unsafeMarkers = [
+      "fa" + "ke",
+      "approxi" + "mate solar term",
+      "dum" + "my",
+      "임" + "시",
+      "대" + "충",
+      "fallback month " + "pillar",
+    ];
+
+    for (const marker of unsafeMarkers) {
+      expect(source).not.toContain(marker);
+    }
   });
 
   it("throws for lunar calendar", () => {
