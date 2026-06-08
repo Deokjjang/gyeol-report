@@ -133,10 +133,6 @@ function formatCalendarTypeLabel(value: string): string {
     return "양력";
   }
 
-  if (value === "LUNAR") {
-    return "음력";
-  }
-
   return "선택 안 함";
 }
 
@@ -299,7 +295,6 @@ export default function NewReportPage() {
   const [report, setReport] = useState<ReportPreview | null>(null);
   const [currentStep, setCurrentStep] = useState<ReportInputStep>(0);
   const [birthDate, setBirthDate] = useState("");
-  const [calendarType, setCalendarType] = useState("SOLAR");
   const [birthTimeMode, setBirthTimeMode] = useState<BirthTimeMode>("exact");
   const [birthTime, setBirthTime] = useState("");
   const [timeBranch, setTimeBranch] = useState<TimeBranchSelection>("");
@@ -375,7 +370,7 @@ export default function NewReportPage() {
       birthDate,
       birthTime: normalizedBirthTime,
       birthTimeUnknown,
-      calendarType,
+      calendarType: "SOLAR",
       gender,
       timezone: "Asia/Seoul",
       mbtiType,
@@ -477,6 +472,7 @@ export default function NewReportPage() {
               </div>
 
               <input type="hidden" name="timezone" value="Asia/Seoul" />
+              <input type="hidden" name="calendarType" value="SOLAR" />
               <input
                 type="hidden"
                 name="birthTimeUnknown"
@@ -485,29 +481,17 @@ export default function NewReportPage() {
 
               {currentStep === 0 ? (
                 <div className="space-y-5">
-                  <fieldset className="space-y-3">
-                    <legend className="text-sm font-medium text-neutral-200">
-                      양력/음력
-                    </legend>
-                    <div className="grid grid-cols-2 gap-3">
-                      {(["SOLAR", "LUNAR"] as const).map((value) => (
-                        <label
-                          key={value}
-                          className="flex items-center justify-center gap-2 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200"
-                        >
-                          <input
-                            name="calendarType"
-                            type="radio"
-                            value={value}
-                            checked={calendarType === value}
-                            onChange={() => setCalendarType(value)}
-                            className="h-4 w-4"
-                          />
-                          {value === "SOLAR" ? "양력" : "음력"}
-                        </label>
-                      ))}
-                    </div>
-                  </fieldset>
+                  <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                    <p className="text-sm font-semibold text-neutral-100">
+                      양력 기준 생년월일
+                    </p>
+                    <p className="text-sm leading-6 text-neutral-400">
+                      현재 V1은 양력 기준 생년월일만 지원합니다.
+                    </p>
+                    <p className="text-sm leading-6 text-neutral-500">
+                      음력 생일 입력은 추후 지원 예정입니다.
+                    </p>
+                  </div>
 
                   <div className="space-y-2">
                     <label
@@ -708,9 +692,9 @@ export default function NewReportPage() {
                   </h3>
                   <dl className="grid gap-3 text-sm">
                     <div className="flex justify-between gap-4">
-                      <dt className="text-neutral-500">양력/음력</dt>
+                      <dt className="text-neutral-500">달력 기준</dt>
                       <dd className="text-right text-neutral-200">
-                        {formatCalendarTypeLabel(calendarType)}
+                        {formatCalendarTypeLabel("SOLAR")}
                       </dd>
                     </div>
                     <div className="flex justify-between gap-4">

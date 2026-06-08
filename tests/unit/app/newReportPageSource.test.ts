@@ -28,7 +28,6 @@ describe("new report page source", () => {
 
   it("has required fixed values", () => {
     expect(pageSource).toContain('"SOLAR"');
-    expect(pageSource).toContain('"LUNAR"');
     expect(pageSource).toContain('value="Asia/Seoul"');
   });
 
@@ -87,7 +86,11 @@ describe("new report page source", () => {
     expect(pageSource).toContain(
       "모바일에서 한 단계씩 입력한 뒤 무료 미리보기를 생성합니다.",
     );
-    expect(pageSource).toContain("양력/음력");
+    expect(pageSource).toContain("양력 기준 생년월일");
+    expect(pageSource).toContain(
+      "현재 V1은 양력 기준 생년월일만 지원합니다.",
+    );
+    expect(pageSource).toContain("음력 생일 입력은 추후 지원 예정입니다.");
     expect(pageSource).toContain(
       "예: 1996-12-06 형식으로 입력해 주세요.",
     );
@@ -135,7 +138,7 @@ describe("new report page source", () => {
       "가능하면 가족에게 실제 출생일과 시간을 다시 확인해 주세요.",
     );
     expect(pageSource).toContain("입력 정보 확인");
-    expect(pageSource).toContain("양력/음력");
+    expect(pageSource).toContain("달력 기준");
   });
 
   it("renders user-facing confirmation summary helpers", () => {
@@ -146,7 +149,6 @@ describe("new report page source", () => {
       "남성",
       "여성",
       "양력",
-      "음력",
       "선택 안 함",
       "정확한 시간 ·",
       "대략적인 시간대 ·",
@@ -157,6 +159,17 @@ describe("new report page source", () => {
     for (const marker of summaryMarkers) {
       expect(pageSource).toContain(marker);
     }
+  });
+
+  it("keeps calendar payload solar-only without active lunar selector", () => {
+    expect(pageSource).toContain("calendarType");
+    expect(pageSource).toContain("SOLAR");
+    expect(pageSource).toContain('name="calendarType"');
+    expect(pageSource).toContain('value="SOLAR"');
+    expect(pageSource).not.toContain('value="' + "LUNAR" + '"');
+    expect(pageSource).not.toContain("value='" + "LUNAR" + "'");
+    expect(pageSource).not.toContain('calendarType: "' + "LUNAR" + '"');
+    expect(pageSource).not.toContain("calendarType: '" + "LUNAR" + "'");
   });
 
   it("renders loading state copy and disables submit", () => {
