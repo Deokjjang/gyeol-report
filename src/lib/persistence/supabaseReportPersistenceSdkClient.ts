@@ -68,6 +68,13 @@ function createInvalidDataResult<T>(): SupabaseReportQueryResult<T> {
   };
 }
 
+function createInsertSuccessResult(): SupabaseReportQueryResult<null> {
+  return {
+    ok: true,
+    data: null,
+  };
+}
+
 function isSupabaseReportRow(value: unknown): value is SupabaseReportRow {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -96,20 +103,14 @@ export function createSupabaseReportPersistenceSdkClient(
   return {
     async insertReport(
       row,
-    ): Promise<SupabaseReportQueryResult<SupabaseReportRow>> {
-      const result = await client
-        .from(tableName)
-        .insert(row)
-        .select("*")
-        .single();
+    ): Promise<SupabaseReportQueryResult<null>> {
+      const result = await client.from(tableName).insert(row);
 
       if (result.error !== null) {
         return mapSupabaseError(result.error);
       }
 
-      return isSupabaseReportRow(result.data)
-        ? { ok: true, data: result.data }
-        : createInvalidDataResult();
+      return createInsertSuccessResult();
     },
 
     async updateReport(

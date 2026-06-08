@@ -43,7 +43,7 @@ export type SupabaseReportRowPatch = Partial<
 export type SupabaseReportPersistenceQueryClient = {
   readonly insertReport: (
     row: SupabaseReportRow,
-  ) => Promise<SupabaseReportQueryResult<SupabaseReportRow>>;
+  ) => Promise<SupabaseReportQueryResult<null>>;
   readonly updateReport: (
     reportId: string,
     patch: SupabaseReportRowPatch,
@@ -72,7 +72,7 @@ export function createUnavailableSupabaseReportPersistenceQueryClient(): Supabas
   // This client must not expose secrets.
   return {
     async insertReport(row): Promise<
-      SupabaseReportQueryResult<SupabaseReportRow>
+      SupabaseReportQueryResult<null>
     > {
       void row;
 

@@ -323,7 +323,10 @@ export function createSupabaseReportPersistenceAdapter(
         return mapQueryErrorToWriteFailure(tableName, queryResult);
       }
 
-      return mapRowResultToWriteResult(tableName, queryResult.data);
+      return {
+        ok: true,
+        record: input.record,
+      };
     },
 
     async update(input): Promise<ReportPersistenceWriteResult> {

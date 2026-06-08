@@ -43,6 +43,7 @@ type QueryErrorCode = Extract<
 
 type FakeQueryClientCalls = {
   readonly insertRows: SupabaseReportRow[];
+  readonly insertReadBacks: string[];
   readonly updates: {
     readonly reportId: string;
     readonly patch: SupabaseReportRowPatch;
@@ -54,7 +55,7 @@ type FakeQueryClientCalls = {
 };
 
 type FakeQueryClientOptions = {
-  readonly insertResult?: SupabaseReportQueryResult<SupabaseReportRow>;
+  readonly insertResult?: SupabaseReportQueryResult<null>;
   readonly updateResult?: SupabaseReportQueryResult<SupabaseReportRow>;
   readonly findResult?: SupabaseReportQueryResult<SupabaseReportRow | null>;
   readonly listResult?: SupabaseReportQueryResult<readonly SupabaseReportRow[]>;
@@ -162,6 +163,7 @@ function createFakeQueryClient(
 } {
   const calls: FakeQueryClientCalls = {
     insertRows: [],
+    insertReadBacks: [],
     updates: [],
     findIds: [],
     listInputs: [],
@@ -171,7 +173,7 @@ function createFakeQueryClient(
     async insertReport(row) {
       calls.insertRows.push(row);
 
-      return options.insertResult ?? { ok: true, data: row };
+      return options.insertResult ?? { ok: true, data: null };
     },
 
     async updateReport(reportId, patch) {
@@ -312,6 +314,7 @@ describe("createSupabaseReportPersistenceAdapter", () => {
     const persisted = expectWriteSuccess(result);
 
     expect(calls.insertRows).toHaveLength(1);
+    expect(calls.insertReadBacks).toEqual([]);
     expect(calls.insertRows[0]).toMatchObject({
       report_id: record.reportId,
       status: record.status,
@@ -513,17 +516,31 @@ describe("createSupabaseReportPersistenceAdapter", () => {
     );
   });
 
-  it("mapper validation failure maps to adapter failure", async () => {
-    const record = createRecord();
-    const invalidRow = createRow({ status: "archived" });
-    const { client } = createFakeQueryClient({
-      insertResult: { ok: true, data: invalidRow },
-    });
+  it("mapper validation failure maps to adapter failure before insert", async () => {
+    const invalidStatus = "archived" as PersistedReportRecord["status"];
+    const record = createRecord({ status: invalidStatus });
+    const { client, calls } = createFakeQueryClient();
     const adapter = createSupabaseReportPersistenceAdapter({ queryClient: client });
 
     const result = await adapter.create({ record });
 
     expectWriteFailure(result, "REPORT_STORAGE_VALIDATION_FAILED");
+    expect(calls.insertRows).toEqual([]);
+  });
+
+  it("SDK insert source stays insert-only without select or single read-back", () => {
+    const sourceText = readSource(
+      "src/lib/persistence/supabaseReportPersistenceSdkClient.ts",
+    );
+    const insertStart = sourceText.indexOf("async insertReport");
+    const updateStart = sourceText.indexOf("async updateReport");
+    const insertSource = sourceText.slice(insertStart, updateStart);
+
+    expect(insertStart).toBeGreaterThanOrEqual(0);
+    expect(updateStart).toBeGreaterThan(insertStart);
+    expect(insertSource).toContain(".insert(row)");
+    expect(insertSource).not.toContain(".select(");
+    expect(insertSource).not.toContain(".single(");
   });
 
   it("source avoids real Supabase client env network markers", () => {
