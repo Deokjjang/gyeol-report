@@ -1,4 +1,8 @@
-import { createReportId } from "../persistence/reportPersistenceIds";
+import { hashReportAccessTokenSync } from "../persistence/reportAccessTokenHash";
+import {
+  createReportAccessToken,
+  createReportId,
+} from "../persistence/reportPersistenceIds";
 import type { CreatePersistedReportInput } from "../persistence/reportPersistenceAdapter";
 import type {
   PersistedReportInputSnapshot,
@@ -12,6 +16,7 @@ import type { ReportOutput } from "./types";
 export const REPORT_PERSISTENCE_PAYLOAD_VERSION = "v1" as const;
 export const REPORT_CALCULATION_VERSION = "saju-mbti-v1" as const;
 export const DEFAULT_REPORT_LOCALE = "ko-KR" as const;
+export const REPORT_ACCESS_TOKEN_VERSION = "v1" as const;
 
 export type BuildReportPersistencePayloadInput = {
   readonly birthDate: string;
@@ -37,7 +42,8 @@ export type BuildReportPersistencePayloadResult =
       readonly code:
         | "INVALID_BIRTH_DATE"
         | "INVALID_CALENDAR_TYPE"
-        | "INVALID_REPORT";
+        | "INVALID_REPORT"
+        | "ACCESS_TOKEN_HASH_UNAVAILABLE";
       readonly messageKo: string;
     };
 
@@ -83,6 +89,18 @@ export function buildReportPersistencePayload(
   }
 
   const nowIso = input.nowIso ?? new Date().toISOString();
+  const accessTokenHashResult = hashReportAccessTokenSync(
+    createReportAccessToken(),
+  );
+
+  if (!accessTokenHashResult.ok) {
+    return {
+      ok: false,
+      code: "ACCESS_TOKEN_HASH_UNAVAILABLE",
+      messageKo: "리포트 접근 정보를 준비하지 못했습니다.",
+    };
+  }
+
   const inputSnapshot: PersistedReportInputSnapshot = {
     birthDate: input.birthDate,
     birthTime: input.birthTime ?? null,
@@ -109,6 +127,9 @@ export function buildReportPersistencePayload(
     calculationVersion: REPORT_CALCULATION_VERSION,
     locale: DEFAULT_REPORT_LOCALE,
     accessMode,
+    accessTokenHash: accessTokenHashResult.hash,
+    accessTokenCreatedAt: nowIso,
+    accessTokenVersion: REPORT_ACCESS_TOKEN_VERSION,
     inputSnapshot,
     reportSnapshot,
   };

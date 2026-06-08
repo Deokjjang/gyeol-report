@@ -53,6 +53,9 @@ const paymentMappingRecordTemplate: PersistedReportRecord = {
   calculationVersion: "v1",
   locale: "ko",
   accessMode: "preview",
+  accessTokenHash: "sha256:paymentmappingtemplate",
+  accessTokenCreatedAt: "1970-01-01T00:00:00.000Z",
+  accessTokenVersion: "v1",
   inputSnapshot: {
     birthDate: "1970-01-01",
     birthTime: null,

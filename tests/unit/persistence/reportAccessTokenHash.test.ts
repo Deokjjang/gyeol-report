@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   hashReportAccessToken,
+  hashReportAccessTokenSync,
   verifyReportAccessTokenHash,
 } from "@/lib/persistence/reportAccessTokenHash";
 
@@ -36,6 +37,19 @@ describe("report access token hash utility", () => {
     expect(second.ok).toBe(true);
     if (first.ok && second.ok) {
       expect(first.hash).toBe(second.hash);
+    }
+  });
+
+  it("sync hash matches async hash for payload construction", async () => {
+    const asyncResult = await hashReportAccessToken(validToken);
+    const syncResult = hashReportAccessTokenSync(validToken);
+
+    expect(asyncResult.ok).toBe(true);
+    expect(syncResult.ok).toBe(true);
+
+    if (asyncResult.ok && syncResult.ok) {
+      expect(syncResult.hash).toBe(asyncResult.hash);
+      expect(syncResult.hash).not.toContain(validToken);
     }
   });
 

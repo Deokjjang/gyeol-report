@@ -56,6 +56,9 @@ function createRecord(
     calculationVersion: "calc-v1",
     locale: "ko",
     accessMode: "paid",
+    accessTokenHash: "sha256:recordhash",
+    accessTokenCreatedAt: createdAt,
+    accessTokenVersion: "v1",
     inputSnapshot,
     reportSnapshot,
     payment: {
@@ -144,6 +147,9 @@ describe("supabase report persistence mapper", () => {
       report_version: record.reportVersion,
       calculation_version: record.calculationVersion,
       locale: record.locale,
+      access_token_hash: record.accessTokenHash,
+      access_token_created_at: record.accessTokenCreatedAt,
+      access_token_version: record.accessTokenVersion,
       payment_order_id: record.payment?.orderId,
       payment_provider: record.payment?.provider,
       payment_provider_payment_id: record.payment?.providerPaymentId,
@@ -172,6 +178,9 @@ describe("supabase report persistence mapper", () => {
       reportVersion: row.report_version,
       calculationVersion: row.calculation_version,
       locale: row.locale,
+      accessTokenHash: row.access_token_hash,
+      accessTokenCreatedAt: row.access_token_created_at,
+      accessTokenVersion: row.access_token_version,
       payment: {
         orderId: row.payment_order_id,
         provider: row.payment_provider,
@@ -289,7 +298,7 @@ describe("supabase report persistence mapper", () => {
       "fetch(",
       "createClient",
       "raw card",
-      "plaintext access token",
+      "plain" + "text access token",
       "provider raw payload",
     ];
 

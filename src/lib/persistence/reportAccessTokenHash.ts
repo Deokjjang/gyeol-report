@@ -1,3 +1,5 @@
+import { createHash } from "node:crypto";
+
 import { isValidReportAccessToken } from "./reportPersistenceIds";
 
 const TOKEN_HASH_INPUT_PREFIX = "gyeol-report:v1:access-token:";
@@ -12,6 +14,29 @@ export type ReportAccessTokenHashResult =
         messageKo: string;
       };
     };
+
+export function hashReportAccessTokenSync(
+  accessToken: string,
+): ReportAccessTokenHashResult {
+  if (!isValidReportAccessToken(accessToken)) {
+    return {
+      ok: false,
+      error: {
+        code: "INVALID_REPORT_ACCESS_TOKEN",
+        messageKo: "리포트 접근 토큰 형식이 올바르지 않습니다.",
+      },
+    };
+  }
+
+  const hash = createHash("sha256")
+    .update(`${TOKEN_HASH_INPUT_PREFIX}${accessToken}`)
+    .digest("hex");
+
+  return {
+    ok: true,
+    hash: `${TOKEN_HASH_OUTPUT_PREFIX}${hash}`,
+  };
+}
 
 export async function hashReportAccessToken(
   accessToken: string,

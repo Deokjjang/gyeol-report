@@ -26,6 +26,9 @@ function createRecord(
     calculationVersion: "v1",
     locale: "ko",
     accessMode: "preview",
+    accessTokenHash: "sha256:testhash",
+    accessTokenCreatedAt: createdAt,
+    accessTokenVersion: "v1",
     inputSnapshot: {
       birthDate: "2024-02-04",
       birthTime: "17:27",

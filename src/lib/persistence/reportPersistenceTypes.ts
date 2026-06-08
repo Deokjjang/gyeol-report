@@ -52,6 +52,10 @@ export type PersistedReportRecord = {
   calculationVersion: string;
   locale: string;
   accessMode: ReportAccessMode;
+  accessTokenHash: string;
+  accessTokenCreatedAt: string;
+  accessTokenRotatedAt?: string;
+  accessTokenVersion: string;
   inputSnapshot: PersistedReportInputSnapshot;
   reportSnapshot: PersistedReportSnapshot;
   payment?: PersistedPaymentLinkage;

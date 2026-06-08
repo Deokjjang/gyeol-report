@@ -17,10 +17,10 @@ export type SupabaseReportRow = {
   readonly report_version: string | null;
   readonly calculation_version: string | null;
   readonly locale: string | null;
-  readonly access_token_hash: string | null;
-  readonly access_token_created_at: string | null;
+  readonly access_token_hash: string;
+  readonly access_token_created_at: string;
   readonly access_token_rotated_at: string | null;
-  readonly access_token_version: string | null;
+  readonly access_token_version: string;
   readonly payment_order_id: string | null;
   readonly payment_provider: string | null;
   readonly payment_provider_payment_id: string | null;
@@ -153,6 +153,13 @@ function validateRecordBase(
     return failure("INVALID_REPORT_RECORD", "Invalid report record.");
   }
 
+  if (
+    !isNonEmptyString(record.accessTokenHash) ||
+    !isNonEmptyString(record.accessTokenVersion)
+  ) {
+    return failure("INVALID_REPORT_RECORD", "Invalid report record.");
+  }
+
   if (!isReportStatus(record.status)) {
     return failure("INVALID_REPORT_STATUS", "Invalid report status.");
   }
@@ -161,11 +168,22 @@ function validateRecordBase(
     return failure("INVALID_ACCESS_MODE", "Invalid report access mode.");
   }
 
-  if (!isTimestamp(record.createdAt) || !isTimestamp(record.updatedAt)) {
+  if (
+    !isTimestamp(record.createdAt) ||
+    !isTimestamp(record.updatedAt) ||
+    !isTimestamp(record.accessTokenCreatedAt)
+  ) {
     return failure("INVALID_TIMESTAMP", "Invalid report timestamp.");
   }
 
   if (record.deletedAt !== undefined && !isTimestamp(record.deletedAt)) {
+    return failure("INVALID_TIMESTAMP", "Invalid report timestamp.");
+  }
+
+  if (
+    record.accessTokenRotatedAt !== undefined &&
+    !isTimestamp(record.accessTokenRotatedAt)
+  ) {
     return failure("INVALID_TIMESTAMP", "Invalid report timestamp.");
   }
 
@@ -249,6 +267,8 @@ function validateRequiredRowFields(
 }> {
   if (
     !isNonEmptyString(row.report_id) ||
+    !isNonEmptyString(row.access_token_hash) ||
+    !isNonEmptyString(row.access_token_version) ||
     !isNonEmptyString(row.report_version) ||
     !isNonEmptyString(row.calculation_version) ||
     !isNonEmptyString(row.locale)
@@ -264,11 +284,22 @@ function validateRequiredRowFields(
     return failure("INVALID_ACCESS_MODE", "Invalid report access mode.");
   }
 
-  if (!isTimestamp(row.created_at) || !isTimestamp(row.updated_at)) {
+  if (
+    !isTimestamp(row.created_at) ||
+    !isTimestamp(row.updated_at) ||
+    !isTimestamp(row.access_token_created_at)
+  ) {
     return failure("INVALID_TIMESTAMP", "Invalid report timestamp.");
   }
 
   if (row.deleted_at !== null && !isTimestamp(row.deleted_at)) {
+    return failure("INVALID_TIMESTAMP", "Invalid report timestamp.");
+  }
+
+  if (
+    row.access_token_rotated_at !== null &&
+    !isTimestamp(row.access_token_rotated_at)
+  ) {
     return failure("INVALID_TIMESTAMP", "Invalid report timestamp.");
   }
 
@@ -375,10 +406,10 @@ export function mapPersistedReportRecordToSupabaseRow(
     report_version: record.reportVersion,
     calculation_version: record.calculationVersion,
     locale: record.locale,
-    access_token_hash: null,
-    access_token_created_at: null,
-    access_token_rotated_at: null,
-    access_token_version: null,
+    access_token_hash: record.accessTokenHash,
+    access_token_created_at: record.accessTokenCreatedAt,
+    access_token_rotated_at: record.accessTokenRotatedAt ?? null,
+    access_token_version: record.accessTokenVersion,
     ...paymentColumnsResult.value,
     created_at: record.createdAt,
     updated_at: record.updatedAt,
@@ -410,8 +441,14 @@ export function mapSupabaseRowToPersistedReportRecord(
     calculationVersion: rowValidation.value.calculationVersion,
     locale: rowValidation.value.locale,
     accessMode: rowValidation.value.accessMode,
+    accessTokenHash: row.access_token_hash,
+    accessTokenCreatedAt: row.access_token_created_at,
+    accessTokenVersion: row.access_token_version,
     inputSnapshot: row.input_snapshot as PersistedReportInputSnapshot,
     reportSnapshot: row.report_snapshot as PersistedReportSnapshot,
+    ...(row.access_token_rotated_at !== null
+      ? { accessTokenRotatedAt: row.access_token_rotated_at }
+      : {}),
     ...(paymentResult.value !== undefined ? { payment: paymentResult.value } : {}),
     ...(row.deleted_at !== null ? { deletedAt: row.deleted_at } : {}),
   });

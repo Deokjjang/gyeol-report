@@ -6,6 +6,7 @@ import { isValidReportId } from "@/lib/persistence/reportPersistenceIds";
 import {
   buildReportPersistencePayload,
   DEFAULT_REPORT_LOCALE,
+  REPORT_ACCESS_TOKEN_VERSION,
   REPORT_CALCULATION_VERSION,
   REPORT_PERSISTENCE_PAYLOAD_VERSION,
   type BuildReportPersistencePayloadInput,
@@ -86,6 +87,11 @@ describe("report persistence payload", () => {
     expect(record.reportVersion).toBe(REPORT_PERSISTENCE_PAYLOAD_VERSION);
     expect(record.calculationVersion).toBe(REPORT_CALCULATION_VERSION);
     expect(record.locale).toBe(DEFAULT_REPORT_LOCALE);
+    expect(record.accessTokenHash).toMatch(/^sha256:[a-f0-9]+$/);
+    expect(record.accessTokenHash).not.toContain("rpat_");
+    expect(record.accessTokenCreatedAt).toBe(nowIso);
+    expect(record.accessTokenVersion).toBe(REPORT_ACCESS_TOKEN_VERSION);
+    expect(record.accessTokenRotatedAt).toBeUndefined();
     expect(record.inputSnapshot).toEqual(result.inputSnapshot);
     expect(record.reportSnapshot).toEqual(result.reportSnapshot);
     expect(record.payment).toBeUndefined();
@@ -115,6 +121,7 @@ describe("report persistence payload", () => {
 
   it("builds report snapshot", () => {
     const result = expectSuccess(buildReportPersistencePayload(createInput()));
+    const reportJson = JSON.stringify(result.reportSnapshot.report);
 
     expect(result.reportSnapshot).toEqual({
       report: reportFixture,
@@ -123,6 +130,9 @@ describe("report persistence payload", () => {
       createdAt: nowIso,
     });
     expect(result.reportSnapshot.report.sections).toEqual(reportFixture.sections);
+    expect(reportJson).not.toContain("accessToken");
+    expect(reportJson).not.toContain("access_token");
+    expect(reportJson).not.toContain("access_token_hash");
   });
 
   it("normalizes missing optional fields", () => {
