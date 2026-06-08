@@ -44,6 +44,8 @@ const forbiddenWords = [
   "운" + "명",
   "죽" + "음",
   "사고가 " + "난다",
+  "병에 " + "걸린다",
+  "건강에 " + "위험하다",
   "바람기가 " + "있다",
   "돈복이 " + "있다",
   "결혼" + "한다",
@@ -82,6 +84,13 @@ const rawElementCodes = [
   "EARTH" + "_STRONG",
   "METAL" + "_STRONG",
   "WATER" + "_STRONG",
+] as const;
+
+const blockedCommerceWords = [
+  "팔" + "찌",
+  "굿" + "즈",
+  "구" + "매",
+  "상" + "품",
 ] as const;
 
 function createReportInput(overrides?: Partial<ReportInput>): ReportInput {
@@ -231,6 +240,16 @@ describe("buildReport", () => {
     expect(section?.titleKo).toBe("한눈에 보는 나의 결");
     expect(text).toContain("강점");
     expect(text).toContain("주의할 흐름");
+    expect(text).toContain("무너지기 쉬운 패턴");
+    expect(text).toContain(
+      "상대는 도움을 받은 것이 아니라 밀렸다고 느낄 수 있습니다",
+    );
+    expect(text).toContain("오해받기 쉬운 지점");
+    expect(text).toContain("기준 없이 속도만 올리면");
+    expect(text).toContain(
+      "일은 많이 했는데 남는 결과가 흐려질 수 있습니다",
+    );
+    expect(text).toContain("수면, 수분 섭취, 회복 리듬");
     expect(text).toContain("키워드");
     expect(text).toContain("오늘부터 써먹는 루틴");
   });
@@ -842,10 +861,15 @@ describe("buildReport", () => {
     expect(text).toContain("내가 편하게 쓰는 반응 방식");
     expect(text).toContain("목표와 기준이 어느 정도 있는 상황");
     expect(text).toContain("구조를 만들고 흐름을 정리할 때");
+    expect(text).toContain("역할이 흐릿하고 기준이 계속 바뀌는 환경");
+    expect(text).toContain("에너지가 빨리 소모될 수 있습니다");
     expect(text).toContain("기준표·예산·우선순위");
+    expect(text).toContain("어디에 돈과 에너지를 썼는지 흐려질 수 있습니다");
     expect(text).toContain("해결보다 먼저 들어주는 시간");
+    expect(text).toContain("너무 빠른 해결책은 차갑게 느껴질 수 있습니다");
     expect(text).toContain("책임을 너무 빨리 떠안으면");
-    expect(text).toContain("사람과 속도를 맞추는 방식");
+    expect(text).toContain("관계가 역할처럼 느껴질 수 있습니다");
+    expect(text).toContain("속도를 버틸 기준과 사람의 온도");
   });
 
   it("renders shinsal section from shinsal tags", () => {
@@ -1266,6 +1290,9 @@ describe("buildReport", () => {
 
     for (const text of collectReportText(report)) {
       for (const word of forbiddenWords) {
+        expect(text).not.toContain(word);
+      }
+      for (const word of blockedCommerceWords) {
         expect(text).not.toContain(word);
       }
     }

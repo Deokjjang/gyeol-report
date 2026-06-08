@@ -18,6 +18,8 @@ const forbiddenWords = [
   "운" + "명",
   "죽" + "음",
   "사고가 " + "난다",
+  "병에 " + "걸린다",
+  "건강에 " + "위험하다",
   "바람기가 " + "있다",
   "돈복이 " + "있다",
   "결혼" + "한다",
@@ -25,6 +27,13 @@ const forbiddenWords = [
   "절" + "대",
   "항" + "상",
   "틀" + "렸다",
+] as const;
+
+const blockedCommerceWords = [
+  "팔" + "찌",
+  "굿" + "즈",
+  "구" + "매",
+  "상" + "품",
 ] as const;
 
 const expectedSectionIds = [
@@ -430,11 +439,26 @@ describe("report output fixture", () => {
     expect(text).toContain("돈과 자원을 다루는 방식");
     expect(text).toContain("관계에서 자주 생길 수 있는 장면");
     expect(text).toContain("연애에서 도움이 되는 태도");
+    expect(text).toContain("무너지기 쉬운 패턴");
+    expect(text).toContain("오해받기 쉬운 지점");
+    expect(text).toContain(
+      "상대는 도움을 받은 것이 아니라 밀렸다고 느낄 수 있습니다",
+    );
+    expect(text).toContain("기준 없이 속도만 올리면");
+    expect(text).toContain(
+      "일은 많이 했는데 남는 결과가 흐려질 수 있습니다",
+    );
     expect(text).toContain("목표와 기준이 어느 정도 있는 상황");
+    expect(text).toContain("역할이 흐릿하고 기준이 계속 바뀌는 환경");
+    expect(text).toContain("에너지가 빨리 소모될 수 있습니다");
     expect(text).toContain("기준표·예산·우선순위");
+    expect(text).toContain("어디에 돈과 에너지를 썼는지 흐려질 수 있습니다");
     expect(text).toContain("해결보다 먼저 들어주는 시간");
+    expect(text).toContain("너무 빠른 해결책은 차갑게 느껴질 수 있습니다");
     expect(text).toContain("책임을 너무 빨리 떠안으면");
-    expect(text).toContain("사람과 속도를 맞추는 방식");
+    expect(text).toContain("관계가 역할처럼 느껴질 수 있습니다");
+    expect(text).toContain("수면, 수분 섭취, 회복 리듬");
+    expect(text).toContain("속도를 버틸 기준과 사람의 온도");
     expect(text).toContain("결과를 보장하는 요소가 아니라");
     expect(text).toContain("리마인드 도구");
     expect(text).not.toContain(badParticle);
@@ -450,6 +474,9 @@ describe("report output fixture", () => {
     const text = JSON.stringify(report);
 
     for (const word of forbiddenWords) {
+      expect(text).not.toContain(word);
+    }
+    for (const word of blockedCommerceWords) {
       expect(text).not.toContain(word);
     }
   });

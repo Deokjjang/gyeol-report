@@ -801,26 +801,21 @@ function buildStrengthItems(input: ReportInput): string[] {
   ]).slice(0, 3);
 }
 
-function buildCautionItems(input: ReportInput): string[] {
-  const primarySupplement = ELEMENT_DISPLAY[getPrimarySupplementElement(input)];
-  const secondarySupplementElement = getSecondarySupplementElement(input);
-  const secondarySupplement = secondarySupplementElement
-    ? ELEMENT_DISPLAY[secondarySupplementElement]
-    : undefined;
-  const tenGod = [...getTenGodGroupEntries(input)].reverse()[0];
-
+function buildCautionItems(): string[] {
   return unique([
-    `대표 보완 기운: ${primarySupplement.labelKo} — ${primarySupplement.supplementKo}`,
-    ...(secondarySupplement
-      ? [
-          `함께 보면 좋은 보완 기운: ${secondarySupplement.labelKo} — ${secondarySupplement.supplementKo}`,
-        ]
-      : []),
-    tenGod
-      ? `${tenGod.labelKo}: ${tenGod.weakKo}`
-      : "속도와 회복의 균형을 함께 보는 편이 좋습니다.",
-    "빠르게 결론을 내릴 때는 말의 온도와 쉬는 시간을 함께 챙기면 좋습니다.",
+    "기준 없이 속도만 올리면, 일은 많이 했는데 남는 결과가 흐려질 수 있습니다.",
+    "관계에서는 해결책을 빨리 주려는 태도가 압박으로 느껴질 수 있습니다.",
+    "컨디션에서는 쉬는 시간을 뒤로 미루면 수면, 수분 섭취, 회복 리듬이 먼저 흔들릴 수 있습니다.",
   ]).slice(0, 3);
+}
+
+function buildRiskPatternItems(input: ReportInput): string[] {
+  const subject = getReportSubject(input.displayName);
+
+  return [
+    `${subject}은 기준을 세우는 힘이 강한 만큼, 대화에서 상대보다 먼저 결론을 내려 버릴 수 있습니다. 이때 상대는 도움을 받은 것이 아니라 밀렸다고 느낄 수 있습니다.`,
+    "오해받기 쉬운 지점: 빠른 판단이 차가움으로 보이는 순간입니다. 회복 시간을 뒤로 미루면 판단은 빨라져도 말의 온도가 거칠어질 수 있습니다.",
+  ];
 }
 
 function buildTodayRoutineItems(input: ReportInput): string[] {
@@ -856,7 +851,12 @@ function createQuickSummaryBlocks(input: ReportInput): ReportBlock[] {
     {
       kind: "BULLET_LIST",
       titleKo: "주의할 흐름",
-      itemsKo: buildCautionItems(input),
+      itemsKo: buildCautionItems(),
+    },
+    {
+      kind: "BULLET_LIST",
+      titleKo: "무너지기 쉬운 패턴",
+      itemsKo: buildRiskPatternItems(input),
     },
     {
       kind: "BULLET_LIST",
@@ -1441,7 +1441,7 @@ function createPracticalPointBlocks(input: ReportInput): ReportBlock[] {
     {
       kind: "PARAGRAPH",
       titleKo: "잘 맞는 역할",
-      bodyKo: `${subject}은 완전히 자유로운 판보다, 목표와 기준이 어느 정도 있는 상황에서 구조를 만들고 흐름을 정리할 때 강점이 보이기 쉽습니다. ${primary.workExamplesKo}처럼 강점이 바로 보이는 역할 예시를 참고해 보세요.`,
+      bodyKo: `${subject}은 완전히 자유로운 판보다, 목표와 기준이 어느 정도 있는 상황에서 구조를 만들고 흐름을 정리할 때 강점이 보이기 쉽습니다. 다만 역할이 흐릿하고 기준이 계속 바뀌는 환경에서는 에너지가 빨리 소모될 수 있습니다. ${primary.workExamplesKo}처럼 강점이 바로 보이는 역할 예시를 참고해 보세요.`,
     },
     {
       kind: "BULLET_LIST",
@@ -1455,12 +1455,12 @@ function createPracticalPointBlocks(input: ReportInput): ReportBlock[] {
     {
       kind: "PARAGRAPH",
       titleKo: "돈과 자원을 다루는 방식",
-      bodyKo: `자원 관리는 감으로 크게 움직이기보다, 기준표·예산·우선순위처럼 눈에 보이는 장치를 만들 때 안정감이 생깁니다. ${primary.resourceKo}`,
+      bodyKo: `자원 관리는 감으로 크게 움직이기보다, 기준표·예산·우선순위처럼 눈에 보이는 장치를 만들 때 안정감이 생깁니다. 돈을 못 버는 타입이라기보다, 기준 없이 바쁘게 움직이면 어디에 돈과 에너지를 썼는지 흐려질 수 있습니다. ${primary.resourceKo}`,
     },
     {
       kind: "PARAGRAPH",
       titleKo: "관계에서 자주 생길 수 있는 장면",
-      bodyKo: `관계에서는 문제를 빨리 해결하려는 힘이 장점이지만, 상대에게는 해결보다 먼저 들어주는 시간이 필요할 수 있습니다. ${subject}은 결론을 내기 전에 감정의 속도를 맞출수록 관계 흐름이 부드러워질 수 있습니다.`,
+      bodyKo: `관계에서는 문제를 빨리 해결하려는 힘이 장점이지만, 상대에게는 해결보다 먼저 들어주는 시간이 필요할 수 있습니다. 상대가 원하는 것이 답이 아니라 공감일 때, 너무 빠른 해결책은 차갑게 느껴질 수 있습니다. ${subject}은 결론을 내기 전에 감정의 속도를 맞출수록 관계 흐름이 부드러워질 수 있습니다.`,
     },
     {
       kind: "PARAGRAPH",
@@ -1471,7 +1471,7 @@ function createPracticalPointBlocks(input: ReportInput): ReportBlock[] {
     {
       kind: "PARAGRAPH",
       titleKo: "기억해 둘 문장",
-      bodyKo: `${subject}에게 중요한 것은 더 빨리 밀어붙이는 것이 아니라, 기준을 세운 뒤 사람과 속도를 맞추는 방식입니다.`,
+      bodyKo: `${subject}에게 필요한 것은 더 세게 밀어붙이는 힘이 아니라, 속도를 버틸 기준과 사람의 온도를 함께 챙기는 방식입니다.`,
     },
     {
       kind: "BULLET_LIST",
