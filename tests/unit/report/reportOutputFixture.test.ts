@@ -407,11 +407,18 @@ describe("report output fixture", () => {
     const oldDevPreviewCopy = "개발용 미리보기로 전체 구조를 " + "확인합니다.";
     const oldDevModeCopy = "현재 화면은 개발용 전체 미리보기 " + "모드입니다.";
 
+    expect(text).toContain("출생정보와 해석 결과는 자기이해용 참고자료입니다.");
     expect(text).toContain(
-      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
+      "사주 기반 MBTI 후보는 확정 판정이 아니라 자기이해를 돕기 위한 비교 기준입니다.",
     );
     expect(text).toContain(
-      "전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
+      "입력한 MBTI는 사용자의 자기보고 정보로 존중하며, 사주 기반 제안은 보조 해석으로만 사용합니다.",
+    );
+    expect(text).not.toContain(
+      "무료 미리보기에서는 " + "핵심 구조 일부를 먼저 확인할 수 있습니다.",
+    );
+    expect(text).not.toContain(
+      "전체 리포트 영역은 " + "정식 결제 연동 이후 제공됩니다.",
     );
     expect(text).toContain("의식적으로 챙겨야 균형이 맞습니다");
     expect(text).toContain("고급 참고 점수");

@@ -1676,8 +1676,6 @@ export function buildReport(input: ReportInput): ReportOutput {
     notices: unique([
       ...input.saju.notices,
       ...(input.mbtiSuggestion?.notices ?? []),
-      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
-      "전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
       "출생정보와 해석 결과는 자기이해용 참고자료입니다.",
     ]),
   };

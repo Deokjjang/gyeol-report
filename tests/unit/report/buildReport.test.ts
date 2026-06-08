@@ -377,11 +377,12 @@ describe("buildReport", () => {
     const oldDevPreviewCopy = "개발용 미리보기로 전체 구조를 " + "확인합니다.";
     const oldDevModeCopy = "현재 화면은 개발용 전체 미리보기 " + "모드입니다.";
 
-    expect(text).toContain(
-      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
+    expect(text).toContain("출생정보와 해석 결과는 자기이해용 참고자료입니다.");
+    expect(text).not.toContain(
+      "무료 미리보기에서는 " + "핵심 구조 일부를 먼저 확인할 수 있습니다.",
     );
-    expect(text).toContain(
-      "전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
+    expect(text).not.toContain(
+      "전체 리포트 영역은 " + "정식 결제 연동 이후 제공됩니다.",
     );
     expect(text).toContain("의식적으로 챙겨야 균형이 맞습니다");
     expect(text).toContain("결과를 보장하는 요소가 아니라");
@@ -919,8 +920,6 @@ describe("buildReport", () => {
     expect(report.notices).toEqual([
       "중복 알림",
       "출생정보와 해석 결과는 자기이해용 참고자료입니다.",
-      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
-      "전체 리포트 영역은 정식 결제 연동 이후 제공됩니다.",
     ]);
   });
 
