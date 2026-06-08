@@ -46,7 +46,7 @@ describe("supabase report persistence SDK client", () => {
 
     const urlOnlyResult = await urlOnlyClient.findReportById("report_test_123");
     const keyOnlyResult =
-      await keyOnlyClient.findReportById("report_test_123");
+      await keyOnlyClient.findReportByAccessTokenHash("sha256:testhash");
 
     expectUnavailableResult(urlOnlyResult);
     expectUnavailableResult(keyOnlyResult);
@@ -61,7 +61,24 @@ describe("supabase report persistence SDK client", () => {
     expect(client.insertReport).toBeTypeOf("function");
     expect(client.updateReport).toBeTypeOf("function");
     expect(client.findReportById).toBeTypeOf("function");
+    expect(client.findReportByAccessTokenHash).toBeTypeOf("function");
     expect(client.listReports).toBeTypeOf("function");
+  });
+
+  it("source implements access-token-hash lookup without changing insert", () => {
+    const source = readSource(
+      "src/lib/persistence/supabaseReportPersistenceSdkClient.ts",
+    );
+    const insertStart = source.indexOf("async insertReport");
+    const updateStart = source.indexOf("async updateReport");
+    const insertSource = source.slice(insertStart, updateStart);
+
+    expect(source).toContain("findReportByAccessTokenHash");
+    expect(source).toContain(".eq(\"access_token_hash\", accessTokenHash)");
+    expect(source).toContain(".limit(1)");
+    expect(insertSource).toContain(".insert(row)");
+    expect(insertSource).not.toContain(".select(");
+    expect(insertSource).not.toContain(".single(");
   });
 
   it("source uses Supabase SDK with anon-key boundary only", () => {

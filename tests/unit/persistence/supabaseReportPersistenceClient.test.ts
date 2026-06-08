@@ -75,6 +75,13 @@ describe("supabase report persistence query client", () => {
     expect(result).toEqual(unavailableResult);
   });
 
+  it("returns DB_UNAVAILABLE from unavailable access-token-hash lookup", async () => {
+    const client = createUnavailableSupabaseReportPersistenceQueryClient();
+    const result = await client.findReportByAccessTokenHash("sha256:testhash");
+
+    expect(result).toEqual(unavailableResult);
+  });
+
   it("returns DB_UNAVAILABLE from unavailable list", async () => {
     const client = createUnavailableSupabaseReportPersistenceQueryClient();
     const result = await client.listReports({ limit: 10 });

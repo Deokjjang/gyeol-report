@@ -51,6 +51,9 @@ export type SupabaseReportPersistenceQueryClient = {
   readonly findReportById: (
     reportId: string,
   ) => Promise<SupabaseReportQueryResult<SupabaseReportRow | null>>;
+  readonly findReportByAccessTokenHash: (
+    accessTokenHash: string,
+  ) => Promise<SupabaseReportQueryResult<SupabaseReportRow | null>>;
   readonly listReports: (input: {
     readonly limit: number;
   }) => Promise<SupabaseReportQueryResult<readonly SupabaseReportRow[]>>;
@@ -93,6 +96,14 @@ export function createUnavailableSupabaseReportPersistenceQueryClient(): Supabas
       reportId,
     ): Promise<SupabaseReportQueryResult<SupabaseReportRow | null>> {
       void reportId;
+
+      return createDbUnavailableResult();
+    },
+
+    async findReportByAccessTokenHash(
+      accessTokenHash,
+    ): Promise<SupabaseReportQueryResult<SupabaseReportRow | null>> {
+      void accessTokenHash;
 
       return createDbUnavailableResult();
     },

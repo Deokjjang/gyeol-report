@@ -49,6 +49,7 @@ type FakeQueryClientCalls = {
     readonly patch: SupabaseReportRowPatch;
   }[];
   readonly findIds: string[];
+  readonly findAccessTokenHashes: string[];
   readonly listInputs: {
     readonly limit: number;
   }[];
@@ -166,6 +167,7 @@ function createFakeQueryClient(
     insertReadBacks: [],
     updates: [],
     findIds: [],
+    findAccessTokenHashes: [],
     listInputs: [],
   };
 
@@ -194,6 +196,17 @@ function createFakeQueryClient(
       calls.findIds.push(reportId);
 
       return options.findResult ?? { ok: true, data: createRow({ report_id: reportId }) };
+    },
+
+    async findReportByAccessTokenHash(accessTokenHash) {
+      calls.findAccessTokenHashes.push(accessTokenHash);
+
+      return (
+        options.findResult ?? {
+          ok: true,
+          data: createRow({ access_token_hash: accessTokenHash }),
+        }
+      );
     },
 
     async listReports(input) {

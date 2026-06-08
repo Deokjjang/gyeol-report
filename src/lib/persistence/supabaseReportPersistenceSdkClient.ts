@@ -155,6 +155,29 @@ export function createSupabaseReportPersistenceSdkClient(
         : createInvalidDataResult();
     },
 
+    async findReportByAccessTokenHash(
+      accessTokenHash,
+    ): Promise<SupabaseReportQueryResult<SupabaseReportRow | null>> {
+      const result = await client
+        .from(tableName)
+        .select("*")
+        .eq("access_token_hash", accessTokenHash)
+        .limit(1)
+        .maybeSingle();
+
+      if (result.error !== null) {
+        return mapSupabaseError(result.error);
+      }
+
+      if (result.data === null) {
+        return { ok: true, data: null };
+      }
+
+      return isSupabaseReportRow(result.data)
+        ? { ok: true, data: result.data }
+        : createInvalidDataResult();
+    },
+
     async listReports(input): Promise<
       SupabaseReportQueryResult<readonly SupabaseReportRow[]>
     > {
