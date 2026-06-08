@@ -16,9 +16,9 @@ const requiredMode = "supabase";
 const defaultMode = "preview_memory";
 const smokeCreatedAt = "2026-01-01T00:00:00.000Z";
 const paymentPaidAt = "2026-01-01T00:01:00.000Z";
-const paymentOrderId = "smoke_order_share_lookup";
+const paymentOrderIdPrefix = "smoke_order_share_lookup";
 const paymentProvider = "smoke";
-const providerPaymentIdValue = "smoke_payment_share_lookup";
+const paymentProviderPaymentIdPrefix = "smoke_payment_share_lookup";
 const paymentStatus = "paid" as const;
 const paymentAmount = 1290;
 const paymentCurrency = "KRW";
@@ -43,6 +43,10 @@ function writeStatus(message: string): void {
 
 function createSmokeError(message: string): Error {
   return new Error(`Supabase paid share lookup smoke failed: ${message}`);
+}
+
+function createSmokeRunId(): string {
+  return `${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`;
 }
 
 function getRequiredEnvValue(name: RequiredSupabaseEnvName): string {
@@ -165,6 +169,10 @@ async function run(): Promise<void> {
     throw createSmokeError(runtime.code);
   }
 
+  const smokeRunId = createSmokeRunId();
+  const paymentOrderId = `${paymentOrderIdPrefix}_${smokeRunId}`;
+  const paymentProviderPaymentId = `${paymentProviderPaymentIdPrefix}_${smokeRunId}`;
+
   const paidRecord = {
     ...payloadResult.input.record,
     status: "paid_unlocked" as const,
@@ -172,7 +180,7 @@ async function run(): Promise<void> {
     payment: {
       orderId: paymentOrderId,
       provider: paymentProvider,
-      ...{ providerPaymentId: providerPaymentIdValue },
+      providerPaymentId: paymentProviderPaymentId,
       paymentStatus,
       amount: paymentAmount,
       currency: paymentCurrency,
@@ -217,7 +225,7 @@ async function run(): Promise<void> {
     safeViewJson.includes(issuedShare.issue.shareToken) ||
     safeViewJson.includes(issuedShare.issue.sharePath) ||
     safeViewJson.includes(issuedShare.issue.accessTokenHash) ||
-    safeViewJson.includes(providerPaymentIdValue)
+    safeViewJson.includes(paymentProviderPaymentId)
   ) {
     throw createSmokeError("safe lookup view exposed restricted data.");
   }
