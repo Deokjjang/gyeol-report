@@ -280,7 +280,7 @@ describe("report output fixture", () => {
       "병신일주는 밝게 드러나는 표현성과 빠른 판단력이 함께 작동하는 구조입니다.",
     );
     expect(text).toContain("물가 산책, 수면 루틴, 반신욕");
-    expect(text).toContain("고급 참고 점수");
+    expect(text).toContain("전문 참고 흐름");
     expect(text).toContain("비겁");
     expect(text).toContain("인성");
     expect(text).toContain("식상");
@@ -294,7 +294,6 @@ describe("report output fixture", () => {
     const text = collectSectionText(section);
     const blockKinds = section.blocks.map((block) => block.kind);
 
-    expect(blockKinds).toContain("KEY_VALUE");
     expect(blockKinds).toContain("PARAGRAPH");
     expect(blockKinds).toContain("BULLET_LIST");
     expect(text).toContain("십성 묶음");
@@ -334,7 +333,6 @@ describe("report output fixture", () => {
     const blockKinds = section.blocks.map((block) => block.kind);
 
     expect(blockKinds).toContain("HIGHLIGHT");
-    expect(blockKinds).toContain("KEY_VALUE");
     expect(blockKinds).toContain("PARAGRAPH");
     expect(blockKinds).toContain("BULLET_LIST");
     expect(text).toContain("신강신약");
@@ -388,12 +386,12 @@ describe("report output fixture", () => {
     const report = getFixtureReport();
     const text = JSON.stringify(report);
 
-    expect(text).toContain("화: 높음");
-    expect(text).toContain("금: 높음");
-    expect(text).toContain("수: 낮음");
-    expect(text).not.toContain("FIRE_STRONG");
-    expect(text).not.toContain("METAL_STRONG");
-    expect(text).not.toContain("WATER_WEAK");
+    expect(text).toContain("화 기운이 뚜렷한 편입니다.");
+    expect(text).toContain("금 기운이 뚜렷한 편입니다.");
+    expect(text).toContain("수 기운은 보완이 필요한 신호로 읽습니다.");
+    expect(text).not.toContain("FIRE" + "_STRONG");
+    expect(text).not.toContain("METAL" + "_STRONG");
+    expect(text).not.toContain("WATER" + "_WEAK");
     expect(text).not.toContain("TEN_GOD_OUTPUT_STRONG");
     expect(text).not.toContain("OFFICER_PRESSURE_HIGH");
     expect(text).not.toContain("WEALTH_OVERLOAD");
@@ -421,7 +419,7 @@ describe("report output fixture", () => {
       "전체 리포트 영역은 " + "정식 결제 연동 이후 제공됩니다.",
     );
     expect(text).toContain("의식적으로 챙겨야 균형이 맞습니다");
-    expect(text).toContain("고급 참고 점수");
+    expect(text).toContain("전문 참고 흐름");
     expect(text).toContain("잘 맞는 역할");
     expect(text).toContain("돈과 자원을 다루는 방식");
     expect(text).toContain("관계에서 자주 생길 수 있는 장면");

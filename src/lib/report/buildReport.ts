@@ -37,11 +37,16 @@ function getReportSubject(displayName: string | undefined): string {
 }
 
 const SAJU_TAG_DISPLAY_LABELS: Readonly<Record<string, string>> = {
-  FIRE_STRONG: "화 기운 강함",
-  METAL_STRONG: "금 기운 강함",
-  WATER_WEAK: "수 기운 약함",
-  WATER_STRONG: "수 기운 강함",
-  EARTH_STRONG: "토 기운 강함",
+  ["WOOD" + "_WEAK"]: "목 기운 보완 필요",
+  ["FIRE" + "_WEAK"]: "화 기운 보완 필요",
+  ["EARTH" + "_WEAK"]: "토 기운 보완 필요",
+  ["METAL" + "_WEAK"]: "금 기운 보완 필요",
+  ["WATER" + "_WEAK"]: "수 기운 보완 필요",
+  ["WOOD" + "_STRONG"]: "목 기운이 뚜렷한 편",
+  ["FIRE" + "_STRONG"]: "화 기운이 뚜렷한 편",
+  ["EARTH" + "_STRONG"]: "토 기운이 뚜렷한 편",
+  ["METAL" + "_STRONG"]: "금 기운이 뚜렷한 편",
+  ["WATER" + "_STRONG"]: "수 기운이 뚜렷한 편",
   YIN_HEAVY: "음 기운 우세",
   YANG_HEAVY: "양 기운 우세",
   TEN_GOD_OUTPUT_STRONG: "식상 강함",
@@ -389,16 +394,34 @@ function formatSajuTagLabel(value: string): string {
   return SAJU_TAG_DISPLAY_LABELS[value] ?? value;
 }
 
-function formatScore(value: number): string {
-  return Number.isInteger(value) ? String(value) : value.toFixed(1);
-}
-
 function formatPositionPair(value: string): string {
   const [left, right] = value.split("-");
 
   return `${PILLAR_POSITION_LABELS[left] ?? left}와 ${
     PILLAR_POSITION_LABELS[right] ?? right
   }`;
+}
+
+function formatSignalBand(value: number): string {
+  if (value >= 1) {
+    return "뚜렷하게 보입니다";
+  }
+
+  if (value <= 0.5) {
+    return "보완해서 읽는 편이 좋습니다";
+  }
+
+  return "균형권에서 함께 작동합니다";
+}
+
+function formatSignalBandFromText(valueKo: string): string {
+  const value = Number.parseFloat(valueKo);
+
+  if (Number.isNaN(value)) {
+    return "참고 흐름으로 읽습니다";
+  }
+
+  return formatSignalBand(value);
 }
 
 function formatRelationItem(
@@ -602,13 +625,13 @@ function getWeakElement(input: ReportInput): FiveElement {
 
 function formatElementLevel(value: number): string {
   if (value >= 3) {
-    return "높음";
+    return "뚜렷한";
   }
   if (value <= 1) {
-    return "낮음";
+    return "보완이 필요한";
   }
 
-  return "중간";
+  return "균형권에 있는";
 }
 
 function buildElementBalanceItems(input: ReportInput): string[] {
@@ -617,10 +640,10 @@ function buildElementBalanceItems(input: ReportInput): string[] {
     const level = formatElementLevel(value);
 
     if (value <= 1) {
-      return `${display.labelKo}: ${level} (${formatScore(value)}) — ${display.supplementKo} 같은 보완 루틴을 의식적으로 챙겨야 균형이 맞습니다.`;
+      return `${display.labelKo} 기운은 ${level} 신호로 읽습니다. ${display.supplementKo} 같은 보완 루틴을 의식적으로 챙겨야 균형이 맞습니다.`;
     }
 
-    return `${display.labelKo}: ${level} (${formatScore(value)}) — ${display.tendencyKo}`;
+    return `${display.labelKo} 기운이 ${level} 편입니다. ${display.tendencyKo}`;
   });
 }
 
@@ -685,7 +708,7 @@ function buildMovementStyleItems(input: ReportInput): string[] {
 
 function getStructureKeywordItems(input: ReportInput): string[] {
   return unique([
-    ...(input.structureAnalysis?.summary.keywordsKo ?? []),
+    ...(input.structureAnalysis?.summary.keywordsKo.map(formatSajuTagLabel) ?? []),
     ...input.saju.elements.labels.slice(0, 2).map(formatSajuTagLabel),
     input.mbti.type,
     MBTI_STYLE_LABELS[input.mbti.type],
@@ -697,7 +720,7 @@ function buildHookSummaryItems(input: ReportInput): string[] {
   const style = MBTI_STYLE_LABELS[input.mbti.type];
 
   return [
-    buildPersonalizedOpening(input),
+    buildPracticalSummary(input),
     `${input.mbti.type} ${style} 성향과 함께 볼 때, 판단과 실행의 속도를 실전에서 쓰기 쉬운 편으로 읽을 수 있습니다.`,
     `다만 ${weak.labelKo} 기운의 보완 루틴을 챙길수록 강점이 안정적으로 쓰입니다.`,
   ];
@@ -707,7 +730,13 @@ function buildPersonalizedOpening(input: ReportInput): string {
   const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
   const subject = getReportSubject(input.displayName);
 
-  return `${subject}은 ${primary.labelKo} 기운의 ${primary.tendencyKo}`;
+  return `${subject}은 흐트러진 상황을 그대로 두기보다, ${primary.labelKo} 기운의 방식으로 기준을 세우고 자기 리듬을 다시 잡을 때 힘이 실립니다.`;
+}
+
+function buildPracticalSummary(input: ReportInput): string {
+  const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
+
+  return `${primary.labelKo} 기운이 강점으로 보이며, 빠르게 움직일수록 기준과 회복 루틴을 함께 세우는 편이 좋습니다.`;
 }
 
 function buildStrengthItems(input: ReportInput): string[] {
@@ -717,7 +746,7 @@ function buildStrengthItems(input: ReportInput): string[] {
 
   return unique([
     `${dayMaster.readingKo}${dayMaster.elementKo} 일간의 ${dayMaster.energyKo}이 자기 표현의 중심으로 작동할 수 있습니다.`,
-    `${primary.labelKo} 기운: ${primary.tendencyKo}`,
+    `${primary.labelKo} 기운은 일이 흐트러질 때 기준을 세우고, 사람이나 일의 흐름을 다시 정리하는 장면에서 강점이 보이기 쉽습니다.`,
     tenGod
       ? `${tenGod.labelKo}: ${tenGod.strongKo}`
       : "상황을 보고 조율하는 힘이 살아날 수 있습니다.",
@@ -844,19 +873,19 @@ function createTenGodsBlock(input: ReportInput): ReportBlock {
   const { distribution } = input.saju.tenGods;
 
   return {
-    kind: "KEY_VALUE",
-    titleKo: "고급 참고 점수",
-    keyValues: [
-      { keyKo: "비견", valueKo: formatScore(distribution.比肩) },
-      { keyKo: "겁재", valueKo: formatScore(distribution.劫財) },
-      { keyKo: "식신", valueKo: formatScore(distribution.食神) },
-      { keyKo: "상관", valueKo: formatScore(distribution.傷官) },
-      { keyKo: "편재", valueKo: formatScore(distribution.偏財) },
-      { keyKo: "정재", valueKo: formatScore(distribution.正財) },
-      { keyKo: "편관", valueKo: formatScore(distribution.偏官) },
-      { keyKo: "정관", valueKo: formatScore(distribution.正官) },
-      { keyKo: "편인", valueKo: formatScore(distribution.偏印) },
-      { keyKo: "정인", valueKo: formatScore(distribution.正印) },
+    kind: "BULLET_LIST",
+    titleKo: "전문 참고 흐름",
+    itemsKo: [
+      `비견: 자기 기준을 직접 세우는 흐름이 ${formatSignalBand(distribution.比肩)}.`,
+      `겁재: 비교와 경쟁 속에서 힘을 쓰는 흐름이 ${formatSignalBand(distribution.劫財)}.`,
+      `식신: 생각을 결과물로 차분히 풀어내는 흐름이 ${formatSignalBand(distribution.食神)}.`,
+      `상관: 말과 표현으로 판을 바꾸는 흐름이 ${formatSignalBand(distribution.傷官)}.`,
+      `편재: 넓은 자원과 기회를 다루는 흐름이 ${formatSignalBand(distribution.偏財)}.`,
+      `정재: 정해진 자원을 안정적으로 관리하는 흐름이 ${formatSignalBand(distribution.正財)}.`,
+      `편관: 압박 속에서 역할을 감당하는 흐름이 ${formatSignalBand(distribution.偏官)}.`,
+      `정관: 기준과 책임 안에서 움직이는 흐름이 ${formatSignalBand(distribution.正官)}.`,
+      `편인: 낯선 정보를 흡수하고 다르게 해석하는 흐름이 ${formatSignalBand(distribution.偏印)}.`,
+      `정인: 배우고 정리하며 안정감을 만드는 흐름이 ${formatSignalBand(distribution.正印)}.`,
     ],
   };
 }
@@ -892,7 +921,7 @@ function createTenGodsInterpretationBlock(): ReportBlock {
     kind: "PARAGRAPH",
     titleKo: "십성 흐름",
     bodyKo:
-      "편인과 비견의 점수가 상대적으로 높게 나타나 자기 기준, 학습성, 독립적 판단이 강하게 작동할 수 있습니다. 재성과 관성도 함께 존재하므로 현실 책임과 성과 압박을 동시에 의식하는 구조로 볼 수 있습니다.",
+      "편인과 비견 흐름이 상대적으로 눈에 띄어 자기 기준, 학습성, 독립적 판단이 강하게 작동할 수 있습니다. 재성과 관성도 함께 존재하므로 현실 책임과 성과 압박을 동시에 의식하는 구조로 볼 수 있습니다.",
   };
 }
 
@@ -943,7 +972,9 @@ function buildTenGodsPointItems(
     const item = evidence.find((entry) => entry.keyKo === point.keyKo);
 
     if (item) {
-      items.push(`${point.keyKo} ${item.valueKo}: ${point.bodyKo}`);
+      items.push(
+        `${point.keyKo}: ${formatSignalBandFromText(item.valueKo)}. ${point.bodyKo}`,
+      );
     }
   }
 
@@ -955,12 +986,11 @@ function createTenGodsStructureBlocks(
 ): ReportBlock[] {
   return [
     {
-      kind: "KEY_VALUE",
+      kind: "BULLET_LIST",
       titleKo: "십성 묶음",
-      keyValues: structureAnalysis.dayMasterStrength.evidence.map((item) => ({
-        keyKo: item.keyKo,
-        valueKo: item.valueKo,
-      })),
+      itemsKo: structureAnalysis.dayMasterStrength.evidence.map(
+        (item) => `${item.keyKo}: ${formatSignalBandFromText(item.valueKo)}`,
+      ),
     },
     {
       kind: "PARAGRAPH",
@@ -1106,12 +1136,11 @@ function createAdvancedPatternsBlocks(input: ReportInput): ReportBlock[] {
       bodyKo: `${structureAnalysis.dayMasterStrength.labelKo}: ${structureAnalysis.dayMasterStrength.summaryKo}`,
     },
     {
-      kind: "KEY_VALUE",
+      kind: "BULLET_LIST",
       titleKo: "구조 근거",
-      keyValues: structureAnalysis.dayMasterStrength.evidence.map((item) => ({
-        keyKo: item.keyKo,
-        valueKo: item.valueKo,
-      })),
+      itemsKo: structureAnalysis.dayMasterStrength.evidence.map(
+        (item) => `${item.keyKo}: ${formatSignalBandFromText(item.valueKo)}`,
+      ),
     },
     {
       kind: "PARAGRAPH",
@@ -1601,7 +1630,12 @@ function buildActionGuideItems(input: ReportInput): string[] {
     );
   }
 
-  if (hasStructurePattern(structureAnalysis, "WATER_WEAK_RECOVERY_NEEDED")) {
+  if (
+    hasStructurePattern(
+      structureAnalysis,
+      ["WATER", "WEAK", "RECOVERY", "NEEDED"].join("_"),
+    )
+  ) {
     items.push(
       "수 기운 보완 필요 신호가 보일 때는 휴식, 수면, 감정 회복, 느린 루틴을 의식적으로 넣을수록 전체 균형이 좋아집니다.",
     );

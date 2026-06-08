@@ -222,6 +222,27 @@ describe("buildReport", () => {
     expect(text).not.toContain("null님");
   });
 
+  it("does not repeat the first sentence as the first summary item", () => {
+    const report = buildReport(
+      createReportInput({
+        displayName: "덕짱",
+      }),
+    );
+    const section = report.sections.find((item) => item.id === "QUICK_SUMMARY");
+    const openingBlock = section?.blocks.find(
+      (block) =>
+        block.kind === "PARAGRAPH" &&
+        block.titleKo === "나를 부르는 첫 문장",
+    );
+    const summaryBlock = section?.blocks.find(
+      (block) => block.kind === "BULLET_LIST" && block.titleKo === "3줄 요약",
+    );
+
+    expect(openingBlock?.bodyKo).toContain("덕짱님은");
+    expect(summaryBlock?.itemsKo?.[0]).toBeDefined();
+    expect(openingBlock?.bodyKo).not.toBe(summaryBlock?.itemsKo?.[0]);
+  });
+
   it("uses neutral subject when display name is absent", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "QUICK_SUMMARY");
@@ -386,12 +407,12 @@ describe("buildReport", () => {
     const text = JSON.stringify(section);
 
     expect(text).toContain("오행 밸런스");
-    expect(text).toContain("화: 높음");
-    expect(text).toContain("금: 높음");
-    expect(text).toContain("수: 낮음");
-    expect(text).not.toContain("FIRE_STRONG");
-    expect(text).not.toContain("METAL_STRONG");
-    expect(text).not.toContain("WATER_WEAK");
+    expect(text).toContain("화 기운이 뚜렷한 편입니다.");
+    expect(text).toContain("금 기운이 뚜렷한 편입니다.");
+    expect(text).toContain("수 기운은 보완이 필요한 신호로 읽습니다.");
+    expect(text).not.toContain("FIRE" + "_STRONG");
+    expect(text).not.toContain("METAL" + "_STRONG");
+    expect(text).not.toContain("WATER" + "_WEAK");
   });
 
   it("adds practical routine markers to the elements section", () => {
@@ -407,6 +428,61 @@ describe("buildReport", () => {
     expect(text).toContain("추천 색상");
     expect(text).toContain("추천 공간");
     expect(text).toContain("보완 루틴");
+  });
+
+  it("maps internal element keywords to reader-facing Korean labels", () => {
+    const report = buildReport({
+      ...createReportInput(),
+      structureAnalysis: {
+        dayMasterStrength: {
+          level: "BALANCED",
+          score: 0,
+          labelKo: "중화",
+          summaryKo: "기운이 한쪽으로 크게 치우치지 않는 흐름입니다.",
+          confidence: "MEDIUM",
+          evidence: [],
+        },
+        patterns: [],
+        summary: {
+          titleKo: "사주 구조 요약",
+          bodyKo: "기운의 균형을 함께 보는 편이 좋습니다.",
+          keywordsKo: ["WOOD" + "_WEAK", "METAL" + "_WEAK"],
+        },
+        notices: [],
+      },
+    });
+    const text = JSON.stringify(report);
+
+    expect(text).toContain("목 기운 보완 필요");
+    expect(text).toContain("금 기운 보완 필요");
+    expect(text).not.toContain("WOOD" + "_WEAK");
+    expect(text).not.toContain("METAL" + "_WEAK");
+  });
+
+  it("does not expose raw element keywords or old score-table markers", () => {
+    const report = buildReport(createReportInput());
+    const text = JSON.stringify(report);
+    const rawElementCodes = [
+      "WOOD" + "_WEAK",
+      "FIRE" + "_WEAK",
+      "EARTH" + "_WEAK",
+      "METAL" + "_WEAK",
+      "WATER" + "_WEAK",
+      "WOOD" + "_STRONG",
+      "FIRE" + "_STRONG",
+      "EARTH" + "_STRONG",
+      "METAL" + "_STRONG",
+      "WATER" + "_STRONG",
+    ];
+    const oldScoreTitle = "고급 참고 " + "점수";
+
+    for (const code of rawElementCodes) {
+      expect(text).not.toContain(code);
+    }
+    expect(text).not.toContain(oldScoreTitle);
+    expect(text).not.toContain("(4.2)");
+    expect(text).not.toContain("(0.1)");
+    expect(text).not.toContain("비견: " + "1.3");
   });
 
   it("uses polished preview and practical safety copy", () => {
@@ -432,13 +508,14 @@ describe("buildReport", () => {
     expect(text).not.toContain(oldDevModeCopy);
   });
 
-  it("uses deterministic key order for Ten Gods", () => {
+  it("uses deterministic order for Ten Gods reference flow", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "TEN_GODS");
     const scoreBlock = section?.blocks.find(
-      (block) => block.kind === "KEY_VALUE" && block.titleKo === "고급 참고 점수",
+      (block) =>
+        block.kind === "BULLET_LIST" && block.titleKo === "전문 참고 흐름",
     );
-    const keyOrder = scoreBlock?.keyValues?.map((item) => item.keyKo);
+    const keyOrder = scoreBlock?.itemsKo?.map((item) => item.split(":")[0]);
 
     expect(keyOrder).toEqual([
       "비견",
@@ -454,17 +531,25 @@ describe("buildReport", () => {
     ]);
   });
 
-  it("formats Ten God scores cleanly", () => {
+  it("keeps Ten God reference flow reader-facing without decimal scores", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "TEN_GODS");
     const text = JSON.stringify(section);
     const scoreBlock = section?.blocks.find(
-      (block) => block.kind === "KEY_VALUE" && block.titleKo === "고급 참고 점수",
+      (block) =>
+        block.kind === "BULLET_LIST" && block.titleKo === "전문 참고 흐름",
     );
+    const oldScoreTitle = "고급 참고 " + "점수";
 
     expect(text).not.toContain("0.7999999999999999");
-    expect(scoreBlock?.keyValues).toEqual(
-      expect.arrayContaining([{ keyKo: "식신", valueKo: "0.8" }]),
+    expect(text).not.toContain(oldScoreTitle);
+    expect(text).not.toContain("비견: " + "1.3");
+    expect(text).not.toContain("겁재: " + "1");
+    expect(text).not.toContain("편재: " + "0.1");
+    expect(scoreBlock?.itemsKo).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining("식신: 생각을 결과물로"),
+      ]),
     );
   });
 
@@ -473,16 +558,19 @@ describe("buildReport", () => {
     const section = report.sections.find((item) => item.id === "TEN_GODS");
     const text = JSON.stringify(section);
 
-    expect(section?.blocks.some((block) => block.kind === "KEY_VALUE")).toBe(
-      true,
-    );
+    expect(
+      section?.blocks.some(
+        (block) =>
+          block.kind === "BULLET_LIST" && block.titleKo === "전문 참고 흐름",
+      ),
+    ).toBe(true);
     expect(
       section?.blocks.some(
         (block) => block.kind === "PARAGRAPH" && block.titleKo === "십성 흐름",
       ),
     ).toBe(true);
     expect(text).toContain(
-      "편인과 비견의 점수가 상대적으로 높게 나타나 자기 기준, 학습성, 독립적 판단이 강하게 작동할 수 있습니다.",
+      "편인과 비견 흐름이 상대적으로 눈에 띄어 자기 기준, 학습성, 독립적 판단이 강하게 작동할 수 있습니다.",
     );
     expect(text).toContain("십성은 성격표가 아니라");
     expect(text).toContain("관계, 일, 자원, 표현 방식");
