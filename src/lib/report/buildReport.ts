@@ -1151,6 +1151,18 @@ function createShinsalBlock(input: ReportInput): ReportBlock {
   };
 }
 
+function createShinsalReadingGuideBlock(): ReportBlock {
+  return {
+    kind: "BULLET_LIST",
+    titleKo: "해석 기준",
+    itemsKo: [
+      "같은 신호가 여러 위치에서 반복되면, 그 의미는 단정이 아니라 반복해서 드러나기 쉬운 성향으로 읽습니다.",
+      "년·월·일·시의 위치는 사건을 단정하는 기준이 아니라, 기질이 드러나기 쉬운 생활 맥락을 나누어 보는 기준입니다.",
+      "귀인은 누군가가 알아서 도와준다는 뜻보다, 도움받기 쉬운 태도와 연결 방식을 보여주는 신호로 읽는 편이 안전합니다.",
+    ],
+  };
+}
+
 function createShinsalRepeatedSignalBlock(input: ReportInput): ReportBlock {
   const counts = new Map<string, { labelKo: string; count: number }>();
 
@@ -1181,7 +1193,11 @@ function createShinsalRepeatedSignalBlock(input: ReportInput): ReportBlock {
 
 function createShinsalPracticalBlock(input: ReportInput): ReportBlock {
   const codes = new Set(input.saju.shinsal.map((item) => item.code));
-  const items: string[] = [];
+  const items: string[] = [
+    "일에서는 집중력, 검수, 분석, 표현 방식으로 드러날 수 있습니다.",
+    "관계에서는 말의 강도, 거리 조절, 반응 속도를 점검하는 데 도움이 됩니다.",
+    "자기관리에서는 예민함을 줄이는 루틴보다 예민함을 쓸 곳과 쉬게 할 곳을 나누는 편이 좋습니다.",
+  ];
 
   if (codes.has("HYEONCHIMSAL")) {
     items.push(
@@ -1217,6 +1233,7 @@ function createShinsalPracticalBlock(input: ReportInput): ReportBlock {
 function createShinsalBlocks(input: ReportInput): ReportBlock[] {
   return [
     createShinsalBlock(input),
+    createShinsalReadingGuideBlock(),
     createShinsalRepeatedSignalBlock(input),
     createShinsalPracticalBlock(input),
   ];

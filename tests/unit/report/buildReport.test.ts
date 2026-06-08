@@ -48,6 +48,7 @@ const forbiddenWords = [
   "망" + "한다",
   "절" + "대",
   "항" + "상",
+  "틀" + "렸다",
 ] as const;
 
 const expectedSectionIds = [
@@ -683,6 +684,18 @@ describe("buildReport", () => {
     expect(text).toContain("현침살");
     expect(text).toContain("백호대살");
     expect(text).toContain("천을귀인");
+    expect(text).toContain("핵심 신호");
+    expect(text).toContain("반복 신호");
+    expect(text).toContain("실전 해석");
+    expect(text).toContain("같은 신호가 여러 위치에서 반복되면");
+    expect(text).toContain(
+      "년·월·일·시의 위치는 사건을 단정하는 기준이 아니라",
+    );
+    expect(text).toContain("집중력, 검수, 분석");
+    expect(text).toContain("말의 강도, 거리 조절");
+    expect(text).toContain("예민함을 쓸 곳과 쉬게 할 곳");
+    expect(text).toContain("귀인은 누군가가 알아서 도와준다는 뜻보다");
+    expect(text).toContain("도움받기 쉬운 태도와 연결 방식");
   });
 
   it("renders Twelve Shinsal narrative text", () => {
