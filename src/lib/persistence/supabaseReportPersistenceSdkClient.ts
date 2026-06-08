@@ -2,6 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 
 import {
   createUnavailableSupabaseReportPersistenceQueryClient,
+  type SupabasePaidReportLookupRow,
   type SupabaseReportPersistenceQueryClient,
   type SupabaseReportQueryResult,
 } from "./supabaseReportPersistenceClient";
@@ -77,6 +78,18 @@ function createInsertSuccessResult(): SupabaseReportQueryResult<null> {
 
 function isSupabaseReportRow(value: unknown): value is SupabaseReportRow {
   return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function isSupabasePaidReportLookupRow(
+  value: unknown,
+): value is SupabasePaidReportLookupRow {
+  return isSupabaseReportRow(value);
+}
+
+function isSupabasePaidReportLookupRowArray(
+  value: unknown,
+): value is readonly SupabasePaidReportLookupRow[] {
+  return Array.isArray(value) && value.every(isSupabasePaidReportLookupRow);
 }
 
 function isSupabaseReportRowArray(
@@ -157,13 +170,10 @@ export function createSupabaseReportPersistenceSdkClient(
 
     async findReportByAccessTokenHash(
       accessTokenHash,
-    ): Promise<SupabaseReportQueryResult<SupabaseReportRow | null>> {
-      const result = await client
-        .from(tableName)
-        .select("*")
-        .eq("access_token_hash", accessTokenHash)
-        .limit(1)
-        .maybeSingle();
+    ): Promise<SupabaseReportQueryResult<SupabasePaidReportLookupRow | null>> {
+      const result = await client.rpc("find_paid_report_by_access_token_hash", {
+        p_access_token_hash: accessTokenHash,
+      });
 
       if (result.error !== null) {
         return mapSupabaseError(result.error);
@@ -173,7 +183,11 @@ export function createSupabaseReportPersistenceSdkClient(
         return { ok: true, data: null };
       }
 
-      return isSupabaseReportRow(result.data)
+      if (isSupabasePaidReportLookupRowArray(result.data)) {
+        return { ok: true, data: result.data[0] ?? null };
+      }
+
+      return isSupabasePaidReportLookupRow(result.data)
         ? { ok: true, data: result.data }
         : createInvalidDataResult();
     },

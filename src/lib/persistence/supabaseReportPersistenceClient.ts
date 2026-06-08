@@ -1,5 +1,20 @@
 import type { SupabaseReportRow } from "./supabaseReportPersistenceMapper";
 
+export type SupabasePaidReportLookupRow = Pick<
+  SupabaseReportRow,
+  | "report_id"
+  | "status"
+  | "access_mode"
+  | "input_snapshot"
+  | "report_snapshot"
+  | "report_version"
+  | "calculation_version"
+  | "locale"
+  | "payment_status"
+  | "created_at"
+  | "updated_at"
+>;
+
 export type SupabaseReportQueryResult<T> =
   | { readonly ok: true; readonly data: T }
   | {
@@ -53,7 +68,7 @@ export type SupabaseReportPersistenceQueryClient = {
   ) => Promise<SupabaseReportQueryResult<SupabaseReportRow | null>>;
   readonly findReportByAccessTokenHash: (
     accessTokenHash: string,
-  ) => Promise<SupabaseReportQueryResult<SupabaseReportRow | null>>;
+  ) => Promise<SupabaseReportQueryResult<SupabasePaidReportLookupRow | null>>;
   readonly listReports: (input: {
     readonly limit: number;
   }) => Promise<SupabaseReportQueryResult<readonly SupabaseReportRow[]>>;
@@ -102,7 +117,7 @@ export function createUnavailableSupabaseReportPersistenceQueryClient(): Supabas
 
     async findReportByAccessTokenHash(
       accessTokenHash,
-    ): Promise<SupabaseReportQueryResult<SupabaseReportRow | null>> {
+    ): Promise<SupabaseReportQueryResult<SupabasePaidReportLookupRow | null>> {
       void accessTokenHash;
 
       return createDbUnavailableResult();

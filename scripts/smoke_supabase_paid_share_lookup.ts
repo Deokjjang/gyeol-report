@@ -6,8 +6,13 @@ import {
 import { persistPaidFullReport } from "../src/lib/persistence/paidReportStorageBoundary";
 import { createReportPersistenceRuntimeFromEnv } from "../src/lib/persistence/reportPersistenceRuntime";
 import { issueReportShareToken } from "../src/lib/persistence/reportShareTokenIssuer";
-import { mapSupabaseRowToPersistedReportRecord } from "../src/lib/persistence/supabaseReportPersistenceMapper";
+import type { PersistedReportRecord } from "../src/lib/persistence/reportPersistenceTypes";
+import type { SupabasePaidReportLookupRow } from "../src/lib/persistence/supabaseReportPersistenceClient";
 import { createSupabaseReportPersistenceSdkClient } from "../src/lib/persistence/supabaseReportPersistenceSdkClient";
+import type {
+  PersistedReportInputSnapshot,
+  PersistedReportSnapshot,
+} from "../src/lib/persistence/reportPersistenceTypes";
 import { buildReportPersistencePayload } from "../src/lib/report/reportPersistencePayload";
 import type { ReportRequestRawInput } from "../src/lib/validation/types";
 
@@ -54,6 +59,46 @@ function getRequiredEnvValue(name: RequiredSupabaseEnvName): string {
   return value;
 }
 
+function mapLookupRowToRecord(
+  row: SupabasePaidReportLookupRow,
+  accessTokenHash: string,
+): PersistedReportRecord {
+  if (
+    row.status !== "paid_unlocked" ||
+    row.access_mode !== "paid" ||
+    row.payment_status !== "paid" ||
+    row.report_version === null ||
+    row.calculation_version === null ||
+    row.locale === null
+  ) {
+    throw createSmokeError("lookup RPC returned an unavailable report.");
+  }
+
+  return {
+    reportId: row.report_id,
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+    status: row.status,
+    reportVersion: row.report_version,
+    calculationVersion: row.calculation_version,
+    locale: row.locale,
+    accessMode: row.access_mode,
+    accessTokenHash,
+    accessTokenCreatedAt: row.created_at,
+    accessTokenVersion: "v1",
+    inputSnapshot: row.input_snapshot as PersistedReportInputSnapshot,
+    reportSnapshot: row.report_snapshot as PersistedReportSnapshot,
+    payment: {
+      orderId: "lookup_safe_order",
+      provider: "lookup_safe_provider",
+      providerPaymentId: "lookup_safe_provider_payment",
+      paymentStatus: row.payment_status,
+      amount: 0,
+      currency: "KRW",
+    },
+  };
+}
+
 function createLookupStore(): PaidReportLookupStore {
   const queryClient = createSupabaseReportPersistenceSdkClient({
     supabaseUrl: getRequiredEnvValue("SUPABASE_URL"),
@@ -73,15 +118,7 @@ function createLookupStore(): PaidReportLookupStore {
         return null;
       }
 
-      const recordResult = mapSupabaseRowToPersistedReportRecord(
-        queryResult.data,
-      );
-
-      if (!recordResult.ok) {
-        throw createSmokeError(recordResult.code);
-      }
-
-      return recordResult.value;
+      return mapLookupRowToRecord(queryResult.data, accessTokenHash);
     },
   };
 }

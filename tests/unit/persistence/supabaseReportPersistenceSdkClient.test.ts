@@ -65,17 +65,25 @@ describe("supabase report persistence SDK client", () => {
     expect(client.listReports).toBeTypeOf("function");
   });
 
-  it("source implements access-token-hash lookup without changing insert", () => {
+  it("source implements access-token-hash lookup through RPC without changing insert", () => {
     const source = readSource(
       "src/lib/persistence/supabaseReportPersistenceSdkClient.ts",
     );
     const insertStart = source.indexOf("async insertReport");
     const updateStart = source.indexOf("async updateReport");
     const insertSource = source.slice(insertStart, updateStart);
+    const lookupStart = source.indexOf("async findReportByAccessTokenHash");
+    const listStart = source.indexOf("async listReports");
+    const lookupSource = source.slice(lookupStart, listStart);
 
     expect(source).toContain("findReportByAccessTokenHash");
-    expect(source).toContain(".eq(\"access_token_hash\", accessTokenHash)");
-    expect(source).toContain(".limit(1)");
+    expect(source).toContain(
+      ".rpc(\"find_paid_report_by_access_token_hash\"",
+    );
+    expect(source).toContain("p_access_token_hash: accessTokenHash");
+    expect(lookupSource).not.toContain(".from(tableName)");
+    expect(lookupSource).not.toContain(".select(");
+    expect(lookupSource).not.toContain(".eq(\"access_token_hash\"");
     expect(insertSource).toContain(".insert(row)");
     expect(insertSource).not.toContain(".select(");
     expect(insertSource).not.toContain(".single(");
