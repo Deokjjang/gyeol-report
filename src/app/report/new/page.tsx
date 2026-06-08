@@ -69,6 +69,48 @@ const mbtiTypes = [
   "ESFP",
 ] as const;
 
+type ReportInputStep = 0 | 1 | 2 | 3;
+type BirthTimeMode = "exact" | "branch" | "unknown";
+
+const reportInputSteps = [
+  { step: 0, labelKo: "1단계", titleKo: "생년월일" },
+  { step: 1, labelKo: "2단계", titleKo: "출생시간" },
+  { step: 2, labelKo: "3단계", titleKo: "성별·MBTI" },
+  { step: 3, labelKo: "4단계", titleKo: "확인 후 생성" },
+] as const satisfies readonly {
+  readonly step: ReportInputStep;
+  readonly labelKo: string;
+  readonly titleKo: string;
+}[];
+
+const timeBranches = [
+  { value: "JASI", labelKo: "자시 23:00~00:59", representativeTime: "00:30" },
+  { value: "CHUKSI", labelKo: "축시 01:00~02:59", representativeTime: "02:00" },
+  { value: "INSI", labelKo: "인시 03:00~04:59", representativeTime: "04:00" },
+  { value: "MYOSI", labelKo: "묘시 05:00~06:59", representativeTime: "06:00" },
+  { value: "JINSI", labelKo: "진시 07:00~08:59", representativeTime: "08:00" },
+  { value: "SASI", labelKo: "사시 09:00~10:59", representativeTime: "10:00" },
+  { value: "OSI", labelKo: "오시 11:00~12:59", representativeTime: "12:00" },
+  { value: "MISI", labelKo: "미시 13:00~14:59", representativeTime: "14:00" },
+  { value: "SINSI", labelKo: "신시 15:00~16:59", representativeTime: "16:00" },
+  { value: "YUSI", labelKo: "유시 17:00~18:59", representativeTime: "18:00" },
+  { value: "SULSI", labelKo: "술시 19:00~20:59", representativeTime: "20:00" },
+  { value: "HAESI", labelKo: "해시 21:00~22:59", representativeTime: "22:00" },
+] as const;
+
+type TimeBranchValue = (typeof timeBranches)[number]["value"];
+
+function getRepresentativeBirthTime(branch: TimeBranchValue): string {
+  return (
+    timeBranches.find((item) => item.value === branch)?.representativeTime ??
+    "00:30"
+  );
+}
+
+function isMidnightBoundaryTime(value: string): boolean {
+  return value.startsWith("23:") || value.startsWith("00:");
+}
+
 function canShowSectionBody(
   level: ReportSection["level"],
   mode: ReportPreviewMode,
@@ -206,23 +248,63 @@ export default function NewReportPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<ValidationError[]>([]);
   const [report, setReport] = useState<ReportPreview | null>(null);
+  const [currentStep, setCurrentStep] = useState<ReportInputStep>(0);
+  const [birthDate, setBirthDate] = useState("");
+  const [calendarType, setCalendarType] = useState("SOLAR");
+  const [birthTimeMode, setBirthTimeMode] = useState<BirthTimeMode>("exact");
+  const [birthTime, setBirthTime] = useState("");
+  const [timeBranch, setTimeBranch] = useState<TimeBranchValue>("JASI");
+  const [gender, setGender] = useState("");
+  const [mbtiType, setMbtiType] = useState("");
+
+  const selectedStep = reportInputSteps[currentStep];
+  const birthTimeUnknown = birthTimeMode === "unknown";
+  const normalizedBirthTime = birthTimeUnknown
+    ? undefined
+    : birthTimeMode === "branch"
+      ? getRepresentativeBirthTime(timeBranch)
+      : birthTime;
+  const birthTimeSummary = birthTimeUnknown
+    ? "출생시간 모름"
+    : birthTimeMode === "branch"
+      ? `${timeBranches.find((item) => item.value === timeBranch)?.labelKo} 기준`
+      : birthTime || "미입력";
+  const shouldShowMidnightBoundaryWarning =
+    (birthTimeMode === "exact" && isMidnightBoundaryTime(birthTime)) ||
+    (birthTimeMode === "branch" && timeBranch === "JASI");
+
+  function goToPreviousStep() {
+    setCurrentStep((step) =>
+      Math.max(0, step - 1) as ReportInputStep,
+    );
+  }
+
+  function goToNextStep() {
+    setCurrentStep((step) =>
+      Math.min(reportInputSteps.length - 1, step + 1) as ReportInputStep,
+    );
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (currentStep !== 3) {
+      goToNextStep();
+      return;
+    }
+
     setIsSubmitting(true);
     setErrors([]);
     setReport(null);
 
-    const formData = new FormData(event.currentTarget);
-    const birthTimeUnknown = formData.get("birthTimeUnknown") === "on";
     const payload = {
-      birthDate: formData.get("birthDate"),
-      birthTime: birthTimeUnknown ? undefined : formData.get("birthTime"),
+      birthDate,
+      birthTime: normalizedBirthTime,
       birthTimeUnknown,
-      calendarType: formData.get("calendarType"),
-      gender: formData.get("gender"),
-      timezone: formData.get("timezone"),
-      mbtiType: formData.get("mbtiType"),
+      calendarType,
+      gender,
+      timezone: "Asia/Seoul",
+      mbtiType,
     };
 
     try {
@@ -278,112 +360,292 @@ export default function NewReportPage() {
             >
               <div className="space-y-2">
                 <h2 className="text-lg font-semibold text-neutral-100">
-                  리포트 정보 입력
+                  {selectedStep.labelKo} · {selectedStep.titleKo}
                 </h2>
                 <p className="text-sm leading-6 text-neutral-400">
-                  출생정보와 MBTI를 입력하면 샘플 리포트를 생성합니다.
+                  모바일에서 한 단계씩 입력한 뒤 무료 미리보기를 생성합니다.
                 </p>
               </div>
 
-              <input type="hidden" name="calendarType" value="SOLAR" />
+              <ol className="grid grid-cols-4 gap-2 text-center text-xs font-medium text-neutral-500">
+                {reportInputSteps.map((step) => (
+                  <li
+                    key={step.step}
+                    className={
+                      step.step === currentStep
+                        ? "rounded-full border border-neutral-500 bg-neutral-800 px-2 py-2 text-neutral-100"
+                        : "rounded-full border border-neutral-800 bg-neutral-950 px-2 py-2"
+                    }
+                  >
+                    <span className="block">{step.labelKo}</span>
+                    <span className="block">{step.titleKo}</span>
+                  </li>
+                ))}
+              </ol>
+
               <input type="hidden" name="timezone" value="Asia/Seoul" />
+              <input
+                type="hidden"
+                name="birthTimeUnknown"
+                value={birthTimeUnknown ? "on" : ""}
+              />
 
-              <div className="space-y-2">
-                <label
-                  htmlFor="birthDate"
-                  className="block text-sm font-medium text-neutral-200"
-                >
-                  생년월일
-                </label>
-                <input
-                  id="birthDate"
-                  name="birthDate"
-                  type="date"
-                  className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
-                />
-                <p className="text-xs leading-5 text-neutral-500">
-                  양력 기준 생년월일을 입력합니다.
-                </p>
+              {currentStep === 0 ? (
+                <div className="space-y-5">
+                  <fieldset className="space-y-3">
+                    <legend className="text-sm font-medium text-neutral-200">
+                      양력/음력
+                    </legend>
+                    <div className="grid grid-cols-2 gap-3">
+                      {(["SOLAR", "LUNAR"] as const).map((value) => (
+                        <label
+                          key={value}
+                          className="flex items-center justify-center gap-2 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200"
+                        >
+                          <input
+                            name="calendarType"
+                            type="radio"
+                            value={value}
+                            checked={calendarType === value}
+                            onChange={() => setCalendarType(value)}
+                            className="h-4 w-4"
+                          />
+                          {value === "SOLAR" ? "양력" : "음력"}
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
+
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="birthDate"
+                      className="block text-sm font-medium text-neutral-200"
+                    >
+                      생년월일
+                    </label>
+                    <input
+                      id="birthDate"
+                      name="birthDate"
+                      type="date"
+                      value={birthDate}
+                      onChange={(event) => setBirthDate(event.target.value)}
+                      className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                    />
+                    <p className="text-xs leading-5 text-neutral-500">
+                      예: 1996-12-06 형식으로 입력해 주세요.
+                    </p>
+                  </div>
+                </div>
+              ) : null}
+
+              {currentStep === 1 ? (
+                <div className="space-y-5">
+                  <fieldset className="space-y-3">
+                    <legend className="text-sm font-medium text-neutral-200">
+                      출생시간
+                    </legend>
+                    <div className="grid gap-3">
+                      {[
+                        { value: "exact", labelKo: "정확한 시간" },
+                        { value: "branch", labelKo: "대략적인 시간대" },
+                        { value: "unknown", labelKo: "출생시간 모름" },
+                      ].map((mode) => (
+                        <label
+                          key={mode.value}
+                          className="flex items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200"
+                        >
+                          <input
+                            type="radio"
+                            checked={birthTimeMode === mode.value}
+                            onChange={() =>
+                              setBirthTimeMode(mode.value as BirthTimeMode)
+                            }
+                            className="h-4 w-4"
+                          />
+                          {mode.labelKo}
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
+
+                  {birthTimeMode === "exact" ? (
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="birthTime"
+                        className="block text-sm font-medium text-neutral-200"
+                      >
+                        출생시간
+                      </label>
+                      <input
+                        id="birthTime"
+                        name="birthTime"
+                        type="time"
+                        value={birthTime}
+                        onChange={(event) => setBirthTime(event.target.value)}
+                        className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                      />
+                      <p className="text-xs leading-5 text-neutral-500">
+                        예: 오후 3시 12분이면 15:12로 입력해 주세요.
+                      </p>
+                    </div>
+                  ) : null}
+
+                  {birthTimeMode === "branch" ? (
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="timeBranch"
+                        className="block text-sm font-medium text-neutral-200"
+                      >
+                        대략적인 시간대
+                      </label>
+                      <select
+                        id="timeBranch"
+                        value={timeBranch}
+                        onChange={(event) =>
+                          setTimeBranch(event.target.value as TimeBranchValue)
+                        }
+                        className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                      >
+                        {timeBranches.map((branch) => (
+                          <option key={branch.value} value={branch.value}>
+                            {branch.labelKo}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  ) : null}
+
+                  {birthTimeMode === "unknown" ? (
+                    <p className="rounded-lg border border-neutral-800 bg-neutral-950 p-4 text-sm leading-6 text-neutral-400">
+                      출생시간을 모르면 시주 없이 일부 해석이 제한될 수 있습니다.
+                    </p>
+                  ) : null}
+
+                  {shouldShowMidnightBoundaryWarning ? (
+                    <div className="space-y-2 rounded-lg border border-amber-900/50 bg-amber-950/20 p-4 text-sm leading-6 text-amber-100/90">
+                      <p>
+                        자정 전후 출생은 날짜 기준에 따라 일주·시주 해석이 달라질 수 있습니다.
+                      </p>
+                      <p>
+                        가능하면 가족에게 실제 출생일과 시간을 다시 확인해 주세요.
+                      </p>
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
+
+              {currentStep === 2 ? (
+                <div className="space-y-5">
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="gender"
+                      className="block text-sm font-medium text-neutral-200"
+                    >
+                      성별
+                    </label>
+                    <select
+                      id="gender"
+                      name="gender"
+                      value={gender}
+                      onChange={(event) => setGender(event.target.value)}
+                      className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                    >
+                      <option value="">선택</option>
+                      <option value="MALE">남성</option>
+                      <option value="FEMALE">여성</option>
+                    </select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="mbtiType"
+                      className="block text-sm font-medium text-neutral-200"
+                    >
+                      MBTI
+                    </label>
+                    <select
+                      id="mbtiType"
+                      name="mbtiType"
+                      value={mbtiType}
+                      onChange={(event) => setMbtiType(event.target.value)}
+                      className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                    >
+                      <option value="">선택</option>
+                      {mbtiTypes.map((type) => (
+                        <option key={type} value={type}>
+                          {type}
+                        </option>
+                      ))}
+                    </select>
+                    <p className="text-xs leading-5 text-neutral-500">
+                      MBTI는 내가 생각하는 나의 모습이 반영될 수 있습니다. 가능하면 여러 번의 검사 결과나 가까운 사람의 피드백도 함께 참고해 주세요.
+                    </p>
+                  </div>
+                </div>
+              ) : null}
+
+              {currentStep === 3 ? (
+                <div className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                  <h3 className="text-base font-semibold text-neutral-100">
+                    입력 정보 확인
+                  </h3>
+                  <dl className="grid gap-3 text-sm">
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-neutral-500">생년월일</dt>
+                      <dd className="text-right text-neutral-200">
+                        {birthDate || "미입력"}
+                      </dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-neutral-500">출생시간</dt>
+                      <dd className="text-right text-neutral-200">
+                        {birthTimeSummary}
+                      </dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-neutral-500">성별</dt>
+                      <dd className="text-right text-neutral-200">
+                        {gender || "미선택"}
+                      </dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-neutral-500">MBTI</dt>
+                      <dd className="text-right text-neutral-200">
+                        {mbtiType || "미선택"}
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              ) : null}
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                {currentStep > 0 ? (
+                  <button
+                    type="button"
+                    onClick={goToPreviousStep}
+                    className="rounded-lg border border-neutral-700 px-5 py-4 font-semibold text-neutral-200 transition hover:bg-neutral-800"
+                  >
+                    이전
+                  </button>
+                ) : null}
+                {currentStep < 3 ? (
+                  <button
+                    type="button"
+                    onClick={goToNextStep}
+                    className="rounded-lg bg-neutral-50 px-5 py-4 font-semibold text-neutral-950 transition hover:bg-white"
+                  >
+                    다음
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="rounded-lg bg-neutral-50 px-5 py-4 font-semibold text-neutral-950 transition hover:bg-white disabled:cursor-not-allowed disabled:bg-neutral-500 sm:col-span-2"
+                  >
+                    {isSubmitting ? "리포트 생성 중..." : "무료 미리보기 생성"}
+                  </button>
+                )}
               </div>
-
-              <label className="flex items-center gap-3 text-sm font-medium text-neutral-200">
-                <input
-                  name="birthTimeUnknown"
-                  type="checkbox"
-                  className="h-5 w-5 rounded border-neutral-700 bg-neutral-950"
-                />
-                출생시간을 모릅니다
-              </label>
-
-              <div className="space-y-2">
-                <label
-                  htmlFor="birthTime"
-                  className="block text-sm font-medium text-neutral-200"
-                >
-                  출생시간
-                </label>
-                <input
-                  id="birthTime"
-                  name="birthTime"
-                  type="time"
-                  className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
-                />
-                <p className="text-xs leading-5 text-neutral-500">
-                  출생시간을 모르면 비워 두거나 알 수 없음 옵션을 사용합니다.
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <label
-                  htmlFor="gender"
-                  className="block text-sm font-medium text-neutral-200"
-                >
-                  성별
-                </label>
-                <select
-                  id="gender"
-                  name="gender"
-                  className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
-                  defaultValue=""
-                >
-                  <option value="">선택</option>
-                  <option value="MALE">남성</option>
-                  <option value="FEMALE">여성</option>
-                </select>
-              </div>
-
-              <div className="space-y-2">
-                <label
-                  htmlFor="mbtiType"
-                  className="block text-sm font-medium text-neutral-200"
-                >
-                  MBTI
-                </label>
-                <select
-                  id="mbtiType"
-                  name="mbtiType"
-                  className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
-                  defaultValue=""
-                >
-                  <option value="">선택</option>
-                  {mbtiTypes.map((type) => (
-                    <option key={type} value={type}>
-                      {type}
-                    </option>
-                  ))}
-                </select>
-                <p className="text-xs leading-5 text-neutral-500">
-                  모르면 임시로 가장 가까운 유형을 선택해도 됩니다.
-                </p>
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full rounded-lg bg-neutral-50 px-5 py-4 font-semibold text-neutral-950 transition hover:bg-white disabled:cursor-not-allowed disabled:bg-neutral-500"
-              >
-                {isSubmitting ? "리포트 생성 중..." : "무료 미리보기 생성"}
-              </button>
               {isSubmitting ? (
                 <p className="text-center text-sm leading-6 text-neutral-400">
                   사주 구조와 MBTI 입력값을 함께 정리하고 있습니다.

@@ -26,8 +26,9 @@ describe("new report page source", () => {
     }
   });
 
-  it("has required hidden values", () => {
-    expect(pageSource).toContain('value="SOLAR"');
+  it("has required fixed values", () => {
+    expect(pageSource).toContain('"SOLAR"');
+    expect(pageSource).toContain('"LUNAR"');
     expect(pageSource).toContain('value="Asia/Seoul"');
   });
 
@@ -66,16 +67,66 @@ describe("new report page source", () => {
   });
 
   it("renders creation form helper copy", () => {
+    const stepMarkers = [
+      "1단계",
+      "2단계",
+      "3단계",
+      "4단계",
+      "생년월일",
+      "출생시간",
+      "성별·MBTI",
+      "확인 후 생성",
+      "다음",
+      "이전",
+    ];
+
+    for (const marker of stepMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+
     expect(pageSource).toContain(
-      "출생정보와 MBTI를 입력하면 샘플 리포트를 생성합니다.",
+      "모바일에서 한 단계씩 입력한 뒤 무료 미리보기를 생성합니다.",
     );
-    expect(pageSource).toContain("양력 기준 생년월일을 입력합니다.");
+    expect(pageSource).toContain("양력/음력");
     expect(pageSource).toContain(
-      "출생시간을 모르면 비워 두거나 알 수 없음 옵션을 사용합니다.",
+      "예: 1996-12-06 형식으로 입력해 주세요.",
+    );
+    expect(pageSource).toContain("정확한 시간");
+    expect(pageSource).toContain("대략적인 시간대");
+    expect(pageSource).toContain("출생시간 모름");
+    expect(pageSource).toContain(
+      "예: 오후 3시 12분이면 15:12로 입력해 주세요.",
     );
     expect(pageSource).toContain(
-      "모르면 임시로 가장 가까운 유형을 선택해도 됩니다.",
+      "출생시간을 모르면 시주 없이 일부 해석이 제한될 수 있습니다.",
     );
+    expect(pageSource).toContain(
+      "MBTI는 내가 생각하는 나의 모습이 반영될 수 있습니다.",
+    );
+    expect(pageSource).toContain(
+      "가능하면 여러 번의 검사 결과나 가까운 사람의 피드백도 함께 참고해 주세요.",
+    );
+  });
+
+  it("renders traditional time branch and midnight warning copy", () => {
+    const branchMarkers = [
+      "자시 23:00~00:59",
+      "진시 07:00~08:59",
+      "유시 17:00~18:59",
+      "해시 21:00~22:59",
+    ];
+
+    for (const marker of branchMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+
+    expect(pageSource).toContain(
+      "자정 전후 출생은 날짜 기준에 따라 일주·시주 해석이 달라질 수 있습니다.",
+    );
+    expect(pageSource).toContain(
+      "가능하면 가족에게 실제 출생일과 시간을 다시 확인해 주세요.",
+    );
+    expect(pageSource).toContain("입력 정보 확인");
   });
 
   it("renders loading state copy and disables submit", () => {
