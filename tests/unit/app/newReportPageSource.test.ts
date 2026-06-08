@@ -337,21 +337,48 @@ describe("new report page source", () => {
     expect(pageSource).toContain("오행 밸런스, 보완 루틴, 추천 색상·공간");
     expect(pageSource).toContain("일의 방식, 자원 관리, 관계·연애 패턴");
     expect(pageSource).toContain("입력 MBTI와 사주 구조의 공통점과 차이");
-    expect(pageSource).toContain(
+    expect(pageSource).not.toContain("전체 리포트 확인하기");
+  });
+
+  it("renders global paid teaser once outside compact locked cards", () => {
+    const globalTeaserMarkers = [
       "전체 리포트에서는 무료 미리보기에서 보인 핵심 구조를 바탕으로",
-    );
-    expect(pageSource).toContain(
       "오행, 십성, 신살·귀인, 일·돈·관계 활용",
+      "전체 리포트에서 이어지는 내용",
+      "오행 보완 루틴",
+      "십성 기반 일·돈·관계 해석",
+      "신살·귀인 반복 신호 해석",
+      "사주×MBTI 차이와 조절 포인트",
+      "결제 기능은 아직 준비 중입니다. 현재는 무료 미리보기만 확인할 수 있습니다.",
+    ];
+
+    for (const marker of globalTeaserMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+
+    const resultNavigationIndex = pageSource.indexOf(
+      'aria-label="결과 빠른 이동"',
     );
-    expect(pageSource).toContain("전체 리포트에서 이어지는 내용");
-    expect(pageSource).toContain("오행 보완 루틴");
-    expect(pageSource).toContain("십성 기반 일·돈·관계 해석");
-    expect(pageSource).toContain("신살·귀인 반복 신호 해석");
-    expect(pageSource).toContain("사주×MBTI 차이와 조절 포인트");
+    const globalTeaserIndex = pageSource.indexOf(
+      "전체 리포트에서 이어지는 내용",
+    );
+    const inactiveNoticeIndex = pageSource.indexOf("결제 비활성 안내");
+    const lockedCardSource = pageSource.slice(
+      pageSource.indexOf("function renderLockedSectionBody"),
+      pageSource.indexOf("function renderReportBlock"),
+    );
+
+    expect(resultNavigationIndex).toBeGreaterThanOrEqual(0);
+    expect(globalTeaserIndex).toBeGreaterThan(resultNavigationIndex);
+    expect(globalTeaserIndex).toBeLessThan(inactiveNoticeIndex);
+    expect(lockedCardSource).toContain("전체 리포트 잠금");
+    expect(lockedCardSource).toContain("정식 결제 연동 후 제공 예정");
+    expect(lockedCardSource).not.toContain("전체 리포트에서 이어지는 내용");
+    expect(lockedCardSource).not.toContain("lockedValuePoints.map");
+    expect(pageSource.match(/전체 리포트에서 이어지는 내용/g)).toHaveLength(1);
     expect(pageSource).toContain(
       "결제 기능은 아직 준비 중입니다. 현재는 무료 미리보기만 확인할 수 있습니다.",
     );
-    expect(pageSource).not.toContain("전체 리포트 확인하기");
   });
 
   it("uses gated preview as the public default", () => {
