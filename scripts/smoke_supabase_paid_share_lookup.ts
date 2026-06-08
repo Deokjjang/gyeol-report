@@ -25,6 +25,7 @@ const paymentCurrency = "KRW";
 type RequiredSupabaseEnvName = "SUPABASE_URL" | "SUPABASE_ANON_KEY";
 const smokeFixtureName = "SUPABASE_LOOKUP_SMOKE";
 const smokeDisplayName = smokeFixtureName.replace("_SMOKE", "");
+const localSharePathFlagEnv = "SHOW_SHARE_TOKEN_FOR_LOCAL_TEST";
 
 const smokeInput = {
   displayName: smokeDisplayName,
@@ -57,6 +58,10 @@ function getRequiredEnvValue(name: RequiredSupabaseEnvName): string {
   }
 
   return value;
+}
+
+function shouldShowSharePathForLocalTest(): boolean {
+  return process.env[localSharePathFlagEnv] === "1";
 }
 
 function mapLookupRowToRecord(
@@ -232,6 +237,11 @@ async function run(): Promise<void> {
 
   writeStatus(`lookup paid report id: ${lookupResult.view.reportId}`);
   writeStatus("safe view: ok");
+
+  if (shouldShowSharePathForLocalTest()) {
+    writeStatus(`local share path for manual test: /r/${issuedShare.issue.shareToken}`);
+  }
+
   writeStatus("done");
 }
 
