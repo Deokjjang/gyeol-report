@@ -319,6 +319,7 @@ describe("new report page source", () => {
     const activePurchaseMarkers = [
       "결제" + "하기",
       "구매" + "하기",
+      "지금 " + "구매",
       "바로 " + "결제",
       "유료 " + "결제 시작",
     ];
@@ -336,6 +337,20 @@ describe("new report page source", () => {
     expect(pageSource).toContain("오행 밸런스, 보완 루틴, 추천 색상·공간");
     expect(pageSource).toContain("일의 방식, 자원 관리, 관계·연애 패턴");
     expect(pageSource).toContain("입력 MBTI와 사주 구조의 공통점과 차이");
+    expect(pageSource).toContain(
+      "전체 리포트에서는 무료 미리보기에서 보인 핵심 구조를 바탕으로",
+    );
+    expect(pageSource).toContain(
+      "오행, 십성, 신살·귀인, 일·돈·관계 활용",
+    );
+    expect(pageSource).toContain("전체 리포트에서 이어지는 내용");
+    expect(pageSource).toContain("오행 보완 루틴");
+    expect(pageSource).toContain("십성 기반 일·돈·관계 해석");
+    expect(pageSource).toContain("신살·귀인 반복 신호 해석");
+    expect(pageSource).toContain("사주×MBTI 차이와 조절 포인트");
+    expect(pageSource).toContain(
+      "결제 기능은 아직 준비 중입니다. 현재는 무료 미리보기만 확인할 수 있습니다.",
+    );
     expect(pageSource).not.toContain("전체 리포트 확인하기");
   });
 

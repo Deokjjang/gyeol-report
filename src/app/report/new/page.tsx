@@ -224,6 +224,13 @@ function getLockedSectionTeaser(title: string): string {
 }
 
 function renderLockedSectionBody(section: ReportSection) {
+  const lockedValuePoints = [
+    "오행 보완 루틴",
+    "십성 기반 일·돈·관계 해석",
+    "신살·귀인 반복 신호 해석",
+    "사주×MBTI 차이와 조절 포인트",
+  ] as const;
+
   return (
     <div className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/70 p-5">
       <div className="space-y-2">
@@ -234,8 +241,30 @@ function renderLockedSectionBody(section: ReportSection) {
           {getLockedSectionTeaser(section.titleKo)}
         </p>
       </div>
+      <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-900/50 p-4">
+        <p className="text-sm leading-6 text-neutral-300">
+          전체 리포트에서는 무료 미리보기에서 보인 핵심 구조를 바탕으로
+          오행, 십성, 신살·귀인, 일·돈·관계 활용까지 더 구체적으로 풀어드립니다.
+        </p>
+        <div className="space-y-2">
+          <p className="text-sm font-semibold text-neutral-100">
+            전체 리포트에서 이어지는 내용
+          </p>
+          <ul className="space-y-2 text-sm leading-6 text-neutral-400">
+            {lockedValuePoints.map((point) => (
+              <li key={point} className="flex gap-3">
+                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-500" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
       <p className="rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-sm font-semibold text-neutral-300">
         정식 결제 연동 후 제공 예정
+      </p>
+      <p className="text-xs leading-5 text-neutral-500">
+        결제 기능은 아직 준비 중입니다. 현재는 무료 미리보기만 확인할 수 있습니다.
       </p>
     </div>
   );
