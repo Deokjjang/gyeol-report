@@ -15,11 +15,26 @@ describe("paid share report page source", () => {
       "params",
       "token",
       "공유 링크로 열린 결리포트입니다",
+      "사주와 MBTI로 읽는 나의 결",
       "리포트를 열 수 없습니다",
       "링크가 잘못되었거나",
+      "주요 섹션",
     ];
 
     for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+  });
+
+  it("renders common report block kinds without raw JSON dumping", () => {
+    const blockKindMarkers = [
+      "PARAGRAPH",
+      "BULLET_LIST",
+      "HIGHLIGHT",
+      "KEY_VALUE",
+    ];
+
+    for (const marker of blockKindMarkers) {
       expect(pageSource).toContain(marker);
     }
   });
@@ -40,6 +55,7 @@ describe("paid share report page source", () => {
       "payment" + "_provider" + "_payment" + "_id",
       "share" + "Path",
       "share" + "Token",
+      "JSON" + ".stringify",
     ];
 
     for (const marker of blockedMarkers) {
