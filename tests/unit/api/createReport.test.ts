@@ -13,6 +13,16 @@ const validRawInput: ReportRequestRawInput = {
   mbtiType: "ENTJ",
 };
 
+const productionBroadYearInput: ReportRequestRawInput = {
+  birthDate: "1996-12-06",
+  birthTime: "14:15",
+  birthTimeUnknown: false,
+  calendarType: "SOLAR",
+  gender: "FEMALE",
+  timezone: "Asia/Seoul",
+  mbtiType: "ENTJ",
+};
+
 const malformedRequestError = [
   {
     field: "birthDate",
@@ -122,6 +132,23 @@ describe("createReportApiEnvelopeFromJson", () => {
       );
       expect(envelope.body.report).toBeDefined();
       expect("error" in envelope.body).toBe(false);
+    }
+  });
+
+  it("returns 200 for the 1996 production payload", () => {
+    const envelope = createReportApiEnvelopeFromJson(productionBroadYearInput);
+
+    expect(envelope.status).toBe(200);
+    expect(envelope.body.ok).toBe(true);
+    if (envelope.body.ok) {
+      expect(envelope.body.report).toBeDefined();
+      expect(envelope.body.report.sections.map((section) => section.id)).toEqual(
+        expectedSectionIds,
+      );
+      expect(JSON.stringify(envelope.body)).not.toContain(
+        "SOLAR_TERM_YEAR_UNSUPPORTED",
+      );
+      expect(JSON.stringify(envelope.body)).not.toContain("BIRTH_DATE_REQUIRED");
     }
   });
 

@@ -111,6 +111,25 @@ describe("calculateSaju", () => {
     expect(result.pillars.month).toEqual({ stem: "丙", branch: "寅" });
   });
 
+  it("uses verified calendar engine pillars for broad-year production input", () => {
+    const result = calculateSaju({
+      birthDate: "1996-12-06",
+      birthTime: "14:15",
+      birthTimeUnknown: false,
+      calendarType: "SOLAR",
+      gender: "FEMALE",
+      timezone: "Asia/Seoul",
+    });
+
+    expect(result.pillars).toEqual({
+      year: { stem: "丙", branch: "子" },
+      month: { stem: "己", branch: "亥" },
+      day: { stem: "丁", branch: "丑" },
+      hour: { stem: "丁", branch: "未" },
+    });
+    expect(result.dayMaster).toBe("丁");
+  });
+
   it("throws for lunar calendar", () => {
     const input: SajuCalcInput = {
       ...baseInput,

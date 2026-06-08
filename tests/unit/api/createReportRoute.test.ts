@@ -15,7 +15,7 @@ const validRawInput: ReportRequestRawInput = {
   mbtiType: "ENTJ",
 };
 
-const productionUnsupportedYearInput: ReportRequestRawInput = {
+const productionBroadYearInput: ReportRequestRawInput = {
   birthDate: "1996-12-06",
   birthTime: "14:15",
   birthTimeUnknown: false,
@@ -56,8 +56,6 @@ type ApiResponseBody = ApiErrorBody | ApiSuccessBody;
 
 const apiErrorMessageKo =
   "리포트를 생성하지 못했습니다. 입력값을 확인한 뒤 다시 시도해 주세요.";
-const unsupportedSolarTermYearErrorMessageKo =
-  "현재 이 생년월일의 리포트를 생성할 수 없습니다.";
 
 const expectedSectionIds = [
   "INTRO",
@@ -193,25 +191,23 @@ describe("create report route", () => {
     }
   });
 
-  it("returns honest unsupported solar term year error for production payload", async () => {
-    const response = await POST(createJsonRequest(productionUnsupportedYearInput));
+  it("returns 200 for the 1996 production payload", async () => {
+    const response = await POST(createJsonRequest(productionBroadYearInput));
 
-    expect(response.status).toBe(500);
+    expect(response.status).toBe(200);
 
     const body = await readApiResponseBody(response);
 
-    expect(body.ok).toBe(false);
-    if (!body.ok) {
-      const errorCodes = body.errors.map((error) => error.code);
+    expect(body.ok).toBe(true);
+    if (body.ok) {
+      const responseText = JSON.stringify(body);
 
-      expect(body.error).toEqual({
-        code: "REPORT_CREATE_FAILED",
-        messageKo: unsupportedSolarTermYearErrorMessageKo,
-      });
-      expect(errorCodes).toContain("SOLAR_TERM_YEAR_UNSUPPORTED");
-      expect(errorCodes).not.toContain("BIRTH_DATE_REQUIRED");
-      expect(errorCodes).not.toContain("MBTI_TYPE_REQUIRED");
-      expect(errorCodes).not.toContain("MBTI_TYPE_INVALID");
+      expect(body.report).toBeDefined();
+      expect(body.reportId).toMatch(/^report_/);
+      expect(responseText).not.toContain("SOLAR_TERM_YEAR_UNSUPPORTED");
+      expect(responseText).not.toContain("BIRTH_DATE_REQUIRED");
+      expect(responseText).not.toContain("MBTI_TYPE_REQUIRED");
+      expect(responseText).not.toContain("MBTI_TYPE_INVALID");
     }
   });
 
