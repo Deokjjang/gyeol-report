@@ -70,6 +70,48 @@ describe("validateReportRequest", () => {
     }
   });
 
+  it("trims optional display name without changing saju input", () => {
+    const result = validateReportRequest({
+      ...validRawInput,
+      displayName: "  덕짱  ",
+    });
+
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.value.displayName).toBe("덕짱");
+      expect(result.value.sajuInput).toEqual({
+        birthDate: "2024-02-04",
+        birthTime: "17:27",
+        birthTimeUnknown: false,
+        calendarType: "SOLAR",
+        gender: "MALE",
+        timezone: "Asia/Seoul",
+      });
+    }
+  });
+
+  it("omits blank display name", () => {
+    const result = validateReportRequest({
+      ...validRawInput,
+      displayName: "   ",
+    });
+
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.value.displayName).toBeUndefined();
+    }
+  });
+
+  it("rejects display name over twenty characters", () => {
+    const error = getSingleError({
+      ...validRawInput,
+      displayName: "가나다라마바사아자차카타파하가나다라마바사",
+    });
+
+    expect(error.field).toBe("displayName");
+    expect(error.code).toBe("DISPLAY_NAME_TOO_LONG");
+  });
+
   it("collects all required errors in field order", () => {
     const result = validateReportRequest({});
 

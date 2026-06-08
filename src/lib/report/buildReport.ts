@@ -30,6 +30,12 @@ function unique(values: readonly string[]): string[] {
   return result;
 }
 
+function getReportSubject(displayName: string | undefined): string {
+  const normalized = displayName?.trim();
+
+  return normalized ? `${normalized}님` : "당신";
+}
+
 const SAJU_TAG_DISPLAY_LABELS: Readonly<Record<string, string>> = {
   FIRE_STRONG: "화 기운 강함",
   METAL_STRONG: "금 기운 강함",
@@ -690,9 +696,10 @@ function buildHookSummaryItems(input: ReportInput): string[] {
   const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
   const weak = ELEMENT_DISPLAY[getWeakElement(input)];
   const style = MBTI_STYLE_LABELS[input.mbti.type];
+  const subject = getReportSubject(input.displayName);
 
   return [
-    `당신은 ${primary.labelKo} 기운의 ${primary.tendencyKo}`,
+    `${subject}은 ${primary.labelKo} 기운의 ${primary.tendencyKo}`,
     `${input.mbti.type} ${style} 성향과 함께 볼 때, 판단과 실행의 속도를 실전에서 쓰기 쉬운 편으로 읽을 수 있습니다.`,
     `다만 ${weak.labelKo} 기운의 보완 루틴을 챙길수록 강점이 안정적으로 쓰입니다.`,
   ];

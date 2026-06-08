@@ -201,6 +201,30 @@ describe("buildReport", () => {
     expect(text).toContain("오늘부터 써먹는 루틴");
   });
 
+  it("uses display name in the free preview hook when provided", () => {
+    const report = buildReport(
+      createReportInput({
+        displayName: "덕짱",
+      }),
+    );
+    const section = report.sections.find((item) => item.id === "QUICK_SUMMARY");
+    const text = JSON.stringify(section);
+
+    expect(text).toContain("덕짱님은");
+    expect(text).not.toContain("undefined님");
+    expect(text).not.toContain("null님");
+  });
+
+  it("uses neutral subject when display name is absent", () => {
+    const report = buildReport(createReportInput());
+    const section = report.sections.find((item) => item.id === "QUICK_SUMMARY");
+    const text = JSON.stringify(section);
+
+    expect(text).toContain("당신은");
+    expect(text).not.toContain("undefined님");
+    expect(text).not.toContain("null님");
+  });
+
   it("renders core pillars deterministically", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "SAJU_CORE");

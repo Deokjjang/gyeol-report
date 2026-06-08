@@ -52,6 +52,7 @@ export type ReportSection = {
 };
 
 export type ReportInput = {
+  displayName?: string;
   saju: SajuCalcResult;
   sajuTags: readonly SajuTag[];
   mbti: MbtiProfile;

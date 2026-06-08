@@ -135,6 +135,39 @@ describe("createReportApiEnvelopeFromJson", () => {
     }
   });
 
+  it("returns personalized report for display name", () => {
+    const envelope = createReportApiEnvelopeFromJson({
+      ...validRawInput,
+      displayName: "덕짱",
+    });
+
+    expect(envelope.status).toBe(200);
+    expect(envelope.body.ok).toBe(true);
+    if (envelope.body.ok) {
+      const text = JSON.stringify(envelope.body.report);
+
+      expect(text).toContain("덕짱님은");
+      expect(text).not.toContain("undefined님");
+      expect(text).not.toContain("null님");
+    }
+  });
+
+  it("returns 400 for display name over twenty characters", () => {
+    const envelope = createReportApiEnvelopeFromJson({
+      ...validRawInput,
+      displayName: "가나다라마바사아자차카타파하가나다라마바사",
+    });
+
+    expect(envelope.status).toBe(400);
+    expect(envelope.body.ok).toBe(false);
+    if (!envelope.body.ok) {
+      expect(envelope.body.error).toEqual(invalidRequestError);
+      expect(envelope.body.errors.map((error) => error.code)).toContain(
+        "DISPLAY_NAME_TOO_LONG",
+      );
+    }
+  });
+
   it("returns 200 for the 1996 production payload", () => {
     const envelope = createReportApiEnvelopeFromJson(productionBroadYearInput);
 

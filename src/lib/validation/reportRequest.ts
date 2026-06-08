@@ -6,6 +6,8 @@ import type {
   ReportRequestValidationResult,
 } from "./types";
 
+const DISPLAY_NAME_MAX_LENGTH = 20;
+
 function createError(
   field: ReportRequestValidationError["field"],
   code: ReportRequestValidationError["code"],
@@ -87,6 +89,18 @@ export function validateReportRequest(
   let birthTime: string | undefined;
   let gender: "MALE" | "FEMALE" | undefined;
   let mbtiType: MbtiType | undefined;
+  const displayName =
+    typeof raw.displayName === "string" ? raw.displayName.trim() : "";
+
+  if (displayName.length > DISPLAY_NAME_MAX_LENGTH) {
+    errors.push(
+      createError(
+        "displayName",
+        "DISPLAY_NAME_TOO_LONG",
+        "이름 또는 닉네임은 20자 이내로 입력해 주세요.",
+      ),
+    );
+  }
 
   if (typeof raw.birthDate !== "string") {
     errors.push(
@@ -247,6 +261,7 @@ export function validateReportRequest(
     value: {
       sajuInput,
       mbtiType,
+      ...(displayName ? { displayName } : {}),
     },
     errors: [],
   };

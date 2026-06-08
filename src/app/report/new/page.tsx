@@ -73,7 +73,7 @@ type ReportInputStep = 0 | 1 | 2 | 3;
 type BirthTimeMode = "exact" | "branch" | "unknown";
 
 const reportInputSteps = [
-  { step: 0, labelKo: "1단계", titleKo: "생년월일" },
+  { step: 0, labelKo: "1단계", titleKo: "이름·생년월일" },
   { step: 1, labelKo: "2단계", titleKo: "출생시간" },
   { step: 2, labelKo: "3단계", titleKo: "성별·MBTI" },
   { step: 3, labelKo: "4단계", titleKo: "확인 후 생성" },
@@ -294,6 +294,7 @@ export default function NewReportPage() {
   const [errors, setErrors] = useState<ValidationError[]>([]);
   const [report, setReport] = useState<ReportPreview | null>(null);
   const [currentStep, setCurrentStep] = useState<ReportInputStep>(0);
+  const [displayName, setDisplayName] = useState("");
   const [birthDate, setBirthDate] = useState("");
   const [birthTimeMode, setBirthTimeMode] = useState<BirthTimeMode>("exact");
   const [birthTime, setBirthTime] = useState("");
@@ -367,6 +368,7 @@ export default function NewReportPage() {
     setReport(null);
 
     const payload = {
+      displayName: displayName.trim(),
       birthDate,
       birthTime: normalizedBirthTime,
       birthTimeUnknown,
@@ -481,6 +483,28 @@ export default function NewReportPage() {
 
               {currentStep === 0 ? (
                 <div className="space-y-5">
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="displayName"
+                      className="block text-sm font-medium text-neutral-200"
+                    >
+                      이름 또는 닉네임
+                    </label>
+                    <input
+                      id="displayName"
+                      name="displayName"
+                      type="text"
+                      value={displayName}
+                      maxLength={20}
+                      onChange={(event) => setDisplayName(event.target.value)}
+                      placeholder="예: 덕짱"
+                      className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
+                    />
+                    <p className="text-xs leading-5 text-neutral-500">
+                      리포트에서 불러드릴 이름입니다. 사주 계산에는 사용하지 않습니다.
+                    </p>
+                  </div>
+
                   <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
                     <p className="text-sm font-semibold text-neutral-100">
                       양력 기준 생년월일
@@ -691,6 +715,12 @@ export default function NewReportPage() {
                     입력 정보 확인
                   </h3>
                   <dl className="grid gap-3 text-sm">
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-neutral-500">이름/닉네임</dt>
+                      <dd className="text-right text-neutral-200">
+                        {displayName.trim() || "미입력"}
+                      </dd>
+                    </div>
                     <div className="flex justify-between gap-4">
                       <dt className="text-neutral-500">달력 기준</dt>
                       <dd className="text-right text-neutral-200">

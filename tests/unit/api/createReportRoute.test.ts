@@ -191,6 +191,29 @@ describe("create report route", () => {
     }
   });
 
+  it("returns personalized report for display name", async () => {
+    const response = await POST(
+      createJsonRequest({
+        ...validRawInput,
+        displayName: "덕짱",
+      }),
+    );
+
+    expect(response.status).toBe(200);
+
+    const body = await readApiResponseBody(response);
+
+    expect(body.ok).toBe(true);
+    if (body.ok) {
+      const responseText = JSON.stringify(body);
+
+      expect(body.reportId).toMatch(/^report_/);
+      expect(responseText).toContain("덕짱님은");
+      expect(responseText).not.toContain("undefined님");
+      expect(responseText).not.toContain("null님");
+    }
+  });
+
   it("returns 200 for the 1996 production payload", async () => {
     const response = await POST(createJsonRequest(productionBroadYearInput));
 
@@ -208,6 +231,27 @@ describe("create report route", () => {
       expect(responseText).not.toContain("BIRTH_DATE_REQUIRED");
       expect(responseText).not.toContain("MBTI_TYPE_REQUIRED");
       expect(responseText).not.toContain("MBTI_TYPE_INVALID");
+    }
+  });
+
+  it("returns 400 for display name over twenty characters", async () => {
+    const response = await POST(
+      createJsonRequest({
+        ...validRawInput,
+        displayName: "가나다라마바사아자차카타파하가나다라마바사",
+      }),
+    );
+
+    expect(response.status).toBe(400);
+
+    const body = await readApiResponseBody(response);
+
+    expect(body.ok).toBe(false);
+    if (!body.ok) {
+      expect(body.error.code).toBe("INVALID_REQUEST");
+      expect(body.errors.map((error) => error.code)).toContain(
+        "DISPLAY_NAME_TOO_LONG",
+      );
     }
   });
 

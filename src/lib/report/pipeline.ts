@@ -59,6 +59,7 @@ export function createReportFromRawInput(
     mbtiProfile: mbti,
   });
   const report = buildReport({
+    displayName: validation.value.displayName,
     saju,
     sajuTags,
     mbti,

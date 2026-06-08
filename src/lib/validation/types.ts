@@ -2,6 +2,7 @@ import type { MbtiType } from "../mbti/types";
 import type { SajuCalcInput } from "../saju/types";
 
 export type ReportRequestRawInput = {
+  displayName?: unknown;
   birthDate?: unknown;
   birthTime?: unknown;
   birthTimeUnknown?: unknown;
@@ -12,6 +13,7 @@ export type ReportRequestRawInput = {
 };
 
 export type ReportRequestValidationErrorCode =
+  | "DISPLAY_NAME_TOO_LONG"
   | "BIRTH_DATE_REQUIRED"
   | "BIRTH_DATE_INVALID"
   | "BIRTH_TIME_REQUIRED"
@@ -29,6 +31,7 @@ export type ReportRequestValidationErrorCode =
 export type ReportRequestValidationError = {
   field:
     | "birthDate"
+    | "displayName"
     | "birthTime"
     | "birthTimeUnknown"
     | "calendarType"
@@ -42,6 +45,7 @@ export type ReportRequestValidationError = {
 export type ValidatedReportRequest = {
   sajuInput: SajuCalcInput;
   mbtiType: MbtiType;
+  displayName?: string;
 };
 
 export type ReportRequestValidationResult =

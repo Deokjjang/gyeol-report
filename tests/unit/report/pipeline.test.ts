@@ -90,6 +90,43 @@ describe("createReportFromRawInput", () => {
     }
   });
 
+  it("personalizes report text when display name is provided", () => {
+    const report = getSuccessfulReport({
+      ...validRawInput,
+      displayName: "덕짱",
+    });
+    const text = JSON.stringify(report);
+
+    expect(text).toContain("덕짱님은");
+    expect(text).not.toContain("undefined님");
+    expect(text).not.toContain("null님");
+  });
+
+  it("keeps neutral wording when display name is absent", () => {
+    const report = getSuccessfulReport(validRawInput);
+    const text = JSON.stringify(report);
+
+    expect(text).toContain("당신은");
+    expect(text).not.toContain("undefined님");
+    expect(text).not.toContain("null님");
+  });
+
+  it("does not change saju calculation fields when display name is provided", () => {
+    const baseReport = getSuccessfulReport(validRawInput);
+    const namedReport = getSuccessfulReport({
+      ...validRawInput,
+      displayName: "덕짱",
+    });
+    const baseCoreBlock = getFirstBlock(findSection(baseReport.sections, "SAJU_CORE"));
+    const namedCoreBlock = getFirstBlock(
+      findSection(namedReport.sections, "SAJU_CORE"),
+    );
+
+    expect(baseCoreBlock?.kind).toBe("KEY_VALUE");
+    expect(namedCoreBlock?.kind).toBe("KEY_VALUE");
+    expect(namedCoreBlock?.keyValues).toEqual(baseCoreBlock?.keyValues);
+  });
+
   it("returns report for fixture with day pillar profile lookup integrated", () => {
     const result = createReportFromRawInput(validRawInput);
 
