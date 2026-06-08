@@ -44,6 +44,7 @@ describe("supabase paid share lookup smoke script source", () => {
       "console.log(" + "accessTokenHash",
       "access" + "_token" + "_hash",
       "payment" + "Provider" + "Payment" + "Id:",
+      "report generation did not return ok true",
     ];
 
     for (const marker of rejectedMarkers) {

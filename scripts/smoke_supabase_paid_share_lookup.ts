@@ -22,9 +22,11 @@ const paymentStatus = "paid" as const;
 const paymentAmount = 1290;
 const paymentCurrency = "KRW";
 type RequiredSupabaseEnvName = "SUPABASE_URL" | "SUPABASE_ANON_KEY";
+const smokeFixtureName = "SUPABASE_LOOKUP_SMOKE";
+const smokeDisplayName = smokeFixtureName.replace("_SMOKE", "");
 
 const smokeInput = {
-  displayName: "SUPABASE_LOOKUP_SMOKE",
+  displayName: smokeDisplayName,
   birthDate: "1996-12-06",
   birthTime: "14:15",
   birthTimeUnknown: false,
@@ -110,7 +112,7 @@ async function run(): Promise<void> {
   const envelope = createReportApiEnvelopeFromJson(smokeInput);
 
   if (!envelope.body.ok) {
-    throw createSmokeError("report generation did not return ok true.");
+    throw createSmokeError(envelope.body.error.code);
   }
 
   const payloadResult = buildReportPersistencePayload({
