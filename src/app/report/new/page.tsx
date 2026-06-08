@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 
 type ValidationError = {
@@ -331,6 +331,8 @@ export default function NewReportPage() {
   const [gender, setGender] = useState("");
   const [mbtiType, setMbtiType] = useState("");
   const [stepError, setStepError] = useState("");
+  const resultRef = useRef<HTMLElement | null>(null);
+  const shouldScrollToResultRef = useRef(false);
 
   const selectedStep = reportInputSteps[currentStep];
   const progressPercent = ((currentStep + 1) / reportInputSteps.length) * 100;
@@ -350,6 +352,18 @@ export default function NewReportPage() {
   const shouldShowMidnightBoundaryWarning =
     (birthTimeMode === "exact" && isMidnightBoundaryTime(birthTime)) ||
     (birthTimeMode === "branch" && timeBranch === "JASI");
+
+  useEffect(() => {
+    if (!report || !shouldScrollToResultRef.current) {
+      return;
+    }
+
+    shouldScrollToResultRef.current = false;
+    resultRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, [report]);
 
   function isBirthTimeStepValid(): boolean {
     if (birthTimeMode === "unknown") {
@@ -426,6 +440,7 @@ export default function NewReportPage() {
         return;
       }
 
+      shouldScrollToResultRef.current = true;
       setReport(json.report);
     } catch {
       setErrors([]);
@@ -844,8 +859,24 @@ export default function NewReportPage() {
           </div>
 
           {report ? (
-            <section className="space-y-6">
+            <section
+              ref={resultRef}
+              aria-labelledby="generated-preview-title"
+              className="scroll-mt-6 space-y-6"
+            >
               <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-900/70 p-5">
+                <div className="space-y-2">
+                  <p
+                    id="generated-preview-title"
+                    className="text-lg font-semibold text-neutral-50"
+                  >
+                    생성된 미리보기
+                  </p>
+                  <p className="text-sm leading-6 text-neutral-400">
+                    아래에서 무료 미리보기 결과를 확인할 수 있습니다.
+                  </p>
+                </div>
+
                 <div className="rounded-lg border border-emerald-900/40 bg-emerald-950/20 p-4">
                   <p className="text-sm font-semibold text-emerald-100">
                     샘플 리포트가 생성되었습니다.
@@ -854,6 +885,35 @@ export default function NewReportPage() {
                     아래 내용은 자기이해용 참고자료입니다.
                   </p>
                 </div>
+
+                <nav
+                  aria-label="결과 빠른 이동"
+                  className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4"
+                >
+                  <p className="text-sm font-semibold text-neutral-100">
+                    결과 빠른 이동
+                  </p>
+                  <div className="grid gap-2 text-sm sm:grid-cols-2">
+                    <a
+                      href="#report-section-INTRO"
+                      className="rounded-lg border border-neutral-700 px-3 py-2 text-neutral-200 transition hover:bg-neutral-900"
+                    >
+                      리포트 개요
+                    </a>
+                    <a
+                      href="#report-section-QUICK_SUMMARY"
+                      className="rounded-lg border border-neutral-700 px-3 py-2 text-neutral-200 transition hover:bg-neutral-900"
+                    >
+                      한눈에 보는 나의 결
+                    </a>
+                    <span className="rounded-lg border border-emerald-900/40 bg-emerald-950/20 px-3 py-2 text-emerald-100">
+                      무료 미리보기
+                    </span>
+                    <span className="rounded-lg border border-neutral-700 bg-neutral-900 px-3 py-2 text-neutral-300">
+                      전체 리포트 잠금
+                    </span>
+                  </div>
+                </nav>
 
                 <div className="space-y-2 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
                   <p className="text-sm font-semibold text-neutral-100">
@@ -899,6 +959,7 @@ export default function NewReportPage() {
                   return (
                     <article
                       key={section.id}
+                      id={`report-section-${section.id}`}
                       className="space-y-5 rounded-lg border border-neutral-800 bg-neutral-900/60 p-5"
                     >
                       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">

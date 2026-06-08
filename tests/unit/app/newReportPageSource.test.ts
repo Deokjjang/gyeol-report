@@ -40,6 +40,7 @@ describe("new report page source", () => {
     expect(pageSource).toContain('fetch("/api/reports/create"');
     expect(pageSource).toContain("const json = (await response.json())");
     expect(pageSource).toContain("setReport(json.report)");
+    expect(pageSource).toContain("shouldScrollToResultRef.current = true");
   });
 
   it("renders error and preview text", () => {
@@ -211,8 +212,32 @@ describe("new report page source", () => {
   });
 
   it("renders report creation success note", () => {
+    expect(pageSource).toContain("생성된 미리보기");
+    expect(pageSource).toContain(
+      "아래에서 무료 미리보기 결과를 확인할 수 있습니다.",
+    );
     expect(pageSource).toContain("샘플 리포트가 생성되었습니다.");
     expect(pageSource).toContain("아래 내용은 자기이해용 참고자료입니다.");
+  });
+
+  it("supports mobile result scroll and quick navigation", () => {
+    const resultNavigationMarkers = [
+      "useRef",
+      "scrollIntoView",
+      "resultRef",
+      "shouldScrollToResultRef",
+      "결과 빠른 이동",
+      "무료 미리보기",
+      "전체 리포트 잠금",
+      "리포트 개요",
+      "한눈에 보는 나의 결",
+      "report-section-INTRO",
+      "report-section-QUICK_SUMMARY",
+    ];
+
+    for (const marker of resultNavigationMarkers) {
+      expect(pageSource).toContain(marker);
+    }
   });
 
   it("supports report block source types", () => {
