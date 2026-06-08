@@ -107,6 +107,20 @@ const timeBranches = [
 type TimeBranchValue = (typeof timeBranches)[number]["value"];
 type TimeBranchSelection = TimeBranchValue | "";
 
+const pillarLabels = ["년주", "월주", "일주", "시주"] as const;
+
+type PillarLabelKo = (typeof pillarLabels)[number];
+
+type PillarCardItem = {
+  labelKo: PillarLabelKo;
+  valueKo: string;
+  hanjaPillar?: string;
+  readingKo?: string;
+  stemKo?: string;
+  branchKo?: string;
+  meaningKo?: string;
+};
+
 const lockedValuePoints = [
   "오행 보완 루틴",
   "십성 기반 일·돈·관계 해석",
@@ -167,6 +181,57 @@ function formatBirthTimeSummary(
   }
 
   return exactTime ? `정확한 시간 · ${exactTime}` : "정확한 시간 · 미입력";
+}
+
+function parsePillarCardValue(
+  labelKo: PillarLabelKo,
+  valueKo: string | undefined,
+): Omit<PillarCardItem, "labelKo"> {
+  const displayValue =
+    labelKo === "시주" && (!valueKo || valueKo === "모름")
+      ? "출생시간 모름"
+      : valueKo ?? "정보 없음";
+
+  if (!valueKo || valueKo === "모름") {
+    return {
+      valueKo: displayValue,
+    };
+  }
+
+  const [pillarAndReading, meaningKo] = valueKo.split(" — ");
+  const [hanjaPillar, readingKo] = pillarAndReading.trim().split(/\s+/, 2);
+
+  return {
+    valueKo: displayValue,
+    hanjaPillar,
+    readingKo,
+    stemKo: hanjaPillar?.[0],
+    branchKo: hanjaPillar?.[1],
+    meaningKo,
+  };
+}
+
+function getPillarCardItems(report: ReportPreview): PillarCardItem[] {
+  const sajuCoreSection = report.sections.find(
+    (section) => section.id === "SAJU_CORE",
+  );
+  const pillarBlock = sajuCoreSection?.blocks.find(
+    (block) => block.kind === "KEY_VALUE" && block.keyValues,
+  );
+  const keyValues = pillarBlock?.keyValues ?? [];
+
+  if (keyValues.length === 0) {
+    return [];
+  }
+
+  return pillarLabels.map((labelKo) => {
+    const valueKo = keyValues.find((item) => item.keyKo === labelKo)?.valueKo;
+
+    return {
+      labelKo,
+      ...parsePillarCardValue(labelKo, valueKo),
+    };
+  });
 }
 
 function getReportCreationErrorMessage(errorCode: string | undefined): string {
@@ -245,6 +310,93 @@ function renderLockedSectionBody(section: ReportSection) {
         정식 결제 연동 후 제공 예정
       </p>
     </div>
+  );
+}
+
+function renderPillarManseCard(report: ReportPreview) {
+  const items = getPillarCardItems(report);
+
+  if (items.length === 0) {
+    return null;
+  }
+
+  return (
+    <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/80 p-4">
+      <div className="space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-500">
+          만세력 카드
+        </p>
+        <h3 className="text-lg font-semibold text-neutral-50">사주 네 기둥</h3>
+        <p className="text-sm leading-6 text-neutral-400">
+          생년월일시를 바탕으로 계산된 네 기둥입니다.
+        </p>
+        <p className="text-sm leading-6 text-neutral-400">
+          일주는 리포트에서 나를 보는 기준점으로 사용합니다.
+        </p>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-4">
+        {items.map((item) => {
+          const isDayPillar = item.labelKo === "일주";
+
+          return (
+            <div
+              key={item.labelKo}
+              className={
+                isDayPillar
+                  ? "space-y-3 rounded-lg border border-emerald-800/70 bg-emerald-950/20 p-4"
+                  : "space-y-3 rounded-lg border border-neutral-800 bg-neutral-900/60 p-4"
+              }
+            >
+              <div className="flex items-center justify-between gap-2">
+                <p className="text-sm font-semibold text-neutral-100">
+                  {item.labelKo}
+                </p>
+                {isDayPillar ? (
+                  <span className="rounded-full border border-emerald-800/70 px-2 py-1 text-[0.7rem] font-medium text-emerald-100">
+                    기준점
+                  </span>
+                ) : null}
+              </div>
+              {isDayPillar ? (
+                <p className="text-xs leading-5 text-emerald-100/80">
+                  일주는 나를 보는 기준점입니다.
+                </p>
+              ) : null}
+              <div>
+                <p className="text-2xl font-bold tracking-tight text-neutral-50">
+                  {item.hanjaPillar ?? item.valueKo}
+                </p>
+                {item.readingKo ? (
+                  <p className="mt-1 text-sm text-neutral-400">
+                    {item.readingKo}
+                  </p>
+                ) : null}
+              </div>
+              <dl className="grid grid-cols-2 gap-2 text-sm">
+                <div className="rounded-md border border-neutral-800 bg-neutral-950 px-3 py-2">
+                  <dt className="text-xs text-neutral-500">천간</dt>
+                  <dd className="mt-1 font-semibold text-neutral-100">
+                    {item.stemKo ?? "-"}
+                  </dd>
+                </div>
+                <div className="rounded-md border border-neutral-800 bg-neutral-950 px-3 py-2">
+                  <dt className="text-xs text-neutral-500">지지</dt>
+                  <dd className="mt-1 font-semibold text-neutral-100">
+                    {item.branchKo ?? "-"}
+                  </dd>
+                </div>
+              </dl>
+              {item.meaningKo ? (
+                <p className="text-xs leading-5 text-neutral-500">
+                  {item.meaningKo}
+                </p>
+              ) : null}
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 }
 
@@ -892,6 +1044,8 @@ export default function NewReportPage() {
                     아래 내용은 자기이해용 참고자료입니다.
                   </p>
                 </div>
+
+                {renderPillarManseCard(report)}
 
                 <nav
                   aria-label="결과 빠른 이동"

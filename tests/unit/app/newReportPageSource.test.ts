@@ -221,6 +221,33 @@ describe("new report page source", () => {
     expect(pageSource).toContain("아래 내용은 자기이해용 참고자료입니다.");
   });
 
+  it("renders four pillars manse card source", () => {
+    const manseCardMarkers = [
+      "function getPillarCardItems",
+      "function renderPillarManseCard",
+      "만세력 카드",
+      "사주 네 기둥",
+      "생년월일시를 바탕으로 계산된 네 기둥입니다.",
+      "일주는 리포트에서 나를 보는 기준점으로 사용합니다.",
+      "일주는 나를 보는 기준점입니다.",
+      "년주",
+      "월주",
+      "일주",
+      "시주",
+      "천간",
+      "지지",
+      "출생시간 모름",
+    ];
+
+    for (const marker of manseCardMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+
+    expect(pageSource).toContain('section.id === "SAJU_CORE"');
+    expect(pageSource).toContain('block.kind === "KEY_VALUE"');
+    expect(pageSource).toContain("renderPillarManseCard(report)");
+  });
+
   it("supports mobile result scroll and quick navigation", () => {
     const resultNavigationMarkers = [
       "useRef",
@@ -495,12 +522,15 @@ describe("new report page source", () => {
       "운" + "명",
       "죽" + "음",
       "사고가 " + "난다",
+      "병에 " + "걸린다",
+      "건강에 " + "위험하다",
       "바람기가 " + "있다",
       "돈복이 " + "있다",
       "결혼" + "한다",
       "망" + "한다",
       "절" + "대",
       "항" + "상",
+      "틀" + "렸다",
     ];
 
     for (const word of forbiddenWords) {
