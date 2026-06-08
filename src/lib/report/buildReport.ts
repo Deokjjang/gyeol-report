@@ -259,35 +259,35 @@ const TEN_GOD_GROUPS = [
     tenGods: ["比肩", "劫財"] as const satisfies readonly TenGod[],
     strongKo: "자기 기준, 독립성, 경쟁심이 살아나기 쉽습니다.",
     weakKo: "혼자 결정하기보다 내 기준을 말로 정리하는 연습이 도움이 됩니다.",
-    actionKo: "내 기준을 세우고 직접 움직이는 방식",
+    actionKo: "내 기준을 세우고 직접 움직이는 힘",
   },
   {
     labelKo: "식상",
     tenGods: ["食神", "傷官"] as const satisfies readonly TenGod[],
     strongKo: "표현, 생산, 말과 결과물로 드러내는 힘이 강점이 될 수 있습니다.",
     weakKo: "생각을 밖으로 꺼내는 작은 결과물부터 만들면 흐름이 열리기 쉽습니다.",
-    actionKo: "생각을 결과물로 바꾸는 방식",
+    actionKo: "생각을 결과물로 꺼내는 힘",
   },
   {
     labelKo: "재성",
     tenGods: ["偏財", "正財"] as const satisfies readonly TenGod[],
     strongKo: "현실 감각, 성과, 자원 관리에 대한 감각이 살아나기 쉽습니다.",
     weakKo: "돈과 자원은 감각보다 기준표로 관리하면 균형을 잡기 좋습니다.",
-    actionKo: "자원과 결과를 의식하는 방식",
+    actionKo: "돈·자원·성과를 기준표로 관리하는 힘",
   },
   {
     labelKo: "관성",
     tenGods: ["偏官", "正官"] as const satisfies readonly TenGod[],
     strongKo: "책임, 기준, 역할 의식이 강점으로 쓰일 수 있습니다.",
     weakKo: "외부 기준·규칙·평가를 의식적으로 구조화하는 편이 좋습니다.",
-    actionKo: "역할과 기준 안에서 움직이는 방식",
+    actionKo: "역할과 기준 안에서 방향을 잡는 힘",
   },
   {
     labelKo: "인성",
     tenGods: ["偏印", "正印"] as const satisfies readonly TenGod[],
     strongKo: "학습, 분석, 생각 정리 능력이 강점이 될 수 있습니다.",
     weakKo: "쉬기, 배우기, 정리하기를 일정 안에 넣어 두면 안정감을 보완하기 좋습니다.",
-    actionKo: "배우고 정리한 뒤 움직이는 방식",
+    actionKo: "쉬고 배우고 정리하는 힘",
   },
 ] as const;
 
@@ -333,9 +333,9 @@ const SHINSAL_NARRATIVE_TEXTS: Readonly<Record<string, string>> = {
   SHINSAL_HYEONCHIMSAL:
     "현침살이 보여, 남들이 놓치는 작은 차이를 빠르게 포착하는 예리함이 드러납니다.",
   SHINSAL_HONGYEOMSAL:
-    "홍염살은 은근히 시선이 가는 매력과 감정 표현의 존재감을 더합니다.",
+    "홍염살은 단순한 인기보다, 말투·표정·분위기처럼 직접 의식하지 않아도 시선이 머무는 지점으로 읽을 수 있습니다.",
   SHINSAL_BAEKHODAESAL:
-    "백호대살은 강한 집중력과 밀어붙이는 힘이 크게 작동할 수 있음을 보여줍니다.",
+    "백호대살은 겁을 주는 신호가 아니라, 한 번 집중하면 끝까지 밀고 들어가는 압축된 에너지로 읽는 편이 안전합니다.",
   SHINSAL_MANGSINSAL:
     "망신살은 사회적 노출과 평판에 민감하게 반응하는 흐름을 보여줍니다.",
   SHINSAL_YEOKMASAL:
@@ -345,11 +345,11 @@ const SHINSAL_NARRATIVE_TEXTS: Readonly<Record<string, string>> = {
   SHINSAL_HWAGAE:
     "화개는 혼자 깊이 파고들 때 살아나는 예술성, 몰입, 내면의 깊이를 보여줍니다.",
   SHINSAL_GOSINSAL:
-    "고신살은 관계 안에서도 자기만의 거리와 독립성을 지키려는 흐름을 보여줍니다.",
+    "고신살은 외로움을 단정하는 말이 아니라, 관계 안에서도 혼자 정리할 시간과 독립적인 공간이 필요한 성향으로 보는 편이 좋습니다.",
   SHINSAL_GWASUKSAL:
     "과숙살은 쉽게 기대기보다 스스로를 보호하고 신중하게 관계를 여는 흐름을 보여줍니다.",
   SHINSAL_CHEON_EUL_GWIIN:
-    "천을귀인은 어려운 상황에서도 도움의 통로나 완충 장치가 생기기 쉬운 구조로 읽을 수 있습니다.",
+    "천을귀인은 누군가가 대신 해결해 준다는 뜻보다, 막혔을 때 조언·중재·완충을 얻기 쉬운 연결 방식으로 읽을 수 있습니다.",
   SHINSAL_TAEGEUK_GWIIN:
     "태극귀인은 복잡한 상황을 큰 흐름에서 정리하고 균형을 잡으려는 힘을 더합니다.",
   SHINSAL_MUN_CHANG_GWIIN:
@@ -400,28 +400,6 @@ function formatPositionPair(value: string): string {
   return `${PILLAR_POSITION_LABELS[left] ?? left}와 ${
     PILLAR_POSITION_LABELS[right] ?? right
   }`;
-}
-
-function formatSignalBand(value: number): string {
-  if (value >= 1) {
-    return "뚜렷하게 보입니다";
-  }
-
-  if (value <= 0.5) {
-    return "보완해서 읽는 편이 좋습니다";
-  }
-
-  return "균형권에서 함께 작동합니다";
-}
-
-function formatSignalBandFromText(valueKo: string): string {
-  const value = Number.parseFloat(valueKo);
-
-  if (Number.isNaN(value)) {
-    return "참고 흐름으로 읽습니다";
-  }
-
-  return formatSignalBand(value);
 }
 
 function formatRelationItem(
@@ -623,6 +601,24 @@ function getWeakElement(input: ReportInput): FiveElement {
   return [...getElementEntries(input)].reverse()[0]?.element ?? "WATER";
 }
 
+function getSupplementElementEntries(input: ReportInput): {
+  element: FiveElement;
+  value: number;
+}[] {
+  const ascending = [...getElementEntries(input)].reverse();
+  const weakEntries = ascending.filter((entry) => entry.value <= 1);
+
+  return weakEntries.length > 0 ? weakEntries : ascending.slice(0, 1);
+}
+
+function getPrimarySupplementElement(input: ReportInput): FiveElement {
+  return getSupplementElementEntries(input)[0]?.element ?? getWeakElement(input);
+}
+
+function getSecondarySupplementElement(input: ReportInput): FiveElement | undefined {
+  return getSupplementElementEntries(input)[1]?.element;
+}
+
 function formatElementLevel(value: number): string {
   if (value >= 3) {
     return "뚜렷한";
@@ -635,11 +631,21 @@ function formatElementLevel(value: number): string {
 }
 
 function buildElementBalanceItems(input: ReportInput): string[] {
+  const primarySupplementElement = getPrimarySupplementElement(input);
+  const secondarySupplementElement = getSecondarySupplementElement(input);
+
   return getElementEntries(input).map(({ element, value }) => {
     const display = ELEMENT_DISPLAY[element];
     const level = formatElementLevel(value);
 
     if (value <= 1) {
+      if (element === primarySupplementElement) {
+        return `대표 보완 기운인 ${display.labelKo} 기운은 ${level} 신호로 읽습니다. ${display.supplementKo} 같은 보완 루틴을 먼저 챙기면 전체 균형이 안정되기 쉽습니다.`;
+      }
+      if (element === secondarySupplementElement) {
+        return `함께 보면 좋은 보완 기운인 ${display.labelKo} 기운은 ${level} 신호로 읽습니다. ${display.supplementKo}처럼 긴 호흡으로 더해 가면 도움이 됩니다.`;
+      }
+
       return `${display.labelKo} 기운은 ${level} 신호로 읽습니다. ${display.supplementKo} 같은 보완 루틴을 의식적으로 챙겨야 균형이 맞습니다.`;
     }
 
@@ -649,14 +655,26 @@ function buildElementBalanceItems(input: ReportInput): string[] {
 
 function buildElementPracticalItems(input: ReportInput): string[] {
   const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
-  const weak = ELEMENT_DISPLAY[getWeakElement(input)];
+  const primarySupplement = ELEMENT_DISPLAY[getPrimarySupplementElement(input)];
+  const secondarySupplementElement = getSecondarySupplementElement(input);
+  const secondarySupplement = secondarySupplementElement
+    ? ELEMENT_DISPLAY[secondarySupplementElement]
+    : undefined;
+  const supplementItems = [
+    `대표 보완 기운: ${primarySupplement.labelKo} — ${primarySupplement.supplementKo}. 먼저 챙기면 전체 균형이 안정되기 쉽습니다.`,
+    ...(secondarySupplement
+      ? [
+          `함께 보면 좋은 보완 기운: ${secondarySupplement.labelKo} — ${secondarySupplement.supplementKo}. 대표 보완 루틴을 잡은 뒤 함께 더하면 좋습니다.`,
+        ]
+      : []),
+  ];
 
   return [
     `많은 기운: ${primary.labelKo} — ${primary.tendencyKo}`,
-    `부족한 기운: ${weak.labelKo} — ${weak.supplementKo}. 의식적으로 챙겨야 균형이 맞습니다.`,
-    `추천 색상: ${weak.colorsKo}은 보완을 돕는 상징으로 활용할 수 있습니다.`,
-    `추천 공간: ${weak.placesKo}처럼 몸이 차분해지는 장소가 도움이 될 수 있습니다.`,
-    `보완 루틴: ${weak.supplementKo}`,
+    ...supplementItems,
+    `추천 색상: ${primarySupplement.colorsKo}은 보완을 돕는 상징으로 활용할 수 있습니다.`,
+    `추천 공간: ${primarySupplement.placesKo}처럼 몸이 차분해지는 장소가 도움이 될 수 있습니다.`,
+    `보완 루틴: ${primarySupplement.supplementKo}. 의식적으로 챙겨야 균형이 맞습니다.`,
     "추천 색상과 공간은 결과를 보장하는 요소가 아니라, 부족한 기운을 의식적으로 떠올리는 리마인드 도구로 보는 편이 좋습니다.",
   ];
 }
@@ -690,14 +708,14 @@ function getTenGodGroupEntries(input: ReportInput): {
 function buildStrongTenGodItems(input: ReportInput): string[] {
   return getTenGodGroupEntries(input)
     .slice(0, 2)
-    .map((entry) => `${entry.labelKo}: ${entry.strongKo}`);
+    .map((entry) => `${entry.labelKo}: ${entry.actionKo}`);
 }
 
 function buildWeakTenGodItems(input: ReportInput): string[] {
   return [...getTenGodGroupEntries(input)]
     .reverse()
     .slice(0, 2)
-    .map((entry) => `${entry.labelKo}: ${entry.weakKo}`);
+    .map((entry) => `${entry.labelKo}: ${entry.actionKo}`);
 }
 
 function buildMovementStyleItems(input: ReportInput): string[] {
@@ -706,23 +724,64 @@ function buildMovementStyleItems(input: ReportInput): string[] {
     .map((entry) => `${entry.labelKo}: ${entry.actionKo}`);
 }
 
+function getTenGodGroupAction(labelKo: string): string {
+  return (
+    TEN_GOD_GROUPS.find((group) => group.labelKo === labelKo)?.actionKo ??
+    "상황을 보고 균형을 맞추는 힘"
+  );
+}
+
+function formatTenGodGroupList(entries: readonly { labelKo: string; actionKo: string }[]): string {
+  return entries.map((entry) => `${entry.labelKo}: ${entry.actionKo}`).join(" / ");
+}
+
+function isRawElementStrengthTag(value: string): boolean {
+  return value.includes("_WEAK") || value.includes("_STRONG");
+}
+
+function buildSupplementKeywordItems(input: ReportInput): string[] {
+  const primary = ELEMENT_DISPLAY[getPrimarySupplementElement(input)];
+  const secondaryElement = getSecondarySupplementElement(input);
+  const secondary = secondaryElement
+    ? ELEMENT_DISPLAY[secondaryElement]
+    : undefined;
+
+  return [
+    `대표 보완 기운: ${primary.labelKo}`,
+    ...(secondary ? [`함께 보면 좋은 보완 기운: ${secondary.labelKo}`] : []),
+  ];
+}
+
 function getStructureKeywordItems(input: ReportInput): string[] {
+  const structureKeywords =
+    input.structureAnalysis?.summary.keywordsKo
+      .filter((keyword) => !isRawElementStrengthTag(keyword))
+      .map(formatSajuTagLabel)
+      .slice(0, 2) ?? [];
+
   return unique([
-    ...(input.structureAnalysis?.summary.keywordsKo.map(formatSajuTagLabel) ?? []),
-    ...input.saju.elements.labels.slice(0, 2).map(formatSajuTagLabel),
+    ...structureKeywords,
+    ...buildSupplementKeywordItems(input),
     input.mbti.type,
     MBTI_STYLE_LABELS[input.mbti.type],
   ]).slice(0, 5);
 }
 
 function buildHookSummaryItems(input: ReportInput): string[] {
-  const weak = ELEMENT_DISPLAY[getWeakElement(input)];
+  const primarySupplement = ELEMENT_DISPLAY[getPrimarySupplementElement(input)];
+  const secondarySupplementElement = getSecondarySupplementElement(input);
+  const secondarySupplement = secondarySupplementElement
+    ? ELEMENT_DISPLAY[secondarySupplementElement]
+    : undefined;
   const style = MBTI_STYLE_LABELS[input.mbti.type];
+  const supplementSummary = secondarySupplement
+    ? `대표 보완 기운은 ${primarySupplement.labelKo} 기운이고, ${secondarySupplement.labelKo} 기운은 함께 보면 좋은 보완 축으로 정리됩니다.`
+    : `대표 보완 기운은 ${primarySupplement.labelKo} 기운으로 정리됩니다.`;
 
   return [
     buildPracticalSummary(input),
     `${input.mbti.type} ${style} 성향과 함께 볼 때, 판단과 실행의 속도를 실전에서 쓰기 쉬운 편으로 읽을 수 있습니다.`,
-    `다만 ${weak.labelKo} 기운의 보완 루틴을 챙길수록 강점이 안정적으로 쓰입니다.`,
+    `${supplementSummary} ${primarySupplement.labelKo} 기운의 보완 루틴을 먼저 챙길수록 강점이 안정적으로 쓰입니다.`,
   ];
 }
 
@@ -754,11 +813,20 @@ function buildStrengthItems(input: ReportInput): string[] {
 }
 
 function buildCautionItems(input: ReportInput): string[] {
-  const weak = ELEMENT_DISPLAY[getWeakElement(input)];
+  const primarySupplement = ELEMENT_DISPLAY[getPrimarySupplementElement(input)];
+  const secondarySupplementElement = getSecondarySupplementElement(input);
+  const secondarySupplement = secondarySupplementElement
+    ? ELEMENT_DISPLAY[secondarySupplementElement]
+    : undefined;
   const tenGod = [...getTenGodGroupEntries(input)].reverse()[0];
 
   return unique([
-    `${weak.labelKo} 기운 보완: ${weak.supplementKo}`,
+    `대표 보완 기운: ${primarySupplement.labelKo} — ${primarySupplement.supplementKo}`,
+    ...(secondarySupplement
+      ? [
+          `함께 보면 좋은 보완 기운: ${secondarySupplement.labelKo} — ${secondarySupplement.supplementKo}`,
+        ]
+      : []),
     tenGod
       ? `${tenGod.labelKo}: ${tenGod.weakKo}`
       : "속도와 회복의 균형을 함께 보는 편이 좋습니다.",
@@ -767,13 +835,13 @@ function buildCautionItems(input: ReportInput): string[] {
 }
 
 function buildTodayRoutineItems(input: ReportInput): string[] {
-  const weak = ELEMENT_DISPLAY[getWeakElement(input)];
+  const primarySupplement = ELEMENT_DISPLAY[getPrimarySupplementElement(input)];
   const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
 
   return [
-    `추천 루틴: ${weak.supplementKo}`,
-    `추천 공간: ${weak.placesKo}`,
-    `추천 색상: ${weak.colorsKo}`,
+    `추천 루틴: ${primarySupplement.supplementKo}`,
+    `추천 공간: ${primarySupplement.placesKo}`,
+    `추천 색상: ${primarySupplement.colorsKo}`,
     `추천 일의 방식: ${primary.workExamplesKo}처럼 강점이 바로 보이는 역할 예시를 참고해 보세요.`,
     "피하면 좋은 패턴: 회복 없이 속도만 올리는 방식",
   ];
@@ -870,22 +938,20 @@ function createElementsInterpretationBlock(input: ReportInput): ReportBlock {
 }
 
 function createTenGodsBlock(input: ReportInput): ReportBlock {
-  const { distribution } = input.saju.tenGods;
+  const entries = getTenGodGroupEntries(input);
+  const strongEntries = entries.slice(0, 2);
+  const supportEntries = [...entries].reverse().slice(0, 2);
+  const balancedEntry = entries[2];
 
   return {
     kind: "BULLET_LIST",
-    titleKo: "전문 참고 흐름",
+    titleKo: "십성 세부 리딩",
     itemsKo: [
-      `비견: 자기 기준을 직접 세우는 흐름이 ${formatSignalBand(distribution.比肩)}.`,
-      `겁재: 비교와 경쟁 속에서 힘을 쓰는 흐름이 ${formatSignalBand(distribution.劫財)}.`,
-      `식신: 생각을 결과물로 차분히 풀어내는 흐름이 ${formatSignalBand(distribution.食神)}.`,
-      `상관: 말과 표현으로 판을 바꾸는 흐름이 ${formatSignalBand(distribution.傷官)}.`,
-      `편재: 넓은 자원과 기회를 다루는 흐름이 ${formatSignalBand(distribution.偏財)}.`,
-      `정재: 정해진 자원을 안정적으로 관리하는 흐름이 ${formatSignalBand(distribution.正財)}.`,
-      `편관: 압박 속에서 역할을 감당하는 흐름이 ${formatSignalBand(distribution.偏官)}.`,
-      `정관: 기준과 책임 안에서 움직이는 흐름이 ${formatSignalBand(distribution.正官)}.`,
-      `편인: 낯선 정보를 흡수하고 다르게 해석하는 흐름이 ${formatSignalBand(distribution.偏印)}.`,
-      `정인: 배우고 정리하며 안정감을 만드는 흐름이 ${formatSignalBand(distribution.正印)}.`,
+      `가장 강하게 쓰는 흐름: ${formatTenGodGroupList(strongEntries)}`,
+      `보완해서 보면 좋은 흐름: ${formatTenGodGroupList(supportEntries)}`,
+      balancedEntry
+        ? `균형을 맞춰 볼 흐름: ${balancedEntry.labelKo}: ${balancedEntry.actionKo}`
+        : "균형을 맞춰 볼 흐름: 상황에 따라 강점과 보완점을 함께 봅니다.",
     ],
   };
 }
@@ -900,12 +966,12 @@ function createTenGodsUserFacingBlocks(input: ReportInput): ReportBlock[] {
     },
     {
       kind: "BULLET_LIST",
-      titleKo: "강하게 보이는 흐름",
+      titleKo: "가장 강하게 쓰는 흐름",
       itemsKo: buildStrongTenGodItems(input),
     },
     {
       kind: "BULLET_LIST",
-      titleKo: "보완하면 좋은 흐름",
+      titleKo: "보완해서 보면 좋은 흐름",
       itemsKo: buildWeakTenGodItems(input),
     },
     {
@@ -972,13 +1038,19 @@ function buildTenGodsPointItems(
     const item = evidence.find((entry) => entry.keyKo === point.keyKo);
 
     if (item) {
-      items.push(
-        `${point.keyKo}: ${formatSignalBandFromText(item.valueKo)}. ${point.bodyKo}`,
-      );
+      items.push(`${point.keyKo}: ${getTenGodGroupAction(point.keyKo)}. ${point.bodyKo}`);
     }
   }
 
   return items;
+}
+
+function buildTenGodsStructureItems(
+  structureAnalysis: NonNullable<ReportInput["structureAnalysis"]>,
+): string[] {
+  return structureAnalysis.dayMasterStrength.evidence.map(
+    (item) => `${item.keyKo}: ${getTenGodGroupAction(item.keyKo)}`,
+  );
 }
 
 function createTenGodsStructureBlocks(
@@ -988,9 +1060,7 @@ function createTenGodsStructureBlocks(
     {
       kind: "BULLET_LIST",
       titleKo: "십성 묶음",
-      itemsKo: structureAnalysis.dayMasterStrength.evidence.map(
-        (item) => `${item.keyKo}: ${formatSignalBandFromText(item.valueKo)}`,
-      ),
+      itemsKo: buildTenGodsStructureItems(structureAnalysis),
     },
     {
       kind: "PARAGRAPH",
@@ -1138,9 +1208,7 @@ function createAdvancedPatternsBlocks(input: ReportInput): ReportBlock[] {
     {
       kind: "BULLET_LIST",
       titleKo: "구조 근거",
-      itemsKo: structureAnalysis.dayMasterStrength.evidence.map(
-        (item) => `${item.keyKo}: ${formatSignalBandFromText(item.valueKo)}`,
-      ),
+      itemsKo: buildTenGodsStructureItems(structureAnalysis),
     },
     {
       kind: "PARAGRAPH",
