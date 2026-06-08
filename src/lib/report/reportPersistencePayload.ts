@@ -18,6 +18,12 @@ export const REPORT_CALCULATION_VERSION = "saju-mbti-v1" as const;
 export const DEFAULT_REPORT_LOCALE = "ko-KR" as const;
 export const REPORT_ACCESS_TOKEN_VERSION = "v1" as const;
 
+export type BuildReportPersistenceAccessTokenIssue = {
+  readonly accessTokenHash: string;
+  readonly accessTokenCreatedAt: string;
+  readonly accessTokenVersion: string;
+};
+
 export type BuildReportPersistencePayloadInput = {
   readonly birthDate: string;
   readonly birthTime?: string | null;
@@ -28,6 +34,7 @@ export type BuildReportPersistencePayloadInput = {
   readonly mbti?: string;
   readonly report: ReportOutput;
   readonly nowIso?: string;
+  readonly accessTokenIssue?: BuildReportPersistenceAccessTokenIssue;
 };
 
 export type BuildReportPersistencePayloadResult =
@@ -61,6 +68,24 @@ function isObjectLike(value: unknown): boolean {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
+function buildDefaultAccessTokenIssue(
+  nowIso: string,
+): BuildReportPersistenceAccessTokenIssue | null {
+  const accessTokenHashResult = hashReportAccessTokenSync(
+    createReportAccessToken(),
+  );
+
+  if (!accessTokenHashResult.ok) {
+    return null;
+  }
+
+  return {
+    accessTokenHash: accessTokenHashResult.hash,
+    accessTokenCreatedAt: nowIso,
+    accessTokenVersion: REPORT_ACCESS_TOKEN_VERSION,
+  };
+}
+
 export function buildReportPersistencePayload(
   input: BuildReportPersistencePayloadInput,
 ): BuildReportPersistencePayloadResult {
@@ -89,11 +114,10 @@ export function buildReportPersistencePayload(
   }
 
   const nowIso = input.nowIso ?? new Date().toISOString();
-  const accessTokenHashResult = hashReportAccessTokenSync(
-    createReportAccessToken(),
-  );
+  const accessTokenIssue =
+    input.accessTokenIssue ?? buildDefaultAccessTokenIssue(nowIso);
 
-  if (!accessTokenHashResult.ok) {
+  if (accessTokenIssue === null) {
     return {
       ok: false,
       code: "ACCESS_TOKEN_HASH_UNAVAILABLE",
@@ -127,9 +151,9 @@ export function buildReportPersistencePayload(
     calculationVersion: REPORT_CALCULATION_VERSION,
     locale: DEFAULT_REPORT_LOCALE,
     accessMode,
-    accessTokenHash: accessTokenHashResult.hash,
-    accessTokenCreatedAt: nowIso,
-    accessTokenVersion: REPORT_ACCESS_TOKEN_VERSION,
+    accessTokenHash: accessTokenIssue.accessTokenHash,
+    accessTokenCreatedAt: accessTokenIssue.accessTokenCreatedAt,
+    accessTokenVersion: accessTokenIssue.accessTokenVersion,
     inputSnapshot,
     reportSnapshot,
   };
