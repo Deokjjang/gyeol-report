@@ -94,6 +94,10 @@ describe("new report page source", () => {
     expect(pageSource).toContain("정확한 시간");
     expect(pageSource).toContain("대략적인 시간대");
     expect(pageSource).toContain("출생시간 모름");
+    expect(pageSource).toContain("시간대를 선택해 주세요");
+    expect(pageSource).toContain(
+      "출생시간을 입력하거나, 대략적인 시간대 또는 모름을 선택해 주세요.",
+    );
     expect(pageSource).toContain(
       "예: 오후 3시 12분이면 15:12로 입력해 주세요.",
     );
@@ -127,6 +131,7 @@ describe("new report page source", () => {
       "가능하면 가족에게 실제 출생일과 시간을 다시 확인해 주세요.",
     );
     expect(pageSource).toContain("입력 정보 확인");
+    expect(pageSource).toContain("양력/음력");
   });
 
   it("renders loading state copy and disables submit", () => {

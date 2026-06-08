@@ -99,6 +99,7 @@ const timeBranches = [
 ] as const;
 
 type TimeBranchValue = (typeof timeBranches)[number]["value"];
+type TimeBranchSelection = TimeBranchValue | "";
 
 function getRepresentativeBirthTime(branch: TimeBranchValue): string {
   return (
@@ -253,33 +254,62 @@ export default function NewReportPage() {
   const [calendarType, setCalendarType] = useState("SOLAR");
   const [birthTimeMode, setBirthTimeMode] = useState<BirthTimeMode>("exact");
   const [birthTime, setBirthTime] = useState("");
-  const [timeBranch, setTimeBranch] = useState<TimeBranchValue>("JASI");
+  const [timeBranch, setTimeBranch] = useState<TimeBranchSelection>("");
   const [gender, setGender] = useState("");
   const [mbtiType, setMbtiType] = useState("");
+  const [stepError, setStepError] = useState("");
 
   const selectedStep = reportInputSteps[currentStep];
+  const progressPercent = ((currentStep + 1) / reportInputSteps.length) * 100;
   const birthTimeUnknown = birthTimeMode === "unknown";
   const normalizedBirthTime = birthTimeUnknown
     ? undefined
     : birthTimeMode === "branch"
-      ? getRepresentativeBirthTime(timeBranch)
+      ? timeBranch
+        ? getRepresentativeBirthTime(timeBranch)
+        : undefined
       : birthTime;
   const birthTimeSummary = birthTimeUnknown
     ? "출생시간 모름"
     : birthTimeMode === "branch"
-      ? `${timeBranches.find((item) => item.value === timeBranch)?.labelKo} 기준`
+      ? timeBranch
+        ? `대략적인 시간대 · ${
+            timeBranches.find((item) => item.value === timeBranch)?.labelKo
+          } 기준`
+        : "시간대를 선택해 주세요"
       : birthTime || "미입력";
   const shouldShowMidnightBoundaryWarning =
     (birthTimeMode === "exact" && isMidnightBoundaryTime(birthTime)) ||
     (birthTimeMode === "branch" && timeBranch === "JASI");
 
+  function isBirthTimeStepValid(): boolean {
+    if (birthTimeMode === "unknown") {
+      return true;
+    }
+
+    if (birthTimeMode === "branch") {
+      return timeBranch !== "";
+    }
+
+    return /^\d{2}:\d{2}$/.test(birthTime);
+  }
+
   function goToPreviousStep() {
+    setStepError("");
     setCurrentStep((step) =>
       Math.max(0, step - 1) as ReportInputStep,
     );
   }
 
   function goToNextStep() {
+    if (currentStep === 1 && !isBirthTimeStepValid()) {
+      setStepError(
+        "출생시간을 입력하거나, 대략적인 시간대 또는 모름을 선택해 주세요.",
+      );
+      return;
+    }
+
+    setStepError("");
     setCurrentStep((step) =>
       Math.min(reportInputSteps.length - 1, step + 1) as ReportInputStep,
     );
@@ -367,21 +397,40 @@ export default function NewReportPage() {
                 </p>
               </div>
 
-              <ol className="grid grid-cols-4 gap-2 text-center text-xs font-medium text-neutral-500">
-                {reportInputSteps.map((step) => (
-                  <li
-                    key={step.step}
-                    className={
-                      step.step === currentStep
-                        ? "rounded-full border border-neutral-500 bg-neutral-800 px-2 py-2 text-neutral-100"
-                        : "rounded-full border border-neutral-800 bg-neutral-950 px-2 py-2"
-                    }
-                  >
-                    <span className="block">{step.labelKo}</span>
-                    <span className="block">{step.titleKo}</span>
-                  </li>
-                ))}
-              </ol>
+              <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                <div className="flex items-center justify-between gap-4">
+                  <p className="text-sm font-semibold text-neutral-100">
+                    {currentStep + 1} / {reportInputSteps.length}
+                  </p>
+                  <p className="text-right text-sm text-neutral-400">
+                    {selectedStep.labelKo} · {selectedStep.titleKo}
+                  </p>
+                </div>
+                <div
+                  aria-label="진행률"
+                  className="h-2 overflow-hidden rounded-full bg-neutral-800"
+                >
+                  <div
+                    className="h-full rounded-full bg-neutral-100"
+                    style={{ width: `${progressPercent}%` }}
+                  />
+                </div>
+                <ol className="grid gap-2 text-xs text-neutral-500 sm:grid-cols-4">
+                  {reportInputSteps.map((step) => (
+                    <li
+                      key={step.step}
+                      className={
+                        step.step === currentStep
+                          ? "rounded-lg border border-neutral-600 bg-neutral-900 px-3 py-2 text-neutral-100"
+                          : "rounded-lg border border-neutral-800 px-3 py-2"
+                      }
+                    >
+                      <span className="font-semibold">{step.labelKo}</span>
+                      <span className="ml-2">{step.titleKo}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
 
               <input type="hidden" name="timezone" value="Asia/Seoul" />
               <input
@@ -457,9 +506,10 @@ export default function NewReportPage() {
                           <input
                             type="radio"
                             checked={birthTimeMode === mode.value}
-                            onChange={() =>
-                              setBirthTimeMode(mode.value as BirthTimeMode)
-                            }
+                            onChange={() => {
+                              setBirthTimeMode(mode.value as BirthTimeMode);
+                              setStepError("");
+                            }}
                             className="h-4 w-4"
                           />
                           {mode.labelKo}
@@ -481,7 +531,10 @@ export default function NewReportPage() {
                         name="birthTime"
                         type="time"
                         value={birthTime}
-                        onChange={(event) => setBirthTime(event.target.value)}
+                        onChange={(event) => {
+                          setBirthTime(event.target.value);
+                          setStepError("");
+                        }}
                         className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
                       />
                       <p className="text-xs leading-5 text-neutral-500">
@@ -501,11 +554,13 @@ export default function NewReportPage() {
                       <select
                         id="timeBranch"
                         value={timeBranch}
-                        onChange={(event) =>
-                          setTimeBranch(event.target.value as TimeBranchValue)
-                        }
+                        onChange={(event) => {
+                          setTimeBranch(event.target.value as TimeBranchSelection);
+                          setStepError("");
+                        }}
                         className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
                       >
+                        <option value="">시간대를 선택해 주세요</option>
                         {timeBranches.map((branch) => (
                           <option key={branch.value} value={branch.value}>
                             {branch.labelKo}
@@ -518,6 +573,12 @@ export default function NewReportPage() {
                   {birthTimeMode === "unknown" ? (
                     <p className="rounded-lg border border-neutral-800 bg-neutral-950 p-4 text-sm leading-6 text-neutral-400">
                       출생시간을 모르면 시주 없이 일부 해석이 제한될 수 있습니다.
+                    </p>
+                  ) : null}
+
+                  {stepError ? (
+                    <p className="rounded-lg border border-red-900/60 bg-red-950/30 p-4 text-sm leading-6 text-red-100">
+                      {stepError}
                     </p>
                   ) : null}
 
@@ -590,6 +651,12 @@ export default function NewReportPage() {
                     입력 정보 확인
                   </h3>
                   <dl className="grid gap-3 text-sm">
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-neutral-500">양력/음력</dt>
+                      <dd className="text-right text-neutral-200">
+                        {calendarType === "SOLAR" ? "양력" : "음력"}
+                      </dd>
+                    </div>
                     <div className="flex justify-between gap-4">
                       <dt className="text-neutral-500">생년월일</dt>
                       <dd className="text-right text-neutral-200">
