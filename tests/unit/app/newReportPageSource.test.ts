@@ -88,14 +88,15 @@ describe("new report page source", () => {
     expect(pageSource).toContain(
       "모바일에서 한 단계씩 입력한 뒤 무료 미리보기를 생성합니다.",
     );
-    expect(pageSource).toContain("이름 또는 닉네임");
+    expect(pageSource).toContain("이름");
     expect(pageSource).toContain(
       "리포트에서 불러드릴 이름입니다. 사주 계산에는 사용하지 않습니다.",
     );
     expect(pageSource).toContain("예: 덕짱");
-    expect(pageSource).toContain("이름/닉네임");
     expect(pageSource).toContain("미입력");
     expect(pageSource).toContain("displayName");
+    expect(pageSource).not.toContain("이름 또는 " + "닉네임");
+    expect(pageSource).not.toContain("이름/" + "닉네임");
     expect(pageSource).toContain("양력 기준 생년월일");
     expect(pageSource).toContain(
       "현재 V1은 양력 기준 생년월일만 지원합니다.",

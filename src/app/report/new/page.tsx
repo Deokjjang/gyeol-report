@@ -531,7 +531,7 @@ export default function NewReportPage() {
                       htmlFor="displayName"
                       className="block text-sm font-medium text-neutral-200"
                     >
-                      이름 또는 닉네임
+                      이름
                     </label>
                     <input
                       id="displayName"
@@ -759,7 +759,7 @@ export default function NewReportPage() {
                   </h3>
                   <dl className="grid gap-3 text-sm">
                     <div className="flex justify-between gap-4">
-                      <dt className="text-neutral-500">이름/닉네임</dt>
+                      <dt className="text-neutral-500">이름</dt>
                       <dd className="text-right text-neutral-200">
                         {displayName.trim() || "미입력"}
                       </dd>
