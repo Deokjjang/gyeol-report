@@ -61,6 +61,12 @@ describe("new report page source", () => {
     expect(pageSource).toContain(
       "전체 리포트는 정식 결제 연동 이후 제공됩니다.",
     );
+    expect(pageSource).toContain(
+      "결제 후 전체 리포트를 받아보는 구조로 준비 중입니다.",
+    );
+    expect(pageSource).toContain(
+      "현재는 결제 전 테스트용 무료 미리보기만 확인할 수 있습니다.",
+    );
     expect(pageSource).not.toContain(
       "전체 리포트 영역은 " + "정식 결제 연동 이후 제공됩니다.",
     );
@@ -87,6 +93,12 @@ describe("new report page source", () => {
 
     expect(pageSource).toContain(
       "모바일에서 한 단계씩 입력한 뒤 무료 미리보기를 생성합니다.",
+    );
+    expect(pageSource).toContain(
+      "현재 테스트 버전에서는 무료 미리보기를 생성합니다.",
+    );
+    expect(pageSource).toContain(
+      "정식 버전에서는 결제 후 전체 리포트가 생성됩니다.",
     );
     expect(pageSource).toContain("이름");
     expect(pageSource).toContain(
@@ -370,6 +382,8 @@ describe("new report page source", () => {
   it("renders global paid teaser once outside compact locked cards", () => {
     const globalTeaserMarkers = [
       "전체 리포트에서는 무료 미리보기에서 보인 핵심 구조를 바탕으로",
+      "정식 버전에서는 결제 후 전체 리포트가 생성되고, 공유 링크로 같은 리포트를 다시 열 수 있습니다.",
+      "공유 링크로 가족, 연인, 친구에게 같은 결과를 보여줄 수 있습니다.",
       "오행, 십성, 신살·귀인, 일·돈·관계 활용",
       "전체 리포트에서 이어지는 내용",
       "오행 보완 루틴",
