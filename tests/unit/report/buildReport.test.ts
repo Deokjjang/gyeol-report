@@ -780,6 +780,8 @@ describe("buildReport", () => {
     );
     const text = JSON.stringify([mbtiSection, bridgeSection]);
 
+    expect(mbtiSection?.titleKo).toBe("MBTI 프로필");
+    expect(bridgeSection?.titleKo).toBe("사주×MBTI 연결");
     expect(text).toContain(
       "MBTI는 내가 인식하는 나의 모습이 반영되기 쉽습니다.",
     );
@@ -787,12 +789,54 @@ describe("buildReport", () => {
       "가능하면 나를 오래 본 사람의 피드백이나 여러 번의 검사 결과를 함께 참고하면 더 안정적으로 볼 수 있습니다.",
     );
     expect(text).toContain("MBTI 기본 정보");
+    expect(text).toContain("자기보고");
+    expect(text).toContain("ENTJ");
+    expect(text).toContain("전략");
     expect(text).toContain(
       "목표를 세우고, 구조를 만들고, 빠르게 밀고 가는 전략 추진형에 가깝습니다.",
     );
+    expect(text).toContain("MBTI는 사주를 대체하는 기준이 아니라");
+    expect(text).toContain("생각·판단·소통 방식");
+    expect(text).toContain("사주와 MBTI가 겹치는 부분");
+    expect(text).toContain("조절 지점");
+    expect(text).toContain("의사결정 속도");
+    expect(text).toContain("기준을 세우는 방식");
+    expect(text).toContain("표현을 먼저 하는지");
+    expect(text).toContain("정리를 먼저 하는지");
+    expect(text).toContain("에너지가 빨리 닳는 장면");
+    expect(text).toContain("회복이 쉬운 장면");
     expect(text).toContain("겹치는 점");
     expect(text).toContain("다르게 보이는 점");
     expect(text).toContain("입력 MBTI 안에서의 세부 스타일");
+  });
+
+  it("renders strengthened style labels for selected MBTI types", () => {
+    const styleCases = [
+      { type: "INTJ", label: "구조 설계형" },
+      { type: "INTP", label: "원리 탐색형" },
+      { type: "ENTJ", label: "전략 추진형" },
+      { type: "ENTP", label: "관점 전환형" },
+      { type: "INFP", label: "가치 몰입형" },
+      { type: "ENFP", label: "가능성 확장형" },
+      { type: "ISTJ", label: "기준 보존형" },
+      { type: "ESTJ", label: "운영 정리형" },
+    ] as const;
+
+    for (const item of styleCases) {
+      const report = buildReport(
+        createReportInput({
+          mbti: getMbtiProfile(item.type),
+        }),
+      );
+      const section = report.sections.find(
+        (reportSection) => reportSection.id === "MBTI_PROFILE",
+      );
+      const text = JSON.stringify(section);
+
+      expect(text).toContain(item.type);
+      expect(text).toContain(item.label);
+      expect(text).toContain("일·관계·자기관리 스타일");
+    }
   });
 
   it("renders saju mbti suggestion section", () => {
