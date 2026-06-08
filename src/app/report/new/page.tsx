@@ -9,6 +9,11 @@ type ValidationError = {
   messageKo: string;
 };
 
+type CreateReportErrorSummary = {
+  code: string;
+  messageKo: string;
+};
+
 type ReportBlock = {
   kind: string;
   titleKo?: string;
@@ -45,6 +50,7 @@ type CreateReportResponse =
     }
   | {
       ok: false;
+      error?: CreateReportErrorSummary;
       errors: ValidationError[];
     };
 
@@ -154,6 +160,28 @@ function formatBirthTimeSummary(
   }
 
   return exactTime ? `정확한 시간 · ${exactTime}` : "정확한 시간 · 미입력";
+}
+
+function getReportCreationErrorMessage(errorCode: string | undefined): string {
+  if (errorCode === "SOLAR_TERM_YEAR_UNSUPPORTED") {
+    return "현재 입력값은 자동 계산 범위에서 처리하지 못했습니다. 생년월일과 출생시간을 다시 확인해 주세요.";
+  }
+
+  if (errorCode === "NETWORK_ERROR") {
+    return "일시적인 연결 문제로 리포트를 만들지 못했습니다. 잠시 후 다시 시도해 주세요.";
+  }
+
+  return "입력한 생년월일, 출생시간, MBTI를 다시 확인해 주세요. 잠시 후 다시 시도해 주세요.";
+}
+
+function getCreateReportErrorCode(
+  response: Extract<CreateReportResponse, { ok: false }>,
+): string | undefined {
+  const unsupportedYearError = response.errors.find(
+    (error) => error.code === "SOLAR_TERM_YEAR_UNSUPPORTED",
+  );
+
+  return unsupportedYearError?.code ?? response.error?.code;
 }
 
 function canShowSectionBody(
@@ -292,6 +320,7 @@ function renderReportBlock(block: ReportBlock, index: number) {
 export default function NewReportPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<ValidationError[]>([]);
+  const [creationErrorMessage, setCreationErrorMessage] = useState("");
   const [report, setReport] = useState<ReportPreview | null>(null);
   const [currentStep, setCurrentStep] = useState<ReportInputStep>(0);
   const [displayName, setDisplayName] = useState("");
@@ -365,6 +394,7 @@ export default function NewReportPage() {
 
     setIsSubmitting(true);
     setErrors([]);
+    setCreationErrorMessage("");
     setReport(null);
 
     const payload = {
@@ -390,18 +420,16 @@ export default function NewReportPage() {
 
       if (!json.ok) {
         setErrors(json.errors);
+        setCreationErrorMessage(
+          getReportCreationErrorMessage(getCreateReportErrorCode(json)),
+        );
         return;
       }
 
       setReport(json.report);
     } catch {
-      setErrors([
-        {
-          field: "request",
-          code: "REQUEST_FAILED",
-          messageKo: "리포트를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.",
-        },
-      ]);
+      setErrors([]);
+      setCreationErrorMessage(getReportCreationErrorMessage("NETWORK_ERROR"));
     } finally {
       setIsSubmitting(false);
     }
@@ -790,22 +818,18 @@ export default function NewReportPage() {
               ) : null}
             </form>
 
-            {errors.length > 0 ? (
+            {creationErrorMessage || errors.length > 0 ? (
               <section className="space-y-3 rounded-lg border border-red-900/60 bg-red-950/30 p-5">
                 <h2 className="font-semibold text-red-100">
-                  입력값을 확인해 주세요.
+                  리포트 생성에 실패했습니다.
                 </h2>
                 <p className="text-sm leading-6 text-red-100/90">
-                  리포트를 생성하지 못했습니다. 입력값을 확인한 뒤 다시 시도해
-                  주세요.
+                  {creationErrorMessage ||
+                    getReportCreationErrorMessage(undefined)}
                 </p>
-                <ul className="space-y-2 text-sm leading-6 text-red-200">
-                  {errors.map((error) => (
-                    <li key={`${error.field}-${error.code}`}>
-                      {error.messageKo}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-sm leading-6 text-red-200">
+                  입력 정보를 고친 뒤 무료 미리보기를 다시 생성해 주세요.
+                </p>
               </section>
             ) : null}
 

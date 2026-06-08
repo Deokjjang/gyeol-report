@@ -43,7 +43,7 @@ describe("new report page source", () => {
   });
 
   it("renders error and preview text", () => {
-    expect(pageSource).toContain("입력값을 확인해 주세요.");
+    expect(pageSource).toContain("리포트 생성에 실패했습니다.");
     expect(pageSource).toContain("무료 미리보기 생성");
     expect(pageSource).toContain("생성 중...");
     expect(pageSource).toContain("report.titleKo");
@@ -191,8 +191,20 @@ describe("new report page source", () => {
   });
 
   it("renders calm creation error copy", () => {
+    expect(pageSource).toContain("function getReportCreationErrorMessage");
+    expect(pageSource).toContain("리포트 생성에 실패했습니다.");
     expect(pageSource).toContain(
-      "리포트를 생성하지 못했습니다. 입력값을 확인한 뒤 다시 시도해",
+      "입력한 생년월일, 출생시간, MBTI를 다시 확인해 주세요.",
+    );
+    expect(pageSource).toContain("잠시 후 다시 시도해 주세요.");
+    expect(pageSource).toContain(
+      "현재 입력값은 자동 계산 범위에서 처리하지 못했습니다.",
+    );
+    expect(pageSource).toContain(
+      "일시적인 연결 문제로 리포트를 만들지 못했습니다.",
+    );
+    expect(pageSource).toContain(
+      "입력 정보를 고친 뒤 무료 미리보기를 다시 생성해 주세요.",
     );
     expect(pageSource).not.toContain(".stack");
     expect(pageSource).not.toContain("JSON.stringify(error)");
