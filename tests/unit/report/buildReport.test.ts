@@ -402,6 +402,8 @@ describe("buildReport", () => {
     expect(section?.blocks.some((block) => block.kind === "BULLET_LIST")).toBe(
       true,
     );
+    expect(text).toContain("오행은 좋고 나쁨을 나누는 점수가 아니라");
+    expect(text).toContain("부족한 기운은 억지로 채우기보다");
     expect(text).toContain("추천 색상");
     expect(text).toContain("추천 공간");
     expect(text).toContain("보완 루틴");
@@ -424,6 +426,7 @@ describe("buildReport", () => {
     expect(text).toContain("의식적으로 챙겨야 균형이 맞습니다");
     expect(text).toContain("결과를 보장하는 요소가 아니라");
     expect(text).toContain("리마인드 도구");
+    expect(text).toContain("이번 주에 조정할 수 있는 행동 단위");
     expect(text).not.toContain(badParticle);
     expect(text).not.toContain(oldDevPreviewCopy);
     expect(text).not.toContain(oldDevModeCopy);
@@ -481,6 +484,8 @@ describe("buildReport", () => {
     expect(text).toContain(
       "편인과 비견의 점수가 상대적으로 높게 나타나 자기 기준, 학습성, 독립적 판단이 강하게 작동할 수 있습니다.",
     );
+    expect(text).toContain("십성은 성격표가 아니라");
+    expect(text).toContain("관계, 일, 자원, 표현 방식");
     expect(text).not.toContain("십성 묶음");
     expect(text).not.toContain("십성 해석 포인트");
   });
@@ -670,6 +675,10 @@ describe("buildReport", () => {
     expect(text).toContain("관계에서 자주 생길 수 있는 장면");
     expect(text).toContain("연애에서 도움이 되는 태도");
     expect(text).toContain("오늘부터 써먹는 루틴");
+    expect(text).toContain("강한 기운을 더 쓰는 역할");
+    expect(text).toContain("돈과 자원은 많이 들어오는지보다");
+    expect(text).toContain("관리·판단·교환·축적");
+    expect(text).toContain("내가 편하게 쓰는 반응 방식");
   });
 
   it("renders shinsal section from shinsal tags", () => {

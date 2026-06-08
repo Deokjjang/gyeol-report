@@ -821,6 +821,17 @@ function createElementsBlock(input: ReportInput): ReportBlock {
   };
 }
 
+function createElementsPracticalGuideBlock(): ReportBlock {
+  return {
+    kind: "BULLET_LIST",
+    titleKo: "오행 실전 기준",
+    itemsKo: [
+      "오행은 좋고 나쁨을 나누는 점수가 아니라, 에너지가 어떤 방식으로 쓰이기 쉬운지 보는 언어입니다.",
+      "부족한 기운은 억지로 채우기보다 환경, 루틴, 일의 방식으로 보완하는 편이 현실적입니다.",
+    ],
+  };
+}
+
 function createElementsInterpretationBlock(input: ReportInput): ReportBlock {
   return {
     kind: "BULLET_LIST",
@@ -852,6 +863,12 @@ function createTenGodsBlock(input: ReportInput): ReportBlock {
 
 function createTenGodsUserFacingBlocks(input: ReportInput): ReportBlock[] {
   return [
+    {
+      kind: "PARAGRAPH",
+      titleKo: "십성 실전 기준",
+      bodyKo:
+        "십성은 성격표가 아니라 관계, 일, 자원, 표현 방식이 어디로 흐르기 쉬운지 보는 기준입니다.",
+    },
     {
       kind: "BULLET_LIST",
       titleKo: "강하게 보이는 흐름",
@@ -1374,6 +1391,15 @@ function createPracticalPointBlocks(input: ReportInput): ReportBlock[] {
 
   return [
     {
+      kind: "BULLET_LIST",
+      titleKo: "실전 해석 기준",
+      itemsKo: [
+        "일에서는 강한 기운을 더 쓰는 역할과 부족한 기운을 보완해 주는 환경을 나누어 보는 것이 도움이 됩니다.",
+        "돈과 자원은 많이 들어오는지보다, 관리·판단·교환·축적 중 어느 방식에서 안정감이 생기는지를 보는 편이 안전합니다.",
+        "관계에서는 내가 편하게 쓰는 반응 방식과 상대가 부담스럽게 느낄 수 있는 반응 방식을 함께 보는 것이 좋습니다.",
+      ],
+    },
+    {
       kind: "PARAGRAPH",
       titleKo: "잘 맞는 역할",
       bodyKo: `${primary.labelKo} 기운이 두드러져 ${primary.tendencyKo} 앞에서 말하고 설득하거나, 메시지를 정리해 드러내는 역할처럼 강점이 바로 보이는 구조와 잘 맞을 수 있습니다.`,
@@ -1530,11 +1556,13 @@ function buildActionGuideItems(input: ReportInput): string[] {
       "강하게 나온 기질은 장점과 부담을 함께 봅니다.",
       "부족하게 나온 기운은 결핍이 아니라 의식적으로 보완할 영역으로 봅니다.",
       "MBTI와 사주가 겹치는 부분은 반복되는 자기 패턴으로 점검합니다.",
+      "해석은 맞고 틀림을 가르는 결론보다, 이번 주에 조정할 수 있는 행동 단위로 내려올 때 쓸모가 생깁니다.",
     ];
   }
 
   const items: string[] = [
     buildStrengthActionGuideItem(structureAnalysis.dayMasterStrength.labelKo),
+    "해석은 맞고 틀림을 가르는 결론보다, 이번 주에 조정할 수 있는 행동 단위로 내려올 때 쓸모가 생깁니다.",
   ];
   const patternLabels = structureAnalysis.patterns
     .slice(0, 2)
@@ -1611,7 +1639,11 @@ export function buildReport(input: ReportInput): ReportOutput {
       titleKo: "오행",
       summaryKo:
         "오행은 목·화·토·금·수의 분포를 통해 에너지의 방향과 보완 루틴을 봅니다.",
-      blocks: [createElementsBlock(input), createElementsInterpretationBlock(input)],
+      blocks: [
+        createElementsBlock(input),
+        createElementsPracticalGuideBlock(),
+        createElementsInterpretationBlock(input),
+      ],
     }),
     createSection({
       id: "TEN_GODS",
