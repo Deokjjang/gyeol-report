@@ -6,6 +6,7 @@ import {
   type SupabaseReportPersistenceQueryClient,
   type SupabaseReportQueryResult,
 } from "./supabaseReportPersistenceClient";
+import { parseSupabasePaidReportLookupRpcResult } from "./supabasePaidReportLookupRpcRow";
 import type { SupabaseReportRow } from "./supabaseReportPersistenceMapper";
 
 export const SUPABASE_REPORT_PERSISTENCE_SDK_CLIENT_STATUS =
@@ -26,6 +27,8 @@ const DEFAULT_REPORTS_TABLE = "reports";
 const QUERY_FAILED_MESSAGE = "Supabase reports query failed.";
 const QUERY_INVALID_DATA_MESSAGE =
   "Supabase reports query returned invalid data.";
+const LOOKUP_VALIDATION_FAILURE_CODE =
+  "REPORT_STORAGE_VALIDATION_FAILED" as const;
 
 function mapSupabaseError<T>(
   error: SupabaseQueryError,
@@ -78,18 +81,6 @@ function createInsertSuccessResult(): SupabaseReportQueryResult<null> {
 
 function isSupabaseReportRow(value: unknown): value is SupabaseReportRow {
   return typeof value === "object" && value !== null && !Array.isArray(value);
-}
-
-function isSupabasePaidReportLookupRow(
-  value: unknown,
-): value is SupabasePaidReportLookupRow {
-  return isSupabaseReportRow(value);
-}
-
-function isSupabasePaidReportLookupRowArray(
-  value: unknown,
-): value is readonly SupabasePaidReportLookupRow[] {
-  return Array.isArray(value) && value.every(isSupabasePaidReportLookupRow);
 }
 
 function isSupabaseReportRowArray(
@@ -179,17 +170,15 @@ export function createSupabaseReportPersistenceSdkClient(
         return mapSupabaseError(result.error);
       }
 
-      if (result.data === null) {
-        return { ok: true, data: null };
-      }
+      const parseResult = parseSupabasePaidReportLookupRpcResult(result.data);
 
-      if (isSupabasePaidReportLookupRowArray(result.data)) {
-        return { ok: true, data: result.data[0] ?? null };
-      }
-
-      return isSupabasePaidReportLookupRow(result.data)
-        ? { ok: true, data: result.data }
-        : createInvalidDataResult();
+      return parseResult.ok
+        ? { ok: true, data: parseResult.row }
+        : {
+            ok: false,
+            code: LOOKUP_VALIDATION_FAILURE_CODE,
+            messageKo: parseResult.messageKo,
+          };
     },
 
     async listReports(input): Promise<

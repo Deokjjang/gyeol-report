@@ -4,20 +4,16 @@ import { describe, expect, it } from "vitest";
 
 import {
   findPaidReportByShareToken,
+  type PaidReportLookupRecord,
   type PaidReportLookupResult,
   type PaidReportLookupStore,
 } from "@/lib/persistence/paidReportLookupBoundary";
 import { issueReportShareToken } from "@/lib/persistence/reportShareTokenIssuer";
-import type {
-  PersistedPaymentLinkage,
-  PersistedReportRecord,
-  ReportPaymentStatus,
-} from "@/lib/persistence/reportPersistenceTypes";
+import type { ReportPaymentStatus } from "@/lib/persistence/reportPersistenceTypes";
 import type { ReportOutput } from "@/lib/report/types";
 
 const createdAt = "2026-01-01T00:00:00.000Z";
 const updatedAt = "2026-01-01T00:01:00.000Z";
-const paidAt = "2026-01-01T00:02:00.000Z";
 
 const reportFixture: ReportOutput = {
   version: "v1",
@@ -46,58 +42,32 @@ function expectIssuedToken(): Extract<
   return result;
 }
 
-function createPayment(
-  overrides: Partial<PersistedPaymentLinkage> = {},
-): PersistedPaymentLinkage {
-  return {
-    orderId: "order_lookup_1",
-    provider: "manual_test_provider",
-    providerPaymentId: "provider_payment_lookup_1",
-    paymentStatus: "paid",
-    amount: 1290,
-    currency: "KRW",
-    paidAt,
-    ...overrides,
-  };
-}
-
 function createRecord(
   accessTokenHash: string,
-  overrides: Partial<PersistedReportRecord> = {},
-): PersistedReportRecord {
+  overrides: Partial<PaidReportLookupRecord> = {},
+): PaidReportLookupRecord {
   return {
     reportId: "report_paidlookup1",
-    createdAt,
-    updatedAt,
     status: "paid_unlocked",
-    reportVersion: "v1",
-    calculationVersion: "saju-mbti-v1",
-    locale: "ko-KR",
     accessMode: "paid",
     accessTokenHash,
-    accessTokenCreatedAt: createdAt,
-    accessTokenVersion: "v1",
-    inputSnapshot: {
-      birthDate: "1996-12-06",
-      birthTime: "14:15",
-      birthTimeUnknown: false,
-      calendarType: "SOLAR",
-      timezone: "Asia/Seoul",
-      gender: "FEMALE",
-      mbti: "ENTJ",
-    },
     reportSnapshot: {
       report: reportFixture,
       reportVersion: "v1",
       renderVersion: "v1",
       createdAt,
     },
-    payment: createPayment(),
+    reportVersion: "v1",
+    calculationVersion: "saju-mbti-v1",
+    locale: "ko-KR",
+    paymentStatus: "paid",
+    createdAt,
+    updatedAt,
     ...overrides,
   };
 }
 
-function createStore(record: PersistedReportRecord | null): {
+function createStore(record: PaidReportLookupRecord | null): {
   readonly store: PaidReportLookupStore;
   readonly calls: LookupCalls;
 } {
@@ -135,12 +105,12 @@ function expectLookupFailure(
 
 function createRecordWithoutReportSnapshot(
   accessTokenHash: string,
-): PersistedReportRecord {
+): PaidReportLookupRecord {
   return Object.fromEntries(
     Object.entries(createRecord(accessTokenHash)).filter(
       ([key]) => key !== "reportSnapshot",
     ),
-  ) as unknown as PersistedReportRecord;
+  ) as unknown as PaidReportLookupRecord;
 }
 
 function readSource(relativePath: string): string {
@@ -215,7 +185,9 @@ describe("findPaidReportByShareToken", () => {
     expect(serializedView).not.toContain("share" + "Token");
     expect(serializedView).not.toContain("sharePath");
     expect(serializedView).not.toContain("access" + "TokenHash");
-    expect(serializedView).not.toContain(record.payment?.providerPaymentId);
+    expect(serializedView).not.toContain("access" + "TokenCreatedAt");
+    expect(serializedView).not.toContain("access" + "TokenVersion");
+    expect(serializedView).not.toContain("provider_payment_lookup_1");
     expect(serializedView).not.toContain("providerPaymentId");
     expect(serializedView).not.toContain("deletedAt");
   });
@@ -269,7 +241,7 @@ describe("findPaidReportByShareToken", () => {
   it("rejects unpaid records", async () => {
     const issued = expectIssuedToken();
     const record = createRecord(issued.issue.accessTokenHash, {
-      payment: createPayment({ paymentStatus: "pending" }),
+      paymentStatus: "pending",
     });
     const { store } = createStore(record);
 
@@ -287,9 +259,7 @@ describe("findPaidReportByShareToken", () => {
     for (const paymentStatus of rejectedStatuses) {
       const issued = expectIssuedToken();
       const record = createRecord(issued.issue.accessTokenHash, {
-        payment: createPayment({
-          paymentStatus: paymentStatus as unknown as ReportPaymentStatus,
-        }),
+        paymentStatus: paymentStatus as unknown as ReportPaymentStatus,
       });
       const { store } = createStore(record);
 

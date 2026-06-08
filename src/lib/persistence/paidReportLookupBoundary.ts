@@ -1,15 +1,30 @@
 import { hashReportAccessTokenSync } from "./reportAccessTokenHash";
 import type {
-  PersistedReportRecord,
   PersistedReportSnapshot,
   ReportAccessMode,
+  ReportPaymentStatus,
   ReportPersistenceStatus,
 } from "./reportPersistenceTypes";
 
 export type PaidReportLookupStore = {
   readonly findByAccessTokenHash: (
     accessTokenHash: string,
-  ) => Promise<PersistedReportRecord | null>;
+  ) => Promise<PaidReportLookupRecord | null>;
+};
+
+export type PaidReportLookupRecord = {
+  readonly reportId: string;
+  readonly status: ReportPersistenceStatus;
+  readonly accessMode: ReportAccessMode;
+  readonly accessTokenHash: string;
+  readonly reportSnapshot: PersistedReportSnapshot;
+  readonly reportVersion: string;
+  readonly calculationVersion: string;
+  readonly locale: string;
+  readonly paymentStatus: ReportPaymentStatus;
+  readonly createdAt: string;
+  readonly updatedAt: string;
+  readonly deletedAt?: string;
 };
 
 export type PaidReportSafeView = {
@@ -61,8 +76,8 @@ function createLookupFailure(
 }
 
 function hasReportSnapshot(
-  record: PersistedReportRecord,
-): record is PersistedReportRecord & {
+  record: PaidReportLookupRecord,
+): record is PaidReportLookupRecord & {
   readonly reportSnapshot: PersistedReportSnapshot;
 } {
   return (
@@ -73,7 +88,7 @@ function hasReportSnapshot(
   );
 }
 
-function toSafeView(record: PersistedReportRecord): PaidReportSafeView {
+function toSafeView(record: PaidReportLookupRecord): PaidReportSafeView {
   return {
     reportId: record.reportId,
     status: record.status,
@@ -88,14 +103,14 @@ function toSafeView(record: PersistedReportRecord): PaidReportSafeView {
 }
 
 function isPaidUnlockedReport(
-  record: PersistedReportRecord,
+  record: PaidReportLookupRecord,
   accessTokenHash: string,
 ): boolean {
   return (
     record.accessTokenHash === accessTokenHash &&
     record.accessMode === "paid" &&
     record.status === "paid_unlocked" &&
-    record.payment?.paymentStatus === "paid" &&
+    record.paymentStatus === "paid" &&
     record.deletedAt === undefined &&
     hasReportSnapshot(record)
   );

@@ -1,19 +1,7 @@
 import type { SupabaseReportRow } from "./supabaseReportPersistenceMapper";
+import type { SupabasePaidReportLookupRow } from "./supabasePaidReportLookupRpcRow";
 
-export type SupabasePaidReportLookupRow = Pick<
-  SupabaseReportRow,
-  | "report_id"
-  | "status"
-  | "access_mode"
-  | "input_snapshot"
-  | "report_snapshot"
-  | "report_version"
-  | "calculation_version"
-  | "locale"
-  | "payment_status"
-  | "created_at"
-  | "updated_at"
->;
+export type { SupabasePaidReportLookupRow } from "./supabasePaidReportLookupRpcRow";
 
 export type SupabaseReportQueryResult<T> =
   | { readonly ok: true; readonly data: T }
@@ -24,6 +12,7 @@ export type SupabaseReportQueryResult<T> =
         | "DUPLICATE_REPORT_ID"
         | "NOT_FOUND"
         | "PERMISSION_DENIED"
+        | "REPORT_STORAGE_VALIDATION_FAILED"
         | "UNKNOWN_DB_ERROR";
       readonly messageKo: string;
     };

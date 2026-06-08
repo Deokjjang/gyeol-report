@@ -1,18 +1,14 @@
 import { createReportApiEnvelopeFromJson } from "../src/lib/api/createReport";
 import {
   findPaidReportByShareToken,
+  type PaidReportLookupRecord,
   type PaidReportLookupStore,
 } from "../src/lib/persistence/paidReportLookupBoundary";
 import { persistPaidFullReport } from "../src/lib/persistence/paidReportStorageBoundary";
 import { createReportPersistenceRuntimeFromEnv } from "../src/lib/persistence/reportPersistenceRuntime";
 import { issueReportShareToken } from "../src/lib/persistence/reportShareTokenIssuer";
-import type { PersistedReportRecord } from "../src/lib/persistence/reportPersistenceTypes";
 import type { SupabasePaidReportLookupRow } from "../src/lib/persistence/supabaseReportPersistenceClient";
 import { createSupabaseReportPersistenceSdkClient } from "../src/lib/persistence/supabaseReportPersistenceSdkClient";
-import type {
-  PersistedReportInputSnapshot,
-  PersistedReportSnapshot,
-} from "../src/lib/persistence/reportPersistenceTypes";
 import { buildReportPersistencePayload } from "../src/lib/report/reportPersistencePayload";
 import type { ReportRequestRawInput } from "../src/lib/validation/types";
 
@@ -62,7 +58,7 @@ function getRequiredEnvValue(name: RequiredSupabaseEnvName): string {
 function mapLookupRowToRecord(
   row: SupabasePaidReportLookupRow,
   accessTokenHash: string,
-): PersistedReportRecord {
+): PaidReportLookupRecord {
   if (
     row.status !== "paid_unlocked" ||
     row.access_mode !== "paid" ||
@@ -84,18 +80,8 @@ function mapLookupRowToRecord(
     locale: row.locale,
     accessMode: row.access_mode,
     accessTokenHash,
-    accessTokenCreatedAt: row.created_at,
-    accessTokenVersion: "v1",
-    inputSnapshot: row.input_snapshot as PersistedReportInputSnapshot,
-    reportSnapshot: row.report_snapshot as PersistedReportSnapshot,
-    payment: {
-      orderId: "lookup_safe_order",
-      provider: "lookup_safe_provider",
-      providerPaymentId: "lookup_safe_provider_payment",
-      paymentStatus: row.payment_status,
-      amount: 0,
-      currency: "KRW",
-    },
+    reportSnapshot: row.report_snapshot,
+    paymentStatus: row.payment_status,
   };
 }
 

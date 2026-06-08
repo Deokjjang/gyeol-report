@@ -80,7 +80,9 @@ describe("supabase report persistence SDK client", () => {
     expect(source).toContain(
       ".rpc(\"find_paid_report_by_access_token_hash\"",
     );
+    expect(source).toContain("parseSupabasePaidReportLookupRpcResult");
     expect(source).toContain("p_access_token_hash: accessTokenHash");
+    expect(source).toContain("REPORT_STORAGE_VALIDATION_FAILED");
     expect(lookupSource).not.toContain(".from(tableName)");
     expect(lookupSource).not.toContain(".select(");
     expect(lookupSource).not.toContain(".eq(\"access_token_hash\"");
