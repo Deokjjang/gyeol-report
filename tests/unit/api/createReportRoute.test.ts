@@ -195,7 +195,7 @@ describe("create report route", () => {
     const response = await POST(
       createJsonRequest({
         ...validRawInput,
-        displayName: "덕짱",
+        displayName: "송민",
       }),
     );
 
@@ -208,7 +208,25 @@ describe("create report route", () => {
       const responseText = JSON.stringify(body);
 
       expect(body.reportId).toMatch(/^report_/);
-      expect(responseText).toContain("덕짱님은");
+      expect(responseText).toContain("송민");
+      expect(responseText).toContain("송민님은");
+      expect(responseText).not.toContain("undefined님");
+      expect(responseText).not.toContain("null님");
+    }
+  });
+
+  it("keeps neutral report subject without display name", async () => {
+    const response = await POST(createJsonRequest(validRawInput));
+
+    expect(response.status).toBe(200);
+
+    const body = await readApiResponseBody(response);
+
+    expect(body.ok).toBe(true);
+    if (body.ok) {
+      const responseText = JSON.stringify(body.report);
+
+      expect(responseText).toContain("당신");
       expect(responseText).not.toContain("undefined님");
       expect(responseText).not.toContain("null님");
     }

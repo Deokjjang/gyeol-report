@@ -96,8 +96,15 @@ describe("createReportFromRawInput", () => {
       displayName: "덕짱",
     });
     const text = JSON.stringify(report);
+    const quickSummary = findSection(report.sections, "QUICK_SUMMARY");
+    const openingBlock = quickSummary?.blocks.find(
+      (block) =>
+        block.kind === "PARAGRAPH" &&
+        block.titleKo === "나를 부르는 첫 문장",
+    );
 
     expect(text).toContain("덕짱님은");
+    expect(openingBlock?.bodyKo).toContain("덕짱님은");
     expect(text).not.toContain("undefined님");
     expect(text).not.toContain("null님");
   });
@@ -105,8 +112,15 @@ describe("createReportFromRawInput", () => {
   it("keeps neutral wording when display name is absent", () => {
     const report = getSuccessfulReport(validRawInput);
     const text = JSON.stringify(report);
+    const quickSummary = findSection(report.sections, "QUICK_SUMMARY");
+    const openingBlock = quickSummary?.blocks.find(
+      (block) =>
+        block.kind === "PARAGRAPH" &&
+        block.titleKo === "나를 부르는 첫 문장",
+    );
 
     expect(text).toContain("당신은");
+    expect(openingBlock?.bodyKo).toContain("당신은");
     expect(text).not.toContain("undefined님");
     expect(text).not.toContain("null님");
   });

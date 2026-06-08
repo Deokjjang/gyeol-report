@@ -209,8 +209,14 @@ describe("buildReport", () => {
     );
     const section = report.sections.find((item) => item.id === "QUICK_SUMMARY");
     const text = JSON.stringify(section);
+    const openingBlock = section?.blocks.find(
+      (block) =>
+        block.kind === "PARAGRAPH" &&
+        block.titleKo === "나를 부르는 첫 문장",
+    );
 
     expect(text).toContain("덕짱님은");
+    expect(openingBlock?.bodyKo).toContain("덕짱님은");
     expect(text).not.toContain("undefined님");
     expect(text).not.toContain("null님");
   });
@@ -219,8 +225,14 @@ describe("buildReport", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "QUICK_SUMMARY");
     const text = JSON.stringify(section);
+    const openingBlock = section?.blocks.find(
+      (block) =>
+        block.kind === "PARAGRAPH" &&
+        block.titleKo === "나를 부르는 첫 문장",
+    );
 
     expect(text).toContain("당신은");
+    expect(openingBlock?.bodyKo).toContain("당신은");
     expect(text).not.toContain("undefined님");
     expect(text).not.toContain("null님");
   });

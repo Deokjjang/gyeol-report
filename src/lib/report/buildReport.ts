@@ -693,16 +693,21 @@ function getStructureKeywordItems(input: ReportInput): string[] {
 }
 
 function buildHookSummaryItems(input: ReportInput): string[] {
-  const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
   const weak = ELEMENT_DISPLAY[getWeakElement(input)];
   const style = MBTI_STYLE_LABELS[input.mbti.type];
-  const subject = getReportSubject(input.displayName);
 
   return [
-    `${subject}은 ${primary.labelKo} 기운의 ${primary.tendencyKo}`,
+    buildPersonalizedOpening(input),
     `${input.mbti.type} ${style} 성향과 함께 볼 때, 판단과 실행의 속도를 실전에서 쓰기 쉬운 편으로 읽을 수 있습니다.`,
     `다만 ${weak.labelKo} 기운의 보완 루틴을 챙길수록 강점이 안정적으로 쓰입니다.`,
   ];
+}
+
+function buildPersonalizedOpening(input: ReportInput): string {
+  const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
+  const subject = getReportSubject(input.displayName);
+
+  return `${subject}은 ${primary.labelKo} 기운의 ${primary.tendencyKo}`;
 }
 
 function buildStrengthItems(input: ReportInput): string[] {
@@ -747,6 +752,11 @@ function buildTodayRoutineItems(input: ReportInput): string[] {
 
 function createQuickSummaryBlocks(input: ReportInput): ReportBlock[] {
   return [
+    {
+      kind: "PARAGRAPH",
+      titleKo: "나를 부르는 첫 문장",
+      bodyKo: buildPersonalizedOpening(input),
+    },
     {
       kind: "BULLET_LIST",
       titleKo: "3줄 요약",
