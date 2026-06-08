@@ -269,10 +269,10 @@ describe("report output fixture", () => {
     expect(text).toContain("추천 색상·공간·보완 루틴");
     expect(text).toContain("가장 강하게 쓰는 흐름");
     expect(text).toContain("보완해서 보면 좋은 흐름");
-    expect(text).toContain("내가 움직이는 방식");
-    expect(text).toContain("십성 묶음");
     expect(text).toContain("십성 종합");
-    expect(text).toContain("십성 해석 포인트");
+    expect(text).not.toContain("내가 움직이는 " + "방식");
+    expect(text).not.toContain("십성 " + "묶음");
+    expect(text).not.toContain("십성 해석 " + "포인트");
     expect(text).toContain(
       "밝은 태양이 날카로운 금속 위에 비치는 이미지입니다.",
     );
@@ -280,7 +280,7 @@ describe("report output fixture", () => {
       "병신일주는 밝게 드러나는 표현성과 빠른 판단력이 함께 작동하는 구조입니다.",
     );
     expect(text).toContain("물가 산책, 수면 루틴, 반신욕");
-    expect(text).toContain("십성 세부 리딩");
+    expect(text).not.toContain("십성 세부 " + "리딩");
     expect(text).toContain("비겁");
     expect(text).toContain("인성");
     expect(text).toContain("식상");
@@ -296,19 +296,21 @@ describe("report output fixture", () => {
 
     expect(blockKinds).toContain("PARAGRAPH");
     expect(blockKinds).toContain("BULLET_LIST");
-    expect(text).toContain("십성 묶음");
     expect(text).toContain("십성 종합");
-    expect(text).toContain("십성 해석 포인트");
     expect(text).toContain("가장 강하게 쓰는 흐름");
     expect(text).toContain("보완해서 보면 좋은 흐름");
     expect(text).toContain("내 기준을 세우고 직접 움직이는 힘");
     expect(text).toContain("생각을 결과물로 꺼내는 힘");
     expect(text).toContain("돈·자원·성과를 기준표로 관리하는 힘");
+    expect(text).not.toContain("내가 움직이는 " + "방식");
+    expect(text).not.toContain("십성 세부 " + "리딩");
+    expect(text).not.toContain("십성 " + "묶음");
+    expect(text).not.toContain("십성 해석 " + "포인트");
     expect(text).toContain("자기 기준");
     expect(text).toContain("학습");
     expect(text).toContain("표현");
-    expect(text).toContain("현실 감각");
-    expect(text).toContain("책임");
+    expect(text).toContain("현실 성과와 역할");
+    expect(text).toContain("역할과 기준 안에서 방향");
     expect(text).not.toContain("십성 흐름");
   });
 
@@ -424,11 +426,15 @@ describe("report output fixture", () => {
       "전체 리포트 영역은 " + "정식 결제 연동 이후 제공됩니다.",
     );
     expect(text).toContain("의식적으로 챙겨야 균형이 맞습니다");
-    expect(text).toContain("십성 세부 리딩");
     expect(text).toContain("잘 맞는 역할");
     expect(text).toContain("돈과 자원을 다루는 방식");
     expect(text).toContain("관계에서 자주 생길 수 있는 장면");
     expect(text).toContain("연애에서 도움이 되는 태도");
+    expect(text).toContain("목표와 기준이 어느 정도 있는 상황");
+    expect(text).toContain("기준표·예산·우선순위");
+    expect(text).toContain("해결보다 먼저 들어주는 시간");
+    expect(text).toContain("책임을 너무 빨리 떠안으면");
+    expect(text).toContain("사람과 속도를 맞추는 방식");
     expect(text).toContain("결과를 보장하는 요소가 아니라");
     expect(text).toContain("리마인드 도구");
     expect(text).not.toContain(badParticle);

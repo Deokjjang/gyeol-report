@@ -718,21 +718,11 @@ function buildWeakTenGodItems(input: ReportInput): string[] {
     .map((entry) => `${entry.labelKo}: ${entry.actionKo}`);
 }
 
-function buildMovementStyleItems(input: ReportInput): string[] {
-  return getTenGodGroupEntries(input)
-    .slice(0, 3)
-    .map((entry) => `${entry.labelKo}: ${entry.actionKo}`);
-}
-
 function getTenGodGroupAction(labelKo: string): string {
   return (
     TEN_GOD_GROUPS.find((group) => group.labelKo === labelKo)?.actionKo ??
     "상황을 보고 균형을 맞추는 힘"
   );
-}
-
-function formatTenGodGroupList(entries: readonly { labelKo: string; actionKo: string }[]): string {
-  return entries.map((entry) => `${entry.labelKo}: ${entry.actionKo}`).join(" / ");
 }
 
 function isRawElementStrengthTag(value: string): boolean {
@@ -786,10 +776,9 @@ function buildHookSummaryItems(input: ReportInput): string[] {
 }
 
 function buildPersonalizedOpening(input: ReportInput): string {
-  const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
   const subject = getReportSubject(input.displayName);
 
-  return `${subject}은 흐트러진 상황을 그대로 두기보다, ${primary.labelKo} 기운의 방식으로 기준을 세우고 자기 리듬을 다시 잡을 때 힘이 실립니다.`;
+  return `${subject}은 일이 흐트러졌을 때 그냥 흘려보내기보다, 기준을 세우고 다시 정리하면서 자기 리듬을 찾는 쪽에 힘이 실립니다.`;
 }
 
 function buildPracticalSummary(input: ReportInput): string {
@@ -937,25 +926,6 @@ function createElementsInterpretationBlock(input: ReportInput): ReportBlock {
   };
 }
 
-function createTenGodsBlock(input: ReportInput): ReportBlock {
-  const entries = getTenGodGroupEntries(input);
-  const strongEntries = entries.slice(0, 2);
-  const supportEntries = [...entries].reverse().slice(0, 2);
-  const balancedEntry = entries[2];
-
-  return {
-    kind: "BULLET_LIST",
-    titleKo: "십성 세부 리딩",
-    itemsKo: [
-      `가장 강하게 쓰는 흐름: ${formatTenGodGroupList(strongEntries)}`,
-      `보완해서 보면 좋은 흐름: ${formatTenGodGroupList(supportEntries)}`,
-      balancedEntry
-        ? `균형을 맞춰 볼 흐름: ${balancedEntry.labelKo}: ${balancedEntry.actionKo}`
-        : "균형을 맞춰 볼 흐름: 상황에 따라 강점과 보완점을 함께 봅니다.",
-    ],
-  };
-}
-
 function createTenGodsUserFacingBlocks(input: ReportInput): ReportBlock[] {
   return [
     {
@@ -974,20 +944,15 @@ function createTenGodsUserFacingBlocks(input: ReportInput): ReportBlock[] {
       titleKo: "보완해서 보면 좋은 흐름",
       itemsKo: buildWeakTenGodItems(input),
     },
-    {
-      kind: "BULLET_LIST",
-      titleKo: "내가 움직이는 방식",
-      itemsKo: buildMovementStyleItems(input),
-    },
   ];
 }
 
 function createTenGodsInterpretationBlock(): ReportBlock {
   return {
     kind: "PARAGRAPH",
-    titleKo: "십성 흐름",
+    titleKo: "십성 종합",
     bodyKo:
-      "편인과 비견 흐름이 상대적으로 눈에 띄어 자기 기준, 학습성, 독립적 판단이 강하게 작동할 수 있습니다. 재성과 관성도 함께 존재하므로 현실 책임과 성과 압박을 동시에 의식하는 구조로 볼 수 있습니다.",
+      "편인과 비견 흐름이 상대적으로 눈에 띄어 자기 기준, 학습성, 독립적 판단이 강하게 작동할 수 있습니다. 재성과 관성도 함께 존재하므로 현실 책임과 성과 압박을 한 번에 떠안기보다 기준표와 역할 범위를 나누어 보는 편이 좋습니다. 재성은 돈·자원·성과를 기준표로 관리하는 힘으로 함께 참고합니다.",
   };
 }
 
@@ -1000,49 +965,10 @@ function buildTenGodsSummaryFromStructure(
     .map((pattern) => pattern.labelKo);
 
   if (patternLabels.length > 0) {
-    return `십성 묶음으로 보면 이 사주는 ${strengthLabel} 흐름 위에 ${patternLabels.join(", ")} 신호가 함께 보입니다. 자기 기준과 학습·분석의 힘은 강하게 살아나지만, 재성·관성처럼 현실 성과와 역할을 다루는 기운도 함께 확인해야 합니다.`;
+    return `십성 종합으로 보면 이 사주는 ${strengthLabel} 흐름 위에 ${patternLabels.join(", ")} 신호가 함께 보입니다. 자기 기준과 학습·분석의 힘은 강하게 살아나지만, 재성·관성처럼 현실 성과와 역할을 다루는 기운도 함께 확인해야 합니다. 재성은 돈·자원·성과를 기준표로 관리하는 힘으로 함께 참고합니다.`;
   }
 
-  return `십성 묶음으로 보면 이 사주는 ${strengthLabel} 흐름을 중심으로 해석할 수 있습니다. 특정 한 기운만 보기보다 비겁·인성·식상·재성·관성의 균형을 함께 보는 편이 적절합니다.`;
-}
-
-function buildTenGodsPointItems(
-  structureAnalysis: NonNullable<ReportInput["structureAnalysis"]>,
-): string[] {
-  const evidence = structureAnalysis.dayMasterStrength.evidence;
-  const pointLabels = [
-    {
-      keyKo: "비겁",
-      bodyKo: "자기 기준, 독립성, 경쟁심, 직접 밀고 나가는 힘을 봅니다.",
-    },
-    {
-      keyKo: "인성",
-      bodyKo: "학습, 분석, 보호 본능, 생각을 정리하는 힘을 봅니다.",
-    },
-    {
-      keyKo: "식상",
-      bodyKo: "표현, 생산, 말과 결과물로 자신을 드러내는 방식을 봅니다.",
-    },
-    {
-      keyKo: "재성",
-      bodyKo: "현실 감각, 성과, 자원 관리, 결과 의식을 봅니다.",
-    },
-    {
-      keyKo: "관성",
-      bodyKo: "책임, 기준, 평가, 역할 의식을 봅니다.",
-    },
-  ] as const;
-  const items: string[] = [];
-
-  for (const point of pointLabels) {
-    const item = evidence.find((entry) => entry.keyKo === point.keyKo);
-
-    if (item) {
-      items.push(`${point.keyKo}: ${getTenGodGroupAction(point.keyKo)}. ${point.bodyKo}`);
-    }
-  }
-
-  return items;
+  return `십성 종합으로 보면 이 사주는 ${strengthLabel} 흐름을 중심으로 해석할 수 있습니다. 특정 한 기운만 보기보다 비겁·인성·식상·재성·관성의 균형을 함께 보는 편이 적절합니다. 재성은 돈·자원·성과를 기준표로 관리하는 힘으로 함께 참고합니다.`;
 }
 
 function buildTenGodsStructureItems(
@@ -1056,27 +982,22 @@ function buildTenGodsStructureItems(
 function createTenGodsStructureBlocks(
   structureAnalysis: NonNullable<ReportInput["structureAnalysis"]>,
 ): ReportBlock[] {
+  const evidenceItems = buildTenGodsStructureItems(structureAnalysis).slice(0, 3);
+
   return [
-    {
-      kind: "BULLET_LIST",
-      titleKo: "십성 묶음",
-      itemsKo: buildTenGodsStructureItems(structureAnalysis),
-    },
     {
       kind: "PARAGRAPH",
       titleKo: "십성 종합",
-      bodyKo: buildTenGodsSummaryFromStructure(structureAnalysis),
-    },
-    {
-      kind: "BULLET_LIST",
-      titleKo: "십성 해석 포인트",
-      itemsKo: buildTenGodsPointItems(structureAnalysis),
+      bodyKo:
+        evidenceItems.length > 0
+          ? `${buildTenGodsSummaryFromStructure(structureAnalysis)} 핵심 참고 흐름은 ${evidenceItems.join(" / ")}입니다.`
+          : buildTenGodsSummaryFromStructure(structureAnalysis),
     },
   ];
 }
 
 function createTenGodsBlocks(input: ReportInput): ReportBlock[] {
-  const blocks = [...createTenGodsUserFacingBlocks(input), createTenGodsBlock(input)];
+  const blocks = [...createTenGodsUserFacingBlocks(input)];
 
   if (input.structureAnalysis) {
     blocks.push(...createTenGodsStructureBlocks(input.structureAnalysis));
@@ -1505,7 +1426,7 @@ function createSajuMbtiConnectionBlocks(input: ReportInput): ReportBlock[] {
 function createPracticalPointBlocks(input: ReportInput): ReportBlock[] {
   const primary = ELEMENT_DISPLAY[getPrimaryElement(input)];
   const weak = ELEMENT_DISPLAY[getWeakElement(input)];
-  const tenGod = getTenGodGroupEntries(input)[0];
+  const subject = getReportSubject(input.displayName);
 
   return [
     {
@@ -1520,7 +1441,7 @@ function createPracticalPointBlocks(input: ReportInput): ReportBlock[] {
     {
       kind: "PARAGRAPH",
       titleKo: "잘 맞는 역할",
-      bodyKo: `${primary.labelKo} 기운이 두드러져 ${primary.tendencyKo} 앞에서 말하고 설득하거나, 메시지를 정리해 드러내는 역할처럼 강점이 바로 보이는 구조와 잘 맞을 수 있습니다.`,
+      bodyKo: `${subject}은 완전히 자유로운 판보다, 목표와 기준이 어느 정도 있는 상황에서 구조를 만들고 흐름을 정리할 때 강점이 보이기 쉽습니다. ${primary.workExamplesKo}처럼 강점이 바로 보이는 역할 예시를 참고해 보세요.`,
     },
     {
       kind: "BULLET_LIST",
@@ -1534,21 +1455,23 @@ function createPracticalPointBlocks(input: ReportInput): ReportBlock[] {
     {
       kind: "PARAGRAPH",
       titleKo: "돈과 자원을 다루는 방식",
-      bodyKo: `${primary.resourceKo} 예산, 시간, 체력처럼 제한된 자원은 쓰기 전에 우선순위를 짧게 적어 두면 흐름이 안정됩니다.`,
+      bodyKo: `자원 관리는 감으로 크게 움직이기보다, 기준표·예산·우선순위처럼 눈에 보이는 장치를 만들 때 안정감이 생깁니다. ${primary.resourceKo}`,
     },
     {
       kind: "PARAGRAPH",
       titleKo: "관계에서 자주 생길 수 있는 장면",
-      bodyKo: `${primary.relationKo} 회의나 대화에서 결론을 빨리 내고 싶어지는 장면이 생길 수 있으니, 상대가 따라올 시간을 먼저 확인하면 좋습니다. ${
-        tenGod
-          ? tenGod.strongKo
-          : "내 기준과 상대의 속도를 함께 보는 편이 좋습니다."
-      }`,
+      bodyKo: `관계에서는 문제를 빨리 해결하려는 힘이 장점이지만, 상대에게는 해결보다 먼저 들어주는 시간이 필요할 수 있습니다. ${subject}은 결론을 내기 전에 감정의 속도를 맞출수록 관계 흐름이 부드러워질 수 있습니다.`,
     },
     {
       kind: "PARAGRAPH",
       titleKo: "연애에서 도움이 되는 태도",
-      bodyKo: `${primary.romanceKo} 바로 해결하려 하기보다 감정 확인, 속도 조절, 쉬운 표현부터 시작하면 관계 흐름이 부드러워질 수 있습니다.`,
+      bodyKo:
+        "연애에서는 안정감을 주는 편이지만, 책임을 너무 빨리 떠안으면 관계가 역할처럼 느껴질 수 있습니다. 감정 확인과 속도 조절을 먼저 두는 편이 좋습니다.",
+    },
+    {
+      kind: "PARAGRAPH",
+      titleKo: "기억해 둘 문장",
+      bodyKo: `${subject}에게 중요한 것은 더 빨리 밀어붙이는 것이 아니라, 기준을 세운 뒤 사람과 속도를 맞추는 방식입니다.`,
     },
     {
       kind: "BULLET_LIST",

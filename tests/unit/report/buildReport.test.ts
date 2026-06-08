@@ -248,9 +248,14 @@ describe("buildReport", () => {
         block.kind === "PARAGRAPH" &&
         block.titleKo === "나를 부르는 첫 문장",
     );
+    const oldElementStyle = "토 기운의 " + "방식";
 
     expect(text).toContain("덕짱님은");
     expect(openingBlock?.bodyKo).toContain("덕짱님은");
+    expect(openingBlock?.bodyKo).toContain(
+      "기준을 세우고 다시 정리하면서 자기 리듬을 찾는 쪽",
+    );
+    expect(openingBlock?.bodyKo).not.toContain(oldElementStyle);
     expect(text).not.toContain("undefined님");
     expect(text).not.toContain("null님");
   });
@@ -495,11 +500,13 @@ describe("buildReport", () => {
     const report = buildReport(createReportInput());
     const text = JSON.stringify(report);
     const oldScoreTitle = "고급 참고 " + "점수";
+    const oldHighScore = "(" + "4.2" + ")";
+    const oldLowScore = "(" + "0.1" + ")";
 
     expectNoRawElementCodes(text);
     expect(text).not.toContain(oldScoreTitle);
-    expect(text).not.toContain("(4.2)");
-    expect(text).not.toContain("(0.1)");
+    expect(text).not.toContain(oldHighScore);
+    expect(text).not.toContain(oldLowScore);
     expect(text).not.toContain("비견: " + "1.3");
   });
 
@@ -533,6 +540,10 @@ describe("buildReport", () => {
       (block) =>
         block.kind === "BULLET_LIST" && block.titleKo === "오행 밸런스",
     );
+    const oldHighScore = "(" + "4.2" + ")";
+    const oldLowScore = "(" + "0.1" + ")";
+    const oldHighBand = "높음 " + "(";
+    const oldLowBand = "낮음 " + "(";
 
     expect(report.sections.map((section) => section.titleKo)).toEqual(
       expect.arrayContaining([
@@ -553,10 +564,10 @@ describe("buildReport", () => {
     expect(text).toContain("대표 보완 기운은 금 기운이고");
     expect(text).toContain("목 기운은 함께 보면 좋은 보완 축");
     expectNoRawElementCodes(text);
-    expect(text).not.toContain("(4.2)");
-    expect(text).not.toContain("(0.1)");
-    expect(text).not.toContain("높음 (");
-    expect(text).not.toContain("낮음 (");
+    expect(text).not.toContain(oldHighScore);
+    expect(text).not.toContain(oldLowScore);
+    expect(text).not.toContain(oldHighBand);
+    expect(text).not.toContain(oldLowBand);
     expect(text).not.toContain("비견: " + "1.3");
   });
 
@@ -583,27 +594,29 @@ describe("buildReport", () => {
     expect(text).not.toContain(oldDevModeCopy);
   });
 
-  it("uses grouped Ten Gods reference flow", () => {
+  it("uses compressed Ten Gods reader-facing flow", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "TEN_GODS");
-    const detailBlock = section?.blocks.find(
-      (block) =>
-        block.kind === "BULLET_LIST" && block.titleKo === "십성 세부 리딩",
-    );
+    const text = JSON.stringify(section);
+    const oldMovementTitle = "내가 움직이는 " + "방식";
+    const oldDetailTitle = "십성 세부 " + "리딩";
+    const oldGroupTitle = "십성 " + "묶음";
+    const oldPointTitle = "십성 해석 " + "포인트";
 
-    expect(detailBlock?.itemsKo?.[0]).toContain("가장 강하게 쓰는 흐름");
-    expect(detailBlock?.itemsKo?.[1]).toContain("보완해서 보면 좋은 흐름");
-    expect(detailBlock?.itemsKo?.[2]).toContain("균형을 맞춰 볼 흐름");
+    expect(text).toContain("십성 실전 기준");
+    expect(text).toContain("가장 강하게 쓰는 흐름");
+    expect(text).toContain("보완해서 보면 좋은 흐름");
+    expect(text).toContain("십성 종합");
+    expect(text).not.toContain(oldMovementTitle);
+    expect(text).not.toContain(oldDetailTitle);
+    expect(text).not.toContain(oldGroupTitle);
+    expect(text).not.toContain(oldPointTitle);
   });
 
   it("keeps Ten God reference flow reader-facing without decimal scores", () => {
     const report = buildReport(createReportInput());
     const section = report.sections.find((item) => item.id === "TEN_GODS");
     const text = JSON.stringify(section);
-    const detailBlock = section?.blocks.find(
-      (block) =>
-        block.kind === "BULLET_LIST" && block.titleKo === "십성 세부 리딩",
-    );
     const oldScoreTitle = "고급 참고 " + "점수";
 
     expect(text).not.toContain("0.7999999999999999");
@@ -611,11 +624,8 @@ describe("buildReport", () => {
     expect(text).not.toContain("비견: " + "1.3");
     expect(text).not.toContain("겁재: " + "1");
     expect(text).not.toContain("편재: " + "0.1");
-    expect(detailBlock?.itemsKo).toEqual(
-      expect.arrayContaining([
-        expect.stringContaining("생각을 결과물로 꺼내는 힘"),
-      ]),
-    );
+    expect(text).toContain("생각을 결과물로 꺼내는 힘");
+    expect(text).toContain("돈·자원·성과를 기준표로 관리하는 힘");
   });
 
   it("preserves Ten Gods fallback without structure analysis", () => {
@@ -625,24 +635,19 @@ describe("buildReport", () => {
 
     expect(
       section?.blocks.some(
-        (block) =>
-          block.kind === "BULLET_LIST" && block.titleKo === "십성 세부 리딩",
-      ),
-    ).toBe(true);
-    expect(
-      section?.blocks.some(
-        (block) => block.kind === "PARAGRAPH" && block.titleKo === "십성 흐름",
+        (block) => block.kind === "PARAGRAPH" && block.titleKo === "십성 종합",
       ),
     ).toBe(true);
     expect(text).toContain(
       "편인과 비견 흐름이 상대적으로 눈에 띄어 자기 기준, 학습성, 독립적 판단이 강하게 작동할 수 있습니다.",
     );
+    expect(text).toContain("기준표와 역할 범위를 나누어 보는 편이 좋습니다");
     expect(text).toContain("십성은 성격표가 아니라");
     expect(text).toContain("관계, 일, 자원, 표현 방식");
     expect(text).toContain("가장 강하게 쓰는 흐름");
     expect(text).toContain("보완해서 보면 좋은 흐름");
-    expect(text).not.toContain("십성 묶음");
-    expect(text).not.toContain("십성 해석 포인트");
+    expect(text).not.toContain("십성 " + "묶음");
+    expect(text).not.toContain("십성 해석 " + "포인트");
   });
 
   it("renders enhanced Ten Gods blocks with structure analysis", () => {
@@ -687,16 +692,22 @@ describe("buildReport", () => {
     });
     const section = report.sections.find((item) => item.id === "TEN_GODS");
     const text = JSON.stringify(section);
+    const oldMovementTitle = "내가 움직이는 " + "방식";
+    const oldDetailTitle = "십성 세부 " + "리딩";
+    const oldGroupTitle = "십성 " + "묶음";
+    const oldPointTitle = "십성 해석 " + "포인트";
 
     expect(report.sections).toHaveLength(expectedSectionIds.length);
-    expect(text).toContain("십성 묶음");
     expect(text).toContain("십성 종합");
-    expect(text).toContain("십성 해석 포인트");
     expect(text).toContain("가장 강하게 쓰는 흐름");
     expect(text).toContain("보완해서 보면 좋은 흐름");
     expect(text).toContain("내 기준을 세우고 직접 움직이는 힘");
     expect(text).toContain("생각을 결과물로 꺼내는 힘");
     expect(text).toContain("돈·자원·성과를 기준표로 관리하는 힘");
+    expect(text).not.toContain(oldMovementTitle);
+    expect(text).not.toContain(oldDetailTitle);
+    expect(text).not.toContain(oldGroupTitle);
+    expect(text).not.toContain(oldPointTitle);
     expect(text).toContain("비겁");
     expect(text).toContain("인성");
     expect(text).toContain("식상");
@@ -705,8 +716,8 @@ describe("buildReport", () => {
     expect(text).toContain("자기 기준");
     expect(text).toContain("학습");
     expect(text).toContain("표현");
-    expect(text).toContain("현실 감각");
-    expect(text).toContain("책임");
+    expect(text).toContain("현실 성과와 역할");
+    expect(text).toContain("역할과 기준 안에서 방향");
   });
 
   it("renders structure analysis in the advanced pattern section", () => {
@@ -829,6 +840,12 @@ describe("buildReport", () => {
     expect(text).toContain("돈과 자원은 많이 들어오는지보다");
     expect(text).toContain("관리·판단·교환·축적");
     expect(text).toContain("내가 편하게 쓰는 반응 방식");
+    expect(text).toContain("목표와 기준이 어느 정도 있는 상황");
+    expect(text).toContain("구조를 만들고 흐름을 정리할 때");
+    expect(text).toContain("기준표·예산·우선순위");
+    expect(text).toContain("해결보다 먼저 들어주는 시간");
+    expect(text).toContain("책임을 너무 빨리 떠안으면");
+    expect(text).toContain("사람과 속도를 맞추는 방식");
   });
 
   it("renders shinsal section from shinsal tags", () => {
