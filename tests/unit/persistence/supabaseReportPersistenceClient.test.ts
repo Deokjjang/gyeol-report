@@ -92,8 +92,9 @@ describe("supabase report persistence query client", () => {
       "NEXT_PUBLIC",
       "fetch(",
       "createClient",
-      "service_role",
-      "password",
+      "service" + "_role",
+      "SUPABASE" + "_SERVICE" + "_ROLE",
+      "pass" + "word",
     ];
 
     for (const marker of blockedMarkers) {

@@ -5,13 +5,13 @@ import { createSupabaseReportPersistenceSdkClient } from "./supabaseReportPersis
 
 export type ReportPersistenceRuntimeMode =
   | "preview_memory"
-  | "production_supabase"
+  | "supabase"
   | "disabled";
 
 export type ReportPersistenceRuntimeConfig = {
   readonly mode?: ReportPersistenceRuntimeMode;
   readonly supabaseUrl?: string;
-  readonly serviceRoleKey?: string;
+  readonly supabaseAnonKey?: string;
 };
 
 export type ReportPersistenceRuntimeResult =
@@ -25,9 +25,17 @@ export type ReportPersistenceRuntimeResult =
       readonly mode: ReportPersistenceRuntimeMode;
       readonly code:
         | "PERSISTENCE_DISABLED"
-        | "PRODUCTION_PERSISTENCE_NOT_CONFIGURED";
+        | "SUPABASE_REPORT_PERSISTENCE_UNAVAILABLE";
       readonly messageKo: string;
     };
+
+export type ReportPersistenceRuntimeEnvironment = Readonly<
+  Record<string, string | undefined>
+>;
+
+export const REPORT_PERSISTENCE_MODE_ENV = "REPORT_PERSISTENCE_MODE";
+export const SUPABASE_URL_ENV = "SUPABASE_URL";
+export const SUPABASE_ANON_KEY_ENV = "SUPABASE_ANON_KEY";
 
 export function createPreviewReportPersistenceAdapter(): ReportPersistenceAdapter {
   return createInMemoryReportPersistenceAdapter();
@@ -36,12 +44,33 @@ export function createPreviewReportPersistenceAdapter(): ReportPersistenceAdapte
 export function createProductionReportPersistenceAdapter(
   config: Pick<
     ReportPersistenceRuntimeConfig,
-    "supabaseUrl" | "serviceRoleKey"
+    "supabaseUrl" | "supabaseAnonKey"
   > = {},
 ): ReportPersistenceAdapter {
   const queryClient = createSupabaseReportPersistenceSdkClient(config);
 
   return createSupabaseReportPersistenceAdapter({ queryClient });
+}
+
+function normalizeRuntimeMode(
+  mode: string | undefined,
+): ReportPersistenceRuntimeMode {
+  if (mode === "supabase" || mode === "disabled") {
+    return mode;
+  }
+
+  return "preview_memory";
+}
+
+function createSupabaseUnavailableRuntime(
+  mode: ReportPersistenceRuntimeMode,
+): ReportPersistenceRuntimeResult {
+  return {
+    ok: false,
+    mode,
+    code: "SUPABASE_REPORT_PERSISTENCE_UNAVAILABLE",
+    messageKo: "Supabase report persistence is unavailable.",
+  };
 }
 
 export function createReportPersistenceRuntime(
@@ -69,16 +98,8 @@ export function createReportPersistenceRuntime(
     };
   }
 
-  if (
-    config.supabaseUrl === undefined ||
-    config.serviceRoleKey === undefined
-  ) {
-    return {
-      ok: false,
-      mode,
-      code: "PRODUCTION_PERSISTENCE_NOT_CONFIGURED",
-      messageKo: "Production persistence is not configured.",
-    };
+  if (config.supabaseUrl === undefined || config.supabaseAnonKey === undefined) {
+    return createSupabaseUnavailableRuntime(mode);
   }
 
   return {
@@ -86,7 +107,17 @@ export function createReportPersistenceRuntime(
     mode,
     adapter: createProductionReportPersistenceAdapter({
       supabaseUrl: config.supabaseUrl,
-      serviceRoleKey: config.serviceRoleKey,
+      supabaseAnonKey: config.supabaseAnonKey,
     }),
   };
+}
+
+export function createReportPersistenceRuntimeFromEnv(
+  env: ReportPersistenceRuntimeEnvironment = process.env,
+): ReportPersistenceRuntimeResult {
+  return createReportPersistenceRuntime({
+    mode: normalizeRuntimeMode(env.REPORT_PERSISTENCE_MODE),
+    supabaseUrl: env.SUPABASE_URL,
+    supabaseAnonKey: env.SUPABASE_ANON_KEY,
+  });
 }

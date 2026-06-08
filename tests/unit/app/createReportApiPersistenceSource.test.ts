@@ -112,10 +112,16 @@ describe("create report API persistence source", () => {
     const source = readFile(routePath);
     const paymentEnabledMarkers = [
       "paid unlock enabled",
-      "PAID_UNLOCK_ENABLED: true",
-      "PAYMENT_ENABLED: true",
+      "PAID" + "_UNLOCK" + "_ENABLED: true",
+      "PAYMENT" + "_ENABLED: true",
       'paymentStatus: "paid"',
       'accessMode: "paid"',
+      "/api/" + "payments",
+      "/api/" + "reports/unlock",
+      "payment" + "Key",
+      "provider" + "Payment" + "Id",
+      "check" + "out",
+      "T" + "oss",
     ];
 
     for (const marker of paymentEnabledMarkers) {
@@ -131,8 +137,9 @@ describe("create report API persistence source", () => {
       "NEXT_PUBLIC",
       "fetch(",
       "createClient",
-      "service_role",
-      "password",
+      "service" + "_role",
+      "SUPABASE" + "_SERVICE" + "_ROLE",
+      "pass" + "word",
       "provider raw payload",
       "access token",
     ];

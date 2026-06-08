@@ -7,6 +7,10 @@ import {
   createPreviewReportPersistenceAdapter,
   createProductionReportPersistenceAdapter,
   createReportPersistenceRuntime,
+  createReportPersistenceRuntimeFromEnv,
+  REPORT_PERSISTENCE_MODE_ENV,
+  SUPABASE_ANON_KEY_ENV,
+  SUPABASE_URL_ENV,
 } from "@/lib/persistence/reportPersistenceRuntime";
 
 function expectAdapter(adapter: ReportPersistenceAdapter): void {
@@ -33,11 +37,27 @@ describe("report persistence runtime", () => {
     }
   });
 
-  it("explicit preview mode returns memory adapter", () => {
-    const runtime = createReportPersistenceRuntime({ mode: "preview_memory" });
+  it("unset env uses preview memory mode", () => {
+    const runtime = createReportPersistenceRuntimeFromEnv({});
 
     expect(runtime.ok).toBe(true);
     expect(runtime.mode).toBe("preview_memory");
+
+    if (runtime.ok) {
+      expectAdapter(runtime.adapter);
+    }
+  });
+
+  it("explicit preview mode returns memory adapter", () => {
+    const runtime = createReportPersistenceRuntime({ mode: "preview_memory" });
+    const envRuntime = createReportPersistenceRuntimeFromEnv({
+      REPORT_PERSISTENCE_MODE: "preview_memory",
+    });
+
+    expect(runtime.ok).toBe(true);
+    expect(runtime.mode).toBe("preview_memory");
+    expect(envRuntime.ok).toBe(true);
+    expect(envRuntime.mode).toBe("preview_memory");
 
     if (runtime.ok) {
       expectAdapter(runtime.adapter);
@@ -55,66 +75,63 @@ describe("report persistence runtime", () => {
     });
   });
 
-  it("production mode without config fails closed", () => {
+  it("supabase mode without env fails closed", () => {
     const runtime = createReportPersistenceRuntime({
-      mode: "production_supabase",
+      mode: "supabase",
     });
-
-    expect(runtime).toEqual({
-      ok: false,
-      mode: "production_supabase",
-      code: "PRODUCTION_PERSISTENCE_NOT_CONFIGURED",
-      messageKo: "Production persistence is not configured.",
-    });
-  });
-
-  it("production mode with partial config fails closed", () => {
-    const urlOnly = createReportPersistenceRuntime({
-      mode: "production_supabase",
-      supabaseUrl: "https://example.supabase.co",
-    });
-    const roleOnly = createReportPersistenceRuntime({
-      mode: "production_supabase",
-      serviceRoleKey: "test-role-key",
+    const envRuntime = createReportPersistenceRuntimeFromEnv({
+      REPORT_PERSISTENCE_MODE: "supabase",
     });
     const expectedFailure = {
       ok: false,
-      mode: "production_supabase",
-      code: "PRODUCTION_PERSISTENCE_NOT_CONFIGURED",
-      messageKo: "Production persistence is not configured.",
+      mode: "supabase",
+      code: "SUPABASE_REPORT_PERSISTENCE_UNAVAILABLE",
+      messageKo: "Supabase report persistence is unavailable.",
+    } as const;
+
+    expect(runtime).toEqual(expectedFailure);
+    expect(envRuntime).toEqual(expectedFailure);
+  });
+
+  it("supabase mode with partial env fails closed", () => {
+    const urlOnly = createReportPersistenceRuntime({
+      mode: "supabase",
+      supabaseUrl: "https://example.supabase.co",
+    });
+    const keyOnly = createReportPersistenceRuntime({
+      mode: "supabase",
+      supabaseAnonKey: "test-anon-key",
+    });
+    const expectedFailure = {
+      ok: false,
+      mode: "supabase",
+      code: "SUPABASE_REPORT_PERSISTENCE_UNAVAILABLE",
+      messageKo: "Supabase report persistence is unavailable.",
     } as const;
 
     expect(urlOnly).toEqual(expectedFailure);
-    expect(roleOnly).toEqual(expectedFailure);
+    expect(keyOnly).toEqual(expectedFailure);
   });
 
-  it("production mode with config returns Supabase adapter runtime", async () => {
+  it("supabase mode with fake env returns Supabase adapter runtime", () => {
     const runtime = createReportPersistenceRuntime({
-      mode: "production_supabase",
+      mode: "supabase",
       supabaseUrl: "https://example.supabase.co",
-      serviceRoleKey: "test-role-key",
+      supabaseAnonKey: "test-anon-key",
+    });
+    const envRuntime = createReportPersistenceRuntimeFromEnv({
+      REPORT_PERSISTENCE_MODE: "supabase",
+      SUPABASE_URL: "https://example.supabase.co",
+      SUPABASE_ANON_KEY: "test-anon-key",
     });
 
     expect(runtime.ok).toBe(true);
-    expect(runtime.mode).toBe("production_supabase");
+    expect(runtime.mode).toBe("supabase");
+    expect(envRuntime.ok).toBe(true);
+    expect(envRuntime.mode).toBe("supabase");
 
-    if (!runtime.ok) {
-      throw new Error("Expected production runtime success.");
-    }
-
-    expectAdapter(runtime.adapter);
-
-    const result = await runtime.adapter.find({
-      reportId: "report_test_123",
-    });
-
-    expect(result.ok).toBe(false);
-
-    if (!result.ok) {
-      expect(result.error.code).toBe("REPORT_STORAGE_ERROR");
-      expect(result.error.messageKo).toContain(
-        "Supabase report persistence adapter is a skeleton",
-      );
+    if (runtime.ok) {
+      expectAdapter(runtime.adapter);
     }
   });
 
@@ -127,21 +144,33 @@ describe("report persistence runtime", () => {
   it("createProductionReportPersistenceAdapter returns adapter", () => {
     const adapter = createProductionReportPersistenceAdapter({
       supabaseUrl: "https://example.supabase.co",
-      serviceRoleKey: "test-role-key",
+      supabaseAnonKey: "test-anon-key",
     });
 
     expectAdapter(adapter);
   });
 
-  it("source avoids env SDK and network markers", () => {
+  it("source documents env-gated Supabase runtime mode", () => {
+    const source = readSource("src/lib/persistence/reportPersistenceRuntime.ts");
+
+    expect(REPORT_PERSISTENCE_MODE_ENV).toBe("REPORT_PERSISTENCE_MODE");
+    expect(SUPABASE_URL_ENV).toBe("SUPABASE_URL");
+    expect(SUPABASE_ANON_KEY_ENV).toBe("SUPABASE_ANON_KEY");
+    expect(source).toContain("REPORT_PERSISTENCE_MODE");
+    expect(source).toContain("preview_memory");
+    expect(source).toContain("supabase");
+    expect(source).toContain("SUPABASE_URL");
+    expect(source).toContain("SUPABASE_ANON_KEY");
+    expect(source).toContain("SUPABASE_REPORT_PERSISTENCE_UNAVAILABLE");
+  });
+
+  it("source avoids unsafe client and secret markers", () => {
     const source = readSource("src/lib/persistence/reportPersistenceRuntime.ts");
     const blockedMarkers = [
-      "@" + "supabase/supabase-js",
-      "process" + ".env",
       "NEXT" + "_PUBLIC",
       "fetch" + "(",
-      "create" + "Client",
       "service" + "_role",
+      "SUPABASE" + "_SERVICE" + "_ROLE",
       "pass" + "word",
     ];
 

@@ -34,7 +34,6 @@ export type SupabaseReportPersistenceAdapterStatus =
 
 export type SupabaseReportPersistenceAdapterConfig = {
   readonly projectUrl?: string;
-  readonly serviceRoleKey?: string;
   readonly schema?: string;
   readonly tableName?: string;
   readonly queryClient?: SupabaseReportPersistenceQueryClient;

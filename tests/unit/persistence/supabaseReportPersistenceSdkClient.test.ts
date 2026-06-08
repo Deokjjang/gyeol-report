@@ -24,9 +24,9 @@ function readSource(relativePath: string): string {
   return readFileSync(join(process.cwd(), relativePath), "utf8");
 }
 
-describe("supabase report persistence SDK client skeleton", () => {
-  it("exports skeleton status", () => {
-    expect(SUPABASE_REPORT_PERSISTENCE_SDK_CLIENT_STATUS).toBe("skeleton");
+describe("supabase report persistence SDK client", () => {
+  it("exports SDK-ready status", () => {
+    expect(SUPABASE_REPORT_PERSISTENCE_SDK_CLIENT_STATUS).toBe("sdk_ready");
   });
 
   it("missing config returns unavailable query client", async () => {
@@ -40,41 +40,45 @@ describe("supabase report persistence SDK client skeleton", () => {
     const urlOnlyClient = createSupabaseReportPersistenceSdkClient({
       supabaseUrl: "https://example.supabase.co",
     });
-    const roleOnlyClient = createSupabaseReportPersistenceSdkClient({
-      serviceRoleKey: "test-role-key",
+    const keyOnlyClient = createSupabaseReportPersistenceSdkClient({
+      supabaseAnonKey: "test-anon-key",
     });
 
     const urlOnlyResult = await urlOnlyClient.findReportById("report_test_123");
-    const roleOnlyResult =
-      await roleOnlyClient.findReportById("report_test_123");
+    const keyOnlyResult =
+      await keyOnlyClient.findReportById("report_test_123");
 
     expectUnavailableResult(urlOnlyResult);
-    expectUnavailableResult(roleOnlyResult);
+    expectUnavailableResult(keyOnlyResult);
   });
 
-  it("full config still returns unavailable query client in skeleton mode", async () => {
+  it("full fake config constructs SDK query client without immediate network", () => {
     const client = createSupabaseReportPersistenceSdkClient({
       supabaseUrl: "https://example.supabase.co",
-      serviceRoleKey: "test-role-key",
+      supabaseAnonKey: "test-anon-key",
     });
-    const result = await client.findReportById("report_test_123");
 
-    expectUnavailableResult(result);
+    expect(client.insertReport).toBeTypeOf("function");
+    expect(client.updateReport).toBeTypeOf("function");
+    expect(client.findReportById).toBeTypeOf("function");
+    expect(client.listReports).toBeTypeOf("function");
   });
 
-  it("source avoids real Supabase env and network markers", () => {
+  it("source uses Supabase SDK with anon-key boundary only", () => {
     const source = readSource(
       "src/lib/persistence/supabaseReportPersistenceSdkClient.ts",
     );
     const blockedMarkers = [
-      "@" + "supabase/supabase-js",
       "process" + ".env",
       "NEXT" + "_PUBLIC",
-      "fetch" + "(",
-      "create" + "Client",
       "service" + "_role",
+      "SUPABASE" + "_SERVICE" + "_ROLE",
       "pass" + "word",
     ];
+
+    expect(source).toContain("@supabase/supabase-js");
+    expect(source).toContain("createClient");
+    expect(source).toContain("supabaseAnonKey");
 
     for (const marker of blockedMarkers) {
       expect(source).not.toContain(marker);
