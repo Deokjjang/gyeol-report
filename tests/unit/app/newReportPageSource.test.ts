@@ -91,9 +91,13 @@ describe("new report page source", () => {
     expect(pageSource).toContain(
       "예: 1996-12-06 형식으로 입력해 주세요.",
     );
+    expect(pageSource).toContain("날짜 선택");
+    expect(pageSource).toContain("colorScheme");
+    expect(pageSource).toContain("dark");
     expect(pageSource).toContain("정확한 시간");
     expect(pageSource).toContain("대략적인 시간대");
     expect(pageSource).toContain("출생시간 모름");
+    expect(pageSource).toContain("시간 선택");
     expect(pageSource).toContain("시간대를 선택해 주세요");
     expect(pageSource).toContain(
       "출생시간을 입력하거나, 대략적인 시간대 또는 모름을 선택해 주세요.",
@@ -132,6 +136,27 @@ describe("new report page source", () => {
     );
     expect(pageSource).toContain("입력 정보 확인");
     expect(pageSource).toContain("양력/음력");
+  });
+
+  it("renders user-facing confirmation summary helpers", () => {
+    const summaryMarkers = [
+      "function formatGenderLabel",
+      "function formatCalendarTypeLabel",
+      "function formatBirthTimeSummary",
+      "남성",
+      "여성",
+      "양력",
+      "음력",
+      "선택 안 함",
+      "정확한 시간 ·",
+      "대략적인 시간대 ·",
+      "출생시간 모름",
+      "기준",
+    ];
+
+    for (const marker of summaryMarkers) {
+      expect(pageSource).toContain(marker);
+    }
   });
 
   it("renders loading state copy and disables submit", () => {

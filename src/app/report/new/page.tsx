@@ -112,6 +112,54 @@ function isMidnightBoundaryTime(value: string): boolean {
   return value.startsWith("23:") || value.startsWith("00:");
 }
 
+function formatGenderLabel(value: string): string {
+  if (value === "MALE") {
+    return "남성";
+  }
+
+  if (value === "FEMALE") {
+    return "여성";
+  }
+
+  if (value === "OTHER") {
+    return "기타";
+  }
+
+  return "선택 안 함";
+}
+
+function formatCalendarTypeLabel(value: string): string {
+  if (value === "SOLAR") {
+    return "양력";
+  }
+
+  if (value === "LUNAR") {
+    return "음력";
+  }
+
+  return "선택 안 함";
+}
+
+function formatBirthTimeSummary(
+  mode: BirthTimeMode,
+  exactTime: string,
+  branch: TimeBranchSelection,
+): string {
+  if (mode === "unknown") {
+    return "출생시간 모름";
+  }
+
+  if (mode === "branch") {
+    const selectedBranch = timeBranches.find((item) => item.value === branch);
+
+    return selectedBranch
+      ? `대략적인 시간대 · ${selectedBranch.labelKo} 기준`
+      : "시간대를 선택해 주세요";
+  }
+
+  return exactTime ? `정확한 시간 · ${exactTime}` : "정확한 시간 · 미입력";
+}
+
 function canShowSectionBody(
   level: ReportSection["level"],
   mode: ReportPreviewMode,
@@ -269,15 +317,11 @@ export default function NewReportPage() {
         ? getRepresentativeBirthTime(timeBranch)
         : undefined
       : birthTime;
-  const birthTimeSummary = birthTimeUnknown
-    ? "출생시간 모름"
-    : birthTimeMode === "branch"
-      ? timeBranch
-        ? `대략적인 시간대 · ${
-            timeBranches.find((item) => item.value === timeBranch)?.labelKo
-          } 기준`
-        : "시간대를 선택해 주세요"
-      : birthTime || "미입력";
+  const birthTimeSummary = formatBirthTimeSummary(
+    birthTimeMode,
+    birthTime,
+    timeBranch,
+  );
   const shouldShowMidnightBoundaryWarning =
     (birthTimeMode === "exact" && isMidnightBoundaryTime(birthTime)) ||
     (birthTimeMode === "branch" && timeBranch === "JASI");
@@ -472,14 +516,20 @@ export default function NewReportPage() {
                     >
                       생년월일
                     </label>
-                    <input
-                      id="birthDate"
-                      name="birthDate"
-                      type="date"
-                      value={birthDate}
-                      onChange={(event) => setBirthDate(event.target.value)}
-                      className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
-                    />
+                    <div className="relative">
+                      <input
+                        id="birthDate"
+                        name="birthDate"
+                        type="date"
+                        value={birthDate}
+                        onChange={(event) => setBirthDate(event.target.value)}
+                        style={{ colorScheme: "dark" }}
+                        className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 pr-24 text-neutral-50 outline-none focus:border-neutral-400"
+                      />
+                      <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-neutral-700 bg-neutral-900 px-2 py-1 text-xs font-medium text-neutral-300">
+                        날짜 선택
+                      </span>
+                    </div>
                     <p className="text-xs leading-5 text-neutral-500">
                       예: 1996-12-06 형식으로 입력해 주세요.
                     </p>
@@ -526,17 +576,23 @@ export default function NewReportPage() {
                       >
                         출생시간
                       </label>
-                      <input
-                        id="birthTime"
-                        name="birthTime"
-                        type="time"
-                        value={birthTime}
-                        onChange={(event) => {
-                          setBirthTime(event.target.value);
-                          setStepError("");
-                        }}
-                        className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
-                      />
+                      <div className="relative">
+                        <input
+                          id="birthTime"
+                          name="birthTime"
+                          type="time"
+                          value={birthTime}
+                          onChange={(event) => {
+                            setBirthTime(event.target.value);
+                            setStepError("");
+                          }}
+                          style={{ colorScheme: "dark" }}
+                          className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 pr-24 text-neutral-50 outline-none focus:border-neutral-400"
+                        />
+                        <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-neutral-700 bg-neutral-900 px-2 py-1 text-xs font-medium text-neutral-300">
+                          시간 선택
+                        </span>
+                      </div>
                       <p className="text-xs leading-5 text-neutral-500">
                         예: 오후 3시 12분이면 15:12로 입력해 주세요.
                       </p>
@@ -654,7 +710,7 @@ export default function NewReportPage() {
                     <div className="flex justify-between gap-4">
                       <dt className="text-neutral-500">양력/음력</dt>
                       <dd className="text-right text-neutral-200">
-                        {calendarType === "SOLAR" ? "양력" : "음력"}
+                        {formatCalendarTypeLabel(calendarType)}
                       </dd>
                     </div>
                     <div className="flex justify-between gap-4">
@@ -672,7 +728,7 @@ export default function NewReportPage() {
                     <div className="flex justify-between gap-4">
                       <dt className="text-neutral-500">성별</dt>
                       <dd className="text-right text-neutral-200">
-                        {gender || "미선택"}
+                        {formatGenderLabel(gender)}
                       </dd>
                     </div>
                     <div className="flex justify-between gap-4">
