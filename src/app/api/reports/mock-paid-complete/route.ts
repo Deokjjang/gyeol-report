@@ -3,13 +3,16 @@ import { randomUUID } from "node:crypto";
 import { NextResponse } from "next/server";
 
 import { createReportApiEnvelopeFromJson } from "../../../../lib/api/createReport";
+import {
+  parsePaymentProviderId,
+  toMockPaymentProviderStorageId,
+} from "../../../../lib/payment/paymentProviderBoundary";
+import type { PaymentProviderId } from "../../../../lib/payment/paymentProviderTypes";
 import { persistPaidFullReport } from "../../../../lib/persistence/paidReportStorageBoundary";
 import { createReportPersistenceRuntimeFromEnv } from "../../../../lib/persistence/reportPersistenceRuntime";
 import { issueReportShareToken } from "../../../../lib/persistence/reportShareTokenIssuer";
 import { buildReportPersistencePayload } from "../../../../lib/report/reportPersistencePayload";
 
-type MockPaymentMethod = "toss" | "kakao_pay";
-type MockPaymentProvider = "mock_toss" | "mock_kakao_pay";
 type MockPaidReportErrorCode =
   | "MOCK_PAID_REPORT_API_DISABLED"
   | "MOCK_PAID_REPORT_INVALID_INPUT"
@@ -18,7 +21,7 @@ type MockPaidReportErrorCode =
   | "MOCK_PAID_REPORT_STORAGE_FAILED";
 
 const mockApiEnabledEnv = "MOCK_PAID_REPORT_API_ENABLED";
-const defaultMockPaymentMethod: MockPaymentMethod = "toss";
+const defaultMockPaymentMethod: PaymentProviderId = "toss";
 const paymentStatus = "paid" as const;
 const paymentAmount = 1290;
 const paymentCurrency = "KRW";
@@ -70,18 +73,14 @@ function getCalendarTypeField(
 
 function getMockPaymentMethod(
   value: Record<string, unknown>,
-): MockPaymentMethod | null {
+): PaymentProviderId | null {
   const method = value.mockPaymentMethod;
 
   if (method === undefined) {
     return defaultMockPaymentMethod;
   }
 
-  return method === "toss" || method === "kakao_pay" ? method : null;
-}
-
-function toMockPaymentProvider(method: MockPaymentMethod): MockPaymentProvider {
-  return method === "toss" ? "mock_toss" : "mock_kakao_pay";
+  return parsePaymentProviderId(method);
 }
 
 function createMockPaymentId(prefix: string): string {
@@ -165,7 +164,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     return createErrorResponse("MOCK_PAID_REPORT_STORAGE_FAILED", 500);
   }
 
-  const paymentProvider = toMockPaymentProvider(mockPaymentMethod);
+  const paymentProvider = toMockPaymentProviderStorageId(mockPaymentMethod);
   const paidRecord = {
     ...payloadResult.input.record,
     status: "paid_unlocked" as const,

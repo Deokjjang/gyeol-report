@@ -8,8 +8,10 @@ function readSource(relativePath: string): string {
 
 const routeSourcePath = "src/app/api/reports/mock-paid-complete/route.ts";
 const createRouteSourcePath = "src/app/api/reports/create/route.ts";
+const providerBoundarySourcePath = "src/lib/payment/paymentProviderBoundary.ts";
 const routeSource = readSource(routeSourcePath);
 const createRouteSource = readSource(createRouteSourcePath);
+const providerBoundarySource = readSource(providerBoundarySourcePath);
 
 describe("mock paid complete route source", () => {
   it("is env-gated and completes paid report storage with two mock methods", () => {
@@ -20,10 +22,9 @@ describe("mock paid complete route source", () => {
       "persistPaidFullReport",
       "buildReportPersistencePayload",
       "paid_unlocked",
+      "parsePaymentProviderId",
+      "toMockPaymentProviderStorageId",
       "toss",
-      "kakao_pay",
-      "mock_toss",
-      "mock_kakao_pay",
       "1290",
       "KRW",
       "sharePath",
@@ -33,6 +34,19 @@ describe("mock paid complete route source", () => {
     for (const marker of requiredMarkers) {
       expect(routeSource).toContain(marker);
     }
+  });
+
+  it("uses the centralized provider boundary for mock storage mapping", () => {
+    expect(routeSource).toContain("parsePaymentProviderId(method)");
+    expect(routeSource).toContain(
+      "toMockPaymentProviderStorageId(mockPaymentMethod)",
+    );
+    expect(providerBoundarySource).toContain("kakao_pay");
+    expect(providerBoundarySource).toContain("mock_toss");
+    expect(providerBoundarySource).toContain("mock_kakao_pay");
+    expect(routeSource).not.toContain(
+      'return method === "toss" ? "mock_toss" : "mock_kakao_pay"',
+    );
   });
 
   it("does not include real payment integration, secrets, or restricted output fields", () => {

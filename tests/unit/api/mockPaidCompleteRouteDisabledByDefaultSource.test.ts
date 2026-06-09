@@ -6,6 +6,10 @@ const routeSource = readFileSync(
   join(process.cwd(), "src/app/api/reports/mock-paid-complete/route.ts"),
   "utf8",
 );
+const providerBoundarySource = readFileSync(
+  join(process.cwd(), "src/lib/payment/paymentProviderBoundary.ts"),
+  "utf8",
+);
 const createRouteSource = readFileSync(
   join(process.cwd(), "src/app/api/reports/create/route.ts"),
   "utf8",
@@ -36,10 +40,9 @@ describe("mock paid complete route production safety", () => {
 
   it("keeps payment methods locked to Toss and KakaoPay mocks", () => {
     const requiredMarkers = [
+      "parsePaymentProviderId",
+      "toMockPaymentProviderStorageId",
       "toss",
-      "kakao_pay",
-      "mock_toss",
-      "mock_kakao_pay",
     ];
     const blockedMarkers = [
       "kakao" + "_card",
@@ -57,6 +60,13 @@ describe("mock paid complete route production safety", () => {
     for (const marker of requiredMarkers) {
       expect(routeSource).toContain(marker);
     }
+
+    expect(providerBoundarySource).toContain("kakao_pay");
+    expect(providerBoundarySource).toContain("mock_toss");
+    expect(providerBoundarySource).toContain("mock_kakao_pay");
+    expect(routeSource).not.toContain(
+      'return method === "toss" ? "mock_toss" : "mock_kakao_pay"',
+    );
 
     for (const marker of blockedMarkers) {
       expect(routeSource).not.toContain(marker);
