@@ -70,16 +70,26 @@ describe("launch flag UI boundary source", () => {
     );
   });
 
-  it("keeps report new page from starting payment flow", () => {
+  it("keeps report new page from starting real payment flow", () => {
     const source = readFile("src/app/report/new/page.tsx");
+    const expectedMockMarkers = [
+      "NEXT_PUBLIC_MOCK_PAID_REPORT_UI_ENABLED",
+      "/api/reports/mock-paid-complete",
+      "Toss로 결제 테스트",
+      "KakaoPay로 결제 테스트",
+    ];
     const paymentFlowMarkers = [
       "/api/pay" + "ments",
       "/api/reports/un" + "lock",
       "payment" + "Key",
       "provider" + "PaymentId",
-      "To" + "ss",
+      "To" + "ss" + "Payments",
       "check" + "out",
     ];
+
+    for (const marker of expectedMockMarkers) {
+      expect(source).toContain(marker);
+    }
 
     for (const marker of paymentFlowMarkers) {
       expect(source).not.toContain(marker);

@@ -43,6 +43,27 @@ describe("new report page source", () => {
     expect(pageSource).toContain("shouldScrollToResultRef.current = true");
   });
 
+  it("renders env-gated mock one-report payment choices", () => {
+    const mockPaymentMarkers = [
+      "NEXT_PUBLIC_MOCK_PAID_REPORT_UI_ENABLED",
+      "/api/reports/mock-paid-complete",
+      "mockPaymentMethod",
+      "toss",
+      "kakao_pay",
+      "Toss로 결제 테스트",
+      "KakaoPay로 결제 테스트",
+      "리포트 1개당 1회 결제",
+      "정식 결제 전 테스트용 결제 흐름입니다",
+      "sharePath",
+      "window.location.assign(json.sharePath)",
+      "결제 테스트를 완료하지 못했습니다",
+    ];
+
+    for (const marker of mockPaymentMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+  });
+
   it("renders error and preview text", () => {
     expect(pageSource).toContain("리포트 생성에 실패했습니다.");
     expect(pageSource).toContain("무료 미리보기 생성");
@@ -197,7 +218,7 @@ describe("new report page source", () => {
 
   it("renders loading state copy and disables submit", () => {
     expect(pageSource).toContain("isSubmitting");
-    expect(pageSource).toContain("disabled={isSubmitting}");
+    expect(pageSource).toContain("disabled={isSubmitting || isMockPaymentSubmitting}");
     expect(pageSource).toContain("리포트 생성 중...");
     expect(pageSource).toContain(
       "사주 구조와 MBTI 입력값을 함께 정리하고 있습니다.",
@@ -495,7 +516,6 @@ describe("new report page source", () => {
   it("does not include persistence auth payment or LLM markers", () => {
     const markers = [
       "supabase",
-      "pay" + "ment",
       "paymentIntent",
       "paddle",
       "check" + "out",
@@ -521,12 +541,52 @@ describe("new report page source", () => {
       "confirm" + "Payment",
       "To" + "ss" + "Payments",
       "Pad" + "dle",
-      "process" + ".env",
+      "KakaoPay API",
+      "SUPABASE_URL",
+      "SUPABASE_ANON_KEY",
     ];
 
     for (const marker of markers) {
       expect(pageSource).not.toContain(marker);
     }
+  });
+
+  it("does not include wallet recharge point balance or unsafe payment markers", () => {
+    const blockedSourceMarkers = [
+      "wallet",
+      "recharge",
+      "point balance",
+      "credit balance",
+      "충전",
+      "잔액",
+      "/api/payments",
+      "/api/reports/unlock",
+      "service" + "_role",
+      "SUPABASE" + "_SERVICE" + "_ROLE",
+      "access" + "TokenHash",
+      "access" + "_token" + "_hash",
+      "payment" + "Provider" + "Payment" + "Id",
+      "payment" + "_provider" + "_payment" + "_id",
+      "console" + ".log",
+    ];
+
+    for (const marker of blockedSourceMarkers) {
+      expect(pageSource).not.toContain(marker);
+    }
+
+    const mockPaymentUiStart = pageSource.indexOf(
+      "currentStep === 3 && MOCK_PAID_REPORT_UI_ENABLED",
+    );
+    const mockPaymentUiEnd = pageSource.indexOf(
+      '<div className="grid gap-3 sm:grid-cols-2">',
+      mockPaymentUiStart + 1,
+    );
+
+    expect(mockPaymentUiStart).toBeGreaterThanOrEqual(0);
+    expect(mockPaymentUiEnd).toBeGreaterThan(mockPaymentUiStart);
+    expect(pageSource.slice(mockPaymentUiStart, mockPaymentUiEnd)).not.toContain(
+      "포인트",
+    );
   });
 
   it("does not include unsafe exact wording", () => {

@@ -54,7 +54,26 @@ type CreateReportResponse =
       errors: ValidationError[];
     };
 
+type MockPaymentMethod = "toss" | "kakao_pay";
+
+type MockPaidCompleteResponse =
+  | {
+      ok: true;
+      reportId: string;
+      sharePath: string;
+      paymentProvider: "mock_toss" | "mock_kakao_pay";
+      paymentStatus: "paid";
+    }
+  | {
+      ok: false;
+      error: string;
+    };
+
 const REPORT_PREVIEW_MODE = "gated_preview" as const satisfies ReportPreviewMode;
+const MOCK_PAID_REPORT_UI_ENABLED =
+  process.env.NEXT_PUBLIC_MOCK_PAID_REPORT_UI_ENABLED === "1";
+const MOCK_PAYMENT_ERROR_MESSAGE =
+  "결제 테스트를 완료하지 못했습니다. 입력값을 확인한 뒤 다시 시도해 주세요.";
 
 const mbtiTypes = [
   "INTJ",
@@ -127,6 +146,14 @@ const lockedValuePoints = [
   "신살·귀인 반복 신호 해석",
   "사주×MBTI 차이와 조절 포인트",
 ] as const;
+
+const mockPaymentChoices = [
+  { method: "toss", labelKo: "Toss로 결제 테스트" },
+  { method: "kakao_pay", labelKo: "KakaoPay로 결제 테스트" },
+] as const satisfies readonly {
+  readonly method: MockPaymentMethod;
+  readonly labelKo: string;
+}[];
 
 function getRepresentativeBirthTime(branch: TimeBranchValue): string {
   return (
@@ -478,6 +505,9 @@ function renderReportBlock(block: ReportBlock, index: number) {
 
 export default function NewReportPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [mockPaymentMethodInProgress, setMockPaymentMethodInProgress] =
+    useState<MockPaymentMethod | null>(null);
+  const [mockPaymentErrorMessage, setMockPaymentErrorMessage] = useState("");
   const [errors, setErrors] = useState<ValidationError[]>([]);
   const [creationErrorMessage, setCreationErrorMessage] = useState("");
   const [report, setReport] = useState<ReportPreview | null>(null);
@@ -511,6 +541,7 @@ export default function NewReportPage() {
   const shouldShowMidnightBoundaryWarning =
     (birthTimeMode === "exact" && isMidnightBoundaryTime(birthTime)) ||
     (birthTimeMode === "branch" && timeBranch === "JASI");
+  const isMockPaymentSubmitting = mockPaymentMethodInProgress !== null;
 
   useEffect(() => {
     if (!report || !shouldScrollToResultRef.current) {
@@ -606,6 +637,51 @@ export default function NewReportPage() {
       setCreationErrorMessage(getReportCreationErrorMessage("NETWORK_ERROR"));
     } finally {
       setIsSubmitting(false);
+    }
+  }
+
+  async function handleMockPaidComplete(method: MockPaymentMethod) {
+    if (!MOCK_PAID_REPORT_UI_ENABLED || isMockPaymentSubmitting) {
+      return;
+    }
+
+    setMockPaymentMethodInProgress(method);
+    setMockPaymentErrorMessage("");
+    setErrors([]);
+    setCreationErrorMessage("");
+
+    const payload = {
+      displayName: displayName.trim(),
+      birthDate,
+      birthTime: normalizedBirthTime,
+      birthTimeUnknown,
+      calendarType: "SOLAR",
+      gender,
+      timezone: "Asia/Seoul",
+      mbtiType,
+      mockPaymentMethod: method,
+    };
+
+    try {
+      const response = await fetch("/api/reports/mock-paid-complete", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      const json = (await response.json()) as MockPaidCompleteResponse;
+
+      if (!json.ok || !json.sharePath.startsWith("/r/")) {
+        setMockPaymentErrorMessage(MOCK_PAYMENT_ERROR_MESSAGE);
+        return;
+      }
+
+      window.location.assign(json.sharePath);
+    } catch {
+      setMockPaymentErrorMessage(MOCK_PAYMENT_ERROR_MESSAGE);
+    } finally {
+      setMockPaymentMethodInProgress(null);
     }
   }
 
@@ -958,6 +1034,34 @@ export default function NewReportPage() {
                 </div>
               ) : null}
 
+              {currentStep === 3 && MOCK_PAID_REPORT_UI_ENABLED ? (
+                <div className="space-y-4 rounded-lg border border-emerald-900/40 bg-emerald-950/20 p-4">
+                  <div className="space-y-2">
+                    <p className="text-sm font-semibold text-emerald-100">
+                      정식 결제 전 테스트용 결제 흐름입니다.
+                    </p>
+                    <p className="text-sm leading-6 text-emerald-100/80">
+                      리포트 1개당 1회 결제됩니다.
+                    </p>
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {mockPaymentChoices.map((choice) => (
+                      <button
+                        key={choice.method}
+                        type="button"
+                        disabled={isSubmitting || isMockPaymentSubmitting}
+                        onClick={() => void handleMockPaidComplete(choice.method)}
+                        className="rounded-lg border border-emerald-800/60 bg-neutral-950 px-4 py-3 text-sm font-semibold text-emerald-100 transition hover:border-emerald-500 disabled:cursor-not-allowed disabled:border-neutral-800 disabled:text-neutral-500"
+                      >
+                        {mockPaymentMethodInProgress === choice.method
+                          ? "결제 테스트 처리 중..."
+                          : choice.labelKo}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
               <div className="grid gap-3 sm:grid-cols-2">
                 {currentStep > 0 ? (
                   <button
@@ -979,7 +1083,7 @@ export default function NewReportPage() {
                 ) : (
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || isMockPaymentSubmitting}
                     className="rounded-lg bg-neutral-50 px-5 py-4 font-semibold text-neutral-950 transition hover:bg-white disabled:cursor-not-allowed disabled:bg-neutral-500 sm:col-span-2"
                   >
                     {isSubmitting ? "리포트 생성 중..." : "무료 미리보기 생성"}
@@ -989,6 +1093,11 @@ export default function NewReportPage() {
               {isSubmitting ? (
                 <p className="text-center text-sm leading-6 text-neutral-400">
                   사주 구조와 MBTI 입력값을 함께 정리하고 있습니다.
+                </p>
+              ) : null}
+              {mockPaymentErrorMessage ? (
+                <p className="rounded-lg border border-red-900/60 bg-red-950/30 p-4 text-sm leading-6 text-red-100">
+                  {mockPaymentErrorMessage}
                 </p>
               ) : null}
             </form>
