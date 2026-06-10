@@ -18,14 +18,27 @@ export default function BusinessFooter() {
           <dl className="grid gap-x-4 gap-y-1 sm:grid-cols-[9rem_1fr]">
             <dt>상호명</dt>
             <dd>{GYEOL_BUSINESS_INFO.businessName}</dd>
+            <dt>서비스명</dt>
+            <dd>{GYEOL_BUSINESS_INFO.serviceNameKo}</dd>
             <dt>대표자</dt>
             <dd>{GYEOL_BUSINESS_INFO.representativeKo}</dd>
             <dt>사업자등록번호</dt>
             <dd>{GYEOL_BUSINESS_INFO.businessRegistrationNumber}</dd>
+            <dt>과세유형</dt>
+            <dd>{GYEOL_BUSINESS_INFO.taxTypeKo}</dd>
             <dt>통신판매업 신고번호</dt>
             <dd>{GYEOL_BUSINESS_INFO.mailOrderSalesRegistrationNumber}</dd>
             <dt>사업장 주소</dt>
             <dd>{GYEOL_BUSINESS_INFO.businessAddressKo}</dd>
+            <dt>고객센터</dt>
+            <dd>
+              <a
+                href={`tel:${GYEOL_BUSINESS_INFO.customerServicePhone}`}
+                className="text-neutral-200 underline underline-offset-4"
+              >
+                {GYEOL_BUSINESS_INFO.customerServicePhone}
+              </a>
+            </dd>
             <dt>고객지원</dt>
             <dd>
               <a
@@ -44,6 +57,19 @@ export default function BusinessFooter() {
                 {GYEOL_BUSINESS_INFO.officialContactEmail}
               </a>
             </dd>
+            <dt>개인정보보호 책임자</dt>
+            <dd>{GYEOL_BUSINESS_INFO.privacyOfficerName}</dd>
+            <dt>개인정보보호 문의</dt>
+            <dd>
+              <a
+                href={`mailto:${GYEOL_BUSINESS_INFO.privacyOfficerEmail}`}
+                className="text-neutral-200 underline underline-offset-4"
+              >
+                {GYEOL_BUSINESS_INFO.privacyOfficerEmail}
+              </a>
+            </dd>
+            <dt>호스팅 제공자</dt>
+            <dd>{GYEOL_BUSINESS_INFO.hostingProvider}</dd>
           </dl>
         </section>
 

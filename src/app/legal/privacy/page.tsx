@@ -20,12 +20,12 @@ const privacySections = [
   {
     titleKo: "4. 결제 처리",
     bodyKo:
-      "결제수단의 상세 정보는 Toss Payments 등 결제대행사가 처리하며, 결리포트는 카드번호 등 민감한 결제수단 정보를 직접 저장하지 않습니다.",
+      "결제 처리: Toss Payments. 결제수단의 상세 정보는 Toss Payments 등 결제대행사가 처리하며, 결리포트는 카드번호 등 민감한 결제수단 정보를 직접 저장하지 않습니다.",
   },
   {
     titleKo: "5. 제3자 제공 및 처리위탁",
     bodyKo:
-      "결제 처리, 서비스 운영, 고객지원 등 서비스 제공에 필요한 범위에서 외부 서비스 제공자에게 처리를 위탁할 수 있습니다. 필요한 경우 관련 내용을 본 방침에 고지합니다.",
+      `호스팅 제공자: ${GYEOL_BUSINESS_INFO.hostingProvider}. 결제 처리, 서비스 운영, 고객지원 등 서비스 제공에 필요한 범위에서 외부 서비스 제공자에게 처리를 위탁할 수 있습니다. 필요한 경우 관련 내용을 본 방침에 고지합니다.`,
   },
   {
     titleKo: "6. 개인정보 파기",
@@ -38,8 +38,8 @@ const privacySections = [
       "이용자는 관련 법령에 따라 개인정보 열람, 정정, 삭제, 처리 정지 등을 요청할 수 있습니다. 요청은 본인 확인 후 관련 법령에 따라 처리합니다.",
   },
   {
-    titleKo: "8. 개인정보 보호 문의",
-    bodyKo: `개인정보 보호 문의는 ${GYEOL_BUSINESS_INFO.officialContactEmail} 또는 ${GYEOL_BUSINESS_INFO.supportContactEmail}로 접수할 수 있습니다.`,
+    titleKo: "8. 개인정보보호 책임자 및 문의",
+    bodyKo: `개인정보보호 책임자: ${GYEOL_BUSINESS_INFO.privacyOfficerName}. 개인정보보호 문의: ${GYEOL_BUSINESS_INFO.privacyOfficerEmail}. 고객지원: ${GYEOL_BUSINESS_INFO.supportContactEmail}.`,
   },
   {
     titleKo: "9. 변경 고지",

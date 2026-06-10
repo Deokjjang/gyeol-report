@@ -10,6 +10,10 @@ export type GyeolBusinessInfo = {
   readonly domain: string;
   readonly mailOrderSalesRegistrationNumber: string;
   readonly customerServicePhone: string;
+  readonly privacyOfficerName: string;
+  readonly privacyOfficerEmail: string;
+  readonly hostingProvider: string;
+  readonly taxTypeKo: string;
 };
 
 export const GYEOL_BUSINESS_INFO = {
@@ -24,5 +28,9 @@ export const GYEOL_BUSINESS_INFO = {
   supportContactEmail: "support@dvem.ai",
   domain: "https://www.gyeolreport.com",
   mailOrderSalesRegistrationNumber: "신고 진행 중",
-  customerServicePhone: "준비 중",
+  customerServicePhone: "010-3156-8568",
+  privacyOfficerName: "장덕민",
+  privacyOfficerEmail: "official@dvem.ai",
+  hostingProvider: "Vercel Inc.",
+  taxTypeKo: "일반과세자",
 } as const satisfies GyeolBusinessInfo;

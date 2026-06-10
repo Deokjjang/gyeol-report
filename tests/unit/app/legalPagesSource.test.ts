@@ -33,7 +33,13 @@ describe("legal page sources", () => {
       "support@dvem.ai",
       "https://www.gyeolreport.com",
       "신고 진행 중",
-      "준비 중",
+      "010-3156-8568",
+      "개인정보보호 책임자",
+      "개인정보보호 문의",
+      "호스팅 제공자",
+      "Vercel Inc.",
+      "일반과세자",
+      "통신판매업 신고번호",
     ];
 
     for (const marker of expectedMarkers) {
@@ -76,7 +82,7 @@ describe("legal page sources", () => {
       "제3자 제공 및 처리위탁",
       "개인정보 파기",
       "이용자의 권리",
-      "개인정보 보호 문의",
+      "개인정보보호 문의",
       "변경 고지",
       "생년월일",
       "출생시간",
@@ -87,7 +93,13 @@ describe("legal page sources", () => {
       "결제 처리에 필요한 주문/결제 식별 정보",
       "결제대행사",
       "Toss Payments",
+      "결제 처리: Toss Payments",
       "카드번호 등 민감한 결제수단 정보를 직접 저장하지 않습니다",
+      "개인정보보호 책임자",
+      "개인정보보호 문의",
+      "고객지원",
+      "호스팅 제공자",
+      "GYEOL_BUSINESS_INFO.hostingProvider",
     ];
 
     for (const marker of expectedMarkers) {
@@ -131,6 +143,22 @@ describe("legal page sources", () => {
 
     for (const marker of blockedMarkers) {
       expect(legalSources).not.toContain(marker);
+    }
+  });
+
+  it("does not keep old customer phone placeholders", () => {
+    const businessAndFooterSources = [
+      readSource("src/lib/legal/businessInfo.ts"),
+      readSource("src/components/legal/BusinessFooter.tsx"),
+      readSource("src/app/legal/business-info/page.tsx"),
+    ].join("\n");
+    const blockedMarkers = [
+      "고객센터 전화번호: " + "준비 " + "중",
+      'customerServicePhone: "' + "준비 " + '중"',
+    ];
+
+    for (const marker of blockedMarkers) {
+      expect(businessAndFooterSources).not.toContain(marker);
     }
   });
 });
