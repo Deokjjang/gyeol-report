@@ -17,6 +17,9 @@ const checkoutPrepareApiEnabledEnv = "PAYMENT_CHECKOUT_PREPARE_API_ENABLED";
 const defaultProductType = "saju_mbti_full";
 const invalidRequestMessage = "Checkout prepare request is invalid.";
 const createFailedMessage = "Checkout could not be prepared.";
+const jsonResponseHeaders = {
+  "content-type": "application/json; charset=utf-8",
+} as const;
 
 function createErrorResponse(
   code: CheckoutPrepareRouteErrorCode,
@@ -31,7 +34,10 @@ function createErrorResponse(
         message,
       },
     },
-    { status },
+    {
+      status,
+      headers: jsonResponseHeaders,
+    },
   );
 }
 
@@ -192,6 +198,9 @@ export async function POST(request: Request): Promise<NextResponse> {
       paymentOrder: mapReadyOrderForResponse(readyOrderResult.order),
       checkoutSession: mapCheckoutSessionForResponse(checkoutResult.session),
     },
-    { status: 200 },
+    {
+      status: 200,
+      headers: jsonResponseHeaders,
+    },
   );
 }

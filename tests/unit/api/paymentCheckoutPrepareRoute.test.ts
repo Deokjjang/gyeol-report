@@ -146,6 +146,12 @@ function expectErrorBody(
   }
 }
 
+function expectUtf8JsonResponse(response: Response): void {
+  expect(response.headers.get("content-type")).toContain(
+    "application/json; charset=utf-8",
+  );
+}
+
 function expectReadyPaymentOrder(
   body: Record<string, unknown>,
   provider: PaymentProviderId,
@@ -183,6 +189,19 @@ function expectPreparedCheckoutSession(
 
     if (isRecord(body.checkoutSession.providerPayload)) {
       expect(body.checkoutSession.providerPayload.provider).toBe(provider);
+
+      if (provider === "toss") {
+        expect(body.checkoutSession.providerPayload).toMatchObject({
+          orderName: "사주×MBTI 전체 리포트",
+          customerNameLabel: "결리포트 고객",
+        });
+      }
+
+      if (provider === "kakao_pay") {
+        expect(body.checkoutSession.providerPayload).toMatchObject({
+          itemName: "사주×MBTI 전체 리포트",
+        });
+      }
     }
   }
 }
@@ -218,6 +237,7 @@ describe("payment checkout prepare route", () => {
     const body = await readJsonObject(response);
 
     expect(response.status).toBe(404);
+    expectUtf8JsonResponse(response);
     expectErrorBody(body, "PAYMENT_CHECKOUT_PREPARE_API_DISABLED");
     expect(mockCreateReadyPaymentOrder).not.toHaveBeenCalled();
   });
@@ -236,6 +256,7 @@ describe("payment checkout prepare route", () => {
     const body = await readJsonObject(response);
 
     expect(response.status).toBe(200);
+    expectUtf8JsonResponse(response);
     expect(body.ok).toBe(true);
     expectReadyPaymentOrder(body, "toss");
     expectPreparedCheckoutSession(body, "toss");
