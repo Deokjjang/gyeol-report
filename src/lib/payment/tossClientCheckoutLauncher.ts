@@ -41,7 +41,7 @@ function isTossRequestPayment(
     return false;
   }
 
-  if (value.method !== "CARD" || value.flowMode !== "DEFAULT") {
+  if (value.method !== "CARD") {
     return false;
   }
 
@@ -136,7 +136,6 @@ function parseTossCheckoutRequest(
       clientKey: value.clientKey,
       requestPayment: {
         method: value.requestPayment.method,
-        flowMode: value.requestPayment.flowMode,
         orderId: value.requestPayment.orderId,
         orderName: value.requestPayment.orderName,
         amount: {

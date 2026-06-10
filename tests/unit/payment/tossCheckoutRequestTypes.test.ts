@@ -4,7 +4,6 @@ import { describe, expect, it } from "vitest";
 
 import type {
   TossCheckoutRequestDraft,
-  TossPaymentWindowFlowMode,
   TossPaymentWindowMethod,
 } from "../../../src/lib/payment/tossCheckoutRequestTypes";
 
@@ -20,7 +19,6 @@ describe("Toss checkout request types", () => {
       clientKey: "test_client_key",
       requestPayment: {
         method: "CARD",
-        flowMode: "DEFAULT",
         orderId: "provider_order_toss_type_test",
         orderName: "사주×MBTI 전체 리포트",
         amount: {
@@ -39,7 +37,7 @@ describe("Toss checkout request types", () => {
 
     expect(draft.provider).toBe("toss");
     expect(draft.requestPayment.method).toBe("CARD");
-    expect(draft.requestPayment.flowMode).toBe("DEFAULT");
+    expect(draft.requestPayment).not.toHaveProperty("flow" + "Mode");
     expect(draft.requestPayment.amount).toEqual({
       currency: "KRW",
       value: 1290,
@@ -47,17 +45,14 @@ describe("Toss checkout request types", () => {
     expect(draft.metadata.productType).toBe("saju_mbti_full");
   });
 
-  it("limits payment window method fields to card default flow", () => {
+  it("limits payment window method fields to card only", () => {
     const method: TossPaymentWindowMethod = "CARD";
-    const flowMode: TossPaymentWindowFlowMode = "DEFAULT";
 
     expect(method).toBe("CARD");
-    expect(flowMode).toBe("DEFAULT");
     expect(source).toContain("TossPaymentWindowMethod");
-    expect(source).toContain("TossPaymentWindowFlowMode");
     expect(source).toContain('"CARD"');
-    expect(source).toContain('"DEFAULT"');
     expect(source).not.toContain("EASY_PAY");
+    expect(source).not.toContain("flow" + "Mode");
   });
 
   it("source contains request fields but no secret or confirm-stage markers", () => {
@@ -65,9 +60,7 @@ describe("Toss checkout request types", () => {
       "TossCheckoutRequestDraft",
       "requestPayment",
       "method",
-      "flowMode",
       "CARD",
-      "DEFAULT",
       "clientKey",
       "orderId",
       "orderName",

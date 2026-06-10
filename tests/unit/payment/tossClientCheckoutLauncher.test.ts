@@ -22,7 +22,6 @@ const requestDraft = {
   clientKey: "test_client_key",
   requestPayment: {
     method: "CARD",
-    flowMode: "DEFAULT",
     orderId: "provider_order_toss_client_launcher_test",
     orderName: "사주×MBTI 전체 리포트",
     amount: {
@@ -111,6 +110,9 @@ describe("Toss client checkout launcher", () => {
     });
     expect(harness.requestPayment).toHaveBeenCalledWith(
       requestDraft.requestPayment,
+    );
+    expect(JSON.stringify(harness.requestPayment.mock.calls[0]?.[0])).not.toContain(
+      "flow" + "Mode",
     );
   });
 

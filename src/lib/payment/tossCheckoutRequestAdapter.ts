@@ -164,7 +164,6 @@ export function prepareTossCheckoutRequest(
       clientKey: input.clientKey,
       requestPayment: {
         method: "CARD",
-        flowMode: "DEFAULT",
         orderId: checkoutSession.providerOrderId,
         orderName: checkoutSession.productLabelKo,
         amount: {

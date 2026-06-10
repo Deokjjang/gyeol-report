@@ -274,13 +274,15 @@ function expectTossCheckoutRequest(
   if (isRecord(tossCheckoutRequest.requestPayment)) {
     expect(tossCheckoutRequest.requestPayment).toMatchObject({
       method: "CARD",
-      flowMode: "DEFAULT",
       orderId: "provider_order_checkout_toss",
       orderName: "사주×MBTI 전체 리포트",
       successUrl: expected.successUrl,
       failUrl: expected.failUrl,
       customerName: "결리포트 고객",
     });
+    expect(tossCheckoutRequest.requestPayment).not.toHaveProperty(
+      "flow" + "Mode",
+    );
     expect(tossCheckoutRequest.requestPayment.amount).toEqual({
       currency: "KRW",
       value: 1290,
