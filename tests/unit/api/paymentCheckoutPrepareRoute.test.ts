@@ -273,6 +273,8 @@ function expectTossCheckoutRequest(
 
   if (isRecord(tossCheckoutRequest.requestPayment)) {
     expect(tossCheckoutRequest.requestPayment).toMatchObject({
+      method: "CARD",
+      flowMode: "DEFAULT",
       orderId: "provider_order_checkout_toss",
       orderName: "사주×MBTI 전체 리포트",
       successUrl: expected.successUrl,

@@ -1,9 +1,14 @@
 import type { ReportProductCurrency } from "./reportProductCatalog";
 
+export type TossPaymentWindowMethod = "CARD";
+export type TossPaymentWindowFlowMode = "DEFAULT";
+
 export type TossCheckoutRequestDraft = {
   readonly provider: "toss";
   readonly clientKey: string;
   readonly requestPayment: {
+    readonly method: TossPaymentWindowMethod;
+    readonly flowMode: TossPaymentWindowFlowMode;
     readonly orderId: string;
     readonly orderName: string;
     readonly amount: {

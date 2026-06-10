@@ -21,6 +21,8 @@ const requestDraft = {
   provider: "toss",
   clientKey: "test_client_key",
   requestPayment: {
+    method: "CARD",
+    flowMode: "DEFAULT",
     orderId: "provider_order_toss_client_launcher_test",
     orderName: "사주×MBTI 전체 리포트",
     amount: {

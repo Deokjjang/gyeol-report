@@ -93,6 +93,8 @@ describe("Toss checkout request adapter", () => {
       provider: "toss",
       clientKey: "test_client_key",
       requestPayment: {
+        method: "CARD",
+        flowMode: "DEFAULT",
         orderId: "provider_order_toss_checkout_test",
         orderName: "사주×MBTI 전체 리포트",
         amount: {
@@ -108,6 +110,13 @@ describe("Toss checkout request adapter", () => {
         productType: "saju_mbti_full",
       },
     });
+  });
+
+  it("includes Toss payment window method fields", () => {
+    const draft = expectPreparedDraft(prepareDefault());
+
+    expect(draft.requestPayment.method).toBe("CARD");
+    expect(draft.requestPayment.flowMode).toBe("DEFAULT");
   });
 
   it("includes the client key and redirect URLs", () => {

@@ -41,6 +41,10 @@ function isTossRequestPayment(
     return false;
   }
 
+  if (value.method !== "CARD" || value.flowMode !== "DEFAULT") {
+    return false;
+  }
+
   if (
     !isNonEmptyString(value.orderId) ||
     !isNonEmptyString(value.orderName) ||
@@ -131,6 +135,8 @@ function parseTossCheckoutRequest(
       provider: "toss",
       clientKey: value.clientKey,
       requestPayment: {
+        method: value.requestPayment.method,
+        flowMode: value.requestPayment.flowMode,
         orderId: value.requestPayment.orderId,
         orderName: value.requestPayment.orderName,
         amount: {
