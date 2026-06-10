@@ -20,6 +20,9 @@ describe("product pages source", () => {
       "상품 안내",
       "사주×MBTI 전체 리포트",
       "1,290원",
+      "990원",
+      "런칭가 990원",
+      "결제금액",
       "결제 승인 후 온라인 열람",
       "디지털 리포트",
       "자기이해용 참고 콘텐츠",
@@ -52,16 +55,16 @@ describe("product pages source", () => {
 
   it("does not contain payment secret or paid-report implementation markers", () => {
     const blockedMarkers = [
-      "TOSS" + "_SECRET" + "_KEY",
-      "SUPABASE" + "_SERVICE" + "_ROLE",
-      "payment" + "Key",
-      "provider" + "PaymentId",
-      "access" + "TokenHash",
-      "share" + "Token",
-      "guaranteed future",
-      "질병 진단",
-      "투자 수익 보장",
-      "결혼 보장",
+      ["TOSS", "SECRET", "KEY"].join("_"),
+      ["SUPABASE", "SERVICE", "ROLE"].join("_"),
+      ["payment", "Key"].join(""),
+      ["provider", "PaymentId"].join(""),
+      ["access", "TokenHash"].join(""),
+      ["share", "Token"].join(""),
+      ["guaranteed", "future"].join(" "),
+      ["질병", "진단"].join(" "),
+      ["투자", "수익", "보장"].join(" "),
+      ["결혼", "보장"].join(" "),
     ];
 
     for (const marker of blockedMarkers) {

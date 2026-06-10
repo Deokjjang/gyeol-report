@@ -12,6 +12,11 @@ export type ReportProductCatalogItem = {
   readonly descriptionKo: string;
   readonly amount: number;
   readonly currency: ReportProductCurrency;
+  readonly listPriceAmount?: number;
+  readonly salePriceAmount?: number;
+  readonly priceLabelKo?: string;
+  readonly listPriceLabelKo?: string;
+  readonly salePriceLabelKo?: string;
   readonly isPurchasable: boolean;
 };
 
@@ -20,8 +25,13 @@ const reportProductCatalog = [
     productType: "saju_mbti_full",
     labelKo: "사주×MBTI 전체 리포트",
     descriptionKo: "사주 구조와 MBTI 입력을 함께 보는 전체 리포트입니다.",
-    amount: 1290,
+    amount: 990,
     currency: "KRW",
+    listPriceAmount: 1290,
+    salePriceAmount: 990,
+    priceLabelKo: "990원",
+    listPriceLabelKo: "1,290원",
+    salePriceLabelKo: "런칭가 990원",
     isPurchasable: true,
   },
   {

@@ -156,7 +156,7 @@ function mapRpcRow(
     !isNonEmptyString(row.payment_order_id) ||
     productType === null ||
     provider === null ||
-    row.amount !== 1290 ||
+    row.amount !== 990 ||
     row.currency !== "KRW" ||
     row.status !== "ready" ||
     (row.provider_order_id !== null && !isNonEmptyString(row.provider_order_id)) ||

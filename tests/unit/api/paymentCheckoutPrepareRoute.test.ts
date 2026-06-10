@@ -90,7 +90,7 @@ function createReadyResult(
       paymentOrderId: `payment_order_checkout_${provider}`,
       productType: "saju_mbti_full",
       provider,
-      amount: 1290,
+      amount: 990,
       currency: "KRW",
       status: "ready",
       providerOrderId: `provider_order_checkout_${provider}`,
@@ -122,7 +122,7 @@ function createReadyResultWithoutProviderOrderId(): ReadyPaymentOrderAdapterResu
       paymentOrderId: "payment_order_checkout_missing_provider_order",
       productType: "saju_mbti_full",
       provider: "toss",
-      amount: 1290,
+      amount: 990,
       currency: "KRW",
       status: "ready",
       providerOrderId: null,
@@ -175,7 +175,7 @@ function expectReadyPaymentOrder(
     expect(body.paymentOrder).toMatchObject({
       productType: "saju_mbti_full",
       provider,
-      amount: 1290,
+      amount: 990,
       currency: "KRW",
       status: "ready",
     });
@@ -193,7 +193,7 @@ function expectPreparedCheckoutSession(
       productType: "saju_mbti_full",
       productLabelKo: "사주×MBTI 전체 리포트",
       provider,
-      amount: 1290,
+      amount: 990,
       currency: "KRW",
       status: "prepared",
       checkoutMode: "provider_redirect_pending",
@@ -285,7 +285,7 @@ function expectTossCheckoutRequest(
     );
     expect(tossCheckoutRequest.requestPayment.amount).toEqual({
       currency: "KRW",
-      value: 1290,
+      value: 990,
     });
   }
 
@@ -403,7 +403,7 @@ describe("payment checkout prepare route", () => {
         provider: "kakao_pay",
         itemName: "사주×MBTI 전체 리포트",
         quantity: 1,
-        totalAmount: 1290,
+        totalAmount: 990,
         currency: "KRW",
       });
     }

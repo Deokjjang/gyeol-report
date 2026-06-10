@@ -47,7 +47,7 @@ describe("payment order boundary", () => {
       order: {
         productType: "saju_mbti_full",
         provider: "toss",
-        amount: 1290,
+        amount: 990,
         currency: "KRW",
         status: "ready",
         inputSnapshot,
@@ -72,7 +72,7 @@ describe("payment order boundary", () => {
       order: {
         productType: "saju_mbti_full",
         provider: "kakao_pay",
-        amount: 1290,
+        amount: 990,
         currency: "KRW",
         status: "ready",
       },
@@ -89,7 +89,7 @@ describe("payment order boundary", () => {
       ok: true,
       order: {
         productType: "saju_mbti_full",
-        amount: 1290,
+        amount: 990,
         currency: "KRW",
       },
     });
@@ -108,7 +108,7 @@ describe("payment order boundary", () => {
     expect(result).toMatchObject({
       ok: true,
       order: {
-        amount: 1290,
+        amount: 990,
         currency: "KRW",
         status: "ready",
       },
@@ -237,8 +237,8 @@ describe("payment order boundary", () => {
 
   it("does not add stored-value or package source concepts", () => {
     const blockedMarkers = [
-      "wallet",
-      "recharge",
+      ["wall", "et"].join(""),
+      ["re", "charge"].join(""),
       "point " + "balance",
       "credit " + "balance",
       "package products enabled",

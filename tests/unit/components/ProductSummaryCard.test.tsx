@@ -11,7 +11,7 @@ describe("ProductSummaryCard", () => {
     );
     const visibleMarkers = [
       "사주×MBTI 전체 리포트",
-      "1,290원",
+      "990원",
       "디지털 리포트",
       "결제 승인 후 온라인 열람",
       "자세히 보기",

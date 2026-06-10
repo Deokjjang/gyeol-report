@@ -10,7 +10,7 @@ const reportContents = [
   "일간·오행·십성 해석",
   "신살·귀인 참고 신호",
   "MBTI 자기보고 기반 성향 해석",
-  "일·관계·자기관리 활용 포인트",
+  "일·관계·자기관리 활용 방향",
 ] as const;
 
 const inputItems = [
@@ -48,7 +48,19 @@ export default function SajuMbtiFullProductPage() {
             </p>
             <div className="grid gap-3 text-sm sm:grid-cols-3">
               <div className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
-                <p className="text-neutral-500">가격</p>
+                <p className="text-neutral-500">정가</p>
+                <p className="mt-1 text-xl font-bold text-neutral-50">
+                  {product.listPriceKo}
+                </p>
+              </div>
+              <div className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
+                <p className="text-neutral-500">런칭가</p>
+                <p className="mt-1 text-xl font-bold text-neutral-50">
+                  {product.salePriceKo}
+                </p>
+              </div>
+              <div className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
+                <p className="text-neutral-500">결제금액</p>
                 <p className="mt-1 text-xl font-bold text-neutral-50">
                   {product.priceKo}
                 </p>

@@ -17,7 +17,7 @@ const tossPayload = {
   provider: "toss",
   orderId: "provider_order_toss_type_test",
   orderName: "사주×MBTI 전체 리포트",
-  amount: 1290,
+  amount: 990,
   currency: "KRW",
   customerNameLabel: "결리포트 고객",
 } as const satisfies TossCheckoutProviderPayload;
@@ -27,7 +27,7 @@ const kakaoPayPayload = {
   partnerOrderId: "provider_order_kakao_type_test",
   itemName: "사주×MBTI 전체 리포트",
   quantity: 1,
-  totalAmount: 1290,
+  totalAmount: 990,
   currency: "KRW",
 } as const satisfies KakaoPayCheckoutProviderPayload;
 
@@ -37,7 +37,7 @@ const session = {
   productType: "saju_mbti_full",
   productLabelKo: "사주×MBTI 전체 리포트",
   provider: "toss",
-  amount: 1290,
+  amount: 990,
   currency: "KRW",
   status: "prepared",
   checkoutMode: "provider_redirect_pending",

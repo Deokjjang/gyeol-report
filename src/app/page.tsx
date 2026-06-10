@@ -48,7 +48,19 @@ export default function Home() {
             </p>
             <dl className="mt-4 grid gap-3 text-sm">
               <div className="flex justify-between gap-4 border-b border-neutral-800 pb-3">
-                <dt className="text-neutral-500">가격</dt>
+                <dt className="text-neutral-500">정가</dt>
+                <dd className="font-semibold text-neutral-100">
+                  {activeProduct.listPriceKo}
+                </dd>
+              </div>
+              <div className="flex justify-between gap-4 border-b border-neutral-800 pb-3">
+                <dt className="text-neutral-500">런칭가</dt>
+                <dd className="font-semibold text-neutral-100">
+                  {activeProduct.salePriceKo}
+                </dd>
+              </div>
+              <div className="flex justify-between gap-4 border-b border-neutral-800 pb-3">
+                <dt className="text-neutral-500">결제금액</dt>
                 <dd className="font-semibold text-neutral-100">
                   {activeProduct.priceKo}
                 </dd>
@@ -75,7 +87,7 @@ export default function Home() {
           {[
             "일주·오행·십성·신살을 바탕으로 한 사주 구조 해석",
             "MBTI 자기인식과 사주 신호의 겹침과 차이",
-            "실제 선택과 관계에서 활용할 수 있는 정리 포인트",
+            "실제 선택과 관계에서 활용할 수 있는 정리 방향",
           ].map((item) => (
             <div
               key={item}

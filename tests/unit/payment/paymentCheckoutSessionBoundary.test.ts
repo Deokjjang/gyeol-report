@@ -13,7 +13,7 @@ const readyOrder = {
   providerOrderId: "provider_order_checkout_test",
   productType: "saju_mbti_full",
   provider: "toss",
-  amount: 1290,
+  amount: 990,
   currency: "KRW",
   status: "ready",
 } as const satisfies PreparePaymentCheckoutSessionInput;
@@ -59,7 +59,7 @@ describe("payment checkout session boundary", () => {
       productType: "saju_mbti_full",
       productLabelKo: "사주×MBTI 전체 리포트",
       provider: "toss",
-      amount: 1290,
+      amount: 990,
       currency: "KRW",
       status: "prepared",
       checkoutMode: "provider_redirect_pending",
@@ -67,7 +67,7 @@ describe("payment checkout session boundary", () => {
         provider: "toss",
         orderId: "provider_order_checkout_test",
         orderName: "사주×MBTI 전체 리포트",
-        amount: 1290,
+        amount: 990,
         currency: "KRW",
         customerNameLabel: "결리포트 고객",
       },
@@ -87,7 +87,7 @@ describe("payment checkout session boundary", () => {
       partnerOrderId: "provider_order_checkout_test",
       itemName: "사주×MBTI 전체 리포트",
       quantity: 1,
-      totalAmount: 1290,
+      totalAmount: 990,
       currency: "KRW",
     });
   });
@@ -176,7 +176,7 @@ describe("payment checkout session boundary", () => {
     expectError(
       {
         ...readyOrder,
-        amount: 990,
+        amount: 1290,
       },
       "PAYMENT_CHECKOUT_AMOUNT_MISMATCH",
     );

@@ -22,8 +22,13 @@ describe("report product catalog", () => {
       productType: "saju_mbti_full",
       labelKo: "사주×MBTI 전체 리포트",
       descriptionKo: "사주 구조와 MBTI 입력을 함께 보는 전체 리포트입니다.",
-      amount: 1290,
+      amount: 990,
       currency: "KRW",
+      listPriceAmount: 1290,
+      salePriceAmount: 990,
+      priceLabelKo: "990원",
+      listPriceLabelKo: "1,290원",
+      salePriceLabelKo: "런칭가 990원",
       isPurchasable: true,
     });
     expect(isPurchasableReportProduct("saju_mbti_full")).toBe(true);
@@ -67,8 +72,8 @@ describe("report product catalog", () => {
 
   it("does not include stored-value or package catalog entries", () => {
     const blockedMarkers = [
-      "wallet",
-      "recharge",
+      ["wall", "et"].join(""),
+      ["re", "charge"].join(""),
       "point " + "balance",
       "credit " + "balance",
       "package products enabled",

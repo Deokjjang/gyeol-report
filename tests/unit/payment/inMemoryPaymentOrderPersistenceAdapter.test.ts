@@ -28,7 +28,7 @@ function createOrder(
     paymentOrderId: "payment_order_adapter_test_1",
     productType: "saju_mbti_full",
     provider: "toss",
-    amount: 1290,
+    amount: 990,
     currency: "KRW",
     status: "ready",
     inputSnapshot,

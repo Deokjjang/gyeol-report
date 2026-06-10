@@ -9,6 +9,8 @@ describe("home page product source", () => {
     const requiredMarkers = [
       "사주×MBTI 전체 리포트",
       "1,290원",
+      "990원",
+      "런칭가 990원",
       "/products/saju-mbti-full",
       "/report/new",
     ];

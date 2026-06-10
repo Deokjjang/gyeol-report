@@ -71,7 +71,7 @@ describe("supabase ready payment order adapter", () => {
       order: {
         productType: "saju_mbti_full",
         provider: "toss",
-        amount: 1290,
+        amount: 990,
         currency: "KRW",
         status: "ready",
         providerOrderId: "provider_order_ready_adapter_toss",
@@ -96,7 +96,7 @@ describe("supabase ready payment order adapter", () => {
       order: {
         productType: "saju_mbti_full",
         provider: "kakao_pay",
-        amount: 1290,
+        amount: 990,
         currency: "KRW",
         status: "ready",
         providerOrderId: "provider_order_ready_adapter_kakao",
@@ -104,7 +104,7 @@ describe("supabase ready payment order adapter", () => {
     });
     expect(fake.calls[0]).toMatchObject({
       provider: "kakao_pay",
-      amount: 1290,
+      amount: 990,
       currency: "KRW",
     });
   });
@@ -120,7 +120,7 @@ describe("supabase ready payment order adapter", () => {
     });
 
     expect(fake.calls[0]).toMatchObject({
-      amount: 1290,
+      amount: 990,
       currency: "KRW",
     });
   });

@@ -23,7 +23,7 @@ describe("Toss checkout request types", () => {
         orderName: "사주×MBTI 전체 리포트",
         amount: {
           currency: "KRW",
-          value: 1290,
+          value: 990,
         },
         successUrl: "https://gyeol.example/payments/toss/success",
         failUrl: "https://gyeol.example/payments/toss/fail",
@@ -40,7 +40,7 @@ describe("Toss checkout request types", () => {
     expect(draft.requestPayment).not.toHaveProperty("flow" + "Mode");
     expect(draft.requestPayment.amount).toEqual({
       currency: "KRW",
-      value: 1290,
+      value: 990,
     });
     expect(draft.metadata.productType).toBe("saju_mbti_full");
   });

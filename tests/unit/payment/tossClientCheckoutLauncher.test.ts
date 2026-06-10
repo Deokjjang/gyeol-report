@@ -26,7 +26,7 @@ const requestDraft = {
     orderName: "사주×MBTI 전체 리포트",
     amount: {
       currency: "KRW",
-      value: 1290,
+      value: 990,
     },
     successUrl: "https://gyeol.example/payments/toss/success",
     failUrl: "https://gyeol.example/payments/toss/fail",

@@ -74,7 +74,7 @@ function isPreparedTossSession(value: unknown): value is TossCheckoutSession {
     !isNonEmptyString(value.productLabelKo) ||
     value.status !== "prepared" ||
     value.checkoutMode !== "provider_redirect_pending" ||
-    value.amount !== 1290 ||
+    value.amount !== 990 ||
     value.currency !== "KRW"
   ) {
     return false;

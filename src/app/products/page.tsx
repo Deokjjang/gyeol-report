@@ -16,6 +16,27 @@ export default function ProductsPage() {
           </p>
         </div>
 
+        <section className="grid gap-3 rounded-lg border border-neutral-800 bg-neutral-900/60 p-5 text-sm sm:grid-cols-3">
+          <div>
+            <p className="text-neutral-500">정가</p>
+            <p className="mt-1 font-semibold text-neutral-100">
+              {GYEOL_PRODUCTS[0].listPriceKo}
+            </p>
+          </div>
+          <div>
+            <p className="text-neutral-500">런칭가</p>
+            <p className="mt-1 font-semibold text-neutral-100">
+              {GYEOL_PRODUCTS[0].salePriceKo}
+            </p>
+          </div>
+          <div>
+            <p className="text-neutral-500">결제금액</p>
+            <p className="mt-1 font-semibold text-neutral-100">
+              {GYEOL_PRODUCTS[0].priceKo}
+            </p>
+          </div>
+        </section>
+
         {GYEOL_PRODUCTS.map((product) => (
           <ProductSummaryCard key={product.productType} product={product} />
         ))}

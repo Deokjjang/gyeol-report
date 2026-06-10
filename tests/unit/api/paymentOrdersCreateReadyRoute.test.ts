@@ -73,7 +73,7 @@ function createReadyResult(
       paymentOrderId: `payment_order_route_${provider}`,
       productType: "saju_mbti_full",
       provider,
-      amount: 1290,
+      amount: 990,
       currency: "KRW",
       status: "ready",
       providerOrderId: `provider_order_route_${provider}`,
@@ -136,7 +136,7 @@ function expectSuccessPaymentOrder(
     expect(body.paymentOrder).toMatchObject({
       productType: "saju_mbti_full",
       provider,
-      amount: 1290,
+      amount: 990,
       currency: "KRW",
       status: "ready",
     });
