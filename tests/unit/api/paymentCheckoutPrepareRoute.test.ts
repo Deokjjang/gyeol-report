@@ -28,6 +28,19 @@ const originalCheckoutPrepareApiEnabled =
   process.env.PAYMENT_CHECKOUT_PREPARE_API_ENABLED;
 const originalSupabaseUrl = process.env.SUPABASE_URL;
 const originalSupabaseAnonKey = process.env.SUPABASE_ANON_KEY;
+const originalTossCheckoutRequestDraftEnabled =
+  process.env.TOSS_CHECKOUT_REQUEST_DRAFT_ENABLED;
+const originalTossClientKey = process.env.TOSS_CLIENT_KEY;
+const originalTossSuccessUrl = process.env.TOSS_SUCCESS_URL;
+const originalTossFailUrl = process.env.TOSS_FAIL_URL;
+const originalTossAllowLocalhostRedirects =
+  process.env.TOSS_ALLOW_LOCALHOST_REDIRECTS;
+
+const tossCheckoutRequestDraftEnabledEnv = "TOSS_CHECKOUT_REQUEST_DRAFT_ENABLED";
+const tossClientKeyEnv = "TOSS_CLIENT_KEY";
+const tossSuccessUrlEnv = "TOSS_SUCCESS_URL";
+const tossFailUrlEnv = "TOSS_FAIL_URL";
+const tossAllowLocalhostRedirectsEnv = "TOSS_ALLOW_LOCALHOST_REDIRECTS";
 
 const inputSnapshot = {
   mbti: "ENTJ",
@@ -206,6 +219,80 @@ function expectPreparedCheckoutSession(
   }
 }
 
+function enableTossCheckoutRequestDraft(config?: {
+  readonly clientKey?: string;
+  readonly successUrl?: string;
+  readonly failUrl?: string;
+  readonly allowLocalhostRedirects?: boolean;
+}): void {
+  process.env[tossCheckoutRequestDraftEnabledEnv] = "1";
+
+  if (config?.clientKey !== undefined) {
+    process.env[tossClientKeyEnv] = config.clientKey;
+  }
+
+  if (config?.successUrl !== undefined) {
+    process.env[tossSuccessUrlEnv] = config.successUrl;
+  }
+
+  if (config?.failUrl !== undefined) {
+    process.env[tossFailUrlEnv] = config.failUrl;
+  }
+
+  if (config?.allowLocalhostRedirects === true) {
+    process.env[tossAllowLocalhostRedirectsEnv] = "1";
+  }
+}
+
+function expectNoTossCheckoutRequest(body: Record<string, unknown>): void {
+  expect(body).not.toHaveProperty("tossCheckoutRequest");
+}
+
+function expectTossCheckoutRequest(
+  body: Record<string, unknown>,
+  expected: {
+    readonly clientKey: string;
+    readonly successUrl: string;
+    readonly failUrl: string;
+  },
+): void {
+  expect(isRecord(body.tossCheckoutRequest)).toBe(true);
+
+  if (!isRecord(body.tossCheckoutRequest)) {
+    return;
+  }
+
+  const tossCheckoutRequest = body.tossCheckoutRequest;
+
+  expect(tossCheckoutRequest).toMatchObject({
+    provider: "toss",
+    clientKey: expected.clientKey,
+  });
+  expect(isRecord(tossCheckoutRequest.requestPayment)).toBe(true);
+  expect(isRecord(tossCheckoutRequest.metadata)).toBe(true);
+
+  if (isRecord(tossCheckoutRequest.requestPayment)) {
+    expect(tossCheckoutRequest.requestPayment).toMatchObject({
+      orderId: "provider_order_checkout_toss",
+      orderName: "사주×MBTI 전체 리포트",
+      successUrl: expected.successUrl,
+      failUrl: expected.failUrl,
+      customerName: "결리포트 고객",
+    });
+    expect(tossCheckoutRequest.requestPayment.amount).toEqual({
+      currency: "KRW",
+      value: 1290,
+    });
+  }
+
+  if (isRecord(tossCheckoutRequest.metadata)) {
+    expect(tossCheckoutRequest.metadata).toMatchObject({
+      paymentOrderId: "payment_order_checkout_toss",
+      productType: "saju_mbti_full",
+    });
+  }
+}
+
 const mockCreateReadyPaymentOrder = vi.mocked(createReadyPaymentOrder);
 
 describe("payment checkout prepare route", () => {
@@ -213,6 +300,11 @@ describe("payment checkout prepare route", () => {
     mockCreateReadyPaymentOrder.mockReset();
     process.env.SUPABASE_URL = "https://example.supabase.co";
     process.env.SUPABASE_ANON_KEY = "test-anon-key";
+    delete process.env[tossCheckoutRequestDraftEnabledEnv];
+    delete process.env[tossClientKeyEnv];
+    delete process.env[tossSuccessUrlEnv];
+    delete process.env[tossFailUrlEnv];
+    delete process.env[tossAllowLocalhostRedirectsEnv];
   });
 
   afterEach(() => {
@@ -222,6 +314,17 @@ describe("payment checkout prepare route", () => {
     );
     restoreOptionalEnv("SUPABASE_URL", originalSupabaseUrl);
     restoreOptionalEnv("SUPABASE_ANON_KEY", originalSupabaseAnonKey);
+    restoreOptionalEnv(
+      tossCheckoutRequestDraftEnabledEnv,
+      originalTossCheckoutRequestDraftEnabled,
+    );
+    restoreOptionalEnv(tossClientKeyEnv, originalTossClientKey);
+    restoreOptionalEnv(tossSuccessUrlEnv, originalTossSuccessUrl);
+    restoreOptionalEnv(tossFailUrlEnv, originalTossFailUrl);
+    restoreOptionalEnv(
+      tossAllowLocalhostRedirectsEnv,
+      originalTossAllowLocalhostRedirects,
+    );
   });
 
   it("returns 404 when disabled by default", async () => {
@@ -260,6 +363,7 @@ describe("payment checkout prepare route", () => {
     expect(body.ok).toBe(true);
     expectReadyPaymentOrder(body, "toss");
     expectPreparedCheckoutSession(body, "toss");
+    expectNoTossCheckoutRequest(body);
     expect(mockCreateReadyPaymentOrder).toHaveBeenCalledWith(
       expect.objectContaining({
         productType: "saju_mbti_full",
@@ -285,6 +389,7 @@ describe("payment checkout prepare route", () => {
     expect(response.status).toBe(200);
     expectReadyPaymentOrder(body, "kakao_pay");
     expectPreparedCheckoutSession(body, "kakao_pay");
+    expectNoTossCheckoutRequest(body);
 
     if (
       isRecord(body.checkoutSession) &&
@@ -298,6 +403,167 @@ describe("payment checkout prepare route", () => {
         currency: "KRW",
       });
     }
+  });
+
+  it("returns client safe Toss request draft when the Toss draft gate is enabled", async () => {
+    const clientKey = "test_toss_client_key";
+    const successUrl = "https://example.com/payments/toss/success";
+    const failUrl = "https://example.com/payments/toss/fail";
+
+    process.env.PAYMENT_CHECKOUT_PREPARE_API_ENABLED = "1";
+    enableTossCheckoutRequestDraft({
+      clientKey,
+      successUrl,
+      failUrl,
+    });
+    mockCreateReadyPaymentOrder.mockResolvedValue(createReadyResult("toss"));
+
+    const response = await POST(
+      createJsonRequest({
+        provider: "toss",
+        productType: "saju_mbti_full",
+        inputSnapshot,
+      }),
+    );
+    const body = await readJsonObject(response);
+
+    expect(response.status).toBe(200);
+    expectReadyPaymentOrder(body, "toss");
+    expectPreparedCheckoutSession(body, "toss");
+    expectTossCheckoutRequest(body, {
+      clientKey,
+      successUrl,
+      failUrl,
+    });
+  });
+
+  it("returns safe configuration error when Toss request draft config is missing", async () => {
+    process.env.PAYMENT_CHECKOUT_PREPARE_API_ENABLED = "1";
+    enableTossCheckoutRequestDraft({
+      clientKey: "configured_client_key_value",
+      failUrl: "https://example.com/payments/toss/fail",
+    });
+    mockCreateReadyPaymentOrder.mockResolvedValue(createReadyResult("toss"));
+
+    const response = await POST(
+      createJsonRequest({
+        provider: "toss",
+        productType: "saju_mbti_full",
+        inputSnapshot,
+      }),
+    );
+    const body = await readJsonObject(response);
+    const serialized = JSON.stringify(body);
+
+    expect(response.status).toBe(500);
+    expectErrorBody(body, "PAYMENT_TOSS_CHECKOUT_CONFIG_MISSING");
+
+    for (const marker of [
+      tossClientKeyEnv,
+      tossSuccessUrlEnv,
+      tossFailUrlEnv,
+      "configured_client_key_value",
+    ]) {
+      expect(serialized).not.toContain(marker);
+    }
+  });
+
+  it("rejects non HTTPS Toss success URL unless localhost redirects are allowed", async () => {
+    process.env.PAYMENT_CHECKOUT_PREPARE_API_ENABLED = "1";
+    enableTossCheckoutRequestDraft({
+      clientKey: "test_toss_client_key",
+      successUrl: "http://example.com/payments/toss/success",
+      failUrl: "https://example.com/payments/toss/fail",
+    });
+    mockCreateReadyPaymentOrder.mockResolvedValue(createReadyResult("toss"));
+
+    const response = await POST(
+      createJsonRequest({
+        provider: "toss",
+        productType: "saju_mbti_full",
+        inputSnapshot,
+      }),
+    );
+    const body = await readJsonObject(response);
+
+    expect(response.status).toBe(500);
+    expectErrorBody(body, "PAYMENT_TOSS_CHECKOUT_CONFIG_MISSING");
+  });
+
+  it("rejects non HTTPS Toss fail URL unless localhost redirects are allowed", async () => {
+    process.env.PAYMENT_CHECKOUT_PREPARE_API_ENABLED = "1";
+    enableTossCheckoutRequestDraft({
+      clientKey: "test_toss_client_key",
+      successUrl: "https://example.com/payments/toss/success",
+      failUrl: "http://example.com/payments/toss/fail",
+    });
+    mockCreateReadyPaymentOrder.mockResolvedValue(createReadyResult("toss"));
+
+    const response = await POST(
+      createJsonRequest({
+        provider: "toss",
+        productType: "saju_mbti_full",
+        inputSnapshot,
+      }),
+    );
+    const body = await readJsonObject(response);
+
+    expect(response.status).toBe(500);
+    expectErrorBody(body, "PAYMENT_TOSS_CHECKOUT_CONFIG_MISSING");
+  });
+
+  it("allows Toss localhost redirects only when explicitly enabled", async () => {
+    const successUrl = "http://localhost:3000/payments/toss/success";
+    const failUrl = "http://127.0.0.1:3000/payments/toss/fail";
+
+    process.env.PAYMENT_CHECKOUT_PREPARE_API_ENABLED = "1";
+    enableTossCheckoutRequestDraft({
+      clientKey: "test_toss_client_key",
+      successUrl,
+      failUrl,
+      allowLocalhostRedirects: true,
+    });
+    mockCreateReadyPaymentOrder.mockResolvedValue(createReadyResult("toss"));
+
+    const response = await POST(
+      createJsonRequest({
+        provider: "toss",
+        productType: "saju_mbti_full",
+        inputSnapshot,
+      }),
+    );
+    const body = await readJsonObject(response);
+
+    expect(response.status).toBe(200);
+    expectTossCheckoutRequest(body, {
+      clientKey: "test_toss_client_key",
+      successUrl,
+      failUrl,
+    });
+  });
+
+  it("does not return Toss request draft for KakaoPay even when Toss draft gate is enabled", async () => {
+    process.env.PAYMENT_CHECKOUT_PREPARE_API_ENABLED = "1";
+    enableTossCheckoutRequestDraft({
+      clientKey: "test_toss_client_key",
+      successUrl: "https://example.com/payments/toss/success",
+      failUrl: "https://example.com/payments/toss/fail",
+    });
+    mockCreateReadyPaymentOrder.mockResolvedValue(createReadyResult("kakao_pay"));
+
+    const response = await POST(
+      createJsonRequest({
+        provider: "kakao_pay",
+        productType: "saju_mbti_full",
+        inputSnapshot,
+      }),
+    );
+    const body = await readJsonObject(response);
+
+    expect(response.status).toBe(200);
+    expectReadyPaymentOrder(body, "kakao_pay");
+    expectPreparedCheckoutSession(body, "kakao_pay");
+    expectNoTossCheckoutRequest(body);
   });
 
   it("returns 400 when provider is missing", async () => {
@@ -480,6 +746,11 @@ describe("payment checkout prepare route", () => {
 
   it("success response contains no snapshots provider payment id report data token hash or provider url fields", async () => {
     process.env.PAYMENT_CHECKOUT_PREPARE_API_ENABLED = "1";
+    enableTossCheckoutRequestDraft({
+      clientKey: "test_toss_client_key",
+      successUrl: "https://example.com/payments/toss/success",
+      failUrl: "https://example.com/payments/toss/fail",
+    });
     mockCreateReadyPaymentOrder.mockResolvedValue(createReadyResult("toss"));
 
     const response = await POST(
@@ -494,6 +765,9 @@ describe("payment checkout prepare route", () => {
     const blockedMarkers = [
       "inputSnapshot",
       "input" + "_snapshot",
+      "TOSS" + "_SECRET" + "_KEY",
+      "NEXT" + "_PUBLIC" + "_TOSS" + "_SECRET" + "_KEY",
+      "payment" + "Key",
       "provider" + "Payment" + "Id",
       "provider" + "_payment" + "_id",
       "reportSnapshot",
@@ -519,18 +793,34 @@ describe("payment checkout prepare route", () => {
     const requiredMarkers = [
       "PAYMENT_CHECKOUT_PREPARE_API_ENABLED",
       "PAYMENT_CHECKOUT_PREPARE_API_DISABLED",
+      "TOSS_CHECKOUT_REQUEST_DRAFT_ENABLED",
+      "TOSS_CLIENT_KEY",
+      "TOSS_SUCCESS_URL",
+      "TOSS_FAIL_URL",
+      "TOSS_ALLOW_LOCALHOST_REDIRECTS",
+      "PAYMENT_TOSS_CHECKOUT_CONFIG_MISSING",
       "preparePaymentCheckoutSession",
+      "prepareTossCheckoutRequest",
       "createReadyPaymentOrder",
       "checkoutSession",
+      "tossCheckoutRequest",
       "providerPayload",
       "saju_mbti_full",
     ];
     const blockedMarkers = [
       "To" + "ss" + "Payments",
+      "@to" + "sspayments",
+      "/v1/" + "payments/confirm",
+      "fetch" + "(",
+      "ax" + "ios",
       "KakaoPay" + " API",
+      "TOSS" + "_SECRET" + "_KEY",
+      "NEXT" + "_PUBLIC" + "_TOSS" + "_SECRET" + "_KEY",
       "secret" + "Key",
       "client" + "Secret",
       "admin" + "Key",
+      "payment" + "Key",
+      "provider" + "Payment" + "Id",
       "c" + "id",
       "checkout" + "Url",
       "next" + "_redirect",
