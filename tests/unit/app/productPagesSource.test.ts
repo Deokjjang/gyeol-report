@@ -1,0 +1,71 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import { describe, expect, it } from "vitest";
+
+function readSource(relativePath: string): string {
+  return readFileSync(join(process.cwd(), relativePath), "utf8");
+}
+
+const productPageSources = [
+  readSource("src/lib/product/gyeolProducts.ts"),
+  readSource("src/components/product/ProductVisual.tsx"),
+  readSource("src/components/product/ProductSummaryCard.tsx"),
+  readSource("src/app/products/page.tsx"),
+  readSource("src/app/products/saju-mbti-full/page.tsx"),
+].join("\n");
+
+describe("product pages source", () => {
+  it("contains required Toss review product phrases", () => {
+    const requiredMarkers = [
+      "상품 안내",
+      "사주×MBTI 전체 리포트",
+      "1,290원",
+      "결제 승인 후 온라인 열람",
+      "디지털 리포트",
+      "자기이해용 참고 콘텐츠",
+      "의학, 법률, 투자, 심리진단, 미래 사건 예측을 보장하지 않습니다",
+      "중복 결제",
+      "시스템 오류",
+      "리포트 미제공",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(productPageSources).toContain(marker);
+    }
+  });
+
+  it("does not show empty category or unsupported product purchase UI", () => {
+    const blockedMarkers = [
+      "빈 카테고리",
+      "출시 예정 상품 구매하기",
+      "오행팔찌 구매",
+      "굿즈 구매",
+      "대운 구매",
+      "세운 구매",
+      "궁합 구매",
+    ];
+
+    for (const marker of blockedMarkers) {
+      expect(productPageSources).not.toContain(marker);
+    }
+  });
+
+  it("does not contain payment secret or paid-report implementation markers", () => {
+    const blockedMarkers = [
+      "TOSS" + "_SECRET" + "_KEY",
+      "SUPABASE" + "_SERVICE" + "_ROLE",
+      "payment" + "Key",
+      "provider" + "PaymentId",
+      "access" + "TokenHash",
+      "share" + "Token",
+      "guaranteed future",
+      "질병 진단",
+      "투자 수익 보장",
+      "결혼 보장",
+    ];
+
+    for (const marker of blockedMarkers) {
+      expect(productPageSources).not.toContain(marker);
+    }
+  });
+});

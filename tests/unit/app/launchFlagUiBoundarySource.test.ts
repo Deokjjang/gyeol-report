@@ -24,12 +24,14 @@ describe("launch flag UI boundary source", () => {
     }
   });
 
-  it("keeps home page no-payment preview copy visible", () => {
+  it("keeps home page scoped to review-ready product CTA without paid overclaim", () => {
     const source = readFile("src/app/page.tsx");
     const expectedMarkers = [
-      "결제 없는 미리보기",
-      "현재는 실제 결제 없이 리포트 미리보기만 제공합니다.",
-      "정식 결제 및 전체 리포트 잠금 해제는 추후 제공 예정입니다.",
+      "현재 구매 가능한 상품 1개",
+      "리포트 작성하기",
+      "/products/saju-mbti-full",
+      "/report/new",
+      "환불/취소 정책",
     ];
     const activePurchaseMarkers = [
       "결제" + "하기",

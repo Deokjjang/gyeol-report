@@ -71,14 +71,16 @@ describe("app layout metadata source", () => {
 
   it("renders landing page primary CTA", () => {
     expect(pageSource).toContain('href="/report/new"');
-    expect(pageSource).toContain("샘플 리포트 생성하기");
+    expect(pageSource).toContain("리포트 작성하기");
   });
 
-  it("renders landing page no-payment preview guard", () => {
+  it("renders landing page product review summary", () => {
     const expectedValues = [
-      "결제 없는 미리보기",
-      "현재는 실제 결제 없이 리포트 미리보기만 제공합니다.",
-      "정식 결제 및 전체 리포트 잠금 해제는 추후 제공 예정입니다.",
+      "현재 구매 가능한 상품 1개",
+      "activeProduct.nameKo",
+      "activeProduct.priceKo",
+      "activeProduct.formatKo",
+      "activeProduct.deliveryTypeKo",
     ];
 
     for (const value of expectedValues) {
@@ -87,9 +89,10 @@ describe("app layout metadata source", () => {
   });
 
   it("renders landing page product positioning", () => {
-    expect(pageSource).toContain("사주와 MBTI");
+    expect(pageSource).toContain("생년월일과 MBTI");
+    expect(pageSource).toContain("사주 구조");
     expect(pageSource).toContain("자기이해");
-    expect(pageSource).toContain("사주와 MBTI를 함께 보며 자기이해를 돕는 리포트");
+    expect(pageSource).toContain("결리포트 소개");
   });
 
   it("renders landing page report value content", () => {
@@ -110,11 +113,11 @@ describe("app layout metadata source", () => {
 
   it("renders landing page trust and support placeholders", () => {
     const expectedValues = [
-      "안내",
-      "official@dvem.ai",
+      "이용 전 안내",
       "이용약관",
-      "개인정보 처리방침",
-      "정식 출시 전 공개 예정",
+      "개인정보처리방침",
+      "환불/취소 정책",
+      "상품 상세 보기",
     ];
 
     for (const value of expectedValues) {
@@ -122,8 +125,10 @@ describe("app layout metadata source", () => {
     }
   });
 
-  it("does not link to unsupported policy routes", () => {
-    expect(pageSource).toContain("mailto:official@dvem.ai");
+  it("links to supported legal policy routes only", () => {
+    expect(pageSource).toContain('href="/legal/terms"');
+    expect(pageSource).toContain('href="/legal/privacy"');
+    expect(pageSource).toContain('href="/legal/refund"');
     expect(pageSource).not.toContain('href="/terms"');
     expect(pageSource).not.toContain('href="/privacy"');
   });
