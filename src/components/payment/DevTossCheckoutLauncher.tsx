@@ -6,6 +6,7 @@ import { loadTossPaymentsBrowserSdk } from "../../lib/payment/tossBrowserSdkLoad
 import { launchTossCheckout } from "../../lib/payment/tossClientCheckoutLauncher";
 import type {
   TossClientCheckoutLaunchResult,
+  TossClientSdk,
   TossClientSdkLoader,
 } from "../../lib/payment/tossClientCheckoutTypes";
 
@@ -47,6 +48,18 @@ export type DevTossCheckoutLauncherRuntime = {
   readonly loadTossPayments: TossClientSdkLoader;
 };
 
+type DevTossCheckoutErrorStage =
+  | "prepare_api"
+  | "sdk_load"
+  | "request_payment"
+  | "unknown";
+
+type DevTossCheckoutErrorDetail = {
+  readonly stage: DevTossCheckoutErrorStage;
+  readonly errorCode: string;
+  readonly errorMessage: string;
+};
+
 export type DevTossCheckoutLauncherResult =
   | {
       readonly ok: true;
@@ -55,16 +68,129 @@ export type DevTossCheckoutLauncherResult =
   | {
       readonly ok: false;
       readonly messageKo: string;
+      readonly detail: DevTossCheckoutErrorDetail;
     };
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-function createFailureResult(): DevTossCheckoutLauncherResult {
+function readStringField(value: unknown, field: string): string | undefined {
+  if (!isRecord(value)) {
+    return undefined;
+  }
+
+  const fieldValue = value[field];
+
+  return typeof fieldValue === "string" ? fieldValue : undefined;
+}
+
+function sanitizeDevErrorText(value: string): string {
+  const restrictedMarkers = [
+    "TOSS" + "_SECRET" + "_KEY",
+    "NEXT" + "_PUBLIC" + "_TOSS" + "_SECRET" + "_KEY",
+    "payment" + "Key",
+    "provider" + "PaymentId",
+    "provider" + "_payment" + "_id",
+    "access" + "TokenHash",
+    "share" + "Token",
+    "report" + "_snapshot",
+    "SUPABASE" + "_URL",
+    "SUPABASE" + "_ANON" + "_KEY",
+  ];
+
+  let sanitized = value
+    .replace(/\b(?:test|live)_(?:ck|sk)_[A-Za-z0-9_-]+/g, "[masked_key]")
+    .replace(/\b[A-Za-z0-9_-]{25,}\b/g, (token) =>
+      /^[A-Z0-9_]+$/.test(token) ? token : "[masked_token]",
+    )
+    .slice(0, 240);
+
+  for (const marker of restrictedMarkers) {
+    sanitized = sanitized.split(marker).join("[masked]");
+  }
+
+  return sanitized.trim() || "No safe error message was provided.";
+}
+
+function extractSafeErrorDetail(
+  stage: DevTossCheckoutErrorStage,
+  error: unknown,
+): DevTossCheckoutErrorDetail {
+  const rawCode =
+    readStringField(error, "code") ??
+    readStringField(error, "errorCode") ??
+    "UNKNOWN_TOSS_CHECKOUT_ERROR";
+  const rawMessage =
+    readStringField(error, "message") ??
+    readStringField(error, "messageKo") ??
+    (typeof error === "string" ? error : "No safe error message was provided.");
+
+  return {
+    stage,
+    errorCode:
+      sanitizeDevErrorText(rawCode) || "UNKNOWN_TOSS_CHECKOUT_ERROR",
+    errorMessage: sanitizeDevErrorText(rawMessage),
+  };
+}
+
+function createFailureResult(
+  detail: DevTossCheckoutErrorDetail = extractSafeErrorDetail(
+    "unknown",
+    undefined,
+  ),
+): DevTossCheckoutLauncherResult {
   return {
     ok: false,
     messageKo: DEV_TOSS_CHECKOUT_ERROR_MESSAGE,
+    detail,
+  };
+}
+
+function getLaunchFailureStage(
+  result: Extract<TossClientCheckoutLaunchResult, { ok: false }>,
+): DevTossCheckoutErrorStage {
+  if (result.error.code === "TOSS_CLIENT_CHECKOUT_SDK_LOAD_FAILED") {
+    return "sdk_load";
+  }
+
+  if (result.error.code === "TOSS_CLIENT_CHECKOUT_REQUEST_FAILED") {
+    return "request_payment";
+  }
+
+  return "unknown";
+}
+
+function createDetailCapturingLoader(
+  sdkLoader: TossClientSdkLoader,
+  captureDetail: (detail: DevTossCheckoutErrorDetail) => void,
+): TossClientSdkLoader {
+  return async (clientKey) => {
+    let sdk: TossClientSdk;
+
+    try {
+      sdk = await sdkLoader(clientKey);
+    } catch (error) {
+      captureDetail(extractSafeErrorDetail("sdk_load", error));
+      throw error;
+    }
+
+    return {
+      payment(params) {
+        const paymentWindow = sdk.payment(params);
+
+        return {
+          async requestPayment(paymentRequest) {
+            try {
+              await paymentWindow.requestPayment(paymentRequest);
+            } catch (error) {
+              captureDetail(extractSafeErrorDetail("request_payment", error));
+              throw error;
+            }
+          },
+        };
+      },
+    };
   };
 }
 
@@ -87,16 +213,16 @@ export async function runDevTossCheckout(
       },
       body: JSON.stringify(devTossCheckoutPrepareBody),
     });
-  } catch {
-    return createFailureResult();
+  } catch (error) {
+    return createFailureResult(extractSafeErrorDetail("prepare_api", error));
   }
 
   let body: unknown;
 
   try {
     body = await response.json();
-  } catch {
-    return createFailureResult();
+  } catch (error) {
+    return createFailureResult(extractSafeErrorDetail("prepare_api", error));
   }
 
   if (
@@ -105,18 +231,39 @@ export async function runDevTossCheckout(
     body.ok !== true ||
     !isRecord(body.tossCheckoutRequest)
   ) {
-    return createFailureResult();
+    const responseError =
+      isRecord(body) && isRecord(body.error) ? body.error : undefined;
+
+    return createFailureResult(
+      extractSafeErrorDetail("prepare_api", responseError),
+    );
   }
 
-  const launchResult = await runtime.launchTossCheckout({
-    tossCheckoutRequest: body.tossCheckoutRequest,
-    // TODO: production customerKey must be stable and non-guessable.
-    customerKey: DEV_TOSS_CHECKOUT_CUSTOMER_KEY,
-    loadTossPayments: runtime.loadTossPayments,
-  });
+  let capturedDetail: DevTossCheckoutErrorDetail | null = null;
+  const loadTossPayments = createDetailCapturingLoader(
+    runtime.loadTossPayments,
+    (detail) => {
+      capturedDetail = detail;
+    },
+  );
+  let launchResult: TossClientCheckoutLaunchResult;
+
+  try {
+    launchResult = await runtime.launchTossCheckout({
+      tossCheckoutRequest: body.tossCheckoutRequest,
+      // TODO: production customerKey must be stable and non-guessable.
+      customerKey: DEV_TOSS_CHECKOUT_CUSTOMER_KEY,
+      loadTossPayments,
+    });
+  } catch (error) {
+    return createFailureResult(extractSafeErrorDetail("unknown", error));
+  }
 
   if (!launchResult.ok) {
-    return createFailureResult();
+    return createFailureResult(
+      capturedDetail ??
+        extractSafeErrorDetail(getLaunchFailureStage(launchResult), launchResult.error),
+    );
   }
 
   return {
@@ -128,6 +275,8 @@ export async function runDevTossCheckout(
 export default function DevTossCheckoutLauncher() {
   const [isLaunching, setIsLaunching] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [errorDetail, setErrorDetail] =
+    useState<DevTossCheckoutErrorDetail | null>(null);
   const [statusMessage, setStatusMessage] = useState("");
 
   if (!DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED) {
@@ -141,12 +290,14 @@ export default function DevTossCheckoutLauncher() {
 
     setIsLaunching(true);
     setErrorMessage("");
+    setErrorDetail(null);
     setStatusMessage("");
 
     const result = await runDevTossCheckout();
 
     if (!result.ok) {
       setErrorMessage(result.messageKo);
+      setErrorDetail(result.detail);
       setIsLaunching(false);
       return;
     }
@@ -177,9 +328,29 @@ export default function DevTossCheckoutLauncher() {
         {isLaunching ? "Toss 결제창 여는 중..." : "Toss 결제창 열기"}
       </button>
       {errorMessage ? (
-        <p className="rounded-lg border border-red-900/60 bg-red-950/30 p-3 text-sm leading-6 text-red-100">
-          {errorMessage}
-        </p>
+        <div className="space-y-3 rounded-lg border border-red-900/60 bg-red-950/30 p-3 text-sm leading-6 text-red-100">
+          <p>{errorMessage}</p>
+          {errorDetail ? (
+            <dl className="grid gap-2 rounded-lg border border-red-900/50 bg-neutral-950/60 p-3">
+              <div className="grid gap-1 sm:grid-cols-[7rem_1fr]">
+                <dt className="font-medium text-red-200/80">stage</dt>
+                <dd className="break-words text-red-50">{errorDetail.stage}</dd>
+              </div>
+              <div className="grid gap-1 sm:grid-cols-[7rem_1fr]">
+                <dt className="font-medium text-red-200/80">오류 코드</dt>
+                <dd className="break-words text-red-50">
+                  {errorDetail.errorCode}
+                </dd>
+              </div>
+              <div className="grid gap-1 sm:grid-cols-[7rem_1fr]">
+                <dt className="font-medium text-red-200/80">오류 메시지</dt>
+                <dd className="break-words text-red-50">
+                  {errorDetail.errorMessage}
+                </dd>
+              </div>
+            </dl>
+          ) : null}
+        </div>
       ) : null}
       {statusMessage ? (
         <p className="rounded-lg border border-sky-900/60 bg-sky-950/30 p-3 text-sm leading-6 text-sky-100">
