@@ -307,15 +307,15 @@ export default function DevTossCheckoutLauncher() {
   }
 
   return (
-    <section className="space-y-4 rounded-lg border border-sky-900/50 bg-sky-950/20 p-4">
+    <section className="space-y-4 rounded-lg border-2 border-sky-400 bg-sky-50 p-4 shadow-sm">
       <div className="space-y-2">
-        <p className="text-sm font-semibold text-sky-100">
+        <p className="text-sm font-bold text-sky-900">
           Toss 결제창 테스트
         </p>
-        <p className="text-sm leading-6 text-sky-100/80">
+        <p className="text-sm leading-6 text-sky-800">
           실제 결제 승인(confirm)은 아직 연결되지 않았습니다.
         </p>
-        <p className="text-sm leading-6 text-sky-100/80">
+        <p className="text-sm leading-6 text-sky-800">
           결제 성공 후 임시 success 페이지로 돌아옵니다.
         </p>
       </div>
@@ -323,7 +323,7 @@ export default function DevTossCheckoutLauncher() {
         type="button"
         disabled={isLaunching}
         onClick={() => void handleLaunch()}
-        className="w-full rounded-lg border border-sky-800/70 bg-neutral-950 px-4 py-3 text-sm font-semibold text-sky-100 transition hover:border-sky-500 disabled:cursor-not-allowed disabled:border-neutral-800 disabled:text-neutral-500"
+        className="w-full rounded-lg bg-sky-700 px-4 py-3 text-sm font-bold text-white transition hover:bg-sky-800 disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:text-neutral-500"
       >
         {isLaunching ? "Toss 결제창 여는 중..." : "Toss 결제창 열기"}
       </button>
@@ -353,7 +353,7 @@ export default function DevTossCheckoutLauncher() {
         </div>
       ) : null}
       {statusMessage ? (
-        <p className="rounded-lg border border-sky-900/60 bg-sky-950/30 p-3 text-sm leading-6 text-sky-100">
+        <p className="rounded-lg border border-sky-200 bg-white p-3 text-sm leading-6 text-sky-900">
           {statusMessage}
         </p>
       ) : null}

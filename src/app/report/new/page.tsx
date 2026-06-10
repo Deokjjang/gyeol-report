@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 
 import DevTossCheckoutLauncher from "../../../components/payment/DevTossCheckoutLauncher";
+import { GYEOL_PRODUCTS } from "../../../lib/product/gyeolProducts";
 
 type ValidationError = {
   field: string;
@@ -72,8 +73,16 @@ type MockPaidCompleteResponse =
     };
 
 const REPORT_PREVIEW_MODE = "gated_preview" as const satisfies ReportPreviewMode;
+const ACTIVE_REPORT_PRODUCT = GYEOL_PRODUCTS[0];
+const ACTIVE_REPORT_LIST_PRICE_LABEL_KO = "정가 1,290원";
+const ACTIVE_REPORT_SALE_PRICE_LABEL_KO = "런칭가 990원";
+const ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO = "결제금액 990원";
+const FULL_REPORT_AVAILABLE_AFTER_PAYMENT_COPY_KO =
+  "전체 리포트는 정식 결제 연동 이후 제공됩니다.";
 const MOCK_PAID_REPORT_UI_ENABLED =
   process.env.NEXT_PUBLIC_MOCK_PAID_REPORT_UI_ENABLED === "1";
+const DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED =
+  process.env.NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED === "1";
 const MOCK_PAYMENT_ERROR_MESSAGE =
   "결제 테스트를 완료하지 못했습니다. 입력값을 확인한 뒤 다시 시도해 주세요.";
 
@@ -698,8 +707,10 @@ export default function NewReportPage() {
           <p className="max-w-2xl text-base leading-8 text-neutral-400">
             생년월일, 출생시간, MBTI를 입력하면 사주 구조와 자기인식의
             겹침을 바탕으로 샘플 리포트를 생성합니다. 무료 미리보기에서는
-            핵심 구조 일부를 먼저 확인할 수 있습니다. 전체 리포트는
-            정식 결제 연동 이후 제공됩니다. 결제 후 전체 리포트를 받아보는 구조로 준비 중입니다. 현재는 결제 전 테스트용 무료 미리보기만 확인할 수 있습니다.
+            핵심 구조 일부를 먼저 확인할 수 있습니다.{" "}
+            {FULL_REPORT_AVAILABLE_AFTER_PAYMENT_COPY_KO} 결제 후 전체 리포트를
+            받아보는 구조로 준비 중입니다. 현재는 결제 전 테스트용 무료
+            미리보기만 확인할 수 있습니다.
           </p>
         </header>
 
@@ -991,80 +1002,153 @@ export default function NewReportPage() {
               ) : null}
 
               {currentStep === 3 ? (
-                <div className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                  <h3 className="text-base font-semibold text-neutral-100">
-                    입력 정보 확인
-                  </h3>
-                  <dl className="grid gap-3 text-sm">
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-neutral-500">이름</dt>
-                      <dd className="text-right text-neutral-200">
-                        {displayName.trim() || "미입력"}
-                      </dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-neutral-500">달력 기준</dt>
-                      <dd className="text-right text-neutral-200">
-                        {formatCalendarTypeLabel("SOLAR")}
-                      </dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-neutral-500">생년월일</dt>
-                      <dd className="text-right text-neutral-200">
-                        {birthDate || "미입력"}
-                      </dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-neutral-500">출생시간</dt>
-                      <dd className="text-right text-neutral-200">
-                        {birthTimeSummary}
-                      </dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-neutral-500">성별</dt>
-                      <dd className="text-right text-neutral-200">
-                        {formatGenderLabel(gender)}
-                      </dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-neutral-500">MBTI</dt>
-                      <dd className="text-right text-neutral-200">
-                        {mbtiType || "미선택"}
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
-              ) : null}
-
-              {currentStep === 3 && MOCK_PAID_REPORT_UI_ENABLED ? (
-                <div className="space-y-4 rounded-lg border border-emerald-900/40 bg-emerald-950/20 p-4">
-                  <div className="space-y-2">
-                    <p className="text-sm font-semibold text-emerald-100">
-                      정식 결제 전 테스트용 결제 흐름입니다.
-                    </p>
-                    <p className="text-sm leading-6 text-emerald-100/80">
-                      리포트 1개당 1회 결제됩니다.
-                    </p>
+                <div className="space-y-5">
+                  <div className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                    <h3 className="text-base font-semibold text-neutral-100">
+                      입력 정보 확인
+                    </h3>
+                    <dl className="grid gap-3 text-sm">
+                      <div className="flex justify-between gap-4">
+                        <dt className="text-neutral-500">이름</dt>
+                        <dd className="text-right text-neutral-200">
+                          {displayName.trim() || "미입력"}
+                        </dd>
+                      </div>
+                      <div className="flex justify-between gap-4">
+                        <dt className="text-neutral-500">달력 기준</dt>
+                        <dd className="text-right text-neutral-200">
+                          {formatCalendarTypeLabel("SOLAR")}
+                        </dd>
+                      </div>
+                      <div className="flex justify-between gap-4">
+                        <dt className="text-neutral-500">생년월일</dt>
+                        <dd className="text-right text-neutral-200">
+                          {birthDate || "미입력"}
+                        </dd>
+                      </div>
+                      <div className="flex justify-between gap-4">
+                        <dt className="text-neutral-500">출생시간</dt>
+                        <dd className="text-right text-neutral-200">
+                          {birthTimeSummary}
+                        </dd>
+                      </div>
+                      <div className="flex justify-between gap-4">
+                        <dt className="text-neutral-500">성별</dt>
+                        <dd className="text-right text-neutral-200">
+                          {formatGenderLabel(gender)}
+                        </dd>
+                      </div>
+                      <div className="flex justify-between gap-4">
+                        <dt className="text-neutral-500">MBTI</dt>
+                        <dd className="text-right text-neutral-200">
+                          {mbtiType || "미선택"}
+                        </dd>
+                      </div>
+                    </dl>
                   </div>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {mockPaymentChoices.map((choice) => (
-                      <button
-                        key={choice.method}
-                        type="button"
-                        disabled={isSubmitting || isMockPaymentSubmitting}
-                        onClick={() => void handleMockPaidComplete(choice.method)}
-                        className="rounded-lg border border-emerald-800/60 bg-neutral-950 px-4 py-3 text-sm font-semibold text-emerald-100 transition hover:border-emerald-500 disabled:cursor-not-allowed disabled:border-neutral-800 disabled:text-neutral-500"
+
+                  <section className="space-y-4 rounded-lg border border-emerald-900/40 bg-emerald-950/20 p-4">
+                    <div className="space-y-2">
+                      <h3 className="text-base font-semibold text-emerald-100">
+                        무료 미리보기
+                      </h3>
+                      <p className="text-sm leading-6 text-emerald-100/80">
+                        입력한 정보로 핵심 구조 일부를 먼저 확인합니다.
+                      </p>
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting || isMockPaymentSubmitting}
+                      className="w-full rounded-lg bg-emerald-100 px-5 py-4 font-semibold text-emerald-950 transition hover:bg-white disabled:cursor-not-allowed disabled:bg-neutral-600 disabled:text-neutral-300"
+                    >
+                      {isSubmitting ? "리포트 생성 중..." : "무료 미리보기 생성"}
+                    </button>
+                  </section>
+
+                  <section className="space-y-4 rounded-lg border border-sky-200 bg-white p-4 text-neutral-950">
+                    <div className="space-y-2">
+                      <h3 className="text-base font-bold">
+                        전체 리포트 열람
+                      </h3>
+                      <p className="text-sm leading-6 text-neutral-600">
+                        결제 승인 후 전체 리포트를 온라인으로 열람합니다.
+                      </p>
+                    </div>
+                    <dl className="grid gap-3 text-sm sm:grid-cols-3">
+                      <div
+                        aria-label={ACTIVE_REPORT_LIST_PRICE_LABEL_KO}
+                        className="rounded-lg border border-neutral-200 bg-neutral-50 p-3"
                       >
-                        {mockPaymentMethodInProgress === choice.method
-                          ? "결제 테스트 처리 중..."
-                          : choice.labelKo}
-                      </button>
-                    ))}
-                  </div>
+                        <dt className="text-neutral-500">정가</dt>
+                        <dd className="mt-1 font-semibold text-neutral-400 line-through">
+                          {ACTIVE_REPORT_PRODUCT.listPriceKo}
+                        </dd>
+                      </div>
+                      <div
+                        aria-label={ACTIVE_REPORT_SALE_PRICE_LABEL_KO}
+                        className="rounded-lg border border-rose-200 bg-rose-50 p-3"
+                      >
+                        <dt className="text-rose-700">런칭가</dt>
+                        <dd className="mt-1 text-xl font-extrabold text-rose-700">
+                          {ACTIVE_REPORT_PRODUCT.priceKo}
+                        </dd>
+                      </div>
+                      <div
+                        aria-label={ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO}
+                        className="rounded-lg border border-neutral-200 bg-neutral-50 p-3"
+                      >
+                        <dt className="text-neutral-500">결제금액</dt>
+                        <dd className="mt-1 font-bold text-neutral-950">
+                          {ACTIVE_REPORT_PRODUCT.priceKo}
+                        </dd>
+                      </div>
+                    </dl>
+
+                    {MOCK_PAID_REPORT_UI_ENABLED ? (
+                      <div className="space-y-4 rounded-lg border border-emerald-200 bg-emerald-50 p-4">
+                        <div className="space-y-2">
+                          <p className="text-sm font-semibold text-emerald-900">
+                            정식 결제 전 테스트용 결제 흐름입니다.
+                          </p>
+                          <p className="text-sm leading-6 text-emerald-800">
+                            리포트 1개당 1회 결제됩니다.
+                          </p>
+                        </div>
+                        <div className="grid gap-3 sm:grid-cols-2">
+                          {mockPaymentChoices.map((choice) => (
+                            <button
+                              key={choice.method}
+                              type="button"
+                              disabled={isSubmitting || isMockPaymentSubmitting}
+                              onClick={() =>
+                                void handleMockPaidComplete(choice.method)
+                              }
+                              className="rounded-lg border border-emerald-300 bg-white px-4 py-3 text-sm font-semibold text-emerald-900 transition hover:border-emerald-500 disabled:cursor-not-allowed disabled:border-neutral-200 disabled:text-neutral-400"
+                            >
+                              {mockPaymentMethodInProgress === choice.method
+                                ? "결제 테스트 처리 중..."
+                                : choice.labelKo}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
+
+                    {DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED ? (
+                      <DevTossCheckoutLauncher />
+                    ) : (
+                      <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
+                        <p className="text-sm font-semibold text-neutral-900">
+                          정식 결제 연결 준비 중입니다.
+                        </p>
+                        <p className="mt-2 text-sm leading-6 text-neutral-600">
+                          심사 및 결제 승인 연동 후 전체 리포트 구매가 가능합니다.
+                        </p>
+                      </div>
+                    )}
+                  </section>
                 </div>
               ) : null}
-
-              {currentStep === 3 ? <DevTossCheckoutLauncher /> : null}
 
               <div className="grid gap-3 sm:grid-cols-2">
                 {currentStep > 0 ? (
@@ -1084,15 +1168,7 @@ export default function NewReportPage() {
                   >
                     다음
                   </button>
-                ) : (
-                  <button
-                    type="submit"
-                    disabled={isSubmitting || isMockPaymentSubmitting}
-                    className="rounded-lg bg-neutral-50 px-5 py-4 font-semibold text-neutral-950 transition hover:bg-white disabled:cursor-not-allowed disabled:bg-neutral-500 sm:col-span-2"
-                  >
-                    {isSubmitting ? "리포트 생성 중..." : "무료 미리보기 생성"}
-                  </button>
-                )}
+                ) : null}
               </div>
               {isSubmitting ? (
                 <p className="text-center text-sm leading-6 text-neutral-400">
@@ -1213,22 +1289,22 @@ export default function NewReportPage() {
                     ))}
                   </ul>
                   <p className="text-xs leading-5 text-neutral-500">
-                    결제 기능은 아직 준비 중입니다. 현재는 무료 미리보기만 확인할 수 있습니다.
+                    정식 결제 연결 준비 중입니다. 현재는 무료 미리보기를 먼저 확인할 수 있습니다.
                   </p>
                 </div>
 
                 <div className="space-y-2 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
                   <p className="text-sm font-semibold text-neutral-100">
-                    결제 비활성 안내
+                    전체 리포트 열람 안내
                   </p>
                   <p className="text-sm leading-6 text-neutral-400">
-                    현재 실제 결제는 아직 활성화되어 있지 않습니다.
+                    정식 결제 연결 준비 중입니다.
                   </p>
                   <p className="text-sm leading-6 text-neutral-400">
                     무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.
                   </p>
                   <p className="text-sm leading-6 text-neutral-400">
-                    전체 리포트는 정식 결제 연동 이후 제공됩니다.
+                    심사 및 결제 승인 연동 후 전체 리포트 구매가 가능합니다.
                   </p>
                 </div>
 

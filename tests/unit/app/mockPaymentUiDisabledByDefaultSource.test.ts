@@ -8,10 +8,11 @@ const pageSource = readFileSync(
 );
 
 function getMockPaymentUiGuardedSource(): string {
-  const start = pageSource.indexOf(
-    "currentStep === 3 && MOCK_PAID_REPORT_UI_ENABLED",
+  const start = pageSource.indexOf("MOCK_PAID_REPORT_UI_ENABLED ? (");
+  const end = pageSource.indexOf(
+    "DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED ? (",
+    start,
   );
-  const end = pageSource.indexOf("{currentStep > 0 ? (", start);
 
   expect(start).toBeGreaterThanOrEqual(0);
   expect(end).toBeGreaterThan(start);
@@ -26,7 +27,7 @@ describe("mock payment UI production safety", () => {
       'process.env.NEXT_PUBLIC_MOCK_PAID_REPORT_UI_ENABLED === "1"',
     );
     expect(pageSource).toContain(
-      "currentStep === 3 && MOCK_PAID_REPORT_UI_ENABLED",
+      "MOCK_PAID_REPORT_UI_ENABLED ? (",
     );
     expect(getMockPaymentUiGuardedSource()).toContain(
       "mockPaymentChoices.map",

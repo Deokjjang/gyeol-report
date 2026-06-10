@@ -10,6 +10,8 @@ const productPageSources = [
   readSource("src/lib/product/gyeolProducts.ts"),
   readSource("src/components/product/ProductVisual.tsx"),
   readSource("src/components/product/ProductSummaryCard.tsx"),
+  readSource("src/components/product/ComingSoonProductCard.tsx"),
+  readSource("src/components/product/ProductCategoryChips.tsx"),
   readSource("src/app/products/page.tsx"),
   readSource("src/app/products/saju-mbti-full/page.tsx"),
 ].join("\n");
@@ -19,10 +21,9 @@ describe("product pages source", () => {
     const requiredMarkers = [
       "상품 안내",
       "사주×MBTI 전체 리포트",
-      "1,290원",
-      "990원",
+      "정가 1,290원",
       "런칭가 990원",
-      "결제금액",
+      "결제금액 990원",
       "결제 승인 후 온라인 열람",
       "디지털 리포트",
       "자기이해용 참고 콘텐츠",
@@ -30,6 +31,26 @@ describe("product pages source", () => {
       "중복 결제",
       "시스템 오류",
       "리포트 미제공",
+      "2026 하반기 운세",
+      "정통 사주 리포트",
+      "궁합 리포트",
+      "대운 리포트",
+      "세운 리포트",
+      "준비 중",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(productPageSources).toContain(marker);
+    }
+  });
+
+  it("renders coming soon products as disabled and not purchasable", () => {
+    const requiredMarkers = [
+      "coming_soon",
+      "isPurchasable: false",
+      'disabled',
+      'aria-disabled="true"',
+      "아직 결제와 연결되어 있지 않습니다",
     ];
 
     for (const marker of requiredMarkers) {

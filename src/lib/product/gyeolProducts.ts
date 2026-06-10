@@ -1,6 +1,8 @@
 export const GYEOL_PRODUCTS = [
   {
+    id: "saju_mbti_full",
     productType: "saju_mbti_full",
+    paymentProductType: "saju_mbti_full",
     slug: "saju-mbti-full",
     nameKo: "사주×MBTI 전체 리포트",
     priceKo: "990원",
@@ -11,6 +13,10 @@ export const GYEOL_PRODUCTS = [
     salePriceAmount: 990,
     paymentAmount: 990,
     currency: "KRW",
+    status: "available",
+    isPurchasable: true,
+    ctaHref: "/report/new",
+    badgeKo: "런칭가",
     deliveryTypeKo: "결제 승인 후 온라인 열람",
     formatKo: "디지털 리포트",
     summaryKo:
@@ -20,4 +26,49 @@ export const GYEOL_PRODUCTS = [
   },
 ] as const;
 
+export const GYEOL_COMING_SOON_PRODUCTS = [
+  {
+    id: "second_half_2026",
+    nameKo: "2026 하반기 운세",
+    shortDescriptionKo: "하반기 흐름을 세운 기준으로 가볍게 정리하는 리포트",
+    status: "coming_soon",
+    isPurchasable: false,
+    badgeKo: "준비 중",
+  },
+  {
+    id: "traditional_saju_report",
+    nameKo: "정통 사주 리포트",
+    shortDescriptionKo: "사주 구조와 오행 흐름을 더 전통적인 구성으로 정리하는 리포트",
+    status: "coming_soon",
+    isPurchasable: false,
+    badgeKo: "준비 중",
+  },
+  {
+    id: "compatibility_report",
+    nameKo: "궁합 리포트",
+    shortDescriptionKo: "두 사람의 성향과 관계 흐름을 참고용으로 비교하는 리포트",
+    status: "coming_soon",
+    isPurchasable: false,
+    badgeKo: "준비 중",
+  },
+  {
+    id: "daewoon_report",
+    nameKo: "대운 리포트",
+    shortDescriptionKo: "큰 흐름을 자기관리 관점에서 살펴보는 리포트",
+    status: "coming_soon",
+    isPurchasable: false,
+    badgeKo: "준비 중",
+  },
+  {
+    id: "saewoon_report",
+    nameKo: "세운 리포트",
+    shortDescriptionKo: "연간 흐름을 일과 관계 활용 관점에서 정리하는 리포트",
+    status: "coming_soon",
+    isPurchasable: false,
+    badgeKo: "준비 중",
+  },
+] as const;
+
 export type GyeolProduct = (typeof GYEOL_PRODUCTS)[number];
+export type GyeolComingSoonProduct =
+  (typeof GYEOL_COMING_SOON_PRODUCTS)[number];

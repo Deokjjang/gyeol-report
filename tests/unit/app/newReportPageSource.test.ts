@@ -6,10 +6,17 @@ const pagePath = join(process.cwd(), "src/app/report/new/page.tsx");
 const pageSource = readFileSync(pagePath, "utf8");
 const pageSourceWithoutDevTossLauncher = pageSource
   .replace(
-    /import DevTossCheckoutLauncher from "\.\.\/\.\.\/\.\.\/components\/payment\/DevTossCheckoutLauncher";\r?\n\r?\n/,
+    /import DevTossCheckoutLauncher from "\.\.\/\.\.\/\.\.\/components\/payment\/DevTossCheckoutLauncher";\r?\n/,
     "",
   )
-  .replace("{currentStep === 3 ? <DevTossCheckoutLauncher /> : null}", "");
+  .replace(
+    /const DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED =\r?\n  process\.env\.NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED === "1";\r?\n/,
+    "",
+  )
+  .replace(
+    /\{DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED \? \(\r?\n\s*<DevTossCheckoutLauncher \/>\r?\n\s*\) : \([\s\S]*?\r?\n\s*\)\}/,
+    "",
+  );
 
 describe("new report page source", () => {
   it("is a client component", () => {
@@ -80,18 +87,20 @@ describe("new report page source", () => {
   });
 
   it("renders product preview header copy", () => {
+    const normalizedSource = pageSource.replace(/\s+/g, " ");
+
     expect(pageSource).toContain("결리포트 미리보기");
-    expect(pageSource).toContain("샘플 리포트를 생성합니다");
-    expect(pageSource).toContain(
+    expect(normalizedSource).toContain("샘플 리포트를 생성합니다");
+    expect(normalizedSource).toContain(
       "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
     );
     expect(pageSource).toContain(
       "전체 리포트는 정식 결제 연동 이후 제공됩니다.",
     );
-    expect(pageSource).toContain(
+    expect(normalizedSource).toContain(
       "결제 후 전체 리포트를 받아보는 구조로 준비 중입니다.",
     );
-    expect(pageSource).toContain(
+    expect(normalizedSource).toContain(
       "현재는 결제 전 테스트용 무료 미리보기만 확인할 수 있습니다.",
     );
     expect(pageSource).not.toContain(
@@ -417,7 +426,7 @@ describe("new report page source", () => {
       "십성 기반 일·돈·관계 해석",
       "신살·귀인 반복 신호 해석",
       "사주×MBTI 차이와 조절 포인트",
-      "결제 기능은 아직 준비 중입니다. 현재는 무료 미리보기만 확인할 수 있습니다.",
+      "정식 결제 연결 준비 중입니다. 현재는 무료 미리보기를 먼저 확인할 수 있습니다.",
     ];
 
     for (const marker of globalTeaserMarkers) {
@@ -430,7 +439,7 @@ describe("new report page source", () => {
     const globalTeaserIndex = pageSource.indexOf(
       "전체 리포트에서 이어지는 내용",
     );
-    const inactiveNoticeIndex = pageSource.indexOf("결제 비활성 안내");
+    const fullReportNoticeIndex = pageSource.indexOf("전체 리포트 열람 안내");
     const lockedCardSource = pageSource.slice(
       pageSource.indexOf("function renderLockedSectionBody"),
       pageSource.indexOf("function renderReportBlock"),
@@ -438,14 +447,14 @@ describe("new report page source", () => {
 
     expect(resultNavigationIndex).toBeGreaterThanOrEqual(0);
     expect(globalTeaserIndex).toBeGreaterThan(resultNavigationIndex);
-    expect(globalTeaserIndex).toBeLessThan(inactiveNoticeIndex);
+    expect(globalTeaserIndex).toBeLessThan(fullReportNoticeIndex);
     expect(lockedCardSource).toContain("전체 리포트 잠금");
     expect(lockedCardSource).toContain("정식 결제 연동 후 제공 예정");
     expect(lockedCardSource).not.toContain("전체 리포트에서 이어지는 내용");
     expect(lockedCardSource).not.toContain("lockedValuePoints.map");
     expect(pageSource.match(/전체 리포트에서 이어지는 내용/g)).toHaveLength(1);
     expect(pageSource).toContain(
-      "결제 기능은 아직 준비 중입니다. 현재는 무료 미리보기만 확인할 수 있습니다.",
+      "정식 결제 연결 준비 중입니다. 현재는 무료 미리보기를 먼저 확인할 수 있습니다.",
     );
   });
 
@@ -457,10 +466,14 @@ describe("new report page source", () => {
     );
   });
 
-  it("renders payment inactive guard copy", () => {
+  it("renders separated preview and full report checkout copy", () => {
     const guardMarkers = [
-      "결제 비활성 안내",
-      "현재 실제 결제는 아직 활성화되어 있지 않습니다.",
+      "무료 미리보기",
+      "전체 리포트 열람",
+      "정가 1,290원",
+      "런칭가 990원",
+      "정식 결제 연결 준비 중입니다.",
+      "심사 및 결제 승인 연동 후 전체 리포트 구매가 가능합니다.",
       "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
       "전체 리포트는 정식 결제 연동 이후 제공됩니다.",
       "정식 결제 연동 후 제공 예정",
@@ -469,6 +482,13 @@ describe("new report page source", () => {
     for (const marker of guardMarkers) {
       expect(pageSource).toContain(marker);
     }
+
+    expect(pageSource).toContain("NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED");
+    expect(pageSource).toContain("<DevTossCheckoutLauncher />");
+    expect(pageSource).not.toContain("결제 " + "비활성 안내");
+    expect(pageSource).not.toContain(
+      "현재 실제 결제는 아직 " + "활성화되어 있지 않습니다.",
+    );
   });
 
   it("keeps section heading outside gated body rendering", () => {
@@ -505,8 +525,12 @@ describe("new report page source", () => {
     const normalizedSource = pageSource.replace(/\s+/g, " ");
 
     expect(normalizedSource).toContain(
-      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다. 전체 리포트는 정식 결제 연동 이후 제공됩니다.",
+      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
     );
+    expect(pageSource).toContain(
+      "전체 리포트는 정식 결제 연동 이후 제공됩니다.",
+    );
+    expect(pageSource).toContain("FULL_REPORT_AVAILABLE_AFTER_PAYMENT_COPY_KO");
     expect(pageSource).not.toContain(
       "전체 리포트 영역은 " + "정식 결제 연동 이후 제공됩니다.",
     );
@@ -581,10 +605,10 @@ describe("new report page source", () => {
     }
 
     const mockPaymentUiStart = pageSource.indexOf(
-      "currentStep === 3 && MOCK_PAID_REPORT_UI_ENABLED",
+      "MOCK_PAID_REPORT_UI_ENABLED ? (",
     );
     const mockPaymentUiEnd = pageSource.indexOf(
-      '<div className="grid gap-3 sm:grid-cols-2">',
+      "DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED ? (",
       mockPaymentUiStart + 1,
     );
 

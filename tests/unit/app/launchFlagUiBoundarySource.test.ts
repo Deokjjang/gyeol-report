@@ -28,7 +28,7 @@ describe("launch flag UI boundary source", () => {
     const source = readFile("src/app/page.tsx");
     const expectedMarkers = [
       "현재 구매 가능한 상품 1개",
-      "리포트 작성하기",
+      "리포트 시작하기",
       "/products/saju-mbti-full",
       "/report/new",
       "환불/취소 정책",
@@ -49,12 +49,16 @@ describe("launch flag UI boundary source", () => {
     }
   });
 
-  it("keeps report new page inactive payment copy visible", () => {
+  it("keeps report new page safe checkout preparation copy visible", () => {
     const source = readFile("src/app/report/new/page.tsx");
     const normalizedSource = source.replace(/\s+/g, " ");
     const expectedMarkers = [
-      "결제 비활성 안내",
-      "현재 실제 결제는 아직 활성화되어 있지 않습니다.",
+      "무료 미리보기",
+      "전체 리포트 열람",
+      "정가 1,290원",
+      "런칭가 990원",
+      "정식 결제 연결 준비 중입니다.",
+      "심사 및 결제 승인 연동 후 전체 리포트 구매가 가능합니다.",
       "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
       "전체 리포트는 정식 결제 연동 이후 제공됩니다.",
       "정식 결제 연동 후 제공 예정",
@@ -65,10 +69,15 @@ describe("launch flag UI boundary source", () => {
     }
 
     expect(normalizedSource).toContain(
-      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다. 전체 리포트는 정식 결제 연동 이후 제공됩니다.",
+      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
     );
+    expect(source).toContain("FULL_REPORT_AVAILABLE_AFTER_PAYMENT_COPY_KO");
     expect(source).not.toContain(
       "전체 리포트 영역은 " + "정식 결제 연동 이후 제공됩니다.",
+    );
+    expect(source).not.toContain("결제 " + "비활성 안내");
+    expect(source).not.toContain(
+      "현재 실제 결제는 아직 " + "활성화되어 있지 않습니다.",
     );
   });
 

@@ -71,15 +71,18 @@ describe("app layout metadata source", () => {
 
   it("renders landing page primary CTA", () => {
     expect(pageSource).toContain('href="/report/new"');
-    expect(pageSource).toContain("리포트 작성하기");
+    expect(pageSource).toContain("리포트 시작하기");
+    expect(pageSource).toContain("상품 보기");
   });
 
   it("renders landing page product review summary", () => {
     const expectedValues = [
       "현재 구매 가능한 상품 1개",
+      "현재 구매 가능한 리포트",
       "activeProduct.nameKo",
       "activeProduct.priceKo",
-      "activeProduct.formatKo",
+      "activeProduct.salePriceKo",
+      "activeProduct.listPriceKo",
       "activeProduct.deliveryTypeKo",
     ];
 
@@ -89,21 +92,19 @@ describe("app layout metadata source", () => {
   });
 
   it("renders landing page product positioning", () => {
-    expect(pageSource).toContain("생년월일과 MBTI");
-    expect(pageSource).toContain("사주 구조");
+    expect(pageSource).toContain("생년월일시와 MBTI");
+    expect(pageSource).toContain("사주와 MBTI를 함께 보는 자기이해 리포트");
     expect(pageSource).toContain("자기이해");
-    expect(pageSource).toContain("결리포트 소개");
+    expect(pageSource).toContain("결리포트");
   });
 
   it("renders landing page report value content", () => {
     const expectedValues = [
-      "일주",
-      "오행",
-      "십성",
-      "신살",
-      "MBTI",
-      "겹침과 차이",
-      "활용",
+      "ProductSummaryCard",
+      "ProductFlowSteps",
+      "GYEOL_COMING_SOON_PRODUCTS",
+      "곧 추가될 리포트",
+      "준비 중",
     ];
 
     for (const value of expectedValues) {
@@ -113,7 +114,7 @@ describe("app layout metadata source", () => {
 
   it("renders landing page trust and support placeholders", () => {
     const expectedValues = [
-      "이용 전 안내",
+      "자기이해용 참고 콘텐츠",
       "이용약관",
       "개인정보처리방침",
       "환불/취소 정책",
