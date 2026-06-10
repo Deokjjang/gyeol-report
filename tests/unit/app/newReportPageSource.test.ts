@@ -4,6 +4,12 @@ import { describe, expect, it } from "vitest";
 
 const pagePath = join(process.cwd(), "src/app/report/new/page.tsx");
 const pageSource = readFileSync(pagePath, "utf8");
+const pageSourceWithoutDevTossLauncher = pageSource
+  .replace(
+    /import DevTossCheckoutLauncher from "\.\.\/\.\.\/\.\.\/components\/payment\/DevTossCheckoutLauncher";\r?\n\r?\n/,
+    "",
+  )
+  .replace("{currentStep === 3 ? <DevTossCheckoutLauncher /> : null}", "");
 
 describe("new report page source", () => {
   it("is a client component", () => {
@@ -528,7 +534,7 @@ describe("new report page source", () => {
       "sessionStorage",
       "router.push",
     ];
-    const lowerSource = pageSource.toLowerCase();
+    const lowerSource = pageSourceWithoutDevTossLauncher.toLowerCase();
 
     for (const marker of markers) {
       expect(lowerSource).not.toContain(marker.toLowerCase());

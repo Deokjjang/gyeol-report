@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 
+import DevTossCheckoutLauncher from "../../../components/payment/DevTossCheckoutLauncher";
+
 type ValidationError = {
   field: string;
   code: string;
@@ -1061,6 +1063,8 @@ export default function NewReportPage() {
                   </div>
                 </div>
               ) : null}
+
+              {currentStep === 3 ? <DevTossCheckoutLauncher /> : null}
 
               <div className="grid gap-3 sm:grid-cols-2">
                 {currentStep > 0 ? (
