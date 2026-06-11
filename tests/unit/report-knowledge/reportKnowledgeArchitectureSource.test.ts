@@ -39,6 +39,11 @@ describe("report knowledge architecture document", () => {
       "Computed facts are not invented",
       "Mapping happens before evidence packet",
       "full manse calculation is separate from mapping",
+      "REPORT-06 uses OpenAI only as writer",
+      "OpenAI does not calculate Saju facts",
+      "evidence packet comes before generation",
+      "structured JSON draft is validated",
+      "DB save/rendering happens later",
     ];
 
     for (const marker of requiredMarkers) {

@@ -165,6 +165,23 @@ knowledge base can be expanded safely. Mapping happens before evidence packet
 construction, and full manse calculation is separate from mapping when no
 compatible calculator is available.
 
+## REPORT-06 OpenAI Writer Boundary
+
+REPORT-06 uses OpenAI only as writer.
+
+OpenAI does not calculate Saju facts. Deterministic calculation and knowledge
+mapping happen first, then the evidence packet comes before generation. The
+model receives the comprehensive evidence packet and writes a structured Korean
+report draft JSON.
+
+OpenAI must not invent Saju terms, mention Saju entries outside the packet, or
+make MBTI the primary basis. MBTI remains a support layer that reinforces,
+contrasts, or personalizes the Saju interpretation.
+
+The structured JSON draft is validated before any future save or rendering
+step. DB save/rendering happens later. REPORT-06 does not save the generated
+report to the database and does not render it on the result page.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
