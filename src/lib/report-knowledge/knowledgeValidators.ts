@@ -10,11 +10,13 @@ import {
   COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
   type ComprehensiveReportSectionDefinition,
 } from "./reportSectionSchema";
-import { SAJU_KNOWLEDGE_BASE } from "./sajuKnowledgeBase";
+import { FIVE_ELEMENTS, SAJU_KNOWLEDGE_BASE } from "./sajuKnowledgeBase";
 import {
   SAJU_KNOWLEDGE_TOPICS,
+  type FiveElement,
   type KnowledgePhraseSeeds,
   type SajuKnowledgeEntry,
+  type SajuKnowledgeTopic,
 } from "./sajuKnowledgeTypes";
 
 export type ReportKnowledgeValidationInput = {
@@ -35,7 +37,110 @@ const forbiddenPredictionPhrases = [
   "사고가 " + "난다",
   "무조건 " + "이혼한다",
   "몇월 " + "며칠에",
+  "몇월 " + "며칠에 " + "반드시",
   "100% " + "확정",
+  "절대 " + "실패한다",
+  "절대 " + "성공한다",
+] as const;
+
+const requiredTenGodTopics = [
+  "personality",
+  "work_career",
+  "money_asset",
+  "love_relationship",
+  "human_relations",
+  "weaknesses",
+  "final_advice",
+] as const satisfies readonly SajuKnowledgeTopic[];
+
+const requiredFiveElementIds = [
+  "element_wood",
+  "element_fire",
+  "element_earth",
+  "element_metal",
+  "element_water",
+] as const;
+
+const requiredTenGodIds = [
+  "ten_god_bijian",
+  "ten_god_jie_cai",
+  "ten_god_shi_shen",
+  "ten_god_shang_guan",
+  "ten_god_pian_cai",
+  "ten_god_zheng_cai",
+  "ten_god_qi_sha",
+  "ten_god_zheng_guan",
+  "ten_god_pian_yin",
+  "ten_god_zheng_yin",
+] as const;
+
+const requiredPatternIds = [
+  "pattern_jaeda_sinyak",
+  "pattern_gwansal_honjob",
+  "pattern_siksang_saengjae",
+  "pattern_jaesaenggwan",
+  "pattern_salin_sangsaeng",
+  "pattern_singang",
+  "pattern_sinyak",
+  "pattern_no_resource",
+  "pattern_no_output",
+  "pattern_toda_maegeum",
+  "pattern_geumda_mokjeol",
+  "pattern_mokda_hwasik",
+  "pattern_suda_mokbu",
+] as const;
+
+const requiredSignalIds = [
+  "sinsal_hyeonchim",
+  "sinsal_hongyeom",
+  "sinsal_mangsin",
+  "sinsal_baekho",
+  "sinsal_yeokma",
+  "sinsal_gwimun",
+  "sinsal_wonjin",
+  "nobleman_cheoneul",
+  "nobleman_cheondeok",
+  "nobleman_woldeok",
+  "nobleman_munchang",
+  "nobleman_taegeuk",
+  "nobleman_jaego",
+  "gwiin_jaego",
+  "sinsal_dohwa",
+  "sinsal_hwagae",
+  "sinsal_goegang",
+  "sinsal_yangin",
+  "sinsal_cheonmun",
+  "sinsal_wolsal",
+  "sinsal_jangseong",
+  "sinsal_banan",
+] as const;
+
+const requiredDayMasterIds = [
+  "day_master_gabmok",
+  "day_master_eulmok",
+  "day_master_byeonghwa",
+  "day_master_jeonghwa",
+  "day_master_muto",
+  "day_master_gito",
+  "day_master_gyeonggeum",
+  "day_master_singeum",
+  "day_master_imsu",
+  "day_master_gyesu",
+] as const;
+
+const requiredDayPillarIds = [
+  "day_pillar_gapsin",
+  "day_pillar_gihae",
+  "day_pillar_gabja",
+  "day_pillar_gapjin",
+  "day_pillar_eulsa",
+  "day_pillar_byeongoh",
+  "day_pillar_jeonghae",
+  "day_pillar_mujin",
+  "day_pillar_gyeongsin",
+  "day_pillar_sinyu",
+  "day_pillar_imja",
+  "day_pillar_gyemyo",
 ] as const;
 
 function pushDuplicateErrors(
@@ -60,6 +165,29 @@ function hasPhraseSeeds(value: KnowledgePhraseSeeds): boolean {
     value.caution.length > 0 &&
     value.advice.length > 0
   );
+}
+
+function hasDensePhraseSeeds(value: KnowledgePhraseSeeds): boolean {
+  return (
+    value.analytical.length >= 3 &&
+    value.conversational.length >= 3 &&
+    value.caution.length >= 2 &&
+    value.advice.length >= 2
+  );
+}
+
+function getDuplicateValues(values: readonly string[]): string[] {
+  const seen = new Set<string>();
+  const duplicates = new Set<string>();
+
+  for (const value of values) {
+    if (seen.has(value)) {
+      duplicates.add(value);
+    }
+    seen.add(value);
+  }
+
+  return [...duplicates];
 }
 
 function collectUnknownTags(
@@ -116,6 +244,46 @@ function appendTextSafetyErrors(
   }
 }
 
+function appendPhraseSeedSafetyErrors(
+  errors: string[],
+  entry: SajuKnowledgeEntry | MbtiKnowledgeEntry,
+  label: string,
+): void {
+  for (const text of collectStrings(entry.phraseSeeds)) {
+    if (text.length > 160) {
+      errors.push(`${label} contains an overlong phrase seed.`);
+    }
+  }
+}
+
+function isFiveElement(value: string): value is FiveElement {
+  return (FIVE_ELEMENTS as readonly string[]).includes(value);
+}
+
+function appendElementErrors(errors: string[], entry: SajuKnowledgeEntry): void {
+  const elements = [
+    ...(entry.matchingHints?.helpfulElements ?? []),
+    ...(entry.matchingHints?.difficultElements ?? []),
+  ];
+
+  for (const element of elements) {
+    if (!isFiveElement(String(element))) {
+      errors.push(`saju ${entry.id} references invalid element: ${String(element)}`);
+    }
+  }
+}
+
+function hasTopicInterpretations(entry: SajuKnowledgeEntry): boolean {
+  return (
+    entry.topicInterpretations !== undefined &&
+    Object.keys(entry.topicInterpretations).length > 0
+  );
+}
+
+function hasTopicWeights(entry: SajuKnowledgeEntry): boolean {
+  return Object.keys(entry.topicWeights).length > 0;
+}
+
 function validateSections(
   errors: string[],
   sections: readonly ComprehensiveReportSectionDefinition[],
@@ -163,9 +331,23 @@ function validateSajuEntries(
     if (!hasPhraseSeeds(entry.phraseSeeds)) {
       errors.push(`saju ${entry.id} is missing phrase seeds.`);
     }
+    if (!hasDensePhraseSeeds(entry.phraseSeeds)) {
+      errors.push(`saju ${entry.id} needs dense phrase seeds.`);
+    }
+    if (!hasTopicWeights(entry)) {
+      errors.push(`saju ${entry.id} has empty topic weights.`);
+    }
+    if (!hasTopicInterpretations(entry)) {
+      errors.push(`saju ${entry.id} is missing topic interpretations.`);
+    }
+    for (const alias of getDuplicateValues(entry.aliases)) {
+      errors.push(`saju ${entry.id} has duplicate alias: ${alias}`);
+    }
     appendTagErrors(errors, `saju ${entry.id}`, entry.positiveTags, validTagIds);
     appendTagErrors(errors, `saju ${entry.id}`, entry.riskTags, validTagIds);
     appendTagErrors(errors, `saju ${entry.id}`, entry.mbtiBridgeTags, validTagIds);
+    appendElementErrors(errors, entry);
+    appendPhraseSeedSafetyErrors(errors, entry, `saju ${entry.id}`);
   }
 }
 
@@ -195,6 +377,7 @@ function validateMbtiEntries(
     if (entry.functionStack.length < 4) {
       errors.push(`mbti ${entry.type} needs a function stack.`);
     }
+    appendPhraseSeedSafetyErrors(errors, entry, `mbti ${entry.type}`);
     appendTagErrors(errors, `mbti ${entry.type}`, entry.traitTags, validTagIds);
     appendTagErrors(errors, `mbti ${entry.type}`, entry.riskTags, validTagIds);
     appendTagErrors(errors, `mbti ${entry.type}`, entry.sajuBridgeTags, validTagIds);
@@ -216,6 +399,107 @@ function validateMbtiEntries(
       entry.relationshipPreferences.risks,
       validTagIds,
     );
+  }
+}
+
+function appendMissingIdErrors(
+  errors: string[],
+  entriesById: ReadonlyMap<string, SajuKnowledgeEntry>,
+  label: string,
+  requiredIds: readonly string[],
+): void {
+  for (const id of requiredIds) {
+    if (!entriesById.has(id)) {
+      errors.push(`${label} missing required saju entry: ${id}`);
+    }
+  }
+}
+
+function validateElementDensity(
+  errors: string[],
+  entriesById: ReadonlyMap<string, SajuKnowledgeEntry>,
+): void {
+  for (const id of requiredFiveElementIds) {
+    const entry = entriesById.get(id);
+
+    if (entry === undefined) {
+      continue;
+    }
+    if (entry.coreImageKo === undefined) {
+      errors.push(`${id} needs a core image.`);
+    }
+    if (
+      entry.balanceHints === undefined ||
+      entry.careerHints === undefined ||
+      entry.moneyHints === undefined ||
+      entry.matchingHints === undefined
+    ) {
+      errors.push(`${id} needs expanded element hints.`);
+    }
+    for (const topic of [
+      "personality",
+      "work_career",
+      "money_asset",
+      "love_relationship",
+      "human_relations",
+      "study_growth",
+      "environment_luck",
+    ] as const satisfies readonly SajuKnowledgeTopic[]) {
+      if (entry.topicInterpretations?.[topic] === undefined) {
+        errors.push(`${id} needs topic interpretation for ${topic}.`);
+      }
+    }
+  }
+}
+
+function validateTenGodDensity(
+  errors: string[],
+  entriesById: ReadonlyMap<string, SajuKnowledgeEntry>,
+): void {
+  for (const id of requiredTenGodIds) {
+    const entry = entriesById.get(id);
+
+    if (entry === undefined) {
+      continue;
+    }
+    for (const topic of requiredTenGodTopics) {
+      if (entry.topicInterpretations?.[topic] === undefined) {
+        errors.push(`${id} needs ten-god topic interpretation for ${topic}.`);
+      }
+    }
+  }
+}
+
+function validatePatternDensity(
+  errors: string[],
+  entriesById: ReadonlyMap<string, SajuKnowledgeEntry>,
+): void {
+  for (const id of requiredPatternIds) {
+    const entry = entriesById.get(id);
+
+    if (entry !== undefined && entry.patternHints === undefined) {
+      errors.push(`${id} needs pattern hints.`);
+    }
+  }
+}
+
+function validateDayDensity(
+  errors: string[],
+  entriesById: ReadonlyMap<string, SajuKnowledgeEntry>,
+): void {
+  for (const id of requiredDayMasterIds) {
+    const entry = entriesById.get(id);
+
+    if (entry !== undefined && entry.coreImageKo === undefined) {
+      errors.push(`${id} needs a day-master image.`);
+    }
+  }
+  for (const id of requiredDayPillarIds) {
+    const entry = entriesById.get(id);
+
+    if (entry !== undefined && entry.dayPillarHints === undefined) {
+      errors.push(`${id} needs day-pillar hints.`);
+    }
   }
 }
 
@@ -294,6 +578,29 @@ export function validateReportKnowledgeBase(
     mbtiEntries,
     fusionRules,
   });
+
+  return {
+    ok: errors.length === 0,
+    errors,
+  };
+}
+
+export function validateSajuKnowledgeDensity(
+  entries: readonly SajuKnowledgeEntry[] = SAJU_KNOWLEDGE_BASE,
+): ReportKnowledgeValidationResult {
+  const errors: string[] = [];
+  const entriesById = new Map(entries.map((entry) => [entry.id, entry]));
+
+  appendMissingIdErrors(errors, entriesById, "five element", requiredFiveElementIds);
+  appendMissingIdErrors(errors, entriesById, "ten god", requiredTenGodIds);
+  appendMissingIdErrors(errors, entriesById, "pattern", requiredPatternIds);
+  appendMissingIdErrors(errors, entriesById, "sinsal gwiin", requiredSignalIds);
+  appendMissingIdErrors(errors, entriesById, "day master", requiredDayMasterIds);
+  appendMissingIdErrors(errors, entriesById, "day pillar", requiredDayPillarIds);
+  validateElementDensity(errors, entriesById);
+  validateTenGodDensity(errors, entriesById);
+  validatePatternDensity(errors, entriesById);
+  validateDayDensity(errors, entriesById);
 
   return {
     ok: errors.length === 0,

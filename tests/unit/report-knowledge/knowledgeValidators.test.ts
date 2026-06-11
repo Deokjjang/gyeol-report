@@ -5,12 +5,21 @@ import { MBTI_KNOWLEDGE_BASE } from "../../../src/lib/report-knowledge/mbtiKnowl
 import { SAJU_KNOWLEDGE_BASE } from "../../../src/lib/report-knowledge/sajuKnowledgeBase";
 import {
   validateReportKnowledgeBase,
+  validateSajuKnowledgeDensity,
   type ReportKnowledgeValidationInput,
 } from "../../../src/lib/report-knowledge/knowledgeValidators";
+import type { SajuKnowledgeEntry } from "../../../src/lib/report-knowledge/sajuKnowledgeTypes";
 
 describe("knowledge validators", () => {
   it("validates the default report knowledge base", () => {
     expect(validateReportKnowledgeBase()).toEqual({
+      ok: true,
+      errors: [],
+    });
+  });
+
+  it("validates the default saju density pack", () => {
+    expect(validateSajuKnowledgeDensity()).toEqual({
       ok: true,
       errors: [],
     });
@@ -64,5 +73,79 @@ describe("knowledge validators", () => {
 
     expect(result.ok).toBe(false);
     expect(result.errors.join("\n")).toContain("forbidden prediction phrase");
+  });
+
+  it("detects empty topic weights", () => {
+    const result = validateReportKnowledgeBase({
+      sajuEntries: [
+        {
+          ...SAJU_KNOWLEDGE_BASE[0],
+          id: "fixture_empty_topic_weights",
+          topicWeights: {},
+        },
+      ],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("empty topic weights");
+  });
+
+  it("detects invalid element values in matching hints", () => {
+    const invalidElementEntry = {
+      ...SAJU_KNOWLEDGE_BASE[0],
+      id: "fixture_invalid_element",
+      matchingHints: {
+        helpfulElements: ["invalid_element"],
+      },
+    } as unknown as SajuKnowledgeEntry;
+    const result = validateReportKnowledgeBase({
+      sajuEntries: [invalidElementEntry],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("invalid element");
+  });
+
+  it("detects missing phrase seed density", () => {
+    const result = validateReportKnowledgeBase({
+      sajuEntries: [
+        {
+          ...SAJU_KNOWLEDGE_BASE[0],
+          id: "fixture_missing_phrase_seed",
+          phraseSeeds: {
+            analytical: [],
+            conversational: ["fixture"],
+            caution: ["fixture"],
+            advice: ["fixture"],
+          },
+        },
+      ],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("missing phrase seeds");
+  });
+
+  it("detects invalid tag ids", () => {
+    const invalidTagEntry = {
+      ...SAJU_KNOWLEDGE_BASE[0],
+      id: "fixture_invalid_tag",
+      positiveTags: ["missing_tag"],
+    } as unknown as SajuKnowledgeEntry;
+    const result = validateReportKnowledgeBase({
+      sajuEntries: [invalidTagEntry],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("unknown tag");
+  });
+
+  it("detects missing required saju density entries", () => {
+    const result = validateSajuKnowledgeDensity(
+      SAJU_KNOWLEDGE_BASE.filter((entry) => entry.id !== "day_master_gabmok"),
+    );
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("day_master_gabmok");
   });
 });

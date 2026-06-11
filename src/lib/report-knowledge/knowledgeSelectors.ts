@@ -6,6 +6,7 @@ import { FUSION_KNOWLEDGE_BASE } from "./fusionKnowledgeBase";
 import type { FusionKnowledgeRule } from "./fusionKnowledgeTypes";
 import { MBTI_KNOWLEDGE_BASE, MBTI_KNOWLEDGE_BY_TYPE } from "./mbtiKnowledgeBase";
 import type { MbtiKnowledgeEntry, MbtiType } from "./mbtiKnowledgeTypes";
+import { scoreSajuEvidenceForTopic } from "./sajuEvidenceScoring";
 import { SAJU_KNOWLEDGE_BASE, SAJU_KNOWLEDGE_BY_ID } from "./sajuKnowledgeBase";
 import type { SajuKnowledgeEntry, SajuKnowledgeTopic } from "./sajuKnowledgeTypes";
 
@@ -84,6 +85,33 @@ function getSectionTopic(
   return sectionTopicById[sectionId];
 }
 
+function sortSajuEvidenceForTopic(
+  entries: readonly SajuKnowledgeEntry[],
+  topic: SajuKnowledgeTopic,
+  mbtiEntry: MbtiKnowledgeEntry,
+): SajuKnowledgeEntry[] {
+  const matchedTags = [
+    ...mbtiEntry.traitTags,
+    ...mbtiEntry.riskTags,
+    ...mbtiEntry.sajuBridgeTags,
+  ];
+
+  return entries
+    .map((entry, index) => ({
+      entry,
+      index,
+      score: scoreSajuEvidenceForTopic({ entry, topic, matchedTags }),
+    }))
+    .sort((left, right) => {
+      if (right.score !== left.score) {
+        return right.score - left.score;
+      }
+
+      return left.index - right.index;
+    })
+    .map((item) => item.entry);
+}
+
 export function getSajuKnowledgeByIds(
   ids: readonly string[],
 ): SajuKnowledgeEntry[] {
@@ -137,10 +165,15 @@ export function buildSectionEvidence(
   );
   const topic = getSectionTopic(input.sectionId);
   const sajuEntries = getSajuKnowledgeByIds(input.sajuEntryIds);
-  const sajuEvidence =
+  const mbtiEvidence = getMbtiKnowledge(input.mbtiType);
+  const topicFilteredSajuEvidence =
     topic === undefined
       ? sajuEntries
       : sajuEntries.filter((entry) => entry.topicWeights[topic] !== undefined);
+  const sajuEvidence =
+    topic === undefined
+      ? topicFilteredSajuEvidence
+      : sortSajuEvidenceForTopic(topicFilteredSajuEvidence, topic, mbtiEvidence);
 
   if (sectionDefinition === undefined) {
     throw new Error(`Unknown report section: ${input.sectionId}`);
@@ -149,7 +182,7 @@ export function buildSectionEvidence(
   return {
     sectionId: input.sectionId,
     sajuEvidence,
-    mbtiEvidence: getMbtiKnowledge(input.mbtiType),
+    mbtiEvidence,
     fusionRules: findFusionRules({
       sajuEntryIds: input.sajuEntryIds,
       mbtiType: input.mbtiType,

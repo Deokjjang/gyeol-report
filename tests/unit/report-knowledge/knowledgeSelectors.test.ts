@@ -14,11 +14,15 @@ const sampleDeokminSajuIds = [
   "element_water_missing",
   "element_fire_missing",
   "ten_god_pian_cai",
+  "ten_god_zheng_cai",
   "ten_god_zheng_guan",
   "ten_god_qi_sha",
   "pattern_jaeda_sinyak",
+  "pattern_no_resource",
+  "pattern_no_output",
   "sinsal_hyeonchim",
   "sinsal_hongyeom",
+  "gwiin_jaego",
 ] as const;
 
 describe("knowledge selectors", () => {
@@ -48,6 +52,13 @@ describe("knowledge selectors", () => {
     ]);
     expect(evidence.sajuEvidence.length).toBeGreaterThan(0);
     expect(evidence.mbtiEvidence.type).toBe("ENTJ");
+    expect(evidence.sajuEvidence.map((entry) => entry.id)).toEqual(
+      expect.arrayContaining([
+        "day_pillar_gapsin",
+        "ten_god_qi_sha",
+        "sinsal_hyeonchim",
+      ]),
+    );
     expect(evidence.fusionRules.map((rule) => rule.summary)).toEqual(
       expect.arrayContaining([
         "화 부족 + ENTJ 외향성 contrast",
@@ -59,6 +70,72 @@ describe("knowledge selectors", () => {
         (rule) => rule.mbtiTypes === undefined || rule.mbtiTypes.includes("ENTJ"),
       ),
     ).toBe(true);
+  });
+
+  it("keeps saju evidence primary across major report topics", () => {
+    const personality = buildSectionEvidence({
+      sectionId: "personality",
+      sajuEntryIds: sampleDeokminSajuIds,
+      mbtiType: "ENTJ",
+    });
+    const money = buildSectionEvidence({
+      sectionId: "money_asset",
+      sajuEntryIds: sampleDeokminSajuIds,
+      mbtiType: "ENTJ",
+    });
+    const love = buildSectionEvidence({
+      sectionId: "love_relationship",
+      sajuEntryIds: sampleDeokminSajuIds,
+      mbtiType: "ENTJ",
+    });
+    const career = buildSectionEvidence({
+      sectionId: "work_career",
+      sajuEntryIds: sampleDeokminSajuIds,
+      mbtiType: "ENTJ",
+    });
+    const weaknesses = buildSectionEvidence({
+      sectionId: "weaknesses",
+      sajuEntryIds: sampleDeokminSajuIds,
+      mbtiType: "ENTJ",
+    });
+
+    expect(personality.sajuEvidence.map((entry) => entry.id)).toEqual(
+      expect.arrayContaining([
+        "day_pillar_gapsin",
+        "ten_god_qi_sha",
+        "sinsal_hyeonchim",
+      ]),
+    );
+    expect(money.sajuEvidence.map((entry) => entry.id)).toEqual(
+      expect.arrayContaining([
+        "ten_god_pian_cai",
+        "ten_god_zheng_cai",
+        "gwiin_jaego",
+      ]),
+    );
+    expect(love.sajuEvidence.map((entry) => entry.id)).toEqual(
+      expect.arrayContaining([
+        "sinsal_hongyeom",
+        "element_water_missing",
+        "element_fire_missing",
+      ]),
+    );
+    expect(career.sajuEvidence.map((entry) => entry.id)).toEqual(
+      expect.arrayContaining([
+        "ten_god_qi_sha",
+        "ten_god_zheng_guan",
+        "sinsal_hyeonchim",
+      ]),
+    );
+    expect(weaknesses.sajuEvidence.map((entry) => entry.id)).toEqual(
+      expect.arrayContaining([
+        "pattern_no_resource",
+        "pattern_no_output",
+        "pattern_jaeda_sinyak",
+      ]),
+    );
+    expect(personality.mbtiEvidence.type).toBe("ENTJ");
+    expect(personality.sajuEvidence.length).toBeGreaterThan(3);
   });
 
   it("finds topic-specific rules for love career money and personality", () => {

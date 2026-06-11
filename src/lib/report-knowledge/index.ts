@@ -7,4 +7,5 @@ export * from "./mbtiKnowledgeBase";
 export * from "./mbtiKnowledgeTypes";
 export * from "./reportSectionSchema";
 export * from "./sajuKnowledgeBase";
+export * from "./sajuEvidenceScoring";
 export * from "./sajuKnowledgeTypes";

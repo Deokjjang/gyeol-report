@@ -96,6 +96,24 @@ Every new entry must use typed interpretation tags. Every fusion rule must
 reference valid Saju entry ids. No entry should contain long copied source
 paragraphs or deterministic prediction phrasing.
 
+## REPORT-02 Saju Knowledge Expansion
+
+REPORT-02 expands Saju DB first.
+
+The Saju knowledge base must be deep enough to explain a report even before
+MBTI is considered. 사주 단독 해석 is required. 오행, 십성, 신살,
+귀인, 일주 are first-class knowledge, and 격국, 구조, 용희신-style hints
+should be added as distilled structured entries rather than copied paragraphs.
+
+MBTI remains secondary. MBTI reinforces, contrasts, or personalizes the Saju
+interpretation, but the report must visibly begin from Saju terms such as
+오행, 십성, 일주, 신살, 귀인, 격국, and 용희신.
+
+RAG/source collection may be used in future offline research to identify
+meanings and variants, but source/RAG collection is used for DB refinement,
+not output copying. The stored knowledge base must contain original structured
+entries with topic weights, phrase seeds, risks, advice, and bridge tags.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
