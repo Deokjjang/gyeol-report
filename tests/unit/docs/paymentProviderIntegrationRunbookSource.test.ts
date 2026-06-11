@@ -21,8 +21,9 @@ describe("payment provider integration runbook source", () => {
       "No real checkout URL exists yet.",
       "Client must never be trusted to mark payment as paid.",
       "The Toss confirm route marks a Toss payment order paid only after Toss confirm returns DONE.",
-      "The Toss confirm route does not create a paid report or share link yet.",
-      "The paid report fulfillment boundary exists separately and is not wired into the Toss confirm route yet.",
+      "The Toss confirm route calls paid report fulfillment only after the payment order is paid.",
+      "The Toss confirm route returns a safe fulfillment report id.",
+      "The Toss confirm route does not create a share link yet.",
     ];
 
     for (const marker of requiredMarkers) {
@@ -65,7 +66,9 @@ describe("payment provider integration runbook source", () => {
       "It confirms Toss payment using `paymentKey`, `orderId`, and `amount`.",
       "It enforces amount = 990.",
       "It marks the matching `payment_order` paid only after Toss returns DONE.",
-      "It does not create reports or share links yet.",
+      "It calls the paid report fulfillment boundary only after the payment order is paid.",
+      "It returns safe confirm, payment order, and fulfillment fields.",
+      "It does not create share links yet.",
     ];
 
     for (const marker of requiredMarkers) {
@@ -92,9 +95,23 @@ describe("payment provider integration runbook source", () => {
     const requiredMarkers = [
       "## Toss Confirm to Paid Transition",
       "When Toss confirm returns DONE, the server marks the matching payment order as paid using `mark_toss_payment_order_paid`.",
-      "This does not generate the report yet.",
+      "This now continues into paid report fulfillment.",
       "This does not issue a share link yet.",
-      "Report fulfillment is the next step.",
+      "Result page redirect is the next step.",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(source).toContain(marker);
+    }
+  });
+
+  it("documents the Toss confirm to fulfillment connection", () => {
+    const requiredMarkers = [
+      "## Toss Confirm to Fulfillment",
+      "When Toss confirm returns DONE, the server marks the payment order as paid and then calls the paid report fulfillment boundary.",
+      "This creates or returns a report id and links it to the paid payment order.",
+      "This step does not contain the final 사주×MBTI interpretation content.",
+      "Result content and result page UX are handled in the next phase.",
     ];
 
     for (const marker of requiredMarkers) {

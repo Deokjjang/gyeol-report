@@ -3,8 +3,16 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
+import { fulfillPaidPaymentOrder } from "../../../src/lib/payment/supabasePaidReportFulfillmentAdapter";
 import { markTossPaymentOrderPaid } from "../../../src/lib/payment/supabaseTossPaymentOrderPaidAdapter";
 import { POST } from "../../../src/app/api/payments/toss/confirm/route";
+
+vi.mock(
+  "../../../src/lib/payment/supabasePaidReportFulfillmentAdapter",
+  () => ({
+    fulfillPaidPaymentOrder: vi.fn(),
+  }),
+);
 
 vi.mock("../../../src/lib/payment/supabaseTossPaymentOrderPaidAdapter", () => ({
   markTossPaymentOrderPaid: vi.fn(),
@@ -15,6 +23,7 @@ const originalTossSecretKey = process.env.TOSS_SECRET_KEY;
 const originalSupabaseUrl = process.env.SUPABASE_URL;
 const originalSupabaseAnonKey = process.env.SUPABASE_ANON_KEY;
 const secretKey = "test_sk_route_confirm_secret";
+const mockFulfillPaidPaymentOrder = vi.mocked(fulfillPaidPaymentOrder);
 const mockMarkTossPaymentOrderPaid = vi.mocked(markTossPaymentOrderPaid);
 
 function restoreOptionalEnv(name: string, value: string | undefined): void {
@@ -92,6 +101,20 @@ function createPaidOrder() {
   } as const;
 }
 
+function createFulfillment() {
+  return {
+    paymentOrderId: "payment_order_route_confirm",
+    providerOrderId: "provider_order_route_confirm",
+    reportId: "report_route_fulfillment",
+    productType: "saju_mbti_full",
+    status: "paid",
+    amount: 990,
+    currency: "KRW",
+    createdAt: "2026-06-11T11:59:00+09:00",
+    updatedAt: "2026-06-11T12:00:02+09:00",
+  } as const;
+}
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -129,6 +152,11 @@ function createValidRequest(): Request {
 
 describe("Toss confirm route", () => {
   beforeEach(() => {
+    mockFulfillPaidPaymentOrder.mockReset();
+    mockFulfillPaidPaymentOrder.mockResolvedValue({
+      ok: true,
+      fulfillment: createFulfillment(),
+    });
     mockMarkTossPaymentOrderPaid.mockReset();
     mockMarkTossPaymentOrderPaid.mockResolvedValue({
       ok: true,
@@ -159,6 +187,7 @@ describe("Toss confirm route", () => {
     expectErrorBody(body, "TOSS_CONFIRM_API_DISABLED");
     expect(fetchMock).not.toHaveBeenCalled();
     expect(mockMarkTossPaymentOrderPaid).not.toHaveBeenCalled();
+    expect(mockFulfillPaidPaymentOrder).not.toHaveBeenCalled();
   });
 
   it("returns a safe config error when enabled without a secret", async () => {
@@ -175,6 +204,7 @@ describe("Toss confirm route", () => {
     expect(serialized).not.toContain("TOSS_SECRET_KEY");
     expect(fetchMock).not.toHaveBeenCalled();
     expect(mockMarkTossPaymentOrderPaid).not.toHaveBeenCalled();
+    expect(mockFulfillPaidPaymentOrder).not.toHaveBeenCalled();
   });
 
   it("rejects invalid JSON body", async () => {
@@ -187,6 +217,7 @@ describe("Toss confirm route", () => {
     expect(response.status).toBe(400);
     expectErrorBody(body, "TOSS_CONFIRM_INVALID_REQUEST");
     expect(mockMarkTossPaymentOrderPaid).not.toHaveBeenCalled();
+    expect(mockFulfillPaidPaymentOrder).not.toHaveBeenCalled();
   });
 
   it("rejects missing paymentKey", async () => {
@@ -204,6 +235,7 @@ describe("Toss confirm route", () => {
     expect(response.status).toBe(400);
     expectErrorBody(body, "TOSS_CONFIRM_INVALID_REQUEST");
     expect(mockMarkTossPaymentOrderPaid).not.toHaveBeenCalled();
+    expect(mockFulfillPaidPaymentOrder).not.toHaveBeenCalled();
   });
 
   it("rejects missing orderId", async () => {
@@ -221,6 +253,7 @@ describe("Toss confirm route", () => {
     expect(response.status).toBe(400);
     expectErrorBody(body, "TOSS_CONFIRM_INVALID_REQUEST");
     expect(mockMarkTossPaymentOrderPaid).not.toHaveBeenCalled();
+    expect(mockFulfillPaidPaymentOrder).not.toHaveBeenCalled();
   });
 
   it("rejects amount mismatch", async () => {
@@ -239,9 +272,10 @@ describe("Toss confirm route", () => {
     expect(response.status).toBe(400);
     expectErrorBody(body, "TOSS_CONFIRM_AMOUNT_MISMATCH");
     expect(mockMarkTossPaymentOrderPaid).not.toHaveBeenCalled();
+    expect(mockFulfillPaidPaymentOrder).not.toHaveBeenCalled();
   });
 
-  it("calls Toss confirm API, marks the order paid, and returns safe result", async () => {
+  it("calls Toss confirm API, marks the order paid, fulfills it, and returns safe result", async () => {
     const fetchMock = vi.fn(async () => createProviderSuccessResponse());
     process.env.TOSS_CONFIRM_API_ENABLED = "1";
     process.env.TOSS_SECRET_KEY = secretKey;
@@ -265,6 +299,7 @@ describe("Toss confirm route", () => {
     );
     expect(isRecord(body.confirm)).toBe(true);
     expect(isRecord(body.paymentOrder)).toBe(true);
+    expect(isRecord(body.fulfillment)).toBe(true);
 
     if (isRecord(body.confirm)) {
       expect(body.confirm).toMatchObject({
@@ -289,7 +324,19 @@ describe("Toss confirm route", () => {
         currency: "KRW",
         status: "paid",
         paidAt: "2026-06-11T12:00:00+09:00",
-        reportId: null,
+        reportId: "report_route_fulfillment",
+      });
+    }
+
+    if (isRecord(body.fulfillment)) {
+      expect(body.fulfillment).toMatchObject({
+        paymentOrderId: "payment_order_route_confirm",
+        providerOrderId: "provider_order_route_confirm",
+        reportId: "report_route_fulfillment",
+        productType: "saju_mbti_full",
+        status: "paid",
+        amount: 990,
+        currency: "KRW",
       });
     }
 
@@ -304,6 +351,16 @@ describe("Toss confirm route", () => {
         client: expect.any(Object),
       }),
     );
+    expect(mockFulfillPaidPaymentOrder).toHaveBeenCalledTimes(1);
+    expect(mockFulfillPaidPaymentOrder).toHaveBeenCalledWith(
+      expect.objectContaining({
+        providerOrderId: "provider_order_route_confirm",
+        client: expect.any(Object),
+      }),
+    );
+    expect(
+      mockMarkTossPaymentOrderPaid.mock.invocationCallOrder[0],
+    ).toBeLessThan(mockFulfillPaidPaymentOrder.mock.invocationCallOrder[0]);
     expect(serialized).not.toContain(secretKey);
     expect(serialized).not.toContain("pay_route_confirm_key");
     expect(serialized).not.toContain("providerPaymentId");
@@ -313,6 +370,28 @@ describe("Toss confirm route", () => {
     expect(serialized).not.toContain("reportSnapshot");
     expect(serialized).not.toContain("shareToken");
     expect(serialized).not.toContain("accessTokenHash");
+    expect(serialized).not.toContain("report_snapshot");
+  });
+
+  it("keeps duplicate same-payment confirm idempotent when paid and fulfillment adapters are idempotent", async () => {
+    const fetchMock = vi.fn(async () => createProviderSuccessResponse());
+    process.env.TOSS_CONFIRM_API_ENABLED = "1";
+    process.env.TOSS_SECRET_KEY = secretKey;
+    process.env.SUPABASE_URL = "https://example.supabase.co";
+    process.env.SUPABASE_ANON_KEY = "test-anon-key";
+    vi.stubGlobal("fetch", fetchMock);
+
+    const firstResponse = await POST(createValidRequest());
+    const secondResponse = await POST(createValidRequest());
+    const firstBody = await readJsonObject(firstResponse);
+    const secondBody = await readJsonObject(secondResponse);
+
+    expect(firstResponse.status).toBe(200);
+    expect(secondResponse.status).toBe(200);
+    expect(firstBody.ok).toBe(true);
+    expect(secondBody.ok).toBe(true);
+    expect(mockMarkTossPaymentOrderPaid).toHaveBeenCalledTimes(2);
+    expect(mockFulfillPaidPaymentOrder).toHaveBeenCalledTimes(2);
   });
 
   it("does not mark paid when Toss status is not DONE", async () => {
@@ -331,6 +410,7 @@ describe("Toss confirm route", () => {
     expect(response.status).toBe(409);
     expectErrorBody(body, "TOSS_PAYMENT_NOT_DONE");
     expect(mockMarkTossPaymentOrderPaid).not.toHaveBeenCalled();
+    expect(mockFulfillPaidPaymentOrder).not.toHaveBeenCalled();
 
     if (isRecord(body.error) && isRecord(body.error.context)) {
       expect(body.error.context).toMatchObject({
@@ -362,11 +442,46 @@ describe("Toss confirm route", () => {
     expect(response.status).toBe(500);
     expectErrorBody(body, "PAYMENT_MARK_PAID_FAILED");
     expect(mockMarkTossPaymentOrderPaid).toHaveBeenCalledTimes(1);
+    expect(mockFulfillPaidPaymentOrder).not.toHaveBeenCalled();
     expect(serialized).toContain("provider_order_route_confirm");
     expect(serialized).toContain("DONE");
     expect(serialized).not.toContain("pay_route_confirm_key");
     expect(serialized).not.toContain("providerPaymentId");
     expect(serialized).not.toContain("safe mark paid failure");
+  });
+
+  it("returns safe failure when fulfillment fails", async () => {
+    const fetchMock = vi.fn(async () => createProviderSuccessResponse());
+    mockFulfillPaidPaymentOrder.mockResolvedValue({
+      ok: false,
+      error: {
+        code: "PAID_REPORT_FULFILLMENT_CONFLICT",
+        messageKo: "safe fulfillment failure",
+      },
+    });
+    process.env.TOSS_CONFIRM_API_ENABLED = "1";
+    process.env.TOSS_SECRET_KEY = secretKey;
+    vi.stubGlobal("fetch", fetchMock);
+
+    const response = await POST(createValidRequest());
+    const body = await readJsonObject(response);
+    const serialized = JSON.stringify(body);
+
+    expect(response.status).toBe(500);
+    expectErrorBody(body, "PAYMENT_FULFILLMENT_FAILED");
+    expect(mockMarkTossPaymentOrderPaid).toHaveBeenCalledTimes(1);
+    expect(mockFulfillPaidPaymentOrder).toHaveBeenCalledTimes(1);
+    expect(serialized).toContain("provider_order_route_confirm");
+    expect(serialized).toContain("DONE");
+    expect(serialized).toContain("paid");
+    expect(serialized).not.toContain("pay_route_confirm_key");
+    expect(serialized).not.toContain("providerPaymentId");
+    expect(serialized).not.toContain("safe fulfillment failure");
+    expect(serialized).not.toContain("inputSnapshot");
+    expect(serialized).not.toContain("input_snapshot");
+    expect(serialized).not.toContain("shareToken");
+    expect(serialized).not.toContain("accessTokenHash");
+    expect(serialized).not.toContain("report_snapshot");
   });
 
   it("does not expose provider raw error or secret values", async () => {
@@ -396,11 +511,12 @@ describe("Toss confirm route", () => {
     expect(response.status).toBe(502);
     expectErrorBody(body, "TOSS_CONFIRM_PROVIDER_ERROR");
     expect(mockMarkTossPaymentOrderPaid).not.toHaveBeenCalled();
+    expect(mockFulfillPaidPaymentOrder).not.toHaveBeenCalled();
     expect(serialized).not.toContain(secretKey);
     expect(serialized).not.toContain("must_not_return");
   });
 
-  it("source wires confirm to paid transition without report creation or share behavior", () => {
+  it("source wires confirm to paid fulfillment without report content or share behavior", () => {
     const source = readFileSync(
       join(process.cwd(), "src/app/api/payments/toss/confirm/route.ts"),
       "utf8",
@@ -413,12 +529,17 @@ describe("Toss confirm route", () => {
       "TOSS_CONFIRM_AMOUNT_MISMATCH",
       "TOSS_PAYMENT_NOT_DONE",
       "PAYMENT_MARK_PAID_FAILED",
+      "PAYMENT_FULFILLMENT_FAILED",
       "TOSS_SECRET_KEY",
       "confirmTossPayment",
       "markTossPaymentOrderPaid",
       "await markTossPaymentOrderPaid",
+      "fulfillPaidPaymentOrder",
+      "await fulfillPaidPaymentOrder",
       "createSupabaseTossPaymentOrderPaidClient",
+      "createSupabasePaidReportFulfillmentClient",
       "paymentOrder",
+      "fulfillment",
       "TOSS_CONFIRM_REQUIRED_AMOUNT",
       "paymentKey",
       "orderId",

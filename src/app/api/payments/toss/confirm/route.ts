@@ -4,8 +4,11 @@ import {
   confirmTossPayment,
   TOSS_CONFIRM_REQUIRED_AMOUNT,
 } from "../../../../../lib/payment/tossConfirmClient";
+import { fulfillPaidPaymentOrder } from "../../../../../lib/payment/supabasePaidReportFulfillmentAdapter";
+import { createSupabasePaidReportFulfillmentClient } from "../../../../../lib/payment/supabasePaidReportFulfillmentClient";
 import { markTossPaymentOrderPaid } from "../../../../../lib/payment/supabaseTossPaymentOrderPaidAdapter";
 import { createSupabaseTossPaymentOrderPaidClient } from "../../../../../lib/payment/supabaseTossPaymentOrderPaidClient";
+import type { FulfillPaidPaymentOrderResult } from "../../../../../lib/payment/paidReportFulfillmentTypes";
 import type { MarkTossPaymentOrderPaidResult } from "../../../../../lib/payment/tossPaymentOrderPaidTypes";
 import type {
   TossConfirmErrorCode,
@@ -19,6 +22,7 @@ type TossConfirmRouteErrorCode =
   | "TOSS_CONFIRM_API_DISABLED"
   | "TOSS_PAYMENT_NOT_DONE"
   | "PAYMENT_MARK_PAID_FAILED"
+  | "PAYMENT_FULFILLMENT_FAILED"
   | TossConfirmErrorCode;
 
 type TossConfirmRouteSafeConfirm = Omit<
@@ -35,6 +39,7 @@ type TossConfirmRouteErrorContext = {
   readonly amount: number;
   readonly confirmStatus: string;
   readonly rawPaymentStatus: string;
+  readonly paymentOrderStatus?: string;
 };
 
 type TossConfirmRouteResponse =
@@ -42,6 +47,7 @@ type TossConfirmRouteResponse =
       readonly ok: true;
       readonly confirm: TossConfirmRouteSafeConfirm;
       readonly paymentOrder: MarkTossPaymentOrderPaidResult;
+      readonly fulfillment: FulfillPaidPaymentOrderResult;
     }
   | {
       readonly ok: false;
@@ -62,6 +68,7 @@ const amountMismatchMessage =
 const configMissingMessage = "Toss confirm configuration is missing.";
 const tossPaymentNotDoneMessage = "Toss payment is not done.";
 const paymentMarkPaidFailedMessage = "Payment order could not be marked paid.";
+const paymentFulfillmentFailedMessage = "Payment order could not be fulfilled.";
 const jsonResponseHeaders = {
   "content-type": "application/json; charset=utf-8",
 } as const;
@@ -193,17 +200,28 @@ function mapConfirmForResponse(
 
 function createConfirmContext(
   confirm: TossConfirmRouteSafeConfirm,
+  paymentOrder?: MarkTossPaymentOrderPaidResult,
 ): TossConfirmRouteErrorContext {
   return {
     orderId: confirm.orderId,
     amount: confirm.amount,
     confirmStatus: confirm.status,
     rawPaymentStatus: confirm.rawPaymentStatus,
+    ...(paymentOrder === undefined
+      ? {}
+      : { paymentOrderStatus: paymentOrder.status }),
   };
 }
 
 function createPaidOrderClient() {
   return createSupabaseTossPaymentOrderPaidClient({
+    supabaseUrl: process.env[supabaseUrlEnv],
+    supabaseAnonKey: process.env[supabaseAnonKeyEnv],
+  });
+}
+
+function createFulfillmentClient() {
+  return createSupabasePaidReportFulfillmentClient({
     supabaseUrl: process.env[supabaseUrlEnv],
     supabaseAnonKey: process.env[supabaseAnonKeyEnv],
   });
@@ -292,11 +310,31 @@ export async function POST(
     );
   }
 
+  const fulfillmentResult = await fulfillPaidPaymentOrder({
+    providerOrderId: confirm.orderId,
+    client: createFulfillmentClient(),
+  });
+
+  if (!fulfillmentResult.ok) {
+    return createErrorResponse(
+      "PAYMENT_FULFILLMENT_FAILED",
+      paymentFulfillmentFailedMessage,
+      500,
+      createConfirmContext(confirm, paidResult.order),
+    );
+  }
+
+  const paymentOrder = {
+    ...paidResult.order,
+    reportId: fulfillmentResult.fulfillment.reportId,
+  };
+
   return NextResponse.json<TossConfirmRouteResponse>(
     {
       ok: true,
       confirm,
-      paymentOrder: paidResult.order,
+      paymentOrder,
+      fulfillment: fulfillmentResult.fulfillment,
     },
     {
       status: 200,
