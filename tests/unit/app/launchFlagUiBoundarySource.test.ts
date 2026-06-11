@@ -53,27 +53,24 @@ describe("launch flag UI boundary source", () => {
 
   it("keeps report new page safe checkout preparation copy visible", () => {
     const source = readFile("src/app/report/new/page.tsx");
-    const normalizedSource = source.replace(/\s+/g, " ");
     const expectedMarkers = [
-      "무료 미리보기",
-      "전체 리포트 열람",
+      "입력 정보 확인",
+      "전체 리포트",
       "정가 1,290원",
       "런칭가 990원",
+      "결제금액 990원",
+      "990원 결제하고 리포트 생성하기",
       "정식 결제 연결 준비 중입니다.",
       "심사 및 결제 승인 연동 후 전체 리포트 구매가 가능합니다.",
-      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
-      "전체 리포트는 정식 결제 연동 이후 제공됩니다.",
-      "정식 결제 연동 후 제공 예정",
+      "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.",
+      "inputSnapshot={checkoutInputSnapshot}",
     ];
 
     for (const marker of expectedMarkers) {
       expect(source).toContain(marker);
     }
 
-    expect(normalizedSource).toContain(
-      "무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.",
-    );
-    expect(source).toContain("FULL_REPORT_AVAILABLE_AFTER_PAYMENT_COPY_KO");
+    expect(source).not.toContain("무료 미리보기 생성");
     expect(source).not.toContain(
       "전체 리포트 영역은 " + "정식 결제 연동 이후 제공됩니다.",
     );
@@ -85,22 +82,22 @@ describe("launch flag UI boundary source", () => {
 
   it("keeps report new page from starting real payment flow", () => {
     const source = readFile("src/app/report/new/page.tsx");
-    const expectedMockMarkers = [
-      "NEXT_PUBLIC_MOCK_PAID_REPORT_UI_ENABLED",
-      "/api/reports/mock-paid-complete",
-      "Toss로 결제 테스트",
-      "KakaoPay로 결제 테스트",
+    const expectedCheckoutMarkers = [
+      "NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED",
+      "DevTossCheckoutLauncher",
+      "checkoutInputSnapshot",
     ];
     const paymentFlowMarkers = [
-      "/api/pay" + "ments",
       "/api/reports/un" + "lock",
       "payment" + "Key",
-      "provider" + "PaymentId",
+      "provider" + "Payment" + "Id",
       "To" + "ss" + "Payments",
-      "check" + "out",
+      "/v1/" + "payments/confirm",
+      "mark" + "Paid",
+      "share" + "Token",
     ];
 
-    for (const marker of expectedMockMarkers) {
+    for (const marker of expectedCheckoutMarkers) {
       expect(source).toContain(marker);
     }
 
@@ -108,7 +105,8 @@ describe("launch flag UI boundary source", () => {
       expect(source).not.toContain(marker);
     }
 
-    expect(source).toContain('fetch("/api/reports/create"');
+    expect(source).not.toContain('fetch("/api/reports/create"');
+    expect(source).not.toContain("/api/reports/mock-paid-complete");
   });
 
   it("keeps runtime launch flags out of UI until a wiring task", () => {

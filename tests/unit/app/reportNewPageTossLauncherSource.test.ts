@@ -12,28 +12,31 @@ const launcherSource = readFileSync(
 );
 const pageLauncherSource = [
   pageSource.match(
-    /import DevTossCheckoutLauncher from "\.\.\/\.\.\/\.\.\/components\/payment\/DevTossCheckoutLauncher";/,
+    /import DevTossCheckoutLauncher[\s\S]*?from "\.\.\/\.\.\/\.\.\/components\/payment\/DevTossCheckoutLauncher";/,
   )?.[0] ?? "",
   pageSource.match(
     /const DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED =\r?\n  process\.env\.NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED === "1";/,
   )?.[0] ?? "",
   pageSource.match(
-    /\{DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED \? \(\r?\n\s*<DevTossCheckoutLauncher \/>/,
+    /\{DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED \? \(\r?\n\s*<DevTossCheckoutLauncher\r?\n\s*inputSnapshot=\{checkoutInputSnapshot\}/,
   )?.[0] ?? "",
 ].join("\n");
 
 describe("report new page Toss launcher source", () => {
-  it("imports and renders the dev Toss launcher as a gated component", () => {
+  it("imports and renders the dev Toss launcher with actual input snapshot", () => {
     expect(pageSource).toContain(
-      'import DevTossCheckoutLauncher from "../../../components/payment/DevTossCheckoutLauncher"',
+      'from "../../../components/payment/DevTossCheckoutLauncher"',
     );
-    expect(pageSource).toContain("전체 리포트 열람");
-    expect(pageSource).toContain("무료 미리보기");
+    expect(pageSource).toContain("입력 정보 확인");
+    expect(pageSource).toContain("전체 리포트");
     expect(pageSource).toContain("정가 1,290원");
     expect(pageSource).toContain("런칭가 990원");
+    expect(pageSource).toContain("결제금액 990원");
     expect(pageSource).toContain("정식 결제 연결 준비 중입니다.");
     expect(pageSource).toContain("DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED ? (");
-    expect(pageSource).toContain("<DevTossCheckoutLauncher />");
+    expect(pageSource).toContain("inputSnapshot={checkoutInputSnapshot}");
+    expect(pageSource).toContain("990원 결제하고 리포트 생성하기");
+    expect(pageSource).not.toContain("무료 미리보기 생성");
     expect(pageSource).not.toContain("결제 " + "비활성 안내");
     expect(launcherSource).toContain(
       "NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED",
@@ -51,7 +54,7 @@ describe("report new page Toss launcher source", () => {
     const pageBlockedMarkers = [
       "/v1/" + "payments/confirm",
       "payment" + "Key",
-      "provider" + "PaymentId",
+      "provider" + "Payment" + "Id",
       "provider" + "_payment" + "_id",
       "checkout" + "Url",
       "TOSS" + "_SECRET" + "_KEY",

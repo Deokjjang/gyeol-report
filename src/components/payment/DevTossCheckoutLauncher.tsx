@@ -15,20 +15,24 @@ const DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED =
 const DEV_TOSS_CHECKOUT_CUSTOMER_KEY = "gyeol_local_test_customer";
 const DEV_TOSS_CHECKOUT_ERROR_MESSAGE =
   "Toss 결제창 테스트를 시작하지 못했습니다. 환경값을 확인한 뒤 다시 시도해 주세요.";
+const REQUIRED_CHECKOUT_INPUT_MESSAGE_KO =
+  "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.";
 
-const devTossCheckoutPrepareBody = {
-  provider: "toss",
-  productType: "saju_mbti_full",
-  inputSnapshot: {
-    mbti: "ENTJ",
-    gender: "FEMALE",
-    timezone: "Asia/Seoul",
-    birthDate: "1996-12-06",
-    birthTime: "14:15",
-    calendarType: "SOLAR",
-    birthTimeUnknown: false,
-  },
-} as const;
+export type DevTossCheckoutInputSnapshot = {
+  readonly mbti: string;
+  readonly gender: string;
+  readonly timezone: string;
+  readonly birthDate: string;
+  readonly birthTime: string;
+  readonly calendarType: string;
+  readonly birthTimeUnknown: boolean;
+  readonly displayName?: string;
+};
+
+type DevTossCheckoutLauncherProps = {
+  readonly inputSnapshot: DevTossCheckoutInputSnapshot;
+  readonly ctaLabelKo?: string;
+};
 
 type DevTossCheckoutFetchResponse = {
   readonly ok: boolean;
@@ -49,6 +53,7 @@ export type DevTossCheckoutLauncherRuntime = {
 };
 
 type DevTossCheckoutErrorStage =
+  | "input_validation"
   | "prepare_api"
   | "sdk_load"
   | "request_payment"
@@ -161,6 +166,23 @@ function getLaunchFailureStage(
   return "unknown";
 }
 
+export function isDevTossCheckoutInputComplete(
+  inputSnapshot: DevTossCheckoutInputSnapshot,
+): boolean {
+  const hasRequiredText =
+    inputSnapshot.birthDate.trim().length > 0 &&
+    inputSnapshot.gender.trim().length > 0 &&
+    inputSnapshot.mbti.trim().length > 0 &&
+    inputSnapshot.calendarType.trim().length > 0 &&
+    inputSnapshot.timezone.trim().length > 0;
+
+  return (
+    hasRequiredText &&
+    (inputSnapshot.birthTimeUnknown ||
+      inputSnapshot.birthTime.trim().length > 0)
+  );
+}
+
 function createDetailCapturingLoader(
   sdkLoader: TossClientSdkLoader,
   captureDetail: (detail: DevTossCheckoutErrorDetail) => void,
@@ -201,8 +223,17 @@ const defaultRuntime = {
 } satisfies DevTossCheckoutLauncherRuntime;
 
 export async function runDevTossCheckout(
+  inputSnapshot: DevTossCheckoutInputSnapshot,
   runtime: DevTossCheckoutLauncherRuntime = defaultRuntime,
 ): Promise<DevTossCheckoutLauncherResult> {
+  if (!isDevTossCheckoutInputComplete(inputSnapshot)) {
+    return createFailureResult({
+      stage: "input_validation",
+      errorCode: "REPORT_INPUT_REQUIRED",
+      errorMessage: REQUIRED_CHECKOUT_INPUT_MESSAGE_KO,
+    });
+  }
+
   let response: DevTossCheckoutFetchResponse;
 
   try {
@@ -211,7 +242,11 @@ export async function runDevTossCheckout(
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(devTossCheckoutPrepareBody),
+      body: JSON.stringify({
+        provider: "toss",
+        productType: "saju_mbti_full",
+        inputSnapshot,
+      }),
     });
   } catch (error) {
     return createFailureResult(extractSafeErrorDetail("prepare_api", error));
@@ -272,7 +307,10 @@ export async function runDevTossCheckout(
   };
 }
 
-export default function DevTossCheckoutLauncher() {
+export default function DevTossCheckoutLauncher({
+  inputSnapshot,
+  ctaLabelKo = "990원 결제하고 리포트 생성하기",
+}: DevTossCheckoutLauncherProps) {
   const [isLaunching, setIsLaunching] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [errorDetail, setErrorDetail] =
@@ -283,8 +321,10 @@ export default function DevTossCheckoutLauncher() {
     return null;
   }
 
+  const isInputComplete = isDevTossCheckoutInputComplete(inputSnapshot);
+
   async function handleLaunch() {
-    if (isLaunching) {
+    if (isLaunching || !isInputComplete) {
       return;
     }
 
@@ -293,7 +333,7 @@ export default function DevTossCheckoutLauncher() {
     setErrorDetail(null);
     setStatusMessage("");
 
-    const result = await runDevTossCheckout();
+    const result = await runDevTossCheckout(inputSnapshot);
 
     if (!result.ok) {
       setErrorMessage(result.messageKo);
@@ -313,19 +353,26 @@ export default function DevTossCheckoutLauncher() {
           Toss 결제창 테스트
         </p>
         <p className="text-sm leading-6 text-sky-800">
-          실제 결제 승인(confirm)은 아직 연결되지 않았습니다.
+          결제 성공 후 임시 승인 대기 화면으로 이동합니다.
         </p>
         <p className="text-sm leading-6 text-sky-800">
-          결제 성공 후 임시 success 페이지로 돌아옵니다.
+          리포트 제공은 결제 승인 확인 연동 이후 이어집니다.
         </p>
       </div>
+      {!isInputComplete ? (
+        <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm font-semibold text-amber-900">
+          {REQUIRED_CHECKOUT_INPUT_MESSAGE_KO}
+        </p>
+      ) : null}
       <button
         type="button"
-        disabled={isLaunching}
+        disabled={isLaunching || !isInputComplete}
         onClick={() => void handleLaunch()}
         className="w-full rounded-lg bg-sky-700 px-4 py-3 text-sm font-bold text-white transition hover:bg-sky-800 disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:text-neutral-500"
       >
-        {isLaunching ? "Toss 결제창 여는 중..." : "Toss 결제창 열기"}
+        {isLaunching
+          ? "Toss 결제창 여는 중..."
+          : ctaLabelKo}
       </button>
       {errorMessage ? (
         <div className="space-y-3 rounded-lg border border-red-900/60 bg-red-950/30 p-3 text-sm leading-6 text-red-100">

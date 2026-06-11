@@ -7,55 +7,31 @@ const pageSource = readFileSync(
   "utf8",
 );
 
-function getMockPaymentUiGuardedSource(): string {
-  const start = pageSource.indexOf("MOCK_PAID_REPORT_UI_ENABLED ? (");
-  const end = pageSource.indexOf(
-    "DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED ? (",
-    start,
-  );
-
-  expect(start).toBeGreaterThanOrEqual(0);
-  expect(end).toBeGreaterThan(start);
-
-  return pageSource.slice(start, end);
-}
-
 describe("mock payment UI production safety", () => {
-  it("is hidden by default behind a strict public env flag", () => {
-    expect(pageSource).toContain("NEXT_PUBLIC_MOCK_PAID_REPORT_UI_ENABLED");
-    expect(pageSource).toContain(
-      'process.env.NEXT_PUBLIC_MOCK_PAID_REPORT_UI_ENABLED === "1"',
-    );
-    expect(pageSource).toContain(
-      "MOCK_PAID_REPORT_UI_ENABLED ? (",
-    );
-    expect(getMockPaymentUiGuardedSource()).toContain(
-      "mockPaymentChoices.map",
-    );
-
-    const looseGateMarkers = [
-      "if (process.env.NEXT_PUBLIC_MOCK_PAID_REPORT_UI_ENABLED)",
-      'process.env.NEXT_PUBLIC_MOCK_PAID_REPORT_UI_ENABLED === "true"',
-      'process.env.NEXT_PUBLIC_MOCK_PAID_REPORT_UI_ENABLED !== "0"',
+  it("removes mock paid report completion from the normal checkout page", () => {
+    const removedMarkers = [
+      "NEXT_PUBLIC_MOCK_PAID_REPORT_UI_ENABLED",
+      "MOCK_PAID_REPORT_UI_ENABLED",
+      "/api/reports/mock-paid-complete",
+      "mockPaymentMethod",
+      "mockPaymentChoices",
+      "Toss로 결제 테스트",
+      "KakaoPay로 결제 테스트",
+      "sharePath",
+      "window.location.assign",
     ];
 
-    for (const marker of looseGateMarkers) {
+    for (const marker of removedMarkers) {
       expect(pageSource).not.toContain(marker);
     }
   });
 
-  it("keeps one-report payment choices to Toss and KakaoPay", () => {
+  it("keeps the Toss checkout test launcher as the only payment entry", () => {
     const requiredMarkers = [
-      "/api/reports/mock-paid-complete",
-      "mockPaymentMethod",
-      "toss",
-      "kakao_pay",
-      "Toss로 결제 테스트",
-      "KakaoPay로 결제 테스트",
-      "리포트 1개당 1회 결제",
-      "정식 결제 전 테스트용 결제 흐름입니다",
-      "sharePath",
-      "결제 테스트를 완료하지 못했습니다",
+      "NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED",
+      "DevTossCheckoutLauncher",
+      "inputSnapshot={checkoutInputSnapshot}",
+      "990원 결제하고 리포트 생성하기",
     ];
 
     for (const marker of requiredMarkers) {
@@ -74,18 +50,17 @@ describe("mock payment UI production safety", () => {
       "kakao" + "_card",
       "naver" + "_pay",
       "payco",
+      "포" + "인트",
     ];
 
     for (const marker of blockedPageMarkers) {
       expect(pageSource).not.toContain(marker);
     }
-
-    expect(getMockPaymentUiGuardedSource()).not.toContain("포" + "인트");
   });
 
-  it("does not include real payment routes, secrets, logs, or restricted fields", () => {
+  it("does not include confirm, secrets, logs, or restricted fields", () => {
     const blockedMarkers = [
-      "/api/" + "payments",
+      "/v1/" + "payments/confirm",
       "/api/" + "reports/unlock",
       "To" + "ss" + "Payments",
       "KakaoPay" + " API",

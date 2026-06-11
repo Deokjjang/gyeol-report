@@ -1,90 +1,24 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import type { FormEvent } from "react";
 
-import DevTossCheckoutLauncher from "../../../components/payment/DevTossCheckoutLauncher";
+import DevTossCheckoutLauncher, {
+  type DevTossCheckoutInputSnapshot,
+  isDevTossCheckoutInputComplete,
+} from "../../../components/payment/DevTossCheckoutLauncher";
 import { GYEOL_PRODUCTS } from "../../../lib/product/gyeolProducts";
 
-type ValidationError = {
-  field: string;
-  code: string;
-  messageKo: string;
-};
-
-type CreateReportErrorSummary = {
-  code: string;
-  messageKo: string;
-};
-
-type ReportBlock = {
-  kind: string;
-  titleKo?: string;
-  bodyKo?: string;
-  itemsKo?: string[];
-  keyValues?: {
-    keyKo: string;
-    valueKo: string;
-  }[];
-};
-
-type ReportSection = {
-  id: string;
-  level: string;
-  titleKo: string;
-  summaryKo: string;
-  blocks: ReportBlock[];
-};
-
-type ReportPreview = {
-  version: "v1";
-  titleKo: string;
-  subtitleKo: string;
-  sections: ReportSection[];
-  notices: string[];
-};
-
-type ReportPreviewMode = "dev_full" | "gated_preview";
-
-type CreateReportResponse =
-  | {
-      ok: true;
-      report: ReportPreview;
-    }
-  | {
-      ok: false;
-      error?: CreateReportErrorSummary;
-      errors: ValidationError[];
-    };
-
-type MockPaymentMethod = "toss" | "kakao_pay";
-
-type MockPaidCompleteResponse =
-  | {
-      ok: true;
-      reportId: string;
-      sharePath: string;
-      paymentProvider: "mock_toss" | "mock_kakao_pay";
-      paymentStatus: "paid";
-    }
-  | {
-      ok: false;
-      error: string;
-    };
-
-const REPORT_PREVIEW_MODE = "gated_preview" as const satisfies ReportPreviewMode;
 const ACTIVE_REPORT_PRODUCT = GYEOL_PRODUCTS[0];
 const ACTIVE_REPORT_LIST_PRICE_LABEL_KO = "정가 1,290원";
 const ACTIVE_REPORT_SALE_PRICE_LABEL_KO = "런칭가 990원";
 const ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO = "결제금액 990원";
-const FULL_REPORT_AVAILABLE_AFTER_PAYMENT_COPY_KO =
-  "전체 리포트는 정식 결제 연동 이후 제공됩니다.";
-const MOCK_PAID_REPORT_UI_ENABLED =
-  process.env.NEXT_PUBLIC_MOCK_PAID_REPORT_UI_ENABLED === "1";
+const ACTIVE_REPORT_FORMAT_LABEL_KO = "디지털 리포트";
+const CHECKOUT_CTA_LABEL_KO = "990원 결제하고 리포트 생성하기";
+const REQUIRED_CHECKOUT_INPUT_MESSAGE_KO =
+  "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.";
 const DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED =
   process.env.NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED === "1";
-const MOCK_PAYMENT_ERROR_MESSAGE =
-  "결제 테스트를 완료하지 못했습니다. 입력값을 확인한 뒤 다시 시도해 주세요.";
 
 const mbtiTypes = [
   "INTJ",
@@ -112,7 +46,7 @@ const reportInputSteps = [
   { step: 0, labelKo: "1단계", titleKo: "이름·생년월일" },
   { step: 1, labelKo: "2단계", titleKo: "출생시간" },
   { step: 2, labelKo: "3단계", titleKo: "성별·MBTI" },
-  { step: 3, labelKo: "4단계", titleKo: "확인 후 생성" },
+  { step: 3, labelKo: "4단계", titleKo: "확인 후 결제" },
 ] as const satisfies readonly {
   readonly step: ReportInputStep;
   readonly labelKo: string;
@@ -137,35 +71,6 @@ const timeBranches = [
 type TimeBranchValue = (typeof timeBranches)[number]["value"];
 type TimeBranchSelection = TimeBranchValue | "";
 
-const pillarLabels = ["년주", "월주", "일주", "시주"] as const;
-
-type PillarLabelKo = (typeof pillarLabels)[number];
-
-type PillarCardItem = {
-  labelKo: PillarLabelKo;
-  valueKo: string;
-  hanjaPillar?: string;
-  readingKo?: string;
-  stemKo?: string;
-  branchKo?: string;
-  meaningKo?: string;
-};
-
-const lockedValuePoints = [
-  "오행 보완 루틴",
-  "십성 기반 일·돈·관계 해석",
-  "신살·귀인 반복 신호 해석",
-  "사주×MBTI 차이와 조절 포인트",
-] as const;
-
-const mockPaymentChoices = [
-  { method: "toss", labelKo: "Toss로 결제 테스트" },
-  { method: "kakao_pay", labelKo: "KakaoPay로 결제 테스트" },
-] as const satisfies readonly {
-  readonly method: MockPaymentMethod;
-  readonly labelKo: string;
-}[];
-
 function getRepresentativeBirthTime(branch: TimeBranchValue): string {
   return (
     timeBranches.find((item) => item.value === branch)?.representativeTime ??
@@ -184,10 +89,6 @@ function formatGenderLabel(value: string): string {
 
   if (value === "FEMALE") {
     return "여성";
-  }
-
-  if (value === "OTHER") {
-    return "기타";
   }
 
   return "선택 안 함";
@@ -221,307 +122,29 @@ function formatBirthTimeSummary(
   return exactTime ? `정확한 시간 · ${exactTime}` : "정확한 시간 · 미입력";
 }
 
-function parsePillarCardValue(
-  labelKo: PillarLabelKo,
-  valueKo: string | undefined,
-): Omit<PillarCardItem, "labelKo"> {
-  const displayValue =
-    labelKo === "시주" && (!valueKo || valueKo === "모름")
-      ? "출생시간 모름"
-      : valueKo ?? "정보 없음";
-
-  if (!valueKo || valueKo === "모름") {
-    return {
-      valueKo: displayValue,
-    };
-  }
-
-  const [pillarAndReading, meaningKo] = valueKo.split(" — ");
-  const [hanjaPillar, readingKo] = pillarAndReading.trim().split(/\s+/, 2);
+function createCheckoutInputSnapshot(input: {
+  readonly displayName: string;
+  readonly birthDate: string;
+  readonly birthTime: string | undefined;
+  readonly birthTimeUnknown: boolean;
+  readonly gender: string;
+  readonly mbtiType: string;
+}): DevTossCheckoutInputSnapshot {
+  const trimmedDisplayName = input.displayName.trim();
 
   return {
-    valueKo: displayValue,
-    hanjaPillar,
-    readingKo,
-    stemKo: hanjaPillar?.[0],
-    branchKo: hanjaPillar?.[1],
-    meaningKo,
+    mbti: input.mbtiType,
+    gender: input.gender,
+    timezone: "Asia/Seoul",
+    birthDate: input.birthDate,
+    birthTime: input.birthTime ?? "",
+    calendarType: "SOLAR",
+    birthTimeUnknown: input.birthTimeUnknown,
+    ...(trimmedDisplayName ? { displayName: trimmedDisplayName } : {}),
   };
 }
 
-function getPillarCardItems(report: ReportPreview): PillarCardItem[] {
-  const sajuCoreSection = report.sections.find(
-    (section) => section.id === "SAJU_CORE",
-  );
-  const pillarBlock = sajuCoreSection?.blocks.find(
-    (block) => block.kind === "KEY_VALUE" && block.keyValues,
-  );
-  const keyValues = pillarBlock?.keyValues ?? [];
-
-  if (keyValues.length === 0) {
-    return [];
-  }
-
-  return pillarLabels.map((labelKo) => {
-    const valueKo = keyValues.find((item) => item.keyKo === labelKo)?.valueKo;
-
-    return {
-      labelKo,
-      ...parsePillarCardValue(labelKo, valueKo),
-    };
-  });
-}
-
-function getReportCreationErrorMessage(errorCode: string | undefined): string {
-  if (errorCode === "SOLAR_TERM_YEAR_UNSUPPORTED") {
-    return "현재 입력값은 자동 계산 범위에서 처리하지 못했습니다. 생년월일과 출생시간을 다시 확인해 주세요.";
-  }
-
-  if (errorCode === "NETWORK_ERROR") {
-    return "일시적인 연결 문제로 리포트를 만들지 못했습니다. 잠시 후 다시 시도해 주세요.";
-  }
-
-  return "입력한 생년월일, 출생시간, MBTI를 다시 확인해 주세요. 잠시 후 다시 시도해 주세요.";
-}
-
-function getCreateReportErrorCode(
-  response: Extract<CreateReportResponse, { ok: false }>,
-): string | undefined {
-  const unsupportedYearError = response.errors.find(
-    (error) => error.code === "SOLAR_TERM_YEAR_UNSUPPORTED",
-  );
-
-  return unsupportedYearError?.code ?? response.error?.code;
-}
-
-function canShowSectionBody(
-  level: ReportSection["level"],
-  mode: ReportPreviewMode,
-): boolean {
-  if (mode === "dev_full") {
-    return true;
-  }
-
-  return level === "FREE_PREVIEW";
-}
-
-function getLockedSectionTeaser(title: string): string {
-  if (title.includes("오행")) {
-    return "오행 밸런스, 보완 루틴, 추천 색상·공간을 전체 리포트에서 확인할 수 있습니다.";
-  }
-
-  if (title.includes("십성")) {
-    return "강하게 쓰는 성향과 보완하면 좋은 흐름을 더 자세히 확인할 수 있습니다.";
-  }
-
-  if (title.includes("신살") || title.includes("귀인")) {
-    return "귀인·신살의 핵심 신호와 실전 활용 포인트를 전체 리포트에서 확인할 수 있습니다.";
-  }
-
-  if (title.includes("일·돈·관계")) {
-    return "일의 방식, 자원 관리, 관계·연애 패턴을 전체 리포트에서 확인할 수 있습니다.";
-  }
-
-  if (title.includes("사주×MBTI")) {
-    return "입력 MBTI와 사주 구조의 공통점과 차이를 전체 리포트에서 확인할 수 있습니다.";
-  }
-
-  if (title.includes("활용 가이드")) {
-    return "오늘부터 써먹을 루틴과 조심할 패턴을 전체 리포트에서 확인할 수 있습니다.";
-  }
-
-  return "이 섹션의 상세 해석은 전체 리포트에서 확인할 수 있습니다.";
-}
-
-function renderLockedSectionBody(section: ReportSection) {
-  return (
-    <div className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/70 p-5">
-      <div className="space-y-2">
-        <p className="text-sm font-semibold text-neutral-100">
-          전체 리포트 잠금
-        </p>
-        <p className="text-sm leading-6 text-neutral-400">
-          {getLockedSectionTeaser(section.titleKo)}
-        </p>
-      </div>
-      <p className="rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-sm font-semibold text-neutral-300">
-        정식 결제 연동 후 제공 예정
-      </p>
-    </div>
-  );
-}
-
-function renderPillarManseCard(report: ReportPreview) {
-  const items = getPillarCardItems(report);
-
-  if (items.length === 0) {
-    return null;
-  }
-
-  return (
-    <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/80 p-4">
-      <div className="space-y-2">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-500">
-          만세력 카드
-        </p>
-        <h3 className="text-lg font-semibold text-neutral-50">사주 네 기둥</h3>
-        <p className="text-sm leading-6 text-neutral-400">
-          생년월일시를 바탕으로 계산된 네 기둥입니다.
-        </p>
-        <p className="text-sm leading-6 text-neutral-400">
-          일주는 리포트에서 나를 보는 기준점으로 사용합니다.
-        </p>
-      </div>
-
-      <div className="grid gap-3 sm:grid-cols-4">
-        {items.map((item) => {
-          const isDayPillar = item.labelKo === "일주";
-
-          return (
-            <div
-              key={item.labelKo}
-              className={
-                isDayPillar
-                  ? "space-y-3 rounded-lg border border-emerald-800/70 bg-emerald-950/20 p-4"
-                  : "space-y-3 rounded-lg border border-neutral-800 bg-neutral-900/60 p-4"
-              }
-            >
-              <div className="flex items-center justify-between gap-2">
-                <p className="text-sm font-semibold text-neutral-100">
-                  {item.labelKo}
-                </p>
-                {isDayPillar ? (
-                  <span className="rounded-full border border-emerald-800/70 px-2 py-1 text-[0.7rem] font-medium text-emerald-100">
-                    기준점
-                  </span>
-                ) : null}
-              </div>
-              {isDayPillar ? (
-                <p className="text-xs leading-5 text-emerald-100/80">
-                  일주는 나를 보는 기준점입니다.
-                </p>
-              ) : null}
-              <div>
-                <p className="text-2xl font-bold tracking-tight text-neutral-50">
-                  {item.hanjaPillar ?? item.valueKo}
-                </p>
-                {item.readingKo ? (
-                  <p className="mt-1 text-sm text-neutral-400">
-                    {item.readingKo}
-                  </p>
-                ) : null}
-              </div>
-              <dl className="grid grid-cols-2 gap-2 text-sm">
-                <div className="rounded-md border border-neutral-800 bg-neutral-950 px-3 py-2">
-                  <dt className="text-xs text-neutral-500">천간</dt>
-                  <dd className="mt-1 font-semibold text-neutral-100">
-                    {item.stemKo ?? "-"}
-                  </dd>
-                </div>
-                <div className="rounded-md border border-neutral-800 bg-neutral-950 px-3 py-2">
-                  <dt className="text-xs text-neutral-500">지지</dt>
-                  <dd className="mt-1 font-semibold text-neutral-100">
-                    {item.branchKo ?? "-"}
-                  </dd>
-                </div>
-              </dl>
-              {item.meaningKo ? (
-                <p className="text-xs leading-5 text-neutral-500">
-                  {item.meaningKo}
-                </p>
-              ) : null}
-            </div>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
-
-function renderReportBlock(block: ReportBlock, index: number) {
-  const title = block.titleKo ? (
-    <h4 className="text-sm font-semibold tracking-tight text-neutral-100">
-      {block.titleKo}
-    </h4>
-  ) : null;
-
-  if (block.kind === "KEY_VALUE" && block.keyValues) {
-    return (
-      <div key={index} className="space-y-3">
-        {title}
-        <dl className="overflow-hidden rounded-lg border border-neutral-800 bg-neutral-950/70">
-          {block.keyValues.map((item) => (
-            <div
-              key={`${item.keyKo}-${item.valueKo}`}
-              className="grid gap-1 border-b border-neutral-800 px-4 py-3 text-sm last:border-b-0 sm:grid-cols-[8rem_1fr] sm:gap-4"
-            >
-              <dt className="font-medium text-neutral-500">{item.keyKo}</dt>
-              <dd className="leading-6 text-neutral-200">{item.valueKo}</dd>
-            </div>
-          ))}
-        </dl>
-      </div>
-    );
-  }
-
-  if (block.kind === "BULLET_LIST" && block.itemsKo) {
-    return (
-      <div key={index} className="space-y-3">
-        {title}
-        <ul className="space-y-3 text-sm leading-6 text-neutral-300">
-          {block.itemsKo.map((item, itemIndex) => (
-            <li key={`${item}-${itemIndex}`} className="flex gap-3">
-              <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-500" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
-
-  if (block.kind === "WARNING") {
-    return (
-      <div
-        key={index}
-        className="space-y-2 rounded-lg border border-amber-900/50 bg-amber-950/20 p-4"
-      >
-        {title}
-        <p className="text-sm leading-6 text-amber-100/90">{block.bodyKo}</p>
-      </div>
-    );
-  }
-
-  if (block.kind === "HIGHLIGHT") {
-    return (
-      <div
-        key={index}
-        className="space-y-3 rounded-lg border border-neutral-700 bg-neutral-900 p-4"
-      >
-        {title}
-        <p className="text-base font-semibold leading-7 text-neutral-50">
-          {block.bodyKo}
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <div key={index} className="space-y-3">
-      {title}
-      <p className="text-sm leading-6 text-neutral-300">{block.bodyKo}</p>
-    </div>
-  );
-}
-
 export default function NewReportPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [mockPaymentMethodInProgress, setMockPaymentMethodInProgress] =
-    useState<MockPaymentMethod | null>(null);
-  const [mockPaymentErrorMessage, setMockPaymentErrorMessage] = useState("");
-  const [errors, setErrors] = useState<ValidationError[]>([]);
-  const [creationErrorMessage, setCreationErrorMessage] = useState("");
-  const [report, setReport] = useState<ReportPreview | null>(null);
   const [currentStep, setCurrentStep] = useState<ReportInputStep>(0);
   const [displayName, setDisplayName] = useState("");
   const [birthDate, setBirthDate] = useState("");
@@ -531,8 +154,6 @@ export default function NewReportPage() {
   const [gender, setGender] = useState("");
   const [mbtiType, setMbtiType] = useState("");
   const [stepError, setStepError] = useState("");
-  const resultRef = useRef<HTMLElement | null>(null);
-  const shouldScrollToResultRef = useRef(false);
 
   const selectedStep = reportInputSteps[currentStep];
   const progressPercent = ((currentStep + 1) / reportInputSteps.length) * 100;
@@ -552,19 +173,16 @@ export default function NewReportPage() {
   const shouldShowMidnightBoundaryWarning =
     (birthTimeMode === "exact" && isMidnightBoundaryTime(birthTime)) ||
     (birthTimeMode === "branch" && timeBranch === "JASI");
-  const isMockPaymentSubmitting = mockPaymentMethodInProgress !== null;
-
-  useEffect(() => {
-    if (!report || !shouldScrollToResultRef.current) {
-      return;
-    }
-
-    shouldScrollToResultRef.current = false;
-    resultRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }, [report]);
+  const checkoutInputSnapshot = createCheckoutInputSnapshot({
+    displayName,
+    birthDate,
+    birthTime: normalizedBirthTime,
+    birthTimeUnknown,
+    gender,
+    mbtiType,
+  });
+  const isCheckoutInputComplete =
+    isDevTossCheckoutInputComplete(checkoutInputSnapshot);
 
   function isBirthTimeStepValid(): boolean {
     if (birthTimeMode === "unknown") {
@@ -580,16 +198,24 @@ export default function NewReportPage() {
 
   function goToPreviousStep() {
     setStepError("");
-    setCurrentStep((step) =>
-      Math.max(0, step - 1) as ReportInputStep,
-    );
+    setCurrentStep((step) => Math.max(0, step - 1) as ReportInputStep);
   }
 
   function goToNextStep() {
+    if (currentStep === 0 && birthDate.trim().length === 0) {
+      setStepError("생년월일을 입력해 주세요.");
+      return;
+    }
+
     if (currentStep === 1 && !isBirthTimeStepValid()) {
       setStepError(
         "출생시간을 입력하거나, 대략적인 시간대 또는 모름을 선택해 주세요.",
       );
+      return;
+    }
+
+    if (currentStep === 2 && (gender.trim().length === 0 || mbtiType === "")) {
+      setStepError("성별과 MBTI를 선택해 주세요.");
       return;
     }
 
@@ -599,100 +225,11 @@ export default function NewReportPage() {
     );
   }
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     if (currentStep !== 3) {
       goToNextStep();
-      return;
-    }
-
-    setIsSubmitting(true);
-    setErrors([]);
-    setCreationErrorMessage("");
-    setReport(null);
-
-    const payload = {
-      displayName: displayName.trim(),
-      birthDate,
-      birthTime: normalizedBirthTime,
-      birthTimeUnknown,
-      calendarType: "SOLAR",
-      gender,
-      timezone: "Asia/Seoul",
-      mbtiType,
-    };
-
-    try {
-      const response = await fetch("/api/reports/create", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-      const json = (await response.json()) as CreateReportResponse;
-
-      if (!json.ok) {
-        setErrors(json.errors);
-        setCreationErrorMessage(
-          getReportCreationErrorMessage(getCreateReportErrorCode(json)),
-        );
-        return;
-      }
-
-      shouldScrollToResultRef.current = true;
-      setReport(json.report);
-    } catch {
-      setErrors([]);
-      setCreationErrorMessage(getReportCreationErrorMessage("NETWORK_ERROR"));
-    } finally {
-      setIsSubmitting(false);
-    }
-  }
-
-  async function handleMockPaidComplete(method: MockPaymentMethod) {
-    if (!MOCK_PAID_REPORT_UI_ENABLED || isMockPaymentSubmitting) {
-      return;
-    }
-
-    setMockPaymentMethodInProgress(method);
-    setMockPaymentErrorMessage("");
-    setErrors([]);
-    setCreationErrorMessage("");
-
-    const payload = {
-      displayName: displayName.trim(),
-      birthDate,
-      birthTime: normalizedBirthTime,
-      birthTimeUnknown,
-      calendarType: "SOLAR",
-      gender,
-      timezone: "Asia/Seoul",
-      mbtiType,
-      mockPaymentMethod: method,
-    };
-
-    try {
-      const response = await fetch("/api/reports/mock-paid-complete", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-      const json = (await response.json()) as MockPaidCompleteResponse;
-
-      if (!json.ok || !json.sharePath.startsWith("/r/")) {
-        setMockPaymentErrorMessage(MOCK_PAYMENT_ERROR_MESSAGE);
-        return;
-      }
-
-      window.location.assign(json.sharePath);
-    } catch {
-      setMockPaymentErrorMessage(MOCK_PAYMENT_ERROR_MESSAGE);
-    } finally {
-      setMockPaymentMethodInProgress(null);
     }
   }
 
@@ -702,502 +239,488 @@ export default function NewReportPage() {
         <header className="max-w-3xl space-y-4">
           <p className="text-sm font-medium text-neutral-400">Gyeol Report</p>
           <h1 className="text-4xl font-bold tracking-tight text-neutral-50">
-            결리포트 미리보기
+            종합 리포트 입력
           </h1>
           <p className="max-w-2xl text-base leading-8 text-neutral-400">
-            생년월일, 출생시간, MBTI를 입력하면 사주 구조와 자기인식의
-            겹침을 바탕으로 샘플 리포트를 생성합니다. 무료 미리보기에서는
-            핵심 구조 일부를 먼저 확인할 수 있습니다.{" "}
-            {FULL_REPORT_AVAILABLE_AFTER_PAYMENT_COPY_KO} 결제 후 전체 리포트를
-            받아보는 구조로 준비 중입니다. 현재는 결제 전 테스트용 무료
-            미리보기만 확인할 수 있습니다.
+            생년월일시와 MBTI를 입력하고 확인한 뒤 990원 결제창으로
+            이동합니다. 리포트는 결제 승인 후 생성됩니다.
           </p>
         </header>
 
         <div className="grid gap-6 lg:grid-cols-[22rem_1fr] lg:items-start">
-          <div className="space-y-4 lg:sticky lg:top-8">
-            <form
-              onSubmit={handleSubmit}
-              className="space-y-5 rounded-lg border border-neutral-800 bg-neutral-900/80 p-5 shadow-2xl shadow-black/20"
-            >
-              <div className="space-y-2">
-                <h2 className="text-lg font-semibold text-neutral-100">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-5 rounded-lg border border-neutral-800 bg-neutral-900/80 p-5 shadow-2xl shadow-black/20 lg:sticky lg:top-8"
+          >
+            <div className="space-y-2">
+              <h2 className="text-lg font-semibold text-neutral-100">
+                {selectedStep.labelKo} · {selectedStep.titleKo}
+              </h2>
+              <p className="text-sm leading-6 text-neutral-400">
+                입력한 정보는 결제 주문의 inputSnapshot으로 저장되어 이후
+                전체 리포트 생성에 사용됩니다.
+              </p>
+            </div>
+
+            <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+              <div className="flex items-center justify-between gap-4">
+                <p className="text-sm font-semibold text-neutral-100">
+                  {currentStep + 1} / {reportInputSteps.length}
+                </p>
+                <p className="text-right text-sm text-neutral-400">
                   {selectedStep.labelKo} · {selectedStep.titleKo}
-                </h2>
-                <p className="text-sm leading-6 text-neutral-400">
-                  모바일에서 한 단계씩 입력한 뒤 무료 미리보기를 생성합니다.
-                  현재 테스트 버전에서는 무료 미리보기를 생성합니다. 정식 버전에서는 결제 후 전체 리포트가 생성됩니다.
                 </p>
               </div>
-
-              <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                <div className="flex items-center justify-between gap-4">
-                  <p className="text-sm font-semibold text-neutral-100">
-                    {currentStep + 1} / {reportInputSteps.length}
-                  </p>
-                  <p className="text-right text-sm text-neutral-400">
-                    {selectedStep.labelKo} · {selectedStep.titleKo}
-                  </p>
-                </div>
+              <div
+                aria-label="진행률"
+                className="h-2 overflow-hidden rounded-full bg-neutral-800"
+              >
                 <div
-                  aria-label="진행률"
-                  className="h-2 overflow-hidden rounded-full bg-neutral-800"
-                >
-                  <div
-                    className="h-full rounded-full bg-neutral-100"
-                    style={{ width: `${progressPercent}%` }}
-                  />
-                </div>
-                <ol className="grid gap-2 text-xs text-neutral-500 sm:grid-cols-4">
-                  {reportInputSteps.map((step) => (
-                    <li
-                      key={step.step}
-                      className={
-                        step.step === currentStep
-                          ? "rounded-lg border border-neutral-600 bg-neutral-900 px-3 py-2 text-neutral-100"
-                          : "rounded-lg border border-neutral-800 px-3 py-2"
-                      }
-                    >
-                      <span className="font-semibold">{step.labelKo}</span>
-                      <span className="ml-2">{step.titleKo}</span>
-                    </li>
-                  ))}
-                </ol>
+                  className="h-full rounded-full bg-neutral-100"
+                  style={{ width: `${progressPercent}%` }}
+                />
               </div>
+              <ol className="grid gap-2 text-xs text-neutral-500 sm:grid-cols-4">
+                {reportInputSteps.map((step) => (
+                  <li
+                    key={step.step}
+                    className={
+                      step.step === currentStep
+                        ? "rounded-lg border border-neutral-600 bg-neutral-900 px-3 py-2 text-neutral-100"
+                        : "rounded-lg border border-neutral-800 px-3 py-2"
+                    }
+                  >
+                    <span className="font-semibold">{step.labelKo}</span>
+                    <span className="ml-2">{step.titleKo}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
 
-              <input type="hidden" name="timezone" value="Asia/Seoul" />
-              <input type="hidden" name="calendarType" value="SOLAR" />
-              <input
-                type="hidden"
-                name="birthTimeUnknown"
-                value={birthTimeUnknown ? "on" : ""}
-              />
+            <input type="hidden" name="timezone" value="Asia/Seoul" />
+            <input type="hidden" name="calendarType" value="SOLAR" />
+            <input
+              type="hidden"
+              name="birthTimeUnknown"
+              value={birthTimeUnknown ? "on" : ""}
+            />
 
-              {currentStep === 0 ? (
-                <div className="space-y-5">
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="displayName"
-                      className="block text-sm font-medium text-neutral-200"
-                    >
-                      이름
-                    </label>
+            {currentStep === 0 ? (
+              <div className="space-y-5">
+                <div className="space-y-2">
+                  <label
+                    htmlFor="displayName"
+                    className="block text-sm font-medium text-neutral-200"
+                  >
+                    이름
+                  </label>
+                  <input
+                    id="displayName"
+                    name="displayName"
+                    type="text"
+                    value={displayName}
+                    maxLength={20}
+                    onChange={(event) => setDisplayName(event.target.value)}
+                    placeholder="예: 덕짱"
+                    className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
+                  />
+                  <p className="text-xs leading-5 text-neutral-500">
+                    리포트에서 불러드릴 이름입니다. 사주 계산에는 사용하지 않습니다.
+                  </p>
+                </div>
+
+                <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                  <p className="text-sm font-semibold text-neutral-100">
+                    양력 기준 생년월일
+                  </p>
+                  <p className="text-sm leading-6 text-neutral-400">
+                    현재 V1은 양력 기준 생년월일만 지원합니다.
+                  </p>
+                  <p className="text-sm leading-6 text-neutral-500">
+                    음력 생일 입력은 추후 지원 예정입니다.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <label
+                    htmlFor="birthDate"
+                    className="block text-sm font-medium text-neutral-200"
+                  >
+                    생년월일
+                  </label>
+                  <div className="relative">
                     <input
-                      id="displayName"
-                      name="displayName"
-                      type="text"
-                      value={displayName}
-                      maxLength={20}
-                      onChange={(event) => setDisplayName(event.target.value)}
-                      placeholder="예: 덕짱"
-                      className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
+                      id="birthDate"
+                      name="birthDate"
+                      type="date"
+                      value={birthDate}
+                      onChange={(event) => {
+                        setBirthDate(event.target.value);
+                        setStepError("");
+                      }}
+                      style={{ colorScheme: "dark" }}
+                      className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 pr-24 text-neutral-50 outline-none focus:border-neutral-400"
                     />
-                    <p className="text-xs leading-5 text-neutral-500">
-                      리포트에서 불러드릴 이름입니다. 사주 계산에는 사용하지 않습니다.
-                    </p>
+                    <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-neutral-700 bg-neutral-900 px-2 py-1 text-xs font-medium text-neutral-300">
+                      날짜 선택
+                    </span>
                   </div>
+                  <p className="text-xs leading-5 text-neutral-500">
+                    예: 1996-12-06 형식으로 입력해 주세요.
+                  </p>
+                </div>
+              </div>
+            ) : null}
 
-                  <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                    <p className="text-sm font-semibold text-neutral-100">
-                      양력 기준 생년월일
-                    </p>
-                    <p className="text-sm leading-6 text-neutral-400">
-                      현재 V1은 양력 기준 생년월일만 지원합니다.
-                    </p>
-                    <p className="text-sm leading-6 text-neutral-500">
-                      음력 생일 입력은 추후 지원 예정입니다.
-                    </p>
+            {currentStep === 1 ? (
+              <div className="space-y-5">
+                <fieldset className="space-y-3">
+                  <legend className="text-sm font-medium text-neutral-200">
+                    출생시간
+                  </legend>
+                  <div className="grid gap-3">
+                    {[
+                      { value: "exact", labelKo: "정확한 시간" },
+                      { value: "branch", labelKo: "대략적인 시간대" },
+                      { value: "unknown", labelKo: "출생시간 모름" },
+                    ].map((mode) => (
+                      <label
+                        key={mode.value}
+                        className="flex items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200"
+                      >
+                        <input
+                          type="radio"
+                          checked={birthTimeMode === mode.value}
+                          onChange={() => {
+                            setBirthTimeMode(mode.value as BirthTimeMode);
+                            setStepError("");
+                          }}
+                          className="h-4 w-4"
+                        />
+                        {mode.labelKo}
+                      </label>
+                    ))}
                   </div>
+                </fieldset>
 
+                {birthTimeMode === "exact" ? (
                   <div className="space-y-2">
                     <label
-                      htmlFor="birthDate"
+                      htmlFor="birthTime"
                       className="block text-sm font-medium text-neutral-200"
                     >
-                      생년월일
+                      출생시간
                     </label>
                     <div className="relative">
                       <input
-                        id="birthDate"
-                        name="birthDate"
-                        type="date"
-                        value={birthDate}
-                        onChange={(event) => setBirthDate(event.target.value)}
+                        id="birthTime"
+                        name="birthTime"
+                        type="time"
+                        value={birthTime}
+                        onChange={(event) => {
+                          setBirthTime(event.target.value);
+                          setStepError("");
+                        }}
                         style={{ colorScheme: "dark" }}
                         className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 pr-24 text-neutral-50 outline-none focus:border-neutral-400"
                       />
                       <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-neutral-700 bg-neutral-900 px-2 py-1 text-xs font-medium text-neutral-300">
-                        날짜 선택
+                        시간 선택
                       </span>
                     </div>
                     <p className="text-xs leading-5 text-neutral-500">
-                      예: 1996-12-06 형식으로 입력해 주세요.
+                      예: 오후 3시 12분이면 15:12로 입력해 주세요.
                     </p>
                   </div>
-                </div>
-              ) : null}
+                ) : null}
 
-              {currentStep === 1 ? (
-                <div className="space-y-5">
-                  <fieldset className="space-y-3">
-                    <legend className="text-sm font-medium text-neutral-200">
-                      출생시간
-                    </legend>
-                    <div className="grid gap-3">
-                      {[
-                        { value: "exact", labelKo: "정확한 시간" },
-                        { value: "branch", labelKo: "대략적인 시간대" },
-                        { value: "unknown", labelKo: "출생시간 모름" },
-                      ].map((mode) => (
-                        <label
-                          key={mode.value}
-                          className="flex items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200"
-                        >
-                          <input
-                            type="radio"
-                            checked={birthTimeMode === mode.value}
-                            onChange={() => {
-                              setBirthTimeMode(mode.value as BirthTimeMode);
-                              setStepError("");
-                            }}
-                            className="h-4 w-4"
-                          />
-                          {mode.labelKo}
-                        </label>
-                      ))}
-                    </div>
-                  </fieldset>
-
-                  {birthTimeMode === "exact" ? (
-                    <div className="space-y-2">
-                      <label
-                        htmlFor="birthTime"
-                        className="block text-sm font-medium text-neutral-200"
-                      >
-                        출생시간
-                      </label>
-                      <div className="relative">
-                        <input
-                          id="birthTime"
-                          name="birthTime"
-                          type="time"
-                          value={birthTime}
-                          onChange={(event) => {
-                            setBirthTime(event.target.value);
-                            setStepError("");
-                          }}
-                          style={{ colorScheme: "dark" }}
-                          className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 pr-24 text-neutral-50 outline-none focus:border-neutral-400"
-                        />
-                        <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-neutral-700 bg-neutral-900 px-2 py-1 text-xs font-medium text-neutral-300">
-                          시간 선택
-                        </span>
-                      </div>
-                      <p className="text-xs leading-5 text-neutral-500">
-                        예: 오후 3시 12분이면 15:12로 입력해 주세요.
-                      </p>
-                    </div>
-                  ) : null}
-
-                  {birthTimeMode === "branch" ? (
-                    <div className="space-y-2">
-                      <label
-                        htmlFor="timeBranch"
-                        className="block text-sm font-medium text-neutral-200"
-                      >
-                        대략적인 시간대
-                      </label>
-                      <select
-                        id="timeBranch"
-                        value={timeBranch}
-                        onChange={(event) => {
-                          setTimeBranch(event.target.value as TimeBranchSelection);
-                          setStepError("");
-                        }}
-                        className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
-                      >
-                        <option value="">시간대를 선택해 주세요</option>
-                        {timeBranches.map((branch) => (
-                          <option key={branch.value} value={branch.value}>
-                            {branch.labelKo}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  ) : null}
-
-                  {birthTimeMode === "unknown" ? (
-                    <p className="rounded-lg border border-neutral-800 bg-neutral-950 p-4 text-sm leading-6 text-neutral-400">
-                      출생시간을 모르면 시주 없이 일부 해석이 제한될 수 있습니다.
-                    </p>
-                  ) : null}
-
-                  {stepError ? (
-                    <p className="rounded-lg border border-red-900/60 bg-red-950/30 p-4 text-sm leading-6 text-red-100">
-                      {stepError}
-                    </p>
-                  ) : null}
-
-                  {shouldShowMidnightBoundaryWarning ? (
-                    <div className="space-y-2 rounded-lg border border-amber-900/50 bg-amber-950/20 p-4 text-sm leading-6 text-amber-100/90">
-                      <p>
-                        자정 전후 출생은 날짜 기준에 따라 일주·시주 해석이 달라질 수 있습니다.
-                      </p>
-                      <p>
-                        가능하면 가족에게 실제 출생일과 시간을 다시 확인해 주세요.
-                      </p>
-                    </div>
-                  ) : null}
-                </div>
-              ) : null}
-
-              {currentStep === 2 ? (
-                <div className="space-y-5">
+                {birthTimeMode === "branch" ? (
                   <div className="space-y-2">
                     <label
-                      htmlFor="gender"
+                      htmlFor="timeBranch"
                       className="block text-sm font-medium text-neutral-200"
                     >
-                      성별
+                      대략적인 시간대
                     </label>
                     <select
-                      id="gender"
-                      name="gender"
-                      value={gender}
-                      onChange={(event) => setGender(event.target.value)}
+                      id="timeBranch"
+                      value={timeBranch}
+                      onChange={(event) => {
+                        setTimeBranch(event.target.value as TimeBranchSelection);
+                        setStepError("");
+                      }}
                       className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
                     >
-                      <option value="">선택</option>
-                      <option value="MALE">남성</option>
-                      <option value="FEMALE">여성</option>
-                    </select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="mbtiType"
-                      className="block text-sm font-medium text-neutral-200"
-                    >
-                      MBTI
-                    </label>
-                    <select
-                      id="mbtiType"
-                      name="mbtiType"
-                      value={mbtiType}
-                      onChange={(event) => setMbtiType(event.target.value)}
-                      className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
-                    >
-                      <option value="">선택</option>
-                      {mbtiTypes.map((type) => (
-                        <option key={type} value={type}>
-                          {type}
+                      <option value="">시간대를 선택해 주세요</option>
+                      {timeBranches.map((branch) => (
+                        <option key={branch.value} value={branch.value}>
+                          {branch.labelKo}
                         </option>
                       ))}
                     </select>
-                    <p className="text-xs leading-5 text-neutral-500">
-                      MBTI는 내가 생각하는 나의 모습이 반영될 수 있습니다. 가능하면 여러 번의 검사 결과나 가까운 사람의 피드백도 함께 참고해 주세요.
+                  </div>
+                ) : null}
+
+                {birthTimeMode === "unknown" ? (
+                  <p className="rounded-lg border border-neutral-800 bg-neutral-950 p-4 text-sm leading-6 text-neutral-400">
+                    출생시간을 모르면 시주 없이 일부 해석이 제한될 수 있습니다.
+                  </p>
+                ) : null}
+
+                {shouldShowMidnightBoundaryWarning ? (
+                  <div className="space-y-2 rounded-lg border border-amber-900/50 bg-amber-950/20 p-4 text-sm leading-6 text-amber-100/90">
+                    <p>
+                      자정 전후 출생은 날짜 기준에 따라 일주·시주 해석이 달라질 수 있습니다.
+                    </p>
+                    <p>
+                      가능하면 가족에게 실제 출생일과 시간을 다시 확인해 주세요.
                     </p>
                   </div>
-                </div>
-              ) : null}
+                ) : null}
+              </div>
+            ) : null}
 
-              {currentStep === 3 ? (
-                <div className="space-y-5">
-                  <div className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+            {currentStep === 2 ? (
+              <div className="space-y-5">
+                <div className="space-y-2">
+                  <label
+                    htmlFor="gender"
+                    className="block text-sm font-medium text-neutral-200"
+                  >
+                    성별
+                  </label>
+                  <select
+                    id="gender"
+                    name="gender"
+                    value={gender}
+                    onChange={(event) => {
+                      setGender(event.target.value);
+                      setStepError("");
+                    }}
+                    className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                  >
+                    <option value="">선택</option>
+                    <option value="MALE">남성</option>
+                    <option value="FEMALE">여성</option>
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <label
+                    htmlFor="mbtiType"
+                    className="block text-sm font-medium text-neutral-200"
+                  >
+                    MBTI
+                  </label>
+                  <select
+                    id="mbtiType"
+                    name="mbtiType"
+                    value={mbtiType}
+                    onChange={(event) => {
+                      setMbtiType(event.target.value);
+                      setStepError("");
+                    }}
+                    className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                  >
+                    <option value="">선택</option>
+                    {mbtiTypes.map((type) => (
+                      <option key={type} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </select>
+                  <p className="text-xs leading-5 text-neutral-500">
+                    MBTI는 내가 생각하는 나의 모습이 반영될 수 있습니다. 가능하면 여러 번의 검사 결과나 가까운 사람의 피드백도 함께 참고해 주세요.
+                  </p>
+                </div>
+              </div>
+            ) : null}
+
+            {currentStep === 3 ? (
+              <div className="space-y-5">
+                <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                  <div className="space-y-2">
                     <h3 className="text-base font-semibold text-neutral-100">
                       입력 정보 확인
                     </h3>
-                    <dl className="grid gap-3 text-sm">
-                      <div className="flex justify-between gap-4">
-                        <dt className="text-neutral-500">이름</dt>
-                        <dd className="text-right text-neutral-200">
-                          {displayName.trim() || "미입력"}
-                        </dd>
-                      </div>
-                      <div className="flex justify-between gap-4">
-                        <dt className="text-neutral-500">달력 기준</dt>
-                        <dd className="text-right text-neutral-200">
-                          {formatCalendarTypeLabel("SOLAR")}
-                        </dd>
-                      </div>
-                      <div className="flex justify-between gap-4">
-                        <dt className="text-neutral-500">생년월일</dt>
-                        <dd className="text-right text-neutral-200">
-                          {birthDate || "미입력"}
-                        </dd>
-                      </div>
-                      <div className="flex justify-between gap-4">
-                        <dt className="text-neutral-500">출생시간</dt>
-                        <dd className="text-right text-neutral-200">
-                          {birthTimeSummary}
-                        </dd>
-                      </div>
-                      <div className="flex justify-between gap-4">
-                        <dt className="text-neutral-500">성별</dt>
-                        <dd className="text-right text-neutral-200">
-                          {formatGenderLabel(gender)}
-                        </dd>
-                      </div>
-                      <div className="flex justify-between gap-4">
-                        <dt className="text-neutral-500">MBTI</dt>
-                        <dd className="text-right text-neutral-200">
-                          {mbtiType || "미선택"}
-                        </dd>
-                      </div>
-                    </dl>
+                    <p className="text-sm leading-6 text-neutral-400">
+                      입력한 정보로 전체 리포트를 생성합니다. 결제 승인 후 리포트가 생성되며, 결과는 온라인 열람 페이지로 제공됩니다.
+                    </p>
                   </div>
-
-                  <section className="space-y-4 rounded-lg border border-emerald-900/40 bg-emerald-950/20 p-4">
-                    <div className="space-y-2">
-                      <h3 className="text-base font-semibold text-emerald-100">
-                        무료 미리보기
-                      </h3>
-                      <p className="text-sm leading-6 text-emerald-100/80">
-                        입력한 정보로 핵심 구조 일부를 먼저 확인합니다.
-                      </p>
+                  <dl className="grid gap-3 text-sm">
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-neutral-500">이름</dt>
+                      <dd className="text-right text-neutral-200">
+                        {displayName.trim() || "미입력"}
+                      </dd>
                     </div>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting || isMockPaymentSubmitting}
-                      className="w-full rounded-lg bg-emerald-100 px-5 py-4 font-semibold text-emerald-950 transition hover:bg-white disabled:cursor-not-allowed disabled:bg-neutral-600 disabled:text-neutral-300"
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-neutral-500">생년월일</dt>
+                      <dd className="text-right text-neutral-200">
+                        {birthDate || "미입력"}
+                      </dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-neutral-500">출생시간</dt>
+                      <dd className="text-right text-neutral-200">
+                        {birthTimeSummary}
+                      </dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-neutral-500">성별</dt>
+                      <dd className="text-right text-neutral-200">
+                        {formatGenderLabel(gender)}
+                      </dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-neutral-500">MBTI</dt>
+                      <dd className="text-right text-neutral-200">
+                        {mbtiType || "미선택"}
+                      </dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-neutral-500">달력</dt>
+                      <dd className="text-right text-neutral-200">
+                        {formatCalendarTypeLabel("SOLAR")}
+                      </dd>
+                    </div>
+                  </dl>
+                </section>
+
+                <section className="space-y-4 rounded-lg border border-sky-200 bg-white p-4 text-neutral-950">
+                  <div className="space-y-2">
+                    <p className="text-sm font-bold text-sky-700">
+                      전체 리포트
+                    </p>
+                    <h3 className="text-xl font-extrabold">
+                      {ACTIVE_REPORT_PRODUCT.nameKo}
+                    </h3>
+                    <p className="text-sm leading-6 text-neutral-600">
+                      {ACTIVE_REPORT_FORMAT_LABEL_KO} · 결제 승인 후 온라인 열람
+                    </p>
+                  </div>
+                  <dl className="grid gap-3 text-sm sm:grid-cols-3">
+                    <div
+                      aria-label={ACTIVE_REPORT_LIST_PRICE_LABEL_KO}
+                      className="rounded-lg border border-neutral-200 bg-neutral-50 p-3"
                     >
-                      {isSubmitting ? "리포트 생성 중..." : "무료 미리보기 생성"}
-                    </button>
-                  </section>
+                      <dt className="text-neutral-500">정가</dt>
+                      <dd className="mt-1 font-semibold text-neutral-400 line-through">
+                        {ACTIVE_REPORT_PRODUCT.listPriceKo}
+                      </dd>
+                    </div>
+                    <div
+                      aria-label={ACTIVE_REPORT_SALE_PRICE_LABEL_KO}
+                      className="rounded-lg border border-rose-200 bg-rose-50 p-3"
+                    >
+                      <dt className="text-rose-700">런칭가</dt>
+                      <dd className="mt-1 text-xl font-extrabold text-rose-700">
+                        {ACTIVE_REPORT_PRODUCT.priceKo}
+                      </dd>
+                    </div>
+                    <div
+                      aria-label={ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO}
+                      className="rounded-lg border border-neutral-200 bg-neutral-50 p-3"
+                    >
+                      <dt className="text-neutral-500">결제금액</dt>
+                      <dd className="mt-1 font-bold text-neutral-950">
+                        {ACTIVE_REPORT_PRODUCT.priceKo}
+                      </dd>
+                    </div>
+                  </dl>
 
-                  <section className="space-y-4 rounded-lg border border-sky-200 bg-white p-4 text-neutral-950">
-                    <div className="space-y-2">
-                      <h3 className="text-base font-bold">
-                        전체 리포트 열람
-                      </h3>
-                      <p className="text-sm leading-6 text-neutral-600">
-                        결제 승인 후 전체 리포트를 온라인으로 열람합니다.
+                  {!isCheckoutInputComplete ? (
+                    <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm font-semibold text-amber-900">
+                      {REQUIRED_CHECKOUT_INPUT_MESSAGE_KO}
+                    </p>
+                  ) : null}
+
+                  {DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED ? (
+                    <DevTossCheckoutLauncher
+                      inputSnapshot={checkoutInputSnapshot}
+                      ctaLabelKo={CHECKOUT_CTA_LABEL_KO}
+                    />
+                  ) : (
+                    <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
+                      <p className="text-sm font-semibold text-neutral-900">
+                        정식 결제 연결 준비 중입니다.
+                      </p>
+                      <p className="mt-2 text-sm leading-6 text-neutral-600">
+                        심사 및 결제 승인 연동 후 전체 리포트 구매가 가능합니다.
                       </p>
                     </div>
-                    <dl className="grid gap-3 text-sm sm:grid-cols-3">
-                      <div
-                        aria-label={ACTIVE_REPORT_LIST_PRICE_LABEL_KO}
-                        className="rounded-lg border border-neutral-200 bg-neutral-50 p-3"
-                      >
-                        <dt className="text-neutral-500">정가</dt>
-                        <dd className="mt-1 font-semibold text-neutral-400 line-through">
-                          {ACTIVE_REPORT_PRODUCT.listPriceKo}
-                        </dd>
-                      </div>
-                      <div
-                        aria-label={ACTIVE_REPORT_SALE_PRICE_LABEL_KO}
-                        className="rounded-lg border border-rose-200 bg-rose-50 p-3"
-                      >
-                        <dt className="text-rose-700">런칭가</dt>
-                        <dd className="mt-1 text-xl font-extrabold text-rose-700">
-                          {ACTIVE_REPORT_PRODUCT.priceKo}
-                        </dd>
-                      </div>
-                      <div
-                        aria-label={ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO}
-                        className="rounded-lg border border-neutral-200 bg-neutral-50 p-3"
-                      >
-                        <dt className="text-neutral-500">결제금액</dt>
-                        <dd className="mt-1 font-bold text-neutral-950">
-                          {ACTIVE_REPORT_PRODUCT.priceKo}
-                        </dd>
-                      </div>
-                    </dl>
-
-                    {MOCK_PAID_REPORT_UI_ENABLED ? (
-                      <div className="space-y-4 rounded-lg border border-emerald-200 bg-emerald-50 p-4">
-                        <div className="space-y-2">
-                          <p className="text-sm font-semibold text-emerald-900">
-                            정식 결제 전 테스트용 결제 흐름입니다.
-                          </p>
-                          <p className="text-sm leading-6 text-emerald-800">
-                            리포트 1개당 1회 결제됩니다.
-                          </p>
-                        </div>
-                        <div className="grid gap-3 sm:grid-cols-2">
-                          {mockPaymentChoices.map((choice) => (
-                            <button
-                              key={choice.method}
-                              type="button"
-                              disabled={isSubmitting || isMockPaymentSubmitting}
-                              onClick={() =>
-                                void handleMockPaidComplete(choice.method)
-                              }
-                              className="rounded-lg border border-emerald-300 bg-white px-4 py-3 text-sm font-semibold text-emerald-900 transition hover:border-emerald-500 disabled:cursor-not-allowed disabled:border-neutral-200 disabled:text-neutral-400"
-                            >
-                              {mockPaymentMethodInProgress === choice.method
-                                ? "결제 테스트 처리 중..."
-                                : choice.labelKo}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    ) : null}
-
-                    {DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED ? (
-                      <DevTossCheckoutLauncher />
-                    ) : (
-                      <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
-                        <p className="text-sm font-semibold text-neutral-900">
-                          정식 결제 연결 준비 중입니다.
-                        </p>
-                        <p className="mt-2 text-sm leading-6 text-neutral-600">
-                          심사 및 결제 승인 연동 후 전체 리포트 구매가 가능합니다.
-                        </p>
-                      </div>
-                    )}
-                  </section>
-                </div>
-              ) : null}
-
-              <div className="grid gap-3 sm:grid-cols-2">
-                {currentStep > 0 ? (
-                  <button
-                    type="button"
-                    onClick={goToPreviousStep}
-                    className="rounded-lg border border-neutral-700 px-5 py-4 font-semibold text-neutral-200 transition hover:bg-neutral-800"
-                  >
-                    이전
-                  </button>
-                ) : null}
-                {currentStep < 3 ? (
-                  <button
-                    type="button"
-                    onClick={goToNextStep}
-                    className="rounded-lg bg-neutral-50 px-5 py-4 font-semibold text-neutral-950 transition hover:bg-white"
-                  >
-                    다음
-                  </button>
-                ) : null}
+                  )}
+                </section>
               </div>
-              {isSubmitting ? (
-                <p className="text-center text-sm leading-6 text-neutral-400">
-                  사주 구조와 MBTI 입력값을 함께 정리하고 있습니다.
-                </p>
-              ) : null}
-              {mockPaymentErrorMessage ? (
-                <p className="rounded-lg border border-red-900/60 bg-red-950/30 p-4 text-sm leading-6 text-red-100">
-                  {mockPaymentErrorMessage}
-                </p>
-              ) : null}
-            </form>
-
-            {creationErrorMessage || errors.length > 0 ? (
-              <section className="space-y-3 rounded-lg border border-red-900/60 bg-red-950/30 p-5">
-                <h2 className="font-semibold text-red-100">
-                  리포트 생성에 실패했습니다.
-                </h2>
-                <p className="text-sm leading-6 text-red-100/90">
-                  {creationErrorMessage ||
-                    getReportCreationErrorMessage(undefined)}
-                </p>
-                <p className="text-sm leading-6 text-red-200">
-                  입력 정보를 고친 뒤 무료 미리보기를 다시 생성해 주세요.
-                </p>
-              </section>
             ) : null}
 
-            <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-900/40 p-4 text-sm leading-6 text-neutral-500">
+            {stepError ? (
+              <p className="rounded-lg border border-red-900/60 bg-red-950/30 p-4 text-sm leading-6 text-red-100">
+                {stepError}
+              </p>
+            ) : null}
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              {currentStep > 0 ? (
+                <button
+                  type="button"
+                  onClick={goToPreviousStep}
+                  className="rounded-lg border border-neutral-700 px-5 py-4 font-semibold text-neutral-200 transition hover:bg-neutral-800"
+                >
+                  이전
+                </button>
+              ) : null}
+              {currentStep < 3 ? (
+                <button
+                  type="button"
+                  onClick={goToNextStep}
+                  className="rounded-lg bg-neutral-50 px-5 py-4 font-semibold text-neutral-950 transition hover:bg-white"
+                >
+                  다음
+                </button>
+              ) : null}
+            </div>
+          </form>
+
+          <aside className="space-y-5 rounded-lg border border-neutral-800 bg-neutral-900/60 p-6">
+            <div className="space-y-3">
+              <p className="text-sm font-semibold text-neutral-400">
+                구매 상품
+              </p>
+              <h2 className="text-2xl font-bold text-neutral-50">
+                {ACTIVE_REPORT_PRODUCT.nameKo}
+              </h2>
+              <p className="text-sm leading-6 text-neutral-400">
+                {ACTIVE_REPORT_PRODUCT.fullNameKo}
+              </p>
+            </div>
+            <dl className="grid gap-3 text-sm sm:grid-cols-2">
+              <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                <dt className="text-neutral-500">형태</dt>
+                <dd className="mt-1 font-semibold text-neutral-100">
+                  {ACTIVE_REPORT_FORMAT_LABEL_KO}
+                </dd>
+              </div>
+              <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                <dt className="text-neutral-500">제공 방식</dt>
+                <dd className="mt-1 font-semibold text-neutral-100">
+                  {ACTIVE_REPORT_PRODUCT.deliveryTypeKo}
+                </dd>
+              </div>
+              <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                <dt className="text-neutral-500">정가</dt>
+                <dd className="mt-1 font-semibold text-neutral-400 line-through">
+                  {ACTIVE_REPORT_PRODUCT.listPriceKo}
+                </dd>
+              </div>
+              <div className="rounded-lg border border-rose-900/50 bg-rose-950/20 p-4">
+                <dt className="text-rose-100/80">런칭가</dt>
+                <dd className="mt-1 text-2xl font-extrabold text-rose-100">
+                  {ACTIVE_REPORT_PRODUCT.priceKo}
+                </dd>
+              </div>
+            </dl>
+            <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4 text-sm leading-6 text-neutral-400">
               <p>현재 V1은 양력과 Asia/Seoul 시간대만 지원합니다.</p>
               <p>
                 본 리포트는 자기이해를 돕기 위한 참고 콘텐츠이며,
@@ -1205,182 +728,7 @@ export default function NewReportPage() {
                 제공하지 않습니다.
               </p>
             </div>
-          </div>
-
-          {report ? (
-            <section
-              ref={resultRef}
-              aria-labelledby="generated-preview-title"
-              className="scroll-mt-6 space-y-6"
-            >
-              <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-900/70 p-5">
-                <div className="space-y-2">
-                  <p
-                    id="generated-preview-title"
-                    className="text-lg font-semibold text-neutral-50"
-                  >
-                    생성된 미리보기
-                  </p>
-                  <p className="text-sm leading-6 text-neutral-400">
-                    아래에서 무료 미리보기 결과를 확인할 수 있습니다.
-                  </p>
-                </div>
-
-                <div className="rounded-lg border border-emerald-900/40 bg-emerald-950/20 p-4">
-                  <p className="text-sm font-semibold text-emerald-100">
-                    샘플 리포트가 생성되었습니다.
-                  </p>
-                  <p className="mt-1 text-sm leading-6 text-emerald-100/80">
-                    아래 내용은 자기이해용 참고자료입니다.
-                  </p>
-                </div>
-
-                {renderPillarManseCard(report)}
-
-                <nav
-                  aria-label="결과 빠른 이동"
-                  className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4"
-                >
-                  <p className="text-sm font-semibold text-neutral-100">
-                    결과 빠른 이동
-                  </p>
-                  <div className="grid gap-2 text-sm sm:grid-cols-2">
-                    <a
-                      href="#report-section-INTRO"
-                      className="rounded-lg border border-neutral-700 px-3 py-2 text-neutral-200 transition hover:bg-neutral-900"
-                    >
-                      리포트 개요
-                    </a>
-                    <a
-                      href="#report-section-QUICK_SUMMARY"
-                      className="rounded-lg border border-neutral-700 px-3 py-2 text-neutral-200 transition hover:bg-neutral-900"
-                    >
-                      한눈에 보는 나의 결
-                    </a>
-                    <span className="rounded-lg border border-emerald-900/40 bg-emerald-950/20 px-3 py-2 text-emerald-100">
-                      무료 미리보기
-                    </span>
-                    <span className="rounded-lg border border-neutral-700 bg-neutral-900 px-3 py-2 text-neutral-300">
-                      전체 리포트 잠금
-                    </span>
-                  </div>
-                </nav>
-
-                <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                  <p className="text-sm font-semibold text-neutral-100">
-                    전체 리포트에서 이어지는 내용
-                  </p>
-                  <p className="text-sm leading-6 text-neutral-400">
-                    전체 리포트에서는 무료 미리보기에서 보인 핵심 구조를 바탕으로
-                    오행, 십성, 신살·귀인, 일·돈·관계 활용까지 더 구체적으로 풀어드립니다.
-                  </p>
-                  <p className="text-sm leading-6 text-neutral-400">
-                    정식 버전에서는 결제 후 전체 리포트가 생성되고, 공유 링크로 같은 리포트를 다시 열 수 있습니다.
-                  </p>
-                  <p className="text-sm leading-6 text-neutral-400">
-                    공유 링크로 가족, 연인, 친구에게 같은 결과를 보여줄 수 있습니다.
-                  </p>
-                  <ul className="space-y-2 text-sm leading-6 text-neutral-400">
-                    {lockedValuePoints.map((point) => (
-                      <li key={point} className="flex gap-3">
-                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-500" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-xs leading-5 text-neutral-500">
-                    정식 결제 연결 준비 중입니다. 현재는 무료 미리보기를 먼저 확인할 수 있습니다.
-                  </p>
-                </div>
-
-                <div className="space-y-2 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                  <p className="text-sm font-semibold text-neutral-100">
-                    전체 리포트 열람 안내
-                  </p>
-                  <p className="text-sm leading-6 text-neutral-400">
-                    정식 결제 연결 준비 중입니다.
-                  </p>
-                  <p className="text-sm leading-6 text-neutral-400">
-                    무료 미리보기에서는 핵심 구조 일부를 먼저 확인할 수 있습니다.
-                  </p>
-                  <p className="text-sm leading-6 text-neutral-400">
-                    심사 및 결제 승인 연동 후 전체 리포트 구매가 가능합니다.
-                  </p>
-                </div>
-
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="space-y-2">
-                    <h2 className="text-2xl font-bold">{report.titleKo}</h2>
-                    <p className="text-neutral-400">{report.subtitleKo}</p>
-                  </div>
-                  <p className="rounded-full border border-neutral-800 px-3 py-1 text-xs font-medium text-neutral-500">
-                    자기이해용 참고자료
-                  </p>
-                </div>
-
-                {report.notices.length > 0 ? (
-                  <ul className="space-y-2 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4 text-sm leading-6 text-neutral-400">
-                    {report.notices.map((notice) => (
-                      <li key={notice}>{notice}</li>
-                    ))}
-                  </ul>
-                ) : null}
-              </div>
-
-              <div className="space-y-5">
-                {report.sections.map((section) => {
-                  const shouldShowSectionBody = canShowSectionBody(
-                    section.level,
-                    REPORT_PREVIEW_MODE,
-                  );
-
-                  return (
-                    <article
-                      key={section.id}
-                      id={`report-section-${section.id}`}
-                      className="space-y-5 rounded-lg border border-neutral-800 bg-neutral-900/60 p-5"
-                    >
-                      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                        <div className="space-y-2">
-                          <h3 className="text-lg font-semibold tracking-tight text-neutral-50">
-                            {section.titleKo}
-                          </h3>
-                          <p className="text-sm leading-6 text-neutral-400">
-                            {section.summaryKo}
-                          </p>
-                        </div>
-                        <span className="shrink-0 rounded-full border border-neutral-700 px-3 py-1 text-xs font-medium text-neutral-400">
-                          {section.level === "FREE_PREVIEW"
-                            ? "무료 미리보기"
-                            : "전체 리포트"}
-                        </span>
-                      </div>
-
-                      <div className="space-y-5 border-t border-neutral-800 pt-5">
-                        {shouldShowSectionBody
-                          ? section.blocks.map((block, index) =>
-                              renderReportBlock(block, index),
-                            )
-                          : renderLockedSectionBody(section)}
-                      </div>
-                    </article>
-                  );
-                })}
-              </div>
-            </section>
-          ) : (
-            <section className="rounded-lg border border-dashed border-neutral-800 bg-neutral-900/30 p-8">
-              <div className="max-w-xl space-y-3">
-                <h2 className="text-xl font-semibold text-neutral-100">
-                  입력 후 리포트가 이곳에 표시됩니다.
-                </h2>
-                <p className="text-sm leading-7 text-neutral-400">
-                  일간, 십성, 구조 후보, 신살·귀인, 사주 기반 MBTI 보정까지
-                  섹션별 카드로 정리해 보여줍니다.
-                </p>
-              </div>
-            </section>
-          )}
+          </aside>
         </div>
       </section>
     </main>

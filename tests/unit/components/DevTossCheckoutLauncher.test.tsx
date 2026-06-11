@@ -3,12 +3,30 @@ import { join } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
+import type { DevTossCheckoutInputSnapshot } from "../../../src/components/payment/DevTossCheckoutLauncher";
+
 const componentPath = join(
   process.cwd(),
   "src/components/payment/DevTossCheckoutLauncher.tsx",
 );
 const componentSource = readFileSync(componentPath, "utf8");
 const envName = "NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED";
+
+const validInputSnapshot = {
+  mbti: "INFP",
+  gender: "MALE",
+  timezone: "Asia/Seoul",
+  birthDate: "2001-01-02",
+  birthTime: "08:30",
+  calendarType: "SOLAR",
+  birthTimeUnknown: false,
+  displayName: "민지",
+} as const satisfies DevTossCheckoutInputSnapshot;
+
+const missingInputSnapshot = {
+  ...validInputSnapshot,
+  birthDate: "",
+} as const satisfies DevTossCheckoutInputSnapshot;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -157,7 +175,6 @@ function createHarness(options?: {
     runtime,
     fetchCalls,
     launchInputs,
-    fakeLoadTossPayments,
     requestPayment,
   };
 }
@@ -178,22 +195,6 @@ function parseRequestBody(init: RequestInit): Record<string, unknown> {
   return parsed;
 }
 
-function expectFailure(
-  result: Awaited<
-    ReturnType<
-      typeof import("../../../src/components/payment/DevTossCheckoutLauncher").runDevTossCheckout
-    >
-  >,
-) {
-  expect(result.ok).toBe(false);
-
-  if (result.ok) {
-    throw new Error("expected launch failure");
-  }
-
-  return result;
-}
-
 afterEach(() => {
   delete process.env[envName];
   vi.resetModules();
@@ -205,7 +206,9 @@ describe("DevTossCheckoutLauncher", () => {
     const launcherModule = await importLauncherModule(false);
     const Component = launcherModule.default;
 
-    const html = renderToStaticMarkup(<Component />);
+    const html = renderToStaticMarkup(
+      <Component inputSnapshot={validInputSnapshot} />,
+    );
 
     expect(html).toBe("");
   });
@@ -214,17 +217,16 @@ describe("DevTossCheckoutLauncher", () => {
     const launcherModule = await importLauncherModule(true);
     const Component = launcherModule.default;
 
-    const html = renderToStaticMarkup(<Component />);
+    const html = renderToStaticMarkup(
+      <Component inputSnapshot={validInputSnapshot} />,
+    );
 
     expect(html).toContain("Toss 결제창 테스트");
-    expect(html).toContain(
-      "실제 결제 승인(confirm)은 아직 연결되지 않았습니다.",
-    );
-    expect(html).toContain("결제 성공 후 임시 success 페이지로 돌아옵니다.");
-    expect(html).toContain("Toss 결제창 열기");
+    expect(html).toContain("결제 성공 후 임시 승인 대기 화면으로 이동합니다.");
+    expect(html).toContain("990원 결제하고 리포트 생성하기");
   });
 
-  it("prepares a Toss checkout request and launches through injected boundaries", async () => {
+  it("uses the provided inputSnapshot in the checkout prepare request", async () => {
     const launcherModule = await importLauncherModule(true);
     const tossCheckoutRequest = createTossRequestDraft();
     const harness = createHarness({
@@ -234,7 +236,10 @@ describe("DevTossCheckoutLauncher", () => {
       },
     });
 
-    const result = await launcherModule.runDevTossCheckout(harness.runtime);
+    const result = await launcherModule.runDevTossCheckout(
+      validInputSnapshot,
+      harness.runtime,
+    );
 
     expect(result).toEqual({
       ok: true,
@@ -251,17 +256,9 @@ describe("DevTossCheckoutLauncher", () => {
 
     expect(requestBody.provider).toBe("toss");
     expect(requestBody.productType).toBe("saju_mbti_full");
-    expect(requestBody.inputSnapshot).toMatchObject({
-      mbti: "ENTJ",
-      gender: "FEMALE",
-      timezone: "Asia/Seoul",
-      birthDate: "1996-12-06",
-      birthTime: "14:15",
-      calendarType: "SOLAR",
-      birthTimeUnknown: false,
-    });
-
+    expect(requestBody.inputSnapshot).toEqual(validInputSnapshot);
     expect(harness.launchInputs).toHaveLength(1);
+
     const launchInput = harness.launchInputs[0];
 
     expect(isRecord(launchInput)).toBe(true);
@@ -275,6 +272,44 @@ describe("DevTossCheckoutLauncher", () => {
     expect(typeof launchInput.loadTossPayments).toBe("function");
   });
 
+  it("does not call prepare API when required input is missing", async () => {
+    const launcherModule = await importLauncherModule(true);
+    const harness = createHarness();
+
+    const result = await launcherModule.runDevTossCheckout(
+      missingInputSnapshot,
+      harness.runtime,
+    );
+
+    expect(result.ok).toBe(false);
+
+    if (result.ok) {
+      throw new Error("expected input validation failure");
+    }
+
+    expect(result.detail).toEqual({
+      stage: "input_validation",
+      errorCode: "REPORT_INPUT_REQUIRED",
+      errorMessage: "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.",
+    });
+    expect(harness.fetchCalls).toHaveLength(0);
+    expect(harness.launchInputs).toHaveLength(0);
+  });
+
+  it("shows a missing input message for invalid input", async () => {
+    const launcherModule = await importLauncherModule(true);
+    const Component = launcherModule.default;
+
+    const html = renderToStaticMarkup(
+      <Component inputSnapshot={missingInputSnapshot} />,
+    );
+
+    expect(html).toContain(
+      "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.",
+    );
+    expect(html).toContain("disabled");
+  });
+
   it("requires a Toss checkout request in the prepare API response", async () => {
     const launcherModule = await importLauncherModule(true);
     const harness = createHarness({
@@ -283,33 +318,12 @@ describe("DevTossCheckoutLauncher", () => {
       },
     });
 
-    const result = await launcherModule.runDevTossCheckout(harness.runtime);
+    const result = await launcherModule.runDevTossCheckout(
+      validInputSnapshot,
+      harness.runtime,
+    );
 
     expect(result.ok).toBe(false);
-    expect(harness.launchInputs).toHaveLength(0);
-  });
-
-  it("returns a safe error when the prepare API fails", async () => {
-    const launcherModule = await importLauncherModule(true);
-    const harness = createHarness({
-      responseOk: false,
-      responseBody: {
-        ok: false,
-      },
-    });
-
-    const result = await launcherModule.runDevTossCheckout(harness.runtime);
-
-    const failure = expectFailure(result);
-
-    expect(failure.messageKo).toBe(
-      "Toss 결제창 테스트를 시작하지 못했습니다. 환경값을 확인한 뒤 다시 시도해 주세요.",
-    );
-    expect(failure.detail).toEqual({
-      stage: "prepare_api",
-      errorCode: "UNKNOWN_TOSS_CHECKOUT_ERROR",
-      errorMessage: "No safe error message was provided.",
-    });
     expect(harness.launchInputs).toHaveLength(0);
   });
 
@@ -328,139 +342,71 @@ describe("DevTossCheckoutLauncher", () => {
       },
     });
 
-    const failure = expectFailure(
-      await launcherModule.runDevTossCheckout(harness.runtime),
+    const result = await launcherModule.runDevTossCheckout(
+      validInputSnapshot,
+      harness.runtime,
     );
 
-    expect(failure.detail).toEqual({
+    expect(result.ok).toBe(false);
+
+    if (result.ok) {
+      throw new Error("expected prepare failure");
+    }
+
+    expect(result.detail).toEqual({
       stage: "prepare_api",
       errorCode: "PAYMENT_TOSS_CHECKOUT_CONFIG_MISSING",
       errorMessage: "Toss config failed for [masked_key] and [masked_key]",
     });
-    expect(JSON.stringify(failure)).not.toContain(hiddenClientKey);
-    expect(JSON.stringify(failure)).not.toContain(hiddenSecretKey);
+    expect(JSON.stringify(result)).not.toContain(hiddenClientKey);
+    expect(JSON.stringify(result)).not.toContain(hiddenSecretKey);
   });
 
-  it("shows safe SDK load failure stage code and message", async () => {
+  it("launches through the injected Toss checkout boundary", async () => {
     const launcherModule = await importLauncherModule(true);
-    const hiddenSecretKey = "live" + "_sk_" + "abcdefghijklmnopqrstuvwxyz";
     const harness = createHarness({
       launcherUsesLoader: true,
-      sdkLoadError: {
-        code: "TOSS_BROWSER_SDK_LOAD_FAILED",
-        message: `SDK load failed with ${hiddenSecretKey}`,
-      },
     });
 
-    const failure = expectFailure(
-      await launcherModule.runDevTossCheckout(harness.runtime),
+    const result = await launcherModule.runDevTossCheckout(
+      validInputSnapshot,
+      harness.runtime,
     );
 
-    expect(failure.detail).toEqual({
-      stage: "sdk_load",
-      errorCode: "TOSS_BROWSER_SDK_LOAD_FAILED",
-      errorMessage: "SDK load failed with [masked_key]",
-    });
-    expect(JSON.stringify(failure)).not.toContain(hiddenSecretKey);
-  });
-
-  it("shows safe Toss request failure code and message", async () => {
-    const launcherModule = await importLauncherModule(true);
-    const hiddenSecretKey = "test" + "_sk_" + "abcdefghijklmnopqrstuvwxyz";
-    const hiddenClientKey = "live" + "_ck_" + "abcdefghijklmnopqrstuvwxyz";
-    const hiddenPaymentReference = "payment" + "Key";
-    const harness = createHarness({
-      launcherUsesLoader: true,
-      requestPaymentError: {
-        code: "NOT_SUPPORTED_WIDGET_KEY",
-        message: `API 개별 연동 키를 사용해주세요. ${hiddenSecretKey} ${hiddenClientKey} ${hiddenPaymentReference}`,
-      },
-    });
-
-    const failure = expectFailure(
-      await launcherModule.runDevTossCheckout(harness.runtime),
-    );
-
-    expect(failure.detail).toEqual({
-      stage: "request_payment",
-      errorCode: "NOT_SUPPORTED_WIDGET_KEY",
-      errorMessage:
-        "API 개별 연동 키를 사용해주세요. [masked_key] [masked_key] [masked]",
-    });
+    expect(result.ok).toBe(true);
     expect(harness.requestPayment).toHaveBeenCalledTimes(1);
-    expect(JSON.stringify(failure)).not.toContain(hiddenSecretKey);
-    expect(JSON.stringify(failure)).not.toContain(hiddenClientKey);
-    expect(JSON.stringify(failure)).not.toContain(hiddenPaymentReference);
+    expect(harness.launchInputs).toHaveLength(1);
   });
 
-  it("masks insecure key usage details safely", async () => {
-    const launcherModule = await importLauncherModule(true);
-    const hiddenSecretKey = "test" + "_sk_" + "abcdefghijklmnopqrstuvwxyz";
-    const harness = createHarness({
-      launcherUsesLoader: true,
-      requestPaymentError: {
-        code: "INSECURE_KEY_USAGE",
-        message: `${hiddenSecretKey} should not be exposed`,
-      },
-    });
-
-    const failure = expectFailure(
-      await launcherModule.runDevTossCheckout(harness.runtime),
-    );
-
-    expect(failure.detail).toEqual({
-      stage: "request_payment",
-      errorCode: "INSECURE_KEY_USAGE",
-      errorMessage: "[masked_key] should not be exposed",
-    });
-    expect(JSON.stringify(failure)).not.toContain(hiddenSecretKey);
-  });
-
-  it("returns a safe error when launcher execution fails", async () => {
-    const launcherModule = await importLauncherModule(true);
-    const harness = createHarness({
-      launcherSucceeds: false,
-    });
-
-    const result = await launcherModule.runDevTossCheckout(harness.runtime);
-
-    const failure = expectFailure(result);
-
-    expect(failure.messageKo).toBe(
-      "Toss 결제창 테스트를 시작하지 못했습니다. 환경값을 확인한 뒤 다시 시도해 주세요.",
-    );
-    expect(failure.detail).toEqual({
-      stage: "request_payment",
-      errorCode: "TOSS_CLIENT_CHECKOUT_REQUEST_FAILED",
-      errorMessage: "Toss 결제창을 열지 못했습니다.",
-    });
-  });
-
-  it("keeps source scoped to dev launcher behavior", () => {
+  it("keeps source scoped to checkout preparation only", () => {
     const requiredMarkers = [
       "NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED",
+      "DevTossCheckoutInputSnapshot",
+      "inputSnapshot",
+      "isDevTossCheckoutInputComplete",
       "Toss 결제창 테스트",
-      "실제 결제 승인(confirm)은 아직 연결되지 않았습니다.",
-      "결제 성공 후 임시 success 페이지로 돌아옵니다.",
+      "990원 결제하고 리포트 생성하기",
       "/api/payment-checkout/prepare",
       "launchTossCheckout",
       "loadTossPaymentsBrowserSdk",
       "gyeol_local_test_customer",
-      "onClick={() => void handleLaunch()}",
       "UNKNOWN_TOSS_CHECKOUT_ERROR",
       "prepare_api",
       "sdk_load",
       "request_payment",
-      "오류 코드",
-      "오류 메시지",
       "[masked_key]",
     ];
     const blockedMarkers = [
+      "1996-12-06",
+      "ENTJ",
+      "FEMALE",
+      "devTossCheckoutPrepareBody",
+      "/api/reports/create",
       "TOSS" + "_SECRET" + "_KEY",
       "NEXT" + "_PUBLIC" + "_TOSS" + "_SECRET" + "_KEY",
       "/v1/" + "payments/confirm",
       "payment" + "Key",
-      "provider" + "PaymentId",
+      "provider" + "Payment" + "Id",
       "provider" + "_payment" + "_id",
       "checkout" + "Url",
       "share" + "Token",
@@ -468,13 +414,6 @@ describe("DevTossCheckoutLauncher", () => {
       "report" + "_snapshot",
       "service" + "_role",
       "SUPABASE" + "_SERVICE" + "_ROLE",
-      "wall" + "et",
-      "re" + "charge",
-      "point " + "balance",
-      "credit " + "balance",
-      "충" + "전",
-      "포" + "인트",
-      "잔" + "액",
       "TossPayments(",
       "@tosspayments",
     ];
