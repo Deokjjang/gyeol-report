@@ -44,6 +44,11 @@ describe("report knowledge architecture document", () => {
       "evidence packet comes before generation",
       "structured JSON draft is validated",
       "DB save/rendering happens later",
+      "REPORT-07 persists validated draft JSON",
+      "OpenAI generation happens before persistence",
+      "DB save is separate from result rendering",
+      "Validated snapshot only",
+      "no result page rendering yet",
     ];
 
     for (const marker of requiredMarkers) {

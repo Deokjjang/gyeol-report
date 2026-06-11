@@ -182,6 +182,23 @@ The structured JSON draft is validated before any future save or rendering
 step. DB save/rendering happens later. REPORT-06 does not save the generated
 report to the database and does not render it on the result page.
 
+## REPORT-07 Draft Snapshot Persistence
+
+REPORT-07 persists validated draft JSON.
+
+OpenAI generation happens before persistence, but this persistence boundary
+does not call OpenAI. It accepts an already generated ComprehensiveReportDraft,
+validates the draft JSON, and saves the validated snapshot to the paid report
+record.
+
+The save boundary verifies that the report is linked to a paid payment order
+before writing the snapshot. It returns safe metadata only and does not expose
+the stored report body, input snapshot, payment provider identifiers, access
+tokens, or share tokens.
+
+DB save is separate from result rendering. Validated snapshot only is stored
+in REPORT-07, and there is no result page rendering yet.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
