@@ -61,6 +61,11 @@ describe("report knowledge architecture document", () => {
       "snapshot persistence",
       "result page can render after save",
       "Payment flow wiring happens later",
+      "REPORT-10 improves draft quality guardrails",
+      "internal meta copy",
+      "Unsupported Saju terms are rejected",
+      "Display sections are separated from interpretation",
+      "MBTI-first phrasing is rejected",
     ];
 
     for (const marker of requiredMarkers) {

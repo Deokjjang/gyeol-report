@@ -18,6 +18,7 @@ describe("generate and save comprehensive report smoke source", () => {
       "generateAndPersistComprehensiveReport",
       "result url:",
       "http://localhost:3000/reports/",
+      "quality guard: passed",
     ];
 
     for (const marker of requiredMarkers) {

@@ -34,14 +34,17 @@ export const comprehensiveReportDraftJsonSchema = {
     openingTitle: {
       type: "string",
       minLength: 1,
+      maxLength: 120,
     },
     openingSummary: {
       type: "string",
       minLength: 1,
+      maxLength: 800,
     },
     coreLine: {
       type: "string",
       minLength: 1,
+      maxLength: 240,
     },
     sections: {
       type: "array",
@@ -71,10 +74,12 @@ export const comprehensiveReportDraftJsonSchema = {
           oneLine: {
             type: "string",
             minLength: 1,
+            maxLength: 180,
           },
           body: {
             type: "string",
             minLength: 1,
+            maxLength: 2400,
           },
           evidenceSummary: {
             type: "array",
@@ -104,6 +109,7 @@ export const comprehensiveReportDraftJsonSchema = {
     finalAdvice: {
       type: "string",
       minLength: 1,
+      maxLength: 1200,
     },
     safetyNotes: {
       type: "array",

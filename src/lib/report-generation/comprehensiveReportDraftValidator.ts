@@ -8,11 +8,17 @@ import {
   COMPREHENSIVE_REPORT_SECTION_IDS,
   type ComprehensiveReportSectionId,
 } from "../report-knowledge/reportSectionSchema";
+import { SAJU_KNOWLEDGE_BASE } from "../report-knowledge/sajuKnowledgeBase";
 
 export type ComprehensiveReportDraftValidationResult = {
   readonly ok: boolean;
   readonly errors: readonly string[];
   readonly value?: ComprehensiveReportDraft;
+};
+
+export type ComprehensiveReportDraftValidationOptions = {
+  readonly allowedSajuTerms?: readonly string[];
+  readonly allowedMbtiTerms?: readonly string[];
 };
 
 const allowedTones = [
@@ -34,6 +40,25 @@ const forbiddenOutputPhrases = [
   "절대 " + "성공한다",
   "절대 " + "실패한다",
   "몇월 " + "며칠에 " + "반드시",
+] as const;
+
+const forbiddenInternalMetaPhrases = [
+  "초" + "안",
+  "검증된 " + "JSON",
+  "저장" + "용",
+  "fix" + "ture",
+  "entry " + "id",
+  "entry " + "ids",
+  "원문 표는 " + "없고",
+  "제공된 만세력 " + "원문",
+  "meta" + "data",
+  "raw" + "Text",
+  "schema",
+  "validator",
+  "Open" + "AI",
+  "프롬" + "프트",
+  "디버" + "그",
+  "테스트" + "용",
 ] as const;
 
 const privateOutputMarkers = [
@@ -84,6 +109,18 @@ const sectionKeys = [
   "cautionLevel",
 ] as const;
 
+const displayOnlySectionIds = ["manse_table", "mbti_table"] as const;
+const mbtiFirstBodyPrefixes = [
+  "MBTI상",
+  "입력하신 MBTI가 먼저",
+] as const;
+
+function isDisplayOnlySectionId(
+  value: ComprehensiveReportSectionId,
+): boolean {
+  return (displayOnlySectionIds as readonly string[]).includes(value);
+}
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -129,6 +166,20 @@ function collectStrings(value: unknown): string[] {
   return [];
 }
 
+function createKnownSajuTerms(): readonly string[] {
+  return [
+    ...new Set(
+      SAJU_KNOWLEDGE_BASE.flatMap((entry) => [
+        entry.labelKo,
+        ...entry.aliases,
+      ])
+        .map((term) => term.trim())
+        .filter((term) => /[가-힣]/.test(term) && term.length >= 2)
+        .sort((left, right) => right.length - left.length),
+    ),
+  ];
+}
+
 function appendUnknownKeyErrors(
   errors: string[],
   label: string,
@@ -155,6 +206,11 @@ function appendTextSafetyErrors(errors: string[], value: unknown): void {
   for (const marker of privateOutputMarkers) {
     if (text.includes(marker)) {
       errors.push(`draft contains private field marker: ${marker}`);
+    }
+  }
+  for (const phrase of forbiddenInternalMetaPhrases) {
+    if (text.includes(phrase)) {
+      errors.push(`draft contains internal meta phrase: ${phrase}`);
     }
   }
 }
@@ -189,6 +245,99 @@ function validateStringField(
   return true;
 }
 
+function appendUnsupportedSajuTermErrors(
+  errors: string[],
+  value: unknown,
+  options: ComprehensiveReportDraftValidationOptions,
+): void {
+  if (options.allowedSajuTerms === undefined) {
+    return;
+  }
+
+  const allowedTerms = new Set(
+    options.allowedSajuTerms
+      .map((term) => term.trim())
+      .filter((term) => term.length > 0),
+  );
+  const text = collectStrings(value).join("\n");
+
+  for (const term of createKnownSajuTerms()) {
+    if (!allowedTerms.has(term) && text.includes(term)) {
+      errors.push(`draft contains unsupported Saju term: ${term}`);
+    }
+  }
+}
+
+function appendDisplaySectionErrors(
+  errors: string[],
+  sections: readonly ComprehensiveReportDraftSection[],
+): void {
+  for (const section of sections) {
+    if (!isDisplayOnlySectionId(section.sectionId)) {
+      continue;
+    }
+    if (section.body.length > 120) {
+      errors.push(`${section.sectionId} display body must stay short.`);
+    }
+    if (section.evidenceSummary.length > 2) {
+      errors.push(`${section.sectionId} display evidence summary must stay short.`);
+    }
+  }
+}
+
+function startsWithMbtiFirstPhrase(text: string): boolean {
+  const trimmed = text.trim();
+
+  if (/^[A-Z]{4}(는|라서)/.test(trimmed)) {
+    return true;
+  }
+
+  return mbtiFirstBodyPrefixes.some((prefix) => trimmed.startsWith(prefix));
+}
+
+function appendMbtiFirstErrors(
+  errors: string[],
+  sections: readonly ComprehensiveReportDraftSection[],
+): void {
+  for (const section of sections) {
+    if (section.sectionId === "mbti_core" || section.sectionId === "mbti_table") {
+      continue;
+    }
+    if (startsWithMbtiFirstPhrase(section.body) || startsWithMbtiFirstPhrase(section.oneLine)) {
+      errors.push(`${section.sectionId} must not start from MBTI-first phrasing.`);
+    }
+  }
+}
+
+function splitBodySentences(body: string): readonly string[] {
+  return body
+    .split(/(?<=[.!?。])\s+|\n+/)
+    .map((sentence) => sentence.trim())
+    .filter((sentence) => sentence.length >= 12);
+}
+
+function appendRepetitionErrors(
+  errors: string[],
+  sections: readonly ComprehensiveReportDraftSection[],
+): void {
+  const counts = new Map<string, number>();
+
+  for (const section of sections) {
+    if (isDisplayOnlySectionId(section.sectionId)) {
+      continue;
+    }
+    for (const sentence of new Set(splitBodySentences(section.body))) {
+      counts.set(sentence, (counts.get(sentence) ?? 0) + 1);
+    }
+  }
+
+  for (const [sentence, count] of counts) {
+    if (count >= 3) {
+      errors.push(`draft repeats the same sentence too often: ${sentence}`);
+    }
+  }
+}
+
 function parseSection(
   errors: string[],
   value: unknown,
@@ -221,7 +370,10 @@ function parseSection(
   if (!validateStringField(errors, `${sectionId}.oneLine`, oneLine, 8)) {
     return undefined;
   }
-  if (!validateStringField(errors, `${sectionId}.body`, body, 20)) {
+  const bodyMinimumLength =
+    isDisplayOnlySectionId(sectionId) ? 8 : 20;
+
+  if (!validateStringField(errors, `${sectionId}.body`, body, bodyMinimumLength)) {
     return undefined;
   }
   if (!isStringArray(evidenceSummary)) {
@@ -339,6 +491,9 @@ function parseDraft(input: unknown, errors: string[]): ComprehensiveReportDraft 
 
   appendSectionCoverageErrors(errors, sections);
   appendSajuFirstErrors(errors, sections);
+  appendDisplaySectionErrors(errors, sections);
+  appendMbtiFirstErrors(errors, sections);
+  appendRepetitionErrors(errors, sections);
 
   if (errors.length > 0) {
     return undefined;
@@ -359,10 +514,12 @@ function parseDraft(input: unknown, errors: string[]): ComprehensiveReportDraft 
 
 export function validateComprehensiveReportDraft(
   input: unknown,
+  options: ComprehensiveReportDraftValidationOptions = {},
 ): ComprehensiveReportDraftValidationResult {
   const errors: string[] = [];
 
   appendTextSafetyErrors(errors, input);
+  appendUnsupportedSajuTermErrors(errors, input, options);
 
   const value = parseDraft(input, errors);
 
@@ -382,8 +539,9 @@ export function validateComprehensiveReportDraft(
 
 export function assertComprehensiveReportDraftIsSafe(
   input: unknown,
+  options: ComprehensiveReportDraftValidationOptions = {},
 ): ComprehensiveReportDraft {
-  const result = validateComprehensiveReportDraft(input);
+  const result = validateComprehensiveReportDraft(input, options);
 
   if (!result.ok || result.value === undefined) {
     throw new Error(

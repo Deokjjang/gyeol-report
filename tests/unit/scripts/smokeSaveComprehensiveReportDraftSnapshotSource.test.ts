@@ -44,6 +44,10 @@ describe("save comprehensive report draft snapshot smoke script source", () => {
       "writeStatus(`payment" + "Key",
       "writeStatus(payment" + "Key",
       "console.log",
+      "검증된 JSON",
+      "저장용",
+      "fixture",
+      "초안",
     ];
 
     for (const marker of blockedMarkers) {

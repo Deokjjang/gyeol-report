@@ -33,6 +33,7 @@ describe("comprehensive report draft JSON schema", () => {
     expect(JSON.stringify(comprehensiveReportDraftJsonSchema)).toContain(
       "additionalProperties",
     );
+    expect(JSON.stringify(comprehensiveReportDraftJsonSchema)).toContain("maxLength");
   });
 
   it("does not include private or payment fields in the schema", () => {

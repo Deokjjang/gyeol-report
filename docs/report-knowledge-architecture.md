@@ -227,6 +227,29 @@ validates the stored snapshot. REPORT-09 still does not wire automatic report
 generation into the payment success flow. Payment flow wiring happens later
 after quality review.
 
+## REPORT-10 Draft Quality Guardrails
+
+REPORT-10 improves draft quality guardrails.
+
+The writer prompt and draft validator block internal meta copy from paid report
+body text. Terms such as storage details, debug notes, schema details, and test
+copy are not user-facing report content.
+
+Unsupported Saju terms are rejected when the writer validates against the
+allowed terms derived from the evidence packet. If a Saju term such as a sinsal,
+gwiin, ten-god, five-element state, day master, day pillar, or pattern is not in
+the evidence, the generated draft must not introduce it.
+
+Display sections are separated from interpretation. manse_table and mbti_table
+may contain only short neutral display copy, while interpretation belongs in
+saju_core, saju_mbti_fusion, personality, strengths, weaknesses, work, money,
+love, relationships, study, environment, and final advice sections.
+
+MBTI-first phrasing is rejected outside MBTI-specific sections. The report
+should not open a core interpretation with "ENTJ라서 그렇다." It should start
+from Saju structure and then explain how MBTI supports, contrasts, or compensates
+that structure.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

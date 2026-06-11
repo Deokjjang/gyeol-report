@@ -43,8 +43,14 @@ describe("OpenAI report writer prompt", () => {
 
     expect(combined).toContain("사주가 1차 근거");
     expect(combined).toContain("MBTI는 보조 근거");
+    expect(combined).toContain("ENTJ라서 그렇다 금지");
     expect(combined).toContain("Use only provided evidence");
     expect(combined).toContain("Do not invent Saju facts");
+    expect(combined).toContain("evidence에 없는 신살/귀인/십성/오행/일주 금지");
+    expect(combined).toContain("display 섹션은 짧게");
+    expect(combined).toContain("내부 사정 언급 금지");
+    expect(combined).toContain("팩폭은 하되 모욕 금지");
+    expect(combined).toContain("같은 근거를 섹션별로 다르게 풀어라");
     expect(combined).toContain("공통점");
     expect(combined).toContain("차이점");
     expect(combined).toContain("보완점");
