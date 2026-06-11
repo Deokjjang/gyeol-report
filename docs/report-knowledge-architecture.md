@@ -213,6 +213,20 @@ Result page rendering is separate from generation and payment. If a paid report
 does not have a generated snapshot yet, the page keeps the safe placeholder state
 instead of exposing raw JSON or private fields.
 
+## REPORT-09 Generate and Persist Smoke
+
+REPORT-09 orchestrates generation and persistence.
+
+The server-only smoke flow connects computed facts to evidence packet,
+OpenAI writer, validated draft, and snapshot persistence. This is the first
+step where a real generated comprehensive report draft can be saved and then
+viewed on the result page.
+
+The result page can render after save because REPORT-08 already reads and
+validates the stored snapshot. REPORT-09 still does not wire automatic report
+generation into the payment success flow. Payment flow wiring happens later
+after quality review.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

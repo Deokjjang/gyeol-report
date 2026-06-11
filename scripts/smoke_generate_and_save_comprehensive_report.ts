@@ -1,0 +1,200 @@
+import { randomUUID } from "node:crypto";
+
+import { createReadyPaymentOrder } from "../src/lib/payment/supabaseReadyPaymentOrderAdapter";
+import { createSupabaseReadyPaymentOrderClient } from "../src/lib/payment/supabaseReadyPaymentOrderClient";
+import { markTossPaymentOrderPaid } from "../src/lib/payment/supabaseTossPaymentOrderPaidAdapter";
+import { createSupabaseTossPaymentOrderPaidClient } from "../src/lib/payment/supabaseTossPaymentOrderPaidClient";
+import { fulfillPaidPaymentOrder } from "../src/lib/payment/supabasePaidReportFulfillmentAdapter";
+import { createSupabasePaidReportFulfillmentClient } from "../src/lib/payment/supabasePaidReportFulfillmentClient";
+import { generateAndPersistComprehensiveReport } from "../src/lib/report-orchestration/comprehensiveReportGenerationOrchestrator";
+import type { ComputedSajuFacts } from "../src/lib/report-knowledge/sajuComputedFactsTypes";
+
+type RequiredSmokeEnvName =
+  | "SUPABASE_URL"
+  | "SUPABASE_ANON_KEY"
+  | "OPENAI_REPORT_WRITER_ENABLED"
+  | "OPENAI_API_KEY"
+  | "OPENAI_REPORT_MODEL";
+
+const requiredOpenAIEnvNames = [
+  "OPENAI_REPORT_WRITER_ENABLED",
+  "OPENAI_API_KEY",
+  "OPENAI_REPORT_MODEL",
+] as const satisfies readonly RequiredSmokeEnvName[];
+const productType = "saju_mbti_full";
+const provider = "toss";
+const snapshotKey = "input" + "Snapshot";
+const paidIdKey = "provider" + "Payment" + "Id";
+const reportInput = {
+  displayName: "REPORT_09_REAL_GENERATION_SMOKE",
+  birthDate: "1996-12-06",
+  birthTime: "14:15",
+  calendarType: "SOLAR",
+  gender: "FEMALE",
+  mbtiType: "ENTJ",
+  timezone: "Asia/Seoul",
+} as const;
+const deokminSampleFacts = {
+  dayMaster: "갑",
+  dayPillar: "갑신",
+  fiveElementCounts: {
+    wood: 2,
+    fire: 0,
+    earth: 4,
+    metal: 2,
+    water: 0,
+  },
+  excessiveElements: ["earth"],
+  missingElements: ["fire", "water"],
+  usefulElements: ["water", "wood"],
+  tenGodSignals: [
+    { tenGod: "pian_cai", strength: "strong" },
+    { tenGod: "zheng_cai", strength: "present" },
+    { tenGod: "zheng_guan", strength: "strong" },
+    { tenGod: "qi_sha", strength: "strong" },
+    { tenGod: "zheng_yin", strength: "missing" },
+    { tenGod: "shi_shen", strength: "missing" },
+  ],
+  specialPatterns: ["jaeda_sinyak", "no_resource", "no_output"],
+  sinsal: ["hyeonchim", "hongyeom", "gwimun", "wonjin"],
+  gwiin: ["jaego"],
+} as const satisfies ComputedSajuFacts;
+
+function writeStatus(message: string): void {
+  process.stdout.write(`${message}\n`);
+}
+
+function createSmokeError(message: string): Error {
+  return new Error(`Generate and save comprehensive report smoke failed: ${message}`);
+}
+
+function getEnvValue(name: RequiredSmokeEnvName): string | undefined {
+  const value = process.env[name];
+
+  if (typeof value !== "string" || value.trim().length === 0) {
+    return undefined;
+  }
+
+  return value.trim();
+}
+
+function getRequiredEnvValue(name: RequiredSmokeEnvName): string {
+  const value = getEnvValue(name);
+
+  if (value === undefined) {
+    throw createSmokeError(`set ${name} first.`);
+  }
+
+  return value;
+}
+
+function shouldSkipOpenAISmoke(): boolean {
+  return (
+    requiredOpenAIEnvNames.some((name) => getEnvValue(name) === undefined) ||
+    getEnvValue("OPENAI_REPORT_WRITER_ENABLED") !== "1"
+  );
+}
+
+async function run(): Promise<void> {
+  if (shouldSkipOpenAISmoke()) {
+    writeStatus("skipped: OpenAI report generation-save smoke is not enabled.");
+    return;
+  }
+
+  const supabaseUrl = getRequiredEnvValue("SUPABASE_URL");
+  const supabaseAnonKey = getRequiredEnvValue("SUPABASE_ANON_KEY");
+  const apiKey = getRequiredEnvValue("OPENAI_API_KEY");
+  const model = getRequiredEnvValue("OPENAI_REPORT_MODEL");
+  const readyClient = createSupabaseReadyPaymentOrderClient({
+    supabaseUrl,
+    supabaseAnonKey,
+  });
+  const paidClient = createSupabaseTossPaymentOrderPaidClient({
+    supabaseUrl,
+    supabaseAnonKey,
+  });
+  const fulfillmentClient = createSupabasePaidReportFulfillmentClient({
+    supabaseUrl,
+    supabaseAnonKey,
+  });
+  const runId = randomUUID();
+
+  writeStatus("start");
+
+  const readyOrderInput = {
+    productType,
+    provider,
+    [snapshotKey]: reportInput,
+    providerOrderId: `smoke_provider_order_generation_${runId}`,
+    client: readyClient,
+  } as Parameters<typeof createReadyPaymentOrder>[0];
+  const createResult = await createReadyPaymentOrder(readyOrderInput);
+
+  if (!createResult.ok) {
+    throw createSmokeError(createResult.error.code);
+  }
+
+  writeStatus(`created ready payment order id: ${createResult.order.paymentOrderId}`);
+
+  const paidInput = {
+    providerOrderId: createResult.order.providerOrderId,
+    [paidIdKey]: `toss_generation_smoke_${runId}`,
+    amount: 990,
+    currency: "KRW",
+    client: paidClient,
+  } as Parameters<typeof markTossPaymentOrderPaid>[0];
+  const paidResult = await markTossPaymentOrderPaid(paidInput);
+
+  if (!paidResult.ok) {
+    throw createSmokeError(paidResult.error.code);
+  }
+
+  writeStatus(`marked paid payment order id: ${paidResult.order.paymentOrderId}`);
+
+  const fulfillmentResult = await fulfillPaidPaymentOrder({
+    providerOrderId: paidResult.order.providerOrderId,
+    client: fulfillmentClient,
+  });
+
+  if (!fulfillmentResult.ok) {
+    throw createSmokeError(fulfillmentResult.error.code);
+  }
+
+  writeStatus(`fulfilled report id: ${fulfillmentResult.fulfillment.reportId}`);
+
+  const generated = await generateAndPersistComprehensiveReport({
+    userDisplayName: "덕민",
+    mbtiType: "ENTJ",
+    sajuFacts: deokminSampleFacts,
+    reportId: fulfillmentResult.fulfillment.reportId,
+    providerOrderId: fulfillmentResult.fulfillment.providerOrderId,
+    openAI: {
+      apiKey,
+      model,
+      enabled: true,
+    },
+    supabase: {
+      url: supabaseUrl,
+      anonKey: supabaseAnonKey,
+    },
+  });
+
+  writeStatus(`generated snapshot report id: ${generated.reportId}`);
+  writeStatus(`snapshot version: ${generated.snapshotVersion}`);
+  writeStatus(`status: ${generated.status}`);
+  writeStatus(`sections: ${generated.sectionCount}`);
+  writeStatus(`core line: ${generated.coreLine}`);
+  writeStatus(`result url: http://localhost:3000/reports/${generated.reportId}`);
+  writeStatus("done");
+}
+
+run().catch((error: unknown) => {
+  process.stderr.write(
+    `${
+      error instanceof Error
+        ? error.message
+        : "Generate and save comprehensive report smoke failed."
+    }\n`,
+  );
+  process.exitCode = 1;
+});

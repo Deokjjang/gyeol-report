@@ -1,0 +1,184 @@
+import { generateComprehensiveReportDraft } from "../report-generation/openaiComprehensiveReportWriter";
+import { validateComprehensiveReportDraft } from "../report-generation/comprehensiveReportDraftValidator";
+import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../report-knowledge/comprehensiveReportEvidenceInputBuilder";
+import type { MbtiType } from "../report-knowledge/mbtiKnowledgeTypes";
+import type { ComputedSajuFacts } from "../report-knowledge/sajuComputedFactsTypes";
+import {
+  validateComprehensiveEvidencePacket,
+  validateComputedSajuFactsShape,
+} from "../report-knowledge/knowledgeValidators";
+import { saveComprehensiveReportDraftSnapshot } from "../report-persistence/supabaseComprehensiveReportSnapshotAdapter";
+
+export type GenerateAndPersistComprehensiveReportInput = {
+  readonly userDisplayName?: string;
+  readonly mbtiType: MbtiType;
+  readonly sajuFacts: ComputedSajuFacts;
+  readonly reportId: string;
+  readonly providerOrderId: string;
+  readonly openAI: {
+    readonly apiKey: string;
+    readonly model: string;
+    readonly enabled: boolean;
+    readonly fetchImpl?: typeof fetch;
+  };
+  readonly supabase: {
+    readonly url: string;
+    readonly anonKey: string;
+  };
+};
+
+export type GenerateAndPersistComprehensiveReportResult = {
+  readonly reportId: string;
+  readonly providerOrderId: string;
+  readonly productType: "saju_mbti_full";
+  readonly snapshotVersion: "comprehensive_v1_draft";
+  readonly status: "ready" | "generated";
+  readonly generationModel: string | null;
+  readonly sectionCount: number;
+  readonly coreLine: string;
+  readonly openingTitle: string;
+  readonly warnings: readonly string[];
+};
+
+function createOrchestratorError(code: string): Error {
+  return new Error(code);
+}
+
+function isNonEmptyString(value: unknown): value is string {
+  return typeof value === "string" && value.trim().length > 0;
+}
+
+function isValidReportId(value: unknown): value is string {
+  return (
+    typeof value === "string" &&
+    /^report_[A-Za-z0-9_-]+$/.test(value.trim())
+  );
+}
+
+function validateInput(
+  input: GenerateAndPersistComprehensiveReportInput,
+): {
+  readonly reportId: string;
+  readonly providerOrderId: string;
+  readonly openAIModel: string;
+} {
+  if (
+    !isValidReportId(input.reportId) ||
+    !isNonEmptyString(input.providerOrderId) ||
+    !isNonEmptyString(input.openAI.apiKey) ||
+    !isNonEmptyString(input.openAI.model) ||
+    !isNonEmptyString(input.supabase.url) ||
+    !isNonEmptyString(input.supabase.anonKey)
+  ) {
+    throw createOrchestratorError(
+      "COMPREHENSIVE_REPORT_ORCHESTRATION_INVALID_REQUEST",
+    );
+  }
+
+  return {
+    reportId: input.reportId.trim(),
+    providerOrderId: input.providerOrderId.trim(),
+    openAIModel: input.openAI.model.trim(),
+  };
+}
+
+function collectWarnings(input: {
+  readonly mappedWarnings: readonly string[];
+  readonly unmappedFacts: readonly string[];
+  readonly packetWarnings: readonly string[];
+  readonly writerWarnings: readonly string[];
+}): readonly string[] {
+  return [
+    ...new Set([
+      ...input.mappedWarnings,
+      ...input.unmappedFacts.map((fact) => `unmapped fact: ${fact}`),
+      ...input.packetWarnings,
+      ...input.writerWarnings,
+    ]),
+  ];
+}
+
+export async function generateAndPersistComprehensiveReport(
+  input: GenerateAndPersistComprehensiveReportInput,
+): Promise<GenerateAndPersistComprehensiveReportResult> {
+  const parsed = validateInput(input);
+  const computedFactsValidation = validateComputedSajuFactsShape(input.sajuFacts);
+
+  if (!computedFactsValidation.ok) {
+    throw createOrchestratorError(
+      "COMPREHENSIVE_REPORT_COMPUTED_FACTS_INVALID",
+    );
+  }
+
+  const { packet, mappedSaju } =
+    buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: input.mbtiType,
+      sajuFacts: input.sajuFacts,
+    });
+  const packetValidation = validateComprehensiveEvidencePacket(packet);
+
+  if (!packetValidation.ok) {
+    throw createOrchestratorError("COMPREHENSIVE_REPORT_EVIDENCE_INVALID");
+  }
+
+  let generated: Awaited<ReturnType<typeof generateComprehensiveReportDraft>>;
+
+  try {
+    generated = await generateComprehensiveReportDraft({
+      userDisplayName: input.userDisplayName,
+      mbtiType: input.mbtiType,
+      evidencePacket: packet,
+      config: {
+        apiKey: input.openAI.apiKey,
+        model: parsed.openAIModel,
+        enabled: input.openAI.enabled,
+        ...(input.openAI.fetchImpl === undefined
+          ? {}
+          : { fetchImpl: input.openAI.fetchImpl }),
+      },
+    });
+  } catch {
+    throw createOrchestratorError("COMPREHENSIVE_REPORT_GENERATION_FAILED");
+  }
+
+  const draftValidation = validateComprehensiveReportDraft(generated.draft);
+
+  if (!draftValidation.ok || draftValidation.value === undefined) {
+    throw createOrchestratorError("COMPREHENSIVE_REPORT_DRAFT_INVALID");
+  }
+
+  let savedSnapshot: Awaited<
+    ReturnType<typeof saveComprehensiveReportDraftSnapshot>
+  >;
+
+  try {
+    savedSnapshot = await saveComprehensiveReportDraftSnapshot({
+      supabaseUrl: input.supabase.url,
+      supabaseAnonKey: input.supabase.anonKey,
+      reportId: parsed.reportId,
+      providerOrderId: parsed.providerOrderId,
+      draft: draftValidation.value,
+      generationModel: parsed.openAIModel,
+    });
+  } catch {
+    throw createOrchestratorError("COMPREHENSIVE_REPORT_SNAPSHOT_SAVE_FAILED");
+  }
+
+  return {
+    reportId: savedSnapshot.reportId,
+    providerOrderId: savedSnapshot.providerOrderId,
+    productType: savedSnapshot.productType,
+    snapshotVersion: savedSnapshot.snapshotVersion,
+    status: savedSnapshot.status,
+    generationModel: savedSnapshot.generationModel,
+    sectionCount: draftValidation.value.sections.length,
+    coreLine: draftValidation.value.coreLine,
+    openingTitle: draftValidation.value.openingTitle,
+    warnings: collectWarnings({
+      mappedWarnings: mappedSaju.warnings,
+      unmappedFacts: mappedSaju.unmappedFacts,
+      packetWarnings: packet.globalWarnings,
+      writerWarnings: generated.warnings,
+    }),
+  };
+}

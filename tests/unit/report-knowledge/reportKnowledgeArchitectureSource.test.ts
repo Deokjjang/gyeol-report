@@ -54,6 +54,13 @@ describe("report knowledge architecture document", () => {
       "DB save already happened in REPORT-07",
       "Result page rendering is separate from generation and payment",
       "safe placeholder state",
+      "REPORT-09 orchestrates generation and persistence",
+      "computed facts to evidence packet",
+      "OpenAI writer",
+      "validated draft",
+      "snapshot persistence",
+      "result page can render after save",
+      "Payment flow wiring happens later",
     ];
 
     for (const marker of requiredMarkers) {
