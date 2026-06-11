@@ -1,16 +1,19 @@
 import { createClient } from "@supabase/supabase-js";
 
+import { validateComprehensiveReportDraft } from "../report-generation/comprehensiveReportDraftValidator";
 import type {
   GetPaidReportResultInput,
   PaidReportResult,
+  PaidReportSnapshotStatus,
+  PaidReportResultStatus,
 } from "./paidReportResultTypes";
 
 export type PaidReportResultRpcResultRow = {
   readonly report_id: string;
   readonly product_type: string;
   readonly status: string;
-  readonly title: string;
-  readonly placeholder_text: string;
+  readonly snapshot_status: string;
+  readonly report_snapshot: unknown | null;
   readonly created_at: string;
   readonly updated_at: string;
 };
@@ -18,10 +21,11 @@ export type PaidReportResultRpcResultRow = {
 export type SupabasePaidReportResultQueryErrorCode =
   | "DB_UNAVAILABLE"
   | "PERMISSION_DENIED"
-  | "PAID_REPORT_RESULT_INVALID_REPORT_ID"
-  | "PAID_REPORT_RESULT_NOT_FOUND"
-  | "PAID_REPORT_RESULT_RPC_FAILED"
-  | "PAID_REPORT_RESULT_RPC_VALIDATION_FAILED";
+  | "REPORT_RESULT_INVALID_REPORT_ID"
+  | "REPORT_RESULT_NOT_FOUND"
+  | "REPORT_RESULT_RPC_FAILED"
+  | "REPORT_RESULT_RPC_VALIDATION_FAILED"
+  | "REPORT_RESULT_SNAPSHOT_INVALID";
 
 export type SupabasePaidReportResultQueryResult<T> =
   | {
@@ -59,11 +63,13 @@ export type SupabasePaidReportResultClientConfig = {
   readonly rpcExecutor?: PaidReportResultRpcExecutor;
 };
 
-const GET_PAID_SAJU_MBTI_REPORT_RESULT_RPC =
-  "get_paid_saju_mbti_report_result";
+const GET_GENERATED_COMPREHENSIVE_REPORT_RESULT_RPC =
+  "get_generated_comprehensive_report_result";
 const QUERY_FAILED_MESSAGE = "Supabase paid report result RPC failed.";
 const QUERY_INVALID_DATA_MESSAGE =
   "Supabase paid report result RPC returned invalid data.";
+const QUERY_INVALID_SNAPSHOT_MESSAGE =
+  "Supabase paid report result snapshot is invalid.";
 
 function createUnavailableResult<T>(): SupabasePaidReportResultQueryResult<T> {
   return {
@@ -84,25 +90,31 @@ function mapRpcError<T>(
     };
   }
 
-  if (error.message.includes("PAID_REPORT_RESULT_INVALID_REPORT_ID")) {
+  if (
+    error.message.includes("REPORT_RESULT_INVALID_REPORT_ID") ||
+    error.message.includes("PAID_REPORT_RESULT_INVALID_REPORT_ID")
+  ) {
     return {
       ok: false,
-      code: "PAID_REPORT_RESULT_INVALID_REPORT_ID",
+      code: "REPORT_RESULT_INVALID_REPORT_ID",
       messageKo: QUERY_FAILED_MESSAGE,
     };
   }
 
-  if (error.message.includes("PAID_REPORT_RESULT_NOT_FOUND")) {
+  if (
+    error.message.includes("REPORT_RESULT_NOT_FOUND") ||
+    error.message.includes("PAID_REPORT_RESULT_NOT_FOUND")
+  ) {
     return {
       ok: false,
-      code: "PAID_REPORT_RESULT_NOT_FOUND",
+      code: "REPORT_RESULT_NOT_FOUND",
       messageKo: QUERY_FAILED_MESSAGE,
     };
   }
 
   return {
     ok: false,
-    code: "PAID_REPORT_RESULT_RPC_FAILED",
+    code: "REPORT_RESULT_RPC_FAILED",
     messageKo: QUERY_FAILED_MESSAGE,
   };
 }
@@ -117,6 +129,16 @@ function isNonEmptyString(value: unknown): value is string {
 
 function isTimestamp(value: string): boolean {
   return value.trim().length > 0 && !Number.isNaN(Date.parse(value));
+}
+
+function isResultStatus(value: unknown): value is PaidReportResultStatus {
+  return value === "ready" || value === "generated";
+}
+
+function isSnapshotStatus(
+  value: unknown,
+): value is PaidReportSnapshotStatus {
+  return value === "missing" || value === "generated";
 }
 
 function extractSingleRow(data: unknown): PaidReportResultRpcResultRow | null {
@@ -137,16 +159,48 @@ function mapRpcRow(
   if (
     !isNonEmptyString(row.report_id) ||
     row.product_type !== "saju_mbti_full" ||
-    row.status !== "ready" ||
-    !isNonEmptyString(row.title) ||
-    !isNonEmptyString(row.placeholder_text) ||
+    !isResultStatus(row.status) ||
+    !isSnapshotStatus(row.snapshot_status) ||
     !isTimestamp(row.created_at) ||
     !isTimestamp(row.updated_at)
   ) {
     return {
       ok: false,
-      code: "PAID_REPORT_RESULT_RPC_VALIDATION_FAILED",
+      code: "REPORT_RESULT_RPC_VALIDATION_FAILED",
       messageKo: QUERY_INVALID_DATA_MESSAGE,
+    };
+  }
+
+  if (row.snapshot_status === "missing") {
+    if (row.status !== "ready" || row.report_snapshot !== null) {
+      return {
+        ok: false,
+        code: "REPORT_RESULT_RPC_VALIDATION_FAILED",
+        messageKo: QUERY_INVALID_DATA_MESSAGE,
+      };
+    }
+
+    return {
+      ok: true,
+      data: {
+        reportId: row.report_id,
+        productType: "saju_mbti_full",
+        status: "ready",
+        snapshotStatus: "missing",
+        draft: null,
+        createdAt: row.created_at,
+        updatedAt: row.updated_at,
+      },
+    };
+  }
+
+  const validation = validateComprehensiveReportDraft(row.report_snapshot);
+
+  if (!validation.ok || validation.value === undefined) {
+    return {
+      ok: false,
+      code: "REPORT_RESULT_SNAPSHOT_INVALID",
+      messageKo: QUERY_INVALID_SNAPSHOT_MESSAGE,
     };
   }
 
@@ -155,9 +209,9 @@ function mapRpcRow(
     data: {
       reportId: row.report_id,
       productType: "saju_mbti_full",
-      status: "ready",
-      title: row.title,
-      placeholderText: row.placeholder_text,
+      status: "generated",
+      snapshotStatus: "generated",
+      draft: validation.value,
       createdAt: row.created_at,
       updatedAt: row.updated_at,
     },
@@ -218,7 +272,7 @@ function createConnectedClient(
   return {
     async getPaidReportResult(input) {
       const result = await rpcExecutor(
-        GET_PAID_SAJU_MBTI_REPORT_RESULT_RPC,
+        GET_GENERATED_COMPREHENSIVE_REPORT_RESULT_RPC,
         createRpcArgs(input),
       );
 
@@ -231,7 +285,7 @@ function createConnectedClient(
       if (row === null) {
         return {
           ok: false,
-          code: "PAID_REPORT_RESULT_RPC_VALIDATION_FAILED",
+          code: "REPORT_RESULT_RPC_VALIDATION_FAILED",
           messageKo: QUERY_INVALID_DATA_MESSAGE,
         };
       }

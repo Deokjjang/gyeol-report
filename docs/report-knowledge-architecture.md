@@ -199,6 +199,20 @@ tokens, or share tokens.
 DB save is separate from result rendering. Validated snapshot only is stored
 in REPORT-07, and there is no result page rendering yet.
 
+## REPORT-08 Result Snapshot Rendering
+
+REPORT-08 renders saved validated snapshot data.
+
+The result page reads a paid report by report id, receives the stored
+ComprehensiveReportDraft from report_snapshot, validates it again, and renders
+the opening, core line, sections, evidence summaries, Saju terms, MBTI support
+terms, and final advice.
+
+OpenAI generation is not called here. DB save already happened in REPORT-07.
+Result page rendering is separate from generation and payment. If a paid report
+does not have a generated snapshot yet, the page keeps the safe placeholder state
+instead of exposing raw JSON or private fields.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

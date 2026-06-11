@@ -8,19 +8,35 @@ const source = readFileSync(
 );
 
 describe("report result page source", () => {
-  it("renders only the safe report-ready entry state", () => {
+  it("renders generated report draft sections and safe fallback states", () => {
     const requiredMarkers = [
+      "사주×MBTI 종합 리포트",
+      "draft.openingTitle",
+      "draft.openingSummary",
+      "draft.coreLine",
+      "draft.sections.map",
+      "<details",
+      "section.titleKo",
+      "section.oneLine",
+      "section.body",
+      "근거 요약",
+      "사주 근거",
+      "MBTI 보조 근거",
+      "최종 조언",
       "리포트 준비 완료",
       "결제가 완료되었고 리포트가 생성되었습니다.",
-      "리포트 ID",
-      "사주×MBTI 종합 리포트",
-      "ready",
+      "상세 리포트 생성 대기 중입니다.",
       "리포트를 찾을 수 없습니다.",
       "결제가 완료된 리포트만 조회할 수 있습니다.",
       "리포트 정보가 올바르지 않습니다.",
+      "저장된 리포트 형식을 확인할 수 없습니다.",
       "getPaidReportResult",
     ];
     const blockedMarkers = [
+      "callOpenAIReportWriter",
+      "generateComprehensiveReportDraft",
+      "saveComprehensiveReportDraftSnapshot",
+      "confirmTossPayment",
       "payment" + "Key",
       "provider" + "PaymentId",
       "provider" + "_payment" + "_id",
@@ -28,9 +44,7 @@ describe("report result page source", () => {
       "input" + "_snapshot",
       "share" + "Token",
       "access" + "TokenHash",
-      "report" + "_snapshot",
-      "createReport",
-      "generateReport",
+      "OPENAI" + "_API" + "_KEY",
       "SUPABASE" + "_SERVICE" + "_ROLE",
       "service" + "_role",
       "현" + "침살",

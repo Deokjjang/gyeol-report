@@ -49,6 +49,11 @@ describe("report knowledge architecture document", () => {
       "DB save is separate from result rendering",
       "Validated snapshot only",
       "no result page rendering yet",
+      "REPORT-08 renders saved validated snapshot",
+      "OpenAI generation is not called here",
+      "DB save already happened in REPORT-07",
+      "Result page rendering is separate from generation and payment",
+      "safe placeholder state",
     ];
 
     for (const marker of requiredMarkers) {

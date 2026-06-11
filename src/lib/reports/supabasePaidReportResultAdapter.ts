@@ -13,7 +13,7 @@ export type GetPaidReportResultAdapterInput = {
 };
 
 export type GetPaidReportResultAdapterErrorCode =
-  | "PAID_REPORT_RESULT_INVALID_REQUEST"
+  | "REPORT_RESULT_INVALID_REQUEST"
   | SupabasePaidReportResultQueryErrorCode;
 
 export type GetPaidReportResultAdapterResult =
@@ -64,7 +64,7 @@ function parseInput(
     return {
       ok: false,
       result: failure(
-        "PAID_REPORT_RESULT_INVALID_REQUEST",
+        "REPORT_RESULT_INVALID_REQUEST",
         "Paid report result request is invalid.",
       ),
     };

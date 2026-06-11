@@ -12,20 +12,47 @@ import type { SupabasePaidReportResultRpcClient } from "../../../src/lib/reports
 const createdAt = "2026-06-12T10:00:00.000Z";
 const updatedAt = "2026-06-12T10:00:01.000Z";
 
-function createResult(input: GetPaidReportResultInput): PaidReportResult {
+function createGeneratedResult(input: GetPaidReportResultInput): PaidReportResult {
   return {
     reportId: input.reportId,
     productType: "saju_mbti_full",
-    status: "ready",
-    title: "사주×MBTI 종합 리포트",
-    placeholderText:
-      "결제가 완료되었습니다. 사주×MBTI 종합 리포트 생성 파이프라인이 연결되었습니다.",
+    status: "generated",
+    snapshotStatus: "generated",
+    draft: {
+      version: "comprehensive_v1_draft",
+      productType: "saju_mbti_full",
+      tone: ["saju_first"],
+      openingTitle: "생성된 종합 리포트",
+      openingSummary:
+        "사주 구조를 먼저 보고 MBTI는 보조로 연결한 생성 리포트입니다.",
+      coreLine: "사주 근거를 중심으로 해석합니다.",
+      sections: [],
+      finalAdvice: "결과를 자기이해용 참고로만 사용해 주세요.",
+      safetyNotes: [],
+    },
     createdAt,
     updatedAt,
   };
 }
 
-function createFakeClient(): {
+function createMissingSnapshotResult(
+  input: GetPaidReportResultInput,
+): PaidReportResult {
+  return {
+    reportId: input.reportId,
+    productType: "saju_mbti_full",
+    status: "ready",
+    snapshotStatus: "missing",
+    draft: null,
+    createdAt,
+    updatedAt,
+  };
+}
+
+function createFakeClient(
+  resultFactory: (input: GetPaidReportResultInput) => PaidReportResult =
+    createGeneratedResult,
+): {
   readonly calls: GetPaidReportResultInput[];
   readonly client: SupabasePaidReportResultRpcClient;
 } {
@@ -39,7 +66,7 @@ function createFakeClient(): {
 
         return {
           ok: true,
-          data: createResult(input),
+          data: resultFactory(input),
         };
       },
     },
@@ -51,7 +78,7 @@ function readSource(relativePath: string): string {
 }
 
 describe("Supabase paid report result adapter", () => {
-  it("loads a valid paid report result by report id", async () => {
+  it("loads a valid generated report result by report id", async () => {
     const fake = createFakeClient();
     const result = await getPaidReportResult({
       reportId: "report_result_adapter_test",
@@ -63,8 +90,8 @@ describe("Supabase paid report result adapter", () => {
       result: {
         reportId: "report_result_adapter_test",
         productType: "saju_mbti_full",
-        status: "ready",
-        title: "사주×MBTI 종합 리포트",
+        status: "generated",
+        snapshotStatus: "generated",
       },
     });
     expect(fake.calls).toEqual([
@@ -99,7 +126,7 @@ describe("Supabase paid report result adapter", () => {
     expect(result).toEqual({
       ok: false,
       error: {
-        code: "PAID_REPORT_RESULT_INVALID_REQUEST",
+        code: "REPORT_RESULT_INVALID_REQUEST",
         messageKo: "Paid report result request is invalid.",
       },
     });
@@ -113,7 +140,7 @@ describe("Supabase paid report result adapter", () => {
         async getPaidReportResult() {
           return {
             ok: false,
-            code: "PAID_REPORT_RESULT_NOT_FOUND",
+            code: "REPORT_RESULT_NOT_FOUND",
             messageKo: "Supabase paid report result RPC failed.",
           };
         },
@@ -123,8 +150,52 @@ describe("Supabase paid report result adapter", () => {
     expect(result).toEqual({
       ok: false,
       error: {
-        code: "PAID_REPORT_RESULT_NOT_FOUND",
+        code: "REPORT_RESULT_NOT_FOUND",
         messageKo: "Supabase paid report result RPC failed.",
+      },
+    });
+  });
+
+  it("returns missing snapshot results safely", async () => {
+    const fake = createFakeClient(createMissingSnapshotResult);
+    const result = await getPaidReportResult({
+      reportId: "report_result_adapter_test",
+      client: fake.client,
+    });
+
+    expect(result).toEqual({
+      ok: true,
+      result: {
+        reportId: "report_result_adapter_test",
+        productType: "saju_mbti_full",
+        status: "ready",
+        snapshotStatus: "missing",
+        draft: null,
+        createdAt,
+        updatedAt,
+      },
+    });
+  });
+
+  it("returns invalid snapshot failures safely", async () => {
+    const result = await getPaidReportResult({
+      reportId: "report_result_adapter_test",
+      client: {
+        async getPaidReportResult() {
+          return {
+            ok: false,
+            code: "REPORT_RESULT_SNAPSHOT_INVALID",
+            messageKo: "Supabase paid report result snapshot is invalid.",
+          };
+        },
+      },
+    });
+
+    expect(result).toEqual({
+      ok: false,
+      error: {
+        code: "REPORT_RESULT_SNAPSHOT_INVALID",
+        messageKo: "Supabase paid report result snapshot is invalid.",
       },
     });
   });

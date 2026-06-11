@@ -3,7 +3,12 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import ReportResultPage from "../../../../src/app/reports/[reportId]/page";
 import { getPaidReportResult } from "../../../../src/lib/reports/supabasePaidReportResultAdapter";
+import type { ComprehensiveReportDraft } from "../../../../src/lib/report-generation/comprehensiveReportDraftTypes";
 import type { PaidReportResult } from "../../../../src/lib/reports/paidReportResultTypes";
+import {
+  COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
+  type ComprehensiveReportSectionDefinition,
+} from "../../../../src/lib/report-knowledge/reportSectionSchema";
 
 vi.mock("../../../../src/lib/reports/supabasePaidReportResultAdapter", () => ({
   getPaidReportResult: vi.fn(),
@@ -13,16 +18,51 @@ const mockGetPaidReportResult = vi.mocked(getPaidReportResult);
 const createdAt = "2026-06-12T10:00:00.000Z";
 const updatedAt = "2026-06-12T10:00:01.000Z";
 
+function createDraftSection(definition: ComprehensiveReportSectionDefinition) {
+  const isMbtiDisplay =
+    definition.id === "mbti_core" || definition.id === "mbti_table";
+
+  return {
+    sectionId: definition.id,
+    titleKo: definition.titleKo,
+    oneLine: `${definition.titleKo} 한 줄 핵심입니다.`,
+    body:
+      "갑목과 갑신일주를 먼저 놓고 ENTJ는 보조 근거로 연결한 본문입니다.",
+    evidenceSummary: ["갑목", "갑신일주", "ENTJ"],
+    sajuTermsUsed:
+      definition.primaryBasis === "display" && isMbtiDisplay
+        ? []
+        : ["갑목", "갑신일주"],
+    mbtiTermsUsed: isMbtiDisplay ? ["ENTJ", "Te/Ni"] : ["ENTJ"],
+    cautionLevel: "medium" as const,
+  };
+}
+
+function createDraft(): ComprehensiveReportDraft {
+  return {
+    version: "comprehensive_v1_draft",
+    productType: "saju_mbti_full",
+    tone: ["saju_first", "conversational", "direct"],
+    openingTitle: "한눈에 보는 결",
+    openingSummary:
+      "사주 원국의 구조를 먼저 보고 MBTI는 사용자가 체감하는 자기상을 보조로 연결합니다.",
+    coreLine: "갑목과 갑신일주가 중심이고 ENTJ는 그 방향을 강화합니다.",
+    sections: COMPREHENSIVE_REPORT_SECTION_DEFINITIONS.map(createDraftSection),
+    finalAdvice:
+      "강하게 드러나는 성향은 성과로 쓰되, 감정 순환과 휴식은 의식적으로 챙기는 편이 좋습니다.",
+    safetyNotes: ["자기이해용 참고 콘텐츠입니다."],
+  };
+}
+
 function createResult(
   overrides: Partial<PaidReportResult> = {},
 ): PaidReportResult {
   return {
     reportId: "report_result_page_test",
     productType: "saju_mbti_full",
-    status: "ready",
-    title: "사주×MBTI 종합 리포트",
-    placeholderText:
-      "결제가 완료되었습니다. 사주×MBTI 종합 리포트 생성 파이프라인이 연결되었습니다.",
+    status: "generated",
+    snapshotStatus: "generated",
+    draft: createDraft(),
     createdAt,
     updatedAt,
     ...overrides,
@@ -42,7 +82,7 @@ describe("report result page", () => {
     mockGetPaidReportResult.mockReset();
   });
 
-  it("loads by report id and displays minimal ready state", async () => {
+  it("loads by report id and renders a generated comprehensive draft", async () => {
     const fullPaymentKey = "pay_full_key_must_not_render";
     const resultWithPrivateExtras = {
       ...createResult(),
@@ -63,29 +103,48 @@ describe("report result page", () => {
     expect(firstCall?.reportId).toBe("report_result_page_test");
     expect(typeof firstCall?.client).toBe("object");
     expect(html).toContain("결리포트");
-    expect(html).toContain("리포트 준비 완료");
-    expect(html).toContain("결제가 완료되었고 리포트가 생성되었습니다.");
-    expect(html).toContain("리포트 ID");
-    expect(html).toContain("report_result_page_test");
-    expect(html).toContain("상품");
     expect(html).toContain("사주×MBTI 종합 리포트");
-    expect(html).toContain("상태");
-    expect(html).toContain("ready");
-    expect(html).toContain(
-      "결제가 완료되었습니다. 사주×MBTI 종합 리포트 생성 파이프라인이 연결되었습니다.",
-    );
+    expect(html).toContain("한눈에 보는 결");
+    expect(html).toContain("사주 원국의 구조를 먼저 보고");
+    expect(html).toContain("갑목과 갑신일주가 중심이고 ENTJ");
+    expect(html).toContain("성격");
+    expect(html).toContain("성격 한 줄 핵심입니다.");
+    expect(html).toContain("갑목과 갑신일주를 먼저 놓고 ENTJ");
+    expect(html).toContain("근거 요약");
+    expect(html).toContain("사주 근거");
+    expect(html).toContain("MBTI 보조 근거");
+    expect(html).toContain("최종 조언");
     expect(html).not.toContain(fullPaymentKey);
     expect(html).not.toContain("provider_payment_must_not_render");
     expect(html).not.toContain("input" + "Snapshot");
     expect(html).not.toContain("share_token_must_not_render");
     expect(html).not.toContain("access_hash_must_not_render");
+    expect(html).not.toContain("OPENAI_API_KEY");
+    expect(html).not.toContain("{&quot;version&quot;");
+  });
+
+  it("keeps placeholder state when no generated draft exists", async () => {
+    mockGetPaidReportResult.mockResolvedValue({
+      ok: true,
+      result: createResult({
+        status: "ready",
+        snapshotStatus: "missing",
+        draft: null,
+      }),
+    });
+
+    const html = await renderPage("report_result_page_test");
+
+    expect(html).toContain("리포트 준비 완료");
+    expect(html).toContain("결제가 완료되었고 리포트가 생성되었습니다.");
+    expect(html).toContain("상세 리포트 생성 대기 중입니다.");
   });
 
   it("shows invalid state safely", async () => {
     mockGetPaidReportResult.mockResolvedValue({
       ok: false,
       error: {
-        code: "PAID_REPORT_RESULT_INVALID_REQUEST",
+        code: "REPORT_RESULT_INVALID_REQUEST",
         messageKo: "Paid report result request is invalid.",
       },
     });
@@ -100,7 +159,7 @@ describe("report result page", () => {
     mockGetPaidReportResult.mockResolvedValue({
       ok: false,
       error: {
-        code: "PAID_REPORT_RESULT_NOT_FOUND",
+        code: "REPORT_RESULT_NOT_FOUND",
         messageKo: "Supabase paid report result RPC failed.",
       },
     });
@@ -112,5 +171,21 @@ describe("report result page", () => {
     expect(html).not.toContain("provider" + "Payment" + "Id");
     expect(html).not.toContain("share" + "Token");
     expect(html).not.toContain("access" + "TokenHash");
+  });
+
+  it("shows invalid snapshot state safely", async () => {
+    mockGetPaidReportResult.mockResolvedValue({
+      ok: false,
+      error: {
+        code: "REPORT_RESULT_SNAPSHOT_INVALID",
+        messageKo: "Supabase paid report result snapshot is invalid.",
+      },
+    });
+
+    const html = await renderPage("report_invalid_snapshot");
+
+    expect(html).toContain("리포트를 불러오지 못했습니다.");
+    expect(html).toContain("저장된 리포트 형식을 확인할 수 없습니다.");
+    expect(html).not.toContain("raw JSON");
   });
 });
