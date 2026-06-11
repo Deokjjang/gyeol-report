@@ -186,7 +186,12 @@ export function findFusionRules(input: {
   const mbtiTags = collectMbtiTags(mbtiEntry);
 
   return FUSION_KNOWLEDGE_BASE.filter((rule) => {
-    const hasSajuBasis = rule.sajuEntryIds.some((id) => selectedSajuIds.has(id));
+    const hasSajuIdBasis = rule.sajuEntryIds.some((id) => selectedSajuIds.has(id));
+    const hasSajuTagBasis =
+      rule.requiredSajuTags !== undefined &&
+      rule.requiredSajuTags.length > 0 &&
+      hasAllTags(sajuTags, rule.requiredSajuTags);
+    const hasSajuBasis = hasSajuIdBasis || hasSajuTagBasis;
     const matchesMbti =
       rule.mbtiTypes === undefined || rule.mbtiTypes.includes(input.mbtiType);
     const matchesTopic = input.topic === undefined || rule.topic === input.topic;

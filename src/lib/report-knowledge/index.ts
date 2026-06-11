@@ -1,3 +1,5 @@
+export * from "./comprehensiveReportEvidenceBuilder";
+export * from "./comprehensiveReportEvidenceTypes";
 export * from "./fusionKnowledgeBase";
 export * from "./fusionKnowledgeTypes";
 export * from "./interpretationTags";

@@ -129,6 +129,27 @@ All 16 types are structured by function stack, topic-specific behavior,
 relationship style, work style, money style, risks, growth advice, and Saju
 bridge tags. No copied source paragraphs should be stored in the DB.
 
+## REPORT-04 Fusion Rules and Evidence Packets
+
+REPORT-04 expands fusion rules.
+
+Fusion rules explain how Saju and MBTI interact. A reinforcement rule is used
+when Saju and MBTI point in the same direction. A contrast rule is used when
+the user's MBTI self-image and Saju structure differ. A compensation rule is
+used when one system explains what the other lacks. A topic specialization
+rule is used for love, money, career, human relations, study, and environment.
+
+A compensation rule is used to describe the balancing work needed when one
+system exposes a gap that the other system can explain.
+
+Before OpenAI generation, the system builds a comprehensive evidence packet.
+The evidence packet is not final prose. It is the structured basis for the
+final report writer. It contains primary Saju evidence, supporting MBTI
+evidence, and matched fusion evidence for each canonical report section.
+
+Saju remains primary. MBTI supports and contrasts the Saju basis. The report
+should feel Saju-first, with MBTI increasing personal accuracy.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

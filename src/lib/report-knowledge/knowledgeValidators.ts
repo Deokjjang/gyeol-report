@@ -2,8 +2,12 @@ import {
   INTERPRETATION_TAG_IDS,
   type InterpretationTagId,
 } from "./interpretationTags";
+import type {
+  ComprehensiveReportEvidencePacket,
+  EvidenceRole,
+} from "./comprehensiveReportEvidenceTypes";
 import { FUSION_KNOWLEDGE_BASE } from "./fusionKnowledgeBase";
-import type { FusionKnowledgeRule } from "./fusionKnowledgeTypes";
+import type { FusionKnowledgeRule, FusionRuleKind } from "./fusionKnowledgeTypes";
 import { MBTI_KNOWLEDGE_BASE } from "./mbtiKnowledgeBase";
 import { MBTI_TYPES, type MbtiKnowledgeEntry, type MbtiType } from "./mbtiKnowledgeTypes";
 import {
@@ -75,6 +79,62 @@ const entjRequiredTags = [
   "burnout_risk",
   "relationship_distance",
 ] as const satisfies readonly InterpretationTagId[];
+
+const requiredFusionKindCounts = {
+  reinforcement: 20,
+  contrast: 15,
+  compensation: 10,
+  topic_specialization: 15,
+} as const satisfies Record<FusionRuleKind, number>;
+
+const requiredEntjFusionSummaries = [
+  "갑신일주 + ENTJ leadership/control",
+  "편관 + ENTJ responsibility_pressure",
+  "정관 + ENTJ authority_orientation",
+  "현침살 + ENTJ 직설성",
+  "수 부족/무인성 + ENTJ emotional_dryness",
+  "수 부족 + ENTJ 감정 건조함",
+  "화 부족 + ENTJ 외향성 contrast",
+  "무식상 + ENTJ 자기 어필 contrast",
+  "재다신약 + ENTJ 워커홀릭",
+  "토 과다 + ENTJ 현실성",
+  "금 강함 + ENTJ 판단력",
+  "갑목/갑신 + ENTJ 지휘 욕구",
+  "편관/정관 + ENTJ 리더십",
+  "현침살 + ENTJ strategic thinking",
+  "편재/정재 + ENTJ 돈 구조 설계",
+  "재고귀인 + ENTJ 자산화",
+  "홍염살 + ENTJ 카리스마",
+  "도화살 + ENTJ public_presence",
+  "화 부족 + ENTJ 애정표현 contrast",
+  "재성 강함 + ENTJ 현실적 연애",
+  "무인성 + ENTJ 들어주는 힘",
+  "관성 강함 + ENTJ 높은 기준",
+  "비겁 + ENTJ competition",
+] as const;
+
+const requiredContrastFusionSummaries = [
+  "화 부족 + E 유형 expression contrast",
+  "F 유형 + 금/관성 strong 기준과 책임",
+  "T 유형 + 수 강함 감정 깊이",
+  "P 유형 + 정관 strong 규칙 책임",
+  "J 유형 + 역마살 변화 욕구",
+  "I 유형 + 도화/홍염 존재감",
+  "S 유형 + 인성/문창 학습 기획",
+  "N 유형 + 토 과다 현실 책임",
+] as const;
+
+const privatePacketMarkers = [
+  "paymentKey",
+  "providerPaymentId",
+  "provider_payment_id",
+  "inputSnapshot",
+  "input_snapshot",
+  "shareToken",
+  "accessTokenHash",
+  "TOSS_SECRET_KEY",
+  "SUPABASE_SERVICE_ROLE",
+] as const;
 
 const requiredTenGodTopics = [
   "personality",
@@ -262,7 +322,10 @@ function collectStrings(value: unknown): string[] {
   }
 
   if (typeof value === "object" && value !== null) {
-    return Object.values(value).flatMap((item) => collectStrings(item));
+    return Object.entries(value).flatMap(([key, item]) => [
+      key,
+      ...collectStrings(item),
+    ]);
   }
 
   return [];
@@ -710,7 +773,11 @@ function validateFusionRules(
   );
 
   for (const rule of rules) {
-    if (rule.sajuEntryIds.length === 0) {
+    const isSajuGated =
+      rule.sajuEntryIds.length > 0 ||
+      (rule.requiredSajuTags !== undefined && rule.requiredSajuTags.length > 0);
+
+    if (!isSajuGated) {
       errors.push(`fusion ${rule.id} needs saju basis.`);
     }
     for (const id of rule.sajuEntryIds) {
@@ -743,6 +810,80 @@ function validateFusionRules(
     );
     if (rule.phraseSeeds.length === 0) {
       errors.push(`fusion ${rule.id} is missing phrase seeds.`);
+    }
+  }
+}
+
+function validateFusionKindCounts(
+  errors: string[],
+  rules: readonly FusionKnowledgeRule[],
+): void {
+  for (const [kind, minimumCount] of Object.entries(requiredFusionKindCounts)) {
+    const count = rules.filter((rule) => rule.kind === kind).length;
+
+    if (count < minimumCount) {
+      errors.push(`fusion kind ${kind} needs at least ${minimumCount} rules.`);
+    }
+  }
+}
+
+function appendMissingSummaryErrors(
+  errors: string[],
+  rules: readonly FusionKnowledgeRule[],
+  label: string,
+  summaries: readonly string[],
+): void {
+  const existingSummaries = new Set(rules.map((rule) => rule.summary));
+
+  for (const summary of summaries) {
+    if (!existingSummaries.has(summary)) {
+      errors.push(`${label} missing required fusion rule: ${summary}`);
+    }
+  }
+}
+
+function validateEvidenceRoles(
+  errors: string[],
+  packet: ComprehensiveReportEvidencePacket,
+): void {
+  const allowedFusionRoles = new Set<EvidenceRole>([
+    "fusion_reinforcement",
+    "fusion_contrast",
+    "fusion_compensation",
+    "topic_specialization",
+  ]);
+
+  for (const section of packet.sections) {
+    for (const item of section.primarySaju) {
+      if (item.role !== "primary_saju") {
+        errors.push(`${section.sectionId} primary saju has invalid role.`);
+      }
+      if (item.sourceId.startsWith("mbti_")) {
+        errors.push(`${section.sectionId} has MBTI in primary saju evidence.`);
+      }
+    }
+    for (const item of section.supportingMbti) {
+      if (item.role !== "supporting_mbti") {
+        errors.push(`${section.sectionId} supporting MBTI has invalid role.`);
+      }
+    }
+    for (const item of section.fusion) {
+      if (!allowedFusionRoles.has(item.role)) {
+        errors.push(`${section.sectionId} fusion has invalid role.`);
+      }
+    }
+  }
+}
+
+function appendPrivatePacketErrors(
+  errors: string[],
+  packet: ComprehensiveReportEvidencePacket,
+): void {
+  const serialized = collectStrings(packet).join("\n");
+
+  for (const marker of privatePacketMarkers) {
+    if (serialized.includes(marker)) {
+      errors.push(`evidence packet contains private field marker: ${marker}`);
     }
   }
 }
@@ -808,6 +949,88 @@ export function validateMbtiKnowledgeDensity(
     validateMbtiEntryDensity(errors, entry);
   }
   validateKeyMbtiSemantics(errors, entriesByType);
+
+  return {
+    ok: errors.length === 0,
+    errors,
+  };
+}
+
+export function validateFusionKnowledgeDensity(
+  rules: readonly FusionKnowledgeRule[] = FUSION_KNOWLEDGE_BASE,
+): ReportKnowledgeValidationResult {
+  const errors: string[] = [];
+  const validTagIds = new Set<string>(INTERPRETATION_TAG_IDS);
+
+  if (rules.length < 60) {
+    errors.push("fusion knowledge base needs at least 60 rules.");
+  }
+  validateFusionKindCounts(errors, rules);
+  validateFusionRules(
+    errors,
+    rules,
+    SAJU_KNOWLEDGE_BASE,
+    MBTI_KNOWLEDGE_BASE,
+    validTagIds,
+  );
+  appendMissingSummaryErrors(
+    errors,
+    rules,
+    "ENTJ density",
+    requiredEntjFusionSummaries,
+  );
+  appendMissingSummaryErrors(
+    errors,
+    rules,
+    "contrast density",
+    requiredContrastFusionSummaries,
+  );
+  appendTextSafetyErrors(errors, "fusion knowledge", rules);
+
+  return {
+    ok: errors.length === 0,
+    errors,
+  };
+}
+
+export function validateComprehensiveEvidencePacket(
+  packet: ComprehensiveReportEvidencePacket,
+): ReportKnowledgeValidationResult {
+  const errors: string[] = [];
+  const sectionsById = new Map(packet.sections.map((section) => [section.sectionId, section]));
+
+  for (const sectionDefinition of COMPREHENSIVE_REPORT_SECTION_DEFINITIONS) {
+    const section = sectionsById.get(sectionDefinition.id);
+
+    if (section === undefined) {
+      errors.push(`evidence packet missing section: ${sectionDefinition.id}`);
+      continue;
+    }
+    if (
+      sectionDefinition.primaryBasis !== "display" &&
+      sectionDefinition.id !== "mbti_core" &&
+      section.primarySaju.length === 0
+    ) {
+      errors.push(`${sectionDefinition.id} needs primary saju evidence.`);
+    }
+    if (sectionDefinition.id === "mbti_core" && section.supportingMbti.length === 0) {
+      errors.push("mbti_core needs supporting MBTI evidence.");
+    }
+    if (sectionDefinition.id === "saju_mbti_fusion") {
+      const roles = new Set(section.fusion.map((item) => item.role));
+
+      if (!roles.has("fusion_reinforcement")) {
+        errors.push("saju_mbti_fusion needs reinforcement evidence.");
+      }
+      if (!roles.has("fusion_contrast")) {
+        errors.push("saju_mbti_fusion needs contrast evidence.");
+      }
+    }
+  }
+
+  validateEvidenceRoles(errors, packet);
+  appendTextSafetyErrors(errors, "evidence packet", packet);
+  appendPrivatePacketErrors(errors, packet);
 
   return {
     ok: errors.length === 0,

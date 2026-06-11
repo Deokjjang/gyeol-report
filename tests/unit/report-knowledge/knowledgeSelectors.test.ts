@@ -236,6 +236,45 @@ describe("knowledge selectors", () => {
     );
   });
 
+  it("sorts reinforcement and contrast matches by priority within the requested topic", () => {
+    const rules = findFusionRules({
+      sajuEntryIds: sampleDeokminSajuIds,
+      mbtiType: "ENTJ",
+      topic: "personality",
+    });
+
+    expect(rules.map((rule) => rule.summary)).toEqual(
+      expect.arrayContaining([
+        "갑신일주 + ENTJ leadership/control",
+        "화 부족 + ENTJ 외향성 contrast",
+      ]),
+    );
+    expect(rules.some((rule) => rule.kind === "contrast")).toBe(true);
+    expect(rules.map((rule) => rule.priority)).toEqual(
+      [...rules.map((rule) => rule.priority)].sort((left, right) => right - left),
+    );
+  });
+
+  it("excludes unrelated MBTI-specific rules and requires a Saju match", () => {
+    const istjRules = findFusionRules({
+      sajuEntryIds: sampleDeokminSajuIds,
+      mbtiType: "ISTJ",
+      topic: "personality",
+    });
+    const noSajuMatch = findFusionRules({
+      sajuEntryIds: ["element_water_missing"],
+      mbtiType: "ENTJ",
+      topic: "human_relations",
+    });
+
+    expect(istjRules.map((rule) => rule.summary)).not.toContain(
+      "갑신일주 + ENTJ leadership/control",
+    );
+    expect(noSajuMatch.map((rule) => rule.summary)).not.toContain(
+      "현침살 + ENTJ 직설성",
+    );
+  });
+
   it("does not return fusion rules without matching saju basis", () => {
     const rules = findFusionRules({
       sajuEntryIds: ["element_water_missing"],

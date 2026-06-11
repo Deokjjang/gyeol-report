@@ -27,6 +27,14 @@ describe("report knowledge architecture document", () => {
       "All 16 types are structured",
       "No copied source paragraphs",
       "사주에는 이런 구조가 있고",
+      "REPORT-04 expands fusion rules",
+      "A reinforcement rule is used",
+      "A contrast rule is used",
+      "A compensation rule is used",
+      "Before OpenAI generation",
+      "The evidence packet is not final prose",
+      "Saju remains primary",
+      "MBTI supports and contrasts",
     ];
 
     for (const marker of requiredMarkers) {
