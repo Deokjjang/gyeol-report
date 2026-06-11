@@ -87,6 +87,20 @@ describe("payment provider integration runbook source", () => {
     }
   });
 
+  it("documents the Toss confirm to paid transition boundary", () => {
+    const requiredMarkers = [
+      "## Toss Confirm to Paid Transition",
+      "When Toss confirm returns DONE, the server marks the matching payment order as paid using `mark_toss_payment_order_paid`.",
+      "This does not generate the report yet.",
+      "This does not issue a share link yet.",
+      "Report fulfillment is the next step.",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(source).toContain(marker);
+    }
+  });
+
   it("documents KakaoPay official integration requirements and env placeholders", () => {
     const requiredMarkers = [
       "KakaoPay integration must use the official KakaoPay online single-payment API.",

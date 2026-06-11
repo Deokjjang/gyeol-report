@@ -97,6 +97,13 @@ It stores the provider payment id server-side.
 It does not create reports or share links.
 Paid report fulfillment is a separate next step.
 
+## Toss Confirm to Paid Transition
+
+When Toss confirm returns DONE, the server marks the matching payment order as paid using `mark_toss_payment_order_paid`.
+This does not generate the report yet.
+This does not issue a share link yet.
+Report fulfillment is the next step.
+
 ## KakaoPay Requirements
 
 KakaoPay integration must use the official KakaoPay online single-payment API.

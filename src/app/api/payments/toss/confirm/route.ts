@@ -4,6 +4,9 @@ import {
   confirmTossPayment,
   TOSS_CONFIRM_REQUIRED_AMOUNT,
 } from "../../../../../lib/payment/tossConfirmClient";
+import { markTossPaymentOrderPaid } from "../../../../../lib/payment/supabaseTossPaymentOrderPaidAdapter";
+import { createSupabaseTossPaymentOrderPaidClient } from "../../../../../lib/payment/supabaseTossPaymentOrderPaidClient";
+import type { MarkTossPaymentOrderPaidResult } from "../../../../../lib/payment/tossPaymentOrderPaidTypes";
 import type {
   TossConfirmErrorCode,
   TossConfirmRequest,
@@ -14,27 +17,51 @@ export const runtime = "nodejs";
 
 type TossConfirmRouteErrorCode =
   | "TOSS_CONFIRM_API_DISABLED"
+  | "TOSS_PAYMENT_NOT_DONE"
+  | "PAYMENT_MARK_PAID_FAILED"
   | TossConfirmErrorCode;
+
+type TossConfirmRouteSafeConfirm = Omit<
+  TossConfirmSafeResult,
+  "method" | "approvedAt" | "rawPaymentStatus"
+> & {
+  readonly method: string | null;
+  readonly approvedAt: string | null;
+  readonly rawPaymentStatus: string;
+};
+
+type TossConfirmRouteErrorContext = {
+  readonly orderId: string;
+  readonly amount: number;
+  readonly confirmStatus: string;
+  readonly rawPaymentStatus: string;
+};
 
 type TossConfirmRouteResponse =
   | {
       readonly ok: true;
-      readonly confirm: TossConfirmSafeResult;
+      readonly confirm: TossConfirmRouteSafeConfirm;
+      readonly paymentOrder: MarkTossPaymentOrderPaidResult;
     }
   | {
       readonly ok: false;
       readonly error: {
         readonly code: TossConfirmRouteErrorCode;
         readonly message: string;
+        readonly context?: TossConfirmRouteErrorContext;
       };
     };
 
 const tossConfirmApiEnabledEnv = "TOSS_CONFIRM_API_ENABLED";
 const tossSecretKeyEnv = "TOSS_SECRET_KEY";
+const supabaseUrlEnv = "SUPABASE_URL";
+const supabaseAnonKeyEnv = "SUPABASE_ANON_KEY";
 const invalidRequestMessage = "Toss confirm request is invalid.";
 const amountMismatchMessage =
   "Toss confirm amount does not match the order amount.";
 const configMissingMessage = "Toss confirm configuration is missing.";
+const tossPaymentNotDoneMessage = "Toss payment is not done.";
+const paymentMarkPaidFailedMessage = "Payment order could not be marked paid.";
 const jsonResponseHeaders = {
   "content-type": "application/json; charset=utf-8",
 } as const;
@@ -43,6 +70,7 @@ function createErrorResponse(
   code: TossConfirmRouteErrorCode,
   message: string,
   status: number,
+  context?: TossConfirmRouteErrorContext,
 ): NextResponse<TossConfirmRouteResponse> {
   return NextResponse.json<TossConfirmRouteResponse>(
     {
@@ -50,6 +78,7 @@ function createErrorResponse(
       error: {
         code,
         message,
+        ...(context === undefined ? {} : { context }),
       },
     },
     {
@@ -147,6 +176,39 @@ function mapConfirmFailureStatus(code: TossConfirmErrorCode): number {
   return 502;
 }
 
+function mapConfirmForResponse(
+  confirm: TossConfirmSafeResult,
+): TossConfirmRouteSafeConfirm {
+  return {
+    provider: confirm.provider,
+    paymentKeyReceived: true,
+    orderId: confirm.orderId,
+    amount: confirm.amount,
+    status: confirm.status,
+    method: confirm.method ?? null,
+    approvedAt: confirm.approvedAt ?? null,
+    rawPaymentStatus: confirm.rawPaymentStatus ?? confirm.status,
+  };
+}
+
+function createConfirmContext(
+  confirm: TossConfirmRouteSafeConfirm,
+): TossConfirmRouteErrorContext {
+  return {
+    orderId: confirm.orderId,
+    amount: confirm.amount,
+    confirmStatus: confirm.status,
+    rawPaymentStatus: confirm.rawPaymentStatus,
+  };
+}
+
+function createPaidOrderClient() {
+  return createSupabaseTossPaymentOrderPaidClient({
+    supabaseUrl: process.env[supabaseUrlEnv],
+    supabaseAnonKey: process.env[supabaseAnonKeyEnv],
+  });
+}
+
 export async function POST(
   request: Request,
 ): Promise<NextResponse<TossConfirmRouteResponse>> {
@@ -201,10 +263,40 @@ export async function POST(
     );
   }
 
+  const confirm = mapConfirmForResponse(result.confirm);
+
+  if (confirm.status !== "DONE") {
+    return createErrorResponse(
+      "TOSS_PAYMENT_NOT_DONE",
+      tossPaymentNotDoneMessage,
+      409,
+      createConfirmContext(confirm),
+    );
+  }
+
+  const paidResult = await markTossPaymentOrderPaid({
+    providerOrderId: confirm.orderId,
+    providerPaymentId: parsedRequest.request.paymentKey,
+    amount: confirm.amount,
+    currency: "KRW",
+    ...(confirm.approvedAt === null ? {} : { paidAt: confirm.approvedAt }),
+    client: createPaidOrderClient(),
+  });
+
+  if (!paidResult.ok) {
+    return createErrorResponse(
+      "PAYMENT_MARK_PAID_FAILED",
+      paymentMarkPaidFailedMessage,
+      500,
+      createConfirmContext(confirm),
+    );
+  }
+
   return NextResponse.json<TossConfirmRouteResponse>(
     {
       ok: true,
-      confirm: result.confirm,
+      confirm,
+      paymentOrder: paidResult.order,
     },
     {
       status: 200,
