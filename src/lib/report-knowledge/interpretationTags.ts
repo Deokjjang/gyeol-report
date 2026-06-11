@@ -26,7 +26,9 @@ export type InterpretationTagId =
   | "self_discipline"
   | "authority_orientation"
   | "competition"
-  | "empathy_need";
+  | "empathy_need"
+  | "emotional_depth"
+  | "relationship_sensitivity";
 
 export type InterpretationTagDefinition = {
   readonly id: InterpretationTagId;
@@ -174,6 +176,16 @@ export const INTERPRETATION_TAGS = [
     id: "empathy_need",
     labelKo: "공감 욕구",
     description: "논리보다 정서적 확인이 먼저 필요해지는 관계 욕구입니다.",
+  },
+  {
+    id: "emotional_depth",
+    labelKo: "감정 깊이",
+    description: "겉으로 드러난 반응보다 안쪽 감정의 층이 깊은 성향입니다.",
+  },
+  {
+    id: "relationship_sensitivity",
+    labelKo: "관계 민감성",
+    description: "관계의 온도, 말투, 거리 변화에 민감하게 반응하는 성향입니다.",
   },
 ] as const satisfies readonly InterpretationTagDefinition[];
 

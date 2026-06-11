@@ -2,9 +2,11 @@ import {
   COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
   type ComprehensiveReportSectionId,
 } from "./reportSectionSchema";
+import type { InterpretationTagId } from "./interpretationTags";
 import { FUSION_KNOWLEDGE_BASE } from "./fusionKnowledgeBase";
 import type { FusionKnowledgeRule } from "./fusionKnowledgeTypes";
 import { MBTI_KNOWLEDGE_BASE, MBTI_KNOWLEDGE_BY_TYPE } from "./mbtiKnowledgeBase";
+import { scoreMbtiEvidenceForTopic } from "./mbtiEvidenceScoring";
 import type { MbtiKnowledgeEntry, MbtiType } from "./mbtiKnowledgeTypes";
 import { scoreSajuEvidenceForTopic } from "./sajuEvidenceScoring";
 import { SAJU_KNOWLEDGE_BASE, SAJU_KNOWLEDGE_BY_ID } from "./sajuKnowledgeBase";
@@ -20,7 +22,19 @@ export type SectionEvidence = {
   readonly sectionId: ComprehensiveReportSectionId;
   readonly sajuEvidence: readonly SajuKnowledgeEntry[];
   readonly mbtiEvidence: MbtiKnowledgeEntry;
+  readonly mbtiTopicEvidence?: MbtiTopicEvidence;
   readonly fusionRules: readonly FusionKnowledgeRule[];
+};
+
+export type MbtiTopicEvidence = {
+  readonly mbtiType: MbtiType;
+  readonly topic: SajuKnowledgeTopic;
+  readonly summary: string;
+  readonly positive: readonly string[];
+  readonly risk: readonly string[];
+  readonly advice: readonly string[];
+  readonly bridgeHints: readonly string[];
+  readonly score: number;
 };
 
 const sectionTopicById: Partial<Record<ComprehensiveReportSectionId, SajuKnowledgeTopic>> = {
@@ -37,11 +51,13 @@ const sectionTopicById: Partial<Record<ComprehensiveReportSectionId, SajuKnowled
   final_advice: "final_advice",
 };
 
-function uniqueValues(values: readonly string[]): readonly string[] {
+function uniqueValues<T extends string>(values: readonly T[]): readonly T[] {
   return [...new Set(values)];
 }
 
-function collectSajuTags(entries: readonly SajuKnowledgeEntry[]): readonly string[] {
+function collectSajuTags(
+  entries: readonly SajuKnowledgeEntry[],
+): readonly InterpretationTagId[] {
   return uniqueValues(
     entries.flatMap((entry) => [
       ...entry.positiveTags,
@@ -51,7 +67,7 @@ function collectSajuTags(entries: readonly SajuKnowledgeEntry[]): readonly strin
   );
 }
 
-function collectMbtiTags(entry: MbtiKnowledgeEntry): readonly string[] {
+function collectMbtiTags(entry: MbtiKnowledgeEntry): readonly InterpretationTagId[] {
   return uniqueValues([
     ...entry.traitTags,
     ...entry.riskTags,
@@ -130,6 +146,34 @@ export function getMbtiKnowledge(type: MbtiType): MbtiKnowledgeEntry {
   return entry;
 }
 
+export function getMbtiTopicEvidence(input: {
+  readonly mbtiType: MbtiType;
+  readonly topic: SajuKnowledgeTopic;
+  readonly matchedTags?: readonly InterpretationTagId[];
+}): MbtiTopicEvidence {
+  const entry = getMbtiKnowledge(input.mbtiType);
+  const topicInterpretation = entry.topicInterpretations?.[input.topic];
+
+  if (topicInterpretation === undefined) {
+    throw new Error(`Missing MBTI topic evidence: ${input.mbtiType}/${input.topic}`);
+  }
+
+  return {
+    mbtiType: input.mbtiType,
+    topic: input.topic,
+    summary: topicInterpretation.summary,
+    positive: topicInterpretation.positive,
+    risk: topicInterpretation.risk,
+    advice: topicInterpretation.advice,
+    bridgeHints: topicInterpretation.sajuConnectionHints,
+    score: scoreMbtiEvidenceForTopic({
+      entry,
+      topic: input.topic,
+      matchedTags: input.matchedTags,
+    }),
+  };
+}
+
 export function findFusionRules(input: {
   readonly sajuEntryIds: readonly string[];
   readonly mbtiType: MbtiType;
@@ -183,6 +227,15 @@ export function buildSectionEvidence(
     sectionId: input.sectionId,
     sajuEvidence,
     mbtiEvidence,
+    ...(topic === undefined
+      ? {}
+      : {
+          mbtiTopicEvidence: getMbtiTopicEvidence({
+            mbtiType: input.mbtiType,
+            topic,
+            matchedTags: collectSajuTags(sajuEntries),
+          }),
+        }),
     fusionRules: findFusionRules({
       sajuEntryIds: input.sajuEntryIds,
       mbtiType: input.mbtiType,

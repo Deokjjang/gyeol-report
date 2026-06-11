@@ -4,10 +4,12 @@ import { FUSION_KNOWLEDGE_BASE } from "../../../src/lib/report-knowledge/fusionK
 import { MBTI_KNOWLEDGE_BASE } from "../../../src/lib/report-knowledge/mbtiKnowledgeBase";
 import { SAJU_KNOWLEDGE_BASE } from "../../../src/lib/report-knowledge/sajuKnowledgeBase";
 import {
+  validateMbtiKnowledgeDensity,
   validateReportKnowledgeBase,
   validateSajuKnowledgeDensity,
   type ReportKnowledgeValidationInput,
 } from "../../../src/lib/report-knowledge/knowledgeValidators";
+import type { MbtiKnowledgeEntry } from "../../../src/lib/report-knowledge/mbtiKnowledgeTypes";
 import type { SajuKnowledgeEntry } from "../../../src/lib/report-knowledge/sajuKnowledgeTypes";
 
 describe("knowledge validators", () => {
@@ -20,6 +22,13 @@ describe("knowledge validators", () => {
 
   it("validates the default saju density pack", () => {
     expect(validateSajuKnowledgeDensity()).toEqual({
+      ok: true,
+      errors: [],
+    });
+  });
+
+  it("validates the default mbti density pack", () => {
+    expect(validateMbtiKnowledgeDensity()).toEqual({
       ok: true,
       errors: [],
     });
@@ -60,6 +69,19 @@ describe("knowledge validators", () => {
     expect(result.errors.join("\n")).toContain("missing MBTI type: ENTJ");
   });
 
+  it("detects bad MBTI function stack", () => {
+    const invalidEntry = {
+      ...MBTI_KNOWLEDGE_BASE[0],
+      functionStack: ["Ni", "Te", "Fi"],
+    } satisfies MbtiKnowledgeEntry;
+    const result = validateReportKnowledgeBase({
+      mbtiEntries: [invalidEntry],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("function stack");
+  });
+
   it("detects forbidden prediction phrase in a test fixture", () => {
     const unsafeSajuEntry = {
       ...SAJU_KNOWLEDGE_BASE[0],
@@ -88,6 +110,34 @@ describe("knowledge validators", () => {
 
     expect(result.ok).toBe(false);
     expect(result.errors.join("\n")).toContain("empty topic weights");
+  });
+
+  it("detects empty MBTI topic weights", () => {
+    const result = validateReportKnowledgeBase({
+      mbtiEntries: [
+        {
+          ...MBTI_KNOWLEDGE_BASE[0],
+          topicWeights: {},
+        },
+      ],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("empty topic weights");
+  });
+
+  it("detects missing MBTI topic interpretation", () => {
+    const result = validateReportKnowledgeBase({
+      mbtiEntries: [
+        {
+          ...MBTI_KNOWLEDGE_BASE[0],
+          topicInterpretations: {},
+        },
+      ],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("missing topic interpretations");
   });
 
   it("detects invalid element values in matching hints", () => {
@@ -140,6 +190,53 @@ describe("knowledge validators", () => {
     expect(result.errors.join("\n")).toContain("unknown tag");
   });
 
+  it("detects invalid MBTI tag ids", () => {
+    const invalidTagEntry = {
+      ...MBTI_KNOWLEDGE_BASE[0],
+      traitTags: ["missing_tag"],
+    } as unknown as MbtiKnowledgeEntry;
+    const result = validateReportKnowledgeBase({
+      mbtiEntries: [invalidTagEntry],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("unknown tag");
+  });
+
+  it("detects overlong MBTI phrase seed", () => {
+    const result = validateReportKnowledgeBase({
+      mbtiEntries: [
+        {
+          ...MBTI_KNOWLEDGE_BASE[0],
+          phraseSeeds: {
+            ...MBTI_KNOWLEDGE_BASE[0].phraseSeeds,
+            analytical: [
+              "fixture ".repeat(30),
+              ...MBTI_KNOWLEDGE_BASE[0].phraseSeeds.analytical,
+            ],
+          },
+        },
+      ],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("overlong phrase seed");
+  });
+
+  it("detects forbidden MBTI prophecy phrase", () => {
+    const result = validateReportKnowledgeBase({
+      mbtiEntries: [
+        {
+          ...MBTI_KNOWLEDGE_BASE[0],
+          summary: "이 유형은 " + "100% " + "이런 사람",
+        },
+      ],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("forbidden prediction phrase");
+  });
+
   it("detects missing required saju density entries", () => {
     const result = validateSajuKnowledgeDensity(
       SAJU_KNOWLEDGE_BASE.filter((entry) => entry.id !== "day_master_gabmok"),
@@ -147,5 +244,14 @@ describe("knowledge validators", () => {
 
     expect(result.ok).toBe(false);
     expect(result.errors.join("\n")).toContain("day_master_gabmok");
+  });
+
+  it("detects missing required mbti density entries", () => {
+    const result = validateMbtiKnowledgeDensity(
+      MBTI_KNOWLEDGE_BASE.filter((entry) => entry.type !== "ENTJ"),
+    );
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("missing MBTI type: ENTJ");
   });
 });

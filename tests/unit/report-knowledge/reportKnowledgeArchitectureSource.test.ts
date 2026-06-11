@@ -22,6 +22,11 @@ describe("report knowledge architecture document", () => {
       "귀인, 일주 are first-class knowledge",
       "MBTI remains secondary",
       "source/RAG collection is used for DB refinement",
+      "REPORT-03 expands MBTI DB",
+      "reinforce, contrast, and personalize Saju interpretation",
+      "All 16 types are structured",
+      "No copied source paragraphs",
+      "사주에는 이런 구조가 있고",
     ];
 
     for (const marker of requiredMarkers) {

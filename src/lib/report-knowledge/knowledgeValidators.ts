@@ -10,7 +10,7 @@ import {
   COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
   type ComprehensiveReportSectionDefinition,
 } from "./reportSectionSchema";
-import { FIVE_ELEMENTS, SAJU_KNOWLEDGE_BASE } from "./sajuKnowledgeBase";
+import { FIVE_ELEMENTS, SAJU_KNOWLEDGE_BASE, TEN_GODS } from "./sajuKnowledgeBase";
 import {
   SAJU_KNOWLEDGE_TOPICS,
   type FiveElement,
@@ -39,9 +39,42 @@ const forbiddenPredictionPhrases = [
   "몇월 " + "며칠에",
   "몇월 " + "며칠에 " + "반드시",
   "100% " + "확정",
+  "100% " + "이런 사람",
+  "무조건 " + "CEO",
+  "반드시 " + "예술가",
   "절대 " + "실패한다",
   "절대 " + "성공한다",
 ] as const;
+
+const requiredMbtiTopics = [
+  "personality",
+  "strengths",
+  "weaknesses",
+  "work_career",
+  "money_asset",
+  "love_relationship",
+  "human_relations",
+  "family_independence",
+  "study_growth",
+  "final_advice",
+] as const satisfies readonly SajuKnowledgeTopic[];
+
+const entjRequiredTags = [
+  "achievement_drive",
+  "efficiency_focus",
+  "leadership",
+  "control_need",
+  "strategic_thinking",
+  "money_orientation",
+  "authority_orientation",
+  "direct_speech",
+  "responsibility_pressure",
+  "growth_orientation",
+  "workplace_romance",
+  "emotional_dryness",
+  "burnout_risk",
+  "relationship_distance",
+] as const satisfies readonly InterpretationTagId[];
 
 const requiredTenGodTopics = [
   "personality",
@@ -190,6 +223,15 @@ function getDuplicateValues(values: readonly string[]): string[] {
   return [...duplicates];
 }
 
+function collectPhraseSeeds(value: KnowledgePhraseSeeds): readonly string[] {
+  return [
+    ...value.analytical,
+    ...value.conversational,
+    ...value.caution,
+    ...value.advice,
+  ];
+}
+
 function collectUnknownTags(
   tags: readonly InterpretationTagId[],
   validTagIds: ReadonlySet<string>,
@@ -260,6 +302,10 @@ function isFiveElement(value: string): value is FiveElement {
   return (FIVE_ELEMENTS as readonly string[]).includes(value);
 }
 
+function isTenGod(value: string): boolean {
+  return (TEN_GODS as readonly string[]).includes(value);
+}
+
 function appendElementErrors(errors: string[], entry: SajuKnowledgeEntry): void {
   const elements = [
     ...(entry.matchingHints?.helpfulElements ?? []),
@@ -282,6 +328,25 @@ function hasTopicInterpretations(entry: SajuKnowledgeEntry): boolean {
 
 function hasTopicWeights(entry: SajuKnowledgeEntry): boolean {
   return Object.keys(entry.topicWeights).length > 0;
+}
+
+function hasMbtiTopicWeights(entry: MbtiKnowledgeEntry): boolean {
+  return Object.keys(entry.topicWeights).length > 0;
+}
+
+function hasMbtiTopicInterpretations(entry: MbtiKnowledgeEntry): boolean {
+  return (
+    entry.topicInterpretations !== undefined &&
+    Object.keys(entry.topicInterpretations).length > 0
+  );
+}
+
+function hasRelationshipPreferences(entry: MbtiKnowledgeEntry): boolean {
+  return (
+    entry.relationshipPreferences.attracts.length > 0 ||
+    entry.relationshipPreferences.needs.length > 0 ||
+    entry.relationshipPreferences.risks.length > 0
+  );
 }
 
 function validateSections(
@@ -374,8 +439,49 @@ function validateMbtiEntries(
     if (!hasPhraseSeeds(entry.phraseSeeds)) {
       errors.push(`mbti ${entry.type} is missing phrase seeds.`);
     }
-    if (entry.functionStack.length < 4) {
+    if (!hasDensePhraseSeeds(entry.phraseSeeds)) {
+      errors.push(`mbti ${entry.type} needs dense phrase seeds.`);
+    }
+    if (getDuplicateValues(collectPhraseSeeds(entry.phraseSeeds)).length > 0) {
+      errors.push(`mbti ${entry.type} has duplicate phrase seeds.`);
+    }
+    if (entry.functionStack.length !== 4) {
       errors.push(`mbti ${entry.type} needs a function stack.`);
+    }
+    if (!hasMbtiTopicWeights(entry)) {
+      errors.push(`mbti ${entry.type} has empty topic weights.`);
+    }
+    if (!hasMbtiTopicInterpretations(entry)) {
+      errors.push(`mbti ${entry.type} is missing topic interpretations.`);
+    }
+    if (!hasRelationshipPreferences(entry)) {
+      errors.push(`mbti ${entry.type} is missing relationship preferences.`);
+    }
+    if (entry.sajuBridgeTags.length === 0) {
+      errors.push(`mbti ${entry.type} is missing saju bridge tags.`);
+    }
+    for (const element of [
+      ...(entry.sajuBridge?.usefulSajuElements ?? []),
+      ...(entry.sajuBridge?.difficultSajuElements ?? []),
+    ]) {
+      if (!isFiveElement(String(element))) {
+        errors.push(`mbti ${entry.type} references invalid element: ${String(element)}`);
+      }
+    }
+    for (const tenGod of entry.sajuBridge?.resonantTenGods ?? []) {
+      if (!isTenGod(String(tenGod))) {
+        errors.push(`mbti ${entry.type} references invalid ten god: ${String(tenGod)}`);
+      }
+    }
+    for (const topic of Object.keys(entry.topicWeights)) {
+      if (!SAJU_KNOWLEDGE_TOPICS.includes(topic as SajuKnowledgeTopic)) {
+        errors.push(`mbti ${entry.type} references unknown topic: ${topic}`);
+      }
+    }
+    for (const topic of Object.keys(entry.topicInterpretations ?? {})) {
+      if (!SAJU_KNOWLEDGE_TOPICS.includes(topic as SajuKnowledgeTopic)) {
+        errors.push(`mbti ${entry.type} has unknown topic interpretation: ${topic}`);
+      }
     }
     appendPhraseSeedSafetyErrors(errors, entry, `mbti ${entry.type}`);
     appendTagErrors(errors, `mbti ${entry.type}`, entry.traitTags, validTagIds);
@@ -399,6 +505,89 @@ function validateMbtiEntries(
       entry.relationshipPreferences.risks,
       validTagIds,
     );
+  }
+}
+
+function appendMissingMbtiTypeErrors(
+  errors: string[],
+  entriesByType: ReadonlyMap<MbtiType, MbtiKnowledgeEntry>,
+): void {
+  for (const type of MBTI_TYPES) {
+    if (!entriesByType.has(type)) {
+      errors.push(`missing MBTI type: ${type}`);
+    }
+  }
+}
+
+function validateMbtiEntryDensity(
+  errors: string[],
+  entry: MbtiKnowledgeEntry,
+): void {
+  if (entry.functionStack.length !== 4 || entry.functionProfile === undefined) {
+    errors.push(`mbti ${entry.type} needs expanded function stack profile.`);
+  }
+  for (const topic of requiredMbtiTopics) {
+    if (entry.topicInterpretations?.[topic] === undefined) {
+      errors.push(`mbti ${entry.type} needs topic interpretation for ${topic}.`);
+    }
+  }
+  if (!hasDensePhraseSeeds(entry.phraseSeeds)) {
+    errors.push(`mbti ${entry.type} needs phrase seed density.`);
+  }
+  if (entry.sajuBridgeTags.length === 0 || entry.sajuBridge === undefined) {
+    errors.push(`mbti ${entry.type} needs saju bridge data.`);
+  }
+  if (entry.workStyleKo === undefined || entry.workStyleKo.length === 0) {
+    errors.push(`mbti ${entry.type} needs work style data.`);
+  }
+  if (entry.moneyStyleKo === undefined || entry.moneyStyleKo.length === 0) {
+    errors.push(`mbti ${entry.type} needs money style data.`);
+  }
+  if (entry.loveStyleKo === undefined || entry.loveStyleKo.length === 0) {
+    errors.push(`mbti ${entry.type} needs love style data.`);
+  }
+  if (entry.relationshipStyleKo === undefined || entry.relationshipStyleKo.length === 0) {
+    errors.push(`mbti ${entry.type} needs relationship style data.`);
+  }
+  if (entry.growthAdviceKo === undefined || entry.growthAdviceKo.length === 0) {
+    errors.push(`mbti ${entry.type} needs growth advice data.`);
+  }
+}
+
+function validateKeyMbtiSemantics(
+  errors: string[],
+  entriesByType: ReadonlyMap<MbtiType, MbtiKnowledgeEntry>,
+): void {
+  const entj = entriesByType.get("ENTJ");
+  const istj = entriesByType.get("ISTJ");
+  const infp = entriesByType.get("INFP");
+
+  if (entj !== undefined) {
+    const entjTags = new Set([...entj.traitTags, ...entj.riskTags, ...entj.sajuBridgeTags]);
+
+    for (const tag of entjRequiredTags) {
+      if (!entjTags.has(tag)) {
+        errors.push(`ENTJ missing required high-detail tag: ${tag}`);
+      }
+    }
+  }
+  if (istj !== undefined) {
+    const text = collectStrings(istj).join(" ");
+
+    for (const marker of ["신뢰", "책임", "안정", "규칙"]) {
+      if (!text.includes(marker)) {
+        errors.push(`ISTJ missing semantic marker: ${marker}`);
+      }
+    }
+  }
+  if (infp !== undefined) {
+    const text = collectStrings(infp).join(" ");
+
+    for (const marker of ["가치", "내면", "상처", "감성형"]) {
+      if (!text.includes(marker)) {
+        errors.push(`INFP missing semantic marker: ${marker}`);
+      }
+    }
   }
 }
 
@@ -601,6 +790,24 @@ export function validateSajuKnowledgeDensity(
   validateTenGodDensity(errors, entriesById);
   validatePatternDensity(errors, entriesById);
   validateDayDensity(errors, entriesById);
+
+  return {
+    ok: errors.length === 0,
+    errors,
+  };
+}
+
+export function validateMbtiKnowledgeDensity(
+  entries: readonly MbtiKnowledgeEntry[] = MBTI_KNOWLEDGE_BASE,
+): ReportKnowledgeValidationResult {
+  const errors: string[] = [];
+  const entriesByType = new Map(entries.map((entry) => [entry.type, entry]));
+
+  appendMissingMbtiTypeErrors(errors, entriesByType);
+  for (const entry of entries) {
+    validateMbtiEntryDensity(errors, entry);
+  }
+  validateKeyMbtiSemantics(errors, entriesByType);
 
   return {
     ok: errors.length === 0,

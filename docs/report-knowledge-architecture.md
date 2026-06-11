@@ -114,6 +114,21 @@ meanings and variants, but source/RAG collection is used for DB refinement,
 not output copying. The stored knowledge base must contain original structured
 entries with topic weights, phrase seeds, risks, advice, and bridge tags.
 
+## REPORT-03 MBTI Knowledge Expansion
+
+REPORT-03 expands MBTI DB.
+
+MBTI knowledge is not used as the primary fortune basis. MBTI remains secondary:
+it represents the user's self-recognized personality pattern and helps
+reinforce, contrast, and personalize Saju interpretation.
+
+The report should not say "ENTJ라서 그렇습니다" first. It should say
+"사주에는 이런 구조가 있고, 입력하신 ENTJ 성향도 이 구조와 맞물립니다."
+
+All 16 types are structured by function stack, topic-specific behavior,
+relationship style, work style, money style, risks, growth advice, and Saju
+bridge tags. No copied source paragraphs should be stored in the DB.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

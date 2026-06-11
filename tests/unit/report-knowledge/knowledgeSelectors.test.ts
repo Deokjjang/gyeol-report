@@ -4,6 +4,7 @@ import {
   buildSectionEvidence,
   findFusionRules,
   getMbtiKnowledge,
+  getMbtiTopicEvidence,
   getSajuKnowledgeByIds,
 } from "../../../src/lib/report-knowledge/knowledgeSelectors";
 
@@ -135,7 +136,62 @@ describe("knowledge selectors", () => {
       ]),
     );
     expect(personality.mbtiEvidence.type).toBe("ENTJ");
+    expect(personality.mbtiTopicEvidence?.summary).toContain("ENTJ");
     expect(personality.sajuEvidence.length).toBeGreaterThan(3);
+  });
+
+  it("exposes topic-specific MBTI evidence without making it primary", () => {
+    const work = buildSectionEvidence({
+      sectionId: "work_career",
+      sajuEntryIds: sampleDeokminSajuIds,
+      mbtiType: "ENTJ",
+    });
+    const money = buildSectionEvidence({
+      sectionId: "money_asset",
+      sajuEntryIds: sampleDeokminSajuIds,
+      mbtiType: "ENTJ",
+    });
+    const love = buildSectionEvidence({
+      sectionId: "love_relationship",
+      sajuEntryIds: sampleDeokminSajuIds,
+      mbtiType: "ENTJ",
+    });
+    const weaknesses = buildSectionEvidence({
+      sectionId: "weaknesses",
+      sajuEntryIds: sampleDeokminSajuIds,
+      mbtiType: "ENTJ",
+    });
+
+    expect(Object.keys(work).slice(1, 3)).toEqual(["sajuEvidence", "mbtiEvidence"]);
+    expect(work.mbtiTopicEvidence?.summary).toContain("ENTJ");
+    expect(work.mbtiTopicEvidence?.summary).toContain("work_career");
+    expect(work.mbtiEvidence.workStyleKo?.join(" ")).toContain("성과");
+    expect(money.mbtiEvidence.moneyStyleKo?.join(" ")).toContain("성과");
+    expect(love.mbtiEvidence.loveStyleKo?.join(" ")).toContain("일터");
+    expect(love.mbtiTopicEvidence?.bridgeHints.join(" ")).toContain("재성 강세");
+    expect(weaknesses.mbtiEvidence.riskTags).toEqual(
+      expect.arrayContaining(["emotional_dryness", "direct_speech"]),
+    );
+    expect(work.sajuEvidence.length).toBeGreaterThan(0);
+  });
+
+  it("returns topic helper evidence for ISTJ and INFP bridge cases", () => {
+    const istjMoney = getMbtiTopicEvidence({
+      mbtiType: "ISTJ",
+      topic: "money_asset",
+      matchedTags: ["stability_need", "self_discipline"],
+    });
+    const infpLove = getMbtiTopicEvidence({
+      mbtiType: "INFP",
+      topic: "love_relationship",
+      matchedTags: ["emotional_depth", "relationship_sensitivity"],
+    });
+
+    expect(istjMoney.bridgeHints.join(" ")).toContain("정관과 정재");
+    expect(istjMoney.score).toBeGreaterThan(0.8);
+    expect(infpLove.bridgeHints.join(" ")).toContain("수 기운");
+    expect(infpLove.bridgeHints.join(" ")).toContain("화 부족");
+    expect(infpLove.score).toBeGreaterThan(0.9);
   });
 
   it("finds topic-specific rules for love career money and personality", () => {

@@ -4,6 +4,7 @@ export * from "./interpretationTags";
 export * from "./knowledgeSelectors";
 export * from "./knowledgeValidators";
 export * from "./mbtiKnowledgeBase";
+export * from "./mbtiEvidenceScoring";
 export * from "./mbtiKnowledgeTypes";
 export * from "./reportSectionSchema";
 export * from "./sajuKnowledgeBase";
