@@ -16,6 +16,9 @@ const successPageSource = readFileSync(
 type FakeElement = {
   hidden: boolean;
   textContent: string;
+  attributes: Record<string, string>;
+  setAttribute: (name: string, value: string) => void;
+  removeAttribute: (name: string) => void;
 };
 
 type ScriptWindow = {
@@ -26,18 +29,35 @@ type ScriptWindow = {
   __gyeolTossSuccessConfirmPromise?: Promise<void>;
 };
 
+function createFakeElement(textContent = ""): FakeElement {
+  const element: FakeElement = {
+    hidden: false,
+    textContent,
+    attributes: {},
+    setAttribute(name, value) {
+      element.attributes[name] = value;
+    },
+    removeAttribute(name) {
+      delete element.attributes[name];
+    },
+  };
+
+  return element;
+}
+
 function createFakeElements(): Record<string, FakeElement> {
   return {
-    "[data-confirm-title]": { hidden: false, textContent: "" },
-    "[data-confirm-message]": { hidden: false, textContent: "" },
-    "[data-confirm-details]": { hidden: true, textContent: "" },
-    "[data-confirm-order-id]": { hidden: false, textContent: "" },
-    "[data-confirm-amount]": { hidden: false, textContent: "" },
-    "[data-confirm-status]": { hidden: false, textContent: "" },
-    "[data-confirm-report-id]": { hidden: false, textContent: "" },
-    "[data-confirm-error]": { hidden: true, textContent: "" },
-    "[data-confirm-error-code]": { hidden: false, textContent: "" },
-    "[data-confirm-error-message]": { hidden: false, textContent: "" },
+    "[data-confirm-title]": createFakeElement(),
+    "[data-confirm-message]": createFakeElement(),
+    "[data-confirm-details]": { ...createFakeElement(), hidden: true },
+    "[data-confirm-order-id]": createFakeElement(),
+    "[data-confirm-amount]": createFakeElement(),
+    "[data-confirm-status]": createFakeElement(),
+    "[data-confirm-report-id]": createFakeElement(),
+    "[data-confirm-error]": { ...createFakeElement(), hidden: true },
+    "[data-confirm-error-code]": createFakeElement(),
+    "[data-confirm-error-message]": createFakeElement(),
+    "[data-report-link]": { ...createFakeElement("리포트 보기"), hidden: true },
   };
 }
 
@@ -160,6 +180,7 @@ describe("Toss payment success auto confirm page", () => {
     expect(html).toContain("provider_order_toss_success_test");
     expect(html).toContain("990원");
     expect(html).toContain("/api/payments/toss/confirm");
+    expect(html).toContain("리포트 보기");
     expect(html).not.toContain(fullPaymentKey);
   });
 
@@ -210,6 +231,13 @@ describe("Toss payment success auto confirm page", () => {
     expect(harness.elements["[data-confirm-status]"].textContent).toBe("paid");
     expect(harness.elements["[data-confirm-report-id]"].textContent).toBe(
       "report_toss_success_test",
+    );
+    expect(harness.elements["[data-report-link]"].hidden).toBe(false);
+    expect(harness.elements["[data-report-link]"].attributes.href).toBe(
+      "/reports/report_toss_success_test",
+    );
+    expect(harness.elements["[data-report-link]"].attributes.href).not.toContain(
+      fullPaymentKey,
     );
 
     const renderedState = JSON.stringify(harness.elements);
@@ -360,6 +388,8 @@ describe("Toss payment success auto confirm page", () => {
       "결제 승인 완료",
       "결제 승인 실패",
       "리포트 ID",
+      "리포트 보기",
+      "/reports/",
       "fulfillment",
       "reportId",
       "paymentKey",

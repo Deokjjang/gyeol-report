@@ -21,6 +21,7 @@ The Toss confirm route marks a Toss payment order paid only after Toss confirm r
 The Toss confirm route calls paid report fulfillment only after the payment order is paid.
 The Toss confirm route returns a safe fulfillment report id.
 The Toss confirm route does not create a share link yet.
+The Toss success page now links to the report result entry page by fulfilled report id.
 
 ## Current Payment Architecture
 
@@ -121,6 +122,12 @@ The Toss success page reads `orderId`, `paymentKey`, and `amount` from the Toss 
 When confirm succeeds, the server marks the payment order as paid and fulfills the report.
 The success page displays a safe report-ready state.
 This still does not contain the final 사주×MBTI result content.
+
+## Report Result Entry
+
+After the Toss success page auto-confirms payment, it displays a `리포트 보기` link using the fulfilled `reportId`.
+The report result page currently shows a safe report-ready placeholder.
+Final 사주×MBTI interpretation content and result UX are handled in the next phase.
 
 ## Paid Report Fulfillment Boundary
 
@@ -308,8 +315,9 @@ Use stored payment_order.input_snapshot.
 4. PAYMENT-19 wire Toss confirm to paid transition.
 5. PAYMENT-20 paid payment order fulfillment boundary.
 6. PAYMENT-21 wire Toss confirm to fulfillment.
-7. PAYMENT-22 success page auto-confirm/redirect.
-8. PAYMENT-23 result content and UX refinement.
+7. PAYMENT-22 success page auto-confirm.
+8. PAYMENT-23 reportId result entry page.
+9. Result content and UX refinement.
 
 ## Required Test and Smoke Checklist
 
@@ -343,8 +351,8 @@ Keep mock flags disabled in production.
 No real KakaoPay API call in this task.
 No checkout page in this task.
 No real checkout URL in this task.
-No final report page is complete in this task.
-No result page redirect in the Toss success page yet.
+No final report content is complete in this task.
+No share-token result redirect is implemented in this task.
 No webhook route implementation in this task.
 No wallet/recharge/point system.
 No package products.

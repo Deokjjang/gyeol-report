@@ -24,6 +24,7 @@ describe("payment provider integration runbook source", () => {
       "The Toss confirm route calls paid report fulfillment only after the payment order is paid.",
       "The Toss confirm route returns a safe fulfillment report id.",
       "The Toss confirm route does not create a share link yet.",
+      "The Toss success page now links to the report result entry page by fulfilled report id.",
     ];
 
     for (const marker of requiredMarkers) {
@@ -133,6 +134,19 @@ describe("payment provider integration runbook source", () => {
     }
   });
 
+  it("documents the report result entry boundary", () => {
+    const requiredMarkers = [
+      "## Report Result Entry",
+      "After the Toss success page auto-confirms payment, it displays a `리포트 보기` link using the fulfilled `reportId`.",
+      "The report result page currently shows a safe report-ready placeholder.",
+      "Final 사주×MBTI interpretation content and result UX are handled in the next phase.",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(source).toContain(marker);
+    }
+  });
+
   it("documents the paid report fulfillment boundary", () => {
     const requiredMarkers = [
       "## Paid Report Fulfillment Boundary",
@@ -233,8 +247,9 @@ describe("payment provider integration runbook source", () => {
       "PAYMENT-19 wire Toss confirm to paid transition",
       "PAYMENT-20 paid payment order fulfillment boundary",
       "PAYMENT-21 wire Toss confirm to fulfillment",
-      "PAYMENT-22 success page auto-confirm/redirect",
-      "PAYMENT-23 result content and UX refinement",
+      "PAYMENT-22 success page auto-confirm",
+      "PAYMENT-23 reportId result entry page",
+      "Result content and UX refinement",
     ];
 
     for (const marker of requiredMarkers) {

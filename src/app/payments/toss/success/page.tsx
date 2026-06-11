@@ -41,6 +41,22 @@ export const tossSuccessAutoConfirmScript = `
     }
   }
 
+  function updateReportLink(reportId) {
+    var element = select("[data-report-link]");
+    if (!element) {
+      return;
+    }
+
+    if (typeof reportId !== "string" || reportId.trim().length === 0) {
+      element.hidden = true;
+      element.removeAttribute("href");
+      return;
+    }
+
+    element.setAttribute("href", "/reports/" + encodeURIComponent(reportId));
+    element.hidden = false;
+  }
+
   function safeText(value) {
     return typeof value === "string" && value.trim().length > 0
       ? value.slice(0, 160)
@@ -52,6 +68,7 @@ export const tossSuccessAutoConfirmScript = `
     setText("[data-confirm-message]", "결제 승인에 필요한 정보가 누락되었습니다.");
     setHidden("[data-confirm-details]", true);
     setHidden("[data-confirm-error]", true);
+    updateReportLink("");
   }
 
   function showAmountMismatch(orderId, amount) {
@@ -61,6 +78,7 @@ export const tossSuccessAutoConfirmScript = `
     setText("[data-confirm-amount]", safeText(amount));
     setHidden("[data-confirm-details]", false);
     setHidden("[data-confirm-error]", true);
+    updateReportLink("");
   }
 
   function showFailure(error, orderId, amount) {
@@ -74,6 +92,7 @@ export const tossSuccessAutoConfirmScript = `
     setText("[data-confirm-error-message]", safeText(error && error.message));
     setHidden("[data-confirm-details]", false);
     setHidden("[data-confirm-error]", false);
+    updateReportLink("");
   }
 
   function showSuccess(body) {
@@ -88,6 +107,7 @@ export const tossSuccessAutoConfirmScript = `
     setText("[data-confirm-report-id]", safeText(body.fulfillment.reportId));
     setHidden("[data-confirm-details]", false);
     setHidden("[data-confirm-error]", true);
+    updateReportLink(body.fulfillment.reportId);
   }
 
   function isSuccessBody(value) {
@@ -289,6 +309,14 @@ export default async function TossPaymentSuccessPage({
               메시지: <span data-confirm-error-message>not provided</span>
             </p>
           </div>
+
+          <a
+            className="inline-flex w-full items-center justify-center rounded-lg bg-neutral-50 px-4 py-3 text-sm font-semibold text-neutral-950 transition hover:bg-white sm:w-auto"
+            data-report-link
+            hidden
+          >
+            리포트 보기
+          </a>
         </div>
       </section>
 

@@ -19,6 +19,8 @@ describe("Toss payment success page source", () => {
       "서버 승인 처리 중 문제가 발생했습니다.",
       "결제 정보가 부족합니다.",
       "결제 금액이 올바르지 않습니다.",
+      "리포트 보기",
+      "/reports/",
       "fulfillment",
       "reportId",
     ];
