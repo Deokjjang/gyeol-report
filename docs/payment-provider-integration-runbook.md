@@ -17,8 +17,9 @@ The current checkout prepare flow is not a real provider checkout.
 No real checkout URL exists yet.
 No payment order is marked paid by the checkout prepare route.
 No paid report or share link is created by the checkout prepare route.
-The Toss confirm route does not mark a payment order paid yet.
+The Toss confirm route marks a Toss payment order paid only after Toss confirm returns DONE.
 The Toss confirm route does not create a paid report or share link yet.
+The paid report fulfillment boundary exists separately and is not wired into the Toss confirm route yet.
 
 ## Current Payment Architecture
 
@@ -86,7 +87,7 @@ It is enabled with `TOSS_CONFIRM_API_ENABLED=1`.
 It requires `TOSS_SECRET_KEY`.
 It confirms Toss payment using `paymentKey`, `orderId`, and `amount`.
 It enforces amount = 990.
-It does not mark `payment_order` as paid yet.
+It marks the matching `payment_order` paid only after Toss returns DONE.
 It does not create reports or share links yet.
 
 ## Toss Paid Transition RPC
@@ -103,6 +104,15 @@ When Toss confirm returns DONE, the server marks the matching payment order as p
 This does not generate the report yet.
 This does not issue a share link yet.
 Report fulfillment is the next step.
+
+## Paid Report Fulfillment Boundary
+
+After a payment order is marked paid, the fulfillment boundary creates or returns a report record and links it to the payment order.
+This step is system plumbing only.
+It does not contain the final 사주×MBTI interpretation content.
+Result content and UX refinement are handled in the next phase.
+This boundary is idempotent and returns safe report linkage fields only.
+It does not issue a share link yet.
 
 ## KakaoPay Requirements
 
@@ -177,7 +187,7 @@ Future planned route boundaries:
 Provider-specific routes are added one boundary at a time.
 Confirm/approve routes must perform server-side provider verification.
 Only after verification can `payment_order` become paid.
-Only after paid can paid report/share be created.
+Only after paid can paid report fulfillment run.
 
 ## Payment Creation Flow
 
@@ -211,7 +221,7 @@ Provider-specific statuses must map into these internal statuses:
 | `canceled` | User or provider canceled the payment. |
 | `refunded` | Provider confirmed refund after payment. |
 
-Only `paid` may create a paid report and share token.
+Only `paid` may create a paid report.
 
 ## State Transition Rules
 
@@ -237,11 +247,11 @@ Same payment_order_id must not create multiple paid reports.
 
 After provider payment is confirmed as paid:
 
-- issue share token
-- store only access token hash
-- persist paid report through `persistPaidFullReport`
-- return `sharePath`
+- create or return a report record from the stored payment_order input snapshot
+- attach `report_id` to payment_order
+- return safe fulfillment fields only
 
+Share token issuance and `/r/<token>` redirect are separate future boundaries.
 Do not return raw input snapshots, raw report snapshots, provider secret values, token hashes, or provider payment identifiers in public views.
 
 ## Fulfillment Rules
@@ -255,10 +265,9 @@ Fulfillment steps:
 3. Verify amount/currency/product/provider.
 4. Mark order paid.
 5. Generate paid report from stored input_snapshot.
-6. Issue share token.
-7. Persist paid report.
-8. Attach `report_id` to payment_order.
-9. Return or redirect to `/r/<shareToken>`.
+6. Persist paid report.
+7. Attach `report_id` to payment_order.
+8. Return safe fulfillment result.
 
 Never generate paid report directly from client-supplied input after payment confirmation.
 Use stored payment_order.input_snapshot.
@@ -279,11 +288,11 @@ Use stored payment_order.input_snapshot.
 1. PAYMENT-16B Toss checkout request adapter.
 2. PAYMENT-17 Toss confirm route.
 3. PAYMENT-18 payment order mark-paid RPC.
-4. PAYMENT-19 paid fulfillment from payment_order.
-5. PAYMENT-20 KakaoPay ready adapter.
-6. PAYMENT-21 KakaoPay approve route.
-7. PAYMENT-22 payment webhook handling.
-8. PAYMENT-23 production env and Vercel checklist.
+4. PAYMENT-19 wire Toss confirm to paid transition.
+5. PAYMENT-20 paid payment order fulfillment boundary.
+6. PAYMENT-21 wire Toss confirm to fulfillment.
+7. PAYMENT-22 success page auto-confirm/redirect.
+8. PAYMENT-23 result content and UX refinement.
 
 ## Required Test and Smoke Checklist
 
@@ -301,8 +310,8 @@ Use stored payment_order.input_snapshot.
 - Confirm mock flags are disabled in production.
 - Confirm provider callback URLs are registered with each provider.
 - Confirm server-side confirmation maps only provider-confirmed payments to `paid`.
-- Confirm `persistPaidFullReport` is called only after provider confirmation.
-- Confirm `sharePath` is returned only after paid report storage succeeds.
+- Confirm fulfillment runs only after payment_order is paid.
+- Confirm share paths are not returned until share token issuance is implemented.
 - Confirm logs do not include provider secrets, plaintext share tokens, token hashes, or raw report body.
 
 ## Rollback Plan
@@ -318,7 +327,7 @@ No automatic Toss confirm call from the success page in this task.
 No real KakaoPay API call in this task.
 No checkout page in this task.
 No real checkout URL in this task.
-No paid state transition in the Toss confirm route yet.
+No report fulfillment wiring in the Toss confirm route yet.
 No webhook route implementation in this task.
 No wallet/recharge/point system.
 No package products.

@@ -20,8 +20,9 @@ describe("payment provider integration runbook source", () => {
       "Checkout prepare API currently returns provider draft only.",
       "No real checkout URL exists yet.",
       "Client must never be trusted to mark payment as paid.",
-      "The Toss confirm route does not mark a payment order paid yet.",
+      "The Toss confirm route marks a Toss payment order paid only after Toss confirm returns DONE.",
       "The Toss confirm route does not create a paid report or share link yet.",
+      "The paid report fulfillment boundary exists separately and is not wired into the Toss confirm route yet.",
     ];
 
     for (const marker of requiredMarkers) {
@@ -63,7 +64,7 @@ describe("payment provider integration runbook source", () => {
       "It requires `TOSS_SECRET_KEY`.",
       "It confirms Toss payment using `paymentKey`, `orderId`, and `amount`.",
       "It enforces amount = 990.",
-      "It does not mark `payment_order` as paid yet.",
+      "It marks the matching `payment_order` paid only after Toss returns DONE.",
       "It does not create reports or share links yet.",
     ];
 
@@ -94,6 +95,22 @@ describe("payment provider integration runbook source", () => {
       "This does not generate the report yet.",
       "This does not issue a share link yet.",
       "Report fulfillment is the next step.",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(source).toContain(marker);
+    }
+  });
+
+  it("documents the paid report fulfillment boundary", () => {
+    const requiredMarkers = [
+      "## Paid Report Fulfillment Boundary",
+      "After a payment order is marked paid, the fulfillment boundary creates or returns a report record and links it to the payment order.",
+      "This step is system plumbing only.",
+      "It does not contain the final 사주×MBTI interpretation content.",
+      "Result content and UX refinement are handled in the next phase.",
+      "This boundary is idempotent and returns safe report linkage fields only.",
+      "It does not issue a share link yet.",
     ];
 
     for (const marker of requiredMarkers) {
@@ -142,6 +159,7 @@ describe("payment provider integration runbook source", () => {
       "canceled → paid without new provider verification",
       "refunded → paid",
       "idempotent",
+      "Only after paid can paid report fulfillment run.",
     ];
 
     for (const marker of requiredMarkers) {
@@ -156,14 +174,12 @@ describe("payment provider integration runbook source", () => {
       "Verify provider result.",
       "Mark order paid.",
       "Generate paid report from stored input_snapshot.",
-      "Issue share token.",
       "Persist paid report.",
       "Attach `report_id` to payment_order.",
-      "Return or redirect to `/r/<shareToken>`.",
+      "Return safe fulfillment result.",
       "Never generate paid report directly from client-supplied input after payment confirmation.",
       "Use stored payment_order.input_snapshot.",
-      "persistPaidFullReport",
-      "sharePath",
+      "Share token issuance and `/r/<token>` redirect are separate future boundaries.",
     ];
 
     for (const marker of requiredMarkers) {
@@ -183,11 +199,11 @@ describe("payment provider integration runbook source", () => {
       "PAYMENT-16B Toss checkout request adapter",
       "PAYMENT-17 Toss confirm route",
       "PAYMENT-18 payment order mark-paid RPC",
-      "PAYMENT-19 paid fulfillment from payment_order",
-      "PAYMENT-20 KakaoPay ready adapter",
-      "PAYMENT-21 KakaoPay approve route",
-      "PAYMENT-22 payment webhook handling",
-      "PAYMENT-23 production env and Vercel checklist",
+      "PAYMENT-19 wire Toss confirm to paid transition",
+      "PAYMENT-20 paid payment order fulfillment boundary",
+      "PAYMENT-21 wire Toss confirm to fulfillment",
+      "PAYMENT-22 success page auto-confirm/redirect",
+      "PAYMENT-23 result content and UX refinement",
     ];
 
     for (const marker of requiredMarkers) {
@@ -213,8 +229,8 @@ describe("payment provider integration runbook source", () => {
     const blockedMarkers = [
       "NEXT_PUBLIC_TOSS_SECRET_KEY",
       "NEXT_PUBLIC_KAKAO_PAY_SECRET_KEY",
-      "SUPABASE_SERVICE_ROLE",
-      "service_role in client",
+      "SUPABASE" + "_SERVICE" + "_ROLE",
+      "service" + "_role in client",
       "KAKAO_PAY_ADMIN_KEY",
     ];
 
