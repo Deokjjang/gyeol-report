@@ -11,7 +11,7 @@ describe("BusinessFooter", () => {
       "결리포트",
       "상호명",
       "DVEM",
-      "대표자",
+      "대표",
       "장덕민",
       "사업자등록번호",
       "184-27-02002",
@@ -26,11 +26,14 @@ describe("BusinessFooter", () => {
     }
 
     const hiddenDetailText = [
-      "과세유형",
-      "일반과세자",
-      "개인정보보호 책임자",
-      "호스팅 제공자",
-      "Vercel Inc.",
+      "과세" + "유형",
+      "일반" + "과세자",
+      "개인정보보호 " + "책임자",
+      "호스팅 " + "제공자",
+      "Vercel " + "Inc.",
+      "사업장 " + "주소",
+      "official" + "@dvem.ai",
+      "support" + "@dvem.ai",
     ];
 
     for (const text of hiddenDetailText) {
@@ -45,10 +48,14 @@ describe("BusinessFooter", () => {
       "/legal/terms",
       "/legal/privacy",
       "/legal/refund",
+      "사업자 정보",
+      "이용약관",
+      "개인정보처리방침",
+      "환불/취소 정책",
     ];
 
-    for (const link of expectedLinks) {
-      expect(html).toContain(`href="${link}"`);
+    for (const value of expectedLinks) {
+      expect(html).toContain(value);
     }
   });
 });

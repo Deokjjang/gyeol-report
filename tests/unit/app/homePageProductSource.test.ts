@@ -8,18 +8,15 @@ describe("home page product source", () => {
     const html = renderToStaticMarkup(Home());
     const requiredMarkers = [
       "결리포트",
-      "사주와 MBTI를 함께 보는 자기이해 리포트",
-      "현재 구매 가능한 리포트",
-      "사주×MBTI 전체 리포트",
-      "정가 1,290원",
-      "런칭가 990원",
-      "곧 추가될 리포트",
-      "2026 하반기 운세",
+      "사주와 MBTI로 보는 나의 결",
+      "하반기 운세",
+      "종합 리포트",
+      "대운 리포트",
+      "세운 리포트",
       "궁합 리포트",
-      "준비 중",
-      "런칭가 990원",
-      "/products",
-      "/products/saju-mbti-full",
+      "출시 준비 중",
+      "990원",
+      "시작하기",
       "/report/new",
     ];
 
@@ -33,6 +30,11 @@ describe("home page product source", () => {
       "대운 구매",
       "세운 구매",
       "궁합 구매",
+      "현재 구매 가능한 " + "상품 1개",
+      "현재 구매 가능한 " + "리포트",
+      "이용 " + "흐름",
+      "상품 상세 보기",
+      "결제금액 990원",
     ];
 
     for (const marker of blockedMarkers) {

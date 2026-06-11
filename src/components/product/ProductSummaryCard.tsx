@@ -25,8 +25,11 @@ export default function ProductSummaryCard({
             </span>
           </div>
           <h2 className="text-2xl font-bold tracking-tight text-neutral-950">
-            {product.nameKo}
+            {product.fullNameKo}
           </h2>
+          <p className="text-sm font-semibold text-neutral-500">
+            {product.nameKo}
+          </p>
           <p className="text-sm leading-6 text-neutral-600">
             {product.summaryKo}
           </p>
@@ -39,7 +42,7 @@ export default function ProductSummaryCard({
           >
             <dt className="text-neutral-500">정가</dt>
             <dd className="mt-1 text-base font-semibold text-neutral-400 line-through">
-              {product.listPriceKo}
+              {product.listPriceLabelKo}
             </dd>
           </div>
           <div
@@ -48,7 +51,7 @@ export default function ProductSummaryCard({
           >
             <dt className="text-rose-700">런칭가</dt>
             <dd className="mt-1 text-2xl font-extrabold text-rose-700">
-              {product.priceKo}
+              {product.priceLabelKo}
             </dd>
           </div>
           <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">

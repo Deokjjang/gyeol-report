@@ -1,12 +1,15 @@
 export const GYEOL_PRODUCTS = [
   {
-    id: "saju_mbti_full",
+    id: "comprehensive",
     productType: "saju_mbti_full",
     paymentProductType: "saju_mbti_full",
     slug: "saju-mbti-full",
-    nameKo: "사주×MBTI 전체 리포트",
+    nameKo: "종합 리포트",
+    fullNameKo: "사주×MBTI 전체 리포트",
     priceKo: "990원",
+    priceLabelKo: "990원",
     listPriceKo: "1,290원",
+    listPriceLabelKo: "1,290원",
     salePriceKo: "런칭가 990원",
     priceAmount: 990,
     listPriceAmount: 1290,
@@ -15,8 +18,10 @@ export const GYEOL_PRODUCTS = [
     currency: "KRW",
     status: "available",
     isPurchasable: true,
+    href: "/report/new",
     ctaHref: "/report/new",
     badgeKo: "런칭가",
+    visualKey: "comprehensive",
     deliveryTypeKo: "결제 승인 후 온라인 열람",
     formatKo: "디지털 리포트",
     summaryKo:
@@ -28,20 +33,14 @@ export const GYEOL_PRODUCTS = [
 
 export const GYEOL_COMING_SOON_PRODUCTS = [
   {
-    id: "second_half_2026",
-    nameKo: "2026 하반기 운세",
+    id: "second_half",
+    nameKo: "하반기 운세",
     shortDescriptionKo: "하반기 흐름을 세운 기준으로 가볍게 정리하는 리포트",
     status: "coming_soon",
     isPurchasable: false,
-    badgeKo: "준비 중",
-  },
-  {
-    id: "traditional_saju_report",
-    nameKo: "정통 사주 리포트",
-    shortDescriptionKo: "사주 구조와 오행 흐름을 더 전통적인 구성으로 정리하는 리포트",
-    status: "coming_soon",
-    isPurchasable: false,
-    badgeKo: "준비 중",
+    href: null,
+    badgeKo: "출시 준비 중",
+    visualKey: "half_year",
   },
   {
     id: "compatibility_report",
@@ -49,7 +48,9 @@ export const GYEOL_COMING_SOON_PRODUCTS = [
     shortDescriptionKo: "두 사람의 성향과 관계 흐름을 참고용으로 비교하는 리포트",
     status: "coming_soon",
     isPurchasable: false,
-    badgeKo: "준비 중",
+    href: null,
+    badgeKo: "출시 준비 중",
+    visualKey: "compatibility",
   },
   {
     id: "daewoon_report",
@@ -57,7 +58,9 @@ export const GYEOL_COMING_SOON_PRODUCTS = [
     shortDescriptionKo: "큰 흐름을 자기관리 관점에서 살펴보는 리포트",
     status: "coming_soon",
     isPurchasable: false,
-    badgeKo: "준비 중",
+    href: null,
+    badgeKo: "출시 준비 중",
+    visualKey: "daewoon",
   },
   {
     id: "saewoon_report",
@@ -65,10 +68,21 @@ export const GYEOL_COMING_SOON_PRODUCTS = [
     shortDescriptionKo: "연간 흐름을 일과 관계 활용 관점에서 정리하는 리포트",
     status: "coming_soon",
     isPurchasable: false,
-    badgeKo: "준비 중",
+    href: null,
+    badgeKo: "출시 준비 중",
+    visualKey: "saewoon",
   },
+] as const;
+
+export const GYEOL_HOME_PRODUCT_GRID = [
+  GYEOL_COMING_SOON_PRODUCTS[0],
+  GYEOL_PRODUCTS[0],
+  GYEOL_COMING_SOON_PRODUCTS[2],
+  GYEOL_COMING_SOON_PRODUCTS[3],
+  GYEOL_COMING_SOON_PRODUCTS[1],
 ] as const;
 
 export type GyeolProduct = (typeof GYEOL_PRODUCTS)[number];
 export type GyeolComingSoonProduct =
   (typeof GYEOL_COMING_SOON_PRODUCTS)[number];
+export type GyeolProductGridItem = (typeof GYEOL_HOME_PRODUCT_GRID)[number];

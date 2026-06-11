@@ -27,11 +27,10 @@ describe("launch flag UI boundary source", () => {
   it("keeps home page scoped to review-ready product CTA without paid overclaim", () => {
     const source = readFile("src/app/page.tsx");
     const expectedMarkers = [
-      "현재 구매 가능한 상품 1개",
-      "리포트 시작하기",
-      "/products/saju-mbti-full",
-      "/report/new",
-      "환불/취소 정책",
+      "ProductGrid",
+      "GYEOL_HOME_PRODUCT_GRID",
+      "사주와 MBTI로 보는 나의 결",
+      "activeProduct.cautionKo",
     ];
     const activePurchaseMarkers = [
       "결제" + "하기",
@@ -47,6 +46,9 @@ describe("launch flag UI boundary source", () => {
     for (const marker of activePurchaseMarkers) {
       expect(source).not.toContain(marker);
     }
+    expect(source).not.toContain("현재 구매 가능한 " + "상품 1개");
+    expect(source).not.toContain("현재 구매 가능한 " + "리포트");
+    expect(source).not.toContain("이용 " + "흐름");
   });
 
   it("keeps report new page safe checkout preparation copy visible", () => {

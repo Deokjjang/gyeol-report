@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   GYEOL_COMING_SOON_PRODUCTS,
+  GYEOL_HOME_PRODUCT_GRID,
   GYEOL_PRODUCTS,
 } from "../../../src/lib/product/gyeolProducts";
 
@@ -13,11 +14,12 @@ describe("GYEOL_PRODUCTS", () => {
     );
 
     expect(GYEOL_PRODUCTS[0]).toMatchObject({
-      id: "saju_mbti_full",
+      id: "comprehensive",
       productType: "saju_mbti_full",
       paymentProductType: "saju_mbti_full",
       slug: "saju-mbti-full",
-      nameKo: "사주×MBTI 전체 리포트",
+      nameKo: "종합 리포트",
+      fullNameKo: "사주×MBTI 전체 리포트",
       priceAmount: 990,
       listPriceAmount: 1290,
       salePriceAmount: 990,
@@ -28,6 +30,7 @@ describe("GYEOL_PRODUCTS", () => {
       salePriceKo: "런칭가 990원",
       status: "available",
       isPurchasable: true,
+      href: "/report/new",
       ctaHref: "/report/new",
       formatKo: "디지털 리포트",
       deliveryTypeKo: "결제 승인 후 온라인 열람",
@@ -40,8 +43,7 @@ describe("GYEOL_PRODUCTS", () => {
     );
 
     expect(comingSoonNames).toEqual([
-      "2026 하반기 운세",
-      "정통 사주 리포트",
+      "하반기 운세",
       "궁합 리포트",
       "대운 리포트",
       "세운 리포트",
@@ -51,9 +53,23 @@ describe("GYEOL_PRODUCTS", () => {
         (product) =>
           product.status === "coming_soon" &&
           product.isPurchasable === false &&
-          product.badgeKo === "준비 중",
+          product.href === null &&
+          product.badgeKo === "출시 준비 중",
       ),
     ).toBe(true);
+  });
+
+  it("orders the home product grid with only the comprehensive report purchasable", () => {
+    expect(GYEOL_HOME_PRODUCT_GRID.map((product) => product.nameKo)).toEqual([
+      "하반기 운세",
+      "종합 리포트",
+      "대운 리포트",
+      "세운 리포트",
+      "궁합 리포트",
+    ]);
+    expect(
+      GYEOL_HOME_PRODUCT_GRID.filter((product) => product.isPurchasable),
+    ).toEqual([GYEOL_PRODUCTS[0]]);
   });
 
   it("does not expose blocked future markers as public sellable products", () => {

@@ -11,7 +11,9 @@ const productPageSources = [
   readSource("src/components/product/ProductVisual.tsx"),
   readSource("src/components/product/ProductSummaryCard.tsx"),
   readSource("src/components/product/ComingSoonProductCard.tsx"),
-  readSource("src/components/product/ProductCategoryChips.tsx"),
+  readSource("src/components/product/ProductGrid.tsx"),
+  readSource("src/components/product/ProductTile.tsx"),
+  readSource("src/components/product/ProductTileVisual.tsx"),
   readSource("src/app/products/page.tsx"),
   readSource("src/app/products/saju-mbti-full/page.tsx"),
 ].join("\n");
@@ -19,7 +21,9 @@ const productPageSources = [
 describe("product pages source", () => {
   it("contains required Toss review product phrases", () => {
     const requiredMarkers = [
-      "상품 안내",
+      "상품",
+      "결리포트에서 제공하는 리포트",
+      "종합 리포트",
       "사주×MBTI 전체 리포트",
       "정가 1,290원",
       "런칭가 990원",
@@ -31,12 +35,12 @@ describe("product pages source", () => {
       "중복 결제",
       "시스템 오류",
       "리포트 미제공",
-      "2026 하반기 운세",
-      "정통 사주 리포트",
+      "하반기 운세",
       "궁합 리포트",
       "대운 리포트",
       "세운 리포트",
-      "준비 중",
+      "출시 준비 중",
+      "시작하기",
     ];
 
     for (const marker of requiredMarkers) {
@@ -48,9 +52,14 @@ describe("product pages source", () => {
     const requiredMarkers = [
       "coming_soon",
       "isPurchasable: false",
+      "href: null",
       'disabled',
       'aria-disabled="true"',
-      "아직 결제와 연결되어 있지 않습니다",
+      "half_year",
+      "comprehensive",
+      "daewoon",
+      "saewoon",
+      "compatibility",
     ];
 
     for (const marker of requiredMarkers) {
@@ -62,6 +71,7 @@ describe("product pages source", () => {
     const blockedMarkers = [
       "빈 카테고리",
       "출시 예정 상품 구매하기",
+      "하반기 운세 " + "구매하기",
       "오행팔찌 구매",
       "굿즈 구매",
       "대운 구매",
