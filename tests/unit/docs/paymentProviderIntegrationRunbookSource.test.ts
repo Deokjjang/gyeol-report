@@ -119,6 +119,20 @@ describe("payment provider integration runbook source", () => {
     }
   });
 
+  it("documents Toss success page auto confirm", () => {
+    const requiredMarkers = [
+      "## Toss Success Page Auto Confirm",
+      "The Toss success page reads `orderId`, `paymentKey`, and `amount` from the Toss redirect URL and calls the server confirm API.",
+      "When confirm succeeds, the server marks the payment order as paid and fulfills the report.",
+      "The success page displays a safe report-ready state.",
+      "This still does not contain the final 사주×MBTI result content.",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(source).toContain(marker);
+    }
+  });
+
   it("documents the paid report fulfillment boundary", () => {
     const requiredMarkers = [
       "## Paid Report Fulfillment Boundary",

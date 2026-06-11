@@ -115,6 +115,13 @@ This creates or returns a report id and links it to the paid payment order.
 This step does not contain the final 사주×MBTI interpretation content.
 Result content and result page UX are handled in the next phase.
 
+## Toss Success Page Auto Confirm
+
+The Toss success page reads `orderId`, `paymentKey`, and `amount` from the Toss redirect URL and calls the server confirm API.
+When confirm succeeds, the server marks the payment order as paid and fulfills the report.
+The success page displays a safe report-ready state.
+This still does not contain the final 사주×MBTI result content.
+
 ## Paid Report Fulfillment Boundary
 
 After a payment order is marked paid, the fulfillment boundary creates or returns a report record and links it to the payment order.
@@ -333,10 +340,10 @@ Keep mock flags disabled in production.
 
 ## Non-Goals
 
-No automatic Toss confirm call from the success page in this task.
 No real KakaoPay API call in this task.
 No checkout page in this task.
 No real checkout URL in this task.
+No final report page is complete in this task.
 No result page redirect in the Toss success page yet.
 No webhook route implementation in this task.
 No wallet/recharge/point system.
