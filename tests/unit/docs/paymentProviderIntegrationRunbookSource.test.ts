@@ -72,6 +72,21 @@ describe("payment provider integration runbook source", () => {
     }
   });
 
+  it("documents the Toss paid transition RPC boundary", () => {
+    const requiredMarkers = [
+      "## Toss Paid Transition RPC",
+      "After Toss confirm returns DONE, the server will call `mark_toss_payment_order_paid`.",
+      "This transition only marks a ready Toss payment order as paid.",
+      "It stores the provider payment id server-side.",
+      "It does not create reports or share links.",
+      "Paid report fulfillment is a separate next step.",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(source).toContain(marker);
+    }
+  });
+
   it("documents KakaoPay official integration requirements and env placeholders", () => {
     const requiredMarkers = [
       "KakaoPay integration must use the official KakaoPay online single-payment API.",

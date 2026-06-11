@@ -89,6 +89,14 @@ It enforces amount = 990.
 It does not mark `payment_order` as paid yet.
 It does not create reports or share links yet.
 
+## Toss Paid Transition RPC
+
+After Toss confirm returns DONE, the server will call `mark_toss_payment_order_paid`.
+This transition only marks a ready Toss payment order as paid.
+It stores the provider payment id server-side.
+It does not create reports or share links.
+Paid report fulfillment is a separate next step.
+
 ## KakaoPay Requirements
 
 KakaoPay integration must use the official KakaoPay online single-payment API.
