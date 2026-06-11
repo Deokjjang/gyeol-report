@@ -2,12 +2,13 @@
 
 ## Purpose
 
-This runbook freezes the official-provider requirements for future Toss and KakaoPay integration before any real provider API is called.
+This runbook freezes the official-provider requirements for Toss and KakaoPay integration while keeping provider confirmation, paid state transition, and paid fulfillment as separate boundaries.
 
 ## Current State
 
-Current implementation is mock-only.
-Real Toss and KakaoPay APIs are not called yet.
+Current implementation includes a Toss confirm route that is disabled by default.
+The Toss confirm route calls the real Toss confirm API only when explicitly enabled.
+Real KakaoPay APIs are not called yet.
 Mock payment API is disabled by default.
 Mock payment UI is hidden by default.
 
@@ -16,6 +17,8 @@ The current checkout prepare flow is not a real provider checkout.
 No real checkout URL exists yet.
 No payment order is marked paid by the checkout prepare route.
 No paid report or share link is created by the checkout prepare route.
+The Toss confirm route does not mark a payment order paid yet.
+The Toss confirm route does not create a paid report or share link yet.
 
 ## Current Payment Architecture
 
@@ -54,7 +57,7 @@ Server must confirm or authorize the payment after redirect/callback.
 Before changing an order to paid, the server must verify:
 
 - `paymentOrderId` / `providerOrderId`
-- amount = 1290
+- amount = 990
 - currency = KRW
 - productType = `saju_mbti_full`
 - provider = `toss`
@@ -76,6 +79,16 @@ TOSS_WEBHOOK_SECRET=<toss-webhook-secret>
 
 Do not expose `TOSS_SECRET_KEY` to client-side code.
 
+## Toss Confirm Route
+
+`POST /api/payments/toss/confirm` is server-only and disabled by default.
+It is enabled with `TOSS_CONFIRM_API_ENABLED=1`.
+It requires `TOSS_SECRET_KEY`.
+It confirms Toss payment using `paymentKey`, `orderId`, and `amount`.
+It enforces amount = 990.
+It does not mark `payment_order` as paid yet.
+It does not create reports or share links yet.
+
 ## KakaoPay Requirements
 
 KakaoPay integration must use the official KakaoPay online single-payment API.
@@ -89,7 +102,7 @@ Secret key must stay server-only.
 Before changing an order to paid, the server must verify:
 
 - `paymentOrderId` / `providerOrderId`
-- amount = 1290
+- amount = 990
 - currency = KRW
 - productType = `saju_mbti_full`
 - provider = `kakao_pay`
@@ -114,6 +127,7 @@ Use placeholders only when documenting or configuring environments:
 
 ```text
 TOSS_CLIENT_KEY=<toss-client-key>
+TOSS_CONFIRM_API_ENABLED=1
 TOSS_SECRET_KEY=<toss-secret-key>
 TOSS_SUCCESS_URL=<toss-success-url>
 TOSS_FAIL_URL=<toss-fail-url>
@@ -145,7 +159,7 @@ Future planned route boundaries:
 - `/api/payments/webhooks/toss`
 
 `/api/payment-checkout/prepare` creates a ready order and provider draft.
-Provider-specific routes will be added later.
+Provider-specific routes are added one boundary at a time.
 Confirm/approve routes must perform server-side provider verification.
 Only after verification can `payment_order` become paid.
 Only after paid can paid report/share be created.
@@ -285,11 +299,11 @@ Keep mock flags disabled in production.
 
 ## Non-Goals
 
-No real Toss API call in this task.
+No automatic Toss confirm call from the success page in this task.
 No real KakaoPay API call in this task.
 No checkout page in this task.
 No real checkout URL in this task.
-No approval or confirm route implementation in this task.
+No paid state transition in the Toss confirm route yet.
 No webhook route implementation in this task.
 No wallet/recharge/point system.
 No package products.

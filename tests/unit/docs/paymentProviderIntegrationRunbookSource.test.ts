@@ -11,14 +11,17 @@ describe("payment provider integration runbook source", () => {
   it("documents current architecture without runtime implementation claims", () => {
     const requiredMarkers = [
       "Payment Provider Integration Runbook",
-      "Current implementation is mock-only.",
-      "Real Toss and KakaoPay APIs are not called yet.",
+      "Current implementation includes a Toss confirm route that is disabled by default.",
+      "The Toss confirm route calls the real Toss confirm API only when explicitly enabled.",
+      "Real KakaoPay APIs are not called yet.",
       "One report per one payment",
       "ready payment_order",
       "server-side provider confirmation",
       "Checkout prepare API currently returns provider draft only.",
       "No real checkout URL exists yet.",
       "Client must never be trusted to mark payment as paid.",
+      "The Toss confirm route does not mark a payment order paid yet.",
+      "The Toss confirm route does not create a paid report or share link yet.",
     ];
 
     for (const marker of requiredMarkers) {
@@ -33,17 +36,35 @@ describe("payment provider integration runbook source", () => {
       "Server must confirm or authorize the payment after redirect/callback.",
       "paymentOrderId",
       "providerOrderId",
-      "amount = 1290",
+      "amount = 990",
       "currency = KRW",
       "productType = `saju_mbti_full`",
       "provider = `toss`",
       "Test and live keys must be separated.",
       "TOSS_CLIENT_KEY",
+      "TOSS_CONFIRM_API_ENABLED",
       "TOSS_SECRET_KEY",
       "TOSS_SUCCESS_URL",
       "TOSS_FAIL_URL",
       "TOSS_WEBHOOK_SECRET",
       "Do not expose `TOSS_SECRET_KEY` to client-side code.",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(source).toContain(marker);
+    }
+  });
+
+  it("documents the Toss confirm route boundary", () => {
+    const requiredMarkers = [
+      "## Toss Confirm Route",
+      "`POST /api/payments/toss/confirm` is server-only and disabled by default.",
+      "It is enabled with `TOSS_CONFIRM_API_ENABLED=1`.",
+      "It requires `TOSS_SECRET_KEY`.",
+      "It confirms Toss payment using `paymentKey`, `orderId`, and `amount`.",
+      "It enforces amount = 990.",
+      "It does not mark `payment_order` as paid yet.",
+      "It does not create reports or share links yet.",
     ];
 
     for (const marker of requiredMarkers) {
@@ -59,6 +80,7 @@ describe("payment provider integration runbook source", () => {
       "CID is required after merchant review/approval.",
       "Web domain registration is required.",
       "Single payment flow should be modeled as ready → approve.",
+      "amount = 990",
       "provider = `kakao_pay`",
       "KAKAO_PAY_CLIENT_ID",
       "KAKAO_PAY_SECRET_KEY",
@@ -149,6 +171,8 @@ describe("payment provider integration runbook source", () => {
       "Real Toss checkout is implemented",
       "Real KakaoPay checkout is implemented",
       "Production payment is live",
+      "No real Toss API call in this task.",
+      "No approval or confirm route implementation in this task.",
     ];
 
     for (const marker of blockedMarkers) {

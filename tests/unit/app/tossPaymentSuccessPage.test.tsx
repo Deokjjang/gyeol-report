@@ -28,12 +28,12 @@ describe("Toss payment success placeholder page", () => {
     const html = await renderSuccessPage({
       paymentKey: fullPaymentKey,
       orderId: "provider_order_toss_success_test",
-      amount: "1290",
+      amount: "990",
     });
 
     expect(html).toContain("결제 승인 대기");
     expect(html).toContain("provider_order_toss_success_test");
-    expect(html).toContain("1290");
+    expect(html).toContain("990");
     expect(html).toContain("paymentKeyReceived");
     expect(html).toContain("yes");
     expect(html).not.toContain(fullPaymentKey);
@@ -42,7 +42,7 @@ describe("Toss payment success placeholder page", () => {
   it("shows payment key absence without exposing a value", async () => {
     const html = await renderSuccessPage({
       orderId: "provider_order_toss_success_no_key",
-      amount: "1290",
+      amount: "990",
     });
 
     expect(html).toContain("paymentKeyReceived");
