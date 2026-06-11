@@ -150,6 +150,21 @@ evidence, and matched fusion evidence for each canonical report section.
 Saju remains primary. MBTI supports and contrasts the Saju basis. The report
 should feel Saju-first, with MBTI increasing personal accuracy.
 
+## REPORT-05 Computed Facts Mapping
+
+REPORT-05 maps computed Saju facts to knowledge entry ids.
+
+The system separates Saju calculation from report interpretation. A calculation
+layer produces computed facts such as day master, day pillar, element balance,
+ten-god signals, patterns, sinsal, and gwiin. REPORT-05 maps those computed
+facts to the structured Saju knowledge base.
+
+Computed facts are not invented by the mapper. The mapper must never invent a
+Saju entry. Unsupported facts are returned as warnings and unmapped facts so the
+knowledge base can be expanded safely. Mapping happens before evidence packet
+construction, and full manse calculation is separate from mapping when no
+compatible calculator is available.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

@@ -35,6 +35,10 @@ describe("report knowledge architecture document", () => {
       "The evidence packet is not final prose",
       "Saju remains primary",
       "MBTI supports and contrasts",
+      "REPORT-05 maps computed Saju facts to knowledge entry ids",
+      "Computed facts are not invented",
+      "Mapping happens before evidence packet",
+      "full manse calculation is separate from mapping",
     ];
 
     for (const marker of requiredMarkers) {

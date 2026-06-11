@@ -4,9 +4,12 @@ import { FUSION_KNOWLEDGE_BASE } from "../../../src/lib/report-knowledge/fusionK
 import { MBTI_KNOWLEDGE_BASE } from "../../../src/lib/report-knowledge/mbtiKnowledgeBase";
 import { SAJU_KNOWLEDGE_BASE } from "../../../src/lib/report-knowledge/sajuKnowledgeBase";
 import { buildComprehensiveReportEvidencePacket } from "../../../src/lib/report-knowledge/comprehensiveReportEvidenceBuilder";
+import { mapComputedSajuFactsToKnowledgeEntryIds } from "../../../src/lib/report-knowledge/sajuComputedFactsMapper";
 import {
   validateComprehensiveEvidencePacket,
+  validateComputedSajuFactsShape,
   validateFusionKnowledgeDensity,
+  validateMappedSajuKnowledgeInput,
   validateMbtiKnowledgeDensity,
   validateReportKnowledgeBase,
   validateSajuKnowledgeDensity,
@@ -15,6 +18,7 @@ import {
 import type { ComprehensiveReportEvidencePacket } from "../../../src/lib/report-knowledge/comprehensiveReportEvidenceTypes";
 import type { MbtiKnowledgeEntry } from "../../../src/lib/report-knowledge/mbtiKnowledgeTypes";
 import type { SajuKnowledgeEntry } from "../../../src/lib/report-knowledge/sajuKnowledgeTypes";
+import type { ComputedSajuFacts } from "../../../src/lib/report-knowledge/sajuComputedFactsTypes";
 
 const sampleDeokminSajuIds = [
   "day_master_gabmok",
@@ -33,6 +37,32 @@ const sampleDeokminSajuIds = [
   "sinsal_hongyeom",
   "gwiin_jaego",
 ] as const;
+
+const deokminSampleFacts = {
+  dayMaster: "갑",
+  dayPillar: "갑신",
+  fiveElementCounts: {
+    wood: 2,
+    fire: 0,
+    earth: 4,
+    metal: 2,
+    water: 0,
+  },
+  excessiveElements: ["earth"],
+  missingElements: ["fire", "water"],
+  usefulElements: ["water", "wood"],
+  tenGodSignals: [
+    { tenGod: "pian_cai", strength: "strong" },
+    { tenGod: "zheng_cai", strength: "present" },
+    { tenGod: "zheng_guan", strength: "strong" },
+    { tenGod: "qi_sha", strength: "strong" },
+    { tenGod: "zheng_yin", strength: "missing" },
+    { tenGod: "shi_shen", strength: "missing" },
+  ],
+  specialPatterns: ["jaeda_sinyak", "no_resource", "no_output"],
+  sinsal: ["hyeonchim", "hongyeom", "gwimun", "wonjin"],
+  gwiin: ["jaego"],
+} as const satisfies ComputedSajuFacts;
 
 describe("knowledge validators", () => {
   it("validates the default report knowledge base", () => {
@@ -70,6 +100,22 @@ describe("knowledge validators", () => {
     });
 
     expect(validateComprehensiveEvidencePacket(packet)).toEqual({
+      ok: true,
+      errors: [],
+    });
+  });
+
+  it("validates mapped Saju knowledge input for the computed sample", () => {
+    const mapped = mapComputedSajuFactsToKnowledgeEntryIds(deokminSampleFacts);
+
+    expect(validateMappedSajuKnowledgeInput(mapped)).toEqual({
+      ok: true,
+      errors: [],
+    });
+  });
+
+  it("validates computed Saju facts shape for the sample", () => {
+    expect(validateComputedSajuFactsShape(deokminSampleFacts)).toEqual({
       ok: true,
       errors: [],
     });
@@ -358,6 +404,64 @@ describe("knowledge validators", () => {
 
     expect(result.ok).toBe(false);
     expect(result.errors.join("\n")).toContain("missing MBTI type: ENTJ");
+  });
+
+  it("detects empty mapped Saju ids", () => {
+    const result = validateMappedSajuKnowledgeInput({
+      sajuEntryIds: [],
+      warnings: [],
+      unmappedFacts: [],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("at least one entry id");
+  });
+
+  it("detects duplicate mapped Saju ids", () => {
+    const result = validateMappedSajuKnowledgeInput({
+      sajuEntryIds: ["day_master_gabmok", "day_master_gabmok"],
+      warnings: [],
+      unmappedFacts: [],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("duplicate id");
+  });
+
+  it("detects invalid mapped Saju id", () => {
+    const result = validateMappedSajuKnowledgeInput({
+      sajuEntryIds: ["missing_saju_entry"],
+      warnings: [],
+      unmappedFacts: [],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("unknown id");
+  });
+
+  it("detects missing five element count in computed facts", () => {
+    const result = validateComputedSajuFactsShape({
+      ...deokminSampleFacts,
+      fiveElementCounts: {
+        wood: 2,
+        fire: 0,
+        earth: 4,
+        metal: 2,
+      },
+    } as unknown as ComputedSajuFacts);
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("fiveElementCounts");
+  });
+
+  it("detects invalid day pillar in computed facts", () => {
+    const result = validateComputedSajuFactsShape({
+      ...deokminSampleFacts,
+      dayPillar: "갑X",
+    } as unknown as ComputedSajuFacts);
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("dayPillar");
   });
 
   it("detects private payment fields in an evidence packet fixture", () => {

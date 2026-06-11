@@ -1,4 +1,5 @@
 export * from "./comprehensiveReportEvidenceBuilder";
+export * from "./comprehensiveReportEvidenceInputBuilder";
 export * from "./comprehensiveReportEvidenceTypes";
 export * from "./fusionKnowledgeBase";
 export * from "./fusionKnowledgeTypes";
@@ -10,5 +11,7 @@ export * from "./mbtiEvidenceScoring";
 export * from "./mbtiKnowledgeTypes";
 export * from "./reportSectionSchema";
 export * from "./sajuKnowledgeBase";
+export * from "./sajuComputedFactsMapper";
+export * from "./sajuComputedFactsTypes";
 export * from "./sajuEvidenceScoring";
 export * from "./sajuKnowledgeTypes";

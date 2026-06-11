@@ -6,6 +6,16 @@ import type {
   ComprehensiveReportEvidencePacket,
   EvidenceRole,
 } from "./comprehensiveReportEvidenceTypes";
+import type { MappedSajuKnowledgeInput } from "./sajuComputedFactsMapper";
+import {
+  COMPUTED_GWIIN_IDS,
+  COMPUTED_SAJU_SPECIAL_PATTERN_IDS,
+  COMPUTED_SINSAL_IDS,
+  COMPUTED_TEN_GOD_SIGNAL_STRENGTHS,
+  KOREAN_EARTHLY_BRANCHES,
+  KOREAN_HEAVENLY_STEMS,
+  type ComputedSajuFacts,
+} from "./sajuComputedFactsTypes";
 import { FUSION_KNOWLEDGE_BASE } from "./fusionKnowledgeBase";
 import type { FusionKnowledgeRule, FusionRuleKind } from "./fusionKnowledgeTypes";
 import { MBTI_KNOWLEDGE_BASE } from "./mbtiKnowledgeBase";
@@ -367,6 +377,30 @@ function isFiveElement(value: string): value is FiveElement {
 
 function isTenGod(value: string): boolean {
   return (TEN_GODS as readonly string[]).includes(value);
+}
+
+function isKoreanHeavenlyStem(value: string): boolean {
+  return (KOREAN_HEAVENLY_STEMS as readonly string[]).includes(value);
+}
+
+function isKoreanEarthlyBranch(value: string): boolean {
+  return (KOREAN_EARTHLY_BRANCHES as readonly string[]).includes(value);
+}
+
+function isComputedSpecialPattern(value: string): boolean {
+  return (COMPUTED_SAJU_SPECIAL_PATTERN_IDS as readonly string[]).includes(value);
+}
+
+function isComputedSinsal(value: string): boolean {
+  return (COMPUTED_SINSAL_IDS as readonly string[]).includes(value);
+}
+
+function isComputedGwiin(value: string): boolean {
+  return (COMPUTED_GWIIN_IDS as readonly string[]).includes(value);
+}
+
+function isComputedTenGodSignalStrength(value: string): boolean {
+  return (COMPUTED_TEN_GOD_SIGNAL_STRENGTHS as readonly string[]).includes(value);
 }
 
 function appendElementErrors(errors: string[], entry: SajuKnowledgeEntry): void {
@@ -1031,6 +1065,95 @@ export function validateComprehensiveEvidencePacket(
   validateEvidenceRoles(errors, packet);
   appendTextSafetyErrors(errors, "evidence packet", packet);
   appendPrivatePacketErrors(errors, packet);
+
+  return {
+    ok: errors.length === 0,
+    errors,
+  };
+}
+
+export function validateMappedSajuKnowledgeInput(
+  input: MappedSajuKnowledgeInput,
+): ReportKnowledgeValidationResult {
+  const errors: string[] = [];
+  const validSajuIds = new Set(SAJU_KNOWLEDGE_BASE.map((entry) => entry.id));
+
+  if (input.sajuEntryIds.length === 0) {
+    errors.push("mapped saju input needs at least one entry id.");
+  }
+  for (const duplicateId of getDuplicateValues([...input.sajuEntryIds])) {
+    errors.push(`mapped saju input duplicate id: ${duplicateId}`);
+  }
+  for (const id of input.sajuEntryIds) {
+    if (!validSajuIds.has(id)) {
+      errors.push(`mapped saju input references unknown id: ${id}`);
+    }
+  }
+
+  return {
+    ok: errors.length === 0,
+    errors,
+  };
+}
+
+export function validateComputedSajuFactsShape(
+  facts: ComputedSajuFacts,
+): ReportKnowledgeValidationResult {
+  const errors: string[] = [];
+  const dayPillarStem = facts.dayPillar.slice(0, 1);
+  const dayPillarBranch = facts.dayPillar.slice(1);
+
+  if (!isKoreanHeavenlyStem(facts.dayMaster)) {
+    errors.push(`computed facts dayMaster is invalid: ${facts.dayMaster}`);
+  }
+  if (
+    facts.dayPillar.length !== 2 ||
+    !isKoreanHeavenlyStem(dayPillarStem) ||
+    !isKoreanEarthlyBranch(dayPillarBranch)
+  ) {
+    errors.push(`computed facts dayPillar is invalid: ${facts.dayPillar}`);
+  }
+  for (const element of FIVE_ELEMENTS) {
+    const count = facts.fiveElementCounts[element];
+
+    if (!Number.isFinite(count)) {
+      errors.push(`computed facts fiveElementCounts missing or invalid: ${element}`);
+    }
+  }
+  for (const element of [
+    ...facts.excessiveElements,
+    ...facts.missingElements,
+    ...(facts.usefulElements ?? []),
+  ]) {
+    if (!isFiveElement(String(element))) {
+      errors.push(`computed facts references invalid element: ${String(element)}`);
+    }
+  }
+  for (const signal of facts.tenGodSignals) {
+    if (!isTenGod(String(signal.tenGod))) {
+      errors.push(`computed facts references invalid ten god: ${String(signal.tenGod)}`);
+    }
+    if (!isComputedTenGodSignalStrength(String(signal.strength))) {
+      errors.push(
+        `computed facts references invalid ten god strength: ${String(signal.strength)}`,
+      );
+    }
+  }
+  for (const pattern of facts.specialPatterns) {
+    if (!isComputedSpecialPattern(String(pattern))) {
+      errors.push(`computed facts references invalid special pattern: ${String(pattern)}`);
+    }
+  }
+  for (const signal of facts.sinsal) {
+    if (!isComputedSinsal(String(signal))) {
+      errors.push(`computed facts references invalid sinsal: ${String(signal)}`);
+    }
+  }
+  for (const signal of facts.gwiin) {
+    if (!isComputedGwiin(String(signal))) {
+      errors.push(`computed facts references invalid gwiin: ${String(signal)}`);
+    }
+  }
 
   return {
     ok: errors.length === 0,
