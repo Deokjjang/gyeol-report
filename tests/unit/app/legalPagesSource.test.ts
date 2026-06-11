@@ -27,18 +27,11 @@ describe("legal page sources", () => {
       "DVEM",
       "장덕민",
       "184-27-02002",
-      "22009",
       "인천광역시 연수구 인천타워대로 185, 10층 1001호 V206",
-      "official@dvem.ai",
       "support@dvem.ai",
       "https://www.gyeolreport.com",
       "신고 진행 중",
       "010-3156-8568",
-      "개인정보보호 책임자",
-      "개인정보보호 문의",
-      "호스팅 제공자",
-      "Vercel Inc.",
-      "일반과세자",
       "통신판매업 신고번호",
     ];
 
@@ -47,59 +40,95 @@ describe("legal page sources", () => {
     }
   });
 
+  it("keeps business info page focused on essential review fields", () => {
+    const businessInfoSource = readSource(
+      "src/app/legal/business-info/page.tsx",
+    );
+    const expectedMarkers = [
+      "상호명",
+      "서비스명",
+      "대표자",
+      "사업자등록번호",
+      "통신판매업 신고번호",
+      "사업장 주소",
+      "홈페이지",
+      "고객센터",
+      "문의",
+      "GYEOL_BUSINESS_INFO.supportContactEmail",
+    ];
+    const removedMarkers = [
+      "과세유형",
+      "일반과세자",
+      "개인정보보호 책임자",
+      "호스팅 제공자",
+      "Vercel Inc.",
+      "공식 문의",
+      "고객지원",
+    ];
+
+    for (const marker of expectedMarkers) {
+      expect(businessInfoSource).toContain(marker);
+    }
+
+    for (const marker of removedMarkers) {
+      expect(businessInfoSource).not.toContain(marker);
+    }
+  });
+
   it("contains required terms content", () => {
     const termsSource = readSource("src/app/legal/terms/page.tsx");
     const expectedMarkers = [
-      "목적",
-      "서비스 제공자",
-      "서비스 내용",
-      "유료 상품 및 결제",
-      "리포트 제공 방식",
+      "서비스",
+      "유료 상품과 결제",
+      "리포트 제공",
       "이용자의 책임",
-      "사주·MBTI 해석의 한계",
-      "금지행위",
-      "서비스 변경/중단",
-      "책임 제한",
-      "문의",
-      "자기이해용",
-      "의학, 법률, 투자",
-      "실제 유료 제공은 결제 승인 및 서버 확인 이후",
+      "해석의 한계",
+      "환불 및 문의",
+      "자기이해용 디지털 리포트",
+      "런칭가 990원",
+      "결제 승인 및 서버 확인 이후 온라인 열람",
+      "타인의 정보를 무단으로 입력하면 안 됩니다",
+      "의학, 법률, 투자, 심리진단, 미래 사건 예측을 보장하지 않습니다",
       "보장하지 않습니다",
+      "GYEOL_BUSINESS_INFO.supportContactEmail",
     ];
 
     for (const marker of expectedMarkers) {
       expect(termsSource).toContain(marker);
+    }
+
+    const removedMarkers = ["서비스 제공자", "서비스 변경/중단", "책임 제한"];
+
+    for (const marker of removedMarkers) {
+      expect(termsSource).not.toContain(marker);
     }
   });
 
   it("contains required privacy content", () => {
     const privacySource = readSource("src/app/legal/privacy/page.tsx");
     const expectedMarkers = [
-      "개인정보 처리 목적",
-      "수집하는 개인정보 항목",
-      "개인정보 보유 및 이용 기간",
+      "처리 목적",
+      "수집 항목",
+      "보관 기간",
       "결제 처리",
-      "제3자 제공 및 처리위탁",
-      "개인정보 파기",
-      "이용자의 권리",
-      "개인정보보호 문의",
-      "변경 고지",
+      "외부 서비스",
+      "이용자 권리와 문의",
+      "리포트 제공, 고객 문의, 결제/환불 처리, 부정 이용 방지",
       "생년월일",
       "출생시간",
       "성별",
       "MBTI",
       "시간대",
       "서비스 이용 기록",
-      "결제 처리에 필요한 주문/결제 식별 정보",
-      "결제대행사",
+      "주문/결제 식별 정보",
       "Toss Payments",
       "결제 처리: Toss Payments",
       "카드번호 등 민감한 결제수단 정보를 직접 저장하지 않습니다",
       "개인정보보호 책임자",
-      "개인정보보호 문의",
-      "고객지원",
       "호스팅 제공자",
       "GYEOL_BUSINESS_INFO.hostingProvider",
+      "GYEOL_BUSINESS_INFO.supportContactEmail",
+      "GYEOL_BUSINESS_INFO.privacyOfficerName",
     ];
 
     for (const marker of expectedMarkers) {
@@ -111,16 +140,19 @@ describe("legal page sources", () => {
     const refundSource = readSource("src/app/legal/refund/page.tsx");
     const expectedMarkers = [
       "상품 성격",
-      "결제 취소 가능 시점",
-      "리포트 생성 후 환불 제한",
+      "취소 가능 시점",
+      "환불 제한",
       "오류/중복 결제 처리",
-      "환불 요청 방법",
-      "처리 기간",
       "문의",
       "디지털 콘텐츠",
+      "결제 승인 전 또는 리포트 생성 전에는 취소가 가능할 수 있습니다",
+      "단순 변심 환불이 제한될 수 있습니다",
+      "중복 결제",
+      "시스템 오류",
+      "리포트 미제공",
       "제한될 수 있습니다",
       "확인 후 취소 또는 환불을 지원합니다",
-      "관련 법령",
+      "GYEOL_BUSINESS_INFO.supportContactEmail",
     ];
 
     for (const marker of expectedMarkers) {

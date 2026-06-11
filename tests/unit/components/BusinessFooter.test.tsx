@@ -19,6 +19,8 @@ describe("BusinessFooter", () => {
       "신고 진행 중",
       "고객센터",
       "010-3156-8568",
+      "문의",
+      "support@dvem.ai",
     ];
 
     for (const text of expectedText) {
@@ -33,7 +35,6 @@ describe("BusinessFooter", () => {
       "Vercel " + "Inc.",
       "사업장 " + "주소",
       "official" + "@dvem.ai",
-      "support" + "@dvem.ai",
     ];
 
     for (const text of hiddenDetailText) {

@@ -20,7 +20,7 @@ describe("policy page sources", () => {
       "출시 전 초안",
       "디지털 자기 이해 리포트",
       "참고",
-      "official@dvem.ai",
+      "support@dvem.ai",
       "홈으로 돌아가기",
       'href="/"',
     ];
@@ -40,7 +40,7 @@ describe("policy page sources", () => {
       "MBTI",
       "결제 제공자",
       "카드 정보",
-      "official@dvem.ai",
+      "support@dvem.ai",
       "홈으로 돌아가기",
       'href="/"',
     ];
@@ -58,7 +58,7 @@ describe("policy page sources", () => {
       "실제 결제는 아직 활성화되어 있지 않습니다",
       "결제 실패",
       "전체 리포트",
-      "official@dvem.ai",
+      "support@dvem.ai",
       "홈으로 돌아가기",
       'href="/"',
     ];

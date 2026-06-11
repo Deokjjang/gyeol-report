@@ -69,7 +69,7 @@ export default function ProductSummaryCard({
         </dl>
 
         <p className="text-sm leading-6 text-neutral-500">
-          자기이해용 참고 콘텐츠입니다. {product.cautionKo}
+          {product.cautionKo}
         </p>
 
         <div className="flex flex-col gap-3 sm:flex-row">

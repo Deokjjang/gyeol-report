@@ -78,7 +78,7 @@ describe("app layout metadata source", () => {
     const expectedValues = [
       "GYEOL_HOME_PRODUCT_GRID",
       "ProductGrid",
-      "activeProduct.cautionKo",
+      "생년월일시와 MBTI로 읽는 성향, 관계, 일의 흐름",
     ];
 
     for (const value of expectedValues) {
@@ -96,7 +96,7 @@ describe("app layout metadata source", () => {
     const expectedValues = [
       "ProductGrid",
       "GYEOL_HOME_PRODUCT_GRID",
-      "GYEOL_PRODUCTS",
+      "사주와 MBTI로 보는 나의 결",
     ];
 
     for (const value of expectedValues) {
@@ -106,7 +106,7 @@ describe("app layout metadata source", () => {
 
   it("renders landing page trust and support placeholders", () => {
     const expectedValues = [
-      "activeProduct.cautionKo",
+      "사주와 MBTI로 보는 나의 결",
     ];
 
     for (const value of expectedValues) {

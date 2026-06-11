@@ -56,10 +56,10 @@ export default function RefundPage() {
             <p className="text-sm leading-7 text-neutral-400">
               환불 관련 문의는{" "}
               <a
-                href="mailto:official@dvem.ai"
+                href="mailto:support@dvem.ai"
                 className="text-neutral-200 underline underline-offset-4"
               >
-                official@dvem.ai
+                support@dvem.ai
               </a>
               로 보내 주세요.
             </p>

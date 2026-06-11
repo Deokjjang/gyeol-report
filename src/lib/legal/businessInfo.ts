@@ -24,13 +24,13 @@ export const GYEOL_BUSINESS_INFO = {
   postalCode: "22009",
   businessAddressKo:
     "인천광역시 연수구 인천타워대로 185, 10층 1001호 V206",
-  officialContactEmail: "official@dvem.ai",
+  officialContactEmail: "support@dvem.ai",
   supportContactEmail: "support@dvem.ai",
   domain: "https://www.gyeolreport.com",
   mailOrderSalesRegistrationNumber: "신고 진행 중",
   customerServicePhone: "010-3156-8568",
   privacyOfficerName: "장덕민",
-  privacyOfficerEmail: "official@dvem.ai",
+  privacyOfficerEmail: "support@dvem.ai",
   hostingProvider: "Vercel Inc.",
   taxTypeKo: "일반과세자",
 } as const satisfies GyeolBusinessInfo;

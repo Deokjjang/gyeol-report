@@ -1,7 +1,5 @@
 import ProductGrid from "../components/product/ProductGrid";
-import { GYEOL_HOME_PRODUCT_GRID, GYEOL_PRODUCTS } from "../lib/product/gyeolProducts";
-
-const activeProduct = GYEOL_PRODUCTS[0];
+import { GYEOL_HOME_PRODUCT_GRID } from "../lib/product/gyeolProducts";
 
 export default function Home() {
   return (
@@ -14,17 +12,12 @@ export default function Home() {
               사주와 MBTI로 보는 나의 결
             </h1>
             <p className="max-w-2xl text-sm leading-6 text-neutral-600 sm:text-base">
-              생년월일시와 MBTI를 입력하면 성향, 관계, 일의 흐름을 가볍게
-              정리해 드립니다.
+              생년월일시와 MBTI로 읽는 성향, 관계, 일의 흐름
             </p>
           </div>
         </header>
 
         <ProductGrid products={GYEOL_HOME_PRODUCT_GRID} />
-
-        <p className="max-w-3xl text-xs leading-5 text-neutral-500 sm:text-sm">
-          {activeProduct.cautionKo}
-        </p>
       </section>
     </main>
   );

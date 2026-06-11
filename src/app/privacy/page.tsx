@@ -62,7 +62,7 @@ export default function PrivacyPage() {
             </h2>
             <p className="text-sm leading-7 text-neutral-400">
               보관 기간과 삭제 요청 절차는 정식 출시 전에 확정해 안내합니다.
-              삭제 문의는 support contact를 통해 접수할 수 있도록 준비합니다.
+              삭제 문의는 support@dvem.ai를 통해 접수할 수 있도록 준비합니다.
             </p>
           </div>
 
@@ -71,10 +71,10 @@ export default function PrivacyPage() {
             <p className="text-sm leading-7 text-neutral-400">
               개인정보 관련 문의는{" "}
               <a
-                href="mailto:official@dvem.ai"
+                href="mailto:support@dvem.ai"
                 className="text-neutral-200 underline underline-offset-4"
               >
-                official@dvem.ai
+                support@dvem.ai
               </a>
               로 보내 주세요.
             </p>

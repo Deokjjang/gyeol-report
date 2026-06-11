@@ -9,6 +9,7 @@ describe("home page product source", () => {
     const requiredMarkers = [
       "결리포트",
       "사주와 MBTI로 보는 나의 결",
+      "생년월일시와 MBTI로 읽는 성향, 관계, 일의 흐름",
       "하반기 운세",
       "종합 리포트",
       "대운 리포트",
@@ -35,6 +36,8 @@ describe("home page product source", () => {
       "이용 " + "흐름",
       "상품 상세 보기",
       "결제금액 990원",
+      "가볍게 정리해 드립니다",
+      "자기이해용 참고 콘텐츠",
     ];
 
     for (const marker of blockedMarkers) {

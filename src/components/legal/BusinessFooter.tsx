@@ -35,6 +35,15 @@ export default function BusinessFooter() {
                 {GYEOL_BUSINESS_INFO.customerServicePhone}
               </a>
             </dd>
+            <dt className="font-semibold text-neutral-800">문의</dt>
+            <dd>
+              <a
+                href={`mailto:${GYEOL_BUSINESS_INFO.supportContactEmail}`}
+                className="font-semibold text-neutral-900 underline underline-offset-4"
+              >
+                {GYEOL_BUSINESS_INFO.supportContactEmail}
+              </a>
+            </dd>
           </dl>
         </section>
 
