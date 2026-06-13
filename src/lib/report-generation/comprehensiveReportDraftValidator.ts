@@ -207,7 +207,7 @@ const v2ChapterHitReadingMinimumCounts = {
   love_relationships: 3,
   people_family_environment: 3,
   risk_and_growth: 2,
-  final_message: 1,
+  final_message: 0,
 } as const satisfies Record<ComprehensiveReportV2ChapterId, number>;
 const v2ChapterSolutionMinimumCounts = {
   opening: 0,
@@ -284,6 +284,26 @@ const elementRemedyMarkers = [
   "책임 덜어내기",
   "경계선",
   "일정",
+] as const;
+const finalMessageClosingMarkers = [
+  "오래 가",
+  "오래가는",
+  "덜 닳",
+  "회복",
+  "표현",
+  "관계",
+  "방향",
+  "지속",
+] as const;
+const finalMessagePracticalAreaMarkers = [
+  "돈",
+  "일",
+  "공부",
+  "관계",
+  "사람",
+  "연애",
+  "성과",
+  "루틴",
 ] as const;
 const repeatedSentenceAllowList = [
   "이렇게 쓰면 좋습니다.",
@@ -1230,13 +1250,18 @@ function appendV2HitReadingErrors(
   errors: string[],
   chapters: readonly ComprehensiveReportV2Chapter[],
 ): void {
-  const allHitReadingLines = chapters.flatMap((chapter) => chapter.hitReadingLines);
+  const mainChapters = chapters.filter(
+    (chapter) => chapter.chapterId !== "final_message",
+  );
+  const allHitReadingLines = mainChapters.flatMap(
+    (chapter) => chapter.hitReadingLines,
+  );
 
-  if (allHitReadingLines.length < 16) {
+  if (allHitReadingLines.length < 14) {
     errors.push("DIRECT_HIT_READING_MISSING");
   }
 
-  for (const chapter of chapters) {
+  for (const chapter of mainChapters) {
     const minimumCount = v2ChapterHitReadingMinimumCounts[chapter.chapterId];
 
     if (chapter.hitReadingLines.length < minimumCount) {
@@ -1254,6 +1279,36 @@ function appendV2HitReadingErrors(
         break;
       }
     }
+  }
+}
+
+function appendV2FinalMessageClosingErrors(
+  errors: string[],
+  input: {
+    readonly chapters: readonly ComprehensiveReportV2Chapter[];
+    readonly finalAdvice: string;
+  },
+): void {
+  const finalChapter = findChapter(input.chapters, "final_message");
+
+  if (finalChapter === undefined) {
+    return;
+  }
+
+  const closingText = [
+    finalChapter.headline,
+    ...finalChapter.hitReadingLines,
+    finalChapter.body,
+    ...finalChapter.solutionLines,
+    ...finalChapter.keyPhrases,
+    input.finalAdvice,
+  ].join("\n");
+
+  if (
+    !hasAnyMarker(closingText, finalMessageClosingMarkers) ||
+    !hasAnyMarker(closingText, finalMessagePracticalAreaMarkers)
+  ) {
+    errors.push("FINAL_MESSAGE_CLOSING_MISSING");
   }
 }
 
@@ -1377,6 +1432,10 @@ function parseV2Draft(
   appendV2HitReadingErrors(errors, chapters);
   appendV2PrescriptionErrors(errors, chapters);
   appendV2TopicCoverageErrors(errors, chapters);
+  appendV2FinalMessageClosingErrors(errors, {
+    chapters,
+    finalAdvice: typeof input.finalAdvice === "string" ? input.finalAdvice : "",
+  });
   appendV2VisibleDebugLabelErrors(errors, {
     openingTitle: typeof input.openingTitle === "string" ? input.openingTitle : "",
     openingSummary: typeof input.openingSummary === "string" ? input.openingSummary : "",

@@ -419,6 +419,102 @@ describe("comprehensive report draft validator", () => {
     expect(result.errors.join("\n")).toContain("DIRECT_HIT_READING_TOO_GENERIC");
   });
 
+  it("allows generic final_message hit-reading when closing advice is concrete", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "final_message"
+          ? {
+              ...chapter,
+              hitReadingLines: ["덕민님은 성장할 수 있습니다."],
+              body: `${chapter.body} 덕민님은 더 세게 밀어붙이는 법보다 덜 닳게 오래 가는 법을 배워야 합니다. 회복과 표현을 일과 관계 안에 넣는 것이 마지막 방향입니다.`,
+            }
+          : chapter,
+      ),
+      finalAdvice:
+        "지금 필요한 건 의지력이 아니라 회복과 표현을 시스템에 넣는 일입니다. 일과 관계에서 오래 가는 방식을 먼저 설계하세요.",
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.errors.join("\n")).not.toContain(
+      "DIRECT_HIT_READING_TOO_GENERIC: final_message",
+    );
+  });
+
+  it.each([
+    "personality_pattern",
+    "work_money_study",
+    "love_relationships",
+  ] as const)("rejects generic hit-reading in main V2 chapter %s", (chapterId) => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === chapterId
+          ? {
+              ...chapter,
+              hitReadingLines: [
+                "덕민님은 성장할 수 있습니다.",
+                "덕민님은 장점과 단점이 있습니다.",
+                "덕민님은 성격이 좋습니다.",
+              ],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      `DIRECT_HIT_READING_TOO_GENERIC: ${chapterId}`,
+    );
+  });
+
+  it("rejects V2 drafts when all main hit-reading lines are generic", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "final_message"
+          ? chapter
+          : {
+              ...chapter,
+              hitReadingLines: Array.from(
+                { length: chapter.hitReadingLines.length },
+                () => "덕민님은 성장할 수 있습니다.",
+              ),
+            },
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("DIRECT_HIT_READING_TOO_GENERIC");
+  });
+
+  it("rejects V2 drafts without meaningful final message closing advice", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "final_message"
+          ? {
+              ...chapter,
+              headline: "마지막 정리는 기준만 반복하는 흐름입니다",
+              hitReadingLines: ["덕민님은 성장할 수 있습니다."],
+              body:
+                "갑목과 갑신일주를 바탕으로 마지막 문장을 정리합니다. 덕민님은 기준을 빨리 세우는 흐름이 강하고 압박 속에서도 판단을 놓지 않는 편입니다. 이 마무리는 충분히 길지만 앞으로 무엇을 관리해야 하는지 뚜렷하게 말하지 않습니다. 사주 용어는 들어가지만 마지막 조언으로서 남는 처방이 약하다는 점을 검증하기 위한 문장입니다. 덕민님은 강한 기준을 가진 사람이라는 설명만 반복합니다.",
+              keyPhrases: ["마지막 정리", "갑목"],
+            }
+          : chapter,
+      ),
+      finalAdvice:
+        "덕민님은 강한 기준을 가진 사람이라는 설명만 남기는 마무리입니다. 마지막 조언이 구체적이지 않도록 둡니다.",
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("FINAL_MESSAGE_CLOSING_MISSING");
+  });
+
   it("rejects V2 major chapters without prescriptions", () => {
     const draft = createValidV2Draft();
     const result = validateComprehensiveReportDraft({

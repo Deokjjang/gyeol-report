@@ -66,6 +66,10 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("체감형 명중 문장");
     expect(combined).toContain("덕민님, 이런 상황 많지 않나요");
     expect(combined).toContain("실천 솔루션");
+    expect(combined).toContain("final_message는 체감형 명중보다 정리와 각인이 우선이다");
+    expect(combined).toContain("final_message hitReadingLines는 있어도 되지만");
+    expect(combined).toContain("덜 닳게 오래 가는 법");
+    expect(combined).toContain("회복과 표현을 시스템에 넣는 일");
     expect(combined).toContain("profileTable은 시스템이 deterministic facts로 붙인다");
     expect(combined).toContain("너는 profileTable을 출력하지 않는다");
     expect(combined).toContain("profileTable 필드는 절대 출력하지 않는다");
