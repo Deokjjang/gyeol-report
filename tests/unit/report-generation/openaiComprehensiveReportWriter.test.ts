@@ -8,7 +8,7 @@ import {
 } from "../../../src/lib/report-generation/openaiComprehensiveReportWriter";
 import type {
   ComprehensiveReportV2ChapterId,
-  ComprehensiveReportV2Draft,
+  ComprehensiveReportV2NarrativeDraft,
 } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../../../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
 import type { ComputedSajuFacts } from "../../../src/lib/report-knowledge/sajuComputedFactsTypes";
@@ -59,7 +59,7 @@ function createChapter(chapterId: ComprehensiveReportV2ChapterId, titleKo: strin
   };
 }
 
-function createValidDraft(): ComprehensiveReportV2Draft {
+function createValidDraft(): ComprehensiveReportV2NarrativeDraft {
   return {
     version: "comprehensive_v2_draft",
     productType: "saju_mbti_full",
@@ -173,8 +173,19 @@ describe("OpenAI comprehensive report writer", () => {
     expect(JSON.stringify(calls[0].body)).toContain(
       "이번 리포트에서 사용할 수 있는 사주 용어",
     );
+    const requestBody = JSON.parse(String(calls[0].body)) as {
+      readonly text?: {
+        readonly format?: {
+          readonly schema?: unknown;
+        };
+      };
+    };
+    const responseFormatSchema = JSON.stringify(requestBody.text?.format?.schema);
+
     expect(JSON.stringify(calls[0].body)).toContain("재고귀인");
     expect(JSON.stringify(calls[0].body)).not.toContain("천을귀인");
+    expect(responseFormatSchema).not.toContain("profileTable");
+    expect(responseFormatSchema).not.toContain("yearPillar");
     expect(JSON.stringify(calls[0].body)).toContain("day_master_gabmok");
   });
 

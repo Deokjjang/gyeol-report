@@ -67,6 +67,18 @@ function createV2Draft(): ComprehensiveReportV2Draft {
     openingSummary:
       "갑목과 갑신일주를 먼저 놓고 MBTI는 체감 성향을 보조하는 기준으로 연결합니다.",
     coreLine: "갑목 구조가 먼저이고 ENTJ는 그 구조를 성취 쪽으로 증폭합니다.",
+    profileTable: {
+      dayMaster: "갑목",
+      dayPillar: "갑신일주",
+      fiveElementSummary: ["목 2", "화 0", "토 4", "금 2", "수 0"],
+      excessiveElements: ["토 과다"],
+      missingElements: ["화 부족", "수 부족"],
+      tenGodSummary: ["편재", "정재", "정관", "편관"],
+      specialPatterns: ["재다신약", "무인성", "무식상"],
+      sinsal: ["현침살", "홍염살"],
+      gwiin: ["재고귀인"],
+      mbti: "ENTJ",
+    },
     chapters: [
       "opening",
       "saju_identity",

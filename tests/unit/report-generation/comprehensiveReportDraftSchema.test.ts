@@ -4,16 +4,19 @@ import {
   comprehensiveReportDraftJsonSchema,
   comprehensiveReportV1DraftJsonSchema,
   comprehensiveReportV2DraftJsonSchema,
+  openAIComprehensiveReportV2NarrativeDraftJsonSchema,
 } from "../../../src/lib/report-generation/comprehensiveReportDraftSchema";
 import { COMPREHENSIVE_REPORT_SECTION_IDS } from "../../../src/lib/report-knowledge/reportSectionSchema";
 import { COMPREHENSIVE_REPORT_V2_CHAPTER_IDS } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
 
 describe("comprehensive report draft JSON schema", () => {
-  it("uses V2 narrative draft schema by default", () => {
+  it("uses OpenAI V2 narrative draft schema by default", () => {
     const serialized = JSON.stringify(comprehensiveReportDraftJsonSchema);
 
     expect(serialized).toContain("comprehensive_v2_draft");
     expect(serialized).toContain("saju_mbti_full");
+    expect(serialized).not.toContain("profileTable");
+    expect(serialized).not.toContain("yearPillar");
     for (const chapterId of COMPREHENSIVE_REPORT_V2_CHAPTER_IDS) {
       expect(serialized).toContain(chapterId);
     }
@@ -28,7 +31,7 @@ describe("comprehensive report draft JSON schema", () => {
     }
   });
 
-  it("requires the V2 report draft fields used by the writer boundary", () => {
+  it("keeps final V2 report draft schema with deterministic profile table", () => {
     const required = comprehensiveReportV2DraftJsonSchema.required;
 
     expect(required).toEqual(
@@ -38,6 +41,7 @@ describe("comprehensive report draft JSON schema", () => {
         "openingTitle",
         "openingSummary",
         "coreLine",
+        "profileTable",
         "chapters",
         "finalAdvice",
         "safetyNotes",
@@ -56,6 +60,37 @@ describe("comprehensive report draft JSON schema", () => {
       "additionalProperties",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain("maxLength");
+  });
+
+  it("keeps the OpenAI response format schema narrative-only", () => {
+    const serialized = JSON.stringify(
+      openAIComprehensiveReportV2NarrativeDraftJsonSchema,
+    );
+
+    expect(openAIComprehensiveReportV2NarrativeDraftJsonSchema.required).toEqual([
+      "version",
+      "productType",
+      "openingTitle",
+      "openingSummary",
+      "coreLine",
+      "chapters",
+      "finalAdvice",
+      "safetyNotes",
+    ]);
+    expect(Object.keys(openAIComprehensiveReportV2NarrativeDraftJsonSchema.properties)).toEqual([
+      "version",
+      "productType",
+      "openingTitle",
+      "openingSummary",
+      "coreLine",
+      "chapters",
+      "finalAdvice",
+      "safetyNotes",
+    ]);
+    expect(serialized).not.toContain("profileTable");
+    expect(serialized).not.toContain("yearPillar");
+    expect(serialized).not.toContain("monthPillar");
+    expect(serialized).not.toContain("hourPillar");
   });
 
   it("does not include private or payment fields in the schema", () => {

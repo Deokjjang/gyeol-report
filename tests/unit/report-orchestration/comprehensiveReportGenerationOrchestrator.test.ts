@@ -228,6 +228,17 @@ describe("generateAndPersistComprehensiveReport", () => {
         "gwiin_jaego",
       ]),
     );
+    expect(writerInput?.profileTable).toMatchObject({
+      dayMaster: "갑목",
+      dayPillar: "갑신일주",
+      fiveElementSummary: ["목 2", "화 0", "토 4", "금 2", "수 0"],
+      excessiveElements: ["토 과다"],
+      missingElements: ["화 부족", "수 부족"],
+      tenGodSummary: expect.arrayContaining(["편재", "정재", "정관", "편관"]),
+      sinsal: expect.arrayContaining(["현침살", "홍염살", "귀문관살", "원진살"]),
+      gwiin: expect.arrayContaining(["재고귀인"]),
+      mbti: "ENTJ",
+    });
     expect(writerInput?.config.model).toBe("test-report-model");
     expect(saveInput).toMatchObject({
       supabaseUrl: "https://supabase.example.test",

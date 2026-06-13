@@ -224,6 +224,18 @@ describe("comprehensive report draft validator", () => {
     });
   });
 
+  it("rejects final V2 drafts without deterministic profile table", () => {
+    const draftWithoutProfileTable = Object.fromEntries(
+      Object.entries(createValidV2Draft()).filter(([key]) => key !== "profileTable"),
+    );
+    const result = validateComprehensiveReportDraft(draftWithoutProfileTable);
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "profileTable is required for comprehensive_v2_draft.",
+    );
+  });
+
   it("rejects V2 drafts with missing or short narrative chapters", () => {
     const draft = createValidV2Draft();
     const missingResult = validateComprehensiveReportDraft({

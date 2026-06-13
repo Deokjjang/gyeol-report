@@ -4,6 +4,7 @@ import {
   SafeReportGenerationFailure,
   type SafeReportGenerationStage,
 } from "../report-generation/openaiComprehensiveReportWriter";
+import { buildComprehensiveReportV2ProfileTable } from "../report-generation/comprehensiveReportProfileTableBuilder";
 import {
   isComprehensiveReportV2Draft,
   type ComprehensiveReportSnapshotVersion,
@@ -184,6 +185,11 @@ export async function generateAndPersistComprehensiveReport(
     });
   }
 
+  const profileTable = buildComprehensiveReportV2ProfileTable({
+    evidencePacket: packet,
+    mbtiType: input.mbtiType,
+    sajuFacts: input.sajuFacts,
+  });
   let generated: Awaited<ReturnType<typeof generateComprehensiveReportDraft>>;
 
   try {
@@ -191,6 +197,7 @@ export async function generateAndPersistComprehensiveReport(
       userDisplayName: input.userDisplayName,
       mbtiType: input.mbtiType,
       evidencePacket: packet,
+      profileTable,
       config: {
         apiKey: input.openAI.apiKey,
         model: parsed.openAIModel,

@@ -147,6 +147,7 @@ export const comprehensiveReportV2DraftJsonSchema = {
     "openingTitle",
     "openingSummary",
     "coreLine",
+    "profileTable",
     "chapters",
     "finalAdvice",
     "safetyNotes",
@@ -273,5 +274,49 @@ export const comprehensiveReportV2DraftJsonSchema = {
   },
 } as const;
 
+export const openAIComprehensiveReportV2NarrativeDraftJsonSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: [
+    "version",
+    "productType",
+    "openingTitle",
+    "openingSummary",
+    "coreLine",
+    "chapters",
+    "finalAdvice",
+    "safetyNotes",
+  ],
+  properties: {
+    version: {
+      type: "string",
+      const: "comprehensive_v2_draft",
+    },
+    productType: productTypeSchema,
+    openingTitle: {
+      type: "string",
+      minLength: 1,
+      maxLength: 120,
+    },
+    openingSummary: {
+      type: "string",
+      minLength: 1,
+      maxLength: 1000,
+    },
+    coreLine: {
+      type: "string",
+      minLength: 1,
+      maxLength: 260,
+    },
+    chapters: comprehensiveReportV2DraftJsonSchema.properties.chapters,
+    finalAdvice: {
+      type: "string",
+      minLength: 1,
+      maxLength: 1600,
+    },
+    safetyNotes: safetyNotesSchema,
+  },
+} as const;
+
 export const comprehensiveReportDraftJsonSchema =
-  comprehensiveReportV2DraftJsonSchema;
+  openAIComprehensiveReportV2NarrativeDraftJsonSchema;

@@ -83,11 +83,16 @@ export type ComprehensiveReportV2Draft = {
   readonly openingTitle: string;
   readonly openingSummary: string;
   readonly coreLine: string;
-  readonly profileTable?: ComprehensiveReportV2ProfileTable;
+  readonly profileTable: ComprehensiveReportV2ProfileTable;
   readonly chapters: readonly ComprehensiveReportV2Chapter[];
   readonly finalAdvice: string;
   readonly safetyNotes: readonly string[];
 };
+
+export type ComprehensiveReportV2NarrativeDraft = Omit<
+  ComprehensiveReportV2Draft,
+  "profileTable"
+>;
 
 export type ComprehensiveReportDraft =
   | ComprehensiveReportV1Draft

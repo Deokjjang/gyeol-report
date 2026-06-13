@@ -1013,6 +1013,7 @@ function parseProfileTable(
   value: unknown,
 ): ComprehensiveReportV2ProfileTable | undefined {
   if (value === undefined) {
+    errors.push("profileTable is required for comprehensive_v2_draft.");
     return undefined;
   }
   if (!isRecord(value)) {
@@ -1339,7 +1340,7 @@ function parseV2Draft(
     openingTitle: input.openingTitle as string,
     openingSummary: input.openingSummary as string,
     coreLine: input.coreLine as string,
-    ...(profileTable === undefined ? {} : { profileTable }),
+    profileTable: profileTable as ComprehensiveReportV2ProfileTable,
     chapters,
     finalAdvice: input.finalAdvice as string,
     safetyNotes: input.safetyNotes as readonly string[],
