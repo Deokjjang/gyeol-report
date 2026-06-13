@@ -1,5 +1,4 @@
 import type { ComprehensiveReportEvidencePacket } from "../report-knowledge/comprehensiveReportEvidenceTypes";
-import { SAJU_KNOWLEDGE_BASE } from "../report-knowledge/sajuKnowledgeBase";
 import { comprehensiveReportDraftJsonSchema } from "./comprehensiveReportDraftSchema";
 import type { ComprehensiveReportDraft } from "./comprehensiveReportDraftTypes";
 import { validateComprehensiveReportDraft } from "./comprehensiveReportDraftValidator";
@@ -7,7 +6,10 @@ import {
   callOpenAIReportWriter,
   type OpenAIReportWriterClientConfig,
 } from "./openaiReportWriterClient";
-import { buildOpenAIComprehensiveReportWriterMessages } from "./openaiReportWriterPrompt";
+import {
+  buildOpenAIComprehensiveReportWriterMessages,
+  deriveAllowedSajuTermsFromEvidencePacket,
+} from "./openaiReportWriterPrompt";
 
 export type SafeReportGenerationStage =
   | "evidence"
@@ -124,44 +126,6 @@ function getSafeCauseCode(error: unknown): string {
   return "OPENAI_REPORT_WRITER_REQUEST_FAILED";
 }
 
-function createKnownSajuTerms(): readonly string[] {
-  return [
-    ...new Set(
-      SAJU_KNOWLEDGE_BASE.flatMap((entry) => [
-        entry.labelKo,
-        ...entry.aliases,
-      ])
-        .map((term) => term.trim())
-        .filter((term) => /[가-힣]/.test(term) && term.length >= 2)
-        .sort((left, right) => right.length - left.length),
-    ),
-  ];
-}
-
-function deriveAllowedSajuTermsFromEvidencePacket(
-  packet: ComprehensiveReportEvidencePacket,
-): readonly string[] {
-  const selectedEntryIds = new Set(packet.sajuEntryIds);
-  const selectedEntryTerms = SAJU_KNOWLEDGE_BASE.filter((entry) =>
-    selectedEntryIds.has(entry.id),
-  ).flatMap((entry) => [entry.labelKo, ...entry.aliases]);
-  const evidenceText = packet.sections
-    .flatMap((section) => section.primarySaju)
-    .flatMap((item) => [item.sourceLabelKo, item.summary, item.sourceId])
-    .join("\n");
-  const evidenceTerms = createKnownSajuTerms().filter((term) =>
-    evidenceText.includes(term),
-  );
-
-  return [
-    ...new Set(
-      [...selectedEntryTerms, ...evidenceTerms]
-        .map((term) => term.trim())
-        .filter((term) => term.length > 0),
-    ),
-  ];
-}
-
 export async function generateComprehensiveReportDraft(input: {
   readonly userDisplayName?: string;
   readonly mbtiType: string;
@@ -172,10 +136,12 @@ export async function generateComprehensiveReportDraft(input: {
   readonly rawText: string;
   readonly warnings: readonly string[];
 }> {
+  const allowedSajuTerms = deriveAllowedSajuTermsFromEvidencePacket(input.evidencePacket);
   const messages = buildOpenAIComprehensiveReportWriterMessages({
     userDisplayName: input.userDisplayName,
     mbtiType: input.mbtiType,
     evidencePacket: input.evidencePacket,
+    allowedSajuTerms,
   });
   let result: Awaited<ReturnType<typeof callOpenAIReportWriter>>;
 
@@ -205,7 +171,7 @@ export async function generateComprehensiveReportDraft(input: {
   }
 
   const validation = validateComprehensiveReportDraft(parsed, {
-    allowedSajuTerms: deriveAllowedSajuTermsFromEvidencePacket(input.evidencePacket),
+    allowedSajuTerms,
     allowedMbtiTerms: [input.mbtiType],
   });
 

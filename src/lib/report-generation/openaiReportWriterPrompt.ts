@@ -1,4 +1,5 @@
 import type { ComprehensiveReportEvidencePacket } from "../report-knowledge/comprehensiveReportEvidenceTypes";
+import { SAJU_KNOWLEDGE_BASE } from "../report-knowledge/sajuKnowledgeBase";
 
 export type OpenAIReportWriterMessages = {
   readonly system: string;
@@ -6,16 +7,116 @@ export type OpenAIReportWriterMessages = {
   readonly user: string;
 };
 
+function createKnownSajuTerms(): readonly string[] {
+  return [
+    ...new Set(
+      SAJU_KNOWLEDGE_BASE.flatMap((entry) => [
+        entry.labelKo,
+        ...entry.aliases,
+      ])
+        .map((term) => term.trim())
+        .filter((term) => /[가-힣]/.test(term) && term.length >= 2)
+        .sort((left, right) => right.length - left.length),
+    ),
+  ];
+}
+
+export function deriveAllowedSajuTermsFromEvidencePacket(
+  packet: ComprehensiveReportEvidencePacket,
+): readonly string[] {
+  const selectedEntryIds = new Set(packet.sajuEntryIds);
+  const selectedEntryTerms = SAJU_KNOWLEDGE_BASE.filter((entry) =>
+    selectedEntryIds.has(entry.id),
+  ).flatMap((entry) => [entry.labelKo, ...entry.aliases]);
+  const primarySajuEvidenceText = packet.sections
+    .flatMap((section) => [
+      ...section.primarySaju,
+    ])
+    .flatMap((item) => [item.sourceLabelKo, item.summary, item.sourceId])
+    .join("\n");
+  const primarySajuEvidenceTerms = createKnownSajuTerms().filter((term) =>
+    primarySajuEvidenceText.includes(term),
+  );
+
+  return [
+    ...new Set(
+      [...selectedEntryTerms, ...primarySajuEvidenceTerms]
+        .map((term) => term.trim())
+        .filter((term) => /[가-힣]/.test(term) && term.length >= 2),
+    ),
+  ];
+}
+
+function normalizeAllowedSajuTerms(terms: readonly string[]): ReadonlySet<string> {
+  return new Set(
+    terms
+      .map((term) => term.trim())
+      .map((term) => term.replace(/\s+/g, ""))
+      .filter((term) => term.length > 0),
+  );
+}
+
+function containsUnsupportedPromptSajuTerm(input: {
+  readonly text: string;
+  readonly allowedTerms: ReadonlySet<string>;
+}): boolean {
+  return createKnownSajuTerms().some((term) => {
+    const normalizedTerm = term.replace(/\s+/g, "");
+
+    return (
+      normalizedTerm.length > 2 &&
+      !input.allowedTerms.has(normalizedTerm) &&
+      input.text.includes(term)
+    );
+  });
+}
+
+function buildPromptEvidencePacket(input: {
+  readonly packet: ComprehensiveReportEvidencePacket;
+  readonly allowedSajuTerms: readonly string[];
+}): ComprehensiveReportEvidencePacket {
+  const allowedTerms = normalizeAllowedSajuTerms(input.allowedSajuTerms);
+
+  return {
+    ...input.packet,
+    sections: input.packet.sections.map((section) => ({
+      ...section,
+      fusion: section.fusion.filter((item) => {
+        const text = [
+          item.sourceLabelKo,
+          item.summary,
+        ].join("\n");
+
+        return !containsUnsupportedPromptSajuTerm({ text, allowedTerms });
+      }),
+    })),
+  };
+}
+
 export function buildOpenAIComprehensiveReportWriterMessages(input: {
   readonly userDisplayName?: string;
   readonly mbtiType: string;
   readonly evidencePacket: ComprehensiveReportEvidencePacket;
+  readonly allowedSajuTerms?: readonly string[];
 }): OpenAIReportWriterMessages {
   const displayName =
     input.userDisplayName !== undefined && input.userDisplayName.trim().length > 0
       ? input.userDisplayName.trim()
       : "사용자";
-  const evidenceJson = JSON.stringify(input.evidencePacket, null, 2);
+  const allowedSajuTerms =
+    input.allowedSajuTerms ?? deriveAllowedSajuTermsFromEvidencePacket(input.evidencePacket);
+  const allowedSajuTermLines =
+    allowedSajuTerms.length > 0
+      ? allowedSajuTerms.map((term) => `- ${term}`).join("\n")
+      : "- 없음";
+  const evidenceJson = JSON.stringify(
+    buildPromptEvidencePacket({
+      packet: input.evidencePacket,
+      allowedSajuTerms,
+    }),
+    null,
+    2,
+  );
 
   return {
     system: [
@@ -40,6 +141,7 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "차이점은 contrast로 설명한다.",
       "보완점과 부족한 부분은 compensation으로 설명한다.",
       "evidence에 없는 신살/귀인/십성/오행/일주 금지.",
+      "위 목록에 없는 신살, 귀인, 일주, 십성, 오행, 격국, 패턴은 절대 언급하지 마라.",
       "귀인, 신살, 십성, 오행, 일주 용어를 자연스럽게 사용한다.",
       "내 MBTI가 이래서 그런 줄 알았는데, 사주에도 이 구조가 있었네 느낌을 만든다.",
       "정확한 날짜 예언 금지.",
@@ -52,6 +154,9 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
     user: [
       `사용자 이름: ${displayName}`,
       `MBTI: ${input.mbtiType}`,
+      "이번 리포트에서 사용할 수 있는 사주 용어:",
+      allowedSajuTermLines,
+      "목록에 없는 신살, 귀인, 일주, 십성, 오행, 격국, 패턴은 절대 언급하지 마라.",
       "출력은 comprehensive_v1_draft JSON 객체 하나만 반환한다.",
       "각 섹션은 sectionId, titleKo, oneLine, body, evidenceSummary, sajuTermsUsed, mbtiTermsUsed, cautionLevel을 포함한다.",
       "sectionId는 제공된 canonical section만 사용한다.",

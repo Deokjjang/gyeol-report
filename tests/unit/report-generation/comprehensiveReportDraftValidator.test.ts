@@ -193,10 +193,12 @@ describe("comprehensive report draft validator", () => {
 
   it("does not flag Korean words that only contain a ganji substring", () => {
     const bodies = [
+      "성장성이 강하고 갑목과 갑신일주의 방향성이 잘 드러납니다.",
       "정해진 기준을 따르되 갑목과 갑신일주를 먼저 놓고 봅니다.",
       "정해놓은 루틴이 있으면 갑목과 갑신일주의 방향성이 더 안정됩니다.",
-      "기준을 정해야 할 때도 갑목과 갑신일주를 먼저 봅니다.",
+      "정해야 할 기준이 있어도 갑목과 갑신일주를 먼저 봅니다.",
       "관계의 선을 정해두는 편이고 ENTJ는 보조 근거로만 연결합니다.",
+      "관계의 선을 정해 두는 편이고 ENTJ는 보조 근거로만 연결합니다.",
     ];
 
     for (const body of bodies) {
@@ -214,6 +216,14 @@ describe("comprehensive report draft validator", () => {
 
   it("rejects contextual unsupported ganji and unsupported sinsal terms", () => {
     const cases = [
+      {
+        body: "장성살이 있습니다.",
+        expectedError: "UNSUPPORTED_SAJU_TERM: 장성살",
+      },
+      {
+        body: "장성 살 기운이 있습니다.",
+        expectedError: "UNSUPPORTED_SAJU_TERM: 장성살",
+      },
       {
         body: "정해일주 성향이 있다고 쓰면 evidence 밖의 일주를 만든 것입니다.",
         expectedError: "UNSUPPORTED_SAJU_TERM: 정해일주",
@@ -250,10 +260,20 @@ describe("comprehensive report draft validator", () => {
     const draft = replaceSectionBody(
       createValidDraft(),
       "personality",
-      "갑신일주와 현침살이 먼저 보여서, 사람을 싫어하는 건 아닌데 비효율적인 사람을 오래 기다리는 데 에너지를 많이 씁니다. 홍염살은 매력을 보태지만 ENTJ는 보조 근거로만 씁니다.",
+      "갑신일주와 현침살이 먼저 보여서, 사람을 싫어하는 건 아닌데 비효율적인 사람을 오래 기다리는 데 에너지를 많이 씁니다. 홍염살과 재고귀인은 보조 흐름으로만 씁니다.",
     );
     const result = validateComprehensiveReportDraft(draft, {
-      allowedSajuTerms: ["갑목", "갑신", "갑신일주", "현침", "현침살", "홍염", "홍염살"],
+      allowedSajuTerms: [
+        "갑목",
+        "갑신",
+        "갑신일주",
+        "현침",
+        "현침살",
+        "홍염",
+        "홍염살",
+        "재고",
+        "재고귀인",
+      ],
     });
 
     expect(result.errors).toEqual([]);

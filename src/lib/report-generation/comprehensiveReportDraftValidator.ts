@@ -114,33 +114,20 @@ const mbtiFirstBodyPrefixes = [
   "MBTI상",
   "입력하신 MBTI가 먼저",
 ] as const;
-const koreanHeavenlyStems = [
-  "갑",
-  "을",
-  "병",
-  "정",
-  "무",
-  "기",
-  "경",
-  "신",
-  "임",
-  "계",
+const shortSajuTermContextSuffixes = [
+  "일주",
+  "귀인",
+  "기운",
+  "구조",
+  "년",
+  "월",
+  "일",
+  "시",
+  "살",
+  "격",
 ] as const;
-const koreanEarthlyBranches = [
-  "자",
-  "축",
-  "인",
-  "묘",
-  "진",
-  "사",
-  "오",
-  "미",
-  "신",
-  "유",
-  "술",
-  "해",
-] as const;
-const ganjiContextSuffixes = ["일주", "년", "월", "일", "시"] as const;
+const shortSajuTermCompoundSuffixes = ["일주", "귀인", "살"] as const;
+const shortSajuTermBaseAllowedSuffixes = ["기운", "구조", "격"] as const;
 
 function isDisplayOnlySectionId(
   value: ComprehensiveReportSectionId,
@@ -211,14 +198,8 @@ function escapeRegExp(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-function isKoreanGanjiTerm(term: string): boolean {
-  const [stem, branch, rest] = [...term];
-
-  return (
-    rest === undefined &&
-    (koreanHeavenlyStems as readonly string[]).includes(stem ?? "") &&
-    (koreanEarthlyBranches as readonly string[]).includes(branch ?? "")
-  );
+function isShortKoreanSajuTerm(term: string): boolean {
+  return /^[가-힣]{2}$/.test(term);
 }
 
 function isAllowedSajuTerm(
@@ -233,66 +214,73 @@ function isAllowedSajuTerm(
 
   const ganjiBase = normalizedTerm.slice(0, 2);
 
-  if (
-    normalizedTerm === `${ganjiBase}일주` &&
-    isKoreanGanjiTerm(ganjiBase) &&
-    allowedTerms.has(ganjiBase)
-  ) {
-    return true;
+  for (const suffix of shortSajuTermCompoundSuffixes) {
+    if (
+      normalizedTerm === `${ganjiBase}${suffix}` &&
+      isShortKoreanSajuTerm(ganjiBase) &&
+      allowedTerms.has(ganjiBase)
+    ) {
+      return true;
+    }
   }
 
-  if (
-    isKoreanGanjiTerm(normalizedTerm) &&
-    allowedTerms.has(`${normalizedTerm}일주`)
-  ) {
-    return true;
+  for (const suffix of shortSajuTermCompoundSuffixes) {
+    if (
+      isShortKoreanSajuTerm(normalizedTerm) &&
+      allowedTerms.has(`${normalizedTerm}${suffix}`)
+    ) {
+      return true;
+    }
+  }
+
+  for (const suffix of shortSajuTermBaseAllowedSuffixes) {
+    if (
+      normalizedTerm === `${ganjiBase}${suffix}` &&
+      isShortKoreanSajuTerm(ganjiBase) &&
+      allowedTerms.has(ganjiBase)
+    ) {
+      return true;
+    }
   }
 
   return false;
 }
 
-function findContextualGanjiMatches(
+function shouldSkipShortSuffixMatch(
+  text: string,
+  matchEndIndex: number,
+  suffix: string,
+): boolean {
+  return suffix === "일" && /^\s*주/.test(text.slice(matchEndIndex));
+}
+
+function findContextualShortSajuTermMatches(
   text: string,
   term: string,
 ): readonly string[] {
   const escapedTerm = escapeRegExp(term);
   const matches: string[] = [];
 
-  for (const suffix of ganjiContextSuffixes) {
+  for (const suffix of shortSajuTermContextSuffixes) {
     const escapedSuffix = escapeRegExp(suffix);
-    const suffixPattern =
-      suffix === "일"
-        ? `${escapedTerm}\\s*${escapedSuffix}(?!주)`
-        : `${escapedTerm}\\s*${escapedSuffix}`;
-    const regex = new RegExp(suffixPattern, "g");
+    const regex = new RegExp(`${escapedTerm}\\s*${escapedSuffix}`, "g");
 
     for (const match of text.matchAll(regex)) {
+      const matchEndIndex = (match.index ?? 0) + match[0].length;
+
+      if (shouldSkipShortSuffixMatch(text, matchEndIndex, suffix)) {
+        continue;
+      }
       matches.push(match[0].replace(/\s+/g, ""));
     }
-  }
-
-  const standaloneRegex = new RegExp(
-    `(^|[^가-힣A-Za-z0-9])(${escapedTerm})(?=$|[^가-힣A-Za-z0-9])`,
-    "g",
-  );
-
-  for (const match of text.matchAll(standaloneRegex)) {
-    const matchedTerm = match[2];
-    const termStartIndex = (match.index ?? 0) + match[1].length;
-    const tail = text.slice(termStartIndex + matchedTerm.length);
-
-    if (/^\s*(일주|년|월|일|시)/.test(tail)) {
-      continue;
-    }
-    matches.push(matchedTerm);
   }
 
   return matches;
 }
 
 function findSajuTermMatches(text: string, term: string): readonly string[] {
-  if (isKoreanGanjiTerm(term)) {
-    return findContextualGanjiMatches(text, term);
+  if (isShortKoreanSajuTerm(term)) {
+    return findContextualShortSajuTermMatches(text, term);
   }
 
   return text.includes(term) ? [term] : [];

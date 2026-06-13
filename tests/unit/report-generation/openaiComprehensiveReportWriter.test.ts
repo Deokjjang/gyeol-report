@@ -135,7 +135,19 @@ function expectSafeError(error: unknown) {
 
 describe("OpenAI comprehensive report writer", () => {
   it("builds prompt parses JSON validates draft and returns raw text", async () => {
-    const draft = createValidDraft();
+    const baseDraft = createValidDraft();
+    const draft = {
+      ...baseDraft,
+      sections: baseDraft.sections.map((section) =>
+        section.sectionId === "money_asset"
+          ? {
+              ...section,
+              body:
+                "갑목과 갑신일주를 1차 근거로 삼고 재고귀인은 자산화 흐름으로만 연결합니다. ENTJ는 보조 근거입니다.",
+            }
+          : section,
+      ),
+    };
     const calls: RequestInit[] = [];
     const fetchImpl: typeof fetch = async (_input, init) => {
       if (init !== undefined) {
@@ -162,6 +174,11 @@ describe("OpenAI comprehensive report writer", () => {
     expect(result.rawText).toBe(JSON.stringify(draft));
     expect(result.warnings).toEqual([]);
     expect(JSON.stringify(calls[0].body)).toContain("사주가 1차 근거");
+    expect(JSON.stringify(calls[0].body)).toContain(
+      "이번 리포트에서 사용할 수 있는 사주 용어",
+    );
+    expect(JSON.stringify(calls[0].body)).toContain("재고귀인");
+    expect(JSON.stringify(calls[0].body)).not.toContain("천을귀인");
     expect(JSON.stringify(calls[0].body)).toContain("day_master_gabmok");
   });
 
