@@ -85,10 +85,10 @@ function createChapter(chapterId: ComprehensiveReportV2ChapterId, titleKo: strin
           ]
         : chapterId === "love_relationships"
           ? [
-              "관계에서 써먹을 것은 보완하는 사람 기준을 먼저 정하는 것입니다.",
-              "정서적 완충이 되고 감정 표현을 부드럽게 풀어주는 사람이 맞는 사람일 수 있습니다.",
-              "피해야 할 패턴은 감정 기복이 크고 책임이 흐릿한 사람입니다.",
-              "ISFP, INFP, INTP는 예시일 뿐이고 MBTI만으로 단정하지 마세요.",
+              "맞는 상대: 감정을 천천히 풀어주고 덕민님의 과열을 식혀주는 사람이 맞기 쉽습니다.",
+              "피해야 할 상대: 감정 기복이 크고 책임이 흐릿한 사람은 조심할 상대입니다.",
+              "보완 기운: 수 기운과 화 기운처럼 감정 완충과 표현 온도를 보태는 타입이 좋습니다.",
+              "MBTI 예시: ISFP, INFP, INTP 유형은 보완적으로 느껴질 수 있지만 MBTI만으로 궁합을 단정하지 않습니다.",
             ]
           : chapterId === "risk_and_growth"
             ? [

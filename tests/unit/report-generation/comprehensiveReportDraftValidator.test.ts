@@ -169,10 +169,10 @@ function createSolutionLines(
   }
   if (chapterId === "love_relationships") {
     return [
-      "관계에서 써먹을 것은 보완하는 사람 기준을 먼저 정하는 것입니다.",
-      "정서적 완충이 되고 감정 표현을 부드럽게 풀어주는 사람이 맞는 사람일 수 있습니다.",
-      "피해야 할 패턴은 감정 기복이 크고 책임이 흐릿한 사람입니다.",
-      "ISFP, INFP, INTP는 예시일 뿐이고 MBTI만으로 단정하지 마세요.",
+      "맞는 상대: 감정을 천천히 풀어주고 덕민님의 과열을 식혀주는 사람이 맞는 사람일 수 있습니다.",
+      "피해야 할 상대: 감정 기복이 크고 책임이 흐릿한 사람은 피해야 할 패턴입니다.",
+      "보완 기운: 수 부족과 화 부족을 보완하듯 감정 완충과 표현 온도를 보태는 사람이 좋습니다.",
+      "MBTI 예시: ISFP, INFP, INTP는 예시일 뿐이고 MBTI만으로 궁합을 단정하지 마세요.",
     ];
   }
   if (chapterId === "risk_and_growth") {
@@ -592,6 +592,114 @@ describe("comprehensive report draft validator", () => {
     expect(result.ok).toBe(false);
     expect(result.errors.join("\n")).toContain("LOVE_PARTNER_FIT_MISSING");
     expect(result.errors.join("\n")).toContain("LOVE_BAD_MATCH_PATTERN_MISSING");
+  });
+
+  it("accepts V2 love chapter with structural partner prescriptions in solution lines", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "love_relationships"
+          ? {
+              ...chapter,
+              solutionLines: [
+                "맞는 상대: 감정을 천천히 풀어주고 덕민님의 과열을 식혀주는 사람이 맞기 쉽습니다.",
+                "피해야 할 상대: 감정 기복이 크고 책임이 흐릿한 사람은 조심할 상대입니다.",
+                "보완 기운: 수 기운과 화 기운처럼 감정 완충과 표현 온도를 보태는 타입이 좋습니다.",
+                "MBTI 예시: ISFP, INFP, INTP 유형은 보완적으로 느껴질 수 있지만 MBTI만으로 궁합을 단정하지 않습니다.",
+              ],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+  });
+
+  it.each([
+    {
+      expectedError: "LOVE_PARTNER_FIT_MISSING",
+      solutionLines: [
+        "피해야 할 상대: 감정 기복이 크고 책임이 흐릿한 사람은 조심할 상대입니다.",
+        "보완 기운: 수 기운과 화 기운처럼 감정 완충과 표현 온도를 보태는 타입이 좋습니다.",
+        "MBTI 예시: ISFP, INFP, INTP 유형은 보완적으로 느껴질 수 있지만 MBTI만으로 궁합을 단정하지 않습니다.",
+        "관계에서는 대화를 많이 하세요.",
+      ],
+    },
+    {
+      expectedError: "LOVE_BAD_MATCH_PATTERN_MISSING",
+      solutionLines: [
+        "맞는 상대: 감정을 천천히 풀어주고 덕민님의 과열을 식혀주는 사람이 맞기 쉽습니다.",
+        "보완 기운: 수 기운과 화 기운처럼 감정 완충과 표현 온도를 보태는 타입이 좋습니다.",
+        "MBTI 예시: ISFP, INFP, INTP 유형은 보완적으로 느껴질 수 있지만 MBTI만으로 궁합을 단정하지 않습니다.",
+        "서로 배려하세요.",
+      ],
+    },
+    {
+      expectedError: "LOVE_COMPLEMENT_MISSING",
+      solutionLines: [
+        "맞는 상대: 감정을 천천히 풀어주고 덕민님의 과열을 식혀주는 사람이 맞기 쉽습니다.",
+        "피해야 할 상대: 감정 기복이 크고 책임이 흐릿한 사람은 조심할 상대입니다.",
+        "MBTI 예시: ISFP, INFP, INTP 유형은 보완적으로 느껴질 수 있지만 MBTI만으로 궁합을 단정하지 않습니다.",
+        "좋은 사람을 만나세요.",
+      ],
+    },
+    {
+      expectedError: "LOVE_MBTI_CAUTION_OR_EXAMPLE_MISSING",
+      solutionLines: [
+        "맞는 상대: 감정을 천천히 풀어주고 덕민님의 과열을 식혀주는 사람이 맞기 쉽습니다.",
+        "피해야 할 상대: 감정 기복이 크고 책임이 흐릿한 사람은 조심할 상대입니다.",
+        "보완 기운: 수 기운과 화 기운처럼 감정 완충과 표현 온도를 보태는 타입이 좋습니다.",
+        "MBTI 예시: ISFP, INFP, INTP 유형이 잘 맞습니다.",
+      ],
+    },
+  ])(
+    "rejects V2 love solution lines missing structural guidance: $expectedError",
+    ({ expectedError, solutionLines }) => {
+      const draft = createValidV2Draft();
+      const result = validateComprehensiveReportDraft({
+        ...draft,
+        chapters: draft.chapters.map((chapter) =>
+          chapter.chapterId === "love_relationships"
+            ? {
+                ...chapter,
+                solutionLines,
+              }
+            : chapter,
+        ),
+      });
+
+      expect(result.ok).toBe(false);
+      expect(result.errors.join("\n")).toContain(expectedError);
+    },
+  );
+
+  it("rejects generic love solution lines", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "love_relationships"
+          ? {
+              ...chapter,
+              solutionLines: [
+                "좋은 사람을 만나세요.",
+                "서로 배려하세요.",
+                "대화를 많이 하세요.",
+                "연애를 잘하세요.",
+              ],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("LOVE_PARTNER_FIT_MISSING");
+    expect(result.errors.join("\n")).toContain("LOVE_BAD_MATCH_PATTERN_MISSING");
+    expect(result.errors.join("\n")).toContain("LOVE_COMPLEMENT_MISSING");
+    expect(result.errors.join("\n")).toContain(
+      "LOVE_MBTI_CAUTION_OR_EXAMPLE_MISSING",
+    );
   });
 
   it("rejects V2 risk chapter without element remedies", () => {

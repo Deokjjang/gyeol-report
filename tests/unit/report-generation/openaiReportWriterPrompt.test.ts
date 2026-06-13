@@ -81,6 +81,12 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("people_family_environment");
     expect(combined).toContain("공부는 학생 공부뿐 아니라 자격증, 전문서, 직무 학습, 사업 학습까지 포함");
     expect(combined).toContain("연애는 오행적으로 필요한 사람과 MBTI 관계 스타일을 함께 풀어라");
+    expect(combined).toContain("love_relationships.solutionLines");
+    expect(combined).toContain("맞는 상대");
+    expect(combined).toContain("피해야 할 상대");
+    expect(combined).toContain("보완 기운");
+    expect(combined).toContain("MBTI 예시");
+    expect(combined).toContain("MBTI만으로 궁합을 단정하지 않는다");
     expect(combined).toContain("display 섹션은 짧게");
     expect(combined).toContain("시스템 사정");
     expect(combined).toContain("팩폭은 하되 모욕 금지");

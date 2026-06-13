@@ -247,14 +247,19 @@ const studyScopeMarkers = [
   "사업 학습",
 ] as const;
 const partnerFitMarkers = [
+  "맞는 상대",
+  "잘 맞는 상대",
+  "어울리는 상대",
+  "보완되는 사람",
   "보완하는 사람",
   "맞는 사람",
   "필요한 사람",
   "어울리는 사람",
-  "궁합",
-  "정서적 완충",
 ] as const;
 const badMatchMarkers = [
+  "피해야 할 상대",
+  "안 맞는 상대",
+  "조심할 상대",
   "피해야 할 패턴",
   "맞지 않는",
   "나쁜 궁합",
@@ -263,9 +268,26 @@ const badMatchMarkers = [
   "확인받으려는",
   "실행이 약한",
 ] as const;
+const loveComplementMarkers = [
+  "보완 기운",
+  "수 기운",
+  "화 기운",
+  "오행",
+  "감정 완충",
+  "표현 온도",
+  "수 부족",
+  "화 부족",
+  "토 과다",
+] as const;
 const cautiousMbtiRelationMarkers = [
   "MBTI만으로 단정",
+  "궁합을 단정",
   "단정하지",
+] as const;
+const mbtiRelationExampleMarkers = [
+  "MBTI 예시",
+  "MBTI",
+  "유형",
   "ISFP",
   "INFP",
   "INTP",
@@ -1356,7 +1378,7 @@ function appendV2TopicCoverageErrors(
   const loveChapter = findChapter(chapters, "love_relationships");
   const riskChapter = findChapter(chapters, "risk_and_growth");
   const workText = getV2ChapterSearchText(workChapter);
-  const loveText = getV2ChapterSearchText(loveChapter);
+  const loveSolutionText = loveChapter?.solutionLines.join("\n") ?? "";
   const riskText = getV2ChapterSearchText(riskChapter);
 
   if (workChapter !== undefined && !hasAnyMarker(workText, studyScopeMarkers)) {
@@ -1364,16 +1386,26 @@ function appendV2TopicCoverageErrors(
   }
   if (
     loveChapter !== undefined &&
-    !hasAnyMarker(loveText, partnerFitMarkers)
+    !hasAnyMarker(loveSolutionText, partnerFitMarkers)
   ) {
     errors.push("LOVE_PARTNER_FIT_MISSING");
   }
-  if (loveChapter !== undefined && !hasAnyMarker(loveText, badMatchMarkers)) {
+  if (
+    loveChapter !== undefined &&
+    !hasAnyMarker(loveSolutionText, badMatchMarkers)
+  ) {
     errors.push("LOVE_BAD_MATCH_PATTERN_MISSING");
   }
   if (
     loveChapter !== undefined &&
-    !hasAnyMarker(loveText, cautiousMbtiRelationMarkers)
+    !hasAnyMarker(loveSolutionText, loveComplementMarkers)
+  ) {
+    errors.push("LOVE_COMPLEMENT_MISSING");
+  }
+  if (
+    loveChapter !== undefined &&
+    (!hasAnyMarker(loveSolutionText, mbtiRelationExampleMarkers) ||
+      !hasAnyMarker(loveSolutionText, cautiousMbtiRelationMarkers))
   ) {
     errors.push("LOVE_MBTI_CAUTION_OR_EXAMPLE_MISSING");
   }

@@ -116,12 +116,19 @@ function createV2Chapter(chapterId: ComprehensiveReportV2ChapterId, titleKo: str
     solutionLines:
       chapterId === "opening" || chapterId === "final_message"
         ? []
-        : [
-            "결론을 바로 말하기 전에 질문을 먼저 넣으세요.",
-            "책임 범위를 문장으로 정리하세요.",
-            "쉬는 시간을 일정에 먼저 넣으세요.",
-            "감정 표현은 짧게라도 밖으로 내세요.",
-          ],
+        : chapterId === "love_relationships"
+          ? [
+              "맞는 상대: 감정을 천천히 풀어주고 덕민님의 과열을 식혀주는 사람이 맞기 쉽습니다.",
+              "피해야 할 상대: 감정 기복이 크고 책임이 흐릿한 사람은 조심할 상대입니다.",
+              "보완 기운: 수 기운과 화 기운처럼 감정 완충과 표현 온도를 보태는 타입이 좋습니다.",
+              "MBTI 예시: ISFP, INFP, INTP 유형은 보완적으로 느껴질 수 있지만 MBTI만으로 궁합을 단정하지 않습니다.",
+            ]
+          : [
+              "결론을 바로 말하기 전에 질문을 먼저 넣으세요.",
+              "책임 범위를 문장으로 정리하세요.",
+              "쉬는 시간을 일정에 먼저 넣으세요.",
+              "감정 표현은 짧게라도 밖으로 내세요.",
+            ],
     keyPhrases: [titleKo, "갑목"],
     sajuTermsUsed: ["갑목", "갑신일주"],
     mbtiTermsUsed: ["ENTJ"],
