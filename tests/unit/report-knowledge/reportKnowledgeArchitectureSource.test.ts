@@ -66,6 +66,11 @@ describe("report knowledge architecture document", () => {
       "Unsupported Saju terms are rejected",
       "Display sections are separated from interpretation",
       "MBTI-first phrasing is rejected",
+      "REPORT-11 improves comprehensive report UX and content density",
+      "Saju summary card and MBTI summary card",
+      "Evidence UI is secondary",
+      "deeper Saju term explanation",
+      "generated-section density checks",
     ];
 
     for (const marker of requiredMarkers) {

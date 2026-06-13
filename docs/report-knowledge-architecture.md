@@ -250,6 +250,29 @@ should not open a core interpretation with "ENTJ라서 그렇다." It should sta
 from Saju structure and then explain how MBTI supports, contrasts, or compensates
 that structure.
 
+## REPORT-11 Report UX and Content Density
+
+REPORT-11 improves comprehensive report UX and content density.
+
+Display sections are not treated as long interpretation prose. The result page
+separates deterministic display-style areas from interpretation sections, so
+the user sees a cleaner Saju summary card and MBTI summary card before reading
+the generated body.
+
+Evidence UI is secondary. Section bodies are shown first, while evidence
+summaries, Saju terms, and MBTI support terms are tucked into a collapsible
+analysis evidence area.
+
+The OpenAI writer prompt demands deeper Saju term explanation. The report must
+explain what a Saju term means in plain Korean and why that term produces a
+behavioral, relational, money, or career consequence. It should not merely list
+terms.
+
+Draft validation now includes generated-section density checks for the OpenAI
+writer path. Interpretation sections that are too short, repeat the one-line
+summary, use generic placeholder copy, omit Saju-term explanation, or repeat
+the same key phrase too often are rejected.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

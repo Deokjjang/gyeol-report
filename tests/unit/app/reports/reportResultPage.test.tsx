@@ -107,12 +107,14 @@ describe("report result page", () => {
     expect(html).toContain("한눈에 보는 결");
     expect(html).toContain("사주 원국의 구조를 먼저 보고");
     expect(html).toContain("갑목과 갑신일주가 중심이고 ENTJ");
+    expect(html).toContain("사주 원국 요약");
+    expect(html).toContain("MBTI 입력 요약");
     expect(html).toContain("성격");
     expect(html).toContain("성격 한 줄 핵심입니다.");
     expect(html).toContain("갑목과 갑신일주를 먼저 놓고 ENTJ");
-    expect(html).toContain("근거 요약");
+    expect(html).toContain("분석 근거 보기");
     expect(html).toContain("사주 근거");
-    expect(html).toContain("MBTI 보조 근거");
+    expect(html).toContain("MBTI 참고");
     expect(html).toContain("최종 조언");
     expect(html).not.toContain(fullPaymentKey);
     expect(html).not.toContain("provider_payment_must_not_render");

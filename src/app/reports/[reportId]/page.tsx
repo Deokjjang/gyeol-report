@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { getPaidReportResult } from "../../../lib/reports/supabasePaidReportResultAdapter";
 import { createSupabasePaidReportResultClient } from "../../../lib/reports/supabasePaidReportResultClient";
 import type { PaidReportResult } from "../../../lib/reports/paidReportResultTypes";
+import type { ComprehensiveReportDraftSection } from "../../../lib/report-generation/comprehensiveReportDraftTypes";
 
 export const dynamic = "force-dynamic";
 
@@ -26,6 +27,8 @@ type PageState =
       readonly kind: "ready";
       readonly result: PaidReportResult;
     };
+
+const displaySectionIds = ["manse_table", "mbti_table"] as const;
 
 function createResultClient() {
   return createSupabasePaidReportResultClient({
@@ -59,6 +62,31 @@ async function loadPageState(reportId: string): Promise<PageState> {
     kind: "ready",
     result: result.result,
   };
+}
+
+function isDisplaySection(section: ComprehensiveReportDraftSection): boolean {
+  return (displaySectionIds as readonly string[]).includes(section.sectionId);
+}
+
+function uniqueValues(values: readonly string[]): readonly string[] {
+  return [...new Set(values.map((value) => value.trim()).filter(Boolean))];
+}
+
+function collectDraftSajuTerms(result: PaidReportResult): readonly string[] {
+  return result.draft === null
+    ? []
+    : uniqueValues(
+        result.draft.sections.flatMap((section) => [
+          ...section.sajuTermsUsed,
+          ...section.evidenceSummary.filter((item) => item !== "ENTJ"),
+        ]),
+      );
+}
+
+function collectDraftMbtiTerms(result: PaidReportResult): readonly string[] {
+  return result.draft === null
+    ? []
+    : uniqueValues(result.draft.sections.flatMap((section) => section.mbtiTermsUsed));
 }
 
 function ResultShell({
@@ -143,6 +171,89 @@ function renderTermList(label: string, terms: readonly string[]) {
   );
 }
 
+function renderDisplaySummaryCard(input: {
+  readonly title: string;
+  readonly description: string;
+  readonly termsLabel: string;
+  readonly terms: readonly string[];
+}) {
+  return (
+    <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+      <div className="space-y-2">
+        <h2 className="text-lg font-semibold text-neutral-50">{input.title}</h2>
+        <p className="text-sm leading-6 text-neutral-400">{input.description}</p>
+      </div>
+      {renderTermList(input.termsLabel, input.terms)}
+    </section>
+  );
+}
+
+function renderDisplaySections(result: PaidReportResult) {
+  const draft = result.draft;
+
+  if (draft === null) {
+    return null;
+  }
+
+  const manseSection = draft.sections.find(
+    (section) => section.sectionId === "manse_table",
+  );
+  const mbtiSection = draft.sections.find(
+    (section) => section.sectionId === "mbti_table",
+  );
+
+  return (
+    <section className="grid gap-4 md:grid-cols-2" aria-label="입력 요약">
+      {renderDisplaySummaryCard({
+        title: "사주 원국 요약",
+        description:
+          manseSection?.oneLine ?? "사주 원국에서 해석에 사용한 핵심 근거를 정리했습니다.",
+        termsLabel: "사주 근거",
+        terms: collectDraftSajuTerms(result),
+      })}
+      {renderDisplaySummaryCard({
+        title: "MBTI 입력 요약",
+        description:
+          mbtiSection?.oneLine ?? "입력하신 MBTI 유형을 보조 기준으로 정리했습니다.",
+        termsLabel: "MBTI 참고",
+        terms: collectDraftMbtiTerms(result),
+      })}
+    </section>
+  );
+}
+
+function renderEvidenceDetails(section: ComprehensiveReportDraftSection) {
+  const hasEvidence =
+    section.evidenceSummary.length > 0 ||
+    section.sajuTermsUsed.length > 0 ||
+    section.mbtiTermsUsed.length > 0;
+
+  if (!hasEvidence) {
+    return null;
+  }
+
+  return (
+    <details className="rounded-lg border border-neutral-800 bg-neutral-900/60 p-4">
+      <summary className="cursor-pointer text-sm font-semibold text-neutral-400">
+        분석 근거 보기
+      </summary>
+      <div className="mt-4 space-y-4 border-t border-neutral-800 pt-4">
+        {section.evidenceSummary.length > 0 ? (
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-300">
+            {section.evidenceSummary.map((summary) => (
+              <li key={summary}>{summary}</li>
+            ))}
+          </ul>
+        ) : null}
+        <div className="grid gap-4 sm:grid-cols-2">
+          {renderTermList("사주 근거", section.sajuTermsUsed)}
+          {renderTermList("MBTI 참고", section.mbtiTermsUsed)}
+        </div>
+      </div>
+    </details>
+  );
+}
+
 function renderGeneratedState(result: PaidReportResult) {
   const draft = result.draft;
 
@@ -185,8 +296,10 @@ function renderGeneratedState(result: PaidReportResult) {
           </div>
         </dl>
 
+        {renderDisplaySections(result)}
+
         <section className="space-y-3" aria-label="핵심 해석">
-          {draft.sections.map((section, index) => (
+          {draft.sections.filter((section) => !isDisplaySection(section)).map((section, index) => (
             <details
               key={section.sectionId}
               open={index < 2}
@@ -206,23 +319,7 @@ function renderGeneratedState(result: PaidReportResult) {
                   {section.body}
                 </p>
 
-                {section.evidenceSummary.length > 0 ? (
-                  <div className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
-                    <p className="text-xs font-semibold text-neutral-500">
-                      근거 요약
-                    </p>
-                    <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-300">
-                      {section.evidenceSummary.map((summary) => (
-                        <li key={summary}>{summary}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : null}
-
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {renderTermList("사주 근거", section.sajuTermsUsed)}
-                  {renderTermList("MBTI 보조 근거", section.mbtiTermsUsed)}
-                </div>
+                {renderEvidenceDetails(section)}
               </div>
             </details>
           ))}

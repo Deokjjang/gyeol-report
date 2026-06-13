@@ -73,7 +73,7 @@ function createSection(definition: ComprehensiveReportSectionDefinition) {
     titleKo: definition.titleKo,
     oneLine: `${definition.titleKo} 핵심을 사주 근거로 정리합니다.`,
     body:
-      `${definition.titleKo}에서는 갑목과 갑신일주를 1차 근거로 삼고 ENTJ는 보조 근거로 연결합니다. ${definition.id} 항목은 같은 근거라도 다른 장면으로 풉니다.`,
+      `${definition.titleKo}에서는 갑목과 갑신일주를 1차 근거로 삼고 ENTJ는 보조 근거로 연결합니다. 갑목은 방향을 세우고 앞으로 밀고 가려는 힘이라서 ${definition.titleKo}에서는 결론을 빠르게 잡는 모습으로 나타납니다. 갑신일주는 압박 속에서도 기준을 지키려는 구조라서, ${definition.id} 항목에서는 같은 근거를 다른 생활 장면으로 풀어냅니다. 그래서 ${definition.titleKo}의 조언은 막연한 위로보다 무엇을 기준으로 삼고 어디서 힘을 뺄지 정하는 쪽이어야 합니다.`,
     evidenceSummary: ["갑목", "갑신일주", "ENTJ"],
     sajuTermsUsed:
       definition.primaryBasis === "display" && isMbtiDisplay
@@ -143,7 +143,7 @@ describe("OpenAI comprehensive report writer", () => {
           ? {
               ...section,
               body:
-                "갑목과 갑신일주를 1차 근거로 삼고 재고귀인은 자산화 흐름으로만 연결합니다. ENTJ는 보조 근거입니다.",
+                "갑목과 갑신일주를 1차 근거로 삼고 재고귀인은 자산화 흐름으로만 연결합니다. 갑목은 돈을 단순히 모으는 것보다 방향과 판을 키우려는 힘으로 나타납니다. 갑신일주는 압박이 걸릴수록 기준을 세우는 구조라서, 재고귀인과 만나면 성과를 문서화하고 묶어두는 방식으로 현실화됩니다. ENTJ는 이 흐름을 보조하는 성취 감각입니다.",
             }
           : section,
       ),

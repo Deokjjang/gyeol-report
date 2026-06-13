@@ -64,6 +64,11 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("내부 사정 언급 금지");
     expect(combined).toContain("팩폭은 하되 모욕 금지");
     expect(combined).toContain("같은 근거를 섹션별로 다르게 풀어라");
+    expect(combined).toContain("사주 용어를 쉬운 말로 풀어 설명");
+    expect(combined).toContain("섹션마다 같은 근거를 다른 결과로 풀어라");
+    expect(combined).toContain("구체적인 조언");
+    expect(combined).toContain("편관은 덕민님을 편하게 두지 않는 압박");
+    expect(combined).toContain("휴식은 감정 문제가 아니라 성능 유지 장치");
     expect(combined).toContain("공통점");
     expect(combined).toContain("차이점");
     expect(combined).toContain("보완점");

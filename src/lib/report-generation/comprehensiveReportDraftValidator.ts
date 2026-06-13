@@ -110,10 +110,36 @@ const sectionKeys = [
 ] as const;
 
 const displayOnlySectionIds = ["manse_table", "mbti_table"] as const;
+const interpretationSectionIds = [
+  "saju_core",
+  "saju_mbti_fusion",
+  "personality",
+  "strengths",
+  "weaknesses",
+  "work_career",
+  "money_asset",
+  "love_relationship",
+  "human_relations",
+  "family_independence",
+  "study_growth",
+  "environment_luck",
+  "final_advice",
+] as const satisfies readonly ComprehensiveReportSectionId[];
 const mbtiFirstBodyPrefixes = [
   "MBTI상",
   "입력하신 MBTI가 먼저",
 ] as const;
+const genericPlaceholderBodies = [
+  "사주 원국의 기본 구조를 정리했습니다.",
+  "입력하신 MBTI 유형을 리포트 보조 기준으로 반영했습니다.",
+] as const;
+const repeatedKeyPhrases = [
+  "회복과 표현",
+  "감정 완충",
+  "표현 온도",
+  "수 부족과 화 부족",
+] as const;
+const interpretationBodyMinimumLength = 160;
 const shortSajuTermContextSuffixes = [
   "일주",
   "귀인",
@@ -133,6 +159,10 @@ function isDisplayOnlySectionId(
   value: ComprehensiveReportSectionId,
 ): boolean {
   return (displayOnlySectionIds as readonly string[]).includes(value);
+}
+
+function isInterpretationSectionId(value: ComprehensiveReportSectionId): boolean {
+  return (interpretationSectionIds as readonly string[]).includes(value);
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -415,6 +445,67 @@ function appendDisplaySectionErrors(
   }
 }
 
+function shouldRunQualityDensityChecks(
+  options: ComprehensiveReportDraftValidationOptions,
+): boolean {
+  return options.allowedSajuTerms !== undefined;
+}
+
+function compactText(value: string): string {
+  return value.replace(/\s+/g, "");
+}
+
+function bodyContainsAnyTerm(input: {
+  readonly body: string;
+  readonly terms: readonly string[];
+}): boolean {
+  const body = compactText(input.body);
+
+  return input.terms
+    .map((term) => compactText(term))
+    .filter((term) => term.length > 0)
+    .some((term) => body.includes(term));
+}
+
+function appendSectionDensityErrors(
+  errors: string[],
+  sections: readonly ComprehensiveReportDraftSection[],
+  options: ComprehensiveReportDraftValidationOptions,
+): void {
+  if (!shouldRunQualityDensityChecks(options)) {
+    return;
+  }
+
+  for (const section of sections) {
+    if (!isInterpretationSectionId(section.sectionId)) {
+      continue;
+    }
+
+    if (section.body.trim() === section.oneLine.trim()) {
+      errors.push(`SECTION_BODY_SAME_AS_ONELINE: ${section.sectionId}`);
+    }
+    if (section.body.trim().length < interpretationBodyMinimumLength) {
+      errors.push(`SECTION_BODY_TOO_SHORT: ${section.sectionId} body too short`);
+    }
+    if (
+      genericPlaceholderBodies.some((placeholder) =>
+        section.body.includes(placeholder),
+      )
+    ) {
+      errors.push(`GENERIC_PLACEHOLDER_BODY: ${section.sectionId}`);
+    }
+    if (
+      section.sajuTermsUsed.length > 0 &&
+      !bodyContainsAnyTerm({
+        body: section.body,
+        terms: section.sajuTermsUsed,
+      })
+    ) {
+      errors.push(`SAJU_TERM_EXPLANATION_MISSING: ${section.sectionId}`);
+    }
+  }
+}
+
 function startsWithMbtiFirstPhrase(text: string): boolean {
   const trimmed = text.trim();
 
@@ -464,6 +555,29 @@ function appendRepetitionErrors(
   for (const [sentence, count] of counts) {
     if (count >= 3) {
       errors.push(`REPEATED_SENTENCE: ${sentence}`);
+    }
+  }
+}
+
+function appendKeyPhraseRepetitionErrors(
+  errors: string[],
+  sections: readonly ComprehensiveReportDraftSection[],
+  options: ComprehensiveReportDraftValidationOptions,
+): void {
+  if (!shouldRunQualityDensityChecks(options)) {
+    return;
+  }
+
+  const text = sections
+    .filter((section) => !isDisplayOnlySectionId(section.sectionId))
+    .map((section) => section.body)
+    .join("\n");
+
+  for (const phrase of repeatedKeyPhrases) {
+    const count = text.split(phrase).length - 1;
+
+    if (count >= 3) {
+      errors.push(`REPEATED_KEY_PHRASE: ${phrase}`);
     }
   }
 }
@@ -583,7 +697,11 @@ function appendSajuFirstErrors(
   }
 }
 
-function parseDraft(input: unknown, errors: string[]): ComprehensiveReportDraft | undefined {
+function parseDraft(
+  input: unknown,
+  errors: string[],
+  options: ComprehensiveReportDraftValidationOptions,
+): ComprehensiveReportDraft | undefined {
   if (!isRecord(input)) {
     errors.push("draft must be an object.");
     return undefined;
@@ -622,8 +740,10 @@ function parseDraft(input: unknown, errors: string[]): ComprehensiveReportDraft 
   appendSectionCoverageErrors(errors, sections);
   appendSajuFirstErrors(errors, sections);
   appendDisplaySectionErrors(errors, sections);
+  appendSectionDensityErrors(errors, sections, options);
   appendMbtiFirstErrors(errors, sections);
   appendRepetitionErrors(errors, sections);
+  appendKeyPhraseRepetitionErrors(errors, sections, options);
 
   if (errors.length > 0) {
     return undefined;
@@ -651,7 +771,7 @@ export function validateComprehensiveReportDraft(
   appendTextSafetyErrors(errors, input);
   appendUnsupportedSajuTermErrors(errors, input, options);
 
-  const value = parseDraft(input, errors);
+  const value = parseDraft(input, errors, options);
 
   if (errors.length > 0 || value === undefined) {
     return {
