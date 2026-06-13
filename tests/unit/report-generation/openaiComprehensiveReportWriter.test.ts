@@ -2,7 +2,10 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
-import { generateComprehensiveReportDraft } from "../../../src/lib/report-generation/openaiComprehensiveReportWriter";
+import {
+  generateComprehensiveReportDraft,
+  isSafeReportGenerationError,
+} from "../../../src/lib/report-generation/openaiComprehensiveReportWriter";
 import type { ComprehensiveReportDraft } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../../../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
 import {
@@ -108,6 +111,28 @@ function createJsonResponse(body: unknown, status = 200): Response {
   return new Response(JSON.stringify(body), { status });
 }
 
+async function expectSafeGenerationFailure(
+  promise: Promise<unknown>,
+): Promise<ReturnType<typeof expectSafeError>> {
+  try {
+    await promise;
+  } catch (error) {
+    return expectSafeError(error);
+  }
+
+  throw new Error("Expected safe report generation failure.");
+}
+
+function expectSafeError(error: unknown) {
+  expect(isSafeReportGenerationError(error)).toBe(true);
+
+  if (!isSafeReportGenerationError(error)) {
+    throw new Error("Expected safe report generation error.");
+  }
+
+  return error;
+}
+
 describe("OpenAI comprehensive report writer", () => {
   it("builds prompt parses JSON validates draft and returns raw text", async () => {
     const draft = createValidDraft();
@@ -141,7 +166,7 @@ describe("OpenAI comprehensive report writer", () => {
   });
 
   it("rejects invalid JSON responses", async () => {
-    await expect(
+    const error = await expectSafeGenerationFailure(
       generateComprehensiveReportDraft({
         mbtiType: "ENTJ",
         evidencePacket: createPacket(),
@@ -152,7 +177,29 @@ describe("OpenAI comprehensive report writer", () => {
           fetchImpl: async () => createJsonResponse({ output_text: "not json" }),
         },
       }),
-    ).rejects.toThrow("OPENAI_REPORT_WRITER_INVALID_JSON");
+    );
+
+    expect(error.code).toBe("OPENAI_REPORT_WRITER_INVALID_JSON");
+    expect(error.stage).toBe("json_parse");
+    expect(error.validationErrors).toEqual(["JSON_PARSE_FAILED"]);
+  });
+
+  it("exposes OpenAI request failures as openai stage", async () => {
+    const error = await expectSafeGenerationFailure(
+      generateComprehensiveReportDraft({
+        mbtiType: "ENTJ",
+        evidencePacket: createPacket(),
+        config: {
+          apiKey: "test_key",
+          model: "test_model",
+          enabled: true,
+          fetchImpl: async () => createJsonResponse({ error: "failed" }, 500),
+        },
+      }),
+    );
+
+    expect(error.code).toBe("OPENAI_REPORT_WRITER_REQUEST_FAILED");
+    expect(error.stage).toBe("openai");
   });
 
   it("rejects unsafe draft JSON", async () => {
@@ -161,7 +208,7 @@ describe("OpenAI comprehensive report writer", () => {
       finalAdvice: "이 구조는 " + "절대 " + "성공한다",
     };
 
-    await expect(
+    const error = await expectSafeGenerationFailure(
       generateComprehensiveReportDraft({
         mbtiType: "ENTJ",
         evidencePacket: createPacket(),
@@ -175,7 +222,13 @@ describe("OpenAI comprehensive report writer", () => {
             }),
         },
       }),
-    ).rejects.toThrow("OPENAI_REPORT_WRITER_INVALID_JSON");
+    );
+
+    expect(error.code).toBe("OPENAI_REPORT_WRITER_INVALID_JSON");
+    expect(error.stage).toBe("draft_validation");
+    expect(error.validationErrors?.join("\n")).toContain(
+      "FORBIDDEN_PROPHECY_PHRASE",
+    );
   });
 
   it("rejects unsupported Saju terms outside the evidence packet", async () => {
@@ -192,7 +245,7 @@ describe("OpenAI comprehensive report writer", () => {
       ),
     };
 
-    await expect(
+    const error = await expectSafeGenerationFailure(
       generateComprehensiveReportDraft({
         mbtiType: "ENTJ",
         evidencePacket: createPacket(),
@@ -206,7 +259,12 @@ describe("OpenAI comprehensive report writer", () => {
             }),
         },
       }),
-    ).rejects.toThrow("unsupported Saju term");
+    );
+
+    expect(error.stage).toBe("draft_validation");
+    expect(error.validationErrors?.join("\n")).toContain(
+      "UNSUPPORTED_SAJU_TERM",
+    );
   });
 
   it("rejects internal meta copy from model output", async () => {
@@ -215,7 +273,7 @@ describe("OpenAI comprehensive report writer", () => {
       openingSummary: "검증된 JSON으로 저장되는 내부 문장입니다.",
     };
 
-    await expect(
+    const error = await expectSafeGenerationFailure(
       generateComprehensiveReportDraft({
         mbtiType: "ENTJ",
         evidencePacket: createPacket(),
@@ -229,7 +287,10 @@ describe("OpenAI comprehensive report writer", () => {
             }),
         },
       }),
-    ).rejects.toThrow("internal meta phrase");
+    );
+
+    expect(error.stage).toBe("draft_validation");
+    expect(error.validationErrors?.join("\n")).toContain("INTERNAL_META_COPY");
   });
 
   it("does not include DB save payment or result render wiring in source", () => {

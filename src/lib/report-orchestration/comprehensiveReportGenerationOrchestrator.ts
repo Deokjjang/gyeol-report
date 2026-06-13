@@ -1,4 +1,9 @@
-import { generateComprehensiveReportDraft } from "../report-generation/openaiComprehensiveReportWriter";
+import {
+  generateComprehensiveReportDraft,
+  isSafeReportGenerationError,
+  SafeReportGenerationFailure,
+  type SafeReportGenerationStage,
+} from "../report-generation/openaiComprehensiveReportWriter";
 import { validateComprehensiveReportDraft } from "../report-generation/comprehensiveReportDraftValidator";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../report-knowledge/comprehensiveReportEvidenceInputBuilder";
 import type { MbtiType } from "../report-knowledge/mbtiKnowledgeTypes";
@@ -8,6 +13,8 @@ import {
   validateComputedSajuFactsShape,
 } from "../report-knowledge/knowledgeValidators";
 import { saveComprehensiveReportDraftSnapshot } from "../report-persistence/supabaseComprehensiveReportSnapshotAdapter";
+
+export { isSafeReportGenerationError };
 
 export type GenerateAndPersistComprehensiveReportInput = {
   readonly userDisplayName?: string;
@@ -40,8 +47,22 @@ export type GenerateAndPersistComprehensiveReportResult = {
   readonly warnings: readonly string[];
 };
 
-function createOrchestratorError(code: string): Error {
-  return new Error(code);
+function createOrchestratorError(
+  code: string,
+  stage: SafeReportGenerationStage,
+  input?: {
+    readonly causeCode?: string;
+    readonly validationErrors?: readonly string[];
+  },
+): Error {
+  return new SafeReportGenerationFailure({
+    code,
+    stage,
+    ...(input?.causeCode === undefined ? {} : { causeCode: input.causeCode }),
+    ...(input?.validationErrors === undefined
+      ? {}
+      : { validationErrors: input.validationErrors }),
+  });
 }
 
 function isNonEmptyString(value: unknown): value is string {
@@ -72,6 +93,7 @@ function validateInput(
   ) {
     throw createOrchestratorError(
       "COMPREHENSIVE_REPORT_ORCHESTRATION_INVALID_REQUEST",
+      "unknown",
     );
   }
 
@@ -98,6 +120,22 @@ function collectWarnings(input: {
   ];
 }
 
+function getSafeSnapshotCauseCode(error: unknown): string {
+  if (error instanceof Error) {
+    const messageCode = error.message.split("\n")[0];
+
+    if (
+      messageCode === "COMPREHENSIVE_REPORT_SNAPSHOT_SAVE_FAILED" ||
+      messageCode === "COMPREHENSIVE_REPORT_SNAPSHOT_INVALID_REQUEST" ||
+      messageCode === "COMPREHENSIVE_REPORT_SNAPSHOT_INVALID_DRAFT"
+    ) {
+      return messageCode;
+    }
+  }
+
+  return "SNAPSHOT_SAVE_FAILED";
+}
+
 export async function generateAndPersistComprehensiveReport(
   input: GenerateAndPersistComprehensiveReportInput,
 ): Promise<GenerateAndPersistComprehensiveReportResult> {
@@ -107,6 +145,10 @@ export async function generateAndPersistComprehensiveReport(
   if (!computedFactsValidation.ok) {
     throw createOrchestratorError(
       "COMPREHENSIVE_REPORT_COMPUTED_FACTS_INVALID",
+      "evidence",
+      {
+        validationErrors: computedFactsValidation.errors,
+      },
     );
   }
 
@@ -118,7 +160,9 @@ export async function generateAndPersistComprehensiveReport(
   const packetValidation = validateComprehensiveEvidencePacket(packet);
 
   if (!packetValidation.ok) {
-    throw createOrchestratorError("COMPREHENSIVE_REPORT_EVIDENCE_INVALID");
+    throw createOrchestratorError("COMPREHENSIVE_REPORT_EVIDENCE_INVALID", "evidence", {
+      validationErrors: packetValidation.errors,
+    });
   }
 
   let generated: Awaited<ReturnType<typeof generateComprehensiveReportDraft>>;
@@ -137,14 +181,25 @@ export async function generateAndPersistComprehensiveReport(
           : { fetchImpl: input.openAI.fetchImpl }),
       },
     });
-  } catch {
-    throw createOrchestratorError("COMPREHENSIVE_REPORT_GENERATION_FAILED");
+  } catch (error) {
+    if (isSafeReportGenerationError(error)) {
+      throw createOrchestratorError("COMPREHENSIVE_REPORT_GENERATION_FAILED", error.stage, {
+        causeCode: error.code,
+        validationErrors: error.validationErrors,
+      });
+    }
+
+    throw createOrchestratorError("COMPREHENSIVE_REPORT_GENERATION_FAILED", "openai", {
+      causeCode: "OPENAI_REPORT_WRITER_REQUEST_FAILED",
+    });
   }
 
   const draftValidation = validateComprehensiveReportDraft(generated.draft);
 
   if (!draftValidation.ok || draftValidation.value === undefined) {
-    throw createOrchestratorError("COMPREHENSIVE_REPORT_DRAFT_INVALID");
+    throw createOrchestratorError("COMPREHENSIVE_REPORT_DRAFT_INVALID", "draft_validation", {
+      validationErrors: draftValidation.errors,
+    });
   }
 
   let savedSnapshot: Awaited<
@@ -160,8 +215,14 @@ export async function generateAndPersistComprehensiveReport(
       draft: draftValidation.value,
       generationModel: parsed.openAIModel,
     });
-  } catch {
-    throw createOrchestratorError("COMPREHENSIVE_REPORT_SNAPSHOT_SAVE_FAILED");
+  } catch (error) {
+    throw createOrchestratorError(
+      "COMPREHENSIVE_REPORT_SNAPSHOT_SAVE_FAILED",
+      "snapshot_save",
+      {
+        causeCode: getSafeSnapshotCauseCode(error),
+      },
+    );
   }
 
   return {

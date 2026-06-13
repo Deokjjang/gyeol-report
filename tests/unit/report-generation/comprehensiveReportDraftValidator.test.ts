@@ -155,7 +155,7 @@ describe("comprehensive report draft validator", () => {
     });
 
     expect(result.ok).toBe(false);
-    expect(result.errors.join("\n")).toContain("forbidden prophecy phrase");
+    expect(result.errors.join("\n")).toContain("FORBIDDEN_PROPHECY_PHRASE");
   });
 
   it("rejects internal meta and debug copy", () => {
@@ -172,7 +172,7 @@ describe("comprehensive report draft validator", () => {
       );
 
       expect(result.ok).toBe(false);
-      expect(result.errors.join("\n")).toContain("internal meta phrase");
+      expect(result.errors.join("\n")).toContain("INTERNAL_META_COPY");
     }
   });
 
@@ -187,8 +187,8 @@ describe("comprehensive report draft validator", () => {
     });
 
     expect(result.ok).toBe(false);
-    expect(result.errors.join("\n")).toContain("unsupported Saju term: 도화살");
-    expect(result.errors.join("\n")).toContain("unsupported Saju term: 반안살");
+    expect(result.errors.join("\n")).toContain("UNSUPPORTED_SAJU_TERM: 도화살");
+    expect(result.errors.join("\n")).toContain("UNSUPPORTED_SAJU_TERM: 반안살");
   });
 
   it("allows selected Saju terms and direct non-insulting tone", () => {
@@ -214,7 +214,7 @@ describe("comprehensive report draft validator", () => {
     });
 
     expect(result.ok).toBe(false);
-    expect(result.errors.join("\n")).toContain("private field marker");
+    expect(result.errors.join("\n")).toContain("PRIVATE_FIELD_LEAK");
   });
 
   it("rejects MBTI-only Saju-first sections", () => {
@@ -245,7 +245,7 @@ describe("comprehensive report draft validator", () => {
     const result = validateComprehensiveReportDraft(draft);
 
     expect(result.ok).toBe(false);
-    expect(result.errors.join("\n")).toContain("display body must stay short");
+    expect(result.errors.join("\n")).toContain("DISPLAY_SECTION_TOO_LONG: manse_table");
   });
 
   it("rejects MBTI-first phrasing outside MBTI sections", () => {
@@ -258,7 +258,7 @@ describe("comprehensive report draft validator", () => {
     );
 
     expect(result.ok).toBe(false);
-    expect(result.errors.join("\n")).toContain("MBTI-first phrasing");
+    expect(result.errors.join("\n")).toContain("MBTI_FIRST_FORBIDDEN: saju_core");
   });
 
   it("rejects repeated identical sentences across sections", () => {
@@ -279,7 +279,7 @@ describe("comprehensive report draft validator", () => {
     });
 
     expect(result.ok).toBe(false);
-    expect(result.errors.join("\n")).toContain("repeats the same sentence");
+    expect(result.errors.join("\n")).toContain("REPEATED_SENTENCE");
   });
 
   it("rejects raw OpenAI metadata fields", () => {

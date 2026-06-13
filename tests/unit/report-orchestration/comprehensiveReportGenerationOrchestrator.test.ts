@@ -3,8 +3,14 @@ import { join } from "node:path";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { ComprehensiveReportDraft } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
-import { generateComprehensiveReportDraft } from "../../../src/lib/report-generation/openaiComprehensiveReportWriter";
-import { generateAndPersistComprehensiveReport } from "../../../src/lib/report-orchestration/comprehensiveReportGenerationOrchestrator";
+import {
+  generateComprehensiveReportDraft,
+  SafeReportGenerationFailure,
+} from "../../../src/lib/report-generation/openaiComprehensiveReportWriter";
+import {
+  generateAndPersistComprehensiveReport,
+  isSafeReportGenerationError,
+} from "../../../src/lib/report-orchestration/comprehensiveReportGenerationOrchestrator";
 import { saveComprehensiveReportDraftSnapshot } from "../../../src/lib/report-persistence/supabaseComprehensiveReportSnapshotAdapter";
 import type { ComputedSajuFacts } from "../../../src/lib/report-knowledge/sajuComputedFactsTypes";
 import {
@@ -12,9 +18,19 @@ import {
   type ComprehensiveReportSectionDefinition,
 } from "../../../src/lib/report-knowledge/reportSectionSchema";
 
-vi.mock("../../../src/lib/report-generation/openaiComprehensiveReportWriter", () => ({
-  generateComprehensiveReportDraft: vi.fn(),
-}));
+vi.mock(
+  "../../../src/lib/report-generation/openaiComprehensiveReportWriter",
+  async () => {
+    const actual = await vi.importActual<
+      typeof import("../../../src/lib/report-generation/openaiComprehensiveReportWriter")
+    >("../../../src/lib/report-generation/openaiComprehensiveReportWriter");
+
+    return {
+      ...actual,
+      generateComprehensiveReportDraft: vi.fn(),
+    };
+  },
+);
 
 vi.mock(
   "../../../src/lib/report-persistence/supabaseComprehensiveReportSnapshotAdapter",
@@ -165,6 +181,22 @@ function readSource(relativePath: string): string {
   return readFileSync(join(process.cwd(), relativePath), "utf8");
 }
 
+async function expectSafeOrchestratorFailure(promise: Promise<unknown>) {
+  try {
+    await promise;
+  } catch (error) {
+    expect(isSafeReportGenerationError(error)).toBe(true);
+
+    if (!isSafeReportGenerationError(error)) {
+      throw new Error("Expected safe report generation error.");
+    }
+
+    return error;
+  }
+
+  throw new Error("Expected orchestrator to fail.");
+}
+
 describe("generateAndPersistComprehensiveReport", () => {
   beforeEach(() => {
     mockGenerateComprehensiveReportDraft.mockReset();
@@ -247,9 +279,36 @@ describe("generateAndPersistComprehensiveReport", () => {
       new Error("openai_secret_for_test"),
     );
 
-    await expect(
+    const error = await expectSafeOrchestratorFailure(
       generateAndPersistComprehensiveReport(createInput()),
-    ).rejects.toThrow("COMPREHENSIVE_REPORT_GENERATION_FAILED");
+    );
+
+    expect(error.code).toBe("COMPREHENSIVE_REPORT_GENERATION_FAILED");
+    expect(error.stage).toBe("openai");
+    expect(error.causeCode).toBe("OPENAI_REPORT_WRITER_REQUEST_FAILED");
+    expect(JSON.stringify(error)).not.toContain("openai_secret_for_test");
+    expect(mockSaveComprehensiveReportDraftSnapshot).not.toHaveBeenCalled();
+  });
+
+  it("preserves draft validation diagnostics from the writer", async () => {
+    mockGenerateComprehensiveReportDraft.mockRejectedValue(
+      new SafeReportGenerationFailure({
+        code: "OPENAI_REPORT_WRITER_INVALID_JSON",
+        stage: "draft_validation",
+        validationErrors: ["UNSUPPORTED_SAJU_TERM: 도화살"],
+      }),
+    );
+
+    const error = await expectSafeOrchestratorFailure(
+      generateAndPersistComprehensiveReport(createInput()),
+    );
+
+    expect(error).toMatchObject({
+      code: "COMPREHENSIVE_REPORT_GENERATION_FAILED",
+      stage: "draft_validation",
+      causeCode: "OPENAI_REPORT_WRITER_INVALID_JSON",
+      validationErrors: ["UNSUPPORTED_SAJU_TERM: 도화살"],
+    });
     expect(mockSaveComprehensiveReportDraftSnapshot).not.toHaveBeenCalled();
   });
 
@@ -259,9 +318,13 @@ describe("generateAndPersistComprehensiveReport", () => {
       new Error("supabase_anon_for_test"),
     );
 
-    await expect(
+    const error = await expectSafeOrchestratorFailure(
       generateAndPersistComprehensiveReport(createInput()),
-    ).rejects.toThrow("COMPREHENSIVE_REPORT_SNAPSHOT_SAVE_FAILED");
+    );
+
+    expect(error.code).toBe("COMPREHENSIVE_REPORT_SNAPSHOT_SAVE_FAILED");
+    expect(error.stage).toBe("snapshot_save");
+    expect(JSON.stringify(error)).not.toContain("supabase_anon_for_test");
   });
 
   it("source stays server orchestration only and avoids payment wiring", () => {
@@ -273,6 +336,8 @@ describe("generateAndPersistComprehensiveReport", () => {
       "generateComprehensiveReportDraft",
       "validateComprehensiveReportDraft",
       "saveComprehensiveReportDraftSnapshot",
+      "stage",
+      "validationErrors",
     ];
     const blockedMarkers = [
       "confirmTossPayment",

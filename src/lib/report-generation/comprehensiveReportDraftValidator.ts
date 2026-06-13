@@ -200,17 +200,17 @@ function appendTextSafetyErrors(errors: string[], value: unknown): void {
 
   for (const phrase of forbiddenOutputPhrases) {
     if (text.includes(phrase)) {
-      errors.push(`draft contains forbidden prophecy phrase: ${phrase}`);
+      errors.push(`FORBIDDEN_PROPHECY_PHRASE: ${phrase}`);
     }
   }
   for (const marker of privateOutputMarkers) {
     if (text.includes(marker)) {
-      errors.push(`draft contains private field marker: ${marker}`);
+      errors.push(`PRIVATE_FIELD_LEAK: ${marker}`);
     }
   }
   for (const phrase of forbiddenInternalMetaPhrases) {
     if (text.includes(phrase)) {
-      errors.push(`draft contains internal meta phrase: ${phrase}`);
+      errors.push(`INTERNAL_META_COPY: ${phrase}`);
     }
   }
 }
@@ -263,7 +263,7 @@ function appendUnsupportedSajuTermErrors(
 
   for (const term of createKnownSajuTerms()) {
     if (!allowedTerms.has(term) && text.includes(term)) {
-      errors.push(`draft contains unsupported Saju term: ${term}`);
+      errors.push(`UNSUPPORTED_SAJU_TERM: ${term}`);
     }
   }
 }
@@ -277,10 +277,10 @@ function appendDisplaySectionErrors(
       continue;
     }
     if (section.body.length > 120) {
-      errors.push(`${section.sectionId} display body must stay short.`);
+      errors.push(`DISPLAY_SECTION_TOO_LONG: ${section.sectionId}`);
     }
     if (section.evidenceSummary.length > 2) {
-      errors.push(`${section.sectionId} display evidence summary must stay short.`);
+      errors.push(`DISPLAY_SECTION_EVIDENCE_TOO_LONG: ${section.sectionId}`);
     }
   }
 }
@@ -304,7 +304,7 @@ function appendMbtiFirstErrors(
       continue;
     }
     if (startsWithMbtiFirstPhrase(section.body) || startsWithMbtiFirstPhrase(section.oneLine)) {
-      errors.push(`${section.sectionId} must not start from MBTI-first phrasing.`);
+      errors.push(`MBTI_FIRST_FORBIDDEN: ${section.sectionId}`);
     }
   }
 }
@@ -333,7 +333,7 @@ function appendRepetitionErrors(
 
   for (const [sentence, count] of counts) {
     if (count >= 3) {
-      errors.push(`draft repeats the same sentence too often: ${sentence}`);
+      errors.push(`REPEATED_SENTENCE: ${sentence}`);
     }
   }
 }

@@ -6,7 +6,10 @@ import { markTossPaymentOrderPaid } from "../src/lib/payment/supabaseTossPayment
 import { createSupabaseTossPaymentOrderPaidClient } from "../src/lib/payment/supabaseTossPaymentOrderPaidClient";
 import { fulfillPaidPaymentOrder } from "../src/lib/payment/supabasePaidReportFulfillmentAdapter";
 import { createSupabasePaidReportFulfillmentClient } from "../src/lib/payment/supabasePaidReportFulfillmentClient";
-import { generateAndPersistComprehensiveReport } from "../src/lib/report-orchestration/comprehensiveReportGenerationOrchestrator";
+import {
+  generateAndPersistComprehensiveReport,
+  isSafeReportGenerationError,
+} from "../src/lib/report-orchestration/comprehensiveReportGenerationOrchestrator";
 import type { ComputedSajuFacts } from "../src/lib/report-knowledge/sajuComputedFactsTypes";
 
 type RequiredSmokeEnvName =
@@ -62,6 +65,10 @@ const deokminSampleFacts = {
 
 function writeStatus(message: string): void {
   process.stdout.write(`${message}\n`);
+}
+
+function writeErrorStatus(message: string): void {
+  process.stderr.write(`${message}\n`);
 }
 
 function createSmokeError(message: string): Error {
@@ -190,12 +197,25 @@ async function run(): Promise<void> {
 }
 
 run().catch((error: unknown) => {
-  process.stderr.write(
-    `${
-      error instanceof Error
-        ? error.message
-        : "Generate and save comprehensive report smoke failed."
-    }\n`,
-  );
+  if (isSafeReportGenerationError(error)) {
+    writeErrorStatus("failed");
+    writeErrorStatus(`code: ${error.code}`);
+    writeErrorStatus(`stage: ${error.stage}`);
+    if (error.causeCode !== undefined) {
+      writeErrorStatus(`cause: ${error.causeCode}`);
+    }
+    if (error.validationErrors !== undefined && error.validationErrors.length > 0) {
+      writeErrorStatus("errors:");
+      for (const validationError of error.validationErrors) {
+        writeErrorStatus(`- ${validationError}`);
+      }
+    }
+  } else {
+    writeErrorStatus("failed");
+    writeErrorStatus("code: GENERATE_AND_SAVE_COMPREHENSIVE_REPORT_SMOKE_FAILED");
+    writeErrorStatus("stage: unknown");
+    writeErrorStatus("errors:");
+    writeErrorStatus("- Unknown smoke failure.");
+  }
   process.exitCode = 1;
 });
