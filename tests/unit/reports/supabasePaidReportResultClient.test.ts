@@ -106,8 +106,22 @@ function createV2Chapter(chapterId: ComprehensiveReportV2ChapterId, titleKo: str
     chapterId,
     titleKo,
     headline: `${titleKo}는 갑목과 갑신일주를 먼저 놓고 읽습니다.`,
+    hitReadingLines: [
+      `덕민님, ${titleKo}에서 상대가 설명을 끝내기 전에 이미 결론이 보이는 상황 자주 나오지 않나요?`,
+      `${titleKo}에서는 감정보다 기준을 먼저 세우는 편입니다.`,
+      `${titleKo}에서는 책임을 먼저 떠안는 장면이 나올 수 있습니다.`,
+    ].slice(0, chapterId === "opening" || chapterId === "saju_identity" ? 2 : 3),
     body:
       `${titleKo}에서는 갑목과 갑신일주를 먼저 놓고 ENTJ는 보조로만 연결합니다. 덕민님, ${titleKo}에서 상대가 아직 설명 중인데 이미 답이 보이는 상황 자주 나오지 않나요? ${titleKo}의 갑목은 방향을 세우는 힘이고, ${titleKo}의 갑신일주는 압박 속에서 기준을 잡는 구조입니다. ${titleKo} 본문은 저장된 V2 snapshot을 조회한 뒤 화면에서 narrative chapter로 렌더링할 수 있게 충분한 길이를 갖습니다. ${titleKo}에서는 돈과 공부, 관계와 환경이 같은 사주 구조에서 출발하더라도 서로 다른 장면으로 드러난다고 설명합니다. 그래서 ${titleKo}은 짧은 분석표가 아니라 사용자가 자기 행동을 떠올릴 수 있는 긴 호흡의 해석으로 유지되어야 합니다. 이렇게 쓰면 좋습니다. ${titleKo}에서는 결론을 바로 던지기보다 질문을 먼저 넣는 루틴을 두어야 합니다. ${extra}`,
+    solutionLines:
+      chapterId === "opening" || chapterId === "final_message"
+        ? []
+        : [
+            "결론을 바로 말하기 전에 질문을 먼저 넣으세요.",
+            "책임 범위를 문장으로 정리하세요.",
+            "쉬는 시간을 일정에 먼저 넣으세요.",
+            "감정 표현은 짧게라도 밖으로 내세요.",
+          ],
     keyPhrases: [titleKo, "갑목"],
     sajuTermsUsed: ["갑목", "갑신일주"],
     mbtiTermsUsed: ["ENTJ"],

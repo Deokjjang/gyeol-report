@@ -92,7 +92,21 @@ function createV2Draft(): ComprehensiveReportV2Draft {
       chapterId: chapterId as ComprehensiveReportV2Draft["chapters"][number]["chapterId"],
       titleKo: `V2 ${chapterId}`,
       headline: `V2 ${chapterId} headline은 사주를 먼저 놓고 읽습니다.`,
+      hitReadingLines: [
+        "덕민님, 상대가 설명을 끝내기 전에 이미 결론이 보이는 상황 자주 나오지 않나요?",
+        "일을 잡으면 초반에는 빠르게 판을 정리하지만 쉬는 기준은 자주 뒤로 밀릴 수 있습니다.",
+        "감정보다 기준을 먼저 세우는 편입니다.",
+      ],
       body,
+      solutionLines:
+        chapterId === "opening" || chapterId === "final_message"
+          ? []
+          : [
+              "결론을 바로 말하기 전에 질문을 먼저 넣으세요.",
+              "책임 범위를 문장으로 정리하세요.",
+              "쉬는 시간을 일정에 먼저 넣으세요.",
+              "감정 표현은 짧게라도 밖으로 내세요.",
+            ],
       keyPhrases: ["갑목", "갑신일주"],
       sajuTermsUsed: ["갑목", "갑신일주"],
       mbtiTermsUsed: ["ENTJ"],

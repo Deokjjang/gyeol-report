@@ -104,6 +104,92 @@ function createLongChapterBody(input: {
   return `${base} ${input.extra ?? ""}`.trim();
 }
 
+function createHitReadingLines(
+  chapterId: ComprehensiveReportV2Draft["chapters"][number]["chapterId"],
+  titleKo: string,
+): readonly string[] {
+  const common = [
+    `덕민님, ${titleKo}에서 상대가 설명을 끝내기 전에 이미 결론이 보이는 상황 자주 나오지 않나요?`,
+    `${titleKo}에서는 감정보다 기준을 먼저 세우는 편입니다.`,
+  ];
+
+  if (chapterId === "personality_pattern") {
+    return [
+      ...common,
+      "말수가 적어서가 아니라 이미 머릿속에서 정리가 끝나 말이 짧아질 가능성이 큽니다.",
+    ];
+  }
+  if (chapterId === "work_money_study") {
+    return [
+      "일을 잡으면 초반에는 빠르게 판을 정리하지만, 쉬는 기준은 자주 뒤로 밀릴 수 있습니다.",
+      "자격증이나 전문서 공부도 왜 써먹는지가 보여야 집중력이 붙는 편입니다.",
+      "돈은 벌 아이디어보다 지킬 구조가 없을 때 더 빨리 새기 쉽습니다.",
+    ];
+  }
+  if (chapterId === "love_relationships") {
+    return [
+      "호감이 있어도 따뜻한 말보다 해결책이 먼저 나갈 수 있습니다.",
+      "상대가 감정을 말할 때, 덕민님은 위로보다 결론을 먼저 주고 싶어질 수 있습니다.",
+      "감정 기복이 큰 사람보다 말과 생활이 안정적인 사람이 오래 맞을 가능성이 큽니다.",
+    ];
+  }
+  if (chapterId === "people_family_environment") {
+    return [
+      ...common,
+      "가까운 사람 문제를 보면 내가 정리해야겠다는 감각이 먼저 올라올 수 있습니다.",
+    ];
+  }
+  if (chapterId === "risk_and_growth") {
+    return [
+      "쉬어야 할 때도 머리가 꺼지지 않아 다음 일정을 먼저 굴릴 수 있습니다.",
+      "버티는 힘은 강하지만, 회복 타이밍은 자주 늦게 잡히기 쉽습니다.",
+    ];
+  }
+  if (chapterId === "final_message") {
+    return ["덕민님은 이기는 법을 빨리 배우지만, 오래 가는 법은 따로 설계해야 하는 편입니다."];
+  }
+
+  return common;
+}
+
+function createSolutionLines(
+  chapterId: ComprehensiveReportV2Draft["chapters"][number]["chapterId"],
+  titleKo: string,
+): readonly string[] {
+  if (chapterId === "opening" || chapterId === "final_message") {
+    return [];
+  }
+  if (chapterId === "work_money_study") {
+    return [
+      "공부/일 루틴은 자격증, 전문서, 직무 학습, 사업 학습을 2주 단위로 쪼개세요.",
+      "돈은 공격 계획과 방어 계획을 분리해야 합니다.",
+      "현금흐름, 투자, 자기계발 예산을 따로 보세요.",
+      "쉬는 시간을 성능 관리 일정으로 먼저 넣으세요.",
+    ];
+  }
+  if (chapterId === "love_relationships") {
+    return [
+      "관계에서 써먹을 것은 보완하는 사람 기준을 먼저 정하는 것입니다.",
+      "정서적 완충이 되고 감정 표현을 부드럽게 풀어주는 사람이 맞는 사람일 수 있습니다.",
+      "피해야 할 패턴은 감정 기복이 크고 책임이 흐릿한 사람입니다.",
+      "ISFP, INFP, INTP는 예시일 뿐이고 MBTI만으로 단정하지 마세요.",
+    ];
+  }
+  if (chapterId === "risk_and_growth") {
+    return [
+      "수 부족은 밤 산책, 수변 공간, 충분한 수분, 기록, 잠 루틴으로 식히세요.",
+      "화 부족은 햇빛, 가벼운 운동, 발표와 표현 연습으로 밖으로 내세요.",
+      "토 과다는 책임 덜어내기와 경계선 정리하기로 조절하세요.",
+      "회복은 기분 문제가 아니라 일정으로 박아야 합니다.",
+    ];
+  }
+
+  return [
+    `${titleKo}에서는 결론을 말하기 전에 질문을 먼저 넣으세요.`,
+    `${titleKo}에서는 책임 범위를 문장으로 정리하세요.`,
+  ];
+}
+
 function createV2Chapter(
   chapterId: ComprehensiveReportV2Draft["chapters"][number]["chapterId"],
   titleKo: string,
@@ -113,6 +199,7 @@ function createV2Chapter(
     chapterId,
     titleKo,
     headline: `${titleKo}의 핵심은 사주 구조를 생활 장면으로 읽는 것입니다.`,
+    hitReadingLines: createHitReadingLines(chapterId, titleKo),
     body: createLongChapterBody({
       title: titleKo,
       sajuTerm: minimumTerm,
@@ -126,6 +213,7 @@ function createV2Chapter(
             ? "피해야 할 패턴은 계속 버티기만 하다가 몸과 마음이 동시에 꺼지는 흐름입니다. 수 부족은 밤 산책, 수변 공간, 충분한 수분, 기록, 잠 루틴으로 식히고, 화 부족은 햇빛, 가벼운 운동, 발표와 표현 연습으로 밖으로 내야 합니다. 토 과다는 책임 덜어내기와 경계선 정리하기로 조절해야 합니다."
           : `${titleKo}에서는 관계와 일, 돈과 성장에서 같은 구조가 어떻게 다른 표정으로 바뀌는지 장면을 바꿔 읽어야 합니다. ${titleKo}은 용어를 나열하지 않고 실제 선택과 말투와 행동으로 풀어내며, 이 챕터만의 결론과 조언을 분명히 남겨야 합니다.`,
     }),
+    solutionLines: createSolutionLines(chapterId, titleKo),
     keyPhrases: [`${titleKo} 핵심`, minimumTerm],
     sajuTermsUsed:
       chapterId === "opening" || chapterId === "final_message"
@@ -317,20 +405,18 @@ describe("comprehensive report draft validator", () => {
     const draft = createValidV2Draft();
     const result = validateComprehensiveReportDraft({
       ...draft,
-      openingSummary:
-        "갑목과 갑신일주를 먼저 놓고 차분하게 사주 구조를 설명합니다.",
       chapters: draft.chapters.map((chapter) => ({
         ...chapter,
-        body: chapter.body
-          .split("자주 나오지 않나요")
-          .join("나타날 수 있습니다")
-          .split("가능성이 큽니다")
-          .join("나타날 수 있습니다"),
+        hitReadingLines:
+          chapter.chapterId === "opening"
+            ? ["덕민님은 성격이 좋습니다."]
+            : [],
       })),
     });
 
     expect(result.ok).toBe(false);
     expect(result.errors.join("\n")).toContain("DIRECT_HIT_READING_MISSING");
+    expect(result.errors.join("\n")).toContain("DIRECT_HIT_READING_TOO_GENERIC");
   });
 
   it("rejects V2 major chapters without prescriptions", () => {
@@ -341,11 +427,7 @@ describe("comprehensive report draft validator", () => {
         chapter.chapterId === "personality_pattern"
           ? {
               ...chapter,
-              body: chapter.body
-                .split("이렇게 쓰면 좋습니다.")
-                .join("")
-                .split("질문을 한 번 넣는 루틴")
-                .join("상황을 설명하는 방식"),
+              solutionLines: [],
             }
           : chapter,
       ),
@@ -353,7 +435,7 @@ describe("comprehensive report draft validator", () => {
 
     expect(result.ok).toBe(false);
     expect(result.errors.join("\n")).toContain(
-      "CHAPTER_PRESCRIPTION_MISSING: personality_pattern",
+      "SOLUTION_LINES_MISSING: personality_pattern",
     );
   });
 
@@ -365,8 +447,18 @@ describe("comprehensive report draft validator", () => {
         chapter.chapterId === "work_money_study"
           ? {
               ...chapter,
-              body:
-                "일, 돈, 공부가 연결되는 방식에서는 갑목과 갑신일주를 먼저 놓고 봅니다. 덕민님, 결과가 보이지 않는 공부를 오래 붙잡기 힘든 상황 자주 나오지 않나요? 갑목은 방향을 잡고 갑신일주는 압박 속에서 기준을 세우는 구조입니다. 이렇게 쓰면 좋습니다. 공부를 열심히 하세요. 돈은 계획적으로 관리하고 과열되면 쉬어야 합니다. 맞는 환경은 목표가 분명하고 피드백이 빠른 곳입니다.",
+              body: `${chapter.sajuTermsUsed.join(" ")}을 먼저 놓고 봅니다. 덕민님, 성과가 보이지 않으면 집중이 흐려지는 상황 자주 나오지 않나요? 이 챕터는 목표와 돈과 실행 기준을 길게 설명하지만 성인 학습 범위 키워드는 일부러 넣지 않습니다. 갑목은 방향을 잡고 갑신일주는 압박 속에서 기준을 세우는 구조라서, 현실 판단과 실행 속도가 같이 움직입니다. 이렇게 쓰면 좋습니다. 목표를 작게 나누고 돈 계획을 분리하세요. 같은 설명을 충분히 길게 이어서 본문 길이 조건은 통과하지만 특정 학습 범위 조건은 통과하지 못하게 만듭니다. `.repeat(3),
+              hitReadingLines: [
+                "일을 잡으면 초반에는 빠르게 판을 정리하지만 쉬는 기준은 자주 뒤로 밀릴 수 있습니다.",
+                "성과가 보여야 집중력이 붙는 편입니다.",
+                "돈은 지킬 구조가 없을 때 더 빨리 새기 쉽습니다.",
+              ],
+              solutionLines: [
+                "목표를 작게 나누세요.",
+                "돈 계획을 따로 보세요.",
+                "쉬는 시간을 넣으세요.",
+                "실행 후 점검하세요.",
+              ],
             }
           : chapter,
       ),
@@ -384,8 +476,18 @@ describe("comprehensive report draft validator", () => {
         chapter.chapterId === "love_relationships"
           ? {
               ...chapter,
-              body:
-                "연애와 관계의 온도에서는 갑목과 갑신일주를 먼저 놓고 봅니다. 덕민님, 좋아해도 해결책부터 말하는 상황 자주 나오지 않나요? 갑목은 방향을 잡고 갑신일주는 압박 속에서 기준을 세우는 구조입니다. 이렇게 쓰면 좋습니다. 감정을 말하기 전에 상대의 감정을 한 번 확인해야 합니다. ISFP 같은 예시는 참고만 하고 MBTI만으로 단정하지 않는 태도가 필요합니다.",
+              body: `${chapter.sajuTermsUsed.join(" ")}을 먼저 놓고 관계를 읽습니다. 덕민님, 좋아해도 따뜻한 말보다 해결책이 먼저 나갈 수 있습니다. 이 문장은 관계 장면을 충분히 길게 설명하지만 상대 기준과 좋지 않은 관계 기준은 일부러 넣지 않습니다. 갑목은 방향을 잡고 갑신일주는 압박 속에서 기준을 세우는 구조라서, 관계에서도 결론이 먼저 보이기 쉽습니다. 이렇게 쓰면 좋습니다. 감정을 말하기 전에 질문하고 속도를 맞추세요. 본문은 충분히 길어서 길이 검증은 통과하지만 관계 처방 키워드 검증은 실패해야 합니다. `.repeat(3),
+              hitReadingLines: [
+                "호감이 있어도 따뜻한 말보다 해결책이 먼저 나갈 수 있습니다.",
+                "상대가 감정을 말할 때, 덕민님은 위로보다 결론을 먼저 주고 싶어질 수 있습니다.",
+                "말과 생활이 차분한 사람이 오래 이어질 가능성이 큽니다.",
+              ],
+              solutionLines: [
+                "감정을 말하기 전에 질문하세요.",
+                "속도를 맞추세요.",
+                "말을 부드럽게 바꾸세요.",
+                "생활 리듬을 확인하세요.",
+              ],
             }
           : chapter,
       ),
@@ -404,8 +506,17 @@ describe("comprehensive report draft validator", () => {
         chapter.chapterId === "risk_and_growth"
           ? {
               ...chapter,
-              body:
-                "반복되는 리스크와 성장법에서는 갑목과 갑신일주를 먼저 놓고 봅니다. 덕민님, 지쳤는데도 계속 버티는 상황 자주 나오지 않나요? 갑목은 방향을 잡고 갑신일주는 압박 속에서 기준을 세우는 구조입니다. 이렇게 쓰면 좋습니다. 무리하지 말고 적당히 쉬면서 성장 방향을 다시 정리해야 합니다.",
+              hitReadingLines: [
+                "덕민님, 버티는 힘은 강하지만 멈추는 기준은 자주 늦게 잡히기 쉽습니다.",
+                "성과가 급할수록 자기 상태를 뒤늦게 확인하는 편입니다.",
+              ],
+              body: `${chapter.sajuTermsUsed.join(" ")}을 먼저 놓고 반복되는 리스크를 읽습니다. 덕민님, 버티는 힘은 강하지만 회복 타이밍은 자주 늦게 잡히기 쉽습니다. 이 문장은 성장 전략을 길게 설명하지만 오행별 생활 처방 키워드는 일부러 넣지 않습니다. 갑목은 방향을 다시 세우고 갑신일주는 압박 속에서도 기준을 붙잡는 구조입니다. 이렇게 쓰면 좋습니다. 무리하지 말고 일의 순서를 다시 나누세요. 본문은 충분히 길어서 길이 조건은 통과하지만 element remedy 검증은 실패해야 합니다. `.repeat(3),
+              solutionLines: [
+                "무리하지 마세요.",
+                "쉬는 시간을 넣으세요.",
+                "일을 나누세요.",
+                "다시 점검하세요.",
+              ],
             }
           : chapter,
       ),

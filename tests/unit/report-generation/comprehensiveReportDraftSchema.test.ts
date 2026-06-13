@@ -57,6 +57,12 @@ describe("comprehensive report draft JSON schema", () => {
       "tenGodSummary",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "hitReadingLines",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "solutionLines",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
       "additionalProperties",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain("maxLength");
@@ -91,6 +97,8 @@ describe("comprehensive report draft JSON schema", () => {
     expect(serialized).not.toContain("yearPillar");
     expect(serialized).not.toContain("monthPillar");
     expect(serialized).not.toContain("hourPillar");
+    expect(serialized).toContain("hitReadingLines");
+    expect(serialized).toContain("solutionLines");
   });
 
   it("does not include private or payment fields in the schema", () => {

@@ -61,6 +61,11 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).not.toContain("장성살");
     expect(combined).not.toContain("천을귀인");
     expect(combined).toContain("comprehensive_v2_draft");
+    expect(combined).toContain("hitReadingLines");
+    expect(combined).toContain("solutionLines");
+    expect(combined).toContain("체감형 명중 문장");
+    expect(combined).toContain("덕민님, 이런 상황 많지 않나요");
+    expect(combined).toContain("실천 솔루션");
     expect(combined).toContain("profileTable은 시스템이 deterministic facts로 붙인다");
     expect(combined).toContain("너는 profileTable을 출력하지 않는다");
     expect(combined).toContain("profileTable 필드는 절대 출력하지 않는다");

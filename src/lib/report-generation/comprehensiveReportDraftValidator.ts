@@ -130,7 +130,9 @@ const chapterKeys = [
   "chapterId",
   "titleKo",
   "headline",
+  "hitReadingLines",
   "body",
+  "solutionLines",
   "keyPhrases",
   "sajuTermsUsed",
   "mbtiTermsUsed",
@@ -197,30 +199,46 @@ const v2ChapterBodyMinimumLengths = {
   risk_and_growth: 420,
   final_message: 260,
 } as const satisfies Record<ComprehensiveReportV2ChapterId, number>;
-const directHitReadingMarkers = [
+const v2ChapterHitReadingMinimumCounts = {
+  opening: 2,
+  saju_identity: 2,
+  personality_pattern: 3,
+  work_money_study: 3,
+  love_relationships: 3,
+  people_family_environment: 3,
+  risk_and_growth: 2,
+  final_message: 1,
+} as const satisfies Record<ComprehensiveReportV2ChapterId, number>;
+const v2ChapterSolutionMinimumCounts = {
+  opening: 0,
+  saju_identity: 2,
+  personality_pattern: 2,
+  work_money_study: 4,
+  love_relationships: 4,
+  people_family_environment: 2,
+  risk_and_growth: 4,
+  final_message: 0,
+} as const satisfies Record<ComprehensiveReportV2ChapterId, number>;
+const hitReadingConcreteMarkers = [
+  "덕민님",
   "않나요",
   "많지 않나요",
   "자주",
   "이런 상황",
   "그런 적",
+  "편입니다",
   "가능성이 큽니다",
-  "편일 가능성이 큽니다",
+  "나올 수 있습니다",
+  "먼저",
+  "늦게",
+  "쉽습니다",
+  "힘들 수 있습니다",
   "느껴질 수 있습니다",
-  "나오지 않나요",
 ] as const;
-const prescriptionMarkers = [
-  "이렇게 쓰면 좋습니다",
-  "피해야 할 패턴",
-  "맞는 환경",
-  "관계에서 써먹을 것",
-  "공부/일 루틴",
-  "해야 합니다",
-  "분리해야",
-  "정리하기",
-  "루틴",
-  "처방",
-  "질문",
-  "경계선",
+const genericHitReadingMarkers = [
+  "성격이 좋습니다",
+  "성장할 수 있습니다",
+  "장점과 단점이 있습니다",
 ] as const;
 const studyScopeMarkers = [
   "자격증",
@@ -937,7 +955,9 @@ function parseChapter(
   const chapterId = value.chapterId;
   const titleKo = value.titleKo;
   const headline = value.headline;
+  const hitReadingLines = value.hitReadingLines;
   const body = value.body;
+  const solutionLines = value.solutionLines;
   const keyPhrases = value.keyPhrases;
   const sajuTermsUsed = value.sajuTermsUsed;
   const mbtiTermsUsed = value.mbtiTermsUsed;
@@ -952,7 +972,15 @@ function parseChapter(
   if (!validateStringField(errors, `${chapterId}.headline`, headline, 12)) {
     return undefined;
   }
+  if (!isStringArray(hitReadingLines)) {
+    errors.push(`${chapterId}.hitReadingLines must be a string array.`);
+    return undefined;
+  }
   if (!validateStringField(errors, `${chapterId}.body`, body, 40)) {
+    return undefined;
+  }
+  if (!isStringArray(solutionLines)) {
+    errors.push(`${chapterId}.solutionLines must be a string array.`);
     return undefined;
   }
   if (!isStringArray(keyPhrases) || keyPhrases.length === 0) {
@@ -972,7 +1000,9 @@ function parseChapter(
     chapterId,
     titleKo,
     headline,
+    hitReadingLines,
     body,
+    solutionLines,
     keyPhrases,
     sajuTermsUsed,
     mbtiTermsUsed,
@@ -1198,26 +1228,32 @@ function appendV2VisibleDebugLabelErrors(
 
 function appendV2HitReadingErrors(
   errors: string[],
-  input: {
-    readonly openingSummary: string;
-    readonly coreLine: string;
-    readonly chapters: readonly ComprehensiveReportV2Chapter[];
-    readonly finalAdvice: string;
-  },
+  chapters: readonly ComprehensiveReportV2Chapter[],
 ): void {
-  const text = [
-    input.openingSummary,
-    input.coreLine,
-    ...input.chapters.map((chapter) => [chapter.headline, chapter.body].join("\n")),
-    input.finalAdvice,
-  ].join("\n");
-  const hitCount = directHitReadingMarkers.reduce(
-    (count, marker) => count + (text.split(marker).length - 1),
-    0,
-  );
+  const allHitReadingLines = chapters.flatMap((chapter) => chapter.hitReadingLines);
 
-  if (hitCount < 5) {
+  if (allHitReadingLines.length < 16) {
     errors.push("DIRECT_HIT_READING_MISSING");
+  }
+
+  for (const chapter of chapters) {
+    const minimumCount = v2ChapterHitReadingMinimumCounts[chapter.chapterId];
+
+    if (chapter.hitReadingLines.length < minimumCount) {
+      errors.push(`DIRECT_HIT_READING_MISSING: ${chapter.chapterId}`);
+    }
+    for (const line of chapter.hitReadingLines) {
+      const trimmed = line.trim();
+
+      if (
+        trimmed.length < 16 ||
+        !hasAnyMarker(trimmed, hitReadingConcreteMarkers) ||
+        hasAnyMarker(trimmed, genericHitReadingMarkers)
+      ) {
+        errors.push(`DIRECT_HIT_READING_TOO_GENERIC: ${chapter.chapterId}`);
+        break;
+      }
+    }
   }
 }
 
@@ -1226,13 +1262,35 @@ function appendV2PrescriptionErrors(
   chapters: readonly ComprehensiveReportV2Chapter[],
 ): void {
   for (const chapter of chapters) {
-    if (chapter.chapterId === "opening" || chapter.chapterId === "final_message") {
+    const minimumCount = v2ChapterSolutionMinimumCounts[chapter.chapterId];
+
+    if (chapter.solutionLines.length < minimumCount) {
+      errors.push(`SOLUTION_LINES_MISSING: ${chapter.chapterId}`);
       continue;
     }
-    if (!hasAnyMarker(chapter.body, prescriptionMarkers)) {
-      errors.push(`CHAPTER_PRESCRIPTION_MISSING: ${chapter.chapterId}`);
+    if (
+      minimumCount > 0 &&
+      chapter.solutionLines.some((line) => line.trim().length < 8)
+    ) {
+      errors.push(`SOLUTION_LINES_TOO_GENERIC: ${chapter.chapterId}`);
     }
   }
+}
+
+function getV2ChapterSearchText(
+  chapter: ComprehensiveReportV2Chapter | undefined,
+): string {
+  if (chapter === undefined) {
+    return "";
+  }
+
+  return [
+    chapter.headline,
+    ...chapter.hitReadingLines,
+    chapter.body,
+    ...chapter.solutionLines,
+    ...chapter.keyPhrases,
+  ].join("\n");
 }
 
 function appendV2TopicCoverageErrors(
@@ -1242,26 +1300,29 @@ function appendV2TopicCoverageErrors(
   const workChapter = findChapter(chapters, "work_money_study");
   const loveChapter = findChapter(chapters, "love_relationships");
   const riskChapter = findChapter(chapters, "risk_and_growth");
+  const workText = getV2ChapterSearchText(workChapter);
+  const loveText = getV2ChapterSearchText(loveChapter);
+  const riskText = getV2ChapterSearchText(riskChapter);
 
-  if (workChapter !== undefined && !hasAnyMarker(workChapter.body, studyScopeMarkers)) {
+  if (workChapter !== undefined && !hasAnyMarker(workText, studyScopeMarkers)) {
     errors.push("WORK_STUDY_SCOPE_MISSING");
   }
   if (
     loveChapter !== undefined &&
-    !hasAnyMarker(loveChapter.body, partnerFitMarkers)
+    !hasAnyMarker(loveText, partnerFitMarkers)
   ) {
     errors.push("LOVE_PARTNER_FIT_MISSING");
   }
-  if (loveChapter !== undefined && !hasAnyMarker(loveChapter.body, badMatchMarkers)) {
+  if (loveChapter !== undefined && !hasAnyMarker(loveText, badMatchMarkers)) {
     errors.push("LOVE_BAD_MATCH_PATTERN_MISSING");
   }
   if (
     loveChapter !== undefined &&
-    !hasAnyMarker(loveChapter.body, cautiousMbtiRelationMarkers)
+    !hasAnyMarker(loveText, cautiousMbtiRelationMarkers)
   ) {
     errors.push("LOVE_MBTI_CAUTION_OR_EXAMPLE_MISSING");
   }
-  if (riskChapter !== undefined && !hasAnyMarker(riskChapter.body, elementRemedyMarkers)) {
+  if (riskChapter !== undefined && !hasAnyMarker(riskText, elementRemedyMarkers)) {
     errors.push("ELEMENT_REMEDY_MISSING");
   }
 }
@@ -1313,12 +1374,7 @@ function parseV2Draft(
   });
   appendV2SajuFirstErrors(errors, chapters);
   appendV2RepetitionErrors(errors, chapters);
-  appendV2HitReadingErrors(errors, {
-    openingSummary: typeof input.openingSummary === "string" ? input.openingSummary : "",
-    coreLine: typeof input.coreLine === "string" ? input.coreLine : "",
-    chapters,
-    finalAdvice: typeof input.finalAdvice === "string" ? input.finalAdvice : "",
-  });
+  appendV2HitReadingErrors(errors, chapters);
   appendV2PrescriptionErrors(errors, chapters);
   appendV2TopicCoverageErrors(errors, chapters);
   appendV2VisibleDebugLabelErrors(errors, {

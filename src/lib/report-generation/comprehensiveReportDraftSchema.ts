@@ -217,7 +217,9 @@ export const comprehensiveReportV2DraftJsonSchema = {
           "chapterId",
           "titleKo",
           "headline",
+          "hitReadingLines",
           "body",
+          "solutionLines",
           "keyPhrases",
           "sajuTermsUsed",
           "mbtiTermsUsed",
@@ -237,10 +239,23 @@ export const comprehensiveReportV2DraftJsonSchema = {
             minLength: 1,
             maxLength: 220,
           },
+          hitReadingLines: {
+            type: "array",
+            minItems: 1,
+            items: {
+              type: "string",
+            },
+          },
           body: {
             type: "string",
             minLength: 1,
             maxLength: 5000,
+          },
+          solutionLines: {
+            type: "array",
+            items: {
+              type: "string",
+            },
           },
           keyPhrases: {
             type: "array",

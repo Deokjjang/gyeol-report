@@ -55,7 +55,9 @@ export type ComprehensiveReportV2Chapter = {
   readonly chapterId: ComprehensiveReportV2ChapterId;
   readonly titleKo: string;
   readonly headline: string;
+  readonly hitReadingLines: readonly string[];
   readonly body: string;
+  readonly solutionLines: readonly string[];
   readonly keyPhrases: readonly string[];
   readonly sajuTermsUsed: readonly string[];
   readonly mbtiTermsUsed: readonly string[];

@@ -477,6 +477,44 @@ function renderV2KeyPhrases(chapter: ComprehensiveReportV2Chapter) {
   );
 }
 
+function renderV2HitReadingLines(chapter: ComprehensiveReportV2Chapter) {
+  if (chapter.hitReadingLines.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="space-y-2 rounded-lg border border-emerald-900/60 bg-emerald-950/25 p-4">
+      <p className="text-xs font-semibold text-emerald-200">
+        이런 장면 있지 않나요?
+      </p>
+      <ul className="space-y-2 text-sm leading-6 text-emerald-50">
+        {chapter.hitReadingLines.map((line) => (
+          <li key={line}>{line}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function renderV2SolutionLines(chapter: ComprehensiveReportV2Chapter) {
+  if (chapter.solutionLines.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="space-y-2 rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
+      <p className="text-xs font-semibold text-neutral-400">
+        이렇게 쓰면 좋습니다
+      </p>
+      <ul className="space-y-2 text-sm leading-6 text-neutral-200">
+        {chapter.solutionLines.map((line) => (
+          <li key={line}>{line}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function renderGeneratedV2State(
   result: PaidReportResult,
   draft: Extract<ComprehensiveReportDraft, { readonly version: "comprehensive_v2_draft" }>,
@@ -517,9 +555,11 @@ function renderGeneratedV2State(
                   {chapter.headline}
                 </p>
               </div>
+              {renderV2HitReadingLines(chapter)}
               <p className="whitespace-pre-line text-base leading-8 text-neutral-200">
                 {chapter.body}
               </p>
+              {renderV2SolutionLines(chapter)}
               {renderV2KeyPhrases(chapter)}
             </section>
           ))}
