@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { prePaymentRefundNoticeKo } from "../../lib/legal/refundPolicy";
 import { loadTossPaymentsBrowserSdk } from "../../lib/payment/tossBrowserSdkLoader";
 import { launchTossCheckout } from "../../lib/payment/tossClientCheckoutLauncher";
 import type {
@@ -606,9 +607,8 @@ export default function DevTossCheckoutLauncher({
           환불 및 청약철회 안내
         </h3>
         <p className="text-sm leading-6 text-neutral-700">
-          결제 완료 후 온라인 열람형 디지털 리포트 생성 절차가 시작됩니다.
-          생성 시작 후 단순 변심 환불 제한 가능성이 있으며, 장애·중복결제·결과
-          미제공·법령상 취소 사유는 예외로 확인합니다.
+          결제 완료 후 온라인 열람형 디지털 리포트 생성 절차가 시작됩니다.{" "}
+          {prePaymentRefundNoticeKo}
         </p>
       </section>
 

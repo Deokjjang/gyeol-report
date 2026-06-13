@@ -1,50 +1,131 @@
 import LegalPageLayout from "../../../components/legal/LegalPageLayout";
 import { GYEOL_BUSINESS_INFO } from "../../../lib/legal/businessInfo";
+import {
+  prePaymentRefundNoticeKo,
+  refundPolicyRequiredNotices,
+  refundPolicyStateRows,
+  refundPolicySupportRequestGuidanceKo,
+} from "../../../lib/legal/refundPolicy";
 
-const refundSections = [
-  {
-    titleKo: "1. 상품 성격",
-    bodyKo:
-      "결리포트는 입력값을 바탕으로 생성되는 디지털 콘텐츠입니다.",
-  },
-  {
-    titleKo: "2. 취소 가능 시점",
-    bodyKo:
-      "결제 승인 전 또는 리포트 생성 전에는 취소가 가능할 수 있습니다.",
-  },
-  {
-    titleKo: "3. 환불 제한",
-    bodyKo:
-      "리포트가 생성되어 열람 가능한 상태가 된 뒤에는 단순 변심 환불이 제한될 수 있습니다.",
-  },
-  {
-    titleKo: "4. 오류/중복 결제 처리",
-    bodyKo:
-      "중복 결제, 시스템 오류, 리포트 미제공은 확인 후 취소 또는 환불을 지원합니다.",
-  },
-  {
-    titleKo: "5. 문의",
-    bodyKo: `문의: ${GYEOL_BUSINESS_INFO.supportContactEmail}. 주문 식별 정보와 발생 상황을 함께 알려 주시면 확인 후 처리합니다.`,
-  },
+const productFacts = [
+  ["상품 유형", "자동 생성 디지털 리포트"],
+  ["상품명", "사주×MBTI 종합 리포트"],
+  ["실제 결제금액", "990원"],
+  ["제공 방식", "결제 후 온라인 열람"],
+  ["생성 방식", "입력값 기반 자동 생성"],
+  ["상담 여부", "사람 상담 아님"],
 ] as const;
 
 export default function LegalRefundPage() {
   return (
     <LegalPageLayout
-      titleKo="환불/취소 정책"
-      descriptionKo="디지털 리포트 상품의 결제 취소와 환불 처리 기준입니다."
+      titleKo="환불정책"
+      descriptionKo="자동 생성 디지털 리포트의 취소, 환불, 재생성, 고객센터 처리 기준입니다."
     >
       <section className="space-y-5 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5">
-        {refundSections.map((section) => (
-          <article key={section.titleKo} className="space-y-2">
-            <h2 className="text-lg font-semibold text-neutral-100">
-              {section.titleKo}
-            </h2>
-            <p className="text-sm leading-7 text-neutral-400">
-              {section.bodyKo}
-            </p>
-          </article>
-        ))}
+        <h2 className="text-xl font-bold text-neutral-100">상품 유형</h2>
+        <dl className="grid gap-3 text-sm sm:grid-cols-2">
+          {productFacts.map(([labelKo, valueKo]) => (
+            <div
+              key={labelKo}
+              className="rounded-xl border border-neutral-800 bg-neutral-950/40 p-4"
+            >
+              <dt className="text-xs font-semibold text-neutral-500">
+                {labelKo}
+              </dt>
+              <dd className="mt-1 font-bold text-neutral-100">{valueKo}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section className="space-y-5 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5">
+        <h2 className="text-xl font-bold text-neutral-100">처리 기준</h2>
+        <div className="space-y-3 text-sm leading-7 text-neutral-300">
+          {refundPolicyStateRows.map((row) => (
+            <article
+              key={row.id}
+              className="rounded-xl border border-neutral-800 bg-neutral-950/40 p-4"
+            >
+              <h3 className="font-bold text-neutral-100">{row.statusKo}</h3>
+              <p>{row.handlingKo}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-5 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5">
+        <h2 className="text-xl font-bold text-neutral-100">상세 안내</h2>
+        <article className="space-y-2">
+          <h3 className="text-lg font-semibold text-neutral-100">
+            환불 가능 시점
+          </h3>
+          <p className="text-sm leading-7 text-neutral-400">
+            {refundPolicyRequiredNotices[0]}
+          </p>
+        </article>
+        <article className="space-y-2">
+          <h3 className="text-lg font-semibold text-neutral-100">
+            환불 제한 시점
+          </h3>
+          <p className="text-sm leading-7 text-neutral-400">
+            {refundPolicyRequiredNotices[1]}
+          </p>
+        </article>
+        <article className="space-y-2">
+          <h3 className="text-lg font-semibold text-neutral-100">
+            장애·중복결제·결과 미제공 처리
+          </h3>
+          <p className="text-sm leading-7 text-neutral-400">
+            {refundPolicyRequiredNotices[2]}
+          </p>
+          <p className="text-sm leading-7 text-neutral-400">
+            {refundPolicyRequiredNotices[3]}
+          </p>
+        </article>
+        <article className="space-y-2">
+          <h3 className="text-lg font-semibold text-neutral-100">
+            입력값 오류 처리
+          </h3>
+          <p className="text-sm leading-7 text-neutral-400">
+            잘못된 입력값은 결제 전 확인 화면에서 수정할 수 있습니다. 생성
+            시작 후 입력 오류로 인한 단순 재생성 또는 환불은 제한될 수
+            있습니다.
+          </p>
+        </article>
+        <article className="space-y-2">
+          <h3 className="text-lg font-semibold text-neutral-100">
+            미성년자 취소 안내
+          </h3>
+          <p className="text-sm leading-7 text-neutral-400">
+            {refundPolicyRequiredNotices[4]}
+          </p>
+        </article>
+        <article className="space-y-2">
+          <h3 className="text-lg font-semibold text-neutral-100">
+            결제 직전 고지 기준
+          </h3>
+          <p className="text-sm leading-7 text-neutral-400">
+            {prePaymentRefundNoticeKo}
+          </p>
+        </article>
+      </section>
+
+      <section className="space-y-4 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5">
+        <h2 className="text-xl font-bold text-neutral-100">문의 방법</h2>
+        <p className="text-sm leading-7 text-neutral-400">
+          {refundPolicySupportRequestGuidanceKo}
+        </p>
+        <dl className="grid gap-3 text-sm text-neutral-300 sm:grid-cols-2">
+          <div>
+            <dt className="font-semibold text-neutral-100">고객센터</dt>
+            <dd>{GYEOL_BUSINESS_INFO.customerServicePhone}</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-neutral-100">이메일</dt>
+            <dd>{GYEOL_BUSINESS_INFO.supportContactEmail}</dd>
+          </div>
+        </dl>
       </section>
     </LegalPageLayout>
   );

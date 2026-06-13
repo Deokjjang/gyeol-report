@@ -1,69 +1,106 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
+
+import { GYEOL_BUSINESS_INFO } from "../../lib/legal/businessInfo";
+import {
+  prePaymentRefundNoticeKo,
+  refundPolicyRequiredNotices,
+  refundPolicyStateRows,
+  refundPolicySupportRequestGuidanceKo,
+} from "../../lib/legal/refundPolicy";
 
 export default function RefundPage() {
   return (
     <main className="min-h-screen bg-neutral-950 px-5 py-10 text-neutral-50 sm:px-8 lg:px-10">
-      <section className="mx-auto max-w-3xl space-y-8">
+      <section className="mx-auto max-w-4xl space-y-8">
         <header className="space-y-4">
-          <p className="text-sm font-medium text-neutral-400">Gyeol Report</p>
-          <h1 className="text-4xl font-bold tracking-tight">환불 안내</h1>
+          <p className="text-sm font-medium text-neutral-400">결리포트 정책</p>
+          <h1 className="text-4xl font-bold tracking-tight">환불정책</h1>
           <p className="text-base leading-8 text-neutral-400">
-            이 문서는 출시 전 초안입니다. 실제 결제 기능 공개 전에 환불과 실패
-            처리 기준을 다시 정리할 예정입니다.
+            사주×MBTI 종합 리포트는 입력값 기반 자동 생성 디지털
+            리포트이며, 결제 후 온라인 열람 방식으로 제공됩니다. 사람 상담이
+            아닌 자기이해와 참고 목적의 디지털 콘텐츠입니다.
           </p>
         </header>
 
-        <div className="rounded-2xl border border-amber-900/50 bg-amber-950/20 p-5">
-          <p className="text-sm leading-6 text-amber-100/90">
-            현재 실제 결제는 아직 활성화되어 있지 않습니다. 유료 출시 전 결제
-            실패, 환불, 고객지원 절차를 별도 안내로 공개합니다.
-          </p>
-        </div>
+        <dl className="grid gap-4 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 text-sm leading-7 text-neutral-300 sm:grid-cols-2">
+          <PolicyFact labelKo="상품 유형" valueKo="자동 생성 디지털 리포트" />
+          <PolicyFact labelKo="상품명" valueKo="사주×MBTI 종합 리포트" />
+          <PolicyFact labelKo="실제 결제금액" valueKo="990원" />
+          <PolicyFact labelKo="제공 방식" valueKo="결제 후 온라인 열람" />
+          <PolicyFact labelKo="생성 방식" valueKo="입력값 기반 자동 생성" />
+          <PolicyFact labelKo="상담 여부" valueKo="사람 상담 아님" />
+        </dl>
 
         <section className="space-y-5 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5">
-          <div className="space-y-2">
-            <h2 className="text-lg font-semibold text-neutral-100">
-              결제 실패
-            </h2>
-            <p className="text-sm leading-7 text-neutral-400">
-              결제 실패 시 전체 리포트 접근 권한은 열리지 않습니다. 사용자는
-              다시 시도하거나 고객지원으로 문의할 수 있어야 합니다.
-            </p>
+          <h2 className="text-xl font-bold text-neutral-100">처리 기준</h2>
+          <div className="overflow-hidden rounded-xl border border-neutral-800">
+            <table className="w-full border-collapse text-left text-sm">
+              <thead className="bg-neutral-950/70 text-neutral-200">
+                <tr>
+                  <th className="border-b border-neutral-800 px-4 py-3">
+                    상태
+                  </th>
+                  <th className="border-b border-neutral-800 px-4 py-3">
+                    권장 처리
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-neutral-800 text-neutral-300">
+                {refundPolicyStateRows.map((row) => (
+                  <tr key={row.id}>
+                    <td className="px-4 py-3 font-semibold text-neutral-100">
+                      {row.statusKo}
+                    </td>
+                    <td className="px-4 py-3">{row.handlingKo}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+        </section>
 
-          <div className="space-y-2">
-            <h2 className="text-lg font-semibold text-neutral-100">
-              리포트 생성 실패
-            </h2>
-            <p className="text-sm leading-7 text-neutral-400">
-              결제는 완료되었지만 리포트 생성이 실패한 경우 고객지원 또는 환불
-              경로를 제공하는 방향으로 준비합니다.
+        <section className="grid gap-5 md:grid-cols-2">
+          <PolicySection titleKo="환불 가능 시점">
+            <p>{refundPolicyRequiredNotices[0]}</p>
+          </PolicySection>
+          <PolicySection titleKo="환불 제한 시점">
+            <p>{refundPolicyRequiredNotices[1]}</p>
+          </PolicySection>
+          <PolicySection titleKo="장애·중복결제·결과 미제공 처리">
+            <p>{refundPolicyRequiredNotices[2]}</p>
+            <p>{refundPolicyRequiredNotices[3]}</p>
+          </PolicySection>
+          <PolicySection titleKo="입력값 오류 처리">
+            <p>
+              잘못된 입력값은 결제 전 확인 화면에서 수정할 수 있습니다. 생성
+              시작 후 입력 오류로 인한 단순 재생성 또는 환불은 제한될 수
+              있습니다.
             </p>
-          </div>
+          </PolicySection>
+          <PolicySection titleKo="미성년자 취소 안내">
+            <p>{refundPolicyRequiredNotices[4]}</p>
+          </PolicySection>
+          <PolicySection titleKo="결제 직전 고지 기준">
+            <p>{prePaymentRefundNoticeKo}</p>
+          </PolicySection>
+        </section>
 
-          <div className="space-y-2">
-            <h2 className="text-lg font-semibold text-neutral-100">
-              환불 처리
-            </h2>
-            <p className="text-sm leading-7 text-neutral-400">
-              유료 출시 전 환불 기준, 처리 기간, 확인 절차를 정리해 공개합니다.
-              V1에서는 고객지원 기반의 수동 처리 절차를 우선 검토합니다.
-            </p>
-          </div>
-
-          <div className="space-y-2">
-            <h2 className="text-lg font-semibold text-neutral-100">문의</h2>
-            <p className="text-sm leading-7 text-neutral-400">
-              환불 관련 문의는{" "}
-              <a
-                href="mailto:support@dvem.ai"
-                className="text-neutral-200 underline underline-offset-4"
-              >
-                support@dvem.ai
-              </a>
-              로 보내 주세요.
-            </p>
-          </div>
+        <section className="space-y-4 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5">
+          <h2 className="text-xl font-bold text-neutral-100">문의 방법</h2>
+          <p className="text-sm leading-7 text-neutral-300">
+            {refundPolicySupportRequestGuidanceKo}
+          </p>
+          <dl className="grid gap-3 text-sm text-neutral-300 sm:grid-cols-2">
+            <PolicyFact
+              labelKo="고객센터"
+              valueKo={GYEOL_BUSINESS_INFO.customerServicePhone}
+            />
+            <PolicyFact
+              labelKo="이메일"
+              valueKo={GYEOL_BUSINESS_INFO.supportContactEmail}
+            />
+          </dl>
         </section>
 
         <Link
@@ -74,5 +111,37 @@ export default function RefundPage() {
         </Link>
       </section>
     </main>
+  );
+}
+
+function PolicyFact({
+  labelKo,
+  valueKo,
+}: {
+  readonly labelKo: string;
+  readonly valueKo: string;
+}) {
+  return (
+    <div className="space-y-1 rounded-xl border border-neutral-800 bg-neutral-950/40 p-4">
+      <dt className="text-xs font-semibold text-neutral-500">{labelKo}</dt>
+      <dd className="font-bold text-neutral-100">{valueKo}</dd>
+    </div>
+  );
+}
+
+function PolicySection({
+  titleKo,
+  children,
+}: {
+  readonly titleKo: string;
+  readonly children: ReactNode;
+}) {
+  return (
+    <article className="space-y-3 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5">
+      <h2 className="text-lg font-bold text-neutral-100">{titleKo}</h2>
+      <div className="space-y-2 text-sm leading-7 text-neutral-300">
+        {children}
+      </div>
+    </article>
   );
 }

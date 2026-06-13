@@ -8,6 +8,7 @@ function readSource(relativePath: string): string {
 
 const legalSources = [
   readSource("src/lib/legal/businessInfo.ts"),
+  readSource("src/lib/legal/refundPolicy.ts"),
   readSource("src/components/legal/BusinessFooter.tsx"),
   readSource("src/components/legal/LegalPageLayout.tsx"),
   readSource("src/app/business/page.tsx"),
@@ -162,26 +163,58 @@ describe("legal page sources", () => {
   });
 
   it("contains required refund content", () => {
-    const refundSource = readSource("src/app/legal/refund/page.tsx");
+    const refundSource = [
+      readSource("src/app/legal/refund/page.tsx"),
+      readSource("src/lib/legal/refundPolicy.ts"),
+    ].join("\n");
     const expectedMarkers = [
-      "상품 성격",
-      "취소 가능 시점",
+      "상품 유형",
+      "자동 생성 디지털 리포트",
+      "환불 가능 시점",
       "환불 제한",
-      "오류/중복 결제 처리",
-      "문의",
-      "디지털 콘텐츠",
-      "결제 승인 전 또는 리포트 생성 전에는 취소가 가능할 수 있습니다",
-      "단순 변심 환불이 제한될 수 있습니다",
-      "중복 결제",
-      "시스템 오류",
-      "리포트 미제공",
-      "제한될 수 있습니다",
-      "확인 후 취소 또는 환불을 지원합니다",
+      "장애·중복결제·결과 미제공 처리",
+      "입력값 오류 처리",
+      "미성년자 취소 안내",
+      "문의 방법",
+      "처리 기준",
+      "생성 시작 전에는 취소 및 환불을 요청할 수 있습니다",
+      "생성 시작 후에는 단순 변심에 의한 환불이 제한될 수 있습니다",
+      "시스템 장애, 중복결제, 결과 미제공, 회사 귀책 오류가 확인되는 경우 재생성 또는 환불을 진행합니다",
+      "환불이 확정된 경우 관련 법령에 따라 환급 절차를 진행합니다",
+      "미성년자가 법정대리인 동의 없이 결제한 경우 본인 또는 법정대리인이 계약 취소를 요청할 수 있습니다",
+      "환불 또는 재생성 요청 시 결제일시, 결제금액, 입력한 이름 또는 닉네임, 오류 내용을 함께 보내주세요",
+      "GYEOL_BUSINESS_INFO.customerServicePhone",
       "GYEOL_BUSINESS_INFO.supportContactEmail",
     ];
 
     for (const marker of expectedMarkers) {
       expect(refundSource).toContain(marker);
+    }
+  });
+
+  it("keeps refund copy safe and non-absolute", () => {
+    const refundSources = [
+      readSource("src/app/refund/page.tsx"),
+      readSource("src/app/legal/refund/page.tsx"),
+      readSource("src/lib/legal/refundPolicy.ts"),
+      readSource("src/components/payment/DevTossCheckoutLauncher.tsx"),
+    ].join("\n");
+    const blockedMarkers = [
+      "어떠한 경우에도 환불 불가",
+      "무조건 환불 불가",
+      "전액 환불 불가",
+      "회사는 책임지지 않습니다",
+      "진단",
+      "치료",
+      "적중률",
+      "100%",
+      "보장",
+      "반드시",
+      "운명 확정",
+    ];
+
+    for (const marker of blockedMarkers) {
+      expect(refundSources).not.toContain(marker);
     }
   });
 
