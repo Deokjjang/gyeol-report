@@ -211,6 +211,9 @@ describe("comprehensive report draft validator", () => {
       "정해야 할 기준이 있어도 갑목과 갑신일주를 먼저 봅니다. 갑목은 큰 방향을 잡는 힘이고 갑신일주는 긴장 속에서 판단을 세우는 구조라서, 정해야라는 표현은 사주 간지와 분리해서 봐야 합니다. 일반 동사 활용은 사주 term match가 아니며, 실제 용어는 갑목과 갑신일주로 제한됩니다.",
       "관계의 선을 정해두는 편이고 ENTJ는 보조 근거로만 연결합니다. 갑목은 관계에서도 방향을 정하려는 힘이고 갑신일주는 기준이 흐려지는 상황을 불편해하는 구조라서, 이 문장은 일반 동사 표현을 포함합니다. 그래서 정해두는이라는 말은 별도 일주명을 말하지 않으며, 본문은 허용된 용어만 해석합니다.",
       "관계의 선을 정해 두는 편이고 ENTJ는 보조 근거로만 연결합니다. 갑목은 앞으로 나아갈 기준을 만들고 갑신일주는 압박 속에서도 선을 유지하려는 구조라서, 띄어 쓴 정해 두는도 사주 용어가 아닙니다. 문맥상 일주나 살을 말하지 않으며, 허용된 사주 근거만 설명합니다.",
+      "회복시키는 루틴이 필요해도 갑목과 갑신일주를 먼저 놓고 봅니다. 갑목은 방향을 다시 세우는 힘이고 갑신일주는 압박 속에서 기준을 붙잡는 구조라서, 회복시키는이라는 일반 표현은 별도 사주 용어가 아닙니다. 이 문장은 생활 조언을 설명할 뿐이며, 사주 근거는 허용된 갑목과 갑신일주 안에서만 정리합니다.",
+      "회복시켜야 오래 가는 구조라도 갑목과 갑신일주를 먼저 해석합니다. 갑목은 앞으로 나아갈 방향을 만들고 갑신일주는 긴장 속에서도 판단 기준을 세우는 구조라서, 회복시켜야라는 말은 일반 동사 활용입니다. 검증기는 이런 일반어를 사주 용어로 오해하지 않아야 하며, 본문은 허용된 근거만 사용합니다.",
+      "회복 시간이 필요하다는 조언도 갑목과 갑신일주의 구조 안에서 설명합니다. 갑목은 방향을 세우고 갑신일주는 압박 속에서 버티는 힘이라, 회복 시간이라는 일반 표현은 unsupported 사주 용어가 아닙니다. 핵심은 생활 루틴을 설명하되 실제 사주 용어는 허용된 목록 안에서만 쓰는 것입니다.",
     ];
 
     for (const body of bodies) {
@@ -442,8 +445,7 @@ describe("comprehensive report draft validator", () => {
     );
   });
 
-  it("rejects repeated key phrases across generated draft sections", () => {
-    const repeatedPhrase = "회복과 표현";
+  it("allows repeated central short phrases while keeping sentence repetition guarded", () => {
     const draft = createValidDraft();
     const result = validateComprehensiveReportDraft(
       {
@@ -454,7 +456,7 @@ describe("comprehensive report draft validator", () => {
           section.sectionId === "love_relationship"
             ? {
                 ...section,
-                body: `${section.body} ${repeatedPhrase}은 이 섹션에서도 같은 표현으로 반복됩니다.`,
+                body: `${section.body} ${section.titleKo}에서는 표현 온도와 감정 완충을 이 주제에 맞춰 다르게 설명합니다.`,
               }
             : section,
         ),
@@ -464,10 +466,8 @@ describe("comprehensive report draft validator", () => {
       },
     );
 
-    expect(result.ok).toBe(false);
-    expect(result.errors.join("\n")).toContain(
-      `REPEATED_KEY_PHRASE: ${repeatedPhrase}`,
-    );
+    expect(result.errors).toEqual([]);
+    expect(result.ok).toBe(true);
   });
 
   it("rejects raw OpenAI metadata fields", () => {

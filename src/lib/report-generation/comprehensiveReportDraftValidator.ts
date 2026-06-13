@@ -9,6 +9,7 @@ import {
   type ComprehensiveReportSectionId,
 } from "../report-knowledge/reportSectionSchema";
 import { SAJU_KNOWLEDGE_BASE } from "../report-knowledge/sajuKnowledgeBase";
+import type { SajuKnowledgeEntry } from "../report-knowledge/sajuKnowledgeTypes";
 
 export type ComprehensiveReportDraftValidationResult = {
   readonly ok: boolean;
@@ -133,12 +134,6 @@ const genericPlaceholderBodies = [
   "사주 원국의 기본 구조를 정리했습니다.",
   "입력하신 MBTI 유형을 리포트 보조 기준으로 반영했습니다.",
 ] as const;
-const repeatedKeyPhrases = [
-  "회복과 표현",
-  "감정 완충",
-  "표현 온도",
-  "수 부족과 화 부족",
-] as const;
 const interpretationBodyMinimumLength = 160;
 const shortSajuTermContextSuffixes = [
   "일주",
@@ -210,12 +205,40 @@ function collectStrings(value: unknown): string[] {
   return [];
 }
 
+function isControlledSajuAlias(entry: SajuKnowledgeEntry, alias: string): boolean {
+  const normalizedAlias = alias.trim();
+
+  if (!/[가-힣]/.test(normalizedAlias) || normalizedAlias.length < 2) {
+    return false;
+  }
+  if (normalizedAlias === entry.labelKo) {
+    return true;
+  }
+
+  switch (entry.category) {
+    case "day_pillar":
+      return /^[갑을병정무기경신임계][자축인묘진사오미신유술해]$/.test(
+        normalizedAlias,
+      ) || normalizedAlias.endsWith("일주");
+    case "ten_god":
+    case "special_pattern":
+    case "nobleman":
+    case "sinsal":
+    case "element_balance":
+      return true;
+    case "day_master":
+    case "five_element":
+    case "relationship":
+      return false;
+  }
+}
+
 function createKnownSajuTerms(): readonly string[] {
   return [
     ...new Set(
       SAJU_KNOWLEDGE_BASE.flatMap((entry) => [
         entry.labelKo,
-        ...entry.aliases,
+        ...entry.aliases.filter((alias) => isControlledSajuAlias(entry, alias)),
       ])
         .map((term) => term.trim())
         .filter((term) => /[가-힣]/.test(term) && term.length >= 2)
@@ -559,29 +582,6 @@ function appendRepetitionErrors(
   }
 }
 
-function appendKeyPhraseRepetitionErrors(
-  errors: string[],
-  sections: readonly ComprehensiveReportDraftSection[],
-  options: ComprehensiveReportDraftValidationOptions,
-): void {
-  if (!shouldRunQualityDensityChecks(options)) {
-    return;
-  }
-
-  const text = sections
-    .filter((section) => !isDisplayOnlySectionId(section.sectionId))
-    .map((section) => section.body)
-    .join("\n");
-
-  for (const phrase of repeatedKeyPhrases) {
-    const count = text.split(phrase).length - 1;
-
-    if (count >= 3) {
-      errors.push(`REPEATED_KEY_PHRASE: ${phrase}`);
-    }
-  }
-}
-
 function parseSection(
   errors: string[],
   value: unknown,
@@ -743,7 +743,6 @@ function parseDraft(
   appendSectionDensityErrors(errors, sections, options);
   appendMbtiFirstErrors(errors, sections);
   appendRepetitionErrors(errors, sections);
-  appendKeyPhraseRepetitionErrors(errors, sections, options);
 
   if (errors.length > 0) {
     return undefined;
