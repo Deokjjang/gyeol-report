@@ -1,10 +1,10 @@
 import { GYEOL_BUSINESS_INFO } from "../../lib/legal/businessInfo";
 
 const legalLinks = [
-  { href: "/legal/business-info", labelKo: "사업자 정보" },
-  { href: "/legal/terms", labelKo: "이용약관" },
-  { href: "/legal/privacy", labelKo: "개인정보처리방침" },
-  { href: "/legal/refund", labelKo: "환불/취소 정책" },
+  { href: "/terms", labelKo: "이용약관" },
+  { href: "/privacy", labelKo: "개인정보처리방침" },
+  { href: "/refund", labelKo: "환불정책" },
+  { href: "/business", labelKo: "사업자정보" },
 ] as const;
 
 export default function BusinessFooter() {
@@ -26,6 +26,8 @@ export default function BusinessFooter() {
               통신판매업 신고번호
             </dt>
             <dd>{GYEOL_BUSINESS_INFO.mailOrderSalesRegistrationNumber}</dd>
+            <dt className="font-semibold text-neutral-800">사업장 주소</dt>
+            <dd>{GYEOL_BUSINESS_INFO.businessAddressKo}</dd>
             <dt className="font-semibold text-neutral-800">고객센터</dt>
             <dd>
               <a
@@ -35,7 +37,7 @@ export default function BusinessFooter() {
                 {GYEOL_BUSINESS_INFO.customerServicePhone}
               </a>
             </dd>
-            <dt className="font-semibold text-neutral-800">문의</dt>
+            <dt className="font-semibold text-neutral-800">이메일</dt>
             <dd>
               <a
                 href={`mailto:${GYEOL_BUSINESS_INFO.supportContactEmail}`}
@@ -44,6 +46,8 @@ export default function BusinessFooter() {
                 {GYEOL_BUSINESS_INFO.supportContactEmail}
               </a>
             </dd>
+            <dt className="font-semibold text-neutral-800">호스팅 제공자</dt>
+            <dd>{GYEOL_BUSINESS_INFO.hostingProvider}</dd>
           </dl>
         </section>
 

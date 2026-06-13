@@ -4,8 +4,8 @@ export const GYEOL_PRODUCTS = [
     productType: "saju_mbti_full",
     paymentProductType: "saju_mbti_full",
     slug: "saju-mbti-full",
-    nameKo: "종합 리포트",
-    fullNameKo: "사주×MBTI 전체 리포트",
+    nameKo: "사주×MBTI 종합 리포트",
+    fullNameKo: "사주×MBTI 종합 리포트",
     priceKo: "990원",
     priceLabelKo: "990원",
     listPriceKo: "1,290원",
@@ -22,12 +22,12 @@ export const GYEOL_PRODUCTS = [
     ctaHref: "/report/new",
     badgeKo: "런칭가",
     visualKey: "comprehensive",
-    deliveryTypeKo: "결제 승인 후 온라인 열람",
-    formatKo: "디지털 리포트",
+    deliveryTypeKo: "결제 후 온라인 열람",
+    formatKo: "자동 생성 디지털 리포트",
     summaryKo:
-      "생년월일시와 MBTI 자기보고 정보를 바탕으로 사주 구조, 성향, 일·관계 활용 방향을 정리한 자기이해용 디지털 리포트입니다.",
+      "결제 후 입력값을 바탕으로 리포트가 자동 생성됩니다. 본 상품은 사람 상담이 아닌 자동 생성 디지털 리포트이며, 결제 후 온라인에서 결과를 열람할 수 있습니다.",
     cautionKo:
-      "본 리포트는 자기이해용 참고 콘텐츠이며, 중요한 의사결정은 관련 전문가의 조언과 함께 판단해 주세요.",
+      "본 서비스는 사용자가 입력한 정보를 바탕으로 자동 생성되는 유료 디지털 리포트입니다. 사람에 의한 1:1 상담 서비스가 아니며, 의료·법률·투자 자문을 제공하지 않습니다. 결과물은 자기이해와 참고 목적의 정보입니다.",
   },
 ] as const;
 

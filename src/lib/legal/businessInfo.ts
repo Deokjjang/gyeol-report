@@ -13,7 +13,6 @@ export type GyeolBusinessInfo = {
   readonly privacyOfficerName: string;
   readonly privacyOfficerEmail: string;
   readonly hostingProvider: string;
-  readonly taxTypeKo: string;
 };
 
 export const GYEOL_BUSINESS_INFO = {
@@ -32,5 +31,4 @@ export const GYEOL_BUSINESS_INFO = {
   privacyOfficerName: "장덕민",
   privacyOfficerEmail: "support@dvem.ai",
   hostingProvider: "Vercel Inc.",
-  taxTypeKo: "일반과세자",
 } as const satisfies GyeolBusinessInfo;

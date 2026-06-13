@@ -83,19 +83,19 @@ export default function ProductSummaryCard({
             href={product.ctaHref}
             className="inline-flex items-center justify-center rounded-lg bg-neutral-950 px-4 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
           >
-            리포트 작성하기
+            {product.priceLabelKo} 결제하고 리포트 생성하기
           </Link>
         </div>
 
         <nav aria-label="상품 정책 링크" className="flex flex-wrap gap-3 text-sm">
           <Link
-            href="/legal/refund"
+            href="/refund"
             className="text-neutral-700 underline underline-offset-4"
           >
-            환불/취소 정책
+            환불정책
           </Link>
           <Link
-            href="/legal/privacy"
+            href="/privacy"
             className="text-neutral-700 underline underline-offset-4"
           >
             개인정보처리방침

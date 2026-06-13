@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import ProductVisual from "../../../components/product/ProductVisual";
+import { GYEOL_BUSINESS_INFO } from "../../../lib/legal/businessInfo";
 import { GYEOL_PRODUCTS } from "../../../lib/product/gyeolProducts";
 
 const product = GYEOL_PRODUCTS[0];
@@ -17,21 +18,38 @@ const reportContents = [
 ] as const;
 
 const inputItems = [
+  "이름 또는 닉네임",
   "생년월일",
   "출생시간",
   "성별",
   "MBTI",
-  "시간대",
 ] as const;
 
 const cautions = [
-  "본 리포트는 자기이해용 참고 콘텐츠이며, 중요한 의사결정은 관련 전문가의 조언과 함께 판단해 주세요.",
+  "본 서비스는 사용자가 입력한 정보를 바탕으로 자동 생성되는 유료 디지털 리포트입니다.",
+  "사람에 의한 1:1 상담 서비스가 아니며, 의료·법률·투자 자문을 제공하지 않습니다.",
+  "결과물은 자기이해와 참고 목적의 정보입니다.",
 ] as const;
 
 const refundSummaries = [
-  "결제 승인 전 또는 리포트 생성 전에는 취소가 가능할 수 있습니다.",
-  "결제 승인 후 리포트가 생성되어 열람 가능한 상태가 된 경우, 디지털 콘텐츠 제공이 개시된 것으로 보아 단순 변심 환불이 제한될 수 있습니다.",
-  "중복 결제, 시스템 오류, 리포트 미제공 등은 확인 후 취소 또는 환불을 지원합니다.",
+  "결제 후 생성 시작 전에는 취소 요청이 가능합니다.",
+  "생성 시작 후 단순 변심 환불은 제한될 수 있습니다.",
+  "시스템 장애, 중복결제, 결과 미제공 등은 확인 후 재생성 또는 환불을 지원합니다.",
+] as const;
+
+const productDetails = [
+  ["상품명", product.fullNameKo],
+  ["상품 유형", product.formatKo],
+  ["제공 방식", product.deliveryTypeKo],
+  ["생성 방식", "입력값 기반 자동 생성"],
+  ["열람 방식", "결제 후 온라인 열람"],
+  ["다운로드", "제공하지 않음, 온라인 열람 중심"],
+  ["상담 여부", "사람 상담 아님"],
+] as const;
+
+const contactItems = [
+  ["고객센터", GYEOL_BUSINESS_INFO.customerServicePhone],
+  ["이메일", GYEOL_BUSINESS_INFO.supportContactEmail],
 ] as const;
 
 export default function SajuMbtiFullProductPage() {
@@ -76,10 +94,22 @@ export default function SajuMbtiFullProductPage() {
               href="/report/new"
               className="inline-flex w-full items-center justify-center rounded-lg bg-neutral-950 px-5 py-4 text-sm font-bold text-white transition hover:bg-neutral-800 sm:w-auto"
             >
-              리포트 작성하기
+              990원 결제하고 리포트 생성하기
             </Link>
           </div>
           <ProductVisual />
+        </section>
+
+        <section className="space-y-4 rounded-lg border border-neutral-200 bg-white p-5 shadow-sm">
+          <h2 className="text-xl font-bold text-neutral-950">상품 정보</h2>
+          <dl className="grid gap-x-4 gap-y-3 text-sm leading-6 sm:grid-cols-[9rem_1fr]">
+            {productDetails.map(([label, value]) => (
+              <div key={label} className="contents">
+                <dt className="font-semibold text-neutral-500">{label}</dt>
+                <dd className="font-semibold text-neutral-900">{value}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
         <section className="grid gap-5 lg:grid-cols-2">
@@ -118,6 +148,18 @@ export default function SajuMbtiFullProductPage() {
         </section>
 
         <section className="space-y-4 rounded-lg border border-neutral-200 bg-white p-5 shadow-sm">
+          <h2 className="text-xl font-bold text-neutral-950">문의처</h2>
+          <dl className="grid gap-x-4 gap-y-3 text-sm leading-6 sm:grid-cols-[7rem_1fr]">
+            {contactItems.map(([label, value]) => (
+              <div key={label} className="contents">
+                <dt className="font-semibold text-neutral-500">{label}</dt>
+                <dd className="font-semibold text-neutral-900">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        <section className="space-y-4 rounded-lg border border-neutral-200 bg-white p-5 shadow-sm">
           <h2 className="text-xl font-bold text-neutral-950">개인정보 처리 안내</h2>
           <p className="text-sm leading-6 text-neutral-600">
             리포트 작성과 결제 처리에 필요한 정보만 수집하며, 자세한 처리 기준은
@@ -125,28 +167,28 @@ export default function SajuMbtiFullProductPage() {
           </p>
           <nav aria-label="정책 및 사업자 링크" className="flex flex-wrap gap-3 text-sm">
             <Link
-              href="/legal/terms"
+              href="/terms"
               className="text-neutral-800 underline underline-offset-4"
             >
               이용약관
             </Link>
             <Link
-              href="/legal/privacy"
+              href="/privacy"
               className="text-neutral-800 underline underline-offset-4"
             >
               개인정보처리방침
             </Link>
             <Link
-              href="/legal/refund"
+              href="/refund"
               className="text-neutral-800 underline underline-offset-4"
             >
-              환불/취소 정책
+              환불정책
             </Link>
             <Link
-              href="/legal/business-info"
+              href="/business"
               className="text-neutral-800 underline underline-offset-4"
             >
-              사업자 정보
+              사업자정보
             </Link>
           </nav>
         </section>
@@ -156,15 +198,15 @@ export default function SajuMbtiFullProductPage() {
             <div className="space-y-2">
               <h2 className="text-xl font-bold">전체 리포트 시작</h2>
               <p className="text-sm leading-6 text-neutral-300">
-                입력 정보를 작성한 뒤 무료 미리보기와 전체 리포트 결제창 테스트
-                흐름을 확인할 수 있습니다.
+                입력 정보를 작성한 뒤 결제를 완료하면 온라인에서 리포트를
+                열람할 수 있습니다.
               </p>
             </div>
             <Link
               href="/report/new"
               className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-4 text-sm font-bold text-neutral-950 transition hover:bg-neutral-100"
             >
-              리포트 작성하기
+              990원 결제하고 리포트 생성하기
             </Link>
           </div>
         </section>

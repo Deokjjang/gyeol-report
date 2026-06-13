@@ -7,6 +7,7 @@ function readSource(relativePath: string): string {
 }
 
 const productPageSources = [
+  readSource("src/lib/legal/businessInfo.ts"),
   readSource("src/lib/product/gyeolProducts.ts"),
   readSource("src/components/product/ProductVisual.tsx"),
   readSource("src/components/product/ProductSummaryCard.tsx"),
@@ -18,29 +19,53 @@ const productPageSources = [
   readSource("src/app/products/saju-mbti-full/page.tsx"),
 ].join("\n");
 
+const productCopySources = [
+  readSource("src/lib/legal/businessInfo.ts"),
+  readSource("src/lib/product/gyeolProducts.ts"),
+  readSource("src/components/product/ProductSummaryCard.tsx"),
+  readSource("src/components/product/ComingSoonProductCard.tsx"),
+  readSource("src/components/product/ProductTile.tsx"),
+  readSource("src/app/products/page.tsx"),
+  readSource("src/app/products/saju-mbti-full/page.tsx"),
+].join("\n");
+
 describe("product pages source", () => {
   it("contains required Toss review product phrases", () => {
     const requiredMarkers = [
       "상품",
       "결리포트에서 제공하는 리포트",
-      "종합 리포트",
-      "사주×MBTI 전체 리포트",
+      "사주×MBTI 종합 리포트",
       "정가 1,290원",
       "런칭가 990원",
       "결제금액 990원",
-      "결제 승인 후 온라인 열람",
-      "디지털 리포트",
-      "자기이해용 참고 콘텐츠",
-      "중요한 의사결정은 관련 전문가의 조언과 함께 판단해 주세요",
-      "중복 결제",
-      "시스템 오류",
-      "리포트 미제공",
+      "결제 후 온라인 열람",
+      "자동 생성 디지털 리포트",
+      "입력값 기반 자동 생성",
+      "사람 상담 아님",
+      "사람 상담이 아닌 자동 생성 리포트",
+      "다운로드",
+      "제공하지 않음, 온라인 열람 중심",
+      "결제 후 입력값을 바탕으로 리포트가 자동 생성됩니다",
+      "본 상품은 사람 상담이 아닌 자동 생성 디지털 리포트",
+      "결제 후 온라인에서 결과를 열람할 수 있습니다",
+      "자기이해와 참고 목적의 정보",
+      "이름 또는 닉네임",
+      "생년월일",
+      "출생시간",
+      "성별",
+      "MBTI",
+      "문의처",
+      "010-3156-8568",
+      "support@dvem.ai",
+      "중복결제",
+      "시스템 장애",
+      "결과 미제공",
       "하반기 운세",
       "궁합 리포트",
       "대운 리포트",
       "세운 리포트",
       "출시 준비 중",
-      "시작하기",
+      "990원 결제하고 리포트 생성하기",
     ];
 
     for (const marker of requiredMarkers) {
@@ -96,10 +121,15 @@ describe("product pages source", () => {
       ["질병", "진단"].join(" "),
       ["투자", "수익", "보장"].join(" "),
       ["결혼", "보장"].join(" "),
+      "상담치료",
+      "심리검사",
+      "적중률",
+      "100%",
+      "운명 확정",
     ];
 
     for (const marker of blockedMarkers) {
-      expect(productPageSources).not.toContain(marker);
+      expect(productCopySources).not.toContain(marker);
     }
   });
 });

@@ -10,6 +10,7 @@ const legalSources = [
   readSource("src/lib/legal/businessInfo.ts"),
   readSource("src/components/legal/BusinessFooter.tsx"),
   readSource("src/components/legal/LegalPageLayout.tsx"),
+  readSource("src/app/business/page.tsx"),
   readSource("src/app/legal/page.tsx"),
   readSource("src/app/legal/business-info/page.tsx"),
   readSource("src/app/legal/terms/page.tsx"),
@@ -21,9 +22,10 @@ describe("legal page sources", () => {
   it("contains required legal and business page markers", () => {
     const expectedMarkers = [
       "사업자 정보",
+      "사업자정보",
       "이용약관",
       "개인정보처리방침",
-      "환불/취소 정책",
+      "환불정책",
       "DVEM",
       "장덕민",
       "184-27-02002",
@@ -33,6 +35,8 @@ describe("legal page sources", () => {
       "신고 진행 중",
       "010-3156-8568",
       "통신판매업 신고번호",
+      "호스팅 제공자",
+      "Vercel Inc.",
     ];
 
     for (const marker of expectedMarkers) {
@@ -47,21 +51,21 @@ describe("legal page sources", () => {
     const expectedMarkers = [
       "상호명",
       "서비스명",
-      "대표자",
+      "대표자명",
       "사업자등록번호",
       "통신판매업 신고번호",
       "사업장 주소",
       "홈페이지",
       "고객센터",
-      "문의",
+      "이메일",
+      "호스팅 제공자",
       "GYEOL_BUSINESS_INFO.supportContactEmail",
+      "GYEOL_BUSINESS_INFO.hostingProvider",
     ];
     const removedMarkers = [
       "과세유형",
       "일반과세자",
       "개인정보보호 책임자",
-      "호스팅 제공자",
-      "Vercel Inc.",
       "공식 문의",
       "고객지원",
     ];
@@ -73,6 +77,27 @@ describe("legal page sources", () => {
     for (const marker of removedMarkers) {
       expect(businessInfoSource).not.toContain(marker);
     }
+  });
+
+  it("contains root business page for review navigation", () => {
+    const businessSource = readSource("src/app/business/page.tsx");
+    const expectedMarkers = [
+      "사업자 정보",
+      "상호명",
+      "대표자명",
+      "사업자등록번호",
+      "사업장 주소",
+      "고객센터",
+      "이메일",
+      "통신판매업 신고번호",
+      "호스팅 제공자",
+    ];
+
+    for (const marker of expectedMarkers) {
+      expect(businessSource).toContain(marker);
+    }
+
+    expect(businessSource).not.toContain("과세유형");
   });
 
   it("contains required terms content", () => {

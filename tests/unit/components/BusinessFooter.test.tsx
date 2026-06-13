@@ -17,10 +17,14 @@ describe("BusinessFooter", () => {
       "184-27-02002",
       "통신판매업 신고번호",
       "신고 진행 중",
+      "사업장 주소",
+      "인천광역시 연수구 인천타워대로 185, 10층 1001호 V206",
       "고객센터",
       "010-3156-8568",
-      "문의",
+      "이메일",
       "support@dvem.ai",
+      "호스팅 제공자",
+      "Vercel Inc.",
     ];
 
     for (const text of expectedText) {
@@ -31,9 +35,6 @@ describe("BusinessFooter", () => {
       "과세" + "유형",
       "일반" + "과세자",
       "개인정보보호 " + "책임자",
-      "호스팅 " + "제공자",
-      "Vercel " + "Inc.",
-      "사업장 " + "주소",
       "official" + "@dvem.ai",
     ];
 
@@ -45,14 +46,14 @@ describe("BusinessFooter", () => {
   it("renders policy links", () => {
     const html = renderToStaticMarkup(<BusinessFooter />);
     const expectedLinks = [
-      "/legal/business-info",
-      "/legal/terms",
-      "/legal/privacy",
-      "/legal/refund",
-      "사업자 정보",
+      "/terms",
+      "/privacy",
+      "/refund",
+      "/business",
       "이용약관",
       "개인정보처리방침",
-      "환불/취소 정책",
+      "환불정책",
+      "사업자정보",
     ];
 
     for (const value of expectedLinks) {

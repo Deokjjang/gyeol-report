@@ -78,7 +78,9 @@ describe("app layout metadata source", () => {
     const expectedValues = [
       "GYEOL_HOME_PRODUCT_GRID",
       "ProductGrid",
-      "생년월일시와 MBTI로 읽는 성향, 관계, 일의 흐름",
+      "사주×MBTI 종합 리포트",
+      "결제 후 입력값을 바탕으로 자동 생성되는 유료 디지털",
+      "사람 상담이 아닌 자동 생성 리포트",
     ];
 
     for (const value of expectedValues) {
@@ -87,8 +89,9 @@ describe("app layout metadata source", () => {
   });
 
   it("renders landing page product positioning", () => {
-    expect(pageSource).toContain("생년월일시와 MBTI");
-    expect(pageSource).toContain("사주와 MBTI로 보는 나의 결");
+    expect(pageSource).toContain("사주×MBTI 종합 리포트");
+    expect(pageSource).toContain("결제 후 온라인 열람");
+    expect(pageSource).toContain("자동 생성 디지털 리포트");
     expect(pageSource).toContain("결리포트");
   });
 
@@ -96,7 +99,11 @@ describe("app layout metadata source", () => {
     const expectedValues = [
       "ProductGrid",
       "GYEOL_HOME_PRODUCT_GRID",
-      "사주와 MBTI로 보는 나의 결",
+      "사주×MBTI 종합 리포트",
+      "런칭가",
+      "990원",
+      "정가",
+      "1,290원",
     ];
 
     for (const value of expectedValues) {
@@ -106,7 +113,8 @@ describe("app layout metadata source", () => {
 
   it("renders landing page trust and support placeholders", () => {
     const expectedValues = [
-      "사주와 MBTI로 보는 나의 결",
+      "사람 상담이 아닌 자동 생성 리포트",
+      "온라인에서 결과를 열람할 수 있습니다",
     ];
 
     for (const value of expectedValues) {

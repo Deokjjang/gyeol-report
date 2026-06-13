@@ -10,15 +10,15 @@ describe("ProductSummaryCard", () => {
       <ProductSummaryCard product={GYEOL_PRODUCTS[0]} />,
     );
     const visibleMarkers = [
-      "사주×MBTI 전체 리포트",
+      "사주×MBTI 종합 리포트",
       "정가",
       "1,290원",
       "런칭가 990원",
       "990원",
-      "디지털 리포트",
-      "결제 승인 후 온라인 열람",
+      "자동 생성 디지털 리포트",
+      "결제 후 온라인 열람",
       "자세히 보기",
-      "리포트 작성하기",
+      "990원 결제하고 리포트 생성하기",
     ];
 
     for (const marker of visibleMarkers) {
@@ -33,8 +33,8 @@ describe("ProductSummaryCard", () => {
     const expectedLinks = [
       "/products/saju-mbti-full",
       "/report/new",
-      "/legal/refund",
-      "/legal/privacy",
+      "/refund",
+      "/privacy",
     ];
 
     for (const link of expectedLinks) {

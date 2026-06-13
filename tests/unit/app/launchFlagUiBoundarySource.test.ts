@@ -29,8 +29,11 @@ describe("launch flag UI boundary source", () => {
     const expectedMarkers = [
       "ProductGrid",
       "GYEOL_HOME_PRODUCT_GRID",
-      "사주와 MBTI로 보는 나의 결",
-      "생년월일시와 MBTI로 읽는 성향, 관계, 일의 흐름",
+      "사주×MBTI 종합 리포트",
+      "결제 후 입력값을 바탕으로 자동 생성되는 유료 디지털",
+      "사람 상담이 아닌 자동 생성 리포트",
+      "결제 후 온라인 열람",
+      "자동 생성 디지털 리포트",
     ];
     const activePurchaseMarkers = [
       "결제" + "하기",

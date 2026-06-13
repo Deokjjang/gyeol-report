@@ -18,8 +18,8 @@ describe("GYEOL_PRODUCTS", () => {
       productType: "saju_mbti_full",
       paymentProductType: "saju_mbti_full",
       slug: "saju-mbti-full",
-      nameKo: "종합 리포트",
-      fullNameKo: "사주×MBTI 전체 리포트",
+      nameKo: "사주×MBTI 종합 리포트",
+      fullNameKo: "사주×MBTI 종합 리포트",
       priceAmount: 990,
       listPriceAmount: 1290,
       salePriceAmount: 990,
@@ -32,8 +32,8 @@ describe("GYEOL_PRODUCTS", () => {
       isPurchasable: true,
       href: "/report/new",
       ctaHref: "/report/new",
-      formatKo: "디지털 리포트",
-      deliveryTypeKo: "결제 승인 후 온라인 열람",
+      formatKo: "자동 생성 디지털 리포트",
+      deliveryTypeKo: "결제 후 온라인 열람",
     });
   });
 
@@ -62,7 +62,7 @@ describe("GYEOL_PRODUCTS", () => {
   it("orders the home product grid with only the comprehensive report purchasable", () => {
     expect(GYEOL_HOME_PRODUCT_GRID.map((product) => product.nameKo)).toEqual([
       "하반기 운세",
-      "종합 리포트",
+      "사주×MBTI 종합 리포트",
       "대운 리포트",
       "세운 리포트",
       "궁합 리포트",

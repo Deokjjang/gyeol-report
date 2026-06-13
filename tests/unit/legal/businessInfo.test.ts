@@ -20,8 +20,8 @@ describe("Gyeol business info", () => {
       privacyOfficerName: "장덕민",
       privacyOfficerEmail: "support@dvem.ai",
       hostingProvider: "Vercel Inc.",
-      taxTypeKo: "일반과세자",
     });
+    expect("taxTypeKo" in GYEOL_BUSINESS_INFO).toBe(false);
   });
 
   it("keeps only the mail-order registration as pending", () => {

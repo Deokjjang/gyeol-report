@@ -56,9 +56,28 @@ export default function ProductTile({ product }: ProductTileProps) {
             {product.nameKo}
           </h2>
           {isPurchasable ? (
-            <p className="text-sm leading-6 text-neutral-600">
-              {product.fullNameKo}
-            </p>
+            <div className="space-y-2">
+              <p className="text-sm leading-6 text-neutral-600">
+                {product.summaryKo}
+              </p>
+              <ul className="flex flex-wrap gap-2 text-xs font-bold">
+                <li className="rounded-full bg-rose-50 px-3 py-1 text-rose-700">
+                  {product.salePriceKo}
+                </li>
+                <li className="rounded-full bg-neutral-100 px-3 py-1 text-neutral-700">
+                  정가 {product.listPriceKo}
+                </li>
+                <li className="rounded-full bg-neutral-100 px-3 py-1 text-neutral-700">
+                  {product.deliveryTypeKo}
+                </li>
+                <li className="rounded-full bg-neutral-100 px-3 py-1 text-neutral-700">
+                  {product.formatKo}
+                </li>
+                <li className="rounded-full bg-neutral-100 px-3 py-1 text-neutral-700">
+                  사람 상담이 아닌 자동 생성 리포트
+                </li>
+              </ul>
+            </div>
           ) : (
             <p className="text-sm leading-6 text-neutral-500">
               {product.shortDescriptionKo}
@@ -80,7 +99,7 @@ export default function ProductTile({ product }: ProductTileProps) {
               href={product.href}
               className="inline-flex items-center justify-center rounded-lg bg-neutral-950 px-4 py-3 text-sm font-bold text-white transition hover:bg-neutral-800"
             >
-              시작하기
+              {product.priceLabelKo} 결제하고 리포트 생성하기
             </Link>
           </div>
         ) : (
