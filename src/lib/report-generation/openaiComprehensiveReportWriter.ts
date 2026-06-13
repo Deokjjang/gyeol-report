@@ -9,6 +9,7 @@ import type {
 import { validateComprehensiveReportDraft } from "./comprehensiveReportDraftValidator";
 import {
   callOpenAIReportWriter,
+  isOpenAIReportWriterClientError,
   type OpenAIReportWriterClientConfig,
 } from "./openaiReportWriterClient";
 import {
@@ -29,6 +30,12 @@ export type SafeReportGenerationError = {
   readonly stage: SafeReportGenerationStage;
   readonly causeCode?: string;
   readonly validationErrors?: readonly string[];
+  readonly status?: number;
+  readonly errorType?: string;
+  readonly errorCode?: string;
+  readonly diagnosticMessage?: string;
+  readonly requestId?: string;
+  readonly errorParam?: string;
 };
 
 function formatSafeReportGenerationMessage(
@@ -46,6 +53,24 @@ function formatSafeReportGenerationMessage(
     lines.push("validation errors:");
     lines.push(...input.validationErrors.map((error) => `- ${error}`));
   }
+  if (input.status !== undefined) {
+    lines.push(`status: ${input.status}`);
+  }
+  if (input.errorType !== undefined) {
+    lines.push(`errorType: ${input.errorType}`);
+  }
+  if (input.errorCode !== undefined) {
+    lines.push(`errorCode: ${input.errorCode}`);
+  }
+  if (input.diagnosticMessage !== undefined) {
+    lines.push(`message: ${input.diagnosticMessage}`);
+  }
+  if (input.errorParam !== undefined) {
+    lines.push(`param: ${input.errorParam}`);
+  }
+  if (input.requestId !== undefined) {
+    lines.push(`requestId: ${input.requestId}`);
+  }
 
   return lines.join("\n");
 }
@@ -58,6 +83,12 @@ export class SafeReportGenerationFailure
   readonly stage: SafeReportGenerationStage;
   readonly causeCode?: string;
   readonly validationErrors?: readonly string[];
+  readonly status?: number;
+  readonly errorType?: string;
+  readonly errorCode?: string;
+  readonly diagnosticMessage?: string;
+  readonly requestId?: string;
+  readonly errorParam?: string;
 
   constructor(input: SafeReportGenerationError) {
     super(formatSafeReportGenerationMessage(input));
@@ -69,6 +100,24 @@ export class SafeReportGenerationFailure
     }
     if (input.validationErrors !== undefined) {
       this.validationErrors = input.validationErrors;
+    }
+    if (input.status !== undefined) {
+      this.status = input.status;
+    }
+    if (input.errorType !== undefined) {
+      this.errorType = input.errorType;
+    }
+    if (input.errorCode !== undefined) {
+      this.errorCode = input.errorCode;
+    }
+    if (input.diagnosticMessage !== undefined) {
+      this.diagnosticMessage = input.diagnosticMessage;
+    }
+    if (input.requestId !== undefined) {
+      this.requestId = input.requestId;
+    }
+    if (input.errorParam !== undefined) {
+      this.errorParam = input.errorParam;
     }
   }
 }
@@ -100,6 +149,12 @@ export function isSafeReportGenerationError(
     readonly stage?: unknown;
     readonly causeCode?: unknown;
     readonly validationErrors?: unknown;
+    readonly status?: unknown;
+    readonly errorType?: unknown;
+    readonly errorCode?: unknown;
+    readonly diagnosticMessage?: unknown;
+    readonly requestId?: unknown;
+    readonly errorParam?: unknown;
   };
 
   return (
@@ -107,8 +162,49 @@ export function isSafeReportGenerationError(
     isSafeStage(candidate.stage) &&
     (candidate.causeCode === undefined || typeof candidate.causeCode === "string") &&
     (candidate.validationErrors === undefined ||
-      isStringArray(candidate.validationErrors))
+      isStringArray(candidate.validationErrors)) &&
+    (candidate.status === undefined || typeof candidate.status === "number") &&
+    (candidate.errorType === undefined || typeof candidate.errorType === "string") &&
+    (candidate.errorCode === undefined || typeof candidate.errorCode === "string") &&
+    (candidate.diagnosticMessage === undefined ||
+      typeof candidate.diagnosticMessage === "string") &&
+    (candidate.requestId === undefined || typeof candidate.requestId === "string") &&
+    (candidate.errorParam === undefined || typeof candidate.errorParam === "string")
   );
+}
+
+function getOpenAIRequestDiagnostics(
+  error: unknown,
+): Pick<
+  SafeReportGenerationError,
+  "status" | "errorType" | "errorCode" | "diagnosticMessage" | "requestId" | "errorParam"
+> {
+  if (isOpenAIReportWriterClientError(error)) {
+    return {
+      ...(error.status === undefined ? {} : { status: error.status }),
+      ...(error.errorType === undefined ? {} : { errorType: error.errorType }),
+      ...(error.errorCode === undefined ? {} : { errorCode: error.errorCode }),
+      ...(error.diagnosticMessage === undefined
+        ? {}
+        : { diagnosticMessage: error.diagnosticMessage }),
+      ...(error.requestId === undefined ? {} : { requestId: error.requestId }),
+      ...(error.errorParam === undefined ? {} : { errorParam: error.errorParam }),
+    };
+  }
+  if (isSafeReportGenerationError(error)) {
+    return {
+      ...(error.status === undefined ? {} : { status: error.status }),
+      ...(error.errorType === undefined ? {} : { errorType: error.errorType }),
+      ...(error.errorCode === undefined ? {} : { errorCode: error.errorCode }),
+      ...(error.diagnosticMessage === undefined
+        ? {}
+        : { diagnosticMessage: error.diagnosticMessage }),
+      ...(error.requestId === undefined ? {} : { requestId: error.requestId }),
+      ...(error.errorParam === undefined ? {} : { errorParam: error.errorParam }),
+    };
+  }
+
+  return {};
 }
 
 function getSafeCauseCode(error: unknown): string {
@@ -237,6 +333,7 @@ export async function generateComprehensiveReportDraft(input: {
     throw new SafeReportGenerationFailure({
       code: getSafeCauseCode(error),
       stage: "openai",
+      ...getOpenAIRequestDiagnostics(error),
     });
   }
 

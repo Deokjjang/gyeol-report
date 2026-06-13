@@ -58,6 +58,12 @@ function createOrchestratorError(
   input?: {
     readonly causeCode?: string;
     readonly validationErrors?: readonly string[];
+    readonly status?: number;
+    readonly errorType?: string;
+    readonly errorCode?: string;
+    readonly diagnosticMessage?: string;
+    readonly requestId?: string;
+    readonly errorParam?: string;
   },
 ): Error {
   return new SafeReportGenerationFailure({
@@ -67,6 +73,14 @@ function createOrchestratorError(
     ...(input?.validationErrors === undefined
       ? {}
       : { validationErrors: input.validationErrors }),
+    ...(input?.status === undefined ? {} : { status: input.status }),
+    ...(input?.errorType === undefined ? {} : { errorType: input.errorType }),
+    ...(input?.errorCode === undefined ? {} : { errorCode: input.errorCode }),
+    ...(input?.diagnosticMessage === undefined
+      ? {}
+      : { diagnosticMessage: input.diagnosticMessage }),
+    ...(input?.requestId === undefined ? {} : { requestId: input.requestId }),
+    ...(input?.errorParam === undefined ? {} : { errorParam: input.errorParam }),
   });
 }
 
@@ -191,6 +205,14 @@ export async function generateAndPersistComprehensiveReport(
       throw createOrchestratorError("COMPREHENSIVE_REPORT_GENERATION_FAILED", error.stage, {
         causeCode: error.code,
         validationErrors: error.validationErrors,
+        ...(error.status === undefined ? {} : { status: error.status }),
+        ...(error.errorType === undefined ? {} : { errorType: error.errorType }),
+        ...(error.errorCode === undefined ? {} : { errorCode: error.errorCode }),
+        ...(error.diagnosticMessage === undefined
+          ? {}
+          : { diagnosticMessage: error.diagnosticMessage }),
+        ...(error.requestId === undefined ? {} : { requestId: error.requestId }),
+        ...(error.errorParam === undefined ? {} : { errorParam: error.errorParam }),
       });
     }
 

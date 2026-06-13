@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import { callOpenAIReportWriter } from "../../../src/lib/report-generation/openaiReportWriterClient";
+import {
+  callOpenAIReportWriter,
+  isOpenAIReportWriterClientError,
+} from "../../../src/lib/report-generation/openaiReportWriterClient";
 import { comprehensiveReportDraftJsonSchema } from "../../../src/lib/report-generation/comprehensiveReportDraftSchema";
 
 const messages = {
@@ -11,6 +14,28 @@ const messages = {
 
 function createJsonResponse(body: unknown, status = 200): Response {
   return new Response(JSON.stringify(body), { status });
+}
+
+async function expectClientError(
+  promise: Promise<unknown>,
+): Promise<ReturnType<typeof expectOpenAIClientError>> {
+  try {
+    await promise;
+  } catch (error) {
+    return expectOpenAIClientError(error);
+  }
+
+  throw new Error("Expected OpenAI report writer client error.");
+}
+
+function expectOpenAIClientError(error: unknown) {
+  expect(isOpenAIReportWriterClientError(error)).toBe(true);
+
+  if (!isOpenAIReportWriterClientError(error)) {
+    throw new Error("Expected OpenAI report writer client error.");
+  }
+
+  return error;
 }
 
 describe("OpenAI report writer client", () => {
@@ -129,18 +154,45 @@ describe("OpenAI report writer client", () => {
   });
 
   it("throws safe errors for non-OK and empty responses", async () => {
-    await expect(
+    const error = await expectClientError(
       callOpenAIReportWriter({
         config: {
           apiKey: "test_key",
           model: "test_model",
           enabled: true,
-          fetchImpl: async () => createJsonResponse({ error: "bad" }, 500),
+          fetchImpl: async () =>
+            new Response(
+              JSON.stringify({
+                error: {
+                  type: "invalid_request_error",
+                  code: "invalid_model",
+                  message: "The requested model is not available.",
+                  param: "model",
+                },
+                request_id: "req_safe_123",
+              }),
+              {
+                status: 400,
+                headers: {
+                  "content-type": "application/json",
+                  "x-request-id": "req_header_456",
+                },
+              },
+            ),
         },
         messages,
         jsonSchema: comprehensiveReportDraftJsonSchema,
       }),
-    ).rejects.toThrow("OPENAI_REPORT_WRITER_REQUEST_FAILED");
+    );
+
+    expect(error.code).toBe("OPENAI_REPORT_WRITER_REQUEST_FAILED");
+    expect(error.status).toBe(400);
+    expect(error.errorType).toBe("invalid_request_error");
+    expect(error.errorCode).toBe("invalid_model");
+    expect(error.diagnosticMessage).toBe("The requested model is not available.");
+    expect(error.errorParam).toBe("model");
+    expect(error.requestId).toBe("req_header_456");
+    expect(JSON.stringify(error)).not.toContain("test_key");
 
     await expect(
       callOpenAIReportWriter({

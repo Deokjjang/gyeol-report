@@ -1,5 +1,13 @@
-import { generateComprehensiveReportDraft } from "../src/lib/report-generation/openaiComprehensiveReportWriter";
+import {
+  generateComprehensiveReportDraft,
+  isSafeReportGenerationError,
+} from "../src/lib/report-generation/openaiComprehensiveReportWriter";
 import { isComprehensiveReportV2Draft } from "../src/lib/report-generation/comprehensiveReportDraftTypes";
+import { comprehensiveReportDraftJsonSchema } from "../src/lib/report-generation/comprehensiveReportDraftSchema";
+import {
+  buildOpenAIComprehensiveReportWriterMessages,
+  deriveAllowedSajuTermsFromEvidencePacket,
+} from "../src/lib/report-generation/openaiReportWriterPrompt";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
 import type { ComputedSajuFacts } from "../src/lib/report-knowledge/sajuComputedFactsTypes";
 
@@ -44,7 +52,21 @@ function writeStatus(message: string): void {
   process.stdout.write(`${message}\n`);
 }
 
+function writeErrorStatus(message: string): void {
+  process.stderr.write(`${message}\n`);
+}
+
 function getEnvValue(name: RequiredOpenAIReportEnvName): string | undefined {
+  const value = process.env[name];
+
+  if (typeof value !== "string" || value.trim().length === 0) {
+    return undefined;
+  }
+
+  return value.trim();
+}
+
+function getOptionalEnvValue(name: string): string | undefined {
   const value = process.env[name];
 
   if (typeof value !== "string" || value.trim().length === 0) {
@@ -58,6 +80,66 @@ function shouldSkipSmoke(): boolean {
   return requiredOpenAIReportEnvNames.some(
     (name) => getEnvValue(name) === undefined,
   );
+}
+
+function getSchemaTopLevelKeys(): readonly string[] {
+  return Object.keys(comprehensiveReportDraftJsonSchema.properties);
+}
+
+function writeOpenAIRequestDebug(input: {
+  readonly model: string;
+  readonly promptChars: number;
+}): void {
+  if (getOptionalEnvValue("OPENAI_REPORT_WRITER_DEBUG_SAFE") !== "1") {
+    return;
+  }
+
+  writeStatus("OpenAI request debug:");
+  writeStatus(`model: ${input.model}`);
+  writeStatus("input message count: 3");
+  writeStatus(`approx prompt chars: ${input.promptChars}`);
+  writeStatus("response format: comprehensive_report_draft");
+  writeStatus(`schema keys: ${getSchemaTopLevelKeys().join(", ")}`);
+}
+
+function writeSafeFailure(error: unknown): void {
+  if (isSafeReportGenerationError(error)) {
+    writeErrorStatus("failed");
+    writeErrorStatus(`code: ${error.code}`);
+    writeErrorStatus(`stage: ${error.stage}`);
+    if (error.causeCode !== undefined) {
+      writeErrorStatus(`cause: ${error.causeCode}`);
+    }
+    if (error.status !== undefined) {
+      writeErrorStatus(`status: ${error.status}`);
+    }
+    if (error.errorType !== undefined) {
+      writeErrorStatus(`errorType: ${error.errorType}`);
+    }
+    if (error.errorCode !== undefined) {
+      writeErrorStatus(`errorCode: ${error.errorCode}`);
+    }
+    if (error.diagnosticMessage !== undefined) {
+      writeErrorStatus(`message: ${error.diagnosticMessage}`);
+    }
+    if (error.errorParam !== undefined) {
+      writeErrorStatus(`param: ${error.errorParam}`);
+    }
+    if (error.requestId !== undefined) {
+      writeErrorStatus(`requestId: ${error.requestId}`);
+    }
+    if (error.validationErrors !== undefined && error.validationErrors.length > 0) {
+      writeErrorStatus("errors:");
+      for (const validationError of error.validationErrors) {
+        writeErrorStatus(`- ${validationError}`);
+      }
+    }
+    return;
+  }
+
+  writeErrorStatus("failed");
+  writeErrorStatus("code: OPENAI_REPORT_WRITER_SMOKE_FAILED");
+  writeErrorStatus("stage: unknown");
 }
 
 async function run(): Promise<void> {
@@ -80,6 +162,19 @@ async function run(): Promise<void> {
     mbtiType: "ENTJ",
     sajuFacts: deokminSampleFacts,
   });
+  const allowedSajuTerms = deriveAllowedSajuTermsFromEvidencePacket(packet);
+  const messages = buildOpenAIComprehensiveReportWriterMessages({
+    userDisplayName: "덕민",
+    mbtiType: "ENTJ",
+    evidencePacket: packet,
+    allowedSajuTerms,
+  });
+
+  writeOpenAIRequestDebug({
+    model,
+    promptChars: messages.system.length + messages.developer.length + messages.user.length,
+  });
+
   const result = await generateComprehensiveReportDraft({
     userDisplayName: "덕민",
     mbtiType: "ENTJ",
@@ -111,12 +206,6 @@ async function run(): Promise<void> {
 }
 
 run().catch((error: unknown) => {
-  process.stderr.write(
-    `${
-      error instanceof Error
-        ? error.message
-        : "OpenAI report writer smoke failed."
-    }\n`,
-  );
+  writeSafeFailure(error);
   process.exitCode = 1;
 });

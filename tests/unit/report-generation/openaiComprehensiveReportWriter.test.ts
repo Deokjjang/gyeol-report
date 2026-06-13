@@ -206,13 +206,38 @@ describe("OpenAI comprehensive report writer", () => {
           apiKey: "test_key",
           model: "test_model",
           enabled: true,
-          fetchImpl: async () => createJsonResponse({ error: "failed" }, 500),
+          fetchImpl: async () =>
+            new Response(
+              JSON.stringify({
+                error: {
+                  type: "invalid_request_error",
+                  code: "schema_invalid",
+                  message: "Response format schema is invalid.",
+                  param: "text.format.schema",
+                },
+                request_id: "req_body_123",
+              }),
+              {
+                status: 400,
+                headers: {
+                  "content-type": "application/json",
+                  "x-request-id": "req_header_123",
+                },
+              },
+            ),
         },
       }),
     );
 
     expect(error.code).toBe("OPENAI_REPORT_WRITER_REQUEST_FAILED");
     expect(error.stage).toBe("openai");
+    expect(error.status).toBe(400);
+    expect(error.errorType).toBe("invalid_request_error");
+    expect(error.errorCode).toBe("schema_invalid");
+    expect(error.diagnosticMessage).toBe("Response format schema is invalid.");
+    expect(error.errorParam).toBe("text.format.schema");
+    expect(error.requestId).toBe("req_header_123");
+    expect(JSON.stringify(error)).not.toContain("test_key");
   });
 
   it("rejects unsafe draft JSON", async () => {

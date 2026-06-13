@@ -22,9 +22,20 @@ describe("generate and save comprehensive report smoke source", () => {
       "draft version:",
       "chapters:",
       "isSafeReportGenerationError",
+      "OPENAI_REPORT_WRITER_DEBUG_SAFE",
+      "OpenAI request debug:",
+      "input message count",
+      "approx prompt chars",
+      "response format",
+      "schema keys",
       "failed",
       "code:",
       "stage:",
+      "status:",
+      "errorType:",
+      "errorCode:",
+      "message:",
+      "requestId:",
       "errors:",
     ];
 
@@ -55,6 +66,10 @@ describe("generate and save comprehensive report smoke source", () => {
       "writeStatus(`OPENAI_API_KEY",
       "writeStatus(`SUPABASE_ANON_KEY",
       "writeStatus(generated.coreLine + generated.openingTitle)",
+      "writeStatus(messages.system",
+      "writeStatus(messages.developer",
+      "writeStatus(messages.user",
+      "Authorization",
     ];
 
     for (const marker of blockedMarkers) {

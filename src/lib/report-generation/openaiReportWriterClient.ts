@@ -16,10 +16,68 @@ export type OpenAIReportWriterClientResult = {
   readonly model: string;
 };
 
+export type OpenAIReportWriterSafeDiagnostics = {
+  readonly status?: number;
+  readonly errorType?: string;
+  readonly errorCode?: string;
+  readonly diagnosticMessage?: string;
+  readonly requestId?: string;
+  readonly errorParam?: string;
+};
+
 const openAIResponsesEndpoint = "https://api.openai.com/v1/responses";
 
-function createWriterError(code: string): Error {
-  return new Error(code);
+export class OpenAIReportWriterClientError
+  extends Error
+  implements OpenAIReportWriterSafeDiagnostics
+{
+  readonly code: string;
+  readonly status?: number;
+  readonly errorType?: string;
+  readonly errorCode?: string;
+  readonly diagnosticMessage?: string;
+  readonly requestId?: string;
+  readonly errorParam?: string;
+
+  constructor(
+    code: string,
+    diagnostics: OpenAIReportWriterSafeDiagnostics = {},
+  ) {
+    super(code);
+    this.name = "OpenAIReportWriterClientError";
+    this.code = code;
+    if (diagnostics.status !== undefined) {
+      this.status = diagnostics.status;
+    }
+    if (diagnostics.errorType !== undefined) {
+      this.errorType = diagnostics.errorType;
+    }
+    if (diagnostics.errorCode !== undefined) {
+      this.errorCode = diagnostics.errorCode;
+    }
+    if (diagnostics.diagnosticMessage !== undefined) {
+      this.diagnosticMessage = diagnostics.diagnosticMessage;
+    }
+    if (diagnostics.requestId !== undefined) {
+      this.requestId = diagnostics.requestId;
+    }
+    if (diagnostics.errorParam !== undefined) {
+      this.errorParam = diagnostics.errorParam;
+    }
+  }
+}
+
+export function isOpenAIReportWriterClientError(
+  value: unknown,
+): value is OpenAIReportWriterClientError {
+  return value instanceof OpenAIReportWriterClientError;
+}
+
+function createWriterError(
+  code: string,
+  diagnostics?: OpenAIReportWriterSafeDiagnostics,
+): Error {
+  return new OpenAIReportWriterClientError(code, diagnostics);
 }
 
 function isNonEmptyString(value: unknown): value is string {
@@ -37,6 +95,139 @@ function getStringProperty(
   const property = value[key];
 
   return typeof property === "string" ? property : undefined;
+}
+
+function sanitizeDiagnosticText(value: string): string {
+  return value
+    .replace(/Bearer\s+[A-Za-z0-9._~+/=-]+/g, "Bearer [redacted]")
+    .replace(/sk-[A-Za-z0-9._-]+/g, "sk-[redacted]")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 500);
+}
+
+function getNumberProperty(
+  value: Record<string, unknown>,
+  key: string,
+): number | undefined {
+  const property = value[key];
+
+  return typeof property === "number" ? property : undefined;
+}
+
+function getNestedErrorRecord(body: unknown): Record<string, unknown> | undefined {
+  if (!isRecord(body)) {
+    return undefined;
+  }
+  if (isRecord(body.error)) {
+    return body.error;
+  }
+
+  return undefined;
+}
+
+function getOpenAIRequestId(input: {
+  readonly body: unknown;
+  readonly headers: Headers;
+}): string | undefined {
+  const headerRequestId =
+    input.headers.get("x-request-id") ??
+    input.headers.get("openai-request-id") ??
+    input.headers.get("request-id") ??
+    undefined;
+
+  if (headerRequestId !== undefined) {
+    return sanitizeDiagnosticText(headerRequestId);
+  }
+  if (isRecord(input.body)) {
+    const bodyRequestId =
+      getStringProperty(input.body, "request_id") ??
+      getStringProperty(input.body, "requestId");
+
+    if (bodyRequestId !== undefined) {
+      return sanitizeDiagnosticText(bodyRequestId);
+    }
+  }
+
+  const nestedError = getNestedErrorRecord(input.body);
+  const nestedRequestId =
+    nestedError === undefined
+      ? undefined
+      : getStringProperty(nestedError, "request_id") ??
+        getStringProperty(nestedError, "requestId");
+
+  return nestedRequestId === undefined
+    ? undefined
+    : sanitizeDiagnosticText(nestedRequestId);
+}
+
+function normalizeOpenAIErrorDiagnostics(input: {
+  readonly status: number;
+  readonly headers: Headers;
+  readonly body: unknown;
+}): OpenAIReportWriterSafeDiagnostics {
+  const root = isRecord(input.body) ? input.body : undefined;
+  const error = getNestedErrorRecord(input.body);
+  const source = error ?? root;
+  const diagnosticMessage =
+    source === undefined
+      ? undefined
+      : getStringProperty(source, "message") ??
+        getStringProperty(source, "error_description");
+
+  return {
+    status: input.status,
+    ...(source === undefined
+      ? {}
+      : {
+          errorType:
+            getStringProperty(source, "type") ??
+            getStringProperty(source, "errorType"),
+          errorCode:
+            getStringProperty(source, "code") ??
+            getStringProperty(source, "errorCode"),
+          errorParam:
+            getStringProperty(source, "param") ??
+            getStringProperty(source, "parameter"),
+        }),
+    ...(diagnosticMessage === undefined
+      ? {}
+      : { diagnosticMessage: sanitizeDiagnosticText(diagnosticMessage) }),
+    ...(getNumberProperty(root ?? {}, "status") === undefined
+      ? {}
+      : { status: getNumberProperty(root ?? {}, "status") }),
+    ...(getOpenAIRequestId({
+      body: input.body,
+      headers: input.headers,
+    }) === undefined
+      ? {}
+      : {
+          requestId: getOpenAIRequestId({
+            body: input.body,
+            headers: input.headers,
+          }),
+        }),
+  };
+}
+
+async function readSafeOpenAIErrorBody(response: Response): Promise<unknown> {
+  const contentType = response.headers.get("content-type") ?? "";
+
+  try {
+    if (contentType.includes("application/json")) {
+      return await response.json();
+    }
+
+    const text = await response.text();
+
+    return text.trim().length === 0
+      ? {}
+      : {
+          message: sanitizeDiagnosticText(text),
+        };
+  } catch {
+    return {};
+  }
 }
 
 function extractTextFromContentItem(item: unknown): string | undefined {
@@ -162,7 +353,16 @@ export async function callOpenAIReportWriter(input: {
   });
 
   if (!response.ok) {
-    throw createWriterError("OPENAI_REPORT_WRITER_REQUEST_FAILED");
+    const body = await readSafeOpenAIErrorBody(response);
+
+    throw createWriterError(
+      "OPENAI_REPORT_WRITER_REQUEST_FAILED",
+      normalizeOpenAIErrorDiagnostics({
+        status: response.status,
+        headers: response.headers,
+        body,
+      }),
+    );
   }
 
   const body = (await response.json()) as unknown;

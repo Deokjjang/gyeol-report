@@ -314,6 +314,39 @@ describe("generateAndPersistComprehensiveReport", () => {
     expect(mockSaveComprehensiveReportDraftSnapshot).not.toHaveBeenCalled();
   });
 
+  it("preserves safe OpenAI request diagnostics from the writer", async () => {
+    mockGenerateComprehensiveReportDraft.mockRejectedValue(
+      new SafeReportGenerationFailure({
+        code: "OPENAI_REPORT_WRITER_REQUEST_FAILED",
+        stage: "openai",
+        status: 400,
+        errorType: "invalid_request_error",
+        errorCode: "schema_invalid",
+        diagnosticMessage: "Response format schema is invalid.",
+        errorParam: "text.format.schema",
+        requestId: "req_safe_123",
+      }),
+    );
+
+    const error = await expectSafeOrchestratorFailure(
+      generateAndPersistComprehensiveReport(createInput()),
+    );
+
+    expect(error).toMatchObject({
+      code: "COMPREHENSIVE_REPORT_GENERATION_FAILED",
+      stage: "openai",
+      causeCode: "OPENAI_REPORT_WRITER_REQUEST_FAILED",
+      status: 400,
+      errorType: "invalid_request_error",
+      errorCode: "schema_invalid",
+      diagnosticMessage: "Response format schema is invalid.",
+      errorParam: "text.format.schema",
+      requestId: "req_safe_123",
+    });
+    expect(JSON.stringify(error)).not.toContain("openai_secret_for_test");
+    expect(mockSaveComprehensiveReportDraftSnapshot).not.toHaveBeenCalled();
+  });
+
   it("fails safely when snapshot persistence fails", async () => {
     setupSuccessfulMocks();
     mockSaveComprehensiveReportDraftSnapshot.mockRejectedValue(
