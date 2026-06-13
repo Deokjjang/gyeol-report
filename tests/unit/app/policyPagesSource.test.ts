@@ -31,15 +31,43 @@ describe("policy page sources", () => {
   });
 
   it("privacy page contains required policy placeholder markers", () => {
-    const source = readAppFile("src/app/privacy/page.tsx");
+    const source = [
+      readAppFile("src/app/privacy/page.tsx"),
+      readAppFile("src/lib/legal/privacyPolicy.ts"),
+      readAppFile("src/lib/legal/businessInfo.ts"),
+    ].join("\n");
     const expectedMarkers = [
-      "개인정보 처리방침",
-      "출시 전 초안",
+      "개인정보처리방침",
+      "수집하는 개인정보 항목",
+      "수집·이용 목적",
+      "보유 및 이용기간",
+      "결제 처리",
+      "리포트 생성",
+      "고객 문의 대응",
+      "처리위탁 또는 외부 서비스 이용",
+      "국외 처리 또는 국외 이전 가능성",
+      "만 14세 미만 이용 제한",
+      "미성년자 안내",
+      "민감정보 수집 제한",
+      "이용자의 권리",
+      "개인정보 문의처",
+      "이름 또는 닉네임",
       "생년월일",
-      "태어난 시간",
+      "출생시간",
+      "성별",
       "MBTI",
-      "결제 제공자",
-      "카드 정보",
+      "결제 거래정보",
+      "리포트 생성 및 열람 정보",
+      "접속기록",
+      "고객 문의 정보",
+      "토스페이먼츠",
+      "Supabase",
+      "OpenAI API",
+      "국외에서 제공될 수 있습니다",
+      "만 14세 미만은 현재 버전에서 서비스를 이용할 수 없습니다",
+      "법정대리인 동의가 필요하며",
+      "본 서비스는 건강정보, 질병정보, 정신질환 정보",
+      "010-3156-8568",
       "support@dvem.ai",
       "홈으로 돌아가기",
       'href="/"',
@@ -47,6 +75,29 @@ describe("policy page sources", () => {
 
     for (const marker of expectedMarkers) {
       expect(source).toContain(marker);
+    }
+  });
+
+  it("privacy and pre-payment copy avoids unsafe product claims", () => {
+    const source = [
+      readAppFile("src/app/privacy/page.tsx"),
+      readAppFile("src/lib/legal/privacyPolicy.ts"),
+      readAppFile("src/components/payment/DevTossCheckoutLauncher.tsx"),
+    ].join("\n");
+    const blockedMarkers = [
+      "적중률",
+      "100% 맞춤",
+      "보장",
+      "반드시 성공",
+      "운명 확정",
+      "정신질환 분석",
+      "우울증 분석",
+      "불안장애 분석",
+      "투자 추천",
+    ];
+
+    for (const marker of blockedMarkers) {
+      expect(source).not.toContain(marker);
     }
   });
 

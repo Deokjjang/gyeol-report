@@ -251,6 +251,9 @@ describe("DevTossCheckoutLauncher", () => {
     expect(html).toContain("개인정보처리방침");
     expect(html).toContain("환불정책");
     expect(html).toContain("사업자정보");
+    expect(html).toContain(
+      "리포트 생성을 위해 이름 또는 닉네임, 생년월일, 출생시간, 성별, MBTI가 처리됩니다.",
+    );
     expect(html).toContain("[필수] 만 14세 이상입니다.");
     expect(html).toContain("990원 결제하고 리포트 생성하기");
     expect(html).toContain("disabled");
@@ -522,6 +525,7 @@ describe("DevTossCheckoutLauncher", () => {
       "서비스 제공 방식",
       "환불 및 청약철회 안내",
       "약관 및 개인정보 동의",
+      "prePaymentPrivacyNoticeKo",
       "만 14세 미만",
       "법정대리인",
       "990원 결제하고 리포트 생성하기",

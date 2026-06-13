@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { prePaymentPrivacyNoticeKo } from "../../lib/legal/privacyPolicy";
 import { prePaymentRefundNoticeKo } from "../../lib/legal/refundPolicy";
 import { loadTossPaymentsBrowserSdk } from "../../lib/payment/tossBrowserSdkLoader";
 import { launchTossCheckout } from "../../lib/payment/tossClientCheckoutLauncher";
@@ -651,6 +652,9 @@ export default function DevTossCheckoutLauncher({
             사업자정보
           </a>
         </nav>
+        <p className="rounded-lg border border-neutral-200 bg-neutral-50 p-3 text-sm leading-6 text-neutral-700">
+          {prePaymentPrivacyNoticeKo}
+        </p>
         <div className="space-y-3">
           <ConfirmationCheckbox
             checked={legalConfirmations.inputAccuracy}
