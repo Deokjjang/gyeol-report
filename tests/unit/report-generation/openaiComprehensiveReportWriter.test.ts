@@ -560,6 +560,78 @@ describe("OpenAI comprehensive report writer", () => {
     );
   });
 
+  it("repairs mild internal meta copy from model output", async () => {
+    const metaDraft = {
+      ...createValidDraft(),
+      openingSummary:
+        "이 초안에서는 사주 구조를 먼저 놓고 ENTJ는 보조로 연결합니다.",
+    };
+    const repairedDraft = createValidDraft();
+    let callCount = 0;
+    const fetchImpl: typeof fetch = async () => {
+      callCount += 1;
+
+      return createJsonResponse({
+        output_text: JSON.stringify(callCount === 1 ? metaDraft : repairedDraft),
+      });
+    };
+
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "ENTJ",
+      evidencePacket: createPacket(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl,
+      },
+    });
+
+    expect(callCount).toBe(2);
+    expect(result.warnings).toEqual([
+      "quality repair: attempted",
+      "quality repair: passed",
+    ]);
+    expect(JSON.stringify(result.draft)).not.toContain("초안");
+  });
+
+  it("fails if repair keeps mild internal meta copy", async () => {
+    const metaDraft = {
+      ...createValidDraft(),
+      openingSummary:
+        "이 초안에서는 사주 구조를 먼저 놓고 ENTJ는 보조로 연결합니다.",
+    };
+    let callCount = 0;
+    const fetchImpl: typeof fetch = async () => {
+      callCount += 1;
+
+      return createJsonResponse({
+        output_text: JSON.stringify(metaDraft),
+      });
+    };
+
+    const error = await expectSafeGenerationFailure(
+      generateComprehensiveReportDraft({
+        mbtiType: "ENTJ",
+        evidencePacket: createPacket(),
+        config: {
+          apiKey: "test_key",
+          model: "test_model",
+          enabled: true,
+          fetchImpl,
+        },
+      }),
+    );
+
+    expect(callCount).toBe(2);
+    expect(error.stage).toBe("draft_validation");
+    expect(error.repairAttempted).toBe(true);
+    expect(error.repairPassed).toBe(false);
+    expect(error.validationErrors?.join("\n")).toContain(
+      "MILD_INTERNAL_META_COPY: 초안",
+    );
+  });
+
   it("rejects internal meta copy from model output", async () => {
     const draft = {
       ...createValidDraft(),

@@ -93,6 +93,13 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("display 섹션은 짧게");
     expect(combined).toContain("시스템 사정");
     expect(combined).toContain("팩폭은 하되 모욕 금지");
+    expect(combined).toContain("제작 과정 표현을 쓰지 마라");
+    expect(combined).toContain("초안");
+    expect(combined).toContain("원고");
+    expect(combined).toContain("작성된 글");
+    expect(combined).toContain("생성된 내용");
+    expect(combined).toContain("문서");
+    expect(combined).toContain("텍스트");
     expect(combined).toContain("같은 근거를 섹션별로 다르게 풀어라");
     expect(combined).toContain("사주 용어를 쉬운 말로 풀어 설명");
     expect(combined).toContain("섹션마다 같은 근거를 다른 결과로 풀어라");
@@ -168,6 +175,10 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("절대 profileTable을 출력하지 않는다");
     expect(combined).toContain("hitReadingLines");
     expect(combined).toContain("solutionLines");
+    expect(combined).toContain("제작/작성 메타 표현을 제거하라");
+    expect(combined).toContain("이 초안에서는 금지");
+    expect(combined).toContain("작성된 글은");
+    expect(combined).toContain("이 문서는");
     expect(combined).toContain("본문을 더 길고 구체적으로 보강하라");
     expect(combined).toContain("사주 용어는 evidence에 있는 것만 사용하라");
     expect(combined).toContain("갑목");

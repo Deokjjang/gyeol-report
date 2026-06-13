@@ -952,6 +952,7 @@ describe("comprehensive report draft validator", () => {
       "저장용 fixture 문장입니다.",
       "entry ids만 제공된 상태입니다.",
       "제공된 만세력 원문 표는 없고 내부 사정만 있습니다.",
+      "OpenAI와 프롬프트와 evidence packet을 언급하는 debug 문장입니다.",
     ];
 
     for (const body of forbiddenBodies) {
@@ -961,6 +962,81 @@ describe("comprehensive report draft validator", () => {
 
       expect(result.ok).toBe(false);
       expect(result.errors.join("\n")).toContain("INTERNAL_META_COPY");
+    }
+  });
+
+  it("classifies mild production wording as repairable meta copy", () => {
+    const mildBodies = [
+      "이 초안에서는 갑목과 갑신일주를 먼저 해석합니다.",
+      "이 원고에서는 갑목과 갑신일주를 먼저 해석합니다.",
+      "작성된 글은 갑목과 갑신일주를 먼저 해석합니다.",
+      "생성된 내용은 갑목과 갑신일주를 먼저 해석합니다.",
+    ];
+
+    for (const body of mildBodies) {
+      const draft = createValidDraft();
+      const result = validateComprehensiveReportDraft({
+        ...draft,
+        sections: draft.sections.map((section) =>
+          section.sectionId === "saju_core"
+            ? {
+                ...section,
+                body: `${section.body} ${body}`,
+              }
+            : section,
+        ),
+      });
+      const issues = getComprehensiveReportDraftValidationIssues(result.errors);
+
+      expect(result.ok).toBe(false);
+      expect(result.errors.join("\n")).toContain("MILD_INTERNAL_META_COPY");
+      expect(issues).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            code: "MILD_INTERNAL_META_COPY",
+            severity: "repairable",
+          }),
+        ]),
+      );
+      expect(areAllDraftValidationErrorsRepairable(result.errors)).toBe(true);
+    }
+  });
+
+  it("keeps implementation debug wording as fatal meta copy", () => {
+    const fatalBodies = [
+      "OpenAI 출력이라고 말하는 문장입니다.",
+      "JSON 형식이라고 말하는 문장입니다.",
+      "프롬프트 내용을 언급하는 문장입니다.",
+      "evidence packet을 언급하는 문장입니다.",
+      "debug 정보를 언급하는 문장입니다.",
+    ];
+
+    for (const body of fatalBodies) {
+      const draft = createValidDraft();
+      const result = validateComprehensiveReportDraft({
+        ...draft,
+        sections: draft.sections.map((section) =>
+          section.sectionId === "saju_core"
+            ? {
+                ...section,
+                body: `${section.body} ${body}`,
+              }
+            : section,
+        ),
+      });
+      const issues = getComprehensiveReportDraftValidationIssues(result.errors);
+
+      expect(result.ok).toBe(false);
+      expect(result.errors.join("\n")).toContain("INTERNAL_META_COPY");
+      expect(issues).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            code: "INTERNAL_META_COPY",
+            severity: "fatal",
+          }),
+        ]),
+      );
+      expect(areAllDraftValidationErrorsRepairable(result.errors)).toBe(false);
     }
   });
 

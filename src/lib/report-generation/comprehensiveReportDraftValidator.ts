@@ -59,6 +59,7 @@ const repairableDraftValidationErrorCodes = [
   "WORK_STUDY_CONTEXT_MISSING",
   "ELEMENT_REMEDY_MISSING",
   "FINAL_MESSAGE_CLOSING_MISSING",
+  "MILD_INTERNAL_META_COPY",
 ] as const;
 const repairableDraftValidationErrorCodeSet = new Set<string>(
   repairableDraftValidationErrorCodes,
@@ -85,13 +86,54 @@ const forbiddenOutputPhrases = [
   "몇월 " + "며칠에 " + "반드시",
 ] as const;
 
-const forbiddenInternalMetaPhrases = [
+const repairableMildInternalMetaPhrases = [
   "초" + "안",
+  "원" + "고",
+  "작성된 " + "글",
+  "생성된 " + "내용",
+  "문" + "서",
+  "텍" + "스트",
+] as const;
+const shortMildInternalMetaPhrases = [
+  "초" + "안",
+  "원" + "고",
+  "문" + "서",
+  "텍" + "스트",
+] as const;
+const mildInternalMetaSuffixes = [
+  "",
+  "은",
+  "는",
+  "이",
+  "가",
+  "을",
+  "를",
+  "의",
+  "에",
+  "에서",
+  "으로",
+  "로",
+  "도",
+  "만",
+  "처럼",
+  "라고",
+  "입니다",
+  "에서는",
+] as const;
+
+const forbiddenInternalMetaPhrases = [
   "검증된 " + "JSON",
   "저장" + "용",
   "fix" + "ture",
   "entry " + "id",
   "entry " + "ids",
+  "response_" + "format",
+  "evidence " + "packet",
+  "validation " + "error",
+  "API",
+  "JSON",
+  "토" + "큰",
+  "모델 " + "출력",
   "원문 표는 " + "없고",
   "제공된 만세력 " + "원문",
   "meta" + "data",
@@ -101,6 +143,7 @@ const forbiddenInternalMetaPhrases = [
   "Open" + "AI",
   "프롬" + "프트",
   "디버" + "그",
+  "debug",
   "테스트" + "용",
 ] as const;
 
@@ -632,6 +675,33 @@ function findSajuTermMatches(text: string, term: string): readonly string[] {
   return text.includes(term) ? [term] : [];
 }
 
+function findMildInternalMetaPhraseMatches(text: string): readonly string[] {
+  const matches: string[] = [];
+
+  for (const phrase of repairableMildInternalMetaPhrases) {
+    if ((shortMildInternalMetaPhrases as readonly string[]).includes(phrase)) {
+      for (const suffix of mildInternalMetaSuffixes) {
+        const regex = new RegExp(
+          `(^|\\s|[.,!?…:;("'“‘\\[\\{])${escapeRegExp(phrase)}${escapeRegExp(suffix)}(?=$|\\s|[.,!?…:;)"'”’\\]\\}])`,
+          "g",
+        );
+
+        if (regex.test(text)) {
+          matches.push(phrase);
+          break;
+        }
+      }
+      continue;
+    }
+
+    if (text.includes(phrase)) {
+      matches.push(phrase);
+    }
+  }
+
+  return [...new Set(matches)];
+}
+
 function removeLessSpecificMatches(
   matches: readonly string[],
 ): readonly string[] {
@@ -680,6 +750,9 @@ function appendTextSafetyErrors(errors: string[], value: unknown): void {
     if (text.includes(phrase)) {
       errors.push(`INTERNAL_META_COPY: ${phrase}`);
     }
+  }
+  for (const phrase of findMildInternalMetaPhraseMatches(text)) {
+    errors.push(`MILD_INTERNAL_META_COPY: ${phrase}`);
   }
 }
 
