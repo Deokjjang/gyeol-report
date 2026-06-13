@@ -20,6 +20,7 @@ import type { SajuKnowledgeEntry } from "../report-knowledge/sajuKnowledgeTypes"
 export type ComprehensiveReportDraftValidationResult = {
   readonly ok: boolean;
   readonly errors: readonly string[];
+  readonly warnings?: readonly string[];
   readonly value?: ComprehensiveReportDraft;
 };
 
@@ -821,6 +822,63 @@ export function areAllDraftValidationErrorsRepairable(
       (issue) => issue.severity === "repairable",
     )
   );
+}
+
+function isOnlyResidualRiskGenericError(errors: readonly string[]): boolean {
+  return (
+    errors.length === 1 &&
+    errors[0] === "DIRECT_HIT_READING_TOO_GENERIC: risk_and_growth"
+  );
+}
+
+function hasConcreteRiskAndRemedyContent(
+  value: ComprehensiveReportDraft,
+): boolean {
+  if (value.version !== "comprehensive_v2_draft") {
+    return false;
+  }
+
+  const riskChapter = findChapter(value.chapters, "risk_and_growth");
+
+  return riskChapter !== undefined && riskChapter.solutionLines.length >= 3;
+}
+
+export function validateComprehensiveReportDraftAfterRepair(
+  input: unknown,
+  options: ComprehensiveReportDraftValidationOptions = {},
+): ComprehensiveReportDraftValidationResult {
+  const errors: string[] = [];
+
+  appendTextSafetyErrors(errors, input);
+  appendUnsupportedSajuTermErrors(errors, input, options);
+
+  const value = parseDraft(input, errors, options);
+
+  if (
+    value !== undefined &&
+    isOnlyResidualRiskGenericError(errors) &&
+    hasConcreteRiskAndRemedyContent(value)
+  ) {
+    return {
+      ok: true,
+      errors: [],
+      warnings: errors,
+      value,
+    };
+  }
+
+  if (errors.length > 0 || value === undefined) {
+    return {
+      ok: false,
+      errors,
+    };
+  }
+
+  return {
+    ok: true,
+    errors: [],
+    value,
+  };
 }
 
 function appendDisplaySectionErrors(
@@ -1652,7 +1710,7 @@ function parseV2Draft(
     safetyNotes: isStringArray(input.safetyNotes) ? input.safetyNotes : [],
   });
 
-  if (errors.length > 0) {
+  if (errors.length > 0 && !isOnlyResidualRiskGenericError(errors)) {
     return undefined;
   }
 
@@ -1696,6 +1754,19 @@ export function validateComprehensiveReportDraft(
   appendUnsupportedSajuTermErrors(errors, input, options);
 
   const value = parseDraft(input, errors, options);
+
+  if (
+    value !== undefined &&
+    isOnlyResidualRiskGenericError(errors) &&
+    hasConcreteRiskAndRemedyContent(value)
+  ) {
+    return {
+      ok: true,
+      errors: [],
+      warnings: errors,
+      value,
+    };
+  }
 
   if (errors.length > 0 || value === undefined) {
     return {

@@ -213,6 +213,16 @@ async function run(): Promise<void> {
       writeStatus(warning);
     }
   }
+  const contentWarnings = result.warnings.filter(
+    (warning) => !warning.startsWith("quality repair:"),
+  );
+
+  if (contentWarnings.length > 0) {
+    writeStatus("warnings:");
+    for (const warning of contentWarnings) {
+      writeStatus(`- ${warning}`);
+    }
+  }
   writeStatus("done");
 }
 

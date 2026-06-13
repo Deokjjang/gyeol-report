@@ -7,6 +7,7 @@ import type {
 } from "./comprehensiveReportDraftTypes";
 import {
   areAllDraftValidationErrorsRepairable,
+  validateComprehensiveReportDraftAfterRepair,
   validateComprehensiveReportDraft,
 } from "./comprehensiveReportDraftValidator";
 import {
@@ -396,6 +397,26 @@ export async function generateComprehensiveReportDraft(input: {
     });
 
     if (!repairValidation.ok || repairValidation.value === undefined) {
+      const postRepairValidation = validateComprehensiveReportDraftAfterRepair(
+        repairDraftCandidate,
+        {
+          allowedSajuTerms,
+          allowedMbtiTerms: [input.mbtiType],
+        },
+      );
+
+      if (postRepairValidation.ok && postRepairValidation.value !== undefined) {
+        return {
+          draft: postRepairValidation.value,
+          rawText: repairResult.rawText,
+          warnings: [
+            "quality repair: attempted",
+            "quality repair: passed with warnings",
+            ...(postRepairValidation.warnings ?? []),
+          ],
+        };
+      }
+
       throw new SafeReportGenerationFailure({
         code: "OPENAI_REPORT_WRITER_INVALID_JSON",
         stage: "draft_validation",
@@ -405,16 +426,24 @@ export async function generateComprehensiveReportDraft(input: {
       });
     }
 
+    const repairWarnings = repairValidation.warnings ?? [];
+
     return {
       draft: repairValidation.value,
       rawText: repairResult.rawText,
-      warnings: ["quality repair: attempted", "quality repair: passed"],
+      warnings: [
+        "quality repair: attempted",
+        repairWarnings.length > 0
+          ? "quality repair: passed with warnings"
+          : "quality repair: passed",
+        ...repairWarnings,
+      ],
     };
   }
 
   return {
     draft: validation.value,
     rawText: result.rawText,
-    warnings: [],
+    warnings: validation.warnings ?? [],
   };
 }

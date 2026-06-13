@@ -107,6 +107,10 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("수변 공간");
     expect(combined).toContain("햇빛");
     expect(combined).toContain("책임 덜어내기");
+    expect(combined).toContain("지치기 전까지 멈추는 신호");
+    expect(combined).toContain("책임을 내려놓는 기준");
+    expect(combined).toContain("짧은 칭찬과 감정 표현");
+    expect(combined).toContain("맡을 일과 버릴 일");
     expect(combined).toContain("ISFP");
     expect(combined).toContain("INFP");
     expect(combined).toContain("INTP");

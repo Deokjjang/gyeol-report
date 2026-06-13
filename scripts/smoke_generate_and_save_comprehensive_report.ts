@@ -300,6 +300,16 @@ async function run(): Promise<void> {
       writeStatus(warning);
     }
   }
+  const contentWarnings = generated.warnings.filter(
+    (warning) => !warning.startsWith("quality repair:"),
+  );
+
+  if (contentWarnings.length > 0) {
+    writeStatus("warnings:");
+    for (const warning of contentWarnings) {
+      writeStatus(`- ${warning}`);
+    }
+  }
   writeStatus(`chapters: ${generated.chapterCount}`);
   writeStatus(`core line: ${generated.coreLine}`);
   writeStatus(`result url: http://localhost:3000/reports/${generated.reportId}`);

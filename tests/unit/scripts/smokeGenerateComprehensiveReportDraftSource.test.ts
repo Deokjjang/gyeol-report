@@ -30,6 +30,7 @@ describe("generate comprehensive report draft smoke script source", () => {
       "first chapter",
       "quality repair: attempted",
       "quality repair:",
+      "warnings:",
       "failed",
       "code:",
       "stage:",

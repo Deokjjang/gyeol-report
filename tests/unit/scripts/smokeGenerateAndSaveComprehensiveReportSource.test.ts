@@ -21,6 +21,7 @@ describe("generate and save comprehensive report smoke source", () => {
       "quality guard: passed",
       "quality repair: attempted",
       "quality repair:",
+      "warnings:",
       "draft version:",
       "chapters:",
       "isSafeReportGenerationError",

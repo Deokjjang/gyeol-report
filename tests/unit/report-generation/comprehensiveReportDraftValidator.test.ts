@@ -827,6 +827,67 @@ describe("comprehensive report draft validator", () => {
     expect(result.errors.join("\n")).toContain("ELEMENT_REMEDY_MISSING");
   });
 
+  it("accepts generic risk hit-reading as a warning when risk remedies are concrete", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "risk_and_growth"
+          ? {
+              ...chapter,
+              hitReadingLines: [
+                "덕민님은 성장할 수 있습니다.",
+                "덕민님은 장점과 단점이 있습니다.",
+              ],
+              body:
+                `${chapter.body} 과열과 고립, 과책임으로 번아웃이 오기 전에 멈추는 기준을 잡아야 합니다. 관계 마찰은 감정 완충 부족에서 커질 수 있으니 도움 받기와 경계선을 생활 규칙으로 두는 편이 좋습니다.`,
+              solutionLines: [
+                "수 부족은 밤 산책, 수변 공간, 충분한 수면, 기록 루틴으로 식히세요.",
+                "화 부족은 가벼운 운동과 짧은 표현 연습으로 밖으로 내세요.",
+                "토 과다는 책임 덜어내기와 경계선 정리하기로 조절하세요.",
+                "번아웃 전에는 도움 받기를 먼저 일정에 넣어야 합니다.",
+              ],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.warnings).toContain(
+      "DIRECT_HIT_READING_TOO_GENERIC: risk_and_growth",
+    );
+    expect(result.errors).toEqual([]);
+  });
+
+  it("rejects generic risk hit-reading when risk remedies are weak", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "risk_and_growth"
+          ? {
+              ...chapter,
+              hitReadingLines: [
+                "덕민님은 성장할 수 있습니다.",
+                "덕민님은 장점과 단점이 있습니다.",
+              ],
+              solutionLines: [
+                "좋은 방향을 찾으세요.",
+                "무리하지 마세요.",
+                "성장하세요.",
+                "잘 쉬세요.",
+              ],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "DIRECT_HIT_READING_TOO_GENERIC: risk_and_growth",
+    );
+  });
+
   it("rejects a missing section", () => {
     const draft = createValidDraft();
     const result = validateComprehensiveReportDraft({

@@ -310,6 +310,74 @@ describe("OpenAI comprehensive report writer", () => {
     );
   });
 
+  it("accepts repaired risk generic hit-reading with concrete remedies as warning", async () => {
+    const initialDraft = {
+      ...createValidDraft(),
+      chapters: createValidDraft().chapters.map((chapter) =>
+        chapter.chapterId === "opening"
+          ? {
+              ...chapter,
+              hitReadingLines: [
+                "덕민님은 성장할 수 있습니다.",
+                "덕민님은 장점과 단점이 있습니다.",
+              ],
+            }
+          : chapter,
+      ),
+    };
+    const repairedWithRiskWarning = {
+      ...createValidDraft(),
+      chapters: createValidDraft().chapters.map((chapter) =>
+        chapter.chapterId === "risk_and_growth"
+          ? {
+              ...chapter,
+              hitReadingLines: [
+                "덕민님은 성장할 수 있습니다.",
+                "덕민님은 장점과 단점이 있습니다.",
+              ],
+              body:
+                `${chapter.body} 과열과 고립, 과책임으로 번아웃이 오기 전에 멈추는 기준을 잡아야 합니다. 관계 마찰은 감정 완충 부족에서 커질 수 있으니 도움 받기와 경계선을 생활 규칙으로 두는 편이 좋습니다.`,
+              solutionLines: [
+                "수 부족은 밤 산책, 수변 공간, 충분한 수면, 기록 루틴으로 식히세요.",
+                "화 부족은 가벼운 운동과 짧은 표현 연습으로 밖으로 내세요.",
+                "토 과다는 책임 덜어내기와 경계선 정리하기로 조절하세요.",
+                "번아웃 전에는 도움 받기를 먼저 일정에 넣어야 합니다.",
+              ],
+            }
+          : chapter,
+      ),
+    };
+    let callCount = 0;
+    const fetchImpl: typeof fetch = async () => {
+      callCount += 1;
+
+      return createJsonResponse({
+        output_text: JSON.stringify(
+          callCount === 1 ? initialDraft : repairedWithRiskWarning,
+        ),
+      });
+    };
+
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "ENTJ",
+      evidencePacket: createPacket(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl,
+      },
+    });
+
+    expect(callCount).toBe(2);
+    expect(result.draft).toMatchObject(repairedWithRiskWarning);
+    expect(result.warnings).toEqual([
+      "quality repair: attempted",
+      "quality repair: passed with warnings",
+      "DIRECT_HIT_READING_TOO_GENERIC: risk_and_growth",
+    ]);
+  });
+
   it("rejects invalid JSON responses", async () => {
     const error = await expectSafeGenerationFailure(
       generateComprehensiveReportDraft({
