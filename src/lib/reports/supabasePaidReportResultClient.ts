@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 
 import { validateComprehensiveReportDraft } from "../report-generation/comprehensiveReportDraftValidator";
+import type { ComprehensiveReportSnapshotVersion } from "../report-generation/comprehensiveReportDraftTypes";
 import type {
   GetPaidReportResultInput,
   PaidReportResult,
@@ -13,6 +14,7 @@ export type PaidReportResultRpcResultRow = {
   readonly product_type: string;
   readonly status: string;
   readonly snapshot_status: string;
+  readonly snapshot_version?: string | null;
   readonly report_snapshot: unknown | null;
   readonly created_at: string;
   readonly updated_at: string;
@@ -141,6 +143,13 @@ function isSnapshotStatus(
   return value === "missing" || value === "generated";
 }
 
+function isSnapshotVersion(value: unknown): value is ComprehensiveReportSnapshotVersion {
+  return (
+    value === "comprehensive_v1_draft" ||
+    value === "comprehensive_v2_draft"
+  );
+}
+
 function extractSingleRow(data: unknown): PaidReportResultRpcResultRow | null {
   if (Array.isArray(data) && data.length === 1 && isObjectRecord(data[0])) {
     return data[0] as PaidReportResultRpcResultRow;
@@ -187,6 +196,7 @@ function mapRpcRow(
         productType: "saju_mbti_full",
         status: "ready",
         snapshotStatus: "missing",
+        snapshotVersion: null,
         draft: null,
         createdAt: row.created_at,
         updatedAt: row.updated_at,
@@ -196,7 +206,14 @@ function mapRpcRow(
 
   const validation = validateComprehensiveReportDraft(row.report_snapshot);
 
-  if (!validation.ok || validation.value === undefined) {
+  if (
+    !validation.ok ||
+    validation.value === undefined ||
+    !isSnapshotVersion(row.snapshot_version ?? validation.value.version) ||
+    (row.snapshot_version !== undefined &&
+      row.snapshot_version !== null &&
+      row.snapshot_version !== validation.value.version)
+  ) {
     return {
       ok: false,
       code: "REPORT_RESULT_SNAPSHOT_INVALID",
@@ -211,6 +228,7 @@ function mapRpcRow(
       productType: "saju_mbti_full",
       status: "generated",
       snapshotStatus: "generated",
+      snapshotVersion: validation.value.version,
       draft: validation.value,
       createdAt: row.created_at,
       updatedAt: row.updated_at,

@@ -6,12 +6,11 @@ import {
   generateComprehensiveReportDraft,
   isSafeReportGenerationError,
 } from "../../../src/lib/report-generation/openaiComprehensiveReportWriter";
-import type { ComprehensiveReportDraft } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
+import type {
+  ComprehensiveReportV2ChapterId,
+  ComprehensiveReportV2Draft,
+} from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../../../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
-import {
-  COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
-  type ComprehensiveReportSectionDefinition,
-} from "../../../src/lib/report-knowledge/reportSectionSchema";
 import type { ComputedSajuFacts } from "../../../src/lib/report-knowledge/sajuComputedFactsTypes";
 
 const deokminSampleFacts = {
@@ -38,62 +37,37 @@ const deokminSampleFacts = {
   gwiin: ["jaego"],
 } as const satisfies ComputedSajuFacts;
 
-function createSection(definition: ComprehensiveReportSectionDefinition) {
-  if (definition.id === "manse_table") {
-    return {
-      sectionId: definition.id,
-      titleKo: definition.titleKo,
-      oneLine: "사주 기본 구조를 정리했습니다.",
-      body: "사주 원국의 기본 구조를 정리했습니다.",
-      evidenceSummary: ["사주 기본 구조"],
-      sajuTermsUsed: [],
-      mbtiTermsUsed: [],
-      cautionLevel: "low" as const,
-    };
-  }
-
-  if (definition.id === "mbti_table") {
-    return {
-      sectionId: definition.id,
-      titleKo: definition.titleKo,
-      oneLine: "MBTI 입력 기준을 정리했습니다.",
-      body: "입력하신 MBTI 유형을 리포트 보조 기준으로 반영했습니다.",
-      evidenceSummary: ["ENTJ"],
-      sajuTermsUsed: [],
-      mbtiTermsUsed: ["ENTJ", "Te/Ni"],
-      cautionLevel: "low" as const,
-    };
-  }
-
-  const isMbtiDisplay =
-    definition.id === "mbti_core";
-
+function createChapter(chapterId: ComprehensiveReportV2ChapterId, titleKo: string) {
   return {
-    sectionId: definition.id,
-    titleKo: definition.titleKo,
-    oneLine: `${definition.titleKo} 핵심을 사주 근거로 정리합니다.`,
+    chapterId,
+    titleKo,
+    headline: `${titleKo}는 갑목과 갑신일주를 먼저 놓고 읽습니다.`,
     body:
-      `${definition.titleKo}에서는 갑목과 갑신일주를 1차 근거로 삼고 ENTJ는 보조 근거로 연결합니다. 갑목은 방향을 세우고 앞으로 밀고 가려는 힘이라서 ${definition.titleKo}에서는 결론을 빠르게 잡는 모습으로 나타납니다. 갑신일주는 압박 속에서도 기준을 지키려는 구조라서, ${definition.id} 항목에서는 같은 근거를 다른 생활 장면으로 풀어냅니다. 그래서 ${definition.titleKo}의 조언은 막연한 위로보다 무엇을 기준으로 삼고 어디서 힘을 뺄지 정하는 쪽이어야 합니다.`,
-    evidenceSummary: ["갑목", "갑신일주", "ENTJ"],
-    sajuTermsUsed:
-      definition.primaryBasis === "display" && isMbtiDisplay
-        ? []
-        : ["갑목", "갑신일주"],
-    mbtiTermsUsed: isMbtiDisplay ? ["ENTJ", "Te/Ni"] : ["ENTJ"],
-    cautionLevel: "medium" as const,
+      `${titleKo}에서는 갑목과 갑신일주를 1차 근거로 삼고 ENTJ는 보조 근거로 연결합니다. ${titleKo}의 갑목은 방향을 세우고 앞으로 밀고 가려는 힘이라서 결론을 빠르게 잡는 모습으로 나타납니다. ${titleKo}에서 갑신일주는 압박 속에서도 기준을 지키려는 구조라서, 같은 구조라도 일과 관계와 돈에서는 전혀 다른 장면으로 드러납니다. 그래서 ${titleKo}의 조언은 막연한 위로보다 무엇을 기준으로 삼고 어디서 힘을 뺄지 정하는 쪽이어야 합니다. ${titleKo}에서는 공부를 자격증과 직무 학습까지 포함해 보고, 관계는 감정 표현의 속도와 실제 행동의 차이를 함께 봐야 합니다. ${titleKo}은 용어를 나열하는 칸이 아니라 실제 선택과 말투와 돈 쓰는 방식으로 사주 구조를 읽는 챕터입니다. ${titleKo}의 본문은 사용자가 하루 중 어떤 순간에 강해지고 어떤 순간에 과열되는지 떠올릴 수 있게 충분히 길고 구체적으로 이어져야 합니다. ${titleKo}에서는 좋은 장면과 부담스러운 장면을 함께 보여줘야 하며, 강점은 확실히 말하되 약점은 실제로 조정 가능한 행동으로 내려와야 합니다. ${titleKo}의 마지막 흐름은 사주 용어를 다시 생활 언어로 바꿔서, 사용자가 읽고 바로 자기 상황에 대입할 수 있게 마무리합니다.`,
+    keyPhrases: [titleKo, "갑목", "갑신일주"],
+    sajuTermsUsed: ["갑목", "갑신일주"],
+    mbtiTermsUsed: ["ENTJ"],
   };
 }
 
-function createValidDraft(): ComprehensiveReportDraft {
+function createValidDraft(): ComprehensiveReportV2Draft {
   return {
-    version: "comprehensive_v1_draft",
+    version: "comprehensive_v2_draft",
     productType: "saju_mbti_full",
-    tone: ["saju_first", "conversational"],
     openingTitle: "사주가 먼저 보이는 종합 리포트",
     openingSummary:
       "사주 원국의 구조를 먼저 놓고 MBTI는 체감되는 자기상을 보조로 연결합니다.",
     coreLine: "갑목 구조와 ENTJ 성향이 성취 쪽에서 만납니다.",
-    sections: COMPREHENSIVE_REPORT_SECTION_DEFINITIONS.map(createSection),
+    chapters: [
+      createChapter("opening", "처음에 보이는 결"),
+      createChapter("saju_identity", "사주가 보여주는 기본 형상"),
+      createChapter("personality_pattern", "성격과 판단 패턴"),
+      createChapter("work_money_study", "일, 돈, 공부가 연결되는 방식"),
+      createChapter("love_relationships", "연애와 관계의 온도"),
+      createChapter("people_family_environment", "사람, 가족, 환경"),
+      createChapter("risk_and_growth", "반복되는 리스크와 성장법"),
+      createChapter("final_message", "마지막으로 남길 말"),
+    ],
     finalAdvice:
       "성과를 밀어붙이는 힘은 살리되, 휴식과 감정 표현은 의식적으로 보완해 주세요.",
     safetyNotes: ["자기이해용 참고 콘텐츠입니다."],
@@ -138,14 +112,15 @@ describe("OpenAI comprehensive report writer", () => {
     const baseDraft = createValidDraft();
     const draft = {
       ...baseDraft,
-      sections: baseDraft.sections.map((section) =>
-        section.sectionId === "money_asset"
+      chapters: baseDraft.chapters.map((chapter) =>
+        chapter.chapterId === "work_money_study"
           ? {
-              ...section,
+              ...chapter,
               body:
-                "갑목과 갑신일주를 1차 근거로 삼고 재고귀인은 자산화 흐름으로만 연결합니다. 갑목은 돈을 단순히 모으는 것보다 방향과 판을 키우려는 힘으로 나타납니다. 갑신일주는 압박이 걸릴수록 기준을 세우는 구조라서, 재고귀인과 만나면 성과를 문서화하고 묶어두는 방식으로 현실화됩니다. ENTJ는 이 흐름을 보조하는 성취 감각입니다.",
+                "갑목과 갑신일주를 1차 근거로 삼고 재고귀인은 자산화 흐름으로만 연결합니다. 갑목은 돈을 단순히 모으는 것보다 방향과 판을 키우려는 힘으로 나타납니다. 갑신일주는 압박이 걸릴수록 기준을 세우는 구조라서, 재고귀인과 만나면 성과를 문서화하고 묶어두는 방식으로 현실화됩니다. ENTJ는 이 흐름을 보조하는 성취 감각입니다. 공부는 자격증, 전문서, 직무 학습, 사업 학습처럼 성과로 바뀌는 지식일 때 오래 갑니다. 돈은 감정적 안정감보다 통제 가능한 판을 확보하는 문제로 느껴지기 쉽습니다. 이 챕터에서는 일하는 방식, 돈을 버는 방식, 지식을 쌓아 실력으로 바꾸는 방식을 하나의 성과 루틴으로 연결해 설명합니다. 과열될 때는 쉬는 시간을 낭비가 아니라 판단력을 유지하는 장치로 넣어야 오래 갑니다. 재고귀인이 말하는 자산화는 단순히 돈을 아끼라는 뜻이 아니라, 성과가 흩어지지 않게 기록하고 묶고 다시 굴릴 수 있는 형태로 만드는 감각입니다. 그래서 이 장에서는 직무 학습과 사업 학습, 자격증과 실전 경험이 결국 같은 판에서 연결된다는 점까지 풀어야 합니다.",
+              sajuTermsUsed: ["갑목", "갑신일주", "재고귀인"],
             }
-          : section,
+          : chapter,
       ),
     };
     const calls: RequestInit[] = [];
@@ -251,14 +226,14 @@ describe("OpenAI comprehensive report writer", () => {
   it("rejects unsupported Saju terms outside the evidence packet", async () => {
     const draft = {
       ...createValidDraft(),
-      sections: createValidDraft().sections.map((section) =>
-        section.sectionId === "love_relationship"
+      chapters: createValidDraft().chapters.map((chapter) =>
+        chapter.chapterId === "love_relationships"
           ? {
-              ...section,
+              ...chapter,
               body:
                 "갑목과 갑신일주를 먼저 보면서 도화살과 반안살까지 있다고 쓰면 evidence 밖의 사주 용어가 섞입니다.",
             }
-          : section,
+          : chapter,
       ),
     };
 

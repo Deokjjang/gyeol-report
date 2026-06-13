@@ -2,7 +2,12 @@ import type {
   ComprehensiveReportDraft,
   ComprehensiveReportDraftSection,
   ComprehensiveReportDraftTone,
+  ComprehensiveReportV1Draft,
+  ComprehensiveReportV2Chapter,
+  ComprehensiveReportV2ChapterId,
+  ComprehensiveReportV2Draft,
 } from "./comprehensiveReportDraftTypes";
+import { COMPREHENSIVE_REPORT_V2_CHAPTER_IDS } from "./comprehensiveReportDraftTypes";
 import {
   COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
   COMPREHENSIVE_REPORT_SECTION_IDS,
@@ -98,6 +103,16 @@ const draftRootKeys = [
   "finalAdvice",
   "safetyNotes",
 ] as const;
+const draftV2RootKeys = [
+  "version",
+  "productType",
+  "openingTitle",
+  "openingSummary",
+  "coreLine",
+  "chapters",
+  "finalAdvice",
+  "safetyNotes",
+] as const;
 
 const sectionKeys = [
   "sectionId",
@@ -108,6 +123,15 @@ const sectionKeys = [
   "sajuTermsUsed",
   "mbtiTermsUsed",
   "cautionLevel",
+] as const;
+const chapterKeys = [
+  "chapterId",
+  "titleKo",
+  "headline",
+  "body",
+  "keyPhrases",
+  "sajuTermsUsed",
+  "mbtiTermsUsed",
 ] as const;
 
 const displayOnlySectionIds = ["manse_table", "mbti_table"] as const;
@@ -130,11 +154,32 @@ const mbtiFirstBodyPrefixes = [
   "MBTI상",
   "입력하신 MBTI가 먼저",
 ] as const;
+const visibleEvidenceDebugLabels = [
+  "분석 근거 보기",
+  "사주 근거",
+  "MBTI 참고",
+  "근거 요약",
+  "primary Saju evidence",
+  "supporting MBTI",
+  "evidence packet",
+  "entry id",
+  "entry ids",
+] as const;
 const genericPlaceholderBodies = [
   "사주 원국의 기본 구조를 정리했습니다.",
   "입력하신 MBTI 유형을 리포트 보조 기준으로 반영했습니다.",
 ] as const;
 const interpretationBodyMinimumLength = 160;
+const v2ChapterBodyMinimumLengths = {
+  opening: 220,
+  saju_identity: 420,
+  personality_pattern: 420,
+  work_money_study: 520,
+  love_relationships: 520,
+  people_family_environment: 460,
+  risk_and_growth: 420,
+  final_message: 260,
+} as const satisfies Record<ComprehensiveReportV2ChapterId, number>;
 const shortSajuTermContextSuffixes = [
   "일주",
   "귀인",
@@ -172,6 +217,13 @@ function isSectionId(value: unknown): value is ComprehensiveReportSectionId {
   return (
     typeof value === "string" &&
     (COMPREHENSIVE_REPORT_SECTION_IDS as readonly string[]).includes(value)
+  );
+}
+
+function isV2ChapterId(value: unknown): value is ComprehensiveReportV2ChapterId {
+  return (
+    typeof value === "string" &&
+    (COMPREHENSIVE_REPORT_V2_CHAPTER_IDS as readonly string[]).includes(value)
   );
 }
 
@@ -697,11 +749,11 @@ function appendSajuFirstErrors(
   }
 }
 
-function parseDraft(
+function parseV1Draft(
   input: unknown,
   errors: string[],
   options: ComprehensiveReportDraftValidationOptions,
-): ComprehensiveReportDraft | undefined {
+): ComprehensiveReportV1Draft | undefined {
   if (!isRecord(input)) {
     errors.push("draft must be an object.");
     return undefined;
@@ -759,6 +811,287 @@ function parseDraft(
     finalAdvice: input.finalAdvice as string,
     safetyNotes: input.safetyNotes as readonly string[],
   };
+}
+
+function parseChapter(
+  errors: string[],
+  value: unknown,
+  index: number,
+): ComprehensiveReportV2Chapter | undefined {
+  if (!isRecord(value)) {
+    errors.push(`chapter ${index} must be an object.`);
+    return undefined;
+  }
+
+  appendUnknownKeyErrors(errors, `chapter ${index}`, value, chapterKeys);
+  appendRawMetadataErrors(errors, `chapter ${index}`, value);
+
+  const chapterId = value.chapterId;
+  const titleKo = value.titleKo;
+  const headline = value.headline;
+  const body = value.body;
+  const keyPhrases = value.keyPhrases;
+  const sajuTermsUsed = value.sajuTermsUsed;
+  const mbtiTermsUsed = value.mbtiTermsUsed;
+
+  if (!isV2ChapterId(chapterId)) {
+    errors.push(`chapter ${index} has invalid chapter id.`);
+    return undefined;
+  }
+  if (!validateStringField(errors, `${chapterId}.titleKo`, titleKo, 1)) {
+    return undefined;
+  }
+  if (!validateStringField(errors, `${chapterId}.headline`, headline, 12)) {
+    return undefined;
+  }
+  if (!validateStringField(errors, `${chapterId}.body`, body, 40)) {
+    return undefined;
+  }
+  if (!isStringArray(keyPhrases) || keyPhrases.length === 0) {
+    errors.push(`${chapterId}.keyPhrases must be a non-empty string array.`);
+    return undefined;
+  }
+  if (!isStringArray(sajuTermsUsed)) {
+    errors.push(`${chapterId}.sajuTermsUsed must be a string array.`);
+    return undefined;
+  }
+  if (!isStringArray(mbtiTermsUsed)) {
+    errors.push(`${chapterId}.mbtiTermsUsed must be a string array.`);
+    return undefined;
+  }
+
+  return {
+    chapterId,
+    titleKo,
+    headline,
+    body,
+    keyPhrases,
+    sajuTermsUsed,
+    mbtiTermsUsed,
+  };
+}
+
+function appendChapterCoverageErrors(
+  errors: string[],
+  chapters: readonly ComprehensiveReportV2Chapter[],
+): void {
+  const seen = new Set<ComprehensiveReportV2ChapterId>();
+
+  for (const chapter of chapters) {
+    if (seen.has(chapter.chapterId)) {
+      errors.push(`draft has duplicate chapter: ${chapter.chapterId}`);
+    }
+    seen.add(chapter.chapterId);
+  }
+  for (const requiredChapterId of COMPREHENSIVE_REPORT_V2_CHAPTER_IDS) {
+    if (!seen.has(requiredChapterId)) {
+      errors.push(`draft missing chapter: ${requiredChapterId}`);
+    }
+  }
+}
+
+function appendV2ChapterDensityErrors(
+  errors: string[],
+  chapters: readonly ComprehensiveReportV2Chapter[],
+): void {
+  for (const chapter of chapters) {
+    const minimumLength = v2ChapterBodyMinimumLengths[chapter.chapterId];
+
+    if (chapter.body.trim().length < minimumLength) {
+      errors.push(`CHAPTER_BODY_TOO_SHORT: ${chapter.chapterId}`);
+    }
+    if (chapter.body.trim() === chapter.headline.trim()) {
+      errors.push(`CHAPTER_BODY_SAME_AS_HEADLINE: ${chapter.chapterId}`);
+    }
+    if (
+      chapter.chapterId !== "opening" &&
+      chapter.chapterId !== "final_message" &&
+      chapter.sajuTermsUsed.length === 0
+    ) {
+      errors.push(`CHAPTER_SAJU_TERMS_MISSING: ${chapter.chapterId}`);
+    }
+    if (
+      chapter.sajuTermsUsed.length > 0 &&
+      !bodyContainsAnyTerm({
+        body: chapter.body,
+        terms: chapter.sajuTermsUsed,
+      })
+    ) {
+      errors.push(`CHAPTER_SAJU_TERM_EXPLANATION_MISSING: ${chapter.chapterId}`);
+    }
+  }
+}
+
+function appendV2MbtiFirstErrors(
+  errors: string[],
+  input: {
+    readonly openingSummary: string;
+    readonly coreLine: string;
+    readonly chapters: readonly ComprehensiveReportV2Chapter[];
+  },
+): void {
+  if (
+    startsWithMbtiFirstPhrase(input.openingSummary) ||
+    startsWithMbtiFirstPhrase(input.coreLine)
+  ) {
+    errors.push("MBTI_FIRST_FORBIDDEN: opening");
+  }
+
+  for (const chapter of input.chapters) {
+    if (
+      startsWithMbtiFirstPhrase(chapter.headline) ||
+      startsWithMbtiFirstPhrase(chapter.body)
+    ) {
+      errors.push(`MBTI_FIRST_FORBIDDEN: ${chapter.chapterId}`);
+    }
+  }
+}
+
+function appendV2SajuFirstErrors(
+  errors: string[],
+  chapters: readonly ComprehensiveReportV2Chapter[],
+): void {
+  let mbtiDominantChapters = 0;
+
+  for (const chapter of chapters) {
+    if (
+      chapter.chapterId !== "opening" &&
+      chapter.chapterId !== "final_message" &&
+      chapter.mbtiTermsUsed.length > chapter.sajuTermsUsed.length
+    ) {
+      mbtiDominantChapters += 1;
+    }
+  }
+
+  if (mbtiDominantChapters > 2) {
+    errors.push("MBTI terms dominate too many narrative chapters.");
+  }
+}
+
+function appendV2RepetitionErrors(
+  errors: string[],
+  chapters: readonly ComprehensiveReportV2Chapter[],
+): void {
+  const counts = new Map<string, number>();
+
+  for (const chapter of chapters) {
+    for (const sentence of new Set(splitBodySentences(chapter.body))) {
+      counts.set(sentence, (counts.get(sentence) ?? 0) + 1);
+    }
+  }
+
+  for (const [sentence, count] of counts) {
+    if (count >= 3) {
+      errors.push(`REPEATED_SENTENCE: ${sentence}`);
+    }
+  }
+}
+
+function appendV2VisibleDebugLabelErrors(
+  errors: string[],
+  input: ComprehensiveReportV2Draft | {
+    readonly openingTitle: string;
+    readonly openingSummary: string;
+    readonly coreLine: string;
+    readonly chapters: readonly ComprehensiveReportV2Chapter[];
+    readonly finalAdvice: string;
+    readonly safetyNotes: readonly string[];
+  },
+): void {
+  const text = collectStrings(input).join("\n");
+
+  for (const label of visibleEvidenceDebugLabels) {
+    if (text.includes(label)) {
+      errors.push(`VISIBLE_EVIDENCE_DEBUG_LABEL: ${label}`);
+    }
+  }
+}
+
+function parseV2Draft(
+  input: unknown,
+  errors: string[],
+): ComprehensiveReportV2Draft | undefined {
+  if (!isRecord(input)) {
+    errors.push("draft must be an object.");
+    return undefined;
+  }
+
+  appendUnknownKeyErrors(errors, "draft", input, draftV2RootKeys);
+  appendRawMetadataErrors(errors, "draft", input);
+
+  if (input.version !== "comprehensive_v2_draft") {
+    errors.push("draft version must be comprehensive_v2_draft.");
+  }
+  if (input.productType !== "saju_mbti_full") {
+    errors.push("draft productType must be saju_mbti_full.");
+  }
+
+  validateStringField(errors, "openingTitle", input.openingTitle, 1);
+  validateStringField(errors, "openingSummary", input.openingSummary, 30);
+  validateStringField(errors, "coreLine", input.coreLine, 12);
+  validateStringField(errors, "finalAdvice", input.finalAdvice, 40);
+
+  if (!isStringArray(input.safetyNotes)) {
+    errors.push("safetyNotes must be a string array.");
+  }
+  if (!Array.isArray(input.chapters)) {
+    errors.push("chapters must be an array.");
+    return undefined;
+  }
+
+  const chapters = input.chapters
+    .map((chapter, index) => parseChapter(errors, chapter, index))
+    .filter((chapter): chapter is ComprehensiveReportV2Chapter => chapter !== undefined);
+
+  appendChapterCoverageErrors(errors, chapters);
+  appendV2ChapterDensityErrors(errors, chapters);
+  appendV2MbtiFirstErrors(errors, {
+    openingSummary: typeof input.openingSummary === "string" ? input.openingSummary : "",
+    coreLine: typeof input.coreLine === "string" ? input.coreLine : "",
+    chapters,
+  });
+  appendV2SajuFirstErrors(errors, chapters);
+  appendV2RepetitionErrors(errors, chapters);
+  appendV2VisibleDebugLabelErrors(errors, {
+    openingTitle: typeof input.openingTitle === "string" ? input.openingTitle : "",
+    openingSummary: typeof input.openingSummary === "string" ? input.openingSummary : "",
+    coreLine: typeof input.coreLine === "string" ? input.coreLine : "",
+    chapters,
+    finalAdvice: typeof input.finalAdvice === "string" ? input.finalAdvice : "",
+    safetyNotes: isStringArray(input.safetyNotes) ? input.safetyNotes : [],
+  });
+
+  if (errors.length > 0) {
+    return undefined;
+  }
+
+  return {
+    version: "comprehensive_v2_draft",
+    productType: "saju_mbti_full",
+    openingTitle: input.openingTitle as string,
+    openingSummary: input.openingSummary as string,
+    coreLine: input.coreLine as string,
+    chapters,
+    finalAdvice: input.finalAdvice as string,
+    safetyNotes: input.safetyNotes as readonly string[],
+  };
+}
+
+function parseDraft(
+  input: unknown,
+  errors: string[],
+  options: ComprehensiveReportDraftValidationOptions,
+): ComprehensiveReportDraft | undefined {
+  if (!isRecord(input)) {
+    errors.push("draft must be an object.");
+    return undefined;
+  }
+
+  if (input.version === "comprehensive_v2_draft") {
+    return parseV2Draft(input, errors);
+  }
+
+  return parseV1Draft(input, errors, options);
 }
 
 export function validateComprehensiveReportDraft(

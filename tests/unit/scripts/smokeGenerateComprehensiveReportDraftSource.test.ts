@@ -15,11 +15,12 @@ describe("generate comprehensive report draft smoke script source", () => {
       "OPENAI_REPORT_MODEL",
       "buildComprehensiveReportEvidencePacketFromComputedFacts",
       "generateComprehensiveReportDraft",
+      "isComprehensiveReportV2Draft",
       "draft version",
       "product type",
-      "sections",
+      "chapters",
       "core line",
-      "first section",
+      "first chapter",
       "done",
     ];
 

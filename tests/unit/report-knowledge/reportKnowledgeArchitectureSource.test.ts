@@ -71,6 +71,14 @@ describe("report knowledge architecture document", () => {
       "Evidence UI is secondary",
       "deeper Saju term explanation",
       "generated-section density checks",
+      "REPORT-12 converts the comprehensive report",
+      "comprehensive_v2_draft",
+      "eight long-form chapters",
+      "Saju terms, MBTI support, and fusion",
+      "V2 validator enforces narrative chapter density",
+      "Migration 0012 supports saving and reading",
+      "V1 snapshots remain readable",
+      "renders V2 without analysis evidence blocks",
     ];
 
     for (const marker of requiredMarkers) {

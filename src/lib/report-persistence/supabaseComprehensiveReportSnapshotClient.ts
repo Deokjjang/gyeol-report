@@ -4,6 +4,7 @@ import type {
   SaveComprehensiveReportSnapshotInput,
   SaveComprehensiveReportSnapshotResult,
 } from "./comprehensiveReportSnapshotTypes";
+import type { ComprehensiveReportSnapshotVersion } from "../report-generation/comprehensiveReportDraftTypes";
 
 export type ComprehensiveReportSnapshotRpcResultRow = {
   readonly report_id: string;
@@ -127,6 +128,13 @@ function isTimestamp(value: string): boolean {
   return value.trim().length > 0 && !Number.isNaN(Date.parse(value));
 }
 
+function isSnapshotVersion(value: unknown): value is ComprehensiveReportSnapshotVersion {
+  return (
+    value === "comprehensive_v1_draft" ||
+    value === "comprehensive_v2_draft"
+  );
+}
+
 function extractSingleRow(data: unknown): ComprehensiveReportSnapshotRpcResultRow | null {
   if (Array.isArray(data) && data.length === 1 && isObjectRecord(data[0])) {
     return data[0] as ComprehensiveReportSnapshotRpcResultRow;
@@ -146,7 +154,7 @@ function mapRpcRow(
     !isNonEmptyString(row.report_id) ||
     !isNonEmptyString(row.provider_order_id) ||
     row.product_type !== "saju_mbti_full" ||
-    row.snapshot_version !== "comprehensive_v1_draft" ||
+    !isSnapshotVersion(row.snapshot_version) ||
     !isNullableString(row.generation_model) ||
     (row.status !== "ready" && row.status !== "generated") ||
     !isTimestamp(row.created_at) ||
@@ -162,7 +170,7 @@ function mapRpcRow(
     reportId: row.report_id,
     providerOrderId: row.provider_order_id,
     productType: "saju_mbti_full",
-    snapshotVersion: "comprehensive_v1_draft",
+    snapshotVersion: row.snapshot_version,
     generationModel: row.generation_model,
     status: row.status,
     createdAt: row.created_at,
@@ -178,7 +186,7 @@ function createRpcArgs(
     p_provider_order_id: input.providerOrderId,
     p_report_snapshot: input.draft,
     p_generation_model: input.generationModel ?? null,
-    p_generation_version: "comprehensive_v1_draft",
+    p_generation_version: input.draft.version,
   };
 }
 

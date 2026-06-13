@@ -7,7 +7,7 @@ import { createSupabaseReadyPaymentOrderClient } from "../src/lib/payment/supaba
 import { fulfillPaidPaymentOrder } from "../src/lib/payment/supabasePaidReportFulfillmentAdapter";
 import { createSupabasePaidReportFulfillmentClient } from "../src/lib/payment/supabasePaidReportFulfillmentClient";
 import { saveComprehensiveReportDraftSnapshot } from "../src/lib/report-persistence/supabaseComprehensiveReportSnapshotAdapter";
-import type { ComprehensiveReportDraft } from "../src/lib/report-generation/comprehensiveReportDraftTypes";
+import type { ComprehensiveReportV1Draft } from "../src/lib/report-generation/comprehensiveReportDraftTypes";
 import {
   COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
   type ComprehensiveReportSectionDefinition,
@@ -57,7 +57,7 @@ function assertRequiredSupabaseEnv(): void {
 
 function createSafeSampleSection(
   definition: ComprehensiveReportSectionDefinition,
-): ComprehensiveReportDraft["sections"][number] {
+): ComprehensiveReportV1Draft["sections"][number] {
   if (definition.id === "manse_table") {
     return {
       sectionId: definition.id,
@@ -103,7 +103,7 @@ function createSafeSampleSection(
   };
 }
 
-function createSafeSampleDraft(): ComprehensiveReportDraft {
+function createSafeSampleDraft(): ComprehensiveReportV1Draft {
   return {
     version: "comprehensive_v1_draft",
     productType: "saju_mbti_full",

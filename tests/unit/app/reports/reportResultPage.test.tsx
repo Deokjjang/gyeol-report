@@ -3,7 +3,11 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import ReportResultPage from "../../../../src/app/reports/[reportId]/page";
 import { getPaidReportResult } from "../../../../src/lib/reports/supabasePaidReportResultAdapter";
-import type { ComprehensiveReportDraft } from "../../../../src/lib/report-generation/comprehensiveReportDraftTypes";
+import type {
+  ComprehensiveReportDraft,
+  ComprehensiveReportV2ChapterId,
+  ComprehensiveReportV2Draft,
+} from "../../../../src/lib/report-generation/comprehensiveReportDraftTypes";
 import type { PaidReportResult } from "../../../../src/lib/reports/paidReportResultTypes";
 import {
   COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
@@ -54,6 +58,43 @@ function createDraft(): ComprehensiveReportDraft {
   };
 }
 
+function createV2Chapter(chapterId: ComprehensiveReportV2ChapterId, titleKo: string) {
+  return {
+    chapterId,
+    titleKo,
+    headline: `${titleKo}는 갑목과 갑신일주를 생활 장면으로 읽는 챕터입니다.`,
+    body:
+      `${titleKo}에서는 갑목과 갑신일주를 먼저 놓고 봅니다. 갑목은 방향을 세우고 판을 키우는 힘이라 덕민님이 가만히 기다리기보다 먼저 기준을 잡게 만듭니다. 갑신일주는 압박 속에서도 판단을 세우는 구조라서, 일과 돈과 관계에서 같은 근거가 서로 다른 장면으로 드러납니다. ENTJ는 이 흐름을 보조하는 자기상으로만 연결됩니다.`,
+    keyPhrases: [titleKo, "갑목", "갑신일주"],
+    sajuTermsUsed: ["갑목", "갑신일주"],
+    mbtiTermsUsed: ["ENTJ"],
+  };
+}
+
+function createV2Draft(): ComprehensiveReportV2Draft {
+  return {
+    version: "comprehensive_v2_draft",
+    productType: "saju_mbti_full",
+    openingTitle: "덕민님의 결은 큰 방향과 빠른 판단에 있습니다",
+    openingSummary:
+      "갑목과 갑신일주를 먼저 놓고 읽으면, 덕민님은 작은 안정감보다 큰 방향과 기준을 먼저 찾는 사람에 가깝습니다.",
+    coreLine: "사주 구조가 먼저이고 ENTJ는 그 구조를 성취 쪽으로 증폭합니다.",
+    chapters: [
+      createV2Chapter("opening", "처음에 보이는 결"),
+      createV2Chapter("saju_identity", "사주가 보여주는 기본 형상"),
+      createV2Chapter("personality_pattern", "성격과 판단 패턴"),
+      createV2Chapter("work_money_study", "일, 돈, 공부가 연결되는 방식"),
+      createV2Chapter("love_relationships", "연애와 관계의 온도"),
+      createV2Chapter("people_family_environment", "사람, 가족, 환경"),
+      createV2Chapter("risk_and_growth", "반복되는 리스크와 성장법"),
+      createV2Chapter("final_message", "마지막으로 남길 말"),
+    ],
+    finalAdvice:
+      "덕민님은 이기는 법을 빨리 배우는 쪽에 강점이 있습니다. 다만 오래 가려면 쉬는 시간도 전략으로 인정해야 합니다.",
+    safetyNotes: ["자기이해용 참고 콘텐츠입니다."],
+  };
+}
+
 function createResult(
   overrides: Partial<PaidReportResult> = {},
 ): PaidReportResult {
@@ -62,6 +103,7 @@ function createResult(
     productType: "saju_mbti_full",
     status: "generated",
     snapshotStatus: "generated",
+    snapshotVersion: "comprehensive_v1_draft",
     draft: createDraft(),
     createdAt,
     updatedAt,
@@ -125,12 +167,40 @@ describe("report result page", () => {
     expect(html).not.toContain("{&quot;version&quot;");
   });
 
+  it("renders a V2 narrative draft without evidence debug UI", async () => {
+    mockGetPaidReportResult.mockResolvedValue({
+      ok: true,
+      result: createResult({
+        snapshotVersion: "comprehensive_v2_draft",
+        draft: createV2Draft(),
+      }),
+    });
+
+    const html = await renderPage("report_result_page_test");
+
+    expect(html).toContain("사주×MBTI 종합 리포트");
+    expect(html).toContain("덕민님의 결은 큰 방향과 빠른 판단에 있습니다");
+    expect(html).toContain("사주 구조가 먼저이고 ENTJ");
+    expect(html).toContain("사주 원국 요약");
+    expect(html).toContain("MBTI 입력 요약");
+    expect(html).toContain("사주가 보여주는 기본 형상");
+    expect(html).toContain("사주가 보여주는 기본 형상는 갑목과 갑신일주");
+    expect(html).toContain("갑목은 방향을 세우고 판을 키우는 힘");
+    expect(html).toContain("일, 돈, 공부가 연결되는 방식");
+    expect(html).toContain("최종 조언");
+    expect(html).not.toContain("분석 근거 보기");
+    expect(html).not.toContain("사주 근거");
+    expect(html).not.toContain("MBTI 참고");
+    expect(html).not.toContain("근거 요약");
+  });
+
   it("keeps placeholder state when no generated draft exists", async () => {
     mockGetPaidReportResult.mockResolvedValue({
       ok: true,
       result: createResult({
         status: "ready",
         snapshotStatus: "missing",
+        snapshotVersion: null,
         draft: null,
       }),
     });

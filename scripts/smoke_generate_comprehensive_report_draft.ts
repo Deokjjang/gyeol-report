@@ -1,4 +1,5 @@
 import { generateComprehensiveReportDraft } from "../src/lib/report-generation/openaiComprehensiveReportWriter";
+import { isComprehensiveReportV2Draft } from "../src/lib/report-generation/comprehensiveReportDraftTypes";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
 import type { ComputedSajuFacts } from "../src/lib/report-knowledge/sajuComputedFactsTypes";
 
@@ -89,14 +90,22 @@ async function run(): Promise<void> {
       enabled: true,
     },
   });
-  const firstSection = result.draft.sections[0];
+  const firstChapter = isComprehensiveReportV2Draft(result.draft)
+    ? result.draft.chapters[0]
+    : result.draft.sections[0];
 
   writeStatus(`draft version: ${result.draft.version}`);
   writeStatus(`product type: ${result.draft.productType}`);
-  writeStatus(`sections: ${result.draft.sections.length}`);
+  writeStatus(
+    `chapters: ${
+      isComprehensiveReportV2Draft(result.draft)
+        ? result.draft.chapters.length
+        : result.draft.sections.length
+    }`,
+  );
   writeStatus(`core line: ${result.draft.coreLine}`);
   writeStatus(
-    `first section: ${firstSection?.titleKo ?? "none"} - ${firstSection?.oneLine ?? "none"}`,
+    `first chapter: ${firstChapter?.titleKo ?? "none"}`,
   );
   writeStatus("done");
 }

@@ -60,8 +60,16 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).not.toContain("반안살");
     expect(combined).not.toContain("장성살");
     expect(combined).not.toContain("천을귀인");
+    expect(combined).toContain("comprehensive_v2_draft");
+    expect(combined).toContain("8개 챕터");
+    expect(combined).toContain("근거 목록을 따로 보여주지 말고 본문에 녹여라");
+    expect(combined).toContain("work_money_study");
+    expect(combined).toContain("love_relationships");
+    expect(combined).toContain("people_family_environment");
+    expect(combined).toContain("공부는 학생 공부뿐 아니라 자격증, 전문서, 직무 학습, 사업 학습까지 포함");
+    expect(combined).toContain("연애는 오행적으로 필요한 사람과 MBTI 관계 스타일을 함께 풀어라");
     expect(combined).toContain("display 섹션은 짧게");
-    expect(combined).toContain("내부 사정 언급 금지");
+    expect(combined).toContain("시스템 사정");
     expect(combined).toContain("팩폭은 하되 모욕 금지");
     expect(combined).toContain("같은 근거를 섹션별로 다르게 풀어라");
     expect(combined).toContain("사주 용어를 쉬운 말로 풀어 설명");

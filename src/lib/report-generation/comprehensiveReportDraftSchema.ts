@@ -1,6 +1,19 @@
 import { COMPREHENSIVE_REPORT_SECTION_IDS } from "../report-knowledge/reportSectionSchema";
+import { COMPREHENSIVE_REPORT_V2_CHAPTER_IDS } from "./comprehensiveReportDraftTypes";
 
-export const comprehensiveReportDraftJsonSchema = {
+const productTypeSchema = {
+  type: "string",
+  const: "saju_mbti_full",
+} as const;
+
+const safetyNotesSchema = {
+  type: "array",
+  items: {
+    type: "string",
+  },
+} as const;
+
+export const comprehensiveReportV1DraftJsonSchema = {
   type: "object",
   additionalProperties: false,
   required: [
@@ -19,10 +32,7 @@ export const comprehensiveReportDraftJsonSchema = {
       type: "string",
       const: "comprehensive_v1_draft",
     },
-    productType: {
-      type: "string",
-      const: "saju_mbti_full",
-    },
+    productType: productTypeSchema,
     tone: {
       type: "array",
       minItems: 1,
@@ -111,11 +121,111 @@ export const comprehensiveReportDraftJsonSchema = {
       minLength: 1,
       maxLength: 1200,
     },
-    safetyNotes: {
-      type: "array",
-      items: {
-        type: "string",
-      },
-    },
+    safetyNotes: safetyNotesSchema,
   },
 } as const;
+
+export const comprehensiveReportV2DraftJsonSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: [
+    "version",
+    "productType",
+    "openingTitle",
+    "openingSummary",
+    "coreLine",
+    "chapters",
+    "finalAdvice",
+    "safetyNotes",
+  ],
+  properties: {
+    version: {
+      type: "string",
+      const: "comprehensive_v2_draft",
+    },
+    productType: productTypeSchema,
+    openingTitle: {
+      type: "string",
+      minLength: 1,
+      maxLength: 120,
+    },
+    openingSummary: {
+      type: "string",
+      minLength: 1,
+      maxLength: 1000,
+    },
+    coreLine: {
+      type: "string",
+      minLength: 1,
+      maxLength: 260,
+    },
+    chapters: {
+      type: "array",
+      minItems: COMPREHENSIVE_REPORT_V2_CHAPTER_IDS.length,
+      maxItems: COMPREHENSIVE_REPORT_V2_CHAPTER_IDS.length,
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: [
+          "chapterId",
+          "titleKo",
+          "headline",
+          "body",
+          "keyPhrases",
+          "sajuTermsUsed",
+          "mbtiTermsUsed",
+        ],
+        properties: {
+          chapterId: {
+            type: "string",
+            enum: COMPREHENSIVE_REPORT_V2_CHAPTER_IDS,
+          },
+          titleKo: {
+            type: "string",
+            minLength: 1,
+            maxLength: 80,
+          },
+          headline: {
+            type: "string",
+            minLength: 1,
+            maxLength: 220,
+          },
+          body: {
+            type: "string",
+            minLength: 1,
+            maxLength: 5000,
+          },
+          keyPhrases: {
+            type: "array",
+            minItems: 1,
+            maxItems: 8,
+            items: {
+              type: "string",
+            },
+          },
+          sajuTermsUsed: {
+            type: "array",
+            items: {
+              type: "string",
+            },
+          },
+          mbtiTermsUsed: {
+            type: "array",
+            items: {
+              type: "string",
+            },
+          },
+        },
+      },
+    },
+    finalAdvice: {
+      type: "string",
+      minLength: 1,
+      maxLength: 1600,
+    },
+    safetyNotes: safetyNotesSchema,
+  },
+} as const;
+
+export const comprehensiveReportDraftJsonSchema =
+  comprehensiveReportV2DraftJsonSchema;

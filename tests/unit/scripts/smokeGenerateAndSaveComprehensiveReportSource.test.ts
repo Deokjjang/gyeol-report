@@ -19,6 +19,8 @@ describe("generate and save comprehensive report smoke source", () => {
       "result url:",
       "http://localhost:3000/reports/",
       "quality guard: passed",
+      "draft version:",
+      "chapters:",
       "isSafeReportGenerationError",
       "failed",
       "code:",

@@ -2,7 +2,10 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
-import type { ComprehensiveReportDraft } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
+import type {
+  ComprehensiveReportV1Draft,
+  ComprehensiveReportV2Draft,
+} from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
 import {
   COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
   type ComprehensiveReportSectionDefinition,
@@ -37,7 +40,7 @@ function createSection(definition: ComprehensiveReportSectionDefinition) {
   };
 }
 
-function createDraft(): ComprehensiveReportDraft {
+function createDraft(): ComprehensiveReportV1Draft {
   return {
     version: "comprehensive_v1_draft",
     productType: "saju_mbti_full",
@@ -47,6 +50,41 @@ function createDraft(): ComprehensiveReportDraft {
       "사주 원국의 구조를 먼저 놓고 MBTI는 사용자가 체감하는 자기상을 보조로 연결합니다.",
     coreLine: "갑목 구조와 ENTJ 성향이 성취 쪽에서 만납니다.",
     sections: COMPREHENSIVE_REPORT_SECTION_DEFINITIONS.map(createSection),
+    finalAdvice:
+      "성과를 만드는 힘은 살리되 휴식과 감정 표현은 의식적으로 보완해 주세요.",
+    safetyNotes: ["자기이해용 참고 콘텐츠입니다."],
+  };
+}
+
+function createV2Draft(): ComprehensiveReportV2Draft {
+  const body =
+    "갑목과 갑신일주를 먼저 놓고 읽는 V2 narrative chapter입니다. 갑목은 방향을 세우는 힘이고 갑신일주는 압박 속에서 기준을 잡는 구조입니다. ENTJ는 이 구조를 성취와 효율 쪽으로 체감하게 만드는 보조 성향입니다. 이 본문은 저장 경계 테스트용으로 충분한 길이를 갖고, 실제 화면에서는 챕터형 리포트로 렌더링됩니다. 돈과 공부, 관계와 환경은 같은 근거가 서로 다른 장면으로 드러나는 방식으로 설명됩니다.";
+
+  return {
+    version: "comprehensive_v2_draft",
+    productType: "saju_mbti_full",
+    openingTitle: "V2 저장 테스트 리포트",
+    openingSummary:
+      "갑목과 갑신일주를 먼저 놓고 MBTI는 체감 성향을 보조하는 기준으로 연결합니다.",
+    coreLine: "갑목 구조가 먼저이고 ENTJ는 그 구조를 성취 쪽으로 증폭합니다.",
+    chapters: [
+      "opening",
+      "saju_identity",
+      "personality_pattern",
+      "work_money_study",
+      "love_relationships",
+      "people_family_environment",
+      "risk_and_growth",
+      "final_message",
+    ].map((chapterId) => ({
+      chapterId: chapterId as ComprehensiveReportV2Draft["chapters"][number]["chapterId"],
+      titleKo: `V2 ${chapterId}`,
+      headline: `V2 ${chapterId} headline은 사주를 먼저 놓고 읽습니다.`,
+      body,
+      keyPhrases: ["갑목", "갑신일주"],
+      sajuTermsUsed: ["갑목", "갑신일주"],
+      mbtiTermsUsed: ["ENTJ"],
+    })),
     finalAdvice:
       "성과를 만드는 힘은 살리되 휴식과 감정 표현은 의식적으로 보완해 주세요.",
     safetyNotes: ["자기이해용 참고 콘텐츠입니다."],
@@ -137,6 +175,33 @@ describe("Supabase comprehensive report snapshot client", () => {
       createdAt,
       updatedAt,
     });
+  });
+
+  it("passes and maps V2 snapshot versions", async () => {
+    const calls: Array<{
+      readonly functionName: string;
+      readonly args: Record<string, unknown>;
+    }> = [];
+    const draft = createV2Draft();
+    const client = createSupabaseComprehensiveReportSnapshotClient({
+      rpcExecutor: async (functionName, args) => {
+        calls.push({ functionName, args });
+
+        return {
+          data: [createRow({ snapshot_version: "comprehensive_v2_draft" })],
+          error: null,
+        };
+      },
+    });
+    const result = await client.saveComprehensiveReportDraftSnapshot({
+      reportId: "report_snapshot_client_test",
+      providerOrderId: "provider_order_snapshot_client_test",
+      draft,
+      generationModel: "fixture-model",
+    });
+
+    expect(calls[0]?.args.p_generation_version).toBe("comprehensive_v2_draft");
+    expect(result.snapshotVersion).toBe("comprehensive_v2_draft");
   });
 
   it("throws safe errors for RPC error and missing row", async () => {

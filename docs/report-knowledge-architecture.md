@@ -273,6 +273,34 @@ writer path. Interpretation sections that are too short, repeat the one-line
 summary, use generic placeholder copy, omit Saju-term explanation, or repeat
 the same key phrase too often are rejected.
 
+## REPORT-12 Narrative Product Format
+
+REPORT-12 converts the comprehensive report from an analysis-table format into
+a narrative product format.
+
+The V2 draft version is `comprehensive_v2_draft`. Instead of many small
+sections, V2 uses eight long-form chapters: opening, Saju identity, personality
+pattern, work-money-study, love relationships, people-family-environment,
+risk and growth, and final message.
+
+Saju remains primary and MBTI remains supporting, but evidence lists are no
+longer repeated as visible report UI. Saju terms, MBTI support, and fusion
+logic are written into the body naturally so the user reads a paid report, not
+a debug view of the evidence packet.
+
+The V2 prompt asks for richer scenes, examples, metaphors, direct tone, study
+and career detail, money and asset behavior, love and relationship patterns,
+family and environment fit, and concrete growth strategy.
+
+The V2 validator enforces narrative chapter density, required chapter ids,
+Saju-first structure, unsupported Saju term rejection, internal meta copy
+rejection, no visible evidence debug labels, and repeated full sentence checks.
+
+Migration 0012 supports saving and reading both `comprehensive_v1_draft` and
+`comprehensive_v2_draft` snapshots. Existing V1 snapshots remain readable, and
+the result page renders V2 without analysis evidence blocks while keeping V1
+backward compatibility.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

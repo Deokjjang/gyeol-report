@@ -18,6 +18,7 @@ function createGeneratedResult(input: GetPaidReportResultInput): PaidReportResul
     productType: "saju_mbti_full",
     status: "generated",
     snapshotStatus: "generated",
+    snapshotVersion: "comprehensive_v1_draft",
     draft: {
       version: "comprehensive_v1_draft",
       productType: "saju_mbti_full",
@@ -43,6 +44,7 @@ function createMissingSnapshotResult(
     productType: "saju_mbti_full",
     status: "ready",
     snapshotStatus: "missing",
+    snapshotVersion: null,
     draft: null,
     createdAt,
     updatedAt,
@@ -92,6 +94,7 @@ describe("Supabase paid report result adapter", () => {
         productType: "saju_mbti_full",
         status: "generated",
         snapshotStatus: "generated",
+        snapshotVersion: "comprehensive_v1_draft",
       },
     });
     expect(fake.calls).toEqual([
@@ -170,6 +173,7 @@ describe("Supabase paid report result adapter", () => {
         productType: "saju_mbti_full",
         status: "ready",
         snapshotStatus: "missing",
+        snapshotVersion: null,
         draft: null,
         createdAt,
         updatedAt,

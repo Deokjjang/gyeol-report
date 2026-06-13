@@ -1,4 +1,7 @@
-import type { ComprehensiveReportDraft } from "../report-generation/comprehensiveReportDraftTypes";
+import type {
+  ComprehensiveReportDraft,
+  ComprehensiveReportSnapshotVersion,
+} from "../report-generation/comprehensiveReportDraftTypes";
 
 export type SaveComprehensiveReportSnapshotInput = {
   readonly reportId: string;
@@ -13,7 +16,7 @@ export type SaveComprehensiveReportSnapshotResult = {
   readonly reportId: string;
   readonly providerOrderId: string;
   readonly productType: "saju_mbti_full";
-  readonly snapshotVersion: "comprehensive_v1_draft";
+  readonly snapshotVersion: ComprehensiveReportSnapshotVersion;
   readonly generationModel: string | null;
   readonly status: SaveComprehensiveReportSnapshotStatus;
   readonly createdAt: string;

@@ -4,6 +4,10 @@ import {
   SafeReportGenerationFailure,
   type SafeReportGenerationStage,
 } from "../report-generation/openaiComprehensiveReportWriter";
+import {
+  isComprehensiveReportV2Draft,
+  type ComprehensiveReportSnapshotVersion,
+} from "../report-generation/comprehensiveReportDraftTypes";
 import { validateComprehensiveReportDraft } from "../report-generation/comprehensiveReportDraftValidator";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../report-knowledge/comprehensiveReportEvidenceInputBuilder";
 import type { MbtiType } from "../report-knowledge/mbtiKnowledgeTypes";
@@ -38,10 +42,11 @@ export type GenerateAndPersistComprehensiveReportResult = {
   readonly reportId: string;
   readonly providerOrderId: string;
   readonly productType: "saju_mbti_full";
-  readonly snapshotVersion: "comprehensive_v1_draft";
+  readonly snapshotVersion: ComprehensiveReportSnapshotVersion;
   readonly status: "ready" | "generated";
   readonly generationModel: string | null;
   readonly sectionCount: number;
+  readonly chapterCount: number;
   readonly coreLine: string;
   readonly openingTitle: string;
   readonly warnings: readonly string[];
@@ -232,7 +237,12 @@ export async function generateAndPersistComprehensiveReport(
     snapshotVersion: savedSnapshot.snapshotVersion,
     status: savedSnapshot.status,
     generationModel: savedSnapshot.generationModel,
-    sectionCount: draftValidation.value.sections.length,
+    sectionCount: isComprehensiveReportV2Draft(draftValidation.value)
+      ? draftValidation.value.chapters.length
+      : draftValidation.value.sections.length,
+    chapterCount: isComprehensiveReportV2Draft(draftValidation.value)
+      ? draftValidation.value.chapters.length
+      : 0,
     coreLine: draftValidation.value.coreLine,
     openingTitle: draftValidation.value.openingTitle,
     warnings: collectWarnings({

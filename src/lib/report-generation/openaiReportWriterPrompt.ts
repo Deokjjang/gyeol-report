@@ -1,5 +1,6 @@
 import type { ComprehensiveReportEvidencePacket } from "../report-knowledge/comprehensiveReportEvidenceTypes";
 import { SAJU_KNOWLEDGE_BASE } from "../report-knowledge/sajuKnowledgeBase";
+import type { SajuKnowledgeEntry } from "../report-knowledge/sajuKnowledgeTypes";
 
 export type OpenAIReportWriterMessages = {
   readonly system: string;
@@ -7,12 +8,40 @@ export type OpenAIReportWriterMessages = {
   readonly user: string;
 };
 
+function isControlledSajuAlias(entry: SajuKnowledgeEntry, alias: string): boolean {
+  const normalizedAlias = alias.trim();
+
+  if (!/[가-힣]/.test(normalizedAlias) || normalizedAlias.length < 2) {
+    return false;
+  }
+  if (normalizedAlias === entry.labelKo) {
+    return true;
+  }
+
+  switch (entry.category) {
+    case "day_pillar":
+      return /^[갑을병정무기경신임계][자축인묘진사오미신유술해]$/.test(
+        normalizedAlias,
+      ) || normalizedAlias.endsWith("일주");
+    case "ten_god":
+    case "special_pattern":
+    case "nobleman":
+    case "sinsal":
+    case "element_balance":
+      return true;
+    case "day_master":
+    case "five_element":
+    case "relationship":
+      return false;
+  }
+}
+
 function createKnownSajuTerms(): readonly string[] {
   return [
     ...new Set(
       SAJU_KNOWLEDGE_BASE.flatMap((entry) => [
         entry.labelKo,
-        ...entry.aliases,
+        ...entry.aliases.filter((alias) => isControlledSajuAlias(entry, alias)),
       ])
         .map((term) => term.trim())
         .filter((term) => /[가-힣]/.test(term) && term.length >= 2)
@@ -154,6 +183,13 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "수 부족, 화 부족, 무식상, 무인성 같은 반복 근거는 섹션마다 다른 결과로 풀어라.",
       "회복과 표현, 감정 완충, 표현 온도 같은 말을 같은 문장으로 반복하지 마라.",
       "조언은 추상적으로 쓰지 말고 당장 행동으로 옮길 수 있게 구체적으로 써라.",
+      "출력은 comprehensive_v2_draft JSON으로 작성한다.",
+      "17개 섹션처럼 잘게 쪼개지 말고 8개 챕터로 작성한다.",
+      "각 챕터는 긴 호흡의 해석문이어야 한다.",
+      "근거 목록을 따로 보여주지 말고 본문에 녹여라.",
+      "공부는 학생 공부뿐 아니라 자격증, 전문서, 직무 학습, 사업 학습까지 포함한다.",
+      "연애는 오행적으로 필요한 사람과 MBTI 관계 스타일을 함께 풀어라.",
+      "읽는 재미를 위해 비유와 실제 상황 예시를 넣어라.",
       "팩폭은 하되 모욕 금지.",
     ].join("\n"),
     user: [
@@ -162,13 +198,12 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "이번 리포트에서 사용할 수 있는 사주 용어:",
       allowedSajuTermLines,
       "목록에 없는 신살, 귀인, 일주, 십성, 오행, 격국, 패턴은 절대 언급하지 마라.",
-      "출력은 comprehensive_v1_draft JSON 객체 하나만 반환한다.",
-      "각 섹션은 sectionId, titleKo, oneLine, body, evidenceSummary, sajuTermsUsed, mbtiTermsUsed, cautionLevel을 포함한다.",
-      "sectionId는 제공된 canonical section만 사용한다.",
-      "manse_table과 mbti_table은 긴 해석문을 쓰지 말고 짧은 중립 문장만 쓴다.",
-      "manse_table body 예시: 사주 원국의 기본 구조를 정리했습니다.",
-      "mbti_table body 예시: 입력하신 MBTI 유형을 리포트 보조 기준으로 반영했습니다.",
-      "만세력 원문 누락, 내부 JSON, entry id, 시스템 사정, 저장 상태를 본문에 쓰지 않는다.",
+      "출력은 comprehensive_v2_draft JSON 객체 하나만 반환한다.",
+      "chapters는 opening, saju_identity, personality_pattern, work_money_study, love_relationships, people_family_environment, risk_and_growth, final_message 8개를 정확히 포함한다.",
+      "각 chapter는 chapterId, titleKo, headline, body, keyPhrases, sajuTermsUsed, mbtiTermsUsed를 포함한다.",
+      "근거를 별도 목록으로 노출하지 말고 chapter body 안에 자연스럽게 녹인다.",
+      "사주 원국 요약과 MBTI 입력 요약은 화면에서 따로 정리되므로 JSON에는 narrative chapters만 충실히 쓴다.",
+      "내부 JSON, 내부 식별값, 시스템 사정, 저장 상태를 본문에 쓰지 않는다.",
       "구어체지만 싸구려 느낌 금지.",
       "팩폭은 하되 모욕 금지.",
       "좋은 말은 확실히 말해도 된다.",
@@ -185,9 +220,16 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "나쁜 예: ENTJ라서 리더십이 강합니다.",
       "좋은 직설 예: 사람을 싫어하는 건 아닌데, 비효율적인 사람을 오래 기다리는 데 에너지를 많이 씁니다.",
       "나쁜 약한 예: 관계에서 표현을 보완하면 좋습니다.",
+      "saju_identity는 일간, 일주, 오행, 십성, 신살, 귀인 중심으로 이 사람의 기본 형상을 길게 설명한다.",
+      "personality_pattern은 성격, 판단 방식, 말투, 감정 처리, 내면 긴장까지 연결한다.",
+      "work_money_study는 일, 직업, 돈, 자산, 공부, 자격증, 직무 학습, 사업 학습을 하나의 성장과 성과 챕터로 연결한다.",
+      "love_relationships는 연애, 이상형, 표현 방식, 만나는 환경, 약점과 보완 상대를 함께 설명한다.",
+      "people_family_environment는 인간관계, 가족, 독립성, 맞는 환경, 피해야 할 환경을 다룬다.",
+      "risk_and_growth는 반복되는 인생 패턴, 약점, 과열, 고립, 성장 전략을 다룬다.",
+      "final_message는 짧은 위로가 아니라 방향성 있는 마무리로 쓴다.",
       "결정적 예언, 정확한 날짜 예언, 건강/법률/투자 보장 금지.",
-      "아래 evidence packet JSON 안에 있는 근거만 사용한다.",
-      "evidence packet JSON:",
+      "아래 제공된 근거 JSON 안에 있는 근거만 사용한다.",
+      "제공된 근거 JSON:",
       evidenceJson,
     ].join("\n"),
   };

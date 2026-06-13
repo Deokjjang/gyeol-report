@@ -2,7 +2,9 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import type { ComprehensiveReportDraft } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
+import type {
+  ComprehensiveReportV1Draft,
+} from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
 import {
   generateComprehensiveReportDraft,
   SafeReportGenerationFailure,
@@ -117,7 +119,7 @@ function createDraftSection(definition: ComprehensiveReportSectionDefinition) {
   };
 }
 
-function createDraft(): ComprehensiveReportDraft {
+function createDraft(): ComprehensiveReportV1Draft {
   return {
     version: "comprehensive_v1_draft",
     productType: "saju_mbti_full",
@@ -155,7 +157,7 @@ function createInput(
   };
 }
 
-function setupSuccessfulMocks(): ComprehensiveReportDraft {
+function setupSuccessfulMocks(): ComprehensiveReportV1Draft {
   const draft = createDraft();
 
   mockGenerateComprehensiveReportDraft.mockResolvedValue({

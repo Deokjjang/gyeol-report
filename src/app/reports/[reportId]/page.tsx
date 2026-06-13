@@ -3,7 +3,14 @@ import type { ReactNode } from "react";
 import { getPaidReportResult } from "../../../lib/reports/supabasePaidReportResultAdapter";
 import { createSupabasePaidReportResultClient } from "../../../lib/reports/supabasePaidReportResultClient";
 import type { PaidReportResult } from "../../../lib/reports/paidReportResultTypes";
-import type { ComprehensiveReportDraftSection } from "../../../lib/report-generation/comprehensiveReportDraftTypes";
+import type {
+  ComprehensiveReportDraft,
+  ComprehensiveReportDraftSection,
+  ComprehensiveReportV2Chapter,
+} from "../../../lib/report-generation/comprehensiveReportDraftTypes";
+import {
+  isComprehensiveReportV2Draft,
+} from "../../../lib/report-generation/comprehensiveReportDraftTypes";
 
 export const dynamic = "force-dynamic";
 
@@ -73,20 +80,34 @@ function uniqueValues(values: readonly string[]): readonly string[] {
 }
 
 function collectDraftSajuTerms(result: PaidReportResult): readonly string[] {
-  return result.draft === null
-    ? []
-    : uniqueValues(
-        result.draft.sections.flatMap((section) => [
-          ...section.sajuTermsUsed,
-          ...section.evidenceSummary.filter((item) => item !== "ENTJ"),
-        ]),
-      );
+  if (result.draft === null) {
+    return [];
+  }
+  if (isComprehensiveReportV2Draft(result.draft)) {
+    return uniqueValues(
+      result.draft.chapters.flatMap((chapter) => chapter.sajuTermsUsed),
+    );
+  }
+
+  return uniqueValues(
+    result.draft.sections.flatMap((section) => [
+      ...section.sajuTermsUsed,
+      ...section.evidenceSummary.filter((item) => item !== "ENTJ"),
+    ]),
+  );
 }
 
 function collectDraftMbtiTerms(result: PaidReportResult): readonly string[] {
-  return result.draft === null
-    ? []
-    : uniqueValues(result.draft.sections.flatMap((section) => section.mbtiTermsUsed));
+  if (result.draft === null) {
+    return [];
+  }
+  if (isComprehensiveReportV2Draft(result.draft)) {
+    return uniqueValues(
+      result.draft.chapters.flatMap((chapter) => chapter.mbtiTermsUsed),
+    );
+  }
+
+  return uniqueValues(result.draft.sections.flatMap((section) => section.mbtiTermsUsed));
 }
 
 function ResultShell({
@@ -188,13 +209,10 @@ function renderDisplaySummaryCard(input: {
   );
 }
 
-function renderDisplaySections(result: PaidReportResult) {
-  const draft = result.draft;
-
-  if (draft === null) {
-    return null;
-  }
-
+function renderDisplaySections(
+  result: PaidReportResult,
+  draft: Extract<ComprehensiveReportDraft, { readonly version: "comprehensive_v1_draft" }>,
+) {
   const manseSection = draft.sections.find(
     (section) => section.sectionId === "manse_table",
   );
@@ -217,6 +235,30 @@ function renderDisplaySections(result: PaidReportResult) {
           mbtiSection?.oneLine ?? "입력하신 MBTI 유형을 보조 기준으로 정리했습니다.",
         termsLabel: "MBTI 참고",
         terms: collectDraftMbtiTerms(result),
+      })}
+    </section>
+  );
+}
+
+function renderV2DisplaySections(result: PaidReportResult) {
+  const sajuTerms = collectDraftSajuTerms(result).slice(0, 12);
+  const mbtiTerms = collectDraftMbtiTerms(result).slice(0, 8);
+
+  return (
+    <section className="grid gap-4 md:grid-cols-2" aria-label="입력 요약">
+      {renderDisplaySummaryCard({
+        title: "사주 원국 요약",
+        description:
+          "본문에서 반복해 나열하지 않고, 해석에 실제로 사용한 핵심 사주 용어만 압축했습니다.",
+        termsLabel: "핵심 용어",
+        terms: sajuTerms,
+      })}
+      {renderDisplaySummaryCard({
+        title: "MBTI 입력 요약",
+        description:
+          "입력한 MBTI는 사주 해석을 보조하고 체감되는 성향을 연결하는 기준으로만 반영했습니다.",
+        termsLabel: "반영 포인트",
+        terms: mbtiTerms,
       })}
     </section>
   );
@@ -261,6 +303,36 @@ function renderGeneratedState(result: PaidReportResult) {
     return renderPlaceholderState(result);
   }
 
+  if (isComprehensiveReportV2Draft(draft)) {
+    return renderGeneratedV2State(result, draft);
+  }
+
+  return renderGeneratedV1State(result, draft);
+}
+
+function renderReportMetadata(result: PaidReportResult) {
+  return (
+    <dl className="grid gap-3 rounded-lg border border-neutral-800 bg-neutral-950/60 p-4 text-sm">
+      <div className="grid gap-1 sm:grid-cols-[9rem_1fr]">
+        <dt className="font-medium text-neutral-500">리포트 ID</dt>
+        <dd className="break-words text-neutral-100">{result.reportId}</dd>
+      </div>
+      <div className="grid gap-1 sm:grid-cols-[9rem_1fr]">
+        <dt className="font-medium text-neutral-500">상품</dt>
+        <dd className="text-neutral-100">사주×MBTI 종합 리포트</dd>
+      </div>
+      <div className="grid gap-1 sm:grid-cols-[9rem_1fr]">
+        <dt className="font-medium text-neutral-500">상태</dt>
+        <dd className="text-neutral-100">{result.status}</dd>
+      </div>
+    </dl>
+  );
+}
+
+function renderGeneratedV1State(
+  result: PaidReportResult,
+  draft: Extract<ComprehensiveReportDraft, { readonly version: "comprehensive_v1_draft" }>,
+) {
   return (
     <ResultShell>
       <article className="space-y-8 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
@@ -281,22 +353,9 @@ function renderGeneratedState(result: PaidReportResult) {
           </p>
         </header>
 
-        <dl className="grid gap-3 rounded-lg border border-neutral-800 bg-neutral-950/60 p-4 text-sm">
-          <div className="grid gap-1 sm:grid-cols-[9rem_1fr]">
-            <dt className="font-medium text-neutral-500">리포트 ID</dt>
-            <dd className="break-words text-neutral-100">{result.reportId}</dd>
-          </div>
-          <div className="grid gap-1 sm:grid-cols-[9rem_1fr]">
-            <dt className="font-medium text-neutral-500">상품</dt>
-            <dd className="text-neutral-100">사주×MBTI 종합 리포트</dd>
-          </div>
-          <div className="grid gap-1 sm:grid-cols-[9rem_1fr]">
-            <dt className="font-medium text-neutral-500">상태</dt>
-            <dd className="text-neutral-100">{result.status}</dd>
-          </div>
-        </dl>
+        {renderReportMetadata(result)}
 
-        {renderDisplaySections(result)}
+        {renderDisplaySections(result, draft)}
 
         <section className="space-y-3" aria-label="핵심 해석">
           {draft.sections.filter((section) => !isDisplaySection(section)).map((section, index) => (
@@ -322,6 +381,85 @@ function renderGeneratedState(result: PaidReportResult) {
                 {renderEvidenceDetails(section)}
               </div>
             </details>
+          ))}
+        </section>
+
+        <section className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+          <h2 className="text-lg font-semibold text-neutral-50">최종 조언</h2>
+          <p className="mt-3 text-base leading-8 text-neutral-300">
+            {draft.finalAdvice}
+          </p>
+        </section>
+      </article>
+    </ResultShell>
+  );
+}
+
+function renderV2KeyPhrases(chapter: ComprehensiveReportV2Chapter) {
+  if (chapter.keyPhrases.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="flex flex-wrap gap-2">
+      {chapter.keyPhrases.map((phrase) => (
+        <span
+          key={phrase}
+          className="rounded-full border border-emerald-900/60 bg-emerald-950/30 px-3 py-1 text-xs font-medium text-emerald-100"
+        >
+          {phrase}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function renderGeneratedV2State(
+  result: PaidReportResult,
+  draft: Extract<ComprehensiveReportDraft, { readonly version: "comprehensive_v2_draft" }>,
+) {
+  return (
+    <ResultShell>
+      <article className="space-y-8 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
+        <header className="space-y-4">
+          <p className="text-sm font-semibold text-emerald-200">
+            사주×MBTI 종합 리포트
+          </p>
+          <div className="space-y-3">
+            <h1 className="text-3xl font-bold tracking-tight text-neutral-50">
+              {draft.openingTitle}
+            </h1>
+            <p className="text-base leading-7 text-neutral-300">
+              {draft.openingSummary}
+            </p>
+          </div>
+          <p className="rounded-lg border border-emerald-900/70 bg-emerald-950/30 p-4 text-base font-semibold leading-7 text-emerald-100">
+            {draft.coreLine}
+          </p>
+        </header>
+
+        {renderReportMetadata(result)}
+        {renderV2DisplaySections(result)}
+
+        <section className="space-y-5" aria-label="리포트 본문">
+          {draft.chapters.map((chapter) => (
+            <section
+              key={chapter.chapterId}
+              className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5"
+            >
+              <div className="space-y-2">
+                <h2 className="text-xl font-semibold text-neutral-50">
+                  {chapter.titleKo}
+                </h2>
+                <p className="text-sm font-medium leading-6 text-emerald-100">
+                  {chapter.headline}
+                </p>
+              </div>
+              <p className="whitespace-pre-line text-base leading-8 text-neutral-200">
+                {chapter.body}
+              </p>
+              {renderV2KeyPhrases(chapter)}
+            </section>
           ))}
         </section>
 

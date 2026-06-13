@@ -1,4 +1,7 @@
-import type { ComprehensiveReportDraft } from "../report-generation/comprehensiveReportDraftTypes";
+import type {
+  ComprehensiveReportDraft,
+  ComprehensiveReportSnapshotVersion,
+} from "../report-generation/comprehensiveReportDraftTypes";
 
 export type PaidReportResultProductType = "saju_mbti_full";
 export type PaidReportResultStatus = "ready" | "generated";
@@ -13,6 +16,7 @@ export type GeneratedComprehensiveReportResult = {
   readonly productType: PaidReportResultProductType;
   readonly status: PaidReportResultStatus;
   readonly snapshotStatus: PaidReportSnapshotStatus;
+  readonly snapshotVersion: ComprehensiveReportSnapshotVersion | null;
   readonly draft: ComprehensiveReportDraft | null;
   readonly createdAt: string;
   readonly updatedAt: string;

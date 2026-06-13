@@ -2,7 +2,11 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
-import type { ComprehensiveReportDraft } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
+import type {
+  ComprehensiveReportDraft,
+  ComprehensiveReportV2ChapterId,
+  ComprehensiveReportV2Draft,
+} from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
 import type { GetPaidReportResultInput } from "../../../src/lib/reports/paidReportResultTypes";
 import {
   createSupabasePaidReportResultClient,
@@ -88,6 +92,43 @@ function createDraft(): ComprehensiveReportDraft {
   };
 }
 
+function createV2Chapter(chapterId: ComprehensiveReportV2ChapterId, titleKo: string) {
+  return {
+    chapterId,
+    titleKo,
+    headline: `${titleKo}는 갑목과 갑신일주를 먼저 놓고 읽습니다.`,
+    body:
+      `${titleKo}에서는 갑목과 갑신일주를 먼저 놓고 ENTJ는 보조로만 연결합니다. ${titleKo}의 갑목은 방향을 세우는 힘이고, ${titleKo}의 갑신일주는 압박 속에서 기준을 잡는 구조입니다. ${titleKo} 본문은 저장된 V2 snapshot을 조회한 뒤 화면에서 narrative chapter로 렌더링할 수 있게 충분한 길이를 갖습니다. ${titleKo}에서는 돈과 공부, 관계와 환경이 같은 사주 구조에서 출발하더라도 서로 다른 장면으로 드러난다고 설명합니다. 그래서 ${titleKo}은 짧은 분석표가 아니라 사용자가 자기 행동을 떠올릴 수 있는 긴 호흡의 해석으로 유지되어야 합니다. ${titleKo} 문장은 저장된 snapshot 검증을 위한 예시 문장이며, 사주 용어를 본문 안에서 자연스럽게 풀어냅니다. ${titleKo}은 각 장면에서 무엇을 밀어붙이고 어디서 힘을 빼야 하는지까지 이어져야 하므로, 조회 경계에서도 충분한 narrative 밀도를 가진 문장으로 검증합니다. ${titleKo}의 마지막 흐름은 좋은 말만 덧붙이는 방식이 아니라, 실제 사용자가 일과 돈과 관계에서 어떤 선택을 바꿀 수 있는지까지 이어지는 해석이어야 합니다.`,
+    keyPhrases: [titleKo, "갑목"],
+    sajuTermsUsed: ["갑목", "갑신일주"],
+    mbtiTermsUsed: ["ENTJ"],
+  };
+}
+
+function createV2Draft(): ComprehensiveReportV2Draft {
+  return {
+    version: "comprehensive_v2_draft",
+    productType: "saju_mbti_full",
+    openingTitle: "V2 narrative result",
+    openingSummary:
+      "갑목과 갑신일주를 먼저 놓고 MBTI는 체감 성향을 보조하는 기준으로 연결합니다.",
+    coreLine: "갑목 구조가 먼저이고 ENTJ는 그 구조를 성취 쪽으로 증폭합니다.",
+    chapters: [
+      createV2Chapter("opening", "처음에 보이는 결"),
+      createV2Chapter("saju_identity", "사주가 보여주는 기본 형상"),
+      createV2Chapter("personality_pattern", "성격과 판단 패턴"),
+      createV2Chapter("work_money_study", "일, 돈, 공부가 연결되는 방식"),
+      createV2Chapter("love_relationships", "연애와 관계의 온도"),
+      createV2Chapter("people_family_environment", "사람, 가족, 환경"),
+      createV2Chapter("risk_and_growth", "반복되는 리스크와 성장법"),
+      createV2Chapter("final_message", "마지막으로 남길 말"),
+    ],
+    finalAdvice:
+      "성과를 만드는 힘은 살리되 휴식과 감정 표현은 의식적으로 보완해 주세요.",
+    safetyNotes: ["자기이해용 참고 콘텐츠입니다."],
+  };
+}
+
 function createRow(
   overrides: Partial<PaidReportResultRpcResultRow> = {},
 ): PaidReportResultRpcResultRow {
@@ -155,6 +196,37 @@ describe("Supabase paid report result client", () => {
         productType: "saju_mbti_full",
         status: "generated",
         snapshotStatus: "generated",
+        snapshotVersion: "comprehensive_v1_draft",
+        draft,
+        createdAt,
+        updatedAt,
+      },
+    });
+  });
+
+  it("maps generated V2 narrative draft rows after validating the snapshot", async () => {
+    const draft = createV2Draft();
+    const client = createSupabasePaidReportResultClient({
+      rpcExecutor: async () => ({
+        data: [
+          createRow({
+            snapshot_version: "comprehensive_v2_draft",
+            report_snapshot: draft,
+          }),
+        ],
+        error: null,
+      }),
+    });
+    const result = await client.getPaidReportResult(createInput());
+
+    expect(result).toEqual({
+      ok: true,
+      data: {
+        reportId: "report_result_client_test",
+        productType: "saju_mbti_full",
+        status: "generated",
+        snapshotStatus: "generated",
+        snapshotVersion: "comprehensive_v2_draft",
         draft,
         createdAt,
         updatedAt,
@@ -184,6 +256,7 @@ describe("Supabase paid report result client", () => {
         productType: "saju_mbti_full",
         status: "ready",
         snapshotStatus: "missing",
+        snapshotVersion: null,
         draft: null,
         createdAt,
         updatedAt,

@@ -187,10 +187,10 @@ async function run(): Promise<void> {
   });
 
   writeStatus(`generated snapshot report id: ${generated.reportId}`);
-  writeStatus(`snapshot version: ${generated.snapshotVersion}`);
+  writeStatus(`draft version: ${generated.snapshotVersion}`);
   writeStatus(`status: ${generated.status}`);
   writeStatus("quality guard: passed");
-  writeStatus(`sections: ${generated.sectionCount}`);
+  writeStatus(`chapters: ${generated.chapterCount}`);
   writeStatus(`core line: ${generated.coreLine}`);
   writeStatus(`result url: http://localhost:3000/reports/${generated.reportId}`);
   writeStatus("done");

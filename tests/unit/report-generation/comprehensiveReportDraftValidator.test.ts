@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import type { ComprehensiveReportDraft } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
+import type {
+  ComprehensiveReportV1Draft,
+  ComprehensiveReportV2Draft,
+} from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
 import { validateComprehensiveReportDraft } from "../../../src/lib/report-generation/comprehensiveReportDraftValidator";
 import {
   COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
@@ -55,7 +58,7 @@ function createSection(definition: ComprehensiveReportSectionDefinition) {
   };
 }
 
-function createValidDraft(): ComprehensiveReportDraft {
+function createValidDraft(): ComprehensiveReportV1Draft {
   return {
     version: "comprehensive_v1_draft",
     productType: "saju_mbti_full",
@@ -72,10 +75,10 @@ function createValidDraft(): ComprehensiveReportDraft {
 }
 
 function replaceSectionBody(
-  draft: ComprehensiveReportDraft,
+  draft: ComprehensiveReportV1Draft,
   sectionId: string,
   body: string,
-): ComprehensiveReportDraft {
+): ComprehensiveReportV1Draft {
   return {
     ...draft,
     sections: draft.sections.map((section) =>
@@ -86,6 +89,68 @@ function replaceSectionBody(
           }
         : section,
     ),
+  };
+}
+
+function createLongChapterBody(input: {
+  readonly title: string;
+  readonly sajuTerm: string;
+  readonly extra?: string;
+}): string {
+  const base =
+    `${input.title}에서는 ${input.sajuTerm}을 먼저 놓고 읽습니다. ${input.title}의 ${input.sajuTerm}은 단순한 이름이 아니라 행동의 출발점입니다. ${input.title}에서 덕민님은 상황을 오래 구경하기보다 기준을 세우고 판을 정리하려는 쪽으로 움직입니다. 그래서 ${input.title}의 일상 장면에서는 말이 빠르고 판단이 선명하게 보일 수 있습니다. 입력한 ENTJ 성향도 ${input.title}의 이 지점과 맞물리지만, 결론은 MBTI가 아니라 사주 구조에서 먼저 나옵니다. 좋은 환경에서는 ${input.title}의 이 힘이 추진력과 책임감으로 살아나고, 나쁜 환경에서는 쉬지 못하고 계속 자신을 몰아붙이는 압박으로 바뀔 수 있습니다. ${input.title}은 같은 사주 구조가 다른 생활 장면에서 어떻게 다른 결과로 바뀌는지 보여주는 챕터입니다. ${input.title}의 핵심은 용어를 외우게 하는 것이 아니라 실제 선택과 말투, 돈과 관계를 떠올리게 만드는 데 있습니다.`;
+
+  return `${base} ${input.extra ?? ""}`.trim();
+}
+
+function createV2Chapter(
+  chapterId: ComprehensiveReportV2Draft["chapters"][number]["chapterId"],
+  titleKo: string,
+  minimumTerm = "갑목",
+) {
+  return {
+    chapterId,
+    titleKo,
+    headline: `${titleKo}의 핵심은 사주 구조를 생활 장면으로 읽는 것입니다.`,
+    body: createLongChapterBody({
+      title: titleKo,
+      sajuTerm: minimumTerm,
+      extra:
+        chapterId === "work_money_study"
+          ? "공부는 학교 공부만이 아니라 자격증, 전문서, 직무 학습, 사업을 배우는 방식까지 포함됩니다. 돈은 성과를 증명하는 도구가 되기 쉽고, 자산 관리는 감정 문제가 아니라 통제 가능한 판을 만드는 일에 가깝습니다. 일, 돈, 공부가 연결되는 방식에서는 성취욕이 과열될 때 쉬는 시간을 성능 관리로 받아들이는 조언까지 이어져야 합니다."
+          : `${titleKo}에서는 관계와 일, 돈과 성장에서 같은 구조가 어떻게 다른 표정으로 바뀌는지 장면을 바꿔 읽어야 합니다. ${titleKo}은 용어를 나열하지 않고 실제 선택과 말투와 행동으로 풀어내며, 이 챕터만의 결론과 조언을 분명히 남겨야 합니다.`,
+    }),
+    keyPhrases: [`${titleKo} 핵심`, minimumTerm],
+    sajuTermsUsed:
+      chapterId === "opening" || chapterId === "final_message"
+        ? [minimumTerm]
+        : [minimumTerm, "갑신일주"],
+    mbtiTermsUsed: ["ENTJ"],
+  };
+}
+
+function createValidV2Draft(): ComprehensiveReportV2Draft {
+  return {
+    version: "comprehensive_v2_draft",
+    productType: "saju_mbti_full",
+    openingTitle: "덕민님의 결은 빠른 판단과 큰 판에 있습니다",
+    openingSummary:
+      "갑목과 갑신일주를 먼저 놓고 읽으면, 덕민님은 작은 안정감보다 큰 방향과 기준을 먼저 찾는 사람에 가깝습니다.",
+    coreLine:
+      "갑목의 방향성과 갑신일주의 압박 대응력이 ENTJ 성향과 만나 성취 중심의 결을 만듭니다.",
+    chapters: [
+      createV2Chapter("opening", "처음에 보이는 결"),
+      createV2Chapter("saju_identity", "사주가 보여주는 기본 형상"),
+      createV2Chapter("personality_pattern", "성격과 판단 패턴"),
+      createV2Chapter("work_money_study", "일, 돈, 공부가 연결되는 방식"),
+      createV2Chapter("love_relationships", "연애와 관계의 온도"),
+      createV2Chapter("people_family_environment", "사람, 가족, 환경"),
+      createV2Chapter("risk_and_growth", "반복되는 리스크와 성장법"),
+      createV2Chapter("final_message", "마지막으로 남길 말"),
+    ],
+    finalAdvice:
+      "덕민님은 이기는 법을 빨리 배우는 쪽에 강점이 있습니다. 다만 오래 가려면 성과를 내지 않는 시간도 전략으로 인정해야 합니다.",
+    safetyNotes: ["자기이해용 참고 콘텐츠입니다."],
   };
 }
 
@@ -108,6 +173,97 @@ describe("comprehensive report draft validator", () => {
 
     expect(result.errors).toEqual([]);
     expect(result.ok).toBe(true);
+  });
+
+  it("accepts a valid V2 narrative draft fixture", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft(draft, {
+      allowedSajuTerms: ["갑목", "갑신", "갑신일주"],
+      allowedMbtiTerms: ["ENTJ"],
+    });
+
+    expect(result).toEqual({
+      ok: true,
+      errors: [],
+      value: draft,
+    });
+  });
+
+  it("rejects V2 drafts with missing or short narrative chapters", () => {
+    const draft = createValidV2Draft();
+    const missingResult = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.slice(1),
+    });
+    const shortResult = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "work_money_study"
+          ? {
+              ...chapter,
+              body:
+                "갑목은 빠르게 방향을 잡는 힘입니다. 이 문장은 기본 필드는 통과하지만 narrative chapter로 보기에는 너무 짧습니다.",
+            }
+          : chapter,
+      ),
+    });
+
+    expect(missingResult.ok).toBe(false);
+    expect(missingResult.errors.join("\n")).toContain("draft missing chapter: opening");
+    expect(shortResult.ok).toBe(false);
+    expect(shortResult.errors.join("\n")).toContain(
+      "CHAPTER_BODY_TOO_SHORT: work_money_study",
+    );
+  });
+
+  it("rejects V2 visible evidence labels and MBTI-first opening", () => {
+    const debugLabelResult = validateComprehensiveReportDraft({
+      ...createValidV2Draft(),
+      chapters: createValidV2Draft().chapters.map((chapter) =>
+        chapter.chapterId === "personality_pattern"
+          ? {
+              ...chapter,
+              body: `${chapter.body} 분석 근거 보기 같은 UI 문구가 본문에 나오면 안 됩니다.`,
+            }
+          : chapter,
+      ),
+    });
+    const mbtiFirstResult = validateComprehensiveReportDraft({
+      ...createValidV2Draft(),
+      openingSummary: "ENTJ라서 추진력이 강하다고 먼저 말하면 안 됩니다.",
+    });
+
+    expect(debugLabelResult.ok).toBe(false);
+    expect(debugLabelResult.errors.join("\n")).toContain(
+      "VISIBLE_EVIDENCE_DEBUG_LABEL: 분석 근거 보기",
+    );
+    expect(mbtiFirstResult.ok).toBe(false);
+    expect(mbtiFirstResult.errors.join("\n")).toContain(
+      "MBTI_FIRST_FORBIDDEN: opening",
+    );
+  });
+
+  it("rejects unsupported Saju terms in V2 narrative drafts", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft(
+      {
+        ...draft,
+        chapters: draft.chapters.map((chapter) =>
+          chapter.chapterId === "love_relationships"
+            ? {
+                ...chapter,
+                body: `${chapter.body} 도화살이 있다고 쓰면 허용되지 않은 신살을 만든 것입니다.`,
+              }
+            : chapter,
+        ),
+      },
+      {
+        allowedSajuTerms: ["갑목", "갑신", "갑신일주"],
+      },
+    );
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("UNSUPPORTED_SAJU_TERM: 도화살");
   });
 
   it("rejects a missing section", () => {
