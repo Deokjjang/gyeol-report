@@ -114,6 +114,33 @@ const mbtiFirstBodyPrefixes = [
   "MBTI상",
   "입력하신 MBTI가 먼저",
 ] as const;
+const koreanHeavenlyStems = [
+  "갑",
+  "을",
+  "병",
+  "정",
+  "무",
+  "기",
+  "경",
+  "신",
+  "임",
+  "계",
+] as const;
+const koreanEarthlyBranches = [
+  "자",
+  "축",
+  "인",
+  "묘",
+  "진",
+  "사",
+  "오",
+  "미",
+  "신",
+  "유",
+  "술",
+  "해",
+] as const;
+const ganjiContextSuffixes = ["일주", "년", "월", "일", "시"] as const;
 
 function isDisplayOnlySectionId(
   value: ComprehensiveReportSectionId,
@@ -178,6 +205,113 @@ function createKnownSajuTerms(): readonly string[] {
         .sort((left, right) => right.length - left.length),
     ),
   ];
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function isKoreanGanjiTerm(term: string): boolean {
+  const [stem, branch, rest] = [...term];
+
+  return (
+    rest === undefined &&
+    (koreanHeavenlyStems as readonly string[]).includes(stem ?? "") &&
+    (koreanEarthlyBranches as readonly string[]).includes(branch ?? "")
+  );
+}
+
+function isAllowedSajuTerm(
+  term: string,
+  allowedTerms: ReadonlySet<string>,
+): boolean {
+  const normalizedTerm = term.replace(/\s+/g, "");
+
+  if (allowedTerms.has(normalizedTerm)) {
+    return true;
+  }
+
+  const ganjiBase = normalizedTerm.slice(0, 2);
+
+  if (
+    normalizedTerm === `${ganjiBase}일주` &&
+    isKoreanGanjiTerm(ganjiBase) &&
+    allowedTerms.has(ganjiBase)
+  ) {
+    return true;
+  }
+
+  if (
+    isKoreanGanjiTerm(normalizedTerm) &&
+    allowedTerms.has(`${normalizedTerm}일주`)
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
+function findContextualGanjiMatches(
+  text: string,
+  term: string,
+): readonly string[] {
+  const escapedTerm = escapeRegExp(term);
+  const matches: string[] = [];
+
+  for (const suffix of ganjiContextSuffixes) {
+    const escapedSuffix = escapeRegExp(suffix);
+    const suffixPattern =
+      suffix === "일"
+        ? `${escapedTerm}\\s*${escapedSuffix}(?!주)`
+        : `${escapedTerm}\\s*${escapedSuffix}`;
+    const regex = new RegExp(suffixPattern, "g");
+
+    for (const match of text.matchAll(regex)) {
+      matches.push(match[0].replace(/\s+/g, ""));
+    }
+  }
+
+  const standaloneRegex = new RegExp(
+    `(^|[^가-힣A-Za-z0-9])(${escapedTerm})(?=$|[^가-힣A-Za-z0-9])`,
+    "g",
+  );
+
+  for (const match of text.matchAll(standaloneRegex)) {
+    const matchedTerm = match[2];
+    const termStartIndex = (match.index ?? 0) + match[1].length;
+    const tail = text.slice(termStartIndex + matchedTerm.length);
+
+    if (/^\s*(일주|년|월|일|시)/.test(tail)) {
+      continue;
+    }
+    matches.push(matchedTerm);
+  }
+
+  return matches;
+}
+
+function findSajuTermMatches(text: string, term: string): readonly string[] {
+  if (isKoreanGanjiTerm(term)) {
+    return findContextualGanjiMatches(text, term);
+  }
+
+  return text.includes(term) ? [term] : [];
+}
+
+function removeLessSpecificMatches(
+  matches: readonly string[],
+): readonly string[] {
+  const uniqueMatches = [...new Set(matches)];
+
+  return uniqueMatches.filter(
+    (match) =>
+      !uniqueMatches.some(
+        (other) =>
+          other !== match &&
+          other.length > match.length &&
+          other.includes(match),
+      ),
+  );
 }
 
 function appendUnknownKeyErrors(
@@ -257,14 +391,22 @@ function appendUnsupportedSajuTermErrors(
   const allowedTerms = new Set(
     options.allowedSajuTerms
       .map((term) => term.trim())
+      .map((term) => term.replace(/\s+/g, ""))
       .filter((term) => term.length > 0),
   );
   const text = collectStrings(value).join("\n");
+  const unsupportedMatches: string[] = [];
 
   for (const term of createKnownSajuTerms()) {
-    if (!allowedTerms.has(term) && text.includes(term)) {
-      errors.push(`UNSUPPORTED_SAJU_TERM: ${term}`);
+    for (const match of findSajuTermMatches(text, term)) {
+      if (!isAllowedSajuTerm(match, allowedTerms)) {
+        unsupportedMatches.push(match);
+      }
     }
+  }
+
+  for (const match of removeLessSpecificMatches(unsupportedMatches)) {
+    errors.push(`UNSUPPORTED_SAJU_TERM: ${match}`);
   }
 }
 

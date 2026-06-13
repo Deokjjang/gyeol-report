@@ -191,6 +191,61 @@ describe("comprehensive report draft validator", () => {
     expect(result.errors.join("\n")).toContain("UNSUPPORTED_SAJU_TERM: 반안살");
   });
 
+  it("does not flag Korean words that only contain a ganji substring", () => {
+    const bodies = [
+      "정해진 기준을 따르되 갑목과 갑신일주를 먼저 놓고 봅니다.",
+      "정해놓은 루틴이 있으면 갑목과 갑신일주의 방향성이 더 안정됩니다.",
+      "기준을 정해야 할 때도 갑목과 갑신일주를 먼저 봅니다.",
+      "관계의 선을 정해두는 편이고 ENTJ는 보조 근거로만 연결합니다.",
+    ];
+
+    for (const body of bodies) {
+      const result = validateComprehensiveReportDraft(
+        replaceSectionBody(createValidDraft(), "personality", body),
+        {
+          allowedSajuTerms: ["갑목", "갑신", "갑신일주"],
+        },
+      );
+
+      expect(result.errors).toEqual([]);
+      expect(result.ok).toBe(true);
+    }
+  });
+
+  it("rejects contextual unsupported ganji and unsupported sinsal terms", () => {
+    const cases = [
+      {
+        body: "정해일주 성향이 있다고 쓰면 evidence 밖의 일주를 만든 것입니다.",
+        expectedError: "UNSUPPORTED_SAJU_TERM: 정해일주",
+      },
+      {
+        body: "정해 일주 성향이 있다고 쓰면 evidence 밖의 일주를 만든 것입니다.",
+        expectedError: "UNSUPPORTED_SAJU_TERM: 정해일주",
+      },
+      {
+        body: "도화살이 강합니다.",
+        expectedError: "UNSUPPORTED_SAJU_TERM: 도화살",
+      },
+      {
+        body: "반안살이 있습니다.",
+        expectedError: "UNSUPPORTED_SAJU_TERM: 반안살",
+      },
+    ];
+
+    for (const testCase of cases) {
+      const result = validateComprehensiveReportDraft(
+        replaceSectionBody(createValidDraft(), "personality", testCase.body),
+        {
+          allowedSajuTerms: ["갑목", "갑신", "갑신일주", "현침살", "홍염살"],
+        },
+      );
+
+      expect(result.ok).toBe(false);
+      expect(result.errors.join("\n")).toContain(testCase.expectedError);
+      expect(result.errors).not.toContain("UNSUPPORTED_SAJU_TERM: 정해");
+    }
+  });
+
   it("allows selected Saju terms and direct non-insulting tone", () => {
     const draft = replaceSectionBody(
       createValidDraft(),
