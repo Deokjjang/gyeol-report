@@ -5,6 +5,7 @@ import {
   privacyPolicyCollectionItems,
   privacyPolicyExternalServiceRows,
   privacyPolicyMinorNoticeKo,
+  privacyPolicyNoResidentRegistrationNumberKo,
   privacyPolicyOverseasProcessingKo,
   privacyPolicyPurposeItems,
   privacyPolicyRetentionRows,
@@ -50,15 +51,17 @@ describe("privacy policy constants", () => {
     expect(privacyPolicyExternalServiceRows).toEqual([
       {
         providerKo: "토스페이먼츠",
-        purposeKo: "결제 처리",
+        purposeKo: "결제 승인, 결제 취소, 결제 내역 확인",
       },
       {
         providerKo: "Supabase",
-        purposeKo: "데이터 저장 및 서비스 운영",
+        purposeKo:
+          "입력정보, 결제 주문 정보, 리포트 열람 정보 저장 및 서비스 운영",
       },
       {
         providerKo: "OpenAI API",
-        purposeKo: "리포트 문장 생성 보조",
+        purposeKo:
+          "입력값과 deterministic evidence를 바탕으로 리포트 문장 생성 보조",
       },
       {
         providerKo: "호스팅 제공자",
@@ -67,6 +70,12 @@ describe("privacy policy constants", () => {
     ]);
     expect(privacyPolicyOverseasProcessingKo).toContain(
       "일부 서비스는 국외에서 제공될 수 있습니다",
+    );
+    expect(privacyPolicyOverseasProcessingKo).toContain(
+      "리포트 입력정보, 결제 주문 식별 정보, 리포트 생성 및 열람 정보, 접속기록",
+    );
+    expect(privacyPolicyOverseasProcessingKo).toContain(
+      "데이터 저장, 서비스 운영, 리포트 문장 생성 보조, 웹 호스팅",
     );
   });
 
@@ -82,6 +91,9 @@ describe("privacy policy constants", () => {
     );
     expect(privacyPolicySensitiveInfoLimitKo).toContain(
       "문의 과정에서 민감정보를 포함하지 않도록 주의",
+    );
+    expect(privacyPolicyNoResidentRegistrationNumberKo).toBe(
+      "회사는 주민등록번호를 수집하지 않습니다.",
     );
     expect(prePaymentPrivacyNoticeKo).toBe(
       "리포트 생성을 위해 이름 또는 닉네임, 생년월일, 출생시간, 성별, MBTI가 처리됩니다.",
@@ -104,6 +116,7 @@ describe("privacy policy constants", () => {
       privacyPolicyUnder14Ko,
       privacyPolicyMinorNoticeKo,
       privacyPolicySensitiveInfoLimitKo,
+      privacyPolicyNoResidentRegistrationNumberKo,
       prePaymentPrivacyNoticeKo,
     ].join("\n");
     const blockedMarkers = [

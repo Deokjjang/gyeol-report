@@ -6,6 +6,7 @@ import {
   privacyPolicyExternalServiceRows,
   privacyPolicyLegalRetentionKo,
   privacyPolicyMinorNoticeKo,
+  privacyPolicyNoResidentRegistrationNumberKo,
   privacyPolicyOverseasProcessingKo,
   privacyPolicyProcessingScopeKo,
   privacyPolicyPurposeItems,
@@ -102,6 +103,7 @@ export default function LegalPrivacyPage() {
 
         <PolicyBlock titleKo="민감정보 수집 제한">
           <p>{privacyPolicySensitiveInfoLimitKo}</p>
+          <p>{privacyPolicyNoResidentRegistrationNumberKo}</p>
         </PolicyBlock>
 
         <PolicyBlock titleKo="이용자의 권리">

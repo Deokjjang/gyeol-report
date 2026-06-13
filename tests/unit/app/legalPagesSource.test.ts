@@ -8,6 +8,7 @@ function readSource(relativePath: string): string {
 
 const legalSources = [
   readSource("src/lib/legal/businessInfo.ts"),
+  readSource("src/lib/legal/termsPolicy.ts"),
   readSource("src/lib/legal/privacyPolicy.ts"),
   readSource("src/lib/legal/refundPolicy.ts"),
   readSource("src/components/legal/BusinessFooter.tsx"),
@@ -103,27 +104,69 @@ describe("legal page sources", () => {
   });
 
   it("contains required terms content", () => {
-    const termsSource = readSource("src/app/legal/terms/page.tsx");
+    const termsSource = [
+      readSource("src/app/legal/terms/page.tsx"),
+      readSource("src/app/terms/page.tsx"),
+      readSource("src/lib/legal/termsPolicy.ts"),
+      readSource("src/lib/legal/refundPolicy.ts"),
+      readSource("src/lib/legal/businessInfo.ts"),
+    ].join("\n");
     const expectedMarkers = [
-      "서비스",
-      "유료 상품과 결제",
-      "리포트 제공",
-      "이용자의 책임",
-      "해석의 한계",
-      "환불 및 문의",
-      "자기이해용 디지털 리포트",
-      "런칭가 990원",
-      "결제 승인 및 서버 확인 이후 온라인 열람",
-      "타인의 정보를 무단으로 입력하면 안 됩니다",
+      "목적",
+      "사업자 정보",
+      "서비스의 성격",
+      "상품 및 제공 방식",
+      "회원 또는 이용자 입력정보",
+      "결제 및 유료 서비스",
+      "리포트 생성 및 열람",
+      "청약철회 및 환불",
+      "미성년자 이용",
+      "만 14세 미만 이용 제한",
+      "개인정보 처리",
+      "저작권 및 이용범위",
+      "금지행위",
+      "서비스 변경·중단",
+      "면책 및 책임 제한",
+      "고객 문의 및 분쟁 처리",
+      "약관 변경",
+      "시행일",
+      "GYEOL_BUSINESS_INFO.businessName",
+      "GYEOL_BUSINESS_INFO.representativeKo",
+      "GYEOL_BUSINESS_INFO.businessRegistrationNumber",
+      'businessName: "DVEM"',
+      'representativeKo: "장덕민"',
+      'businessRegistrationNumber: "184-27-02002"',
+      "상품명: 사주×MBTI 종합 리포트",
+      "상품 유형: 입력값 기반 자동 생성 디지털 리포트",
+      "정가: 1,290원",
+      "런칭가 및 실제 결제금액: 990원",
+      "제공 방식: 결제 후 온라인 열람",
+      "상담 여부: 사람 상담 아님",
+      "자동 생성되는 디지털 리포트를 제공합니다",
       "의료·법률·투자 자문을 제공하지 않습니다",
-      "GYEOL_BUSINESS_INFO.supportContactEmail",
+      "결제 전 확인 화면에서 입력값을 수정할 수 있습니다",
+      "생성 시작 후 이용자의 입력 오류로 인한 단순 재생성 또는 환불은 제한될 수 있습니다",
+      "생성 시작 전에는 취소 및 환불을 요청할 수 있습니다",
+      "시스템 장애, 중복결제, 결과 미제공, 회사 귀책 오류가 확인되는 경우 재생성 또는 환불을 진행합니다",
+      "회사의 고의 또는 중대한 과실로 인한 손해에 대해서는 관련 법령에 따라 책임을 부담합니다",
+      'termsPolicyEffectiveDateKo = "2026년 6월 14일"',
     ];
 
     for (const marker of expectedMarkers) {
       expect(termsSource).toContain(marker);
     }
 
-    const removedMarkers = ["서비스 제공자", "서비스 변경/중단", "책임 제한"];
+    const removedMarkers = [
+      "초안",
+      "사전 안내용",
+      "최종 약관이 아닙니다",
+      "결제 기능 공개 전에",
+      "추후 정리",
+      "별도 안내로 정리됩니다",
+      "출시 전",
+      "회사는 책임지지 않습니다",
+      "과세유형",
+    ];
 
     for (const marker of removedMarkers) {
       expect(termsSource).not.toContain(marker);
@@ -165,6 +208,7 @@ describe("legal page sources", () => {
       "OpenAI API",
       "호스팅 제공자",
       "국외에서 제공될 수 있습니다",
+      "회사는 주민등록번호를 수집하지 않습니다",
       "만 14세 미만은 현재 버전에서 서비스를 이용할 수 없습니다",
       "만 19세 미만 미성년자는 결제 시 법정대리인 동의가 필요하며",
       "본 서비스는 건강정보, 질병정보, 정신질환 정보, 정치적 견해, 종교",

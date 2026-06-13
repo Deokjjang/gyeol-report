@@ -24,6 +24,7 @@ const visibleCopySourceFiles = [
   "src/components/product/ProductSummaryCard.tsx",
   "src/components/product/ProductTile.tsx",
   "src/components/legal/BusinessFooter.tsx",
+  "src/lib/legal/termsPolicy.ts",
   "src/lib/legal/privacyPolicy.ts",
   "src/lib/legal/refundPolicy.ts",
   "src/lib/product/gyeolProducts.ts",

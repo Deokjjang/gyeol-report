@@ -23,11 +23,11 @@ export const privacyPolicyPurposeItems = [
 export const privacyPolicyRetentionRows = [
   {
     categoryKo: "리포트 입력정보",
-    periodKo: "서비스 제공 및 문의 대응에 필요한 기간",
+    periodKo: "리포트 제공 및 고객 문의 대응에 필요한 기간",
   },
   {
     categoryKo: "리포트 결과",
-    periodKo: "열람 제공 및 문의 대응에 필요한 기간",
+    periodKo: "온라인 열람 제공 및 고객 문의 대응에 필요한 기간",
   },
   {
     categoryKo: "결제 및 계약 기록",
@@ -46,15 +46,15 @@ export const privacyPolicyRetentionRows = [
 export const privacyPolicyExternalServiceRows = [
   {
     providerKo: "토스페이먼츠",
-    purposeKo: "결제 처리",
+    purposeKo: "결제 승인, 결제 취소, 결제 내역 확인",
   },
   {
     providerKo: "Supabase",
-    purposeKo: "데이터 저장 및 서비스 운영",
+    purposeKo: "입력정보, 결제 주문 정보, 리포트 열람 정보 저장 및 서비스 운영",
   },
   {
     providerKo: "OpenAI API",
-    purposeKo: "리포트 문장 생성 보조",
+    purposeKo: "입력값과 deterministic evidence를 바탕으로 리포트 문장 생성 보조",
   },
   {
     providerKo: "호스팅 제공자",
@@ -72,7 +72,7 @@ export const privacyPolicyLegalRetentionKo =
   "결제·계약·청약철회·환불·분쟁 처리와 관련된 기록은 관련 법령에 따른 보존기간 동안 별도로 보관될 수 있습니다.";
 
 export const privacyPolicyOverseasProcessingKo =
-  "회사는 서비스 제공을 위해 외부 서비스를 이용할 수 있으며, 일부 서비스는 국외에서 제공될 수 있습니다. 국외에서 처리되는 경우 처리되는 항목, 목적, 보유기간 등은 개인정보처리방침에 공개합니다.";
+  "회사는 서비스 제공을 위해 Supabase, OpenAI API, 호스팅 제공자 등 외부 서비스를 이용할 수 있으며, 일부 서비스는 국외에서 제공될 수 있습니다. 국외에서 처리될 수 있는 항목은 리포트 입력정보, 결제 주문 식별 정보, 리포트 생성 및 열람 정보, 접속기록 등 서비스 제공에 필요한 정보이며, 목적은 데이터 저장, 서비스 운영, 리포트 문장 생성 보조, 웹 호스팅입니다. 보유기간은 서비스 제공, 고객 문의 대응, 관련 법령상 보존기간에 따릅니다.";
 
 export const privacyPolicyUnder14Ko =
   "만 14세 미만은 현재 버전에서 서비스를 이용할 수 없습니다.";
@@ -82,6 +82,9 @@ export const privacyPolicyMinorNoticeKo =
 
 export const privacyPolicySensitiveInfoLimitKo =
   "본 서비스는 건강정보, 질병정보, 정신질환 정보, 정치적 견해, 종교, 성생활 정보, 범죄경력 등 민감정보 입력을 요구하지 않습니다. 사용자는 문의 과정에서 민감정보를 포함하지 않도록 주의해 주세요.";
+
+export const privacyPolicyNoResidentRegistrationNumberKo =
+  "회사는 주민등록번호를 수집하지 않습니다.";
 
 export const privacyPolicyUserRightsKo =
   "이용자는 개인정보 열람, 정정, 삭제, 처리정지 요청을 할 수 있습니다.";

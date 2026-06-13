@@ -13,13 +13,45 @@ const policyPageSources = [
 ] as const;
 
 describe("policy page sources", () => {
-  it("terms page contains required policy placeholder markers", () => {
-    const source = readAppFile("src/app/terms/page.tsx");
+  it("terms page contains finalized paid-service terms markers", () => {
+    const source = [
+      readAppFile("src/app/terms/page.tsx"),
+      readAppFile("src/app/legal/terms/page.tsx"),
+      readAppFile("src/lib/legal/termsPolicy.ts"),
+      readAppFile("src/lib/legal/refundPolicy.ts"),
+      readAppFile("src/lib/legal/businessInfo.ts"),
+    ].join("\n");
     const expectedMarkers = [
       "이용약관",
-      "출시 전 초안",
-      "디지털 자기 이해 리포트",
-      "참고",
+      "목적",
+      "사업자 정보",
+      "서비스의 성격",
+      "상품 및 제공 방식",
+      "회원 또는 이용자 입력정보",
+      "결제 및 유료 서비스",
+      "리포트 생성 및 열람",
+      "청약철회 및 환불",
+      "미성년자 이용",
+      "만 14세 미만 이용 제한",
+      "개인정보 처리",
+      "저작권 및 이용범위",
+      "금지행위",
+      "서비스 변경·중단",
+      "면책 및 책임 제한",
+      "고객 문의 및 분쟁 처리",
+      "약관 변경",
+      "시행일",
+      "GYEOL_BUSINESS_INFO.businessName",
+      'businessName: "DVEM"',
+      "사주×MBTI 종합 리포트",
+      "입력값 기반 자동 생성 디지털 리포트",
+      "정가: 1,290원",
+      "런칭가 및 실제 결제금액: 990원",
+      "결제 후 온라인 열람",
+      "의료·법률·투자 자문을 제공하지 않습니다",
+      "생성 시작 전에는 취소 및 환불을 요청할 수 있습니다",
+      "회사의 고의 또는 중대한 과실",
+      'termsPolicyEffectiveDateKo = "2026년 6월 14일"',
       "support@dvem.ai",
       "홈으로 돌아가기",
       'href="/"',
@@ -64,6 +96,7 @@ describe("policy page sources", () => {
       "Supabase",
       "OpenAI API",
       "국외에서 제공될 수 있습니다",
+      "회사는 주민등록번호를 수집하지 않습니다",
       "만 14세 미만은 현재 버전에서 서비스를 이용할 수 없습니다",
       "법정대리인 동의가 필요하며",
       "본 서비스는 건강정보, 질병정보, 정신질환 정보",
@@ -158,7 +191,20 @@ describe("policy page sources", () => {
   });
 
   it("policy pages avoid final legal wording", () => {
-    const blockedMarkers = ["최종 확정", "법률 자문", "보장합니다"];
+    const blockedMarkers = [
+      "초안",
+      "사전 안내용",
+      "최종 약관이 아닙니다",
+      "결제 기능 공개 전에",
+      "추후 정리",
+      "별도 안내로 정리됩니다",
+      "어떠한 경우에도 환불 불가",
+      "무조건 환불 불가",
+      "회사는 책임지지 않습니다",
+      "최종 확정",
+      "법률 자문",
+      "보장합니다",
+    ];
 
     for (const source of policyPageSources) {
       for (const marker of blockedMarkers) {
