@@ -27,11 +27,12 @@ describe("report new page Toss launcher source", () => {
     expect(pageSource).toContain(
       'from "../../../components/payment/DevTossCheckoutLauncher"',
     );
-    expect(pageSource).toContain("입력 정보 확인");
+    expect(pageSource).toContain("입력값 최종 확인");
     expect(pageSource).toContain("전체 리포트");
     expect(pageSource).toContain("정가 1,290원");
     expect(pageSource).toContain("런칭가 990원");
     expect(pageSource).toContain("결제금액 990원");
+    expect(pageSource).toContain("onEditInput");
     expect(pageSource).toContain("정식 결제 연결 준비 중입니다.");
     expect(pageSource).toContain("DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED ? (");
     expect(pageSource).toContain("inputSnapshot={checkoutInputSnapshot}");

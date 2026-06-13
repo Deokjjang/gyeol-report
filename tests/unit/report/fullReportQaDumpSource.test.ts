@@ -44,7 +44,7 @@ describe("full report QA dump source", () => {
   });
 
   it("keeps public report UI paid-first without report fulfillment", () => {
-    expect(pageSource).toContain("입력 정보 확인");
+    expect(pageSource).toContain("입력값 최종 확인");
     expect(pageSource).toContain("전체 리포트");
     expect(pageSource).toContain("990원 결제하고 리포트 생성하기");
     expect(pageSource).toContain("정식 결제 연결 준비 중입니다.");

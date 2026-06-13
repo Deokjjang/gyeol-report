@@ -57,7 +57,7 @@ describe("launch flag UI boundary source", () => {
   it("keeps report new page safe checkout preparation copy visible", () => {
     const source = readFile("src/app/report/new/page.tsx");
     const expectedMarkers = [
-      "입력 정보 확인",
+      "입력값 최종 확인",
       "전체 리포트",
       "정가 1,290원",
       "런칭가 990원",
@@ -67,6 +67,7 @@ describe("launch flag UI boundary source", () => {
       "심사 및 결제 승인 연동 후 전체 리포트 구매가 가능합니다.",
       "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.",
       "inputSnapshot={checkoutInputSnapshot}",
+      "onEditInput",
     ];
 
     for (const marker of expectedMarkers) {

@@ -221,9 +221,39 @@ describe("DevTossCheckoutLauncher", () => {
       <Component inputSnapshot={validInputSnapshot} />,
     );
 
-    expect(html).toContain("Toss 결제창 테스트");
-    expect(html).toContain("결제 성공 후 임시 승인 대기 화면으로 이동합니다.");
+    expect(html).toContain("결제 직전 확인");
+    expect(html).toContain("입력값 최종 확인");
+    expect(html).toContain("결제 정보");
+    expect(html).toContain("서비스 제공 방식");
+    expect(html).toContain("환불 및 청약철회 안내");
+    expect(html).toContain("미성년자 안내");
+    expect(html).toContain("약관 및 개인정보 동의");
+    expect(html).toContain("이름");
+    expect(html).toContain("민지");
+    expect(html).toContain("생년월일");
+    expect(html).toContain("2001-01-02");
+    expect(html).toContain("출생시간");
+    expect(html).toContain("08:30");
+    expect(html).toContain("성별");
+    expect(html).toContain("남성");
+    expect(html).toContain("MBTI");
+    expect(html).toContain("INFP");
+    expect(html).toContain("상품명");
+    expect(html).toContain("사주×MBTI 종합 리포트");
+    expect(html).toContain("정가");
+    expect(html).toContain("1,290원");
+    expect(html).toContain("총 결제금액");
+    expect(html).toContain("990원");
+    expect(html).toContain("결제 후 온라인 열람");
+    expect(html).toContain("자동 생성 디지털 리포트");
+    expect(html).toContain("생성 시작 후 단순 변심에 의한 환불이 제한될 수 있으며");
+    expect(html).toContain("이용약관");
+    expect(html).toContain("개인정보처리방침");
+    expect(html).toContain("환불정책");
+    expect(html).toContain("사업자정보");
+    expect(html).toContain("[필수] 만 14세 이상입니다.");
     expect(html).toContain("990원 결제하고 리포트 생성하기");
+    expect(html).toContain("disabled");
   });
 
   it("uses the provided inputSnapshot in the checkout prepare request", async () => {
@@ -238,6 +268,7 @@ describe("DevTossCheckoutLauncher", () => {
 
     const result = await launcherModule.runDevTossCheckout(
       validInputSnapshot,
+      launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
       harness.runtime,
     );
 
@@ -278,6 +309,7 @@ describe("DevTossCheckoutLauncher", () => {
 
     const result = await launcherModule.runDevTossCheckout(
       missingInputSnapshot,
+      launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
       harness.runtime,
     );
 
@@ -310,6 +342,104 @@ describe("DevTossCheckoutLauncher", () => {
     expect(html).toContain("disabled");
   });
 
+  it("blocks checkout until all legal confirmations are checked", async () => {
+    const launcherModule = await importLauncherModule(true);
+    const harness = createHarness();
+
+    const result = await launcherModule.runDevTossCheckout(
+      validInputSnapshot,
+      launcherModule.emptyDevTossCheckoutLegalConfirmations,
+      harness.runtime,
+    );
+
+    expect(result.ok).toBe(false);
+
+    if (result.ok) {
+      throw new Error("expected legal confirmation failure");
+    }
+
+    expect(result.detail).toEqual({
+      stage: "input_validation",
+      errorCode: "REPORT_LEGAL_CONFIRMATION_REQUIRED",
+      errorMessage: "결제 전 필수 확인 항목에 모두 동의해 주세요.",
+    });
+    expect(harness.fetchCalls).toHaveLength(0);
+    expect(harness.launchInputs).toHaveLength(0);
+  });
+
+  it("calculates age gate with a deterministic date", async () => {
+    const launcherModule = await importLauncherModule(true);
+    const asOfDate = new Date(Date.UTC(2026, 5, 14));
+
+    expect(
+      launcherModule.getDevTossCheckoutAgeGateStatus("2012-06-14", asOfDate),
+    ).toBe("minor");
+    expect(
+      launcherModule.getDevTossCheckoutAgeGateStatus("2012-06-15", asOfDate),
+    ).toBe("under_14");
+    expect(
+      launcherModule.getDevTossCheckoutAgeGateStatus("2007-06-14", asOfDate),
+    ).toBe("adult");
+  });
+
+  it("requires minor legal representative confirmation for users under 19", async () => {
+    const launcherModule = await importLauncherModule(true);
+    const asOfDate = new Date(Date.UTC(2026, 5, 14));
+    const minorInputSnapshot = {
+      ...validInputSnapshot,
+      birthDate: "2010-01-02",
+    } satisfies DevTossCheckoutInputSnapshot;
+
+    expect(
+      launcherModule.isDevTossCheckoutLegalConfirmationComplete(
+        minorInputSnapshot,
+        launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
+        asOfDate,
+      ),
+    ).toBe(false);
+    expect(
+      launcherModule.isDevTossCheckoutLegalConfirmationComplete(
+        minorInputSnapshot,
+        {
+          ...launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
+          minorLegalRepresentative: true,
+        },
+        asOfDate,
+      ),
+    ).toBe(true);
+  });
+
+  it("renders under-14 block and minor legal notice", async () => {
+    const launcherModule = await importLauncherModule(true);
+    const Component = launcherModule.default;
+
+    const under14Html = renderToStaticMarkup(
+      <Component
+        inputSnapshot={{
+          ...validInputSnapshot,
+          birthDate: "2020-01-02",
+        }}
+      />,
+    );
+    const minorHtml = renderToStaticMarkup(
+      <Component
+        inputSnapshot={{
+          ...validInputSnapshot,
+          birthDate: "2010-01-02",
+        }}
+      />,
+    );
+
+    expect(under14Html).toContain(
+      "만 14세 미만은 법정대리인 동의 확인 절차 없이 서비스를 이용할 수 없습니다.",
+    );
+    expect(under14Html).toContain("현재 버전에서는 만 14세 이상만 이용할 수 있습니다.");
+    expect(minorHtml).toContain("법정대리인 동의가 필요하며");
+    expect(minorHtml).toContain(
+      "동의가 없는 경우 본인 또는 법정대리인이 계약을 취소할 수 있음을 확인했습니다.",
+    );
+  });
+
   it("requires a Toss checkout request in the prepare API response", async () => {
     const launcherModule = await importLauncherModule(true);
     const harness = createHarness({
@@ -320,6 +450,7 @@ describe("DevTossCheckoutLauncher", () => {
 
     const result = await launcherModule.runDevTossCheckout(
       validInputSnapshot,
+      launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
       harness.runtime,
     );
 
@@ -344,6 +475,7 @@ describe("DevTossCheckoutLauncher", () => {
 
     const result = await launcherModule.runDevTossCheckout(
       validInputSnapshot,
+      launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
       harness.runtime,
     );
 
@@ -370,6 +502,7 @@ describe("DevTossCheckoutLauncher", () => {
 
     const result = await launcherModule.runDevTossCheckout(
       validInputSnapshot,
+      launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
       harness.runtime,
     );
 
@@ -384,7 +517,13 @@ describe("DevTossCheckoutLauncher", () => {
       "DevTossCheckoutInputSnapshot",
       "inputSnapshot",
       "isDevTossCheckoutInputComplete",
-      "Toss 결제창 테스트",
+      "입력값 최종 확인",
+      "결제 정보",
+      "서비스 제공 방식",
+      "환불 및 청약철회 안내",
+      "약관 및 개인정보 동의",
+      "만 14세 미만",
+      "법정대리인",
       "990원 결제하고 리포트 생성하기",
       "/api/payment-checkout/prepare",
       "launchTossCheckout",
@@ -395,11 +534,21 @@ describe("DevTossCheckoutLauncher", () => {
       "sdk_load",
       "request_payment",
       "[masked_key]",
+      "REPORT_LEGAL_CONFIRMATION_REQUIRED",
+      "REPORT_USER_UNDER_14",
+    ];
+    const riskCopyMarkers = [
+      "진단",
+      "치료",
+      "적중률",
+      "100%",
+      "보장",
+      "반드시",
+      "운명 확정",
     ];
     const blockedMarkers = [
       "1996-12-06",
       "ENTJ",
-      "FEMALE",
       "devTossCheckoutPrepareBody",
       "/api/reports/create",
       "TOSS" + "_SECRET" + "_KEY",
@@ -423,6 +572,10 @@ describe("DevTossCheckoutLauncher", () => {
     }
 
     for (const marker of blockedMarkers) {
+      expect(componentSource).not.toContain(marker);
+    }
+
+    for (const marker of riskCopyMarkers) {
       expect(componentSource).not.toContain(marker);
     }
   });

@@ -35,7 +35,7 @@ describe("new report page source", () => {
   it("renders paid-first input confirmation and product summary", () => {
     const requiredMarkers = [
       "종합 리포트 입력",
-      "입력 정보 확인",
+      "입력값 최종 확인",
       "입력한 정보로 전체 리포트를 생성합니다.",
       "결제 승인 후 리포트가 생성되며, 결과는 온라인 열람 페이지로 제공됩니다.",
       "전체 리포트",
@@ -43,9 +43,10 @@ describe("new report page source", () => {
       "정가 1,290원",
       "런칭가 990원",
       "결제금액 990원",
-      "디지털 리포트",
+      "자동 생성 디지털 리포트",
       "정식 결제 연결 준비 중입니다.",
       "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.",
+      "onEditInput",
     ];
 
     for (const marker of requiredMarkers) {
@@ -153,7 +154,7 @@ describe("new report page source", () => {
   it("guards checkout until required input is present", () => {
     const requiredMarkers = [
       "isBirthTimeStepValid",
-      "생년월일을 입력해 주세요.",
+      "이름과 생년월일을 입력해 주세요.",
       "성별과 MBTI를 선택해 주세요.",
       "isCheckoutInputComplete",
       "REQUIRED_CHECKOUT_INPUT_MESSAGE_KO",

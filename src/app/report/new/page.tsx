@@ -13,7 +13,7 @@ const ACTIVE_REPORT_PRODUCT = GYEOL_PRODUCTS[0];
 const ACTIVE_REPORT_LIST_PRICE_LABEL_KO = "정가 1,290원";
 const ACTIVE_REPORT_SALE_PRICE_LABEL_KO = "런칭가 990원";
 const ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO = "결제금액 990원";
-const ACTIVE_REPORT_FORMAT_LABEL_KO = "디지털 리포트";
+const ACTIVE_REPORT_FORMAT_LABEL_KO = "자동 생성 디지털 리포트";
 const CHECKOUT_CTA_LABEL_KO = "990원 결제하고 리포트 생성하기";
 const REQUIRED_CHECKOUT_INPUT_MESSAGE_KO =
   "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.";
@@ -202,8 +202,11 @@ export default function NewReportPage() {
   }
 
   function goToNextStep() {
-    if (currentStep === 0 && birthDate.trim().length === 0) {
-      setStepError("생년월일을 입력해 주세요.");
+    if (
+      currentStep === 0 &&
+      (displayName.trim().length === 0 || birthDate.trim().length === 0)
+    ) {
+      setStepError("이름과 생년월일을 입력해 주세요.");
       return;
     }
 
@@ -257,8 +260,8 @@ export default function NewReportPage() {
                 {selectedStep.labelKo} · {selectedStep.titleKo}
               </h2>
               <p className="text-sm leading-6 text-neutral-400">
-                입력한 정보는 결제 주문의 inputSnapshot으로 저장되어 이후
-                전체 리포트 생성에 사용됩니다.
+                입력한 정보는 결제 주문 정보와 함께 보관되어 이후 전체 리포트
+                생성에 사용됩니다.
               </p>
             </div>
 
@@ -541,7 +544,7 @@ export default function NewReportPage() {
                 <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
                   <div className="space-y-2">
                     <h3 className="text-base font-semibold text-neutral-100">
-                      입력 정보 확인
+                      입력값 최종 확인
                     </h3>
                     <p className="text-sm leading-6 text-neutral-400">
                       입력한 정보로 전체 리포트를 생성합니다. 결제 승인 후 리포트가 생성되며, 결과는 온라인 열람 페이지로 제공됩니다.
@@ -639,6 +642,10 @@ export default function NewReportPage() {
                     <DevTossCheckoutLauncher
                       inputSnapshot={checkoutInputSnapshot}
                       ctaLabelKo={CHECKOUT_CTA_LABEL_KO}
+                      onEditInput={() => {
+                        setStepError("");
+                        setCurrentStep(0);
+                      }}
                     />
                   ) : (
                     <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
