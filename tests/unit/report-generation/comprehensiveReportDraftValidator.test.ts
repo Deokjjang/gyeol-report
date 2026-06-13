@@ -4,7 +4,12 @@ import type {
   ComprehensiveReportV1Draft,
   ComprehensiveReportV2Draft,
 } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
-import { validateComprehensiveReportDraft } from "../../../src/lib/report-generation/comprehensiveReportDraftValidator";
+import {
+  areAllDraftValidationErrorsRepairable,
+  getComprehensiveReportDraftValidationIssues,
+  isRepairableDraftValidationError,
+  validateComprehensiveReportDraft,
+} from "../../../src/lib/report-generation/comprehensiveReportDraftValidator";
 import {
   COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
   type ComprehensiveReportSectionDefinition,
@@ -348,6 +353,98 @@ describe("comprehensive report draft validator", () => {
     expect(shortResult.ok).toBe(false);
     expect(shortResult.errors.join("\n")).toContain(
       "CHAPTER_BODY_TOO_SHORT: work_money_study",
+    );
+  });
+
+  it("classifies repairable quality issues separately from fatal safety issues", () => {
+    const issues = getComprehensiveReportDraftValidationIssues([
+      "CHAPTER_BODY_TOO_SHORT: love_relationships",
+      "DIRECT_HIT_READING_TOO_GENERIC: opening",
+      "UNSUPPORTED_SAJU_TERM: 도화살",
+      "VISIBLE_EVIDENCE_DEBUG_LABEL: 분석 근거 보기",
+      "REPEATED_SENTENCE: 같은 문장입니다.",
+    ]);
+
+    expect(isRepairableDraftValidationError("CHAPTER_BODY_TOO_SHORT: love_relationships")).toBe(
+      true,
+    );
+    expect(isRepairableDraftValidationError("DIRECT_HIT_READING_TOO_GENERIC: opening")).toBe(
+      true,
+    );
+    expect(isRepairableDraftValidationError("UNSUPPORTED_SAJU_TERM: 도화살")).toBe(
+      false,
+    );
+    expect(areAllDraftValidationErrorsRepairable([
+      "CHAPTER_BODY_TOO_SHORT: love_relationships",
+      "LOVE_COMPLEMENT_MISSING",
+    ])).toBe(true);
+    expect(areAllDraftValidationErrorsRepairable([
+      "CHAPTER_BODY_TOO_SHORT: love_relationships",
+      "UNSUPPORTED_SAJU_TERM: 도화살",
+    ])).toBe(false);
+    expect(issues).toEqual([
+      {
+        code: "CHAPTER_BODY_TOO_SHORT",
+        message: "CHAPTER_BODY_TOO_SHORT: love_relationships",
+        severity: "repairable",
+        path: "love_relationships",
+      },
+      {
+        code: "DIRECT_HIT_READING_TOO_GENERIC",
+        message: "DIRECT_HIT_READING_TOO_GENERIC: opening",
+        severity: "repairable",
+        path: "opening",
+      },
+      {
+        code: "UNSUPPORTED_SAJU_TERM",
+        message: "UNSUPPORTED_SAJU_TERM: 도화살",
+        severity: "fatal",
+        path: "도화살",
+      },
+      {
+        code: "VISIBLE_EVIDENCE_DEBUG_LABEL",
+        message: "VISIBLE_EVIDENCE_DEBUG_LABEL: 분석 근거 보기",
+        severity: "fatal",
+        path: "분석 근거 보기",
+      },
+      {
+        code: "REPEATED_SENTENCE",
+        message: "REPEATED_SENTENCE: 같은 문장입니다.",
+        severity: "fatal",
+        path: "같은 문장입니다.",
+      },
+    ]);
+  });
+
+  it("accepts a slightly short V2 body when hit and solution blocks carry enough density", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "love_relationships"
+          ? {
+              ...chapter,
+              body:
+                "갑목과 갑신일주를 먼저 놓고 연애의 속도를 읽습니다. 덕민님은 호감이 있어도 감정 표현보다 해결 모드가 먼저 켜질 수 있습니다. 그래서 관계에서는 따뜻한 말보다 결론이 빨리 나가고, 상대는 그 속도를 차갑게 받아들일 수 있습니다.",
+              hitReadingLines: [
+                "덕민님, 상대가 감정을 말할 때 위로보다 해결책이 먼저 떠오르는 상황 자주 나오지 않나요? 그 순간 덕민님은 차갑게 굴려는 게 아니라 관계를 빨리 안정시키려는 쪽으로 움직입니다.",
+                "호감이 있어도 따뜻한 말보다 지금 무엇을 정리해야 하는지가 먼저 보일 수 있습니다. 그래서 상대는 애정이 없다고 느끼지만, 덕민님 입장에서는 책임지는 방식으로 마음을 보여주는 셈입니다.",
+                "좋아하는 사람에게도 감정 표현은 늦고 책임지는 행동이 먼저 나올 수 있습니다. 연애에서 이 패턴을 모르면 좋은 의도도 업무 처리처럼 보일 수 있습니다.",
+              ],
+              solutionLines: [
+                "맞는 상대: 감정을 천천히 풀어주고 덕민님의 과열을 식혀주는 사람이 맞기 쉽습니다. 말의 속도를 늦춰 주면서도 생활의 책임은 흐리지 않는 사람이 오래 맞습니다.",
+                "피해야 할 상대: 감정 기복이 크고 책임이 흐릿한 사람은 조심할 상대입니다. 계속 확인받으려 하거나 실행 없이 말만 많은 관계는 덕민님의 피로를 빠르게 키울 수 있습니다.",
+                "보완 기운: 수 기운과 화 기운처럼 감정 완충과 표현 온도를 보태는 타입이 좋습니다. 여유 있게 식혀 주고 짧게라도 따뜻한 표현을 밖으로 꺼내게 해 주는 사람이 보완적으로 느껴질 수 있습니다.",
+                "MBTI 예시: ISFP, INFP, INTP 유형은 보완적으로 느껴질 수 있지만 MBTI만으로 궁합을 단정하지 않습니다. 실제로는 생활 태도, 감정 온도, 책임감이 함께 맞는지를 봐야 합니다.",
+              ],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.errors.join("\n")).not.toContain(
+      "CHAPTER_BODY_TOO_SHORT: love_relationships",
     );
   });
 

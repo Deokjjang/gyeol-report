@@ -128,6 +128,12 @@ function writeSafeFailure(error: unknown): void {
     if (error.requestId !== undefined) {
       writeErrorStatus(`requestId: ${error.requestId}`);
     }
+    if (error.repairAttempted === true) {
+      writeErrorStatus("quality repair: attempted");
+      writeErrorStatus(
+        `quality repair: ${error.repairPassed === true ? "passed" : "failed"}`,
+      );
+    }
     if (error.validationErrors !== undefined && error.validationErrors.length > 0) {
       writeErrorStatus("errors:");
       for (const validationError of error.validationErrors) {
@@ -202,6 +208,11 @@ async function run(): Promise<void> {
   writeStatus(
     `first chapter: ${firstChapter?.titleKo ?? "none"}`,
   );
+  for (const warning of result.warnings) {
+    if (warning.startsWith("quality repair:")) {
+      writeStatus(warning);
+    }
+  }
   writeStatus("done");
 }
 

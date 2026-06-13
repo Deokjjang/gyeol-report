@@ -5,13 +5,17 @@ import type {
   ComprehensiveReportDraft,
   ComprehensiveReportV2ProfileTable,
 } from "./comprehensiveReportDraftTypes";
-import { validateComprehensiveReportDraft } from "./comprehensiveReportDraftValidator";
+import {
+  areAllDraftValidationErrorsRepairable,
+  validateComprehensiveReportDraft,
+} from "./comprehensiveReportDraftValidator";
 import {
   callOpenAIReportWriter,
   isOpenAIReportWriterClientError,
   type OpenAIReportWriterClientConfig,
 } from "./openaiReportWriterClient";
 import {
+  buildOpenAIComprehensiveReportRepairMessages,
   buildOpenAIComprehensiveReportWriterMessages,
   deriveAllowedSajuTermsFromEvidencePacket,
 } from "./openaiReportWriterPrompt";
@@ -35,6 +39,8 @@ export type SafeReportGenerationError = {
   readonly diagnosticMessage?: string;
   readonly requestId?: string;
   readonly errorParam?: string;
+  readonly repairAttempted?: boolean;
+  readonly repairPassed?: boolean;
 };
 
 function formatSafeReportGenerationMessage(
@@ -70,6 +76,12 @@ function formatSafeReportGenerationMessage(
   if (input.requestId !== undefined) {
     lines.push(`requestId: ${input.requestId}`);
   }
+  if (input.repairAttempted === true) {
+    lines.push("quality repair: attempted");
+    lines.push(
+      `quality repair: ${input.repairPassed === true ? "passed" : "failed"}`,
+    );
+  }
 
   return lines.join("\n");
 }
@@ -88,6 +100,8 @@ export class SafeReportGenerationFailure
   readonly diagnosticMessage?: string;
   readonly requestId?: string;
   readonly errorParam?: string;
+  readonly repairAttempted?: boolean;
+  readonly repairPassed?: boolean;
 
   constructor(input: SafeReportGenerationError) {
     super(formatSafeReportGenerationMessage(input));
@@ -117,6 +131,12 @@ export class SafeReportGenerationFailure
     }
     if (input.errorParam !== undefined) {
       this.errorParam = input.errorParam;
+    }
+    if (input.repairAttempted !== undefined) {
+      this.repairAttempted = input.repairAttempted;
+    }
+    if (input.repairPassed !== undefined) {
+      this.repairPassed = input.repairPassed;
     }
   }
 }
@@ -154,6 +174,8 @@ export function isSafeReportGenerationError(
     readonly diagnosticMessage?: unknown;
     readonly requestId?: unknown;
     readonly errorParam?: unknown;
+    readonly repairAttempted?: unknown;
+    readonly repairPassed?: unknown;
   };
 
   return (
@@ -168,7 +190,11 @@ export function isSafeReportGenerationError(
     (candidate.diagnosticMessage === undefined ||
       typeof candidate.diagnosticMessage === "string") &&
     (candidate.requestId === undefined || typeof candidate.requestId === "string") &&
-    (candidate.errorParam === undefined || typeof candidate.errorParam === "string")
+    (candidate.errorParam === undefined || typeof candidate.errorParam === "string") &&
+    (candidate.repairAttempted === undefined ||
+      typeof candidate.repairAttempted === "boolean") &&
+    (candidate.repairPassed === undefined ||
+      typeof candidate.repairPassed === "boolean")
   );
 }
 
@@ -311,11 +337,79 @@ export async function generateComprehensiveReportDraft(input: {
   });
 
   if (!validation.ok || validation.value === undefined) {
-    throw new SafeReportGenerationFailure({
-      code: "OPENAI_REPORT_WRITER_INVALID_JSON",
-      stage: "draft_validation",
+    if (!areAllDraftValidationErrorsRepairable(validation.errors)) {
+      throw new SafeReportGenerationFailure({
+        code: "OPENAI_REPORT_WRITER_INVALID_JSON",
+        stage: "draft_validation",
+        validationErrors: validation.errors,
+      });
+    }
+
+    const repairMessages = buildOpenAIComprehensiveReportRepairMessages({
+      userDisplayName: input.userDisplayName,
+      mbtiType: input.mbtiType,
+      allowedSajuTerms,
+      draftJson: JSON.stringify(parsed, null, 2),
       validationErrors: validation.errors,
     });
+    let repairResult: Awaited<ReturnType<typeof callOpenAIReportWriter>>;
+
+    try {
+      repairResult = await callOpenAIReportWriter({
+        config: input.config,
+        messages: repairMessages,
+        jsonSchema: openAIComprehensiveReportV2NarrativeDraftJsonSchema,
+      });
+    } catch (error) {
+      throw new SafeReportGenerationFailure({
+        code: getSafeCauseCode(error),
+        stage: "openai",
+        repairAttempted: true,
+        repairPassed: false,
+        ...getOpenAIRequestDiagnostics(error),
+      });
+    }
+
+    let repairParsed: unknown;
+
+    try {
+      repairParsed = JSON.parse(repairResult.rawText) as unknown;
+    } catch {
+      throw new SafeReportGenerationFailure({
+        code: "OPENAI_REPORT_WRITER_INVALID_JSON",
+        stage: "json_parse",
+        validationErrors: ["REPAIR_JSON_PARSE_FAILED"],
+        repairAttempted: true,
+        repairPassed: false,
+      });
+    }
+
+    const repairDraftCandidate = attachDeterministicProfileTable({
+      parsed: repairParsed,
+      evidencePacket: input.evidencePacket,
+      mbtiType: input.mbtiType,
+      profileTable: input.profileTable,
+    });
+    const repairValidation = validateComprehensiveReportDraft(repairDraftCandidate, {
+      allowedSajuTerms,
+      allowedMbtiTerms: [input.mbtiType],
+    });
+
+    if (!repairValidation.ok || repairValidation.value === undefined) {
+      throw new SafeReportGenerationFailure({
+        code: "OPENAI_REPORT_WRITER_INVALID_JSON",
+        stage: "draft_validation",
+        validationErrors: repairValidation.errors,
+        repairAttempted: true,
+        repairPassed: false,
+      });
+    }
+
+    return {
+      draft: repairValidation.value,
+      rawText: repairResult.rawText,
+      warnings: ["quality repair: attempted", "quality repair: passed"],
+    };
   }
 
   return {

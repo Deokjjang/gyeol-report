@@ -325,6 +325,32 @@ describe("generateAndPersistComprehensiveReport", () => {
     expect(mockSaveComprehensiveReportDraftSnapshot).not.toHaveBeenCalled();
   });
 
+  it("preserves repair diagnostics from the writer", async () => {
+    mockGenerateComprehensiveReportDraft.mockRejectedValue(
+      new SafeReportGenerationFailure({
+        code: "OPENAI_REPORT_WRITER_INVALID_JSON",
+        stage: "draft_validation",
+        validationErrors: ["CHAPTER_BODY_TOO_SHORT: love_relationships"],
+        repairAttempted: true,
+        repairPassed: false,
+      }),
+    );
+
+    const error = await expectSafeOrchestratorFailure(
+      generateAndPersistComprehensiveReport(createInput()),
+    );
+
+    expect(error).toMatchObject({
+      code: "COMPREHENSIVE_REPORT_GENERATION_FAILED",
+      stage: "draft_validation",
+      causeCode: "OPENAI_REPORT_WRITER_INVALID_JSON",
+      validationErrors: ["CHAPTER_BODY_TOO_SHORT: love_relationships"],
+      repairAttempted: true,
+      repairPassed: false,
+    });
+    expect(mockSaveComprehensiveReportDraftSnapshot).not.toHaveBeenCalled();
+  });
+
   it("preserves safe OpenAI request diagnostics from the writer", async () => {
     mockGenerateComprehensiveReportDraft.mockRejectedValue(
       new SafeReportGenerationFailure({

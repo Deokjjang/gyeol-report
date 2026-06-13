@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import { buildOpenAIComprehensiveReportWriterMessages } from "../../../src/lib/report-generation/openaiReportWriterPrompt";
+import {
+  buildOpenAIComprehensiveReportRepairMessages,
+  buildOpenAIComprehensiveReportWriterMessages,
+} from "../../../src/lib/report-generation/openaiReportWriterPrompt";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../../../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
 import type { ComputedSajuFacts } from "../../../src/lib/report-knowledge/sajuComputedFactsTypes";
 
@@ -138,5 +141,32 @@ describe("OpenAI report writer prompt", () => {
     for (const marker of blockedMarkers) {
       expect(combined).not.toContain(marker);
     }
+  });
+
+  it("builds a repair prompt for same-schema narrative fixes", () => {
+    const messages = buildOpenAIComprehensiveReportRepairMessages({
+      userDisplayName: "덕민",
+      mbtiType: "ENTJ",
+      allowedSajuTerms: ["갑목", "갑신일주", "현침살"],
+      draftJson:
+        "{\"version\":\"comprehensive_v2_draft\",\"chapters\":[],\"finalAdvice\":\"짧음\"}",
+      validationErrors: [
+        "CHAPTER_BODY_TOO_SHORT: love_relationships",
+        "DIRECT_HIT_READING_TOO_GENERIC: opening",
+      ],
+    });
+    const combined = [messages.system, messages.developer, messages.user].join("\n");
+
+    expect(combined).toContain("validation errors");
+    expect(combined).toContain("CHAPTER_BODY_TOO_SHORT: love_relationships");
+    expect(combined).toContain("same JSON schema");
+    expect(combined).toContain("profileTable 출력 금지");
+    expect(combined).toContain("절대 profileTable을 출력하지 않는다");
+    expect(combined).toContain("hitReadingLines");
+    expect(combined).toContain("solutionLines");
+    expect(combined).toContain("본문을 더 길고 구체적으로 보강하라");
+    expect(combined).toContain("사주 용어는 evidence에 있는 것만 사용하라");
+    expect(combined).toContain("갑목");
+    expect(combined).not.toContain("도화살");
   });
 });

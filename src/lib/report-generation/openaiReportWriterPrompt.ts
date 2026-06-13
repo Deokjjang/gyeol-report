@@ -282,3 +282,62 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
     ].join("\n"),
   };
 }
+
+export function buildOpenAIComprehensiveReportRepairMessages(input: {
+  readonly userDisplayName?: string;
+  readonly mbtiType: string;
+  readonly allowedSajuTerms: readonly string[];
+  readonly draftJson: string;
+  readonly validationErrors: readonly string[];
+}): OpenAIReportWriterMessages {
+  const displayName =
+    input.userDisplayName !== undefined && input.userDisplayName.trim().length > 0
+      ? input.userDisplayName.trim()
+      : "사용자";
+  const allowedSajuTermLines =
+    input.allowedSajuTerms.length > 0
+      ? input.allowedSajuTerms.map((term) => `- ${term}`).join("\n")
+      : "- 없음";
+
+  return {
+    system: [
+      "You are repairing a Korean Saju-first paid report JSON.",
+      "Use the same JSON schema as the original comprehensive_v2_draft narrative output.",
+      "Return valid JSON only.",
+      "Do not output profileTable.",
+      "Do not invent Saju facts.",
+      "Use only the allowed Saju terms.",
+      "Do not make MBTI the primary source.",
+    ].join("\n"),
+    developer: [
+      "다음 JSON을 같은 schema로 다시 작성하라.",
+      "절대 profileTable을 출력하지 않는다.",
+      "profileTable 출력 금지.",
+      "아래 validation errors만 고쳐라.",
+      "사주 용어는 evidence에 있는 것만 사용하라.",
+      "목록에 없는 신살, 귀인, 일주, 십성, 오행, 격국, 패턴은 절대 언급하지 마라.",
+      "본문을 더 길고 구체적으로 보강하라.",
+      "hitReadingLines를 실제 장면 중심으로 바꿔라.",
+      "solutionLines를 구체적 처방으로 바꿔라.",
+      "love_relationships.solutionLines는 맞는 상대, 피해야 할 상대, 보완 기운, MBTI 예시를 모두 포함한다.",
+      "MBTI 예시에는 MBTI만으로 궁합을 단정하지 않는다는 주의를 넣는다.",
+      "work_money_study는 자격증, 전문서, 직무 학습, 사업 학습 중 하나 이상을 포함한다.",
+      "risk_and_growth는 수/화/토 등 오행 보완 생활 처방을 포함한다.",
+      "final_message는 체감형 명중보다 정리와 각인이 우선이다.",
+    ].join("\n"),
+    user: [
+      `사용자 이름: ${displayName}`,
+      `MBTI: ${input.mbtiType}`,
+      "이번 repair에서 사용할 수 있는 사주 용어:",
+      allowedSajuTermLines,
+      "validation errors:",
+      ...input.validationErrors.map((error) => `- ${error}`),
+      "수정할 기존 JSON:",
+      input.draftJson,
+      "위 JSON을 comprehensive_v2_draft narrative fields만 포함하는 JSON으로 다시 작성하라.",
+      "version, productType, openingTitle, openingSummary, coreLine, chapters, finalAdvice, safetyNotes만 출력한다.",
+      "chapterId, titleKo, headline, hitReadingLines, body, solutionLines, keyPhrases, sajuTermsUsed, mbtiTermsUsed를 유지한다.",
+      "profileTable은 시스템이 deterministic facts로 붙이므로 절대 출력하지 않는다.",
+    ].join("\n"),
+  };
+}

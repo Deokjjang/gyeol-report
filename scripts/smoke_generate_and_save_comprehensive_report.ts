@@ -142,6 +142,8 @@ function writeSafeGenerationFailure(error: {
   readonly errorParam?: string;
   readonly requestId?: string;
   readonly validationErrors?: readonly string[];
+  readonly repairAttempted?: boolean;
+  readonly repairPassed?: boolean;
 }): void {
   writeErrorStatus("failed");
   writeErrorStatus(`code: ${error.code}`);
@@ -166,6 +168,12 @@ function writeSafeGenerationFailure(error: {
   }
   if (error.requestId !== undefined) {
     writeErrorStatus(`requestId: ${error.requestId}`);
+  }
+  if (error.repairAttempted === true) {
+    writeErrorStatus("quality repair: attempted");
+    writeErrorStatus(
+      `quality repair: ${error.repairPassed === true ? "passed" : "failed"}`,
+    );
   }
   if (error.validationErrors !== undefined && error.validationErrors.length > 0) {
     writeErrorStatus("errors:");
@@ -287,6 +295,11 @@ async function run(): Promise<void> {
   writeStatus(`draft version: ${generated.snapshotVersion}`);
   writeStatus(`status: ${generated.status}`);
   writeStatus("quality guard: passed");
+  for (const warning of generated.warnings) {
+    if (warning.startsWith("quality repair:")) {
+      writeStatus(warning);
+    }
+  }
   writeStatus(`chapters: ${generated.chapterCount}`);
   writeStatus(`core line: ${generated.coreLine}`);
   writeStatus(`result url: http://localhost:3000/reports/${generated.reportId}`);

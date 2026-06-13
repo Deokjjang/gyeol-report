@@ -28,6 +28,41 @@ export type ComprehensiveReportDraftValidationOptions = {
   readonly allowedMbtiTerms?: readonly string[];
 };
 
+export type ComprehensiveReportDraftValidationIssueSeverity =
+  | "fatal"
+  | "repairable";
+
+export type ComprehensiveReportDraftValidationIssue = {
+  readonly code: string;
+  readonly message: string;
+  readonly severity: ComprehensiveReportDraftValidationIssueSeverity;
+  readonly path?: string;
+};
+
+const repairableDraftValidationErrorCodes = [
+  "CHAPTER_BODY_TOO_SHORT",
+  "CHAPTER_BODY_SAME_AS_HEADLINE",
+  "CHAPTER_SAJU_TERMS_MISSING",
+  "CHAPTER_SAJU_TERM_EXPLANATION_MISSING",
+  "DIRECT_HIT_READING_TOO_GENERIC",
+  "DIRECT_HIT_READING_MISSING",
+  "SOLUTION_LINES_MISSING",
+  "SOLUTION_LINES_TOO_GENERIC",
+  "LOVE_PARTNER_FIT_MISSING",
+  "LOVE_BAD_MATCH_PATTERN_MISSING",
+  "LOVE_BAD_MATCH_MISSING",
+  "LOVE_COMPLEMENT_MISSING",
+  "LOVE_MBTI_CAUTION_OR_EXAMPLE_MISSING",
+  "LOVE_MBTI_CAUTION_MISSING",
+  "WORK_STUDY_SCOPE_MISSING",
+  "WORK_STUDY_CONTEXT_MISSING",
+  "ELEMENT_REMEDY_MISSING",
+  "FINAL_MESSAGE_CLOSING_MISSING",
+] as const;
+const repairableDraftValidationErrorCodeSet = new Set<string>(
+  repairableDraftValidationErrorCodes,
+);
+
 const allowedTones = [
   "saju_first",
   "conversational",
@@ -190,14 +225,24 @@ const genericPlaceholderBodies = [
 ] as const;
 const interpretationBodyMinimumLength = 160;
 const v2ChapterBodyMinimumLengths = {
-  opening: 220,
-  saju_identity: 420,
-  personality_pattern: 420,
-  work_money_study: 520,
-  love_relationships: 520,
-  people_family_environment: 460,
-  risk_and_growth: 420,
-  final_message: 260,
+  opening: 180,
+  saju_identity: 360,
+  personality_pattern: 360,
+  work_money_study: 450,
+  love_relationships: 450,
+  people_family_environment: 420,
+  risk_and_growth: 360,
+  final_message: 220,
+} as const satisfies Record<ComprehensiveReportV2ChapterId, number>;
+const v2ChapterEffectiveMinimumLengths = {
+  opening: 420,
+  saju_identity: 650,
+  personality_pattern: 650,
+  work_money_study: 750,
+  love_relationships: 750,
+  people_family_environment: 700,
+  risk_and_growth: 650,
+  final_message: 420,
 } as const satisfies Record<ComprehensiveReportV2ChapterId, number>;
 const v2ChapterHitReadingMinimumCounts = {
   opening: 2,
@@ -234,6 +279,36 @@ const hitReadingConcreteMarkers = [
   "쉽습니다",
   "힘들 수 있습니다",
   "느껴질 수 있습니다",
+] as const;
+const hitReadingBehaviorMarkers = [
+  "상황",
+  "장면",
+  "회의",
+  "대화",
+  "상대",
+  "관계",
+  "연애",
+  "사람",
+  "가족",
+  "환경",
+  "일",
+  "돈",
+  "공부",
+  "자격증",
+  "전문서",
+  "직무",
+  "사업",
+  "감정",
+  "책임",
+  "정리",
+  "결론",
+  "해결",
+  "먼저",
+  "늦게",
+  "자주",
+  "쉽",
+  "힘들",
+  "피곤",
 ] as const;
 const genericHitReadingMarkers = [
   "성격이 좋습니다",
@@ -666,6 +741,86 @@ function appendUnsupportedSajuTermErrors(
   for (const match of removeLessSpecificMatches(unsupportedMatches)) {
     errors.push(`UNSUPPORTED_SAJU_TERM: ${match}`);
   }
+}
+
+function getDraftValidationErrorCode(error: string): string {
+  const trimmed = error.trim();
+  const colonIndex = trimmed.indexOf(":");
+
+  if (colonIndex > 0) {
+    return trimmed.slice(0, colonIndex).trim();
+  }
+  if (trimmed.startsWith("draft missing chapter")) {
+    return "CHAPTER_MISSING";
+  }
+  if (trimmed.startsWith("draft has duplicate chapter")) {
+    return "CHAPTER_DUPLICATE";
+  }
+  if (trimmed.includes("invalid chapter id")) {
+    return "INVALID_CHAPTER_ID";
+  }
+  if (trimmed.startsWith("profileTable is required")) {
+    return "PROFILE_TABLE_MISSING";
+  }
+  if (trimmed.startsWith("profileTable must be an object")) {
+    return "PROFILE_TABLE_INVALID";
+  }
+  if (trimmed.startsWith("draft version must be")) {
+    return "SCHEMA_MISSING_REQUIRED_FIELD";
+  }
+  if (trimmed.startsWith("draft productType must be")) {
+    return "SCHEMA_MISSING_REQUIRED_FIELD";
+  }
+
+  return trimmed;
+}
+
+function getDraftValidationErrorPath(error: string): string | undefined {
+  const colonIndex = error.indexOf(":");
+
+  if (colonIndex <= 0) {
+    return undefined;
+  }
+
+  const path = error.slice(colonIndex + 1).trim();
+
+  return path.length > 0 ? path : undefined;
+}
+
+export function isRepairableDraftValidationError(error: string): boolean {
+  return repairableDraftValidationErrorCodeSet.has(
+    getDraftValidationErrorCode(error),
+  );
+}
+
+export function getComprehensiveReportDraftValidationIssues(
+  errors: readonly string[],
+): readonly ComprehensiveReportDraftValidationIssue[] {
+  return errors.map((error) => {
+    const code = getDraftValidationErrorCode(error);
+
+    return {
+      code,
+      message: error,
+      severity: repairableDraftValidationErrorCodeSet.has(code)
+        ? "repairable"
+        : "fatal",
+      ...(getDraftValidationErrorPath(error) === undefined
+        ? {}
+        : { path: getDraftValidationErrorPath(error) }),
+    };
+  });
+}
+
+export function areAllDraftValidationErrorsRepairable(
+  errors: readonly string[],
+): boolean {
+  return (
+    errors.length > 0 &&
+    getComprehensiveReportDraftValidationIssues(errors).every(
+      (issue) => issue.severity === "repairable",
+    )
+  );
 }
 
 function appendDisplaySectionErrors(
@@ -1151,14 +1306,27 @@ function appendChapterCoverageErrors(
   }
 }
 
+function getEffectiveV2ChapterText(chapter: ComprehensiveReportV2Chapter): string {
+  return [
+    ...chapter.hitReadingLines,
+    chapter.body,
+    ...chapter.solutionLines,
+    ...chapter.keyPhrases,
+  ].join("\n");
+}
+
 function appendV2ChapterDensityErrors(
   errors: string[],
   chapters: readonly ComprehensiveReportV2Chapter[],
 ): void {
   for (const chapter of chapters) {
     const minimumLength = v2ChapterBodyMinimumLengths[chapter.chapterId];
+    const effectiveMinimumLength =
+      v2ChapterEffectiveMinimumLengths[chapter.chapterId];
+    const bodyLength = chapter.body.trim().length;
+    const effectiveLength = getEffectiveV2ChapterText(chapter).trim().length;
 
-    if (chapter.body.trim().length < minimumLength) {
+    if (bodyLength < minimumLength && effectiveLength < effectiveMinimumLength) {
       errors.push(`CHAPTER_BODY_TOO_SHORT: ${chapter.chapterId}`);
     }
     if (chapter.body.trim() === chapter.headline.trim()) {
@@ -1268,6 +1436,17 @@ function appendV2VisibleDebugLabelErrors(
   }
 }
 
+function isConcreteHitReadingLine(line: string): boolean {
+  const trimmed = line.trim();
+
+  return (
+    trimmed.length >= 16 &&
+    !hasAnyMarker(trimmed, genericHitReadingMarkers) &&
+    (hasAnyMarker(trimmed, hitReadingConcreteMarkers) ||
+      hasAnyMarker(trimmed, hitReadingBehaviorMarkers))
+  );
+}
+
 function appendV2HitReadingErrors(
   errors: string[],
   chapters: readonly ComprehensiveReportV2Chapter[],
@@ -1289,17 +1468,13 @@ function appendV2HitReadingErrors(
     if (chapter.hitReadingLines.length < minimumCount) {
       errors.push(`DIRECT_HIT_READING_MISSING: ${chapter.chapterId}`);
     }
-    for (const line of chapter.hitReadingLines) {
-      const trimmed = line.trim();
+    const concreteLineCount = chapter.hitReadingLines.filter(
+      isConcreteHitReadingLine,
+    ).length;
+    const requiredConcreteLineCount = Math.min(2, minimumCount);
 
-      if (
-        trimmed.length < 16 ||
-        !hasAnyMarker(trimmed, hitReadingConcreteMarkers) ||
-        hasAnyMarker(trimmed, genericHitReadingMarkers)
-      ) {
-        errors.push(`DIRECT_HIT_READING_TOO_GENERIC: ${chapter.chapterId}`);
-        break;
-      }
+    if (concreteLineCount < requiredConcreteLineCount) {
+      errors.push(`DIRECT_HIT_READING_TOO_GENERIC: ${chapter.chapterId}`);
     }
   }
 }

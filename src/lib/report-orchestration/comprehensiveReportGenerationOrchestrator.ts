@@ -65,6 +65,8 @@ function createOrchestratorError(
     readonly diagnosticMessage?: string;
     readonly requestId?: string;
     readonly errorParam?: string;
+    readonly repairAttempted?: boolean;
+    readonly repairPassed?: boolean;
   },
 ): Error {
   return new SafeReportGenerationFailure({
@@ -82,6 +84,12 @@ function createOrchestratorError(
       : { diagnosticMessage: input.diagnosticMessage }),
     ...(input?.requestId === undefined ? {} : { requestId: input.requestId }),
     ...(input?.errorParam === undefined ? {} : { errorParam: input.errorParam }),
+    ...(input?.repairAttempted === undefined
+      ? {}
+      : { repairAttempted: input.repairAttempted }),
+    ...(input?.repairPassed === undefined
+      ? {}
+      : { repairPassed: input.repairPassed }),
   });
 }
 
@@ -220,6 +228,12 @@ export async function generateAndPersistComprehensiveReport(
           : { diagnosticMessage: error.diagnosticMessage }),
         ...(error.requestId === undefined ? {} : { requestId: error.requestId }),
         ...(error.errorParam === undefined ? {} : { errorParam: error.errorParam }),
+        ...(error.repairAttempted === undefined
+          ? {}
+          : { repairAttempted: error.repairAttempted }),
+        ...(error.repairPassed === undefined
+          ? {}
+          : { repairPassed: error.repairPassed }),
       });
     }
 

@@ -246,6 +246,70 @@ describe("OpenAI comprehensive report writer", () => {
     expect(JSON.stringify(calls[0].body)).toContain("day_master_gabmok");
   });
 
+  it("repairs one-pass repairable V2 quality errors", async () => {
+    const repairableDraft = {
+      ...createValidDraft(),
+      chapters: createValidDraft().chapters.map((chapter) =>
+        chapter.chapterId === "opening"
+          ? {
+              ...chapter,
+              hitReadingLines: [
+                "덕민님은 성장할 수 있습니다.",
+                "덕민님은 장점과 단점이 있습니다.",
+              ],
+            }
+          : chapter,
+      ),
+    };
+    const repairedDraft = createValidDraft();
+    const calls: RequestInit[] = [];
+    const fetchImpl: typeof fetch = async (_input, init) => {
+      if (init !== undefined) {
+        calls.push(init);
+      }
+
+      return createJsonResponse({
+        output_text: JSON.stringify(calls.length === 1 ? repairableDraft : repairedDraft),
+      });
+    };
+
+    const result = await generateComprehensiveReportDraft({
+      userDisplayName: "덕민",
+      mbtiType: "ENTJ",
+      evidencePacket: createPacket(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl,
+      },
+    });
+    const repairRequestBody = JSON.stringify(calls[1]?.body);
+    const parsedRepairRequest = JSON.parse(String(calls[1]?.body)) as {
+      readonly text?: {
+        readonly format?: {
+          readonly schema?: unknown;
+        };
+      };
+    };
+
+    expect(calls).toHaveLength(2);
+    expect(result.draft).toMatchObject(repairedDraft);
+    expect(result.rawText).toBe(JSON.stringify(repairedDraft));
+    expect(result.warnings).toEqual([
+      "quality repair: attempted",
+      "quality repair: passed",
+    ]);
+    expect(repairRequestBody).toContain("validation errors");
+    expect(repairRequestBody).toContain("DIRECT_HIT_READING_TOO_GENERIC: opening");
+    expect(repairRequestBody).toContain("profileTable 출력 금지");
+    expect(repairRequestBody).toContain("hitReadingLines");
+    expect(repairRequestBody).toContain("solutionLines");
+    expect(JSON.stringify(parsedRepairRequest.text?.format?.schema)).not.toContain(
+      "profileTable",
+    );
+  });
+
   it("rejects invalid JSON responses", async () => {
     const error = await expectSafeGenerationFailure(
       generateComprehensiveReportDraft({
@@ -350,6 +414,7 @@ describe("OpenAI comprehensive report writer", () => {
           : chapter,
       ),
     };
+    let callCount = 0;
 
     const error = await expectSafeGenerationFailure(
       generateComprehensiveReportDraft({
@@ -359,10 +424,13 @@ describe("OpenAI comprehensive report writer", () => {
           apiKey: "test_key",
           model: "test_model",
           enabled: true,
-          fetchImpl: async () =>
-            createJsonResponse({
+          fetchImpl: async () => {
+            callCount += 1;
+
+            return createJsonResponse({
               output_text: JSON.stringify(draft),
-            }),
+            });
+          },
         },
       }),
     );
@@ -370,6 +438,57 @@ describe("OpenAI comprehensive report writer", () => {
     expect(error.stage).toBe("draft_validation");
     expect(error.validationErrors?.join("\n")).toContain(
       "UNSUPPORTED_SAJU_TERM",
+    );
+    expect(callCount).toBe(1);
+    expect(error.repairAttempted).toBeUndefined();
+  });
+
+  it("fails safely after one repair attempt when repaired draft is still invalid", async () => {
+    const repairableDraft = {
+      ...createValidDraft(),
+      chapters: createValidDraft().chapters.map((chapter) =>
+        chapter.chapterId === "opening"
+          ? {
+              ...chapter,
+              hitReadingLines: [
+                "덕민님은 성장할 수 있습니다.",
+                "덕민님은 장점과 단점이 있습니다.",
+              ],
+            }
+          : chapter,
+      ),
+    };
+    const calls: RequestInit[] = [];
+    const fetchImpl: typeof fetch = async (_input, init) => {
+      if (init !== undefined) {
+        calls.push(init);
+      }
+
+      return createJsonResponse({
+        output_text: JSON.stringify(repairableDraft),
+      });
+    };
+
+    const error = await expectSafeGenerationFailure(
+      generateComprehensiveReportDraft({
+        userDisplayName: "덕민",
+        mbtiType: "ENTJ",
+        evidencePacket: createPacket(),
+        config: {
+          apiKey: "test_key",
+          model: "test_model",
+          enabled: true,
+          fetchImpl,
+        },
+      }),
+    );
+
+    expect(calls).toHaveLength(2);
+    expect(error.stage).toBe("draft_validation");
+    expect(error.repairAttempted).toBe(true);
+    expect(error.repairPassed).toBe(false);
+    expect(error.validationErrors?.join("\n")).toContain(
+      "DIRECT_HIT_READING_TOO_GENERIC: opening",
     );
   });
 
