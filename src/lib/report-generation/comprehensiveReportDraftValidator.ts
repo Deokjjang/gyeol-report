@@ -16,6 +16,10 @@ import {
 } from "../report-knowledge/reportSectionSchema";
 import { SAJU_KNOWLEDGE_BASE } from "../report-knowledge/sajuKnowledgeBase";
 import type { SajuKnowledgeEntry } from "../report-knowledge/sajuKnowledgeTypes";
+import {
+  findUnsafeVisibleCopy,
+  type CopySafetyViolationReason,
+} from "../legal/copySafety";
 
 export type ComprehensiveReportDraftValidationResult = {
   readonly ok: boolean;
@@ -60,6 +64,8 @@ const repairableDraftValidationErrorCodes = [
   "ELEMENT_REMEDY_MISSING",
   "FINAL_MESSAGE_CLOSING_MISSING",
   "MILD_INTERNAL_META_COPY",
+  "UNSAFE_ADVERTISING_COPY",
+  "UNSAFE_CERTAINTY_COPY",
 ] as const;
 const repairableDraftValidationErrorCodeSet = new Set<string>(
   repairableDraftValidationErrorCodes,
@@ -702,6 +708,26 @@ function findMildInternalMetaPhraseMatches(text: string): readonly string[] {
   return [...new Set(matches)];
 }
 
+function getUnsafeCopyErrorCode(
+  reason: CopySafetyViolationReason,
+): string {
+  switch (reason) {
+    case "medical":
+      return "UNSAFE_MEDICAL_COPY";
+    case "legal":
+      return "UNSAFE_LEGAL_COPY";
+    case "investment":
+      return "UNSAFE_INVESTMENT_COPY";
+    case "diagnosis":
+      return "UNSAFE_MEDICAL_COPY";
+    case "certainty":
+      return "UNSAFE_CERTAINTY_COPY";
+    case "guarantee":
+    case "price_exaggeration":
+      return "UNSAFE_ADVERTISING_COPY";
+  }
+}
+
 function removeLessSpecificMatches(
   matches: readonly string[],
 ): readonly string[] {
@@ -736,6 +762,9 @@ function appendUnknownKeyErrors(
 function appendTextSafetyErrors(errors: string[], value: unknown): void {
   const text = collectStrings(value).join("\n");
 
+  for (const violation of findUnsafeVisibleCopy(text)) {
+    errors.push(`${getUnsafeCopyErrorCode(violation.reason)}: ${violation.term}`);
+  }
   for (const phrase of forbiddenOutputPhrases) {
     if (text.includes(phrase)) {
       errors.push(`FORBIDDEN_PROPHECY_PHRASE: ${phrase}`);

@@ -360,7 +360,10 @@ describe("comprehensive report draft validator", () => {
     const issues = getComprehensiveReportDraftValidationIssues([
       "CHAPTER_BODY_TOO_SHORT: love_relationships",
       "DIRECT_HIT_READING_TOO_GENERIC: opening",
+      "UNSAFE_CERTAINTY_COPY: 반드시 성공",
+      "UNSAFE_ADVERTISING_COPY: 100%",
       "UNSUPPORTED_SAJU_TERM: 도화살",
+      "UNSAFE_MEDICAL_COPY: 우울증 분석",
       "VISIBLE_EVIDENCE_DEBUG_LABEL: 분석 근거 보기",
       "REPEATED_SENTENCE: 같은 문장입니다.",
     ]);
@@ -371,7 +374,16 @@ describe("comprehensive report draft validator", () => {
     expect(isRepairableDraftValidationError("DIRECT_HIT_READING_TOO_GENERIC: opening")).toBe(
       true,
     );
+    expect(isRepairableDraftValidationError("UNSAFE_CERTAINTY_COPY: 반드시 성공")).toBe(
+      true,
+    );
+    expect(isRepairableDraftValidationError("UNSAFE_ADVERTISING_COPY: 100%")).toBe(
+      true,
+    );
     expect(isRepairableDraftValidationError("UNSUPPORTED_SAJU_TERM: 도화살")).toBe(
+      false,
+    );
+    expect(isRepairableDraftValidationError("UNSAFE_MEDICAL_COPY: 우울증 분석")).toBe(
       false,
     );
     expect(areAllDraftValidationErrorsRepairable([
@@ -396,10 +408,28 @@ describe("comprehensive report draft validator", () => {
         path: "opening",
       },
       {
+        code: "UNSAFE_CERTAINTY_COPY",
+        message: "UNSAFE_CERTAINTY_COPY: 반드시 성공",
+        severity: "repairable",
+        path: "반드시 성공",
+      },
+      {
+        code: "UNSAFE_ADVERTISING_COPY",
+        message: "UNSAFE_ADVERTISING_COPY: 100%",
+        severity: "repairable",
+        path: "100%",
+      },
+      {
         code: "UNSUPPORTED_SAJU_TERM",
         message: "UNSUPPORTED_SAJU_TERM: 도화살",
         severity: "fatal",
         path: "도화살",
+      },
+      {
+        code: "UNSAFE_MEDICAL_COPY",
+        message: "UNSAFE_MEDICAL_COPY: 우울증 분석",
+        severity: "fatal",
+        path: "우울증 분석",
       },
       {
         code: "VISIBLE_EVIDENCE_DEBUG_LABEL",
@@ -944,6 +974,62 @@ describe("comprehensive report draft validator", () => {
 
     expect(result.ok).toBe(false);
     expect(result.errors.join("\n")).toContain("FORBIDDEN_PROPHECY_PHRASE");
+  });
+
+  it("rejects unsafe generated advertising, medical, legal, and investment copy", () => {
+    const unsafeCases = [
+      {
+        body: "이 리포트는 우울증 분석을 제공한다는 식으로 보이면 안 됩니다.",
+        expectedError: "UNSAFE_MEDICAL_COPY: 우울증 분석",
+      },
+      {
+        body: "이 리포트가 투자 추천을 제공한다고 쓰면 안 됩니다.",
+        expectedError: "UNSAFE_INVESTMENT_COPY: 투자 추천",
+      },
+      {
+        body: "이 리포트가 법률 자문을 제공한다고 쓰면 안 됩니다.",
+        expectedError: "UNSAFE_LEGAL_COPY: 법률 자문",
+      },
+      {
+        body: "이 구조는 반드시 성공으로 이어진다고 쓰면 안 됩니다.",
+        expectedError: "UNSAFE_CERTAINTY_COPY: 반드시 성공",
+      },
+      {
+        body: "이 구조는 100% 보장된다고 쓰면 안 됩니다.",
+        expectedError: "UNSAFE_ADVERTISING_COPY",
+      },
+      {
+        body: "이 흐름을 운명 확정이라고 쓰면 안 됩니다.",
+        expectedError: "UNSAFE_CERTAINTY_COPY: 운명 확정",
+      },
+    ];
+
+    for (const testCase of unsafeCases) {
+      const result = validateComprehensiveReportDraft(
+        replaceSectionBody(
+          createValidDraft(),
+          "saju_core",
+          `${createValidDraft().sections.find((section) => section.sectionId === "saju_core")?.body ?? ""} ${testCase.body}`,
+        ),
+      );
+
+      expect(result.ok).toBe(false);
+      expect(result.errors.join("\n")).toContain(testCase.expectedError);
+    }
+  });
+
+  it("allows safe tendency and reference-purpose language in generated reports", () => {
+    const draft = replaceSectionBody(
+      createValidDraft(),
+      "saju_core",
+      `${createValidDraft().sections.find((section) => section.sectionId === "saju_core")?.body ?? ""} 이런 경향이 나타날 가능성이 큽니다. 자기이해와 참고 목적으로 보세요. 이 표현은 확정이나 자문이 아니라 성향으로 읽힙니다. 도움이 될 수 있습니다.`,
+    );
+    const result = validateComprehensiveReportDraft(draft, {
+      allowedSajuTerms: ["갑목", "갑신", "갑신일주"],
+    });
+
+    expect(result.errors).toEqual([]);
+    expect(result.ok).toBe(true);
   });
 
   it("rejects internal meta and debug copy", () => {

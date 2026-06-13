@@ -128,6 +128,13 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("차이점");
     expect(combined).toContain("보완점");
     expect(combined).toContain("정확한 날짜 예언 금지");
+    expect(combined).toContain(
+      "의료·심리치료·법률·투자 자문처럼 보이는 표현을 쓰지 마라",
+    );
+    expect(combined).toContain(
+      "금지: 진단, 치료, 정신질환, 우울증, 불안장애, 투자 추천, 법률 자문, 반드시, 무조건, 100%, 보장, 운명 확정",
+    );
+    expect(combined).toContain("성향 해석과 자기이해 목적의 참고 문장");
     expect(combined).toContain("Korean output");
     expect(combined).toContain('"mbtiType": "ENTJ"');
     expect(combined).toContain("day_master_gabmok");
@@ -180,6 +187,10 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("작성된 글은");
     expect(combined).toContain("이 문서는");
     expect(combined).toContain("본문을 더 길고 구체적으로 보강하라");
+    expect(combined).toContain(
+      "진단, 치료, 정신질환, 우울증, 불안장애, 투자 추천, 법률 자문, 반드시, 무조건, 100%, 보장, 운명 확정 같은 위험 문구를 제거한다",
+    );
+    expect(combined).toContain("성향 해석과 자기이해 목적의 참고 문장으로 고친다");
     expect(combined).toContain("사주 용어는 evidence에 있는 것만 사용하라");
     expect(combined).toContain("갑목");
     expect(combined).not.toContain("도화살");
