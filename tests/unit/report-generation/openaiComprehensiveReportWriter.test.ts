@@ -38,12 +38,21 @@ const deokminSampleFacts = {
 } as const satisfies ComputedSajuFacts;
 
 function createChapter(chapterId: ComprehensiveReportV2ChapterId, titleKo: string) {
+  const topicExtra =
+    chapterId === "work_money_study"
+      ? "공부/일 루틴은 자격증, 전문서, 직무 학습, 사업 학습을 2주 단위 목표로 쪼개는 방식이 맞습니다. 돈은 공격 계획과 방어 계획을 분리해야 하며, 현금흐름과 투자와 자기계발 예산을 따로 보아야 합니다."
+      : chapterId === "love_relationships"
+        ? "관계에서 써먹을 것은 보완하는 사람을 고르는 기준입니다. 부족한 수와 화를 채우듯 정서적 완충이 되고 감정 표현을 부드럽게 풀어주는 사람이 맞는 사람일 수 있습니다. 피해야 할 패턴은 감정 기복이 크고 책임이 흐릿한 사람입니다. ISFP, INFP, INTP 같은 예시는 참고만 하고 MBTI만으로 단정하지 않는 태도가 필요합니다."
+      : chapterId === "risk_and_growth"
+        ? "피해야 할 패턴은 계속 버티기만 하다가 과열되는 흐름입니다. 수 부족은 밤 산책, 수변 공간, 충분한 수분, 기록, 잠 루틴으로 식히고, 화 부족은 햇빛, 가벼운 운동, 발표와 표현 연습으로 밖으로 내야 합니다. 토 과다는 책임 덜어내기와 경계선 정리하기로 조절해야 합니다."
+      : `${titleKo}에 맞는 환경은 기준을 세우고 빠르게 실행할 수 있는 곳입니다. ${titleKo}에서 피해야 할 패턴은 결론만 던지고 상대의 속도를 보지 않는 흐름이므로, 질문을 먼저 넣는 처방이 필요합니다.`;
+
   return {
     chapterId,
     titleKo,
     headline: `${titleKo}는 갑목과 갑신일주를 먼저 놓고 읽습니다.`,
     body:
-      `${titleKo}에서는 갑목과 갑신일주를 1차 근거로 삼고 ENTJ는 보조 근거로 연결합니다. ${titleKo}의 갑목은 방향을 세우고 앞으로 밀고 가려는 힘이라서 결론을 빠르게 잡는 모습으로 나타납니다. ${titleKo}에서 갑신일주는 압박 속에서도 기준을 지키려는 구조라서, 같은 구조라도 일과 관계와 돈에서는 전혀 다른 장면으로 드러납니다. 그래서 ${titleKo}의 조언은 막연한 위로보다 무엇을 기준으로 삼고 어디서 힘을 뺄지 정하는 쪽이어야 합니다. ${titleKo}에서는 공부를 자격증과 직무 학습까지 포함해 보고, 관계는 감정 표현의 속도와 실제 행동의 차이를 함께 봐야 합니다. ${titleKo}은 용어를 나열하는 칸이 아니라 실제 선택과 말투와 돈 쓰는 방식으로 사주 구조를 읽는 챕터입니다. ${titleKo}의 본문은 사용자가 하루 중 어떤 순간에 강해지고 어떤 순간에 과열되는지 떠올릴 수 있게 충분히 길고 구체적으로 이어져야 합니다. ${titleKo}에서는 좋은 장면과 부담스러운 장면을 함께 보여줘야 하며, 강점은 확실히 말하되 약점은 실제로 조정 가능한 행동으로 내려와야 합니다. ${titleKo}의 마지막 흐름은 사주 용어를 다시 생활 언어로 바꿔서, 사용자가 읽고 바로 자기 상황에 대입할 수 있게 마무리합니다.`,
+      `${titleKo}에서는 갑목과 갑신일주를 1차 근거로 삼고 ENTJ는 보조 근거로 연결합니다. 덕민님, ${titleKo}에서 상대가 아직 고민 중인데 이미 답이 보이는 상황 많지 않나요? ${titleKo}의 갑목은 방향을 세우고 앞으로 밀고 가려는 힘이라서 결론을 빠르게 잡는 모습으로 나타납니다. ${titleKo}에서 갑신일주는 압박 속에서도 기준을 지키려는 구조라서, 같은 구조라도 일과 관계와 돈에서는 전혀 다른 장면으로 드러납니다. 그래서 ${titleKo}의 조언은 막연한 위로보다 무엇을 기준으로 삼고 어디서 힘을 뺄지 정하는 쪽이어야 합니다. 이렇게 쓰면 좋습니다. ${titleKo}에서는 결론을 바로 말하기 전에 질문을 하나 넣는 루틴을 두어야 합니다. ${titleKo}은 용어를 나열하는 칸이 아니라 실제 선택과 말투와 돈 쓰는 방식으로 사주 구조를 읽는 챕터입니다. ${titleKo}의 본문은 사용자가 하루 중 어떤 순간에 강해지고 어떤 순간에 과열되는지 떠올릴 수 있게 충분히 길고 구체적으로 이어져야 합니다. ${topicExtra}`,
     keyPhrases: [titleKo, "갑목", "갑신일주"],
     sajuTermsUsed: ["갑목", "갑신일주"],
     mbtiTermsUsed: ["ENTJ"],
@@ -110,7 +119,7 @@ function expectSafeError(error: unknown) {
 describe("OpenAI comprehensive report writer", () => {
   it("builds prompt parses JSON validates draft and returns raw text", async () => {
     const baseDraft = createValidDraft();
-    const draft = {
+    const modelDraft = {
       ...baseDraft,
       chapters: baseDraft.chapters.map((chapter) =>
         chapter.chapterId === "work_money_study"
@@ -129,7 +138,7 @@ describe("OpenAI comprehensive report writer", () => {
         calls.push(init);
       }
       return createJsonResponse({
-        output_text: JSON.stringify(draft),
+        output_text: JSON.stringify(modelDraft),
       });
     };
 
@@ -145,8 +154,20 @@ describe("OpenAI comprehensive report writer", () => {
       },
     });
 
-    expect(result.draft).toEqual(draft);
-    expect(result.rawText).toBe(JSON.stringify(draft));
+    expect(result.draft).toMatchObject(modelDraft);
+    expect(result.draft).toMatchObject({
+      profileTable: {
+        dayMaster: "갑목",
+        dayPillar: "갑신일주",
+        missingElements: expect.arrayContaining(["화 부족", "수 부족"]),
+        excessiveElements: expect.arrayContaining(["토 과다"]),
+        tenGodSummary: expect.arrayContaining(["편재", "정재", "정관", "편관"]),
+        sinsal: expect.arrayContaining(["현침살", "홍염살"]),
+        gwiin: expect.arrayContaining(["재고귀인"]),
+        mbti: "ENTJ",
+      },
+    });
+    expect(result.rawText).toBe(JSON.stringify(modelDraft));
     expect(result.warnings).toEqual([]);
     expect(JSON.stringify(calls[0].body)).toContain("사주가 1차 근거");
     expect(JSON.stringify(calls[0].body)).toContain(

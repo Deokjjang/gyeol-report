@@ -44,6 +44,15 @@ describe("comprehensive report draft JSON schema", () => {
       ]),
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "profileTable",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "yearPillar",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "tenGodSummary",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
       "additionalProperties",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain("maxLength");

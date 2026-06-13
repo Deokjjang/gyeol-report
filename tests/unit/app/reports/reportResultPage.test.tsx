@@ -64,7 +64,7 @@ function createV2Chapter(chapterId: ComprehensiveReportV2ChapterId, titleKo: str
     titleKo,
     headline: `${titleKo}는 갑목과 갑신일주를 생활 장면으로 읽는 챕터입니다.`,
     body:
-      `${titleKo}에서는 갑목과 갑신일주를 먼저 놓고 봅니다. 갑목은 방향을 세우고 판을 키우는 힘이라 덕민님이 가만히 기다리기보다 먼저 기준을 잡게 만듭니다. 갑신일주는 압박 속에서도 판단을 세우는 구조라서, 일과 돈과 관계에서 같은 근거가 서로 다른 장면으로 드러납니다. ENTJ는 이 흐름을 보조하는 자기상으로만 연결됩니다.`,
+      `${titleKo}에서는 갑목과 갑신일주를 먼저 놓고 봅니다. 갑목은 방향을 세우고 판을 키우는 힘이라 덕민님이 가만히 기다리기보다 먼저 기준을 잡게 만듭니다. 갑신일주는 압박 속에서도 판단을 세우는 구조라서, 일과 돈과 관계에서 같은 근거가 서로 다른 장면으로 드러납니다. ENTJ는 이 흐름을 보조하는 자기상으로만 연결됩니다. 이렇게 쓰면 좋습니다. 결론을 바로 말하기 전에 질문을 먼저 던지는 루틴을 두면 날카로움이 조언으로 바뀝니다.`,
     keyPhrases: [titleKo, "갑목", "갑신일주"],
     sajuTermsUsed: ["갑목", "갑신일주"],
     mbtiTermsUsed: ["ENTJ"],
@@ -79,6 +79,21 @@ function createV2Draft(): ComprehensiveReportV2Draft {
     openingSummary:
       "갑목과 갑신일주를 먼저 놓고 읽으면, 덕민님은 작은 안정감보다 큰 방향과 기준을 먼저 찾는 사람에 가깝습니다.",
     coreLine: "사주 구조가 먼저이고 ENTJ는 그 구조를 성취 쪽으로 증폭합니다.",
+    profileTable: {
+      yearPillar: "병자",
+      monthPillar: "경자",
+      dayPillar: "갑신일주",
+      hourPillar: "신미",
+      dayMaster: "갑목",
+      fiveElementSummary: ["목 2", "화 0", "토 4", "금 2", "수 0"],
+      excessiveElements: ["토 과다"],
+      missingElements: ["화 부족", "수 부족"],
+      tenGodSummary: ["편재", "정재", "정관", "편관"],
+      specialPatterns: ["재다신약", "무인성", "무식상"],
+      sinsal: ["현침살", "홍염살"],
+      gwiin: ["재고귀인"],
+      mbti: "ENTJ",
+    },
     chapters: [
       createV2Chapter("opening", "처음에 보이는 결"),
       createV2Chapter("saju_identity", "사주가 보여주는 기본 형상"),
@@ -181,17 +196,39 @@ describe("report result page", () => {
     expect(html).toContain("사주×MBTI 종합 리포트");
     expect(html).toContain("덕민님의 결은 큰 방향과 빠른 판단에 있습니다");
     expect(html).toContain("사주 구조가 먼저이고 ENTJ");
-    expect(html).toContain("사주 원국 요약");
-    expect(html).toContain("MBTI 입력 요약");
+    expect(html).toContain("만세력 요약");
+    expect(html).toContain("연주");
+    expect(html).toContain("월주");
+    expect(html).toContain("일주");
+    expect(html).toContain("시주");
+    expect(html).toContain("일간");
+    expect(html).toContain("오행");
+    expect(html).toContain("십성");
+    expect(html).toContain("신살");
+    expect(html).toContain("귀인");
+    expect(html).toContain("MBTI");
+    expect(html).toContain("병자");
+    expect(html).toContain("갑목");
+    expect(html).toContain("화 부족");
+    expect(html).toContain("편재");
+    expect(html).toContain("현침살");
     expect(html).toContain("사주가 보여주는 기본 형상");
     expect(html).toContain("사주가 보여주는 기본 형상는 갑목과 갑신일주");
     expect(html).toContain("갑목은 방향을 세우고 판을 키우는 힘");
     expect(html).toContain("일, 돈, 공부가 연결되는 방식");
+    expect(html).toContain("이렇게 쓰면 좋습니다");
     expect(html).toContain("최종 조언");
+    expect(html).not.toContain("리포트 ID");
+    expect(html).not.toContain("상품");
+    expect(html).not.toContain("상태");
+    expect(html).not.toContain("본문에서 반복해 나열하지 않고");
+    expect(html).not.toContain("입력한 MBTI는 사주 해석을 보조");
     expect(html).not.toContain("분석 근거 보기");
     expect(html).not.toContain("사주 근거");
     expect(html).not.toContain("MBTI 참고");
     expect(html).not.toContain("근거 요약");
+    expect(html).not.toContain("핵심 용어");
+    expect(html).not.toContain("반영 포인트");
   });
 
   it("keeps placeholder state when no generated draft exists", async () => {

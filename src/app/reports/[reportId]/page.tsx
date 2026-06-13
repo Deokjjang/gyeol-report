@@ -7,6 +7,7 @@ import type {
   ComprehensiveReportDraft,
   ComprehensiveReportDraftSection,
   ComprehensiveReportV2Chapter,
+  ComprehensiveReportV2ProfileTable,
 } from "../../../lib/report-generation/comprehensiveReportDraftTypes";
 import {
   isComprehensiveReportV2Draft,
@@ -240,30 +241,6 @@ function renderDisplaySections(
   );
 }
 
-function renderV2DisplaySections(result: PaidReportResult) {
-  const sajuTerms = collectDraftSajuTerms(result).slice(0, 12);
-  const mbtiTerms = collectDraftMbtiTerms(result).slice(0, 8);
-
-  return (
-    <section className="grid gap-4 md:grid-cols-2" aria-label="입력 요약">
-      {renderDisplaySummaryCard({
-        title: "사주 원국 요약",
-        description:
-          "본문에서 반복해 나열하지 않고, 해석에 실제로 사용한 핵심 사주 용어만 압축했습니다.",
-        termsLabel: "핵심 용어",
-        terms: sajuTerms,
-      })}
-      {renderDisplaySummaryCard({
-        title: "MBTI 입력 요약",
-        description:
-          "입력한 MBTI는 사주 해석을 보조하고 체감되는 성향을 연결하는 기준으로만 반영했습니다.",
-        termsLabel: "반영 포인트",
-        terms: mbtiTerms,
-      })}
-    </section>
-  );
-}
-
 function renderEvidenceDetails(section: ComprehensiveReportDraftSection) {
   const hasEvidence =
     section.evidenceSummary.length > 0 ||
@@ -326,6 +303,92 @@ function renderReportMetadata(result: PaidReportResult) {
         <dd className="text-neutral-100">{result.status}</dd>
       </div>
     </dl>
+  );
+}
+
+function createFallbackProfileTable(
+  result: PaidReportResult,
+): ComprehensiveReportV2ProfileTable {
+  const sajuTerms = collectDraftSajuTerms(result);
+  const mbtiTerms = collectDraftMbtiTerms(result);
+
+  return {
+    dayPillar: sajuTerms.find((term) => term.endsWith("일주")),
+    dayMaster: sajuTerms.find(
+      (term) =>
+        term.endsWith("목") ||
+        term.endsWith("화") ||
+        term.endsWith("토") ||
+        term.endsWith("금") ||
+        term.endsWith("수"),
+    ),
+    fiveElementSummary: sajuTerms.filter(
+      (term) => term.includes("과다") || term.includes("부족"),
+    ),
+    excessiveElements: sajuTerms.filter((term) => term.includes("과다")),
+    missingElements: sajuTerms.filter((term) => term.includes("부족")),
+    tenGodSummary: sajuTerms.filter((term) =>
+      ["비견", "겁재", "식신", "상관", "편재", "정재", "편관", "정관", "편인", "정인"].includes(term),
+    ),
+    specialPatterns: sajuTerms.filter((term) =>
+      ["재" + "다신약", "무인성", "무식상", "신강", "신약"].includes(term),
+    ),
+    sinsal: sajuTerms.filter((term) => term.endsWith("살")),
+    gwiin: sajuTerms.filter((term) => term.endsWith("귀인")),
+    mbti: mbtiTerms[0] ?? "입력값 없음",
+  };
+}
+
+function renderProfileRow(label: string, value: string | readonly string[] | undefined) {
+  const values =
+    typeof value === "string" ? [value] : value?.filter((item) => item.trim().length > 0);
+
+  if (values === undefined || values.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="grid gap-1 border-t border-neutral-800 py-3 first:border-t-0 sm:grid-cols-[6.5rem_1fr]">
+      <dt className="text-sm font-semibold text-neutral-500">{label}</dt>
+      <dd className="flex flex-wrap gap-2 text-sm text-neutral-100">
+        {values.map((item) => (
+          <span
+            key={`${label}:${item}`}
+            className="rounded-md border border-neutral-800 bg-neutral-950/70 px-2 py-1"
+          >
+            {item}
+          </span>
+        ))}
+      </dd>
+    </div>
+  );
+}
+
+function renderV2ProfileTable(
+  result: PaidReportResult,
+  draft: Extract<ComprehensiveReportDraft, { readonly version: "comprehensive_v2_draft" }>,
+) {
+  const profile = draft.profileTable ?? createFallbackProfileTable(result);
+
+  return (
+    <section className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+      <h2 className="text-lg font-semibold text-neutral-50">만세력 요약</h2>
+      <dl className="mt-4">
+        {renderProfileRow("연주", profile.yearPillar)}
+        {renderProfileRow("월주", profile.monthPillar)}
+        {renderProfileRow("일주", profile.dayPillar)}
+        {renderProfileRow("시주", profile.hourPillar)}
+        {renderProfileRow("일간", profile.dayMaster)}
+        {renderProfileRow("오행", profile.fiveElementSummary)}
+        {renderProfileRow("과다 오행", profile.excessiveElements)}
+        {renderProfileRow("부족 오행", profile.missingElements)}
+        {renderProfileRow("십성", profile.tenGodSummary)}
+        {renderProfileRow("주요 구조", profile.specialPatterns)}
+        {renderProfileRow("신살", profile.sinsal)}
+        {renderProfileRow("귀인", profile.gwiin)}
+        {renderProfileRow("MBTI", profile.mbti)}
+      </dl>
+    </section>
   );
 }
 
@@ -438,8 +501,7 @@ function renderGeneratedV2State(
           </p>
         </header>
 
-        {renderReportMetadata(result)}
-        {renderV2DisplaySections(result)}
+        {renderV2ProfileTable(result, draft)}
 
         <section className="space-y-5" aria-label="리포트 본문">
           {draft.chapters.map((chapter) => (

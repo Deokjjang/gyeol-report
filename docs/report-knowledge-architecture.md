@@ -301,6 +301,41 @@ Migration 0012 supports saving and reading both `comprehensive_v1_draft` and
 the result page renders V2 without analysis evidence blocks while keeping V1
 backward compatibility.
 
+## REPORT-13 Hit-Reading and Prescription Layer
+
+REPORT-13 adds hit-reading and prescription to the V2 narrative product
+format. The report should move from "this person has these traits" to "this
+situation probably happens often, the Saju structure explains why, and this is
+how to use it."
+
+The V2 result page starts with a compact deterministic manseok/profile table
+instead of report id, product, status, or explanatory summary cards. The table
+shows only available facts such as pillars, day master, day pillar, element
+distribution, excessive or missing elements, ten-god signals, sinsal, gwiin,
+and MBTI. It must not invent missing pillars or unsupported Saju terms.
+
+The V2 prompt requires each major chapter to include 체감형 명중 문장, Saju
+basis, MBTI support, concrete scene examples, and practical prescriptions.
+Product-facing solution labels such as 이렇게 쓰면 좋습니다, 피해야 할 패턴,
+맞는 환경, 관계에서 써먹을 것, and 공부/일 루틴 may appear in the body, while
+debug-style evidence labels remain hidden.
+
+The work-money-study chapter covers work roles, earning style, asset defense,
+certificates, professional books, 직무 학습, 사업 학습, motivation, routines,
+and burnout prevention. The love chapter includes partner fit criteria, bad match
+patterns, and cautious MBTI examples without deterministic compatibility claims.
+The risk-and-growth chapter includes interpretation-based element
+remedies such as water, fire, and earth balance habits without medical or luck
+guarantees.
+Bad match patterns are part of the love prescription, but they must be written
+as cautious fit guidance rather than deterministic compatibility claims.
+The prompt and validator also check bad match patterns as a product requirement.
+
+The V2 validator checks for enough direct hit-reading, practical solutions,
+study/work scope, partner prescriptions, element-based remedies, unsupported
+Saju terms, visible debug labels, and repeated full sentences. V1 compatibility
+remains, and payment or Toss flow wiring is still separate.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

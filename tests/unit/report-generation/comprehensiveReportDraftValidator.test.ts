@@ -95,10 +95,11 @@ function replaceSectionBody(
 function createLongChapterBody(input: {
   readonly title: string;
   readonly sajuTerm: string;
+  readonly chapterId?: ComprehensiveReportV2Draft["chapters"][number]["chapterId"];
   readonly extra?: string;
 }): string {
   const base =
-    `${input.title}에서는 ${input.sajuTerm}을 먼저 놓고 읽습니다. ${input.title}의 ${input.sajuTerm}은 단순한 이름이 아니라 행동의 출발점입니다. ${input.title}에서 덕민님은 상황을 오래 구경하기보다 기준을 세우고 판을 정리하려는 쪽으로 움직입니다. 그래서 ${input.title}의 일상 장면에서는 말이 빠르고 판단이 선명하게 보일 수 있습니다. 입력한 ENTJ 성향도 ${input.title}의 이 지점과 맞물리지만, 결론은 MBTI가 아니라 사주 구조에서 먼저 나옵니다. 좋은 환경에서는 ${input.title}의 이 힘이 추진력과 책임감으로 살아나고, 나쁜 환경에서는 쉬지 못하고 계속 자신을 몰아붙이는 압박으로 바뀔 수 있습니다. ${input.title}은 같은 사주 구조가 다른 생활 장면에서 어떻게 다른 결과로 바뀌는지 보여주는 챕터입니다. ${input.title}의 핵심은 용어를 외우게 하는 것이 아니라 실제 선택과 말투, 돈과 관계를 떠올리게 만드는 데 있습니다.`;
+    `${input.title}에서는 ${input.sajuTerm}을 먼저 놓고 읽습니다. 덕민님, ${input.title}에서 상대가 한참 설명하기 전에 이미 결론이 보이는 상황 자주 나오지 않나요? ${input.title}의 ${input.sajuTerm}은 단순한 이름이 아니라 행동의 출발점입니다. ${input.title}에서 덕민님은 상황을 오래 구경하기보다 기준을 세우고 판을 정리하려는 쪽으로 움직입니다. 그래서 ${input.title}의 일상 장면에서는 말이 빠르고 판단이 선명하게 보일 수 있습니다. 입력한 ENTJ 성향도 ${input.title}의 이 지점과 맞물리지만, 결론은 MBTI가 아니라 사주 구조에서 먼저 나옵니다. 좋은 환경에서는 ${input.title}의 이 힘이 추진력과 책임감으로 살아나고, 나쁜 환경에서는 쉬지 못하고 계속 자신을 몰아붙이는 압박으로 바뀔 수 있습니다. ${input.title}은 같은 사주 구조가 다른 생활 장면에서 어떻게 다른 결과로 바뀌는지 보여주는 챕터입니다. 이렇게 쓰면 좋습니다. ${input.title}에서는 결론을 바로 던지기 전에 질문을 한 번 넣는 루틴을 두어야 합니다. ${input.title}의 핵심은 용어를 외우게 하는 것이 아니라 실제 선택과 말투, 돈과 관계를 떠올리게 만드는 데 있습니다.`;
 
   return `${base} ${input.extra ?? ""}`.trim();
 }
@@ -115,9 +116,14 @@ function createV2Chapter(
     body: createLongChapterBody({
       title: titleKo,
       sajuTerm: minimumTerm,
+      chapterId,
       extra:
         chapterId === "work_money_study"
           ? "공부는 학교 공부만이 아니라 자격증, 전문서, 직무 학습, 사업을 배우는 방식까지 포함됩니다. 돈은 성과를 증명하는 도구가 되기 쉽고, 자산 관리는 감정 문제가 아니라 통제 가능한 판을 만드는 일에 가깝습니다. 일, 돈, 공부가 연결되는 방식에서는 성취욕이 과열될 때 쉬는 시간을 성능 관리로 받아들이는 조언까지 이어져야 합니다."
+          : chapterId === "love_relationships"
+            ? "관계에서 써먹을 것은 보완하는 사람을 고르는 기준입니다. 부족한 수와 화를 채워 주듯 정서적 완충이 되고 감정 표현을 부드럽게 풀어주는 사람이 맞는 사람일 수 있습니다. 피해야 할 패턴은 감정 기복이 크고 책임이 흐릿하거나 계속 확인받으려는 관계입니다. ISFP, INFP, INTP 같은 예시는 참고가 될 수 있지만 MBTI만으로 단정하지 않는 태도가 필요합니다."
+          : chapterId === "risk_and_growth"
+            ? "피해야 할 패턴은 계속 버티기만 하다가 몸과 마음이 동시에 꺼지는 흐름입니다. 수 부족은 밤 산책, 수변 공간, 충분한 수분, 기록, 잠 루틴으로 식히고, 화 부족은 햇빛, 가벼운 운동, 발표와 표현 연습으로 밖으로 내야 합니다. 토 과다는 책임 덜어내기와 경계선 정리하기로 조절해야 합니다."
           : `${titleKo}에서는 관계와 일, 돈과 성장에서 같은 구조가 어떻게 다른 표정으로 바뀌는지 장면을 바꿔 읽어야 합니다. ${titleKo}은 용어를 나열하지 않고 실제 선택과 말투와 행동으로 풀어내며, 이 챕터만의 결론과 조언을 분명히 남겨야 합니다.`,
     }),
     keyPhrases: [`${titleKo} 핵심`, minimumTerm],
@@ -138,6 +144,18 @@ function createValidV2Draft(): ComprehensiveReportV2Draft {
       "갑목과 갑신일주를 먼저 놓고 읽으면, 덕민님은 작은 안정감보다 큰 방향과 기준을 먼저 찾는 사람에 가깝습니다.",
     coreLine:
       "갑목의 방향성과 갑신일주의 압박 대응력이 ENTJ 성향과 만나 성취 중심의 결을 만듭니다.",
+    profileTable: {
+      dayPillar: "갑신일주",
+      dayMaster: "갑목",
+      fiveElementSummary: ["목 2", "화 0", "토 4", "금 2", "수 0"],
+      excessiveElements: ["토 과다"],
+      missingElements: ["화 부족", "수 부족"],
+      tenGodSummary: ["편재", "정재", "정관", "편관"],
+      specialPatterns: ["재다신약", "무인성", "무식상"],
+      sinsal: ["현침살", "홍염살"],
+      gwiin: ["재고귀인"],
+      mbti: "ENTJ",
+    },
     chapters: [
       createV2Chapter("opening", "처음에 보이는 결"),
       createV2Chapter("saju_identity", "사주가 보여주는 기본 형상"),
@@ -178,7 +196,24 @@ describe("comprehensive report draft validator", () => {
   it("accepts a valid V2 narrative draft fixture", () => {
     const draft = createValidV2Draft();
     const result = validateComprehensiveReportDraft(draft, {
-      allowedSajuTerms: ["갑목", "갑신", "갑신일주"],
+      allowedSajuTerms: [
+        "갑목",
+        "갑신",
+        "갑신일주",
+        "토 과다",
+        "수 부족",
+        "화 부족",
+        "편재",
+        "정재",
+        "정관",
+        "편관",
+        "재다신약",
+        "재고귀인",
+        "무인성",
+        "무식상",
+        "현침살",
+        "홍염살",
+      ],
       allowedMbtiTerms: ["ENTJ"],
     });
 
@@ -264,6 +299,108 @@ describe("comprehensive report draft validator", () => {
 
     expect(result.ok).toBe(false);
     expect(result.errors.join("\n")).toContain("UNSUPPORTED_SAJU_TERM: 도화살");
+  });
+
+  it("rejects V2 drafts without enough direct hit-reading sentences", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      openingSummary:
+        "갑목과 갑신일주를 먼저 놓고 차분하게 사주 구조를 설명합니다.",
+      chapters: draft.chapters.map((chapter) => ({
+        ...chapter,
+        body: chapter.body
+          .split("자주 나오지 않나요")
+          .join("나타날 수 있습니다")
+          .split("가능성이 큽니다")
+          .join("나타날 수 있습니다"),
+      })),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("DIRECT_HIT_READING_MISSING");
+  });
+
+  it("rejects V2 major chapters without prescriptions", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "personality_pattern"
+          ? {
+              ...chapter,
+              body: chapter.body
+                .split("이렇게 쓰면 좋습니다.")
+                .join("")
+                .split("질문을 한 번 넣는 루틴")
+                .join("상황을 설명하는 방식"),
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "CHAPTER_PRESCRIPTION_MISSING: personality_pattern",
+    );
+  });
+
+  it("rejects V2 work money study without adult study scope", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "work_money_study"
+          ? {
+              ...chapter,
+              body:
+                "일, 돈, 공부가 연결되는 방식에서는 갑목과 갑신일주를 먼저 놓고 봅니다. 덕민님, 결과가 보이지 않는 공부를 오래 붙잡기 힘든 상황 자주 나오지 않나요? 갑목은 방향을 잡고 갑신일주는 압박 속에서 기준을 세우는 구조입니다. 이렇게 쓰면 좋습니다. 공부를 열심히 하세요. 돈은 계획적으로 관리하고 과열되면 쉬어야 합니다. 맞는 환경은 목표가 분명하고 피드백이 빠른 곳입니다.",
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("WORK_STUDY_SCOPE_MISSING");
+  });
+
+  it("rejects V2 love chapter without partner criteria", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "love_relationships"
+          ? {
+              ...chapter,
+              body:
+                "연애와 관계의 온도에서는 갑목과 갑신일주를 먼저 놓고 봅니다. 덕민님, 좋아해도 해결책부터 말하는 상황 자주 나오지 않나요? 갑목은 방향을 잡고 갑신일주는 압박 속에서 기준을 세우는 구조입니다. 이렇게 쓰면 좋습니다. 감정을 말하기 전에 상대의 감정을 한 번 확인해야 합니다. ISFP 같은 예시는 참고만 하고 MBTI만으로 단정하지 않는 태도가 필요합니다.",
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("LOVE_PARTNER_FIT_MISSING");
+    expect(result.errors.join("\n")).toContain("LOVE_BAD_MATCH_PATTERN_MISSING");
+  });
+
+  it("rejects V2 risk chapter without element remedies", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "risk_and_growth"
+          ? {
+              ...chapter,
+              body:
+                "반복되는 리스크와 성장법에서는 갑목과 갑신일주를 먼저 놓고 봅니다. 덕민님, 지쳤는데도 계속 버티는 상황 자주 나오지 않나요? 갑목은 방향을 잡고 갑신일주는 압박 속에서 기준을 세우는 구조입니다. 이렇게 쓰면 좋습니다. 무리하지 말고 적당히 쉬면서 성장 방향을 다시 정리해야 합니다.",
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("ELEMENT_REMEDY_MISSING");
   });
 
   it("rejects a missing section", () => {

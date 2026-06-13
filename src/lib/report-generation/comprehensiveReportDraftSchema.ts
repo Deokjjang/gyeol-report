@@ -13,6 +13,19 @@ const safetyNotesSchema = {
   },
 } as const;
 
+const stringArraySchema = {
+  type: "array",
+  items: {
+    type: "string",
+  },
+} as const;
+
+const optionalPillarSchema = {
+  type: "string",
+  minLength: 1,
+  maxLength: 20,
+} as const;
+
 export const comprehensiveReportV1DraftJsonSchema = {
   type: "object",
   additionalProperties: false,
@@ -158,6 +171,39 @@ export const comprehensiveReportV2DraftJsonSchema = {
       type: "string",
       minLength: 1,
       maxLength: 260,
+    },
+    profileTable: {
+      type: "object",
+      additionalProperties: false,
+      required: [
+        "fiveElementSummary",
+        "excessiveElements",
+        "missingElements",
+        "tenGodSummary",
+        "specialPatterns",
+        "sinsal",
+        "gwiin",
+        "mbti",
+      ],
+      properties: {
+        yearPillar: optionalPillarSchema,
+        monthPillar: optionalPillarSchema,
+        dayPillar: optionalPillarSchema,
+        hourPillar: optionalPillarSchema,
+        dayMaster: optionalPillarSchema,
+        fiveElementSummary: stringArraySchema,
+        excessiveElements: stringArraySchema,
+        missingElements: stringArraySchema,
+        tenGodSummary: stringArraySchema,
+        specialPatterns: stringArraySchema,
+        sinsal: stringArraySchema,
+        gwiin: stringArraySchema,
+        mbti: {
+          type: "string",
+          minLength: 1,
+          maxLength: 16,
+        },
+      },
     },
     chapters: {
       type: "array",

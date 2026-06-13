@@ -1,6 +1,11 @@
 import type { ComprehensiveReportEvidencePacket } from "../report-knowledge/comprehensiveReportEvidenceTypes";
+import { SAJU_KNOWLEDGE_BASE } from "../report-knowledge/sajuKnowledgeBase";
+import type { SajuKnowledgeEntry } from "../report-knowledge/sajuKnowledgeTypes";
 import { comprehensiveReportDraftJsonSchema } from "./comprehensiveReportDraftSchema";
-import type { ComprehensiveReportDraft } from "./comprehensiveReportDraftTypes";
+import type {
+  ComprehensiveReportDraft,
+  ComprehensiveReportV2ProfileTable,
+} from "./comprehensiveReportDraftTypes";
 import { validateComprehensiveReportDraft } from "./comprehensiveReportDraftValidator";
 import {
   callOpenAIReportWriter,
@@ -126,6 +131,83 @@ function getSafeCauseCode(error: unknown): string {
   return "OPENAI_REPORT_WRITER_REQUEST_FAILED";
 }
 
+function uniqueValues(values: readonly string[]): readonly string[] {
+  return [...new Set(values.map((value) => value.trim()).filter(Boolean))];
+}
+
+function getSelectedSajuEntries(
+  packet: ComprehensiveReportEvidencePacket,
+): readonly SajuKnowledgeEntry[] {
+  const selectedIds = new Set(packet.sajuEntryIds);
+
+  return SAJU_KNOWLEDGE_BASE.filter((entry) => selectedIds.has(entry.id));
+}
+
+function labelsForCategory(
+  entries: readonly SajuKnowledgeEntry[],
+  category: SajuKnowledgeEntry["category"],
+): readonly string[] {
+  return uniqueValues(
+    entries
+      .filter((entry) => entry.category === category)
+      .map((entry) => entry.labelKo),
+  );
+}
+
+function deriveProfileTableFromEvidencePacket(input: {
+  readonly packet: ComprehensiveReportEvidencePacket;
+  readonly mbtiType: string;
+}): ComprehensiveReportV2ProfileTable {
+  const entries = getSelectedSajuEntries(input.packet);
+  const dayMaster = labelsForCategory(entries, "day_master")[0];
+  const dayPillar = labelsForCategory(entries, "day_pillar")[0];
+  const elementBalanceLabels = labelsForCategory(entries, "element_balance");
+
+  return {
+    ...(dayPillar === undefined ? {} : { dayPillar }),
+    ...(dayMaster === undefined ? {} : { dayMaster }),
+    fiveElementSummary: uniqueValues([
+      ...labelsForCategory(entries, "five_element"),
+      ...elementBalanceLabels,
+    ]),
+    excessiveElements: elementBalanceLabels.filter(
+      (label) => label.includes("과다") || label.includes("강"),
+    ),
+    missingElements: elementBalanceLabels.filter((label) =>
+      label.includes("부족"),
+    ),
+    tenGodSummary: labelsForCategory(entries, "ten_god"),
+    specialPatterns: labelsForCategory(entries, "special_pattern"),
+    sinsal: labelsForCategory(entries, "sinsal"),
+    gwiin: labelsForCategory(entries, "nobleman"),
+    mbti: input.mbtiType,
+  };
+}
+
+function attachDeterministicProfileTable(input: {
+  readonly parsed: unknown;
+  readonly evidencePacket: ComprehensiveReportEvidencePacket;
+  readonly mbtiType: string;
+}): unknown {
+  if (
+    typeof input.parsed !== "object" ||
+    input.parsed === null ||
+    Array.isArray(input.parsed) ||
+    !("version" in input.parsed) ||
+    input.parsed.version !== "comprehensive_v2_draft"
+  ) {
+    return input.parsed;
+  }
+
+  return {
+    ...input.parsed,
+    profileTable: deriveProfileTableFromEvidencePacket({
+      packet: input.evidencePacket,
+      mbtiType: input.mbtiType,
+    }),
+  };
+}
+
 export async function generateComprehensiveReportDraft(input: {
   readonly userDisplayName?: string;
   readonly mbtiType: string;
@@ -170,7 +252,12 @@ export async function generateComprehensiveReportDraft(input: {
     });
   }
 
-  const validation = validateComprehensiveReportDraft(parsed, {
+  const draftCandidate = attachDeterministicProfileTable({
+    parsed,
+    evidencePacket: input.evidencePacket,
+    mbtiType: input.mbtiType,
+  });
+  const validation = validateComprehensiveReportDraft(draftCandidate, {
     allowedSajuTerms,
     allowedMbtiTerms: [input.mbtiType],
   });

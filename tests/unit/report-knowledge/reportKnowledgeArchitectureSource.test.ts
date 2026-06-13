@@ -79,6 +79,21 @@ describe("report knowledge architecture document", () => {
       "Migration 0012 supports saving and reading",
       "V1 snapshots remain readable",
       "renders V2 without analysis evidence blocks",
+      "REPORT-13 adds hit-reading and prescription",
+      "compact deterministic manseok/profile table",
+      "체감형 명중 문장",
+      "concrete scene examples",
+      "practical prescriptions",
+      "이렇게 쓰면 좋습니다",
+      "피해야 할 패턴",
+      "공부/일 루틴",
+      "certificates, professional books",
+      "직무 학습",
+      "사업 학습",
+      "partner fit criteria",
+      "bad match patterns",
+      "element-based remedies",
+      "payment or Toss flow wiring is still separate",
     ];
 
     for (const marker of requiredMarkers) {

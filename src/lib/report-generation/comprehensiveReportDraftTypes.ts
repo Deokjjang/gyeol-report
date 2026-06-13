@@ -61,12 +61,29 @@ export type ComprehensiveReportV2Chapter = {
   readonly mbtiTermsUsed: readonly string[];
 };
 
+export type ComprehensiveReportV2ProfileTable = {
+  readonly yearPillar?: string;
+  readonly monthPillar?: string;
+  readonly dayPillar?: string;
+  readonly hourPillar?: string;
+  readonly dayMaster?: string;
+  readonly fiveElementSummary: readonly string[];
+  readonly excessiveElements: readonly string[];
+  readonly missingElements: readonly string[];
+  readonly tenGodSummary: readonly string[];
+  readonly specialPatterns: readonly string[];
+  readonly sinsal: readonly string[];
+  readonly gwiin: readonly string[];
+  readonly mbti: string;
+};
+
 export type ComprehensiveReportV2Draft = {
   readonly version: "comprehensive_v2_draft";
   readonly productType: "saju_mbti_full";
   readonly openingTitle: string;
   readonly openingSummary: string;
   readonly coreLine: string;
+  readonly profileTable?: ComprehensiveReportV2ProfileTable;
   readonly chapters: readonly ComprehensiveReportV2Chapter[];
   readonly finalAdvice: string;
   readonly safetyNotes: readonly string[];

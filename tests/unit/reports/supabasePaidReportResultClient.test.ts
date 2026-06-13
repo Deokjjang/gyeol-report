@@ -93,12 +93,21 @@ function createDraft(): ComprehensiveReportDraft {
 }
 
 function createV2Chapter(chapterId: ComprehensiveReportV2ChapterId, titleKo: string) {
+  const extra =
+    chapterId === "work_money_study"
+      ? "공부/일 루틴은 자격증, 전문서, 직무 학습, 사업 학습을 2주 단위로 쪼개야 합니다. 돈은 공격 계획과 방어 계획을 분리해야 하며 현금흐름과 자기계발 예산을 따로 보아야 합니다."
+      : chapterId === "love_relationships"
+        ? "관계에서 써먹을 것은 보완하는 사람 기준입니다. 정서적 완충이 되고 감정 표현을 부드럽게 풀어주는 사람이 맞는 사람일 수 있습니다. 피해야 할 패턴은 감정 기복이 크고 책임이 흐릿한 사람입니다. ISFP, INFP, INTP는 예시일 뿐이고 MBTI만으로 단정하지 않는 태도가 필요합니다."
+      : chapterId === "risk_and_growth"
+        ? "피해야 할 패턴은 끝까지 버티다가 과열되는 흐름입니다. 수 부족은 밤 산책, 수변 공간, 충분한 수분, 기록, 잠 루틴으로 식히고, 화 부족은 햇빛, 가벼운 운동, 발표와 표현 연습으로 밖으로 내야 합니다. 토 과다는 책임 덜어내기와 경계선 정리하기로 조절해야 합니다."
+      : `${titleKo}에 맞는 환경은 기준을 세우고 빠르게 실행할 수 있는 곳입니다. ${titleKo}에서 피해야 할 패턴은 결론만 던지고 상대의 속도를 보지 않는 흐름이므로, 질문을 먼저 넣는 처방이 필요합니다.`;
+
   return {
     chapterId,
     titleKo,
     headline: `${titleKo}는 갑목과 갑신일주를 먼저 놓고 읽습니다.`,
     body:
-      `${titleKo}에서는 갑목과 갑신일주를 먼저 놓고 ENTJ는 보조로만 연결합니다. ${titleKo}의 갑목은 방향을 세우는 힘이고, ${titleKo}의 갑신일주는 압박 속에서 기준을 잡는 구조입니다. ${titleKo} 본문은 저장된 V2 snapshot을 조회한 뒤 화면에서 narrative chapter로 렌더링할 수 있게 충분한 길이를 갖습니다. ${titleKo}에서는 돈과 공부, 관계와 환경이 같은 사주 구조에서 출발하더라도 서로 다른 장면으로 드러난다고 설명합니다. 그래서 ${titleKo}은 짧은 분석표가 아니라 사용자가 자기 행동을 떠올릴 수 있는 긴 호흡의 해석으로 유지되어야 합니다. ${titleKo} 문장은 저장된 snapshot 검증을 위한 예시 문장이며, 사주 용어를 본문 안에서 자연스럽게 풀어냅니다. ${titleKo}은 각 장면에서 무엇을 밀어붙이고 어디서 힘을 빼야 하는지까지 이어져야 하므로, 조회 경계에서도 충분한 narrative 밀도를 가진 문장으로 검증합니다. ${titleKo}의 마지막 흐름은 좋은 말만 덧붙이는 방식이 아니라, 실제 사용자가 일과 돈과 관계에서 어떤 선택을 바꿀 수 있는지까지 이어지는 해석이어야 합니다.`,
+      `${titleKo}에서는 갑목과 갑신일주를 먼저 놓고 ENTJ는 보조로만 연결합니다. 덕민님, ${titleKo}에서 상대가 아직 설명 중인데 이미 답이 보이는 상황 자주 나오지 않나요? ${titleKo}의 갑목은 방향을 세우는 힘이고, ${titleKo}의 갑신일주는 압박 속에서 기준을 잡는 구조입니다. ${titleKo} 본문은 저장된 V2 snapshot을 조회한 뒤 화면에서 narrative chapter로 렌더링할 수 있게 충분한 길이를 갖습니다. ${titleKo}에서는 돈과 공부, 관계와 환경이 같은 사주 구조에서 출발하더라도 서로 다른 장면으로 드러난다고 설명합니다. 그래서 ${titleKo}은 짧은 분석표가 아니라 사용자가 자기 행동을 떠올릴 수 있는 긴 호흡의 해석으로 유지되어야 합니다. 이렇게 쓰면 좋습니다. ${titleKo}에서는 결론을 바로 던지기보다 질문을 먼저 넣는 루틴을 두어야 합니다. ${extra}`,
     keyPhrases: [titleKo, "갑목"],
     sajuTermsUsed: ["갑목", "갑신일주"],
     mbtiTermsUsed: ["ENTJ"],

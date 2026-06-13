@@ -6,6 +6,7 @@ import type {
   ComprehensiveReportV2Chapter,
   ComprehensiveReportV2ChapterId,
   ComprehensiveReportV2Draft,
+  ComprehensiveReportV2ProfileTable,
 } from "./comprehensiveReportDraftTypes";
 import { COMPREHENSIVE_REPORT_V2_CHAPTER_IDS } from "./comprehensiveReportDraftTypes";
 import {
@@ -109,6 +110,7 @@ const draftV2RootKeys = [
   "openingTitle",
   "openingSummary",
   "coreLine",
+  "profileTable",
   "chapters",
   "finalAdvice",
   "safetyNotes",
@@ -132,6 +134,21 @@ const chapterKeys = [
   "keyPhrases",
   "sajuTermsUsed",
   "mbtiTermsUsed",
+] as const;
+const profileTableKeys = [
+  "yearPillar",
+  "monthPillar",
+  "dayPillar",
+  "hourPillar",
+  "dayMaster",
+  "fiveElementSummary",
+  "excessiveElements",
+  "missingElements",
+  "tenGodSummary",
+  "specialPatterns",
+  "sinsal",
+  "gwiin",
+  "mbti",
 ] as const;
 
 const displayOnlySectionIds = ["manse_table", "mbti_table"] as const;
@@ -180,6 +197,83 @@ const v2ChapterBodyMinimumLengths = {
   risk_and_growth: 420,
   final_message: 260,
 } as const satisfies Record<ComprehensiveReportV2ChapterId, number>;
+const directHitReadingMarkers = [
+  "않나요",
+  "많지 않나요",
+  "자주",
+  "이런 상황",
+  "그런 적",
+  "가능성이 큽니다",
+  "편일 가능성이 큽니다",
+  "느껴질 수 있습니다",
+  "나오지 않나요",
+] as const;
+const prescriptionMarkers = [
+  "이렇게 쓰면 좋습니다",
+  "피해야 할 패턴",
+  "맞는 환경",
+  "관계에서 써먹을 것",
+  "공부/일 루틴",
+  "해야 합니다",
+  "분리해야",
+  "정리하기",
+  "루틴",
+  "처방",
+  "질문",
+  "경계선",
+] as const;
+const studyScopeMarkers = [
+  "자격증",
+  "전문서",
+  "직무 학습",
+  "사업 학습",
+] as const;
+const partnerFitMarkers = [
+  "보완하는 사람",
+  "맞는 사람",
+  "필요한 사람",
+  "어울리는 사람",
+  "궁합",
+  "정서적 완충",
+] as const;
+const badMatchMarkers = [
+  "피해야 할 패턴",
+  "맞지 않는",
+  "나쁜 궁합",
+  "감정 기복",
+  "책임이 흐릿",
+  "확인받으려는",
+  "실행이 약한",
+] as const;
+const cautiousMbtiRelationMarkers = [
+  "MBTI만으로 단정",
+  "단정하지",
+  "ISFP",
+  "INFP",
+  "INTP",
+] as const;
+const elementRemedyMarkers = [
+  "밤 산책",
+  "수변",
+  "수분",
+  "사색",
+  "기록",
+  "잠",
+  "햇빛",
+  "가벼운 운동",
+  "발표",
+  "표현 연습",
+  "책임 덜어내기",
+  "경계선",
+  "일정",
+] as const;
+const repeatedSentenceAllowList = [
+  "이렇게 쓰면 좋습니다.",
+  "피해야 할 패턴입니다.",
+  "맞는 환경입니다.",
+  "관계에서 써먹을 것입니다.",
+  "공부/일 루틴입니다.",
+] as const;
 const shortSajuTermContextSuffixes = [
   "일주",
   "귀인",
@@ -211,6 +305,17 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 function isStringArray(value: unknown): value is readonly string[] {
   return Array.isArray(value) && value.every((item) => typeof item === "string");
+}
+
+function hasAnyMarker(text: string, markers: readonly string[]): boolean {
+  return markers.some((marker) => text.includes(marker));
+}
+
+function findChapter(
+  chapters: readonly ComprehensiveReportV2Chapter[],
+  chapterId: ComprehensiveReportV2ChapterId,
+): ComprehensiveReportV2Chapter | undefined {
+  return chapters.find((chapter) => chapter.chapterId === chapterId);
 }
 
 function isSectionId(value: unknown): value is ComprehensiveReportSectionId {
@@ -609,7 +714,10 @@ function splitBodySentences(body: string): readonly string[] {
   return body
     .split(/(?<=[.!?。])\s+|\n+/)
     .map((sentence) => sentence.trim())
-    .filter((sentence) => sentence.length >= 12);
+    .filter((sentence) => sentence.length >= 12)
+    .filter(
+      (sentence) => !(repeatedSentenceAllowList as readonly string[]).includes(sentence),
+    );
 }
 
 function appendRepetitionErrors(
@@ -871,6 +979,86 @@ function parseChapter(
   };
 }
 
+function parseOptionalProfilePillar(
+  errors: string[],
+  value: unknown,
+  label: string,
+): string | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (typeof value !== "string" || value.trim().length === 0) {
+    errors.push(`profileTable.${label} must be a non-empty string when provided.`);
+    return undefined;
+  }
+
+  return value;
+}
+
+function parseProfileStringArray(
+  errors: string[],
+  value: unknown,
+  label: string,
+): readonly string[] {
+  if (!isStringArray(value)) {
+    errors.push(`profileTable.${label} must be a string array.`);
+    return [];
+  }
+
+  return value;
+}
+
+function parseProfileTable(
+  errors: string[],
+  value: unknown,
+): ComprehensiveReportV2ProfileTable | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!isRecord(value)) {
+    errors.push("profileTable must be an object.");
+    return undefined;
+  }
+
+  appendUnknownKeyErrors(errors, "profileTable", value, profileTableKeys);
+
+  if (typeof value.mbti !== "string" || value.mbti.trim().length === 0) {
+    errors.push("profileTable.mbti must be a non-empty string.");
+  }
+
+  return {
+    yearPillar: parseOptionalProfilePillar(errors, value.yearPillar, "yearPillar"),
+    monthPillar: parseOptionalProfilePillar(errors, value.monthPillar, "monthPillar"),
+    dayPillar: parseOptionalProfilePillar(errors, value.dayPillar, "dayPillar"),
+    hourPillar: parseOptionalProfilePillar(errors, value.hourPillar, "hourPillar"),
+    dayMaster: parseOptionalProfilePillar(errors, value.dayMaster, "dayMaster"),
+    fiveElementSummary: parseProfileStringArray(
+      errors,
+      value.fiveElementSummary,
+      "fiveElementSummary",
+    ),
+    excessiveElements: parseProfileStringArray(
+      errors,
+      value.excessiveElements,
+      "excessiveElements",
+    ),
+    missingElements: parseProfileStringArray(
+      errors,
+      value.missingElements,
+      "missingElements",
+    ),
+    tenGodSummary: parseProfileStringArray(errors, value.tenGodSummary, "tenGodSummary"),
+    specialPatterns: parseProfileStringArray(
+      errors,
+      value.specialPatterns,
+      "specialPatterns",
+    ),
+    sinsal: parseProfileStringArray(errors, value.sinsal, "sinsal"),
+    gwiin: parseProfileStringArray(errors, value.gwiin, "gwiin"),
+    mbti: typeof value.mbti === "string" ? value.mbti : "",
+  };
+}
+
 function appendChapterCoverageErrors(
   errors: string[],
   chapters: readonly ComprehensiveReportV2Chapter[],
@@ -1007,6 +1195,76 @@ function appendV2VisibleDebugLabelErrors(
   }
 }
 
+function appendV2HitReadingErrors(
+  errors: string[],
+  input: {
+    readonly openingSummary: string;
+    readonly coreLine: string;
+    readonly chapters: readonly ComprehensiveReportV2Chapter[];
+    readonly finalAdvice: string;
+  },
+): void {
+  const text = [
+    input.openingSummary,
+    input.coreLine,
+    ...input.chapters.map((chapter) => [chapter.headline, chapter.body].join("\n")),
+    input.finalAdvice,
+  ].join("\n");
+  const hitCount = directHitReadingMarkers.reduce(
+    (count, marker) => count + (text.split(marker).length - 1),
+    0,
+  );
+
+  if (hitCount < 5) {
+    errors.push("DIRECT_HIT_READING_MISSING");
+  }
+}
+
+function appendV2PrescriptionErrors(
+  errors: string[],
+  chapters: readonly ComprehensiveReportV2Chapter[],
+): void {
+  for (const chapter of chapters) {
+    if (chapter.chapterId === "opening" || chapter.chapterId === "final_message") {
+      continue;
+    }
+    if (!hasAnyMarker(chapter.body, prescriptionMarkers)) {
+      errors.push(`CHAPTER_PRESCRIPTION_MISSING: ${chapter.chapterId}`);
+    }
+  }
+}
+
+function appendV2TopicCoverageErrors(
+  errors: string[],
+  chapters: readonly ComprehensiveReportV2Chapter[],
+): void {
+  const workChapter = findChapter(chapters, "work_money_study");
+  const loveChapter = findChapter(chapters, "love_relationships");
+  const riskChapter = findChapter(chapters, "risk_and_growth");
+
+  if (workChapter !== undefined && !hasAnyMarker(workChapter.body, studyScopeMarkers)) {
+    errors.push("WORK_STUDY_SCOPE_MISSING");
+  }
+  if (
+    loveChapter !== undefined &&
+    !hasAnyMarker(loveChapter.body, partnerFitMarkers)
+  ) {
+    errors.push("LOVE_PARTNER_FIT_MISSING");
+  }
+  if (loveChapter !== undefined && !hasAnyMarker(loveChapter.body, badMatchMarkers)) {
+    errors.push("LOVE_BAD_MATCH_PATTERN_MISSING");
+  }
+  if (
+    loveChapter !== undefined &&
+    !hasAnyMarker(loveChapter.body, cautiousMbtiRelationMarkers)
+  ) {
+    errors.push("LOVE_MBTI_CAUTION_OR_EXAMPLE_MISSING");
+  }
+  if (riskChapter !== undefined && !hasAnyMarker(riskChapter.body, elementRemedyMarkers)) {
+    errors.push("ELEMENT_REMEDY_MISSING");
+  }
+}
+
 function parseV2Draft(
   input: unknown,
   errors: string[],
@@ -1031,6 +1289,8 @@ function parseV2Draft(
   validateStringField(errors, "coreLine", input.coreLine, 12);
   validateStringField(errors, "finalAdvice", input.finalAdvice, 40);
 
+  const profileTable = parseProfileTable(errors, input.profileTable);
+
   if (!isStringArray(input.safetyNotes)) {
     errors.push("safetyNotes must be a string array.");
   }
@@ -1052,6 +1312,14 @@ function parseV2Draft(
   });
   appendV2SajuFirstErrors(errors, chapters);
   appendV2RepetitionErrors(errors, chapters);
+  appendV2HitReadingErrors(errors, {
+    openingSummary: typeof input.openingSummary === "string" ? input.openingSummary : "",
+    coreLine: typeof input.coreLine === "string" ? input.coreLine : "",
+    chapters,
+    finalAdvice: typeof input.finalAdvice === "string" ? input.finalAdvice : "",
+  });
+  appendV2PrescriptionErrors(errors, chapters);
+  appendV2TopicCoverageErrors(errors, chapters);
   appendV2VisibleDebugLabelErrors(errors, {
     openingTitle: typeof input.openingTitle === "string" ? input.openingTitle : "",
     openingSummary: typeof input.openingSummary === "string" ? input.openingSummary : "",
@@ -1071,6 +1339,7 @@ function parseV2Draft(
     openingTitle: input.openingTitle as string,
     openingSummary: input.openingSummary as string,
     coreLine: input.coreLine as string,
+    ...(profileTable === undefined ? {} : { profileTable }),
     chapters,
     finalAdvice: input.finalAdvice as string,
     safetyNotes: input.safetyNotes as readonly string[],
