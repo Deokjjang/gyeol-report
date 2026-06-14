@@ -8,6 +8,7 @@ import type {
   ComprehensiveReportV2ProfileTable,
 } from "./comprehensiveReportDraftTypes";
 import { sanitizeComprehensiveReportNarrativeDraft } from "./comprehensiveReportDraftSanitizer";
+import { normalizeComprehensiveReportFinalMessage } from "./comprehensiveReportNarrativePostProcessor";
 import {
   areAllDraftValidationErrorsRepairable,
   validateComprehensiveReportDraftAfterRepair,
@@ -347,6 +348,16 @@ function getCopySanitizerWarnings(
     : [];
 }
 
+function getFinalMessageNormalizerWarnings(
+  ...results: readonly {
+    readonly normalized: boolean;
+  }[]
+): readonly string[] {
+  return results.some((result) => result.normalized)
+    ? ["final message normalizer: applied"]
+    : [];
+}
+
 function attachDeterministicProfileTable(input: {
   readonly parsed: unknown;
   readonly evidencePacket: ComprehensiveReportEvidencePacket;
@@ -427,7 +438,8 @@ export async function generateComprehensiveReportDraft(input: {
     mbtiType: input.mbtiType,
     profileTable: input.profileTable,
   });
-  const validation = validateComprehensiveReportDraft(draftCandidate, {
+  const normalizedInitial = normalizeComprehensiveReportFinalMessage(draftCandidate);
+  const validation = validateComprehensiveReportDraft(normalizedInitial.draft, {
     allowedSajuTerms,
     allowedMbtiTerms: [input.mbtiType],
   });
@@ -491,14 +503,21 @@ export async function generateComprehensiveReportDraft(input: {
       mbtiType: input.mbtiType,
       profileTable: input.profileTable,
     });
-    const repairValidation = validateComprehensiveReportDraft(repairDraftCandidate, {
+    const normalizedRepair = normalizeComprehensiveReportFinalMessage(
+      repairDraftCandidate,
+    );
+    const normalizerWarnings = getFinalMessageNormalizerWarnings(
+      normalizedInitial,
+      normalizedRepair,
+    );
+    const repairValidation = validateComprehensiveReportDraft(normalizedRepair.draft, {
       allowedSajuTerms,
       allowedMbtiTerms: [input.mbtiType],
     });
 
     if (!repairValidation.ok || repairValidation.value === undefined) {
       const postRepairValidation = validateComprehensiveReportDraftAfterRepair(
-        repairDraftCandidate,
+        normalizedRepair.draft,
         {
           allowedSajuTerms,
           allowedMbtiTerms: [input.mbtiType],
@@ -511,6 +530,7 @@ export async function generateComprehensiveReportDraft(input: {
           rawText: repairResult.rawText,
           warnings: [
             ...sanitizerWarnings,
+            ...normalizerWarnings,
             "quality repair: attempted",
             "quality repair: passed with warnings",
             ...(postRepairValidation.warnings ?? []),
@@ -534,6 +554,7 @@ export async function generateComprehensiveReportDraft(input: {
       rawText: repairResult.rawText,
       warnings: [
         ...sanitizerWarnings,
+        ...normalizerWarnings,
         "quality repair: attempted",
         repairWarnings.length > 0
           ? "quality repair: passed with warnings"
@@ -548,6 +569,7 @@ export async function generateComprehensiveReportDraft(input: {
     rawText: result.rawText,
     warnings: [
       ...getCopySanitizerWarnings(sanitizedInitial),
+      ...getFinalMessageNormalizerWarnings(normalizedInitial),
       ...(validation.warnings ?? []),
     ],
   };

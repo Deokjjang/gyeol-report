@@ -83,6 +83,12 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("일상 장면을 구체적으로 쓸 것");
     expect(combined).toContain("MBTI 보조 해석을 충분히 쓸 것");
     expect(combined).toContain("final_message는 긴 마무리 챕터로 쓸 것");
+    expect(combined).toContain(
+      "final_message는 짧은 요약이 아니라 리포트 전체를 닫는 긴 마무리 챕터다",
+    );
+    expect(combined).toContain(
+      "final_message는 최소한 일, 관계, 돈, 회복/표현 중 3개 이상을 연결해 실제 실천 방향으로 마무리하라",
+    );
     expect(combined).toContain("8개 챕터");
     expect(combined).toContain("근거 목록을 따로 보여주지 말고 본문에 녹여라");
     expect(combined).toContain("work_money_study");
@@ -147,6 +153,9 @@ describe("OpenAI report writer prompt", () => {
     );
     expect(combined).toContain(
       "\"문서\", \"초안\", \"원고\", \"텍스트\" 같은 제작물 메타 표현을 쓰지 마라",
+    );
+    expect(combined).toContain(
+      "\"문서\", \"초안\", \"생성된 내용\" 같은 제작 메타 표현을 쓰지 마라",
     );
     expect(combined).toContain("영어 단어 contrast/output/draft를 쓰지 마라");
     expect(combined).toContain("정책성 disclaimer를 본문에 넣지 말고");

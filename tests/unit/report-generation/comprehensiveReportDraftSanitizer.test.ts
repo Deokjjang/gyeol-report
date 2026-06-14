@@ -86,4 +86,32 @@ describe("comprehensive report draft sanitizer", () => {
     expect(result.draft.profileTable).toEqual(draft.profileTable);
     expect(result.draft.profileTable.dayPillarKeywords).toEqual(["문서"]);
   });
+
+  it("replaces standalone meta document wording but preserves legitimate document work terms", () => {
+    const draft = {
+      ...createNarrativeDraft(),
+      openingTitle: "이 문서는 최종 해석입니다.",
+      openingSummary: "이 문서에서는 사주 구조를 먼저 읽습니다.",
+      coreLine: "작성된 문서보다 사용자 해석이 먼저입니다.",
+      chapters: [
+        {
+          ...createNarrativeDraft().chapters[0],
+          body:
+            "전문서 공부와 문서화, 문서 정리, 문서로 남기기는 일과 공부 조언으로 유지합니다. 문서 자체를 상품처럼 말하지는 않습니다.",
+        },
+      ],
+    };
+    const result = sanitizeComprehensiveReportNarrativeDraft(draft);
+    const serialized = JSON.stringify(result.draft);
+
+    expect(result.draft.openingTitle).toContain("이 리포트는");
+    expect(result.draft.openingSummary).toContain("이 리포트에서는");
+    expect(result.draft.coreLine).toContain("작성된 리포트");
+    expect(serialized).toContain("전문서");
+    expect(serialized).toContain("문서화");
+    expect(serialized).toContain("문서 정리");
+    expect(serialized).toContain("문서로 남기기");
+    expect(serialized).not.toContain("문서 자체");
+    expect(serialized).toContain("리포트 자체");
+  });
 });

@@ -601,6 +601,59 @@ describe("OpenAI comprehensive report writer", () => {
     expect(JSON.stringify(result.draft)).toContain("리포트");
   });
 
+  it("sanitizes document meta wording and normalizes weak final message before validation", async () => {
+    const weakDraft = {
+      ...createValidDraft(),
+      openingSummary:
+        "이 문서에서는 사주 구조를 먼저 놓고 ENTJ는 보조로 연결합니다.",
+      chapters: createValidDraft().chapters.map((chapter) =>
+        chapter.chapterId === "final_message"
+          ? {
+              ...chapter,
+              headline: "마지막 정리",
+              hitReadingLines: ["덕민님은 기준을 빨리 세우는 편입니다."],
+              body: "갑목과 갑신일주를 기준으로 마지막 방향을 짧게 정리합니다.",
+              solutionLines: [],
+              keyPhrases: ["갑목", "갑신일주"],
+            }
+          : chapter,
+      ),
+      finalAdvice: "방향성은 살리되 오래 가는 방식을 함께 설계하세요.",
+    };
+    let callCount = 0;
+    const fetchImpl: typeof fetch = async () => {
+      callCount += 1;
+
+      return createJsonResponse({
+        output_text: JSON.stringify(weakDraft),
+      });
+    };
+
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "ENTJ",
+      evidencePacket: createPacket(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl,
+      },
+    });
+    const serialized = JSON.stringify(result.draft);
+
+    expect(callCount).toBe(1);
+    expect(result.warnings).toEqual([
+      "copy sanitizer: applied",
+      "final message normalizer: applied",
+    ]);
+    expect(serialized).not.toContain("이 문서");
+    expect(serialized).not.toContain("문서에서는");
+    expect(serialized).not.toContain("문서 자체");
+    expect(serialized).toContain("이 리포트에서는");
+    expect(serialized).toContain("마지막 핵심");
+    expect(serialized).toContain("오늘부터");
+  });
+
   it("repairs unsafe copy mild meta wording and repeated sentences from model output", async () => {
     const unsafeDraft = {
       ...createValidDraft(),
@@ -692,6 +745,18 @@ describe("OpenAI comprehensive report writer", () => {
       ...createValidDraft(),
       finalAdvice:
         "치료라는 표현 대신 생활 루틴으로 관리하는 방향을 남깁니다. 성과를 밀어붙이는 힘은 살리되, 관계에서는 질문을 먼저 넣고 돈에서는 계좌와 예산을 분리하며 회복에서는 밤 산책과 수면을 일정에 고정해 오래 가는 방식을 만들어 주세요.",
+      chapters: createValidDraft().chapters.map((chapter) =>
+        chapter.chapterId === "final_message"
+          ? {
+              ...chapter,
+              headline: "마지막 정리",
+              hitReadingLines: ["덕민님은 기준을 빨리 세우는 편입니다."],
+              body: "갑목과 갑신일주를 기준으로 마지막 방향을 짧게 정리합니다.",
+              solutionLines: [],
+              keyPhrases: ["갑목", "갑신일주"],
+            }
+          : chapter,
+      ),
     };
     let callCount = 0;
     const fetchImpl: typeof fetch = async () => {
@@ -717,11 +782,13 @@ describe("OpenAI comprehensive report writer", () => {
     expect(callCount).toBe(2);
     expect(result.warnings).toEqual([
       "copy sanitizer: applied",
+      "final message normalizer: applied",
       "quality repair: attempted",
       "quality repair: passed",
     ]);
     expect(serialized).not.toContain("치료");
     expect(serialized).toContain("관리");
+    expect(serialized).toContain("마지막 핵심");
   });
 
   it("fails if repair keeps repeated sentences after sanitizer cleanup", async () => {

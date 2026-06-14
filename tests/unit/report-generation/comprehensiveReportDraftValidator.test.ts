@@ -10,6 +10,7 @@ import {
   isRepairableDraftValidationError,
   validateComprehensiveReportDraft,
 } from "../../../src/lib/report-generation/comprehensiveReportDraftValidator";
+import { normalizeComprehensiveReportFinalMessage } from "../../../src/lib/report-generation/comprehensiveReportNarrativePostProcessor";
 import {
   COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
   type ComprehensiveReportSectionDefinition,
@@ -722,6 +723,52 @@ describe("comprehensive report draft validator", () => {
     expect(result.errors.join("\n")).toContain("FINAL_MESSAGE_CLOSING_MISSING");
   });
 
+  it("accepts a weak final message after deterministic final message normalization", () => {
+    const draft = createValidV2Draft();
+    const weakFinalDraft = {
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "final_message"
+          ? {
+              ...chapter,
+              headline: "마지막 정리",
+              hitReadingLines: ["덕민님은 기준을 빨리 세우는 편입니다."],
+              body: "갑목과 갑신일주를 기준으로 마지막 방향을 짧게 정리합니다.",
+              solutionLines: [],
+              keyPhrases: ["갑목", "갑신일주"],
+            }
+          : chapter,
+      ),
+      finalAdvice: "방향성은 살리되 오래 가는 방식을 함께 설계하세요.",
+    };
+    const normalized = normalizeComprehensiveReportFinalMessage(weakFinalDraft);
+    const result = validateComprehensiveReportDraft(normalized.draft, {
+      allowedSajuTerms: [
+        "갑목",
+        "갑신",
+        "갑신일주",
+        "토 과다",
+        "수 부족",
+        "화 부족",
+        "편재",
+        "정재",
+        "정관",
+        "편관",
+        "재다신약",
+        "재고귀인",
+        "무인성",
+        "무식상",
+        "현침살",
+        "홍염살",
+      ],
+      allowedMbtiTerms: ["ENTJ"],
+    });
+
+    expect(normalized.normalized).toBe(true);
+    expect(result.errors.join("\n")).not.toContain("FINAL_MESSAGE_CLOSING_MISSING");
+    expect(result.ok).toBe(true);
+  });
+
   it("rejects V2 template labels inside generated narrative text", () => {
     const draft = createValidV2Draft();
     const result = validateComprehensiveReportDraft({
@@ -1273,6 +1320,21 @@ describe("comprehensive report draft validator", () => {
       );
       expect(areAllDraftValidationErrorsRepairable(result.errors)).toBe(true);
     }
+  });
+
+  it("does not flag legitimate document-work wording as mild internal meta copy", () => {
+    const draft = replaceSectionBody(
+      createValidDraft(),
+      "work_career",
+      "갑목과 갑신일주를 먼저 놓고 일하는 방식을 읽습니다. 갑목은 방향을 세우는 힘이고 갑신일주는 압박 속에서도 기준을 정리하는 구조입니다. 그래서 업무에서는 전문서 공부, 문서화, 문서 작업, 문서 정리, 문서로 남기기 같은 실행 방식이 성과를 보존하는 장치가 될 수 있습니다. ENTJ는 이 흐름을 목표와 역할 정리로 체감하게 만드는 보조 언어입니다.",
+    );
+    const result = validateComprehensiveReportDraft(draft, {
+      allowedSajuTerms: ["갑목", "갑신", "갑신일주"],
+      allowedMbtiTerms: ["ENTJ"],
+    });
+
+    expect(result.errors.join("\n")).not.toContain("MILD_INTERNAL_META_COPY");
+    expect(result.ok).toBe(true);
   });
 
   it("keeps implementation debug wording as fatal meta copy", () => {

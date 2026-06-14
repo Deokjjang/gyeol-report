@@ -35,10 +35,14 @@ const REPORT_COPY_REPLACEMENT_RULES: readonly ReplacementRule[] = [
   { term: "우울증", replacement: "감정 저하" },
   { term: "진단", replacement: "해석" },
   { term: "치료", replacement: "관리" },
+  { term: "이 문서에서는", replacement: "이 리포트에서는" },
+  { term: "이 문서는", replacement: "이 리포트는" },
+  { term: "작성된 문서", replacement: "작성된 리포트" },
   {
     term: "문서",
     replacement: "$1리포트",
-    pattern: /(^|[^가-힣])문서(?=는|를|가|입니다|라고|에서|로|의|\s|[,.!?]|$)/g,
+    pattern:
+      /(^|[^가-힣])문서(?!화| 작업| 정리|로 남기기)(?=는|를|가|입니다|라고|에서는|에서|로|의|\s|[,.!?]|$)/g,
   },
   { term: "텍스트", replacement: "문장" },
   { term: "원고", replacement: "리포트" },

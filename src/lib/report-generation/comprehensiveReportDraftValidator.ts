@@ -133,6 +133,13 @@ const mildInternalMetaSuffixes = [
   "입니다",
   "에서는",
 ] as const;
+const allowedMildInternalMetaContexts = [
+  "문서화",
+  "전문서",
+  "문서 작업",
+  "문서 정리",
+  "문서로 남기기",
+] as const;
 
 const forbiddenInternalMetaPhrases = [
   "검증된 " + "JSON",
@@ -463,6 +470,10 @@ const finalMessagePracticalAreaMarkers = [
   "연애",
   "성과",
   "루틴",
+  "회복",
+  "표현",
+  "기준",
+  "실천",
 ] as const;
 const finalMessageSmallActionMarkers = [
   "오늘",
@@ -757,6 +768,11 @@ function findSajuTermMatches(text: string, term: string): readonly string[] {
 
 function findMildInternalMetaPhraseMatches(text: string): readonly string[] {
   const matches: string[] = [];
+  const searchableText = allowedMildInternalMetaContexts.reduce(
+    (current, context) =>
+      current.replace(new RegExp(escapeRegExp(context), "g"), " "),
+    text,
+  );
 
   for (const phrase of repairableMildInternalMetaPhrases) {
     if ((shortMildInternalMetaPhrases as readonly string[]).includes(phrase)) {
@@ -766,7 +782,7 @@ function findMildInternalMetaPhraseMatches(text: string): readonly string[] {
           "g",
         );
 
-        if (regex.test(text)) {
+        if (regex.test(searchableText)) {
           matches.push(phrase);
           break;
         }
@@ -774,7 +790,7 @@ function findMildInternalMetaPhraseMatches(text: string): readonly string[] {
       continue;
     }
 
-    if (text.includes(phrase)) {
+    if (searchableText.includes(phrase)) {
       matches.push(phrase);
     }
   }
