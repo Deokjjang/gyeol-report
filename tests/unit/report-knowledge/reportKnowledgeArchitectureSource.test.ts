@@ -109,6 +109,13 @@ describe("report knowledge architecture document", () => {
       "Strong metaphor is allowed",
       "The forbidden expression policy blocks certainty",
       "MBTI bridge needs are assigned where useful",
+      "REPORT-15C adds a 60갑자 일주 지식 DB",
+      "Day pillar data is the identity anchor",
+      "this chart has this 일주",
+      "The day pillar knowledge maps into the same feature scoring model",
+      "The 금지 표현 정책 also applies to day pillar fields",
+      "OpenAI should not invent day pillar meanings",
+      "connected to report generation in a later task",
     ];
 
     for (const marker of requiredMarkers) {

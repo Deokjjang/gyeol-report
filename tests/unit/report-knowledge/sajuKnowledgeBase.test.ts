@@ -211,9 +211,9 @@ describe("saju knowledge base", () => {
     const text = JSON.stringify(gapsin);
 
     expect(text).toContain("바위 위 소나무");
-    expect(text).toContain("편관 pressure");
-    expect(text).toContain("leadership under pressure");
-    expect(text).toContain("sharp");
+    expect(text).toContain("편관 압박");
+    expect(text).toContain("압박 속 리더십");
+    expect(text).toContain("날카로운 판단");
     expect(gapsin.positiveTags).toEqual(
       expect.arrayContaining(["leadership", "sharp_analysis", "self_discipline"]),
     );

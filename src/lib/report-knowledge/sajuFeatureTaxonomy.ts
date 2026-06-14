@@ -1,3 +1,4 @@
+import { SAJU_DAY_PILLAR_FEATURES } from "./sajuDayPillarKnowledge";
 import type {
   MbtiBridgeNeed,
   SajuFeatureCategory,
@@ -1615,6 +1616,7 @@ const expandedStructureEntries = [
 ] as const satisfies readonly SajuFeatureEntry[];
 
 export const SAJU_FEATURE_TAXONOMY = [
+  ...SAJU_DAY_PILLAR_FEATURES,
   ...twelveSinsalEntries,
   ...expandedTwelveSinsalEntries,
   ...sinsalEntries,

@@ -56,6 +56,18 @@ describe("saju feature scoring", () => {
     expect(baekho.score).toBeGreaterThan(5);
   });
 
+  it("scores day pillar entries through the shared feature model", () => {
+    const scores = scoreSajuFeatures({
+      featureIds: ["day_pillar_gapsin"],
+      topic: "identity",
+    });
+    const gapsin = scoreOf("day_pillar_gapsin", scores);
+
+    expect(gapsin.category).toBe("day_pillar");
+    expect(gapsin.score).toBeGreaterThan(5);
+    expect(gapsin.reasons).toEqual(expect.arrayContaining(["category:day_pillar"]));
+  });
+
   it("applies duplicate category penalty", () => {
     const singleScore = scoreOf(
       "sinsal_hongyeom",

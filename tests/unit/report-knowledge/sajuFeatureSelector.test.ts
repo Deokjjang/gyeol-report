@@ -10,6 +10,26 @@ function selectedIds(selection: {
 }
 
 describe("saju feature selector", () => {
+  it("selects day pillar as an identity anchor", () => {
+    const scores = scoreSajuFeatures({
+      featureIds: ["day_pillar_gapsin", "sinsal_hyeonchim", "gwiin_jaego"],
+      topic: "identity",
+    });
+    const selection = selectSajuFeaturesForChapter(scores, "saju_identity");
+
+    expect(selectedIds(selection)).toContain("day_pillar_gapsin");
+  });
+
+  it("selects day pillar for personality when the day pillar has personality topic", () => {
+    const scores = scoreSajuFeatures({
+      featureIds: ["day_pillar_gapsin", "sinsal_hyeonchim", "gwiin_jaego"],
+      topic: "personality",
+    });
+    const selection = selectSajuFeaturesForChapter(scores, "personality_pattern");
+
+    expect(selectedIds(selection)).toContain("day_pillar_gapsin");
+  });
+
   it("selects money and work features for work_money_study", () => {
     const scores = scoreSajuFeatures({
       featureIds: [
@@ -35,6 +55,16 @@ describe("saju feature selector", () => {
     );
   });
 
+  it("selects day pillar for work_money_study when work or money topic matches", () => {
+    const scores = scoreSajuFeatures({
+      featureIds: ["day_pillar_mujin", "ten_god_pian_cai", "gwiin_jaego"],
+      topic: "money",
+    });
+    const selection = selectSajuFeaturesForChapter(scores, "work_money_study");
+
+    expect(selectedIds(selection)).toContain("day_pillar_mujin");
+  });
+
   it("selects attraction and relationship-tension features for love_relationships", () => {
     const scores = scoreSajuFeatures({
       featureIds: [
@@ -58,6 +88,16 @@ describe("saju feature selector", () => {
         "element_water_missing",
       ]),
     );
+  });
+
+  it("selects day pillar for love_relationships when love topic matches", () => {
+    const scores = scoreSajuFeatures({
+      featureIds: ["day_pillar_byeongo", "sinsal_dohwa", "sinsal_hongyeom"],
+      topic: "love",
+    });
+    const selection = selectSajuFeaturesForChapter(scores, "love_relationships");
+
+    expect(selectedIds(selection)).toContain("day_pillar_byeongo");
   });
 
   it("selects sharp personality features for personality_pattern", () => {
@@ -131,6 +171,7 @@ describe("saju feature selector", () => {
     const scores = scoreSajuFeatures({
       featureIds: [
         "gwiin_cheoneul",
+        "day_pillar_gyehae",
         "twelve_sinsal_banan",
         "element_water_missing",
         "sinsal_baekho",
@@ -141,6 +182,7 @@ describe("saju feature selector", () => {
 
     expect(selection.positive.length).toBeGreaterThanOrEqual(1);
     expect(selection.warningOrMixed.length).toBeGreaterThanOrEqual(1);
+    expect(selectedIds(selection)).toContain("day_pillar_gyehae");
     expect(selection.vivid).not.toBeNull();
     expect(selection.practical).not.toBeNull();
   });

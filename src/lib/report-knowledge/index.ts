@@ -10,6 +10,7 @@ export * from "./mbtiKnowledgeBase";
 export * from "./mbtiEvidenceScoring";
 export * from "./mbtiKnowledgeTypes";
 export * from "./reportSectionSchema";
+export * from "./sajuDayPillarKnowledge";
 export * from "./sajuKnowledgeBase";
 export * from "./sajuComputedFactsMapper";
 export * from "./sajuComputedFactsTypes";
