@@ -17,6 +17,7 @@ describe("saju feature selector", () => {
         "ten_god_zheng_cai",
         "gwiin_jaego",
         "twelve_sinsal_banan",
+        "twelve_sinsal_jangseong",
         "sinsal_wonjin",
       ],
       topic: "money",
@@ -29,6 +30,7 @@ describe("saju feature selector", () => {
         "ten_god_zheng_cai",
         "gwiin_jaego",
         "twelve_sinsal_banan",
+        "twelve_sinsal_jangseong",
       ]),
     );
   });
@@ -39,6 +41,8 @@ describe("saju feature selector", () => {
         "sinsal_dohwa",
         "sinsal_hongyeom",
         "sinsal_wonjin",
+        "element_fire_missing",
+        "element_water_missing",
         "gwiin_munchang",
       ],
       topic: "love",
@@ -46,7 +50,53 @@ describe("saju feature selector", () => {
     const selection = selectSajuFeaturesForChapter(scores, "love_relationships");
 
     expect(selectedIds(selection)).toEqual(
-      expect.arrayContaining(["sinsal_dohwa", "sinsal_hongyeom", "sinsal_wonjin"]),
+      expect.arrayContaining([
+        "sinsal_dohwa",
+        "sinsal_hongyeom",
+        "sinsal_wonjin",
+        "element_fire_missing",
+        "element_water_missing",
+      ]),
+    );
+  });
+
+  it("selects sharp personality features for personality_pattern", () => {
+    const scores = scoreSajuFeatures({
+      featureIds: [
+        "sinsal_hyeonchim",
+        "sinsal_baekho",
+        "sinsal_gwimun",
+        "gwiin_cheoneul",
+      ],
+      topic: "personality",
+    });
+    const selection = selectSajuFeaturesForChapter(scores, "personality_pattern");
+
+    expect(selectedIds(selection)).toEqual(
+      expect.arrayContaining(["sinsal_hyeonchim", "sinsal_baekho", "sinsal_gwimun"]),
+    );
+  });
+
+  it("selects study features through work_money_study", () => {
+    const scores = scoreSajuFeatures({
+      featureIds: [
+        "gwiin_munchang",
+        "gwiin_hakdang",
+        "sinsal_gwimun",
+        "sinsal_hyeonchim",
+        "twelve_sinsal_banan",
+      ],
+      topic: "study",
+    });
+    const selection = selectSajuFeaturesForChapter(scores, "work_money_study");
+
+    expect(selectedIds(selection)).toEqual(
+      expect.arrayContaining([
+        "gwiin_munchang",
+        "gwiin_hakdang",
+        "sinsal_gwimun",
+        "sinsal_hyeonchim",
+      ]),
     );
   });
 
@@ -57,6 +107,8 @@ describe("saju feature selector", () => {
         "element_fire_missing",
         "element_earth_excess",
         "sinsal_baekho",
+        "sinsal_wonjin",
+        "structure_jaeda_sinyak",
         "gwiin_cheoneul",
       ],
       topic: "growth",
@@ -69,6 +121,8 @@ describe("saju feature selector", () => {
         "element_fire_missing",
         "element_earth_excess",
         "sinsal_baekho",
+        "sinsal_wonjin",
+        "structure_jaeda_sinyak",
       ]),
     );
   });

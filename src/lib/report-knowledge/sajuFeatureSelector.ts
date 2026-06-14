@@ -53,7 +53,7 @@ const CHAPTER_FEATURE_CONFIG: Record<SajuFeatureChapterId, ChapterFeatureConfig>
     topics: ["love", "relationship", "growth"],
     categories: ["sinsal", "element", "ten_god", "relation", "gwiin"],
     positiveLimit: 4,
-    warningOrMixedLimit: 4,
+    warningOrMixedLimit: 5,
   },
   people_family_environment: {
     topics: ["relationship", "family", "environment", "growth"],
@@ -65,7 +65,7 @@ const CHAPTER_FEATURE_CONFIG: Record<SajuFeatureChapterId, ChapterFeatureConfig>
     topics: ["growth", "relationship", "work"],
     categories: ["element", "sinsal", "structure", "twelve_sinsal"],
     positiveLimit: 3,
-    warningOrMixedLimit: 5,
+    warningOrMixedLimit: 6,
   },
   final_message: {
     topics: ["identity", "growth", "work", "relationship", "money"],

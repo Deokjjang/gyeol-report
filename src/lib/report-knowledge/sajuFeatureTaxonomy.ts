@@ -34,7 +34,7 @@ const twelveSinsalEntries = [
     polarity: "positive",
     topics: ["identity", "work", "money", "environment"],
     baseWeight: 4.7,
-    vividness: 4.9,
+    vividness: 5,
     summary:
       "역할과 이름이 주어질 때 사회적 위치, 명예, 재물 흐름이 살아나는 길신으로 읽습니다.",
     symbolicImage:
@@ -229,7 +229,7 @@ const sinsalEntries = [
     symbolicImage:
       "도화살은 꽃이 핀 자리로 시선이 모이는 이미지입니다. 말이 많지 않아도 분위기, 표정, 스타일 때문에 관심이 붙을 수 있습니다.",
     positiveReading:
-      "대인 매력, 콘텐츠성, 외형과 분위기, 표현 직업에서 존재감이 살아날 수 있습니다.",
+      "대인 매력, 콘텐츠성, 외형과 분위기, 표현 직업에서 시선과 관심을 모으는 존재감이 살아날 수 있습니다.",
     cautionReading:
       "관심이 붙는 만큼 오해도 붙을 수 있어 관계의 선과 표현 온도를 의식해야 합니다.",
     practicalUse:
@@ -285,15 +285,15 @@ const sinsalEntries = [
     polarity: "mixed",
     topics: ["personality", "work", "relationship", "growth"],
     baseWeight: 4.5,
-    vividness: 4.9,
+    vividness: 5,
     summary:
       "날카롭고 강한 에너지가 한 번에 몰리는 신호입니다. 결단력과 충돌성이 함께 있습니다.",
     symbolicImage:
       "백호대살은 위기 앞에서 칼을 뽑는 흰 호랑이의 이미지입니다. 거칠게 쓰면 충돌, 잘 쓰면 결단력입니다.",
     positiveReading:
-      "압박 상황에서 빠르게 결론을 내리고 집중력을 발휘하는 힘으로 쓰일 수 있습니다.",
+      "압박 상황에서 빠르게 결론을 내리고 결단력과 집중력을 발휘하는 힘으로 쓰일 수 있습니다.",
     cautionReading:
-      "말과 행동이 세게 나가면 가까운 사람이 위협감이나 피로감을 느낄 수 있습니다.",
+      "말과 행동이 세게 나가면 가까운 사람이 충돌감, 위협감, 피로감을 느낄 수 있습니다.",
     practicalUse:
       "강한 결정을 내리기 전 완충 질문 하나를 넣고, 몸의 긴장을 풀어주는 루틴을 두는 것이 좋습니다.",
     sceneSeeds: [
@@ -503,7 +503,7 @@ const gwiinEntries = [
     hanja: "文昌貴人",
     aliases: ["문창", "문창귀인"],
     polarity: "positive",
-    topics: ["study", "work", "identity", "growth"],
+    topics: ["study", "work", "identity", "personality", "growth"],
     baseWeight: 4.5,
     vividness: 4.2,
     summary:
@@ -1109,11 +1109,520 @@ const tenGodEntries = tenGodSeeds.map((seed) =>
   }),
 );
 
+const expandedTwelveSinsalEntries = [
+  createFeatureEntry({
+    id: "twelve_sinsal_jisal",
+    category: "twelve_sinsal",
+    labelKo: "지살",
+    hanja: "地煞",
+    aliases: ["지살"],
+    polarity: "mixed",
+    topics: ["work", "environment", "relationship", "growth"],
+    baseWeight: 3.9,
+    vividness: 3.8,
+    summary:
+      "지살은 생활 반경, 장소, 이동 동선과 연결되는 사회적 흐름입니다.",
+    symbolicImage:
+      "지살은 발밑의 길이 바뀌며 새로운 사람과 장소를 만나게 되는 이미지입니다.",
+    positiveReading:
+      "새로운 공간, 지역, 현장, 실무 동선에서 기회가 열릴 수 있습니다.",
+    cautionReading:
+      "환경 변화가 잦으면 루틴이 흐트러지고 에너지가 분산될 수 있습니다.",
+    practicalUse:
+      "움직이는 일일수록 기록, 일정, 짐 정리처럼 기본 루틴을 고정하는 것이 좋습니다.",
+    sceneSeeds: [
+      "장소가 바뀌자 사람과 일이 새로 연결되는 장면",
+      "이동이 많아질수록 일정 정리가 더 중요해지는 장면",
+    ],
+    phraseSeeds: [
+      "발밑의 길이 바뀌는 흐름",
+      "장소와 동선에서 열리는 기회",
+      "이동 속 루틴이 필요한 기운",
+    ],
+    mbtiBridgeNeeds: ["pace_flexibility", "stability"],
+  }),
+  createFeatureEntry({
+    id: "twelve_sinsal_yukhae",
+    category: "twelve_sinsal",
+    labelKo: "육해살",
+    hanja: "六害煞",
+    aliases: ["육해", "육해살"],
+    polarity: "warning",
+    topics: ["relationship", "family", "environment", "growth"],
+    baseWeight: 3.7,
+    vividness: 3.7,
+    summary:
+      "육해살은 가까운 관계나 생활권 안에서 작은 방해와 피로가 생기기 쉬운 신호입니다.",
+    symbolicImage:
+      "육해살은 신발 안의 작은 모래알처럼 사소하지만 계속 신경 쓰이는 이미지입니다.",
+    positiveReading:
+      "불편한 지점을 빨리 알아차리고 관계와 생활 규칙을 정비하는 감각으로 쓸 수 있습니다.",
+    cautionReading:
+      "작은 불편을 넘기다 보면 가까운 사람과의 말투, 약속, 생활 리듬에서 피로가 쌓일 수 있습니다.",
+    practicalUse:
+      "연락 방식, 집안 역할, 일정 공유처럼 작은 규칙을 먼저 맞추는 것이 좋습니다.",
+    sceneSeeds: [
+      "사소한 약속 차이가 계속 피곤하게 느껴지는 장면",
+      "가까운 사람과 생활 규칙을 정해야 편해지는 장면",
+    ],
+    phraseSeeds: [
+      "신발 안의 작은 모래알 같은 불편",
+      "생활권 안에서 생기는 작은 방해",
+      "작은 규칙으로 피로를 낮추는 신호",
+    ],
+    mbtiBridgeNeeds: ["emotional_buffer", "stability"],
+  }),
+  createFeatureEntry({
+    id: "twelve_sinsal_mangsin",
+    category: "twelve_sinsal",
+    labelKo: "망신살",
+    hanja: "亡身煞",
+    aliases: ["망신", "망신살"],
+    polarity: "mixed",
+    topics: ["relationship", "environment", "love", "growth"],
+    baseWeight: 3.8,
+    vividness: 4,
+    summary:
+      "망신살은 드러남과 노출이 강해지는 신호입니다. 숨긴 것이 아니라 보여지는 방식의 관리가 중요합니다.",
+    symbolicImage:
+      "망신살은 조명이 갑자기 켜진 무대처럼, 작은 행동도 주변 눈에 잘 들어오는 이미지입니다.",
+    positiveReading:
+      "대중 앞, 발표, 콘텐츠, 외부 활동에서 존재감이 살아날 수 있습니다.",
+    cautionReading:
+      "말과 행동이 빠르게 퍼질 수 있어 공개되는 자리에서는 표현의 선을 더 신경 써야 합니다.",
+    practicalUse:
+      "공개 전 한 번 더 확인하고, 보여줄 이미지와 숨길 사생활의 경계를 정하는 것이 좋습니다.",
+    sceneSeeds: [
+      "별생각 없이 한 말이 주변에 크게 퍼지는 장면",
+      "발표나 외부 활동에서 존재감이 커지는 장면",
+    ],
+    phraseSeeds: [
+      "갑자기 조명이 켜진 무대",
+      "드러남과 노출이 커지는 흐름",
+      "보여지는 방식을 관리해야 하는 기운",
+    ],
+    mbtiBridgeNeeds: ["warmth", "expression_support"],
+  }),
+  createFeatureEntry({
+    id: "twelve_sinsal_cheonsal",
+    category: "twelve_sinsal",
+    labelKo: "천살",
+    hanja: "天煞",
+    aliases: ["천살"],
+    polarity: "warning",
+    topics: ["environment", "growth", "family", "relationship"],
+    baseWeight: 3.6,
+    vividness: 3.7,
+    summary:
+      "천살은 내 힘만으로 조절하기 어려운 큰 환경 변수를 의식하게 하는 신호입니다.",
+    symbolicImage:
+      "천살은 갑자기 날씨가 바뀌어 우산과 경로를 다시 챙겨야 하는 이미지입니다.",
+    positiveReading:
+      "큰 흐름을 읽고 준비하는 감각으로 바꾸면 위기 대응력이 좋아질 수 있습니다.",
+    cautionReading:
+      "모든 일을 통제하려 하면 피로가 커지므로 바꿀 수 있는 것과 없는 것을 나눠야 합니다.",
+    practicalUse:
+      "환경 변수 앞에서는 예비 계획, 도움 요청, 일정 완충을 먼저 마련하는 것이 좋습니다.",
+    sceneSeeds: [
+      "외부 변수 때문에 계획을 다시 짜야 하는 장면",
+      "내가 통제할 수 없는 일과 할 수 있는 일을 나누는 장면",
+    ],
+    phraseSeeds: [
+      "갑자기 바뀌는 날씨 같은 변수",
+      "큰 환경 흐름을 읽어야 하는 신호",
+      "통제보다 완충이 필요한 기운",
+    ],
+    mbtiBridgeNeeds: ["stability", "pace_flexibility"],
+  }),
+  createFeatureEntry({
+    id: "twelve_sinsal_wolsal",
+    category: "twelve_sinsal",
+    labelKo: "월살",
+    hanja: "月煞",
+    aliases: ["월살"],
+    polarity: "mixed",
+    topics: ["personality", "relationship", "environment", "growth"],
+    baseWeight: 3.7,
+    vividness: 3.8,
+    summary:
+      "월살은 감정의 그늘과 분위기 민감도가 살아나는 신호입니다.",
+    symbolicImage:
+      "월살은 달빛이 비추는 그늘처럼, 밝은 말 뒤의 미묘한 표정을 보게 되는 이미지입니다.",
+    positiveReading:
+      "분위기 감지, 정서적 관찰, 섬세한 배려로 쓰이면 관계를 깊게 볼 수 있습니다.",
+    cautionReading:
+      "분위기를 너무 많이 읽으면 혼자 지치거나 상대의 의도를 과하게 해석할 수 있습니다.",
+    practicalUse:
+      "느낌만으로 결론내리기보다 직접 확인하는 질문을 한 번 넣는 것이 좋습니다.",
+    sceneSeeds: [
+      "상대 표정 하나가 오래 신경 쓰이는 장면",
+      "분위기는 읽었지만 사실 확인이 필요한 장면",
+    ],
+    phraseSeeds: [
+      "달빛이 비추는 그늘의 감각",
+      "분위기 민감도가 살아나는 흐름",
+      "느낌을 질문으로 확인해야 하는 신호",
+    ],
+    mbtiBridgeNeeds: ["emotional_buffer", "warmth"],
+  }),
+] as const satisfies readonly SajuFeatureEntry[];
+
+const expandedSinsalEntries = [
+  createFeatureEntry({
+    id: "sinsal_yangin",
+    category: "sinsal",
+    labelKo: "양인살",
+    hanja: "羊刃煞",
+    aliases: ["양인", "양인살"],
+    polarity: "mixed",
+    topics: ["personality", "work", "relationship", "growth"],
+    baseWeight: 4.1,
+    vividness: 4.3,
+    summary:
+      "양인살은 칼날처럼 자기 힘이 날카롭게 서는 신호입니다.",
+    symbolicImage:
+      "양인살은 손에 쥔 날카로운 도구처럼, 잘 쓰면 일을 자르고 다듬지만 거칠면 상처를 남기는 이미지입니다.",
+    positiveReading:
+      "강한 독립성, 결단력, 위기 대응력, 자기 방어 능력으로 살아날 수 있습니다.",
+    cautionReading:
+      "내 기준이 과하게 서면 말투와 행동이 상대에게 공격적으로 느껴질 수 있습니다.",
+    practicalUse:
+      "중요한 결정 전에는 한 번 쉬고, 공격보다 경계 설정의 언어로 바꾸는 것이 좋습니다.",
+    sceneSeeds: [
+      "불합리한 일을 보면 바로 선을 긋고 싶은 장면",
+      "상대가 느리면 말이 짧고 세게 나가는 장면",
+    ],
+    phraseSeeds: [
+      "손에 쥔 날카로운 도구",
+      "자기 힘이 칼날처럼 서는 기운",
+      "공격보다 경계 설정으로 써야 하는 힘",
+    ],
+    mbtiBridgeNeeds: ["emotional_buffer", "pace_flexibility"],
+  }),
+  createFeatureEntry({
+    id: "sinsal_goegang",
+    category: "sinsal",
+    labelKo: "괴강살",
+    hanja: "魁罡煞",
+    aliases: ["괴강", "괴강살"],
+    polarity: "mixed",
+    topics: ["identity", "personality", "work", "growth"],
+    baseWeight: 4.2,
+    vividness: 4.4,
+    summary:
+      "괴강살은 쉽게 눌리지 않는 강한 기운입니다. 버티는 힘과 충돌성이 함께 있습니다.",
+    symbolicImage:
+      "괴강살은 무거운 문도 어깨로 밀고 나가는 사람의 이미지입니다.",
+    positiveReading:
+      "큰 압박 앞에서도 물러서지 않는 추진력, 결단력, 버티는 힘으로 나타날 수 있습니다.",
+    cautionReading:
+      "힘이 거칠게 나오면 고집과 충돌로 보일 수 있어 방향 조절이 중요합니다.",
+    practicalUse:
+      "내가 밀어붙일 일과 협상할 일을 먼저 나누면 강한 힘이 성과로 연결됩니다.",
+    sceneSeeds: [
+      "남들이 망설이는 일을 끝까지 밀어붙이는 장면",
+      "내 기준이 너무 강해 협업 마찰이 생기는 장면",
+    ],
+    phraseSeeds: [
+      "무거운 문도 어깨로 미는 힘",
+      "쉽게 눌리지 않는 기운",
+      "버티는 힘과 충돌성이 함께 있는 흐름",
+    ],
+    mbtiBridgeNeeds: ["pace_flexibility", "responsibility_clarity"],
+  }),
+  createFeatureEntry({
+    id: "sinsal_gongmang",
+    category: "sinsal",
+    labelKo: "공망",
+    hanja: "空亡",
+    aliases: ["공망"],
+    polarity: "mixed",
+    topics: ["personality", "relationship", "environment", "growth"],
+    baseWeight: 3.8,
+    vividness: 4,
+    summary:
+      "공망은 채워진 것 같지만 비어 있는 자리, 혹은 비었기 때문에 다른 방식이 들어오는 신호입니다.",
+    symbolicImage:
+      "공망은 방 한가운데 비워 둔 의자처럼, 공백이 오히려 방향을 바꾸게 하는 이미지입니다.",
+    positiveReading:
+      "기존 틀에 묶이지 않고 새 해석, 다른 선택지, 비움의 감각을 만들 수 있습니다.",
+    cautionReading:
+      "중요한 기대를 한 곳에만 걸면 허전함이나 실망감이 커질 수 있습니다.",
+    practicalUse:
+      "결과를 하나로 고정하지 말고 대안 경로와 회복 공간을 같이 마련하는 것이 좋습니다.",
+    sceneSeeds: [
+      "기대했던 자리가 비어 다른 길을 찾는 장면",
+      "허전함을 새 선택지로 바꿔야 하는 장면",
+    ],
+    phraseSeeds: [
+      "방 한가운데 비워 둔 의자",
+      "공백이 방향을 바꾸는 신호",
+      "비움을 대안으로 바꾸는 흐름",
+    ],
+    mbtiBridgeNeeds: ["stability", "emotional_buffer"],
+  }),
+  createFeatureEntry({
+    id: "sinsal_cheonmunseong",
+    category: "sinsal",
+    labelKo: "천문성",
+    hanja: "天門星",
+    aliases: ["천문", "천문성"],
+    polarity: "positive",
+    topics: ["study", "personality", "growth", "environment"],
+    baseWeight: 4,
+    vividness: 4.2,
+    summary:
+      "천문성은 보이지 않는 원리와 상징, 큰 흐름을 읽으려는 지적 감각입니다.",
+    symbolicImage:
+      "천문성은 하늘의 문이 살짝 열려 큰 구조를 엿보는 이미지입니다.",
+    positiveReading:
+      "철학, 기획, 패턴 분석, 직관적 통찰에서 깊이가 생길 수 있습니다.",
+    cautionReading:
+      "큰 의미를 찾느라 현실 실행이 늦어지면 생각만 길어질 수 있습니다.",
+    practicalUse:
+      "떠오른 통찰을 메모, 도식, 실행 순서로 내려야 현실에서 힘이 됩니다.",
+    sceneSeeds: [
+      "사건 하나에서 전체 흐름을 읽으려는 장면",
+      "아이디어는 큰데 실행 순서가 필요한 장면",
+    ],
+    phraseSeeds: [
+      "하늘의 문이 살짝 열리는 감각",
+      "큰 구조를 읽는 지적 기운",
+      "통찰을 실행 순서로 내려야 하는 흐름",
+    ],
+    mbtiBridgeNeeds: ["intellectual_match", "stability"],
+  }),
+  createFeatureEntry({
+    id: "gwiin_mungok",
+    category: "gwiin",
+    labelKo: "문곡귀인",
+    hanja: "文曲貴人",
+    aliases: ["문곡", "문곡귀인"],
+    polarity: "positive",
+    topics: ["study", "work", "personality"],
+    baseWeight: 4.1,
+    vividness: 4,
+    summary:
+      "문곡귀인은 글, 말, 음악성, 표현의 결을 다듬는 지적 길신입니다.",
+    symbolicImage:
+      "문곡귀인은 굽이치는 물길처럼 생각을 부드러운 문장과 리듬으로 풀어내는 이미지입니다.",
+    positiveReading:
+      "글쓰기, 발표, 기획, 설명, 학습 정리에서 표현의 맛이 살아날 수 있습니다.",
+    cautionReading:
+      "표현에 머물고 마감이 늦어지면 실전 성과가 약해질 수 있습니다.",
+    practicalUse:
+      "아이디어를 제목, 목차, 발표 흐름, 짧은 글로 자주 꺼내는 것이 좋습니다.",
+    sceneSeeds: [
+      "생각을 글로 쓰면 더 선명해지는 장면",
+      "발표나 설명에서 흐름을 다듬는 장면",
+    ],
+    phraseSeeds: [
+      "굽이치는 물길 같은 문장 감각",
+      "표현의 결을 다듬는 귀인",
+      "생각을 말과 글로 풀어내는 힘",
+    ],
+    mbtiBridgeNeeds: ["intellectual_match", "expression_support"],
+  }),
+] as const satisfies readonly SajuFeatureEntry[];
+
+const expandedGwiinEntries = [
+  createFeatureEntry({
+    id: "gwiin_geumyeorok",
+    category: "gwiin",
+    labelKo: "금여록",
+    hanja: "金輿祿",
+    aliases: ["금여", "금여록"],
+    polarity: "positive",
+    topics: ["identity", "money", "love", "environment"],
+    baseWeight: 4.1,
+    vividness: 4.1,
+    summary:
+      "금여록은 품격, 안정된 생활감, 좋은 대우와 연결되는 길신입니다.",
+    symbolicImage:
+      "금여록은 단정하게 꾸민 수레에 올라 안정된 길을 가는 이미지입니다.",
+    positiveReading:
+      "품위, 생활 안정, 좋은 조건, 관계에서의 대우가 살아날 수 있습니다.",
+    cautionReading:
+      "겉의 안정감만 좇으면 실제 실력과 생활 규칙이 비어 보일 수 있습니다.",
+    practicalUse:
+      "품격 있는 이미지와 실제 관리 능력을 함께 쌓아야 길신의 힘이 오래 갑니다.",
+    sceneSeeds: [
+      "좋은 환경과 단정한 이미지가 기회를 넓히는 장면",
+      "대우받는 자리일수록 실력과 태도가 같이 필요한 장면",
+    ],
+    phraseSeeds: [
+      "단정한 수레에 오른 안정감",
+      "품격과 좋은 대우의 길신",
+      "이미지와 실력을 함께 쌓는 흐름",
+    ],
+    mbtiBridgeNeeds: ["stability", "warmth"],
+  }),
+  createFeatureEntry({
+    id: "gwiin_cheoneuiseong",
+    category: "gwiin",
+    labelKo: "천의성",
+    hanja: "天醫星",
+    aliases: ["천의", "천의성"],
+    polarity: "positive",
+    topics: ["growth", "relationship", "environment", "study"],
+    baseWeight: 4,
+    vividness: 3.9,
+    summary:
+      "천의성은 돌봄, 회복 감각, 사람을 살피는 세심함과 연결되는 길신입니다.",
+    symbolicImage:
+      "천의성은 흐트러진 자리를 차분히 정돈해 숨을 돌리게 하는 손길의 이미지입니다.",
+    positiveReading:
+      "사람의 컨디션과 필요를 알아차리고 생활을 정비하는 감각으로 나타날 수 있습니다.",
+    cautionReading:
+      "남을 살피느라 자기 회복을 뒤로 미루면 피로가 쌓일 수 있습니다.",
+    practicalUse:
+      "나와 타인의 돌봄 범위를 나누고, 회복 루틴을 생활표에 넣는 것이 좋습니다.",
+    sceneSeeds: [
+      "주변 사람의 상태를 먼저 알아차리는 장면",
+      "남을 챙기다 자신의 쉬는 시간을 놓치는 장면",
+    ],
+    phraseSeeds: [
+      "숨을 돌리게 하는 정돈의 손길",
+      "회복 감각을 살피는 길신",
+      "돌봄 범위를 나눠야 하는 흐름",
+    ],
+    mbtiBridgeNeeds: ["emotional_buffer", "warmth"],
+  }),
+  createFeatureEntry({
+    id: "gwiin_amrok",
+    category: "gwiin",
+    labelKo: "암록",
+    hanja: "暗祿",
+    aliases: ["암록"],
+    polarity: "positive",
+    topics: ["money", "work", "environment", "growth"],
+    baseWeight: 4.1,
+    vividness: 4,
+    summary:
+      "암록은 겉으로 크게 드러나지 않아도 뒤에서 자원과 도움의 통로가 열리는 길신입니다.",
+    symbolicImage:
+      "암록은 어두운 창고 안에 조용히 쌓여 있는 비상 자원 같은 이미지입니다.",
+    positiveReading:
+      "숨은 지원, 예비 자원, 뒤늦게 드러나는 기회, 조용한 자산 흐름으로 나타날 수 있습니다.",
+    cautionReading:
+      "숨은 자원에만 기대면 공개된 성과와 관리 기록이 약해질 수 있습니다.",
+    practicalUse:
+      "보이지 않는 도움도 기록하고, 비상금과 예비 계획을 현실 구조로 만들어야 합니다.",
+    sceneSeeds: [
+      "조용히 준비해 둔 자원이 나중에 도움이 되는 장면",
+      "드러나지 않은 인맥이나 기록이 기회를 만드는 장면",
+    ],
+    phraseSeeds: [
+      "어두운 창고 안의 비상 자원",
+      "뒤에서 열리는 도움의 통로",
+      "숨은 자원을 현실 구조로 바꾸는 길신",
+    ],
+    mbtiBridgeNeeds: ["stability", "responsibility_clarity"],
+  }),
+] as const satisfies readonly SajuFeatureEntry[];
+
+const expandedStructureEntries = [
+  createFeatureEntry({
+    id: "structure_sanggwan_gyeongwan",
+    category: "structure",
+    labelKo: "상관견관",
+    aliases: ["상관견관"],
+    polarity: "mixed",
+    topics: ["personality", "work", "relationship", "growth"],
+    baseWeight: 4,
+    vividness: 3.9,
+    summary:
+      "상관견관은 표현과 규칙이 부딪히는 구조입니다. 문제 제기와 공식 기준 사이의 긴장이 생깁니다.",
+    symbolicImage:
+      "상관견관은 새 창을 내려는 사람과 문틀을 지키려는 사람이 같은 방에 있는 이미지입니다.",
+    positiveReading:
+      "낡은 규칙을 개선하고 더 나은 기준을 제안하는 힘으로 쓰일 수 있습니다.",
+    cautionReading:
+      "말이 앞서면 권위나 조직 질서와 충돌해 피로가 커질 수 있습니다.",
+    practicalUse:
+      "비판을 꺼낼 때는 대안, 절차, 기대 효과를 함께 제시하는 방식이 좋습니다.",
+    sceneSeeds: [
+      "회의에서 규칙의 허점이 먼저 보이는 장면",
+      "개선안 없이 지적만 하면 분위기가 굳는 장면",
+    ],
+    phraseSeeds: [
+      "새 창과 문틀이 같은 방에 있는 구조",
+      "표현과 규칙의 긴장",
+      "비판을 대안으로 바꿔야 하는 흐름",
+    ],
+    mbtiBridgeNeeds: ["responsibility_clarity", "warmth"],
+  }),
+  createFeatureEntry({
+    id: "structure_bigeop_many",
+    category: "structure",
+    labelKo: "비겁다자",
+    aliases: ["비겁다자", "비겁 과다"],
+    polarity: "mixed",
+    topics: ["personality", "relationship", "money", "growth"],
+    baseWeight: 3.9,
+    vividness: 3.7,
+    summary:
+      "비겁다자는 자기 힘과 경쟁 감각이 강해져 독립성과 비교심이 함께 커지는 구조입니다.",
+    symbolicImage:
+      "비겁다자는 같은 깃발을 든 사람들이 한 판에 많이 서 있는 이미지입니다.",
+    positiveReading:
+      "동료 경쟁, 독립성, 자기 주장, 버티는 힘이 살아날 수 있습니다.",
+    cautionReading:
+      "사람과 돈이 함께 얽히면 비교, 분배, 경쟁에서 소모가 커질 수 있습니다.",
+    practicalUse:
+      "공동 작업과 돈 문제는 역할, 몫, 책임 범위를 숫자와 문장으로 정해야 합니다.",
+    sceneSeeds: [
+      "동료와 비교되면 승부욕이 빠르게 올라오는 장면",
+      "공동 지출이나 역할 분배에서 기준이 필요한 장면",
+    ],
+    phraseSeeds: [
+      "같은 깃발을 든 사람들이 많은 판",
+      "독립성과 경쟁이 함께 커지는 구조",
+      "몫과 책임을 정해야 하는 흐름",
+    ],
+    mbtiBridgeNeeds: ["stability", "autonomy_respect"],
+  }),
+  createFeatureEntry({
+    id: "structure_resource_many",
+    category: "structure",
+    labelKo: "인성다자",
+    aliases: ["인성다자", "인성 과다"],
+    polarity: "mixed",
+    topics: ["study", "family", "relationship", "growth"],
+    baseWeight: 3.9,
+    vividness: 3.7,
+    summary:
+      "인성다자는 받아들이고 생각하고 보호받는 힘이 강해지는 구조입니다.",
+    symbolicImage:
+      "인성다자는 책과 담요가 많은 방처럼 편안하지만 오래 머물면 실행이 늦어지는 이미지입니다.",
+    positiveReading:
+      "학습, 보호, 이해력, 안정감, 깊은 준비성이 살아날 수 있습니다.",
+    cautionReading:
+      "생각과 준비가 길어지면 실행과 표현이 뒤로 밀릴 수 있습니다.",
+    practicalUse:
+      "공부와 준비 뒤에는 작은 실행 마감, 발표, 결과물 제출을 붙이는 것이 좋습니다.",
+    sceneSeeds: [
+      "준비는 많이 했는데 시작 버튼을 늦게 누르는 장면",
+      "자료를 더 찾느라 실행이 밀리는 장면",
+    ],
+    phraseSeeds: [
+      "책과 담요가 많은 방",
+      "이해와 보호가 강한 구조",
+      "준비 뒤 실행 마감이 필요한 흐름",
+    ],
+    mbtiBridgeNeeds: ["expression_support", "responsibility_clarity"],
+  }),
+] as const satisfies readonly SajuFeatureEntry[];
+
 export const SAJU_FEATURE_TAXONOMY = [
   ...twelveSinsalEntries,
+  ...expandedTwelveSinsalEntries,
   ...sinsalEntries,
+  ...expandedSinsalEntries,
   ...gwiinEntries,
+  ...expandedGwiinEntries,
   ...structureEntries,
+  ...expandedStructureEntries,
   ...elementEntries,
   ...tenGodEntries,
 ] as const satisfies readonly SajuFeatureEntry[];
@@ -1150,7 +1659,10 @@ const UNSAFE_TAXONOMY_PHRASES = [
   "반드시",
   "무조건",
   "운명 확정",
+  "미래 확정",
   "수익 보장",
+  "치료",
+  "진단",
 ] as const;
 
 export type SajuFeatureCopySafetyViolation = {

@@ -103,6 +103,12 @@ describe("report knowledge architecture document", () => {
       "OpenAI does not invent Saju features",
       "OpenAI receives selected feature evidence",
       "Feature taxonomy enables richer and more varied report generation",
+      "REPORT-15B expands the 신살·귀인·길신 knowledge layer",
+      "십이신살, 주요 신살",
+      "They are not fixed sentence templates",
+      "Strong metaphor is allowed",
+      "The forbidden expression policy blocks certainty",
+      "MBTI bridge needs are assigned where useful",
     ];
 
     for (const marker of requiredMarkers) {

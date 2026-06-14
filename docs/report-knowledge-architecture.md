@@ -368,6 +368,37 @@ from the taxonomy, scoring, and selector layers, then writes natural Korean
 prose. Feature taxonomy enables richer and more varied report generation while
 keeping deterministic Saju feature ownership outside the writer.
 
+## REPORT-15B Sinsal Gwiin Gilshin Expansion
+
+REPORT-15B expands the 신살·귀인·길신 knowledge layer inside the feature
+taxonomy. The goal is broader interpretation material for 십이신살, 주요 신살,
+귀인, 길신, and structure helpers, without changing calculation logic or report
+generation flow.
+
+The expansion policy is feature based. Entries such as 반안살, 장성살, 역마살,
+화개살, 지살, 육해살, 망신살, 겁살, 재살, 천살, 월살, 도화살, 홍염살,
+백호대살, 현침살, 귀문관살, 원진살, 양인살, 괴강살, 공망, 천문성,
+문곡귀인, 천을귀인, 문창귀인, 재고귀인, 금여록, 천의성, and 암록 are
+stored as reusable feature entries. They are not fixed sentence templates for a
+specific person.
+
+Strong metaphor is allowed when it helps the user feel the feature. A good
+feature entry can describe 반안살 as a general on a saddle, 도화살 as a place
+where attention rests, or 백호대살 as a sharp crisis-response energy. The
+metaphor must stay interpretive and should not turn into deterministic claims.
+
+The forbidden expression policy blocks certainty, guarantee, medicalized, and
+profit-promise wording from taxonomy phrase fields. Good features can feel
+clearly positive, but positive gilsin still needs cautious language such as
+"can stand out", "can become useful", or "this flow can open when the
+environment fits."
+
+MBTI bridge needs are assigned where useful. For example, water missing can
+connect to emotional_buffer, fire missing to warmth and expression_support,
+earth excess to pace_flexibility, and learning-related gwiin such as 문창귀인 or
+학당귀인 to intellectual_match. The full MBTI complement scorer remains a later
+step.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
