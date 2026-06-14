@@ -457,6 +457,57 @@ evidence, not to invent missing 신살, 귀인, 길신, 일주 meanings, 오행,
 patterns. Positive features should feel desirable without certainty claims, and
 warning features should be explained as energy plus 운영법 rather than fear.
 
+## REPORT-15E Computed Feature Extraction
+
+REPORT-15E expands deterministic computed feature extraction before V2 evidence
+selection. The rule set version is `SAJU_FEATURE_EXTRACTION_RULESET_VERSION =
+"v1"`. V1 is the internal calculation standard used for service consistency;
+some 신살, 귀인, and 십이신살 formulas can differ by school, so school-variant
+items are documented here and can be revised by changing the rule-set version.
+
+Computed Feature Extraction receives available pillars, stems, branches,
+element balance, ten-god signals, structures, existing sinsal facts, and existing
+gwiin facts. It returns `ComputedSajuFeatureExtractionResult` with the rule-set
+version, deduped feature ids, and safe details describing whether each feature
+came from a pillar, branch, stem, element, ten_god, pattern, or existing_fact.
+
+The V1 twelve-sinsal calculation uses the day branch as the base when available,
+and falls back to the year branch when day branch is unavailable. It applies the
+four 삼합 groups: 申子辰, 寅午戌, 亥卯未, and 巳酉丑. The extractor can produce
+feature ids such as `twelve_sinsal_banan`, `twelve_sinsal_jangseong`,
+`twelve_sinsal_yeokma`, `twelve_sinsal_hwagae`, `twelve_sinsal_jisal`,
+`twelve_sinsal_yukhae`, `twelve_sinsal_mangsin`, `twelve_sinsal_cheonsal`,
+`twelve_sinsal_wolsal`, and `twelve_sinsal_nyeonsal` only when a matching branch
+exists in the chart input.
+
+The V1 gwiin calculation is table-driven by day master plus branch presence.
+The minimum computed set is 천을귀인, 문창귀인, 재고귀인, 금여록, and 암록,
+mapped to `gwiin_cheoneul`, `gwiin_munchang`, `gwiin_jaego`,
+`gwiin_geumyeorok`, and `gwiin_amrok`. Existing gwiin facts and aliases such as
+천덕귀인, 월덕귀인, 태극귀인, 학당귀인, 복성귀인, 문곡귀인, and 천의성 are
+still mapped when upstream calculation already provides them.
+
+Major sinsal extraction is also table-driven where V1 rules are stable enough
+for internal use. Day-pillar tables detect 백호대살 and 괴강살. Stem-to-branch
+or branch-pair rules detect 양인살, 현침살, 도화살, 귀문관살, 원진살, 공망,
+and 천문성 where the required stem, branch, or pair exists. Existing facts and
+aliases such as 백호살, 백호대살, 도화, 홍염, 귀문살, 귀문관살, 원진살,
+반안살, 장성살, 역마살, and 화개살 are still accepted as existing_fact input.
+
+Evidence builder integration is:
+
+1. computed facts
+2. computed feature extractor
+3. feature-id merge and de-duplication
+4. scoring
+5. chapter selector
+6. selectedSajuFeatureEvidence
+
+No feature invention policy remains unchanged. If the extractor does not compute
+or receive a feature such as 반안살, 백호대살, 천을귀인, or 문창귀인, that feature
+is not passed to OpenAI. OpenAI can only use selected feature evidence already
+present in the evidence packet.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

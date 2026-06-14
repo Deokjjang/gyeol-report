@@ -127,6 +127,21 @@ describe("report knowledge architecture document", () => {
       "OpenAI feature invention prevention is explicit",
       "use only provided 명리학 feature",
       "not to invent missing 신살, 귀인, 길신, 일주 meanings",
+      "REPORT-15E expands deterministic computed feature extraction",
+      "SAJU_FEATURE_EXTRACTION_RULESET_VERSION",
+      "Computed Feature Extraction receives available pillars",
+      "ComputedSajuFeatureExtractionResult",
+      "The V1 twelve-sinsal calculation uses the day branch",
+      "four",
+      "twelve_sinsal_banan",
+      "twelve_sinsal_jangseong",
+      "gwiin_cheoneul",
+      "gwiin_munchang",
+      "gwiin_geumyeorok",
+      "gwiin_amrok",
+      "Day-pillar tables detect",
+      "feature-id merge and de-duplication",
+      "No feature invention policy remains unchanged",
     ];
 
     for (const marker of requiredMarkers) {

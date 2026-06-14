@@ -101,6 +101,11 @@ export type ComputedTenGodSignal = {
 };
 
 export type ComputedSajuFacts = {
+  readonly yearPillar?: string;
+  readonly monthPillar?: string;
+  readonly hourPillar?: string;
+  readonly earthlyBranches?: readonly string[];
+  readonly heavenlyStems?: readonly string[];
   readonly dayMaster: KoreanHeavenlyStem;
   readonly dayPillar: KoreanGanji;
   readonly fiveElementCounts: FiveElementCounts;

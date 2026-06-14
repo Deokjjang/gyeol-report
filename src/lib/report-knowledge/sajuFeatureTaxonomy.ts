@@ -1143,6 +1143,38 @@ const expandedTwelveSinsalEntries = [
     mbtiBridgeNeeds: ["pace_flexibility", "stability"],
   }),
   createFeatureEntry({
+    id: "twelve_sinsal_nyeonsal",
+    category: "twelve_sinsal",
+    labelKo: "년살",
+    hanja: "年殺",
+    aliases: ["년살", "연살"],
+    polarity: "mixed",
+    topics: ["identity", "love", "relationship", "environment"],
+    baseWeight: 3.8,
+    vividness: 4,
+    summary:
+      "년살은 사람 사이에서 눈길이 머무는 흐름입니다. 도화와 가까운 결로, 분위기와 인상이 관계의 입구가 되기 쉬운 신호로 봅니다.",
+    symbolicImage:
+      "년살은 조명이 강하지 않아도 사람들의 시선이 잠시 머무는 자리처럼 비유됩니다.",
+    positiveReading:
+      "잘 쓰이면 첫인상, 분위기, 스타일, 말투가 관계와 기회의 문을 여는 힘으로 드러날 수 있습니다.",
+    cautionReading:
+      "시선이 붙는 만큼 오해도 생기기 쉬워 보여지는 이미지와 실제 의도를 맞추는 일이 중요합니다.",
+    practicalUse:
+      "겉으로 드러나는 말투, 약속 태도, 스타일을 정돈하면 관계에서 불필요한 오해를 줄이고 매력을 안정적으로 쓸 수 있습니다.",
+    sceneSeeds: [
+      "말을 많이 하지 않았는데도 분위기 때문에 사람들이 한 번 더 보는 장면",
+      "첫인상은 강했지만 실제 의도가 늦게 전달되어 오해가 생기는 장면",
+      "스타일과 말투를 조금 정리했을 때 관계 반응이 달라지는 장면",
+    ],
+    phraseSeeds: [
+      "시선이 잠시 머무는 자리",
+      "분위기와 인상이 관계의 입구가 되는 흐름",
+      "보여지는 이미지와 실제 의도를 맞추는 힘",
+    ],
+    mbtiBridgeNeeds: ["warmth", "expression_support"],
+  }),
+  createFeatureEntry({
     id: "twelve_sinsal_yukhae",
     category: "twelve_sinsal",
     labelKo: "육해살",

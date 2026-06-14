@@ -178,6 +178,7 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("Korean output");
     expect(combined).toContain('"mbtiType": "ENTJ"');
     expect(combined).toContain("day_master_gabmok");
+    expect(combined).toContain("twelve_sinsal_jisal");
     expect(combined).toContain("day_pillar_gapsin");
     expect(combined).toContain("element_fire_missing");
     expect(combined).toContain("element_water_missing");

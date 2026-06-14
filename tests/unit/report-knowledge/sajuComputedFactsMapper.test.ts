@@ -1,9 +1,11 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  mapComputedSajuFactsToFeatureIds,
   mapComputedSajuFactsToKnowledgeEntryIds,
   type MappedSajuKnowledgeInput,
 } from "../../../src/lib/report-knowledge/sajuComputedFactsMapper";
+import { SAJU_FEATURE_EXTRACTION_RULESET_VERSION } from "../../../src/lib/report-knowledge/sajuFeatureExtractionRules";
 import type { ComputedSajuFacts } from "../../../src/lib/report-knowledge/sajuComputedFactsTypes";
 
 const deokminSampleFacts = {
@@ -94,6 +96,48 @@ describe("saju computed facts mapper", () => {
       "sinsal_wonjin",
       "gwiin_jaego",
     ]);
+  });
+
+  it("maps feature ids through the versioned computed feature extractor", () => {
+    const mapped = mapComputedSajuFactsToFeatureIds({
+      ...deokminSampleFacts,
+      yearPillar: "병자",
+      monthPillar: "기해",
+      hourPillar: "정미",
+      earthlyBranches: ["子", "亥", "申", "未"],
+      heavenlyStems: ["丙", "己", "甲", "丁"],
+    });
+
+    expect(SAJU_FEATURE_EXTRACTION_RULESET_VERSION).toBe("v1");
+    expect(mapped.featureIds).toEqual(
+      expect.arrayContaining([
+        "day_pillar_gapsin",
+        "element_earth_excess",
+        "element_fire_missing",
+        "element_water_missing",
+        "ten_god_pian_cai",
+        "ten_god_zheng_cai",
+        "ten_god_qi_sha",
+        "ten_god_zheng_guan",
+        "structure_jaeda_sinyak",
+        "structure_no_resource",
+        "structure_no_output",
+        "sinsal_hyeonchim",
+        "sinsal_hongyeom",
+        "sinsal_gwimun",
+        "sinsal_wonjin",
+        "gwiin_jaego",
+        "twelve_sinsal_jisal",
+        "twelve_sinsal_jangseong",
+        "twelve_sinsal_mangsin",
+        "twelve_sinsal_cheonsal",
+        "gwiin_cheoneul",
+        "gwiin_amrok",
+      ]),
+    );
+    expect(mapped.featureIds).toEqual([...new Set(mapped.featureIds)]);
+    expect(mapped.warnings).toEqual([]);
+    expect(mapped.unmappedFacts).toEqual([]);
   });
 
   it("dedupes ids while preserving deterministic Saju-first ordering", () => {

@@ -214,6 +214,53 @@ describe("comprehensive report evidence input builder", () => {
     }
   });
 
+  it("merges newly extracted Saju features into selected evidence without duplicates", () => {
+    const result = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: "ENTJ",
+      sajuFacts: {
+        ...deokminSampleFacts,
+        yearPillar: "병자",
+        monthPillar: "기해",
+        hourPillar: "정미",
+        earthlyBranches: ["子", "亥", "申", "未"],
+        heavenlyStems: ["丙", "己", "甲", "丁"],
+      },
+    });
+    const allFeatureIds = getAllSelectedFeatureIds(result);
+
+    expect(result.mappedFeatures.featureIds).toEqual(
+      expect.arrayContaining([
+        "twelve_sinsal_jisal",
+        "twelve_sinsal_jangseong",
+        "twelve_sinsal_mangsin",
+        "twelve_sinsal_cheonsal",
+        "gwiin_cheoneul",
+        "gwiin_amrok",
+      ]),
+    );
+    expect(allFeatureIds).toEqual(
+      expect.arrayContaining([
+        "twelve_sinsal_jisal",
+        "twelve_sinsal_jangseong",
+        "gwiin_cheoneul",
+      ]),
+    );
+    expect(result.mappedFeatures.featureIds).not.toContain("twelve_sinsal_banan");
+    expect(allFeatureIds).not.toContain("twelve_sinsal_banan");
+    expect(result.mappedFeatures.featureIds).toEqual([
+      ...new Set(result.mappedFeatures.featureIds),
+    ]);
+    for (const chapter of result.packet.selectedSajuFeatureEvidence ?? []) {
+      const expectedMax = chapter.chapterId === "opening"
+        ? 4
+        : chapter.chapterId === "final_message"
+          ? 5
+          : 6;
+
+      expect(chapter.features.length).toBeLessThanOrEqual(expectedMax);
+    }
+  });
+
   it("builds Saju primary, ENTJ support, and fusion evidence in major sections", () => {
     const result = buildComprehensiveReportEvidencePacketFromComputedFacts({
       mbtiType: "ENTJ",
