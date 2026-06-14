@@ -115,7 +115,7 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("실천 솔루션");
     expect(combined).toContain("덕민님, 이런 상황 자주 나오지 않나요");
     expect(combined).toContain("공부/일 루틴");
-    expect(combined).toContain("오행 부족/과다에 따른 생활 처방");
+    expect(combined).toContain("오행 부족/과다에 따른 생활 조언");
     expect(combined).toContain("밤 산책");
     expect(combined).toContain("수변 공간");
     expect(combined).toContain("햇빛");
@@ -140,6 +140,13 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain(
       "금지: 진단, 치료, 정신질환, 우울증, 불안장애, 투자 추천, 법률 자문, 반드시, 무조건, 100%, 보장, 운명 확정",
     );
+    expect(combined).toContain("리포트 본문에는 의료·심리치료 관련 단어를 쓰지 마라");
+    expect(combined).toContain("특히 치료, 진단, 우울증, 불안장애, 정신질환이라는 단어는 금지한다");
+    expect(combined).toContain("정책성 disclaimer를 본문에 넣지 말고");
+    expect(combined).toContain("치료는 관리, 조정, 생활 조언, 운영법으로 바꿔라");
+    expect(combined).toContain("문서는 리포트, 결과, 해석");
+    expect(combined).toContain("영어 템플릿 단어 금지: contrast");
+    expect(combined).toContain("contrast는 차이, 대비, 긴장으로 바꿔라");
     expect(combined).toContain("성향 해석과 자기이해 목적의 참고 문장");
     expect(combined).toContain("Korean output");
     expect(combined).toContain('"mbtiType": "ENTJ"');
@@ -196,6 +203,10 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain(
       "진단, 치료, 정신질환, 우울증, 불안장애, 투자 추천, 법률 자문, 반드시, 무조건, 100%, 보장, 운명 확정 같은 위험 문구를 제거한다",
     );
+    expect(combined).toContain("치료는 관리, 조정, 생활 조언, 운영법으로 바꿔라");
+    expect(combined).toContain("문서는 리포트 또는 문맥상 자연스러운 표현으로 바꿔라");
+    expect(combined).toContain("영어 단어 contrast는 차이, 대비, 긴장으로 바꿔라");
+    expect(combined).toContain("반복된 문장은 하나만 남기거나 서로 다른 표현으로 바꿔라");
     expect(combined).toContain("성향 해석과 자기이해 목적의 참고 문장으로 고친다");
     expect(combined).toContain("사주 용어는 evidence에 있는 것만 사용하라");
     expect(combined).toContain("갑목");

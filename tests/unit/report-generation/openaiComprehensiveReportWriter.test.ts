@@ -604,6 +604,77 @@ describe("OpenAI comprehensive report writer", () => {
     expect(JSON.stringify(result.draft)).not.toContain("초안");
   });
 
+  it("repairs unsafe copy mild meta wording and repeated sentences from model output", async () => {
+    const unsafeDraft = {
+      ...createValidDraft(),
+      openingSummary:
+        "이 문서는 치료 방향을 다루지 않지만 사주 구조를 먼저 놓고 ENTJ는 보조로 연결합니다.",
+      chapters: createValidDraft().chapters.map((chapter) =>
+        [
+          "personality_pattern",
+          "work_money_study",
+          "love_relationships",
+        ].includes(chapter.chapterId)
+          ? {
+              ...chapter,
+              body: `${chapter.body} 다만 contrast는 분명합니다.`,
+            }
+          : chapter,
+      ),
+    };
+    const repairedDraft = {
+      ...createValidDraft(),
+      openingSummary:
+        "이 리포트는 관리 방향을 단정하지 않고 사주 구조를 먼저 놓고 ENTJ는 보조로 연결합니다.",
+      chapters: createValidDraft().chapters.map((chapter) =>
+        [
+          "personality_pattern",
+          "work_money_study",
+          "love_relationships",
+        ].includes(chapter.chapterId)
+          ? {
+              ...chapter,
+              body: `${chapter.body} ${chapter.titleKo}에서는 다만 차이가 분명합니다. ${chapter.titleKo}의 대비는 생활 조언으로 조정할 수 있습니다.`,
+            }
+          : chapter,
+      ),
+    };
+    let callCount = 0;
+    const fetchImpl: typeof fetch = async () => {
+      callCount += 1;
+
+      return createJsonResponse({
+        output_text: JSON.stringify(callCount === 1 ? unsafeDraft : repairedDraft),
+      });
+    };
+
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "ENTJ",
+      evidencePacket: createPacket(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl,
+      },
+    });
+    const serialized = JSON.stringify(result.draft);
+
+    expect(callCount).toBe(2);
+    expect(result.warnings).toEqual([
+      "quality repair: attempted",
+      "quality repair: passed",
+    ]);
+    expect(serialized).not.toContain("치료");
+    expect(result.draft.openingSummary).not.toContain("문서");
+    expect(serialized).not.toContain("이 문서는");
+    expect(serialized).not.toContain("contrast");
+    expect(serialized).not.toContain("다만 contrast는 분명합니다.");
+    expect(serialized).toContain("관리");
+    expect(serialized).toContain("리포트");
+    expect(serialized).toContain("차이가 분명합니다");
+  });
+
   it("fails if repair keeps mild internal meta copy", async () => {
     const metaDraft = {
       ...createValidDraft(),
@@ -638,6 +709,58 @@ describe("OpenAI comprehensive report writer", () => {
     expect(error.repairPassed).toBe(false);
     expect(error.validationErrors?.join("\n")).toContain(
       "MILD_INTERNAL_META_COPY: 초안",
+    );
+  });
+
+  it("fails if repair keeps unsafe copy and repeated sentences", async () => {
+    const unsafeDraft = {
+      ...createValidDraft(),
+      openingSummary:
+        "이 문서는 치료 방향을 다루지 않지만 사주 구조를 먼저 놓고 ENTJ는 보조로 연결합니다.",
+      chapters: createValidDraft().chapters.map((chapter) =>
+        [
+          "personality_pattern",
+          "work_money_study",
+          "love_relationships",
+        ].includes(chapter.chapterId)
+          ? {
+              ...chapter,
+              body: `${chapter.body} 다만 contrast는 분명합니다.`,
+            }
+          : chapter,
+      ),
+    };
+    let callCount = 0;
+    const fetchImpl: typeof fetch = async () => {
+      callCount += 1;
+
+      return createJsonResponse({
+        output_text: JSON.stringify(unsafeDraft),
+      });
+    };
+
+    const error = await expectSafeGenerationFailure(
+      generateComprehensiveReportDraft({
+        mbtiType: "ENTJ",
+        evidencePacket: createPacket(),
+        config: {
+          apiKey: "test_key",
+          model: "test_model",
+          enabled: true,
+          fetchImpl,
+        },
+      }),
+    );
+    const validationErrors = error.validationErrors?.join("\n") ?? "";
+
+    expect(callCount).toBe(2);
+    expect(error.stage).toBe("draft_validation");
+    expect(error.repairAttempted).toBe(true);
+    expect(error.repairPassed).toBe(false);
+    expect(validationErrors).toContain("UNSAFE_MEDICAL_COPY: 치료");
+    expect(validationErrors).toContain("MILD_INTERNAL_META_COPY: 문서");
+    expect(validationErrors).toContain(
+      "REPEATED_SENTENCE: 다만 contrast는 분명합니다.",
     );
   });
 

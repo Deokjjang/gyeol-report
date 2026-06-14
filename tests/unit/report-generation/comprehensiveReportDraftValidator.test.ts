@@ -372,6 +372,7 @@ describe("comprehensive report draft validator", () => {
       "DIRECT_HIT_READING_TOO_GENERIC: opening",
       "UNSAFE_CERTAINTY_COPY: 반드시 성공",
       "UNSAFE_ADVERTISING_COPY: 100%",
+      "UNSAFE_MEDICAL_COPY: 치료",
       "EVERYDAY_SCENE_MISSING: work_money_study",
       "MBTI_SUPPORT_MISSING: love_relationships",
       "V2_TEMPLATE_LABEL_COPY: 이렇게 쓰면 좋습니다",
@@ -394,6 +395,15 @@ describe("comprehensive report draft validator", () => {
     expect(isRepairableDraftValidationError("UNSAFE_ADVERTISING_COPY: 100%")).toBe(
       true,
     );
+    expect(isRepairableDraftValidationError("UNSAFE_MEDICAL_COPY: 치료")).toBe(
+      true,
+    );
+    expect(isRepairableDraftValidationError("MILD_INTERNAL_META_COPY: 문서")).toBe(
+      true,
+    );
+    expect(isRepairableDraftValidationError("REPEATED_SENTENCE: 다만 contrast는 분명합니다.")).toBe(
+      true,
+    );
     expect(isRepairableDraftValidationError("EVERYDAY_SCENE_MISSING: work_money_study")).toBe(
       true,
     );
@@ -408,11 +418,16 @@ describe("comprehensive report draft validator", () => {
       false,
     );
     expect(isRepairableDraftValidationError("UNSAFE_MEDICAL_COPY: 우울증 분석")).toBe(
-      false,
+      true,
     );
     expect(areAllDraftValidationErrorsRepairable([
       "CHAPTER_BODY_TOO_SHORT: love_relationships",
       "LOVE_COMPLEMENT_MISSING",
+    ])).toBe(true);
+    expect(areAllDraftValidationErrorsRepairable([
+      "UNSAFE_MEDICAL_COPY: 치료",
+      "MILD_INTERNAL_META_COPY: 문서",
+      "REPEATED_SENTENCE: 다만 contrast는 분명합니다.",
     ])).toBe(true);
     expect(areAllDraftValidationErrorsRepairable([
       "CHAPTER_BODY_TOO_SHORT: love_relationships",
@@ -442,6 +457,12 @@ describe("comprehensive report draft validator", () => {
         message: "UNSAFE_ADVERTISING_COPY: 100%",
         severity: "repairable",
         path: "100%",
+      },
+      {
+        code: "UNSAFE_MEDICAL_COPY",
+        message: "UNSAFE_MEDICAL_COPY: 치료",
+        severity: "repairable",
+        path: "치료",
       },
       {
         code: "EVERYDAY_SCENE_MISSING",
@@ -475,7 +496,7 @@ describe("comprehensive report draft validator", () => {
       {
         code: "UNSAFE_MEDICAL_COPY",
         message: "UNSAFE_MEDICAL_COPY: 우울증 분석",
-        severity: "fatal",
+        severity: "repairable",
         path: "우울증 분석",
       },
       {
@@ -487,7 +508,7 @@ describe("comprehensive report draft validator", () => {
       {
         code: "REPEATED_SENTENCE",
         message: "REPEATED_SENTENCE: 같은 문장입니다.",
-        severity: "fatal",
+        severity: "repairable",
         path: "같은 문장입니다.",
       },
     ]);

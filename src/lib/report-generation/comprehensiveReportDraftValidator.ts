@@ -69,8 +69,10 @@ const repairableDraftValidationErrorCodes = [
   "MBTI_SUPPORT_MISSING",
   "V2_TEMPLATE_LABEL_COPY",
   "MILD_INTERNAL_META_COPY",
+  "UNSAFE_MEDICAL_COPY",
   "UNSAFE_ADVERTISING_COPY",
   "UNSAFE_CERTAINTY_COPY",
+  "REPEATED_SENTENCE",
 ] as const;
 const repairableDraftValidationErrorCodeSet = new Set<string>(
   repairableDraftValidationErrorCodes,
