@@ -69,6 +69,7 @@ export type ComprehensiveReportV2ProfileTable = {
   readonly dayPillar?: string;
   readonly hourPillar?: string;
   readonly dayMaster?: string;
+  readonly dayPillarKeywords?: readonly string[];
   readonly fiveElementSummary: readonly string[];
   readonly excessiveElements: readonly string[];
   readonly missingElements: readonly string[];

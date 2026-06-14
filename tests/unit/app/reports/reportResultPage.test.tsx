@@ -59,6 +59,8 @@ function createDraft(): ComprehensiveReportDraft {
 }
 
 function createV2Chapter(chapterId: ComprehensiveReportV2ChapterId, titleKo: string) {
+  const isFinal = chapterId === "final_message";
+
   return {
     chapterId,
     titleKo,
@@ -69,10 +71,19 @@ function createV2Chapter(chapterId: ComprehensiveReportV2ChapterId, titleKo: str
       `${titleKo}에서는 책임을 먼저 떠안는 장면이 나올 수 있습니다.`,
     ].slice(0, chapterId === "opening" || chapterId === "saju_identity" ? 2 : 3),
     body:
-      `${titleKo}에서는 갑목과 갑신일주를 먼저 놓고 봅니다. 갑목은 방향을 세우고 판을 키우는 힘이라 덕민님이 가만히 기다리기보다 먼저 기준을 잡게 만듭니다. 갑신일주는 압박 속에서도 판단을 세우는 구조라서, 일과 돈과 관계에서 같은 근거가 서로 다른 장면으로 드러납니다. ENTJ는 이 흐름을 보조하는 자기상으로만 연결됩니다. 이렇게 쓰면 좋습니다. 결론을 바로 말하기 전에 질문을 먼저 던지는 루틴을 두면 날카로움이 조언으로 바뀝니다.`,
+      isFinal
+        ? "마지막으로 남길 말에서는 갑목과 갑신일주의 큰 방향, 압박 속 판단, 책임을 처리하는 방식이 한 줄로 정리됩니다. 입력한 ENTJ 성향으로 보면 덕민님은 효율, 목표, 역할 정리, 빠른 결론과 해결 중심을 통해 이 사주 구조를 체감하기 쉽습니다. 일에서는 맡을 일과 버릴 일을 나누고, 관계에서는 조언 전에 질문을 먼저 넣고, 돈에서는 계좌와 예산을 분리하며, 회복에서는 밤 산책과 수면과 기록을 일정에 고정해야 합니다. 오늘부터 할 작은 실행은 회의 전에 질문 하나 쓰기, 계좌를 용도별로 나누기, 침대에 눕기 전 내일 일정 메모를 닫기입니다. 오래 가는 방식은 더 세게 밀어붙이는 일이 아니라, 방향과 책임과 회복을 동시에 운영하는 장치에서 나옵니다."
+        : `${titleKo}에서는 갑목과 갑신일주를 먼저 놓고 봅니다. 갑목은 방향을 세우고 판을 키우는 힘이라 덕민님이 가만히 기다리기보다 먼저 기준을 잡게 만듭니다. 갑신일주는 압박 속에서도 판단을 세우는 구조라서, 회의와 메시지, 일과 돈과 관계에서 같은 근거가 서로 다른 장면으로 드러납니다. ENTJ는 이 흐름을 보조하는 자기상으로만 연결되고, MBTI 언어로는 효율과 목표, 역할 정리, 빠른 결론과 해결 중심으로 체감됩니다. 결론을 바로 말하기 전에 질문을 먼저 던지는 루틴을 두면 날카로움이 조언으로 바뀝니다.`,
     solutionLines:
-      chapterId === "opening" || chapterId === "final_message"
+      chapterId === "opening"
         ? []
+        : chapterId === "final_message"
+          ? [
+              "오늘 회의나 대화 전에 상대의 핵심을 한 문장으로 되받아 주세요.",
+              "일에서는 맡을 일과 버릴 일을 구분해 책임의 경계선을 정하세요.",
+              "돈은 계좌와 예산을 나누어 공격 계획과 방어 계획을 분리하세요.",
+              "회복은 밤 산책, 수면, 기록처럼 일정에 박아 두세요.",
+            ]
         : [
             "결론을 바로 말하기 전에 질문을 먼저 넣으세요.",
             "책임 범위를 문장으로 정리하세요.",
@@ -99,6 +110,7 @@ function createV2Draft(): ComprehensiveReportV2Draft {
       dayPillar: "갑신일주",
       hourPillar: "신미",
       dayMaster: "갑목",
+      dayPillarKeywords: ["바위 위 소나무", "압박 속 리더십"],
       fiveElementSummary: ["목 2", "화 0", "토 4", "금 2", "수 0"],
       excessiveElements: ["토 과다"],
       missingElements: ["화 부족", "수 부족"],
@@ -210,17 +222,19 @@ describe("report result page", () => {
     expect(html).toContain("사주×MBTI 종합 리포트");
     expect(html).toContain("덕민님의 결은 큰 방향과 빠른 판단에 있습니다");
     expect(html).toContain("사주 구조가 먼저이고 ENTJ");
-    expect(html).toContain("만세력 요약");
+    expect(html).toContain("만세력 및 명리학 표");
+    expect(html).not.toContain("만세력 요약");
     expect(html).toContain("연주");
     expect(html).toContain("월주");
     expect(html).toContain("일주");
     expect(html).toContain("시주");
     expect(html).toContain("일간");
-    expect(html).toContain("오행");
-    expect(html).toContain("십성");
+    expect(html).toContain("일주 해석 키워드");
+    expect(html).toContain("오행 분포");
+    expect(html).toContain("십성 핵심");
     expect(html).toContain("신살");
     expect(html).toContain("귀인");
-    expect(html).toContain("MBTI");
+    expect(html).toContain("MBTI 입력값");
     expect(html).toContain("병자");
     expect(html).toContain("갑목");
     expect(html).toContain("화 부족");
@@ -229,12 +243,14 @@ describe("report result page", () => {
     expect(html).toContain("사주가 보여주는 기본 형상");
     expect(html).toContain("사주가 보여주는 기본 형상는 갑목과 갑신일주");
     expect(html).toContain("갑목은 방향을 세우고 판을 키우는 힘");
-    expect(html).toContain("이런 장면 있지 않나요?");
+    expect(html).not.toContain("이런 장면 있지 않나요?");
     expect(html).toContain("상대가 설명을 끝내기 전에 이미 결론이 보이는 상황");
     expect(html).toContain("일, 돈, 공부가 연결되는 방식");
-    expect(html).toContain("이렇게 쓰면 좋습니다");
+    expect(html).not.toContain("이렇게 쓰면 좋습니다");
     expect(html).toContain("결론을 바로 말하기 전에 질문을 먼저 넣으세요.");
-    expect(html).toContain("최종 조언");
+    expect(html).toContain("마지막으로 남길 말");
+    expect(html).not.toContain("최종 조언");
+    expect(html).not.toContain("처음에 보이는 결 핵심");
     expect(html).not.toContain("리포트 ID");
     expect(html).not.toContain("상품");
     expect(html).not.toContain("상태");

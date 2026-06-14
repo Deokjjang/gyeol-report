@@ -63,6 +63,11 @@ const repairableDraftValidationErrorCodes = [
   "WORK_STUDY_CONTEXT_MISSING",
   "ELEMENT_REMEDY_MISSING",
   "FINAL_MESSAGE_CLOSING_MISSING",
+  "FINAL_MESSAGE_TOO_SHORT",
+  "FINAL_MESSAGE_SOLUTIONS_MISSING",
+  "EVERYDAY_SCENE_MISSING",
+  "MBTI_SUPPORT_MISSING",
+  "V2_TEMPLATE_LABEL_COPY",
   "MILD_INTERNAL_META_COPY",
   "UNSAFE_ADVERTISING_COPY",
   "UNSAFE_CERTAINTY_COPY",
@@ -228,6 +233,7 @@ const profileTableKeys = [
   "dayPillar",
   "hourPillar",
   "dayMaster",
+  "dayPillarKeywords",
   "fiveElementSummary",
   "excessiveElements",
   "missingElements",
@@ -269,6 +275,10 @@ const visibleEvidenceDebugLabels = [
   "entry id",
   "entry ids",
 ] as const;
+const v2TemplateLabelPhrases = [
+  "이런 장면 있지 않나요?",
+  "이렇게 쓰면 좋습니다",
+] as const;
 const genericPlaceholderBodies = [
   "사주 원국의 기본 구조를 정리했습니다.",
   "입력하신 MBTI 유형을 리포트 보조 기준으로 반영했습니다.",
@@ -282,7 +292,7 @@ const v2ChapterBodyMinimumLengths = {
   love_relationships: 450,
   people_family_environment: 420,
   risk_and_growth: 360,
-  final_message: 220,
+  final_message: 420,
 } as const satisfies Record<ComprehensiveReportV2ChapterId, number>;
 const v2ChapterEffectiveMinimumLengths = {
   opening: 420,
@@ -292,7 +302,7 @@ const v2ChapterEffectiveMinimumLengths = {
   love_relationships: 750,
   people_family_environment: 700,
   risk_and_growth: 650,
-  final_message: 420,
+  final_message: 650,
 } as const satisfies Record<ComprehensiveReportV2ChapterId, number>;
 const v2ChapterHitReadingMinimumCounts = {
   opening: 2,
@@ -312,7 +322,7 @@ const v2ChapterSolutionMinimumCounts = {
   love_relationships: 4,
   people_family_environment: 2,
   risk_and_growth: 4,
-  final_message: 0,
+  final_message: 4,
 } as const satisfies Record<ComprehensiveReportV2ChapterId, number>;
 const hitReadingConcreteMarkers = [
   "덕민님",
@@ -452,6 +462,64 @@ const finalMessagePracticalAreaMarkers = [
   "성과",
   "루틴",
 ] as const;
+const finalMessageSmallActionMarkers = [
+  "오늘",
+  "작은 실행",
+  "하나",
+  "첫째",
+  "둘째",
+  "셋째",
+  "3개",
+  "세 가지",
+  "일부터",
+  "지금",
+] as const;
+const everydaySceneMarkers = [
+  "회의",
+  "카톡",
+  "메시지",
+  "가족",
+  "연인",
+  "상대",
+  "팀",
+  "업무",
+  "공부",
+  "자격증",
+  "전문서",
+  "계좌",
+  "돈",
+  "일정",
+  "침대",
+  "밤",
+  "산책",
+] as const;
+const mbtiSupportMarkers = [
+  "ENTJ",
+  "MBTI",
+  "효율",
+  "목표",
+  "역할",
+  "결론",
+  "해결",
+  "지휘",
+  "애매함",
+] as const;
+const v2SceneRequiredChapterIds = [
+  "personality_pattern",
+  "work_money_study",
+  "love_relationships",
+  "people_family_environment",
+  "risk_and_growth",
+] as const satisfies readonly ComprehensiveReportV2ChapterId[];
+const v2MbtiSupportRequiredChapterIds = [
+  "saju_identity",
+  "personality_pattern",
+  "work_money_study",
+  "love_relationships",
+  "people_family_environment",
+  "risk_and_growth",
+  "final_message",
+] as const satisfies readonly ComprehensiveReportV2ChapterId[];
 const repeatedSentenceAllowList = [
   "이렇게 쓰면 좋습니다.",
   "피해야 할 패턴입니다.",
@@ -494,6 +562,10 @@ function isStringArray(value: unknown): value is readonly string[] {
 
 function hasAnyMarker(text: string, markers: readonly string[]): boolean {
   return markers.some((marker) => text.includes(marker));
+}
+
+function countDistinctMarkers(text: string, markers: readonly string[]): number {
+  return markers.filter((marker) => text.includes(marker)).length;
 }
 
 function findChapter(
@@ -1420,6 +1492,14 @@ function parseProfileTable(
     dayPillar: parseOptionalProfilePillar(errors, value.dayPillar, "dayPillar"),
     hourPillar: parseOptionalProfilePillar(errors, value.hourPillar, "hourPillar"),
     dayMaster: parseOptionalProfilePillar(errors, value.dayMaster, "dayMaster"),
+    dayPillarKeywords:
+      value.dayPillarKeywords === undefined
+        ? undefined
+        : parseProfileStringArray(
+            errors,
+            value.dayPillarKeywords,
+            "dayPillarKeywords",
+          ),
     fiveElementSummary: parseProfileStringArray(
       errors,
       value.fiveElementSummary,
@@ -1594,6 +1674,11 @@ function appendV2VisibleDebugLabelErrors(
       errors.push(`VISIBLE_EVIDENCE_DEBUG_LABEL: ${label}`);
     }
   }
+  for (const label of v2TemplateLabelPhrases) {
+    if (text.includes(label)) {
+      errors.push(`V2_TEMPLATE_LABEL_COPY: ${label}`);
+    }
+  }
 }
 
 function isConcreteHitReadingLine(line: string): boolean {
@@ -1665,6 +1750,18 @@ function appendV2FinalMessageClosingErrors(
     !hasAnyMarker(closingText, finalMessageClosingMarkers) ||
     !hasAnyMarker(closingText, finalMessagePracticalAreaMarkers)
   ) {
+    errors.push("FINAL_MESSAGE_CLOSING_MISSING");
+  }
+  if (getEffectiveV2ChapterText(finalChapter).trim().length < 650) {
+    errors.push("FINAL_MESSAGE_TOO_SHORT");
+  }
+  if (finalChapter.solutionLines.length < 4) {
+    errors.push("FINAL_MESSAGE_SOLUTIONS_MISSING");
+  }
+  if (countDistinctMarkers(closingText, finalMessagePracticalAreaMarkers) < 3) {
+    errors.push("FINAL_MESSAGE_CLOSING_MISSING");
+  }
+  if (countDistinctMarkers(closingText, finalMessageSmallActionMarkers) < 3) {
     errors.push("FINAL_MESSAGE_CLOSING_MISSING");
   }
 }
@@ -1749,6 +1846,38 @@ function appendV2TopicCoverageErrors(
   }
 }
 
+function appendV2EverydaySceneErrors(
+  errors: string[],
+  chapters: readonly ComprehensiveReportV2Chapter[],
+): void {
+  for (const chapterId of v2SceneRequiredChapterIds) {
+    const chapter = findChapter(chapters, chapterId);
+
+    if (
+      chapter !== undefined &&
+      countDistinctMarkers(getV2ChapterSearchText(chapter), everydaySceneMarkers) < 2
+    ) {
+      errors.push(`EVERYDAY_SCENE_MISSING: ${chapterId}`);
+    }
+  }
+}
+
+function appendV2MbtiSupportErrors(
+  errors: string[],
+  chapters: readonly ComprehensiveReportV2Chapter[],
+): void {
+  for (const chapterId of v2MbtiSupportRequiredChapterIds) {
+    const chapter = findChapter(chapters, chapterId);
+
+    if (
+      chapter !== undefined &&
+      !hasAnyMarker(getV2ChapterSearchText(chapter), mbtiSupportMarkers)
+    ) {
+      errors.push(`MBTI_SUPPORT_MISSING: ${chapterId}`);
+    }
+  }
+}
+
 function parseV2Draft(
   input: unknown,
   errors: string[],
@@ -1799,6 +1928,8 @@ function parseV2Draft(
   appendV2HitReadingErrors(errors, chapters);
   appendV2PrescriptionErrors(errors, chapters);
   appendV2TopicCoverageErrors(errors, chapters);
+  appendV2EverydaySceneErrors(errors, chapters);
+  appendV2MbtiSupportErrors(errors, chapters);
   appendV2FinalMessageClosingErrors(errors, {
     chapters,
     finalAdvice: typeof input.finalAdvice === "string" ? input.finalAdvice : "",

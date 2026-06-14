@@ -45,6 +45,12 @@ describe("comprehensive report profile table builder", () => {
       dayPillar: "갑신일주",
       mbti: "ENTJ",
     });
+    expect(profileTable.dayPillarKeywords).toEqual(
+      expect.arrayContaining([
+        "바위 위 소나무",
+        "갑목의 성장성과 신금의 절단력이 맞물립니다.",
+      ]),
+    );
     expect(profileTable.excessiveElements).toEqual(expect.arrayContaining(["토 과다"]));
     expect(profileTable.fiveElementSummary).toEqual([
       "목 2",
@@ -86,6 +92,9 @@ describe("comprehensive report profile table builder", () => {
       dayPillar: "갑신일주",
       mbti: "ENTJ",
     });
+    expect(profileTable.dayPillarKeywords).toEqual(
+      expect.arrayContaining(["바위 위 소나무"]),
+    );
     expect(profileTable.excessiveElements).toEqual(expect.arrayContaining(["토 과다"]));
     expect(profileTable.missingElements).toEqual(
       expect.arrayContaining(["화 부족", "수 부족"]),

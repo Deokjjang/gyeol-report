@@ -104,7 +104,7 @@ function createLongChapterBody(input: {
   readonly extra?: string;
 }): string {
   const base =
-    `${input.title}에서는 ${input.sajuTerm}을 먼저 놓고 읽습니다. 덕민님, ${input.title}에서 상대가 한참 설명하기 전에 이미 결론이 보이는 상황 자주 나오지 않나요? ${input.title}의 ${input.sajuTerm}은 단순한 이름이 아니라 행동의 출발점입니다. ${input.title}에서 덕민님은 상황을 오래 구경하기보다 기준을 세우고 판을 정리하려는 쪽으로 움직입니다. 그래서 ${input.title}의 일상 장면에서는 말이 빠르고 판단이 선명하게 보일 수 있습니다. 입력한 ENTJ 성향도 ${input.title}의 이 지점과 맞물리지만, 결론은 MBTI가 아니라 사주 구조에서 먼저 나옵니다. 좋은 환경에서는 ${input.title}의 이 힘이 추진력과 책임감으로 살아나고, 나쁜 환경에서는 쉬지 못하고 계속 자신을 몰아붙이는 압박으로 바뀔 수 있습니다. ${input.title}은 같은 사주 구조가 다른 생활 장면에서 어떻게 다른 결과로 바뀌는지 보여주는 챕터입니다. 이렇게 쓰면 좋습니다. ${input.title}에서는 결론을 바로 던지기 전에 질문을 한 번 넣는 루틴을 두어야 합니다. ${input.title}의 핵심은 용어를 외우게 하는 것이 아니라 실제 선택과 말투, 돈과 관계를 떠올리게 만드는 데 있습니다.`;
+    `${input.title}에서는 ${input.sajuTerm}을 먼저 놓고 읽습니다. 덕민님, ${input.title}에서 상대가 한참 설명하기 전에 이미 결론이 보이는 상황 자주 나오지 않나요? ${input.title}의 ${input.sajuTerm}은 단순한 이름이 아니라 행동의 출발점입니다. ${input.title}에서 덕민님은 상황을 오래 구경하기보다 기준을 세우고 판을 정리하려는 쪽으로 움직입니다. 그래서 ${input.title}의 일상 장면에서는 회의와 메시지에서 말이 빠르고 판단이 선명하게 보일 수 있습니다. 입력한 ENTJ 성향도 ${input.title}의 이 지점과 맞물리지만, 결론은 MBTI가 아니라 사주 구조에서 먼저 나옵니다. ${input.title}를 MBTI 언어로 번역하면 효율, 목표, 역할 정리, 빠른 결론과 해결 중심이 강해지는 흐름입니다. 좋은 환경에서는 ${input.title}의 이 힘이 추진력과 책임감으로 살아나고, 나쁜 환경에서는 쉬지 못하고 계속 자신을 몰아붙이는 압박으로 바뀔 수 있습니다. ${input.title}은 같은 사주 구조가 다른 생활 장면에서 어떻게 다른 결과로 바뀌는지 보여주는 챕터입니다. ${input.title}에서는 결론을 바로 던지기 전에 질문을 한 번 넣는 루틴을 두어야 합니다. ${input.title}의 핵심은 용어를 외우게 하는 것이 아니라 실제 선택과 말투, 돈과 관계를 떠올리게 만드는 데 있습니다.`;
 
   return `${base} ${input.extra ?? ""}`.trim();
 }
@@ -161,8 +161,16 @@ function createSolutionLines(
   chapterId: ComprehensiveReportV2Draft["chapters"][number]["chapterId"],
   titleKo: string,
 ): readonly string[] {
-  if (chapterId === "opening" || chapterId === "final_message") {
+  if (chapterId === "opening") {
     return [];
+  }
+  if (chapterId === "final_message") {
+    return [
+      "오늘부터 회의나 대화 전에 결론을 바로 던지기보다 상대의 핵심을 한 문장으로 되받아 주세요.",
+      "일에서는 맡을 일과 버릴 일을 구분해 책임의 경계선을 먼저 정하세요.",
+      "돈은 계좌와 예산을 나누어 공격 계획과 방어 계획을 분리하세요.",
+      "회복은 밤 산책, 수면, 기록처럼 일정에 박아 두는 쉬는 장치로 다루세요.",
+    ];
   }
   if (chapterId === "work_money_study") {
     return [
@@ -216,6 +224,8 @@ function createV2Chapter(
             ? "관계에서 써먹을 것은 보완하는 사람을 고르는 기준입니다. 부족한 수와 화를 채워 주듯 정서적 완충이 되고 감정 표현을 부드럽게 풀어주는 사람이 맞는 사람일 수 있습니다. 피해야 할 패턴은 감정 기복이 크고 책임이 흐릿하거나 계속 확인받으려는 관계입니다. ISFP, INFP, INTP 같은 예시는 참고가 될 수 있지만 MBTI만으로 단정하지 않는 태도가 필요합니다."
           : chapterId === "risk_and_growth"
             ? "피해야 할 패턴은 계속 버티기만 하다가 몸과 마음이 동시에 꺼지는 흐름입니다. 수 부족은 밤 산책, 수변 공간, 충분한 수분, 기록, 잠 루틴으로 식히고, 화 부족은 햇빛, 가벼운 운동, 발표와 표현 연습으로 밖으로 내야 합니다. 토 과다는 책임 덜어내기와 경계선 정리하기로 조절해야 합니다."
+          : chapterId === "final_message"
+            ? "마지막으로 남길 말에서는 갑목과 갑신일주의 큰 방향, 압박 속 판단, 책임을 처리하는 방식이 한 줄로 정리되어야 합니다. 입력한 ENTJ 성향으로 보면 덕민님은 효율, 목표, 역할 정리, 빠른 결론과 해결 중심을 통해 이 사주 구조를 체감하기 쉽습니다. 일에서는 맡을 일과 버릴 일을 나누고, 관계에서는 조언 전에 질문을 먼저 넣고, 돈에서는 계좌와 예산을 분리하며, 회복에서는 밤 산책과 수면과 기록을 일정에 고정해야 합니다. 오늘부터 할 작은 실행은 회의 전에 질문 하나 쓰기, 계좌를 용도별로 나누기, 침대에 눕기 전 내일 일정 메모를 닫기입니다. 오래 가는 방식은 더 세게 밀어붙이는 일이 아니라, 방향과 책임과 회복을 동시에 운영하는 장치에서 나옵니다."
           : `${titleKo}에서는 관계와 일, 돈과 성장에서 같은 구조가 어떻게 다른 표정으로 바뀌는지 장면을 바꿔 읽어야 합니다. ${titleKo}은 용어를 나열하지 않고 실제 선택과 말투와 행동으로 풀어내며, 이 챕터만의 결론과 조언을 분명히 남겨야 합니다.`,
     }),
     solutionLines: createSolutionLines(chapterId, titleKo),
@@ -362,6 +372,10 @@ describe("comprehensive report draft validator", () => {
       "DIRECT_HIT_READING_TOO_GENERIC: opening",
       "UNSAFE_CERTAINTY_COPY: 반드시 성공",
       "UNSAFE_ADVERTISING_COPY: 100%",
+      "EVERYDAY_SCENE_MISSING: work_money_study",
+      "MBTI_SUPPORT_MISSING: love_relationships",
+      "V2_TEMPLATE_LABEL_COPY: 이렇게 쓰면 좋습니다",
+      "FINAL_MESSAGE_TOO_SHORT",
       "UNSUPPORTED_SAJU_TERM: 도화살",
       "UNSAFE_MEDICAL_COPY: 우울증 분석",
       "VISIBLE_EVIDENCE_DEBUG_LABEL: 분석 근거 보기",
@@ -380,6 +394,16 @@ describe("comprehensive report draft validator", () => {
     expect(isRepairableDraftValidationError("UNSAFE_ADVERTISING_COPY: 100%")).toBe(
       true,
     );
+    expect(isRepairableDraftValidationError("EVERYDAY_SCENE_MISSING: work_money_study")).toBe(
+      true,
+    );
+    expect(isRepairableDraftValidationError("MBTI_SUPPORT_MISSING: love_relationships")).toBe(
+      true,
+    );
+    expect(isRepairableDraftValidationError("V2_TEMPLATE_LABEL_COPY: 이렇게 쓰면 좋습니다")).toBe(
+      true,
+    );
+    expect(isRepairableDraftValidationError("FINAL_MESSAGE_TOO_SHORT")).toBe(true);
     expect(isRepairableDraftValidationError("UNSUPPORTED_SAJU_TERM: 도화살")).toBe(
       false,
     );
@@ -418,6 +442,29 @@ describe("comprehensive report draft validator", () => {
         message: "UNSAFE_ADVERTISING_COPY: 100%",
         severity: "repairable",
         path: "100%",
+      },
+      {
+        code: "EVERYDAY_SCENE_MISSING",
+        message: "EVERYDAY_SCENE_MISSING: work_money_study",
+        severity: "repairable",
+        path: "work_money_study",
+      },
+      {
+        code: "MBTI_SUPPORT_MISSING",
+        message: "MBTI_SUPPORT_MISSING: love_relationships",
+        severity: "repairable",
+        path: "love_relationships",
+      },
+      {
+        code: "V2_TEMPLATE_LABEL_COPY",
+        message: "V2_TEMPLATE_LABEL_COPY: 이렇게 쓰면 좋습니다",
+        severity: "repairable",
+        path: "이렇게 쓰면 좋습니다",
+      },
+      {
+        code: "FINAL_MESSAGE_TOO_SHORT",
+        message: "FINAL_MESSAGE_TOO_SHORT",
+        severity: "repairable",
       },
       {
         code: "UNSUPPORTED_SAJU_TERM",
@@ -642,6 +689,113 @@ describe("comprehensive report draft validator", () => {
     expect(result.errors.join("\n")).toContain("FINAL_MESSAGE_CLOSING_MISSING");
   });
 
+  it("rejects V2 template labels inside generated narrative text", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "personality_pattern"
+          ? {
+              ...chapter,
+              body: `${chapter.body} 이런 장면 있지 않나요? 이렇게 쓰면 좋습니다.`,
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "V2_TEMPLATE_LABEL_COPY: 이런 장면 있지 않나요?",
+    );
+    expect(result.errors.join("\n")).toContain(
+      "V2_TEMPLATE_LABEL_COPY: 이렇게 쓰면 좋습니다",
+    );
+  });
+
+  it("rejects V2 major chapters without specific everyday scenes", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "personality_pattern"
+          ? {
+              ...chapter,
+              body:
+                "갑목과 갑신일주를 먼저 놓고 목표와 실행을 길게 설명합니다. 입력한 ENTJ 성향으로 보면 효율과 목표 정리가 보조로 붙습니다. 이 문장은 충분히 길지만 생활 장면 단어를 일부러 빼서 구체성 검증을 통과하지 못하게 만듭니다. ".repeat(4),
+              hitReadingLines: [
+                "덕민님은 목표가 뚜렷해야 움직이는 편입니다.",
+                "성과가 보여야 집중력이 붙는 편입니다.",
+                "실행 기준이 없으면 에너지가 쉽게 흩어집니다.",
+              ],
+              solutionLines: [
+                "목표를 둘로 나누어 보세요.",
+                "성과 기준을 짧게 정하세요.",
+                "보조 기준을 확인하세요.",
+                "실행 흐름을 정리하세요.",
+              ],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "EVERYDAY_SCENE_MISSING: personality_pattern",
+    );
+  });
+
+  it("rejects V2 major chapters without MBTI support text", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "people_family_environment"
+          ? {
+              ...chapter,
+              body:
+                "갑목과 갑신일주를 먼저 놓고 사람과 가족과 환경의 결을 길게 설명합니다. 가족이 부탁하면 거절보다 맡아 처리하고, 팀에서 일이 흐리면 본인이 결국 표와 순서를 만들게 되는 장면이 이어집니다. 명리학 용어는 충분히 길게 풀지만 보조 성향 언어는 일부러 빼서 검증 대상이 되게 합니다. ".repeat(4),
+              hitReadingLines: [
+                "덕민님은 가까운 사람에게 더 엄격해질 수 있습니다.",
+                "부탁을 받으면 거절보다 정돈이 먼저 나올 수 있습니다.",
+                "말이 자주 바뀌는 판에서는 피로가 빨리 올라올 수 있습니다.",
+              ],
+              solutionLines: [
+                "조언 전에 질문을 한 번 넣으세요.",
+                "맡을 범위를 문장으로 정하세요.",
+              ],
+              mbtiTermsUsed: [],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "MBTI_SUPPORT_MISSING: people_family_environment",
+    );
+  });
+
+  it("rejects a short V2 final message without enough integrated guidance", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "final_message"
+          ? {
+              ...chapter,
+              body:
+                "갑목과 갑신일주를 기준으로 마지막 방향을 짧게 정리합니다. ENTJ는 보조 성향입니다.",
+              solutionLines: ["오늘 하나만 바꾸세요."],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("FINAL_MESSAGE_TOO_SHORT");
+    expect(result.errors.join("\n")).toContain("FINAL_MESSAGE_SOLUTIONS_MISSING");
+  });
+
   it("rejects V2 major chapters without prescriptions", () => {
     const draft = createValidV2Draft();
     const result = validateComprehensiveReportDraft({
@@ -670,7 +824,7 @@ describe("comprehensive report draft validator", () => {
         chapter.chapterId === "work_money_study"
           ? {
               ...chapter,
-              body: `${chapter.sajuTermsUsed.join(" ")}을 먼저 놓고 봅니다. 덕민님, 성과가 보이지 않으면 집중이 흐려지는 상황 자주 나오지 않나요? 이 챕터는 목표와 돈과 실행 기준을 길게 설명하지만 성인 학습 범위 키워드는 일부러 넣지 않습니다. 갑목은 방향을 잡고 갑신일주는 압박 속에서 기준을 세우는 구조라서, 현실 판단과 실행 속도가 같이 움직입니다. 이렇게 쓰면 좋습니다. 목표를 작게 나누고 돈 계획을 분리하세요. 같은 설명을 충분히 길게 이어서 본문 길이 조건은 통과하지만 특정 학습 범위 조건은 통과하지 못하게 만듭니다. `.repeat(3),
+              body: `${chapter.sajuTermsUsed.join(" ")}을 먼저 놓고 봅니다. 덕민님, 성과가 보이지 않으면 집중이 흐려지는 상황 자주 나오지 않나요? 이 챕터는 목표와 돈과 실행 기준을 길게 설명하지만 성인 학습 범위 키워드는 일부러 넣지 않습니다. 갑목은 방향을 잡고 갑신일주는 압박 속에서 기준을 세우는 구조라서, 현실 판단과 실행 속도가 같이 움직입니다. 목표를 작게 나누고 돈 계획을 분리하면 과열을 줄일 수 있습니다. 같은 설명을 충분히 길게 이어서 본문 길이 조건은 통과하지만 특정 학습 범위 조건은 통과하지 못하게 만듭니다. `.repeat(3),
               hitReadingLines: [
                 "일을 잡으면 초반에는 빠르게 판을 정리하지만 쉬는 기준은 자주 뒤로 밀릴 수 있습니다.",
                 "성과가 보여야 집중력이 붙는 편입니다.",
@@ -699,7 +853,7 @@ describe("comprehensive report draft validator", () => {
         chapter.chapterId === "love_relationships"
           ? {
               ...chapter,
-              body: `${chapter.sajuTermsUsed.join(" ")}을 먼저 놓고 관계를 읽습니다. 덕민님, 좋아해도 따뜻한 말보다 해결책이 먼저 나갈 수 있습니다. 이 문장은 관계 장면을 충분히 길게 설명하지만 상대 기준과 좋지 않은 관계 기준은 일부러 넣지 않습니다. 갑목은 방향을 잡고 갑신일주는 압박 속에서 기준을 세우는 구조라서, 관계에서도 결론이 먼저 보이기 쉽습니다. 이렇게 쓰면 좋습니다. 감정을 말하기 전에 질문하고 속도를 맞추세요. 본문은 충분히 길어서 길이 검증은 통과하지만 관계 처방 키워드 검증은 실패해야 합니다. `.repeat(3),
+              body: `${chapter.sajuTermsUsed.join(" ")}을 먼저 놓고 관계를 읽습니다. 덕민님, 좋아해도 따뜻한 말보다 해결책이 먼저 나갈 수 있습니다. 이 문장은 관계 장면을 충분히 길게 설명하지만 상대 기준과 좋지 않은 관계 기준은 일부러 넣지 않습니다. 갑목은 방향을 잡고 갑신일주는 압박 속에서 기준을 세우는 구조라서, 관계에서도 결론이 먼저 보이기 쉽습니다. 감정을 말하기 전에 질문하고 속도를 맞추면 말의 온도가 달라집니다. 본문은 충분히 길어서 길이 검증은 통과하지만 관계 처방 키워드 검증은 실패해야 합니다. `.repeat(3),
               hitReadingLines: [
                 "호감이 있어도 따뜻한 말보다 해결책이 먼저 나갈 수 있습니다.",
                 "상대가 감정을 말할 때, 덕민님은 위로보다 결론을 먼저 주고 싶어질 수 있습니다.",
@@ -841,7 +995,7 @@ describe("comprehensive report draft validator", () => {
                 "덕민님, 버티는 힘은 강하지만 멈추는 기준은 자주 늦게 잡히기 쉽습니다.",
                 "성과가 급할수록 자기 상태를 뒤늦게 확인하는 편입니다.",
               ],
-              body: `${chapter.sajuTermsUsed.join(" ")}을 먼저 놓고 반복되는 리스크를 읽습니다. 덕민님, 버티는 힘은 강하지만 회복 타이밍은 자주 늦게 잡히기 쉽습니다. 이 문장은 성장 전략을 길게 설명하지만 오행별 생활 처방 키워드는 일부러 넣지 않습니다. 갑목은 방향을 다시 세우고 갑신일주는 압박 속에서도 기준을 붙잡는 구조입니다. 이렇게 쓰면 좋습니다. 무리하지 말고 일의 순서를 다시 나누세요. 본문은 충분히 길어서 길이 조건은 통과하지만 element remedy 검증은 실패해야 합니다. `.repeat(3),
+              body: `${chapter.sajuTermsUsed.join(" ")}을 먼저 놓고 반복되는 리스크를 읽습니다. 덕민님, 버티는 힘은 강하지만 회복 타이밍은 자주 늦게 잡히기 쉽습니다. 이 문장은 성장 전략을 길게 설명하지만 오행별 생활 처방 키워드는 일부러 넣지 않습니다. 갑목은 방향을 다시 세우고 갑신일주는 압박 속에서도 기준을 붙잡는 구조입니다. 무리하지 말고 일의 순서를 다시 나누면 과열을 줄일 수 있습니다. 본문은 충분히 길어서 길이 조건은 통과하지만 element remedy 검증은 실패해야 합니다. `.repeat(3),
               solutionLines: [
                 "무리하지 마세요.",
                 "쉬는 시간을 넣으세요.",

@@ -54,6 +54,9 @@ describe("comprehensive report draft JSON schema", () => {
       "yearPillar",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "dayPillarKeywords",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
       "tenGodSummary",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
@@ -97,6 +100,7 @@ describe("comprehensive report draft JSON schema", () => {
     expect(serialized).not.toContain("yearPillar");
     expect(serialized).not.toContain("monthPillar");
     expect(serialized).not.toContain("hourPillar");
+    expect(serialized).not.toContain("dayPillarKeywords");
     expect(serialized).toContain("hitReadingLines");
     expect(serialized).toContain("solutionLines");
   });

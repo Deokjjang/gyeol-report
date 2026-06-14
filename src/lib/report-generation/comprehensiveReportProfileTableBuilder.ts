@@ -64,6 +64,22 @@ function formatElementBalanceLabels(input: {
   );
 }
 
+function buildDayPillarKeywords(
+  entries: readonly SajuKnowledgeEntry[],
+): readonly string[] {
+  const dayPillarEntry = entries.find((entry) => entry.category === "day_pillar");
+
+  if (dayPillarEntry === undefined) {
+    return [];
+  }
+
+  return uniqueValues([
+    ...(dayPillarEntry.coreImageKo === undefined ? [] : [dayPillarEntry.coreImageKo]),
+    ...(dayPillarEntry.dayPillarHints?.coreTension ?? []),
+    ...(dayPillarEntry.dayPillarHints?.strength ?? []),
+  ]).slice(0, 5);
+}
+
 export function buildComprehensiveReportV2ProfileTable(input: {
   readonly evidencePacket: ComprehensiveReportEvidencePacket;
   readonly mbtiType: string;
@@ -72,12 +88,14 @@ export function buildComprehensiveReportV2ProfileTable(input: {
   const entries = getSelectedSajuEntries(input.evidencePacket);
   const dayMaster = labelsForCategory(entries, "day_master")[0];
   const dayPillar = labelsForCategory(entries, "day_pillar")[0];
+  const dayPillarKeywords = buildDayPillarKeywords(entries);
   const elementBalanceLabels = labelsForCategory(entries, "element_balance");
   const fiveElementSummary = formatFiveElementCounts(input.sajuFacts);
 
   return {
     ...(dayPillar === undefined ? {} : { dayPillar }),
     ...(dayMaster === undefined ? {} : { dayMaster }),
+    ...(dayPillarKeywords.length === 0 ? {} : { dayPillarKeywords }),
     fiveElementSummary:
       fiveElementSummary ??
       uniqueValues([

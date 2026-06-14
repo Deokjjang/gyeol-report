@@ -74,9 +74,15 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("덜 닳게 오래 가는 법");
     expect(combined).toContain("회복과 표현을 시스템에 넣는 일");
     expect(combined).toContain("profileTable은 시스템이 deterministic facts로 붙인다");
+    expect(combined).toContain("만세력 및 명리학 표는 deterministic profileTable로 제공된다");
     expect(combined).toContain("너는 profileTable을 출력하지 않는다");
     expect(combined).toContain("profileTable 필드는 절대 출력하지 않는다");
     expect(combined).toContain("너는 narrative fields만 JSON으로 작성한다");
+    expect(combined).toContain("hitReadingLines와 solutionLines는 본문에 자연스럽게 녹일 것");
+    expect(combined).toContain("이런 장면 있지 않나요 / 이렇게 쓰면 좋습니다 라벨 금지");
+    expect(combined).toContain("일상 장면을 구체적으로 쓸 것");
+    expect(combined).toContain("MBTI 보조 해석을 충분히 쓸 것");
+    expect(combined).toContain("final_message는 긴 마무리 챕터로 쓸 것");
     expect(combined).toContain("8개 챕터");
     expect(combined).toContain("근거 목록을 따로 보여주지 말고 본문에 녹여라");
     expect(combined).toContain("work_money_study");

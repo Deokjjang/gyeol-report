@@ -314,6 +314,7 @@ function createFallbackProfileTable(
 
   return {
     dayPillar: sajuTerms.find((term) => term.endsWith("일주")),
+    dayPillarKeywords: [],
     dayMaster: sajuTerms.find(
       (term) =>
         term.endsWith("목") ||
@@ -372,21 +373,24 @@ function renderV2ProfileTable(
 
   return (
     <section className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-      <h2 className="text-lg font-semibold text-neutral-50">만세력 요약</h2>
-      <dl className="mt-4">
+      <h2 className="text-lg font-semibold text-neutral-50">
+        만세력 및 명리학 표
+      </h2>
+      <dl className="mt-4 divide-y divide-neutral-800">
         {renderProfileRow("연주", profile.yearPillar)}
         {renderProfileRow("월주", profile.monthPillar)}
         {renderProfileRow("일주", profile.dayPillar)}
         {renderProfileRow("시주", profile.hourPillar)}
         {renderProfileRow("일간", profile.dayMaster)}
-        {renderProfileRow("오행", profile.fiveElementSummary)}
+        {renderProfileRow("일주 해석 키워드", profile.dayPillarKeywords)}
+        {renderProfileRow("오행 분포", profile.fiveElementSummary)}
         {renderProfileRow("과다 오행", profile.excessiveElements)}
         {renderProfileRow("부족 오행", profile.missingElements)}
-        {renderProfileRow("십성", profile.tenGodSummary)}
+        {renderProfileRow("십성 핵심", profile.tenGodSummary)}
         {renderProfileRow("주요 구조", profile.specialPatterns)}
         {renderProfileRow("신살", profile.sinsal)}
         {renderProfileRow("귀인", profile.gwiin)}
-        {renderProfileRow("MBTI", profile.mbti)}
+        {renderProfileRow("MBTI 입력값", profile.mbti)}
       </dl>
     </section>
   );
@@ -458,59 +462,27 @@ function renderGeneratedV1State(
   );
 }
 
-function renderV2KeyPhrases(chapter: ComprehensiveReportV2Chapter) {
-  if (chapter.keyPhrases.length === 0) {
-    return null;
-  }
+function renderV2IntegratedChapterProse(chapter: ComprehensiveReportV2Chapter) {
+  const paragraphs = [
+    ...chapter.hitReadingLines,
+    chapter.body,
+    ...chapter.solutionLines,
+  ].filter((line) => line.trim().length > 0);
 
   return (
-    <div className="flex flex-wrap gap-2">
-      {chapter.keyPhrases.map((phrase) => (
-        <span
-          key={phrase}
-          className="rounded-full border border-emerald-900/60 bg-emerald-950/30 px-3 py-1 text-xs font-medium text-emerald-100"
+    <div className="space-y-4 text-base leading-8 text-neutral-200">
+      {paragraphs.map((paragraph, index) => (
+        <p
+          key={`${chapter.chapterId}:${index}`}
+          className={
+            index < chapter.hitReadingLines.length
+              ? "rounded-md border-l-2 border-emerald-500/70 bg-emerald-950/20 py-2 pl-4 text-emerald-50"
+              : "whitespace-pre-line"
+          }
         >
-          {phrase}
-        </span>
+          {paragraph}
+        </p>
       ))}
-    </div>
-  );
-}
-
-function renderV2HitReadingLines(chapter: ComprehensiveReportV2Chapter) {
-  if (chapter.hitReadingLines.length === 0) {
-    return null;
-  }
-
-  return (
-    <div className="space-y-2 rounded-lg border border-emerald-900/60 bg-emerald-950/25 p-4">
-      <p className="text-xs font-semibold text-emerald-200">
-        이런 장면 있지 않나요?
-      </p>
-      <ul className="space-y-2 text-sm leading-6 text-emerald-50">
-        {chapter.hitReadingLines.map((line) => (
-          <li key={line}>{line}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function renderV2SolutionLines(chapter: ComprehensiveReportV2Chapter) {
-  if (chapter.solutionLines.length === 0) {
-    return null;
-  }
-
-  return (
-    <div className="space-y-2 rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
-      <p className="text-xs font-semibold text-neutral-400">
-        이렇게 쓰면 좋습니다
-      </p>
-      <ul className="space-y-2 text-sm leading-6 text-neutral-200">
-        {chapter.solutionLines.map((line) => (
-          <li key={line}>{line}</li>
-        ))}
-      </ul>
     </div>
   );
 }
@@ -555,21 +527,9 @@ function renderGeneratedV2State(
                   {chapter.headline}
                 </p>
               </div>
-              {renderV2HitReadingLines(chapter)}
-              <p className="whitespace-pre-line text-base leading-8 text-neutral-200">
-                {chapter.body}
-              </p>
-              {renderV2SolutionLines(chapter)}
-              {renderV2KeyPhrases(chapter)}
+              {renderV2IntegratedChapterProse(chapter)}
             </section>
           ))}
-        </section>
-
-        <section className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-          <h2 className="text-lg font-semibold text-neutral-50">최종 조언</h2>
-          <p className="mt-3 text-base leading-8 text-neutral-300">
-            {draft.finalAdvice}
-          </p>
         </section>
       </article>
     </ResultShell>

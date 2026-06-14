@@ -192,6 +192,7 @@ export const comprehensiveReportV2DraftJsonSchema = {
         dayPillar: optionalPillarSchema,
         hourPillar: optionalPillarSchema,
         dayMaster: optionalPillarSchema,
+        dayPillarKeywords: stringArraySchema,
         fiveElementSummary: stringArraySchema,
         excessiveElements: stringArraySchema,
         missingElements: stringArraySchema,
