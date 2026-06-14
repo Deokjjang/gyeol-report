@@ -14,4 +14,8 @@ export * from "./sajuKnowledgeBase";
 export * from "./sajuComputedFactsMapper";
 export * from "./sajuComputedFactsTypes";
 export * from "./sajuEvidenceScoring";
+export * from "./sajuFeatureScoring";
+export * from "./sajuFeatureSelector";
+export * from "./sajuFeatureTaxonomy";
+export * from "./sajuFeatureTypes";
 export * from "./sajuKnowledgeTypes";

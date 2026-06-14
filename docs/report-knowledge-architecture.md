@@ -336,6 +336,38 @@ study/work scope, partner prescriptions, element-based remedies, unsupported
 Saju terms, visible debug labels, and repeated full sentences. V1 compatibility
 remains, and payment or Toss flow wiring is still separate.
 
+## REPORT-15A Saju Feature Taxonomy and Scoring
+
+REPORT-15A adds a 명리학 Feature Taxonomy so the report can grow beyond a small
+set of repeated Saju terms. A feature entry stores its category, Korean label,
+aliases, polarity, topics, narrative weight, symbolic image, positive reading,
+caution reading, practical use, scene seeds, phrase seeds, and future MBTI bridge
+needs.
+
+Feature Scoring ranks available computed Saju features before writing. The score
+combines base weight, topic relevance, category relevance, vividness, polarity
+balance, and duplicate category penalty. Vivid mixed features such as 도화살,
+반안살, 백호대살, 현침살, 원진살, and strong gwiin features can be selected without
+letting warning-only material dominate the report.
+
+Chapter Feature Selector maps scored features to V2 chapters. For example,
+work_money_study can receive ten-god, gwiin, twelve-sinsal, structure, and
+element features, while love_relationships can receive sinsal, element,
+ten-god, relation, and gwiin features. Each chapter receives top positive
+features, warning or mixed features, one vivid feature when available, and one
+practical-use feature.
+
+Future MBTI Bridge Needs prepare the next integration layer. Saju features can
+declare needs such as emotional_buffer, warmth, stability, autonomy_respect,
+intellectual_match, pace_flexibility, responsibility_clarity, and
+expression_support. REPORT-15A only stores the bridge hints; it does not build
+the full MBTI complement scorer yet.
+
+OpenAI does not invent Saju features. OpenAI receives selected feature evidence
+from the taxonomy, scoring, and selector layers, then writes natural Korean
+prose. Feature taxonomy enables richer and more varied report generation while
+keeping deterministic Saju feature ownership outside the writer.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

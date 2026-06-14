@@ -94,6 +94,15 @@ describe("report knowledge architecture document", () => {
       "bad match patterns",
       "element-based remedies",
       "payment or Toss flow wiring is still separate",
+      "REPORT-15A adds a 명리학 Feature Taxonomy",
+      "Feature Scoring ranks available computed Saju features",
+      "Chapter Feature Selector maps scored features to V2 chapters",
+      "Future MBTI Bridge Needs",
+      "emotional_buffer",
+      "expression_support",
+      "OpenAI does not invent Saju features",
+      "OpenAI receives selected feature evidence",
+      "Feature taxonomy enables richer and more varied report generation",
     ];
 
     for (const marker of requiredMarkers) {
