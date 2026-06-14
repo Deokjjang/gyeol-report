@@ -50,6 +50,17 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("Use only provided evidence");
     expect(combined).toContain("Do not invent Saju facts");
     expect(combined).toContain("evidence에 없는 신살/귀인/십성/오행/일주 금지");
+    expect(combined).toContain("제공된 명리학 feature evidence에 있는 항목만 사용하라");
+    expect(combined).toContain("없는 신살·귀인·길신을 새로 만들지 말 것");
+    expect(combined).toContain("좋은 기운은 좋게 느껴지게");
+    expect(combined).toContain("주의 신살은 운영법으로");
+    expect(combined).toContain("selectedSajuFeatureEvidence");
+    expect(combined).toContain("symbolicImage");
+    expect(combined).toContain("positiveReading");
+    expect(combined).toContain("cautionReading");
+    expect(combined).toContain("practicalUse");
+    expect(combined).toContain("sceneSeeds");
+    expect(combined).toContain("phraseSeeds");
     expect(combined).toContain("이번 리포트에서 사용할 수 있는 사주 용어");
     expect(combined).toContain(
       "목록에 없는 신살, 귀인, 일주, 십성, 오행, 격국, 패턴은 절대 언급하지 마라",
@@ -167,6 +178,13 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("Korean output");
     expect(combined).toContain('"mbtiType": "ENTJ"');
     expect(combined).toContain("day_master_gabmok");
+    expect(combined).toContain("day_pillar_gapsin");
+    expect(combined).toContain("element_fire_missing");
+    expect(combined).toContain("element_water_missing");
+    expect(combined).toContain("element_earth_excess");
+    expect(combined).not.toContain("strict self-discipline");
+    expect(combined).not.toContain("leader type");
+    expect(combined).not.toContain("strong energy");
   });
 
   it("does not include private payment or OpenAI key markers in prompt text", () => {

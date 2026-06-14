@@ -72,6 +72,7 @@ export type SajuFeatureScore = {
 };
 
 export type SajuFeatureChapterId =
+  | "opening"
   | "saju_identity"
   | "personality_pattern"
   | "work_money_study"

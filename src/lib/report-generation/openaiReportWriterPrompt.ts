@@ -66,10 +66,14 @@ export function deriveAllowedSajuTermsFromEvidencePacket(
   const primarySajuEvidenceTerms = createKnownSajuTerms().filter((term) =>
     primarySajuEvidenceText.includes(term),
   );
+  const selectedFeatureTerms =
+    packet.selectedSajuFeatureEvidence?.flatMap((chapter) =>
+      chapter.features.flatMap((feature) => [feature.labelKo]),
+    ) ?? [];
 
   return [
     ...new Set(
-      [...selectedEntryTerms, ...primarySajuEvidenceTerms]
+      [...selectedEntryTerms, ...primarySajuEvidenceTerms, ...selectedFeatureTerms]
         .map((term) => term.trim())
         .filter((term) => /[가-힣]/.test(term) && term.length >= 2),
     ),
@@ -171,6 +175,12 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "보완점과 부족한 부분은 보완 흐름으로 설명한다.",
       "evidence에 없는 신살/귀인/십성/오행/일주 금지.",
       "위 목록에 없는 신살, 귀인, 일주, 십성, 오행, 격국, 패턴은 절대 언급하지 마라.",
+      "제공된 명리학 feature evidence에 있는 항목만 사용하라.",
+      "없는 신살·귀인·길신·일주 의미를 새로 만들지 마라.",
+      "좋은 기운은 좋게 느껴지게 설명하되, 반드시/무조건/100%처럼 단정하지 마라.",
+      "주의 신살은 겁주는 방식이 아니라 에너지의 쓰임과 운영법으로 풀어라.",
+      "명리학 feature evidence를 설명할 때는 symbolicImage, positiveReading, cautionReading, practicalUse, sceneSeeds, phraseSeeds를 본문 재료로 삼아라.",
+      "selectedSajuFeatureEvidence는 chapter별로 이미 선별된 근거다. 각 chapter는 자기 chapterId에 제공된 feature를 우선 사용한다.",
       "귀인, 신살, 십성, 오행, 일주 용어를 자연스럽게 사용한다.",
       "내 MBTI가 이래서 그런 줄 알았는데, 사주에도 이 구조가 있었네 느낌을 만든다.",
       "정확한 날짜 예언 금지.",
@@ -334,6 +344,10 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "영어 템플릿 단어 contrast, output, input, profileTable, schema, JSON, draft를 본문에 쓰지 마라.",
       "성향 해석과 자기이해 목적의 참고 문장으로 작성하라.",
       "아래 제공된 근거 JSON 안에 있는 근거만 사용한다.",
+      "제공된 명리학 feature evidence에 있는 항목만 사용한다.",
+      "없는 신살·귀인·길신을 새로 만들지 말 것.",
+      "좋은 기운은 좋게 느껴지게 설명하고, 주의 신살은 운영법으로 풀어라.",
+      "selectedSajuFeatureEvidence는 V2 chapter별로 선별된 명리학 feature evidence다.",
       "제공된 근거 JSON:",
       evidenceJson,
     ].join("\n"),

@@ -10,6 +10,23 @@ function selectedIds(selection: {
 }
 
 describe("saju feature selector", () => {
+  it("selects a compact opening mix from identity and vivid features", () => {
+    const scores = scoreSajuFeatures({
+      featureIds: [
+        "day_pillar_gapsin",
+        "element_earth_excess",
+        "sinsal_hyeonchim",
+        "gwiin_jaego",
+      ],
+      topic: "identity",
+    });
+    const selection = selectSajuFeaturesForChapter(scores, "opening");
+
+    expect(selectedIds(selection)).toEqual(
+      expect.arrayContaining(["day_pillar_gapsin", "sinsal_hyeonchim"]),
+    );
+  });
+
   it("selects day pillar as an identity anchor", () => {
     const scores = scoreSajuFeatures({
       featureIds: ["day_pillar_gapsin", "sinsal_hyeonchim", "gwiin_jaego"],

@@ -1,6 +1,14 @@
 import type { InterpretationTagId } from "./interpretationTags";
 import type { MbtiType } from "./mbtiKnowledgeTypes";
 import type { ComprehensiveReportSectionId } from "./reportSectionSchema";
+import type {
+  MbtiBridgeNeed,
+  SajuFeatureCategory,
+  SajuFeatureChapterId,
+  SajuFeaturePolarity,
+  SajuFeatureScoreStrength,
+  SajuFeatureTopic,
+} from "./sajuFeatureTypes";
 import type { SajuKnowledgeTopic } from "./sajuKnowledgeTypes";
 
 export type EvidenceRole =
@@ -30,9 +38,33 @@ export type ComprehensiveReportSectionEvidence = {
   readonly warnings: readonly string[];
 };
 
+export type SelectedSajuFeatureEvidenceItem = {
+  readonly id: string;
+  readonly labelKo: string;
+  readonly category: SajuFeatureCategory;
+  readonly polarity: SajuFeaturePolarity;
+  readonly strength: SajuFeatureScoreStrength;
+  readonly score: number;
+  readonly topics: readonly SajuFeatureTopic[];
+  readonly summary: string;
+  readonly symbolicImage: string;
+  readonly positiveReading: string;
+  readonly cautionReading: string;
+  readonly practicalUse: string;
+  readonly sceneSeeds: readonly string[];
+  readonly phraseSeeds: readonly string[];
+  readonly mbtiBridgeNeeds?: readonly MbtiBridgeNeed[];
+};
+
+export type SelectedSajuFeatureEvidence = {
+  readonly chapterId: SajuFeatureChapterId;
+  readonly features: readonly SelectedSajuFeatureEvidenceItem[];
+};
+
 export type ComprehensiveReportEvidencePacket = {
   readonly mbtiType: MbtiType;
   readonly sajuEntryIds: readonly string[];
   readonly sections: readonly ComprehensiveReportSectionEvidence[];
+  readonly selectedSajuFeatureEvidence?: readonly SelectedSajuFeatureEvidence[];
   readonly globalWarnings: readonly string[];
 };

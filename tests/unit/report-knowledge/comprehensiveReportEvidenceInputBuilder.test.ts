@@ -44,6 +44,31 @@ function getSection(
   return section;
 }
 
+function getFeatureEvidence(
+  result: ReturnType<typeof buildComprehensiveReportEvidencePacketFromComputedFacts>,
+  chapterId: string,
+) {
+  const evidence = result.packet.selectedSajuFeatureEvidence?.find(
+    (item) => item.chapterId === chapterId,
+  );
+
+  if (evidence === undefined) {
+    throw new Error(`missing selected feature evidence: ${chapterId}`);
+  }
+
+  return evidence;
+}
+
+function getAllSelectedFeatureIds(
+  result: ReturnType<typeof buildComprehensiveReportEvidencePacketFromComputedFacts>,
+): readonly string[] {
+  return (
+    result.packet.selectedSajuFeatureEvidence?.flatMap((chapter) =>
+      chapter.features.map((feature) => feature.id),
+    ) ?? []
+  );
+}
+
 describe("comprehensive report evidence input builder", () => {
   it("builds mapped Saju input and a valid packet from computed facts", () => {
     const result = buildComprehensiveReportEvidencePacketFromComputedFacts({
@@ -72,6 +97,26 @@ describe("comprehensive report evidence input builder", () => {
         "gwiin_jaego",
       ]),
     );
+    expect(result.mappedFeatures.featureIds).toEqual(
+      expect.arrayContaining([
+        "day_pillar_gapsin",
+        "element_earth_excess",
+        "element_fire_missing",
+        "element_water_missing",
+        "ten_god_pian_cai",
+        "ten_god_zheng_cai",
+        "ten_god_zheng_guan",
+        "ten_god_qi_sha",
+        "structure_jaeda_sinyak",
+        "structure_no_resource",
+        "structure_no_output",
+        "sinsal_hyeonchim",
+        "sinsal_hongyeom",
+        "sinsal_gwimun",
+        "sinsal_wonjin",
+        "gwiin_jaego",
+      ]),
+    );
     expect(result.packet.sections.map((section) => section.sectionId)).toEqual(
       COMPREHENSIVE_REPORT_SECTION_IDS,
     );
@@ -79,6 +124,94 @@ describe("comprehensive report evidence input builder", () => {
       ok: true,
       errors: [],
     });
+  });
+
+  it("adds selected chapter-level Saju feature evidence from computed facts only", () => {
+    const result = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: "ENTJ",
+      sajuFacts: deokminSampleFacts,
+    });
+    const allFeatureIds = getAllSelectedFeatureIds(result);
+    const identity = getFeatureEvidence(result, "saju_identity");
+    const workMoneyStudy = getFeatureEvidence(result, "work_money_study");
+    const love = getFeatureEvidence(result, "love_relationships");
+    const risk = getFeatureEvidence(result, "risk_and_growth");
+    const finalMessage = getFeatureEvidence(result, "final_message");
+
+    expect(result.packet.selectedSajuFeatureEvidence?.map((item) => item.chapterId)).toEqual([
+      "opening",
+      "saju_identity",
+      "personality_pattern",
+      "work_money_study",
+      "love_relationships",
+      "people_family_environment",
+      "risk_and_growth",
+      "final_message",
+    ]);
+    expect(allFeatureIds).toEqual(
+      expect.arrayContaining([
+        "day_pillar_gapsin",
+        "element_fire_missing",
+        "element_water_missing",
+        "element_earth_excess",
+        "ten_god_pian_cai",
+        "ten_god_zheng_cai",
+        "ten_god_qi_sha",
+        "ten_god_zheng_guan",
+        "structure_jaeda_sinyak",
+        "structure_no_resource",
+        "structure_no_output",
+        "sinsal_hyeonchim",
+        "sinsal_hongyeom",
+        "sinsal_gwimun",
+        "sinsal_wonjin",
+        "gwiin_jaego",
+      ]),
+    );
+    expect(allFeatureIds).not.toContain("sinsal_dohwa");
+    expect(allFeatureIds).not.toContain("twelve_sinsal_banan");
+    expect(allFeatureIds).not.toContain("gwiin_cheoneul");
+    expect(identity.features.map((feature) => feature.id)).toContain(
+      "day_pillar_gapsin",
+    );
+    expect(workMoneyStudy.features.map((feature) => feature.id)).toEqual(
+      expect.arrayContaining([
+        "ten_god_pian_cai",
+        "ten_god_zheng_cai",
+        "gwiin_jaego",
+      ]),
+    );
+    expect(love.features.map((feature) => feature.id)).toEqual(
+      expect.arrayContaining(["sinsal_hongyeom", "sinsal_wonjin"]),
+    );
+    expect(risk.features.map((feature) => feature.id)).toEqual(
+      expect.arrayContaining([
+        "element_water_missing",
+        "element_fire_missing",
+        "element_earth_excess",
+        "structure_jaeda_sinyak",
+      ]),
+    );
+    expect(finalMessage.features.some((feature) => feature.polarity === "positive")).toBe(
+      true,
+    );
+    expect(
+      finalMessage.features.some(
+        (feature) => feature.polarity === "mixed" || feature.polarity === "warning",
+      ),
+    ).toBe(true);
+    expect(result.packet.selectedSajuFeatureEvidence?.[0]?.features.length).toBeLessThanOrEqual(
+      4,
+    );
+    for (const chapter of result.packet.selectedSajuFeatureEvidence ?? []) {
+      const expectedMax = chapter.chapterId === "opening"
+        ? 4
+        : chapter.chapterId === "final_message"
+          ? 5
+          : 6;
+
+      expect(chapter.features.length).toBeLessThanOrEqual(expectedMax);
+    }
   });
 
   it("builds Saju primary, ENTJ support, and fusion evidence in major sections", () => {

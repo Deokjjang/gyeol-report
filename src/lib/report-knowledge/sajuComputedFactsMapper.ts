@@ -1,3 +1,7 @@
+import {
+  SAJU_DAY_PILLAR_BY_LABEL,
+} from "./sajuDayPillarKnowledge";
+import { SAJU_FEATURE_BY_ID } from "./sajuFeatureTaxonomy";
 import { FIVE_ELEMENTS, SAJU_KNOWLEDGE_BY_ID } from "./sajuKnowledgeBase";
 import type { FiveElement, TenGod } from "./sajuKnowledgeTypes";
 import type {
@@ -12,6 +16,12 @@ import type {
 
 export type MappedSajuKnowledgeInput = {
   readonly sajuEntryIds: readonly string[];
+  readonly warnings: readonly string[];
+  readonly unmappedFacts: readonly string[];
+};
+
+export type MappedSajuFeatureInput = {
+  readonly featureIds: readonly string[];
   readonly warnings: readonly string[];
   readonly unmappedFacts: readonly string[];
 };
@@ -98,6 +108,18 @@ const specialPatternEntryIdByComputedId = {
   water_excess_floats_wood: "pattern_suda_mokbu",
 } as const satisfies Record<ComputedSajuSpecialPatternId, string>;
 
+const specialPatternFeatureIdByComputedId: Partial<
+  Record<ComputedSajuSpecialPatternId, string>
+> = {
+  jaeda_sinyak: "structure_jaeda_sinyak",
+  gwansal_mixed: "structure_gwansal_mixed",
+  siksang_saengjae: "structure_siksang_saengjae",
+  jaesaenggwan: "structure_jaesaenggwan",
+  salin_sangsaeng: "structure_salin_sangsaeng",
+  no_resource: "structure_no_resource",
+  no_output: "structure_no_output",
+};
+
 const sinsalEntryIdByComputedId = {
   hyeonchim: "sinsal_hyeonchim",
   hongyeom: "sinsal_hongyeom",
@@ -116,12 +138,39 @@ const sinsalEntryIdByComputedId = {
   banan: "sinsal_banan",
 } as const satisfies Record<ComputedSinsalId, string>;
 
+const sinsalFeatureIdByComputedId = {
+  hyeonchim: "sinsal_hyeonchim",
+  hongyeom: "sinsal_hongyeom",
+  mangsin: "twelve_sinsal_mangsin",
+  baekho: "sinsal_baekho",
+  yeokma: "twelve_sinsal_yeokma",
+  gwimun: "sinsal_gwimun",
+  wonjin: "sinsal_wonjin",
+  dohwa: "sinsal_dohwa",
+  hwagae: "twelve_sinsal_hwagae",
+  goegang: "sinsal_goegang",
+  yangin: "sinsal_yangin",
+  cheonmun: "sinsal_cheonmunseong",
+  wolsal: "twelve_sinsal_wolsal",
+  jangseong: "twelve_sinsal_jangseong",
+  banan: "twelve_sinsal_banan",
+} as const satisfies Record<ComputedSinsalId, string>;
+
 const gwiinEntryIdByComputedId = {
   cheon_eul: "nobleman_cheoneul",
   cheon_deok: "nobleman_cheondeok",
   wol_deok: "nobleman_woldeok",
   munchang: "nobleman_munchang",
   taegeuk: "nobleman_taegeuk",
+  jaego: "gwiin_jaego",
+} as const satisfies Record<ComputedGwiinId, string>;
+
+const gwiinFeatureIdByComputedId = {
+  cheon_eul: "gwiin_cheoneul",
+  cheon_deok: "gwiin_cheondeok",
+  wol_deok: "gwiin_woldeok",
+  munchang: "gwiin_munchang",
+  taegeuk: "gwiin_taegeuk",
   jaego: "gwiin_jaego",
 } as const satisfies Record<ComputedGwiinId, string>;
 
@@ -150,6 +199,34 @@ function appendExistingEntryId(input: {
   if (!input.seenIds.has(input.entryId)) {
     input.outputIds.push(input.entryId);
     input.seenIds.add(input.entryId);
+  }
+}
+
+function appendExistingFeatureId(input: {
+  readonly outputIds: string[];
+  readonly seenIds: Set<string>;
+  readonly warnings: string[];
+  readonly unmappedFacts: string[];
+  readonly factLabel: string;
+  readonly featureId: string | undefined;
+}): void {
+  if (input.featureId === undefined) {
+    input.warnings.push(`No feature mapping configured for ${input.factLabel}.`);
+    input.unmappedFacts.push(input.factLabel);
+    return;
+  }
+
+  if (!SAJU_FEATURE_BY_ID.has(input.featureId)) {
+    input.warnings.push(
+      `Mapped feature entry does not exist for ${input.factLabel}: ${input.featureId}.`,
+    );
+    input.unmappedFacts.push(input.factLabel);
+    return;
+  }
+
+  if (!input.seenIds.has(input.featureId)) {
+    input.outputIds.push(input.featureId);
+    input.seenIds.add(input.featureId);
   }
 }
 
@@ -202,6 +279,61 @@ export function mapComputedSajuFactsToKnowledgeEntryIds(
 
   return {
     sajuEntryIds,
+    warnings,
+    unmappedFacts,
+  };
+}
+
+export function mapComputedSajuFactsToFeatureIds(
+  facts: ComputedSajuFacts,
+): MappedSajuFeatureInput {
+  const featureIds: string[] = [];
+  const seenIds = new Set<string>();
+  const warnings: string[] = [];
+  const unmappedFacts: string[] = [];
+
+  const append = (factLabel: string, featureId: string | undefined): void =>
+    appendExistingFeatureId({
+      outputIds: featureIds,
+      seenIds,
+      warnings,
+      unmappedFacts,
+      factLabel,
+      featureId,
+    });
+
+  append(
+    `dayPillar:${facts.dayPillar}`,
+    SAJU_DAY_PILLAR_BY_LABEL.get(`${facts.dayPillar}일주`)?.id,
+  );
+
+  for (const element of facts.excessiveElements) {
+    append(`excessiveElement:${element}`, `element_${element}_excess`);
+  }
+  for (const element of facts.missingElements) {
+    append(`missingElement:${element}`, `element_${element}_missing`);
+  }
+  for (const signal of facts.tenGodSignals) {
+    if (mappableTenGodStrengths.has(signal.strength)) {
+      append(`tenGod:${signal.tenGod}:${signal.strength}`, tenGodEntryIdByTenGod[signal.tenGod]);
+    }
+  }
+  for (const pattern of facts.specialPatterns) {
+    const featureId = specialPatternFeatureIdByComputedId[pattern];
+
+    if (featureId !== undefined) {
+      append(`specialPattern:${pattern}`, featureId);
+    }
+  }
+  for (const signal of facts.sinsal) {
+    append(`sinsal:${signal}`, sinsalFeatureIdByComputedId[signal]);
+  }
+  for (const signal of facts.gwiin) {
+    append(`gwiin:${signal}`, gwiinFeatureIdByComputedId[signal]);
+  }
+
+  return {
+    featureIds,
     warnings,
     unmappedFacts,
   };

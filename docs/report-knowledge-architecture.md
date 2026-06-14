@@ -428,6 +428,35 @@ OpenAI should not invent day pillar meanings. OpenAI should receive selected
 day pillar evidence after deterministic selection. Day pillar knowledge will be
 connected to report generation in a later task.
 
+## REPORT-15D V2 Report Evidence Connection
+
+REPORT-15D connects the feature warehouse to V2 generation evidence. The flow is
+computed saju facts -> feature id extraction -> taxonomy and day-pillar lookup
+-> Feature Scoring -> Chapter Feature Selector -> selectedSajuFeatureEvidence
+inside the comprehensive evidence packet.
+
+Feature extraction from computed facts only maps facts that were actually
+calculated. For example, 갑신 maps to the `day_pillar_gapsin` feature, 화 부족
+to `element_fire_missing`, 수 부족 to `element_water_missing`, 토 과다 to
+`element_earth_excess`, 현침살 to `sinsal_hyeonchim`, 홍염살 to
+`sinsal_hongyeom`, 귀문관살 to `sinsal_gwimun`, 원진살 to `sinsal_wonjin`, and
+재고귀인 to `gwiin_jaego`. If a feature such as 반안살, 백호대살, 천을귀인, or
+문창귀인 is not present in computed facts, it is not included.
+
+Chapter-level feature evidence is grouped by V2 chapter. Opening receives a
+compact identity mix, saju_identity receives day-pillar and strong structure
+features, work_money_study receives money/work/study features, love_relationships
+receives relationship features, risk_and_growth receives missing/excess element
+and warning or mixed features, and final_message receives a balanced practical
+closing set. The prompt size cap keeps opening at four features, most chapters
+at six features, and final_message at five features.
+
+OpenAI feature invention prevention is explicit. The writer receives
+selectedSajuFeatureEvidence and is told to use only provided 명리학 feature
+evidence, not to invent missing 신살, 귀인, 길신, 일주 meanings, 오행, 십성, or
+patterns. Positive features should feel desirable without certainty claims, and
+warning features should be explained as energy plus 운영법 rather than fear.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

@@ -23,6 +23,21 @@ type ChapterFeatureConfig = {
 };
 
 const CHAPTER_FEATURE_CONFIG: Record<SajuFeatureChapterId, ChapterFeatureConfig> = {
+  opening: {
+    topics: ["identity", "personality", "work", "growth"],
+    categories: [
+      "day_master",
+      "day_pillar",
+      "element",
+      "ten_god",
+      "sinsal",
+      "twelve_sinsal",
+      "gwiin",
+      "structure",
+    ],
+    positiveLimit: 3,
+    warningOrMixedLimit: 3,
+  },
   saju_identity: {
     topics: ["identity", "personality", "growth"],
     categories: [

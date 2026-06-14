@@ -250,9 +250,71 @@ describe("OpenAI comprehensive report writer", () => {
 
     expect(JSON.stringify(calls[0].body)).toContain("재고귀인");
     expect(JSON.stringify(calls[0].body)).not.toContain("천을귀인");
+    expect(JSON.stringify(calls[0].body)).toContain("selectedSajuFeatureEvidence");
+    expect(JSON.stringify(calls[0].body)).toContain("day_pillar_gapsin");
+    expect(JSON.stringify(calls[0].body)).toContain("symbolicImage");
+    expect(JSON.stringify(calls[0].body)).toContain("positiveReading");
+    expect(JSON.stringify(calls[0].body)).toContain("practicalUse");
     expect(responseFormatSchema).not.toContain("profileTable");
     expect(responseFormatSchema).not.toContain("yearPillar");
     expect(JSON.stringify(calls[0].body)).toContain("day_master_gabmok");
+  });
+
+  it("sends capped selected Saju feature evidence grouped by V2 chapter", async () => {
+    const calls: RequestInit[] = [];
+    const fetchImpl: typeof fetch = async (_input, init) => {
+      if (init !== undefined) {
+        calls.push(init);
+      }
+
+      return createJsonResponse({
+        output_text: JSON.stringify(createValidDraft()),
+      });
+    };
+
+    await generateComprehensiveReportDraft({
+      userDisplayName: "덕민",
+      mbtiType: "ENTJ",
+      evidencePacket: createPacket(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl,
+      },
+    });
+
+    const requestText = JSON.stringify(calls[0].body);
+    const requestBody = JSON.parse(String(calls[0].body)) as {
+      readonly input?: readonly {
+        readonly content?: string | readonly {
+          readonly text?: string;
+        }[];
+      }[];
+    };
+    const userText = requestBody.input
+      ?.flatMap((message) =>
+        typeof message.content === "string" ? [message.content] : message.content ?? [],
+      )
+      .map((content) => (typeof content === "string" ? content : content.text ?? ""))
+      .join("\n") ?? "";
+    const evidenceStart = userText.indexOf('"selectedSajuFeatureEvidence"');
+    const evidenceText = evidenceStart >= 0 ? userText.slice(evidenceStart) : "";
+
+    expect(requestText).toContain("selectedSajuFeatureEvidence");
+    expect(userText).toContain('"chapterId": "saju_identity"');
+    expect(userText).toContain('"chapterId": "work_money_study"');
+    expect(userText).toContain('"chapterId": "love_relationships"');
+    expect(userText).toContain('"chapterId": "risk_and_growth"');
+    expect(requestText).toContain("day_pillar_gapsin");
+    expect(requestText).toContain("element_fire_missing");
+    expect(requestText).toContain("element_water_missing");
+    expect(requestText).toContain("gwiin_jaego");
+    expect(requestText).not.toContain("sinsal_dohwa");
+    expect(requestText).not.toContain("twelve_sinsal_banan");
+    expect(evidenceText).not.toContain("strict self-discipline");
+    expect(evidenceText).not.toContain("leader type");
+    expect(evidenceText).not.toContain("strong energy");
   });
 
   it("repairs one-pass repairable V2 quality errors", async () => {

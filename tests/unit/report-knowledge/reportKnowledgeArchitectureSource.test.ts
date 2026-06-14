@@ -116,6 +116,17 @@ describe("report knowledge architecture document", () => {
       "The 금지 표현 정책 also applies to day pillar fields",
       "OpenAI should not invent day pillar meanings",
       "connected to report generation in a later task",
+      "REPORT-15D connects the feature warehouse to V2 generation evidence",
+      "computed saju facts -> feature id extraction",
+      "selectedSajuFeatureEvidence",
+      "Feature extraction from computed facts only maps facts that were actually",
+      "If a feature such as 반안살, 백호대살, 천을귀인, or",
+      "문창귀인 is not present in computed facts, it is not included",
+      "Chapter-level feature evidence is grouped by V2 chapter",
+      "The prompt size cap keeps opening at four features",
+      "OpenAI feature invention prevention is explicit",
+      "use only provided 명리학 feature",
+      "not to invent missing 신살, 귀인, 길신, 일주 meanings",
     ];
 
     for (const marker of requiredMarkers) {
