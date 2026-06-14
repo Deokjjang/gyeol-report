@@ -3,8 +3,11 @@ import { openAIComprehensiveReportV2NarrativeDraftJsonSchema } from "./comprehen
 import { buildComprehensiveReportV2ProfileTable } from "./comprehensiveReportProfileTableBuilder";
 import type {
   ComprehensiveReportDraft,
+  ComprehensiveReportV2Chapter,
+  ComprehensiveReportV2NarrativeDraft,
   ComprehensiveReportV2ProfileTable,
 } from "./comprehensiveReportDraftTypes";
+import { sanitizeComprehensiveReportNarrativeDraft } from "./comprehensiveReportDraftSanitizer";
 import {
   areAllDraftValidationErrorsRepairable,
   validateComprehensiveReportDraftAfterRepair,
@@ -253,6 +256,97 @@ function getSafeCauseCode(error: unknown): string {
   return "OPENAI_REPORT_WRITER_REQUEST_FAILED";
 }
 
+function isV2NarrativeChapter(value: unknown): value is ComprehensiveReportV2Chapter {
+  if (typeof value !== "object" || value === null || Array.isArray(value)) {
+    return false;
+  }
+
+  const candidate = value as {
+    readonly chapterId?: unknown;
+    readonly titleKo?: unknown;
+    readonly headline?: unknown;
+    readonly hitReadingLines?: unknown;
+    readonly body?: unknown;
+    readonly solutionLines?: unknown;
+    readonly keyPhrases?: unknown;
+    readonly sajuTermsUsed?: unknown;
+    readonly mbtiTermsUsed?: unknown;
+  };
+
+  return (
+    typeof candidate.chapterId === "string" &&
+    typeof candidate.titleKo === "string" &&
+    typeof candidate.headline === "string" &&
+    isStringArray(candidate.hitReadingLines) &&
+    typeof candidate.body === "string" &&
+    isStringArray(candidate.solutionLines) &&
+    isStringArray(candidate.keyPhrases) &&
+    isStringArray(candidate.sajuTermsUsed) &&
+    isStringArray(candidate.mbtiTermsUsed)
+  );
+}
+
+function isV2NarrativeDraft(value: unknown): value is ComprehensiveReportV2NarrativeDraft {
+  if (typeof value !== "object" || value === null || Array.isArray(value)) {
+    return false;
+  }
+
+  const candidate = value as {
+    readonly version?: unknown;
+    readonly productType?: unknown;
+    readonly openingTitle?: unknown;
+    readonly openingSummary?: unknown;
+    readonly coreLine?: unknown;
+    readonly chapters?: unknown;
+    readonly finalAdvice?: unknown;
+    readonly safetyNotes?: unknown;
+  };
+
+  return (
+    candidate.version === "comprehensive_v2_draft" &&
+    candidate.productType === "saju_mbti_full" &&
+    typeof candidate.openingTitle === "string" &&
+    typeof candidate.openingSummary === "string" &&
+    typeof candidate.coreLine === "string" &&
+    Array.isArray(candidate.chapters) &&
+    candidate.chapters.every(isV2NarrativeChapter) &&
+    typeof candidate.finalAdvice === "string" &&
+    isStringArray(candidate.safetyNotes)
+  );
+}
+
+function sanitizeParsedNarrativeDraft(parsed: unknown): {
+  readonly parsed: unknown;
+  readonly sanitized: boolean;
+  readonly sanitizedTerms: readonly string[];
+} {
+  if (!isV2NarrativeDraft(parsed)) {
+    return {
+      parsed,
+      sanitized: false,
+      sanitizedTerms: [],
+    };
+  }
+
+  const result = sanitizeComprehensiveReportNarrativeDraft(parsed);
+
+  return {
+    parsed: result.draft,
+    sanitized: result.sanitized,
+    sanitizedTerms: result.sanitizedTerms,
+  };
+}
+
+function getCopySanitizerWarnings(
+  ...results: readonly {
+    readonly sanitized: boolean;
+  }[]
+): readonly string[] {
+  return results.some((result) => result.sanitized)
+    ? ["copy sanitizer: applied"]
+    : [];
+}
+
 function attachDeterministicProfileTable(input: {
   readonly parsed: unknown;
   readonly evidencePacket: ComprehensiveReportEvidencePacket;
@@ -326,8 +420,9 @@ export async function generateComprehensiveReportDraft(input: {
     });
   }
 
+  const sanitizedInitial = sanitizeParsedNarrativeDraft(parsed);
   const draftCandidate = attachDeterministicProfileTable({
-    parsed,
+    parsed: sanitizedInitial.parsed,
     evidencePacket: input.evidencePacket,
     mbtiType: input.mbtiType,
     profileTable: input.profileTable,
@@ -350,7 +445,7 @@ export async function generateComprehensiveReportDraft(input: {
       userDisplayName: input.userDisplayName,
       mbtiType: input.mbtiType,
       allowedSajuTerms,
-      draftJson: JSON.stringify(parsed, null, 2),
+      draftJson: JSON.stringify(sanitizedInitial.parsed, null, 2),
       validationErrors: validation.errors,
     });
     let repairResult: Awaited<ReturnType<typeof callOpenAIReportWriter>>;
@@ -385,8 +480,13 @@ export async function generateComprehensiveReportDraft(input: {
       });
     }
 
+    const sanitizedRepair = sanitizeParsedNarrativeDraft(repairParsed);
+    const sanitizerWarnings = getCopySanitizerWarnings(
+      sanitizedInitial,
+      sanitizedRepair,
+    );
     const repairDraftCandidate = attachDeterministicProfileTable({
-      parsed: repairParsed,
+      parsed: sanitizedRepair.parsed,
       evidencePacket: input.evidencePacket,
       mbtiType: input.mbtiType,
       profileTable: input.profileTable,
@@ -410,6 +510,7 @@ export async function generateComprehensiveReportDraft(input: {
           draft: postRepairValidation.value,
           rawText: repairResult.rawText,
           warnings: [
+            ...sanitizerWarnings,
             "quality repair: attempted",
             "quality repair: passed with warnings",
             ...(postRepairValidation.warnings ?? []),
@@ -432,6 +533,7 @@ export async function generateComprehensiveReportDraft(input: {
       draft: repairValidation.value,
       rawText: repairResult.rawText,
       warnings: [
+        ...sanitizerWarnings,
         "quality repair: attempted",
         repairWarnings.length > 0
           ? "quality repair: passed with warnings"
@@ -444,6 +546,9 @@ export async function generateComprehensiveReportDraft(input: {
   return {
     draft: validation.value,
     rawText: result.rawText,
-    warnings: validation.warnings ?? [],
+    warnings: [
+      ...getCopySanitizerWarnings(sanitizedInitial),
+      ...(validation.warnings ?? []),
+    ],
   };
 }

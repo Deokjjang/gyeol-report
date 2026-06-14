@@ -142,6 +142,13 @@ describe("OpenAI report writer prompt", () => {
     );
     expect(combined).toContain("리포트 본문에는 의료·심리치료 관련 단어를 쓰지 마라");
     expect(combined).toContain("특히 치료, 진단, 우울증, 불안장애, 정신질환이라는 단어는 금지한다");
+    expect(combined).toContain(
+      "최종 리포트 본문에 \"치료\"라는 단어를 쓰지 마라",
+    );
+    expect(combined).toContain(
+      "\"문서\", \"초안\", \"원고\", \"텍스트\" 같은 제작물 메타 표현을 쓰지 마라",
+    );
+    expect(combined).toContain("영어 단어 contrast/output/draft를 쓰지 마라");
     expect(combined).toContain("정책성 disclaimer를 본문에 넣지 말고");
     expect(combined).toContain("치료는 관리, 조정, 생활 조언, 운영법으로 바꿔라");
     expect(combined).toContain("문서는 리포트, 결과, 해석");
@@ -206,6 +213,7 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("치료는 관리, 조정, 생활 조언, 운영법으로 바꿔라");
     expect(combined).toContain("문서는 리포트 또는 문맥상 자연스러운 표현으로 바꿔라");
     expect(combined).toContain("영어 단어 contrast는 차이, 대비, 긴장으로 바꿔라");
+    expect(combined).toContain("영어 단어 output은 표현으로, draft는 리포트로 바꿔라");
     expect(combined).toContain("반복된 문장은 하나만 남기거나 서로 다른 표현으로 바꿔라");
     expect(combined).toContain("성향 해석과 자기이해 목적의 참고 문장으로 고친다");
     expect(combined).toContain("사주 용어는 evidence에 있는 것만 사용하라");

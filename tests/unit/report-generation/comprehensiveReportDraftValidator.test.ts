@@ -339,6 +339,18 @@ describe("comprehensive report draft validator", () => {
     );
   });
 
+  it("still blocks raw unsafe medical copy when sanitizer is not run", () => {
+    const draft = {
+      ...createValidV2Draft(),
+      finalAdvice:
+        "치료라는 단어가 그대로 남으면 최종 저장 전 검증에서 막아야 합니다.",
+    };
+    const result = validateComprehensiveReportDraft(draft);
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("UNSAFE_MEDICAL_COPY: 치료");
+  });
+
   it("rejects V2 drafts with missing or short narrative chapters", () => {
     const draft = createValidV2Draft();
     const missingResult = validateComprehensiveReportDraft({

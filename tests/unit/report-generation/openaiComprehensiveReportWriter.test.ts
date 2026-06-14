@@ -192,7 +192,7 @@ describe("OpenAI comprehensive report writer", () => {
           ? {
               ...chapter,
               body:
-                "갑목과 갑신일주를 1차 근거로 삼고 재고귀인은 자산화 흐름으로만 연결합니다. 갑목은 돈을 단순히 모으는 것보다 방향과 판을 키우려는 힘으로 나타납니다. 갑신일주는 압박이 걸릴수록 기준을 세우는 구조라서, 재고귀인과 만나면 성과를 문서화하고 묶어두는 방식으로 현실화됩니다. ENTJ는 이 흐름을 보조하는 성취 감각입니다. 공부는 자격증, 전문서, 직무 학습, 사업 학습처럼 성과로 바뀌는 지식일 때 오래 갑니다. 돈은 감정적 안정감보다 통제 가능한 판을 확보하는 문제로 느껴지기 쉽습니다. 이 챕터에서는 일하는 방식, 돈을 버는 방식, 지식을 쌓아 실력으로 바꾸는 방식을 하나의 성과 루틴으로 연결해 설명합니다. 과열될 때는 쉬는 시간을 낭비가 아니라 판단력을 유지하는 장치로 넣어야 오래 갑니다. 재고귀인이 말하는 자산화는 단순히 돈을 아끼라는 뜻이 아니라, 성과가 흩어지지 않게 기록하고 묶고 다시 굴릴 수 있는 형태로 만드는 감각입니다. 그래서 이 장에서는 직무 학습과 사업 학습, 자격증과 실전 경험이 결국 같은 판에서 연결된다는 점까지 풀어야 합니다.",
+                "갑목과 갑신일주를 1차 근거로 삼고 재고귀인은 자산화 흐름으로만 연결합니다. 갑목은 돈을 단순히 모으는 것보다 방향과 판을 키우려는 힘으로 나타납니다. 갑신일주는 압박이 걸릴수록 기준을 세우는 구조라서, 재고귀인과 만나면 성과를 기록하고 묶어두는 방식으로 현실화됩니다. ENTJ는 이 흐름을 보조하는 성취 감각입니다. 공부는 자격증, 전문서, 직무 학습, 사업 학습처럼 성과로 바뀌는 지식일 때 오래 갑니다. 돈은 감정적 안정감보다 통제 가능한 판을 확보하는 문제로 느껴지기 쉽습니다. 이 챕터에서는 일하는 방식, 돈을 버는 방식, 지식을 쌓아 실력으로 바꾸는 방식을 하나의 성과 루틴으로 연결해 설명합니다. 과열될 때는 쉬는 시간을 낭비가 아니라 판단력을 유지하는 장치로 넣어야 오래 갑니다. 재고귀인이 말하는 자산화는 단순히 돈을 아끼라는 뜻이 아니라, 성과가 흩어지지 않게 기록하고 묶고 다시 굴릴 수 있는 형태로 만드는 감각입니다. 그래서 이 장에서는 직무 학습과 사업 학습, 자격증과 실전 경험이 결국 같은 판에서 연결된다는 점까지 풀어야 합니다.",
               sajuTermsUsed: ["갑목", "갑신일주", "재고귀인"],
             }
           : chapter,
@@ -569,19 +569,18 @@ describe("OpenAI comprehensive report writer", () => {
     );
   });
 
-  it("repairs mild internal meta copy from model output", async () => {
+  it("sanitizes mild internal meta copy before validation", async () => {
     const metaDraft = {
       ...createValidDraft(),
       openingSummary:
         "이 초안에서는 사주 구조를 먼저 놓고 ENTJ는 보조로 연결합니다.",
     };
-    const repairedDraft = createValidDraft();
     let callCount = 0;
     const fetchImpl: typeof fetch = async () => {
       callCount += 1;
 
       return createJsonResponse({
-        output_text: JSON.stringify(callCount === 1 ? metaDraft : repairedDraft),
+        output_text: JSON.stringify(metaDraft),
       });
     };
 
@@ -596,12 +595,10 @@ describe("OpenAI comprehensive report writer", () => {
       },
     });
 
-    expect(callCount).toBe(2);
-    expect(result.warnings).toEqual([
-      "quality repair: attempted",
-      "quality repair: passed",
-    ]);
+    expect(callCount).toBe(1);
+    expect(result.warnings).toEqual(["copy sanitizer: applied"]);
     expect(JSON.stringify(result.draft)).not.toContain("초안");
+    expect(JSON.stringify(result.draft)).toContain("리포트");
   });
 
   it("repairs unsafe copy mild meta wording and repeated sentences from model output", async () => {
@@ -662,6 +659,7 @@ describe("OpenAI comprehensive report writer", () => {
 
     expect(callCount).toBe(2);
     expect(result.warnings).toEqual([
+      "copy sanitizer: applied",
       "quality repair: attempted",
       "quality repair: passed",
     ]);
@@ -675,44 +673,58 @@ describe("OpenAI comprehensive report writer", () => {
     expect(serialized).toContain("차이가 분명합니다");
   });
 
-  it("fails if repair keeps mild internal meta copy", async () => {
-    const metaDraft = {
+  it("sanitizes repaired draft before final validation", async () => {
+    const repairableDraft = {
       ...createValidDraft(),
-      openingSummary:
-        "이 초안에서는 사주 구조를 먼저 놓고 ENTJ는 보조로 연결합니다.",
+      chapters: createValidDraft().chapters.map((chapter) =>
+        chapter.chapterId === "opening"
+          ? {
+              ...chapter,
+              hitReadingLines: [
+                "덕민님은 성장할 수 있습니다.",
+                "덕민님은 장점과 단점이 있습니다.",
+              ],
+            }
+          : chapter,
+      ),
+    };
+    const repairedDraft = {
+      ...createValidDraft(),
+      finalAdvice:
+        "치료라는 표현 대신 생활 루틴으로 관리하는 방향을 남깁니다. 성과를 밀어붙이는 힘은 살리되, 관계에서는 질문을 먼저 넣고 돈에서는 계좌와 예산을 분리하며 회복에서는 밤 산책과 수면을 일정에 고정해 오래 가는 방식을 만들어 주세요.",
     };
     let callCount = 0;
     const fetchImpl: typeof fetch = async () => {
       callCount += 1;
 
       return createJsonResponse({
-        output_text: JSON.stringify(metaDraft),
+        output_text: JSON.stringify(callCount === 1 ? repairableDraft : repairedDraft),
       });
     };
 
-    const error = await expectSafeGenerationFailure(
-      generateComprehensiveReportDraft({
-        mbtiType: "ENTJ",
-        evidencePacket: createPacket(),
-        config: {
-          apiKey: "test_key",
-          model: "test_model",
-          enabled: true,
-          fetchImpl,
-        },
-      }),
-    );
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "ENTJ",
+      evidencePacket: createPacket(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl,
+      },
+    });
+    const serialized = JSON.stringify(result.draft);
 
     expect(callCount).toBe(2);
-    expect(error.stage).toBe("draft_validation");
-    expect(error.repairAttempted).toBe(true);
-    expect(error.repairPassed).toBe(false);
-    expect(error.validationErrors?.join("\n")).toContain(
-      "MILD_INTERNAL_META_COPY: 초안",
-    );
+    expect(result.warnings).toEqual([
+      "copy sanitizer: applied",
+      "quality repair: attempted",
+      "quality repair: passed",
+    ]);
+    expect(serialized).not.toContain("치료");
+    expect(serialized).toContain("관리");
   });
 
-  it("fails if repair keeps unsafe copy and repeated sentences", async () => {
+  it("fails if repair keeps repeated sentences after sanitizer cleanup", async () => {
     const unsafeDraft = {
       ...createValidDraft(),
       openingSummary:
@@ -757,37 +769,38 @@ describe("OpenAI comprehensive report writer", () => {
     expect(error.stage).toBe("draft_validation");
     expect(error.repairAttempted).toBe(true);
     expect(error.repairPassed).toBe(false);
-    expect(validationErrors).toContain("UNSAFE_MEDICAL_COPY: 치료");
-    expect(validationErrors).toContain("MILD_INTERNAL_META_COPY: 문서");
     expect(validationErrors).toContain(
-      "REPEATED_SENTENCE: 다만 contrast는 분명합니다.",
+      "REPEATED_SENTENCE: 다만 대비는 분명합니다.",
     );
+    expect(validationErrors).not.toContain("UNSAFE_MEDICAL_COPY: 치료");
+    expect(validationErrors).not.toContain("MILD_INTERNAL_META_COPY: 문서");
   });
 
-  it("rejects internal meta copy from model output", async () => {
+  it("sanitizes internal template wording from model output", async () => {
     const draft = {
       ...createValidDraft(),
-      openingSummary: "검증된 JSON으로 저장되는 내부 문장입니다.",
+      openingSummary:
+        "검증된 JSON으로 저장되는 내부 문장이라는 표현은 제거하고, 사주 구조를 먼저 놓고 ENTJ는 보조로 연결하는 사용자용 해석으로 충분히 길게 정리합니다.",
     };
 
-    const error = await expectSafeGenerationFailure(
-      generateComprehensiveReportDraft({
-        mbtiType: "ENTJ",
-        evidencePacket: createPacket(),
-        config: {
-          apiKey: "test_key",
-          model: "test_model",
-          enabled: true,
-          fetchImpl: async () =>
-            createJsonResponse({
-              output_text: JSON.stringify(draft),
-            }),
-        },
-      }),
-    );
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "ENTJ",
+      evidencePacket: createPacket(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl: async () =>
+          createJsonResponse({
+            output_text: JSON.stringify(draft),
+          }),
+      },
+    });
+    const serialized = JSON.stringify(result.draft);
 
-    expect(error.stage).toBe("draft_validation");
-    expect(error.validationErrors?.join("\n")).toContain("INTERNAL_META_COPY");
+    expect(result.warnings).toEqual(["copy sanitizer: applied"]);
+    expect(serialized).not.toContain("JSON");
+    expect(serialized).toContain("리포트 형식");
   });
 
   it("does not include DB save payment or result render wiring in source", () => {
