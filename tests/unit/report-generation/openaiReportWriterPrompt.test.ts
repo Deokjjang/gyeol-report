@@ -80,10 +80,13 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("comprehensive_v2_draft");
     expect(combined).toContain("hitReadingLines");
     expect(combined).toContain("solutionLines");
-    expect(combined).toContain("체감형 명중 문장");
+    expect(combined).toContain("바로 와닿는 장면 문장");
     expect(combined).toContain("덕민님, 이런 상황 많지 않나요");
     expect(combined).toContain("실천 솔루션");
-    expect(combined).toContain("final_message는 체감형 명중보다 정리와 각인이 우선이다");
+    expect(combined).toContain(
+      "final_message는 단순 요약이 아니라 전체 리포트의 상징을 회수하는 장이다",
+    );
+    expect(combined).toContain("오늘부터 할 수 있는 3가지");
     expect(combined).toContain("final_message hitReadingLines는 있어도 되지만");
     expect(combined).toContain("덜 닳게 오래 가는 법");
     expect(combined).toContain("회복과 표현을 시스템에 넣는 일");
@@ -135,7 +138,7 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("사주 용어를 쉬운 말로 풀어 설명");
     expect(combined).toContain("섹션마다 같은 근거를 다른 결과로 풀어라");
     expect(combined).toContain("구체적인 조언");
-    expect(combined).toContain("체감형 명중 문장");
+    expect(combined).toContain("바로 와닿는 장면 문장");
     expect(combined).toContain("구체적 장면 예시");
     expect(combined).toContain("실천 솔루션");
     expect(combined).toContain("덕민님, 이런 상황 자주 나오지 않나요");
@@ -236,12 +239,18 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("sajuSignatureScenes");
     expect(combined).toContain("signature scene");
     expect(combined).toContain("같은 질문을 반복하지 말고");
+    expect(combined).toContain("각 chapter의 질문형 문장은 최대 2개까지만 사용하라");
+    expect(combined).toContain("같은 형태의 ~하지 않나요? 문장을 반복하지 마라");
+    expect(combined).toContain("질문 여러 개를 나열하는 대신 구체 장면을 먼저 보여줘라");
     expect(combined).toContain(
       "회의, 카톡, 가족 부탁, 계좌 분리, 전문서 공부, 연애 대화, 밤에 생각이 안 꺼지는 장면",
     );
+    expect(combined).toContain(
+      "그대로 복붙하지 말고 자연스럽게 풀어써라",
+    );
     expect(combined).toContain("signature scene은 내부 용어");
-    expect(combined).toContain("체감형 명중");
-    expect(combined).toContain("정리와 각인");
+    expect(combined).toContain("내부 품질 평가 표현");
+    expect(combined).toContain("생성 지시");
     expect(combined).toContain("용하다");
     expect(combined).toContain(
       "본문에서는 각 주요 chapter마다 spotlight 또는 signature scene 중 최소 1개 이상",

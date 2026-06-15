@@ -81,7 +81,7 @@ describe("report knowledge architecture document", () => {
       "renders V2 without analysis evidence blocks",
       "REPORT-13 adds hit-reading and prescription",
       "compact deterministic manseok/profile table",
-      "체감형 명중 문장",
+      "바로 와닿는 장면 문장",
       "concrete scene examples",
       "practical prescriptions",
       "이렇게 쓰면 좋습니다",

@@ -314,7 +314,7 @@ shows only available facts such as pillars, day master, day pillar, element
 distribution, excessive or missing elements, ten-god signals, sinsal, gwiin,
 and MBTI. It must not invent missing pillars or unsupported Saju terms.
 
-The V2 prompt requires each major chapter to include 체감형 명중 문장, Saju
+The V2 prompt requires each major chapter to include 바로 와닿는 장면 문장, Saju
 basis, MBTI support, concrete scene examples, and practical prescriptions.
 Product-facing solution labels such as 이렇게 쓰면 좋습니다, 피해야 할 패턴,
 맞는 환경, 관계에서 써먹을 것, and 공부/일 루틴 may appear in the body, while
@@ -620,6 +620,33 @@ Final generated report copy must not leak internal generation terms such as
 `computed feature`, `prompt`, `schema`, `OpenAI`, `JSON`, `draft`, `debug`,
 체감형 명중, 정리와 각인, 시그니처 장면, 스포트라이트, 선택된 근거, 계산된
 feature, 생성 프롬프트, or 내부 지시.
+
+## REPORT-15I Grid Table and Scene Density Polish
+
+REPORT-15I changes the visible V2 profile table from a vertical list into a
+four-pillar grid. The grid order is 시주, 일주, 월주, 연주, and the rows are
+천간, 지지, 십성, 지장간, 십이운성, 십이신살, 신살, and 귀인. Only deterministic
+values may be filled. If per-pillar 십성, 지장간, 십이운성, 신살, or 귀인 data is
+not available, the UI renders `-` instead of guessing.
+
+Compact summary rows remain below the grid for 일간, 오행 분포, 과다/부족, 주요
+구조, 신살 요약, 귀인/길신 요약, and MBTI 입력값. These rows can show computed
+feature summaries without pretending they are per-pillar cells.
+
+Spotlight rendering is card-based and capped at three items per group. Each card
+uses feature name, badge, a compact meaning/reading line, and one practical line.
+Good fortune copy may be strong and desirable, but must not use certainty or
+guarantee language.
+
+The prompt now limits question-style lines per chapter and pushes concrete
+scenes first. Validator warnings flag dense or consecutive question-like lines,
+and exact duplicate questions remain a failure. Repeated tracked phrases warn
+after moderate overuse and fail only after heavy overuse.
+
+The feature audit smoke output includes basis diagnostics for watched items:
+반안살 is checked across year/day/month/hour branch basis, and 백호대살 is checked
+under day-pillar and all-pillar diagnostics. This audit is still diagnostic only
+and does not make absent features visible in the final report.
 
 ## Future OpenAI Use
 

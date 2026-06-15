@@ -85,6 +85,13 @@ describe("saju feature audit", () => {
     expect(output).toContain("stems: 丙 己 甲 丁");
     expect(output).toContain("branches: 子 亥 申 未");
     expect(output).toContain("detected features:");
+    expect(output).toContain("basis diagnostics:");
+    expect(output).toContain("반안살:");
+    expect(output).toContain("yearBranch basis:");
+    expect(output).toContain("dayBranch basis:");
+    expect(output).toContain("백호대살:");
+    expect(output).toContain("dayPillar rule:");
+    expect(output).toContain("anyPillar rule:");
     expect(output).toContain("watched not detected:");
     expect(output).not.toContain("OPENAI_API_KEY");
     expect(output).not.toContain("SUPABASE_SERVICE_ROLE");

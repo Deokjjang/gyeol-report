@@ -16,6 +16,7 @@ describe("smoke saju feature audit script source", () => {
     expect(source).toContain("己亥");
     expect(source).toContain("甲申");
     expect(source).toContain("丁未");
+    expect(source).toContain("audit");
     expect(source).not.toContain("OPENAI_API_KEY");
     expect(source).not.toContain("SUPABASE_SERVICE_ROLE");
     expect(source).not.toContain("generateComprehensiveReportDraft");

@@ -260,6 +260,7 @@ const profileTableKeys = [
   "monthPillar",
   "dayPillar",
   "hourPillar",
+  "fourPillarGrid",
   "dayMaster",
   "dayPillarKeywords",
   "fiveElementSummary",
@@ -276,6 +277,7 @@ const profileTableKeys = [
 ] as const;
 const spotlightGroupIds = ["good_fortune", "talent", "caution", "balance"] as const;
 const spotlightPolarities = ["positive", "mixed", "warning"] as const;
+const pillarGridColumnIds = ["hour", "day", "month", "year"] as const;
 type ParsedSajuFeatureSpotlight = NonNullable<
   ComprehensiveReportV2Draft["sajuFeatureSpotlight"]
 >;
@@ -1568,6 +1570,105 @@ function parseProfileStringArray(
   return value;
 }
 
+function parseOptionalProfileStringArray(
+  errors: string[],
+  value: unknown,
+  label: string,
+): readonly string[] | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+
+  return parseProfileStringArray(errors, value, label);
+}
+
+function parsePillarGridColumn(
+  errors: string[],
+  value: unknown,
+  index: number,
+):
+  | NonNullable<ComprehensiveReportV2ProfileTable["fourPillarGrid"]>[number]
+  | undefined {
+  if (!isRecord(value)) {
+    errors.push(`profileTable.fourPillarGrid[${index}] must be an object.`);
+    return undefined;
+  }
+
+  const prefix = `fourPillarGrid[${index}]`;
+
+  if (
+    typeof value.columnId !== "string" ||
+    !pillarGridColumnIds.includes(
+      value.columnId as (typeof pillarGridColumnIds)[number],
+    )
+  ) {
+    errors.push(`profileTable.${prefix}.columnId is invalid.`);
+  }
+  if (typeof value.labelKo !== "string" || value.labelKo.trim().length === 0) {
+    errors.push(`profileTable.${prefix}.labelKo must be a non-empty string.`);
+  }
+
+  return {
+    columnId: pillarGridColumnIds.includes(
+      value.columnId as (typeof pillarGridColumnIds)[number],
+    )
+      ? (value.columnId as (typeof pillarGridColumnIds)[number])
+      : "day",
+    labelKo: typeof value.labelKo === "string" ? value.labelKo : "",
+    pillar: parseOptionalProfilePillar(errors, value.pillar, `${prefix}.pillar`),
+    heavenlyStem: parseOptionalProfilePillar(
+      errors,
+      value.heavenlyStem,
+      `${prefix}.heavenlyStem`,
+    ),
+    earthlyBranch: parseOptionalProfilePillar(
+      errors,
+      value.earthlyBranch,
+      `${prefix}.earthlyBranch`,
+    ),
+    tenGod: parseOptionalProfileStringArray(errors, value.tenGod, `${prefix}.tenGod`),
+    hiddenStems: parseOptionalProfileStringArray(
+      errors,
+      value.hiddenStems,
+      `${prefix}.hiddenStems`,
+    ),
+    twelveLifeStage: parseOptionalProfileStringArray(
+      errors,
+      value.twelveLifeStage,
+      `${prefix}.twelveLifeStage`,
+    ),
+    twelveSinsal: parseOptionalProfileStringArray(
+      errors,
+      value.twelveSinsal,
+      `${prefix}.twelveSinsal`,
+    ),
+    sinsal: parseOptionalProfileStringArray(errors, value.sinsal, `${prefix}.sinsal`),
+    gwiin: parseOptionalProfileStringArray(errors, value.gwiin, `${prefix}.gwiin`),
+  };
+}
+
+function parsePillarGrid(
+  errors: string[],
+  value: unknown,
+): ComprehensiveReportV2ProfileTable["fourPillarGrid"] {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!Array.isArray(value)) {
+    errors.push("profileTable.fourPillarGrid must be an array when provided.");
+    return undefined;
+  }
+
+  return value
+    .map((column, index) => parsePillarGridColumn(errors, column, index))
+    .filter(
+      (
+        column,
+      ): column is NonNullable<ComprehensiveReportV2ProfileTable["fourPillarGrid"]>[number] =>
+        column !== undefined,
+    );
+}
+
 function parseProfileTable(
   errors: string[],
   value: unknown,
@@ -1592,6 +1693,7 @@ function parseProfileTable(
     monthPillar: parseOptionalProfilePillar(errors, value.monthPillar, "monthPillar"),
     dayPillar: parseOptionalProfilePillar(errors, value.dayPillar, "dayPillar"),
     hourPillar: parseOptionalProfilePillar(errors, value.hourPillar, "hourPillar"),
+    fourPillarGrid: parsePillarGrid(errors, value.fourPillarGrid),
     dayMaster: parseOptionalProfilePillar(errors, value.dayMaster, "dayMaster"),
     dayPillarKeywords:
       value.dayPillarKeywords === undefined
@@ -2252,6 +2354,11 @@ function parseV2Draft(
   });
   appendV2SajuFirstErrors(errors, chapters);
   appendV2RepetitionErrors(errors, chapters);
+  appendV2TrackedPhraseOveruseErrors(
+    errors,
+    chapters,
+    typeof input.finalAdvice === "string" ? input.finalAdvice : "",
+  );
   appendV2HitReadingErrors(errors, chapters);
   appendV2PrescriptionErrors(errors, chapters);
   appendV2TopicCoverageErrors(errors, chapters);
@@ -2313,6 +2420,15 @@ const repeatedKeyPhraseWarningTargets = [
   "책임 범위",
   "혼자 버티",
   "구조를 잡",
+  "해결 중심",
+] as const;
+
+const questionLikeEndings = [
+  "않나요?",
+  "아닌가요?",
+  "있지 않나요?",
+  "편이지 않나요?",
+  "느끼지 않나요?",
 ] as const;
 
 const userVisiblePromptArtifactPhrases = ["draft"] as const;
@@ -2399,6 +2515,81 @@ function countOccurrences(text: string, phrase: string): number {
   return count;
 }
 
+function getV2ChapterNarrativeText(
+  chapter: ComprehensiveReportV2Chapter,
+): string {
+  return [
+    chapter.headline,
+    ...chapter.hitReadingLines,
+    chapter.body,
+    ...chapter.solutionLines,
+    ...chapter.keyPhrases,
+  ].join("\n");
+}
+
+function getV2NarrativeText(draft: ComprehensiveReportV2Draft): string {
+  return [
+    draft.openingTitle,
+    draft.openingSummary,
+    draft.coreLine,
+    ...draft.chapters.map(getV2ChapterNarrativeText),
+    draft.finalAdvice,
+    ...draft.safetyNotes,
+  ].join("\n");
+}
+
+function appendV2TrackedPhraseOveruseErrors(
+  errors: string[],
+  chapters: readonly ComprehensiveReportV2Chapter[],
+  finalAdvice: string,
+): void {
+  const narrativeText = [
+    ...chapters.map(getV2ChapterNarrativeText),
+    finalAdvice,
+  ].join("\n");
+
+  for (const phrase of repeatedKeyPhraseWarningTargets) {
+    if (countOccurrences(narrativeText, phrase) > 10) {
+      errors.push(`REPEATED_KEY_PHRASE_OVERUSE: ${phrase}`);
+    }
+  }
+}
+
+function isQuestionLikeSegment(segment: string): boolean {
+  const trimmed = segment.trim();
+
+  return questionLikeEndings.some((ending) => trimmed.endsWith(ending));
+}
+
+function splitQuestionLikeSegments(text: string): readonly string[] {
+  return text
+    .split(/\r?\n|(?<=[?？.!])\s+/u)
+    .map((segment) => segment.trim())
+    .filter(Boolean)
+    .filter(isQuestionLikeSegment);
+}
+
+function hasThreeConsecutiveQuestionLikeSegments(text: string): boolean {
+  let consecutiveCount = 0;
+
+  for (const segment of text
+    .split(/\r?\n|(?<=[?？.!])\s+/u)
+    .map((item) => item.trim())
+    .filter(Boolean)) {
+    if (isQuestionLikeSegment(segment)) {
+      consecutiveCount += 1;
+      if (consecutiveCount > 2) {
+        return true;
+      }
+      continue;
+    }
+
+    consecutiveCount = 0;
+  }
+
+  return false;
+}
+
 function getV2SpotlightAndSceneWarnings(
   draft: ComprehensiveReportDraft | undefined,
 ): readonly string[] {
@@ -2410,21 +2601,7 @@ function getV2SpotlightAndSceneWarnings(
   const spotlightItems =
     draft.sajuFeatureSpotlight?.groups.flatMap((group) => group.items) ?? [];
   const signatureScenes = draft.sajuSignatureScenes ?? [];
-  const narrativeText = [
-    draft.openingTitle,
-    draft.openingSummary,
-    draft.coreLine,
-    ...draft.chapters.flatMap((chapter) => [
-      chapter.titleKo,
-      chapter.headline,
-      ...chapter.hitReadingLines,
-      chapter.body,
-      ...chapter.solutionLines,
-      ...chapter.keyPhrases,
-    ]),
-    draft.finalAdvice,
-    ...draft.safetyNotes,
-  ].join("\n");
+  const narrativeText = getV2NarrativeText(draft);
 
   if (spotlightItems.length === 0) {
     warnings.push("SAJU_FEATURE_SPOTLIGHT_EMPTY");
@@ -2441,15 +2618,23 @@ function getV2SpotlightAndSceneWarnings(
   for (const phrase of repeatedKeyPhraseWarningTargets) {
     const count = countOccurrences(narrativeText, phrase);
 
-    if (count > 5) {
+    if (count > 6) {
       warnings.push(`REPEATED_KEY_PHRASE_WARNING: ${phrase}`);
     }
   }
   for (const chapter of draft.chapters) {
     const count = countOccurrences(chapter.body, "덕민님,");
+    const chapterText = getV2ChapterNarrativeText(chapter);
+    const questionLikeSegments = splitQuestionLikeSegments(chapterText);
 
     if (count > 3) {
       warnings.push(`CHAPTER_OPENING_PATTERN_REPEATED: ${chapter.chapterId}`);
+    }
+    if (questionLikeSegments.length > 3) {
+      warnings.push(`QUESTION_DENSITY_WARNING: ${chapter.chapterId}`);
+    }
+    if (hasThreeConsecutiveQuestionLikeSegments(chapterText)) {
+      warnings.push(`CONSECUTIVE_QUESTION_WARNING: ${chapter.chapterId}`);
     }
   }
 

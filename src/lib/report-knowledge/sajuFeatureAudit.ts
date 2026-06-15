@@ -476,6 +476,23 @@ export function formatSajuFeatureAuditResult(
     .filter(Boolean)
     .join(" ");
 
+  const bananBasisLines = audit.twelveSinsalByBasis.flatMap((basis) => {
+    const detected = basis.detected.some((item) => item.labelKo === "반안살");
+
+    return [
+      `- ${basis.basis} basis: ${detected ? "detected" : "not detected"}`,
+    ];
+  });
+  const baekhoCheck = audit.ruleTableChecks.find(
+    (check) => check.meta.ruleId === "sinsal_baekho_v1",
+  );
+  const baekhoDayDetected =
+    baekhoCheck?.checked.some(
+      (item) => item.productionEligible && item.matched,
+    ) ?? false;
+  const baekhoAnyDetected =
+    baekhoCheck?.checked.some((item) => item.matched) ?? false;
+
   return [
     `feature audit rule set: ${audit.ruleSetVersion}`,
     `pillars: ${pillarLine}`,
@@ -500,6 +517,12 @@ export function formatSajuFeatureAuditResult(
           }${item.productionEligible ? " (production basis)" : ""}`,
       ),
     ]),
+    "basis diagnostics:",
+    "반안살:",
+    ...bananBasisLines,
+    "백호대살:",
+    `- dayPillar rule: ${baekhoDayDetected ? "detected" : "not detected"}`,
+    `- anyPillar rule: ${baekhoAnyDetected ? "detected" : "not detected"}`,
     "watched not detected:",
     ...(audit.watchedNotDetected.length === 0
       ? ["- none"]

@@ -75,6 +75,16 @@ describe("comprehensive report profile table builder", () => {
     expect(profileTable).not.toHaveProperty("yearPillar");
     expect(profileTable).not.toHaveProperty("monthPillar");
     expect(profileTable).not.toHaveProperty("hourPillar");
+    expect(profileTable.fourPillarGrid?.map((column) => column.labelKo)).toEqual([
+      "시주",
+      "일주",
+      "월주",
+      "연주",
+    ]);
+    expect(profileTable.fourPillarGrid?.find((column) => column.columnId === "day")).toMatchObject({
+      heavenlyStem: "갑",
+      earthlyBranch: "신",
+    });
   });
 
   it("can fall back to evidence labels when computed facts are not provided", () => {
@@ -123,6 +133,34 @@ describe("comprehensive report profile table builder", () => {
     expect(profileTable.yearPillar).toBe("병자");
     expect(profileTable.monthPillar).toBe("기해");
     expect(profileTable.hourPillar).toBe("정미");
+    expect(profileTable.fourPillarGrid).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          columnId: "hour",
+          labelKo: "시주",
+          heavenlyStem: "정",
+          earthlyBranch: "미",
+        }),
+        expect.objectContaining({
+          columnId: "day",
+          labelKo: "일주",
+          heavenlyStem: "갑",
+          earthlyBranch: "신",
+        }),
+        expect.objectContaining({
+          columnId: "month",
+          labelKo: "월주",
+          heavenlyStem: "기",
+          earthlyBranch: "해",
+        }),
+        expect.objectContaining({
+          columnId: "year",
+          labelKo: "연주",
+          heavenlyStem: "병",
+          earthlyBranch: "자",
+        }),
+      ]),
+    );
     expect(profileTable.twelveSinsal).toEqual(
       expect.arrayContaining(["장성살", "지살"]),
     );

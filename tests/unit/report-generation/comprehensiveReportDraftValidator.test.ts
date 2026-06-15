@@ -444,7 +444,7 @@ describe("comprehensive report draft validator", () => {
 
   it("warns when repeated key phrases dominate the V2 report", () => {
     const draft = createValidV2Draft();
-    const repeatedPhrase = Array.from({ length: 6 }, () => "말의 온도").join(" ");
+    const repeatedPhrase = Array.from({ length: 7 }, () => "말의 온도").join(" ");
     const result = validateComprehensiveReportDraft({
       ...draft,
       chapters: draft.chapters.map((chapter) =>
@@ -459,6 +459,56 @@ describe("comprehensive report draft validator", () => {
 
     expect(result.ok).toBe(true);
     expect(result.warnings).toContain("REPEATED_KEY_PHRASE_WARNING: 말의 온도");
+  });
+
+  it("rejects excessive repeated key phrases in V2 report text", () => {
+    const draft = createValidV2Draft();
+    const repeatedPhrase = Array.from({ length: 11 }, () => "해결 중심").join(" ");
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "personality_pattern"
+          ? {
+              ...chapter,
+              body: `${chapter.body} ${repeatedPhrase}`,
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "REPEATED_KEY_PHRASE_OVERUSE: 해결 중심",
+    );
+  });
+
+  it("warns when question-like lines are too dense in one V2 chapter", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "personality_pattern"
+          ? {
+              ...chapter,
+              body: [
+                chapter.body,
+                "상대가 길게 말하면 답답하지 않나요?",
+                "역할이 흐리면 바로 정리하고 싶지 않나요?",
+                "감정보다 해결책이 먼저 떠오르지 않나요?",
+                "밤에도 머리가 잘 꺼지지 않나요?",
+              ].join("\n"),
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.warnings).toContain(
+      "QUESTION_DENSITY_WARNING: personality_pattern",
+    );
+    expect(result.warnings).toContain(
+      "CONSECUTIVE_QUESTION_WARNING: personality_pattern",
+    );
   });
 
   it("rejects final V2 drafts without deterministic profile table", () => {

@@ -26,6 +26,34 @@ const optionalPillarSchema = {
   maxLength: 20,
 } as const;
 
+const fourPillarGridSchema = {
+  type: "array",
+  items: {
+    type: "object",
+    additionalProperties: false,
+    required: ["columnId", "labelKo"],
+    properties: {
+      columnId: {
+        type: "string",
+        enum: ["hour", "day", "month", "year"],
+      },
+      labelKo: {
+        type: "string",
+        minLength: 1,
+      },
+      pillar: optionalPillarSchema,
+      heavenlyStem: optionalPillarSchema,
+      earthlyBranch: optionalPillarSchema,
+      tenGod: stringArraySchema,
+      hiddenStems: stringArraySchema,
+      twelveLifeStage: stringArraySchema,
+      twelveSinsal: stringArraySchema,
+      sinsal: stringArraySchema,
+      gwiin: stringArraySchema,
+    },
+  },
+} as const;
+
 const sajuFeatureSpotlightSchema = {
   type: "object",
   additionalProperties: false,
@@ -283,6 +311,7 @@ export const comprehensiveReportV2DraftJsonSchema = {
         monthPillar: optionalPillarSchema,
         dayPillar: optionalPillarSchema,
         hourPillar: optionalPillarSchema,
+        fourPillarGrid: fourPillarGridSchema,
         dayMaster: optionalPillarSchema,
         dayPillarKeywords: stringArraySchema,
         fiveElementSummary: stringArraySchema,

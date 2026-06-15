@@ -57,6 +57,15 @@ describe("comprehensive report draft JSON schema", () => {
       "dayPillarKeywords",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "fourPillarGrid",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "hiddenStems",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "twelveLifeStage",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
       "tenGodSummary",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(

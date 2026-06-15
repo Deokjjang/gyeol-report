@@ -7,6 +7,7 @@ import type {
   ComprehensiveReportDraft,
   ComprehensiveReportDraftSection,
   ComprehensiveReportV2Chapter,
+  ComprehensiveReportV2PillarGridColumn,
   ComprehensiveReportV2ProfileTable,
 } from "../../../lib/report-generation/comprehensiveReportDraftTypes";
 import {
@@ -340,7 +341,10 @@ function createFallbackProfileTable(
   };
 }
 
-function renderProfileRow(label: string, value: string | readonly string[] | undefined) {
+function renderCompactProfileRow(
+  label: string,
+  value: string | readonly string[] | undefined,
+) {
   const values =
     typeof value === "string" ? [value] : value?.filter((item) => item.trim().length > 0);
 
@@ -349,49 +353,168 @@ function renderProfileRow(label: string, value: string | readonly string[] | und
   }
 
   return (
-    <div className="grid gap-1 border-t border-neutral-800 py-3 first:border-t-0 sm:grid-cols-[6.5rem_1fr]">
-      <dt className="text-sm font-semibold text-neutral-500">{label}</dt>
-      <dd className="flex flex-wrap gap-2 text-sm text-neutral-100">
-        {values.map((item) => (
-          <span
-            key={`${label}:${item}`}
-            className="rounded-md border border-neutral-800 bg-neutral-950/70 px-2 py-1"
-          >
-            {item}
-          </span>
-        ))}
-      </dd>
+    <div className="grid gap-1 rounded-md border border-neutral-800 bg-neutral-950/50 px-3 py-2 sm:grid-cols-[7rem_1fr]">
+      <dt className="text-xs font-semibold text-neutral-500">{label}</dt>
+      <dd className="text-sm leading-6 text-neutral-100">{values.join(" · ")}</dd>
     </div>
   );
 }
+
+function splitProfilePillar(pillar: string | undefined) {
+  if (pillar === undefined) {
+    return {};
+  }
+
+  const normalized = pillar.replace("일주", "").trim();
+  const characters = [...normalized];
+
+  if (characters.length < 2) {
+    return {};
+  }
+
+  return {
+    heavenlyStem: characters[0]!,
+    earthlyBranch: characters[1]!,
+  };
+}
+
+function getFallbackPillarGrid(
+  profile: ComprehensiveReportV2ProfileTable,
+): readonly ComprehensiveReportV2PillarGridColumn[] {
+  const createColumn = (
+    columnId: ComprehensiveReportV2PillarGridColumn["columnId"],
+    labelKo: string,
+    pillar: string | undefined,
+  ) => ({
+    columnId,
+    labelKo,
+    ...(pillar === undefined ? {} : { pillar }),
+  });
+
+  return [
+    createColumn("hour", "시주", profile.hourPillar),
+    createColumn("day", "일주", profile.dayPillar),
+    createColumn("month", "월주", profile.monthPillar),
+    createColumn("year", "연주", profile.yearPillar),
+  ].map((column) => ({
+    ...column,
+    ...splitProfilePillar(column.pillar),
+  }));
+}
+
+function formatPillarGridValue(value: string | readonly string[] | undefined) {
+  if (typeof value === "string") {
+    return value.trim().length === 0 ? "-" : value;
+  }
+
+  const values = value?.filter((item) => item.trim().length > 0);
+
+  return values === undefined || values.length === 0 ? "-" : values.join(" · ");
+}
+
+const pillarGridRows = [
+  {
+    label: "천간",
+    getValue: (column: ComprehensiveReportV2PillarGridColumn) =>
+      column.heavenlyStem,
+  },
+  {
+    label: "지지",
+    getValue: (column: ComprehensiveReportV2PillarGridColumn) =>
+      column.earthlyBranch,
+  },
+  {
+    label: "십성",
+    getValue: (column: ComprehensiveReportV2PillarGridColumn) => column.tenGod,
+  },
+  {
+    label: "지장간",
+    getValue: (column: ComprehensiveReportV2PillarGridColumn) => column.hiddenStems,
+  },
+  {
+    label: "십이운성",
+    getValue: (column: ComprehensiveReportV2PillarGridColumn) =>
+      column.twelveLifeStage,
+  },
+  {
+    label: "십이신살",
+    getValue: (column: ComprehensiveReportV2PillarGridColumn) =>
+      column.twelveSinsal,
+  },
+  {
+    label: "신살",
+    getValue: (column: ComprehensiveReportV2PillarGridColumn) => column.sinsal,
+  },
+  {
+    label: "귀인",
+    getValue: (column: ComprehensiveReportV2PillarGridColumn) => column.gwiin,
+  },
+] as const;
 
 function renderV2ProfileTable(
   result: PaidReportResult,
   draft: Extract<ComprehensiveReportDraft, { readonly version: "comprehensive_v2_draft" }>,
 ) {
   const profile = draft.profileTable ?? createFallbackProfileTable(result);
+  const pillarGrid = profile.fourPillarGrid ?? getFallbackPillarGrid(profile);
 
   return (
-    <section className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+    <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
       <h2 className="text-lg font-semibold text-neutral-50">
         만세력 및 명리학 표
       </h2>
-      <dl className="mt-4 divide-y divide-neutral-800">
-        {renderProfileRow("연주", profile.yearPillar)}
-        {renderProfileRow("월주", profile.monthPillar)}
-        {renderProfileRow("일주", profile.dayPillar)}
-        {renderProfileRow("시주", profile.hourPillar)}
-        {renderProfileRow("일간", profile.dayMaster)}
-        {renderProfileRow("일주 해석 키워드", profile.dayPillarKeywords)}
-        {renderProfileRow("오행 분포", profile.fiveElementSummary)}
-        {renderProfileRow("과다 오행", profile.excessiveElements)}
-        {renderProfileRow("부족 오행", profile.missingElements)}
-        {renderProfileRow("십성 핵심", profile.tenGodSummary)}
-        {renderProfileRow("주요 구조", profile.specialPatterns)}
-        {renderProfileRow("십이신살", profile.twelveSinsal)}
-        {renderProfileRow("주요 신살", profile.majorSinsal ?? profile.sinsal)}
-        {renderProfileRow("귀인/길신", profile.gwiinGilshin ?? profile.gwiin)}
-        {renderProfileRow("MBTI 입력값", profile.mbti)}
+      <div className="overflow-x-auto rounded-lg border border-neutral-800">
+        <table className="min-w-[36rem] w-full border-collapse text-left text-sm">
+          <thead className="bg-neutral-900/80 text-neutral-300">
+            <tr>
+              <th className="border-b border-neutral-800 px-3 py-2 font-semibold">
+                구분
+              </th>
+              {pillarGrid.map((column) => (
+                <th
+                  key={column.columnId}
+                  className="border-b border-neutral-800 px-3 py-2 font-semibold text-neutral-100"
+                >
+                  {column.labelKo}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {pillarGridRows.map((row) => (
+              <tr key={row.label} className="border-t border-neutral-800">
+                <th className="bg-neutral-950/80 px-3 py-2 font-semibold text-neutral-500">
+                  {row.label}
+                </th>
+                {pillarGrid.map((column) => (
+                  <td
+                    key={`${row.label}:${column.columnId}`}
+                    className="px-3 py-2 text-neutral-100"
+                  >
+                    {formatPillarGridValue(row.getValue(column))}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <dl className="grid gap-2">
+        {renderCompactProfileRow("일간", profile.dayMaster)}
+        {renderCompactProfileRow("일주 해석 키워드", profile.dayPillarKeywords)}
+        {renderCompactProfileRow("오행 분포", profile.fiveElementSummary)}
+        {renderCompactProfileRow(
+          "과다/부족",
+          [...profile.excessiveElements, ...profile.missingElements],
+        )}
+        {renderCompactProfileRow("십성 핵심", profile.tenGodSummary)}
+        {renderCompactProfileRow("주요 구조", profile.specialPatterns)}
+        {renderCompactProfileRow("신살 요약", profile.majorSinsal ?? profile.sinsal)}
+        {renderCompactProfileRow(
+          "귀인/길신 요약",
+          profile.gwiinGilshin ?? profile.gwiin,
+        )}
+        {renderCompactProfileRow("MBTI 입력값", profile.mbti)}
       </dl>
     </section>
   );
@@ -413,7 +536,7 @@ function renderV2FeatureSpotlight(
   }
 
   return (
-    <section className="space-y-5 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+    <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
       <div className="space-y-2">
         <h2 className="text-lg font-semibold text-neutral-50">{spotlight.title}</h2>
         {spotlight.subtitle === undefined ? null : (
@@ -427,19 +550,17 @@ function renderV2FeatureSpotlight(
               {group.title}
             </h3>
             <div className="grid gap-2 md:grid-cols-2">
-              {group.items.map((item) => (
+              {group.items.slice(0, 3).map((item) => (
                 <article
                   key={`${group.groupId}:${item.featureId}`}
-                  className="space-y-2 rounded-md border border-neutral-800 bg-neutral-900/60 p-4"
+                  className="space-y-1.5 rounded-md border border-neutral-800 bg-neutral-900/60 p-3"
                 >
-                  <p className="text-base font-semibold text-neutral-50">
-                    {item.labelKo} - {item.badge}
-                  </p>
-                  <p className="text-sm leading-6 text-neutral-300">
-                    {item.shortMeaning}
+                  <p className="text-base font-semibold text-neutral-50">{item.labelKo}</p>
+                  <p className="text-sm font-semibold leading-5 text-emerald-100">
+                    {item.badge}
                   </p>
                   <p className="text-sm leading-6 text-neutral-200">
-                    {item.vividLine}
+                    {item.shortMeaning} {item.vividLine}
                   </p>
                   <p className="text-sm leading-6 text-neutral-400">
                     {item.practicalLine}

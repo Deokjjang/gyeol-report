@@ -65,11 +65,32 @@ export type ComprehensiveReportV2Chapter = {
   readonly mbtiTermsUsed: readonly string[];
 };
 
+export type ComprehensiveReportV2PillarGridColumnId =
+  | "hour"
+  | "day"
+  | "month"
+  | "year";
+
+export type ComprehensiveReportV2PillarGridColumn = {
+  readonly columnId: ComprehensiveReportV2PillarGridColumnId;
+  readonly labelKo: string;
+  readonly pillar?: string;
+  readonly heavenlyStem?: string;
+  readonly earthlyBranch?: string;
+  readonly tenGod?: readonly string[];
+  readonly hiddenStems?: readonly string[];
+  readonly twelveLifeStage?: readonly string[];
+  readonly twelveSinsal?: readonly string[];
+  readonly sinsal?: readonly string[];
+  readonly gwiin?: readonly string[];
+};
+
 export type ComprehensiveReportV2ProfileTable = {
   readonly yearPillar?: string;
   readonly monthPillar?: string;
   readonly dayPillar?: string;
   readonly hourPillar?: string;
+  readonly fourPillarGrid?: readonly ComprehensiveReportV2PillarGridColumn[];
   readonly dayMaster?: string;
   readonly dayPillarKeywords?: readonly string[];
   readonly fiveElementSummary: readonly string[];

@@ -48,6 +48,14 @@ describe("Saju signature scene rules", () => {
       scenes.find((scene) => scene.id === "jaego_wealth_storage")?.sceneLines
         ?.length,
     ).toBeGreaterThanOrEqual(2);
+    expect(
+      scenes
+        .find((scene) => scene.id === "hyeonchim_entj_fast_conclusion")
+        ?.sceneLines?.join("\n"),
+    ).toContain("담당자와 마감");
+    expect(
+      scenes.find((scene) => scene.id === "jaego_wealth_storage")?.sceneLines?.join("\n"),
+    ).toContain("생활비, 투자금, 비상금");
   });
 
   it("does not fire rules when required features are missing", () => {
