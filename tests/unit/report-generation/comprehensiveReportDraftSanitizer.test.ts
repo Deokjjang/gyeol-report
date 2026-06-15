@@ -106,10 +106,13 @@ describe("comprehensive report draft sanitizer", () => {
     const serialized = JSON.stringify(result.draft);
 
     expect(result.sanitized).toBe(true);
-    expect(serialized).toContain("MBTI 관계 기준");
-    expect(serialized).toContain("감정을 천천히 풀어주고 생활 리듬이 안정적인 사람");
+    expect(serialized).toContain(
+      "MBTI 유형명보다 중요한 것은 실제 생활 리듬, 약속 습관, 감정 표현 방식입니다.",
+    );
     expect(serialized).not.toContain("MBTI 예시");
-    expect(serialized).not.toContain("ISFP, INFP, INTP");
+    expect(serialized).not.toContain("ISFP");
+    expect(serialized).not.toContain("INFP");
+    expect(serialized).not.toContain("INTP");
   });
 
   it("replaces standalone meta document wording but preserves legitimate document work terms", () => {

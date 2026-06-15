@@ -116,6 +116,10 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("보완 기운");
     expect(combined).toContain("MBTI 관계 기준");
     expect(combined).toContain("MBTI 보완 유형을 구체적으로 나열하지 마라");
+    expect(combined).toContain(
+      "MBTI는 궁합 단정 기준이 아니라 관계 성향을 보는 보조 지표",
+    );
+    expect(combined).toContain("MBTI는 궁합을 단정하는 기준이 아니라");
     expect(combined).toContain("단정하지 않는 방식");
     expect(combined).toContain("display 섹션은 짧게");
     expect(combined).toContain("시스템 사정");
@@ -224,6 +228,7 @@ describe("OpenAI report writer prompt", () => {
       validationErrors: [
         "CHAPTER_BODY_TOO_SHORT: love_relationships",
         "DIRECT_HIT_READING_TOO_GENERIC: opening",
+        "LOVE_MBTI_CAUTION_OR_EXAMPLE_MISSING",
       ],
     });
     const combined = [messages.system, messages.developer, messages.user].join("\n");
@@ -235,6 +240,11 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("절대 profileTable을 출력하지 않는다");
     expect(combined).toContain("hitReadingLines");
     expect(combined).toContain("solutionLines");
+    expect(combined).toContain(
+      "LOVE_MBTI_CAUTION_OR_EXAMPLE_MISSING이 있으면 연애와 관계 챕터에 MBTI를 궁합 단정 기준으로 쓰지 말고",
+    );
+    expect(combined).toContain("관계에서 필요한 성향과 생활 리듬을 보는 보조 지표");
+    expect(combined).toContain("구체적인 MBTI 유형명 예시는 쓰지 마라");
     expect(combined).toContain("제작/작성 메타 표현을 제거하라");
     expect(combined).toContain("이 초안에서는 금지");
     expect(combined).toContain("작성된 글은");

@@ -65,14 +65,22 @@ const REPORT_COPY_REPLACEMENT_RULES: readonly ReplacementRule[] = [
   { term: "draft", replacement: "리포트", caseInsensitive: true },
   { term: "schema", replacement: "형식", caseInsensitive: true },
   { term: "debug", replacement: "검토", caseInsensitive: true },
+  {
+    term: "MBTI type examples",
+    replacement:
+      "MBTI 유형명보다 중요한 것은 실제 생활 리듬, 약속 습관, 감정 표현 방식입니다.",
+    pattern: /MBTI 예시:\s*ISFP,\s*INFP,\s*INTP[^.。]*[.。]?/g,
+  },
   { term: "MBTI 예시:", replacement: "MBTI 관계 기준:" },
   {
     term: "ISFP, INFP, INTP처럼",
-    replacement: "감정을 천천히 풀어주고 생활 리듬이 안정적인 사람처럼",
+    replacement:
+      "MBTI 유형명보다 중요한 것은 실제 생활 리듬, 약속 습관, 감정 표현 방식이라는 점처럼",
   },
   {
     term: "ISFP, INFP, INTP",
-    replacement: "감정 완충과 거리 존중이 되는 성향",
+    replacement:
+      "MBTI 유형명보다 중요한 것은 실제 생활 리듬, 약속 습관, 감정 표현 방식입니다",
   },
 ];
 

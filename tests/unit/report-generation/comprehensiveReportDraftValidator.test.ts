@@ -977,6 +977,55 @@ describe("comprehensive report draft validator", () => {
     expect(result.ok).toBe(true);
   });
 
+  it.each([
+    "MBTI는 궁합을 단정하는 기준이 아니라 관계에서 필요한 대화 속도와 표현 방식을 보는 보조 지표로만 사용해야 합니다.",
+    "ENTJ라는 유형명보다 중요한 것은 상대가 감정을 천천히 풀어주고, 약속을 지키며, 덕민님의 빠른 결론에 바로 눌리지 않는 생활 리듬을 갖고 있느냐입니다.",
+    "MBTI는 보조 지표이므로 유형보다 실제 생활 리듬, 감정 표현 방식, 책임감과 약속 습관을 함께 봐야 합니다.",
+  ])("accepts V2 love chapter with MBTI caution: %s", (mbtiCautionLine) => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "love_relationships"
+          ? {
+              ...chapter,
+              solutionLines: [
+                "맞는 상대: 감정을 천천히 풀어주고 덕민님의 과열을 식혀주는 사람이 맞기 쉽습니다.",
+                "피해야 할 상대: 감정 기복이 크고 책임이 흐릿한 사람은 조심할 상대입니다.",
+                "보완 기운: 수 기운과 화 기운처럼 감정 완충과 표현 온도를 보태는 타입이 좋습니다.",
+                mbtiCautionLine,
+              ],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+  });
+
+  it("accepts MBTI caution in love body even when solution lines hold only partner guidance", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "love_relationships"
+          ? {
+              ...chapter,
+              body: `${chapter.body} MBTI는 궁합을 단정하는 기준이 아니라 관계에서 필요한 대화 속도와 표현 방식을 보는 보조 지표입니다.`,
+              solutionLines: [
+                "맞는 상대: 감정을 천천히 풀어주고 덕민님의 과열을 식혀주는 사람이 맞기 쉽습니다.",
+                "피해야 할 상대: 감정 기복이 크고 책임이 흐릿한 사람은 조심할 상대입니다.",
+                "보완 기운: 수 기운과 화 기운처럼 감정 완충과 표현 온도를 보태는 타입이 좋습니다.",
+                "관계에서는 실제 생활 태도, 감정 온도, 책임감을 함께 보세요.",
+              ],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+  });
+
   it("rejects explicit MBTI type examples until a complement scorer exists", () => {
     const draft = createValidV2Draft();
     const result = validateComprehensiveReportDraft({
@@ -1034,7 +1083,7 @@ describe("comprehensive report draft validator", () => {
         "맞는 상대: 감정을 천천히 풀어주고 덕민님의 과열을 식혀주는 사람이 맞기 쉽습니다.",
         "피해야 할 상대: 감정 기복이 크고 책임이 흐릿한 사람은 조심할 상대입니다.",
         "보완 기운: 수 기운과 화 기운처럼 감정 완충과 표현 온도를 보태는 타입이 좋습니다.",
-        "MBTI 관계 기준: 특정 유형을 고정하지 말고 실제 생활 태도와 감정 온도를 함께 봅니다.",
+        "관계에서는 특정 조건 하나로 단정하지 말고 실제 생활 태도와 감정 온도를 함께 봅니다.",
       ],
     },
   ])(
@@ -1047,6 +1096,12 @@ describe("comprehensive report draft validator", () => {
           chapter.chapterId === "love_relationships"
             ? {
                 ...chapter,
+                ...(expectedError === "LOVE_MBTI_CAUTION_OR_EXAMPLE_MISSING"
+                  ? {
+                      body:
+                        "관계에서는 맞는 상대와 피해야 할 패턴을 실제 생활 태도와 감정 온도로 함께 봐야 합니다. 감정 완충과 책임감이 있는 사람을 고르는 기준은 중요하지만, 특정 체계 이름을 빌려 관계를 설명하지는 않습니다.",
+                    }
+                  : {}),
                 solutionLines,
               }
             : chapter,
@@ -1066,6 +1121,8 @@ describe("comprehensive report draft validator", () => {
         chapter.chapterId === "love_relationships"
           ? {
               ...chapter,
+              body:
+                "관계에서는 맞는 상대와 피해야 할 패턴을 실제 생활 태도와 감정 온도로 함께 봐야 합니다. 감정 완충과 책임감이 있는 사람을 고르는 기준은 중요하지만, 구체적인 관계 보조 지표는 빠져 있습니다.",
               solutionLines: [
                 "좋은 사람을 만나세요.",
                 "서로 배려하세요.",

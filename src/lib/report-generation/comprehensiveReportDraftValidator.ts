@@ -429,20 +429,26 @@ const loveComplementMarkers = [
 ] as const;
 const cautiousMbtiRelationMarkers = [
   "MBTI만으로 단정",
+  "MBTI만으로 관계",
   "궁합을 단정",
+  "궁합 단정",
+  "궁합을 정하는 기준",
+  "관계를 판단",
   "단정하지",
+  "보조 지표",
+  "보조 기준",
+  "보조로",
+  "유형명보다",
+  "유형보다",
+  "대화 속도",
+  "감정 표현",
+  "표현 방식",
+  "약속 습관",
 ] as const;
-const mbtiRelationNeedMarkers = [
-  "MBTI 관계 기준",
+const mbtiRelationSubjectMarkers = [
   "MBTI",
-  "성향",
-  "생활 태도",
-  "생활 리듬",
-  "감정",
-  "약속",
-  "거리",
-  "책임",
-  "안정",
+  "유형명",
+  "유형보다",
 ] as const;
 const forbiddenMbtiTypeExampleLabel = "MBTI 예시";
 const forbiddenMbtiTypeExampleTypes = ["ISFP", "INFP", "INTP"] as const;
@@ -604,6 +610,13 @@ function containsForbiddenMbtiTypeExample(text: string): boolean {
         text.includes("보완") ||
         text.includes("유형") ||
         text.includes("관계")))
+  );
+}
+
+function hasMbtiRelationCaution(text: string): boolean {
+  return (
+    hasAnyMarker(text, mbtiRelationSubjectMarkers) &&
+    hasAnyMarker(text, cautiousMbtiRelationMarkers)
   );
 }
 
@@ -1893,8 +1906,7 @@ function appendV2TopicCoverageErrors(
   }
   if (
     loveChapter !== undefined &&
-    (!hasAnyMarker(loveSolutionText, mbtiRelationNeedMarkers) ||
-      !hasAnyMarker(loveSolutionText, cautiousMbtiRelationMarkers))
+    !hasMbtiRelationCaution(loveText)
   ) {
     errors.push("LOVE_MBTI_CAUTION_OR_EXAMPLE_MISSING");
   }

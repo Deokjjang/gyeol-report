@@ -545,6 +545,13 @@ list fixed MBTI examples such as `ISFP`, `INFP`, or `INTP`. The report should
 describe relationship needs instead, such as emotional buffering, stable life
 rhythm, responsibility clarity, and respect for distance.
 
+REPORT-15F-A aligns this no-type-example policy with the V2 validator. The love
+chapter still needs an MBTI limitation sentence, but the accepted form is a
+caution such as "MBTI is a support indicator, not a compatibility guarantee" or
+"actual life rhythm, promise habits, and emotional expression matter more than
+the type name." Fixed recommended-type examples stay blocked until a dedicated
+MBTI complement scorer exists.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
