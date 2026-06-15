@@ -1,0 +1,56 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
+import { describe, expect, it } from "vitest";
+
+const draftSmokeSource = readFileSync(
+  join(process.cwd(), "scripts", "smoke_generate_comprehensive_report_draft.ts"),
+  "utf8",
+);
+const saveSmokeSource = readFileSync(
+  join(process.cwd(), "scripts", "smoke_generate_and_save_comprehensive_report.ts"),
+  "utf8",
+);
+const auditSmokeSource = readFileSync(
+  join(process.cwd(), "scripts", "smoke_audit_saju_features.ts"),
+  "utf8",
+);
+const matrixSource = readFileSync(
+  join(process.cwd(), "src", "lib", "report-knowledge", "reportQualityFixtureMatrix.ts"),
+  "utf8",
+);
+const auditFormatterSource = readFileSync(
+  join(process.cwd(), "src", "lib", "report-knowledge", "sajuFeatureAudit.ts"),
+  "utf8",
+);
+
+describe("report smoke fixture selection source", () => {
+  it("supports deokmin fixture selection in draft save and audit smoke scripts", () => {
+    expect(matrixSource).toContain("--fixture");
+    expect(matrixSource).toContain("deokmin");
+    expect(matrixSource).toContain("default");
+    expect(auditSmokeSource).toContain("--fixture");
+    expect(auditSmokeSource).toContain("deokmin");
+    expect(auditSmokeSource).toContain("default");
+    expect(draftSmokeSource).toContain("getReportSmokeFixture");
+    expect(draftSmokeSource).toContain("getReportSmokeFixtureIdFromArgs");
+    expect(draftSmokeSource).toContain("report fixture:");
+    expect(saveSmokeSource).toContain("getReportSmokeFixture");
+    expect(saveSmokeSource).toContain("getReportSmokeFixtureIdFromArgs");
+    expect(saveSmokeSource).toContain("report fixture:");
+    expect(auditSmokeSource).toContain("getSajuAuditFixture");
+    expect(auditFormatterSource).toContain("audit fixture:");
+  });
+
+  it("routes report smoke through deokmin external pillars instead of hardcoded default facts", () => {
+    expect(matrixSource).toContain("deokmin-external-manse");
+    expect(matrixSource).toContain("己卯");
+    expect(matrixSource).toContain("辛未");
+    expect(matrixSource).toContain("甲申");
+    expect(matrixSource).toContain("戊辰");
+    expect(draftSmokeSource).not.toContain("deokminSampleFacts");
+    expect(saveSmokeSource).not.toContain("deokminSampleFacts");
+    expect(saveSmokeSource).toContain("1999-07-31");
+    expect(saveSmokeSource).toContain("07:30");
+  });
+});

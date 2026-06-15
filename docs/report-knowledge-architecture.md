@@ -695,6 +695,44 @@ hidden-stem, twelve-life-stage, sinsal, or gwiin data.
 If a feature appears only in external comparison, it stays out of the final
 confirmed table unless the production rule set later adopts that basis.
 
+## REPORT-16B Fixture Matrix and Differentiation Modules
+
+REPORT-16B makes report smoke fixture-driven instead of relying on the
+historical default fixture only.
+
+- `--fixture default` uses the historical `default-smoke` fixture.
+- `--fixture deokmin` uses `deokmin-external-manse`, whose expected pillars are
+  `己卯 辛未 甲申 戊辰` and whose report facts use `기묘 신미 갑신 무진`.
+
+Draft and generation-save smoke scripts print `report fixture: ...` before
+calling OpenAI or Supabase. If OpenAI configuration is missing, the smoke can
+skip safely while still showing which fixture would have been used.
+
+`reportQualityFixtureMatrix` is a knowledge-layer QA matrix. It contains varied
+Saju pillars, day masters, feature labels, quality focus tags, and MBTI types so
+report quality can be checked beyond a single ENTJ-centered example. These
+fixtures are not final user profiles and must not cause missing features to be
+invented.
+
+`reportDifferentiationModules` adds deterministic evidence modules:
+
+- `내 사주의 무기`
+- `반복되는 함정`
+- `찔리는 일상 장면`
+- `바꾸는 스위치`
+- `관계에서 봐야 할 조건`
+
+Modules are built only from selected Saju feature evidence, spotlight items,
+signature scenes, and the current MBTI. They are capped at five modules with at
+most three items each. They are added to the evidence packet for the writer, but
+they are not part of the OpenAI response schema. Visible module rendering is
+deferred to a later UI task so validated draft persistence remains unchanged.
+
+The prompt treats differentiation modules as reading aids. It should not copy
+module titles mechanically; it should fold the concrete scenes and switch
+actions into chapter prose. MBTI is still a behavior lens, not a recommended
+type list.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

@@ -9,15 +9,18 @@ import {
   deriveAllowedSajuTermsFromEvidencePacket,
 } from "../src/lib/report-generation/openaiReportWriterPrompt";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
-import {
-  buildSafeSajuFeatureEvidenceDebugSummary,
-  formatSafeSajuFeatureEvidenceDebugSummary,
-} from "../src/lib/report-knowledge/sajuFeatureEvidenceDebug";
 import type {
   ComprehensiveReportEvidencePacket,
   SelectedSajuFeatureEvidence,
 } from "../src/lib/report-knowledge/comprehensiveReportEvidenceTypes";
-import type { ComputedSajuFacts } from "../src/lib/report-knowledge/sajuComputedFactsTypes";
+import {
+  getReportSmokeFixture,
+  getReportSmokeFixtureIdFromArgs,
+} from "../src/lib/report-knowledge/reportQualityFixtureMatrix";
+import {
+  buildSafeSajuFeatureEvidenceDebugSummary,
+  formatSafeSajuFeatureEvidenceDebugSummary,
+} from "../src/lib/report-knowledge/sajuFeatureEvidenceDebug";
 
 type RequiredOpenAIReportEnvName =
   | "OPENAI_REPORT_WRITER_ENABLED"
@@ -29,35 +32,6 @@ const requiredOpenAIReportEnvNames = [
   "OPENAI_API_KEY",
   "OPENAI_REPORT_MODEL",
 ] as const satisfies readonly RequiredOpenAIReportEnvName[];
-
-const deokminSampleFacts = {
-  dayMaster: "갑",
-  dayPillar: "갑신",
-  yearPillar: "丙子",
-  monthPillar: "己亥",
-  hourPillar: "丁未",
-  fiveElementCounts: {
-    wood: 2,
-    fire: 0,
-    earth: 4,
-    metal: 2,
-    water: 0,
-  },
-  excessiveElements: ["earth"],
-  missingElements: ["fire", "water"],
-  usefulElements: ["water", "wood"],
-  tenGodSignals: [
-    { tenGod: "pian_cai", strength: "strong" },
-    { tenGod: "zheng_cai", strength: "present" },
-    { tenGod: "zheng_guan", strength: "strong" },
-    { tenGod: "qi_sha", strength: "strong" },
-    { tenGod: "zheng_yin", strength: "missing" },
-    { tenGod: "shi_shen", strength: "missing" },
-  ],
-  specialPatterns: ["jaeda_sinyak", "no_resource", "no_output"],
-  sinsal: ["hyeonchim", "hongyeom", "gwimun", "wonjin"],
-  gwiin: ["jaego"],
-} as const satisfies ComputedSajuFacts;
 
 function writeStatus(message: string): void {
   process.stdout.write(`${message}\n`);
@@ -177,6 +151,12 @@ function writeSafeFailure(error: unknown): void {
 }
 
 async function run(): Promise<void> {
+  const fixture = getReportSmokeFixture(
+    getReportSmokeFixtureIdFromArgs(process.argv.slice(2)),
+  );
+
+  writeStatus(`report fixture: ${fixture.id}`);
+
   if (shouldSkipSmoke() || getEnvValue("OPENAI_REPORT_WRITER_ENABLED") !== "1") {
     writeStatus("skipped: OpenAI report writer smoke is not enabled.");
     return;
@@ -193,8 +173,8 @@ async function run(): Promise<void> {
   writeStatus("start");
 
   const { packet, mappedFeatures } = buildComprehensiveReportEvidencePacketFromComputedFacts({
-    mbtiType: "ENTJ",
-    sajuFacts: deokminSampleFacts,
+    mbtiType: fixture.mbti,
+    sajuFacts: fixture.sajuFacts,
   });
   writeSafeSajuFeatureDebug({
     computedFeatureIds: mappedFeatures.featureIds,
@@ -204,8 +184,8 @@ async function run(): Promise<void> {
   });
   const allowedSajuTerms = deriveAllowedSajuTermsFromEvidencePacket(packet);
   const messages = buildOpenAIComprehensiveReportWriterMessages({
-    userDisplayName: "덕민",
-    mbtiType: "ENTJ",
+    userDisplayName: fixture.label,
+    mbtiType: fixture.mbti,
     evidencePacket: packet,
     allowedSajuTerms,
   });
@@ -216,8 +196,8 @@ async function run(): Promise<void> {
   });
 
   const result = await generateComprehensiveReportDraft({
-    userDisplayName: "덕민",
-    mbtiType: "ENTJ",
+    userDisplayName: fixture.label,
+    mbtiType: fixture.mbti,
     evidencePacket: packet,
     config: {
       apiKey,
@@ -239,9 +219,7 @@ async function run(): Promise<void> {
     }`,
   );
   writeStatus(`core line: ${result.draft.coreLine}`);
-  writeStatus(
-    `first chapter: ${firstChapter?.titleKo ?? "none"}`,
-  );
+  writeStatus(`first chapter: ${firstChapter?.titleKo ?? "none"}`);
   for (const warning of result.warnings) {
     if (warning.startsWith("quality repair:")) {
       writeStatus(warning);

@@ -10,6 +10,7 @@ import { selectSajuFeaturesForChapter } from "./sajuFeatureSelector";
 import { buildSajuFeatureSpotlight } from "./sajuFeatureSpotlight";
 import { buildSajuPillarFeaturePlacements } from "./sajuPillarFeaturePlacement";
 import { selectSajuSignatureScenes } from "./sajuSignatureSceneRules";
+import { buildReportDifferentiationModules } from "./reportDifferentiationModules";
 import { requireSajuFeatureEntry } from "./sajuFeatureTaxonomy";
 import type {
   SajuFeatureCategory,
@@ -497,6 +498,12 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
     mbtiType: input.mbtiType,
     limit: 8,
   });
+  const reportDifferentiationModules = buildReportDifferentiationModules({
+    selectedSajuFeatureEvidence,
+    sajuFeatureSpotlight,
+    sajuSignatureScenes,
+    mbtiType: input.mbtiType,
+  });
 
   return {
     packet: {
@@ -507,6 +514,9 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
         : { sajuPillarFeaturePlacements }),
       ...(sajuFeatureSpotlight === undefined ? {} : { sajuFeatureSpotlight }),
       ...(sajuSignatureScenes.length === 0 ? {} : { sajuSignatureScenes }),
+      ...(reportDifferentiationModules.length === 0
+        ? {}
+        : { reportDifferentiationModules }),
       globalWarnings: [
         ...packet.globalWarnings,
         ...mappedSaju.warnings,

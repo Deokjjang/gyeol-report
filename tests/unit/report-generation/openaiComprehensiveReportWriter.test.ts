@@ -281,7 +281,7 @@ describe("OpenAI comprehensive report writer", () => {
     expect(JSON.stringify(calls[0].body)).toContain("day_master_gabmok");
     expect(result.draft).toMatchObject({
       sajuFeatureSpotlight: {
-        title: "덕민님 사주에서 특히 눈에 띄는 기운",
+        title: "사용자님 사주에서 특히 눈에 띄는 기운",
       },
       sajuSignatureScenes: expect.arrayContaining([
         expect.objectContaining({ id: "hyeonchim_entj_fast_conclusion" }),

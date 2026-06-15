@@ -9,6 +9,8 @@ export * from "./knowledgeValidators";
 export * from "./mbtiKnowledgeBase";
 export * from "./mbtiEvidenceScoring";
 export * from "./mbtiKnowledgeTypes";
+export * from "./reportDifferentiationModules";
+export * from "./reportQualityFixtureMatrix";
 export * from "./reportSectionSchema";
 export * from "./sajuDayPillarKnowledge";
 export * from "./sajuKnowledgeBase";

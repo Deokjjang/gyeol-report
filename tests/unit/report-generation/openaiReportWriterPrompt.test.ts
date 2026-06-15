@@ -38,7 +38,7 @@ describe("OpenAI report writer prompt", () => {
       sajuFacts: deokminSampleFacts,
     });
     const messages = buildOpenAIComprehensiveReportWriterMessages({
-      userDisplayName: "덕민",
+      userDisplayName: "사용자",
       mbtiType: "ENTJ",
       evidencePacket: packet,
     });
@@ -90,7 +90,7 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("hitReadingLines");
     expect(combined).toContain("solutionLines");
     expect(combined).toContain("바로 와닿는 장면 문장");
-    expect(combined).toContain("덕민님, 이런 상황 많지 않나요");
+    expect(combined).toContain("사용자님, 이런 상황 많지 않나요");
     expect(combined).toContain("실천 솔루션");
     expect(combined).toContain(
       "final_message는 단순 요약이 아니라 전체 리포트의 상징을 회수하는 장이다",
@@ -151,7 +151,7 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("구체적 장면 예시");
     expect(combined).toContain("실천 솔루션");
     expect(combined).toContain("명리학적 흐름");
-    expect(combined).toContain("덕민님, 이런 상황 자주 나오지 않나요");
+    expect(combined).toContain("사용자님, 이런 상황 자주 나오지 않나요");
     expect(combined).toContain("공부/일 루틴");
     expect(combined).toContain("오행 부족/과다에 따른 생활 조언");
     expect(combined).toContain("밤 산책");
@@ -167,7 +167,7 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).not.toContain("INFP");
     expect(combined).not.toContain("INTP");
     expect(combined).not.toContain("MBTI 예시");
-    expect(combined).toContain("편관은 덕민님을 편하게 두지 않는 압박");
+    expect(combined).toContain("편관은 사용자님을 편하게 두지 않는 압박");
     expect(combined).toContain("휴식은 감정 문제가 아니라 성능 유지 장치");
     expect(combined).toContain("공통점");
     expect(combined).toContain("차이점");
@@ -274,9 +274,32 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("sajuFeatureSpotlight");
   });
 
+  it("instructs the model to use differentiation modules without overfitting", () => {
+    const { packet } = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: "ENTJ",
+      sajuFacts: deokminSampleFacts,
+    });
+    const messages = buildOpenAIComprehensiveReportWriterMessages({
+      mbtiType: "ENTJ",
+      evidencePacket: packet,
+    });
+    const combined = [messages.system, messages.developer, messages.user].join("\n");
+
+    expect(combined).toContain("reportDifferentiationModules");
+    expect(combined).toContain("차별화 모듈");
+    expect(combined).toContain("재미는 가벼운 농담이 아니라, 구체 장면과 비유에서 나온다");
+    expect(combined).toContain("각 챕터는 같은 결론을 반복하지 말고 서로 다른 정보 역할");
+    expect(combined).toContain("찔리는 일상 장면");
+    expect(combined).toContain("바꾸는 스위치");
+    expect(combined).toContain("MBTI 보완 유형 추천 목록을 쓰지 말고");
+    expect(combined).not.toContain("덕민");
+    expect(combined).not.toContain("ISFP, INFP, INTP");
+    expect(combined).not.toContain("MBTI 예시");
+  });
+
   it("builds a repair prompt for same-schema narrative fixes", () => {
     const messages = buildOpenAIComprehensiveReportRepairMessages({
-      userDisplayName: "덕민",
+      userDisplayName: "사용자",
       mbtiType: "ENTJ",
       allowedSajuTerms: ["갑목", "갑신일주", "현침살"],
       draftJson:

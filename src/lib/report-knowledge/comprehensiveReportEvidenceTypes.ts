@@ -13,6 +13,7 @@ import type { SajuKnowledgeTopic } from "./sajuKnowledgeTypes";
 import type { SajuFeatureSpotlightSection } from "./sajuFeatureSpotlight";
 import type { SajuSignatureScene } from "./sajuSignatureSceneRules";
 import type { SajuPillarFeaturePlacement } from "./sajuPillarFeaturePlacement";
+import type { ReportDifferentiationModule } from "./reportDifferentiationModules";
 
 export type EvidenceRole =
   | "primary_saju"
@@ -72,5 +73,6 @@ export type ComprehensiveReportEvidencePacket = {
   readonly sajuPillarFeaturePlacements?: readonly SajuPillarFeaturePlacement[];
   readonly sajuFeatureSpotlight?: SajuFeatureSpotlightSection;
   readonly sajuSignatureScenes?: readonly SajuSignatureScene[];
+  readonly reportDifferentiationModules?: readonly ReportDifferentiationModule[];
   readonly globalWarnings: readonly string[];
 };
