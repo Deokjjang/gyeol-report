@@ -73,6 +73,7 @@ const repairableDraftValidationErrorCodes = [
   "UNSAFE_ADVERTISING_COPY",
   "UNSAFE_CERTAINTY_COPY",
   "REPEATED_SENTENCE",
+  "REPEATED_QUESTION",
   "MBTI_TYPE_EXAMPLE_FORBIDDEN",
 ] as const;
 const repairableDraftValidationErrorCodeSet = new Set<string>(
@@ -165,6 +166,21 @@ const forbiddenInternalMetaPhrases = [
   "프롬" + "프트",
   "디버" + "그",
   "debug",
+  "prompt",
+  "signature scene",
+  "spotlight",
+  "feature evidence",
+  "selected evidence",
+  "computed feature",
+  "raw",
+  "체감형 명중",
+  "정리와 각인",
+  "시그니처 장면",
+  "스포트라이트",
+  "선택된 근거",
+  "계산된 feature",
+  "생성 프롬프트",
+  "내부 지시",
   "테스트" + "용",
 ] as const;
 
@@ -1097,6 +1113,10 @@ export function validateComprehensiveReportDraftAfterRepair(
 
   const value = parseDraft(input, errors, options);
 
+  if (value !== undefined) {
+    appendUserVisiblePromptArtifactErrors(errors, value);
+  }
+
   if (
     value !== undefined &&
     isOnlyResidualRiskGenericError(errors) &&
@@ -1241,6 +1261,10 @@ function splitBodySentences(body: string): readonly string[] {
     );
 }
 
+function isQuestionSentence(sentence: string): boolean {
+  return sentence.endsWith("?") || sentence.endsWith("？");
+}
+
 function appendRepetitionErrors(
   errors: string[],
   sections: readonly ComprehensiveReportDraftSection[],
@@ -1259,6 +1283,9 @@ function appendRepetitionErrors(
   for (const [sentence, count] of counts) {
     if (count >= 3) {
       errors.push(`REPEATED_SENTENCE: ${sentence}`);
+    }
+    if (count >= 2 && isQuestionSentence(sentence)) {
+      errors.push(`REPEATED_QUESTION: ${sentence}`);
     }
   }
 }
@@ -1776,6 +1803,9 @@ function parseSajuSignatureScenes(
           errors.push(`sajuSignatureScenes.${index}.${field} must be a string array.`);
         }
       }
+      if (scene.sceneLines !== undefined && !isStringArray(scene.sceneLines)) {
+        errors.push(`sajuSignatureScenes.${index}.sceneLines must be a string array.`);
+      }
       const topics: ParsedSajuSignatureScene["topics"] = isStringArray(scene.topics)
         ? scene.topics.filter(
             (topic): topic is ParsedSajuSignatureScene["topics"][number] =>
@@ -1795,6 +1825,11 @@ function parseSajuSignatureScenes(
         featureIds: isStringArray(scene.featureIds) ? scene.featureIds : [],
         featureLabels: isStringArray(scene.featureLabels) ? scene.featureLabels : [],
         topics,
+        sceneLines: isStringArray(scene.sceneLines)
+          ? scene.sceneLines
+          : typeof scene.sceneLine === "string"
+            ? [scene.sceneLine]
+            : [],
         sceneLine: typeof scene.sceneLine === "string" ? scene.sceneLine : "",
         interpretationLine:
           typeof scene.interpretationLine === "string" ? scene.interpretationLine : "",
@@ -1930,6 +1965,9 @@ function appendV2RepetitionErrors(
   for (const [sentence, count] of counts) {
     if (count >= 3) {
       errors.push(`REPEATED_SENTENCE: ${sentence}`);
+    }
+    if (count >= 2 && isQuestionSentence(sentence)) {
+      errors.push(`REPEATED_QUESTION: ${sentence}`);
     }
   }
 }
@@ -2268,6 +2306,99 @@ function parseDraft(
   return parseV1Draft(input, errors, options);
 }
 
+const repeatedKeyPhraseWarningTargets = [
+  "덜 닳게 오래",
+  "식히는 장치",
+  "말의 온도",
+  "책임 범위",
+  "혼자 버티",
+  "구조를 잡",
+] as const;
+
+const userVisiblePromptArtifactPhrases = ["draft"] as const;
+
+function collectUserVisibleDraftStrings(
+  draft: ComprehensiveReportDraft,
+): readonly string[] {
+  if (draft.version === "comprehensive_v2_draft") {
+    return [
+      draft.openingTitle,
+      draft.openingSummary,
+      draft.coreLine,
+      ...draft.chapters.flatMap((chapter) => [
+        chapter.titleKo,
+        chapter.headline,
+        ...chapter.hitReadingLines,
+        chapter.body,
+        ...chapter.solutionLines,
+        ...chapter.keyPhrases,
+      ]),
+      draft.finalAdvice,
+      ...draft.safetyNotes,
+      ...(draft.sajuFeatureSpotlight?.groups.flatMap((group) =>
+        group.items.flatMap((item) => [
+          group.title,
+          item.labelKo,
+          item.badge,
+          item.shortMeaning,
+          item.vividLine,
+          item.practicalLine,
+        ]),
+      ) ?? []),
+      ...(draft.sajuSignatureScenes?.flatMap((scene) => [
+        scene.title,
+        ...(scene.sceneLines ?? []),
+        scene.sceneLine,
+        scene.interpretationLine,
+        scene.practicalLine,
+      ]) ?? []),
+    ];
+  }
+
+  return [
+    draft.openingTitle,
+    draft.openingSummary,
+    draft.coreLine,
+    ...draft.sections.flatMap((section) => [
+      section.titleKo,
+      section.oneLine,
+      section.body,
+      ...section.evidenceSummary,
+    ]),
+    draft.finalAdvice,
+    ...draft.safetyNotes,
+  ];
+}
+
+function appendUserVisiblePromptArtifactErrors(
+  errors: string[],
+  draft: ComprehensiveReportDraft,
+): void {
+  const text = collectUserVisibleDraftStrings(draft).join("\n");
+
+  for (const phrase of userVisiblePromptArtifactPhrases) {
+    if (text.includes(phrase)) {
+      errors.push(`INTERNAL_META_COPY: ${phrase}`);
+    }
+  }
+}
+
+function countOccurrences(text: string, phrase: string): number {
+  if (phrase.length === 0) {
+    return 0;
+  }
+
+  let count = 0;
+  let index = text.indexOf(phrase);
+
+  while (index !== -1) {
+    count += 1;
+    index = text.indexOf(phrase, index + phrase.length);
+  }
+
+  return count;
+}
+
 function getV2SpotlightAndSceneWarnings(
   draft: ComprehensiveReportDraft | undefined,
 ): readonly string[] {
@@ -2307,6 +2438,20 @@ function getV2SpotlightAndSceneWarnings(
   ) {
     warnings.push("SAJU_FEATURE_SPOTLIGHT_USAGE_NOT_DETECTED");
   }
+  for (const phrase of repeatedKeyPhraseWarningTargets) {
+    const count = countOccurrences(narrativeText, phrase);
+
+    if (count > 5) {
+      warnings.push(`REPEATED_KEY_PHRASE_WARNING: ${phrase}`);
+    }
+  }
+  for (const chapter of draft.chapters) {
+    const count = countOccurrences(chapter.body, "덕민님,");
+
+    if (count > 3) {
+      warnings.push(`CHAPTER_OPENING_PATTERN_REPEATED: ${chapter.chapterId}`);
+    }
+  }
 
   return warnings;
 }
@@ -2321,6 +2466,10 @@ export function validateComprehensiveReportDraft(
   appendUnsupportedSajuTermErrors(errors, input, options);
 
   const value = parseDraft(input, errors, options);
+
+  if (value !== undefined) {
+    appendUserVisiblePromptArtifactErrors(errors, value);
+  }
 
   if (
     value !== undefined &&

@@ -588,6 +588,39 @@ in each major chapter when available. This is a usage requirement for provided
 evidence only. OpenAI must not invent missing feature ids, 신살, 귀인, 길신,
 일주 meanings, 오행 states, 십성, or patterns.
 
+## REPORT-15H Feature Accuracy Audit and Reading Polish
+
+REPORT-15H adds a deterministic feature audit layer for checking what the V1
+rule set actually detects from the four pillars. The audit reports normalized
+pillars, stems, branches, day master, day branch, detected feature labels,
+twelve-sinsal results under multiple basis checks, and watched-but-not-detected
+items such as 반안살, 백호대살, 문창귀인, 금여록, 도화살, 역마살, and 화개살.
+
+The audit is diagnostic only. If a watched feature is not detected under the
+current V1 rule set, it must not be shown in the final user report. Computed
+features are surfaced strongly, but absent features are not invented.
+
+The local smoke helper `scripts/smoke_audit_saju_features.ts` runs without
+OpenAI, Supabase, payment state, or API keys. It prints safe labels and rule
+diagnostics only.
+
+Spotlight cards remain deterministic but are more compact: feature name, badge,
+one-line meaning, short vivid reading, and one practical line. Good fortune
+features should feel desirable, while caution features should explain a scene
+and an operating method instead of frightening the user.
+
+Signature scene rules can now carry multiple `sceneLines`. The report writer
+should use these as varied scene evidence, not copy them verbatim, and should
+mix concrete contexts such as meetings, KakaoTalk, family requests, account
+separation, professional reading, relationship conversations, and late-night
+rumination.
+
+Final generated report copy must not leak internal generation terms such as
+`signature scene`, `spotlight`, `feature evidence`, `selected evidence`,
+`computed feature`, `prompt`, `schema`, `OpenAI`, `JSON`, `draft`, `debug`,
+체감형 명중, 정리와 각인, 시그니처 장면, 스포트라이트, 선택된 근거, 계산된
+feature, 생성 프롬프트, or 내부 지시.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

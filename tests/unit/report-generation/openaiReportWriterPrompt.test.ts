@@ -235,6 +235,13 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("사주 feature spotlight");
     expect(combined).toContain("sajuSignatureScenes");
     expect(combined).toContain("signature scene");
+    expect(combined).toContain("같은 질문을 반복하지 말고");
+    expect(combined).toContain(
+      "회의, 카톡, 가족 부탁, 계좌 분리, 전문서 공부, 연애 대화, 밤에 생각이 안 꺼지는 장면",
+    );
+    expect(combined).toContain("signature scene은 내부 용어");
+    expect(combined).toContain("체감형 명중");
+    expect(combined).toContain("정리와 각인");
     expect(combined).toContain("용하다");
     expect(combined).toContain(
       "본문에서는 각 주요 chapter마다 spotlight 또는 signature scene 중 최소 1개 이상",

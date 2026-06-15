@@ -110,6 +110,7 @@ const sajuSignatureScenesSchema = {
       featureIds: stringArraySchema,
       featureLabels: stringArraySchema,
       topics: stringArraySchema,
+      sceneLines: stringArraySchema,
       sceneLine: { type: "string", minLength: 1 },
       interpretationLine: { type: "string", minLength: 1 },
       practicalLine: { type: "string", minLength: 1 },

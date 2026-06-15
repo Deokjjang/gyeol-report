@@ -84,7 +84,7 @@ const spotlightCopyByFeatureId: Partial<Record<string, SpotlightCopy>> = {
     badge: "중심을 잡는 장수의 별",
     shortMeaning: "흩어진 판에서 기준을 세우는 기운",
     vividLine:
-      "사람들이 우왕좌왕할 때 뒤에 숨기보다 앞에서 중심을 잡는 힘입니다.",
+      "장수의 별처럼 흩어진 판에서 중심을 잡는 힘입니다. 책임 있는 자리, 팀의 기준을 세우는 장면, 이름이 걸린 역할에서 더 선명하게 빛날 수 있습니다.",
     practicalLine:
       "팀, 프로젝트, 책임 있는 자리에서 기준과 역할을 먼저 정리할수록 살아납니다.",
   },
@@ -92,7 +92,7 @@ const spotlightCopyByFeatureId: Partial<Record<string, SpotlightCopy>> = {
     badge: "막힌 길에 손을 내미는 귀인",
     shortMeaning: "중요한 순간에 도움과 기회가 붙는 기운",
     vividLine:
-      "완전히 혼자만 버티는 흐름이라기보다, 필요한 순간에 사람이나 제도의 통로가 열릴 수 있습니다.",
+      "막힌 길에서 귀한 사람이 손을 내미는 기운입니다. 혼자만으로 끝나는 사주가 아니라 필요한 순간에 사람, 제도, 기회가 붙을 수 있는 통로입니다.",
     practicalLine:
       "도움을 기다리기보다 필요한 것을 정확히 요청할 때 더 잘 살아납니다.",
   },
@@ -100,7 +100,7 @@ const spotlightCopyByFeatureId: Partial<Record<string, SpotlightCopy>> = {
     badge: "돈과 자원을 담는 창고",
     shortMeaning: "수입과 자원을 저장하고 구조화하는 기운",
     vividLine:
-      "벌고 흘려보내는 것보다, 묶고 남기는 구조에서 재물 감각이 살아납니다.",
+      "돈과 자원을 담는 창고입니다. 벌고 흘려보내는 사람보다 묶고 남기는 구조를 만들 때 재물 감각이 살아납니다.",
     practicalLine:
       "계좌 분리, 자동저축, 자산 기록처럼 돈의 자리를 정해 두는 방식이 맞습니다.",
   },
@@ -131,7 +131,7 @@ const spotlightCopyByFeatureId: Partial<Record<string, SpotlightCopy>> = {
     badge: "보이지 않는 자원 통로",
     shortMeaning: "겉으로 드러나지 않은 도움과 여지를 찾는 기운",
     vividLine:
-      "막힌 듯 보여도 뒤쪽에 남아 있는 선택지나 도움의 통로를 찾는 감각입니다.",
+      "겉으로 바로 보이지 않는 숨은 자원입니다. 막힌 듯 보여도 사람, 기록, 제도, 예전 인연 속에서 길을 다시 찾는 힘입니다.",
     practicalLine:
       "한 번에 포기하기보다 사람, 제도, 기록 속의 숨은 자원을 확인하는 방식이 맞습니다.",
   },
@@ -147,7 +147,7 @@ const spotlightCopyByFeatureId: Partial<Record<string, SpotlightCopy>> = {
     badge: "비워진 자리를 다시 채우는 힘",
     shortMeaning: "기대와 현실 사이의 빈칸을 다루는 기운",
     vividLine:
-      "분명히 잡았다고 느낀 일이 중간에 비거나 방향이 바뀌는 식으로 체감될 수 있습니다.",
+      "비어 있는 자리를 다시 채우는 기운입니다. 계획이 중간에 비거나 방향이 바뀌는 느낌이 있을 수 있습니다.",
     practicalLine:
       "계획에는 여백을 두고, 약속과 역할은 글로 확인하는 편이 안정적입니다.",
   },
@@ -155,7 +155,7 @@ const spotlightCopyByFeatureId: Partial<Record<string, SpotlightCopy>> = {
     badge: "많은 자원을 감당하는 구조",
     shortMeaning: "기회와 책임이 몸보다 먼저 커질 수 있는 흐름",
     vividLine:
-      "할 일과 벌 일은 빨리 보이는데, 버티는 체력과 쉬는 장치가 뒤로 밀릴 수 있습니다.",
+      "기회와 책임이 먼저 커지는 흐름입니다. 할 일과 벌 일은 빨리 보이지만, 쉬는 기준이 없으면 몸이 뒤늦게 부담을 알려줄 수 있습니다.",
     practicalLine:
       "수입 목표만큼 휴식, 위임, 지출 방어 규칙을 같이 세워야 오래 갑니다.",
   },
@@ -171,7 +171,7 @@ const spotlightCopyByFeatureId: Partial<Record<string, SpotlightCopy>> = {
     badge: "혼자 버티기 쉬운 구조",
     shortMeaning: "도움을 요청하고 기대는 감각을 늦게 쓰는 흐름",
     vividLine:
-      "도움받을 수 있는 상황에서도 한참 혼자 정리한 뒤에야 요청할 수 있습니다.",
+      "도움받을 수 있는 상황에서도 한참 혼자 정리한 뒤에야 요청할 수 있습니다. 주변이 차갑기보다 덕민님의 요청 신호가 늦게 나갈 수 있습니다.",
     practicalLine:
       "막히는 순간 필요한 도움을 한 문장으로 적어 보내는 습관이 필요합니다.",
   },
@@ -179,7 +179,7 @@ const spotlightCopyByFeatureId: Partial<Record<string, SpotlightCopy>> = {
     badge: "책임이 쌓이는 두꺼운 땅",
     shortMeaning: "맡은 일과 부담을 오래 붙잡는 구조",
     vividLine:
-      "한번 맡은 일은 쉽게 내려놓지 못하고, 할 일의 무게가 몸에 쌓이기 쉽습니다.",
+      "한번 맡은 일은 쉽게 내려놓지 못하고, 할 일의 무게가 몸에 쌓이기 쉽습니다. 장점으로 쓰면 끈기지만, 기준이 없으면 부담이 오래 남습니다.",
     practicalLine:
       "맡을 일, 넘길 일, 버릴 일을 처음부터 나누는 기준표가 필요합니다.",
   },

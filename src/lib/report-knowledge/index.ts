@@ -18,6 +18,7 @@ export * from "./sajuComputedFactsTypes";
 export * from "./sajuEvidenceScoring";
 export * from "./sajuFeatureExtractionRules";
 export * from "./sajuFeatureEvidenceDebug";
+export * from "./sajuFeatureAudit";
 export * from "./sajuFeatureScoring";
 export * from "./sajuFeatureSelector";
 export * from "./sajuFeatureSpotlight";

@@ -389,6 +389,78 @@ describe("comprehensive report draft validator", () => {
     );
   });
 
+  it("rejects prompt artifact terms in user-visible V2 report text", () => {
+    const artifactCases = [
+      "체감형 명중",
+      "정리와 각인",
+      "signature scene",
+      "spotlight",
+      "feature evidence",
+      "selected evidence",
+      "OpenAI",
+      "JSON",
+      "draft",
+      "debug",
+    ];
+
+    for (const artifact of artifactCases) {
+      const draft = createValidV2Draft();
+      const result = validateComprehensiveReportDraft({
+        ...draft,
+        chapters: draft.chapters.map((chapter) =>
+          chapter.chapterId === "personality_pattern"
+            ? {
+                ...chapter,
+                body: `${chapter.body} ${artifact} 같은 내부 생성 용어는 최종 본문에 남으면 안 됩니다.`,
+              }
+            : chapter,
+        ),
+      });
+
+      expect(result.ok, artifact).toBe(false);
+      expect(result.errors.join("\n")).toContain("INTERNAL_META_COPY");
+    }
+  });
+
+  it("rejects exact duplicate questions in V2 chapter bodies", () => {
+    const duplicateQuestion = "왜 같은 질문이 반복되어 보일까요?";
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "personality_pattern" ||
+        chapter.chapterId === "work_money_study"
+          ? {
+              ...chapter,
+              body: `${chapter.body}\n${duplicateQuestion}`,
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("REPEATED_QUESTION");
+  });
+
+  it("warns when repeated key phrases dominate the V2 report", () => {
+    const draft = createValidV2Draft();
+    const repeatedPhrase = Array.from({ length: 6 }, () => "말의 온도").join(" ");
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "personality_pattern"
+          ? {
+              ...chapter,
+              body: `${chapter.body} ${repeatedPhrase}`,
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.warnings).toContain("REPEATED_KEY_PHRASE_WARNING: 말의 온도");
+  });
+
   it("rejects final V2 drafts without deterministic profile table", () => {
     const draftWithoutProfileTable = Object.fromEntries(
       Object.entries(createValidV2Draft()).filter(([key]) => key !== "profileTable"),

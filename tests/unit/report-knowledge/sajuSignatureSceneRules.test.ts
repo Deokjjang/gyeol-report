@@ -36,6 +36,18 @@ describe("Saju signature scene rules", () => {
     expect(scenes.map((scene) => scene.title).join("\n")).toContain("ENTJ");
     expect(scenes.map((scene) => scene.title).join("\n")).toContain("현침살");
     expect(scenes.map((scene) => scene.title).join("\n")).toContain("천을귀인");
+    expect(
+      scenes.find((scene) => scene.id === "hyeonchim_entj_fast_conclusion")
+        ?.sceneLines?.length,
+    ).toBeGreaterThanOrEqual(2);
+    expect(
+      scenes.find((scene) => scene.id === "cheoneul_no_resource_late_request")
+        ?.sceneLines?.length,
+    ).toBeGreaterThanOrEqual(2);
+    expect(
+      scenes.find((scene) => scene.id === "jaego_wealth_storage")?.sceneLines
+        ?.length,
+    ).toBeGreaterThanOrEqual(2);
   });
 
   it("does not fire rules when required features are missing", () => {

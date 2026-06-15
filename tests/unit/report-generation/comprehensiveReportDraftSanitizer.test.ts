@@ -115,6 +115,36 @@ describe("comprehensive report draft sanitizer", () => {
     expect(serialized).not.toContain("INTP");
   });
 
+  it("replaces prompt artifact wording from generated report copy", () => {
+    const draft = {
+      ...createNarrativeDraft(),
+      openingSummary:
+        "체감형 명중보다 중요한 것은 정리와 각인입니다. signature scene과 spotlight을 그대로 쓰지 않습니다.",
+      chapters: [
+        {
+          ...createNarrativeDraft().chapters[0],
+          body:
+            "feature evidence, selected evidence, computed feature, prompt, raw, debug 같은 내부 용어는 본문에 남기지 않습니다.",
+        },
+      ],
+    };
+    const result = sanitizeComprehensiveReportNarrativeDraft(draft);
+    const serialized = JSON.stringify(result.draft);
+
+    expect(result.sanitized).toBe(true);
+    expect(serialized).toContain("실감나는 해석");
+    expect(serialized).toContain("마무리");
+    expect(serialized).not.toContain("체감형 명중");
+    expect(serialized).not.toContain("정리와 각인");
+    expect(serialized).not.toContain("signature scene");
+    expect(serialized).not.toContain("spotlight");
+    expect(serialized).not.toContain("feature evidence");
+    expect(serialized).not.toContain("selected evidence");
+    expect(serialized).not.toContain("computed feature");
+    expect(serialized).not.toContain("prompt");
+    expect(serialized).not.toContain("debug");
+  });
+
   it("replaces standalone meta document wording but preserves legitimate document work terms", () => {
     const draft = {
       ...createNarrativeDraft(),

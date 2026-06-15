@@ -10,6 +10,7 @@ export type SajuSignatureSceneRule = {
     SajuFeatureTopic,
     "personality" | "work" | "money" | "love" | "relationship" | "family" | "growth"
   >[];
+  readonly sceneLines?: readonly string[];
   readonly sceneLine: string;
   readonly interpretationLine: string;
   readonly practicalLine: string;
@@ -21,6 +22,7 @@ export type SajuSignatureScene = {
   readonly featureIds: readonly string[];
   readonly featureLabels: readonly string[];
   readonly topics: SajuSignatureSceneRule["topics"];
+  readonly sceneLines?: readonly string[];
   readonly sceneLine: string;
   readonly interpretationLine: string;
   readonly practicalLine: string;
@@ -32,6 +34,11 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     requiredFeatureIds: ["sinsal_hyeonchim"],
     mbtiTypes: ["ENTJ"],
     topics: ["personality", "work", "relationship"],
+    sceneLines: [
+      "회의에서 상대가 설명을 끝내기 전에 이미 오류와 결론이 동시에 보일 수 있습니다.",
+      "카톡에서도 상대는 감정을 풀고 있는데, 덕민님은 속으로 그래서 다음 행동은 무엇인지가 먼저 떠오를 수 있습니다.",
+      "팀원이 애매하게 말하면 담당자, 마감, 기준표부터 떠올릴 가능성이 큽니다.",
+    ],
     sceneLine:
       "회의에서 상대가 설명을 끝내기 전에 이미 오류와 결론이 보일 수 있습니다.",
     interpretationLine:
@@ -65,6 +72,11 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     id: "jaego_wealth_storage",
     requiredFeatureIds: ["gwiin_jaego", "ten_god_pian_cai", "ten_god_zheng_cai"],
     topics: ["work", "money", "growth"],
+    sceneLines: [
+      "돈이 들어오면 쓰고 싶은 마음보다 먼저 이걸 어디에 묶어둘지가 떠오를 수 있습니다.",
+      "사업 아이디어를 볼 때도 단순 매출보다 고객 기반, 데이터, 반복 수익처럼 남는 구조를 먼저 보게 됩니다.",
+      "계좌가 섞이면 불편하고, 목적별로 나뉘어야 마음이 놓이는 쪽에 가깝습니다.",
+    ],
     sceneLine:
       "돈을 벌 방법은 빨리 보이지만, 계좌와 기록의 자리가 없으면 생각보다 쉽게 새어 나갈 수 있습니다.",
     interpretationLine:
@@ -76,6 +88,11 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     id: "cheoneul_no_resource_late_request",
     requiredFeatureIds: ["gwiin_cheoneul", "structure_no_resource"],
     topics: ["relationship", "work", "growth"],
+    sceneLines: [
+      "도움받을 통로는 있는데, 정작 덕민님은 한참 혼자 정리한 뒤에야 요청할 수 있습니다.",
+      "막힌 일을 혼자 끌고 가다가 뒤늦게 사람에게 물어보면 생각보다 빨리 풀리는 장면이 생길 수 있습니다.",
+      "필요한 도움을 말로 꺼내기 전까지는 주변에서 덕민님이 막힌 줄 모를 수 있습니다.",
+    ],
     sceneLine:
       "도움받을 통로는 있는데, 정작 한참 혼자 정리한 뒤에야 요청할 수 있습니다.",
     interpretationLine:
@@ -87,6 +104,11 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     id: "hongyeom_fire_missing_no_output_expression",
     requiredFeatureIds: ["sinsal_hongyeom", "element_fire_missing", "structure_no_output"],
     topics: ["love", "relationship", "growth"],
+    sceneLines: [
+      "호감은 있는데 말투가 건조해서 상대가 업무 보고처럼 느낄 수 있습니다.",
+      "연애 대화에서 마음은 이미 움직였는데, 칭찬이나 반응은 한 박자 늦게 나올 수 있습니다.",
+      "상대가 따뜻한 말을 기다릴 때 덕민님은 해결책을 먼저 고르는 장면이 생길 수 있습니다.",
+    ],
     sceneLine:
       "호감이 있어도 말투가 건조하게 나가거나, 따뜻한 반응이 늦게 도착할 수 있습니다.",
     interpretationLine:
@@ -98,6 +120,11 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     id: "wonjin_water_missing_relation_friction",
     requiredFeatureIds: ["sinsal_wonjin", "element_water_missing"],
     topics: ["love", "relationship", "family", "growth"],
+    sceneLines: [
+      "가까운 사람일수록 사소한 말투나 연락 간격이 더 크게 거슬릴 수 있습니다.",
+      "연인은 서운함을 말하는데, 덕민님은 왜 그게 문제인지부터 따지고 싶어질 수 있습니다.",
+      "가족 부탁도 반복되면 마음보다 피로가 먼저 올라오는 장면이 생길 수 있습니다.",
+    ],
     sceneLine:
       "가까운 사람일수록 사소한 말투나 연락 간격이 더 크게 거슬릴 수 있습니다.",
     interpretationLine:
@@ -109,6 +136,11 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     id: "jangseong_qi_sha_responsible_center",
     requiredFeatureIds: ["twelve_sinsal_jangseong", "ten_god_qi_sha"],
     topics: ["work", "relationship", "growth"],
+    sceneLines: [
+      "사람들이 흩어질 때 자연스럽게 앞에 서서 책임과 방향을 묶으려 할 수 있습니다.",
+      "팀의 기준이 흐리면 누가 시키기 전에도 역할표와 판단선을 만들고 싶어질 수 있습니다.",
+      "위기 상황에서는 감정보다 누가 무엇을 맡을지부터 정리하는 쪽이 편합니다.",
+    ],
     sceneLine:
       "사람들이 흩어질 때 자연스럽게 앞에 서서 책임과 방향을 잡으려 할 수 있습니다.",
     interpretationLine:
@@ -120,6 +152,11 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     id: "jangseong_zheng_guan_role_clarity",
     requiredFeatureIds: ["twelve_sinsal_jangseong", "ten_god_zheng_guan"],
     topics: ["work", "relationship", "growth"],
+    sceneLines: [
+      "모두의 역할이 흐릴수록 중심을 잡고 규칙을 세우는 쪽으로 움직이기 쉽습니다.",
+      "이름이 걸린 일에서는 대충 넘어가기보다 기준을 세워 책임 있게 끝내려는 힘이 강해집니다.",
+      "가족이나 팀 안에서도 역할과 약속이 분명해야 마음이 안정됩니다.",
+    ],
     sceneLine:
       "팀의 역할이 흐릴수록 중심을 잡고 규칙을 세우는 쪽으로 움직이기 쉽습니다.",
     interpretationLine:
@@ -131,6 +168,11 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     id: "water_missing_no_resource_private_burden",
     requiredFeatureIds: ["element_water_missing", "structure_no_resource"],
     topics: ["relationship", "family", "growth"],
+    sceneLines: [
+      "힘든 일이 있어도 바로 기대기보다 혼자 정리하고 버티는 시간이 길어질 수 있습니다.",
+      "밤에 누웠는데도 머릿속에서 다음 일정과 해결할 문제가 계속 돌아갈 수 있습니다.",
+      "감정이 힘든 날에도 누구에게 어떻게 말해야 할지 몰라 더 늦게 꺼내는 장면이 생길 수 있습니다.",
+    ],
     sceneLine:
       "힘든 일이 있어도 바로 기대기보다 혼자 정리하고 버티는 시간이 길어질 수 있습니다.",
     interpretationLine:
@@ -153,6 +195,11 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     id: "earth_excess_jaeda_sinyak_overload",
     requiredFeatureIds: ["element_earth_excess", "structure_jaeda_sinyak"],
     topics: ["work", "money", "growth"],
+    sceneLines: [
+      "할 일과 벌 일이 계속 쌓이는데 쉬는 기준은 자꾸 뒤로 밀릴 수 있습니다.",
+      "좋은 기회처럼 보여도 몸이 먼저 무거워지고 머릿속 체크리스트만 늘어나는 때가 있습니다.",
+      "돈을 벌 방법은 빨리 보이지만 방어 규칙이 없으면 책임까지 같이 커질 수 있습니다.",
+    ],
     sceneLine:
       "할 일과 벌 일은 계속 늘어나는데, 쉬는 기준은 자꾸 뒤로 밀릴 수 있습니다.",
     interpretationLine:
@@ -164,6 +211,11 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     id: "gwimun_hyeonchim_deep_analysis",
     requiredFeatureIds: ["sinsal_gwimun", "sinsal_hyeonchim"],
     topics: ["personality", "relationship", "growth"],
+    sceneLines: [
+      "남들이 그냥 넘긴 말의 뉘앙스나 작은 오류를 오래 붙잡고 분석할 수 있습니다.",
+      "전문서를 읽을 때도 문장보다 먼저 허점, 기준, 적용 조건이 보일 수 있습니다.",
+      "관계에서도 상대의 말 뒤에 숨은 의도를 너무 빨리 읽어 피곤해질 수 있습니다.",
+    ],
     sceneLine:
       "남들이 넘긴 말의 뉘앙스나 작은 오류를 오래 붙잡고 분석할 수 있습니다.",
     interpretationLine:
@@ -175,6 +227,11 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     id: "gongmang_water_missing_restless_gap",
     requiredFeatureIds: ["sinsal_gongmang", "element_water_missing"],
     topics: ["personality", "growth"],
+    sceneLines: [
+      "쉬고 있어도 머릿속 빈칸이 계속 떠올라 다음 일정과 문제를 굴릴 수 있습니다.",
+      "계획이 중간에 비면 몸은 멈췄는데 생각만 더 바빠지는 장면이 생길 수 있습니다.",
+      "밤 산책이나 기록이 없으면 머릿속에서 같은 문제를 여러 번 다시 열어볼 수 있습니다.",
+    ],
     sceneLine:
       "쉬고 있어도 머릿속 빈칸이 계속 떠올라 다음 일정과 문제를 굴릴 수 있습니다.",
     interpretationLine:
@@ -217,6 +274,10 @@ function toScene(rule: SajuSignatureSceneRule): SajuSignatureScene {
   const featureLabels = featureIds.map(
     (featureId) => requireSajuFeatureEntry(featureId).labelKo,
   );
+  const sceneLines = uniqueValues([
+    ...(rule.sceneLines ?? []),
+    rule.sceneLine,
+  ]);
   const title = uniqueValues([
     ...featureLabels,
     ...(rule.mbtiTypes ?? []),
@@ -228,7 +289,8 @@ function toScene(rule: SajuSignatureSceneRule): SajuSignatureScene {
     featureIds,
     featureLabels,
     topics: rule.topics,
-    sceneLine: rule.sceneLine,
+    sceneLines,
+    sceneLine: sceneLines[0] ?? rule.sceneLine,
     interpretationLine: rule.interpretationLine,
     practicalLine: rule.practicalLine,
   };

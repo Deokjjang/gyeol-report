@@ -420,30 +420,28 @@ function renderV2FeatureSpotlight(
           <p className="text-sm leading-6 text-neutral-400">{spotlight.subtitle}</p>
         )}
       </div>
-      <div className="grid gap-4">
+      <div className="grid gap-3">
         {groups.map((group) => (
-          <section key={group.groupId} className="space-y-3">
+          <section key={group.groupId} className="space-y-2">
             <h3 className="text-sm font-semibold text-emerald-100">
               {group.title}
             </h3>
-            <div className="grid gap-3 md:grid-cols-2">
+            <div className="grid gap-2 md:grid-cols-2">
               {group.items.map((item) => (
                 <article
                   key={`${group.groupId}:${item.featureId}`}
-                  className="rounded-md border border-neutral-800 bg-neutral-900/60 p-4"
+                  className="space-y-2 rounded-md border border-neutral-800 bg-neutral-900/60 p-4"
                 >
-                  <div className="space-y-1">
-                    <p className="text-base font-semibold text-neutral-50">
-                      {item.labelKo} - {item.badge}
-                    </p>
-                    <p className="text-sm leading-6 text-neutral-300">
-                      {item.shortMeaning}
-                    </p>
-                  </div>
-                  <p className="mt-3 text-sm leading-6 text-neutral-200">
+                  <p className="text-base font-semibold text-neutral-50">
+                    {item.labelKo} - {item.badge}
+                  </p>
+                  <p className="text-sm leading-6 text-neutral-300">
+                    {item.shortMeaning}
+                  </p>
+                  <p className="text-sm leading-6 text-neutral-200">
                     {item.vividLine}
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-neutral-400">
+                  <p className="text-sm leading-6 text-neutral-400">
                     {item.practicalLine}
                   </p>
                 </article>
