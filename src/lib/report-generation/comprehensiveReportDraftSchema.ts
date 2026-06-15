@@ -200,6 +200,9 @@ export const comprehensiveReportV2DraftJsonSchema = {
         specialPatterns: stringArraySchema,
         sinsal: stringArraySchema,
         gwiin: stringArraySchema,
+        twelveSinsal: stringArraySchema,
+        majorSinsal: stringArraySchema,
+        gwiinGilshin: stringArraySchema,
         mbti: {
           type: "string",
           minLength: 1,

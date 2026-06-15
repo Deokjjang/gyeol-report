@@ -77,6 +77,9 @@ export type ComprehensiveReportV2ProfileTable = {
   readonly specialPatterns: readonly string[];
   readonly sinsal: readonly string[];
   readonly gwiin: readonly string[];
+  readonly twelveSinsal?: readonly string[];
+  readonly majorSinsal?: readonly string[];
+  readonly gwiinGilshin?: readonly string[];
   readonly mbti: string;
 };
 

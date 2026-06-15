@@ -508,6 +508,43 @@ or receive a feature such as 반안살, 백호대살, 천을귀인, or 문창귀
 is not passed to OpenAI. OpenAI can only use selected feature evidence already
 present in the evidence packet.
 
+## REPORT-15F Evidence Debug and Surfacing
+
+REPORT-15F adds a diagnostic path for the full feature flow:
+
+1. computed feature ids
+2. selected saju feature evidence
+3. prompt evidence
+4. deterministic profile table display
+5. narrative usage requirements
+
+When `OPENAI_REPORT_WRITER_DEBUG_SAFE=1` is enabled, smoke scripts can print a
+safe evidence summary. The summary includes feature counts and Korean labels
+only. It does not print birth dates, raw birth data, API keys, OpenAI prompts,
+or full report text. The debug output includes `computed saju feature ids`,
+`computed saju feature labels`, `selected saju feature evidence total`,
+`selected saju feature evidence by chapter`, and `excluded high scoring
+features`.
+
+The debug layer also emits a selected evidence narrowness warning when the
+selected evidence stays on the older narrow set, when no `twelve_sinsal` feature
+is selected, or when no 귀인/길신 beyond 재고귀인 is selected. These warnings are
+diagnostic only and do not fail report generation.
+
+The deterministic V2 profile table can now surface grouped computed features:
+`십이신살`, `주요 신살`, and `귀인/길신`. These rows must be populated only from
+computed or selected feature evidence. Taxonomy-only features are not displayed.
+
+The prompt now requires each chapter to naturally use at least two features from
+its own `selectedSajuFeatureEvidence[chapterId]`. Good 길신 and 귀인 should use
+their symbolic image and practical direction at least once. Warning or mixed
+신살 should be explained as strength plus 운영법, not as fear.
+
+Until a dedicated MBTI complement scorer exists, relationship copy should not
+list fixed MBTI examples such as `ISFP`, `INFP`, or `INTP`. The report should
+describe relationship needs instead, such as emotional buffering, stable life
+rhythm, responsibility clarity, and respect for distance.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

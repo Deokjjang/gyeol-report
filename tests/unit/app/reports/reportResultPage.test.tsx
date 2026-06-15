@@ -118,6 +118,9 @@ function createV2Draft(): ComprehensiveReportV2Draft {
       specialPatterns: ["재다신약", "무인성", "무식상"],
       sinsal: ["현침살", "홍염살"],
       gwiin: ["재고귀인"],
+      twelveSinsal: ["장성살", "지살"],
+      majorSinsal: ["현침살", "홍염살", "백호대살"],
+      gwiinGilshin: ["천을귀인", "문창귀인", "재고귀인"],
       mbti: "ENTJ",
     },
     chapters: [
@@ -232,14 +235,18 @@ describe("report result page", () => {
     expect(html).toContain("일주 해석 키워드");
     expect(html).toContain("오행 분포");
     expect(html).toContain("십성 핵심");
-    expect(html).toContain("신살");
-    expect(html).toContain("귀인");
+    expect(html).toContain("십이신살");
+    expect(html).toContain("주요 신살");
+    expect(html).toContain("귀인/길신");
     expect(html).toContain("MBTI 입력값");
     expect(html).toContain("병자");
     expect(html).toContain("갑목");
     expect(html).toContain("화 부족");
     expect(html).toContain("편재");
     expect(html).toContain("현침살");
+    expect(html).toContain("장성살");
+    expect(html).toContain("천을귀인");
+    expect(html).not.toContain("도화살");
     expect(html).toContain("사주가 보여주는 기본 형상");
     expect(html).toContain("사주가 보여주는 기본 형상는 갑목과 갑신일주");
     expect(html).toContain("갑목은 방향을 세우고 판을 키우는 힘");

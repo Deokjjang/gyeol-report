@@ -388,8 +388,9 @@ function renderV2ProfileTable(
         {renderProfileRow("부족 오행", profile.missingElements)}
         {renderProfileRow("십성 핵심", profile.tenGodSummary)}
         {renderProfileRow("주요 구조", profile.specialPatterns)}
-        {renderProfileRow("신살", profile.sinsal)}
-        {renderProfileRow("귀인", profile.gwiin)}
+        {renderProfileRow("십이신살", profile.twelveSinsal)}
+        {renderProfileRow("주요 신살", profile.majorSinsal ?? profile.sinsal)}
+        {renderProfileRow("귀인/길신", profile.gwiinGilshin ?? profile.gwiin)}
         {renderProfileRow("MBTI 입력값", profile.mbti)}
       </dl>
     </section>

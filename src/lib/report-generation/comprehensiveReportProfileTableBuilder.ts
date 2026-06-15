@@ -1,6 +1,7 @@
 import type { ComprehensiveReportEvidencePacket } from "../report-knowledge/comprehensiveReportEvidenceTypes";
 import type { ComputedSajuFacts } from "../report-knowledge/sajuComputedFactsTypes";
 import { SAJU_KNOWLEDGE_BASE } from "../report-knowledge/sajuKnowledgeBase";
+import type { SajuFeatureCategory } from "../report-knowledge/sajuFeatureTypes";
 import type { FiveElement, SajuKnowledgeEntry } from "../report-knowledge/sajuKnowledgeTypes";
 import type { ComprehensiveReportV2ProfileTable } from "./comprehensiveReportDraftTypes";
 
@@ -40,6 +41,19 @@ function labelsForCategory(
     entries
       .filter((entry) => entry.category === category)
       .map((entry) => entry.labelKo),
+  );
+}
+
+function labelsForFeatureCategory(input: {
+  readonly packet: ComprehensiveReportEvidencePacket;
+  readonly category: SajuFeatureCategory;
+}): readonly string[] {
+  return uniqueValues(
+    input.packet.selectedSajuFeatureEvidence?.flatMap((chapter) =>
+      chapter.features
+        .filter((feature) => feature.category === input.category)
+        .map((feature) => feature.labelKo),
+    ) ?? [],
   );
 }
 
@@ -91,8 +105,31 @@ export function buildComprehensiveReportV2ProfileTable(input: {
   const dayPillarKeywords = buildDayPillarKeywords(entries);
   const elementBalanceLabels = labelsForCategory(entries, "element_balance");
   const fiveElementSummary = formatFiveElementCounts(input.sajuFacts);
+  const twelveSinsal = labelsForFeatureCategory({
+    packet: input.evidencePacket,
+    category: "twelve_sinsal",
+  });
+  const majorSinsal = labelsForFeatureCategory({
+    packet: input.evidencePacket,
+    category: "sinsal",
+  });
+  const gwiinGilshin = labelsForFeatureCategory({
+    packet: input.evidencePacket,
+    category: "gwiin",
+  });
+  const legacySinsal = labelsForCategory(entries, "sinsal");
+  const legacyGwiin = labelsForCategory(entries, "nobleman");
 
   return {
+    ...(input.sajuFacts?.yearPillar === undefined
+      ? {}
+      : { yearPillar: input.sajuFacts.yearPillar }),
+    ...(input.sajuFacts?.monthPillar === undefined
+      ? {}
+      : { monthPillar: input.sajuFacts.monthPillar }),
+    ...(input.sajuFacts?.hourPillar === undefined
+      ? {}
+      : { hourPillar: input.sajuFacts.hourPillar }),
     ...(dayPillar === undefined ? {} : { dayPillar }),
     ...(dayMaster === undefined ? {} : { dayMaster }),
     ...(dayPillarKeywords.length === 0 ? {} : { dayPillarKeywords }),
@@ -120,8 +157,11 @@ export function buildComprehensiveReportV2ProfileTable(input: {
           }),
     tenGodSummary: labelsForCategory(entries, "ten_god"),
     specialPatterns: labelsForCategory(entries, "special_pattern"),
-    sinsal: labelsForCategory(entries, "sinsal"),
-    gwiin: labelsForCategory(entries, "nobleman"),
+    sinsal: uniqueValues([...legacySinsal, ...majorSinsal, ...twelveSinsal]),
+    gwiin: uniqueValues([...legacyGwiin, ...gwiinGilshin]),
+    ...(twelveSinsal.length === 0 ? {} : { twelveSinsal }),
+    ...(majorSinsal.length === 0 ? {} : { majorSinsal }),
+    ...(gwiinGilshin.length === 0 ? {} : { gwiinGilshin }),
     mbti: input.mbtiType,
   };
 }

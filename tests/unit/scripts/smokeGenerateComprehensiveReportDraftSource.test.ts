@@ -6,6 +6,10 @@ const source = readFileSync(
   join(process.cwd(), "scripts/smoke_generate_comprehensive_report_draft.ts"),
   "utf8",
 );
+const debugHelperSource = readFileSync(
+  join(process.cwd(), "src/lib/report-knowledge/sajuFeatureEvidenceDebug.ts"),
+  "utf8",
+);
 
 describe("generate comprehensive report draft smoke script source", () => {
   it("uses explicit OpenAI report writer envs and sample evidence builder", () => {
@@ -14,6 +18,8 @@ describe("generate comprehensive report draft smoke script source", () => {
       "OPENAI_API_KEY",
       "OPENAI_REPORT_MODEL",
       "buildComprehensiveReportEvidencePacketFromComputedFacts",
+      "buildSafeSajuFeatureEvidenceDebugSummary",
+      "formatSafeSajuFeatureEvidenceDebugSummary",
       "generateComprehensiveReportDraft",
       "isComprehensiveReportV2Draft",
       "isSafeReportGenerationError",
@@ -23,6 +29,9 @@ describe("generate comprehensive report draft smoke script source", () => {
       "approx prompt chars",
       "response format",
       "schema keys",
+      "yearPillar",
+      "monthPillar",
+      "hourPillar",
       "draft version",
       "product type",
       "chapters",
@@ -44,6 +53,15 @@ describe("generate comprehensive report draft smoke script source", () => {
 
     for (const marker of requiredMarkers) {
       expect(source).toContain(marker);
+    }
+
+    for (const marker of [
+      "computed saju feature ids",
+      "selected saju feature evidence",
+      "excluded high scoring features",
+      "selected evidence narrowness",
+    ]) {
+      expect(debugHelperSource).toContain(marker);
     }
   });
 

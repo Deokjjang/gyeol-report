@@ -142,6 +142,16 @@ describe("report knowledge architecture document", () => {
       "Day-pillar tables detect",
       "feature-id merge and de-duplication",
       "No feature invention policy remains unchanged",
+      "REPORT-15F adds a diagnostic path",
+      "computed saju feature ids",
+      "selected saju feature evidence by chapter",
+      "excluded high scoring",
+      "selected evidence narrowness warning",
+      "십이신살",
+      "주요 신살",
+      "귀인/길신",
+      "selectedSajuFeatureEvidence[chapterId]",
+      "relationship copy should not",
     ];
 
     for (const marker of requiredMarkers) {

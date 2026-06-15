@@ -16,6 +16,11 @@ import {
   deriveAllowedSajuTermsFromEvidencePacket,
 } from "../src/lib/report-generation/openaiReportWriterPrompt";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
+import type { SelectedSajuFeatureEvidence } from "../src/lib/report-knowledge/comprehensiveReportEvidenceTypes";
+import {
+  buildSafeSajuFeatureEvidenceDebugSummary,
+  formatSafeSajuFeatureEvidenceDebugSummary,
+} from "../src/lib/report-knowledge/sajuFeatureEvidenceDebug";
 import type { ComputedSajuFacts } from "../src/lib/report-knowledge/sajuComputedFactsTypes";
 
 type RequiredSmokeEnvName =
@@ -46,6 +51,9 @@ const reportInput = {
 const deokminSampleFacts = {
   dayMaster: "갑",
   dayPillar: "갑신",
+  yearPillar: "丙子",
+  monthPillar: "己亥",
+  hourPillar: "丁未",
   fiveElementCounts: {
     wood: 2,
     fire: 0,
@@ -129,6 +137,21 @@ function writeOpenAIRequestDebug(input: {
   writeStatus(`approx prompt chars: ${input.promptChars}`);
   writeStatus("response format: comprehensive_report_draft");
   writeStatus(`schema keys: ${getSchemaTopLevelKeys().join(", ")}`);
+}
+
+function writeSafeSajuFeatureDebug(input: {
+  readonly computedFeatureIds: readonly string[];
+  readonly selectedEvidence: readonly SelectedSajuFeatureEvidence[] | undefined;
+}): void {
+  if (getOptionalEnvValue("OPENAI_REPORT_WRITER_DEBUG_SAFE") !== "1") {
+    return;
+  }
+
+  const summary = buildSafeSajuFeatureEvidenceDebugSummary(input);
+
+  for (const line of formatSafeSajuFeatureEvidenceDebugSummary(summary)) {
+    writeStatus(line);
+  }
 }
 
 function writeSafeGenerationFailure(error: {
@@ -257,9 +280,13 @@ async function run(): Promise<void> {
 
   writeStatus(`fulfilled report id: ${fulfillmentResult.fulfillment.reportId}`);
 
-  const { packet } = buildComprehensiveReportEvidencePacketFromComputedFacts({
+  const { packet, mappedFeatures } = buildComprehensiveReportEvidencePacketFromComputedFacts({
     mbtiType: "ENTJ",
     sajuFacts: deokminSampleFacts,
+  });
+  writeSafeSajuFeatureDebug({
+    computedFeatureIds: mappedFeatures.featureIds,
+    selectedEvidence: packet.selectedSajuFeatureEvidence,
   });
   const allowedSajuTerms = deriveAllowedSajuTermsFromEvidencePacket(packet);
   const messages = buildOpenAIComprehensiveReportWriterMessages({

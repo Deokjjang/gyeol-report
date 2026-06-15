@@ -100,4 +100,44 @@ describe("comprehensive report profile table builder", () => {
       expect.arrayContaining(["화 부족", "수 부족"]),
     );
   });
+
+  it("surfaces computed feature groups in the deterministic V2 table", () => {
+    const facts = {
+      ...deokminSampleFacts,
+      yearPillar: "병자",
+      monthPillar: "기해",
+      hourPillar: "정미",
+      earthlyBranches: ["子", "亥", "申", "未"],
+      heavenlyStems: ["丙", "己", "甲", "丁"],
+    } as const satisfies ComputedSajuFacts;
+    const { packet } = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: "ENTJ",
+      sajuFacts: facts,
+    });
+    const profileTable = buildComprehensiveReportV2ProfileTable({
+      evidencePacket: packet,
+      mbtiType: "ENTJ",
+      sajuFacts: facts,
+    });
+
+    expect(profileTable.yearPillar).toBe("병자");
+    expect(profileTable.monthPillar).toBe("기해");
+    expect(profileTable.hourPillar).toBe("정미");
+    expect(profileTable.twelveSinsal).toEqual(
+      expect.arrayContaining(["장성살", "지살"]),
+    );
+    expect(profileTable.majorSinsal).toEqual(
+      expect.arrayContaining(["현침살", "홍염살"]),
+    );
+    expect(profileTable.gwiinGilshin).toEqual(
+      expect.arrayContaining(["천을귀인", "재고귀인"]),
+    );
+    expect(profileTable.sinsal).toEqual(
+      expect.arrayContaining(["현침살", "홍염살", "장성살"]),
+    );
+    expect(profileTable.gwiin).toEqual(
+      expect.arrayContaining(["천을귀인", "재고귀인"]),
+    );
+    expect(profileTable.twelveSinsal).not.toContain("반안살");
+  });
 });

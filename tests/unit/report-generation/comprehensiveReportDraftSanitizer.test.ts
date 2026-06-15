@@ -87,6 +87,31 @@ describe("comprehensive report draft sanitizer", () => {
     expect(result.draft.profileTable.dayPillarKeywords).toEqual(["문서"]);
   });
 
+  it("removes fixed MBTI type example wording from generated relationship copy", () => {
+    const draft = {
+      ...createNarrativeDraft(),
+      chapters: [
+        {
+          ...createNarrativeDraft().chapters[0],
+          chapterId: "love_relationships" as const,
+          body:
+            "MBTI 예시: ISFP, INFP, INTP처럼 보완적으로 느껴질 수 있으나 MBTI만으로 궁합을 단정하지 않습니다.",
+          solutionLines: [
+            "MBTI 예시: ISFP, INFP, INTP 유형은 보완적으로 느껴질 수 있지만 MBTI만으로 궁합을 단정하지 않습니다.",
+          ],
+        },
+      ],
+    };
+    const result = sanitizeComprehensiveReportNarrativeDraft(draft);
+    const serialized = JSON.stringify(result.draft);
+
+    expect(result.sanitized).toBe(true);
+    expect(serialized).toContain("MBTI 관계 기준");
+    expect(serialized).toContain("감정을 천천히 풀어주고 생활 리듬이 안정적인 사람");
+    expect(serialized).not.toContain("MBTI 예시");
+    expect(serialized).not.toContain("ISFP, INFP, INTP");
+  });
+
   it("replaces standalone meta document wording but preserves legitimate document work terms", () => {
     const draft = {
       ...createNarrativeDraft(),

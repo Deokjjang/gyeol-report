@@ -6,6 +6,10 @@ const source = readFileSync(
   join(process.cwd(), "scripts/smoke_generate_and_save_comprehensive_report.ts"),
   "utf8",
 );
+const debugHelperSource = readFileSync(
+  join(process.cwd(), "src/lib/report-knowledge/sajuFeatureEvidenceDebug.ts"),
+  "utf8",
+);
 
 describe("generate and save comprehensive report smoke source", () => {
   it("uses required server env and orchestration boundary", () => {
@@ -15,6 +19,8 @@ describe("generate and save comprehensive report smoke source", () => {
       "OPENAI_REPORT_MODEL",
       "SUPABASE_URL",
       "SUPABASE_ANON_KEY",
+      "buildSafeSajuFeatureEvidenceDebugSummary",
+      "formatSafeSajuFeatureEvidenceDebugSummary",
       "generateAndPersistComprehensiveReport",
       "result url:",
       "http://localhost:3000/reports/",
@@ -31,6 +37,9 @@ describe("generate and save comprehensive report smoke source", () => {
       "approx prompt chars",
       "response format",
       "schema keys",
+      "yearPillar",
+      "monthPillar",
+      "hourPillar",
       "failed",
       "code:",
       "stage:",
@@ -44,6 +53,15 @@ describe("generate and save comprehensive report smoke source", () => {
 
     for (const marker of requiredMarkers) {
       expect(source).toContain(marker);
+    }
+
+    for (const marker of [
+      "computed saju feature ids",
+      "selected saju feature evidence",
+      "excluded high scoring features",
+      "selected evidence narrowness",
+    ]) {
+      expect(debugHelperSource).toContain(marker);
     }
   });
 

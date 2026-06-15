@@ -73,6 +73,7 @@ const repairableDraftValidationErrorCodes = [
   "UNSAFE_ADVERTISING_COPY",
   "UNSAFE_CERTAINTY_COPY",
   "REPEATED_SENTENCE",
+  "MBTI_TYPE_EXAMPLE_FORBIDDEN",
 ] as const;
 const repairableDraftValidationErrorCodeSet = new Set<string>(
   repairableDraftValidationErrorCodes,
@@ -250,6 +251,9 @@ const profileTableKeys = [
   "specialPatterns",
   "sinsal",
   "gwiin",
+  "twelveSinsal",
+  "majorSinsal",
+  "gwiinGilshin",
   "mbti",
 ] as const;
 
@@ -428,14 +432,20 @@ const cautiousMbtiRelationMarkers = [
   "궁합을 단정",
   "단정하지",
 ] as const;
-const mbtiRelationExampleMarkers = [
-  "MBTI 예시",
+const mbtiRelationNeedMarkers = [
+  "MBTI 관계 기준",
   "MBTI",
-  "유형",
-  "ISFP",
-  "INFP",
-  "INTP",
+  "성향",
+  "생활 태도",
+  "생활 리듬",
+  "감정",
+  "약속",
+  "거리",
+  "책임",
+  "안정",
 ] as const;
+const forbiddenMbtiTypeExampleLabel = "MBTI 예시";
+const forbiddenMbtiTypeExampleTypes = ["ISFP", "INFP", "INTP"] as const;
 const elementRemedyMarkers = [
   "밤 산책",
   "수변",
@@ -579,6 +589,22 @@ function hasAnyMarker(text: string, markers: readonly string[]): boolean {
 
 function countDistinctMarkers(text: string, markers: readonly string[]): number {
   return markers.filter((marker) => text.includes(marker)).length;
+}
+
+function containsForbiddenMbtiTypeExample(text: string): boolean {
+  const exampleTypeCount = countDistinctMarkers(
+    text,
+    forbiddenMbtiTypeExampleTypes,
+  );
+
+  return (
+    text.includes(forbiddenMbtiTypeExampleLabel) ||
+    (exampleTypeCount >= 2 &&
+      (text.includes("궁합") ||
+        text.includes("보완") ||
+        text.includes("유형") ||
+        text.includes("관계")))
+  );
 }
 
 function findChapter(
@@ -1541,6 +1567,18 @@ function parseProfileTable(
     ),
     sinsal: parseProfileStringArray(errors, value.sinsal, "sinsal"),
     gwiin: parseProfileStringArray(errors, value.gwiin, "gwiin"),
+    twelveSinsal:
+      value.twelveSinsal === undefined
+        ? undefined
+        : parseProfileStringArray(errors, value.twelveSinsal, "twelveSinsal"),
+    majorSinsal:
+      value.majorSinsal === undefined
+        ? undefined
+        : parseProfileStringArray(errors, value.majorSinsal, "majorSinsal"),
+    gwiinGilshin:
+      value.gwiinGilshin === undefined
+        ? undefined
+        : parseProfileStringArray(errors, value.gwiinGilshin, "gwiinGilshin"),
     mbti: typeof value.mbti === "string" ? value.mbti : "",
   };
 }
@@ -1829,6 +1867,7 @@ function appendV2TopicCoverageErrors(
   const riskChapter = findChapter(chapters, "risk_and_growth");
   const workText = getV2ChapterSearchText(workChapter);
   const loveSolutionText = loveChapter?.solutionLines.join("\n") ?? "";
+  const loveText = getV2ChapterSearchText(loveChapter);
   const riskText = getV2ChapterSearchText(riskChapter);
 
   if (workChapter !== undefined && !hasAnyMarker(workText, studyScopeMarkers)) {
@@ -1854,10 +1893,13 @@ function appendV2TopicCoverageErrors(
   }
   if (
     loveChapter !== undefined &&
-    (!hasAnyMarker(loveSolutionText, mbtiRelationExampleMarkers) ||
+    (!hasAnyMarker(loveSolutionText, mbtiRelationNeedMarkers) ||
       !hasAnyMarker(loveSolutionText, cautiousMbtiRelationMarkers))
   ) {
     errors.push("LOVE_MBTI_CAUTION_OR_EXAMPLE_MISSING");
+  }
+  if (loveChapter !== undefined && containsForbiddenMbtiTypeExample(loveText)) {
+    errors.push("MBTI_TYPE_EXAMPLE_FORBIDDEN");
   }
   if (riskChapter !== undefined && !hasAnyMarker(riskText, elementRemedyMarkers)) {
     errors.push("ELEMENT_REMEDY_MISSING");

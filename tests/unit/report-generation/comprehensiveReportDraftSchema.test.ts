@@ -60,6 +60,15 @@ describe("comprehensive report draft JSON schema", () => {
       "tenGodSummary",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "twelveSinsal",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "majorSinsal",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "gwiinGilshin",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
       "hitReadingLines",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
@@ -101,6 +110,9 @@ describe("comprehensive report draft JSON schema", () => {
     expect(serialized).not.toContain("monthPillar");
     expect(serialized).not.toContain("hourPillar");
     expect(serialized).not.toContain("dayPillarKeywords");
+    expect(serialized).not.toContain("twelveSinsal");
+    expect(serialized).not.toContain("majorSinsal");
+    expect(serialized).not.toContain("gwiinGilshin");
     expect(serialized).toContain("hitReadingLines");
     expect(serialized).toContain("solutionLines");
   });

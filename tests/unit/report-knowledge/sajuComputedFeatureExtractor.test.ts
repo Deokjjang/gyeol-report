@@ -85,6 +85,30 @@ describe("saju computed feature extractor", () => {
     ).toBe(true);
   });
 
+  it("derives stems and branches from four pillars when explicit arrays are absent", () => {
+    const result = extractComputedSajuFeatures({
+      yearPillar: "丙子",
+      monthPillar: "己亥",
+      dayPillar: "甲申",
+      hourPillar: "丁未",
+    });
+
+    expect(result.featureIds).toEqual(
+      expect.arrayContaining([
+        "day_pillar_gapsin",
+        "twelve_sinsal_jangseong",
+        "twelve_sinsal_mangsin",
+        "twelve_sinsal_jisal",
+        "twelve_sinsal_cheonsal",
+        "gwiin_cheoneul",
+        "gwiin_amrok",
+      ]),
+    );
+    expect(result.details.map((detail) => detail.matchedBy)).toEqual(
+      expect.arrayContaining(["dayPillar:갑신", "twelveSinsal:신:자"]),
+    );
+  });
+
   it("extracts twelve-sinsal from the sin-ja-jin group", () => {
     expect(
       extractFeatureIds({

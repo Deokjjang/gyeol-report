@@ -55,6 +55,13 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("좋은 기운은 좋게 느껴지게");
     expect(combined).toContain("주의 신살은 운영법으로");
     expect(combined).toContain("selectedSajuFeatureEvidence");
+    expect(combined).toContain(
+      "각 chapter는 selectedSajuFeatureEvidence[chapterId]에 제공된 feature 중 최소 2개 이상",
+    );
+    expect(combined).toContain(
+      "없는 feature를 만들지 말고 제공된 feature만 사용하라",
+    );
+    expect(combined).toContain("좋은 길신/귀인은 상징 이미지와 실제 활용 방향");
     expect(combined).toContain("symbolicImage");
     expect(combined).toContain("positiveReading");
     expect(combined).toContain("cautionReading");
@@ -70,10 +77,6 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("현침살");
     expect(combined).toContain("홍염살");
     expect(combined).toContain("재고귀인");
-    expect(combined).not.toContain("도화살");
-    expect(combined).not.toContain("반안살");
-    expect(combined).not.toContain("장성살");
-    expect(combined).not.toContain("천을귀인");
     expect(combined).toContain("comprehensive_v2_draft");
     expect(combined).toContain("hitReadingLines");
     expect(combined).toContain("solutionLines");
@@ -111,8 +114,9 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("맞는 상대");
     expect(combined).toContain("피해야 할 상대");
     expect(combined).toContain("보완 기운");
-    expect(combined).toContain("MBTI 예시");
-    expect(combined).toContain("MBTI만으로 궁합을 단정하지 않는다");
+    expect(combined).toContain("MBTI 관계 기준");
+    expect(combined).toContain("MBTI 보완 유형을 구체적으로 나열하지 마라");
+    expect(combined).toContain("단정하지 않는 방식");
     expect(combined).toContain("display 섹션은 짧게");
     expect(combined).toContain("시스템 사정");
     expect(combined).toContain("팩폭은 하되 모욕 금지");
@@ -141,10 +145,11 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("책임을 내려놓는 기준");
     expect(combined).toContain("짧은 칭찬과 감정 표현");
     expect(combined).toContain("맡을 일과 버릴 일");
-    expect(combined).toContain("ISFP");
-    expect(combined).toContain("INFP");
-    expect(combined).toContain("INTP");
-    expect(combined).toContain("MBTI 예시를 단정하지 않는 방식");
+    expect(combined).toContain("구체 MBTI type은 쓰지 않는다");
+    expect(combined).not.toContain("ISFP");
+    expect(combined).not.toContain("INFP");
+    expect(combined).not.toContain("INTP");
+    expect(combined).not.toContain("MBTI 예시");
     expect(combined).toContain("편관은 덕민님을 편하게 두지 않는 압박");
     expect(combined).toContain("휴식은 감정 문제가 아니라 성능 유지 장치");
     expect(combined).toContain("공통점");
