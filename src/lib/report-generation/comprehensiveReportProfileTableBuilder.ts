@@ -1,5 +1,6 @@
 import type { ComprehensiveReportEvidencePacket } from "../report-knowledge/comprehensiveReportEvidenceTypes";
 import type { ComputedSajuFacts } from "../report-knowledge/sajuComputedFactsTypes";
+import { buildSajuPillarGridColumns } from "../report-knowledge/sajuPillarFeaturePlacement";
 import { SAJU_KNOWLEDGE_BASE } from "../report-knowledge/sajuKnowledgeBase";
 import type { SajuFeatureCategory } from "../report-knowledge/sajuFeatureTypes";
 import type { FiveElement, SajuKnowledgeEntry } from "../report-knowledge/sajuKnowledgeTypes";
@@ -97,58 +98,21 @@ function buildDayPillarKeywords(
   ]).slice(0, 5);
 }
 
-function splitPillar(pillar: string | undefined): {
-  readonly heavenlyStem?: string;
-  readonly earthlyBranch?: string;
-} {
-  if (pillar === undefined) {
-    return {};
-  }
-
-  const normalized = pillar.replace("일주", "").trim();
-
-  if ([...normalized].length < 2) {
-    return {};
-  }
-
-  const characters = [...normalized];
-
-  return { heavenlyStem: characters[0]!, earthlyBranch: characters[1]! };
-}
-
 function buildPillarGrid(input: {
   readonly yearPillar?: string;
   readonly monthPillar?: string;
   readonly dayPillar?: string;
   readonly hourPillar?: string;
+  readonly dayMaster?: string;
+  readonly featurePlacements?: ComprehensiveReportEvidencePacket["sajuPillarFeaturePlacements"];
 }): readonly ComprehensiveReportV2PillarGridColumn[] {
-  const createColumn = (
-    columnId: ComprehensiveReportV2PillarGridColumn["columnId"],
-    labelKo: string,
-    pillar: string | undefined,
-  ) => ({
-    columnId,
-    labelKo,
-    ...(pillar === undefined ? {} : { pillar }),
-  });
-
-  return [
-    createColumn("hour", "시주", input.hourPillar),
-    createColumn("day", "일주", input.dayPillar),
-    createColumn("month", "월주", input.monthPillar),
-    createColumn("year", "연주", input.yearPillar),
-  ].map((column) => {
-    const split = splitPillar(column.pillar);
-
-    return {
-      ...column,
-      ...(split.heavenlyStem === undefined
-        ? {}
-        : { heavenlyStem: split.heavenlyStem }),
-      ...(split.earthlyBranch === undefined
-        ? {}
-        : { earthlyBranch: split.earthlyBranch }),
-    };
+  return buildSajuPillarGridColumns({
+    yearPillar: input.yearPillar,
+    monthPillar: input.monthPillar,
+    dayPillar: input.dayPillar,
+    hourPillar: input.hourPillar,
+    dayMaster: input.dayMaster,
+    featurePlacements: input.featurePlacements,
   });
 }
 
@@ -185,6 +149,8 @@ export function buildComprehensiveReportV2ProfileTable(input: {
     monthPillar,
     dayPillar,
     hourPillar,
+    dayMaster: input.sajuFacts?.dayMaster,
+    featurePlacements: input.evidencePacket.sajuPillarFeaturePlacements,
   });
 
   return {

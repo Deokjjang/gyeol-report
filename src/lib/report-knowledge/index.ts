@@ -24,5 +24,6 @@ export * from "./sajuFeatureSelector";
 export * from "./sajuFeatureSpotlight";
 export * from "./sajuFeatureTaxonomy";
 export * from "./sajuFeatureTypes";
+export * from "./sajuPillarFeaturePlacement";
 export * from "./sajuSignatureSceneRules";
 export * from "./sajuKnowledgeTypes";

@@ -9,14 +9,13 @@ const source = readFileSync(
 );
 
 describe("smoke saju feature audit script source", () => {
-  it("uses the deterministic feature audit without OpenAI or Supabase dependencies", () => {
+  it("uses fixture-based deterministic feature audit without OpenAI or Supabase", () => {
     expect(source).toContain("auditComputedSajuFeatures");
     expect(source).toContain("formatSajuFeatureAuditResult");
-    expect(source).toContain("丙子");
-    expect(source).toContain("己亥");
-    expect(source).toContain("甲申");
-    expect(source).toContain("丁未");
-    expect(source).toContain("audit");
+    expect(source).toContain("calculateExternalManseParity");
+    expect(source).toContain("--fixture");
+    expect(source).toContain("deokmin");
+    expect(source).toContain("default");
     expect(source).not.toContain("OPENAI_API_KEY");
     expect(source).not.toContain("SUPABASE_SERVICE_ROLE");
     expect(source).not.toContain("generateComprehensiveReportDraft");

@@ -8,6 +8,7 @@ import type { MbtiType } from "./mbtiKnowledgeTypes";
 import { scoreSajuFeatures } from "./sajuFeatureScoring";
 import { selectSajuFeaturesForChapter } from "./sajuFeatureSelector";
 import { buildSajuFeatureSpotlight } from "./sajuFeatureSpotlight";
+import { buildSajuPillarFeaturePlacements } from "./sajuPillarFeaturePlacement";
 import { selectSajuSignatureScenes } from "./sajuSignatureSceneRules";
 import { requireSajuFeatureEntry } from "./sajuFeatureTaxonomy";
 import type {
@@ -480,6 +481,14 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
   const selectedSajuFeatureEvidence = buildSelectedSajuFeatureEvidence(
     mappedFeatures.featureIds,
   );
+  const sajuPillarFeaturePlacements = buildSajuPillarFeaturePlacements({
+    yearPillar: input.sajuFacts.yearPillar,
+    monthPillar: input.sajuFacts.monthPillar,
+    dayPillar: input.sajuFacts.dayPillar,
+    hourPillar: input.sajuFacts.hourPillar,
+    dayMaster: input.sajuFacts.dayMaster,
+    productionFeatureIds: mappedFeatures.featureIds,
+  });
   const sajuFeatureSpotlight = buildSajuFeatureSpotlight({
     selectedEvidence: selectedSajuFeatureEvidence,
   });
@@ -493,6 +502,9 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
     packet: {
       ...packet,
       selectedSajuFeatureEvidence,
+      ...(sajuPillarFeaturePlacements.length === 0
+        ? {}
+        : { sajuPillarFeaturePlacements }),
       ...(sajuFeatureSpotlight === undefined ? {} : { sajuFeatureSpotlight }),
       ...(sajuSignatureScenes.length === 0 ? {} : { sajuSignatureScenes }),
       globalWarnings: [

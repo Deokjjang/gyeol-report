@@ -227,6 +227,8 @@ describe("comprehensive report evidence input builder", () => {
       },
     });
     const allFeatureIds = getAllSelectedFeatureIds(result);
+    const placementFeatureIds =
+      result.packet.sajuPillarFeaturePlacements?.map((placement) => placement.featureId) ?? [];
 
     expect(result.mappedFeatures.featureIds).toEqual(
       expect.arrayContaining([
@@ -245,6 +247,15 @@ describe("comprehensive report evidence input builder", () => {
         "gwiin_cheoneul",
       ]),
     );
+    expect(placementFeatureIds).toEqual(
+      expect.arrayContaining(["twelve_sinsal_jangseong", "gwiin_cheoneul"]),
+    );
+    expect(placementFeatureIds).not.toContain("twelve_sinsal_banan");
+    expect(
+      result.packet.sajuPillarFeaturePlacements?.every(
+        (placement) => placement.confidence === "production",
+      ),
+    ).toBe(true);
     expect(result.mappedFeatures.featureIds).not.toContain("twelve_sinsal_banan");
     expect(allFeatureIds).not.toContain("twelve_sinsal_banan");
     expect(result.mappedFeatures.featureIds).toEqual([

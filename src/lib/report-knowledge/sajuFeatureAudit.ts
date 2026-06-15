@@ -16,10 +16,49 @@ import {
   type ComputedSajuFeatureExtractionResult,
 } from "./sajuComputedFeatureExtractor";
 import { requireSajuFeatureEntry } from "./sajuFeatureTaxonomy";
+import { calculateSaju } from "../saju/calculateSaju";
+import {
+  createExternalFixturePlacement,
+  type SajuPillarFeaturePlacement,
+} from "./sajuPillarFeaturePlacement";
 
 type PillarRole = "yearPillar" | "monthPillar" | "dayPillar" | "hourPillar";
 
 type BasisRole = "yearBranch" | "monthBranch" | "dayBranch" | "hourBranch";
+
+type SajuAuditFixtureId = "default" | "deokmin";
+
+export type SajuAuditFixture = {
+  readonly fixtureId: SajuAuditFixtureId;
+  readonly auditLabel: string;
+  readonly input: ComputedSajuFeatureExtractionInput;
+  readonly expectedPillars: {
+    readonly year: string;
+    readonly month: string;
+    readonly day: string;
+    readonly hour: string;
+  };
+  readonly birthDate?: string;
+  readonly calendar?: "solar";
+  readonly birthTime?: string;
+  readonly timezone?: "Asia/Seoul";
+  readonly gender?: "male";
+  readonly externalPlacements?: readonly SajuPillarFeaturePlacement[];
+};
+
+export type SajuExternalManseParityResult = {
+  readonly fixtureId: SajuAuditFixtureId;
+  readonly expectedPillars: SajuAuditFixture["expectedPillars"];
+  readonly calculatedPillars?: SajuAuditFixture["expectedPillars"];
+  readonly calculatorAvailable: boolean;
+  readonly calculatorNote?: string;
+  readonly parity: readonly {
+    readonly pillar: "year" | "month" | "day" | "hour";
+    readonly ok: boolean;
+    readonly expected: string;
+    readonly calculated?: string;
+  }[];
+};
 
 export type RuleTableMeta = {
   readonly ruleId: string;
@@ -72,6 +111,128 @@ export type SajuFeatureAuditResult = {
     readonly note: string;
   }[];
 };
+
+export const DEFAULT_SMOKE_SAJU_FIXTURE = {
+  fixtureId: "default",
+  auditLabel: "default-smoke",
+  expectedPillars: {
+    year: "丙子",
+    month: "己亥",
+    day: "甲申",
+    hour: "丁未",
+  },
+  input: {
+    dayMaster: "甲",
+    dayPillar: "甲申",
+    yearPillar: "丙子",
+    monthPillar: "己亥",
+    hourPillar: "丁未",
+    fiveElementCounts: {
+      wood: 2,
+      fire: 0,
+      earth: 4,
+      metal: 2,
+      water: 0,
+    },
+    excessiveElements: ["earth"],
+    missingElements: ["fire", "water"],
+    tenGodSignals: [
+      { tenGod: "pian_cai", strength: "strong" },
+      { tenGod: "zheng_cai", strength: "present" },
+      { tenGod: "zheng_guan", strength: "strong" },
+      { tenGod: "qi_sha", strength: "strong" },
+      { tenGod: "zheng_yin", strength: "missing" },
+      { tenGod: "shi_shen", strength: "missing" },
+    ],
+    specialPatterns: ["jaeda_sinyak", "no_resource", "no_output"],
+    existingSinsal: ["hyeonchim", "hongyeom", "gwimun", "wonjin"],
+    existingGwiin: ["jaego"],
+  },
+} as const satisfies SajuAuditFixture;
+
+export const DEOKMIN_EXTERNAL_MANSE_FIXTURE = {
+  fixtureId: "deokmin",
+  auditLabel: "deokmin-external-manse",
+  birthDate: "1999-07-31",
+  calendar: "solar",
+  birthTime: "07:30",
+  timezone: "Asia/Seoul",
+  gender: "male",
+  expectedPillars: {
+    year: "己卯",
+    month: "辛未",
+    day: "甲申",
+    hour: "戊辰",
+  },
+  input: {
+    dayMaster: "甲",
+    dayPillar: "甲申",
+    yearPillar: "己卯",
+    monthPillar: "辛未",
+    hourPillar: "戊辰",
+    heavenlyStems: ["己", "辛", "甲", "戊"],
+    earthlyBranches: ["卯", "未", "申", "辰"],
+    fiveElementCounts: {
+      wood: 2,
+      fire: 0,
+      earth: 4,
+      metal: 2,
+      water: 0,
+    },
+    excessiveElements: ["earth"],
+    missingElements: ["fire", "water"],
+    tenGodSignals: [
+      { tenGod: "pian_cai", strength: "strong" },
+      { tenGod: "zheng_cai", strength: "present" },
+      { tenGod: "zheng_guan", strength: "strong" },
+      { tenGod: "qi_sha", strength: "strong" },
+      { tenGod: "zheng_yin", strength: "missing" },
+      { tenGod: "shi_shen", strength: "missing" },
+    ],
+    specialPatterns: ["jaeda_sinyak", "no_resource", "no_output"],
+    existingSinsal: ["hyeonchim", "hongyeom", "gwimun", "wonjin"],
+    existingGwiin: ["jaego"],
+  },
+  externalPlacements: [
+    createExternalFixturePlacement({
+      featureId: "twelve_sinsal_banan",
+      pillar: "hour",
+      sourcePillar: "戊辰",
+      basis: "external fixture visual comparison: 시주 십이신살",
+    }),
+    createExternalFixturePlacement({
+      featureId: "sinsal_baekho",
+      labelKo: "백호살",
+      pillar: "hour",
+      sourcePillar: "戊辰",
+      basis: "external fixture visual comparison: 시주 신살",
+    }),
+    createExternalFixturePlacement({
+      featureId: "twelve_sinsal_hwagae",
+      pillar: "month",
+      sourcePillar: "辛未",
+      basis: "external fixture visual comparison: 월주 십이신살",
+    }),
+    createExternalFixturePlacement({
+      featureId: "twelve_sinsal_jangseong",
+      pillar: "year",
+      sourcePillar: "己卯",
+      basis: "external fixture visual comparison: 연주 십이신살",
+    }),
+    createExternalFixturePlacement({
+      featureId: "gwiin_cheoneul",
+      pillar: "month",
+      sourcePillar: "辛未",
+      basis: "external fixture visual comparison: 월주 귀인",
+    }),
+  ],
+} as const satisfies SajuAuditFixture;
+
+export function getSajuAuditFixture(fixtureId: SajuAuditFixtureId): SajuAuditFixture {
+  return fixtureId === "deokmin"
+    ? DEOKMIN_EXTERNAL_MANSE_FIXTURE
+    : DEFAULT_SMOKE_SAJU_FIXTURE;
+}
 
 const watchedFeatures = [
   {
@@ -326,6 +487,112 @@ function buildWatchedNotDetected(
     });
 }
 
+function formatCalculatedPillars(
+  result: ReturnType<typeof calculateSaju>,
+): SajuAuditFixture["expectedPillars"] {
+  return {
+    year: `${result.pillars.year.stem}${result.pillars.year.branch}`,
+    month: `${result.pillars.month.stem}${result.pillars.month.branch}`,
+    day: `${result.pillars.day.stem}${result.pillars.day.branch}`,
+    hour:
+      result.pillars.hour === undefined
+        ? ""
+        : `${result.pillars.hour.stem}${result.pillars.hour.branch}`,
+  };
+}
+
+export function calculateExternalManseParity(
+  fixture: SajuAuditFixture,
+): SajuExternalManseParityResult {
+  if (
+    fixture.birthDate === undefined ||
+    fixture.birthTime === undefined ||
+    fixture.timezone === undefined ||
+    fixture.calendar !== "solar"
+  ) {
+    return {
+      fixtureId: fixture.fixtureId,
+      expectedPillars: fixture.expectedPillars,
+      calculatorAvailable: false,
+      calculatorNote:
+        "birth-to-pillar calculator not wired for this fixture; using fixture pillars only",
+      parity: [],
+    };
+  }
+
+  try {
+    const calculatedPillars = formatCalculatedPillars(
+      calculateSaju({
+        birthDate: fixture.birthDate,
+        birthTime: fixture.birthTime,
+        birthTimeUnknown: false,
+        calendarType: "SOLAR",
+        gender: "MALE",
+        timezone: fixture.timezone,
+      }),
+    );
+    const parity = (["year", "month", "day", "hour"] as const).map((pillar) => ({
+      pillar,
+      ok: calculatedPillars[pillar] === fixture.expectedPillars[pillar],
+      expected: fixture.expectedPillars[pillar],
+      calculated: calculatedPillars[pillar],
+    }));
+
+    return {
+      fixtureId: fixture.fixtureId,
+      expectedPillars: fixture.expectedPillars,
+      calculatedPillars,
+      calculatorAvailable: true,
+      parity,
+    };
+  } catch (error) {
+    return {
+      fixtureId: fixture.fixtureId,
+      expectedPillars: fixture.expectedPillars,
+      calculatorAvailable: false,
+      calculatorNote:
+        error instanceof Error
+          ? `birth-to-pillar calculator failed: ${error.message}`
+          : "birth-to-pillar calculator failed",
+      parity: [],
+    };
+  }
+}
+
+export function formatExternalManseParity(
+  parity: SajuExternalManseParityResult,
+): readonly string[] {
+  const expected = parity.expectedPillars;
+  const calculated = parity.calculatedPillars;
+
+  return [
+    "external expected pillars:",
+    `hour ${expected.hour}`,
+    `day ${expected.day}`,
+    `month ${expected.month}`,
+    `year ${expected.year}`,
+    "current calculated pillars:",
+    ...(calculated === undefined
+      ? [
+          parity.calculatorNote ??
+            "birth-to-pillar calculator not wired in this smoke; using expected external fixture only",
+        ]
+      : [
+          `hour ${calculated.hour}`,
+          `day ${calculated.day}`,
+          `month ${calculated.month}`,
+          `year ${calculated.year}`,
+        ]),
+    "parity:",
+    ...(parity.parity.length === 0
+      ? ["birth-to-pillar calculator not wired in this smoke; using expected external fixture only"]
+      : parity.parity.map(
+          (item) =>
+            `${item.pillar} ${item.ok ? "PASS" : "FAIL"} expected ${item.expected} calculated ${item.calculated ?? "none"}`,
+        )),
+  ];
+}
+
 export function auditComputedSajuFeatures(
   input: ComputedSajuFeatureExtractionInput,
 ): SajuFeatureAuditResult {
@@ -433,6 +700,13 @@ export function auditComputedSajuFeatures(
       basis.detected.map((feature) => feature.featureId),
     ),
   );
+  if (
+    Object.values(pillars).some(
+      (pillar) => pillar !== undefined && baekhoDayPillars.has(pillar),
+    )
+  ) {
+    diagnosticFeatureIds.add("sinsal_baekho");
+  }
 
   return {
     ruleSetVersion: SAJU_FEATURE_EXTRACTION_RULESET_VERSION,
@@ -466,6 +740,11 @@ export function auditComputedSajuFeatures(
 
 export function formatSajuFeatureAuditResult(
   audit: SajuFeatureAuditResult,
+  options: {
+    readonly fixture?: SajuAuditFixture;
+    readonly parity?: SajuExternalManseParityResult;
+    readonly externalPlacements?: readonly SajuPillarFeaturePlacement[];
+  } = {},
 ): readonly string[] {
   const pillarLine = [
     audit.pillars.yearPillar,
@@ -477,7 +756,9 @@ export function formatSajuFeatureAuditResult(
     .join(" ");
 
   const bananBasisLines = audit.twelveSinsalByBasis.flatMap((basis) => {
-    const detected = basis.detected.some((item) => item.labelKo === "반안살");
+    const detected = basis.detected.some(
+      (item) => item.featureId === "twelve_sinsal_banan",
+    );
 
     return [
       `- ${basis.basis} basis: ${detected ? "detected" : "not detected"}`,
@@ -492,8 +773,32 @@ export function formatSajuFeatureAuditResult(
     ) ?? false;
   const baekhoAnyDetected =
     baekhoCheck?.checked.some((item) => item.matched) ?? false;
+  const detectedFeatureIds = new Set(audit.detected.map((item) => item.featureId));
+  const externalPlacements =
+    options.externalPlacements ?? options.fixture?.externalPlacements ?? [];
+  const formatExternalPlacementResult = (featureId: string) => {
+    const placements = externalPlacements.filter(
+      (placement) => placement.featureId === featureId,
+    );
+
+    return placements.length === 0
+      ? "none"
+      : placements
+          .map(
+            (placement) =>
+              `${placement.pillarLabelKo} ${placement.sourcePillar} (${placement.basis})`,
+          )
+          .join(", ");
+  };
+  const diagnosticBananDetected = audit.twelveSinsalByBasis.some((basis) =>
+    basis.detected.some((item) => item.featureId === "twelve_sinsal_banan"),
+  );
 
   return [
+    ...(options.fixture === undefined
+      ? []
+      : [`audit fixture: ${options.fixture.auditLabel}`]),
+    ...(options.parity === undefined ? [] : formatExternalManseParity(options.parity)),
     `feature audit rule set: ${audit.ruleSetVersion}`,
     `pillars: ${pillarLine}`,
     `stems: ${audit.pillars.heavenlyStems.join(" ")}`,
@@ -517,10 +822,27 @@ export function formatSajuFeatureAuditResult(
           }${item.productionEligible ? " (production basis)" : ""}`,
       ),
     ]),
+    ...(externalPlacements.length === 0
+      ? []
+      : [
+          "external fixture placements:",
+          ...externalPlacements.map(
+            (placement) =>
+              `- ${placement.labelKo}: ${placement.pillarLabelKo} ${placement.sourcePillar} (${placement.basis})`,
+          ),
+        ]),
     "basis diagnostics:",
     "반안살:",
+    `- production result: ${
+      detectedFeatureIds.has("twelve_sinsal_banan") ? "detected" : "not detected"
+    }`,
+    `- diagnostic basis result: ${diagnosticBananDetected ? "detected" : "not detected"}`,
+    `- external fixture placement result: ${formatExternalPlacementResult("twelve_sinsal_banan")}`,
     ...bananBasisLines,
-    "백호대살:",
+    "백호살:",
+    `- production result: ${detectedFeatureIds.has("sinsal_baekho") ? "detected" : "not detected"}`,
+    `- diagnostic basis result: ${baekhoAnyDetected ? "detected" : "not detected"}`,
+    `- external fixture placement result: ${formatExternalPlacementResult("sinsal_baekho")}`,
     `- dayPillar rule: ${baekhoDayDetected ? "detected" : "not detected"}`,
     `- anyPillar rule: ${baekhoAnyDetected ? "detected" : "not detected"}`,
     "watched not detected:",

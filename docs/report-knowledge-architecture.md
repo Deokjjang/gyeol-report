@@ -648,6 +648,53 @@ The feature audit smoke output includes basis diagnostics for watched items:
 under day-pillar and all-pillar diagnostics. This audit is still diagnostic only
 and does not make absent features visible in the final report.
 
+## REPORT-16A Manseok Parity and Pillar-Level Placement
+
+REPORT-16A separates the default smoke fixture from the canonical external
+manse fixture used for parity checks.
+
+- `DEFAULT_SMOKE_SAJU_FIXTURE`: the historical smoke fixture, `丙子 己亥 甲申 丁未`.
+- `DEOKMIN_EXTERNAL_MANSE_FIXTURE`: the external comparison fixture for
+  `1999-07-31 07:30 KST`, expected as `己卯 辛未 甲申 戊辰`.
+
+The smoke audit can be run with:
+
+- `pnpm dlx tsx scripts/smoke_audit_saju_features.ts --fixture default`
+- `pnpm dlx tsx scripts/smoke_audit_saju_features.ts --fixture deokmin`
+
+For the external fixture, the audit prints external expected pillars, current
+calculated pillars, and per-pillar parity PASS/FAIL. If a birth-to-pillar
+calculator is unavailable or fails, the audit must say that explicitly instead
+of silently treating fixture pillars as calculated pillars.
+
+Pillar-level placement is represented by `SajuPillarFeaturePlacement`. It stores
+the feature id, Korean label, category, pillar key, Korean pillar label, source
+pillar, source stem/branch when available, calculation basis, and confidence.
+Final report rendering uses only `production` placements. `diagnostic` and
+`external_fixture` placements are for audit/debug comparison and must not be
+displayed as confirmed user features.
+
+The four-pillar table can now fill deterministic rows when source data exists:
+
+- heavenly stem and earthly branch
+- heavenly-stem ten-god and branch main ten-god relative to the day master
+- hidden stems
+- twelve life stage
+- per-pillar twelve-sinsal, major sinsal, and gwiin/gilshin placements
+
+Missing cells still render as `-`. The UI must not invent unavailable ten-god,
+hidden-stem, twelve-life-stage, sinsal, or gwiin data.
+
+반안살 and 백호살 discrepancy handling is explicit:
+
+- production result: whether the V1 production extraction selected the feature
+- diagnostic basis result: whether alternate audit checks saw the feature
+- external fixture placement result: whether the external fixture comparison
+  marks the feature and where
+
+If a feature appears only in external comparison, it stays out of the final
+confirmed table unless the production rule set later adopts that basis.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
