@@ -321,11 +321,72 @@ describe("comprehensive report draft validator", () => {
       allowedMbtiTerms: ["ENTJ"],
     });
 
-    expect(result).toEqual({
-      ok: true,
-      errors: [],
-      value: draft,
+    expect(result.ok).toBe(true);
+    expect(result.errors).toEqual([]);
+    expect(result.value).toMatchObject(draft);
+    expect(result.warnings).toEqual(
+      expect.arrayContaining([
+        "SAJU_FEATURE_SPOTLIGHT_EMPTY",
+        "SAJU_SIGNATURE_SCENES_EMPTY",
+      ]),
+    );
+  });
+
+  it("parses deterministic spotlight and signature scenes as non-fatal V2 metadata", () => {
+    const draft: ComprehensiveReportV2Draft = {
+      ...createValidV2Draft(),
+      sajuFeatureSpotlight: {
+        title: "덕민님 사주에서 특히 눈에 띄는 기운",
+        groups: [
+          {
+            groupId: "good_fortune",
+            title: "좋게 쓰면 크게 살아나는 기운",
+            items: [
+              {
+                featureId: "gwiin_cheoneul",
+                labelKo: "천을귀인",
+                badge: "막힌 길에 손을 내미는 귀인",
+                shortMeaning: "중요한 순간에 도움과 기회가 붙는 기운",
+                vividLine: "필요한 순간에 사람이나 제도의 통로가 열릴 수 있습니다.",
+                practicalLine: "필요한 것을 정확히 요청할 때 더 잘 살아납니다.",
+                polarity: "positive",
+                sourceChapterIds: ["saju_identity"],
+              },
+            ],
+          },
+        ],
+      },
+      sajuSignatureScenes: [
+        {
+          id: "cheoneul_no_resource_late_request",
+          title: "천을귀인 + 무인성",
+          featureIds: ["gwiin_cheoneul", "structure_no_resource"],
+          featureLabels: ["천을귀인", "무인성"],
+          topics: ["relationship", "work", "growth"],
+          sceneLine:
+            "도움받을 통로는 있는데 한참 혼자 정리한 뒤에야 요청할 수 있습니다.",
+          interpretationLine:
+            "천을귀인은 도움의 별이지만 무인성은 기대고 요청하는 감각을 늦게 만들 수 있습니다.",
+          practicalLine:
+            "막힌 순간에 필요한 도움을 한 문장으로 적어 보내는 습관이 좋습니다.",
+        },
+      ],
+    };
+    const result = validateComprehensiveReportDraft(draft);
+
+    expect(result.ok).toBe(true);
+    expect(result.errors).toEqual([]);
+    expect(result.value).toMatchObject({
+      sajuFeatureSpotlight: {
+        title: "덕민님 사주에서 특히 눈에 띄는 기운",
+      },
+      sajuSignatureScenes: [
+        expect.objectContaining({ id: "cheoneul_no_resource_late_request" }),
+      ],
     });
+    expect(result.warnings).toEqual(
+      expect.arrayContaining(["SAJU_FEATURE_SPOTLIGHT_USAGE_NOT_DETECTED"]),
+    );
   });
 
   it("rejects final V2 drafts without deterministic profile table", () => {

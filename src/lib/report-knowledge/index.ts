@@ -20,6 +20,8 @@ export * from "./sajuFeatureExtractionRules";
 export * from "./sajuFeatureEvidenceDebug";
 export * from "./sajuFeatureScoring";
 export * from "./sajuFeatureSelector";
+export * from "./sajuFeatureSpotlight";
 export * from "./sajuFeatureTaxonomy";
 export * from "./sajuFeatureTypes";
+export * from "./sajuSignatureSceneRules";
 export * from "./sajuKnowledgeTypes";

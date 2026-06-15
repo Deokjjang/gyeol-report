@@ -7,6 +7,8 @@ import type {
 import type { MbtiType } from "./mbtiKnowledgeTypes";
 import { scoreSajuFeatures } from "./sajuFeatureScoring";
 import { selectSajuFeaturesForChapter } from "./sajuFeatureSelector";
+import { buildSajuFeatureSpotlight } from "./sajuFeatureSpotlight";
+import { selectSajuSignatureScenes } from "./sajuSignatureSceneRules";
 import { requireSajuFeatureEntry } from "./sajuFeatureTaxonomy";
 import type {
   SajuFeatureCategory,
@@ -478,11 +480,21 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
   const selectedSajuFeatureEvidence = buildSelectedSajuFeatureEvidence(
     mappedFeatures.featureIds,
   );
+  const sajuFeatureSpotlight = buildSajuFeatureSpotlight({
+    selectedEvidence: selectedSajuFeatureEvidence,
+  });
+  const sajuSignatureScenes = selectSajuSignatureScenes({
+    featureIds: mappedFeatures.featureIds,
+    mbtiType: input.mbtiType,
+    limit: 8,
+  });
 
   return {
     packet: {
       ...packet,
       selectedSajuFeatureEvidence,
+      ...(sajuFeatureSpotlight === undefined ? {} : { sajuFeatureSpotlight }),
+      ...(sajuSignatureScenes.length === 0 ? {} : { sajuSignatureScenes }),
       globalWarnings: [
         ...packet.globalWarnings,
         ...mappedSaju.warnings,

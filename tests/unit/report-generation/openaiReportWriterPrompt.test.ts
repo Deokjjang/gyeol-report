@@ -218,6 +218,32 @@ describe("OpenAI report writer prompt", () => {
     }
   });
 
+  it("instructs the model to use spotlight and signature scenes without inventing features", () => {
+    const { packet } = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: "ENTJ",
+      sajuFacts: {
+        ...deokminSampleFacts,
+        specialPatterns: ["no_resource", "no_output"],
+      },
+    });
+    const messages = buildOpenAIComprehensiveReportWriterMessages({
+      mbtiType: "ENTJ",
+      evidencePacket: packet,
+    });
+    const combined = [messages.system, messages.developer, messages.user].join("\n");
+
+    expect(combined).toContain("사주 feature spotlight");
+    expect(combined).toContain("sajuSignatureScenes");
+    expect(combined).toContain("signature scene");
+    expect(combined).toContain("용하다");
+    expect(combined).toContain(
+      "본문에서는 각 주요 chapter마다 spotlight 또는 signature scene 중 최소 1개 이상",
+    );
+    expect(combined).toContain("없는 feature는 절대 만들지 마라");
+    expect(combined).toContain("좋은 길신/귀인은 상징 이미지와 실제 활용 방향");
+    expect(combined).toContain("sajuFeatureSpotlight");
+  });
+
   it("builds a repair prompt for same-schema narrative fixes", () => {
     const messages = buildOpenAIComprehensiveReportRepairMessages({
       userDisplayName: "덕민",

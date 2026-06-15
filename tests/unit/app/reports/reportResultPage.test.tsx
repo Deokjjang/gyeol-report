@@ -123,6 +123,83 @@ function createV2Draft(): ComprehensiveReportV2Draft {
       gwiinGilshin: ["천을귀인", "문창귀인", "재고귀인"],
       mbti: "ENTJ",
     },
+    sajuFeatureSpotlight: {
+      title: "덕민님 사주에서 특히 눈에 띄는 기운",
+      subtitle: "계산된 원국과 선택된 명리학 근거에서 강하게 잡힌 항목만 정리했습니다.",
+      groups: [
+        {
+          groupId: "good_fortune",
+          title: "좋게 쓰면 크게 살아나는 기운",
+          items: [
+            {
+              featureId: "gwiin_cheoneul",
+              labelKo: "천을귀인",
+              badge: "막힌 길에 손을 내미는 귀인",
+              shortMeaning: "중요한 순간에 도움과 기회가 붙는 기운",
+              vividLine:
+                "완전히 혼자만 버티는 팔자라기보다, 필요한 순간에 사람이나 제도의 통로가 열릴 수 있습니다.",
+              practicalLine:
+                "도움을 기다리기보다 필요한 것을 정확히 요청할 때 더 잘 살아납니다.",
+              polarity: "positive",
+              sourceChapterIds: ["saju_identity"],
+            },
+          ],
+        },
+        {
+          groupId: "talent",
+          title: "타고난 재능과 강점",
+          items: [
+            {
+              featureId: "twelve_sinsal_jangseong",
+              labelKo: "장성살",
+              badge: "중심을 잡는 장수의 별",
+              shortMeaning: "흩어진 판에서 기준을 세우는 기운",
+              vividLine:
+                "사람들이 우왕좌왕할 때 뒤에 숨기보다 앞에서 중심을 잡는 힘입니다.",
+              practicalLine:
+                "팀과 프로젝트에서 기준과 역할을 먼저 정리할수록 살아납니다.",
+              polarity: "positive",
+              sourceChapterIds: ["work_money_study"],
+            },
+          ],
+        },
+        {
+          groupId: "caution",
+          title: "주의해서 다뤄야 하는 기운",
+          items: [
+            {
+              featureId: "sinsal_wonjin",
+              labelKo: "원진살",
+              badge: "가까울수록 결이 거슬리는 신호",
+              shortMeaning: "친밀한 관계에서 작은 어긋남이 크게 남는 기운",
+              vividLine:
+                "멀리 있을 때는 괜찮다가 가까워질수록 말투와 생활 리듬이 예민하게 걸릴 수 있습니다.",
+              practicalLine:
+                "서운함을 쌓기 전에 연락 간격과 감정 표현선을 구체적으로 맞춰야 합니다.",
+              polarity: "mixed",
+              sourceChapterIds: ["love_relationships"],
+            },
+          ],
+        },
+        {
+          groupId: "balance",
+          title: "부족해서 보완하면 좋은 기운",
+          items: [
+            {
+              featureId: "element_water_missing",
+              labelKo: "수 부족",
+              badge: "냉각수가 부족한 엔진",
+              shortMeaning: "생각을 식히고 감정을 완충하는 장치가 필요한 구조",
+              vividLine: "머리는 계속 돌아가는데, 멈추는 스위치가 늦게 켜질 수 있습니다.",
+              practicalLine:
+                "밤 산책, 수분, 기록, 잠 루틴처럼 식히는 장치를 일정에 넣어야 합니다.",
+              polarity: "mixed",
+              sourceChapterIds: ["risk_and_growth"],
+            },
+          ],
+        },
+      ],
+    },
     chapters: [
       createV2Chapter("opening", "처음에 보이는 결"),
       createV2Chapter("saju_identity", "사주가 보여주는 기본 형상"),
@@ -246,6 +323,15 @@ describe("report result page", () => {
     expect(html).toContain("현침살");
     expect(html).toContain("장성살");
     expect(html).toContain("천을귀인");
+    expect(html).toContain("덕민님 사주에서 특히 눈에 띄는 기운");
+    expect(html).toContain("좋게 쓰면 크게 살아나는 기운");
+    expect(html).toContain("타고난 재능과 강점");
+    expect(html).toContain("주의해서 다뤄야 하는 기운");
+    expect(html).toContain("부족해서 보완하면 좋은 기운");
+    expect(html).toContain("천을귀인 - 막힌 길에 손을 내미는 귀인");
+    expect(html).toContain("장성살 - 중심을 잡는 장수의 별");
+    expect(html).toContain("원진살 - 가까울수록 결이 거슬리는 신호");
+    expect(html).toContain("수 부족 - 냉각수가 부족한 엔진");
     expect(html).not.toContain("도화살");
     expect(html).toContain("사주가 보여주는 기본 형상");
     expect(html).toContain("사주가 보여주는 기본 형상는 갑목과 갑신일주");

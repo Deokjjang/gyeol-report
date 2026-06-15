@@ -152,6 +152,15 @@ describe("report knowledge architecture document", () => {
       "귀인/길신",
       "selectedSajuFeatureEvidence[chapterId]",
       "relationship copy should not",
+      "REPORT-15G Feature Spotlight and Signature Scenes",
+      "sajuFeatureSpotlight",
+      "sajuSignatureScenes",
+      "good_fortune",
+      "talent",
+      "caution",
+      "balance",
+      "signature scene titles",
+      "OpenAI must not invent missing feature ids",
     ];
 
     for (const marker of requiredMarkers) {

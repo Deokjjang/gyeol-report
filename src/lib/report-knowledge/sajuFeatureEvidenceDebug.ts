@@ -1,6 +1,7 @@
 import type {
   SelectedSajuFeatureEvidence,
   SelectedSajuFeatureEvidenceItem,
+  ComprehensiveReportEvidencePacket,
 } from "./comprehensiveReportEvidenceTypes";
 import { scoreSajuFeatures } from "./sajuFeatureScoring";
 import { requireSajuFeatureEntry } from "./sajuFeatureTaxonomy";
@@ -37,6 +38,12 @@ export type SafeSajuFeatureEvidenceDebugSummary = {
     readonly labelKo: string;
     readonly reason: string;
   }[];
+  readonly spotlightByGroup: readonly {
+    readonly groupId: string;
+    readonly title: string;
+    readonly labels: readonly string[];
+  }[];
+  readonly signatureSceneTitles: readonly string[];
   readonly narrownessWarnings: readonly string[];
 };
 
@@ -105,6 +112,8 @@ function getNarrownessWarnings(
 export function buildSafeSajuFeatureEvidenceDebugSummary(input: {
   readonly computedFeatureIds: readonly string[];
   readonly selectedEvidence: readonly SelectedSajuFeatureEvidence[] | undefined;
+  readonly sajuFeatureSpotlight?: ComprehensiveReportEvidencePacket["sajuFeatureSpotlight"];
+  readonly sajuSignatureScenes?: ComprehensiveReportEvidencePacket["sajuSignatureScenes"];
 }): SafeSajuFeatureEvidenceDebugSummary {
   const selectedFeatures = getSelectedFeatures(input.selectedEvidence);
   const selectedFeatureIds = new Set(selectedFeatures.map((feature) => feature.id));
@@ -122,6 +131,14 @@ export function buildSafeSajuFeatureEvidenceDebugSummary(input: {
       computedFeatureIds: input.computedFeatureIds,
       selectedFeatureIds,
     }),
+    spotlightByGroup:
+      input.sajuFeatureSpotlight?.groups.map((group) => ({
+        groupId: group.groupId,
+        title: group.title,
+        labels: group.items.map((item) => item.labelKo),
+      })) ?? [],
+    signatureSceneTitles:
+      input.sajuSignatureScenes?.map((scene) => scene.title) ?? [],
     narrownessWarnings: getNarrownessWarnings(selectedFeatures),
   };
 }
@@ -144,6 +161,16 @@ export function formatSafeSajuFeatureEvidenceDebugSummary(
       : summary.excludedHighScoringFeatures.map(
           (feature) => `- ${feature.labelKo}: ${feature.reason}`,
         )),
+    "saju feature spotlight:",
+    ...(summary.spotlightByGroup.length === 0
+      ? ["- none"]
+      : summary.spotlightByGroup.map(
+          (group) => `${group.groupId}: ${group.labels.join(", ")}`,
+        )),
+    "signature scenes:",
+    ...(summary.signatureSceneTitles.length === 0
+      ? ["- none"]
+      : summary.signatureSceneTitles.map((title) => `- ${title}`)),
     ...summary.narrownessWarnings,
   ];
 }

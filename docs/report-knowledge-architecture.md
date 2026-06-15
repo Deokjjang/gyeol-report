@@ -552,6 +552,42 @@ caution such as "MBTI is a support indicator, not a compatibility guarantee" or
 the type name." Fixed recommended-type examples stay blocked until a dedicated
 MBTI complement scorer exists.
 
+## REPORT-15G Feature Spotlight and Signature Scenes
+
+REPORT-15G adds deterministic surfacing for computed feature evidence. The
+evidence packet can now include `sajuFeatureSpotlight` and
+`sajuSignatureScenes`.
+
+`sajuFeatureSpotlight` groups selected computed features into:
+
+- `good_fortune`: good fortune and supportive features such as 천을귀인, 재고귀인,
+  and 암록.
+- `talent`: strengths and talents such as 장성살, 현침살, 갑신일주, 편관, and
+  정관.
+- `caution`: mixed or warning features such as 원진살, 공망, 망신살, 천살, and
+  재다신약.
+- `balance`: missing or excessive balance features such as 수 부족, 화 부족,
+  무식상, 무인성, and 토 과다.
+
+The result page renders this spotlight under the deterministic V2 profile
+table. Empty groups are hidden, and taxonomy-only features are not displayed.
+
+`sajuSignatureScenes` are deterministic combination rules. They fire only when
+all required feature ids are present, with optional MBTI gating when explicitly
+defined. Example rules include 현침살 + ENTJ, 천을귀인 + 무인성, 재고귀인 +
+편재/정재, 장성살 + 정관, and 수 부족 + 무인성. These scenes are not final prose;
+they are concrete scene evidence that helps the writer produce a more vivid
+report without inventing unsupported features.
+
+Safe debug summaries now include spotlight groups and signature scene titles.
+They still print counts and labels only, not birth data, prompts, or full report
+body.
+
+The prompt instructs the writer to use at least one spotlight or signature scene
+in each major chapter when available. This is a usage requirement for provided
+evidence only. OpenAI must not invent missing feature ids, 신살, 귀인, 길신,
+일주 meanings, 오행 states, 십성, or patterns.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

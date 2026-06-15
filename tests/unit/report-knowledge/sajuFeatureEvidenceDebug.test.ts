@@ -65,6 +65,8 @@ describe("safe Saju feature evidence debug summary", () => {
     const summary = buildSafeSajuFeatureEvidenceDebugSummary({
       computedFeatureIds: result.mappedFeatures.featureIds,
       selectedEvidence: result.packet.selectedSajuFeatureEvidence,
+      sajuFeatureSpotlight: result.packet.sajuFeatureSpotlight,
+      sajuSignatureScenes: result.packet.sajuSignatureScenes,
     });
     const formatted = formatSafeSajuFeatureEvidenceDebugSummary(summary).join("\n");
 
@@ -73,9 +75,15 @@ describe("safe Saju feature evidence debug summary", () => {
     expect(formatted).toContain("selected saju feature evidence total:");
     expect(formatted).toContain("selected saju feature evidence by chapter:");
     expect(formatted).toContain("excluded high scoring features:");
+    expect(formatted).toContain("saju feature spotlight:");
+    expect(formatted).toContain("signature scenes:");
     expect(summary.computedFeatureLabels).toEqual(
       expect.arrayContaining(["갑신일주", "장성살", "천을귀인"]),
     );
+    expect(summary.spotlightByGroup.map((group) => group.groupId)).toEqual(
+      expect.arrayContaining(["good_fortune", "talent", "balance"]),
+    );
+    expect(summary.signatureSceneTitles.join("\n")).toContain("ENTJ");
     expect(summary.selectedByChapter.map((chapter) => chapter.chapterId)).toEqual(
       expect.arrayContaining(["saju_identity", "work_money_study", "risk_and_growth"]),
     );

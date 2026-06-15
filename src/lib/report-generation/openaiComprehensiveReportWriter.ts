@@ -382,6 +382,12 @@ function attachDeterministicProfileTable(input: {
         evidencePacket: input.evidencePacket,
         mbtiType: input.mbtiType,
       }),
+    ...(input.evidencePacket.sajuFeatureSpotlight === undefined
+      ? {}
+      : { sajuFeatureSpotlight: input.evidencePacket.sajuFeatureSpotlight }),
+    ...(input.evidencePacket.sajuSignatureScenes === undefined
+      ? {}
+      : { sajuSignatureScenes: input.evidencePacket.sajuSignatureScenes }),
   };
 }
 

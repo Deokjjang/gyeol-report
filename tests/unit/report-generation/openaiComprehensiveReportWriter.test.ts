@@ -251,13 +251,25 @@ describe("OpenAI comprehensive report writer", () => {
     expect(JSON.stringify(calls[0].body)).toContain("재고귀인");
     expect(JSON.stringify(calls[0].body)).not.toContain("천을귀인");
     expect(JSON.stringify(calls[0].body)).toContain("selectedSajuFeatureEvidence");
+    expect(JSON.stringify(calls[0].body)).toContain("sajuFeatureSpotlight");
+    expect(JSON.stringify(calls[0].body)).toContain("sajuSignatureScenes");
     expect(JSON.stringify(calls[0].body)).toContain("day_pillar_gapsin");
     expect(JSON.stringify(calls[0].body)).toContain("symbolicImage");
     expect(JSON.stringify(calls[0].body)).toContain("positiveReading");
     expect(JSON.stringify(calls[0].body)).toContain("practicalUse");
     expect(responseFormatSchema).not.toContain("profileTable");
+    expect(responseFormatSchema).not.toContain("sajuFeatureSpotlight");
+    expect(responseFormatSchema).not.toContain("sajuSignatureScenes");
     expect(responseFormatSchema).not.toContain("yearPillar");
     expect(JSON.stringify(calls[0].body)).toContain("day_master_gabmok");
+    expect(result.draft).toMatchObject({
+      sajuFeatureSpotlight: {
+        title: "덕민님 사주에서 특히 눈에 띄는 기운",
+      },
+      sajuSignatureScenes: expect.arrayContaining([
+        expect.objectContaining({ id: "hyeonchim_entj_fast_conclusion" }),
+      ]),
+    });
   });
 
   it("sends capped selected Saju feature evidence grouped by V2 chapter", async () => {

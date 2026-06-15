@@ -16,7 +16,10 @@ import {
   deriveAllowedSajuTermsFromEvidencePacket,
 } from "../src/lib/report-generation/openaiReportWriterPrompt";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
-import type { SelectedSajuFeatureEvidence } from "../src/lib/report-knowledge/comprehensiveReportEvidenceTypes";
+import type {
+  ComprehensiveReportEvidencePacket,
+  SelectedSajuFeatureEvidence,
+} from "../src/lib/report-knowledge/comprehensiveReportEvidenceTypes";
 import {
   buildSafeSajuFeatureEvidenceDebugSummary,
   formatSafeSajuFeatureEvidenceDebugSummary,
@@ -142,6 +145,8 @@ function writeOpenAIRequestDebug(input: {
 function writeSafeSajuFeatureDebug(input: {
   readonly computedFeatureIds: readonly string[];
   readonly selectedEvidence: readonly SelectedSajuFeatureEvidence[] | undefined;
+  readonly sajuFeatureSpotlight?: ComprehensiveReportEvidencePacket["sajuFeatureSpotlight"];
+  readonly sajuSignatureScenes?: ComprehensiveReportEvidencePacket["sajuSignatureScenes"];
 }): void {
   if (getOptionalEnvValue("OPENAI_REPORT_WRITER_DEBUG_SAFE") !== "1") {
     return;
@@ -287,6 +292,8 @@ async function run(): Promise<void> {
   writeSafeSajuFeatureDebug({
     computedFeatureIds: mappedFeatures.featureIds,
     selectedEvidence: packet.selectedSajuFeatureEvidence,
+    sajuFeatureSpotlight: packet.sajuFeatureSpotlight,
+    sajuSignatureScenes: packet.sajuSignatureScenes,
   });
   const allowedSajuTerms = deriveAllowedSajuTermsFromEvidencePacket(packet);
   const messages = buildOpenAIComprehensiveReportWriterMessages({

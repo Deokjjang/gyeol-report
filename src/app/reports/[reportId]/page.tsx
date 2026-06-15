@@ -397,6 +397,65 @@ function renderV2ProfileTable(
   );
 }
 
+function renderV2FeatureSpotlight(
+  draft: Extract<ComprehensiveReportDraft, { readonly version: "comprehensive_v2_draft" }>,
+) {
+  const spotlight = draft.sajuFeatureSpotlight;
+
+  if (spotlight === undefined || spotlight.groups.length === 0) {
+    return null;
+  }
+
+  const groups = spotlight.groups.filter((group) => group.items.length > 0);
+
+  if (groups.length === 0) {
+    return null;
+  }
+
+  return (
+    <section className="space-y-5 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+      <div className="space-y-2">
+        <h2 className="text-lg font-semibold text-neutral-50">{spotlight.title}</h2>
+        {spotlight.subtitle === undefined ? null : (
+          <p className="text-sm leading-6 text-neutral-400">{spotlight.subtitle}</p>
+        )}
+      </div>
+      <div className="grid gap-4">
+        {groups.map((group) => (
+          <section key={group.groupId} className="space-y-3">
+            <h3 className="text-sm font-semibold text-emerald-100">
+              {group.title}
+            </h3>
+            <div className="grid gap-3 md:grid-cols-2">
+              {group.items.map((item) => (
+                <article
+                  key={`${group.groupId}:${item.featureId}`}
+                  className="rounded-md border border-neutral-800 bg-neutral-900/60 p-4"
+                >
+                  <div className="space-y-1">
+                    <p className="text-base font-semibold text-neutral-50">
+                      {item.labelKo} - {item.badge}
+                    </p>
+                    <p className="text-sm leading-6 text-neutral-300">
+                      {item.shortMeaning}
+                    </p>
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-neutral-200">
+                    {item.vividLine}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-neutral-400">
+                    {item.practicalLine}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function renderGeneratedV1State(
   result: PaidReportResult,
   draft: Extract<ComprehensiveReportDraft, { readonly version: "comprehensive_v1_draft" }>,
@@ -513,6 +572,7 @@ function renderGeneratedV2State(
         </header>
 
         {renderV2ProfileTable(result, draft)}
+        {renderV2FeatureSpotlight(draft)}
 
         <section className="space-y-5" aria-label="리포트 본문">
           {draft.chapters.map((chapter) => (

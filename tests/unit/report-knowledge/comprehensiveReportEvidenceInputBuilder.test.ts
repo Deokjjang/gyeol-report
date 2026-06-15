@@ -261,6 +261,52 @@ describe("comprehensive report evidence input builder", () => {
     }
   });
 
+  it("adds deterministic feature spotlight and signature scenes to the evidence packet", () => {
+    const result = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: "ENTJ",
+      sajuFacts: {
+        ...deokminSampleFacts,
+        yearPillar: "병자",
+        monthPillar: "기해",
+        hourPillar: "정미",
+        earthlyBranches: ["子", "亥", "申", "未"],
+        heavenlyStems: ["丙", "己", "甲", "丁"],
+      },
+    });
+    const spotlight = result.packet.sajuFeatureSpotlight;
+    const sceneIds = result.packet.sajuSignatureScenes?.map((scene) => scene.id) ?? [];
+    const spotlightFeatureIds =
+      spotlight?.groups.flatMap((group) =>
+        group.items.map((item) => item.featureId),
+      ) ?? [];
+
+    expect(spotlight?.title).toBe("덕민님 사주에서 특히 눈에 띄는 기운");
+    expect(spotlight?.groups.map((group) => group.groupId)).toEqual(
+      expect.arrayContaining(["good_fortune", "talent", "caution", "balance"]),
+    );
+    expect(spotlightFeatureIds).toEqual(
+      expect.arrayContaining([
+        "gwiin_cheoneul",
+        "gwiin_jaego",
+        "twelve_sinsal_jangseong",
+        "sinsal_hyeonchim",
+        "element_water_missing",
+      ]),
+    );
+    for (const group of spotlight?.groups ?? []) {
+      expect(group.items.length).toBeLessThanOrEqual(3);
+    }
+    expect(sceneIds).toEqual(
+      expect.arrayContaining([
+        "hyeonchim_entj_fast_conclusion",
+        "cheoneul_no_resource_late_request",
+        "jaego_wealth_storage",
+      ]),
+    );
+    expect(result.packet.sajuSignatureScenes?.length ?? 0).toBeLessThanOrEqual(8);
+    expect(spotlightFeatureIds).not.toContain("twelve_sinsal_banan");
+  });
+
   it("builds Saju primary, ENTJ support, and fusion evidence in major sections", () => {
     const result = buildComprehensiveReportEvidencePacketFromComputedFacts({
       mbtiType: "ENTJ",

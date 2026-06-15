@@ -10,6 +10,8 @@ import type {
   SajuFeatureTopic,
 } from "./sajuFeatureTypes";
 import type { SajuKnowledgeTopic } from "./sajuKnowledgeTypes";
+import type { SajuFeatureSpotlightSection } from "./sajuFeatureSpotlight";
+import type { SajuSignatureScene } from "./sajuSignatureSceneRules";
 
 export type EvidenceRole =
   | "primary_saju"
@@ -66,5 +68,7 @@ export type ComprehensiveReportEvidencePacket = {
   readonly sajuEntryIds: readonly string[];
   readonly sections: readonly ComprehensiveReportSectionEvidence[];
   readonly selectedSajuFeatureEvidence?: readonly SelectedSajuFeatureEvidence[];
+  readonly sajuFeatureSpotlight?: SajuFeatureSpotlightSection;
+  readonly sajuSignatureScenes?: readonly SajuSignatureScene[];
   readonly globalWarnings: readonly string[];
 };

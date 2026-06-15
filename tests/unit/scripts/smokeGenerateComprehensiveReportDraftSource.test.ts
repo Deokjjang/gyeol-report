@@ -59,6 +59,8 @@ describe("generate comprehensive report draft smoke script source", () => {
       "computed saju feature ids",
       "selected saju feature evidence",
       "excluded high scoring features",
+      "saju feature spotlight",
+      "signature scenes",
       "selected evidence narrowness",
     ]) {
       expect(debugHelperSource).toContain(marker);

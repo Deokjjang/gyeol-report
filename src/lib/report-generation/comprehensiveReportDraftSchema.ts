@@ -26,6 +26,97 @@ const optionalPillarSchema = {
   maxLength: 20,
 } as const;
 
+const sajuFeatureSpotlightSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["title", "groups"],
+  properties: {
+    title: {
+      type: "string",
+      minLength: 1,
+    },
+    subtitle: {
+      type: "string",
+    },
+    groups: {
+      type: "array",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["groupId", "title", "items"],
+        properties: {
+          groupId: {
+            type: "string",
+            enum: ["good_fortune", "talent", "caution", "balance"],
+          },
+          title: {
+            type: "string",
+            minLength: 1,
+          },
+          items: {
+            type: "array",
+            items: {
+              type: "object",
+              additionalProperties: false,
+              required: [
+                "featureId",
+                "labelKo",
+                "badge",
+                "shortMeaning",
+                "vividLine",
+                "practicalLine",
+                "polarity",
+                "sourceChapterIds",
+              ],
+              properties: {
+                featureId: { type: "string", minLength: 1 },
+                labelKo: { type: "string", minLength: 1 },
+                badge: { type: "string", minLength: 1 },
+                shortMeaning: { type: "string", minLength: 1 },
+                vividLine: { type: "string", minLength: 1 },
+                practicalLine: { type: "string", minLength: 1 },
+                polarity: {
+                  type: "string",
+                  enum: ["positive", "mixed", "warning"],
+                },
+                sourceChapterIds: stringArraySchema,
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+} as const;
+
+const sajuSignatureScenesSchema = {
+  type: "array",
+  items: {
+    type: "object",
+    additionalProperties: false,
+    required: [
+      "id",
+      "title",
+      "featureIds",
+      "featureLabels",
+      "topics",
+      "sceneLine",
+      "interpretationLine",
+      "practicalLine",
+    ],
+    properties: {
+      id: { type: "string", minLength: 1 },
+      title: { type: "string", minLength: 1 },
+      featureIds: stringArraySchema,
+      featureLabels: stringArraySchema,
+      topics: stringArraySchema,
+      sceneLine: { type: "string", minLength: 1 },
+      interpretationLine: { type: "string", minLength: 1 },
+      practicalLine: { type: "string", minLength: 1 },
+    },
+  },
+} as const;
+
 export const comprehensiveReportV1DraftJsonSchema = {
   type: "object",
   additionalProperties: false,
@@ -210,6 +301,8 @@ export const comprehensiveReportV2DraftJsonSchema = {
         },
       },
     },
+    sajuFeatureSpotlight: sajuFeatureSpotlightSchema,
+    sajuSignatureScenes: sajuSignatureScenesSchema,
     chapters: {
       type: "array",
       minItems: COMPREHENSIVE_REPORT_V2_CHAPTER_IDS.length,

@@ -211,6 +211,8 @@ const draftV2RootKeys = [
   "openingSummary",
   "coreLine",
   "profileTable",
+  "sajuFeatureSpotlight",
+  "sajuSignatureScenes",
   "chapters",
   "finalAdvice",
   "safetyNotes",
@@ -256,6 +258,16 @@ const profileTableKeys = [
   "gwiinGilshin",
   "mbti",
 ] as const;
+const spotlightGroupIds = ["good_fortune", "talent", "caution", "balance"] as const;
+const spotlightPolarities = ["positive", "mixed", "warning"] as const;
+type ParsedSajuFeatureSpotlight = NonNullable<
+  ComprehensiveReportV2Draft["sajuFeatureSpotlight"]
+>;
+type ParsedSajuFeatureSpotlightGroup = ParsedSajuFeatureSpotlight["groups"][number];
+type ParsedSajuFeatureSpotlightItem = ParsedSajuFeatureSpotlightGroup["items"][number];
+type ParsedSajuSignatureScene = NonNullable<
+  ComprehensiveReportV2Draft["sajuSignatureScenes"]
+>[number];
 
 const displayOnlySectionIds = ["manse_table", "mbti_table"] as const;
 const interpretationSectionIds = [
@@ -1090,10 +1102,12 @@ export function validateComprehensiveReportDraftAfterRepair(
     isOnlyResidualRiskGenericError(errors) &&
     hasConcreteRiskAndRemedyContent(value)
   ) {
+    const warnings = getV2SpotlightAndSceneWarnings(value);
+
     return {
       ok: true,
       errors: [],
-      warnings: errors,
+      warnings: [...errors, ...warnings],
       value,
     };
   }
@@ -1105,9 +1119,12 @@ export function validateComprehensiveReportDraftAfterRepair(
     };
   }
 
+  const warnings = getV2SpotlightAndSceneWarnings(value);
+
   return {
     ok: true,
     errors: [],
+    ...(warnings.length === 0 ? {} : { warnings }),
     value,
   };
 }
@@ -1596,6 +1613,198 @@ function parseProfileTable(
   };
 }
 
+function parseSajuFeatureSpotlight(
+  errors: string[],
+  value: unknown,
+): ComprehensiveReportV2Draft["sajuFeatureSpotlight"] {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!isRecord(value)) {
+    errors.push("sajuFeatureSpotlight must be an object when provided.");
+    return undefined;
+  }
+  if (typeof value.title !== "string" || value.title.trim().length === 0) {
+    errors.push("sajuFeatureSpotlight.title must be a non-empty string.");
+  }
+  if (value.subtitle !== undefined && typeof value.subtitle !== "string") {
+    errors.push("sajuFeatureSpotlight.subtitle must be a string when provided.");
+  }
+  if (!Array.isArray(value.groups)) {
+    errors.push("sajuFeatureSpotlight.groups must be an array.");
+    return undefined;
+  }
+
+  const groups = value.groups
+    .map((group, groupIndex) => {
+      if (!isRecord(group)) {
+        errors.push(`sajuFeatureSpotlight.groups.${groupIndex} must be an object.`);
+        return undefined;
+      }
+      if (
+        typeof group.groupId !== "string" ||
+        !(spotlightGroupIds as readonly string[]).includes(group.groupId)
+      ) {
+        errors.push(`sajuFeatureSpotlight.groups.${groupIndex}.groupId is invalid.`);
+        return undefined;
+      }
+      if (typeof group.title !== "string" || group.title.trim().length === 0) {
+        errors.push(
+          `sajuFeatureSpotlight.groups.${groupIndex}.title must be a non-empty string.`,
+        );
+      }
+      if (!Array.isArray(group.items)) {
+        errors.push(`sajuFeatureSpotlight.groups.${groupIndex}.items must be an array.`);
+        return undefined;
+      }
+
+      const items = group.items
+        .map((item, itemIndex) => {
+          if (!isRecord(item)) {
+            errors.push(
+              `sajuFeatureSpotlight.groups.${groupIndex}.items.${itemIndex} must be an object.`,
+            );
+            return undefined;
+          }
+
+          const requiredStringFields = [
+            "featureId",
+            "labelKo",
+            "badge",
+            "shortMeaning",
+            "vividLine",
+            "practicalLine",
+          ] as const;
+
+          for (const field of requiredStringFields) {
+            if (typeof item[field] !== "string" || item[field].trim().length === 0) {
+              errors.push(
+                `sajuFeatureSpotlight.groups.${groupIndex}.items.${itemIndex}.${field} must be a non-empty string.`,
+              );
+            }
+          }
+          if (
+            typeof item.polarity !== "string" ||
+            !(spotlightPolarities as readonly string[]).includes(item.polarity)
+          ) {
+            errors.push(
+              `sajuFeatureSpotlight.groups.${groupIndex}.items.${itemIndex}.polarity is invalid.`,
+            );
+          }
+          if (!isStringArray(item.sourceChapterIds)) {
+            errors.push(
+              `sajuFeatureSpotlight.groups.${groupIndex}.items.${itemIndex}.sourceChapterIds must be a string array.`,
+            );
+          }
+          const polarity: ParsedSajuFeatureSpotlightItem["polarity"] =
+            item.polarity === "positive" ||
+            item.polarity === "mixed" ||
+            item.polarity === "warning"
+              ? item.polarity
+              : "mixed";
+
+          return {
+            featureId: typeof item.featureId === "string" ? item.featureId : "",
+            labelKo: typeof item.labelKo === "string" ? item.labelKo : "",
+            badge: typeof item.badge === "string" ? item.badge : "",
+            shortMeaning:
+              typeof item.shortMeaning === "string" ? item.shortMeaning : "",
+            vividLine: typeof item.vividLine === "string" ? item.vividLine : "",
+            practicalLine:
+              typeof item.practicalLine === "string" ? item.practicalLine : "",
+            polarity,
+            sourceChapterIds: isStringArray(item.sourceChapterIds)
+              ? item.sourceChapterIds
+              : [],
+          };
+        })
+        .filter(
+          (item): item is NonNullable<typeof item> => item !== undefined,
+        );
+
+      const groupId = group.groupId as ParsedSajuFeatureSpotlightGroup["groupId"];
+
+      return {
+        groupId,
+        title: typeof group.title === "string" ? group.title : "",
+        items,
+      };
+    })
+    .filter((group): group is NonNullable<typeof group> => group !== undefined);
+
+  return {
+    title: typeof value.title === "string" ? value.title : "",
+    ...(typeof value.subtitle === "string" ? { subtitle: value.subtitle } : {}),
+    groups,
+  };
+}
+
+function parseSajuSignatureScenes(
+  errors: string[],
+  value: unknown,
+): ComprehensiveReportV2Draft["sajuSignatureScenes"] {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!Array.isArray(value)) {
+    errors.push("sajuSignatureScenes must be an array when provided.");
+    return undefined;
+  }
+
+  return value
+    .map((scene, index) => {
+      if (!isRecord(scene)) {
+        errors.push(`sajuSignatureScenes.${index} must be an object.`);
+        return undefined;
+      }
+
+      const requiredStringFields = [
+        "id",
+        "title",
+        "sceneLine",
+        "interpretationLine",
+        "practicalLine",
+      ] as const;
+
+      for (const field of requiredStringFields) {
+        if (typeof scene[field] !== "string" || scene[field].trim().length === 0) {
+          errors.push(`sajuSignatureScenes.${index}.${field} must be a non-empty string.`);
+        }
+      }
+      for (const field of ["featureIds", "featureLabels", "topics"] as const) {
+        if (!isStringArray(scene[field])) {
+          errors.push(`sajuSignatureScenes.${index}.${field} must be a string array.`);
+        }
+      }
+      const topics: ParsedSajuSignatureScene["topics"] = isStringArray(scene.topics)
+        ? scene.topics.filter(
+            (topic): topic is ParsedSajuSignatureScene["topics"][number] =>
+              topic === "personality" ||
+              topic === "work" ||
+              topic === "money" ||
+              topic === "love" ||
+              topic === "relationship" ||
+              topic === "family" ||
+              topic === "growth",
+          )
+        : [];
+
+      return {
+        id: typeof scene.id === "string" ? scene.id : "",
+        title: typeof scene.title === "string" ? scene.title : "",
+        featureIds: isStringArray(scene.featureIds) ? scene.featureIds : [],
+        featureLabels: isStringArray(scene.featureLabels) ? scene.featureLabels : [],
+        topics,
+        sceneLine: typeof scene.sceneLine === "string" ? scene.sceneLine : "",
+        interpretationLine:
+          typeof scene.interpretationLine === "string" ? scene.interpretationLine : "",
+        practicalLine:
+          typeof scene.practicalLine === "string" ? scene.practicalLine : "",
+      };
+    })
+    .filter((scene): scene is NonNullable<typeof scene> => scene !== undefined);
+}
+
 function appendChapterCoverageErrors(
   errors: string[],
   chapters: readonly ComprehensiveReportV2Chapter[],
@@ -1975,6 +2184,14 @@ function parseV2Draft(
   validateStringField(errors, "finalAdvice", input.finalAdvice, 40);
 
   const profileTable = parseProfileTable(errors, input.profileTable);
+  const sajuFeatureSpotlight = parseSajuFeatureSpotlight(
+    errors,
+    input.sajuFeatureSpotlight,
+  );
+  const sajuSignatureScenes = parseSajuSignatureScenes(
+    errors,
+    input.sajuSignatureScenes,
+  );
 
   if (!isStringArray(input.safetyNotes)) {
     errors.push("safetyNotes must be a string array.");
@@ -2026,6 +2243,8 @@ function parseV2Draft(
     openingSummary: input.openingSummary as string,
     coreLine: input.coreLine as string,
     profileTable: profileTable as ComprehensiveReportV2ProfileTable,
+    ...(sajuFeatureSpotlight === undefined ? {} : { sajuFeatureSpotlight }),
+    ...(sajuSignatureScenes === undefined ? {} : { sajuSignatureScenes }),
     chapters,
     finalAdvice: input.finalAdvice as string,
     safetyNotes: input.safetyNotes as readonly string[],
@@ -2049,6 +2268,49 @@ function parseDraft(
   return parseV1Draft(input, errors, options);
 }
 
+function getV2SpotlightAndSceneWarnings(
+  draft: ComprehensiveReportDraft | undefined,
+): readonly string[] {
+  if (draft?.version !== "comprehensive_v2_draft") {
+    return [];
+  }
+
+  const warnings: string[] = [];
+  const spotlightItems =
+    draft.sajuFeatureSpotlight?.groups.flatMap((group) => group.items) ?? [];
+  const signatureScenes = draft.sajuSignatureScenes ?? [];
+  const narrativeText = [
+    draft.openingTitle,
+    draft.openingSummary,
+    draft.coreLine,
+    ...draft.chapters.flatMap((chapter) => [
+      chapter.titleKo,
+      chapter.headline,
+      ...chapter.hitReadingLines,
+      chapter.body,
+      ...chapter.solutionLines,
+      ...chapter.keyPhrases,
+    ]),
+    draft.finalAdvice,
+    ...draft.safetyNotes,
+  ].join("\n");
+
+  if (spotlightItems.length === 0) {
+    warnings.push("SAJU_FEATURE_SPOTLIGHT_EMPTY");
+  }
+  if (signatureScenes.length === 0) {
+    warnings.push("SAJU_SIGNATURE_SCENES_EMPTY");
+  }
+  if (
+    spotlightItems.length > 0 &&
+    !spotlightItems.some((item) => narrativeText.includes(item.labelKo))
+  ) {
+    warnings.push("SAJU_FEATURE_SPOTLIGHT_USAGE_NOT_DETECTED");
+  }
+
+  return warnings;
+}
+
 export function validateComprehensiveReportDraft(
   input: unknown,
   options: ComprehensiveReportDraftValidationOptions = {},
@@ -2065,10 +2327,12 @@ export function validateComprehensiveReportDraft(
     isOnlyResidualRiskGenericError(errors) &&
     hasConcreteRiskAndRemedyContent(value)
   ) {
+    const warnings = getV2SpotlightAndSceneWarnings(value);
+
     return {
       ok: true,
       errors: [],
-      warnings: errors,
+      warnings: [...errors, ...warnings],
       value,
     };
   }
@@ -2080,9 +2344,12 @@ export function validateComprehensiveReportDraft(
     };
   }
 
+  const warnings = getV2SpotlightAndSceneWarnings(value);
+
   return {
     ok: true,
     errors: [],
+    ...(warnings.length === 0 ? {} : { warnings }),
     value,
   };
 }
