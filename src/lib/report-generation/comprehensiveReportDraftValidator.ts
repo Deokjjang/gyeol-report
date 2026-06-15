@@ -310,6 +310,9 @@ const mbtiFirstBodyPrefixes = [
 const visibleEvidenceDebugLabels = [
   "분석 근거 보기",
   "사주 근거",
+  "명리학 근거",
+  "선택된 근거",
+  "계산된 근거",
   "MBTI 참고",
   "근거 요약",
   "primary Saju evidence",
@@ -387,7 +390,14 @@ const hitReadingBehaviorMarkers = [
   "상황",
   "장면",
   "회의",
+  "카톡",
   "대화",
+  "설명",
+  "오류",
+  "담당자",
+  "기준표",
+  "마감",
+  "상대 말",
   "상대",
   "관계",
   "연애",
@@ -412,6 +422,26 @@ const hitReadingBehaviorMarkers = [
   "쉽",
   "힘들",
   "피곤",
+] as const;
+const personalityDirectHitSceneMarkers = [
+  "회의",
+  "카톡",
+  "팀원",
+  "설명",
+  "오류",
+  "결론",
+  "담당자",
+  "기준표",
+  "마감",
+  "상대 말",
+] as const;
+const personalityDirectHitSajuMarkers = [
+  "현침살",
+  "갑신일주",
+  "ENTJ",
+  "편관",
+  "정관",
+  "귀문관살",
 ] as const;
 const genericHitReadingMarkers = [
   "성격이 좋습니다",
@@ -2110,6 +2140,25 @@ function isConcreteHitReadingLine(line: string): boolean {
   );
 }
 
+function hasConcretePersonalityDirectHit(
+  chapter: ComprehensiveReportV2Chapter,
+): boolean {
+  if (chapter.chapterId !== "personality_pattern") {
+    return false;
+  }
+
+  const text = [
+    chapter.headline,
+    ...chapter.hitReadingLines,
+    chapter.body,
+  ].join("\n");
+
+  return (
+    hasAnyMarker(text, personalityDirectHitSceneMarkers) &&
+    hasAnyMarker(text, personalityDirectHitSajuMarkers)
+  );
+}
+
 function appendV2HitReadingErrors(
   errors: string[],
   chapters: readonly ComprehensiveReportV2Chapter[],
@@ -2127,8 +2176,12 @@ function appendV2HitReadingErrors(
 
   for (const chapter of mainChapters) {
     const minimumCount = v2ChapterHitReadingMinimumCounts[chapter.chapterId];
+    const personalityDirectHitRescued = hasConcretePersonalityDirectHit(chapter);
 
-    if (chapter.hitReadingLines.length < minimumCount) {
+    if (
+      chapter.hitReadingLines.length < minimumCount &&
+      !personalityDirectHitRescued
+    ) {
       errors.push(`DIRECT_HIT_READING_MISSING: ${chapter.chapterId}`);
     }
     const concreteLineCount = chapter.hitReadingLines.filter(
@@ -2136,7 +2189,10 @@ function appendV2HitReadingErrors(
     ).length;
     const requiredConcreteLineCount = Math.min(2, minimumCount);
 
-    if (concreteLineCount < requiredConcreteLineCount) {
+    if (
+      concreteLineCount < requiredConcreteLineCount &&
+      !personalityDirectHitRescued
+    ) {
       errors.push(`DIRECT_HIT_READING_TOO_GENERIC: ${chapter.chapterId}`);
     }
   }

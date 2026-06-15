@@ -4,6 +4,7 @@ import { buildComprehensiveReportV2ProfileTable } from "./comprehensiveReportPro
 import type {
   ComprehensiveReportDraft,
   ComprehensiveReportV2Chapter,
+  ComprehensiveReportV2Draft,
   ComprehensiveReportV2NarrativeDraft,
   ComprehensiveReportV2ProfileTable,
 } from "./comprehensiveReportDraftTypes";
@@ -391,6 +392,170 @@ function attachDeterministicProfileTable(input: {
   };
 }
 
+type DirectHitSceneRescueResult<T> = {
+  readonly draft: T;
+  readonly rescued: boolean;
+};
+
+const personalitySceneMarkers = [
+  "회의",
+  "카톡",
+  "팀원",
+  "설명",
+  "오류",
+  "결론",
+  "담당자",
+  "기준표",
+  "마감",
+  "상대 말",
+] as const;
+const personalityEvidenceMarkers = [
+  "현침살",
+  "갑신일주",
+  "ENTJ",
+  "편관",
+  "정관",
+  "귀문관살",
+] as const;
+
+function hasAnyMarker(text: string, markers: readonly string[]): boolean {
+  return markers.some((marker) => text.includes(marker));
+}
+
+function isV2DraftWithDeterministicFields(
+  value: unknown,
+): value is ComprehensiveReportV2Draft {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    !Array.isArray(value) &&
+    "version" in value &&
+    value.version === "comprehensive_v2_draft" &&
+    "productType" in value &&
+    value.productType === "saju_mbti_full" &&
+    "profileTable" in value &&
+    "chapters" in value &&
+    Array.isArray(value.chapters)
+  );
+}
+
+function getChapterNarrativeText(chapter: ComprehensiveReportV2Chapter): string {
+  return [
+    chapter.headline,
+    ...chapter.hitReadingLines,
+    chapter.body,
+  ].join("\n");
+}
+
+function hasPersonalityDirectHitScene(chapter: ComprehensiveReportV2Chapter): boolean {
+  const text = getChapterNarrativeText(chapter);
+
+  return (
+    hasAnyMarker(text, personalitySceneMarkers) &&
+    hasAnyMarker(text, personalityEvidenceMarkers)
+  );
+}
+
+function buildPersonalityDirectHitRescue(input: {
+  readonly draft: ComprehensiveReportV2Draft;
+}): string | undefined {
+  const scenes = input.draft.sajuSignatureScenes ?? [];
+  const preferredScene =
+    scenes.find(
+      (scene) =>
+        scene.topics.includes("personality") &&
+        scene.featureLabels.includes("현침살"),
+    ) ??
+    scenes.find(
+      (scene) =>
+        scene.topics.includes("personality") &&
+        scene.featureLabels.some((label) => ["갑신일주", "편관", "정관"].includes(label)),
+    ) ??
+    scenes.find((scene) => scene.topics.includes("personality"));
+
+  if (preferredScene === undefined) {
+    return undefined;
+  }
+
+  const sceneLine = preferredScene.sceneLines?.[0] ?? preferredScene.sceneLine;
+  const interpretationLine = preferredScene.interpretationLine;
+  const selectedEvidenceLine =
+    preferredScene.featureLabels.includes("현침살") &&
+    input.draft.profileTable.mbti === "ENTJ"
+      ? "이 흐름은 현침살의 빠른 오류 감지와 ENTJ식 결론 지향이 겹칠 때 더 선명해집니다."
+      : preferredScene.featureLabels.includes("갑신일주") &&
+          preferredScene.featureLabels.some((label) =>
+            ["편관", "정관"].includes(label),
+          )
+        ? "이 흐름은 갑신일주가 압박 속에서 기준을 세우고 편관·정관의 역할 감각이 붙을 때 더 선명해집니다."
+        : undefined;
+  const rescueText = [
+    sceneLine,
+    interpretationLine,
+    selectedEvidenceLine,
+  ]
+    .filter((line): line is string => line !== undefined && line.trim().length > 0)
+    .join(" ");
+
+  if (
+    !hasAnyMarker(sceneLine, personalitySceneMarkers) ||
+    !hasAnyMarker(
+      `${rescueText}\n${preferredScene.featureLabels.join("\n")}`,
+      personalityEvidenceMarkers,
+    )
+  ) {
+    return undefined;
+  }
+
+  return rescueText;
+}
+
+function ensureDirectHitSceneForChapter<T>(
+  draft: T,
+): DirectHitSceneRescueResult<T> {
+  if (!isV2DraftWithDeterministicFields(draft)) {
+    return { draft, rescued: false };
+  }
+
+  const personalityChapter = draft.chapters.find(
+    (chapter) => chapter.chapterId === "personality_pattern",
+  );
+
+  if (
+    personalityChapter === undefined ||
+    hasPersonalityDirectHitScene(personalityChapter)
+  ) {
+    return { draft, rescued: false };
+  }
+
+  const rescueText = buildPersonalityDirectHitRescue({ draft });
+
+  if (rescueText === undefined) {
+    return { draft, rescued: false };
+  }
+
+  const rescuedDraft = {
+    ...draft,
+    chapters: draft.chapters.map((chapter) =>
+      chapter.chapterId === "personality_pattern"
+        ? {
+            ...chapter,
+            hitReadingLines: [
+              rescueText,
+              ...chapter.hitReadingLines,
+            ],
+            body: `${rescueText}\n\n${chapter.body}`.trim(),
+            mbtiTermsUsed: chapter.mbtiTermsUsed.includes(draft.profileTable.mbti)
+              ? chapter.mbtiTermsUsed
+              : [...chapter.mbtiTermsUsed, draft.profileTable.mbti],
+          }
+        : chapter,
+    ),
+  } as T;
+
+  return { draft: rescuedDraft, rescued: true };
+}
+
 export async function generateComprehensiveReportDraft(input: {
   readonly userDisplayName?: string;
   readonly mbtiType: string;
@@ -444,7 +609,10 @@ export async function generateComprehensiveReportDraft(input: {
     mbtiType: input.mbtiType,
     profileTable: input.profileTable,
   });
-  const normalizedInitial = normalizeComprehensiveReportFinalMessage(draftCandidate);
+  const directHitInitial = ensureDirectHitSceneForChapter(draftCandidate);
+  const normalizedInitial = normalizeComprehensiveReportFinalMessage(
+    directHitInitial.draft,
+  );
   const validation = validateComprehensiveReportDraft(normalizedInitial.draft, {
     allowedSajuTerms,
     allowedMbtiTerms: [input.mbtiType],
@@ -509,8 +677,9 @@ export async function generateComprehensiveReportDraft(input: {
       mbtiType: input.mbtiType,
       profileTable: input.profileTable,
     });
+    const directHitRepair = ensureDirectHitSceneForChapter(repairDraftCandidate);
     const normalizedRepair = normalizeComprehensiveReportFinalMessage(
-      repairDraftCandidate,
+      directHitRepair.draft,
     );
     const normalizerWarnings = getFinalMessageNormalizerWarnings(
       normalizedInitial,

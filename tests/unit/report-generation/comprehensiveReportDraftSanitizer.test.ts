@@ -145,6 +145,54 @@ describe("comprehensive report draft sanitizer", () => {
     expect(serialized).not.toContain("debug");
   });
 
+  it("replaces advertising guarantee wording before validation", () => {
+    const draft = {
+      ...createNarrativeDraft(),
+      openingSummary: "성공이 보장됩니다. 관계 보장과 재물 보장도 말하지 않습니다.",
+      chapters: [
+        {
+          ...createNarrativeDraft().chapters[0],
+          body:
+            "수익 보장 같은 문장은 단정 광고처럼 보이므로 가능성 중심으로 바꿉니다.",
+        },
+      ],
+      finalAdvice: "성공 보장 대신 흐름과 가능성으로 마무리합니다.",
+    };
+    const result = sanitizeComprehensiveReportNarrativeDraft(draft);
+    const serialized = JSON.stringify(result.draft);
+
+    expect(result.sanitized).toBe(true);
+    expect(serialized).not.toContain("보장");
+    expect(serialized).toContain("가능성");
+    expect(serialized).toContain("기대할 수 있습니다");
+  });
+
+  it("replaces visible evidence and internal label wording before validation", () => {
+    const draft = {
+      ...createNarrativeDraft(),
+      openingSummary: "사주 근거와 선택된 근거를 그대로 노출하지 않습니다.",
+      chapters: [
+        {
+          ...createNarrativeDraft().chapters[0],
+          body:
+            "명리학 근거, 계산된 근거, feature evidence, selected evidence는 사용자용 문장이 아닙니다.",
+        },
+      ],
+    };
+    const result = sanitizeComprehensiveReportNarrativeDraft(draft);
+    const serialized = JSON.stringify(result.draft);
+
+    expect(result.sanitized).toBe(true);
+    expect(serialized).not.toContain("사주 근거");
+    expect(serialized).not.toContain("선택된 근거");
+    expect(serialized).not.toContain("명리학 근거");
+    expect(serialized).not.toContain("계산된 근거");
+    expect(serialized).not.toContain("feature evidence");
+    expect(serialized).not.toContain("selected evidence");
+    expect(serialized).toContain("사주 흐름");
+    expect(serialized).toContain("중요하게 잡힌 흐름");
+  });
+
   it("replaces standalone meta document wording but preserves legitimate document work terms", () => {
     const draft = {
       ...createNarrativeDraft(),

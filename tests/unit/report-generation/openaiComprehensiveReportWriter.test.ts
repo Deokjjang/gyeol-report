@@ -156,8 +156,25 @@ function createPacket() {
   }).packet;
 }
 
+function createPacketWithoutPersonalityScene() {
+  return buildComprehensiveReportEvidencePacketFromComputedFacts({
+    mbtiType: "ENTJ",
+    sajuFacts: {
+      ...deokminSampleFacts,
+      tenGodSignals: [],
+      specialPatterns: [],
+      sinsal: [],
+      gwiin: [],
+    },
+  }).packet;
+}
+
 function createJsonResponse(body: unknown, status = 200): Response {
   return new Response(JSON.stringify(body), { status });
+}
+
+function createGenericPersonalityChapterBody(): string {
+  return "성격과 판단 패턴에서는 갑목과 갑신일주를 먼저 놓고 읽습니다. 덕민님은 목표가 분명할수록 빠르게 움직이고, 입력한 ENTJ 성향도 효율과 목표 정리 쪽에서 보조로 붙습니다. 메시지에서는 답을 짧게 보내고, 업무에서는 큰 방향부터 잡으며, 가족 부탁이 들어오면 먼저 처리하려는 흐름이 나올 수 있습니다. 돈과 일, 관계를 볼 때도 기준을 세우려는 힘이 강하지만 이 본문은 판단이 빠르고 기준이 분명하다는 말만 반복합니다. 갑목은 방향성을 만들고 갑신일주는 압박 속에서 선을 세우는 흐름으로 읽히지만, 이 본문은 성격 풀이를 일반화해 체감형 문장으로 보기 어렵습니다. 그래서 성격과 판단 패턴에서는 일반적인 성향 풀이만으로는 통과하지 못해야 합니다.";
 }
 
 async function expectSafeGenerationFailure(
@@ -726,6 +743,129 @@ describe("OpenAI comprehensive report writer", () => {
     expect(serialized).toContain("이 리포트에서는");
     expect(serialized).toContain("마지막 핵심");
     expect(serialized).toContain("오늘부터");
+  });
+
+  it("sanitizes guarantee and evidence label wording before validation", async () => {
+    const unsafeCopyDraft = {
+      ...createValidDraft(),
+      openingSummary:
+        "성공이 보장됩니다. 사주 근거를 그대로 쓰지 않고 갑목과 갑신일주를 먼저 놓고 ENTJ는 보조로 연결합니다.",
+    };
+
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "ENTJ",
+      evidencePacket: createPacket(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl: async () =>
+          createJsonResponse({
+            output_text: JSON.stringify(unsafeCopyDraft),
+          }),
+      },
+    });
+    const serialized = JSON.stringify(result.draft);
+
+    expect(result.warnings).toEqual(["copy sanitizer: applied"]);
+    expect(serialized).not.toContain("보장");
+    expect(serialized).not.toContain("사주 근거");
+    expect(serialized).toContain("기대할 수 있습니다");
+    expect(serialized).toContain("사주 흐름");
+  });
+
+  it("adds a deterministic personality direct-hit scene from selected signature evidence", async () => {
+    const genericPersonalityDraft = {
+      ...createValidDraft(),
+      chapters: createValidDraft().chapters.map((chapter) =>
+        chapter.chapterId === "personality_pattern"
+          ? {
+              ...chapter,
+              hitReadingLines: [
+                "덕민님은 성장할 수 있습니다.",
+                "덕민님은 장점과 단점이 있습니다.",
+              ],
+              body: createGenericPersonalityChapterBody(),
+            }
+          : chapter,
+      ),
+    };
+
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "ENTJ",
+      evidencePacket: createPacket(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl: async () =>
+          createJsonResponse({
+            output_text: JSON.stringify(genericPersonalityDraft),
+          }),
+      },
+    });
+    const personalityChapter = result.draft.version === "comprehensive_v2_draft"
+      ? result.draft.chapters.find(
+          (chapter) => chapter.chapterId === "personality_pattern",
+        )
+      : undefined;
+    const rescueLine = personalityChapter?.hitReadingLines[0] ?? "";
+    const serialized = JSON.stringify(result.draft);
+
+    expect(personalityChapter).toBeDefined();
+    expect(rescueLine).toContain("회의");
+    expect(rescueLine).toContain("결론");
+    expect(rescueLine).toContain("현침살");
+    expect(rescueLine).toContain("ENTJ");
+    expect(rescueLine).not.toContain("signature scene");
+    expect(rescueLine).not.toContain("evidence");
+    expect(rescueLine).not.toContain("근거");
+    expect(serialized).not.toContain("DIRECT_HIT_READING_MISSING");
+  });
+
+  it("does not fake a personality direct-hit scene without selected scene evidence", async () => {
+    const genericPersonalityDraft = {
+      ...createValidDraft(),
+      chapters: createValidDraft().chapters.map((chapter) =>
+        chapter.chapterId === "personality_pattern"
+          ? {
+              ...chapter,
+              hitReadingLines: [
+                "덕민님은 성장할 수 있습니다.",
+                "덕민님은 장점과 단점이 있습니다.",
+              ],
+              body: createGenericPersonalityChapterBody(),
+            }
+          : chapter,
+      ),
+    };
+    let callCount = 0;
+    const fetchImpl: typeof fetch = async () => {
+      callCount += 1;
+
+      return createJsonResponse({
+        output_text: JSON.stringify(genericPersonalityDraft),
+      });
+    };
+
+    const error = await expectSafeGenerationFailure(
+      generateComprehensiveReportDraft({
+        mbtiType: "ENTJ",
+        evidencePacket: createPacketWithoutPersonalityScene(),
+        config: {
+          apiKey: "test_key",
+          model: "test_model",
+          enabled: true,
+          fetchImpl,
+        },
+      }),
+    );
+
+    expect(callCount).toBe(2);
+    expect(error.stage).toBe("draft_validation");
+    expect(error.validationErrors?.join("\n")).toContain(
+      "DIRECT_HIT_READING_TOO_GENERIC: personality_pattern",
+    );
   });
 
   it("repairs unsafe copy mild meta wording and repeated sentences from model output", async () => {

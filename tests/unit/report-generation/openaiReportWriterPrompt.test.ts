@@ -62,6 +62,15 @@ describe("OpenAI report writer prompt", () => {
       "없는 feature를 만들지 말고 제공된 feature만 사용하라",
     );
     expect(combined).toContain("좋은 길신/귀인은 상징 이미지와 실제 활용 방향");
+    expect(combined).toContain(
+      "성격 챕터는 질문을 나열하지 말고, 구체 장면 1개를 반드시 포함하라",
+    );
+    expect(combined).toContain("회의에서 상대 설명이 끝나기 전에 오류와 결론");
+    expect(combined).toContain("카톡에서 상대는 감정을 풀고 있는데");
+    expect(combined).toContain("담당자·기준표·마감선");
+    expect(combined).toContain(
+      "personality_pattern에는 selected signature scene 중 personality/work/relationship 관련 장면",
+    );
     expect(combined).toContain("symbolicImage");
     expect(combined).toContain("positiveReading");
     expect(combined).toContain("cautionReading");
@@ -141,6 +150,7 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("바로 와닿는 장면 문장");
     expect(combined).toContain("구체적 장면 예시");
     expect(combined).toContain("실천 솔루션");
+    expect(combined).toContain("명리학적 흐름");
     expect(combined).toContain("덕민님, 이런 상황 자주 나오지 않나요");
     expect(combined).toContain("공부/일 루틴");
     expect(combined).toContain("오행 부족/과다에 따른 생활 조언");
@@ -168,6 +178,10 @@ describe("OpenAI report writer prompt", () => {
     );
     expect(combined).toContain(
       "금지: 진단, 치료, 정신질환, 우울증, 불안장애, 투자 추천, 법률 자문, 반드시, 무조건, 100%, 보장, 운명 확정",
+    );
+    expect(combined).toContain("보장 같은 단정 광고 표현 금지");
+    expect(combined).toContain(
+      "사주 근거, 명리학 근거, 선택된 근거, feature evidence 같은 내부 표현 금지",
     );
     expect(combined).toContain("리포트 본문에는 의료·심리치료 관련 단어를 쓰지 마라");
     expect(combined).toContain("특히 치료, 진단, 우울증, 불안장애, 정신질환이라는 단어는 금지한다");
@@ -294,6 +308,13 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("본문을 더 길고 구체적으로 보강하라");
     expect(combined).toContain(
       "진단, 치료, 정신질환, 우울증, 불안장애, 투자 추천, 법률 자문, 반드시, 무조건, 100%, 보장, 운명 확정 같은 위험 문구를 제거한다",
+    );
+    expect(combined).toContain("보장 같은 단정 광고 표현을 모두 제거하라");
+    expect(combined).toContain(
+      "사주 근거, 선택된 근거, feature evidence 같은 내부 표현을 쓰지 마라",
+    );
+    expect(combined).toContain(
+      "성격 챕터에는 회의/카톡/팀원/설명/오류/결론 같은 구체 장면",
     );
     expect(combined).toContain("치료는 관리, 조정, 생활 조언, 운영법으로 바꿔라");
     expect(combined).toContain("문서는 리포트 또는 문맥상 자연스러운 표현으로 바꿔라");

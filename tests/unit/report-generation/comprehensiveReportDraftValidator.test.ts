@@ -535,6 +535,33 @@ describe("comprehensive report draft validator", () => {
     expect(result.errors.join("\n")).toContain("UNSAFE_MEDICAL_COPY: 치료");
   });
 
+  it("still blocks raw advertising guarantee copy when sanitizer is not run", () => {
+    const draft = {
+      ...createValidV2Draft(),
+      finalAdvice:
+        "성공이 보장됩니다라는 표현이 그대로 남으면 최종 저장 전 검증에서 막아야 합니다.",
+    };
+    const result = validateComprehensiveReportDraft(draft);
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("UNSAFE_ADVERTISING_COPY");
+    expect(result.errors.join("\n")).toContain("보장");
+  });
+
+  it("still blocks raw evidence label copy when sanitizer is not run", () => {
+    const draft = {
+      ...createValidV2Draft(),
+      openingSummary:
+        "사주 근거를 사용자 본문에 라벨처럼 노출하면 안 되는 흐름입니다.",
+    };
+    const result = validateComprehensiveReportDraft(draft);
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "VISIBLE_EVIDENCE_DEBUG_LABEL: 사주 근거",
+    );
+  });
+
   it("rejects V2 drafts with missing or short narrative chapters", () => {
     const draft = createValidV2Draft();
     const missingResult = validateComprehensiveReportDraft({
@@ -850,6 +877,10 @@ describe("comprehensive report draft validator", () => {
                 "덕민님은 장점과 단점이 있습니다.",
                 "덕민님은 성격이 좋습니다.",
               ],
+              body:
+                chapterId === "personality_pattern"
+                  ? "성격과 판단 패턴에서는 갑목과 갑신일주를 먼저 놓고 읽습니다. 덕민님은 목표가 분명할수록 빠르게 움직이고, 입력한 ENTJ 성향도 효율과 목표 정리 쪽에서 보조로 붙습니다. 메시지에서는 답을 짧게 보내고, 업무에서는 큰 방향부터 잡으며, 가족 부탁이 들어오면 먼저 처리하려는 흐름이 나올 수 있습니다. 돈과 일, 관계를 볼 때도 기준을 세우려는 힘이 강하지만 이 본문은 판단이 빠르고 기준이 분명하다는 말만 반복합니다. 갑목은 방향성을 만들고 갑신일주는 압박 속에서 선을 세우는 흐름으로 읽히지만, 이 본문은 성격 풀이를 일반화해 체감형 문장으로 보기 어렵습니다. 그래서 성격과 판단 패턴에서는 일반적인 성향 풀이만으로는 통과하지 못해야 합니다."
+                  : chapter.body,
             }
           : chapter,
       ),
@@ -859,6 +890,37 @@ describe("comprehensive report draft validator", () => {
     expect(result.errors.join("\n")).toContain(
       `DIRECT_HIT_READING_TOO_GENERIC: ${chapterId}`,
     );
+  });
+
+  it("accepts a concrete personality direct-hit scene without MBTI type examples", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "personality_pattern"
+          ? {
+              ...chapter,
+              hitReadingLines: [
+                "회의에서 상대 설명이 끝나기 전에 오류와 결론이 동시에 보이는 장면이 꽤 익숙할 수 있습니다.",
+              ],
+              body:
+                `${chapter.body} 회의에서 상대가 설명을 이어갈 때 덕민님은 이미 오류와 결론을 함께 보고 있을 가능성이 큽니다. 현침살의 빠른 오류 감지와 ENTJ식 결론 지향이 겹치면 판단은 빨라지지만 말이 평가처럼 들릴 수 있습니다.`,
+              solutionLines: [
+                ...chapter.solutionLines,
+                "바로 지적하기보다 제가 이해한 핵심은 이것입니다라는 문장으로 시작하세요.",
+              ],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.errors.join("\n")).not.toContain(
+      "DIRECT_HIT_READING_MISSING: personality_pattern",
+    );
+    expect(result.errors.join("\n")).not.toContain(
+      "DIRECT_HIT_READING_TOO_GENERIC: personality_pattern",
+    );
+    expect(result.ok).toBe(true);
   });
 
   it("rejects V2 drafts when all main hit-reading lines are generic", () => {
