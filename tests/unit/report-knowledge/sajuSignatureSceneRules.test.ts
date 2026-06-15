@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   SAJU_SIGNATURE_SCENE_RULES,
+  UNIVERSAL_SCENE_CONTEXT_SEEDS,
   selectSajuSignatureScenes,
 } from "../../../src/lib/report-knowledge/sajuSignatureSceneRules";
 
@@ -52,7 +53,12 @@ describe("Saju signature scene rules", () => {
       scenes
         .find((scene) => scene.id === "hyeonchim_entj_fast_conclusion")
         ?.sceneLines?.join("\n"),
-    ).toContain("담당자와 마감");
+    ).toContain("사람들과 대화");
+    expect(
+      scenes
+        .find((scene) => scene.id === "hyeonchim_entj_fast_conclusion")
+        ?.sceneLines?.join("\n"),
+    ).toContain("수업이나 팀플");
     expect(
       scenes.find((scene) => scene.id === "jaego_wealth_storage")?.sceneLines?.join("\n"),
     ).toContain("생활비, 투자금, 비상금");
@@ -97,6 +103,23 @@ describe("Saju signature scene rules", () => {
     });
 
     expect(scenes).toHaveLength(3);
+  });
+
+  it("keeps signature scenes usable outside corporate meeting contexts", () => {
+    const serialized = JSON.stringify({
+      seeds: UNIVERSAL_SCENE_CONTEXT_SEEDS,
+      rules: SAJU_SIGNATURE_SCENE_RULES,
+    });
+    const meetingCount = serialized.match(/회의/g)?.length ?? 0;
+
+    expect(serialized).toContain("사람들과 대화");
+    expect(serialized).toContain("카톡");
+    expect(serialized).toContain("수업");
+    expect(serialized).toContain("팀플");
+    expect(serialized).toContain("가족");
+    expect(serialized).toContain("돈");
+    expect(serialized).toContain("잠들기 전");
+    expect(meetingCount).toBeLessThanOrEqual(2);
   });
 
   it("keeps deterministic scene copy free of unsafe claims", () => {

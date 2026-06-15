@@ -28,6 +28,18 @@ export type SajuSignatureScene = {
   readonly practicalLine: string;
 };
 
+export const UNIVERSAL_SCENE_CONTEXT_SEEDS = [
+  "사람들과 대화할 때",
+  "카톡이나 DM에서",
+  "수업이나 팀플에서",
+  "가족이나 가까운 사람과 말할 때",
+  "친구와 약속을 정할 때",
+  "알바나 업무에서 역할을 나눌 때",
+  "프로젝트나 과제에서",
+  "돈을 쓰거나 계좌를 정리할 때",
+  "잠들기 전 머릿속에서",
+] as const;
+
 export const SAJU_SIGNATURE_SCENE_RULES = [
   {
     id: "hyeonchim_entj_fast_conclusion",
@@ -35,12 +47,12 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     mbtiTypes: ["ENTJ"],
     topics: ["personality", "work", "relationship"],
     sceneLines: [
-      "회의에서 상대가 설명을 끝내기 전에 이미 담당자와 마감만 정하면 끝나는 문제라고 결론이 보일 수 있습니다.",
+      "사람들과 대화할 때 상대가 길게 설명하면, 이미 핵심과 다음 행동이 먼저 보일 수 있습니다.",
       "카톡에서 상대는 감정을 풀고 있는데, 사용자님은 속으로 그래서 다음 행동은 무엇인지가 먼저 떠오를 수 있습니다.",
-      "팀원이 애매하게 말하면 사용자님은 감정보다 담당자, 기준표, 마감선을 먼저 떠올릴 수 있습니다.",
+      "수업이나 팀플에서 역할이 흐리면, 누가 무엇을 언제까지 할지 먼저 나누고 싶어질 수 있습니다.",
     ],
     sceneLine:
-      "회의에서 상대가 설명을 끝내기 전에 이미 오류와 결론이 보일 수 있습니다.",
+      "사람들과 대화할 때 상대가 설명을 끝내기 전에 이미 오류와 결론이 보일 수 있습니다.",
     interpretationLine:
       "현침살의 예리함과 ENTJ의 빠른 결론 성향이 겹치면 판단 속도는 강해지지만, 말이 평가처럼 들릴 수 있습니다.",
     practicalLine:

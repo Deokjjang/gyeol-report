@@ -74,6 +74,7 @@ const repairableDraftValidationErrorCodes = [
   "UNSAFE_CERTAINTY_COPY",
   "REPEATED_SENTENCE",
   "REPEATED_QUESTION",
+  "MEETING_SCENE_OVERUSE",
   "MBTI_TYPE_EXAMPLE_FORBIDDEN",
 ] as const;
 const repairableDraftValidationErrorCodeSet = new Set<string>(
@@ -229,6 +230,7 @@ const draftV2RootKeys = [
   "profileTable",
   "sajuFeatureSpotlight",
   "sajuSignatureScenes",
+  "reportDifferentiationModules",
   "chapters",
   "finalAdvice",
   "safetyNotes",
@@ -278,6 +280,13 @@ const profileTableKeys = [
 const spotlightGroupIds = ["good_fortune", "talent", "caution", "balance"] as const;
 const spotlightPolarities = ["positive", "mixed", "warning"] as const;
 const pillarGridColumnIds = ["hour", "day", "month", "year"] as const;
+const reportDifferentiationModuleIds = [
+  "saju_weapon",
+  "saju_trap",
+  "daily_scene",
+  "switch_action",
+  "relationship_needs",
+] as const;
 type ParsedSajuFeatureSpotlight = NonNullable<
   ComprehensiveReportV2Draft["sajuFeatureSpotlight"]
 >;
@@ -286,6 +295,19 @@ type ParsedSajuFeatureSpotlightItem = ParsedSajuFeatureSpotlightGroup["items"][n
 type ParsedSajuSignatureScene = NonNullable<
   ComprehensiveReportV2Draft["sajuSignatureScenes"]
 >[number];
+type ParsedReportDifferentiationModule = NonNullable<
+  ComprehensiveReportV2Draft["reportDifferentiationModules"]
+>[number];
+const reportDifferentiationModuleTitles = {
+  saju_weapon: "내 사주의 무기",
+  saju_trap: "반복되는 함정",
+  daily_scene: "찔리는 일상 장면",
+  switch_action: "바꾸는 스위치",
+  relationship_needs: "관계에서 봐야 할 조건",
+} as const satisfies Record<
+  ParsedReportDifferentiationModule["moduleId"],
+  ParsedReportDifferentiationModule["title"]
+>;
 
 const displayOnlySectionIds = ["manse_table", "mbti_table"] as const;
 const interpretationSectionIds = [
@@ -425,7 +447,11 @@ const hitReadingBehaviorMarkers = [
 ] as const;
 const personalityDirectHitSceneMarkers = [
   "회의",
+  "사람들과 대화",
   "카톡",
+  "DM",
+  "수업",
+  "팀플",
   "팀원",
   "설명",
   "오류",
@@ -2034,6 +2060,105 @@ function parseSajuSignatureScenes(
     .filter((scene): scene is NonNullable<typeof scene> => scene !== undefined);
 }
 
+function parseReportDifferentiationModules(
+  errors: string[],
+  value: unknown,
+): ComprehensiveReportV2Draft["reportDifferentiationModules"] {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!Array.isArray(value)) {
+    errors.push("reportDifferentiationModules must be an array when provided.");
+    return undefined;
+  }
+
+  return value
+    .map((module, moduleIndex) => {
+      if (!isRecord(module)) {
+        errors.push(`reportDifferentiationModules.${moduleIndex} must be an object.`);
+        return undefined;
+      }
+      if (
+        typeof module.moduleId !== "string" ||
+        !(reportDifferentiationModuleIds as readonly string[]).includes(
+          module.moduleId,
+        )
+      ) {
+        errors.push(`reportDifferentiationModules.${moduleIndex}.moduleId is invalid.`);
+        return undefined;
+      }
+      const moduleId =
+        module.moduleId as ParsedReportDifferentiationModule["moduleId"];
+      const expectedTitle = reportDifferentiationModuleTitles[moduleId];
+
+      if (typeof module.title !== "string" || module.title.trim().length === 0) {
+        errors.push(
+          `reportDifferentiationModules.${moduleIndex}.title must be a non-empty string.`,
+        );
+      } else if (module.title !== expectedTitle) {
+        errors.push(
+          `reportDifferentiationModules.${moduleIndex}.title does not match moduleId.`,
+        );
+      }
+      if (!Array.isArray(module.items)) {
+        errors.push(`reportDifferentiationModules.${moduleIndex}.items must be an array.`);
+        return undefined;
+      }
+
+      const items = module.items
+        .map((item, itemIndex) => {
+          if (!isRecord(item)) {
+            errors.push(
+              `reportDifferentiationModules.${moduleIndex}.items.${itemIndex} must be an object.`,
+            );
+            return undefined;
+          }
+          if (typeof item.title !== "string" || item.title.trim().length === 0) {
+            errors.push(
+              `reportDifferentiationModules.${moduleIndex}.items.${itemIndex}.title must be a non-empty string.`,
+            );
+          }
+          if (typeof item.body !== "string" || item.body.trim().length === 0) {
+            errors.push(
+              `reportDifferentiationModules.${moduleIndex}.items.${itemIndex}.body must be a non-empty string.`,
+            );
+          }
+          if (
+            item.practicalLine !== undefined &&
+            typeof item.practicalLine !== "string"
+          ) {
+            errors.push(
+              `reportDifferentiationModules.${moduleIndex}.items.${itemIndex}.practicalLine must be a string when provided.`,
+            );
+          }
+          if (!isStringArray(item.sourceFeatureIds)) {
+            errors.push(
+              `reportDifferentiationModules.${moduleIndex}.items.${itemIndex}.sourceFeatureIds must be a string array.`,
+            );
+          }
+
+          return {
+            title: typeof item.title === "string" ? item.title : "",
+            body: typeof item.body === "string" ? item.body : "",
+            ...(typeof item.practicalLine === "string"
+              ? { practicalLine: item.practicalLine }
+              : {}),
+            sourceFeatureIds: isStringArray(item.sourceFeatureIds)
+              ? item.sourceFeatureIds
+              : [],
+          };
+        })
+        .filter((item): item is NonNullable<typeof item> => item !== undefined);
+
+      return {
+        moduleId,
+        title: expectedTitle,
+        items,
+      };
+    })
+    .filter((module): module is NonNullable<typeof module> => module !== undefined);
+}
+
 function appendChapterCoverageErrors(
   errors: string[],
   chapters: readonly ComprehensiveReportV2Chapter[],
@@ -2460,6 +2585,10 @@ function parseV2Draft(
     errors,
     input.sajuSignatureScenes,
   );
+  const reportDifferentiationModules = parseReportDifferentiationModules(
+    errors,
+    input.reportDifferentiationModules,
+  );
 
   if (!isStringArray(input.safetyNotes)) {
     errors.push("safetyNotes must be a string array.");
@@ -2483,6 +2612,11 @@ function parseV2Draft(
   appendV2SajuFirstErrors(errors, chapters);
   appendV2RepetitionErrors(errors, chapters);
   appendV2TrackedPhraseOveruseErrors(
+    errors,
+    chapters,
+    typeof input.finalAdvice === "string" ? input.finalAdvice : "",
+  );
+  appendV2MeetingSceneOveruseErrors(
     errors,
     chapters,
     typeof input.finalAdvice === "string" ? input.finalAdvice : "",
@@ -2518,6 +2652,9 @@ function parseV2Draft(
     profileTable: profileTable as ComprehensiveReportV2ProfileTable,
     ...(sajuFeatureSpotlight === undefined ? {} : { sajuFeatureSpotlight }),
     ...(sajuSignatureScenes === undefined ? {} : { sajuSignatureScenes }),
+    ...(reportDifferentiationModules === undefined
+      ? {}
+      : { reportDifferentiationModules }),
     chapters,
     finalAdvice: input.finalAdvice as string,
     safetyNotes: input.safetyNotes as readonly string[],
@@ -2595,6 +2732,14 @@ function collectUserVisibleDraftStrings(
         scene.sceneLine,
         scene.interpretationLine,
         scene.practicalLine,
+      ]) ?? []),
+      ...(draft.reportDifferentiationModules?.flatMap((module) => [
+        module.title,
+        ...module.items.flatMap((item) => [
+          item.title,
+          item.body,
+          item.practicalLine ?? "",
+        ]),
       ]) ?? []),
     ];
   }
@@ -2683,6 +2828,41 @@ function appendV2TrackedPhraseOveruseErrors(
   }
 }
 
+function appendV2MeetingSceneOveruseErrors(
+  errors: string[],
+  chapters: readonly ComprehensiveReportV2Chapter[],
+  finalAdvice: string,
+): void {
+  const narrativeText = [
+    ...chapters.map(getV2ChapterNarrativeText),
+    finalAdvice,
+  ].join("\n");
+
+  if (
+    countOccurrences(narrativeText, "회의") > 8 &&
+    hasExactDuplicateMeetingSentence(narrativeText)
+  ) {
+    errors.push("MEETING_SCENE_OVERUSE: 회의");
+  }
+}
+
+function hasExactDuplicateMeetingSentence(text: string): boolean {
+  const seen = new Set<string>();
+  const sentences = text
+    .split(/\r?\n|(?<=[.!?。！？])\s+/u)
+    .map((sentence) => sentence.trim())
+    .filter((sentence) => sentence.includes("회의"));
+
+  for (const sentence of sentences) {
+    if (seen.has(sentence)) {
+      return true;
+    }
+    seen.add(sentence);
+  }
+
+  return false;
+}
+
 function isQuestionLikeSegment(segment: string): boolean {
   const trimmed = segment.trim();
 
@@ -2749,6 +2929,9 @@ function getV2SpotlightAndSceneWarnings(
     if (count > 6) {
       warnings.push(`REPEATED_KEY_PHRASE_WARNING: ${phrase}`);
     }
+  }
+  if (countOccurrences(narrativeText, "회의") > 4) {
+    warnings.push("MEETING_SCENE_DENSITY_WARNING: 회의");
   }
   for (const chapter of draft.chapters) {
     const count = countOccurrences(chapter.body, "덕민님,");

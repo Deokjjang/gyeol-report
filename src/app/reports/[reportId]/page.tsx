@@ -575,6 +575,51 @@ function renderV2FeatureSpotlight(
   );
 }
 
+function renderV2DifferentiationModules(
+  draft: Extract<ComprehensiveReportDraft, { readonly version: "comprehensive_v2_draft" }>,
+) {
+  const modules =
+    draft.reportDifferentiationModules?.filter((module) => module.items.length > 0) ??
+    [];
+
+  if (modules.length === 0) {
+    return null;
+  }
+
+  return (
+    <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+      <h2 className="text-lg font-semibold text-neutral-50">
+        읽기 전에 잡고 갈 핵심 포인트
+      </h2>
+      <div className="grid gap-3 md:grid-cols-2">
+        {modules.map((module) => (
+          <section
+            key={module.moduleId}
+            className="space-y-3 rounded-md border border-neutral-800 bg-neutral-900/60 p-3"
+          >
+            <h3 className="text-sm font-semibold text-emerald-100">
+              {module.title}
+            </h3>
+            <ul className="space-y-2 text-sm leading-6 text-neutral-200">
+              {module.items.slice(0, 3).map((item) => (
+                <li key={`${module.moduleId}:${item.title}`}>
+                  <span className="font-semibold text-neutral-50">{item.title}</span>
+                  <span className="text-neutral-400"> — {item.body}</span>
+                  {item.practicalLine === undefined ? null : (
+                    <span className="block text-neutral-500">
+                      {item.practicalLine}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function renderGeneratedV1State(
   result: PaidReportResult,
   draft: Extract<ComprehensiveReportDraft, { readonly version: "comprehensive_v1_draft" }>,
@@ -692,6 +737,7 @@ function renderGeneratedV2State(
 
         {renderV2ProfileTable(result, draft)}
         {renderV2FeatureSpotlight(draft)}
+        {renderV2DifferentiationModules(draft)}
 
         <section className="space-y-5" aria-label="리포트 본문">
           {draft.chapters.map((chapter) => (

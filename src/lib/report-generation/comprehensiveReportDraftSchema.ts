@@ -146,6 +146,45 @@ const sajuSignatureScenesSchema = {
   },
 } as const;
 
+const reportDifferentiationModulesSchema = {
+  type: "array",
+  items: {
+    type: "object",
+    additionalProperties: false,
+    required: ["moduleId", "title", "items"],
+    properties: {
+      moduleId: {
+        type: "string",
+        enum: [
+          "saju_weapon",
+          "saju_trap",
+          "daily_scene",
+          "switch_action",
+          "relationship_needs",
+        ],
+      },
+      title: {
+        type: "string",
+        minLength: 1,
+      },
+      items: {
+        type: "array",
+        items: {
+          type: "object",
+          additionalProperties: false,
+          required: ["title", "body", "sourceFeatureIds"],
+          properties: {
+            title: { type: "string", minLength: 1 },
+            body: { type: "string", minLength: 1 },
+            practicalLine: { type: "string", minLength: 1 },
+            sourceFeatureIds: stringArraySchema,
+          },
+        },
+      },
+    },
+  },
+} as const;
+
 export const comprehensiveReportV1DraftJsonSchema = {
   type: "object",
   additionalProperties: false,
@@ -333,6 +372,7 @@ export const comprehensiveReportV2DraftJsonSchema = {
     },
     sajuFeatureSpotlight: sajuFeatureSpotlightSchema,
     sajuSignatureScenes: sajuSignatureScenesSchema,
+    reportDifferentiationModules: reportDifferentiationModulesSchema,
     chapters: {
       type: "array",
       minItems: COMPREHENSIVE_REPORT_V2_CHAPTER_IDS.length,

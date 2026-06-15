@@ -65,9 +65,13 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain(
       "성격 챕터는 질문을 나열하지 말고, 구체 장면 1개를 반드시 포함하라",
     );
-    expect(combined).toContain("회의에서 상대 설명이 끝나기 전에 오류와 결론");
+    expect(combined).toContain("사람들과 대화할 때 상대 설명이 끝나기 전에 오류와 결론");
     expect(combined).toContain("카톡에서 상대는 감정을 풀고 있는데");
     expect(combined).toContain("담당자·기준표·마감선");
+    expect(combined).toContain("대화/카톡/수업/팀플에서 드러나는 장면");
+    expect(combined).toContain("알바/업무, 프로젝트, 실전 적용");
+    expect(combined).toContain("직장인에게만 맞는 회의 장면에 치우치지 말고");
+    expect(combined).toContain("수업·팀플·카톡·친구·가족·알바·업무·돈·잠들기 전");
     expect(combined).toContain(
       "personality_pattern에는 selected signature scene 중 personality/work/relationship 관련 장면",
     );
@@ -260,7 +264,7 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("같은 형태의 ~하지 않나요? 문장을 반복하지 마라");
     expect(combined).toContain("질문 여러 개를 나열하는 대신 구체 장면을 먼저 보여줘라");
     expect(combined).toContain(
-      "회의, 카톡, 가족 부탁, 계좌 분리, 전문서 공부, 연애 대화, 밤에 생각이 안 꺼지는 장면",
+      "사람들과 대화, 카톡이나 DM, 수업, 팀플, 가족 부탁, 계좌 분리, 전문서 공부, 연애 대화, 잠들기 전",
     );
     expect(combined).toContain(
       "그대로 복붙하지 말고 자연스럽게 풀어써라",
@@ -346,7 +350,7 @@ describe("OpenAI report writer prompt", () => {
       "사주 근거, 선택된 근거, feature evidence 같은 내부 표현을 쓰지 마라",
     );
     expect(combined).toContain(
-      "성격 챕터에는 회의/카톡/팀원/설명/오류/결론 같은 구체 장면",
+      "성격 챕터에는 사람들과 대화/카톡/수업/팀플/설명/오류/결론 같은 구체 장면",
     );
     expect(combined).toContain("치료는 관리, 조정, 생활 조언, 운영법으로 바꿔라");
     expect(combined).toContain("문서는 리포트 또는 문맥상 자연스러운 표현으로 바꿔라");

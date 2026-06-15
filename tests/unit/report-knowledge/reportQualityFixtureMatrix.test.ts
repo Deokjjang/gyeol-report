@@ -3,8 +3,10 @@ import { describe, expect, it } from "vitest";
 import {
   DEOKMIN_REPORT_SMOKE_FIXTURE_ID,
   DEFAULT_REPORT_SMOKE_FIXTURE_ID,
+  getReportQualitySmokeSampleFixtures,
   getReportSmokeFixture,
   getReportSmokeFixtureIdFromArgs,
+  getReportSmokeFixtureMatrixModeFromArgs,
   REPORT_QUALITY_FIXTURE_MATRIX,
 } from "../../../src/lib/report-knowledge/reportQualityFixtureMatrix";
 
@@ -81,6 +83,36 @@ describe("report quality fixture matrix", () => {
     );
     expect(getReportSmokeFixtureIdFromArgs(["--fixture", "unknown"])).toBe(
       "default",
+    );
+  });
+
+  it("provides a sample quality matrix smoke subset with non-ENTJ coverage", () => {
+    const fixtures = getReportQualitySmokeSampleFixtures();
+    const mbtiTypes = new Set(fixtures.map((fixture) => fixture.mbti));
+
+    expect(fixtures).toHaveLength(4);
+    expect(fixtures.map((fixture) => fixture.id)).toEqual(
+      expect.arrayContaining([
+        DEOKMIN_REPORT_SMOKE_FIXTURE_ID,
+        "reflective-water-infp",
+        "money-resource-estp",
+        "responsibility-earth-istj",
+      ]),
+    );
+    expect(mbtiTypes.size).toBeGreaterThanOrEqual(4);
+    expect(mbtiTypes.has("ENTJ")).toBe(true);
+    expect(mbtiTypes.has("INFP")).toBe(true);
+    expect(mbtiTypes.has("ESTP")).toBe(true);
+    expect(mbtiTypes.has("ISTJ")).toBe(true);
+    expect(fixtures.some((fixture) => fixture.mbti !== "ENTJ")).toBe(true);
+    expect(getReportSmokeFixtureMatrixModeFromArgs(["--fixture-matrix", "sample"])).toBe(
+      "sample",
+    );
+    expect(getReportSmokeFixtureMatrixModeFromArgs(["--fixture-matrix=sample"])).toBe(
+      "sample",
+    );
+    expect(getReportSmokeFixtureMatrixModeFromArgs(["--fixture-matrix", "all"])).toBe(
+      undefined,
     );
   });
 

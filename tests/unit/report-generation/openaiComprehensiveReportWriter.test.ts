@@ -359,7 +359,9 @@ describe("OpenAI comprehensive report writer", () => {
       },
     });
     expect(result.rawText).toBe(JSON.stringify(modelDraft));
-    expect(result.warnings).toEqual([]);
+    expect(result.warnings).toEqual([
+      "MEETING_SCENE_DENSITY_WARNING: 회의",
+    ]);
     expect(JSON.stringify(calls[0].body)).toContain("사주가 1차 근거");
     expect(JSON.stringify(calls[0].body)).toContain(
       "이번 리포트에서 사용할 수 있는 사주 용어",
@@ -378,6 +380,7 @@ describe("OpenAI comprehensive report writer", () => {
     expect(JSON.stringify(calls[0].body)).toContain("selectedSajuFeatureEvidence");
     expect(JSON.stringify(calls[0].body)).toContain("sajuFeatureSpotlight");
     expect(JSON.stringify(calls[0].body)).toContain("sajuSignatureScenes");
+    expect(JSON.stringify(calls[0].body)).toContain("reportDifferentiationModules");
     expect(JSON.stringify(calls[0].body)).toContain("day_pillar_gapsin");
     expect(JSON.stringify(calls[0].body)).toContain("symbolicImage");
     expect(JSON.stringify(calls[0].body)).toContain("positiveReading");
@@ -385,6 +388,7 @@ describe("OpenAI comprehensive report writer", () => {
     expect(responseFormatSchema).not.toContain("profileTable");
     expect(responseFormatSchema).not.toContain("sajuFeatureSpotlight");
     expect(responseFormatSchema).not.toContain("sajuSignatureScenes");
+    expect(responseFormatSchema).not.toContain("reportDifferentiationModules");
     expect(responseFormatSchema).not.toContain("yearPillar");
     expect(JSON.stringify(calls[0].body)).toContain("day_master_gabmok");
     expect(result.draft).toMatchObject({
@@ -393,6 +397,9 @@ describe("OpenAI comprehensive report writer", () => {
       },
       sajuSignatureScenes: expect.arrayContaining([
         expect.objectContaining({ id: "hyeonchim_entj_fast_conclusion" }),
+      ]),
+      reportDifferentiationModules: expect.arrayContaining([
+        expect.objectContaining({ moduleId: "saju_weapon" }),
       ]),
     });
   });
@@ -506,7 +513,8 @@ describe("OpenAI comprehensive report writer", () => {
     expect(result.rawText).toBe(JSON.stringify(repairedDraft));
     expect(result.warnings).toEqual([
       "quality repair: attempted",
-      "quality repair: passed",
+      "quality repair: passed with warnings",
+      "MEETING_SCENE_DENSITY_WARNING: 회의",
     ]);
     expect(repairRequestBody).toContain("validation errors");
     expect(repairRequestBody).toContain("DIRECT_HIT_READING_TOO_GENERIC: opening");
@@ -583,6 +591,7 @@ describe("OpenAI comprehensive report writer", () => {
       "quality repair: attempted",
       "quality repair: passed with warnings",
       "DIRECT_HIT_READING_TOO_GENERIC: risk_and_growth",
+      "MEETING_SCENE_DENSITY_WARNING: 회의",
     ]);
   });
 
@@ -795,7 +804,10 @@ describe("OpenAI comprehensive report writer", () => {
     });
 
     expect(callCount).toBe(1);
-    expect(result.warnings).toEqual(["copy sanitizer: applied"]);
+    expect(result.warnings).toEqual([
+      "copy sanitizer: applied",
+      "MEETING_SCENE_DENSITY_WARNING: 회의",
+    ]);
     expect(JSON.stringify(result.draft)).not.toContain("초안");
     expect(JSON.stringify(result.draft)).toContain("리포트");
   });
@@ -844,6 +856,7 @@ describe("OpenAI comprehensive report writer", () => {
     expect(result.warnings).toEqual([
       "copy sanitizer: applied",
       "final message normalizer: applied",
+      "MEETING_SCENE_DENSITY_WARNING: 회의",
     ]);
     expect(serialized).not.toContain("이 문서");
     expect(serialized).not.toContain("문서에서는");
@@ -875,7 +888,10 @@ describe("OpenAI comprehensive report writer", () => {
     });
     const serialized = JSON.stringify(result.draft);
 
-    expect(result.warnings).toEqual(["copy sanitizer: applied"]);
+    expect(result.warnings).toEqual([
+      "copy sanitizer: applied",
+      "MEETING_SCENE_DENSITY_WARNING: 회의",
+    ]);
     expect(serialized).not.toContain("보장");
     expect(serialized).not.toContain("사주 근거");
     expect(serialized).toContain("기대할 수 있습니다");
@@ -921,7 +937,7 @@ describe("OpenAI comprehensive report writer", () => {
     const serialized = JSON.stringify(result.draft);
 
     expect(personalityChapter).toBeDefined();
-    expect(rescueLine).toContain("회의");
+    expect(rescueLine).toContain("사람들과 대화");
     expect(rescueLine).toContain("결론");
     expect(rescueLine).toContain("현침살");
     expect(rescueLine).toContain("ENTJ");
@@ -1156,7 +1172,8 @@ describe("OpenAI comprehensive report writer", () => {
     expect(result.warnings).toEqual([
       "copy sanitizer: applied",
       "quality repair: attempted",
-      "quality repair: passed",
+      "quality repair: passed with warnings",
+      "MEETING_SCENE_DENSITY_WARNING: 회의",
     ]);
     expect(serialized).not.toContain("치료");
     expect(result.draft.openingSummary).not.toContain("문서");
@@ -1226,7 +1243,8 @@ describe("OpenAI comprehensive report writer", () => {
       "copy sanitizer: applied",
       "final message normalizer: applied",
       "quality repair: attempted",
-      "quality repair: passed",
+      "quality repair: passed with warnings",
+      "MEETING_SCENE_DENSITY_WARNING: 회의",
     ]);
     expect(serialized).not.toContain("치료");
     expect(serialized).toContain("관리");
@@ -1307,7 +1325,10 @@ describe("OpenAI comprehensive report writer", () => {
     });
     const serialized = JSON.stringify(result.draft);
 
-    expect(result.warnings).toEqual(["copy sanitizer: applied"]);
+    expect(result.warnings).toEqual([
+      "copy sanitizer: applied",
+      "MEETING_SCENE_DENSITY_WARNING: 회의",
+    ]);
     expect(serialized).not.toContain("JSON");
     expect(serialized).toContain("리포트 형식");
   });

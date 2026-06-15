@@ -482,6 +482,50 @@ describe("comprehensive report draft validator", () => {
     );
   });
 
+  it("warns when meeting scenes are overused across the V2 report", () => {
+    const draft = createValidV2Draft();
+    const repeatedMeeting = Array.from(
+      { length: 5 },
+      (_, index) => `회의에서 비슷한 정리 장면 ${index + 1}이 반복됩니다.`,
+    ).join(" ");
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "personality_pattern"
+          ? {
+              ...chapter,
+              body: `${chapter.body} ${repeatedMeeting}`,
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.warnings).toContain("MEETING_SCENE_DENSITY_WARNING: 회의");
+  });
+
+  it("rejects extreme meeting-scene overuse across the V2 report", () => {
+    const draft = createValidV2Draft();
+    const repeatedMeeting = Array.from(
+      { length: 9 },
+      () => "회의에서 비슷한 정리 장면이 반복됩니다.",
+    ).join(" ");
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "personality_pattern"
+          ? {
+              ...chapter,
+              body: `${chapter.body} ${repeatedMeeting}`,
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("MEETING_SCENE_OVERUSE: 회의");
+  });
+
   it("warns when question-like lines are too dense in one V2 chapter", () => {
     const draft = createValidV2Draft();
     const result = validateComprehensiveReportDraft({

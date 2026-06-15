@@ -17,9 +17,16 @@ export type ReportQualityFixture = {
 };
 
 export type ReportSmokeFixtureId = "default" | "deokmin";
+export type ReportSmokeFixtureMatrixMode = "sample";
 
 export const DEFAULT_REPORT_SMOKE_FIXTURE_ID = "default-smoke";
 export const DEOKMIN_REPORT_SMOKE_FIXTURE_ID = "deokmin-external-manse";
+export const REPORT_QUALITY_SMOKE_SAMPLE_FIXTURE_IDS = [
+  DEOKMIN_REPORT_SMOKE_FIXTURE_ID,
+  "reflective-water-infp",
+  "money-resource-estp",
+  "responsibility-earth-istj",
+] as const;
 
 const defaultSmokeFacts = {
   dayMaster: "갑",
@@ -440,6 +447,18 @@ export function getReportSmokeFixture(
     : REPORT_QUALITY_FIXTURE_MATRIX[0];
 }
 
+export function getReportQualitySmokeSampleFixtures(): readonly ReportQualityFixture[] {
+  return REPORT_QUALITY_SMOKE_SAMPLE_FIXTURE_IDS.map((fixtureId) => {
+    const fixture = getReportQualityFixtureById(fixtureId);
+
+    if (fixture === undefined) {
+      throw new Error(`missing report quality smoke fixture: ${fixtureId}`);
+    }
+
+    return fixture;
+  });
+}
+
 export function getReportSmokeFixtureIdFromArgs(
   argv: readonly string[],
 ): ReportSmokeFixtureId {
@@ -453,4 +472,21 @@ export function getReportSmokeFixtureIdFromArgs(
   }
 
   return "default";
+}
+
+export function getReportSmokeFixtureMatrixModeFromArgs(
+  argv: readonly string[],
+): ReportSmokeFixtureMatrixMode | undefined {
+  const fixtureMatrixFlagIndex = argv.findIndex(
+    (arg) => arg === "--fixture-matrix",
+  );
+  const inlineFixtureMatrixArg = argv.find((arg) =>
+    arg.startsWith("--fixture-matrix="),
+  );
+  const fixtureMatrixValue = inlineFixtureMatrixArg?.split("=")[1] ??
+    (fixtureMatrixFlagIndex >= 0
+      ? argv[fixtureMatrixFlagIndex + 1]
+      : undefined);
+
+  return fixtureMatrixValue === "sample" ? "sample" : undefined;
 }

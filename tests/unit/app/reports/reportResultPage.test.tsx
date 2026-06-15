@@ -200,6 +200,65 @@ function createV2Draft(): ComprehensiveReportV2Draft {
         },
       ],
     },
+    reportDifferentiationModules: [
+      {
+        moduleId: "saju_weapon",
+        title: "내 사주의 무기",
+        items: [
+          {
+            title: "판이 흐릴 때 기준을 세우는 힘",
+            body: "장성살과 갑신일주가 역할을 정리하는 감각으로 드러납니다.",
+            practicalLine: "팀플이나 프로젝트에서 기준과 역할을 먼저 나누면 좋습니다.",
+            sourceFeatureIds: ["twelve_sinsal_jangseong", "day_pillar_gapsin"],
+          },
+        ],
+      },
+      {
+        moduleId: "saju_trap",
+        title: "반복되는 함정",
+        items: [
+          {
+            title: "도움 요청이 늦어지는 패턴",
+            body: "무인성과 수 부족이 겹치면 혼자 버티는 시간이 길어질 수 있습니다.",
+            practicalLine: "막힌 지점을 한 문장으로 적어 먼저 공유해야 합니다.",
+            sourceFeatureIds: ["structure_no_resource", "element_water_missing"],
+          },
+        ],
+      },
+      {
+        moduleId: "daily_scene",
+        title: "찔리는 일상 장면",
+        items: [
+          {
+            title: "카톡에서 다음 행동을 먼저 정리하는 장면",
+            body: "상대는 감정을 풀고 있는데 사용자는 해결 순서를 먼저 떠올릴 수 있습니다.",
+            sourceFeatureIds: ["sinsal_hyeonchim", "element_fire_missing"],
+          },
+        ],
+      },
+      {
+        moduleId: "switch_action",
+        title: "바꾸는 스위치",
+        items: [
+          {
+            title: "결론 전에 한 문장 되받기",
+            body: "바로 정리하기 전에 상대의 핵심을 먼저 되받아 말합니다.",
+            sourceFeatureIds: ["sinsal_hyeonchim"],
+          },
+        ],
+      },
+      {
+        moduleId: "relationship_needs",
+        title: "관계에서 봐야 할 조건",
+        items: [
+          {
+            title: "표현 속도와 약속 습관",
+            body: "MBTI 유형명보다 실제 생활 리듬과 감정 표현 방식이 중요합니다.",
+            sourceFeatureIds: ["sinsal_wonjin", "element_fire_missing"],
+          },
+        ],
+      },
+    ],
     chapters: [
       createV2Chapter("opening", "처음에 보이는 결"),
       createV2Chapter("saju_identity", "사주가 보여주는 기본 형상"),
@@ -340,6 +399,14 @@ describe("report result page", () => {
     expect(html).toContain("부족해서 보완하면 좋은 기운");
     expect(html).toContain("천을귀인");
     expect(html).toContain("막힌 길에 손을 내미는 귀인");
+    expect(html).toContain("읽기 전에 잡고 갈 핵심 포인트");
+    expect(html).toContain("내 사주의 무기");
+    expect(html).toContain("반복되는 함정");
+    expect(html).toContain("찔리는 일상 장면");
+    expect(html).toContain("바꾸는 스위치");
+    expect(html).toContain("관계에서 봐야 할 조건");
+    expect(html).toContain("판이 흐릴 때 기준을 세우는 힘");
+    expect(html).toContain("카톡에서 다음 행동을 먼저 정리하는 장면");
     expect(html).not.toContain("천을귀인 - 막힌 길에 손을 내미는 귀인");
     expect(html).not.toContain("장성살 - 중심을 잡는 장수의 별");
     expect(html).not.toContain("원진살 - 가까울수록 결이 거슬리는 신호");
@@ -367,6 +434,30 @@ describe("report result page", () => {
     expect(html).not.toContain("근거 요약");
     expect(html).not.toContain("핵심 용어");
     expect(html).not.toContain("반영 포인트");
+  });
+
+  it("hides empty V2 differentiation modules", async () => {
+    const draft = {
+      ...createV2Draft(),
+      reportDifferentiationModules: [
+        {
+          moduleId: "saju_weapon" as const,
+          title: "내 사주의 무기" as const,
+          items: [],
+        },
+      ],
+    };
+    mockGetPaidReportResult.mockResolvedValue({
+      ok: true,
+      result: createResult({
+        snapshotVersion: "comprehensive_v2_draft",
+        draft,
+      }),
+    });
+
+    const html = await renderPage("report_result_page_test");
+
+    expect(html).not.toContain("읽기 전에 잡고 갈 핵심 포인트");
   });
 
   it("keeps placeholder state when no generated draft exists", async () => {

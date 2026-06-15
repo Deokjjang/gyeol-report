@@ -34,7 +34,11 @@ describe("report smoke fixture selection source", () => {
     expect(auditSmokeSource).toContain("default");
     expect(draftSmokeSource).toContain("getReportSmokeFixture");
     expect(draftSmokeSource).toContain("getReportSmokeFixtureIdFromArgs");
+    expect(draftSmokeSource).toContain("getReportSmokeFixtureMatrixModeFromArgs");
+    expect(draftSmokeSource).toContain("getReportQualitySmokeSampleFixtures");
     expect(draftSmokeSource).toContain("report fixture:");
+    expect(draftSmokeSource).toContain("quality matrix smoke: sample");
+    expect(matrixSource).toContain("--fixture-matrix");
     expect(saveSmokeSource).toContain("getReportSmokeFixture");
     expect(saveSmokeSource).toContain("getReportSmokeFixtureIdFromArgs");
     expect(saveSmokeSource).toContain("report fixture:");
@@ -52,5 +56,17 @@ describe("report smoke fixture selection source", () => {
     expect(saveSmokeSource).not.toContain("deokminSampleFacts");
     expect(saveSmokeSource).toContain("1999-07-31");
     expect(saveSmokeSource).toContain("07:30");
+  });
+
+  it("keeps matrix smoke sample separate from the single deokmin path", () => {
+    expect(matrixSource).toContain("REPORT_QUALITY_SMOKE_SAMPLE_FIXTURE_IDS");
+    expect(matrixSource).toContain("deokmin-external-manse");
+    expect(matrixSource).toContain("reflective-water-infp");
+    expect(matrixSource).toContain("money-resource-estp");
+    expect(matrixSource).toContain("responsibility-earth-istj");
+    expect(matrixSource).toContain("getReportQualitySmokeSampleFixtures");
+    expect(matrixSource).toContain("getReportSmokeFixtureMatrixModeFromArgs");
+    expect(draftSmokeSource).toContain(": SKIPPED");
+    expect(draftSmokeSource).toContain(": PASS");
   });
 });

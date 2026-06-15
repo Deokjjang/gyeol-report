@@ -14,8 +14,11 @@ import type {
   SelectedSajuFeatureEvidence,
 } from "../src/lib/report-knowledge/comprehensiveReportEvidenceTypes";
 import {
+  getReportQualitySmokeSampleFixtures,
   getReportSmokeFixture,
   getReportSmokeFixtureIdFromArgs,
+  getReportSmokeFixtureMatrixModeFromArgs,
+  type ReportQualityFixture,
 } from "../src/lib/report-knowledge/reportQualityFixtureMatrix";
 import {
   buildSafeSajuFeatureEvidenceDebugSummary,
@@ -150,28 +153,19 @@ function writeSafeFailure(error: unknown): void {
   writeErrorStatus("stage: unknown");
 }
 
-async function run(): Promise<void> {
-  const fixture = getReportSmokeFixture(
-    getReportSmokeFixtureIdFromArgs(process.argv.slice(2)),
-  );
-
-  writeStatus(`report fixture: ${fixture.id}`);
-
-  if (shouldSkipSmoke() || getEnvValue("OPENAI_REPORT_WRITER_ENABLED") !== "1") {
-    writeStatus("skipped: OpenAI report writer smoke is not enabled.");
-    return;
-  }
-
-  const apiKey = getEnvValue("OPENAI_API_KEY");
-  const model = getEnvValue("OPENAI_REPORT_MODEL");
-
-  if (apiKey === undefined || model === undefined) {
-    writeStatus("skipped: OpenAI report writer env is incomplete.");
-    return;
-  }
-
-  writeStatus("start");
-
+async function generateFixtureDraft(input: {
+  readonly fixture: ReportQualityFixture;
+  readonly apiKey: string;
+  readonly model: string;
+}): Promise<{
+  readonly draftVersion: string;
+  readonly productType: string;
+  readonly chapterCount: number;
+  readonly coreLine: string;
+  readonly firstChapterTitle: string;
+  readonly warnings: readonly string[];
+}> {
+  const fixture = input.fixture;
   const { packet, mappedFeatures } = buildComprehensiveReportEvidencePacketFromComputedFacts({
     mbtiType: fixture.mbti,
     sajuFacts: fixture.sajuFacts,
@@ -191,7 +185,7 @@ async function run(): Promise<void> {
   });
 
   writeOpenAIRequestDebug({
-    model,
+    model: input.model,
     promptChars: messages.system.length + messages.developer.length + messages.user.length,
   });
 
@@ -200,8 +194,8 @@ async function run(): Promise<void> {
     mbtiType: fixture.mbti,
     evidencePacket: packet,
     config: {
-      apiKey,
-      model,
+      apiKey: input.apiKey,
+      model: input.model,
       enabled: true,
     },
   });
@@ -209,17 +203,80 @@ async function run(): Promise<void> {
     ? result.draft.chapters[0]
     : result.draft.sections[0];
 
-  writeStatus(`draft version: ${result.draft.version}`);
-  writeStatus(`product type: ${result.draft.productType}`);
-  writeStatus(
-    `chapters: ${
+  return {
+    draftVersion: result.draft.version,
+    productType: result.draft.productType,
+    chapterCount:
       isComprehensiveReportV2Draft(result.draft)
         ? result.draft.chapters.length
-        : result.draft.sections.length
-    }`,
-  );
-  writeStatus(`core line: ${result.draft.coreLine}`);
-  writeStatus(`first chapter: ${firstChapter?.titleKo ?? "none"}`);
+        : result.draft.sections.length,
+    coreLine: result.draft.coreLine,
+    firstChapterTitle: firstChapter?.titleKo ?? "none",
+    warnings: result.warnings,
+  };
+}
+
+async function run(): Promise<void> {
+  const args = process.argv.slice(2);
+  const fixtureMatrixMode = getReportSmokeFixtureMatrixModeFromArgs(args);
+
+  if (fixtureMatrixMode === "sample") {
+    const fixtures = getReportQualitySmokeSampleFixtures();
+    writeStatus("quality matrix smoke: sample");
+    writeStatus(`fixtures: ${fixtures.length}`);
+
+    if (shouldSkipSmoke() || getEnvValue("OPENAI_REPORT_WRITER_ENABLED") !== "1") {
+      for (const fixture of fixtures) {
+        writeStatus(`- ${fixture.id} ${fixture.mbti}: SKIPPED`);
+      }
+      writeStatus("skipped: OpenAI report writer smoke is not enabled.");
+      return;
+    }
+
+    const apiKey = getEnvValue("OPENAI_API_KEY");
+    const model = getEnvValue("OPENAI_REPORT_MODEL");
+
+    if (apiKey === undefined || model === undefined) {
+      for (const fixture of fixtures) {
+        writeStatus(`- ${fixture.id} ${fixture.mbti}: SKIPPED`);
+      }
+      writeStatus("skipped: OpenAI report writer env is incomplete.");
+      return;
+    }
+
+    for (const fixture of fixtures) {
+      await generateFixtureDraft({ fixture, apiKey, model });
+      writeStatus(`- ${fixture.id} ${fixture.mbti}: PASS`);
+    }
+    writeStatus("done");
+    return;
+  }
+
+  const fixture = getReportSmokeFixture(getReportSmokeFixtureIdFromArgs(args));
+
+  writeStatus(`report fixture: ${fixture.id}`);
+
+  if (shouldSkipSmoke() || getEnvValue("OPENAI_REPORT_WRITER_ENABLED") !== "1") {
+    writeStatus("skipped: OpenAI report writer smoke is not enabled.");
+    return;
+  }
+
+  const apiKey = getEnvValue("OPENAI_API_KEY");
+  const model = getEnvValue("OPENAI_REPORT_MODEL");
+
+  if (apiKey === undefined || model === undefined) {
+    writeStatus("skipped: OpenAI report writer env is incomplete.");
+    return;
+  }
+
+  writeStatus("start");
+  const result = await generateFixtureDraft({ fixture, apiKey, model });
+
+  writeStatus(`draft version: ${result.draftVersion}`);
+  writeStatus(`product type: ${result.productType}`);
+  writeStatus(`chapters: ${result.chapterCount}`);
+  writeStatus(`core line: ${result.coreLine}`);
+  writeStatus(`first chapter: ${result.firstChapterTitle}`);
   for (const warning of result.warnings) {
     if (warning.startsWith("quality repair:")) {
       writeStatus(warning);

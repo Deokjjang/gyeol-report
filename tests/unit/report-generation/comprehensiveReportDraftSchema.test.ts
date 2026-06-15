@@ -84,6 +84,9 @@ describe("comprehensive report draft JSON schema", () => {
       "sajuSignatureScenes",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "reportDifferentiationModules",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
       "hitReadingLines",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
@@ -130,6 +133,7 @@ describe("comprehensive report draft JSON schema", () => {
     expect(serialized).not.toContain("gwiinGilshin");
     expect(serialized).not.toContain("sajuFeatureSpotlight");
     expect(serialized).not.toContain("sajuSignatureScenes");
+    expect(serialized).not.toContain("reportDifferentiationModules");
     expect(serialized).toContain("hitReadingLines");
     expect(serialized).toContain("solutionLines");
   });

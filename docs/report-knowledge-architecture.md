@@ -725,13 +725,28 @@ invented.
 Modules are built only from selected Saju feature evidence, spotlight items,
 signature scenes, and the current MBTI. They are capped at five modules with at
 most three items each. They are added to the evidence packet for the writer, but
-they are not part of the OpenAI response schema. Visible module rendering is
-deferred to a later UI task so validated draft persistence remains unchanged.
+they are not part of the OpenAI response schema. The deterministic final V2 draft
+can persist these modules and the result page renders them under `읽기 전에 잡고
+갈 핵심 포인트` between spotlight and narrative chapters.
 
 The prompt treats differentiation modules as reading aids. It should not copy
 module titles mechanically; it should fold the concrete scenes and switch
 actions into chapter prose. MBTI is still a behavior lens, not a recommended
 type list.
+
+REPORT-16C adds a sample quality-matrix smoke path:
+
+- `pnpm dlx tsx scripts/smoke_generate_comprehensive_report_draft.ts --fixture-matrix sample`
+- The sample includes `deokmin-external-manse`, an INFP reflection fixture, an
+  ESTP resource/action fixture, and an ISTJ stability fixture.
+- If OpenAI configuration is missing, the matrix smoke prints `SKIPPED` per
+  fixture instead of failing on secrets.
+
+REPORT-16C also moves direct-hit scenes away from a corporate-only meeting
+default. Signature scenes and prompts should mix conversation, KakaoTalk or DM,
+class, team project, family, friends, part-time or office work, money/account,
+study, and bedtime recovery scenes. `회의` remains allowed, but overuse is a
+quality warning and extreme overuse is a validation failure.
 
 ## Future OpenAI Use
 

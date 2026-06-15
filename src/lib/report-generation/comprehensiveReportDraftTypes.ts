@@ -1,4 +1,5 @@
 import type { ComprehensiveReportSectionId } from "../report-knowledge/reportSectionSchema";
+import type { ReportDifferentiationModule } from "../report-knowledge/reportDifferentiationModules";
 import type { SajuFeatureSpotlightSection } from "../report-knowledge/sajuFeatureSpotlight";
 import type { SajuSignatureScene } from "../report-knowledge/sajuSignatureSceneRules";
 
@@ -115,6 +116,7 @@ export type ComprehensiveReportV2Draft = {
   readonly profileTable: ComprehensiveReportV2ProfileTable;
   readonly sajuFeatureSpotlight?: SajuFeatureSpotlightSection;
   readonly sajuSignatureScenes?: readonly SajuSignatureScene[];
+  readonly reportDifferentiationModules?: readonly ReportDifferentiationModule[];
   readonly chapters: readonly ComprehensiveReportV2Chapter[];
   readonly finalAdvice: string;
   readonly safetyNotes: readonly string[];
@@ -122,7 +124,10 @@ export type ComprehensiveReportV2Draft = {
 
 export type ComprehensiveReportV2NarrativeDraft = Omit<
   ComprehensiveReportV2Draft,
-  "profileTable" | "sajuFeatureSpotlight" | "sajuSignatureScenes"
+  | "profileTable"
+  | "sajuFeatureSpotlight"
+  | "sajuSignatureScenes"
+  | "reportDifferentiationModules"
 >;
 
 export type ComprehensiveReportDraft =

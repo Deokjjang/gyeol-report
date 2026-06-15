@@ -82,6 +82,20 @@ function createV2Draft(): ComprehensiveReportV2Draft {
       gwiin: ["재고귀인"],
       mbti: "ENTJ",
     },
+    reportDifferentiationModules: [
+      {
+        moduleId: "saju_weapon",
+        title: "내 사주의 무기",
+        items: [
+          {
+            title: "기준을 세우는 힘",
+            body: "판이 흐릴 때 먼저 역할과 방향을 나누는 감각입니다.",
+            practicalLine: "프로젝트나 과제에서 기준을 먼저 문장으로 정리하세요.",
+            sourceFeatureIds: ["day_pillar_gapsin", "twelve_sinsal_jangseong"],
+          },
+        ],
+      },
+    ],
     chapters: [
       "opening",
       "saju_identity",
@@ -258,6 +272,14 @@ describe("Supabase comprehensive report snapshot client", () => {
     });
 
     expect(calls[0]?.args.p_generation_version).toBe("comprehensive_v2_draft");
+    expect(calls[0]?.args.p_report_snapshot).toMatchObject({
+      reportDifferentiationModules: [
+        {
+          moduleId: "saju_weapon",
+          title: "내 사주의 무기",
+        },
+      ],
+    });
     expect(result.snapshotVersion).toBe("comprehensive_v2_draft");
   });
 

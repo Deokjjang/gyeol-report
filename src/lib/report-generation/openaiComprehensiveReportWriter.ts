@@ -390,6 +390,12 @@ function attachDeterministicProfileTable(input: {
     ...(input.evidencePacket.sajuSignatureScenes === undefined
       ? {}
       : { sajuSignatureScenes: input.evidencePacket.sajuSignatureScenes }),
+    ...(input.evidencePacket.reportDifferentiationModules === undefined
+      ? {}
+      : {
+          reportDifferentiationModules:
+            input.evidencePacket.reportDifferentiationModules,
+        }),
   };
 }
 
@@ -400,7 +406,11 @@ type DirectHitSceneRescueResult<T> = {
 
 const personalitySceneMarkers = [
   "회의",
+  "사람들과 대화",
   "카톡",
+  "DM",
+  "수업",
+  "팀플",
   "팀원",
   "설명",
   "오류",
@@ -788,7 +798,7 @@ function buildPeopleFamilyEnvironmentDirectHitRescue(input: {
     return [
       "가족이나 팀에서 누가 무엇을 맡는지 흐리면, 대화의 감정보다 담당자·마감·기준표부터 정리하고 싶어질 수 있습니다.",
       "이 장면은 장성살의 중심성, 정관·편관의 역할 의식, 입력한 MBTI의 운영 감각이 같이 움직일 때 자주 나타납니다.",
-      "업무에서도 회의가 길어질수록 감정의 결보다 역할표, 일정, 책임선을 먼저 세우고 싶어지는 식으로 드러날 수 있습니다.",
+      "수업, 팀플, 알바나 업무에서 말이 길어질수록 감정의 결보다 역할표, 일정, 책임선을 먼저 세우고 싶어지는 식으로 드러날 수 있습니다.",
       "그래서 주변에서는 자연스럽게 사용자님을 정리해 주는 사람으로 기대할 수 있지만, 맡을 범위를 먼저 나누어야 부담이 한쪽으로 쌓이지 않습니다.",
     ].join(" ");
   }
@@ -806,7 +816,7 @@ function buildPeopleFamilyEnvironmentDirectHitRescue(input: {
     return [
       "가족이나 팀에서 역할이 흐려지면, 감정보다 담당자와 마감, 기준표를 먼저 정리하고 싶어질 수 있습니다.",
       "현침살의 빠른 판단과 정관·편관의 역할 의식이 입력한 MBTI의 운영 감각과 겹치면 이런 장면이 더 선명해집니다.",
-      "업무 회의에서도 말이 길어질수록 핵심 오류, 담당자, 다음 일정이 먼저 보이고, 가까운 사람에게도 같은 정리 속도가 나올 수 있습니다.",
+      "사람들과 대화하거나 팀플과 업무에서 말이 길어질수록 핵심 오류, 담당자, 다음 일정이 먼저 보이고, 가까운 사람에게도 같은 정리 속도가 나올 수 있습니다.",
       "주변에서는 자연스럽게 사용자님을 정리해 주는 사람으로 기대할 수 있으니, 부탁을 받기 전에 맡을 범위를 먼저 나누는 편이 좋습니다.",
     ].join(" ");
   }
