@@ -156,6 +156,50 @@ function createPacket() {
   }).packet;
 }
 
+function createPacketWithCoreDirectHitEvidence() {
+  const packet = createPacket();
+
+  return {
+    ...packet,
+    sajuSignatureScenes: [
+      ...(packet.sajuSignatureScenes ?? []),
+      {
+        id: "test_work_money_storage",
+        title: "재고귀인과 재성의 자원 정리",
+        featureIds: ["gwiin_jaego", "ten_god_pian_cai", "ten_god_zheng_cai"],
+        featureLabels: ["재고귀인", "편재", "정재"],
+        topics: ["work", "money"] as const,
+        sceneLines: ["돈이 들어오면 어디에 묶어둘지 먼저 떠오르는 장면입니다."],
+        sceneLine: "돈이 들어오면 어디에 묶어둘지 먼저 떠오르는 장면입니다.",
+        interpretationLine: "재고귀인과 편재·정재가 자원을 남기는 감각으로 이어집니다.",
+        practicalLine: "계좌와 기록을 나누는 방식이 맞습니다.",
+      },
+      {
+        id: "test_love_expression_speed",
+        title: "홍염살과 표현 온도",
+        featureIds: ["sinsal_hongyeom", "element_fire_missing", "structure_no_output"],
+        featureLabels: ["홍염살", "화 부족", "무식상"],
+        topics: ["love", "relationship"] as const,
+        sceneLines: ["상대가 서운함을 말할 때 다음 행동이 먼저 떠오르는 장면입니다."],
+        sceneLine: "상대가 서운함을 말할 때 다음 행동이 먼저 떠오르는 장면입니다.",
+        interpretationLine: "홍염살의 끌림은 있지만 표현 온도가 늦게 올라갈 수 있습니다.",
+        practicalLine: "해결책 전에 마음을 한 문장으로 받아 주세요.",
+      },
+      {
+        id: "test_people_sharp_role",
+        title: "현침살과 역할 정리",
+        featureIds: ["sinsal_hyeonchim", "ten_god_zheng_guan"],
+        featureLabels: ["현침살", "정관"],
+        topics: ["family", "relationship"] as const,
+        sceneLines: ["가족이나 팀에서 담당자와 마감을 먼저 정리하고 싶어지는 장면입니다."],
+        sceneLine: "가족이나 팀에서 담당자와 마감을 먼저 정리하고 싶어지는 장면입니다.",
+        interpretationLine: "현침살의 빠른 판단과 정관의 역할 감각이 함께 작동합니다.",
+        practicalLine: "부탁을 받기 전에 맡을 범위를 먼저 나누세요.",
+      },
+    ],
+  };
+}
+
 function createPacketWithoutPersonalityScene() {
   return buildComprehensiveReportEvidencePacketFromComputedFacts({
     mbtiType: "ENTJ",
@@ -169,12 +213,76 @@ function createPacketWithoutPersonalityScene() {
   }).packet;
 }
 
+function createPacketWithoutCoreDirectHitEvidence() {
+  const packet = buildComprehensiveReportEvidencePacketFromComputedFacts({
+    mbtiType: "ENTJ",
+    sajuFacts: {
+      dayMaster: "갑",
+      dayPillar: "갑신",
+      fiveElementCounts: {
+        wood: 2,
+        fire: 1,
+        earth: 1,
+        metal: 1,
+        water: 1,
+      },
+      excessiveElements: [],
+      missingElements: [],
+      usefulElements: [],
+      tenGodSignals: [],
+      specialPatterns: [],
+      sinsal: [],
+      gwiin: [],
+    },
+  }).packet;
+
+  return {
+    ...packet,
+    sajuFeatureSpotlight: undefined,
+    sajuSignatureScenes: undefined,
+    reportDifferentiationModules: undefined,
+  };
+}
+
 function createJsonResponse(body: unknown, status = 200): Response {
   return new Response(JSON.stringify(body), { status });
 }
 
 function createGenericPersonalityChapterBody(): string {
   return "성격과 판단 패턴에서는 갑목과 갑신일주를 먼저 놓고 읽습니다. 덕민님은 목표가 분명할수록 빠르게 움직이고, 입력한 ENTJ 성향도 효율과 목표 정리 쪽에서 보조로 붙습니다. 메시지에서는 답을 짧게 보내고, 업무에서는 큰 방향부터 잡으며, 가족 부탁이 들어오면 먼저 처리하려는 흐름이 나올 수 있습니다. 돈과 일, 관계를 볼 때도 기준을 세우려는 힘이 강하지만 이 본문은 판단이 빠르고 기준이 분명하다는 말만 반복합니다. 갑목은 방향성을 만들고 갑신일주는 압박 속에서 선을 세우는 흐름으로 읽히지만, 이 본문은 성격 풀이를 일반화해 체감형 문장으로 보기 어렵습니다. 그래서 성격과 판단 패턴에서는 일반적인 성향 풀이만으로는 통과하지 못해야 합니다.";
+}
+
+function createGenericCoreChapterBody(chapterId: ComprehensiveReportV2ChapterId): string {
+  if (chapterId === "work_money_study") {
+    return "일, 돈, 공부가 연결되는 방식에서는 갑목의 방향성과 갑신일주의 압박 속 기준을 먼저 놓고 봅니다. 재고귀인은 성과를 흩뜨리지 않고 관리하려는 흐름이고, 편재와 정재는 자원 흐름과 보관 감각을 함께 보여줍니다. 입력한 ENTJ 성향은 효율과 목표 정리 쪽에서 이 흐름을 보조합니다. 직무 학습과 사업 학습은 목표를 작게 나누고 기록하는 방식에서 안정됩니다. 이 설명은 충분히 길지만 사용자가 바로 떠올릴 수 있는 특정 순간을 의도적으로 넣지 않습니다. 자원과 학습과 성과를 연결해 설명하되 직접 장면은 부족한 상태로 둡니다.";
+  }
+  if (chapterId === "love_relationships") {
+    return "연애와 관계의 온도에서는 갑목과 갑신일주의 빠른 방향 설정 위에 홍염살의 끌림과 화 부족, 수 부족, 무식상의 전달 속도를 함께 봅니다. 입력한 ENTJ 성향은 관계에서도 효율과 해결 중심 언어로 보조될 수 있습니다. 맞는 상대는 마음을 천천히 풀어주고 생활 리듬과 생활 습관이 안정적인 사람입니다. 피해야 할 상대는 기복이 크고 책임이 흐릿한 사람입니다. 보완 기운은 정서적 완충과 따뜻한 전달이고, MBTI 관계 기준은 궁합 단정이 아니라 대화 속도와 전달 방식을 보는 보조 지표입니다. 이 문단은 관계 기준을 설명하지만 특정 순간은 일부러 비워 둡니다.";
+  }
+  if (chapterId === "people_family_environment") {
+    return "사람과 환경에서는 갑목과 갑신일주의 기준 감각 위에 현침살의 빠른 판단, 정관과 편관의 역할 의식, 입력한 ENTJ의 운영 감각을 함께 봅니다. 가까운 관계에서는 기준이 선명할수록 주변이 안정감을 느낄 수 있지만, 모든 몫을 혼자 안으면 부담이 커질 수 있습니다. 도움을 받을 통로가 있어도 스스로 먼저 정리하려는 습관이 강하면 요청이 늦어질 수 있습니다. 맞는 환경은 역할과 기준이 분명한 곳이고, 피해야 할 환경은 말이 자주 바뀌고 책임선이 흐릿한 곳입니다. 사람 사이에서 오래 안정되려면 기준을 세우는 힘과 기대치를 조절하는 힘을 함께 써야 합니다. 이 문단은 충분히 설명하지만 직접 장면은 의도적으로 넣지 않습니다.";
+  }
+
+  return "";
+}
+
+function createGenericCoreChapterBodyWithoutFeatureEvidence(
+  chapterId: ComprehensiveReportV2ChapterId,
+): string {
+  if (chapterId === "work_money_study") {
+    return "일, 자원, 학습의 흐름에서는 갑목과 갑신일주의 기준 감각을 중심으로 봅니다. 입력한 ENTJ 성향은 목표를 세우고 성과를 관리하려는 언어로 보조될 수 있습니다. 사용자는 결과가 보이는 방식에서 안정감을 얻고, 막연한 흥미보다 방향이 분명한 과제에서 힘을 내기 쉽습니다. 다만 이 문단은 일부러 구체적인 순간을 넣지 않고, 성과와 학습과 자원 운영의 큰 방향만 설명합니다. 실제 행동을 떠올릴 수 있는 구체 장면은 빠져 있으므로 근거 없이 만들어지면 안 됩니다.";
+  }
+  if (chapterId === "love_relationships") {
+    return "연애와 관계에서는 갑목과 갑신일주의 기준 감각을 먼저 놓고, 입력한 ENTJ 성향은 관계에서도 효율과 해결 중심 언어로 보조될 수 있습니다. 맞는 관계는 서로의 속도를 존중하고 생활 리듬이 안정적인 흐름에 가깝습니다. 피해야 할 관계는 책임선이 흐릿하고 대화의 기준이 자주 바뀌는 흐름입니다. 이 문단은 관계 기준을 설명하지만 일부러 구체적인 순간을 넣지 않습니다. 실제 행동을 떠올릴 수 있는 구체 장면은 빠져 있으므로 근거 없이 만들어지면 안 됩니다.";
+  }
+  if (chapterId === "people_family_environment") {
+    return "사람과 환경에서는 갑목과 갑신일주의 기준 감각, 입력한 ENTJ의 운영 감각을 중심으로 봅니다. 가까운 관계에서는 기준이 선명할수록 주변이 안정감을 느낄 수 있지만, 모든 몫을 혼자 안으면 부담이 커질 수 있습니다. 맞는 환경은 역할과 기준이 분명한 곳이고, 피해야 할 환경은 말이 자주 바뀌고 책임선이 흐릿한 곳입니다. 이 문단은 사람 사이의 큰 기준을 설명하지만 일부러 구체적인 순간을 넣지 않습니다. 실제 행동을 떠올릴 수 있는 구체 장면은 빠져 있으므로 근거 없이 만들어지면 안 됩니다.";
+  }
+  if (chapterId === "risk_and_growth") {
+    return "반복되는 리스크와 성장법에서는 갑목과 갑신일주의 밀어붙이는 힘을 중심으로 봅니다. 입력한 ENTJ 성향은 목표를 향해 빠르게 움직이는 언어로 보조될 수 있습니다. 다만 오래 가려면 결과를 내는 시간과 쉬는 시간을 분리해야 하고, 판단을 미루는 루틴도 필요합니다. 이 문단은 특정 보완 오행이나 신살을 쓰지 않고, 기본적인 성장 방향만 설명합니다.";
+  }
+
+  return createGenericCoreChapterBody(chapterId);
 }
 
 async function expectSafeGenerationFailure(
@@ -865,6 +973,126 @@ describe("OpenAI comprehensive report writer", () => {
     expect(error.stage).toBe("draft_validation");
     expect(error.validationErrors?.join("\n")).toContain(
       "DIRECT_HIT_READING_TOO_GENERIC: personality_pattern",
+    );
+  });
+
+  it("adds deterministic direct-hit scenes for work love and people chapters", async () => {
+    const genericCoreDraft = {
+      ...createValidDraft(),
+      chapters: createValidDraft().chapters.map((chapter) =>
+        [
+          "work_money_study",
+          "love_relationships",
+          "people_family_environment",
+        ].includes(chapter.chapterId)
+          ? {
+              ...chapter,
+              body: createGenericCoreChapterBody(chapter.chapterId),
+              hitReadingLines: [
+                "사용자님은 장점과 주의점이 있습니다.",
+                "사용자님은 기준이 분명한 편입니다.",
+                "사용자님은 성장할 수 있습니다.",
+              ],
+            }
+          : chapter,
+      ),
+    };
+
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "ENTJ",
+      evidencePacket: createPacketWithCoreDirectHitEvidence(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl: async () =>
+          createJsonResponse({
+            output_text: JSON.stringify(genericCoreDraft),
+          }),
+      },
+    });
+    const chapters = result.draft.version === "comprehensive_v2_draft"
+      ? result.draft.chapters
+      : [];
+    const workChapter = chapters.find(
+      (chapter) => chapter.chapterId === "work_money_study",
+    );
+    const loveChapter = chapters.find(
+      (chapter) => chapter.chapterId === "love_relationships",
+    );
+    const peopleChapter = chapters.find(
+      (chapter) => chapter.chapterId === "people_family_environment",
+    );
+    const serialized = JSON.stringify(result.draft);
+
+    expect(workChapter?.hitReadingLines[0]).toContain("돈이 들어오면");
+    expect(workChapter?.hitReadingLines[0]).toContain("재고귀인");
+    expect(loveChapter?.hitReadingLines[0]).toMatch(/상대가 서운함|업무 보고처럼/);
+    expect(loveChapter?.hitReadingLines[0]).toContain("홍염살");
+    expect(peopleChapter?.hitReadingLines[0]).toContain("가족");
+    expect(peopleChapter?.hitReadingLines[0]).toContain("현침살");
+    expect(serialized).not.toContain("signature scene");
+    expect(serialized).not.toContain("feature evidence");
+    expect(serialized).not.toContain("selected evidence");
+    expect(serialized).not.toContain("DIRECT_HIT_READING_MISSING");
+  });
+
+  it("does not fake core direct-hit scenes without selected evidence", async () => {
+    const genericCoreDraft = {
+      ...createValidDraft(),
+      chapters: createValidDraft().chapters.map((chapter) =>
+        [
+          "work_money_study",
+          "love_relationships",
+          "people_family_environment",
+          "risk_and_growth",
+        ].includes(chapter.chapterId)
+          ? {
+              ...chapter,
+              body: createGenericCoreChapterBodyWithoutFeatureEvidence(
+                chapter.chapterId,
+              ),
+              hitReadingLines: [
+                "사용자님은 장점과 주의점이 있습니다.",
+                "사용자님은 기준이 분명한 편입니다.",
+                "사용자님은 성장할 수 있습니다.",
+              ],
+            }
+          : chapter,
+      ),
+    };
+    let callCount = 0;
+    const fetchImpl: typeof fetch = async () => {
+      callCount += 1;
+
+      return createJsonResponse({
+        output_text: JSON.stringify(genericCoreDraft),
+      });
+    };
+
+    const error = await expectSafeGenerationFailure(
+      generateComprehensiveReportDraft({
+        mbtiType: "ENTJ",
+        evidencePacket: createPacketWithoutCoreDirectHitEvidence(),
+        config: {
+          apiKey: "test_key",
+          model: "test_model",
+          enabled: true,
+          fetchImpl,
+        },
+      }),
+    );
+
+    expect(callCount).toBeGreaterThanOrEqual(1);
+    expect(error.stage).toBe("draft_validation");
+    expect(error.validationErrors?.join("\n")).toContain(
+      "DIRECT_HIT_READING_TOO_GENERIC: work_money_study",
+    );
+    expect(error.validationErrors?.join("\n")).toContain(
+      "DIRECT_HIT_READING_TOO_GENERIC: love_relationships",
+    );
+    expect(error.validationErrors?.join("\n")).toContain(
+      "DIRECT_HIT_READING_TOO_GENERIC: people_family_environment",
     );
   });
 

@@ -4,6 +4,7 @@ import { buildComprehensiveReportV2ProfileTable } from "./comprehensiveReportPro
 import type {
   ComprehensiveReportDraft,
   ComprehensiveReportV2Chapter,
+  ComprehensiveReportV2ChapterId,
   ComprehensiveReportV2Draft,
   ComprehensiveReportV2NarrativeDraft,
   ComprehensiveReportV2ProfileTable,
@@ -418,6 +419,108 @@ const personalityEvidenceMarkers = [
   "귀문관살",
 ] as const;
 
+const directHitRescueChapterIds = [
+  "personality_pattern",
+  "work_money_study",
+  "love_relationships",
+  "people_family_environment",
+] as const satisfies readonly ComprehensiveReportV2ChapterId[];
+type DirectHitRescueChapterId = (typeof directHitRescueChapterIds)[number];
+
+const directHitSceneMarkersByChapter = {
+  personality_pattern: personalitySceneMarkers,
+  work_money_study: [
+    "돈이 들어오면",
+    "계좌",
+    "전문서",
+    "자격증",
+    "목차",
+    "사업 아이디어",
+    "고객 기반",
+    "반복 수익",
+    "실전 적용",
+  ],
+  love_relationships: [
+    "상대가 서운함",
+    "호감은 있는데",
+    "업무 보고처럼",
+    "말투가 정리",
+    "다음에 어떻게 할 건데",
+    "감정 표현",
+    "연락",
+    "약속",
+  ],
+  people_family_environment: [
+    "가족",
+    "팀",
+    "부탁",
+    "담당자",
+    "마감",
+    "기준표",
+    "누가 무엇을",
+    "정리해 주는 사람",
+  ],
+} as const satisfies Record<DirectHitRescueChapterId, readonly string[]>;
+
+const directHitEvidenceMarkersByChapter = {
+  personality_pattern: personalityEvidenceMarkers,
+  work_money_study: [
+    "재고귀인",
+    "금여록",
+    "편재",
+    "정재",
+    "ENTJ",
+    "갑신일주",
+  ],
+  love_relationships: [
+    "홍염살",
+    "원진살",
+    "화 부족",
+    "수 부족",
+    "무식상",
+    "ENTJ",
+  ],
+  people_family_environment: [
+    "장성살",
+    "정관",
+    "편관",
+    "천을귀인",
+    "무인성",
+    "현침살",
+    "ENTJ",
+  ],
+} as const satisfies Record<DirectHitRescueChapterId, readonly string[]>;
+
+const directHitRescueFeatureIdsByChapter = {
+  work_money_study: [
+    "gwiin_jaego",
+    "gwiin_geumyeorok",
+    "ten_god_pian_cai",
+    "ten_god_zheng_cai",
+    "ten_god_qi_sha",
+    "ten_god_zheng_guan",
+    "element_earth_excess",
+    "structure_jaeda_sinyak",
+    "day_pillar_gapsin",
+  ],
+  love_relationships: [
+    "sinsal_hongyeom",
+    "sinsal_wonjin",
+    "element_fire_missing",
+    "element_water_missing",
+    "structure_no_output",
+  ],
+  people_family_environment: [
+    "twelve_sinsal_jangseong",
+    "ten_god_zheng_guan",
+    "ten_god_qi_sha",
+    "gwiin_cheoneul",
+    "structure_no_resource",
+    "sinsal_hyeonchim",
+    "sinsal_wonjin",
+  ],
+} as const;
+
 function hasAnyMarker(text: string, markers: readonly string[]): boolean {
   return markers.some((marker) => text.includes(marker));
 }
@@ -439,21 +542,276 @@ function isV2DraftWithDeterministicFields(
   );
 }
 
-function getChapterNarrativeText(chapter: ComprehensiveReportV2Chapter): string {
+function getChapterDirectHitText(chapter: ComprehensiveReportV2Chapter): string {
   return [
-    chapter.headline,
     ...chapter.hitReadingLines,
     chapter.body,
   ].join("\n");
 }
 
 function hasPersonalityDirectHitScene(chapter: ComprehensiveReportV2Chapter): boolean {
-  const text = getChapterNarrativeText(chapter);
+  const text = getChapterDirectHitText(chapter);
 
   return (
     hasAnyMarker(text, personalitySceneMarkers) &&
     hasAnyMarker(text, personalityEvidenceMarkers)
   );
+}
+
+function isDirectHitRescueChapterId(
+  chapterId: ComprehensiveReportV2ChapterId,
+): chapterId is DirectHitRescueChapterId {
+  return (directHitRescueChapterIds as readonly string[]).includes(chapterId);
+}
+
+function hasChapterDirectHitScene(chapter: ComprehensiveReportV2Chapter): boolean {
+  if (!isDirectHitRescueChapterId(chapter.chapterId)) {
+    return false;
+  }
+
+  if (chapter.chapterId === "personality_pattern") {
+    return hasPersonalityDirectHitScene(chapter);
+  }
+
+  const text = getChapterDirectHitText(chapter);
+
+  return (
+    hasAnyMarker(text, directHitSceneMarkersByChapter[chapter.chapterId]) &&
+    hasAnyMarker(text, directHitEvidenceMarkersByChapter[chapter.chapterId])
+  );
+}
+
+function getDirectHitRescueFeatureIds(
+  draft: ComprehensiveReportV2Draft,
+  evidencePacket?: ComprehensiveReportEvidencePacket,
+): ReadonlySet<string> {
+  const featureIds = new Set<string>();
+  const profileFeatureIdsByLabel: Record<string, readonly string[]> = {
+    "재고귀인": ["gwiin_jaego"],
+    "금여록": ["gwiin_geumyeorok"],
+    "천을귀인": ["gwiin_cheoneul"],
+    "암록": ["gwiin_amrok"],
+    "편재": ["ten_god_pian_cai"],
+    "정재": ["ten_god_zheng_cai"],
+    "편관": ["ten_god_qi_sha"],
+    "정관": ["ten_god_zheng_guan"],
+    "재다신약": ["structure_jaeda_sinyak"],
+    "무인성": ["structure_no_resource"],
+    "무식상": ["structure_no_output"],
+    "현침살": ["sinsal_hyeonchim"],
+    "홍염살": ["sinsal_hongyeom"],
+    "원진살": ["sinsal_wonjin"],
+    "화 부족": ["element_fire_missing"],
+    "수 부족": ["element_water_missing"],
+    "토 과다": ["element_earth_excess"],
+  };
+  const addProfileLabels = (labels: readonly string[] | undefined) => {
+    for (const label of labels ?? []) {
+      for (const featureId of profileFeatureIdsByLabel[label] ?? []) {
+        featureIds.add(featureId);
+      }
+    }
+  };
+
+  addProfileLabels(draft.profileTable.tenGodSummary);
+  addProfileLabels(draft.profileTable.specialPatterns);
+  addProfileLabels(draft.profileTable.sinsal);
+  addProfileLabels(draft.profileTable.majorSinsal);
+  addProfileLabels(draft.profileTable.gwiin);
+  addProfileLabels(draft.profileTable.gwiinGilshin);
+  addProfileLabels(draft.profileTable.excessiveElements);
+  addProfileLabels(draft.profileTable.missingElements);
+
+  for (const scene of draft.sajuSignatureScenes ?? []) {
+    for (const featureId of scene.featureIds) {
+      featureIds.add(featureId);
+    }
+  }
+  for (const group of draft.sajuFeatureSpotlight?.groups ?? []) {
+    for (const item of group.items) {
+      featureIds.add(item.featureId);
+    }
+  }
+  for (const differentiationModule of evidencePacket?.reportDifferentiationModules ?? []) {
+    for (const item of differentiationModule.items) {
+      for (const featureId of item.sourceFeatureIds) {
+        featureIds.add(featureId);
+      }
+    }
+  }
+
+  return featureIds;
+}
+
+function hasFeatureId(
+  featureIds: ReadonlySet<string>,
+  featureId: string,
+): boolean {
+  return featureIds.has(featureId);
+}
+
+function hasAnyFeatureId(
+  featureIds: ReadonlySet<string>,
+  candidates: readonly string[],
+): boolean {
+  return candidates.some((featureId) => featureIds.has(featureId));
+}
+
+function hasChapterRescueFeature(
+  input: {
+    readonly chapterId: Exclude<DirectHitRescueChapterId, "personality_pattern">;
+    readonly featureIds: ReadonlySet<string>;
+  },
+): boolean {
+  return hasAnyFeatureId(
+    input.featureIds,
+    directHitRescueFeatureIdsByChapter[input.chapterId],
+  );
+}
+
+function buildWorkMoneyStudyDirectHitRescue(input: {
+  readonly draft: ComprehensiveReportV2Draft;
+  readonly featureIds: ReadonlySet<string>;
+}): string | undefined {
+  const hasMoneyStorage =
+    hasFeatureId(input.featureIds, "gwiin_jaego") &&
+    hasAnyFeatureId(input.featureIds, [
+      "ten_god_pian_cai",
+      "ten_god_zheng_cai",
+    ]);
+  const hasMoneyLuck =
+    hasFeatureId(input.featureIds, "gwiin_geumyeorok") ||
+    hasMoneyStorage;
+  const hasOfficerOrDayPillar = hasAnyFeatureId(input.featureIds, [
+    "ten_god_qi_sha",
+    "ten_god_zheng_guan",
+    "day_pillar_gapsin",
+  ]);
+
+  if (hasMoneyStorage || hasMoneyLuck) {
+    return [
+      "돈이 들어오면 단순히 쓰고 싶은 마음보다 '이걸 어디에 묶어둘까'가 먼저 떠오를 수 있습니다.",
+      "사업 아이디어를 볼 때도 단순 매출보다 고객 기반, 기록, 반복 수익처럼 남는 구조를 먼저 보게 되는 장면이 자연스럽습니다.",
+      "이 흐름은 재고귀인과 편재·정재의 자원 감각이 입력한 MBTI의 효율 감각과 함께 움직일 때 더 선명해집니다.",
+    ].join(" ");
+  }
+
+  if (hasOfficerOrDayPillar) {
+    return [
+      "전문서를 읽을 때도 처음부터 끝까지 읽기보다 목차를 훑고 '이걸 어디에 써먹지?'부터 찾는 장면이 자연스럽습니다.",
+      "자격증이나 업무 공부도 흥미만으로 오래 가기보다 실전 적용과 역할이 보일 때 집중이 붙습니다.",
+      "갑신일주와 정관·편관의 기준 감각이 입력한 MBTI의 목표 지향과 함께 작동하는 흐름입니다.",
+    ].join(" ");
+  }
+
+  return undefined;
+}
+
+function buildLoveRelationshipsDirectHitRescue(input: {
+  readonly draft: ComprehensiveReportV2Draft;
+  readonly featureIds: ReadonlySet<string>;
+}): string | undefined {
+  const hasExpressionPattern =
+    hasFeatureId(input.featureIds, "sinsal_hongyeom") &&
+    hasAnyFeatureId(input.featureIds, [
+      "element_fire_missing",
+      "structure_no_output",
+    ]);
+  const hasFrictionPattern =
+    hasFeatureId(input.featureIds, "sinsal_wonjin") &&
+    hasFeatureId(input.featureIds, "element_water_missing");
+  const hasCoolingOrExpressionNeed = hasAnyFeatureId(input.featureIds, [
+    "element_fire_missing",
+    "element_water_missing",
+    "structure_no_output",
+  ]);
+
+  if (hasExpressionPattern) {
+    return [
+      "호감은 있는데 말투가 너무 정리돼서, 상대가 애정 표현이 아니라 업무 보고처럼 느끼는 순간이 생길 수 있습니다.",
+      "홍염살의 끌림은 있지만 화 부족과 무식상이 겹치면 감정 표현의 온도가 늦게 올라오는 식입니다.",
+      "입력한 MBTI의 해결 중심 성향까지 붙으면 연락이나 약속에서도 감정보다 다음 행동이 먼저 보일 수 있습니다.",
+    ].join(" ");
+  }
+
+  if (hasFrictionPattern || hasCoolingOrExpressionNeed) {
+    return [
+      "상대가 서운함을 길게 말하고 있는데, 속으로 '그래서 다음에 어떻게 할 건데?'가 먼저 떠오를 수 있습니다.",
+      "마음이 없는 게 아니라 감정을 오래 머무르게 두기보다 해결 가능한 형태로 바꾸려는 습관이 먼저 켜지는 장면입니다.",
+      "원진살과 수 부족, 또는 화 부족의 표현 속도가 입력한 MBTI의 결론 지향과 맞물릴 때 더 선명해집니다.",
+    ].join(" ");
+  }
+
+  return undefined;
+}
+
+function buildPeopleFamilyEnvironmentDirectHitRescue(input: {
+  readonly draft: ComprehensiveReportV2Draft;
+  readonly featureIds: ReadonlySet<string>;
+}): string | undefined {
+  const peopleSceneEvidenceFeatureIds = new Set(
+    (input.draft.sajuSignatureScenes ?? [])
+      .filter((scene) =>
+        scene.topics.some((topic) =>
+          ["family", "relationship"].includes(topic),
+        ),
+      )
+      .flatMap((scene) => scene.featureIds),
+  );
+  const hasRoleCenter =
+    (hasFeatureId(input.featureIds, "twelve_sinsal_jangseong") ||
+      hasFeatureId(peopleSceneEvidenceFeatureIds, "twelve_sinsal_jangseong")) &&
+    (hasAnyFeatureId(input.featureIds, [
+      "ten_god_qi_sha",
+      "ten_god_zheng_guan",
+    ]) ||
+      hasAnyFeatureId(peopleSceneEvidenceFeatureIds, [
+        "ten_god_qi_sha",
+        "ten_god_zheng_guan",
+      ]));
+  const hasHelpRequestPattern =
+    (hasFeatureId(input.featureIds, "gwiin_cheoneul") ||
+      hasFeatureId(peopleSceneEvidenceFeatureIds, "gwiin_cheoneul")) &&
+    (hasFeatureId(input.featureIds, "structure_no_resource") ||
+      hasFeatureId(peopleSceneEvidenceFeatureIds, "structure_no_resource"));
+  const sharpRelationFeatureIds = [
+    "sinsal_hyeonchim",
+    "sinsal_wonjin",
+    "ten_god_qi_sha",
+    "ten_god_zheng_guan",
+  ] as const;
+  const hasSharpRelationPattern =
+    hasAnyFeatureId(input.featureIds, sharpRelationFeatureIds) ||
+    hasAnyFeatureId(peopleSceneEvidenceFeatureIds, sharpRelationFeatureIds);
+
+  if (hasRoleCenter) {
+    return [
+      "가족이나 팀에서 누가 무엇을 맡는지 흐리면, 대화의 감정보다 담당자·마감·기준표부터 정리하고 싶어질 수 있습니다.",
+      "이 장면은 장성살의 중심성, 정관·편관의 역할 의식, 입력한 MBTI의 운영 감각이 같이 움직일 때 자주 나타납니다.",
+      "업무에서도 회의가 길어질수록 감정의 결보다 역할표, 일정, 책임선을 먼저 세우고 싶어지는 식으로 드러날 수 있습니다.",
+      "그래서 주변에서는 자연스럽게 사용자님을 정리해 주는 사람으로 기대할 수 있지만, 맡을 범위를 먼저 나누어야 부담이 한쪽으로 쌓이지 않습니다.",
+    ].join(" ");
+  }
+
+  if (hasHelpRequestPattern) {
+    return [
+      "부탁을 받으면 거절보다 해결이 먼저 나와서, 나중에는 주변 사람들이 사용자님을 '정리해 주는 사람'으로 기대하는 흐름이 생길 수 있습니다.",
+      "천을귀인이 도움의 통로를 주더라도 무인성이 있으면 정작 도움 요청은 늦어질 수 있습니다.",
+      "팀이나 가족 안에서는 담당자, 마감, 기준표를 말로 꺼내야 부담이 한 사람에게만 쌓이지 않습니다.",
+      "업무에서 막힌 일을 혼자 끌고 가다가 뒤늦게 사람에게 물어보면 생각보다 빨리 풀리는 장면도 이 흐름과 맞닿아 있습니다.",
+    ].join(" ");
+  }
+
+  if (hasSharpRelationPattern) {
+    return [
+      "가족이나 팀에서 역할이 흐려지면, 감정보다 담당자와 마감, 기준표를 먼저 정리하고 싶어질 수 있습니다.",
+      "현침살의 빠른 판단과 정관·편관의 역할 의식이 입력한 MBTI의 운영 감각과 겹치면 이런 장면이 더 선명해집니다.",
+      "업무 회의에서도 말이 길어질수록 핵심 오류, 담당자, 다음 일정이 먼저 보이고, 가까운 사람에게도 같은 정리 속도가 나올 수 있습니다.",
+      "주변에서는 자연스럽게 사용자님을 정리해 주는 사람으로 기대할 수 있으니, 부탁을 받기 전에 맡을 범위를 먼저 나누는 편이 좋습니다.",
+    ].join(" ");
+  }
+
+  return undefined;
 }
 
 function buildPersonalityDirectHitRescue(input: {
@@ -510,47 +868,86 @@ function buildPersonalityDirectHitRescue(input: {
   return rescueText;
 }
 
+function buildDirectHitRescueText(input: {
+  readonly draft: ComprehensiveReportV2Draft;
+  readonly chapterId: DirectHitRescueChapterId;
+  readonly featureIds: ReadonlySet<string>;
+}): string | undefined {
+  if (input.chapterId === "personality_pattern") {
+    return buildPersonalityDirectHitRescue({ draft: input.draft });
+  }
+  if (!hasChapterRescueFeature({
+    chapterId: input.chapterId,
+    featureIds: input.featureIds,
+  })) {
+    return undefined;
+  }
+
+  if (input.chapterId === "work_money_study") {
+    return buildWorkMoneyStudyDirectHitRescue(input);
+  }
+  if (input.chapterId === "love_relationships") {
+    return buildLoveRelationshipsDirectHitRescue(input);
+  }
+  if (input.chapterId === "people_family_environment") {
+    return buildPeopleFamilyEnvironmentDirectHitRescue(input);
+  }
+
+  return undefined;
+}
+
 function ensureDirectHitSceneForChapter<T>(
   draft: T,
+  evidencePacket?: ComprehensiveReportEvidencePacket,
 ): DirectHitSceneRescueResult<T> {
   if (!isV2DraftWithDeterministicFields(draft)) {
     return { draft, rescued: false };
   }
 
-  const personalityChapter = draft.chapters.find(
-    (chapter) => chapter.chapterId === "personality_pattern",
-  );
+  const featureIds = getDirectHitRescueFeatureIds(draft, evidencePacket);
+  let rescued = false;
+  const rescuedChapters = draft.chapters.map((chapter) => {
+    if (
+      !isDirectHitRescueChapterId(chapter.chapterId) ||
+      hasChapterDirectHitScene(chapter)
+    ) {
+      return chapter;
+    }
 
-  if (
-    personalityChapter === undefined ||
-    hasPersonalityDirectHitScene(personalityChapter)
-  ) {
-    return { draft, rescued: false };
-  }
+    const rescueText = buildDirectHitRescueText({
+      draft,
+      chapterId: chapter.chapterId,
+      featureIds,
+    });
 
-  const rescueText = buildPersonalityDirectHitRescue({ draft });
+    if (rescueText === undefined) {
+      return chapter;
+    }
 
-  if (rescueText === undefined) {
+    rescued = true;
+
+    return {
+      ...chapter,
+      hitReadingLines: [
+        rescueText,
+        ...chapter.hitReadingLines,
+      ],
+      body: `${rescueText}\n\n${chapter.body}`.trim(),
+      mbtiTermsUsed:
+        rescueText.includes(draft.profileTable.mbti) &&
+        !chapter.mbtiTermsUsed.includes(draft.profileTable.mbti)
+          ? [...chapter.mbtiTermsUsed, draft.profileTable.mbti]
+          : chapter.mbtiTermsUsed,
+    };
+  });
+
+  if (!rescued) {
     return { draft, rescued: false };
   }
 
   const rescuedDraft = {
     ...draft,
-    chapters: draft.chapters.map((chapter) =>
-      chapter.chapterId === "personality_pattern"
-        ? {
-            ...chapter,
-            hitReadingLines: [
-              rescueText,
-              ...chapter.hitReadingLines,
-            ],
-            body: `${rescueText}\n\n${chapter.body}`.trim(),
-            mbtiTermsUsed: chapter.mbtiTermsUsed.includes(draft.profileTable.mbti)
-              ? chapter.mbtiTermsUsed
-              : [...chapter.mbtiTermsUsed, draft.profileTable.mbti],
-          }
-        : chapter,
-    ),
+    chapters: rescuedChapters,
   } as T;
 
   return { draft: rescuedDraft, rescued: true };
@@ -609,7 +1006,10 @@ export async function generateComprehensiveReportDraft(input: {
     mbtiType: input.mbtiType,
     profileTable: input.profileTable,
   });
-  const directHitInitial = ensureDirectHitSceneForChapter(draftCandidate);
+  const directHitInitial = ensureDirectHitSceneForChapter(
+    draftCandidate,
+    input.evidencePacket,
+  );
   const normalizedInitial = normalizeComprehensiveReportFinalMessage(
     directHitInitial.draft,
   );
@@ -677,7 +1077,10 @@ export async function generateComprehensiveReportDraft(input: {
       mbtiType: input.mbtiType,
       profileTable: input.profileTable,
     });
-    const directHitRepair = ensureDirectHitSceneForChapter(repairDraftCandidate);
+    const directHitRepair = ensureDirectHitSceneForChapter(
+      repairDraftCandidate,
+      input.evidencePacket,
+    );
     const normalizedRepair = normalizeComprehensiveReportFinalMessage(
       directHitRepair.draft,
     );

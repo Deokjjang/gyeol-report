@@ -72,6 +72,9 @@ describe("OpenAI report writer prompt", () => {
       "personality_pattern에는 selected signature scene 중 personality/work/relationship 관련 장면",
     );
     expect(combined).toContain("symbolicImage");
+    expect(combined).toContain("work_money_study에는 돈/계좌/전문서/자격증/사업 아이디어/실전 적용");
+    expect(combined).toContain("love_relationships에는 상대가 서운함을 말하는 장면");
+    expect(combined).toContain("people_family_environment에는 가족 부탁, 팀 역할 분담");
     expect(combined).toContain("positiveReading");
     expect(combined).toContain("cautionReading");
     expect(combined).toContain("practicalUse");
@@ -333,6 +336,12 @@ describe("OpenAI report writer prompt", () => {
       "진단, 치료, 정신질환, 우울증, 불안장애, 투자 추천, 법률 자문, 반드시, 무조건, 100%, 보장, 운명 확정 같은 위험 문구를 제거한다",
     );
     expect(combined).toContain("보장 같은 단정 광고 표현을 모두 제거하라");
+    expect(combined).toContain("DIRECT_HIT_READING_MISSING: work_money_study");
+    expect(combined).toContain("돈, 계좌, 전문서, 자격증, 사업 아이디어, 실전 적용");
+    expect(combined).toContain("DIRECT_HIT_READING_MISSING: love_relationships");
+    expect(combined).toContain("상대가 서운함을 말하는 장면");
+    expect(combined).toContain("DIRECT_HIT_READING_MISSING: people_family_environment");
+    expect(combined).toContain("가족 부탁, 팀 역할 분담, 담당자·마감·기준표");
     expect(combined).toContain(
       "사주 근거, 선택된 근거, feature evidence 같은 내부 표현을 쓰지 마라",
     );

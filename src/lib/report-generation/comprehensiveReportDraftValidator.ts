@@ -443,6 +443,68 @@ const personalityDirectHitSajuMarkers = [
   "정관",
   "귀문관살",
 ] as const;
+const directHitSceneMarkersByChapter = {
+  personality_pattern: personalityDirectHitSceneMarkers,
+  work_money_study: [
+    "돈이 들어오면",
+    "계좌",
+    "전문서",
+    "자격증",
+    "목차",
+    "사업 아이디어",
+    "고객 기반",
+    "반복 수익",
+    "실전 적용",
+  ],
+  love_relationships: [
+    "상대가 서운함",
+    "호감은 있는데",
+    "업무 보고처럼",
+    "말투가 정리",
+    "다음에 어떻게 할 건데",
+    "감정 표현",
+    "연락",
+    "약속",
+  ],
+  people_family_environment: [
+    "가족",
+    "팀",
+    "부탁",
+    "담당자",
+    "마감",
+    "기준표",
+    "누가 무엇을",
+    "정리해 주는 사람",
+  ],
+} as const satisfies Partial<Record<ComprehensiveReportV2ChapterId, readonly string[]>>;
+const directHitSajuMarkersByChapter = {
+  personality_pattern: personalityDirectHitSajuMarkers,
+  work_money_study: [
+    "재고귀인",
+    "금여록",
+    "편재",
+    "정재",
+    "ENTJ",
+    "갑신일주",
+  ],
+  love_relationships: [
+    "홍염살",
+    "원진살",
+    "화 부족",
+    "수 부족",
+    "무식상",
+    "ENTJ",
+  ],
+  people_family_environment: [
+    "장성살",
+    "정관",
+    "편관",
+    "천을귀인",
+    "무인성",
+    "현침살",
+    "ENTJ",
+  ],
+} as const satisfies Partial<Record<ComprehensiveReportV2ChapterId, readonly string[]>>;
 const genericHitReadingMarkers = [
   "성격이 좋습니다",
   "성장할 수 있습니다",
@@ -2143,19 +2205,29 @@ function isConcreteHitReadingLine(line: string): boolean {
 function hasConcretePersonalityDirectHit(
   chapter: ComprehensiveReportV2Chapter,
 ): boolean {
-  if (chapter.chapterId !== "personality_pattern") {
+  const sceneMarkers = (
+    directHitSceneMarkersByChapter as Partial<
+      Record<ComprehensiveReportV2ChapterId, readonly string[]>
+    >
+  )[chapter.chapterId];
+  const sajuMarkers = (
+    directHitSajuMarkersByChapter as Partial<
+      Record<ComprehensiveReportV2ChapterId, readonly string[]>
+    >
+  )[chapter.chapterId];
+
+  if (sceneMarkers === undefined || sajuMarkers === undefined) {
     return false;
   }
 
   const text = [
-    chapter.headline,
     ...chapter.hitReadingLines,
     chapter.body,
   ].join("\n");
 
   return (
-    hasAnyMarker(text, personalityDirectHitSceneMarkers) &&
-    hasAnyMarker(text, personalityDirectHitSajuMarkers)
+    hasAnyMarker(text, sceneMarkers) &&
+    hasAnyMarker(text, sajuMarkers)
   );
 }
 

@@ -864,6 +864,7 @@ describe("comprehensive report draft validator", () => {
     "personality_pattern",
     "work_money_study",
     "love_relationships",
+    "people_family_environment",
   ] as const)("rejects generic hit-reading in main V2 chapter %s", (chapterId) => {
     const draft = createValidV2Draft();
     const result = validateComprehensiveReportDraft({
@@ -880,7 +881,7 @@ describe("comprehensive report draft validator", () => {
               body:
                 chapterId === "personality_pattern"
                   ? "성격과 판단 패턴에서는 갑목과 갑신일주를 먼저 놓고 읽습니다. 덕민님은 목표가 분명할수록 빠르게 움직이고, 입력한 ENTJ 성향도 효율과 목표 정리 쪽에서 보조로 붙습니다. 메시지에서는 답을 짧게 보내고, 업무에서는 큰 방향부터 잡으며, 가족 부탁이 들어오면 먼저 처리하려는 흐름이 나올 수 있습니다. 돈과 일, 관계를 볼 때도 기준을 세우려는 힘이 강하지만 이 본문은 판단이 빠르고 기준이 분명하다는 말만 반복합니다. 갑목은 방향성을 만들고 갑신일주는 압박 속에서 선을 세우는 흐름으로 읽히지만, 이 본문은 성격 풀이를 일반화해 체감형 문장으로 보기 어렵습니다. 그래서 성격과 판단 패턴에서는 일반적인 성향 풀이만으로는 통과하지 못해야 합니다."
-                  : chapter.body,
+                  : `${chapter.titleKo}에서는 사주 구조와 입력한 MBTI를 함께 참고합니다. 이 챕터는 장점과 주의점을 일반적인 설명으로만 정리합니다. 구체적인 일상 장면 없이 성향이 강하고 기준이 분명하다는 말만 반복합니다. 그래서 직접 떠올릴 수 있는 순간이 아니라 추상적인 해석으로 남아야 합니다.`,
             }
           : chapter,
       ),
@@ -890,6 +891,46 @@ describe("comprehensive report draft validator", () => {
     expect(result.errors.join("\n")).toContain(
       `DIRECT_HIT_READING_TOO_GENERIC: ${chapterId}`,
     );
+  });
+
+  it.each([
+    {
+      chapterId: "work_money_study" as const,
+      body:
+        "돈이 들어오면 바로 쓰기보다 계좌를 나누고 사업 아이디어가 고객 기반과 반복 수익으로 남는지 먼저 보게 됩니다. 이 흐름은 재고귀인과 편재·정재의 자원 감각, 입력한 ENTJ의 효율 감각이 함께 움직일 때 선명해집니다.",
+    },
+    {
+      chapterId: "love_relationships" as const,
+      body:
+        "상대가 서운함을 길게 말하는데도 속으로 다음에 어떻게 할 건데가 먼저 떠오를 수 있습니다. 홍염살의 끌림은 있지만 화 부족과 무식상이 겹치면 감정 표현 속도보다 해결책이 먼저 나올 수 있습니다.",
+    },
+    {
+      chapterId: "people_family_environment" as const,
+      body:
+        "가족 부탁이나 팀 역할이 흐려지면 담당자와 마감, 기준표부터 정리하고 싶어질 수 있습니다. 장성살과 정관의 역할 의식, 입력한 ENTJ의 운영 감각이 겹치면 정리해 주는 사람으로 기대받기 쉽습니다.",
+    },
+  ])("accepts chapter-specific concrete direct-hit scene for $chapterId", ({ chapterId, body }) => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === chapterId
+          ? {
+              ...chapter,
+              hitReadingLines: [body, ...chapter.hitReadingLines],
+              body: `${body}\n\n${chapter.body}`,
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.errors.join("\n")).not.toContain(
+      `DIRECT_HIT_READING_MISSING: ${chapterId}`,
+    );
+    expect(result.errors.join("\n")).not.toContain(
+      `DIRECT_HIT_READING_TOO_GENERIC: ${chapterId}`,
+    );
+    expect(result.ok).toBe(true);
   });
 
   it("accepts a concrete personality direct-hit scene without MBTI type examples", () => {
