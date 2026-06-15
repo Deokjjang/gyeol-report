@@ -26,6 +26,7 @@ export const REPORT_QUALITY_SMOKE_SAMPLE_FIXTURE_IDS = [
   "reflective-water-infp",
   "money-resource-estp",
   "responsibility-earth-istj",
+  "growth-wood-infj",
 ] as const;
 
 const defaultSmokeFacts = {

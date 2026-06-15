@@ -96,7 +96,7 @@ describe("Saju feature spotlight builder", () => {
 
     const requiredSpotlight = requireSpotlight(spotlight);
 
-    expect(requiredSpotlight.title).toBe("사용자님 사주에서 특히 눈에 띄는 기운");
+    expect(requiredSpotlight.title).toBe("이 사주에서 특히 눈에 띄는 기운");
     expect(
       getGroup(requiredSpotlight, "good_fortune").items.map(
         (item) => item.featureId,

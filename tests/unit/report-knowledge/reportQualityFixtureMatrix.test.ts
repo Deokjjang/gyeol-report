@@ -90,20 +90,22 @@ describe("report quality fixture matrix", () => {
     const fixtures = getReportQualitySmokeSampleFixtures();
     const mbtiTypes = new Set(fixtures.map((fixture) => fixture.mbti));
 
-    expect(fixtures).toHaveLength(4);
+    expect(fixtures).toHaveLength(5);
     expect(fixtures.map((fixture) => fixture.id)).toEqual(
       expect.arrayContaining([
         DEOKMIN_REPORT_SMOKE_FIXTURE_ID,
         "reflective-water-infp",
         "money-resource-estp",
         "responsibility-earth-istj",
+        "growth-wood-infj",
       ]),
     );
-    expect(mbtiTypes.size).toBeGreaterThanOrEqual(4);
+    expect(mbtiTypes.size).toBeGreaterThanOrEqual(5);
     expect(mbtiTypes.has("ENTJ")).toBe(true);
     expect(mbtiTypes.has("INFP")).toBe(true);
     expect(mbtiTypes.has("ESTP")).toBe(true);
     expect(mbtiTypes.has("ISTJ")).toBe(true);
+    expect(mbtiTypes.has("INFJ")).toBe(true);
     expect(fixtures.some((fixture) => fixture.mbti !== "ENTJ")).toBe(true);
     expect(getReportSmokeFixtureMatrixModeFromArgs(["--fixture-matrix", "sample"])).toBe(
       "sample",

@@ -24,6 +24,15 @@ type ReplacementRule = {
 };
 
 const REPORT_COPY_REPLACEMENT_RULES: readonly ReplacementRule[] = [
+  { term: "사용자님 사주에서", replacement: "이 사주에서" },
+  { term: "고객님 사주에서", replacement: "이 사주에서" },
+  { term: "유저님 사주에서", replacement: "이 사주에서" },
+  { term: "사용자님은", replacement: "당신은" },
+  { term: "고객님은", replacement: "당신은" },
+  { term: "유저님은", replacement: "당신은" },
+  { term: "사용자님", replacement: "당신" },
+  { term: "고객님", replacement: "당신" },
+  { term: "유저님", replacement: "당신" },
   { term: "상담치료", replacement: "전문 상담" },
   { term: "의료 상담", replacement: "전문기관 상담" },
   { term: "법률 자문", replacement: "전문가 상담" },

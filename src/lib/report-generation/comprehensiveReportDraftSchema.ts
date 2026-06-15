@@ -185,6 +185,38 @@ const reportDifferentiationModulesSchema = {
   },
 } as const;
 
+const sajuSymbolicNicknameSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["title", "subtitle", "components"],
+  properties: {
+    title: { type: "string", minLength: 1 },
+    subtitle: { type: "string", minLength: 1 },
+    components: {
+      type: "array",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["source", "label", "meaning"],
+        properties: {
+          source: {
+            type: "string",
+            enum: [
+              "day_pillar",
+              "year_branch",
+              "month_branch",
+              "hour_branch",
+              "element_balance",
+            ],
+          },
+          label: { type: "string", minLength: 1 },
+          meaning: { type: "string", minLength: 1 },
+        },
+      },
+    },
+  },
+} as const;
+
 export const comprehensiveReportV1DraftJsonSchema = {
   type: "object",
   additionalProperties: false,
@@ -354,6 +386,7 @@ export const comprehensiveReportV2DraftJsonSchema = {
         dayMaster: optionalPillarSchema,
         dayPillarKeywords: stringArraySchema,
         fiveElementSummary: stringArraySchema,
+        fiveElementBadges: stringArraySchema,
         excessiveElements: stringArraySchema,
         missingElements: stringArraySchema,
         tenGodSummary: stringArraySchema,
@@ -370,6 +403,7 @@ export const comprehensiveReportV2DraftJsonSchema = {
         },
       },
     },
+    sajuSymbolicNickname: sajuSymbolicNicknameSchema,
     sajuFeatureSpotlight: sajuFeatureSpotlightSchema,
     sajuSignatureScenes: sajuSignatureScenesSchema,
     reportDifferentiationModules: reportDifferentiationModulesSchema,

@@ -112,6 +112,13 @@ function createV2Draft(): ComprehensiveReportV2Draft {
       dayMaster: "갑목",
       dayPillarKeywords: ["바위 위 소나무", "압박 속 리더십"],
       fiveElementSummary: ["목 2", "화 0", "토 4", "금 2", "수 0"],
+      fiveElementBadges: [
+        "목 2 · 초록",
+        "화 0 · 빨강",
+        "토 4 · 노랑/갈색",
+        "금 2 · 금색/회색",
+        "수 0 · 파랑/검정",
+      ],
       excessiveElements: ["토 과다"],
       missingElements: ["화 부족", "수 부족"],
       tenGodSummary: ["편재", "정재", "정관", "편관"],
@@ -122,6 +129,18 @@ function createV2Draft(): ComprehensiveReportV2Draft {
       majorSinsal: ["현침살", "홍염살", "백호대살"],
       gwiinGilshin: ["천을귀인", "문창귀인", "재고귀인"],
       mbti: "ENTJ",
+    },
+    sajuSymbolicNickname: {
+      title: "큰 나무가 날카로운 금 위에 선 사람",
+      subtitle:
+        "방향성은 강하고 판단은 빠르지만, 완충과 회복을 같이 설계해야 오래 갑니다.",
+      components: [
+        {
+          source: "day_pillar",
+          label: "갑신일주",
+          meaning: "큰 나무가 날카로운 금 위에 서는 형상입니다.",
+        },
+      ],
     },
     sajuFeatureSpotlight: {
       title: "덕민님 사주에서 특히 눈에 띄는 기운",
@@ -326,6 +345,7 @@ describe("report result page", () => {
     expect(typeof firstCall?.client).toBe("object");
     expect(html).toContain("결리포트");
     expect(html).toContain("사주×MBTI 종합 리포트");
+    expect(html).toContain("사주×MBTI 종합 리포트 v1.0");
     expect(html).toContain("한눈에 보는 결");
     expect(html).toContain("사주 원국의 구조를 먼저 보고");
     expect(html).toContain("갑목과 갑신일주가 중심이고 ENTJ");
@@ -379,6 +399,11 @@ describe("report result page", () => {
     expect(html).toContain("일간");
     expect(html).toContain("일주 해석 키워드");
     expect(html).toContain("오행 분포");
+    expect(html).toContain("목 2 · 초록");
+    expect(html).toContain("화 0 · 빨강");
+    expect(html).toContain("토 4 · 노랑/갈색");
+    expect(html).toContain("금 2 · 금색/회색");
+    expect(html).toContain("수 0 · 파랑/검정");
     expect(html).toContain("과다/부족");
     expect(html).toContain("주요 구조");
     expect(html).toContain("신살 요약");
@@ -392,6 +417,9 @@ describe("report result page", () => {
     expect(html).toContain("현침살");
     expect(html).toContain("장성살");
     expect(html).toContain("천을귀인");
+    expect(html).toContain("사주 한줄 별칭");
+    expect(html).toContain("큰 나무가 날카로운 금 위에 선 사람");
+    expect(html).toContain("완충과 회복을 같이 설계해야 오래 갑니다");
     expect(html).toContain("덕민님 사주에서 특히 눈에 띄는 기운");
     expect(html).toContain("좋게 쓰면 크게 살아나는 기운");
     expect(html).toContain("타고난 재능과 강점");

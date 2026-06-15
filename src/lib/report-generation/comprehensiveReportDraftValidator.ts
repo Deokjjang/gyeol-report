@@ -76,6 +76,7 @@ const repairableDraftValidationErrorCodes = [
   "REPEATED_QUESTION",
   "MEETING_SCENE_OVERUSE",
   "MBTI_TYPE_EXAMPLE_FORBIDDEN",
+  "GENERIC_USER_LABEL_COPY",
 ] as const;
 const repairableDraftValidationErrorCodeSet = new Set<string>(
   repairableDraftValidationErrorCodes,
@@ -228,6 +229,7 @@ const draftV2RootKeys = [
   "openingSummary",
   "coreLine",
   "profileTable",
+  "sajuSymbolicNickname",
   "sajuFeatureSpotlight",
   "sajuSignatureScenes",
   "reportDifferentiationModules",
@@ -266,6 +268,7 @@ const profileTableKeys = [
   "dayMaster",
   "dayPillarKeywords",
   "fiveElementSummary",
+  "fiveElementBadges",
   "excessiveElements",
   "missingElements",
   "tenGodSummary",
@@ -1235,6 +1238,7 @@ export function validateComprehensiveReportDraftAfterRepair(
 
   if (value !== undefined) {
     appendUserVisiblePromptArtifactErrors(errors, value);
+    appendGenericUserLabelErrors(errors, value);
   }
 
   if (
@@ -1826,6 +1830,10 @@ function parseProfileTable(
       value.fiveElementSummary,
       "fiveElementSummary",
     ),
+    fiveElementBadges:
+      value.fiveElementBadges === undefined
+        ? undefined
+        : parseProfileStringArray(errors, value.fiveElementBadges, "fiveElementBadges"),
     excessiveElements: parseProfileStringArray(
       errors,
       value.excessiveElements,
@@ -1857,6 +1865,93 @@ function parseProfileTable(
         ? undefined
         : parseProfileStringArray(errors, value.gwiinGilshin, "gwiinGilshin"),
     mbti: typeof value.mbti === "string" ? value.mbti : "",
+  };
+}
+
+function parseSajuSymbolicNickname(
+  errors: string[],
+  value: unknown,
+): ComprehensiveReportV2Draft["sajuSymbolicNickname"] {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!isRecord(value)) {
+    errors.push("sajuSymbolicNickname must be an object when provided.");
+    return undefined;
+  }
+  appendUnknownKeyErrors(errors, "sajuSymbolicNickname", value, [
+    "title",
+    "subtitle",
+    "components",
+  ] as const);
+
+  if (typeof value.title !== "string" || value.title.trim().length === 0) {
+    errors.push("sajuSymbolicNickname.title must be a non-empty string.");
+  }
+  if (typeof value.subtitle !== "string" || value.subtitle.trim().length === 0) {
+    errors.push("sajuSymbolicNickname.subtitle must be a non-empty string.");
+  }
+  if (!Array.isArray(value.components)) {
+    errors.push("sajuSymbolicNickname.components must be an array.");
+    return undefined;
+  }
+
+  const components = value.components
+    .map((component, index) => {
+      if (!isRecord(component)) {
+        errors.push(`sajuSymbolicNickname.components.${index} must be an object.`);
+        return undefined;
+      }
+      appendUnknownKeyErrors(
+        errors,
+        `sajuSymbolicNickname.components.${index}`,
+        component,
+        ["source", "label", "meaning"] as const,
+      );
+      if (
+        typeof component.source !== "string" ||
+        ![
+          "day_pillar",
+          "year_branch",
+          "month_branch",
+          "hour_branch",
+          "element_balance",
+        ].includes(component.source)
+      ) {
+        errors.push(`sajuSymbolicNickname.components.${index}.source is invalid.`);
+      }
+      if (typeof component.label !== "string" || component.label.trim().length === 0) {
+        errors.push(
+          `sajuSymbolicNickname.components.${index}.label must be a non-empty string.`,
+        );
+      }
+      if (
+        typeof component.meaning !== "string" ||
+        component.meaning.trim().length === 0
+      ) {
+        errors.push(
+          `sajuSymbolicNickname.components.${index}.meaning must be a non-empty string.`,
+        );
+      }
+
+      return {
+        source: ["day_pillar", "year_branch", "month_branch", "hour_branch", "element_balance"].includes(
+          component.source as string,
+        )
+          ? (component.source as NonNullable<
+              ComprehensiveReportV2Draft["sajuSymbolicNickname"]
+            >["components"][number]["source"])
+          : "day_pillar",
+        label: typeof component.label === "string" ? component.label : "",
+        meaning: typeof component.meaning === "string" ? component.meaning : "",
+      };
+    })
+    .filter((component): component is NonNullable<typeof component> => component !== undefined);
+
+  return {
+    title: typeof value.title === "string" ? value.title : "",
+    subtitle: typeof value.subtitle === "string" ? value.subtitle : "",
+    components,
   };
 }
 
@@ -2577,6 +2672,10 @@ function parseV2Draft(
   validateStringField(errors, "finalAdvice", input.finalAdvice, 40);
 
   const profileTable = parseProfileTable(errors, input.profileTable);
+  const sajuSymbolicNickname = parseSajuSymbolicNickname(
+    errors,
+    input.sajuSymbolicNickname,
+  );
   const sajuFeatureSpotlight = parseSajuFeatureSpotlight(
     errors,
     input.sajuFeatureSpotlight,
@@ -2650,6 +2749,7 @@ function parseV2Draft(
     openingSummary: input.openingSummary as string,
     coreLine: input.coreLine as string,
     profileTable: profileTable as ComprehensiveReportV2ProfileTable,
+    ...(sajuSymbolicNickname === undefined ? {} : { sajuSymbolicNickname }),
     ...(sajuFeatureSpotlight === undefined ? {} : { sajuFeatureSpotlight }),
     ...(sajuSignatureScenes === undefined ? {} : { sajuSignatureScenes }),
     ...(reportDifferentiationModules === undefined
@@ -2697,6 +2797,7 @@ const questionLikeEndings = [
 ] as const;
 
 const userVisiblePromptArtifactPhrases = ["draft"] as const;
+const forbiddenGenericUserLabels = ["사용자님", "고객님", "유저님"] as const;
 
 function collectUserVisibleDraftStrings(
   draft: ComprehensiveReportDraft,
@@ -2716,6 +2817,16 @@ function collectUserVisibleDraftStrings(
       ]),
       draft.finalAdvice,
       ...draft.safetyNotes,
+      ...(draft.sajuSymbolicNickname === undefined
+        ? []
+        : [
+            draft.sajuSymbolicNickname.title,
+            draft.sajuSymbolicNickname.subtitle,
+            ...draft.sajuSymbolicNickname.components.flatMap((component) => [
+              component.label,
+              component.meaning,
+            ]),
+          ]),
       ...(draft.sajuFeatureSpotlight?.groups.flatMap((group) =>
         group.items.flatMap((item) => [
           group.title,
@@ -2768,6 +2879,19 @@ function appendUserVisiblePromptArtifactErrors(
   for (const phrase of userVisiblePromptArtifactPhrases) {
     if (text.includes(phrase)) {
       errors.push(`INTERNAL_META_COPY: ${phrase}`);
+    }
+  }
+}
+
+function appendGenericUserLabelErrors(
+  errors: string[],
+  draft: ComprehensiveReportDraft,
+): void {
+  const text = collectUserVisibleDraftStrings(draft).join("\n");
+
+  for (const label of forbiddenGenericUserLabels) {
+    if (text.includes(label)) {
+      errors.push(`GENERIC_USER_LABEL_COPY: ${label}`);
     }
   }
 }
@@ -2965,6 +3089,7 @@ export function validateComprehensiveReportDraft(
 
   if (value !== undefined) {
     appendUserVisiblePromptArtifactErrors(errors, value);
+    appendGenericUserLabelErrors(errors, value);
   }
 
   if (

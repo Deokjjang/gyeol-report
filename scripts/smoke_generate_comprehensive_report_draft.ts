@@ -90,6 +90,57 @@ function writeOpenAIRequestDebug(input: {
   writeStatus(`schema keys: ${getSchemaTopLevelKeys().join(", ")}`);
 }
 
+function formatFixturePillars(fixture: ReportQualityFixture): string {
+  return [
+    fixture.expectedPillars.hour,
+    fixture.expectedPillars.day,
+    fixture.expectedPillars.month,
+    fixture.expectedPillars.year,
+  ].join(" ");
+}
+
+function buildFixtureQualitySummary(fixture: ReportQualityFixture): {
+  readonly computedFeatureCount: number;
+  readonly spotlightGroups: readonly string[];
+  readonly differentiationModulesCount: number;
+} {
+  const { packet, mappedFeatures } =
+    buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: fixture.mbti,
+      sajuFacts: fixture.sajuFacts,
+    });
+
+  return {
+    computedFeatureCount: mappedFeatures.featureIds.length,
+    spotlightGroups:
+      packet.sajuFeatureSpotlight?.groups
+        .filter((group) => group.items.length > 0)
+        .map((group) => group.groupId) ?? [],
+    differentiationModulesCount: packet.reportDifferentiationModules?.length ?? 0,
+  };
+}
+
+function writeFixtureQualitySummary(input: {
+  readonly fixture: ReportQualityFixture;
+  readonly status: "PASS" | "SKIPPED" | "FAIL";
+  readonly warningsCount?: number;
+}): void {
+  const summary = buildFixtureQualitySummary(input.fixture);
+
+  writeStatus(
+    [
+      `- fixture id: ${input.fixture.id}`,
+      `MBTI: ${input.fixture.mbti}`,
+      `pillars: ${formatFixturePillars(input.fixture)}`,
+      `computed feature count: ${summary.computedFeatureCount}`,
+      `spotlight groups: ${summary.spotlightGroups.join(", ") || "none"}`,
+      `differentiation modules count: ${summary.differentiationModulesCount}`,
+      `draft status: ${input.status}`,
+      `validator warnings count: ${input.warningsCount ?? 0}`,
+    ].join(" | "),
+  );
+}
+
 function writeSafeSajuFeatureDebug(input: {
   readonly computedFeatureIds: readonly string[];
   readonly selectedEvidence: readonly SelectedSajuFeatureEvidence[] | undefined;
@@ -227,7 +278,7 @@ async function run(): Promise<void> {
 
     if (shouldSkipSmoke() || getEnvValue("OPENAI_REPORT_WRITER_ENABLED") !== "1") {
       for (const fixture of fixtures) {
-        writeStatus(`- ${fixture.id} ${fixture.mbti}: SKIPPED`);
+        writeFixtureQualitySummary({ fixture, status: "SKIPPED" });
       }
       writeStatus("skipped: OpenAI report writer smoke is not enabled.");
       return;
@@ -238,15 +289,19 @@ async function run(): Promise<void> {
 
     if (apiKey === undefined || model === undefined) {
       for (const fixture of fixtures) {
-        writeStatus(`- ${fixture.id} ${fixture.mbti}: SKIPPED`);
+        writeFixtureQualitySummary({ fixture, status: "SKIPPED" });
       }
       writeStatus("skipped: OpenAI report writer env is incomplete.");
       return;
     }
 
     for (const fixture of fixtures) {
-      await generateFixtureDraft({ fixture, apiKey, model });
-      writeStatus(`- ${fixture.id} ${fixture.mbti}: PASS`);
+      const result = await generateFixtureDraft({ fixture, apiKey, model });
+      writeFixtureQualitySummary({
+        fixture,
+        status: "PASS",
+        warningsCount: result.warnings.length,
+      });
     }
     writeStatus("done");
     return;

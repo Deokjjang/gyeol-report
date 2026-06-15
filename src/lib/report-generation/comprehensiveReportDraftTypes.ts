@@ -2,6 +2,7 @@ import type { ComprehensiveReportSectionId } from "../report-knowledge/reportSec
 import type { ReportDifferentiationModule } from "../report-knowledge/reportDifferentiationModules";
 import type { SajuFeatureSpotlightSection } from "../report-knowledge/sajuFeatureSpotlight";
 import type { SajuSignatureScene } from "../report-knowledge/sajuSignatureSceneRules";
+import type { SajuSymbolicNickname } from "../report-knowledge/sajuSymbolicNickname";
 
 export type ComprehensiveReportDraftTone =
   | "saju_first"
@@ -95,6 +96,7 @@ export type ComprehensiveReportV2ProfileTable = {
   readonly dayMaster?: string;
   readonly dayPillarKeywords?: readonly string[];
   readonly fiveElementSummary: readonly string[];
+  readonly fiveElementBadges?: readonly string[];
   readonly excessiveElements: readonly string[];
   readonly missingElements: readonly string[];
   readonly tenGodSummary: readonly string[];
@@ -114,6 +116,7 @@ export type ComprehensiveReportV2Draft = {
   readonly openingSummary: string;
   readonly coreLine: string;
   readonly profileTable: ComprehensiveReportV2ProfileTable;
+  readonly sajuSymbolicNickname?: SajuSymbolicNickname;
   readonly sajuFeatureSpotlight?: SajuFeatureSpotlightSection;
   readonly sajuSignatureScenes?: readonly SajuSignatureScene[];
   readonly reportDifferentiationModules?: readonly ReportDifferentiationModule[];
@@ -125,6 +128,7 @@ export type ComprehensiveReportV2Draft = {
 export type ComprehensiveReportV2NarrativeDraft = Omit<
   ComprehensiveReportV2Draft,
   | "profileTable"
+  | "sajuSymbolicNickname"
   | "sajuFeatureSpotlight"
   | "sajuSignatureScenes"
   | "reportDifferentiationModules"

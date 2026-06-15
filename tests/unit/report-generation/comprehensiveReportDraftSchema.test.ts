@@ -57,6 +57,9 @@ describe("comprehensive report draft JSON schema", () => {
       "dayPillarKeywords",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "fiveElementBadges",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
       "fourPillarGrid",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
@@ -85,6 +88,9 @@ describe("comprehensive report draft JSON schema", () => {
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
       "reportDifferentiationModules",
+    );
+    expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
+      "sajuSymbolicNickname",
     );
     expect(JSON.stringify(comprehensiveReportV2DraftJsonSchema)).toContain(
       "hitReadingLines",
@@ -128,12 +134,14 @@ describe("comprehensive report draft JSON schema", () => {
     expect(serialized).not.toContain("monthPillar");
     expect(serialized).not.toContain("hourPillar");
     expect(serialized).not.toContain("dayPillarKeywords");
+    expect(serialized).not.toContain("fiveElementBadges");
     expect(serialized).not.toContain("twelveSinsal");
     expect(serialized).not.toContain("majorSinsal");
     expect(serialized).not.toContain("gwiinGilshin");
     expect(serialized).not.toContain("sajuFeatureSpotlight");
     expect(serialized).not.toContain("sajuSignatureScenes");
     expect(serialized).not.toContain("reportDifferentiationModules");
+    expect(serialized).not.toContain("sajuSymbolicNickname");
     expect(serialized).toContain("hitReadingLines");
     expect(serialized).toContain("solutionLines");
   });

@@ -422,6 +422,19 @@ describe("comprehensive report draft validator", () => {
     }
   });
 
+  it("rejects generic user labels in user-visible V2 report text", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      openingSummary: `${draft.openingSummary} 사용자님은 이 표현이 남으면 안 됩니다.`,
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "GENERIC_USER_LABEL_COPY: 사용자님",
+    );
+  });
+
   it("rejects exact duplicate questions in V2 chapter bodies", () => {
     const duplicateQuestion = "왜 같은 질문이 반복되어 보일까요?";
     const draft = createValidV2Draft();

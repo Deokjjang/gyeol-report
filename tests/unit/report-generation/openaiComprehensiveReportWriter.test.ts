@@ -389,12 +389,16 @@ describe("OpenAI comprehensive report writer", () => {
     expect(responseFormatSchema).not.toContain("sajuFeatureSpotlight");
     expect(responseFormatSchema).not.toContain("sajuSignatureScenes");
     expect(responseFormatSchema).not.toContain("reportDifferentiationModules");
+    expect(responseFormatSchema).not.toContain("sajuSymbolicNickname");
     expect(responseFormatSchema).not.toContain("yearPillar");
     expect(JSON.stringify(calls[0].body)).toContain("day_master_gabmok");
     expect(result.draft).toMatchObject({
       sajuFeatureSpotlight: {
-        title: "사용자님 사주에서 특히 눈에 띄는 기운",
+        title: "이 사주에서 특히 눈에 띄는 기운",
       },
+      sajuSymbolicNickname: expect.objectContaining({
+        title: "큰 나무가 날카로운 금 위에 선 사람",
+      }),
       sajuSignatureScenes: expect.arrayContaining([
         expect.objectContaining({ id: "hyeonchim_entj_fast_conclusion" }),
       ]),

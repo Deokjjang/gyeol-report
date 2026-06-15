@@ -74,6 +74,13 @@ function createV2Draft(): ComprehensiveReportV2Draft {
       dayPillar: "갑신일주",
       dayPillarKeywords: ["바위 위 소나무", "압박 속 리더십"],
       fiveElementSummary: ["목 2", "화 0", "토 4", "금 2", "수 0"],
+      fiveElementBadges: [
+        "목 2 · 초록",
+        "화 0 · 빨강",
+        "토 4 · 노랑/갈색",
+        "금 2 · 금색/회색",
+        "수 0 · 파랑/검정",
+      ],
       excessiveElements: ["토 과다"],
       missingElements: ["화 부족", "수 부족"],
       tenGodSummary: ["편재", "정재", "정관", "편관"],
@@ -81,6 +88,18 @@ function createV2Draft(): ComprehensiveReportV2Draft {
       sinsal: ["현침살", "홍염살"],
       gwiin: ["재고귀인"],
       mbti: "ENTJ",
+    },
+    sajuSymbolicNickname: {
+      title: "큰 나무가 날카로운 금 위에 선 사람",
+      subtitle:
+        "방향성은 강하고 판단은 빠르지만, 완충과 회복을 같이 설계해야 오래 갑니다.",
+      components: [
+        {
+          source: "day_pillar",
+          label: "갑신일주",
+          meaning: "큰 나무가 날카로운 금 위에 서는 형상입니다.",
+        },
+      ],
     },
     reportDifferentiationModules: [
       {
@@ -273,6 +292,18 @@ describe("Supabase comprehensive report snapshot client", () => {
 
     expect(calls[0]?.args.p_generation_version).toBe("comprehensive_v2_draft");
     expect(calls[0]?.args.p_report_snapshot).toMatchObject({
+      profileTable: {
+        fiveElementBadges: [
+          "목 2 · 초록",
+          "화 0 · 빨강",
+          "토 4 · 노랑/갈색",
+          "금 2 · 금색/회색",
+          "수 0 · 파랑/검정",
+        ],
+      },
+      sajuSymbolicNickname: {
+        title: "큰 나무가 날카로운 금 위에 선 사람",
+      },
       reportDifferentiationModules: [
         {
           moduleId: "saju_weapon",

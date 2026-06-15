@@ -25,6 +25,14 @@ const fiveElementLabelKo = {
   water: "수",
 } as const satisfies Record<FiveElement, string>;
 
+const fiveElementColorLabelKo = {
+  wood: "초록",
+  fire: "빨강",
+  earth: "노랑/갈색",
+  metal: "금색/회색",
+  water: "파랑/검정",
+} as const satisfies Record<FiveElement, string>;
+
 function uniqueValues(values: readonly string[]): readonly string[] {
   return [...new Set(values.map((value) => value.trim()).filter(Boolean))];
 }
@@ -70,6 +78,19 @@ function formatFiveElementCounts(
 
   return fiveElementOrder.map(
     (element) => `${fiveElementLabelKo[element]} ${facts.fiveElementCounts[element]}`,
+  );
+}
+
+function formatFiveElementBadges(
+  facts: ComputedSajuFacts | undefined,
+): readonly string[] | undefined {
+  if (facts === undefined) {
+    return undefined;
+  }
+
+  return fiveElementOrder.map(
+    (element) =>
+      `${fiveElementLabelKo[element]} ${facts.fiveElementCounts[element]} · ${fiveElementColorLabelKo[element]}`,
   );
 }
 
@@ -127,6 +148,7 @@ export function buildComprehensiveReportV2ProfileTable(input: {
   const dayPillarKeywords = buildDayPillarKeywords(entries);
   const elementBalanceLabels = labelsForCategory(entries, "element_balance");
   const fiveElementSummary = formatFiveElementCounts(input.sajuFacts);
+  const fiveElementBadges = formatFiveElementBadges(input.sajuFacts);
   const twelveSinsal = labelsForFeatureCategory({
     packet: input.evidencePacket,
     category: "twelve_sinsal",
@@ -167,6 +189,7 @@ export function buildComprehensiveReportV2ProfileTable(input: {
         ...labelsForCategory(entries, "five_element"),
         ...elementBalanceLabels,
       ]),
+    ...(fiveElementBadges === undefined ? {} : { fiveElementBadges }),
     excessiveElements:
       input.sajuFacts === undefined
         ? elementBalanceLabels.filter(

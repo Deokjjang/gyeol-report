@@ -748,6 +748,61 @@ class, team project, family, friends, part-time or office work, money/account,
 study, and bedtime recovery scenes. `회의` remains allowed, but overuse is a
 quality warning and extreme overuse is a validation failure.
 
+## REPORT-16D Comprehensive Report V1 Quality Freeze
+
+REPORT-16D freezes the comprehensive Saju x MBTI report as a v1.0 product
+surface. The result page can show `사주×MBTI 종합 리포트 v1.0`. This is a
+product-specific version label, not a paid upgrade mechanism.
+
+Each report product owns its own version. Minor copy improvements, safety
+wording, and rendering polish are not separate paid upgrades. A separate product
+or upgrade should be considered only when the analysis scope clearly expands,
+for example compatibility, career/money specialization, or yearly/decade luck
+engines.
+
+The branch symbol layer is deterministic. `sajuBranchSymbolKnowledge` covers all
+12 earthly branches with animal, element, yin-yang, season, color token,
+symbolic image, keywords, and scene seeds. Animal symbols are allowed, but they
+must not become shallow zodiac claims. The correct interpretation path is:
+
+1. earthly branch animal
+2. five element
+3. season
+4. pillar position
+5. ten-god relation
+6. sinsal or gwiin placement when computed
+
+For example, `亥` can be explained as pig, water, and winter storage. It should
+not be reduced to a simple pig-zodiac fortune claim. `申` can be explained as
+monkey, metal, early autumn, quick judgment, and survival structure when it is
+actually present in the chart.
+
+`sajuSymbolicNickname` builds a deterministic one-line nickname from day pillar,
+branch symbols, and element balance. The nickname is attached to the evidence
+packet and final V2 draft, but it is not part of the OpenAI response schema. The
+writer may use it in opening or Saju identity prose, and the result page renders
+it as a compact block under the four-pillar table.
+
+Five-element color badges are deterministic UI labels:
+
+- `목 · 초록`
+- `화 · 빨강`
+- `토 · 노랑/갈색`
+- `금 · 금색/회색`
+- `수 · 파랑/검정`
+
+The result page renders these as text badges first. A later visual design pass
+may map the same tokens to CSS colors.
+
+Generated and deterministic user-visible copy must not use generic labels such
+as `사용자님`, `고객님`, or `유저님`. If no display name is available, use neutral
+wording such as `이 사주에서`, `이 리포트에서`, or `당신은`.
+
+The quality matrix smoke now prints compact per-fixture summaries: fixture id,
+MBTI, pillars, computed feature count, spotlight groups, differentiation module
+count, draft status, and validator warning count. If OpenAI configuration is
+missing, it still skips safely without reading secrets.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

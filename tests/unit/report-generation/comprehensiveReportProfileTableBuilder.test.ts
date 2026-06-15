@@ -59,6 +59,13 @@ describe("comprehensive report profile table builder", () => {
       "금 2",
       "수 0",
     ]);
+    expect(profileTable.fiveElementBadges).toEqual([
+      "목 2 · 초록",
+      "화 0 · 빨강",
+      "토 4 · 노랑/갈색",
+      "금 2 · 금색/회색",
+      "수 0 · 파랑/검정",
+    ]);
     expect(profileTable.missingElements).toEqual(
       expect.arrayContaining(["화 부족", "수 부족"]),
     );

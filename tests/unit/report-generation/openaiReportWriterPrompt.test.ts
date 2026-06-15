@@ -97,7 +97,11 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("hitReadingLines");
     expect(combined).toContain("solutionLines");
     expect(combined).toContain("바로 와닿는 장면 문장");
-    expect(combined).toContain("사용자님, 이런 상황 많지 않나요");
+    expect(combined).toContain("이런 상황 많지 않나요");
+    expect(combined).toContain("사용자님, 고객님, 유저님이라는 호칭을 쓰지 마라");
+    expect(combined).toContain("sajuSymbolicNickname");
+    expect(combined).toContain("사주 한줄 별칭");
+    expect(combined).toContain("지지 동물 상징은 단일 띠 풀이로 쓰지 말고");
     expect(combined).toContain("실천 솔루션");
     expect(combined).toContain(
       "final_message는 단순 요약이 아니라 전체 리포트의 상징을 회수하는 장이다",
@@ -158,7 +162,7 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("구체적 장면 예시");
     expect(combined).toContain("실천 솔루션");
     expect(combined).toContain("명리학적 흐름");
-    expect(combined).toContain("사용자님, 이런 상황 자주 나오지 않나요");
+    expect(combined).toContain("이런 상황 자주 나오지 않나요");
     expect(combined).toContain("공부/일 루틴");
     expect(combined).toContain("오행 부족/과다에 따른 생활 조언");
     expect(combined).toContain("밤 산책");
@@ -174,7 +178,7 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).not.toContain("INFP");
     expect(combined).not.toContain("INTP");
     expect(combined).not.toContain("MBTI 예시");
-    expect(combined).toContain("편관은 사용자님을 편하게 두지 않는 압박");
+    expect(combined).toContain("편관은 이 사주를 편하게 두지 않는 압박");
     expect(combined).toContain("휴식은 감정 문제가 아니라 성능 유지 장치");
     expect(combined).toContain("공통점");
     expect(combined).toContain("차이점");

@@ -64,9 +64,14 @@ describe("report smoke fixture selection source", () => {
     expect(matrixSource).toContain("reflective-water-infp");
     expect(matrixSource).toContain("money-resource-estp");
     expect(matrixSource).toContain("responsibility-earth-istj");
+    expect(matrixSource).toContain("growth-wood-infj");
     expect(matrixSource).toContain("getReportQualitySmokeSampleFixtures");
     expect(matrixSource).toContain("getReportSmokeFixtureMatrixModeFromArgs");
-    expect(draftSmokeSource).toContain(": SKIPPED");
-    expect(draftSmokeSource).toContain(": PASS");
+    expect(draftSmokeSource).toContain("fixture id:");
+    expect(draftSmokeSource).toContain("MBTI:");
+    expect(draftSmokeSource).toContain("pillars:");
+    expect(draftSmokeSource).toContain("computed feature count:");
+    expect(draftSmokeSource).toContain("differentiation modules count:");
+    expect(draftSmokeSource).toContain("validator warnings count:");
   });
 });

@@ -1,7 +1,11 @@
 import { describe, expect, it } from "vitest";
 
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../../../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
-import { buildReportDifferentiationModules } from "../../../src/lib/report-knowledge/reportDifferentiationModules";
+import {
+  buildReportDifferentiationModules,
+  joinKoreanSentences,
+  normalizeKoreanSentenceSpacing,
+} from "../../../src/lib/report-knowledge/reportDifferentiationModules";
 import {
   getReportQualityFixtureById,
   getReportSmokeFixture,
@@ -103,5 +107,24 @@ describe("report differentiation modules", () => {
       expect.arrayContaining(["saju_weapon", "daily_scene", "switch_action"]),
     );
     expect(packet.reportDifferentiationModules?.length ?? 0).toBeLessThanOrEqual(5);
+  });
+
+  it("normalizes module copy without double periods or missing sentence boundaries", () => {
+    expect(normalizeKoreanSentenceSpacing("이미지입니다..")).toBe("이미지입니다.");
+    expect(joinKoreanSentences("중요한 순간에 도움과 기회가 붙는 기운", "막힌 길에서 손을 내미는 기운입니다.")).toBe(
+      "중요한 순간에 도움과 기회가 붙는 기운입니다. 막힌 길에서 손을 내미는 기운입니다.",
+    );
+
+    const { modules } = buildModulesForFixture("deokmin-external-manse");
+    const serialized = JSON.stringify(modules);
+
+    expect(serialized).not.toContain("..");
+    expect(serialized).not.toContain("기운 막힌");
+    for (const reportModule of modules) {
+      for (const item of reportModule.items) {
+        expect(item.body.startsWith(`${item.title}은 ${item.title}`)).toBe(false);
+        expect(item.body.startsWith(`${item.title}는 ${item.title}`)).toBe(false);
+      }
+    }
   });
 });

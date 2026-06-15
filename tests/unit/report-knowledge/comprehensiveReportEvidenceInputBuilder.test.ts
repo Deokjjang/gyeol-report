@@ -291,7 +291,7 @@ describe("comprehensive report evidence input builder", () => {
         group.items.map((item) => item.featureId),
       ) ?? [];
 
-    expect(spotlight?.title).toBe("사용자님 사주에서 특히 눈에 띄는 기운");
+    expect(spotlight?.title).toBe("이 사주에서 특히 눈에 띄는 기운");
     expect(spotlight?.groups.map((group) => group.groupId)).toEqual(
       expect.arrayContaining(["good_fortune", "talent", "caution", "balance"]),
     );

@@ -55,6 +55,51 @@ function uniqueById<T extends { readonly sourceFeatureIds: readonly string[] }>(
   return output;
 }
 
+export function normalizeKoreanSentenceSpacing(input: string): string {
+  return input
+    .replace(/\s+/g, " ")
+    .replace(/([.!?。])\1+/g, "$1")
+    .replace(/\s+([,.!?。])/g, "$1")
+    .trim();
+}
+
+function asKoreanSentence(input: string): string {
+  const normalized = normalizeKoreanSentenceSpacing(input);
+
+  if (/[.!?。]$/.test(normalized)) {
+    return normalized;
+  }
+  if (/(기운|구조|감각|흐름|패턴|장치)$/.test(normalized)) {
+    return `${normalized}입니다.`;
+  }
+
+  return `${normalized}.`;
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+export function joinKoreanSentences(
+  ...sentences: readonly (string | undefined)[]
+): string {
+  return normalizeKoreanSentenceSpacing(
+    sentences
+      .filter((sentence): sentence is string => sentence !== undefined)
+      .map(asKoreanSentence)
+      .join(" "),
+  );
+}
+
+function removeRepeatedLabelPrefix(input: {
+  readonly label: string;
+  readonly text: string;
+}): string {
+  return input.text
+    .replace(new RegExp(`^${escapeRegExp(input.label)}\\s*[은는:]\\s*`), "")
+    .trim();
+}
+
 function collectSelectedFeatures(
   selectedEvidence: readonly SelectedSajuFeatureEvidence[] | undefined,
 ): readonly SelectedSajuFeatureEvidenceItem[] {
@@ -89,7 +134,7 @@ function toSpotlightModuleItem(
 ): ReportDifferentiationModuleItem {
   return {
     title: item.labelKo,
-    body: `${item.badge}. ${item.shortMeaning}`,
+    body: joinKoreanSentences(item.badge, item.shortMeaning),
     practicalLine: item.practicalLine,
     sourceFeatureIds: [item.featureId],
   };
@@ -112,7 +157,12 @@ function buildWeaponItems(input: {
     )
     .map((feature) => ({
       title: feature.labelKo,
-      body: feature.summary,
+      body: asKoreanSentence(
+        removeRepeatedLabelPrefix({
+          label: feature.labelKo,
+          text: feature.summary,
+        }),
+      ),
       practicalLine: feature.practicalUse,
       sourceFeatureIds: [feature.id],
     }));
@@ -137,7 +187,12 @@ function buildTrapItems(input: {
     )
     .map((feature) => ({
       title: feature.labelKo,
-      body: feature.cautionReading,
+      body: asKoreanSentence(
+        removeRepeatedLabelPrefix({
+          label: feature.labelKo,
+          text: feature.cautionReading,
+        }),
+      ),
       practicalLine: feature.practicalUse,
       sourceFeatureIds: [feature.id],
     }));
@@ -152,7 +207,7 @@ function buildDailySceneItems(
     .slice(0, maxItemsPerModule)
     .map((scene) => ({
       title: scene.title,
-      body: scene.sceneLines?.[0] ?? scene.sceneLine,
+      body: asKoreanSentence(scene.sceneLines?.[0] ?? scene.sceneLine),
       practicalLine: scene.interpretationLine,
       sourceFeatureIds: scene.featureIds,
     }));
@@ -164,14 +219,14 @@ function buildSwitchActionItems(input: {
 }): readonly ReportDifferentiationModuleItem[] {
   const sceneItems = (input.scenes ?? []).map((scene) => ({
     title: scene.title,
-    body: scene.practicalLine,
+    body: asKoreanSentence(scene.practicalLine),
     sourceFeatureIds: scene.featureIds,
   }));
   const spotlightItems =
     input.spotlight?.groups.flatMap((group) =>
       group.items.map((item) => ({
         title: item.labelKo,
-        body: item.practicalLine,
+        body: asKoreanSentence(item.practicalLine),
         sourceFeatureIds: [item.featureId],
       })),
     ) ?? [];

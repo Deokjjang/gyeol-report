@@ -58,6 +58,23 @@ describe("comprehensive report draft sanitizer", () => {
     expect(serialized).not.toContain("OpenAI");
   });
 
+  it("replaces generic user labels with neutral wording", () => {
+    const result = sanitizeComprehensiveReportNarrativeDraft({
+      ...createNarrativeDraft(),
+      openingTitle: "사용자님 사주에서 보이는 흐름",
+      openingSummary: "사용자님은 빠르게 판단하고 고객님은 안정감을 찾습니다.",
+      coreLine: "유저님은 이 리포트에서 중립 표현으로 바뀌어야 합니다.",
+    });
+    const serialized = JSON.stringify(result.draft);
+
+    expect(result.sanitized).toBe(true);
+    expect(serialized).toContain("이 사주에서 보이는 흐름");
+    expect(serialized).toContain("당신은 빠르게 판단하고 당신은 안정감을 찾습니다");
+    expect(serialized).not.toContain("사용자님");
+    expect(serialized).not.toContain("고객님");
+    expect(serialized).not.toContain("유저님");
+  });
+
   it("does not alter deterministic profileTable fields", () => {
     const draft: ComprehensiveReportV2Draft = {
       ...createNarrativeDraft(),

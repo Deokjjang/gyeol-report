@@ -360,6 +360,33 @@ function renderCompactProfileRow(
   );
 }
 
+function renderFiveElementBadgeRow(
+  label: string,
+  value: readonly string[] | undefined,
+) {
+  const values = value?.filter((item) => item.trim().length > 0);
+
+  if (values === undefined || values.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="grid gap-2 rounded-md border border-neutral-800 bg-neutral-950/50 px-3 py-2 sm:grid-cols-[7rem_1fr]">
+      <dt className="text-xs font-semibold text-neutral-500">{label}</dt>
+      <dd className="flex flex-wrap gap-1.5 text-sm leading-6 text-neutral-100">
+        {values.map((item) => (
+          <span
+            key={item}
+            className="rounded border border-neutral-700 bg-neutral-900 px-2 py-0.5 text-xs font-semibold text-neutral-100"
+          >
+            {item}
+          </span>
+        ))}
+      </dd>
+    </div>
+  );
+}
+
 function splitProfilePillar(pillar: string | undefined) {
   if (pillar === undefined) {
     return {};
@@ -410,6 +437,26 @@ function formatPillarGridValue(value: string | readonly string[] | undefined) {
   const values = value?.filter((item) => item.trim().length > 0);
 
   return values === undefined || values.length === 0 ? "-" : values.join(" · ");
+}
+
+function normalizeVisibleSentence(input: string): string {
+  const normalized = input
+    .replace(/\s+/g, " ")
+    .replace(/([.!?。])\1+/g, "$1")
+    .trim();
+
+  if (/[.!?。]$/.test(normalized)) {
+    return normalized;
+  }
+
+  return `${normalized}입니다.`;
+}
+
+function joinVisibleSentences(...sentences: readonly string[]): string {
+  return sentences
+    .filter((sentence) => sentence.trim().length > 0)
+    .map(normalizeVisibleSentence)
+    .join(" ");
 }
 
 const pillarGridRows = [
@@ -499,10 +546,24 @@ function renderV2ProfileTable(
           </tbody>
         </table>
       </div>
+      {draft.sajuSymbolicNickname === undefined ? null : (
+        <section className="rounded-lg border border-emerald-900/60 bg-emerald-950/20 p-4">
+          <p className="text-xs font-semibold text-emerald-200">사주 한줄 별칭</p>
+          <h3 className="mt-1 text-base font-semibold text-neutral-50">
+            {draft.sajuSymbolicNickname.title}
+          </h3>
+          <p className="mt-1 text-sm leading-6 text-neutral-300">
+            {draft.sajuSymbolicNickname.subtitle}
+          </p>
+        </section>
+      )}
       <dl className="grid gap-2">
         {renderCompactProfileRow("일간", profile.dayMaster)}
         {renderCompactProfileRow("일주 해석 키워드", profile.dayPillarKeywords)}
-        {renderCompactProfileRow("오행 분포", profile.fiveElementSummary)}
+        {renderFiveElementBadgeRow(
+          "오행 분포",
+          profile.fiveElementBadges ?? profile.fiveElementSummary,
+        )}
         {renderCompactProfileRow(
           "과다/부족",
           [...profile.excessiveElements, ...profile.missingElements],
@@ -560,7 +621,7 @@ function renderV2FeatureSpotlight(
                     {item.badge}
                   </p>
                   <p className="text-sm leading-6 text-neutral-200">
-                    {item.shortMeaning} {item.vividLine}
+                    {joinVisibleSentences(item.shortMeaning, item.vividLine)}
                   </p>
                   <p className="text-sm leading-6 text-neutral-400">
                     {item.practicalLine}
@@ -603,13 +664,9 @@ function renderV2DifferentiationModules(
             <ul className="space-y-2 text-sm leading-6 text-neutral-200">
               {module.items.slice(0, 3).map((item) => (
                 <li key={`${module.moduleId}:${item.title}`}>
+                  <span className="text-emerald-200">• </span>
                   <span className="font-semibold text-neutral-50">{item.title}</span>
-                  <span className="text-neutral-400"> — {item.body}</span>
-                  {item.practicalLine === undefined ? null : (
-                    <span className="block text-neutral-500">
-                      {item.practicalLine}
-                    </span>
-                  )}
+                  <span className="text-neutral-400">: {item.body}</span>
                 </li>
               ))}
             </ul>
@@ -629,7 +686,7 @@ function renderGeneratedV1State(
       <article className="space-y-8 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
         <header className="space-y-4">
           <p className="text-sm font-semibold text-emerald-200">
-            사주×MBTI 종합 리포트
+            사주×MBTI 종합 리포트 v1.0
           </p>
           <div className="space-y-3">
             <h1 className="text-3xl font-bold tracking-tight text-neutral-50">
@@ -720,7 +777,7 @@ function renderGeneratedV2State(
       <article className="space-y-8 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
         <header className="space-y-4">
           <p className="text-sm font-semibold text-emerald-200">
-            사주×MBTI 종합 리포트
+            사주×MBTI 종합 리포트 v1.0
           </p>
           <div className="space-y-3">
             <h1 className="text-3xl font-bold tracking-tight text-neutral-50">

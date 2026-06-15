@@ -171,7 +171,7 @@ const spotlightCopyByFeatureId: Partial<Record<string, SpotlightCopy>> = {
     badge: "혼자 버티기 쉬운 구조",
     shortMeaning: "도움을 요청하고 기대는 감각을 늦게 쓰는 흐름",
     vividLine:
-      "도움받을 수 있는 상황에서도 한참 혼자 정리한 뒤에야 요청할 수 있습니다. 주변이 차갑기보다 사용자님의 요청 신호가 늦게 나갈 수 있습니다.",
+      "도움받을 수 있는 상황에서도 한참 혼자 정리한 뒤에야 요청할 수 있습니다. 주변이 차갑기보다 요청 신호가 늦게 나갈 수 있습니다.",
     practicalLine:
       "막히는 순간 필요한 도움을 한 문장으로 적어 보내는 습관이 필요합니다.",
   },
@@ -283,7 +283,7 @@ export function buildSajuFeatureSpotlight(input: {
   }
 
   return {
-    title: "사용자님 사주에서 특히 눈에 띄는 기운",
+    title: "이 사주에서 특히 눈에 띄는 기운",
     subtitle: "계산된 원국과 선택된 명리학 근거에서 강하게 잡힌 항목만 정리했습니다.",
     groups,
   };

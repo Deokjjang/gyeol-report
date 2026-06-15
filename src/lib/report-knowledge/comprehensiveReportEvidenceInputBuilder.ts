@@ -11,6 +11,7 @@ import { buildSajuFeatureSpotlight } from "./sajuFeatureSpotlight";
 import { buildSajuPillarFeaturePlacements } from "./sajuPillarFeaturePlacement";
 import { selectSajuSignatureScenes } from "./sajuSignatureSceneRules";
 import { buildReportDifferentiationModules } from "./reportDifferentiationModules";
+import { buildSajuSymbolicNickname } from "./sajuSymbolicNickname";
 import { requireSajuFeatureEntry } from "./sajuFeatureTaxonomy";
 import type {
   SajuFeatureCategory,
@@ -504,6 +505,7 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
     sajuSignatureScenes,
     mbtiType: input.mbtiType,
   });
+  const sajuSymbolicNickname = buildSajuSymbolicNickname(input.sajuFacts);
 
   return {
     packet: {
@@ -517,6 +519,7 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
       ...(reportDifferentiationModules.length === 0
         ? {}
         : { reportDifferentiationModules }),
+      ...(sajuSymbolicNickname === undefined ? {} : { sajuSymbolicNickname }),
       globalWarnings: [
         ...packet.globalWarnings,
         ...mappedSaju.warnings,
