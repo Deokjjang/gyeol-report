@@ -104,6 +104,12 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("MBTI는 공식 진단이 아니라");
     expect(combined).toContain("자기보고 성향 언어");
     expect(combined).toContain("행동 언어 보조 레이어");
+    expect(combined).toContain("MBTI는 별도 설명 섹션으로 빼지 말고");
+    expect(combined).toContain("selectedMbtiKnowledge");
+    expect(combined).toContain("sajuMbtiBridgeEvidence");
+    expect(combined).toContain("단순 E/I, T/F 설명");
+    expect(combined).toContain("사주 feature와 MBTI trait가 겹치는 부분");
+    expect(combined).toContain("종합 리포트에서는 MBTI 후보 유형 추천을 하지 마라");
     expect(combined).toContain("세운, 대운, 날짜 선택 상품에서는 MBTI를 기본 분석 근거로 쓰지 않는다");
     expect(combined).toContain("궁합, 커리어, 종합 리포트에서는 MBTI를 행동 장면과 소통 방식의 보조 설명");
     expect(combined).toContain("sajuSymbolicNickname");
@@ -526,6 +532,7 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("돈, 공부, 업무, 프로젝트, 계좌, 기록, 루틴");
     expect(combined).toContain("MBTI_SUPPORT_MISSING: work_money_study");
     expect(combined).toContain("일 처리, 공부 방식, 돈 관리 방식");
+    expect(combined).toContain("selectedMbtiKnowledge 또는 sajuMbtiBridgeEvidence");
     expect(combined).toContain("입력된 MBTI만 행동 언어로 사용하라");
     expect(combined).toContain("MBTI_SUPPORT_MISSING: risk_and_growth");
     expect(combined).toContain("위험과 성장 챕터에 입력된 MBTI");

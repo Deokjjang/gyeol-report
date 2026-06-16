@@ -24,6 +24,51 @@ export type MbtiType =
   | "ESTP"
   | "ESFP";
 
+export type MbtiTypeCode = MbtiType;
+
+export type MbtiKnowledgeContext =
+  | "core_identity"
+  | "communication"
+  | "decision"
+  | "work"
+  | "study"
+  | "money"
+  | "love"
+  | "friendship"
+  | "family"
+  | "conflict"
+  | "stress"
+  | "recovery"
+  | "growth"
+  | "compatibility";
+
+export type MbtiTraitSeed = {
+  readonly id: string;
+  readonly type: MbtiTypeCode;
+  readonly context: MbtiKnowledgeContext;
+  readonly label: string;
+  readonly description: string;
+  readonly sceneSeeds: readonly string[];
+  readonly strengths: readonly string[];
+  readonly risks: readonly string[];
+  readonly practicalSwitches: readonly string[];
+  readonly tone: "soft" | "direct" | "sharp";
+  readonly tags: readonly string[];
+};
+
+export type MbtiTypeKnowledge = {
+  readonly type: MbtiTypeCode;
+  readonly nickname: string;
+  readonly oneLine: string;
+  readonly corePattern: string;
+  readonly traitSeeds: readonly MbtiTraitSeed[];
+  readonly relationshipNeeds: readonly string[];
+  readonly compatibleTraitConditions: readonly string[];
+  readonly frictionTraitConditions: readonly string[];
+  readonly stressSignals: readonly string[];
+  readonly recoverySignals: readonly string[];
+};
+
 export type MbtiPreferenceLetter = "E" | "I" | "N" | "S" | "T" | "F" | "J" | "P";
 
 export type MbtiTemperamentGroup = "NT" | "NF" | "SJ" | "SP";

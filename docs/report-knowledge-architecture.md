@@ -870,6 +870,48 @@ Future product engines should be separate:
 - Career/Money/Study Engine
 - Luck Cycle Engine
 
+## REPORT-17 MBTI Knowledge Engine
+
+REPORT-17 adds a dedicated MBTI Knowledge Engine for the next product layer.
+MBTI is still not an official diagnosis. It is self-reported behavior language
+used to translate Saju structure into scenes users can recognize.
+
+The engine has four parts:
+
+- `mbtiTypeKnowledgeBase`: 16-type data with context-specific trait seeds,
+  scenes, strengths, risks, switches, relationship needs, and friction
+  conditions.
+- `mbtiKnowledgeSelector`: product-aware selection. The comprehensive report
+  selects behavior scenes for identity, communication, work, study, money,
+  love, family, stress, recovery, and growth. Yearly flow, major luck, and date
+  selection return empty or minimal MBTI data by default.
+- `sajuMbtiBridgeScorer`: bridges actual selected/computed Saju features to
+  selected MBTI trait seeds. It only creates bridge evidence when the required
+  Saju feature IDs are present.
+- `mbtiCompatibilityCandidateEngine`: future compatibility candidate selector.
+  It is data-driven and returns candidates only for compatibility or
+  relationship-family products. The comprehensive report must not render MBTI
+  candidate type recommendations.
+
+Comprehensive report usage policy:
+
+- Do not create a standalone MBTI section.
+- Use `selectedMbtiKnowledge` and `sajuMbtiBridgeEvidence` inside each chapter
+  as behavior scenes and practical switches.
+- Avoid shallow E/I, T/F summaries.
+- Explain overlap as "the pattern becomes clearer" and tension as "this is why
+  an operating rule is needed."
+- Do not recommend MBTI candidate types in the comprehensive report.
+
+Compatibility product policy:
+
+- Candidate MBTI types may be shown only when the compatibility engine selects
+  them.
+- A candidate is never a soulmate claim.
+- The output should be trait condition -> candidate types -> reasons -> friction
+  risks -> reminder that actual compatibility also depends on Saju and life
+  habits.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

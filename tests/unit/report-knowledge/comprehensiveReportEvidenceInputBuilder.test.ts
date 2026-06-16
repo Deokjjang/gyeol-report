@@ -334,6 +334,30 @@ describe("comprehensive report evidence input builder", () => {
     expect(spotlightFeatureIds).not.toContain("twelve_sinsal_banan");
   });
 
+  it("adds selected MBTI knowledge and Saju-MBTI bridge evidence to the packet", () => {
+    const result = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: "ENTJ",
+      sajuFacts: deokminSampleFacts,
+    });
+
+    expect(result.packet.selectedMbtiKnowledge?.mbti).toBe("ENTJ");
+    expect(result.packet.selectedMbtiKnowledge?.selectedTraits.length).toBeGreaterThan(
+      0,
+    );
+    expect(result.packet.selectedMbtiKnowledge?.selectedScenes.join("\n")).toContain(
+      "담당자",
+    );
+    expect(result.packet.sajuMbtiBridgeEvidence).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          mbti: "ENTJ",
+          bridgeNeed: "money_structure",
+          relatedSajuFeatureIds: expect.arrayContaining(["gwiin_jaego"]),
+        }),
+      ]),
+    );
+  });
+
   it("builds Saju primary, ENTJ support, and fusion evidence in major sections", () => {
     const result = buildComprehensiveReportEvidencePacketFromComputedFacts({
       mbtiType: "ENTJ",

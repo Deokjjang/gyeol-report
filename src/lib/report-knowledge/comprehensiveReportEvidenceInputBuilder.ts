@@ -13,6 +13,8 @@ import { buildSajuPillarFeaturePlacements } from "./sajuPillarFeaturePlacement";
 import { selectSajuSignatureScenes } from "./sajuSignatureSceneRules";
 import { buildReportDifferentiationModules } from "./reportDifferentiationModules";
 import { buildSajuSymbolicNickname } from "./sajuSymbolicNickname";
+import { selectMbtiKnowledge } from "./mbtiKnowledgeSelector";
+import { scoreSajuMbtiBridgeEvidence } from "./sajuMbtiBridgeScorer";
 import { requireSajuFeatureEntry } from "./sajuFeatureTaxonomy";
 import type {
   SajuFeatureCategory,
@@ -60,6 +62,19 @@ const scoreTopicByChapter = {
   risk_and_growth: "growth",
   final_message: "growth",
 } as const satisfies Record<SajuFeatureChapterId, SajuFeatureTopic>;
+
+const comprehensiveMbtiContexts = [
+  "core_identity",
+  "communication",
+  "work",
+  "study",
+  "money",
+  "love",
+  "family",
+  "stress",
+  "recovery",
+  "growth",
+] as const;
 
 type MutableChapterFeatureEvidence = {
   readonly chapterId: SajuFeatureChapterId;
@@ -512,6 +527,19 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
     mbtiType: input.mbtiType,
   });
   const sajuSymbolicNickname = buildSajuSymbolicNickname(input.sajuFacts);
+  const selectedMbtiKnowledge = selectMbtiKnowledge({
+    mbti: input.mbtiType,
+    contexts: comprehensiveMbtiContexts,
+    productType: "comprehensive",
+    maxTraitsPerContext: 2,
+  });
+  const sajuMbtiBridgeEvidence = scoreSajuMbtiBridgeEvidence({
+    selectedMbtiKnowledge,
+    selectedSajuFeatureEvidence,
+    computedFeatureIds: mappedFeatures.featureIds,
+    productType: "comprehensive",
+    limit: 8,
+  });
 
   return {
     packet: {
@@ -526,6 +554,10 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
         ? {}
         : { reportDifferentiationModules }),
       ...(sajuSymbolicNickname === undefined ? {} : { sajuSymbolicNickname }),
+      ...(selectedMbtiKnowledge === undefined ? {} : { selectedMbtiKnowledge }),
+      ...(sajuMbtiBridgeEvidence.length === 0
+        ? {}
+        : { sajuMbtiBridgeEvidence }),
       globalWarnings: [
         ...packet.globalWarnings,
         ...mappedSaju.warnings,

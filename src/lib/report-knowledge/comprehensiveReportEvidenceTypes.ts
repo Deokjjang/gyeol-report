@@ -15,6 +15,8 @@ import type { SajuSignatureScene } from "./sajuSignatureSceneRules";
 import type { SajuPillarFeaturePlacement } from "./sajuPillarFeaturePlacement";
 import type { ReportDifferentiationModule } from "./reportDifferentiationModules";
 import type { SajuSymbolicNickname } from "./sajuSymbolicNickname";
+import type { SelectedMbtiKnowledge } from "./mbtiKnowledgeSelector";
+import type { SajuMbtiBridgeEvidence } from "./sajuMbtiBridgeScorer";
 
 export type EvidenceRole =
   | "primary_saju"
@@ -76,5 +78,7 @@ export type ComprehensiveReportEvidencePacket = {
   readonly sajuSignatureScenes?: readonly SajuSignatureScene[];
   readonly reportDifferentiationModules?: readonly ReportDifferentiationModule[];
   readonly sajuSymbolicNickname?: SajuSymbolicNickname;
+  readonly selectedMbtiKnowledge?: SelectedMbtiKnowledge;
+  readonly sajuMbtiBridgeEvidence?: readonly SajuMbtiBridgeEvidence[];
   readonly globalWarnings: readonly string[];
 };
