@@ -4,6 +4,7 @@ import type { ComputedSajuFacts } from "./sajuComputedFactsTypes";
 export type ReportQualityFixture = {
   readonly id: string;
   readonly label: string;
+  readonly displayName?: string;
   readonly mbti: MbtiType;
   readonly expectedPillars: {
     readonly year: string;
@@ -111,6 +112,7 @@ export const REPORT_QUALITY_FIXTURE_MATRIX = [
   {
     id: DEOKMIN_REPORT_SMOKE_FIXTURE_ID,
     label: "Deokmin external manse parity fixture",
+    displayName: "덕민",
     mbti: "ENTJ",
     expectedPillars: { year: "己卯", month: "辛未", day: "甲申", hour: "戊辰" },
     expectedFeatureLabels: [

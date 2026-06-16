@@ -1,5 +1,6 @@
 import type { ComprehensiveReportEvidencePacket } from "../report-knowledge/comprehensiveReportEvidenceTypes";
 import type { ComputedSajuFacts } from "../report-knowledge/sajuComputedFactsTypes";
+import { shouldShowFeatureInBasicTable } from "../report-knowledge/sajuFeatureDisplayPolicy";
 import { buildSajuPillarGridColumns } from "../report-knowledge/sajuPillarFeaturePlacement";
 import { SAJU_KNOWLEDGE_BASE } from "../report-knowledge/sajuKnowledgeBase";
 import type { SajuFeatureCategory } from "../report-knowledge/sajuFeatureTypes";
@@ -52,6 +53,7 @@ function labelsForCategory(
   return uniqueValues(
     entries
       .filter((entry) => entry.category === category)
+      .filter((entry) => shouldShowFeatureInBasicTable(entry.id))
       .map((entry) => entry.labelKo),
   );
 }
@@ -63,7 +65,11 @@ function labelsForFeatureCategory(input: {
   return uniqueValues(
     input.packet.selectedSajuFeatureEvidence?.flatMap((chapter) =>
       chapter.features
-        .filter((feature) => feature.category === input.category)
+        .filter(
+          (feature) =>
+            feature.category === input.category &&
+            shouldShowFeatureInBasicTable(feature.id),
+        )
         .map((feature) => feature.labelKo),
     ) ?? [],
   );
@@ -133,7 +139,9 @@ function buildPillarGrid(input: {
     dayPillar: input.dayPillar,
     hourPillar: input.hourPillar,
     dayMaster: input.dayMaster,
-    featurePlacements: input.featurePlacements,
+    featurePlacements: input.featurePlacements?.filter((placement) =>
+      shouldShowFeatureInBasicTable(placement.featureId),
+    ),
   });
 }
 

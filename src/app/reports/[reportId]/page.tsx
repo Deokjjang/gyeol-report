@@ -13,6 +13,7 @@ import type {
 import {
   isComprehensiveReportV2Draft,
 } from "../../../lib/report-generation/comprehensiveReportDraftTypes";
+import { getSajuBranchSymbolEntry } from "../../../lib/report-knowledge/sajuBranchSymbolKnowledge";
 
 export const dynamic = "force-dynamic";
 
@@ -346,7 +347,9 @@ function renderCompactProfileRow(
   value: string | readonly string[] | undefined,
 ) {
   const values =
-    typeof value === "string" ? [value] : value?.filter((item) => item.trim().length > 0);
+    typeof value === "string"
+      ? filterDiagnosticOnlyLabels([value])
+      : filterDiagnosticOnlyLabels(value ?? []);
 
   if (values === undefined || values.length === 0) {
     return null;
@@ -358,6 +361,18 @@ function renderCompactProfileRow(
       <dd className="text-sm leading-6 text-neutral-100">{values.join(" · ")}</dd>
     </div>
   );
+}
+
+const diagnosticOnlyVisibleLabels = ["반안살", "백호살", "백호" + "대살"] as const;
+
+function filterDiagnosticOnlyLabels(values: readonly string[]): readonly string[] {
+  return values
+    .map((item) => item.trim())
+    .filter(
+      (item) =>
+        item.length > 0 &&
+        !diagnosticOnlyVisibleLabels.some((label) => item.includes(label)),
+    );
 }
 
 function renderFiveElementBadgeRow(
@@ -377,7 +392,8 @@ function renderFiveElementBadgeRow(
         {values.map((item) => (
           <span
             key={item}
-            className="rounded border border-neutral-700 bg-neutral-900 px-2 py-0.5 text-xs font-semibold text-neutral-100"
+            className={`element-chip ${getFiveElementChipClassFromText(item)} rounded border border-neutral-700 bg-neutral-900 px-2 py-0.5 text-xs font-semibold text-neutral-100`}
+            aria-label={getFiveElementAccessibleLabel(item)}
           >
             {item}
           </span>
@@ -385,6 +401,147 @@ function renderFiveElementBadgeRow(
       </dd>
     </div>
   );
+}
+
+const fiveElementChipByKo = {
+  목: "wood",
+  화: "fire",
+  토: "earth",
+  금: "metal",
+  수: "water",
+} as const;
+
+const fiveElementLabelByToken = {
+  wood: "목 · 초록",
+  fire: "화 · 빨강",
+  earth: "토 · 노랑/갈색",
+  metal: "금 · 금색/회색",
+  water: "수 · 파랑/검정",
+} as const;
+
+const fiveElementKoByToken = {
+  wood: "목",
+  fire: "화",
+  earth: "토",
+  metal: "금",
+  water: "수",
+} as const;
+
+const stemDisplayInfoByValue = {
+  갑: { ko: "갑", hanja: "甲", elementKo: "목", token: "wood" },
+  甲: { ko: "갑", hanja: "甲", elementKo: "목", token: "wood" },
+  을: { ko: "을", hanja: "乙", elementKo: "목", token: "wood" },
+  乙: { ko: "을", hanja: "乙", elementKo: "목", token: "wood" },
+  병: { ko: "병", hanja: "丙", elementKo: "화", token: "fire" },
+  丙: { ko: "병", hanja: "丙", elementKo: "화", token: "fire" },
+  정: { ko: "정", hanja: "丁", elementKo: "화", token: "fire" },
+  丁: { ko: "정", hanja: "丁", elementKo: "화", token: "fire" },
+  무: { ko: "무", hanja: "戊", elementKo: "토", token: "earth" },
+  戊: { ko: "무", hanja: "戊", elementKo: "토", token: "earth" },
+  기: { ko: "기", hanja: "己", elementKo: "토", token: "earth" },
+  己: { ko: "기", hanja: "己", elementKo: "토", token: "earth" },
+  경: { ko: "경", hanja: "庚", elementKo: "금", token: "metal" },
+  庚: { ko: "경", hanja: "庚", elementKo: "금", token: "metal" },
+  신: { ko: "신", hanja: "辛", elementKo: "금", token: "metal" },
+  辛: { ko: "신", hanja: "辛", elementKo: "금", token: "metal" },
+  임: { ko: "임", hanja: "壬", elementKo: "수", token: "water" },
+  壬: { ko: "임", hanja: "壬", elementKo: "수", token: "water" },
+  계: { ko: "계", hanja: "癸", elementKo: "수", token: "water" },
+  癸: { ko: "계", hanja: "癸", elementKo: "수", token: "water" },
+} as const;
+
+type FiveElementToken = keyof typeof fiveElementLabelByToken;
+
+function getFiveElementTokenFromText(text: string): FiveElementToken | undefined {
+  const key = Object.keys(fiveElementChipByKo).find((elementKo) =>
+    text.includes(elementKo),
+  ) as keyof typeof fiveElementChipByKo | undefined;
+
+  return key === undefined ? undefined : fiveElementChipByKo[key];
+}
+
+function getFiveElementChipClassFromText(text: string): string {
+  const token = getFiveElementTokenFromText(text);
+
+  return token === undefined ? "element-chip--unknown" : `element-chip--${token}`;
+}
+
+function getFiveElementAccessibleLabel(text: string): string {
+  const token = getFiveElementTokenFromText(text);
+
+  return token === undefined ? text : `${text} (${fiveElementLabelByToken[token]})`;
+}
+
+function renderElementChip(input: {
+  readonly elementKo: string;
+  readonly token: FiveElementToken;
+}) {
+  return (
+    <span
+      className={`element-chip element-chip--${input.token} rounded border border-neutral-700 bg-neutral-900 px-1.5 py-0.5 text-[0.7rem] font-semibold text-neutral-100`}
+      aria-label={fiveElementLabelByToken[input.token]}
+    >
+      {input.elementKo}
+    </span>
+  );
+}
+
+function renderStemValue(value: string | readonly string[] | undefined) {
+  if (typeof value !== "string") {
+    return formatPillarGridValue(value);
+  }
+
+  const info = stemDisplayInfoByValue[value.trim() as keyof typeof stemDisplayInfoByValue];
+
+  if (info === undefined) {
+    return value.trim().length === 0 ? "-" : value;
+  }
+
+  return (
+    <span className="inline-flex flex-wrap items-center gap-1.5">
+      <span>{`${info.ko}(${info.hanja})`}</span>
+      {renderElementChip({ elementKo: info.elementKo, token: info.token })}
+    </span>
+  );
+}
+
+function renderBranchValue(value: string | readonly string[] | undefined) {
+  if (typeof value !== "string") {
+    return formatPillarGridValue(value);
+  }
+
+  const branch = getSajuBranchSymbolEntry(value);
+
+  if (branch === undefined) {
+    return value.trim().length === 0 ? "-" : value;
+  }
+
+  return (
+    <span className="inline-flex flex-wrap items-center gap-1.5">
+      <span>{`${branch.labelKo}(${branch.branch})`}</span>
+      {renderElementChip({
+        elementKo: fiveElementKoByToken[branch.element],
+        token: branch.colorToken,
+      })}
+      <span className="rounded border border-neutral-700 bg-neutral-900 px-1.5 py-0.5 text-[0.7rem] font-semibold text-neutral-100">
+        {branch.animalKo}
+      </span>
+    </span>
+  );
+}
+
+function renderPillarGridCell(input: {
+  readonly label: string;
+  readonly value: string | readonly string[] | undefined;
+}) {
+  if (input.label === "천간") {
+    return renderStemValue(input.value);
+  }
+  if (input.label === "지지") {
+    return renderBranchValue(input.value);
+  }
+
+  return formatPillarGridValue(input.value);
 }
 
 function splitProfilePillar(pillar: string | undefined) {
@@ -538,7 +695,10 @@ function renderV2ProfileTable(
                     key={`${row.label}:${column.columnId}`}
                     className="px-3 py-2 text-neutral-100"
                   >
-                    {formatPillarGridValue(row.getValue(column))}
+                    {renderPillarGridCell({
+                      label: row.label,
+                      value: row.getValue(column),
+                    })}
                   </td>
                 ))}
               </tr>

@@ -99,6 +99,11 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("바로 와닿는 장면 문장");
     expect(combined).toContain("이런 상황 많지 않나요");
     expect(combined).toContain("사용자님, 고객님, 유저님이라는 호칭을 쓰지 마라");
+    expect(combined).toContain("MBTI는 공식 진단이 아니라");
+    expect(combined).toContain("자기보고 성향 언어");
+    expect(combined).toContain("행동 언어 보조 레이어");
+    expect(combined).toContain("세운, 대운, 날짜 선택 상품에서는 MBTI를 기본 분석 근거로 쓰지 않는다");
+    expect(combined).toContain("궁합, 커리어, 종합 리포트에서는 MBTI를 행동 장면과 소통 방식의 보조 설명");
     expect(combined).toContain("sajuSymbolicNickname");
     expect(combined).toContain("사주 한줄 별칭");
     expect(combined).toContain("지지 동물 상징은 단일 띠 풀이로 쓰지 말고");
@@ -244,6 +249,24 @@ describe("OpenAI report writer prompt", () => {
     for (const marker of blockedMarkers) {
       expect(combined).not.toContain(marker);
     }
+  });
+
+  it("uses the current MBTI as a behavior layer without hardcoded ENTJ-only copy", () => {
+    const { packet } = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: "INFP",
+      sajuFacts: deokminSampleFacts,
+    });
+    const messages = buildOpenAIComprehensiveReportWriterMessages({
+      userDisplayName: "민지",
+      mbtiType: "INFP",
+      evidencePacket: packet,
+    });
+    const combined = [messages.system, messages.developer, messages.user].join("\n");
+
+    expect(combined).toContain("INFP라서 그렇다 금지");
+    expect(combined).toContain("입력한 INFP의 행동 언어");
+    expect(combined).not.toContain("ENTJ식 효율");
+    expect(combined).not.toContain("덕민");
   });
 
   it("instructs the model to use spotlight and signature scenes without inventing features", () => {

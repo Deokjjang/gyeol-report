@@ -2,6 +2,12 @@ import type {
   SelectedSajuFeatureEvidence,
   SelectedSajuFeatureEvidenceItem,
 } from "./comprehensiveReportEvidenceTypes";
+import {
+  joinKoreanSentences,
+  normalizeKoreanSentenceSpacing,
+  removeRepeatedLeadingLabel,
+} from "./koreanCopyUtils";
+import { shouldShowFeatureInSpotlight } from "./sajuFeatureDisplayPolicy";
 
 export type SajuFeatureSpotlightGroupId =
   | "good_fortune"
@@ -135,6 +141,14 @@ const spotlightCopyByFeatureId: Partial<Record<string, SpotlightCopy>> = {
     practicalLine:
       "한 번에 포기하기보다 사람, 제도, 기록 속의 숨은 자원을 확인할 때 힘이 살아납니다.",
   },
+  gwiin_geumyeorok: {
+    badge: "좋은 조건에서 빛나는 품격의 길신",
+    shortMeaning: "생활 안정과 좋은 대우가 함께 갈 때 선명해지는 기운",
+    vividLine:
+      "단정하게 꾸민 수레가 안정된 길을 가는 이미지입니다. 품격, 생활 안정, 좋은 조건이 함께 갈 때 더 선명하게 살아납니다.",
+    practicalLine:
+      "일과 관계에서도 대우, 환경, 이미지 관리가 무너지지 않게 조건을 먼저 정리해야 합니다.",
+  },
   sinsal_wonjin: {
     badge: "가까울수록 결이 거슬리는 신호",
     shortMeaning: "친밀한 관계에서 작은 어긋남이 크게 느껴지는 기운",
@@ -226,19 +240,30 @@ function collectFeatureAccumulators(
     }
   }
 
-  return [...byId.values()];
+  return [...byId.values()].filter((item) =>
+    shouldShowFeatureInSpotlight(item.feature.id),
+  );
 }
 
 function toSpotlightItem(input: FeatureAccumulator): SajuFeatureSpotlightItem {
   const copy = spotlightCopyByFeatureId[input.feature.id];
+  const labelKo = input.feature.labelKo;
 
   return {
     featureId: input.feature.id,
-    labelKo: input.feature.labelKo,
-    badge: copy?.badge ?? input.feature.symbolicImage,
-    shortMeaning: copy?.shortMeaning ?? input.feature.summary,
-    vividLine: copy?.vividLine ?? input.feature.positiveReading,
-    practicalLine: copy?.practicalLine ?? input.feature.practicalUse,
+    labelKo,
+    badge: normalizeKoreanSentenceSpacing(
+      removeRepeatedLeadingLabel(copy?.badge ?? input.feature.symbolicImage, labelKo),
+    ),
+    shortMeaning: normalizeKoreanSentenceSpacing(
+      removeRepeatedLeadingLabel(copy?.shortMeaning ?? input.feature.summary, labelKo),
+    ),
+    vividLine: joinKoreanSentences(
+      removeRepeatedLeadingLabel(copy?.vividLine ?? input.feature.positiveReading, labelKo),
+    ),
+    practicalLine: joinKoreanSentences(
+      removeRepeatedLeadingLabel(copy?.practicalLine ?? input.feature.practicalUse, labelKo),
+    ),
     polarity: input.feature.polarity,
     sourceChapterIds: input.sourceChapterIds,
   };
@@ -284,7 +309,7 @@ export function buildSajuFeatureSpotlight(input: {
 
   return {
     title: "이 사주에서 특히 눈에 띄는 기운",
-    subtitle: "계산된 원국과 선택된 명리학 근거에서 강하게 잡힌 항목만 정리했습니다.",
+    subtitle: "원국에서 확인된 기운 중 읽기 전에 잡고 가면 좋은 항목만 정리했습니다.",
     groups,
   };
 }

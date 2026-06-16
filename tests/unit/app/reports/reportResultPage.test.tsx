@@ -105,10 +105,10 @@ function createV2Draft(): ComprehensiveReportV2Draft {
       "갑목과 갑신일주를 먼저 놓고 읽으면, 덕민님은 작은 안정감보다 큰 방향과 기준을 먼저 찾는 사람에 가깝습니다.",
     coreLine: "사주 구조가 먼저이고 ENTJ는 그 구조를 성취 쪽으로 증폭합니다.",
     profileTable: {
-      yearPillar: "병자",
-      monthPillar: "경자",
+      yearPillar: "기묘",
+      monthPillar: "신미",
       dayPillar: "갑신일주",
-      hourPillar: "신미",
+      hourPillar: "무진",
       dayMaster: "갑목",
       dayPillarKeywords: ["바위 위 소나무", "압박 속 리더십"],
       fiveElementSummary: ["목 2", "화 0", "토 4", "금 2", "수 0"],
@@ -404,19 +404,35 @@ describe("report result page", () => {
     expect(html).toContain("토 4 · 노랑/갈색");
     expect(html).toContain("금 2 · 금색/회색");
     expect(html).toContain("수 0 · 파랑/검정");
+    expect(html).toContain("element-chip--wood");
+    expect(html).toContain("element-chip--fire");
+    expect(html).toContain("element-chip--earth");
+    expect(html).toContain("element-chip--metal");
+    expect(html).toContain("element-chip--water");
     expect(html).toContain("과다/부족");
     expect(html).toContain("주요 구조");
     expect(html).toContain("신살 요약");
     expect(html).toContain("귀인/길신 요약");
     expect(html).toContain("MBTI 입력값");
-    expect(html).toContain("병");
-    expect(html).toContain("자");
+    expect(html).toContain("무(戊)");
+    expect(html).toContain("갑(甲)");
+    expect(html).toContain("신(辛)");
+    expect(html).toContain("기(己)");
+    expect(html).toContain("진(辰)");
+    expect(html).toContain("신(申)");
+    expect(html).toContain("미(未)");
+    expect(html).toContain("묘(卯)");
+    expect(html).toContain("용");
+    expect(html).toContain("원숭이");
+    expect(html).toContain("양");
+    expect(html).toContain("토끼");
     expect(html).toContain("갑목");
     expect(html).toContain("화 부족");
     expect(html).toContain("편재");
     expect(html).toContain("현침살");
     expect(html).toContain("장성살");
     expect(html).toContain("천을귀인");
+    expect(html).not.toContain("백호대살");
     expect(html).toContain("사주 한줄 별칭");
     expect(html).toContain("큰 나무가 날카로운 금 위에 선 사람");
     expect(html).toContain("완충과 회복을 같이 설계해야 오래 갑니다");

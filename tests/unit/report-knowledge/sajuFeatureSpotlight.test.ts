@@ -153,6 +153,25 @@ describe("Saju feature spotlight builder", () => {
     expect(allItemIds).not.toContain("twelve_sinsal_banan");
   });
 
+  it("does not show diagnostic-only features even when selected evidence contains them", () => {
+    const spotlight = buildSajuFeatureSpotlight({
+      selectedEvidence: buildSelectedEvidence([
+        "gwiin_cheoneul",
+        "twelve_sinsal_banan",
+        "sinsal_baekho",
+        "element_water_missing",
+      ]),
+    });
+    const allItemIds = spotlight?.groups.flatMap((group) =>
+      group.items.map((item) => item.featureId),
+    ) ?? [];
+
+    expect(allItemIds).toContain("gwiin_cheoneul");
+    expect(allItemIds).toContain("element_water_missing");
+    expect(allItemIds).not.toContain("twelve_sinsal_banan");
+    expect(allItemIds).not.toContain("sinsal_baekho");
+  });
+
   it("keeps spotlight text vivid and free of unsafe claims", () => {
     const spotlight = buildSajuFeatureSpotlight({
       selectedEvidence: buildSelectedEvidence([
@@ -170,6 +189,8 @@ describe("Saju feature spotlight builder", () => {
     expect(serialized).toContain("돈과 자원을 담는 창고");
     expect(serialized).toContain("바늘처럼 정확한 판단");
     expect(serialized).toContain("냉각수가 부족한 엔진");
+    expect(serialized).not.toContain("..");
+    expect(serialized).not.toContain("기운 막힌");
     expect(serialized).not.toContain("100%");
     expect(serialized).not.toContain("반드시");
     expect(serialized).not.toContain("무조건");

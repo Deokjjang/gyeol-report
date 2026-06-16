@@ -8,6 +8,13 @@ import type {
   SajuFeatureSpotlightSection,
 } from "./sajuFeatureSpotlight";
 import type { SajuSignatureScene } from "./sajuSignatureSceneRules";
+import {
+  joinKoreanSentences,
+  removeRepeatedLeadingLabel,
+} from "./koreanCopyUtils";
+import { shouldShowFeatureInNarrative } from "./sajuFeatureDisplayPolicy";
+
+export { joinKoreanSentences, normalizeKoreanSentenceSpacing } from "./koreanCopyUtils";
 
 export type ReportDifferentiationModuleId =
   | "saju_weapon"
@@ -55,49 +62,8 @@ function uniqueById<T extends { readonly sourceFeatureIds: readonly string[] }>(
   return output;
 }
 
-export function normalizeKoreanSentenceSpacing(input: string): string {
-  return input
-    .replace(/\s+/g, " ")
-    .replace(/([.!?。])\1+/g, "$1")
-    .replace(/\s+([,.!?。])/g, "$1")
-    .trim();
-}
-
 function asKoreanSentence(input: string): string {
-  const normalized = normalizeKoreanSentenceSpacing(input);
-
-  if (/[.!?。]$/.test(normalized)) {
-    return normalized;
-  }
-  if (/(기운|구조|감각|흐름|패턴|장치)$/.test(normalized)) {
-    return `${normalized}입니다.`;
-  }
-
-  return `${normalized}.`;
-}
-
-function escapeRegExp(value: string): string {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
-export function joinKoreanSentences(
-  ...sentences: readonly (string | undefined)[]
-): string {
-  return normalizeKoreanSentenceSpacing(
-    sentences
-      .filter((sentence): sentence is string => sentence !== undefined)
-      .map(asKoreanSentence)
-      .join(" "),
-  );
-}
-
-function removeRepeatedLabelPrefix(input: {
-  readonly label: string;
-  readonly text: string;
-}): string {
-  return input.text
-    .replace(new RegExp(`^${escapeRegExp(input.label)}\\s*[은는:]\\s*`), "")
-    .trim();
+  return joinKoreanSentences(input);
 }
 
 function collectSelectedFeatures(
@@ -115,7 +81,9 @@ function collectSelectedFeatures(
     }
   }
 
-  return [...byId.values()].sort((left, right) => right.score - left.score);
+  return [...byId.values()]
+    .filter((feature) => shouldShowFeatureInNarrative(feature.id))
+    .sort((left, right) => right.score - left.score);
 }
 
 function getSpotlightItems(
@@ -134,7 +102,9 @@ function toSpotlightModuleItem(
 ): ReportDifferentiationModuleItem {
   return {
     title: item.labelKo,
-    body: joinKoreanSentences(item.badge, item.shortMeaning),
+    body: joinKoreanSentences(
+      removeRepeatedLeadingLabel(item.badge, item.labelKo),
+    ),
     practicalLine: item.practicalLine,
     sourceFeatureIds: [item.featureId],
   };
@@ -158,10 +128,7 @@ function buildWeaponItems(input: {
     .map((feature) => ({
       title: feature.labelKo,
       body: asKoreanSentence(
-        removeRepeatedLabelPrefix({
-          label: feature.labelKo,
-          text: feature.summary,
-        }),
+        removeRepeatedLeadingLabel(feature.summary, feature.labelKo),
       ),
       practicalLine: feature.practicalUse,
       sourceFeatureIds: [feature.id],
@@ -188,10 +155,7 @@ function buildTrapItems(input: {
     .map((feature) => ({
       title: feature.labelKo,
       body: asKoreanSentence(
-        removeRepeatedLabelPrefix({
-          label: feature.labelKo,
-          text: feature.cautionReading,
-        }),
+        removeRepeatedLeadingLabel(feature.cautionReading, feature.labelKo),
       ),
       practicalLine: feature.practicalUse,
       sourceFeatureIds: [feature.id],
@@ -204,6 +168,7 @@ function buildDailySceneItems(
   scenes: readonly SajuSignatureScene[] | undefined,
 ): readonly ReportDifferentiationModuleItem[] {
   return (scenes ?? [])
+    .filter((scene) => scene.featureIds.every(shouldShowFeatureInNarrative))
     .slice(0, maxItemsPerModule)
     .map((scene) => ({
       title: scene.title,
@@ -217,11 +182,13 @@ function buildSwitchActionItems(input: {
   readonly scenes?: readonly SajuSignatureScene[];
   readonly spotlight?: SajuFeatureSpotlightSection;
 }): readonly ReportDifferentiationModuleItem[] {
-  const sceneItems = (input.scenes ?? []).map((scene) => ({
-    title: scene.title,
-    body: asKoreanSentence(scene.practicalLine),
-    sourceFeatureIds: scene.featureIds,
-  }));
+  const sceneItems = (input.scenes ?? [])
+    .filter((scene) => scene.featureIds.every(shouldShowFeatureInNarrative))
+    .map((scene) => ({
+      title: scene.title,
+      body: asKoreanSentence(scene.practicalLine),
+      sourceFeatureIds: scene.featureIds,
+    }));
   const spotlightItems =
     input.spotlight?.groups.flatMap((group) =>
       group.items.map((item) => ({
@@ -243,9 +210,10 @@ function buildRelationshipNeedItems(input: {
       ?.find((chapter) => chapter.chapterId === "love_relationships")
       ?.features.filter(
         (feature) =>
-          feature.topics.includes("love") ||
-          feature.topics.includes("relationship") ||
-          feature.category === "element",
+          shouldShowFeatureInNarrative(feature.id) &&
+          (feature.topics.includes("love") ||
+            feature.topics.includes("relationship") ||
+            feature.category === "element"),
       ) ?? [];
 
   if (loveFeatures.length === 0) {

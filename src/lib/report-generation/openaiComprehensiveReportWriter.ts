@@ -426,7 +426,7 @@ const personalitySceneMarkers = [
 const personalityEvidenceMarkers = [
   "현침살",
   "갑신일주",
-  "ENTJ",
+  "MBTI",
   "편관",
   "정관",
   "귀문관살",
@@ -508,7 +508,7 @@ const directHitEvidenceMarkersByChapter = {
     "금여록",
     "편재",
     "정재",
-    "ENTJ",
+    "MBTI",
     "갑신일주",
   ],
   love_relationships: [
@@ -517,7 +517,7 @@ const directHitEvidenceMarkersByChapter = {
     "화 부족",
     "수 부족",
     "무식상",
-    "ENTJ",
+    "MBTI",
   ],
   people_family_environment: [
     "장성살",
@@ -526,7 +526,7 @@ const directHitEvidenceMarkersByChapter = {
     "천을귀인",
     "무인성",
     "현침살",
-    "ENTJ",
+    "MBTI",
   ],
 } as const satisfies Record<DirectHitRescueChapterId, readonly string[]>;
 
@@ -949,9 +949,8 @@ function buildPersonalityDirectHitRescue(input: {
   const sceneLine = preferredScene.sceneLines?.[0] ?? preferredScene.sceneLine;
   const interpretationLine = preferredScene.interpretationLine;
   const selectedEvidenceLine =
-    preferredScene.featureLabels.includes("현침살") &&
-    input.draft.profileTable.mbti === "ENTJ"
-      ? "이 흐름은 현침살의 빠른 오류 감지와 ENTJ식 결론 지향이 겹칠 때 더 선명해집니다."
+    preferredScene.featureLabels.includes("현침살")
+      ? "이 흐름은 현침살의 빠른 오류 감지와 입력한 MBTI의 결론 처리 성향이 겹칠 때 더 선명해집니다."
       : preferredScene.featureLabels.includes("갑신일주") &&
           preferredScene.featureLabels.some((label) =>
             ["편관", "정관"].includes(label),

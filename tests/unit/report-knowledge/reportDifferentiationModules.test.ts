@@ -84,6 +84,15 @@ describe("report differentiation modules", () => {
     }
   });
 
+  it("does not promote diagnostic-only features into differentiation modules", () => {
+    const { modules } = buildModulesForFixture("warning-mixed-entp");
+    const serialized = JSON.stringify(modules);
+
+    expect(serialized).not.toContain("백호살");
+    expect(serialized).not.toContain("백호대살");
+    expect(serialized).not.toContain("반안살");
+  });
+
   it("builds useful modules for non-ENTJ fixtures", () => {
     const { modules } = buildModulesForFixture("money-resource-estp");
     const serialized = JSON.stringify(modules);
@@ -120,6 +129,7 @@ describe("report differentiation modules", () => {
 
     expect(serialized).not.toContain("..");
     expect(serialized).not.toContain("기운 막힌");
+    expect(serialized).not.toContain("기운입니다. 기운입니다");
     for (const reportModule of modules) {
       for (const item of reportModule.items) {
         expect(item.body.startsWith(`${item.title}은 ${item.title}`)).toBe(false);

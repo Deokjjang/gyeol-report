@@ -803,6 +803,70 @@ MBTI, pillars, computed feature count, spotlight groups, differentiation module
 count, draft status, and validator warning count. If OpenAI configuration is
 missing, it still skips safely without reading secrets.
 
+## REPORT-16E Production Diagnostic Policy and V1 Final Gate
+
+REPORT-16E freezes the display policy for the comprehensive Saju x MBTI v1.0
+surface. Computation and display are intentionally separate.
+
+Production features are the items the product can show as confirmed in the
+default report body, basic table, spotlight, and deterministic modules.
+Diagnostic features are school-variant or platform-variant items. They may be
+computed, audited, and compared in safe debug output, but they are not shown as
+confirmed final features unless a later production rule set adopts that basis.
+
+Feature visibility levels are represented by `SajuFeatureVisibilityLevel`:
+
+- `core`: day master, day pillar, month branch, element excess/missing, key ten
+  gods, and key structures.
+- `visible`: user-facing high-signal items such as 천을귀인, 역마살, 도화/홍염,
+  화개, 공망, and 장성살.
+- `supplementary`: good-fortune or symbolic features such as 금여록, 암록,
+  재고귀인, 양인살, 현침살, 원진살, 귀문관살, 천살, and 육해살. These can appear
+  in spotlight or narrative when selected, but they should not overtake core
+  structure.
+- `diagnostic`: 반안살, 백호살/백호대살, and alternate-basis feature checks.
+  These stay out of the basic table and spotlight by default.
+- `hidden`: direct scare-copy features that could be misunderstood as disease,
+  death, bankruptcy, or divorce claims.
+
+The feature display policy is presentation control only. It must not add
+features that were not computed or selected.
+
+The manse table visual policy is:
+
+- render stems and branches with Korean and Hanja together, for example
+  `무(戊)` and `진(辰)`;
+- render the five-element token as both text and chip class, for example
+  `element-chip--earth`;
+- render branch animal labels when branch symbol knowledge is available;
+- never rely on color alone.
+
+MBTI usage is frozen for the comprehensive report:
+
+- MBTI is not an official diagnosis.
+- MBTI is self-reported behavioral language.
+- MBTI is a secondary translation layer that makes Saju structure easier to
+  understand.
+- Luck-cycle or date-selection products should not use MBTI by default.
+- Compatibility, career, and comprehensive products may use MBTI only for
+  behavior scenes and communication style.
+- Unsupported MBTI type recommendation lists remain blocked until a dedicated
+  scorer provides them.
+
+`ComprehensiveV1QualityGate` is a deterministic final-gate helper for product
+readiness checks. It verifies product version, four-pillar grid, Hanja
+stem/branch rendering, element chips, symbolic nickname, spotlight,
+differentiation modules, universal scenes, MBTI caution, final actions, generic
+label cleanup, internal-artifact blocking, and unsupported MBTI recommendation
+blocking.
+
+Future product engines should be separate:
+
+- MBTI Knowledge Engine
+- Compatibility Engine
+- Career/Money/Study Engine
+- Luck Cycle Engine
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

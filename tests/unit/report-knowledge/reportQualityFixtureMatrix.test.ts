@@ -64,6 +64,7 @@ describe("report quality fixture matrix", () => {
       dayPillar: "갑신",
       hourPillar: "무진",
     });
+    expect(deokminFixture.displayName).toBe("덕민");
     expect(deokminFixture.mbti).toBe("ENTJ");
     expect(defaultFixture.expectedPillars).not.toEqual(
       deokminFixture.expectedPillars,
@@ -137,6 +138,10 @@ describe("report quality fixture matrix", () => {
     expect(focusTags.has("positive")).toBe(true);
     expect(focusTags.has("mixed")).toBe(true);
     expect(focusTags.has("warning")).toBe(true);
-    expect(JSON.stringify(REPORT_QUALITY_FIXTURE_MATRIX)).not.toContain("덕민");
+    expect(
+      REPORT_QUALITY_FIXTURE_MATRIX.filter(
+        (fixture) => fixture.id !== DEOKMIN_REPORT_SMOKE_FIXTURE_ID,
+      ).some((fixture) => JSON.stringify(fixture).includes("덕민")),
+    ).toBe(false);
   });
 });

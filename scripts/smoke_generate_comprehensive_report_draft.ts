@@ -21,6 +21,10 @@ import {
   type ReportQualityFixture,
 } from "../src/lib/report-knowledge/reportQualityFixtureMatrix";
 import {
+  evaluateComprehensiveV1QualityGate,
+  summarizeComprehensiveV1QualityGate,
+} from "../src/lib/report-knowledge/reportQualityGate";
+import {
   buildSafeSajuFeatureEvidenceDebugSummary,
   formatSafeSajuFeatureEvidenceDebugSummary,
 } from "../src/lib/report-knowledge/sajuFeatureEvidenceDebug";
@@ -103,12 +107,31 @@ function buildFixtureQualitySummary(fixture: ReportQualityFixture): {
   readonly computedFeatureCount: number;
   readonly spotlightGroups: readonly string[];
   readonly differentiationModulesCount: number;
+  readonly qualityGateSummary: string;
 } {
   const { packet, mappedFeatures } =
     buildComprehensiveReportEvidencePacketFromComputedFacts({
       mbtiType: fixture.mbti,
       sajuFacts: fixture.sajuFacts,
     });
+  const syntheticVisibleSummary = [
+    "사주×MBTI 종합 리포트 v1.0",
+    "시주 일주 월주 연주 천간 지지",
+    fixture.expectedPillars.hour,
+    fixture.expectedPillars.day,
+    fixture.expectedPillars.month,
+    fixture.expectedPillars.year,
+    "element-chip--wood element-chip--fire element-chip--earth element-chip--metal element-chip--water",
+    packet.sajuSymbolicNickname === undefined ? "" : "사주 한줄 별칭",
+    packet.sajuFeatureSpotlight === undefined ? "" : packet.sajuFeatureSpotlight.title,
+    packet.reportDifferentiationModules === undefined
+      ? ""
+      : "읽기 전에 잡고 갈 핵심 포인트",
+    "사람들과 대화 카톡 수업 팀플 가족 돈 계좌 잠들기 전",
+    "MBTI는 공식 진단이 아니라 자기보고 성향 언어이며 보조 레이어입니다.",
+    "오늘부터 할 수 있는 3가지",
+  ].join("\n");
+  const qualityGate = evaluateComprehensiveV1QualityGate(syntheticVisibleSummary);
 
   return {
     computedFeatureCount: mappedFeatures.featureIds.length,
@@ -117,6 +140,7 @@ function buildFixtureQualitySummary(fixture: ReportQualityFixture): {
         .filter((group) => group.items.length > 0)
         .map((group) => group.groupId) ?? [],
     differentiationModulesCount: packet.reportDifferentiationModules?.length ?? 0,
+    qualityGateSummary: summarizeComprehensiveV1QualityGate(qualityGate),
   };
 }
 
@@ -135,6 +159,7 @@ function writeFixtureQualitySummary(input: {
       `computed feature count: ${summary.computedFeatureCount}`,
       `spotlight groups: ${summary.spotlightGroups.join(", ") || "none"}`,
       `differentiation modules count: ${summary.differentiationModulesCount}`,
+      `quality gate summary: ${summary.qualityGateSummary}`,
       `draft status: ${input.status}`,
       `validator warnings count: ${input.warningsCount ?? 0}`,
     ].join(" | "),
@@ -228,8 +253,9 @@ async function generateFixtureDraft(input: {
     sajuSignatureScenes: packet.sajuSignatureScenes,
   });
   const allowedSajuTerms = deriveAllowedSajuTermsFromEvidencePacket(packet);
+  const userDisplayName = fixture.displayName ?? fixture.label;
   const messages = buildOpenAIComprehensiveReportWriterMessages({
-    userDisplayName: fixture.label,
+    userDisplayName,
     mbtiType: fixture.mbti,
     evidencePacket: packet,
     allowedSajuTerms,
@@ -241,7 +267,7 @@ async function generateFixtureDraft(input: {
   });
 
   const result = await generateComprehensiveReportDraft({
-    userDisplayName: fixture.label,
+    userDisplayName,
     mbtiType: fixture.mbti,
     evidencePacket: packet,
     config: {

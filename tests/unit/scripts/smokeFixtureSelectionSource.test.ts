@@ -72,6 +72,7 @@ describe("report smoke fixture selection source", () => {
     expect(draftSmokeSource).toContain("pillars:");
     expect(draftSmokeSource).toContain("computed feature count:");
     expect(draftSmokeSource).toContain("differentiation modules count:");
+    expect(draftSmokeSource).toContain("quality gate summary:");
     expect(draftSmokeSource).toContain("validator warnings count:");
   });
 });

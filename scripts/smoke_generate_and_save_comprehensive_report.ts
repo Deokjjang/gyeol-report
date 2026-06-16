@@ -294,8 +294,9 @@ async function run(): Promise<void> {
     sajuSignatureScenes: packet.sajuSignatureScenes,
   });
   const allowedSajuTerms = deriveAllowedSajuTermsFromEvidencePacket(packet);
+  const userDisplayName = fixture.displayName ?? fixture.label;
   const messages = buildOpenAIComprehensiveReportWriterMessages({
-    userDisplayName: fixture.label,
+    userDisplayName,
     mbtiType: fixture.mbti,
     evidencePacket: packet,
     allowedSajuTerms,
@@ -307,7 +308,7 @@ async function run(): Promise<void> {
   });
 
   const generated = await generateAndPersistComprehensiveReport({
-    userDisplayName: fixture.label,
+    userDisplayName,
     mbtiType: fixture.mbti,
     sajuFacts: fixture.sajuFacts,
     reportId: fulfillmentResult.fulfillment.reportId,
