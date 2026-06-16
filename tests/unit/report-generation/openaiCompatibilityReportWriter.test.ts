@@ -2,8 +2,10 @@ import { describe, expect, it } from "vitest";
 
 import type { CompatibilityReportDraft } from "../../../src/lib/report-generation/compatibilityReportDraftTypes";
 import {
+  CompatibilityReportWriterFailure,
   generateCompatibilityReportDraft,
 } from "../../../src/lib/report-generation/openaiCompatibilityReportWriter";
+import { compatibilityReportDraftJsonSchema } from "../../../src/lib/report-generation/compatibilityReportDraftSchema";
 import {
   buildOpenAICompatibilityReportRepairMessages,
 } from "../../../src/lib/report-generation/openaiCompatibilityReportWriterPrompt";
@@ -99,10 +101,71 @@ describe("openaiCompatibilityReportWriter", () => {
     expect(result.draft.version).toBe("compatibility_v1_draft");
     expect(result.draft.scoreSummary.totalScore).toBe(packet.score.totalScore);
     expect(result.repaired).toBe(false);
-    expect(JSON.stringify(requests[0])).toContain("saju_mbti_compatibility");
-    expect(JSON.stringify(requests[0])).toContain("덕민");
-    expect(JSON.stringify(requests[0])).toContain("소담");
-    expect(JSON.stringify(requests[0])).not.toContain("OPENAI_API_KEY");
+    const requestText = JSON.stringify(requests[0]);
+    expect(requestText).toContain("saju_mbti_compatibility");
+    expect(requestText).toContain("덕민");
+    expect(requestText).toContain("소담");
+    expect(requestText).toContain("json_schema");
+    expect(requestText).toContain("\"strict\":true");
+    expect(requestText).toContain("\"schema\"");
+    expect(requestText).not.toContain("OPENAI_API_KEY");
+    expect(requestText).not.toContain("Authorization");
+    expect(requestText).not.toContain("sk-test");
+    expect(compatibilityReportDraftJsonSchema.properties.chartComparison.properties.personA).toEqual({
+      type: "string",
+    });
+  });
+
+  it("exposes safe OpenAI request diagnostics without secrets", async () => {
+    const packet = buildCompatibilityEvidencePacketFromFixtureId("deokmin-sodam-love");
+    const fetchImpl: typeof fetch = async () =>
+      new Response(
+        JSON.stringify({
+          error: {
+            type: "invalid_request_error",
+            code: "invalid_json_schema",
+            message:
+              "Invalid schema for response_format compatibility_report_draft. Authorization: Bearer sk-test",
+            param: "text.format.schema",
+          },
+        }),
+        {
+          status: 400,
+          headers: { "content-type": "application/json" },
+        },
+      );
+
+    let caught: unknown;
+    try {
+      await generateCompatibilityReportDraft({
+        evidencePacket: packet,
+        config: {
+          apiKey: "sk-test",
+          model: "test-model",
+          enabled: true,
+          fetchImpl,
+        },
+      });
+    } catch (error) {
+      caught = error;
+    }
+
+    expect(caught).toBeInstanceOf(CompatibilityReportWriterFailure);
+    const error = caught as CompatibilityReportWriterFailure;
+    expect(error.code).toBe("OPENAI_REPORT_WRITER_REQUEST_FAILED");
+    expect(error.diagnostics).toMatchObject({
+      status: 400,
+      errorType: "invalid_request_error",
+      errorCode: "invalid_json_schema",
+      errorParam: "text.format.schema",
+      responseFormatName: "compatibility_report_draft",
+      model: "test-model",
+    });
+    expect(error.message).toContain("Invalid schema for response_format");
+    expect(error.message).toContain("schema approx chars:");
+    expect(error.message).not.toContain("Authorization");
+    expect(error.message).not.toContain("sk-test");
+    expect(error.message).not.toContain("OPENAI_API_KEY");
   });
 
   it("uses repair when the first draft has unsafe or candidate recommendation copy", async () => {

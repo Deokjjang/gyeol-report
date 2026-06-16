@@ -14,6 +14,9 @@ describe("smoke_generate_compatibility_report_draft source", () => {
     expect(source).toContain("compatibility fixture:");
     expect(source).toContain("relationship type:");
     expect(source).toContain("score total:");
+    expect(source).toContain("schema approx chars:");
+    expect(source).toContain("formatCompatibilityOpenAIRequestDiagnostics");
+    expect(source).toContain("CompatibilityReportWriterFailure");
     expect(source).toContain("SKIPPED, OpenAI writer not enabled");
     expect(source).toContain("draft version:");
     expect(source).toContain("done");

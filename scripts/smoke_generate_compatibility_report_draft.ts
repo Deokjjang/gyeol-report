@@ -6,6 +6,10 @@ import {
   generateCompatibilityReportDraft,
   getCompatibilityReportDraftSchemaTopLevelKeys,
   buildOpenAICompatibilityReportWriterMessages,
+  compatibilityReportDraftJsonSchema,
+  compatibilityResponseFormatName,
+  CompatibilityReportWriterFailure,
+  formatCompatibilityOpenAIRequestDiagnostics,
 } from "../src/lib/report-generation";
 
 function getFixtureId(argv: readonly string[]): string {
@@ -64,9 +68,12 @@ async function main(): Promise<void> {
   });
   writeLine("OpenAI request debug:");
   writeLine(`model: ${getEnvValue("OPENAI_REPORT_MODEL")}`);
-  writeLine("response format: compatibility_report_draft");
+  writeLine(`response format: ${compatibilityResponseFormatName}`);
   writeLine(
     `schema keys: ${getCompatibilityReportDraftSchemaTopLevelKeys().join(", ")}`,
+  );
+  writeLine(
+    `schema approx chars: ${JSON.stringify(compatibilityReportDraftJsonSchema).length}`,
   );
   writeLine(`system chars: ${messages.system.length}`);
   writeLine(`developer chars: ${messages.developer.length}`);
@@ -89,6 +96,21 @@ async function main(): Promise<void> {
 }
 
 main().catch((error: unknown) => {
+  if (error instanceof CompatibilityReportWriterFailure) {
+    process.stderr.write(`${error.code}\n`);
+    if (error.diagnostics !== undefined) {
+      for (const line of formatCompatibilityOpenAIRequestDiagnostics(
+        error.diagnostics,
+      )) {
+        process.stderr.write(`${line}\n`);
+      }
+    } else {
+      process.stderr.write(`${error.message}\n`);
+    }
+    process.exitCode = 1;
+    return;
+  }
+
   const message = error instanceof Error ? error.message : String(error);
   process.stderr.write(`${message}\n`);
   process.exitCode = 1;

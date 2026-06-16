@@ -2,51 +2,11 @@ import { COMPATIBILITY_REPORT_CHAPTER_IDS } from "./compatibilityReportDraftType
 
 const stringArraySchema = {
   type: "array",
-  items: { type: "string", minLength: 1 },
+  items: { type: "string" },
 } as const;
 
 const scoreSchema = {
-  type: "integer",
-  minimum: 35,
-  maximum: 95,
-} as const;
-
-const chartSummarySchema = {
-  type: "object",
-  additionalProperties: true,
-  required: [
-    "role",
-    "displayName",
-    "birthTimeConfidence",
-    "pillars",
-    "dayMaster",
-    "dayPillar",
-    "featureIds",
-    "featureLabels",
-    "diagnosticFeatureLabels",
-  ],
-  properties: {
-    role: { type: "string", enum: ["personA", "personB"] },
-    displayName: { type: "string", minLength: 1 },
-    mbti: { type: "string" },
-    birthTimeConfidence: { type: "string", enum: ["known", "unknown"] },
-    pillars: {
-      type: "object",
-      additionalProperties: false,
-      required: ["year", "month", "day"],
-      properties: {
-        year: { type: "string", minLength: 1 },
-        month: { type: "string", minLength: 1 },
-        day: { type: "string", minLength: 1 },
-        hour: { type: "string" },
-      },
-    },
-    dayMaster: { type: "string", minLength: 1 },
-    dayPillar: { type: "string", minLength: 1 },
-    featureIds: stringArraySchema,
-    featureLabels: stringArraySchema,
-    diagnosticFeatureLabels: stringArraySchema,
-  },
+  type: "number",
 } as const;
 
 const chapterSchema = {
@@ -65,17 +25,16 @@ const chapterSchema = {
       type: "string",
       enum: COMPATIBILITY_REPORT_CHAPTER_IDS,
     },
-    title: { type: "string", minLength: 1 },
-    headline: { type: "string", minLength: 1 },
-    body: { type: "string", minLength: 1 },
+    title: { type: "string" },
+    headline: { type: "string" },
+    body: { type: "string" },
     directHitScenes: {
       type: "array",
-      minItems: 1,
-      items: { type: "string", minLength: 1 },
+      items: { type: "string" },
     },
     practicalAdvice: {
       type: "array",
-      items: { type: "string", minLength: 1 },
+      items: { type: "string" },
     },
   },
 } as const;
@@ -101,26 +60,26 @@ export const compatibilityReportDraftJsonSchema = {
     "safetyNotes",
   ],
   properties: {
-    version: { type: "string", const: "compatibility_v1_draft" },
-    productType: { type: "string", const: "saju_mbti_compatibility" },
-    productVersion: { type: "string", const: "1.0" },
+    version: { type: "string", enum: ["compatibility_v1_draft"] },
+    productType: { type: "string", enum: ["saju_mbti_compatibility"] },
+    productVersion: { type: "string", enum: ["1.0"] },
     relationshipType: {
       type: "string",
       enum: ["love", "some", "marriage", "friendship"],
     },
-    personALabel: { type: "string", minLength: 1 },
-    personBLabel: { type: "string", minLength: 1 },
-    openingTitle: { type: "string", minLength: 1 },
-    openingSummary: { type: "string", minLength: 1 },
-    coreLine: { type: "string", minLength: 1 },
+    personALabel: { type: "string" },
+    personBLabel: { type: "string" },
+    openingTitle: { type: "string" },
+    openingSummary: { type: "string" },
+    coreLine: { type: "string" },
     scoreSummary: {
       type: "object",
       additionalProperties: false,
       required: ["totalScore", "scoreLabel", "scoreCaution", "breakdown"],
       properties: {
         totalScore: scoreSchema,
-        scoreLabel: { type: "string", minLength: 1 },
-        scoreCaution: { type: "string", minLength: 1 },
+        scoreLabel: { type: "string" },
+        scoreCaution: { type: "string" },
         breakdown: {
           type: "object",
           additionalProperties: false,
@@ -148,8 +107,8 @@ export const compatibilityReportDraftJsonSchema = {
       additionalProperties: false,
       required: ["personA", "personB"],
       properties: {
-        personA: chartSummarySchema,
-        personB: chartSummarySchema,
+        personA: { type: "string" },
+        personB: { type: "string" },
       },
     },
     keyCompatibilityPoints: {
@@ -170,18 +129,15 @@ export const compatibilityReportDraftJsonSchema = {
     },
     chapters: {
       type: "array",
-      minItems: 8,
       items: chapterSchema,
     },
     finalAdvice: {
       type: "array",
-      minItems: 3,
-      items: { type: "string", minLength: 1 },
+      items: { type: "string" },
     },
     safetyNotes: {
       type: "array",
-      minItems: 1,
-      items: { type: "string", minLength: 1 },
+      items: { type: "string" },
     },
   },
 } as const;

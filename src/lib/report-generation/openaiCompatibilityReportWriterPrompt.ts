@@ -106,7 +106,7 @@ export function buildOpenAICompatibilityReportWriterMessages(input: {
     user: [
       "다음 compatibility evidence packet만 사용해 compatibility_v1_draft JSON을 작성하라.",
       "점수는 evidence.score 값을 그대로 사용하라.",
-      "chartComparison은 evidence의 두 chart summary를 그대로 반영하라.",
+      "chartComparison.personA/personB는 두 사람 만세력의 짧은 문자열 요약만 작성하라. 실제 표 데이터는 시스템이 evidence에서 deterministic하게 붙인다.",
       evidenceJson,
     ].join("\n\n"),
   };

@@ -5,16 +5,31 @@ import {
   getCompatibilityReportDraftSchemaTopLevelKeys,
 } from "../../../src/lib/report-generation/compatibilityReportDraftSchema";
 
+function collectObjectSchemas(value: unknown): Array<Record<string, unknown>> {
+  if (typeof value !== "object" || value === null) {
+    return [];
+  }
+  if (Array.isArray(value)) {
+    return value.flatMap(collectObjectSchemas);
+  }
+
+  const record = value as Record<string, unknown>;
+  return [
+    ...(record.type === "object" ? [record] : []),
+    ...Object.values(record).flatMap(collectObjectSchemas),
+  ];
+}
+
 describe("compatibilityReportDraftSchema", () => {
   it("defines compatibility v1 draft identity and required top-level fields", () => {
     expect(compatibilityReportDraftJsonSchema.properties.version).toMatchObject({
-      const: "compatibility_v1_draft",
+      enum: ["compatibility_v1_draft"],
     });
     expect(compatibilityReportDraftJsonSchema.properties.productType).toMatchObject({
-      const: "saju_mbti_compatibility",
+      enum: ["saju_mbti_compatibility"],
     });
     expect(compatibilityReportDraftJsonSchema.properties.productVersion).toMatchObject({
-      const: "1.0",
+      enum: ["1.0"],
     });
     expect(getCompatibilityReportDraftSchemaTopLevelKeys()).toEqual(
       expect.arrayContaining([
@@ -28,29 +43,35 @@ describe("compatibilityReportDraftSchema", () => {
     );
   });
 
-  it("requires bounded scores, chapter scenes, final advice, and safety notes", () => {
+  it("keeps the OpenAI response format strict and simple", () => {
     const scoreSummary = compatibilityReportDraftJsonSchema.properties.scoreSummary;
     const chapterItems = compatibilityReportDraftJsonSchema.properties.chapters.items;
+    const serialized = JSON.stringify(compatibilityReportDraftJsonSchema);
 
-    expect(scoreSummary.properties.totalScore).toMatchObject({
-      minimum: 35,
-      maximum: 95,
-    });
-    expect(scoreSummary.properties.breakdown.properties.attraction).toMatchObject({
-      minimum: 35,
-      maximum: 95,
-    });
-    expect(compatibilityReportDraftJsonSchema.properties.chapters).toMatchObject({
-      minItems: 8,
+    expect(scoreSummary.properties.totalScore).toEqual({ type: "number" });
+    expect(scoreSummary.properties.breakdown.properties.attraction).toEqual({
+      type: "number",
     });
     expect(chapterItems.properties.directHitScenes).toMatchObject({
-      minItems: 1,
+      type: "array",
+      items: { type: "string" },
     });
-    expect(compatibilityReportDraftJsonSchema.properties.finalAdvice).toMatchObject({
-      minItems: 3,
-    });
-    expect(compatibilityReportDraftJsonSchema.properties.safetyNotes).toMatchObject({
-      minItems: 1,
-    });
+    expect(serialized).not.toContain("unknown");
+    expect(serialized).not.toContain("anyOf");
+    expect(serialized).not.toContain("oneOf");
+    expect(serialized).not.toContain("nullable");
+    expect(serialized).not.toContain("additionalProperties\":true");
+    for (const objectSchema of collectObjectSchemas(compatibilityReportDraftJsonSchema)) {
+      expect(objectSchema.additionalProperties).toBe(false);
+    }
+  });
+
+  it("uses string summaries for chart comparison in the response format", () => {
+    expect(
+      compatibilityReportDraftJsonSchema.properties.chartComparison.properties.personA,
+    ).toEqual({ type: "string" });
+    expect(
+      compatibilityReportDraftJsonSchema.properties.chartComparison.properties.personB,
+    ).toEqual({ type: "string" });
   });
 });

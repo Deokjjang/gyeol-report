@@ -24,6 +24,7 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain("금지 표현");
     expect(promptText).toContain("운명");
     expect(promptText).toContain("사주×MBTI 궁합 리포트 v1.0");
+    expect(promptText).toContain("짧은 문자열 요약");
   });
 
   it("builds repair instructions for unsafe copy and candidate MBTI recommendation", () => {
