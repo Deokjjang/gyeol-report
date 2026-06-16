@@ -150,6 +150,19 @@ function uniqueNonEmpty(values: readonly (string | undefined)[]): readonly strin
   return [...new Set(values.filter((value): value is string => typeof value === "string").map((value) => value.trim()).filter(Boolean))];
 }
 
+function toFeatureFlowTopic(
+  value: string | undefined,
+  fallback: string,
+): string {
+  const normalized = value?.trim();
+
+  if (normalized === undefined || normalized.length === 0) {
+    return fallback;
+  }
+
+  return normalized.endsWith("흐름") ? normalized : `${normalized} 흐름`;
+}
+
 function buildEvidenceClosingFeatureLabels(
   draft: ComprehensiveReportV2Draft,
 ): readonly string[] {
@@ -178,12 +191,19 @@ function buildEvidenceClosingSolutionLines(
     draft.profileTable.mbti,
   ]);
   const recoveryFeature = firstNonEmpty(draft.profileTable.missingElements);
+  const requestTopic = toFeatureFlowTopic(gwiin ?? labels[0], "도움의 흐름");
+  const moneyTopic = toFeatureFlowTopic(moneyFeature ?? labels[1], "자원 관리 흐름");
+  const communicationTopic = toFeatureFlowTopic(
+    communicationFeature,
+    "빠른 판단 흐름",
+  );
+  const recoveryTopic = toFeatureFlowTopic(recoveryFeature, "회복 루틴 흐름");
 
   return [
-    `오늘부터는 막힌 일을 혼자 끌지 말고 ${gwiin ?? labels[0] ?? "이 사주"}의 흐름을 살리듯 필요한 도움을 한 문장으로 요청하세요.`,
-    `돈은 생활비, 저축, 자기계발, 비상금으로 나눠 ${moneyFeature ?? labels[1] ?? "자원 관리"}가 살아날 자리를 정하세요.`,
-    `관계에서는 결론보다 먼저 상대 말을 한 문장으로 받아주세요. ${communicationFeature ?? "빠른 판단"}은 말의 온도를 조절할 때 강점으로 바뀝니다.`,
-    `잠들기 전에는 기록으로 머리를 비우고, 침대에서는 문제 해결을 멈추세요. ${recoveryFeature ?? "회복 루틴"}은 오래 가는 판단을 위해 필요합니다.`,
+    `오늘부터는 막힌 일을 혼자 끌지 말고, ${requestTopic}을 살리듯 필요한 도움을 한 문장으로 요청하세요.`,
+    `돈은 생활비, 저축, 자기계발, 비상금으로 나눠 ${moneyTopic}이 살아날 자리를 정하세요.`,
+    `관계에서는 결론보다 먼저 상대 말을 한 문장으로 받아주세요. ${communicationTopic}은 말의 온도를 조절할 때 강점으로 바뀝니다.`,
+    `잠들기 전에는 기록으로 머리를 비우고, 침대에서는 문제 해결을 멈추세요. ${recoveryTopic}을 위해 오래 가는 차단 장치가 필요합니다.`,
   ];
 }
 
@@ -193,11 +213,16 @@ function buildEvidenceClosingParagraph(draft: ComprehensiveReportV2Draft): strin
   const support = labels[1] ?? "좋은 흐름";
   const caution = labels[2] ?? "주의할 흐름";
   const balance = labels[3] ?? "보완할 지점";
+  const primaryTopic = toFeatureFlowTopic(primary, "이 사주 흐름");
+  const supportTopic = toFeatureFlowTopic(support, "좋은 흐름");
+  const cautionTopic = toFeatureFlowTopic(caution, "주의할 흐름");
+  const balanceTopic = toFeatureFlowTopic(balance, "보완할 흐름");
 
   return [
-    `이 리포트의 마지막 핵심은 더 세게 밀어붙이는 것이 아니라, ${primary}의 힘을 오래 쓰는 운영법을 만드는 일입니다.`,
-    `${support}은 필요한 것을 정확히 요청하고 자리를 정할 때 더 잘 살아나고, ${caution}은 말과 책임의 온도를 조절할 때 강점으로 바뀝니다.`,
-    `${balance}까지 함께 보면 일, 관계, 돈, 회복을 따로 보지 말고 하나의 루틴으로 묶어야 합니다.`,
+    `이 리포트의 마지막 핵심은 더 세게 밀어붙이는 것이 아니라, ${primaryTopic}을 오래 쓰는 운영법을 만드는 일입니다.`,
+    `${supportTopic}: 필요한 것을 정확히 요청하고 자리를 정할 때 더 잘 살아납니다.`,
+    `${cautionTopic}: 말과 책임의 온도를 조절할 때 강점으로 바뀝니다.`,
+    `${balanceTopic}: 일, 관계, 돈, 회복을 따로 보지 말고 하나의 루틴으로 묶어야 합니다.`,
     ...buildEvidenceClosingSolutionLines(draft),
   ].join(" ");
 }

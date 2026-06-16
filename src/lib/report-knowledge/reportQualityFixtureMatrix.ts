@@ -17,13 +17,15 @@ export type ReportQualityFixture = {
   readonly sajuFacts: ComputedSajuFacts;
 };
 
-export type ReportSmokeFixtureId = "default" | "deokmin";
+export type ReportSmokeFixtureId = "default" | "deokmin" | "sodam-intp";
 export type ReportSmokeFixtureMatrixMode = "sample";
 
 export const DEFAULT_REPORT_SMOKE_FIXTURE_ID = "default-smoke";
 export const DEOKMIN_REPORT_SMOKE_FIXTURE_ID = "deokmin-external-manse";
+export const SODAM_REPORT_SMOKE_FIXTURE_ID = "sodam-intp";
 export const REPORT_QUALITY_SMOKE_SAMPLE_FIXTURE_IDS = [
   DEOKMIN_REPORT_SMOKE_FIXTURE_ID,
+  SODAM_REPORT_SMOKE_FIXTURE_ID,
   "reflective-water-infp",
   "money-resource-estp",
   "responsibility-earth-istj",
@@ -92,6 +94,36 @@ const deokminExternalFacts = {
   gwiin: ["jaego"],
 } as const satisfies ComputedSajuFacts;
 
+const sodamIntpFacts = {
+  dayMaster: "정",
+  dayPillar: "정축",
+  yearPillar: "병자",
+  monthPillar: "기해",
+  hourPillar: "정미",
+  heavenlyStems: ["丙", "己", "丁", "丁"],
+  earthlyBranches: ["子", "亥", "丑", "未"],
+  fiveElementCounts: {
+    wood: 0,
+    fire: 3,
+    earth: 3,
+    metal: 0,
+    water: 2,
+  },
+  excessiveElements: ["fire", "earth"],
+  missingElements: ["wood", "metal"],
+  usefulElements: ["wood", "metal"],
+  tenGodSignals: [
+    { tenGod: "bijian", strength: "strong" },
+    { tenGod: "shi_shen", strength: "strong" },
+    { tenGod: "qi_sha", strength: "present" },
+    { tenGod: "zheng_guan", strength: "present" },
+    { tenGod: "zheng_yin", strength: "missing" },
+  ],
+  specialPatterns: ["no_resource"],
+  sinsal: [],
+  gwiin: [],
+} as const satisfies ComputedSajuFacts;
+
 export const REPORT_QUALITY_FIXTURE_MATRIX = [
   {
     id: DEFAULT_REPORT_SMOKE_FIXTURE_ID,
@@ -125,6 +157,23 @@ export const REPORT_QUALITY_FIXTURE_MATRIX = [
     ],
     qualityFocus: ["work", "relationship", "growth", "positive", "mixed", "warning"],
     sajuFacts: deokminExternalFacts,
+  },
+  {
+    id: SODAM_REPORT_SMOKE_FIXTURE_ID,
+    label: "Sodam INTP 丁丑",
+    displayName: "소담",
+    mbti: "INTP",
+    expectedPillars: { year: "丙子", month: "己亥", day: "丁丑", hour: "丁未" },
+    expectedFeatureLabels: [
+      "정축일주",
+      "목 부족",
+      "금 부족",
+      "식신",
+      "천을귀인",
+      "재고귀인",
+    ],
+    qualityFocus: ["study", "relationship", "growth", "positive", "mixed"],
+    sajuFacts: sodamIntpFacts,
   },
   {
     id: "reflective-water-infp",
@@ -445,9 +494,19 @@ export function getReportQualityFixtureById(
 export function getReportSmokeFixture(
   fixtureId: ReportSmokeFixtureId,
 ): ReportQualityFixture {
-  return fixtureId === "deokmin"
-    ? REPORT_QUALITY_FIXTURE_MATRIX[1]
-    : REPORT_QUALITY_FIXTURE_MATRIX[0];
+  const matrixFixtureId =
+    fixtureId === "deokmin"
+      ? DEOKMIN_REPORT_SMOKE_FIXTURE_ID
+      : fixtureId === "sodam-intp"
+        ? SODAM_REPORT_SMOKE_FIXTURE_ID
+        : DEFAULT_REPORT_SMOKE_FIXTURE_ID;
+  const fixture = getReportQualityFixtureById(matrixFixtureId);
+
+  if (fixture === undefined) {
+    throw new Error(`missing report smoke fixture: ${matrixFixtureId}`);
+  }
+
+  return fixture;
 }
 
 export function getReportQualitySmokeSampleFixtures(): readonly ReportQualityFixture[] {
@@ -472,6 +531,9 @@ export function getReportSmokeFixtureIdFromArgs(
 
   if (fixtureValue === "deokmin") {
     return "deokmin";
+  }
+  if (fixtureValue === "sodam-intp") {
+    return "sodam-intp";
   }
 
   return "default";

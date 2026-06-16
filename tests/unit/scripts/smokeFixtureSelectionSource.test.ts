@@ -28,9 +28,11 @@ describe("report smoke fixture selection source", () => {
   it("supports deokmin fixture selection in draft save and audit smoke scripts", () => {
     expect(matrixSource).toContain("--fixture");
     expect(matrixSource).toContain("deokmin");
+    expect(matrixSource).toContain("sodam-intp");
     expect(matrixSource).toContain("default");
     expect(auditSmokeSource).toContain("--fixture");
     expect(auditSmokeSource).toContain("deokmin");
+    expect(auditSmokeSource).toContain("sodam-intp");
     expect(auditSmokeSource).toContain("default");
     expect(draftSmokeSource).toContain("getReportSmokeFixture");
     expect(draftSmokeSource).toContain("getReportSmokeFixtureIdFromArgs");
@@ -58,9 +60,25 @@ describe("report smoke fixture selection source", () => {
     expect(saveSmokeSource).toContain("07:30");
   });
 
+  it("routes report smoke through the Sodam INTP fixture when requested", () => {
+    expect(matrixSource).toContain("sodam-intp");
+    expect(matrixSource).toContain("Sodam INTP 丁丑");
+    expect(matrixSource).toContain("소담");
+    expect(matrixSource).toContain("INTP");
+    expect(matrixSource).toContain("丙子");
+    expect(matrixSource).toContain("己亥");
+    expect(matrixSource).toContain("丁丑");
+    expect(matrixSource).toContain("丁未");
+    expect(saveSmokeSource).toContain("SODAM_REPORT_SMOKE_FIXTURE_ID");
+    expect(saveSmokeSource).toContain("1996-12-06");
+    expect(saveSmokeSource).toContain("14:15");
+    expect(auditFormatterSource).toContain("SODAM_INTP_MANSE_FIXTURE");
+  });
+
   it("keeps matrix smoke sample separate from the single deokmin path", () => {
     expect(matrixSource).toContain("REPORT_QUALITY_SMOKE_SAMPLE_FIXTURE_IDS");
     expect(matrixSource).toContain("deokmin-external-manse");
+    expect(matrixSource).toContain("sodam-intp");
     expect(matrixSource).toContain("reflective-water-infp");
     expect(matrixSource).toContain("money-resource-estp");
     expect(matrixSource).toContain("responsibility-earth-istj");

@@ -15,6 +15,7 @@ describe("smoke saju feature audit script source", () => {
     expect(source).toContain("calculateExternalManseParity");
     expect(source).toContain("--fixture");
     expect(source).toContain("deokmin");
+    expect(source).toContain("sodam-intp");
     expect(source).toContain("default");
     expect(source).not.toContain("OPENAI_API_KEY");
     expect(source).not.toContain("SUPABASE_SERVICE_ROLE");

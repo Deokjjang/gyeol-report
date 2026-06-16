@@ -65,4 +65,63 @@ describe("comprehensive report narrative post processor", () => {
     expect(serialized).not.toContain("반드시");
     expect(serialized).not.toContain("100%");
   });
+
+  it("does not generate particle typo around 천을귀인 in final closing rescue", () => {
+    const draft = createDraft();
+    const result = normalizeComprehensiveReportFinalMessage({
+      ...draft,
+      profileTable: {
+        ...draft.profileTable,
+        gwiin: ["천을귀인", "재고귀인"],
+        gwiinGilshin: ["천을귀인", "재고귀인"],
+      },
+    });
+    const serialized = JSON.stringify(result.draft);
+
+    expect(result.normalized).toBe(true);
+    expect(serialized).toContain("천을귀인 흐름");
+    expect(serialized).not.toContain("천을귀인가");
+    expect(serialized).not.toContain("재고귀인가");
+    expect(serialized).not.toContain("갑신일주가가");
+  });
+
+  it("does not append duplicate deterministic closing when final_message is already valid", () => {
+    const draft = createDraft();
+    const validClosingBody = [
+      "이 리포트의 마지막 핵심은 더 세게 밀어붙이는 것이 아니라 갑신일주 흐름을 오래 쓰는 운영법을 만드는 일입니다.",
+      "갑목 흐름과 재고귀인 흐름을 함께 보면 일, 관계, 돈, 회복을 하나의 루틴으로 묶어야 합니다.",
+      "오늘부터는 첫째, 막힌 일을 혼자 끌지 말고 필요한 도움을 한 문장으로 요청하세요.",
+      "둘째, 돈은 생활비, 저축, 자기계발, 비상금으로 나눠 계좌의 자리를 정하세요.",
+      "셋째, 관계에서는 결론보다 먼저 상대 말을 한 문장으로 받아주세요.",
+      "이 방식은 표현과 기준을 낮추는 일이 아니라, 기준을 오래 쓰기 위한 실천입니다.",
+      "일에서는 우선순위를 작게 나누고, 관계에서는 질문을 먼저 꺼내며, 회복에서는 쉬는 시간을 일정에 넣어야 합니다.",
+      "갑신일주, 갑목, 재고귀인, 현침살, 수 부족을 따로 보지 말고 하루의 루틴 안에서 같이 다루면 마지막 조언이 실제 행동으로 이어질 수 있습니다.",
+      "중요한 것은 성격을 바꾸는 일이 아니라 힘의 쓰임을 조절하는 일입니다.",
+      "일의 기준은 세우되 혼자 전부 끌어안지 않고, 관계의 표현은 늦추지 않되 결론을 먼저 던지지 않으며, 돈의 흐름은 감각이 아니라 계좌와 기록으로 확인하는 쪽이 더 오래 갑니다.",
+      "이렇게 하면 강한 판단, 책임감, 실천 루틴이 서로 따로 놀지 않고 같은 방향으로 정리됩니다.",
+    ].join(" ");
+    const result = normalizeComprehensiveReportFinalMessage({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "final_message"
+          ? {
+              ...chapter,
+              body: validClosingBody,
+              solutionLines: [
+                "오늘부터는 도움 요청을 한 문장으로 정리하세요.",
+                "첫째, 돈의 계좌를 나누세요.",
+                "둘째, 관계에서 질문을 먼저 꺼내세요.",
+                "셋째, 쉬는 시간을 일정에 넣으세요.",
+              ],
+            }
+          : chapter,
+      ),
+      finalAdvice:
+        "오늘부터는 일, 관계, 돈, 회복을 따로 보지 말고 작은 실천 루틴으로 묶어 가세요.",
+    });
+    const serialized = JSON.stringify(result.draft);
+
+    expect(result.normalized).toBe(false);
+    expect(serialized.match(/이 리포트의 마지막 핵심/g)).toHaveLength(1);
+  });
 });

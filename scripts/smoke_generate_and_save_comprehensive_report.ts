@@ -23,6 +23,7 @@ import type {
 import {
   getReportSmokeFixture,
   getReportSmokeFixtureIdFromArgs,
+  SODAM_REPORT_SMOKE_FIXTURE_ID,
   type ReportQualityFixture,
 } from "../src/lib/report-knowledge/reportQualityFixtureMatrix";
 import {
@@ -55,6 +56,17 @@ function buildReportInput(fixture: ReportQualityFixture) {
       birthTime: "07:30",
       calendarType: "SOLAR",
       gender: "MALE",
+      mbtiType: fixture.mbti,
+      timezone: "Asia/Seoul",
+    } as const;
+  }
+  if (fixture.id === SODAM_REPORT_SMOKE_FIXTURE_ID) {
+    return {
+      displayName: fixture.displayName ?? "소담",
+      birthDate: "1996-12-06",
+      birthTime: "14:15",
+      calendarType: "SOLAR",
+      gender: "FEMALE",
       mbtiType: fixture.mbti,
       timezone: "Asia/Seoul",
     } as const;

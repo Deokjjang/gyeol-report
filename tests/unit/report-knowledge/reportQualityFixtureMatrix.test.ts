@@ -8,6 +8,7 @@ import {
   getReportSmokeFixtureIdFromArgs,
   getReportSmokeFixtureMatrixModeFromArgs,
   REPORT_QUALITY_FIXTURE_MATRIX,
+  SODAM_REPORT_SMOKE_FIXTURE_ID,
 } from "../../../src/lib/report-knowledge/reportQualityFixtureMatrix";
 
 describe("report quality fixture matrix", () => {
@@ -40,9 +41,10 @@ describe("report quality fixture matrix", () => {
     }
   });
 
-  it("separates default and deokmin smoke fixtures", () => {
+  it("separates default deokmin and sodam smoke fixtures", () => {
     const defaultFixture = getReportSmokeFixture("default");
     const deokminFixture = getReportSmokeFixture("deokmin");
+    const sodamFixture = getReportSmokeFixture("sodam-intp");
 
     expect(defaultFixture.id).toBe(DEFAULT_REPORT_SMOKE_FIXTURE_ID);
     expect(defaultFixture.expectedPillars).toEqual({
@@ -66,7 +68,27 @@ describe("report quality fixture matrix", () => {
     });
     expect(deokminFixture.displayName).toBe("덕민");
     expect(deokminFixture.mbti).toBe("ENTJ");
+    expect(sodamFixture.id).toBe(SODAM_REPORT_SMOKE_FIXTURE_ID);
+    expect(sodamFixture.label).toBe("Sodam INTP 丁丑");
+    expect(sodamFixture.displayName).toBe("소담");
+    expect(sodamFixture.mbti).toBe("INTP");
+    expect(sodamFixture.expectedPillars).toEqual({
+      year: "丙子",
+      month: "己亥",
+      day: "丁丑",
+      hour: "丁未",
+    });
+    expect(sodamFixture.sajuFacts).toMatchObject({
+      yearPillar: "병자",
+      monthPillar: "기해",
+      dayPillar: "정축",
+      hourPillar: "정미",
+      dayMaster: "정",
+    });
     expect(defaultFixture.expectedPillars).not.toEqual(
+      deokminFixture.expectedPillars,
+    );
+    expect(sodamFixture.expectedPillars).not.toEqual(
       deokminFixture.expectedPillars,
     );
   });
@@ -82,6 +104,12 @@ describe("report quality fixture matrix", () => {
     expect(getReportSmokeFixtureIdFromArgs(["--fixture=deokmin"])).toBe(
       "deokmin",
     );
+    expect(getReportSmokeFixtureIdFromArgs(["--fixture", "sodam-intp"])).toBe(
+      "sodam-intp",
+    );
+    expect(getReportSmokeFixtureIdFromArgs(["--fixture=sodam-intp"])).toBe(
+      "sodam-intp",
+    );
     expect(getReportSmokeFixtureIdFromArgs(["--fixture", "unknown"])).toBe(
       "default",
     );
@@ -91,10 +119,11 @@ describe("report quality fixture matrix", () => {
     const fixtures = getReportQualitySmokeSampleFixtures();
     const mbtiTypes = new Set(fixtures.map((fixture) => fixture.mbti));
 
-    expect(fixtures).toHaveLength(5);
+    expect(fixtures).toHaveLength(6);
     expect(fixtures.map((fixture) => fixture.id)).toEqual(
       expect.arrayContaining([
         DEOKMIN_REPORT_SMOKE_FIXTURE_ID,
+        SODAM_REPORT_SMOKE_FIXTURE_ID,
         "reflective-water-infp",
         "money-resource-estp",
         "responsibility-earth-istj",
@@ -103,6 +132,7 @@ describe("report quality fixture matrix", () => {
     );
     expect(mbtiTypes.size).toBeGreaterThanOrEqual(5);
     expect(mbtiTypes.has("ENTJ")).toBe(true);
+    expect(mbtiTypes.has("INTP")).toBe(true);
     expect(mbtiTypes.has("INFP")).toBe(true);
     expect(mbtiTypes.has("ESTP")).toBe(true);
     expect(mbtiTypes.has("ISTJ")).toBe(true);

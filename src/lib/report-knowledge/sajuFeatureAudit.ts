@@ -26,7 +26,7 @@ type PillarRole = "yearPillar" | "monthPillar" | "dayPillar" | "hourPillar";
 
 type BasisRole = "yearBranch" | "monthBranch" | "dayBranch" | "hourBranch";
 
-type SajuAuditFixtureId = "default" | "deokmin";
+type SajuAuditFixtureId = "default" | "deokmin" | "sodam-intp";
 
 export type SajuAuditFixture = {
   readonly fixtureId: SajuAuditFixtureId;
@@ -42,7 +42,7 @@ export type SajuAuditFixture = {
   readonly calendar?: "solar";
   readonly birthTime?: string;
   readonly timezone?: "Asia/Seoul";
-  readonly gender?: "male";
+  readonly gender?: "male" | "female";
   readonly externalPlacements?: readonly SajuPillarFeaturePlacement[];
 };
 
@@ -228,10 +228,59 @@ export const DEOKMIN_EXTERNAL_MANSE_FIXTURE = {
   ],
 } as const satisfies SajuAuditFixture;
 
+export const SODAM_INTP_MANSE_FIXTURE = {
+  fixtureId: "sodam-intp",
+  auditLabel: "sodam-intp",
+  birthDate: "1996-12-06",
+  calendar: "solar",
+  birthTime: "14:15",
+  timezone: "Asia/Seoul",
+  gender: "female",
+  expectedPillars: {
+    year: "丙子",
+    month: "己亥",
+    day: "丁丑",
+    hour: "丁未",
+  },
+  input: {
+    dayMaster: "丁",
+    dayPillar: "丁丑",
+    yearPillar: "丙子",
+    monthPillar: "己亥",
+    hourPillar: "丁未",
+    heavenlyStems: ["丙", "己", "丁", "丁"],
+    earthlyBranches: ["子", "亥", "丑", "未"],
+    fiveElementCounts: {
+      wood: 0,
+      fire: 3,
+      earth: 3,
+      metal: 0,
+      water: 2,
+    },
+    excessiveElements: ["fire", "earth"],
+    missingElements: ["wood", "metal"],
+    tenGodSignals: [
+      { tenGod: "bijian", strength: "strong" },
+      { tenGod: "shi_shen", strength: "strong" },
+      { tenGod: "qi_sha", strength: "present" },
+      { tenGod: "zheng_guan", strength: "present" },
+      { tenGod: "zheng_yin", strength: "missing" },
+    ],
+    specialPatterns: ["no_resource"],
+    existingSinsal: [],
+    existingGwiin: [],
+  },
+} as const satisfies SajuAuditFixture;
+
 export function getSajuAuditFixture(fixtureId: SajuAuditFixtureId): SajuAuditFixture {
-  return fixtureId === "deokmin"
-    ? DEOKMIN_EXTERNAL_MANSE_FIXTURE
-    : DEFAULT_SMOKE_SAJU_FIXTURE;
+  if (fixtureId === "deokmin") {
+    return DEOKMIN_EXTERNAL_MANSE_FIXTURE;
+  }
+  if (fixtureId === "sodam-intp") {
+    return SODAM_INTP_MANSE_FIXTURE;
+  }
+
+  return DEFAULT_SMOKE_SAJU_FIXTURE;
 }
 
 const watchedFeatures = [
@@ -527,7 +576,7 @@ export function calculateExternalManseParity(
         birthTime: fixture.birthTime,
         birthTimeUnknown: false,
         calendarType: "SOLAR",
-        gender: "MALE",
+        gender: fixture.gender === "female" ? "FEMALE" : "MALE",
         timezone: fixture.timezone,
       }),
     );

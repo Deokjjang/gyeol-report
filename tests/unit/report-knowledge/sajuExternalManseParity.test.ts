@@ -7,6 +7,7 @@ import {
   formatExternalManseParity,
   formatSajuFeatureAuditResult,
   auditComputedSajuFeatures,
+  SODAM_INTP_MANSE_FIXTURE,
 } from "../../../src/lib/report-knowledge/sajuFeatureAudit";
 
 describe("external manse parity fixture", () => {
@@ -24,6 +25,22 @@ describe("external manse parity fixture", () => {
     });
   });
 
+  it("records the Sodam INTP parity fixture", () => {
+    expect(SODAM_INTP_MANSE_FIXTURE.fixtureId).toBe("sodam-intp");
+    expect(SODAM_INTP_MANSE_FIXTURE.auditLabel).toBe("sodam-intp");
+    expect(SODAM_INTP_MANSE_FIXTURE.birthDate).toBe("1996-12-06");
+    expect(SODAM_INTP_MANSE_FIXTURE.calendar).toBe("solar");
+    expect(SODAM_INTP_MANSE_FIXTURE.birthTime).toBe("14:15");
+    expect(SODAM_INTP_MANSE_FIXTURE.timezone).toBe("Asia/Seoul");
+    expect(SODAM_INTP_MANSE_FIXTURE.gender).toBe("female");
+    expect(SODAM_INTP_MANSE_FIXTURE.expectedPillars).toEqual({
+      year: "丙子",
+      month: "己亥",
+      day: "丁丑",
+      hour: "丁未",
+    });
+  });
+
   it("keeps the default smoke fixture separate from the canonical user fixture", () => {
     expect(DEFAULT_SMOKE_SAJU_FIXTURE.auditLabel).toBe("default-smoke");
     expect(DEOKMIN_EXTERNAL_MANSE_FIXTURE.auditLabel).toBe("deokmin-external-manse");
@@ -34,6 +51,9 @@ describe("external manse parity fixture", () => {
       hour: "丁未",
     });
     expect(DEFAULT_SMOKE_SAJU_FIXTURE.expectedPillars).not.toEqual(
+      DEOKMIN_EXTERNAL_MANSE_FIXTURE.expectedPillars,
+    );
+    expect(SODAM_INTP_MANSE_FIXTURE.expectedPillars).not.toEqual(
       DEOKMIN_EXTERNAL_MANSE_FIXTURE.expectedPillars,
     );
   });
@@ -47,6 +67,23 @@ describe("external manse parity fixture", () => {
     expect(output).toContain("day 甲申");
     expect(output).toContain("month 辛未");
     expect(output).toContain("year 己卯");
+    expect(output).toContain("current calculated pillars:");
+    expect(output).toContain("parity:");
+    expect(output).toMatch(/year (PASS|FAIL)/u);
+    expect(output).toMatch(/month (PASS|FAIL)/u);
+    expect(output).toMatch(/day (PASS|FAIL)/u);
+    expect(output).toMatch(/hour (PASS|FAIL)/u);
+  });
+
+  it("formats Sodam parity output with the expected pillars", () => {
+    const parity = calculateExternalManseParity(SODAM_INTP_MANSE_FIXTURE);
+    const output = formatExternalManseParity(parity).join("\n");
+
+    expect(output).toContain("external expected pillars:");
+    expect(output).toContain("hour 丁未");
+    expect(output).toContain("day 丁丑");
+    expect(output).toContain("month 己亥");
+    expect(output).toContain("year 丙子");
     expect(output).toContain("current calculated pillars:");
     expect(output).toContain("parity:");
     expect(output).toMatch(/year (PASS|FAIL)/u);
