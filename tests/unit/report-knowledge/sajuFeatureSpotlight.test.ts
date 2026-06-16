@@ -187,10 +187,19 @@ describe("Saju feature spotlight builder", () => {
     expect(serialized).toContain("중심을 잡는 장수의 별");
     expect(serialized).toContain("막힌 길에 손을 내미는 귀인");
     expect(serialized).toContain("돈과 자원을 담는 창고");
+    expect(serialized).toContain("대화, 과제, 업무 정리에는 강점");
     expect(serialized).toContain("바늘처럼 정확한 판단");
     expect(serialized).toContain("냉각수가 부족한 엔진");
     expect(serialized).not.toContain("..");
     expect(serialized).not.toContain("기운 막힌");
+    expect(serialized).not.toContain(
+      "기운입니다. 막힌 길에서 귀한 사람이 손을 내미는 기운입니다",
+    );
+    expect(serialized).not.toContain(
+      "수입과 자원을 저장하고 구조화하는 기운입니다. 돈과 자원을 담는 창고입니다",
+    );
+    expect(serialized).not.toContain("이미지입니다..");
+    expect(serialized).not.toContain("회의와 검수");
     expect(serialized).not.toContain("100%");
     expect(serialized).not.toContain("반드시");
     expect(serialized).not.toContain("무조건");

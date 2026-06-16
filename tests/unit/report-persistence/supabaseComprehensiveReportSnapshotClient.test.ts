@@ -77,9 +77,9 @@ function createV2Draft(): ComprehensiveReportV2Draft {
       fiveElementBadges: [
         "목 2 · 초록",
         "화 0 · 빨강",
-        "토 4 · 노랑/갈색",
-        "금 2 · 금색/회색",
-        "수 0 · 파랑/검정",
+        "토 4 · 갈색",
+        "금 2 · 금색",
+        "수 0 · 파랑",
       ],
       excessiveElements: ["토 과다"],
       missingElements: ["화 부족", "수 부족"],
@@ -296,9 +296,9 @@ describe("Supabase comprehensive report snapshot client", () => {
         fiveElementBadges: [
           "목 2 · 초록",
           "화 0 · 빨강",
-          "토 4 · 노랑/갈색",
-          "금 2 · 금색/회색",
-          "수 0 · 파랑/검정",
+          "토 4 · 갈색",
+          "금 2 · 금색",
+          "수 0 · 파랑",
         ],
       },
       sajuSymbolicNickname: {

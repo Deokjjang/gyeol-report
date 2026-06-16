@@ -140,17 +140,80 @@ function buildClosingParagraph(input: ComprehensiveReportV2Draft): string {
   ].join(" ");
 }
 
+void buildClosingParagraph;
+
+function firstNonEmpty(values: readonly (string | undefined)[]): string | undefined {
+  return values.find((value): value is string => typeof value === "string" && value.trim().length > 0);
+}
+
+function uniqueNonEmpty(values: readonly (string | undefined)[]): readonly string[] {
+  return [...new Set(values.filter((value): value is string => typeof value === "string").map((value) => value.trim()).filter(Boolean))];
+}
+
+function buildEvidenceClosingFeatureLabels(
+  draft: ComprehensiveReportV2Draft,
+): readonly string[] {
+  return uniqueNonEmpty([
+    draft.profileTable.dayPillar,
+    draft.profileTable.dayMaster,
+    ...(draft.profileTable.gwiinGilshin ?? draft.profileTable.gwiin ?? []),
+    ...(draft.profileTable.majorSinsal ?? draft.profileTable.sinsal ?? []),
+    ...(draft.profileTable.specialPatterns ?? []),
+    ...(draft.profileTable.missingElements ?? []),
+    ...(draft.profileTable.excessiveElements ?? []),
+  ]).slice(0, 5);
+}
+
+function buildEvidenceClosingSolutionLines(
+  draft: ComprehensiveReportV2Draft,
+): readonly string[] {
+  const labels = buildEvidenceClosingFeatureLabels(draft);
+  const gwiin = firstNonEmpty(draft.profileTable.gwiinGilshin ?? draft.profileTable.gwiin);
+  const moneyFeature = firstNonEmpty([
+    ...(draft.profileTable.gwiinGilshin ?? draft.profileTable.gwiin ?? []),
+    ...(draft.profileTable.tenGodSummary ?? []),
+  ]);
+  const communicationFeature = firstNonEmpty([
+    ...(draft.profileTable.majorSinsal ?? draft.profileTable.sinsal ?? []),
+    draft.profileTable.mbti,
+  ]);
+  const recoveryFeature = firstNonEmpty(draft.profileTable.missingElements);
+
+  return [
+    `오늘부터는 막힌 일을 혼자 끌지 말고 ${gwiin ?? labels[0] ?? "이 사주"}의 흐름을 살리듯 필요한 도움을 한 문장으로 요청하세요.`,
+    `돈은 생활비, 저축, 자기계발, 비상금으로 나눠 ${moneyFeature ?? labels[1] ?? "자원 관리"}가 살아날 자리를 정하세요.`,
+    `관계에서는 결론보다 먼저 상대 말을 한 문장으로 받아주세요. ${communicationFeature ?? "빠른 판단"}은 말의 온도를 조절할 때 강점으로 바뀝니다.`,
+    `잠들기 전에는 기록으로 머리를 비우고, 침대에서는 문제 해결을 멈추세요. ${recoveryFeature ?? "회복 루틴"}은 오래 가는 판단을 위해 필요합니다.`,
+  ];
+}
+
+function buildEvidenceClosingParagraph(draft: ComprehensiveReportV2Draft): string {
+  const labels = buildEvidenceClosingFeatureLabels(draft);
+  const primary = labels[0] ?? draft.profileTable.dayPillar ?? draft.profileTable.dayMaster ?? "이 사주";
+  const support = labels[1] ?? "좋은 흐름";
+  const caution = labels[2] ?? "주의할 흐름";
+  const balance = labels[3] ?? "보완할 지점";
+
+  return [
+    `이 리포트의 마지막 핵심은 더 세게 밀어붙이는 것이 아니라, ${primary}의 힘을 오래 쓰는 운영법을 만드는 일입니다.`,
+    `${support}은 필요한 것을 정확히 요청하고 자리를 정할 때 더 잘 살아나고, ${caution}은 말과 책임의 온도를 조절할 때 강점으로 바뀝니다.`,
+    `${balance}까지 함께 보면 일, 관계, 돈, 회복을 따로 보지 말고 하나의 루틴으로 묶어야 합니다.`,
+    ...buildEvidenceClosingSolutionLines(draft),
+  ].join(" ");
+}
+
 function normalizeFinalMessageChapter(
   draft: ComprehensiveReportV2Draft,
   chapter: ComprehensiveReportV2Chapter,
 ): ComprehensiveReportV2Chapter {
-  const closingParagraph = buildClosingParagraph(draft);
+  const closingParagraph = buildEvidenceClosingParagraph(draft);
   const requiredSolutionLines = [
     "오늘부터 쉬는 시간 하나를 일정에 먼저 넣고 밤에는 기록으로 생각을 닫아 주세요.",
     "중요한 관계 대화 전에는 결론보다 질문 하나를 먼저 꺼내 주세요.",
     "돈은 쓰는 계좌와 지키는 계좌를 나누고 작은 방어 규칙 하나를 고정하세요.",
     "일에서는 맡을 일과 버릴 일을 나눠 기준을 문장으로 정리하세요.",
   ];
+  void requiredSolutionLines;
 
   return {
     ...chapter,
@@ -164,7 +227,7 @@ function normalizeFinalMessageChapter(
         ? chapter.solutionLines
         : [
             ...chapter.solutionLines,
-            ...requiredSolutionLines.slice(
+            ...buildEvidenceClosingSolutionLines(draft).slice(
               0,
               4 - chapter.solutionLines.length,
             ),

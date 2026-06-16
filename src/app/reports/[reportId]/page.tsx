@@ -392,7 +392,7 @@ function renderFiveElementBadgeRow(
         {values.map((item) => (
           <span
             key={item}
-            className={`element-chip ${getFiveElementChipClassFromText(item)} rounded border border-neutral-700 bg-neutral-900 px-2 py-0.5 text-xs font-semibold text-neutral-100`}
+            className={`element-chip ${getFiveElementChipClassFromText(item)} ${getFiveElementBgClassFromText(item)} rounded border border-neutral-700 px-2 py-0.5 text-xs font-semibold text-neutral-100`}
             aria-label={getFiveElementAccessibleLabel(item)}
           >
             {item}
@@ -414,9 +414,9 @@ const fiveElementChipByKo = {
 const fiveElementLabelByToken = {
   wood: "목 · 초록",
   fire: "화 · 빨강",
-  earth: "토 · 노랑/갈색",
-  metal: "금 · 금색/회색",
-  water: "수 · 파랑/검정",
+  earth: "토 · 갈색",
+  metal: "금 · 금색",
+  water: "수 · 파랑",
 } as const;
 
 const fiveElementKoByToken = {
@@ -466,6 +466,12 @@ function getFiveElementChipClassFromText(text: string): string {
   return token === undefined ? "element-chip--unknown" : `element-chip--${token}`;
 }
 
+function getFiveElementBgClassFromText(text: string): string {
+  const token = getFiveElementTokenFromText(text);
+
+  return token === undefined ? "element-bg--unknown" : `element-bg--${token}`;
+}
+
 function getFiveElementAccessibleLabel(text: string): string {
   const token = getFiveElementTokenFromText(text);
 
@@ -478,7 +484,7 @@ function renderElementChip(input: {
 }) {
   return (
     <span
-      className={`element-chip element-chip--${input.token} rounded border border-neutral-700 bg-neutral-900 px-1.5 py-0.5 text-[0.7rem] font-semibold text-neutral-100`}
+      className={`element-chip element-chip--${input.token} element-bg--${input.token} rounded border border-neutral-700 px-1.5 py-0.5 text-[0.7rem] font-semibold text-neutral-100`}
       aria-label={fiveElementLabelByToken[input.token]}
     >
       {input.elementKo}
@@ -498,7 +504,9 @@ function renderStemValue(value: string | readonly string[] | undefined) {
   }
 
   return (
-    <span className="inline-flex flex-wrap items-center gap-1.5">
+    <span
+      className={`element-bg--${info.token} inline-flex flex-wrap items-center gap-1.5 rounded-md px-2 py-1`}
+    >
       <span>{`${info.ko}(${info.hanja})`}</span>
       {renderElementChip({ elementKo: info.elementKo, token: info.token })}
     </span>
@@ -517,15 +525,14 @@ function renderBranchValue(value: string | readonly string[] | undefined) {
   }
 
   return (
-    <span className="inline-flex flex-wrap items-center gap-1.5">
+    <span
+      className={`element-bg--${branch.colorToken} inline-flex flex-wrap items-center gap-1.5 rounded-md px-2 py-1`}
+    >
       <span>{`${branch.labelKo}(${branch.branch})`}</span>
       {renderElementChip({
         elementKo: fiveElementKoByToken[branch.element],
         token: branch.colorToken,
       })}
-      <span className="rounded border border-neutral-700 bg-neutral-900 px-1.5 py-0.5 text-[0.7rem] font-semibold text-neutral-100">
-        {branch.animalKo}
-      </span>
     </span>
   );
 }
@@ -661,6 +668,10 @@ function renderV2ProfileTable(
 ) {
   const profile = draft.profileTable ?? createFallbackProfileTable(result);
   const pillarGrid = profile.fourPillarGrid ?? getFallbackPillarGrid(profile);
+  const symbolicNickname = draft.sajuSymbolicNickname;
+  const nicknameTitleIsRepeated =
+    symbolicNickname !== undefined &&
+    draft.openingTitle.includes(symbolicNickname.title);
 
   return (
     <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
@@ -706,20 +717,21 @@ function renderV2ProfileTable(
           </tbody>
         </table>
       </div>
-      {draft.sajuSymbolicNickname === undefined ? null : (
+      {symbolicNickname === undefined ? null : (
         <section className="rounded-lg border border-emerald-900/60 bg-emerald-950/20 p-4">
           <p className="text-xs font-semibold text-emerald-200">사주 한줄 별칭</p>
-          <h3 className="mt-1 text-base font-semibold text-neutral-50">
-            {draft.sajuSymbolicNickname.title}
-          </h3>
+          {nicknameTitleIsRepeated ? null : (
+            <h3 className="mt-1 text-base font-semibold text-neutral-50">
+              {symbolicNickname.title}
+            </h3>
+          )}
           <p className="mt-1 text-sm leading-6 text-neutral-300">
-            {draft.sajuSymbolicNickname.subtitle}
+            {symbolicNickname.subtitle}
           </p>
         </section>
       )}
       <dl className="grid gap-2">
         {renderCompactProfileRow("일간", profile.dayMaster)}
-        {renderCompactProfileRow("일주 해석 키워드", profile.dayPillarKeywords)}
         {renderFiveElementBadgeRow(
           "오행 분포",
           profile.fiveElementBadges ?? profile.fiveElementSummary,

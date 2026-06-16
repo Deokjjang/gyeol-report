@@ -115,9 +115,9 @@ function createV2Draft(): ComprehensiveReportV2Draft {
       fiveElementBadges: [
         "목 2 · 초록",
         "화 0 · 빨강",
-        "토 4 · 노랑/갈색",
-        "금 2 · 금색/회색",
-        "수 0 · 파랑/검정",
+        "토 4 · 갈색",
+        "금 2 · 금색",
+        "수 0 · 파랑",
       ],
       excessiveElements: ["토 과다"],
       missingElements: ["화 부족", "수 부족"],
@@ -397,18 +397,22 @@ describe("report result page", () => {
     expect(html).toContain("귀인");
     expect(html).toContain("<td class=\"px-3 py-2 text-neutral-100\">-</td>");
     expect(html).toContain("일간");
-    expect(html).toContain("일주 해석 키워드");
     expect(html).toContain("오행 분포");
     expect(html).toContain("목 2 · 초록");
     expect(html).toContain("화 0 · 빨강");
-    expect(html).toContain("토 4 · 노랑/갈색");
-    expect(html).toContain("금 2 · 금색/회색");
-    expect(html).toContain("수 0 · 파랑/검정");
+    expect(html).toContain("토 4 · 갈색");
+    expect(html).toContain("금 2 · 금색");
+    expect(html).toContain("수 0 · 파랑");
     expect(html).toContain("element-chip--wood");
     expect(html).toContain("element-chip--fire");
     expect(html).toContain("element-chip--earth");
     expect(html).toContain("element-chip--metal");
     expect(html).toContain("element-chip--water");
+    expect(html).toContain("element-bg--wood");
+    expect(html).toContain("element-bg--fire");
+    expect(html).toContain("element-bg--earth");
+    expect(html).toContain("element-bg--metal");
+    expect(html).toContain("element-bg--water");
     expect(html).toContain("과다/부족");
     expect(html).toContain("주요 구조");
     expect(html).toContain("신살 요약");
@@ -422,10 +426,10 @@ describe("report result page", () => {
     expect(html).toContain("신(申)");
     expect(html).toContain("미(未)");
     expect(html).toContain("묘(卯)");
-    expect(html).toContain("용");
-    expect(html).toContain("원숭이");
-    expect(html).toContain("양");
-    expect(html).toContain("토끼");
+    expect(html).not.toContain(">용<");
+    expect(html).not.toContain(">원숭이<");
+    expect(html).not.toContain(">양<");
+    expect(html).not.toContain(">토끼<");
     expect(html).toContain("갑목");
     expect(html).toContain("화 부족");
     expect(html).toContain("편재");

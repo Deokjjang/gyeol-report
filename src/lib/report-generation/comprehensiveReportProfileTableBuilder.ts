@@ -29,9 +29,9 @@ const fiveElementLabelKo = {
 const fiveElementColorLabelKo = {
   wood: "초록",
   fire: "빨강",
-  earth: "노랑/갈색",
-  metal: "금색/회색",
-  water: "파랑/검정",
+  earth: "갈색",
+  metal: "금색",
+  water: "파랑",
 } as const satisfies Record<FiveElement, string>;
 
 function uniqueValues(values: readonly string[]): readonly string[] {

@@ -1071,6 +1071,8 @@ describe("comprehensive report draft validator", () => {
               body:
                 "갑목과 갑신일주를 바탕으로 마지막 문장을 정리합니다. 덕민님은 기준을 빨리 세우는 흐름이 강하고 압박 속에서도 판단을 놓지 않는 편입니다. 이 마무리는 충분히 길지만 앞으로 무엇을 관리해야 하는지 뚜렷하게 말하지 않습니다. 사주 용어는 들어가지만 마지막 조언으로서 남는 처방이 약하다는 점을 검증하기 위한 문장입니다. 덕민님은 강한 기준을 가진 사람이라는 설명만 반복합니다.",
               keyPhrases: ["마지막 정리", "갑목"],
+              solutionLines: [],
+              sajuTermsUsed: [],
             }
           : chapter,
       ),
@@ -1101,6 +1103,7 @@ describe("comprehensive report draft validator", () => {
       finalAdvice: "방향성은 살리되 오래 가는 방식을 함께 설계하세요.",
     };
     const normalized = normalizeComprehensiveReportFinalMessage(weakFinalDraft);
+    const normalizedSerialized = JSON.stringify(normalized.draft);
     const result = validateComprehensiveReportDraft(normalized.draft, {
       allowedSajuTerms: [
         "갑목",
@@ -1124,6 +1127,10 @@ describe("comprehensive report draft validator", () => {
     });
 
     expect(normalized.normalized).toBe(true);
+    expect(normalizedSerialized).toContain("이 리포트의 마지막 핵심");
+    expect(normalizedSerialized).toContain("오늘부터는");
+    expect(normalizedSerialized).toContain("갑목");
+    expect(normalizedSerialized).toContain("갑신일주");
     expect(result.errors.join("\n")).not.toContain("FINAL_MESSAGE_CLOSING_MISSING");
     expect(result.ok).toBe(true);
   });

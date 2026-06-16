@@ -116,7 +116,7 @@ const spotlightCopyByFeatureId: Partial<Record<string, SpotlightCopy>> = {
     vividLine:
       "남들이 대충 넘기는 허점이 먼저 보이고, 말도 핵심을 바로 찌르는 식으로 나올 수 있습니다.",
     practicalLine:
-      "회의와 검수에는 강점이지만, 가까운 관계에서는 말의 온도를 한 번 조절해야 합니다.",
+      "대화, 과제, 업무 정리에는 강점이지만, 가까운 관계에서는 말의 온도를 한 번 조절해야 합니다.",
   },
   element_water_missing: {
     badge: "냉각수가 부족한 엔진",
@@ -245,8 +245,57 @@ function collectFeatureAccumulators(
   );
 }
 
+function getPolishedSpotlightCopy(featureId: string): SpotlightCopy | undefined {
+  const polishedCopyByFeatureId: Partial<Record<string, SpotlightCopy>> = {
+    gwiin_cheoneul: {
+      badge: "막힌 길에 손을 내미는 귀인",
+      shortMeaning: "중요한 순간에 도움과 기회가 붙는 기운",
+      vividLine:
+        "막힌 길에서 귀한 사람이 손을 내미는 것처럼, 필요한 순간에 사람, 제도, 기회가 붙는 통로로 읽을 수 있습니다.",
+      practicalLine:
+        "도움을 기다리기보다 필요한 것을 정확히 요청할 때 더 빨리 살아납니다.",
+    },
+    gwiin_jaego: {
+      badge: "돈과 자원을 담는 창고",
+      shortMeaning: "수입과 자원을 저장하고 구조화하는 기운",
+      vividLine:
+        "벌고 흘려보내기보다, 돈의 자리를 정해 묶어둘 때 재물 감각이 살아납니다.",
+      practicalLine:
+        "계좌 분리, 자동저축, 자산 기록처럼 돈의 자리를 먼저 정해 두는 방식이 맞습니다.",
+    },
+    gwiin_geumyeorok: {
+      badge: "좋은 조건에서 빛나는 품격의 길신",
+      shortMeaning: "대우, 환경, 이미지 관리가 함께 갈 때 선명해지는 기운",
+      vividLine:
+        "단정하게 꾸민 수레가 안정된 길을 가는 것처럼, 좋은 조건과 생활 안정이 함께 갈 때 선명해집니다.",
+      practicalLine:
+        "일과 관계에서도 대우, 환경, 이미지 관리가 무너지지 않게 조건을 먼저 정리해야 합니다.",
+    },
+    sinsal_hyeonchim: {
+      badge: "바늘처럼 정확한 판단",
+      shortMeaning: "오류와 핵심을 빠르게 짚는 기운",
+      vividLine:
+        "남들이 대충 넘기는 허점이 먼저 보이고, 말도 핵심을 바로 찌르는 식으로 나올 수 있습니다.",
+      practicalLine:
+        "대화, 과제, 업무 정리에는 강점이지만, 가까운 관계에서는 말의 온도를 한 번 조절해야 합니다.",
+    },
+    sinsal_gongmang: {
+      badge: "비어 있는 자리를 다시 채우는 신호",
+      shortMeaning: "기대와 현실 사이의 빈칸을 다루는 기운",
+      vividLine:
+        "계획이 중간에 비거나 방향이 바뀌는 느낌이 생길 수 있으니, 빈칸을 다시 채우는 운영법이 중요합니다.",
+      practicalLine:
+        "계획에는 여백을 남기고, 약속과 역할은 글로 확인하는 편이 안정적입니다.",
+    },
+  };
+
+  return polishedCopyByFeatureId[featureId];
+}
+
 function toSpotlightItem(input: FeatureAccumulator): SajuFeatureSpotlightItem {
-  const copy = spotlightCopyByFeatureId[input.feature.id];
+  const copy =
+    getPolishedSpotlightCopy(input.feature.id) ??
+    spotlightCopyByFeatureId[input.feature.id];
   const labelKo = input.feature.labelKo;
 
   return {

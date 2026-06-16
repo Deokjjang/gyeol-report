@@ -112,6 +112,8 @@ describe("OpenAI report writer prompt", () => {
       "final_message는 단순 요약이 아니라 전체 리포트의 상징을 회수하는 장이다",
     );
     expect(combined).toContain("오늘부터 할 수 있는 3가지");
+    expect(combined).toContain("이 리포트의 마지막 핵심");
+    expect(combined).toContain("실제 선택된 사주 항목 2개 이상");
     expect(combined).toContain("final_message hitReadingLines는 있어도 되지만");
     expect(combined).toContain("덜 닳게 오래 가는 법");
     expect(combined).toContain("회복과 표현을 시스템에 넣는 일");

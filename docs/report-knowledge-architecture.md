@@ -787,12 +787,12 @@ Five-element color badges are deterministic UI labels:
 
 - `목 · 초록`
 - `화 · 빨강`
-- `토 · 노랑/갈색`
-- `금 · 금색/회색`
-- `수 · 파랑/검정`
+- `토 · 갈색`
+- `금 · 금색`
+- `수 · 파랑`
 
-The result page renders these as text badges first. A later visual design pass
-may map the same tokens to CSS colors.
+The result page renders these as text badges and element background class tokens
+first. A later visual design pass may map the same tokens to CSS colors.
 
 Generated and deterministic user-visible copy must not use generic labels such
 as `사용자님`, `고객님`, or `유저님`. If no display name is available, use neutral
@@ -834,11 +834,14 @@ features that were not computed or selected.
 
 The manse table visual policy is:
 
+- render a single four-pillar manse table at the top, followed only by compact
+  summary chips;
 - render stems and branches with Korean and Hanja together, for example
   `무(戊)` and `진(辰)`;
 - render the five-element token as both text and chip class, for example
-  `element-chip--earth`;
-- render branch animal labels when branch symbol knowledge is available;
+  `element-chip--earth` and `element-bg--earth`;
+- keep branch animal knowledge available for symbolic nicknames and narrative
+  metaphor, but do not show animal labels as plain manse-table cell text;
 - never rely on color alone.
 
 MBTI usage is frozen for the comprehensive report:

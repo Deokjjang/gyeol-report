@@ -644,6 +644,11 @@ const elementRemedyMarkers = [
   "일정",
 ] as const;
 const finalMessageClosingMarkers = [
+  "마지막 핵심",
+  "이 리포트의 마지막 핵심",
+  "오늘부터는",
+  "오늘부터",
+  "전체를 묶어 보면",
   "오래 가",
   "오래가는",
   "덜 닳",
@@ -653,7 +658,22 @@ const finalMessageClosingMarkers = [
   "방향",
   "지속",
 ] as const;
+const explicitFinalMessageClosingMarkers = [
+  "마지막 핵심",
+  "이 리포트의 마지막 핵심",
+  "오늘부터는",
+  "오늘부터",
+  "전체를 묶어 보면",
+] as const;
 const finalMessagePracticalAreaMarkers = [
+  "일",
+  "관계",
+  "돈",
+  "회복",
+  "표현",
+  "기준",
+  "루틴",
+  "실천",
   "돈",
   "일",
   "공부",
@@ -668,6 +688,14 @@ const finalMessagePracticalAreaMarkers = [
   "실천",
 ] as const;
 const finalMessageSmallActionMarkers = [
+  "오늘부터는",
+  "요청하세요",
+  "나누세요",
+  "받아주세요",
+  "멈추세요",
+  "정하세요",
+  "기록",
+  "계좌",
   "오늘",
   "작은 실행",
   "하나",
@@ -2536,11 +2564,20 @@ function appendV2FinalMessageClosingErrors(
     ...finalChapter.keyPhrases,
     input.finalAdvice,
   ].join("\n");
+  const selectedFeatureLabels = new Set(
+    [...finalChapter.sajuTermsUsed, ...finalChapter.keyPhrases]
+      .map((label) => label.trim())
+      .filter((label) => label.length >= 2 && closingText.includes(label)),
+  );
 
   if (
+    !hasAnyMarker(closingText, explicitFinalMessageClosingMarkers) ||
     !hasAnyMarker(closingText, finalMessageClosingMarkers) ||
     !hasAnyMarker(closingText, finalMessagePracticalAreaMarkers)
   ) {
+    errors.push("FINAL_MESSAGE_CLOSING_MISSING");
+  }
+  if (selectedFeatureLabels.size < 2) {
     errors.push("FINAL_MESSAGE_CLOSING_MISSING");
   }
   if (getEffectiveV2ChapterText(finalChapter).trim().length < 650) {

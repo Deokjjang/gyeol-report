@@ -49,9 +49,9 @@ describe("comprehensive report narrative post processor", () => {
     );
 
     expect(result.normalized).toBe(true);
-    expect(finalChapter?.body).toContain("마지막 핵심");
-    expect(finalChapter?.body).toContain("일·관계·돈");
-    expect(finalChapter?.body).toContain("오늘부터");
+    expect(finalChapter?.body).toContain("이 리포트의 마지막 핵심");
+    expect(finalChapter?.body).toContain("일, 관계, 돈, 회복");
+    expect(finalChapter?.body).toContain("오늘부터는");
     expect(finalChapter?.solutionLines).toHaveLength(4);
     expect(serialized).not.toContain("문서");
     expect(serialized).not.toContain("초안");

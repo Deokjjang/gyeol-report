@@ -23,14 +23,15 @@ describe("report result page source", () => {
       "profile.dayPillar",
       "profile.hourPillar",
       "profile.dayMaster",
-      "profile.dayPillarKeywords",
       "profile.fiveElementSummary",
+      "profile.fiveElementBadges",
       "profile.tenGodSummary",
       "profile.majorSinsal",
       "profile.gwiinGilshin",
       "profile.sinsal",
       "profile.gwiin",
       "pillarGridRows",
+      "element-bg--",
       "천간",
       "지지",
       "지장간",
@@ -91,6 +92,7 @@ describe("report result page source", () => {
       "이런 장면 있지 않나요?",
       "이렇게 쓰면 좋습니다",
       "renderV2KeyPhrases",
+      "branch.animalKo",
     ];
 
     for (const marker of requiredMarkers) {
