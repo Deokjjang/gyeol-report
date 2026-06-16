@@ -912,6 +912,50 @@ Compatibility product policy:
   risks -> reminder that actual compatibility also depends on Saju and life
   habits.
 
+## REPORT-18A Compatibility Foundation
+
+REPORT-18A starts the `사주×MBTI 궁합 리포트 v1.0` foundation. This step only
+builds deterministic input, fixture, bridge, scoring, and evidence packet logic.
+It does not add the long-form compatibility writer, response schema, result
+renderer, payment wiring, or sharing flow.
+
+Product policy:
+
+- Product: `saju_mbti_compatibility`, version `1.0`.
+- Relationship types: `love`, `some`, `marriage`, and `friendship`.
+- Launch price direction is 990 KRW, but REPORT-18A does not modify payment
+  catalog or checkout code.
+- Missing counterpart birth time is allowed. Hour-pillar based interpretation is
+  lowered in confidence instead of invented.
+- Missing counterpart MBTI is allowed. MBTI bridge output becomes limited and
+  warning-based.
+- Scores include total plus attraction, communication, lifestyle rhythm,
+  conflict recovery, long-term stability, and growth complement.
+- Scores are not fate judgments. They summarize where the two charts and
+  self-reported MBTI styles align or require rules.
+- MBTI candidate recommendations are not part of compatibility v1.0 foundation.
+  Future relationship products may add data-driven candidate logic, but this
+  packet does not expose recommended types.
+
+Foundation files:
+
+- `compatibilityTypes`: product input, score, evidence item, chart summary, and
+  packet types.
+- `compatibilityFixtureMatrix`: two-person fixtures including
+  `deokmin-sodam-love`, an unknown-time fixture, and a friendship fixture.
+- `compatibilitySajuBridge`: compares confirmed Saju features across two people
+  and excludes diagnostic-only features as confirmed evidence.
+- `compatibilityMbtiBridge`: compares the two input MBTI types using the MBTI
+  knowledge engine without recommending other types.
+- `compatibilityScoreEngine`: deterministic 35-95 clamped score model.
+- `compatibilityEvidenceBuilder`: builds the compatibility evidence packet for
+  fixture smoke and later REPORT-18B writer/render work.
+- `scripts/smoke_build_compatibility_evidence.ts`: safe local evidence smoke
+  with no OpenAI, Supabase, payment, or migration dependency.
+
+Future REPORT-18B should add the compatibility report writer, schema, render
+surface, and product UI on top of this packet.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
