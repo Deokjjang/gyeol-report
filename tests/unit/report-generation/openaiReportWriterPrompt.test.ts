@@ -515,6 +515,7 @@ describe("OpenAI report writer prompt", () => {
         "{\"version\":\"comprehensive_v2_draft\",\"chapters\":[],\"finalAdvice\":\"정리합니다.\"}",
       validationErrors: [
         "SOLUTION_LINES_MISSING: work_money_study",
+        "MBTI_SUPPORT_MISSING: work_money_study",
         "MBTI_SUPPORT_MISSING: risk_and_growth",
       ],
     });
@@ -523,6 +524,9 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("SOLUTION_LINES_MISSING: work_money_study");
     expect(combined).toContain("일·돈·공부 챕터에는 실제 행동 문장 3개 이상");
     expect(combined).toContain("돈, 공부, 업무, 프로젝트, 계좌, 기록, 루틴");
+    expect(combined).toContain("MBTI_SUPPORT_MISSING: work_money_study");
+    expect(combined).toContain("일 처리, 공부 방식, 돈 관리 방식");
+    expect(combined).toContain("입력된 MBTI만 행동 언어로 사용하라");
     expect(combined).toContain("MBTI_SUPPORT_MISSING: risk_and_growth");
     expect(combined).toContain("위험과 성장 챕터에 입력된 MBTI");
     expect(combined).toContain("다른 MBTI 유형 추천이나 공식 진단처럼 쓰지 마라");

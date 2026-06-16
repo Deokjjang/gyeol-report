@@ -1126,6 +1126,117 @@ describe("OpenAI comprehensive report writer", () => {
     expect(workText).not.toContain("SOLUTION_LINES_MISSING");
   });
 
+  it("adds deterministic INTP support to work money study when it is missing", async () => {
+    const intpDraft = JSON.parse(
+      JSON.stringify(createValidDraft()).replaceAll("ENTJ", "INTP"),
+    ) as ReturnType<typeof createValidDraft>;
+    const missingWorkMbtiDraft = {
+      ...intpDraft,
+      chapters: intpDraft.chapters.map((chapter) =>
+        chapter.chapterId === "work_money_study"
+          ? {
+              ...chapter,
+              body: chapter.body.replaceAll("INTP", "").replaceAll("MBTI", ""),
+              solutionLines: chapter.solutionLines.map((line) =>
+                line.replaceAll("INTP", "").replaceAll("MBTI", ""),
+              ),
+              mbtiTermsUsed: [],
+            }
+          : chapter,
+      ),
+    };
+    let callCount = 0;
+    const fetchImpl: typeof fetch = async () => {
+      callCount += 1;
+
+      return createJsonResponse({
+        output_text: JSON.stringify(missingWorkMbtiDraft),
+      });
+    };
+
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "INTP",
+      evidencePacket: createPacketForMbti("INTP"),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl,
+      },
+    });
+    const workChapter = result.draft.version === "comprehensive_v2_draft"
+      ? result.draft.chapters.find(
+          (chapter) => chapter.chapterId === "work_money_study",
+        )
+      : undefined;
+    const workText = [
+      workChapter?.body ?? "",
+      ...(workChapter?.solutionLines ?? []),
+      ...(workChapter?.mbtiTermsUsed ?? []),
+    ].join("\n");
+
+    expect(callCount).toBe(1);
+    expect(workText).toContain("MBTI로 입력된 INTP 성향");
+    expect(workText).toContain("목차-핵심 개념-실전 적용");
+    expect(workText).not.toContain("ISFP");
+    expect(workText).not.toContain("INFP");
+    expect(workText).not.toContain("INTP 같은 유형");
+  });
+
+  it("adds deterministic ENTJ support to work money study when it is missing", async () => {
+    const missingWorkMbtiDraft = {
+      ...createValidDraft(),
+      chapters: createValidDraft().chapters.map((chapter) =>
+        chapter.chapterId === "work_money_study"
+          ? {
+              ...chapter,
+              body: chapter.body.replaceAll("ENTJ", "").replaceAll("MBTI", ""),
+              solutionLines: chapter.solutionLines.map((line) =>
+                line.replaceAll("ENTJ", "").replaceAll("MBTI", ""),
+              ),
+              mbtiTermsUsed: [],
+            }
+          : chapter,
+      ),
+    };
+    let callCount = 0;
+    const fetchImpl: typeof fetch = async () => {
+      callCount += 1;
+
+      return createJsonResponse({
+        output_text: JSON.stringify(missingWorkMbtiDraft),
+      });
+    };
+
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "ENTJ",
+      evidencePacket: createPacket(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl,
+      },
+    });
+    const workChapter = result.draft.version === "comprehensive_v2_draft"
+      ? result.draft.chapters.find(
+          (chapter) => chapter.chapterId === "work_money_study",
+        )
+      : undefined;
+    const workText = [
+      workChapter?.body ?? "",
+      ...(workChapter?.solutionLines ?? []),
+      ...(workChapter?.mbtiTermsUsed ?? []),
+    ].join("\n");
+
+    expect(callCount).toBe(1);
+    expect(workText).toContain("MBTI로 입력된 ENTJ 성향");
+    expect(workText).toContain("수익 구조와 방어 규칙");
+    expect(workText).not.toContain("ISFP");
+    expect(workText).not.toContain("INFP");
+    expect(workText).not.toContain("INTP 같은 유형");
+  });
+
   it("adds deterministic INTP MBTI support to risk and growth when it is missing", async () => {
     const intpDraft = JSON.parse(
       JSON.stringify(createValidDraft()).replaceAll("ENTJ", "INTP"),

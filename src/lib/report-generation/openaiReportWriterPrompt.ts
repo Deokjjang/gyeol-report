@@ -567,6 +567,7 @@ export function buildOpenAIComprehensiveReportRepairMessages(input: {
       "SOLUTION_LINES_MISSING이 있으면 해당 chapter의 solutionLines에 실제 행동 문장 3개 이상을 넣어라.",
       "SOLUTION_LINES_MISSING: work_money_study가 있으면 일·돈·공부 챕터에는 실제 행동 문장 3개 이상을 넣어라. 돈, 공부, 업무, 프로젝트, 계좌, 기록, 루틴 중 최소 2개 이상을 포함하라.",
       "MBTI_SUPPORT_MISSING이 있으면 해당 chapter에 입력된 MBTI를 행동 언어로 1회 이상 연결하라. 다른 MBTI 유형 추천이나 공식 진단처럼 쓰지 마라.",
+      "MBTI_SUPPORT_MISSING: work_money_study가 있으면 일·돈·공부 챕터에는 입력된 MBTI를 일 처리, 공부 방식, 돈 관리 방식 중 하나와 연결하는 문장을 1개 이상 넣어라. 다른 MBTI 유형을 추천하지 말고, 입력된 MBTI만 행동 언어로 사용하라.",
       "MBTI_SUPPORT_MISSING: risk_and_growth가 있으면 위험과 성장 챕터에 입력된 MBTI를 회복 신호, 기록, 질문, 위임, 쉬는 기준 같은 행동 언어로 연결하라.",
       "LOVE_MBTI_CAUTION_OR_EXAMPLE_MISSING이 있으면 연애와 관계 챕터에 MBTI를 궁합 단정 기준으로 쓰지 말고 관계에서 필요한 성향과 생활 리듬을 보는 보조 지표라는 주의 문장을 자연스럽게 추가하라.",
       "구체적인 MBTI 유형명 예시는 쓰지 마라.",

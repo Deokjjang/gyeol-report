@@ -2195,6 +2195,87 @@ describe("comprehensive report draft validator", () => {
     );
   });
 
+  it("rejects V2 work money study chapters without MBTI support", () => {
+    const draft = createValidV2Draft();
+    const neutralWorkBody = Array.from(
+      { length: 8 },
+      () =>
+        "일, 돈, 공부 챕터에서는 재고귀인과 편재를 돈과 계좌 기록으로 읽습니다. 돈이 들어오면 계좌와 예산을 나누고, 전문서와 자격증은 목차와 실전 적용 순서로 정리하는 장면이 자연스럽습니다. 이 문장은 일 처리, 공부 방식, 돈 관리 방식을 설명하지만 입력 성향을 행동 언어로 연결하지 않습니다.",
+    ).join(" ");
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "work_money_study"
+          ? {
+              ...chapter,
+              hitReadingLines: [
+                "돈이 들어오면 계좌와 예산을 먼저 나누는 장면입니다.",
+                "전문서를 읽을 때 목차와 실전 적용을 먼저 보는 장면입니다.",
+                "사업 아이디어도 남는 구조를 먼저 확인하는 장면입니다.",
+              ],
+              body: neutralWorkBody,
+              solutionLines: [
+                "돈은 계좌와 예산으로 나누어 기록하세요.",
+                "공부는 목차와 핵심 개념 순서로 정리하세요.",
+                "업무나 프로젝트는 맡을 일과 넘길 일을 구분하세요.",
+                "루틴은 매주 같은 시간에 점검하세요.",
+              ],
+              mbtiTermsUsed: [],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "MBTI_SUPPORT_MISSING: work_money_study",
+    );
+  });
+
+  it("accepts explicit INTP support in the work money study chapter", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      profileTable: {
+        ...draft.profileTable,
+        mbti: "INTP",
+      },
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "work_money_study"
+          ? {
+              ...chapter,
+              body: `${chapter.body} MBTI로 입력된 INTP 성향은 공부와 업무에서 원리와 조건이 납득돼야 집중이 붙기 쉬우므로 목차와 실전 적용 순서로 정리하는 보조 언어입니다.`,
+              mbtiTermsUsed: ["INTP"],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.errors.join("\n")).not.toContain(
+      "MBTI_SUPPORT_MISSING: work_money_study",
+    );
+  });
+
+  it("accepts explicit ENTJ support in the work money study chapter", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "work_money_study"
+          ? {
+              ...chapter,
+              body: `${chapter.body} MBTI로 입력된 ENTJ 성향은 기회가 보일 때 바로 확장하려는 속도가 붙기 쉬우므로 수익 구조와 방어 규칙을 먼저 정하는 보조 언어입니다.`,
+              mbtiTermsUsed: ["ENTJ"],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.errors.join("\n")).not.toContain(
+      "MBTI_SUPPORT_MISSING: work_money_study",
+    );
+  });
+
   it("accepts explicit INTP support in the risk and growth chapter", () => {
     const draft = createValidV2Draft();
     const result = validateComprehensiveReportDraft({

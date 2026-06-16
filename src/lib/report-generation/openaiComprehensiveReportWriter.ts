@@ -1381,6 +1381,70 @@ function getRiskGrowthMbtiSupportLine(mbti: string): string | undefined {
   return undefined;
 }
 
+function getWorkMoneyStudyMbtiSupportLine(mbti: string): string | undefined {
+  if (mbti === "INTP") {
+    return "MBTI로 입력된 INTP 성향이 함께 있으면 공부나 업무에서도 원리와 조건이 납득돼야 집중이 붙기 쉬우므로, 목차-핵심 개념-실전 적용 순서로 정리하는 방식이 잘 맞습니다.";
+  }
+  if (mbti === "ENTJ") {
+    return "MBTI로 입력된 ENTJ 성향이 함께 있으면 기회가 보일 때 바로 확장하려는 속도가 붙기 쉬우므로, 수익 구조와 방어 규칙을 먼저 정해 두는 편이 좋습니다.";
+  }
+  if (/^[A-Z]{4}$/.test(mbti)) {
+    return `입력된 MBTI ${mbti} 성향은 일·돈·공부에서 판단 속도와 실행 방식에 영향을 줄 수 있으므로, 사주 구조와 함께 실제 루틴으로 조정하는 편이 좋습니다.`;
+  }
+
+  return undefined;
+}
+
+function ensureWorkMoneyStudyMbtiSupport<T>(
+  draft: T,
+): DirectHitSceneRescueResult<T> {
+  if (!isV2DraftWithDeterministicFields(draft)) {
+    return { draft, rescued: false };
+  }
+
+  const mbti = draft.profileTable.mbti.trim();
+  const supportLine = getWorkMoneyStudyMbtiSupportLine(mbti);
+
+  if (supportLine === undefined) {
+    return { draft, rescued: false };
+  }
+
+  let rescued = false;
+  const chapters = draft.chapters.map((chapter) => {
+    if (chapter.chapterId !== "work_money_study") {
+      return chapter;
+    }
+
+    const searchText = getChapterRescueSearchText(chapter);
+
+    if (searchText.includes(mbti) || searchText.includes("MBTI")) {
+      return chapter;
+    }
+
+    rescued = true;
+
+    return {
+      ...chapter,
+      body: `${chapter.body}\n\n${supportLine}`.trim(),
+      mbtiTermsUsed: chapter.mbtiTermsUsed.includes(mbti)
+        ? chapter.mbtiTermsUsed
+        : [...chapter.mbtiTermsUsed, mbti],
+    };
+  });
+
+  if (!rescued) {
+    return { draft, rescued: false };
+  }
+
+  return {
+    draft: {
+      ...draft,
+      chapters,
+    } as T,
+    rescued: true,
+  };
+}
+
 function ensureRiskGrowthMbtiSupport<T>(draft: T): DirectHitSceneRescueResult<T> {
   if (!isV2DraftWithDeterministicFields(draft)) {
     return { draft, rescued: false };
@@ -1434,11 +1498,12 @@ function ensureChapterStabilityRescue<T>(
   evidencePacket?: ComprehensiveReportEvidencePacket,
 ): DirectHitSceneRescueResult<T> {
   const workMoney = ensureWorkMoneyStudySolutionLines(draft, evidencePacket);
-  const riskMbti = ensureRiskGrowthMbtiSupport(workMoney.draft);
+  const workMbti = ensureWorkMoneyStudyMbtiSupport(workMoney.draft);
+  const riskMbti = ensureRiskGrowthMbtiSupport(workMbti.draft);
 
   return {
     draft: riskMbti.draft,
-    rescued: workMoney.rescued || riskMbti.rescued,
+    rescued: workMoney.rescued || workMbti.rescued || riskMbti.rescued,
   };
 }
 
