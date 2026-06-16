@@ -201,12 +201,26 @@ function attachDeterministicEvidence(input: {
     relationshipType: input.evidencePacket.input.relationshipType,
     personALabel: input.evidencePacket.input.personA.displayName,
     personBLabel: input.evidencePacket.input.personB.displayName,
-    scoreSummary: input.evidencePacket.score,
+    scoreSummary: buildCompatibilityDraftScoreSummary(input.evidencePacket.score),
     chartComparison: {
       personA: input.evidencePacket.personAChartSummary,
       personB: input.evidencePacket.personBChartSummary,
     },
   };
+}
+
+function buildCompatibilityDraftScoreSummary(
+  score: CompatibilityReportDraft["scoreSummary"],
+): CompatibilityReportDraft["scoreSummary"] {
+  if (score.totalScore >= 65 && score.totalScore <= 74) {
+    return {
+      ...score,
+      scoreLabel: "조율형 궁합",
+      scoreCaution: `${score.totalScore}점은 안 맞는 점수가 아니라, 끌림과 보완은 있지만 속도·생활·회복 방식에 조율 장치가 필요한 궁합입니다.`,
+    };
+  }
+
+  return score;
 }
 
 function validateAttachedDraft(input: {

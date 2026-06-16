@@ -100,6 +100,10 @@ describe("openaiCompatibilityReportWriter", () => {
 
     expect(result.draft.version).toBe("compatibility_v1_draft");
     expect(result.draft.scoreSummary.totalScore).toBe(packet.score.totalScore);
+    expect(result.draft.scoreSummary.scoreLabel).toBe("조율형 궁합");
+    expect(result.draft.scoreSummary.scoreCaution).toContain(
+      "안 맞는 점수가 아니라",
+    );
     expect(result.repaired).toBe(false);
     const requestText = JSON.stringify(requests[0]);
     expect(requestText).toContain("saju_mbti_compatibility");

@@ -10,6 +10,9 @@ import {
   compatibilityResponseFormatName,
   CompatibilityReportWriterFailure,
   formatCompatibilityOpenAIRequestDiagnostics,
+  validateCompatibilityReportDraft,
+  deriveAllowedCompatibilityMbtiTerms,
+  deriveAllowedCompatibilitySajuTerms,
 } from "../src/lib/report-generation";
 import type { CompatibilityReportDraft } from "../src/lib/report-generation";
 
@@ -65,13 +68,31 @@ function writeBulletList(title: string, items: readonly string[]): void {
   }
 }
 
-function writeCompatibilityReportBody(draft: CompatibilityReportDraft): void {
+function writeQualityWarnings(warnings: readonly string[]): void {
+  if (warnings.length === 0) {
+    return;
+  }
+
+  writeLine("quality warnings:");
+  for (const warning of warnings) {
+    writeLine(`- ${warning}`);
+  }
+}
+
+function writeCompatibilityReportBody(input: {
+  readonly draft: CompatibilityReportDraft;
+  readonly warnings: readonly string[];
+}): void {
+  const { draft } = input;
+
   writeLine("=== COMPATIBILITY REPORT BODY START ===");
   writeLine("사주×MBTI 궁합 리포트 v1.0");
   writeLine(draft.openingTitle);
   writeLine(draft.openingSummary);
   writeLine(draft.coreLine);
   writeLine(`종합 궁합 점수: ${draft.scoreSummary.totalScore}`);
+  writeLine(`score label: ${draft.scoreSummary.scoreLabel}`);
+  writeLine(`score caution: ${draft.scoreSummary.scoreCaution}`);
   writeLine(`끌림: ${draft.scoreSummary.breakdown.attraction}`);
   writeLine(`대화: ${draft.scoreSummary.breakdown.communication}`);
   writeLine(`생활 리듬: ${draft.scoreSummary.breakdown.lifestyleRhythm}`);
@@ -95,8 +116,9 @@ function writeCompatibilityReportBody(draft: CompatibilityReportDraft): void {
   }
 
   writeBlankLine();
-  writeBulletList("마지막 조언", draft.finalAdvice);
+  writeBulletList("오늘부터 할 일", draft.finalAdvice);
   writeBulletList("안전 안내", draft.safetyNotes);
+  writeQualityWarnings(input.warnings);
   writeLine("=== COMPATIBILITY REPORT BODY END ===");
 }
 
@@ -154,8 +176,16 @@ async function main(): Promise<void> {
   writeLine(`chapters: ${result.draft.chapters.length}`);
   writeLine(`first chapter: ${result.draft.chapters[0]?.title ?? "none"}`);
   writeLine(`repair: ${result.repaired ? "applied" : "not needed"}`);
+  const validation = validateCompatibilityReportDraft(result.draft, {
+    allowedSajuTerms: deriveAllowedCompatibilitySajuTerms(packet),
+    allowedMbtiTerms: deriveAllowedCompatibilityMbtiTerms(packet),
+  });
+  writeQualityWarnings(validation.warnings);
   if (printBody) {
-    writeCompatibilityReportBody(result.draft);
+    writeCompatibilityReportBody({
+      draft: result.draft,
+      warnings: validation.warnings,
+    });
   }
   writeLine("done");
 }

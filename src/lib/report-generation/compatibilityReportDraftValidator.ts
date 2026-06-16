@@ -4,6 +4,7 @@ import { COMPATIBILITY_REPORT_CHAPTER_IDS } from "./compatibilityReportDraftType
 export type CompatibilityReportDraftValidationResult = {
   readonly ok: boolean;
   readonly errors: readonly string[];
+  readonly warnings: readonly string[];
   readonly value?: CompatibilityReportDraft;
 };
 
@@ -81,6 +82,15 @@ const representativeSajuTerms = [
   "월살",
   "육해살",
   "백호대살",
+] as const;
+
+const repeatedAdviceWarningPhrases = [
+  "연락",
+  "약속",
+  "생활비",
+  "숫자",
+  "재검토",
+  "혼자 쉬는 시간",
 ] as const;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -225,16 +235,36 @@ function validateUnsupportedSajuTerms(input: {
   }
 }
 
+function countOccurrences(text: string, phrase: string): number {
+  if (phrase.length === 0) {
+    return 0;
+  }
+
+  return text.split(phrase).length - 1;
+}
+
+function collectRepetitionWarnings(text: string): readonly string[] {
+  return repeatedAdviceWarningPhrases.flatMap((phrase) => {
+    const count = countOccurrences(text, phrase);
+
+    return count >= 4
+      ? [`COMPATIBILITY_REPETITIVE_ADVICE_WARNING: ${phrase}`]
+      : [];
+  });
+}
+
 export function validateCompatibilityReportDraft(
   draft: unknown,
   options: CompatibilityReportDraftValidationOptions = {},
 ): CompatibilityReportDraftValidationResult {
   const errors: string[] = [];
+  const warnings: string[] = [];
 
   if (!isCompatibilityReportDraftShape(draft)) {
     return {
       ok: false,
       errors: ["COMPATIBILITY_SCHEMA_INVALID"],
+      warnings: [],
     };
   }
 
@@ -261,10 +291,11 @@ export function validateCompatibilityReportDraft(
     allowedSajuTerms: options.allowedSajuTerms ?? [],
     errors,
   });
+  warnings.push(...collectRepetitionWarnings(text));
 
   return errors.length === 0
-    ? { ok: true, errors: [], value: draft }
-    : { ok: false, errors };
+    ? { ok: true, errors: [], warnings, value: draft }
+    : { ok: false, errors, warnings };
 }
 
 export function assertValidCompatibilityReportDraft(

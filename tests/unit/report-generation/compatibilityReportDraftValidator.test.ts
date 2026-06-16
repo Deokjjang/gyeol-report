@@ -81,7 +81,10 @@ function validate(draft: unknown) {
 
 describe("compatibilityReportDraftValidator", () => {
   it("passes a valid compatibility draft with actual input MBTIs", () => {
-    expect(validate(createValidCompatibilityDraft()).ok).toBe(true);
+    const result = validate(createValidCompatibilityDraft());
+
+    expect(result.ok).toBe(true);
+    expect(result.warnings).toEqual([]);
   });
 
   it("fails when score summary is missing", () => {
@@ -140,5 +143,35 @@ describe("compatibilityReportDraftValidator", () => {
       "MBTI_CANDIDATE_RECOMMENDATION_NOT_ALLOWED: INFJ",
     );
     expect(validate(draft).ok).toBe(true);
+  });
+
+  it("emits a non-fatal repetitive advice warning", () => {
+    const draft = createValidCompatibilityDraft();
+    const repeated =
+      "연락 규칙은 먼저 정하세요. 연락 템포가 다르면 연락 기준을 다시 보고, 연락 문제를 감정으로만 보지 마세요.";
+    const result = validate({
+      ...draft,
+      keyCompatibilityPoints: {
+        ...draft.keyCompatibilityPoints,
+        relationshipRules: [...draft.keyCompatibilityPoints.relationshipRules, repeated],
+      },
+      finalAdvice: [...draft.finalAdvice, repeated],
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.warnings).toContain(
+      "COMPATIBILITY_REPETITIVE_ADVICE_WARNING: 연락",
+    );
+  });
+
+  it("does not fail or warn on reasonable phrase reuse", () => {
+    const draft = createValidCompatibilityDraft();
+    const result = validate({
+      ...draft,
+      finalAdvice: [...draft.finalAdvice, "약속은 한 번만 다시 확인하세요."],
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.warnings).toEqual([]);
   });
 });

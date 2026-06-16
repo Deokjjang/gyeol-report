@@ -993,6 +993,36 @@ Future REPORT-18C should refine the compatibility table UX, score copy,
 chapter order, tone, and product persistence/share integration after reviewing
 actual generated drafts.
 
+## REPORT-18C Compatibility Product Polish
+
+REPORT-18C keeps the REPORT-18B writer/render path but improves first-draft
+product quality.
+
+Compatibility copy policy:
+
+- Each chapter must introduce a distinct angle instead of repeating the same
+  advice.
+- Repeated practical phrases such as 연락 빈도, 약속 변경, 생활비, 숫자로 합의,
+  바로 결론, 하루 뒤 재검토, and 혼자 쉬는 시간 should appear at most once
+  unless the later use adds a new situation and evidence.
+- Direct-hit scenes should show who acts, what the other person feels, what
+  Saju/MBTI structure explains it, and the everyday setting.
+- Chapter titles should read like paid report section titles, not internal
+  taxonomy labels.
+- 65-74 scores are framed as `조율형 궁합`, meaning attraction and complement
+  exist but speed, lifestyle, and recovery rules need active coordination.
+- The final chapter can be a final message, but the bottom action list is
+  headed `오늘부터 할 일` to avoid duplicate final-advice headings.
+- Relationship type flavor differs: love focuses on dating rhythm and emotional
+  temperature, some on ambiguity and timing, marriage on long-term lifestyle
+  and responsibility, and friendship on distance, loyalty, help style, and
+  boundaries.
+
+The compatibility validator now emits non-fatal
+`COMPATIBILITY_REPETITIVE_ADVICE_WARNING` warnings for excessive repeated advice
+phrases. These warnings are printed by the draft smoke but do not block a valid
+draft unless separate safety or evidence rules fail.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

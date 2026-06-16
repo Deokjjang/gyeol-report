@@ -23,11 +23,13 @@ describe("smoke_generate_compatibility_report_draft source", () => {
     expect(source).toContain("SKIPPED, OpenAI writer not enabled");
     expect(source).toContain("draft version:");
     expect(source).toContain("if (printBody)");
-    expect(source).toContain("writeCompatibilityReportBody(result.draft)");
+    expect(source).toContain("writeCompatibilityReportBody({");
     expect(source).toContain("COMPATIBILITY REPORT BODY START");
     expect(source).toContain("COMPATIBILITY REPORT BODY END");
     expect(source).toContain("draft.openingTitle");
     expect(source).toContain("종합 궁합 점수:");
+    expect(source).toContain("score label:");
+    expect(source).toContain("score caution:");
     expect(source).toContain("끌림:");
     expect(source).toContain("대화:");
     expect(source).toContain("생활 리듬:");
@@ -39,7 +41,10 @@ describe("smoke_generate_compatibility_report_draft source", () => {
     expect(source).toContain("chapter.directHitScenes");
     expect(source).toContain("chapter.practicalAdvice");
     expect(source).toContain("draft.finalAdvice");
+    expect(source).toContain("오늘부터 할 일");
     expect(source).toContain("draft.safetyNotes");
+    expect(source).toContain("quality warnings:");
+    expect(source).toContain("validateCompatibilityReportDraft");
     expect(source).toContain("done");
     expect(source).not.toContain("writeLine(`OPENAI_API_KEY");
     expect(source).not.toContain("writeLine(\"OPENAI_API_KEY");
