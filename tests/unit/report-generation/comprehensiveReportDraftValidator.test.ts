@@ -876,6 +876,71 @@ describe("comprehensive report draft validator", () => {
     expect(result.errors.join("\n")).toContain("UNSUPPORTED_SAJU_TERM: 도화살");
   });
 
+  it("rejects fixture-unsupported element terms and passes after removal", () => {
+    const draft = createValidV2Draft();
+    const withUnsupportedWater = {
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "risk_and_growth"
+          ? {
+              ...chapter,
+              body: `${chapter.body} 수 부족이 있다고 쓰면 이번 원국에 없는 오행 부족을 만든 것입니다.`,
+            }
+          : chapter,
+      ),
+    };
+    const unsupportedResult = validateComprehensiveReportDraft(withUnsupportedWater, {
+      allowedSajuTerms: [
+        "갑목",
+        "갑신",
+        "갑신일주",
+        "목 부족",
+        "금 부족",
+        "화 부족",
+        "토 과다",
+        "재다신약",
+        "재고귀인",
+        "무인성",
+        "무식상",
+        "현침살",
+        "홍염살",
+      ],
+    });
+
+    expect(unsupportedResult.ok).toBe(false);
+    expect(unsupportedResult.errors.join("\n")).toContain(
+      "UNSUPPORTED_SAJU_TERM: 수 부족",
+    );
+
+    const cleanedDraft = JSON.parse(
+      JSON.stringify(withUnsupportedWater).replaceAll("수 부족", "목 부족"),
+    ) as typeof draft;
+    const cleanedResult = validateComprehensiveReportDraft(
+      cleanedDraft,
+      {
+        allowedSajuTerms: [
+          "갑목",
+          "갑신",
+          "갑신일주",
+          "목 부족",
+          "금 부족",
+          "화 부족",
+          "토 과다",
+          "재다신약",
+          "재고귀인",
+          "무인성",
+          "무식상",
+          "현침살",
+          "홍염살",
+        ],
+      },
+    );
+
+    expect(cleanedResult.errors.join("\n")).not.toContain(
+      "UNSUPPORTED_SAJU_TERM: 수 부족",
+    );
+  });
+
   it("rejects V2 drafts without enough direct hit-reading sentences", () => {
     const draft = createValidV2Draft();
     const result = validateComprehensiveReportDraft({

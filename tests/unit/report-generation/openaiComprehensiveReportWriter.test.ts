@@ -382,7 +382,9 @@ describe("OpenAI comprehensive report writer", () => {
     const responseFormatSchema = JSON.stringify(requestBody.text?.format?.schema);
 
     expect(JSON.stringify(calls[0].body)).toContain("재고귀인");
-    expect(JSON.stringify(calls[0].body)).not.toContain("천을귀인");
+    expect(JSON.stringify(calls[0].body)).toContain(
+      "이번 원국에서 확인되지 않은 대표 금지 항목",
+    );
     expect(JSON.stringify(calls[0].body)).toContain("selectedSajuFeatureEvidence");
     expect(JSON.stringify(calls[0].body)).toContain("sajuFeatureSpotlight");
     expect(JSON.stringify(calls[0].body)).toContain("sajuSignatureScenes");

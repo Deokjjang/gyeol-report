@@ -749,6 +749,26 @@ function hasAnyFeatureId(
   return candidates.some((featureId) => featureIds.has(featureId));
 }
 
+function getPresentFeatureLabels(
+  featureIds: ReadonlySet<string>,
+  candidates: readonly {
+    readonly featureId: string;
+    readonly label: string;
+  }[],
+): readonly string[] {
+  return candidates
+    .filter((candidate) => featureIds.has(candidate.featureId))
+    .map((candidate) => candidate.label);
+}
+
+function joinKoreanFeatureLabels(labels: readonly string[]): string {
+  if (labels.length === 0) {
+    return "제공된 사주 항목";
+  }
+
+  return labels.join("·");
+}
+
 function hasChapterRescueFeature(
   input: {
     readonly chapterId: Exclude<DirectHitRescueChapterId, "personality_pattern">;
@@ -791,9 +811,14 @@ function buildSajuIdentityDirectHitRescue(input: {
   }
 
   if (hasGapsinOfficer) {
+    const officerLabels = getPresentFeatureLabels(input.featureIds, [
+      { featureId: "ten_god_qi_sha", label: "편관" },
+      { featureId: "ten_god_zheng_guan", label: "정관" },
+    ]);
+
     return [
       "갑신일주는 큰 나무가 날카로운 금 위에 선 모습이라, 압박이 걸리는 자리에서 오히려 기준을 빨리 세우고 판을 정리하려는 모습으로 드러날 수 있습니다.",
-      "편관이나 정관의 역할 감각이 함께 있으면 문제가 생겼을 때 흩어진 말보다 먼저 책임선, 순서, 결정 기준을 잡으려는 쪽으로 움직이기 쉽습니다.",
+      `${joinKoreanFeatureLabels(officerLabels)}의 역할 감각이 함께 있으면 문제가 생겼을 때 흩어진 말보다 먼저 책임선, 순서, 결정 기준을 잡으려는 쪽으로 움직이기 쉽습니다.`,
     ].join(" ");
   }
 
@@ -853,18 +878,33 @@ function buildWorkMoneyStudyDirectHitRescue(input: {
   }
 
   if (hasMoneyStorage || hasMoneyLuck) {
+    const moneyLabels = getPresentFeatureLabels(input.featureIds, [
+      { featureId: "gwiin_jaego", label: "재고귀인" },
+      { featureId: "gwiin_geumyeorok", label: "금여록" },
+      { featureId: "ten_god_pian_cai", label: "편재" },
+      { featureId: "ten_god_zheng_cai", label: "정재" },
+    ]);
+
     return [
       "돈이 들어오면 단순히 쓰고 싶은 마음보다 '이걸 어디에 묶어둘까'가 먼저 떠오를 수 있습니다.",
       "사업 아이디어를 볼 때도 단순 매출보다 고객 기반, 기록, 반복 수익처럼 남는 구조를 먼저 보게 되는 장면이 자연스럽습니다.",
-      "이 흐름은 재고귀인과 편재·정재의 자원 감각이 입력한 MBTI의 효율 감각과 함께 움직일 때 더 선명해집니다.",
+      `이 흐름은 ${joinKoreanFeatureLabels(moneyLabels)}의 자원 감각이 입력한 MBTI의 효율 감각과 함께 움직일 때 더 선명해집니다.`,
     ].join(" ");
   }
 
   if (hasOfficerOrDayPillar) {
+    const workLabels = getPresentFeatureLabels(input.featureIds, [
+      { featureId: "day_pillar_gapsin", label: "갑신일주" },
+      { featureId: "day_pillar_jeongchuk", label: "정축일주" },
+      { featureId: "ten_god_qi_sha", label: "편관" },
+      { featureId: "ten_god_zheng_guan", label: "정관" },
+      { featureId: "ten_god_shi_shen", label: "식신" },
+    ]);
+
     return [
       "전문서를 읽을 때도 처음부터 끝까지 읽기보다 목차를 훑고 '이걸 어디에 써먹지?'부터 찾는 장면이 자연스럽습니다.",
       "자격증이나 업무 공부도 흥미만으로 오래 가기보다 실전 적용과 역할이 보일 때 집중이 붙습니다.",
-      "갑신일주와 정관·편관의 기준 감각이 입력한 MBTI의 목표 지향과 함께 작동하는 흐름입니다.",
+      `${joinKoreanFeatureLabels(workLabels)}의 기준 감각이 입력한 MBTI의 목표 지향과 함께 작동하는 흐름입니다.`,
     ].join(" ");
   }
 
@@ -891,18 +931,31 @@ function buildLoveRelationshipsDirectHitRescue(input: {
   ]);
 
   if (hasExpressionPattern) {
+    const relationshipLabels = getPresentFeatureLabels(input.featureIds, [
+      { featureId: "sinsal_hongyeom", label: "홍염살" },
+      { featureId: "element_fire_missing", label: "화 부족" },
+      { featureId: "structure_no_output", label: "무식상" },
+    ]);
+
     return [
       "호감은 있는데 말투가 너무 정리돼서, 상대가 애정 표현이 아니라 업무 보고처럼 느끼는 순간이 생길 수 있습니다.",
-      "홍염살의 끌림은 있지만 화 부족과 무식상이 겹치면 감정 표현의 온도가 늦게 올라오는 식입니다.",
+      `${joinKoreanFeatureLabels(relationshipLabels)}의 관계 흐름이 겹치면 감정 표현의 온도가 늦게 올라오는 식입니다.`,
       "입력한 MBTI의 해결 중심 성향까지 붙으면 연락이나 약속에서도 감정보다 다음 행동이 먼저 보일 수 있습니다.",
     ].join(" ");
   }
 
   if (hasFrictionPattern || hasCoolingOrExpressionNeed) {
+    const relationshipLabels = getPresentFeatureLabels(input.featureIds, [
+      { featureId: "sinsal_wonjin", label: "원진살" },
+      { featureId: "element_water_missing", label: "수 부족" },
+      { featureId: "element_fire_missing", label: "화 부족" },
+      { featureId: "structure_no_output", label: "무식상" },
+    ]);
+
     return [
       "상대가 서운함을 길게 말하고 있는데, 속으로 '그래서 다음에 어떻게 할 건데?'가 먼저 떠오를 수 있습니다.",
       "마음이 없는 게 아니라 감정을 오래 머무르게 두기보다 해결 가능한 형태로 바꾸려는 습관이 먼저 켜지는 장면입니다.",
-      "원진살과 수 부족, 또는 화 부족의 표현 속도가 입력한 MBTI의 결론 지향과 맞물릴 때 더 선명해집니다.",
+      `${joinKoreanFeatureLabels(relationshipLabels)}의 표현 속도가 입력한 MBTI의 결론 지향과 맞물릴 때 더 선명해집니다.`,
     ].join(" ");
   }
 
@@ -958,9 +1011,15 @@ function buildPeopleFamilyEnvironmentDirectHitRescue(input: {
   }
 
   if (hasRoleCenter) {
+    const roleLabels = getPresentFeatureLabels(input.featureIds, [
+      { featureId: "twelve_sinsal_jangseong", label: "장성살" },
+      { featureId: "ten_god_zheng_guan", label: "정관" },
+      { featureId: "ten_god_qi_sha", label: "편관" },
+    ]);
+
     return [
       "가족이나 팀에서 누가 무엇을 맡는지 흐리면, 대화의 감정보다 담당자·마감·기준표부터 정리하고 싶어질 수 있습니다.",
-      "이 장면은 장성살의 중심성, 정관·편관의 역할 의식, 입력한 MBTI의 운영 감각이 같이 움직일 때 자주 나타납니다.",
+      `이 장면은 ${joinKoreanFeatureLabels(roleLabels)}의 역할 의식과 입력한 MBTI의 운영 감각이 같이 움직일 때 자주 나타납니다.`,
       "수업, 팀플, 알바나 업무에서 말이 길어질수록 감정의 결보다 역할표, 일정, 책임선을 먼저 세우고 싶어지는 식으로 드러날 수 있습니다.",
       "그래서 주변에서는 자연스럽게 당신을 정리해 주는 사람으로 기대할 수 있지만, 맡을 범위를 먼저 나누어야 부담이 한쪽으로 쌓이지 않습니다.",
     ].join(" ");
@@ -976,9 +1035,16 @@ function buildPeopleFamilyEnvironmentDirectHitRescue(input: {
   }
 
   if (hasSharpRelationPattern) {
+    const sharpLabels = getPresentFeatureLabels(input.featureIds, [
+      { featureId: "sinsal_hyeonchim", label: "현침살" },
+      { featureId: "sinsal_wonjin", label: "원진살" },
+      { featureId: "ten_god_zheng_guan", label: "정관" },
+      { featureId: "ten_god_qi_sha", label: "편관" },
+    ]);
+
     return [
       "가족이나 팀에서 역할이 흐려지면, 감정보다 담당자와 마감, 기준표를 먼저 정리하고 싶어질 수 있습니다.",
-      "현침살의 빠른 판단과 정관·편관의 역할 의식이 입력한 MBTI의 운영 감각과 겹치면 이런 장면이 더 선명해집니다.",
+      `${joinKoreanFeatureLabels(sharpLabels)}의 관계 감각이 입력한 MBTI의 운영 감각과 겹치면 이런 장면이 더 선명해집니다.`,
       "사람들과 대화하거나 팀플과 업무에서 말이 길어질수록 핵심 오류, 담당자, 다음 일정이 먼저 보이고, 가까운 사람에게도 같은 정리 속도가 나올 수 있습니다.",
       "주변에서는 자연스럽게 당신을 정리해 주는 사람으로 기대할 수 있으니, 부탁을 받기 전에 맡을 범위를 먼저 나누는 편이 좋습니다.",
     ].join(" ");
@@ -1010,6 +1076,9 @@ function buildPersonalityDirectHitRescue(input: {
 
   const sceneLine = preferredScene.sceneLines?.[0] ?? preferredScene.sceneLine;
   const interpretationLine = preferredScene.interpretationLine;
+  const officerLabels = preferredScene.featureLabels.filter((label) =>
+    ["편관", "정관"].includes(label),
+  );
   const selectedEvidenceLine =
     preferredScene.featureLabels.includes("현침살")
       ? "이 흐름은 현침살의 빠른 오류 감지와 입력한 MBTI의 결론 처리 성향이 겹칠 때 더 선명해집니다."
@@ -1017,7 +1086,7 @@ function buildPersonalityDirectHitRescue(input: {
           preferredScene.featureLabels.some((label) =>
             ["편관", "정관"].includes(label),
           )
-        ? "이 흐름은 갑신일주가 압박 속에서 기준을 세우고 편관·정관의 역할 감각이 붙을 때 더 선명해집니다."
+        ? `이 흐름은 갑신일주가 압박 속에서 기준을 세우고 ${joinKoreanFeatureLabels(officerLabels)}의 역할 감각이 붙을 때 더 선명해집니다.`
         : undefined;
   const rescueText = [
     sceneLine,

@@ -3,8 +3,10 @@ import { describe, expect, it } from "vitest";
 import {
   buildOpenAIComprehensiveReportRepairMessages,
   buildOpenAIComprehensiveReportWriterMessages,
+  deriveAllowedSajuTermsFromEvidencePacket,
 } from "../../../src/lib/report-generation/openaiReportWriterPrompt";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../../../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
+import { getReportSmokeFixture } from "../../../src/lib/report-knowledge/reportQualityFixtureMatrix";
 import type { ComputedSajuFacts } from "../../../src/lib/report-knowledge/sajuComputedFactsTypes";
 
 const deokminSampleFacts = {
@@ -178,7 +180,7 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("책임 덜어내기");
     expect(combined).toContain("지치기 전까지 멈추는 신호");
     expect(combined).toContain("책임을 내려놓는 기준");
-    expect(combined).toContain("짧은 칭찬과 감정 표현");
+    expect(combined).toContain("표현이 늦어지는 장면");
     expect(combined).toContain("맡을 일과 버릴 일");
     expect(combined).toContain("구체 MBTI type은 쓰지 않는다");
     expect(combined).not.toContain("ISFP");
@@ -251,6 +253,62 @@ describe("OpenAI report writer prompt", () => {
     for (const marker of blockedMarkers) {
       expect(combined).not.toContain(marker);
     }
+  });
+
+  it("adds an allowed and forbidden Saju term guard for the Sodam fixture", () => {
+    const sodamFixture = getReportSmokeFixture("sodam-intp");
+    const { packet } = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: sodamFixture.mbti,
+      sajuFacts: sodamFixture.sajuFacts,
+    });
+    const allowedTerms = deriveAllowedSajuTermsFromEvidencePacket(packet);
+    const messages = buildOpenAIComprehensiveReportWriterMessages({
+      userDisplayName: sodamFixture.displayName,
+      mbtiType: sodamFixture.mbti,
+      evidencePacket: packet,
+      allowedSajuTerms: allowedTerms,
+    });
+    const combined = [messages.system, messages.developer, messages.user].join("\n");
+
+    expect(allowedTerms).toContain("정축일주");
+    expect(allowedTerms).toContain("화 과다");
+    expect(allowedTerms).toContain("토 과다");
+    expect(allowedTerms).toContain("목 부족");
+    expect(allowedTerms).toContain("금 부족");
+    expect(allowedTerms).not.toContain("수 부족");
+    expect(combined).toContain("이번 원국에서 확인되지 않은 대표 금지 항목:");
+    expect(combined).toContain("- 수 부족");
+    expect(combined).toContain("- 갑신일주");
+    expect(combined).toContain("- 현침살");
+    expect(combined).toContain(
+      "이 리포트에서 사용할 수 있는 사주 항목은 selected/computed 목록에 있는 항목뿐이다",
+    );
+    expect(combined).toContain("목록에 없는 사주 용어는 쓰지 마라");
+    expect(combined).toContain("예시 문장에 나온 항목이라도 이번 원국에 없으면 절대 쓰지 마라");
+  });
+
+  it("keeps Deokmin-only Saju terms allowed when they are computed", () => {
+    const deokminFixture = getReportSmokeFixture("deokmin");
+    const { packet } = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: deokminFixture.mbti,
+      sajuFacts: deokminFixture.sajuFacts,
+    });
+    const allowedTerms = deriveAllowedSajuTermsFromEvidencePacket(packet);
+    const messages = buildOpenAIComprehensiveReportWriterMessages({
+      userDisplayName: deokminFixture.displayName,
+      mbtiType: deokminFixture.mbti,
+      evidencePacket: packet,
+      allowedSajuTerms: allowedTerms,
+    });
+    const combined = [messages.system, messages.developer, messages.user].join("\n");
+    const forbiddenSections = combined.match(
+      /이번 원국에서 확인되지 않은 대표 금지 항목:\n(?:- .*(?:\n|$)){1,24}/g,
+    ) ?? [];
+
+    expect(allowedTerms).toContain("수 부족");
+    expect(allowedTerms).toContain("갑신일주");
+    expect(forbiddenSections.join("\n")).not.toContain("- 수 부족");
+    expect(forbiddenSections.join("\n")).not.toContain("- 갑신일주");
   });
 
   it("uses the current MBTI as a behavior layer without hardcoded ENTJ-only copy", () => {
@@ -417,5 +475,34 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("사주 용어는 evidence에 있는 것만 사용하라");
     expect(combined).toContain("갑목");
     expect(combined).not.toContain("도화살");
+  });
+
+  it("builds a repair prompt that removes unsupported Saju terms with an allowed list", () => {
+    const sodamFixture = getReportSmokeFixture("sodam-intp");
+    const { packet } = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: sodamFixture.mbti,
+      sajuFacts: sodamFixture.sajuFacts,
+    });
+    const allowedTerms = deriveAllowedSajuTermsFromEvidencePacket(packet);
+    const messages = buildOpenAIComprehensiveReportRepairMessages({
+      userDisplayName: sodamFixture.displayName,
+      mbtiType: sodamFixture.mbti,
+      allowedSajuTerms: allowedTerms,
+      draftJson:
+        "{\"version\":\"comprehensive_v2_draft\",\"chapters\":[],\"finalAdvice\":\"수 부족을 보완하세요.\"}",
+      validationErrors: ["UNSUPPORTED_SAJU_TERM: 수 부족"],
+    });
+    const combined = [messages.system, messages.developer, messages.user].join("\n");
+
+    expect(combined).toContain("UNSUPPORTED_SAJU_TERM: 수 부족");
+    expect(combined).toContain("본문에 이번 원국에서 확인되지 않은 사주 항목이 들어간 것이다");
+    expect(combined).toContain("해당 항목을 삭제하거나, 실제 확인된 항목으로만 바꿔라");
+    expect(combined).toContain("이번 원국에서 허용된 항목 목록 외의 사주 용어를 쓰지 마라");
+    expect(combined).toContain("- 목 부족");
+    expect(combined).toContain("- 금 부족");
+    expect(combined).toContain("- 화 과다");
+    expect(combined).toContain("- 토 과다");
+    expect(combined).toContain("이번 원국에서 확인되지 않은 대표 금지 항목:");
+    expect(combined).toContain("- 수 부족");
   });
 });

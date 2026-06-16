@@ -50,6 +50,36 @@ function createKnownSajuTerms(): readonly string[] {
   ];
 }
 
+const representativeSajuLeakGuardTerms = [
+  "수 부족",
+  "화 부족",
+  "목 부족",
+  "금 부족",
+  "토 부족",
+  "목 과다",
+  "화 과다",
+  "토 과다",
+  "금 과다",
+  "수 과다",
+  "갑신일주",
+  "정축일주",
+  "현침살",
+  "홍염살",
+  "공망",
+  "금여록",
+  "재다신약",
+  "양인살",
+  "천을귀인",
+  "재고귀인",
+  "암록",
+  "천문성",
+  "원진살",
+  "역마살",
+  "화개살",
+  "월살",
+  "육해살",
+] as const;
+
 export function deriveAllowedSajuTermsFromEvidencePacket(
   packet: ComprehensiveReportEvidencePacket,
 ): readonly string[] {
@@ -104,6 +134,31 @@ function containsUnsupportedPromptSajuTerm(input: {
   });
 }
 
+function createForbiddenSajuTerms(input: {
+  readonly allowedSajuTerms: readonly string[];
+  readonly limit?: number;
+}): readonly string[] {
+  const limit = input.limit ?? 24;
+  const allowedTerms = normalizeAllowedSajuTerms(input.allowedSajuTerms);
+  const candidates = [
+    ...representativeSajuLeakGuardTerms,
+    ...createKnownSajuTerms(),
+  ];
+
+  return [
+    ...new Set(
+      candidates
+        .map((term) => term.trim())
+        .filter((term) => /[가-힣]/.test(term) && term.length >= 2)
+        .filter((term) => !allowedTerms.has(term.replace(/\s+/g, ""))),
+    ),
+  ].slice(0, limit);
+}
+
+function formatSajuTermLines(terms: readonly string[]): string {
+  return terms.length > 0 ? terms.map((term) => `- ${term}`).join("\n") : "- 없음";
+}
+
 function buildPromptEvidencePacket(input: {
   readonly packet: ComprehensiveReportEvidencePacket;
   readonly allowedSajuTerms: readonly string[];
@@ -138,10 +193,10 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       : "당신";
   const allowedSajuTerms =
     input.allowedSajuTerms ?? deriveAllowedSajuTermsFromEvidencePacket(input.evidencePacket);
-  const allowedSajuTermLines =
-    allowedSajuTerms.length > 0
-      ? allowedSajuTerms.map((term) => `- ${term}`).join("\n")
-      : "- 없음";
+  const allowedSajuTermLines = formatSajuTermLines(allowedSajuTerms);
+  const forbiddenSajuTermLines = formatSajuTermLines(
+    createForbiddenSajuTerms({ allowedSajuTerms }),
+  );
   const evidenceJson = JSON.stringify(
     buildPromptEvidencePacket({
       packet: input.evidencePacket,
@@ -158,6 +213,9 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "Do not invent Saju facts.",
       "Do not mention Saju entries not present in the evidence packet.",
       "Do not mention any Saju term that is not present in primary Saju evidence or matched fusion evidence.",
+      "이 리포트에서 사용할 수 있는 사주 항목은 selected/computed 목록에 있는 항목뿐이다.",
+      "목록에 없는 사주 용어는 쓰지 마라.",
+      "예시 문장에 나온 항목이라도 이번 원국에 없으면 절대 쓰지 마라.",
       "Do not make MBTI the primary source.",
       "Write in Korean.",
       "Use a conversational but expert tone.",
@@ -204,6 +262,9 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "보완점과 부족한 부분은 보완 흐름으로 설명한다.",
       "evidence에 없는 신살/귀인/십성/오행/일주 금지.",
       "위 목록에 없는 신살, 귀인, 일주, 십성, 오행, 격국, 패턴은 절대 언급하지 마라.",
+      "이 리포트에서 사용할 수 있는 사주 항목은 selected/computed 목록에 있는 항목뿐이다.",
+      "목록에 없는 사주 용어는 쓰지 마라.",
+      "예시 문장에 나온 항목이라도 이번 원국에 없으면 절대 쓰지 마라.",
       "제공된 명리학 feature evidence에 있는 항목만 사용하라.",
       "없는 신살·귀인·길신·일주 의미를 새로 만들지 마라.",
       "좋은 기운은 좋게 느껴지게 설명하되, 반드시/무조건/100%처럼 단정하지 마라.",
@@ -231,9 +292,9 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "없는 feature를 만들지 말고 제공된 feature만 사용하라.",
       "saju_identity는 일주 feature와 신살·귀인·구조 feature 중 하나 이상을 함께 써라.",
       "saju_identity에는 일주/귀인/오행/십성/신살 중 실제 선택된 항목을 사용해 압박이 걸리는 자리, 도움을 요청하는 순간, 돈의 자리를 정하는 장면, 사람들과 대화할 때 핵심이 먼저 보이는 장면 중 최소 1개를 자연스럽게 넣어라.",
-      "work_money_study는 편재, 정재, 재고귀인, 반안살, 장성살, 정관, 편관 중 제공된 money/work feature가 있으면 최소 1개 이상 써라.",
-      "love_relationships는 도화살, 홍염살, 원진살, 화 부족, 수 부족 중 제공된 relationship feature가 있으면 최소 1개 이상 써라.",
-      "risk_and_growth는 백호대살, 원진살, 수 부족, 화 부족, 토 과다, 재다신약 중 제공된 caution/mixed feature가 있으면 최소 1개 이상 써라.",
+      "work_money_study는 제공된 money/work feature가 있으면 최소 1개 이상 써라.",
+      "love_relationships는 제공된 relationship feature가 있으면 최소 1개 이상 써라.",
+      "risk_and_growth는 제공된 caution/mixed feature가 있으면 최소 1개 이상 써라.",
       "좋은 길신/귀인은 상징 이미지와 실제 활용 방향을 반드시 1회 이상 풀어라.",
       "귀인, 신살, 십성, 오행, 일주 용어를 자연스럽게 사용한다.",
       "성격 챕터는 질문을 나열하지 말고, 구체 장면 1개를 반드시 포함하라.",
@@ -253,7 +314,7 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "display 섹션은 짧게 쓴다.",
       "만세력 표와 MBTI 입력 정보 섹션에서는 내부 사정 언급 금지.",
       "같은 근거를 섹션별로 다르게 풀어라.",
-      "수 부족, 화 부족, 무식상, 무인성 같은 반복 근거는 섹션마다 다른 결과로 풀어라.",
+      "반복되는 오행/구조 근거는 섹션마다 다른 결과로 풀어라.",
       "회복과 표현, 감정 완충, 표현 온도 같은 말을 같은 문장으로 반복하지 마라.",
       "조언은 추상적으로 쓰지 말고 당장 행동으로 옮길 수 있게 구체적으로 써라.",
       "특징 설명형이 아니라 명중형과 조언형으로 쓴다.",
@@ -293,7 +354,7 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "love_relationships.solutionLines는 반드시 맞는 상대, 피해야 할 상대, 보완 기운, MBTI 관계 기준 4가지 생활 조언을 각각 포함한다.",
       "맞는 상대: 감정을 천천히 풀어주고 과열을 식혀주는 사람처럼 partner traits를 구체적으로 쓴다.",
       "피해야 할 상대: 감정 기복이 크고 책임이 흐릿한 사람처럼 bad match pattern을 구체적으로 쓴다.",
-      "보완 기운: 수 부족, 화 부족, 토 과다 같은 오행 흐름과 감정 완충, 표현 온도를 연결한다.",
+      "보완 기운: 실제 제공된 오행 과다/부족 흐름과 감정 완충, 표현 온도를 연결한다.",
       "MBTI 보완 유형을 구체적으로 나열하지 마라. 아직 별도 보완 유형 scorer가 제공되지 않았으므로, 관계에서는 필요한 성향만 설명하라.",
       "MBTI 관계 기준: 감정을 천천히 풀어주는 사람, 약속을 지키는 사람, 생활 리듬이 안정적인 사람처럼 성향 기준을 설명하고 구체 MBTI type은 쓰지 않는다.",
       "연애와 관계 챕터에는 MBTI는 궁합 단정 기준이 아니라 관계 성향을 보는 보조 지표라는 한계/주의 문장을 자연스럽게 포함할 것.",
@@ -301,7 +362,7 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "final_message는 짧은 요약이 아니라 리포트 전체를 닫는 긴 마무리 챕터다.",
       "final_message는 최소한 일, 관계, 돈, 회복/표현 중 3개 이상을 연결해 실제 실천 방향으로 마무리하라.",
       "final_message는 단순 요약이 아니라 전체 리포트의 상징을 회수하는 장이다.",
-      "갑신일주, 가장 강한 길신/귀인, 가장 강한 주의 기운, 가장 중요한 보완 오행을 2~4개 골라 다시 묶어라.",
+      "제공된 일주, 가장 강한 길신/귀인, 가장 강한 주의 기운, 가장 중요한 보완 오행을 2~4개 골라 다시 묶어라.",
       "마지막에는 오늘부터 할 수 있는 3가지로 끝내라.",
       "final_message에는 '이 리포트의 마지막 핵심' 또는 '오늘부터는' 같은 닫는 문장을 넣고, 실제 선택된 사주 항목 2개 이상과 행동 문장 3개 이상을 포함하라.",
       "final_message hitReadingLines는 있어도 되지만, 마지막 방향성을 짧고 강하게 잡아라.",
@@ -322,7 +383,7 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "연애는 오행적으로 필요한 사람과 MBTI 관계 스타일을 함께 풀어라.",
       "연애는 보완되는 사람, 피해야 할 패턴, MBTI 관계 성향 기준을 단정하지 않는 방식으로 함께 설명한다.",
       "위험과 성장 챕터는 오행 부족/과다에 따른 생활 조언을 넣는다.",
-      "수 부족은 밤 산책, 수변 공간, 충분한 수분, 기록, 잠 루틴처럼 말하고, 화 부족은 햇빛, 가벼운 운동, 발표와 표현 연습처럼 말하며, 토 과다는 책임 덜어내기와 경계선 정리로 말한다.",
+      "실제 제공된 부족/과다 오행이 있으면 그 항목에 맞는 생활 루틴으로 말하고, 제공되지 않은 오행 항목은 예시라도 쓰지 않는다.",
       "읽는 재미를 위해 비유와 실제 상황 예시를 넣어라.",
       "사용자에게 보이는 리포트 본문에 의료·심리치료·법률·투자 자문처럼 보이는 표현을 쓰지 마라.",
       "금지: 진단, 치료, 정신질환, 우울증, 불안장애, 투자 추천, 법률 자문, 반드시, 무조건, 100%, 보장, 운명 확정.",
@@ -348,6 +409,11 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       `MBTI: ${input.mbtiType}`,
       "이번 리포트에서 사용할 수 있는 사주 용어:",
       allowedSajuTermLines,
+      "이번 원국에서 확인되지 않은 대표 금지 항목:",
+      forbiddenSajuTermLines,
+      "이 리포트에서 사용할 수 있는 사주 항목은 selected/computed 목록에 있는 항목뿐이다.",
+      "목록에 없는 사주 용어는 쓰지 마라.",
+      "예시 문장에 나온 항목이라도 이번 원국에 없으면 절대 쓰지 마라.",
       "목록에 없는 신살, 귀인, 일주, 십성, 오행, 격국, 패턴은 절대 언급하지 마라.",
       "출력은 comprehensive_v2_draft JSON 객체 하나만 반환한다.",
       "chapters는 opening, saju_identity, personality_pattern, work_money_study, love_relationships, people_family_environment, risk_and_growth, final_message 8개를 정확히 포함한다.",
@@ -376,7 +442,7 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "좋은 예: 편관은 이 사주를 편하게 두지 않는 압박입니다. 문제가 생기면 내가 처리해야 한다는 감각이 먼저 올라옵니다. 정관은 그 압박을 공식 역할과 명예로 정리하려는 힘입니다.",
       "나쁜 예: 회복을 보완해야 합니다.",
       "좋은 예: 하루 중 아무 성과도 내지 않는 시간을 일정표에 넣어야 합니다. 이 사주에서 휴식은 감정 문제가 아니라 성능 유지 장치입니다.",
-      "좋은 예: 사주상 갑신일주와 편관 구조가 먼저 보입니다. 여기에 입력한 MBTI의 해결 중심 성향이 겹치면서, 당신은 문제를 보면 기다리기보다 바로 구조를 잡으려는 쪽으로 드러납니다.",
+      "좋은 예: 사주상 제공된 일주와 실제 선택된 십성 구조가 먼저 보입니다. 여기에 입력한 MBTI의 행동 성향이 겹치면서, 문제를 대하는 방식이 생활 장면으로 드러납니다.",
       `나쁜 예: ${input.mbtiType}라서 리더십이 강합니다.`,
       "좋은 직설 예: 사람을 싫어하는 건 아닌데, 비효율적인 사람을 오래 기다리는 데 에너지를 많이 씁니다.",
       "좋은 명중 예: 사람들과 대화할 때 상대가 한참 설명하기 전에 이미 결론이 보이는 상황 많지 않나요? 문제는 그 결론이 맞아도 상대는 내 말을 자른다고 느낄 수 있다는 점입니다.",
@@ -389,7 +455,7 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "work_money_study에는 자격증 공부를 시작했지만 목적이 안 보이면 금방 식는 장면, 전문서를 읽을 때 목차와 실전 적용 포인트부터 보는 장면, 업무에서 누가 정리하지 않으면 본인이 표와 기준을 만드는 장면, 돈을 벌 방법은 빨리 보지만 계좌 분리와 방어 규칙이 없으면 새는 장면을 구체적으로 넣는다.",
       "love_relationships는 연애, 이상형, 표현 방식, 만나는 환경, 약점과 보완 상대를 함께 설명한다.",
       "love_relationships에는 상대가 서운함을 말했는데 위로보다 해결책이 먼저 나가는 장면, 호감은 있는데 말투가 업무 보고처럼 나가는 장면, 감정 기복이 큰 사람에게 처음엔 끌려도 나중에 피곤해지는 장면, 데이트에서 분위기보다 약속 습관과 생활 리듬을 더 보게 되는 장면을 구체적으로 넣는다.",
-      "love_relationships에는 부족한 수/화 기운을 보완하는 사람, 정서적 완충이 되는 사람, 피해야 할 패턴, MBTI 관계 성향 기준을 단정하지 않는 방식으로 넣는다.",
+      "love_relationships에는 실제 제공된 보완 오행 흐름, 정서적 완충이 되는 사람, 피해야 할 패턴, MBTI 관계 성향 기준을 단정하지 않는 방식으로 넣는다.",
       "love_relationships.solutionLines에는 반드시 맞는 상대: ..., 피해야 할 상대: ..., 보완 기운: ..., MBTI 관계 기준: ... 형식의 실천 조언을 넣는다.",
       "MBTI 관계 기준 줄에는 구체 MBTI type을 나열하지 말고 필요한 성향과 생활 태도만 쓴다.",
       "MBTI는 궁합을 단정하는 기준이 아니라 관계에서 필요한 대화 속도, 감정 표현 방식, 약속 습관을 보는 보조 지표라고 설명한다.",
@@ -401,13 +467,12 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "risk_and_growth에는 밤 산책, 수변 공간, 충분한 수분, 깊은 사색과 기록, 잠 루틴, 햇빛, 가벼운 운동, 발표와 표현 연습, 책임 덜어내기, 경계선 긋기 같은 생활 조언을 넣는다.",
       "risk_and_growth 좋은 예: 지치기 전까지 멈추는 신호를 잘 못 보는 편일 수 있습니다.",
       "risk_and_growth 좋은 예: 문제는 체력이 약해서가 아니라, 책임을 내려놓는 기준이 늦게 생긴다는 점입니다.",
-      "risk_and_growth 좋은 예: 수 부족은 쉬어도 머리가 계속 켜져 있는 식으로 나타날 수 있으니, 밤 산책·수면·기록 같은 식히는 루틴이 필요합니다.",
-      "risk_and_growth 좋은 예: 화 부족은 표현을 늦게 만들 수 있으니, 짧은 칭찬과 감정 표현을 의식적으로 밖으로 내야 합니다.",
-      "risk_and_growth 좋은 예: 토 과다는 책임을 쌓아두게 하므로, 맡을 일과 버릴 일을 명확히 나눠야 합니다.",
+      "risk_and_growth 좋은 예: 실제 부족 오행이 있으면 쉬어도 머리가 계속 켜져 있는 장면, 표현이 늦어지는 장면처럼 제공된 항목에 맞게 풀어라.",
+      "risk_and_growth 좋은 예: 실제 과다 오행이 있으면 책임이 쌓이거나 과열되는 장면처럼 제공된 항목에 맞게 풀어라.",
       "final_message는 짧은 위로가 아니라 방향성 있는 마무리로 쓴다.",
       "final_message는 긴 마무리 챕터로 쓰고 finalAdvice와 중복되지 않게 전체 방향을 정리한다.",
       "final_message는 단순 요약이 아니라 전체 리포트의 상징을 회수하는 장이다.",
-      "갑신일주, 가장 강한 길신/귀인, 가장 강한 주의 기운, 가장 중요한 보완 오행을 2~4개 골라 다시 묶어라.",
+      "제공된 일주, 가장 강한 길신/귀인, 가장 강한 주의 기운, 가장 중요한 보완 오행을 2~4개 골라 다시 묶어라.",
       "마지막에는 오늘부터 할 수 있는 3가지로 끝내라.",
       "final_message에는 '이 리포트의 마지막 핵심' 또는 '오늘부터는' 같은 닫는 문장을 넣고, 실제 선택된 사주 항목 2개 이상과 행동 문장 3개 이상을 포함하라.",
       "final_message hitReadingLines는 있어도 되지만, 마지막 방향성을 짧고 강하게 잡아라.",
@@ -453,10 +518,10 @@ export function buildOpenAIComprehensiveReportRepairMessages(input: {
     input.userDisplayName !== undefined && input.userDisplayName.trim().length > 0
       ? input.userDisplayName.trim()
       : "사용자";
-  const allowedSajuTermLines =
-    input.allowedSajuTerms.length > 0
-      ? input.allowedSajuTerms.map((term) => `- ${term}`).join("\n")
-      : "- 없음";
+  const allowedSajuTermLines = formatSajuTermLines(input.allowedSajuTerms);
+  const forbiddenSajuTermLines = formatSajuTermLines(
+    createForbiddenSajuTerms({ allowedSajuTerms: input.allowedSajuTerms }),
+  );
 
   return {
     system: [
@@ -475,6 +540,13 @@ export function buildOpenAIComprehensiveReportRepairMessages(input: {
       "아래 validation errors만 고쳐라.",
       "사주 용어는 evidence에 있는 것만 사용하라.",
       "목록에 없는 신살, 귀인, 일주, 십성, 오행, 격국, 패턴은 절대 언급하지 마라.",
+      "이 리포트에서 사용할 수 있는 사주 항목은 selected/computed 목록에 있는 항목뿐이다.",
+      "목록에 없는 사주 용어는 쓰지 마라.",
+      "예시 문장에 나온 항목이라도 이번 원국에 없으면 절대 쓰지 마라.",
+      "UNSUPPORTED_SAJU_TERM가 있으면 본문에 이번 원국에서 확인되지 않은 사주 항목이 들어간 것이다.",
+      "해당 항목을 삭제하거나, 실제 확인된 항목으로만 바꿔라.",
+      "이번 원국에서 허용된 항목 목록 외의 사주 용어를 쓰지 마라.",
+      "대체가 필요하면 allowed list 안의 오행/구조/귀인만 사용하고, 문맥상 안전하지 않으면 feature명을 삭제하고 회복과 감정 완충 같은 일반 표현으로 바꿔라.",
       "본문을 더 길고 구체적으로 보강하라.",
       "사용자에게 보이는 본문에서 초안, 원고, 작성된 글, 생성된 내용, 문서, 텍스트 같은 제작/작성 메타 표현을 제거하라.",
       "같은 의미를 자연스러운 리포트 문장으로 바꿔라.",
@@ -515,7 +587,7 @@ export function buildOpenAIComprehensiveReportRepairMessages(input: {
       "risk_and_growth는 지치기 전 멈추는 신호, 책임을 내려놓는 기준, 밤 산책·수면·기록, 짧은 감정 표현, 맡을 일과 버릴 일 구분을 구체적으로 보강한다.",
       "final_message는 긴 마무리 챕터로 보강한다.",
       "final_message는 단순 요약이 아니라 전체 리포트의 상징을 회수하는 장이다.",
-      "갑신일주, 가장 강한 길신/귀인, 가장 강한 주의 기운, 가장 중요한 보완 오행을 2~4개 골라 다시 묶어라.",
+      "제공된 일주, 가장 강한 길신/귀인, 가장 강한 주의 기운, 가장 중요한 보완 오행을 2~4개 골라 다시 묶어라.",
       "마지막에는 오늘부터 할 수 있는 3가지로 끝내라.",
       "FINAL_MESSAGE_CLOSING_MISSING이 있으면 final_message에 '이 리포트의 마지막 핵심' 또는 '오늘부터는'으로 시작하는 closing 문장, 실제 선택된 사주 항목 2개 이상, 행동 문장 3개 이상을 추가하라.",
       "final_message body는 전체 핵심 재정리, 사주 핵심 구조, MBTI 보조 해석, 일/관계/돈/회복 중 최소 3개 실천 방향, 오늘부터 할 수 있는 작은 실행 3개 이상을 포함한다.",
@@ -526,6 +598,10 @@ export function buildOpenAIComprehensiveReportRepairMessages(input: {
       `MBTI: ${input.mbtiType}`,
       "이번 repair에서 사용할 수 있는 사주 용어:",
       allowedSajuTermLines,
+      "이번 원국에서 확인되지 않은 대표 금지 항목:",
+      forbiddenSajuTermLines,
+      "UNSUPPORTED_SAJU_TERM가 있으면 그 항목은 삭제하거나 실제 허용된 항목으로만 바꿔라.",
+      "이번 원국에서 허용된 항목 목록 외의 사주 용어를 쓰지 마라.",
       "validation errors:",
       ...input.validationErrors.map((error) => `- ${error}`),
       "수정할 기존 JSON:",
