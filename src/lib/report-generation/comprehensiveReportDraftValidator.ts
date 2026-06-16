@@ -473,6 +473,20 @@ const personalityDirectHitSajuMarkers = [
   "귀문관살",
 ] as const;
 const directHitSceneMarkersByChapter = {
+  saju_identity: [
+    "압박이 걸리는 자리",
+    "기준을 빨리 세우고",
+    "판을 정리",
+    "상대가",
+    "결론",
+    "도움을 요청",
+    "혼자 정리",
+    "돈이 들어오면",
+    "묶어둘지",
+    "사람들과 대화",
+    "허점",
+    "돈 쓰는 방식",
+  ],
   personality_pattern: personalityDirectHitSceneMarkers,
   work_money_study: [
     "돈이 들어오면",
@@ -507,6 +521,17 @@ const directHitSceneMarkersByChapter = {
   ],
 } as const satisfies Partial<Record<ComprehensiveReportV2ChapterId, readonly string[]>>;
 const directHitSajuMarkersByChapter = {
+  saju_identity: [
+    "갑신일주",
+    "편관",
+    "정관",
+    "천을귀인",
+    "무인성",
+    "재고귀인",
+    "편재",
+    "정재",
+    "현침살",
+  ],
   personality_pattern: personalityDirectHitSajuMarkers,
   work_money_study: [
     "재고귀인",

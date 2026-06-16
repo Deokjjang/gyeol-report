@@ -253,6 +253,9 @@ function createGenericPersonalityChapterBody(): string {
 }
 
 function createGenericCoreChapterBody(chapterId: ComprehensiveReportV2ChapterId): string {
+  if (chapterId === "saju_identity") {
+    return "사주가 보여주는 기본 형상에서는 갑목과 갑신일주, 편관과 정관, 재고귀인과 편재·정재를 함께 참고합니다. 갑목은 방향을 세우는 힘이고 갑신일주는 긴장 속에서 선을 잡는 구조입니다. 편관과 정관은 역할 의식으로, 재고귀인은 자원을 묶어두는 감각으로 볼 수 있습니다. 이 문단은 사주의 기본 형상이 목표 설정, 자원 관리, 역할 의식, 판단 방식으로 이어진다는 점을 길게 설명합니다. 다만 사용자가 바로 떠올릴 수 있는 특정 순간은 일부러 비워 둡니다. 실제 행동을 보여 주지 않고 용어의 의미와 큰 방향만 반복하므로, deterministic rescue가 들어오지 않으면 직접 체감 장면으로 보기 어렵습니다. 이 설명은 길이는 충분하지만 생활 속에서 어떤 행동으로 나타나는지 보여 주는 장면은 빠진 상태로 남겨 둡니다.";
+  }
   if (chapterId === "work_money_study") {
     return "일, 돈, 공부가 연결되는 방식에서는 갑목의 방향성과 갑신일주의 압박 속 기준을 먼저 놓고 봅니다. 재고귀인은 성과를 흩뜨리지 않고 관리하려는 흐름이고, 편재와 정재는 자원 흐름과 보관 감각을 함께 보여줍니다. 입력한 ENTJ 성향은 효율과 목표 정리 쪽에서 이 흐름을 보조합니다. 직무 학습과 사업 학습은 목표를 작게 나누고 기록하는 방식에서 안정됩니다. 이 설명은 충분히 길지만 사용자가 바로 떠올릴 수 있는 특정 순간을 의도적으로 넣지 않습니다. 자원과 학습과 성과를 연결해 설명하되 직접 장면은 부족한 상태로 둡니다.";
   }
@@ -269,6 +272,9 @@ function createGenericCoreChapterBody(chapterId: ComprehensiveReportV2ChapterId)
 function createGenericCoreChapterBodyWithoutFeatureEvidence(
   chapterId: ComprehensiveReportV2ChapterId,
 ): string {
+  if (chapterId === "saju_identity") {
+    return "사주가 보여주는 기본 형상에서는 갑목과 갑신일주의 기준 감각을 중심으로 봅니다. 사용자는 방향을 세우고 결과를 정리하려는 편이며, 입력한 ENTJ 성향은 목표를 잡는 언어로 보조될 수 있습니다. 다만 이 문단은 일부러 구체적인 순간을 넣지 않고, 기본적인 성향과 구조만 설명합니다. 실제 행동을 떠올릴 수 있는 장면은 빠져 있으므로 근거 없이 만들어지면 안 됩니다. 이 문단은 길이를 맞추기 위해 사주 구조의 큰 방향과 보조 성향의 의미를 반복하지만, 실제 행동으로 확인되는 순간은 끝까지 넣지 않습니다. 사주 핵심 구조가 성향, 판단, 역할, 자원 관리로 이어진다는 말은 충분히 이어가지만 사용자가 바로 떠올릴 수 있는 특정 상황은 넣지 않습니다. 따라서 deterministic rescue가 실제 선택된 feature 없이 작동하면 안 되며, 이 문장은 끝까지 일반적인 설명으로만 남아야 합니다.";
+  }
   if (chapterId === "work_money_study") {
     return "일, 자원, 학습의 흐름에서는 갑목과 갑신일주의 기준 감각을 중심으로 봅니다. 입력한 ENTJ 성향은 목표를 세우고 성과를 관리하려는 언어로 보조될 수 있습니다. 사용자는 결과가 보이는 방식에서 안정감을 얻고, 막연한 흥미보다 방향이 분명한 과제에서 힘을 내기 쉽습니다. 다만 이 문단은 일부러 구체적인 순간을 넣지 않고, 성과와 학습과 자원 운영의 큰 방향만 설명합니다. 실제 행동을 떠올릴 수 있는 구체 장면은 빠져 있으므로 근거 없이 만들어지면 안 됩니다.";
   }
@@ -996,11 +1002,12 @@ describe("OpenAI comprehensive report writer", () => {
     );
   });
 
-  it("adds deterministic direct-hit scenes for work love and people chapters", async () => {
+  it("adds deterministic direct-hit scenes for identity work love and people chapters", async () => {
     const genericCoreDraft = {
       ...createValidDraft(),
       chapters: createValidDraft().chapters.map((chapter) =>
         [
+          "saju_identity",
           "work_money_study",
           "love_relationships",
           "people_family_environment",
@@ -1009,9 +1016,9 @@ describe("OpenAI comprehensive report writer", () => {
               ...chapter,
               body: createGenericCoreChapterBody(chapter.chapterId),
               hitReadingLines: [
-                "사용자님은 장점과 주의점이 있습니다.",
-                "사용자님은 기준이 분명한 편입니다.",
                 "사용자님은 성장할 수 있습니다.",
+                "사용자님은 장점과 단점이 있습니다.",
+                "사용자님은 성격이 좋습니다.",
               ],
             }
           : chapter,
@@ -1034,6 +1041,9 @@ describe("OpenAI comprehensive report writer", () => {
     const chapters = result.draft.version === "comprehensive_v2_draft"
       ? result.draft.chapters
       : [];
+    const identityChapter = chapters.find(
+      (chapter) => chapter.chapterId === "saju_identity",
+    );
     const workChapter = chapters.find(
       (chapter) => chapter.chapterId === "work_money_study",
     );
@@ -1045,6 +1055,8 @@ describe("OpenAI comprehensive report writer", () => {
     );
     const serialized = JSON.stringify(result.draft);
 
+    expect(identityChapter?.hitReadingLines[0]).toContain("압박이 걸리는 자리");
+    expect(identityChapter?.hitReadingLines[0]).toContain("갑신일주");
     expect(workChapter?.hitReadingLines[0]).toContain("돈이 들어오면");
     expect(workChapter?.hitReadingLines[0]).toContain("재고귀인");
     expect(loveChapter?.hitReadingLines[0]).toMatch(/상대가 서운함|업무 보고처럼/);
@@ -1062,6 +1074,7 @@ describe("OpenAI comprehensive report writer", () => {
       ...createValidDraft(),
       chapters: createValidDraft().chapters.map((chapter) =>
         [
+          "saju_identity",
           "work_money_study",
           "love_relationships",
           "people_family_environment",
@@ -1073,9 +1086,9 @@ describe("OpenAI comprehensive report writer", () => {
                 chapter.chapterId,
               ),
               hitReadingLines: [
-                "사용자님은 장점과 주의점이 있습니다.",
-                "사용자님은 기준이 분명한 편입니다.",
                 "사용자님은 성장할 수 있습니다.",
+                "사용자님은 장점과 단점이 있습니다.",
+                "사용자님은 성격이 좋습니다.",
               ],
             }
           : chapter,
@@ -1106,7 +1119,7 @@ describe("OpenAI comprehensive report writer", () => {
     expect(callCount).toBeGreaterThanOrEqual(1);
     expect(error.stage).toBe("draft_validation");
     expect(error.validationErrors?.join("\n")).toContain(
-      "DIRECT_HIT_READING_TOO_GENERIC: work_money_study",
+      "DIRECT_HIT_READING_TOO_GENERIC: saju_identity",
     );
     expect(error.validationErrors?.join("\n")).toContain(
       "DIRECT_HIT_READING_TOO_GENERIC: love_relationships",

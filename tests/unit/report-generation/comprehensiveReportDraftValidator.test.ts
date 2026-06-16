@@ -918,6 +918,7 @@ describe("comprehensive report draft validator", () => {
   });
 
   it.each([
+    "saju_identity",
     "personality_pattern",
     "work_money_study",
     "love_relationships",
@@ -951,6 +952,21 @@ describe("comprehensive report draft validator", () => {
   });
 
   it.each([
+    {
+      chapterId: "saju_identity" as const,
+      body:
+        "갑신일주는 큰 나무가 날카로운 금 위에 선 모습이라, 압박이 걸리는 자리에서 오히려 기준을 빨리 세우고 판을 정리하려는 모습으로 드러날 수 있습니다. 편관과 정관의 역할 감각이 함께 있으면 흩어진 말보다 책임선과 결정 기준을 먼저 잡게 됩니다.",
+    },
+    {
+      chapterId: "saju_identity" as const,
+      body:
+        "천을귀인이 있어 도움의 통로는 있지만 무인성이 함께 보이면, 막히는 순간 바로 기대기보다 한참 혼자 정리한 뒤에야 도움을 요청하는 장면이 생길 수 있습니다. 이 흐름은 사주의 기본 형상 안에서 혼자 버티는 힘과 도움받는 통로가 같이 있음을 보여줍니다.",
+    },
+    {
+      chapterId: "saju_identity" as const,
+      body:
+        "재고귀인과 편재, 정재가 함께 있으면 돈이 들어오면 쓰는 즐거움보다 어디에 묶어둘지 먼저 생각하는 식으로 나타날 수 있습니다. 자원을 흘려보내기보다 계좌와 기록처럼 남는 자리를 정할 때 기본 형상이 선명해집니다.",
+    },
     {
       chapterId: "work_money_study" as const,
       body:

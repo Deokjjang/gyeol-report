@@ -433,6 +433,7 @@ const personalityEvidenceMarkers = [
 ] as const;
 
 const directHitRescueChapterIds = [
+  "saju_identity",
   "personality_pattern",
   "work_money_study",
   "love_relationships",
@@ -441,6 +442,20 @@ const directHitRescueChapterIds = [
 type DirectHitRescueChapterId = (typeof directHitRescueChapterIds)[number];
 
 const directHitSceneMarkersByChapter = {
+  saju_identity: [
+    "압박이 걸리는 자리",
+    "기준을 빨리 세우고",
+    "판을 정리",
+    "상대가",
+    "결론",
+    "도움을 요청",
+    "혼자 정리",
+    "돈이 들어오면",
+    "묶어둘지",
+    "사람들과 대화",
+    "허점",
+    "돈 쓰는 방식",
+  ],
   personality_pattern: personalitySceneMarkers,
   work_money_study: [
     "돈이 들어오면",
@@ -476,6 +491,17 @@ const directHitSceneMarkersByChapter = {
 } as const satisfies Record<DirectHitRescueChapterId, readonly string[]>;
 
 const directHitEvidenceMarkersByChapter = {
+  saju_identity: [
+    "갑신일주",
+    "편관",
+    "정관",
+    "천을귀인",
+    "무인성",
+    "재고귀인",
+    "편재",
+    "정재",
+    "현침살",
+  ],
   personality_pattern: personalityEvidenceMarkers,
   work_money_study: [
     "재고귀인",
@@ -505,6 +531,17 @@ const directHitEvidenceMarkersByChapter = {
 } as const satisfies Record<DirectHitRescueChapterId, readonly string[]>;
 
 const directHitRescueFeatureIdsByChapter = {
+  saju_identity: [
+    "day_pillar_gapsin",
+    "ten_god_qi_sha",
+    "ten_god_zheng_guan",
+    "gwiin_cheoneul",
+    "structure_no_resource",
+    "gwiin_jaego",
+    "ten_god_pian_cai",
+    "ten_god_zheng_cai",
+    "sinsal_hyeonchim",
+  ],
   work_money_study: [
     "gwiin_jaego",
     "gwiin_geumyeorok",
@@ -600,6 +637,8 @@ function getDirectHitRescueFeatureIds(
 ): ReadonlySet<string> {
   const featureIds = new Set<string>();
   const profileFeatureIdsByLabel: Record<string, readonly string[]> = {
+    "갑신": ["day_pillar_gapsin"],
+    "갑신일주": ["day_pillar_gapsin"],
     "재고귀인": ["gwiin_jaego"],
     "금여록": ["gwiin_geumyeorok"],
     "천을귀인": ["gwiin_cheoneul"],
@@ -634,7 +673,16 @@ function getDirectHitRescueFeatureIds(
   addProfileLabels(draft.profileTable.gwiinGilshin);
   addProfileLabels(draft.profileTable.excessiveElements);
   addProfileLabels(draft.profileTable.missingElements);
+  addProfileLabels([
+    draft.profileTable.dayPillar,
+    draft.profileTable.dayMaster,
+  ].filter((label): label is string => label !== undefined));
 
+  for (const chapterEvidence of evidencePacket?.selectedSajuFeatureEvidence ?? []) {
+    for (const feature of chapterEvidence.features) {
+      featureIds.add(feature.id);
+    }
+  }
   for (const scene of draft.sajuSignatureScenes ?? []) {
     for (const featureId of scene.featureIds) {
       featureIds.add(featureId);
@@ -680,6 +728,56 @@ function hasChapterRescueFeature(
     input.featureIds,
     directHitRescueFeatureIdsByChapter[input.chapterId],
   );
+}
+
+function buildSajuIdentityDirectHitRescue(input: {
+  readonly draft: ComprehensiveReportV2Draft;
+  readonly featureIds: ReadonlySet<string>;
+}): string | undefined {
+  const hasGapsinOfficer =
+    hasFeatureId(input.featureIds, "day_pillar_gapsin") &&
+    hasAnyFeatureId(input.featureIds, [
+      "ten_god_qi_sha",
+      "ten_god_zheng_guan",
+    ]);
+  const hasHelpRequestPattern =
+    hasFeatureId(input.featureIds, "gwiin_cheoneul") &&
+    hasFeatureId(input.featureIds, "structure_no_resource");
+  const hasMoneyStorage =
+    hasFeatureId(input.featureIds, "gwiin_jaego") &&
+    hasFeatureId(input.featureIds, "ten_god_pian_cai") &&
+    hasFeatureId(input.featureIds, "ten_god_zheng_cai");
+  const hasSharpReading = hasFeatureId(input.featureIds, "sinsal_hyeonchim");
+
+  if (hasGapsinOfficer) {
+    return [
+      "갑신일주는 큰 나무가 날카로운 금 위에 선 모습이라, 압박이 걸리는 자리에서 오히려 기준을 빨리 세우고 판을 정리하려는 모습으로 드러날 수 있습니다.",
+      "편관이나 정관의 역할 감각이 함께 있으면 문제가 생겼을 때 흩어진 말보다 먼저 책임선, 순서, 결정 기준을 잡으려는 쪽으로 움직이기 쉽습니다.",
+    ].join(" ");
+  }
+
+  if (hasHelpRequestPattern) {
+    return [
+      "천을귀인이 있어 도움의 통로는 있지만, 무인성이 함께 보이면 막히는 순간 바로 기대기보다 한참 혼자 정리한 뒤에야 도움을 요청하는 장면이 생길 수 있습니다.",
+      "이 사주의 기본 형상은 혼자 버티는 힘과 도움을 받는 통로가 같이 있으므로, 필요한 것을 짧게 말로 꺼낼수록 귀인의 흐름이 더 빨리 살아납니다.",
+    ].join(" ");
+  }
+
+  if (hasMoneyStorage) {
+    return [
+      "재고귀인과 편재, 정재가 함께 있으면 돈이 들어오면 쓰는 즐거움보다 어디에 묶어둘지 먼저 생각하는 식으로 나타날 수 있습니다.",
+      "자원을 흘려보내기보다 계좌, 기록, 반복 수익처럼 남는 자리를 정할 때 이 사주의 현실 감각이 더 선명해집니다.",
+    ].join(" ");
+  }
+
+  if (hasSharpReading) {
+    return [
+      "현침살이 잡히면 사람들과 대화할 때 상대의 설명을 끝까지 듣기 전에도 핵심과 허점이 먼저 보이는 장면이 생길 수 있습니다.",
+      "이 예리함은 사주의 기본 형상 안에서 검수와 판단의 힘이 되지만, 바로 말하면 상대에게는 평가처럼 들릴 수 있어 전달 순서가 중요합니다.",
+    ].join(" ");
+  }
+
+  return undefined;
 }
 
 function buildWorkMoneyStudyDirectHitRescue(input: {
@@ -896,6 +994,9 @@ function buildDirectHitRescueText(input: {
     return undefined;
   }
 
+  if (input.chapterId === "saju_identity") {
+    return buildSajuIdentityDirectHitRescue(input);
+  }
   if (input.chapterId === "work_money_study") {
     return buildWorkMoneyStudyDirectHitRescue(input);
   }
