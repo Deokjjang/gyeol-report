@@ -956,6 +956,43 @@ Foundation files:
 Future REPORT-18B should add the compatibility report writer, schema, render
 surface, and product UI on top of this packet.
 
+## REPORT-18B Compatibility Writer And Render
+
+REPORT-18B adds the first renderable draft path for `사주×MBTI 궁합 리포트 v1.0`.
+It still does not add payment wiring, persistence changes, sharing links, or
+database migrations.
+
+Compatibility draft policy:
+
+- Draft version: `compatibility_v1_draft`.
+- Product type: `saju_mbti_compatibility`, product version `1.0`.
+- The launch price planning value is 990 KRW, but this is documentation only in
+  REPORT-18B.
+- The draft includes an opening, total score, score breakdown, two-person chart
+  comparison, key compatibility points, narrative chapters, final advice, and
+  safety notes.
+- Score caution must explain that the score is a summary of alignment and
+  adjustment points, not a success/failure or destiny judgment.
+
+Writer/render policy:
+
+- `openaiCompatibilityReportWriterPrompt` receives only the compatibility
+  evidence packet, allowed Saju terms, and the two input MBTI terms.
+- The writer may repair missing direct-hit scenes, unsafe copy, missing final
+  advice, candidate MBTI recommendations, and unsupported Saju terms, but it may
+  not silently pass an invalid draft.
+- Result rendering shows the product label, relationship type, two person
+  labels, total score, itemized score cards, chart comparison, key points,
+  chapters, final advice, and safety notes.
+- Compatibility v1.0 does not recommend MBTI candidate types. It analyzes only
+  the two input MBTIs when present.
+- Unsafe fixed-outcome language such as `천생연분 확정`, `운명 확정`,
+  `이별 확정`, `이혼 확정`, and `소울메이트 확정` is blocked.
+
+Future REPORT-18C should refine the compatibility table UX, score copy,
+chapter order, tone, and product persistence/share integration after reviewing
+actual generated drafts.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
