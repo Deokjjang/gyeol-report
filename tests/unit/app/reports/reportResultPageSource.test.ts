@@ -2,10 +2,15 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
-const source = readFileSync(
+const pageSource = readFileSync(
   join(process.cwd(), "src/app/reports/[reportId]/page.tsx"),
   "utf8",
 );
+const compatibilityViewSource = readFileSync(
+  join(process.cwd(), "src/app/reports/[reportId]/CompatibilityReportView.tsx"),
+  "utf8",
+);
+const source = `${pageSource}\n${compatibilityViewSource}`;
 
 describe("report result page source", () => {
   it("renders generated report draft sections and safe fallback states", () => {
