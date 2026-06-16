@@ -422,11 +422,18 @@ const personalitySceneMarkers = [
   "기준표",
   "마감",
   "상대 말",
+  "상대가 말",
+  "원리상",
+  "자료",
+  "조건과 예외",
+  "생각 정리",
 ] as const;
 const personalityEvidenceMarkers = [
   "현침살",
   "갑신일주",
+  "정축일주",
   "MBTI",
+  "INTP",
   "편관",
   "정관",
   "귀문관살",
@@ -455,6 +462,10 @@ const directHitSceneMarkersByChapter = {
     "사람들과 대화",
     "허점",
     "돈 쓰는 방식",
+    "원리상",
+    "자료",
+    "조건과 예외",
+    "생각 정리",
   ],
   personality_pattern: personalitySceneMarkers,
   work_money_study: [
@@ -467,6 +478,9 @@ const directHitSceneMarkersByChapter = {
     "고객 기반",
     "반복 수익",
     "실전 적용",
+    "예산 분류",
+    "자료 정리",
+    "자동저축",
   ],
   love_relationships: [
     "상대가 서운함",
@@ -487,12 +501,16 @@ const directHitSceneMarkersByChapter = {
     "기준표",
     "누가 무엇을",
     "정리해 주는 사람",
+    "원리",
+    "자료",
+    "조건과 예외",
   ],
 } as const satisfies Record<DirectHitRescueChapterId, readonly string[]>;
 
 const directHitEvidenceMarkersByChapter = {
   saju_identity: [
     "갑신일주",
+    "정축일주",
     "편관",
     "정관",
     "천을귀인",
@@ -501,6 +519,8 @@ const directHitEvidenceMarkersByChapter = {
     "편재",
     "정재",
     "현침살",
+    "식신",
+    "INTP",
   ],
   personality_pattern: personalityEvidenceMarkers,
   work_money_study: [
@@ -509,7 +529,10 @@ const directHitEvidenceMarkersByChapter = {
     "편재",
     "정재",
     "MBTI",
+    "INTP",
     "갑신일주",
+    "정축일주",
+    "식신",
   ],
   love_relationships: [
     "홍염살",
@@ -527,14 +550,17 @@ const directHitEvidenceMarkersByChapter = {
     "무인성",
     "현침살",
     "MBTI",
+    "INTP",
   ],
 } as const satisfies Record<DirectHitRescueChapterId, readonly string[]>;
 
 const directHitRescueFeatureIdsByChapter = {
   saju_identity: [
     "day_pillar_gapsin",
+    "day_pillar_jeongchuk",
     "ten_god_qi_sha",
     "ten_god_zheng_guan",
+    "ten_god_shi_shen",
     "gwiin_cheoneul",
     "structure_no_resource",
     "gwiin_jaego",
@@ -552,6 +578,8 @@ const directHitRescueFeatureIdsByChapter = {
     "element_earth_excess",
     "structure_jaeda_sinyak",
     "day_pillar_gapsin",
+    "day_pillar_jeongchuk",
+    "ten_god_shi_shen",
   ],
   love_relationships: [
     "sinsal_hongyeom",
@@ -639,12 +667,15 @@ function getDirectHitRescueFeatureIds(
   const profileFeatureIdsByLabel: Record<string, readonly string[]> = {
     "갑신": ["day_pillar_gapsin"],
     "갑신일주": ["day_pillar_gapsin"],
+    "정축": ["day_pillar_jeongchuk"],
+    "정축일주": ["day_pillar_jeongchuk"],
     "재고귀인": ["gwiin_jaego"],
     "금여록": ["gwiin_geumyeorok"],
     "천을귀인": ["gwiin_cheoneul"],
     "암록": ["gwiin_amrok"],
     "편재": ["ten_god_pian_cai"],
     "정재": ["ten_god_zheng_cai"],
+    "식신": ["ten_god_shi_shen"],
     "편관": ["ten_god_qi_sha"],
     "정관": ["ten_god_zheng_guan"],
     "재다신약": ["structure_jaeda_sinyak"],
@@ -734,6 +765,9 @@ function buildSajuIdentityDirectHitRescue(input: {
   readonly draft: ComprehensiveReportV2Draft;
   readonly featureIds: ReadonlySet<string>;
 }): string | undefined {
+  const isIntp = input.draft.profileTable.mbti === "INTP";
+  const hasJeongchukIntp =
+    isIntp && hasFeatureId(input.featureIds, "day_pillar_jeongchuk");
   const hasGapsinOfficer =
     hasFeatureId(input.featureIds, "day_pillar_gapsin") &&
     hasAnyFeatureId(input.featureIds, [
@@ -748,6 +782,13 @@ function buildSajuIdentityDirectHitRescue(input: {
     hasFeatureId(input.featureIds, "ten_god_pian_cai") &&
     hasFeatureId(input.featureIds, "ten_god_zheng_cai");
   const hasSharpReading = hasFeatureId(input.featureIds, "sinsal_hyeonchim");
+
+  if (hasJeongchukIntp) {
+    return [
+      "정축일주는 차가운 흙 속의 작은 불씨처럼, 밖으로 바로 밀어붙이기보다 안에서 원리와 구조를 먼저 정리하는 모습으로 드러날 수 있습니다.",
+      "INTP 성향이 함께 있으면 상대가 말하는 동안 바로 반박하기보다 원리상 어디가 맞지 않는지, 어떤 자료와 조건과 예외가 빠졌는지를 조용히 정리하는 장면이 생기기 쉽습니다.",
+    ].join(" ");
+  }
 
   if (hasGapsinOfficer) {
     return [
@@ -784,8 +825,10 @@ function buildWorkMoneyStudyDirectHitRescue(input: {
   readonly draft: ComprehensiveReportV2Draft;
   readonly featureIds: ReadonlySet<string>;
 }): string | undefined {
+  const isIntp = input.draft.profileTable.mbti === "INTP";
+  const hasJaego = hasFeatureId(input.featureIds, "gwiin_jaego");
   const hasMoneyStorage =
-    hasFeatureId(input.featureIds, "gwiin_jaego") &&
+    hasJaego &&
     hasAnyFeatureId(input.featureIds, [
       "ten_god_pian_cai",
       "ten_god_zheng_cai",
@@ -797,7 +840,17 @@ function buildWorkMoneyStudyDirectHitRescue(input: {
     "ten_god_qi_sha",
     "ten_god_zheng_guan",
     "day_pillar_gapsin",
+    "day_pillar_jeongchuk",
+    "ten_god_shi_shen",
   ]);
+
+  if (isIntp && (hasJaego || hasMoneyLuck)) {
+    return [
+      "돈이나 자료가 들어오면 크게 확장하기보다 먼저 기록하고 예산 분류를 나누고 새는 곳을 막고 싶어질 수 있습니다.",
+      "공부나 일에서도 바로 실행하기보다 자료 정리, 조건 비교, 자동저축처럼 조용히 쌓이는 구조를 만들 때 안정감이 살아납니다.",
+      "이 흐름은 재고귀인의 저장 감각이 INTP의 분석과 검증 성향과 함께 움직일 때 더 선명해집니다.",
+    ].join(" ");
+  }
 
   if (hasMoneyStorage || hasMoneyLuck) {
     return [
@@ -860,6 +913,7 @@ function buildPeopleFamilyEnvironmentDirectHitRescue(input: {
   readonly draft: ComprehensiveReportV2Draft;
   readonly featureIds: ReadonlySet<string>;
 }): string | undefined {
+  const isIntp = input.draft.profileTable.mbti === "INTP";
   const peopleSceneEvidenceFeatureIds = new Set(
     (input.draft.sajuSignatureScenes ?? [])
       .filter((scene) =>
@@ -894,6 +948,14 @@ function buildPeopleFamilyEnvironmentDirectHitRescue(input: {
   const hasSharpRelationPattern =
     hasAnyFeatureId(input.featureIds, sharpRelationFeatureIds) ||
     hasAnyFeatureId(peopleSceneEvidenceFeatureIds, sharpRelationFeatureIds);
+
+  if (isIntp && hasHelpRequestPattern) {
+    return [
+      "가족이나 가까운 사람이 부탁을 꺼내거나 공부 자료가 막힐 때도 바로 결론을 내기보다, 먼저 원리와 조건을 확인하고 혼자 자료를 찾아보는 장면이 생길 수 있습니다.",
+      "천을귀인의 도움 통로가 있어도 무인성이 함께 있으면 질문하기 전 혼자 너무 오래 검토하다가 요청이 늦어질 수 있습니다.",
+      "그래서 막힌 지점은 완벽하게 정리된 뒤가 아니라, 자료와 조건과 예외를 짧게 나눈 상태에서 먼저 묻는 편이 부담을 줄입니다.",
+    ].join(" ");
+  }
 
   if (hasRoleCenter) {
     return [

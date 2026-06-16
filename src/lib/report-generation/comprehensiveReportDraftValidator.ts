@@ -463,11 +463,18 @@ const personalityDirectHitSceneMarkers = [
   "기준표",
   "마감",
   "상대 말",
+  "상대가 말",
+  "원리상",
+  "자료",
+  "조건과 예외",
+  "생각 정리",
 ] as const;
 const personalityDirectHitSajuMarkers = [
   "현침살",
   "갑신일주",
+  "정축일주",
   "ENTJ",
+  "INTP",
   "편관",
   "정관",
   "귀문관살",
@@ -486,6 +493,10 @@ const directHitSceneMarkersByChapter = {
     "사람들과 대화",
     "허점",
     "돈 쓰는 방식",
+    "원리상",
+    "자료",
+    "조건과 예외",
+    "생각 정리",
   ],
   personality_pattern: personalityDirectHitSceneMarkers,
   work_money_study: [
@@ -498,6 +509,9 @@ const directHitSceneMarkersByChapter = {
     "고객 기반",
     "반복 수익",
     "실전 적용",
+    "예산 분류",
+    "자료 정리",
+    "자동저축",
   ],
   love_relationships: [
     "상대가 서운함",
@@ -518,11 +532,15 @@ const directHitSceneMarkersByChapter = {
     "기준표",
     "누가 무엇을",
     "정리해 주는 사람",
+    "원리",
+    "자료",
+    "조건과 예외",
   ],
 } as const satisfies Partial<Record<ComprehensiveReportV2ChapterId, readonly string[]>>;
 const directHitSajuMarkersByChapter = {
   saju_identity: [
     "갑신일주",
+    "정축일주",
     "편관",
     "정관",
     "천을귀인",
@@ -531,6 +549,8 @@ const directHitSajuMarkersByChapter = {
     "편재",
     "정재",
     "현침살",
+    "식신",
+    "INTP",
   ],
   personality_pattern: personalityDirectHitSajuMarkers,
   work_money_study: [
@@ -539,7 +559,10 @@ const directHitSajuMarkersByChapter = {
     "편재",
     "정재",
     "ENTJ",
+    "INTP",
     "갑신일주",
+    "정축일주",
+    "식신",
   ],
   love_relationships: [
     "홍염살",
@@ -557,6 +580,7 @@ const directHitSajuMarkersByChapter = {
     "무인성",
     "현침살",
     "ENTJ",
+    "INTP",
   ],
 } as const satisfies Partial<Record<ComprehensiveReportV2ChapterId, readonly string[]>>;
 const genericHitReadingMarkers = [

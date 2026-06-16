@@ -93,6 +93,45 @@ describe("report differentiation modules", () => {
     expect(serialized).not.toContain("반안살");
   });
 
+  it("does not leak diagnostic-only 백호대살 into sodam modules", () => {
+    const { modules } = buildModulesForFixture("sodam-intp");
+    const serialized = JSON.stringify(modules);
+
+    expect(serialized).not.toContain("백호살");
+    expect(serialized).not.toContain("백호대살");
+  });
+
+  it("varies 재고귀인 advice by ENTJ and INTP context", () => {
+    const entj = JSON.stringify(buildModulesForFixture("deokmin-external-manse").modules);
+    const intp = JSON.stringify(buildModulesForFixture("sodam-intp").modules);
+
+    expect(entj).toContain("고객 기반");
+    expect(entj).toContain("반복 수익");
+    expect(intp).toContain("예산 분류");
+    expect(intp).toContain("자료 정리");
+    expect(entj).not.toContain("예산 분류");
+  });
+
+  it("varies 천을귀인 and 무인성 advice by ENTJ and INTP context", () => {
+    const entj = JSON.stringify(buildModulesForFixture("deokmin-external-manse").modules);
+    const intp = JSON.stringify(buildModulesForFixture("sodam-intp").modules);
+
+    expect(entj).toContain("역할 단위");
+    expect(intp).toContain("혼자 너무 오래 검토");
+    expect(intp).toContain("막힌 지점");
+  });
+
+  it("builds INTP modules with non-ENTJ scene language", () => {
+    const { modules } = buildModulesForFixture("sodam-intp");
+    const serialized = JSON.stringify(modules);
+
+    expect(serialized).toContain("원리");
+    expect(serialized).toContain("자료");
+    expect(serialized).toContain("조건과 예외");
+    expect(serialized).not.toContain("담당자·마감");
+    expect(serialized).not.toContain("담당자와 마감");
+  });
+
   it("builds useful modules for non-ENTJ fixtures", () => {
     const { modules } = buildModulesForFixture("money-resource-estp");
     const serialized = JSON.stringify(modules);

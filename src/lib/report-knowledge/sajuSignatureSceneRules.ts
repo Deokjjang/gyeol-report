@@ -59,6 +59,74 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
       "바로 지적하기보다 “제가 이해한 핵심은 이겁니다”로 시작하면 같은 말도 덜 날카롭게 전달됩니다.",
   },
   {
+    id: "jeongchuk_intp_inner_structure",
+    requiredFeatureIds: ["day_pillar_jeongchuk"],
+    mbtiTypes: ["INTP"],
+    topics: ["personality", "work", "relationship", "growth"],
+    sceneLines: [
+      "상대가 말하는 동안 바로 반박하기보다, 원리상 어디가 맞지 않는지 조용히 정리하는 장면이 생길 수 있습니다.",
+      "설명은 아직 밖으로 하지 않았지만 머릿속에는 이미 구조도와 조건표가 생겨 있을 수 있습니다.",
+      "결론보다 조건과 예외를 먼저 떠올리고, 말하기 전 생각 정리가 끝나야 입이 열리는 쪽에 가깝습니다.",
+    ],
+    sceneLine:
+      "상대가 말하는 동안 원리상 어디가 맞지 않는지 조용히 정리하는 장면이 생길 수 있습니다.",
+    interpretationLine:
+      "정축일주의 저장성과 INTP의 분석 성향이 겹치면 밖으로 바로 밀어붙이기보다 안에서 구조를 먼저 완성하려는 흐름이 강해집니다.",
+    practicalLine:
+      "생각을 끝까지 혼자 닫아 두기보다, 막힌 조건과 예외를 짧은 질문으로 꺼내면 흐름이 더 빨리 풀립니다.",
+  },
+  {
+    id: "jaego_intp_quiet_storage",
+    requiredFeatureIds: ["gwiin_jaego"],
+    mbtiTypes: ["INTP"],
+    topics: ["work", "money", "growth"],
+    sceneLines: [
+      "돈이나 자료가 들어오면 크게 확장하기보다, 먼저 기록하고 분류하고 새는 곳을 막고 싶어질 수 있습니다.",
+      "가계부, 예산 분류, 자동저축, 자료 정리처럼 조용히 쌓이는 구조에서 안정감이 살아납니다.",
+      "새 아이디어도 바로 실행하기보다 근거 자료를 모으고 비교표를 만든 뒤에야 마음이 놓일 수 있습니다.",
+    ],
+    sceneLine:
+      "돈이나 자료가 들어오면 먼저 기록하고 분류하고 새는 곳을 막고 싶어질 수 있습니다.",
+    interpretationLine:
+      "재고귀인의 저장 감각이 INTP의 분류와 검증 성향을 만나면 확장보다 정리와 보존 쪽에서 안정감이 살아납니다.",
+    practicalLine:
+      "기록, 예산 분류, 자동저축, 자료 정리처럼 조용히 쌓이는 구조가 잘 맞습니다.",
+  },
+  {
+    id: "cheoneul_no_resource_intp_delayed_question",
+    requiredFeatureIds: ["gwiin_cheoneul", "structure_no_resource"],
+    mbtiTypes: ["INTP"],
+    topics: ["relationship", "work", "growth"],
+    sceneLines: [
+      "질문하기 전에 혼자 자료를 찾아보고, 한참 뒤에야 막힌 지점을 짧게 묻는 장면이 생길 수 있습니다.",
+      "도움받을 통로는 있는데도 원리와 조건을 스스로 확인하느라 요청 신호가 늦어질 수 있습니다.",
+      "상대에게 바로 기대기보다 질문의 범위를 좁힌 뒤에야 말을 꺼내는 쪽이 더 편할 수 있습니다.",
+    ],
+    sceneLine:
+      "질문하기 전에 혼자 자료를 찾아보고, 한참 뒤에야 막힌 지점을 짧게 묻는 장면이 생길 수 있습니다.",
+    interpretationLine:
+      "천을귀인은 도움의 통로이고 무인성은 기대는 감각을 늦추므로, INTP의 검토 습관과 만나면 요청이 더 늦어질 수 있습니다.",
+    practicalLine:
+      "혼자 너무 오래 검토하지 말고, 막힌 지점을 짧게 정리해 묻는 편이 좋습니다.",
+  },
+  {
+    id: "hyeonchim_intp_logic_question",
+    requiredFeatureIds: ["sinsal_hyeonchim"],
+    mbtiTypes: ["INTP"],
+    topics: ["personality", "relationship", "growth"],
+    sceneLines: [
+      "논리 오류가 보여도 바로 지적하기보다, 조건과 예외를 머릿속에서 먼저 정리하는 장면이 생길 수 있습니다.",
+      "상대의 말에서 빠진 전제나 자료의 빈칸이 먼저 보이지만, 표현은 한 박자 늦게 나올 수 있습니다.",
+      "말을 꺼낼 때도 평가처럼 던지기보다 질문 형태로 바꾸면 같은 예리함이 훨씬 부드럽게 전달됩니다.",
+    ],
+    sceneLine:
+      "논리 오류가 보여도 바로 지적하기보다, 조건과 예외를 머릿속에서 먼저 정리하는 장면이 생길 수 있습니다.",
+    interpretationLine:
+      "현침살의 예리함이 INTP의 논리 검증 성향과 만나면 말보다 분석이 먼저 켜지는 흐름으로 나타납니다.",
+    practicalLine:
+      "논리 오류가 보여도 바로 말하기보다, 조건과 예외를 정리한 뒤 질문으로 꺼내세요.",
+  },
+  {
     id: "gapsin_qi_sha_pressure_leadership",
     requiredFeatureIds: ["day_pillar_gapsin", "ten_god_qi_sha"],
     topics: ["personality", "work", "growth"],

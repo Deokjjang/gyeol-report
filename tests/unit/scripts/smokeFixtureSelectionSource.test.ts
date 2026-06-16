@@ -15,6 +15,10 @@ const auditSmokeSource = readFileSync(
   join(process.cwd(), "scripts", "smoke_audit_saju_features.ts"),
   "utf8",
 );
+const distinctivenessSmokeSource = readFileSync(
+  join(process.cwd(), "scripts", "smoke_compare_report_distinctiveness.ts"),
+  "utf8",
+);
 const matrixSource = readFileSync(
   join(process.cwd(), "src", "lib", "report-knowledge", "reportQualityFixtureMatrix.ts"),
   "utf8",
@@ -46,6 +50,9 @@ describe("report smoke fixture selection source", () => {
     expect(saveSmokeSource).toContain("report fixture:");
     expect(auditSmokeSource).toContain("getSajuAuditFixture");
     expect(auditFormatterSource).toContain("audit fixture:");
+    expect(distinctivenessSmokeSource).toContain("--fixtures");
+    expect(distinctivenessSmokeSource).toContain("sodam-intp");
+    expect(distinctivenessSmokeSource).toContain("auditReportDistinctiveness");
   });
 
   it("routes report smoke through deokmin external pillars instead of hardcoded default facts", () => {
@@ -92,5 +99,7 @@ describe("report smoke fixture selection source", () => {
     expect(draftSmokeSource).toContain("differentiation modules count:");
     expect(draftSmokeSource).toContain("quality gate summary:");
     expect(draftSmokeSource).toContain("validator warnings count:");
+    expect(distinctivenessSmokeSource).toContain("cross-report distinctiveness");
+    expect(distinctivenessSmokeSource).toContain("verdict:");
   });
 });

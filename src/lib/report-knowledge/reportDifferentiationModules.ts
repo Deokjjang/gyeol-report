@@ -178,10 +178,82 @@ function buildDailySceneItems(
     }));
 }
 
+function hasSelectedFeature(
+  features: readonly SelectedSajuFeatureEvidenceItem[],
+  featureId: string,
+): boolean {
+  return features.some((feature) => feature.id === featureId);
+}
+
+function buildContextualAdviceItems(input: {
+  readonly selectedFeatures: readonly SelectedSajuFeatureEvidenceItem[];
+  readonly mbtiType: MbtiType;
+}): readonly ReportDifferentiationModuleItem[] {
+  const items: ReportDifferentiationModuleItem[] = [];
+  const hasJaego = hasSelectedFeature(input.selectedFeatures, "gwiin_jaego");
+  const hasCheoneulNoResource =
+    hasSelectedFeature(input.selectedFeatures, "gwiin_cheoneul") &&
+    hasSelectedFeature(input.selectedFeatures, "structure_no_resource");
+  const hasHyeonchim = hasSelectedFeature(input.selectedFeatures, "sinsal_hyeonchim");
+
+  if (input.mbtiType === "ENTJ" && hasJaego) {
+    items.push({
+      title: "재고귀인",
+      body: "사업, 프로젝트, 고객 기반, 반복 수익처럼 남는 구조를 먼저 보세요.",
+      sourceFeatureIds: ["gwiin_jaego"],
+    });
+  }
+  if (input.mbtiType === "INTP" && hasJaego) {
+    items.push({
+      title: "재고귀인",
+      body: "기록, 예산 분류, 자동저축, 자료 정리처럼 조용히 쌓이는 구조가 잘 맞습니다.",
+      sourceFeatureIds: ["gwiin_jaego"],
+    });
+  }
+
+  if (input.mbtiType === "ENTJ" && hasCheoneulNoResource) {
+    items.push({
+      title: "천을귀인 + 무인성",
+      body: "도움을 역할 단위로 요청하면 판이 빨리 풀립니다.",
+      sourceFeatureIds: ["gwiin_cheoneul", "structure_no_resource"],
+    });
+  }
+  if (input.mbtiType === "INTP" && hasCheoneulNoResource) {
+    items.push({
+      title: "천을귀인 + 무인성",
+      body: "질문하기 전 혼자 너무 오래 검토하지 말고, 막힌 지점을 짧게 정리해 묻는 편이 좋습니다.",
+      sourceFeatureIds: ["gwiin_cheoneul", "structure_no_resource"],
+    });
+  }
+
+  if (input.mbtiType === "ENTJ" && hasHyeonchim) {
+    items.push({
+      title: "현침살",
+      body: "바로 지적하기보다 역할과 기준을 먼저 확인하세요.",
+      sourceFeatureIds: ["sinsal_hyeonchim"],
+    });
+  }
+  if (input.mbtiType === "INTP" && hasHyeonchim) {
+    items.push({
+      title: "현침살",
+      body: "논리 오류가 보여도 바로 말하기보다, 조건과 예외를 정리한 뒤 질문으로 꺼내세요.",
+      sourceFeatureIds: ["sinsal_hyeonchim"],
+    });
+  }
+
+  return items;
+}
+
 function buildSwitchActionItems(input: {
+  readonly selectedFeatures: readonly SelectedSajuFeatureEvidenceItem[];
+  readonly mbtiType: MbtiType;
   readonly scenes?: readonly SajuSignatureScene[];
   readonly spotlight?: SajuFeatureSpotlightSection;
 }): readonly ReportDifferentiationModuleItem[] {
+  const contextualItems = buildContextualAdviceItems({
+    selectedFeatures: input.selectedFeatures,
+    mbtiType: input.mbtiType,
+  });
   const sceneItems = (input.scenes ?? [])
     .filter((scene) => scene.featureIds.every(shouldShowFeatureInNarrative))
     .map((scene) => ({
@@ -198,7 +270,10 @@ function buildSwitchActionItems(input: {
       })),
     ) ?? [];
 
-  return uniqueById([...sceneItems, ...spotlightItems]).slice(0, maxItemsPerModule);
+  return uniqueById([...contextualItems, ...sceneItems, ...spotlightItems]).slice(
+    0,
+    maxItemsPerModule,
+  );
 }
 
 function buildRelationshipNeedItems(input: {
@@ -283,6 +358,8 @@ export function buildReportDifferentiationModules(input: {
       "switch_action",
       "바꾸는 스위치",
       buildSwitchActionItems({
+        selectedFeatures,
+        mbtiType: input.mbtiType,
         scenes: input.sajuSignatureScenes,
         spotlight: input.sajuFeatureSpotlight,
       }),

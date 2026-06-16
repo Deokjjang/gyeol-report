@@ -105,6 +105,36 @@ describe("Saju signature scene rules", () => {
     expect(scenes).toHaveLength(3);
   });
 
+  it("adds INTP-specific scene seeds without ENTJ-only management wording", () => {
+    const scenes = selectSajuSignatureScenes({
+      mbtiType: "INTP",
+      featureIds: [
+        "day_pillar_jeongchuk",
+        "gwiin_jaego",
+        "gwiin_cheoneul",
+        "structure_no_resource",
+        "sinsal_hyeonchim",
+      ],
+    });
+    const serialized = scenes
+      .flatMap((scene) => scene.sceneLines ?? [scene.sceneLine])
+      .join("\n");
+
+    expect(scenes.map((scene) => scene.id)).toEqual(
+      expect.arrayContaining([
+        "jeongchuk_intp_inner_structure",
+        "jaego_intp_quiet_storage",
+        "cheoneul_no_resource_intp_delayed_question",
+        "hyeonchim_intp_logic_question",
+      ]),
+    );
+    expect(serialized).toContain("원리");
+    expect(serialized).toContain("자료");
+    expect(serialized).toContain("조건과 예외");
+    expect(serialized).not.toContain("담당자");
+    expect(serialized).not.toContain("마감선");
+  });
+
   it("keeps signature scenes usable outside corporate meeting contexts", () => {
     const serialized = JSON.stringify({
       seeds: UNIVERSAL_SCENE_CONTEXT_SEEDS,

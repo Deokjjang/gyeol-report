@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../../../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
 import { COMPREHENSIVE_REPORT_SECTION_IDS } from "../../../src/lib/report-knowledge/reportSectionSchema";
+import { getReportSmokeFixture } from "../../../src/lib/report-knowledge/reportQualityFixtureMatrix";
 import { validateComprehensiveEvidencePacket } from "../../../src/lib/report-knowledge/knowledgeValidators";
 import type { ComputedSajuFacts } from "../../../src/lib/report-knowledge/sajuComputedFactsTypes";
 
@@ -212,6 +213,21 @@ describe("comprehensive report evidence input builder", () => {
 
       expect(chapter.features.length).toBeLessThanOrEqual(expectedMax);
     }
+  });
+
+  it("excludes diagnostic-only features from selected narrative evidence", () => {
+    const fixture = getReportSmokeFixture("sodam-intp");
+    const result = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: fixture.mbti,
+      sajuFacts: fixture.sajuFacts,
+    });
+    const allFeatureIds = getAllSelectedFeatureIds(result);
+
+    expect(result.mappedFeatures.featureIds).toContain("sinsal_baekho");
+    expect(allFeatureIds).not.toContain("sinsal_baekho");
+    expect(JSON.stringify(result.packet.selectedSajuFeatureEvidence)).not.toContain(
+      "백호대살",
+    );
   });
 
   it("merges newly extracted Saju features into selected evidence without duplicates", () => {

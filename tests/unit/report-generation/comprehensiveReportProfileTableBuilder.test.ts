@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { buildComprehensiveReportV2ProfileTable } from "../../../src/lib/report-generation/comprehensiveReportProfileTableBuilder";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../../../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
+import { getReportSmokeFixture } from "../../../src/lib/report-knowledge/reportQualityFixtureMatrix";
 import type { ComputedSajuFacts } from "../../../src/lib/report-knowledge/sajuComputedFactsTypes";
 
 const deokminSampleFacts = {
@@ -184,5 +185,61 @@ describe("comprehensive report profile table builder", () => {
       expect.arrayContaining(["천을귀인", "재고귀인"]),
     );
     expect(profileTable.twelveSinsal).not.toContain("반안살");
+  });
+  it("renders sodam-intp 丁丑 day pillar completeness in the deterministic grid", () => {
+    const fixture = getReportSmokeFixture("sodam-intp");
+    const { packet } = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: fixture.mbti,
+      sajuFacts: fixture.sajuFacts,
+    });
+    const profileTable = buildComprehensiveReportV2ProfileTable({
+      evidencePacket: packet,
+      mbtiType: fixture.mbti,
+      sajuFacts: fixture.sajuFacts,
+    });
+    const dayColumn = profileTable.fourPillarGrid?.find(
+      (column) => column.columnId === "day",
+    );
+
+    expect(profileTable.dayPillar).toBe("정축일주");
+    expect(dayColumn).toMatchObject({
+      pillar: "정축",
+      heavenlyStem: "정",
+      earthlyBranch: "축",
+    });
+    expect(dayColumn?.tenGod).toEqual(
+      expect.arrayContaining(["천간 비견", "지지 식신"]),
+    );
+    expect(dayColumn?.hiddenStems).toEqual(["癸", "辛", "己"]);
+    expect(dayColumn?.twelveLifeStage).toBeDefined();
+    expect(dayColumn?.twelveLifeStage).not.toEqual(["-"]);
+    expect(dayColumn?.twelveSinsal).toEqual(expect.arrayContaining(["화개살"]));
+    expect(dayColumn?.heavenlyStem).not.toBe("-");
+    expect(dayColumn?.earthlyBranch).not.toBe("-");
+  });
+
+  it("keeps deokmin-entj 甲申 day pillar rendering intact", () => {
+    const fixture = getReportSmokeFixture("deokmin");
+    const { packet } = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: fixture.mbti,
+      sajuFacts: fixture.sajuFacts,
+    });
+    const profileTable = buildComprehensiveReportV2ProfileTable({
+      evidencePacket: packet,
+      mbtiType: fixture.mbti,
+      sajuFacts: fixture.sajuFacts,
+    });
+    const dayColumn = profileTable.fourPillarGrid?.find(
+      (column) => column.columnId === "day",
+    );
+
+    expect(profileTable.dayPillar).toBe("갑신일주");
+    expect(dayColumn).toMatchObject({
+      pillar: "갑신",
+      heavenlyStem: "갑",
+      earthlyBranch: "신",
+    });
+    expect(dayColumn?.heavenlyStem).not.toBe("-");
+    expect(dayColumn?.earthlyBranch).not.toBe("-");
   });
 });

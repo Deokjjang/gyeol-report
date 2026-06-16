@@ -7,6 +7,7 @@ import type {
 import type { MbtiType } from "./mbtiKnowledgeTypes";
 import { scoreSajuFeatures } from "./sajuFeatureScoring";
 import { selectSajuFeaturesForChapter } from "./sajuFeatureSelector";
+import { shouldShowFeatureInNarrative } from "./sajuFeatureDisplayPolicy";
 import { buildSajuFeatureSpotlight } from "./sajuFeatureSpotlight";
 import { buildSajuPillarFeaturePlacements } from "./sajuPillarFeaturePlacement";
 import { selectSajuSignatureScenes } from "./sajuSignatureSceneRules";
@@ -436,13 +437,15 @@ function toSelectedFeatureEvidenceItem(
 function buildSelectedSajuFeatureEvidence(
   featureIds: readonly string[],
 ): readonly SelectedSajuFeatureEvidence[] {
-  if (featureIds.length === 0) {
+  const narrativeFeatureIds = featureIds.filter(shouldShowFeatureInNarrative);
+
+  if (narrativeFeatureIds.length === 0) {
     return [];
   }
 
   const chapters = v2FeatureChapterIds.map((chapterId) => {
     const scores = scoreSajuFeatures({
-      featureIds,
+      featureIds: narrativeFeatureIds,
       topic: scoreTopicByChapter[chapterId],
     });
     const selection = selectSajuFeaturesForChapter(scores, chapterId);
@@ -458,8 +461,11 @@ function buildSelectedSajuFeatureEvidence(
   });
 
   return ensureChapterPriorityCoverage({
-    chapters: ensureMappedFeaturesRepresented({ chapters, featureIds }),
-    featureIds,
+    chapters: ensureMappedFeaturesRepresented({
+      chapters,
+      featureIds: narrativeFeatureIds,
+    }),
+    featureIds: narrativeFeatureIds,
   }).map((chapter) => ({
     chapterId: chapter.chapterId,
     features: chapter.selected.map(toSelectedFeatureEvidenceItem),

@@ -125,6 +125,18 @@ function buildDayPillarKeywords(
   ]).slice(0, 5);
 }
 
+function formatComputedDayPillarLabel(
+  dayPillar: string | undefined,
+): string | undefined {
+  if (dayPillar === undefined || dayPillar.trim().length === 0) {
+    return undefined;
+  }
+
+  const trimmed = dayPillar.trim();
+
+  return trimmed.endsWith("일주") ? trimmed : `${trimmed}일주`;
+}
+
 function buildPillarGrid(input: {
   readonly yearPillar?: string;
   readonly monthPillar?: string;
@@ -151,8 +163,10 @@ export function buildComprehensiveReportV2ProfileTable(input: {
   readonly sajuFacts?: ComputedSajuFacts;
 }): ComprehensiveReportV2ProfileTable {
   const entries = getSelectedSajuEntries(input.evidencePacket);
-  const dayMaster = labelsForCategory(entries, "day_master")[0];
-  const dayPillar = labelsForCategory(entries, "day_pillar")[0];
+  const dayMaster = labelsForCategory(entries, "day_master")[0] ?? input.sajuFacts?.dayMaster;
+  const dayPillar =
+    labelsForCategory(entries, "day_pillar")[0] ??
+    formatComputedDayPillarLabel(input.sajuFacts?.dayPillar);
   const dayPillarKeywords = buildDayPillarKeywords(entries);
   const elementBalanceLabels = labelsForCategory(entries, "element_balance");
   const fiveElementSummary = formatFiveElementCounts(input.sajuFacts);
@@ -174,10 +188,11 @@ export function buildComprehensiveReportV2ProfileTable(input: {
   const yearPillar = input.sajuFacts?.yearPillar;
   const monthPillar = input.sajuFacts?.monthPillar;
   const hourPillar = input.sajuFacts?.hourPillar;
+  const gridDayPillar = input.sajuFacts?.dayPillar ?? dayPillar;
   const fourPillarGrid = buildPillarGrid({
     yearPillar,
     monthPillar,
-    dayPillar,
+    dayPillar: gridDayPillar,
     hourPillar,
     dayMaster: input.sajuFacts?.dayMaster,
     featurePlacements: input.evidencePacket.sajuPillarFeaturePlacements,

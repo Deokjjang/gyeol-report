@@ -271,6 +271,27 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).not.toContain("덕민");
   });
 
+  it("uses INTP-specific behavior language without MBTI recommendations", () => {
+    const { packet } = buildComprehensiveReportEvidencePacketFromComputedFacts({
+      mbtiType: "INTP",
+      sajuFacts: deokminSampleFacts,
+    });
+    const messages = buildOpenAIComprehensiveReportWriterMessages({
+      userDisplayName: "소담",
+      mbtiType: "INTP",
+      evidencePacket: packet,
+    });
+    const combined = [messages.system, messages.developer, messages.user].join("\n");
+
+    expect(combined).toContain("입력한 INTP 성향");
+    expect(combined).toContain("원리");
+    expect(combined).toContain("자료");
+    expect(combined).toContain("조건과 예외");
+    expect(combined).toContain("늦은 질문");
+    expect(combined).not.toContain("ISFP, INFP, INTP");
+    expect(combined).not.toContain("같은 유형이 좋습니다");
+  });
+
   it("instructs the model to use spotlight and signature scenes without inventing features", () => {
     const { packet } = buildComprehensiveReportEvidencePacketFromComputedFacts({
       mbtiType: "ENTJ",
