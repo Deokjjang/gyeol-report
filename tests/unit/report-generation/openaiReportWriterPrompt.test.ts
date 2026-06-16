@@ -505,4 +505,26 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("이번 원국에서 확인되지 않은 대표 금지 항목:");
     expect(combined).toContain("- 수 부족");
   });
+
+  it("builds a repair prompt for work solution and risk MBTI support failures", () => {
+    const messages = buildOpenAIComprehensiveReportRepairMessages({
+      userDisplayName: "소담",
+      mbtiType: "INTP",
+      allowedSajuTerms: ["정축일주", "재고귀인", "토 과다"],
+      draftJson:
+        "{\"version\":\"comprehensive_v2_draft\",\"chapters\":[],\"finalAdvice\":\"정리합니다.\"}",
+      validationErrors: [
+        "SOLUTION_LINES_MISSING: work_money_study",
+        "MBTI_SUPPORT_MISSING: risk_and_growth",
+      ],
+    });
+    const combined = [messages.system, messages.developer, messages.user].join("\n");
+
+    expect(combined).toContain("SOLUTION_LINES_MISSING: work_money_study");
+    expect(combined).toContain("일·돈·공부 챕터에는 실제 행동 문장 3개 이상");
+    expect(combined).toContain("돈, 공부, 업무, 프로젝트, 계좌, 기록, 루틴");
+    expect(combined).toContain("MBTI_SUPPORT_MISSING: risk_and_growth");
+    expect(combined).toContain("위험과 성장 챕터에 입력된 MBTI");
+    expect(combined).toContain("다른 MBTI 유형 추천이나 공식 진단처럼 쓰지 마라");
+  });
 });

@@ -2175,6 +2175,56 @@ describe("comprehensive report draft validator", () => {
     expect(result.ok).toBe(true);
   });
 
+  it("rejects V2 work money study chapters without solution lines", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "work_money_study"
+          ? {
+              ...chapter,
+              solutionLines: [],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "SOLUTION_LINES_MISSING: work_money_study",
+    );
+  });
+
+  it("accepts explicit INTP support in the risk and growth chapter", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      profileTable: {
+        ...draft.profileTable,
+        mbti: "INTP",
+      },
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "risk_and_growth"
+          ? {
+              ...chapter,
+              body: `${chapter.body} MBTI로 입력된 INTP 성향은 생각을 오래 검토하는 흐름을 회복 신호와 기록 루틴으로 번역해 보는 보조 언어입니다.`,
+              mbtiTermsUsed: ["INTP"],
+            }
+          : {
+              ...chapter,
+              body: chapter.body.replaceAll("ENTJ", "INTP"),
+              mbtiTermsUsed: chapter.mbtiTermsUsed.map((term) =>
+                term === "ENTJ" ? "INTP" : term,
+              ),
+            },
+      ),
+    });
+
+    expect(result.errors.join("\n")).not.toContain(
+      "MBTI_SUPPORT_MISSING: risk_and_growth",
+    );
+  });
+
   it("rejects raw OpenAI metadata fields", () => {
     const draft = createValidDraft();
     const result = validateComprehensiveReportDraft({

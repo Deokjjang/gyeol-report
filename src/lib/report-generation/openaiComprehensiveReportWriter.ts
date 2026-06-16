@@ -627,6 +627,16 @@ function getChapterDirectHitText(chapter: ComprehensiveReportV2Chapter): string 
   ].join("\n");
 }
 
+function getChapterRescueSearchText(chapter: ComprehensiveReportV2Chapter): string {
+  return [
+    chapter.headline,
+    ...chapter.hitReadingLines,
+    chapter.body,
+    ...chapter.solutionLines,
+    ...chapter.keyPhrases,
+  ].join("\n");
+}
+
 function hasPersonalityDirectHitScene(chapter: ComprehensiveReportV2Chapter): boolean {
   const text = getChapterDirectHitText(chapter);
 
@@ -1197,6 +1207,241 @@ function ensureDirectHitSceneForChapter<T>(
   return { draft: rescuedDraft, rescued: true };
 }
 
+const workMoneySolutionRescueFeatureIds = [
+  "gwiin_jaego",
+  "gwiin_geumyeorok",
+  "gwiin_amrok",
+  "ten_god_pian_cai",
+  "ten_god_zheng_cai",
+  "ten_god_qi_sha",
+  "ten_god_zheng_guan",
+  "ten_god_shi_shen",
+  "element_earth_excess",
+  "structure_jaeda_sinyak",
+  "day_pillar_gapsin",
+  "day_pillar_jeongchuk",
+] as const;
+
+function buildWorkMoneyStudySolutionRescueLines(input: {
+  readonly draft: ComprehensiveReportV2Draft;
+  readonly featureIds: ReadonlySet<string>;
+}): readonly string[] {
+  if (!hasAnyFeatureId(input.featureIds, workMoneySolutionRescueFeatureIds)) {
+    return [];
+  }
+
+  const mbti = input.draft.profileTable.mbti;
+  const isIntp = mbti === "INTP";
+  const isEntj = mbti === "ENTJ";
+  const hasJaego = hasFeatureId(input.featureIds, "gwiin_jaego");
+  const hasMoneyExpansion = hasAnyFeatureId(input.featureIds, [
+    "gwiin_geumyeorok",
+    "ten_god_pian_cai",
+    "ten_god_zheng_cai",
+  ]);
+  const hasStudyOrAnalysis = hasAnyFeatureId(input.featureIds, [
+    "ten_god_shi_shen",
+    "day_pillar_jeongchuk",
+    "gwiin_amrok",
+  ]);
+  const hasRolePressure = hasAnyFeatureId(input.featureIds, [
+    "element_earth_excess",
+    "ten_god_qi_sha",
+    "ten_god_zheng_guan",
+    "structure_jaeda_sinyak",
+    "day_pillar_gapsin",
+  ]);
+  const lines: string[] = [];
+
+  if (isIntp && hasJaego) {
+    lines.push(
+      "돈은 들어오자마자 현금흐름, 저축, 자기계발 예산으로 나누고 자동이체를 먼저 걸어 두세요.",
+    );
+  } else if (isEntj && hasMoneyExpansion) {
+    lines.push(
+      "기회가 보이면 바로 확장하기보다, 수익이 남는 구조와 방어 규칙을 먼저 정하세요.",
+    );
+  } else if (hasJaego || hasMoneyExpansion) {
+    lines.push(
+      "돈은 들어오는 흐름과 지키는 흐름을 분리해 계좌와 기록으로 남겨 두세요.",
+    );
+  }
+
+  if (isIntp && hasStudyOrAnalysis) {
+    lines.push(
+      "공부는 목차-핵심 개념-실전 적용 순서로 읽고, 한 장 끝날 때마다 바로 써먹을 예시를 적어 두세요.",
+    );
+  } else if (hasStudyOrAnalysis) {
+    lines.push(
+      "전문서나 자격증 공부는 목차, 핵심 개념, 실전 적용 순서로 나눠 기록하세요.",
+    );
+  }
+
+  if (isEntj && hasRolePressure) {
+    lines.push(
+      "업무나 프로젝트는 담당자, 기준, 마감선을 먼저 나누고 본인이 다 끌고 가지 않게 하세요.",
+    );
+  } else if (hasRolePressure) {
+    lines.push(
+      "업무나 프로젝트는 기준이 흐릴 때 직접 정리하되, 맡을 일과 넘길 일을 처음부터 나눠 두세요.",
+    );
+  }
+
+  if (lines.length < 3) {
+    lines.push(
+      "일과 공부 루틴은 기록, 실행, 점검을 한 번에 몰지 말고 작은 반복 단위로 나눠 두세요.",
+    );
+  }
+  if (lines.length < 4) {
+    lines.push(
+      "프로젝트가 길어질 때는 오늘 할 일, 넘길 일, 확인할 일을 따로 적어 부담이 한곳에 쌓이지 않게 하세요.",
+    );
+  }
+  if (lines.length < 4) {
+    lines.push(
+      "계좌, 기록, 루틴 중 하나를 정해 매주 같은 시간에 점검하는 기준을 만들어 두세요.",
+    );
+  }
+
+  return lines.slice(0, 4);
+}
+
+function ensureWorkMoneyStudySolutionLines<T>(
+  draft: T,
+  evidencePacket?: ComprehensiveReportEvidencePacket,
+): DirectHitSceneRescueResult<T> {
+  if (!isV2DraftWithDeterministicFields(draft)) {
+    return { draft, rescued: false };
+  }
+
+  const featureIds = getDirectHitRescueFeatureIds(draft, evidencePacket);
+  const rescueLines = buildWorkMoneyStudySolutionRescueLines({
+    draft,
+    featureIds,
+  });
+
+  if (rescueLines.length === 0) {
+    return { draft, rescued: false };
+  }
+
+  let rescued = false;
+  const chapters = draft.chapters.map((chapter) => {
+    if (chapter.chapterId !== "work_money_study") {
+      return chapter;
+    }
+
+    const neededCount = Math.max(0, 4 - chapter.solutionLines.length);
+
+    if (neededCount === 0) {
+      return chapter;
+    }
+
+    const existingLines = new Set(chapter.solutionLines.map((line) => line.trim()));
+    const linesToAdd = rescueLines
+      .filter((line) => !existingLines.has(line.trim()))
+      .slice(0, neededCount);
+
+    if (linesToAdd.length === 0) {
+      return chapter;
+    }
+
+    rescued = true;
+
+    return {
+      ...chapter,
+      solutionLines: [...chapter.solutionLines, ...linesToAdd],
+      body: `${chapter.body}\n\n${linesToAdd.join(" ")}`.trim(),
+    };
+  });
+
+  if (!rescued) {
+    return { draft, rescued: false };
+  }
+
+  return {
+    draft: {
+      ...draft,
+      chapters,
+    } as T,
+    rescued: true,
+  };
+}
+
+function getRiskGrowthMbtiSupportLine(mbti: string): string | undefined {
+  if (mbti === "INTP") {
+    return "MBTI로 입력된 INTP 성향이 함께 있으면 생각을 혼자 오래 검토하다가 회복 신호를 늦게 알아차릴 수 있으니, 기록과 질문을 밖으로 꺼내는 장치가 필요합니다.";
+  }
+  if (mbti === "ENTJ") {
+    return "MBTI로 입력된 ENTJ 성향이 함께 있으면 목표와 해결 쪽으로 빨리 몰입하기 쉬우니, 쉬는 기준과 위임 기준을 먼저 정해 두는 장치가 필요합니다.";
+  }
+  if (/^[A-Z]{4}$/.test(mbti)) {
+    return `MBTI로 입력된 ${mbti} 성향은 공식 진단이 아니라 행동을 이해하는 보조 언어로만 보고, 회복 신호와 생활 루틴을 점검하는 데 사용하세요.`;
+  }
+
+  return undefined;
+}
+
+function ensureRiskGrowthMbtiSupport<T>(draft: T): DirectHitSceneRescueResult<T> {
+  if (!isV2DraftWithDeterministicFields(draft)) {
+    return { draft, rescued: false };
+  }
+
+  const mbti = draft.profileTable.mbti.trim();
+  const supportLine = getRiskGrowthMbtiSupportLine(mbti);
+
+  if (supportLine === undefined) {
+    return { draft, rescued: false };
+  }
+
+  let rescued = false;
+  const chapters = draft.chapters.map((chapter) => {
+    if (chapter.chapterId !== "risk_and_growth") {
+      return chapter;
+    }
+
+    const searchText = getChapterRescueSearchText(chapter);
+
+    if (searchText.includes(mbti) && searchText.includes("MBTI")) {
+      return chapter;
+    }
+
+    rescued = true;
+
+    return {
+      ...chapter,
+      body: `${chapter.body}\n\n${supportLine}`.trim(),
+      mbtiTermsUsed: chapter.mbtiTermsUsed.includes(mbti)
+        ? chapter.mbtiTermsUsed
+        : [...chapter.mbtiTermsUsed, mbti],
+    };
+  });
+
+  if (!rescued) {
+    return { draft, rescued: false };
+  }
+
+  return {
+    draft: {
+      ...draft,
+      chapters,
+    } as T,
+    rescued: true,
+  };
+}
+
+function ensureChapterStabilityRescue<T>(
+  draft: T,
+  evidencePacket?: ComprehensiveReportEvidencePacket,
+): DirectHitSceneRescueResult<T> {
+  const workMoney = ensureWorkMoneyStudySolutionLines(draft, evidencePacket);
+  const riskMbti = ensureRiskGrowthMbtiSupport(workMoney.draft);
+
+  return {
+    draft: riskMbti.draft,
+    rescued: workMoney.rescued || riskMbti.rescued,
+  };
+}
+
 export async function generateComprehensiveReportDraft(input: {
   readonly userDisplayName?: string;
   readonly mbtiType: string;
@@ -1254,8 +1499,12 @@ export async function generateComprehensiveReportDraft(input: {
     draftCandidate,
     input.evidencePacket,
   );
-  const normalizedInitial = normalizeComprehensiveReportFinalMessage(
+  const stabilityInitial = ensureChapterStabilityRescue(
     directHitInitial.draft,
+    input.evidencePacket,
+  );
+  const normalizedInitial = normalizeComprehensiveReportFinalMessage(
+    stabilityInitial.draft,
   );
   const validation = validateComprehensiveReportDraft(normalizedInitial.draft, {
     allowedSajuTerms,
@@ -1325,8 +1574,12 @@ export async function generateComprehensiveReportDraft(input: {
       repairDraftCandidate,
       input.evidencePacket,
     );
-    const normalizedRepair = normalizeComprehensiveReportFinalMessage(
+    const stabilityRepair = ensureChapterStabilityRescue(
       directHitRepair.draft,
+      input.evidencePacket,
+    );
+    const normalizedRepair = normalizeComprehensiveReportFinalMessage(
+      stabilityRepair.draft,
     );
     const normalizerWarnings = getFinalMessageNormalizerWarnings(
       normalizedInitial,

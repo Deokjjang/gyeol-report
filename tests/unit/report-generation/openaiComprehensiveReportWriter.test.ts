@@ -156,6 +156,13 @@ function createPacket() {
   }).packet;
 }
 
+function createPacketForMbti(mbtiType: string) {
+  return buildComprehensiveReportEvidencePacketFromComputedFacts({
+    mbtiType,
+    sajuFacts: deokminSampleFacts,
+  }).packet;
+}
+
 function createPacketWithCoreDirectHitEvidence() {
   const packet = createPacket();
 
@@ -1069,6 +1076,111 @@ describe("OpenAI comprehensive report writer", () => {
     expect(serialized).not.toContain("feature evidence");
     expect(serialized).not.toContain("selected evidence");
     expect(serialized).not.toContain("DIRECT_HIT_READING_MISSING");
+  });
+
+  it("adds deterministic work money solution lines when they are missing", async () => {
+    const missingWorkSolutionsDraft = {
+      ...createValidDraft(),
+      chapters: createValidDraft().chapters.map((chapter) =>
+        chapter.chapterId === "work_money_study"
+          ? {
+              ...chapter,
+              solutionLines: [],
+            }
+          : chapter,
+      ),
+    };
+    let callCount = 0;
+    const fetchImpl: typeof fetch = async () => {
+      callCount += 1;
+
+      return createJsonResponse({
+        output_text: JSON.stringify(missingWorkSolutionsDraft),
+      });
+    };
+
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "ENTJ",
+      evidencePacket: createPacket(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl,
+      },
+    });
+    const workChapter = result.draft.version === "comprehensive_v2_draft"
+      ? result.draft.chapters.find(
+          (chapter) => chapter.chapterId === "work_money_study",
+        )
+      : undefined;
+    const workText = [
+      workChapter?.body ?? "",
+      ...(workChapter?.solutionLines ?? []),
+    ].join("\n");
+
+    expect(callCount).toBe(1);
+    expect(workChapter?.solutionLines.length).toBeGreaterThanOrEqual(4);
+    expect(workText).toContain("업무나 프로젝트");
+    expect(workText).toContain("수익이 남는 구조");
+    expect(workText).not.toContain("SOLUTION_LINES_MISSING");
+  });
+
+  it("adds deterministic INTP MBTI support to risk and growth when it is missing", async () => {
+    const intpDraft = JSON.parse(
+      JSON.stringify(createValidDraft()).replaceAll("ENTJ", "INTP"),
+    ) as ReturnType<typeof createValidDraft>;
+    const missingRiskMbtiDraft = {
+      ...intpDraft,
+      chapters: intpDraft.chapters.map((chapter) =>
+        chapter.chapterId === "risk_and_growth"
+          ? {
+              ...chapter,
+              body: chapter.body.replaceAll("INTP", "").replaceAll("MBTI", ""),
+              solutionLines: chapter.solutionLines.map((line) =>
+                line.replaceAll("INTP", "").replaceAll("MBTI", ""),
+              ),
+              mbtiTermsUsed: [],
+            }
+          : chapter,
+      ),
+    };
+    let callCount = 0;
+    const fetchImpl: typeof fetch = async () => {
+      callCount += 1;
+
+      return createJsonResponse({
+        output_text: JSON.stringify(missingRiskMbtiDraft),
+      });
+    };
+
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "INTP",
+      evidencePacket: createPacketForMbti("INTP"),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        fetchImpl,
+      },
+    });
+    const riskChapter = result.draft.version === "comprehensive_v2_draft"
+      ? result.draft.chapters.find(
+          (chapter) => chapter.chapterId === "risk_and_growth",
+        )
+      : undefined;
+    const riskText = [
+      riskChapter?.body ?? "",
+      ...(riskChapter?.solutionLines ?? []),
+      ...(riskChapter?.mbtiTermsUsed ?? []),
+    ].join("\n");
+
+    expect(callCount).toBe(1);
+    expect(riskText).toContain("MBTI로 입력된 INTP 성향");
+    expect(riskText).toContain("기록과 질문");
+    expect(riskText).not.toContain("ISFP");
+    expect(riskText).not.toContain("INFP");
+    expect(riskText).not.toContain("INTP 같은 유형");
   });
 
   it("does not fake core direct-hit scenes without selected evidence", async () => {
