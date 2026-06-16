@@ -182,7 +182,7 @@ const spotlightCopyByFeatureId: Partial<Record<string, SpotlightCopy>> = {
       "결론 전에 감정 한 문장, 확인 한 문장, 고마움 한 문장을 먼저 두면 좋습니다.",
   },
   structure_no_resource: {
-    badge: "혼자 버티기 쉬운 구조",
+    badge: "도움을 늦게 요청하기 쉬운 구조",
     shortMeaning: "도움을 요청하고 기대는 감각을 늦게 쓰는 흐름",
     vividLine:
       "도움받을 수 있는 상황에서도 한참 혼자 정리한 뒤에야 요청할 수 있습니다. 주변이 차갑기보다 요청 신호가 늦게 나갈 수 있습니다.",

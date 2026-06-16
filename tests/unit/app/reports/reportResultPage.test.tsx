@@ -238,7 +238,7 @@ function createV2Draft(): ComprehensiveReportV2Draft {
         items: [
           {
             title: "도움 요청이 늦어지는 패턴",
-            body: "무인성과 수 부족이 겹치면 혼자 버티는 시간이 길어질 수 있습니다.",
+            body: "무인성과 수 부족이 겹치면 안에서 오래 붙잡는 시간이 길어질 수 있습니다.",
             practicalLine: "막힌 지점을 한 문장으로 적어 먼저 공유해야 합니다.",
             sourceFeatureIds: ["structure_no_resource", "element_water_missing"],
           },
@@ -398,11 +398,16 @@ describe("report result page", () => {
     expect(html).toContain("<td class=\"px-3 py-2 text-neutral-100\">-</td>");
     expect(html).toContain("일간");
     expect(html).toContain("오행 분포");
-    expect(html).toContain("목 2 · 초록");
-    expect(html).toContain("화 0 · 빨강");
-    expect(html).toContain("토 4 · 갈색");
-    expect(html).toContain("금 2 · 금색");
-    expect(html).toContain("수 0 · 파랑");
+    expect(html).toContain("목 2");
+    expect(html).toContain("화 0");
+    expect(html).toContain("토 4");
+    expect(html).toContain("금 2");
+    expect(html).toContain("수 0");
+    expect(html).not.toContain("초록");
+    expect(html).not.toContain("빨강");
+    expect(html).not.toContain("갈색");
+    expect(html).not.toContain("금색");
+    expect(html).not.toContain("파랑");
     expect(html).toContain("element-chip--wood");
     expect(html).toContain("element-chip--fire");
     expect(html).toContain("element-chip--earth");

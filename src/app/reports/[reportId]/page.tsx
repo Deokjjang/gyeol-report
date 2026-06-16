@@ -389,15 +389,19 @@ function renderFiveElementBadgeRow(
     <div className="grid gap-2 rounded-md border border-neutral-800 bg-neutral-950/50 px-3 py-2 sm:grid-cols-[7rem_1fr]">
       <dt className="text-xs font-semibold text-neutral-500">{label}</dt>
       <dd className="flex flex-wrap gap-1.5 text-sm leading-6 text-neutral-100">
-        {values.map((item) => (
-          <span
-            key={item}
-            className={`element-chip ${getFiveElementChipClassFromText(item)} ${getFiveElementBgClassFromText(item)} rounded border border-neutral-700 px-2 py-0.5 text-xs font-semibold text-neutral-100`}
-            aria-label={getFiveElementAccessibleLabel(item)}
-          >
-            {item}
-          </span>
-        ))}
+        {values.map((item) => {
+          const visibleText = formatVisibleFiveElementBadgeText(item);
+
+          return (
+            <span
+              key={item}
+              className={`element-chip ${getFiveElementChipClassFromText(item)} ${getFiveElementBgClassFromText(item)} rounded border border-neutral-700 px-2 py-0.5 text-xs font-semibold text-neutral-100`}
+              aria-label={getFiveElementAccessibleLabel(item)}
+            >
+              {visibleText}
+            </span>
+          );
+        })}
       </dd>
     </div>
   );
@@ -412,11 +416,11 @@ const fiveElementChipByKo = {
 } as const;
 
 const fiveElementLabelByToken = {
-  wood: "목 · 초록",
-  fire: "화 · 빨강",
-  earth: "토 · 갈색",
-  metal: "금 · 금색",
-  water: "수 · 파랑",
+  wood: "목 오행",
+  fire: "화 오행",
+  earth: "토 오행",
+  metal: "금 오행",
+  water: "수 오행",
 } as const;
 
 const fiveElementKoByToken = {
@@ -474,8 +478,17 @@ function getFiveElementBgClassFromText(text: string): string {
 
 function getFiveElementAccessibleLabel(text: string): string {
   const token = getFiveElementTokenFromText(text);
+  const visibleText = formatVisibleFiveElementBadgeText(text);
 
-  return token === undefined ? text : `${text} (${fiveElementLabelByToken[token]})`;
+  return token === undefined
+    ? visibleText
+    : `${visibleText} (${fiveElementLabelByToken[token]})`;
+}
+
+function formatVisibleFiveElementBadgeText(text: string): string {
+  return text
+    .replace(/\s*·\s*(초록|빨강|갈색|금색|파랑)\s*$/u, "")
+    .trim();
 }
 
 function renderElementChip(input: {

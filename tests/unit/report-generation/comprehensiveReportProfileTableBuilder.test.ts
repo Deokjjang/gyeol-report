@@ -61,12 +61,17 @@ describe("comprehensive report profile table builder", () => {
       "수 0",
     ]);
     expect(profileTable.fiveElementBadges).toEqual([
-      "목 2 · 초록",
-      "화 0 · 빨강",
-      "토 4 · 갈색",
-      "금 2 · 금색",
-      "수 0 · 파랑",
+      "목 2",
+      "화 0",
+      "토 4",
+      "금 2",
+      "수 0",
     ]);
+    expect(profileTable.fiveElementBadges.join("\n")).not.toContain("초록");
+    expect(profileTable.fiveElementBadges.join("\n")).not.toContain("빨강");
+    expect(profileTable.fiveElementBadges.join("\n")).not.toContain("갈색");
+    expect(profileTable.fiveElementBadges.join("\n")).not.toContain("금색");
+    expect(profileTable.fiveElementBadges.join("\n")).not.toContain("파랑");
     expect(profileTable.missingElements).toEqual(
       expect.arrayContaining(["화 부족", "수 부족"]),
     );

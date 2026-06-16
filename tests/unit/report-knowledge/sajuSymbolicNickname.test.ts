@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import { buildSajuSymbolicNickname } from "../../../src/lib/report-knowledge/sajuSymbolicNickname";
+import {
+  buildSajuSymbolicNickname,
+  normalizeSymbolicNicknameTitle,
+} from "../../../src/lib/report-knowledge/sajuSymbolicNickname";
 import type { ComputedSajuFacts } from "../../../src/lib/report-knowledge/sajuComputedFactsTypes";
 
 const baseFacts = {
@@ -25,6 +28,17 @@ const baseFacts = {
 } as const satisfies ComputedSajuFacts;
 
 describe("saju symbolic nickname", () => {
+  it("normalizes awkward symbolic nickname title assembly", () => {
+    expect(
+      normalizeSymbolicNicknameTitle(
+        "차가운 방 안에서 꺼지지 않게 지키는 작은 불씨 같은 형상 사람",
+      ),
+    ).toBe("차가운 방 안에서 꺼지지 않게 지키는 작은 불씨 같은 형상");
+    expect(normalizeSymbolicNicknameTitle("단정한 이미지 사람")).toBe(
+      "단정한 이미지",
+    );
+  });
+
   it("builds a strong day-pillar image for 갑신", () => {
     const nickname = buildSajuSymbolicNickname(baseFacts);
 
@@ -87,5 +101,34 @@ describe("saju symbolic nickname", () => {
 
     expect(serialized).not.toContain("돼지");
     expect(serialized).not.toContain("말");
+  });
+
+  it("builds sodam-intp nickname without awkward person suffix", () => {
+    const nickname = buildSajuSymbolicNickname({
+      ...baseFacts,
+      dayMaster: "정",
+      dayPillar: "정축",
+      yearPillar: "병자",
+      monthPillar: "기해",
+      hourPillar: "정미",
+      heavenlyStems: ["병", "기", "정", "정"],
+      earthlyBranches: ["자", "해", "축", "미"],
+      fiveElementCounts: { wood: 0, fire: 3, earth: 3, metal: 0, water: 2 },
+      excessiveElements: ["fire", "earth"],
+      missingElements: ["wood", "metal"],
+      usefulElements: ["wood", "metal"],
+      tenGodSignals: [
+        { tenGod: "bi_jian", strength: "present" },
+        { tenGod: "shi_shen", strength: "present" },
+      ],
+      specialPatterns: ["no_resource"],
+      sinsal: ["hwagae"],
+      gwiin: ["jaego"],
+    });
+
+    expect(nickname?.title).toContain("작은 불씨");
+    expect(nickname?.title).not.toContain("형상 사람");
+    expect(nickname?.title).not.toContain("이미지 사람");
+    expect(nickname?.title).not.toContain("같은 형상 사람");
   });
 });

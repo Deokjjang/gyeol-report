@@ -117,7 +117,7 @@ describe("report differentiation modules", () => {
     const intp = JSON.stringify(buildModulesForFixture("sodam-intp").modules);
 
     expect(entj).toContain("역할 단위");
-    expect(intp).toContain("혼자 너무 오래 검토");
+    expect(intp).toContain("안에서 너무 오래 검토");
     expect(intp).toContain("막힌 지점");
   });
 

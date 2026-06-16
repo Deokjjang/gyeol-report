@@ -26,14 +26,6 @@ const fiveElementLabelKo = {
   water: "수",
 } as const satisfies Record<FiveElement, string>;
 
-const fiveElementColorLabelKo = {
-  wood: "초록",
-  fire: "빨강",
-  earth: "갈색",
-  metal: "금색",
-  water: "파랑",
-} as const satisfies Record<FiveElement, string>;
-
 function uniqueValues(values: readonly string[]): readonly string[] {
   return [...new Set(values.map((value) => value.trim()).filter(Boolean))];
 }
@@ -95,8 +87,7 @@ function formatFiveElementBadges(
   }
 
   return fiveElementOrder.map(
-    (element) =>
-      `${fiveElementLabelKo[element]} ${facts.fiveElementCounts[element]} · ${fiveElementColorLabelKo[element]}`,
+    (element) => `${fiveElementLabelKo[element]} ${facts.fiveElementCounts[element]}`,
   );
 }
 

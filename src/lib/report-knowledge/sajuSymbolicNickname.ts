@@ -29,6 +29,37 @@ const elementLabelKo = {
   water: "수",
 } as const satisfies Record<FiveElement, string>;
 
+const personSuffixBlockers = [
+  "형상",
+  "이미지",
+  "불씨",
+  "나무",
+  "수레",
+  "창고",
+  "등불",
+] as const;
+
+export function normalizeSymbolicNicknameTitle(title: string): string {
+  return title
+    .replace(/\s+/g, " ")
+    .replace(/입니다[.]?$/u, "")
+    .replace(/같은 형상 사람/u, "같은 형상")
+    .replace(/형상 사람/u, "형상")
+    .replace(/이미지 사람/u, "이미지")
+    .replace(/\s*사람 사람$/u, " 사람")
+    .trim();
+}
+
+function buildTitleFromSymbolicImage(symbolicImage: string): string {
+  const baseTitle = normalizeSymbolicNicknameTitle(symbolicImage);
+
+  if (personSuffixBlockers.some((token) => baseTitle.includes(token))) {
+    return baseTitle;
+  }
+
+  return normalizeSymbolicNicknameTitle(`${baseTitle} 사람`);
+}
+
 function getBranchFromPillar(pillar: string | undefined): string | undefined {
   if (pillar === undefined || pillar.length < 2) {
     return undefined;
@@ -177,7 +208,7 @@ export function buildSajuSymbolicNickname(
   }
 
   return {
-    title: dayPillarEntry.symbolicImage.replace(/입니다[.]?$/, " 사람"),
+    title: buildTitleFromSymbolicImage(dayPillarEntry.symbolicImage),
     subtitle:
       "사주의 기본 형상을 생활 장면으로 옮겨 보면 강점과 보완점이 더 선명해집니다.",
     components: baseComponents,

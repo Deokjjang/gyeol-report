@@ -133,6 +133,7 @@ describe("Saju signature scene rules", () => {
     expect(serialized).toContain("조건과 예외");
     expect(serialized).not.toContain("담당자");
     expect(serialized).not.toContain("마감선");
+    expect(serialized).not.toContain("혼자 너무 오래 검토");
   });
 
   it("keeps signature scenes usable outside corporate meeting contexts", () => {
@@ -167,5 +168,6 @@ describe("Saju signature scene rules", () => {
     expect(serialized).not.toContain("사망");
     expect(serialized).not.toContain("이혼 확정");
     expect(serialized).not.toContain("파산");
+    expect(serialized).not.toContain("혼자 버티");
   });
 });

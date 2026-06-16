@@ -107,7 +107,7 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     interpretationLine:
       "천을귀인은 도움의 통로이고 무인성은 기대는 감각을 늦추므로, INTP의 검토 습관과 만나면 요청이 더 늦어질 수 있습니다.",
     practicalLine:
-      "혼자 너무 오래 검토하지 말고, 막힌 지점을 짧게 정리해 묻는 편이 좋습니다.",
+      "안에서 너무 오래 검토하기보다, 막힌 지점을 짧게 정리해 묻는 편이 좋습니다.",
   },
   {
     id: "hyeonchim_intp_logic_question",
@@ -170,7 +170,7 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     topics: ["relationship", "work", "growth"],
     sceneLines: [
       "도움받을 통로는 있는데, 정작 당신은 한참 혼자 정리한 뒤에야 요청할 수 있습니다.",
-      "막힌 일을 혼자 끌고 가다가 뒤늦게 사람에게 물어보면 생각보다 빨리 풀리는 장면이 생길 수 있습니다.",
+      "막힌 일을 안에서 오래 붙잡다가 뒤늦게 사람에게 물어보면 생각보다 빨리 풀리는 장면이 생길 수 있습니다.",
       "필요한 도움을 말로 꺼내기 전까지는 주변에서 당신이 어디서 막혔는지 모를 수 있습니다.",
     ],
     sceneLine:
@@ -226,7 +226,7 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     interpretationLine:
       "장성살의 중심성에 편관의 긴장감이 붙으면 책임 있는 자리에서 존재감이 더 선명해집니다.",
     practicalLine:
-      "다만 모든 일을 혼자 끌어안기보다 담당 범위를 나누는 기준이 필요합니다.",
+      "다만 모든 일을 한쪽에 끌어안기보다 담당 범위를 나누는 기준이 필요합니다.",
   },
   {
     id: "jangseong_zheng_guan_role_clarity",
@@ -249,12 +249,12 @@ export const SAJU_SIGNATURE_SCENE_RULES = [
     requiredFeatureIds: ["element_water_missing", "structure_no_resource"],
     topics: ["relationship", "family", "growth"],
     sceneLines: [
-      "힘든 일이 있어도 바로 기대기보다 혼자 정리하고 버티는 시간이 길어질 수 있습니다.",
+      "힘든 일이 있어도 바로 기대기보다 도움을 요청하기 전까지 안에서 정리하는 시간이 길어질 수 있습니다.",
       "밤에 누웠는데도 머릿속에서 다음 일정과 해결할 문제가 계속 돌아갈 수 있습니다.",
       "감정이 힘든 날에도 누구에게 어디까지 말해야 할지 몰라 더 늦게 꺼내는 장면이 생길 수 있습니다.",
     ],
     sceneLine:
-      "힘든 일이 있어도 바로 기대기보다 혼자 정리하고 버티는 시간이 길어질 수 있습니다.",
+      "힘든 일이 있어도 바로 기대기보다 도움을 요청하기 전까지 안에서 정리하는 시간이 길어질 수 있습니다.",
     interpretationLine:
       "수 부족은 감정 완충을 늦게 만들고, 무인성은 도움 요청의 감각을 늦게 켭니다.",
     practicalLine:

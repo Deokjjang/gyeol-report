@@ -200,7 +200,7 @@ function buildEvidenceClosingSolutionLines(
   const recoveryTopic = toFeatureFlowTopic(recoveryFeature, "회복 루틴 흐름");
 
   return [
-    `오늘부터는 막힌 일을 혼자 끌지 말고, ${requestTopic}을 살리듯 필요한 도움을 한 문장으로 요청하세요.`,
+    `오늘부터는 막힌 일을 안에서 오래 붙잡기보다, ${requestTopic}을 살리듯 필요한 도움을 한 문장으로 요청하세요.`,
     `돈은 생활비, 저축, 자기계발, 비상금으로 나눠 ${moneyTopic}이 살아날 자리를 정하세요.`,
     `관계에서는 결론보다 먼저 상대 말을 한 문장으로 받아주세요. ${communicationTopic}은 말의 온도를 조절할 때 강점으로 바뀝니다.`,
     `잠들기 전에는 기록으로 머리를 비우고, 침대에서는 문제 해결을 멈추세요. ${recoveryTopic}을 위해 오래 가는 차단 장치가 필요합니다.`,

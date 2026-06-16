@@ -200,6 +200,7 @@ describe("Saju feature spotlight builder", () => {
     );
     expect(serialized).not.toContain("이미지입니다..");
     expect(serialized).not.toContain("회의와 검수");
+    expect(serialized).not.toContain("혼자 버티기 쉬운 구조");
     expect(serialized).not.toContain("100%");
     expect(serialized).not.toContain("반드시");
     expect(serialized).not.toContain("무조건");

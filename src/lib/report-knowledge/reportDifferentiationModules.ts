@@ -221,7 +221,7 @@ function buildContextualAdviceItems(input: {
   if (input.mbtiType === "INTP" && hasCheoneulNoResource) {
     items.push({
       title: "천을귀인 + 무인성",
-      body: "질문하기 전 혼자 너무 오래 검토하지 말고, 막힌 지점을 짧게 정리해 묻는 편이 좋습니다.",
+      body: "질문하기 전 안에서 너무 오래 검토하기보다, 막힌 지점을 짧게 정리해 묻는 편이 좋습니다.",
       sourceFeatureIds: ["gwiin_cheoneul", "structure_no_resource"],
     });
   }
