@@ -20,6 +20,11 @@ describe("REPORT-18A compatibility evidence smoke source", () => {
     expect(source).toContain("score total:");
     expect(source).toContain("lifestyleRhythm");
     expect(source).toContain("shared features:");
+    expect(source).toContain("deep saju layers:");
+    expect(source).toContain("note.layer");
+    expect(source).toContain("note.relationLabel");
+    expect(source).toContain("branch_trine");
+    expect(source).toContain("cross_ten_god");
     expect(source).toContain("warnings:");
   });
 });

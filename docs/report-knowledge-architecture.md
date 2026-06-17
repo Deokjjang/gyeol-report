@@ -1078,6 +1078,46 @@ and the validator continues to emit
 `COMPATIBILITY_REPETITIVE_ADVICE_WARNING` as a warning when advice concepts are
 over-repeated across practical advice and final actions.
 
+## REPORT-18F Compatibility Deep Saju Bridge
+
+REPORT-18F expands the compatibility evidence layer so the product does not
+repeat only 천을귀인, 재고귀인, 원진살, 오행 과부족, and MBTI speed mismatch.
+Compatibility now compares three things: person A's natal chart, person B's
+natal chart, and the new structures created between the two charts.
+
+The deterministic deep bridge adds day-master relation, cross ten-god relation,
+pair element climate, element complement, branch relation detection, spouse
+palace relation, month rhythm, and hour/life rhythm notes. For example, the
+deokmin-sodam fixture can surface 갑목 -> 정화 as a day-master generating
+relation, 상관/정인 as the cross ten-god relation, mutual element complement,
+combined earth-heavy climate, 亥卯未 and 申子辰 branch trine structures, and
+丑未 or 申亥 pressure signals.
+
+Branch relation detection is cross-person by default. It can detect 육합,
+삼합, 반합, 충, and 해 from the two people's branches without treating 합 as
+unconditionally good or 충/해 as unconditionally bad. Diagnostic-only terms such
+as 백호대살 remain excluded from user-facing compatibility evidence.
+
+The evidence packet carries `deepSajuBridge` alongside the existing Saju and
+MBTI bridge output. Score calculation can use positive notes such as element
+complement and generating day-master relation, while also applying modest
+pressure to conflict recovery or lifestyle rhythm when branch clash/harm or a
+heavy combined climate is present. The clamp remains unchanged.
+
+Writer guidance now assigns different layers by chapter: overview uses pair
+element climate and score, attraction uses day-master/cross-ten-god/branch
+trine, strengths use element complement and good-fortune evidence, frictions
+use branch clash/harm plus 원진살, communication uses cross ten-god and MBTI,
+relationship scenes use day branch/month rhythm, money/lifestyle uses combined
+earth and 재고귀인, conflict recovery uses branch pressure and recovery style,
+and long-term rules combine element complement, branch relation, and
+relationship type.
+
+The result UI renders a `두 사람 사이에 생기는 명리학 구조` card when
+`deepSajuBridge` is available. The card shows a compact set of deep notes with
+plain Korean explanations so the user sees the added compatibility structure
+without reading raw diagnostic data.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

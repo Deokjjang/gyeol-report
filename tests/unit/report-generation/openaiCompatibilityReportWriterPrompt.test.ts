@@ -33,6 +33,26 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain(
       "Do not repeat the same advice concept in more than two sections.",
     );
+    expect(promptText).toContain("챕터마다 다른 명리학 레이어를 사용하라");
+    expect(promptText).toContain("최소 5개 이상");
+    expect(promptText).toContain("일간 관계");
+    expect(promptText).toContain("서로에게 보이는 십성");
+    expect(promptText).toContain("두 사람 오행 보완");
+    expect(promptText).toContain("합쳐졌을 때 무거워지는 오행");
+    expect(promptText).toContain("지지 삼합/반합/육합");
+    expect(promptText).toContain("지지 충/해/형/파");
+    expect(promptText).toContain("일지/배우자궁 관계");
+    expect(promptText).toContain("월지/생활 리듬 관계");
+    expect(promptText).toContain("MBTI 대화 리듬");
+    expect(promptText).toContain(
+      "천을귀인, 재고귀인, 원진살, MBTI 속도 차이만 반복하지 마라",
+    );
+    expect(promptText).toContain(
+      "attraction: day master relation + cross ten-god + branch trine.",
+    );
+    expect(promptText).toContain(
+      "money_lifestyle: combined earth + 재고귀인.",
+    );
   });
 
   it("builds repair instructions for unsafe copy, candidates, and unsupported terms", () => {

@@ -2,8 +2,15 @@ import type {
   CompatibilityEvidenceItem,
   CompatibilityPersonChartSummary,
 } from "./compatibilityTypes";
+import {
+  buildCompatibilityDeepSajuBridge,
+  type CompatibilityDeepSajuBridgeResult,
+  type CompatibilityDeepSajuLayer,
+  type CompatibilityDeepSajuNote,
+} from "./compatibilityDeepSajuBridge";
 
 export type CompatibilitySajuBridgeResult = {
+  readonly deepSajuBridge: CompatibilityDeepSajuBridgeResult;
   readonly sharedFeatureLabels: readonly string[];
   readonly complementaryElementNotes: readonly string[];
   readonly frictionNotes: readonly string[];
@@ -66,6 +73,43 @@ function item(input: {
   };
 }
 
+function deepNoteSection(
+  layer: CompatibilityDeepSajuLayer,
+): CompatibilityEvidenceItem["section"] {
+  const sectionByLayer = {
+    day_master_relation: "overview",
+    cross_ten_god: "communication",
+    combined_element_climate: "money_lifestyle",
+    element_complement: "strengths",
+    branch_trine: "attraction",
+    branch_clash: "frictions",
+    branch_harm: "conflict_recovery",
+    spouse_palace: "relationship_scenes",
+    month_rhythm: "money_lifestyle",
+    hour_life_rhythm: "long_term",
+  } as const satisfies Record<
+    CompatibilityDeepSajuLayer,
+    CompatibilityEvidenceItem["section"]
+  >;
+
+  return sectionByLayer[layer];
+}
+
+function deepNoteEvidenceItem(note: CompatibilityDeepSajuNote): CompatibilityEvidenceItem {
+  return {
+    section: deepNoteSection(note.layer),
+    title: note.title,
+    summary: `${note.summary} ${note.emotionalMeaning}`,
+    deepSajuLayer: note.layer,
+    personAFeatureIds: [],
+    personBFeatureIds: [],
+    mbtiTraitIds: [],
+    sceneSeeds: [note.emotionalMeaning],
+    practicalSwitches: [note.practicalMeaning],
+    scoreImpact: 0,
+  };
+}
+
 function hasAnyFeature(
   person: CompatibilityPersonChartSummary,
   labels: readonly string[],
@@ -76,6 +120,7 @@ function hasAnyFeature(
 export function buildCompatibilitySajuBridge(
   input: BuildCompatibilitySajuBridgeInput,
 ): CompatibilitySajuBridgeResult {
+  const deepSajuBridge = buildCompatibilityDeepSajuBridge(input);
   const sharedFeatureLabels = sharedValues(
     input.personA.featureLabels,
     input.personB.featureLabels,
@@ -204,7 +249,10 @@ export function buildCompatibilitySajuBridge(
     );
   }
 
+  evidenceItems.push(...deepSajuBridge.notes.map(deepNoteEvidenceItem));
+
   return {
+    deepSajuBridge,
     sharedFeatureLabels,
     complementaryElementNotes,
     frictionNotes,

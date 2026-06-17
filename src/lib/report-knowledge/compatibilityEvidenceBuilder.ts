@@ -2,6 +2,7 @@ import { buildCompatibilityMbtiBridge } from "./compatibilityMbtiBridge";
 import type { CompatibilityMbtiBridgeResult } from "./compatibilityMbtiBridge";
 import { buildCompatibilitySajuBridge } from "./compatibilitySajuBridge";
 import type { CompatibilitySajuBridgeResult } from "./compatibilitySajuBridge";
+import type { CompatibilityDeepSajuBridgeResult } from "./compatibilityDeepSajuBridge";
 import { scoreCompatibility } from "./compatibilityScoreEngine";
 import {
   requireCompatibilityFixture,
@@ -40,6 +41,7 @@ export type CompatibilityEvidencePacket = {
   readonly personAChartSummary: CompatibilityPersonChartSummary;
   readonly personBChartSummary: CompatibilityPersonChartSummary;
   readonly sajuBridge: CompatibilitySajuBridgeResult;
+  readonly deepSajuBridge?: CompatibilityDeepSajuBridgeResult;
   readonly mbtiBridge: CompatibilityMbtiBridgeResult;
   readonly score: CompatibilityScoreResult;
   readonly evidenceBySection: Record<
@@ -196,8 +198,10 @@ export function buildCompatibilityEvidencePacket(
     personA: input.input.personA,
     personB: input.input.personB,
   });
+  const deepSajuBridge = sajuBridge.deepSajuBridge;
   const score: CompatibilityScoreResult = scoreCompatibility({
     sajuBridge,
+    deepSajuBridge,
     mbtiBridge,
     relationshipType: input.input.relationshipType,
     birthTimeConfidence: {
@@ -212,6 +216,7 @@ export function buildCompatibilityEvidencePacket(
     personAChartSummary,
     personBChartSummary,
     sajuBridge,
+    deepSajuBridge,
     mbtiBridge,
     score,
     evidenceBySection: groupEvidenceBySection(evidenceItems),

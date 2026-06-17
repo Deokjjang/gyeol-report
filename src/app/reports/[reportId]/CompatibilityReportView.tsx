@@ -1,4 +1,8 @@
 import type { CompatibilityReportDraft } from "../../../lib/report-generation/compatibilityReportDraftTypes";
+import type {
+  CompatibilityDeepSajuBridgeResult,
+  CompatibilityDeepSajuLayer,
+} from "../../../lib/report-knowledge/compatibilityDeepSajuBridge";
 
 type CompatibilityReportViewProps = {
   readonly draft: CompatibilityReportDraft;
@@ -45,6 +49,19 @@ const finalAdviceLabels = [
   "도움 요청",
   "갈등 회복",
 ] as const;
+
+const deepSajuLayerOrder = [
+  "day_master_relation",
+  "cross_ten_god",
+  "element_complement",
+  "combined_element_climate",
+  "branch_trine",
+  "branch_clash",
+  "branch_harm",
+  "spouse_palace",
+  "month_rhythm",
+  "hour_life_rhythm",
+] as const satisfies readonly CompatibilityDeepSajuLayer[];
 
 const pillarElementByChar: Record<string, string> = {
   甲: "wood",
@@ -276,6 +293,63 @@ function renderCompatibilityKeyPoints(draft: CompatibilityReportDraft) {
   );
 }
 
+function getDraftDeepSajuBridge(
+  draft: CompatibilityReportDraft,
+): CompatibilityDeepSajuBridgeResult | undefined {
+  return (draft as { readonly deepSajuBridge?: CompatibilityDeepSajuBridgeResult })
+    .deepSajuBridge;
+}
+
+function renderDeepSajuStructureCard(
+  draft: CompatibilityReportDraft,
+) {
+  const deepSajuBridge = getDraftDeepSajuBridge(draft);
+
+  if (deepSajuBridge === undefined || deepSajuBridge.notes.length === 0) {
+    return null;
+  }
+
+  const notes = [...deepSajuBridge.notes]
+    .sort(
+      (left, right) =>
+        deepSajuLayerOrder.indexOf(left.layer) -
+        deepSajuLayerOrder.indexOf(right.layer),
+    )
+    .slice(0, 6);
+
+  return (
+    <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+      <div className="space-y-2">
+        <h2 className="text-xl font-semibold text-neutral-50">
+          두 사람 사이에 생기는 명리학 구조
+        </h2>
+        <p className="text-sm leading-6 text-neutral-400">
+          각자 사주를 따로 놓고 보는 것과 달리, 두 원국이 만났을 때 새로 생기는 관계만 추려서 봅니다.
+        </p>
+      </div>
+      <div className="grid gap-3 md:grid-cols-2">
+        {notes.map((note) => (
+          <article
+            key={`${note.layer}:${note.relationLabel}`}
+            className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
+          >
+            <p className="text-xs font-semibold text-amber-200">{note.title}</p>
+            <h3 className="mt-1 text-base font-semibold leading-6 text-neutral-50">
+              {note.relationLabel}
+            </h3>
+            <p className="mt-2 text-sm leading-6 text-neutral-300">
+              {note.summary}
+            </p>
+            <p className="mt-2 text-sm leading-6 text-neutral-400">
+              {note.practicalMeaning}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function CompatibilityReportView({
   draft,
   reportId,
@@ -372,6 +446,8 @@ export function CompatibilityReportView({
           })}
         </div>
       </section>
+
+      {renderDeepSajuStructureCard(draft)}
 
       {renderCompatibilityKeyPoints(draft)}
 

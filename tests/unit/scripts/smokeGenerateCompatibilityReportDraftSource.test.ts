@@ -18,6 +18,12 @@ describe("smoke_generate_compatibility_report_draft source", () => {
     expect(source).toContain("compatibility fixture:");
     expect(source).toContain("relationship type:");
     expect(source).toContain("score total:");
+    expect(source).toContain("deep saju layers:");
+    expect(source).toContain("note.layer");
+    expect(source).toContain("note.relationLabel");
+    expect(source).toContain("branch_trine");
+    expect(source).toContain("cross_ten_god");
+    expect(source).toContain("deepSajuBridge: packet.deepSajuBridge");
     expect(source).toContain("schema approx chars:");
     expect(source).toContain("formatCompatibilityOpenAIRequestDiagnostics");
     expect(source).toContain("CompatibilityReportWriterFailure");

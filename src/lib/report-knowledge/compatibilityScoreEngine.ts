@@ -5,9 +5,14 @@ import type {
 } from "./compatibilityTypes";
 import type { CompatibilityMbtiBridgeResult } from "./compatibilityMbtiBridge";
 import type { CompatibilitySajuBridgeResult } from "./compatibilitySajuBridge";
+import type {
+  CompatibilityDeepSajuBridgeResult,
+  CompatibilityDeepSajuLayer,
+} from "./compatibilityDeepSajuBridge";
 
 export type ScoreCompatibilityInput = {
   readonly sajuBridge: CompatibilitySajuBridgeResult;
+  readonly deepSajuBridge?: CompatibilityDeepSajuBridgeResult;
   readonly mbtiBridge: CompatibilityMbtiBridgeResult;
   readonly relationshipType: CompatibilityRelationshipType;
   readonly birthTimeConfidence: {
@@ -54,6 +59,31 @@ function sumImpacts(
   return sajuImpact + mbtiImpact;
 }
 
+function sumDeepImpacts(
+  input: ScoreCompatibilityInput,
+  layers: readonly CompatibilityDeepSajuLayer[],
+): number {
+  return (
+    input.deepSajuBridge?.notes
+      .filter((note) => layers.includes(note.layer))
+      .reduce((sum, note) => sum + note.scoreImpact, 0) ?? 0
+  );
+}
+
+function hasDeepLayer(
+  input: ScoreCompatibilityInput,
+  layer: CompatibilityDeepSajuLayer,
+): boolean {
+  return input.deepSajuBridge?.notes.some((note) => note.layer === layer) ?? false;
+}
+
+function mbtiSpeedMismatchPenalty(input: ScoreCompatibilityInput): number {
+  return input.mbtiBridge.pairLabel === "ENTJ + INTP" ||
+    input.mbtiBridge.pairLabel === "INTP + ENTJ"
+    ? -5
+    : 0;
+}
+
 function unknownTimePenalty(input: ScoreCompatibilityInput): number {
   const unknownCount = [
     input.birthTimeConfidence.personA,
@@ -74,22 +104,49 @@ export function scoreCompatibility(
     attraction: clampScore(
       65 +
         relationshipBonus +
-        sumImpacts(input, ["attraction", "overview", "two_charts", "strengths"]),
+        sumImpacts(input, ["attraction", "overview", "two_charts", "strengths"]) +
+        sumDeepImpacts(input, [
+          "day_master_relation",
+          "cross_ten_god",
+          "branch_trine",
+        ]),
     ),
     communication: clampScore(
-      65 + sumImpacts(input, ["communication", "relationship_scenes"]),
+      65 +
+        sumImpacts(input, ["communication", "relationship_scenes"]) +
+        sumDeepImpacts(input, ["cross_ten_god"]) +
+        mbtiSpeedMismatchPenalty(input),
     ),
     lifestyleRhythm: clampScore(
-      65 + sumImpacts(input, ["money_lifestyle", "two_charts"]) - confidencePenalty,
+      65 +
+        sumImpacts(input, ["money_lifestyle", "two_charts"]) +
+        sumDeepImpacts(input, [
+          "combined_element_climate",
+          "month_rhythm",
+          "hour_life_rhythm",
+        ]) -
+        confidencePenalty,
     ),
     conflictRecovery: clampScore(
-      65 + sumImpacts(input, ["frictions", "conflict_recovery", "communication"]),
+      65 +
+        sumImpacts(input, ["frictions", "conflict_recovery", "communication"]) +
+        sumDeepImpacts(input, ["branch_clash", "branch_harm", "spouse_palace"]),
     ),
     longTermStability: clampScore(
-      65 + sumImpacts(input, ["long_term", "money_lifestyle"]) - confidencePenalty,
+      65 +
+        sumImpacts(input, ["long_term", "money_lifestyle"]) +
+        sumDeepImpacts(input, [
+          "element_complement",
+          "branch_trine",
+          "combined_element_climate",
+        ]) -
+        confidencePenalty,
     ),
     growthComplement: clampScore(
-      65 + sumImpacts(input, ["strengths", "final_advice"]) + relationshipBonus,
+      65 +
+        sumImpacts(input, ["strengths", "final_advice"]) +
+        sumDeepImpacts(input, ["element_complement", "day_master_relation"]) +
+        (hasDeepLayer(input, "element_complement") ? 0 : relationshipBonus),
     ),
   };
 

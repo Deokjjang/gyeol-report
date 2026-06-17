@@ -32,4 +32,26 @@ describe("REPORT-18A compatibility Saju bridge", () => {
     expect(packet.personBChartSummary.diagnosticFeatureLabels).toContain("백호대살");
     expect(evidenceText).not.toContain("백호대살");
   });
+
+  it("attaches deep saju bridge evidence without diagnostic-only terms", () => {
+    const packet = buildCompatibilityEvidencePacketFromFixtureId("deokmin-sodam-love");
+    const layers = [
+      ...new Set(
+        packet.sajuBridge.deepSajuBridge.notes.map((note) => note.layer),
+      ),
+    ];
+
+    expect(layers).toEqual(
+      expect.arrayContaining([
+        "day_master_relation",
+        "cross_ten_god",
+        "element_complement",
+        "combined_element_climate",
+        "branch_trine",
+      ]),
+    );
+    expect(JSON.stringify(packet.sajuBridge.deepSajuBridge)).not.toContain(
+      "백호대살",
+    );
+  });
 });

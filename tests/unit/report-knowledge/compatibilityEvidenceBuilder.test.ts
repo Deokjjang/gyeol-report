@@ -23,6 +23,17 @@ describe("REPORT-18A compatibility evidence builder", () => {
     expect(packet.score.totalScore).toBeGreaterThan(0);
     expect(packet.evidenceBySection.strengths.length).toBeGreaterThan(0);
     expect(packet.evidenceBySection.money_lifestyle.length).toBeGreaterThan(0);
+    expect(packet.deepSajuBridge?.notes.length).toBeGreaterThanOrEqual(5);
+    expect(
+      new Set(
+        Object.values(packet.evidenceBySection)
+          .flat()
+          .flatMap((item) =>
+            item.deepSajuLayer === undefined ? [] : [item.deepSajuLayer],
+          ),
+      ).size,
+    ).toBeGreaterThan(4);
+    expect(JSON.stringify(packet.deepSajuBridge)).not.toContain("백호대살");
   });
 
   it("adds warnings for missing time and missing MBTI", () => {

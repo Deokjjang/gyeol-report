@@ -1,5 +1,6 @@
 import type { MbtiTypeCode } from "./mbtiKnowledgeTypes";
 import type { ComputedSajuFacts } from "./sajuComputedFactsTypes";
+import type { CompatibilityDeepSajuLayer } from "./compatibilityDeepSajuBridge";
 
 export type CompatibilityRelationshipType =
   | "love"
@@ -60,6 +61,7 @@ export type CompatibilityEvidenceItem = {
   readonly section: CompatibilityEvidenceSection;
   readonly title: string;
   readonly summary: string;
+  readonly deepSajuLayer?: CompatibilityDeepSajuLayer;
   readonly personAFeatureIds: readonly string[];
   readonly personBFeatureIds: readonly string[];
   readonly mbtiTraitIds: readonly string[];

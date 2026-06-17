@@ -24,6 +24,43 @@ function writeLine(line: string): void {
   process.stdout.write(`${line}\n`);
 }
 
+function writeDeepSajuLayers(
+  notes: NonNullable<
+    ReturnType<typeof buildCompatibilityEvidencePacketFromFixture>["deepSajuBridge"]
+  >["notes"],
+): void {
+  type DeepSajuNote = (typeof notes)[number];
+  const layerOrder: readonly DeepSajuNote["layer"][] = [
+    "day_master_relation",
+    "cross_ten_god",
+    "element_complement",
+    "combined_element_climate",
+    "branch_trine",
+    "branch_clash",
+    "branch_harm",
+    "spouse_palace",
+    "month_rhythm",
+    "hour_life_rhythm",
+  ] as const;
+  const getLayerOrderIndex = (layer: DeepSajuNote["layer"]): number => {
+    const index = layerOrder.indexOf(layer);
+    return index >= 0 ? index : Number.MAX_SAFE_INTEGER;
+  };
+
+  writeLine("deep saju layers:");
+  if (notes.length === 0) {
+    writeLine("- none");
+    return;
+  }
+
+  for (const note of [...notes].sort(
+    (left, right) =>
+      getLayerOrderIndex(left.layer) - getLayerOrderIndex(right.layer),
+  )) {
+    writeLine(`- ${note.layer}: ${note.relationLabel}`);
+  }
+}
+
 function main(): void {
   const fixture = requireCompatibilityFixture(getFixtureId(process.argv.slice(2)));
   const packet = buildCompatibilityEvidencePacketFromFixture(fixture);
@@ -50,6 +87,7 @@ function main(): void {
   for (const label of packet.sajuBridge.sharedFeatureLabels) {
     writeLine(`- ${label}`);
   }
+  writeDeepSajuLayers(packet.deepSajuBridge?.notes ?? []);
   writeLine("warnings:");
   for (const warning of packet.warnings) {
     writeLine(`- ${warning}`);
