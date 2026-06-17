@@ -300,6 +300,32 @@ function getDraftDeepSajuBridge(
     .deepSajuBridge;
 }
 
+function renderDeepSajuExplanationSections(
+  note: CompatibilityDeepSajuBridgeResult["notes"][number],
+) {
+  const sections = [
+    ["명리학적으로는", note.principleExplanation],
+    ["두 사람에게는", note.relationshipTranslation],
+    ["좋게 쓰면", note.positiveExpression],
+    ["조심할 점", note.riskExpression],
+    ["실제 장면", note.everydayScene],
+    ["관계 운영법", note.actionRule],
+  ] as const;
+
+  return (
+    <dl className="mt-3 space-y-3">
+      {sections
+        .filter(([, body]) => body.trim().length > 0)
+        .map(([label, body]) => (
+          <div key={label} className="rounded-md border border-neutral-800 bg-neutral-950/50 p-3">
+            <dt className="text-xs font-semibold text-amber-200">{label}</dt>
+            <dd className="mt-1 text-sm leading-6 text-neutral-300">{body}</dd>
+          </div>
+        ))}
+    </dl>
+  );
+}
+
 function renderDeepSajuStructureCard(
   draft: CompatibilityReportDraft,
 ) {
@@ -335,14 +361,14 @@ function renderDeepSajuStructureCard(
           >
             <p className="text-xs font-semibold text-amber-200">{note.title}</p>
             <h3 className="mt-1 text-base font-semibold leading-6 text-neutral-50">
-              {note.relationLabel}
+              {note.plainKoreanSummary.trim().length > 0
+                ? note.plainKoreanSummary
+                : note.title}
             </h3>
-            <p className="mt-2 text-sm leading-6 text-neutral-300">
-              {note.summary}
+            <p className="mt-2 text-xs font-semibold text-neutral-500">
+              {note.relationLabel}
             </p>
-            <p className="mt-2 text-sm leading-6 text-neutral-400">
-              {note.practicalMeaning}
-            </p>
+            {renderDeepSajuExplanationSections(note)}
           </article>
         ))}
       </div>

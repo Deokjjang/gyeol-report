@@ -84,6 +84,19 @@ describe("report result page source", () => {
       "deepSajuBridge.notes",
       "day_master_relation",
       "element_complement",
+      "plainKoreanSummary",
+      "principleExplanation",
+      "relationshipTranslation",
+      "positiveExpression",
+      "riskExpression",
+      "everydayScene",
+      "actionRule",
+      "명리학적으로는",
+      "두 사람에게는",
+      "좋게 쓰면",
+      "조심할 점",
+      "실제 장면",
+      "관계 운영법",
       "draft.scoreSummary.breakdown",
       "draft.chartComparison.personA",
       "draft.chartComparison.personB",
@@ -151,5 +164,6 @@ describe("report result page source", () => {
 
     expect(compatibilityViewSource).not.toContain("preview snapshot");
     expect(compatibilityViewSource).not.toContain(">상태<");
+    expect(compatibilityViewSource).not.toContain("mutual element complement");
   });
 });

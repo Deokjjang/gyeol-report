@@ -1089,7 +1089,7 @@ The deterministic deep bridge adds day-master relation, cross ten-god relation,
 pair element climate, element complement, branch relation detection, spouse
 palace relation, month rhythm, and hour/life rhythm notes. For example, the
 deokmin-sodam fixture can surface 갑목 -> 정화 as a day-master generating
-relation, 상관/정인 as the cross ten-god relation, mutual element complement,
+relation, 상관/정인 as the cross ten-god relation, 오행 상호 보완,
 combined earth-heavy climate, 亥卯未 and 申子辰 branch trine structures, and
 丑未 or 申亥 pressure signals.
 
@@ -1117,6 +1117,46 @@ The result UI renders a `두 사람 사이에 생기는 명리학 구조` card w
 `deepSajuBridge` is available. The card shows a compact set of deep notes with
 plain Korean explanations so the user sees the added compatibility structure
 without reading raw diagnostic data.
+
+## REPORT-18G Deep Interpretation Translation Layer
+
+REPORT-18G keeps the REPORT-18F calculation scope but adds the interpretation
+translation layer that turns calculation values into relationship language.
+The product should not stop at labels such as 갑목 -> 정화, 상관/정인, 토 7,
+申子辰, 亥卯未, 丑未, or 申亥. Each deep compatibility note now carries:
+
+- `principleExplanation`: what the Saju calculation means.
+- `relationshipTranslation`: how that calculation can appear between the two
+  people.
+- `positiveExpression`: how it works when used well.
+- `riskExpression`: how it becomes tiring when unmanaged.
+- `everydayScene`: where the user might recognize it in daily life.
+- `actionRule`: what to do with it.
+- `plainKoreanSummary`: a non-technical one-line summary.
+
+The interpretation path is:
+
+1. calculation
+2. principle
+3. relationship translation
+4. everyday scene
+5. action
+
+For example, day-master relation should not be written only as
+`갑목이 정화를 생합니다`. It should explain that wood generates fire, translate
+that into one person's direction helping the other person's expression and
+temperature come alive, then show the everyday scene and the rule for keeping
+the give-and-response pattern balanced.
+
+The `두 사람 사이에 생기는 명리학 구조` UI card now renders each selected deep
+note as a 3-step explanation style card with headings such as `명리학적으로는`,
+`두 사람에게는`, `좋게 쓰면`, `조심할 점`, `실제 장면`, and `관계 운영법`.
+The card should prefer `plainKoreanSummary` for the visible heading and avoid
+showing internal English relation labels to users.
+
+The writer prompt requires every chapter to translate at least one Saju
+calculation into everyday relationship language. Raw calculation-only output and
+internal labels are not enough for the paid compatibility product.
 
 ## Future OpenAI Use
 

@@ -23,8 +23,11 @@ describe("REPORT-18A compatibility evidence smoke source", () => {
     expect(source).toContain("deep saju layers:");
     expect(source).toContain("note.layer");
     expect(source).toContain("note.relationLabel");
+    expect(source).toContain("plain:");
+    expect(source).toContain("note.plainKoreanSummary");
     expect(source).toContain("branch_trine");
     expect(source).toContain("cross_ten_god");
+    expect(source).not.toContain("mutual element complement");
     expect(source).toContain("warnings:");
   });
 });

@@ -123,6 +123,7 @@ function writeDeepSajuLayers(
       getLayerOrderIndex(left.layer) - getLayerOrderIndex(right.layer),
   )) {
     writeLine(`- ${note.layer}: ${note.relationLabel}`);
+    writeLine(`  plain: ${note.plainKoreanSummary}`);
   }
 }
 

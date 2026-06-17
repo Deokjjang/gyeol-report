@@ -53,6 +53,18 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain(
       "money_lifestyle: combined earth + 재고귀인.",
     );
+    expect(promptText).toContain("명리학 용어를 쓸 때는 반드시");
+    expect(promptText).toContain("계산값만 말하지 마라");
+    expect(promptText).toContain("갑목이 정화를 생합니다");
+    expect(promptText).toContain("상관/정인 관계입니다");
+    expect(promptText).toContain("丑未 충이 있습니다");
+    expect(promptText).toContain(
+      "Every chapter should contain at least one sentence",
+    );
+    expect(promptText).toContain(
+      "Do not expose English/internal labels like mutual element complement",
+    );
+    expect(promptText).toContain("Translate all relation labels into Korean");
   });
 
   it("builds repair instructions for unsafe copy, candidates, and unsupported terms", () => {
