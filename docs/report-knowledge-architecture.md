@@ -1067,7 +1067,7 @@ display while adding a per-person compatibility summary with `핵심 결` and
 table.
 
 Chapter rendering is card-based. Each chapter separates the title, headline,
-body, `찔리는 장면`, and `실전 조언` so long generated prose does not become a
+body, `반복될 수 있는 장면`, and `실전 조언` so long generated prose does not become a
 single wall of text. Key compatibility points are grouped into `왜 끌리는지`,
 `잘 맞는 지점`, `부딪히는 지점`, and `관계 규칙`.
 
@@ -1157,6 +1157,42 @@ showing internal English relation labels to users.
 The writer prompt requires every chapter to translate at least one Saju
 calculation into everyday relationship language. Raw calculation-only output and
 internal labels are not enough for the paid compatibility product.
+
+## REPORT-18H Compatibility UI Copy Density Polish
+
+REPORT-18H is a final product-surface polish pass for compatibility reports. It
+does not expand calculation scope and does not change payment, legal, or
+migration behavior.
+
+The browser report label `찔리는 장면` is replaced with `반복될 수 있는 장면`
+so the section can be read by two people together without sounding accusatory.
+The generic `Chapter` label is removed from compatibility chapter cards.
+
+Birth-time display is product-facing rather than form-facing:
+
+- known birth time: `시주 반영`
+- unknown birth time: `시주 미반영`
+
+The two-person chart summary should show the day pillar with the `일주` suffix,
+for example `갑신일주` or `정축일주`.
+
+The `두 사람 사이에 생기는 명리학 구조` card keeps the deep interpretation
+layer but reduces default density. At most four notes are expanded with full
+principle/translation/scene/action sections. Extra notes move under
+`더 살펴볼 구조` as compact summaries. Technical relation labels can appear only
+under `계산값:` and internal English labels such as `mutual element complement`
+or layer ids must not be user-visible.
+
+Score breakdown cards include one-line interpretations so low sub-scores do not
+feel like cold verdicts. Key compatibility point groups show at most three
+bullets in the UI to reduce repetition before the chapters.
+
+The validator emits
+`COMPATIBILITY_FINAL_ADVICE_LABEL_MISMATCH_WARNING` when the default 도움 요청
+slot contains conflict/recovery content such as 서운함, 갈등, or 어긋남 instead
+of help-request content. The compatibility validator also sanitizes narrow
+awkward Korean phrases such as `목·금가` -> `목과 금의 흐름이` and
+`충가 있어` -> `충이 있어`.
 
 ## Future OpenAI Use
 

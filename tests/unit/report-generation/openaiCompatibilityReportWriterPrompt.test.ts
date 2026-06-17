@@ -65,6 +65,16 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
       "Do not expose English/internal labels like mutual element complement",
     );
     expect(promptText).toContain("Translate all relation labels into Korean");
+    expect(promptText).toContain("반복될 수 있는 장면");
+    expect(promptText).toContain("keyCompatibilityPoints는 각 그룹 2~3개 이내");
+    expect(promptText).toContain("opening key points should be concise");
+    expect(promptText).toContain("finalAdvice labels must match content");
+    expect(promptText).toContain("If the label is 도움 요청");
+    expect(promptText).toContain("label the concept as 갈등 회복");
+    expect(promptText).toContain("목·금가");
+    expect(promptText).toContain("충가 있어");
+    expect(promptText).toContain("목과 금의 흐름이");
+    expect(promptText).toContain("충이 있어");
   });
 
   it("builds repair instructions for unsafe copy, candidates, and unsupported terms", () => {

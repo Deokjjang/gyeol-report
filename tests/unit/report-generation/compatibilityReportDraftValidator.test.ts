@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import type { CompatibilityReportDraft } from "../../../src/lib/report-generation/compatibilityReportDraftTypes";
 import {
+  sanitizeCompatibilityAwkwardKoreanText,
   validateCompatibilityReportDraft,
 } from "../../../src/lib/report-generation/compatibilityReportDraftValidator";
 import {
@@ -62,7 +63,7 @@ function createValidCompatibilityDraft(): CompatibilityReportDraft {
     finalAdvice: [
       "오늘부터 중요한 이야기는 결론부터 밀지 말고 검토 시간을 함께 정하세요.",
       "돈과 일정은 각자의 방식으로 관리하되 공유 기준만 먼저 맞추세요.",
-      "감정이 올라올 때는 바로 판단하지 말고 다음 대화 시간을 정하세요.",
+      "도움이 필요할 때는 혼자 정리하지 말고 필요한 지원을 한 문장으로 공유하세요.",
     ],
     safetyNotes: [
       "이 점수는 관계의 성공이나 실패를 단정하는 값이 아니라 조정 지점을 보기 위한 참고입니다.",
@@ -187,5 +188,44 @@ describe("compatibilityReportDraftValidator", () => {
 
     expect(result.ok).toBe(true);
     expect(result.warnings).toEqual([]);
+  });
+
+  it("warns when the default help-request final advice slot contains conflict recovery content", () => {
+    const draft = createValidCompatibilityDraft();
+    const result = validate({
+      ...draft,
+      finalAdvice: [
+        draft.finalAdvice[0],
+        draft.finalAdvice[1],
+        "서운함이 생기면 상대의 성격을 해석하기 전에 무엇이 어긋났는지 먼저 말하세요.",
+      ],
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.warnings).toContain(
+      "COMPATIBILITY_FINAL_ADVICE_LABEL_MISMATCH_WARNING: 도움 요청",
+    );
+  });
+
+  it("sanitizes known awkward Korean phrases without failing the draft", () => {
+    const draft = createValidCompatibilityDraft();
+    const result = validate({
+      ...draft,
+      openingSummary: `${draft.openingSummary} 목·금가 서로를 보완합니다.`,
+      finalAdvice: [...draft.finalAdvice, "丑未 충가 있어 바로 결론 내리지 마세요."],
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.openingSummary).toContain("목과 금의 흐름이");
+    expect(result.value?.finalAdvice.join("\n")).toContain("충이 있어");
+  });
+
+  it("exposes a deterministic awkward Korean sanitizer", () => {
+    expect(sanitizeCompatibilityAwkwardKoreanText("목·금가 살아납니다.")).toBe(
+      "목과 금의 흐름이 살아납니다.",
+    );
+    expect(sanitizeCompatibilityAwkwardKoreanText("丑未 충가 있어 조율합니다.")).toBe(
+      "丑未 충이 있어 조율합니다.",
+    );
   });
 });

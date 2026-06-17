@@ -159,7 +159,7 @@ function writeCompatibilityReportBody(input: {
     writeLine(chapter.title);
     writeLine(chapter.headline);
     writeLine(chapter.body);
-    writeBulletList("찔리는 장면:", chapter.directHitScenes);
+    writeBulletList("반복될 수 있는 장면:", chapter.directHitScenes);
     writeBulletList("실전 조언:", chapter.practicalAdvice);
   }
 

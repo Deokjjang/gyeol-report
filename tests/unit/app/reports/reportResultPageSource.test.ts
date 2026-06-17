@@ -73,14 +73,24 @@ describe("report result page source", () => {
       "draft.scoreSummary.scoreLabel",
       "draft.scoreSummary.scoreCaution",
       "compatibilityScoreOrder",
+      "getScoreInterpretation",
+      "처음 당기는 힘은 강한 편입니다.",
+      "말의 속도와 정리 순서를 맞춰야 편합니다.",
+      "바로 풀기보다 시간을 두고 다시 말해야 하는 조합입니다.",
       "핵심 결",
       "주의 결",
-      "출생시간 입력",
+      "formatDayPillarLabel",
+      "formatBirthTimeReflectionLabel",
+      "시주 반영",
+      "시주 미반영",
       "filterPublicChartLabels",
       "getDraftDeepSajuBridge",
       "renderDeepSajuStructureCard",
       "두 사람 사이에 생기는 명리학 구조",
       "두 원국이 만났을 때 새로 생기는 관계",
+      "expandedDeepSajuNoteLimit",
+      "더 살펴볼 구조",
+      "계산값:",
       "deepSajuBridge.notes",
       "day_master_relation",
       "element_complement",
@@ -104,11 +114,13 @@ describe("report result page source", () => {
       "잘 맞는 지점",
       "부딪히는 지점",
       "관계 규칙",
-      "찔리는 장면",
+      "items.slice(0, 3)",
+      "반복될 수 있는 장면",
       "실전 조언",
       "chapter.directHitScenes.map",
       "chapter.practicalAdvice.map",
       "finalAdviceLabels",
+      "getFinalAdviceLabel",
       "대화 규칙",
       "생활 기준",
       "도움 요청",
@@ -165,5 +177,9 @@ describe("report result page source", () => {
     expect(compatibilityViewSource).not.toContain("preview snapshot");
     expect(compatibilityViewSource).not.toContain(">상태<");
     expect(compatibilityViewSource).not.toContain("mutual element complement");
+    expect(compatibilityViewSource).not.toContain("출생시간 입력");
+    expect(compatibilityViewSource).not.toContain("찔리는 장면");
+    expect(compatibilityViewSource).not.toContain("Chapter");
+    expect(compatibilityViewSource).not.toContain("{note.layer}</");
   });
 });

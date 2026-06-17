@@ -50,6 +50,23 @@ const finalAdviceLabels = [
   "갈등 회복",
 ] as const;
 
+const finalAdviceConflictMarkers = [
+  "서운",
+  "갈등",
+  "어긋",
+  "감정",
+  "싸움",
+  "불편",
+  "회복",
+] as const;
+
+const finalAdviceHelpMarkers = [
+  "도움",
+  "필요",
+  "요청",
+  "공유",
+] as const;
+
 const deepSajuLayerOrder = [
   "day_master_relation",
   "cross_ten_god",
@@ -58,6 +75,21 @@ const deepSajuLayerOrder = [
   "branch_trine",
   "branch_clash",
   "branch_harm",
+  "spouse_palace",
+  "month_rhythm",
+  "hour_life_rhythm",
+] as const satisfies readonly CompatibilityDeepSajuLayer[];
+
+const expandedDeepSajuNoteLimit = 4;
+
+const expandedDeepSajuLayerOrder = [
+  "day_master_relation",
+  "element_complement",
+  "combined_element_climate",
+  "branch_clash",
+  "branch_harm",
+  "cross_ten_god",
+  "branch_trine",
   "spouse_palace",
   "month_rhythm",
   "hour_life_rhythm",
@@ -180,6 +212,24 @@ function getPersonCautionSummary(
   return "속도와 감정 표현을 상대 기준에 맞춰 확인할 필요가 있음";
 }
 
+function getScoreInterpretation(
+  key: keyof CompatibilityReportDraft["scoreSummary"]["breakdown"],
+): string {
+  const interpretations = {
+    attraction: "처음 당기는 힘은 강한 편입니다.",
+    communication: "말의 속도와 정리 순서를 맞춰야 편합니다.",
+    lifestyleRhythm: "기준을 맞추면 안정적으로 굴러갈 수 있습니다.",
+    conflictRecovery: "바로 풀기보다 시간을 두고 다시 말해야 하는 조합입니다.",
+    longTermStability: "역할과 책임을 나누면 길게 가기 좋습니다.",
+    growthComplement: "서로의 빈칸을 자극하는 보완성이 있습니다.",
+  } as const satisfies Record<
+    keyof CompatibilityReportDraft["scoreSummary"]["breakdown"],
+    string
+  >;
+
+  return interpretations[key];
+}
+
 function renderCompatibilityScoreCards(draft: CompatibilityReportDraft) {
   return (
     <section className="space-y-4" aria-label="종합 궁합 점수 세부 항목">
@@ -195,11 +245,24 @@ function renderCompatibilityScoreCards(draft: CompatibilityReportDraft) {
             <p className="mt-1 text-2xl font-bold text-neutral-50">
               {draft.scoreSummary.breakdown[key]}
             </p>
+            <p className="mt-2 text-xs leading-5 text-neutral-400">
+              {getScoreInterpretation(key)}
+            </p>
           </div>
         ))}
       </div>
     </section>
   );
+}
+
+function formatDayPillarLabel(dayPillar: string): string {
+  return dayPillar.endsWith("일주") ? dayPillar : `${dayPillar}일주`;
+}
+
+function formatBirthTimeReflectionLabel(
+  birthTimeConfidence: CompatibilityReportDraft["chartComparison"]["personA"]["birthTimeConfidence"],
+): string {
+  return birthTimeConfidence === "known" ? "시주 반영" : "시주 미반영";
 }
 
 function renderCompatibilityChartCard(input: {
@@ -219,8 +282,9 @@ function renderCompatibilityChartCard(input: {
       <div>
         <h3 className="text-lg font-semibold text-neutral-50">{input.label}</h3>
         <p className="text-sm text-neutral-500">
-          {input.chart.mbti ?? "MBTI 미입력"} · {input.chart.dayPillar} ·{" "}
-          {input.chart.birthTimeConfidence === "known" ? "출생시간 입력" : "출생시간 미상"}
+          {input.chart.mbti ?? "MBTI 미입력"} ·{" "}
+          {formatDayPillarLabel(input.chart.dayPillar)} ·{" "}
+          {formatBirthTimeReflectionLabel(input.chart.birthTimeConfidence)}
         </p>
       </div>
       <dl className="grid gap-2 rounded-md border border-neutral-800 bg-neutral-900/60 p-3 text-sm">
@@ -283,7 +347,7 @@ function renderCompatibilityKeyPoints(draft: CompatibilityReportDraft) {
         >
           <h3 className="text-sm font-semibold text-neutral-50">{title}</h3>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-300">
-            {items.slice(0, 4).map((item) => (
+            {items.slice(0, 3).map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
@@ -326,6 +390,18 @@ function renderDeepSajuExplanationSections(
   );
 }
 
+function getLayerOrderIndex(
+  layer: CompatibilityDeepSajuLayer,
+  order: readonly CompatibilityDeepSajuLayer[],
+): number {
+  const index = order.indexOf(layer);
+  return index >= 0 ? index : Number.MAX_SAFE_INTEGER;
+}
+
+function formatTechnicalRelationLabel(relationLabel: string): string {
+  return relationLabel.replace("->", "→");
+}
+
 function renderDeepSajuStructureCard(
   draft: CompatibilityReportDraft,
 ) {
@@ -335,13 +411,25 @@ function renderDeepSajuStructureCard(
     return null;
   }
 
-  const notes = [...deepSajuBridge.notes]
+  const sortedNotes = [...deepSajuBridge.notes]
     .sort(
       (left, right) =>
-        deepSajuLayerOrder.indexOf(left.layer) -
-        deepSajuLayerOrder.indexOf(right.layer),
+        getLayerOrderIndex(left.layer, deepSajuLayerOrder) -
+        getLayerOrderIndex(right.layer, deepSajuLayerOrder),
+    );
+  const expandedNotes = [...sortedNotes]
+    .sort(
+      (left, right) =>
+        getLayerOrderIndex(left.layer, expandedDeepSajuLayerOrder) -
+        getLayerOrderIndex(right.layer, expandedDeepSajuLayerOrder),
     )
-    .slice(0, 6);
+    .slice(0, expandedDeepSajuNoteLimit);
+  const expandedKeys = new Set(
+    expandedNotes.map((note) => `${note.layer}:${note.relationLabel}`),
+  );
+  const compactNotes = sortedNotes.filter(
+    (note) => !expandedKeys.has(`${note.layer}:${note.relationLabel}`),
+  );
 
   return (
     <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
@@ -354,7 +442,7 @@ function renderDeepSajuStructureCard(
         </p>
       </div>
       <div className="grid gap-3 md:grid-cols-2">
-        {notes.map((note) => (
+        {expandedNotes.map((note) => (
           <article
             key={`${note.layer}:${note.relationLabel}`}
             className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
@@ -366,14 +454,49 @@ function renderDeepSajuStructureCard(
                 : note.title}
             </h3>
             <p className="mt-2 text-xs font-semibold text-neutral-500">
-              {note.relationLabel}
+              계산값: {formatTechnicalRelationLabel(note.relationLabel)}
             </p>
             {renderDeepSajuExplanationSections(note)}
           </article>
         ))}
       </div>
+      {compactNotes.length === 0 ? null : (
+        <section className="rounded-lg border border-neutral-800 bg-neutral-900/60 p-4">
+          <h3 className="text-sm font-semibold text-neutral-100">
+            더 살펴볼 구조
+          </h3>
+          <ul className="mt-3 space-y-2 text-sm leading-6 text-neutral-300">
+            {compactNotes.map((note) => (
+              <li key={`${note.layer}:${note.relationLabel}`}>
+                <span className="font-semibold text-neutral-100">{note.title}</span>
+                {": "}
+                {note.plainKoreanSummary}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </section>
   );
+}
+
+function getFinalAdviceLabel(input: {
+  readonly advice: string;
+  readonly index: number;
+}): string {
+  const defaultLabel = finalAdviceLabels[input.index] ?? "실행 규칙";
+
+  if (defaultLabel !== "도움 요청") {
+    return defaultLabel;
+  }
+  if (finalAdviceHelpMarkers.some((marker) => input.advice.includes(marker))) {
+    return defaultLabel;
+  }
+  if (finalAdviceConflictMarkers.some((marker) => input.advice.includes(marker))) {
+    return "갈등 회복";
+  }
+
+  return defaultLabel;
 }
 
 export function CompatibilityReportView({
@@ -484,9 +607,6 @@ export function CompatibilityReportView({
             className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5"
           >
             <div className="space-y-2">
-              <p className="text-xs font-semibold text-amber-200">
-                Chapter
-              </p>
               <h2 className="text-xl font-semibold text-neutral-50">
                 {chapter.title}
               </h2>
@@ -500,7 +620,7 @@ export function CompatibilityReportView({
             <div className="grid gap-3 md:grid-cols-2">
               <section className="rounded-lg border border-amber-500/30 bg-amber-950/20 p-4">
                 <h3 className="text-sm font-semibold text-amber-100">
-                  찔리는 장면
+                  반복될 수 있는 장면
                 </h3>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-amber-50/90">
                   {chapter.directHitScenes.map((scene) => (
@@ -534,7 +654,7 @@ export function CompatibilityReportView({
               className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
             >
               <p className="text-sm font-semibold text-amber-100">
-                {index + 1}. {finalAdviceLabels[index] ?? "실행 규칙"}
+                {index + 1}. {getFinalAdviceLabel({ advice, index })}
               </p>
               <p className="mt-2 text-sm leading-6 text-neutral-300">{advice}</p>
             </li>

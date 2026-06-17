@@ -49,6 +49,8 @@ describe("smoke_generate_compatibility_report_draft source", () => {
     expect(source).toContain("핵심 포인트");
     expect(source).toContain("draft.chapters");
     expect(source).toContain("chapter.directHitScenes");
+    expect(source).toContain("반복될 수 있는 장면:");
+    expect(source).not.toContain("찔리는 장면:");
     expect(source).toContain("chapter.practicalAdvice");
     expect(source).toContain("draft.finalAdvice");
     expect(source).toContain("오늘부터 할 일");

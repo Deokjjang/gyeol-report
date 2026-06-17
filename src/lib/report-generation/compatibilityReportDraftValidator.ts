@@ -93,6 +93,80 @@ const repeatedAdviceWarningPhrases = [
   "혼자 쉬는 시간",
 ] as const;
 
+const finalAdviceLabelMismatchWarning =
+  "COMPATIBILITY_FINAL_ADVICE_LABEL_MISMATCH_WARNING" as const;
+
+const finalAdviceConflictMarkers = [
+  "서운",
+  "갈등",
+  "어긋",
+  "감정",
+  "싸움",
+  "불편",
+  "회복",
+] as const;
+
+const finalAdviceHelpMarkers = [
+  "도움",
+  "필요",
+  "요청",
+  "공유",
+] as const;
+
+export function sanitizeCompatibilityAwkwardKoreanText(text: string): string {
+  return text
+    .split("목·금가").join("목과 금의 흐름이")
+    .split("충가 있어").join("충이 있어");
+}
+
+function sanitizeStringArray(values: readonly string[]): readonly string[] {
+  return values.map(sanitizeCompatibilityAwkwardKoreanText);
+}
+
+function sanitizeCompatibilityDraft(
+  draft: CompatibilityReportDraft,
+): CompatibilityReportDraft {
+  return {
+    ...draft,
+    openingTitle: sanitizeCompatibilityAwkwardKoreanText(draft.openingTitle),
+    openingSummary: sanitizeCompatibilityAwkwardKoreanText(draft.openingSummary),
+    coreLine: sanitizeCompatibilityAwkwardKoreanText(draft.coreLine),
+    scoreSummary: {
+      ...draft.scoreSummary,
+      scoreLabel: sanitizeCompatibilityAwkwardKoreanText(
+        draft.scoreSummary.scoreLabel,
+      ),
+      scoreCaution: sanitizeCompatibilityAwkwardKoreanText(
+        draft.scoreSummary.scoreCaution,
+      ),
+    },
+    keyCompatibilityPoints: {
+      attractionPoints: sanitizeStringArray(
+        draft.keyCompatibilityPoints.attractionPoints,
+      ),
+      strengthPoints: sanitizeStringArray(
+        draft.keyCompatibilityPoints.strengthPoints,
+      ),
+      frictionPoints: sanitizeStringArray(
+        draft.keyCompatibilityPoints.frictionPoints,
+      ),
+      relationshipRules: sanitizeStringArray(
+        draft.keyCompatibilityPoints.relationshipRules,
+      ),
+    },
+    chapters: draft.chapters.map((chapter) => ({
+      ...chapter,
+      title: sanitizeCompatibilityAwkwardKoreanText(chapter.title),
+      headline: sanitizeCompatibilityAwkwardKoreanText(chapter.headline),
+      body: sanitizeCompatibilityAwkwardKoreanText(chapter.body),
+      directHitScenes: sanitizeStringArray(chapter.directHitScenes),
+      practicalAdvice: sanitizeStringArray(chapter.practicalAdvice),
+    })),
+    finalAdvice: sanitizeStringArray(draft.finalAdvice),
+    safetyNotes: sanitizeStringArray(draft.safetyNotes),
+  };
+}
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -266,6 +340,28 @@ function collectRepetitionWarnings(
   });
 }
 
+function collectFinalAdviceLabelMismatchWarnings(
+  draft: CompatibilityReportDraft,
+): readonly string[] {
+  const helpRequestAdvice = draft.finalAdvice[2];
+
+  if (helpRequestAdvice === undefined) {
+    return [];
+  }
+  if (finalAdviceHelpMarkers.some((marker) => helpRequestAdvice.includes(marker))) {
+    return [];
+  }
+  if (
+    finalAdviceConflictMarkers.some((marker) =>
+      helpRequestAdvice.includes(marker),
+    )
+  ) {
+    return [`${finalAdviceLabelMismatchWarning}: 도움 요청`];
+  }
+
+  return [];
+}
+
 export function validateCompatibilityReportDraft(
   draft: unknown,
   options: CompatibilityReportDraftValidationOptions = {},
@@ -281,18 +377,20 @@ export function validateCompatibilityReportDraft(
     };
   }
 
-  if (!isScore(draft.scoreSummary.totalScore)) {
+  const sanitizedDraft = sanitizeCompatibilityDraft(draft);
+
+  if (!isScore(sanitizedDraft.scoreSummary.totalScore)) {
     errors.push("COMPATIBILITY_SCORE_MISSING");
   }
-  validateRequiredChapters(draft, errors);
-  if (draft.finalAdvice.length < 3) {
+  validateRequiredChapters(sanitizedDraft, errors);
+  if (sanitizedDraft.finalAdvice.length < 3) {
     errors.push("COMPATIBILITY_FINAL_ADVICE_MISSING");
   }
-  if (draft.safetyNotes.length < 1) {
+  if (sanitizedDraft.safetyNotes.length < 1) {
     errors.push("COMPATIBILITY_FINAL_ADVICE_MISSING");
   }
 
-  const text = collectVisibleStrings(draft).join("\n");
+  const text = collectVisibleStrings(sanitizedDraft).join("\n");
   validateUnsafeCopy(text, errors);
   validateMbtiCandidateRecommendations({
     text,
@@ -304,10 +402,11 @@ export function validateCompatibilityReportDraft(
     allowedSajuTerms: options.allowedSajuTerms ?? [],
     errors,
   });
-  warnings.push(...collectRepetitionWarnings(draft));
+  warnings.push(...collectRepetitionWarnings(sanitizedDraft));
+  warnings.push(...collectFinalAdviceLabelMismatchWarnings(sanitizedDraft));
 
   return errors.length === 0
-    ? { ok: true, errors: [], warnings, value: draft }
+    ? { ok: true, errors: [], warnings, value: sanitizedDraft }
     : { ok: false, errors, warnings };
 }
 

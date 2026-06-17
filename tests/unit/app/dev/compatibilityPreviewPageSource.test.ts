@@ -64,6 +64,7 @@ describe("compatibility preview page source", () => {
       "시주",
       "draft.chapters.map",
       "chapter.directHitScenes",
+      "반복될 수 있는 장면",
       "chapter.practicalAdvice",
       "오늘부터 할 일",
       "안전 안내",
