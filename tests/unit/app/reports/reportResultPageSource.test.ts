@@ -66,10 +66,33 @@ describe("report result page source", () => {
       "사주×MBTI 궁합 리포트 v1.0",
       "두 사람 만세력 비교",
       "관계 유형",
-      "총점",
+      "종합 궁합 점수",
+      "draft.personALabel",
+      "draft.personBLabel",
+      "formatCompatibilityRelationshipType(draft.relationshipType)} 궁합",
+      "draft.scoreSummary.scoreLabel",
+      "draft.scoreSummary.scoreCaution",
+      "compatibilityScoreOrder",
+      "핵심 결",
+      "주의 결",
+      "출생시간 입력",
+      "filterPublicChartLabels",
       "draft.scoreSummary.breakdown",
       "draft.chartComparison.personA",
       "draft.chartComparison.personB",
+      "왜 끌리는지",
+      "잘 맞는 지점",
+      "부딪히는 지점",
+      "관계 규칙",
+      "찔리는 장면",
+      "실전 조언",
+      "chapter.directHitScenes.map",
+      "chapter.practicalAdvice.map",
+      "finalAdviceLabels",
+      "대화 규칙",
+      "생활 기준",
+      "도움 요청",
+      "갈등 회복",
       "draft.finalAdvice.map",
       "draft.safetyNotes.map",
       "리포트 준비 완료",
@@ -118,5 +141,8 @@ describe("report result page source", () => {
     for (const marker of blockedMarkers) {
       expect(source).not.toContain(marker);
     }
+
+    expect(compatibilityViewSource).not.toContain("preview snapshot");
+    expect(compatibilityViewSource).not.toContain(">상태<");
   });
 });

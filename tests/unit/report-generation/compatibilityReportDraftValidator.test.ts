@@ -145,16 +145,30 @@ describe("compatibilityReportDraftValidator", () => {
     expect(validate(draft).ok).toBe(true);
   });
 
+  it("blocks diagnostic-only compatibility terms from visible copy", () => {
+    const draft = createValidCompatibilityDraft();
+    const result = validate({
+      ...draft,
+      openingSummary: `${draft.openingSummary} 백호대살이 강하게 작동합니다.`,
+    });
+
+    expect(result.errors).toContain("UNSUPPORTED_COMPATIBILITY_TERM: 백호대살");
+  });
+
   it("emits a non-fatal repetitive advice warning", () => {
     const draft = createValidCompatibilityDraft();
     const repeated =
       "연락 규칙은 먼저 정하세요. 연락 템포가 다르면 연락 기준을 다시 보고, 연락 문제를 감정으로만 보지 마세요.";
     const result = validate({
       ...draft,
-      keyCompatibilityPoints: {
-        ...draft.keyCompatibilityPoints,
-        relationshipRules: [...draft.keyCompatibilityPoints.relationshipRules, repeated],
-      },
+      chapters: draft.chapters.map((chapter, index) =>
+        index < 2
+          ? {
+              ...chapter,
+              practicalAdvice: [...chapter.practicalAdvice, repeated],
+            }
+          : chapter,
+      ),
       finalAdvice: [...draft.finalAdvice, repeated],
     });
 

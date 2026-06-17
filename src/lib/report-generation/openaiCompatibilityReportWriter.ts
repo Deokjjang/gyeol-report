@@ -26,6 +26,8 @@ export type CompatibilityReportWriterResult = {
 
 export const compatibilityResponseFormatName = "compatibility_report_draft";
 
+const diagnosticOnlyCompatibilityTerms = ["백호대살"] as const;
+
 export type CompatibilityOpenAIRequestDiagnostics = OpenAIReportWriterSafeDiagnostics & {
   readonly responseFormatName: typeof compatibilityResponseFormatName;
   readonly schemaTopLevelKeys: readonly string[];
@@ -223,14 +225,76 @@ function buildCompatibilityDraftScoreSummary(
   return score;
 }
 
+function sanitizeDiagnosticTermText(input: string, removedTerms: Set<string>): string {
+  return diagnosticOnlyCompatibilityTerms
+    .reduce((text, term) => {
+      if (!text.includes(term)) {
+        return text;
+      }
+
+      removedTerms.add(term);
+
+      return text.split(term).join("");
+    }, input)
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s+([,.!?。])/g, "$1")
+    .replace(/\(\s*\)/g, "")
+    .trim();
+}
+
+function sanitizeDiagnosticTermsInValue(
+  value: unknown,
+  removedTerms: Set<string>,
+): unknown {
+  if (typeof value === "string") {
+    return sanitizeDiagnosticTermText(value, removedTerms);
+  }
+
+  if (Array.isArray(value)) {
+    return value
+      .map((item) => sanitizeDiagnosticTermsInValue(item, removedTerms))
+      .filter((item) => typeof item !== "string" || item.trim().length > 0);
+  }
+
+  if (typeof value !== "object" || value === null) {
+    return value;
+  }
+
+  return Object.fromEntries(
+    Object.entries(value).map(([key, item]) => [
+      key,
+      sanitizeDiagnosticTermsInValue(item, removedTerms),
+    ]),
+  );
+}
+
+export function sanitizeCompatibilityDiagnosticTerms(input: unknown): {
+  readonly value: unknown;
+  readonly removedTerms: readonly string[];
+  readonly debugNote?: "compatibility sanitizer: diagnostic terms removed";
+} {
+  const removedTerms = new Set<string>();
+  const value = sanitizeDiagnosticTermsInValue(input, removedTerms);
+  const removed = [...removedTerms];
+
+  return {
+    value,
+    removedTerms: removed,
+    ...(removed.length === 0
+      ? {}
+      : { debugNote: "compatibility sanitizer: diagnostic terms removed" as const }),
+  };
+}
+
 function validateAttachedDraft(input: {
   readonly parsed: unknown;
   readonly evidencePacket: CompatibilityEvidencePacket;
 }): CompatibilityReportDraft {
   const allowedSajuTerms = deriveAllowedCompatibilitySajuTerms(input.evidencePacket);
   const allowedMbtiTerms = deriveAllowedCompatibilityMbtiTerms(input.evidencePacket);
+  const sanitized = sanitizeCompatibilityDiagnosticTerms(input.parsed);
 
-  return assertValidCompatibilityReportDraft(input.parsed, {
+  return assertValidCompatibilityReportDraft(sanitized.value, {
     allowedSajuTerms,
     allowedMbtiTerms,
   });
@@ -284,7 +348,8 @@ export async function generateCompatibilityReportDraft(input: {
     parsed: parseJson(firstRawText),
     evidencePacket: input.evidencePacket,
   });
-  const firstValidation = validateCompatibilityReportDraft(firstParsed, {
+  const firstSanitized = sanitizeCompatibilityDiagnosticTerms(firstParsed);
+  const firstValidation = validateCompatibilityReportDraft(firstSanitized.value, {
     allowedSajuTerms,
     allowedMbtiTerms,
   });
@@ -298,7 +363,7 @@ export async function generateCompatibilityReportDraft(input: {
   }
 
   const repairMessages = buildOpenAICompatibilityReportRepairMessages({
-    previousDraftText: JSON.stringify(firstParsed),
+    previousDraftText: JSON.stringify(firstSanitized.value),
     validationErrors: firstValidation.errors,
     evidencePacket: input.evidencePacket,
     allowedSajuTerms,

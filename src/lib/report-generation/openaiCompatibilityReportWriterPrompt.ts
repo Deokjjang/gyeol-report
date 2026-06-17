@@ -40,6 +40,30 @@ function formatList(values: readonly string[]): string {
   return values.length === 0 ? "- 없음" : values.map((value) => `- ${value}`).join("\n");
 }
 
+const compatibilityDiagnosticOnlyForbiddenTerms = [
+  "백호대살",
+  "괴강살",
+  "도화살 확정",
+  "이혼살",
+  "과부살",
+  "상부살",
+  "단명",
+  "사망",
+  "사고수",
+] as const;
+
+function collectUnsupportedCompatibilityTerms(
+  validationErrors: readonly string[],
+): readonly string[] {
+  return validationErrors
+    .flatMap((error) => {
+      const prefix = "UNSUPPORTED_COMPATIBILITY_TERM:";
+
+      return error.startsWith(prefix) ? [error.slice(prefix.length).trim()] : [];
+    })
+    .filter((term, index, terms) => term.length > 0 && terms.indexOf(term) === index);
+}
+
 function buildPromptPacket(packet: CompatibilityEvidencePacket): object {
   return {
     input: packet.input,
@@ -76,6 +100,10 @@ export function buildOpenAICompatibilityReportWriterMessages(input: {
       "두 사람의 실제 사주 feature와 입력된 MBTI만 사용하라.",
       "evidence에 없는 사주 용어를 새로 만들지 마라.",
       "입력되지 않은 MBTI 유형 후보를 추천하지 마라.",
+      "절대 사용자 본문에 diagnostic-only feature를 쓰지 마라.",
+      "특히 백호대살은 어떤 경우에도 본문, 장면, 조언, 안전 안내에 쓰지 마라.",
+      "백호대살이 evidence/debug/diagnostic에 있어도 사용자용 리포트에서는 완전히 무시하라.",
+      "diagnostic-only term이 source data에 있으면 unavailable로 처리하고, 제외 사실도 말하지 마라.",
       "Write only valid JSON matching the schema.",
       "Write in Korean.",
     ].join("\n"),
@@ -87,6 +115,8 @@ export function buildOpenAICompatibilityReportWriterMessages(input: {
       "각 chapter는 서로 다른 각도를 새로 제시해야 한다. 같은 결론과 같은 조언 문장을 반복하지 마라.",
       "다음 표현은 전체 리포트에서 1회 이상 반복하지 마라: 연락 빈도, 약속 변경, 생활비, 숫자로 합의, 바로 결론, 하루 뒤 재검토, 혼자 쉬는 시간.",
       "한 chapter에서 쓴 규칙은 다음 chapter에서 같은 말로 반복하지 말고, 새로운 상황과 근거로 확장하라.",
+      "Do not repeat the same advice concept in more than two sections.",
+      "If a concept repeats, make the second use more specific and scene-based.",
       "directHitScenes는 가능하면 chapter마다 2개를 써라. 최소 1개는 반드시 있어야 한다.",
       "directHitScenes는 누가 무엇을 하는지, 상대가 무엇을 느끼는지, 어떤 사주/MBTI 구조에서 오는지, 어떤 일상 상황인지가 보여야 한다.",
       "나쁜 장면 예: 연락 속도가 달라서 서운한 장면.",
@@ -105,6 +135,9 @@ export function buildOpenAICompatibilityReportWriterMessages(input: {
       formatList(allowedSajuTerms),
       "허용된 MBTI 용어:",
       formatList(allowedMbtiTerms),
+      "diagnostic-only 금지 용어:",
+      formatList(compatibilityDiagnosticOnlyForbiddenTerms),
+      "위 diagnostic-only 금지 용어는 allowed evidence처럼 보이더라도 사용자용 리포트에서는 완전히 제외하라.",
       "금지 표현: 운명입니다, 운명 확정, 천생연분 확정, 이별 확정, 이혼 확정, 무조건, 반드시, 100%, 소울메이트 확정.",
       "chapter guide:",
       "overview: 두 사람의 전체 리듬과 점수 해석.",
@@ -119,6 +152,11 @@ export function buildOpenAICompatibilityReportWriterMessages(input: {
       "final_message: 마지막 메시지. finalAdvice는 별도 '오늘부터 할 일' 목록으로 이어지게 써라.",
       "모든 chapter는 directHitScenes를 1개 이상 포함해야 한다.",
       "finalAdvice는 오늘부터 할 수 있는 관계 규칙 3개 이상으로 쓰되, chapter title과 같은 '마지막 조언' 표현을 반복하지 마라.",
+      "finalAdvice must be concrete, today-actionable, and relationship-specific.",
+      "Avoid generic finalAdvice like \"서로 이해하세요\".",
+      "Each finalAdvice item should name a situation, not just a principle.",
+      "좋은 finalAdvice 예: 중요한 이야기를 시작할 때 먼저 “내가 이해한 건 이거야” 한 문장으로 정리한 뒤 결론을 말하세요.",
+      "나쁜 finalAdvice 예: 서로를 이해하세요.",
     ].join("\n"),
     user: [
       "다음 compatibility evidence packet만 사용해 compatibility_v1_draft JSON을 작성하라.",
@@ -136,6 +174,7 @@ export function buildOpenAICompatibilityReportRepairMessages(input: {
   readonly allowedSajuTerms?: readonly string[];
   readonly allowedMbtiTerms?: readonly string[];
 }): OpenAICompatibilityReportWriterMessages {
+  const unsupportedTerms = collectUnsupportedCompatibilityTerms(input.validationErrors);
   const base = buildOpenAICompatibilityReportWriterMessages({
     evidencePacket: input.evidencePacket,
     allowedSajuTerms: input.allowedSajuTerms,
@@ -146,6 +185,19 @@ export function buildOpenAICompatibilityReportRepairMessages(input: {
     system: base.system,
     developer: [
       base.developer,
+      "UNSUPPORTED_COMPATIBILITY_TERM 오류가 있으면 해당 term을 모든 필드에서 전부 삭제하라.",
+      "Do not replace unsupported terms with another unsupported saju term.",
+      "Rewrite affected sentences using only allowed evidence terms.",
+      unsupportedTerms.length === 0
+        ? "No concrete unsupported terms were parsed from the validator."
+        : [
+            "Concrete unsupported terms to remove from every field:",
+            formatList(unsupportedTerms),
+            ...unsupportedTerms.map(
+              (term) =>
+                `Remove every occurrence of "${term}" from openingSummary, coreLine, keyCompatibilityPoints, chapter title/headline/body, directHitScenes, practicalAdvice, finalAdvice, and safetyNotes.`,
+            ),
+          ].join("\n"),
       "Repair only the invalid compatibility draft.",
       "missing direct-hit scenes가 있으면 해당 chapter에 실제 연애/썸/친구/생활 장면을 넣어라.",
       "unsafe copy가 있으면 확정/운명/공포 표현을 제거하라.",
@@ -156,6 +208,8 @@ export function buildOpenAICompatibilityReportRepairMessages(input: {
     user: [
       "validation errors:",
       formatList(input.validationErrors),
+      "unsupported terms to remove:",
+      formatList(unsupportedTerms),
       "previous draft:",
       input.previousDraftText,
       "Return repaired compatibility_v1_draft JSON only.",

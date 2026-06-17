@@ -13,6 +13,7 @@ describe("smoke_generate_compatibility_report_draft source", () => {
     expect(source).toContain("--print-body");
     expect(source).toContain("--body");
     expect(source).toContain("--print");
+    expect(source).toContain("--write-preview");
     expect(source).toContain("deokmin-sodam-love");
     expect(source).toContain("compatibility fixture:");
     expect(source).toContain("relationship type:");
@@ -44,7 +45,17 @@ describe("smoke_generate_compatibility_report_draft source", () => {
     expect(source).toContain("오늘부터 할 일");
     expect(source).toContain("draft.safetyNotes");
     expect(source).toContain("quality warnings:");
+    expect(source).toContain("writeQualityWarnings(validation.warnings)");
+    expect(source).toContain("- none");
     expect(source).toContain("validateCompatibilityReportDraft");
+    expect(source).toContain("writeCompatibilityPreviewSnapshot");
+    expect(source).toContain("getCompatibilityPreviewSnapshotRelativePath");
+    expect(source).toContain("getCompatibilityPreviewUrl");
+    expect(source).toContain("preview snapshot written:");
+    expect(source).toContain("Open in browser:");
+    expect(source).toContain("getCompatibilityPreviewUrl(fixture.id)");
+    expect(source).toContain("PASS");
+    expect(source).toContain("FAIL");
     expect(source).toContain("done");
     expect(source).not.toContain("writeLine(`OPENAI_API_KEY");
     expect(source).not.toContain("writeLine(\"OPENAI_API_KEY");

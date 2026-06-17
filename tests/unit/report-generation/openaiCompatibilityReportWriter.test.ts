@@ -4,6 +4,7 @@ import type { CompatibilityReportDraft } from "../../../src/lib/report-generatio
 import {
   CompatibilityReportWriterFailure,
   generateCompatibilityReportDraft,
+  sanitizeCompatibilityDiagnosticTerms,
 } from "../../../src/lib/report-generation/openaiCompatibilityReportWriter";
 import { compatibilityReportDraftJsonSchema } from "../../../src/lib/report-generation/compatibilityReportDraftSchema";
 import {
@@ -170,6 +171,64 @@ describe("openaiCompatibilityReportWriter", () => {
     expect(error.message).not.toContain("Authorization");
     expect(error.message).not.toContain("sk-test");
     expect(error.message).not.toContain("OPENAI_API_KEY");
+  });
+
+  it("sanitizes diagnostic-only terms from all visible draft fields", () => {
+    const draft = createValidCompatibilityDraft();
+    const contaminated: CompatibilityReportDraft = {
+      ...draft,
+      openingSummary: `${draft.openingSummary} 백호대살`,
+      coreLine: `${draft.coreLine} 백호대살`,
+      keyCompatibilityPoints: {
+        ...draft.keyCompatibilityPoints,
+        frictionPoints: [...draft.keyCompatibilityPoints.frictionPoints, "백호대살"],
+      },
+      chapters: draft.chapters.map((chapter, index) =>
+        index === 0
+          ? {
+              ...chapter,
+              body: `${chapter.body} 백호대살`,
+              directHitScenes: [...chapter.directHitScenes, "백호대살"],
+            }
+          : chapter,
+      ),
+      finalAdvice: [...draft.finalAdvice, "백호대살"],
+      safetyNotes: [...draft.safetyNotes, "백호대살"],
+    };
+
+    const result = sanitizeCompatibilityDiagnosticTerms(contaminated);
+
+    expect(result.removedTerms).toEqual(["백호대살"]);
+    expect(result.debugNote).toBe("compatibility sanitizer: diagnostic terms removed");
+    expect(JSON.stringify(result.value)).not.toContain("백호대살");
+  });
+
+  it("sanitizes diagnostic-only terms before final validation", async () => {
+    const packet = buildCompatibilityEvidencePacketFromFixtureId("deokmin-sodam-love");
+    const contaminated = {
+      ...createValidCompatibilityDraft(),
+      openingSummary: "두 사람의 리듬을 봅니다. 백호대살은 쓰면 안 됩니다.",
+    };
+    let callCount = 0;
+    const fetchImpl: typeof fetch = async () => {
+      callCount += 1;
+
+      return openAIResponse(JSON.stringify(contaminated));
+    };
+
+    const result = await generateCompatibilityReportDraft({
+      evidencePacket: packet,
+      config: {
+        apiKey: "sk-test",
+        model: "test-model",
+        enabled: true,
+        fetchImpl,
+      },
+    });
+
+    expect(result.repaired).toBe(false);
+    expect(callCount).toBe(1);
+    expect(JSON.stringify(result.draft)).not.toContain("백호대살");
   });
 
   it("uses repair when the first draft has unsafe or candidate recommendation copy", async () => {

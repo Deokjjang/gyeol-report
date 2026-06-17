@@ -20,13 +20,24 @@ describe("compatibility preview page source", () => {
   it("adds a gated dev preview route with fixture query support", () => {
     expect(pageSource).toContain("searchParams");
     expect(pageSource).toContain("fixture");
+    expect(pageSource).toContain("snapshot");
+    expect(pageSource).toContain('snapshotMode === "latest"');
     expect(pageSource).toContain("deokmin-sodam-love");
     expect(pageSource).toContain('process.env.NODE_ENV !== "production"');
     expect(pageSource).toContain("COMPATIBILITY_DEV_PREVIEW_ENABLED");
     expect(pageSource).toContain("notFound()");
     expect(pageSource).toContain("buildCompatibilityEvidencePacketFromFixture");
+    expect(pageSource).toContain("readCompatibilityPreviewSnapshot");
     expect(pageSource).toContain("generateCompatibilityReportDraft");
     expect(pageSource).toContain("CompatibilityReportView");
+    expect(pageSource).toContain("Preview snapshot not found. Run:");
+    expect(pageSource).toContain("--write-preview");
+    expect(pageSource).toContain("preview snapshot");
+    expect(pageSource).toContain("dev-only metadata");
+    expect(pageSource).toContain('devStatus="preview snapshot"');
+    expect(pageSource.indexOf('if (snapshotMode === "latest")')).toBeLessThan(
+      pageSource.indexOf("const packet = buildCompatibilityEvidencePacketFromFixture"),
+    );
     expect(pageSource).toContain("redactPreviewDiagnosticLine");
     expect(pageSource).toContain("sk-[redacted]");
     expect(pageSource).toContain(
@@ -70,5 +81,7 @@ describe("compatibility preview page source", () => {
     expect(pageSource).not.toContain("Authorization");
     expect(combinedSource).not.toContain("MBTI 후보");
     expect(combinedSource).not.toContain("추천 유형");
+    expect(viewSource).not.toContain("preview snapshot");
+    expect(viewSource).not.toContain("dev preview");
   });
 });

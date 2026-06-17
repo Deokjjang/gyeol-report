@@ -14,6 +14,11 @@ import {
   deriveAllowedCompatibilityMbtiTerms,
   deriveAllowedCompatibilitySajuTerms,
 } from "../src/lib/report-generation";
+import {
+  getCompatibilityPreviewSnapshotRelativePath,
+  getCompatibilityPreviewUrl,
+  writeCompatibilityPreviewSnapshot,
+} from "../src/lib/report-generation/compatibilityPreviewSnapshot";
 import type { CompatibilityReportDraft } from "../src/lib/report-generation";
 
 function getFixtureId(argv: readonly string[]): string {
@@ -30,6 +35,10 @@ function shouldPrintBody(argv: readonly string[]): boolean {
     argv.includes("--body") ||
     argv.includes("--print")
   );
+}
+
+function shouldWritePreview(argv: readonly string[]): boolean {
+  return argv.includes("--write-preview");
 }
 
 function getEnvValue(name: string): string | undefined {
@@ -69,11 +78,12 @@ function writeBulletList(title: string, items: readonly string[]): void {
 }
 
 function writeQualityWarnings(warnings: readonly string[]): void {
+  writeLine("quality warnings:");
   if (warnings.length === 0) {
+    writeLine("- none");
     return;
   }
 
-  writeLine("quality warnings:");
   for (const warning of warnings) {
     writeLine(`- ${warning}`);
   }
@@ -125,6 +135,7 @@ function writeCompatibilityReportBody(input: {
 async function main(): Promise<void> {
   const argv = process.argv.slice(2);
   const printBody = shouldPrintBody(argv);
+  const writePreview = shouldWritePreview(argv);
   const fixture = requireCompatibilityFixture(getFixtureId(argv));
   const packet = buildCompatibilityEvidencePacketFromFixture(fixture);
 
@@ -180,6 +191,9 @@ async function main(): Promise<void> {
     allowedSajuTerms: deriveAllowedCompatibilitySajuTerms(packet),
     allowedMbtiTerms: deriveAllowedCompatibilityMbtiTerms(packet),
   });
+  if (!validation.ok) {
+    throw new Error(validation.errors.join("\n"));
+  }
   writeQualityWarnings(validation.warnings);
   if (printBody) {
     writeCompatibilityReportBody({
@@ -187,10 +201,26 @@ async function main(): Promise<void> {
       warnings: validation.warnings,
     });
   }
+  if (writePreview) {
+    await writeCompatibilityPreviewSnapshot({
+      fixtureId: fixture.id,
+      evidencePacket: packet,
+      draft: result.draft,
+      qualityWarnings: validation.warnings,
+    });
+    writeLine("preview snapshot written:");
+    writeLine(getCompatibilityPreviewSnapshotRelativePath(fixture.id));
+    writeLine("Open in browser:");
+    writeLine(getCompatibilityPreviewUrl(fixture.id));
+  }
   writeLine("done");
+  if (writePreview) {
+    writeLine("PASS");
+  }
 }
 
 main().catch((error: unknown) => {
+  process.stderr.write("FAIL\n");
   if (error instanceof CompatibilityReportWriterFailure) {
     process.stderr.write(`${error.code}\n`);
     if (error.diagnostics !== undefined) {

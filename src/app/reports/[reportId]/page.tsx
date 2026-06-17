@@ -330,7 +330,6 @@ function renderGeneratedCompatibilityState(
       <CompatibilityReportView
         draft={draft}
         reportId={result.reportId}
-        status={result.status}
       />
     </ResultShell>
   );

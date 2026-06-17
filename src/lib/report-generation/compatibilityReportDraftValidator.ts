@@ -243,11 +243,24 @@ function countOccurrences(text: string, phrase: string): number {
   return text.split(phrase).length - 1;
 }
 
-function collectRepetitionWarnings(text: string): readonly string[] {
-  return repeatedAdviceWarningPhrases.flatMap((phrase) => {
-    const count = countOccurrences(text, phrase);
+function collectAdviceStrings(draft: CompatibilityReportDraft): readonly string[] {
+  return [
+    ...draft.chapters.flatMap((chapter) => chapter.practicalAdvice),
+    ...draft.finalAdvice,
+  ];
+}
 
-    return count >= 4
+function collectRepetitionWarnings(
+  draft: CompatibilityReportDraft,
+): readonly string[] {
+  const adviceItems = collectAdviceStrings(draft);
+  const adviceText = adviceItems.join("\n");
+
+  return repeatedAdviceWarningPhrases.flatMap((phrase) => {
+    const count = countOccurrences(adviceText, phrase);
+    const itemCount = adviceItems.filter((item) => item.includes(phrase)).length;
+
+    return count >= 3 || itemCount >= 3
       ? [`COMPATIBILITY_REPETITIVE_ADVICE_WARNING: ${phrase}`]
       : [];
   });
@@ -291,7 +304,7 @@ export function validateCompatibilityReportDraft(
     allowedSajuTerms: options.allowedSajuTerms ?? [],
     errors,
   });
-  warnings.push(...collectRepetitionWarnings(text));
+  warnings.push(...collectRepetitionWarnings(draft));
 
   return errors.length === 0
     ? { ok: true, errors: [], warnings, value: draft }

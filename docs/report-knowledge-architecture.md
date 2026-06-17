@@ -1023,6 +1023,61 @@ The compatibility validator now emits non-fatal
 phrases. These warnings are printed by the draft smoke but do not block a valid
 draft unless separate safety or evidence rules fail.
 
+## REPORT-18D-B Diagnostic Term Guard
+
+Compatibility reports keep diagnostic-only Saju terms out of user-facing copy.
+`백호대살` is blocked as `UNSUPPORTED_COMPATIBILITY_TERM: 백호대살` and must not
+appear in opening copy, key points, chapters, direct-hit scenes, practical
+advice, final advice, safety notes, or preview rendering.
+
+The compatibility writer applies a deterministic diagnostic-term sanitizer
+before validation and again after repair. The sanitizer omits diagnostic-only
+terms instead of replacing them with another unsupported Saju term. Repair
+prompts also receive the concrete unsupported term list so the model can rewrite
+affected sentences using only allowed evidence.
+
+## REPORT-18E Compatibility UI/UX Polish
+
+REPORT-18E keeps the existing compatibility writer, validator, fixture, and
+snapshot-preview path, but upgrades the browser surface so the draft reads like
+a paid `사주×MBTI 궁합 리포트 v1.0` product instead of a development output.
+
+The dev preview snapshot workflow is:
+
+- generate a local `.tmp/compatibility-preview/*-latest.json` snapshot from the
+  compatibility smoke script;
+- open `/dev/compatibility-preview?fixture=deokmin-sodam-love&snapshot=latest`;
+- read the snapshot directly without calling the OpenAI writer;
+- show missing-snapshot instructions that point back to the smoke command.
+
+Dev-only status such as `preview snapshot` is shown only in a small preview
+metadata strip. It is not rendered inside the paid-style report hero, score
+area, or main report metadata.
+
+The paid-style hero now puts product label, person pair, relationship type,
+large score card, score label, and score caution in the first screen. A 65-74
+score remains framed as `조율형 궁합`; `69점은 안 맞는 점수가 아니라` is a score
+caution, not a failure message.
+
+The score breakdown is rendered as compact cards for attraction,
+communication, lifestyle rhythm, conflict recovery, long-term stability, and
+growth complement. The two-person manse comparison keeps compact four-pillar
+display while adding a per-person compatibility summary with `핵심 결` and
+`주의 결`. Branch animal labels and diagnostic-only terms stay out of this
+table.
+
+Chapter rendering is card-based. Each chapter separates the title, headline,
+body, `찔리는 장면`, and `실전 조언` so long generated prose does not become a
+single wall of text. Key compatibility points are grouped into `왜 끌리는지`,
+`잘 맞는 지점`, `부딪히는 지점`, and `관계 규칙`.
+
+The final `오늘부터 할 일` section renders action items as numbered cards with
+concrete categories such as 대화 규칙, 생활 기준, 도움 요청, and 갈등 회복. The
+prompt requires final advice to be today-actionable and relationship-specific,
+and the validator continues to emit
+`COMPATIBILITY_REPETITIVE_ADVICE_WARNING` as a warning when advice concepts are
+over-repeated across practical advice and final actions.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
