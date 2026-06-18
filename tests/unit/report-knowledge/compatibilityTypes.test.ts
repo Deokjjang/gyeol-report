@@ -85,22 +85,28 @@ describe("REPORT-18A compatibility types", () => {
   });
 
   it("adapts romance language away from non-romance relationship types", () => {
-    const romanceText = "연애 데이트 애인 설렘 호감 끌림 관계의 온도";
+    const romanceText =
+      "연애 데이트 애인 설렘 호감 끌림 관계의 온도 고마움과 자기 의견 가볍게 쉬는 시간 즐거움보다 의무 마음이 식었다";
     const business = adaptCompatibilityTextForRelationshipType(
       romanceText,
       "business_work_partner",
     );
     const family = adaptCompatibilityTextForRelationshipType(romanceText, "family");
     const friendship = adaptCompatibilityTextForRelationshipType(
-      "연애 데이트 애인 결혼",
+      "연애 데이트 애인 결혼 설렘",
       "friendship",
     );
 
-    expect(business).not.toMatch(/데이트|연애|애인|설렘|호감/u);
+    expect(business).not.toMatch(
+      /데이트|연애|애인|설렘|호감|고마움과 자기 의견|즐거움보다 의무/u,
+    );
     expect(business).toContain("협업 시너지");
-    expect(family).not.toMatch(/데이트|연애|애인|설렘|호감/u);
+    expect(business).toContain("확인 피드백과 수정 의견");
+    expect(business).toContain("짧은 재정비 시간");
+    expect(business).toContain("자율성보다 관리 부담");
+    expect(family).not.toMatch(/데이트|연애|애인|설렘|호감|끌림/u);
     expect(family).toContain("정서 연결");
-    expect(friendship).not.toMatch(/데이트|연애|애인|결혼/u);
+    expect(friendship).not.toMatch(/데이트|연애|애인|결혼|설렘/u);
     expect(adaptCompatibilityTextForRelationshipType(romanceText, "love")).toBe(
       romanceText,
     );

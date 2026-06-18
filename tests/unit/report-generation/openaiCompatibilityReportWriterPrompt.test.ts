@@ -115,6 +115,15 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain(
       "Safety notes must not mention internal policy terms like diagnostic-only, 진단용, evidence, or debug.",
     );
+    expect(promptText).toContain("Never output 빈 오행.");
+    expect(promptText).toContain("finalAdvice labels must be unique where possible.");
+    expect(promptText).toContain(
+      "Do not prefix a finalAdvice body with another label such as 갈등 회복: or 도움 요청:.",
+    );
+    expect(promptText).toContain("업무/파트너십 어휘");
+    expect(promptText).toContain("가족/생활 어휘");
+    expect(promptText).toContain("정화을");
+    expect(promptText).toContain("무토은");
   });
 
   it("builds repair instructions for unsafe copy, candidates, and unsupported terms", () => {

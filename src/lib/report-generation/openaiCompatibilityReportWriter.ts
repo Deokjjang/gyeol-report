@@ -1,10 +1,13 @@
 import type { CompatibilityEvidencePacket } from "../report-knowledge/compatibilityEvidenceBuilder";
-import { getCompatibilityScoreCaution } from "../report-knowledge/compatibilityTypes";
+import {
+  getCompatibilityScoreCaution,
+  type CompatibilityRelationshipType,
+} from "../report-knowledge/compatibilityTypes";
 import type { CompatibilityReportDraft } from "./compatibilityReportDraftTypes";
 import { compatibilityReportDraftJsonSchema } from "./compatibilityReportDraftSchema";
 import {
   assertValidCompatibilityReportDraft,
-  sanitizeCompatibilityAwkwardKoreanText,
+  sanitizeCompatibilityKoreanCopy,
   validateCompatibilityReportDraft,
 } from "./compatibilityReportDraftValidator";
 import {
@@ -256,22 +259,41 @@ function sanitizeDiagnosticTermText(input: string, removedTerms: Set<string>): s
     .replace(/\(\s*\)/g, "")
     .trim();
 
-  return sanitizeCompatibilityAwkwardKoreanText(withoutDiagnosticTerms);
+  return sanitizeCompatibilityKoreanCopy(withoutDiagnosticTerms);
 }
 
-function sanitizeSafetyNoteText(input: string, removedTerms: Set<string>): string {
+function getSanitizedSafetyNote(
+  relationshipType: CompatibilityRelationshipType | undefined,
+  originalText: string,
+): string {
+  if (relationshipType === "family" && /MBTI|missing|미입력|입력되지/u.test(originalText)) {
+    return "MBTI가 입력되지 않은 사람은 실제 대화 습관과 생활 리듬을 더 우선해서 보세요.";
+  }
+  if (relationshipType === "business_work_partner") {
+    return "이 리포트는 파트너십의 성공이나 실패를 단정하지 않습니다.";
+  }
+
+  return "이 리포트는 관계의 성공이나 실패를 단정하지 않습니다.";
+}
+
+function sanitizeSafetyNoteText(
+  input: string,
+  removedTerms: Set<string>,
+  relationshipType?: CompatibilityRelationshipType,
+): string {
   const sanitized = sanitizeDiagnosticTermText(input, removedTerms);
 
-  return /diagnostic-only|진단용|사용자용 본문|확정 feature|evidence|debug/u.test(
+  return /diagnostic-only|진단용|사용자용 본문|확정 feature|confidence warning|evidence|debug/u.test(
     sanitized,
   )
-    ? "이 리포트는 관계의 성공이나 실패를 단정하지 않습니다."
+    ? getSanitizedSafetyNote(relationshipType, input)
     : sanitized;
 }
 
 function sanitizeDiagnosticTermsInValue(
   value: unknown,
   removedTerms: Set<string>,
+  relationshipType?: CompatibilityRelationshipType,
 ): unknown {
   if (typeof value === "string") {
     return sanitizeDiagnosticTermText(value, removedTerms);
@@ -279,13 +301,21 @@ function sanitizeDiagnosticTermsInValue(
 
   if (Array.isArray(value)) {
     return value
-      .map((item) => sanitizeDiagnosticTermsInValue(item, removedTerms))
+      .map((item) =>
+        sanitizeDiagnosticTermsInValue(item, removedTerms, relationshipType),
+      )
       .filter((item) => typeof item !== "string" || item.trim().length > 0);
   }
 
   if (typeof value !== "object" || value === null) {
     return value;
   }
+
+  const currentRelationshipType =
+    typeof (value as { readonly relationshipType?: unknown }).relationshipType === "string"
+      ? ((value as { readonly relationshipType: CompatibilityRelationshipType })
+          .relationshipType)
+      : relationshipType;
 
   return Object.fromEntries(
     Object.entries(value).map(([key, item]) => {
@@ -295,14 +325,25 @@ function sanitizeDiagnosticTermsInValue(
           item
             .map((note) =>
               typeof note === "string"
-                ? sanitizeSafetyNoteText(note, removedTerms)
-                : sanitizeDiagnosticTermsInValue(note, removedTerms),
+                ? sanitizeSafetyNoteText(note, removedTerms, currentRelationshipType)
+                : sanitizeDiagnosticTermsInValue(
+                    note,
+                    removedTerms,
+                    currentRelationshipType,
+                  ),
             )
             .filter((note) => typeof note !== "string" || note.trim().length > 0),
         ];
       }
 
-      return [key, sanitizeDiagnosticTermsInValue(item, removedTerms)];
+      return [
+        key,
+        sanitizeDiagnosticTermsInValue(
+          item,
+          removedTerms,
+          currentRelationshipType,
+        ),
+      ];
     }),
   );
 }

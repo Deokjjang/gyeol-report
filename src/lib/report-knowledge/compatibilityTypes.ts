@@ -232,22 +232,31 @@ export function adaptCompatibilityTextForRelationshipType(
 ): string {
   if (relationshipType === "business_work_partner") {
     return text
+      .split("방향을 잡은 사람은 상대가 반응할 시간을 두고, 반응하는 사람은 고마움과 자기 의견을 함께 표현해야 합니다.")
+      .join("기준을 잡은 사람은 실행 담당이 검토할 시간을 두고, 실행 담당은 수정 의견을 명확히 남겨야 합니다.")
+      .split("고마움과 자기 의견").join("확인 피드백과 수정 의견")
+      .split("가볍게 쉬는 시간").join("짧은 재정비 시간")
+      .split("즐거움보다 의무").join("자율성보다 관리 부담")
+      .split("상대가 반응할 시간").join("검토/응답 시간")
       .split("감정의 설렘").join("초기 기대감")
       .split("관계의 온도").join("협업 분위기")
+      .split("마음이 식었다").join("협업 신호가 약해졌다")
       .split("연애").join("파트너십")
       .split("데이트").join("업무 미팅")
       .split("애인").join("파트너")
       .split("설렘").join("초기 기대감")
-      .split("끌림").join("협업 시너지")
-      .split("호감").join("협업 기대감");
+      .split("호감").join("협업 신호")
+      .split("끌림").join("협업 시너지");
   }
 
   if (relationshipType === "family") {
     return text
+      .split("방향을 잡은 사람은 상대가 반응할 시간을 두고, 반응하는 사람은 고마움과 자기 의견을 함께 표현해야 합니다.")
+      .join("기준을 말한 사람은 상대가 받아들일 시간을 두고, 듣는 사람은 불편한 지점을 짧게 표현해야 합니다.")
       .split("연애").join("가족 관계")
-      .split("데이트").join("생활 시간")
+      .split("데이트").join("함께 보내는 시간")
       .split("애인").join("가족")
-      .split("설렘").join("정서 연결")
+      .split("설렘").join("정서적 반응")
       .split("호감").join("정서 연결")
       .split("끌림").join("정서 연결");
   }
@@ -255,9 +264,10 @@ export function adaptCompatibilityTextForRelationshipType(
   if (relationshipType === "friendship") {
     return text
       .split("연애").join("친구 관계")
-      .split("데이트").join("만나는 시간")
+      .split("데이트").join("만남")
       .split("애인").join("친구")
-      .split("결혼").join("오래 가는 관계");
+      .split("결혼").join("장기 관계")
+      .split("설렘").join("친밀감");
   }
 
   return text;

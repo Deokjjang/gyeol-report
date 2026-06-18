@@ -33,6 +33,7 @@ const unsafeCompatibilityPhrases = [
   "진단용",
   "사용자용 본문",
   "확정 feature",
+  "confidence warning",
   "evidence",
   "debug",
   "draft",
@@ -148,16 +149,31 @@ const internalArtifactPhrases = [
   "진단용",
   "사용자용 본문",
   "확정 feature",
+  "confidence warning",
   "evidence",
   "debug",
 ] as const;
 
-export function sanitizeCompatibilityAwkwardKoreanText(text: string): string {
+export function sanitizeCompatibilityKoreanCopy(text: string): string {
   return text
+    .split("정화을").join("정화를")
+    .split("무토은").join("무토는")
+    .split("계수은").join("계수는")
+    .split("정화은").join("정화는")
+    .split("Partner A이").join("Partner A가")
+    .split("Partner B이").join("Partner B가")
+    .split("Family A이").join("Family A가")
+    .split("Family B이").join("Family B가")
+    .split("파트너십가").join("파트너십이")
+    .split("협업 시너지은").join("협업 시너지는")
     .split("목·금가").join("목과 금의 흐름이")
     .split("목·금이 약해").join("목과 금의 흐름이 약해")
     .split("화·수가 약해").join("화와 수의 흐름이 약해")
     .split("충가 있어").join("충이 있어");
+}
+
+export function sanitizeCompatibilityAwkwardKoreanText(text: string): string {
+  return sanitizeCompatibilityKoreanCopy(text);
 }
 
 function sanitizeCompatibilityVisibleText(
@@ -165,7 +181,7 @@ function sanitizeCompatibilityVisibleText(
   relationshipType: CompatibilityReportDraft["relationshipType"],
 ): string {
   return adaptCompatibilityTextForRelationshipType(
-    sanitizeCompatibilityAwkwardKoreanText(text),
+    sanitizeCompatibilityKoreanCopy(text),
     relationshipType,
   );
 }
@@ -184,6 +200,13 @@ function sanitizeCompatibilitySafetyNote(
     return sanitized;
   }
 
+  if (relationshipType === "family" && /MBTI|missing|미입력|입력되지/u.test(text)) {
+    return "MBTI가 입력되지 않은 사람은 실제 대화 습관과 생활 리듬을 더 우선해서 보세요.";
+  }
+  if (relationshipType === "business_work_partner") {
+    return "이 리포트는 파트너십의 성공이나 실패를 단정하지 않습니다.";
+  }
+
   return "이 리포트는 관계의 성공이나 실패를 단정하지 않습니다.";
 }
 
@@ -194,6 +217,26 @@ function sanitizeStringArray(
   return values.map((value) =>
     sanitizeCompatibilityVisibleText(value, relationshipType),
   );
+}
+
+function sanitizeChartSummary(
+  chart: CompatibilityReportDraft["chartComparison"]["personA"],
+  relationshipType: CompatibilityReportDraft["relationshipType"],
+): CompatibilityReportDraft["chartComparison"]["personA"] {
+  return {
+    ...chart,
+    displayName: sanitizeCompatibilityVisibleText(
+      chart.displayName,
+      relationshipType,
+    ),
+    dayMaster: sanitizeCompatibilityKoreanCopy(chart.dayMaster),
+    dayPillar: sanitizeCompatibilityKoreanCopy(chart.dayPillar),
+    featureLabels: sanitizeStringArray(chart.featureLabels, relationshipType),
+    diagnosticFeatureLabels: sanitizeStringArray(
+      chart.diagnosticFeatureLabels,
+      relationshipType,
+    ),
+  };
 }
 
 function sanitizeCompatibilityDraft(
@@ -221,6 +264,16 @@ function sanitizeCompatibilityDraft(
       ),
       scoreCaution: sanitizeCompatibilityVisibleText(
         draft.scoreSummary.scoreCaution,
+        draft.relationshipType,
+      ),
+    },
+    chartComparison: {
+      personA: sanitizeChartSummary(
+        draft.chartComparison.personA,
+        draft.relationshipType,
+      ),
+      personB: sanitizeChartSummary(
+        draft.chartComparison.personB,
         draft.relationshipType,
       ),
     },

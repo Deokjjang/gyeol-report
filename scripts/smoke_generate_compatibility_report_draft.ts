@@ -13,6 +13,7 @@ import {
   CompatibilityReportWriterFailure,
   formatCompatibilityOpenAIRequestDiagnostics,
   validateCompatibilityReportDraft,
+  normalizeCompatibilityFinalAdviceItemForValidation,
   deriveAllowedCompatibilityMbtiTerms,
   deriveAllowedCompatibilitySajuTerms,
 } from "../src/lib/report-generation";
@@ -214,7 +215,14 @@ function writeCompatibilityReportBody(input: {
   }
 
   writeBlankLine();
-  writeBulletList("오늘부터 할 일", draft.finalAdvice);
+  writeBulletList(
+    "오늘부터 할 일",
+    draft.finalAdvice.map((item) => {
+      const normalized = normalizeCompatibilityFinalAdviceItemForValidation(item);
+
+      return `${normalized.label} - ${normalized.body}`;
+    }),
+  );
   writeBulletList("안전 안내", draft.safetyNotes);
   writeQualityWarnings(input.warnings);
   writeLine("=== COMPATIBILITY REPORT BODY END ===");
@@ -291,16 +299,17 @@ async function main(): Promise<void> {
   if (!validation.ok) {
     throw new Error(validation.errors.join("\n"));
   }
+  const sanitizedDraft = validation.value ?? result.draft;
   writeQualityWarnings(validation.warnings);
   if (printBody) {
     writeCompatibilityReportBody({
-      draft: result.draft,
+      draft: sanitizedDraft,
       warnings: validation.warnings,
     });
   }
   if (writePreview) {
     const previewDraft = {
-      ...result.draft,
+      ...sanitizedDraft,
       deepSajuBridge: packet.deepSajuBridge,
     };
 

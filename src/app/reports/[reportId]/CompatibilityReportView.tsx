@@ -1,5 +1,5 @@
 import type { CompatibilityReportDraft } from "../../../lib/report-generation/compatibilityReportDraftTypes";
-import { sanitizeCompatibilityAwkwardKoreanText } from "../../../lib/report-generation/compatibilityReportDraftValidator";
+import { sanitizeCompatibilityKoreanCopy } from "../../../lib/report-generation/compatibilityReportDraftValidator";
 import {
   adaptCompatibilityTextForRelationshipType,
   getCompatibilityRelationshipTypeLabel,
@@ -49,6 +49,21 @@ const finalAdviceKnownPrefixes = [
   "업무 기준",
   "의사결정",
   "신뢰 관리",
+] as const;
+
+const finalAdviceLabelPriority = [
+  "대화 규칙",
+  "생활 기준",
+  "도움 요청",
+  "갈등 회복",
+  "돈과 생활",
+  "실행 규칙",
+  "역할 분담",
+  "의사결정",
+  "피드백 규칙",
+  "신뢰 관리",
+  "거리 조절",
+  "감정 표현",
 ] as const;
 
 const finalAdviceConflictMarkers = [
@@ -397,7 +412,7 @@ function formatCompatibilityDisplayText(
   relationshipType: CompatibilityReportDraft["relationshipType"],
 ): string {
   return adaptCompatibilityTextForRelationshipType(
-    sanitizeCompatibilityAwkwardKoreanText(text),
+    sanitizeCompatibilityKoreanCopy(text),
     relationshipType,
   );
 }
@@ -408,15 +423,24 @@ function formatCompatibilitySafetyNote(
 ): string {
   const safeText = formatCompatibilityDisplayText(text, relationshipType);
 
-  return /diagnostic-only|진단용|사용자용 본문|확정 feature|evidence|debug/u.test(
+  if (/diagnostic-only|진단용|사용자용 본문|확정 feature|confidence warning|evidence|debug/u.test(
     safeText,
-  )
-    ? "이 리포트는 관계의 성공이나 실패를 단정하지 않습니다."
-    : safeText;
+  )) {
+    if (relationshipType === "family" && /MBTI|missing|미입력|입력되지/u.test(text)) {
+      return "MBTI가 입력되지 않은 사람은 실제 대화 습관과 생활 리듬을 더 우선해서 보세요.";
+    }
+    if (relationshipType === "business_work_partner") {
+      return "이 리포트는 파트너십의 성공이나 실패를 단정하지 않습니다.";
+    }
+
+    return "이 리포트는 관계의 성공이나 실패를 단정하지 않습니다.";
+  }
+
+  return safeText;
 }
 
 function formatTechnicalRelationLabel(relationLabel: string): string {
-  return sanitizeCompatibilityAwkwardKoreanText(relationLabel).replace("->", "→");
+  return sanitizeCompatibilityKoreanCopy(relationLabel).replace("->", "→");
 }
 
 function renderDeepSajuStructureCard(
@@ -545,6 +569,86 @@ export function normalizeCompatibilityFinalAdviceItem(
   }
 
   return { label, body };
+}
+
+function inferFinalAdviceLabel(body: string): string | undefined {
+  if (/돈|자원|예산|계좌|기록/u.test(body)) {
+    return "돈과 생활";
+  }
+  if (/역할|담당|권한|책임/u.test(body)) {
+    return "역할 분담";
+  }
+  if (/결정|기준|보류/u.test(body)) {
+    return "의사결정";
+  }
+  if (/피드백|수정|확인/u.test(body)) {
+    return "피드백 규칙";
+  }
+  if (/대화|말|이해|결론/u.test(body)) {
+    return "대화 규칙";
+  }
+  if (/도움|필요|요청/u.test(body)) {
+    return "도움 요청";
+  }
+  if (/갈등|서운|어긋난|회복|감정/u.test(body)) {
+    return "갈등 회복";
+  }
+  if (/일정|주말|쉬는|생활|만남/u.test(body)) {
+    return "생활 기준";
+  }
+
+  return undefined;
+}
+
+function resolveDuplicateFinalAdviceLabel(input: {
+  readonly label: string;
+  readonly body: string;
+  readonly usedLabels: ReadonlySet<string>;
+}): string {
+  const inferred = inferFinalAdviceLabel(input.body);
+
+  if (inferred !== undefined && !input.usedLabels.has(inferred)) {
+    return inferred;
+  }
+  if (!input.usedLabels.has(input.label)) {
+    return input.label;
+  }
+
+  return (
+    finalAdviceLabelPriority.find((label) => !input.usedLabels.has(label)) ??
+    input.label
+  );
+}
+
+export function normalizeCompatibilityFinalAdviceItems(
+  items: readonly string[],
+  relationshipType: CompatibilityReportDraft["relationshipType"] = "love",
+): readonly {
+  readonly label: string;
+  readonly body: string;
+}[] {
+  const usedLabels = new Set<string>();
+
+  return items.map((advice, index) => {
+    const fallbackLabel = getFinalAdviceLabel({ advice, index });
+    const normalized = normalizeCompatibilityFinalAdviceItem(
+      advice,
+      fallbackLabel,
+      relationshipType,
+    );
+    const label = resolveDuplicateFinalAdviceLabel({
+      label: normalized.label,
+      body: normalized.body,
+      usedLabels,
+    });
+
+    usedLabels.add(label);
+
+    return {
+      label,
+      body: normalized.body,
+    };
+  });
 }
 
 export function CompatibilityReportView({
@@ -724,28 +828,22 @@ export function CompatibilityReportView({
       <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
         <h2 className="text-lg font-semibold text-neutral-50">오늘부터 할 일</h2>
         <ol className="grid gap-3">
-          {draft.finalAdvice.map((advice, index) => {
-            const fallbackLabel = getFinalAdviceLabel({ advice, index });
-            const normalizedAdvice = normalizeCompatibilityFinalAdviceItem(
-              advice,
-              fallbackLabel,
-              draft.relationshipType,
-            );
-
-            return (
-              <li
-                key={`${normalizedAdvice.label}:${normalizedAdvice.body}`}
-                className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
-              >
-                <p className="text-sm font-semibold text-amber-100">
-                  {index + 1}. {normalizedAdvice.label}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-neutral-300">
-                  {normalizedAdvice.body}
-                </p>
-              </li>
-            );
-          })}
+          {normalizeCompatibilityFinalAdviceItems(
+            draft.finalAdvice,
+            draft.relationshipType,
+          ).map((normalizedAdvice, index) => (
+            <li
+              key={`${normalizedAdvice.label}:${normalizedAdvice.body}`}
+              className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
+            >
+              <p className="text-sm font-semibold text-amber-100">
+                {index + 1}. {normalizedAdvice.label}
+              </p>
+              <p className="mt-2 text-sm leading-6 text-neutral-300">
+                {normalizedAdvice.body}
+              </p>
+            </li>
+          ))}
         </ol>
       </section>
 

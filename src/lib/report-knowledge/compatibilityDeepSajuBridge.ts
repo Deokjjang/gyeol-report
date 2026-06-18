@@ -93,12 +93,78 @@ function joinKoreanTermsWithAnd(values: readonly string[]): string {
   return `${previous}${particle} ${last}`;
 }
 
-function formatElementFlow(elements: readonly FiveElement[]): string {
+function formatSubject(value: string): string {
+  return `${value}${hasKoreanFinalConsonant(value) ? "이" : "가"}`;
+}
+
+function formatTopic(value: string): string {
+  return `${value}${hasKoreanFinalConsonant(value) ? "은" : "는"}`;
+}
+
+function formatObject(value: string): string {
+  return `${value}${hasKoreanFinalConsonant(value) ? "을" : "를"}`;
+}
+
+function formatPossessiveTopic(personName: string, value: string): string {
+  return `${personName}의 ${formatTopic(value)}`;
+}
+
+function formatPossessiveObject(personName: string, value: string): string {
+  return `${personName}의 ${formatObject(value)}`;
+}
+
+export function formatWeakElementFlow(elements: readonly FiveElement[]): string {
   const names = elements.map((element) => elementKo[element]);
 
-  return names.length === 0
-    ? "빈 오행의 흐름"
-    : `${joinKoreanTermsWithAnd(names)}의 흐름`;
+  if (names.length === 0) {
+    return "약한 오행의 흐름";
+  }
+  if (names.length >= 3) {
+    return `${names.join("·")}의 흐름`;
+  }
+
+  return `${joinKoreanTermsWithAnd(names)}의 흐름`;
+}
+
+function formatWeakElementMeaning(elements: readonly FiveElement[]): string {
+  if (
+    elements.length === 3 &&
+    elements.includes("wood") &&
+    elements.includes("fire") &&
+    elements.includes("water")
+  ) {
+    return "방향 전환, 온도, 유연함";
+  }
+
+  const meanings = elements.map((element) => {
+    if (element === "wood") {
+      return "방향 설정";
+    }
+    if (element === "fire") {
+      return "표현의 온도";
+    }
+    if (element === "earth") {
+      return "현실감과 안정";
+    }
+    if (element === "metal") {
+      return "기준 정리";
+    }
+
+    return "부드러운 흐름";
+  });
+
+  return joinKoreanTermsWithAnd(meanings);
+}
+
+function formatWeakElementClause(
+  personName: string,
+  elements: readonly FiveElement[],
+): string {
+  if (elements.length === 0) {
+    return `${formatTopic(personName)} 상대가 직접 보태는 약한 오행 흐름이 제한적입니다`;
+  }
+
+  return `${formatTopic(personName)} ${formatWeakElementFlow(elements)}이 약해 ${formatWeakElementMeaning(elements)}이 늦게 켜질 수 있습니다`;
 }
 
 const elementPrinciples = {
@@ -196,7 +262,7 @@ function buildDayMasterRelationInterpretation(input: {
   const byRelation = {
     same: {
       principleExplanation: `${sourceElementKo}과 ${targetElementKo}은 같은 오행입니다. 같은 오행은 서로의 결을 빠르게 이해하게 하지만, 같은 방식으로 고집이 겹칠 수도 있습니다.`,
-      relationshipTranslation: `${input.personAName}의 ${input.sourceLabel}과 ${input.personBName}의 ${input.targetLabel}은 비슷한 결로 반응해 서로의 기준을 빨리 알아차릴 수 있습니다.`,
+      relationshipTranslation: `${input.personAName}의 ${input.sourceLabel}과 ${formatPossessiveTopic(input.personBName, input.targetLabel)} 비슷한 결로 반응해 서로의 기준을 빨리 알아차릴 수 있습니다.`,
       positiveExpression: "좋게 쓰이면 설명이 길지 않아도 서로의 기본 리듬을 빠르게 이해합니다.",
       riskExpression: "나쁘게 흐르면 같은 방식으로 버티거나 고집이 겹쳐 조율이 늦어질 수 있습니다.",
       plainKoreanSummary: "비슷한 기운이 서로를 빨리 이해하게 하지만, 같은 고집도 겹칠 수 있는 관계입니다.",
@@ -207,8 +273,8 @@ function buildDayMasterRelationInterpretation(input: {
           ? "목은 화를 생합니다. 나무가 불을 살리듯, 방향성과 성장의 기운이 표현과 온도의 기운을 키우는 관계입니다."
           : input.sourceElement === "earth" && input.targetElement === "metal"
             ? "토는 금을 생합니다. 흙 속에서 금이 생기듯, 구조와 축적이 판단과 실행을 뒷받침하는 관계입니다."
-            : `${sourceElementKo}은 ${targetElementKo}을 생합니다. ${sourcePrinciple} ${targetPrinciple} 한쪽의 기운이 다른 쪽의 기운을 살리는 관계입니다.`,
-      relationshipTranslation: `${input.personAName}의 ${input.sourceLabel}은 ${input.personBName}의 ${input.targetLabel}을 살리는 쪽으로 작동할 수 있어, 한쪽의 강점이 다른 쪽의 표현과 실행을 뒷받침할 수 있습니다.`,
+            : `${formatTopic(sourceElementKo)} ${formatObject(targetElementKo)} 생합니다. ${sourcePrinciple} ${targetPrinciple} 한쪽의 기운이 다른 쪽의 기운을 살리는 관계입니다.`,
+      relationshipTranslation: `${formatPossessiveTopic(input.personAName, input.sourceLabel)} ${formatPossessiveObject(input.personBName, input.targetLabel)} 살리는 쪽으로 작동할 수 있어, 한쪽의 강점이 다른 쪽의 표현과 실행을 뒷받침할 수 있습니다.`,
       positiveExpression: "좋게 쓰이면 한쪽은 기반과 방향을 주고, 다른 한쪽은 그것을 실제 반응과 결과로 살려 냅니다.",
       riskExpression: "나쁘게 굳으면 한쪽이 계속 밀어 주고 다른 한쪽은 반응만 하는 구조가 되어 균형이 무너질 수 있습니다.",
       plainKoreanSummary:
@@ -219,15 +285,15 @@ function buildDayMasterRelationInterpretation(input: {
             : "한쪽의 기운이 다른 쪽의 강점을 살려 주는 관계입니다.",
     },
     generated_by: {
-      principleExplanation: `${input.sourceLabel}은 ${input.targetLabel}에게 생을 받는 구조입니다. ${targetElementKo}의 기운이 ${sourceElementKo}의 기운을 보태는 관계입니다.`,
-      relationshipTranslation: `${input.personAName}은 ${input.personBName}에게서 방향이나 자극을 받아 자기 흐름을 더 쉽게 켤 수 있습니다.`,
+      principleExplanation: `${formatTopic(input.sourceLabel)} ${input.targetLabel}에게 생을 받는 구조입니다. ${targetElementKo}의 기운이 ${sourceElementKo}의 기운을 보태는 관계입니다.`,
+      relationshipTranslation: `${formatTopic(input.personAName)} ${input.personBName}에게서 방향이나 자극을 받아 자기 흐름을 더 쉽게 켤 수 있습니다.`,
       positiveExpression: "좋게 쓰이면 받는 쪽은 힘을 얻고, 주는 쪽은 자기 역할을 확인받습니다.",
       riskExpression: "나쁘게 흐르면 한쪽이 상대에게 에너지 공급을 기대하는 구조가 될 수 있습니다.",
       plainKoreanSummary: "한쪽이 다른 쪽에게 힘을 받아 자기 흐름을 켜는 관계입니다.",
     },
     controls: {
-      principleExplanation: `${sourceElementKo}은 ${targetElementKo}을 제어합니다. 한쪽의 기준과 힘이 다른 쪽의 흐름을 조절하려는 관계입니다.`,
-      relationshipTranslation: `${input.personAName}의 ${input.sourceLabel}은 ${input.personBName}의 ${input.targetLabel} 흐름에 기준과 조절감을 만들 수 있습니다.`,
+      principleExplanation: `${formatTopic(sourceElementKo)} ${formatObject(targetElementKo)} 제어합니다. 한쪽의 기준과 힘이 다른 쪽의 흐름을 조절하려는 관계입니다.`,
+      relationshipTranslation: `${formatPossessiveTopic(input.personAName, input.sourceLabel)} ${input.personBName}의 ${input.targetLabel} 흐름에 기준과 조절감을 만들 수 있습니다.`,
       positiveExpression: "좋게 쓰이면 흩어지는 흐름을 잡아 주고 현실적인 기준을 세웁니다.",
       riskExpression: "나쁘게 흐르면 조율이 통제처럼 느껴져 방어감이 커질 수 있습니다.",
       plainKoreanSummary: "한쪽의 기준이 다른 쪽의 흐름을 정리하려는 관계입니다.",
@@ -236,7 +302,7 @@ function buildDayMasterRelationInterpretation(input: {
       principleExplanation:
         input.sourceElement === "water" && input.targetElement === "earth"
           ? "토는 수를 제어합니다. 흙이 물길을 잡듯, 한쪽의 현실 감각과 기준이 다른 쪽의 흐름과 감정을 정리하려는 관계입니다."
-          : `${input.sourceLabel}은 ${input.targetLabel}에게 조절을 받는 구조입니다. ${targetElementKo}의 기준이 ${sourceElementKo}의 흐름을 정리하려는 관계입니다.`,
+          : `${formatTopic(input.sourceLabel)} ${input.targetLabel}에게 조절을 받는 구조입니다. ${targetElementKo}의 기준이 ${sourceElementKo}의 흐름을 정리하려는 관계입니다.`,
       relationshipTranslation: `${input.personAName}의 ${input.sourceLabel} 흐름은 ${input.personBName}의 ${input.targetLabel} 기준과 만나면서 정리되거나 제한되는 느낌을 받을 수 있습니다.`,
       positiveExpression: "좋게 쓰이면 한쪽의 흐름이 현실적인 기준 안에서 정리됩니다.",
       riskExpression: "나쁘게 흐르면 정리와 조언이 제한이나 통제로 느껴질 수 있습니다.",
@@ -250,16 +316,14 @@ function buildDayMasterRelationInterpretation(input: {
       plainKoreanSummary: "일간만으로 단정하기보다 실제 생활 장면에서 조율점을 봐야 하는 관계입니다.",
     },
   }[input.elementRelation];
-  const everydayScene =
-    input.elementRelation === "generates"
-      ? `${input.personAName}이 “이 방향으로 해보자”고 길을 잡으면 ${input.personBName}이 그 기준을 받아 실행이나 반응으로 구체화하는 장면입니다.`
-      : `${input.personAName}이 자기 방식으로 방향을 잡으면 ${input.personBName}이 그 기준을 받아 실행이나 반응으로 구체화하는 장면입니다.`;
+  const everydayScene = buildDayMasterEverydayScene(input);
+  const actionRule = buildDayMasterActionRule(input.relationshipType);
 
   return {
     emotionalMeaning: `${pairLabel} 구조는 두 사람이 서로에게 어떤 방향으로 힘을 주거나 조절되는지 보여 줍니다.`,
     practicalMeaning: "한쪽 역할이 고정되지 않도록, 받는 쪽의 반응과 되돌려 주는 방식을 말로 정해야 합니다.",
     everydayScene: adaptDeepText(everydayScene, input.relationshipType),
-    actionRule: "방향을 잡은 사람은 상대가 반응할 시간을 두고, 반응하는 사람은 고마움과 자기 의견을 함께 표현해야 합니다.",
+    actionRule: adaptDeepText(actionRule, input.relationshipType),
     principleExplanation: adaptDeepText(
       byRelation.principleExplanation,
       input.relationshipType,
@@ -281,6 +345,47 @@ function buildDayMasterRelationInterpretation(input: {
       input.relationshipType,
     ),
   };
+}
+
+function buildDayMasterEverydayScene(input: {
+  readonly personAName: string;
+  readonly personBName: string;
+  readonly sourceElement: FiveElement;
+  readonly targetElement: FiveElement;
+  readonly elementRelation: FiveElementRelation;
+}): string {
+  if (input.elementRelation === "same") {
+    return "두 사람이 같은 방식으로 이해하다가도, 같은 지점에서 고집이 겹치는 장면입니다.";
+  }
+  if (input.elementRelation === "generates") {
+    if (input.sourceElement === "wood" && input.targetElement === "fire") {
+      return `${formatSubject(input.personAName)} “이 방향으로 해보자”고 길을 잡으면, ${formatSubject(input.personBName)} 그 안에서 자기 생각을 더 구체적으로 꺼내는 장면입니다.`;
+    }
+    if (input.sourceElement === "earth" && input.targetElement === "metal") {
+      return `${formatSubject(input.personAName)} 기준과 틀을 먼저 세우면, ${formatSubject(input.personBName)} 그 틀 안에서 판단과 실행을 빠르게 구체화하는 장면입니다.`;
+    }
+  }
+  if (input.sourceElement === "water" && input.targetElement === "earth") {
+    return `${input.personAName}의 생각과 감정이 넓게 흐를 때, ${formatSubject(input.personBName)} 현실 기준과 생활 규칙으로 그 흐름을 정리해 주는 장면입니다.`;
+  }
+  if (input.sourceElement === "earth" && input.targetElement === "water") {
+    return `${formatSubject(input.personAName)} 현실 기준과 생활 규칙을 세우면, ${input.personBName}의 넓은 생각과 감정 흐름이 정리되는 장면입니다.`;
+  }
+
+  return `${formatSubject(input.personAName)} 자기 방식으로 방향을 잡으면 ${formatSubject(input.personBName)} 그 기준을 받아 실행이나 반응으로 구체화하는 장면입니다.`;
+}
+
+function buildDayMasterActionRule(
+  relationshipType: CompatibilityRelationshipType | undefined,
+): string {
+  if (relationshipType === "business_work_partner") {
+    return "기준을 잡은 사람은 실행 담당이 검토할 시간을 두고, 실행 담당은 수정 의견을 명확히 남겨야 합니다.";
+  }
+  if (relationshipType === "family") {
+    return "기준을 말한 사람은 상대가 받아들일 시간을 두고, 듣는 사람은 불편한 지점을 짧게 표현해야 합니다.";
+  }
+
+  return "방향을 잡은 사람은 상대가 반응할 시간을 두고, 반응하는 사람은 고마움과 자기 의견을 함께 표현해야 합니다.";
 }
 
 function buildCrossTenGodInterpretation(input: {
@@ -436,15 +541,23 @@ function buildElementComplementNote(
     return undefined;
   }
 
-  const personAText = personAComplemented.map((element) => elementKo[element]).join("·");
-  const personBText = personBComplemented.map((element) => elementKo[element]).join("·");
-  const personAFlowText = formatElementFlow(personAComplemented);
-  const personBFlowText = formatElementFlow(personBComplemented);
+  const personAWeakElements = input.personA.sajuFacts.missingElements;
+  const personBWeakElements = input.personB.sajuFacts.missingElements;
+  const personAFlowText = formatWeakElementFlow(personAWeakElements);
+  const personBFlowText = formatWeakElementFlow(personBWeakElements);
+  const personASummary =
+    personAWeakElements.length > 0
+      ? `${formatTopic(input.personA.displayName)} ${personAFlowText}이 약한 축입니다`
+      : `${formatTopic(input.personA.displayName)} 약한 오행 흐름이 뚜렷하지 않습니다`;
+  const personBSummary =
+    personBWeakElements.length > 0
+      ? `${formatTopic(input.personB.displayName)} ${personBFlowText}이 약한 축입니다`
+      : `${formatTopic(input.personB.displayName)} 약한 오행 흐름이 뚜렷하지 않습니다`;
 
   return {
     layer: "element_complement",
     title: "오행 보완",
-    summary: `${input.personA.displayName}의 ${personAText || "빈 오행"} 부족을 ${input.personB.displayName}이 일부 보태고, ${input.personB.displayName}의 ${personBText || "빈 오행"} 부족을 ${input.personA.displayName}이 일부 보탭니다.`,
+    summary: `${personASummary}. ${personBSummary}. 서로의 강한 영역이 일부 보완을 만듭니다.`,
     personARefs: input.personA.sajuFacts.missingElements.map(
       (element) => `${input.personA.displayName} ${elementKo[element]} 부족`,
     ),
@@ -459,7 +572,7 @@ function buildElementComplementNote(
     scoreImpact: 4,
     principleExplanation:
       "오행 보완은 한 사람에게 약한 기운을 다른 사람이 어느 정도 자극하거나 보태는 구조입니다. 부족한 오행은 자동으로 잘 켜지지 않는다는 뜻에 가깝습니다.",
-    relationshipTranslation: `${input.personA.displayName}은 ${personAFlowText}이 약해 감정의 온도와 부드러운 흐름이 늦게 켜질 수 있고, ${input.personB.displayName}은 그 부분을 자극할 수 있습니다. 반대로 ${input.personB.displayName}은 ${personBFlowText}이 약해 방향 설정과 기준 정리가 흔들릴 수 있는데, ${input.personA.displayName}의 구조가 그 부분을 보완할 수 있습니다.`,
+    relationshipTranslation: `${formatWeakElementClause(input.personA.displayName, personAWeakElements)}. ${formatWeakElementClause(input.personB.displayName, personBWeakElements)}. 서로의 강한 영역이 그 부분을 일부 보완할 수 있습니다.`,
     positiveExpression: `좋게 쓰이면 ${input.personA.displayName}은 방향과 구조를 잡고, ${input.personB.displayName}은 온도와 반응을 살려 관계가 입체적으로 굴러갑니다.`,
     riskExpression:
       "나쁘게 쓰이면 상대가 내 부족한 부분을 알아서 채워 주길 기대하게 되어 부담이 커집니다.",
@@ -496,21 +609,31 @@ function buildCombinedClimateNote(
       .join(" · "),
     emotionalMeaning:
       "감정보다 일정, 책임, 돈, 현실 판단이 먼저 올라오면 관계가 빠르게 무거워질 수 있습니다.",
-    practicalMeaning:
+    practicalMeaning: adaptDeepText(
       "중요한 책임은 함께 정하되, 데이트와 회복 시간은 별도로 확보해야 합니다.",
+      input.relationshipType,
+    ),
     scoreImpact: -2,
     principleExplanation:
       "토는 현실, 책임, 보관, 안정, 관리의 기운입니다. 두 사람의 토가 합쳐져 무거워지면 관계가 감정만으로 흐르기보다 생활, 돈, 계획, 책임 쪽으로 빨리 내려앉습니다.",
-    relationshipTranslation:
+    relationshipTranslation: adaptDeepText(
       "두 사람은 감정의 설렘보다 실제로 어떻게 굴릴지, 무엇을 지킬지, 무엇을 남길지를 빨리 생각하게 될 수 있습니다.",
+      input.relationshipType,
+    ),
     positiveExpression:
       "좋게 쓰이면 관계가 쉽게 흩어지지 않고, 실질적인 계획과 책임을 만들 수 있습니다.",
-    riskExpression:
+    riskExpression: adaptDeepText(
       "나쁘게 흐르면 연애가 빨리 관리표처럼 느껴지고, 즐거움보다 의무가 먼저 보일 수 있습니다.",
-    everydayScene:
+      input.relationshipType,
+    ),
+    everydayScene: adaptDeepText(
       "데이트 이야기를 하다가도 돈, 일정, 책임, 다음 계획 얘기로 금방 내려앉는 장면입니다.",
-    actionRule:
+      input.relationshipType,
+    ),
+    actionRule: adaptDeepText(
       "책임을 정하는 시간과 가볍게 쉬는 시간을 의도적으로 분리해야 합니다.",
+      input.relationshipType,
+    ),
     plainKoreanSummary:
       "관계가 안정적으로 굴러갈 수 있지만, 너무 빨리 현실과 책임 쪽으로 무거워질 수 있습니다.",
   };

@@ -1,7 +1,10 @@
 import { describe, expect, it } from "vitest";
 
 import { buildCompatibilityEvidencePacketFromFixtureId } from "../../../src/lib/report-knowledge/compatibilityEvidenceBuilder";
-import { buildCompatibilityDeepSajuBridge } from "../../../src/lib/report-knowledge/compatibilityDeepSajuBridge";
+import {
+  buildCompatibilityDeepSajuBridge,
+  formatWeakElementFlow,
+} from "../../../src/lib/report-knowledge/compatibilityDeepSajuBridge";
 
 describe("REPORT-18F compatibility deep Saju bridge", () => {
   it("builds diversified deep notes for deokmin and sodam", () => {
@@ -77,10 +80,20 @@ describe("REPORT-18F compatibility deep Saju bridge", () => {
       "business-work-partner-sample",
     );
     const family = buildCompatibilityEvidencePacketFromFixtureId("family-unknown-mbti");
-    const businessDayMaster = business.deepSajuBridge?.notes.find(
+    const businessBridge = buildCompatibilityDeepSajuBridge({
+      personA: business.personAChartSummary,
+      personB: business.personBChartSummary,
+      relationshipType: "business_work_partner",
+    });
+    const familyBridge = buildCompatibilityDeepSajuBridge({
+      personA: family.personAChartSummary,
+      personB: family.personBChartSummary,
+      relationshipType: "family",
+    });
+    const businessDayMaster = businessBridge.notes.find(
       (note) => note.layer === "day_master_relation",
     );
-    const familyDayMaster = family.deepSajuBridge?.notes.find(
+    const familyDayMaster = familyBridge.notes.find(
       (note) => note.layer === "day_master_relation",
     );
     const businessText = JSON.stringify(businessDayMaster);
@@ -100,6 +113,48 @@ describe("REPORT-18F compatibility deep Saju bridge", () => {
     expect(familyDayMaster?.relationshipTranslation).toContain("무토");
     expect(familyText).not.toContain("갑목");
     expect(familyText).not.toContain("정화");
+  });
+
+  it("uses five-element-specific scenes and category action rules", () => {
+    const love = buildCompatibilityEvidencePacketFromFixtureId("deokmin-sodam-love");
+    const business = buildCompatibilityEvidencePacketFromFixtureId(
+      "business-work-partner-sample",
+    );
+    const family = buildCompatibilityEvidencePacketFromFixtureId("family-unknown-mbti");
+    const businessBridge = buildCompatibilityDeepSajuBridge({
+      personA: business.personAChartSummary,
+      personB: business.personBChartSummary,
+      relationshipType: "business_work_partner",
+    });
+    const familyBridge = buildCompatibilityDeepSajuBridge({
+      personA: family.personAChartSummary,
+      personB: family.personBChartSummary,
+      relationshipType: "family",
+    });
+    const loveDayMaster = love.deepSajuBridge?.notes.find(
+      (note) => note.layer === "day_master_relation",
+    );
+    const businessDayMaster = businessBridge.notes.find(
+      (note) => note.layer === "day_master_relation",
+    );
+    const familyDayMaster = familyBridge.notes.find(
+      (note) => note.layer === "day_master_relation",
+    );
+
+    expect(loveDayMaster?.everydayScene).toContain("이 방향으로 해보자");
+    expect(loveDayMaster?.everydayScene).toContain("자기 생각");
+    expect(loveDayMaster?.actionRule).toContain("고마움과 자기 의견");
+
+    expect(businessDayMaster?.everydayScene).toContain("기준과 틀");
+    expect(businessDayMaster?.everydayScene).toContain("판단과 실행");
+    expect(businessDayMaster?.everydayScene).not.toContain("이 방향으로 해보자");
+    expect(businessDayMaster?.actionRule).toContain("검토할 시간");
+    expect(businessDayMaster?.actionRule).toContain("수정 의견");
+
+    expect(familyDayMaster?.everydayScene).toContain("생각과 감정이 넓게 흐를 때");
+    expect(familyDayMaster?.everydayScene).toContain("현실 기준과 생활 규칙");
+    expect(familyDayMaster?.actionRule).toContain("받아들일 시간");
+    expect(familyDayMaster?.actionRule).toContain("불편한 지점");
   });
 
   it("uses the actual cross ten-god pair instead of a fixed 상관/정인 explanation", () => {
@@ -153,6 +208,23 @@ describe("REPORT-18F compatibility deep Saju bridge", () => {
     expect(combinedClimate?.positiveExpression).toContain("실질적인 계획");
     expect(combinedClimate?.riskExpression).toContain("관리표");
     expect(combinedClimate?.everydayScene).toContain("돈, 일정, 책임");
+  });
+
+  it("formats weak element flows without empty-element fallback wording", () => {
+    const family = buildCompatibilityEvidencePacketFromFixtureId("family-unknown-mbti");
+    const familyComplement = family.deepSajuBridge?.notes.find(
+      (note) => note.layer === "element_complement",
+    );
+    const familyComplementText = JSON.stringify(familyComplement);
+
+    expect(formatWeakElementFlow(["fire"])).toBe("화의 흐름");
+    expect(formatWeakElementFlow(["wood", "metal"])).toBe("목과 금의 흐름");
+    expect(formatWeakElementFlow(["wood", "fire", "water"])).toBe(
+      "목·화·수의 흐름",
+    );
+    expect(familyComplementText).not.toContain("빈 오행");
+    expect(familyComplementText).toContain("화의 흐름");
+    expect(familyComplementText).toContain("목·화·수의 흐름");
   });
 
   it("translates branch trine, clash, and harm without fatal wording", () => {

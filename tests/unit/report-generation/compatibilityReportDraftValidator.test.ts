@@ -4,6 +4,7 @@ import type { CompatibilityReportDraft } from "../../../src/lib/report-generatio
 import {
   normalizeCompatibilityFinalAdviceItemForValidation,
   sanitizeCompatibilityAwkwardKoreanText,
+  sanitizeCompatibilityKoreanCopy,
   validateCompatibilityReportDraft,
 } from "../../../src/lib/report-generation/compatibilityReportDraftValidator";
 import {
@@ -253,6 +254,58 @@ describe("compatibilityReportDraftValidator", () => {
     expect(result.value?.finalAdvice.join("\n")).toContain("충이 있어");
   });
 
+  it("sanitizes Korean particle errors recursively on draft fields", () => {
+    const draft = createValidCompatibilityDraft();
+    const result = validate({
+      ...draft,
+      openingTitle: "파트너십가 흔들릴 때",
+      openingSummary: "소담의 정화을 보완합니다.",
+      coreLine: "Partner A이 먼저 말하면 Partner B이 확인합니다.",
+      scoreSummary: {
+        ...draft.scoreSummary,
+        scoreLabel: "협업 시너지은 높습니다.",
+      },
+      chartComparison: {
+        personA: {
+          ...draft.chartComparison.personA,
+          displayName: "Family A이",
+        },
+        personB: {
+          ...draft.chartComparison.personB,
+          displayName: "Family B이",
+        },
+      },
+      keyCompatibilityPoints: {
+        ...draft.keyCompatibilityPoints,
+        attractionPoints: ["정화은 반응합니다."],
+      },
+      chapters: draft.chapters.map((chapter, index) =>
+        index === 0
+          ? {
+              ...chapter,
+              body: "Partner A이 말하고 Partner B이 확인합니다.",
+              directHitScenes: ["정화을 살립니다."],
+              practicalAdvice: ["파트너십가 흔들리면 다시 정리하세요."],
+            }
+          : chapter,
+      ),
+      finalAdvice: [
+        ...draft.finalAdvice,
+        "협업 시너지은 기록으로 남기세요.",
+      ],
+    });
+    const serialized = JSON.stringify(result.value);
+
+    expect(result.ok).toBe(true);
+    expect(serialized).not.toMatch(
+      /정화을|Partner A이|Partner B이|Family A이|Family B이|파트너십가|협업 시너지은/u,
+    );
+    expect(serialized).toContain("정화를");
+    expect(serialized).toContain("Partner A가");
+    expect(serialized).toContain("파트너십이");
+    expect(serialized).toContain("협업 시너지는");
+  });
+
   it("sanitizes internal artifact language from safety notes", () => {
     const draft = createValidCompatibilityDraft();
     const result = validate({
@@ -309,6 +362,9 @@ describe("compatibilityReportDraftValidator", () => {
     );
     expect(sanitizeCompatibilityAwkwardKoreanText("丑未 충가 있어 조율합니다.")).toBe(
       "丑未 충이 있어 조율합니다.",
+    );
+    expect(sanitizeCompatibilityKoreanCopy("정화을 무토은 계수은 Partner A이")).toBe(
+      "정화를 무토는 계수는 Partner A가",
     );
   });
 

@@ -1259,6 +1259,37 @@ Visible safety notes are sanitized away from internal artifact terms such as
 normalizer also strips nested prefixes from the body across categories, so
 labels remain separate from the action text.
 
+## REPORT-18K Korean Grammar and Category Copy Stabilization
+
+REPORT-18K does not add a new calculation layer. It stabilizes the Korean copy
+that is produced from the existing compatibility calculations. The validator,
+writer sanitizer, and report renderer now share a deterministic Korean copy
+sanitizer for narrow particle and wording errors such as `정화을`, `무토은`,
+`Partner A이`, `파트너십가`, `협업 시너지은`, `목·금가`, and `충가 있어`.
+
+The relationship-type vocabulary adapter was expanded for non-romance
+categories. Business/work-partner reports convert romance or soft relationship
+phrases into work vocabulary such as 업무 미팅, 협업 신호, 확인 피드백, 수정
+의견, 검토/응답 시간, 역할, 권한, and 책임. Family and friendship reports
+similarly replace dating language with family/lifestyle or friendship language
+while love/some/marriage keep romance-appropriate wording.
+
+The deep Saju bridge no longer emits the `빈 오행` fallback. Weak element text
+names the actual flow, for example `화의 흐름`, `화와 수의 흐름`, `목과 금의
+흐름`, or `목·화·수의 흐름`. Day-master scene copy also follows the actual
+five-element relation: wood-fire uses direction and expression, earth-metal
+uses 기준, 틀, 판단, 실행, and water-earth uses 흐름, 현실 기준, 생활 규칙.
+
+Final advice rendering now strips nested label prefixes and deduplicates labels
+where possible. Money, role, decision, feedback, conflict, help, schedule, and
+conversation keywords can relabel repeated advice cards so the visible action
+list does not show duplicate labels unless no better label is available.
+
+Safety notes remain plain user copy. Family missing-MBTI notes use everyday
+Korean guidance, and business/work-partner safety notes avoid internal policy
+terms while reminding users that the report does not determine partnership
+success or failure.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

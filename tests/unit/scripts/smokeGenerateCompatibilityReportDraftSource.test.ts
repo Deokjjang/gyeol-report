@@ -64,6 +64,9 @@ describe("smoke_generate_compatibility_report_draft source", () => {
     expect(source).not.toContain("찔리는 장면:");
     expect(source).toContain("chapter.practicalAdvice");
     expect(source).toContain("draft.finalAdvice");
+    expect(source).toContain("normalizeCompatibilityFinalAdviceItemForValidation");
+    expect(source).toContain("normalized.label");
+    expect(source).toContain("validation.value ?? result.draft");
     expect(source).toContain("오늘부터 할 일");
     expect(source).toContain("draft.safetyNotes");
     expect(source).toContain("quality warnings:");

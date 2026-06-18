@@ -131,9 +131,12 @@ describe("openaiCompatibilityReportWriter", () => {
       relationshipType: "love",
       personALabel: "Partner A",
       personBLabel: "Partner B",
-      openingTitle: "연애 데이트 애인 설렘 호감 끌림",
-      openingSummary: "연애 데이트 애인 설렘 호감 끌림",
-      coreLine: "연애 데이트 애인 설렘 호감 끌림",
+      openingTitle:
+        "연애 데이트 애인 설렘 호감 끌림 고마움과 자기 의견 즐거움보다 의무",
+      openingSummary:
+        "연애 데이트 애인 설렘 호감 끌림 고마움과 자기 의견 즐거움보다 의무",
+      coreLine:
+        "연애 데이트 애인 설렘 호감 끌림 고마움과 자기 의견 즐거움보다 의무",
       keyCompatibilityPoints: {
         attractionPoints: ["연애 데이트 애인 설렘 호감 끌림"],
         strengthPoints: ["연애 데이트 애인 설렘 호감 끌림"],
@@ -143,7 +146,7 @@ describe("openaiCompatibilityReportWriter", () => {
       chapters: baseDraft.chapters.map((chapter) => ({
         ...chapter,
         headline: "연애 데이트 애인 설렘 호감 끌림",
-        body: "연애 데이트 애인 설렘 호감 끌림",
+        body: "연애 데이트 애인 설렘 호감 끌림 가볍게 쉬는 시간",
         directHitScenes: ["연애 데이트 애인 설렘 호감 끌림"],
         practicalAdvice: ["연애 데이트 애인 설렘 호감 끌림"],
       })),
@@ -170,8 +173,10 @@ describe("openaiCompatibilityReportWriter", () => {
     expect(result.draft.scoreSummary.scoreCaution).toContain("역할·권한·책임");
     expect(result.draft.scoreSummary.scoreCaution).not.toContain("끌림");
     expect(JSON.stringify(result.draft)).not.toMatch(
-      /데이트|연애|애인|설렘|호감/u,
+      /데이트|연애|애인|설렘|호감|고마움과 자기 의견|즐거움보다 의무/u,
     );
+    expect(JSON.stringify(result.draft)).toContain("확인 피드백과 수정 의견");
+    expect(JSON.stringify(result.draft)).toContain("자율성보다 관리 부담");
   });
 
   it("exposes safe OpenAI request diagnostics without secrets", async () => {
@@ -287,6 +292,27 @@ describe("openaiCompatibilityReportWriter", () => {
       "이 리포트는 관계의 성공이나 실패를 단정하지 않습니다.",
     );
     expect(serialized).not.toMatch(/diagnostic-only|진단용|evidence|debug/u);
+  });
+
+  it("uses category-specific plain safety notes when sanitizing internal artifacts", () => {
+    const business = sanitizeCompatibilityDiagnosticTerms({
+      relationshipType: "business_work_partner",
+      safetyNotes: ["diagnostic-only evidence debug"],
+    });
+    const family = sanitizeCompatibilityDiagnosticTerms({
+      relationshipType: "family",
+      safetyNotes: ["confidence warning: MBTI missing diagnostic-only evidence"],
+    });
+
+    expect(JSON.stringify(business.value)).toContain(
+      "이 리포트는 파트너십의 성공이나 실패를 단정하지 않습니다.",
+    );
+    expect(JSON.stringify(family.value)).toContain(
+      "MBTI가 입력되지 않은 사람은 실제 대화 습관과 생활 리듬을 더 우선해서 보세요.",
+    );
+    expect(JSON.stringify(family.value)).not.toMatch(
+      /diagnostic-only|진단용|evidence|debug|confidence warning/u,
+    );
   });
 
   it("sanitizes diagnostic-only terms before final validation", async () => {
