@@ -15,6 +15,26 @@ export type AnnualFortuneDraftQualitySummary = {
   readonly vagueCopyWarnings: number;
   readonly hardClaimWarnings: number;
   readonly internalArtifactWarnings: number;
+  readonly rawEnglishSignalLabelWarnings: number;
+  readonly repeatedTermWarnings: number;
+  readonly genericFinalAdviceLabelWarnings: number;
+};
+
+type AnnualFortuneLegacyScoreSummary = {
+  readonly totalScore: number;
+  readonly scoreLabel: string;
+  readonly scoreCaution: string;
+};
+
+type AnnualFortuneScoreSummaryInput =
+  | AnnualFortuneReportDraft["scoreSummary"]
+  | AnnualFortuneLegacyScoreSummary;
+
+type AnnualFortuneReportDraftInput = Omit<
+  AnnualFortuneReportDraft,
+  "scoreSummary"
+> & {
+  readonly scoreSummary: AnnualFortuneScoreSummaryInput;
 };
 
 const hardClaimReplacements = [
@@ -41,6 +61,41 @@ const awkwardKoreanReplacements = [
   ["계수은", "계수는"],
 ] as const;
 
+const repeatedTermReplacements = [
+  ["식신(식신, 말·결과물·생산성)", "식신: 말·결과물·생산성"],
+  ["상관(상관, 말·결과물·생산성)", "상관: 말·결과물·생산성"],
+  ["甲 일간(갑 일간)", "甲(갑목) 일간"],
+  ["乙 일간(을 일간)", "乙(을목) 일간"],
+  ["丙 일간(병 일간)", "丙(병화) 일간"],
+  ["丁 일간(정 일간)", "丁(정화) 일간"],
+  ["戊 일간(무 일간)", "戊(무토) 일간"],
+  ["己 일간(기 일간)", "己(기토) 일간"],
+  ["庚 일간(경 일간)", "庚(경금) 일간"],
+  ["辛 일간(신 일간)", "辛(신금) 일간"],
+  ["壬 일간(임 일간)", "壬(임수) 일간"],
+  ["癸 일간(계 일간)", "癸(계수) 일간"],
+  ["토 과다(흙이 무거움)", "토 과다: 현실·책임·관리의 기운이 무거운 구조"],
+] as const;
+
+const finalAdviceBodyPrefixes = [
+  "실행 기준",
+  "일·성과",
+  "돈·현실",
+  "인간관계",
+  "연애·가족",
+  "학업·자격증",
+  "몸·생활 리듬",
+  "올해 운영법",
+] as const;
+
+const rawEnglishSignalLabels = [
+  "opportunity",
+  "difficulty",
+  "mixed",
+  "recovery",
+  "caution",
+] as const;
+
 const internalForbiddenWords = [
   "evidence",
   "debug",
@@ -60,6 +115,8 @@ const modeToneMarkers = {
     "조율",
     "손실을 줄이",
     "흐름을 쓰",
+    "상반기",
+    "하반기",
   ],
   new_year_preview: ["신년", "준비", "활용", "기회", "조심", "흐름을 쓰"],
 } as const satisfies Record<AnnualFortuneReportMode, readonly string[]>;
@@ -114,8 +171,13 @@ function clampScore(score: number): number {
 }
 
 export function sanitizeAnnualFortuneKoreanCopy(text: string): string {
-  const normalized = [...awkwardKoreanReplacements, ...hardClaimReplacements]
+  const normalized = [
+    ...repeatedTermReplacements,
+    ...awkwardKoreanReplacements,
+    ...hardClaimReplacements,
+  ]
     .reduce((current, [from, to]) => current.split(from).join(to), text)
+    .replace(/([식상정편비겁재관인]{2})\(\1,\s*([^)]+)\)/gu, "$1: $2")
     .replace(/\b(Partner|Family) ([AB])을/g, "$1 $2를")
     .replace(/\b(Partner|Family) ([AB])은/g, "$1 $2는")
     .replace(/\b(Partner|Family) ([AB])이/g, "$1 $2가");
@@ -129,8 +191,26 @@ export function sanitizeAnnualFortuneKoreanCopy(text: string): string {
     .trim();
 }
 
+export function sanitizeAnnualFortuneVisibleText(text: string): string {
+  return sanitizeAnnualFortuneKoreanCopy(text);
+}
+
 function sanitizeStringArray(values: readonly string[]): readonly string[] {
   return values.map(sanitizeAnnualFortuneKoreanCopy);
+}
+
+function stripAnnualFinalAdvicePrefix(text: string): string {
+  let sanitized = sanitizeAnnualFortuneKoreanCopy(text);
+
+  for (const prefix of finalAdviceBodyPrefixes) {
+    const marker = `${prefix}:`;
+
+    if (sanitized.startsWith(marker)) {
+      sanitized = sanitized.slice(marker.length).trim();
+    }
+  }
+
+  return sanitized;
 }
 
 function normalizeMonthlyFlowElementFocus(value: unknown): string | null {
@@ -143,7 +223,37 @@ function normalizeMonthlyFlowElementFocus(value: unknown): string | null {
   return sanitized.length === 0 ? null : sanitized;
 }
 
-function sanitizeDraft(draft: AnnualFortuneReportDraft): AnnualFortuneReportDraft {
+function hasNewScoreSummary(
+  value: AnnualFortuneScoreSummaryInput,
+): value is AnnualFortuneReportDraft["scoreSummary"] {
+  return "flowIndex" in value;
+}
+
+function sanitizeScoreSummary(
+  scoreSummary: AnnualFortuneScoreSummaryInput,
+): AnnualFortuneReportDraft["scoreSummary"] {
+  if (hasNewScoreSummary(scoreSummary)) {
+    return {
+      flowIndex: clampScore(scoreSummary.flowIndex),
+      flowTypeLabel: sanitizeAnnualFortuneKoreanCopy(
+        scoreSummary.flowTypeLabel,
+      ),
+      flowIndexCaution: sanitizeAnnualFortuneKoreanCopy(
+        scoreSummary.flowIndexCaution,
+      ),
+    };
+  }
+
+  return {
+    flowIndex: clampScore(scoreSummary.totalScore),
+    flowTypeLabel: sanitizeAnnualFortuneKoreanCopy(scoreSummary.scoreLabel),
+    flowIndexCaution: sanitizeAnnualFortuneKoreanCopy(
+      scoreSummary.scoreCaution,
+    ),
+  };
+}
+
+function sanitizeDraft(draft: AnnualFortuneReportDraftInput): AnnualFortuneReportDraft {
   return {
     ...draft,
     openingTitle: sanitizeAnnualFortuneKoreanCopy(draft.openingTitle),
@@ -157,13 +267,7 @@ function sanitizeDraft(draft: AnnualFortuneReportDraft): AnnualFortuneReportDraf
       modeLabel: sanitizeAnnualFortuneKoreanCopy(draft.yearSummary.modeLabel),
       yearTone: sanitizeAnnualFortuneKoreanCopy(draft.yearSummary.yearTone),
     },
-    scoreSummary: {
-      totalScore: clampScore(draft.scoreSummary.totalScore),
-      scoreLabel: sanitizeAnnualFortuneKoreanCopy(draft.scoreSummary.scoreLabel),
-      scoreCaution: sanitizeAnnualFortuneKoreanCopy(
-        draft.scoreSummary.scoreCaution,
-      ),
-    },
+    scoreSummary: sanitizeScoreSummary(draft.scoreSummary),
     flowCards: draft.flowCards.map((card) => ({
       label: sanitizeAnnualFortuneKoreanCopy(card.label),
       score: clampScore(card.score),
@@ -205,12 +309,29 @@ function sanitizeDraft(draft: AnnualFortuneReportDraft): AnnualFortuneReportDraf
       body: sanitizeAnnualFortuneKoreanCopy(flow.body),
       advice: sanitizeAnnualFortuneKoreanCopy(flow.advice),
     })),
-    finalAdvice: sanitizeStringArray(draft.finalAdvice),
+    finalAdvice: draft.finalAdvice.map(stripAnnualFinalAdvicePrefix),
     safetyNotes: sanitizeStringArray(draft.safetyNotes),
   };
 }
 
-function hasDraftShape(value: unknown): value is AnnualFortuneReportDraft {
+function hasScoreSummaryShape(
+  value: unknown,
+): value is AnnualFortuneScoreSummaryInput {
+  if (!isRecord(value)) {
+    return false;
+  }
+
+  return (
+    (isNumber(value.flowIndex) &&
+      typeof value.flowTypeLabel === "string" &&
+      typeof value.flowIndexCaution === "string") ||
+    (isNumber(value.totalScore) &&
+      typeof value.scoreLabel === "string" &&
+      typeof value.scoreCaution === "string")
+  );
+}
+
+function hasDraftShape(value: unknown): value is AnnualFortuneReportDraftInput {
   if (!isRecord(value)) {
     return false;
   }
@@ -234,10 +355,7 @@ function hasDraftShape(value: unknown): value is AnnualFortuneReportDraft {
     typeof draft.yearSummary.tenGodLabel === "string" &&
     typeof draft.yearSummary.modeLabel === "string" &&
     typeof draft.yearSummary.yearTone === "string" &&
-    isRecord(draft.scoreSummary) &&
-    isNumber(draft.scoreSummary.totalScore) &&
-    typeof draft.scoreSummary.scoreLabel === "string" &&
-    typeof draft.scoreSummary.scoreCaution === "string" &&
+    hasScoreSummaryShape(draft.scoreSummary) &&
     Array.isArray(draft.flowCards) &&
     Array.isArray(draft.keySignals) &&
     isRecord(draft.annualStructure) &&
@@ -263,8 +381,8 @@ function collectVisibleStrings(draft: AnnualFortuneReportDraft): readonly string
     draft.yearSummary.tenGodLabel,
     draft.yearSummary.modeLabel,
     draft.yearSummary.yearTone,
-    draft.scoreSummary.scoreLabel,
-    draft.scoreSummary.scoreCaution,
+    draft.scoreSummary.flowTypeLabel,
+    draft.scoreSummary.flowIndexCaution,
     ...draft.flowCards.flatMap((card) => [
       card.label,
       card.headline,
@@ -331,11 +449,26 @@ export function summarizeAnnualFortuneDraftQuality(
       count + countOccurrences(visibleText.toLowerCase(), phrase.toLowerCase()),
     0,
   );
+  const rawEnglishSignalLabelWarnings = rawEnglishSignalLabels.reduce(
+    (count, label) =>
+      count + countOccurrences(visibleText.toLowerCase(), label.toLowerCase()),
+    0,
+  );
+  const repeatedTermWarnings = repeatedTermReplacements.reduce(
+    (count, [phrase]) => count + countOccurrences(visibleText, phrase),
+    0,
+  );
+  const genericFinalAdviceLabelWarnings = draft.finalAdvice.filter((advice) =>
+    finalAdviceBodyPrefixes.some((prefix) => advice.startsWith(`${prefix}:`)),
+  ).length;
 
   return {
     vagueCopyWarnings,
     hardClaimWarnings,
     internalArtifactWarnings,
+    rawEnglishSignalLabelWarnings,
+    repeatedTermWarnings,
+    genericFinalAdviceLabelWarnings,
   };
 }
 

@@ -8,11 +8,10 @@ export type AnnualFortuneReportMode = Exclude<
 export type AnnualFortuneFlowCardLabel =
   | "일·성과"
   | "돈·현실"
-  | "관계"
-  | "생활 리듬"
+  | "인간관계"
+  | "연애·가족"
   | "학업·자격증"
-  | "가족"
-  | "이동·변화";
+  | "몸·생활 리듬";
 
 export type AnnualFortuneKeySignalType =
   | "opportunity"
@@ -40,9 +39,9 @@ export interface AnnualFortuneReportDraft {
     readonly yearTone: string;
   };
   readonly scoreSummary: {
-    readonly totalScore: number;
-    readonly scoreLabel: string;
-    readonly scoreCaution: string;
+    readonly flowIndex: number;
+    readonly flowTypeLabel: string;
+    readonly flowIndexCaution: string;
   };
   readonly flowCards: readonly {
     readonly label: AnnualFortuneFlowCardLabel | string;
@@ -212,11 +211,11 @@ export const annualFortuneReportDraftJsonSchema = {
     scoreSummary: {
       type: "object",
       additionalProperties: false,
-      required: ["totalScore", "scoreLabel", "scoreCaution"],
+      required: ["flowIndex", "flowTypeLabel", "flowIndexCaution"],
       properties: {
-        totalScore: numberSchema,
-        scoreLabel: stringSchema,
-        scoreCaution: stringSchema,
+        flowIndex: numberSchema,
+        flowTypeLabel: stringSchema,
+        flowIndexCaution: stringSchema,
       },
     },
     flowCards: {

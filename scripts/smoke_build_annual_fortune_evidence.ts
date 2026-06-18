@@ -60,6 +60,17 @@ function main(): void {
   writeLine(
     `overloads heavy: ${packet.elementEffect.overloadsHeavy.join(", ") || "none"}${overloadSuffix}`,
   );
+  writeLine(
+    `monthly basis: ${packet.monthlyFortuneSeeds[0]?.monthGanji.basis ?? "none"}`,
+  );
+  writeLine(`monthly seeds: ${packet.monthlyFortuneSeeds.length}`);
+  writeList(
+    "monthly fortune seeds",
+    packet.monthlyFortuneSeeds.map(
+      (seed) =>
+        `${seed.label} ${seed.monthGanji.ganji} ${seed.elementFocus}: ${seed.plain}`,
+    ),
+  );
   writeList(
     "branch interactions",
     packet.branchInteractions.map(

@@ -19,6 +19,11 @@ describe("smoke_build_annual_fortune_evidence source", () => {
     expect(source).toContain("annual ten god:");
     expect(source).toContain("fills missing:");
     expect(source).toContain("overloads heavy:");
+    expect(source).toContain("monthly basis:");
+    expect(source).toContain("monthly seeds:");
+    expect(source).toContain("monthly fortune seeds");
+    expect(source).toContain("monthGanji.ganji");
+    expect(source).toContain("elementFocus");
     expect(source).toContain("branch interactions");
     expect(source).toContain("life area signals");
     expect(source).toContain("difficulty signals");

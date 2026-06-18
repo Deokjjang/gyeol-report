@@ -51,9 +51,9 @@ function createValidDraft(): AnnualFortuneReportDraft {
       yearTone: "올해 흐름을 쓰는 방식이 중요합니다.",
     },
     scoreSummary: {
-      totalScore: 72,
-      scoreLabel: "확장형 흐름",
-      scoreCaution: "점수는 결과를 단정하지 않고 조율할 지점을 보여 줍니다.",
+      flowIndex: 72,
+      flowTypeLabel: "출력·현실압 동시 상승형",
+      flowIndexCaution: "흐름 지표는 결과를 단정하지 않고 조율할 지점을 보여 줍니다.",
     },
     flowCards: [
       {
@@ -214,6 +214,9 @@ describe("openaiAnnualFortuneReportWriter", () => {
       "string",
       "null",
     ]);
+    expect(
+      annualFortuneReportDraftJsonSchema.properties.scoreSummary.required,
+    ).toEqual(["flowIndex", "flowTypeLabel", "flowIndexCaution"]);
     assertStrictRequiredKeys(annualFortuneReportDraftJsonSchema);
   });
 

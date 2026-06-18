@@ -1,4 +1,5 @@
 import type { AnnualFortuneReportDraft } from "../../../lib/report-generation/annualFortuneReportDraftTypes";
+import { sanitizeAnnualFortuneVisibleText } from "../../../lib/report-generation/annualFortuneReportDraftValidator";
 
 type AnnualFortuneReportViewProps = {
   readonly draft: AnnualFortuneReportDraft;
@@ -47,6 +48,79 @@ const annualFortuneFlowAreaLabels = [
   "몸·생활 리듬",
 ] as const;
 
+const annualFinalAdviceDomainLabels = [
+  "일·성과",
+  "돈·현실",
+  "인간관계",
+  "연애·가족",
+  "학업·자격증",
+  "몸·생활 리듬",
+  "올해 운영법",
+] as const;
+
+function text(value: string): string {
+  return sanitizeAnnualFortuneVisibleText(value);
+}
+
+function getAnnualFlowIndexHeading(
+  mode: AnnualFortuneReportDraft["mode"],
+): string {
+  if (mode === "past_review") {
+    return "회고 흐름 지표";
+  }
+  if (mode === "new_year_preview") {
+    return "신년 흐름 지표";
+  }
+
+  return "올해 흐름 지표";
+}
+
+function getAnnualFlowMetricLabel(label: string): string {
+  if (label === "일·성과") {
+    return "활성도";
+  }
+  if (label === "돈·현실") {
+    return "체감도";
+  }
+  if (label === "인간관계") {
+    return "노출도";
+  }
+  if (label === "연애·가족") {
+    return "조율도";
+  }
+  if (label === "학업·자격증") {
+    return "활용도";
+  }
+  if (label === "몸·생활 리듬") {
+    return "주의도";
+  }
+
+  return "체감도";
+}
+
+function getAnnualKeySignalDisplayLabel(
+  type: AnnualFortuneReportDraft["keySignals"][number]["type"],
+): string {
+  if (type === "opportunity") {
+    return "기회 신호";
+  }
+  if (type === "difficulty") {
+    return "부담 신호";
+  }
+  if (type === "mixed") {
+    return "양면 신호";
+  }
+  if (type === "recovery") {
+    return "연결 신호";
+  }
+
+  return "주의 신호";
+}
+
+function getAnnualFinalAdviceDomainLabel(index: number): string {
+  return annualFinalAdviceDomainLabels[index] ?? "올해 운영법";
+}
+
 function getGanjiParts(ganji: string): {
   readonly stem: string;
   readonly branch: string;
@@ -60,7 +134,7 @@ function renderList(items: readonly string[]) {
   return (
     <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-300">
       {items.map((item) => (
-        <li key={item}>{item}</li>
+        <li key={item}>{text(item)}</li>
       ))}
     </ul>
   );
@@ -95,7 +169,9 @@ function renderYearStructure(draft: AnnualFortuneReportDraft) {
             className="grid grid-cols-[5rem_1fr] rounded-md border border-neutral-800 bg-neutral-900/70"
           >
             <dt className="px-3 py-2 font-semibold text-neutral-500">{label}</dt>
-            <dd className="px-3 py-2 font-medium text-neutral-100">{value}</dd>
+            <dd className="px-3 py-2 font-medium text-neutral-100">
+              {text(value)}
+            </dd>
           </div>
         ))}
       </dl>
@@ -115,44 +191,46 @@ export function AnnualFortuneReportView({
         </p>
         <div className="space-y-3">
           <h1 className="text-2xl font-bold tracking-tight text-neutral-50 sm:text-3xl">
-            {draft.openingTitle}
+            {text(draft.openingTitle)}
           </h1>
           <div className="flex flex-wrap gap-2 text-sm">
             <span className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 font-semibold text-neutral-100">
-              {draft.personLabel}
+              {text(draft.personLabel)}
             </span>
             <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 font-semibold text-amber-100">
-              {draft.yearSummary.displayTitle}
+              {text(draft.yearSummary.displayTitle)}
             </span>
             <span className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 text-neutral-300">
-              {draft.yearSummary.modeLabel}
+              {text(draft.yearSummary.modeLabel)}
             </span>
           </div>
         </div>
         <div className="grid gap-4 sm:grid-cols-[10rem_1fr]">
           <section
             className="rounded-lg border border-amber-500/40 bg-amber-500/10 p-4"
-            aria-label="세운 흐름 점수"
+            aria-label={getAnnualFlowIndexHeading(draft.mode)}
           >
-            <p className="text-xs font-semibold text-amber-200">세운 흐름 점수</p>
+            <p className="text-xs font-semibold text-amber-200">
+              {getAnnualFlowIndexHeading(draft.mode)}
+            </p>
             <p className="mt-2 text-5xl font-bold tracking-tight text-amber-100">
-              {draft.scoreSummary.totalScore}점
+              {draft.scoreSummary.flowIndex}
             </p>
             <p className="mt-2 text-sm font-semibold leading-6 text-amber-100">
-              {draft.scoreSummary.scoreLabel}
+              {text(draft.scoreSummary.flowTypeLabel)}
             </p>
           </section>
           <section className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
             <p className="text-base font-semibold leading-7 text-neutral-50">
-              {draft.coreLine}
+              {text(draft.coreLine)}
             </p>
             <p className="mt-3 text-sm leading-6 text-neutral-300">
-              {draft.scoreSummary.scoreCaution}
+              {text(draft.scoreSummary.flowIndexCaution)}
             </p>
           </section>
         </div>
         <p className="max-w-prose text-base leading-7 text-neutral-300">
-          {draft.openingSummary}
+          {text(draft.openingSummary)}
         </p>
       </header>
 
@@ -178,7 +256,7 @@ export function AnnualFortuneReportView({
               key={label}
               className="rounded-full border border-neutral-800 bg-neutral-950/60 px-3 py-1 text-xs font-semibold text-neutral-300"
             >
-              {label}
+              {text(label)}
             </span>
           ))}
         </div>
@@ -190,16 +268,18 @@ export function AnnualFortuneReportView({
             >
               <div className="flex items-start justify-between gap-3">
                 <h2 className="text-sm font-semibold text-neutral-400">
-                  {card.label}
+                  {text(card.label)} {getAnnualFlowMetricLabel(card.label)}
                 </h2>
                 <span className="text-xl font-bold text-amber-100">
                   {card.score}
                 </span>
               </div>
               <p className="mt-3 text-base font-semibold leading-7 text-neutral-50">
-                {card.headline}
+                {text(card.headline)}
               </p>
-              <p className="mt-2 text-sm leading-6 text-neutral-300">{card.body}</p>
+              <p className="mt-2 text-sm leading-6 text-neutral-300">
+                {text(card.body)}
+              </p>
             </article>
           ))}
         </div>
@@ -214,16 +294,16 @@ export function AnnualFortuneReportView({
               className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
             >
               <p className="text-xs font-semibold text-amber-200">
-                {signal.type}
+                {getAnnualKeySignalDisplayLabel(signal.type)}
               </p>
               <h3 className="mt-1 text-base font-semibold text-neutral-50">
-                {signal.title}
+                {text(signal.title)}
               </h3>
               <p className="mt-2 text-sm leading-6 text-neutral-300">
-                {signal.body}
+                {text(signal.body)}
               </p>
               <p className="mt-3 text-xs text-neutral-500">
-                근거: {signal.evidenceLabel}
+                근거: {text(signal.evidenceLabel)}
               </p>
             </article>
           ))}
@@ -246,7 +326,9 @@ export function AnnualFortuneReportView({
               className="rounded-md border border-neutral-800 bg-neutral-900/70 p-4"
             >
               <dt className="text-xs font-semibold text-amber-200">{label}</dt>
-              <dd className="mt-1 text-sm leading-6 text-neutral-300">{body}</dd>
+              <dd className="mt-1 text-sm leading-6 text-neutral-300">
+                {text(body)}
+              </dd>
             </div>
           ))}
         </dl>
@@ -260,14 +342,14 @@ export function AnnualFortuneReportView({
           >
             <div className="space-y-2">
               <h2 className="text-xl font-semibold text-neutral-50">
-                {chapter.title}
+                {text(chapter.title)}
               </h2>
               <p className="text-base font-semibold leading-7 text-amber-100">
-                {chapter.headline}
+                {text(chapter.headline)}
               </p>
             </div>
             <p className="max-w-prose whitespace-pre-line text-base leading-8 text-neutral-200">
-              {chapter.body}
+              {text(chapter.body)}
             </p>
             <div className="grid gap-3 md:grid-cols-2">
               <section className="rounded-lg border border-amber-500/30 bg-amber-950/20 p-4">
@@ -288,7 +370,9 @@ export function AnnualFortuneReportView({
       </section>
 
       <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-        <h2 className="text-lg font-semibold text-neutral-50">월별 흐름</h2>
+        <h2 className="text-lg font-semibold text-neutral-50">
+          월별 운영 가이드
+        </h2>
         <div className="grid gap-3 md:grid-cols-2">
           {draft.monthlyFlow.map((flow) => (
             <article
@@ -296,21 +380,21 @@ export function AnnualFortuneReportView({
               className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
             >
               <p className="text-xs font-semibold text-amber-200">
-                {flow.label}
+                {text(flow.label)}
               </p>
               <h3 className="mt-1 text-base font-semibold text-neutral-50">
-                {flow.headline}
+                {text(flow.headline)}
               </h3>
-              {flow.elementFocus === undefined ? null : (
+              {flow.elementFocus === null ? null : (
                 <p className="mt-2 text-xs text-neutral-500">
-                  오행 포인트: {flow.elementFocus}
+                  오행 포인트: {text(flow.elementFocus)}
                 </p>
               )}
               <p className="mt-2 text-sm leading-6 text-neutral-300">
-                {flow.body}
+                {text(flow.body)}
               </p>
               <p className="mt-3 text-sm leading-6 text-neutral-400">
-                {flow.advice}
+                {text(flow.advice)}
               </p>
             </article>
           ))}
@@ -326,9 +410,11 @@ export function AnnualFortuneReportView({
               className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
             >
               <p className="text-sm font-semibold text-amber-100">
-                {index + 1}. 실행 기준
+                {index + 1}. {getAnnualFinalAdviceDomainLabel(index)}
               </p>
-              <p className="mt-2 text-sm leading-6 text-neutral-300">{advice}</p>
+              <p className="mt-2 text-sm leading-6 text-neutral-300">
+                {text(advice)}
+              </p>
             </li>
           ))}
         </ol>

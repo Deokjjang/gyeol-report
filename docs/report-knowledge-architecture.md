@@ -1574,6 +1574,37 @@ The validator remains backward-compatible with older generated drafts and local
 snapshots by normalizing missing or empty `monthlyFlow[].elementFocus` values to
 `null` before returning the sanitized draft.
 
+## SEUN-04 Annual Fortune Product Calibration
+
+SEUN-04 calibrates the annual fortune report before product lock. The former
+score copy is no longer framed as a good/bad grade. `scoreSummary` now uses
+`flowIndex`, `flowTypeLabel`, and `flowIndexCaution`, and the UI renders it as
+`올해 흐름 지표`, `회고 흐름 지표`, or `신년 흐름 지표` depending on report mode.
+
+Flow cards keep their numeric indicator but display metric-specific labels:
+`일·성과 활성도`, `돈·현실 체감도`, `인간관계 노출도`, `연애·가족 조율도`,
+`학업·자격증 활용도`, and `몸·생활 리듬 주의도`. Key signal enum values remain
+internal JSON values, but the view localizes them as `기회 신호`, `부담 신호`,
+`양면 신호`, `연결 신호`, and `주의 신호`.
+
+The validator and render path sanitize repeated explanatory terms such as
+`식신(식신, 말·결과물·생산성)`, `甲 일간(갑 일간)`, and
+`토 과다(흙이 무거움)` into cleaner Korean copy. Final advice remains a string
+array for schema stability, but the view labels advice by domain rather than
+repeating generic `실행 기준` labels.
+
+Current-year prompt guidance now supports a mid-year structure: 상반기에는 이미
+체감됐을 수 있는 신호를 짚고, 하반기에는 남은 흐름을 어떻게 활용하고 조율할지
+쓴다. The prompt also requires concrete event candidates with nouns such as
+직장, 프로젝트, 상사, 동료, 가족, 부모, 연인, 친구, 돈, 정산, 계약, 생활비,
+시험, 자격증, 승진, 이직, 수면, 식사, 일정, and 연락.
+
+Monthly flow now has an evidence foundation through `monthlyFortuneSeeds`.
+SEUN-04 uses `calendar_month_approximation` as the explicit basis, so the UI
+labels the section `월별 운영 가이드` and the prompt must not present it as exact
+절기 월운. Exact solar-term monthly fortune can be added later under
+`solar_term_exact`.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

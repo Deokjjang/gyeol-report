@@ -40,8 +40,28 @@ describe("AnnualFortuneReportView source", () => {
     expect(viewSource).toContain("chapter.likelyScenes");
     expect(viewSource).toContain("chapter.practicalAdvice");
     expect(viewSource).toContain("draft.monthlyFlow.map");
-    expect(viewSource).toContain("월별 흐름");
+    expect(viewSource).toContain("월별 운영 가이드");
     expect(viewSource).toContain("draft.finalAdvice.map");
     expect(viewSource).toContain("안전 안내");
+  });
+
+  it("renders annual fortune product labels without raw score or signal wording", () => {
+    expect(viewSource).toContain("getAnnualFlowIndexHeading");
+    expect(viewSource).toContain("올해 흐름 지표");
+    expect(viewSource).toContain("회고 흐름 지표");
+    expect(viewSource).toContain("신년 흐름 지표");
+    expect(viewSource).toContain("draft.scoreSummary.flowIndex");
+    expect(viewSource).toContain("draft.scoreSummary.flowTypeLabel");
+    expect(viewSource).toContain("draft.scoreSummary.flowIndexCaution");
+    expect(viewSource).not.toContain("세운 흐름 점수");
+    expect(viewSource).not.toContain("draft.scoreSummary.totalScore");
+    expect(viewSource).toContain("getAnnualFlowMetricLabel");
+    expect(viewSource).toContain("활성도");
+    expect(viewSource).toContain("주의도");
+    expect(viewSource).toContain("getAnnualKeySignalDisplayLabel");
+    expect(viewSource).toContain("기회 신호");
+    expect(viewSource).toContain("부담 신호");
+    expect(viewSource).toContain("getAnnualFinalAdviceDomainLabel");
+    expect(viewSource).not.toContain("실행 기준");
   });
 });

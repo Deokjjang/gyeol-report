@@ -3,6 +3,7 @@ import type {
   AnnualFortuneMode,
   AnnualFortuneYearAccess,
   AnnualGanjiInfo,
+  AnnualMonthGanjiInfo,
   EarthlyBranch,
   FiveElement,
   HeavenlyStem,
@@ -12,6 +13,7 @@ import {
   getAnnualBranchInteractions,
   getAnnualFortuneYearAccess,
   getAnnualGanjiInfo,
+  getAnnualMonthGanjiInfo,
   getBranchElement,
   getGeneratedElement,
   getTenGodForStemPair,
@@ -21,6 +23,7 @@ export interface AnnualFortuneEvidencePacket {
   readonly productType: "annual_fortune";
   readonly productVersion: "v1";
   readonly targetYear: number;
+  readonly currentDate: string;
   readonly mode: AnnualFortuneMode;
   readonly yearAccess: AnnualFortuneYearAccess;
   readonly annualGanji: AnnualGanjiInfo;
@@ -77,6 +80,13 @@ export interface AnnualFortuneEvidencePacket {
       | "stability"
       | "movement";
     readonly strength: "low" | "medium" | "high";
+    readonly plain: string;
+  }[];
+  readonly monthlyFortuneSeeds: readonly {
+    readonly month: number;
+    readonly label: string;
+    readonly monthGanji: AnnualMonthGanjiInfo;
+    readonly elementFocus: string;
     readonly plain: string;
   }[];
   readonly warnings: readonly string[];
@@ -179,6 +189,35 @@ function formatElementList(elements: readonly FiveElement[]): string {
   }
 
   return elements.map((element) => elementKo[element]).join("·");
+}
+
+function formatDateOnly(date: Date): string {
+  const year = date.getFullYear();
+  const month = `${date.getMonth() + 1}`.padStart(2, "0");
+  const day = `${date.getDate()}`.padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+
+function buildMonthlyFortuneSeeds(
+  targetYear: number,
+): AnnualFortuneEvidencePacket["monthlyFortuneSeeds"] {
+  return Array.from({ length: 12 }, (_, index) => {
+    const month = index + 1;
+    const monthGanji = getAnnualMonthGanjiInfo({
+      year: targetYear,
+      month,
+    });
+    const elementFocus = `${elementKo[monthGanji.stemElement]}·${elementKo[monthGanji.branchElement]}`;
+
+    return {
+      month,
+      label: monthGanji.label,
+      monthGanji,
+      elementFocus,
+      plain: `${monthGanji.label}은 ${monthGanji.ganji} 흐름을 달력월 기준으로 근사해 보는 월별 운영 가이드입니다. ${monthGanji.elementSummary}`,
+    };
+  });
 }
 
 function buildElementEffect(input: {
@@ -475,6 +514,7 @@ export function buildAnnualFortuneEvidence(input: {
     productType: "annual_fortune",
     productVersion: "v1",
     targetYear: input.targetYear,
+    currentDate: formatDateOnly(input.currentDate),
     mode: yearAccess.mode,
     yearAccess,
     annualGanji,
@@ -503,6 +543,7 @@ export function buildAnnualFortuneEvidence(input: {
       elementEffect,
       branchInteractions,
     }),
+    monthlyFortuneSeeds: buildMonthlyFortuneSeeds(input.targetYear),
     warnings: buildWarnings(input.person.labels),
   };
 }

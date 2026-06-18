@@ -59,6 +59,19 @@ export interface AnnualGanjiInfo {
   readonly elementSummary: string;
 }
 
+export interface AnnualMonthGanjiInfo {
+  readonly year: number;
+  readonly month: number;
+  readonly label: string;
+  readonly ganji: string;
+  readonly stem: HeavenlyStem;
+  readonly branch: EarthlyBranch;
+  readonly stemElement: FiveElement;
+  readonly branchElement: FiveElement;
+  readonly elementSummary: string;
+  readonly basis: "calendar_month_approximation" | "solar_term_exact";
+}
+
 export interface AnnualFortuneYearAccess {
   readonly year: number;
   readonly mode: AnnualFortuneMode;

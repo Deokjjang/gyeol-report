@@ -23,6 +23,7 @@ describe("annualFortuneEvidence", () => {
     expect(packet.productType).toBe("annual_fortune");
     expect(packet.productVersion).toBe("v1");
     expect(packet.targetYear).toBe(2026);
+    expect(packet.currentDate).toBe("2026-06-18");
     expect(packet.mode).toBe("current_year");
     expect(packet.annualGanji.ganji).toBe("丙午");
     expect(packet.dayMaster).toBe("甲");
@@ -50,6 +51,24 @@ describe("annualFortuneEvidence", () => {
         expect.objectContaining({ type: "expression", strength: "high" }),
       ]),
     );
+    expect(packet.monthlyFortuneSeeds).toHaveLength(12);
+    expect(packet.monthlyFortuneSeeds[0]).toMatchObject({
+      month: 1,
+      label: "1월",
+      elementFocus: expect.any(String),
+      monthGanji: expect.objectContaining({
+        ganji: "庚寅",
+        basis: "calendar_month_approximation",
+      }),
+    });
+    expect(
+      packet.monthlyFortuneSeeds.every(
+        (seed) =>
+          seed.monthGanji.ganji.length > 0 &&
+          seed.elementFocus.length > 0 &&
+          seed.monthGanji.basis === "calendar_month_approximation",
+      ),
+    ).toBe(true);
   });
 
   it("builds Deokmin 2021 annual review as 辛丑 정관 for 甲 day master", () => {

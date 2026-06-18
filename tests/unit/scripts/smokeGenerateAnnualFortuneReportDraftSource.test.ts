@@ -20,6 +20,11 @@ describe("smoke_generate_annual_fortune_report_draft source", () => {
     expect(source).toContain("vague copy warnings:");
     expect(source).toContain("hard claim warnings:");
     expect(source).toContain("internal artifact warnings:");
+    expect(source).toContain("raw English labels:");
+    expect(source).toContain("repeated term warnings:");
+    expect(source).toContain("generic final advice labels:");
+    expect(source).toContain("monthly basis:");
+    expect(source).toContain("calendar_month_approximation");
     expect(source).toContain("life area signals");
     expect(source).toContain("difficulty signals");
     expect(source).toContain("opportunity signals");

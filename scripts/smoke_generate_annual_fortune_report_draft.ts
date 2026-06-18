@@ -28,6 +28,7 @@ import {
 
 const openAIKeyEnvName = ["OPENAI", "API", "KEY"].join("_");
 const annualFortuneDefaultFixtureId = "deokmin-2026-current";
+const annualFortuneMonthlyBasisFallback = "calendar_month_approximation";
 
 function getFixtureId(argv: readonly string[]): string {
   const flagIndex = argv.findIndex((arg) => arg === "--fixture");
@@ -94,6 +95,9 @@ async function main(): Promise<void> {
   writeLine(`ten god: ${packet.annualTenGod.stemTenGod}`);
   writeLine(
     `year element: ${packet.annualGanji.stemElement}/${packet.annualGanji.branchElement}`,
+  );
+  writeLine(
+    `monthly basis: ${packet.monthlyFortuneSeeds[0]?.monthGanji.basis ?? annualFortuneMonthlyBasisFallback}`,
   );
   writeList(
     "life area signals",
@@ -168,6 +172,14 @@ async function main(): Promise<void> {
   writeLine(`vague copy warnings: ${quality.vagueCopyWarnings}`);
   writeLine(`hard claim warnings: ${quality.hardClaimWarnings}`);
   writeLine(`internal artifact warnings: ${quality.internalArtifactWarnings}`);
+  writeLine(`raw English labels: ${quality.rawEnglishSignalLabelWarnings}`);
+  writeLine(`repeated term warnings: ${quality.repeatedTermWarnings}`);
+  writeLine(
+    `generic final advice labels: ${quality.genericFinalAdviceLabelWarnings}`,
+  );
+  writeLine(
+    `monthly basis: ${packet.monthlyFortuneSeeds[0]?.monthGanji.basis ?? annualFortuneMonthlyBasisFallback}`,
+  );
 
   if (writePreview) {
     await writeAnnualFortunePreviewSnapshot({

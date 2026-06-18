@@ -4,6 +4,7 @@ import {
   getAnnualBranchInteractions,
   getAnnualFortuneYearAccess,
   getAnnualGanjiInfo,
+  getAnnualMonthGanjiInfo,
   getTenGodForStemPair,
 } from "../../../src/lib/report-knowledge/annualFortuneYearRules";
 
@@ -26,6 +27,23 @@ describe("annualFortuneYearRules", () => {
     expect(year2026.branchElement).toBe("fire");
     expect(year2024.stemElement).toBe("wood");
     expect(year2024.branchElement).toBe("earth");
+  });
+
+  it("builds approximate calendar-month ganji foundation", () => {
+    const january2026 = getAnnualMonthGanjiInfo({ year: 2026, month: 1 });
+    const december2026 = getAnnualMonthGanjiInfo({ year: 2026, month: 12 });
+
+    expect(january2026).toMatchObject({
+      year: 2026,
+      month: 1,
+      label: "1월",
+      basis: "calendar_month_approximation",
+      stemElement: "metal",
+      branchElement: "wood",
+    });
+    expect(january2026.ganji).toBe("庚寅");
+    expect(december2026.ganji).toBe("辛丑");
+    expect(december2026.basis).toBe("calendar_month_approximation");
   });
 
   it("applies annual fortune year access policy", () => {

@@ -3,6 +3,7 @@ import type {
   AnnualBranchInteractionType,
   AnnualFortuneYearAccess,
   AnnualGanjiInfo,
+  AnnualMonthGanjiInfo,
   AnnualPillarPosition,
   EarthlyBranch,
   FiveElement,
@@ -39,12 +40,35 @@ const earthlyBranches = [
   "亥",
 ] as const satisfies readonly EarthlyBranch[];
 
+const monthBranches = [
+  "寅",
+  "卯",
+  "辰",
+  "巳",
+  "午",
+  "未",
+  "申",
+  "酉",
+  "戌",
+  "亥",
+  "子",
+  "丑",
+] as const satisfies readonly EarthlyBranch[];
+
 const elementKo = {
   wood: "목",
   fire: "화",
   earth: "토",
   metal: "금",
   water: "수",
+} as const satisfies Record<FiveElement, string>;
+
+const elementKoAnd = {
+  wood: "목과",
+  fire: "화와",
+  earth: "토와",
+  metal: "금과",
+  water: "수와",
 } as const satisfies Record<FiveElement, string>;
 
 const stemElement = {
@@ -169,6 +193,19 @@ const branchBreakPairs = [
   ["未", "戌"],
 ] as const satisfies readonly (readonly [EarthlyBranch, EarthlyBranch])[];
 
+const firstMonthStemByYearStem = {
+  甲: "丙",
+  己: "丙",
+  乙: "戊",
+  庚: "戊",
+  丙: "庚",
+  辛: "庚",
+  丁: "壬",
+  壬: "壬",
+  戊: "甲",
+  癸: "甲",
+} as const satisfies Record<HeavenlyStem, HeavenlyStem>;
+
 const branchTrines = [
   { branches: ["申", "子", "辰"], element: "water", label: "申子辰" },
   { branches: ["亥", "卯", "未"], element: "wood", label: "亥卯未" },
@@ -215,7 +252,7 @@ function formatElementSummary(input: {
     return `${elementKo[input.stemElement]}의 기운이 강하게 들어오는 해`;
   }
 
-  return `${elementKo[input.stemElement]}와 ${elementKo[input.branchElement]}의 기운이 함께 들어오는 해`;
+  return `${elementKoAnd[input.stemElement]} ${elementKo[input.branchElement]}의 기운이 함께 들어오는 해`;
 }
 
 export function getStemElement(stem: HeavenlyStem): FiveElement {
@@ -261,6 +298,48 @@ export function getAnnualGanjiInfo(year: number): AnnualGanjiInfo {
       stemElement: annualStemElement,
       branchElement: annualBranchElement,
     }),
+  };
+}
+
+export function getAnnualMonthGanjiInfo(params: {
+  readonly year: number;
+  readonly month: number;
+}): AnnualMonthGanjiInfo {
+  if (!Number.isInteger(params.month) || params.month < 1 || params.month > 12) {
+    throw new Error(`Invalid annual fortune month: ${params.month}`);
+  }
+
+  const annualGanji = getAnnualGanjiInfo(params.year);
+  const firstMonthStem = firstMonthStemByYearStem[annualGanji.stem];
+  const firstMonthStemIndex = heavenlyStems.findIndex(
+    (stem) => stem === firstMonthStem,
+  );
+  const stem = heavenlyStems[
+    modulo(firstMonthStemIndex + params.month - 1, heavenlyStems.length)
+  ];
+  const branch = monthBranches[params.month - 1];
+
+  if (stem === undefined || branch === undefined) {
+    throw new Error(`Unsupported annual fortune month: ${params.year}-${params.month}`);
+  }
+
+  const stemElementForMonth = getStemElement(stem);
+  const branchElementForMonth = getBranchElement(branch);
+
+  return {
+    year: params.year,
+    month: params.month,
+    label: `${params.month}월`,
+    ganji: `${stem}${branch}`,
+    stem,
+    branch,
+    stemElement: stemElementForMonth,
+    branchElement: branchElementForMonth,
+    elementSummary: formatElementSummary({
+      stemElement: stemElementForMonth,
+      branchElement: branchElementForMonth,
+    }).replace(/해$/u, "달"),
+    basis: "calendar_month_approximation",
   };
 }
 

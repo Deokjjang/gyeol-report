@@ -35,9 +35,9 @@ function createValidAnnualDraft(
       yearTone: modeText,
     },
     scoreSummary: {
-      totalScore: 72,
-      scoreLabel: "확장형 흐름",
-      scoreCaution: "점수는 결과를 단정하지 않고 조율할 지점을 보여 줍니다.",
+      flowIndex: 72,
+      flowTypeLabel: "출력·현실압 동시 상승형",
+      flowIndexCaution: "흐름 지표는 결과를 단정하지 않고 조율할 지점을 보여 줍니다.",
     },
     flowCards: [
       {
@@ -104,6 +104,25 @@ describe("annualFortuneReportDraftValidator", () => {
     expect(result.value?.monthlyFlow).toHaveLength(12);
   });
 
+  it("maps legacy scoreSummary fields to flow index fields", () => {
+    const draft = createValidAnnualDraft();
+    const result = validateAnnualFortuneReportDraft({
+      ...draft,
+      scoreSummary: {
+        totalScore: 68,
+        scoreLabel: "중상",
+        scoreCaution: "세운 흐름 점수는 참고값입니다.",
+      },
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.scoreSummary).toMatchObject({
+      flowIndex: 68,
+      flowTypeLabel: "중상",
+      flowIndexCaution: "세운 흐름 점수는 참고값입니다.",
+    });
+  });
+
   it("normalizes missing monthlyFlow elementFocus to null", () => {
     const draft = createValidAnnualDraft();
     const result = validateAnnualFortuneReportDraft({
@@ -148,6 +167,46 @@ describe("annualFortuneReportDraftValidator", () => {
     expect(result.value?.monthlyFlow[0]?.elementFocus).toBe(
       expectedElementFocus,
     );
+  });
+
+  it("sanitizes repeated annual fortune terms", () => {
+    const result = validateAnnualFortuneReportDraft({
+      ...createValidAnnualDraft(),
+      annualStructure: {
+        ...createValidAnnualDraft().annualStructure,
+        tenGodExplanation:
+          "식신(식신, 말·결과물·생산성)은 甲 일간(갑 일간)에게 들어온 흐름입니다.",
+        elementEffectExplanation: "토 과다(흙이 무거움)를 같이 봅니다.",
+      },
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.annualStructure.tenGodExplanation).toContain(
+      "식신: 말·결과물·생산성",
+    );
+    expect(result.value?.annualStructure.tenGodExplanation).toContain(
+      "甲(갑목) 일간",
+    );
+    expect(result.value?.annualStructure.elementEffectExplanation).toContain(
+      "토 과다: 현실·책임·관리의 기운이 무거운 구조",
+    );
+  });
+
+  it("strips duplicated final advice prefixes", () => {
+    const result = validateAnnualFortuneReportDraft({
+      ...createValidAnnualDraft(),
+      finalAdvice: [
+        "실행 기준: 결과물을 작은 단위로 나누세요.",
+        "일·성과: 프로젝트 마감을 먼저 정리하세요.",
+        "돈·현실: 생활비 기준을 문장으로 남기세요.",
+        "올해 운영법: 일정과 수면을 같이 보세요.",
+      ],
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.finalAdvice[0]).not.toContain("실행 기준:");
+    expect(result.value?.finalAdvice[1]).not.toContain("일·성과:");
+    expect(result.value?.finalAdvice[2]).not.toContain("돈·현실:");
   });
 
   it("rejects missing monthlyFlow", () => {
@@ -214,6 +273,23 @@ describe("annualFortuneReportDraftValidator", () => {
         createValidAnnualDraft({ mode: "new_year_preview" }),
       ).ok,
     ).toBe(true);
+  });
+
+  it("accepts current_year mid-year 상반기 and 하반기 tone", () => {
+    const result = validateAnnualFortuneReportDraft({
+      ...createValidAnnualDraft({ mode: "current_year" }),
+      openingSummary:
+        "올해 상반기에는 이미 직장과 프로젝트에서 압박을 체감했을 수 있고, 하반기에는 준비와 조율로 손실을 줄이기 좋습니다.",
+      coreLine:
+        "상반기 체감과 하반기 활용을 함께 보는 올해 흐름입니다.",
+      yearSummary: {
+        ...createValidAnnualDraft().yearSummary,
+        yearTone:
+          "지금부터는 상반기 신호를 정리하고 하반기 흐름을 쓰기 위한 준비가 중요합니다.",
+      },
+    });
+
+    expect(result.ok).toBe(true);
   });
 
   it("flags generic vague annual fortune phrases", () => {

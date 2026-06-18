@@ -62,6 +62,29 @@ describe("openaiAnnualFortuneReportWriterPrompt", () => {
     expect(prompt).toContain("조율");
     expect(prompt).toContain("손실을 줄이기");
     expect(prompt).toContain("흐름을 쓰기");
+    expect(prompt).toContain("상반기");
+    expect(prompt).toContain("하반기");
+    expect(prompt).toContain("currentDate");
+  });
+
+  it("requires monthly seeds, flow index wording, and concrete event candidates", () => {
+    const prompt = buildMessagesText();
+
+    expect(prompt).toContain("monthlyFortuneSeeds");
+    expect(prompt).toContain("monthlyFlow must use provided monthlyFortuneSeeds");
+    expect(prompt).toContain("Do not invent monthly ganji");
+    expect(prompt).toContain("calendar_month_approximation");
+    expect(prompt).toContain("월별 운영 가이드");
+    expect(prompt).toContain("flowIndex");
+    expect(prompt).toContain("flowTypeLabel");
+    expect(prompt).toContain("flowIndexCaution");
+    expect(prompt).toContain("flow indicator");
+    expect(prompt).toContain("직장");
+    expect(prompt).toContain("프로젝트");
+    expect(prompt).toContain("정산");
+    expect(prompt).toContain("자격증");
+    expect(prompt).toContain("수면");
+    expect(prompt).toContain("연락");
   });
 
   it("forbids guaranteed outcomes and vague copy", () => {
