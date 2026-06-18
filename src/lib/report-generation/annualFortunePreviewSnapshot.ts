@@ -3,7 +3,7 @@ import { join } from "node:path";
 
 import type { AnnualFortuneEvidencePacket } from "../report-knowledge/annualFortuneEvidence";
 import {
-  getAnnualMonthlyBasisDisplayLabel,
+  getAnnualMonthlyCardBasisLabel,
   sanitizeAnnualFortuneKoreanCopy,
 } from "./annualFortuneReportDraftValidator";
 import type { AnnualFortuneReportDraft } from "./annualFortuneReportDraftTypes";
@@ -26,7 +26,7 @@ function assertSafeFixtureId(fixtureId: string): void {
 function sanitizeSnapshotTextValue(value: unknown, key?: string): unknown {
   if (typeof value === "string") {
     if (key === "monthlyBasis") {
-      return getAnnualMonthlyBasisDisplayLabel(value);
+      return getAnnualMonthlyCardBasisLabel(value);
     }
 
     return sanitizeAnnualFortuneKoreanCopy(value);

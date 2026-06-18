@@ -212,7 +212,12 @@ async function main(): Promise<void> {
   writeLine(
     `final advice domain lock warnings: ${quality.finalAdviceDomainLockWarnings}`,
   );
+  writeLine(`abnormal script warnings: ${quality.abnormalScriptWarnings}`);
+  writeLine(
+    `monthly basis repetition warnings: ${quality.monthlyBasisRepetitionWarnings}`,
+  );
   writeLine(`grammar residue warnings: ${quality.grammarResidueWarnings}`);
+  writeLine(`parenthetical term warnings: ${quality.parentheticalTermWarnings}`);
   writeLine(
     `monthly basis: ${packet.monthlyFortuneSeeds[0]?.monthGanji.basis ?? annualFortuneMonthlyBasisFallback}`,
   );

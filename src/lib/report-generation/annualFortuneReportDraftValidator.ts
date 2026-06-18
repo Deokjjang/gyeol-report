@@ -28,6 +28,9 @@ export type AnnualFortuneDraftQualitySummary = {
   readonly futureDevelopmentWordingWarnings: number;
   readonly finalAdviceDomainLockWarnings: number;
   readonly grammarResidueWarnings: number;
+  readonly abnormalScriptWarnings: number;
+  readonly monthlyBasisRepetitionWarnings: number;
+  readonly parentheticalTermWarnings: number;
 };
 
 type AnnualFortuneLegacyScoreSummary = {
@@ -140,8 +143,16 @@ const futureDevelopmentForbiddenPhrases = [
 const grammarResiduePhrases = [
   "별으로",
   "甲일간",
+  "보여지는",
+  "구조과",
   "식신: 결과를 밖으로 꺼내는 별",
+  "식신: 결과를 밖으로 꺼내는 힘으로 들어오",
 ] as const;
+
+const abnormalAnnualFortuneScriptPattern = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]+/gu;
+
+const monthlyBasisSectionNote =
+  "월별 흐름은 달력월 기준 운영 가이드입니다. 실제 체감 시점은 절기와 개인 일정에 따라 조금 달라질 수 있습니다.";
 
 const annualDomainLockedFinalAdviceLabels = [
   "일·성과",
@@ -232,6 +243,18 @@ export function sanitizeAnnualFortuneKoreanCopy(text: string): string {
       /식신:\s*결과를 밖으로 꺼내는 별으로 들어옵니다/gu,
       "식신으로 들어와 결과물과 표현을 밖으로 꺼내는 힘을 키웁니다",
     )
+    .replace(
+      /식신:\s*결과를 밖으로 꺼내는 힘으로 들어오고/gu,
+      "식신으로 들어와 결과물과 표현을 밖으로 꺼내는 힘을 키우고",
+    )
+    .replace(
+      /식신:\s*결과를 밖으로 꺼내는 힘으로 들어옵니다/gu,
+      "식신으로 들어와 결과물과 표현을 밖으로 꺼내는 힘을 키웁니다",
+    )
+    .replace(/보여지는 결과/gu, "눈에 보이는 결과")
+    .replace(/보여지는/gu, "보이는")
+    .replace(/구조과/gu, "구조와")
+    .replace(/فاص/gu, "거리감")
     .replace(/흐름으로 들어오는 별으로/gu, "흐름으로 들어오는 별로")
     .replace(/결과를 밖으로 꺼내는 별으로/gu, "결과를 밖으로 꺼내는 흐름으로")
     .replace(/별으로/gu, "별로")
@@ -253,6 +276,18 @@ export function sanitizeAnnualFortuneKoreanCopy(text: string): string {
     .replace(/寅申 충\(寅申 충,\s*서로 부딪혀 방향이 바뀌는 작용\)/gu, "寅申 충: 서로 부딪히며 방향이 바뀌는 작용")
     .replace(/寅申 충\(寅申 충,\s*([^)]+)\)/gu, "寅申 충: $1")
     .replace(/申寅 형\(申寅 형,\s*([^)]+)\)/gu, "申寅 형: $1")
+    .replace(
+      /([子丑寅卯辰巳午未申酉戌亥]{2}\s*(?:파|육합|충|형|해|반합|삼합))\((?:파|육합|충|형|해|반합|삼합),\s*([^)]+)\)/gu,
+      "$1: $2",
+    )
+    .replace(
+      /([子丑寅卯辰巳午未申酉戌亥]{2}\s*(?:파|육합|충|형|해|반합|삼합))\(([^)]+)\)/gu,
+      "$1: $2",
+    )
+    .replace(
+      /([子丑寅卯辰巳午未申酉戌亥]{2}\s*(?:파|육합|충|형|해|반합|삼합)):\s*\1,\s*/gu,
+      "$1: ",
+    )
     .replace(/([子丑寅卯辰巳午未申酉戌亥]{2}\s*(?:파|육합|충|형|해|반합|삼합))\(\1,\s*([^)]+)\)/gu, "$1: $2")
     .replace(/卯午 파\(파,\s*[^)]+\)/gu, "卯午 파: 기존 방식이 깨지며 다시 조정되는 흐름")
     .replace(/午未 육합\(육합,\s*[^)]+\)/gu, "午未 육합: 실제 약속과 움직임이 묶이는 흐름")
@@ -265,7 +300,8 @@ export function sanitizeAnnualFortuneKoreanCopy(text: string): string {
     .replace(/([식상정편비겁재관인]{2})\(\1,\s*([^)]+)\)/gu, "$1: $2")
     .replace(/\b(Partner|Family) ([AB])을/g, "$1 $2를")
     .replace(/\b(Partner|Family) ([AB])은/g, "$1 $2는")
-    .replace(/\b(Partner|Family) ([AB])이/g, "$1 $2가");
+    .replace(/\b(Partner|Family) ([AB])이/g, "$1 $2가")
+    .replace(abnormalAnnualFortuneScriptPattern, "");
 
   return internalForbiddenWords
     .reduce(
@@ -294,6 +330,30 @@ export function getAnnualMonthlyBasisDisplayLabel(
   }
 
   return sanitizeAnnualFortuneKoreanCopy(basis);
+}
+
+export function getAnnualMonthlySectionBasisNote(): string {
+  return monthlyBasisSectionNote;
+}
+
+export function getAnnualMonthlyCardBasisLabel(basis: string | null): string {
+  const calendarMonthApproximation = ["calendar", "month", "approximation"].join("_");
+  const solarTermExact = ["solar", "term", "exact"].join("_");
+  const sanitized = basis === null ? "" : sanitizeAnnualFortuneKoreanCopy(basis);
+
+  if (basis === solarTermExact || sanitized.includes("절기 기준")) {
+    return "절기 기준";
+  }
+  if (
+    basis === calendarMonthApproximation ||
+    sanitized.length === 0 ||
+    sanitized.includes("달력월 기준") ||
+    sanitized.includes("월별 흐름은")
+  ) {
+    return "달력월 기준 운영 가이드";
+  }
+
+  return sanitized;
 }
 
 function sanitizeStringArray(values: readonly string[]): readonly string[] {
@@ -602,7 +662,7 @@ function normalizeOptionalMonthlyText(value: unknown): string | null {
 function normalizeMonthlyBasis(value: unknown): string | null {
   const sanitized = normalizeOptionalMonthlyText(value);
 
-  return getAnnualMonthlyBasisDisplayLabel(sanitized);
+  return getAnnualMonthlyCardBasisLabel(sanitized);
 }
 
 function hasNewScoreSummary(
@@ -1039,6 +1099,23 @@ function countGrammarResidueWarnings(visibleText: string): number {
   );
 }
 
+function countAbnormalScriptWarnings(visibleText: string): number {
+  return visibleText.match(abnormalAnnualFortuneScriptPattern)?.length ?? 0;
+}
+
+function countMonthlyBasisRepetitionWarnings(visibleText: string): number {
+  const occurrences = countOccurrences(visibleText, monthlyBasisSectionNote);
+
+  return occurrences > 1 ? occurrences - 1 : 0;
+}
+
+function countParentheticalTermWarnings(visibleText: string): number {
+  const pattern =
+    /[子丑寅卯辰巳午未申酉戌亥]{2}\s*(?:파|육합|충|형|해|반합|삼합)\(/gu;
+
+  return visibleText.match(pattern)?.length ?? 0;
+}
+
 export function summarizeAnnualFortuneDraftQuality(
   draft: AnnualFortuneReportDraft,
 ): AnnualFortuneDraftQualitySummary {
@@ -1085,6 +1162,11 @@ export function summarizeAnnualFortuneDraftQuality(
   const finalAdviceDomainLockWarnings =
     countFinalAdviceDomainLockWarnings(draft);
   const grammarResidueWarnings = countGrammarResidueWarnings(visibleText);
+  const abnormalScriptWarnings = countAbnormalScriptWarnings(visibleText);
+  const monthlyBasisRepetitionWarnings =
+    countMonthlyBasisRepetitionWarnings(visibleText);
+  const parentheticalTermWarnings =
+    countParentheticalTermWarnings(visibleText);
 
   return {
     vagueCopyWarnings,
@@ -1102,6 +1184,9 @@ export function summarizeAnnualFortuneDraftQuality(
     futureDevelopmentWordingWarnings,
     finalAdviceDomainLockWarnings,
     grammarResidueWarnings,
+    abnormalScriptWarnings,
+    monthlyBasisRepetitionWarnings,
+    parentheticalTermWarnings,
   };
 }
 

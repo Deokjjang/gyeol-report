@@ -1727,6 +1727,33 @@ The annual smoke script reports final lock counters: hero duplication warnings,
 future development wording warnings, final advice domain lock warnings, and
 grammar residue warnings.
 
+## SEUN-06C Annual Fortune Final Visible Sanitizer
+
+SEUN-06C adds the final visible-render guard before annual fortune v1 lock. The
+hero line is deduplicated at render time, so a generated title that repeats
+`덕민님 · 甲(갑목) 일간 · 직장인` is not rendered again above the same context line.
+
+The annual visible-text sanitizer blocks abnormal foreign-script artifacts in
+user-facing copy, including Arabic/Persian script ranges. Known bad fragments
+such as `فاص` are converted to natural Korean (`거리감`), and remaining characters
+from those ranges are stripped at the sanitizer boundary.
+
+Monthly basis wording is split between one section note and short per-card
+labels. The section says the monthly flow is a calendar-month operating guide
+and actual timing may vary by solar terms and personal schedules. Individual
+monthly cards show only short labels such as `달력월 기준`, preventing the same
+long disclaimer from repeating twelve times.
+
+The grammar sanitizer catches final residue such as `보여지는 결과`, `구조과`,
+`별으로`, `甲일간`, and awkward 식신 phrases like `식신: 결과를 밖으로 꺼내는 힘으로
+들어옵니다`. Branch-relation terms with long parentheses are normalized to colon
+style: `卯午 파(...)` becomes `卯午 파: ...`, and the same rule covers 육합, 충, 형,
+해, 삼합, and 반합 descriptions.
+
+Smoke QA now includes abnormal script warnings, monthly basis repetition
+warnings, grammar residue warnings, and parenthetical term warnings. These are
+visible-text checks, not raw JSON key scans.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

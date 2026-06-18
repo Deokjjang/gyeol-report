@@ -1,7 +1,8 @@
 import type { AnnualFortuneReportDraft } from "../../../lib/report-generation/annualFortuneReportDraftTypes";
 import {
   buildAnnualDomainLockedFinalAdvice,
-  getAnnualMonthlyBasisDisplayLabel,
+  getAnnualMonthlyCardBasisLabel,
+  getAnnualMonthlySectionBasisNote,
   sanitizeAnnualFortuneVisibleText,
 } from "../../../lib/report-generation/annualFortuneReportDraftValidator";
 
@@ -57,7 +58,7 @@ function text(value: string): string {
 }
 
 function getMonthlyBasisDisplayLabel(basis: string | null): string {
-  return getAnnualMonthlyBasisDisplayLabel(basis);
+  return getAnnualMonthlyCardBasisLabel(basis);
 }
 
 function getHeroDayMasterLabel(draft: AnnualFortuneReportDraft): string | null {
@@ -109,6 +110,20 @@ function getHeroPersonLabel(
   }
 
   return "사용자님";
+}
+
+function shouldRenderOpeningTitle(
+  openingTitle: string,
+  heroContextLine: string,
+): boolean {
+  const sanitizedTitle = text(openingTitle);
+  const sanitizedHeroContextLine = text(heroContextLine);
+
+  return (
+    sanitizedTitle.length > 0 &&
+    sanitizedTitle !== sanitizedHeroContextLine &&
+    !sanitizedTitle.includes(sanitizedHeroContextLine)
+  );
 }
 
 function getAnnualFlowIndexHeading(
@@ -244,6 +259,10 @@ export function AnnualFortuneReportView({
     .filter((item): item is string => item !== null && item.length > 0)
     .join(" · ");
   const domainLockedFinalAdvice = buildAnnualDomainLockedFinalAdvice({ draft });
+  const renderOpeningTitle = shouldRenderOpeningTitle(
+    draft.openingTitle,
+    heroContextLine,
+  );
 
   return (
     <article className="space-y-8 rounded-xl border border-neutral-800 bg-neutral-900/80 p-5 shadow-2xl shadow-black/30 sm:p-6">
@@ -252,9 +271,11 @@ export function AnnualFortuneReportView({
           세운 리포트 v1.0
         </p>
         <div className="space-y-3">
-          <h1 className="text-2xl font-bold tracking-tight text-neutral-50 sm:text-3xl">
-            {text(draft.openingTitle)}
-          </h1>
+          {renderOpeningTitle ? (
+            <h1 className="text-2xl font-bold tracking-tight text-neutral-50 sm:text-3xl">
+              {text(draft.openingTitle)}
+            </h1>
+          ) : null}
           {heroContextLine.length === 0 ? null : (
             <p className="text-sm font-semibold leading-6 text-neutral-200">
               {heroContextLine}
@@ -446,7 +467,7 @@ export function AnnualFortuneReportView({
           월별 운영 가이드
         </h2>
         <p className="text-sm leading-6 text-neutral-400">
-          월별 흐름은 달력월 기준 운영 가이드입니다. 실제 체감 시점은 절기와 개인 일정에 따라 조금 달라질 수 있습니다.
+          {getAnnualMonthlySectionBasisNote()}
         </p>
         <div className="grid gap-3 md:grid-cols-2">
           {draft.monthlyFlow.map((flow) => (

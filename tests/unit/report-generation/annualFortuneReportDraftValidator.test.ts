@@ -279,6 +279,16 @@ describe("annualFortuneReportDraftValidator", () => {
       "甲(갑목) 일간",
     );
     expect(sanitizeAnnualFortuneVisibleText("별으로")).toBe("별로");
+    expect(sanitizeAnnualFortuneVisibleText("보여지는 결과")).toBe(
+      "눈에 보이는 결과",
+    );
+    expect(sanitizeAnnualFortuneVisibleText("구조과")).toBe("구조와");
+    expect(sanitizeAnnualFortuneVisibleText("فاص")).toBe("거리감");
+    expect(
+      sanitizeAnnualFortuneVisibleText(
+        "식신: 결과를 밖으로 꺼내는 힘으로 들어오고",
+      ),
+    ).toBe("식신으로 들어와 결과물과 표현을 밖으로 꺼내는 힘을 키우고");
   });
 
   it("sanitizes repeated branch and generating terminology", () => {
@@ -312,6 +322,34 @@ describe("annualFortuneReportDraftValidator", () => {
     );
     expect(result.value?.annualStructure.branchInteractionExplanation).not.toContain(
       "午未 육합(",
+    );
+  });
+
+  it("rewrites long parenthetical branch terms to colon style", () => {
+    const result = validateAnnualFortuneReportDraft({
+      ...createValidAnnualDraft(),
+      annualStructure: {
+        ...createValidAnnualDraft().annualStructure,
+        branchInteractionExplanation:
+          "卯午 파(卯와 午가 부딪혀 기존 방식이 흔들리는 구조), 午未 육합(午와 未가 묶여 실제 움직임이나 약속이 생기기 쉬운 구조), 寅申 충(충, 부딪혀 방향이 바뀌는 구조), 申寅 형(형, 긴장과 마찰이 생기는 구조)",
+      },
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.annualStructure.branchInteractionExplanation).toContain(
+      "卯午 파: 卯와 午가 부딪혀 기존 방식이 흔들리는 구조",
+    );
+    expect(result.value?.annualStructure.branchInteractionExplanation).toContain(
+      "午未 육합: 午와 未가 묶여 실제 움직임이나 약속이 생기기 쉬운 구조",
+    );
+    expect(result.value?.annualStructure.branchInteractionExplanation).toContain(
+      "寅申 충: 부딪혀 방향이 바뀌는 구조",
+    );
+    expect(result.value?.annualStructure.branchInteractionExplanation).toContain(
+      "申寅 형: 긴장과 마찰이 생기는 구조",
+    );
+    expect(result.value?.annualStructure.branchInteractionExplanation).not.toContain(
+      "卯午 파(",
     );
   });
 
@@ -393,6 +431,17 @@ describe("annualFortuneReportDraftValidator", () => {
     ).toBe(0);
     expect(
       summarizeAnnualFortuneDraftQuality(clean.value!).grammarResidueWarnings,
+    ).toBe(0);
+    expect(
+      summarizeAnnualFortuneDraftQuality(clean.value!).abnormalScriptWarnings,
+    ).toBe(0);
+    expect(
+      summarizeAnnualFortuneDraftQuality(clean.value!)
+        .monthlyBasisRepetitionWarnings,
+    ).toBe(0);
+    expect(
+      summarizeAnnualFortuneDraftQuality(clean.value!)
+        .parentheticalTermWarnings,
     ).toBe(0);
     expect(
       summarizeAnnualFortuneDraftQuality(clean.value!)
