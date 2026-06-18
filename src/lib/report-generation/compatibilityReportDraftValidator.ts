@@ -139,6 +139,9 @@ const finalAdviceKnownPrefixes = [
   "관계 기준",
   "관계 속도",
   "감정 표현",
+  "협업 시너지",
+  "데이트",
+  "연애",
   "거리 조절",
   "대화 습관",
   "대화 리듬",
@@ -174,8 +177,14 @@ export function sanitizeCompatibilityKoreanCopy(text: string): string {
     .split("무토은").join("무토는")
     .split("계수은").join("계수는")
     .split("정화은").join("정화는")
+    .split("경금을").join("경금을")
+    .replace(/\b(Partner|Family) ([AB])을/g, "$1 $2를")
     .replace(/\b(Partner|Family) ([AB])은/g, "$1 $2는")
     .replace(/\b(Partner|Family) ([AB])이/g, "$1 $2가")
+    .split("Partner A을").join("Partner A를")
+    .split("Partner B을").join("Partner B를")
+    .split("Family A을").join("Family A를")
+    .split("Family B을").join("Family B를")
     .split("Partner A이").join("Partner A가")
     .split("Partner B이").join("Partner B가")
     .split("Family A이").join("Family A가")

@@ -260,7 +260,7 @@ describe("compatibilityReportDraftValidator", () => {
       ...draft,
       openingTitle: "파트너십가 흔들릴 때",
       openingSummary: "소담의 정화을 보완합니다.",
-      coreLine: "Partner A이 먼저 말하면 Partner B이 확인합니다.",
+      coreLine: "Partner A이 먼저 Partner B을 확인합니다.",
       scoreSummary: {
         ...draft.scoreSummary,
         scoreLabel: "협업 시너지은 높고 관리 부담가 낮습니다.",
@@ -283,7 +283,7 @@ describe("compatibilityReportDraftValidator", () => {
         index === 0
           ? {
               ...chapter,
-              body: "Partner A이 말하고 Partner B이 확인합니다.",
+              body: "Partner A이 Family A을 말하고 Partner B이 Family B을 확인합니다.",
               directHitScenes: ["정화을 살립니다."],
               practicalAdvice: ["파트너십가 흔들리면 다시 정리하세요."],
             }
@@ -298,10 +298,13 @@ describe("compatibilityReportDraftValidator", () => {
 
     expect(result.ok).toBe(true);
     expect(serialized).not.toMatch(
-      /정화을|표현의 온도이|기준 정리이|Partner A은|Partner A이|Partner B은|Partner B이|Family A은|Family A이|Family B은|Family B이|파트너십가|관리 부담가|협업 시너지은|협업 시너지과/u,
+      /정화을|표현의 온도이|기준 정리이|Partner A을|Partner B을|Family A을|Family B을|Partner A은|Partner A이|Partner B은|Partner B이|Family A은|Family A이|Family B은|Family B이|파트너십가|관리 부담가|협업 시너지은|협업 시너지과/u,
     );
     expect(serialized).toContain("정화를");
     expect(serialized).toContain("Partner A가");
+    expect(serialized).toContain("Partner B를");
+    expect(serialized).toContain("Family A를");
+    expect(serialized).toContain("Family B를");
     expect(serialized).toContain("파트너십이");
     expect(serialized).toContain("협업 시너지는");
     expect(serialized).toContain("관리 부담이");
@@ -331,7 +334,8 @@ describe("compatibilityReportDraftValidator", () => {
     const business = validate({
       ...draft,
       relationshipType: "business_work_partner",
-      openingSummary: "연애 데이트 애인 설렘 호감 끌림",
+      openingSummary:
+        "연애 데이트 애인 설렘 호감 끌림 관계의 온도 즐거움보다 의무 관계가 쉽게 흩어지지 않고 상대가 내 부족한 부분을 넘깁니다.",
       scoreSummary: {
         ...draft.scoreSummary,
         scoreCaution: "끌림과 보완은 있지만 조율이 필요합니다.",
@@ -340,16 +344,29 @@ describe("compatibilityReportDraftValidator", () => {
     const family = validate({
       ...draft,
       relationshipType: "family",
-      openingSummary: "연애 데이트 애인 설렘 호감",
+      openingSummary:
+        "연애 데이트 애인 설렘 호감 끌림 방향과 구조 온도와 반응 관계가 입체적으로 굴러갑니다.",
     });
 
     expect(business.ok).toBe(true);
     expect(JSON.stringify(business.value)).not.toMatch(
-      /데이트|연애|애인|설렘|호감/u,
+      /데이트|연애|애인|설렘|호감|관계의 온도|즐거움보다 의무/u,
     );
     expect(JSON.stringify(business.value)).toContain("협업 시너지");
+    expect(JSON.stringify(business.value)).toContain("협업 구조가 쉽게 흔들리지 않고");
+    expect(JSON.stringify(business.value)).toContain("상대 역할에 내 책임");
+    expect(JSON.stringify(business.value)).toContain("협업 분위기");
+    expect(JSON.stringify(business.value)).toContain("자율성보다 관리 부담");
     expect(family.ok).toBe(true);
     expect(JSON.stringify(family.value)).not.toMatch(/데이트|연애|애인|설렘|호감/u);
+    expect(JSON.stringify(family.value)).not.toContain(
+      "관계가 입체적으로 굴러갑니다",
+    );
+    expect(JSON.stringify(family.value)).toContain("생활 기준과 정리감");
+    expect(JSON.stringify(family.value)).toContain("말의 통로와 정서 반응");
+    expect(JSON.stringify(family.value)).toContain(
+      "가족 관계가 덜 막히고 편안해집니다",
+    );
   });
 
   it("exposes a deterministic awkward Korean sanitizer", () => {
@@ -367,10 +384,10 @@ describe("compatibilityReportDraftValidator", () => {
     );
     expect(
       sanitizeCompatibilityKoreanCopy(
-        "정화을 표현의 온도이 기준 정리이 무토은 계수은 Partner A은 Partner A이 Partner B은 Partner B이 Family A은 Family B은 파트너십가 관리 부담가 협업 시너지과",
+        "정화을 표현의 온도이 기준 정리이 무토은 계수은 Partner A을 Partner A은 Partner A이 Partner B을 Partner B은 Partner B이 Family A을 Family A은 Family B을 Family B은 파트너십가 관리 부담가 협업 시너지과 경금을",
       ),
     ).toBe(
-      "정화를 표현의 온도가 기준 정리가 무토는 계수는 Partner A는 Partner A가 Partner B는 Partner B가 Family A는 Family B는 파트너십이 관리 부담이 협업 시너지와",
+      "정화를 표현의 온도가 기준 정리가 무토는 계수는 Partner A를 Partner A는 Partner A가 Partner B를 Partner B는 Partner B가 Family A를 Family A는 Family B를 Family B는 파트너십이 관리 부담이 협업 시너지와 경금을",
     );
   });
 

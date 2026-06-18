@@ -125,15 +125,30 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain("keyCompatibilityPoints는 각 그룹 2~3개 이내");
     expect(promptText).toContain("opening key points should be concise");
     expect(promptText).toContain("finalAdvice labels must match content");
+    expect(promptText).toContain(
+      "finalAdvice labels must belong to the relationship type.",
+    );
     expect(promptText).toContain("If the label is 도움 요청");
     expect(promptText).toContain(
       "relationshipType controls finalAdvice labels.",
+    );
+    expect(promptText).toContain(
+      "Never use business labels in love/some finalAdvice.",
     );
     expect(promptText).toContain(
       "love/some must not use 피드백 규칙, 의사결정, 신뢰 관리, or 업무 기준.",
     );
     expect(promptText).toContain(
       "business_work_partner finalAdvice labels should use 의사결정, 역할 분담, 돈과 자원, 피드백 규칙, 갈등 조정, 신뢰 관리, 업무 기준.",
+    );
+    expect(promptText).toContain(
+      "Never use romance vocabulary in business/family/friendship.",
+    );
+    expect(promptText).toContain(
+      "For business_work_partner, use 협업/역할/책임/권한/피드백/기록 language.",
+    );
+    expect(promptText).toContain(
+      "For family, use 가족/생활/정서/말의 통로/역할 language.",
     );
     expect(promptText).toContain("label the concept as 갈등 회복");
     expect(promptText).toContain("목·금가");
@@ -161,6 +176,8 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain("협업 시너지과");
     expect(promptText).toContain("Family A은");
     expect(promptText).toContain("Partner A은");
+    expect(promptText).toContain("Partner A을");
+    expect(promptText).toContain("Partner B을");
   });
 
   it("builds repair instructions for unsafe copy, candidates, and unsupported terms", () => {

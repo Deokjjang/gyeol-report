@@ -1323,6 +1323,45 @@ not all identical when generated, and category-forbidden vocabulary is absent.
 If OpenAI writer settings are not present, generation is skipped safely and the
 deterministic evidence matrix still prints without preview URLs.
 
+## REPORT-18M Final Compatibility Copy Stabilization
+
+REPORT-18M is the final copy and label stabilization pass before considering
+compatibility v1.0 functionally locked. It keeps the existing engine,
+relationship categories, and UI structure unchanged, and only tightens the
+visible Korean copy layer.
+
+The grammar sanitizer now covers the final particle list: `파트너십가`,
+`관리 부담가`, `협업 시너지과`, `표현의 온도이`, `기준 정리이`,
+`Partner A을`, `Partner B을`, `Family A을`, `Family B을`,
+`Partner A은`, `Partner B은`, `Family A은`, `Family B은`,
+`Partner A이`, `Partner B이`, `Family A이`, `Family B이`, `정화을`,
+`무토은`, and `계수은`. The same sanitizer is applied recursively through
+draft validation, writer sanitization, final advice rendering, safety notes,
+and deep-structure fields that are rendered in the compatibility UI.
+
+Final advice label enforcement is category-specific. Love and some can use
+relationship labels such as 대화 규칙, 생활 리듬, 감정 표현, 갈등 회복,
+돈과 생활, 관계 속도, and 실행 규칙, but not business-only labels such as
+피드백 규칙, 의사결정, 신뢰 관리, 업무 기준, 협업 시너지, or 역할 분담.
+Business/work-partner labels stay inside 의사결정, 역할 분담, 돈과 자원,
+피드백 규칙, 갈등 조정, 신뢰 관리, and 업무 기준. Family labels stay inside
+대화 규칙, 생활 기준, 도움 요청, 갈등 회복, 역할 분담, and 정서 회복.
+
+Business deep-note vocabulary is finalized toward 협업 구조, 역할, 책임,
+권한, 피드백, 기록, 업무 미팅, 짧은 재정비 시간, and 관리 부담 language.
+Family deep-note vocabulary is finalized toward 가족, 생활, 정서, 말의 통로,
+역할, 생활 기준과 정리감, and 가족 안의 분위기. Love remains allowed to use
+romantic relationship vocabulary such as 끌림, 데이트, 감정, 관계, and 설렘,
+and the label guards prevent love final advice from drifting into business-only
+labels.
+
+The category matrix smoke now prints quality counts for generated sanitized
+outputs: bad Korean phrase count, forbidden category vocabulary count,
+finalAdvice forbidden label count, duplicate finalAdvice label count, internal
+artifact count, snapshot path, and preview URL. With OpenAI settings absent it
+prints `SKIPPED OpenAI generation` and still verifies deterministic category
+coverage without writing preview URLs.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

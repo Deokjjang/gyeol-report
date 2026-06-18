@@ -1,8 +1,10 @@
 import {
   buildCompatibilityEvidencePacketFromFixture,
+  adaptCompatibilityTextForRelationshipType,
   getCompatibilityRelationshipTypeLabel,
   getCompatibilityScoreDisplayLabels,
   requireCompatibilityFixture,
+  type CompatibilityRelationshipType,
 } from "../src/lib/report-knowledge";
 import {
   CompatibilityReportWriterFailure,
@@ -14,6 +16,8 @@ import {
   formatCompatibilityOpenAIRequestDiagnostics,
   generateCompatibilityReportDraft,
   getCompatibilityReportDraftSchemaTopLevelKeys,
+  normalizeCompatibilityFinalAdviceItemForValidation,
+  sanitizeCompatibilityKoreanCopy,
   validateCompatibilityReportDraft,
 } from "../src/lib/report-generation";
 import {
@@ -43,8 +47,72 @@ type MatrixRow = {
   readonly previewUrl?: string;
   readonly draftText?: string;
   readonly finalAdviceText?: string;
+  readonly badKoreanPhraseCount: number;
+  readonly forbiddenCategoryVocabularyCount: number;
+  readonly finalAdviceForbiddenLabelCount: number;
+  readonly duplicateFinalAdviceLabelCount: number;
+  readonly internalArtifactCount: number;
   readonly status: "deterministic" | "pass";
 };
+
+const badKoreanPhrases = [
+  "파트너십가",
+  "관리 부담가",
+  "협업 시너지과",
+  "표현의 온도이",
+  "기준 정리이",
+  "Partner A을",
+  "Partner B을",
+  "Family A을",
+  "Family B을",
+  "Partner A은",
+  "Partner B은",
+  "Family A은",
+  "Family B은",
+  "Partner A이",
+  "Partner B이",
+  "Family A이",
+  "Family B이",
+  "정화을",
+  "무토은",
+  "계수은",
+] as const;
+
+const internalArtifactPhrases = [
+  "diagnostic-only",
+  "진단용",
+  "evidence",
+  "debug",
+] as const;
+
+const forbiddenFinalAdviceLabelsByRelationshipType = {
+  love: [
+    "피드백 규칙",
+    "의사결정",
+    "신뢰 관리",
+    "업무 기준",
+    "협업 시너지",
+    "역할 분담",
+  ],
+  some: [
+    "피드백 규칙",
+    "의사결정",
+    "신뢰 관리",
+    "업무 기준",
+    "협업 시너지",
+    "역할 분담",
+  ],
+  marriage: [],
+  friendship: [],
+  family: ["업무 기준", "협업 시너지", "의사결정", "피드백 규칙"],
+  business_work_partner: [
+    "감정 표현",
+    "관계 속도",
+    "생활 리듬",
+    "데이트",
+    "연애",
+  ],
+} as const satisfies Record<CompatibilityRelationshipType, readonly string[]>;
 
 function shouldWritePreview(argv: readonly string[]): boolean {
   return argv.includes("--write-preview");
@@ -86,6 +154,124 @@ function getScoreLabelList(
 
 function shouldPrintPreviewUrl(row: MatrixRow): boolean {
   return row.status === "pass" && row.previewUrl !== undefined;
+}
+
+function countPhrases(text: string | undefined, phrases: readonly string[]): number {
+  if (text === undefined) {
+    return 0;
+  }
+
+  return phrases.reduce(
+    (count, phrase) => count + text.split(phrase).length - 1,
+    0,
+  );
+}
+
+function getForbiddenCategoryVocabulary(
+  relationshipType: CompatibilityRelationshipType,
+): readonly string[] {
+  if (relationshipType === "business_work_partner") {
+    return [
+      "데이트",
+      "연애",
+      "애인",
+      "설렘",
+      "호감",
+      "마음이 식었다",
+      "관계의 온도",
+      "즐거움보다 의무",
+      "관계",
+    ];
+  }
+  if (relationshipType === "family") {
+    return [
+      "데이트",
+      "연애",
+      "애인",
+      "설렘",
+      "호감",
+      "끌림",
+      "관계가 입체적으로 굴러갑니다",
+    ];
+  }
+  if (relationshipType === "friendship") {
+    return ["데이트", "연애", "애인", "결혼", "설렘"];
+  }
+
+  return [];
+}
+
+function collectFinalAdviceLabels(items: readonly string[]): readonly string[] {
+  return items.flatMap((item) => {
+    const normalized = normalizeCompatibilityFinalAdviceItemForValidation(item);
+
+    return normalized.label === undefined ? [] : [normalized.label];
+  });
+}
+
+function countDuplicateLabels(labels: readonly string[]): number {
+  const seen = new Set<string>();
+  let duplicates = 0;
+
+  for (const label of labels) {
+    if (seen.has(label)) {
+      duplicates += 1;
+    } else {
+      seen.add(label);
+    }
+  }
+
+  return duplicates;
+}
+
+function buildQualityCounts(input: {
+  readonly relationshipType: CompatibilityRelationshipType;
+  readonly draftText?: string;
+  readonly finalAdvice: readonly string[];
+}) {
+  const labels = collectFinalAdviceLabels(input.finalAdvice);
+  const forbiddenFinalAdviceLabels: readonly string[] =
+    forbiddenFinalAdviceLabelsByRelationshipType[input.relationshipType];
+
+  return {
+    badKoreanPhraseCount: countPhrases(input.draftText, badKoreanPhrases),
+    forbiddenCategoryVocabularyCount: countPhrases(
+      input.draftText,
+      getForbiddenCategoryVocabulary(input.relationshipType),
+    ),
+    finalAdviceForbiddenLabelCount: labels.filter((label) =>
+      forbiddenFinalAdviceLabels.includes(label),
+    ).length,
+    duplicateFinalAdviceLabelCount: countDuplicateLabels(labels),
+    internalArtifactCount: countPhrases(input.draftText, internalArtifactPhrases),
+  };
+}
+
+function sanitizeMatrixVisibleValue(
+  value: unknown,
+  relationshipType: CompatibilityRelationshipType,
+): unknown {
+  if (typeof value === "string") {
+    return adaptCompatibilityTextForRelationshipType(
+      sanitizeCompatibilityKoreanCopy(value),
+      relationshipType,
+    );
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) =>
+      sanitizeMatrixVisibleValue(item, relationshipType),
+    );
+  }
+  if (typeof value !== "object" || value === null) {
+    return value;
+  }
+
+  return Object.fromEntries(
+    Object.entries(value).map(([key, item]) => [
+      key,
+      sanitizeMatrixVisibleValue(item, relationshipType),
+    ]),
+  );
 }
 
 function assertNoForbiddenText(input: {
@@ -135,7 +321,7 @@ function assertCategoryDifferentiation(rows: readonly MatrixRow[]): void {
   assertNoForbiddenText({
     label: "business_work_partner",
     text: business.draftText,
-    forbiddenPattern: /데이트|연애|애인|설렘|호감|마음이 식었다/u,
+    forbiddenPattern: /데이트|연애|애인|설렘|호감|마음이 식었다|관계의 온도|즐거움보다 의무/u,
   });
   assertNoForbiddenText({
     label: "family",
@@ -147,20 +333,45 @@ function assertCategoryDifferentiation(rows: readonly MatrixRow[]): void {
     text: love.finalAdviceText,
     forbiddenPattern: /피드백 규칙|의사결정|신뢰 관리|업무 기준/u,
   });
+
+  for (const row of rows) {
+    if (
+      row.badKoreanPhraseCount > 0 ||
+      row.forbiddenCategoryVocabularyCount > 0 ||
+      row.finalAdviceForbiddenLabelCount > 0 ||
+      row.duplicateFinalAdviceLabelCount > 0 ||
+      row.internalArtifactCount > 0
+    ) {
+      throw new Error(`category quality checks failed: ${row.fixtureId}`);
+    }
+  }
 }
 
 function writeMatrixRow(row: MatrixRow): void {
   writeLine(`fixture: ${row.fixtureId}`);
   writeLine(`relationship type: ${row.relationshipType}`);
+  writeLine(`relationship: ${row.relationshipLabel}`);
   writeLine(`relationship label: ${row.relationshipLabel}`);
   writeLine(`total score: ${row.totalScore}`);
   writeLine(`score labels: ${row.scoreLabels.join(", ")}`);
   writeLine(`first chapter title: ${row.firstChapterTitle}`);
   writeLine(`warning count: ${row.warningCount}`);
+  writeLine(`bad Korean phrases: ${row.badKoreanPhraseCount}`);
+  writeLine(
+    `forbidden category vocabulary: ${row.forbiddenCategoryVocabularyCount}`,
+  );
+  writeLine(
+    `finalAdvice forbidden labels: ${row.finalAdviceForbiddenLabelCount}`,
+  );
+  writeLine(`duplicate finalAdvice labels: ${row.duplicateFinalAdviceLabelCount}`);
+  writeLine(`internal artifacts: ${row.internalArtifactCount}`);
+  writeLine(`snapshot: ${row.snapshotPath ?? "-"}`);
   writeLine(`snapshot path: ${row.snapshotPath ?? "-"}`);
   if (shouldPrintPreviewUrl(row)) {
+    writeLine(`url: ${row.previewUrl}`);
     writeLine(`preview URL: ${row.previewUrl}`);
   } else {
+    writeLine("url: -");
     writeLine("preview URL: -");
   }
   writeLine("");
@@ -189,6 +400,11 @@ async function buildMatrixRow(input: {
       ...deterministicRow,
       firstChapterTitle: "-",
       warningCount: 0,
+      badKoreanPhraseCount: 0,
+      forbiddenCategoryVocabularyCount: 0,
+      finalAdviceForbiddenLabelCount: 0,
+      duplicateFinalAdviceLabelCount: 0,
+      internalArtifactCount: 0,
       status: "deterministic",
     };
   }
@@ -227,7 +443,19 @@ async function buildMatrixRow(input: {
   }
 
   const sanitizedDraft = validation.value ?? result.draft;
-  const draftText = JSON.stringify(sanitizedDraft);
+  const qualityVisibleValue = sanitizeMatrixVisibleValue(
+    {
+      ...sanitizedDraft,
+      deepSajuBridge: packet.deepSajuBridge,
+    },
+    sanitizedDraft.relationshipType,
+  );
+  const draftText = JSON.stringify(qualityVisibleValue);
+  const qualityCounts = buildQualityCounts({
+    relationshipType: sanitizedDraft.relationshipType,
+    draftText,
+    finalAdvice: sanitizedDraft.finalAdvice,
+  });
   let snapshotPath: string | undefined;
   let previewUrl: string | undefined;
 
@@ -255,6 +483,7 @@ async function buildMatrixRow(input: {
     previewUrl,
     draftText,
     finalAdviceText: sanitizedDraft.finalAdvice.join("\n"),
+    ...qualityCounts,
     status: "pass",
   };
 }
@@ -266,6 +495,7 @@ async function main(): Promise<void> {
 
   writeLine("compatibility category matrix:");
   if (!generate) {
+    writeLine("SKIPPED OpenAI generation");
     writeLine("generation: skipped, OpenAI writer env incomplete or disabled");
   }
 
