@@ -1666,6 +1666,39 @@ not consume this context yet; those integrations require future tasks. The
 common type exists so 대운 and 종합 can reuse it later without changing the
 annual calculation rules.
 
+## SEUN-06A Annual Fortune Final Systemic Polish
+
+SEUN-06A is a systemic polish pass, not a one-off text patch. The annual report
+pipeline now reinforces the same copy rules across evidence, prompt,
+validator, snapshot sanitization, report view, and smoke QA counters.
+
+Final advice domain inference is weighted and meaning-based. It does not rely
+on item index: project/report/documentation/presentation copy resolves to
+일·성과, certificate/error-note/study copy resolves to 학업·자격증, sleep/meal/fatigue
+copy resolves to 몸·생활 리듬, family/parent/partner copy resolves to 연애·가족, and
+settlement/contract/living-cost copy resolves to 돈·현실.
+
+The visible term sanitizer removes repeated parenthetical 명리 expressions such
+as `식신(식신, ...)`, `卯午 파(卯午 파, ...)`, `午未 육합(午未 육합, ...)`,
+`寅申 충(寅申 충, ...)`, `申寅 형(申寅 형, ...)`, `생(생, 낳아줌)`, and
+`甲일간`. Snapshot writes use the same sanitizer boundary.
+
+Monthly basis values are converted for display. `calendar_month_approximation`
+is shown to users as `달력월 기준 운영 가이드`, and the view explicitly explains that
+the current monthly section is not exact solar-term 월운 yet.
+
+The hero context line is now written as a readable summary such as
+`덕민님 · 甲(갑목) 일간 · 직장인`, followed by the field-based interpretation note
+when a field label is available.
+
+Key signal balance is prompt-guided and smoke-checked. If difficulty and
+opportunity evidence exist, the generated draft should include 부담 and 기회
+signals, and mixed fill/overload evidence should produce a 양면 signal. The
+validator reports warning counters instead of inventing missing signals.
+
+Context domain balance remains warning-only. Employee context can sharpen scene
+nouns, but it must not turn 연애·가족, 학업·자격증, or 몸·생활 리듬 into work-only copy.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

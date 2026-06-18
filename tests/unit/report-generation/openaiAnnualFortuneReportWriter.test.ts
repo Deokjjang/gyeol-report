@@ -304,7 +304,12 @@ describe("openaiAnnualFortuneReportWriter", () => {
     const packet = buildPacket();
     const draft = {
       ...createValidDraft(),
-      openingSummary: "올해 반드시 승진합니다. debug evidence",
+      openingSummary:
+        "올해 반드시 승진합니다. debug evidence 식신(식신, 결과물·표현·생산성)",
+      monthlyFlow: createValidDraft().monthlyFlow.map((flow) => ({
+        ...flow,
+        monthlyBasis: "calendar_month_approximation",
+      })),
     };
     const sanitized = sanitizeAnnualFortunePreviewSnapshotPayload({
       evidencePacket: packet,
@@ -318,6 +323,9 @@ describe("openaiAnnualFortuneReportWriter", () => {
     expect(serialized).not.toContain("반드시");
     expect(serialized).not.toContain("승진합니다");
     expect(serialized).not.toContain("debug");
+    expect(serialized).not.toContain("식신(식신");
+    expect(serialized).not.toContain('"monthlyBasis":"calendar_month_approximation"');
+    expect(serialized).toContain("달력월 기준 운영 가이드");
     expect(serialized).toContain("evidencePacket");
     expect(serialized).toContain("annual_fortune");
   });

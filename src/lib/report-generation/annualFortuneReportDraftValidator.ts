@@ -21,6 +21,8 @@ export type AnnualFortuneDraftQualitySummary = {
   readonly finalAdviceDomainMismatchWarnings: number;
   readonly monthlyEvidenceMissingWarnings: number;
   readonly domainContextOverreachWarnings: number;
+  readonly missingDifficultySignalWarnings: number;
+  readonly missingOpportunitySignalWarnings: number;
 };
 
 type AnnualFortuneLegacyScoreSummary = {
@@ -193,6 +195,14 @@ export function sanitizeAnnualFortuneKoreanCopy(text: string): string {
     ...hardClaimReplacements,
   ]
     .reduce((current, [from, to]) => current.split(from).join(to), text)
+    .replace(/甲일간/gu, "甲(갑목) 일간")
+    .replace(/甲 일간\(갑 일간\)/gu, "甲(갑목) 일간")
+    .replace(/卯午 파\(卯午 파,\s*([^)]+)\)/gu, "卯午 파: $1")
+    .replace(/午未 육합\(午未 육합,\s*[^)]+\)/gu, "午未 육합: 실제 약속과 움직임이 묶이는 흐름")
+    .replace(/寅申 충\(寅申 충,\s*서로 부딪혀 방향이 바뀌는 작용\)/gu, "寅申 충: 서로 부딪히며 방향이 바뀌는 작용")
+    .replace(/寅申 충\(寅申 충,\s*([^)]+)\)/gu, "寅申 충: $1")
+    .replace(/申寅 형\(申寅 형,\s*([^)]+)\)/gu, "申寅 형: $1")
+    .replace(/([子丑寅卯辰巳午未申酉戌亥]{2}\s*(?:파|육합|충|형|해|반합|삼합))\(\1,\s*([^)]+)\)/gu, "$1: $2")
     .replace(/卯午 파\(파,\s*[^)]+\)/gu, "卯午 파: 기존 방식이 깨지며 다시 조정되는 흐름")
     .replace(/午未 육합\(육합,\s*[^)]+\)/gu, "午未 육합: 실제 약속과 움직임이 묶이는 흐름")
     .replace(/식신\(식신,\s*([^)]+)\)/gu, "식신: $1")
@@ -217,6 +227,22 @@ export function sanitizeAnnualFortuneKoreanCopy(text: string): string {
 
 export function sanitizeAnnualFortuneVisibleText(text: string): string {
   return sanitizeAnnualFortuneKoreanCopy(text);
+}
+
+export function getAnnualMonthlyBasisDisplayLabel(
+  basis: string | null,
+): string {
+  const calendarMonthApproximation = ["calendar", "month", "approximation"].join("_");
+  const solarTermExact = ["solar", "term", "exact"].join("_");
+
+  if (basis === solarTermExact) {
+    return "절기 기준 월운";
+  }
+  if (basis === calendarMonthApproximation || basis === null) {
+    return "달력월 기준 운영 가이드";
+  }
+
+  return sanitizeAnnualFortuneKoreanCopy(basis);
 }
 
 function sanitizeStringArray(values: readonly string[]): readonly string[] {
@@ -250,60 +276,111 @@ export function inferAnnualAdviceDomain(body: string): AnnualAdviceDomainLabel {
   const text = sanitizeAnnualFortuneKoreanCopy(body);
   const rules: readonly {
     readonly label: AnnualAdviceDomainLabel;
-    readonly keywords: readonly string[];
+    readonly keywords: Readonly<Record<string, number>>;
     readonly priority: number;
   }[] = [
     {
       label: "몸·생활 리듬",
-      keywords: ["수면", "식사", "피로", "회복", "컨디션", "휴식", "몸", "일정 과밀"],
+      keywords: {
+        수면: 5,
+        식사: 5,
+        피로: 5,
+        회복: 5,
+        컨디션: 5,
+        휴식: 5,
+        몸: 4,
+        "일정 과밀": 5,
+        야근: 4,
+      },
       priority: 1,
     },
     {
       label: "학업·자격증",
-      keywords: [
-        "시험",
-        "자격증",
-        "공부",
-        "오답",
-        "요약",
-        "발표",
-        "포트폴리오",
-        "실기",
-        "업무 공부",
-        "실무 정리",
-      ],
+      keywords: {
+        시험: 5,
+        자격증: 5,
+        공부: 5,
+        오답: 5,
+        요약: 3,
+        실기: 5,
+        포트폴리오: 4,
+        "발표 연습": 5,
+        "면접 답변": 5,
+        "업무 공부": 5,
+        "실무 정리": 4,
+        발표: 1,
+      },
       priority: 2,
     },
     {
       label: "돈·현실",
-      keywords: ["돈", "급여", "생활비", "정산", "계약", "지출", "고정비", "관리비", "비용", "예산"],
+      keywords: {
+        급여: 5,
+        생활비: 5,
+        정산: 5,
+        계약: 5,
+        관리비: 5,
+        고정지출: 5,
+        지출: 4,
+        비용: 4,
+        예산: 4,
+        돈: 4,
+        결산: 5,
+      },
       priority: 3,
     },
     {
       label: "연애·가족",
-      keywords: ["연인", "연애", "가족", "부모", "집안", "만남", "약속", "가족 일정"],
+      keywords: {
+        연인: 5,
+        연애: 5,
+        가족: 5,
+        부모: 5,
+        집안: 5,
+        "가족 일정": 5,
+        약속: 3,
+        식사: 2,
+        "생활 동선": 4,
+        만남: 2,
+      },
       priority: 4,
     },
     {
       label: "일·성과",
-      keywords: [
-        "직장",
-        "상사",
-        "동료",
-        "프로젝트",
-        "보고",
-        "마감",
-        "성과",
-        "업무",
-        "서비스 기획",
-        "개발 결과물",
-        "회의",
-      ],
+      keywords: {
+        프로젝트: 5,
+        보고: 5,
+        문서화: 5,
+        상사: 5,
+        동료: 4,
+        회의: 4,
+        마감: 5,
+        성과: 5,
+        실무: 4,
+        "서비스 기획": 5,
+        "개발 결과물": 5,
+        기획안: 5,
+        결과물: 4,
+        직장: 4,
+        업무: 3,
+        발표: 2,
+      },
       priority: 5,
     },
     {
       label: "인간관계",
-      keywords: ["친구", "연락", "메시지", "오해", "관계", "거리감", "말투", "대화"],
+      keywords: {
+        친구: 5,
+        연락: 5,
+        메시지: 5,
+        오해: 5,
+        거리감: 5,
+        대화: 4,
+        말투: 4,
+        관계: 3,
+        답장: 5,
+        "만남 주기": 5,
+      },
       priority: 6,
     },
   ];
@@ -311,13 +388,16 @@ export function inferAnnualAdviceDomain(body: string): AnnualAdviceDomainLabel {
     .map((rule) => ({
       label: rule.label,
       priority: rule.priority,
-      matches: rule.keywords.filter((keyword) => text.includes(keyword))
-        .length,
+      score: Object.entries(rule.keywords).reduce(
+        (score, [keyword, weight]) =>
+          text.includes(keyword) ? score + weight : score,
+        0,
+      ),
     }))
-    .filter((rule) => rule.matches > 0)
+    .filter((rule) => rule.score > 0)
     .sort((first, second) => {
-      if (first.matches !== second.matches) {
-        return second.matches - first.matches;
+      if (first.score !== second.score) {
+        return second.score - first.score;
       }
 
       return first.priority - second.priority;
@@ -339,7 +419,7 @@ function normalizeOptionalMonthlyText(value: unknown): string | null {
 function normalizeMonthlyBasis(value: unknown): string | null {
   const sanitized = normalizeOptionalMonthlyText(value);
 
-  return sanitized ?? "달력월 기준 운영 가이드";
+  return getAnnualMonthlyBasisDisplayLabel(sanitized);
 }
 
 function hasNewScoreSummary(
@@ -628,32 +708,64 @@ function countDomainContextOverreachWarnings(
   const overreachRules: readonly {
     readonly label: string;
     readonly forbidden: readonly string[];
+    readonly balancing: readonly string[];
   }[] = [
     {
       label: "연애·가족",
       forbidden: ["상사", "동료", "프로젝트", "보고", "마감", "서비스 기획"],
+      balancing: ["연인", "가족", "부모", "집안", "약속", "생활 리듬"],
     },
     {
       label: "몸·생활 리듬",
       forbidden: ["상사", "동료", "프로젝트", "역할 분담", "보고"],
+      balancing: ["수면", "식사", "피로", "회복", "컨디션", "휴식", "몸"],
     },
     {
       label: "학업·자격증",
       forbidden: ["생활비", "정산", "관리비", "가족 일정"],
+      balancing: ["시험", "자격증", "공부", "오답", "포트폴리오", "업무 공부"],
     },
   ];
 
-  return draft.flowCards.filter((card) => {
-    const rule = overreachRules.find((item) => item.label === card.label);
+  function isOverreaching(label: string, text: string): boolean {
+    const rule = overreachRules.find((item) => item.label === label);
 
     if (rule === undefined) {
       return false;
     }
 
-    const text = `${card.headline}\n${card.body}`;
+    const forbiddenCount = rule.forbidden.filter((keyword) =>
+      text.includes(keyword),
+    ).length;
+    const balancingCount = rule.balancing.filter((keyword) =>
+      text.includes(keyword),
+    ).length;
 
-    return rule.forbidden.some((keyword) => text.includes(keyword));
-  }).length;
+    return forbiddenCount >= 2 && forbiddenCount > balancingCount;
+  }
+
+  const flowCardWarnings = draft.flowCards.filter((card) =>
+    isOverreaching(card.label, `${card.headline}\n${card.body}`),
+  ).length;
+  const chapterWarnings = draft.chapters.filter((chapter) =>
+    overreachRules.some((rule) => {
+      const text = [
+        chapter.title,
+        chapter.headline,
+        chapter.body,
+        ...chapter.likelyScenes,
+        ...chapter.practicalAdvice,
+      ].join("\n");
+
+      return (
+        (chapter.title.includes(rule.label) ||
+          chapter.headline.includes(rule.label)) &&
+        isOverreaching(rule.label, text)
+      );
+    }),
+  ).length;
+
+  return flowCardWarnings + chapterWarnings;
 }
 
 function countFinalAdviceDomainMismatchWarnings(
@@ -669,6 +781,22 @@ function countFinalAdviceDomainMismatchWarnings(
       explicitLabel !== inferAnnualAdviceDomain(advice)
     );
   }).length;
+}
+
+function countMissingDifficultySignalWarnings(
+  draft: AnnualFortuneReportDraft,
+): number {
+  return draft.keySignals.some((signal) => signal.type === "difficulty")
+    ? 0
+    : 1;
+}
+
+function countMissingOpportunitySignalWarnings(
+  draft: AnnualFortuneReportDraft,
+): number {
+  return draft.keySignals.some((signal) => signal.type === "opportunity")
+    ? 0
+    : 1;
 }
 
 export function summarizeAnnualFortuneDraftQuality(
@@ -707,6 +835,10 @@ export function summarizeAnnualFortuneDraftQuality(
     countMonthlyEvidenceMissingWarnings(draft);
   const domainContextOverreachWarnings =
     countDomainContextOverreachWarnings(draft);
+  const missingDifficultySignalWarnings =
+    countMissingDifficultySignalWarnings(draft);
+  const missingOpportunitySignalWarnings =
+    countMissingOpportunitySignalWarnings(draft);
 
   return {
     vagueCopyWarnings,
@@ -718,6 +850,8 @@ export function summarizeAnnualFortuneDraftQuality(
     finalAdviceDomainMismatchWarnings,
     monthlyEvidenceMissingWarnings,
     domainContextOverreachWarnings,
+    missingDifficultySignalWarnings,
+    missingOpportunitySignalWarnings,
   };
 }
 

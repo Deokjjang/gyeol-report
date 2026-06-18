@@ -115,6 +115,17 @@ describe("openaiAnnualFortuneReportWriterPrompt", () => {
     expect(prompt).toContain("연락");
   });
 
+  it("requires key signal balance when evidence supports it", () => {
+    const prompt = buildMessagesText();
+
+    expect(prompt).toContain("If evidence difficultySignals exist");
+    expect(prompt).toContain("type difficulty");
+    expect(prompt).toContain("If evidence opportunitySignals exist");
+    expect(prompt).toContain("type opportunity");
+    expect(prompt).toContain("type mixed");
+    expect(prompt).toContain("기회 신호, 양면 신호, 부담 신호, 주의 신호, 연결 신호");
+  });
+
   it("forbids guaranteed outcomes and vague copy", () => {
     const prompt = buildMessagesText();
 

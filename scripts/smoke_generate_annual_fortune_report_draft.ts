@@ -200,6 +200,12 @@ async function main(): Promise<void> {
     `domain context overreach warnings: ${quality.domainContextOverreachWarnings}`,
   );
   writeLine(
+    `missing difficulty signal warnings: ${quality.missingDifficultySignalWarnings}`,
+  );
+  writeLine(
+    `missing opportunity signal warnings: ${quality.missingOpportunitySignalWarnings}`,
+  );
+  writeLine(
     `monthly basis: ${packet.monthlyFortuneSeeds[0]?.monthGanji.basis ?? annualFortuneMonthlyBasisFallback}`,
   );
 

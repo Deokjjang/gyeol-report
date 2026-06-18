@@ -3,6 +3,7 @@ import { join } from "node:path";
 
 import type { AnnualFortuneEvidencePacket } from "../report-knowledge/annualFortuneEvidence";
 import {
+  getAnnualMonthlyBasisDisplayLabel,
   sanitizeAnnualFortuneKoreanCopy,
 } from "./annualFortuneReportDraftValidator";
 import type { AnnualFortuneReportDraft } from "./annualFortuneReportDraftTypes";
@@ -22,12 +23,16 @@ function assertSafeFixtureId(fixtureId: string): void {
   }
 }
 
-function sanitizeSnapshotTextValue(value: unknown): unknown {
+function sanitizeSnapshotTextValue(value: unknown, key?: string): unknown {
   if (typeof value === "string") {
+    if (key === "monthlyBasis") {
+      return getAnnualMonthlyBasisDisplayLabel(value);
+    }
+
     return sanitizeAnnualFortuneKoreanCopy(value);
   }
   if (Array.isArray(value)) {
-    return value.map(sanitizeSnapshotTextValue);
+    return value.map((item) => sanitizeSnapshotTextValue(item));
   }
   if (typeof value !== "object" || value === null) {
     return value;
@@ -36,7 +41,7 @@ function sanitizeSnapshotTextValue(value: unknown): unknown {
   return Object.fromEntries(
     Object.entries(value).map(([key, item]) => [
       key,
-      sanitizeSnapshotTextValue(item),
+      sanitizeSnapshotTextValue(item, key),
     ]),
   );
 }

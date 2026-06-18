@@ -1,5 +1,6 @@
 import type { AnnualFortuneReportDraft } from "../../../lib/report-generation/annualFortuneReportDraftTypes";
 import {
+  getAnnualMonthlyBasisDisplayLabel,
   inferAnnualAdviceDomain,
   sanitizeAnnualFortuneVisibleText,
 } from "../../../lib/report-generation/annualFortuneReportDraftValidator";
@@ -53,6 +54,26 @@ const annualFortuneFlowAreaLabels = [
 
 function text(value: string): string {
   return sanitizeAnnualFortuneVisibleText(value);
+}
+
+function getMonthlyBasisDisplayLabel(basis: string | null): string {
+  return getAnnualMonthlyBasisDisplayLabel(basis);
+}
+
+function getHeroDayMasterLabel(draft: AnnualFortuneReportDraft): string | null {
+  const source = [
+    draft.openingSummary,
+    draft.coreLine,
+    draft.yearSummary.yearTone,
+    draft.annualStructure.tenGodExplanation,
+    draft.annualStructure.ganjiExplanation,
+  ].join("\n");
+
+  if (source.includes("甲")) {
+    return "甲(갑목) 일간";
+  }
+
+  return null;
 }
 
 function getAnnualFlowIndexHeading(
@@ -178,6 +199,14 @@ export function AnnualFortuneReportView({
     translationNote:
       "현재 상태와 분야 정보가 충분하지 않아 전체 흐름 장면으로 해석했습니다.",
   };
+  const heroDayMasterLabel = getHeroDayMasterLabel(draft);
+  const heroContextLine = [
+    text(draft.personLabel),
+    heroDayMasterLabel,
+    text(userContextSummary.lifeStatusLabel),
+  ]
+    .filter((item): item is string => item !== null && item.length > 0)
+    .join(" · ");
 
   return (
     <article className="space-y-8 rounded-xl border border-neutral-800 bg-neutral-900/80 p-5 shadow-2xl shadow-black/30 sm:p-6">
@@ -189,6 +218,16 @@ export function AnnualFortuneReportView({
           <h1 className="text-2xl font-bold tracking-tight text-neutral-50 sm:text-3xl">
             {text(draft.openingTitle)}
           </h1>
+          {heroContextLine.length === 0 ? null : (
+            <p className="text-sm font-semibold leading-6 text-neutral-200">
+              {heroContextLine}
+            </p>
+          )}
+          {userContextSummary.fieldLabel === null ? null : (
+            <p className="text-sm leading-6 text-neutral-400">
+              {text(userContextSummary.fieldLabel)} 기준으로 해석
+            </p>
+          )}
           <div className="flex flex-wrap gap-2 text-sm">
             <span className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 font-semibold text-neutral-100">
               {text(draft.personLabel)}
@@ -379,6 +418,9 @@ export function AnnualFortuneReportView({
         <h2 className="text-lg font-semibold text-neutral-50">
           월별 운영 가이드
         </h2>
+        <p className="text-sm leading-6 text-neutral-400">
+          월별 흐름은 현재 달력월 기준 운영 가이드이며, 절기 기준 정밀 월운은 추후 고도화됩니다.
+        </p>
         <div className="grid gap-3 md:grid-cols-2">
           {draft.monthlyFlow.map((flow) => (
             <article
@@ -402,7 +444,7 @@ export function AnnualFortuneReportView({
                 </p>
               )}
               <p className="mt-2 text-xs text-neutral-500">
-                기준: {text(flow.monthlyBasis ?? "달력월 기준 운영 가이드")}
+                기준: {getMonthlyBasisDisplayLabel(flow.monthlyBasis)}
               </p>
               {flow.natalInteractionSummary === null ? null : (
                 <p className="mt-2 text-xs text-neutral-500">

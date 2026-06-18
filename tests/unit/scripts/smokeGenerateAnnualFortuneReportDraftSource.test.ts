@@ -33,6 +33,8 @@ describe("smoke_generate_annual_fortune_report_draft source", () => {
     expect(source).toContain("repeated terminology warnings:");
     expect(source).toContain("monthly evidence missing warnings:");
     expect(source).toContain("domain context overreach warnings:");
+    expect(source).toContain("missing difficulty signal warnings:");
+    expect(source).toContain("missing opportunity signal warnings:");
     expect(source).toContain("monthly basis:");
     expect(source).toContain("calendar_month_approximation");
     expect(source).toContain("life area signals");

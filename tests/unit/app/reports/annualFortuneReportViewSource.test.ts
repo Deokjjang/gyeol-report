@@ -43,8 +43,11 @@ describe("AnnualFortuneReportView source", () => {
     expect(viewSource).toContain("월별 운영 가이드");
     expect(viewSource).toContain("월 간지:");
     expect(viewSource).toContain("기준:");
+    expect(viewSource).toContain("getMonthlyBasisDisplayLabel");
     expect(viewSource).toContain("달력월 기준 운영 가이드");
+    expect(viewSource).toContain("월별 흐름은 현재 달력월 기준 운영 가이드");
     expect(viewSource).toContain("원국과의 작용:");
+    expect(viewSource).not.toContain("calendar_month_approximation");
     expect(viewSource).toContain("draft.finalAdvice.map");
     expect(viewSource).toContain("안전 안내");
   });
@@ -59,6 +62,10 @@ describe("AnnualFortuneReportView source", () => {
     expect(viewSource).toContain("draft.scoreSummary.flowIndexCaution");
     expect(viewSource).toContain("현재 상태:");
     expect(viewSource).toContain("분야:");
+    expect(viewSource).toContain("getHeroDayMasterLabel");
+    expect(viewSource).toContain("甲(갑목) 일간");
+    expect(viewSource).toContain("기준으로 해석");
+    expect(viewSource).not.toContain("甲일간 직장인");
     expect(viewSource).toContain("userContextSummary");
     expect(viewSource).toContain("inferAnnualAdviceDomain");
     expect(viewSource).not.toContain("세운 흐름 점수");

@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import type { AnnualFortuneReportDraft } from "../../../src/lib/report-generation/annualFortuneReportDraftTypes";
 import {
   inferAnnualAdviceDomain,
+  summarizeAnnualFortuneDraftQuality,
   validateAnnualFortuneReportDraft,
 } from "../../../src/lib/report-generation/annualFortuneReportDraftValidator";
 
@@ -60,6 +61,12 @@ function createValidAnnualDraft(
         title: "표현 기회",
         body: "말과 결과물이 밖으로 나오는 장면이 생길 수 있습니다.",
         evidenceLabel: "식신",
+      },
+      {
+        type: "difficulty",
+        title: "현실 부담",
+        body: "일과 돈의 기준을 직접 정리해야 하는 장면이 생길 수 있습니다.",
+        evidenceLabel: "토 과다",
       },
     ],
     annualStructure: {
@@ -210,13 +217,32 @@ describe("annualFortuneReportDraftValidator", () => {
     );
   });
 
+  it("maps raw monthly basis enum to visible Korean copy", () => {
+    const draft = createValidAnnualDraft();
+    const result = validateAnnualFortuneReportDraft({
+      ...draft,
+      monthlyFlow: draft.monthlyFlow.map((flow) => ({
+        ...flow,
+        monthlyBasis: "calendar_month_approximation",
+      })),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.monthlyFlow[0]?.monthlyBasis).toBe(
+      "달력월 기준 운영 가이드",
+    );
+    expect(JSON.stringify(result.value?.monthlyFlow)).not.toContain(
+      "calendar_month_approximation",
+    );
+  });
+
   it("sanitizes repeated annual fortune terms", () => {
     const result = validateAnnualFortuneReportDraft({
       ...createValidAnnualDraft(),
       annualStructure: {
         ...createValidAnnualDraft().annualStructure,
         tenGodExplanation:
-          "식신(식신, 말·결과물·생산성)은 甲 일간(갑 일간)에게 들어온 흐름입니다.",
+          "식신(식신, 말·결과물·생산성)은 甲일간과 甲 일간(갑 일간)에게 들어온 흐름입니다.",
         elementEffectExplanation: "토 과다(흙이 무거움)를 같이 봅니다.",
       },
     });
@@ -227,6 +253,9 @@ describe("annualFortuneReportDraftValidator", () => {
     );
     expect(result.value?.annualStructure.tenGodExplanation).toContain(
       "甲(갑목) 일간",
+    );
+    expect(result.value?.annualStructure.tenGodExplanation).not.toContain(
+      "甲일간",
     );
     expect(result.value?.annualStructure.elementEffectExplanation).toContain(
       "토 과다: 현실·책임·관리의 기운이 무거운 구조",
@@ -239,25 +268,31 @@ describe("annualFortuneReportDraftValidator", () => {
       annualStructure: {
         ...createValidAnnualDraft().annualStructure,
         branchInteractionExplanation:
-          "卯午 파(파, 깨짐·재조정)와 午未 육합(육합, 서로 묶이는 결합), 생(생, 낳아줌)을 함께 봅니다.",
+          "卯午 파(卯午 파, 익숙한 방식이 깨지며 다시 조정되는 작용), 午未 육합(午未 육합, 월지에 묶이는 리듬), 寅申 충(寅申 충, 서로 부딪혀 방향이 바뀌는 작용), 申寅 형(申寅 형, 긴장과 마찰이 생기기 쉬운 작용), 생(생, 낳아줌)을 함께 봅니다.",
       },
     });
 
     expect(result.ok).toBe(true);
     expect(result.value?.annualStructure.branchInteractionExplanation).toContain(
-      "卯午 파: 기존 방식이 깨지며 다시 조정되는 흐름",
+      "卯午 파: 익숙한 방식이 깨지며 다시 조정되는 작용",
     );
     expect(result.value?.annualStructure.branchInteractionExplanation).toContain(
       "午未 육합: 실제 약속과 움직임이 묶이는 흐름",
     );
     expect(result.value?.annualStructure.branchInteractionExplanation).toContain(
+      "寅申 충: 서로 부딪히며 방향이 바뀌는 작용",
+    );
+    expect(result.value?.annualStructure.branchInteractionExplanation).toContain(
+      "申寅 형: 긴장과 마찰이 생기기 쉬운 작용",
+    );
+    expect(result.value?.annualStructure.branchInteractionExplanation).toContain(
       "생: 기운을 보태는 작용",
     );
     expect(result.value?.annualStructure.branchInteractionExplanation).not.toContain(
-      "파(파",
+      "卯午 파(",
     );
     expect(result.value?.annualStructure.branchInteractionExplanation).not.toContain(
-      "육합(육합",
+      "午未 육합(",
     );
   });
 
@@ -279,13 +314,13 @@ describe("annualFortuneReportDraftValidator", () => {
   });
 
   it("infers final advice domain labels from body keywords", () => {
-    expect(inferAnnualAdviceDomain("프로젝트 결과물, 보고, 발표처럼 눈에 보이는 산출물을 먼저 만드세요.")).toBe(
+    expect(inferAnnualAdviceDomain("프로젝트 결과물, 보고, 문서화, 발표처럼 눈에 보이는 산출물을 먼저 만드세요.")).toBe(
       "일·성과",
     );
     expect(inferAnnualAdviceDomain("생활비와 정산, 계약 기준은 미리 적어 두세요.")).toBe(
       "돈·현실",
     );
-    expect(inferAnnualAdviceDomain("시험과 자격증은 오답노트부터 정리하세요.")).toBe(
+    expect(inferAnnualAdviceDomain("자격증, 오답, 요약, 발표 연습은 시험 전에 정리하세요.")).toBe(
       "학업·자격증",
     );
     expect(inferAnnualAdviceDomain("수면과 식사 시간을 먼저 고정하세요.")).toBe(
@@ -433,5 +468,66 @@ describe("annualFortuneReportDraftValidator", () => {
     expect(result.errors).toContain(
       "ANNUAL_FORTUNE_CURRENT_YEAR_TONE_REVIEW_ONLY",
     );
+  });
+
+  it("counts missing key signal balance warnings", () => {
+    const result = validateAnnualFortuneReportDraft({
+      ...createValidAnnualDraft(),
+      keySignals: [
+        {
+          type: "opportunity",
+          title: "표현 기회",
+          body: "결과물을 밖으로 꺼내는 흐름입니다.",
+          evidenceLabel: "식신",
+        },
+      ],
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value).toBeDefined();
+    expect(
+      summarizeAnnualFortuneDraftQuality(result.value!)
+        .missingDifficultySignalWarnings,
+    ).toBe(1);
+    expect(
+      summarizeAnnualFortuneDraftQuality(result.value!)
+        .missingOpportunitySignalWarnings,
+    ).toBe(0);
+  });
+
+  it("warns on obvious context overreach but not balanced family copy", () => {
+    const overreach = validateAnnualFortuneReportDraft({
+      ...createValidAnnualDraft(),
+      flowCards: [
+        {
+          label: "연애·가족",
+          score: 60,
+          headline: "프로젝트와 보고가 가족 영역까지 들어옵니다.",
+          body: "상사, 동료, 프로젝트, 보고, 마감 이야기가 전부인 문장입니다.",
+        },
+      ],
+    });
+    const balanced = validateAnnualFortuneReportDraft({
+      ...createValidAnnualDraft(),
+      flowCards: [
+        {
+          label: "연애·가족",
+          score: 60,
+          headline: "가족 일정과 생활 리듬을 조율합니다.",
+          body: "가족, 부모, 약속을 중심으로 보되 직장 마감이 집안 일정에 영향을 줄 수 있습니다.",
+        },
+      ],
+    });
+
+    expect(overreach.ok).toBe(true);
+    expect(balanced.ok).toBe(true);
+    expect(
+      summarizeAnnualFortuneDraftQuality(overreach.value!)
+        .domainContextOverreachWarnings,
+    ).toBe(1);
+    expect(
+      summarizeAnnualFortuneDraftQuality(balanced.value!)
+        .domainContextOverreachWarnings,
+    ).toBe(0);
   });
 });
