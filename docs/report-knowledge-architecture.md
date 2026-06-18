@@ -1561,6 +1561,19 @@ use ideas such as 올해, 지금부터, 준비, 활용, 조율, 손실을 줄이
 합격합니다, 불합격합니다, 이직합니다, 퇴사합니다, 승진합니다, 돈을 법니다,
 병이 생깁니다, 결혼합니다, 헤어집니다.
 
+## SEUN-03A Annual Fortune Strict Schema Fix
+
+SEUN-03A fixes OpenAI strict JSON schema compatibility for
+`annual_fortune_report_draft`. OpenAI strict response formats require every key
+listed in an object `properties` map to also appear in that object's `required`
+array. The annual monthly flow item now treats `elementFocus` as a required
+nullable field: `string | null` in TypeScript and `["string", "null"]` in JSON
+schema.
+
+The validator remains backward-compatible with older generated drafts and local
+snapshots by normalizing missing or empty `monthlyFlow[].elementFocus` values to
+`null` before returning the sanitized draft.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

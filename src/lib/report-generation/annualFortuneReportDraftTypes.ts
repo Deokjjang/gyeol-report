@@ -73,7 +73,7 @@ export interface AnnualFortuneReportDraft {
     readonly month: number;
     readonly label: string;
     readonly headline: string;
-    readonly elementFocus?: string;
+    readonly elementFocus: string | null;
     readonly body: string;
     readonly advice: string;
   }[];
@@ -92,6 +92,7 @@ export function isAnnualFortuneReportMode(
 }
 
 const stringSchema = { type: "string" } as const;
+const nullableStringSchema = { type: ["string", "null"] } as const;
 const numberSchema = { type: "number" } as const;
 const stringArraySchema = {
   type: "array",
@@ -141,12 +142,12 @@ const chapterSchema = {
 const monthlyFlowSchema = {
   type: "object",
   additionalProperties: false,
-  required: ["month", "label", "headline", "body", "advice"],
+  required: ["month", "label", "headline", "elementFocus", "body", "advice"],
   properties: {
     month: numberSchema,
     label: stringSchema,
     headline: stringSchema,
-    elementFocus: stringSchema,
+    elementFocus: nullableStringSchema,
     body: stringSchema,
     advice: stringSchema,
   },

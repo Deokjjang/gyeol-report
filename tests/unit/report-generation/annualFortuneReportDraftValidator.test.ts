@@ -104,6 +104,52 @@ describe("annualFortuneReportDraftValidator", () => {
     expect(result.value?.monthlyFlow).toHaveLength(12);
   });
 
+  it("normalizes missing monthlyFlow elementFocus to null", () => {
+    const draft = createValidAnnualDraft();
+    const result = validateAnnualFortuneReportDraft({
+      ...draft,
+      monthlyFlow: draft.monthlyFlow.map((flow) => ({
+        month: flow.month,
+        label: flow.label,
+        headline: flow.headline,
+        body: flow.body,
+        advice: flow.advice,
+      })),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      result.value?.monthlyFlow.every((flow) => flow.elementFocus === null),
+    ).toBe(true);
+  });
+
+  it("accepts monthlyFlow elementFocus null", () => {
+    const draft = createValidAnnualDraft();
+    const result = validateAnnualFortuneReportDraft({
+      ...draft,
+      monthlyFlow: draft.monthlyFlow.map((flow) => ({
+        ...flow,
+        elementFocus: null,
+      })),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      result.value?.monthlyFlow.every((flow) => flow.elementFocus === null),
+    ).toBe(true);
+  });
+
+  it("preserves monthlyFlow elementFocus string", () => {
+    const draft = createValidAnnualDraft();
+    const expectedElementFocus = draft.monthlyFlow[0]?.elementFocus;
+    const result = validateAnnualFortuneReportDraft(draft);
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.monthlyFlow[0]?.elementFocus).toBe(
+      expectedElementFocus,
+    );
+  });
+
   it("rejects missing monthlyFlow", () => {
     const draft = { ...createValidAnnualDraft() } as Partial<AnnualFortuneReportDraft>;
     delete draft.monthlyFlow;

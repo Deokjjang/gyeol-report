@@ -4,7 +4,10 @@ import { buildAnnualFortuneEvidence } from "../../../src/lib/report-knowledge/an
 import {
   requireAnnualFortuneFixture,
 } from "../../../src/lib/report-knowledge/annualFortuneFixtures";
-import type { AnnualFortuneReportDraft } from "../../../src/lib/report-generation/annualFortuneReportDraftTypes";
+import {
+  annualFortuneReportDraftJsonSchema,
+  type AnnualFortuneReportDraft,
+} from "../../../src/lib/report-generation/annualFortuneReportDraftTypes";
 import {
   AnnualFortuneReportWriterFailure,
   annualFortuneResponseFormatName,
@@ -115,6 +118,37 @@ function openAIResponse(rawText: string): Response {
   });
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function assertStrictRequiredKeys(schema: unknown): void {
+  if (!isRecord(schema)) {
+    return;
+  }
+
+  if (isRecord(schema.properties)) {
+    expect(Array.isArray(schema.required)).toBe(true);
+
+    if (Array.isArray(schema.required)) {
+      expect([...schema.required].sort()).toEqual(
+        Object.keys(schema.properties).sort(),
+      );
+    }
+  }
+
+  for (const value of Object.values(schema)) {
+    if (Array.isArray(value)) {
+      value.forEach(assertStrictRequiredKeys);
+      continue;
+    }
+
+    if (isRecord(value)) {
+      assertStrictRequiredKeys(value);
+    }
+  }
+}
+
 describe("openaiAnnualFortuneReportWriter", () => {
   it("does not call OpenAI when disabled", async () => {
     let called = false;
@@ -162,6 +196,25 @@ describe("openaiAnnualFortuneReportWriter", () => {
     expect(requestText).toContain("annual_fortune");
     expect(requestText).toContain("lifeAreaSignals");
     expect(requestText).not.toContain("sk-test");
+  });
+
+  it("keeps the annual draft json schema strict-compatible", () => {
+    const monthlyFlowSchema =
+      annualFortuneReportDraftJsonSchema.properties.monthlyFlow.items;
+
+    expect(monthlyFlowSchema.required).toEqual([
+      "month",
+      "label",
+      "headline",
+      "elementFocus",
+      "body",
+      "advice",
+    ]);
+    expect(monthlyFlowSchema.properties.elementFocus.type).toEqual([
+      "string",
+      "null",
+    ]);
+    assertStrictRequiredKeys(annualFortuneReportDraftJsonSchema);
   });
 
   it("passes the evidence packet into the prompt", () => {

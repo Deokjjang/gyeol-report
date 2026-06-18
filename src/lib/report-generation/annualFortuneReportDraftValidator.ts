@@ -133,6 +133,16 @@ function sanitizeStringArray(values: readonly string[]): readonly string[] {
   return values.map(sanitizeAnnualFortuneKoreanCopy);
 }
 
+function normalizeMonthlyFlowElementFocus(value: unknown): string | null {
+  if (typeof value !== "string") {
+    return null;
+  }
+
+  const sanitized = sanitizeAnnualFortuneKoreanCopy(value);
+
+  return sanitized.length === 0 ? null : sanitized;
+}
+
 function sanitizeDraft(draft: AnnualFortuneReportDraft): AnnualFortuneReportDraft {
   return {
     ...draft,
@@ -191,9 +201,7 @@ function sanitizeDraft(draft: AnnualFortuneReportDraft): AnnualFortuneReportDraf
       month: flow.month,
       label: sanitizeAnnualFortuneKoreanCopy(flow.label),
       headline: sanitizeAnnualFortuneKoreanCopy(flow.headline),
-      ...(flow.elementFocus === undefined
-        ? {}
-        : { elementFocus: sanitizeAnnualFortuneKoreanCopy(flow.elementFocus) }),
+      elementFocus: normalizeMonthlyFlowElementFocus(flow.elementFocus),
       body: sanitizeAnnualFortuneKoreanCopy(flow.body),
       advice: sanitizeAnnualFortuneKoreanCopy(flow.advice),
     })),
