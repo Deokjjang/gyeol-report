@@ -52,7 +52,7 @@ describe("compatibility preview page source", () => {
       "draft.scoreSummary.scoreLabel",
       "getCompatibilityScoreCaution(",
       "getCompatibilityRelationshipTypeLabel",
-      "adaptCompatibilityTextForRelationshipType",
+      "sanitizeCompatibilityVisibleText",
       "getCompatibilityScoreCaution",
       "getCompatibilityScoreDisplayLabels",
       "getCompatibilityScoreExplanation",

@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+
 import {
   buildCompatibilityEvidencePacketFromFixture,
   adaptCompatibilityTextForRelationshipType,
@@ -180,6 +182,8 @@ function getForbiddenCategoryVocabulary(
       "마음이 식었다",
       "관계의 온도",
       "즐거움보다 의무",
+      "감정을 말로 바로 풀지 못할 때",
+      "온도를 올려 대화를 열고",
       "관계",
     ];
   }
@@ -226,7 +230,7 @@ function countDuplicateLabels(labels: readonly string[]): number {
 
 function buildQualityCounts(input: {
   readonly relationshipType: CompatibilityRelationshipType;
-  readonly draftText?: string;
+  readonly snapshotText?: string;
   readonly finalAdvice: readonly string[];
 }) {
   const labels = collectFinalAdviceLabels(input.finalAdvice);
@@ -234,17 +238,35 @@ function buildQualityCounts(input: {
     forbiddenFinalAdviceLabelsByRelationshipType[input.relationshipType];
 
   return {
-    badKoreanPhraseCount: countPhrases(input.draftText, badKoreanPhrases),
+    badKoreanPhraseCount: countPhrases(input.snapshotText, badKoreanPhrases),
     forbiddenCategoryVocabularyCount: countPhrases(
-      input.draftText,
+      input.snapshotText,
       getForbiddenCategoryVocabulary(input.relationshipType),
     ),
     finalAdviceForbiddenLabelCount: labels.filter((label) =>
       forbiddenFinalAdviceLabels.includes(label),
     ).length,
     duplicateFinalAdviceLabelCount: countDuplicateLabels(labels),
-    internalArtifactCount: countPhrases(input.draftText, internalArtifactPhrases),
+    internalArtifactCount: countPhrases(input.snapshotText, internalArtifactPhrases),
   };
+}
+
+function collectStringValues(value: unknown): readonly string[] {
+  if (typeof value === "string") {
+    return [value];
+  }
+  if (Array.isArray(value)) {
+    return value.flatMap((item) => collectStringValues(item));
+  }
+  if (typeof value !== "object" || value === null) {
+    return [];
+  }
+
+  return Object.values(value).flatMap((item) => collectStringValues(item));
+}
+
+function getSnapshotVisibleText(value: unknown): string {
+  return collectStringValues(value).join("\n");
 }
 
 function sanitizeMatrixVisibleValue(
@@ -443,17 +465,18 @@ async function buildMatrixRow(input: {
   }
 
   const sanitizedDraft = validation.value ?? result.draft;
-  const qualityVisibleValue = sanitizeMatrixVisibleValue(
-    {
-      ...sanitizedDraft,
-      deepSajuBridge: packet.deepSajuBridge,
-    },
-    sanitizedDraft.relationshipType,
+  let qualityText = getSnapshotVisibleText(
+    sanitizeMatrixVisibleValue(
+      {
+        ...sanitizedDraft,
+        deepSajuBridge: packet.deepSajuBridge,
+      },
+      sanitizedDraft.relationshipType,
+    ),
   );
-  const draftText = JSON.stringify(qualityVisibleValue);
-  const qualityCounts = buildQualityCounts({
+  let qualityCounts = buildQualityCounts({
     relationshipType: sanitizedDraft.relationshipType,
-    draftText,
+    snapshotText: qualityText,
     finalAdvice: sanitizedDraft.finalAdvice,
   });
   let snapshotPath: string | undefined;
@@ -465,11 +488,18 @@ async function buildMatrixRow(input: {
       deepSajuBridge: packet.deepSajuBridge,
     };
 
-    await writeCompatibilityPreviewSnapshot({
+    const snapshotFilePath = await writeCompatibilityPreviewSnapshot({
       fixtureId: fixture.id,
       evidencePacket: packet,
       draft: previewDraft,
       qualityWarnings: validation.warnings,
+    });
+    const savedSnapshot = JSON.parse(await readFile(snapshotFilePath, "utf8")) as unknown;
+    qualityText = getSnapshotVisibleText(savedSnapshot);
+    qualityCounts = buildQualityCounts({
+      relationshipType: sanitizedDraft.relationshipType,
+      snapshotText: qualityText,
+      finalAdvice: sanitizedDraft.finalAdvice,
     });
     snapshotPath = getCompatibilityPreviewSnapshotRelativePath(fixture.id);
     previewUrl = getCompatibilityPreviewUrl(fixture.id);
@@ -481,7 +511,7 @@ async function buildMatrixRow(input: {
     warningCount: validation.warnings.length,
     snapshotPath,
     previewUrl,
-    draftText,
+    draftText: qualityText,
     finalAdviceText: sanitizedDraft.finalAdvice.join("\n"),
     ...qualityCounts,
     status: "pass",

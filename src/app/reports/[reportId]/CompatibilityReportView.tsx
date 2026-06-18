@@ -1,7 +1,9 @@
 import type { CompatibilityReportDraft } from "../../../lib/report-generation/compatibilityReportDraftTypes";
-import { sanitizeCompatibilityKoreanCopy } from "../../../lib/report-generation/compatibilityReportDraftValidator";
 import {
-  adaptCompatibilityTextForRelationshipType,
+  sanitizeCompatibilityKoreanCopy,
+  sanitizeCompatibilityVisibleText,
+} from "../../../lib/report-generation/compatibilityReportDraftValidator";
+import {
   getCompatibilityRelationshipTypeLabel,
   getCompatibilityScoreCaution,
   getCompatibilityScoreDisplayLabels,
@@ -496,10 +498,7 @@ function formatCompatibilityDisplayText(
   text: string,
   relationshipType: CompatibilityReportDraft["relationshipType"],
 ): string {
-  return adaptCompatibilityTextForRelationshipType(
-    sanitizeCompatibilityKoreanCopy(text),
-    relationshipType,
-  );
+  return sanitizeCompatibilityVisibleText(text, relationshipType);
 }
 
 function formatCompatibilitySafetyNote(

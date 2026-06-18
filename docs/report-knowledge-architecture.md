@@ -1362,6 +1362,28 @@ artifact count, snapshot path, and preview URL. With OpenAI settings absent it
 prints `SKIPPED OpenAI generation` and still verifies deterministic category
 coverage without writing preview URLs.
 
+## REPORT-18M-A Final Render and Snapshot Sanitization
+
+REPORT-18M-A fixes the gap between passing sanitizer tests and the actual
+browser snapshot. The compatibility renderer now uses a final visible-text
+sanitizer for every rendered text path, so grammar fixes and relationship-type
+vocabulary replacements happen at the last UI boundary as well as during draft
+validation.
+
+The preview snapshot writer now sanitizes the saved payload before writing
+`.tmp/compatibility-preview/<fixture>-latest.json`. It sanitizes both the draft
+and `evidencePacket.deepSajuBridge`, which is important because the preview UI
+can render deep bridge fields from snapshot/evidence data even when the main
+draft was already validated.
+
+Business/work-partner deep notes no longer generate the romance-style element
+complement scene. Instead of text like `감정을 말로 바로 풀지 못할 때` or
+`온도를 올려 대화를 열고`, business notes use issue, field feedback, 기준,
+선택지, 역할, 책임, and 피드백 language. The category matrix smoke reads the
+actual saved snapshot after write and counts bad Korean phrases, forbidden
+category vocabulary, forbidden finalAdvice labels, duplicate labels, and
+internal artifacts from saved string values.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

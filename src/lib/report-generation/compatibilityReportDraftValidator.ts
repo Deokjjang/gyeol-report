@@ -1,6 +1,9 @@
 import type { CompatibilityReportDraft } from "./compatibilityReportDraftTypes";
 import { COMPATIBILITY_REPORT_CHAPTER_IDS } from "./compatibilityReportDraftTypes";
-import { adaptCompatibilityTextForRelationshipType } from "../report-knowledge/compatibilityTypes";
+import {
+  adaptCompatibilityTextForRelationshipType,
+  type CompatibilityRelationshipType,
+} from "../report-knowledge/compatibilityTypes";
 
 export type CompatibilityReportDraftValidationResult = {
   readonly ok: boolean;
@@ -175,9 +178,11 @@ export function sanitizeCompatibilityKoreanCopy(text: string): string {
     .split("표현의 온도이").join("표현의 온도가")
     .split("기준 정리이").join("기준 정리가")
     .split("무토은").join("무토는")
+    .split("무토이").join("무토가")
     .split("계수은").join("계수는")
     .split("정화은").join("정화는")
     .split("경금을").join("경금을")
+    .split("경금를").join("경금을")
     .replace(/\b(Partner|Family) ([AB])을/g, "$1 $2를")
     .replace(/\b(Partner|Family) ([AB])은/g, "$1 $2는")
     .replace(/\b(Partner|Family) ([AB])이/g, "$1 $2가")
@@ -193,7 +198,9 @@ export function sanitizeCompatibilityKoreanCopy(text: string): string {
     .split("관리 부담가").join("관리 부담이")
     .split("협업 시너지은").join("협업 시너지는")
     .split("협업 시너지과").join("협업 시너지와")
+    .split("업무 미팅와").join("업무 미팅과")
     .split("목·금가").join("목과 금의 흐름이")
+    .split("토·금가").join("토와 금이")
     .split("목·금이 약해").join("목과 금의 흐름이 약해")
     .split("화·수가 약해").join("화와 수의 흐름이 약해")
     .split("충가 있어").join("충이 있어");
@@ -203,14 +210,20 @@ export function sanitizeCompatibilityAwkwardKoreanText(text: string): string {
   return sanitizeCompatibilityKoreanCopy(text);
 }
 
-function sanitizeCompatibilityVisibleText(
+export function sanitizeCompatibilityVisibleText(
   text: string,
-  relationshipType: CompatibilityReportDraft["relationshipType"],
+  relationshipType: CompatibilityRelationshipType,
 ): string {
-  return adaptCompatibilityTextForRelationshipType(
+  const firstPass = adaptCompatibilityTextForRelationshipType(
     sanitizeCompatibilityKoreanCopy(text),
     relationshipType,
   );
+  const secondPass = adaptCompatibilityTextForRelationshipType(
+    sanitizeCompatibilityKoreanCopy(firstPass),
+    relationshipType,
+  );
+
+  return sanitizeCompatibilityKoreanCopy(secondPass);
 }
 
 function containsInternalArtifactText(text: string): boolean {

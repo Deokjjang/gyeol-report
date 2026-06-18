@@ -11,6 +11,9 @@ import {
   buildOpenAICompatibilityReportRepairMessages,
 } from "../../../src/lib/report-generation/openaiCompatibilityReportWriterPrompt";
 import {
+  sanitizeCompatibilityPreviewSnapshotPayload,
+} from "../../../src/lib/report-generation/compatibilityPreviewSnapshot";
+import {
   buildCompatibilityEvidencePacketFromFixtureId,
 } from "../../../src/lib/report-knowledge/compatibilityEvidenceBuilder";
 
@@ -291,6 +294,74 @@ describe("openaiCompatibilityReportWriter", () => {
     expect(serialized).toContain("기준 정리가");
     expect(serialized).toContain("Partner A는");
     expect(serialized).toContain("Partner B를");
+  });
+
+  it("builds business deep notes without romance-style element-complement scenes", () => {
+    const packet = buildCompatibilityEvidencePacketFromFixtureId(
+      "business-work-partner-sample",
+    );
+    const note = packet.deepSajuBridge?.notes.find(
+      (candidate) => candidate.layer === "element_complement",
+    );
+    const noteText = JSON.stringify(note);
+
+    expect(note?.everydayScene).toContain("이슈를 바로 정리하지 못할 때");
+    expect(note?.everydayScene).toContain("현장 피드백");
+    expect(note?.everydayScene).toContain("기준과 선택지");
+    expect(noteText).not.toContain("감정을 말로 바로 풀지 못할 때");
+    expect(noteText).not.toContain("온도를 올려 대화를 열고");
+    expect(noteText).not.toContain("상대가 내 빈칸을 대신 책임지는");
+  });
+
+  it("sanitizes draft and deepSajuBridge text before compatibility snapshot write", () => {
+    const packet = buildCompatibilityEvidencePacketFromFixtureId(
+      "business-work-partner-sample",
+    );
+    const contaminatedPacket = {
+      ...packet,
+      deepSajuBridge:
+        packet.deepSajuBridge === undefined
+          ? undefined
+          : {
+              ...packet.deepSajuBridge,
+              notes: packet.deepSajuBridge.notes.map((note, index) =>
+                index === 0
+                  ? {
+                      ...note,
+                      riskExpression:
+                        "파트너십가 빨리 관리표처럼 느껴지고 관리 부담가 먼저 보일 수 있습니다.",
+                      everydayScene:
+                        "Partner A가 감정을 말로 바로 풀지 못할 때 Partner B가 온도를 올려 대화를 열고 Partner A을 확인합니다.",
+                    }
+                  : note,
+              ),
+            },
+    };
+    const businessDraft: CompatibilityReportDraft = {
+      ...createValidCompatibilityDraft(),
+      relationshipType: "business_work_partner",
+      personALabel: "Partner A",
+      personBLabel: "Partner B",
+      openingSummary:
+        "파트너십가 빨리 관리표처럼 느껴지고 관리 부담가 먼저 보일 수 있습니다.",
+      finalAdvice: ["의사결정: Partner A을 먼저 확인하세요."],
+    };
+
+    const sanitized = sanitizeCompatibilityPreviewSnapshotPayload({
+      evidencePacket: contaminatedPacket,
+      draft: businessDraft,
+    });
+    const serialized = JSON.stringify(sanitized);
+
+    expect(serialized).not.toContain("파트너십가");
+    expect(serialized).not.toContain("관리 부담가");
+    expect(serialized).not.toContain("Partner A을");
+    expect(serialized).not.toContain("감정을 말로 바로 풀지 못할 때");
+    expect(serialized).not.toContain("온도를 올려 대화를 열고");
+    expect(serialized).toContain("파트너십이 지나치게 관리표처럼 느껴지고");
+    expect(serialized).toContain("관리 부담이");
+    expect(serialized).toContain("Partner A를");
+    expect(serialized).toContain("이슈를 바로 정리하지 못할 때");
   });
 
   it("sanitizes internal artifact safety notes in the writer sanitizer path", () => {

@@ -241,6 +241,27 @@ function adaptDeepText(
     : adaptCompatibilityTextForRelationshipType(text, relationshipType);
 }
 
+function inferRelationshipTypeFromDisplayNames(
+  input: BuildCompatibilityDeepSajuBridgeInput,
+): CompatibilityRelationshipType | undefined {
+  const displayNames = `${input.personA.displayName} ${input.personB.displayName}`;
+
+  if (/\bPartner [AB]\b/u.test(displayNames)) {
+    return "business_work_partner";
+  }
+  if (/\bFamily [AB]\b/u.test(displayNames)) {
+    return "family";
+  }
+
+  return undefined;
+}
+
+function getDeepBridgeRelationshipType(
+  input: BuildCompatibilityDeepSajuBridgeInput,
+): CompatibilityRelationshipType | undefined {
+  return input.relationshipType ?? inferRelationshipTypeFromDisplayNames(input);
+}
+
 function buildDayMasterRelationInterpretation(input: {
   readonly personAName: string;
   readonly personBName: string;
@@ -553,6 +574,8 @@ function buildElementComplementNote(
     personBWeakElements.length > 0
       ? `${formatTopic(input.personB.displayName)} ${personBFlowText}이 약한 축입니다`
       : `${formatTopic(input.personB.displayName)} 약한 오행 흐름이 뚜렷하지 않습니다`;
+  const relationshipType = getDeepBridgeRelationshipType(input);
+  const isBusiness = relationshipType === "business_work_partner";
 
   return {
     layer: "element_complement",
@@ -567,20 +590,28 @@ function buildElementComplementNote(
     relationLabel: "오행 상호 보완",
     emotionalMeaning:
       "서로에게 없는 온도, 완충, 방향, 정리 감각을 상대가 일부 채워 줄 수 있습니다.",
-    practicalMeaning:
-      "상대가 내 빈칸을 대신 책임져 준다고 보기보다, 서로의 강한 영역을 역할로 나누는 편이 좋습니다.",
+    practicalMeaning: isBusiness
+      ? "상대 역할에 내 책임까지 넘기기보다, 서로의 강한 영역을 업무 역할로 나누는 편이 좋습니다."
+      : "상대가 내 빈칸을 대신 책임져 준다고 보기보다, 서로의 강한 영역을 역할로 나누는 편이 좋습니다.",
     scoreImpact: 4,
     principleExplanation:
       "오행 보완은 한 사람에게 약한 기운을 다른 사람이 어느 정도 자극하거나 보태는 구조입니다. 부족한 오행은 자동으로 잘 켜지지 않는다는 뜻에 가깝습니다.",
     relationshipTranslation: `${formatWeakElementClause(input.personA.displayName, personAWeakElements)}. ${formatWeakElementClause(input.personB.displayName, personBWeakElements)}. 서로의 강한 영역이 그 부분을 일부 보완할 수 있습니다.`,
-    positiveExpression: `좋게 쓰이면 ${input.personA.displayName}은 방향과 구조를 잡고, ${input.personB.displayName}은 온도와 반응을 살려 관계가 입체적으로 굴러갑니다.`,
-    riskExpression:
-      "나쁘게 쓰이면 상대가 내 부족한 부분을 알아서 채워 주길 기대하게 되어 부담이 커집니다.",
-    everydayScene: `${input.personA.displayName}이 감정을 말로 바로 풀지 못할 때 ${input.personB.displayName}이 온도를 올려 대화를 열고, ${input.personB.displayName}이 방향을 망설일 때 ${input.personA.displayName}이 선택지를 정리해 주는 장면입니다.`,
-    actionRule:
-      "상대가 내 빈칸을 대신 책임지는 구조로 만들지 말고, 서로의 강한 영역을 역할로 나눠야 합니다.",
-    plainKoreanSummary:
-      "서로의 약한 기운을 어느 정도 보완하지만, 상대에게 내 부족함을 떠넘기면 피로가 커집니다.",
+    positiveExpression: isBusiness
+      ? `좋게 쓰이면 ${input.personA.displayName}은 기준과 선택지를 정리하고, ${input.personB.displayName}은 현장 피드백과 실행력으로 협업이 입체적으로 굴러갑니다.`
+      : `좋게 쓰이면 ${input.personA.displayName}은 방향과 구조를 잡고, ${input.personB.displayName}은 온도와 반응을 살려 관계가 입체적으로 굴러갑니다.`,
+    riskExpression: isBusiness
+      ? "나쁘게 쓰이면 상대 역할에 내 책임까지 넘기게 되어 관리 부담이 커집니다."
+      : "나쁘게 쓰이면 상대가 내 부족한 부분을 알아서 채워 주길 기대하게 되어 부담이 커집니다.",
+    everydayScene: isBusiness
+      ? `${input.personA.displayName}가 이슈를 바로 정리하지 못할 때 ${input.personB.displayName}가 현장 피드백으로 논의를 열고, ${input.personB.displayName}가 방향을 망설일 때 ${input.personA.displayName}가 기준과 선택지를 정리해 주는 장면입니다.`
+      : `${input.personA.displayName}이 감정을 말로 바로 풀지 못할 때 ${input.personB.displayName}이 온도를 올려 대화를 열고, ${input.personB.displayName}이 방향을 망설일 때 ${input.personA.displayName}이 선택지를 정리해 주는 장면입니다.`,
+    actionRule: isBusiness
+      ? "상대 역할에 내 책임까지 넘기는 구조로 만들지 말고, 서로의 강한 영역을 업무 역할로 나눠야 합니다."
+      : "상대가 내 빈칸을 대신 책임지는 구조로 만들지 말고, 서로의 강한 영역을 역할로 나눠야 합니다.",
+    plainKoreanSummary: isBusiness
+      ? "서로의 약한 업무 축을 어느 정도 보완하지만, 상대 역할에 내 책임까지 넘기면 피로가 커집니다."
+      : "서로의 약한 기운을 어느 정도 보완하지만, 상대에게 내 부족함을 떠넘기면 피로가 커집니다.",
   };
 }
 

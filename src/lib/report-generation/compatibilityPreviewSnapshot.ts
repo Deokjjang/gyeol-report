@@ -2,6 +2,8 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 import type { CompatibilityEvidencePacket } from "../report-knowledge/compatibilityEvidenceBuilder";
+import type { CompatibilityRelationshipType } from "../report-knowledge/compatibilityTypes";
+import { sanitizeCompatibilityVisibleText } from "./compatibilityReportDraftValidator";
 import type { CompatibilityReportDraft } from "./compatibilityReportDraftTypes";
 
 export type CompatibilityPreviewSnapshot = {
@@ -13,6 +15,50 @@ export type CompatibilityPreviewSnapshot = {
 };
 
 const compatibilityPreviewSnapshotRoot = ".tmp/compatibility-preview";
+
+function sanitizeSnapshotTextValue(
+  value: unknown,
+  relationshipType: CompatibilityRelationshipType,
+): unknown {
+  if (typeof value === "string") {
+    return sanitizeCompatibilityVisibleText(value, relationshipType);
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => sanitizeSnapshotTextValue(item, relationshipType));
+  }
+  if (typeof value !== "object" || value === null) {
+    return value;
+  }
+
+  return Object.fromEntries(
+    Object.entries(value).map(([key, item]) => [
+      key,
+      sanitizeSnapshotTextValue(item, relationshipType),
+    ]),
+  );
+}
+
+export function sanitizeCompatibilityPreviewSnapshotPayload(input: {
+  readonly evidencePacket: CompatibilityEvidencePacket;
+  readonly draft: CompatibilityReportDraft;
+}): {
+  readonly evidencePacket: CompatibilityEvidencePacket;
+  readonly draft: CompatibilityReportDraft;
+} {
+  const relationshipType =
+    input.draft.relationshipType ?? input.evidencePacket.input.relationshipType;
+
+  return {
+    evidencePacket: sanitizeSnapshotTextValue(
+      input.evidencePacket,
+      relationshipType,
+    ) as CompatibilityEvidencePacket,
+    draft: sanitizeSnapshotTextValue(
+      input.draft,
+      relationshipType,
+    ) as CompatibilityReportDraft,
+  };
+}
 
 function assertSafeFixtureId(fixtureId: string): void {
   if (!/^[a-z0-9-]+$/u.test(fixtureId)) {
@@ -52,11 +98,15 @@ export async function writeCompatibilityPreviewSnapshot(input: {
   readonly generatedAt?: string;
 }): Promise<string> {
   const filePath = getCompatibilityPreviewSnapshotPath(input.fixtureId);
+  const sanitizedPayload = sanitizeCompatibilityPreviewSnapshotPayload({
+    evidencePacket: input.evidencePacket,
+    draft: input.draft,
+  });
   const snapshot: CompatibilityPreviewSnapshot = {
     fixtureId: input.fixtureId,
     generatedAt: input.generatedAt ?? new Date().toISOString(),
-    evidencePacket: input.evidencePacket,
-    draft: input.draft,
+    evidencePacket: sanitizedPayload.evidencePacket,
+    draft: sanitizedPayload.draft,
     qualityWarnings: input.qualityWarnings,
   };
   const serialized = JSON.stringify(snapshot, null, 2);
