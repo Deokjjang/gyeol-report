@@ -1,0 +1,80 @@
+import { describe, expect, it } from "vitest";
+
+import { buildMajorFortuneEvidence } from "../../../src/lib/report-knowledge/majorFortuneEvidence";
+import {
+  requireMajorFortuneFixture,
+} from "../../../src/lib/report-knowledge/majorFortuneFixtures";
+import {
+  buildOpenAIMajorFortuneReportWriterMessages,
+} from "../../../src/lib/report-generation/openaiMajorFortuneReportWriterPrompt";
+
+function promptText(): string {
+  const fixture = requireMajorFortuneFixture("deokmin-current-major-fortune");
+  const packet = buildMajorFortuneEvidence({
+    fixtureId: fixture.id,
+    currentYear: fixture.currentYear,
+    person: fixture.person,
+  });
+  const messages = buildOpenAIMajorFortuneReportWriterMessages({
+    evidencePacket: packet,
+  });
+
+  return `${messages.system}\n${messages.developer}\n${messages.user}`;
+}
+
+describe("openaiMajorFortuneReportWriterPrompt", () => {
+  it("requires evidence-only major fortune writing", () => {
+    const text = promptText();
+
+    expect(text).toContain("Use only provided evidence");
+    expect(text).toContain("Do not invent major fortune cycles");
+    expect(text).toContain("Do not change ganji");
+    expect(text).toContain("Do not create additional 대운 cycles");
+  });
+
+  it("defines 대운 as a 10-year background", () => {
+    const text = promptText();
+
+    expect(text).toContain("대운은 10년짜리 인생 배경");
+    expect(text).toContain("세운은 선택한 1년의 흐름");
+    expect(text).toContain("Interpret as long-term repeated themes");
+  });
+
+  it("requires phase timeline and strong years explanation", () => {
+    const text = promptText();
+
+    expect(text).toContain("phaseTimeline must contain exactly three items");
+    expect(text).toContain("early, middle, late");
+    expect(text).toContain("strongYears must use provided strongYearsWithinCycle");
+  });
+
+  it("requires concrete scenes and all six domains", () => {
+    const text = promptText();
+
+    expect(text).toContain("All six domains must appear");
+    expect(text).toContain("일·성과");
+    expect(text).toContain("돈·현실");
+    expect(text).toContain("인간관계");
+    expect(text).toContain("연애·가족");
+    expect(text).toContain("학업·자격증");
+    expect(text).toContain("몸·생활 리듬");
+    expect(text).toContain("Concrete scenes must name domains");
+  });
+
+  it("uses userContext as translation layer only", () => {
+    const text = promptText();
+
+    expect(text).toContain("Use userContext.lifeStatus");
+    expect(text).toContain("translation layer");
+    expect(text).toContain("Do not change calculations based on userContext");
+  });
+
+  it("forbids hard claims and raw fixture/precomputed wording", () => {
+    const text = promptText();
+
+    expect(text).toContain("Forbidden hard claims");
+    expect(text).toContain("반드시");
+    expect(text).toContain("Never write fixture_precomputed");
+    expect(text).toContain("사전 계산된 대운표 기준");
+  });
+});

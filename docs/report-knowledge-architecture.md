@@ -1811,6 +1811,50 @@ UserContextProfile is reused only to translate long-cycle scenes into concrete
 nouns such as 프로젝트, 보고, 계약, 정산, 동료, 상사, 자격증, and 생활 리듬. It does
 not change the major fortune calculations.
 
+## DAEUN-02 Major Fortune Draft/Preview Layer
+
+DAEUN-02 adds the report-generation and preview layer for 대운 리포트 v1.0. It
+does not add public input UI, cycle selection UI, payment, DB persistence, or
+production route wiring.
+
+The major fortune draft schema is `major_fortune_report_draft`. It contains
+hero copy, user context summary, current cycle structure, flow index, exactly
+six decade cards, key signals, major structure explanations, 6 to 10 cycle
+chapters, a three-part phase timeline, strong years within the cycle, exactly
+six domain-locked final advice items, and safety notes. The strict OpenAI JSON
+schema keeps every nested property required so the response format is
+strict-compatible.
+
+The validator clamps visible indexes to 0-100, normalizes repeated 명리 terms,
+removes hard deterministic claims, strips internal artifacts, enforces the
+early/middle/late phase timeline, keeps strong years to 3-5 items, and requires
+final advice to cover the six standard domains: 일·성과, 돈·현실, 인간관계,
+연애·가족, 학업·자격증, 몸·생활 리듬.
+
+The writer prompt treats 대운 as a 10-year background, not a single-year event.
+It tells the model to use only the evidence packet, never invent cycles, never
+change ganji/ten-god/elements/branch interactions, translate scenes through
+userContext only, explain early/middle/late phases, and explain strong years
+within the cycle.
+
+The OpenAI writer is gated by `OPENAI_REPORT_WRITER_ENABLED`,
+`OPENAI_API_KEY`, and `OPENAI_REPORT_MODEL`. It uses the strict response format
+name `major_fortune_report_draft`, validates the returned draft, and redacts
+diagnostics. Free smoke and preview page execution do not call OpenAI.
+
+Preview snapshots are written to
+`.tmp/major-fortune-preview/<fixture>-latest.json` and contain the fixture id,
+generation time, evidence packet, and sanitized draft. The dev preview route is
+`/dev/major-fortune-preview?fixture=deokmin-current-major-fortune&snapshot=latest`.
+The page reads only local snapshots, is gated by
+`MAJOR_FORTUNE_DEV_PREVIEW_ENABLED`, and does not import the OpenAI writer.
+
+The report view renders the current major cycle structure table, flow index,
+decade cards, key signals, major structure explanation, cycle chapters, phase
+timeline, strong years, final advice, and safety notes. Raw
+`fixture_precomputed` or `precomputed` wording is mapped to the user-facing
+label `사전 계산된 대운표 기준`.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
