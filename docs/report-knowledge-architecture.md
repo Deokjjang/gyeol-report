@@ -1290,6 +1290,39 @@ Korean guidance, and business/work-partner safety notes avoid internal policy
 terms while reminding users that the report does not determine partnership
 success or failure.
 
+## REPORT-18L Category Differentiation QA
+
+REPORT-18L is the final copy-stability and category-differentiation QA layer for
+compatibility v1.0. It does not add another Saju calculation layer. It tightens
+the grammar sanitizer for remaining particle errors such as `표현의 온도이`,
+`기준 정리이`, `관리 부담가`, `협업 시너지과`, `Family A은`, and
+`Partner A은`, and applies the same recursive sanitizer through validator and
+writer paths.
+
+Final advice labels now use a relationship-type whitelist. Love and some avoid
+business labels such as 피드백 규칙, 의사결정, 신뢰 관리, and 업무 기준. Family
+uses family-safe labels such as 대화 규칙, 생활 기준, 도움 요청, 갈등 회복,
+역할 분담, and 정서 회복. Business/work-partner uses 의사결정, 역할 분담,
+돈과 자원, 피드백 규칙, 갈등 조정, 신뢰 관리, and 업무 기준. Duplicate labels
+are reduced when body keywords allow a clearer category-specific label.
+
+The vocabulary guard is category-specific. Business output removes romance
+language and favors 협업, 역할, 기준, 책임, 의사결정, and 피드백. Family output
+uses 가족, 생활, 정서, 말의 통로, 역할, and 경계 vocabulary. Friendship output
+uses 거리감, 도움 방식, 대화 리듬, and 경계선. Love output can still use
+romance vocabulary and should not be forced into work labels.
+
+`scripts/smoke_generate_compatibility_category_matrix.ts` runs the six v1
+fixtures as a matrix: `deokmin-sodam-love`, `deokmin-sodam-marriage`,
+`unknown-time-some`, `friendship-mbti-known`, `family-unknown-mbti`, and
+`business-work-partner-sample`. The matrix prints fixture, relationship type,
+localized relationship label, total score, score labels, first chapter title,
+warning count, snapshot path, and preview URL. It checks that category labels
+and score labels differ across love/family/business, first chapter titles are
+not all identical when generated, and category-forbidden vocabulary is absent.
+If OpenAI writer settings are not present, generation is skipped safely and the
+deterministic evidence matrix still prints without preview URLs.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

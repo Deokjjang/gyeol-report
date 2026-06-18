@@ -234,6 +234,9 @@ export function adaptCompatibilityTextForRelationshipType(
     return text
       .split("방향을 잡은 사람은 상대가 반응할 시간을 두고, 반응하는 사람은 고마움과 자기 의견을 함께 표현해야 합니다.")
       .join("기준을 잡은 사람은 실행 담당이 검토할 시간을 두고, 실행 담당은 수정 의견을 명확히 남겨야 합니다.")
+      .split("관계가 쉽게 흩어지지 않고").join("협업 구조가 쉽게 흔들리지 않고")
+      .split("상대가 내 부족한 부분을").join("상대 역할에 내 책임까지")
+      .split("관계가 입체적으로 굴러갑니다").join("협업이 입체적으로 굴러갑니다")
       .split("고마움과 자기 의견").join("확인 피드백과 수정 의견")
       .split("가볍게 쉬는 시간").join("짧은 재정비 시간")
       .split("즐거움보다 의무").join("자율성보다 관리 부담")
@@ -253,6 +256,9 @@ export function adaptCompatibilityTextForRelationshipType(
     return text
       .split("방향을 잡은 사람은 상대가 반응할 시간을 두고, 반응하는 사람은 고마움과 자기 의견을 함께 표현해야 합니다.")
       .join("기준을 말한 사람은 상대가 받아들일 시간을 두고, 듣는 사람은 불편한 지점을 짧게 표현해야 합니다.")
+      .split("방향과 구조를 잡고").join("생활 기준을 정리하고")
+      .split("온도와 반응을 살려").join("말의 통로와 정서 반응을 살려")
+      .split("관계가 입체적으로 굴러갑니다").join("가족 관계가 덜 막히고 편안해집니다")
       .split("연애").join("가족 관계")
       .split("데이트").join("함께 보내는 시간")
       .split("애인").join("가족")

@@ -265,8 +265,11 @@ describe("openaiCompatibilityReportWriter", () => {
     const draft = createValidCompatibilityDraft();
     const contaminated: CompatibilityReportDraft = {
       ...draft,
-      openingSummary: `${draft.openingSummary} 목·금가 살아납니다.`,
-      finalAdvice: [...draft.finalAdvice, "丑未 충가 있어 바로 결론 내리지 마세요."],
+      openingSummary: `${draft.openingSummary} 목·금가 살아납니다. 표현의 온도이 올라갑니다. 관리 부담가 낮습니다.`,
+      finalAdvice: [
+        ...draft.finalAdvice,
+        "丑未 충가 있어 바로 결론 내리지 마세요. 협업 시너지과 기준 정리이 필요합니다. Partner A은 확인합니다.",
+      ],
     };
 
     const result = sanitizeCompatibilityDiagnosticTerms(contaminated);
@@ -274,8 +277,18 @@ describe("openaiCompatibilityReportWriter", () => {
 
     expect(serialized).not.toContain("목·금가");
     expect(serialized).not.toContain("충가 있어");
+    expect(serialized).not.toContain("표현의 온도이");
+    expect(serialized).not.toContain("관리 부담가");
+    expect(serialized).not.toContain("협업 시너지과");
+    expect(serialized).not.toContain("기준 정리이");
+    expect(serialized).not.toContain("Partner A은");
     expect(serialized).toContain("목과 금의 흐름이");
     expect(serialized).toContain("충이 있어");
+    expect(serialized).toContain("표현의 온도가");
+    expect(serialized).toContain("관리 부담이");
+    expect(serialized).toContain("협업 시너지와");
+    expect(serialized).toContain("기준 정리가");
+    expect(serialized).toContain("Partner A는");
   });
 
   it("sanitizes internal artifact safety notes in the writer sanitizer path", () => {

@@ -6,6 +6,10 @@ const source = readFileSync(
   join(process.cwd(), "scripts/smoke_generate_compatibility_report_draft.ts"),
   "utf8",
 );
+const categoryMatrixSource = readFileSync(
+  join(process.cwd(), "scripts/smoke_generate_compatibility_category_matrix.ts"),
+  "utf8",
+);
 
 describe("smoke_generate_compatibility_report_draft source", () => {
   it("supports the deokmin-sodam compatibility fixture and safe skip output", () => {
@@ -85,5 +89,34 @@ describe("smoke_generate_compatibility_report_draft source", () => {
     expect(source).not.toContain("writeLine(`OPENAI_API_KEY");
     expect(source).not.toContain("writeLine(\"OPENAI_API_KEY");
     expect(source).not.toContain("Authorization");
+  });
+
+  it("supports a six-category differentiation matrix smoke", () => {
+    expect(categoryMatrixSource).toContain(
+      "compatibilityCategoryMatrixFixtureIds",
+    );
+    expect(categoryMatrixSource).toContain("deokmin-sodam-love");
+    expect(categoryMatrixSource).toContain("deokmin-sodam-marriage");
+    expect(categoryMatrixSource).toContain("unknown-time-some");
+    expect(categoryMatrixSource).toContain("friendship-mbti-known");
+    expect(categoryMatrixSource).toContain("family-unknown-mbti");
+    expect(categoryMatrixSource).toContain("business-work-partner-sample");
+    expect(categoryMatrixSource).toContain("relationship label:");
+    expect(categoryMatrixSource).toContain("score labels:");
+    expect(categoryMatrixSource).toContain("assertCategoryDifferentiation");
+    expect(categoryMatrixSource).toContain("score labels did not differ");
+    expect(categoryMatrixSource).toContain("first chapters are identical");
+    expect(categoryMatrixSource).toContain("business_work_partner");
+    expect(categoryMatrixSource).toContain("family");
+    expect(categoryMatrixSource).toContain("love finalAdvice");
+    expect(categoryMatrixSource).toContain(
+      "generation: skipped, OpenAI writer env incomplete or disabled",
+    );
+    expect(categoryMatrixSource).toContain("shouldPrintPreviewUrl(row)");
+    expect(categoryMatrixSource).toContain("row.status === \"pass\"");
+    expect(categoryMatrixSource).toContain("writeCompatibilityPreviewSnapshot");
+    expect(categoryMatrixSource).toContain("getCompatibilityPreviewUrl");
+    expect(categoryMatrixSource).not.toContain("writeLine(`OPENAI_API_KEY");
+    expect(categoryMatrixSource).not.toContain("Authorization");
   });
 });

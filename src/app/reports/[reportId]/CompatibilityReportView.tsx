@@ -32,7 +32,64 @@ const compatibilityScoreOrder = [
   "growthComplement",
 ] as const satisfies readonly (keyof CompatibilityReportDraft["scoreSummary"]["breakdown"])[];
 
-const finalAdviceLabels = ["대화 규칙", "생활 기준", "도움 요청", "갈등 회복"] as const;
+const finalAdviceAllowedLabelsByRelationshipType = {
+  love: [
+    "대화 규칙",
+    "생활 리듬",
+    "감정 표현",
+    "갈등 회복",
+    "돈과 생활",
+    "실행 규칙",
+    "관계 속도",
+  ],
+  some: [
+    "대화 규칙",
+    "생활 리듬",
+    "감정 표현",
+    "갈등 회복",
+    "돈과 생활",
+    "실행 규칙",
+    "관계 속도",
+  ],
+  marriage: [
+    "대화 습관",
+    "생활 기준",
+    "돈과 생활",
+    "갈등 회복",
+    "역할 분담",
+    "장기 운영",
+  ],
+  friendship: [
+    "대화 리듬",
+    "거리 조절",
+    "도움 방식",
+    "오해 회복",
+    "경계선",
+    "오래 가는 규칙",
+  ],
+  family: [
+    "대화 규칙",
+    "생활 기준",
+    "도움 요청",
+    "갈등 회복",
+    "역할 분담",
+    "정서 회복",
+  ],
+  business_work_partner: [
+    "의사결정",
+    "역할 분담",
+    "돈과 자원",
+    "피드백 규칙",
+    "갈등 조정",
+    "신뢰 관리",
+    "업무 기준",
+  ],
+} as const satisfies Record<
+  CompatibilityReportDraft["relationshipType"],
+  readonly string[]
+>;
+
+const finalAdviceLabels = finalAdviceAllowedLabelsByRelationshipType.love;
 
 const finalAdviceKnownPrefixes = [
   "대화 규칙",
@@ -40,12 +97,24 @@ const finalAdviceKnownPrefixes = [
   "도움 요청",
   "갈등 회복",
   "실행 규칙",
+  "생활 리듬",
   "돈과 생활",
+  "돈과 자원",
   "관계 기준",
+  "관계 속도",
   "감정 표현",
   "거리 조절",
+  "대화 습관",
+  "대화 리듬",
+  "도움 방식",
+  "오해 회복",
+  "경계선",
+  "오래 가는 규칙",
   "역할 분담",
+  "장기 운영",
+  "정서 회복",
   "피드백 규칙",
+  "갈등 조정",
   "업무 기준",
   "의사결정",
   "신뢰 관리",
@@ -53,17 +122,30 @@ const finalAdviceKnownPrefixes = [
 
 const finalAdviceLabelPriority = [
   "대화 규칙",
+  "대화 습관",
+  "대화 리듬",
   "생활 기준",
+  "생활 리듬",
   "도움 요청",
+  "도움 방식",
   "갈등 회복",
+  "갈등 조정",
+  "오해 회복",
   "돈과 생활",
+  "돈과 자원",
   "실행 규칙",
+  "관계 속도",
   "역할 분담",
   "의사결정",
   "피드백 규칙",
   "신뢰 관리",
+  "업무 기준",
   "거리 조절",
   "감정 표현",
+  "경계선",
+  "오래 가는 규칙",
+  "장기 운영",
+  "정서 회복",
 ] as const;
 
 const finalAdviceConflictMarkers = [
@@ -530,8 +612,15 @@ function renderDeepSajuStructureCard(
 function getFinalAdviceLabel(input: {
   readonly advice: string;
   readonly index: number;
+  readonly relationshipType: CompatibilityReportDraft["relationshipType"];
 }): string {
-  const defaultLabel = finalAdviceLabels[input.index] ?? "실행 규칙";
+  const allowedLabels: readonly string[] =
+    finalAdviceAllowedLabelsByRelationshipType[input.relationshipType];
+  const defaultLabel =
+    allowedLabels[input.index] ??
+    finalAdviceLabels[input.index] ??
+    allowedLabels[allowedLabels.length - 1] ??
+    "실행 규칙";
 
   if (defaultLabel !== "도움 요청") {
     return defaultLabel;
@@ -571,7 +660,141 @@ export function normalizeCompatibilityFinalAdviceItem(
   return { label, body };
 }
 
-function inferFinalAdviceLabel(body: string): string | undefined {
+function inferFinalAdviceLabel(
+  body: string,
+  relationshipType: CompatibilityReportDraft["relationshipType"],
+): string | undefined {
+  if (/돈|자원|예산|계좌|기록/u.test(body)) {
+    return relationshipType === "business_work_partner" ? "돈과 자원" : "돈과 생활";
+  }
+  if (/역할|담당|권한|책임/u.test(body)) {
+    return "역할 분담";
+  }
+  if (/업무|작업|문서/u.test(body)) {
+    return relationshipType === "business_work_partner" ? "업무 기준" : "실행 규칙";
+  }
+  if (/결정|기준|보류/u.test(body)) {
+    if (relationshipType === "business_work_partner") {
+      return "의사결정";
+    }
+    if (relationshipType === "marriage" || relationshipType === "family") {
+      return "생활 기준";
+    }
+    if (relationshipType === "friendship") {
+      return "경계선";
+    }
+    return "실행 규칙";
+  }
+  if (/신뢰/u.test(body)) {
+    return relationshipType === "business_work_partner"
+      ? "신뢰 관리"
+      : "오래 가는 규칙";
+  }
+  if (/거리|선|경계/u.test(body)) {
+    return relationshipType === "friendship" ? "경계선" : "관계 속도";
+  }
+  if (/속도|타이밍/u.test(body)) {
+    return relationshipType === "business_work_partner" ? "업무 기준" : "관계 속도";
+  }
+  if (/피드백|수정|확인/u.test(body)) {
+    if (relationshipType === "business_work_partner") {
+      return "피드백 규칙";
+    }
+    if (relationshipType === "friendship") {
+      return "대화 리듬";
+    }
+    if (relationshipType === "marriage") {
+      return "대화 습관";
+    }
+    return "대화 규칙";
+  }
+  if (/대화|말|이해|결론/u.test(body)) {
+    if (relationshipType === "business_work_partner") {
+      return "의사결정";
+    }
+    if (relationshipType === "friendship") {
+      return "대화 리듬";
+    }
+    if (relationshipType === "marriage") {
+      return "대화 습관";
+    }
+    return "대화 규칙";
+  }
+  if (/도움|필요|요청/u.test(body)) {
+    if (relationshipType === "friendship") {
+      return "도움 방식";
+    }
+    if (relationshipType === "family") {
+      return "도움 요청";
+    }
+    if (relationshipType === "business_work_partner") {
+      return "역할 분담";
+    }
+    return "감정 표현";
+  }
+  if (/갈등|서운|어긋난|회복|감정|정서/u.test(body)) {
+    if (relationshipType === "business_work_partner") {
+      return "갈등 조정";
+    }
+    if (relationshipType === "friendship") {
+      return "오해 회복";
+    }
+    if (relationshipType === "family" && /정서|감정/u.test(body)) {
+      return "정서 회복";
+    }
+    return "갈등 회복";
+  }
+  if (/일정|주말|쉬는|생활|만남/u.test(body)) {
+    if (relationshipType === "business_work_partner") {
+      return "업무 기준";
+    }
+    if (relationshipType === "friendship") {
+      return "거리 조절";
+    }
+    if (relationshipType === "love" || relationshipType === "some") {
+      return "생활 리듬";
+    }
+    return "생활 기준";
+  }
+
+  return undefined;
+}
+
+function getAllowedFinalAdviceLabel(input: {
+  readonly label: string;
+  readonly body: string;
+  readonly relationshipType: CompatibilityReportDraft["relationshipType"];
+  readonly usedLabels: ReadonlySet<string>;
+}): string {
+  const allowedLabels: readonly string[] =
+    finalAdviceAllowedLabelsByRelationshipType[input.relationshipType];
+  const inferred = inferFinalAdviceLabel(input.body, input.relationshipType);
+
+  if (
+    inferred !== undefined &&
+    allowedLabels.includes(inferred) &&
+    !input.usedLabels.has(inferred)
+  ) {
+    return inferred;
+  }
+  if (
+    allowedLabels.includes(input.label) &&
+    !input.usedLabels.has(input.label)
+  ) {
+    return input.label;
+  }
+  if (inferred !== undefined && allowedLabels.includes(inferred)) {
+    return inferred;
+  }
+
+  return (
+    allowedLabels.find((label) => !input.usedLabels.has(label)) ??
+    allowedLabels[0] ??
+    input.label
+  );
+}
+
+function legacyInferFinalAdviceLabel(body: string): string | undefined {
   if (/돈|자원|예산|계좌|기록/u.test(body)) {
     return "돈과 생활";
   }
@@ -604,18 +827,29 @@ function resolveDuplicateFinalAdviceLabel(input: {
   readonly label: string;
   readonly body: string;
   readonly usedLabels: ReadonlySet<string>;
+  readonly relationshipType: CompatibilityReportDraft["relationshipType"];
 }): string {
-  const inferred = inferFinalAdviceLabel(input.body);
+  const allowedLabels: readonly string[] =
+    finalAdviceAllowedLabelsByRelationshipType[input.relationshipType];
+  const categoryLabel = getAllowedFinalAdviceLabel(input);
 
-  if (inferred !== undefined && !input.usedLabels.has(inferred)) {
-    return inferred;
+  if (!input.usedLabels.has(categoryLabel)) {
+    return categoryLabel;
   }
-  if (!input.usedLabels.has(input.label)) {
-    return input.label;
+
+  const inferred = legacyInferFinalAdviceLabel(input.body);
+  if (inferred !== undefined && !input.usedLabels.has(inferred)) {
+    return getAllowedFinalAdviceLabel({
+      ...input,
+      label: inferred,
+    });
   }
 
   return (
-    finalAdviceLabelPriority.find((label) => !input.usedLabels.has(label)) ??
+    allowedLabels.find((label) => !input.usedLabels.has(label)) ??
+    finalAdviceLabelPriority.find(
+      (label) => allowedLabels.includes(label) && !input.usedLabels.has(label),
+    ) ??
     input.label
   );
 }
@@ -630,7 +864,11 @@ export function normalizeCompatibilityFinalAdviceItems(
   const usedLabels = new Set<string>();
 
   return items.map((advice, index) => {
-    const fallbackLabel = getFinalAdviceLabel({ advice, index });
+    const fallbackLabel = getFinalAdviceLabel({
+      advice,
+      index,
+      relationshipType,
+    });
     const normalized = normalizeCompatibilityFinalAdviceItem(
       advice,
       fallbackLabel,
@@ -640,6 +878,7 @@ export function normalizeCompatibilityFinalAdviceItems(
       label: normalized.label,
       body: normalized.body,
       usedLabels,
+      relationshipType,
     });
 
     usedLabels.add(label);

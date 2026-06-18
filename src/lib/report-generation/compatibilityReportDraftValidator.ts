@@ -133,12 +133,24 @@ const finalAdviceKnownPrefixes = [
   "도움 요청",
   "갈등 회복",
   "실행 규칙",
+  "생활 리듬",
   "돈과 생활",
+  "돈과 자원",
   "관계 기준",
+  "관계 속도",
   "감정 표현",
   "거리 조절",
+  "대화 습관",
+  "대화 리듬",
+  "도움 방식",
+  "오해 회복",
+  "경계선",
+  "오래 가는 규칙",
   "역할 분담",
+  "장기 운영",
+  "정서 회복",
   "피드백 규칙",
+  "갈등 조정",
   "업무 기준",
   "의사결정",
   "신뢰 관리",
@@ -157,15 +169,21 @@ const internalArtifactPhrases = [
 export function sanitizeCompatibilityKoreanCopy(text: string): string {
   return text
     .split("정화을").join("정화를")
+    .split("표현의 온도이").join("표현의 온도가")
+    .split("기준 정리이").join("기준 정리가")
     .split("무토은").join("무토는")
     .split("계수은").join("계수는")
     .split("정화은").join("정화는")
+    .replace(/\b(Partner|Family) ([AB])은/g, "$1 $2는")
+    .replace(/\b(Partner|Family) ([AB])이/g, "$1 $2가")
     .split("Partner A이").join("Partner A가")
     .split("Partner B이").join("Partner B가")
     .split("Family A이").join("Family A가")
     .split("Family B이").join("Family B가")
     .split("파트너십가").join("파트너십이")
+    .split("관리 부담가").join("관리 부담이")
     .split("협업 시너지은").join("협업 시너지는")
+    .split("협업 시너지과").join("협업 시너지와")
     .split("목·금가").join("목과 금의 흐름이")
     .split("목·금이 약해").join("목과 금의 흐름이 약해")
     .split("화·수가 약해").join("화와 수의 흐름이 약해")

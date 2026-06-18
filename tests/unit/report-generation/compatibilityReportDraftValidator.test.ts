@@ -263,7 +263,7 @@ describe("compatibilityReportDraftValidator", () => {
       coreLine: "Partner A이 먼저 말하면 Partner B이 확인합니다.",
       scoreSummary: {
         ...draft.scoreSummary,
-        scoreLabel: "협업 시너지은 높습니다.",
+        scoreLabel: "협업 시너지은 높고 관리 부담가 낮습니다.",
       },
       chartComparison: {
         personA: {
@@ -291,19 +291,21 @@ describe("compatibilityReportDraftValidator", () => {
       ),
       finalAdvice: [
         ...draft.finalAdvice,
-        "협업 시너지은 기록으로 남기세요.",
+        "협업 시너지은 기록으로 남기고 협업 시너지과 기준을 맞추세요.",
       ],
     });
     const serialized = JSON.stringify(result.value);
 
     expect(result.ok).toBe(true);
     expect(serialized).not.toMatch(
-      /정화을|Partner A이|Partner B이|Family A이|Family B이|파트너십가|협업 시너지은/u,
+      /정화을|표현의 온도이|기준 정리이|Partner A은|Partner A이|Partner B은|Partner B이|Family A은|Family A이|Family B은|Family B이|파트너십가|관리 부담가|협업 시너지은|협업 시너지과/u,
     );
     expect(serialized).toContain("정화를");
     expect(serialized).toContain("Partner A가");
     expect(serialized).toContain("파트너십이");
     expect(serialized).toContain("협업 시너지는");
+    expect(serialized).toContain("관리 부담이");
+    expect(serialized).toContain("협업 시너지와");
   });
 
   it("sanitizes internal artifact language from safety notes", () => {
@@ -363,8 +365,12 @@ describe("compatibilityReportDraftValidator", () => {
     expect(sanitizeCompatibilityAwkwardKoreanText("丑未 충가 있어 조율합니다.")).toBe(
       "丑未 충이 있어 조율합니다.",
     );
-    expect(sanitizeCompatibilityKoreanCopy("정화을 무토은 계수은 Partner A이")).toBe(
-      "정화를 무토는 계수는 Partner A가",
+    expect(
+      sanitizeCompatibilityKoreanCopy(
+        "정화을 표현의 온도이 기준 정리이 무토은 계수은 Partner A은 Partner A이 Partner B은 Partner B이 Family A은 Family B은 파트너십가 관리 부담가 협업 시너지과",
+      ),
+    ).toBe(
+      "정화를 표현의 온도가 기준 정리가 무토는 계수는 Partner A는 Partner A가 Partner B는 Partner B가 Family A는 Family B는 파트너십이 관리 부담이 협업 시너지와",
     );
   });
 
