@@ -1,0 +1,199 @@
+import { buildAnnualFortuneEvidence } from "../src/lib/report-knowledge/annualFortuneEvidence";
+import {
+  ANNUAL_FORTUNE_FIXTURES,
+  requireAnnualFortuneFixture,
+} from "../src/lib/report-knowledge/annualFortuneFixtures";
+import {
+  annualFortuneReportDraftJsonSchema,
+  getAnnualFortuneReportDraftSchemaTopLevelKeys,
+} from "../src/lib/report-generation/annualFortuneReportDraftTypes";
+import {
+  validateAnnualFortuneReportDraft,
+} from "../src/lib/report-generation/annualFortuneReportDraftValidator";
+import {
+  AnnualFortuneReportWriterFailure,
+  annualFortuneResponseFormatName,
+  formatAnnualFortuneOpenAIRequestDiagnostics,
+  generateAnnualFortuneReportDraft,
+} from "../src/lib/report-generation/openaiAnnualFortuneReportWriter";
+import {
+  buildOpenAIAnnualFortuneReportWriterMessages,
+} from "../src/lib/report-generation/openaiAnnualFortuneReportWriterPrompt";
+import {
+  getAnnualFortunePreviewSnapshotRelativePath,
+  getAnnualFortunePreviewUrl,
+  writeAnnualFortunePreviewSnapshot,
+} from "../src/lib/report-generation/annualFortunePreviewSnapshot";
+
+const openAIKeyEnvName = ["OPENAI", "API", "KEY"].join("_");
+const annualFortuneDefaultFixtureId = "deokmin-2026-current";
+
+function getFixtureId(argv: readonly string[]): string {
+  const flagIndex = argv.findIndex((arg) => arg === "--fixture");
+  const inline = argv.find((arg) => arg.startsWith("--fixture="));
+
+  return inline?.split("=")[1] ??
+    (flagIndex >= 0 ? argv[flagIndex + 1] : undefined) ??
+    ANNUAL_FORTUNE_FIXTURES.find(
+      (fixture) => fixture.id === annualFortuneDefaultFixtureId,
+    )?.id ??
+    ANNUAL_FORTUNE_FIXTURES[0].id;
+}
+
+function shouldWritePreview(argv: readonly string[]): boolean {
+  return argv.includes("--write-preview");
+}
+
+function getEnvValue(name: string): string | undefined {
+  const value = process.env[name];
+
+  return value === undefined || value.trim().length === 0 ? undefined : value;
+}
+
+function isWriterEnabled(): boolean {
+  return getEnvValue("OPENAI_REPORT_WRITER_ENABLED") === "1";
+}
+
+function hasWriterConfig(): boolean {
+  return (
+    getEnvValue(openAIKeyEnvName) !== undefined &&
+    getEnvValue("OPENAI_REPORT_MODEL") !== undefined
+  );
+}
+
+function writeLine(line: string): void {
+  process.stdout.write(`${line}\n`);
+}
+
+function writeList(label: string, values: readonly string[]): void {
+  writeLine(`${label}:`);
+  if (values.length === 0) {
+    writeLine("- none");
+    return;
+  }
+  for (const value of values) {
+    writeLine(`- ${value}`);
+  }
+}
+
+async function main(): Promise<void> {
+  const argv = process.argv.slice(2);
+  const writePreview = shouldWritePreview(argv);
+  const fixture = requireAnnualFortuneFixture(getFixtureId(argv));
+  const packet = buildAnnualFortuneEvidence({
+    targetYear: fixture.targetYear,
+    currentDate: new Date(`${fixture.currentDate}T00:00:00+09:00`),
+    person: fixture.person,
+  });
+
+  writeLine(`annual fortune draft fixture: ${fixture.id}`);
+  writeLine(`mode: ${packet.mode}`);
+  writeLine(`year: ${packet.targetYear}`);
+  writeLine(`ganji: ${packet.annualGanji.ganji}`);
+  writeLine(`ten god: ${packet.annualTenGod.stemTenGod}`);
+  writeLine(
+    `year element: ${packet.annualGanji.stemElement}/${packet.annualGanji.branchElement}`,
+  );
+  writeList(
+    "life area signals",
+    packet.lifeAreaSignals.map(
+      (signal) => `${signal.area} ${signal.strength}: ${signal.plain}`,
+    ),
+  );
+  writeList(
+    "difficulty signals",
+    packet.difficultySignals.map(
+      (signal) => `${signal.type} ${signal.severity}: ${signal.plain}`,
+    ),
+  );
+  writeList(
+    "opportunity signals",
+    packet.opportunitySignals.map(
+      (signal) => `${signal.type} ${signal.strength}: ${signal.plain}`,
+    ),
+  );
+
+  if (!isWriterEnabled()) {
+    writeLine("SKIP draft generation, OpenAI writer disabled");
+    return;
+  }
+  if (!hasWriterConfig()) {
+    writeLine("SKIP draft generation, OpenAI writer env incomplete");
+    return;
+  }
+
+  const messages = buildOpenAIAnnualFortuneReportWriterMessages({
+    evidencePacket: packet,
+  });
+
+  if (getEnvValue("OPENAI_REPORT_WRITER_DEBUG_SAFE") === "1") {
+    writeLine("OpenAI request debug:");
+    writeLine(`model: ${getEnvValue("OPENAI_REPORT_MODEL")}`);
+    writeLine(`response format: ${annualFortuneResponseFormatName}`);
+    writeLine(
+      `schema keys: ${getAnnualFortuneReportDraftSchemaTopLevelKeys().join(", ")}`,
+    );
+    writeLine(
+      `schema approx chars: ${JSON.stringify(annualFortuneReportDraftJsonSchema).length}`,
+    );
+    writeLine(`system chars: ${messages.system.length}`);
+    writeLine(`developer chars: ${messages.developer.length}`);
+    writeLine(`user chars: ${messages.user.length}`);
+  }
+
+  const result = await generateAnnualFortuneReportDraft({
+    evidencePacket: packet,
+    config: {
+      enabled: true,
+      apiKey: getEnvValue(openAIKeyEnvName) ?? "",
+      model: getEnvValue("OPENAI_REPORT_MODEL") ?? "",
+    },
+  });
+  const validation = validateAnnualFortuneReportDraft(result.draft);
+
+  if (!validation.ok || validation.value === undefined) {
+    throw new Error(validation.errors.join("\n"));
+  }
+
+  writeLine(`draft version: ${validation.value.version}`);
+  writeLine("flow cards:");
+  for (const card of validation.value.flowCards) {
+    writeLine(`- ${card.label}: ${card.score}`);
+  }
+  writeLine(`chapters: ${validation.value.chapters.length}`);
+  writeLine(`monthly flow: ${validation.value.monthlyFlow.length}`);
+
+  if (writePreview) {
+    await writeAnnualFortunePreviewSnapshot({
+      fixtureId: fixture.id,
+      evidencePacket: packet,
+      draft: validation.value,
+    });
+    writeLine("preview snapshot written:");
+    writeLine(getAnnualFortunePreviewSnapshotRelativePath(fixture.id));
+    writeLine("Open in browser:");
+    writeLine(getAnnualFortunePreviewUrl(fixture.id));
+  }
+  writeLine("done");
+}
+
+main().catch((error: unknown) => {
+  process.stderr.write("FAIL\n");
+  if (error instanceof AnnualFortuneReportWriterFailure) {
+    process.stderr.write(`${error.code}\n`);
+    if (error.diagnostics !== undefined) {
+      for (const line of formatAnnualFortuneOpenAIRequestDiagnostics(
+        error.diagnostics,
+      )) {
+        process.stderr.write(`${line}\n`);
+      }
+    } else {
+      process.stderr.write(`${error.message}\n`);
+    }
+    process.exitCode = 1;
+    return;
+  }
+
+  process.stderr.write(`${error instanceof Error ? error.message : String(error)}\n`);
+  process.exitCode = 1;
+});

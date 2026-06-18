@@ -1456,6 +1456,62 @@ fixtures and prints ganji, ten-god, element fill/overload, branch interactions,
 life area signals, difficulty signals, opportunity signals, and warnings. The
 smoke script does not import an OpenAI writer and has no API cost.
 
+## SEUN-02 Annual Fortune Draft/Preview Layer
+
+SEUN-02 adds the browser-review layer for 세운 리포트 v1.0 without adding payment,
+public product pages, or persistence. The paid product policy stays: one 990원
+purchase unlocks one selected annual-fortune year, including 1-12 monthly flow.
+
+The draft schema is `AnnualFortuneReportDraft`. It represents one selected year
+and includes:
+
+1. opening title, summary, and core line
+2. selected-year summary with ganji, element label, ten-god label, mode label,
+   and year tone
+3. total flow score and caution copy
+4. flow cards for life areas
+5. key signals tied to evidence labels
+6. annual structure explanations for ganji, ten-god, element effect, and branch
+   interactions
+7. six to ten chapters with likely scenes and practical advice
+8. exactly twelve monthly-flow items
+9. final advice and safety notes
+
+The validator checks structure, clamps scores to 0-100, sanitizes known awkward
+Korean, weakens hard deterministic claims, removes internal/debug terms from
+visible text, and enforces mode tone. `past_review` drafts must read like
+회고, while `current_year` and `new_year_preview` drafts must emphasize 준비,
+활용, 기회, and 조심.
+
+The OpenAI writer prompt is annual-fortune specific. It tells the model to use
+only the provided SEUN-01 evidence packet, not invent or change pillars, ganji,
+ten-god, element effects, branch interactions, or mode. It requires concrete
+생활 장면 and forbids guaranteed outcomes such as fixed 합격, 이직, 승진, 결혼,
+or illness claims. The writer is gated by `OPENAI_REPORT_WRITER_ENABLED`,
+`OPENAI_API_KEY`, and `OPENAI_REPORT_MODEL`, and uses the strict response format
+name `annual_fortune_report_draft`.
+
+The preview snapshot helper writes
+`.tmp/annual-fortune-preview/<fixture>-latest.json` with the fixture id,
+generation time, annual evidence packet, and sanitized draft. Snapshot writing
+does not require OpenAI by itself.
+
+The dev preview route is:
+
+`/dev/annual-fortune-preview?fixture=deokmin-2026-current&snapshot=latest`
+
+The page reads only local annual-fortune snapshots and renders
+`AnnualFortuneReportView`. It does not import the OpenAI writer and must not call
+OpenAI from the browser route. The view renders a paid-style report structure:
+hero, score summary, year structure table, flow cards, key signals, annual
+structure explanations, chapters, twelve monthly items, final advice, and safety
+notes.
+
+`scripts/smoke_generate_annual_fortune_report_draft.ts` is the cost-saving entry
+point. With the writer disabled, it prints the annual evidence summary and skips
+draft generation. With the writer enabled and `--write-preview`, it generates
+one fixture draft and writes the preview snapshot for browser review.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

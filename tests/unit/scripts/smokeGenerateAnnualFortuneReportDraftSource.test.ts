@@ -1,0 +1,40 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import { describe, expect, it } from "vitest";
+
+const source = readFileSync(
+  join(process.cwd(), "scripts/smoke_generate_annual_fortune_report_draft.ts"),
+  "utf8",
+);
+
+describe("smoke_generate_annual_fortune_report_draft source", () => {
+  it("supports fixture selection, safe skip output, and annual evidence summary", () => {
+    expect(source).toContain("--fixture");
+    expect(source).toContain("--write-preview");
+    expect(source).toContain("deokmin-2026-current");
+    expect(source).toContain("annual fortune draft fixture:");
+    expect(source).toContain("mode:");
+    expect(source).toContain("year:");
+    expect(source).toContain("ganji:");
+    expect(source).toContain("ten god:");
+    expect(source).toContain("life area signals");
+    expect(source).toContain("difficulty signals");
+    expect(source).toContain("opportunity signals");
+    expect(source).toContain("SKIP draft generation, OpenAI writer disabled");
+    expect(source).toContain("SKIP draft generation, OpenAI writer env incomplete");
+  });
+
+  it("writes annual-fortune-preview snapshots only after draft generation", () => {
+    expect(source).toContain("generateAnnualFortuneReportDraft");
+    expect(source).toContain("validateAnnualFortuneReportDraft");
+    expect(source).toContain("writeAnnualFortunePreviewSnapshot");
+    expect(source).toContain("getAnnualFortunePreviewSnapshotRelativePath");
+    expect(source).toContain("getAnnualFortunePreviewUrl");
+    expect(source).toContain("preview snapshot written:");
+    expect(source).toContain("Open in browser:");
+    expect(source).toContain("annualFortuneResponseFormatName");
+    expect(source).toContain("schema approx chars:");
+    expect(source).not.toContain("writeLine(`OPENAI_API_KEY");
+    expect(source).not.toContain("Authorization");
+  });
+});
