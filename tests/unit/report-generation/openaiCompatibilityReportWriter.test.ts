@@ -121,6 +121,59 @@ describe("openaiCompatibilityReportWriter", () => {
     });
   });
 
+  it("attaches relationship-specific score caution for business drafts", async () => {
+    const packet = buildCompatibilityEvidencePacketFromFixtureId(
+      "business-work-partner-sample",
+    );
+    const baseDraft = createValidCompatibilityDraft();
+    const businessDraft: CompatibilityReportDraft = {
+      ...baseDraft,
+      relationshipType: "love",
+      personALabel: "Partner A",
+      personBLabel: "Partner B",
+      openingTitle: "연애 데이트 애인 설렘 호감 끌림",
+      openingSummary: "연애 데이트 애인 설렘 호감 끌림",
+      coreLine: "연애 데이트 애인 설렘 호감 끌림",
+      keyCompatibilityPoints: {
+        attractionPoints: ["연애 데이트 애인 설렘 호감 끌림"],
+        strengthPoints: ["연애 데이트 애인 설렘 호감 끌림"],
+        frictionPoints: ["연애 데이트 애인 설렘 호감 끌림"],
+        relationshipRules: ["연애 데이트 애인 설렘 호감 끌림"],
+      },
+      chapters: baseDraft.chapters.map((chapter) => ({
+        ...chapter,
+        headline: "연애 데이트 애인 설렘 호감 끌림",
+        body: "연애 데이트 애인 설렘 호감 끌림",
+        directHitScenes: ["연애 데이트 애인 설렘 호감 끌림"],
+        practicalAdvice: ["연애 데이트 애인 설렘 호감 끌림"],
+      })),
+      finalAdvice: [
+        "업무 기준: 연애 데이트 애인 설렘 호감 끌림",
+        "신뢰 관리: 연애 데이트 애인 설렘 호감 끌림",
+        "의사결정: 연애 데이트 애인 설렘 호감 끌림",
+      ],
+    };
+    const fetchImpl: typeof fetch = async () =>
+      openAIResponse(JSON.stringify(businessDraft));
+
+    const result = await generateCompatibilityReportDraft({
+      evidencePacket: packet,
+      config: {
+        apiKey: "sk-test",
+        model: "test-model",
+        enabled: true,
+        fetchImpl,
+      },
+    });
+
+    expect(result.draft.relationshipType).toBe("business_work_partner");
+    expect(result.draft.scoreSummary.scoreCaution).toContain("역할·권한·책임");
+    expect(result.draft.scoreSummary.scoreCaution).not.toContain("끌림");
+    expect(JSON.stringify(result.draft)).not.toMatch(
+      /데이트|연애|애인|설렘|호감/u,
+    );
+  });
+
   it("exposes safe OpenAI request diagnostics without secrets", async () => {
     const packet = buildCompatibilityEvidencePacketFromFixtureId("deokmin-sodam-love");
     const fetchImpl: typeof fetch = async () =>
@@ -218,6 +271,22 @@ describe("openaiCompatibilityReportWriter", () => {
     expect(serialized).not.toContain("충가 있어");
     expect(serialized).toContain("목과 금의 흐름이");
     expect(serialized).toContain("충이 있어");
+  });
+
+  it("sanitizes internal artifact safety notes in the writer sanitizer path", () => {
+    const draft = createValidCompatibilityDraft();
+    const contaminated: CompatibilityReportDraft = {
+      ...draft,
+      safetyNotes: ["diagnostic-only 진단용 evidence debug 사용자용 본문 확정 feature"],
+    };
+
+    const result = sanitizeCompatibilityDiagnosticTerms(contaminated);
+    const serialized = JSON.stringify(result.value);
+
+    expect(serialized).toContain(
+      "이 리포트는 관계의 성공이나 실패를 단정하지 않습니다.",
+    );
+    expect(serialized).not.toMatch(/diagnostic-only|진단용|evidence|debug/u);
   });
 
   it("sanitizes diagnostic-only terms before final validation", async () => {

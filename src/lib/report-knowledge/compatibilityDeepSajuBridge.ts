@@ -1,6 +1,7 @@
 import type {
   CompatibilityBranchRelation,
   CompatibilityBranchRef,
+  FiveElementRelation,
 } from "./compatibilityRelationRules";
 import {
   createBranchRef,
@@ -9,7 +10,11 @@ import {
   getCrossTenGodRelation,
   getDayMasterElementRelation,
 } from "./compatibilityRelationRules";
-import type { CompatibilityPersonChartSummary } from "./compatibilityTypes";
+import {
+  adaptCompatibilityTextForRelationshipType,
+  type CompatibilityPersonChartSummary,
+  type CompatibilityRelationshipType,
+} from "./compatibilityTypes";
 import type { FiveElement } from "./sajuKnowledgeTypes";
 
 export type CompatibilityDeepSajuLayer =
@@ -54,6 +59,7 @@ export type CompatibilityDeepSajuBridgeResult = {
 type BuildCompatibilityDeepSajuBridgeInput = {
   readonly personA: CompatibilityPersonChartSummary;
   readonly personB: CompatibilityPersonChartSummary;
+  readonly relationshipType?: CompatibilityRelationshipType;
 };
 
 const elementKo = {
@@ -93,6 +99,239 @@ function formatElementFlow(elements: readonly FiveElement[]): string {
   return names.length === 0
     ? "빈 오행의 흐름"
     : `${joinKoreanTermsWithAnd(names)}의 흐름`;
+}
+
+const elementPrinciples = {
+  wood: "목은 방향성과 성장의 기운입니다.",
+  fire: "화는 표현과 온도의 기운입니다.",
+  earth: "토는 현실, 구조, 축적의 기운입니다.",
+  metal: "금은 판단, 기준, 실행의 기운입니다.",
+  water: "수는 감정, 생각, 정보 흐름의 기운입니다.",
+} as const satisfies Record<FiveElement, string>;
+
+const tenGodMeanings = {
+  비견: {
+    principle: "비견은 자기 기준, 동등함, 경쟁과 공감의 기운입니다.",
+    relation: "비슷한 기준으로 서로를 빠르게 이해하지만 주도권이 겹칠 수 있습니다.",
+  },
+  겁재: {
+    principle: "겁재는 경쟁심, 자원 공유, 선 긋기의 기운입니다.",
+    relation: "함께 움직이는 힘은 생기지만 자원과 역할의 경계가 중요해집니다.",
+  },
+  식신: {
+    principle: "식신은 생각을 꾸준히 결과물로 꺼내는 기운입니다.",
+    relation: "말보다 산출물과 꾸준한 실행으로 관계에 안정감을 더합니다.",
+  },
+  상관: {
+    principle: "상관은 표현을 밖으로 꺼내고 기존 틀을 흔드는 기운입니다.",
+    relation: "표현이 직접적이고 반응이 빠르지만 날카롭게 들릴 수 있습니다.",
+  },
+  정재: {
+    principle: "정재는 안정적 관리, 현실 감각, 약속의 기운입니다.",
+    relation: "예측 가능한 기준과 약속으로 관계를 안정시키려 합니다.",
+  },
+  편재: {
+    principle: "편재는 외부 기회, 유연한 돈과 자원 감각의 기운입니다.",
+    relation: "기회와 자원을 넓게 보지만 기준이 흐려지면 산만해질 수 있습니다.",
+  },
+  정관: {
+    principle: "정관은 책임, 규칙, 신뢰, 공식성의 기운입니다.",
+    relation: "신뢰와 규칙을 세우며 관계를 안정적으로 운영하려 합니다.",
+  },
+  편관: {
+    principle: "편관은 압박 대응, 결단, 긴장감의 기운입니다.",
+    relation: "빠른 결단과 위기 대응을 만들지만 압박감도 함께 생길 수 있습니다.",
+  },
+  정인: {
+    principle: "정인은 의미, 보호감, 생각을 정리해 주는 기운입니다.",
+    relation: "말과 행동에 의미와 기준을 붙여 안정감을 더하려 합니다.",
+  },
+  편인: {
+    principle: "편인은 독립적인 해석, 독특한 관점, 거리감의 기운입니다.",
+    relation: "다른 관점과 독립적인 해석을 보태지만 속도가 맞지 않으면 멀게 느껴질 수 있습니다.",
+  },
+} as const satisfies Record<string, {
+  readonly principle: string;
+  readonly relation: string;
+}>;
+
+type TenGodMeaning = {
+  readonly principle: string;
+  readonly relation: string;
+};
+
+function getTenGodMeaning(tenGod: string): TenGodMeaning | undefined {
+  const meanings: Readonly<Record<string, TenGodMeaning>> = tenGodMeanings;
+
+  return meanings[tenGod];
+}
+
+function adaptDeepText(
+  text: string,
+  relationshipType: CompatibilityRelationshipType | undefined,
+): string {
+  return relationshipType === undefined
+    ? text
+    : adaptCompatibilityTextForRelationshipType(text, relationshipType);
+}
+
+function buildDayMasterRelationInterpretation(input: {
+  readonly personAName: string;
+  readonly personBName: string;
+  readonly personAStem: string;
+  readonly personBStem: string;
+  readonly sourceLabel: string;
+  readonly targetLabel: string;
+  readonly sourceElement: FiveElement;
+  readonly targetElement: FiveElement;
+  readonly elementRelation: FiveElementRelation;
+  readonly relationshipType?: CompatibilityRelationshipType;
+}) {
+  const sourceElementKo = elementKo[input.sourceElement];
+  const targetElementKo = elementKo[input.targetElement];
+  const sourcePrinciple = elementPrinciples[input.sourceElement];
+  const targetPrinciple = elementPrinciples[input.targetElement];
+  const pairLabel = `${input.sourceLabel} → ${input.targetLabel}`;
+
+  const byRelation = {
+    same: {
+      principleExplanation: `${sourceElementKo}과 ${targetElementKo}은 같은 오행입니다. 같은 오행은 서로의 결을 빠르게 이해하게 하지만, 같은 방식으로 고집이 겹칠 수도 있습니다.`,
+      relationshipTranslation: `${input.personAName}의 ${input.sourceLabel}과 ${input.personBName}의 ${input.targetLabel}은 비슷한 결로 반응해 서로의 기준을 빨리 알아차릴 수 있습니다.`,
+      positiveExpression: "좋게 쓰이면 설명이 길지 않아도 서로의 기본 리듬을 빠르게 이해합니다.",
+      riskExpression: "나쁘게 흐르면 같은 방식으로 버티거나 고집이 겹쳐 조율이 늦어질 수 있습니다.",
+      plainKoreanSummary: "비슷한 기운이 서로를 빨리 이해하게 하지만, 같은 고집도 겹칠 수 있는 관계입니다.",
+    },
+    generates: {
+      principleExplanation:
+        input.sourceElement === "wood" && input.targetElement === "fire"
+          ? "목은 화를 생합니다. 나무가 불을 살리듯, 방향성과 성장의 기운이 표현과 온도의 기운을 키우는 관계입니다."
+          : input.sourceElement === "earth" && input.targetElement === "metal"
+            ? "토는 금을 생합니다. 흙 속에서 금이 생기듯, 구조와 축적이 판단과 실행을 뒷받침하는 관계입니다."
+            : `${sourceElementKo}은 ${targetElementKo}을 생합니다. ${sourcePrinciple} ${targetPrinciple} 한쪽의 기운이 다른 쪽의 기운을 살리는 관계입니다.`,
+      relationshipTranslation: `${input.personAName}의 ${input.sourceLabel}은 ${input.personBName}의 ${input.targetLabel}을 살리는 쪽으로 작동할 수 있어, 한쪽의 강점이 다른 쪽의 표현과 실행을 뒷받침할 수 있습니다.`,
+      positiveExpression: "좋게 쓰이면 한쪽은 기반과 방향을 주고, 다른 한쪽은 그것을 실제 반응과 결과로 살려 냅니다.",
+      riskExpression: "나쁘게 굳으면 한쪽이 계속 밀어 주고 다른 한쪽은 반응만 하는 구조가 되어 균형이 무너질 수 있습니다.",
+      plainKoreanSummary:
+        input.sourceElement === "wood" && input.targetElement === "fire"
+          ? "방향성과 성장의 기운이 표현과 온도를 살리는 관계입니다."
+          : input.sourceElement === "earth" && input.targetElement === "metal"
+            ? "구조와 축적이 판단과 실행을 뒷받침하는 관계입니다."
+            : "한쪽의 기운이 다른 쪽의 강점을 살려 주는 관계입니다.",
+    },
+    generated_by: {
+      principleExplanation: `${input.sourceLabel}은 ${input.targetLabel}에게 생을 받는 구조입니다. ${targetElementKo}의 기운이 ${sourceElementKo}의 기운을 보태는 관계입니다.`,
+      relationshipTranslation: `${input.personAName}은 ${input.personBName}에게서 방향이나 자극을 받아 자기 흐름을 더 쉽게 켤 수 있습니다.`,
+      positiveExpression: "좋게 쓰이면 받는 쪽은 힘을 얻고, 주는 쪽은 자기 역할을 확인받습니다.",
+      riskExpression: "나쁘게 흐르면 한쪽이 상대에게 에너지 공급을 기대하는 구조가 될 수 있습니다.",
+      plainKoreanSummary: "한쪽이 다른 쪽에게 힘을 받아 자기 흐름을 켜는 관계입니다.",
+    },
+    controls: {
+      principleExplanation: `${sourceElementKo}은 ${targetElementKo}을 제어합니다. 한쪽의 기준과 힘이 다른 쪽의 흐름을 조절하려는 관계입니다.`,
+      relationshipTranslation: `${input.personAName}의 ${input.sourceLabel}은 ${input.personBName}의 ${input.targetLabel} 흐름에 기준과 조절감을 만들 수 있습니다.`,
+      positiveExpression: "좋게 쓰이면 흩어지는 흐름을 잡아 주고 현실적인 기준을 세웁니다.",
+      riskExpression: "나쁘게 흐르면 조율이 통제처럼 느껴져 방어감이 커질 수 있습니다.",
+      plainKoreanSummary: "한쪽의 기준이 다른 쪽의 흐름을 정리하려는 관계입니다.",
+    },
+    controlled_by: {
+      principleExplanation:
+        input.sourceElement === "water" && input.targetElement === "earth"
+          ? "토는 수를 제어합니다. 흙이 물길을 잡듯, 한쪽의 현실 감각과 기준이 다른 쪽의 흐름과 감정을 정리하려는 관계입니다."
+          : `${input.sourceLabel}은 ${input.targetLabel}에게 조절을 받는 구조입니다. ${targetElementKo}의 기준이 ${sourceElementKo}의 흐름을 정리하려는 관계입니다.`,
+      relationshipTranslation: `${input.personAName}의 ${input.sourceLabel} 흐름은 ${input.personBName}의 ${input.targetLabel} 기준과 만나면서 정리되거나 제한되는 느낌을 받을 수 있습니다.`,
+      positiveExpression: "좋게 쓰이면 한쪽의 흐름이 현실적인 기준 안에서 정리됩니다.",
+      riskExpression: "나쁘게 흐르면 정리와 조언이 제한이나 통제로 느껴질 수 있습니다.",
+      plainKoreanSummary: "한쪽의 흐름이 다른 쪽의 기준 안에서 정리되는 관계입니다.",
+    },
+    neutral: {
+      principleExplanation: `${input.sourceLabel}과 ${input.targetLabel}은 직접적인 생·극보다 다른 기둥과 생활 리듬을 함께 봐야 하는 관계입니다.`,
+      relationshipTranslation: "두 사람 관계에서는 일간 하나만으로 방향을 단정하기보다, 대화 방식과 반복되는 장면에서 실제 조율점을 봐야 합니다.",
+      positiveExpression: "좋게 쓰이면 특정 역할에 갇히지 않고 유연하게 관계를 만들 수 있습니다.",
+      riskExpression: "나쁘게 흐르면 관계의 기준이 흐려져 매번 새로 조율해야 할 수 있습니다.",
+      plainKoreanSummary: "일간만으로 단정하기보다 실제 생활 장면에서 조율점을 봐야 하는 관계입니다.",
+    },
+  }[input.elementRelation];
+  const everydayScene =
+    input.elementRelation === "generates"
+      ? `${input.personAName}이 “이 방향으로 해보자”고 길을 잡으면 ${input.personBName}이 그 기준을 받아 실행이나 반응으로 구체화하는 장면입니다.`
+      : `${input.personAName}이 자기 방식으로 방향을 잡으면 ${input.personBName}이 그 기준을 받아 실행이나 반응으로 구체화하는 장면입니다.`;
+
+  return {
+    emotionalMeaning: `${pairLabel} 구조는 두 사람이 서로에게 어떤 방향으로 힘을 주거나 조절되는지 보여 줍니다.`,
+    practicalMeaning: "한쪽 역할이 고정되지 않도록, 받는 쪽의 반응과 되돌려 주는 방식을 말로 정해야 합니다.",
+    everydayScene: adaptDeepText(everydayScene, input.relationshipType),
+    actionRule: "방향을 잡은 사람은 상대가 반응할 시간을 두고, 반응하는 사람은 고마움과 자기 의견을 함께 표현해야 합니다.",
+    principleExplanation: adaptDeepText(
+      byRelation.principleExplanation,
+      input.relationshipType,
+    ),
+    relationshipTranslation: adaptDeepText(
+      byRelation.relationshipTranslation,
+      input.relationshipType,
+    ),
+    positiveExpression: adaptDeepText(
+      byRelation.positiveExpression,
+      input.relationshipType,
+    ),
+    riskExpression: adaptDeepText(
+      byRelation.riskExpression,
+      input.relationshipType,
+    ),
+    plainKoreanSummary: adaptDeepText(
+      byRelation.plainKoreanSummary,
+      input.relationshipType,
+    ),
+  };
+}
+
+function buildCrossTenGodInterpretation(input: {
+  readonly personAName: string;
+  readonly personBName: string;
+  readonly personASeesPersonB: string;
+  readonly personBSeesPersonA: string;
+  readonly relationshipType?: CompatibilityRelationshipType;
+}) {
+  const personATenGod = getTenGodMeaning(input.personASeesPersonB);
+  const personBTenGod = getTenGodMeaning(input.personBSeesPersonA);
+
+  const principleExplanation =
+    personATenGod === undefined || personBTenGod === undefined
+      ? `${input.personASeesPersonB}과 ${input.personBSeesPersonA} 관계는 서로를 어떤 역할의 자극으로 보는지 확인하는 십성 계산입니다.`
+      : `${personATenGod.principle} ${personBTenGod.principle}`;
+
+  const relationshipTranslation =
+    personATenGod === undefined || personBTenGod === undefined
+      ? `${input.personAName}에게 ${input.personBName}은 ${input.personASeesPersonB}, ${input.personBName}에게 ${input.personAName}은 ${input.personBSeesPersonA} 자극으로 보일 수 있습니다.`
+      : `${input.personAName}에게 ${input.personBName}은 ${personATenGod.relation} ${input.personBName}에게 ${input.personAName}은 ${personBTenGod.relation}`;
+
+  return {
+    emotionalMeaning: `${input.personASeesPersonB}/${input.personBSeesPersonA} 구조는 서로가 상대를 어떤 역할과 자극으로 받아들이는지 보여 줍니다.`,
+    practicalMeaning: "상대가 내 의도와 다른 역할로 나를 받아들일 수 있으므로, 말과 기준을 분리해서 확인해야 합니다.",
+    principleExplanation: adaptDeepText(
+      principleExplanation,
+      input.relationshipType,
+    ),
+    relationshipTranslation: adaptDeepText(
+      relationshipTranslation,
+      input.relationshipType,
+    ),
+    positiveExpression: adaptDeepText(
+      `좋게 쓰이면 ${input.personAName}은 ${input.personBName}을 통해 ${input.personASeesPersonB}의 장점을 쓰고, ${input.personBName}은 ${input.personAName}을 통해 ${input.personBSeesPersonA}의 장점을 살릴 수 있습니다.`,
+      input.relationshipType,
+    ),
+    riskExpression: adaptDeepText(
+      `나쁘게 흐르면 ${input.personASeesPersonB}의 방식과 ${input.personBSeesPersonA}의 방식이 서로의 의도를 다르게 해석하게 만들 수 있습니다.`,
+      input.relationshipType,
+    ),
+    everydayScene: adaptDeepText(
+      `${input.personAName}이 먼저 자기 방식으로 반응하면 ${input.personBName}은 그것을 ${input.personBSeesPersonA}의 기준으로 받아들이고, 이 과정에서 말의 속도 차이와 해석 차이가 생기는 장면입니다.`,
+      input.relationshipType,
+    ),
+    actionRule: "표현이 먼저 나온 뒤에는 바로 평가하지 말고, 상대가 어떤 기준으로 받아들였는지 확인하는 순서가 필요합니다.",
+    plainKoreanSummary: adaptDeepText(
+      `서로를 ${input.personASeesPersonB}과 ${input.personBSeesPersonA}의 역할로 받아들이는 관계입니다.`,
+      input.relationshipType,
+    ),
+  };
 }
 
 function getPillarStem(pillar: string): string {
@@ -289,6 +528,21 @@ function buildDayMasterRelationNote(
     return undefined;
   }
 
+  const [sourceLabel = relation.sourceStem, targetLabel = relation.targetStem] =
+    relation.relationLabel.split(" -> ");
+  const interpretation = buildDayMasterRelationInterpretation({
+    personAName: input.personA.displayName,
+    personBName: input.personB.displayName,
+    personAStem: relation.sourceStem,
+    personBStem: relation.targetStem,
+    sourceLabel,
+    targetLabel,
+    sourceElement: relation.sourceElement,
+    targetElement: relation.targetElement,
+    elementRelation: relation.relation,
+    relationshipType: input.relationshipType,
+  });
+
   return {
     layer: "day_master_relation",
     title: "일간 관계",
@@ -296,30 +550,16 @@ function buildDayMasterRelationNote(
     personARefs: [`${input.personA.displayName} 일간 ${relation.sourceStem}`],
     personBRefs: [`${input.personB.displayName} 일간 ${relation.targetStem}`],
     relationLabel: relation.relationLabel,
-    emotionalMeaning:
-      relation.relation === "generates"
-        ? `${input.personA.displayName}이 방향과 연료를 주고 ${input.personB.displayName}이 온도와 표현으로 반응하는 그림이 생길 수 있습니다.`
-        : "두 사람의 기본 에너지가 어느 쪽에서 힘을 주고 어느 쪽에서 조절되는지 보여 줍니다.",
-    practicalMeaning:
-      "한쪽이 계속 밀어 주는 구조가 되지 않도록, 받는 쪽의 반응과 되돌려 주는 방식을 말로 정해야 합니다.",
+    emotionalMeaning: interpretation.emotionalMeaning,
+    practicalMeaning: interpretation.practicalMeaning,
     scoreImpact: relation.relation === "generates" ? 3 : 1,
-    principleExplanation:
-      relation.relation === "generates"
-        ? "목은 화를 생합니다. 나무가 불을 살리듯, 방향성과 성장의 기운이 표현과 온도의 기운을 키우는 관계입니다."
-        : "일간 관계는 두 사람의 기본 기운이 서로 힘을 주는지, 비슷하게 공명하는지, 조절하는지 보는 계산입니다.",
-    relationshipTranslation:
-      relation.relation === "generates"
-        ? `${input.personA.displayName}의 갑목은 ${input.personB.displayName}의 정화를 살리는 쪽으로 작동할 수 있어, ${input.personA.displayName}이 방향을 잡으면 ${input.personB.displayName}의 생각과 감정 표현이 더 선명해질 수 있습니다.`
-        : "두 사람 관계에서는 누가 방향을 만들고 누가 반응하는지, 또는 누가 조절과 기준을 세우는지로 나타날 수 있습니다.",
-    positiveExpression:
-      "좋게 쓰이면 한쪽은 방향과 추진을 주고, 다른 한쪽은 온도와 표현으로 관계를 살아나게 만듭니다.",
-    riskExpression:
-      "나쁘게 굳으면 한쪽이 계속 밀어 주고, 다른 한쪽은 반응만 하는 구조가 되어 균형이 무너질 수 있습니다.",
-    everydayScene: `${input.personA.displayName}이 “이 방향으로 해보자”고 길을 잡으면, ${input.personB.displayName}이 그 안에서 자기 생각을 더 구체적으로 꺼내는 장면입니다.`,
-    actionRule:
-      "방향을 잡은 사람은 상대가 반응할 시간을 기다려야 하고, 반응하는 사람은 고마움과 자기 의견을 함께 표현해야 합니다.",
-    plainKoreanSummary:
-      "한쪽의 방향성이 다른 쪽의 표현과 온도를 살리는 관계입니다.",
+    principleExplanation: interpretation.principleExplanation,
+    relationshipTranslation: interpretation.relationshipTranslation,
+    positiveExpression: interpretation.positiveExpression,
+    riskExpression: interpretation.riskExpression,
+    everydayScene: interpretation.everydayScene,
+    actionRule: interpretation.actionRule,
+    plainKoreanSummary: interpretation.plainKoreanSummary,
   };
 }
 
@@ -339,6 +579,14 @@ function buildCrossTenGodNote(
     return undefined;
   }
 
+  const interpretation = buildCrossTenGodInterpretation({
+    personAName: input.personA.displayName,
+    personBName: input.personB.displayName,
+    personASeesPersonB: personAToB.tenGodKo,
+    personBSeesPersonA: personBToA.tenGodKo,
+    relationshipType: input.relationshipType,
+  });
+
   return {
     layer: "cross_ten_god",
     title: "서로에게 보이는 십성",
@@ -346,21 +594,16 @@ function buildCrossTenGodNote(
     personARefs: [personAToB.relationLabel],
     personBRefs: [personBToA.relationLabel],
     relationLabel: `${personAToB.tenGodKo}/${personBToA.tenGodKo}`,
-    emotionalMeaning:
-      "한쪽은 생각을 밖으로 꺼내게 하고, 다른 한쪽은 기준과 의미를 보태는 안정감으로 느껴질 수 있습니다.",
-    practicalMeaning:
-      "대화할 때 표현을 막기보다 먼저 꺼내게 두고, 그 뒤에 기준과 의미를 정리하면 충돌이 줄어듭니다.",
+    emotionalMeaning: interpretation.emotionalMeaning,
+    practicalMeaning: interpretation.practicalMeaning,
     scoreImpact: 2,
-    principleExplanation:
-      "상관은 표현, 반응, 기존 틀을 흔들어 밖으로 꺼내는 기운입니다. 정인은 의미, 기준, 보호감, 생각을 정리해 주는 기운입니다.",
-    relationshipTranslation: `${input.personA.displayName}에게 ${input.personB.displayName}은 생각과 표현을 더 직접적으로 꺼내게 하는 자극이 될 수 있고, ${input.personB.displayName}에게 ${input.personA.displayName}은 기준과 의미를 보태 주는 안정감으로 느껴질 수 있습니다.`,
-    positiveExpression: `좋게 쓰이면 ${input.personA.displayName}은 ${input.personB.displayName} 앞에서 더 솔직하게 표현하고, ${input.personB.displayName}은 ${input.personA.displayName}을 통해 생각을 정리받는 느낌을 받을 수 있습니다.`,
-    riskExpression: `나쁘게 흐르면 ${input.personA.displayName}의 표현은 날카로운 지적처럼 보이고, ${input.personB.displayName}은 ${input.personA.displayName}의 기준을 평가나 통제로 느낄 수 있습니다.`,
-    everydayScene: `${input.personA.displayName}이 바로 의견을 꺼내면 ${input.personB.displayName}은 그 말의 의미와 전제를 정리하려 하고, 이 과정에서 말의 속도 차이가 생깁니다.`,
-    actionRule:
-      "표현이 먼저 나온 뒤에는 바로 평가하지 말고, 상대가 어떤 기준으로 받아들였는지 확인하는 순서가 필요합니다.",
-    plainKoreanSummary:
-      "한쪽은 표현을 꺼내고, 다른 한쪽은 그 표현에 의미와 기준을 붙이는 관계입니다.",
+    principleExplanation: interpretation.principleExplanation,
+    relationshipTranslation: interpretation.relationshipTranslation,
+    positiveExpression: interpretation.positiveExpression,
+    riskExpression: interpretation.riskExpression,
+    everydayScene: interpretation.everydayScene,
+    actionRule: interpretation.actionRule,
+    plainKoreanSummary: interpretation.plainKoreanSummary,
   };
 }
 

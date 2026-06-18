@@ -22,6 +22,11 @@ describe("REPORT-18A compatibility evidence smoke source", () => {
     expect(source).toContain("score labels:");
     expect(source).toContain("getCompatibilityScoreDisplayLabels");
     expect(source).toContain("business-work-partner-sample");
+    expect(source).toContain("expected deep layer hints:");
+    expect(source).toContain("무토 -> 경금");
+    expect(source).toContain("식신/편인");
+    expect(source).toContain("계수 -> 무토");
+    expect(source).toContain("정관/정재");
     expect(source).toContain("score total:");
     expect(source).toContain("lifestyleRhythm");
     expect(source).toContain("shared features:");

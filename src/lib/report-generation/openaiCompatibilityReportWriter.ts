@@ -1,4 +1,5 @@
 import type { CompatibilityEvidencePacket } from "../report-knowledge/compatibilityEvidenceBuilder";
+import { getCompatibilityScoreCaution } from "../report-knowledge/compatibilityTypes";
 import type { CompatibilityReportDraft } from "./compatibilityReportDraftTypes";
 import { compatibilityReportDraftJsonSchema } from "./compatibilityReportDraftSchema";
 import {
@@ -204,7 +205,10 @@ function attachDeterministicEvidence(input: {
     relationshipType: input.evidencePacket.input.relationshipType,
     personALabel: input.evidencePacket.input.personA.displayName,
     personBLabel: input.evidencePacket.input.personB.displayName,
-    scoreSummary: buildCompatibilityDraftScoreSummary(input.evidencePacket.score),
+    scoreSummary: buildCompatibilityDraftScoreSummary({
+      score: input.evidencePacket.score,
+      relationshipType: input.evidencePacket.input.relationshipType,
+    }),
     chartComparison: {
       personA: input.evidencePacket.personAChartSummary,
       personB: input.evidencePacket.personBChartSummary,
@@ -212,18 +216,28 @@ function attachDeterministicEvidence(input: {
   };
 }
 
-function buildCompatibilityDraftScoreSummary(
-  score: CompatibilityReportDraft["scoreSummary"],
-): CompatibilityReportDraft["scoreSummary"] {
-  if (score.totalScore >= 65 && score.totalScore <= 74) {
+function buildCompatibilityDraftScoreSummary(input: {
+  readonly score: CompatibilityReportDraft["scoreSummary"];
+  readonly relationshipType: CompatibilityEvidencePacket["input"]["relationshipType"];
+}): CompatibilityReportDraft["scoreSummary"] {
+  if (input.score.totalScore >= 65 && input.score.totalScore <= 74) {
     return {
-      ...score,
+      ...input.score,
       scoreLabel: "조율형 궁합",
-      scoreCaution: `${score.totalScore}점은 안 맞는 점수가 아니라, 끌림과 보완은 있지만 속도·생활·회복 방식에 조율 장치가 필요한 궁합입니다.`,
+      scoreCaution: getCompatibilityScoreCaution(
+        input.relationshipType,
+        input.score.totalScore,
+      ),
     };
   }
 
-  return score;
+  return {
+    ...input.score,
+    scoreCaution: getCompatibilityScoreCaution(
+      input.relationshipType,
+      input.score.totalScore,
+    ),
+  };
 }
 
 function sanitizeDiagnosticTermText(input: string, removedTerms: Set<string>): string {
@@ -245,6 +259,16 @@ function sanitizeDiagnosticTermText(input: string, removedTerms: Set<string>): s
   return sanitizeCompatibilityAwkwardKoreanText(withoutDiagnosticTerms);
 }
 
+function sanitizeSafetyNoteText(input: string, removedTerms: Set<string>): string {
+  const sanitized = sanitizeDiagnosticTermText(input, removedTerms);
+
+  return /diagnostic-only|진단용|사용자용 본문|확정 feature|evidence|debug/u.test(
+    sanitized,
+  )
+    ? "이 리포트는 관계의 성공이나 실패를 단정하지 않습니다."
+    : sanitized;
+}
+
 function sanitizeDiagnosticTermsInValue(
   value: unknown,
   removedTerms: Set<string>,
@@ -264,10 +288,22 @@ function sanitizeDiagnosticTermsInValue(
   }
 
   return Object.fromEntries(
-    Object.entries(value).map(([key, item]) => [
-      key,
-      sanitizeDiagnosticTermsInValue(item, removedTerms),
-    ]),
+    Object.entries(value).map(([key, item]) => {
+      if (key === "safetyNotes" && Array.isArray(item)) {
+        return [
+          key,
+          item
+            .map((note) =>
+              typeof note === "string"
+                ? sanitizeSafetyNoteText(note, removedTerms)
+                : sanitizeDiagnosticTermsInValue(note, removedTerms),
+            )
+            .filter((note) => typeof note !== "string" || note.trim().length > 0),
+        ];
+      }
+
+      return [key, sanitizeDiagnosticTermsInValue(item, removedTerms)];
+    }),
   );
 }
 

@@ -31,6 +31,40 @@ describe("REPORT-18F compatibility relation rules", () => {
     expect(sodamToDeokmin?.tenGodKo).toBe("정인");
   });
 
+  it("detects business and family fixture day-master relations", () => {
+    const business = getDayMasterElementRelation("戊", "庚");
+    const family = getDayMasterElementRelation("癸", "戊");
+
+    expect(business?.relation).toBe("generates");
+    expect(business?.relationLabel).toBe("무토 -> 경금");
+    expect(family?.relation).toBe("controlled_by");
+    expect(family?.relationLabel).toBe("계수 -> 무토");
+  });
+
+  it("detects business and family fixture cross ten-god relations", () => {
+    const businessAToB = getCrossTenGodRelation({
+      viewerDayStem: "戊",
+      targetDayStem: "庚",
+    });
+    const businessBToA = getCrossTenGodRelation({
+      viewerDayStem: "庚",
+      targetDayStem: "戊",
+    });
+    const familyAToB = getCrossTenGodRelation({
+      viewerDayStem: "癸",
+      targetDayStem: "戊",
+    });
+    const familyBToA = getCrossTenGodRelation({
+      viewerDayStem: "戊",
+      targetDayStem: "癸",
+    });
+
+    expect(businessAToB?.tenGodKo).toBe("식신");
+    expect(businessBToA?.tenGodKo).toBe("편인");
+    expect(familyAToB?.tenGodKo).toBe("정관");
+    expect(familyBToA?.tenGodKo).toBe("정재");
+  });
+
   it("detects cross-person trine, clash, and harm relations", () => {
     const personARefs = [
       createBranchRef({

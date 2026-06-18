@@ -1,5 +1,6 @@
 import type { CompatibilityReportDraft } from "./compatibilityReportDraftTypes";
 import { COMPATIBILITY_REPORT_CHAPTER_IDS } from "./compatibilityReportDraftTypes";
+import { adaptCompatibilityTextForRelationshipType } from "../report-knowledge/compatibilityTypes";
 
 export type CompatibilityReportDraftValidationResult = {
   readonly ok: boolean;
@@ -28,6 +29,11 @@ const unsafeCompatibilityPhrases = [
   "OpenAI",
   "JSON",
   "schema",
+  "diagnostic-only",
+  "진단용",
+  "사용자용 본문",
+  "확정 feature",
+  "evidence",
   "debug",
   "draft",
   "feature evidence",
@@ -137,6 +143,15 @@ const finalAdviceKnownPrefixes = [
   "신뢰 관리",
 ] as const;
 
+const internalArtifactPhrases = [
+  "diagnostic-only",
+  "진단용",
+  "사용자용 본문",
+  "확정 feature",
+  "evidence",
+  "debug",
+] as const;
+
 export function sanitizeCompatibilityAwkwardKoreanText(text: string): string {
   return text
     .split("목·금가").join("목과 금의 흐름이")
@@ -145,8 +160,40 @@ export function sanitizeCompatibilityAwkwardKoreanText(text: string): string {
     .split("충가 있어").join("충이 있어");
 }
 
-function sanitizeStringArray(values: readonly string[]): readonly string[] {
-  return values.map(sanitizeCompatibilityAwkwardKoreanText);
+function sanitizeCompatibilityVisibleText(
+  text: string,
+  relationshipType: CompatibilityReportDraft["relationshipType"],
+): string {
+  return adaptCompatibilityTextForRelationshipType(
+    sanitizeCompatibilityAwkwardKoreanText(text),
+    relationshipType,
+  );
+}
+
+function containsInternalArtifactText(text: string): boolean {
+  return internalArtifactPhrases.some((phrase) => text.includes(phrase));
+}
+
+function sanitizeCompatibilitySafetyNote(
+  text: string,
+  relationshipType: CompatibilityReportDraft["relationshipType"],
+): string {
+  const sanitized = sanitizeCompatibilityVisibleText(text, relationshipType);
+
+  if (!containsInternalArtifactText(sanitized)) {
+    return sanitized;
+  }
+
+  return "이 리포트는 관계의 성공이나 실패를 단정하지 않습니다.";
+}
+
+function sanitizeStringArray(
+  values: readonly string[],
+  relationshipType: CompatibilityReportDraft["relationshipType"],
+): readonly string[] {
+  return values.map((value) =>
+    sanitizeCompatibilityVisibleText(value, relationshipType),
+  );
 }
 
 function sanitizeCompatibilityDraft(
@@ -154,42 +201,68 @@ function sanitizeCompatibilityDraft(
 ): CompatibilityReportDraft {
   return {
     ...draft,
-    openingTitle: sanitizeCompatibilityAwkwardKoreanText(draft.openingTitle),
-    openingSummary: sanitizeCompatibilityAwkwardKoreanText(draft.openingSummary),
-    coreLine: sanitizeCompatibilityAwkwardKoreanText(draft.coreLine),
+    openingTitle: sanitizeCompatibilityVisibleText(
+      draft.openingTitle,
+      draft.relationshipType,
+    ),
+    openingSummary: sanitizeCompatibilityVisibleText(
+      draft.openingSummary,
+      draft.relationshipType,
+    ),
+    coreLine: sanitizeCompatibilityVisibleText(
+      draft.coreLine,
+      draft.relationshipType,
+    ),
     scoreSummary: {
       ...draft.scoreSummary,
-      scoreLabel: sanitizeCompatibilityAwkwardKoreanText(
+      scoreLabel: sanitizeCompatibilityVisibleText(
         draft.scoreSummary.scoreLabel,
+        draft.relationshipType,
       ),
-      scoreCaution: sanitizeCompatibilityAwkwardKoreanText(
+      scoreCaution: sanitizeCompatibilityVisibleText(
         draft.scoreSummary.scoreCaution,
+        draft.relationshipType,
       ),
     },
     keyCompatibilityPoints: {
       attractionPoints: sanitizeStringArray(
         draft.keyCompatibilityPoints.attractionPoints,
+        draft.relationshipType,
       ),
       strengthPoints: sanitizeStringArray(
         draft.keyCompatibilityPoints.strengthPoints,
+        draft.relationshipType,
       ),
       frictionPoints: sanitizeStringArray(
         draft.keyCompatibilityPoints.frictionPoints,
+        draft.relationshipType,
       ),
       relationshipRules: sanitizeStringArray(
         draft.keyCompatibilityPoints.relationshipRules,
+        draft.relationshipType,
       ),
     },
     chapters: draft.chapters.map((chapter) => ({
       ...chapter,
-      title: sanitizeCompatibilityAwkwardKoreanText(chapter.title),
-      headline: sanitizeCompatibilityAwkwardKoreanText(chapter.headline),
-      body: sanitizeCompatibilityAwkwardKoreanText(chapter.body),
-      directHitScenes: sanitizeStringArray(chapter.directHitScenes),
-      practicalAdvice: sanitizeStringArray(chapter.practicalAdvice),
+      title: sanitizeCompatibilityVisibleText(chapter.title, draft.relationshipType),
+      headline: sanitizeCompatibilityVisibleText(
+        chapter.headline,
+        draft.relationshipType,
+      ),
+      body: sanitizeCompatibilityVisibleText(chapter.body, draft.relationshipType),
+      directHitScenes: sanitizeStringArray(
+        chapter.directHitScenes,
+        draft.relationshipType,
+      ),
+      practicalAdvice: sanitizeStringArray(
+        chapter.practicalAdvice,
+        draft.relationshipType,
+      ),
     })),
-    finalAdvice: sanitizeStringArray(draft.finalAdvice),
-    safetyNotes: sanitizeStringArray(draft.safetyNotes),
+    finalAdvice: sanitizeStringArray(draft.finalAdvice, draft.relationshipType),
+    safetyNotes: draft.safetyNotes.map((note) =>
+      sanitizeCompatibilitySafetyNote(note, draft.relationshipType),
+    ),
   };
 }
 
@@ -373,12 +446,9 @@ function collectFinalAdviceLabelMismatchWarnings(
 
   draft.finalAdvice.forEach((advice, index) => {
     const defaultLabel = finalAdviceDefaultLabels[index] ?? "실행 규칙";
-    const prefix = finalAdviceKnownPrefixes.find((candidate) =>
-      advice.trim().startsWith(`${candidate}:`),
-    );
-    const label = prefix ?? defaultLabel;
-    const body =
-      prefix === undefined ? advice : advice.trim().slice(prefix.length + 1);
+    const normalized = normalizeCompatibilityFinalAdviceItemForValidation(advice);
+    const label = normalized.label ?? defaultLabel;
+    const body = normalized.body;
 
     if (
       label === "도움 요청" &&
@@ -396,19 +466,21 @@ export function normalizeCompatibilityFinalAdviceItemForValidation(item: string)
   readonly label?: string;
   readonly body: string;
 } {
-  const body = sanitizeCompatibilityAwkwardKoreanText(item).trim();
-  const prefix = finalAdviceKnownPrefixes.find((candidate) =>
+  let body = sanitizeCompatibilityAwkwardKoreanText(item).trim();
+  let label: string | undefined;
+  let prefix = finalAdviceKnownPrefixes.find((candidate) =>
     body.startsWith(`${candidate}:`),
   );
 
-  if (prefix === undefined) {
-    return { body };
+  while (prefix !== undefined) {
+    label = prefix;
+    body = body.slice(prefix.length + 1).trim();
+    prefix = finalAdviceKnownPrefixes.find((candidate) =>
+      body.startsWith(`${candidate}:`),
+    );
   }
 
-  return {
-    label: prefix,
-    body: body.slice(prefix.length + 1).trim(),
-  };
+  return label === undefined ? { body } : { label, body };
 }
 
 export function validateCompatibilityReportDraft(

@@ -38,6 +38,12 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
       "family/business_work_partner/friendship에서는 연애, 데이트, 애인, 설렘 같은 표현을 쓰지 마라.",
     );
     expect(promptText).toContain(
+      "For business_work_partner, never use dating or romance language.",
+    );
+    expect(promptText).toContain(
+      "For family/friendship, never use dating or romance language.",
+    );
+    expect(promptText).toContain(
       "love/some/marriage에서는 업무 파트너처럼만 해석하지 마라.",
     );
     expect(promptText).toContain(
@@ -74,6 +80,15 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     );
     expect(promptText).toContain("명리학 용어를 쓸 때는 반드시");
     expect(promptText).toContain("계산값만 말하지 마라");
+    expect(promptText).toContain(
+      "Deep interpretation must match the actual relationLabel.",
+    );
+    expect(promptText).toContain(
+      "Do not reuse 갑목/정화 examples unless the actual relation is 갑목/정화.",
+    );
+    expect(promptText).toContain(
+      "Do not explain 상관/정인 unless the actual relationLabel contains 상관/정인.",
+    );
     expect(promptText).toContain("갑목이 정화를 생합니다");
     expect(promptText).toContain("상관/정인 관계입니다");
     expect(promptText).toContain("丑未 충이 있습니다");
@@ -97,6 +112,9 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain("목과 금의 흐름이");
     expect(promptText).toContain("화와 수의 흐름이 약해");
     expect(promptText).toContain("충이 있어");
+    expect(promptText).toContain(
+      "Safety notes must not mention internal policy terms like diagnostic-only, 진단용, evidence, or debug.",
+    );
   });
 
   it("builds repair instructions for unsafe copy, candidates, and unsupported terms", () => {

@@ -32,6 +32,17 @@ const compatibilitySmokeFixtureIds = [
   "business-work-partner-sample",
 ] as const;
 
+const expectedDeepLayerSmokeHints = {
+  "business-work-partner-sample": {
+    dayMaster: "무토 -> 경금",
+    crossTenGod: "식신/편인",
+  },
+  "family-unknown-mbti": {
+    dayMaster: "계수 -> 무토",
+    crossTenGod: "정관/정재",
+  },
+} as const;
+
 function getFixtureId(argv: readonly string[]): string {
   const flagIndex = argv.findIndex((arg) => arg === "--fixture");
   const inline = argv.find((arg) => arg.startsWith("--fixture="));
@@ -150,6 +161,21 @@ function writeScoreLabels(
   writeLine(`- ${labels.growthComplement}`);
 }
 
+function writeExpectedDeepLayerHints(fixtureId: string): void {
+  const hints =
+    expectedDeepLayerSmokeHints[
+      fixtureId as keyof typeof expectedDeepLayerSmokeHints
+    ];
+
+  if (hints === undefined) {
+    return;
+  }
+
+  writeLine("expected deep layer hints:");
+  writeLine(`- day_master_relation: ${hints.dayMaster}`);
+  writeLine(`- cross_ten_god: ${hints.crossTenGod}`);
+}
+
 function writeCompatibilityReportBody(input: {
   readonly draft: CompatibilityReportDraft;
   readonly warnings: readonly string[];
@@ -210,6 +236,7 @@ async function main(): Promise<void> {
     `relationship label: ${getCompatibilityRelationshipTypeLabel(fixture.input.relationshipType)}`,
   );
   writeScoreLabels(scoreLabels);
+  writeExpectedDeepLayerHints(fixture.id);
   writeLine(
     `person A: ${fixture.input.personA.displayName} ${fixture.input.personA.mbti ?? "MBTI unknown"}`,
   );

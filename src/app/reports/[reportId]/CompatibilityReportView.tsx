@@ -1,7 +1,9 @@
 import type { CompatibilityReportDraft } from "../../../lib/report-generation/compatibilityReportDraftTypes";
 import { sanitizeCompatibilityAwkwardKoreanText } from "../../../lib/report-generation/compatibilityReportDraftValidator";
 import {
+  adaptCompatibilityTextForRelationshipType,
   getCompatibilityRelationshipTypeLabel,
+  getCompatibilityScoreCaution,
   getCompatibilityScoreDisplayLabels,
   getCompatibilityScoreExplanation,
 } from "../../../lib/report-knowledge/compatibilityTypes";
@@ -335,7 +337,9 @@ function renderCompatibilityKeyPoints(draft: CompatibilityReportDraft) {
           <h3 className="text-sm font-semibold text-neutral-50">{title}</h3>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-300">
             {items.slice(0, 3).map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item}>
+                {formatCompatibilityDisplayText(item, draft.relationshipType)}
+              </li>
             ))}
           </ul>
         </article>
@@ -353,6 +357,7 @@ function getDraftDeepSajuBridge(
 
 function renderDeepSajuExplanationSections(
   note: CompatibilityDeepSajuBridgeResult["notes"][number],
+  relationshipType: CompatibilityReportDraft["relationshipType"],
 ) {
   const sections = [
     ["명리학적으로는", note.principleExplanation],
@@ -371,7 +376,7 @@ function renderDeepSajuExplanationSections(
           <div key={label} className="rounded-md border border-neutral-800 bg-neutral-950/50 p-3">
             <dt className="text-xs font-semibold text-amber-200">{label}</dt>
             <dd className="mt-1 text-sm leading-6 text-neutral-300">
-              {formatCompatibilityDisplayText(body)}
+              {formatCompatibilityDisplayText(body, relationshipType)}
             </dd>
           </div>
         ))}
@@ -387,12 +392,31 @@ function getLayerOrderIndex(
   return index >= 0 ? index : Number.MAX_SAFE_INTEGER;
 }
 
-function formatCompatibilityDisplayText(text: string): string {
-  return sanitizeCompatibilityAwkwardKoreanText(text);
+function formatCompatibilityDisplayText(
+  text: string,
+  relationshipType: CompatibilityReportDraft["relationshipType"],
+): string {
+  return adaptCompatibilityTextForRelationshipType(
+    sanitizeCompatibilityAwkwardKoreanText(text),
+    relationshipType,
+  );
+}
+
+function formatCompatibilitySafetyNote(
+  text: string,
+  relationshipType: CompatibilityReportDraft["relationshipType"],
+): string {
+  const safeText = formatCompatibilityDisplayText(text, relationshipType);
+
+  return /diagnostic-only|진단용|사용자용 본문|확정 feature|evidence|debug/u.test(
+    safeText,
+  )
+    ? "이 리포트는 관계의 성공이나 실패를 단정하지 않습니다."
+    : safeText;
 }
 
 function formatTechnicalRelationLabel(relationLabel: string): string {
-  return formatCompatibilityDisplayText(relationLabel).replace("->", "→");
+  return sanitizeCompatibilityAwkwardKoreanText(relationLabel).replace("->", "→");
 }
 
 function renderDeepSajuStructureCard(
@@ -443,13 +467,16 @@ function renderDeepSajuStructureCard(
             <p className="text-xs font-semibold text-amber-200">{note.title}</p>
             <h3 className="mt-1 text-base font-semibold leading-6 text-neutral-50">
               {note.plainKoreanSummary.trim().length > 0
-                ? formatCompatibilityDisplayText(note.plainKoreanSummary)
+                ? formatCompatibilityDisplayText(
+                    note.plainKoreanSummary,
+                    draft.relationshipType,
+                  )
                 : note.title}
             </h3>
             <p className="mt-2 text-xs font-semibold text-neutral-500">
               계산값: {formatTechnicalRelationLabel(note.relationLabel)}
             </p>
-            {renderDeepSajuExplanationSections(note)}
+            {renderDeepSajuExplanationSections(note, draft.relationshipType)}
           </article>
         ))}
       </div>
@@ -463,7 +490,10 @@ function renderDeepSajuStructureCard(
               <li key={`${note.layer}:${note.relationLabel}`}>
                 <span className="font-semibold text-neutral-100">{note.title}</span>
                 {": "}
-                {formatCompatibilityDisplayText(note.plainKoreanSummary)}
+                {formatCompatibilityDisplayText(
+                  note.plainKoreanSummary,
+                  draft.relationshipType,
+                )}
               </li>
             ))}
           </ul>
@@ -495,26 +525,26 @@ function getFinalAdviceLabel(input: {
 export function normalizeCompatibilityFinalAdviceItem(
   item: string,
   fallbackLabel: string,
+  relationshipType: CompatibilityReportDraft["relationshipType"] = "love",
 ): {
   readonly label: string;
   readonly body: string;
 } {
-  const body = sanitizeCompatibilityAwkwardKoreanText(item).trim();
-  const prefix = finalAdviceKnownPrefixes.find((candidate) =>
+  let label = fallbackLabel;
+  let body = formatCompatibilityDisplayText(item, relationshipType).trim();
+  let prefix = finalAdviceKnownPrefixes.find((candidate) =>
     body.startsWith(`${candidate}:`),
   );
 
-  if (prefix === undefined) {
-    return {
-      label: fallbackLabel,
-      body,
-    };
+  while (prefix !== undefined) {
+    label = prefix;
+    body = body.slice(prefix.length + 1).trim();
+    prefix = finalAdviceKnownPrefixes.find((candidate) =>
+      body.startsWith(`${candidate}:`),
+    );
   }
 
-  return {
-    label: prefix,
-    body: body.slice(prefix.length + 1).trim(),
-  };
+  return { label, body };
 }
 
 export function CompatibilityReportView({
@@ -530,7 +560,10 @@ export function CompatibilityReportView({
               사주×MBTI 궁합 리포트 v1.0
             </p>
             <h1 className="text-2xl font-bold tracking-tight text-neutral-50 sm:text-3xl">
-              {draft.openingTitle}
+              {formatCompatibilityDisplayText(
+                draft.openingTitle,
+                draft.relationshipType,
+              )}
             </h1>
             <div className="flex flex-wrap items-center gap-2 text-sm">
               <span className="font-semibold text-neutral-100">
@@ -556,15 +589,24 @@ export function CompatibilityReportView({
             </div>
             <div className="flex flex-col justify-center gap-3 rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
               <p className="text-base font-semibold leading-7 text-neutral-50">
-                {draft.coreLine}
+                {formatCompatibilityDisplayText(
+                  draft.coreLine,
+                  draft.relationshipType,
+                )}
               </p>
               <p className="text-sm leading-6 text-neutral-300">
-                {draft.scoreSummary.scoreCaution}
+                {getCompatibilityScoreCaution(
+                  draft.relationshipType,
+                  draft.scoreSummary.totalScore,
+                )}
               </p>
             </div>
           </div>
           <p className="max-w-prose text-base leading-7 text-neutral-300">
-            {draft.openingSummary}
+            {formatCompatibilityDisplayText(
+              draft.openingSummary,
+              draft.relationshipType,
+            )}
           </p>
         </div>
       </header>
@@ -626,14 +668,23 @@ export function CompatibilityReportView({
           >
             <div className="space-y-2">
               <h2 className="text-xl font-semibold text-neutral-50">
-                {chapter.title}
+                {formatCompatibilityDisplayText(
+                  chapter.title,
+                  draft.relationshipType,
+                )}
               </h2>
               <p className="text-base font-semibold leading-7 text-amber-100">
-                {chapter.headline}
+                {formatCompatibilityDisplayText(
+                  chapter.headline,
+                  draft.relationshipType,
+                )}
               </p>
             </div>
             <p className="max-w-prose whitespace-pre-line text-base leading-8 text-neutral-200">
-              {chapter.body}
+              {formatCompatibilityDisplayText(
+                chapter.body,
+                draft.relationshipType,
+              )}
             </p>
             <div className="grid gap-3 md:grid-cols-2">
               <section className="rounded-lg border border-amber-500/30 bg-amber-950/20 p-4">
@@ -642,7 +693,9 @@ export function CompatibilityReportView({
                 </h3>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-amber-50/90">
                   {chapter.directHitScenes.map((scene) => (
-                    <li key={scene}>{scene}</li>
+                    <li key={scene}>
+                      {formatCompatibilityDisplayText(scene, draft.relationshipType)}
+                    </li>
                   ))}
                 </ul>
               </section>
@@ -653,7 +706,12 @@ export function CompatibilityReportView({
                   </h3>
                   <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-300">
                     {chapter.practicalAdvice.map((advice) => (
-                      <li key={advice}>{advice}</li>
+                      <li key={advice}>
+                        {formatCompatibilityDisplayText(
+                          advice,
+                          draft.relationshipType,
+                        )}
+                      </li>
                     ))}
                   </ul>
                 </section>
@@ -671,6 +729,7 @@ export function CompatibilityReportView({
             const normalizedAdvice = normalizeCompatibilityFinalAdviceItem(
               advice,
               fallbackLabel,
+              draft.relationshipType,
             );
 
             return (
@@ -694,7 +753,9 @@ export function CompatibilityReportView({
         <h2 className="text-sm font-semibold text-neutral-400">안전 안내</h2>
         <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-500">
           {draft.safetyNotes.map((note) => (
-            <li key={note}>{note}</li>
+            <li key={note}>
+              {formatCompatibilitySafetyNote(note, draft.relationshipType)}
+            </li>
           ))}
         </ul>
       </section>

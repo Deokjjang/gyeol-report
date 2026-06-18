@@ -226,6 +226,66 @@ export function getCompatibilityScoreExplanation(input: {
   return compatibilityScoreExplanations[input.relationshipType][input.category];
 }
 
+export function adaptCompatibilityTextForRelationshipType(
+  text: string,
+  relationshipType: CompatibilityRelationshipType,
+): string {
+  if (relationshipType === "business_work_partner") {
+    return text
+      .split("감정의 설렘").join("초기 기대감")
+      .split("관계의 온도").join("협업 분위기")
+      .split("연애").join("파트너십")
+      .split("데이트").join("업무 미팅")
+      .split("애인").join("파트너")
+      .split("설렘").join("초기 기대감")
+      .split("끌림").join("협업 시너지")
+      .split("호감").join("협업 기대감");
+  }
+
+  if (relationshipType === "family") {
+    return text
+      .split("연애").join("가족 관계")
+      .split("데이트").join("생활 시간")
+      .split("애인").join("가족")
+      .split("설렘").join("정서 연결")
+      .split("호감").join("정서 연결")
+      .split("끌림").join("정서 연결");
+  }
+
+  if (relationshipType === "friendship") {
+    return text
+      .split("연애").join("친구 관계")
+      .split("데이트").join("만나는 시간")
+      .split("애인").join("친구")
+      .split("결혼").join("오래 가는 관계");
+  }
+
+  return text;
+}
+
+export function getCompatibilityScoreCaution(
+  relationshipType: CompatibilityRelationshipType,
+  totalScore: number,
+): string {
+  if (relationshipType === "love") {
+    return `${totalScore}점은 안 맞는 점수가 아니라, 끌림과 보완은 있지만 속도·생활·회복 방식에 조율 장치가 필요한 궁합입니다.`;
+  }
+  if (relationshipType === "some") {
+    return `${totalScore}점은 호감이 없다는 뜻이 아니라, 신호와 타이밍을 어떻게 맞추느냐에 따라 체감이 달라지는 궁합이라는 뜻입니다.`;
+  }
+  if (relationshipType === "marriage") {
+    return `${totalScore}점은 장기 관계의 가능성을 단정하지 않으며, 생활·돈·책임의 운영 방식에 따라 안정감이 달라진다는 뜻입니다.`;
+  }
+  if (relationshipType === "friendship") {
+    return `${totalScore}점은 친구 관계의 좋고 나쁨을 단정하지 않으며, 거리감과 도움 방식이 맞을수록 오래 편해지는 관계라는 뜻입니다.`;
+  }
+  if (relationshipType === "family") {
+    return `${totalScore}점은 가족 관계를 좋고 나쁘게 판정하는 값이 아니라, 말의 통로와 생활 리듬을 어떻게 조율해야 하는지 보여 주는 참고값입니다.`;
+  }
+
+  return `${totalScore}점은 파트너십의 성공을 단정하지 않으며, 역할·권한·책임 범위를 어떻게 나누느냐에 따라 협업 체감이 달라진다는 뜻입니다.`;
+}
+
 export type CompatibilityScoreResult = {
   readonly totalScore: number;
   readonly breakdown: CompatibilityScoreBreakdown;

@@ -2,7 +2,9 @@ import { describe, expect, it } from "vitest";
 
 import { requireCompatibilityFixture } from "../../../src/lib/report-knowledge/compatibilityFixtureMatrix";
 import {
+  adaptCompatibilityTextForRelationshipType,
   compatibilityRelationshipTypes,
+  getCompatibilityScoreCaution,
   getCompatibilityRelationshipTypeFocus,
   getCompatibilityRelationshipTypeLabel,
   getCompatibilityScoreDisplayLabels,
@@ -80,5 +82,39 @@ describe("REPORT-18A compatibility types", () => {
     expect(familyExplanation).not.toMatch(/연애|데이트|호감/u);
     expect(friendshipExplanation).toContain("거리 조절");
     expect(friendshipExplanation).not.toMatch(/애인|결혼/u);
+  });
+
+  it("adapts romance language away from non-romance relationship types", () => {
+    const romanceText = "연애 데이트 애인 설렘 호감 끌림 관계의 온도";
+    const business = adaptCompatibilityTextForRelationshipType(
+      romanceText,
+      "business_work_partner",
+    );
+    const family = adaptCompatibilityTextForRelationshipType(romanceText, "family");
+    const friendship = adaptCompatibilityTextForRelationshipType(
+      "연애 데이트 애인 결혼",
+      "friendship",
+    );
+
+    expect(business).not.toMatch(/데이트|연애|애인|설렘|호감/u);
+    expect(business).toContain("협업 시너지");
+    expect(family).not.toMatch(/데이트|연애|애인|설렘|호감/u);
+    expect(family).toContain("정서 연결");
+    expect(friendship).not.toMatch(/데이트|연애|애인|결혼/u);
+    expect(adaptCompatibilityTextForRelationshipType(romanceText, "love")).toBe(
+      romanceText,
+    );
+  });
+
+  it("uses relationship-specific score cautions", () => {
+    expect(getCompatibilityScoreCaution("love", 70)).toContain("끌림");
+    expect(getCompatibilityScoreCaution("business_work_partner", 70)).toContain(
+      "역할·권한·책임",
+    );
+    expect(getCompatibilityScoreCaution("business_work_partner", 70)).not.toContain(
+      "끌림",
+    );
+    expect(getCompatibilityScoreCaution("family", 70)).toContain("말의 통로");
+    expect(getCompatibilityScoreCaution("family", 70)).not.toContain("끌림");
   });
 });

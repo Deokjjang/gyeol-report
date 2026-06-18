@@ -1237,6 +1237,28 @@ The awkward Korean sanitizer was extended across validator, writer sanitizer,
 deep bridge output, and the render guard for narrow known phrases:
 `목·금가`, `목·금이 약해`, `화·수가 약해`, and `충가 있어`.
 
+## REPORT-18J Dynamic Interpretation and Category Language Fix
+
+REPORT-18J fixes a product-quality issue where deep compatibility explanations
+could reuse the Deokmin/Sodam `갑목 -> 정화` and `상관/정인` wording even when a
+different fixture had different calculated relations. Day-master interpretation
+now follows the actual five-element relation label, including cases such as
+`무토 -> 경금` as 토가 금을 생하는 구조 and `계수 -> 무토` as 토가 수를 제어하는
+구조. Cross ten-god interpretation now uses the actual pair, such as
+`식신/편인`, `정관/정재`, or `상관/정인`, instead of a fixed explanation.
+
+The compatibility type layer also provides relationship-type language
+adaptation. Business/work-partner, family, and friendship outputs remove
+romance/dating wording from visible generated copy while love, some, and
+marriage preserve relationship-appropriate language. Score caution copy is now
+relationship-specific so work and family reports do not reuse love-specific
+`끌림` framing.
+
+Visible safety notes are sanitized away from internal artifact terms such as
+`diagnostic-only`, `진단용`, `evidence`, and `debug`. The final-advice prefix
+normalizer also strips nested prefixes from the body across categories, so
+labels remain separate from the action text.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

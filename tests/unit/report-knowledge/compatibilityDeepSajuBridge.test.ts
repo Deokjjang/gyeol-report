@@ -72,6 +72,67 @@ describe("REPORT-18F compatibility deep Saju bridge", () => {
     expect(crossTenGod?.actionRule).toContain("바로 평가하지 말고");
   });
 
+  it("uses the actual day-master relation for business and family fixtures", () => {
+    const business = buildCompatibilityEvidencePacketFromFixtureId(
+      "business-work-partner-sample",
+    );
+    const family = buildCompatibilityEvidencePacketFromFixtureId("family-unknown-mbti");
+    const businessDayMaster = business.deepSajuBridge?.notes.find(
+      (note) => note.layer === "day_master_relation",
+    );
+    const familyDayMaster = family.deepSajuBridge?.notes.find(
+      (note) => note.layer === "day_master_relation",
+    );
+    const businessText = JSON.stringify(businessDayMaster);
+    const familyText = JSON.stringify(familyDayMaster);
+
+    expect(businessDayMaster?.relationLabel).toBe("무토 -> 경금");
+    expect(businessDayMaster?.principleExplanation).toContain("토는 금을 생합니다");
+    expect(businessDayMaster?.relationshipTranslation).toContain("무토");
+    expect(businessDayMaster?.relationshipTranslation).toContain("경금");
+    expect(businessDayMaster?.plainKoreanSummary).toContain("판단과 실행");
+    expect(businessText).not.toContain("갑목");
+    expect(businessText).not.toContain("정화");
+
+    expect(familyDayMaster?.relationLabel).toBe("계수 -> 무토");
+    expect(familyDayMaster?.principleExplanation).toContain("토는 수를 제어합니다");
+    expect(familyDayMaster?.relationshipTranslation).toContain("계수");
+    expect(familyDayMaster?.relationshipTranslation).toContain("무토");
+    expect(familyText).not.toContain("갑목");
+    expect(familyText).not.toContain("정화");
+  });
+
+  it("uses the actual cross ten-god pair instead of a fixed 상관/정인 explanation", () => {
+    const business = buildCompatibilityEvidencePacketFromFixtureId(
+      "business-work-partner-sample",
+    );
+    const family = buildCompatibilityEvidencePacketFromFixtureId("family-unknown-mbti");
+    const love = buildCompatibilityEvidencePacketFromFixtureId("deokmin-sodam-love");
+    const businessCrossTenGod = business.deepSajuBridge?.notes.find(
+      (note) => note.layer === "cross_ten_god",
+    );
+    const familyCrossTenGod = family.deepSajuBridge?.notes.find(
+      (note) => note.layer === "cross_ten_god",
+    );
+    const loveCrossTenGod = love.deepSajuBridge?.notes.find(
+      (note) => note.layer === "cross_ten_god",
+    );
+
+    expect(businessCrossTenGod?.relationLabel).toBe("식신/편인");
+    expect(businessCrossTenGod?.principleExplanation).toContain("식신은 생각");
+    expect(businessCrossTenGod?.principleExplanation).toContain("편인은 독립적인 해석");
+    expect(businessCrossTenGod?.principleExplanation).not.toContain("상관은 표현");
+    expect(businessCrossTenGod?.principleExplanation).not.toContain("정인은 의미");
+
+    expect(familyCrossTenGod?.relationLabel).toBe("정관/정재");
+    expect(familyCrossTenGod?.principleExplanation).toContain("정관은 책임");
+    expect(familyCrossTenGod?.principleExplanation).toContain("정재는 안정적 관리");
+
+    expect(loveCrossTenGod?.relationLabel).toBe("상관/정인");
+    expect(loveCrossTenGod?.principleExplanation).toContain("상관은 표현");
+    expect(loveCrossTenGod?.principleExplanation).toContain("정인은 의미");
+  });
+
   it("translates element complement and combined earth-heavy climate", () => {
     const packet = buildCompatibilityEvidencePacketFromFixtureId("deokmin-sodam-love");
     const complement = packet.deepSajuBridge?.notes.find(

@@ -253,6 +253,50 @@ describe("compatibilityReportDraftValidator", () => {
     expect(result.value?.finalAdvice.join("\n")).toContain("충이 있어");
   });
 
+  it("sanitizes internal artifact language from safety notes", () => {
+    const draft = createValidCompatibilityDraft();
+    const result = validate({
+      ...draft,
+      safetyNotes: [
+        "diagnostic-only 진단용 evidence debug 사용자용 본문 확정 feature",
+      ],
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.safetyNotes.join("\n")).toContain(
+      "이 리포트는 관계의 성공이나 실패를 단정하지 않습니다.",
+    );
+    expect(result.value?.safetyNotes.join("\n")).not.toMatch(
+      /diagnostic-only|진단용|evidence|debug/u,
+    );
+  });
+
+  it("adapts non-romance relationship copy before returning a sanitized draft", () => {
+    const draft = createValidCompatibilityDraft();
+    const business = validate({
+      ...draft,
+      relationshipType: "business_work_partner",
+      openingSummary: "연애 데이트 애인 설렘 호감 끌림",
+      scoreSummary: {
+        ...draft.scoreSummary,
+        scoreCaution: "끌림과 보완은 있지만 조율이 필요합니다.",
+      },
+    });
+    const family = validate({
+      ...draft,
+      relationshipType: "family",
+      openingSummary: "연애 데이트 애인 설렘 호감",
+    });
+
+    expect(business.ok).toBe(true);
+    expect(JSON.stringify(business.value)).not.toMatch(
+      /데이트|연애|애인|설렘|호감/u,
+    );
+    expect(JSON.stringify(business.value)).toContain("협업 시너지");
+    expect(family.ok).toBe(true);
+    expect(JSON.stringify(family.value)).not.toMatch(/데이트|연애|애인|설렘|호감/u);
+  });
+
   it("exposes a deterministic awkward Korean sanitizer", () => {
     expect(sanitizeCompatibilityAwkwardKoreanText("목·금가 살아납니다.")).toBe(
       "목과 금의 흐름이 살아납니다.",
@@ -284,6 +328,22 @@ describe("compatibilityReportDraftValidator", () => {
     ).toEqual({
       label: "도움 요청",
       body: "필요한 지원을 한 문장으로 말하세요.",
+    });
+    expect(
+      normalizeCompatibilityFinalAdviceItemForValidation(
+        "대화 규칙: 갈등 회복: 감정이 올라온 날에는 다음 날 다시 말하세요.",
+      ),
+    ).toEqual({
+      label: "갈등 회복",
+      body: "감정이 올라온 날에는 다음 날 다시 말하세요.",
+    });
+    expect(
+      normalizeCompatibilityFinalAdviceItemForValidation(
+        "업무 기준: 신뢰 관리: 결정권을 문서로 남기세요.",
+      ),
+    ).toEqual({
+      label: "신뢰 관리",
+      body: "결정권을 문서로 남기세요.",
     });
   });
 });
