@@ -1754,6 +1754,20 @@ Smoke QA now includes abnormal script warnings, monthly basis repetition
 warnings, grammar residue warnings, and parenthetical term warnings. These are
 visible-text checks, not raw JSON key scans.
 
+## SEUN-06D Annual Fortune Final Tiny UI Cleanup
+
+SEUN-06D removes the last duplicated standalone person label from the annual
+fortune hero. The visible order is now the product label, one hero context line
+such as `덕민님 · 甲(갑목) 일간 · 직장인`, one field interpretation line such as
+`개발·서비스 기획 기준으로 해석`, then the selected year display title and mode.
+
+This is still a report-body and preview lock step, not the annual product input
+flow. The engine already has year access policy for the recent five years,
+current year, next-year opening from December 1, and locked future years. The
+user-facing year selection UI, selectable year cards, pre-December locked
+new-year card, and paid annual generation flow are not implemented yet and
+belong to a later product input flow task.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

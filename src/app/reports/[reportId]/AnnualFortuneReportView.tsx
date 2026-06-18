@@ -287,9 +287,6 @@ export function AnnualFortuneReportView({
             </p>
           )}
           <div className="flex flex-wrap gap-2 text-sm">
-            <span className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 font-semibold text-neutral-100">
-              {heroPersonLabel}
-            </span>
             <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 font-semibold text-amber-100">
               {text(draft.yearSummary.displayTitle)}
             </span>

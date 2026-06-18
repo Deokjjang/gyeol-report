@@ -73,8 +73,12 @@ describe("AnnualFortuneReportView source", () => {
     expect(viewSource).toContain("getHeroDayMasterLabel");
     expect(viewSource).toContain("甲(갑목) 일간");
     expect(viewSource).toContain("기준으로 해석");
+    expect(viewSource).toContain("draft.yearSummary.displayTitle");
+    expect(viewSource).toContain("draft.yearSummary.modeLabel");
     expect(viewSource).not.toContain("개발·서비스 기획 직장인 · 甲(갑목) 일간 · 직장인");
     expect(viewSource).not.toContain("甲일간 직장인");
+    expect(viewSource).not.toContain("{heroPersonLabel}\n            </span>");
+    expect(viewSource.match(/heroPersonLabel/g)?.length ?? 0).toBeLessThanOrEqual(3);
     expect(viewSource).toContain("userContextSummary");
     expect(viewSource).not.toContain("세운 흐름 점수");
     expect(viewSource).not.toContain("draft.scoreSummary.totalScore");
