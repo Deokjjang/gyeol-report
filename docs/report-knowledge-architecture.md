@@ -1371,10 +1371,10 @@ vocabulary replacements happen at the last UI boundary as well as during draft
 validation.
 
 The preview snapshot writer now sanitizes the saved payload before writing
-`.tmp/compatibility-preview/<fixture>-latest.json`. It sanitizes both the draft
-and `evidencePacket.deepSajuBridge`, which is important because the preview UI
-can render deep bridge fields from snapshot/evidence data even when the main
-draft was already validated.
+`.tmp/compatibility-preview/<fixture>-latest.json`. It sanitizes the draft and
+the evidence packet's visible string values, including nested deepSajuBridge
+fields, which is important because the preview UI can render deep bridge fields
+from snapshot data even when the main draft was already validated.
 
 Business/work-partner deep notes no longer generate the romance-style element
 complement scene. Instead of text like `감정을 말로 바로 풀지 못할 때` or
@@ -1383,6 +1383,25 @@ complement scene. Instead of text like `감정을 말로 바로 풀지 못할 �
 actual saved snapshot after write and counts bad Korean phrases, forbidden
 category vocabulary, forbidden finalAdvice labels, duplicate labels, and
 internal artifacts from saved string values.
+
+## REPORT-18M-B Matrix Visible-Text QA and Business Copy Cleanup
+
+REPORT-18M-B narrows category matrix quality checks to user-visible text. The
+matrix no longer treats raw snapshot JSON keys such as `evidencePacket` as
+visible copy. It builds the quality text from draft opening copy, score summary,
+key compatibility points, chapter text, final advice, safety notes, and the
+deep-structure note fields that the report view renders.
+
+The visible internal-artifact guard still fails when terms such as
+`diagnostic-only`, `진단용`, `evidence`, or `debug` appear in rendered draft
+text or rendered deep-note text. The false positive from internal JSON key names
+is removed without weakening the user-facing copy guard.
+
+Business/work-partner copy cleanup now avoids broad global replacement of every
+`관계`, `온도`, or `반응`. Instead, it cleans only known awkward business phrases
+such as `협업의 협업 시너지을`, `현장 실행 피드백과 즉시성에 더 실행 피드백할 수 있습니다`,
+`표현의 협업 분위기`, and `실행 피드백만 하는 구조`, while preserving natural
+phrases such as 빠르게 반응할 수 있습니다.
 
 ## Future OpenAI Use
 

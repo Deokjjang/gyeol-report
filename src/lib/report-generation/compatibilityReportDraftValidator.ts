@@ -196,6 +196,7 @@ export function sanitizeCompatibilityKoreanCopy(text: string): string {
     .split("Family B이").join("Family B가")
     .split("파트너십가").join("파트너십이")
     .split("관리 부담가").join("관리 부담이")
+    .split("협업 시너지을").join("협업 시너지를")
     .split("협업 시너지은").join("협업 시너지는")
     .split("협업 시너지과").join("협업 시너지와")
     .split("업무 미팅와").join("업무 미팅과")

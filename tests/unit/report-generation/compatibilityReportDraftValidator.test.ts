@@ -5,6 +5,7 @@ import {
   normalizeCompatibilityFinalAdviceItemForValidation,
   sanitizeCompatibilityAwkwardKoreanText,
   sanitizeCompatibilityKoreanCopy,
+  sanitizeCompatibilityVisibleText,
   validateCompatibilityReportDraft,
 } from "../../../src/lib/report-generation/compatibilityReportDraftValidator";
 import {
@@ -389,6 +390,36 @@ describe("compatibilityReportDraftValidator", () => {
     ).toBe(
       "정화를 표현의 온도가 기준 정리가 무토는 계수는 Partner A를 Partner A는 Partner A가 Partner B를 Partner B는 Partner B가 Family A를 Family A는 Family B를 Family B는 파트너십이 관리 부담이 협업 시너지와 경금을",
     );
+  });
+
+  it("cleans business over-sanitized phrases without replacing every reaction word", () => {
+    const sanitized = sanitizeCompatibilityVisibleText(
+      [
+        "협업의 협업 시너지을 만듭니다.",
+        "현장 실행 피드백과 즉시성에 더 실행 피드백할 수 있습니다.",
+        "표현의 협업 분위기.",
+        "실행 피드백만 하는 구조.",
+        "자기 방식으로 실행 피드백하면 됩니다.",
+      ].join(" "),
+      "business_work_partner",
+    );
+    const reaction = sanitizeCompatibilityVisibleText(
+      "상황이 바뀌면 빠르게 반응합니다.",
+      "business_work_partner",
+    );
+
+    expect(sanitized).toContain("협업 시너지를 만듭니다.");
+    expect(sanitized).toContain(
+      "현장 피드백과 즉시성에 더 빠르게 반응할 수 있습니다.",
+    );
+    expect(sanitized).toContain("커뮤니케이션 분위기.");
+    expect(sanitized).toContain("실행만 맡는 구조.");
+    expect(sanitized).toContain("자기 방식으로 반응하면 됩니다.");
+    expect(sanitized).not.toMatch(
+      /협업의 협업 시너지을|협업 시너지을|현장 실행 피드백과 즉시성에 더 실행 피드백할 수 있습니다|표현의 협업 분위기|실행 피드백만 하는 구조/u,
+    );
+    expect(reaction).toContain("빠르게 반응합니다.");
+    expect(reaction).not.toContain("실행 피드백합니다.");
   });
 
   it("normalizes final advice prefixes for validation", () => {

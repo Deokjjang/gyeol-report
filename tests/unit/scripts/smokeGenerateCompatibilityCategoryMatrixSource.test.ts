@@ -29,6 +29,12 @@ describe("smoke_generate_compatibility_category_matrix source", () => {
     expect(source).toContain("buildQualityCounts");
     expect(source).toContain("readFile(snapshotFilePath");
     expect(source).toContain("getSnapshotVisibleText(savedSnapshot)");
+    expect(source).toContain("collectCompatibilityDraftVisibleText");
+    expect(source).toContain("collectVisibleDeepSajuBridgeText");
+    expect(source).toContain("collectCompatibilityDraftVisibleText(value.draft)");
+    expect(source).toContain("note.principleExplanation");
+    expect(source).toContain("note.relationshipTranslation");
+    expect(source).toContain("note.everydayScene");
     expect(source).toContain("파트너십가");
     expect(source).toContain("관리 부담가");
     expect(source).toContain("Partner A을");

@@ -998,19 +998,24 @@ function compactNotes(
 export function buildCompatibilityDeepSajuBridge(
   input: BuildCompatibilityDeepSajuBridgeInput,
 ): CompatibilityDeepSajuBridgeResult {
-  const personARefs = createBranchRefs(input.personA);
-  const personBRefs = createBranchRefs(input.personB);
+  const relationshipType = getDeepBridgeRelationshipType(input);
+  const effectiveInput =
+    relationshipType === input.relationshipType
+      ? input
+      : { ...input, relationshipType };
+  const personARefs = createBranchRefs(effectiveInput.personA);
+  const personBRefs = createBranchRefs(effectiveInput.personB);
   const branchRelations = detectCrossBranchRelations({
     personARefs,
     personBRefs,
   });
   const clashes = branchRelations.filter((relation) => relation.kind === "clash");
   const harms = branchRelations.filter((relation) => relation.kind === "harm");
-  const dayMasterRelation = buildDayMasterRelationNote(input);
-  const crossTenGod = buildCrossTenGodNote(input);
-  const elementComplement = buildElementComplementNote(input);
-  const combinedClimate = buildCombinedClimateNote(input);
-  const branchTrine = buildBranchTrineNote(input, branchRelations);
+  const dayMasterRelation = buildDayMasterRelationNote(effectiveInput);
+  const crossTenGod = buildCrossTenGodNote(effectiveInput);
+  const elementComplement = buildElementComplementNote(effectiveInput);
+  const combinedClimate = buildCombinedClimateNote(effectiveInput);
+  const branchTrine = buildBranchTrineNote(effectiveInput, branchRelations);
   const branchClash = buildBranchPressureNote({
     layer: "branch_clash",
     title: "지지 충",
@@ -1022,8 +1027,8 @@ export function buildCompatibilityDeepSajuBridge(
     relations: harms,
   });
   const spousePalace = buildSpousePalaceNote({
-    personA: input.personA,
-    personB: input.personB,
+    personA: effectiveInput.personA,
+    personB: effectiveInput.personB,
     relations: branchRelations,
   });
   const monthRhythm = buildMonthRhythmNote(branchRelations);

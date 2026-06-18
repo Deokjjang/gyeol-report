@@ -184,7 +184,6 @@ function getForbiddenCategoryVocabulary(
       "즐거움보다 의무",
       "감정을 말로 바로 풀지 못할 때",
       "온도를 올려 대화를 열고",
-      "관계",
     ];
   }
   if (relationshipType === "family") {
@@ -230,7 +229,7 @@ function countDuplicateLabels(labels: readonly string[]): number {
 
 function buildQualityCounts(input: {
   readonly relationshipType: CompatibilityRelationshipType;
-  readonly snapshotText?: string;
+  readonly visibleText?: string;
   readonly finalAdvice: readonly string[];
 }) {
   const labels = collectFinalAdviceLabels(input.finalAdvice);
@@ -238,17 +237,21 @@ function buildQualityCounts(input: {
     forbiddenFinalAdviceLabelsByRelationshipType[input.relationshipType];
 
   return {
-    badKoreanPhraseCount: countPhrases(input.snapshotText, badKoreanPhrases),
+    badKoreanPhraseCount: countPhrases(input.visibleText, badKoreanPhrases),
     forbiddenCategoryVocabularyCount: countPhrases(
-      input.snapshotText,
+      input.visibleText,
       getForbiddenCategoryVocabulary(input.relationshipType),
     ),
     finalAdviceForbiddenLabelCount: labels.filter((label) =>
       forbiddenFinalAdviceLabels.includes(label),
     ).length,
     duplicateFinalAdviceLabelCount: countDuplicateLabels(labels),
-    internalArtifactCount: countPhrases(input.snapshotText, internalArtifactPhrases),
+    internalArtifactCount: countPhrases(input.visibleText, internalArtifactPhrases),
   };
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
 function collectStringValues(value: unknown): readonly string[] {
@@ -258,15 +261,74 @@ function collectStringValues(value: unknown): readonly string[] {
   if (Array.isArray(value)) {
     return value.flatMap((item) => collectStringValues(item));
   }
-  if (typeof value !== "object" || value === null) {
+  if (!isRecord(value)) {
     return [];
   }
 
   return Object.values(value).flatMap((item) => collectStringValues(item));
 }
 
+function collectVisibleDeepSajuBridgeText(value: unknown): readonly string[] {
+  if (!isRecord(value) || !Array.isArray(value.notes)) {
+    return [];
+  }
+
+  return value.notes.flatMap((note) => {
+    if (!isRecord(note)) {
+      return [];
+    }
+
+    return collectStringValues([
+      note.title,
+      note.relationLabel,
+      note.principleExplanation,
+      note.relationshipTranslation,
+      note.positiveExpression,
+      note.riskExpression,
+      note.everydayScene,
+      note.actionRule,
+      note.plainKoreanSummary,
+    ]);
+  });
+}
+
+function collectCompatibilityDraftVisibleText(draft: unknown): readonly string[] {
+  if (!isRecord(draft)) {
+    return [];
+  }
+
+  const scoreSummary = isRecord(draft.scoreSummary)
+    ? draft.scoreSummary
+    : undefined;
+  const keyCompatibilityPoints = isRecord(draft.keyCompatibilityPoints)
+    ? draft.keyCompatibilityPoints
+    : undefined;
+
+  return [
+    ...collectStringValues([
+      draft.openingTitle,
+      draft.openingSummary,
+      draft.coreLine,
+      scoreSummary?.scoreLabel,
+      scoreSummary?.scoreCaution,
+      keyCompatibilityPoints?.attractionPoints,
+      keyCompatibilityPoints?.strengthPoints,
+      keyCompatibilityPoints?.frictionPoints,
+      keyCompatibilityPoints?.relationshipRules,
+      draft.chapters,
+      draft.finalAdvice,
+      draft.safetyNotes,
+    ]),
+    ...collectVisibleDeepSajuBridgeText(draft.deepSajuBridge),
+  ];
+}
+
 function getSnapshotVisibleText(value: unknown): string {
-  return collectStringValues(value).join("\n");
+  if (isRecord(value) && "draft" in value) {
+    return collectCompatibilityDraftVisibleText(value.draft).join("\n");
+  }
+
+  return collectCompatibilityDraftVisibleText(value).join("\n");
 }
 
 function sanitizeMatrixVisibleValue(
@@ -476,7 +538,7 @@ async function buildMatrixRow(input: {
   );
   let qualityCounts = buildQualityCounts({
     relationshipType: sanitizedDraft.relationshipType,
-    snapshotText: qualityText,
+    visibleText: qualityText,
     finalAdvice: sanitizedDraft.finalAdvice,
   });
   let snapshotPath: string | undefined;
@@ -498,7 +560,7 @@ async function buildMatrixRow(input: {
     qualityText = getSnapshotVisibleText(savedSnapshot);
     qualityCounts = buildQualityCounts({
       relationshipType: sanitizedDraft.relationshipType,
-      snapshotText: qualityText,
+      visibleText: qualityText,
       finalAdvice: sanitizedDraft.finalAdvice,
     });
     snapshotPath = getCompatibilityPreviewSnapshotRelativePath(fixture.id);
