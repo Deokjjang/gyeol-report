@@ -39,12 +39,17 @@ describe("MajorFortuneReportView source", () => {
   it("renders phase timeline and strong years labels", () => {
     expect(viewSource).toContain("대운 10년 흐름");
     expect(viewSource).toContain("강하게 체감될 수 있는 해");
+    expect(viewSource).toContain("getPhaseDisplayLabel");
+    expect(viewSource).toContain("초반 1~3년");
+    expect(viewSource).toContain("중반 4~7년");
+    expect(viewSource).toContain("후반 8~10년");
     expect(viewSource).toContain("반복될 수 있는 장면");
     expect(viewSource).toContain("실전 조언");
   });
 
   it("does not render raw fixture/precomputed wording", () => {
     expect(viewSource).toContain("sanitizeMajorFortuneVisibleText");
+    expect(viewSource).toContain("사전 계산된 대운표 기준");
     expect(viewSource).not.toContain("fixture_precomputed");
     expect(viewSource).not.toContain("precomputed");
   });

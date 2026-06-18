@@ -33,6 +33,9 @@ describe("smoke_generate_major_fortune_report_draft source", () => {
     expect(scriptSource).toContain("hard claim warnings:");
     expect(scriptSource).toContain("internal artifact warnings:");
     expect(scriptSource).toContain("repeated terminology warnings:");
+    expect(scriptSource).toContain("annual-tone warnings:");
+    expect(scriptSource).toContain("decade-tone warnings:");
+    expect(scriptSource).toContain("strong year reason warnings:");
     expect(scriptSource).toContain("getMajorFortunePreviewSnapshotRelativePath");
     expect(scriptSource).toContain("getMajorFortunePreviewUrl");
     expect(scriptSource).toContain("url:");

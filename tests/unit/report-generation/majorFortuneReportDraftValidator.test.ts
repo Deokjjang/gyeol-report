@@ -162,14 +162,14 @@ export function createValidMajorFortuneDraft(
         year: 2025,
         ganji: "乙巳",
         headline: "목과 화가 이어지는 해",
-        body: "방향을 세운 뒤 결과물을 밖으로 꺼내는 힘이 붙습니다.",
+        body: "대운 오행의 목 기운이 이어지고 화가 결과물을 밖으로 꺼내는 힘을 보탭니다.",
         advice: "작은 결과물부터 공개 가능한 형태로 남기세요.",
       },
       {
         year: 2026,
         ganji: "丙午",
         headline: "표현과 실행이 강해지는 해",
-        body: "성과와 책임이 같이 올라올 수 있습니다.",
+        body: "대운 지지와 원국 지지 작용 위에 표현과 실행의 오행이 강해질 수 있습니다.",
         advice: "마감 전 중간 점검 기준을 두세요.",
       },
     ],
@@ -330,7 +330,78 @@ describe("majorFortuneReportDraftValidator", () => {
       hardClaimWarnings: 0,
       internalArtifactWarnings: 0,
       repeatedTerminologyWarnings: 0,
+      annualToneWarnings: 0,
+      decadeToneWarnings: 0,
+      strongYearReasonWarnings: 0,
     });
+  });
+
+  it("warns when a major fortune draft overuses annual tone", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      openingSummary:
+        "올해는 2026년에는 이번 해 흐름을 봅니다. 올해 1월과 2월의 월별 흐름처럼 보입니다.",
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!).annualToneWarnings,
+    ).toBeGreaterThan(0);
+    expect(result.warnings.some((warning) =>
+      warning.startsWith("MAJOR_FORTUNE_ANNUAL_TONE_WARNING"),
+    )).toBe(true);
+  });
+
+  it("accepts decade tone markers for a major fortune draft", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      openingSummary:
+        "이 대운은 이 10년 동안 반복되는 구조를 봅니다. 이 구간은 초반, 중반, 후반으로 나뉘며 이전 대운과 다음 대운 사이의 연도 구간도 함께 봅니다.",
+    });
+
+    expect(result.ok).toBe(true);
+    expect(summarizeMajorFortuneDraftQuality(result.value!).decadeToneWarnings).toBe(0);
+  });
+
+  it("rejects missing early/middle/late phase order and more than three phases", () => {
+    const missingEarly = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      phaseTimeline: [
+        createValidMajorFortuneDraft().phaseTimeline[1],
+        createValidMajorFortuneDraft().phaseTimeline[2],
+        createValidMajorFortuneDraft().phaseTimeline[0],
+      ],
+    });
+    const tooMany = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      phaseTimeline: [
+        ...createValidMajorFortuneDraft().phaseTimeline,
+        createValidMajorFortuneDraft().phaseTimeline[2],
+      ],
+    });
+
+    expect(missingEarly.errors).toContain("MAJOR_FORTUNE_PHASE_TIMELINE_ORDER_INVALID");
+    expect(tooMany.errors).toContain("MAJOR_FORTUNE_PHASE_TIMELINE_INVALID");
+  });
+
+  it("warns when strong years do not explain why the year is strong", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      strongYears: createValidMajorFortuneDraft().strongYears.map((year) => ({
+        ...year,
+        headline: "강한 해",
+        body: "중요하게 체감될 수 있습니다.",
+        advice: "기록하세요.",
+      })),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!).strongYearReasonWarnings,
+    ).toBeGreaterThan(0);
+    expect(result.warnings.some((warning) =>
+      warning.startsWith("MAJOR_FORTUNE_STRONG_YEAR_REASON_WARNING"),
+    )).toBe(true);
   });
 
   it("exposes visible sanitizer directly", () => {

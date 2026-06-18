@@ -154,6 +154,9 @@ async function main(): Promise<void> {
   writeLine(`phase timeline: ${validation.value.phaseTimeline.length}`);
   writeLine(`strong years: ${validation.value.strongYears.length}`);
   writeLine(`final advice: ${validation.value.finalAdvice.length}`);
+  writeLine(`annual-tone warnings: ${quality.annualToneWarnings}`);
+  writeLine(`decade-tone warnings: ${quality.decadeToneWarnings}`);
+  writeLine(`strong year reason warnings: ${quality.strongYearReasonWarnings}`);
   writeLine(`hard claim warnings: ${quality.hardClaimWarnings}`);
   writeLine(`internal artifact warnings: ${quality.internalArtifactWarnings}`);
   writeLine(`repeated terminology warnings: ${quality.repeatedTerminologyWarnings}`);

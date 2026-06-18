@@ -16,6 +16,9 @@ export type MajorFortuneDraftQualitySummary = {
   readonly hardClaimWarnings: number;
   readonly internalArtifactWarnings: number;
   readonly repeatedTerminologyWarnings: number;
+  readonly annualToneWarnings: number;
+  readonly decadeToneWarnings: number;
+  readonly strongYearReasonWarnings: number;
 };
 
 const hardClaimReplacements = [
@@ -88,6 +91,47 @@ const repeatedTerms = [
 ] as const;
 
 const phaseOrder = ["early", "middle", "late"] as const satisfies readonly MajorFortunePhase[];
+
+const annualTonePhrases = [
+  "올해",
+  "이번 해",
+  "2026년에는",
+  "올해는",
+  "월별",
+  "1월",
+  "2월",
+] as const;
+
+const decadeToneMarkers = [
+  "이 대운",
+  "이 10년",
+  "이 구간",
+  "반복",
+  "초반",
+  "중반",
+  "후반",
+  "나이 구간",
+  "연도 구간",
+  "이전 대운",
+  "다음 대운",
+] as const;
+
+const strongYearReasonMarkers = [
+  "오행",
+  "십성",
+  "대운",
+  "원국",
+  "지지",
+  "천간",
+  "충",
+  "합",
+  "형",
+  "파",
+  "부족",
+  "과다",
+  "반복",
+  "강화",
+] as const;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -415,6 +459,37 @@ function countRepeatedTerminologyWarnings(visibleText: string): number {
   );
 }
 
+function countAnnualToneWarnings(visibleText: string): number {
+  const occurrences = annualTonePhrases.reduce(
+    (count, phrase) => count + countOccurrences(visibleText, phrase),
+    0,
+  );
+
+  return occurrences > 2 ? occurrences - 2 : 0;
+}
+
+function countDecadeToneWarnings(visibleText: string): number {
+  const markerCount = decadeToneMarkers.filter((marker) =>
+    visibleText.includes(marker),
+  ).length;
+
+  return markerCount >= 4 ? 0 : 4 - markerCount;
+}
+
+function countStrongYearReasonWarnings(
+  draft: MajorFortuneReportDraft,
+): number {
+  return draft.strongYears.filter((year) => {
+    const text = [
+      year.headline,
+      year.body,
+      year.advice,
+    ].join("\n");
+
+    return !strongYearReasonMarkers.some((marker) => text.includes(marker));
+  }).length;
+}
+
 export function summarizeMajorFortuneDraftQuality(
   draft: MajorFortuneReportDraft,
 ): MajorFortuneDraftQualitySummary {
@@ -430,11 +505,17 @@ export function summarizeMajorFortuneDraftQuality(
   );
   const repeatedTerminologyWarnings =
     countRepeatedTerminologyWarnings(visibleText);
+  const annualToneWarnings = countAnnualToneWarnings(visibleText);
+  const decadeToneWarnings = countDecadeToneWarnings(visibleText);
+  const strongYearReasonWarnings = countStrongYearReasonWarnings(draft);
 
   return {
     hardClaimWarnings,
     internalArtifactWarnings,
     repeatedTerminologyWarnings,
+    annualToneWarnings,
+    decadeToneWarnings,
+    strongYearReasonWarnings,
   };
 }
 
@@ -526,6 +607,19 @@ export function validateMajorFortuneReportDraft(
     if (visibleText.toLowerCase().includes(word.toLowerCase())) {
       errors.push(`MAJOR_FORTUNE_INTERNAL_WORD_VISIBLE:${word}`);
     }
+  }
+  const quality = summarizeMajorFortuneDraftQuality(sanitizedDraft);
+
+  if (quality.annualToneWarnings > 0) {
+    warnings.push(`MAJOR_FORTUNE_ANNUAL_TONE_WARNING:${quality.annualToneWarnings}`);
+  }
+  if (quality.decadeToneWarnings > 0) {
+    warnings.push(`MAJOR_FORTUNE_DECADE_TONE_WARNING:${quality.decadeToneWarnings}`);
+  }
+  if (quality.strongYearReasonWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_STRONG_YEAR_REASON_WARNING:${quality.strongYearReasonWarnings}`,
+    );
   }
 
   return errors.length === 0

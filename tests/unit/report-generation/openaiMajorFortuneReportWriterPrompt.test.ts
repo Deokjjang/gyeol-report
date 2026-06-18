@@ -38,6 +38,8 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("대운은 10년짜리 인생 배경");
     expect(text).toContain("세운은 선택한 1년의 흐름");
     expect(text).toContain("Interpret as long-term repeated themes");
+    expect(text).toContain("Do not write the report like an annual fortune");
+    expect(text).toContain("대운은 특정 사건 예언이 아니라 10년짜리 구조와 반복 패턴");
   });
 
   it("requires phase timeline and strong years explanation", () => {
@@ -45,7 +47,19 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
 
     expect(text).toContain("phaseTimeline must contain exactly three items");
     expect(text).toContain("early, middle, late");
+    expect(text).toContain("초반 1~3년");
+    expect(text).toContain("중반 4~7년");
+    expect(text).toContain("후반 8~10년");
     expect(text).toContain("strongYears must use provided strongYearsWithinCycle");
+    expect(text).toContain("Strong years must explain why that year is strong");
+  });
+
+  it("requires 10-year repeated themes in every main chapter", () => {
+    const text = promptText();
+
+    expect(text).toContain("Each main chapter must explain");
+    expect(text).toContain("10년 동안 반복될 장기 장면");
+    expect(text).toContain("less exhaustingly");
   });
 
   it("requires concrete scenes and all six domains", () => {

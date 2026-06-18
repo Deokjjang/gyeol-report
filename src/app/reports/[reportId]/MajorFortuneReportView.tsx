@@ -3,6 +3,7 @@ import type {
   MajorFortuneReportDraft,
 } from "../../../lib/report-generation/majorFortuneReportDraftTypes";
 import {
+  getMajorFortuneBasisDisplayLabel,
   sanitizeMajorFortuneVisibleText,
 } from "../../../lib/report-generation/majorFortuneReportDraftValidator";
 
@@ -11,6 +12,8 @@ type MajorFortuneReportViewProps = {
   readonly reportId?: string;
   readonly devStatus?: string;
 };
+
+const majorFortuneCycleBasisFallback = "사전 계산된 대운표 기준";
 
 function text(value: string): string {
   return sanitizeMajorFortuneVisibleText(value);
@@ -33,6 +36,19 @@ function getKeySignalDisplayLabel(type: MajorFortuneKeySignalType): string {
   return "주의 신호";
 }
 
+function getPhaseDisplayLabel(
+  phase: MajorFortuneReportDraft["phaseTimeline"][number],
+): string {
+  if (phase.phase === "early") {
+    return phase.label.includes("초반") ? text(phase.label) : "초반 1~3년";
+  }
+  if (phase.phase === "middle") {
+    return phase.label.includes("중반") ? text(phase.label) : "중반 4~7년";
+  }
+
+  return phase.label.includes("후반") ? text(phase.label) : "후반 8~10년";
+}
+
 function renderList(items: readonly string[]) {
   return (
     <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-300">
@@ -52,7 +68,12 @@ function renderCycleStructure(draft: MajorFortuneReportDraft) {
     ["지지", draft.cycleSummary.branchLabel],
     ["오행", draft.cycleSummary.elementLabel],
     ["십성", draft.cycleSummary.tenGodLabel],
-    ["계산 기준", draft.cycleSummary.basisLabel],
+    [
+      "계산 기준",
+      getMajorFortuneBasisDisplayLabel(
+        draft.cycleSummary.basisLabel || majorFortuneCycleBasisFallback,
+      ),
+    ],
   ] as const;
 
   return (
@@ -289,7 +310,7 @@ export function MajorFortuneReportView({
               className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
             >
               <p className="text-xs font-semibold text-sky-200">
-                {text(phase.label)}
+                {getPhaseDisplayLabel(phase)}
               </p>
               <h3 className="mt-1 text-base font-semibold text-neutral-50">
                 {text(phase.headline)}

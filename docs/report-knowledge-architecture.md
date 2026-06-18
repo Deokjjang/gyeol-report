@@ -1855,6 +1855,38 @@ timeline, strong years, final advice, and safety notes. Raw
 `fixture_precomputed` or `precomputed` wording is mapped to the user-facing
 label `사전 계산된 대운표 기준`.
 
+## DAEUN-03 Major Fortune First Generated Draft QA
+
+DAEUN-03 prepares the first paid-generation QA pass for the major fortune
+writer. API cost is intentionally limited to one manually triggered fixture:
+`deokmin-current-major-fortune`. Codex-side verification remains free and does
+not call OpenAI.
+
+The prompt and validator now distinguish 대운 from 세운 more strongly. A major
+fortune report must not read like a one-year annual fortune, must not focus on
+`올해` or monthly flow, and must emphasize `이 대운`, `이 10년`, `이 구간`,
+초반/중반/후반, previous/current/next cycle transition, and repeated long-term
+themes.
+
+Each main chapter is expected to connect the 대운 calculation value to a
+10-year repeated scene, explain why the scene can keep repeating, name the
+domain where it is likely to be felt, and give a way to use the decade less
+exhaustingly.
+
+The phase timeline is locked to three parts: early, middle, and late. The
+writer prompt frames them as 초반 1~3년 for new roles or environments, 중반
+4~7년 for repeated and hardened roles, and 후반 8~10년 for cleanup,
+transition, and next-cycle preparation.
+
+Strong years must not look random. Each strong year should explain why it is
+strong by referencing repeated or strengthened major-cycle elements, repeated
+ten-god themes, annual branch interactions with major/natal branches, missing
+element fill, or heavy element overload.
+
+The smoke draft script reports annual-tone warnings, decade-tone warnings,
+strong year reason warnings, hard claim warnings, internal artifact warnings,
+and repeated terminology warnings before writing a preview snapshot.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
