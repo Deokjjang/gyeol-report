@@ -8,6 +8,7 @@ import {
   getAnnualFortuneReportDraftSchemaTopLevelKeys,
 } from "../src/lib/report-generation/annualFortuneReportDraftTypes";
 import {
+  summarizeAnnualFortuneDraftQuality,
   validateAnnualFortuneReportDraft,
 } from "../src/lib/report-generation/annualFortuneReportDraftValidator";
 import {
@@ -162,6 +163,11 @@ async function main(): Promise<void> {
   }
   writeLine(`chapters: ${validation.value.chapters.length}`);
   writeLine(`monthly flow: ${validation.value.monthlyFlow.length}`);
+  writeLine(`monthly flow count: ${validation.value.monthlyFlow.length}`);
+  const quality = summarizeAnnualFortuneDraftQuality(validation.value);
+  writeLine(`vague copy warnings: ${quality.vagueCopyWarnings}`);
+  writeLine(`hard claim warnings: ${quality.hardClaimWarnings}`);
+  writeLine(`internal artifact warnings: ${quality.internalArtifactWarnings}`);
 
   if (writePreview) {
     await writeAnnualFortunePreviewSnapshot({
@@ -169,10 +175,15 @@ async function main(): Promise<void> {
       evidencePacket: packet,
       draft: validation.value,
     });
+    const snapshotPath = getAnnualFortunePreviewSnapshotRelativePath(fixture.id);
+    const previewUrl = getAnnualFortunePreviewUrl(fixture.id);
+
     writeLine("preview snapshot written:");
-    writeLine(getAnnualFortunePreviewSnapshotRelativePath(fixture.id));
+    writeLine(snapshotPath);
+    writeLine(`snapshot: ${snapshotPath}`);
     writeLine("Open in browser:");
-    writeLine(getAnnualFortunePreviewUrl(fixture.id));
+    writeLine(previewUrl);
+    writeLine(`url: ${previewUrl}`);
   }
   writeLine("done");
 }

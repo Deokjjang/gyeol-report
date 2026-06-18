@@ -11,6 +11,12 @@ export type AnnualFortuneReportDraftValidationResult = {
   readonly value?: AnnualFortuneReportDraft;
 };
 
+export type AnnualFortuneDraftQualitySummary = {
+  readonly vagueCopyWarnings: number;
+  readonly hardClaimWarnings: number;
+  readonly internalArtifactWarnings: number;
+};
+
 const hardClaimReplacements = [
   ["반드시", "흐름상"],
   ["무조건", "대체로"],
@@ -46,9 +52,50 @@ const internalForbiddenWords = [
 
 const modeToneMarkers = {
   past_review: ["그해", "회고", "그 시기", "왜", "흔들렸", "압박", "반복"],
-  current_year: ["올해", "준비", "활용", "기회", "조심", "흐름을 쓰는"],
-  new_year_preview: ["신년", "준비", "활용", "기회", "조심", "흐름을 쓰는"],
+  current_year: [
+    "올해",
+    "지금부터",
+    "준비",
+    "활용",
+    "조율",
+    "손실을 줄이",
+    "흐름을 쓰",
+  ],
+  new_year_preview: ["신년", "준비", "활용", "기회", "조심", "흐름을 쓰"],
 } as const satisfies Record<AnnualFortuneReportMode, readonly string[]>;
+
+const pastReviewToneMarkers = modeToneMarkers.past_review;
+
+const vagueAnnualFortunePhrases = [
+  "책임이 커질 수 있습니다",
+  "관계가 흔들릴 수 있습니다",
+  "기회가 올 수 있습니다",
+  "돈 문제가 생길 수 있습니다",
+  "조심해야 합니다",
+  "좋은 흐름입니다",
+  "나쁜 흐름입니다",
+] as const;
+
+const concreteSceneMarkers = [
+  "직장",
+  "가족",
+  "돈",
+  "시험",
+  "자격증",
+  "승진",
+  "이직",
+  "관계",
+  "연락",
+  "일정",
+  "계약",
+  "성과",
+  "결과물",
+  "생활비",
+  "부모",
+  "동료",
+  "상사",
+  "프로젝트",
+] as const;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -243,6 +290,47 @@ function collectVisibleStrings(draft: AnnualFortuneReportDraft): readonly string
   ];
 }
 
+function splitVisibleSentences(text: string): readonly string[] {
+  return text
+    .split(/(?<=[.!?。！？]|다\.|요\.|니다\.)\s+/u)
+    .map((sentence) => sentence.trim())
+    .filter((sentence) => sentence.length > 0);
+}
+
+function countOccurrences(text: string, phrase: string): number {
+  return phrase.length === 0 ? 0 : text.split(phrase).length - 1;
+}
+
+function containsConcreteSceneMarker(sentence: string): boolean {
+  return concreteSceneMarkers.some((marker) => sentence.includes(marker));
+}
+
+export function summarizeAnnualFortuneDraftQuality(
+  draft: AnnualFortuneReportDraft,
+): AnnualFortuneDraftQualitySummary {
+  const visibleText = collectVisibleStrings(draft).join("\n");
+  const visibleSentences = splitVisibleSentences(visibleText);
+  const vagueCopyWarnings = visibleSentences.filter((sentence) =>
+    vagueAnnualFortunePhrases.some((phrase) => sentence.includes(phrase)) &&
+    !containsConcreteSceneMarker(sentence),
+  ).length;
+  const hardClaimWarnings = hardClaimReplacements.reduce(
+    (count, [phrase]) => count + countOccurrences(visibleText, phrase),
+    0,
+  );
+  const internalArtifactWarnings = internalForbiddenWords.reduce(
+    (count, phrase) =>
+      count + countOccurrences(visibleText.toLowerCase(), phrase.toLowerCase()),
+    0,
+  );
+
+  return {
+    vagueCopyWarnings,
+    hardClaimWarnings,
+    internalArtifactWarnings,
+  };
+}
+
 function validateArrayLengths(
   draft: AnnualFortuneReportDraft,
   errors: string[],
@@ -282,6 +370,44 @@ function validateModeTone(
   if (!markers.some((marker) => visibleText.includes(marker))) {
     errors.push(`ANNUAL_FORTUNE_MODE_TONE_MISSING:${draft.mode}`);
   }
+
+  if (draft.mode === "current_year") {
+    const currentMarkerCount = modeToneMarkers.current_year.filter((marker) =>
+      visibleText.includes(marker),
+    ).length;
+    const pastMarkerCount = pastReviewToneMarkers.filter((marker) =>
+      visibleText.includes(marker),
+    ).length;
+
+    if (pastMarkerCount >= 3 && currentMarkerCount < 2) {
+      errors.push("ANNUAL_FORTUNE_CURRENT_YEAR_TONE_REVIEW_ONLY");
+    }
+  }
+}
+
+function validateCurrentYearCoreTone(
+  draft: AnnualFortuneReportDraft,
+  errors: string[],
+): void {
+  if (draft.mode !== "current_year") {
+    return;
+  }
+
+  const coreToneText = [
+    draft.openingSummary,
+    draft.coreLine,
+    draft.yearSummary.yearTone,
+  ].join("\n");
+  const currentMarkerCount = modeToneMarkers.current_year.filter((marker) =>
+    coreToneText.includes(marker),
+  ).length;
+  const pastMarkerCount = pastReviewToneMarkers.filter((marker) =>
+    coreToneText.includes(marker),
+  ).length;
+
+  if (pastMarkerCount >= 3 && currentMarkerCount < 2) {
+    errors.push("ANNUAL_FORTUNE_CURRENT_YEAR_TONE_REVIEW_ONLY");
+  }
 }
 
 export function validateAnnualFortuneReportDraft(
@@ -303,6 +429,14 @@ export function validateAnnualFortuneReportDraft(
 
   const visibleText = collectVisibleStrings(sanitizedDraft).join("\n");
   validateModeTone(sanitizedDraft, visibleText, errors);
+  validateCurrentYearCoreTone(sanitizedDraft, errors);
+  const quality = summarizeAnnualFortuneDraftQuality(sanitizedDraft);
+
+  if (quality.vagueCopyWarnings > 0) {
+    warnings.push(
+      `ANNUAL_FORTUNE_VAGUE_COPY_WARNING:${quality.vagueCopyWarnings}`,
+    );
+  }
 
   for (const word of internalForbiddenWords) {
     if (visibleText.toLowerCase().includes(word.toLowerCase())) {

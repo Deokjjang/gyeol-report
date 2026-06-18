@@ -38,6 +38,15 @@ const branchMetaByBranch: Record<string, StemMeta> = {
   亥: { element: "수", yinYang: "음수" },
 };
 
+const annualFortuneFlowAreaLabels = [
+  "일·성과",
+  "돈·현실",
+  "인간관계",
+  "연애·가족",
+  "학업·자격증",
+  "몸·생활 리듬",
+] as const;
+
 function getGanjiParts(ganji: string): {
   readonly stem: string;
   readonly branch: string;
@@ -73,7 +82,7 @@ function renderYearStructure(draft: AnnualFortuneReportDraft) {
         : draft.yearSummary.elementLabel,
     ],
     ["십성", draft.yearSummary.tenGodLabel],
-    ["모드", draft.yearSummary.modeLabel],
+    ["현재 모드", draft.yearSummary.modeLabel],
   ] as const;
 
   return (
@@ -162,26 +171,38 @@ export function AnnualFortuneReportView({
 
       {renderYearStructure(draft)}
 
-      <section className="grid gap-3 md:grid-cols-2" aria-label="흐름 카드">
-        {draft.flowCards.map((card) => (
-          <article
-            key={`${card.label}:${card.headline}`}
-            className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5"
-          >
-            <div className="flex items-start justify-between gap-3">
-              <h2 className="text-sm font-semibold text-neutral-400">
-                {card.label}
-              </h2>
-              <span className="text-xl font-bold text-amber-100">
-                {card.score}
-              </span>
-            </div>
-            <p className="mt-3 text-base font-semibold leading-7 text-neutral-50">
-              {card.headline}
-            </p>
-            <p className="mt-2 text-sm leading-6 text-neutral-300">{card.body}</p>
-          </article>
-        ))}
+      <section className="space-y-3" aria-label="흐름 카드">
+        <div className="flex flex-wrap gap-2">
+          {annualFortuneFlowAreaLabels.map((label) => (
+            <span
+              key={label}
+              className="rounded-full border border-neutral-800 bg-neutral-950/60 px-3 py-1 text-xs font-semibold text-neutral-300"
+            >
+              {label}
+            </span>
+          ))}
+        </div>
+        <div className="grid gap-3 md:grid-cols-2">
+          {draft.flowCards.map((card) => (
+            <article
+              key={`${card.label}:${card.headline}`}
+              className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <h2 className="text-sm font-semibold text-neutral-400">
+                  {card.label}
+                </h2>
+                <span className="text-xl font-bold text-amber-100">
+                  {card.score}
+                </span>
+              </div>
+              <p className="mt-3 text-base font-semibold leading-7 text-neutral-50">
+                {card.headline}
+              </p>
+              <p className="mt-2 text-sm leading-6 text-neutral-300">{card.body}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">

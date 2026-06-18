@@ -17,6 +17,9 @@ describe("smoke_generate_annual_fortune_report_draft source", () => {
     expect(source).toContain("year:");
     expect(source).toContain("ganji:");
     expect(source).toContain("ten god:");
+    expect(source).toContain("vague copy warnings:");
+    expect(source).toContain("hard claim warnings:");
+    expect(source).toContain("internal artifact warnings:");
     expect(source).toContain("life area signals");
     expect(source).toContain("difficulty signals");
     expect(source).toContain("opportunity signals");
@@ -32,6 +35,9 @@ describe("smoke_generate_annual_fortune_report_draft source", () => {
     expect(source).toContain("getAnnualFortunePreviewUrl");
     expect(source).toContain("preview snapshot written:");
     expect(source).toContain("Open in browser:");
+    expect(source).toContain("snapshot:");
+    expect(source).toContain("url:");
+    expect(source).toContain("monthly flow count:");
     expect(source).toContain("annualFortuneResponseFormatName");
     expect(source).toContain("schema approx chars:");
     expect(source).not.toContain("writeLine(`OPENAI_API_KEY");

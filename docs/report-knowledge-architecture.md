@@ -1512,6 +1512,55 @@ point. With the writer disabled, it prints the annual evidence summary and skips
 draft generation. With the writer enabled and `--write-preview`, it generates
 one fixture draft and writes the preview snapshot for browser review.
 
+## SEUN-03 Annual Fortune First Generated Draft QA
+
+SEUN-03 is the first paid-generation QA step for 세운 리포트 v1.0. It intentionally
+limits OpenAI generation to one fixture only: `deokmin-2026-current`. Do not run
+an annual fixture matrix for this step. The goal is to inspect one real current
+year draft, calibrate copy quality, and preserve API cost.
+
+The interpretation policy remains:
+
+1. 계산은 정직하게.
+2. 해석은 구체적으로.
+3. 문장은 용하게.
+4. 결과는 단정하지 않는다.
+
+For 2026 丙午 and a 甲 day master, the draft must preserve the evidence shape:
+식신 activation, fire filling weak fire, and the double effect where fire can
+also generate already-heavy earth. This means the report should not frame 2026
+as simply good. It should explain that expression, output, production, content,
+and visibility can rise while work, money, responsibility, performance, and
+reality pressure may rise together.
+
+The writer prompt now requires every chapter to include:
+
+1. the relevant 명리 calculation value
+2. at least two likely life-scene candidates
+3. why the flow can feel that way
+4. how to use the flow constructively
+
+Required scene domains are 일·성과, 돈·현실, 인간관계, 연애·가족, 학업·자격증, and
+몸·생활 리듬. Generic fortune-cookie phrases such as "책임이 커질 수 있습니다",
+"관계가 흔들릴 수 있습니다", "기회가 올 수 있습니다", or "돈 문제가 생길 수
+있습니다" are tracked as vague copy unless the sentence names a concrete area
+or scene such as 직장, 가족, 돈, 시험, 자격증, 승진, 이직, 관계, 연락, 일정,
+계약, 성과, 결과물, 생활비, 부모, 동료, 상사, or 프로젝트.
+
+The validator and smoke script report quality counters:
+
+1. vague copy warnings
+2. hard claim warnings
+3. internal artifact warnings
+4. monthly flow count
+5. chapter count
+
+Current-year mode must read as a live-use report, not only as past 회고. It should
+use ideas such as 올해, 지금부터, 준비, 활용, 조율, 손실을 줄이기, and 흐름을
+쓰기. Hard deterministic claims remain blocked or softened: 반드시, 무조건,
+합격합니다, 불합격합니다, 이직합니다, 퇴사합니다, 승진합니다, 돈을 법니다,
+병이 생깁니다, 결혼합니다, 헤어집니다.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

@@ -169,4 +169,57 @@ describe("annualFortuneReportDraftValidator", () => {
       ).ok,
     ).toBe(true);
   });
+
+  it("flags generic vague annual fortune phrases", () => {
+    const draft = createValidAnnualDraft({
+      chapters: createValidAnnualDraft().chapters.map((chapter, index) =>
+        index === 0
+          ? {
+              ...chapter,
+              body: "올해는 책임이 커질 수 있습니다.",
+            }
+          : chapter,
+      ),
+    });
+    const result = validateAnnualFortuneReportDraft(draft);
+
+    expect(result.ok).toBe(true);
+    expect(result.warnings).toContain("ANNUAL_FORTUNE_VAGUE_COPY_WARNING:1");
+  });
+
+  it("accepts concrete scene candidates even when they mention pressure", () => {
+    const draft = createValidAnnualDraft({
+      chapters: createValidAnnualDraft().chapters.map((chapter, index) =>
+        index === 0
+          ? {
+              ...chapter,
+              body:
+                "직장 프로젝트에서 책임이 커질 수 있습니다. 결과물과 성과 기준을 직접 잡아야 하는 장면으로 이어지기 쉽습니다.",
+            }
+          : chapter,
+      ),
+    });
+    const result = validateAnnualFortuneReportDraft(draft);
+
+    expect(result.ok).toBe(true);
+    expect(result.warnings).not.toContain("ANNUAL_FORTUNE_VAGUE_COPY_WARNING:1");
+  });
+
+  it("rejects purely past-review tone for current_year drafts", () => {
+    const result = validateAnnualFortuneReportDraft({
+      ...createValidAnnualDraft({ mode: "current_year" }),
+      openingSummary:
+        "그해 회고에서 왜 흔들렸는지와 그 시기 압박이 반복된 이유만 봅니다.",
+      coreLine: "그해 왜 압박이 반복됐는지 회고하는 흐름입니다.",
+      yearSummary: {
+        ...createValidAnnualDraft().yearSummary,
+        yearTone: "그해 회고와 그 시기 반복 압박만 설명합니다.",
+      },
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors).toContain(
+      "ANNUAL_FORTUNE_CURRENT_YEAR_TONE_REVIEW_ONLY",
+    );
+  });
 });

@@ -36,10 +36,32 @@ describe("openaiAnnualFortuneReportWriterPrompt", () => {
     const prompt = buildMessagesText();
 
     expect(prompt).toContain("Concrete scenes are required");
+    expect(prompt).toContain("명리 계산값");
+    expect(prompt).toContain("실제 생활 장면 후보 2개 이상");
+    expect(prompt).toContain("왜 그렇게 체감될 수 있는지");
+    expect(prompt).toContain("어떻게 쓰면 좋은지");
     expect(prompt).toContain("Past review mode rule");
     expect(prompt).toContain("Current year mode rule");
     expect(prompt).toContain("New year preview mode rule");
     expect(prompt).toContain("monthlyFlow must contain exactly 12 items");
+    expect(prompt).toContain("일·성과");
+    expect(prompt).toContain("돈·현실");
+    expect(prompt).toContain("인간관계");
+    expect(prompt).toContain("연애·가족");
+    expect(prompt).toContain("학업·자격증");
+    expect(prompt).toContain("몸·생활 리듬");
+  });
+
+  it("includes preparation-oriented current-year tone rules", () => {
+    const prompt = buildMessagesText();
+
+    expect(prompt).toContain("올해");
+    expect(prompt).toContain("지금부터");
+    expect(prompt).toContain("준비");
+    expect(prompt).toContain("활용");
+    expect(prompt).toContain("조율");
+    expect(prompt).toContain("손실을 줄이기");
+    expect(prompt).toContain("흐름을 쓰기");
   });
 
   it("forbids guaranteed outcomes and vague copy", () => {
