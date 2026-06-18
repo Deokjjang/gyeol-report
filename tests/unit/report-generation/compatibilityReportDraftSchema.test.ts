@@ -31,6 +31,16 @@ describe("compatibilityReportDraftSchema", () => {
     expect(compatibilityReportDraftJsonSchema.properties.productVersion).toMatchObject({
       enum: ["1.0"],
     });
+    expect(compatibilityReportDraftJsonSchema.properties.relationshipType).toMatchObject({
+      enum: [
+        "love",
+        "marriage",
+        "some",
+        "friendship",
+        "family",
+        "business_work_partner",
+      ],
+    });
     expect(getCompatibilityReportDraftSchemaTopLevelKeys()).toEqual(
       expect.arrayContaining([
         "scoreSummary",

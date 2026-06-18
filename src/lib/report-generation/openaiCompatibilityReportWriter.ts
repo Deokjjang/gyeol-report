@@ -3,6 +3,7 @@ import type { CompatibilityReportDraft } from "./compatibilityReportDraftTypes";
 import { compatibilityReportDraftJsonSchema } from "./compatibilityReportDraftSchema";
 import {
   assertValidCompatibilityReportDraft,
+  sanitizeCompatibilityAwkwardKoreanText,
   validateCompatibilityReportDraft,
 } from "./compatibilityReportDraftValidator";
 import {
@@ -226,7 +227,7 @@ function buildCompatibilityDraftScoreSummary(
 }
 
 function sanitizeDiagnosticTermText(input: string, removedTerms: Set<string>): string {
-  return diagnosticOnlyCompatibilityTerms
+  const withoutDiagnosticTerms = diagnosticOnlyCompatibilityTerms
     .reduce((text, term) => {
       if (!text.includes(term)) {
         return text;
@@ -240,6 +241,8 @@ function sanitizeDiagnosticTermText(input: string, removedTerms: Set<string>): s
     .replace(/\s+([,.!?。])/g, "$1")
     .replace(/\(\s*\)/g, "")
     .trim();
+
+  return sanitizeCompatibilityAwkwardKoreanText(withoutDiagnosticTerms);
 }
 
 function sanitizeDiagnosticTermsInValue(

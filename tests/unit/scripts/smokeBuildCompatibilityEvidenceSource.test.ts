@@ -17,6 +17,11 @@ describe("REPORT-18A compatibility evidence smoke source", () => {
     expect(source).toContain("deokmin-sodam-love");
     expect(source).toContain("compatibility fixture:");
     expect(source).toContain("relationship type:");
+    expect(source).toContain("relationship label:");
+    expect(source).toContain("getCompatibilityRelationshipTypeLabel");
+    expect(source).toContain("score labels:");
+    expect(source).toContain("getCompatibilityScoreDisplayLabels");
+    expect(source).toContain("business-work-partner-sample");
     expect(source).toContain("score total:");
     expect(source).toContain("lifestyleRhythm");
     expect(source).toContain("shared features:");

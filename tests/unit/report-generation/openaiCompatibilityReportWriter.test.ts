@@ -203,6 +203,23 @@ describe("openaiCompatibilityReportWriter", () => {
     expect(JSON.stringify(result.value)).not.toContain("백호대살");
   });
 
+  it("sanitizes awkward Korean phrases in the writer sanitizer path", () => {
+    const draft = createValidCompatibilityDraft();
+    const contaminated: CompatibilityReportDraft = {
+      ...draft,
+      openingSummary: `${draft.openingSummary} 목·금가 살아납니다.`,
+      finalAdvice: [...draft.finalAdvice, "丑未 충가 있어 바로 결론 내리지 마세요."],
+    };
+
+    const result = sanitizeCompatibilityDiagnosticTerms(contaminated);
+    const serialized = JSON.stringify(result.value);
+
+    expect(serialized).not.toContain("목·금가");
+    expect(serialized).not.toContain("충가 있어");
+    expect(serialized).toContain("목과 금의 흐름이");
+    expect(serialized).toContain("충이 있어");
+  });
+
   it("sanitizes diagnostic-only terms before final validation", async () => {
     const packet = buildCompatibilityEvidencePacketFromFixtureId("deokmin-sodam-love");
     const contaminated = {

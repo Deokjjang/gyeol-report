@@ -1,4 +1,10 @@
 import type { CompatibilityReportDraft } from "../../../lib/report-generation/compatibilityReportDraftTypes";
+import { sanitizeCompatibilityAwkwardKoreanText } from "../../../lib/report-generation/compatibilityReportDraftValidator";
+import {
+  getCompatibilityRelationshipTypeLabel,
+  getCompatibilityScoreDisplayLabels,
+  getCompatibilityScoreExplanation,
+} from "../../../lib/report-knowledge/compatibilityTypes";
 import type {
   CompatibilityDeepSajuBridgeResult,
   CompatibilityDeepSajuLayer,
@@ -12,27 +18,8 @@ type CompatibilityReportViewProps = {
 function formatCompatibilityRelationshipType(
   relationshipType: CompatibilityReportDraft["relationshipType"],
 ): string {
-  const labels = {
-    love: "연애",
-    some: "썸",
-    marriage: "결혼/장기연애",
-    friendship: "친구",
-  } as const satisfies Record<CompatibilityReportDraft["relationshipType"], string>;
-
-  return labels[relationshipType];
+  return getCompatibilityRelationshipTypeLabel(relationshipType);
 }
-
-const compatibilityScoreLabels = {
-  attraction: "끌림",
-  communication: "대화",
-  lifestyleRhythm: "생활 리듬",
-  conflictRecovery: "갈등 회복",
-  longTermStability: "장기 안정성",
-  growthComplement: "성장 보완",
-} as const satisfies Record<
-  keyof CompatibilityReportDraft["scoreSummary"]["breakdown"],
-  string
->;
 
 const compatibilityScoreOrder = [
   "attraction",
@@ -43,11 +30,23 @@ const compatibilityScoreOrder = [
   "growthComplement",
 ] as const satisfies readonly (keyof CompatibilityReportDraft["scoreSummary"]["breakdown"])[];
 
-const finalAdviceLabels = [
+const finalAdviceLabels = ["대화 규칙", "생활 기준", "도움 요청", "갈등 회복"] as const;
+
+const finalAdviceKnownPrefixes = [
   "대화 규칙",
   "생활 기준",
   "도움 요청",
   "갈등 회복",
+  "실행 규칙",
+  "돈과 생활",
+  "관계 기준",
+  "감정 표현",
+  "거리 조절",
+  "역할 분담",
+  "피드백 규칙",
+  "업무 기준",
+  "의사결정",
+  "신뢰 관리",
 ] as const;
 
 const finalAdviceConflictMarkers = [
@@ -212,25 +211,9 @@ function getPersonCautionSummary(
   return "속도와 감정 표현을 상대 기준에 맞춰 확인할 필요가 있음";
 }
 
-function getScoreInterpretation(
-  key: keyof CompatibilityReportDraft["scoreSummary"]["breakdown"],
-): string {
-  const interpretations = {
-    attraction: "처음 당기는 힘은 강한 편입니다.",
-    communication: "말의 속도와 정리 순서를 맞춰야 편합니다.",
-    lifestyleRhythm: "기준을 맞추면 안정적으로 굴러갈 수 있습니다.",
-    conflictRecovery: "바로 풀기보다 시간을 두고 다시 말해야 하는 조합입니다.",
-    longTermStability: "역할과 책임을 나누면 길게 가기 좋습니다.",
-    growthComplement: "서로의 빈칸을 자극하는 보완성이 있습니다.",
-  } as const satisfies Record<
-    keyof CompatibilityReportDraft["scoreSummary"]["breakdown"],
-    string
-  >;
-
-  return interpretations[key];
-}
-
 function renderCompatibilityScoreCards(draft: CompatibilityReportDraft) {
+  const scoreLabels = getCompatibilityScoreDisplayLabels(draft.relationshipType);
+
   return (
     <section className="space-y-4" aria-label="종합 궁합 점수 세부 항목">
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -240,13 +223,17 @@ function renderCompatibilityScoreCards(draft: CompatibilityReportDraft) {
             className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4"
           >
             <p className="text-xs font-semibold text-neutral-500">
-              {compatibilityScoreLabels[key]}
+              {scoreLabels[key]}
             </p>
             <p className="mt-1 text-2xl font-bold text-neutral-50">
               {draft.scoreSummary.breakdown[key]}
             </p>
             <p className="mt-2 text-xs leading-5 text-neutral-400">
-              {getScoreInterpretation(key)}
+              {getCompatibilityScoreExplanation({
+                relationshipType: draft.relationshipType,
+                category: key,
+                score: draft.scoreSummary.breakdown[key],
+              })}
             </p>
           </div>
         ))}
@@ -383,7 +370,9 @@ function renderDeepSajuExplanationSections(
         .map(([label, body]) => (
           <div key={label} className="rounded-md border border-neutral-800 bg-neutral-950/50 p-3">
             <dt className="text-xs font-semibold text-amber-200">{label}</dt>
-            <dd className="mt-1 text-sm leading-6 text-neutral-300">{body}</dd>
+            <dd className="mt-1 text-sm leading-6 text-neutral-300">
+              {formatCompatibilityDisplayText(body)}
+            </dd>
           </div>
         ))}
     </dl>
@@ -398,8 +387,12 @@ function getLayerOrderIndex(
   return index >= 0 ? index : Number.MAX_SAFE_INTEGER;
 }
 
+function formatCompatibilityDisplayText(text: string): string {
+  return sanitizeCompatibilityAwkwardKoreanText(text);
+}
+
 function formatTechnicalRelationLabel(relationLabel: string): string {
-  return relationLabel.replace("->", "→");
+  return formatCompatibilityDisplayText(relationLabel).replace("->", "→");
 }
 
 function renderDeepSajuStructureCard(
@@ -450,7 +443,7 @@ function renderDeepSajuStructureCard(
             <p className="text-xs font-semibold text-amber-200">{note.title}</p>
             <h3 className="mt-1 text-base font-semibold leading-6 text-neutral-50">
               {note.plainKoreanSummary.trim().length > 0
-                ? note.plainKoreanSummary
+                ? formatCompatibilityDisplayText(note.plainKoreanSummary)
                 : note.title}
             </h3>
             <p className="mt-2 text-xs font-semibold text-neutral-500">
@@ -470,7 +463,7 @@ function renderDeepSajuStructureCard(
               <li key={`${note.layer}:${note.relationLabel}`}>
                 <span className="font-semibold text-neutral-100">{note.title}</span>
                 {": "}
-                {note.plainKoreanSummary}
+                {formatCompatibilityDisplayText(note.plainKoreanSummary)}
               </li>
             ))}
           </ul>
@@ -497,6 +490,31 @@ function getFinalAdviceLabel(input: {
   }
 
   return defaultLabel;
+}
+
+export function normalizeCompatibilityFinalAdviceItem(
+  item: string,
+  fallbackLabel: string,
+): {
+  readonly label: string;
+  readonly body: string;
+} {
+  const body = sanitizeCompatibilityAwkwardKoreanText(item).trim();
+  const prefix = finalAdviceKnownPrefixes.find((candidate) =>
+    body.startsWith(`${candidate}:`),
+  );
+
+  if (prefix === undefined) {
+    return {
+      label: fallbackLabel,
+      body,
+    };
+  }
+
+  return {
+    label: prefix,
+    body: body.slice(prefix.length + 1).trim(),
+  };
 }
 
 export function CompatibilityReportView({
@@ -648,17 +666,27 @@ export function CompatibilityReportView({
       <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
         <h2 className="text-lg font-semibold text-neutral-50">오늘부터 할 일</h2>
         <ol className="grid gap-3">
-          {draft.finalAdvice.map((advice, index) => (
-            <li
-              key={advice}
-              className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
-            >
-              <p className="text-sm font-semibold text-amber-100">
-                {index + 1}. {getFinalAdviceLabel({ advice, index })}
-              </p>
-              <p className="mt-2 text-sm leading-6 text-neutral-300">{advice}</p>
-            </li>
-          ))}
+          {draft.finalAdvice.map((advice, index) => {
+            const fallbackLabel = getFinalAdviceLabel({ advice, index });
+            const normalizedAdvice = normalizeCompatibilityFinalAdviceItem(
+              advice,
+              fallbackLabel,
+            );
+
+            return (
+              <li
+                key={`${normalizedAdvice.label}:${normalizedAdvice.body}`}
+                className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
+              >
+                <p className="text-sm font-semibold text-amber-100">
+                  {index + 1}. {normalizedAdvice.label}
+                </p>
+                <p className="mt-2 text-sm leading-6 text-neutral-300">
+                  {normalizedAdvice.body}
+                </p>
+              </li>
+            );
+          })}
         </ol>
       </section>
 

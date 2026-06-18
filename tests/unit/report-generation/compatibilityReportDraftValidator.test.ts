@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import type { CompatibilityReportDraft } from "../../../src/lib/report-generation/compatibilityReportDraftTypes";
 import {
+  normalizeCompatibilityFinalAdviceItemForValidation,
   sanitizeCompatibilityAwkwardKoreanText,
   validateCompatibilityReportDraft,
 } from "../../../src/lib/report-generation/compatibilityReportDraftValidator";
@@ -207,6 +208,38 @@ describe("compatibilityReportDraftValidator", () => {
     );
   });
 
+  it("warns when a help-request final advice prefix contains conflict recovery content", () => {
+    const draft = createValidCompatibilityDraft();
+    const result = validate({
+      ...draft,
+      finalAdvice: [
+        draft.finalAdvice[0],
+        draft.finalAdvice[1],
+        "도움 요청: 서운함이 생기면 상대의 성격을 해석하기 전에 상황을 다시 말하세요.",
+      ],
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.warnings).toContain(
+      "COMPATIBILITY_FINAL_ADVICE_LABEL_MISMATCH_WARNING: 도움 요청",
+    );
+  });
+
+  it("does not warn when final advice labels match their content", () => {
+    const draft = createValidCompatibilityDraft();
+    const result = validate({
+      ...draft,
+      finalAdvice: [
+        draft.finalAdvice[0],
+        draft.finalAdvice[1],
+        "갈등 회복: 서운함이 생기면 상대의 성격을 해석하기 전에 상황을 다시 말하세요.",
+      ],
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.warnings).toEqual([]);
+  });
+
   it("sanitizes known awkward Korean phrases without failing the draft", () => {
     const draft = createValidCompatibilityDraft();
     const result = validate({
@@ -224,8 +257,33 @@ describe("compatibilityReportDraftValidator", () => {
     expect(sanitizeCompatibilityAwkwardKoreanText("목·금가 살아납니다.")).toBe(
       "목과 금의 흐름이 살아납니다.",
     );
+    expect(sanitizeCompatibilityAwkwardKoreanText("목·금이 약해 보입니다.")).toBe(
+      "목과 금의 흐름이 약해 보입니다.",
+    );
+    expect(sanitizeCompatibilityAwkwardKoreanText("화·수가 약해 보입니다.")).toBe(
+      "화와 수의 흐름이 약해 보입니다.",
+    );
     expect(sanitizeCompatibilityAwkwardKoreanText("丑未 충가 있어 조율합니다.")).toBe(
       "丑未 충이 있어 조율합니다.",
     );
+  });
+
+  it("normalizes final advice prefixes for validation", () => {
+    expect(
+      normalizeCompatibilityFinalAdviceItemForValidation(
+        "갈등 회복: 감정이 올라온 날에는 다음 날 다시 말하세요.",
+      ),
+    ).toEqual({
+      label: "갈등 회복",
+      body: "감정이 올라온 날에는 다음 날 다시 말하세요.",
+    });
+    expect(
+      normalizeCompatibilityFinalAdviceItemForValidation(
+        "도움 요청: 필요한 지원을 한 문장으로 말하세요.",
+      ),
+    ).toEqual({
+      label: "도움 요청",
+      body: "필요한 지원을 한 문장으로 말하세요.",
+    });
   });
 });

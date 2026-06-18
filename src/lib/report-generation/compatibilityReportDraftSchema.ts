@@ -65,7 +65,14 @@ export const compatibilityReportDraftJsonSchema = {
     productVersion: { type: "string", enum: ["1.0"] },
     relationshipType: {
       type: "string",
-      enum: ["love", "some", "marriage", "friendship"],
+      enum: [
+        "love",
+        "marriage",
+        "some",
+        "friendship",
+        "family",
+        "business_work_partner",
+      ],
     },
     personALabel: { type: "string" },
     personBLabel: { type: "string" },

@@ -4,9 +4,20 @@ import type { CompatibilityDeepSajuLayer } from "./compatibilityDeepSajuBridge";
 
 export type CompatibilityRelationshipType =
   | "love"
-  | "some"
   | "marriage"
-  | "friendship";
+  | "some"
+  | "friendship"
+  | "family"
+  | "business_work_partner";
+
+export const compatibilityRelationshipTypes = [
+  "love",
+  "marriage",
+  "some",
+  "friendship",
+  "family",
+  "business_work_partner",
+] as const satisfies readonly CompatibilityRelationshipType[];
 
 export type CompatibilityPersonInput = {
   readonly role: "personA" | "personB";
@@ -36,6 +47,184 @@ export type CompatibilityScoreBreakdown = {
   readonly longTermStability: number;
   readonly growthComplement: number;
 };
+
+export type CompatibilityScoreCategory = keyof CompatibilityScoreBreakdown;
+
+export type CompatibilityScoreDisplayLabels = Record<
+  CompatibilityScoreCategory,
+  string
+>;
+
+const compatibilityRelationshipTypeLabels = {
+  love: "연애",
+  marriage: "결혼/장기연애",
+  some: "썸",
+  friendship: "친구",
+  family: "가족",
+  business_work_partner: "동업/업무 파트너",
+} as const satisfies Record<CompatibilityRelationshipType, string>;
+
+const compatibilityRelationshipTypeFocus = {
+  love: "끌림, 감정 온도, 데이트 리듬, 대화 속도, 갈등 회복",
+  marriage: "생활 리듬, 돈, 책임, 장기 안정성, 반복 갈등, 가족/현실 운영",
+  some: "호감 신호, 타이밍, 애매함 해소, 먼저 다가가는 속도, 관계 명확화",
+  friendship: "대화 리듬, 거리감, 도움 방식, 의리, 오래 가는 안정성",
+  family: "정서 연결, 오래된 패턴, 말의 통로, 생활 리듬, 경계와 역할",
+  business_work_partner:
+    "역할 분담, 의사결정, 업무 속도, 돈/책임, 신뢰, 리스크 관리, 피드백 방식",
+} as const satisfies Record<CompatibilityRelationshipType, string>;
+
+const compatibilityRelationshipTypeTone = {
+  love: "감정 온도와 데이트 장면을 중심으로 부드럽게 조율한다.",
+  marriage: "현실 운영과 장기 안정성을 중심으로 차분하게 조율한다.",
+  some: "애매한 신호와 타이밍을 중심으로 가볍지만 구체적으로 조율한다.",
+  friendship: "거리감과 의리를 중심으로 편안한 관계 언어로 조율한다.",
+  family: "오래된 패턴과 역할 경계를 중심으로 조심스럽고 따뜻하게 조율한다.",
+  business_work_partner:
+    "역할, 책임, 의사결정을 중심으로 실무적인 관계 언어로 조율한다.",
+} as const satisfies Record<CompatibilityRelationshipType, string>;
+
+const compatibilityScoreDisplayLabels = {
+  love: {
+    attraction: "끌림",
+    communication: "대화",
+    lifestyleRhythm: "생활 리듬",
+    conflictRecovery: "갈등 회복",
+    longTermStability: "장기 안정성",
+    growthComplement: "성장 보완",
+  },
+  marriage: {
+    attraction: "부부 온도",
+    communication: "대화 습관",
+    lifestyleRhythm: "생활 합",
+    conflictRecovery: "갈등 회복",
+    longTermStability: "장기 안정성",
+    growthComplement: "역할 보완",
+  },
+  some: {
+    attraction: "호감 신호",
+    communication: "대화 신호",
+    lifestyleRhythm: "타이밍",
+    conflictRecovery: "애매함 해소",
+    longTermStability: "발전 가능성",
+    growthComplement: "서로 자극",
+  },
+  friendship: {
+    attraction: "친밀감",
+    communication: "대화 리듬",
+    lifestyleRhythm: "거리감",
+    conflictRecovery: "오해 회복",
+    longTermStability: "오래 가는 안정성",
+    growthComplement: "서로 자극",
+  },
+  family: {
+    attraction: "정서 연결",
+    communication: "말의 통로",
+    lifestyleRhythm: "생활 리듬",
+    conflictRecovery: "감정 회복",
+    longTermStability: "가족 안정성",
+    growthComplement: "역할 보완",
+  },
+  business_work_partner: {
+    attraction: "협업 시너지",
+    communication: "의사소통",
+    lifestyleRhythm: "업무 리듬",
+    conflictRecovery: "갈등 조정",
+    longTermStability: "신뢰 지속성",
+    growthComplement: "역할 보완",
+  },
+} as const satisfies Record<
+  CompatibilityRelationshipType,
+  CompatibilityScoreDisplayLabels
+>;
+
+const compatibilityScoreExplanations = {
+  love: {
+    attraction: "처음 당기는 힘은 강한 편입니다.",
+    communication: "말의 속도와 정리 순서를 맞춰야 편합니다.",
+    lifestyleRhythm: "데이트와 일상 기준을 맞추면 안정적으로 굴러갈 수 있습니다.",
+    conflictRecovery: "바로 풀기보다 시간을 두고 다시 말해야 하는 조합입니다.",
+    longTermStability: "역할과 책임을 나누면 길게 가기 좋습니다.",
+    growthComplement: "서로의 빈칸을 자극하는 보완성이 있습니다.",
+  },
+  marriage: {
+    attraction: "설렘보다 함께 지내는 온도를 꾸준히 관리해야 합니다.",
+    communication: "대화 습관을 정하면 반복 갈등이 줄어듭니다.",
+    lifestyleRhythm: "생활 기준을 맞추면 장기 안정성이 올라갑니다.",
+    conflictRecovery: "감정이 가라앉은 뒤 책임 범위를 다시 정리해야 합니다.",
+    longTermStability: "돈, 일정, 역할을 나누면 오래 버티는 힘이 생깁니다.",
+    growthComplement: "각자 잘하는 역할을 인정할수록 현실 운영이 편해집니다.",
+  },
+  some: {
+    attraction: "호감 신호는 분명하지만 관계를 명확히 하는 속도는 조율이 필요합니다.",
+    communication: "가벼운 대화 뒤에 의도를 한 번 더 확인해야 합니다.",
+    lifestyleRhythm: "타이밍이 어긋나면 좋은 신호도 애매하게 느껴질 수 있습니다.",
+    conflictRecovery: "불편한 신호를 오래 숨기지 말고 작게 확인해야 합니다.",
+    longTermStability: "관계를 어떻게 발전시킬지 말로 정하면 가능성이 커집니다.",
+    growthComplement: "서로에게 자극은 있지만 부담으로 바뀌지 않게 속도를 봐야 합니다.",
+  },
+  friendship: {
+    attraction: "친밀감은 있지만 서로의 공간을 인정할수록 편합니다.",
+    communication: "대화 리듬이 맞으면 오래 편하게 이어질 수 있습니다.",
+    lifestyleRhythm: "거리 조절이 맞으면 오래 가지만, 작은 오해는 바로 풀어야 합니다.",
+    conflictRecovery: "오해가 생기면 농담으로 넘기기보다 기준을 확인해야 합니다.",
+    longTermStability: "무리하지 않는 도움 방식이 오래 가는 안정성을 만듭니다.",
+    growthComplement: "서로 다른 관점이 자극이 되지만 선을 넘지 않는 게 중요합니다.",
+  },
+  family: {
+    attraction: "정서 연결은 있으나 익숙함 때문에 표현이 줄어들 수 있습니다.",
+    communication: "말의 통로를 만들어야 오래된 감정이 덜 쌓입니다.",
+    lifestyleRhythm: "생활 리듬을 존중하면 역할 갈등이 줄어듭니다.",
+    conflictRecovery: "감정이 커지기 전에 상황 단위로 다시 말해야 합니다.",
+    longTermStability: "역할과 경계를 정하면 가족 안정성이 올라갑니다.",
+    growthComplement: "서로의 역할을 고정하지 않을 때 보완성이 살아납니다.",
+  },
+  business_work_partner: {
+    attraction: "협업 에너지는 있지만 역할 정의가 있어야 성과로 이어집니다.",
+    communication: "의사소통은 감보다 기준과 기록을 함께 두어야 안정됩니다.",
+    lifestyleRhythm: "업무 속도와 확인 주기를 맞추면 실행력이 올라갑니다.",
+    conflictRecovery: "의견 충돌이 생기면 감정보다 기준과 책임 범위를 먼저 정리해야 합니다.",
+    longTermStability: "신뢰를 유지하려면 돈, 일정, 권한을 문서로 남겨야 합니다.",
+    growthComplement: "역할 보완은 강하지만 결정권이 흐려지면 피로가 커집니다.",
+  },
+} as const satisfies Record<
+  CompatibilityRelationshipType,
+  CompatibilityScoreDisplayLabels
+>;
+
+export function getCompatibilityRelationshipTypeLabel(
+  type: CompatibilityRelationshipType,
+): string {
+  return compatibilityRelationshipTypeLabels[type];
+}
+
+export function getCompatibilityRelationshipTypeFocus(
+  type: CompatibilityRelationshipType,
+): string {
+  return compatibilityRelationshipTypeFocus[type];
+}
+
+export function getCompatibilityRelationshipTypeTone(
+  type: CompatibilityRelationshipType,
+): string {
+  return compatibilityRelationshipTypeTone[type];
+}
+
+export function getCompatibilityScoreDisplayLabels(
+  relationshipType: CompatibilityRelationshipType,
+): CompatibilityScoreDisplayLabels {
+  return compatibilityScoreDisplayLabels[relationshipType];
+}
+
+export function getCompatibilityScoreExplanation(input: {
+  readonly relationshipType: CompatibilityRelationshipType;
+  readonly category: CompatibilityScoreCategory;
+  readonly score: number;
+}): string {
+  void input.score;
+
+  return compatibilityScoreExplanations[input.relationshipType][input.category];
+}
 
 export type CompatibilityScoreResult = {
   readonly totalScore: number;

@@ -1,5 +1,7 @@
 import {
   buildCompatibilityEvidencePacketFromFixture,
+  getCompatibilityRelationshipTypeLabel,
+  getCompatibilityScoreDisplayLabels,
   requireCompatibilityFixture,
 } from "../src/lib/report-knowledge";
 import {
@@ -21,12 +23,21 @@ import {
 } from "../src/lib/report-generation/compatibilityPreviewSnapshot";
 import type { CompatibilityReportDraft } from "../src/lib/report-generation";
 
+const compatibilitySmokeFixtureIds = [
+  "deokmin-sodam-love",
+  "deokmin-sodam-marriage",
+  "unknown-time-some",
+  "friendship-mbti-known",
+  "family-unknown-mbti",
+  "business-work-partner-sample",
+] as const;
+
 function getFixtureId(argv: readonly string[]): string {
   const flagIndex = argv.findIndex((arg) => arg === "--fixture");
   const inline = argv.find((arg) => arg.startsWith("--fixture="));
 
   return inline?.split("=")[1] ?? (flagIndex >= 0 ? argv[flagIndex + 1] : undefined) ??
-    "deokmin-sodam-love";
+    compatibilitySmokeFixtureIds[0];
 }
 
 function shouldPrintBody(argv: readonly string[]): boolean {
@@ -127,11 +138,24 @@ function writeDeepSajuLayers(
   }
 }
 
+function writeScoreLabels(
+  labels: ReturnType<typeof getCompatibilityScoreDisplayLabels>,
+): void {
+  writeLine("score labels:");
+  writeLine(`- ${labels.attraction}`);
+  writeLine(`- ${labels.communication}`);
+  writeLine(`- ${labels.lifestyleRhythm}`);
+  writeLine(`- ${labels.conflictRecovery}`);
+  writeLine(`- ${labels.longTermStability}`);
+  writeLine(`- ${labels.growthComplement}`);
+}
+
 function writeCompatibilityReportBody(input: {
   readonly draft: CompatibilityReportDraft;
   readonly warnings: readonly string[];
 }): void {
   const { draft } = input;
+  const scoreLabels = getCompatibilityScoreDisplayLabels(draft.relationshipType);
 
   writeLine("=== COMPATIBILITY REPORT BODY START ===");
   writeLine("사주×MBTI 궁합 리포트 v1.0");
@@ -141,12 +165,12 @@ function writeCompatibilityReportBody(input: {
   writeLine(`종합 궁합 점수: ${draft.scoreSummary.totalScore}`);
   writeLine(`score label: ${draft.scoreSummary.scoreLabel}`);
   writeLine(`score caution: ${draft.scoreSummary.scoreCaution}`);
-  writeLine(`끌림: ${draft.scoreSummary.breakdown.attraction}`);
-  writeLine(`대화: ${draft.scoreSummary.breakdown.communication}`);
-  writeLine(`생활 리듬: ${draft.scoreSummary.breakdown.lifestyleRhythm}`);
-  writeLine(`갈등 회복: ${draft.scoreSummary.breakdown.conflictRecovery}`);
-  writeLine(`장기 안정성: ${draft.scoreSummary.breakdown.longTermStability}`);
-  writeLine(`성장 보완: ${draft.scoreSummary.breakdown.growthComplement}`);
+  writeLine(`${scoreLabels.attraction}: ${draft.scoreSummary.breakdown.attraction}`);
+  writeLine(`${scoreLabels.communication}: ${draft.scoreSummary.breakdown.communication}`);
+  writeLine(`${scoreLabels.lifestyleRhythm}: ${draft.scoreSummary.breakdown.lifestyleRhythm}`);
+  writeLine(`${scoreLabels.conflictRecovery}: ${draft.scoreSummary.breakdown.conflictRecovery}`);
+  writeLine(`${scoreLabels.longTermStability}: ${draft.scoreSummary.breakdown.longTermStability}`);
+  writeLine(`${scoreLabels.growthComplement}: ${draft.scoreSummary.breakdown.growthComplement}`);
   writeBlankLine();
   writeLine("핵심 포인트");
   writeBulletList("끌리는 지점:", draft.keyCompatibilityPoints.attractionPoints);
@@ -176,9 +200,16 @@ async function main(): Promise<void> {
   const writePreview = shouldWritePreview(argv);
   const fixture = requireCompatibilityFixture(getFixtureId(argv));
   const packet = buildCompatibilityEvidencePacketFromFixture(fixture);
+  const scoreLabels = getCompatibilityScoreDisplayLabels(
+    fixture.input.relationshipType,
+  );
 
   writeLine(`compatibility fixture: ${fixture.id}`);
   writeLine(`relationship type: ${fixture.input.relationshipType}`);
+  writeLine(
+    `relationship label: ${getCompatibilityRelationshipTypeLabel(fixture.input.relationshipType)}`,
+  );
+  writeScoreLabels(scoreLabels);
   writeLine(
     `person A: ${fixture.input.personA.displayName} ${fixture.input.personA.mbti ?? "MBTI unknown"}`,
   );

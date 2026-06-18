@@ -1194,6 +1194,49 @@ of help-request content. The compatibility validator also sanitizes narrow
 awkward Korean phrases such as `목·금가` -> `목과 금의 흐름이` and
 `충가 있어` -> `충이 있어`.
 
+## REPORT-18I Compatibility Category Expansion and Copy Cleanup
+
+REPORT-18I fixes the compatibility v1 relationship category scope at exactly
+six supported product categories:
+
+1. `love`: 연애
+2. `marriage`: 결혼/장기연애
+3. `some`: 썸
+4. `friendship`: 친구
+5. `family`: 가족
+6. `business_work_partner`: 동업/업무 파트너
+
+The shared relationship helpers live in the compatibility type layer. They
+provide the display label, relationship focus text, tone guidance, score
+display labels, and score explanation copy for each supported category. The
+internal score fields remain stable, but the visible labels now change by
+relationship type, such as `끌림` for love, `부부 온도` for marriage,
+`호감 신호` for some, `친밀감` for friendship, `정서 연결` for family, and
+`협업 시너지` for business/work partner.
+
+The writer prompt now names the six v1 categories explicitly and gives each
+one a category-specific focus. Family, friendship, and business/work partner
+reports must not use romance wording such as 연애, 데이트, 애인, or 설렘.
+Love, some, and marriage reports must not collapse into work-partner-only
+analysis.
+
+Fixture coverage now includes one sample per relationship category:
+`deokmin-sodam-love`, `deokmin-sodam-marriage`, `unknown-time-some`,
+`friendship-mbti-known`, `family-unknown-mbti`, and
+`business-work-partner-sample`. Smoke scripts print the relationship label and
+relationship-specific score labels so fixture review can confirm category
+copy without opening the browser.
+
+Final advice copy has a prefix normalizer. If a generated item starts with a
+known label prefix such as `갈등 회복:` or `도움 요청:`, the UI strips that
+prefix from the body and uses it as the visible action label. The validator
+keeps `COMPATIBILITY_FINAL_ADVICE_LABEL_MISMATCH_WARNING` as a warning-only
+guard when a help-request label contains conflict/recovery content.
+
+The awkward Korean sanitizer was extended across validator, writer sanitizer,
+deep bridge output, and the render guard for narrow known phrases:
+`목·금가`, `목·금이 약해`, `화·수가 약해`, and `충가 있어`.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

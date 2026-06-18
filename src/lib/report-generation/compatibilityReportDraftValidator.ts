@@ -113,9 +113,35 @@ const finalAdviceHelpMarkers = [
   "공유",
 ] as const;
 
+const finalAdviceDefaultLabels = [
+  "대화 규칙",
+  "생활 기준",
+  "도움 요청",
+  "갈등 회복",
+] as const;
+
+const finalAdviceKnownPrefixes = [
+  "대화 규칙",
+  "생활 기준",
+  "도움 요청",
+  "갈등 회복",
+  "실행 규칙",
+  "돈과 생활",
+  "관계 기준",
+  "감정 표현",
+  "거리 조절",
+  "역할 분담",
+  "피드백 규칙",
+  "업무 기준",
+  "의사결정",
+  "신뢰 관리",
+] as const;
+
 export function sanitizeCompatibilityAwkwardKoreanText(text: string): string {
   return text
     .split("목·금가").join("목과 금의 흐름이")
+    .split("목·금이 약해").join("목과 금의 흐름이 약해")
+    .split("화·수가 약해").join("화와 수의 흐름이 약해")
     .split("충가 있어").join("충이 있어");
 }
 
@@ -343,23 +369,46 @@ function collectRepetitionWarnings(
 function collectFinalAdviceLabelMismatchWarnings(
   draft: CompatibilityReportDraft,
 ): readonly string[] {
-  const helpRequestAdvice = draft.finalAdvice[2];
+  const warnings: string[] = [];
 
-  if (helpRequestAdvice === undefined) {
-    return [];
-  }
-  if (finalAdviceHelpMarkers.some((marker) => helpRequestAdvice.includes(marker))) {
-    return [];
-  }
-  if (
-    finalAdviceConflictMarkers.some((marker) =>
-      helpRequestAdvice.includes(marker),
-    )
-  ) {
-    return [`${finalAdviceLabelMismatchWarning}: 도움 요청`];
+  draft.finalAdvice.forEach((advice, index) => {
+    const defaultLabel = finalAdviceDefaultLabels[index] ?? "실행 규칙";
+    const prefix = finalAdviceKnownPrefixes.find((candidate) =>
+      advice.trim().startsWith(`${candidate}:`),
+    );
+    const label = prefix ?? defaultLabel;
+    const body =
+      prefix === undefined ? advice : advice.trim().slice(prefix.length + 1);
+
+    if (
+      label === "도움 요청" &&
+      !finalAdviceHelpMarkers.some((marker) => body.includes(marker)) &&
+      finalAdviceConflictMarkers.some((marker) => body.includes(marker))
+    ) {
+      warnings.push(`${finalAdviceLabelMismatchWarning}: 도움 요청`);
+    }
+  });
+
+  return warnings;
+}
+
+export function normalizeCompatibilityFinalAdviceItemForValidation(item: string): {
+  readonly label?: string;
+  readonly body: string;
+} {
+  const body = sanitizeCompatibilityAwkwardKoreanText(item).trim();
+  const prefix = finalAdviceKnownPrefixes.find((candidate) =>
+    body.startsWith(`${candidate}:`),
+  );
+
+  if (prefix === undefined) {
+    return { body };
   }
 
-  return [];
+  return {
+    label: prefix,
+    body: body.slice(prefix.length + 1).trim(),
+  };
 }
 
 export function validateCompatibilityReportDraft(

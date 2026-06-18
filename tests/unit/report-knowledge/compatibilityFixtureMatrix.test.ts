@@ -36,9 +36,32 @@ describe("REPORT-18A compatibility fixture matrix", () => {
     expect(fixture.input.personB.mbti).toBeNull();
   });
 
-  it("covers love, some, and friendship relationship types", () => {
+  it("covers all six v1 relationship types", () => {
     expect(
       new Set(COMPATIBILITY_FIXTURE_MATRIX.map((fixture) => fixture.input.relationshipType)),
-    ).toEqual(new Set(["love", "some", "friendship"]));
+    ).toEqual(
+      new Set([
+        "love",
+        "marriage",
+        "some",
+        "friendship",
+        "family",
+        "business_work_partner",
+      ]),
+    );
+  });
+
+  it("includes family and business work partner category fixtures", () => {
+    const family = requireCompatibilityFixture("family-unknown-mbti");
+    const business = requireCompatibilityFixture("business-work-partner-sample");
+    const marriage = requireCompatibilityFixture("deokmin-sodam-marriage");
+
+    expect(family.input.relationshipType).toBe("family");
+    expect(family.input.personA.mbti).toBeNull();
+    expect(business.input.relationshipType).toBe("business_work_partner");
+    expect(marriage.input.relationshipType).toBe("marriage");
+    expect(marriage.expectedPillars.personA).toEqual(
+      requireCompatibilityFixture("deokmin-sodam-love").expectedPillars.personA,
+    );
   });
 });

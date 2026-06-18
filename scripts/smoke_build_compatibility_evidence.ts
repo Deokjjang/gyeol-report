@@ -1,14 +1,25 @@
 import {
   buildCompatibilityEvidencePacketFromFixture,
+  getCompatibilityRelationshipTypeLabel,
+  getCompatibilityScoreDisplayLabels,
   requireCompatibilityFixture,
 } from "../src/lib/report-knowledge";
+
+const compatibilitySmokeFixtureIds = [
+  "deokmin-sodam-love",
+  "deokmin-sodam-marriage",
+  "unknown-time-some",
+  "friendship-mbti-known",
+  "family-unknown-mbti",
+  "business-work-partner-sample",
+] as const;
 
 function getFixtureId(argv: readonly string[]): string {
   const flagIndex = argv.findIndex((arg) => arg === "--fixture");
   const inline = argv.find((arg) => arg.startsWith("--fixture="));
 
   return inline?.split("=")[1] ?? (flagIndex >= 0 ? argv[flagIndex + 1] : undefined) ??
-    "deokmin-sodam-love";
+    compatibilitySmokeFixtureIds[0];
 }
 
 function formatPillars(pillars: {
@@ -62,12 +73,31 @@ function writeDeepSajuLayers(
   }
 }
 
+function writeScoreLabels(
+  labels: ReturnType<typeof getCompatibilityScoreDisplayLabels>,
+): void {
+  writeLine("score labels:");
+  writeLine(`- ${labels.attraction}`);
+  writeLine(`- ${labels.communication}`);
+  writeLine(`- ${labels.lifestyleRhythm}`);
+  writeLine(`- ${labels.conflictRecovery}`);
+  writeLine(`- ${labels.longTermStability}`);
+  writeLine(`- ${labels.growthComplement}`);
+}
+
 function main(): void {
   const fixture = requireCompatibilityFixture(getFixtureId(process.argv.slice(2)));
   const packet = buildCompatibilityEvidencePacketFromFixture(fixture);
+  const scoreLabels = getCompatibilityScoreDisplayLabels(
+    fixture.input.relationshipType,
+  );
 
   writeLine(`compatibility fixture: ${fixture.id}`);
   writeLine(`relationship type: ${fixture.input.relationshipType}`);
+  writeLine(
+    `relationship label: ${getCompatibilityRelationshipTypeLabel(fixture.input.relationshipType)}`,
+  );
+  writeScoreLabels(scoreLabels);
   writeLine(
     `person A: ${fixture.input.personA.displayName} ${fixture.input.personA.mbti ?? "MBTI unknown"}`,
   );

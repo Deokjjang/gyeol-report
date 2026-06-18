@@ -64,6 +64,37 @@ const elementKo = {
   water: "수",
 } as const satisfies Record<FiveElement, string>;
 
+function hasKoreanFinalConsonant(value: string): boolean {
+  const lastCode = value.charCodeAt(value.length - 1);
+
+  if (lastCode < 0xac00 || lastCode > 0xd7a3) {
+    return false;
+  }
+
+  return (lastCode - 0xac00) % 28 !== 0;
+}
+
+function joinKoreanTermsWithAnd(values: readonly string[]): string {
+  if (values.length <= 1) {
+    return values[0] ?? "";
+  }
+
+  const head = values.slice(0, -1);
+  const last = values[values.length - 1];
+  const previous = head.join(", ");
+  const particle = hasKoreanFinalConsonant(previous) ? "과" : "와";
+
+  return `${previous}${particle} ${last}`;
+}
+
+function formatElementFlow(elements: readonly FiveElement[]): string {
+  const names = elements.map((element) => elementKo[element]);
+
+  return names.length === 0
+    ? "빈 오행의 흐름"
+    : `${joinKoreanTermsWithAnd(names)}의 흐름`;
+}
+
 function getPillarStem(pillar: string): string {
   return pillar.trim().slice(0, 1);
 }
@@ -168,6 +199,8 @@ function buildElementComplementNote(
 
   const personAText = personAComplemented.map((element) => elementKo[element]).join("·");
   const personBText = personBComplemented.map((element) => elementKo[element]).join("·");
+  const personAFlowText = formatElementFlow(personAComplemented);
+  const personBFlowText = formatElementFlow(personBComplemented);
 
   return {
     layer: "element_complement",
@@ -187,7 +220,7 @@ function buildElementComplementNote(
     scoreImpact: 4,
     principleExplanation:
       "오행 보완은 한 사람에게 약한 기운을 다른 사람이 어느 정도 자극하거나 보태는 구조입니다. 부족한 오행은 자동으로 잘 켜지지 않는다는 뜻에 가깝습니다.",
-    relationshipTranslation: `${input.personA.displayName}은 ${personAText}가 약해 감정의 온도와 부드러운 흐름이 늦게 켜질 수 있고, ${input.personB.displayName}은 그 부분을 자극할 수 있습니다. 반대로 ${input.personB.displayName}은 ${personBText}가 약해 방향 설정과 기준 정리가 흔들릴 수 있는데, ${input.personA.displayName}의 구조가 그 부분을 보완할 수 있습니다.`,
+    relationshipTranslation: `${input.personA.displayName}은 ${personAFlowText}이 약해 감정의 온도와 부드러운 흐름이 늦게 켜질 수 있고, ${input.personB.displayName}은 그 부분을 자극할 수 있습니다. 반대로 ${input.personB.displayName}은 ${personBFlowText}이 약해 방향 설정과 기준 정리가 흔들릴 수 있는데, ${input.personA.displayName}의 구조가 그 부분을 보완할 수 있습니다.`,
     positiveExpression: `좋게 쓰이면 ${input.personA.displayName}은 방향과 구조를 잡고, ${input.personB.displayName}은 온도와 반응을 살려 관계가 입체적으로 굴러갑니다.`,
     riskExpression:
       "나쁘게 쓰이면 상대가 내 부족한 부분을 알아서 채워 주길 기대하게 되어 부담이 커집니다.",

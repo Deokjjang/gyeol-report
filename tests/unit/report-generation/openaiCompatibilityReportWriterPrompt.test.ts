@@ -24,6 +24,25 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain("overview:");
     expect(promptText).toContain("long_term_rules");
     expect(promptText).toContain("relationshipType");
+    expect(promptText).toContain(
+      "v1 관계 유형은 연애, 결혼/장기연애, 썸, 친구, 가족, 동업/업무 파트너만 지원한다.",
+    );
+    expect(promptText).toContain("love=연애");
+    expect(promptText).toContain("marriage=결혼/장기연애");
+    expect(promptText).toContain("some=썸");
+    expect(promptText).toContain("friendship=친구");
+    expect(promptText).toContain("family=가족");
+    expect(promptText).toContain("business_work_partner=동업/업무 파트너");
+    expect(promptText).toContain("business_work_partner는 동업/업무 파트너 관계");
+    expect(promptText).toContain(
+      "family/business_work_partner/friendship에서는 연애, 데이트, 애인, 설렘 같은 표현을 쓰지 마라.",
+    );
+    expect(promptText).toContain(
+      "love/some/marriage에서는 업무 파트너처럼만 해석하지 마라.",
+    );
+    expect(promptText).toContain(
+      "relationshipType에 맞지 않는 score label이나 chapter wording을 만들지 마라.",
+    );
     expect(promptText).toContain("MBTI");
     expect(promptText).toContain(
       "finalAdvice must be concrete, today-actionable, and relationship-specific.",
@@ -72,8 +91,11 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain("If the label is 도움 요청");
     expect(promptText).toContain("label the concept as 갈등 회복");
     expect(promptText).toContain("목·금가");
+    expect(promptText).toContain("목·금이 약해");
+    expect(promptText).toContain("화·수가 약해");
     expect(promptText).toContain("충가 있어");
     expect(promptText).toContain("목과 금의 흐름이");
+    expect(promptText).toContain("화와 수의 흐름이 약해");
     expect(promptText).toContain("충이 있어");
   });
 
