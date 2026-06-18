@@ -39,6 +39,12 @@ function createValidDraft(): AnnualFortuneReportDraft {
     targetYear: 2026,
     mode: "current_year",
     personLabel: "덕민",
+    userContextSummary: {
+      lifeStatusLabel: "직장인",
+      fieldLabel: "개발·서비스 기획",
+      translationNote:
+        "올해 흐름은 직장·프로젝트·보고·서비스 운영 장면을 중심으로 번역했습니다.",
+    },
     openingTitle: "2026년 세운 흐름",
     openingSummary: "올해 준비와 활용, 기회와 조심할 지점을 봅니다.",
     coreLine: "丙午의 화 기운이 표현과 실행을 밀어 올리는 흐름입니다.",
@@ -217,6 +223,9 @@ describe("openaiAnnualFortuneReportWriter", () => {
     expect(
       annualFortuneReportDraftJsonSchema.properties.scoreSummary.required,
     ).toEqual(["flowIndex", "flowTypeLabel", "flowIndexCaution"]);
+    expect(
+      annualFortuneReportDraftJsonSchema.required,
+    ).toContain("userContextSummary");
     assertStrictRequiredKeys(annualFortuneReportDraftJsonSchema);
   });
 

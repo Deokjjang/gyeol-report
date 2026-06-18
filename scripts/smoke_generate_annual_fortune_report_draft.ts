@@ -96,6 +96,16 @@ async function main(): Promise<void> {
   writeLine(
     `year element: ${packet.annualGanji.stemElement}/${packet.annualGanji.branchElement}`,
   );
+  writeLine("user context:");
+  writeLine(`- life status: ${packet.userContext.lifeStatus}`);
+  writeLine(`- field label: ${packet.userContext.fieldLabel ?? "none"}`);
+  writeList(
+    "context translation hints",
+    packet.contextTranslationHints.map(
+      (hint) =>
+        `${hint.domain} nouns: ${hint.preferredSceneNouns.join(", ")} | ${hint.plain}`,
+    ),
+  );
   writeLine(
     `monthly basis: ${packet.monthlyFortuneSeeds[0]?.monthGanji.basis ?? annualFortuneMonthlyBasisFallback}`,
   );

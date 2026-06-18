@@ -18,6 +18,10 @@ export type AnnualFortuneFixture = {
 const deokminPerson: AnnualFortuneFixture["person"] = {
   label: "덕민",
   mbti: "ENTJ",
+  userContext: {
+    lifeStatus: "employee",
+    fieldLabel: "개발·서비스 기획",
+  },
   pillars: {
     year: "己卯",
     month: "辛未",

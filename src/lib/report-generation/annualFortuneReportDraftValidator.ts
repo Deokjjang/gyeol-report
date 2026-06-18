@@ -32,9 +32,10 @@ type AnnualFortuneScoreSummaryInput =
 
 type AnnualFortuneReportDraftInput = Omit<
   AnnualFortuneReportDraft,
-  "scoreSummary"
+  "scoreSummary" | "userContextSummary"
 > & {
   readonly scoreSummary: AnnualFortuneScoreSummaryInput;
+  readonly userContextSummary?: AnnualFortuneReportDraft["userContextSummary"];
 };
 
 const hardClaimReplacements = [
@@ -213,6 +214,54 @@ function stripAnnualFinalAdvicePrefix(text: string): string {
   return sanitized;
 }
 
+export type AnnualAdviceDomainLabel =
+  | "일·성과"
+  | "돈·현실"
+  | "인간관계"
+  | "연애·가족"
+  | "학업·자격증"
+  | "몸·생활 리듬"
+  | "올해 운영법";
+
+export function inferAnnualAdviceDomain(body: string): AnnualAdviceDomainLabel {
+  const text = sanitizeAnnualFortuneKoreanCopy(body);
+  const rules: readonly {
+    readonly label: AnnualAdviceDomainLabel;
+    readonly keywords: readonly string[];
+  }[] = [
+    {
+      label: "학업·자격증",
+      keywords: ["시험", "자격증", "공부", "오답", "요약", "발표", "포트폴리오"],
+    },
+    {
+      label: "몸·생활 리듬",
+      keywords: ["수면", "식사", "회복", "몸", "피로", "컨디션", "휴식"],
+    },
+    {
+      label: "돈·현실",
+      keywords: ["돈", "생활비", "정산", "계약", "지출", "고정비", "비용"],
+    },
+    {
+      label: "연애·가족",
+      keywords: ["연인", "가족", "부모", "집안", "만남", "약속"],
+    },
+    {
+      label: "일·성과",
+      keywords: ["직장", "상사", "동료", "프로젝트", "보고", "마감", "성과", "역할"],
+    },
+    {
+      label: "인간관계",
+      keywords: ["친구", "연락", "메시지", "관계", "오해"],
+    },
+  ];
+
+  return (
+    rules.find((rule) =>
+      rule.keywords.some((keyword) => text.includes(keyword)),
+    )?.label ?? "올해 운영법"
+  );
+}
+
 function normalizeMonthlyFlowElementFocus(value: unknown): string | null {
   if (typeof value !== "string") {
     return null;
@@ -253,9 +302,42 @@ function sanitizeScoreSummary(
   };
 }
 
+function sanitizeUserContextSummary(
+  summary: AnnualFortuneReportDraftInput["userContextSummary"],
+): AnnualFortuneReportDraft["userContextSummary"] {
+  if (summary === undefined) {
+    return {
+      lifeStatusLabel: "기타",
+      fieldLabel: null,
+      translationNote:
+        "현재 상태와 분야 정보가 충분하지 않아 전체 흐름 장면으로 해석했습니다.",
+    };
+  }
+
+  const fieldLabel =
+    summary.fieldLabel === null
+      ? null
+      : sanitizeAnnualFortuneKoreanCopy(summary.fieldLabel);
+
+  return {
+    lifeStatusLabel: sanitizeAnnualFortuneKoreanCopy(summary.lifeStatusLabel),
+    fieldLabel:
+      fieldLabel === null || fieldLabel.trim().length === 0
+        ? null
+        : fieldLabel,
+    translationNote: sanitizeAnnualFortuneKoreanCopy(summary.translationNote),
+  };
+}
+
 function sanitizeDraft(draft: AnnualFortuneReportDraftInput): AnnualFortuneReportDraft {
   return {
-    ...draft,
+    version: draft.version,
+    productType: draft.productType,
+    productVersion: draft.productVersion,
+    targetYear: draft.targetYear,
+    mode: draft.mode,
+    personLabel: sanitizeAnnualFortuneKoreanCopy(draft.personLabel),
+    userContextSummary: sanitizeUserContextSummary(draft.userContextSummary),
     openingTitle: sanitizeAnnualFortuneKoreanCopy(draft.openingTitle),
     openingSummary: sanitizeAnnualFortuneKoreanCopy(draft.openingSummary),
     coreLine: sanitizeAnnualFortuneKoreanCopy(draft.coreLine),
@@ -375,6 +457,9 @@ function collectVisibleStrings(draft: AnnualFortuneReportDraft): readonly string
     draft.openingTitle,
     draft.openingSummary,
     draft.coreLine,
+    draft.userContextSummary.lifeStatusLabel,
+    draft.userContextSummary.fieldLabel ?? "",
+    draft.userContextSummary.translationNote,
     draft.yearSummary.ganji,
     draft.yearSummary.displayTitle,
     draft.yearSummary.elementLabel,

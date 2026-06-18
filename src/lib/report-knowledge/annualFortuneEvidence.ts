@@ -9,6 +9,11 @@ import type {
   HeavenlyStem,
   TenGod,
 } from "./annualFortuneTypes";
+import type {
+  UserContextProfile,
+  UserLifeStatus,
+} from "./userContextTypes";
+import { USER_LIFE_STATUS_LABELS } from "./userContextTypes";
 import {
   getAnnualBranchInteractions,
   getAnnualFortuneYearAccess,
@@ -33,6 +38,18 @@ export interface AnnualFortuneEvidencePacket {
     readonly day: string;
     readonly hour?: string;
   };
+  readonly userContext: UserContextProfile;
+  readonly contextTranslationHints: readonly {
+    readonly domain:
+      | "work"
+      | "money"
+      | "relationship"
+      | "family_love"
+      | "study_certificate"
+      | "health_rhythm";
+    readonly preferredSceneNouns: readonly string[];
+    readonly plain: string;
+  }[];
   readonly dayMaster: HeavenlyStem;
   readonly annualTenGod: {
     readonly stemTenGod: TenGod;
@@ -97,6 +114,7 @@ export type AnnualPersonInput = {
   readonly birthDate?: string;
   readonly gender?: string;
   readonly mbti?: string | null;
+  readonly userContext: UserContextProfile;
   readonly pillars: {
     readonly year: string;
     readonly month: string;
@@ -197,6 +215,162 @@ function formatDateOnly(date: Date): string {
   const day = `${date.getDate()}`.padStart(2, "0");
 
   return `${year}-${month}-${day}`;
+}
+
+function contextPlain(input: {
+  readonly userContext: UserContextProfile;
+  readonly domainLabel: string;
+  readonly nouns: readonly string[];
+}): string {
+  const statusLabel = USER_LIFE_STATUS_LABELS[input.userContext.lifeStatus];
+  const field =
+    input.userContext.fieldLabel === undefined ||
+    input.userContext.fieldLabel === null ||
+    input.userContext.fieldLabel.trim().length === 0
+      ? ""
+      : ` ${input.userContext.fieldLabel.trim()} 분야를 기준으로`;
+
+  return `${statusLabel}${field} ${input.domainLabel} 장면에서는 ${input.nouns.join(", ")} 같은 명사로 흐름을 번역합니다. 계산값은 이 정보로 바꾸지 않습니다.`;
+}
+
+function buildContextTranslationHints(
+  userContext: UserContextProfile,
+): AnnualFortuneEvidencePacket["contextTranslationHints"] {
+  const byStatus: Record<
+    UserLifeStatus,
+    readonly {
+      readonly domain: AnnualFortuneEvidencePacket["contextTranslationHints"][number]["domain"];
+      readonly domainLabel: string;
+      readonly nouns: readonly string[];
+    }[]
+  > = {
+    student: [
+      {
+        domain: "study_certificate",
+        domainLabel: "학업·자격증",
+        nouns: ["과제", "발표", "시험", "전공", "교수", "팀플", "포트폴리오"],
+      },
+      {
+        domain: "money",
+        domainLabel: "돈·현실",
+        nouns: ["용돈", "등록금", "생활비", "아르바이트"],
+      },
+      {
+        domain: "relationship",
+        domainLabel: "인간관계",
+        nouns: ["친구", "동기", "팀플", "동아리"],
+      },
+    ],
+    exam_certificate: [
+      {
+        domain: "study_certificate",
+        domainLabel: "학업·자격증",
+        nouns: ["시험", "모의고사", "오답노트", "실기", "자격증", "면접", "제출물"],
+      },
+      {
+        domain: "health_rhythm",
+        domainLabel: "몸·생활 리듬",
+        nouns: ["수면", "식사", "집중력", "루틴", "회복"],
+      },
+    ],
+    job_seeker: [
+      {
+        domain: "work",
+        domainLabel: "일·성과",
+        nouns: ["지원서", "면접", "포트폴리오", "결과 대기", "채용 공고", "스펙 정리"],
+      },
+      {
+        domain: "money",
+        domainLabel: "돈·현실",
+        nouns: ["생활비", "준비 비용", "교통비", "고정비"],
+      },
+      {
+        domain: "relationship",
+        domainLabel: "인간관계",
+        nouns: ["가족 기대", "주변 비교", "연락 부담"],
+      },
+    ],
+    employee: [
+      {
+        domain: "work",
+        domainLabel: "일·성과",
+        nouns: ["상사", "동료", "프로젝트", "보고", "마감", "성과", "역할 분담", "회의"],
+      },
+      {
+        domain: "money",
+        domainLabel: "돈·현실",
+        nouns: ["급여", "고정지출", "생활비", "정산", "계약", "관리비"],
+      },
+      {
+        domain: "study_certificate",
+        domainLabel: "학업·자격증",
+        nouns: ["자격증", "업무 공부", "포트폴리오", "실무 정리"],
+      },
+    ],
+    freelancer: [
+      {
+        domain: "work",
+        domainLabel: "일·성과",
+        nouns: ["클라이언트", "납기", "단가", "수정 요청", "계약", "작업물"],
+      },
+      {
+        domain: "money",
+        domainLabel: "돈·현실",
+        nouns: ["정산", "세금", "수입 변동", "선금", "잔금"],
+      },
+    ],
+    business_owner: [
+      {
+        domain: "work",
+        domainLabel: "일·성과",
+        nouns: ["고객", "매출", "계약", "직원", "외주", "재고", "운영 리스크"],
+      },
+      {
+        domain: "money",
+        domainLabel: "돈·현실",
+        nouns: ["매출", "비용", "정산", "세금", "임대료", "현금흐름"],
+      },
+    ],
+    resting: [
+      {
+        domain: "work",
+        domainLabel: "일·성과",
+        nouns: ["재진입 준비", "생활 리듬", "포트폴리오 정리", "회복"],
+      },
+      {
+        domain: "money",
+        domainLabel: "돈·현실",
+        nouns: ["고정비", "생활비", "지출 관리"],
+      },
+      {
+        domain: "relationship",
+        domainLabel: "인간관계",
+        nouns: ["가족 기대", "주변 시선", "관계 피로"],
+      },
+    ],
+    other: [
+      {
+        domain: "work",
+        domainLabel: "일·성과",
+        nouns: ["현재 역할", "준비 분야", "결과물", "일정"],
+      },
+      {
+        domain: "money",
+        domainLabel: "돈·현실",
+        nouns: ["생활비", "고정비", "정산", "지출 관리"],
+      },
+    ],
+  };
+
+  return byStatus[userContext.lifeStatus].map((hint) => ({
+    domain: hint.domain,
+    preferredSceneNouns: hint.nouns,
+    plain: contextPlain({
+      userContext,
+      domainLabel: hint.domainLabel,
+      nouns: hint.nouns,
+    }),
+  }));
 }
 
 function buildMonthlyFortuneSeeds(
@@ -519,6 +693,10 @@ export function buildAnnualFortuneEvidence(input: {
     yearAccess,
     annualGanji,
     userPillars: input.person.pillars,
+    userContext: input.person.userContext,
+    contextTranslationHints: buildContextTranslationHints(
+      input.person.userContext,
+    ),
     dayMaster,
     annualTenGod: {
       stemTenGod,

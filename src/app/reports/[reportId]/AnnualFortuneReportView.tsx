@@ -1,5 +1,8 @@
 import type { AnnualFortuneReportDraft } from "../../../lib/report-generation/annualFortuneReportDraftTypes";
-import { sanitizeAnnualFortuneVisibleText } from "../../../lib/report-generation/annualFortuneReportDraftValidator";
+import {
+  inferAnnualAdviceDomain,
+  sanitizeAnnualFortuneVisibleText,
+} from "../../../lib/report-generation/annualFortuneReportDraftValidator";
 
 type AnnualFortuneReportViewProps = {
   readonly draft: AnnualFortuneReportDraft;
@@ -46,16 +49,6 @@ const annualFortuneFlowAreaLabels = [
   "연애·가족",
   "학업·자격증",
   "몸·생활 리듬",
-] as const;
-
-const annualFinalAdviceDomainLabels = [
-  "일·성과",
-  "돈·현실",
-  "인간관계",
-  "연애·가족",
-  "학업·자격증",
-  "몸·생활 리듬",
-  "올해 운영법",
 ] as const;
 
 function text(value: string): string {
@@ -115,10 +108,6 @@ function getAnnualKeySignalDisplayLabel(
   }
 
   return "주의 신호";
-}
-
-function getAnnualFinalAdviceDomainLabel(index: number): string {
-  return annualFinalAdviceDomainLabels[index] ?? "올해 운영법";
 }
 
 function getGanjiParts(ganji: string): {
@@ -183,6 +172,13 @@ export function AnnualFortuneReportView({
   draft,
   reportId,
 }: AnnualFortuneReportViewProps) {
+  const userContextSummary = draft.userContextSummary ?? {
+    lifeStatusLabel: "기타",
+    fieldLabel: null,
+    translationNote:
+      "현재 상태와 분야 정보가 충분하지 않아 전체 흐름 장면으로 해석했습니다.",
+  };
+
   return (
     <article className="space-y-8 rounded-xl border border-neutral-800 bg-neutral-900/80 p-5 shadow-2xl shadow-black/30 sm:p-6">
       <header className="space-y-5 rounded-xl border border-amber-500/20 bg-neutral-950/70 p-5">
@@ -203,6 +199,16 @@ export function AnnualFortuneReportView({
             <span className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 text-neutral-300">
               {text(draft.yearSummary.modeLabel)}
             </span>
+          </div>
+          <div className="flex flex-wrap gap-2 text-xs">
+            <span className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 font-semibold text-neutral-200">
+              현재 상태: {text(userContextSummary.lifeStatusLabel)}
+            </span>
+            {userContextSummary.fieldLabel === null ? null : (
+              <span className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 font-semibold text-neutral-200">
+                분야: {text(userContextSummary.fieldLabel)}
+              </span>
+            )}
           </div>
         </div>
         <div className="grid gap-4 sm:grid-cols-[10rem_1fr]">
@@ -410,7 +416,7 @@ export function AnnualFortuneReportView({
               className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
             >
               <p className="text-sm font-semibold text-amber-100">
-                {index + 1}. {getAnnualFinalAdviceDomainLabel(index)}
+                {index + 1}. {inferAnnualAdviceDomain(advice)}
               </p>
               <p className="mt-2 text-sm leading-6 text-neutral-300">
                 {text(advice)}

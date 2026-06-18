@@ -27,6 +27,11 @@ export interface AnnualFortuneReportDraft {
   readonly targetYear: number;
   readonly mode: AnnualFortuneReportMode;
   readonly personLabel: string;
+  readonly userContextSummary: {
+    readonly lifeStatusLabel: string;
+    readonly fieldLabel: string | null;
+    readonly translationNote: string;
+  };
   readonly openingTitle: string;
   readonly openingSummary: string;
   readonly coreLine: string;
@@ -125,6 +130,17 @@ const keySignalSchema = {
   },
 } as const;
 
+const userContextSummarySchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["lifeStatusLabel", "fieldLabel", "translationNote"],
+  properties: {
+    lifeStatusLabel: stringSchema,
+    fieldLabel: nullableStringSchema,
+    translationNote: stringSchema,
+  },
+} as const;
+
 const chapterSchema = {
   type: "object",
   additionalProperties: false,
@@ -162,6 +178,7 @@ export const annualFortuneReportDraftJsonSchema = {
     "targetYear",
     "mode",
     "personLabel",
+    "userContextSummary",
     "openingTitle",
     "openingSummary",
     "coreLine",
@@ -185,6 +202,7 @@ export const annualFortuneReportDraftJsonSchema = {
       enum: ["past_review", "current_year", "new_year_preview"],
     },
     personLabel: stringSchema,
+    userContextSummary: userContextSummarySchema,
     openingTitle: stringSchema,
     openingSummary: stringSchema,
     coreLine: stringSchema,

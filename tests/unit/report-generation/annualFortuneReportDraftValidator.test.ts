@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import type { AnnualFortuneReportDraft } from "../../../src/lib/report-generation/annualFortuneReportDraftTypes";
 import {
+  inferAnnualAdviceDomain,
   validateAnnualFortuneReportDraft,
 } from "../../../src/lib/report-generation/annualFortuneReportDraftValidator";
 
@@ -23,6 +24,12 @@ function createValidAnnualDraft(
     targetYear: 2026,
     mode,
     personLabel: "덕민",
+    userContextSummary: {
+      lifeStatusLabel: "직장인",
+      fieldLabel: "개발·서비스 기획",
+      translationNote:
+        "올해 흐름은 직장·프로젝트·보고·서비스 운영 장면을 중심으로 번역했습니다.",
+    },
     openingTitle: "2026년 세운 흐름",
     openingSummary: modeText,
     coreLine: "丙午의 화 기운이 표현과 실행을 밀어 올리는 흐름입니다.",
@@ -123,6 +130,32 @@ describe("annualFortuneReportDraftValidator", () => {
     });
   });
 
+  it("fills missing userContextSummary with fallback copy", () => {
+    const draft = createValidAnnualDraft();
+    const result = validateAnnualFortuneReportDraft({
+      ...draft,
+      userContextSummary: undefined,
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.userContextSummary).toMatchObject({
+      lifeStatusLabel: "기타",
+      fieldLabel: null,
+    });
+  });
+
+  it("ignores interestArea if it appears in an incoming draft", () => {
+    const result = validateAnnualFortuneReportDraft({
+      ...createValidAnnualDraft(),
+      interestArea: "career",
+    });
+
+    expect(result.ok).toBe(true);
+    expect("interestArea" in (result.value as Record<string, unknown>)).toBe(
+      false,
+    );
+  });
+
   it("normalizes missing monthlyFlow elementFocus to null", () => {
     const draft = createValidAnnualDraft();
     const result = validateAnnualFortuneReportDraft({
@@ -207,6 +240,18 @@ describe("annualFortuneReportDraftValidator", () => {
     expect(result.value?.finalAdvice[0]).not.toContain("실행 기준:");
     expect(result.value?.finalAdvice[1]).not.toContain("일·성과:");
     expect(result.value?.finalAdvice[2]).not.toContain("돈·현실:");
+  });
+
+  it("infers final advice domain labels from body keywords", () => {
+    expect(inferAnnualAdviceDomain("시험과 자격증은 오답노트부터 정리하세요.")).toBe(
+      "학업·자격증",
+    );
+    expect(inferAnnualAdviceDomain("수면과 식사 시간을 먼저 고정하세요.")).toBe(
+      "몸·생활 리듬",
+    );
+    expect(inferAnnualAdviceDomain("상사와 동료에게 역할 분담을 다시 확인하세요.")).toBe(
+      "일·성과",
+    );
   });
 
   it("rejects missing monthlyFlow", () => {

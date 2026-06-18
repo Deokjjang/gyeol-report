@@ -52,6 +52,27 @@ describe("openaiAnnualFortuneReportWriterPrompt", () => {
     expect(prompt).toContain("몸·생활 리듬");
   });
 
+  it("uses user context for scene translation without changing calculations", () => {
+    const prompt = buildMessagesText();
+
+    expect(prompt).toContain("userContext");
+    expect(prompt).toContain("contextTranslationHints");
+    expect(prompt).toContain("Use userContext.lifeStatus");
+    expect(prompt).toContain("Do not change calculations based on userContext");
+    expect(prompt).toContain("All six domains must still appear");
+    expect(prompt).toContain("일·성과, 돈·현실, 인간관계, 연애·가족, 학업·자격증, 몸·생활 리듬");
+    expect(prompt).toContain("Do not ask the user to choose a focus area");
+    expect(prompt).toContain("If employee");
+    expect(prompt).toContain("보고서");
+    expect(prompt).toContain("If student");
+    expect(prompt).toContain("과제 제출");
+    expect(prompt).toContain("If business_owner");
+    expect(prompt).toContain("고객 응대");
+    expect(prompt).toContain("If exam_certificate");
+    expect(prompt).toContain("오답노트");
+    expect(prompt).not.toContain("interestArea");
+  });
+
   it("includes preparation-oriented current-year tone rules", () => {
     const prompt = buildMessagesText();
 

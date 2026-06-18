@@ -1605,6 +1605,37 @@ labels the section `월별 운영 가이드` and the prompt must not present it 
 절기 월운. Exact solar-term monthly fortune can be added later under
 `solar_term_exact`.
 
+## SEUN-05 User Context Profile Layer
+
+SEUN-05 fixes the annual fortune personalization layer to two fields only:
+`lifeStatus` and `fieldLabel`. There is no interest-area field. Annual fortune
+and major-luck reports remain whole-flow products, while love, career, money,
+study, and relationship depth are reserved for separate 990 won products.
+
+`UserContextProfile` is intentionally interpretive, not computational. It does
+not change ganji, ten-god, element balance, branch interactions, monthly seeds,
+or any other calculated evidence. It only translates the same computed annual
+flow into concrete scene nouns that fit the user's current situation.
+
+Annual evidence now carries `userContext` plus `contextTranslationHints`.
+Examples:
+
+1. `employee`: 상사, 동료, 프로젝트, 보고, 마감, 성과, 역할 분담, 회의
+2. `student`: 과제, 발표, 시험, 전공, 교수, 팀플, 포트폴리오
+3. `exam_certificate`: 시험, 모의고사, 오답노트, 실기, 자격증, 면접
+4. `business_owner`: 고객, 매출, 계약, 직원, 외주, 재고, 운영 리스크
+
+The writer prompt must still keep all six annual domains: 일·성과, 돈·현실,
+인간관계, 연애·가족, 학업·자격증, 몸·생활 리듬. Context can choose better nouns
+inside those sections, but it must not remove domains or ask the user to choose
+a focus area.
+
+The annual report draft can include `userContextSummary` for display. The view
+shows `현재 상태` and `분야` near the hero when available. Final advice labels are
+inferred from advice body keywords so a sleep sentence is labeled 몸·생활 리듬, an
+exam sentence is labeled 학업·자격증, and a supervisor/colleague sentence is
+labeled 일·성과.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

@@ -17,6 +17,12 @@ describe("smoke_generate_annual_fortune_report_draft source", () => {
     expect(source).toContain("year:");
     expect(source).toContain("ganji:");
     expect(source).toContain("ten god:");
+    expect(source).toContain("user context:");
+    expect(source).toContain("life status:");
+    expect(source).toContain("field label:");
+    expect(source).toContain("context translation hints");
+    expect(source).toContain("preferredSceneNouns");
+    expect(source).not.toContain("interestArea");
     expect(source).toContain("vague copy warnings:");
     expect(source).toContain("hard claim warnings:");
     expect(source).toContain("internal artifact warnings:");

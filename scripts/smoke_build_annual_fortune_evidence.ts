@@ -54,6 +54,16 @@ function main(): void {
   );
   writeLine(`day master: ${packet.dayMaster}`);
   writeLine(`annual ten god: ${packet.annualTenGod.stemTenGod}`);
+  writeLine("user context:");
+  writeLine(`- life status: ${packet.userContext.lifeStatus}`);
+  writeLine(`- field label: ${packet.userContext.fieldLabel ?? "none"}`);
+  writeList(
+    "context translation hints",
+    packet.contextTranslationHints.map(
+      (hint) =>
+        `${hint.domain} nouns: ${hint.preferredSceneNouns.join(", ")} | ${hint.plain}`,
+    ),
+  );
   writeLine(
     `fills missing: ${packet.elementEffect.fillsMissing.join(", ") || "none"}`,
   );
