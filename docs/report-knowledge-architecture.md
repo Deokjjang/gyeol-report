@@ -1768,6 +1768,49 @@ user-facing year selection UI, selectable year cards, pre-December locked
 new-year card, and paid annual generation flow are not implemented yet and
 belong to a later product input flow task.
 
+## DAEUN-01 Major Fortune Evidence Engine
+
+DAEUN-01 starts the 대운 리포트 v1.0 foundation. 세운 is a selected one-year flow;
+대운 is a roughly ten-year background that frames career, money, relationships,
+family, study, health rhythm, and identity direction over a longer cycle.
+
+This task only builds the evidence layer. It does not add an OpenAI writer,
+draft schema, preview page, product UI, year/cycle selection screen, payment,
+or public product page. The smoke script is evidence-only and must not import
+an OpenAI writer.
+
+The initial Deokmin fixture uses precomputed major fortune cycles with
+`fixture_precomputed` basis because an exact 대운 start-age/direction algorithm
+is not implemented yet. The evidence packet therefore includes a warning so the
+report system does not imply exact cycle calculation where only fixture data is
+available.
+
+The major fortune evidence engine selects previous, current, and next cycles by
+year range, parses the current cycle ganji, maps heavenly stem and earthly
+branch elements/yin-yang, and calculates the ten-god relationship from the
+user's day master to the major cycle stem. It reuses annual fortune stem/branch
+and ten-god rules where possible.
+
+Element effect logic checks whether the major cycle strengthens elements that
+fill natal missing elements, overload already-heavy elements, or indirectly
+overload heavy elements through generation. For example, fire can fill fire
+shortage while indirectly intensifying heavy earth because fire generates earth.
+
+Branch interaction logic reuses the annual branch detector for 충, 육합, 삼합,
+반합, 해, 형, and 파, with affected natal pillar positions preserved. The same
+relationship is interpreted as a ten-year background rather than a one-year
+event.
+
+The packet also produces life-area signals, difficulty signals, opportunity
+signals, transition signals from previous/current/next cycles, and strong years
+within the current cycle. Strong years are found when annual ganji repeats or
+strengthens the major cycle element, repeats the major ten-god, shares the
+major branch, or strongly interacts with major/natal branches.
+
+UserContextProfile is reused only to translate long-cycle scenes into concrete
+nouns such as 프로젝트, 보고, 계약, 정산, 동료, 상사, 자격증, and 생활 리듬. It does
+not change the major fortune calculations.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
