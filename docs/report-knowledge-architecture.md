@@ -1631,10 +1631,10 @@ inside those sections, but it must not remove domains or ask the user to choose
 a focus area.
 
 The annual report draft can include `userContextSummary` for display. The view
-shows `현재 상태` and `분야` near the hero when available. Final advice labels are
-inferred from advice body keywords so a sleep sentence is labeled 몸·생활 리듬, an
-exam sentence is labeled 학업·자격증, and a supervisor/colleague sentence is
-labeled 일·성과.
+uses a deduplicated hero context line and field note rather than repeating
+status and field chips. Final advice labels are inferred from advice body
+keywords first, and later locked to the six standard annual domains before
+rendering.
 
 ## SEUN-06 Annual Fortune Final QA
 
@@ -1698,6 +1698,34 @@ validator reports warning counters instead of inventing missing signals.
 
 Context domain balance remains warning-only. Employee context can sharpen scene
 nouns, but it must not turn 연애·가족, 학업·자격증, or 몸·생활 리듬 into work-only copy.
+
+## SEUN-06B Annual Fortune Final Lock Polish
+
+SEUN-06B is the final product-lock polish pass for annual fortune v1. The report
+view renders hero context as a deduplicated line such as
+`덕민님 · 甲(갑목) 일간 · 직장인`, followed by `개발·서비스 기획 기준으로 해석` when a
+field label is available. It must not repeat `직장인` or the field label in
+multiple hero chips.
+
+Paid report copy must not expose future-development wording such as `추후
+고도화`, `추후 개발`, or `개발 예정`. The monthly guide uses the product-facing
+copy: `월별 흐름은 달력월 기준 운영 가이드입니다. 실제 체감 시점은 절기와 개인 일정에
+따라 조금 달라질 수 있습니다.`
+
+Final advice is rendered through domain-locked action cards. The view always
+shows exactly one item for each standard domain: 일·성과, 돈·현실, 인간관계,
+연애·가족, 학업·자격증, 몸·생활 리듬. Generated finalAdvice text is reused only
+when it clearly matches the target domain; otherwise the validator/view layer
+derives safer domain-specific copy from chapters, flow cards, or deterministic
+rescue advice.
+
+The annual visible-text sanitizer also catches grammar residue such as
+`별으로` and `甲일간`, and rewrites awkward 식신 phrasing into natural Korean like
+`식신으로 들어와 결과물과 표현을 밖으로 꺼내는 힘을 키웁니다.`
+
+The annual smoke script reports final lock counters: hero duplication warnings,
+future development wording warnings, final advice domain lock warnings, and
+grammar residue warnings.
 
 ## Future OpenAI Use
 

@@ -1,7 +1,7 @@
 import type { AnnualFortuneReportDraft } from "../../../lib/report-generation/annualFortuneReportDraftTypes";
 import {
+  buildAnnualDomainLockedFinalAdvice,
   getAnnualMonthlyBasisDisplayLabel,
-  inferAnnualAdviceDomain,
   sanitizeAnnualFortuneVisibleText,
 } from "../../../lib/report-generation/annualFortuneReportDraftValidator";
 
@@ -74,6 +74,41 @@ function getHeroDayMasterLabel(draft: AnnualFortuneReportDraft): string | null {
   }
 
   return null;
+}
+
+function getHeroPersonLabel(
+  draft: AnnualFortuneReportDraft,
+  userContextSummary: AnnualFortuneReportDraft["userContextSummary"],
+): string {
+  const originalPersonLabel = text(draft.personLabel);
+  const fieldLabel =
+    userContextSummary.fieldLabel === null
+      ? null
+      : text(userContextSummary.fieldLabel);
+  const lifeStatusLabel = text(userContextSummary.lifeStatusLabel);
+  let cleaned = originalPersonLabel;
+
+  if (fieldLabel !== null && fieldLabel.length > 0) {
+    cleaned = cleaned.split(fieldLabel).join("");
+  }
+  if (lifeStatusLabel.length > 0) {
+    cleaned = cleaned.split(lifeStatusLabel).join("");
+  }
+
+  cleaned = cleaned.replace(/[·\s]+/g, " ").trim();
+
+  if (cleaned.length > 0) {
+    return cleaned;
+  }
+  if (
+    [draft.openingTitle, draft.openingSummary, draft.coreLine].some((value) =>
+      value.includes("덕민"),
+    )
+  ) {
+    return "덕민님";
+  }
+
+  return "사용자님";
 }
 
 function getAnnualFlowIndexHeading(
@@ -200,13 +235,15 @@ export function AnnualFortuneReportView({
       "현재 상태와 분야 정보가 충분하지 않아 전체 흐름 장면으로 해석했습니다.",
   };
   const heroDayMasterLabel = getHeroDayMasterLabel(draft);
+  const heroPersonLabel = getHeroPersonLabel(draft, userContextSummary);
   const heroContextLine = [
-    text(draft.personLabel),
+    heroPersonLabel,
     heroDayMasterLabel,
     text(userContextSummary.lifeStatusLabel),
   ]
     .filter((item): item is string => item !== null && item.length > 0)
     .join(" · ");
+  const domainLockedFinalAdvice = buildAnnualDomainLockedFinalAdvice({ draft });
 
   return (
     <article className="space-y-8 rounded-xl border border-neutral-800 bg-neutral-900/80 p-5 shadow-2xl shadow-black/30 sm:p-6">
@@ -230,7 +267,7 @@ export function AnnualFortuneReportView({
           )}
           <div className="flex flex-wrap gap-2 text-sm">
             <span className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 font-semibold text-neutral-100">
-              {text(draft.personLabel)}
+              {heroPersonLabel}
             </span>
             <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 font-semibold text-amber-100">
               {text(draft.yearSummary.displayTitle)}
@@ -238,16 +275,6 @@ export function AnnualFortuneReportView({
             <span className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 text-neutral-300">
               {text(draft.yearSummary.modeLabel)}
             </span>
-          </div>
-          <div className="flex flex-wrap gap-2 text-xs">
-            <span className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 font-semibold text-neutral-200">
-              현재 상태: {text(userContextSummary.lifeStatusLabel)}
-            </span>
-            {userContextSummary.fieldLabel === null ? null : (
-              <span className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 font-semibold text-neutral-200">
-                분야: {text(userContextSummary.fieldLabel)}
-              </span>
-            )}
           </div>
         </div>
         <div className="grid gap-4 sm:grid-cols-[10rem_1fr]">
@@ -419,7 +446,7 @@ export function AnnualFortuneReportView({
           월별 운영 가이드
         </h2>
         <p className="text-sm leading-6 text-neutral-400">
-          월별 흐름은 현재 달력월 기준 운영 가이드이며, 절기 기준 정밀 월운은 추후 고도화됩니다.
+          월별 흐름은 달력월 기준 운영 가이드입니다. 실제 체감 시점은 절기와 개인 일정에 따라 조금 달라질 수 있습니다.
         </p>
         <div className="grid gap-3 md:grid-cols-2">
           {draft.monthlyFlow.map((flow) => (
@@ -465,16 +492,16 @@ export function AnnualFortuneReportView({
       <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
         <h2 className="text-lg font-semibold text-neutral-50">마지막 조언</h2>
         <ol className="grid gap-3">
-          {draft.finalAdvice.map((advice, index) => (
+          {domainLockedFinalAdvice.map((advice, index) => (
             <li
-              key={advice}
+              key={advice.label}
               className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
             >
               <p className="text-sm font-semibold text-amber-100">
-                {index + 1}. {inferAnnualAdviceDomain(advice)}
+                {index + 1}. {advice.label}
               </p>
               <p className="mt-2 text-sm leading-6 text-neutral-300">
-                {text(advice)}
+                {text(advice.body)}
               </p>
             </li>
           ))}

@@ -2,7 +2,9 @@ import { describe, expect, it } from "vitest";
 
 import type { AnnualFortuneReportDraft } from "../../../src/lib/report-generation/annualFortuneReportDraftTypes";
 import {
+  buildAnnualDomainLockedFinalAdvice,
   inferAnnualAdviceDomain,
+  sanitizeAnnualFortuneVisibleText,
   summarizeAnnualFortuneDraftQuality,
   validateAnnualFortuneReportDraft,
 } from "../../../src/lib/report-generation/annualFortuneReportDraftValidator";
@@ -262,6 +264,23 @@ describe("annualFortuneReportDraftValidator", () => {
     );
   });
 
+  it("sanitizes grammar residue around annual ten-god terms", () => {
+    expect(
+      sanitizeAnnualFortuneVisibleText(
+        "식신: 결과를 밖으로 꺼내는 별으로 들어오고 甲일간 기준입니다.",
+      ),
+    ).toContain("식신으로 들어와 결과물과 표현을 밖으로 꺼내는 힘을 키우고");
+    expect(
+      sanitizeAnnualFortuneVisibleText(
+        "식신: 결과를 밖으로 꺼내는 별으로 들어옵니다.",
+      ),
+    ).toContain("식신으로 들어와 결과물과 표현을 밖으로 꺼내는 힘을 키웁니다");
+    expect(sanitizeAnnualFortuneVisibleText("甲일간")).toBe(
+      "甲(갑목) 일간",
+    );
+    expect(sanitizeAnnualFortuneVisibleText("별으로")).toBe("별로");
+  });
+
   it("sanitizes repeated branch and generating terminology", () => {
     const result = validateAnnualFortuneReportDraft({
       ...createValidAnnualDraft(),
@@ -332,6 +351,53 @@ describe("annualFortuneReportDraftValidator", () => {
     expect(inferAnnualAdviceDomain("상사와 동료에게 역할 분담을 다시 확인하세요.")).toBe(
       "일·성과",
     );
+  });
+
+  it("builds six domain-locked final advice items", () => {
+    const draft = createValidAnnualDraft({
+      finalAdvice: [
+        "프로젝트 결과물, 보고, 문서화, 발표처럼 눈에 보이는 산출물을 먼저 만드세요.",
+        "수면과 식사 시간을 먼저 고정하세요.",
+        "상사·동료·가족과의 조율은 한 문장으로 남기세요.",
+      ],
+    });
+    const lockedAdvice = buildAnnualDomainLockedFinalAdvice({ draft });
+
+    expect(lockedAdvice).toHaveLength(6);
+    expect(lockedAdvice.map((item) => item.label)).toEqual([
+      "일·성과",
+      "돈·현실",
+      "인간관계",
+      "연애·가족",
+      "학업·자격증",
+      "몸·생활 리듬",
+    ]);
+    expect(lockedAdvice.find((item) => item.label === "일·성과")?.body).toContain(
+      "프로젝트 결과물",
+    );
+    expect(
+      lockedAdvice.find((item) => item.label === "몸·생활 리듬")?.body,
+    ).toContain("수면");
+    expect(
+      lockedAdvice.find((item) => item.label === "일·성과")?.body,
+    ).not.toContain("가족");
+  });
+
+  it("counts final lock and visible polish quality warnings", () => {
+    const clean = validateAnnualFortuneReportDraft(createValidAnnualDraft());
+
+    expect(clean.ok).toBe(true);
+    expect(
+      summarizeAnnualFortuneDraftQuality(clean.value!)
+        .futureDevelopmentWordingWarnings,
+    ).toBe(0);
+    expect(
+      summarizeAnnualFortuneDraftQuality(clean.value!).grammarResidueWarnings,
+    ).toBe(0);
+    expect(
+      summarizeAnnualFortuneDraftQuality(clean.value!)
+        .finalAdviceDomainLockWarnings,
+    ).toBe(0);
   });
 
   it("rejects missing monthlyFlow", () => {

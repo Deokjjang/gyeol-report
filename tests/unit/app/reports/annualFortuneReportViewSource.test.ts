@@ -45,10 +45,15 @@ describe("AnnualFortuneReportView source", () => {
     expect(viewSource).toContain("기준:");
     expect(viewSource).toContain("getMonthlyBasisDisplayLabel");
     expect(viewSource).toContain("달력월 기준 운영 가이드");
-    expect(viewSource).toContain("월별 흐름은 현재 달력월 기준 운영 가이드");
+    expect(viewSource).toContain("월별 흐름은 달력월 기준 운영 가이드입니다");
+    expect(viewSource).toContain(
+      "실제 체감 시점은 절기와 개인 일정에 따라 조금 달라질 수 있습니다",
+    );
+    expect(viewSource).not.toContain("추후 고도화");
     expect(viewSource).toContain("원국과의 작용:");
     expect(viewSource).not.toContain("calendar_month_approximation");
-    expect(viewSource).toContain("draft.finalAdvice.map");
+    expect(viewSource).toContain("buildAnnualDomainLockedFinalAdvice");
+    expect(viewSource).toContain("domainLockedFinalAdvice.map");
     expect(viewSource).toContain("안전 안내");
   });
 
@@ -60,14 +65,14 @@ describe("AnnualFortuneReportView source", () => {
     expect(viewSource).toContain("draft.scoreSummary.flowIndex");
     expect(viewSource).toContain("draft.scoreSummary.flowTypeLabel");
     expect(viewSource).toContain("draft.scoreSummary.flowIndexCaution");
-    expect(viewSource).toContain("현재 상태:");
-    expect(viewSource).toContain("분야:");
+    expect(viewSource).toContain("getHeroPersonLabel");
+    expect(viewSource).toContain("heroPersonLabel");
     expect(viewSource).toContain("getHeroDayMasterLabel");
     expect(viewSource).toContain("甲(갑목) 일간");
     expect(viewSource).toContain("기준으로 해석");
+    expect(viewSource).not.toContain("개발·서비스 기획 직장인 · 甲(갑목) 일간 · 직장인");
     expect(viewSource).not.toContain("甲일간 직장인");
     expect(viewSource).toContain("userContextSummary");
-    expect(viewSource).toContain("inferAnnualAdviceDomain");
     expect(viewSource).not.toContain("세운 흐름 점수");
     expect(viewSource).not.toContain("draft.scoreSummary.totalScore");
     expect(viewSource).not.toContain("관심영역");

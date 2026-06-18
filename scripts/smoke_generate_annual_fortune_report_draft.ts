@@ -205,6 +205,14 @@ async function main(): Promise<void> {
   writeLine(
     `missing opportunity signal warnings: ${quality.missingOpportunitySignalWarnings}`,
   );
+  writeLine(`hero duplication warnings: ${quality.heroDuplicationWarnings}`);
+  writeLine(
+    `future development wording warnings: ${quality.futureDevelopmentWordingWarnings}`,
+  );
+  writeLine(
+    `final advice domain lock warnings: ${quality.finalAdviceDomainLockWarnings}`,
+  );
+  writeLine(`grammar residue warnings: ${quality.grammarResidueWarnings}`);
   writeLine(
     `monthly basis: ${packet.monthlyFortuneSeeds[0]?.monthGanji.basis ?? annualFortuneMonthlyBasisFallback}`,
   );

@@ -115,6 +115,21 @@ describe("openaiAnnualFortuneReportWriterPrompt", () => {
     expect(prompt).toContain("연락");
   });
 
+  it("prevents final polish regressions in hero, monthly wording, and finalAdvice", () => {
+    const prompt = buildMessagesText();
+
+    expect(prompt).toContain("Do not create hero/context titles");
+    expect(prompt).toContain("fieldLabel and lifeStatus");
+    expect(prompt).toContain("must not repeat the same field or status twice");
+    expect(prompt).toContain("Do not write future product or development wording");
+    expect(prompt).toContain("추후 고도화");
+    expect(prompt).toContain("월별 흐름은 달력월 기준 운영 가이드입니다");
+    expect(prompt).toContain("finalAdvice must contain six domain-specific actions");
+    expect(prompt).toContain("Use these six finalAdvice domain labels exactly");
+    expect(prompt).toContain("Do not mix work, family, study, money, and health advice");
+    expect(prompt).toContain("일·성과, 돈·현실, 인간관계, 연애·가족, 학업·자격증, 몸·생활 리듬");
+  });
+
   it("requires key signal balance when evidence supports it", () => {
     const prompt = buildMessagesText();
 

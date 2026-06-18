@@ -3,6 +3,7 @@ import {
   type AnnualFortuneReportDraft,
   type AnnualFortuneReportMode,
 } from "./annualFortuneReportDraftTypes";
+import type { AnnualFortuneEvidencePacket } from "../report-knowledge/annualFortuneEvidence";
 
 export type AnnualFortuneReportDraftValidationResult = {
   readonly ok: boolean;
@@ -23,6 +24,10 @@ export type AnnualFortuneDraftQualitySummary = {
   readonly domainContextOverreachWarnings: number;
   readonly missingDifficultySignalWarnings: number;
   readonly missingOpportunitySignalWarnings: number;
+  readonly heroDuplicationWarnings: number;
+  readonly futureDevelopmentWordingWarnings: number;
+  readonly finalAdviceDomainLockWarnings: number;
+  readonly grammarResidueWarnings: number;
 };
 
 type AnnualFortuneLegacyScoreSummary = {
@@ -123,6 +128,30 @@ const internalForbiddenWords = [
   "fixture",
 ] as const;
 
+const futureDevelopmentForbiddenPhrases = [
+  "추후 고도화",
+  "추후 개발",
+  "정밀 월운은 추후",
+  "고도화됩니다",
+  "개발 예정",
+  "future task",
+] as const;
+
+const grammarResiduePhrases = [
+  "별으로",
+  "甲일간",
+  "식신: 결과를 밖으로 꺼내는 별",
+] as const;
+
+const annualDomainLockedFinalAdviceLabels = [
+  "일·성과",
+  "돈·현실",
+  "인간관계",
+  "연애·가족",
+  "학업·자격증",
+  "몸·생활 리듬",
+] as const;
+
 const modeToneMarkers = {
   past_review: ["그해", "회고", "그 시기", "왜", "흔들렸", "압박", "반복"],
   current_year: [
@@ -195,8 +224,30 @@ export function sanitizeAnnualFortuneKoreanCopy(text: string): string {
     ...hardClaimReplacements,
   ]
     .reduce((current, [from, to]) => current.split(from).join(to), text)
+    .replace(
+      /식신:\s*결과를 밖으로 꺼내는 별으로 들어오고/gu,
+      "식신으로 들어와 결과물과 표현을 밖으로 꺼내는 힘을 키우고",
+    )
+    .replace(
+      /식신:\s*결과를 밖으로 꺼내는 별으로 들어옵니다/gu,
+      "식신으로 들어와 결과물과 표현을 밖으로 꺼내는 힘을 키웁니다",
+    )
+    .replace(/흐름으로 들어오는 별으로/gu, "흐름으로 들어오는 별로")
+    .replace(/결과를 밖으로 꺼내는 별으로/gu, "결과를 밖으로 꺼내는 흐름으로")
+    .replace(/별으로/gu, "별로")
     .replace(/甲일간/gu, "甲(갑목) 일간")
+    .replace(/甲\s+일간/gu, "甲(갑목) 일간")
     .replace(/甲 일간\(갑 일간\)/gu, "甲(갑목) 일간")
+    .replace(
+      /절기 기준 정밀 월운은 추후 고도화됩니다\./gu,
+      "실제 체감 시점은 절기와 개인 일정에 따라 조금 달라질 수 있습니다.",
+    )
+    .replace(/추후 고도화/gu, "")
+    .replace(/추후 개발/gu, "")
+    .replace(/정밀 월운은 추후/gu, "")
+    .replace(/고도화됩니다/gu, "")
+    .replace(/개발 예정/gu, "")
+    .replace(/future task/giu, "")
     .replace(/卯午 파\(卯午 파,\s*([^)]+)\)/gu, "卯午 파: $1")
     .replace(/午未 육합\(午未 육합,\s*[^)]+\)/gu, "午未 육합: 실제 약속과 움직임이 묶이는 흐름")
     .replace(/寅申 충\(寅申 충,\s*서로 부딪혀 방향이 바뀌는 작용\)/gu, "寅申 충: 서로 부딪히며 방향이 바뀌는 작용")
@@ -271,6 +322,14 @@ export type AnnualAdviceDomainLabel =
   | "학업·자격증"
   | "몸·생활 리듬"
   | "올해 운영법";
+
+type DomainLockedAnnualAdviceLabel =
+  (typeof annualDomainLockedFinalAdviceLabels)[number];
+
+export type DomainLockedAnnualAdviceItem = {
+  readonly label: DomainLockedAnnualAdviceLabel;
+  readonly body: string;
+};
 
 export function inferAnnualAdviceDomain(body: string): AnnualAdviceDomainLabel {
   const text = sanitizeAnnualFortuneKoreanCopy(body);
@@ -404,6 +463,130 @@ export function inferAnnualAdviceDomain(body: string): AnnualAdviceDomainLabel {
     });
 
   return ranked[0]?.label ?? "올해 운영법";
+}
+
+function hasConflictingAnnualAdviceDomain(
+  body: string,
+  target: DomainLockedAnnualAdviceLabel,
+): boolean {
+  const text = sanitizeAnnualFortuneKoreanCopy(body);
+  const hasWork = ["상사", "동료", "프로젝트", "보고", "문서화", "마감", "회의"].some(
+    (keyword) => text.includes(keyword),
+  );
+  const hasFamily = ["가족", "부모", "연인", "집안", "가족 일정"].some(
+    (keyword) => text.includes(keyword),
+  );
+  const hasStudy = ["시험", "자격증", "오답", "공부", "실기", "포트폴리오"].some(
+    (keyword) => text.includes(keyword),
+  );
+  const hasBody = ["수면", "식사", "피로", "회복", "컨디션", "휴식"].some(
+    (keyword) => text.includes(keyword),
+  );
+
+  if (target === "일·성과") {
+    return hasFamily || hasStudy || hasBody;
+  }
+  if (target === "연애·가족") {
+    return hasWork || hasStudy || hasBody;
+  }
+  if (target === "학업·자격증") {
+    return hasWork || hasFamily || hasBody;
+  }
+  if (target === "몸·생활 리듬") {
+    return hasWork || hasFamily || hasStudy;
+  }
+
+  return false;
+}
+
+function isAnnualAdviceBodySafeForDomain(
+  body: string,
+  target: DomainLockedAnnualAdviceLabel,
+): boolean {
+  return (
+    inferAnnualAdviceDomain(body) === target &&
+    !hasConflictingAnnualAdviceDomain(body, target)
+  );
+}
+
+function getAnnualDomainRescueAdvice(
+  label: DomainLockedAnnualAdviceLabel,
+  draft: AnnualFortuneReportDraft,
+  evidence?: AnnualFortuneEvidencePacket,
+): string {
+  const fieldLabel =
+    evidence?.userContext.fieldLabel?.trim() ??
+    draft.userContextSummary.fieldLabel?.trim();
+  const workNoun = fieldLabel === undefined || fieldLabel.length === 0
+    ? "프로젝트"
+    : `${fieldLabel} 프로젝트`;
+
+  const rescueAdvice: Record<DomainLockedAnnualAdviceLabel, string> = {
+    "일·성과": `${workNoun}·보고·문서화처럼 눈에 보이는 결과물은 마감 전부터 중간 점검 기준을 잡아 두세요.`,
+    "돈·현실":
+      "급여·생활비·정산·계약처럼 반복되는 현실 숫자는 월초에 먼저 분리해 두세요.",
+    인간관계:
+      "상사·동료·친구와의 연락은 감정 설명보다 일정과 요청 사항을 짧게 정리해 전달하세요.",
+    "연애·가족":
+      "연인·가족·부모와의 약속은 감정이 올라오기 전에 시간과 역할을 먼저 맞춰 두세요.",
+    "학업·자격증":
+      "자격증·업무 공부·포트폴리오는 공부 시간보다 결과물 단위로 쪼개서 남기세요.",
+    "몸·생활 리듬":
+      "수면·식사·회복 시간을 일정처럼 고정해야 성과와 컨디션을 같이 지킬 수 있습니다.",
+  };
+
+  return rescueAdvice[label];
+}
+
+function findAnnualAdviceCandidateForDomain(
+  draft: AnnualFortuneReportDraft,
+  label: DomainLockedAnnualAdviceLabel,
+): string | undefined {
+  const generatedAdvice = draft.finalAdvice.find((advice) =>
+    isAnnualAdviceBodySafeForDomain(advice, label),
+  );
+
+  if (generatedAdvice !== undefined) {
+    return generatedAdvice;
+  }
+
+  const chapterAdvice = draft.chapters
+    .flatMap((chapter) => chapter.practicalAdvice)
+    .find((advice) => isAnnualAdviceBodySafeForDomain(advice, label));
+
+  if (chapterAdvice !== undefined) {
+    return chapterAdvice;
+  }
+
+  const flowCard = draft.flowCards.find((card) => card.label === label);
+
+  if (flowCard !== undefined) {
+    const flowCandidate = `${flowCard.headline} ${flowCard.body}`;
+
+    if (isAnnualAdviceBodySafeForDomain(flowCandidate, label)) {
+      return flowCandidate;
+    }
+  }
+
+  return undefined;
+}
+
+export function buildAnnualDomainLockedFinalAdvice(params: {
+  readonly draft: AnnualFortuneReportDraft;
+  readonly evidence?: AnnualFortuneEvidencePacket;
+}): readonly DomainLockedAnnualAdviceItem[] {
+  return annualDomainLockedFinalAdviceLabels.map((label) => {
+    const candidate =
+      findAnnualAdviceCandidateForDomain(params.draft, label) ??
+      getAnnualDomainRescueAdvice(label, params.draft, params.evidence);
+
+    return {
+      label,
+      body: sanitizeAnnualFortuneKoreanCopy(
+        stripAnnualFinalAdvicePrefix(candidate),
+      ),
+    };
+  });
 }
 
 function normalizeOptionalMonthlyText(value: unknown): string | null {
@@ -799,6 +982,63 @@ function countMissingOpportunitySignalWarnings(
     : 1;
 }
 
+function countHeroDuplicationWarnings(draft: AnnualFortuneReportDraft): number {
+  const fieldLabel = draft.userContextSummary.fieldLabel;
+  const lifeStatusLabel = draft.userContextSummary.lifeStatusLabel;
+  const heroText = [
+    draft.personLabel,
+    draft.openingTitle,
+    draft.openingSummary,
+    draft.userContextSummary.translationNote,
+  ].join("\n");
+  const duplicatedFieldAndStatus =
+    fieldLabel !== null &&
+    heroText.includes(`${fieldLabel} ${lifeStatusLabel}`) &&
+    heroText.includes(lifeStatusLabel);
+  const lifeStatusCount = countOccurrences(heroText, lifeStatusLabel);
+  const fieldLabelCount =
+    fieldLabel === null ? 0 : countOccurrences(heroText, fieldLabel);
+
+  return duplicatedFieldAndStatus || lifeStatusCount > 2 || fieldLabelCount > 2
+    ? 1
+    : 0;
+}
+
+function countFutureDevelopmentWordingWarnings(visibleText: string): number {
+  return futureDevelopmentForbiddenPhrases.reduce(
+    (count, phrase) => count + countOccurrences(visibleText, phrase),
+    0,
+  );
+}
+
+function countFinalAdviceDomainLockWarnings(
+  draft: AnnualFortuneReportDraft,
+): number {
+  const lockedAdvice = buildAnnualDomainLockedFinalAdvice({ draft });
+  const labels = lockedAdvice.map((item) => item.label);
+  const hasAllLabels = annualDomainLockedFinalAdviceLabels.every((label) =>
+    labels.includes(label),
+  );
+  const hasDuplicates = new Set(labels).size !== labels.length;
+  const mismatchedItems = lockedAdvice.filter(
+    (item) => !isAnnualAdviceBodySafeForDomain(item.body, item.label),
+  ).length;
+
+  return lockedAdvice.length === annualDomainLockedFinalAdviceLabels.length &&
+    hasAllLabels &&
+    !hasDuplicates &&
+    mismatchedItems === 0
+    ? 0
+    : 1 + mismatchedItems;
+}
+
+function countGrammarResidueWarnings(visibleText: string): number {
+  return grammarResiduePhrases.reduce(
+    (count, phrase) => count + countOccurrences(visibleText, phrase),
+    0,
+  );
+}
+
 export function summarizeAnnualFortuneDraftQuality(
   draft: AnnualFortuneReportDraft,
 ): AnnualFortuneDraftQualitySummary {
@@ -839,6 +1079,12 @@ export function summarizeAnnualFortuneDraftQuality(
     countMissingDifficultySignalWarnings(draft);
   const missingOpportunitySignalWarnings =
     countMissingOpportunitySignalWarnings(draft);
+  const heroDuplicationWarnings = countHeroDuplicationWarnings(draft);
+  const futureDevelopmentWordingWarnings =
+    countFutureDevelopmentWordingWarnings(visibleText);
+  const finalAdviceDomainLockWarnings =
+    countFinalAdviceDomainLockWarnings(draft);
+  const grammarResidueWarnings = countGrammarResidueWarnings(visibleText);
 
   return {
     vagueCopyWarnings,
@@ -852,6 +1098,10 @@ export function summarizeAnnualFortuneDraftQuality(
     domainContextOverreachWarnings,
     missingDifficultySignalWarnings,
     missingOpportunitySignalWarnings,
+    heroDuplicationWarnings,
+    futureDevelopmentWordingWarnings,
+    finalAdviceDomainLockWarnings,
+    grammarResidueWarnings,
   };
 }
 
