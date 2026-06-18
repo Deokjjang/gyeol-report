@@ -50,6 +50,9 @@ writeLine(`ten god: ${evidence.majorTenGod.stemTenGod}`);
 writeLine(
   `elements: ${evidence.currentCycle.stemElement}/${evidence.currentCycle.branchElement}`,
 );
+writeLine(`calculation basis: ${evidence.calculationBasis.displayLabel}`);
+writeLine(`basis note: ${evidence.calculationBasis.note}`);
+writeLine(`cycle year timeline: ${evidence.cycleYearTimeline.length}`);
 writeList("fills missing", evidence.elementEffect.fillsMissing);
 writeList("overloads heavy", evidence.elementEffect.overloadsHeavy);
 writeList(
@@ -81,6 +84,13 @@ writeList(
   "strong years within cycle",
   evidence.strongYearsWithinCycle.map(
     (year) => `${year.year} ${year.ganji}: ${year.reason}`,
+  ),
+);
+writeList(
+  "10-year timeline",
+  evidence.cycleYearTimeline.map(
+    (year) =>
+      `${year.year} ${year.ganji} ${year.yearIndexInCycle}년차: ${year.relationToMajorCycle}`,
   ),
 );
 writeList("warnings", evidence.warnings);

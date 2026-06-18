@@ -63,6 +63,13 @@ export interface MajorFortuneEvidencePacket {
   readonly currentCycle: MajorFortuneCycle;
   readonly previousCycle?: MajorFortuneCycle;
   readonly nextCycle?: MajorFortuneCycle;
+  readonly calculationBasis: {
+    readonly basisType: "precomputed_major_fortune_table";
+    readonly displayLabel: string;
+    readonly explanation: string;
+    readonly ageBasisLabel: string;
+    readonly note: string;
+  };
   readonly majorTenGod: {
     readonly stemTenGod: TenGod;
     readonly plain: string;
@@ -90,6 +97,16 @@ export interface MajorFortuneEvidencePacket {
     readonly year: number;
     readonly ganji: string;
     readonly reason: string;
+  }[];
+  readonly cycleYearTimeline: readonly {
+    readonly year: number;
+    readonly ganji: string;
+    readonly yearIndexInCycle: number;
+    readonly phase: "early" | "middle" | "late";
+    readonly headline: string;
+    readonly annualElementFocus: string;
+    readonly relationToMajorCycle: string;
+    readonly plain: string;
   }[];
   readonly warnings: readonly string[];
 }

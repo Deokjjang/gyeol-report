@@ -85,6 +85,8 @@ async function main(): Promise<void> {
   writeLine(
     `elements: ${packet.currentCycle.stemElement}/${packet.currentCycle.branchElement}`,
   );
+  writeLine(`calculation basis: ${packet.calculationBasis.displayLabel}`);
+  writeLine(`cycle year timeline: ${packet.cycleYearTimeline.length}`);
   writeList("life area signals", packet.lifeAreaSignals.map((signal) => signal.plain));
   writeList("difficulty signals", packet.difficultySignals.map((signal) => signal.plain));
   writeList("opportunity signals", packet.opportunitySignals.map((signal) => signal.plain));
@@ -152,8 +154,17 @@ async function main(): Promise<void> {
   writeLine(`decade cards: ${validation.value.decadeCards.length}`);
   writeLine(`chapters: ${validation.value.cycleChapters.length}`);
   writeLine(`phase timeline: ${validation.value.phaseTimeline.length}`);
+  writeLine(`cycle year timeline: ${quality.cycleYearTimelineCount}`);
   writeLine(`strong years: ${validation.value.strongYears.length}`);
   writeLine(`final advice: ${validation.value.finalAdvice.length}`);
+  writeLine(`missing cycle year warnings: ${quality.missingCycleYearWarnings}`);
+  writeLine(`cycle index leak warnings: ${quality.cycleIndexLeakWarnings}`);
+  writeLine(
+    `technical term warnings: ${quality.technicalTermWithoutExplanationWarnings}`,
+  );
+  writeLine(
+    `small event overfocus warnings: ${quality.smallEventOverfocusWarnings}`,
+  );
   writeLine(`annual-tone warnings: ${quality.annualToneWarnings}`);
   writeLine(`decade-tone warnings: ${quality.decadeToneWarnings}`);
   writeLine(`strong year reason warnings: ${quality.strongYearReasonWarnings}`);

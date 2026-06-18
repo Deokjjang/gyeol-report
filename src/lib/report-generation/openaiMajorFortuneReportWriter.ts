@@ -308,6 +308,12 @@ function attachDeterministicEvidence(input: {
       ...((input.parsed as { readonly cycleSummary?: object }).cycleSummary ?? {}),
       ganji: input.evidencePacket.currentCycle.ganji,
       displayTitle: `현재 대운 ${input.evidencePacket.currentCycle.ganji}`,
+      cycleIndexLabel: `${input.evidencePacket.currentCycle.index}번째 대운`,
+      currentPositionLabel: `${input.evidencePacket.currentYear}년 기준 ${
+        input.evidencePacket.currentYear -
+        input.evidencePacket.currentCycle.startYear +
+        1
+      }년차`,
       ageRangeLabel: `${input.evidencePacket.currentCycle.startAge}세~${input.evidencePacket.currentCycle.endAge}세`,
       yearRangeLabel: `${input.evidencePacket.currentCycle.startYear}년~${input.evidencePacket.currentCycle.endYear}년`,
       stemLabel: formatStemLabel(input.evidencePacket),
@@ -316,6 +322,16 @@ function attachDeterministicEvidence(input: {
       tenGodLabel: `${input.evidencePacket.majorTenGod.stemTenGod}의 대운`,
       basisLabel: "사전 계산된 대운표 기준",
     },
+    calculationBasis: input.evidencePacket.calculationBasis,
+    cycleYearTimeline: input.evidencePacket.cycleYearTimeline.map((year) => ({
+      year: year.year,
+      ganji: year.ganji,
+      yearIndexInCycle: year.yearIndexInCycle,
+      phase: year.phase,
+      headline: year.headline,
+      relationToMajorCycle: year.relationToMajorCycle,
+      plain: year.plain,
+    })),
   };
 }
 

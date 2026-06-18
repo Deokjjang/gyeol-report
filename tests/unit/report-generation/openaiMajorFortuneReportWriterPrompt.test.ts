@@ -52,6 +52,8 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("후반 8~10년");
     expect(text).toContain("strongYears must use provided strongYearsWithinCycle");
     expect(text).toContain("Strong years must explain why that year is strong");
+    expect(text).toContain("Strong years are TOP highlights only");
+    expect(text).toContain("특히 강하게 체감될 수 있는 해 TOP 5");
   });
 
   it("requires 10-year repeated themes in every main chapter", () => {
@@ -60,6 +62,17 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("Each main chapter must explain");
     expect(text).toContain("10년 동안 반복될 장기 장면");
     expect(text).toContain("less exhaustingly");
+    expect(text).toContain("bigThemes must contain 3 to 5 items");
+    expect(text).toContain("Use fewer but deeper sections");
+  });
+
+  it("requires full ten-year timeline and separates highlights", () => {
+    const text = promptText();
+
+    expect(text).toContain("cycleYearTimeline must contain exactly 10 items");
+    expect(text).toContain("The full 10-year timeline must appear");
+    expect(text).toContain("Strong years are TOP highlights only");
+    expect(text).toContain("Do not use currentCycle.index as a score");
   });
 
   it("requires concrete scenes and all six domains", () => {
@@ -81,6 +94,16 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("Use userContext.lifeStatus");
     expect(text).toContain("translation layer");
     expect(text).toContain("Do not change calculations based on userContext");
+  });
+
+  it("requires plain Korean metaphors for technical terms", () => {
+    const text = promptText();
+
+    expect(text).toContain("Every 명리 term must be translated");
+    expect(text).toContain("비견: 내 기준을 세우고");
+    expect(text).toContain("토 과다: 해야 할 일");
+    expect(text).toContain("충: 이미 굳어 있던 방향");
+    expect(text).toContain("육합: 사람·일정·역할");
   });
 
   it("forbids hard claims and raw fixture/precomputed wording", () => {

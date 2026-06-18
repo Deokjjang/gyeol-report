@@ -19,6 +19,11 @@ export type MajorFortuneDraftQualitySummary = {
   readonly annualToneWarnings: number;
   readonly decadeToneWarnings: number;
   readonly strongYearReasonWarnings: number;
+  readonly cycleYearTimelineCount: number;
+  readonly missingCycleYearWarnings: number;
+  readonly cycleIndexLeakWarnings: number;
+  readonly technicalTermWithoutExplanationWarnings: number;
+  readonly smallEventOverfocusWarnings: number;
 };
 
 const hardClaimReplacements = [
@@ -133,6 +138,60 @@ const strongYearReasonMarkers = [
   "강화",
 ] as const;
 
+const technicalTermPlainMarkers = [
+  "즉",
+  "쉽게 말해",
+  "비유하면",
+  "말하자면",
+  "힘",
+  "기준",
+  "작용",
+  "배경",
+  "흐름",
+  "구조",
+  "역할",
+  "장면",
+] as const;
+
+const technicalTerms = [
+  "비견",
+  "겁재",
+  "식신",
+  "상관",
+  "편재",
+  "정재",
+  "편관",
+  "정관",
+  "편인",
+  "정인",
+  "충",
+  "형",
+  "해",
+  "파",
+  "육합",
+  "삼합",
+  "반합",
+] as const;
+
+const smallEventMarkers = [
+  "오늘",
+  "내일",
+  "이번 주",
+  "이번 달",
+  "1월",
+  "2월",
+  "3월",
+  "4월",
+  "5월",
+  "6월",
+  "7월",
+  "8월",
+  "9월",
+  "10월",
+  "11월",
+  "12월",
+] as const;
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -227,6 +286,18 @@ function sanitizeUserContextSummary(
   };
 }
 
+function sanitizeCalculationBasis(
+  basis: MajorFortuneReportDraft["calculationBasis"],
+): MajorFortuneReportDraft["calculationBasis"] {
+  return {
+    basisType: "precomputed_major_fortune_table",
+    displayLabel: getMajorFortuneBasisDisplayLabel(basis.displayLabel),
+    explanation: sanitizeMajorFortuneVisibleText(basis.explanation),
+    ageBasisLabel: sanitizeMajorFortuneVisibleText(basis.ageBasisLabel),
+    note: sanitizeMajorFortuneVisibleText(basis.note),
+  };
+}
+
 function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft {
   return {
     version: "v1",
@@ -241,6 +312,12 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
       ganji: sanitizeMajorFortuneVisibleText(draft.cycleSummary.ganji),
       displayTitle: sanitizeMajorFortuneVisibleText(
         draft.cycleSummary.displayTitle,
+      ),
+      cycleIndexLabel: sanitizeMajorFortuneVisibleText(
+        draft.cycleSummary.cycleIndexLabel,
+      ),
+      currentPositionLabel: sanitizeMajorFortuneVisibleText(
+        draft.cycleSummary.currentPositionLabel,
       ),
       ageRangeLabel: sanitizeMajorFortuneVisibleText(
         draft.cycleSummary.ageRangeLabel,
@@ -262,6 +339,7 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
         draft.cycleSummary.basisLabel,
       ),
     },
+    calculationBasis: sanitizeCalculationBasis(draft.calculationBasis),
     flowIndexSummary: {
       flowIndex: clampIndex(draft.flowIndexSummary.flowIndex),
       flowTypeLabel: sanitizeMajorFortuneVisibleText(
@@ -271,6 +349,13 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
         draft.flowIndexSummary.flowIndexCaution,
       ),
     },
+    bigThemes: draft.bigThemes.map((theme) => ({
+      title: sanitizeMajorFortuneVisibleText(theme.title),
+      metaphor: sanitizeMajorFortuneVisibleText(theme.metaphor),
+      body: sanitizeMajorFortuneVisibleText(theme.body),
+      likelyScenes: sanitizeStringArray(theme.likelyScenes),
+      strategy: sanitizeMajorFortuneVisibleText(theme.strategy),
+    })),
     decadeCards: draft.decadeCards.map((card) => ({
       label: card.label,
       index: clampIndex(card.index),
@@ -321,6 +406,17 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
       body: sanitizeMajorFortuneVisibleText(year.body),
       advice: sanitizeMajorFortuneVisibleText(year.advice),
     })),
+    cycleYearTimeline: draft.cycleYearTimeline.map((year) => ({
+      year: year.year,
+      ganji: sanitizeMajorFortuneVisibleText(year.ganji),
+      yearIndexInCycle: year.yearIndexInCycle,
+      phase: year.phase,
+      headline: sanitizeMajorFortuneVisibleText(year.headline),
+      relationToMajorCycle: sanitizeMajorFortuneVisibleText(
+        year.relationToMajorCycle,
+      ),
+      plain: sanitizeMajorFortuneVisibleText(year.plain),
+    })),
     finalAdvice: draft.finalAdvice.map((advice) => ({
       label: advice.label,
       body: sanitizeMajorFortuneVisibleText(advice.body),
@@ -352,6 +448,8 @@ function hasDraftShape(value: unknown): value is MajorFortuneReportDraft {
     isRecord(draft.cycleSummary) &&
     typeof draft.cycleSummary.ganji === "string" &&
     typeof draft.cycleSummary.displayTitle === "string" &&
+    typeof draft.cycleSummary.cycleIndexLabel === "string" &&
+    typeof draft.cycleSummary.currentPositionLabel === "string" &&
     typeof draft.cycleSummary.ageRangeLabel === "string" &&
     typeof draft.cycleSummary.yearRangeLabel === "string" &&
     typeof draft.cycleSummary.stemLabel === "string" &&
@@ -359,10 +457,26 @@ function hasDraftShape(value: unknown): value is MajorFortuneReportDraft {
     typeof draft.cycleSummary.elementLabel === "string" &&
     typeof draft.cycleSummary.tenGodLabel === "string" &&
     typeof draft.cycleSummary.basisLabel === "string" &&
+    isRecord(draft.calculationBasis) &&
+    draft.calculationBasis.basisType === "precomputed_major_fortune_table" &&
+    typeof draft.calculationBasis.displayLabel === "string" &&
+    typeof draft.calculationBasis.explanation === "string" &&
+    typeof draft.calculationBasis.ageBasisLabel === "string" &&
+    typeof draft.calculationBasis.note === "string" &&
     isRecord(draft.flowIndexSummary) &&
     isNumber(draft.flowIndexSummary.flowIndex) &&
     typeof draft.flowIndexSummary.flowTypeLabel === "string" &&
     typeof draft.flowIndexSummary.flowIndexCaution === "string" &&
+    Array.isArray(draft.bigThemes) &&
+    draft.bigThemes.every(
+      (theme) =>
+        isRecord(theme) &&
+        typeof theme.title === "string" &&
+        typeof theme.metaphor === "string" &&
+        typeof theme.body === "string" &&
+        isStringArray(theme.likelyScenes) &&
+        typeof theme.strategy === "string",
+    ) &&
     Array.isArray(draft.decadeCards) &&
     draft.decadeCards.every(
       (card) =>
@@ -383,6 +497,18 @@ function hasDraftShape(value: unknown): value is MajorFortuneReportDraft {
     Array.isArray(draft.phaseTimeline) &&
     draft.phaseTimeline.every((phase) => isRecord(phase) && isPhase(phase.phase)) &&
     Array.isArray(draft.strongYears) &&
+    Array.isArray(draft.cycleYearTimeline) &&
+    draft.cycleYearTimeline.every(
+      (year) =>
+        isRecord(year) &&
+        isNumber(year.year) &&
+        typeof year.ganji === "string" &&
+        isNumber(year.yearIndexInCycle) &&
+        isPhase(year.phase) &&
+        typeof year.headline === "string" &&
+        typeof year.relationToMajorCycle === "string" &&
+        typeof year.plain === "string",
+    ) &&
     Array.isArray(draft.finalAdvice) &&
     draft.finalAdvice.every(
       (advice) =>
@@ -404,8 +530,19 @@ function collectVisibleStrings(draft: MajorFortuneReportDraft): readonly string[
     draft.userContextSummary.fieldLabel ?? "",
     draft.userContextSummary.translationNote,
     ...Object.values(draft.cycleSummary),
+    draft.calculationBasis.displayLabel,
+    draft.calculationBasis.explanation,
+    draft.calculationBasis.ageBasisLabel,
+    draft.calculationBasis.note,
     draft.flowIndexSummary.flowTypeLabel,
     draft.flowIndexSummary.flowIndexCaution,
+    ...draft.bigThemes.flatMap((theme) => [
+      theme.title,
+      theme.metaphor,
+      theme.body,
+      ...theme.likelyScenes,
+      theme.strategy,
+    ]),
     ...draft.decadeCards.flatMap((card) => [
       card.label,
       card.headline,
@@ -435,6 +572,12 @@ function collectVisibleStrings(draft: MajorFortuneReportDraft): readonly string[
       year.headline,
       year.body,
       year.advice,
+    ]),
+    ...draft.cycleYearTimeline.flatMap((year) => [
+      year.ganji,
+      year.headline,
+      year.relationToMajorCycle,
+      year.plain,
     ]),
     ...draft.finalAdvice.flatMap((advice) => [advice.label, advice.body]),
     ...draft.safetyNotes,
@@ -490,6 +633,133 @@ function countStrongYearReasonWarnings(
   }).length;
 }
 
+function expectedCycleYearPhase(
+  yearIndexInCycle: number,
+): MajorFortunePhase | undefined {
+  if (yearIndexInCycle >= 1 && yearIndexInCycle <= 3) {
+    return "early";
+  }
+  if (yearIndexInCycle >= 4 && yearIndexInCycle <= 7) {
+    return "middle";
+  }
+  if (yearIndexInCycle >= 8 && yearIndexInCycle <= 10) {
+    return "late";
+  }
+
+  return undefined;
+}
+
+function parseYearRangeLabel(
+  yearRangeLabel: string,
+): { readonly startYear: number; readonly endYear: number } | undefined {
+  const match = /(\d{4})년\s*~\s*(\d{4})년/u.exec(yearRangeLabel);
+
+  if (match === null) {
+    return undefined;
+  }
+
+  return {
+    startYear: Number(match[1]),
+    endYear: Number(match[2]),
+  };
+}
+
+function countMissingCycleYearWarnings(
+  draft: MajorFortuneReportDraft,
+): number {
+  let warnings = 0;
+  const timeline = draft.cycleYearTimeline;
+
+  if (timeline.length !== 10) {
+    warnings += 1;
+  }
+
+  const range = parseYearRangeLabel(draft.cycleSummary.yearRangeLabel);
+
+  for (const [index, item] of timeline.entries()) {
+    const expectedIndex = index + 1;
+    const expectedPhase = expectedCycleYearPhase(expectedIndex);
+
+    if (item.yearIndexInCycle !== expectedIndex) {
+      warnings += 1;
+    }
+    if (expectedPhase !== undefined && item.phase !== expectedPhase) {
+      warnings += 1;
+    }
+    if (range !== undefined && item.year !== range.startYear + index) {
+      warnings += 1;
+    }
+  }
+
+  if (
+    range !== undefined &&
+    (timeline[0]?.year !== range.startYear ||
+      timeline[timeline.length - 1]?.year !== range.endYear)
+  ) {
+    warnings += 1;
+  }
+
+  return warnings;
+}
+
+function getCycleOrdinal(cycleIndexLabel: string): number | undefined {
+  const match = /(\d+)/u.exec(cycleIndexLabel);
+
+  return match === null ? undefined : Number(match[1]);
+}
+
+function countCycleIndexLeakWarnings(draft: MajorFortuneReportDraft): number {
+  const cycleOrdinal = getCycleOrdinal(draft.cycleSummary.cycleIndexLabel);
+
+  if (cycleOrdinal === undefined) {
+    return 0;
+  }
+
+  const leakedFlowIndex =
+    draft.flowIndexSummary.flowIndex === cycleOrdinal ? 1 : 0;
+  const leakedCardIndexes = draft.decadeCards.filter(
+    (card) => card.index === cycleOrdinal,
+  ).length;
+
+  return leakedFlowIndex + leakedCardIndexes;
+}
+
+function countTechnicalTermWithoutExplanationWarnings(
+  visibleText: string,
+): number {
+  const sentences = visibleText.split(/[.!?。！？\n]/u);
+
+  return sentences.filter((sentence) => {
+    if (sentence.trim().length < 12) {
+      return false;
+    }
+
+    const warningTerms = technicalTerms.filter((term) => term.length > 1);
+    const hasTechnicalTerm = warningTerms.some((term) =>
+      sentence.includes(term),
+    );
+
+    if (!hasTechnicalTerm) {
+      return false;
+    }
+
+    const hasPlainExplanation =
+      sentence.includes(":") ||
+      technicalTermPlainMarkers.some((marker) => sentence.includes(marker));
+
+    return !hasPlainExplanation;
+  }).length;
+}
+
+function countSmallEventOverfocusWarnings(visibleText: string): number {
+  const smallEventCount = smallEventMarkers.reduce(
+    (count, marker) => count + countOccurrences(visibleText, marker),
+    0,
+  );
+
+  return smallEventCount > 3 ? smallEventCount - 3 : 0;
+}
+
 export function summarizeMajorFortuneDraftQuality(
   draft: MajorFortuneReportDraft,
 ): MajorFortuneDraftQualitySummary {
@@ -508,6 +778,12 @@ export function summarizeMajorFortuneDraftQuality(
   const annualToneWarnings = countAnnualToneWarnings(visibleText);
   const decadeToneWarnings = countDecadeToneWarnings(visibleText);
   const strongYearReasonWarnings = countStrongYearReasonWarnings(draft);
+  const missingCycleYearWarnings = countMissingCycleYearWarnings(draft);
+  const cycleIndexLeakWarnings = countCycleIndexLeakWarnings(draft);
+  const technicalTermWithoutExplanationWarnings =
+    countTechnicalTermWithoutExplanationWarnings(visibleText);
+  const smallEventOverfocusWarnings =
+    countSmallEventOverfocusWarnings(visibleText);
 
   return {
     hardClaimWarnings,
@@ -516,6 +792,11 @@ export function summarizeMajorFortuneDraftQuality(
     annualToneWarnings,
     decadeToneWarnings,
     strongYearReasonWarnings,
+    cycleYearTimelineCount: draft.cycleYearTimeline.length,
+    missingCycleYearWarnings,
+    cycleIndexLeakWarnings,
+    technicalTermWithoutExplanationWarnings,
+    smallEventOverfocusWarnings,
   };
 }
 
@@ -546,6 +827,14 @@ function validateArrayLengths(
     errors,
     "MAJOR_FORTUNE_DECADE_CARD_DOMAINS_INVALID",
   );
+  if (draft.bigThemes.length < 3 || draft.bigThemes.length > 5) {
+    errors.push("MAJOR_FORTUNE_BIG_THEMES_INVALID");
+  }
+  for (const [index, theme] of draft.bigThemes.entries()) {
+    if (theme.likelyScenes.length < 2 || theme.likelyScenes.length > 4) {
+      errors.push(`MAJOR_FORTUNE_BIG_THEME_SCENES_INVALID:${index}`);
+    }
+  }
   if (draft.cycleChapters.length < 6 || draft.cycleChapters.length > 10) {
     errors.push("MAJOR_FORTUNE_CHAPTER_COUNT_INVALID");
   }
@@ -571,6 +860,12 @@ function validateArrayLengths(
   }
   if (draft.strongYears.length < 3 || draft.strongYears.length > 5) {
     errors.push("MAJOR_FORTUNE_STRONG_YEARS_INVALID");
+  }
+  if (draft.cycleYearTimeline.length !== 10) {
+    errors.push("MAJOR_FORTUNE_CYCLE_YEAR_TIMELINE_INVALID");
+  }
+  if (countMissingCycleYearWarnings(draft) > 0) {
+    errors.push("MAJOR_FORTUNE_CYCLE_YEAR_TIMELINE_MISSING_YEARS");
   }
   if (draft.finalAdvice.length !== majorFortuneDomainLabels.length) {
     errors.push("MAJOR_FORTUNE_FINAL_ADVICE_INVALID");
@@ -619,6 +914,21 @@ export function validateMajorFortuneReportDraft(
   if (quality.strongYearReasonWarnings > 0) {
     warnings.push(
       `MAJOR_FORTUNE_STRONG_YEAR_REASON_WARNING:${quality.strongYearReasonWarnings}`,
+    );
+  }
+  if (quality.cycleIndexLeakWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_CYCLE_INDEX_LEAK_WARNING:${quality.cycleIndexLeakWarnings}`,
+    );
+  }
+  if (quality.technicalTermWithoutExplanationWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_TECHNICAL_TERM_WARNING:${quality.technicalTermWithoutExplanationWarnings}`,
+    );
+  }
+  if (quality.smallEventOverfocusWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_SMALL_EVENT_OVERFOCUS_WARNING:${quality.smallEventOverfocusWarnings}`,
     );
   }
 

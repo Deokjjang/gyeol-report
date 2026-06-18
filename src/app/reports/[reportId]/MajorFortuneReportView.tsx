@@ -49,6 +49,17 @@ function getPhaseDisplayLabel(
   return phase.label.includes("후반") ? text(phase.label) : "후반 8~10년";
 }
 
+function getMajorFlowIntensityLabel(flowIndex: number): string {
+  if (flowIndex >= 75) {
+    return "높음";
+  }
+  if (flowIndex >= 50) {
+    return "중간";
+  }
+
+  return "완만함";
+}
+
 function renderList(items: readonly string[]) {
   return (
     <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-300">
@@ -62,6 +73,8 @@ function renderList(items: readonly string[]) {
 function renderCycleStructure(draft: MajorFortuneReportDraft) {
   const rows = [
     ["대운", draft.cycleSummary.ganji],
+    ["대운 순번", draft.cycleSummary.cycleIndexLabel],
+    ["현재 위치", draft.cycleSummary.currentPositionLabel],
     ["나이 구간", draft.cycleSummary.ageRangeLabel],
     ["연도 구간", draft.cycleSummary.yearRangeLabel],
     ["천간", draft.cycleSummary.stemLabel],
@@ -71,7 +84,9 @@ function renderCycleStructure(draft: MajorFortuneReportDraft) {
     [
       "계산 기준",
       getMajorFortuneBasisDisplayLabel(
-        draft.cycleSummary.basisLabel || majorFortuneCycleBasisFallback,
+        draft.calculationBasis.displayLabel ||
+          draft.cycleSummary.basisLabel ||
+          majorFortuneCycleBasisFallback,
       ),
     ],
   ] as const;
@@ -94,6 +109,11 @@ function renderCycleStructure(draft: MajorFortuneReportDraft) {
           </div>
         ))}
       </dl>
+      <div className="mt-4 space-y-1 rounded-md border border-neutral-800 bg-neutral-900/70 p-3 text-sm leading-6 text-neutral-300">
+        <p>{text(draft.calculationBasis.explanation)}</p>
+        <p>{text(draft.calculationBasis.ageBasisLabel)}</p>
+        <p>{text(draft.calculationBasis.note)}</p>
+      </div>
     </section>
   );
 }
@@ -144,22 +164,24 @@ export function MajorFortuneReportView({
             </span>
           </div>
         </div>
-        <div className="grid gap-4 sm:grid-cols-[10rem_1fr]">
+        <div className="grid gap-4 sm:grid-cols-[14rem_1fr]">
           <section
             className="rounded-lg border border-sky-500/40 bg-sky-500/10 p-4"
-            aria-label="대운 흐름 지표"
+            aria-label="대운 유형"
           >
             <p className="text-xs font-semibold text-sky-200">
-              대운 흐름 지표
+              대운 유형
             </p>
-            <p className="mt-2 text-5xl font-bold tracking-tight text-sky-100">
-              {draft.flowIndexSummary.flowIndex}
-            </p>
-            <p className="mt-2 text-sm font-semibold leading-6 text-sky-100">
+            <p className="mt-2 text-lg font-bold leading-7 text-sky-100">
               {text(draft.flowIndexSummary.flowTypeLabel)}
+            </p>
+            <p className="mt-2 text-sm leading-6 text-sky-100">
+              체감 강도:{" "}
+              {getMajorFlowIntensityLabel(draft.flowIndexSummary.flowIndex)}
             </p>
           </section>
           <section className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
+            <p className="text-xs font-semibold text-neutral-500">핵심 방향</p>
             <p className="text-base font-semibold leading-7 text-neutral-50">
               {text(draft.coreLine)}
             </p>
@@ -188,7 +210,38 @@ export function MajorFortuneReportView({
 
       {renderCycleStructure(draft)}
 
-      <section className="space-y-3" aria-label="10년 흐름 카드">
+      <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+        <h2 className="text-lg font-semibold text-neutral-50">
+          10년 핵심 테마
+        </h2>
+        <div className="grid gap-3 md:grid-cols-3">
+          {draft.bigThemes.map((theme) => (
+            <article
+              key={`${theme.title}:${theme.metaphor}`}
+              className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
+            >
+              <h3 className="text-base font-semibold text-neutral-50">
+                {text(theme.title)}
+              </h3>
+              <p className="mt-2 text-sm font-semibold leading-6 text-sky-100">
+                {text(theme.metaphor)}
+              </p>
+              <p className="mt-3 text-sm leading-6 text-neutral-300">
+                {text(theme.body)}
+              </p>
+              {renderList(theme.likelyScenes)}
+              <p className="mt-3 text-sm leading-6 text-neutral-400">
+                {text(theme.strategy)}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-3" aria-label="영역별 장기 영향">
+        <h2 className="text-lg font-semibold text-neutral-50">
+          영역별 장기 영향
+        </h2>
         <div className="grid gap-3 md:grid-cols-2">
           {draft.decadeCards.map((card) => (
             <article
@@ -199,9 +252,6 @@ export function MajorFortuneReportView({
                 <h2 className="text-sm font-semibold text-neutral-400">
                   {text(card.label)}
                 </h2>
-                <span className="text-xl font-bold text-sky-100">
-                  {card.index}
-                </span>
               </div>
               <p className="mt-3 text-base font-semibold leading-7 text-neutral-50">
                 {text(card.headline)}
@@ -328,7 +378,46 @@ export function MajorFortuneReportView({
 
       <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
         <h2 className="text-lg font-semibold text-neutral-50">
-          강하게 체감될 수 있는 해
+          10년 연도별 흐름
+        </h2>
+        <div className="grid gap-2">
+          {draft.cycleYearTimeline.map((year) => (
+            <article
+              key={`${year.year}:${year.ganji}`}
+              className="grid gap-2 rounded-md border border-neutral-800 bg-neutral-900/70 p-3 text-sm sm:grid-cols-[8rem_1fr]"
+            >
+              <div>
+                <p className="font-semibold text-sky-100">
+                  {year.year}년 {text(year.ganji)}
+                </p>
+                <p className="mt-1 text-xs text-neutral-500">
+                  {year.yearIndexInCycle}년차 ·{" "}
+                  {year.phase === "early"
+                    ? "초반"
+                    : year.phase === "middle"
+                      ? "중반"
+                      : "후반"}
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold leading-6 text-neutral-100">
+                  {text(year.headline)}
+                </p>
+                <p className="mt-1 leading-6 text-neutral-300">
+                  {text(year.relationToMajorCycle)}
+                </p>
+                <p className="mt-1 leading-6 text-neutral-400">
+                  {text(year.plain)}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+        <h2 className="text-lg font-semibold text-neutral-50">
+          특히 강하게 체감될 수 있는 해 TOP 5
         </h2>
         <div className="grid gap-3 md:grid-cols-2">
           {draft.strongYears.map((year) => (

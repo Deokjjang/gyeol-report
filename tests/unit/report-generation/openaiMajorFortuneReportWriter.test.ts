@@ -51,6 +51,8 @@ function createValidDraft(): MajorFortuneReportDraft {
     cycleSummary: {
       ganji: "甲戌",
       displayTitle: "현재 대운 甲戌",
+      cycleIndexLabel: "3번째 대운",
+      currentPositionLabel: "2026년 기준 4년차",
       ageRangeLabel: "24세~33세",
       yearRangeLabel: "2023년~2032년",
       stemLabel: "甲 · 양목",
@@ -59,12 +61,52 @@ function createValidDraft(): MajorFortuneReportDraft {
       tenGodLabel: "비견의 대운",
       basisLabel: "사전 계산된 대운표 기준",
     },
+    calculationBasis: {
+      basisType: "precomputed_major_fortune_table",
+      displayLabel: "사전 계산된 대운표 기준",
+      explanation:
+        "이 대운 구간은 입력된 만세력의 대운표를 기준으로 잡았습니다.",
+      ageBasisLabel: "표기 나이는 대운표 기준 나이입니다.",
+      note: "현재 리포트에서는 2026년을 기준으로 현재 위치한 대운을 읽습니다.",
+    },
     flowIndexSummary: {
       flowIndex: 72,
       flowTypeLabel: "책임·구조 재편형",
       flowIndexCaution:
         "이 지표는 좋고 나쁨이 아니라 10년 동안 반복될 체감 강도를 보여 줍니다.",
     },
+    bigThemes: [
+      {
+        title: "기준을 직접 세우는 10년",
+        metaphor: "일이 흙처럼 쌓이기 전에 길을 먼저 내는 흐름",
+        body: "비견은 내 기준을 세우는 힘이고, 토는 현실 책임을 쌓이게 만드는 배경입니다.",
+        likelyScenes: [
+          "프로젝트 기준을 직접 문서화하는 장면",
+          "맡을 일과 맡지 않을 일을 나누는 장면",
+        ],
+        strategy: "초반부터 역할 경계를 문서로 남기세요.",
+      },
+      {
+        title: "현실 숫자를 정리하는 10년",
+        metaphor: "돈과 계약의 흙더미를 월 단위로 나누는 흐름",
+        body: "토 과다는 급여, 생활비, 계약처럼 관리할 항목이 늘어나는 구조로 체감될 수 있습니다.",
+        likelyScenes: [
+          "고정지출을 월초에 나누는 장면",
+          "계약과 정산 기준을 다시 맞추는 장면",
+        ],
+        strategy: "반복 비용과 책임 비용을 먼저 분리하세요.",
+      },
+      {
+        title: "관계의 거리와 역할을 재배치하는 10년",
+        metaphor: "사람과 약속이 실제 역할로 묶이는 흐름",
+        body: "육합과 충은 사람, 일정, 역할이 묶였다가 다시 조정되는 장면으로 나타날 수 있습니다.",
+        likelyScenes: [
+          "가족 일정과 업무 일정이 겹치는 장면",
+          "상사, 동료, 친구와 역할 경계를 다시 맞추는 장면",
+        ],
+        strategy: "관계 안에서도 감정보다 역할과 시간을 먼저 확인하세요.",
+      },
+    ],
     decadeCards: [
       {
         label: "일·성과",
@@ -189,6 +231,26 @@ function createValidDraft(): MajorFortuneReportDraft {
         advice: "마감 전 중간 점검 기준을 두세요.",
       },
     ],
+    cycleYearTimeline: Array.from({ length: 10 }, (_, index) => {
+      const year = 2023 + index;
+      const yearIndexInCycle = index + 1;
+      const phase =
+        yearIndexInCycle <= 3
+          ? "early"
+          : yearIndexInCycle <= 7
+            ? "middle"
+            : "late";
+
+      return {
+        year,
+        ganji: ["癸卯", "甲辰", "乙巳", "丙午", "丁未", "戊申", "己酉", "庚戌", "辛亥", "壬子"][index] ?? "癸卯",
+        yearIndexInCycle,
+        phase,
+        headline: `${yearIndexInCycle}년차 흐름`,
+        relationToMajorCycle: "대운 배경을 통과하며 장기 테마를 확인하는 해",
+        plain: `${year}년은 甲戌 대운의 ${yearIndexInCycle}년차로 큰 흐름 안에서 역할을 조정합니다.`,
+      };
+    }),
     finalAdvice: [
       {
         label: "일·성과",
@@ -405,6 +467,12 @@ describe("openaiMajorFortuneReportWriter", () => {
     expect(serialized).not.toContain("성공합니다");
     expect(serialized).not.toContain("debug");
     expect(serialized).not.toContain("편관(편관");
+    expect(sanitized.draft.cycleSummary.basisLabel).toBe(
+      "사전 계산된 대운표 기준",
+    );
+    expect(sanitized.draft.calculationBasis.displayLabel).toBe(
+      "사전 계산된 대운표 기준",
+    );
     expect(serialized).toContain("evidencePacket");
     expect(serialized).toContain("major_fortune");
   });

@@ -31,6 +31,8 @@ export interface MajorFortuneReportDraft {
   readonly cycleSummary: {
     readonly ganji: string;
     readonly displayTitle: string;
+    readonly cycleIndexLabel: string;
+    readonly currentPositionLabel: string;
     readonly ageRangeLabel: string;
     readonly yearRangeLabel: string;
     readonly stemLabel: string;
@@ -39,11 +41,25 @@ export interface MajorFortuneReportDraft {
     readonly tenGodLabel: string;
     readonly basisLabel: string;
   };
+  readonly calculationBasis: {
+    readonly basisType: "precomputed_major_fortune_table";
+    readonly displayLabel: string;
+    readonly explanation: string;
+    readonly ageBasisLabel: string;
+    readonly note: string;
+  };
   readonly flowIndexSummary: {
     readonly flowIndex: number;
     readonly flowTypeLabel: string;
     readonly flowIndexCaution: string;
   };
+  readonly bigThemes: readonly {
+    readonly title: string;
+    readonly metaphor: string;
+    readonly body: string;
+    readonly likelyScenes: readonly string[];
+    readonly strategy: string;
+  }[];
   readonly decadeCards: readonly {
     readonly label: MajorFortuneDomainLabel;
     readonly index: number;
@@ -83,6 +99,15 @@ export interface MajorFortuneReportDraft {
     readonly headline: string;
     readonly body: string;
     readonly advice: string;
+  }[];
+  readonly cycleYearTimeline: readonly {
+    readonly year: number;
+    readonly ganji: string;
+    readonly yearIndexInCycle: number;
+    readonly phase: MajorFortunePhase;
+    readonly headline: string;
+    readonly relationToMajorCycle: string;
+    readonly plain: string;
   }[];
   readonly finalAdvice: readonly {
     readonly label: MajorFortuneDomainLabel;
@@ -130,6 +155,8 @@ const cycleSummarySchema = {
   required: [
     "ganji",
     "displayTitle",
+    "cycleIndexLabel",
+    "currentPositionLabel",
     "ageRangeLabel",
     "yearRangeLabel",
     "stemLabel",
@@ -141,6 +168,8 @@ const cycleSummarySchema = {
   properties: {
     ganji: stringSchema,
     displayTitle: stringSchema,
+    cycleIndexLabel: stringSchema,
+    currentPositionLabel: stringSchema,
     ageRangeLabel: stringSchema,
     yearRangeLabel: stringSchema,
     stemLabel: stringSchema,
@@ -148,6 +177,22 @@ const cycleSummarySchema = {
     elementLabel: stringSchema,
     tenGodLabel: stringSchema,
     basisLabel: stringSchema,
+  },
+} as const;
+
+const calculationBasisSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["basisType", "displayLabel", "explanation", "ageBasisLabel", "note"],
+  properties: {
+    basisType: {
+      type: "string",
+      enum: ["precomputed_major_fortune_table"],
+    },
+    displayLabel: stringSchema,
+    explanation: stringSchema,
+    ageBasisLabel: stringSchema,
+    note: stringSchema,
   },
 } as const;
 
@@ -171,6 +216,19 @@ const decadeCardSchema = {
     index: numberSchema,
     headline: stringSchema,
     body: stringSchema,
+  },
+} as const;
+
+const bigThemeSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["title", "metaphor", "body", "likelyScenes", "strategy"],
+  properties: {
+    title: stringSchema,
+    metaphor: stringSchema,
+    body: stringSchema,
+    likelyScenes: stringArraySchema,
+    strategy: stringSchema,
   },
 } as const;
 
@@ -250,6 +308,32 @@ const strongYearSchema = {
   },
 } as const;
 
+const cycleYearTimelineSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: [
+    "year",
+    "ganji",
+    "yearIndexInCycle",
+    "phase",
+    "headline",
+    "relationToMajorCycle",
+    "plain",
+  ],
+  properties: {
+    year: numberSchema,
+    ganji: stringSchema,
+    yearIndexInCycle: numberSchema,
+    phase: {
+      type: "string",
+      enum: ["early", "middle", "late"],
+    },
+    headline: stringSchema,
+    relationToMajorCycle: stringSchema,
+    plain: stringSchema,
+  },
+} as const;
+
 const finalAdviceSchema = {
   type: "object",
   additionalProperties: false,
@@ -273,13 +357,16 @@ export const majorFortuneReportDraftJsonSchema = {
     "coreLine",
     "userContextSummary",
     "cycleSummary",
+    "calculationBasis",
     "flowIndexSummary",
+    "bigThemes",
     "decadeCards",
     "keySignals",
     "majorStructure",
     "cycleChapters",
     "phaseTimeline",
     "strongYears",
+    "cycleYearTimeline",
     "finalAdvice",
     "safetyNotes",
   ],
@@ -293,7 +380,12 @@ export const majorFortuneReportDraftJsonSchema = {
     coreLine: stringSchema,
     userContextSummary: userContextSummarySchema,
     cycleSummary: cycleSummarySchema,
+    calculationBasis: calculationBasisSchema,
     flowIndexSummary: flowIndexSummarySchema,
+    bigThemes: {
+      type: "array",
+      items: bigThemeSchema,
+    },
     decadeCards: {
       type: "array",
       items: decadeCardSchema,
@@ -314,6 +406,10 @@ export const majorFortuneReportDraftJsonSchema = {
     strongYears: {
       type: "array",
       items: strongYearSchema,
+    },
+    cycleYearTimeline: {
+      type: "array",
+      items: cycleYearTimelineSchema,
     },
     finalAdvice: {
       type: "array",

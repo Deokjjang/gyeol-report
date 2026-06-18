@@ -1887,6 +1887,41 @@ The smoke draft script reports annual-tone warnings, decade-tone warnings,
 strong year reason warnings, hard claim warnings, internal artifact warnings,
 and repeated terminology warnings before writing a preview snapshot.
 
+## DAEUN-03A Major Fortune Big-Picture Redesign
+
+DAEUN-03A redirects the 대운 report away from small-event annual-style reading
+and toward a 10-year big-picture product. The report should answer what this
+decade is as an 인생 배경, how roles and direction change, what themes repeat,
+and which years are highlights inside the larger structure.
+
+The evidence packet now carries a user-facing calculation basis object. Current
+cycle selection uses the provided precomputed major fortune table, and the
+current year is used only to locate the user's position inside that cycle. This
+task does not implement a new exact 절기-based 대운 start-age algorithm, so the
+view explains the basis as `사전 계산된 대운표 기준` and avoids raw
+`fixture_precomputed`, `precomputed`, `debug`, or `evidence` wording.
+
+`currentCycle.index` is treated only as 대운 순번. It must not appear as a flow
+score. The visible report shows 대운 순번, current position in the cycle, a
+descriptive 대운 유형, 체감 강도, and 핵심 방향 instead of a score-like numeric
+card.
+
+The report schema adds `bigThemes` and `cycleYearTimeline`. `bigThemes` holds
+3 to 5 deeper decade themes with metaphor, scenes, and strategy. The full
+10-year timeline is required for every year from the current cycle start year
+through end year. Strong years remain a separate `TOP 5` highlight section and
+must not replace the full timeline.
+
+The prompt now requires plain Korean or metaphor translation for 명리 terms
+before interpretation. Examples include 비견 as "내 기준을 세우는 힘", 토 과다
+as responsibility piling up like earth, 충 as a direction collision, 형 as
+inner pressure, and 육합 as people, schedules, or roles becoming tied together.
+
+The smoke draft script reports cycle year timeline count, missing cycle year
+warnings, cycle index leak warnings, technical term warnings, and small event
+overfocus warnings so the report can be checked as a large 10-year structure
+before any paid OpenAI retry.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

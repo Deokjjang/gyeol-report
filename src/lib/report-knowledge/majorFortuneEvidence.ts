@@ -440,6 +440,82 @@ function buildStrongYearsWithinCycle(input: {
     .slice(0, 5);
 }
 
+function getCycleYearPhase(yearIndexInCycle: number): "early" | "middle" | "late" {
+  if (yearIndexInCycle <= 3) {
+    return "early";
+  }
+  if (yearIndexInCycle <= 7) {
+    return "middle";
+  }
+
+  return "late";
+}
+
+function buildCycleYearTimeline(input: {
+  readonly currentCycle: MajorFortuneCycle;
+  readonly dayMaster: HeavenlyStem;
+  readonly majorTenGod: TenGod;
+  readonly natalBranches: readonly EarthlyBranch[];
+}): MajorFortuneEvidencePacket["cycleYearTimeline"] {
+  return Array.from(
+    {
+      length: input.currentCycle.endYear - input.currentCycle.startYear + 1,
+    },
+    (_, index) => {
+      const year = input.currentCycle.startYear + index;
+      const yearIndexInCycle = index + 1;
+      const annualGanji = getAnnualGanjiInfo(year);
+      const annualTenGod = getTenGodForStemPair(input.dayMaster, annualGanji.stem);
+      const interactions = getAnnualBranchInteractions({
+        annualBranch: annualGanji.branch,
+        natalBranches: [input.currentCycle.branch, ...input.natalBranches],
+      });
+      const relationParts = [
+        annualGanji.stemElement === input.currentCycle.stemElement ||
+        annualGanji.branchElement === input.currentCycle.branchElement
+          ? "대운 오행을 반복하거나 강화"
+          : undefined,
+        annualTenGod === input.majorTenGod
+          ? `대운 십성 ${input.majorTenGod} 테마 반복`
+          : undefined,
+        interactions.length > 0
+          ? "대운 지지 또는 원국 지지와 강한 작용"
+          : undefined,
+      ].filter((part): part is string => part !== undefined);
+      const phase = getCycleYearPhase(yearIndexInCycle);
+      const phaseText =
+        phase === "early" ? "진입과 적응" : phase === "middle" ? "반복과 고착" : "정리와 전환";
+      const relationToMajorCycle =
+        relationParts.length === 0 ? "대운 배경을 완만하게 통과" : relationParts.join(" / ");
+
+      return {
+        year,
+        ganji: annualGanji.ganji,
+        yearIndexInCycle,
+        phase,
+        headline: `${phaseText}의 ${yearIndexInCycle}년차`,
+        annualElementFocus: `${elementKo[annualGanji.stemElement]}·${elementKo[annualGanji.branchElement]}`,
+        relationToMajorCycle,
+        plain: `${year}년 ${annualGanji.ganji}은 ${input.currentCycle.ganji} 대운의 ${yearIndexInCycle}년차로, ${relationToMajorCycle} 흐름을 봅니다.`,
+      };
+    },
+  );
+}
+
+function buildCalculationBasis(
+  currentYear: number,
+): MajorFortuneEvidencePacket["calculationBasis"] {
+  return {
+    basisType: "precomputed_major_fortune_table",
+    displayLabel: "사전 계산된 대운표 기준",
+    explanation:
+      "이 대운 구간은 입력된 만세력의 대운표를 기준으로 잡았습니다.",
+    ageBasisLabel: "표기 나이는 대운표 기준 나이입니다.",
+    note:
+      `현재 리포트에서는 ${currentYear}년을 기준으로 현재 위치한 대운을 읽습니다.`,
+  };
+}
+
 function buildWarnings(input: {
   readonly labels: readonly string[];
   readonly cycleBasis?: string;
@@ -504,6 +580,7 @@ export function buildMajorFortuneEvidence(input: {
     currentCycle: cycleAccess.currentCycle,
     previousCycle: cycleAccess.previousCycle,
     nextCycle: cycleAccess.nextCycle,
+    calculationBasis: buildCalculationBasis(input.currentYear),
     majorTenGod: {
       stemTenGod: majorTenGod,
       plain: `${cycleAccess.currentCycle.ganji} 대운의 천간 ${cycleAccess.currentCycle.stem}은 ${dayMaster} 일간에게 ${majorTenGod}으로 작용합니다.`,
@@ -532,6 +609,12 @@ export function buildMajorFortuneEvidence(input: {
       nextCycle: cycleAccess.nextCycle,
     }),
     strongYearsWithinCycle: buildStrongYearsWithinCycle({
+      currentCycle: cycleAccess.currentCycle,
+      dayMaster,
+      majorTenGod,
+      natalBranches,
+    }),
+    cycleYearTimeline: buildCycleYearTimeline({
       currentCycle: cycleAccess.currentCycle,
       dayMaster,
       majorTenGod,

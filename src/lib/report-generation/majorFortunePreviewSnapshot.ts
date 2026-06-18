@@ -3,6 +3,7 @@ import { join } from "node:path";
 
 import type { MajorFortuneEvidencePacket } from "../report-knowledge/majorFortuneTypes";
 import {
+  getMajorFortuneBasisDisplayLabel,
   sanitizeMajorFortuneVisibleText,
 } from "./majorFortuneReportDraftValidator";
 import type { MajorFortuneReportDraft } from "./majorFortuneReportDraftTypes";
@@ -22,8 +23,15 @@ function assertSafeFixtureId(fixtureId: string): void {
   }
 }
 
-function sanitizeSnapshotTextValue(value: unknown): unknown {
+function sanitizeSnapshotTextValue(value: unknown, key?: string): unknown {
   if (typeof value === "string") {
+    if (key === "basisType") {
+      return value;
+    }
+    if (key === "basisLabel" || key === "displayLabel") {
+      return getMajorFortuneBasisDisplayLabel(value);
+    }
+
     return sanitizeMajorFortuneVisibleText(value);
   }
   if (Array.isArray(value)) {
@@ -36,7 +44,7 @@ function sanitizeSnapshotTextValue(value: unknown): unknown {
   return Object.fromEntries(
     Object.entries(value).map(([key, item]) => [
       key,
-      sanitizeSnapshotTextValue(item),
+      sanitizeSnapshotTextValue(item, key),
     ]),
   );
 }

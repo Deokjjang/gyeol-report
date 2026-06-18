@@ -42,6 +42,19 @@ describe("majorFortuneEvidence", () => {
     expect(evidence.nextCycle?.ganji).toBe("乙亥");
     expect(evidence.dayMaster).toBe("甲");
     expect(evidence.majorTenGod.stemTenGod).toBe("비견");
+    expect(evidence.calculationBasis.displayLabel).toBe(
+      "사전 계산된 대운표 기준",
+    );
+    expect(evidence.calculationBasis.note).toContain("2026년");
+    expect(evidence.cycleYearTimeline).toHaveLength(10);
+    expect(evidence.cycleYearTimeline[0]?.year).toBe(
+      evidence.currentCycle.startYear,
+    );
+    expect(evidence.cycleYearTimeline[9]?.year).toBe(
+      evidence.currentCycle.endYear,
+    );
+    expect(evidence.cycleYearTimeline[0]?.yearIndexInCycle).toBe(1);
+    expect(evidence.cycleYearTimeline[9]?.yearIndexInCycle).toBe(10);
     expect(evidence.lifeAreaSignals.length).toBeGreaterThan(0);
     expect(evidence.difficultySignals.length).toBeGreaterThan(0);
     expect(evidence.opportunitySignals.length).toBeGreaterThan(0);
