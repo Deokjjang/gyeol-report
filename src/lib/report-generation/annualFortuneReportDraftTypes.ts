@@ -77,7 +77,10 @@ export interface AnnualFortuneReportDraft {
     readonly month: number;
     readonly label: string;
     readonly headline: string;
+    readonly monthGanji: string | null;
+    readonly monthlyBasis: string | null;
     readonly elementFocus: string | null;
+    readonly natalInteractionSummary: string | null;
     readonly body: string;
     readonly advice: string;
   }[];
@@ -157,12 +160,25 @@ const chapterSchema = {
 const monthlyFlowSchema = {
   type: "object",
   additionalProperties: false,
-  required: ["month", "label", "headline", "elementFocus", "body", "advice"],
+  required: [
+    "month",
+    "label",
+    "headline",
+    "monthGanji",
+    "monthlyBasis",
+    "elementFocus",
+    "natalInteractionSummary",
+    "body",
+    "advice",
+  ],
   properties: {
     month: numberSchema,
     label: stringSchema,
     headline: stringSchema,
+    monthGanji: nullableStringSchema,
+    monthlyBasis: nullableStringSchema,
     elementFocus: nullableStringSchema,
+    natalInteractionSummary: nullableStringSchema,
     body: stringSchema,
     advice: stringSchema,
   },

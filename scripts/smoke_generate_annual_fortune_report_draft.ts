@@ -188,6 +188,18 @@ async function main(): Promise<void> {
     `generic final advice labels: ${quality.genericFinalAdviceLabelWarnings}`,
   );
   writeLine(
+    `final advice domain mismatch warnings: ${quality.finalAdviceDomainMismatchWarnings}`,
+  );
+  writeLine(
+    `repeated terminology warnings: ${quality.repeatedTermWarnings}`,
+  );
+  writeLine(
+    `monthly evidence missing warnings: ${quality.monthlyEvidenceMissingWarnings}`,
+  );
+  writeLine(
+    `domain context overreach warnings: ${quality.domainContextOverreachWarnings}`,
+  );
+  writeLine(
     `monthly basis: ${packet.monthlyFortuneSeeds[0]?.monthGanji.basis ?? annualFortuneMonthlyBasisFallback}`,
   );
 

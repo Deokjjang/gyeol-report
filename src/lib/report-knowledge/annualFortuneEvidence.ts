@@ -104,6 +104,8 @@ export interface AnnualFortuneEvidencePacket {
     readonly label: string;
     readonly monthGanji: AnnualMonthGanjiInfo;
     readonly elementFocus: string;
+    readonly basis: "calendar_month_approximation" | "solar_term_exact";
+    readonly natalInteractionSummary: string;
     readonly plain: string;
   }[];
   readonly warnings: readonly string[];
@@ -373,22 +375,74 @@ function buildContextTranslationHints(
   }));
 }
 
-function buildMonthlyFortuneSeeds(
-  targetYear: number,
+function buildMonthlyNatalInteractionSummary(input: {
+  readonly monthGanji: AnnualMonthGanjiInfo;
+  readonly missingElements: readonly FiveElement[];
+  readonly heavyElements: readonly FiveElement[];
+  readonly natalBranches: readonly EarthlyBranch[];
+}): string {
+  const monthElements = unique([
+    input.monthGanji.stemElement,
+    input.monthGanji.branchElement,
+  ]);
+  const fillsMissing = monthElements.filter((element) =>
+    input.missingElements.includes(element),
+  );
+  const overloadsHeavy = unique([
+    ...monthElements.filter((element) => input.heavyElements.includes(element)),
+    ...monthElements
+      .map((element) => getGeneratedElement(element))
+      .filter((element) => input.heavyElements.includes(element)),
+  ]);
+  const interactions = getAnnualBranchInteractions({
+    annualBranch: input.monthGanji.branch,
+    natalBranches: input.natalBranches,
+  });
+
+  return [
+    fillsMissing.length > 0
+      ? `${formatElementList(fillsMissing)} 부족 보완`
+      : "부족 오행 직접 보완 약함",
+    overloadsHeavy.length > 0
+      ? `${formatElementList(overloadsHeavy)} 과다 자극`
+      : "과다 오행 자극 약함",
+    interactions.length > 0
+      ? `지지 ${interactions
+          .slice(0, 2)
+          .map((interaction) => `${interaction.branches.join("")} ${interaction.type}`)
+          .join(", ")}`
+      : "뚜렷한 지지 충·합·해는 약함",
+  ].join(" / ");
+}
+
+function buildMonthlyFortuneSeeds(input: {
+  readonly targetYear: number;
+  readonly missingElements: readonly FiveElement[];
+  readonly heavyElements: readonly FiveElement[];
+  readonly natalBranches: readonly EarthlyBranch[];
+}
 ): AnnualFortuneEvidencePacket["monthlyFortuneSeeds"] {
   return Array.from({ length: 12 }, (_, index) => {
     const month = index + 1;
     const monthGanji = getAnnualMonthGanjiInfo({
-      year: targetYear,
+      year: input.targetYear,
       month,
     });
     const elementFocus = `${elementKo[monthGanji.stemElement]}·${elementKo[monthGanji.branchElement]}`;
+    const natalInteractionSummary = buildMonthlyNatalInteractionSummary({
+      monthGanji,
+      missingElements: input.missingElements,
+      heavyElements: input.heavyElements,
+      natalBranches: input.natalBranches,
+    });
 
     return {
       month,
       label: monthGanji.label,
       monthGanji,
       elementFocus,
+      basis: monthGanji.basis,
+      natalInteractionSummary,
       plain: `${monthGanji.label}은 ${monthGanji.ganji} 흐름을 달력월 기준으로 근사해 보는 월별 운영 가이드입니다. ${monthGanji.elementSummary}`,
     };
   });
@@ -721,7 +775,12 @@ export function buildAnnualFortuneEvidence(input: {
       elementEffect,
       branchInteractions,
     }),
-    monthlyFortuneSeeds: buildMonthlyFortuneSeeds(input.targetYear),
+    monthlyFortuneSeeds: buildMonthlyFortuneSeeds({
+      targetYear: input.targetYear,
+      missingElements,
+      heavyElements,
+      natalBranches,
+    }),
     warnings: buildWarnings(input.person.labels),
   };
 }

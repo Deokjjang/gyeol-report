@@ -396,6 +396,19 @@ export function AnnualFortuneReportView({
                   오행 포인트: {text(flow.elementFocus)}
                 </p>
               )}
+              {flow.monthGanji === null ? null : (
+                <p className="mt-2 text-xs text-neutral-500">
+                  월 간지: {text(flow.monthGanji)}
+                </p>
+              )}
+              <p className="mt-2 text-xs text-neutral-500">
+                기준: {text(flow.monthlyBasis ?? "달력월 기준 운영 가이드")}
+              </p>
+              {flow.natalInteractionSummary === null ? null : (
+                <p className="mt-2 text-xs text-neutral-500">
+                  원국과의 작용: {text(flow.natalInteractionSummary)}
+                </p>
+              )}
               <p className="mt-2 text-sm leading-6 text-neutral-300">
                 {text(flow.body)}
               </p>

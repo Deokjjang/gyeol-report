@@ -85,7 +85,10 @@ function createValidAnnualDraft(
       month: index + 1,
       label: `${index + 1}월`,
       headline: "흐름을 확인하는 달입니다.",
+      monthGanji: "甲子",
+      monthlyBasis: "달력월 기준 운영 가이드",
       elementFocus: "화",
+      natalInteractionSummary: "화 부족 보완 / 토 과다 자극 / 뚜렷한 지지 충·합·해는 약함",
       body: "일과 생활의 리듬을 같이 확인해야 합니다.",
       advice: "무리한 확정보다 기준 정리를 먼저 하세요.",
     })),
@@ -173,6 +176,11 @@ describe("annualFortuneReportDraftValidator", () => {
     expect(
       result.value?.monthlyFlow.every((flow) => flow.elementFocus === null),
     ).toBe(true);
+    expect(result.value?.monthlyFlow[0]).toMatchObject({
+      monthGanji: null,
+      monthlyBasis: "달력월 기준 운영 가이드",
+      natalInteractionSummary: null,
+    });
   });
 
   it("accepts monthlyFlow elementFocus null", () => {
@@ -225,6 +233,34 @@ describe("annualFortuneReportDraftValidator", () => {
     );
   });
 
+  it("sanitizes repeated branch and generating terminology", () => {
+    const result = validateAnnualFortuneReportDraft({
+      ...createValidAnnualDraft(),
+      annualStructure: {
+        ...createValidAnnualDraft().annualStructure,
+        branchInteractionExplanation:
+          "卯午 파(파, 깨짐·재조정)와 午未 육합(육합, 서로 묶이는 결합), 생(생, 낳아줌)을 함께 봅니다.",
+      },
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.annualStructure.branchInteractionExplanation).toContain(
+      "卯午 파: 기존 방식이 깨지며 다시 조정되는 흐름",
+    );
+    expect(result.value?.annualStructure.branchInteractionExplanation).toContain(
+      "午未 육합: 실제 약속과 움직임이 묶이는 흐름",
+    );
+    expect(result.value?.annualStructure.branchInteractionExplanation).toContain(
+      "생: 기운을 보태는 작용",
+    );
+    expect(result.value?.annualStructure.branchInteractionExplanation).not.toContain(
+      "파(파",
+    );
+    expect(result.value?.annualStructure.branchInteractionExplanation).not.toContain(
+      "육합(육합",
+    );
+  });
+
   it("strips duplicated final advice prefixes", () => {
     const result = validateAnnualFortuneReportDraft({
       ...createValidAnnualDraft(),
@@ -243,11 +279,20 @@ describe("annualFortuneReportDraftValidator", () => {
   });
 
   it("infers final advice domain labels from body keywords", () => {
+    expect(inferAnnualAdviceDomain("프로젝트 결과물, 보고, 발표처럼 눈에 보이는 산출물을 먼저 만드세요.")).toBe(
+      "일·성과",
+    );
+    expect(inferAnnualAdviceDomain("생활비와 정산, 계약 기준은 미리 적어 두세요.")).toBe(
+      "돈·현실",
+    );
     expect(inferAnnualAdviceDomain("시험과 자격증은 오답노트부터 정리하세요.")).toBe(
       "학업·자격증",
     );
     expect(inferAnnualAdviceDomain("수면과 식사 시간을 먼저 고정하세요.")).toBe(
       "몸·생활 리듬",
+    );
+    expect(inferAnnualAdviceDomain("연인이나 부모와의 약속은 가족 일정과 함께 조율하세요.")).toBe(
+      "연애·가족",
     );
     expect(inferAnnualAdviceDomain("상사와 동료에게 역할 분담을 다시 확인하세요.")).toBe(
       "일·성과",

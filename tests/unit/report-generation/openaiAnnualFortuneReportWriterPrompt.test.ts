@@ -61,6 +61,10 @@ describe("openaiAnnualFortuneReportWriterPrompt", () => {
     expect(prompt).toContain("Do not change calculations based on userContext");
     expect(prompt).toContain("All six domains must still appear");
     expect(prompt).toContain("일·성과, 돈·현실, 인간관계, 연애·가족, 학업·자격증, 몸·생활 리듬");
+    expect(prompt).toContain("Still preserve each domain's identity");
+    expect(prompt).toContain("Employee context should not make every domain work-only");
+    expect(prompt).toContain("연인, 가족, 부모, 집안");
+    expect(prompt).toContain("수면, 식사, 피로, 회복");
     expect(prompt).toContain("Do not ask the user to choose a focus area");
     expect(prompt).toContain("If employee");
     expect(prompt).toContain("보고서");
@@ -96,6 +100,9 @@ describe("openaiAnnualFortuneReportWriterPrompt", () => {
     expect(prompt).toContain("Do not invent monthly ganji");
     expect(prompt).toContain("calendar_month_approximation");
     expect(prompt).toContain("월별 운영 가이드");
+    expect(prompt).toContain("monthGanji.ganji");
+    expect(prompt).toContain("natalInteractionSummary");
+    expect(prompt).toContain("one concrete work/money/relationship/study/health scene");
     expect(prompt).toContain("flowIndex");
     expect(prompt).toContain("flowTypeLabel");
     expect(prompt).toContain("flowIndexCaution");

@@ -78,7 +78,7 @@ function main(): void {
     "monthly fortune seeds",
     packet.monthlyFortuneSeeds.map(
       (seed) =>
-        `${seed.label} ${seed.monthGanji.ganji} ${seed.elementFocus}: ${seed.plain}`,
+        `${seed.label} ${seed.monthGanji.ganji} ${seed.elementFocus} basis=${seed.basis} natal=${seed.natalInteractionSummary}: ${seed.plain}`,
     ),
   );
   writeList(

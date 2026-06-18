@@ -119,6 +119,8 @@ describe("annualFortuneEvidence", () => {
       month: 1,
       label: "1월",
       elementFocus: expect.any(String),
+      basis: "calendar_month_approximation",
+      natalInteractionSummary: expect.any(String),
       monthGanji: expect.objectContaining({
         ganji: "庚寅",
         basis: "calendar_month_approximation",
@@ -129,6 +131,8 @@ describe("annualFortuneEvidence", () => {
         (seed) =>
           seed.monthGanji.ganji.length > 0 &&
           seed.elementFocus.length > 0 &&
+          seed.basis === "calendar_month_approximation" &&
+          seed.natalInteractionSummary.length > 0 &&
           seed.monthGanji.basis === "calendar_month_approximation",
       ),
     ).toBe(true);

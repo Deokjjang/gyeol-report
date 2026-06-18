@@ -100,7 +100,10 @@ function createValidDraft(): AnnualFortuneReportDraft {
       month: index + 1,
       label: `${index + 1}월`,
       headline: "흐름을 확인하는 달입니다.",
+      monthGanji: "甲子",
+      monthlyBasis: "달력월 기준 운영 가이드",
       elementFocus: "화",
+      natalInteractionSummary: "화 부족 보완 / 토 과다 자극 / 뚜렷한 지지 충·합·해는 약함",
       body: "일과 생활의 리듬을 같이 확인해야 합니다.",
       advice: "무리한 확정보다 기준 정리를 먼저 하세요.",
     })),
@@ -212,11 +215,26 @@ describe("openaiAnnualFortuneReportWriter", () => {
       "month",
       "label",
       "headline",
+      "monthGanji",
+      "monthlyBasis",
       "elementFocus",
+      "natalInteractionSummary",
       "body",
       "advice",
     ]);
+    expect(monthlyFlowSchema.properties.monthGanji.type).toEqual([
+      "string",
+      "null",
+    ]);
+    expect(monthlyFlowSchema.properties.monthlyBasis.type).toEqual([
+      "string",
+      "null",
+    ]);
     expect(monthlyFlowSchema.properties.elementFocus.type).toEqual([
+      "string",
+      "null",
+    ]);
+    expect(monthlyFlowSchema.properties.natalInteractionSummary.type).toEqual([
       "string",
       "null",
     ]);

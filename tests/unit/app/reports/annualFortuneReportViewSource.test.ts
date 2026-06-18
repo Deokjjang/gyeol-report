@@ -41,6 +41,10 @@ describe("AnnualFortuneReportView source", () => {
     expect(viewSource).toContain("chapter.practicalAdvice");
     expect(viewSource).toContain("draft.monthlyFlow.map");
     expect(viewSource).toContain("월별 운영 가이드");
+    expect(viewSource).toContain("월 간지:");
+    expect(viewSource).toContain("기준:");
+    expect(viewSource).toContain("달력월 기준 운영 가이드");
+    expect(viewSource).toContain("원국과의 작용:");
     expect(viewSource).toContain("draft.finalAdvice.map");
     expect(viewSource).toContain("안전 안내");
   });
