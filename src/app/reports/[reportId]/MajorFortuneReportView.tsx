@@ -13,7 +13,7 @@ type MajorFortuneReportViewProps = {
   readonly devStatus?: string;
 };
 
-const majorFortuneCycleBasisFallback = "사전 계산된 대운표 기준";
+const majorFortuneCycleBasisFallback = "입력된 대운표 기준";
 
 function text(value: string): string {
   return sanitizeMajorFortuneVisibleText(value);
@@ -49,6 +49,19 @@ function getPhaseDisplayLabel(
   return phase.label.includes("후반") ? text(phase.label) : "후반 8~10년";
 }
 
+function getCycleYearPhaseLabel(
+  phase: MajorFortuneReportDraft["cycleYearTimeline"][number]["phase"],
+): string {
+  if (phase === "early") {
+    return "초반";
+  }
+  if (phase === "middle") {
+    return "중반";
+  }
+
+  return "후반";
+}
+
 function getMajorFlowIntensityLabel(flowIndex: number): string {
   if (flowIndex >= 75) {
     return "높음";
@@ -57,7 +70,7 @@ function getMajorFlowIntensityLabel(flowIndex: number): string {
     return "중간";
   }
 
-  return "완만함";
+  return "낮음";
 }
 
 function renderList(items: readonly string[]) {
@@ -94,7 +107,7 @@ function renderCycleStructure(draft: MajorFortuneReportDraft) {
   return (
     <section className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
       <h2 className="text-lg font-semibold text-neutral-50">
-        현재 대운 구조
+        대운 기준과 현재 위치
       </h2>
       <dl className="mt-4 grid gap-2 text-sm">
         {rows.map(([label, value]) => (
@@ -151,13 +164,16 @@ export function MajorFortuneReportView({
             {draft.userContextSummary.fieldLabel === null
               ? ""
               : ` · ${text(draft.userContextSummary.fieldLabel)} 기준으로 해석`}
+            {draft.userContextSummary.relationshipStatusLabel === null
+              ? ""
+              : ` · 관계 상태: ${text(draft.userContextSummary.relationshipStatusLabel)}`}
           </p>
           <div className="flex flex-wrap gap-2 text-sm">
             <span className="rounded-full border border-sky-500/30 bg-sky-500/10 px-3 py-1 font-semibold text-sky-100">
               {text(draft.cycleSummary.displayTitle)}
             </span>
             <span className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 text-neutral-300">
-              {text(draft.cycleSummary.ageRangeLabel)}
+              {text(draft.cycleSummary.currentPositionLabel)}
             </span>
             <span className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 text-neutral-300">
               {text(draft.cycleSummary.yearRangeLabel)}
@@ -169,9 +185,7 @@ export function MajorFortuneReportView({
             className="rounded-lg border border-sky-500/40 bg-sky-500/10 p-4"
             aria-label="대운 유형"
           >
-            <p className="text-xs font-semibold text-sky-200">
-              대운 유형
-            </p>
+            <p className="text-xs font-semibold text-sky-200">대운 유형</p>
             <p className="mt-2 text-lg font-bold leading-7 text-sky-100">
               {text(draft.flowIndexSummary.flowTypeLabel)}
             </p>
@@ -210,6 +224,19 @@ export function MajorFortuneReportView({
 
       {renderCycleStructure(draft)}
 
+      <section className="space-y-3 rounded-lg border border-sky-500/30 bg-sky-950/20 p-5">
+        <p className="text-xs font-semibold text-sky-200">이 10년의 결론</p>
+        <h2 className="text-xl font-semibold leading-8 text-neutral-50">
+          {text(draft.decadeArchetype.label)}
+        </h2>
+        <p className="text-base font-semibold leading-7 text-sky-100">
+          {text(draft.decadeArchetype.metaphor)}
+        </p>
+        <p className="max-w-prose text-base leading-7 text-neutral-300">
+          {text(draft.decadeArchetype.plain)}
+        </p>
+      </section>
+
       <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
         <h2 className="text-lg font-semibold text-neutral-50">
           10년 핵심 테마
@@ -238,9 +265,84 @@ export function MajorFortuneReportView({
         </div>
       </section>
 
-      <section className="space-y-3" aria-label="영역별 장기 영향">
+      <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
         <h2 className="text-lg font-semibold text-neutral-50">
-          영역별 장기 영향
+          이전 대운에서 이번 대운으로 바뀐 점
+        </h2>
+        <p className="max-w-prose text-base leading-7 text-neutral-300">
+          {text(draft.previousToCurrentShift.plain)}
+        </p>
+        {renderList(draft.previousToCurrentShift.whatChanged)}
+      </section>
+
+      <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+        <h2 className="text-lg font-semibold text-neutral-50">
+          10년 흐름 지도
+        </h2>
+        <div className="grid gap-2">
+          {draft.cycleYearTimeline.map((year) => (
+            <article
+              key={`${year.year}:${year.ganji}`}
+              className="grid gap-2 rounded-md border border-neutral-800 bg-neutral-900/70 p-3 text-sm sm:grid-cols-[8rem_1fr]"
+            >
+              <div>
+                <p className="font-semibold text-sky-100">
+                  {year.year}년 {text(year.ganji)}
+                </p>
+                <p className="mt-1 text-xs text-neutral-500">
+                  {year.yearIndexInCycle}년차 ·{" "}
+                  {getCycleYearPhaseLabel(year.phase)}
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold leading-6 text-neutral-100">
+                  {text(year.headline)}
+                </p>
+                <p className="mt-1 leading-6 text-neutral-300">
+                  {text(year.plainInterpretation)}
+                </p>
+                <p className="mt-1 leading-6 text-neutral-400">
+                  전략: {text(year.strategicFocus)}
+                </p>
+                <p className="mt-1 leading-6 text-neutral-500">
+                  이유: {text(year.whyItMatters)}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+        <h2 className="text-lg font-semibold text-neutral-50">
+          특히 강하게 체감될 수 있는 해 TOP 5
+        </h2>
+        <div className="grid gap-3 md:grid-cols-2">
+          {draft.strongYears.map((year) => (
+            <article
+              key={`${year.year}:${year.ganji}`}
+              className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
+            >
+              <p className="text-xs font-semibold text-sky-200">
+                {year.year}년 · {text(year.ganji)}
+              </p>
+              <h3 className="mt-1 text-base font-semibold text-neutral-50">
+                {text(year.headline)}
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-neutral-300">
+                {text(year.body)}
+              </p>
+              <p className="mt-3 text-sm leading-6 text-neutral-400">
+                {text(year.advice)}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-3" aria-label="영역별 장기 전략">
+        <h2 className="text-lg font-semibold text-neutral-50">
+          영역별 장기 전략
         </h2>
         <div className="grid gap-3 md:grid-cols-2">
           {draft.decadeCards.map((card) => (
@@ -248,11 +350,9 @@ export function MajorFortuneReportView({
               key={`${card.label}:${card.headline}`}
               className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5"
             >
-              <div className="flex items-start justify-between gap-3">
-                <h2 className="text-sm font-semibold text-neutral-400">
-                  {text(card.label)}
-                </h2>
-              </div>
+              <h3 className="text-sm font-semibold text-neutral-400">
+                {text(card.label)}
+              </h3>
               <p className="mt-3 text-base font-semibold leading-7 text-neutral-50">
                 {text(card.headline)}
               </p>
@@ -264,8 +364,35 @@ export function MajorFortuneReportView({
         </div>
       </section>
 
+      <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+        <h2 className="text-lg font-semibold text-neutral-50">
+          초반·중반·후반 운영 전략
+        </h2>
+        <div className="grid gap-3 md:grid-cols-3">
+          {draft.phaseTimeline.map((phase) => (
+            <article
+              key={phase.phase}
+              className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
+            >
+              <p className="text-xs font-semibold text-sky-200">
+                {getPhaseDisplayLabel(phase)}
+              </p>
+              <h3 className="mt-1 text-base font-semibold text-neutral-50">
+                {text(phase.headline)}
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-neutral-300">
+                {text(phase.body)}
+              </p>
+              <p className="mt-3 text-sm leading-6 text-neutral-400">
+                {text(phase.advice)}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-        <h2 className="text-lg font-semibold text-neutral-50">핵심 신호</h2>
+        <h2 className="text-lg font-semibold text-neutral-50">대운 신호</h2>
         <div className="grid gap-3 md:grid-cols-2">
           {draft.keySignals.map((signal) => (
             <article
@@ -290,9 +417,7 @@ export function MajorFortuneReportView({
       </section>
 
       <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-        <h2 className="text-lg font-semibold text-neutral-50">
-          대운 구조 해석
-        </h2>
+        <h2 className="text-lg font-semibold text-neutral-50">대운 구조 해석</h2>
         <dl className="grid gap-3">
           {[
             ["간지", draft.majorStructure.ganjiExplanation],
@@ -347,99 +472,6 @@ export function MajorFortuneReportView({
             </div>
           </section>
         ))}
-      </section>
-
-      <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-        <h2 className="text-lg font-semibold text-neutral-50">
-          대운 10년 흐름
-        </h2>
-        <div className="grid gap-3 md:grid-cols-3">
-          {draft.phaseTimeline.map((phase) => (
-            <article
-              key={phase.phase}
-              className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
-            >
-              <p className="text-xs font-semibold text-sky-200">
-                {getPhaseDisplayLabel(phase)}
-              </p>
-              <h3 className="mt-1 text-base font-semibold text-neutral-50">
-                {text(phase.headline)}
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-neutral-300">
-                {text(phase.body)}
-              </p>
-              <p className="mt-3 text-sm leading-6 text-neutral-400">
-                {text(phase.advice)}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-        <h2 className="text-lg font-semibold text-neutral-50">
-          10년 연도별 흐름
-        </h2>
-        <div className="grid gap-2">
-          {draft.cycleYearTimeline.map((year) => (
-            <article
-              key={`${year.year}:${year.ganji}`}
-              className="grid gap-2 rounded-md border border-neutral-800 bg-neutral-900/70 p-3 text-sm sm:grid-cols-[8rem_1fr]"
-            >
-              <div>
-                <p className="font-semibold text-sky-100">
-                  {year.year}년 {text(year.ganji)}
-                </p>
-                <p className="mt-1 text-xs text-neutral-500">
-                  {year.yearIndexInCycle}년차 ·{" "}
-                  {year.phase === "early"
-                    ? "초반"
-                    : year.phase === "middle"
-                      ? "중반"
-                      : "후반"}
-                </p>
-              </div>
-              <div>
-                <p className="font-semibold leading-6 text-neutral-100">
-                  {text(year.headline)}
-                </p>
-                <p className="mt-1 leading-6 text-neutral-300">
-                  {text(year.relationToMajorCycle)}
-                </p>
-                <p className="mt-1 leading-6 text-neutral-400">
-                  {text(year.plain)}
-                </p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-        <h2 className="text-lg font-semibold text-neutral-50">
-          특히 강하게 체감될 수 있는 해 TOP 5
-        </h2>
-        <div className="grid gap-3 md:grid-cols-2">
-          {draft.strongYears.map((year) => (
-            <article
-              key={`${year.year}:${year.ganji}`}
-              className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
-            >
-              <p className="text-xs font-semibold text-sky-200">
-                {year.year}년 · {text(year.ganji)}
-              </p>
-              <h3 className="mt-1 text-base font-semibold text-neutral-50">
-                {text(year.headline)}
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-neutral-300">
-                {text(year.body)}
-              </p>
-              <p className="mt-3 text-sm leading-6 text-neutral-400">
-                {text(year.advice)}
-              </p>
-            </article>
-          ))}
-        </div>
       </section>
 
       <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">

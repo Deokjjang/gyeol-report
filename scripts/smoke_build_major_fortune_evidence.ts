@@ -47,12 +47,16 @@ writeLine(
 );
 writeLine(`ganji: ${evidence.currentCycle.ganji}`);
 writeLine(`ten god: ${evidence.majorTenGod.stemTenGod}`);
+writeLine(`cycle basis: ${evidence.majorCycleBasis.displayLabel}`);
+writeLine(`cycle position: ${evidence.cyclePosition.positionLabel}`);
+writeLine(`cycle progress: ${evidence.cyclePosition.progressLabel}`);
 writeLine(
   `elements: ${evidence.currentCycle.stemElement}/${evidence.currentCycle.branchElement}`,
 );
 writeLine(`calculation basis: ${evidence.calculationBasis.displayLabel}`);
 writeLine(`basis note: ${evidence.calculationBasis.note}`);
 writeLine(`cycle year timeline: ${evidence.cycleYearTimeline.length}`);
+writeLine(`decade archetype: ${evidence.decadeArchetype.label}`);
 writeList("fills missing", evidence.elementEffect.fillsMissing);
 writeList("overloads heavy", evidence.elementEffect.overloadsHeavy);
 writeList(
@@ -83,14 +87,24 @@ writeList(
 writeList(
   "strong years within cycle",
   evidence.strongYearsWithinCycle.map(
-    (year) => `${year.year} ${year.ganji}: ${year.reason}`,
+    (year) => `${year.year} ${year.ganji}: ${year.reason} / ${year.action}`,
   ),
 );
 writeList(
   "10-year timeline",
   evidence.cycleYearTimeline.map(
     (year) =>
-      `${year.year} ${year.ganji} ${year.yearIndexInCycle}년차: ${year.relationToMajorCycle}`,
+      `${year.year} ${year.ganji} ${year.yearIndexInCycle}년차: ${year.strategicFocus} / ${year.whyItMatters}`,
   ),
 );
+writeList(
+  "strategic themes",
+  evidence.strategicThemes.map((theme) => `${theme.label}: ${theme.strategy}`),
+);
+writeList("long range risks", evidence.longRangeRisks.map((risk) => risk.prevention));
+writeList(
+  "long range opportunities",
+  evidence.longRangeOpportunities.map((opportunity) => opportunity.action),
+);
+writeList("relationship hints", evidence.relationshipStatusTranslationHints);
 writeList("warnings", evidence.warnings);

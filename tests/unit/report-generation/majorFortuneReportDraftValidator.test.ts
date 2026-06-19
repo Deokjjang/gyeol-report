@@ -15,37 +15,54 @@ export function createValidMajorFortuneDraft(
     productType: "major_fortune",
     productVersion: "v1",
     personLabel: "덕민",
-    openingTitle: "현재 대운 甲戌 흐름",
+    openingTitle: "현재 대운 戊辰 흐름",
     openingSummary:
       "이 대운은 10년 동안 역할과 책임 기준을 다시 잡는 배경으로 체감될 수 있습니다.",
     coreLine:
-      "甲戌 대운은 일과 현실 책임을 동시에 다루며 장기 방향을 다시 세우는 흐름입니다.",
+      "戊辰 대운은 현실 구조와 책임 기준을 다시 까는 10년 흐름입니다.",
     userContextSummary: {
       lifeStatusLabel: "직장인",
       fieldLabel: "개발·서비스 기획",
+      relationshipStatusLabel: "미입력",
       translationNote:
         "개발·서비스 기획의 프로젝트, 문서화, 운영 책임 장면으로 번역했습니다.",
     },
     cycleSummary: {
-      ganji: "甲戌",
-      displayTitle: "현재 대운 甲戌",
+      ganji: "戊辰",
+      displayTitle: "현재 대운 戊辰",
       cycleIndexLabel: "3번째 대운",
-      currentPositionLabel: "2026년 기준 4년차",
-      ageRangeLabel: "24세~33세",
-      yearRangeLabel: "2023년~2032년",
-      stemLabel: "甲 · 양목",
-      branchLabel: "戌 · 양토",
-      elementLabel: "목·토의 대운",
-      tenGodLabel: "비견의 대운",
-      basisLabel: "사전 계산된 대운표 기준",
+      currentPositionLabel: "2026년 기준 1년차",
+      ageRangeLabel: "대운표 기준 구간",
+      yearRangeLabel: "2026년~2035년",
+      stemLabel: "戊 · 양토",
+      branchLabel: "辰 · 양토",
+      elementLabel: "토의 대운",
+      tenGodLabel: "편재의 대운",
+      basisLabel: "입력된 대운표 기준",
     },
     calculationBasis: {
-      basisType: "precomputed_major_fortune_table",
-      displayLabel: "사전 계산된 대운표 기준",
+      basisType: "user_supplied_major_fortune_table",
+      displayLabel: "입력된 대운표 기준",
       explanation:
-        "이 대운 구간은 입력된 만세력의 대운표를 기준으로 잡았습니다.",
+        "이 대운 구간은 사용자가 검증해 입력한 대운표를 기준으로 잡았습니다.",
       ageBasisLabel: "표기 나이는 대운표 기준 나이입니다.",
       note: "현재 리포트에서는 2026년을 기준으로 현재 위치한 대운을 읽습니다.",
+    },
+    previousToCurrentShift: {
+      previousGanji: "丁卯",
+      currentGanji: "戊辰",
+      plain:
+        "丁卯 대운에서 戊辰 대운으로 넘어오며 표현과 관계의 배경이 현실 구조와 책임의 배경으로 바뀝니다.",
+      whatChanged: [
+        "표현과 관계 조율보다 현실 구조, 계약, 책임 기준이 더 중요해집니다.",
+        "2026년은 戊辰 대운의 1년차라 초반 기준 설정이 이후 10년에 반복될 수 있습니다.",
+      ],
+    },
+    decadeArchetype: {
+      label: "현실 구조 재편형",
+      metaphor: "흙더미를 다시 설계도로 바꾸는 10년",
+      plain:
+        "戊辰 대운은 해야 할 일, 관리할 일, 책임질 일을 흙처럼 쌓아 두기보다 구조로 다시 짜야 하는 배경입니다.",
     },
     flowIndexSummary: {
       flowIndex: 72,
@@ -57,7 +74,7 @@ export function createValidMajorFortuneDraft(
       {
         title: "기준을 직접 세우는 10년",
         metaphor: "일이 흙처럼 쌓이기 전에 길을 먼저 내는 흐름",
-        body: "비견은 내 기준을 세우는 힘이고, 토는 현실 책임을 쌓이게 만드는 배경입니다.",
+        body: "편재는 돈과 현실 자원을 다루는 힘이고, 토는 책임을 쌓이게 만드는 배경입니다.",
         likelyScenes: [
           "프로젝트 기준을 직접 문서화하는 장면",
           "맡을 일과 맡지 않을 일을 나누는 장면",
@@ -145,7 +162,7 @@ export function createValidMajorFortuneDraft(
     ],
     majorStructure: {
       ganjiExplanation:
-        "甲戌은 목과 토가 함께 들어와 방향성과 현실 기준을 동시에 건드립니다.",
+        "戊辰은 토가 강하게 들어와 현실 구조와 책임 기준을 동시에 건드립니다.",
       tenGodExplanation:
         "비견: 자기 기준, 동등함, 경쟁과 공감이 장기 배경으로 반복됩니다.",
       elementEffectExplanation:
@@ -153,22 +170,94 @@ export function createValidMajorFortuneDraft(
       branchInteractionExplanation:
         "卯戌 육합: 사람과 일정이 묶이며 실제 움직임이 생기기 쉽습니다.",
       transitionExplanation:
-        "癸酉 대운에서 甲戌 대운으로 넘어오며 생각보다 실행 기준이 중요해졌습니다.",
+        "丁卯 대운에서 戊辰 대운으로 넘어오며 현실 구조와 책임 기준이 중요해졌습니다.",
     },
-    cycleChapters: Array.from({ length: 6 }, (_, index) => ({
-      title: `대운 해석 ${index + 1}`,
-      headline: "반복되는 장기 장면을 구체적으로 봅니다.",
-      body:
-        "직장, 가족, 돈 중 한 영역에서 내가 정리해야 하는 역할이 반복될 가능성이 큽니다.",
-      likelyScenes: [
-        "프로젝트 기준을 문서로 남겨야 하는 장면",
-        "계약과 생활비 기준을 다시 맞추는 장면",
-      ],
-      practicalAdvice: [
-        "역할과 마감 기준을 말보다 문서로 남기세요.",
-        "돈과 일정은 월 단위로 먼저 나누어 보세요.",
-      ],
-    })),
+    cycleChapters: [
+      {
+        title: "일의 기준을 새로 세우는 구간",
+        headline: "프로젝트와 보고 체계가 장기 과제로 반복됩니다.",
+        body:
+          "개발·서비스 기획에서는 요구사항 정리, 문서화, 일정 조율이 내 쪽으로 모이며 기준을 직접 세우는 장면이 반복될 가능성이 큽니다.",
+        likelyScenes: [
+          "프로젝트 기준을 문서로 남겨야 하는 장면",
+          "상사와 실무자 사이에서 요구사항을 번역하는 장면",
+        ],
+        practicalAdvice: [
+          "역할과 마감 기준을 말보다 문서로 남기세요.",
+          "결정권자와 담당자를 초반에 분리해 두세요.",
+        ],
+      },
+      {
+        title: "돈과 현실 숫자를 단순화하는 구간",
+        headline: "수입보다 고정비와 계약 기준이 중요해집니다.",
+        body:
+          "토가 무거운 대운에서는 급여, 생활비, 계약, 정산처럼 현실 숫자를 직접 관리해야 하는 일이 길게 반복될 수 있습니다.",
+        likelyScenes: [
+          "고정지출과 관리비를 월초에 나누는 장면",
+          "계약과 정산 기준을 다시 맞추는 장면",
+        ],
+        practicalAdvice: [
+          "돈과 일정은 월 단위로 먼저 나누어 보세요.",
+          "새는 비용과 반복 책임을 따로 표시하세요.",
+        ],
+      },
+      {
+        title: "사람과 역할 경계를 맞추는 구간",
+        headline: "관계는 감정보다 역할과 연락 방식으로 체감됩니다.",
+        body:
+          "가까운 관계에서는 좋은 말보다 만나는 주기, 연락 방식, 맡을 역할을 현실적으로 조율하는 일이 중요해질 수 있습니다.",
+        likelyScenes: [
+          "친구나 동료와 연락 빈도를 다시 맞추는 장면",
+          "가족 일정과 업무 일정이 겹치는 장면",
+        ],
+        practicalAdvice: [
+          "가능한 범위와 시간을 짧게 말하세요.",
+          "애매한 부탁은 바로 답하기보다 조건을 확인하세요.",
+        ],
+      },
+      {
+        title: "가족과 생활 책임을 나누는 구간",
+        headline: "집안 일정과 가까운 관계의 몫을 다시 봅니다.",
+        body:
+          "연애 상태가 미입력이라 특정 관계를 단정하지 않고, 가족과 가까운 사람 사이의 약속, 생활 동선, 현실 책임을 중심으로 봅니다.",
+        likelyScenes: [
+          "부모나 가족 일정의 역할을 조정하는 장면",
+          "가까운 사람과 약속 시간을 현실적으로 맞추는 장면",
+        ],
+        practicalAdvice: [
+          "감정 설명보다 시간과 역할을 먼저 확인하세요.",
+          "대신 맡을 수 있는 일과 어려운 일을 구분하세요.",
+        ],
+      },
+      {
+        title: "공부와 포트폴리오를 남기는 구간",
+        headline: "업무 공부를 결과물로 바꾸는 방식이 유리합니다.",
+        body:
+          "자격증, 실무 정리, 포트폴리오, 발표 자료처럼 남는 산출물을 쌓으면 대운의 현실 구조를 커리어 자산으로 바꾸기 쉽습니다.",
+        likelyScenes: [
+          "업무 공부를 체크리스트로 정리하는 장면",
+          "포트폴리오나 발표 자료를 결과물로 남기는 장면",
+        ],
+        practicalAdvice: [
+          "공부 시간보다 결과물 단위를 먼저 정하세요.",
+          "실무에서 반복되는 내용을 템플릿으로 남기세요.",
+        ],
+      },
+      {
+        title: "몸과 생활 리듬을 구조화하는 구간",
+        headline: "큰 사건보다 피로 누적과 회복 루틴이 먼저 신호를 줍니다.",
+        body:
+          "수면, 식사, 앉아 있는 시간, 회복 루틴이 흔들리면 현실 책임을 오래 버티기 어렵기 때문에 생활 리듬을 일정처럼 다뤄야 합니다.",
+        likelyScenes: [
+          "야근이나 일정 과밀로 수면이 밀리는 장면",
+          "식사와 회복 시간이 계속 뒤로 밀리는 장면",
+        ],
+        practicalAdvice: [
+          "수면과 식사 시간을 일정표에 먼저 고정하세요.",
+          "무리한 주간에는 회복 시간을 비용처럼 따로 잡으세요.",
+        ],
+      },
+    ],
     phaseTimeline: [
       {
         phase: "early",
@@ -194,29 +283,29 @@ export function createValidMajorFortuneDraft(
     ],
     strongYears: [
       {
-        year: 2024,
-        ganji: "甲辰",
-        headline: "대운 천간이 반복되는 해",
-        body: "자기 기준과 현실 책임이 동시에 강해질 수 있습니다.",
-        advice: "결정을 미루기보다 기준을 문서로 정리하세요.",
-      },
-      {
-        year: 2025,
-        ganji: "乙巳",
-        headline: "목과 화가 이어지는 해",
-        body: "대운 오행의 목 기운이 이어지고 화가 결과물을 밖으로 꺼내는 힘을 보탭니다.",
-        advice: "작은 결과물부터 공개 가능한 형태로 남기세요.",
-      },
-      {
         year: 2026,
         ganji: "丙午",
-        headline: "표현과 실행이 강해지는 해",
-        body: "대운 지지와 원국 지지 작용 위에 표현과 실행의 오행이 강해질 수 있습니다.",
-        advice: "마감 전 중간 점검 기준을 두세요.",
+        headline: "대운이 바뀌며 현실 구조를 새로 까는 해",
+        body: "戊辰 대운 1년차라 책임 범위와 돈의 기준을 새로 잡는 이유가 분명합니다.",
+        advice: "계약, 정산, 역할 범위를 초반부터 문서로 남기세요.",
+      },
+      {
+        year: 2028,
+        ganji: "戊申",
+        headline: "대운 천간이 반복되어 돈과 역할이 강해지는 해",
+        body: "戊가 반복되어 편재의 돈, 거래, 현실 자원 테마가 같은 방향으로 겹칩니다.",
+        advice: "무리한 확장보다 고정비와 책임 비용을 줄이세요.",
+      },
+      {
+        year: 2030,
+        ganji: "庚戌",
+        headline: "辰戌 충으로 구조가 크게 흔들릴 수 있는 해",
+        body: "대운 辰과 戌이 부딪혀 일, 집, 계약, 관계의 기준을 다시 조정해야 하는 이유가 생깁니다.",
+        advice: "중요한 약속과 비용 구조는 미리 점검하세요.",
       },
     ],
     cycleYearTimeline: Array.from({ length: 10 }, (_, index) => {
-      const year = 2023 + index;
+      const year = 2026 + index;
       const yearIndexInCycle = index + 1;
       const phase =
         yearIndexInCycle <= 3
@@ -224,15 +313,53 @@ export function createValidMajorFortuneDraft(
           : yearIndexInCycle <= 7
             ? "middle"
             : "late";
+      const roles = [
+        "새 대운 진입, 현실 구조를 다시 까는 해",
+        "초반 기준을 실제 생활에 시험하는 해",
+        "책임 범위를 사람과 일에 적용하는 해",
+        "반복 업무를 시스템으로 굳히는 해",
+        "돈과 계약 구조를 크게 점검하는 해",
+        "관계와 생활 리듬을 다시 배치하는 해",
+        "장기 역할이 커리어 기준으로 굳는 해",
+        "다음 구간을 위해 비용과 역할을 줄이는 해",
+        "성과와 공부 결과물을 정리하는 해",
+        "다음 대운 전 관계와 생활 기반을 정리하는 해",
+      ];
+      const focuses = [
+        "책임 범위와 비용 구조를 먼저 정리하기",
+        "초반에 생기는 반복 요청을 기록하기",
+        "담당자와 결정권자를 분리해 두기",
+        "반복 업무를 체크리스트로 고정하기",
+        "계약, 정산, 고정비를 다시 점검하기",
+        "관계와 일정의 경계를 짧게 확인하기",
+        "커리어 기준과 포트폴리오를 연결하기",
+        "불필요한 책임과 비용을 줄이기",
+        "남는 결과물과 배운 내용을 정리하기",
+        "다음 대운으로 가져갈 구조만 남기기",
+      ];
+      const reasons = [
+        "첫해에 잡은 기준이 이후 10년 운영 방식으로 반복되기 쉽기 때문입니다.",
+        "초반 요청을 기록하지 않으면 책임 범위가 흐려지기 쉽기 때문입니다.",
+        "역할과 권한을 나누어야 장기 소모를 줄일 수 있기 때문입니다.",
+        "중반부터는 임시 대응이 반복 시스템으로 굳기 쉽기 때문입니다.",
+        "현실 숫자가 커지는 해에는 새는 비용이 장기 부담으로 남기 때문입니다.",
+        "사람과 일정의 경계가 흔들리면 일과 생활이 같이 피로해지기 때문입니다.",
+        "대운 중반의 선택이 이후 커리어 설명 방식으로 남기 때문입니다.",
+        "후반에는 더할 일보다 덜어낼 일을 정해야 다음 구간이 가벼워지기 때문입니다.",
+        "정리된 결과물이 다음 선택의 근거가 되기 때문입니다.",
+        "마지막 해에는 관계, 비용, 역할을 정돈해야 다음 대운으로 넘어가기 쉽기 때문입니다.",
+      ];
 
       return {
         year,
-        ganji: ["癸卯", "甲辰", "乙巳", "丙午", "丁未", "戊申", "己酉", "庚戌", "辛亥", "壬子"][index] ?? "癸卯",
+        ganji: ["丙午", "丁未", "戊申", "己酉", "庚戌", "辛亥", "壬子", "癸丑", "甲寅", "乙卯"][index] ?? "丙午",
         yearIndexInCycle,
         phase,
-        headline: `${yearIndexInCycle}년차 흐름`,
-        relationToMajorCycle: "대운 배경을 통과하며 장기 테마를 확인하는 해",
-        plain: `${year}년은 甲戌 대운의 ${yearIndexInCycle}년차로 큰 흐름 안에서 역할을 조정합니다.`,
+        headline: roles[index] ?? `${yearIndexInCycle}년차 현실 구조 조정`,
+        roleOfYearInCycle: roles[index] ?? "현실 구조를 다시 점검하는 해",
+        plainInterpretation: `${year}년은 戊辰 대운의 ${yearIndexInCycle}년차로 돈, 역할, 생활 기준을 조정하는 해입니다.`,
+        strategicFocus: focuses[index] ?? "책임 범위와 비용 구조를 먼저 정리하기",
+        whyItMatters: reasons[index] ?? "같은 현실 테마가 반복되며 장기 선택의 기준이 되기 때문입니다.",
       };
     }),
     finalAdvice: [
@@ -401,7 +528,7 @@ describe("majorFortuneReportDraftValidator", () => {
     );
   });
 
-  it("maps precomputed basis to user-facing Korean", () => {
+  it("maps old precomputed basis to dev-only user-facing Korean", () => {
     const result = validateMajorFortuneReportDraft({
       ...createValidMajorFortuneDraft(),
       cycleSummary: {
@@ -412,10 +539,10 @@ describe("majorFortuneReportDraftValidator", () => {
 
     expect(result.ok).toBe(true);
     expect(result.value?.cycleSummary.basisLabel).toBe(
-      "사전 계산된 대운표 기준",
+      "개발용 사전 계산 대운표 기준",
     );
     expect(result.value?.calculationBasis.displayLabel).toBe(
-      "사전 계산된 대운표 기준",
+      "입력된 대운표 기준",
     );
   });
 
@@ -435,6 +562,12 @@ describe("majorFortuneReportDraftValidator", () => {
       cycleIndexLeakWarnings: 0,
       technicalTermWithoutExplanationWarnings: 0,
       smallEventOverfocusWarnings: 0,
+      wrongCycleBasisWarnings: 0,
+      genericTimelineWarnings: 0,
+      repeatedSummaryWarnings: 0,
+      weakStrategyWarnings: 0,
+      relationshipStatusMisuseWarnings: 0,
+      strongYearTitleRepeatWarnings: 0,
     });
   });
 
@@ -526,6 +659,72 @@ describe("majorFortuneReportDraftValidator", () => {
     expect(result.warnings.some((warning) =>
       warning.startsWith("MAJOR_FORTUNE_CYCLE_INDEX_LEAK_WARNING"),
     )).toBe(true);
+  });
+
+  it("warns when active cycle does not contain the current year", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      cycleSummary: {
+        ...createValidMajorFortuneDraft().cycleSummary,
+        currentPositionLabel: "2040년 기준 1년차",
+      },
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!).wrongCycleBasisWarnings,
+    ).toBeGreaterThan(0);
+  });
+
+  it("warns when timeline keeps generic source wording", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      cycleYearTimeline: createValidMajorFortuneDraft().cycleYearTimeline.map(
+        (year) => ({
+          ...year,
+          plainInterpretation:
+            "대운 지지 또는 원국 지지와 강한 작용 흐름을 봅니다.",
+        }),
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!).genericTimelineWarnings,
+    ).toBeGreaterThan(0);
+  });
+
+  it("warns when unknown relationship status is interpreted as known", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      decadeCards: createValidMajorFortuneDraft().decadeCards.map((card) =>
+        card.label === "연애·가족"
+          ? { ...card, body: "솔로탈출과 애인 운이 강하게 들어옵니다." }
+          : card,
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!)
+        .relationshipStatusMisuseWarnings,
+    ).toBeGreaterThan(0);
+  });
+
+  it("warns when strong year headline repeats the section title", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      strongYears: createValidMajorFortuneDraft().strongYears.map((year) => ({
+        ...year,
+        headline: "특히 강하게 체감될 수 있는 해 TOP 5",
+      })),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!)
+        .strongYearTitleRepeatWarnings,
+    ).toBeGreaterThan(0);
   });
 
   it("exposes visible sanitizer directly", () => {

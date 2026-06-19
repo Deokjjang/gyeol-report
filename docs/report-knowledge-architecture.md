@@ -1779,11 +1779,12 @@ draft schema, preview page, product UI, year/cycle selection screen, payment,
 or public product page. The smoke script is evidence-only and must not import
 an OpenAI writer.
 
-The initial Deokmin fixture uses precomputed major fortune cycles with
-`fixture_precomputed` basis because an exact 대운 start-age/direction algorithm
-is not implemented yet. The evidence packet therefore includes a warning so the
-report system does not imply exact cycle calculation where only fixture data is
-available.
+The Deokmin development fixture now uses an explicitly supplied major fortune
+table. Because an exact 대운 start-age/direction algorithm is not implemented
+yet, the fixture must declare its source basis instead of pretending the app has
+calculated the start point itself. For DAEUN-03B, the supplied table places the
+active cycle at `戊辰` from 2026 through 2035, and 2026 is read as the first year
+of that cycle.
 
 The major fortune evidence engine selects previous, current, and next cycles by
 year range, parses the current cycle ganji, maps heavenly stem and earthly
@@ -1849,11 +1850,10 @@ generation time, evidence packet, and sanitized draft. The dev preview route is
 The page reads only local snapshots, is gated by
 `MAJOR_FORTUNE_DEV_PREVIEW_ENABLED`, and does not import the OpenAI writer.
 
-The report view renders the current major cycle structure table, flow index,
-decade cards, key signals, major structure explanation, cycle chapters, phase
-timeline, strong years, final advice, and safety notes. Raw
-`fixture_precomputed` or `precomputed` wording is mapped to the user-facing
-label `사전 계산된 대운표 기준`.
+The report view renders the current major cycle structure table, descriptive
+cycle type, decade themes, 10-year timeline, strong-year highlights, domain
+strategy, phase timeline, final advice, and safety notes. Raw internal basis
+values are not user-facing; a supplied table is shown as `입력된 대운표 기준`.
 
 ## DAEUN-03 Major Fortune First Generated Draft QA
 
@@ -1895,11 +1895,11 @@ decade is as an 인생 배경, how roles and direction change, what themes repea
 and which years are highlights inside the larger structure.
 
 The evidence packet now carries a user-facing calculation basis object. Current
-cycle selection uses the provided precomputed major fortune table, and the
-current year is used only to locate the user's position inside that cycle. This
-task does not implement a new exact 절기-based 대운 start-age algorithm, so the
-view explains the basis as `사전 계산된 대운표 기준` and avoids raw
-`fixture_precomputed`, `precomputed`, `debug`, or `evidence` wording.
+cycle selection uses the provided major fortune table, and the current year is
+used only to locate the user's position inside that cycle. This task does not
+implement a new exact 절기-based 대운 start-age algorithm, so the view explains
+the source as `입력된 대운표 기준` or `만세력 대운표 기준` when those sources are
+available and avoids raw internal wording.
 
 `currentCycle.index` is treated only as 대운 순번. It must not appear as a flow
 score. The visible report shows 대운 순번, current position in the cycle, a
@@ -1921,6 +1921,49 @@ The smoke draft script reports cycle year timeline count, missing cycle year
 warnings, cycle index leak warnings, technical term warnings, and small event
 overfocus warnings so the report can be checked as a large 10-year structure
 before any paid OpenAI retry.
+
+## DAEUN-03B Major Fortune Strategic Redesign
+
+DAEUN-03B fixes the source-of-truth boundary before copy polish. If the active
+major fortune cycle is wrong, every generated interpretation is invalid. The
+selected/current year only locates the active cycle; the report must then cover
+that active cycle's full 10 years.
+
+The Deokmin fixture is treated as a user-supplied major fortune table until an
+exact 대운 start algorithm is implemented. With `currentYear = 2026`, the active
+cycle is `戊辰` from 2026 through 2035, not an older `甲戌` cycle. The visible
+basis is `입력된 대운표 기준`, while raw words such as fixture, precomputed,
+debug, or evidence stay out of product copy.
+
+`UserContextProfile` still has no interest-area field. DAEUN-03B adds optional
+`relationshipStatus` so love/family/relationship scenes can be translated more
+realistically without changing calculations. Unknown relationship status must
+not be written as if the user is single, dating, or married.
+
+The evidence packet now exposes strategic big-flow fields: cycle basis, cycle
+position, previous-to-current shift, decade archetype, strategic themes, long
+range risks and opportunities, relationship-status translation hints, a full
+10-year strategic timeline, and strong-year highlights.
+
+The 10-year timeline is not a mini annual report. Each year needs a role inside
+the active cycle, a plain interpretation, a strategic focus, and a reason why it
+matters. Generic wording such as `대운 지지 또는 원국 지지와 강한 작용` is treated as
+a QA warning.
+
+Strong years are shown as `TOP 5` highlights only. They must explain why the
+year is strong, what area it may hit, and what action to take. The strong-year
+section title appears once and must not be repeated as each card headline.
+
+The major fortune report structure is now strategic and big-picture first:
+current cycle basis and position, the 10-year conclusion, core themes,
+previous-to-current shift, the 10-year flow map, strong-year highlights, domain
+strategy, phase timeline, and final advice. Domain cards are secondary; they
+must not make the product read like a repeated annual summary.
+
+The smoke and validator report additional QA counters for wrong cycle basis,
+generic timeline wording, repeated summaries, weak strategy copy, relationship
+status misuse, and repeated strong-year section titles. OpenAI remains manual
+and one-fixture-only for paid QA.
 
 ## Future OpenAI Use
 

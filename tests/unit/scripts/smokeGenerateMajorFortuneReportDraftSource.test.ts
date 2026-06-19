@@ -24,6 +24,8 @@ describe("smoke_generate_major_fortune_report_draft source", () => {
     expect(scriptSource).toContain("current cycle:");
     expect(scriptSource).toContain("ganji:");
     expect(scriptSource).toContain("ten god:");
+    expect(scriptSource).toContain("cycle basis:");
+    expect(scriptSource).toContain("cycle position:");
     expect(scriptSource).toContain("calculation basis:");
     expect(scriptSource).toContain("decade cards:");
     expect(scriptSource).toContain("phase timeline:");
@@ -42,6 +44,12 @@ describe("smoke_generate_major_fortune_report_draft source", () => {
     expect(scriptSource).toContain("cycle index leak warnings:");
     expect(scriptSource).toContain("technical term warnings:");
     expect(scriptSource).toContain("small event overfocus warnings:");
+    expect(scriptSource).toContain("wrong cycle basis warnings:");
+    expect(scriptSource).toContain("generic timeline warnings:");
+    expect(scriptSource).toContain("repeated summary warnings:");
+    expect(scriptSource).toContain("weak strategy warnings:");
+    expect(scriptSource).toContain("relationship status misuse warnings:");
+    expect(scriptSource).toContain("strong year title repeat warnings:");
     expect(scriptSource).toContain("getMajorFortunePreviewSnapshotRelativePath");
     expect(scriptSource).toContain("getMajorFortunePreviewUrl");
     expect(scriptSource).toContain("url:");

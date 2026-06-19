@@ -15,8 +15,15 @@ describe("smoke_build_major_fortune_evidence source", () => {
     expect(source).toContain("current cycle:");
     expect(source).toContain("ganji:");
     expect(source).toContain("ten god:");
+    expect(source).toContain("cycle basis:");
+    expect(source).toContain("cycle position:");
+    expect(source).toContain("decade archetype:");
     expect(source).toContain("calculation basis:");
     expect(source).toContain("cycle year timeline:");
+    expect(source).toContain("strategic themes");
+    expect(source).toContain("long range risks");
+    expect(source).toContain("long range opportunities");
+    expect(source).toContain("relationship hints");
     expect(source).toContain("life area signals");
     expect(source).toContain("difficulty signals");
     expect(source).toContain("opportunity signals");

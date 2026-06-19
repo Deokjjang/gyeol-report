@@ -8,16 +8,33 @@ import {
 } from "../../../src/lib/report-knowledge/majorFortuneEvidence";
 import { requireMajorFortuneFixture } from "../../../src/lib/report-knowledge/majorFortuneFixtures";
 import { hydrateMajorFortuneCycle } from "../../../src/lib/report-knowledge/majorFortuneRules";
+import {
+  USER_RELATIONSHIP_STATUS_LABELS,
+} from "../../../src/lib/report-knowledge/userContextTypes";
 
 describe("majorFortuneEvidence", () => {
+  it("supports relationship status labels without interestArea", () => {
+    expect(USER_RELATIONSHIP_STATUS_LABELS.single).toBe("솔로");
+    expect(USER_RELATIONSHIP_STATUS_LABELS.dating).toBe("연애 중");
+    expect(USER_RELATIONSHIP_STATUS_LABELS.married).toBe("기혼");
+    expect(USER_RELATIONSHIP_STATUS_LABELS.complicated).toBe("복잡한 관계");
+    expect(USER_RELATIONSHIP_STATUS_LABELS.unknown).toBe("미입력");
+    expect(JSON.stringify(USER_RELATIONSHIP_STATUS_LABELS)).not.toContain(
+      "interestArea",
+    );
+  });
+
   it("exports Deokmin major fortune fixture with context and cycles", () => {
     const fixture = requireMajorFortuneFixture("deokmin-current-major-fortune");
 
     expect(fixture.person.userContext).toMatchObject({
       lifeStatus: "employee",
       fieldLabel: "개발·서비스 기획",
+      relationshipStatus: "unknown",
     });
-    expect(fixture.person.majorFortuneCycleBasis).toBe("fixture_precomputed");
+    expect(fixture.person.majorFortuneCycleBasis).toBe(
+      "user_supplied_major_fortune_table",
+    );
     expect(fixture.person.majorFortuneCycles.length).toBeGreaterThan(0);
   });
 
@@ -37,13 +54,27 @@ describe("majorFortuneEvidence", () => {
 
     expect(evidence.productType).toBe("major_fortune");
     expect(evidence.productVersion).toBe("v1");
-    expect(evidence.currentCycle.ganji).toBe("甲戌");
-    expect(evidence.previousCycle?.ganji).toBe("癸酉");
-    expect(evidence.nextCycle?.ganji).toBe("乙亥");
+    expect(evidence.currentCycle.ganji).toBe("戊辰");
+    expect(evidence.currentCycle.startYear).toBe(2026);
+    expect(evidence.currentCycle.endYear).toBe(2035);
+    expect(evidence.previousCycle?.ganji).toBe("丁卯");
+    expect(evidence.nextCycle?.ganji).toBe("己巳");
     expect(evidence.dayMaster).toBe("甲");
-    expect(evidence.majorTenGod.stemTenGod).toBe("비견");
+    expect(evidence.majorTenGod.stemTenGod).toBe("편재");
+    expect(evidence.majorCycleBasis.basisType).toBe(
+      "user_supplied_major_fortune_table",
+    );
+    expect(evidence.cyclePosition.positionLabel).toBe("2026년 기준 1년차");
+    expect(evidence.previousToCurrentShift.currentGanji).toBe("戊辰");
+    expect(evidence.decadeArchetype.label).toBe("현실 구조 재편형");
+    expect(evidence.strategicThemes.length).toBeGreaterThan(0);
+    expect(evidence.longRangeRisks.length).toBeGreaterThan(0);
+    expect(evidence.longRangeOpportunities.length).toBeGreaterThan(0);
+    expect(evidence.relationshipStatusTranslationHints.join("\n")).toContain(
+      "미입력",
+    );
     expect(evidence.calculationBasis.displayLabel).toBe(
-      "사전 계산된 대운표 기준",
+      "입력된 대운표 기준",
     );
     expect(evidence.calculationBasis.note).toContain("2026년");
     expect(evidence.cycleYearTimeline).toHaveLength(10);
@@ -59,7 +90,40 @@ describe("majorFortuneEvidence", () => {
     expect(evidence.difficultySignals.length).toBeGreaterThan(0);
     expect(evidence.opportunitySignals.length).toBeGreaterThan(0);
     expect(evidence.strongYearsWithinCycle.length).toBeGreaterThan(0);
-    expect(evidence.warnings.join("\n")).toContain("fixture_precomputed");
+    expect(evidence.warnings.join("\n")).not.toContain("fixture_precomputed");
+  });
+
+  it("creates different relationship hints by relationship status", () => {
+    const fixture = requireMajorFortuneFixture("deokmin-current-major-fortune");
+    const singleEvidence = buildMajorFortuneEvidence({
+      fixtureId: fixture.id,
+      currentYear: fixture.currentYear,
+      person: {
+        ...fixture.person,
+        userContext: {
+          ...fixture.person.userContext,
+          relationshipStatus: "single",
+        },
+      },
+    });
+    const marriedEvidence = buildMajorFortuneEvidence({
+      fixtureId: fixture.id,
+      currentYear: fixture.currentYear,
+      person: {
+        ...fixture.person,
+        userContext: {
+          ...fixture.person.userContext,
+          relationshipStatus: "married",
+        },
+      },
+    });
+
+    expect(singleEvidence.relationshipStatusTranslationHints.join("\n")).toContain(
+      "솔로",
+    );
+    expect(marriedEvidence.relationshipStatusTranslationHints.join("\n")).toContain(
+      "기혼",
+    );
   });
 
   it("computes element fill and overload effects", () => {

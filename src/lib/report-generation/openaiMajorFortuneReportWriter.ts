@@ -1,5 +1,6 @@
 import type { FiveElement, YinYang } from "../report-knowledge/annualFortuneTypes";
 import type { MajorFortuneEvidencePacket } from "../report-knowledge/majorFortuneTypes";
+import { USER_RELATIONSHIP_STATUS_LABELS } from "../report-knowledge/userContextTypes";
 import {
   majorFortuneReportDraftJsonSchema,
   getMajorFortuneReportDraftSchemaTopLevelKeys,
@@ -304,33 +305,53 @@ function attachDeterministicEvidence(input: {
     productType: "major_fortune",
     productVersion: "v1",
     personLabel: input.evidencePacket.personLabel,
+    userContextSummary: {
+      ...((input.parsed as { readonly userContextSummary?: object }).userContextSummary ?? {}),
+      relationshipStatusLabel:
+        input.evidencePacket.userContext.relationshipStatus === undefined ||
+        input.evidencePacket.userContext.relationshipStatus === null
+          ? USER_RELATIONSHIP_STATUS_LABELS.unknown
+          : USER_RELATIONSHIP_STATUS_LABELS[
+              input.evidencePacket.userContext.relationshipStatus
+            ],
+    },
     cycleSummary: {
       ...((input.parsed as { readonly cycleSummary?: object }).cycleSummary ?? {}),
       ganji: input.evidencePacket.currentCycle.ganji,
       displayTitle: `현재 대운 ${input.evidencePacket.currentCycle.ganji}`,
-      cycleIndexLabel: `${input.evidencePacket.currentCycle.index}번째 대운`,
-      currentPositionLabel: `${input.evidencePacket.currentYear}년 기준 ${
-        input.evidencePacket.currentYear -
-        input.evidencePacket.currentCycle.startYear +
-        1
-      }년차`,
-      ageRangeLabel: `${input.evidencePacket.currentCycle.startAge}세~${input.evidencePacket.currentCycle.endAge}세`,
+      cycleIndexLabel: `${input.evidencePacket.cyclePosition.cycleIndex}번째 대운`,
+      currentPositionLabel: input.evidencePacket.cyclePosition.positionLabel,
+      ageRangeLabel:
+        input.evidencePacket.majorCycleBasis.basisType ===
+        "user_supplied_major_fortune_table"
+          ? "대운표 기준 구간"
+          : `${input.evidencePacket.currentCycle.startAge}세~${input.evidencePacket.currentCycle.endAge}세`,
       yearRangeLabel: `${input.evidencePacket.currentCycle.startYear}년~${input.evidencePacket.currentCycle.endYear}년`,
       stemLabel: formatStemLabel(input.evidencePacket),
       branchLabel: formatBranchLabel(input.evidencePacket),
       elementLabel: formatCycleElementLabel(input.evidencePacket),
       tenGodLabel: `${input.evidencePacket.majorTenGod.stemTenGod}의 대운`,
-      basisLabel: "사전 계산된 대운표 기준",
+      basisLabel: input.evidencePacket.majorCycleBasis.displayLabel,
     },
     calculationBasis: input.evidencePacket.calculationBasis,
+    previousToCurrentShift: {
+      previousGanji:
+        input.evidencePacket.previousToCurrentShift.previousGanji ?? null,
+      currentGanji: input.evidencePacket.previousToCurrentShift.currentGanji,
+      plain: input.evidencePacket.previousToCurrentShift.plain,
+      whatChanged: input.evidencePacket.previousToCurrentShift.whatChanged,
+    },
+    decadeArchetype: input.evidencePacket.decadeArchetype,
     cycleYearTimeline: input.evidencePacket.cycleYearTimeline.map((year) => ({
       year: year.year,
       ganji: year.ganji,
       yearIndexInCycle: year.yearIndexInCycle,
       phase: year.phase,
       headline: year.headline,
-      relationToMajorCycle: year.relationToMajorCycle,
-      plain: year.plain,
+      roleOfYearInCycle: year.roleOfYearInCycle,
+      plainInterpretation: year.plainInterpretation,
+      strategicFocus: year.strategicFocus,
+      whyItMatters: year.whyItMatters,
     })),
   };
 }

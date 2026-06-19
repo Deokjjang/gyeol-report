@@ -7,6 +7,11 @@ import type {
 } from "./annualFortuneTypes";
 import type { UserContextProfile } from "./userContextTypes";
 
+export type MajorFortuneCycleBasis =
+  | "manse_engine_major_fortune_table"
+  | "user_supplied_major_fortune_table"
+  | "fixture_precomputed_for_dev_only";
+
 export interface MajorFortuneCycle {
   readonly index: number;
   readonly startAge: number;
@@ -63,8 +68,19 @@ export interface MajorFortuneEvidencePacket {
   readonly currentCycle: MajorFortuneCycle;
   readonly previousCycle?: MajorFortuneCycle;
   readonly nextCycle?: MajorFortuneCycle;
+  readonly majorCycleBasis: {
+    readonly basisType: MajorFortuneCycleBasis;
+    readonly displayLabel: string;
+    readonly explanation: string;
+  };
+  readonly cyclePosition: {
+    readonly cycleIndex: number;
+    readonly yearIndexInCycle: number;
+    readonly positionLabel: string;
+    readonly progressLabel: string;
+  };
   readonly calculationBasis: {
-    readonly basisType: "precomputed_major_fortune_table";
+    readonly basisType: MajorFortuneCycleBasis;
     readonly displayLabel: string;
     readonly explanation: string;
     readonly ageBasisLabel: string;
@@ -93,10 +109,41 @@ export interface MajorFortuneEvidencePacket {
     readonly type: "previous_to_current" | "current_to_next";
     readonly plain: string;
   }[];
+  readonly previousToCurrentShift: {
+    readonly previousGanji?: string;
+    readonly currentGanji: string;
+    readonly plain: string;
+    readonly whatChanged: readonly string[];
+  };
+  readonly decadeArchetype: {
+    readonly label: string;
+    readonly metaphor: string;
+    readonly plain: string;
+  };
+  readonly strategicThemes: readonly {
+    readonly label: string;
+    readonly metaphor: string;
+    readonly plain: string;
+    readonly concreteImplications: readonly string[];
+    readonly strategy: string;
+  }[];
+  readonly longRangeRisks: readonly {
+    readonly label: string;
+    readonly plain: string;
+    readonly prevention: string;
+  }[];
+  readonly longRangeOpportunities: readonly {
+    readonly label: string;
+    readonly plain: string;
+    readonly action: string;
+  }[];
+  readonly relationshipStatusTranslationHints: readonly string[];
   readonly strongYearsWithinCycle: readonly {
     readonly year: number;
     readonly ganji: string;
     readonly reason: string;
+    readonly area: string;
+    readonly action: string;
   }[];
   readonly cycleYearTimeline: readonly {
     readonly year: number;
@@ -105,8 +152,10 @@ export interface MajorFortuneEvidencePacket {
     readonly phase: "early" | "middle" | "late";
     readonly headline: string;
     readonly annualElementFocus: string;
-    readonly relationToMajorCycle: string;
-    readonly plain: string;
+    readonly roleOfYearInCycle: string;
+    readonly plainInterpretation: string;
+    readonly strategicFocus: string;
+    readonly whyItMatters: string;
   }[];
   readonly warnings: readonly string[];
 }

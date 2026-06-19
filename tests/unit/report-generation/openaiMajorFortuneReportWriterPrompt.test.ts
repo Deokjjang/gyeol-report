@@ -93,7 +93,19 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
 
     expect(text).toContain("Use userContext.lifeStatus");
     expect(text).toContain("translation layer");
+    expect(text).toContain("Use userContext.relationshipStatus");
     expect(text).toContain("Do not change calculations based on userContext");
+    expect(text).toContain("If relationshipStatus is unknown");
+  });
+
+  it("requires aggressive strategic but non-deterministic interpretation", () => {
+    const text = promptText();
+
+    expect(text).toContain("Aggressive but non-deterministic examples");
+    expect(text).toContain("직급은 그대로인데 책임만 먼저 커지는 상황");
+    expect(text).toContain("수입 증가보다 고정지출");
+    expect(text).toContain("Do not say everything can happen");
+    expect(text).toContain("how to respond");
   });
 
   it("requires plain Korean metaphors for technical terms", () => {
@@ -111,7 +123,7 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
 
     expect(text).toContain("Forbidden hard claims");
     expect(text).toContain("반드시");
-    expect(text).toContain("Never write fixture_precomputed");
-    expect(text).toContain("사전 계산된 대운표 기준");
+    expect(text).toContain("Never write fixture");
+    expect(text).toContain("majorCycleBasis.displayLabel");
   });
 });

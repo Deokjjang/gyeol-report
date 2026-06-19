@@ -24,6 +24,12 @@ export type MajorFortuneDraftQualitySummary = {
   readonly cycleIndexLeakWarnings: number;
   readonly technicalTermWithoutExplanationWarnings: number;
   readonly smallEventOverfocusWarnings: number;
+  readonly wrongCycleBasisWarnings: number;
+  readonly genericTimelineWarnings: number;
+  readonly repeatedSummaryWarnings: number;
+  readonly weakStrategyWarnings: number;
+  readonly relationshipStatusMisuseWarnings: number;
+  readonly strongYearTitleRepeatWarnings: number;
 };
 
 const hardClaimReplacements = [
@@ -148,6 +154,7 @@ const technicalTermPlainMarkers = [
   "작용",
   "배경",
   "흐름",
+  "테마",
   "구조",
   "역할",
   "장면",
@@ -192,6 +199,25 @@ const smallEventMarkers = [
   "12월",
 ] as const;
 
+const genericTimelinePhrases = [
+  "대운 지지 또는 원국 지지와 강한 작용",
+  "흐름을 봅니다",
+] as const;
+
+const relationshipKnownClaimPhrases = [
+  "솔로탈출",
+  "애인",
+  "배우자",
+  "결혼",
+] as const;
+
+const weakStrategyPhrases = [
+  "조심하세요",
+  "잘 활용하세요",
+  "노력하세요",
+  "좋은 흐름입니다",
+] as const;
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -220,13 +246,22 @@ function clampIndex(index: number): number {
 }
 
 export function getMajorFortuneBasisDisplayLabel(basis: string): string {
+  if (basis === "manse_engine_major_fortune_table") {
+    return "만세력 대운표 기준";
+  }
+  if (basis === "user_supplied_major_fortune_table") {
+    return "입력된 대운표 기준";
+  }
+  if (basis === "fixture_precomputed_for_dev_only") {
+    return "개발용 사전 계산 대운표 기준";
+  }
   if (
     basis === "fixture_precomputed" ||
     basis === "precomputed" ||
     basis.toLowerCase().includes("precomputed") ||
     basis.toLowerCase().includes("fixture")
   ) {
-    return "사전 계산된 대운표 기준";
+    return "개발용 사전 계산 대운표 기준";
   }
 
   return sanitizeMajorFortuneVisibleText(basis);
@@ -282,6 +317,10 @@ function sanitizeUserContextSummary(
       summary.fieldLabel === null
         ? null
         : sanitizeMajorFortuneVisibleText(summary.fieldLabel),
+    relationshipStatusLabel:
+      summary.relationshipStatusLabel === null
+        ? null
+        : sanitizeMajorFortuneVisibleText(summary.relationshipStatusLabel),
     translationNote: sanitizeMajorFortuneVisibleText(summary.translationNote),
   };
 }
@@ -290,7 +329,7 @@ function sanitizeCalculationBasis(
   basis: MajorFortuneReportDraft["calculationBasis"],
 ): MajorFortuneReportDraft["calculationBasis"] {
   return {
-    basisType: "precomputed_major_fortune_table",
+    basisType: basis.basisType,
     displayLabel: getMajorFortuneBasisDisplayLabel(basis.displayLabel),
     explanation: sanitizeMajorFortuneVisibleText(basis.explanation),
     ageBasisLabel: sanitizeMajorFortuneVisibleText(basis.ageBasisLabel),
@@ -340,6 +379,28 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
       ),
     },
     calculationBasis: sanitizeCalculationBasis(draft.calculationBasis),
+    previousToCurrentShift: {
+      previousGanji:
+        draft.previousToCurrentShift.previousGanji === null
+          ? null
+          : sanitizeMajorFortuneVisibleText(
+              draft.previousToCurrentShift.previousGanji,
+            ),
+      currentGanji: sanitizeMajorFortuneVisibleText(
+        draft.previousToCurrentShift.currentGanji,
+      ),
+      plain: sanitizeMajorFortuneVisibleText(draft.previousToCurrentShift.plain),
+      whatChanged: sanitizeStringArray(
+        draft.previousToCurrentShift.whatChanged,
+      ),
+    },
+    decadeArchetype: {
+      label: sanitizeMajorFortuneVisibleText(draft.decadeArchetype.label),
+      metaphor: sanitizeMajorFortuneVisibleText(
+        draft.decadeArchetype.metaphor,
+      ),
+      plain: sanitizeMajorFortuneVisibleText(draft.decadeArchetype.plain),
+    },
     flowIndexSummary: {
       flowIndex: clampIndex(draft.flowIndexSummary.flowIndex),
       flowTypeLabel: sanitizeMajorFortuneVisibleText(
@@ -412,10 +473,14 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
       yearIndexInCycle: year.yearIndexInCycle,
       phase: year.phase,
       headline: sanitizeMajorFortuneVisibleText(year.headline),
-      relationToMajorCycle: sanitizeMajorFortuneVisibleText(
-        year.relationToMajorCycle,
+      roleOfYearInCycle: sanitizeMajorFortuneVisibleText(
+        year.roleOfYearInCycle,
       ),
-      plain: sanitizeMajorFortuneVisibleText(year.plain),
+      plainInterpretation: sanitizeMajorFortuneVisibleText(
+        year.plainInterpretation,
+      ),
+      strategicFocus: sanitizeMajorFortuneVisibleText(year.strategicFocus),
+      whyItMatters: sanitizeMajorFortuneVisibleText(year.whyItMatters),
     })),
     finalAdvice: draft.finalAdvice.map((advice) => ({
       label: advice.label,
@@ -444,6 +509,8 @@ function hasDraftShape(value: unknown): value is MajorFortuneReportDraft {
     typeof draft.userContextSummary.lifeStatusLabel === "string" &&
     (typeof draft.userContextSummary.fieldLabel === "string" ||
       draft.userContextSummary.fieldLabel === null) &&
+    (typeof draft.userContextSummary.relationshipStatusLabel === "string" ||
+      draft.userContextSummary.relationshipStatusLabel === null) &&
     typeof draft.userContextSummary.translationNote === "string" &&
     isRecord(draft.cycleSummary) &&
     typeof draft.cycleSummary.ganji === "string" &&
@@ -458,11 +525,23 @@ function hasDraftShape(value: unknown): value is MajorFortuneReportDraft {
     typeof draft.cycleSummary.tenGodLabel === "string" &&
     typeof draft.cycleSummary.basisLabel === "string" &&
     isRecord(draft.calculationBasis) &&
-    draft.calculationBasis.basisType === "precomputed_major_fortune_table" &&
+    (draft.calculationBasis.basisType === "manse_engine_major_fortune_table" ||
+      draft.calculationBasis.basisType === "user_supplied_major_fortune_table" ||
+      draft.calculationBasis.basisType === "fixture_precomputed_for_dev_only") &&
     typeof draft.calculationBasis.displayLabel === "string" &&
     typeof draft.calculationBasis.explanation === "string" &&
     typeof draft.calculationBasis.ageBasisLabel === "string" &&
     typeof draft.calculationBasis.note === "string" &&
+    isRecord(draft.previousToCurrentShift) &&
+    (typeof draft.previousToCurrentShift.previousGanji === "string" ||
+      draft.previousToCurrentShift.previousGanji === null) &&
+    typeof draft.previousToCurrentShift.currentGanji === "string" &&
+    typeof draft.previousToCurrentShift.plain === "string" &&
+    isStringArray(draft.previousToCurrentShift.whatChanged) &&
+    isRecord(draft.decadeArchetype) &&
+    typeof draft.decadeArchetype.label === "string" &&
+    typeof draft.decadeArchetype.metaphor === "string" &&
+    typeof draft.decadeArchetype.plain === "string" &&
     isRecord(draft.flowIndexSummary) &&
     isNumber(draft.flowIndexSummary.flowIndex) &&
     typeof draft.flowIndexSummary.flowTypeLabel === "string" &&
@@ -506,8 +585,10 @@ function hasDraftShape(value: unknown): value is MajorFortuneReportDraft {
         isNumber(year.yearIndexInCycle) &&
         isPhase(year.phase) &&
         typeof year.headline === "string" &&
-        typeof year.relationToMajorCycle === "string" &&
-        typeof year.plain === "string",
+        typeof year.roleOfYearInCycle === "string" &&
+        typeof year.plainInterpretation === "string" &&
+        typeof year.strategicFocus === "string" &&
+        typeof year.whyItMatters === "string",
     ) &&
     Array.isArray(draft.finalAdvice) &&
     draft.finalAdvice.every(
@@ -528,12 +609,20 @@ function collectVisibleStrings(draft: MajorFortuneReportDraft): readonly string[
     draft.coreLine,
     draft.userContextSummary.lifeStatusLabel,
     draft.userContextSummary.fieldLabel ?? "",
+    draft.userContextSummary.relationshipStatusLabel ?? "",
     draft.userContextSummary.translationNote,
     ...Object.values(draft.cycleSummary),
     draft.calculationBasis.displayLabel,
     draft.calculationBasis.explanation,
     draft.calculationBasis.ageBasisLabel,
     draft.calculationBasis.note,
+    draft.previousToCurrentShift.previousGanji ?? "",
+    draft.previousToCurrentShift.currentGanji,
+    draft.previousToCurrentShift.plain,
+    ...draft.previousToCurrentShift.whatChanged,
+    draft.decadeArchetype.label,
+    draft.decadeArchetype.metaphor,
+    draft.decadeArchetype.plain,
     draft.flowIndexSummary.flowTypeLabel,
     draft.flowIndexSummary.flowIndexCaution,
     ...draft.bigThemes.flatMap((theme) => [
@@ -576,8 +665,10 @@ function collectVisibleStrings(draft: MajorFortuneReportDraft): readonly string[
     ...draft.cycleYearTimeline.flatMap((year) => [
       year.ganji,
       year.headline,
-      year.relationToMajorCycle,
-      year.plain,
+      year.roleOfYearInCycle,
+      year.plainInterpretation,
+      year.strategicFocus,
+      year.whyItMatters,
     ]),
     ...draft.finalAdvice.flatMap((advice) => [advice.label, advice.body]),
     ...draft.safetyNotes,
@@ -664,6 +755,25 @@ function parseYearRangeLabel(
   };
 }
 
+function parseCurrentYearFromPosition(positionLabel: string): number | undefined {
+  const match = /(\d{4})년/u.exec(positionLabel);
+
+  return match === null ? undefined : Number(match[1]);
+}
+
+function countWrongCycleBasisWarnings(draft: MajorFortuneReportDraft): number {
+  const range = parseYearRangeLabel(draft.cycleSummary.yearRangeLabel);
+  const currentYear = parseCurrentYearFromPosition(
+    draft.cycleSummary.currentPositionLabel,
+  );
+
+  if (range === undefined || currentYear === undefined) {
+    return 1;
+  }
+
+  return range.startYear <= currentYear && currentYear <= range.endYear ? 0 : 1;
+}
+
 function countMissingCycleYearWarnings(
   draft: MajorFortuneReportDraft,
 ): number {
@@ -700,6 +810,26 @@ function countMissingCycleYearWarnings(
   }
 
   return warnings;
+}
+
+function countGenericTimelineWarnings(draft: MajorFortuneReportDraft): number {
+  return draft.cycleYearTimeline.reduce((count, year) => {
+    const text = [
+      year.headline,
+      year.roleOfYearInCycle,
+      year.plainInterpretation,
+      year.strategicFocus,
+      year.whyItMatters,
+    ].join("\n");
+
+    return (
+      count +
+      genericTimelinePhrases.reduce(
+        (innerCount, phrase) => innerCount + countOccurrences(text, phrase),
+        0,
+      )
+    );
+  }, 0);
 }
 
 function getCycleOrdinal(cycleIndexLabel: string): number | undefined {
@@ -760,6 +890,49 @@ function countSmallEventOverfocusWarnings(visibleText: string): number {
   return smallEventCount > 3 ? smallEventCount - 3 : 0;
 }
 
+function countRepeatedSummaryWarnings(visibleText: string): number {
+  const normalizedSentences = visibleText
+    .split(/[.!?。！？\n]/u)
+    .map((sentence) => sentence.trim())
+    .filter((sentence) => sentence.length > 18);
+  const counts = new Map<string, number>();
+
+  for (const sentence of normalizedSentences) {
+    counts.set(sentence, (counts.get(sentence) ?? 0) + 1);
+  }
+
+  return [...counts.values()].filter((count) => count > 5).length;
+}
+
+function countWeakStrategyWarnings(visibleText: string): number {
+  return weakStrategyPhrases.reduce(
+    (count, phrase) => count + countOccurrences(visibleText, phrase),
+    0,
+  );
+}
+
+function countRelationshipStatusMisuseWarnings(
+  draft: MajorFortuneReportDraft,
+  visibleText: string,
+): number {
+  if (draft.userContextSummary.relationshipStatusLabel !== "미입력") {
+    return 0;
+  }
+
+  return relationshipKnownClaimPhrases.reduce(
+    (count, phrase) => count + countOccurrences(visibleText, phrase),
+    0,
+  );
+}
+
+function countStrongYearTitleRepeatWarnings(
+  draft: MajorFortuneReportDraft,
+): number {
+  return draft.strongYears.filter((year) =>
+    year.headline.includes("특히 강하게 체감될 수 있는 해 TOP 5"),
+  ).length;
+}
+
 export function summarizeMajorFortuneDraftQuality(
   draft: MajorFortuneReportDraft,
 ): MajorFortuneDraftQualitySummary {
@@ -784,6 +957,14 @@ export function summarizeMajorFortuneDraftQuality(
     countTechnicalTermWithoutExplanationWarnings(visibleText);
   const smallEventOverfocusWarnings =
     countSmallEventOverfocusWarnings(visibleText);
+  const wrongCycleBasisWarnings = countWrongCycleBasisWarnings(draft);
+  const genericTimelineWarnings = countGenericTimelineWarnings(draft);
+  const repeatedSummaryWarnings = countRepeatedSummaryWarnings(visibleText);
+  const weakStrategyWarnings = countWeakStrategyWarnings(visibleText);
+  const relationshipStatusMisuseWarnings =
+    countRelationshipStatusMisuseWarnings(draft, visibleText);
+  const strongYearTitleRepeatWarnings =
+    countStrongYearTitleRepeatWarnings(draft);
 
   return {
     hardClaimWarnings,
@@ -797,6 +978,12 @@ export function summarizeMajorFortuneDraftQuality(
     cycleIndexLeakWarnings,
     technicalTermWithoutExplanationWarnings,
     smallEventOverfocusWarnings,
+    wrongCycleBasisWarnings,
+    genericTimelineWarnings,
+    repeatedSummaryWarnings,
+    weakStrategyWarnings,
+    relationshipStatusMisuseWarnings,
+    strongYearTitleRepeatWarnings,
   };
 }
 
@@ -929,6 +1116,36 @@ export function validateMajorFortuneReportDraft(
   if (quality.smallEventOverfocusWarnings > 0) {
     warnings.push(
       `MAJOR_FORTUNE_SMALL_EVENT_OVERFOCUS_WARNING:${quality.smallEventOverfocusWarnings}`,
+    );
+  }
+  if (quality.wrongCycleBasisWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_WRONG_CYCLE_BASIS_WARNING:${quality.wrongCycleBasisWarnings}`,
+    );
+  }
+  if (quality.genericTimelineWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_GENERIC_TIMELINE_WARNING:${quality.genericTimelineWarnings}`,
+    );
+  }
+  if (quality.repeatedSummaryWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_REPEATED_SUMMARY_WARNING:${quality.repeatedSummaryWarnings}`,
+    );
+  }
+  if (quality.weakStrategyWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_WEAK_STRATEGY_WARNING:${quality.weakStrategyWarnings}`,
+    );
+  }
+  if (quality.relationshipStatusMisuseWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_RELATIONSHIP_STATUS_MISUSE_WARNING:${quality.relationshipStatusMisuseWarnings}`,
+    );
+  }
+  if (quality.strongYearTitleRepeatWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_STRONG_YEAR_TITLE_REPEAT_WARNING:${quality.strongYearTitleRepeatWarnings}`,
     );
   }
 

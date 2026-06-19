@@ -82,6 +82,8 @@ async function main(): Promise<void> {
   );
   writeLine(`ganji: ${packet.currentCycle.ganji}`);
   writeLine(`ten god: ${packet.majorTenGod.stemTenGod}`);
+  writeLine(`cycle basis: ${packet.majorCycleBasis.displayLabel}`);
+  writeLine(`cycle position: ${packet.cyclePosition.positionLabel}`);
   writeLine(
     `elements: ${packet.currentCycle.stemElement}/${packet.currentCycle.branchElement}`,
   );
@@ -164,6 +166,16 @@ async function main(): Promise<void> {
   );
   writeLine(
     `small event overfocus warnings: ${quality.smallEventOverfocusWarnings}`,
+  );
+  writeLine(`wrong cycle basis warnings: ${quality.wrongCycleBasisWarnings}`);
+  writeLine(`generic timeline warnings: ${quality.genericTimelineWarnings}`);
+  writeLine(`repeated summary warnings: ${quality.repeatedSummaryWarnings}`);
+  writeLine(`weak strategy warnings: ${quality.weakStrategyWarnings}`);
+  writeLine(
+    `relationship status misuse warnings: ${quality.relationshipStatusMisuseWarnings}`,
+  );
+  writeLine(
+    `strong year title repeat warnings: ${quality.strongYearTitleRepeatWarnings}`,
   );
   writeLine(`annual-tone warnings: ${quality.annualToneWarnings}`);
   writeLine(`decade-tone warnings: ${quality.decadeToneWarnings}`);

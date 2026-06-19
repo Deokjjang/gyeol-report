@@ -1,5 +1,8 @@
 import { hydrateMajorFortuneCycle } from "./majorFortuneRules";
-import type { MajorFortuneCycle } from "./majorFortuneTypes";
+import type {
+  MajorFortuneCycle,
+  MajorFortuneCycleBasis,
+} from "./majorFortuneTypes";
 import type { UserContextProfile } from "./userContextTypes";
 
 export type MajorFortuneFixture = {
@@ -18,7 +21,7 @@ export type MajorFortuneFixture = {
       readonly hour?: string;
     };
     readonly labels: readonly string[];
-    readonly majorFortuneCycleBasis: "fixture_precomputed";
+    readonly majorFortuneCycleBasis: MajorFortuneCycleBasis;
     readonly majorFortuneCycles: readonly MajorFortuneCycle[];
   };
 };
@@ -26,35 +29,35 @@ export type MajorFortuneFixture = {
 const deokminMajorFortuneCycles = [
   {
     index: 1,
-    startAge: 4,
-    endAge: 13,
-    startYear: 2003,
-    endYear: 2012,
-    ganji: "壬申",
+    startAge: 7,
+    endAge: 16,
+    startYear: 2006,
+    endYear: 2015,
+    ganji: "丙寅",
   },
   {
     index: 2,
-    startAge: 14,
-    endAge: 23,
-    startYear: 2013,
-    endYear: 2022,
-    ganji: "癸酉",
+    startAge: 17,
+    endAge: 26,
+    startYear: 2016,
+    endYear: 2025,
+    ganji: "丁卯",
   },
   {
     index: 3,
-    startAge: 24,
-    endAge: 33,
-    startYear: 2023,
-    endYear: 2032,
-    ganji: "甲戌",
+    startAge: 27,
+    endAge: 36,
+    startYear: 2026,
+    endYear: 2035,
+    ganji: "戊辰",
   },
   {
     index: 4,
-    startAge: 34,
-    endAge: 43,
-    startYear: 2033,
-    endYear: 2042,
-    ganji: "乙亥",
+    startAge: 37,
+    endAge: 46,
+    startYear: 2036,
+    endYear: 2045,
+    ganji: "己巳",
   },
 ] as const;
 
@@ -70,6 +73,7 @@ export const MAJOR_FORTUNE_FIXTURES: readonly MajorFortuneFixture[] = [
       userContext: {
         lifeStatus: "employee",
         fieldLabel: "개발·서비스 기획",
+        relationshipStatus: "unknown",
       },
       pillars: {
         year: "己卯",
@@ -103,7 +107,7 @@ export const MAJOR_FORTUNE_FIXTURES: readonly MajorFortuneFixture[] = [
         "양인살",
         "공망",
       ],
-      majorFortuneCycleBasis: "fixture_precomputed",
+      majorFortuneCycleBasis: "user_supplied_major_fortune_table",
       majorFortuneCycles: deokminMajorFortuneCycles.map((cycle) =>
         hydrateMajorFortuneCycle(cycle),
       ),

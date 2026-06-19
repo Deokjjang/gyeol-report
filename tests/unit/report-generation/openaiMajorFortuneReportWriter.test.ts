@@ -37,37 +37,54 @@ function createValidDraft(): MajorFortuneReportDraft {
     productType: "major_fortune",
     productVersion: "v1",
     personLabel: "덕민",
-    openingTitle: "현재 대운 甲戌 흐름",
+    openingTitle: "현재 대운 戊辰 흐름",
     openingSummary:
       "이 대운은 10년 동안 역할과 책임 기준을 다시 잡는 배경으로 체감될 수 있습니다.",
     coreLine:
-      "甲戌 대운은 일과 현실 책임을 동시에 다루며 장기 방향을 다시 세우는 흐름입니다.",
+      "戊辰 대운은 현실 구조와 책임 기준을 다시 까는 10년 흐름입니다.",
     userContextSummary: {
       lifeStatusLabel: "직장인",
       fieldLabel: "개발·서비스 기획",
+      relationshipStatusLabel: "미입력",
       translationNote:
         "개발·서비스 기획의 프로젝트, 문서화, 운영 책임 장면으로 번역했습니다.",
     },
     cycleSummary: {
-      ganji: "甲戌",
-      displayTitle: "현재 대운 甲戌",
+      ganji: "戊辰",
+      displayTitle: "현재 대운 戊辰",
       cycleIndexLabel: "3번째 대운",
-      currentPositionLabel: "2026년 기준 4년차",
-      ageRangeLabel: "24세~33세",
-      yearRangeLabel: "2023년~2032년",
-      stemLabel: "甲 · 양목",
-      branchLabel: "戌 · 양토",
-      elementLabel: "목·토의 대운",
-      tenGodLabel: "비견의 대운",
-      basisLabel: "사전 계산된 대운표 기준",
+      currentPositionLabel: "2026년 기준 1년차",
+      ageRangeLabel: "대운표 기준 구간",
+      yearRangeLabel: "2026년~2035년",
+      stemLabel: "戊 · 양토",
+      branchLabel: "辰 · 양토",
+      elementLabel: "토의 대운",
+      tenGodLabel: "편재의 대운",
+      basisLabel: "입력된 대운표 기준",
     },
     calculationBasis: {
-      basisType: "precomputed_major_fortune_table",
-      displayLabel: "사전 계산된 대운표 기준",
+      basisType: "user_supplied_major_fortune_table",
+      displayLabel: "입력된 대운표 기준",
       explanation:
-        "이 대운 구간은 입력된 만세력의 대운표를 기준으로 잡았습니다.",
+        "이 대운 구간은 사용자가 검증해 입력한 대운표를 기준으로 잡았습니다.",
       ageBasisLabel: "표기 나이는 대운표 기준 나이입니다.",
       note: "현재 리포트에서는 2026년을 기준으로 현재 위치한 대운을 읽습니다.",
+    },
+    previousToCurrentShift: {
+      previousGanji: "丁卯",
+      currentGanji: "戊辰",
+      plain:
+        "丁卯 대운에서 戊辰 대운으로 넘어오며 표현과 관계의 배경이 현실 구조와 책임의 배경으로 바뀝니다.",
+      whatChanged: [
+        "표현과 관계 조율보다 현실 구조, 계약, 책임 기준이 더 중요해집니다.",
+        "2026년은 戊辰 대운의 1년차라 초반 기준 설정이 이후 10년에 반복될 수 있습니다.",
+      ],
+    },
+    decadeArchetype: {
+      label: "현실 구조 재편형",
+      metaphor: "흙더미를 다시 설계도로 바꾸는 10년",
+      plain:
+        "戊辰 대운은 해야 할 일, 관리할 일, 책임질 일을 흙처럼 쌓아 두기보다 구조로 다시 짜야 하는 배경입니다.",
     },
     flowIndexSummary: {
       flowIndex: 72,
@@ -79,7 +96,7 @@ function createValidDraft(): MajorFortuneReportDraft {
       {
         title: "기준을 직접 세우는 10년",
         metaphor: "일이 흙처럼 쌓이기 전에 길을 먼저 내는 흐름",
-        body: "비견은 내 기준을 세우는 힘이고, 토는 현실 책임을 쌓이게 만드는 배경입니다.",
+        body: "편재는 돈과 현실 자원을 다루는 힘이고, 토는 현실 책임을 쌓이게 만드는 배경입니다.",
         likelyScenes: [
           "프로젝트 기준을 직접 문서화하는 장면",
           "맡을 일과 맡지 않을 일을 나누는 장면",
@@ -161,7 +178,7 @@ function createValidDraft(): MajorFortuneReportDraft {
     ],
     majorStructure: {
       ganjiExplanation:
-        "甲戌은 목과 토가 함께 들어와 방향성과 현실 기준을 동시에 건드립니다.",
+        "戊辰은 토가 강하게 들어와 현실 구조와 책임 기준을 동시에 건드립니다.",
       tenGodExplanation:
         "비견: 자기 기준, 동등함, 경쟁과 공감이 장기 배경으로 반복됩니다.",
       elementEffectExplanation:
@@ -169,7 +186,7 @@ function createValidDraft(): MajorFortuneReportDraft {
       branchInteractionExplanation:
         "卯戌 육합: 사람과 일정이 묶이며 실제 움직임이 생기기 쉽습니다.",
       transitionExplanation:
-        "癸酉 대운에서 甲戌 대운으로 넘어오며 실행 기준이 중요해졌습니다.",
+        "丁卯 대운에서 戊辰 대운으로 넘어오며 실행 기준이 중요해졌습니다.",
     },
     cycleChapters: Array.from({ length: 6 }, (_, index) => ({
       title: `대운 해석 ${index + 1}`,
@@ -210,29 +227,29 @@ function createValidDraft(): MajorFortuneReportDraft {
     ],
     strongYears: [
       {
-        year: 2024,
-        ganji: "甲辰",
-        headline: "대운 천간이 반복되는 해",
-        body: "자기 기준과 현실 책임이 동시에 강해질 수 있습니다.",
-        advice: "결정을 미루기보다 기준을 문서로 정리하세요.",
-      },
-      {
-        year: 2025,
-        ganji: "乙巳",
-        headline: "목과 화가 이어지는 해",
-        body: "대운 오행의 목 기운이 이어지고 화가 결과물을 밖으로 꺼내는 힘을 보탭니다.",
-        advice: "작은 결과물부터 공개 가능한 형태로 남기세요.",
-      },
-      {
         year: 2026,
         ganji: "丙午",
-        headline: "표현과 실행이 강해지는 해",
-        body: "대운 지지와 원국 지지 작용 위에 표현과 실행의 오행이 강해질 수 있습니다.",
-        advice: "마감 전 중간 점검 기준을 두세요.",
+        headline: "대운이 바뀌며 현실 구조를 새로 까는 해",
+        body: "戊辰 대운 1년차라 책임 범위와 돈의 기준을 새로 잡는 이유가 분명합니다.",
+        advice: "계약, 정산, 역할 범위를 초반부터 문서로 남기세요.",
+      },
+      {
+        year: 2028,
+        ganji: "戊申",
+        headline: "대운 천간이 반복되어 돈과 역할이 강해지는 해",
+        body: "戊가 반복되어 편재의 돈, 거래, 현실 자원 테마가 같은 방향으로 겹칩니다.",
+        advice: "무리한 확장보다 고정비와 책임 비용을 줄이세요.",
+      },
+      {
+        year: 2030,
+        ganji: "庚戌",
+        headline: "辰戌 충으로 구조가 크게 흔들릴 수 있는 해",
+        body: "대운 辰과 戌이 부딪혀 일, 집, 계약, 관계의 기준을 다시 조정해야 하는 이유가 생깁니다.",
+        advice: "중요한 약속과 비용 구조는 미리 점검하세요.",
       },
     ],
     cycleYearTimeline: Array.from({ length: 10 }, (_, index) => {
-      const year = 2023 + index;
+      const year = 2026 + index;
       const yearIndexInCycle = index + 1;
       const phase =
         yearIndexInCycle <= 3
@@ -243,12 +260,20 @@ function createValidDraft(): MajorFortuneReportDraft {
 
       return {
         year,
-        ganji: ["癸卯", "甲辰", "乙巳", "丙午", "丁未", "戊申", "己酉", "庚戌", "辛亥", "壬子"][index] ?? "癸卯",
+        ganji: ["丙午", "丁未", "戊申", "己酉", "庚戌", "辛亥", "壬子", "癸丑", "甲寅", "乙卯"][index] ?? "丙午",
         yearIndexInCycle,
         phase,
-        headline: `${yearIndexInCycle}년차 흐름`,
-        relationToMajorCycle: "대운 배경을 통과하며 장기 테마를 확인하는 해",
-        plain: `${year}년은 甲戌 대운의 ${yearIndexInCycle}년차로 큰 흐름 안에서 역할을 조정합니다.`,
+        headline: `${yearIndexInCycle}년차 현실 구조 조정`,
+        roleOfYearInCycle:
+          yearIndexInCycle === 1
+            ? "새 대운 진입, 현실 구조를 다시 까는 해"
+            : "반복되는 책임을 전략으로 바꾸는 해",
+        plainInterpretation: `${year}년은 戊辰 대운의 ${yearIndexInCycle}년차로 돈, 역할, 생활 기준을 조정하는 해입니다.`,
+        strategicFocus: "책임 범위와 비용 구조를 먼저 정리하기",
+        whyItMatters:
+          yearIndexInCycle === 1
+            ? "첫해에 잡은 기준이 이후 10년 운영 방식으로 반복되기 쉽기 때문입니다."
+            : "같은 현실 테마가 반복되며 장기 선택의 기준이 되기 때문입니다.",
       };
     }),
     finalAdvice: [
@@ -468,10 +493,10 @@ describe("openaiMajorFortuneReportWriter", () => {
     expect(serialized).not.toContain("debug");
     expect(serialized).not.toContain("편관(편관");
     expect(sanitized.draft.cycleSummary.basisLabel).toBe(
-      "사전 계산된 대운표 기준",
+      "개발용 사전 계산 대운표 기준",
     );
     expect(sanitized.draft.calculationBasis.displayLabel).toBe(
-      "사전 계산된 대운표 기준",
+      "입력된 대운표 기준",
     );
     expect(serialized).toContain("evidencePacket");
     expect(serialized).toContain("major_fortune");

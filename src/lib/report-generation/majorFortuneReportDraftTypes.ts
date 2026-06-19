@@ -26,6 +26,7 @@ export interface MajorFortuneReportDraft {
   readonly userContextSummary: {
     readonly lifeStatusLabel: string;
     readonly fieldLabel: string | null;
+    readonly relationshipStatusLabel: string | null;
     readonly translationNote: string;
   };
   readonly cycleSummary: {
@@ -42,11 +43,25 @@ export interface MajorFortuneReportDraft {
     readonly basisLabel: string;
   };
   readonly calculationBasis: {
-    readonly basisType: "precomputed_major_fortune_table";
+    readonly basisType:
+      | "manse_engine_major_fortune_table"
+      | "user_supplied_major_fortune_table"
+      | "fixture_precomputed_for_dev_only";
     readonly displayLabel: string;
     readonly explanation: string;
     readonly ageBasisLabel: string;
     readonly note: string;
+  };
+  readonly previousToCurrentShift: {
+    readonly previousGanji: string | null;
+    readonly currentGanji: string;
+    readonly plain: string;
+    readonly whatChanged: readonly string[];
+  };
+  readonly decadeArchetype: {
+    readonly label: string;
+    readonly metaphor: string;
+    readonly plain: string;
   };
   readonly flowIndexSummary: {
     readonly flowIndex: number;
@@ -106,8 +121,10 @@ export interface MajorFortuneReportDraft {
     readonly yearIndexInCycle: number;
     readonly phase: MajorFortunePhase;
     readonly headline: string;
-    readonly relationToMajorCycle: string;
-    readonly plain: string;
+    readonly roleOfYearInCycle: string;
+    readonly plainInterpretation: string;
+    readonly strategicFocus: string;
+    readonly whyItMatters: string;
   }[];
   readonly finalAdvice: readonly {
     readonly label: MajorFortuneDomainLabel;
@@ -141,10 +158,16 @@ const domainLabelSchema = {
 const userContextSummarySchema = {
   type: "object",
   additionalProperties: false,
-  required: ["lifeStatusLabel", "fieldLabel", "translationNote"],
+  required: [
+    "lifeStatusLabel",
+    "fieldLabel",
+    "relationshipStatusLabel",
+    "translationNote",
+  ],
   properties: {
     lifeStatusLabel: stringSchema,
     fieldLabel: nullableStringSchema,
+    relationshipStatusLabel: nullableStringSchema,
     translationNote: stringSchema,
   },
 } as const;
@@ -187,12 +210,39 @@ const calculationBasisSchema = {
   properties: {
     basisType: {
       type: "string",
-      enum: ["precomputed_major_fortune_table"],
+      enum: [
+        "manse_engine_major_fortune_table",
+        "user_supplied_major_fortune_table",
+        "fixture_precomputed_for_dev_only",
+      ],
     },
     displayLabel: stringSchema,
     explanation: stringSchema,
     ageBasisLabel: stringSchema,
     note: stringSchema,
+  },
+} as const;
+
+const previousToCurrentShiftSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["previousGanji", "currentGanji", "plain", "whatChanged"],
+  properties: {
+    previousGanji: nullableStringSchema,
+    currentGanji: stringSchema,
+    plain: stringSchema,
+    whatChanged: stringArraySchema,
+  },
+} as const;
+
+const decadeArchetypeSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["label", "metaphor", "plain"],
+  properties: {
+    label: stringSchema,
+    metaphor: stringSchema,
+    plain: stringSchema,
   },
 } as const;
 
@@ -317,8 +367,10 @@ const cycleYearTimelineSchema = {
     "yearIndexInCycle",
     "phase",
     "headline",
-    "relationToMajorCycle",
-    "plain",
+    "roleOfYearInCycle",
+    "plainInterpretation",
+    "strategicFocus",
+    "whyItMatters",
   ],
   properties: {
     year: numberSchema,
@@ -329,8 +381,10 @@ const cycleYearTimelineSchema = {
       enum: ["early", "middle", "late"],
     },
     headline: stringSchema,
-    relationToMajorCycle: stringSchema,
-    plain: stringSchema,
+    roleOfYearInCycle: stringSchema,
+    plainInterpretation: stringSchema,
+    strategicFocus: stringSchema,
+    whyItMatters: stringSchema,
   },
 } as const;
 
@@ -358,6 +412,8 @@ export const majorFortuneReportDraftJsonSchema = {
     "userContextSummary",
     "cycleSummary",
     "calculationBasis",
+    "previousToCurrentShift",
+    "decadeArchetype",
     "flowIndexSummary",
     "bigThemes",
     "decadeCards",
@@ -381,6 +437,8 @@ export const majorFortuneReportDraftJsonSchema = {
     userContextSummary: userContextSummarySchema,
     cycleSummary: cycleSummarySchema,
     calculationBasis: calculationBasisSchema,
+    previousToCurrentShift: previousToCurrentShiftSchema,
+    decadeArchetype: decadeArchetypeSchema,
     flowIndexSummary: flowIndexSummarySchema,
     bigThemes: {
       type: "array",

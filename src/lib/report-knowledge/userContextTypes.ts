@@ -8,9 +8,17 @@ export type UserLifeStatus =
   | "resting"
   | "other";
 
+export type UserRelationshipStatus =
+  | "single"
+  | "dating"
+  | "married"
+  | "complicated"
+  | "unknown";
+
 export interface UserContextProfile {
   readonly lifeStatus: UserLifeStatus;
   readonly fieldLabel?: string | null;
+  readonly relationshipStatus?: UserRelationshipStatus | null;
 }
 
 export const USER_LIFE_STATUS_LABELS: Record<UserLifeStatus, string> = {
@@ -22,4 +30,15 @@ export const USER_LIFE_STATUS_LABELS: Record<UserLifeStatus, string> = {
   business_owner: "사업자·자영업",
   resting: "무직·휴식기",
   other: "기타",
+};
+
+export const USER_RELATIONSHIP_STATUS_LABELS: Record<
+  UserRelationshipStatus,
+  string
+> = {
+  single: "솔로",
+  dating: "연애 중",
+  married: "기혼",
+  complicated: "복잡한 관계",
+  unknown: "미입력",
 };

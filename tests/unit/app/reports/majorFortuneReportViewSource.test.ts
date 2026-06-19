@@ -10,7 +10,7 @@ const viewSource = readFileSync(
 describe("MajorFortuneReportView source", () => {
   it("renders the major fortune hero and cycle structure table", () => {
     expect(viewSource).toContain("대운 리포트 v1.0");
-    expect(viewSource).toContain("현재 대운 구조");
+    expect(viewSource).toContain("대운 기준과 현재 위치");
     expect(viewSource).toContain("대운");
     expect(viewSource).toContain("대운 순번");
     expect(viewSource).toContain("현재 위치");
@@ -29,6 +29,8 @@ describe("MajorFortuneReportView source", () => {
 
   it("renders all report sections", () => {
     expect(viewSource).toContain("draft.bigThemes.map");
+    expect(viewSource).toContain("draft.previousToCurrentShift.plain");
+    expect(viewSource).toContain("draft.previousToCurrentShift.whatChanged");
     expect(viewSource).toContain("draft.decadeCards.map");
     expect(viewSource).toContain("draft.keySignals.map");
     expect(viewSource).toContain("draft.majorStructure.ganjiExplanation");
@@ -37,17 +39,20 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("chapter.practicalAdvice");
     expect(viewSource).toContain("draft.phaseTimeline.map");
     expect(viewSource).toContain("draft.cycleYearTimeline.map");
+    expect(viewSource).toContain("year.plainInterpretation");
+    expect(viewSource).toContain("year.strategicFocus");
+    expect(viewSource).toContain("year.whyItMatters");
     expect(viewSource).toContain("draft.strongYears.map");
     expect(viewSource).toContain("draft.finalAdvice.map");
     expect(viewSource).toContain("draft.safetyNotes");
   });
 
   it("renders phase timeline and strong years labels", () => {
-    expect(viewSource).toContain("대운 10년 흐름");
     expect(viewSource).toContain("10년 핵심 테마");
-    expect(viewSource).toContain("10년 연도별 흐름");
+    expect(viewSource).toContain("이전 대운에서 이번 대운으로 바뀐 점");
+    expect(viewSource).toContain("10년 흐름 지도");
     expect(viewSource).toContain("특히 강하게 체감될 수 있는 해 TOP 5");
-    expect(viewSource).toContain("영역별 장기 영향");
+    expect(viewSource).toContain("영역별 장기 전략");
     expect(viewSource).toContain("getPhaseDisplayLabel");
     expect(viewSource).toContain("초반 1~3년");
     expect(viewSource).toContain("중반 4~7년");
@@ -58,9 +63,17 @@ describe("MajorFortuneReportView source", () => {
 
   it("does not render raw fixture/precomputed wording", () => {
     expect(viewSource).toContain("sanitizeMajorFortuneVisibleText");
-    expect(viewSource).toContain("사전 계산된 대운표 기준");
+    expect(viewSource).toContain("입력된 대운표 기준");
     expect(viewSource).not.toContain("대운 흐름 지표");
     expect(viewSource).not.toContain("fixture_precomputed");
     expect(viewSource).not.toContain("precomputed");
+  });
+
+  it("renders relationship context and strategic big-picture sections", () => {
+    expect(viewSource).toContain("관계 상태:");
+    expect(viewSource).toContain("대운 기준과 현재 위치");
+    expect(viewSource).toContain("이 10년의 결론");
+    expect(viewSource).toContain("대운 유형");
+    expect(viewSource).toContain("핵심 방향");
   });
 });
