@@ -30,6 +30,7 @@ export type MajorFortuneDraftQualitySummary = {
   readonly weakStrategyWarnings: number;
   readonly relationshipStatusMisuseWarnings: number;
   readonly strongYearTitleRepeatWarnings: number;
+  readonly repeatedThemeWarnings: number;
 };
 
 const hardClaimReplacements = [
@@ -218,6 +219,16 @@ const weakStrategyPhrases = [
   "좋은 흐름입니다",
 ] as const;
 
+const repeatedThemeWords = [
+  "책임",
+  "정리",
+  "관리",
+  "구조",
+  "문서화",
+  "일정",
+  "고정지출",
+] as const;
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -228,6 +239,10 @@ function isStringArray(value: unknown): value is readonly string[] {
 
 function isNumber(value: unknown): value is number {
   return typeof value === "number" && Number.isFinite(value);
+}
+
+function isBoolean(value: unknown): value is boolean {
+  return typeof value === "boolean";
 }
 
 function isDomainLabel(value: unknown): value is MajorFortuneDomainLabel {
@@ -417,6 +432,85 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
       likelyScenes: sanitizeStringArray(theme.likelyScenes),
       strategy: sanitizeMajorFortuneVisibleText(theme.strategy),
     })),
+    myeongliLayers: {
+      tenGodLayer: {
+        majorStemTenGod: sanitizeMajorFortuneVisibleText(
+          draft.myeongliLayers.tenGodLayer.majorStemTenGod,
+        ),
+        annualStemTenGodsInCycle:
+          draft.myeongliLayers.tenGodLayer.annualStemTenGodsInCycle.map(
+            (item) => ({
+              year: item.year,
+              stem: sanitizeMajorFortuneVisibleText(item.stem),
+              tenGod: sanitizeMajorFortuneVisibleText(item.tenGod),
+              plain: sanitizeMajorFortuneVisibleText(item.plain),
+            }),
+          ),
+        plain: sanitizeMajorFortuneVisibleText(
+          draft.myeongliLayers.tenGodLayer.plain,
+        ),
+      },
+      elementLayer: {
+        majorElements: sanitizeStringArray(
+          draft.myeongliLayers.elementLayer.majorElements,
+        ),
+        fillMissing: sanitizeStringArray(
+          draft.myeongliLayers.elementLayer.fillMissing,
+        ),
+        overloadHeavy: sanitizeStringArray(
+          draft.myeongliLayers.elementLayer.overloadHeavy,
+        ),
+        plain: sanitizeMajorFortuneVisibleText(
+          draft.myeongliLayers.elementLayer.plain,
+        ),
+      },
+      branchInteractionLayer: {
+        interactions:
+          draft.myeongliLayers.branchInteractionLayer.interactions.map(
+            (interaction) => ({
+              year: interaction.year,
+              type: interaction.type,
+              plainType: sanitizeMajorFortuneVisibleText(
+                interaction.plainType,
+              ),
+              plain: sanitizeMajorFortuneVisibleText(interaction.plain),
+              impactArea: interaction.impactArea,
+            }),
+          ),
+        plain: sanitizeMajorFortuneVisibleText(
+          draft.myeongliLayers.branchInteractionLayer.plain,
+        ),
+      },
+      hiddenStemLayer: {
+        majorBranchHiddenStems: sanitizeStringArray(
+          draft.myeongliLayers.hiddenStemLayer.majorBranchHiddenStems,
+        ),
+        plain: sanitizeMajorFortuneVisibleText(
+          draft.myeongliLayers.hiddenStemLayer.plain,
+        ),
+      },
+      twelveStageLayer:
+        draft.myeongliLayers.twelveStageLayer === null
+          ? null
+          : {
+              label: sanitizeMajorFortuneVisibleText(
+                draft.myeongliLayers.twelveStageLayer.label,
+              ),
+              plain: sanitizeMajorFortuneVisibleText(
+                draft.myeongliLayers.twelveStageLayer.plain,
+              ),
+            },
+      auxiliaryStarsLayer: draft.myeongliLayers.auxiliaryStarsLayer
+        .filter((star) => !star.label.includes("백호대살"))
+        .map((star) => ({
+          label: sanitizeMajorFortuneVisibleText(star.label),
+          plain: sanitizeMajorFortuneVisibleText(star.plain),
+          caution:
+            star.caution === null
+              ? null
+              : sanitizeMajorFortuneVisibleText(star.caution),
+        })),
+    },
     decadeCards: draft.decadeCards.map((card) => ({
       label: card.label,
       index: clampIndex(card.index),
@@ -466,6 +560,32 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
       headline: sanitizeMajorFortuneVisibleText(year.headline),
       body: sanitizeMajorFortuneVisibleText(year.body),
       advice: sanitizeMajorFortuneVisibleText(year.advice),
+      whyStrong: sanitizeMajorFortuneVisibleText(year.whyStrong),
+      likelyArea: year.likelyArea,
+      pushStrategy: sanitizeMajorFortuneVisibleText(year.pushStrategy),
+      reduceStrategy: sanitizeMajorFortuneVisibleText(year.reduceStrategy),
+    })),
+    majorFortuneTimelineRows: draft.majorFortuneTimelineRows.map((row) => ({
+      year: row.year,
+      ageLabel:
+        row.ageLabel === null ? null : sanitizeMajorFortuneVisibleText(row.ageLabel),
+      yearIndexInCycle: row.yearIndexInCycle,
+      phase: row.phase,
+      isCurrentYear: row.isCurrentYear,
+      isCycleStartYear: row.isCycleStartYear,
+      isCycleEndYear: row.isCycleEndYear,
+      badges: row.badges,
+      majorGanji: sanitizeMajorFortuneVisibleText(row.majorGanji),
+      annualGanji: sanitizeMajorFortuneVisibleText(row.annualGanji),
+      annualTenGodLabel: sanitizeMajorFortuneVisibleText(
+        row.annualTenGodLabel,
+      ),
+      keyInteractionLabel:
+        row.keyInteractionLabel === null
+          ? null
+          : sanitizeMajorFortuneVisibleText(row.keyInteractionLabel),
+      oneLine: sanitizeMajorFortuneVisibleText(row.oneLine),
+      strategy: sanitizeMajorFortuneVisibleText(row.strategy),
     })),
     cycleYearTimeline: draft.cycleYearTimeline.map((year) => ({
       year: year.year,
@@ -556,6 +676,53 @@ function hasDraftShape(value: unknown): value is MajorFortuneReportDraft {
         isStringArray(theme.likelyScenes) &&
         typeof theme.strategy === "string",
     ) &&
+    isRecord(draft.myeongliLayers) &&
+    isRecord(draft.myeongliLayers.tenGodLayer) &&
+    typeof draft.myeongliLayers.tenGodLayer.majorStemTenGod === "string" &&
+    Array.isArray(
+      draft.myeongliLayers.tenGodLayer.annualStemTenGodsInCycle,
+    ) &&
+    draft.myeongliLayers.tenGodLayer.annualStemTenGodsInCycle.every(
+      (item) =>
+        isRecord(item) &&
+        isNumber(item.year) &&
+        typeof item.stem === "string" &&
+        typeof item.tenGod === "string" &&
+        typeof item.plain === "string",
+    ) &&
+    typeof draft.myeongliLayers.tenGodLayer.plain === "string" &&
+    isRecord(draft.myeongliLayers.elementLayer) &&
+    isStringArray(draft.myeongliLayers.elementLayer.majorElements) &&
+    isStringArray(draft.myeongliLayers.elementLayer.fillMissing) &&
+    isStringArray(draft.myeongliLayers.elementLayer.overloadHeavy) &&
+    typeof draft.myeongliLayers.elementLayer.plain === "string" &&
+    isRecord(draft.myeongliLayers.branchInteractionLayer) &&
+    Array.isArray(draft.myeongliLayers.branchInteractionLayer.interactions) &&
+    draft.myeongliLayers.branchInteractionLayer.interactions.every(
+      (interaction) =>
+        isRecord(interaction) &&
+        (isNumber(interaction.year) || interaction.year === null) &&
+        typeof interaction.type === "string" &&
+        typeof interaction.plainType === "string" &&
+        typeof interaction.plain === "string" &&
+        typeof interaction.impactArea === "string",
+    ) &&
+    typeof draft.myeongliLayers.branchInteractionLayer.plain === "string" &&
+    isRecord(draft.myeongliLayers.hiddenStemLayer) &&
+    isStringArray(draft.myeongliLayers.hiddenStemLayer.majorBranchHiddenStems) &&
+    typeof draft.myeongliLayers.hiddenStemLayer.plain === "string" &&
+    (draft.myeongliLayers.twelveStageLayer === null ||
+      (isRecord(draft.myeongliLayers.twelveStageLayer) &&
+        typeof draft.myeongliLayers.twelveStageLayer.label === "string" &&
+        typeof draft.myeongliLayers.twelveStageLayer.plain === "string")) &&
+    Array.isArray(draft.myeongliLayers.auxiliaryStarsLayer) &&
+    draft.myeongliLayers.auxiliaryStarsLayer.every(
+      (star) =>
+        isRecord(star) &&
+        typeof star.label === "string" &&
+        typeof star.plain === "string" &&
+        (typeof star.caution === "string" || star.caution === null),
+    ) &&
     Array.isArray(draft.decadeCards) &&
     draft.decadeCards.every(
       (card) =>
@@ -576,6 +743,39 @@ function hasDraftShape(value: unknown): value is MajorFortuneReportDraft {
     Array.isArray(draft.phaseTimeline) &&
     draft.phaseTimeline.every((phase) => isRecord(phase) && isPhase(phase.phase)) &&
     Array.isArray(draft.strongYears) &&
+    draft.strongYears.every(
+      (year) =>
+        isRecord(year) &&
+        isNumber(year.year) &&
+        typeof year.ganji === "string" &&
+        typeof year.headline === "string" &&
+        typeof year.body === "string" &&
+        typeof year.advice === "string" &&
+        typeof year.whyStrong === "string" &&
+        typeof year.likelyArea === "string" &&
+        typeof year.pushStrategy === "string" &&
+        typeof year.reduceStrategy === "string",
+    ) &&
+    Array.isArray(draft.majorFortuneTimelineRows) &&
+    draft.majorFortuneTimelineRows.every(
+      (row) =>
+        isRecord(row) &&
+        isNumber(row.year) &&
+        (typeof row.ageLabel === "string" || row.ageLabel === null) &&
+        isNumber(row.yearIndexInCycle) &&
+        isPhase(row.phase) &&
+        isBoolean(row.isCurrentYear) &&
+        isBoolean(row.isCycleStartYear) &&
+        isBoolean(row.isCycleEndYear) &&
+        isStringArray(row.badges) &&
+        typeof row.majorGanji === "string" &&
+        typeof row.annualGanji === "string" &&
+        typeof row.annualTenGodLabel === "string" &&
+        (typeof row.keyInteractionLabel === "string" ||
+          row.keyInteractionLabel === null) &&
+        typeof row.oneLine === "string" &&
+        typeof row.strategy === "string",
+    ) &&
     Array.isArray(draft.cycleYearTimeline) &&
     draft.cycleYearTimeline.every(
       (year) =>
@@ -632,6 +832,33 @@ function collectVisibleStrings(draft: MajorFortuneReportDraft): readonly string[
       ...theme.likelyScenes,
       theme.strategy,
     ]),
+    draft.myeongliLayers.tenGodLayer.majorStemTenGod,
+    draft.myeongliLayers.tenGodLayer.plain,
+    ...draft.myeongliLayers.tenGodLayer.annualStemTenGodsInCycle.flatMap(
+      (item) => [item.stem, item.tenGod, item.plain],
+    ),
+    ...draft.myeongliLayers.elementLayer.majorElements,
+    ...draft.myeongliLayers.elementLayer.fillMissing,
+    ...draft.myeongliLayers.elementLayer.overloadHeavy,
+    draft.myeongliLayers.elementLayer.plain,
+    draft.myeongliLayers.branchInteractionLayer.plain,
+    ...draft.myeongliLayers.branchInteractionLayer.interactions.flatMap(
+      (interaction) => [
+        interaction.type,
+        interaction.plainType,
+        interaction.plain,
+        interaction.impactArea,
+      ],
+    ),
+    ...draft.myeongliLayers.hiddenStemLayer.majorBranchHiddenStems,
+    draft.myeongliLayers.hiddenStemLayer.plain,
+    draft.myeongliLayers.twelveStageLayer?.label ?? "",
+    draft.myeongliLayers.twelveStageLayer?.plain ?? "",
+    ...draft.myeongliLayers.auxiliaryStarsLayer.flatMap((star) => [
+      star.label,
+      star.plain,
+      star.caution ?? "",
+    ]),
     ...draft.decadeCards.flatMap((card) => [
       card.label,
       card.headline,
@@ -661,6 +888,20 @@ function collectVisibleStrings(draft: MajorFortuneReportDraft): readonly string[
       year.headline,
       year.body,
       year.advice,
+      year.whyStrong,
+      year.likelyArea,
+      year.pushStrategy,
+      year.reduceStrategy,
+    ]),
+    ...draft.majorFortuneTimelineRows.flatMap((row) => [
+      row.ageLabel ?? "",
+      ...row.badges,
+      row.majorGanji,
+      row.annualGanji,
+      row.annualTenGodLabel,
+      row.keyInteractionLabel ?? "",
+      row.oneLine,
+      row.strategy,
     ]),
     ...draft.cycleYearTimeline.flatMap((year) => [
       year.ganji,
@@ -718,6 +959,9 @@ function countStrongYearReasonWarnings(
       year.headline,
       year.body,
       year.advice,
+      year.whyStrong,
+      year.pushStrategy,
+      year.reduceStrategy,
     ].join("\n");
 
     return !strongYearReasonMarkers.some((marker) => text.includes(marker));
@@ -779,8 +1023,12 @@ function countMissingCycleYearWarnings(
 ): number {
   let warnings = 0;
   const timeline = draft.cycleYearTimeline;
+  const timelineRows = draft.majorFortuneTimelineRows;
 
   if (timeline.length !== 10) {
+    warnings += 1;
+  }
+  if (timelineRows.length !== 10) {
     warnings += 1;
   }
 
@@ -808,12 +1056,28 @@ function countMissingCycleYearWarnings(
   ) {
     warnings += 1;
   }
+  for (const [index, row] of timelineRows.entries()) {
+    const expectedIndex = index + 1;
+
+    if (row.yearIndexInCycle !== expectedIndex) {
+      warnings += 1;
+    }
+    if (range !== undefined && row.year !== range.startYear + index) {
+      warnings += 1;
+    }
+    if (row.majorGanji !== draft.cycleSummary.ganji) {
+      warnings += 1;
+    }
+    if (row.annualGanji.trim().length === 0 || row.oneLine.trim().length === 0) {
+      warnings += 1;
+    }
+  }
 
   return warnings;
 }
 
 function countGenericTimelineWarnings(draft: MajorFortuneReportDraft): number {
-  return draft.cycleYearTimeline.reduce((count, year) => {
+  const cycleWarnings = draft.cycleYearTimeline.reduce((count, year) => {
     const text = [
       year.headline,
       year.roleOfYearInCycle,
@@ -830,6 +1094,19 @@ function countGenericTimelineWarnings(draft: MajorFortuneReportDraft): number {
       )
     );
   }, 0);
+  const rowWarnings = draft.majorFortuneTimelineRows.reduce((count, row) => {
+    const text = [row.oneLine, row.strategy].join("\n");
+
+    return (
+      count +
+      genericTimelinePhrases.reduce(
+        (innerCount, phrase) => innerCount + countOccurrences(text, phrase),
+        0,
+      )
+    );
+  }, 0);
+
+  return cycleWarnings + rowWarnings;
 }
 
 function getCycleOrdinal(cycleIndexLabel: string): number | undefined {
@@ -933,6 +1210,14 @@ function countStrongYearTitleRepeatWarnings(
   ).length;
 }
 
+function countRepeatedThemeWarnings(visibleText: string): number {
+  return repeatedThemeWords.reduce((count, word) => {
+    const occurrences = countOccurrences(visibleText, word);
+
+    return occurrences > 48 ? count + (occurrences - 48) : count;
+  }, 0);
+}
+
 export function summarizeMajorFortuneDraftQuality(
   draft: MajorFortuneReportDraft,
 ): MajorFortuneDraftQualitySummary {
@@ -965,6 +1250,7 @@ export function summarizeMajorFortuneDraftQuality(
     countRelationshipStatusMisuseWarnings(draft, visibleText);
   const strongYearTitleRepeatWarnings =
     countStrongYearTitleRepeatWarnings(draft);
+  const repeatedThemeWarnings = countRepeatedThemeWarnings(visibleText);
 
   return {
     hardClaimWarnings,
@@ -984,6 +1270,7 @@ export function summarizeMajorFortuneDraftQuality(
     weakStrategyWarnings,
     relationshipStatusMisuseWarnings,
     strongYearTitleRepeatWarnings,
+    repeatedThemeWarnings,
   };
 }
 
@@ -1050,6 +1337,12 @@ function validateArrayLengths(
   }
   if (draft.cycleYearTimeline.length !== 10) {
     errors.push("MAJOR_FORTUNE_CYCLE_YEAR_TIMELINE_INVALID");
+  }
+  if (draft.majorFortuneTimelineRows.length !== 10) {
+    errors.push("MAJOR_FORTUNE_TIMELINE_ROWS_INVALID");
+  }
+  if (!draft.majorFortuneTimelineRows.some((row) => row.isCurrentYear)) {
+    errors.push("MAJOR_FORTUNE_TIMELINE_CURRENT_YEAR_MISSING");
   }
   if (countMissingCycleYearWarnings(draft) > 0) {
     errors.push("MAJOR_FORTUNE_CYCLE_YEAR_TIMELINE_MISSING_YEARS");
@@ -1146,6 +1439,11 @@ export function validateMajorFortuneReportDraft(
   if (quality.strongYearTitleRepeatWarnings > 0) {
     warnings.push(
       `MAJOR_FORTUNE_STRONG_YEAR_TITLE_REPEAT_WARNING:${quality.strongYearTitleRepeatWarnings}`,
+    );
+  }
+  if (quality.repeatedThemeWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_REPEATED_THEME_WARNING:${quality.repeatedThemeWarnings}`,
     );
   }
 

@@ -138,12 +138,90 @@ export interface MajorFortuneEvidencePacket {
     readonly action: string;
   }[];
   readonly relationshipStatusTranslationHints: readonly string[];
+  readonly myeongliLayers: {
+    readonly tenGodLayer: {
+      readonly majorStemTenGod: string;
+      readonly annualStemTenGodsInCycle: readonly {
+        readonly year: number;
+        readonly stem: string;
+        readonly tenGod: string;
+        readonly plain: string;
+      }[];
+      readonly plain: string;
+    };
+    readonly elementLayer: {
+      readonly majorElements: readonly string[];
+      readonly fillMissing: readonly string[];
+      readonly overloadHeavy: readonly string[];
+      readonly plain: string;
+    };
+    readonly branchInteractionLayer: {
+      readonly interactions: readonly {
+        readonly year?: number;
+        readonly type:
+          | "충"
+          | "육합"
+          | "삼합"
+          | "반합"
+          | "형"
+          | "파"
+          | "해"
+          | "원진"
+          | "귀문";
+        readonly plainType: string;
+        readonly plain: string;
+        readonly impactArea:
+          | "work"
+          | "money"
+          | "relationship"
+          | "love_family"
+          | "study"
+          | "health"
+          | "identity";
+      }[];
+      readonly plain: string;
+    };
+    readonly hiddenStemLayer: {
+      readonly majorBranchHiddenStems: readonly string[];
+      readonly plain: string;
+    };
+    readonly twelveStageLayer: {
+      readonly label: string;
+      readonly plain: string;
+    } | null;
+    readonly auxiliaryStarsLayer: readonly {
+      readonly label: string;
+      readonly plain: string;
+      readonly caution?: string | null;
+    }[];
+  };
   readonly strongYearsWithinCycle: readonly {
     readonly year: number;
     readonly ganji: string;
     readonly reason: string;
     readonly area: string;
     readonly action: string;
+    readonly headline: string;
+    readonly whyStrong: string;
+    readonly likelyArea: "일" | "돈" | "관계" | "연애·가족" | "몸" | "학업";
+    readonly pushStrategy: string;
+    readonly reduceStrategy: string;
+  }[];
+  readonly majorFortuneTimelineRows: readonly {
+    readonly year: number;
+    readonly ageLabel: string | null;
+    readonly yearIndexInCycle: number;
+    readonly phase: "early" | "middle" | "late";
+    readonly isCurrentYear: boolean;
+    readonly isCycleStartYear: boolean;
+    readonly isCycleEndYear: boolean;
+    readonly badges: readonly ("올해" | "전환" | "강함" | "주의" | "정리")[];
+    readonly majorGanji: string;
+    readonly annualGanji: string;
+    readonly annualTenGodLabel: string;
+    readonly keyInteractionLabel: string | null;
+    readonly oneLine: string;
+    readonly strategy: string;
   }[];
   readonly cycleYearTimeline: readonly {
     readonly year: number;

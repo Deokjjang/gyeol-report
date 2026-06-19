@@ -1965,6 +1965,45 @@ generic timeline wording, repeated summaries, weak strategy copy, relationship
 status misuse, and repeated strong-year section titles. OpenAI remains manual
 and one-fixture-only for paid QA.
 
+## DAEUN-03C Timeline UI and Expanded Myeongli Evidence
+
+DAEUN-03C turns the 대운 report into a compact 10-year strategy map. The active
+cycle remains source-of-truth driven: for the Deokmin development fixture,
+`currentYear = 2026` resolves to the user-supplied `戊辰` cycle from 2026 through
+2035. The report compares the active 대운 and each year's 세운 side by side
+instead of reading like a small annual report.
+
+The evidence packet now includes expanded 명리 layers beyond five elements:
+ten-god flow across all 10 years, branch interactions, hidden stems in the
+major branch, and auxiliary star references that are safe for user-facing copy.
+Diagnostic-only terms such as 백호대살 remain excluded from visible output.
+
+`majorFortuneTimelineRows` is the UI-ready timeline source. Each row includes
+the year, age label, current/start/end flags, badges such as 올해 and 전환, 대운
+ganji, 세운 ganji, annual ten-god label, key interaction label, one-line
+interpretation, and a short strategy. The current year is highlighted in the
+view, and the timeline is rendered as a compact table/list similar to a 10-year
+map.
+
+Strong years are still separate TOP highlights, not the whole timeline. Each
+highlight carries `whyStrong`, `likelyArea`, `pushStrategy`, and
+`reduceStrategy`, so the view can show "밀어볼 것" and "줄일 것" rather than
+generic advice.
+
+Relationship status is used as a translation layer only. If status is unknown,
+the prompt and validator prevent copy that writes as if the user is definitely
+single, dating, or married. Known statuses can guide the relationship/love/family
+scene nouns without changing any calculation.
+
+The prompt now allows stronger non-deterministic strategy language such as
+"가능성이 올라갑니다", "유리해집니다", "불리해집니다", and "밀려날 수 있습니다",
+while still forbidding deterministic outcomes. It also requires every major
+section to add a new strategic angle instead of repeating 책임, 정리, 관리, 구조,
+문서화, 일정, and 고정지출 in every paragraph.
+
+Smoke QA now includes the compact 대운/세운 timeline, expanded 명리 layer output,
+strong-year push/reduce strategies, and repeated-theme warnings.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

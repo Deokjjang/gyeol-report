@@ -90,6 +90,46 @@ describe("majorFortuneEvidence", () => {
     expect(evidence.difficultySignals.length).toBeGreaterThan(0);
     expect(evidence.opportunitySignals.length).toBeGreaterThan(0);
     expect(evidence.strongYearsWithinCycle.length).toBeGreaterThan(0);
+    expect(evidence.myeongliLayers.tenGodLayer.majorStemTenGod).toBe("편재");
+    expect(evidence.myeongliLayers.tenGodLayer.annualStemTenGodsInCycle).toHaveLength(10);
+    expect(evidence.myeongliLayers.branchInteractionLayer.interactions.length).toBeGreaterThan(0);
+    expect(evidence.myeongliLayers.hiddenStemLayer.majorBranchHiddenStems.length).toBeGreaterThan(0);
+    expect(
+      evidence.myeongliLayers.auxiliaryStarsLayer.some((star) =>
+        star.label.includes("백호대살"),
+      ),
+    ).toBe(false);
+    expect(evidence.majorFortuneTimelineRows).toHaveLength(10);
+    expect(evidence.majorFortuneTimelineRows[0]).toMatchObject({
+      year: 2026,
+      isCurrentYear: true,
+      isCycleStartYear: true,
+      majorGanji: "戊辰",
+      annualGanji: "丙午",
+    });
+    expect(evidence.majorFortuneTimelineRows[0]?.badges).toContain("올해");
+    expect(evidence.majorFortuneTimelineRows[0]?.badges).toContain("전환");
+    expect(
+      evidence.majorFortuneTimelineRows.every(
+        (row) =>
+          row.oneLine.length > 0 &&
+          row.strategy.length > 0 &&
+          row.annualTenGodLabel.length > 0,
+      ),
+    ).toBe(true);
+    expect(
+      evidence.majorFortuneTimelineRows
+        .map((row) => row.oneLine)
+        .join("\n"),
+    ).not.toContain("대운 지지 또는 원국 지지와 강한 작용");
+    expect(
+      evidence.strongYearsWithinCycle.every(
+        (year) =>
+          year.whyStrong.length > 0 &&
+          year.pushStrategy.length > 0 &&
+          year.reduceStrategy.length > 0,
+      ),
+    ).toBe(true);
     expect(evidence.warnings.join("\n")).not.toContain("fixture_precomputed");
   });
 

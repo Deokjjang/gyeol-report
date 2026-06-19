@@ -75,6 +75,63 @@ export interface MajorFortuneReportDraft {
     readonly likelyScenes: readonly string[];
     readonly strategy: string;
   }[];
+  readonly myeongliLayers: {
+    readonly tenGodLayer: {
+      readonly majorStemTenGod: string;
+      readonly annualStemTenGodsInCycle: readonly {
+        readonly year: number;
+        readonly stem: string;
+        readonly tenGod: string;
+        readonly plain: string;
+      }[];
+      readonly plain: string;
+    };
+    readonly elementLayer: {
+      readonly majorElements: readonly string[];
+      readonly fillMissing: readonly string[];
+      readonly overloadHeavy: readonly string[];
+      readonly plain: string;
+    };
+    readonly branchInteractionLayer: {
+      readonly interactions: readonly {
+        readonly year: number | null;
+        readonly type:
+          | "충"
+          | "육합"
+          | "삼합"
+          | "반합"
+          | "형"
+          | "파"
+          | "해"
+          | "원진"
+          | "귀문";
+        readonly plainType: string;
+        readonly plain: string;
+        readonly impactArea:
+          | "work"
+          | "money"
+          | "relationship"
+          | "love_family"
+          | "study"
+          | "health"
+          | "identity";
+      }[];
+      readonly plain: string;
+    };
+    readonly hiddenStemLayer: {
+      readonly majorBranchHiddenStems: readonly string[];
+      readonly plain: string;
+    };
+    readonly twelveStageLayer: {
+      readonly label: string;
+      readonly plain: string;
+    } | null;
+    readonly auxiliaryStarsLayer: readonly {
+      readonly label: string;
+      readonly plain: string;
+      readonly caution: string | null;
+    }[];
+  };
   readonly decadeCards: readonly {
     readonly label: MajorFortuneDomainLabel;
     readonly index: number;
@@ -114,6 +171,26 @@ export interface MajorFortuneReportDraft {
     readonly headline: string;
     readonly body: string;
     readonly advice: string;
+    readonly whyStrong: string;
+    readonly likelyArea: "일" | "돈" | "관계" | "연애·가족" | "몸" | "학업";
+    readonly pushStrategy: string;
+    readonly reduceStrategy: string;
+  }[];
+  readonly majorFortuneTimelineRows: readonly {
+    readonly year: number;
+    readonly ageLabel: string | null;
+    readonly yearIndexInCycle: number;
+    readonly phase: MajorFortunePhase;
+    readonly isCurrentYear: boolean;
+    readonly isCycleStartYear: boolean;
+    readonly isCycleEndYear: boolean;
+    readonly badges: readonly ("올해" | "전환" | "강함" | "주의" | "정리")[];
+    readonly majorGanji: string;
+    readonly annualGanji: string;
+    readonly annualTenGodLabel: string;
+    readonly keyInteractionLabel: string | null;
+    readonly oneLine: string;
+    readonly strategy: string;
   }[];
   readonly cycleYearTimeline: readonly {
     readonly year: number;
@@ -144,7 +221,9 @@ export const majorFortuneDomainLabels = [
 
 const stringSchema = { type: "string" } as const;
 const nullableStringSchema = { type: ["string", "null"] } as const;
+const nullableNumberSchema = { type: ["number", "null"] } as const;
 const numberSchema = { type: "number" } as const;
+const booleanSchema = { type: "boolean" } as const;
 const stringArraySchema = {
   type: "array",
   items: stringSchema,
@@ -282,6 +361,181 @@ const bigThemeSchema = {
   },
 } as const;
 
+const timelineBadgeSchema = {
+  type: "string",
+  enum: ["올해", "전환", "강함", "주의", "정리"],
+} as const;
+
+const timelineBadgesSchema = {
+  type: "array",
+  items: timelineBadgeSchema,
+} as const;
+
+const majorTimelineRowSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: [
+    "year",
+    "ageLabel",
+    "yearIndexInCycle",
+    "phase",
+    "isCurrentYear",
+    "isCycleStartYear",
+    "isCycleEndYear",
+    "badges",
+    "majorGanji",
+    "annualGanji",
+    "annualTenGodLabel",
+    "keyInteractionLabel",
+    "oneLine",
+    "strategy",
+  ],
+  properties: {
+    year: numberSchema,
+    ageLabel: nullableStringSchema,
+    yearIndexInCycle: numberSchema,
+    phase: {
+      type: "string",
+      enum: ["early", "middle", "late"],
+    },
+    isCurrentYear: booleanSchema,
+    isCycleStartYear: booleanSchema,
+    isCycleEndYear: booleanSchema,
+    badges: timelineBadgesSchema,
+    majorGanji: stringSchema,
+    annualGanji: stringSchema,
+    annualTenGodLabel: stringSchema,
+    keyInteractionLabel: nullableStringSchema,
+    oneLine: stringSchema,
+    strategy: stringSchema,
+  },
+} as const;
+
+const annualStemTenGodSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["year", "stem", "tenGod", "plain"],
+  properties: {
+    year: numberSchema,
+    stem: stringSchema,
+    tenGod: stringSchema,
+    plain: stringSchema,
+  },
+} as const;
+
+const myeongliBranchInteractionSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["year", "type", "plainType", "plain", "impactArea"],
+  properties: {
+    year: nullableNumberSchema,
+    type: {
+      type: "string",
+      enum: ["충", "육합", "삼합", "반합", "형", "파", "해", "원진", "귀문"],
+    },
+    plainType: stringSchema,
+    plain: stringSchema,
+    impactArea: {
+      type: "string",
+      enum: [
+        "work",
+        "money",
+        "relationship",
+        "love_family",
+        "study",
+        "health",
+        "identity",
+      ],
+    },
+  },
+} as const;
+
+const auxiliaryStarSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["label", "plain", "caution"],
+  properties: {
+    label: stringSchema,
+    plain: stringSchema,
+    caution: nullableStringSchema,
+  },
+} as const;
+
+const twelveStageLayerSchema = {
+  type: ["object", "null"],
+  additionalProperties: false,
+  required: ["label", "plain"],
+  properties: {
+    label: stringSchema,
+    plain: stringSchema,
+  },
+} as const;
+
+const myeongliLayersSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: [
+    "tenGodLayer",
+    "elementLayer",
+    "branchInteractionLayer",
+    "hiddenStemLayer",
+    "twelveStageLayer",
+    "auxiliaryStarsLayer",
+  ],
+  properties: {
+    tenGodLayer: {
+      type: "object",
+      additionalProperties: false,
+      required: ["majorStemTenGod", "annualStemTenGodsInCycle", "plain"],
+      properties: {
+        majorStemTenGod: stringSchema,
+        annualStemTenGodsInCycle: {
+          type: "array",
+          items: annualStemTenGodSchema,
+        },
+        plain: stringSchema,
+      },
+    },
+    elementLayer: {
+      type: "object",
+      additionalProperties: false,
+      required: ["majorElements", "fillMissing", "overloadHeavy", "plain"],
+      properties: {
+        majorElements: stringArraySchema,
+        fillMissing: stringArraySchema,
+        overloadHeavy: stringArraySchema,
+        plain: stringSchema,
+      },
+    },
+    branchInteractionLayer: {
+      type: "object",
+      additionalProperties: false,
+      required: ["interactions", "plain"],
+      properties: {
+        interactions: {
+          type: "array",
+          items: myeongliBranchInteractionSchema,
+        },
+        plain: stringSchema,
+      },
+    },
+    hiddenStemLayer: {
+      type: "object",
+      additionalProperties: false,
+      required: ["majorBranchHiddenStems", "plain"],
+      properties: {
+        majorBranchHiddenStems: stringArraySchema,
+        plain: stringSchema,
+      },
+    },
+    twelveStageLayer: twelveStageLayerSchema,
+    auxiliaryStarsLayer: {
+      type: "array",
+      items: auxiliaryStarSchema,
+    },
+  },
+} as const;
+
 const keySignalSchema = {
   type: "object",
   additionalProperties: false,
@@ -348,13 +602,30 @@ const phaseTimelineSchema = {
 const strongYearSchema = {
   type: "object",
   additionalProperties: false,
-  required: ["year", "ganji", "headline", "body", "advice"],
+  required: [
+    "year",
+    "ganji",
+    "headline",
+    "body",
+    "advice",
+    "whyStrong",
+    "likelyArea",
+    "pushStrategy",
+    "reduceStrategy",
+  ],
   properties: {
     year: numberSchema,
     ganji: stringSchema,
     headline: stringSchema,
     body: stringSchema,
     advice: stringSchema,
+    whyStrong: stringSchema,
+    likelyArea: {
+      type: "string",
+      enum: ["일", "돈", "관계", "연애·가족", "몸", "학업"],
+    },
+    pushStrategy: stringSchema,
+    reduceStrategy: stringSchema,
   },
 } as const;
 
@@ -416,12 +687,14 @@ export const majorFortuneReportDraftJsonSchema = {
     "decadeArchetype",
     "flowIndexSummary",
     "bigThemes",
+    "myeongliLayers",
     "decadeCards",
     "keySignals",
     "majorStructure",
     "cycleChapters",
     "phaseTimeline",
     "strongYears",
+    "majorFortuneTimelineRows",
     "cycleYearTimeline",
     "finalAdvice",
     "safetyNotes",
@@ -444,6 +717,7 @@ export const majorFortuneReportDraftJsonSchema = {
       type: "array",
       items: bigThemeSchema,
     },
+    myeongliLayers: myeongliLayersSchema,
     decadeCards: {
       type: "array",
       items: decadeCardSchema,
@@ -464,6 +738,10 @@ export const majorFortuneReportDraftJsonSchema = {
     strongYears: {
       type: "array",
       items: strongYearSchema,
+    },
+    majorFortuneTimelineRows: {
+      type: "array",
+      items: majorTimelineRowSchema,
     },
     cycleYearTimeline: {
       type: "array",

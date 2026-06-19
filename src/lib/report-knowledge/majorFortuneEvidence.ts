@@ -86,6 +86,43 @@ const controllingElement = {
   metal: "wood",
 } as const satisfies Record<FiveElement, FiveElement>;
 
+const hiddenStemsByBranch = {
+  子: ["癸"],
+  丑: ["己", "癸", "辛"],
+  寅: ["甲", "丙", "戊"],
+  卯: ["乙"],
+  辰: ["戊", "乙", "癸"],
+  巳: ["丙", "戊", "庚"],
+  午: ["丁", "己"],
+  未: ["己", "丁", "乙"],
+  申: ["庚", "壬", "戊"],
+  酉: ["辛"],
+  戌: ["戊", "辛", "丁"],
+  亥: ["壬", "甲"],
+} as const satisfies Record<EarthlyBranch, readonly HeavenlyStem[]>;
+
+const impactAreaByPillar = {
+  year: "love_family",
+  month: "work",
+  day: "relationship",
+  hour: "health",
+} as const satisfies Record<
+  "year" | "month" | "day" | "hour",
+  "work" | "relationship" | "love_family" | "health"
+>;
+
+const plainTypeByInteraction = {
+  충: "굳어 있던 배치가 부딪혀 바뀌는 장면",
+  육합: "사람·일정·역할이 실제로 묶이는 장면",
+  삼합: "한 방향의 흐름이 크게 모이는 장면",
+  반합: "특정 흐름이 절반쯤 모여 힘을 얻는 장면",
+  형: "겉으로 참고 있지만 안쪽 압박이 쌓이는 장면",
+  파: "기존 방식이 깨지며 다시 조정되는 장면",
+  해: "큰 충돌은 아니지만 피로와 누수가 쌓이는 장면",
+  원진: "가깝지만 미묘하게 어긋나는 감정 피로",
+  귀문: "생각이 한 방향으로 깊게 꽂히거나 예민한 판단이 강해지는 장면",
+} as const;
+
 function unique<T>(values: readonly T[]): readonly T[] {
   return [...new Set(values)];
 }
@@ -290,6 +327,179 @@ function getRelationshipStatusHints(
     `${label}: 연애 상태가 입력되지 않았으므로 솔로, 연애 중, 기혼으로 단정하지 않습니다.`,
     "연애·가족 해석은 가족, 가까운 관계, 생활 반경 안의 만남 가능성 정도로만 번역합니다.",
   ];
+}
+
+function getImpactArea(
+  interaction: Pick<
+    MajorFortuneEvidencePacket["branchInteractions"][number],
+    "type" | "affectedPillars"
+  >,
+): "work" | "money" | "relationship" | "love_family" | "study" | "health" | "identity" {
+  const primaryPillar = interaction.affectedPillars?.[0];
+
+  if (primaryPillar !== undefined) {
+    return impactAreaByPillar[primaryPillar];
+  }
+  if (interaction.type === "형" || interaction.type === "해") {
+    return "health";
+  }
+  if (interaction.type === "육합" || interaction.type === "삼합" || interaction.type === "반합") {
+    return "relationship";
+  }
+
+  return "identity";
+}
+
+function formatHiddenStem(
+  dayMaster: HeavenlyStem,
+  stem: HeavenlyStem,
+): string {
+  return `${stem}(${getTenGodForStemPair(dayMaster, stem)})`;
+}
+
+function getAuxiliaryStarPlain(label: string): {
+  readonly plain: string;
+  readonly caution: string | null;
+} {
+  if (label.includes("천을귀인")) {
+    return {
+      plain: "막혔을 때 도움을 주는 사람, 제도, 조언이 들어올 수 있는 보호 장치입니다.",
+      caution: null,
+    };
+  }
+  if (label.includes("재고귀인")) {
+    return {
+      plain: "돈과 현실 자원이 바로 드러나기보다 창고처럼 모였다가 쓰이는 구조입니다.",
+      caution: "쌓인 자원은 기준 없이 열면 책임과 비용으로도 보일 수 있습니다.",
+    };
+  }
+  if (label.includes("금여록")) {
+    return {
+      plain: "생활 안정감, 대우, 품위, 관계에서 받는 신뢰를 현실 기반으로 쓰는 신호입니다.",
+      caution: null,
+    };
+  }
+  if (label.includes("현침살")) {
+    return {
+      plain: "말, 판단, 분석이 날카롭게 들어가는 장면으로 나타날 수 있습니다.",
+      caution: "비판이 빨라지면 관계 피로가 쌓일 수 있어 표현 수위를 조절해야 합니다.",
+    };
+  }
+  if (label.includes("홍염살")) {
+    return {
+      plain: "사람에게 보이는 매력과 존재감이 생기는 신호입니다.",
+      caution: "관계에서는 호감과 실제 책임을 구분해야 합니다.",
+    };
+  }
+  if (label.includes("귀문관살")) {
+    return {
+      plain: plainTypeByInteraction.귀문,
+      caution: "생각이 깊어지는 만큼 혼자 결론을 고정하지 않는 장치가 필요합니다.",
+    };
+  }
+  if (label.includes("원진살")) {
+    return {
+      plain: plainTypeByInteraction.원진,
+      caution: "가까운 관계일수록 말하지 않은 기대가 쌓이지 않게 해야 합니다.",
+    };
+  }
+  if (label.includes("공망")) {
+    return {
+      plain: "기대했던 자리가 비거나, 바로 채워지지 않는 공백을 운영해야 하는 신호입니다.",
+      caution: "비어 있는 시간을 실패로 단정하지 말고 재정비 구간으로 써야 합니다.",
+    };
+  }
+  if (label.includes("화개살")) {
+    return {
+      plain: "혼자 정리하고 깊게 파고드는 시간이 필요한 신호입니다.",
+      caution: "고립이 길어지면 실행 속도가 늦어질 수 있습니다.",
+    };
+  }
+  if (label.includes("양인살")) {
+    return {
+      plain: "버티는 힘과 밀어붙이는 힘이 강해지는 신호입니다.",
+      caution: "힘으로 밀기보다 기준을 먼저 세워야 충돌을 줄일 수 있습니다.",
+    };
+  }
+
+  return {
+    plain: `${label}은 대운 해석에서 생활 장면으로만 조심스럽게 참고합니다.`,
+    caution: null,
+  };
+}
+
+function buildMyeongliLayers(input: {
+  readonly currentCycle: MajorFortuneCycle;
+  readonly dayMaster: HeavenlyStem;
+  readonly natalLabels: readonly string[];
+  readonly elementEffect: MajorFortuneEvidencePacket["elementEffect"];
+  readonly branchInteractions: MajorFortuneEvidencePacket["branchInteractions"];
+}): MajorFortuneEvidencePacket["myeongliLayers"] {
+  const hiddenStems = hiddenStemsByBranch[input.currentCycle.branch].map((stem) =>
+    formatHiddenStem(input.dayMaster, stem),
+  );
+  const annualStemTenGodsInCycle = Array.from(
+    { length: input.currentCycle.endYear - input.currentCycle.startYear + 1 },
+    (_, index) => {
+      const year = input.currentCycle.startYear + index;
+      const annualGanji = getAnnualGanjiInfo(year);
+      const tenGod = getTenGodForStemPair(input.dayMaster, annualGanji.stem);
+
+      return {
+        year,
+        stem: annualGanji.stem,
+        tenGod,
+        plain: `${year}년 천간 ${annualGanji.stem}은 ${input.dayMaster} 일간에게 ${tenGod}으로 작용해 그해의 행동 방식과 압박 지점을 바꿉니다.`,
+      };
+    },
+  );
+  const interactions = input.branchInteractions.map((interaction) => ({
+    type: interaction.type,
+    plainType: plainTypeByInteraction[interaction.type],
+    plain: interaction.plain,
+    impactArea: getImpactArea(interaction),
+  }));
+  const auxiliaryStarsLayer = input.natalLabels
+    .filter((label) =>
+      /살|귀인|공망|금여록/u.test(label) && !label.includes("백호대살"),
+    )
+    .slice(0, 8)
+    .map((label) => {
+      const mapped = getAuxiliaryStarPlain(label);
+
+      return {
+        label,
+        plain: mapped.plain,
+        caution: mapped.caution,
+      };
+    });
+
+  return {
+    tenGodLayer: {
+      majorStemTenGod: getTenGodForStemPair(input.dayMaster, input.currentCycle.stem),
+      annualStemTenGodsInCycle,
+      plain: `${input.currentCycle.ganji} 대운의 천간 ${input.currentCycle.stem}은 ${input.dayMaster} 일간에게 ${getTenGodForStemPair(input.dayMaster, input.currentCycle.stem)}입니다. 대운의 십성은 10년 동안 반복되는 역할과 현실 감각을 봅니다.`,
+    },
+    elementLayer: {
+      majorElements: input.elementEffect.strengthens.map((element) => elementKo[element]),
+      fillMissing: input.elementEffect.fillsMissing.map((element) => elementKo[element]),
+      overloadHeavy: input.elementEffect.overloadsHeavy.map((element) => elementKo[element]),
+      plain: input.elementEffect.plain,
+    },
+    branchInteractionLayer: {
+      interactions,
+      plain:
+        interactions.length === 0
+          ? "대운 지지가 원국 지지와 크게 부딪히거나 묶이는 신호는 약합니다."
+          : "대운 지지는 원국의 지지와 맞물리며 일, 관계, 생활 리듬의 장기 배치를 바꿉니다.",
+    },
+    hiddenStemLayer: {
+      majorBranchHiddenStems: hiddenStems,
+      plain: `${input.currentCycle.branch} 지장간은 ${hiddenStems.join("·")}입니다. 겉으로는 ${elementKo[input.currentCycle.branchElement]}이지만 안쪽에는 숨은 십성이 섞여 있어 현실 책임 안에 돈, 방향, 회복 이슈가 같이 들어옵니다.`,
+    },
+    twelveStageLayer: null,
+    auxiliaryStarsLayer,
+  };
 }
 
 export function buildMajorFortuneElementEffect(params: {
@@ -693,6 +903,33 @@ function buildStrongYearsWithinCycle(input: {
         : interactions.length > 0
           ? "관계·생활 리듬"
           : "일·성과";
+      const likelyArea: "돈" | "관계" | "일" =
+        area === "돈·현실"
+          ? "돈"
+          : area === "관계·생활 리듬"
+            ? "관계"
+            : "일";
+      const headline =
+        year === input.currentCycle.startYear
+          ? "대운이 바뀌며 현실 구조를 새로 까는 해"
+          : getTenGodForStemPair(input.dayMaster, annualGanji.stem) ===
+              input.majorTenGod
+            ? `${input.majorTenGod} 테마가 강하게 겹치는 해`
+            : interactions.some((interaction) => interaction.type === "충")
+              ? "이미 깔린 구조와 새 책임이 부딪히는 해"
+              : "대운의 장기 테마가 선명해지는 해";
+      const pushStrategy =
+        likelyArea === "돈"
+          ? "외부 프로젝트, 계약, 정산 기준, 비용 구조 단순화"
+          : likelyArea === "관계"
+            ? "역할 조율, 연락 방식 정리, 가족·동료와의 일정 합의"
+            : "프로젝트 기준, 문서화, 포트폴리오, 운영 체계";
+      const reduceStrategy =
+        likelyArea === "돈"
+          ? "감으로 하는 투자, 애매한 돈거래, 구두 약속"
+          : likelyArea === "관계"
+            ? "말하지 않은 기대, 무리한 대신 처리, 애매한 약속"
+            : "권한 없는 책임, 끝없는 일정 추가, 기록 없는 구두 지시";
 
       return {
         year,
@@ -705,6 +942,11 @@ function buildStrongYearsWithinCycle(input: {
             : area === "관계·생활 리듬"
               ? "관계와 일정의 역할 경계를 짧게 확인하세요."
               : "프로젝트 기준과 책임 범위를 문서로 남기세요.",
+        headline,
+        whyStrong: reasons.join(" / "),
+        likelyArea,
+        pushStrategy,
+        reduceStrategy,
       };
     })
     .filter((item) => item.reason.length > 0)
@@ -745,7 +987,7 @@ function buildCycleYearTimeline(input: {
       const relationParts = [
         annualGanji.stemElement === input.currentCycle.stemElement ||
         annualGanji.branchElement === input.currentCycle.branchElement
-          ? "대운의 현실 과제가 다시 켜짐"
+          ? `${input.currentCycle.ganji} 대운의 ${elementKo[input.currentCycle.branchElement]} 책임이 ${annualGanji.ganji} 세운에서도 구체화됨`
           : undefined,
         annualTenGod === input.majorTenGod
           ? `${input.majorTenGod} 테마가 반복되어 같은 방식의 역할이 겹침`
@@ -795,6 +1037,87 @@ function buildCycleYearTimeline(input: {
         plainInterpretation: `${year}년 ${annualGanji.ganji}은 ${input.currentCycle.ganji} 대운의 ${yearIndexInCycle}년차입니다. ${relationToMajorCycle}.`,
         strategicFocus,
         whyItMatters,
+      };
+    },
+  );
+}
+
+function buildMajorFortuneTimelineRows(input: {
+  readonly currentYear: number;
+  readonly currentAge: number;
+  readonly currentCycle: MajorFortuneCycle;
+  readonly dayMaster: HeavenlyStem;
+  readonly natalBranches: readonly EarthlyBranch[];
+  readonly strongYears: MajorFortuneEvidencePacket["strongYearsWithinCycle"];
+}): MajorFortuneEvidencePacket["majorFortuneTimelineRows"] {
+  const strongYearSet = new Set(input.strongYears.map((year) => year.year));
+
+  return Array.from(
+    { length: input.currentCycle.endYear - input.currentCycle.startYear + 1 },
+    (_, index) => {
+      const year = input.currentCycle.startYear + index;
+      const yearIndexInCycle = index + 1;
+      const annualGanji = getAnnualGanjiInfo(year);
+      const annualTenGod = getTenGodForStemPair(input.dayMaster, annualGanji.stem);
+      const interactions = getAnnualBranchInteractions({
+        annualBranch: annualGanji.branch,
+        natalBranches: [input.currentCycle.branch, ...input.natalBranches],
+      });
+      const keyInteraction = interactions[0];
+      const phase = getCycleYearPhase(yearIndexInCycle);
+      const isCurrentYear = year === input.currentYear;
+      const isCycleStartYear = year === input.currentCycle.startYear;
+      const isCycleEndYear = year === input.currentCycle.endYear;
+      const isStrongYear = strongYearSet.has(year);
+      const hasCaution = interactions.some((interaction) =>
+        ["충", "형", "파", "해"].includes(interaction.type),
+      );
+      const badges = [
+        isCurrentYear ? "올해" : undefined,
+        isCycleStartYear ? "전환" : undefined,
+        isStrongYear ? "강함" : undefined,
+        hasCaution ? "주의" : undefined,
+        isCycleEndYear ? "정리" : undefined,
+      ].filter(
+        (
+          badge,
+        ): badge is "올해" | "전환" | "강함" | "주의" | "정리" =>
+          badge !== undefined,
+      );
+      const keyInteractionLabel =
+        keyInteraction === undefined
+          ? null
+          : `${keyInteraction.type}: ${plainTypeByInteraction[keyInteraction.type]}`;
+      const oneLine =
+        year === input.currentCycle.startYear
+          ? `${year}년 ${annualGanji.ganji}: 대운 ${input.currentCycle.ganji}이 시작되고, 세운 ${annualGanji.ganji}가 속도와 노출을 올립니다. 일을 크게 벌리기보다 책임 범위부터 좁혀야 하는 해입니다.`
+          : annualGanji.stem === input.currentCycle.stem
+            ? `${year}년 ${annualGanji.ganji}: 대운 천간 ${input.currentCycle.stem}와 세운 ${annualGanji.stem}가 겹치며 ${annualTenGod} 테마가 강해집니다. 돈, 계약, 자원, 역할 배분을 공격적으로 정리할 수 있는 해입니다.`
+            : keyInteraction?.type === "충"
+              ? `${year}년 ${annualGanji.ganji}: ${input.currentCycle.branch}${annualGanji.branch} 충이 강해져 이미 깔린 구조와 새 책임이 부딪히기 쉽습니다. 직장, 관계, 생활 리듬에서 구조조정 체감이 커질 수 있습니다.`
+              : `${year}년 ${annualGanji.ganji}: 대운 ${input.currentCycle.ganji}의 장기 과제 위에 세운 ${annualTenGod} 흐름이 얹힙니다. 역할, 돈, 관계의 우선순위를 다시 잡아야 하는 해입니다.`;
+      const strategy =
+        hasCaution
+          ? "크게 벌리기보다 계약, 역할, 일정의 충돌 지점을 먼저 줄이세요."
+          : annualTenGod === "편재" || annualTenGod === "정재"
+            ? "돈이 움직이는 접점은 열되, 구두 약속보다 숫자와 조건을 먼저 고정하세요."
+            : "결과물을 만들되, 책임 범위와 회복 시간을 같이 잡으세요.";
+
+      return {
+        year,
+        ageLabel: `${input.currentAge + (year - input.currentYear)}세`,
+        yearIndexInCycle,
+        phase,
+        isCurrentYear,
+        isCycleStartYear,
+        isCycleEndYear,
+        badges,
+        majorGanji: input.currentCycle.ganji,
+        annualGanji: annualGanji.ganji,
+        annualTenGodLabel: annualTenGod,
+        keyInteractionLabel,
+        oneLine,
+        strategy,
       };
     },
   );
@@ -900,6 +1223,28 @@ export function buildMajorFortuneEvidence(input: {
     majorTenGod,
     elementEffect,
   });
+  const strongYearsWithinCycle = buildStrongYearsWithinCycle({
+    currentCycle: cycleAccess.currentCycle,
+    dayMaster,
+    majorTenGod,
+    natalBranches,
+    elementEffect,
+  });
+  const myeongliLayers = buildMyeongliLayers({
+    currentCycle: cycleAccess.currentCycle,
+    dayMaster,
+    natalLabels: input.person.labels,
+    elementEffect,
+    branchInteractions,
+  });
+  const majorFortuneTimelineRows = buildMajorFortuneTimelineRows({
+    currentYear: input.currentYear,
+    currentAge,
+    currentCycle: cycleAccess.currentCycle,
+    dayMaster,
+    natalBranches,
+    strongYears: strongYearsWithinCycle,
+  });
 
   return {
     productType: "major_fortune",
@@ -950,13 +1295,9 @@ export function buildMajorFortuneEvidence(input: {
     longRangeRisks,
     longRangeOpportunities,
     relationshipStatusTranslationHints,
-    strongYearsWithinCycle: buildStrongYearsWithinCycle({
-      currentCycle: cycleAccess.currentCycle,
-      dayMaster,
-      majorTenGod,
-      natalBranches,
-      elementEffect,
-    }),
+    myeongliLayers,
+    strongYearsWithinCycle,
+    majorFortuneTimelineRows,
     cycleYearTimeline: buildCycleYearTimeline({
       currentCycle: cycleAccess.currentCycle,
       dayMaster,

@@ -342,6 +342,37 @@ function attachDeterministicEvidence(input: {
       whatChanged: input.evidencePacket.previousToCurrentShift.whatChanged,
     },
     decadeArchetype: input.evidencePacket.decadeArchetype,
+    myeongliLayers: {
+      ...input.evidencePacket.myeongliLayers,
+      branchInteractionLayer: {
+        ...input.evidencePacket.myeongliLayers.branchInteractionLayer,
+        interactions:
+          input.evidencePacket.myeongliLayers.branchInteractionLayer.interactions.map(
+            (interaction) => ({
+              ...interaction,
+              year: interaction.year ?? null,
+            }),
+          ),
+      },
+      auxiliaryStarsLayer:
+        input.evidencePacket.myeongliLayers.auxiliaryStarsLayer.map((star) => ({
+          label: star.label,
+          plain: star.plain,
+          caution: star.caution ?? null,
+        })),
+    },
+    strongYears: input.evidencePacket.strongYearsWithinCycle.map((year) => ({
+      year: year.year,
+      ganji: year.ganji,
+      headline: year.headline,
+      body: year.whyStrong,
+      advice: year.action,
+      whyStrong: year.whyStrong,
+      likelyArea: year.likelyArea,
+      pushStrategy: year.pushStrategy,
+      reduceStrategy: year.reduceStrategy,
+    })),
+    majorFortuneTimelineRows: input.evidencePacket.majorFortuneTimelineRows,
     cycleYearTimeline: input.evidencePacket.cycleYearTimeline.map((year) => ({
       year: year.year,
       ganji: year.ganji,

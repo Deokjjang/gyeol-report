@@ -89,13 +89,23 @@ async function main(): Promise<void> {
   );
   writeLine(`calculation basis: ${packet.calculationBasis.displayLabel}`);
   writeLine(`cycle year timeline: ${packet.cycleYearTimeline.length}`);
+  writeLine(`major fortune timeline rows: ${packet.majorFortuneTimelineRows.length}`);
+  writeLine(`myeongli layers: ten-god/element/branch/hidden-stem/auxiliary-stars`);
   writeList("life area signals", packet.lifeAreaSignals.map((signal) => signal.plain));
   writeList("difficulty signals", packet.difficultySignals.map((signal) => signal.plain));
   writeList("opportunity signals", packet.opportunitySignals.map((signal) => signal.plain));
   writeList(
     "strong years within cycle",
     packet.strongYearsWithinCycle.map(
-      (year) => `${year.year} ${year.ganji}: ${year.reason}`,
+      (year) =>
+        `${year.year} ${year.ganji}: ${year.whyStrong} / push ${year.pushStrategy} / reduce ${year.reduceStrategy}`,
+    ),
+  );
+  writeList(
+    "compact daeun seun timeline",
+    packet.majorFortuneTimelineRows.map(
+      (row) =>
+        `${row.year} major ${row.majorGanji} annual ${row.annualGanji} ${row.badges.join(",")}: ${row.oneLine}`,
     ),
   );
 
@@ -177,6 +187,7 @@ async function main(): Promise<void> {
   writeLine(
     `strong year title repeat warnings: ${quality.strongYearTitleRepeatWarnings}`,
   );
+  writeLine(`repeated theme warnings: ${quality.repeatedThemeWarnings}`);
   writeLine(`annual-tone warnings: ${quality.annualToneWarnings}`);
   writeLine(`decade-tone warnings: ${quality.decadeToneWarnings}`);
   writeLine(`strong year reason warnings: ${quality.strongYearReasonWarnings}`);

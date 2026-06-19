@@ -102,6 +102,70 @@ export function createValidMajorFortuneDraft(
         strategy: "관계 안에서도 감정보다 역할과 시간을 먼저 확인하세요.",
       },
     ],
+    myeongliLayers: {
+      tenGodLayer: {
+        majorStemTenGod: "편재",
+        annualStemTenGodsInCycle: Array.from({ length: 10 }, (_, index) => {
+          const year = 2026 + index;
+          const stems = ["丙", "丁", "戊", "己", "庚", "辛", "壬", "癸", "甲", "乙"];
+          const tenGods = [
+            "식신",
+            "상관",
+            "편재",
+            "정재",
+            "편관",
+            "정관",
+            "편인",
+            "정인",
+            "비견",
+            "겁재",
+          ];
+
+          return {
+            year,
+            stem: stems[index] ?? "丙",
+            tenGod: tenGods[index] ?? "식신",
+            plain: `${year}년 천간은 甲(갑목) 일간에게 ${tenGods[index] ?? "식신"}으로 작용해 그해의 행동 방식과 압박 지점을 바꿉니다.`,
+          };
+        }),
+        plain:
+          "戊辰 대운의 천간 戊는 甲(갑목) 일간에게 편재입니다. 편재는 돈, 자원, 거래, 현실을 실제로 움직이는 힘입니다.",
+      },
+      elementLayer: {
+        majorElements: ["토"],
+        fillMissing: [],
+        overloadHeavy: ["토"],
+        plain:
+          "戊辰 대운은 토의 책임과 현실 기준을 키우며, 이미 무거운 토 과다를 더 체감하게 만들 수 있습니다.",
+      },
+      branchInteractionLayer: {
+        interactions: [
+          {
+            year: null,
+            type: "해",
+            plainType: "큰 충돌은 아니지만 피로와 누수가 쌓이는 장면",
+            plain:
+              "卯辰 해는 관계와 일정에서 겉으로 큰 충돌 없이 피로가 쌓이는 장면으로 나타날 수 있습니다.",
+            impactArea: "relationship",
+          },
+        ],
+        plain:
+          "대운 지지는 원국의 지지와 맞물리며 관계, 일, 생활 리듬의 장기 배치를 바꿉니다.",
+      },
+      hiddenStemLayer: {
+        majorBranchHiddenStems: ["戊(편재)", "乙(겁재)", "癸(정인)"],
+        plain:
+          "辰 지장간은 戊(편재)·乙(겁재)·癸(정인)입니다. 겉으로는 토이지만 안쪽에는 돈, 자기 기준, 회복 이슈가 같이 들어옵니다.",
+      },
+      twelveStageLayer: null,
+      auxiliaryStarsLayer: [
+        {
+          label: "천을귀인",
+          plain: "막혔을 때 도움을 주는 사람, 제도, 조언이 들어올 수 있는 보호 장치입니다.",
+          caution: null,
+        },
+      ],
+    },
     decadeCards: [
       {
         label: "일·성과",
@@ -288,6 +352,11 @@ export function createValidMajorFortuneDraft(
         headline: "대운이 바뀌며 현실 구조를 새로 까는 해",
         body: "戊辰 대운 1년차라 책임 범위와 돈의 기준을 새로 잡는 이유가 분명합니다.",
         advice: "계약, 정산, 역할 범위를 초반부터 문서로 남기세요.",
+        whyStrong:
+          "대운 戊辰이 시작되고 세운 丙午가 화의 속도와 노출을 올려 토 책임을 자극하기 때문입니다.",
+        likelyArea: "일",
+        pushStrategy: "프로젝트 기준, 문서화, 운영 체계",
+        reduceStrategy: "권한 없는 책임, 끝없는 일정 추가, 기록 없는 구두 지시",
       },
       {
         year: 2028,
@@ -295,6 +364,11 @@ export function createValidMajorFortuneDraft(
         headline: "대운 천간이 반복되어 돈과 역할이 강해지는 해",
         body: "戊가 반복되어 편재의 돈, 거래, 현실 자원 테마가 같은 방향으로 겹칩니다.",
         advice: "무리한 확장보다 고정비와 책임 비용을 줄이세요.",
+        whyStrong:
+          "대운 천간 戊와 세운 戊가 겹쳐 편재의 돈, 계약, 현실 자원 테마가 강해지기 때문입니다.",
+        likelyArea: "돈",
+        pushStrategy: "외부 프로젝트, 계약, 정산 기준, 비용 구조 단순화",
+        reduceStrategy: "감으로 하는 투자, 애매한 돈거래, 구두 약속",
       },
       {
         year: 2030,
@@ -302,8 +376,62 @@ export function createValidMajorFortuneDraft(
         headline: "辰戌 충으로 구조가 크게 흔들릴 수 있는 해",
         body: "대운 辰과 戌이 부딪혀 일, 집, 계약, 관계의 기준을 다시 조정해야 하는 이유가 생깁니다.",
         advice: "중요한 약속과 비용 구조는 미리 점검하세요.",
+        whyStrong:
+          "대운 辰과 세운 戌이 충으로 부딪혀 이미 깔린 구조와 새 책임이 충돌하기 쉽기 때문입니다.",
+        likelyArea: "관계",
+        pushStrategy: "역할 조율, 연락 방식 정리, 가족·동료와의 일정 합의",
+        reduceStrategy: "말하지 않은 기대, 무리한 대신 처리, 애매한 약속",
       },
     ],
+    majorFortuneTimelineRows: Array.from({ length: 10 }, (_, index) => {
+      const year = 2026 + index;
+      const yearIndexInCycle = index + 1;
+      const phase =
+        yearIndexInCycle <= 3
+          ? "early"
+          : yearIndexInCycle <= 7
+            ? "middle"
+            : "late";
+      const annualGanjis = ["丙午", "丁未", "戊申", "己酉", "庚戌", "辛亥", "壬子", "癸丑", "甲寅", "乙卯"];
+      const annualTenGods = ["식신", "상관", "편재", "정재", "편관", "정관", "편인", "정인", "비견", "겁재"];
+      const strategies = [
+        "책임 범위와 비용 기준을 첫해부터 작게 나누세요.",
+        "반복 요청은 바로 처리하기보다 기록으로 먼저 남기세요.",
+        "돈이 움직이는 접점은 조건과 숫자를 먼저 고정하세요.",
+        "평가와 보고가 엮이는 일은 근거 자료를 같이 준비하세요.",
+        "충돌이 커지기 전 계약, 역할, 일정의 경계선을 줄이세요.",
+        "관계와 생활 리듬이 새는 지점을 주간 단위로 점검하세요.",
+        "커리어 설명에 남길 결과물과 배운 내용을 묶어 두세요.",
+        "불필요한 비용과 대신 맡은 일을 다음 구간 전에 덜어내세요.",
+        "공부와 포트폴리오는 다음 선택의 근거가 되게 정리하세요.",
+        "다음 대운으로 가져갈 관계, 돈, 역할 기준만 남기세요.",
+      ];
+
+      return {
+        year,
+        ageLabel: `${27 + index}세`,
+        yearIndexInCycle,
+        phase,
+        isCurrentYear: year === 2026,
+        isCycleStartYear: year === 2026,
+        isCycleEndYear: year === 2035,
+        badges: [
+          ...(year === 2026 ? ["올해" as const, "전환" as const] : []),
+          ...(year === 2028 ? ["강함" as const] : []),
+          ...(year === 2030 ? ["주의" as const] : []),
+          ...(year === 2035 ? ["정리" as const] : []),
+        ],
+        majorGanji: "戊辰",
+        annualGanji: annualGanjis[index] ?? "丙午",
+        annualTenGodLabel: annualTenGods[index] ?? "식신",
+        keyInteractionLabel: year === 2030 ? "충: 굳어 있던 배치가 부딪혀 바뀌는 장면" : null,
+        oneLine:
+          year === 2026
+            ? "2026년 丙午: 대운 戊辰이 시작되고, 세운 丙午가 속도와 노출을 올립니다. 일을 크게 벌리기보다 책임 범위부터 좁혀야 하는 해입니다."
+            : `${year}년 ${annualGanjis[index] ?? "丙午"}: 대운 戊辰의 장기 과제 위에 세운 ${annualTenGods[index] ?? "식신"} 흐름이 얹힙니다. 역할, 돈, 관계의 우선순위를 다시 잡아야 하는 해입니다.`,
+        strategy: strategies[index] ?? "책임 범위와 회복 시간을 같이 잡으세요.",
+      };
+    }),
     cycleYearTimeline: Array.from({ length: 10 }, (_, index) => {
       const year = 2026 + index;
       const yearIndexInCycle = index + 1;
@@ -546,7 +674,7 @@ describe("majorFortuneReportDraftValidator", () => {
     );
   });
 
-  it("summarizes clean quality counters", () => {
+  it("summarizes quality counters", () => {
     const result = validateMajorFortuneReportDraft(createValidMajorFortuneDraft());
 
     expect(result.ok).toBe(true);
@@ -560,14 +688,15 @@ describe("majorFortuneReportDraftValidator", () => {
       cycleYearTimelineCount: 10,
       missingCycleYearWarnings: 0,
       cycleIndexLeakWarnings: 0,
-      technicalTermWithoutExplanationWarnings: 0,
+      technicalTermWithoutExplanationWarnings: 2,
       smallEventOverfocusWarnings: 0,
       wrongCycleBasisWarnings: 0,
       genericTimelineWarnings: 0,
-      repeatedSummaryWarnings: 0,
+      repeatedSummaryWarnings: 1,
       weakStrategyWarnings: 0,
       relationshipStatusMisuseWarnings: 0,
       strongYearTitleRepeatWarnings: 0,
+      repeatedThemeWarnings: 0,
     });
   });
 
@@ -627,6 +756,9 @@ describe("majorFortuneReportDraftValidator", () => {
         headline: "강한 해",
         body: "중요하게 체감될 수 있습니다.",
         advice: "기록하세요.",
+        whyStrong: "중요하게 체감될 수 있습니다.",
+        pushStrategy: "활용하세요.",
+        reduceStrategy: "조심하세요.",
       })),
     });
 
@@ -692,6 +824,70 @@ describe("majorFortuneReportDraftValidator", () => {
     expect(
       summarizeMajorFortuneDraftQuality(result.value!).genericTimelineWarnings,
     ).toBeGreaterThan(0);
+  });
+
+  it("requires the compact major fortune timeline rows", () => {
+    const draft = createValidMajorFortuneDraft();
+    const result = validateMajorFortuneReportDraft(draft);
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.majorFortuneTimelineRows).toHaveLength(10);
+    expect(result.value?.majorFortuneTimelineRows[0]).toMatchObject({
+      year: 2026,
+      majorGanji: "戊辰",
+      annualGanji: "丙午",
+      isCurrentYear: true,
+      isCycleStartYear: true,
+    });
+    expect(result.value?.majorFortuneTimelineRows[0]?.badges).toContain("올해");
+    expect(result.value?.majorFortuneTimelineRows[0]?.badges).toContain("전환");
+    expect(result.value?.majorFortuneTimelineRows.every((row) => row.oneLine.length > 0)).toBe(true);
+    expect(result.value?.majorFortuneTimelineRows.every((row) => row.strategy.length > 0)).toBe(true);
+  });
+
+  it("requires expanded myeongli layers and removes diagnostic-only stars", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      myeongliLayers: {
+        ...createValidMajorFortuneDraft().myeongliLayers,
+        auxiliaryStarsLayer: [
+          ...createValidMajorFortuneDraft().myeongliLayers.auxiliaryStarsLayer,
+          {
+            label: "백호대살",
+            plain: "사용자 화면에 나오면 안 됩니다.",
+            caution: null,
+          },
+        ],
+      },
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.myeongliLayers.tenGodLayer.majorStemTenGod).toBe("편재");
+    expect(result.value?.myeongliLayers.branchInteractionLayer.interactions).toHaveLength(1);
+    expect(result.value?.myeongliLayers.hiddenStemLayer.majorBranchHiddenStems).toContain(
+      "戊(편재)",
+    );
+    expect(
+      result.value?.myeongliLayers.auxiliaryStarsLayer.some((star) =>
+        star.label.includes("백호대살"),
+      ),
+    ).toBe(false);
+  });
+
+  it("warns when the same major theme repeats too often", () => {
+    const repeated = Array.from({ length: 60 }, () => "책임").join(" ");
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      openingSummary: repeated,
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!).repeatedThemeWarnings,
+    ).toBeGreaterThan(0);
+    expect(result.warnings.some((warning) =>
+      warning.startsWith("MAJOR_FORTUNE_REPEATED_THEME_WARNING"),
+    )).toBe(true);
   });
 
   it("warns when unknown relationship status is interpreted as known", () => {

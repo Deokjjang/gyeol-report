@@ -10,7 +10,7 @@ const viewSource = readFileSync(
 describe("MajorFortuneReportView source", () => {
   it("renders the major fortune hero and cycle structure table", () => {
     expect(viewSource).toContain("대운 리포트 v1.0");
-    expect(viewSource).toContain("대운 기준과 현재 위치");
+    expect(viewSource).toContain("대운 기준 요약");
     expect(viewSource).toContain("대운");
     expect(viewSource).toContain("대운 순번");
     expect(viewSource).toContain("현재 위치");
@@ -18,7 +18,6 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("연도 구간");
     expect(viewSource).toContain("천간");
     expect(viewSource).toContain("지지");
-    expect(viewSource).toContain("오행");
     expect(viewSource).toContain("십성");
     expect(viewSource).toContain("계산 기준");
     expect(viewSource).toContain("draft.calculationBasis.explanation");
@@ -27,38 +26,57 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("draft.cycleSummary.tenGodLabel");
   });
 
-  it("renders all report sections", () => {
-    expect(viewSource).toContain("draft.bigThemes.map");
+  it("renders compact current situation and timeline sections", () => {
+    expect(viewSource).toContain("현재 상황");
+    expect(viewSource).toContain("현재 나의 연애");
+    expect(viewSource).toContain("현재 하는 일");
+    expect(viewSource).toContain("해석 기준");
+    expect(viewSource).toContain("대운 타임라인");
+    expect(viewSource).toContain("대운과 세운을 나란히");
+    expect(viewSource).toContain("draft.majorFortuneTimelineRows.map");
+    expect(viewSource).toContain("row.isCurrentYear");
+    expect(viewSource).toContain("row.badges.map");
+    expect(viewSource).toContain("row.majorGanji");
+    expect(viewSource).toContain("row.annualGanji");
+    expect(viewSource).toContain("row.annualTenGodLabel");
+    expect(viewSource).toContain("row.strategy");
+  });
+
+  it("renders big-picture strategic sections before domain strategy", () => {
+    expect(viewSource.indexOf("대운 타임라인")).toBeLessThan(
+      viewSource.indexOf("현실 전략"),
+    );
+    expect(viewSource).toContain("이 10년의 한 줄 결론");
+    expect(viewSource).toContain("대운 전환 해석: 이전 대운 → 현재 대운");
+    expect(viewSource).toContain("핵심 테마 3개");
+    expect(viewSource).toContain("draft.bigThemes.slice(0, 3).map");
     expect(viewSource).toContain("draft.previousToCurrentShift.plain");
     expect(viewSource).toContain("draft.previousToCurrentShift.whatChanged");
-    expect(viewSource).toContain("draft.decadeCards.map");
-    expect(viewSource).toContain("draft.keySignals.map");
-    expect(viewSource).toContain("draft.majorStructure.ganjiExplanation");
-    expect(viewSource).toContain("draft.cycleChapters.map");
-    expect(viewSource).toContain("chapter.likelyScenes");
-    expect(viewSource).toContain("chapter.practicalAdvice");
-    expect(viewSource).toContain("draft.phaseTimeline.map");
-    expect(viewSource).toContain("draft.cycleYearTimeline.map");
-    expect(viewSource).toContain("year.plainInterpretation");
-    expect(viewSource).toContain("year.strategicFocus");
-    expect(viewSource).toContain("year.whyItMatters");
-    expect(viewSource).toContain("draft.strongYears.map");
+    expect(viewSource).toContain("현실 전략: 일·돈·연애·관계·몸·학업");
     expect(viewSource).toContain("draft.finalAdvice.map");
+  });
+
+  it("renders strong years and expanded myeongli evidence", () => {
+    expect(viewSource).toContain("강하게 체감될 해 TOP 5");
+    expect(viewSource).toContain("draft.strongYears.map");
+    expect(viewSource).toContain("왜 강한가");
+    expect(viewSource).toContain("밀어볼 것");
+    expect(viewSource).toContain("줄일 것");
+    expect(viewSource).toContain("명리 근거 펼쳐보기");
+    expect(viewSource).toContain("draft.myeongliLayers");
+    expect(viewSource).toContain("layers.tenGodLayer.plain");
+    expect(viewSource).toContain("layers.branchInteractionLayer.interactions");
+    expect(viewSource).toContain("layers.hiddenStemLayer.plain");
     expect(viewSource).toContain("draft.safetyNotes");
   });
 
-  it("renders phase timeline and strong years labels", () => {
-    expect(viewSource).toContain("10년 핵심 테마");
-    expect(viewSource).toContain("이전 대운에서 이번 대운으로 바뀐 점");
-    expect(viewSource).toContain("10년 흐름 지도");
-    expect(viewSource).toContain("특히 강하게 체감될 수 있는 해 TOP 5");
-    expect(viewSource).toContain("영역별 장기 전략");
-    expect(viewSource).toContain("getPhaseDisplayLabel");
-    expect(viewSource).toContain("초반 1~3년");
-    expect(viewSource).toContain("중반 4~7년");
-    expect(viewSource).toContain("후반 8~10년");
-    expect(viewSource).toContain("반복될 수 있는 장면");
-    expect(viewSource).toContain("실전 조언");
+  it("demotes repeated old sections and removes numeric flow score UI", () => {
+    expect(viewSource).not.toContain("draft.keySignals.map");
+    expect(viewSource).not.toContain("draft.cycleChapters.map");
+    expect(viewSource).not.toContain("draft.decadeCards.map");
+    expect(viewSource).not.toContain("draft.phaseTimeline.map");
+    expect(viewSource).not.toContain("대운 흐름 지표");
+    expect(viewSource).not.toContain("체감 강도");
   });
 
   it("does not render raw fixture/precomputed wording", () => {
@@ -70,10 +88,10 @@ describe("MajorFortuneReportView source", () => {
   });
 
   it("renders relationship context and strategic big-picture sections", () => {
-    expect(viewSource).toContain("관계 상태:");
-    expect(viewSource).toContain("대운 기준과 현재 위치");
-    expect(viewSource).toContain("이 10년의 결론");
-    expect(viewSource).toContain("대운 유형");
-    expect(viewSource).toContain("핵심 방향");
+    expect(viewSource).toContain("현재 나의 연애");
+    expect(viewSource).toContain("대운 기준 요약");
+    expect(viewSource).toContain("이 10년의 한 줄 결론");
+    expect(viewSource).toContain("대운 타임라인");
+    expect(viewSource).toContain("현실 전략");
   });
 });

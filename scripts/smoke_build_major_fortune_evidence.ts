@@ -56,7 +56,10 @@ writeLine(
 writeLine(`calculation basis: ${evidence.calculationBasis.displayLabel}`);
 writeLine(`basis note: ${evidence.calculationBasis.note}`);
 writeLine(`cycle year timeline: ${evidence.cycleYearTimeline.length}`);
+writeLine(`major fortune timeline rows: ${evidence.majorFortuneTimelineRows.length}`);
 writeLine(`decade archetype: ${evidence.decadeArchetype.label}`);
+writeLine(`myeongli layers: ten-god/element/branch/hidden-stem/auxiliary-stars`);
+writeLine(`hidden stems: ${evidence.myeongliLayers.hiddenStemLayer.majorBranchHiddenStems.join(", ")}`);
 writeList("fills missing", evidence.elementEffect.fillsMissing);
 writeList("overloads heavy", evidence.elementEffect.overloadsHeavy);
 writeList(
@@ -87,7 +90,15 @@ writeList(
 writeList(
   "strong years within cycle",
   evidence.strongYearsWithinCycle.map(
-    (year) => `${year.year} ${year.ganji}: ${year.reason} / ${year.action}`,
+    (year) =>
+      `${year.year} ${year.ganji}: ${year.whyStrong} / push ${year.pushStrategy} / reduce ${year.reduceStrategy}`,
+  ),
+);
+writeList(
+  "compact daeun seun timeline",
+  evidence.majorFortuneTimelineRows.map(
+    (row) =>
+      `${row.year} major ${row.majorGanji} annual ${row.annualGanji} ${row.badges.join(",")}: ${row.oneLine} / ${row.strategy}`,
   ),
 );
 writeList(

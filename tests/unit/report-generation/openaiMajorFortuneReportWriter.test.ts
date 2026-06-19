@@ -124,6 +124,59 @@ function createValidDraft(): MajorFortuneReportDraft {
         strategy: "관계 안에서도 감정보다 역할과 시간을 먼저 확인하세요.",
       },
     ],
+    myeongliLayers: {
+      tenGodLayer: {
+        majorStemTenGod: "편재",
+        annualStemTenGodsInCycle: Array.from({ length: 10 }, (_, index) => {
+          const year = 2026 + index;
+          const stems = ["丙", "丁", "戊", "己", "庚", "辛", "壬", "癸", "甲", "乙"];
+          const tenGods = ["식신", "상관", "편재", "정재", "편관", "정관", "편인", "정인", "비견", "겁재"];
+
+          return {
+            year,
+            stem: stems[index] ?? "丙",
+            tenGod: tenGods[index] ?? "식신",
+            plain: `${year}년 천간은 甲(갑목) 일간에게 ${tenGods[index] ?? "식신"}으로 작용해 그해의 행동 방식과 압박 지점을 바꿉니다.`,
+          };
+        }),
+        plain:
+          "戊辰 대운의 천간 戊는 甲(갑목) 일간에게 편재입니다. 편재는 돈, 자원, 거래, 현실을 실제로 움직이는 힘입니다.",
+      },
+      elementLayer: {
+        majorElements: ["토"],
+        fillMissing: [],
+        overloadHeavy: ["토"],
+        plain:
+          "戊辰 대운은 토의 책임과 현실 기준을 키우며, 이미 무거운 토 과다를 더 체감하게 만들 수 있습니다.",
+      },
+      branchInteractionLayer: {
+        interactions: [
+          {
+            year: null,
+            type: "해",
+            plainType: "큰 충돌은 아니지만 피로와 누수가 쌓이는 장면",
+            plain:
+              "卯辰 해는 관계와 일정에서 겉으로 큰 충돌 없이 피로가 쌓이는 장면으로 나타날 수 있습니다.",
+            impactArea: "relationship",
+          },
+        ],
+        plain:
+          "대운 지지는 원국의 지지와 맞물리며 관계, 일, 생활 리듬의 장기 배치를 바꿉니다.",
+      },
+      hiddenStemLayer: {
+        majorBranchHiddenStems: ["戊(편재)", "乙(겁재)", "癸(정인)"],
+        plain:
+          "辰 지장간은 戊(편재)·乙(겁재)·癸(정인)입니다. 겉으로는 토이지만 안쪽에는 돈, 자기 기준, 회복 이슈가 같이 들어옵니다.",
+      },
+      twelveStageLayer: null,
+      auxiliaryStarsLayer: [
+        {
+          label: "천을귀인",
+          plain: "막혔을 때 도움을 주는 사람, 제도, 조언이 들어올 수 있는 보호 장치입니다.",
+          caution: null,
+        },
+      ],
+    },
     decadeCards: [
       {
         label: "일·성과",
@@ -232,6 +285,11 @@ function createValidDraft(): MajorFortuneReportDraft {
         headline: "대운이 바뀌며 현실 구조를 새로 까는 해",
         body: "戊辰 대운 1년차라 책임 범위와 돈의 기준을 새로 잡는 이유가 분명합니다.",
         advice: "계약, 정산, 역할 범위를 초반부터 문서로 남기세요.",
+        whyStrong:
+          "대운 戊辰이 시작되고 세운 丙午가 화의 속도와 노출을 올려 토 책임을 자극하기 때문입니다.",
+        likelyArea: "일",
+        pushStrategy: "프로젝트 기준, 문서화, 운영 체계",
+        reduceStrategy: "권한 없는 책임, 끝없는 일정 추가, 기록 없는 구두 지시",
       },
       {
         year: 2028,
@@ -239,6 +297,11 @@ function createValidDraft(): MajorFortuneReportDraft {
         headline: "대운 천간이 반복되어 돈과 역할이 강해지는 해",
         body: "戊가 반복되어 편재의 돈, 거래, 현실 자원 테마가 같은 방향으로 겹칩니다.",
         advice: "무리한 확장보다 고정비와 책임 비용을 줄이세요.",
+        whyStrong:
+          "대운 천간 戊와 세운 戊가 겹쳐 편재의 돈, 계약, 현실 자원 테마가 강해지기 때문입니다.",
+        likelyArea: "돈",
+        pushStrategy: "외부 프로젝트, 계약, 정산 기준, 비용 구조 단순화",
+        reduceStrategy: "감으로 하는 투자, 애매한 돈거래, 구두 약속",
       },
       {
         year: 2030,
@@ -246,8 +309,53 @@ function createValidDraft(): MajorFortuneReportDraft {
         headline: "辰戌 충으로 구조가 크게 흔들릴 수 있는 해",
         body: "대운 辰과 戌이 부딪혀 일, 집, 계약, 관계의 기준을 다시 조정해야 하는 이유가 생깁니다.",
         advice: "중요한 약속과 비용 구조는 미리 점검하세요.",
+        whyStrong:
+          "대운 辰과 세운 戌이 충으로 부딪혀 이미 깔린 구조와 새 책임이 충돌하기 쉽기 때문입니다.",
+        likelyArea: "관계",
+        pushStrategy: "역할 조율, 연락 방식 정리, 가족·동료와의 일정 합의",
+        reduceStrategy: "말하지 않은 기대, 무리한 대신 처리, 애매한 약속",
       },
     ],
+    majorFortuneTimelineRows: Array.from({ length: 10 }, (_, index) => {
+      const year = 2026 + index;
+      const yearIndexInCycle = index + 1;
+      const phase =
+        yearIndexInCycle <= 3
+          ? "early"
+          : yearIndexInCycle <= 7
+            ? "middle"
+            : "late";
+      const annualGanjis = ["丙午", "丁未", "戊申", "己酉", "庚戌", "辛亥", "壬子", "癸丑", "甲寅", "乙卯"];
+      const annualTenGods = ["식신", "상관", "편재", "정재", "편관", "정관", "편인", "정인", "비견", "겁재"];
+
+      return {
+        year,
+        ageLabel: `${27 + index}세`,
+        yearIndexInCycle,
+        phase,
+        isCurrentYear: year === 2026,
+        isCycleStartYear: year === 2026,
+        isCycleEndYear: year === 2035,
+        badges: [
+          ...(year === 2026 ? ["올해" as const, "전환" as const] : []),
+          ...(year === 2028 ? ["강함" as const] : []),
+          ...(year === 2030 ? ["주의" as const] : []),
+          ...(year === 2035 ? ["정리" as const] : []),
+        ],
+        majorGanji: "戊辰",
+        annualGanji: annualGanjis[index] ?? "丙午",
+        annualTenGodLabel: annualTenGods[index] ?? "식신",
+        keyInteractionLabel: year === 2030 ? "충: 굳어 있던 배치가 부딪혀 바뀌는 장면" : null,
+        oneLine:
+          year === 2026
+            ? "2026년 丙午: 대운 戊辰이 시작되고, 세운 丙午가 속도와 노출을 올립니다. 일을 크게 벌리기보다 책임 범위부터 좁혀야 하는 해입니다."
+            : `${year}년 ${annualGanjis[index] ?? "丙午"}: 대운 戊辰의 장기 과제 위에 세운 ${annualTenGods[index] ?? "식신"} 흐름이 얹힙니다. 역할, 돈, 관계의 우선순위를 다시 잡아야 하는 해입니다.`,
+        strategy:
+          year === 2030
+            ? "크게 벌리기보다 계약, 역할, 일정의 충돌 지점을 먼저 줄이세요."
+            : "결과물을 만들되, 책임 범위와 회복 시간을 같이 잡으세요.",
+      };
+    }),
     cycleYearTimeline: Array.from({ length: 10 }, (_, index) => {
       const year = 2026 + index;
       const yearIndexInCycle = index + 1;

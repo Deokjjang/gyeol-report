@@ -20,6 +20,9 @@ describe("smoke_build_major_fortune_evidence source", () => {
     expect(source).toContain("decade archetype:");
     expect(source).toContain("calculation basis:");
     expect(source).toContain("cycle year timeline:");
+    expect(source).toContain("major fortune timeline rows:");
+    expect(source).toContain("myeongli layers:");
+    expect(source).toContain("hidden stems:");
     expect(source).toContain("strategic themes");
     expect(source).toContain("long range risks");
     expect(source).toContain("long range opportunities");
@@ -28,7 +31,10 @@ describe("smoke_build_major_fortune_evidence source", () => {
     expect(source).toContain("difficulty signals");
     expect(source).toContain("opportunity signals");
     expect(source).toContain("strong years within cycle");
+    expect(source).toContain("compact daeun seun timeline");
     expect(source).toContain("10-year timeline");
+    expect(source).toContain("push");
+    expect(source).toContain("reduce");
   });
 
   it("does not import OpenAI writer", () => {

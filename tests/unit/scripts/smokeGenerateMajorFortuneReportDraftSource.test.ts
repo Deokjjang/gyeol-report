@@ -30,6 +30,9 @@ describe("smoke_generate_major_fortune_report_draft source", () => {
     expect(scriptSource).toContain("decade cards:");
     expect(scriptSource).toContain("phase timeline:");
     expect(scriptSource).toContain("cycle year timeline:");
+    expect(scriptSource).toContain("major fortune timeline rows:");
+    expect(scriptSource).toContain("myeongli layers:");
+    expect(scriptSource).toContain("compact daeun seun timeline");
     expect(scriptSource).toContain("strong years:");
   });
 
@@ -50,6 +53,7 @@ describe("smoke_generate_major_fortune_report_draft source", () => {
     expect(scriptSource).toContain("weak strategy warnings:");
     expect(scriptSource).toContain("relationship status misuse warnings:");
     expect(scriptSource).toContain("strong year title repeat warnings:");
+    expect(scriptSource).toContain("repeated theme warnings:");
     expect(scriptSource).toContain("getMajorFortunePreviewSnapshotRelativePath");
     expect(scriptSource).toContain("getMajorFortunePreviewUrl");
     expect(scriptSource).toContain("url:");

@@ -71,6 +71,9 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
 
     expect(text).toContain("cycleYearTimeline must contain exactly 10 items");
     expect(text).toContain("The full 10-year timeline must appear");
+    expect(text).toContain("majorFortuneTimelineRows must be used");
+    expect(text).toContain("majorGanji and annualGanji side by side");
+    expect(text).toContain("Highlight the current year row with 올해 badge");
     expect(text).toContain("Strong years are TOP highlights only");
     expect(text).toContain("Do not use currentCycle.index as a score");
   });
@@ -102,8 +105,13 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     const text = promptText();
 
     expect(text).toContain("Aggressive but non-deterministic examples");
+    expect(text).toContain("가능성이 올라갑니다");
+    expect(text).toContain("유리해집니다");
+    expect(text).toContain("불리해집니다");
+    expect(text).toContain("밀려날 수 있습니다");
     expect(text).toContain("직급은 그대로인데 책임만 먼저 커지는 상황");
     expect(text).toContain("수입 증가보다 고정지출");
+    expect(text).toContain("프로젝트에서 큰 성과를 볼 가능성");
     expect(text).toContain("Do not say everything can happen");
     expect(text).toContain("how to respond");
   });
@@ -112,10 +120,22 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     const text = promptText();
 
     expect(text).toContain("Every 명리 term must be translated");
+    expect(text).toContain("Use expanded myeongliLayers");
+    expect(text).toContain("ten-god, branch interaction, hidden stems, auxiliary stars");
     expect(text).toContain("비견: 내 기준을 세우고");
     expect(text).toContain("토 과다: 해야 할 일");
     expect(text).toContain("충: 이미 굳어 있던 방향");
     expect(text).toContain("육합: 사람·일정·역할");
+  });
+
+  it("requires relationship-status-specific strategy without false certainty", () => {
+    const text = promptText();
+
+    expect(text).toContain("Relationship status rules");
+    expect(text).toContain("single: 솔로탈출을 단정하지 말고");
+    expect(text).toContain("dating: 일정, 돈, 연락 빈도");
+    expect(text).toContain("married: 가족 비용");
+    expect(text).toContain("unknown: 솔로탈출, 애인, 배우자처럼 상태를 단정하지 말고");
   });
 
   it("forbids hard claims and raw fixture/precomputed wording", () => {
