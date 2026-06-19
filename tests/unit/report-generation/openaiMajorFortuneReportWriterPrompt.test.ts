@@ -54,6 +54,11 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("Strong years must explain why that year is strong");
     expect(text).toContain("Strong years are TOP highlights only");
     expect(text).toContain("특히 강하게 체감될 수 있는 해 TOP 5");
+    expect(text).toContain("whyStrong must be interpretive copy");
+    expect(text).toContain("not a slash-separated evidence list");
+    expect(text).toContain("Strong year headlines must be unique");
+    expect(text).toContain("Example 2029 己酉 whyStrong");
+    expect(text).toContain("Example 2030 庚戌 whyStrong");
   });
 
   it("requires 10-year repeated themes in every main chapter", () => {
@@ -152,6 +157,9 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("Every 명리 term must be translated");
     expect(text).toContain("Use expanded myeongliLayers");
     expect(text).toContain("ten-god, branch interaction, hidden stems, auxiliary stars");
+    expect(text).toContain("Use auxiliary stars only when they add useful plain-life meaning");
+    expect(text).toContain("Do not overload the report with 살 names");
+    expect(text).toContain("생활 장면으로만 조심스럽게 참고합니다");
     expect(text).toContain("비견: 내 기준을 세우고");
     expect(text).toContain("토 과다: 해야 할 일");
     expect(text).toContain("충: 이미 굳어 있던 방향");

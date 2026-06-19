@@ -281,6 +281,16 @@ async function main(): Promise<void> {
     `unknown status exposure warnings: ${quality.unknownStatusExposureWarnings}`,
   );
   writeLine(`weak specificity warnings: ${quality.weakSpecificityWarnings}`);
+  writeLine(
+    `unknown relationship pill warnings: ${quality.unknownRelationshipPillWarnings}`,
+  );
+  writeLine(
+    `slash-separated whyStrong warnings: ${quality.slashSeparatedWhyStrongWarnings}`,
+  );
+  writeLine(
+    `duplicate strong year headline warnings: ${quality.duplicateStrongYearHeadlineWarnings}`,
+  );
+  writeLine(`weak auxiliary star warnings: ${quality.weakAuxiliaryStarWarnings}`);
   writeLine(`timeline spacing warnings: ${quality.timelineSpacingWarnings}`);
   writeLine(
     `age basis repetition warnings: ${quality.ageBasisRepetitionWarnings}`,

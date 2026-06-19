@@ -2151,6 +2151,26 @@ blocks rather than short generic summaries; smoke reports short strategy body,
 unknown status exposure, weak specificity, duplicate top push, and duplicate top
 reduce warnings. DAEUN-04C does not call OpenAI.
 
+## DAEUN-04D Major Fortune Final Exposure Polish
+
+DAEUN-04D is the final exposure polish pass before another paid major-fortune
+generation check. Unknown relationship status is hidden from the top status
+pills; only known statuses such as single, dating, and married are shown. The
+interpretive body must still avoid exposing missing-input language.
+
+Strong-year TOP 5 reasons must read as interpretation, not slash-separated raw
+evidence. Each strong year needs a unique headline, and its reason should
+translate ten-god and branch evidence into plain Korean life strategy. For
+example, a regular-wealth year should explain numeric money management, while a
+clash year should explain structure, role, contract, or routine reallocation.
+
+The auxiliary-star basis is filtered for user-facing usefulness. The view and
+validator show at most five useful entries, always hide diagnostic-only or scary
+items such as 백호대살, and remove filler lines such as generic "carefully
+reference in life scenes" wording. DAEUN-04D adds smoke QA counters for unknown
+relationship pills, slash-separated whyStrong text, duplicate strong-year
+headlines, and weak auxiliary-star explanations. DAEUN-04D does not call OpenAI.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

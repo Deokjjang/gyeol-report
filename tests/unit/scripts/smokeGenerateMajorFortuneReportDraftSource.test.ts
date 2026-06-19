@@ -73,6 +73,10 @@ describe("smoke_generate_major_fortune_report_draft source", () => {
     expect(scriptSource).toContain("short strategy body warnings:");
     expect(scriptSource).toContain("unknown status exposure warnings:");
     expect(scriptSource).toContain("weak specificity warnings:");
+    expect(scriptSource).toContain("unknown relationship pill warnings:");
+    expect(scriptSource).toContain("slash-separated whyStrong warnings:");
+    expect(scriptSource).toContain("duplicate strong year headline warnings:");
+    expect(scriptSource).toContain("weak auxiliary star warnings:");
     expect(scriptSource).toContain("timeline spacing warnings:");
     expect(scriptSource).toContain("age basis repetition warnings:");
     expect(scriptSource).toContain("generic timeline warnings:");

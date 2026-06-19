@@ -510,6 +510,20 @@ function getAuxiliaryStarPlain(label: string): {
   };
 }
 
+function isUsefulAuxiliaryStarPlain(params: {
+  readonly label: string;
+  readonly plain: string;
+}): boolean {
+  if (params.label.includes("백호대살")) {
+    return false;
+  }
+  if (params.plain.includes("생활 장면으로만 조심스럽게 참고합니다")) {
+    return false;
+  }
+
+  return params.plain.trim().length >= 24;
+}
+
 function buildMyeongliLayers(input: {
   readonly currentCycle: MajorFortuneCycle;
   readonly dayMaster: HeavenlyStem;
@@ -545,7 +559,6 @@ function buildMyeongliLayers(input: {
     .filter((label) =>
       /살|귀인|공망|금여록/u.test(label) && !label.includes("백호대살"),
     )
-    .slice(0, 8)
     .map((label) => {
       const mapped = getAuxiliaryStarPlain(label);
 
@@ -554,7 +567,9 @@ function buildMyeongliLayers(input: {
         plain: mapped.plain,
         caution: mapped.caution,
       };
-    });
+    })
+    .filter((star) => isUsefulAuxiliaryStarPlain(star))
+    .slice(0, 5);
 
   return {
     tenGodLayer: {
@@ -993,6 +1008,101 @@ function buildTransitionSignals(input: {
   );
 }
 
+function getTenGodPlainForStrongYear(tenGod: TenGod): string {
+  if (tenGod === "식신") {
+    return "결과물과 표현을 밖으로 꺼내는 힘";
+  }
+  if (tenGod === "상관") {
+    return "말, 발표, 제안, 결과물이 빨라지는 힘";
+  }
+  if (tenGod === "편재") {
+    return "돈, 자원, 계약, 외부 프로젝트가 움직이는 힘";
+  }
+  if (tenGod === "정재") {
+    return "돈의 흐름을 감이 아니라 숫자와 기준으로 고정하는 힘";
+  }
+  if (tenGod === "편관" || tenGod === "정관") {
+    return "규칙, 평가, 책임, 직장 질서를 다시 세우는 힘";
+  }
+  if (tenGod === "편인" || tenGod === "정인") {
+    return "공부, 회복, 문서, 재정비를 요구하는 힘";
+  }
+  if (tenGod === "비견" || tenGod === "겁재") {
+    return "자기 기준, 경쟁, 관계 경계를 다시 세우는 힘";
+  }
+
+  return "그해의 행동 방식과 압박 지점을 바꾸는 힘";
+}
+
+function buildStrongYearHeadline(input: {
+  readonly year: number;
+  readonly annualTenGod: TenGod;
+  readonly interactions: readonly AnnualBranchInteraction[];
+  readonly currentCycle: MajorFortuneCycle;
+}): string {
+  if (input.year === input.currentCycle.startYear) {
+    return "새 대운의 기준을 처음 까는 해";
+  }
+  if (input.annualTenGod === "식신" || input.annualTenGod === "상관") {
+    return "결과물과 표현 압박이 빨라지는 해";
+  }
+  if (input.annualTenGod === "편재") {
+    return "돈과 외부 프로젝트 접점이 커지는 해";
+  }
+  if (input.annualTenGod === "정재") {
+    return "돈의 흐름을 숫자로 고정하는 해";
+  }
+  if (input.interactions.some((interaction) => interaction.type === "충")) {
+    return "기존 구조와 새 책임이 정면으로 부딪히는 해";
+  }
+  if (input.annualTenGod === "편관" || input.annualTenGod === "정관") {
+    return "평가와 책임 기준을 공식화하는 해";
+  }
+  if (input.annualTenGod === "편인" || input.annualTenGod === "정인") {
+    return "공부와 회복 기준을 다시 잡는 해";
+  }
+  if (input.annualTenGod === "비견" || input.annualTenGod === "겁재") {
+    return "자기 기준과 관계 경계를 다시 세우는 해";
+  }
+
+  return "대운의 장기 테마가 선명해지는 해";
+}
+
+function buildStrongYearWhyStrong(input: {
+  readonly annualGanji: string;
+  readonly annualTenGod: TenGod;
+  readonly interactions: readonly AnnualBranchInteraction[];
+  readonly currentCycle: MajorFortuneCycle;
+  readonly likelyArea: string;
+}): string {
+  if (input.annualTenGod === "정재") {
+    return `${input.annualGanji}는 정재 흐름이 강해져 돈과 현실을 감이 아니라 숫자로 고정하려는 힘이 커집니다. 이 해에는 계약, 정산, 고정비, 성과 기준처럼 정리된 숫자가 중요해질 수 있습니다.`;
+  }
+  if (input.interactions.some((interaction) => interaction.type === "충")) {
+    return `${input.annualGanji}는 충의 작용이 강해져 이미 깔아 둔 구조와 새 책임이 부딪힐 수 있습니다. 직장 구조, 역할 경계, 계약 조건, 생활 루틴을 재배치해야 하는 해로 체감될 가능성이 큽니다.`;
+  }
+  if (input.annualTenGod === "편재") {
+    return `${input.annualGanji}는 편재 흐름이 강해져 돈, 자원, 계약, 외부 프로젝트가 실제로 움직이는 접점이 커질 수 있습니다. 무리한 확장보다 조건과 숫자를 먼저 잡으면 수익화 가능성을 더 현실적으로 쓸 수 있습니다.`;
+  }
+  if (input.annualTenGod === "상관") {
+    return `${input.annualGanji}는 상관 흐름이 들어와 말, 발표, 제안, 결과물이 빨라지는 해입니다. 성과를 보여줄 가능성은 커지지만 말과 일정이 앞서면 피로와 충돌도 같이 커질 수 있습니다.`;
+  }
+  if (input.annualTenGod === "식신") {
+    return `${input.annualGanji}는 식신 흐름이 들어와 결과물과 표현을 밖으로 꺼내는 힘이 강해집니다. 새 대운의 첫 기준을 산출물로 남기면 이후 10년의 역할을 더 유리하게 잡을 수 있습니다.`;
+  }
+  if (input.annualTenGod === "편관" || input.annualTenGod === "정관") {
+    return `${input.annualGanji}는 관성 흐름이 강해져 규칙, 평가, 책임, 직장 질서를 다시 확인하게 만드는 해입니다. 역할과 권한의 선을 명확히 할수록 압박을 성과 기준으로 바꾸기 쉽습니다.`;
+  }
+  if (input.annualTenGod === "편인" || input.annualTenGod === "정인") {
+    return `${input.annualGanji}는 인성 흐름이 강해져 공부, 회복, 문서, 재정비가 중요해지는 해입니다. 무리한 확장보다 배운 것과 회복 루틴을 정리할수록 다음 선택의 근거가 생깁니다.`;
+  }
+  if (input.annualTenGod === "비견" || input.annualTenGod === "겁재") {
+    return `${input.annualGanji}는 비겁 흐름이 강해져 자기 기준, 경쟁, 관계 경계가 다시 올라오는 해입니다. 사람과 돈이 섞이는 장면에서는 기준을 먼저 세워야 피로를 줄일 수 있습니다.`;
+  }
+
+  return `${input.annualGanji}는 ${getTenGodPlainForStrongYear(input.annualTenGod)}이 강해지는 해입니다. ${input.likelyArea} 영역에서 대운의 장기 과제가 더 선명하게 체감될 수 있습니다.`;
+}
+
 function buildStrongYearsWithinCycle(input: {
   readonly currentCycle: MajorFortuneCycle;
   readonly dayMaster: HeavenlyStem;
@@ -1093,14 +1203,19 @@ function buildStrongYearsWithinCycle(input: {
             : likelyArea === "몸·생활"
               ? "몸·생활 리듬"
               : likelyArea;
-      const headline =
-        year === input.currentCycle.startYear
-          ? "대운이 바뀌며 현실 구조를 새로 까는 해"
-          : annualTenGod === input.majorTenGod
-            ? `${input.majorTenGod} 테마가 강하게 겹치는 해`
-            : interactions.some((interaction) => interaction.type === "충")
-              ? "이미 깔린 구조와 새 책임이 부딪히는 해"
-              : "대운의 장기 테마가 선명해지는 해";
+      const headline = buildStrongYearHeadline({
+        year,
+        annualTenGod,
+        interactions,
+        currentCycle: input.currentCycle,
+      });
+      const whyStrong = buildStrongYearWhyStrong({
+        annualGanji: annualGanji.ganji,
+        annualTenGod,
+        interactions,
+        currentCycle: input.currentCycle,
+        likelyArea,
+      });
       const pushStrategy =
         year === input.currentCycle.startYear
           ? "프로젝트 기준, 문서화, 포트폴리오, 운영 체계"
@@ -1158,7 +1273,7 @@ function buildStrongYearsWithinCycle(input: {
               ? "관계와 일정의 역할 경계를 짧게 확인하세요."
               : "프로젝트 기준과 책임 범위를 문서로 남기세요.",
         headline,
-        whyStrong: reasons.join(" / "),
+        whyStrong,
         likelyArea,
         pushStrategy,
         reduceStrategy,

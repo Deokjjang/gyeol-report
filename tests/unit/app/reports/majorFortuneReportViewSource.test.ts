@@ -28,6 +28,9 @@ describe("MajorFortuneReportView source", () => {
 
   it("renders compact current situation and timeline sections", () => {
     expect(viewSource).toContain("현재 상황");
+    expect(viewSource).toContain("shouldRenderRelationshipStatus");
+    expect(viewSource).toContain("relationshipStatusLabel !== \"미입력\"");
+    expect(viewSource).toContain("{shouldRenderRelationshipStatus ? (");
     expect(viewSource).toContain("현재 나의 연애");
     expect(viewSource).toContain("현재 하는 일");
     expect(viewSource).toContain("해석 기준");
@@ -79,6 +82,8 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("layers.tenGodLayer.plain");
     expect(viewSource).toContain("layers.branchInteractionLayer.interactions");
     expect(viewSource).toContain("layers.hiddenStemLayer.plain");
+    expect(viewSource).toContain("생활 장면으로만 조심스럽게 참고합니다");
+    expect(viewSource).toContain(".slice(0, 5)");
     expect(viewSource).toContain("draft.safetyNotes");
     expect(viewSource).toContain("!hasMyeongliContent");
     expect(viewSource).toContain("백호대살|diagnostic-only|evidence|debug|fixture");
@@ -110,7 +115,8 @@ describe("MajorFortuneReportView source", () => {
   });
 
   it("keeps unknown relationship status only as a pill and strips body limitations", () => {
-    expect(viewSource).toContain("relationshipStatusLabel ?? \"미입력\"");
+    expect(viewSource).toContain("relationshipStatusLabel !== \"미입력\"");
+    expect(viewSource).toContain("text(relationshipStatusLabel ?? \"\")");
     expect(viewSource).toContain("관계 상태가 미입력이므로");
     expect(viewSource).toContain("연애 상태가 입력되지 않아");
     expect(viewSource).toContain(".replace(/관계 상태가 미입력이므로\\s*/gu, \"\")");

@@ -827,6 +827,10 @@ describe("majorFortuneReportDraftValidator", () => {
       shortStrategyBodyWarnings: 0,
       unknownStatusExposureWarnings: 0,
       weakSpecificityWarnings: 0,
+      unknownRelationshipPillWarnings: 0,
+      slashSeparatedWhyStrongWarnings: 0,
+      duplicateStrongYearHeadlineWarnings: 0,
+      weakAuxiliaryStarWarnings: 0,
       timelineSpacingWarnings: 0,
       ageBasisRepetitionWarnings: 0,
     });
@@ -1249,6 +1253,77 @@ describe("majorFortuneReportDraftValidator", () => {
       summarizeMajorFortuneDraftQuality(result.value!)
         .strongYearTitleRepeatWarnings,
     ).toBeGreaterThan(0);
+  });
+
+  it("warns when strong year whyStrong is a slash-separated evidence list", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      strongYears: createValidMajorFortuneDraft().strongYears.map((year, index) =>
+        index === 0
+          ? {
+              ...year,
+              whyStrong:
+                "대운의 오행이 반복됨 / 육합·충 작용으로 조정됨 / 토 과다 압박이 커짐",
+            }
+          : year,
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!)
+        .slashSeparatedWhyStrongWarnings,
+    ).toBeGreaterThan(0);
+    expect(result.warnings.some((warning) =>
+      warning.startsWith("MAJOR_FORTUNE_SLASH_SEPARATED_WHY_STRONG_WARNING"),
+    )).toBe(true);
+  });
+
+  it("warns when strong year headlines repeat", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      strongYears: createValidMajorFortuneDraft().strongYears.map((year) => ({
+        ...year,
+        headline: "이미 깔린 구조와 새 책임이 부딪히는 해",
+      })),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!)
+        .duplicateStrongYearHeadlineWarnings,
+    ).toBeGreaterThan(0);
+    expect(result.warnings.some((warning) =>
+      warning.startsWith("MAJOR_FORTUNE_DUPLICATE_STRONG_YEAR_HEADLINE_WARNING"),
+    )).toBe(true);
+  });
+
+  it("filters weak auxiliary star filler lines", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      myeongliLayers: {
+        ...createValidMajorFortuneDraft().myeongliLayers,
+        auxiliaryStarsLayer: [
+          ...createValidMajorFortuneDraft().myeongliLayers.auxiliaryStarsLayer,
+          {
+            label: "육해살",
+            plain: "육해살은 대운 해석에서 생활 장면으로만 조심스럽게 참고합니다.",
+            caution: null,
+          },
+        ],
+      },
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      result.value?.myeongliLayers.auxiliaryStarsLayer
+        .map((star) => star.plain)
+        .join("\n"),
+    ).not.toContain("생활 장면으로만 조심스럽게 참고합니다");
+    expect(result.value?.myeongliLayers.auxiliaryStarsLayer.length).toBeLessThanOrEqual(5);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!).weakAuxiliaryStarWarnings,
+    ).toBe(0);
   });
 
   it("exposes visible sanitizer directly", () => {

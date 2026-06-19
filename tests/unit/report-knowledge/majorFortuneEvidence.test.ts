@@ -118,6 +118,12 @@ describe("majorFortuneEvidence", () => {
         star.label.includes("백호대살"),
       ),
     ).toBe(false);
+    expect(evidence.myeongliLayers.auxiliaryStarsLayer.length).toBeLessThanOrEqual(5);
+    expect(
+      evidence.myeongliLayers.auxiliaryStarsLayer
+        .map((star) => star.plain)
+        .join("\n"),
+    ).not.toContain("생활 장면으로만 조심스럽게 참고합니다");
     expect(evidence.majorFortuneTimelineRows).toHaveLength(10);
     expect(evidence.majorFortuneTimelineRows[0]).toMatchObject({
       year: 2026,
@@ -160,10 +166,34 @@ describe("majorFortuneEvidence", () => {
       evidence.strongYearsWithinCycle.every(
         (year) =>
           year.whyStrong.length > 0 &&
+          (year.whyStrong.match(/\s\/\s/gu)?.length ?? 0) <= 1 &&
           year.pushStrategy.length > 0 &&
           year.reduceStrategy.length > 0,
       ),
     ).toBe(true);
+    expect(new Set(evidence.strongYearsWithinCycle.map((year) => year.headline)).size)
+      .toBe(evidence.strongYearsWithinCycle.length);
+    expect(evidence.strongYearsWithinCycle.find((year) => year.year === 2026)?.headline).toBe(
+      "새 대운의 기준을 처음 까는 해",
+    );
+    expect(evidence.strongYearsWithinCycle.find((year) => year.year === 2027)?.headline).toBe(
+      "결과물과 표현 압박이 빨라지는 해",
+    );
+    expect(evidence.strongYearsWithinCycle.find((year) => year.year === 2028)?.headline).toBe(
+      "돈과 외부 프로젝트 접점이 커지는 해",
+    );
+    expect(evidence.strongYearsWithinCycle.find((year) => year.year === 2029)?.headline).toMatch(
+      /숫자|정산|고정비|현금흐름/u,
+    );
+    expect(evidence.strongYearsWithinCycle.find((year) => year.year === 2030)?.headline).toMatch(
+      /구조|부딪/u,
+    );
+    expect(evidence.strongYearsWithinCycle.find((year) => year.year === 2029)?.whyStrong).toMatch(
+      /정재|숫자|고정비|정산/u,
+    );
+    expect(evidence.strongYearsWithinCycle.find((year) => year.year === 2030)?.whyStrong).toMatch(
+      /辰戌 충|구조|재배치/u,
+    );
     expect(
       evidence.strongYearsWithinCycle.find((year) => year.year === 2028)
         ?.likelyArea,

@@ -47,14 +47,29 @@ function renderList(items: readonly string[]) {
 }
 
 function renderCurrentSituation(draft: MajorFortuneReportDraft) {
+  const relationshipStatusLabel = draft.userContextSummary.relationshipStatusLabel;
+  const shouldRenderRelationshipStatus =
+    relationshipStatusLabel !== null &&
+    relationshipStatusLabel !== "미입력" &&
+    isVisibleText(relationshipStatusLabel);
+
   return (
-    <section className="grid gap-3 sm:grid-cols-3" aria-label="현재 상황">
-      <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-        <p className="text-xs font-semibold text-neutral-500">현재 나의 연애</p>
-        <p className="mt-2 text-base font-semibold text-neutral-100">
-          {text(draft.userContextSummary.relationshipStatusLabel ?? "미입력")}
-        </p>
-      </div>
+    <section
+      className={
+        shouldRenderRelationshipStatus
+          ? "grid gap-3 sm:grid-cols-3"
+          : "grid gap-3 sm:grid-cols-2"
+      }
+      aria-label="현재 상황"
+    >
+      {shouldRenderRelationshipStatus ? (
+        <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+          <p className="text-xs font-semibold text-neutral-500">현재 나의 연애</p>
+          <p className="mt-2 text-base font-semibold text-neutral-100">
+            {text(relationshipStatusLabel ?? "")}
+          </p>
+        </div>
+      ) : null}
       <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
         <p className="text-xs font-semibold text-neutral-500">현재 하는 일</p>
         <p className="mt-2 text-base font-semibold text-neutral-100">
@@ -241,7 +256,13 @@ function renderMyeongliDetails(draft: MajorFortuneReportDraft) {
         ? `${star.label}: ${star.plain}`
         : `${star.label}: ${star.plain} ${star.caution}`,
     )
-    .filter(isVisibleText);
+    .filter(isVisibleText)
+    .filter(
+      (item) =>
+        !item.includes("생활 장면으로만 조심스럽게 참고합니다") &&
+        item.length >= 28,
+    )
+    .slice(0, 5);
   const hasMyeongliContent =
     isVisibleText(layers.tenGodLayer.plain) &&
     isVisibleText(layers.elementLayer.plain) &&

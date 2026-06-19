@@ -41,6 +41,10 @@ export type MajorFortuneDraftQualitySummary = {
   readonly shortStrategyBodyWarnings: number;
   readonly unknownStatusExposureWarnings: number;
   readonly weakSpecificityWarnings: number;
+  readonly unknownRelationshipPillWarnings: number;
+  readonly slashSeparatedWhyStrongWarnings: number;
+  readonly duplicateStrongYearHeadlineWarnings: number;
+  readonly weakAuxiliaryStarWarnings: number;
   readonly timelineSpacingWarnings: number;
   readonly ageBasisRepetitionWarnings: number;
 };
@@ -265,6 +269,11 @@ const specificityMarkers = [
   "가족",
   "수면",
   "식사",
+] as const;
+
+const weakAuxiliaryStarPhrases = [
+  "생활 장면으로만 조심스럽게 참고합니다",
+  "조심스럽게 참고합니다",
 ] as const;
 
 const weakStrategyPhrases = [
@@ -636,7 +645,15 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
             star.caution === null
               ? null
               : sanitizeMajorFortuneVisibleText(star.caution),
-        })),
+        }))
+        .filter(
+          (star) =>
+            star.plain.length >= 24 &&
+            !weakAuxiliaryStarPhrases.some((phrase) =>
+              star.plain.includes(phrase),
+            ),
+        )
+        .slice(0, 5),
     },
     decadeCards: draft.decadeCards.map((card) => ({
       label: card.label,
@@ -1434,6 +1451,52 @@ function countStrongYearTitleRepeatWarnings(
   ).length;
 }
 
+function countSlashSeparatedWhyStrongWarnings(
+  draft: MajorFortuneReportDraft,
+): number {
+  return draft.strongYears.filter(
+    (year) => (year.whyStrong.match(/\s\/\s/gu)?.length ?? 0) > 1,
+  ).length;
+}
+
+function countDuplicateStrongYearHeadlineWarnings(
+  draft: MajorFortuneReportDraft,
+): number {
+  const counts = new Map<string, number>();
+
+  for (const year of draft.strongYears) {
+    const headline = year.headline.trim();
+
+    if (headline.length === 0) {
+      continue;
+    }
+    counts.set(headline, (counts.get(headline) ?? 0) + 1);
+  }
+
+  return [...counts.values()].reduce(
+    (total, count) => (count > 1 ? total + count - 1 : total),
+    0,
+  );
+}
+
+function countUnknownRelationshipPillWarnings(
+  draft: MajorFortuneReportDraft,
+): number {
+  const label = draft.userContextSummary.relationshipStatusLabel ?? "";
+
+  return /관계 상태 미입력|연애 상태 미입력|관계 상태가 미입력|연애 상태가 미입력/u.test(
+    label,
+  )
+    ? 1
+    : 0;
+}
+
+function countWeakAuxiliaryStarWarnings(draft: MajorFortuneReportDraft): number {
+  return draft.myeongliLayers.auxiliaryStarsLayer.filter((star) =>
+    weakAuxiliaryStarPhrases.some((phrase) => star.plain.includes(phrase)),
+  ).length;
+}
+
 function countRepeatedThemeWarnings(visibleText: string): number {
   return repeatedThemeWords.reduce((count, word) => {
     const occurrences = countOccurrences(visibleText, word);
@@ -1604,6 +1667,13 @@ export function summarizeMajorFortuneDraftQuality(
     interpretiveText,
   );
   const weakSpecificityWarnings = countWeakSpecificityWarnings(draft);
+  const unknownRelationshipPillWarnings =
+    countUnknownRelationshipPillWarnings(draft);
+  const slashSeparatedWhyStrongWarnings =
+    countSlashSeparatedWhyStrongWarnings(draft);
+  const duplicateStrongYearHeadlineWarnings =
+    countDuplicateStrongYearHeadlineWarnings(draft);
+  const weakAuxiliaryStarWarnings = countWeakAuxiliaryStarWarnings(draft);
   const timelineSpacingWarnings = countTimelineSpacingWarnings(visibleText);
   const ageBasisRepetitionWarnings = countAgeBasisRepetitionWarnings(draft);
 
@@ -1636,6 +1706,10 @@ export function summarizeMajorFortuneDraftQuality(
     shortStrategyBodyWarnings,
     unknownStatusExposureWarnings,
     weakSpecificityWarnings,
+    unknownRelationshipPillWarnings,
+    slashSeparatedWhyStrongWarnings,
+    duplicateStrongYearHeadlineWarnings,
+    weakAuxiliaryStarWarnings,
     timelineSpacingWarnings,
     ageBasisRepetitionWarnings,
   };
@@ -1870,6 +1944,26 @@ export function validateMajorFortuneReportDraft(
   if (quality.weakSpecificityWarnings > 0) {
     warnings.push(
       `MAJOR_FORTUNE_WEAK_SPECIFICITY_WARNING:${quality.weakSpecificityWarnings}`,
+    );
+  }
+  if (quality.unknownRelationshipPillWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_UNKNOWN_RELATIONSHIP_PILL_WARNING:${quality.unknownRelationshipPillWarnings}`,
+    );
+  }
+  if (quality.slashSeparatedWhyStrongWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_SLASH_SEPARATED_WHY_STRONG_WARNING:${quality.slashSeparatedWhyStrongWarnings}`,
+    );
+  }
+  if (quality.duplicateStrongYearHeadlineWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_DUPLICATE_STRONG_YEAR_HEADLINE_WARNING:${quality.duplicateStrongYearHeadlineWarnings}`,
+    );
+  }
+  if (quality.weakAuxiliaryStarWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_WEAK_AUXILIARY_STAR_WARNING:${quality.weakAuxiliaryStarWarnings}`,
     );
   }
   if (quality.timelineSpacingWarnings > 0) {

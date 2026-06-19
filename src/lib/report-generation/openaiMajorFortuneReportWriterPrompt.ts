@@ -117,6 +117,11 @@ export function buildOpenAIMajorFortuneReportWriterMessages(input: {
       "Label strong years as 특히 강하게 체감될 수 있는 해 TOP 5.",
       "Strong years must explain why that year is strong using at least one reason: same element as major cycle, same ten-god theme, annual branch interaction with major/natal branch, annual element filling missing element, or annual element overloading heavy element.",
       "Strong years must include whyStrong, likelyArea, pushStrategy, and reduceStrategy. The view will render 밀어볼 것 and 줄일 것.",
+      "whyStrong must be interpretive copy, not a slash-separated evidence list. Write 2 to 3 Korean sentences that translate the evidence into meaning.",
+      "Strong year headlines must be unique. Do not reuse the same headline for different years.",
+      "Do not write raw whyStrong strings like 대운의 오행 반복 / 육합·충 작용 / 토 과다 압박. Convert them into readable interpretation.",
+      "Example 2029 己酉 whyStrong: 정재가 들어와 돈을 감으로 다루기보다 숫자로 고정하려는 흐름이 강해집니다. 고정비, 계약, 정산, 현금흐름을 정리하면 이 해는 손실을 줄이는 해가 될 수 있습니다.",
+      "Example 2030 庚戌 whyStrong: 辰戌 충이 강해져 이미 깔아 둔 구조와 새 책임이 부딪힐 수 있습니다. 직장 구조, 역할 경계, 계약 조건, 생활 루틴을 재배치해야 하는 해로 체감될 가능성이 큽니다.",
       "Strong year pushStrategy and reduceStrategy must be year-specific. Do not repeat the same push/reduce copy across TOP years.",
       "Strong year examples:",
       formatList([
@@ -208,6 +213,7 @@ export function buildOpenAIMajorFortuneReportWriterMessages(input: {
       "Use 명리 terms only with plain Korean translation.",
       "Every 명리 term must be translated into a plain-life metaphor before interpretation.",
       "Use expanded myeongliLayers, not only five elements. Include ten-god, branch interaction, hidden stems, auxiliary stars, and relationship status as interpretation basis when relevant.",
+      "Use auxiliary stars only when they add useful plain-life meaning. Do not overload the report with 살 names. Do not include filler such as 생활 장면으로만 조심스럽게 참고합니다.",
       "Metaphor examples:",
       formatList([
         "비견: 내 기준을 세우고, 남의 방식보다 내 방식으로 버티는 힘",
