@@ -138,6 +138,12 @@ export interface MajorFortuneEvidencePacket {
     readonly action: string;
   }[];
   readonly relationshipStatusTranslationHints: readonly string[];
+  readonly lifeStageContext: {
+    readonly label: string;
+    readonly relevantThemes: readonly string[];
+    readonly suppressedThemes: readonly string[];
+    readonly plain: string;
+  };
   readonly myeongliLayers: {
     readonly tenGodLayer: {
       readonly majorStemTenGod: string;

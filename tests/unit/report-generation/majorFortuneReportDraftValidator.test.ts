@@ -818,6 +818,17 @@ describe("majorFortuneReportDraftValidator", () => {
       strongYearTitleRepeatWarnings: 0,
       repeatedThemeWarnings: 0,
       repeatedStrategyWarnings: 0,
+      emptyMyeongliBasisWarnings: 0,
+      duplicateBigThemeWarnings: 0,
+      duplicateStrongYearPushWarnings: 0,
+      duplicateStrongYearReduceWarnings: 0,
+      duplicateTopPushWarnings: 0,
+      duplicateTopReduceWarnings: 0,
+      shortStrategyBodyWarnings: 0,
+      unknownStatusExposureWarnings: 0,
+      weakSpecificityWarnings: 0,
+      timelineSpacingWarnings: 0,
+      ageBasisRepetitionWarnings: 0,
     });
   });
 
@@ -1033,6 +1044,124 @@ describe("majorFortuneReportDraftValidator", () => {
     )).toBe(true);
   });
 
+  it("warns when bigThemes repeat the same money/resource angle", () => {
+    const draft = createValidMajorFortuneDraft();
+    const result = validateMajorFortuneReportDraft({
+      ...draft,
+      bigThemes: draft.bigThemes.map((theme, index) =>
+        index === 0
+          ? {
+              ...theme,
+              title: "돈과 자원 운용",
+              body: "돈, 자원, 계약, 외부 프로젝트를 다루는 테마입니다.",
+            }
+          : theme,
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!).duplicateBigThemeWarnings,
+    ).toBeGreaterThan(0);
+    expect(result.warnings.some((warning) =>
+      warning.startsWith("MAJOR_FORTUNE_DUPLICATE_BIG_THEME_WARNING"),
+    )).toBe(true);
+  });
+
+  it("warns when strong year push and reduce strategies repeat too much", () => {
+    const repeatedPush = "외부 프로젝트, 계약, 부업성 수익, 자원 배치";
+    const repeatedReduce = "감으로 하는 투자, 애매한 돈거래, 구두 약속";
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      strongYears: createValidMajorFortuneDraft().strongYears.map((year) => ({
+        ...year,
+        pushStrategy: repeatedPush,
+        reduceStrategy: repeatedReduce,
+      })),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!)
+        .duplicateStrongYearPushWarnings,
+    ).toBeGreaterThan(0);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!)
+        .duplicateStrongYearReduceWarnings,
+    ).toBeGreaterThan(0);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!).duplicateTopPushWarnings,
+    ).toBeGreaterThan(0);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!).duplicateTopReduceWarnings,
+    ).toBeGreaterThan(0);
+    expect(result.warnings.some((warning) =>
+      warning.startsWith("MAJOR_FORTUNE_DUPLICATE_STRONG_YEAR_PUSH_WARNING"),
+    )).toBe(true);
+    expect(result.warnings.some((warning) =>
+      warning.startsWith("MAJOR_FORTUNE_DUPLICATE_STRONG_YEAR_REDUCE_WARNING"),
+    )).toBe(true);
+  });
+
+  it("warns when timeline labels are missing spacing", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      majorFortuneTimelineRows:
+        createValidMajorFortuneDraft().majorFortuneTimelineRows.map((row, index) =>
+          index === 0
+            ? {
+                ...row,
+                oneLine: "대운戊辰과 세운丙午가 겹치는 해입니다.",
+              }
+            : row,
+        ),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!).timelineSpacingWarnings,
+    ).toBeGreaterThan(0);
+  });
+
+  it("normalizes age basis labels to one timeline row", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      majorFortuneTimelineRows:
+        createValidMajorFortuneDraft().majorFortuneTimelineRows.map((row) => ({
+          ...row,
+          ageBasisLabel: "대운표 기준 나이",
+        })),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      result.value?.majorFortuneTimelineRows.filter(
+        (row) => row.ageBasisLabel !== null,
+      ),
+    ).toHaveLength(1);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!).ageBasisRepetitionWarnings,
+    ).toBe(0);
+  });
+
+  it("warns when myeongli basis content is empty", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      myeongliLayers: {
+        ...createValidMajorFortuneDraft().myeongliLayers,
+        tenGodLayer: {
+          ...createValidMajorFortuneDraft().myeongliLayers.tenGodLayer,
+          plain: "",
+        },
+      },
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!).emptyMyeongliBasisWarnings,
+    ).toBeGreaterThan(0);
+  });
+
   it("warns when unknown relationship status is interpreted as known", () => {
     const result = validateMajorFortuneReportDraft({
       ...createValidMajorFortuneDraft(),
@@ -1048,6 +1177,62 @@ describe("majorFortuneReportDraftValidator", () => {
       summarizeMajorFortuneDraftQuality(result.value!)
         .relationshipStatusMisuseWarnings,
     ).toBeGreaterThan(0);
+  });
+
+  it("warns when unknown relationship status is exposed in interpretive body", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      finalAdvice: createValidMajorFortuneDraft().finalAdvice.map((advice) =>
+        advice.label === "연애·가족"
+          ? {
+              ...advice,
+              body: "관계 상태가 미입력이므로 단정하지 않고 봅니다. 연애 상태가 입력되지 않아 생활 반경 중심으로 해석합니다.",
+            }
+          : advice,
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!)
+        .unknownStatusExposureWarnings,
+    ).toBeGreaterThan(0);
+    expect(result.warnings.some((warning) =>
+      warning.startsWith("MAJOR_FORTUNE_UNKNOWN_STATUS_EXPOSURE_WARNING"),
+    )).toBe(true);
+  });
+
+  it("warns when a reality strategy body is too short", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      finalAdvice: createValidMajorFortuneDraft().finalAdvice.map((advice, index) =>
+        index === 0 ? { ...advice, body: "짧은 조언입니다." } : advice,
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!).shortStrategyBodyWarnings,
+    ).toBeGreaterThan(0);
+    expect(result.warnings.some((warning) =>
+      warning.startsWith("MAJOR_FORTUNE_SHORT_STRATEGY_BODY_WARNING"),
+    )).toBe(true);
+  });
+
+  it("preserves newly allowed immersive but non-deterministic phrases", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      openingSummary:
+        "수익화 접점이 늘어날 수 있습니다. 외부 프로젝트 가능성이 커질 수 있습니다. 프로젝트에서 큰 성과를 볼 수 있습니다. 연애 가능성이 올라갑니다. 결혼을 고민할 만한 압력이 커질 수 있습니다. 이직·직무 전환을 검토하기 쉬운 흐름입니다.",
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.openingSummary).toContain("수익화 접점이 늘어날 수 있습니다");
+    expect(result.value?.openingSummary).toContain("외부 프로젝트 가능성이 커질 수 있습니다");
+    expect(result.value?.openingSummary).toContain("연애 가능성이 올라갑니다");
+    expect(result.value?.openingSummary).toContain(
+      "이직·직무 전환을 검토하기 쉬운 흐름입니다",
+    );
   });
 
   it("warns when strong year headline repeats the section title", () => {

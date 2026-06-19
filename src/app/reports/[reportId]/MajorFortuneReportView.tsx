@@ -13,14 +13,34 @@ type MajorFortuneReportViewProps = {
 const majorFortuneCycleBasisFallback = "입력된 대운표 기준";
 
 function text(value: string): string {
-  return sanitizeMajorFortuneVisibleText(value);
+  return sanitizeMajorFortuneVisibleText(value)
+    .replace(/관계 상태가 미입력이므로\s*/gu, "")
+    .replace(/관계 상태가 미입력이라서\s*/gu, "")
+    .replace(/관계 상태가 미입력이라\s*/gu, "")
+    .replace(/연애 상태가 입력되지 않아\s*/gu, "")
+    .replace(/연애 상태가 입력되지 않았으므로\s*/gu, "");
+}
+
+function isVisibleText(value: string): boolean {
+  const sanitized = text(value);
+
+  return (
+    sanitized.length > 0 &&
+    !/백호대살|diagnostic-only|evidence|debug|fixture/iu.test(sanitized)
+  );
 }
 
 function renderList(items: readonly string[]) {
+  const visibleItems = items.map(text).filter(isVisibleText);
+
+  if (visibleItems.length === 0) {
+    return null;
+  }
+
   return (
     <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-300">
-      {items.map((item) => (
-        <li key={item}>{text(item)}</li>
+      {visibleItems.map((item) => (
+        <li key={item}>{item}</li>
       ))}
     </ul>
   );
@@ -96,6 +116,10 @@ function renderCycleBasis(draft: MajorFortuneReportDraft) {
 }
 
 function renderTimeline(draft: MajorFortuneReportDraft) {
+  const ageBasisNote = draft.majorFortuneTimelineRows.find(
+    (row) => row.ageBasisLabel !== null,
+  )?.ageBasisLabel;
+
   return (
     <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
       <div>
@@ -105,13 +129,16 @@ function renderTimeline(draft: MajorFortuneReportDraft) {
         <p className="mt-1 text-sm text-neutral-400">
           대운과 세운을 나란히 놓고 10년의 전략 지점을 봅니다.
         </p>
+        {ageBasisNote === undefined || ageBasisNote === null ? null : (
+          <p className="mt-1 text-xs text-neutral-500">
+            나이는 {text(ageBasisNote).replace(/ 나이$/u, "")}으로 표시합니다.
+          </p>
+        )}
       </div>
       <div className="overflow-hidden rounded-lg border border-neutral-800">
-        <div className="hidden grid-cols-[7.5rem_5rem_6rem_6rem_1fr] gap-0 bg-neutral-900/90 px-4 py-3 text-xs font-semibold text-neutral-500 md:grid">
+        <div className="hidden grid-cols-[8rem_9rem_1fr] gap-0 bg-neutral-900/90 px-4 py-3 text-xs font-semibold text-neutral-500 md:grid">
           <span>연도·년차</span>
-          <span>나이 기준</span>
-          <span>대운</span>
-          <span>세운</span>
+          <span>대운·세운</span>
           <span>한 줄 전략</span>
         </div>
         <div className="divide-y divide-neutral-800">
@@ -120,14 +147,19 @@ function renderTimeline(draft: MajorFortuneReportDraft) {
               key={`${row.year}:${row.annualGanji}`}
               className={
                 row.isCurrentYear
-                  ? "grid gap-3 bg-sky-950/35 px-4 py-4 text-sm ring-1 ring-inset ring-sky-500/35 md:grid-cols-[7.5rem_5rem_6rem_6rem_1fr]"
-                  : "grid gap-3 bg-neutral-950/40 px-4 py-4 text-sm md:grid-cols-[7.5rem_5rem_6rem_6rem_1fr]"
+                  ? "grid gap-3 bg-sky-950/35 px-4 py-4 text-sm ring-1 ring-inset ring-sky-500/35 md:grid-cols-[8rem_9rem_1fr]"
+                  : "grid gap-3 bg-neutral-950/40 px-4 py-4 text-sm md:grid-cols-[8rem_9rem_1fr]"
               }
             >
               <div>
                 <p className="font-semibold text-neutral-50">
                   {row.year}년 · {row.yearIndexInCycle}년차
                 </p>
+                {row.ageLabel === null ? null : (
+                  <p className="mt-1 text-[11px] text-neutral-500">
+                    {text(row.ageLabel)}
+                  </p>
+                )}
                 <div className="mt-1 flex flex-wrap gap-1">
                   {row.badges.map((badge) => (
                     <span
@@ -139,32 +171,13 @@ function renderTimeline(draft: MajorFortuneReportDraft) {
                   ))}
                 </div>
               </div>
-              <div>
-                <p className="font-medium text-neutral-300">
-                  {text(row.ageLabel ?? "대운표 기준")}
-                </p>
-                {row.ageBasisLabel === null ? null : (
-                  <p className="mt-1 text-[11px] text-neutral-500">
-                    {text(row.ageBasisLabel)}
-                  </p>
-                )}
-              </div>
-              <p className="font-semibold text-neutral-100">
-                <span className="mr-1 text-xs text-neutral-500">대운</span>
-                {text(row.majorGanji)}
+              <p className="font-semibold leading-6 text-neutral-100">
+                대운 {text(row.majorGanji)}
+                <br />
+                세운 {text(row.annualGanji)}
               </p>
-              <p className="font-semibold text-neutral-100">
-                <span className="mr-1 text-xs text-neutral-500">세운</span>
-                {text(row.annualGanji)}
-              </p>
-              <div className="space-y-1">
+              <div className="space-y-2">
                 <p className="leading-6 text-neutral-200">{text(row.oneLine)}</p>
-                <p className="leading-6 text-neutral-400">
-                  {text(row.annualTenGodLabel)}
-                  {row.keyInteractionLabel === null
-                    ? ""
-                    : ` · ${text(row.keyInteractionLabel)}`}
-                </p>
                 <p className="leading-6 text-sky-100">
                   전략: {text(row.strategy)}
                 </p>
@@ -215,57 +228,74 @@ function renderStrongYears(draft: MajorFortuneReportDraft) {
 
 function renderMyeongliDetails(draft: MajorFortuneReportDraft) {
   const layers = draft.myeongliLayers;
+  const branchInteractions = layers.branchInteractionLayer.interactions
+    .slice(0, 5)
+    .map(
+      (interaction) =>
+        `${interaction.type}: ${interaction.plainType} - ${interaction.plain}`,
+    )
+    .filter(isVisibleText);
+  const auxiliaryStars = layers.auxiliaryStarsLayer
+    .map((star) =>
+      star.caution === null
+        ? `${star.label}: ${star.plain}`
+        : `${star.label}: ${star.plain} ${star.caution}`,
+    )
+    .filter(isVisibleText);
+  const hasMyeongliContent =
+    isVisibleText(layers.tenGodLayer.plain) &&
+    isVisibleText(layers.elementLayer.plain) &&
+    (isVisibleText(layers.branchInteractionLayer.plain) ||
+      branchInteractions.length > 0) &&
+    isVisibleText(layers.hiddenStemLayer.plain);
+
+  if (!hasMyeongliContent) {
+    return null;
+  }
 
   return (
-    <details className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-      <summary className="cursor-pointer text-lg font-semibold text-neutral-50">
-        명리 근거 펼쳐보기
-      </summary>
+    <section className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+      <h2 className="text-lg font-semibold text-neutral-50">명리 근거</h2>
       <div className="mt-4 grid gap-3">
         <section className="rounded-md border border-neutral-800 bg-neutral-900/70 p-4">
-          <h3 className="text-sm font-semibold text-sky-100">십성</h3>
+          <h3 className="text-sm font-semibold text-sky-100">1. 십성</h3>
           <p className="mt-2 text-sm leading-6 text-neutral-300">
             {text(layers.tenGodLayer.plain)}
           </p>
         </section>
         <section className="rounded-md border border-neutral-800 bg-neutral-900/70 p-4">
-          <h3 className="text-sm font-semibold text-sky-100">오행</h3>
+          <h3 className="text-sm font-semibold text-sky-100">2. 오행</h3>
           <p className="mt-2 text-sm leading-6 text-neutral-300">
             {text(layers.elementLayer.plain)}
           </p>
         </section>
         <section className="rounded-md border border-neutral-800 bg-neutral-900/70 p-4">
-          <h3 className="text-sm font-semibold text-sky-100">지지 작용</h3>
+          <h3 className="text-sm font-semibold text-sky-100">3. 지지 작용</h3>
           <p className="mt-2 text-sm leading-6 text-neutral-300">
             {text(layers.branchInteractionLayer.plain)}
           </p>
-          {renderList(
-            layers.branchInteractionLayer.interactions
-              .slice(0, 5)
-              .map(
-                (interaction) =>
-                  `${interaction.type}: ${interaction.plainType} - ${interaction.plain}`,
-              ),
-          )}
+          {renderList(branchInteractions)}
         </section>
         <section className="rounded-md border border-neutral-800 bg-neutral-900/70 p-4">
-          <h3 className="text-sm font-semibold text-sky-100">지장간</h3>
+          <h3 className="text-sm font-semibold text-sky-100">4. 지장간</h3>
           <p className="mt-2 text-sm leading-6 text-neutral-300">
             {text(layers.hiddenStemLayer.plain)}
           </p>
         </section>
         <section className="rounded-md border border-neutral-800 bg-neutral-900/70 p-4">
-          <h3 className="text-sm font-semibold text-sky-100">신살·귀인 참고</h3>
-          {renderList(
-            layers.auxiliaryStarsLayer.map((star) =>
-              star.caution === null
-                ? `${star.label}: ${star.plain}`
-                : `${star.label}: ${star.plain} ${star.caution}`,
-            ),
+          <h3 className="text-sm font-semibold text-sky-100">
+            5. 신살·귀인 참고
+          </h3>
+          {auxiliaryStars.length === 0 ? (
+            <p className="mt-2 text-sm leading-6 text-neutral-300">
+              원국의 귀인·살은 사용자용으로 안전한 항목만 생활 작용으로 번역합니다.
+            </p>
+          ) : (
+            renderList(auxiliaryStars)
           )}
         </section>
       </div>
-    </details>
+    </section>
   );
 }
 

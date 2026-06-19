@@ -64,6 +64,17 @@ describe("smoke_generate_major_fortune_report_draft source", () => {
     expect(scriptSource).toContain("technical term warnings:");
     expect(scriptSource).toContain("small event overfocus warnings:");
     expect(scriptSource).toContain("wrong cycle basis warnings:");
+    expect(scriptSource).toContain("empty myeongli basis warnings:");
+    expect(scriptSource).toContain("duplicate big theme warnings:");
+    expect(scriptSource).toContain("duplicate strong year push warnings:");
+    expect(scriptSource).toContain("duplicate strong year reduce warnings:");
+    expect(scriptSource).toContain("duplicate top push warnings:");
+    expect(scriptSource).toContain("duplicate top reduce warnings:");
+    expect(scriptSource).toContain("short strategy body warnings:");
+    expect(scriptSource).toContain("unknown status exposure warnings:");
+    expect(scriptSource).toContain("weak specificity warnings:");
+    expect(scriptSource).toContain("timeline spacing warnings:");
+    expect(scriptSource).toContain("age basis repetition warnings:");
     expect(scriptSource).toContain("generic timeline warnings:");
     expect(scriptSource).toContain("repeated summary warnings:");
     expect(scriptSource).toContain("weak strategy warnings:");

@@ -32,6 +32,17 @@ export type MajorFortuneDraftQualitySummary = {
   readonly strongYearTitleRepeatWarnings: number;
   readonly repeatedThemeWarnings: number;
   readonly repeatedStrategyWarnings: number;
+  readonly emptyMyeongliBasisWarnings: number;
+  readonly duplicateBigThemeWarnings: number;
+  readonly duplicateStrongYearPushWarnings: number;
+  readonly duplicateStrongYearReduceWarnings: number;
+  readonly duplicateTopPushWarnings: number;
+  readonly duplicateTopReduceWarnings: number;
+  readonly shortStrategyBodyWarnings: number;
+  readonly unknownStatusExposureWarnings: number;
+  readonly weakSpecificityWarnings: number;
+  readonly timelineSpacingWarnings: number;
+  readonly ageBasisRepetitionWarnings: number;
 };
 
 export const DEFAULT_MAJOR_FORTUNE_SAFETY_NOTES = [
@@ -65,6 +76,7 @@ const internalForbiddenWords = [
   "schema",
   "fixture",
   "precomputed",
+  "백호대살",
 ] as const;
 
 const stemDayMasterReplacements = [
@@ -216,12 +228,43 @@ const genericTimelinePhrases = [
 ] as const;
 
 const repeatedStrategyLimit = 3;
+const repeatedStrongYearStrategyLimit = 1;
 
 const relationshipKnownClaimPhrases = [
   "솔로탈출",
   "애인",
   "배우자",
   "결혼",
+] as const;
+
+const unknownRelationshipExposurePhrases = [
+  "관계 상태가 미입력",
+  "연애 상태가 입력되지",
+  "관계 상태 미입력",
+  "연애 상태 미입력",
+  "미입력이므로",
+  "입력되지 않아",
+] as const;
+
+const specificityMarkers = [
+  "프로젝트",
+  "계약",
+  "연봉",
+  "외부 프로젝트",
+  "수익화",
+  "연애",
+  "결혼",
+  "독립",
+  "주거",
+  "생활비",
+  "포트폴리오",
+  "보고",
+  "문서",
+  "일정",
+  "연락",
+  "가족",
+  "수면",
+  "식사",
 ] as const;
 
 const weakStrategyPhrases = [
@@ -649,12 +692,12 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
       pushStrategy: sanitizeMajorFortuneVisibleText(year.pushStrategy),
       reduceStrategy: sanitizeMajorFortuneVisibleText(year.reduceStrategy),
     })),
-    majorFortuneTimelineRows: draft.majorFortuneTimelineRows.map((row) => ({
+    majorFortuneTimelineRows: draft.majorFortuneTimelineRows.map((row, index) => ({
       year: row.year,
       ageLabel:
         row.ageLabel === null ? null : sanitizeMajorFortuneVisibleText(row.ageLabel),
       ageBasisLabel:
-        row.ageBasisLabel === null
+        index > 0 || row.ageBasisLabel === null
           ? null
           : sanitizeMajorFortuneVisibleText(row.ageBasisLabel),
       yearIndexInCycle: row.yearIndexInCycle,
@@ -1007,6 +1050,63 @@ function collectVisibleStrings(draft: MajorFortuneReportDraft): readonly string[
   ];
 }
 
+function collectInterpretiveStrings(
+  draft: MajorFortuneReportDraft,
+): readonly string[] {
+  return [
+    draft.openingTitle,
+    draft.openingSummary,
+    draft.coreLine,
+    draft.userContextSummary.translationNote,
+    draft.previousToCurrentShift.plain,
+    ...draft.previousToCurrentShift.whatChanged,
+    draft.decadeArchetype.plain,
+    ...draft.bigThemes.flatMap((theme) => [
+      theme.body,
+      ...theme.likelyScenes,
+      theme.strategy,
+    ]),
+    ...draft.decadeCards.flatMap((card) => [card.headline, card.body]),
+    ...draft.keySignals.flatMap((signal) => [
+      signal.title,
+      signal.body,
+      signal.evidenceLabel,
+    ]),
+    ...Object.values(draft.majorStructure),
+    ...draft.cycleChapters.flatMap((chapter) => [
+      chapter.headline,
+      chapter.body,
+      ...chapter.likelyScenes,
+      ...chapter.practicalAdvice,
+    ]),
+    ...draft.phaseTimeline.flatMap((phase) => [
+      phase.headline,
+      phase.body,
+      phase.advice,
+    ]),
+    ...draft.strongYears.flatMap((year) => [
+      year.headline,
+      year.body,
+      year.advice,
+      year.whyStrong,
+      year.pushStrategy,
+      year.reduceStrategy,
+    ]),
+    ...draft.majorFortuneTimelineRows.flatMap((row) => [
+      row.oneLine,
+      row.strategy,
+    ]),
+    ...draft.cycleYearTimeline.flatMap((year) => [
+      year.headline,
+      year.roleOfYearInCycle,
+      year.plainInterpretation,
+      year.strategicFocus,
+      year.whyItMatters,
+    ]),
+    ...draft.finalAdvice.map((advice) => advice.body),
+  ];
+}
+
 function countOccurrences(text: string, phrase: string): number {
   return phrase.length === 0 ? 0 : text.split(phrase).length - 1;
 }
@@ -1293,6 +1393,39 @@ function countRelationshipStatusMisuseWarnings(
   );
 }
 
+function countUnknownStatusExposureWarnings(
+  draft: MajorFortuneReportDraft,
+  interpretiveText: string,
+): number {
+  if (draft.userContextSummary.relationshipStatusLabel !== "미입력") {
+    return 0;
+  }
+
+  return unknownRelationshipExposurePhrases.reduce(
+    (count, phrase) => count + countOccurrences(interpretiveText, phrase),
+    0,
+  );
+}
+
+function countShortStrategyBodyWarnings(draft: MajorFortuneReportDraft): number {
+  return draft.finalAdvice.filter((advice) => {
+    const body = advice.body.trim();
+
+    return body.length < 16;
+  }).length;
+}
+
+function countWeakSpecificityWarnings(draft: MajorFortuneReportDraft): number {
+  return draft.finalAdvice.filter((advice) => {
+    const body = advice.body;
+    const markerCount = specificityMarkers.filter((marker) =>
+      body.includes(marker),
+    ).length;
+
+    return body.length < 90 && markerCount === 0;
+  }).length;
+}
+
 function countStrongYearTitleRepeatWarnings(
   draft: MajorFortuneReportDraft,
 ): number {
@@ -1330,10 +1463,99 @@ function countRepeatedStrategyWarnings(
   );
 }
 
+function countRepeatedStrongYearStrategyWarnings(
+  strategies: readonly string[],
+): number {
+  const counts = new Map<string, number>();
+
+  for (const strategy of strategies) {
+    const normalized = strategy.trim();
+
+    if (normalized.length === 0) {
+      continue;
+    }
+    counts.set(normalized, (counts.get(normalized) ?? 0) + 1);
+  }
+
+  return [...counts.values()].reduce(
+    (total, count) =>
+      count > repeatedStrongYearStrategyLimit
+        ? total + count - repeatedStrongYearStrategyLimit
+        : total,
+    0,
+  );
+}
+
+function countEmptyMyeongliBasisWarnings(
+  draft: MajorFortuneReportDraft,
+): number {
+  const layers = draft.myeongliLayers;
+  const hasTenGod = layers.tenGodLayer.plain.trim().length > 0;
+  const hasElement = layers.elementLayer.plain.trim().length > 0;
+  const hasBranch =
+    layers.branchInteractionLayer.plain.trim().length > 0 ||
+    layers.branchInteractionLayer.interactions.length > 0;
+  const hasHiddenStem = layers.hiddenStemLayer.plain.trim().length > 0;
+
+  return hasTenGod && hasElement && hasBranch && hasHiddenStem ? 0 : 1;
+}
+
+function getBigThemeDominantDomain(
+  theme: MajorFortuneReportDraft["bigThemes"][number],
+): "money" | "work" | "relationship_life" | "study" | "other" {
+  const text = theme.title;
+
+  if (/돈|자원|계약|외부 프로젝트|비용|수익|정산|현금흐름|현실 숫자/u.test(text)) {
+    return "money";
+  }
+  if (/역할|책임|직업|운영|프로젝트|성과|문서|보고|요구사항/u.test(text)) {
+    return "work";
+  }
+  if (/관계|생활|몸|리듬|가족|연락|경계|회복|수면|식사/u.test(text)) {
+    return "relationship_life";
+  }
+  if (/공부|자격증|포트폴리오|학업|자료/u.test(text)) {
+    return "study";
+  }
+
+  return "other";
+}
+
+function countDuplicateBigThemeWarnings(draft: MajorFortuneReportDraft): number {
+  const counts = new Map<string, number>();
+
+  for (const theme of draft.bigThemes) {
+    const domain = getBigThemeDominantDomain(theme);
+
+    if (domain === "other") {
+      continue;
+    }
+    counts.set(domain, (counts.get(domain) ?? 0) + 1);
+  }
+
+  return [...counts.values()].reduce(
+    (total, count) => (count > 1 ? total + count - 1 : total),
+    0,
+  );
+}
+
+function countTimelineSpacingWarnings(visibleText: string): number {
+  return (visibleText.match(/(?:대운|세운)[甲乙丙丁戊己庚辛壬癸]/gu)?.length ?? 0);
+}
+
+function countAgeBasisRepetitionWarnings(draft: MajorFortuneReportDraft): number {
+  const count = draft.majorFortuneTimelineRows.filter(
+    (row) => row.ageBasisLabel !== null && row.ageBasisLabel.trim().length > 0,
+  ).length;
+
+  return count > 1 ? count - 1 : 0;
+}
+
 export function summarizeMajorFortuneDraftQuality(
   draft: MajorFortuneReportDraft,
 ): MajorFortuneDraftQualitySummary {
   const visibleText = collectVisibleStrings(draft).join("\n");
+  const interpretiveText = collectInterpretiveStrings(draft).join("\n");
   const hardClaimWarnings = hardClaimReplacements.reduce(
     (count, [phrase]) => count + countOccurrences(visibleText, phrase),
     0,
@@ -1364,6 +1586,26 @@ export function summarizeMajorFortuneDraftQuality(
     countStrongYearTitleRepeatWarnings(draft);
   const repeatedThemeWarnings = countRepeatedThemeWarnings(visibleText);
   const repeatedStrategyWarnings = countRepeatedStrategyWarnings(draft);
+  const emptyMyeongliBasisWarnings = countEmptyMyeongliBasisWarnings(draft);
+  const duplicateBigThemeWarnings = countDuplicateBigThemeWarnings(draft);
+  const duplicateStrongYearPushWarnings =
+    countRepeatedStrongYearStrategyWarnings(
+      draft.strongYears.map((year) => year.pushStrategy),
+    );
+  const duplicateStrongYearReduceWarnings =
+    countRepeatedStrongYearStrategyWarnings(
+      draft.strongYears.map((year) => year.reduceStrategy),
+    );
+  const duplicateTopPushWarnings = duplicateStrongYearPushWarnings;
+  const duplicateTopReduceWarnings = duplicateStrongYearReduceWarnings;
+  const shortStrategyBodyWarnings = countShortStrategyBodyWarnings(draft);
+  const unknownStatusExposureWarnings = countUnknownStatusExposureWarnings(
+    draft,
+    interpretiveText,
+  );
+  const weakSpecificityWarnings = countWeakSpecificityWarnings(draft);
+  const timelineSpacingWarnings = countTimelineSpacingWarnings(visibleText);
+  const ageBasisRepetitionWarnings = countAgeBasisRepetitionWarnings(draft);
 
   return {
     hardClaimWarnings,
@@ -1385,6 +1627,17 @@ export function summarizeMajorFortuneDraftQuality(
     strongYearTitleRepeatWarnings,
     repeatedThemeWarnings,
     repeatedStrategyWarnings,
+    emptyMyeongliBasisWarnings,
+    duplicateBigThemeWarnings,
+    duplicateStrongYearPushWarnings,
+    duplicateStrongYearReduceWarnings,
+    duplicateTopPushWarnings,
+    duplicateTopReduceWarnings,
+    shortStrategyBodyWarnings,
+    unknownStatusExposureWarnings,
+    weakSpecificityWarnings,
+    timelineSpacingWarnings,
+    ageBasisRepetitionWarnings,
   };
 }
 
@@ -1576,6 +1829,57 @@ export function validateMajorFortuneReportDraft(
   if (quality.repeatedStrategyWarnings > 0) {
     warnings.push(
       `MAJOR_FORTUNE_REPEATED_STRATEGY_WARNING:${quality.repeatedStrategyWarnings}`,
+    );
+  }
+  if (quality.emptyMyeongliBasisWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_EMPTY_MYEONGLI_BASIS_WARNING:${quality.emptyMyeongliBasisWarnings}`,
+    );
+  }
+  if (quality.duplicateBigThemeWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_DUPLICATE_BIG_THEME_WARNING:${quality.duplicateBigThemeWarnings}`,
+    );
+  }
+  if (quality.duplicateStrongYearPushWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_DUPLICATE_STRONG_YEAR_PUSH_WARNING:${quality.duplicateStrongYearPushWarnings}`,
+    );
+    warnings.push(
+      `MAJOR_FORTUNE_DUPLICATE_TOP_PUSH_WARNING:${quality.duplicateTopPushWarnings}`,
+    );
+  }
+  if (quality.duplicateStrongYearReduceWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_DUPLICATE_STRONG_YEAR_REDUCE_WARNING:${quality.duplicateStrongYearReduceWarnings}`,
+    );
+    warnings.push(
+      `MAJOR_FORTUNE_DUPLICATE_TOP_REDUCE_WARNING:${quality.duplicateTopReduceWarnings}`,
+    );
+  }
+  if (quality.shortStrategyBodyWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_SHORT_STRATEGY_BODY_WARNING:${quality.shortStrategyBodyWarnings}`,
+    );
+  }
+  if (quality.unknownStatusExposureWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_UNKNOWN_STATUS_EXPOSURE_WARNING:${quality.unknownStatusExposureWarnings}`,
+    );
+  }
+  if (quality.weakSpecificityWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_WEAK_SPECIFICITY_WARNING:${quality.weakSpecificityWarnings}`,
+    );
+  }
+  if (quality.timelineSpacingWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_TIMELINE_SPACING_WARNING:${quality.timelineSpacingWarnings}`,
+    );
+  }
+  if (quality.ageBasisRepetitionWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_AGE_BASIS_REPETITION_WARNING:${quality.ageBasisRepetitionWarnings}`,
     );
   }
 

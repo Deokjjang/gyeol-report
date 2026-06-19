@@ -77,7 +77,20 @@ describe("majorFortuneEvidence", () => {
     expect(evidence.longRangeRisks.length).toBeGreaterThan(0);
     expect(evidence.longRangeOpportunities.length).toBeGreaterThan(0);
     expect(evidence.relationshipStatusTranslationHints.join("\n")).toContain(
+      "생활 반경",
+    );
+    expect(evidence.relationshipStatusTranslationHints.join("\n")).not.toContain(
       "미입력",
+    );
+    expect(evidence.lifeStageContext.label).toBe("20대 후반~30대 중반 전환기");
+    expect(evidence.lifeStageContext.relevantThemes).toContain(
+      "커리어 기준 확립",
+    );
+    expect(evidence.lifeStageContext.relevantThemes).toContain(
+      "이직·직무 전환 검토",
+    );
+    expect(evidence.lifeStageContext.relevantThemes).toContain(
+      "연봉·외부 프로젝트·수익화 접점",
     );
     expect(evidence.calculationBasis.displayLabel).toBe(
       "입력된 대운표 기준",
@@ -231,7 +244,8 @@ describe("majorFortuneEvidence", () => {
     expect(byStatus.get("single")).toMatch(/소개|생활 반경|커뮤니티/u);
     expect(byStatus.get("dating")).toMatch(/연락|일정|생활 균형|생활 리듬/u);
     expect(byStatus.get("married")).toMatch(/가족|배우자|분담/u);
-    expect(byStatus.get("unknown")).toMatch(/미입력|단정하지/u);
+    expect(byStatus.get("unknown")).toMatch(/생활 반경|현실 접점/u);
+    expect(byStatus.get("unknown")).not.toMatch(/미입력|입력되지/u);
   });
 
   it("creates ten-god-specific strategic themes across matrix fixtures", () => {

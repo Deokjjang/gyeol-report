@@ -99,6 +99,8 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("Use userContext.relationshipStatus");
     expect(text).toContain("Do not change calculations based on userContext");
     expect(text).toContain("If relationshipStatus is unknown");
+    expect(text).toContain("handle it silently");
+    expect(text).toContain("lifeStageContext, currentAge, lifeStatus, fieldLabel, and relationshipStatus");
   });
 
   it("requires aggressive strategic but non-deterministic interpretation", () => {
@@ -113,12 +115,35 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("돈이 움직이는 장면이 늘어날 수 있습니다");
     expect(text).toContain("외부 프로젝트 가능성이 커질 수 있습니다");
     expect(text).toContain("관계가 현실 접점에서 열릴 수 있습니다");
+    expect(text).toContain("편재 대운이라고 무조건 큰돈이 들어온다는 뜻은 아닙니다");
+    expect(text).toContain("돈이 움직이는 접점이 늘어나는 흐름입니다");
+    expect(text).toContain("생활 반경 안의 관계로 풀어라");
     expect(text).toContain("밀려날 수 있습니다");
     expect(text).toContain("직급은 그대로인데 책임만 먼저 커지는 상황");
     expect(text).toContain("수입 증가보다 고정지출");
     expect(text).toContain("프로젝트에서 큰 성과를 볼 가능성");
     expect(text).toContain("Do not say everything can happen");
     expect(text).toContain("how to respond");
+    expect(text).toContain("Do not be timid");
+    expect(text).toContain("serious but immersive 10-year strategy reading");
+    expect(text).toContain("late 20s to mid 30s");
+    expect(text).toContain("side-income windows");
+    expect(text).toContain("Do not apply marriage, career, salary, or asset framing blindly to minors");
+    expect(text).toContain("수익화 접점이 늘어날 수 있습니다");
+    expect(text).toContain("이직·직무 전환을 검토하기 쉬운 흐름입니다");
+    expect(text).toContain("결혼을 고민할 만한 압력이 커질 수 있습니다");
+  });
+
+  it("requires distinct big themes and year-specific strong-year strategies", () => {
+    const text = promptText();
+
+    expect(text).toContain("bigThemes must have distinct strategic angles");
+    expect(text).toContain("돈과 자원 운용");
+    expect(text).toContain("생활 리듬과 관계 경계");
+    expect(text).toContain("Strong year pushStrategy and reduceStrategy must be year-specific");
+    expect(text).toContain("2027 丁未 · 일·성과");
+    expect(text).toContain("2029 己酉 · 돈·현실관리");
+    expect(text).toContain("과도한 보수성, 검토만 하다 놓치는 기회");
   });
 
   it("requires plain Korean metaphors for technical terms", () => {
@@ -143,10 +168,20 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("single: 솔로라면, 이 대운은 감정만으로");
     expect(text).toContain("dating: 연애 중이라면, 감정보다 일정");
     expect(text).toContain("married: 기혼이라면, 집안 역할");
-    expect(text).toContain(
-      "unknown: 관계 상태가 미입력이므로 솔로탈출, 애인, 배우자 같은 단정 표현을 쓰지 말고",
-    );
+    expect(text).toContain("unknown: Do not expose the unknown status limitation");
+    expect(text).toContain("Do not write 관계 상태가 미입력");
+    expect(text).toContain("감정 자체보다 생활 반경");
     expect(text).not.toContain(["compli", "cated", ":"].join(""));
+  });
+
+  it("requires immersive final advice strategy blocks", () => {
+    const text = promptText();
+
+    expect(text).toContain("Each finalAdvice item body must be a real strategy block of 3 to 5 sentences");
+    expect(text).toContain("what becomes more likely");
+    expect(text).toContain("what to push");
+    expect(text).toContain("what to avoid");
+    expect(text).toContain("Do not write short generic finalAdvice summaries");
   });
 
   it("forbids hard claims and raw fixture/precomputed wording", () => {

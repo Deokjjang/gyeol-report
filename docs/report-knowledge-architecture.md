@@ -2091,6 +2091,66 @@ and forbids internal terms such as evidence, debug, fixture, precomputed, and
 schema in those notes. Smoke output reports safety note count, safety note
 warnings, and whether repair occurred. DAEUN-04A itself does not call OpenAI.
 
+## DAEUN-04B Major Fortune View Density and Evidence Rendering
+
+DAEUN-04B addresses product polish after the first generated 대운 preview. The
+명리 근거 section must render actual content rather than an empty collapsed
+summary. The visible basis includes 십성, 오행, 지지 작용, 지장간, and safe
+신살·귀인 references. Diagnostic-only or internal terms such as 백호대살,
+diagnostic-only, evidence, debug, and fixture are filtered from the user-facing
+view.
+
+대운 timeline rows are compact. The view shows `year + yearIndexInCycle`, badges,
+`대운 戊辰 · 세운 丙午` style labels with spacing, one short row interpretation,
+and one short strategy. Detailed technical explanations move to the 명리 근거
+section. The age basis is displayed once above the table, not repeated in every
+row.
+
+`bigThemes` must be distinct strategic angles. For a 戊辰 편재 대운, preferred
+themes are 돈과 자원 운용, 역할과 책임의 설계, and 생활 리듬과 관계 경계. The
+validator warns when themes repeat the same money/resource angle without adding a
+new strategic purpose.
+
+Strong-year TOP 5 strategies must vary by the year. The validator and smoke
+output now track duplicate push and reduce strategies separately, so 2028 戊申 can
+focus on external projects/contracts while 2029 己酉 focuses on fixed costs,
+settlement, and cash-flow management.
+
+Smoke QA now prints empty myeongli basis warnings, duplicate big theme warnings,
+duplicate strong-year push/reduce warnings, timeline spacing warnings, age basis
+repetition warnings, and generic timeline warnings. DAEUN-04B does not call
+OpenAI.
+
+## DAEUN-04C Immersive Strategy Copy and Context Filters
+
+DAEUN-04C moves the 대운 report from safe-but-thin copy toward an immersive
+10-year strategy reading. The interpretation remains non-deterministic, but the
+prompt now permits stronger directional phrases such as 수익화 접점이 늘어날 수
+있습니다, 이직·직무 전환을 검토하기 쉬운 흐름입니다, 연애 가능성이
+올라갑니다, and 결혼을 고민할 만한 압력이 커질 수 있습니다. Hard outcome
+claims remain forbidden.
+
+The evidence packet now carries `lifeStageContext`. Age range, current age,
+lifeStatus, fieldLabel, and relationshipStatus are used as interpretation
+filters only. For a late-20s to mid-30s employed user, relevant themes include
+career proof, income and side-income windows, job transfer review, relationship
+or marriage consideration, independence, housing/living cost, and long-term
+health routines. For minors, career/marriage/salary framing is suppressed in
+favor of school, exams, family rules, friendships, and study rhythm.
+
+Unknown relationship status must not be exposed in interpretive copy. The status
+pill may show 미입력, but body text must not say 관계 상태가 미입력, 연애 상태가
+입력되지 않아, or similar product-limitation wording. Unknown status is handled
+silently as a general relationship pattern around 생활 반경, 만남 주기, 연락 방식,
+and 역할 분담.
+
+Strong-year TOP 5 push/reduce strategies are now treated as unique year-specific
+actions. Repeating the same push or reduce text across TOP years triggers QA
+warnings. Reality strategy sections are expected to read as substantial strategy
+blocks rather than short generic summaries; smoke reports short strategy body,
+unknown status exposure, weak specificity, duplicate top push, and duplicate top
+reduce warnings. DAEUN-04C does not call OpenAI.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

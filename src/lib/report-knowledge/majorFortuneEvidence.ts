@@ -298,6 +298,13 @@ function getRelationshipStatusHints(
   const normalized = status ?? "unknown";
   const label = USER_RELATIONSHIP_STATUS_LABELS[normalized];
 
+  if (normalized === "unknown") {
+    return [
+      "연애·가족 영역에서는 감정 자체보다 생활 반경, 만남 주기, 연락 방식, 역할 분담이 더 중요해지는 흐름입니다.",
+      "관계는 특정 상태를 단정하기보다 일, 커뮤니티, 소개, 가족 일정처럼 반복되는 현실 접점에서 해석합니다.",
+    ];
+  }
+
   if (normalized === "single") {
     return [
       `${label}: 일, 스터디, 커뮤니티, 소개처럼 생활 반경 안에서 역할이 겹치는 사람과 가까워지는 흐름을 봅니다.`,
@@ -320,6 +327,88 @@ function getRelationshipStatusHints(
     `${label}: 연애 상태가 입력되지 않았으므로 솔로, 연애 중, 기혼으로 단정하지 않습니다.`,
     "연애·가족 해석은 가족, 가까운 관계, 생활 반경 안의 만남 가능성 정도로만 번역합니다.",
   ];
+}
+
+function buildLifeStageContext(input: {
+  readonly currentAge: number;
+  readonly currentCycle: MajorFortuneCycle;
+  readonly userContext: UserContextProfile;
+}): MajorFortuneEvidencePacket["lifeStageContext"] {
+  const startAge = input.currentCycle.startAge;
+  const endAge = input.currentCycle.endAge;
+  const fieldLabel = input.userContext.fieldLabel ?? "현재 분야";
+
+  if (startAge <= 19 || input.currentAge < 20) {
+    return {
+      label: "10대 학업·생활 기준 형성기",
+      relevantThemes: [
+        "학교와 시험 리듬",
+        "가족 규칙",
+        "친구 관계",
+        "공부 습관",
+      ],
+      suppressedThemes: [
+        "결혼 판단",
+        "장기 자산 확장",
+        "직장 권한 경쟁",
+      ],
+      plain:
+        "이 나이대에서는 직업·결혼 단정보다 학교, 시험, 친구, 가족 규칙, 생활 리듬을 중심으로 대운을 번역합니다.",
+    };
+  }
+
+  if (startAge <= 30 && endAge >= 33) {
+    return {
+      label: "20대 후반~30대 중반 전환기",
+      relevantThemes: [
+        "커리어 기준 확립",
+        "이직·직무 전환 검토",
+        "연봉·외부 프로젝트·수익화 접점",
+        "연애·결혼 가능성 검토",
+        "독립·주거·생활비",
+        "장기 건강 루틴",
+      ],
+      suppressedThemes: [
+        "은퇴 이후 정리",
+        "미성년 학업 중심 해석",
+      ],
+      plain: `${fieldLabel} 기준으로는 커리어 증명, 수익화 접점, 장기 관계와 독립 비용을 함께 보는 전환기입니다.`,
+    };
+  }
+
+  if (startAge >= 40 || input.currentAge >= 40) {
+    return {
+      label: "40대 이후 역할 통합기",
+      relevantThemes: [
+        "역할 권한 정리",
+        "가족 책임",
+        "자산 관리",
+        "건강 루틴",
+        "커리어 영향력",
+      ],
+      suppressedThemes: [
+        "초기 취업 적응",
+        "미성년 학업 중심 해석",
+      ],
+      plain:
+        "이 나이대에서는 이미 쌓인 역할, 가족 책임, 자산 관리, 건강 루틴을 어떻게 재배치할지가 중요합니다.",
+    };
+  }
+
+  return {
+    label: "성인기 역할 조정기",
+    relevantThemes: [
+      "직업 방향",
+      "돈의 기준",
+      "관계 경계",
+      "생활 루틴",
+    ],
+    suppressedThemes: [
+      "미성년 학업 중심 해석",
+    ],
+    plain:
+      "현재 나이대에서는 직업, 돈, 관계, 생활 리듬을 동시에 조정하는 방식으로 대운을 번역합니다.",
+  };
 }
 
 function getImpactArea(
@@ -1013,7 +1102,17 @@ function buildStrongYearsWithinCycle(input: {
               ? "이미 깔린 구조와 새 책임이 부딪히는 해"
               : "대운의 장기 테마가 선명해지는 해";
       const pushStrategy =
-        likelyArea === "돈·외부기회"
+        year === input.currentCycle.startYear
+          ? "프로젝트 기준, 문서화, 포트폴리오, 운영 체계"
+          : annualTenGod === "상관"
+            ? "발표, 결과물, 서비스 개선안, 눈에 보이는 산출물"
+            : annualTenGod === "식신"
+              ? "결과물, 포트폴리오, 콘텐츠, 반복 생산 루틴"
+              : annualTenGod === "편재"
+                ? "외부 프로젝트, 계약, 부업성 수익, 자원 배치"
+                : annualTenGod === "정재"
+                  ? "고정비 절감, 정산, 계약 안정화, 현금흐름 관리"
+                  : likelyArea === "돈·외부기회"
           ? "외부 프로젝트, 계약, 정산 기준, 비용 구조 단순화"
           : likelyArea === "관계" || likelyArea === "연애·가족"
             ? "역할 조율, 연락 방식 정리, 가족·동료와의 일정 합의"
@@ -1025,7 +1124,17 @@ function buildStrongYearsWithinCycle(input: {
                   ? "직장 구조, 역할 경계, 계약 조건, 생활 루틴 재배치"
             : "프로젝트 기준, 문서화, 포트폴리오, 운영 체계";
       const reduceStrategy =
-        likelyArea === "돈·외부기회"
+        year === input.currentCycle.startYear
+          ? "권한 없는 책임, 끝없는 일정 추가, 기록 없는 구두 지시"
+          : annualTenGod === "상관"
+            ? "과로, 즉흥적 말싸움, 회복 없는 마감"
+            : annualTenGod === "식신"
+              ? "완성 없이 벌리는 산출물, 보여주기식 실행"
+              : annualTenGod === "편재"
+                ? "감으로 하는 투자, 애매한 돈거래, 구두 약속"
+                : annualTenGod === "정재"
+                  ? "과도한 보수성, 검토만 하다 놓치는 기회"
+                  : likelyArea === "돈·외부기회"
           ? "감으로 하는 투자, 애매한 돈거래, 구두 약속"
           : likelyArea === "관계" || likelyArea === "연애·가족"
             ? "말하지 않은 기대, 무리한 대신 처리, 애매한 약속"
@@ -1452,6 +1561,10 @@ function collectMajorFortuneEvidenceVisibleText(
       opportunity.action,
     ]),
     ...evidence.relationshipStatusTranslationHints,
+    evidence.lifeStageContext.label,
+    evidence.lifeStageContext.plain,
+    ...evidence.lifeStageContext.relevantThemes,
+    ...evidence.lifeStageContext.suppressedThemes,
     evidence.myeongliLayers.tenGodLayer.plain,
     ...evidence.myeongliLayers.tenGodLayer.annualStemTenGodsInCycle.map(
       (item) => item.plain,
@@ -1502,6 +1615,9 @@ function hasRelationshipHintProblem(
   const text = evidence.relationshipStatusTranslationHints.join("\n");
   const status = evidence.userContext.relationshipStatus ?? "unknown";
 
+  if (status === "unknown") {
+    return !/(생활 반경|연락 방식|역할 분담|현실 접점)/u.test(text);
+  }
   if (status === "single") {
     return !/(일|스터디|커뮤니티|소개|생활 반경)/u.test(text);
   }
@@ -1596,6 +1712,11 @@ export function buildMajorFortuneEvidence(input: {
   const relationshipStatusTranslationHints = getRelationshipStatusHints(
     input.person.userContext.relationshipStatus,
   );
+  const lifeStageContext = buildLifeStageContext({
+    currentAge,
+    currentCycle: cycleAccess.currentCycle,
+    userContext: input.person.userContext,
+  });
   const previousToCurrentShift = buildPreviousToCurrentShift({
     previousCycle: cycleAccess.previousCycle,
     currentCycle: cycleAccess.currentCycle,
@@ -1694,6 +1815,7 @@ export function buildMajorFortuneEvidence(input: {
     longRangeRisks,
     longRangeOpportunities,
     relationshipStatusTranslationHints,
+    lifeStageContext,
     myeongliLayers,
     strongYearsWithinCycle,
     majorFortuneTimelineRows,

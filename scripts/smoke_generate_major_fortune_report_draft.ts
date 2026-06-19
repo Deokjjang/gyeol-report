@@ -264,6 +264,27 @@ async function main(): Promise<void> {
     `small event overfocus warnings: ${quality.smallEventOverfocusWarnings}`,
   );
   writeLine(`wrong cycle basis warnings: ${quality.wrongCycleBasisWarnings}`);
+  writeLine(
+    `empty myeongli basis warnings: ${quality.emptyMyeongliBasisWarnings}`,
+  );
+  writeLine(`duplicate big theme warnings: ${quality.duplicateBigThemeWarnings}`);
+  writeLine(
+    `duplicate strong year push warnings: ${quality.duplicateStrongYearPushWarnings}`,
+  );
+  writeLine(
+    `duplicate strong year reduce warnings: ${quality.duplicateStrongYearReduceWarnings}`,
+  );
+  writeLine(`duplicate top push warnings: ${quality.duplicateTopPushWarnings}`);
+  writeLine(`duplicate top reduce warnings: ${quality.duplicateTopReduceWarnings}`);
+  writeLine(`short strategy body warnings: ${quality.shortStrategyBodyWarnings}`);
+  writeLine(
+    `unknown status exposure warnings: ${quality.unknownStatusExposureWarnings}`,
+  );
+  writeLine(`weak specificity warnings: ${quality.weakSpecificityWarnings}`);
+  writeLine(`timeline spacing warnings: ${quality.timelineSpacingWarnings}`);
+  writeLine(
+    `age basis repetition warnings: ${quality.ageBasisRepetitionWarnings}`,
+  );
   writeLine(`generic timeline warnings: ${quality.genericTimelineWarnings}`);
   writeLine(`repeated summary warnings: ${quality.repeatedSummaryWarnings}`);
   writeLine(`weak strategy warnings: ${quality.weakStrategyWarnings}`);

@@ -34,14 +34,17 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("대운 타임라인");
     expect(viewSource).toContain("대운과 세운을 나란히");
     expect(viewSource).toContain("연도·년차");
+    expect(viewSource).toContain("대운·세운");
     expect(viewSource).toContain("{row.year}년 · {row.yearIndexInCycle}년차");
     expect(viewSource).toContain("row.ageBasisLabel");
+    expect(viewSource).toContain("나이는 {text(ageBasisNote).replace(/ 나이$/u, \"\")}으로 표시합니다.");
     expect(viewSource).toContain("draft.majorFortuneTimelineRows.map");
     expect(viewSource).toContain("row.isCurrentYear");
     expect(viewSource).toContain("row.badges.map");
-    expect(viewSource).toContain("row.majorGanji");
-    expect(viewSource).toContain("row.annualGanji");
-    expect(viewSource).toContain("row.annualTenGodLabel");
+    expect(viewSource).toContain("대운 {text(row.majorGanji)}");
+    expect(viewSource).toContain("세운 {text(row.annualGanji)}");
+    expect(viewSource).not.toContain("대운{");
+    expect(viewSource).not.toContain("세운{");
     expect(viewSource).toContain("row.strategy");
   });
 
@@ -65,12 +68,20 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("왜 강한가");
     expect(viewSource).toContain("밀어볼 것");
     expect(viewSource).toContain("줄일 것");
-    expect(viewSource).toContain("명리 근거 펼쳐보기");
+    expect(viewSource).toContain("명리 근거");
+    expect(viewSource).not.toContain("명리 근거 펼쳐보기");
     expect(viewSource).toContain("draft.myeongliLayers");
+    expect(viewSource).toContain("1. 십성");
+    expect(viewSource).toContain("2. 오행");
+    expect(viewSource).toContain("3. 지지 작용");
+    expect(viewSource).toContain("4. 지장간");
+    expect(viewSource).toContain("5. 신살·귀인 참고");
     expect(viewSource).toContain("layers.tenGodLayer.plain");
     expect(viewSource).toContain("layers.branchInteractionLayer.interactions");
     expect(viewSource).toContain("layers.hiddenStemLayer.plain");
     expect(viewSource).toContain("draft.safetyNotes");
+    expect(viewSource).toContain("!hasMyeongliContent");
+    expect(viewSource).toContain("백호대살|diagnostic-only|evidence|debug|fixture");
   });
 
   it("demotes repeated old sections and removes numeric flow score UI", () => {
@@ -96,5 +107,13 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("이 10년의 한 줄 결론");
     expect(viewSource).toContain("대운 타임라인");
     expect(viewSource).toContain("현실 전략");
+  });
+
+  it("keeps unknown relationship status only as a pill and strips body limitations", () => {
+    expect(viewSource).toContain("relationshipStatusLabel ?? \"미입력\"");
+    expect(viewSource).toContain("관계 상태가 미입력이므로");
+    expect(viewSource).toContain("연애 상태가 입력되지 않아");
+    expect(viewSource).toContain(".replace(/관계 상태가 미입력이므로\\s*/gu, \"\")");
+    expect(viewSource).toContain(".replace(/연애 상태가 입력되지 않아\\s*/gu, \"\")");
   });
 });
