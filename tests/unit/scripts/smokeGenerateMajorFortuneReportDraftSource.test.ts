@@ -10,14 +10,29 @@ const scriptSource = readFileSync(
 describe("smoke_generate_major_fortune_report_draft source", () => {
   it("supports fixture and write-preview args", () => {
     expect(scriptSource).toContain("--fixture");
+    expect(scriptSource).toContain("--all");
     expect(scriptSource).toContain("--write-preview");
     expect(scriptSource).toContain("deokmin-current-major-fortune");
   });
 
   it("skips OpenAI when the writer is disabled", () => {
     expect(scriptSource).toContain("OPENAI_REPORT_WRITER_ENABLED");
+    expect(scriptSource).toContain("writer: ${isWriterEnabled() ? \"enabled\" : \"disabled\"}");
     expect(scriptSource).toContain("SKIP draft generation, OpenAI writer disabled");
     expect(scriptSource).toContain("SKIP draft generation, OpenAI writer env incomplete");
+  });
+
+  it("prints matrix readiness per fixture without OpenAI", () => {
+    expect(scriptSource).toContain("writeMatrixReadinessSummary");
+    expect(scriptSource).toContain("evidence: PASS");
+    expect(scriptSource).toContain("timeline:");
+    expect(scriptSource).toContain("relationship hints:");
+    expect(scriptSource).toContain("strong year push/reduce:");
+    expect(scriptSource).toContain("matrix similarity warnings:");
+    expect(scriptSource).toContain("fixture leakage warnings:");
+    expect(scriptSource).toContain("relationship hint warnings:");
+    expect(scriptSource).toContain("likely area diversity warnings:");
+    expect(scriptSource).toContain("technical term leakage warnings:");
   });
 
   it("prints current cycle, phase timeline, and strong years counts", () => {

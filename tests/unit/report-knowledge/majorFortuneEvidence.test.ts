@@ -5,8 +5,12 @@ import {
   buildMajorFortuneElementEffect,
   buildMajorFortuneEvidence,
   getMajorFortuneBranchInteractions,
+  summarizeMajorFortuneEvidenceMatrixQuality,
 } from "../../../src/lib/report-knowledge/majorFortuneEvidence";
-import { requireMajorFortuneFixture } from "../../../src/lib/report-knowledge/majorFortuneFixtures";
+import {
+  MAJOR_FORTUNE_FIXTURES,
+  requireMajorFortuneFixture,
+} from "../../../src/lib/report-knowledge/majorFortuneFixtures";
 import { hydrateMajorFortuneCycle } from "../../../src/lib/report-knowledge/majorFortuneRules";
 import {
   USER_RELATIONSHIP_STATUS_LABELS,
@@ -189,6 +193,139 @@ describe("majorFortuneEvidence", () => {
     expect(marriedEvidence.relationshipStatusTranslationHints.join("\n")).toContain(
       "기혼",
     );
+  });
+
+  it("builds matrix evidence without Deokmin or diagnostic leakage", () => {
+    const evidencePackets = MAJOR_FORTUNE_FIXTURES.map((fixture) =>
+      buildMajorFortuneEvidence({
+        fixtureId: fixture.id,
+        currentYear: fixture.currentYear,
+        person: fixture.person,
+      }),
+    );
+    const summary = summarizeMajorFortuneEvidenceMatrixQuality(evidencePackets);
+
+    expect(summary.matrixSimilarityWarnings).toBe(0);
+    expect(summary.fixtureLeakageWarnings).toBe(0);
+    expect(summary.relationshipHintWarnings).toBe(0);
+    expect(summary.likelyAreaDiversityWarnings).toBe(0);
+    expect(summary.technicalTermLeakageWarnings).toBe(0);
+  });
+
+  it("creates relationship-status-specific hints across matrix fixtures", () => {
+    const byStatus = new Map(
+      MAJOR_FORTUNE_FIXTURES.map((fixture) => {
+        const evidence = buildMajorFortuneEvidence({
+          fixtureId: fixture.id,
+          currentYear: fixture.currentYear,
+          person: fixture.person,
+        });
+
+        return [
+          fixture.person.userContext.relationshipStatus ?? "unknown",
+          evidence.relationshipStatusTranslationHints.join("\n"),
+        ];
+      }),
+    );
+
+    expect(byStatus.get("single")).toMatch(/소개|생활 반경|커뮤니티/u);
+    expect(byStatus.get("dating")).toMatch(/연락|일정|생활 균형|생활 리듬/u);
+    expect(byStatus.get("married")).toMatch(/가족|배우자|분담/u);
+    expect(byStatus.get("unknown")).toMatch(/미입력|단정하지/u);
+  });
+
+  it("creates ten-god-specific strategic themes across matrix fixtures", () => {
+    const strategicTextByFixture = new Map(
+      MAJOR_FORTUNE_FIXTURES.map((fixture) => {
+        const evidence = buildMajorFortuneEvidence({
+          fixtureId: fixture.id,
+          currentYear: fixture.currentYear,
+          person: fixture.person,
+        });
+
+        return [
+          fixture.id,
+          evidence.strategicThemes
+            .map((theme) =>
+              [
+                theme.label,
+                theme.metaphor,
+                theme.plain,
+                theme.strategy,
+                ...theme.concreteImplications,
+              ].join(" "),
+            )
+            .join("\n"),
+        ];
+      }),
+    );
+
+    expect(strategicTextByFixture.get("major-fortune-sample-wealth-single")).toMatch(
+      /돈|자원|계약|외부 프로젝트/u,
+    );
+    expect(strategicTextByFixture.get("major-fortune-sample-officer-dating")).toMatch(
+      /책임 검증|평가|규칙|직장 질서/u,
+    );
+    expect(
+      strategicTextByFixture.get("major-fortune-sample-expression-married"),
+    ).toMatch(/결과물|표현|포트폴리오|콘텐츠/u);
+    expect(
+      strategicTextByFixture.get("major-fortune-sample-resource-unknown"),
+    ).toMatch(/공부|회복|문서|자격증/u);
+    expect(strategicTextByFixture.get("major-fortune-sample-peer-single")).toMatch(
+      /경쟁|자기 기준|동료|협업/u,
+    );
+  });
+
+  it("detects matrix similarity, leakage, relationship hint, and diagnostic issues", () => {
+    const fixture = requireMajorFortuneFixture("major-fortune-sample-wealth-single");
+    const base = buildMajorFortuneEvidence({
+      fixtureId: fixture.id,
+      currentYear: fixture.currentYear,
+      person: fixture.person,
+    });
+    const repeated = {
+      ...base,
+      personLabel: "샘플A",
+      majorFortuneTimelineRows: base.majorFortuneTimelineRows.map((row) => ({
+        ...row,
+        oneLine: "반복되는 같은 타임라인 문장",
+      })),
+    };
+    const leaked = {
+      ...base,
+      personLabel: "샘플B",
+      strategicThemes: base.strategicThemes.map((theme, index) =>
+        index === 0 ? { ...theme, plain: "덕민 전용 문장" } : theme,
+      ),
+    };
+    const weakRelationship = {
+      ...base,
+      personLabel: "샘플C",
+      userContext: {
+        ...base.userContext,
+        relationshipStatus: "single" as const,
+      },
+      relationshipStatusTranslationHints: ["솔로"],
+    };
+    const diagnosticLeak = {
+      ...base,
+      personLabel: "샘플D",
+      strategicThemes: base.strategicThemes.map((theme, index) =>
+        index === 0 ? { ...theme, plain: "백호대살 노출" } : theme,
+      ),
+    };
+    const summary = summarizeMajorFortuneEvidenceMatrixQuality([
+      repeated,
+      leaked,
+      weakRelationship,
+      diagnosticLeak,
+    ]);
+
+    expect(summary.matrixSimilarityWarnings).toBeGreaterThan(0);
+    expect(summary.fixtureLeakageWarnings).toBeGreaterThan(0);
+    expect(summary.relationshipHintWarnings).toBeGreaterThan(0);
+    expect(summary.technicalTermLeakageWarnings).toBeGreaterThan(0);
   });
 
   it("computes element fill and overload effects", () => {

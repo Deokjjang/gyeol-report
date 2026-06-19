@@ -724,8 +724,69 @@ function buildStrategicThemes(input: {
   readonly relationshipHints: readonly string[];
 }): MajorFortuneEvidencePacket["strategicThemes"] {
   const field = input.userContext.fieldLabel ?? "현재 분야";
+  const tenGodTheme =
+    input.majorTenGod === "편재" || input.majorTenGod === "정재"
+      ? {
+          label: "돈과 자원 운용",
+          metaphor: "흩어진 자원과 계약을 실제 판으로 묶는 테마",
+          plain: `${input.majorTenGod} 대운은 ${field}에서 돈, 자원, 계약, 현실 기반, 외부 프로젝트, 비용 구조를 장기적으로 다루는 힘을 키웁니다.`,
+          concreteImplications: [
+            "수익 자체보다 어떤 자원을 어디에 쓰고 어떤 계약을 줄일지 정하는 장면이 반복될 수 있습니다.",
+            "외부 프로젝트, 거래, 정산, 비용 구조처럼 돈이 움직이는 접점이 커질 수 있습니다.",
+          ],
+          strategy:
+            "돈이 움직이는 접점은 열어 두되 계약, 정산, 비용 기준은 숫자로 먼저 고정하세요.",
+        }
+      : input.majorTenGod === "편관" || input.majorTenGod === "정관"
+        ? {
+            label: "규칙과 책임 검증",
+            metaphor: "흩어진 역할을 평가 가능한 공식 기준으로 바꾸는 테마",
+            plain: `${input.majorTenGod} 대운은 ${field}에서 직장 질서, 책임 검증, 평가, 규칙, 역할 검증이 장기 과제로 들어오는 배경입니다.`,
+            concreteImplications: [
+              "권한보다 책임과 평가 기준이 먼저 들어오며 역할을 증명해야 하는 장면이 반복될 수 있습니다.",
+              "승진 단정보다 보고 체계, 규정, 평가표, 공식 책임의 언어를 익히는 것이 중요합니다.",
+            ],
+            strategy:
+              "규칙과 평가를 피하기보다 책임 범위와 검증 기준을 공식 문서로 남기세요.",
+          }
+        : input.majorTenGod === "식신" || input.majorTenGod === "상관"
+          ? {
+              label: "결과물과 표현 확장",
+              metaphor: "머릿속 생각을 공개된 결과물로 꺼내는 테마",
+              plain: `${input.majorTenGod} 대운은 ${field}에서 결과물, 표현, 포트폴리오, 콘텐츠, 말과 성과, 공개된 결과가 장기적으로 중요해지는 배경입니다.`,
+              concreteImplications: [
+                "기획이나 생각만으로 끝내기보다 밖에서 확인 가능한 산출물을 쌓아야 흐름을 쓸 수 있습니다.",
+                "발표, 콘텐츠, 포트폴리오, 실적 기록처럼 보이는 결과가 반복 과제가 됩니다.",
+              ],
+              strategy:
+                "아이디어보다 공개 가능한 결과물 단위로 쪼개고, 포트폴리오와 기록을 꾸준히 남기세요.",
+            }
+          : input.majorTenGod === "편인" || input.majorTenGod === "정인"
+            ? {
+                label: "공부와 회복 기반",
+                metaphor: "흩어진 경험을 지식과 문서 기반으로 다시 저장하는 테마",
+                plain: `${input.majorTenGod} 대운은 ${field}에서 공부, 자격증, 문서, 회복, 재정비, 지식 축적을 장기 기반으로 삼게 합니다.`,
+                concreteImplications: [
+                  "바로 확장하기보다 자격, 자료, 문서, 멘토링, 회복 루틴을 쌓는 장면이 반복될 수 있습니다.",
+                  "공부와 쉼이 늦어지면 판단이 흐려지므로 재정비 시간을 구조 안에 넣어야 합니다.",
+                ],
+                strategy:
+                  "무리한 확장보다 공부, 자격증, 회복 루틴, 문서 기반을 먼저 보강하세요.",
+              }
+            : {
+                label: "자기 기준과 협업 경계",
+                metaphor: "내 방식과 사람 사이의 경계를 다시 그리는 테마",
+                plain: `${input.majorTenGod} 대운은 ${field}에서 경쟁, 자기 기준, 동료, 독립성, 협업과 충돌이 장기적으로 드러나는 배경입니다.`,
+                concreteImplications: [
+                  "혼자 밀어야 하는 일과 사람과 나눠야 하는 일이 자주 충돌할 수 있습니다.",
+                  "독립성과 협업의 균형을 잡지 못하면 동료, 친구, 경쟁자와의 경계가 흐려질 수 있습니다.",
+                ],
+                strategy:
+                  "내 기준으로 밀 일과 협업할 일을 분리하고, 역할과 보상 기준을 먼저 합의하세요.",
+              };
 
   return [
+    tenGodTheme,
     {
       label: "역할과 책임의 설계",
       metaphor: "흙더미처럼 쌓이는 일을 설계도로 다시 나누는 테마",
@@ -1323,6 +1384,170 @@ function buildWarnings(input: {
       ? "diagnostic features excluded"
       : undefined,
   ].filter((warning): warning is string => warning !== undefined);
+}
+
+export interface MajorFortuneEvidenceMatrixQualitySummary {
+  readonly matrixSimilarityWarnings: number;
+  readonly fixtureLeakageWarnings: number;
+  readonly relationshipHintWarnings: number;
+  readonly likelyAreaDiversityWarnings: number;
+  readonly technicalTermLeakageWarnings: number;
+}
+
+function countDuplicateValues(values: readonly string[], limit: number): number {
+  const counts = new Map<string, number>();
+
+  for (const value of values) {
+    const normalized = value.trim();
+
+    if (normalized.length === 0) {
+      continue;
+    }
+    counts.set(normalized, (counts.get(normalized) ?? 0) + 1);
+  }
+
+  return [...counts.values()].filter((count) => count > limit).length;
+}
+
+function collectMajorFortuneEvidenceVisibleText(
+  evidence: MajorFortuneEvidencePacket,
+): readonly string[] {
+  return [
+    evidence.personLabel,
+    evidence.majorCycleBasis.displayLabel,
+    evidence.majorCycleBasis.explanation,
+    evidence.cyclePosition.positionLabel,
+    evidence.cyclePosition.progressLabel,
+    evidence.calculationBasis.displayLabel,
+    evidence.calculationBasis.explanation,
+    evidence.calculationBasis.ageBasisLabel,
+    evidence.calculationBasis.note,
+    evidence.majorTenGod.plain,
+    evidence.elementEffect.plain,
+    ...evidence.branchInteractions.map((interaction) => interaction.plain),
+    ...evidence.lifeAreaSignals.map((signal) => signal.plain),
+    ...evidence.difficultySignals.map((signal) => signal.plain),
+    ...evidence.opportunitySignals.map((signal) => signal.plain),
+    ...evidence.transitionSignals.map((signal) => signal.plain),
+    evidence.previousToCurrentShift.plain,
+    ...evidence.previousToCurrentShift.whatChanged,
+    evidence.decadeArchetype.label,
+    evidence.decadeArchetype.metaphor,
+    evidence.decadeArchetype.plain,
+    ...evidence.strategicThemes.flatMap((theme) => [
+      theme.label,
+      theme.metaphor,
+      theme.plain,
+      theme.strategy,
+      ...theme.concreteImplications,
+    ]),
+    ...evidence.longRangeRisks.flatMap((risk) => [
+      risk.label,
+      risk.plain,
+      risk.prevention,
+    ]),
+    ...evidence.longRangeOpportunities.flatMap((opportunity) => [
+      opportunity.label,
+      opportunity.plain,
+      opportunity.action,
+    ]),
+    ...evidence.relationshipStatusTranslationHints,
+    evidence.myeongliLayers.tenGodLayer.plain,
+    ...evidence.myeongliLayers.tenGodLayer.annualStemTenGodsInCycle.map(
+      (item) => item.plain,
+    ),
+    evidence.myeongliLayers.elementLayer.plain,
+    evidence.myeongliLayers.branchInteractionLayer.plain,
+    ...evidence.myeongliLayers.branchInteractionLayer.interactions.flatMap(
+      (interaction) => [interaction.plainType, interaction.plain],
+    ),
+    evidence.myeongliLayers.hiddenStemLayer.plain,
+    ...evidence.myeongliLayers.auxiliaryStarsLayer.flatMap((star) => [
+      star.label,
+      star.plain,
+      star.caution ?? "",
+    ]),
+    ...evidence.strongYearsWithinCycle.flatMap((year) => [
+      year.reason,
+      year.area,
+      year.action,
+      year.headline,
+      year.whyStrong,
+      year.likelyArea,
+      year.pushStrategy,
+      year.reduceStrategy,
+    ]),
+    ...evidence.majorFortuneTimelineRows.flatMap((row) => [
+      row.ageLabel ?? "",
+      row.ageBasisLabel ?? "",
+      row.annualTenGodLabel,
+      row.keyInteractionLabel ?? "",
+      row.oneLine,
+      row.strategy,
+    ]),
+    ...evidence.cycleYearTimeline.flatMap((year) => [
+      year.headline,
+      year.annualElementFocus,
+      year.roleOfYearInCycle,
+      year.plainInterpretation,
+      year.strategicFocus,
+      year.whyItMatters,
+    ]),
+  ];
+}
+
+function hasRelationshipHintProblem(
+  evidence: MajorFortuneEvidencePacket,
+): boolean {
+  const text = evidence.relationshipStatusTranslationHints.join("\n");
+  const status = evidence.userContext.relationshipStatus ?? "unknown";
+
+  if (status === "single") {
+    return !/(일|스터디|커뮤니티|소개|생활 반경)/u.test(text);
+  }
+  if (status === "dating") {
+    return !/(일정|연락|생활 균형|생활 리듬)/u.test(text);
+  }
+  if (status === "married") {
+    return !/(가족|배우자|분담|생활비)/u.test(text);
+  }
+
+  return !/(미입력|단정하지)/u.test(text);
+}
+
+export function summarizeMajorFortuneEvidenceMatrixQuality(
+  evidencePackets: readonly MajorFortuneEvidencePacket[],
+): MajorFortuneEvidenceMatrixQualitySummary {
+  const timelineLines = evidencePackets.flatMap((evidence) =>
+    evidence.majorFortuneTimelineRows.map((row) => row.oneLine),
+  );
+  const allVisibleText = evidencePackets
+    .flatMap(collectMajorFortuneEvidenceVisibleText)
+    .join("\n");
+  const nonDeokminVisibleText = evidencePackets
+    .filter((evidence) => evidence.personLabel !== "덕민")
+    .flatMap(collectMajorFortuneEvidenceVisibleText)
+    .join("\n");
+  const likelyAreas = new Set(
+    evidencePackets.flatMap((evidence) =>
+      evidence.strongYearsWithinCycle.map((year) => year.likelyArea),
+    ),
+  );
+
+  return {
+    matrixSimilarityWarnings: countDuplicateValues(timelineLines, 2),
+    fixtureLeakageWarnings: /덕민|개발·서비스 기획/u.test(nonDeokminVisibleText)
+      ? 1
+      : 0,
+    relationshipHintWarnings: evidencePackets.filter(hasRelationshipHintProblem)
+      .length,
+    likelyAreaDiversityWarnings: likelyAreas.size < 3 ? 1 : 0,
+    technicalTermLeakageWarnings: /백호대살|diagnostic-only|진단용|debug|evidence/u.test(
+      allVisibleText,
+    )
+      ? 1
+      : 0,
+  };
 }
 
 export function buildMajorFortuneEvidence(input: {

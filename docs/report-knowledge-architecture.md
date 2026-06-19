@@ -2038,6 +2038,36 @@ Validator and smoke QA now include repeated strategy warnings in addition to
 generic timeline and repeated-theme warnings. A timeline strategy repeated more
 than three times is treated as a product-quality warning.
 
+## DAEUN-04 Major Fortune Generalization Fixture Matrix
+
+DAEUN-04 adds a major fortune fixture matrix so the 대운 engine is not tuned only
+to the Deokmin fixture. The matrix keeps `deokmin-current-major-fortune` and adds
+fictional samples that cover wealth, officer, expression, resource, and peer
+major-fortune themes.
+
+The matrix is designed to vary the source inputs that should change the report:
+major ten-god, major-cycle elements, natal 과다/부족 labels, branch interactions,
+life status, field label, and relationship status. Relationship coverage includes
+`single`, `dating`, `married`, and `unknown`; `interestArea` remains absent.
+
+The fixture set includes at least five different major ten-god outcomes:
+편재/정재 for money, resources, contracts, and outside projects; 관성 for rules,
+evaluation, and responsibility verification; 식상 for output, expression,
+portfolio, and public results; 인성 for study, recovery, documents, and knowledge
+accumulation; and 비겁 for competition, self-standard, peers, independence, and
+collaboration conflict.
+
+Matrix smoke commands run without OpenAI. `smoke_build_major_fortune_evidence.ts
+--all` prints one compact evidence summary per fixture and matrix QA counters.
+`smoke_generate_major_fortune_report_draft.ts --all` prints draft-readiness
+checks while the writer is disabled and does not import or call the OpenAI writer
+path.
+
+Matrix QA checks include timeline similarity, fixture leakage, relationship hint
+coverage, likely-area diversity, and diagnostic/internal term leakage. Fixture
+labels may contain diagnostic-only terms such as 백호대살 for guard testing, but
+those terms must not appear in user-facing evidence text.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:

@@ -1,4 +1,7 @@
-import { buildMajorFortuneEvidence } from "../src/lib/report-knowledge/majorFortuneEvidence";
+import {
+  buildMajorFortuneEvidence,
+  summarizeMajorFortuneEvidenceMatrixQuality,
+} from "../src/lib/report-knowledge/majorFortuneEvidence";
 import {
   MAJOR_FORTUNE_FIXTURES,
   requireMajorFortuneFixture,
@@ -30,6 +33,10 @@ function getFixtureId(argv: readonly string[]): string {
 
 function shouldWritePreview(argv: readonly string[]): boolean {
   return argv.includes("--write-preview");
+}
+
+function shouldRunAll(argv: readonly string[]): boolean {
+  return argv.includes("--all");
 }
 
 function getEnvValue(name: string): string | undefined {
@@ -64,8 +71,72 @@ function writeList(label: string, values: readonly string[]): void {
   }
 }
 
+function hasMyeongliLayers(
+  packet: ReturnType<typeof buildMajorFortuneEvidence>,
+): boolean {
+  return (
+    packet.myeongliLayers.tenGodLayer.plain.length > 0 &&
+    packet.myeongliLayers.elementLayer.plain.length > 0 &&
+    packet.myeongliLayers.hiddenStemLayer.plain.length > 0
+  );
+}
+
+function hasStrongYearPushReduce(
+  packet: ReturnType<typeof buildMajorFortuneEvidence>,
+): boolean {
+  return packet.strongYearsWithinCycle.every(
+    (year) =>
+      year.pushStrategy.trim().length > 0 &&
+      year.reduceStrategy.trim().length > 0,
+  );
+}
+
+function writeMatrixReadinessSummary(): void {
+  const packets = MAJOR_FORTUNE_FIXTURES.map((fixture) =>
+    buildMajorFortuneEvidence({
+      fixtureId: fixture.id,
+      currentYear: fixture.currentYear,
+      person: fixture.person,
+    }),
+  );
+  const quality = summarizeMajorFortuneEvidenceMatrixQuality(packets);
+
+  writeLine(`writer: ${isWriterEnabled() ? "enabled" : "disabled"}`);
+  for (const [index, packet] of packets.entries()) {
+    const fixture = MAJOR_FORTUNE_FIXTURES[index];
+
+    writeLine(`fixture: ${fixture.id}`);
+    writeLine("evidence: PASS");
+    writeLine(`timeline: ${packet.majorFortuneTimelineRows.length}`);
+    writeLine(`myeongli layers: ${hasMyeongliLayers(packet) ? "PASS" : "FAIL"}`);
+    writeLine(
+      `relationship hints: ${
+        packet.relationshipStatusTranslationHints.length > 0 ? "PASS" : "FAIL"
+      }`,
+    );
+    writeLine(
+      `strong year push/reduce: ${
+        hasStrongYearPushReduce(packet) ? "PASS" : "FAIL"
+      }`,
+    );
+  }
+  writeLine(`matrix similarity warnings: ${quality.matrixSimilarityWarnings}`);
+  writeLine(`fixture leakage warnings: ${quality.fixtureLeakageWarnings}`);
+  writeLine(`relationship hint warnings: ${quality.relationshipHintWarnings}`);
+  writeLine(`likely area diversity warnings: ${quality.likelyAreaDiversityWarnings}`);
+  writeLine(
+    `technical term leakage warnings: ${quality.technicalTermLeakageWarnings}`,
+  );
+}
+
 async function main(): Promise<void> {
   const argv = process.argv.slice(2);
+
+  if (shouldRunAll(argv)) {
+    writeMatrixReadinessSummary();
+    return;
+  }
+
   const writePreview = shouldWritePreview(argv);
   const fixture = requireMajorFortuneFixture(getFixtureId(argv));
   const packet = buildMajorFortuneEvidence({

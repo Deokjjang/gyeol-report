@@ -1,4 +1,7 @@
-import { buildMajorFortuneEvidence } from "../src/lib/report-knowledge/majorFortuneEvidence";
+import {
+  buildMajorFortuneEvidence,
+  summarizeMajorFortuneEvidenceMatrixQuality,
+} from "../src/lib/report-knowledge/majorFortuneEvidence";
 import {
   MAJOR_FORTUNE_FIXTURES,
   requireMajorFortuneFixture,
@@ -17,6 +20,10 @@ function getFixtureId(argv: readonly string[]): string {
     MAJOR_FORTUNE_FIXTURES[0].id;
 }
 
+function shouldRunAll(argv: readonly string[]): boolean {
+  return argv.includes("--all");
+}
+
 function writeLine(line: string): void {
   process.stdout.write(`${line}\n`);
 }
@@ -32,12 +39,65 @@ function writeList(label: string, values: readonly string[]): void {
   }
 }
 
+function buildEvidenceForFixture(fixtureId: string): ReturnType<typeof buildMajorFortuneEvidence> {
+  const fixture = requireMajorFortuneFixture(fixtureId);
+
+  return buildMajorFortuneEvidence({
+    fixtureId: fixture.id,
+    currentYear: fixture.currentYear,
+    person: fixture.person,
+  });
+}
+
+function writeMatrixSummary(): void {
+  const evidencePackets = MAJOR_FORTUNE_FIXTURES.map((fixture) =>
+    buildMajorFortuneEvidence({
+      fixtureId: fixture.id,
+      currentYear: fixture.currentYear,
+      person: fixture.person,
+    }),
+  );
+  const matrixQuality =
+    summarizeMajorFortuneEvidenceMatrixQuality(evidencePackets);
+
+  writeLine(`major fortune fixture matrix: ${evidencePackets.length}`);
+  for (const [index, evidence] of evidencePackets.entries()) {
+    const fixture = MAJOR_FORTUNE_FIXTURES[index];
+
+    writeLine(`fixture: ${fixture.id}`);
+    writeLine(`person: ${evidence.personLabel}`);
+    writeLine(
+      `current cycle: ${evidence.currentCycle.ganji} ${evidence.currentCycle.startYear}~${evidence.currentCycle.endYear}`,
+    );
+    writeLine(`major ten-god: ${evidence.majorTenGod.stemTenGod}`);
+    writeLine(`relationshipStatus: ${evidence.userContext.relationshipStatus ?? "unknown"}`);
+    writeLine(`timeline rows: ${evidence.majorFortuneTimelineRows.length}`);
+    writeLine(`strong years: ${evidence.strongYearsWithinCycle.length}`);
+    writeLine(
+      `likely areas: ${[
+        ...new Set(evidence.strongYearsWithinCycle.map((year) => year.likelyArea)),
+      ].join(", ")}`,
+    );
+    writeLine(`warnings: ${evidence.warnings.length}`);
+  }
+  writeLine(`matrix similarity warnings: ${matrixQuality.matrixSimilarityWarnings}`);
+  writeLine(`fixture leakage warnings: ${matrixQuality.fixtureLeakageWarnings}`);
+  writeLine(`relationship hint warnings: ${matrixQuality.relationshipHintWarnings}`);
+  writeLine(
+    `likely area diversity warnings: ${matrixQuality.likelyAreaDiversityWarnings}`,
+  );
+  writeLine(
+    `technical term leakage warnings: ${matrixQuality.technicalTermLeakageWarnings}`,
+  );
+}
+
+if (shouldRunAll(process.argv.slice(2))) {
+  writeMatrixSummary();
+  process.exit(0);
+}
+
 const fixture = requireMajorFortuneFixture(getFixtureId(process.argv.slice(2)));
-const evidence = buildMajorFortuneEvidence({
-  fixtureId: fixture.id,
-  currentYear: fixture.currentYear,
-  person: fixture.person,
-});
+const evidence = buildEvidenceForFixture(fixture.id);
 
 writeLine(`major fortune fixture: ${fixture.id}`);
 writeLine(`current year: ${evidence.currentYear}`);

@@ -10,6 +10,7 @@ const source = readFileSync(
 describe("smoke_build_major_fortune_evidence source", () => {
   it("supports fixture selection and prints major fortune evidence summary", () => {
     expect(source).toContain("--fixture");
+    expect(source).toContain("--all");
     expect(source).toContain("deokmin-current-major-fortune");
     expect(source).toContain("major fortune fixture:");
     expect(source).toContain("current cycle:");
@@ -35,6 +36,19 @@ describe("smoke_build_major_fortune_evidence source", () => {
     expect(source).toContain("10-year timeline");
     expect(source).toContain("push");
     expect(source).toContain("reduce");
+  });
+
+  it("supports matrix smoke output and QA counters", () => {
+    expect(source).toContain("major fortune fixture matrix:");
+    expect(source).toContain("fixture:");
+    expect(source).toContain("major ten-god:");
+    expect(source).toContain("relationshipStatus:");
+    expect(source).toContain("likely areas:");
+    expect(source).toContain("matrix similarity warnings:");
+    expect(source).toContain("fixture leakage warnings:");
+    expect(source).toContain("relationship hint warnings:");
+    expect(source).toContain("likely area diversity warnings:");
+    expect(source).toContain("technical term leakage warnings:");
   });
 
   it("does not import OpenAI writer", () => {
