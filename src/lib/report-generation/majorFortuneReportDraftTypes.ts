@@ -172,13 +172,21 @@ export interface MajorFortuneReportDraft {
     readonly body: string;
     readonly advice: string;
     readonly whyStrong: string;
-    readonly likelyArea: "일" | "돈" | "관계" | "연애·가족" | "몸" | "학업";
+    readonly likelyArea:
+      | "일·성과"
+      | "돈·외부기회"
+      | "관계"
+      | "연애·가족"
+      | "몸·생활"
+      | "학업·자격증"
+      | "전환";
     readonly pushStrategy: string;
     readonly reduceStrategy: string;
   }[];
   readonly majorFortuneTimelineRows: readonly {
     readonly year: number;
     readonly ageLabel: string | null;
+    readonly ageBasisLabel: string | null;
     readonly yearIndexInCycle: number;
     readonly phase: MajorFortunePhase;
     readonly isCurrentYear: boolean;
@@ -377,6 +385,7 @@ const majorTimelineRowSchema = {
   required: [
     "year",
     "ageLabel",
+    "ageBasisLabel",
     "yearIndexInCycle",
     "phase",
     "isCurrentYear",
@@ -393,6 +402,7 @@ const majorTimelineRowSchema = {
   properties: {
     year: numberSchema,
     ageLabel: nullableStringSchema,
+    ageBasisLabel: nullableStringSchema,
     yearIndexInCycle: numberSchema,
     phase: {
       type: "string",
@@ -622,7 +632,15 @@ const strongYearSchema = {
     whyStrong: stringSchema,
     likelyArea: {
       type: "string",
-      enum: ["일", "돈", "관계", "연애·가족", "몸", "학업"],
+      enum: [
+        "일·성과",
+        "돈·외부기회",
+        "관계",
+        "연애·가족",
+        "몸·생활",
+        "학업·자격증",
+        "전환",
+      ],
     },
     pushStrategy: stringSchema,
     reduceStrategy: stringSchema,

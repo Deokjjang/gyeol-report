@@ -316,13 +316,6 @@ function getRelationshipStatusHints(
       "관계 운은 생활 운영과 현실 책임의 배분으로 체감될 수 있습니다.",
     ];
   }
-  if (normalized === "complicated") {
-    return [
-      `${label}: 미정리 관계, 거리 조절, 연락 패턴, 애매한 기대치를 중심으로 해석합니다.`,
-      "확정된 관계로 단정하지 않고 정리와 경계 설정을 우선합니다.",
-    ];
-  }
-
   return [
     `${label}: 연애 상태가 입력되지 않았으므로 솔로, 연애 중, 기혼으로 단정하지 않습니다.`,
     "연애·가족 해석은 가족, 가까운 관계, 생활 반경 안의 만남 가능성 정도로만 번역합니다.",
@@ -857,6 +850,45 @@ function buildStrongYearsWithinCycle(input: {
   readonly natalBranches: readonly EarthlyBranch[];
   readonly elementEffect: MajorFortuneEvidencePacket["elementEffect"];
 }): MajorFortuneEvidencePacket["strongYearsWithinCycle"] {
+  type StrongYearLikelyArea =
+    MajorFortuneEvidencePacket["strongYearsWithinCycle"][number]["likelyArea"];
+
+  function getLikelyArea(params: {
+    readonly annualTenGod: TenGod;
+    readonly interactions: readonly AnnualBranchInteraction[];
+  }): StrongYearLikelyArea {
+    if (params.annualTenGod === "편재" || params.annualTenGod === "정재") {
+      return "돈·외부기회";
+    }
+    if (params.annualTenGod === "식신" || params.annualTenGod === "상관") {
+      return "일·성과";
+    }
+    if (
+      (params.annualTenGod === "편관" || params.annualTenGod === "정관") &&
+      params.interactions.some((interaction) => interaction.type === "충")
+    ) {
+      return "전환";
+    }
+    if (params.annualTenGod === "편관" || params.annualTenGod === "정관") {
+      return "일·성과";
+    }
+    if (params.annualTenGod === "편인" || params.annualTenGod === "정인") {
+      return "학업·자격증";
+    }
+    if (params.annualTenGod === "비견" || params.annualTenGod === "겁재") {
+      return "관계";
+    }
+    if (
+      params.interactions.some((interaction) =>
+        ["형", "해", "파"].includes(interaction.type),
+      )
+    ) {
+      return "몸·생활";
+    }
+
+    return "일·성과";
+  }
+
   return Array.from(
     {
       length: input.currentCycle.endYear - input.currentCycle.startYear + 1,
@@ -886,6 +918,7 @@ function buildStrongYearsWithinCycle(input: {
         annualBranch: annualGanji.branch,
         natalBranches: [input.currentCycle.branch, ...input.natalBranches],
       });
+      const annualTenGod = getTenGodForStemPair(input.dayMaster, annualGanji.stem);
       if (interactions.length > 0) {
         reasons.push(
           `${interactions.map((interaction) => interaction.type).join("·")} 작용으로 관계, 일, 생활 리듬이 실제 조정됨`,
@@ -898,37 +931,49 @@ function buildStrongYearsWithinCycle(input: {
         reasons.push(`${elementKo[annualGanji.branchElement]} 과다 압박이 현실 책임으로 커질 수 있음`);
       }
 
-      const area = reasons.some((reason) => reason.includes("돈") || reason.includes("현실"))
-        ? "돈·현실"
-        : interactions.length > 0
-          ? "관계·생활 리듬"
-          : "일·성과";
-      const likelyArea: "돈" | "관계" | "일" =
-        area === "돈·현실"
-          ? "돈"
-          : area === "관계·생활 리듬"
-            ? "관계"
-            : "일";
+      const likelyArea = getLikelyArea({
+        annualTenGod,
+        interactions,
+      });
+      const area =
+        likelyArea === "돈·외부기회"
+          ? "돈·현실"
+          : likelyArea === "관계" || likelyArea === "연애·가족"
+            ? "관계·생활 리듬"
+            : likelyArea === "몸·생활"
+              ? "몸·생활 리듬"
+              : likelyArea;
       const headline =
         year === input.currentCycle.startYear
           ? "대운이 바뀌며 현실 구조를 새로 까는 해"
-          : getTenGodForStemPair(input.dayMaster, annualGanji.stem) ===
-              input.majorTenGod
+          : annualTenGod === input.majorTenGod
             ? `${input.majorTenGod} 테마가 강하게 겹치는 해`
             : interactions.some((interaction) => interaction.type === "충")
               ? "이미 깔린 구조와 새 책임이 부딪히는 해"
               : "대운의 장기 테마가 선명해지는 해";
       const pushStrategy =
-        likelyArea === "돈"
+        likelyArea === "돈·외부기회"
           ? "외부 프로젝트, 계약, 정산 기준, 비용 구조 단순화"
-          : likelyArea === "관계"
+          : likelyArea === "관계" || likelyArea === "연애·가족"
             ? "역할 조율, 연락 방식 정리, 가족·동료와의 일정 합의"
+            : likelyArea === "학업·자격증"
+              ? "자격증, 문서 기반 공부, 포트폴리오, 재정비 루틴"
+              : likelyArea === "몸·생활"
+                ? "수면, 식사, 회복 시간, 일정 과밀 완화"
+                : likelyArea === "전환"
+                  ? "직장 구조, 역할 경계, 계약 조건, 생활 루틴 재배치"
             : "프로젝트 기준, 문서화, 포트폴리오, 운영 체계";
       const reduceStrategy =
-        likelyArea === "돈"
+        likelyArea === "돈·외부기회"
           ? "감으로 하는 투자, 애매한 돈거래, 구두 약속"
-          : likelyArea === "관계"
+          : likelyArea === "관계" || likelyArea === "연애·가족"
             ? "말하지 않은 기대, 무리한 대신 처리, 애매한 약속"
+            : likelyArea === "학업·자격증"
+              ? "공부만 길어지고 결과물이 남지 않는 방식"
+              : likelyArea === "몸·생활"
+                ? "수면을 줄이는 몰아치기, 식사 누락, 회복 없는 일정"
+                : likelyArea === "전환"
+                  ? "권한 없는 책임 확대, 충돌을 미루는 결정, 조건 없는 수락"
             : "권한 없는 책임, 끝없는 일정 추가, 기록 없는 구두 지시";
 
       return {
@@ -962,6 +1007,140 @@ function getCycleYearPhase(yearIndexInCycle: number): "early" | "middle" | "late
   }
 
   return "late";
+}
+
+function buildTimelineRowCopy(params: {
+  readonly year: number;
+  readonly annualGanji: string;
+  readonly annualTenGod: TenGod;
+  readonly currentCycle: MajorFortuneCycle;
+  readonly keyInteraction?: AnnualBranchInteraction;
+  readonly hasCaution: boolean;
+}): { readonly oneLine: string; readonly strategy: string } {
+  const prefix = `${params.year}년 ${params.annualGanji}:`;
+
+  if (params.currentCycle.ganji === "戊辰") {
+    if (params.year === 2026) {
+      return {
+        oneLine:
+          `${prefix} 새 대운의 문이 열리고 세운 丙午가 속도와 노출을 올립니다. 일을 벌리기 전 책임 범위를 좁혀야 첫해의 압박이 덜 쌓입니다.`,
+        strategy:
+          "새 역할을 바로 떠안기보다 담당 범위, 비용 기준, 보고 라인을 먼저 작게 고정하세요.",
+      };
+    }
+    if (params.year === 2027) {
+      return {
+        oneLine:
+          `${prefix} 상관 흐름이 들어와 결과물, 표현, 성과 압박이 빨라질 수 있습니다. 말과 산출물이 빨라지는 대신 체력과 일정이 같이 눌릴 수 있습니다.`,
+        strategy:
+          "발표, 보고, 결과물은 속도를 내되 수면과 마감 여유를 먼저 확보하세요.",
+      };
+    }
+    if (params.year === 2028) {
+      return {
+        oneLine:
+          `${prefix} 대운 戊와 세운 戊가 겹치는 편재 강화 해입니다. 외부 프로젝트, 계약, 부업성 수익, 자원 이동 접점이 커질 수 있습니다.`,
+        strategy:
+          "밀어볼 것은 외부 프로젝트와 계약이고, 줄일 것은 감으로 하는 투자와 구두 돈거래입니다.",
+      };
+    }
+    if (params.year === 2029) {
+      return {
+        oneLine:
+          `${prefix} 정재 흐름이라 수입, 지출, 정산, 고정비를 숫자로 정리하기 좋습니다. 안정적 관리에는 유리하지만 과도한 보수성은 기회를 줄일 수 있습니다.`,
+        strategy:
+          "월별 고정비와 정산 기준은 세밀하게 잡고, 검증된 기회는 너무 늦게 닫지 마세요.",
+      };
+    }
+    if (params.year === 2030) {
+      return {
+        oneLine:
+          `${prefix} 辰戌 충이 강해져 기존 구조와 새 책임이 부딪히는 해입니다. 직장 구조, 관계 역할, 생활 루틴의 재배치가 크게 체감될 수 있습니다.`,
+        strategy:
+          "충돌을 미루지 말고 역할, 계약, 거주·생활 루틴의 재배치안을 먼저 써 보세요.",
+      };
+    }
+    if (params.year === 2031) {
+      return {
+        oneLine:
+          `${prefix} 정관 흐름이라 규칙, 평가, 직장 질서, 책임 검증이 강해질 수 있습니다. 커리어 기준을 공식화하기 좋은 해입니다.`,
+        strategy:
+          "업무 기준, 평가 근거, 직무 설명을 문서화해 내 역할을 공식 언어로 남기세요.",
+      };
+    }
+    if (params.year === 2032) {
+      return {
+        oneLine:
+          `${prefix} 편인 흐름이라 공부, 회복, 방향 재검토, 내면 정리가 중요해집니다. 무리한 확장보다 재정비가 유리합니다.`,
+        strategy:
+          "새 판을 벌리기보다 공부, 회복, 포트폴리오 정리로 다음 선택의 근거를 만드세요.",
+      };
+    }
+    if (params.year === 2033) {
+      return {
+        oneLine:
+          `${prefix} 정인 흐름에 토 압박이 겹쳐 안정과 회복을 원하지만 현실 부담도 같이 커질 수 있습니다. 자격증, 문서, 기반 정리에 유리합니다.`,
+        strategy:
+          "자격증, 계약 문서, 업무 매뉴얼처럼 오래 남는 기반을 정리하고 과로 루틴은 줄이세요.",
+      };
+    }
+    if (params.year === 2034) {
+      return {
+        oneLine:
+          `${prefix} 비견 흐름으로 자기 기준이 다시 강해집니다. 독립성, 자기 방향, 경쟁심이 올라가며 남의 기준을 그대로 따르기 어려워질 수 있습니다.`,
+        strategy:
+          "독립적으로 밀 영역과 협업해야 할 영역을 나눠 불필요한 경쟁을 줄이세요.",
+      };
+    }
+    if (params.year === 2035) {
+      return {
+        oneLine:
+          `${prefix} 겁재 흐름으로 다음 대운 전 관계, 돈, 역할 경계를 정리해야 합니다. 사람과 돈이 섞이면 피로가 커질 수 있습니다.`,
+        strategy:
+          "돈거래, 역할 분담, 관계 기대치를 정리하고 다음 대운에 가져갈 사람과 기준만 남기세요.",
+      };
+    }
+  }
+
+  if (params.annualTenGod === "편재" || params.annualTenGod === "정재") {
+    return {
+      oneLine:
+        `${prefix} ${params.annualTenGod} 흐름이 강해져 돈, 계약, 정산, 자원 이동을 현실적으로 다루는 해입니다.`,
+      strategy:
+        "수익 접점은 열어 두되 투자, 계약, 정산 조건은 숫자로 먼저 고정하세요.",
+    };
+  }
+  if (params.annualTenGod === "식신" || params.annualTenGod === "상관") {
+    return {
+      oneLine:
+        `${prefix} ${params.annualTenGod} 흐름으로 결과물, 표현, 발표, 생산성이 밖으로 드러나는 해입니다.`,
+      strategy:
+        "아이디어보다 눈에 보이는 결과물, 보고서, 포트폴리오 단위로 남기세요.",
+    };
+  }
+  if (params.annualTenGod === "편관" || params.annualTenGod === "정관") {
+    return {
+      oneLine:
+        `${prefix} ${params.annualTenGod} 흐름으로 규칙, 평가, 책임 검증이 강해질 수 있는 해입니다.`,
+      strategy:
+        "직장 질서와 평가 기준을 감으로 넘기지 말고 공식 기록으로 남기세요.",
+    };
+  }
+  if (params.annualTenGod === "편인" || params.annualTenGod === "정인") {
+    return {
+      oneLine:
+        `${prefix} ${params.annualTenGod} 흐름으로 공부, 회복, 자료 정리, 방향 재검토가 중요해지는 해입니다.`,
+      strategy:
+        "무리한 확장보다 자격증, 공부, 회복 루틴, 문서 기반을 보강하세요.",
+    };
+  }
+
+  return {
+    oneLine:
+      `${prefix} ${params.annualTenGod} 흐름으로 자기 기준과 사람 사이의 균형을 다시 맞추는 해입니다.`,
+    strategy:
+      "독립적으로 밀어야 할 일과 사람과 나눠야 할 일을 분리하세요.",
+  };
 }
 
 function buildCycleYearTimeline(input: {
@@ -1088,24 +1267,19 @@ function buildMajorFortuneTimelineRows(input: {
         keyInteraction === undefined
           ? null
           : `${keyInteraction.type}: ${plainTypeByInteraction[keyInteraction.type]}`;
-      const oneLine =
-        year === input.currentCycle.startYear
-          ? `${year}년 ${annualGanji.ganji}: 대운 ${input.currentCycle.ganji}이 시작되고, 세운 ${annualGanji.ganji}가 속도와 노출을 올립니다. 일을 크게 벌리기보다 책임 범위부터 좁혀야 하는 해입니다.`
-          : annualGanji.stem === input.currentCycle.stem
-            ? `${year}년 ${annualGanji.ganji}: 대운 천간 ${input.currentCycle.stem}와 세운 ${annualGanji.stem}가 겹치며 ${annualTenGod} 테마가 강해집니다. 돈, 계약, 자원, 역할 배분을 공격적으로 정리할 수 있는 해입니다.`
-            : keyInteraction?.type === "충"
-              ? `${year}년 ${annualGanji.ganji}: ${input.currentCycle.branch}${annualGanji.branch} 충이 강해져 이미 깔린 구조와 새 책임이 부딪히기 쉽습니다. 직장, 관계, 생활 리듬에서 구조조정 체감이 커질 수 있습니다.`
-              : `${year}년 ${annualGanji.ganji}: 대운 ${input.currentCycle.ganji}의 장기 과제 위에 세운 ${annualTenGod} 흐름이 얹힙니다. 역할, 돈, 관계의 우선순위를 다시 잡아야 하는 해입니다.`;
-      const strategy =
-        hasCaution
-          ? "크게 벌리기보다 계약, 역할, 일정의 충돌 지점을 먼저 줄이세요."
-          : annualTenGod === "편재" || annualTenGod === "정재"
-            ? "돈이 움직이는 접점은 열되, 구두 약속보다 숫자와 조건을 먼저 고정하세요."
-            : "결과물을 만들되, 책임 범위와 회복 시간을 같이 잡으세요.";
+      const rowCopy = buildTimelineRowCopy({
+        year,
+        annualGanji: annualGanji.ganji,
+        annualTenGod,
+        currentCycle: input.currentCycle,
+        keyInteraction,
+        hasCaution,
+      });
 
       return {
         year,
         ageLabel: `${input.currentAge + (year - input.currentYear)}세`,
+        ageBasisLabel: "대운표 기준 나이",
         yearIndexInCycle,
         phase,
         isCurrentYear,
@@ -1116,8 +1290,8 @@ function buildMajorFortuneTimelineRows(input: {
         annualGanji: annualGanji.ganji,
         annualTenGodLabel: annualTenGod,
         keyInteractionLabel,
-        oneLine,
-        strategy,
+        oneLine: rowCopy.oneLine,
+        strategy: rowCopy.strategy,
       };
     },
   );

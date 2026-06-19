@@ -53,6 +53,7 @@ describe("smoke_generate_major_fortune_report_draft source", () => {
     expect(scriptSource).toContain("weak strategy warnings:");
     expect(scriptSource).toContain("relationship status misuse warnings:");
     expect(scriptSource).toContain("strong year title repeat warnings:");
+    expect(scriptSource).toContain("repeated strategy warnings:");
     expect(scriptSource).toContain("repeated theme warnings:");
     expect(scriptSource).toContain("getMajorFortunePreviewSnapshotRelativePath");
     expect(scriptSource).toContain("getMajorFortunePreviewUrl");

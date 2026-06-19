@@ -33,6 +33,9 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("해석 기준");
     expect(viewSource).toContain("대운 타임라인");
     expect(viewSource).toContain("대운과 세운을 나란히");
+    expect(viewSource).toContain("연도·년차");
+    expect(viewSource).toContain("{row.year}년 · {row.yearIndexInCycle}년차");
+    expect(viewSource).toContain("row.ageBasisLabel");
     expect(viewSource).toContain("draft.majorFortuneTimelineRows.map");
     expect(viewSource).toContain("row.isCurrentYear");
     expect(viewSource).toContain("row.badges.map");

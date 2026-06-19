@@ -107,9 +107,9 @@ function renderTimeline(draft: MajorFortuneReportDraft) {
         </p>
       </div>
       <div className="overflow-hidden rounded-lg border border-neutral-800">
-        <div className="hidden grid-cols-[5.5rem_4rem_6rem_6rem_1fr] gap-0 bg-neutral-900/90 px-4 py-3 text-xs font-semibold text-neutral-500 md:grid">
-          <span>연도</span>
-          <span>나이</span>
+        <div className="hidden grid-cols-[7.5rem_5rem_6rem_6rem_1fr] gap-0 bg-neutral-900/90 px-4 py-3 text-xs font-semibold text-neutral-500 md:grid">
+          <span>연도·년차</span>
+          <span>나이 기준</span>
           <span>대운</span>
           <span>세운</span>
           <span>한 줄 전략</span>
@@ -120,12 +120,14 @@ function renderTimeline(draft: MajorFortuneReportDraft) {
               key={`${row.year}:${row.annualGanji}`}
               className={
                 row.isCurrentYear
-                  ? "grid gap-3 bg-sky-950/35 px-4 py-4 text-sm ring-1 ring-inset ring-sky-500/35 md:grid-cols-[5.5rem_4rem_6rem_6rem_1fr]"
-                  : "grid gap-3 bg-neutral-950/40 px-4 py-4 text-sm md:grid-cols-[5.5rem_4rem_6rem_6rem_1fr]"
+                  ? "grid gap-3 bg-sky-950/35 px-4 py-4 text-sm ring-1 ring-inset ring-sky-500/35 md:grid-cols-[7.5rem_5rem_6rem_6rem_1fr]"
+                  : "grid gap-3 bg-neutral-950/40 px-4 py-4 text-sm md:grid-cols-[7.5rem_5rem_6rem_6rem_1fr]"
               }
             >
               <div>
-                <p className="font-semibold text-neutral-50">{row.year}년</p>
+                <p className="font-semibold text-neutral-50">
+                  {row.year}년 · {row.yearIndexInCycle}년차
+                </p>
                 <div className="mt-1 flex flex-wrap gap-1">
                   {row.badges.map((badge) => (
                     <span
@@ -137,9 +139,16 @@ function renderTimeline(draft: MajorFortuneReportDraft) {
                   ))}
                 </div>
               </div>
-              <p className="font-medium text-neutral-300">
-                {text(row.ageLabel ?? "-")}
-              </p>
+              <div>
+                <p className="font-medium text-neutral-300">
+                  {text(row.ageLabel ?? "대운표 기준")}
+                </p>
+                {row.ageBasisLabel === null ? null : (
+                  <p className="mt-1 text-[11px] text-neutral-500">
+                    {text(row.ageBasisLabel)}
+                  </p>
+                )}
+              </div>
               <p className="font-semibold text-neutral-100">
                 <span className="mr-1 text-xs text-neutral-500">대운</span>
                 {text(row.majorGanji)}

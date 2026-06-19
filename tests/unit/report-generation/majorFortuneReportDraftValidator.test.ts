@@ -354,7 +354,7 @@ export function createValidMajorFortuneDraft(
         advice: "계약, 정산, 역할 범위를 초반부터 문서로 남기세요.",
         whyStrong:
           "대운 戊辰이 시작되고 세운 丙午가 화의 속도와 노출을 올려 토 책임을 자극하기 때문입니다.",
-        likelyArea: "일",
+        likelyArea: "일·성과",
         pushStrategy: "프로젝트 기준, 문서화, 운영 체계",
         reduceStrategy: "권한 없는 책임, 끝없는 일정 추가, 기록 없는 구두 지시",
       },
@@ -366,7 +366,7 @@ export function createValidMajorFortuneDraft(
         advice: "무리한 확장보다 고정비와 책임 비용을 줄이세요.",
         whyStrong:
           "대운 천간 戊와 세운 戊가 겹쳐 편재의 돈, 계약, 현실 자원 테마가 강해지기 때문입니다.",
-        likelyArea: "돈",
+        likelyArea: "돈·외부기회",
         pushStrategy: "외부 프로젝트, 계약, 정산 기준, 비용 구조 단순화",
         reduceStrategy: "감으로 하는 투자, 애매한 돈거래, 구두 약속",
       },
@@ -410,6 +410,7 @@ export function createValidMajorFortuneDraft(
       return {
         year,
         ageLabel: `${27 + index}세`,
+        ageBasisLabel: "대운표 기준 나이",
         yearIndexInCycle,
         phase,
         isCurrentYear: year === 2026,
@@ -428,7 +429,7 @@ export function createValidMajorFortuneDraft(
         oneLine:
           year === 2026
             ? "2026년 丙午: 대운 戊辰이 시작되고, 세운 丙午가 속도와 노출을 올립니다. 일을 크게 벌리기보다 책임 범위부터 좁혀야 하는 해입니다."
-            : `${year}년 ${annualGanjis[index] ?? "丙午"}: 대운 戊辰의 장기 과제 위에 세운 ${annualTenGods[index] ?? "식신"} 흐름이 얹힙니다. 역할, 돈, 관계의 우선순위를 다시 잡아야 하는 해입니다.`,
+            : `${year}년 ${annualGanjis[index] ?? "丙午"}: 세운 ${annualTenGods[index] ?? "식신"} 테마가 대운 戊辰 안에서 다른 장면으로 드러납니다. 해당 해에는 돈, 역할, 관계 중 먼저 움직이는 영역을 골라 전략을 조정합니다.`,
         strategy: strategies[index] ?? "책임 범위와 회복 시간을 같이 잡으세요.",
       };
     }),
@@ -630,6 +631,23 @@ describe("majorFortuneReportDraftValidator", () => {
     );
   });
 
+  it("keeps sharper non-deterministic strategy phrases", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      openingSummary:
+        "외부 프로젝트 가능성이 커질 수 있습니다. 돈이 움직이는 장면이 늘어날 수 있습니다. 가능성이 올라갑니다.",
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.openingSummary).toContain(
+      "외부 프로젝트 가능성이 커질 수 있습니다",
+    );
+    expect(result.value?.openingSummary).toContain(
+      "돈이 움직이는 장면이 늘어날 수 있습니다",
+    );
+    expect(result.value?.openingSummary).toContain("가능성이 올라갑니다");
+  });
+
   it("sanitizes repeated terms and branch parentheses", () => {
     const result = validateMajorFortuneReportDraft({
       ...createValidMajorFortuneDraft(),
@@ -697,6 +715,7 @@ describe("majorFortuneReportDraftValidator", () => {
       relationshipStatusMisuseWarnings: 0,
       strongYearTitleRepeatWarnings: 0,
       repeatedThemeWarnings: 0,
+      repeatedStrategyWarnings: 0,
     });
   });
 
@@ -887,6 +906,28 @@ describe("majorFortuneReportDraftValidator", () => {
     ).toBeGreaterThan(0);
     expect(result.warnings.some((warning) =>
       warning.startsWith("MAJOR_FORTUNE_REPEATED_THEME_WARNING"),
+    )).toBe(true);
+  });
+
+  it("warns when the same timeline strategy repeats more than three times", () => {
+    const repeatedStrategy =
+      "크게 벌리기보다 계약, 역할, 일정의 충돌 지점을 먼저 줄이세요.";
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      majorFortuneTimelineRows: createValidMajorFortuneDraft().majorFortuneTimelineRows.map(
+        (row) => ({
+          ...row,
+          strategy: repeatedStrategy,
+        }),
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!).repeatedStrategyWarnings,
+    ).toBeGreaterThan(0);
+    expect(result.warnings.some((warning) =>
+      warning.startsWith("MAJOR_FORTUNE_REPEATED_STRATEGY_WARNING"),
     )).toBe(true);
   });
 

@@ -17,10 +17,12 @@ describe("majorFortuneEvidence", () => {
     expect(USER_RELATIONSHIP_STATUS_LABELS.single).toBe("솔로");
     expect(USER_RELATIONSHIP_STATUS_LABELS.dating).toBe("연애 중");
     expect(USER_RELATIONSHIP_STATUS_LABELS.married).toBe("기혼");
-    expect(USER_RELATIONSHIP_STATUS_LABELS.complicated).toBe("복잡한 관계");
     expect(USER_RELATIONSHIP_STATUS_LABELS.unknown).toBe("미입력");
     expect(JSON.stringify(USER_RELATIONSHIP_STATUS_LABELS)).not.toContain(
       "interestArea",
+    );
+    expect(JSON.stringify(USER_RELATIONSHIP_STATUS_LABELS)).not.toContain(
+      ["복잡한", "관계"].join(" "),
     );
   });
 
@@ -106,6 +108,7 @@ describe("majorFortuneEvidence", () => {
       isCycleStartYear: true,
       majorGanji: "戊辰",
       annualGanji: "丙午",
+      ageBasisLabel: "대운표 기준 나이",
     });
     expect(evidence.majorFortuneTimelineRows[0]?.badges).toContain("올해");
     expect(evidence.majorFortuneTimelineRows[0]?.badges).toContain("전환");
@@ -123,6 +126,20 @@ describe("majorFortuneEvidence", () => {
         .join("\n"),
     ).not.toContain("대운 지지 또는 원국 지지와 강한 작용");
     expect(
+      evidence.majorFortuneTimelineRows
+        .map((row) => row.oneLine)
+        .join("\n"),
+    ).not.toContain("대운의 장기 과제 위에");
+    expect(
+      evidence.majorFortuneTimelineRows
+        .map((row) => row.oneLine)
+        .join("\n"),
+    ).not.toContain("역할, 돈, 관계의 우선순위를 다시 잡아야 하는 해");
+    expect(new Set(evidence.majorFortuneTimelineRows.map((row) => row.oneLine)).size).toBeGreaterThanOrEqual(8);
+    expect(new Set(evidence.majorFortuneTimelineRows.map((row) => row.strategy)).size).toBeGreaterThanOrEqual(8);
+    expect(evidence.majorFortuneTimelineRows.find((row) => row.year === 2028)?.oneLine).toMatch(/편재|외부 프로젝트|계약|수익/u);
+    expect(evidence.majorFortuneTimelineRows.find((row) => row.year === 2030)?.oneLine).toMatch(/辰戌 충|구조.*재배치/u);
+    expect(
       evidence.strongYearsWithinCycle.every(
         (year) =>
           year.whyStrong.length > 0 &&
@@ -130,6 +147,14 @@ describe("majorFortuneEvidence", () => {
           year.reduceStrategy.length > 0,
       ),
     ).toBe(true);
+    expect(
+      evidence.strongYearsWithinCycle.find((year) => year.year === 2028)
+        ?.likelyArea,
+    ).toBe("돈·외부기회");
+    expect(
+      evidence.strongYearsWithinCycle.find((year) => year.year === 2030)
+        ?.likelyArea,
+    ).toMatch(/전환|일·성과/u);
     expect(evidence.warnings.join("\n")).not.toContain("fixture_precomputed");
   });
 

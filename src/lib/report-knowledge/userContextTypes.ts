@@ -12,7 +12,6 @@ export type UserRelationshipStatus =
   | "single"
   | "dating"
   | "married"
-  | "complicated"
   | "unknown";
 
 export interface UserContextProfile {
@@ -39,6 +38,5 @@ export const USER_RELATIONSHIP_STATUS_LABELS: Record<
   single: "솔로",
   dating: "연애 중",
   married: "기혼",
-  complicated: "복잡한 관계",
   unknown: "미입력",
 };

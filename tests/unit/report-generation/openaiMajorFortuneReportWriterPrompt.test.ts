@@ -108,6 +108,11 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("가능성이 올라갑니다");
     expect(text).toContain("유리해집니다");
     expect(text).toContain("불리해집니다");
+    expect(text).toContain("불리해질 수 있습니다");
+    expect(text).toContain("접점이 늘어날 수 있습니다");
+    expect(text).toContain("돈이 움직이는 장면이 늘어날 수 있습니다");
+    expect(text).toContain("외부 프로젝트 가능성이 커질 수 있습니다");
+    expect(text).toContain("관계가 현실 접점에서 열릴 수 있습니다");
     expect(text).toContain("밀려날 수 있습니다");
     expect(text).toContain("직급은 그대로인데 책임만 먼저 커지는 상황");
     expect(text).toContain("수입 증가보다 고정지출");
@@ -135,7 +140,13 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("single: 솔로탈출을 단정하지 말고");
     expect(text).toContain("dating: 일정, 돈, 연락 빈도");
     expect(text).toContain("married: 가족 비용");
-    expect(text).toContain("unknown: 솔로탈출, 애인, 배우자처럼 상태를 단정하지 말고");
+    expect(text).toContain("single: 솔로라면, 이 대운은 감정만으로");
+    expect(text).toContain("dating: 연애 중이라면, 감정보다 일정");
+    expect(text).toContain("married: 기혼이라면, 집안 역할");
+    expect(text).toContain(
+      "unknown: 관계 상태가 미입력이므로 솔로탈출, 애인, 배우자 같은 단정 표현을 쓰지 말고",
+    );
+    expect(text).not.toContain(["compli", "cated", ":"].join(""));
   });
 
   it("forbids hard claims and raw fixture/precomputed wording", () => {

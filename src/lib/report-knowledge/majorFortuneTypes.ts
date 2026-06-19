@@ -203,13 +203,21 @@ export interface MajorFortuneEvidencePacket {
     readonly action: string;
     readonly headline: string;
     readonly whyStrong: string;
-    readonly likelyArea: "일" | "돈" | "관계" | "연애·가족" | "몸" | "학업";
+    readonly likelyArea:
+      | "일·성과"
+      | "돈·외부기회"
+      | "관계"
+      | "연애·가족"
+      | "몸·생활"
+      | "학업·자격증"
+      | "전환";
     readonly pushStrategy: string;
     readonly reduceStrategy: string;
   }[];
   readonly majorFortuneTimelineRows: readonly {
     readonly year: number;
     readonly ageLabel: string | null;
+    readonly ageBasisLabel: string | null;
     readonly yearIndexInCycle: number;
     readonly phase: "early" | "middle" | "late";
     readonly isCurrentYear: boolean;

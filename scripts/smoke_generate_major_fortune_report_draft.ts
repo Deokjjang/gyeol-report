@@ -187,6 +187,7 @@ async function main(): Promise<void> {
   writeLine(
     `strong year title repeat warnings: ${quality.strongYearTitleRepeatWarnings}`,
   );
+  writeLine(`repeated strategy warnings: ${quality.repeatedStrategyWarnings}`);
   writeLine(`repeated theme warnings: ${quality.repeatedThemeWarnings}`);
   writeLine(`annual-tone warnings: ${quality.annualToneWarnings}`);
   writeLine(`decade-tone warnings: ${quality.decadeToneWarnings}`);

@@ -287,7 +287,7 @@ function createValidDraft(): MajorFortuneReportDraft {
         advice: "계약, 정산, 역할 범위를 초반부터 문서로 남기세요.",
         whyStrong:
           "대운 戊辰이 시작되고 세운 丙午가 화의 속도와 노출을 올려 토 책임을 자극하기 때문입니다.",
-        likelyArea: "일",
+        likelyArea: "일·성과",
         pushStrategy: "프로젝트 기준, 문서화, 운영 체계",
         reduceStrategy: "권한 없는 책임, 끝없는 일정 추가, 기록 없는 구두 지시",
       },
@@ -299,7 +299,7 @@ function createValidDraft(): MajorFortuneReportDraft {
         advice: "무리한 확장보다 고정비와 책임 비용을 줄이세요.",
         whyStrong:
           "대운 천간 戊와 세운 戊가 겹쳐 편재의 돈, 계약, 현실 자원 테마가 강해지기 때문입니다.",
-        likelyArea: "돈",
+        likelyArea: "돈·외부기회",
         pushStrategy: "외부 프로젝트, 계약, 정산 기준, 비용 구조 단순화",
         reduceStrategy: "감으로 하는 투자, 애매한 돈거래, 구두 약속",
       },
@@ -331,6 +331,7 @@ function createValidDraft(): MajorFortuneReportDraft {
       return {
         year,
         ageLabel: `${27 + index}세`,
+        ageBasisLabel: "대운표 기준 나이",
         yearIndexInCycle,
         phase,
         isCurrentYear: year === 2026,

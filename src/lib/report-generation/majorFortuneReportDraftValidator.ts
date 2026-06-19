@@ -31,6 +31,7 @@ export type MajorFortuneDraftQualitySummary = {
   readonly relationshipStatusMisuseWarnings: number;
   readonly strongYearTitleRepeatWarnings: number;
   readonly repeatedThemeWarnings: number;
+  readonly repeatedStrategyWarnings: number;
 };
 
 const hardClaimReplacements = [
@@ -202,8 +203,12 @@ const smallEventMarkers = [
 
 const genericTimelinePhrases = [
   "대운 지지 또는 원국 지지와 강한 작용",
+  "대운의 장기 과제 위에",
+  "역할, 돈, 관계의 우선순위를 다시 잡아야 하는 해",
   "흐름을 봅니다",
 ] as const;
+
+const repeatedStrategyLimit = 3;
 
 const relationshipKnownClaimPhrases = [
   "솔로탈출",
@@ -569,6 +574,10 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
       year: row.year,
       ageLabel:
         row.ageLabel === null ? null : sanitizeMajorFortuneVisibleText(row.ageLabel),
+      ageBasisLabel:
+        row.ageBasisLabel === null
+          ? null
+          : sanitizeMajorFortuneVisibleText(row.ageBasisLabel),
       yearIndexInCycle: row.yearIndexInCycle,
       phase: row.phase,
       isCurrentYear: row.isCurrentYear,
@@ -762,6 +771,7 @@ function hasDraftShape(value: unknown): value is MajorFortuneReportDraft {
         isRecord(row) &&
         isNumber(row.year) &&
         (typeof row.ageLabel === "string" || row.ageLabel === null) &&
+        (typeof row.ageBasisLabel === "string" || row.ageBasisLabel === null) &&
         isNumber(row.yearIndexInCycle) &&
         isPhase(row.phase) &&
         isBoolean(row.isCurrentYear) &&
@@ -895,6 +905,7 @@ function collectVisibleStrings(draft: MajorFortuneReportDraft): readonly string[
     ]),
     ...draft.majorFortuneTimelineRows.flatMap((row) => [
       row.ageLabel ?? "",
+      row.ageBasisLabel ?? "",
       ...row.badges,
       row.majorGanji,
       row.annualGanji,
@@ -1218,6 +1229,27 @@ function countRepeatedThemeWarnings(visibleText: string): number {
   }, 0);
 }
 
+function countRepeatedStrategyWarnings(
+  draft: MajorFortuneReportDraft,
+): number {
+  const counts = new Map<string, number>();
+
+  for (const row of draft.majorFortuneTimelineRows) {
+    const strategy = row.strategy.trim();
+
+    if (strategy.length === 0) {
+      continue;
+    }
+    counts.set(strategy, (counts.get(strategy) ?? 0) + 1);
+  }
+
+  return [...counts.values()].reduce(
+    (total, count) =>
+      count > repeatedStrategyLimit ? total + count - repeatedStrategyLimit : total,
+    0,
+  );
+}
+
 export function summarizeMajorFortuneDraftQuality(
   draft: MajorFortuneReportDraft,
 ): MajorFortuneDraftQualitySummary {
@@ -1251,6 +1283,7 @@ export function summarizeMajorFortuneDraftQuality(
   const strongYearTitleRepeatWarnings =
     countStrongYearTitleRepeatWarnings(draft);
   const repeatedThemeWarnings = countRepeatedThemeWarnings(visibleText);
+  const repeatedStrategyWarnings = countRepeatedStrategyWarnings(draft);
 
   return {
     hardClaimWarnings,
@@ -1271,6 +1304,7 @@ export function summarizeMajorFortuneDraftQuality(
     relationshipStatusMisuseWarnings,
     strongYearTitleRepeatWarnings,
     repeatedThemeWarnings,
+    repeatedStrategyWarnings,
   };
 }
 
@@ -1444,6 +1478,11 @@ export function validateMajorFortuneReportDraft(
   if (quality.repeatedThemeWarnings > 0) {
     warnings.push(
       `MAJOR_FORTUNE_REPEATED_THEME_WARNING:${quality.repeatedThemeWarnings}`,
+    );
+  }
+  if (quality.repeatedStrategyWarnings > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_REPEATED_STRATEGY_WARNING:${quality.repeatedStrategyWarnings}`,
     );
   }
 

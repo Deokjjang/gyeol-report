@@ -2004,6 +2004,40 @@ section to add a new strategic angle instead of repeating 책임, 정리, 관리
 Smoke QA now includes the compact 대운/세운 timeline, expanded 명리 layer output,
 strong-year push/reduce strategies, and repeated-theme warnings.
 
+## DAEUN-03D Timeline Quality and Relationship Status Cleanup
+
+DAEUN-03D simplifies relationship status for product UX. `UserRelationshipStatus`
+now supports only `single`, `dating`, `married`, and `unknown`, displayed as
+솔로, 연애 중, 기혼, and 미입력. The interest-area field remains removed.
+
+The compact 대운 timeline must not use repeated generic language. Rows must vary
+by annual stem ten-god, branch interactions, repeated major-cycle stem/branch,
+missing-element fill, heavy-element overload, and early/middle/late phase. For
+the Deokmin `戊辰` 2026~2035 fixture, 2028 `戊申` is treated as a 편재-strengthened
+money/external-opportunity year, while 2030 `庚戌` highlights `辰戌 충` and
+structure reallocation.
+
+Age is secondary in the timeline. The primary row identifier is now
+`year + yearIndexInCycle`, such as `2026년 · 1년차`; age appears only with a
+basis label such as `대운표 기준 나이`.
+
+Strong-year `likelyArea` now uses ten-god priority before branch-interaction
+fallbacks. 편재/정재 years map to `돈·외부기회`; 식상 years to `일·성과`;
+관성 years to `일·성과` or `전환`; 인성 years to `학업·자격증`; and 비겁 years
+to relationship/self-standard themes.
+
+The 명리 근거 section must render compact actual content: 십성, 오행, 지지 작용,
+지장간, and safe 신살·귀인 references. 백호대살 and other diagnostic-only terms
+remain excluded from visible output.
+
+The prompt allows sharper but still non-deterministic strategy language such as
+가능성이 올라갑니다, 불리해질 수 있습니다, 접점이 늘어날 수 있습니다, and 외부
+프로젝트 가능성이 커질 수 있습니다. Hard outcome claims remain forbidden.
+
+Validator and smoke QA now include repeated strategy warnings in addition to
+generic timeline and repeated-theme warnings. A timeline strategy repeated more
+than three times is treated as a product-quality warning.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
