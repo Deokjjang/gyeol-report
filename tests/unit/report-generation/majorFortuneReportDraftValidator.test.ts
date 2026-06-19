@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import type { MajorFortuneReportDraft } from "../../../src/lib/report-generation/majorFortuneReportDraftTypes";
 import {
+  DEFAULT_MAJOR_FORTUNE_SAFETY_NOTES,
   sanitizeMajorFortuneVisibleText,
   summarizeMajorFortuneDraftQuality,
   validateMajorFortuneReportDraft,
@@ -533,6 +534,107 @@ describe("majorFortuneReportDraftValidator", () => {
     expect(result.value?.productType).toBe("major_fortune");
     expect(result.value?.phaseTimeline).toHaveLength(3);
     expect(result.value?.finalAdvice).toHaveLength(6);
+  });
+
+  it("keeps valid safetyNotes unchanged", () => {
+    const safetyNotes = [
+      "이 리포트는 대운의 10년 배경을 해석한 것입니다.",
+      "특정 사건이나 결과를 보장하지 않습니다.",
+    ];
+    const result = validateMajorFortuneReportDraft(
+      createValidMajorFortuneDraft({ safetyNotes }),
+    );
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.safetyNotes).toEqual(safetyNotes);
+    expect(result.warnings).not.toContain("MAJOR_FORTUNE_SAFETY_NOTES_REPAIRED");
+  });
+
+  it("repairs missing safetyNotes with default notes", () => {
+    const draftWithoutSafetyNotes: Partial<MajorFortuneReportDraft> = {
+      ...createValidMajorFortuneDraft(),
+    };
+    delete draftWithoutSafetyNotes.safetyNotes;
+    const result = validateMajorFortuneReportDraft(draftWithoutSafetyNotes);
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.safetyNotes).toEqual(DEFAULT_MAJOR_FORTUNE_SAFETY_NOTES);
+    expect(result.warnings).toContain("MAJOR_FORTUNE_SAFETY_NOTES_REPAIRED");
+  });
+
+  it("repairs non-array safetyNotes with default notes", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      safetyNotes: "debug safety note",
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.safetyNotes).toEqual(DEFAULT_MAJOR_FORTUNE_SAFETY_NOTES);
+    expect(result.warnings).toContain("MAJOR_FORTUNE_SAFETY_NOTES_REPAIRED");
+  });
+
+  it("repairs empty and one-item safetyNotes to minimum length", () => {
+    const emptyResult = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      safetyNotes: [],
+    });
+    const oneItemResult = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      safetyNotes: ["대운은 장기 배경 해석입니다."],
+    });
+
+    expect(emptyResult.ok).toBe(true);
+    expect(emptyResult.value?.safetyNotes).toEqual(
+      DEFAULT_MAJOR_FORTUNE_SAFETY_NOTES,
+    );
+    expect(oneItemResult.ok).toBe(true);
+    expect(oneItemResult.value?.safetyNotes.length).toBeGreaterThanOrEqual(2);
+    expect(oneItemResult.value?.safetyNotes[0]).toBe(
+      "대운은 장기 배경 해석입니다.",
+    );
+  });
+
+  it("slices overly long safetyNotes to maximum length", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      safetyNotes: [
+        "첫 번째 안내입니다.",
+        "두 번째 안내입니다.",
+        "세 번째 안내입니다.",
+        "네 번째 안내입니다.",
+        "다섯 번째 안내입니다.",
+        "여섯 번째 안내입니다.",
+        "일곱 번째 안내입니다.",
+      ],
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.safetyNotes).toHaveLength(4);
+    expect(result.value?.safetyNotes[3]).toBe("네 번째 안내입니다.");
+  });
+
+  it("repairs empty, deterministic, and internal safety note items", () => {
+    const result = validateMajorFortuneReportDraft({
+      ...createValidMajorFortuneDraft(),
+      safetyNotes: [
+        "",
+        "반드시 돈을 법니다.",
+        "fixture debug evidence",
+      ],
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.errors).not.toContain("MAJOR_FORTUNE_SAFETY_NOTES_INVALID");
+    expect(result.value?.safetyNotes.join("\n")).not.toContain("반드시");
+    expect(result.value?.safetyNotes.join("\n")).not.toContain("돈을 법니다");
+    expect(result.value?.safetyNotes.join("\n")).not.toContain("fixture");
+    expect(result.value?.safetyNotes.join("\n")).not.toContain("debug");
+    expect(result.value?.safetyNotes.join("\n")).not.toContain("evidence");
+    expect(
+      result.warnings.some((warning) =>
+        warning.startsWith("MAJOR_FORTUNE_SAFETY_NOTE_WARNING"),
+      ),
+    ).toBe(true);
   });
 
   it("rejects unsupported productType", () => {

@@ -157,4 +157,14 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("Never write fixture");
     expect(text).toContain("majorCycleBasis.displayLabel");
   });
+
+  it("requires short Korean safety notes without internal terms", () => {
+    const text = promptText();
+
+    expect(text).toContain("safetyNotes must be an array of 2 to 4 short Korean strings");
+    expect(text).toContain("Do not include internal terms in safetyNotes");
+    expect(text).toContain("evidence, debug, fixture, precomputed, or schema");
+    expect(text).toContain("이 리포트는 대운의 10년 배경과 반복 패턴을 해석한 것이며");
+    expect(text).toContain("건강 관련 문장은 생활 리듬과 자기관리 관점");
+  });
 });

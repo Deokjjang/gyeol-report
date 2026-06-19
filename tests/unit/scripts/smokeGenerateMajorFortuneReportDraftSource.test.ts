@@ -49,6 +49,7 @@ describe("smoke_generate_major_fortune_report_draft source", () => {
     expect(scriptSource).toContain("myeongli layers:");
     expect(scriptSource).toContain("compact daeun seun timeline");
     expect(scriptSource).toContain("strong years:");
+    expect(scriptSource).toContain("safety notes:");
   });
 
   it("prints validation quality counters and preview URL", () => {
@@ -70,6 +71,8 @@ describe("smoke_generate_major_fortune_report_draft source", () => {
     expect(scriptSource).toContain("strong year title repeat warnings:");
     expect(scriptSource).toContain("repeated strategy warnings:");
     expect(scriptSource).toContain("repeated theme warnings:");
+    expect(scriptSource).toContain("safety note warnings:");
+    expect(scriptSource).toContain("safety notes repaired:");
     expect(scriptSource).toContain("getMajorFortunePreviewSnapshotRelativePath");
     expect(scriptSource).toContain("getMajorFortunePreviewUrl");
     expect(scriptSource).toContain("url:");

@@ -34,6 +34,13 @@ export type MajorFortuneDraftQualitySummary = {
   readonly repeatedStrategyWarnings: number;
 };
 
+export const DEFAULT_MAJOR_FORTUNE_SAFETY_NOTES = [
+  "이 리포트는 대운의 10년 배경과 반복 패턴을 해석한 것이며, 특정 사건을 단정하지 않습니다.",
+  "강하게 체감될 수 있는 해는 가능성이 두드러지는 시기를 뜻하며, 결과를 보장하지 않습니다.",
+  "연애·관계·돈·직업 해석은 제공된 입력값과 명리 근거를 바탕으로 한 방향성 해석입니다.",
+  "건강 관련 문장은 생활 리듬과 자기관리 관점으로만 읽고, 의학적 진단으로 사용하지 마세요.",
+] as const;
+
 const hardClaimReplacements = [
   ["반드시", "대체로"],
   ["무조건", "상황에 따라"],
@@ -328,6 +335,78 @@ function sanitizeStringArray(values: readonly string[]): readonly string[] {
   return values.map(sanitizeMajorFortuneVisibleText);
 }
 
+function includesHardClaimOrInternalWord(value: string): boolean {
+  return (
+    hardClaimReplacements.some(([from]) => value.includes(from)) ||
+    internalForbiddenWords.some((word) =>
+      value.toLowerCase().includes(word.toLowerCase()),
+    )
+  );
+}
+
+function normalizeMajorFortuneSafetyNotes(value: unknown): readonly string[] {
+  if (!Array.isArray(value)) {
+    return DEFAULT_MAJOR_FORTUNE_SAFETY_NOTES;
+  }
+
+  const normalized = value
+    .filter((item): item is string => typeof item === "string")
+    .map(sanitizeMajorFortuneVisibleText)
+    .filter((item) => item.length > 0);
+
+  if (normalized.length === 0) {
+    return DEFAULT_MAJOR_FORTUNE_SAFETY_NOTES;
+  }
+
+  const repaired = [...normalized];
+  for (const fallback of DEFAULT_MAJOR_FORTUNE_SAFETY_NOTES) {
+    if (repaired.length >= 2) {
+      break;
+    }
+    if (!repaired.includes(fallback)) {
+      repaired.push(fallback);
+    }
+  }
+
+  return repaired.slice(0, 4);
+}
+
+function getMajorFortuneSafetyNotesRepairSummary(input: {
+  readonly rawSafetyNotes: unknown;
+  readonly repairedSafetyNotes: readonly string[];
+}): { readonly warningCount: number; readonly repaired: boolean } {
+  let warningCount = 0;
+
+  if (!Array.isArray(input.rawSafetyNotes)) {
+    warningCount += 1;
+  } else {
+    if (input.rawSafetyNotes.length < 2 || input.rawSafetyNotes.length > 4) {
+      warningCount += 1;
+    }
+    for (const item of input.rawSafetyNotes) {
+      if (typeof item !== "string" || item.trim().length === 0) {
+        warningCount += 1;
+        continue;
+      }
+      if (includesHardClaimOrInternalWord(item)) {
+        warningCount += 1;
+      }
+    }
+  }
+
+  const rawComparable = Array.isArray(input.rawSafetyNotes)
+    ? input.rawSafetyNotes.filter((item): item is string => typeof item === "string")
+    : [];
+  const repaired =
+    warningCount > 0 ||
+    JSON.stringify(rawComparable) !== JSON.stringify(input.repairedSafetyNotes);
+
+  return {
+    warningCount,
+    repaired,
+  };
+}
+
 function sanitizeUserContextSummary(
   summary: MajorFortuneReportDraft["userContextSummary"],
 ): MajorFortuneReportDraft["userContextSummary"] {
@@ -615,7 +694,9 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
       label: advice.label,
       body: sanitizeMajorFortuneVisibleText(advice.body),
     })),
-    safetyNotes: sanitizeStringArray(draft.safetyNotes),
+    safetyNotes: normalizeMajorFortuneSafetyNotes(
+      (draft as { readonly safetyNotes?: unknown }).safetyNotes,
+    ),
   };
 }
 
@@ -806,8 +887,7 @@ function hasDraftShape(value: unknown): value is MajorFortuneReportDraft {
         isRecord(advice) &&
         isDomainLabel(advice.label) &&
         typeof advice.body === "string",
-    ) &&
-    isStringArray(draft.safetyNotes)
+    )
   );
 }
 
@@ -1409,6 +1489,10 @@ export function validateMajorFortuneReportDraft(
   }
 
   const sanitizedDraft = sanitizeDraft(draft);
+  const safetyNotesRepairSummary = getMajorFortuneSafetyNotesRepairSummary({
+    rawSafetyNotes: (draft as { readonly safetyNotes?: unknown }).safetyNotes,
+    repairedSafetyNotes: sanitizedDraft.safetyNotes,
+  });
   validateArrayLengths(sanitizedDraft, errors);
 
   const visibleText = collectVisibleStrings(sanitizedDraft).join("\n");
@@ -1418,6 +1502,15 @@ export function validateMajorFortuneReportDraft(
     }
   }
   const quality = summarizeMajorFortuneDraftQuality(sanitizedDraft);
+
+  if (safetyNotesRepairSummary.warningCount > 0) {
+    warnings.push(
+      `MAJOR_FORTUNE_SAFETY_NOTE_WARNING:${safetyNotesRepairSummary.warningCount}`,
+    );
+  }
+  if (safetyNotesRepairSummary.repaired) {
+    warnings.push("MAJOR_FORTUNE_SAFETY_NOTES_REPAIRED");
+  }
 
   if (quality.annualToneWarnings > 0) {
     warnings.push(`MAJOR_FORTUNE_ANNUAL_TONE_WARNING:${quality.annualToneWarnings}`);

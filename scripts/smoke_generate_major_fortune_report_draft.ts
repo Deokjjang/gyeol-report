@@ -240,6 +240,21 @@ async function main(): Promise<void> {
   writeLine(`cycle year timeline: ${quality.cycleYearTimelineCount}`);
   writeLine(`strong years: ${validation.value.strongYears.length}`);
   writeLine(`final advice: ${validation.value.finalAdvice.length}`);
+  writeLine(`safety notes: ${validation.value.safetyNotes.length}`);
+  writeLine(
+    `safety note warnings: ${
+      validation.warnings.filter((warning) =>
+        warning.startsWith("MAJOR_FORTUNE_SAFETY_NOTE_WARNING"),
+      ).length
+    }`,
+  );
+  writeLine(
+    `safety notes repaired: ${
+      validation.warnings.includes("MAJOR_FORTUNE_SAFETY_NOTES_REPAIRED")
+        ? "true"
+        : "false"
+    }`,
+  );
   writeLine(`missing cycle year warnings: ${quality.missingCycleYearWarnings}`);
   writeLine(`cycle index leak warnings: ${quality.cycleIndexLeakWarnings}`);
   writeLine(

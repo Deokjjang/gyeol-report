@@ -2068,6 +2068,29 @@ coverage, likely-area diversity, and diagnostic/internal term leakage. Fixture
 labels may contain diagnostic-only terms such as 백호대살 for guard testing, but
 those terms must not appear in user-facing evidence text.
 
+## DAEUN-04A Safety Notes Validation Repair
+
+The first paid major-fortune generation reached OpenAI and produced report
+content, but final draft validation failed at `safetyNotes` with
+`MAJOR_FORTUNE_SAFETY_NOTES_INVALID`. This was a validator robustness issue, not
+an evidence-generation issue.
+
+Safety notes are now repairable. If `safetyNotes` is missing, not an array, empty,
+too short, too long, or contains empty items, hard deterministic claims, or
+internal/debug words, the major fortune validator normalizes it instead of
+failing the whole draft. The repaired notes are constrained to 2-4 user-facing
+Korean strings.
+
+The default fallback notes explain that the report reads a 10-year 대운 background
+and repeated patterns, does not guarantee specific events, interprets
+relationship/money/work from provided inputs and 명리 evidence, and treats health
+copy only as lifestyle rhythm guidance rather than medical diagnosis.
+
+The OpenAI writer prompt now explicitly asks for 2-4 short Korean `safetyNotes`
+and forbids internal terms such as evidence, debug, fixture, precomputed, and
+schema in those notes. Smoke output reports safety note count, safety note
+warnings, and whether repair occurred. DAEUN-04A itself does not call OpenAI.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
