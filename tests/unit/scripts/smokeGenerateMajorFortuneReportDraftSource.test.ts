@@ -66,6 +66,7 @@ describe("smoke_generate_major_fortune_report_draft source", () => {
     expect(scriptSource).toContain("wrong cycle basis warnings:");
     expect(scriptSource).toContain("empty myeongli basis warnings:");
     expect(scriptSource).toContain("duplicate big theme warnings:");
+    expect(scriptSource).toContain("duplicate big theme domain warnings:");
     expect(scriptSource).toContain("duplicate strong year push warnings:");
     expect(scriptSource).toContain("duplicate strong year reduce warnings:");
     expect(scriptSource).toContain("duplicate top push warnings:");

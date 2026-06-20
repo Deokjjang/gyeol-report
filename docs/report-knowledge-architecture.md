@@ -2187,6 +2187,21 @@ ages are shown by the supplied major-fortune table basis. It does not claim 만
 나이, 세는나이, or another exact age convention until that source is standardized.
 DAEUN-04E does not call OpenAI.
 
+## DAEUN-04F Major Fortune Big Theme Diversity Lock
+
+DAEUN-04F locks the final 대운 big-theme diversity rule. `bigThemes` must cover
+distinct strategic angles instead of repeating money/reality management twice.
+For a 3-theme 대운 report, the expected spread is money/resource or career
+opportunity, work/responsibility or role structure, and relationship/family/body
+or life-rhythm boundaries.
+
+The validator classifies big themes by dominant domain. If a 3-theme draft has
+two money/resource themes, such as `돈과 자원 운용` plus `돈과 현실 구조`, it
+repairs the weaker duplicate into a relationship/life boundary fallback. The
+fallback adapts to known relationship status when available, but never exposes
+unknown status wording. Smoke reports duplicate big theme domain warnings.
+DAEUN-04F does not call OpenAI.
+
 ## REPORT-VERSION-UI-01 Version Label Placement
 
 REPORT-VERSION-UI-01 moves visible `v1.0` labels out of generated report pages.

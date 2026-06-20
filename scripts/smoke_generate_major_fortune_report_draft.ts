@@ -269,6 +269,9 @@ async function main(): Promise<void> {
   );
   writeLine(`duplicate big theme warnings: ${quality.duplicateBigThemeWarnings}`);
   writeLine(
+    `duplicate big theme domain warnings: ${quality.duplicateBigThemeDomainWarnings}`,
+  );
+  writeLine(
     `duplicate strong year push warnings: ${quality.duplicateStrongYearPushWarnings}`,
   );
   writeLine(

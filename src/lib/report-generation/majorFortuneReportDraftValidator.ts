@@ -34,6 +34,7 @@ export type MajorFortuneDraftQualitySummary = {
   readonly repeatedStrategyWarnings: number;
   readonly emptyMyeongliBasisWarnings: number;
   readonly duplicateBigThemeWarnings: number;
+  readonly duplicateBigThemeDomainWarnings: number;
   readonly duplicateStrongYearPushWarnings: number;
   readonly duplicateStrongYearReduceWarnings: number;
   readonly duplicateTopPushWarnings: number;
@@ -491,7 +492,162 @@ function sanitizeCalculationBasis(
   };
 }
 
+type MajorFortuneBigThemeDomain =
+  | "money_resource"
+  | "work_role"
+  | "relationship_life"
+  | "study_growth"
+  | "health_rhythm"
+  | "identity_transition";
+
+const bigThemeDomainKeywords = {
+  money_resource: [
+    "돈",
+    "자원",
+    "계약",
+    "정산",
+    "비용",
+    "고정비",
+    "수익",
+    "투자",
+    "현금흐름",
+    "외부 프로젝트",
+  ],
+  work_role: [
+    "역할",
+    "책임",
+    "직무",
+    "프로젝트",
+    "문서화",
+    "보고",
+    "운영",
+    "기준",
+    "성과",
+    "조직",
+  ],
+  relationship_life: [
+    "관계",
+    "연애",
+    "가족",
+    "연락",
+    "만남",
+    "생활 반경",
+    "역할 분담",
+    "경계",
+  ],
+  study_growth: [
+    "학업",
+    "자격증",
+    "공부",
+    "포트폴리오",
+    "학습",
+    "매뉴얼",
+  ],
+  health_rhythm: ["몸", "수면", "식사", "회복", "생활 리듬", "과로"],
+  identity_transition: ["전환", "독립", "자기 기준", "방향", "재배치"],
+} as const satisfies Record<MajorFortuneBigThemeDomain, readonly string[]>;
+
+export function classifyMajorFortuneBigThemeDomain(
+  theme: MajorFortuneReportDraft["bigThemes"][number],
+): MajorFortuneBigThemeDomain {
+  const text = [
+    theme.title,
+    theme.metaphor,
+    ...theme.likelyScenes,
+    theme.strategy,
+  ].join("\n");
+  const priority: readonly MajorFortuneBigThemeDomain[] = [
+    "money_resource",
+    "work_role",
+    "relationship_life",
+    "health_rhythm",
+    "study_growth",
+    "identity_transition",
+  ];
+  const scores = priority.map((domain) => ({
+    domain,
+    score: bigThemeDomainKeywords[domain].reduce(
+      (count, keyword) => count + (text.includes(keyword) ? 1 : 0),
+      0,
+    ),
+  }));
+  const [best] = scores.sort((a, b) => b.score - a.score);
+
+  return best?.score === 0 || best === undefined
+    ? "identity_transition"
+    : best.domain;
+}
+
+function buildRelationshipLifeBoundaryFallbackTheme(
+  relationshipStatusLabel: string | null,
+): MajorFortuneReportDraft["bigThemes"][number] {
+  const body =
+    relationshipStatusLabel === "솔로"
+      ? "이 대운은 돈과 일만이 아니라 가까운 관계와 생활 리듬에도 현실 책임을 붙일 수 있습니다. 연애·가족·가까운 관계에서는 감정 자체보다 일·커뮤니티·소개·반복 접점처럼 실제 생활에서 이어지는 만남과 역할 조율이 중요해질 가능성이 큽니다. 관계를 넓히는 것보다 오래 갈 수 있는 생활 구조를 만드는 쪽이 덜 소모적입니다."
+      : relationshipStatusLabel === "연애 중"
+        ? "이 대운은 돈과 일만이 아니라 가까운 관계와 생활 리듬에도 현실 책임을 붙일 수 있습니다. 연애·가족·가까운 관계에서는 감정 자체보다 일정, 연락, 돈, 생활 리듬을 어떻게 맞출지가 중요해질 가능성이 큽니다. 관계를 넓히는 것보다 오래 갈 수 있는 생활 구조를 만드는 쪽이 덜 소모적입니다."
+        : relationshipStatusLabel === "기혼"
+          ? "이 대운은 돈과 일만이 아니라 가까운 관계와 생활 리듬에도 현실 책임을 붙일 수 있습니다. 가족 관계에서는 가족 비용, 집안 역할, 배우자와의 책임 분담처럼 실제 생활 구조를 맞추는 일이 중요해질 가능성이 큽니다. 관계를 넓히는 것보다 오래 갈 수 있는 생활 구조를 만드는 쪽이 덜 소모적입니다."
+          : "이 대운은 돈과 일만이 아니라 가까운 관계와 생활 리듬에도 현실 책임을 붙일 수 있습니다. 연애·가족·가까운 관계에서는 감정 자체보다 만남 주기, 연락 방식, 역할 분담이 중요해질 가능성이 큽니다. 관계를 넓히는 것보다 오래 갈 수 있는 생활 구조를 만드는 쪽이 덜 소모적입니다.";
+
+  return {
+    title: "생활 리듬과 관계 경계",
+    metaphor: "사람과 일정이 실제 역할로 묶이는 테마",
+    body,
+    likelyScenes: [
+      "만남 주기와 연락 방식을 현실적으로 맞추는 장면",
+      "가족·연인·가까운 사람과 맡을 역할을 다시 나누는 장면",
+      "일정 과밀과 관계 피로를 동시에 줄이는 장면",
+    ],
+    strategy:
+      "관계에서는 좋은 말보다 만나는 주기, 연락 방식, 맡을 역할을 현실적으로 맞추세요.",
+  };
+}
+
+function repairMajorFortuneBigThemes(
+  themes: readonly MajorFortuneReportDraft["bigThemes"][number][],
+  relationshipStatusLabel: string | null,
+): readonly MajorFortuneReportDraft["bigThemes"][number][] {
+  if (themes.length !== 3) {
+    return themes;
+  }
+
+  const moneyThemeIndexes = themes
+    .map((theme, index) => ({
+      index,
+      domain: classifyMajorFortuneBigThemeDomain(theme),
+    }))
+    .filter((item) => item.domain === "money_resource")
+    .map((item) => item.index);
+
+  if (moneyThemeIndexes.length < 2) {
+    return themes;
+  }
+
+  const replacementIndex = moneyThemeIndexes[1] ?? moneyThemeIndexes[0];
+  const replacement =
+    buildRelationshipLifeBoundaryFallbackTheme(relationshipStatusLabel);
+
+  return themes.map((theme, index) =>
+    index === replacementIndex ? replacement : theme,
+  );
+}
+
 function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft {
+  const sanitizedUserContextSummary = sanitizeUserContextSummary(
+    draft.userContextSummary,
+  );
+  const sanitizedBigThemes = repairMajorFortuneBigThemes(
+    draft.bigThemes.map((theme) => ({
+      title: sanitizeMajorFortuneVisibleText(theme.title),
+      metaphor: sanitizeMajorFortuneVisibleText(theme.metaphor),
+      body: sanitizeMajorFortuneVisibleText(theme.body),
+      likelyScenes: sanitizeStringArray(theme.likelyScenes),
+      strategy: sanitizeMajorFortuneVisibleText(theme.strategy),
+    })),
+    sanitizedUserContextSummary.relationshipStatusLabel,
+  );
+
   return {
     version: "v1",
     productType: "major_fortune",
@@ -500,7 +656,7 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
     openingTitle: sanitizeMajorFortuneVisibleText(draft.openingTitle),
     openingSummary: sanitizeMajorFortuneVisibleText(draft.openingSummary),
     coreLine: sanitizeMajorFortuneVisibleText(draft.coreLine),
-    userContextSummary: sanitizeUserContextSummary(draft.userContextSummary),
+    userContextSummary: sanitizedUserContextSummary,
     cycleSummary: {
       ganji: sanitizeMajorFortuneVisibleText(draft.cycleSummary.ganji),
       displayTitle: sanitizeMajorFortuneVisibleText(
@@ -564,13 +720,7 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
         draft.flowIndexSummary.flowIndexCaution,
       ),
     },
-    bigThemes: draft.bigThemes.map((theme) => ({
-      title: sanitizeMajorFortuneVisibleText(theme.title),
-      metaphor: sanitizeMajorFortuneVisibleText(theme.metaphor),
-      body: sanitizeMajorFortuneVisibleText(theme.body),
-      likelyScenes: sanitizeStringArray(theme.likelyScenes),
-      strategy: sanitizeMajorFortuneVisibleText(theme.strategy),
-    })),
+    bigThemes: sanitizedBigThemes,
     myeongliLayers: {
       tenGodLayer: {
         majorStemTenGod: sanitizeMajorFortuneVisibleText(
@@ -1566,43 +1716,46 @@ function countEmptyMyeongliBasisWarnings(
   return hasTenGod && hasElement && hasBranch && hasHiddenStem ? 0 : 1;
 }
 
-function getBigThemeDominantDomain(
-  theme: MajorFortuneReportDraft["bigThemes"][number],
-): "money" | "work" | "relationship_life" | "study" | "other" {
-  const text = theme.title;
-
-  if (/돈|자원|계약|외부 프로젝트|비용|수익|정산|현금흐름|현실 숫자/u.test(text)) {
-    return "money";
-  }
-  if (/역할|책임|직업|운영|프로젝트|성과|문서|보고|요구사항/u.test(text)) {
-    return "work";
-  }
-  if (/관계|생활|몸|리듬|가족|연락|경계|회복|수면|식사/u.test(text)) {
-    return "relationship_life";
-  }
-  if (/공부|자격증|포트폴리오|학업|자료/u.test(text)) {
-    return "study";
-  }
-
-  return "other";
-}
-
-function countDuplicateBigThemeWarnings(draft: MajorFortuneReportDraft): number {
+function countDuplicateNormalizedValues(values: readonly string[]): number {
   const counts = new Map<string, number>();
 
-  for (const theme of draft.bigThemes) {
-    const domain = getBigThemeDominantDomain(theme);
+  for (const value of values) {
+    const normalized = value.replace(/\s+/gu, " ").trim();
 
-    if (domain === "other") {
+    if (normalized.length === 0) {
       continue;
     }
-    counts.set(domain, (counts.get(domain) ?? 0) + 1);
+    counts.set(normalized, (counts.get(normalized) ?? 0) + 1);
   }
 
   return [...counts.values()].reduce(
     (total, count) => (count > 1 ? total + count - 1 : total),
     0,
   );
+}
+
+function countDuplicateBigThemeDomainWarnings(
+  draft: MajorFortuneReportDraft,
+): number {
+  const moneyThemeCount =
+    draft.bigThemes.length === 3
+      ? draft.bigThemes.filter(
+          (theme) =>
+            classifyMajorFortuneBigThemeDomain(theme) === "money_resource",
+        ).length
+      : 0;
+
+  return (
+    (moneyThemeCount > 1 ? moneyThemeCount - 1 : 0) +
+    countDuplicateNormalizedValues(draft.bigThemes.map((theme) => theme.title)) +
+    countDuplicateNormalizedValues(
+      draft.bigThemes.map((theme) => theme.metaphor),
+    )
+  );
+}
+
+function countDuplicateBigThemeWarnings(draft: MajorFortuneReportDraft): number {
+  return countDuplicateBigThemeDomainWarnings(draft);
 }
 
 function countTimelineSpacingWarnings(visibleText: string): number {
@@ -1654,6 +1807,8 @@ export function summarizeMajorFortuneDraftQuality(
   const repeatedStrategyWarnings = countRepeatedStrategyWarnings(draft);
   const emptyMyeongliBasisWarnings = countEmptyMyeongliBasisWarnings(draft);
   const duplicateBigThemeWarnings = countDuplicateBigThemeWarnings(draft);
+  const duplicateBigThemeDomainWarnings =
+    countDuplicateBigThemeDomainWarnings(draft);
   const duplicateStrongYearPushWarnings =
     countRepeatedStrongYearStrategyWarnings(
       draft.strongYears.map((year) => year.pushStrategy),
@@ -1702,6 +1857,7 @@ export function summarizeMajorFortuneDraftQuality(
     repeatedStrategyWarnings,
     emptyMyeongliBasisWarnings,
     duplicateBigThemeWarnings,
+    duplicateBigThemeDomainWarnings,
     duplicateStrongYearPushWarnings,
     duplicateStrongYearReduceWarnings,
     duplicateTopPushWarnings,

@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import type { MajorFortuneReportDraft } from "../../../src/lib/report-generation/majorFortuneReportDraftTypes";
 import {
   DEFAULT_MAJOR_FORTUNE_SAFETY_NOTES,
+  classifyMajorFortuneBigThemeDomain,
   sanitizeMajorFortuneVisibleText,
   summarizeMajorFortuneDraftQuality,
   validateMajorFortuneReportDraft,
@@ -826,6 +827,7 @@ describe("majorFortuneReportDraftValidator", () => {
       repeatedStrategyWarnings: 0,
       emptyMyeongliBasisWarnings: 0,
       duplicateBigThemeWarnings: 0,
+      duplicateBigThemeDomainWarnings: 0,
       duplicateStrongYearPushWarnings: 0,
       duplicateStrongYearReduceWarnings: 0,
       duplicateTopPushWarnings: 0,
@@ -1078,28 +1080,91 @@ describe("majorFortuneReportDraftValidator", () => {
     )).toBe(true);
   });
 
-  it("warns when bigThemes repeat the same money/resource angle", () => {
+  it("repairs duplicate money/resource bigThemes with relationship life boundary", () => {
     const draft = createValidMajorFortuneDraft();
     const result = validateMajorFortuneReportDraft({
       ...draft,
-      bigThemes: draft.bigThemes.map((theme, index) =>
-        index === 0
-          ? {
-              ...theme,
-              title: "돈과 자원 운용",
-              body: "돈, 자원, 계약, 외부 프로젝트를 다루는 테마입니다.",
-            }
-          : theme,
-      ),
+      bigThemes: [
+        {
+          ...draft.bigThemes[0]!,
+          title: "돈과 자원 운용",
+          metaphor: "외부 프로젝트와 자원을 실제 돈으로 묶는 흐름",
+          body: "돈, 자원, 계약, 외부 프로젝트를 다루는 테마입니다.",
+          strategy: "외부 프로젝트와 계약 기준을 먼저 정하세요.",
+        },
+        {
+          ...draft.bigThemes[1]!,
+          title: "역할과 책임의 설계",
+          metaphor: "일에서 맡게 되는 운영 책임을 선으로 나누는 흐름",
+          body: "역할, 책임, 프로젝트 운영 기준을 다루는 테마입니다.",
+          strategy: "맡을 역할과 맡지 않을 책임을 문서로 나누세요.",
+        },
+        {
+          ...draft.bigThemes[2]!,
+          title: "돈과 현실 구조",
+          metaphor: "정산과 고정비를 현실 숫자로 고정하는 흐름",
+          body: "정산, 계약, 고정비, 현금흐름을 다루는 테마입니다.",
+          strategy: "돈과 비용 구조를 월 단위로 나누세요.",
+        },
+      ],
     });
 
     expect(result.ok).toBe(true);
+    expect(result.value?.bigThemes.map((theme) => theme.title)).toEqual([
+      "돈과 자원 운용",
+      "역할과 책임의 설계",
+      "생활 리듬과 관계 경계",
+    ]);
+    expect(result.value?.bigThemes[2]?.body).not.toContain("미입력");
+    expect(result.value?.bigThemes[2]?.body).not.toContain("관계 상태");
     expect(
       summarizeMajorFortuneDraftQuality(result.value!).duplicateBigThemeWarnings,
-    ).toBeGreaterThan(0);
-    expect(result.warnings.some((warning) =>
-      warning.startsWith("MAJOR_FORTUNE_DUPLICATE_BIG_THEME_WARNING"),
-    )).toBe(true);
+    ).toBe(0);
+    expect(
+      summarizeMajorFortuneDraftQuality(result.value!)
+        .duplicateBigThemeDomainWarnings,
+    ).toBe(0);
+  });
+
+  it("classifies major fortune big theme domains", () => {
+    const draft = createValidMajorFortuneDraft();
+
+    expect(
+      classifyMajorFortuneBigThemeDomain({
+        ...draft.bigThemes[0]!,
+        title: "외부 프로젝트와 돈의 흐름",
+        metaphor: "계약과 자원을 움직이는 흐름",
+      }),
+    ).toBe("money_resource");
+    expect(
+      classifyMajorFortuneBigThemeDomain({
+        ...draft.bigThemes[0]!,
+        title: "일에서 맡게 되는 운영 책임",
+        metaphor: "프로젝트 기준과 보고 라인을 세우는 흐름",
+      }),
+    ).toBe("work_role");
+    expect(
+      classifyMajorFortuneBigThemeDomain({
+        ...draft.bigThemes[0]!,
+        title: "생활 리듬과 관계 경계",
+        metaphor: "사람과 일정이 실제 역할로 묶이는 테마",
+        likelyScenes: [
+          "만남 주기와 연락 방식을 맞추는 장면",
+          "가족과 가까운 관계의 경계를 정하는 장면",
+        ],
+        strategy: "관계에서는 만남 주기와 연락 방식을 먼저 맞추세요.",
+      }),
+    ).toBe("relationship_life");
+  });
+
+  it("preserves already diverse bigThemes", () => {
+    const draft = createValidMajorFortuneDraft();
+    const result = validateMajorFortuneReportDraft(draft);
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.bigThemes.map((theme) => theme.title)).toEqual(
+      draft.bigThemes.map((theme) => theme.title),
+    );
   });
 
   it("warns when strong year push and reduce strategies repeat too much", () => {

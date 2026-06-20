@@ -143,6 +143,10 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     const text = promptText();
 
     expect(text).toContain("bigThemes must have distinct strategic angles");
+    expect(text).toContain("Do not create two money/resource themes");
+    expect(text).toContain("Bad: 돈과 자원 운용 / 역할과 책임 / 돈과 현실 구조");
+    expect(text).toContain("Good: 돈과 자원 운용 / 역할과 책임 / 생활 리듬과 관계 경계");
+    expect(text).toContain("one remaining theme must cover work-role and one must cover relationship/life/body boundary");
     expect(text).toContain("돈과 자원 운용");
     expect(text).toContain("생활 리듬과 관계 경계");
     expect(text).toContain("Strong year pushStrategy and reduceStrategy must be year-specific");
