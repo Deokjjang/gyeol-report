@@ -902,7 +902,7 @@ export function CompatibilityReportView({
         <div className="space-y-4 rounded-xl border border-amber-500/20 bg-neutral-950/70 p-5">
           <div className="space-y-2">
             <p className="text-xs font-semibold uppercase text-amber-200">
-              사주×MBTI 궁합 리포트 v1.0
+              사주×MBTI 궁합 리포트
             </p>
             <h1 className="text-2xl font-bold tracking-tight text-neutral-50 sm:text-3xl">
               {formatCompatibilityDisplayText(
@@ -966,7 +966,7 @@ export function CompatibilityReportView({
         )}
         <div className="grid gap-1 sm:grid-cols-[9rem_1fr]">
           <dt className="font-medium text-neutral-500">상품</dt>
-          <dd className="text-neutral-100">사주×MBTI 궁합 리포트 v1.0</dd>
+          <dd className="text-neutral-100">사주×MBTI 궁합 리포트</dd>
         </div>
         <div className="grid gap-1 sm:grid-cols-[9rem_1fr]">
           <dt className="font-medium text-neutral-500">두 사람</dt>

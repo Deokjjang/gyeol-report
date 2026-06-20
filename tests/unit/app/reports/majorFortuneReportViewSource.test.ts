@@ -9,7 +9,8 @@ const viewSource = readFileSync(
 
 describe("MajorFortuneReportView source", () => {
   it("renders the major fortune hero and cycle structure table", () => {
-    expect(viewSource).toContain("대운 리포트 v1.0");
+    expect(viewSource).toContain("대운 리포트");
+    expect(viewSource).not.toContain("대운 리포트 v1.0");
     expect(viewSource).toContain("대운 기준 요약");
     expect(viewSource).toContain("대운");
     expect(viewSource).toContain("대운 순번");

@@ -47,7 +47,7 @@ describe("compatibility preview page source", () => {
 
   it("renders the compatibility report sections needed for browser review", () => {
     const requiredMarkers = [
-      "사주×MBTI 궁합 리포트 v1.0",
+      "사주×MBTI 궁합 리포트",
       "종합 궁합 점수",
       "draft.scoreSummary.scoreLabel",
       "getCompatibilityScoreCaution(",
@@ -74,6 +74,7 @@ describe("compatibility preview page source", () => {
     for (const marker of requiredMarkers) {
       expect(combinedSource).toContain(marker);
     }
+    expect(combinedSource).not.toContain("사주×MBTI 궁합 리포트 v1.0");
   });
 
   it("does not expose secrets or candidate recommendation copy", () => {

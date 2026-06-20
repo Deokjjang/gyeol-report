@@ -751,8 +751,9 @@ quality warning and extreme overuse is a validation failure.
 ## REPORT-16D Comprehensive Report V1 Quality Freeze
 
 REPORT-16D freezes the comprehensive Saju x MBTI report as a v1.0 product
-surface. The result page can show `사주×MBTI 종합 리포트 v1.0`. This is a
-product-specific version label, not a paid upgrade mechanism.
+surface. Internal schema and product metadata keep their version fields, but
+the generated report page should not expose `v1.0` in the report body heading.
+Version labels are product-selection metadata, not report-content copy.
 
 Each report product owns its own version. Minor copy improvements, safety
 wording, and rendering polish are not separate paid upgrades. A separate product
@@ -2022,9 +2023,10 @@ Age is secondary in the timeline. The primary row identifier is now
 basis label such as `대운표 기준 나이`.
 
 Strong-year `likelyArea` now uses ten-god priority before branch-interaction
-fallbacks. 편재/정재 years map to `돈·외부기회`; 식상 years to `일·성과`;
-관성 years to `일·성과` or `전환`; 인성 years to `학업·자격증`; and 비겁 years
-to relationship/self-standard themes.
+fallbacks. 편재 years map to `돈·외부기회`, while 정재 years map to
+`돈·현실관리`; 식상 years to `일·성과`; 관성 years to `일·성과` or `전환`;
+인성 years to `학업·자격증`; and 비겁 years to relationship/self-standard
+themes.
 
 The 명리 근거 section must render compact actual content: 십성, 오행, 지지 작용,
 지장간, and safe 신살·귀인 references. 백호대살 and other diagnostic-only terms
@@ -2170,6 +2172,31 @@ items such as 백호대살, and remove filler lines such as generic "carefully
 reference in life scenes" wording. DAEUN-04D adds smoke QA counters for unknown
 relationship pills, slash-separated whyStrong text, duplicate strong-year
 headlines, and weak auxiliary-star explanations. DAEUN-04D does not call OpenAI.
+
+## DAEUN-04E Major Fortune Final Micro Polish Before Lock
+
+DAEUN-04E keeps the 대운 v1.0 lock candidate stable while applying only final
+user-facing micro polish. In TOP-year labels, 편재 and 정재 are separated:
+편재 remains `돈·외부기회`, while 정재 becomes `돈·현실관리` because it is
+about fixed costs, settlement, contract stability, and cashflow management.
+
+The visible sanitizer also repairs punctuation residue in 명리 근거 copy, such
+as `장면 생각이`, `장면 관계`, and `장면 돈`, by converting them into sentence
+boundaries. Age remains secondary in the timeline, and the UI explains only that
+ages are shown by the supplied major-fortune table basis. It does not claim 만
+나이, 세는나이, or another exact age convention until that source is standardized.
+DAEUN-04E does not call OpenAI.
+
+## REPORT-VERSION-UI-01 Version Label Placement
+
+REPORT-VERSION-UI-01 moves visible `v1.0` labels out of generated report pages.
+Report pages and dev previews should render product names such as `종합 리포트`,
+`세운 리포트`, `대운 리포트`, and `궁합 리포트` without appending `v1.0`.
+
+Version information remains in internal schema and draft metadata fields such as
+`version` and `productVersion`. Product selection cards may show a small muted
+`v1.0` badge beside the product title so the user can see product maturity
+without the generated report body looking like a development artifact.
 
 ## Future OpenAI Use
 

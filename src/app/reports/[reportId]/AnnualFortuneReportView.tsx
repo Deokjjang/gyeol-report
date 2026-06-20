@@ -268,7 +268,7 @@ export function AnnualFortuneReportView({
     <article className="space-y-8 rounded-xl border border-neutral-800 bg-neutral-900/80 p-5 shadow-2xl shadow-black/30 sm:p-6">
       <header className="space-y-5 rounded-xl border border-amber-500/20 bg-neutral-950/70 p-5">
         <p className="text-xs font-semibold uppercase text-amber-200">
-          세운 리포트 v1.0
+          세운 리포트
         </p>
         <div className="space-y-3">
           {renderOpeningTitle ? (
@@ -332,7 +332,7 @@ export function AnnualFortuneReportView({
           </div>
           <div className="grid gap-1 sm:grid-cols-[8rem_1fr]">
             <dt className="font-medium text-neutral-500">상품</dt>
-            <dd className="text-neutral-100">세운 리포트 v1.0</dd>
+            <dd className="text-neutral-100">세운 리포트</dd>
           </div>
         </dl>
       )}

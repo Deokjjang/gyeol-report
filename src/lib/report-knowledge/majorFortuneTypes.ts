@@ -212,6 +212,7 @@ export interface MajorFortuneEvidencePacket {
     readonly likelyArea:
       | "일·성과"
       | "돈·외부기회"
+      | "돈·현실관리"
       | "관계"
       | "연애·가족"
       | "몸·생활"

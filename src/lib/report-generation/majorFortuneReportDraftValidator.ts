@@ -374,7 +374,10 @@ export function sanitizeMajorFortuneVisibleText(text: string): string {
     .replace(
       /([子丑寅卯辰巳午未申酉戌亥]{2}\s*(?:충|육합|삼합|반합|해|형|파))\(([^)]+)\)/gu,
       "$1: $2",
-    );
+    )
+    .replace(/장면\s+생각이/gu, "장면입니다. 생각이")
+    .replace(/장면\s+관계/gu, "장면입니다. 관계")
+    .replace(/장면\s+돈/gu, "장면입니다. 돈");
 
   for (const word of internalForbiddenWords) {
     sanitized = sanitized.replace(new RegExp(word, "giu"), "");

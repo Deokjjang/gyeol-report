@@ -35,6 +35,8 @@ describe("product pages source", () => {
       "상품",
       "결리포트에서 제공하는 리포트",
       "사주×MBTI 종합 리포트",
+      "v1.0",
+      "versionBadgeKo",
       "정가 1,290원",
       "런칭가 990원",
       "결제금액 990원",

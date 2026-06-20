@@ -107,7 +107,7 @@ function renderDisabledState(message: string) {
     <PreviewShell>
       <section className="space-y-4 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6">
         <p className="text-sm font-semibold text-amber-200">
-          사주×MBTI 궁합 리포트 v1.0
+          사주×MBTI 궁합 리포트
         </p>
         <h1 className="text-2xl font-bold text-neutral-50">
           궁합 리포트 미리보기를 열 수 없습니다.
@@ -142,7 +142,7 @@ function renderFailureState(error: unknown) {
     <PreviewShell>
       <section className="space-y-4 rounded-xl border border-red-900/70 bg-red-950/30 p-6">
         <p className="text-sm font-semibold text-red-200">
-          사주×MBTI 궁합 리포트 v1.0
+          사주×MBTI 궁합 리포트
         </p>
         <h1 className="text-2xl font-bold text-neutral-50">
           궁합 리포트 생성에 실패했습니다.

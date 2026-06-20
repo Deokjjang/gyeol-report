@@ -898,7 +898,7 @@ function renderGeneratedV1State(
       <article className="space-y-8 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
         <header className="space-y-4">
           <p className="text-sm font-semibold text-emerald-200">
-            사주×MBTI 종합 리포트 v1.0
+            사주×MBTI 종합 리포트
           </p>
           <div className="space-y-3">
             <h1 className="text-3xl font-bold tracking-tight text-neutral-50">
@@ -989,7 +989,7 @@ function renderGeneratedV2State(
       <article className="space-y-8 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
         <header className="space-y-4">
           <p className="text-sm font-semibold text-emerald-200">
-            사주×MBTI 종합 리포트 v1.0
+            사주×MBTI 종합 리포트
           </p>
           <div className="space-y-3">
             <h1 className="text-3xl font-bold tracking-tight text-neutral-50">

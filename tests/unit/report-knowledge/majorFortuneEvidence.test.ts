@@ -199,6 +199,10 @@ describe("majorFortuneEvidence", () => {
         ?.likelyArea,
     ).toBe("돈·외부기회");
     expect(
+      evidence.strongYearsWithinCycle.find((year) => year.year === 2029)
+        ?.likelyArea,
+    ).toBe("돈·현실관리");
+    expect(
       evidence.strongYearsWithinCycle.find((year) => year.year === 2030)
         ?.likelyArea,
     ).toMatch(/전환|일·성과/u);

@@ -345,7 +345,7 @@ describe("report result page", () => {
     expect(typeof firstCall?.client).toBe("object");
     expect(html).toContain("결리포트");
     expect(html).toContain("사주×MBTI 종합 리포트");
-    expect(html).toContain("사주×MBTI 종합 리포트 v1.0");
+    expect(html).not.toContain("사주×MBTI 종합 리포트 v1.0");
     expect(html).toContain("한눈에 보는 결");
     expect(html).toContain("사주 원국의 구조를 먼저 보고");
     expect(html).toContain("갑목과 갑신일주가 중심이고 ENTJ");

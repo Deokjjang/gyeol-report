@@ -339,7 +339,7 @@ export function MajorFortuneReportView({
 
       <header className="space-y-5 rounded-xl border border-sky-500/20 bg-neutral-950/70 p-5">
         <p className="text-xs font-semibold uppercase text-sky-200">
-          대운 리포트 v1.0
+          대운 리포트
         </p>
         <div className="space-y-3">
           <h1 className="text-2xl font-bold tracking-tight text-neutral-50 sm:text-3xl">
@@ -362,7 +362,7 @@ export function MajorFortuneReportView({
           </div>
           <div className="grid gap-1 sm:grid-cols-[8rem_1fr]">
             <dt className="font-medium text-neutral-500">상품</dt>
-            <dd className="text-neutral-100">대운 리포트 v1.0</dd>
+            <dd className="text-neutral-100">대운 리포트</dd>
           </div>
         </dl>
       )}

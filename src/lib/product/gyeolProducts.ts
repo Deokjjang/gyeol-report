@@ -6,6 +6,7 @@ export const GYEOL_PRODUCTS = [
     slug: "saju-mbti-full",
     nameKo: "사주×MBTI 종합 리포트",
     fullNameKo: "사주×MBTI 종합 리포트",
+    versionBadgeKo: "v1.0",
     priceKo: "990원",
     priceLabelKo: "990원",
     listPriceKo: "1,290원",
@@ -35,6 +36,7 @@ export const GYEOL_COMING_SOON_PRODUCTS = [
   {
     id: "second_half",
     nameKo: "하반기 운세",
+    versionBadgeKo: "v1.0",
     shortDescriptionKo: "하반기 흐름을 세운 기준으로 가볍게 정리하는 리포트",
     status: "coming_soon",
     isPurchasable: false,
@@ -45,6 +47,7 @@ export const GYEOL_COMING_SOON_PRODUCTS = [
   {
     id: "compatibility_report",
     nameKo: "궁합 리포트",
+    versionBadgeKo: "v1.0",
     shortDescriptionKo: "두 사람의 성향과 관계 흐름을 참고용으로 비교하는 리포트",
     status: "coming_soon",
     isPurchasable: false,
@@ -55,6 +58,7 @@ export const GYEOL_COMING_SOON_PRODUCTS = [
   {
     id: "daewoon_report",
     nameKo: "대운 리포트",
+    versionBadgeKo: "v1.0",
     shortDescriptionKo: "큰 흐름을 자기관리 관점에서 살펴보는 리포트",
     status: "coming_soon",
     isPurchasable: false,
@@ -65,6 +69,7 @@ export const GYEOL_COMING_SOON_PRODUCTS = [
   {
     id: "saewoon_report",
     nameKo: "세운 리포트",
+    versionBadgeKo: "v1.0",
     shortDescriptionKo: "연간 흐름을 일과 관계 활용 관점에서 정리하는 리포트",
     status: "coming_soon",
     isPurchasable: false,

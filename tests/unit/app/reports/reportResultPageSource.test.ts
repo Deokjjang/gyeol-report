@@ -63,7 +63,7 @@ describe("report result page source", () => {
       "최종 조언",
       "isCompatibilityReportDraft",
       "renderGeneratedCompatibilityState",
-      "사주×MBTI 궁합 리포트 v1.0",
+      "사주×MBTI 궁합 리포트",
       "두 사람 만세력 비교",
       "관계 유형",
       "종합 궁합 점수",
@@ -208,6 +208,8 @@ describe("report result page source", () => {
     }
 
     expect(compatibilityViewSource).not.toContain("preview snapshot");
+    expect(source).not.toContain("사주×MBTI 종합 리포트 v1.0");
+    expect(source).not.toContain("사주×MBTI 궁합 리포트 v1.0");
     expect(compatibilityViewSource).not.toContain(">상태<");
     expect(compatibilityViewSource).not.toContain("mutual element complement");
     expect(compatibilityViewSource).not.toContain("출생시간 입력");

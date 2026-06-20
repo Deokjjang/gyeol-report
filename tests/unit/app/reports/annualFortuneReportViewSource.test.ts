@@ -9,7 +9,8 @@ const viewSource = readFileSync(
 
 describe("AnnualFortuneReportView source", () => {
   it("renders annual fortune hero and year structure table labels", () => {
-    expect(viewSource).toContain("세운 리포트 v1.0");
+    expect(viewSource).toContain("세운 리포트");
+    expect(viewSource).not.toContain("세운 리포트 v1.0");
     expect(viewSource).toContain("연도 구조");
     expect(viewSource).toContain("연도");
     expect(viewSource).toContain("간지");

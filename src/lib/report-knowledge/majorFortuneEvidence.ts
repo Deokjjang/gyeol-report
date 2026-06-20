@@ -120,7 +120,7 @@ const plainTypeByInteraction = {
   파: "기존 방식이 깨지며 다시 조정되는 장면",
   해: "큰 충돌은 아니지만 피로와 누수가 쌓이는 장면",
   원진: "가깝지만 미묘하게 어긋나는 감정 피로",
-  귀문: "생각이 한 방향으로 깊게 꽂히거나 예민한 판단이 강해지는 장면",
+  귀문: "생각이 한 방향으로 깊게 꽂히거나 예민한 판단이 강해지는 장면입니다.",
 } as const;
 
 function unique<T>(values: readonly T[]): readonly T[] {
@@ -1117,8 +1117,11 @@ function buildStrongYearsWithinCycle(input: {
     readonly annualTenGod: TenGod;
     readonly interactions: readonly AnnualBranchInteraction[];
   }): StrongYearLikelyArea {
-    if (params.annualTenGod === "편재" || params.annualTenGod === "정재") {
+    if (params.annualTenGod === "편재") {
       return "돈·외부기회";
+    }
+    if (params.annualTenGod === "정재") {
+      return "돈·현실관리";
     }
     if (params.annualTenGod === "식신" || params.annualTenGod === "상관") {
       return "일·성과";
@@ -1196,7 +1199,7 @@ function buildStrongYearsWithinCycle(input: {
         interactions,
       });
       const area =
-        likelyArea === "돈·외부기회"
+        likelyArea === "돈·외부기회" || likelyArea === "돈·현실관리"
           ? "돈·현실"
           : likelyArea === "관계" || likelyArea === "연애·가족"
             ? "관계·생활 리듬"
@@ -1227,7 +1230,7 @@ function buildStrongYearsWithinCycle(input: {
                 ? "외부 프로젝트, 계약, 부업성 수익, 자원 배치"
                 : annualTenGod === "정재"
                   ? "고정비 절감, 정산, 계약 안정화, 현금흐름 관리"
-                  : likelyArea === "돈·외부기회"
+                  : likelyArea === "돈·외부기회" || likelyArea === "돈·현실관리"
           ? "외부 프로젝트, 계약, 정산 기준, 비용 구조 단순화"
           : likelyArea === "관계" || likelyArea === "연애·가족"
             ? "역할 조율, 연락 방식 정리, 가족·동료와의 일정 합의"
@@ -1249,7 +1252,7 @@ function buildStrongYearsWithinCycle(input: {
                 ? "감으로 하는 투자, 애매한 돈거래, 구두 약속"
                 : annualTenGod === "정재"
                   ? "과도한 보수성, 검토만 하다 놓치는 기회"
-                  : likelyArea === "돈·외부기회"
+                  : likelyArea === "돈·외부기회" || likelyArea === "돈·현실관리"
           ? "감으로 하는 투자, 애매한 돈거래, 구두 약속"
           : likelyArea === "관계" || likelyArea === "연애·가족"
             ? "말하지 않은 기대, 무리한 대신 처리, 애매한 약속"

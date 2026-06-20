@@ -20,6 +20,7 @@ describe("GYEOL_PRODUCTS", () => {
       slug: "saju-mbti-full",
       nameKo: "사주×MBTI 종합 리포트",
       fullNameKo: "사주×MBTI 종합 리포트",
+      versionBadgeKo: "v1.0",
       priceAmount: 990,
       listPriceAmount: 1290,
       salePriceAmount: 990,
@@ -54,6 +55,7 @@ describe("GYEOL_PRODUCTS", () => {
           product.status === "coming_soon" &&
           product.isPurchasable === false &&
           product.href === null &&
+          product.versionBadgeKo === "v1.0" &&
           product.badgeKo === "출시 준비 중",
       ),
     ).toBe(true);

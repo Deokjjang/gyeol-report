@@ -757,7 +757,7 @@ describe("majorFortuneReportDraftValidator", () => {
         ...createValidMajorFortuneDraft().majorStructure,
         tenGodExplanation: "편관(편관, 압박과 책임)과 甲일간이 만납니다.",
         branchInteractionExplanation:
-          "卯戌 육합(卯戌 육합, 실제 약속과 움직임이 묶이는 흐름), 辰戌 충(충, 부딪혀 방향이 바뀌는 구조)",
+          "卯戌 육합(卯戌 육합, 실제 약속과 움직임이 묶이는 흐름), 辰戌 충(충, 부딪혀 방향이 바뀌는 구조), 귀문관살: 생각이 한 방향으로 깊게 꽂히거나 예민한 판단이 강해지는 장면 생각이 깊어지는 만큼 혼자 결론을 고정하지 않는 장치가 필요합니다.",
       },
     });
 
@@ -773,6 +773,12 @@ describe("majorFortuneReportDraftValidator", () => {
     );
     expect(result.value?.majorStructure.branchInteractionExplanation).toContain(
       "辰戌 충: 부딪혀 방향이 바뀌는 구조",
+    );
+    expect(result.value?.majorStructure.branchInteractionExplanation).toContain(
+      "장면입니다. 생각이",
+    );
+    expect(result.value?.majorStructure.branchInteractionExplanation).not.toContain(
+      "장면 생각이",
     );
   });
 
@@ -979,6 +985,30 @@ describe("majorFortuneReportDraftValidator", () => {
     expect(result.value?.majorFortuneTimelineRows[0]?.badges).toContain("전환");
     expect(result.value?.majorFortuneTimelineRows.every((row) => row.oneLine.length > 0)).toBe(true);
     expect(result.value?.majorFortuneTimelineRows.every((row) => row.strategy.length > 0)).toBe(true);
+  });
+
+  it("accepts regular-wealth strong years as money reality management", () => {
+    const draft = createValidMajorFortuneDraft();
+    const result = validateMajorFortuneReportDraft({
+      ...draft,
+      strongYears: draft.strongYears.map((year) =>
+        year.year === 2028
+          ? {
+              ...year,
+              ganji: "己酉",
+              headline: "돈의 흐름을 숫자로 고정하는 해",
+              whyStrong:
+                "己酉는 정재 흐름이 강해져 돈과 현실을 감이 아니라 숫자로 고정하려는 힘이 커집니다. 계약, 정산, 고정비, 현금흐름이 중요해질 수 있습니다.",
+              likelyArea: "돈·현실관리",
+            }
+          : year,
+      ),
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.value?.strongYears.find((year) => year.ganji === "己酉")?.likelyArea).toBe(
+      "돈·현실관리",
+    );
   });
 
   it("requires expanded myeongli layers and removes diagnostic-only stars", () => {
@@ -1331,5 +1361,16 @@ describe("majorFortuneReportDraftValidator", () => {
       "식신: 결과물·표현·생산성",
     );
     expect(sanitizeMajorFortuneVisibleText("甲일간")).toBe("甲(갑목) 일간");
+    expect(
+      sanitizeMajorFortuneVisibleText(
+        "귀문관살: 생각이 깊어지는 장면 생각이 고정될 수 있습니다.",
+      ),
+    ).toBe("귀문관살: 생각이 깊어지는 장면입니다. 생각이 고정될 수 있습니다.");
+    expect(sanitizeMajorFortuneVisibleText("관계가 흔들리는 장면 관계 기준을 정합니다.")).toBe(
+      "관계가 흔들리는 장면입니다. 관계 기준을 정합니다.",
+    );
+    expect(sanitizeMajorFortuneVisibleText("현실이 움직이는 장면 돈 기준을 잡습니다.")).toBe(
+      "현실이 움직이는 장면입니다. 돈 기준을 잡습니다.",
+    );
   });
 });

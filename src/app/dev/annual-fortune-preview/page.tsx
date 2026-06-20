@@ -89,7 +89,7 @@ function renderMessage(title: string, message: string) {
     <PreviewShell>
       <section className="space-y-4 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6">
         <p className="text-sm font-semibold text-amber-200">
-          세운 리포트 v1.0
+          세운 리포트
         </p>
         <h1 className="text-2xl font-bold text-neutral-50">{title}</h1>
         <p className="whitespace-pre-line text-sm leading-6 text-neutral-400">

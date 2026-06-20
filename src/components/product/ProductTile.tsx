@@ -52,9 +52,14 @@ export default function ProductTile({ product }: ProductTileProps) {
               </span>
             ) : null}
           </div>
-          <h2 className="text-xl font-extrabold tracking-tight text-neutral-950">
-            {product.nameKo}
-          </h2>
+          <div className="flex items-start justify-between gap-3">
+            <h2 className="text-xl font-extrabold tracking-tight text-neutral-950">
+              {product.nameKo}
+            </h2>
+            <span className="shrink-0 rounded-full border border-neutral-200 bg-neutral-50 px-2 py-0.5 text-[11px] font-semibold text-neutral-500">
+              {product.versionBadgeKo}
+            </span>
+          </div>
           {isPurchasable ? (
             <div className="space-y-2">
               <p className="text-sm leading-6 text-neutral-600">
