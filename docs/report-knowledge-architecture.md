@@ -2213,6 +2213,40 @@ Version information remains in internal schema and draft metadata fields such as
 `v1.0` badge beside the product title so the user can see product maturity
 without the generated report body looking like a development artifact.
 
+## CAREER-01 Career Money Study Evidence Foundation
+
+CAREER-01 starts the `career_money_study` product as an evidence-only layer. It
+does not add a writer, preview page, public UI, payment flow, database write, or
+OpenAI call. The evidence packet covers 직업 적성, 커리어 방향, 일하는 방식,
+돈 버는 방식, 투자·저축 성향, 부업·외부 프로젝트 가능성, 이직·승진·창업·
+프리랜서 가능성, 학업·자격증·포트폴리오 전략.
+
+Myeongli remains the primary source for destiny, resource, money, responsibility,
+and study structure. The foundation reads day master, dominant or missing
+elements, natal labels, ten-god focus, and supporting labels such as 재다신약,
+무인성, 무식상, 식상 과다, 관성 강함, 귀인류, and 공망. MBTI is only a
+behavioral/style layer; it can explain how the person tends to execute, study,
+lead, spend, or recover, but it does not override the Myeongli basis.
+
+User context filters the translation. `lifeStatus`, `fieldLabel`, and
+`relationshipStatus` help turn the same calculation into realistic job, money,
+study, and work-risk scenes. The writing policy for future CAREER drafts is more
+direct than the 종합 report: it may say that a structure is favorable,
+unfavorable, easier to review, or likely to open more contact points, but it must
+not guarantee outcomes such as 합격, 이직, 승진, 창업, investment profit, success,
+or failure.
+
+Investment interpretation is bounded. The evidence may recommend tendencies such
+as monthly accumulation, index diversification, cash-flow-first planning, or
+avoiding leverage, but it must not recommend specific tickers, promise returns,
+or issue buy/sell instructions. The investment profile always carries a
+user-facing disclaimer that the content is 성향 기반 해석 and not financial
+advice.
+
+The CAREER-01 smoke script supports `--fixture` and `--all` without OpenAI. Matrix
+QA checks for identical jobs across all fixtures, specific stock tickers,
+guaranteed return wording, hard deterministic claims, and Deokmin leakage.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
