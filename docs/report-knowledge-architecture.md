@@ -2247,6 +2247,38 @@ The CAREER-01 smoke script supports `--fixture` and `--all` without OpenAI. Matr
 QA checks for identical jobs across all fixtures, specific stock tickers,
 guaranteed return wording, hard deterministic claims, and Deokmin leakage.
 
+## CAREER-02 Career Money Study Draft/Preview Layer
+
+CAREER-02 adds the draft-generation system layer for `career_money_study` without
+making any paid OpenAI call during free verification. The draft schema covers
+career identity, Myeongli x MBTI summary, recommended jobs, unsuitable jobs,
+career paths, money earning style, investment and saving style, timing hints,
+study and certificate planning, six-label action plan, risk warnings, and safety
+notes.
+
+The validator sanitizes hard deterministic claims and career outcome guarantees.
+It also repairs safety notes and blocks investment-specific risk wording such as
+guaranteed return claims, raw buy/sell instructions, specific ticker-style stock
+recommendations, and user-facing internal artifacts. Generic investment language
+such as 우량주, ETF, 장기 분산, 매달 일정 금액, 적립식, 현금흐름, 계약, 정산,
+부업성 수익, and 외부 프로젝트 remains allowed when paired with the visible
+financial disclaimer.
+
+The writer prompt keeps Myeongli primary and MBTI as a behavioral/style layer.
+It requires actual job titles, less suitable jobs, direct money-earning style,
+safe investment/saving guidance, and concrete study/certificate/portfolio
+strategy. The prompt is intentionally direct and immersive, but forbids hard
+claims around 합격, 이직, 승진, 창업, income, success, failure, investment profit,
+principal guarantee, and buy/sell instructions.
+
+The OpenAI writer is gated by `OPENAI_REPORT_WRITER_ENABLED` and uses strict
+`career_money_study_report_draft` response format only when enabled. Free smoke
+runs keep the writer disabled and print evidence readiness plus financial QA
+counters. Preview snapshots are stored under `.tmp/career-report-preview`, and
+`/dev/career-report-preview?fixture=deokmin-career&snapshot=latest` reads only
+that local snapshot before rendering `CareerReportView`. The dev preview page
+does not import the OpenAI writer.
+
 ## Future OpenAI Use
 
 OpenAI generation later will receive section-ready evidence from selectors:
