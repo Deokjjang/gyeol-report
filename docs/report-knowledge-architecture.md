@@ -9,6 +9,18 @@ payment behavior.
 The goal is to make the future comprehensive report depend on structured
 evidence instead of a loose prompt.
 
+## Product SSOT Reference
+
+`docs/report-product-ssot.md` is the source of truth for product,
+interpretation, voice, common UI, product-specific section order, safety tone,
+and product QA expectations.
+It is the source of truth for product, interpretation, voice, common UI.
+
+This document remains the source for report knowledge, evidence, generation,
+validation, and storage architecture. If product wording, UI hierarchy, or
+interpretation tone conflicts with implementation details, follow
+`docs/report-product-ssot.md`.
+
 ## Product Rule
 
 The user should feel:

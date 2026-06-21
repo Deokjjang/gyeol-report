@@ -10,6 +10,9 @@ const source = readFileSync(
 describe("report knowledge architecture document", () => {
   it("documents the REPORT-01 knowledge-base boundary", () => {
     const requiredMarkers = [
+      "docs/report-product-ssot.md",
+      "product, interpretation, voice, common UI",
+      "source of truth",
       "사주가 1차 근거",
       "MBTI는 보조 근거",
       "RAG/source collection is for DB building, not output copying",
