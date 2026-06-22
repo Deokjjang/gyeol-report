@@ -1527,113 +1527,233 @@
         "withType": "INFJ",
         "label": "초자아 관계",
         "sourceRelationName": "Super-Ego",
-        "sourceCoverage": "needs_enrichment",
-        "sharedGround": [],
-        "friction": [],
-        "positiveInfluence": [],
-        "lovePattern": "",
-        "marriagePattern": "",
-        "repairStrategy": [],
-        "reportLine": "",
-        "enrichmentNote": "원문에 관계 제목은 있으나 설명이 부족하여 MBTI-RELATION-GAP-FILL 단계에서 보강 필요"
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "ISTJ와 INFJ는 둘 다 가볍고 즉흥적인 관계보다 신뢰, 책임, 오래 갈 수 있는 안정감을 중요하게 본다.",
+          "ISTJ는 검증된 사실과 생활의 질서를 통해 관계를 지키고, INFJ는 사람과 관계의 숨은 흐름을 통해 방향을 읽는다.",
+          "두 사람 모두 쉽게 마음을 열지 않기 때문에 한 번 신뢰가 쌓이면 관계를 함부로 흔들지 않는다."
+        ],
+        "friction": [
+          "ISTJ는 확인 가능한 사실과 실제 책임을 먼저 보지만, INFJ는 말 뒤의 의도와 관계의 의미를 먼저 본다.",
+          "ISTJ의 현실적 지적은 INFJ에게 차갑게 느껴질 수 있고, INFJ의 상징적 표현은 ISTJ에게 모호하고 비현실적으로 보일 수 있다.",
+          "갈등이 생기면 ISTJ는 무엇을 어떻게 고칠지 묻고, INFJ는 관계의 의도와 감정의 결을 묻기 때문에 대화의 출발점부터 달라진다."
+        ],
+        "positiveInfluence": [
+          "ISTJ는 INFJ의 이상을 생활 속 실행 계획으로 내려앉히는 힘을 준다.",
+          "INFJ는 ISTJ가 놓치기 쉬운 사람의 감정 변화와 관계의 장기적 분위기를 알려 준다.",
+          "서로의 언어를 번역할 수 있으면 현실성과 통찰이 함께 단단해진다."
+        ],
+        "lovePattern": "연애에서는 서로의 진중함과 쉽게 가벼워지지 않는 태도에 호감을 느낀다. 다만 ISTJ는 약속 이행과 일관된 행동으로 사랑을 보여주려 하고, INFJ는 정서적 공명과 깊은 대화를 원하기 때문에 애정 확인 방식부터 맞춰야 한다.",
+        "marriagePattern": "결혼하면 ISTJ는 생활 규칙, 돈 관리, 가족 의무를 분명히 하려 하고 INFJ는 관계의 분위기와 서로의 성장 방향을 챙기려 한다. 안정성은 강하지만 감정 대화가 빠지면 한쪽은 외롭고 한쪽은 억울해질 수 있다.",
+        "repairStrategy": [
+          "ISTJ는 해결책을 제시하기 전에 INFJ의 감정이 왜 생겼는지 먼저 확인한다.",
+          "INFJ는 추상적인 서운함만 말하지 말고 실제 장면과 필요한 행동을 함께 말한다.",
+          "돈, 일정, 가족 문제는 규칙과 정서 점검을 모두 포함한 주간 대화로 다룬다."
+        ],
+        "reportLine": "이 관계는 이상과 현실이 서로를 불편하게 만들 수 있지만, 번역만 되면 오래 가는 책임형 궁합이 됩니다."
       },
       {
         "withType": "ISTP",
         "label": "준동일 관계",
         "sourceRelationName": "Quasi-Identical",
-        "sourceCoverage": "needs_enrichment",
-        "sharedGround": [],
-        "friction": [],
-        "positiveInfluence": [],
-        "lovePattern": "",
-        "marriagePattern": "",
-        "repairStrategy": [],
-        "reportLine": "",
-        "enrichmentNote": "원문에 관계 제목은 있으나 설명이 부족하여 MBTI-RELATION-GAP-FILL 단계에서 보강 필요"
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "ISTJ와 ISTP는 둘 다 말보다 행동을 중시하고, 감정 과잉보다 실제 해결책을 선호한다.",
+          "두 사람 모두 현실 감각이 강해 허황된 약속보다 눈에 보이는 책임과 능력을 더 신뢰한다.",
+          "초반에는 서로를 과하게 부담스럽게 만들지 않는 조용한 안정감이 있다."
+        ],
+        "friction": [
+          "ISTJ는 약속과 절차를 통해 안정을 만들고, ISTP는 상황에 맞는 자율 판단을 통해 효율을 만든다.",
+          "ISTJ는 ISTP를 불안정하거나 책임감이 약하다고 느낄 수 있고, ISTP는 ISTJ를 답답하고 통제적이라고 느낄 수 있다.",
+          "갈등이 생기면 ISTJ는 규칙과 약속을 꺼내고, ISTP는 지금 상황에 맞는 융통성을 요구하면서 부딪히기 쉽다."
+        ],
+        "positiveInfluence": [
+          "ISTJ는 ISTP에게 지속성과 책임 구조를 제공하고, ISTP는 ISTJ에게 유연성과 현장 대응력을 제공한다.",
+          "둘이 서로의 방식을 존중하면 안정성과 실전성이 함께 살아난다.",
+          "생활 문제를 해결하는 능력은 좋은 편이라 감정만 격해지지 않으면 현실 조율이 가능하다."
+        ],
+        "lovePattern": "연애 초반에는 서로 과하게 감정을 요구하지 않는 점이 편하게 느껴진다. 다만 시간이 지나면 ISTJ는 더 분명한 책임과 약속을 원하고, ISTP는 더 넓은 자유와 개인 시간을 원하면서 온도 차이가 생긴다.",
+        "marriagePattern": "결혼하면 ISTJ는 생활의 규칙과 장기 계획을 세우려 하고, ISTP는 그때그때 가장 효율적인 방식을 택하려 한다. 이 조합은 실용성은 강하지만 감정 표현이 적어 관계가 건조해질 수 있으므로, 정기적인 대화 루틴이 필요하다.",
+        "repairStrategy": [
+          "ISTJ는 ISTP에게 규칙을 설명하기 전에 왜 필요한지 먼저 말해야 한다.",
+          "ISTP는 자유를 요구할 때 책임을 피하는 인상을 주지 않도록 최소한의 약속 시간을 지켜야 한다.",
+          "감정 표현이 약한 조합이므로 문제를 덮지 말고 짧고 구체적인 대화 시간을 정해야 한다."
+        ],
+        "reportLine": "이 관계는 뜨겁게 터지는 궁합이라기보다, 서로의 생활 방식이 맞으면 조용히 오래 가는 실용형 궁합입니다."
       },
       {
         "withType": "ISFJ",
         "label": "비교 관계",
         "sourceRelationName": "Comparative",
-        "sourceCoverage": "needs_enrichment",
-        "sharedGround": [],
-        "friction": [],
-        "positiveInfluence": [],
-        "lovePattern": "",
-        "marriagePattern": "",
-        "repairStrategy": [],
-        "reportLine": "",
-        "enrichmentNote": "원문에 관계 제목은 있으나 설명이 부족하여 MBTI-RELATION-GAP-FILL 단계에서 보강 필요"
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "ISTJ와 ISFJ는 둘 다 책임, 성실, 안정된 루틴, 오래 지키는 관계를 중요하게 본다.",
+          "두 사람 모두 세부 사항을 놓치지 않고, 가족과 생활의 질서를 유지하는 데 강하다.",
+          "감정적 흥분보다 조용한 헌신과 반복되는 실천으로 신뢰를 쌓는 방식이 비슷하다."
+        ],
+        "friction": [
+          "ISTJ는 사실, 효율, 원칙을 먼저 보지만 ISFJ는 사람의 감정과 분위기를 더 섬세하게 살핀다.",
+          "ISTJ의 직선적인 판단은 ISFJ에게 차갑게 느껴질 수 있고, ISFJ의 정서적 배려 요구는 ISTJ에게 우회적이고 비효율적으로 보일 수 있다.",
+          "둘 다 자기 방식의 책임감이 강해지면 조용히 서운함을 쌓다가 생활 규칙이나 가족 문제에서 부딪히기 쉽다."
+        ],
+        "positiveInfluence": [
+          "ISFJ는 ISTJ에게 관계의 온도와 사람을 챙기는 표현을 알려 준다.",
+          "ISTJ는 ISFJ에게 감정에 휩쓸리지 않는 판단 기준과 현실적인 정리력을 제공한다.",
+          "서로의 성실함을 인정하면 매우 안정적인 생활 파트너가 될 수 있다."
+        ],
+        "lovePattern": "연애에서는 서로 진지하고 쉽게 흔들리지 않는 태도에 안정감을 느낀다. 다만 ISTJ는 행동과 책임으로 애정을 보이고, ISFJ는 말투와 세심한 반응에서도 애정을 확인하고 싶어 하므로 표현 방식의 차이를 맞춰야 한다.",
+        "marriagePattern": "결혼하면 가정 운영, 돈 관리, 가족 의무는 비교적 안정적으로 굴러갈 수 있다. 그러나 감정 표현이 부족하거나 한쪽의 헌신이 당연해지면 관계가 조용히 건조해질 수 있어 감사 표현과 휴식 분담이 필요하다.",
+        "repairStrategy": [
+          "ISTJ는 ISFJ의 감정 반응을 비효율로 보지 말고 관계 유지에 필요한 정보로 받아들인다.",
+          "ISFJ는 서운함을 돌려 말하기보다 원하는 행동과 기준을 직접 말한다.",
+          "생활 규칙과 가족 의무는 둘 다 납득할 수 있도록 역할과 휴식까지 함께 나눈다."
+        ],
+        "reportLine": "이 관계는 성실함과 안정감이 강하지만, 책임만 쌓고 마음을 표현하지 않으면 조용히 지치는 궁합입니다."
       },
       {
         "withType": "ENTP",
         "label": "준이중성 관계",
         "sourceRelationName": "Semi-Duality",
-        "sourceCoverage": "needs_enrichment",
-        "sharedGround": [],
-        "friction": [],
-        "positiveInfluence": [],
-        "lovePattern": "",
-        "marriagePattern": "",
-        "repairStrategy": [],
-        "reportLine": "",
-        "enrichmentNote": "원문에 관계 제목은 있으나 설명이 부족하여 MBTI-RELATION-GAP-FILL 단계에서 보강 필요"
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "ISTJ는 검증된 절차와 책임으로 현실을 안정시키고, ENTP는 새로운 아이디어와 질문으로 막힌 판을 흔든다.",
+          "서로가 잘 못하는 영역을 상대가 자연스럽게 해내는 모습을 보며 신기함과 자극을 느낄 수 있다.",
+          "공동 목표가 분명하면 ISTJ는 마무리와 지속성을, ENTP는 돌파구와 대안을 제공한다."
+        ],
+        "friction": [
+          "ISTJ는 정해진 약속과 일관성을 중요하게 보지만, ENTP는 규칙 자체를 의심하고 다른 가능성을 시험하려 한다.",
+          "ENTP의 농담 섞인 반박은 ISTJ에게 불성실함이나 약속을 가볍게 여기는 태도로 보일 수 있고, ISTJ의 기준은 ENTP에게 답답한 통제로 느껴질 수 있다.",
+          "갈등이 생기면 ISTJ는 결론과 책임을 요구하고 ENTP는 그 결론이 왜 필요한지 다시 토론하면서 문제 해결이 늦어진다."
+        ],
+        "positiveInfluence": [
+          "ENTP는 ISTJ가 익숙한 방식에만 머물지 않도록 새로운 관점과 변화 가능성을 열어 준다.",
+          "ISTJ는 ENTP가 아이디어만 벌이지 않고 실제 책임과 결과로 연결되게 돕는다.",
+          "서로를 고치려 하지 않으면 안정성과 창의성이 함께 살아난다."
+        ],
+        "lovePattern": "연애 초반에는 ENTP의 재치와 자유로움이 ISTJ에게 신선하게 느껴지고, ISTJ의 성실함은 ENTP에게 묘한 안정감을 준다. 하지만 관계가 깊어지면 ISTJ는 더 분명한 약속을 원하고 ENTP는 계속 여지를 남기고 싶어 해 신뢰의 기준이 흔들릴 수 있다.",
+        "marriagePattern": "결혼하면 ISTJ는 돈, 일정, 가족 책임을 안정적으로 관리하려 하고 ENTP는 변화와 실험을 생활 안에 넣고 싶어 한다. 이 조합은 새 시도와 안정 운영을 모두 얻을 수 있지만, ENTP가 마무리를 피하거나 ISTJ가 변화를 막으면 피로가 커진다.",
+        "repairStrategy": [
+          "ISTJ는 ENTP의 질문을 곧바로 반항으로 보지 말고 개선 아이디어인지 확인한다.",
+          "ENTP는 장난과 논쟁을 하더라도 약속, 마감, 돈 문제에서는 결론을 남겨야 한다.",
+          "새로운 시도는 실험 범위와 책임자를 정해 ISTJ의 불안을 줄인다."
+        ],
+        "reportLine": "이 관계는 안정과 아이디어가 강하게 보완될 수 있지만, 한쪽은 너무 붙잡고 한쪽은 너무 흔들면 신뢰가 쉽게 피곤해집니다."
       },
       {
         "withType": "ESFP",
         "label": "환상 관계",
         "sourceRelationName": "Illusionary",
-        "sourceCoverage": "needs_enrichment",
-        "sharedGround": [],
-        "friction": [],
-        "positiveInfluence": [],
-        "lovePattern": "",
-        "marriagePattern": "",
-        "repairStrategy": [],
-        "reportLine": "",
-        "enrichmentNote": "원문에 관계 제목은 있으나 설명이 부족하여 MBTI-RELATION-GAP-FILL 단계에서 보강 필요"
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "ISTJ는 책임과 절차로 생활을 안정시키고, ESFP는 밝은 표현과 현재의 즐거움으로 관계에 생기를 더한다.",
+          "두 사람 모두 현실 감각이 있어 말뿐인 약속보다 실제 행동과 경험을 통해 관계를 느낀다.",
+          "서로의 역할이 분명하면 ISTJ는 기반을 만들고 ESFP는 분위기를 살리는 조합이 된다."
+        ],
+        "friction": [
+          "ISTJ는 계획과 약속이 지켜져야 안심하지만, ESFP는 상황과 기분에 따라 유연하게 움직이는 편이다.",
+          "ISTJ의 기준과 지적은 ESFP에게 차갑거나 답답하게 느껴질 수 있고, ESFP의 즉흥성과 감정 표현은 ISTJ에게 산만하거나 책임감 부족으로 보일 수 있다.",
+          "갈등이 생기면 ISTJ는 규칙을 강화하고 ESFP는 분위기와 감정을 앞세우며 서로의 언어가 달라진다."
+        ],
+        "positiveInfluence": [
+          "ISTJ는 ESFP에게 장기 책임과 생활 안정의 힘을 제공한다.",
+          "ESFP는 ISTJ가 지나치게 무겁고 반복적인 생활에 갇히지 않도록 즐거움과 표현을 더해 준다.",
+          "안정과 활력의 역할을 나누면 생활과 관계가 함께 살아난다."
+        ],
+        "lovePattern": "연애 초반에는 ISTJ의 성실함과 ESFP의 밝음이 서로에게 신선하게 느껴진다. 시간이 지나면 ISTJ는 더 분명한 약속과 일관성을 원하고, ESFP는 더 많은 표현과 자유로운 시간을 원하면서 답답함과 서운함이 생길 수 있다.",
+        "marriagePattern": "결혼하면 ISTJ는 예산, 일정, 가족 의무를 체계적으로 관리하려 하고 ESFP는 집 안의 분위기와 경험의 즐거움을 살리려 한다. 돈과 외부 활동의 기준이 맞지 않으면 한쪽은 불안하고 한쪽은 통제받는다고 느낀다.",
+        "repairStrategy": [
+          "ISTJ는 ESFP에게 규칙을 말할 때 비판보다 안정이 필요한 이유를 먼저 설명한다.",
+          "ESFP는 즉흥 약속이나 지출이 생길 때 ISTJ가 예측할 수 있도록 미리 공유한다.",
+          "생활비와 즐거움 예산을 분리해 안정과 활력이 서로를 침범하지 않게 한다."
+        ],
+        "reportLine": "이 관계는 안정과 즐거움이 서로를 보완할 수 있지만, 기준은 말로 맞추고 표현은 행동으로 확인해야 오래 갑니다."
       },
       {
         "withType": "INTP",
         "label": "이익 관계",
         "sourceRelationName": "Benefit",
-        "sourceCoverage": "needs_enrichment",
-        "sharedGround": [],
-        "friction": [],
-        "positiveInfluence": [],
-        "lovePattern": "",
-        "marriagePattern": "",
-        "repairStrategy": [],
-        "reportLine": "",
-        "enrichmentNote": "원문에 관계 제목은 있으나 설명이 부족하여 MBTI-RELATION-GAP-FILL 단계에서 보강 필요"
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "ISTJ와 INTP는 둘 다 혼자 생각을 정리하는 시간과 과도하지 않은 관계 거리를 편안하게 느낀다.",
+          "ISTJ는 검증된 사실과 실행 절차를, INTP는 원리와 개념의 정확성을 중요하게 본다.",
+          "감정 과잉보다 납득 가능한 설명과 실제 근거를 선호한다는 점에서 차분한 대화가 가능하다."
+        ],
+        "friction": [
+          "ISTJ는 결론과 실행을 원하지만, INTP는 더 많은 가능성과 논리적 검토를 계속 이어가려 한다.",
+          "ISTJ는 INTP를 실천이 느리고 현실감이 약하다고 느낄 수 있고, INTP는 ISTJ를 답은 빠르지만 사고가 닫혀 있다고 느낄 수 있다.",
+          "갈등이 생기면 ISTJ는 약속과 책임을 꺼내고, INTP는 논리적 전제부터 다시 따지면서 대화가 길어진다."
+        ],
+        "positiveInfluence": [
+          "ISTJ는 INTP에게 실행과 마감, 현실의 기준을 제공한다.",
+          "INTP는 ISTJ에게 익숙한 절차 뒤에 있는 원리를 다시 점검하게 해 준다.",
+          "서로의 속도를 인정하면 안정된 실행과 깊은 분석이 함께 가능하다."
+        ],
+        "lovePattern": "연애에서는 서로 과한 감정 표현을 요구하지 않아 편하게 시작될 수 있다. 다만 ISTJ는 관계의 책임과 약속을 분명히 하고 싶어 하고, INTP는 감정과 관계 정의를 천천히 이해하려 해 속도 차이가 생긴다.",
+        "marriagePattern": "결혼하면 ISTJ는 생활 루틴과 돈 관리를 안정적으로 세우려 하고 INTP는 개인의 사고 시간과 유연한 생활을 원한다. 이 조합은 조용하고 실용적일 수 있지만, 감정 표현과 집안일 분담을 자동으로 기대하면 불만이 쌓인다.",
+        "repairStrategy": [
+          "ISTJ는 INTP에게 결론만 요구하지 말고 검토할 시간과 결정 시점을 함께 정한다.",
+          "INTP는 생각 중이라는 말로 책임을 미루지 말고 약속 가능한 행동을 제시한다.",
+          "감정 대화는 논리 검증이 아니라 관계 상태 확인이라는 점을 서로 합의한다."
+        ],
+        "reportLine": "이 관계는 차분하고 생각이 많은 조합이지만, 실행과 감정 표현을 미루면 조용한 거리감이 커질 수 있습니다."
       },
       {
         "withType": "ESFJ",
         "label": "감독 관계",
         "sourceRelationName": "Supervision",
-        "sourceCoverage": "needs_enrichment",
-        "sharedGround": [],
-        "friction": [],
-        "positiveInfluence": [],
-        "lovePattern": "",
-        "marriagePattern": "",
-        "repairStrategy": [],
-        "reportLine": "",
-        "enrichmentNote": "원문에 관계 제목은 있으나 설명이 부족하여 MBTI-RELATION-GAP-FILL 단계에서 보강 필요"
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "ISTJ와 ESFJ는 둘 다 책임, 예의, 가족과 생활의 안정, 오래 가는 관계를 중요하게 본다.",
+          "두 사람 모두 해야 할 일을 놓치지 않으려 하고, 공동체 안에서 자기 역할을 성실히 수행하려 한다.",
+          "생활 운영과 가족 의무에서는 서로의 성실함을 빠르게 신뢰할 수 있다."
+        ],
+        "friction": [
+          "ISTJ는 사실과 효율을 기준으로 판단하지만, ESFJ는 사람의 감정과 관계의 조화를 먼저 살핀다.",
+          "ESFJ의 적극적인 확인과 사회적 기대는 ISTJ에게 부담이 될 수 있고, ISTJ의 짧고 건조한 피드백은 ESFJ에게 차갑게 느껴질 수 있다.",
+          "갈등이 생기면 ISTJ는 문제를 고치는 기준을 말하고, ESFJ는 마음과 분위기를 회복하는 표현을 원하면서 서로 필요한 답을 놓친다."
+        ],
+        "positiveInfluence": [
+          "ESFJ는 ISTJ에게 관계를 따뜻하게 표현하고 주변 사람을 챙기는 감각을 더해 준다.",
+          "ISTJ는 ESFJ에게 감정에 휩쓸리지 않는 현실 판단과 안정된 구조를 제공한다.",
+          "역할이 잘 나뉘면 생활력과 사회적 조율이 모두 강한 관계가 된다."
+        ],
+        "lovePattern": "연애에서는 서로 성실하고 관계를 쉽게 가볍게 여기지 않는 점에 안정감을 느낀다. 다만 ESFJ는 자주 표현하고 반응받고 싶어 하고, ISTJ는 행동과 책임으로 애정을 보이려 하므로 애정 확인 방식의 차이가 생긴다.",
+        "marriagePattern": "결혼하면 집안일, 가족 행사, 돈 관리가 비교적 체계적으로 돌아갈 수 있다. 그러나 ESFJ가 정서와 관계를 지나치게 혼자 챙기고 ISTJ가 실무만 담당하면, 한쪽은 외롭고 한쪽은 충분히 하고 있다고 느끼는 엇갈림이 생긴다.",
+        "repairStrategy": [
+          "ISTJ는 ESFJ에게 필요한 감정 표현과 감사 표현을 의식적으로 말해야 한다.",
+          "ESFJ는 돌려 말하기보다 어떤 반응과 행동이 필요한지 구체적으로 요청한다.",
+          "가족 행사와 사회적 약속은 실무 분담뿐 아니라 각자의 회복 시간까지 함께 정한다."
+        ],
+        "reportLine": "이 관계는 책임과 예의가 잘 맞지만, 실무만 맞고 감정 표현이 비면 가까운 사이일수록 서운함이 커집니다."
       },
       {
         "withType": "ENTJ",
         "label": "감독 관계",
         "sourceRelationName": "Supervision",
-        "sourceCoverage": "needs_enrichment",
-        "sharedGround": [],
-        "friction": [],
-        "positiveInfluence": [],
-        "lovePattern": "",
-        "marriagePattern": "",
-        "repairStrategy": [],
-        "reportLine": "",
-        "enrichmentNote": "원문에 관계 제목은 있으나 설명이 부족하여 MBTI-RELATION-GAP-FILL 단계에서 보강 필요"
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "ISTJ와 ENTJ는 둘 다 책임, 결과, 효율, 실질적 성과를 중요하게 여긴다.",
+          "두 사람 모두 말보다 실행과 능력으로 신뢰를 판단하기 때문에 공동 목표가 있으면 빠르게 움직인다.",
+          "ISTJ는 안정된 절차와 세부 완성도를, ENTJ는 큰 목표와 추진력을 제공한다."
+        ],
+        "friction": [
+          "ISTJ는 검증된 방식과 단계적 실행을 선호하지만, ENTJ는 더 빠른 결정과 큰 방향 전환을 밀어붙이려 한다.",
+          "ENTJ의 강한 압박은 ISTJ에게 무리한 지시로 느껴질 수 있고, ISTJ의 신중함은 ENTJ에게 답답한 지연으로 보일 수 있다.",
+          "갈등이 생기면 ENTJ는 속도와 성과를 요구하고 ISTJ는 근거와 절차를 요구하면서 주도권 싸움이 생기기 쉽다."
+        ],
+        "positiveInfluence": [
+          "ENTJ는 ISTJ가 익숙한 절차에만 머물지 않고 더 큰 목표를 보게 만든다.",
+          "ISTJ는 ENTJ의 추진력이 현실의 세부와 품질을 놓치지 않도록 잡아 준다.",
+          "서로의 권한을 인정하면 전략과 실행 완성도가 모두 살아난다."
+        ],
+        "lovePattern": "연애에서는 서로의 책임감과 능력에 빠르게 호감을 느낄 수 있다. 다만 ENTJ가 관계에서도 방향과 결론을 빠르게 정하려 할수록 ISTJ는 압박을 느끼고, ISTJ가 절차와 검토를 요구할수록 ENTJ는 답답함을 느낄 수 있다.",
+        "marriagePattern": "결혼하면 ENTJ는 자산, 목표, 역할 분담을 빠르게 설계하려 하고 ISTJ는 생활 규칙과 안정적인 운영을 세밀하게 다지려 한다. 이 조합은 성과와 안정성이 강하지만, 감정 표현이 적고 일 중심으로 흐르면 부부 관계가 공동 프로젝트처럼 건조해질 수 있다.",
+        "repairStrategy": [
+          "ENTJ는 ISTJ에게 결론만 요구하지 말고 근거와 절차를 검토할 시간을 준다.",
+          "ISTJ는 지나친 신중함으로 모든 변화를 막지 말고 결정 가능한 기준을 제시한다.",
+          "큰 목표는 ENTJ가 방향을 잡고 ISTJ가 실행 세부와 리스크를 점검하는 방식으로 나눈다."
+        ],
+        "reportLine": "이 관계는 성과와 책임이 강하게 맞물리지만, 속도와 절차의 주도권을 조율하지 않으면 유능한 두 사람이 서로를 압박하게 됩니다."
       }
     ]
   },
