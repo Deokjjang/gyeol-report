@@ -1,0 +1,2210 @@
+﻿{
+  "type": "ESTJ",
+  "titleKo": "엄격한 관리자",
+  "archetype": "현실을 움직이는 운영자",
+  "oneLine": "명확한 기준과 책임감으로 사람과 일을 정리하고, 목표를 실제 성과로 끌고 가는 실행형 관리자",
+  "sourceStatus": {
+    "rawSourceWasProvidedByUser": true,
+    "rawTextStoredVerbatim": false,
+    "cleanedAndRewritten": true,
+    "notes": "원문을 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+  },
+  "preferenceAxes": {
+    "energy": "E",
+    "perception": "S",
+    "judgment": "T",
+    "lifestyle": "J"
+  },
+  "functionStack": {
+    "dominant": "Te",
+    "auxiliary": "Si",
+    "tertiary": "Ne",
+    "inferior": "Fi"
+  },
+  "closeKeywords": [
+    "결과 지향",
+    "관습적",
+    "계획적",
+    "권력욕",
+    "권위주의",
+    "관료주의",
+    "단기 성과",
+    "기억력",
+    "가부장적",
+    "근시안적",
+    "단순 암기",
+    "보수적",
+    "비즈니스 인맥",
+    "사실 중심",
+    "사회적 현실감각",
+    "선택적 융통성",
+    "성취욕",
+    "손익계산",
+    "솔직함",
+    "안정",
+    "연고주의",
+    "완고함",
+    "워커홀릭",
+    "위계질서",
+    "의무감",
+    "자기애",
+    "효율성",
+    "전통적",
+    "절차의 공정함",
+    "회계",
+    "직설적",
+    "책임감",
+    "체계적",
+    "추진력",
+    "통제와 간섭",
+    "편견과 고정관념",
+    "현실적",
+    "형식적"
+  ],
+  "farKeywords": [
+    "가식적",
+    "감성팔이",
+    "감정 이입",
+    "감정적",
+    "개방성",
+    "거시적 안목",
+    "굽히는 태도",
+    "깊이 있는 대화",
+    "다원주의",
+    "대책 없는 계획",
+    "대충 넘어가기",
+    "덕질",
+    "떠넘기기",
+    "뜬구름 잡는 소리",
+    "맥락 추론",
+    "미적 감각",
+    "브레인스토밍",
+    "돌려 말하기",
+    "사회부적응",
+    "성과 없는 과정 미화",
+    "수학적 감수성",
+    "열린 결말",
+    "이론적",
+    "이상주의",
+    "인간관계 감수성",
+    "인간 중심",
+    "즉흥적 만남",
+    "창의적",
+    "철학적 대화",
+    "추상적 사고",
+    "코미디",
+    "통찰력",
+    "평등한 관계",
+    "학문적 논리",
+    "혁신"
+  ],
+  "summary": {
+    "identity": "ESTJ는 책임, 질서, 절차, 성과를 중심에 두고 현실을 정리하는 유형이다. 사람을 감정으로 설득하기보다 역할과 기준을 분명히 세우고, 해야 할 일을 실제 결과로 끝까지 밀어붙인다.",
+    "strength": "강한 실행력, 조직력, 책임감, 현실 감각, 직설적인 문제 해결 능력이 강점이다. 혼란스러운 상황에서도 누가 무엇을 해야 하는지 빠르게 나누고, 흐트러진 구조를 안정적인 시스템으로 바꾸는 힘이 있다.",
+    "risk": "기준이 과해지면 통제적이고 냉정하며 융통성 없는 사람으로 보인다. 감정적 맥락을 무시한 직설, 기존 방식에 대한 고집, 높은 기준의 강요가 관계와 팀 분위기를 압박할 수 있다.",
+    "growthStrategy": "정확한 말만으로는 충분하지 않다는 점을 배워야 한다. 기준과 책임을 유지하되 상대의 감정, 속도, 자유를 함께 고려하고, 검증된 절차 밖의 가능성도 일부 실험해 볼 때 리더십이 성숙해진다."
+  },
+  "traits": {
+    "identity": [
+      {
+        "id": "responsible_operator",
+        "label": "책임형 운영자",
+        "plainKo": "ESTJ는 자신에게 맡겨진 역할을 끝까지 수행해야 한다고 느낀다. 일과 관계에서 약속, 의무, 성과를 가볍게 여기지 않으며, 주변 사람에게도 같은 수준의 책임감을 기대한다.",
+        "strongLine": "당신은 말보다 이행을 믿고, 관계도 일도 책임을 지는 사람에게 마음을 여는 유형입니다.",
+        "positiveUse": "조직, 가정, 팀 프로젝트에서 안정적인 운영자와 책임자의 역할을 맡는다.",
+        "risk": "책임 기준이 높아지면 타인의 속도나 한계를 게으름으로 판단하기 쉽다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "토"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "order_and_standard",
+        "label": "질서와 기준",
+        "plainKo": "ESTJ는 무질서하고 기준이 모호한 상황을 오래 두지 않는다. 역할, 절차, 책임선을 분명히 세워야 마음이 놓이고, 집단이 제대로 움직인다고 느낀다.",
+        "strongLine": "당신은 분위기를 맞추기보다 기준을 세워야 안심하는 사람입니다.",
+        "positiveUse": "혼란한 조직, 느슨한 프로젝트, 책임 소재가 불분명한 환경을 정리한다.",
+        "risk": "규칙 자체가 목적이 되면 결과가 달라지지 않는 사소한 형식에도 과하게 반응한다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "금",
+          "토"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "practical_realist",
+        "label": "현실주의",
+        "plainKo": "ESTJ는 추상적인 가능성보다 지금 적용 가능한 사실과 방법을 우선한다. 장기적으로 그럴듯한 의견이라도 당장 실행할 수 없으면 채택을 망설인다.",
+        "strongLine": "당신에게 좋은 생각은 멋진 말이 아니라 오늘 바로 움직일 수 있는 계획입니다.",
+        "positiveUse": "현실적인 일정, 예산, 인력, 절차를 반영해 계획을 실행 가능한 형태로 바꾼다.",
+        "risk": "새로운 관점이나 장기적 가능성을 비현실적인 이야기로 너무 빨리 잘라낼 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "traditional_stability",
+        "label": "전통적 안정",
+        "plainKo": "ESTJ는 기존의 검증된 방식, 전통, 의례, 역할 분담을 신뢰한다. 안정된 구조 안에서 성과가 나고 사람들이 제 역할을 할 때 가장 편안함을 느낀다.",
+        "strongLine": "당신은 새로움보다 검증된 질서가 사람을 지켜준다고 믿는 쪽에 가깝습니다.",
+        "positiveUse": "가정, 조직, 공공기관, 현장직처럼 역할과 규율이 분명한 환경에서 안정감을 만든다.",
+        "risk": "세대 차이, 새로운 문화, 자유로운 방식에 대해 보수적이고 통제적으로 보일 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "general",
+          "marriage",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "assertive_self_confidence",
+        "label": "확신과 자신감",
+        "plainKo": "ESTJ는 자기 판단과 역량에 대한 확신이 강하다. 다만 자신의 능력 밖이라고 판단하면 허세를 부리기보다 도움을 요청하거나 필요한 능력을 개발하려 한다.",
+        "strongLine": "당신의 자신감은 과장이 아니라 책임 있게 판단하고 끝까지 해내려는 태도에서 나옵니다.",
+        "positiveUse": "의사결정, 리더십, 자기계발, 위기 대응에서 빠르게 중심을 잡는다.",
+        "risk": "확신이 강해지면 자신의 기준을 보편적인 정답처럼 밀어붙이기 쉽다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "편관",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "work_over_emotion",
+        "label": "일로 버티는 사람",
+        "plainKo": "ESTJ도 감정적으로 흔들리지만, 감정에 오래 머무르기보다 임무와 자기계발에 몰입하며 버틴다. 힘들수록 쉬기보다 더 일하는 방식으로 통제감을 되찾으려 한다.",
+        "strongLine": "당신은 무너질 때도 멈추기보다 더 정확히 움직이려는 사람입니다.",
+        "positiveUse": "위기와 스트레스 상황에서도 해야 할 일을 놓치지 않는다.",
+        "risk": "감정을 무시한 채 달리다가 사소한 일에 갑자기 폭발하거나 번아웃으로 이어질 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "겁재",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "thinkingStyle": [
+      {
+        "id": "te_fact_execution",
+        "label": "사실 기반 실행",
+        "plainKo": "주기능 Te는 ESTJ가 사실, 기준, 결과를 중심으로 판단하게 만든다. 감정적 설득보다 무엇이 맞고, 누가 책임지고, 어떻게 처리할지를 빠르게 정리한다.",
+        "strongLine": "당신의 사고는 감정의 흐름보다 사실과 책임의 배치를 먼저 봅니다.",
+        "positiveUse": "회의, 갈등, 업무 배분, 의사결정에서 문제를 빠르게 구조화한다.",
+        "risk": "사람이 느끼는 부담과 관계의 온도를 문제 해결의 부차적 요소로 밀어낼 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "si_verified_process",
+        "label": "검증된 절차",
+        "plainKo": "부기능 Si는 이전에 효과가 있었던 방식과 축적된 경험을 중시하게 한다. ESTJ는 이미 검증된 절차를 따를 때 안정감과 효율을 동시에 느낀다.",
+        "strongLine": "당신은 새로운 말보다 검증된 방식이 실제로 사람과 일을 지킨다고 믿습니다.",
+        "positiveUse": "매뉴얼, 루틴, 시험 준비, 업무 기준, 공공 조직 운영에 강하다.",
+        "risk": "과거 방식에 대한 신뢰가 강해지면 환경 변화에 맞춘 점진적 수정도 늦어진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "efficiency_filter",
+        "label": "효율 필터",
+        "plainKo": "ESTJ는 비효율, 책임 회피, 모호한 절차를 빠르게 포착한다. 아이디어가 좋아 보여도 실제 성과와 연결되지 않으면 가치가 낮다고 판단한다.",
+        "strongLine": "당신은 좋은 의도보다 작동하는 구조를 더 믿는 사람입니다.",
+        "positiveUse": "불필요한 단계, 느슨한 협업, 성과 없는 회의를 정리한다.",
+        "risk": "과정의 의미, 실험의 가치, 정서적 회복 시간을 낭비로 판단할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편재",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "money",
+          "investment"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "weak_fi_emotional_blindspot",
+        "label": "감정 맹점",
+        "plainKo": "열등 Fi 때문에 ESTJ는 자기 감정과 타인의 섬세한 감정선을 뒤늦게 인식할 때가 있다. 사랑과 배려도 말보다 책임, 해결, 계획으로 표현하는 편이다.",
+        "strongLine": "당신은 마음이 없어서 차가운 것이 아니라, 마음을 행동과 책임으로 먼저 보여주는 쪽입니다.",
+        "positiveUse": "관계를 안정적으로 유지하기 위한 실질적 도움과 책임 이행에 강하다.",
+        "risk": "상대가 원하는 위로와 공감을 해결책으로 대체해 관계가 건조해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "금"
+        ],
+        "productDomains": [
+          "love",
+          "marriage",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "selective_flexibility",
+        "label": "선택적 융통성",
+        "plainKo": "ESTJ는 무조건 변화를 거부하지 않는다. 다만 변화가 명확한 성과, 효율, 안정성으로 연결된다고 확인될 때만 받아들이는 편이다.",
+        "strongLine": "당신은 바꾸기 싫어서 버티는 것이 아니라, 바꿔도 되는 근거가 충분해야 움직입니다.",
+        "positiveUse": "위험한 변화를 걸러내고, 검증 가능한 개선만 현실에 반영한다.",
+        "risk": "새로운 가능성의 초기 불완전함을 견디지 못해 혁신의 싹을 꺾을 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "편인",
+          "토"
+        ],
+        "productDomains": [
+          "career",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "career": [
+      {
+        "id": "management_leadership_fit",
+        "label": "관리 리더십",
+        "plainKo": "ESTJ는 목표, 역할, 절차, 성과를 조직하는 능력이 강하다. 사람들을 막연히 독려하기보다 책임과 기대치를 분명히 제시하고 결과가 나오도록 이끈다.",
+        "strongLine": "당신은 팀의 분위기를 띄우는 리더보다 팀이 실제로 굴러가게 만드는 리더에 가깝습니다.",
+        "positiveUse": "CEO, 임원, 중간 관리자, 공공 조직 관리자처럼 운영 책임이 큰 역할에서 강하다.",
+        "risk": "기준 제시가 압박으로 바뀌면 구성원이 자율성을 잃고 방어적으로 변한다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "비견"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "public_order_career",
+        "label": "공공질서 직무",
+        "plainKo": "ESTJ는 규율, 절차, 책임, 현장 판단이 중요한 분야에서 빛난다. 위계와 역할이 분명한 공공기관, 군, 경찰, 소방, 행정, 현장 조직과 잘 맞는다.",
+        "strongLine": "당신은 규칙이 살아 있어야 사람과 조직이 안전해진다고 느끼는 직무에서 힘을 냅니다.",
+        "positiveUse": "직업군인, 경찰, 소방관, 공무원, 현장 관리자 역할에서 안정적인 성과를 낸다.",
+        "risk": "환경이 지나치게 보수적이면 변화의 필요를 알고도 기존 질서를 고수할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "law_finance_fit",
+        "label": "법과 회계",
+        "plainKo": "ESTJ는 절차의 공정함, 규정, 계산, 책임 소재를 중시한다. 법률, 회계, 금융처럼 기준을 정확히 적용하고 결과를 검증하는 분야와 궁합이 좋다.",
+        "strongLine": "당신은 감으로 움직이는 일보다 기준과 숫자가 분명한 일에서 신뢰를 만듭니다.",
+        "positiveUse": "변호사, 판사, 검사, 회계사, 은행원, 재무 관리자 역할에 적합하다.",
+        "risk": "사람의 사정과 맥락보다 규정의 적용을 우선해 차갑게 보일 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "money",
+          "investment"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "education_with_structure",
+        "label": "구조적 교육",
+        "plainKo": "ESTJ는 학생에게 명확한 목표, 규칙, 평가 기준을 제시하는 교육 방식과 잘 맞는다. 특히 입시, 시험, 규율, 성과 중심 교육에서 강점을 보인다.",
+        "strongLine": "당신의 교육 방식은 자유로운 탐색보다 목표와 기준을 세워 성과를 내게 하는 쪽입니다.",
+        "positiveUse": "고등학교 교사, 입시 지도, 학급 운영, 학생회 지도처럼 규칙과 성과가 필요한 교육에 강하다.",
+        "risk": "학생의 정서적 속도나 개별적 흥미를 충분히 보지 못하면 통제적인 교사로 느껴질 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정관",
+          "문창"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "healthcare_authority_fit",
+        "label": "전문 권위 직무",
+        "plainKo": "ESTJ는 자격, 책임, 전문 기준이 분명한 분야에서 실력을 쌓기 쉽다. 의료 분야처럼 정확한 판단과 안정적 수행이 필요한 직무도 원문에서 적합 분야로 제시된다.",
+        "strongLine": "당신은 전문성과 권한이 분명한 자리에서 책임을 맡을수록 더 단단해집니다.",
+        "positiveUse": "의사 등 의료 분야, 전문직, 자격 기반 직무에서 성과를 낸다.",
+        "risk": "전문 권위가 강해질수록 다른 사람의 감정적 불안을 작게 볼 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편인",
+          "귀인"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "workplace": [
+      {
+        "id": "clear_expectations",
+        "label": "명확한 기대치",
+        "plainKo": "ESTJ는 구성원에게 무엇을 언제까지 어떤 기준으로 해야 하는지 분명히 알려주는 편이다. 애매한 지시나 책임 없는 협업을 싫어한다.",
+        "strongLine": "당신은 좋은 팀워크가 친한 분위기보다 명확한 역할에서 시작된다고 봅니다.",
+        "positiveUse": "팀의 목표, 일정, 책임 분담을 빠르게 정리한다.",
+        "risk": "기대치가 너무 촘촘하면 구성원이 감시받는다고 느낀다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관"
+        ],
+        "productDomains": [
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "micro_management_precision",
+        "label": "세밀한 관리",
+        "plainKo": "ESTJ는 업무 지시를 주거나 받을 때 세부 기준을 선호한다. 글씨체, 형식, 절차 같은 작은 부분까지 결과물의 신뢰도와 연결해 본다.",
+        "strongLine": "당신은 큰 방향만 맞추는 것보다 디테일이 맞아야 일이 제대로 끝났다고 느낍니다.",
+        "positiveUse": "품질 관리, 문서 관리, 운영 매뉴얼, 현장 체크리스트에 강하다.",
+        "risk": "사소한 형식까지 통제하면 주변 사람이 숨 막힌다고 느낄 수 있다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "정관",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "delegation_difficulty",
+        "label": "위임의 어려움",
+        "plainKo": "ESTJ는 무능하거나 책임감이 부족한 사람에게 일을 맡기느니 직접 처리하려 한다. 기준을 지키는 것이 중요하기 때문에 위임보다 직접 수행이 편할 때가 많다.",
+        "strongLine": "당신은 못 믿을 사람에게 맡기느니 내가 해내는 쪽을 택하는 사람입니다.",
+        "positiveUse": "위기 상황에서 공백을 메우고 결과를 지킨다.",
+        "risk": "모든 일을 떠안으면 팀은 성장하지 못하고 본인은 과로한다.",
+        "matchingMyeongliSignals": [
+          "겁재",
+          "편관",
+          "정재"
+        ],
+        "productDomains": [
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "hierarchy_comfort",
+        "label": "위계 적합",
+        "plainKo": "ESTJ는 상하관계와 역할이 분명한 조직에서 편안함을 느낀다. 하급자일 때는 지시를 잘 따르고, 상급자일 때는 기준과 질서를 세우려 한다.",
+        "strongLine": "당신은 수평적인 모호함보다 책임선이 분명한 구조에서 더 안정적으로 움직입니다.",
+        "positiveUse": "공공기관, 군대, 대기업, 현장 조직처럼 역할 구분이 분명한 곳에서 성과를 낸다.",
+        "risk": "수평적 문화나 자유로운 팀에서는 고압적이고 보수적인 사람으로 보일 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "토"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "honesty_and_work_ethic",
+        "label": "직업윤리",
+        "plainKo": "ESTJ는 성실성, 정직성, 직업 윤리를 사회 운영의 핵심으로 본다. 태만, 무능, 부정직한 태도에는 불만을 숨기기 어렵다.",
+        "strongLine": "당신은 실력보다 먼저 성실함과 정직함이 기본이라고 믿는 사람입니다.",
+        "positiveUse": "팀의 신뢰 기준을 지키고, 책임 없는 태도를 빠르게 교정한다.",
+        "risk": "기준에 맞지 않는 사람을 너무 빨리 배제하거나 적대시할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "collaborative_but_demanding",
+        "label": "협업형 압박",
+        "plainKo": "ESTJ는 혼자만 일하기보다 협업을 선호하지만, 동료도 자신과 비슷한 신뢰성과 성과 기준을 가져야 한다고 본다.",
+        "strongLine": "당신은 함께 일하는 것을 좋아하지만, 함께 일한다면 각자 몫을 제대로 해야 한다고 봅니다.",
+        "positiveUse": "공동 목표를 중심으로 사람을 묶고 진행력을 만든다.",
+        "risk": "상대가 따라오지 못할 때 지원보다 불만 표출이 먼저 나올 수 있다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "정관",
+          "편관"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "money": [
+      {
+        "id": "economic_stability_drive",
+        "label": "경제 안정 지향",
+        "plainKo": "ESTJ는 경제력과 안정성을 중요하게 본다. 평균소득이 높은 유형으로 언급될 만큼 직업적 성취와 현실적 보상을 강하게 추구하는 편이다.",
+        "strongLine": "당신에게 돈은 과시보다 안정, 책임, 사회적 신뢰를 증명하는 도구에 가깝습니다.",
+        "positiveUse": "장기적인 수입 기반, 전문직, 관리자 경력, 안정적인 자산 형성에 집중한다.",
+        "risk": "경제력과 사회적 지위를 사람의 가치 판단 기준으로 삼을 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편재",
+          "정관"
+        ],
+        "productDomains": [
+          "money",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "profit_loss_calculation",
+        "label": "손익계산",
+        "plainKo": "ESTJ는 관계와 일에서도 비용, 성과, 책임을 따져 본다. 감정적으로 좋아 보여도 손익과 결과가 맞지 않으면 쉽게 움직이지 않는다.",
+        "strongLine": "당신은 마음만으로 결정하지 않고, 결과와 비용까지 계산해야 안심하는 사람입니다.",
+        "positiveUse": "사업, 재무, 협상, 계약, 조직 운영에서 실질적인 판단을 한다.",
+        "risk": "정서적 가치와 장기적 신뢰를 단기 손익으로만 평가할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편재",
+          "금"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "investment"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "status_and_security",
+        "label": "지위와 안전",
+        "plainKo": "ESTJ는 안정된 지위, 사회적 인정, 직업적 권한을 중요하게 여긴다. 돈은 생활 안정뿐 아니라 책임 있는 위치를 유지하는 기반으로 인식된다.",
+        "strongLine": "당신은 불안정한 자유보다 책임 있는 자리에서 얻는 안정감을 더 크게 봅니다.",
+        "positiveUse": "승진, 자격, 조직 내 권한, 안정적 직업 기반을 꾸준히 만든다.",
+        "risk": "출세욕과 권한 욕구가 과해지면 관계가 위계와 평가로 굳어진다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "정재"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "investment": [
+      {
+        "id": "conservative_asset_style",
+        "label": "보수적 자산관",
+        "plainKo": "원문은 직접적인 투자 조언보다 안정과 손익계산, 경제력을 중시하는 성향을 제시한다. ESTJ는 검증된 구조, 명확한 수익과 책임, 예측 가능한 위험을 선호하는 투자 태도와 연결된다.",
+        "strongLine": "당신의 투자 성향은 큰 한 방보다 검증된 구조와 계산 가능한 안정성에 가깝습니다.",
+        "positiveUse": "장기적 저축, 현금흐름 관리, 규칙 기반 포트폴리오처럼 기준이 분명한 방식과 맞다.",
+        "risk": "새로운 기회를 너무 보수적으로 보고, 기존 방식에만 자산 판단을 묶을 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "investment",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "risk_control_priority",
+        "label": "위험 통제",
+        "plainKo": "ESTJ는 무계획한 모험보다 통제 가능한 구조를 선호한다. 투자에서도 근거, 절차, 손실 통제, 책임 소재가 보일 때 심리적 안정감이 커진다.",
+        "strongLine": "당신은 수익 가능성보다 먼저 그 위험을 누가 어떻게 통제할 수 있는지 봅니다.",
+        "positiveUse": "분산, 손절 기준, 계약 검토, 재무 계획처럼 통제 장치를 세우는 데 강하다.",
+        "risk": "위험을 줄이려다 성장 기회를 지나치게 늦게 잡을 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편관",
+          "금"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
+      }
+    ],
+    "study": [
+      {
+        "id": "exam_structure_advantage",
+        "label": "시험형 강점",
+        "plainKo": "ESTJ는 입시 위주 교육, 주입식 교육, 정시형 시험에서 강점을 보이는 유형으로 제시된다. 단기 집중력, 작업기억, 규칙적 학습이 성과로 이어지기 쉽다.",
+        "strongLine": "당신은 자유 탐구보다 기준이 분명한 시험장에서 실력을 증명하기 쉬운 사람입니다.",
+        "positiveUse": "자격시험, 공무원 시험, 입시, 단기 목표형 학습에서 강하다.",
+        "risk": "정답이 열려 있거나 추상적 해석이 필요한 학습에서는 답답함을 느낄 수 있다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "정인",
+          "정관"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "technical_problem_solving",
+        "label": "기술 문제 해결",
+        "plainKo": "ESTJ 아이들은 수학, 과학, 기술 분야에서 현실 문제에 실용적인 해결책을 적용하려는 경향이 있다. 이론 자체보다 문제를 풀고 결과를 확인하는 학습에 강하다.",
+        "strongLine": "당신은 추상 이론을 오래 붙잡기보다 문제를 풀어 결과로 확인할 때 학습 효율이 올라갑니다.",
+        "positiveUse": "기술 과목, 실용 수학, 과학 문제풀이, 현장형 자격 준비에 적합하다.",
+        "risk": "개념 간 연결이나 열린 사고가 필요한 과제에서는 성급히 정답만 찾으려 할 수 있다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "정인",
+          "금"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "routine_and_rule_learning",
+        "label": "루틴 학습",
+        "plainKo": "ESTJ는 계획, 규칙, 루틴을 지키려는 힘이 강하다. 학습에서도 목표, 일정, 체크리스트가 분명할수록 꾸준히 밀고 간다.",
+        "strongLine": "당신의 공부는 의욕보다 루틴이 잡힐 때 강해집니다.",
+        "positiveUse": "반복 암기, 매일 학습량 관리, 시험 일정 역산, 체크리스트 운영에 강하다.",
+        "risk": "계획이 틀어지면 유연하게 조정하기보다 불편감과 짜증이 커질 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "study",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "love": [
+      {
+        "id": "stable_long_term_love",
+        "label": "장기 안정형 연애",
+        "plainKo": "ESTJ는 관계를 가볍게 보기보다 장기적이고 안정적인 관계를 선호한다. 사랑에 빠지면 꾸준하고 책임감 있는 태도로 관계를 유지하려 한다.",
+        "strongLine": "당신의 연애는 감정의 파도보다 오래 지킬 수 있는 신뢰를 더 중요하게 봅니다.",
+        "positiveUse": "약속을 지키고 관계를 안정적으로 운영하는 파트너가 된다.",
+        "risk": "예측 가능성과 안정성을 너무 강조하면 상대가 틀 안에 갇힌다고 느낄 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "토"
+        ],
+        "productDomains": [
+          "love",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "love_through_action",
+        "label": "행동으로 하는 사랑",
+        "plainKo": "ESTJ는 감정을 말로 섬세하게 표현하기보다 계획을 세우고 문제를 해결하며 책임을 지는 방식으로 애정을 보여준다.",
+        "strongLine": "당신의 사랑은 달콤한 말보다 일정, 해결, 보호, 책임으로 드러납니다.",
+        "positiveUse": "파트너가 실제로 필요로 하는 도움을 제공하고 생활을 안정시킨다.",
+        "risk": "상대가 원하는 공감과 애정 표현을 실무 지원으로만 대신할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "귀인"
+        ],
+        "productDomains": [
+          "love",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "direct_expectations_in_love",
+        "label": "명확한 요구",
+        "plainKo": "ESTJ는 연애에서도 기대와 요구를 분명하게 말하는 편이다. 애매하게 눈치 보게 하기보다 정직하고 직접적인 소통을 선호한다.",
+        "strongLine": "당신은 사랑에서도 무엇을 원하는지, 무엇이 문제인지 분명히 말해야 관계가 건강하다고 봅니다.",
+        "positiveUse": "관계의 기준, 일정, 책임, 미래 계획을 선명하게 만든다.",
+        "risk": "직접성이 강해지면 상대의 감정을 충분히 듣기 전에 결론을 내릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "현침살",
+          "금"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "traditional_role_pressure",
+        "label": "전통 역할 압박",
+        "plainKo": "ESTJ는 경제적 안정과 전통적 역할 분담을 선호하는 경향이 있다. 건강할 때는 안정적인 가정 운영이 되지만, 과하면 상대를 통제하거나 고리타분하게 느껴지게 만든다.",
+        "strongLine": "당신의 안정 지향은 장점이지만, 사랑하는 사람에게는 때로 정해진 역할을 강요하는 압박으로 닿을 수 있습니다.",
+        "positiveUse": "장기 관계에서 생활 책임, 경제 계획, 가족 의무를 성실히 챙긴다.",
+        "risk": "상대의 자유와 개성을 전통적 기준으로 평가하면 갈등이 커진다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "토"
+        ],
+        "productDomains": [
+          "love",
+          "marriage",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "marriage": [
+      {
+        "id": "structured_household",
+        "label": "구조적 가정",
+        "plainKo": "ESTJ는 결혼과 가정에서도 질서, 역할, 일정, 경제 안정이 잡혀 있어야 편안하다. 생활이 예측 가능할수록 관계도 안정된다고 느낀다.",
+        "strongLine": "당신에게 좋은 결혼은 사랑만 있는 관계가 아니라 생활이 제대로 굴러가는 관계입니다.",
+        "positiveUse": "가계 관리, 역할 분담, 가족 행사, 장기 계획을 안정적으로 운영한다.",
+        "risk": "가족 구성원의 자율성과 감정적 욕구를 규칙보다 뒤로 밀 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "marriage",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "reliable_partner",
+        "label": "신뢰형 배우자",
+        "plainKo": "ESTJ는 약속을 잘 지키고 관계 유지를 위해 꾸준히 노력하는 배우자가 되기 쉽다. 사랑이 식어도 책임을 근거로 관계를 붙드는 힘이 있다.",
+        "strongLine": "당신은 감정이 흔들려도 약속과 책임을 쉽게 내려놓지 않는 배우자상에 가깝습니다.",
+        "positiveUse": "장기 관계에서 믿을 수 있는 생활 기반과 실질적 도움을 제공한다.",
+        "risk": "책임만 남고 애정 표현이 부족해지면 관계가 관리 업무처럼 느껴질 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "귀인",
+          "정재"
+        ],
+        "productDomains": [
+          "marriage",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "control_conflict_in_family",
+        "label": "가정 내 통제 갈등",
+        "plainKo": "ESTJ의 강한 리더십은 가정에서 안전장치가 되기도 하지만, 상대나 자녀가 자유와 감정을 원할 때는 통제와 간섭으로 받아들여진다.",
+        "strongLine": "당신이 지켜주려는 마음이 상대에게는 결정권을 빼앗는 힘으로 느껴질 수 있습니다.",
+        "positiveUse": "가족이 방황하지 않도록 생활 기준과 책임 구조를 세운다.",
+        "risk": "배우자와 자녀의 개별성을 인정하지 않으면 반발과 거리감이 커진다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "정관",
+          "겁재"
+        ],
+        "productDomains": [
+          "marriage",
+          "parenting",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "parenting": [
+      {
+        "id": "traditional_parenting",
+        "label": "전통적 양육",
+        "plainKo": "ESTJ 부모는 자녀에게 전통적인 규칙과 책임을 가르치려 한다. 명절, 의식, 문화적 행사 같은 전통을 통해 가족 관계를 형성하는 면도 강하다.",
+        "strongLine": "당신은 자녀에게 자유보다 먼저 책임과 기본을 가르치려는 부모가 되기 쉽습니다.",
+        "positiveUse": "자녀에게 규칙, 예절, 책임감, 현실적인 생활 태도를 심어준다.",
+        "risk": "세대 감각과 자녀의 개성을 낡은 기준으로 누르려 할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "parenting",
+          "child",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "clear_rules_parent",
+        "label": "명확한 규칙 부모",
+        "plainKo": "ESTJ 부모는 애매한 말보다 명확한 기준과 직접적인 소통을 선호한다. 자녀에게 무엇을 해야 하고 무엇을 넘으면 안 되는지 분명히 알려준다.",
+        "strongLine": "당신의 양육은 애매한 눈치보다 분명한 기준을 주는 방식입니다.",
+        "positiveUse": "자녀가 예측 가능한 규칙 안에서 안정감을 느끼도록 돕는다.",
+        "risk": "자녀가 감정적으로 힘든 이유를 듣기 전에 규칙 위반부터 지적할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "금"
+        ],
+        "productDomains": [
+          "parenting",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "realistic_adult_expectation",
+        "label": "현실적 성인상",
+        "plainKo": "ESTJ 부모는 자녀가 완벽하기보다 존경받고 책임감 있는 성인으로 성장하길 기대한다. 현실 세계에서 제 몫을 하는 사람으로 키우려는 의지가 강하다.",
+        "strongLine": "당신은 자녀가 특별한 사람보다 먼저 책임 있는 사람이 되기를 바랍니다.",
+        "positiveUse": "자녀에게 생활력, 성실함, 사회적 신뢰, 목표 달성 습관을 길러준다.",
+        "risk": "자녀의 꿈과 감정이 현실성 기준에 맞지 않으면 쉽게 낮게 평가할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "정인"
+        ],
+        "productDomains": [
+          "parenting",
+          "career",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "adolescent_flexibility_need",
+        "label": "사춘기 유연성",
+        "plainKo": "자녀가 성장하며 독립성과 반항심을 보일 때 ESTJ 부모와 갈등이 커질 수 있다. 이 시기에는 통제보다 유연성, 이해심, 인내심이 필요하다.",
+        "strongLine": "당신의 기준이 자녀를 지키는 안전핀이 되려면, 성장기의 자유까지 함께 허용해야 합니다.",
+        "positiveUse": "자녀가 위험한 방향으로 흔들릴 때 현실적 경계와 안전 기준을 준다.",
+        "risk": "과한 규칙과 의무감은 자녀를 더 반항적으로 만들 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "목"
+        ],
+        "productDomains": [
+          "parenting",
+          "child",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "child": [
+      {
+        "id": "leader_child",
+        "label": "임원형 아이",
+        "plainKo": "ESTJ 아이는 학급 임원, 학생회, 조별 과제 리더 역할에 적극적으로 도전하기 쉽다. 당선되면 역할을 나누고 규칙과 목표를 강조한다.",
+        "strongLine": "ESTJ 아이는 놀이 속에서도 누가 무엇을 해야 하는지 정리하려는 리더 기질을 보입니다.",
+        "positiveUse": "학급 운영, 발표, 조별 과제, 학생회 활동에서 책임감을 발휘한다.",
+        "risk": "친구들에게 지시가 많고 고집스러운 아이로 보일 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "비견",
+          "화"
+        ],
+        "productDomains": [
+          "child",
+          "study",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "fair_rule_child",
+        "label": "공정성 민감",
+        "plainKo": "ESTJ 아이는 규칙이 어겨지거나 불공정한 상황을 싫어한다. 자신이 이익을 보는 상황이라도 불공정하면 불편함을 느낀다.",
+        "strongLine": "ESTJ 아이에게 규칙은 잔소리가 아니라 세상이 공정하게 돌아간다는 증거입니다.",
+        "positiveUse": "반칙을 줄이고 팀 활동에서 원칙을 지키게 만든다.",
+        "risk": "상황의 예외나 친구의 감정을 충분히 보지 못하고 지적부터 할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "금",
+          "토"
+        ],
+        "productDomains": [
+          "child",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "mature_hardworking_child",
+        "label": "성숙한 노력형",
+        "plainKo": "ESTJ 아이는 주변에서 일을 열심히 하고 성숙하다는 말을 듣기 쉽다. 책임감이 강하고 맡은 역할을 제대로 해내려는 태도가 일찍 드러난다.",
+        "strongLine": "ESTJ 아이는 어릴 때부터 자기 몫을 해내야 마음이 편한 아이입니다.",
+        "positiveUse": "숙제, 준비물, 임무, 학급 역할을 성실하게 수행한다.",
+        "risk": "실패나 변화에 대한 부담이 커지고, 쉬는 시간을 죄책감으로 느낄 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정인",
+          "토"
+        ],
+        "productDomains": [
+          "child",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "sports_and_competition",
+        "label": "승부와 스포츠",
+        "plainKo": "ESTJ 아이는 스포츠 활동에 흥미를 보이고, 승부욕을 통해 몰입하는 경우가 많다. 경쟁이 분명할수록 에너지가 살아난다.",
+        "strongLine": "ESTJ 아이는 이기고 싶다는 마음이 학습과 활동의 추진력이 되기 쉽습니다.",
+        "positiveUse": "스포츠, 대회, 성과형 활동에서 집중력과 팀 기여가 높다.",
+        "risk": "승패와 결과에 집착하면 과정의 즐거움이나 친구와의 관계가 밀릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "비견",
+          "화"
+        ],
+        "productDomains": [
+          "child",
+          "study",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "trust_by_reliability",
+        "label": "신뢰 기준",
+        "plainKo": "ESTJ는 약속을 지키고 자기 역할을 해내는 사람을 높게 평가한다. 관계의 친밀감도 말보다 신뢰성과 책임 이행을 통해 쌓는다.",
+        "strongLine": "당신은 사람을 좋아하기 전에 먼저 믿을 수 있는 사람인지 봅니다.",
+        "positiveUse": "신뢰 기반의 오래 가는 관계를 만든다.",
+        "risk": "상대의 감정적 친밀감 표현을 실질적 책임보다 낮게 평가할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "토"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "solution_first_relation",
+        "label": "해결책 우선",
+        "plainKo": "ESTJ는 누군가 고민을 말하면 감정에 머무르기보다 바로 해결책을 찾으려 한다. 실질적 도움을 주는 방식으로 관계를 유지한다.",
+        "strongLine": "당신은 같이 울어주는 것보다 지금 무엇을 고쳐야 하는지 찾아주는 쪽에 가깝습니다.",
+        "positiveUse": "주변 사람에게 현실적인 조언과 제동장치를 제공한다.",
+        "risk": "상대가 원하는 공감을 받지 못했다고 느끼면 차갑게 받아들여진다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "귀인",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "boundary_by_standard",
+        "label": "기준형 손절",
+        "plainKo": "ESTJ는 자기 기준에 맞지 않는 사람을 빠르게 분류한다. 책임감이 없거나 충동적이고 성실하지 않다고 느끼면 자기 사람으로 인정하기 어렵다.",
+        "strongLine": "당신은 관계에서도 기준을 넘는 사람을 오래 설득하기보다 선을 긋는 편입니다.",
+        "positiveUse": "소모적 관계와 무책임한 관계에서 자신을 보호한다.",
+        "risk": "다른 방식의 삶을 성급히 낮게 평가하거나 적대관계로 분류할 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "겁재",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "practical_support",
+        "label": "현실적 도움",
+        "plainKo": "가까운 관계에서 ESTJ는 깊은 신뢰와 안정감을 준다. 특히 N이나 P 성향의 사람에게 현실적인 제동장치와 실행력을 제공하는 역할을 한다.",
+        "strongLine": "당신은 가까운 사람에게 감정적 위로보다 삶이 무너지지 않게 붙잡아주는 힘이 됩니다.",
+        "positiveUse": "주변 사람의 계획을 현실적으로 정리하고 실행 가능한 방향을 제시한다.",
+        "risk": "도움이 조언을 넘어 통제나 평가로 느껴질 수 있다.",
+        "matchingMyeongliSignals": [
+          "귀인",
+          "정관",
+          "정재"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "less_social_extrovert",
+        "label": "덜 사교적 외향",
+        "plainKo": "ESTJ는 외향형이지만 항상 넓게 사교적인 유형은 아니다. 쉬는 날에는 혼자 자기 할 일을 하며, 주류 문화나 트렌드에 의외로 무심할 수 있다.",
+        "strongLine": "당신의 외향성은 사람들과 놀기 위한 외향성보다 일을 움직이기 위한 외향성에 가깝습니다.",
+        "positiveUse": "필요한 사람과 필요한 목적을 중심으로 효율적인 관계망을 만든다.",
+        "risk": "정서적 친밀감이나 가벼운 문화적 교류에는 둔감해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편인",
+          "토"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "communication": [
+      {
+        "id": "direct_speech",
+        "label": "직설 화법",
+        "plainKo": "ESTJ는 말을 숨기거나 돌려 말하지 않는다. 비논리적이거나 비효율적인 부분이 보이면 있는 그대로 지적하고 솔직하게 말한다.",
+        "strongLine": "당신의 말은 숨은 뜻보다 겉으로 드러난 내용이 거의 전부인 편입니다.",
+        "positiveUse": "문제를 빠르게 드러내고, 모호한 갈등을 명확한 과제로 바꾼다.",
+        "risk": "상대에게는 냉담하거나 무심한 말투로 받아들여질 수 있다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "정관",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "logic_over_emotional_appeal",
+        "label": "논리 우선",
+        "plainKo": "갈등 상황에서 ESTJ는 감정 호소보다 사실, 원칙, 결과를 우선한다. 문제를 정의하고 해결책을 찾는 방식으로 대화를 끌고 간다.",
+        "strongLine": "당신은 감정이 격해질수록 더 사실과 기준으로 돌아가려는 사람입니다.",
+        "positiveUse": "위기 상황에서 혼란을 줄이고 책임 있는 결정을 내린다.",
+        "risk": "감정이 중요한 문제에서도 상대를 비합리적으로만 볼 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "corrective_feedback",
+        "label": "교정형 피드백",
+        "plainKo": "ESTJ는 문제점을 발견하면 부드럽게 포장하기보다 바로잡기 위한 피드백을 준다. 본인은 실용적 조언이라고 생각하지만 상대는 평가나 공격으로 느낄 수 있다.",
+        "strongLine": "당신의 피드백은 빠르고 정확하지만, 듣는 사람에게는 온도 조절이 필요합니다.",
+        "positiveUse": "업무 오류, 규칙 위반, 비효율을 빠르게 교정한다.",
+        "risk": "피드백이 사람 자체에 대한 비난으로 들리면 관계가 방어적으로 굳어진다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "편관",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "conflict_full_response",
+        "label": "갈등 시 총력 대응",
+        "plainKo": "ESTJ는 갈등을 일부러 만들려 하지는 않지만 대응해야 하는 상황이 오면 강하게 맞선다. 문제를 덮기보다 결론을 내고 정리하려 한다.",
+        "strongLine": "당신은 싸움을 즐기지는 않지만, 피할 수 없는 문제라면 끝까지 정리해야 한다고 봅니다.",
+        "positiveUse": "책임 회피와 모호한 갈등을 장기화하지 않는다.",
+        "risk": "상대가 감정적으로 준비되지 않았을 때 몰아붙이는 인상을 줄 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "겁재",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "strengths": [
+      {
+        "id": "execution_power",
+        "label": "실행력",
+        "plainKo": "ESTJ는 목표를 세우면 계획과 절차를 통해 끝까지 달성하려 한다. 아이디어를 말로 끝내지 않고 실제 행동과 성과로 연결한다.",
+        "strongLine": "당신의 가장 큰 장점은 생각을 현실의 일정과 결과로 바꾸는 힘입니다.",
+        "positiveUse": "조직 운영, 프로젝트 완수, 위기 수습, 목표 달성에서 빛난다.",
+        "risk": "실행 속도가 빠른 만큼 주변의 감정과 준비도를 놓칠 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "정관",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "reliable_consistency",
+        "label": "일관된 신뢰",
+        "plainKo": "ESTJ는 약속, 시간, 책임을 중요하게 여긴다. 꾸준히 같은 기준을 지키며 주변에 안정감을 준다.",
+        "strongLine": "당신은 말보다 반복된 이행으로 신뢰를 쌓는 사람입니다.",
+        "positiveUse": "팀, 가족, 조직에서 믿고 맡길 수 있는 사람이 된다.",
+        "risk": "자신의 일관성을 타인에게도 똑같이 요구하면 압박이 된다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "토"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "early_problem_detection",
+        "label": "문제 사전 감지",
+        "plainKo": "ESTJ는 세심하고 눈치가 빠른 편이라 프로젝트가 틀어지기 전 징후를 포착한다. 기준과 현실 감각이 결합되어 리스크를 미리 줄인다.",
+        "strongLine": "당신은 일이 터진 뒤 수습하기보다 터지기 전에 이상 징후를 잡아내는 사람입니다.",
+        "positiveUse": "품질 관리, 일정 관리, 리스크 관리, 조직 운영에서 강하다.",
+        "risk": "위험을 빨리 보는 만큼 주변 사람에게 잦은 지적과 간섭으로 느껴질 수 있다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "정관",
+          "편인"
+        ],
+        "productDomains": [
+          "career",
+          "investment",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "crisis_rationality",
+        "label": "위기 이성",
+        "plainKo": "문제가 터졌을 때 ESTJ는 감정적으로 흔들리기보다 사실과 리스크를 기준으로 대응한다. 혼란을 줄이고 현실적인 해결책을 제시한다.",
+        "strongLine": "당신은 위기에서 감정의 크기보다 무엇을 먼저 처리해야 하는지를 보는 사람입니다.",
+        "positiveUse": "위기 대응, 현장 판단, 책임 있는 결정을 요구하는 상황에서 강하다.",
+        "risk": "정서적 위기까지 업무 문제처럼 다루면 주변이 외로움을 느낄 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "정관",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "risks": [
+      {
+        "id": "rigid_traditionalism",
+        "label": "완고한 보수성",
+        "plainKo": "ESTJ는 기존 계획과 형식이 조금만 달라져도 문제를 제기할 수 있다. 변화가 효율에 큰 영향을 주지 않아도 기준이 흔들리는 것 자체를 불편해한다.",
+        "strongLine": "당신의 안정감은 강점이지만, 때로는 바뀌어도 되는 것까지 붙잡게 만듭니다.",
+        "positiveUse": "검증된 방식과 안정된 운영을 지킨다.",
+        "risk": "환경 변화에 적응이 늦고, 새로운 방식의 사람을 낮게 평가한다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "controlling_tendency",
+        "label": "통제 성향",
+        "plainKo": "ESTJ는 기준과 책임을 세우려는 마음이 강해 상대의 방식까지 관리하려 할 수 있다. 관계에서는 보호처럼 시작된 행동이 간섭으로 받아들여진다.",
+        "strongLine": "당신이 질서를 세우려는 순간, 상대는 자기 선택권이 줄어든다고 느낄 수 있습니다.",
+        "positiveUse": "위험한 방황과 무책임한 선택을 줄이는 안전장치가 된다.",
+        "risk": "연인, 배우자, 자녀, 부하 직원에게 압박과 반발을 만든다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "겁재",
+          "정관"
+        ],
+        "productDomains": [
+          "love",
+          "marriage",
+          "parenting",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "empathy_gap",
+        "label": "공감 간극",
+        "plainKo": "ESTJ는 감정에 지나치게 치우친 사람에게 공감하기 어려울 수 있다. 상대의 고통보다 문제 해결이 먼저 보이기 때문이다.",
+        "strongLine": "당신은 상대의 마음을 무시하려는 것이 아니라, 마음을 다루기 전에 문제부터 고치려 합니다.",
+        "positiveUse": "감정에 휩쓸리지 않고 현실적인 방향을 제시한다.",
+        "risk": "상대가 이해받지 못했다고 느끼며 관계의 심리적 거리가 벌어진다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "금",
+          "편관"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "workaholic_burnout",
+        "label": "워커홀릭 번아웃",
+        "plainKo": "ESTJ는 스트레스를 받을수록 쉬기보다 더 열심히 일하는 방식으로 대응한다. 이 방식은 단기적으로 버티게 하지만 장기적으로 몸과 감정을 소진시킨다.",
+        "strongLine": "당신은 쉬어야 할 때조차 더 많은 일을 해내며 버티려는 위험이 있습니다.",
+        "positiveUse": "책임이 큰 시기에도 쉽게 무너지지 않고 버틴다.",
+        "risk": "휴식 부족, 감정 누적, 갑작스러운 분노 폭발, 건강 부담으로 이어질 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "겁재",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "status_bias",
+        "label": "지위 편향",
+        "plainKo": "ESTJ는 경제력, 안정성, 직위, 사회적 역할을 중시한다. 이 기준이 과하면 사람을 실용성, 성과, 지위로만 평가하게 된다.",
+        "strongLine": "당신의 현실 감각이 과해지면 사람의 가치가 성과와 지위로만 보일 수 있습니다.",
+        "positiveUse": "현실적인 성취 기준과 사회적 책임을 놓치지 않는다.",
+        "risk": "개성, 감성, 이상, 자유를 중시하는 사람들과 깊은 갈등을 만든다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편재",
+          "정관"
+        ],
+        "productDomains": [
+          "general",
+          "money",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "growth": [
+      {
+        "id": "soften_directness",
+        "label": "직설 온도 조절",
+        "plainKo": "ESTJ는 맞는 말을 하는 능력이 이미 강하다. 성장 포인트는 그 말을 상대가 받아들일 수 있는 온도로 전하는 것이다.",
+        "strongLine": "당신에게 필요한 것은 덜 정확해지는 것이 아니라, 정확한 말을 덜 아프게 전하는 기술입니다.",
+        "positiveUse": "피드백의 효과를 높이고 관계의 방어성을 줄인다.",
+        "risk": "온도 조절 없이 정답만 던지면 좋은 조언도 공격처럼 들린다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "식신",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "practice_emotional_checkin",
+        "label": "감정 확인",
+        "plainKo": "문제를 고치기 전에 상대가 무엇을 느꼈는지 먼저 확인하는 습관이 필요하다. 감정 확인은 비효율이 아니라 관계의 접점을 만드는 과정이다.",
+        "strongLine": "해결책을 주기 전에 마음을 한 번 확인하면, 당신의 실질적 도움은 훨씬 더 깊게 닿습니다.",
+        "positiveUse": "연애, 결혼, 부모 역할, 팀 리더십에서 신뢰를 높인다.",
+        "risk": "감정을 생략하면 상대는 도움을 받아도 사랑받는다고 느끼지 못한다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "식신",
+          "수"
+        ],
+        "productDomains": [
+          "love",
+          "marriage",
+          "parenting",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "allow_experiment",
+        "label": "실험 허용",
+        "plainKo": "검증된 방식만 고수하면 환경 변화에 늦어진다. 작은 범위에서 새 방식, 새 역할, 새 관점을 시험하는 여지를 만들어야 한다.",
+        "strongLine": "모든 것을 바꿀 필요는 없지만, 아무것도 바꾸지 않는 태도는 결국 가장 큰 위험이 됩니다.",
+        "positiveUse": "안정성을 유지하면서도 변화에 적응하는 리더십을 만든다.",
+        "risk": "실험을 모두 위험으로 보면 더 나은 방식이 조직 안에 들어오지 못한다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "편인",
+          "목"
+        ],
+        "productDomains": [
+          "career",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "delegate_with_trust",
+        "label": "신뢰 위임",
+        "plainKo": "일을 직접 떠맡는 대신 기준과 결과물을 명확히 정하고 중간 점검을 통해 위임하는 연습이 필요하다. 위임은 통제 상실이 아니라 조직 성장의 기술이다.",
+        "strongLine": "모든 것을 직접 해내는 능력보다, 사람이 해낼 수 있게 만드는 능력이 더 큰 리더십입니다.",
+        "positiveUse": "팀의 역량을 키우고 본인의 과로를 줄인다.",
+        "risk": "위임하지 않으면 ESTJ 자신이 병목이 되고 팀은 의존적으로 남는다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "정관",
+          "귀인"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      }
+    ]
+  },
+  "recommendedJobs": [
+    {
+      "job": "최고경영자 또는 기업 임원",
+      "reason": "목표와 자원을 조직하고 책임과 성과를 중심으로 사람을 이끄는 ESTJ의 관리 역량이 직접 발휘된다.",
+      "matchingTraits": [
+        "management_leadership_fit",
+        "execution_power",
+        "clear_expectations"
+      ],
+      "matchingMyeongliSignals": [
+        "정관",
+        "편관",
+        "정재"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "정치인",
+      "reason": "현실 감각, 조직 운영, 규칙과 질서에 대한 관심이 공공 의사결정과 연결된다.",
+      "matchingTraits": [
+        "public_order_career",
+        "traditional_stability",
+        "assertive_self_confidence"
+      ],
+      "matchingMyeongliSignals": [
+        "정관",
+        "편관",
+        "비견"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "외교관",
+      "reason": "제도, 의전, 책임, 국가적 역할을 중시하는 구조적 직무와 맞는다.",
+      "matchingTraits": [
+        "hierarchy_comfort",
+        "traditional_stability",
+        "direct_speech"
+      ],
+      "matchingMyeongliSignals": [
+        "정관",
+        "귀인",
+        "정인"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "중간 관리자",
+      "reason": "상부 목표를 현장 절차와 구성원 책임으로 바꾸는 역할에 강하다.",
+      "matchingTraits": [
+        "clear_expectations",
+        "micro_management_precision",
+        "collaborative_but_demanding"
+      ],
+      "matchingMyeongliSignals": [
+        "정관",
+        "편관",
+        "비견"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "고등학교 교사",
+      "reason": "규칙, 성과, 시험, 학급 운영처럼 명확한 기준이 필요한 교육 환경과 맞는다.",
+      "matchingTraits": [
+        "education_with_structure",
+        "exam_structure_advantage",
+        "routine_and_rule_learning"
+      ],
+      "matchingMyeongliSignals": [
+        "정인",
+        "문창",
+        "정관"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "변호사, 판사, 검사",
+      "reason": "규정, 절차, 공정성, 책임 소재를 명확히 다루는 법률 직무가 ESTJ의 기준 중심 사고와 맞는다.",
+      "matchingTraits": [
+        "law_finance_fit",
+        "fair_rule_child",
+        "logic_over_emotional_appeal"
+      ],
+      "matchingMyeongliSignals": [
+        "정관",
+        "편관",
+        "금"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "회계사",
+      "reason": "숫자, 규정, 손익, 검증 가능한 결과를 다루는 일이 ESTJ의 정확성과 현실 감각에 맞다.",
+      "matchingTraits": [
+        "law_finance_fit",
+        "profit_loss_calculation",
+        "efficiency_filter"
+      ],
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관",
+        "금"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "은행원",
+      "reason": "경제 안정, 절차 준수, 고객의 현실적 필요를 다루는 금융 업무와 맞는다.",
+      "matchingTraits": [
+        "economic_stability_drive",
+        "law_finance_fit",
+        "conservative_asset_style"
+      ],
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관",
+        "금"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "직업군인",
+      "reason": "위계, 규율, 책임, 현장 판단이 분명한 환경에서 ESTJ의 강한 실행력과 질서 감각이 살아난다.",
+      "matchingTraits": [
+        "public_order_career",
+        "hierarchy_comfort",
+        "crisis_rationality"
+      ],
+      "matchingMyeongliSignals": [
+        "편관",
+        "정관",
+        "화"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "소방관",
+      "reason": "위기 상황에서 감정보다 절차와 현실 판단을 우선하는 ESTJ의 대응 방식이 적합하다.",
+      "matchingTraits": [
+        "public_order_career",
+        "crisis_rationality",
+        "execution_power"
+      ],
+      "matchingMyeongliSignals": [
+        "편관",
+        "귀인",
+        "화"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "경찰",
+      "reason": "규칙, 공정성, 책임, 현장 질서 유지가 중요한 직무와 ESTJ의 성향이 맞는다.",
+      "matchingTraits": [
+        "public_order_career",
+        "fair_rule_child",
+        "conflict_full_response"
+      ],
+      "matchingMyeongliSignals": [
+        "정관",
+        "편관",
+        "금"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "의료 분야 전문직",
+      "reason": "자격과 책임, 정확한 판단, 안정적 수행이 필요한 전문 직무로 원문에서 능력 발휘 분야로 제시된다.",
+      "matchingTraits": [
+        "healthcare_authority_fit",
+        "crisis_rationality",
+        "reliable_consistency"
+      ],
+      "matchingMyeongliSignals": [
+        "정관",
+        "편인",
+        "귀인"
+      ],
+      "sourceCoverage": "direct"
+    }
+  ],
+  "avoidJobsOrEnvironments": [
+    {
+      "name": "역할과 책임이 불명확한 조직",
+      "reason": "누가 무엇을 해야 하는지 모호하면 ESTJ는 불안과 답답함을 느끼고 직접 통제하려 든다.",
+      "riskTraits": [
+        "order_and_standard",
+        "clear_expectations",
+        "controlling_tendency"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "성과보다 과정과 분위기를 중시하는 환경",
+      "reason": "결과가 없는 과정 미화나 감정 중심 운영은 ESTJ에게 비효율로 보인다.",
+      "riskTraits": [
+        "efficiency_filter",
+        "logic_over_emotional_appeal",
+        "empathy_gap"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "즉흥적이고 규칙이 자주 바뀌는 팀",
+      "reason": "확정된 계획이 자주 흔들리면 ESTJ는 무책임하거나 성의 없는 운영으로 받아들인다.",
+      "riskTraits": [
+        "si_verified_process",
+        "rigid_traditionalism",
+        "routine_and_rule_learning"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "수평적이지만 책임선이 약한 문화",
+      "reason": "평등한 분위기 자체보다 책임과 권한이 불분명한 구조가 ESTJ에게 큰 스트레스가 된다.",
+      "riskTraits": [
+        "hierarchy_comfort",
+        "collaborative_but_demanding",
+        "clear_expectations"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "추상 이론 중심 연구 환경",
+      "reason": "당장 적용할 수 없는 이론, 철학적 대화, 열린 결말 중심의 업무는 ESTJ의 실용 기준과 멀다.",
+      "riskTraits": [
+        "practical_realist",
+        "technical_problem_solving",
+        "selective_flexibility"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "브레인스토밍만 반복되는 창의 조직",
+      "reason": "아이디어가 실행과 성과로 이어지지 않으면 ESTJ는 비효율과 산만함을 강하게 느낀다.",
+      "riskTraits": [
+        "efficiency_filter",
+        "execution_power",
+        "allow_experiment"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "감정노동이 핵심인 관계 중심 직무",
+      "reason": "지속적으로 공감과 정서적 반응을 요구하는 일은 ESTJ의 해결책 중심 소통과 충돌한다.",
+      "riskTraits": [
+        "weak_fi_emotional_blindspot",
+        "solution_first_relation",
+        "empathy_gap"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "권한 없이 책임만 큰 자리",
+      "reason": "책임은 있는데 기준을 세우거나 사람을 움직일 권한이 없으면 ESTJ는 강한 좌절을 느낀다.",
+      "riskTraits": [
+        "responsible_operator",
+        "management_leadership_fit",
+        "delegation_difficulty"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  ],
+  "relationshipHints": {
+    "comfortableTypes": [
+      "ENFP",
+      "ISTJ",
+      "INFP"
+    ],
+    "challengingTypes": [
+      "INFJ",
+      "INFP",
+      "ISFP",
+      "INTP",
+      "ENFP"
+    ],
+    "notablePairs": [
+      {
+        "withType": "ESTJ",
+        "label": "같은 기준을 공유하는 실무형 관계",
+        "sourceRelationName": "Same Standards",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 실용성, 절차, 정확성, 책임 이행을 중시해 초반부터 믿을 수 있는 사람으로 인식하기 쉽다.",
+          "일정, 규칙, 조직 구성, 책임 분담이 명확해져 협업과 생활 운영이 빠르게 정돈된다."
+        ],
+        "friction": [
+          "각자 경험과 기존 방식에 대한 확신이 강해 서로 다른 기준을 따를 때 논쟁이 격해진다.",
+          "둘 다 감정보다 논리와 결정을 우선해 관계가 업무 협업처럼 건조해질 수 있다."
+        ],
+        "positiveInfluence": [
+          "서로에게 신뢰 가능한 실행 파트너가 되어 안정적이고 체계적인 관계를 만든다.",
+          "공동 목표가 있을 때 추진력과 책임감이 배가된다."
+        ],
+        "lovePattern": "연애에서는 약속, 일정, 생활 기준이 잘 맞아 빠르게 안정감을 느낀다. 다만 둘 다 내 방식이 맞다는 태도를 내려놓지 않으면 로맨스보다 운영 회의처럼 굳어진다.",
+        "marriagePattern": "결혼에서는 가계, 역할, 가족 행사, 장기 계획이 잘 정리된다. 그러나 감정 표현을 의도적으로 보완하지 않으면 안정적이지만 차갑고 형식적인 관계가 된다.",
+        "repairStrategy": [
+          "논쟁에서 이기는 것보다 공동 기준을 새로 합의한다.",
+          "상대의 방식이 틀렸다고 말하기 전에 그 방식이 나온 경험을 듣는다.",
+          "정기적으로 감정 표현과 감사 표현을 생활 규칙처럼 넣는다."
+        ],
+        "reportLine": "ESTJ와 ESTJ는 신뢰와 실행력이 강한 조합이지만, 서로의 기준을 내려놓지 않으면 안정적인 관계가 곧 권한 싸움이 됩니다."
+      },
+      {
+        "withType": "ESTP",
+        "label": "현실 감각은 맞지만 계획성과 즉흥성이 충돌하는 관계",
+        "sourceRelationName": "Planning vs Spontaneity",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 현실적이고 실제적인 문제에 관심이 많아 초반에는 말이 잘 통한다.",
+          "직접적인 소통과 활동 에너지가 있어 사람을 만나고 움직이는 데 호흡이 맞는다."
+        ],
+        "friction": [
+          "ESTJ는 계획과 질서를 중시하고 ESTP는 자유롭고 즉흥적인 흐름을 선호한다.",
+          "ESTP가 계획을 가볍게 바꾸면 ESTJ는 무책임하게 느끼고, ESTP는 ESTJ를 답답하게 본다."
+        ],
+        "positiveInfluence": [
+          "ESTP는 ESTJ에게 현재를 즐기고 유연하게 반응하는 법을 보여준다.",
+          "ESTJ는 ESTP에게 책임감과 지속성을 보완해 준다."
+        ],
+        "lovePattern": "연애 초반에는 활동성과 직설성이 맞아 빠르게 가까워진다. 시간이 지나면 데이트 약속, 돈, 생활 계획에서 즉흥성과 확정성의 충돌이 반복된다.",
+        "marriagePattern": "장기 관계에서는 ESTJ가 생활 구조와 책임을 세우고 ESTP가 활력을 더한다. 단, ESTJ가 모든 일정을 관리하려 들면 ESTP는 자유를 빼앗긴다고 느낀다.",
+        "repairStrategy": [
+          "절대 바꾸면 안 되는 약속과 자유롭게 바꿀 수 있는 약속을 구분한다.",
+          "ESTJ는 즉흥 변경을 인격 문제가 아니라 스타일 차이로 해석한다.",
+          "ESTP는 중요한 약속만큼은 사전에 확인하고 책임 있게 지킨다."
+        ],
+        "reportLine": "ESTJ와 ESTP는 현실 감각으로 빠르게 가까워지지만, 계획의 무게를 서로 다르게 보는 순간 책임과 자유의 충돌이 시작됩니다."
+      },
+      {
+        "withType": "ISTJ",
+        "label": "조용하지만 강한 책임 중심 관계",
+        "sourceRelationName": "Responsibility Pair",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 실용성, 절차, 정확성, 책임감, 전통을 중시한다.",
+          "약속을 지키고 일을 제대로 처리하는 사람으로 서로를 신뢰하기 쉽다."
+        ],
+        "friction": [
+          "ESTJ는 더 빠르고 외향적으로 문제를 처리하려 하고, ISTJ는 조용하고 신중한 속도를 선호한다.",
+          "ESTJ가 대화를 주도하거나 몰아붙이면 ISTJ는 부담을 느낀다."
+        ],
+        "positiveInfluence": [
+          "ESTJ는 ISTJ의 실행 속도를 높이고 외부 조율을 도와준다.",
+          "ISTJ는 ESTJ에게 신중함과 세부 검토의 안정감을 제공한다."
+        ],
+        "lovePattern": "연애에서는 극적인 감정보다 믿음, 책임, 생활 안정으로 가까워진다. 다만 ESTJ의 빠른 압박과 ISTJ의 조용한 거리감이 서로에게 답답함으로 느껴질 수 있다.",
+        "marriagePattern": "결혼에서는 정리, 일정, 규칙, 의무 분담이 잘 맞는다. 감정 표현이 부족해도 서로가 책임을 다하면 안정적이지만, 정서적 온기는 의식적으로 만들어야 한다.",
+        "repairStrategy": [
+          "ESTJ는 ISTJ에게 생각할 시간을 준다.",
+          "ISTJ는 필요한 불편함을 침묵하지 말고 구체적으로 말한다.",
+          "업무식 점검 외에 감정과 휴식의 시간을 별도로 둔다."
+        ],
+        "reportLine": "ESTJ와 ISTJ는 책임과 질서로 오래 가는 조합이지만, 속도 차이를 존중하지 않으면 한쪽은 압박을, 한쪽은 답답함을 느낍니다."
+      },
+      {
+        "withType": "ENTJ",
+        "label": "강력한 추진력, 그러나 방향 철학이 다른 관계",
+        "sourceRelationName": "Leadership Clash",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 추진력과 리더십이 강하고 성과와 책임을 중시한다.",
+          "목표를 향해 사람과 자원을 조직하는 데 익숙해 잘 맞으면 강력한 실행 조합이 된다."
+        ],
+        "friction": [
+          "ENTJ는 장기 비전과 전략적 가능성을 중시하고 ESTJ는 검증된 절차와 구체적 사실을 신뢰한다.",
+          "ESTJ는 ENTJ를 비현실적으로 볼 수 있고, ENTJ는 ESTJ를 보수적으로 볼 수 있다.",
+          "둘 다 자기 판단에 대한 확신이 강해 주도권 싸움이 생기기 쉽다."
+        ],
+        "positiveInfluence": [
+          "ENTJ는 ESTJ에게 더 넓은 가능성과 전략적 방향을 보여준다.",
+          "ESTJ는 ENTJ의 추상적 아이디어를 현실적인 실행 계획으로 끌어내린다."
+        ],
+        "lovePattern": "연애에서는 서로의 강한 에너지와 결정력이 매력으로 다가온다. 시간이 지나면 누가 방향을 정하고 누가 기준을 세울지를 두고 리더십 충돌이 생긴다.",
+        "marriagePattern": "결혼에서는 목표 달성과 사회적 성취에 강한 부부가 될 수 있다. 그러나 ENTJ의 미래 전략과 ESTJ의 전통적 운영 방식이 충돌하면 집이 공동 프로젝트처럼 긴장된다.",
+        "repairStrategy": [
+          "ENTJ는 비전을 말할 때 실행 근거를 함께 제시한다.",
+          "ESTJ는 검증된 방식만 정답으로 두지 않는다.",
+          "방향 결정권과 운영 결정권을 분리한다."
+        ],
+        "reportLine": "ESTJ와 ENTJ는 성과를 향한 강한 조합이지만, 비전과 절차 중 무엇이 우선인지 합의하지 않으면 리더십 싸움이 됩니다."
+      },
+      {
+        "withType": "ESFJ",
+        "label": "책임과 전통은 맞지만 감정 처리 방식이 다른 관계",
+        "sourceRelationName": "Duty and Feeling",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 현실적이고 책임감이 있으며 절차와 역할을 중요하게 여긴다.",
+          "공동체, 가족, 조직 안에서 안정적인 관계를 만들기 쉽다."
+        ],
+        "friction": [
+          "ESTJ는 문제를 바로잡고 사실을 말하는 데 집중하지만 ESFJ는 관계의 정서적 분위기를 더 중요하게 본다.",
+          "둘 다 외향적이라 말할 기회를 두고 경쟁하듯 대화할 수 있다.",
+          "ESTJ의 직설성은 ESFJ에게 차갑게 느껴질 수 있다."
+        ],
+        "positiveInfluence": [
+          "ESFJ는 ESTJ에게 정서적 배려와 사람 중심 감각을 더해준다.",
+          "ESTJ는 ESFJ에게 기준, 결정, 실행력을 보완해 준다."
+        ],
+        "lovePattern": "연애에서는 안정과 책임이 잘 맞아 관계가 빨리 현실화된다. 그러나 ESTJ가 사실을 말한다고 느끼는 순간 ESFJ는 정서적 배려 부족으로 받아들일 수 있다.",
+        "marriagePattern": "결혼에서는 가족 행사, 책임, 생활 운영이 잘 맞는다. 다만 가족 분위기와 정서적 조율을 ESFJ가 혼자 떠안고, ESTJ가 기준만 세우면 균형이 깨진다.",
+        "repairStrategy": [
+          "ESTJ는 피드백 전에 상대의 수고와 감정을 먼저 인정한다.",
+          "ESFJ는 감정적 불편함을 돌려 말하지 말고 구체적으로 표현한다.",
+          "역할과 감정 관리를 모두 가족 운영 항목으로 다룬다."
+        ],
+        "reportLine": "ESTJ와 ESFJ는 책임 있는 생활을 잘 만들지만, ESTJ의 기준과 ESFJ의 정서가 같은 무게로 존중될 때 안정이 오래갑니다."
+      },
+      {
+        "withType": "ESFP",
+        "label": "함께 활동하기 좋지만 생활 리듬이 다른 관계",
+        "sourceRelationName": "Activity vs Structure",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 외향적이고 현실 세계의 경험을 중시해 활동과 사람을 통해 가까워지기 쉽다.",
+          "실용적이고 현실적인 일에 관심을 공유하며 비교적 직접적으로 소통한다."
+        ],
+        "friction": [
+          "ESTJ는 계획과 책임을 중시하고 ESFP는 순간의 재미와 자연스러운 흐름을 더 중시한다.",
+          "ESFP가 즉흥적으로 바꾸는 일은 ESTJ에게 무책임하게 보이고, ESTJ의 엄격함은 ESFP에게 재미없게 보인다."
+        ],
+        "positiveInfluence": [
+          "ESFP는 ESTJ가 너무 빡빡해지지 않도록 풀어준다.",
+          "ESTJ는 ESFP가 중요한 일에서는 책임 있게 움직이도록 돕는다."
+        ],
+        "lovePattern": "연애 초반에는 활동과 현실 감각이 잘 맞아 즐겁다. 시간이 지나면 데이트, 돈, 약속, 생활 리듬에서 재미와 책임의 우선순위가 갈린다.",
+        "marriagePattern": "결혼에서는 ESTJ가 생활 구조를 잡고 ESFP가 활기를 더한다. 단, ESTJ가 즐거움을 사치로 보고 ESFP가 책임을 부담으로 보면 갈등이 반복된다.",
+        "repairStrategy": [
+          "즐거움 예산과 책임 예산을 함께 계획한다.",
+          "ESFP는 중요한 약속을 가볍게 바꾸지 않는다.",
+          "ESTJ는 계획 안에 즉흥과 놀이의 여지를 의도적으로 둔다."
+        ],
+        "reportLine": "ESTJ와 ESFP는 현실 경험으로 가까워지지만, 즐거움과 책임의 균형을 잡지 못하면 서로를 답답하거나 가볍게 느낍니다."
+      },
+      {
+        "withType": "ISTP",
+        "label": "실용성은 맞지만 통제와 자유가 부딪히는 관계",
+        "sourceRelationName": "Control and Freedom",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 현실적이고 실제 문제 해결과 능력을 중시한다.",
+          "말보다 행동과 결과를 중요하게 보아 실무 상황에서는 서로의 유능함을 알아보기 쉽다."
+        ],
+        "friction": [
+          "ISTP는 자유롭고 즉흥적인 편이고 ESTJ는 구조와 계획을 선호한다.",
+          "ESTJ는 ISTP를 느슨하게 보고, ISTP는 ESTJ를 지나치게 관리하고 간섭한다고 느낀다."
+        ],
+        "positiveInfluence": [
+          "ESTJ는 ISTP에게 지속성과 조직력을 더해준다.",
+          "ISTP는 ESTJ에게 과도한 통제를 내려놓고 상황에 유연하게 반응하는 법을 보여준다."
+        ],
+        "lovePattern": "연애에서는 서로의 실용성과 능력에 끌릴 수 있다. 그러나 ESTJ가 ISTP를 고쳐야 할 사람처럼 대하면 ISTP는 빠르게 거리를 둔다.",
+        "marriagePattern": "결혼에서는 집안 운영과 개인 자유의 경계가 핵심이다. ESTJ가 생활 규칙을 모두 정하려 하면 ISTP는 숨 막힘을 느끼고, ISTP의 느슨함은 ESTJ에게 무책임으로 보인다.",
+        "repairStrategy": [
+          "개인 공간과 공동 책임의 범위를 명확히 나눈다.",
+          "ESTJ는 ISTP의 침묵과 자유 욕구를 반항으로 해석하지 않는다.",
+          "ISTP는 중요한 책임은 말없이 넘기지 말고 일정으로 확인한다."
+        ],
+        "reportLine": "ESTJ와 ISTP는 실무 감각이 맞지만, ESTJ가 관리하려 하고 ISTP가 빠져나가려 하면 관계가 곧 통제와 회피의 싸움이 됩니다."
+      },
+      {
+        "withType": "INTJ",
+        "label": "질서는 맞지만 현실주의와 혁신주의가 충돌하는 관계",
+        "sourceRelationName": "Order and Innovation",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 구조와 체계를 선호하고 감정보다 논리로 움직이는 편이다.",
+          "역할을 인정하면 전략과 실행이 결합된 강한 관계가 된다."
+        ],
+        "friction": [
+          "ESTJ는 전통과 절차를 신뢰하고 INTJ는 시스템을 분석해 더 나은 방식으로 바꾸려 한다.",
+          "ESTJ는 INTJ를 비현실적이거나 규칙에 무관심하게 보고, INTJ는 ESTJ를 보수적이고 관습적으로 본다.",
+          "감정 갈등보다 무엇이 더 맞는 방식인가를 두고 충돌한다."
+        ],
+        "positiveInfluence": [
+          "INTJ는 ESTJ에게 새로운 가능성과 장기 전략을 보게 한다.",
+          "ESTJ는 INTJ의 아이디어를 현실적인 계획으로 다듬는다."
+        ],
+        "lovePattern": "연애에서는 조용한 논리와 체계가 맞아 안정감을 줄 수 있다. 그러나 INTJ의 혁신 욕구와 ESTJ의 검증된 절차가 충돌하면 서로를 답답하게 본다.",
+        "marriagePattern": "결혼에서는 생활 구조를 잘 만들 수 있지만, 변화와 전통을 두고 장기적 갈등이 생긴다. 집의 운영 방식, 돈, 커리어 선택에서 검증과 혁신의 우선순위를 합의해야 한다.",
+        "repairStrategy": [
+          "INTJ의 아이디어를 바로 비현실로 자르지 말고 실험 범위를 정한다.",
+          "ESTJ의 절차를 낡은 것으로만 보지 말고 안정 장치로 인정한다.",
+          "전략 담당과 운영 담당의 역할을 분명히 나눈다."
+        ],
+        "reportLine": "ESTJ와 INTJ는 체계라는 공통점이 있지만, 한쪽은 검증된 질서를 지키고 한쪽은 질서를 재설계하려 하므로 역할 합의가 핵심입니다."
+      },
+      {
+        "withType": "ISFJ",
+        "label": "안정적이고 실용적인 보완 관계",
+        "sourceRelationName": "Stable Complement",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 실용적이고 책임감 있으며 전통, 규칙, 사회적 의무를 중요하게 여긴다.",
+          "일상, 가정, 조직 안에서 안정적인 관계를 만들기 쉽다."
+        ],
+        "friction": [
+          "ESTJ는 직설적이고 감정적으로 거리감이 있지만 ISFJ는 관계의 조화와 정서적 연결을 더 중요하게 여긴다.",
+          "ESTJ의 말은 ISFJ에게 무뚝뚝하거나 상처가 될 수 있고, ISFJ는 비판을 개인적으로 받아들일 수 있다."
+        ],
+        "positiveInfluence": [
+          "ISFJ는 ESTJ에게 말과 행동의 정서적 결과를 알려준다.",
+          "ESTJ는 ISFJ가 감정에만 머무르지 않고 객관적으로 판단하도록 돕는다."
+        ],
+        "lovePattern": "연애에서는 안정과 책임, 생활 감각이 잘 맞는다. 다만 ESTJ가 해결책을 말할 때 ISFJ는 위로받기보다 지적받는다고 느낄 수 있다.",
+        "marriagePattern": "결혼에서는 가정 운영과 책임 분담이 안정적이다. 그러나 ESTJ가 정서적 수고를 당연하게 여기거나 ISFJ가 상처를 숨기면 관계가 조용히 멀어진다.",
+        "repairStrategy": [
+          "ESTJ는 비판 전에 감사와 수고 인정을 먼저 말한다.",
+          "ISFJ는 상처를 쌓아두지 말고 구체적인 말로 전달한다.",
+          "가정 운영과 정서적 돌봄을 모두 공동 책임으로 본다."
+        ],
+        "reportLine": "ESTJ와 ISFJ는 생활 안정에는 강하지만, ESTJ의 직설과 ISFJ의 민감함을 조율하지 않으면 조용한 상처가 쌓입니다."
+      },
+      {
+        "withType": "INFJ",
+        "label": "안정과 이상이 만나는 어려운 보완 관계",
+        "sourceRelationName": "Conflict",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "서로에게 부족한 관점을 제공할 가능성은 있다.",
+          "INFJ는 ESTJ가 더 넓은 관점과 변화 가능성을 보도록 돕고, ESTJ는 INFJ의 이상을 현실에 고정시킨다."
+        ],
+        "friction": [
+          "INFJ는 관계, 가치, 이상, 변화 가능성에 관심이 많고 ESTJ는 전통과 안정, 일관성을 중요하게 본다.",
+          "ESTJ는 INFJ의 아이디어를 비현실적으로 보고, INFJ는 ESTJ를 정체되어 있거나 상상력이 부족하다고 볼 수 있다.",
+          "ESTJ는 사실과 단계에 집중하고 INFJ는 의미와 큰 그림을 말해 서로 다른 언어를 쓰는 느낌이 든다."
+        ],
+        "positiveInfluence": [
+          "INFJ는 ESTJ에게 가치와 큰 그림을 보여준다.",
+          "ESTJ는 INFJ에게 현실적인 실행 기반과 안정성을 제공한다."
+        ],
+        "lovePattern": "연애에서는 서로에게 신기한 매력을 느낄 수 있지만 대화 방식이 크게 다르다. ESTJ의 직설적 비판은 INFJ에게 깊은 상처가 되고, INFJ의 의미 중심 대화는 ESTJ에게 비현실적으로 느껴진다.",
+        "marriagePattern": "장기 관계에서는 안정과 이상, 현실과 의미의 충돌이 반복된다. 생활 운영은 ESTJ가 잡을 수 있지만, INFJ가 가치와 정서적 연결을 잃었다고 느끼면 관계가 빠르게 멀어진다.",
+        "repairStrategy": [
+          "ESTJ는 INFJ의 이상을 바로 비현실로 규정하지 않는다.",
+          "INFJ는 추상적 의미를 구체적인 행동 요청으로 번역한다.",
+          "비판은 짧게, 의미 대화는 충분한 시간과 안전감 속에서 나눈다."
+        ],
+        "reportLine": "ESTJ와 INFJ는 서로를 가장 낯설게 느끼는 조합이지만, 이상을 현실로 고정하고 현실을 더 넓게 보는 훈련이 되면 큰 성장 자극이 됩니다."
+      },
+      {
+        "withType": "ENTP",
+        "label": "실행과 아이디어의 강한 결합 관계",
+        "sourceRelationName": "Execution and Ideas",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 사고를 다룰 수 있고 토론을 통해 관계를 발전시킬 수 있다.",
+          "잘 맞으면 ENTP의 아이디어와 ESTJ의 실행력이 강하게 결합된다."
+        ],
+        "friction": [
+          "ENTP는 새로운 관점과 가능성 탐색을 중시하고 ESTJ는 검증된 방식과 현실적 실행을 중시한다.",
+          "ESTJ는 ENTP가 규칙과 절차를 가볍게 여긴다고 느끼고, ENTP는 ESTJ가 보수적이라고 느낄 수 있다."
+        ],
+        "positiveInfluence": [
+          "ENTP는 ESTJ에게 기존 방식 밖의 질문을 던져 사고를 확장시킨다.",
+          "ESTJ는 ENTP의 가능성을 실제 결과로 만들도록 구조를 제공한다."
+        ],
+        "lovePattern": "연애에서는 ENTP의 새로움과 ESTJ의 단단함이 서로에게 매력적이다. 그러나 토론이 생산적 대화가 아니라 규칙과 자유의 싸움으로 흐르면 피로가 커진다.",
+        "marriagePattern": "결혼에서는 한쪽은 아이디어를 던지고 한쪽은 운영을 맡는 식으로 강한 팀이 될 수 있다. 다만 ENTP가 생활 책임을 가볍게 보고 ESTJ가 모든 실험을 막으면 관계가 막힌다.",
+        "repairStrategy": [
+          "ENTP는 아이디어마다 최소 실행 책임을 제시한다.",
+          "ESTJ는 새 제안을 작은 실험으로 검증할 여지를 둔다.",
+          "토론의 목적을 이기는 것보다 더 나은 실행안 만들기로 합의한다."
+        ],
+        "reportLine": "ESTJ와 ENTP는 아이디어와 실행의 결합이 강하지만, 규칙과 자유를 적대적으로 보면 생산적 토론이 곧 소모전이 됩니다."
+      },
+      {
+        "withType": "ENFJ",
+        "label": "공동체 지향은 맞지만 기준이 다른 관계",
+        "sourceRelationName": "Different Leadership Values",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 외향적이고 사람을 이끄는 힘이 있다.",
+          "공동체를 움직이고 관계망 안에서 역할을 맡는 데 익숙하다."
+        ],
+        "friction": [
+          "ENFJ는 사람, 관계, 가치, 변화 가능성에 관심이 많고 ESTJ는 전통, 안정, 구체적 책임을 중시한다.",
+          "ESTJ는 ENFJ를 이상적이고 감정적으로 보고, ENFJ는 ESTJ를 고정적이고 상상력이 부족하다고 볼 수 있다."
+        ],
+        "positiveInfluence": [
+          "ENFJ는 ESTJ에게 사람들의 감정과 큰 그림을 보게 한다.",
+          "ESTJ는 ENFJ에게 현실적인 안정성과 실행 가능한 절차를 제공한다."
+        ],
+        "lovePattern": "연애에서는 둘 다 적극적이고 관계를 이끌려는 힘이 있어 빠르게 가까워진다. 시간이 지나면 ENFJ는 정서적 의미를 원하고 ESTJ는 구체적 책임을 앞세워 서로의 우선순위가 갈린다.",
+        "marriagePattern": "결혼에서는 ENFJ가 가족의 마음을 돌보고 ESTJ가 구조와 책임을 세우면 보완된다. 그러나 서로의 리더십 방식을 틀렸다고 보면 집 안에서도 주도권 경쟁이 생긴다.",
+        "repairStrategy": [
+          "ENFJ의 감정 리더십과 ESTJ의 구조 리더십을 역할로 나눈다.",
+          "ESTJ는 사람들의 마음이 성과에 영향을 준다는 점을 인정한다.",
+          "ENFJ는 이상을 실행 절차와 책임으로 번역한다."
+        ],
+        "reportLine": "ESTJ와 ENFJ는 둘 다 이끄는 사람이지만, 한쪽은 마음을 움직이고 한쪽은 구조를 세우므로 역할 차이를 인정해야 팀워크가 살아납니다."
+      },
+      {
+        "withType": "INFP",
+        "label": "가장 큰 충돌과 성장 가능성을 동시에 가진 관계",
+        "sourceRelationName": "Opposing Values Growth",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "서로에게 없는 관점을 제공해 강한 성장 자극이 된다.",
+          "INFP는 ESTJ에게 감정과 가치, 변화 가능성을 보게 하고 ESTJ는 INFP가 이상을 현실적 행동으로 옮기게 돕는다."
+        ],
+        "friction": [
+          "INFP는 진정성, 가치, 감정적 깊이, 이상을 중요하게 여기고 ESTJ는 안정, 전통, 실용성, 예측 가능성을 중시한다.",
+          "ESTJ는 INFP의 이상을 비현실적으로 보고, INFP는 ESTJ를 딱딱하고 변화에 닫힌 사람으로 볼 수 있다.",
+          "ESTJ의 직설적 비판은 INFP에게 크게 상처가 된다."
+        ],
+        "positiveInfluence": [
+          "INFP는 ESTJ의 삶에 정서적 깊이와 가치 질문을 더한다.",
+          "ESTJ는 INFP의 이상을 일정, 역할, 실행으로 연결한다."
+        ],
+        "lovePattern": "연애 초반에는 서로의 전혀 다른 면이 신기하게 끌린다. 그러나 ESTJ가 기준을 말하고 INFP가 상처를 숨기면 관계는 빠르게 방어와 회피로 굳어진다.",
+        "marriagePattern": "결혼에서는 생활 안정과 감정적 의미를 동시에 다뤄야 한다. ESTJ가 현실을 책임지고 INFP가 관계의 마음을 돌볼 수 있지만, 서로의 언어를 번역하지 않으면 가장 큰 피로를 만든다.",
+        "repairStrategy": [
+          "ESTJ는 비판을 하기 전에 INFP의 가치와 감정을 먼저 인정한다.",
+          "INFP는 불편함을 침묵으로 처리하지 말고 구체적 요청으로 바꾼다.",
+          "이상과 실행을 분리하지 말고 작은 행동 계획으로 연결한다."
+        ],
+        "reportLine": "ESTJ와 INFP는 가장 낯선 기준을 가진 조합이지만, 감정과 실행을 서로 배울 때 가장 큰 성장 가능성을 품습니다."
+      },
+      {
+        "withType": "ISFP",
+        "label": "현실 감각은 있지만 감정과 자유의 문제에서 충돌적인 관계",
+        "sourceRelationName": "Freedom and Control",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "현실 감각을 어느 정도 공유해 실제 생활의 문제를 함께 다룰 수 있다.",
+          "둘 다 말보다 행동으로 보여주는 면이 있어 초반에는 담백한 매력이 있다."
+        ],
+        "friction": [
+          "ISFP는 자기 방식과 내면의 감정을 중시하고 ESTJ는 계획, 질서, 책임을 더 중요하게 여긴다.",
+          "ESTJ가 계획을 당연하게 여기면 ISFP는 통제당한다고 느끼고, ISFP의 유연함은 ESTJ에게 무책임하게 보인다.",
+          "ISFP는 ESTJ의 기준 중심 피드백을 차갑게 받아들일 수 있다."
+        ],
+        "positiveInfluence": [
+          "ISFP는 ESTJ에게 개인의 감정과 자유를 존중하는 법을 보여준다.",
+          "ESTJ는 ISFP에게 현실적 책임과 생활 구조를 보완한다."
+        ],
+        "lovePattern": "연애에서는 ESTJ의 안정성과 ISFP의 부드러움이 끌릴 수 있다. 그러나 ESTJ가 맞는 말만 하면 충분하다고 생각하면 ISFP는 자유와 감정을 지키기 위해 조용히 멀어진다.",
+        "marriagePattern": "결혼에서는 생활 구조와 개인 취향의 경계가 핵심이다. ESTJ가 모든 기준을 정하고 ISFP가 감정을 말하지 않으면 관계는 통제와 회피로 굳어진다.",
+        "repairStrategy": [
+          "ESTJ는 정답보다 상대의 선택 공간을 남긴다.",
+          "ISFP는 싫은 감정을 침묵으로만 처리하지 말고 구체적으로 말한다.",
+          "공동 규칙과 개인 자유 영역을 따로 합의한다."
+        ],
+        "reportLine": "ESTJ와 ISFP는 현실 감각은 공유하지만, ESTJ의 기준이 ISFP의 자유와 감정을 침범하는 순간 관계가 빠르게 닫힙니다."
+      },
+      {
+        "withType": "INTP",
+        "label": "논리는 통하지만 생활 방식은 크게 다른 관계",
+        "sourceRelationName": "Logic but Different Lifestyle",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 감정보다 사고를 중시할 수 있다.",
+          "잘 맞으면 ESTJ는 INTP의 아이디어를 실제 행동으로 옮기고 INTP는 ESTJ가 기존 방식 밖의 가능성을 보게 한다."
+        ],
+        "friction": [
+          "INTP는 개념, 가능성, 독립적 탐구를 중시하고 ESTJ는 현실적 사실, 절차, 책임, 검증된 방식을 중시한다.",
+          "ESTJ는 INTP를 비현실적이거나 규칙에 관심 없는 사람으로 보고, INTP는 ESTJ를 관습적이고 통제적으로 볼 수 있다.",
+          "갈등은 감정보다 논리, 방식, 자율성에서 생기기 쉽다."
+        ],
+        "positiveInfluence": [
+          "INTP는 ESTJ에게 더 깊은 논리와 대안적 가능성을 보여준다.",
+          "ESTJ는 INTP가 생각을 실제 결과로 연결하도록 돕는다."
+        ],
+        "lovePattern": "연애에서는 지적 대화와 솔직함이 맞을 수 있다. 그러나 ESTJ가 INTP의 느슨한 생활 방식을 비효율이라고 몰아붙이면 INTP는 방어적으로 물러난다.",
+        "marriagePattern": "장기 관계에서는 생활 루틴, 집안일, 시간 약속에서 큰 차이가 드러난다. ESTJ는 구조를 원하고 INTP는 자율적 탐구 시간을 원하므로 각자의 책임 경계를 명확히 해야 한다.",
+        "repairStrategy": [
+          "생활 책임은 최소 기준만 정하고 방식은 자율에 맡긴다.",
+          "ESTJ는 INTP의 탐구를 게으름으로 단정하지 않는다.",
+          "INTP는 생각만 하지 말고 합의한 생활 책임을 일정으로 지킨다."
+        ],
+        "reportLine": "ESTJ와 INTP는 논리로 대화할 수 있지만, 현실 책임과 자율 탐구의 균형을 잡지 못하면 서로를 통제적이거나 무책임하게 봅니다."
+      },
+      {
+        "withType": "ENFP",
+        "label": "활력은 맞지만 안정과 가능성이 충돌적인 관계",
+        "sourceRelationName": "Stability and Possibility",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 외향적 에너지가 있어 초반의 활력은 어느 정도 맞을 수 있다.",
+          "서로에게 큰 그림과 실행이라는 성장 자극을 제공한다."
+        ],
+        "friction": [
+          "ENFP는 진정성, 관계, 이상, 변화 가능성을 중시하고 ESTJ는 전통, 안정, 실용성, 일관성을 중시한다.",
+          "ESTJ는 ENFP를 비현실적이거나 산만하게 보고, ENFP는 ESTJ를 고지식하거나 상상력이 부족하다고 볼 수 있다.",
+          "초반 흥미 뒤에는 안정과 자유 사이의 갈등이 커질 수 있다."
+        ],
+        "positiveInfluence": [
+          "ENFP는 ESTJ가 더 큰 그림과 변화 가능성을 보게 한다.",
+          "ESTJ는 ENFP가 아이디어를 현실 속에서 안정적으로 실행하도록 돕는다."
+        ],
+        "lovePattern": "연애 초반에는 활력과 다른 매력이 크게 작동한다. 그러나 ENFP의 가능성을 ESTJ가 비현실이라고 자르고, ESTJ의 기준을 ENFP가 억압으로만 보면 매력만큼 피로도 커진다.",
+        "marriagePattern": "결혼에서는 안정된 생활과 새로운 가능성을 동시에 다뤄야 한다. ESTJ가 경제와 구조를 잡고 ENFP가 관계의 생기와 변화성을 더하면 좋지만, 서로의 핵심 욕구를 낮게 평가하면 오래 버티기 어렵다.",
+        "repairStrategy": [
+          "ENFP의 아이디어를 모두 자르지 말고 작은 실험으로 검증한다.",
+          "ENFP는 ESTJ의 기준을 사랑 없는 통제로만 보지 않는다.",
+          "자유 시간과 책임 시간을 명확히 나눈다."
+        ],
+        "reportLine": "ESTJ와 ENFP는 매력과 피로가 동시에 큰 조합이며, 가능성을 현실로 옮기는 방식에 합의할 때 성장형 관계가 됩니다."
+      }
+    ]
+  },
+  "myeongliBridgeHints": [
+    {
+      "signal": "정관",
+      "reason": "규칙, 책임, 위계, 공정성, 사회적 역할을 중시하는 ESTJ의 핵심 성향과 직접 연결된다.",
+      "productDomains": [
+        "general",
+        "career",
+        "marriage",
+        "parenting"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "편관",
+      "reason": "강한 추진력, 통제, 위기 대응, 성과 압박, 리더십의 단호함과 연결된다.",
+      "productDomains": [
+        "career",
+        "general",
+        "compatibility",
+        "saeun"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "정재",
+      "reason": "경제 안정, 손익계산, 책임 있는 돈 관리, 안정적 지위 추구와 연결된다.",
+      "productDomains": [
+        "money",
+        "investment",
+        "career",
+        "marriage"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "정인",
+      "reason": "검증된 방식, 전통, 교육, 매뉴얼, 루틴 학습 성향과 연결된다.",
+      "productDomains": [
+        "study",
+        "parenting",
+        "career",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "현침살",
+      "reason": "문제점을 빠르게 포착하고 직접 지적하는 직설 화법과 세밀한 관리 성향과 연결된다.",
+      "productDomains": [
+        "career",
+        "compatibility",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "금",
+      "reason": "정확성, 규정, 절차, 판단, 교정, 기준 중심 사고와 연결된다.",
+      "productDomains": [
+        "career",
+        "study",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "토",
+      "reason": "안정, 보수성, 조직화, 지속성, 생활 기반을 중시하는 성향과 연결된다.",
+      "productDomains": [
+        "general",
+        "money",
+        "marriage",
+        "parenting"
+      ],
+      "sourceCoverage": "direct"
+    }
+  ],
+  "reportUseCases": {
+    "generalReport": [
+      "책임형 운영자, 질서와 기준, 현실주의, 전통적 안정, 감정 맹점을 ESTJ 기본 성향 해석에 사용한다.",
+      "정관, 편관, 정재, 정인 신호와 연결해 사회적 역할, 책임, 조직력, 현실 감각을 설명한다."
+    ],
+    "careerReport": [
+      "CEO, 임원, 관리자, 법률, 회계, 금융, 군경소방, 교육, 의료 전문직 추천 축으로 사용한다.",
+      "역할 불명확, 즉흥 조직, 성과 없는 과정 중심 환경, 추상 이론 중심 환경은 회피 축으로 사용한다."
+    ],
+    "loveMarriageChildReport": [
+      "장기 안정형 연애, 행동으로 하는 사랑, 전통 역할 압박, 구조적 가정 traits를 연애와 결혼 리포트에 사용한다.",
+      "ESTJ 부모의 명확한 규칙, 전통적 양육, 사춘기 유연성 필요, ESTJ 자녀의 임원형 기질과 공정성 민감을 부모/자녀 리포트에 사용한다."
+    ],
+    "compatibilityReport": [
+      "ESTJ, ESTP, ISTJ, ENTJ, ESFJ, ESFP, ISTP, INTJ, ISFJ, INFJ, ENTP, ENFJ, INFP, ISFP, INTP, ENFP 관계를 notablePairs에서 직접 사용한다.",
+      "기준과 자유, 전통과 가능성, 직설과 정서, 실행과 아이디어의 충돌을 궁합 해석의 핵심 축으로 사용한다."
+    ],
+    "daeunReport": [
+      "정관, 편관, 정재 기운이 강한 시기에는 승진, 책임 확대, 조직 운영, 자산 관리 기회로 해석한다.",
+      "상관, 편인, 목 기운이 강한 시기에는 기존 방식 수정과 실험 허용이 필요한 시기로 해석한다."
+    ],
+    "saeunReport": [
+      "편관과 화 기운이 강한 해에는 과로, 통제, 갈등 대응이 과해지지 않도록 조절하는 문장으로 사용한다.",
+      "정인과 토 기운이 강한 해에는 루틴, 시험, 자격, 안정 기반 구축을 강조한다."
+    ]
+  },
+  "enrichment": {
+    "missingAreas": [
+      "investment details are inferred from stability, profit-loss calculation, and conservative risk attitude",
+      "health and crime statistics were excluded from product traits to avoid diagnosis or deterministic judgment",
+      "raw source has fewer direct career sub-scenes than relationship and workplace sections"
+    ],
+    "needsRelationGapFill": false,
+    "notes": [
+      "출처표기, 통계표, 편집 문구, 주의문, 커뮤니티 안내는 제거하고 의미 단위만 상품용 trait으로 재구성함",
+      "질병, 수감비율, 범죄 관련 내용은 진단이나 낙인으로 쓰지 않고 스트레스 관리와 위험 과잉 표현도 직접 trait화하지 않음",
+      "원문 관계 설명이 16유형 모두 제공되어 notablePairs에 직접 구조화함"
+    ]
+  }
+}
