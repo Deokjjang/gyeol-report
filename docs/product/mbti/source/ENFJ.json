@@ -1,0 +1,1955 @@
+﻿{
+  "type": "ENFJ",
+  "titleKo": "선도자",
+  "archetype": "사람의 가능성을 이끄는 공감형 리더",
+  "oneLine": "사람의 마음과 집단의 방향을 읽고, 더 나은 미래를 향해 함께 움직이게 하는 사람",
+  "sourceStatus": {
+    "rawSourceWasProvidedByUser": true,
+    "rawTextStoredVerbatim": false,
+    "cleanedAndRewritten": true,
+    "notes": "원문을 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+  },
+  "preferenceAxes": {
+    "energy": "E",
+    "perception": "N",
+    "judgment": "F",
+    "lifestyle": "J"
+  },
+  "functionStack": {
+    "dominant": "Fe",
+    "auxiliary": "Ni",
+    "tertiary": "Se",
+    "inferior": "Ti"
+  },
+  "closeKeywords": [
+    "과정 중시",
+    "공동체주의",
+    "다양성 존중",
+    "도전정신",
+    "뛰어난 언변능력",
+    "리더십",
+    "리액션",
+    "미래 지향",
+    "붙임성",
+    "비유적 표현",
+    "비전 중심",
+    "사회적 처세술",
+    "사회적 평판",
+    "선민의식",
+    "세심함",
+    "수평적 구조",
+    "스몰토크",
+    "오지랖",
+    "이타주의",
+    "인간관계 감수성",
+    "인간 중심",
+    "인기 욕심",
+    "인맥 관리",
+    "자기 확신",
+    "자선 활동",
+    "장기전",
+    "정",
+    "집단주의",
+    "통솔력",
+    "활동적 취미"
+  ],
+  "farKeywords": [
+    "개인주의",
+    "관습적 태도",
+    "권모술수",
+    "근시안적 판단",
+    "논리성만 앞세움",
+    "눈치 없음",
+    "능력주의",
+    "단순 암기",
+    "문제 방치",
+    "비판 수용 둔감",
+    "보수성",
+    "연고주의",
+    "위계질서",
+    "장황한 설명",
+    "전통 답습",
+    "정적인 취미생활",
+    "좁고 깊은 관계만 고집",
+    "즉흥성",
+    "직설성",
+    "침묵",
+    "편파적 잣대",
+    "평범함 추구",
+    "포커페이스",
+    "한 우물만 파기",
+    "차가운 합리성",
+    "현상유지",
+    "형식주의",
+    "혼자 일하기"
+  ],
+  "summary": {
+    "identity": "ENFJ는 사람의 감정, 가능성, 관계의 흐름을 빠르게 읽고 공동의 목표로 묶는 유형이다. 온화하고 적극적이며, 집단을 설득하고 이끄는 언어 능력과 책임감이 강하다.",
+    "strength": "상대의 필요와 분위기를 읽고, 말과 글로 비전을 제시하며, 사람을 성장시키는 데 헌신한다. 교육, 상담, 대중 커뮤니케이션, 외교적 조율에서 존재감이 크다.",
+    "risk": "타인의 감정을 너무 많이 떠안아 공감 번아웃에 빠지기 쉽고, 자기 신념과 다른 사람을 은근히 밀어낼 수 있다. 비판을 직접 하기 어렵고, 사람과 관계를 이상화하는 경향도 있다.",
+    "growthStrategy": "타인의 감정과 자기 감정을 분리하고, 돕고 싶은 마음에 경계선을 세워야 한다. 비전과 공감을 유지하되 사실 확인, 구조화, 냉정한 자기객관화를 함께 훈련할수록 리더십이 안정된다."
+  },
+  "traits": {
+    "identity": [
+      {
+        "id": "compassionate_facilitator",
+        "label": "공감형 조력자",
+        "plainKo": "ENFJ는 사람을 향한 연민과 이해심이 강하다. 타인의 관심사와 필요를 진지하게 듣고, 그 사람이 더 편안하고 성장할 수 있도록 실제로 움직인다.",
+        "strongLine": "ENFJ는 사람의 결핍을 그냥 지나치지 않고, 도움을 행동으로 바꾸는 사람이다.",
+        "positiveUse": "상담, 교육, 조직 관리, 관계 회복에서 상대가 필요한 것을 빠르게 포착한다.",
+        "risk": "도움을 주는 일이 습관이 되면 자기 감정과 체력을 늦게 알아차린다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "귀인",
+          "식신"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "love",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "visionary_group_leader",
+        "label": "비전형 리더",
+        "plainKo": "ENFJ는 미래의 가능성을 보고 집단이 함께 추구할 목표를 말로 제시하는 데 강하다. 사람들을 설득하고, 분위기를 읽으며, 공동의 방향으로 이끄는 능력이 있다.",
+        "strongLine": "ENFJ의 리더십은 명령보다 비전과 공감으로 사람을 움직인다.",
+        "positiveUse": "학생회장형 리더십, 캠페인, 교육 현장, 조직문화 개선에서 힘을 발휘한다.",
+        "risk": "비전에 대한 확신이 강해지면 다른 관점을 충분히 검토하지 못할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "도화",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "socially_attuned_extrovert",
+        "label": "사회적 감각",
+        "plainKo": "직관형 중에서도 외향성과 사회성이 강하게 드러나는 유형이다. 상대의 반응, 표정, 분위기를 빠르게 읽고 대화의 주도권을 자연스럽게 잡는다.",
+        "strongLine": "ENFJ는 사람들 사이의 공기 변화를 누구보다 빨리 알아차린다.",
+        "positiveUse": "행사 진행, 팀 조율, 고객 응대, 대중 커뮤니케이션에서 흐름을 안정시킨다.",
+        "risk": "타인의 시선을 지나치게 의식하면 자기 선택보다 평판을 먼저 보게 된다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "홍염",
+          "식신"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "value_driven_conviction",
+        "label": "가치 확신",
+        "plainKo": "ENFJ는 선악, 정의, 관계의 바람직한 모습에 대한 감정적 확신이 강하다. 가치 있다고 여기는 일에는 오래 헌신하고, 사람들에게 그 의미를 설득하려 한다.",
+        "strongLine": "ENFJ는 옳다고 믿는 일 앞에서 마음만 따뜻한 사람이 아니라 끝까지 움직이는 사람이다.",
+        "positiveUse": "사회적 캠페인, 자선 활동, 교육, 공익적 프로젝트에서 지속성을 만든다.",
+        "risk": "자기 가치관이 지나치게 절대화되면 다른 삶의 방식을 판단하거나 편을 가르기 쉽다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "relationship_centered_identity",
+        "label": "관계 중심 정체성",
+        "plainKo": "ENFJ는 인간관계 유지에 큰 의미를 둔다. 사람을 좋아하고 정이 많아 관계를 맺고 끊는 일 모두를 가볍게 다루지 못한다.",
+        "strongLine": "ENFJ에게 관계는 주변 장식이 아니라 삶의 의미를 구성하는 중심축이다.",
+        "positiveUse": "장기적 신뢰, 인맥 관리, 공동체 형성에서 강한 지속성을 만든다.",
+        "risk": "관계가 흔들리면 자기 전체가 흔들리는 것처럼 느끼며 과도하게 걱정한다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "정인",
+          "도화"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "marriage",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "thinkingStyle": [
+      {
+        "id": "fe_first_judgment",
+        "label": "사람 우선 판단",
+        "plainKo": "ENFJ는 논리만으로 설득되지 않는다. 주장이 맞더라도 당사자의 감정과 상황을 고려하지 않는다고 판단하면 쉽게 받아들이지 않는다.",
+        "strongLine": "ENFJ에게 좋은 답은 맞는 말이면서 동시에 사람을 살리는 말이어야 한다.",
+        "positiveUse": "정책, 교육, 상담, 조직 운영에서 인간적 영향을 함께 고려한다.",
+        "risk": "사실 확인과 논리 구조를 뒤로 미루면 문제의 핵심을 놓칠 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "식신",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "future_meaning_orientation",
+        "label": "미래 의미 지향",
+        "plainKo": "ENFJ는 현재의 문제만 보는 것이 아니라 앞으로 어떤 의미와 가능성으로 이어질지를 본다. 삶의 의미, 공동의 비전, 더 밝은 미래를 자주 생각한다.",
+        "strongLine": "ENFJ는 오늘의 선택을 내일의 의미와 연결해 읽는다.",
+        "positiveUse": "장기 프로젝트, 교육 목표, 공익 캠페인, 커리어 비전 설계에 강하다.",
+        "risk": "현실의 제약과 구체적 숫자를 충분히 보지 않으면 이상이 앞설 수 있다.",
+        "matchingMyeongliSignals": [
+          "천문성",
+          "목",
+          "정관"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "fast_people_reading",
+        "label": "빠른 눈치",
+        "plainKo": "ENFJ는 표면으로 드러나는 감정과 분위기를 매우 빠르게 읽는다. 대중의 반응과 상대의 상태를 감지해 말의 수위와 방식도 조절한다.",
+        "strongLine": "ENFJ의 눈치는 정보 수집이 아니라 관계를 움직이는 감각이다.",
+        "positiveUse": "진행, 협상, 발표, 상담에서 상대가 받아들일 언어를 고른다.",
+        "risk": "표면 감정에 민감한 만큼 내면의 복잡한 감정이나 자기 감정은 뒤로 밀릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "귀인",
+          "식신"
+        ],
+        "productDomains": [
+          "career",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "meaningful_discussion",
+        "label": "의미 있는 토론",
+        "plainKo": "ENFJ는 철학적이고 의미 있는 주제에 대해 말하는 것을 즐긴다. 단순한 정보 교환보다 사람과 사회가 어디로 가야 하는지에 대한 대화에서 활력이 살아난다.",
+        "strongLine": "ENFJ는 잡담도 할 수 있지만, 마음을 움직이는 대화는 의미와 방향이 있는 대화다.",
+        "positiveUse": "교육, 강연, 상담, 리더십 대화에서 사람의 동기를 깨운다.",
+        "risk": "상대가 가벼운 대화를 원할 때 지나치게 진지한 방향으로 이끌 수 있다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "천문성"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "self_reflective_growth",
+        "label": "자기반성 성장",
+        "plainKo": "ENFJ는 자기반성과 자책을 성장의 동력으로 삼는다. 잘못을 돌아보고 더 나은 사람이 되려는 힘이 있지만, 과하면 모든 일을 자기 탓으로 끌어온다.",
+        "strongLine": "ENFJ는 스스로를 돌아보는 힘이 크지만, 그 힘이 자신을 몰아붙이는 채찍이 되면 지친다.",
+        "positiveUse": "관계 회복, 리더십 개선, 상담·교육 역량 성장에 도움이 된다.",
+        "risk": "타인의 감정까지 자기 책임으로 받아들이면 감정적 소진이 빠르게 온다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "편인"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "career": [
+      {
+        "id": "teacher_facilitator_fit",
+        "label": "교육자 적합성",
+        "plainKo": "ENFJ는 사람을 성장시키는 기회가 있으면 전폭적으로 지원한다. 초등교사나 교육자처럼 학생의 가능성을 읽고 격려하는 직업과 잘 맞는다.",
+        "strongLine": "ENFJ는 지식을 전달하는 사람을 넘어, 사람 안의 가능성을 깨우는 교사에 가깝다.",
+        "positiveUse": "학습 동기 부여, 학급 분위기 조성, 진로 지도에서 강하다.",
+        "risk": "학생의 문제를 지나치게 자기 책임으로 느끼면 소진된다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "문창",
+          "귀인"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "counseling_and_welfare",
+        "label": "상담·복지성",
+        "plainKo": "상대의 감정과 필요를 읽고 도우려는 성향은 카운슬러, 사회복지사 같은 직무와 잘 맞는다. ENFJ는 상대가 혼자라고 느끼지 않게 곁에 서는 힘이 있다.",
+        "strongLine": "ENFJ는 사람의 고통을 듣고 끝내는 것이 아니라, 회복을 위한 길을 함께 찾는다.",
+        "positiveUse": "상담, 복지, 멘토링, 조직 내 케어 역할에서 신뢰를 얻는다.",
+        "risk": "도움의 경계가 없으면 타인의 문제를 전부 떠안게 된다.",
+        "matchingMyeongliSignals": [
+          "귀인",
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "career",
+          "general",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "public_communication_fit",
+        "label": "대중 커뮤니케이션",
+        "plainKo": "말과 글의 재능, 유머 감각, 대중 분위기를 읽는 능력 때문에 방송인, 언론인, PD, 연예인처럼 사람 앞에서 메시지를 다루는 분야와 연결된다.",
+        "strongLine": "ENFJ는 메시지를 정보로만 전달하지 않고 사람의 마음에 닿게 만든다.",
+        "positiveUse": "방송, 진행, 인터뷰, 콘텐츠 기획, 캠페인 메시지 설계에서 강하다.",
+        "risk": "대중의 반응에 과도하게 흔들리면 자기 기준이 불안정해진다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "홍염",
+          "문창"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "diplomatic_bridge",
+        "label": "외교적 조율",
+        "plainKo": "ENFJ는 서로 다른 사람들의 입장과 감정을 조율해 관계를 부드럽게 만드는 데 강하다. 외교관이나 조직 조정 역할에서 화합과 설득을 동시에 쓴다.",
+        "strongLine": "ENFJ는 갈라진 사람들 사이에 말이 통하는 다리를 놓는다.",
+        "positiveUse": "갈등 중재, 파트너십, 대외협력, 조직문화 개선에 적합하다.",
+        "risk": "모두를 만족시키려 하면 본인의 기준과 에너지가 흐려진다.",
+        "matchingMyeongliSignals": [
+          "귀인",
+          "정관",
+          "식신"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "activist_leadership",
+        "label": "행동주의 리더십",
+        "plainKo": "사회 정의, 인권, 사회 운동 같은 주제에 관심이 생기면 ENFJ는 단순 공감에 머물지 않고 사람을 모으고 행동으로 옮기려 한다.",
+        "strongLine": "ENFJ의 이상은 말로 끝나지 않고 사람들을 움직이는 명분이 된다.",
+        "positiveUse": "공익 캠페인, 자선 활동, 비영리 기획, 커뮤니티 리더십에서 힘을 낸다.",
+        "risk": "대의가 커질수록 다른 의견을 비윤리적이라고 단정할 위험이 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "정관",
+          "화"
+        ],
+        "productDomains": [
+          "career",
+          "general",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "workplace": [
+      {
+        "id": "collaborative_environment",
+        "label": "협력 환경 선호",
+        "plainKo": "ENFJ는 혼자 오래 버티는 일보다 사람들과 목표를 나누고 협력하는 환경에서 에너지가 살아난다. 관계의 의미가 보일수록 책임감도 강해진다.",
+        "strongLine": "ENFJ는 혼자 성과를 쌓는 자리보다 함께 움직이는 자리에서 리더십이 살아난다.",
+        "positiveUse": "팀 프로젝트, 교육 현장, 조직문화, 공익 활동에서 사람들을 묶는다.",
+        "risk": "혼자 집중해야 하는 업무가 길어지면 동기와 활력이 떨어진다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "정관"
+        ],
+        "productDomains": [
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "tension_sensitive_work",
+        "label": "긴장 환경 취약",
+        "plainKo": "경쟁적이거나 긴장이 팽배한 환경에서는 ENFJ가 힘들어질 수 있다. 사람 간 불화와 차가운 평가가 지속되면 일 자체보다 관계 분위기에 에너지를 빼앗긴다.",
+        "strongLine": "ENFJ에게 일터의 분위기는 성과의 배경이 아니라 성과를 좌우하는 조건이다.",
+        "positiveUse": "안정적인 신뢰와 협력 분위기에서는 집중력과 책임감이 올라간다.",
+        "risk": "갈등이 큰 조직에서는 조율하느라 본업 에너지가 소모된다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "persuasive_presenter",
+        "label": "설득형 발표자",
+        "plainKo": "ENFJ는 집단의 상황에 맞게 자신의 가치관과 비전을 명료하게 표현하고 다수를 설득하는 능력이 뛰어나다. 말이 사람을 향해 정렬되어 있다.",
+        "strongLine": "ENFJ의 발표는 자료 설명보다 사람을 같은 방향으로 세우는 힘이 강하다.",
+        "positiveUse": "비전 발표, 교육, 캠페인, 조직 내 변화 설득에서 유리하다.",
+        "risk": "상대의 감정 반응을 지나치게 살피면 메시지가 부드럽지만 약해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "도화",
+          "정관"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "care_overload_at_work",
+        "label": "업무 속 돌봄 과부하",
+        "plainKo": "ENFJ는 동료의 감정과 문제를 그냥 넘기지 못한다. 팀에서는 신뢰받지만, 계속 타인의 고통을 떠안으면 업무와 감정 노동이 분리되지 않는다.",
+        "strongLine": "ENFJ는 팀을 살리려다 자신을 소모하는 방식으로 일할 수 있다.",
+        "positiveUse": "동료 케어, 온보딩, 팀 분위기 관리에서 중요한 역할을 한다.",
+        "risk": "경계 없는 도움은 공감 번아웃과 업무 지연으로 이어진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "귀인"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "criticism_avoidance",
+        "label": "비판 회피",
+        "plainKo": "ENFJ는 자기반성은 잘하지만 남을 직접 비판하는 데는 능숙하지 않다. 싫은 소리를 피하려다 문제가 방치되거나 우회적으로 전달될 수 있다.",
+        "strongLine": "ENFJ는 관계를 지키려다 필요한 비판의 타이밍을 놓칠 수 있다.",
+        "positiveUse": "피드백을 존중과 개선 언어로 바꾸면 팀의 방어감을 낮춘다.",
+        "risk": "명확한 지적이 필요한 순간까지 완곡하게 말하면 문제가 커진다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "정관"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "money": [
+      {
+        "id": "generous_spending",
+        "label": "베풂 지출",
+        "plainKo": "ENFJ는 대가 없는 베풂을 좋아하고, 호감 있는 사람에게는 아낌없이 주려는 성향이 있다. 돈을 관계와 돌봄의 언어로 쓰기 쉽다.",
+        "strongLine": "ENFJ의 지갑은 종종 마음이 먼저 열리고 숫자가 나중에 따라온다.",
+        "positiveUse": "선물, 후원, 가족·연인 지원처럼 관계를 따뜻하게 만드는 돈 쓰임이 있다.",
+        "risk": "거절과 한도 설정이 약하면 자기 재정의 안정성이 흔들린다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "정인",
+          "편재"
+        ],
+        "productDomains": [
+          "money",
+          "love",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "reputation_linked_money",
+        "label": "평판과 돈",
+        "plainKo": "사회적 평판과 사람들의 시선을 의식하는 성향은 소비와 커리어 선택에도 영향을 준다. ENFJ는 의미 있고 좋은 사람으로 보이는 방식의 돈 쓰임에 끌릴 수 있다.",
+        "strongLine": "ENFJ에게 돈은 생계 수단이면서 관계와 평판을 표현하는 도구가 되기 쉽다.",
+        "positiveUse": "공익성, 신뢰, 브랜드 이미지가 중요한 일에서 돈의 흐름을 잘 설계한다.",
+        "risk": "타인의 기대에 맞추느라 불필요한 지출이나 과한 책임을 떠안을 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "정재",
+          "정관"
+        ],
+        "productDomains": [
+          "money",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "cause_based_money",
+        "label": "명분형 돈 감각",
+        "plainKo": "가치 있다고 여기는 일에는 오래 헌신하는 유형이라, 돈도 단순 이익보다 의미와 명분이 있는 방향으로 쓰려 한다.",
+        "strongLine": "ENFJ는 돈을 모으는 이유보다 어디에 쓰면 사람을 살릴 수 있는지를 먼저 떠올린다.",
+        "positiveUse": "자선, 교육, 커뮤니티, 공익 사업에 자원을 연결하는 데 강하다.",
+        "risk": "명분이 좋다는 이유로 수익 구조와 지속 가능성을 충분히 보지 못할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편재",
+          "귀인"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
+      }
+    ],
+    "investment": [
+      {
+        "id": "values_aligned_investment",
+        "label": "가치 정렬 투자",
+        "plainKo": "원문에는 투자 정보가 직접 많지 않다. 다만 ENFJ는 사회적 가치와 사람에게 주는 영향을 중시하므로, 투자에서도 명분과 영향력을 함께 보려는 경향으로 해석할 수 있다.",
+        "strongLine": "ENFJ의 투자는 숫자만 맞는 선택보다 마음이 납득되는 선택을 원한다.",
+        "positiveUse": "교육, 복지, 커뮤니티, 사회적 가치가 있는 분야에 장기적 관심을 가질 수 있다.",
+        "risk": "좋은 취지와 실제 수익성·리스크 검증을 분리하지 못하면 손실 판단이 흐려진다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정인",
+          "편재"
+        ],
+        "productDomains": [
+          "investment",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "emotion_separation_in_investment",
+        "label": "감정 분리 필요",
+        "plainKo": "타인의 이야기와 감정에 쉽게 공명하는 성향은 투자 판단에서 장점과 위험을 동시에 만든다. 정보 제공자의 호감도와 투자 대상의 실제 조건을 분리해야 한다.",
+        "strongLine": "ENFJ에게 투자 원칙은 사람을 믿지 말라는 뜻이 아니라, 믿음과 검증을 분리하라는 뜻이다.",
+        "positiveUse": "사람의 비전과 팀 분위기를 읽는 감각은 초기 판단에 도움이 된다.",
+        "risk": "정서적 신뢰만으로 결정하면 사실 확인이 늦어진다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편인"
+        ],
+        "productDomains": [
+          "investment",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
+      }
+    ],
+    "study": [
+      {
+        "id": "fast_social_learning",
+        "label": "빠른 사회적 학습",
+        "plainKo": "ENFJ는 관심사가 다양하고 학습 속도가 빠르다. 사람과 의미가 연결되는 주제에서는 지식 흡수가 빠르고, 또래보다 풍부한 지식으로 대화에 적극 참여한다.",
+        "strongLine": "ENFJ는 배운 것을 혼자 저장하기보다 사람들과 나누며 더 빨리 자기 것으로 만든다.",
+        "positiveUse": "토론, 발표, 그룹 학습, 교육 프로젝트에서 학습 동기가 커진다.",
+        "risk": "단순 암기나 사람과 연결되지 않는 학습에는 흥미가 쉽게 떨어진다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "정인",
+          "식신"
+        ],
+        "productDomains": [
+          "study",
+          "child",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "meaning_based_study",
+        "label": "의미 기반 공부",
+        "plainKo": "ENFJ는 삶의 의미와 사람에게 미치는 영향을 탐구하는 주제에 잘 몰입한다. 철학적·사회적·인간적인 맥락이 붙으면 학습이 깊어진다.",
+        "strongLine": "ENFJ에게 공부는 점수만이 아니라 더 나은 사람과 세상을 이해하는 과정일 때 강해진다.",
+        "positiveUse": "인문사회, 교육, 상담, 커뮤니케이션, 리더십 학습에서 강한 몰입을 만든다.",
+        "risk": "의미가 느껴지지 않는 기초 반복 훈련을 소홀히 할 수 있다.",
+        "matchingMyeongliSignals": [
+          "천문성",
+          "정인"
+        ],
+        "productDomains": [
+          "study",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "answer_leader_child",
+        "label": "대답왕 기질",
+        "plainKo": "ENFJ 자녀는 높은 외향성과 지식욕 때문에 교실에서 적극적으로 답하고 친구들을 격려하는 아이로 보일 수 있다.",
+        "strongLine": "ENFJ 아이는 배운 것을 가만히 품고 있기보다 말하고 나누며 반의 분위기를 움직인다.",
+        "positiveUse": "발표, 토론, 역할극, 협동 학습에서 자신감을 얻는다.",
+        "risk": "칭찬과 반응에 지나치게 의존하면 조용한 집중 훈련이 부족해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "문창",
+          "식신"
+        ],
+        "productDomains": [
+          "child",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "love": [
+      {
+        "id": "full_hearted_love",
+        "label": "전심전력 연애",
+        "plainKo": "ENFJ는 연애를 시작하면 감정을 크게 쏟고 함께할 미래를 자주 생각한다. 연인을 단순한 현재의 즐거움보다 장기적인 관계의 동반자로 본다.",
+        "strongLine": "ENFJ의 사랑은 가볍게 머무르지 않고, 빠르게 미래의 그림을 그린다.",
+        "positiveUse": "연인에게 깊은 관심, 안정감, 헌신, 관계의 방향성을 제공한다.",
+        "risk": "상대가 같은 속도로 미래를 말하지 않으면 불안과 확인 욕구가 커진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "홍염",
+          "정관"
+        ],
+        "productDomains": [
+          "love",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "emotional_confirmation_need",
+        "label": "감정 확인 욕구",
+        "plainKo": "ENFJ는 상대의 감정을 계속 확인하고 싶어 한다. 사랑을 믿어도 관계의 속도와 방향을 함께 말로 맞춰 가야 안정감을 느낀다.",
+        "strongLine": "ENFJ에게 사랑의 안정감은 침묵이 아니라 확인되는 대화에서 온다.",
+        "positiveUse": "서로의 마음과 계획을 자주 점검해 관계를 적극적으로 관리한다.",
+        "risk": "확인이 잦아지면 상대는 질문을 압박으로 느낄 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "식신"
+        ],
+        "productDomains": [
+          "love",
+          "marriage",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "attuned_partner",
+        "label": "눈치 빠른 연인",
+        "plainKo": "ENFJ는 연인의 감정을 빠르게 알아차리고 세심하게 챙기는 편이다. 대화가 잘 통하는 연인을 선호하며, 감정의 변화에 민감하게 반응한다.",
+        "strongLine": "ENFJ는 사랑하는 사람의 표정 하나에서도 관계의 신호를 읽는다.",
+        "positiveUse": "연인의 어려움을 먼저 발견하고 다정한 대화로 풀어 간다.",
+        "risk": "상대의 감정을 자기 책임으로 느끼면 관계가 무거워진다.",
+        "matchingMyeongliSignals": [
+          "귀인",
+          "도화",
+          "정인"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "hard_to_end_relationship",
+        "label": "이별 취약성",
+        "plainKo": "사람을 좋아하고 정이 많은 ENFJ는 관계를 끊는 일을 어려워한다. 이별을 겪으면 관계의 의미와 자신의 부족함을 오래 되짚으며 유난히 힘들어질 수 있다.",
+        "strongLine": "ENFJ에게 이별은 한 사람을 잃는 일이 아니라 함께 그렸던 미래가 무너지는 경험이다.",
+        "positiveUse": "관계를 쉽게 포기하지 않고 회복을 위해 노력한다.",
+        "risk": "끝난 관계까지 오래 붙잡으면 자기 회복이 늦어진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "love",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "marriage": [
+      {
+        "id": "future_planning_partner",
+        "label": "미래 설계형 배우자",
+        "plainKo": "ENFJ는 결혼과 장기 관계에서 함께할 미래를 자주 생각한다. 관계의 방향, 가치, 생활의 의미를 대화로 확인하며 안정감을 만든다.",
+        "strongLine": "ENFJ의 결혼은 오늘의 감정만이 아니라 함께 갈 미래를 계속 조율하는 관계다.",
+        "positiveUse": "가족의 목표, 자녀 교육, 공동 비전, 관계 의식을 세심하게 설계한다.",
+        "risk": "상대가 현재 중심적이면 미래 질문이 부담으로 느껴질 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정인",
+          "목"
+        ],
+        "productDomains": [
+          "marriage",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "marital_emotional_labor",
+        "label": "감정노동 결혼",
+        "plainKo": "ENFJ는 배우자와 가족의 감정을 계속 살피고 조율하려 한다. 가족 분위기를 따뜻하게 만드는 장점이 있지만, 모든 감정 문제를 자신이 해결해야 한다고 느끼면 지친다.",
+        "strongLine": "ENFJ는 집안의 온도를 올리는 사람이지만, 혼자 난방을 책임지면 금방 지친다.",
+        "positiveUse": "가족 갈등을 빠르게 감지하고 대화의 장을 만든다.",
+        "risk": "상대가 감정 관리 책임을 ENFJ에게만 맡기면 불균형이 생긴다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "귀인"
+        ],
+        "productDomains": [
+          "marriage",
+          "compatibility",
+          "parenting"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "values_based_family",
+        "label": "가치 중심 가정",
+        "plainKo": "질서정연하고 모범적인 세계를 선호하는 ENFJ는 가정에서도 예의, 배려, 공동의 가치를 중요하게 본다. 가족이 서로를 존중하는 분위기를 만들고 싶어 한다.",
+        "strongLine": "ENFJ에게 좋은 가정은 편한 공간이면서 동시에 서로를 더 나은 사람으로 만드는 공동체다.",
+        "positiveUse": "가족 규범, 예의, 대화 문화, 공동 활동을 잘 세운다.",
+        "risk": "가족이 ENFJ의 이상을 따라오지 못하면 실망과 통제가 늘 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "식신"
+        ],
+        "productDomains": [
+          "marriage",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "parenting": [
+      {
+        "id": "free_but_guiding_parent",
+        "label": "자유와 지도를 함께",
+        "plainKo": "ENFJ 부모는 집안 분위기를 자유롭게 만들고 자녀가 의견을 펼치도록 돕는다. 동시에 예의와 사람을 대하는 태도는 반드시 가르쳐야 한다고 본다.",
+        "strongLine": "ENFJ 부모는 아이의 목소리를 열어 주면서도 사람 사이의 예의를 함께 세운다.",
+        "positiveUse": "자녀가 자기 생각을 표현하고 사회적 감각을 익히도록 돕는다.",
+        "risk": "좋은 사람으로 키우려는 마음이 강해지면 아이의 독특함을 교정하려 들 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "정관",
+          "정인"
+        ],
+        "productDomains": [
+          "parenting",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "emotional_anchor_parent",
+        "label": "정신적 지주",
+        "plainKo": "ENFJ 부모는 자녀에게 정신적 지주가 되고 싶어 한다. 주제에 구애받지 않고 아이와 대화하며, 아이가 마음을 기대는 어른이 되려 한다.",
+        "strongLine": "ENFJ 부모는 아이에게 지시하는 어른보다 언제든 마음을 나눌 수 있는 어른이고 싶어 한다.",
+        "positiveUse": "자녀가 고민을 말하고 감정을 표현하는 환경을 만든다.",
+        "risk": "아이의 감정까지 깊게 흡수하면 부모 자신의 감정 경계가 흐려진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "귀인",
+          "수"
+        ],
+        "productDomains": [
+          "parenting",
+          "child",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "travel_and_dialogue_parent",
+        "label": "대화와 여행",
+        "plainKo": "ENFJ 부모는 자녀와 다양한 주제로 이야기하고 여행도 많이 다니고 싶어 한다. 경험과 대화를 통해 아이의 세계를 넓히는 양육에 끌린다.",
+        "strongLine": "ENFJ 부모에게 여행은 아이와 더 넓은 세상을 함께 이야기하는 기회다.",
+        "positiveUse": "자녀의 사회성, 호기심, 세계관 확장에 도움이 된다.",
+        "risk": "아이의 에너지와 성향을 보지 않고 활동을 많이 넣으면 피로가 쌓일 수 있다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "지살",
+          "식신"
+        ],
+        "productDomains": [
+          "parenting",
+          "child",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "child": [
+      {
+        "id": "popular_helper_child",
+        "label": "평판 좋은 조력자",
+        "plainKo": "ENFJ 자녀는 친화력이 좋고 주변인을 잘 챙겨 평판이 좋은 편이다. 남을 도와주는 일에 주저하지 않고 친구들의 고민 상담도 잘한다.",
+        "strongLine": "ENFJ 아이는 친구들 사이에서 자연스럽게 응원자와 상담자의 자리에 선다.",
+        "positiveUse": "또래 관계, 협동 활동, 반 분위기 조성에서 신뢰를 얻는다.",
+        "risk": "친구 문제를 너무 많이 떠안으면 어린 나이에도 감정적으로 지친다.",
+        "matchingMyeongliSignals": [
+          "귀인",
+          "도화",
+          "정인"
+        ],
+        "productDomains": [
+          "child",
+          "study",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "encouraging_speaker_child",
+        "label": "격려하는 말재주",
+        "plainKo": "ENFJ 아이는 특유의 언변으로 친구들을 센스 있게 격려한다. 말로 분위기를 풀고, 상대가 힘을 내게 하는 재능이 일찍 드러날 수 있다.",
+        "strongLine": "ENFJ 아이의 말은 친구를 이기기 위한 말보다 친구를 일으키는 말에 가깝다.",
+        "positiveUse": "발표, 토론, 리더 역할, 또래 상담에서 장점이 된다.",
+        "risk": "칭찬받는 역할에 익숙해지면 자신의 약한 감정을 숨길 수 있다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "식신",
+          "도화"
+        ],
+        "productDomains": [
+          "child",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "tearful_empath_child",
+        "label": "눈물 많은 공감",
+        "plainKo": "ENFJ 자녀는 자기 감정뿐 아니라 타인의 감정에도 쉽게 눈물이 날 수 있다. 공감력이 강한 만큼 감정 자극을 크게 받아들인다.",
+        "strongLine": "ENFJ 아이의 눈물은 약함만이 아니라 타인의 마음을 깊게 받아들이는 신호다.",
+        "positiveUse": "타인을 배려하고 정서적 연결을 잘 만든다.",
+        "risk": "부모가 감정 표현을 과하게 꾸짖으면 아이가 공감 능력을 숨기려 한다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "child",
+          "parenting",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "wide_social_bonding",
+        "label": "넓은 관계 형성",
+        "plainKo": "ENFJ는 사람을 좋아하고 모임과 대화를 적극적으로 이끈다. 좁고 깊은 관계만 고집하기보다 다양한 사람과 관계를 만들고 관리하는 힘이 있다.",
+        "strongLine": "ENFJ는 사람 사이에 들어가면 관계의 흐름을 만들고 넓힌다.",
+        "positiveUse": "모임 운영, 네트워킹, 커뮤니티, 팀 빌딩에서 중심 역할을 한다.",
+        "risk": "관계 범위가 넓어질수록 감정 에너지 소모도 커진다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "비견",
+          "귀인"
+        ],
+        "productDomains": [
+          "compatibility",
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "warm_but_selective_cutoff",
+        "label": "따뜻하지만 단호함",
+        "plainKo": "ENFJ는 호감 있는 사람에게는 크게 베풀지만, 싫어하는 사람에게는 선을 긋는 면도 있다. 따뜻함과 관계 기준이 함께 존재한다.",
+        "strongLine": "ENFJ는 누구에게나 다정해 보여도 마음의 문은 가치와 신뢰에 따라 열린다.",
+        "positiveUse": "중요한 사람에게 깊은 헌신과 신뢰를 준다.",
+        "risk": "불건강할 때는 자기 편과 아닌 사람을 나누며 비난으로 흐를 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "비견",
+          "겁재"
+        ],
+        "productDomains": [
+          "compatibility",
+          "love",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "idealizing_people",
+        "label": "관계 이상화",
+        "plainKo": "ENFJ는 사람과 인간관계를 이상화하는 경향이 있다. 상대 안의 좋은 가능성을 보고 지원하지만, 실제 한계와 결함을 늦게 받아들일 수 있다.",
+        "strongLine": "ENFJ는 사람의 현재보다 될 수 있는 모습을 먼저 사랑할 때가 있다.",
+        "positiveUse": "상대가 자기 가능성을 믿고 성장하도록 돕는다.",
+        "risk": "상대가 기대만큼 변하지 않으면 실망과 배신감이 커진다.",
+        "matchingMyeongliSignals": [
+          "천문성",
+          "정인"
+        ],
+        "productDomains": [
+          "compatibility",
+          "love",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "communication": [
+      {
+        "id": "eloquent_social_speech",
+        "label": "능숙한 언변",
+        "plainKo": "ENFJ는 말과 글의 재능이 뛰어나며, 대화의 주도권을 쉽게 가져간다. 분위기에 맞는 표현과 비유로 사람들의 공감을 끌어낸다.",
+        "strongLine": "ENFJ의 말은 논리를 전달하는 데서 멈추지 않고 사람의 마음을 같은 방향으로 돌린다.",
+        "positiveUse": "연설, 교육, 방송, 회의 진행, 중재에서 설득력이 강하다.",
+        "risk": "설득력이 강한 만큼 자신의 가치관을 집단의 분위기에 자연스럽게 밀어 넣을 수 있다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "도화",
+          "식신"
+        ],
+        "productDomains": [
+          "career",
+          "general",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "gentle_feedback",
+        "label": "부드러운 피드백",
+        "plainKo": "ENFJ는 싫은 소리를 되도록 하지 않으려 한다. 상대의 감정을 고려해 완곡하게 말하지만, 필요한 지적을 미루면 문제가 남는다.",
+        "strongLine": "ENFJ의 말은 상처를 줄이지만, 때로는 선명함까지 줄여 버릴 수 있다.",
+        "positiveUse": "방어감을 낮추는 코칭과 관계 중심 피드백에 강하다.",
+        "risk": "너무 우회하면 상대가 핵심 문제를 알아듣지 못한다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "정인"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "expressive_face",
+        "label": "감정이 드러남",
+        "plainKo": "ENFJ는 감정이 얼굴에 잘 드러난다. 포커페이스와 거리가 멀고, 상대의 감정에도 즉각적으로 반응한다.",
+        "strongLine": "ENFJ의 얼굴은 종종 말보다 먼저 마음의 방향을 보여 준다.",
+        "positiveUse": "따뜻함과 진정성이 빠르게 전달된다.",
+        "risk": "감정이 노출되면 협상이나 갈등 상황에서 불리해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "홍염",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "strengths": [
+      {
+        "id": "mobilizing_people",
+        "label": "사람을 움직임",
+        "plainKo": "ENFJ는 공통된 목표를 설정하고 사람들에게 그 목표를 함께 추구해야 하는 이유를 설득한다. 리더십이 사람의 감정과 의미를 통해 작동한다.",
+        "strongLine": "ENFJ는 사람을 밀어붙이기보다 스스로 움직이고 싶게 만든다.",
+        "positiveUse": "팀 리더, 캠페인, 교육, 조직 변화에서 강한 동원력을 만든다.",
+        "risk": "목표가 자기 확신에만 기댈 때 집단의 다른 목소리를 놓친다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "도화",
+          "화"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "growth_support",
+        "label": "성장 지원",
+        "plainKo": "누군가를 성장시킬 기회가 있으면 ENFJ는 전폭적으로 지원한다. 상대의 잠재력을 보고 격려하며, 필요하면 자원과 시간을 아끼지 않는다.",
+        "strongLine": "ENFJ는 사람을 있는 그대로 받아들이는 데서 그치지 않고 더 나아가게 돕는다.",
+        "positiveUse": "멘토링, 부모 역할, 교육, 팀원 성장 관리에 강하다.",
+        "risk": "상대가 원하지 않는 성장까지 밀어붙이면 부담이 된다.",
+        "matchingMyeongliSignals": [
+          "귀인",
+          "정인",
+          "식신"
+        ],
+        "productDomains": [
+          "career",
+          "parenting",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "social_humor",
+        "label": "분위기 유머",
+        "plainKo": "대중과 상대방의 분위기를 읽는 능력이 좋아 유머 감각도 뛰어나다. 사람을 웃기는 방식도 관계의 온도와 타이밍을 본다.",
+        "strongLine": "ENFJ의 유머는 웃기기 위한 말보다 사람 사이의 긴장을 풀기 위한 말에 가깝다.",
+        "positiveUse": "진행, 교육, 모임, 긴장 완화에 효과적이다.",
+        "risk": "분위기만 살리려다 본인의 진짜 불편함을 숨길 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "도화"
+        ],
+        "productDomains": [
+          "career",
+          "general",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "risks": [
+      {
+        "id": "empathy_burnout",
+        "label": "공감 번아웃",
+        "plainKo": "ENFJ는 다른 사람의 감정을 그대로 흡수하기 쉽다. 남의 고통을 자기 안으로 들이다가 압박감에 무너질 때까지 버틸 수 있다.",
+        "strongLine": "ENFJ는 타인의 마음을 너무 잘 받아들이기 때문에 자기 마음을 잃기 쉽다.",
+        "positiveUse": "깊은 공감은 상담과 관계 회복의 큰 자산이 된다.",
+        "risk": "경계선이 없으면 공감이 능력이 아니라 소진의 통로가 된다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "surface_emotion_bias",
+        "label": "표면 감정 편향",
+        "plainKo": "ENFJ는 겉으로 드러난 감정을 잘 읽지만, 사람 내면의 복잡한 감정이나 자기 감정은 후순위로 둘 수 있다.",
+        "strongLine": "ENFJ는 남의 표정은 빨리 읽어도 자기 마음의 깊은 층은 늦게 알아차릴 수 있다.",
+        "positiveUse": "상황의 즉각적인 정서 흐름을 빠르게 안정시킨다.",
+        "risk": "표면 반응에 맞추다 보면 실제 문제의 뿌리를 놓친다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "편인"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "over_involvement",
+        "label": "과도한 관여",
+        "plainKo": "ENFJ는 타인의 문제나 감정에 지나치게 관여할 수 있다. 본인은 돕는다고 느끼지만 상대에게는 오지랖이나 압박으로 느껴질 수 있다.",
+        "strongLine": "ENFJ의 도움은 따뜻하지만, 상대가 원하지 않을 때는 간섭이 된다.",
+        "positiveUse": "상대가 도움을 요청했을 때는 빠르고 실질적으로 움직인다.",
+        "risk": "상대의 삶을 대신 책임지려 하면 관계의 균형이 무너진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "겁재"
+        ],
+        "productDomains": [
+          "compatibility",
+          "parenting",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "moral_dividing",
+        "label": "도덕적 편가르기",
+        "plainKo": "불건강한 ENFJ는 자기 가치관과 다른 사람을 비난하거나 편을 가를 수 있다. 갈등을 싫어해 직접 대립하지 않더라도 내부 판단은 단호해진다.",
+        "strongLine": "ENFJ의 정의감은 사람을 지키는 힘이지만, 과해지면 사람을 나누는 기준이 된다.",
+        "positiveUse": "공동체의 윤리와 안전을 지키는 기준을 세운다.",
+        "risk": "다른 관점을 악의로 해석하면 관계와 조직이 양분된다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "정관",
+          "겁재"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "growth": [
+      {
+        "id": "separate_self_and_others",
+        "label": "감정 분리",
+        "plainKo": "ENFJ의 성장은 남의 감정을 덜 사랑하라는 뜻이 아니라, 남의 감정과 자기 책임을 분리하라는 뜻이다.",
+        "strongLine": "ENFJ가 오래 돕기 위해서는 먼저 모든 감정이 자기 몫은 아니라는 사실을 배워야 한다.",
+        "positiveUse": "공감 능력을 유지하면서도 소진을 줄인다.",
+        "risk": "분리하지 못하면 관계와 일에서 계속 과부하가 생긴다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정재"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "practice_clear_criticism",
+        "label": "명확한 비판 훈련",
+        "plainKo": "ENFJ는 상대를 다치게 하지 않으려다 필요한 지적을 늦출 수 있다. 성장하려면 따뜻함을 유지하되 핵심을 명확히 말하는 훈련이 필요하다.",
+        "strongLine": "ENFJ의 부드러움은 선명함과 함께 있을 때 더 성숙한 리더십이 된다.",
+        "positiveUse": "관계 손상 없이 문제를 바로잡는 피드백 능력이 커진다.",
+        "risk": "계속 미루면 결국 더 큰 갈등으로 돌아온다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "정관",
+          "문창"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "fact_structure_training",
+        "label": "사실 구조화",
+        "plainKo": "ENFJ는 사람의 감정과 필요를 잘 읽지만, 정확한 사실 추구와 구조화는 의식적으로 보완해야 한다. 감정과 데이터가 함께 있을 때 리더십이 흔들리지 않는다.",
+        "strongLine": "ENFJ의 비전은 따뜻함에 숫자와 구조가 붙을 때 현실을 움직인다.",
+        "positiveUse": "계획, 예산, 일정, 평가 기준을 더 명확히 세울 수 있다.",
+        "risk": "감정과 명분만으로 밀어붙이면 실행 단계에서 설득력이 약해진다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "money",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ]
+  },
+  "recommendedJobs": [
+    {
+      "job": "초등학교 교사",
+      "reason": "아이의 감정과 가능성을 읽고, 학급 분위기와 학습 동기를 함께 이끄는 능력이 잘 맞는다.",
+      "matchingTraits": [
+        "teacher_facilitator_fit",
+        "growth_support",
+        "encouraging_speaker_child"
+      ],
+      "matchingMyeongliSignals": [
+        "정인",
+        "문창",
+        "귀인"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "카운슬러",
+      "reason": "상대의 감정과 상황을 세심하게 읽고, 회복을 위한 대화를 이끄는 성향과 맞는다.",
+      "matchingTraits": [
+        "counseling_and_welfare",
+        "attuned_partner",
+        "empathy_burnout"
+      ],
+      "matchingMyeongliSignals": [
+        "귀인",
+        "정인",
+        "수"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "사회복지사",
+      "reason": "연민, 이타성, 사람의 결핍을 포착하고 실제 도움으로 연결하는 기질이 강하다.",
+      "matchingTraits": [
+        "counseling_and_welfare",
+        "cause_based_money",
+        "activist_leadership"
+      ],
+      "matchingMyeongliSignals": [
+        "귀인",
+        "정인",
+        "정관"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "교육자",
+      "reason": "말과 글로 비전을 전달하고 사람을 성장시키는 데서 만족과 성과를 얻는다.",
+      "matchingTraits": [
+        "teacher_facilitator_fit",
+        "persuasive_presenter",
+        "meaningful_discussion"
+      ],
+      "matchingMyeongliSignals": [
+        "문창",
+        "정인"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "외교관",
+      "reason": "상대의 입장과 분위기를 읽고 갈등을 조율하는 외교적 감각이 강하다.",
+      "matchingTraits": [
+        "diplomatic_bridge",
+        "eloquent_social_speech",
+        "fast_people_reading"
+      ],
+      "matchingMyeongliSignals": [
+        "귀인",
+        "정관",
+        "도화"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "언론인",
+      "reason": "대중의 분위기와 사회적 의미를 읽고 메시지를 전달하는 능력이 원문 직업 적합성과 맞는다.",
+      "matchingTraits": [
+        "public_communication_fit",
+        "meaningful_discussion",
+        "persuasive_presenter"
+      ],
+      "matchingMyeongliSignals": [
+        "문창",
+        "도화"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "PD",
+      "reason": "사람, 메시지, 분위기, 비전을 엮어 콘텐츠의 방향을 만드는 데 강점이 있다.",
+      "matchingTraits": [
+        "public_communication_fit",
+        "visionary_group_leader",
+        "social_humor"
+      ],
+      "matchingMyeongliSignals": [
+        "도화",
+        "문창",
+        "식신"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "방송인",
+      "reason": "대화 주도권, 유머, 리액션, 대중 분위기를 읽는 능력이 방송 환경에 적합하다.",
+      "matchingTraits": [
+        "public_communication_fit",
+        "socially_attuned_extrovert",
+        "social_humor"
+      ],
+      "matchingMyeongliSignals": [
+        "도화",
+        "홍염",
+        "식신"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "연예인",
+      "reason": "사람 앞에서 감정과 메시지를 전달하고 대중의 반응을 읽는 능력이 강하다.",
+      "matchingTraits": [
+        "public_communication_fit",
+        "expressive_face",
+        "socially_attuned_extrovert"
+      ],
+      "matchingMyeongliSignals": [
+        "도화",
+        "홍염"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "비영리·공익 캠페인 기획자",
+      "reason": "사회 정의와 자선 활동에 관심을 행동으로 옮기고 사람을 모으는 힘이 있다.",
+      "matchingTraits": [
+        "activist_leadership",
+        "mobilizing_people",
+        "cause_based_money"
+      ],
+      "matchingMyeongliSignals": [
+        "정관",
+        "편관",
+        "귀인"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  ],
+  "avoidJobsOrEnvironments": [
+    {
+      "name": "혼자 오래 일하는 환경",
+      "reason": "사람과 목표를 나누며 에너지를 얻는 유형이라 장기간 고립 업무에서는 활력과 의미가 떨어진다.",
+      "riskTraits": [
+        "collaborative_environment",
+        "wide_social_bonding"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "냉정한 능력주의 조직",
+      "reason": "사람의 감정과 상황보다 성과 숫자만 앞세우는 환경은 ENFJ의 판단 기준과 충돌한다.",
+      "riskTraits": [
+        "fe_first_judgment",
+        "tension_sensitive_work"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "긴장과 경쟁이 팽배한 일터",
+      "reason": "지속적인 불화와 압박은 ENFJ의 공감 에너지를 과도하게 소모시킨다.",
+      "riskTraits": [
+        "tension_sensitive_work",
+        "empathy_burnout"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "단순 암기 중심 업무",
+      "reason": "의미와 사람의 성장이 보이지 않는 반복 암기는 ENFJ의 학습 동기와 직업 만족도를 낮춘다.",
+      "riskTraits": [
+        "meaning_based_study",
+        "future_meaning_orientation"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "위계질서가 강한 조직",
+      "reason": "수평적 구조와 관계 조율을 선호하는 성향이 강한 위계와 형식주의 안에서 답답해진다.",
+      "riskTraits": [
+        "collaborative_environment",
+        "diplomatic_bridge"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "문제를 방치하는 문화",
+      "reason": "관계의 균열과 사람의 고통을 빠르게 감지하는 ENFJ에게 방치는 큰 스트레스가 된다.",
+      "riskTraits": [
+        "over_involvement",
+        "care_overload_at_work"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "직설과 냉소가 기본인 팀",
+      "reason": "상대의 감정을 고려하지 않는 직설 문화는 ENFJ의 정서적 안전감을 약하게 만든다.",
+      "riskTraits": [
+        "gentle_feedback",
+        "emotional_confirmation_need"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "사회적 의미가 보이지 않는 직무",
+      "reason": "사람과 공동체에 어떤 영향을 주는지 보이지 않으면 ENFJ의 장기 헌신이 약해진다.",
+      "riskTraits": [
+        "value_driven_conviction",
+        "activist_leadership"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  ],
+  "relationshipHints": {
+    "comfortableTypes": [
+      "ISTP",
+      "ESTP",
+      "INFJ",
+      "INTJ",
+      "ENTJ",
+      "ISFP"
+    ],
+    "challengingTypes": [
+      "ISTJ",
+      "INFP",
+      "ISFJ",
+      "ENFP",
+      "ESTJ",
+      "ESFJ"
+    ],
+    "notablePairs": [
+      {
+        "withType": "ISTP",
+        "label": "이중성 관계",
+        "sourceRelationName": "Duality",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "서로의 단점을 보완하며 비교적 편안하게 자기 모습을 드러낼 수 있다.",
+          "ENFJ의 관계 조율과 ISTP의 현실적 문제 해결이 만나면 정신적 도움과 실질적 보완이 동시에 생긴다."
+        ],
+        "friction": [
+          "이상적인 관계가 되려면 공통 관심사와 비슷한 가치관이 필요하다.",
+          "ENFJ는 감정과 방향을 확인하려 하고, ISTP는 간결한 행동과 개인 공간을 선호해 속도가 엇갈릴 수 있다."
+        ],
+        "positiveInfluence": [
+          "ENFJ는 ISTP에게 관계의 언어와 장기적 의미를 보강하고, ISTP는 ENFJ에게 과도한 감정 몰입에서 빠져나오는 현실감을 준다.",
+          "서로의 차이가 인정되면 안정감과 성장감이 강한 관계가 된다."
+        ],
+        "lovePattern": "연애에서는 ENFJ가 ISTP의 담백함과 실용성에 끌리고, ISTP는 ENFJ의 따뜻한 관심과 방향 제시에 편안함을 느낀다. 다만 ENFJ가 감정 확인을 자주 요구하고 ISTP가 말을 줄이면 ENFJ는 거리감을 느낄 수 있다.",
+        "marriagePattern": "결혼에서는 ENFJ가 가족의 정서와 목표를 관리하고 ISTP가 생활의 실제 문제를 해결하는 보완이 가능하다. 공통 관심사가 없으면 관계가 역할 분담만 남고 정서적 연결이 약해질 수 있다.",
+        "repairStrategy": [
+          "ENFJ는 감정 확인을 요구하기 전에 ISTP의 행동 신호를 함께 읽는다.",
+          "ISTP는 침묵만으로 안정감을 주려 하지 말고 짧게라도 마음을 표현한다.",
+          "공통 취미와 실질적 목표를 만들어 보완이 생활 속에 자리 잡게 한다."
+        ],
+        "reportLine": "ENFJ와 ISTP는 감정과 현실을 서로 채워 주는 조합이지만, 공통 관심사 없이 차이만 기대하면 보완이 오래 지속되지 않는다."
+      },
+      {
+        "withType": "INTP",
+        "label": "반이중성 관계",
+        "sourceRelationName": "Semi-Duality",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "서로 큰 어려움 없이 이해하고 많은 주제로 대화할 수 있다.",
+          "지적 호기심과 의미 있는 대화가 살아나면 강한 끌림이 생긴다."
+        ],
+        "friction": [
+          "연인으로 발전하면 열정적이지만 안정적인 관계를 위한 노력이 없으면 갈등이 잦아진다.",
+          "ENFJ는 감정 확인과 관계 방향을 원하고, INTP는 독립적 사고와 자유로운 몰입을 원한다."
+        ],
+        "positiveInfluence": [
+          "ENFJ는 INTP의 생각을 사람과 현실의 언어로 연결하고, INTP는 ENFJ에게 분석적 거리와 논리적 정리를 제공한다.",
+          "서로의 차이를 존중하면 열정과 지적 성장감이 함께 생긴다."
+        ],
+        "lovePattern": "초반에는 강한 호기심과 대화의 매력으로 빠르게 끌린다. ENFJ는 INTP의 독특한 사고를 신선하게 느끼고, INTP는 ENFJ의 따뜻한 몰입에 끌린다. 하지만 관계의 안정 장치를 만들지 않으면 감정 속도와 개인 공간에서 자주 부딪친다.",
+        "marriagePattern": "장기 관계에서는 ENFJ가 관계를 적극적으로 관리하고 INTP가 사고의 자유를 지키려 한다. 생활 루틴과 감정 표현의 기준을 합의하지 않으면 열정은 남아도 안정감이 부족해진다.",
+        "repairStrategy": [
+          "관계 확인 대화의 빈도와 개인 몰입 시간을 미리 합의한다.",
+          "ENFJ는 INTP의 침묵을 무관심으로 단정하지 않는다.",
+          "INTP는 ENFJ에게 결론 없는 분석보다 짧은 정서적 확인을 먼저 준다."
+        ],
+        "reportLine": "ENFJ와 INTP는 강한 지적 끌림이 있지만, 열정만으로는 부족하고 관계의 안정 규칙을 따로 세워야 오래 간다."
+      },
+      {
+        "withType": "ESTP",
+        "label": "활동 관계",
+        "sourceRelationName": "Activity",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "가장 쉽고 빠르게 시작되는 관계로, 서로를 활동적으로 자극한다.",
+          "둘 다 외부 활동성과 사람 사이의 반응에 민감해 초반 에너지가 높다."
+        ],
+        "friction": [
+          "과도한 자극 때문에 서로에게 싫증을 느끼기 쉽다.",
+          "일상 문제나 협력 관계에서는 많은 어려움이 생길 수 있다."
+        ],
+        "positiveInfluence": [
+          "ESTP는 ENFJ에게 행동력과 현재 감각을 주고, ENFJ는 ESTP에게 관계의 의미와 방향성을 보강한다.",
+          "짧고 활기 있는 프로젝트에서는 서로의 추진력을 끌어올린다."
+        ],
+        "lovePattern": "연애 초반에는 활동성과 끌림이 강하게 살아난다. ENFJ는 ESTP의 생동감에 끌리고, ESTP는 ENFJ의 반응성과 따뜻함을 즐긴다. 하지만 자극이 계속되면 ENFJ는 정서적 안정이 부족하다고 느끼고 ESTP는 관계 확인을 부담스러워할 수 있다.",
+        "marriagePattern": "장기 관계에서는 일상 운영과 협력 방식이 핵심이다. ENFJ는 관계의 의미와 장기 방향을 확인하려 하고, ESTP는 지금의 경험과 자유를 중시해 생활 계획에서 충돌할 수 있다.",
+        "repairStrategy": [
+          "활동과 휴식의 주기를 정해 과자극을 줄인다.",
+          "일상 책임은 감정이 아니라 역할표로 분명히 나눈다.",
+          "ENFJ는 ESTP에게 장기 대화를 짧고 구체적으로 요청한다."
+        ],
+        "reportLine": "ENFJ와 ESTP는 빠르게 뜨거워지는 조합이지만, 자극을 조절하지 못하면 일상 협력에서 피로가 커진다."
+      },
+      {
+        "withType": "ENFJ",
+        "label": "동일 관계",
+        "sourceRelationName": "Identical",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "서로를 완전히 이해하기 쉽고, 연민과 지지를 주고받는 돈독한 관계가 되기 쉽다.",
+          "상대를 거울처럼 보며 자기 평가와 능력 개발의 계기를 얻는다."
+        ],
+        "friction": [
+          "서로 너무 비슷해 상호 보완이 약하고 지루함을 느끼기 쉽다.",
+          "둘 다 감정과 관계에 민감해 같은 지점에서 동시에 흔들릴 수 있다."
+        ],
+        "positiveInfluence": [
+          "서로의 선의와 헌신을 잘 알아보고 정서적 지지를 크게 준다.",
+          "자신의 장단점을 다른 사람을 통해 선명하게 볼 수 있다."
+        ],
+        "lovePattern": "연애에서는 서로의 마음을 빠르게 이해하고 다정한 확인이 많다. 둘 다 관계를 소중히 여기므로 초반 안정감이 크지만, 같은 불안을 동시에 키우면 과한 확인과 감정 소모가 반복될 수 있다.",
+        "marriagePattern": "결혼에서는 가족의 정서와 관계 의식을 잘 챙기는 장점이 있다. 다만 현실적 문제를 냉정하게 분담하거나 비판해야 할 때 서로 미루면 문제가 쌓인다.",
+        "repairStrategy": [
+          "감정 확인과 현실 의사결정을 분리해 대화한다.",
+          "서로를 위로하는 시간과 실제 문제를 해결하는 시간을 따로 둔다.",
+          "비슷한 약점을 보완할 외부 구조나 역할 분담을 만든다."
+        ],
+        "reportLine": "ENFJ와 ENFJ는 서로를 깊게 이해하지만, 너무 닮은 만큼 현실 보완 장치를 만들지 않으면 관계가 감정 안에서만 맴돈다."
+      },
+      {
+        "withType": "ENTP",
+        "label": "이익 관계",
+        "sourceRelationName": "Benefit",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "ENFJ는 ENTP의 행동, 매너, 생각, 능력에 감명을 받고 존경하기 쉽다.",
+          "함께 있을 때 ENFJ가 ENTP를 기쁘게 해주려는 흐름이 생긴다."
+        ],
+        "friction": [
+          "ENTP는 ENFJ를 자신보다 어리게 보거나 보호 대상으로 볼 수 있어 균형이 흔들린다.",
+          "ENFJ가 계속 맞추는 구조가 되면 존경이 피로로 바뀐다."
+        ],
+        "positiveInfluence": [
+          "ENTP는 ENFJ에게 새로운 관점과 특별한 자극을 제공하고, ENFJ는 ENTP에게 따뜻한 반응과 관계적 의미를 준다.",
+          "서로 존중하면 창의성과 사람 중심 리더십이 결합된다."
+        ],
+        "lovePattern": "연애에서는 ENFJ가 ENTP의 재치와 능력에 끌리고, ENTP는 ENFJ의 따뜻한 반응과 헌신을 편안하게 느낀다. 그러나 ENFJ가 계속 기쁘게 해주려 하고 ENTP가 그것을 당연하게 여기면 관계가 기울어진다.",
+        "marriagePattern": "장기 관계에서는 ENFJ가 관계의 온도와 의미를 관리하고 ENTP가 변화와 자극을 제공한다. 존중이 유지되면 활기 있지만, 보호와 의존이 고정되면 성숙한 파트너십이 어렵다.",
+        "repairStrategy": [
+          "ENFJ는 존경과 자기 욕구 표현을 함께 유지한다.",
+          "ENTP는 ENFJ의 배려를 구체적으로 인정하고 가볍게 여기지 않는다.",
+          "관계가 한쪽의 기쁨 맞추기로 흐르지 않도록 역할을 주기적으로 점검한다."
+        ],
+        "reportLine": "ENFJ와 ENTP는 매력과 존경이 생기기 쉽지만, 한쪽이 계속 맞추는 구조가 되면 따뜻함이 불균형으로 바뀐다."
+      },
+      {
+        "withType": "ISTJ",
+        "label": "갈등 관계",
+        "sourceRelationName": "Conflict",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "처음에는 서로의 다른 점이 매력적으로 보일 수 있다.",
+          "서로가 자신에게 부족한 세계를 가진 사람처럼 느껴 초반 호기심이 생긴다."
+        ],
+        "friction": [
+          "갈등이 매우 자주 일어나며 관계를 지속시키려는 노력이 오히려 더 큰 싸움으로 번질 수 있다.",
+          "ENFJ는 관계의 정서와 의미를 중시하고, ISTJ는 절차와 사실, 책임의 기준을 중시한다.",
+          "결국 관계를 깨고 나서야 해방감을 느낄 정도로 심리적 부담이 커질 수 있다."
+        ],
+        "positiveInfluence": [
+          "ISTJ는 ENFJ에게 현실 기준과 절차를 보여 주고, ENFJ는 ISTJ에게 사람의 감정과 공동체 의미를 보여 준다.",
+          "짧은 협업에서는 서로의 사각지대를 알게 해준다."
+        ],
+        "lovePattern": "처음에는 서로의 차이가 매력으로 보인다. ENFJ는 ISTJ의 안정감과 책임감을 좋게 보고, ISTJ는 ENFJ의 따뜻함과 사회성을 신선하게 느낀다. 그러나 ENFJ의 감정 확인과 ISTJ의 절차적 판단이 반복적으로 충돌한다.",
+        "marriagePattern": "장기 관계에서는 생활 기준, 감정 표현, 문제 해결 방식이 크게 다르다. ENFJ는 관계를 살리려 노력할수록 더 많이 다가가고, ISTJ는 압박으로 느껴 물러나면서 갈등이 커질 수 있다.",
+        "repairStrategy": [
+          "감정 문제와 생활 규칙 문제를 분리해 다룬다.",
+          "ENFJ는 ISTJ의 절차를 무정함으로 단정하지 않는다.",
+          "ISTJ는 ENFJ의 감정 확인을 비효율이 아니라 관계 안정 요청으로 이해한다."
+        ],
+        "reportLine": "ENFJ와 ISTJ는 초반에는 보완처럼 보이지만, 관계를 살리려는 노력 자체가 더 큰 충돌로 번지기 쉬운 조합이다."
+      },
+      {
+        "withType": "ESTJ",
+        "label": "초자아 관계",
+        "sourceRelationName": "Super-Ego",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "서로 따뜻한 감정을 경험할 수 있지만 겉으로는 차갑게 보일 수 있다.",
+          "공통 관심사가 있으면 일정한 교류와 협력이 가능하다."
+        ],
+        "friction": [
+          "공통 관심사가 없으면 관계가 매우 형식적이 된다.",
+          "서로 자기 관점을 말하려 하고 상대의 이야기를 충분히 듣지 않을 수 있다.",
+          "ENFJ는 사람의 감정과 의미를 보고, ESTJ는 실행 기준과 질서를 먼저 본다."
+        ],
+        "positiveInfluence": [
+          "ESTJ는 ENFJ에게 현실적 실행력과 기준을 주고, ENFJ는 ESTJ에게 관계적 온도와 명분을 더한다.",
+          "공통 목표가 있으면 서로의 다른 강점이 프로젝트에 도움이 된다."
+        ],
+        "lovePattern": "연애에서는 서로에게 따뜻한 감정이 있어도 표현 방식이 어긋나 차갑게 보일 수 있다. ENFJ는 정서적 교류를 원하고, ESTJ는 실질적 책임과 행동으로 마음을 보이려 한다.",
+        "marriagePattern": "결혼에서는 역할과 규칙은 세울 수 있지만 정서적 대화가 형식적으로 굳을 수 있다. 공통 관심사나 목표가 없으면 생활은 유지돼도 친밀감이 약해진다.",
+        "repairStrategy": [
+          "공통 관심사와 공동 프로젝트를 의식적으로 만든다.",
+          "서로 자기 관점을 말한 뒤 상대의 요지를 한 번씩 되짚는다.",
+          "ESTJ는 감정 확인을 일정에 넣고, ENFJ는 실행 기준을 존중한다."
+        ],
+        "reportLine": "ENFJ와 ESTJ는 따뜻함을 느껴도 표현 언어가 달라 형식적 관계로 굳기 쉬우므로 공통 목표와 경청 규칙이 필요하다."
+      },
+      {
+        "withType": "INTJ",
+        "label": "사제 관계",
+        "sourceRelationName": "Pedagogy",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "INTJ는 ENFJ에게 분석적 통찰과 비전의 방향을 제공할 수 있다.",
+          "ENFJ는 INTJ에게 동정심과 이타심을 보완해 줄 수 있다.",
+          "친구나 연인으로 좋은 관계를 오래 이어가며 서로에게 도움을 줄 수 있다."
+        ],
+        "friction": [
+          "INTJ의 차분한 분석은 ENFJ에게 차갑게 느껴질 수 있고, ENFJ의 정서적 접근은 INTJ에게 과하게 보일 수 있다.",
+          "가르침과 도움의 방향이 고정되면 관계가 수평적이지 않게 느껴질 수 있다."
+        ],
+        "positiveInfluence": [
+          "INTJ는 ENFJ의 이상을 더 정밀한 전략으로 다듬고, ENFJ는 INTJ의 비전에 사람의 온도와 설득력을 더한다.",
+          "서로의 부족한 영역을 비교적 선명하게 보완한다."
+        ],
+        "lovePattern": "연애에서는 ENFJ가 INTJ의 깊은 통찰에 끌리고, INTJ는 ENFJ의 따뜻함과 사람을 향한 에너지에 영향을 받는다. 다만 한쪽이 가르치고 한쪽이 배우는 구조가 굳어지면 친밀감보다 역할감이 커질 수 있다.",
+        "marriagePattern": "장기 관계에서는 INTJ가 방향과 구조를, ENFJ가 관계와 동기를 관리하는 보완이 가능하다. 상호 존중이 있으면 안정적이지만, 감정과 논리를 어느 쪽이 우위에 둘지 경쟁하면 피로가 생긴다.",
+        "repairStrategy": [
+          "조언을 하기 전에 상대가 조언을 원하는지 감정적 지지를 원하는지 확인한다.",
+          "분석과 공감을 동등한 관계 자원으로 인정한다.",
+          "공동 비전을 세울 때 실행 계획과 사람에게 미칠 영향을 함께 검토한다."
+        ],
+        "reportLine": "ENFJ와 INTJ는 따뜻함과 통찰이 만나 오래갈 수 있는 관계지만, 가르침의 방향이 고정되면 수평성이 약해진다."
+      },
+      {
+        "withType": "ENTJ",
+        "label": "흡사 관계",
+        "sourceRelationName": "Look-alike",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "관계 진전이 쉽고 서로에게 많은 것을 털어놓기 쉽다.",
+          "비슷한 문제를 갖고 있어 서로에게 연민을 느끼며, 협동할 때 시너지가 크다.",
+          "두 유형 모두 집단을 이끌고 목표를 제시하는 힘이 있다."
+        ],
+        "friction": [
+          "어떤 대화든 한 사람이 리드하려는 흐름이 생길 수 있다.",
+          "ENFJ는 사람의 감정과 명분을, ENTJ는 성과와 구조를 우선해 리더십 기준이 다를 수 있다."
+        ],
+        "positiveInfluence": [
+          "ENTJ는 ENFJ에게 실행력과 냉정한 판단을 주고, ENFJ는 ENTJ에게 사람 중심 설득과 정서적 균형을 준다.",
+          "상처받기 쉬운 비판을 피하려는 성향 덕분에 기본적 존중이 유지되기 쉽다."
+        ],
+        "lovePattern": "연애에서는 강한 리더십과 대화의 속도 때문에 빠르게 가까워진다. ENFJ는 ENTJ의 추진력에, ENTJ는 ENFJ의 사회적 설득력에 끌린다. 다만 서로 주도권을 잡으려 하면 관계가 협력보다 경쟁으로 흐른다.",
+        "marriagePattern": "장기 관계에서는 공동 목표와 사회적 성취를 함께 추진하기 좋다. 그러나 감정과 성과의 우선순위를 두고 반복적으로 부딪히면 서로의 리더십을 침범한다고 느낄 수 있다.",
+        "repairStrategy": [
+          "대화마다 누가 최종 결정을 이끌지 역할을 분명히 한다.",
+          "성과 목표와 관계 목표를 따로 적어 둘 다 관리한다.",
+          "비판은 상대의 성격이 아니라 실행 방식에 한정한다."
+        ],
+        "reportLine": "ENFJ와 ENTJ는 함께 큰 목표를 밀 수 있는 조합이지만, 주도권 경쟁을 관리하지 못하면 리더십끼리 부딪친다."
+      },
+      {
+        "withType": "ESFJ",
+        "label": "비교 관계",
+        "sourceRelationName": "Comparative",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "대화 주제가 비슷하고 유사한 관심사를 공유한다.",
+          "서로에게 정중한 호의를 갖고 평화롭게 상생할 수 있다."
+        ],
+        "friction": [
+          "시간이 지날수록 관계가 지루하게 가라앉을 수 있다.",
+          "절대 상대의 문제점에는 관심을 보이지 않는 경향이 있어 깊은 개선이 어렵다.",
+          "위계에서 한쪽이 높은 위치에 있으면 심각한 의견 불일치와 갈등이 생길 수 있다."
+        ],
+        "positiveInfluence": [
+          "두 사람 모두 관계와 배려를 중시해 기본적 친절과 협력이 쉽다.",
+          "같은 레벨의 협업에서는 서로를 무리 없이 지지한다."
+        ],
+        "lovePattern": "연애에서는 비슷한 관심사와 다정한 표현 때문에 편안하게 시작한다. 하지만 서로의 문제를 깊게 건드리지 않으려 하다 보니 시간이 지나면 새로움이 줄고 관계가 익숙함 속에 가라앉을 수 있다.",
+        "marriagePattern": "결혼에서는 예의, 가족, 관계 관리라는 공통점이 강하다. 다만 한쪽이 더 높은 권한을 갖거나 생활 기준을 주도하려 하면 같은 관계 중심성 안에서도 의견 충돌이 커진다.",
+        "repairStrategy": [
+          "상대의 문제를 피하지 말고 정중하지만 구체적으로 말한다.",
+          "위계가 생기는 역할 분담은 주기적으로 조정한다.",
+          "새로운 공동 목표를 만들어 지루함을 줄인다."
+        ],
+        "reportLine": "ENFJ와 ESFJ는 다정하고 무난하지만, 문제를 건드리지 않는 편안함이 오래되면 관계의 성장감이 줄어든다."
+      },
+      {
+        "withType": "ESFP",
+        "label": "이익 관계",
+        "sourceRelationName": "Benefit",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "ESFP는 ENFJ의 행동, 매너, 생각, 능력에 감명을 받고 존경하기 쉽다.",
+          "함께 있을 때 ESFP가 ENFJ를 기쁘게 해주려는 흐름이 생긴다."
+        ],
+        "friction": [
+          "ENFJ는 ESFP에게 특별한 것을 제공할 수 있다고 느끼는 동시에 ESFP를 자신보다 어리게 볼 수 있다.",
+          "한쪽이 계속 맞추는 구조가 되면 관계의 균형이 흔들린다."
+        ],
+        "positiveInfluence": [
+          "ENFJ는 ESFP에게 방향과 의미를 주고, ESFP는 ENFJ에게 현재의 즐거움과 생동감을 준다.",
+          "따뜻함과 활동성이 결합되어 밝은 관계가 되기 쉽다."
+        ],
+        "lovePattern": "연애에서는 ESFP가 ENFJ의 배려와 리더십에 끌리고, ENFJ는 ESFP의 활기와 반응성을 좋아한다. 그러나 ENFJ가 관계의 방향을 너무 많이 잡고 ESFP가 맞춰 주는 구조가 되면 부담이 쌓인다.",
+        "marriagePattern": "장기 관계에서는 ENFJ가 가족의 방향과 의미를 세우고 ESFP가 생활의 즐거움을 만든다. 역할이 존중되면 따뜻하지만, ENFJ가 보호자처럼 굴면 ESFP의 자유가 줄어든다.",
+        "repairStrategy": [
+          "ESFP의 자율성과 즉흥성을 존중한다.",
+          "ENFJ는 조언을 하기 전에 상대의 선택을 먼저 확인한다.",
+          "즐거움과 장기 계획을 둘 다 일정에 포함한다."
+        ],
+        "reportLine": "ENFJ와 ESFP는 밝고 따뜻하게 끌리지만, 보호와 맞춤의 구조가 고정되면 관계가 기울어진다."
+      },
+      {
+        "withType": "ENFP",
+        "label": "거짓 동일 관계",
+        "sourceRelationName": "Quasi-Identity",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "서로 비슷한 성향으로 보여 초반에는 친근하게 느낄 수 있다.",
+          "둘 다 사람과 가능성, 의미 있는 대화를 좋아한다."
+        ],
+        "friction": [
+          "심리 기능이 전혀 달라 상대를 충분히 이해하기 어렵다.",
+          "문제를 함께 해결해야 할 때 너무 다르게 생각한다고 느낀다.",
+          "대화가 서로에게 만족감을 주지 못하고, 함께 보낸 시간을 후회하기 시작할 수 있다."
+        ],
+        "positiveInfluence": [
+          "서로의 자유로운 감성 표현과 사람 중심 시야에서 초반 활력을 얻는다.",
+          "단기적 교류에서는 서로의 다른 방식이 신선하게 느껴질 수 있다."
+        ],
+        "lovePattern": "연애 초반에는 비슷한 따뜻함과 활기 때문에 잘 맞는 듯 보인다. 하지만 ENFJ는 관계의 방향과 합의를 원하고, ENFP는 가능성과 자유로운 흐름을 중시해 문제 해결 방식에서 어긋난다.",
+        "marriagePattern": "장기 관계에서는 서로를 경계하지는 않아도 상대가 자기보다 조금 부족하게 느껴지는 미묘한 불만이 쌓인다. 함께 해결해야 할 일이 많아질수록 서로의 판단 방식이 달라 피로가 커진다.",
+        "repairStrategy": [
+          "비슷하다는 착각을 줄이고 의사결정 기준을 명시한다.",
+          "관계 방향과 개인 자유의 범위를 따로 합의한다.",
+          "만족감이 낮은 대화는 주제보다 방식이 다른 문제로 보고 조정한다."
+        ],
+        "reportLine": "ENFJ와 ENFP는 따뜻하고 비슷해 보여도 실제 판단 방식이 달라, 깊어질수록 서로를 이해하지 못했다는 느낌이 커질 수 있다."
+      },
+      {
+        "withType": "INFP",
+        "label": "대척 관계",
+        "sourceRelationName": "Contrary",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "서로의 특성 중 일부를 좋아하게 되어 친해지는 계기가 생길 수 있다.",
+          "둘 다 감정과 가치, 의미를 중요하게 본다."
+        ],
+        "friction": [
+          "불안정한 심리적 거리를 유지하게 되고 관계 정착이 어렵다.",
+          "같은 회사에 근무하면 INFP가 거리를 두면서 관계가 형식적이고 조심스럽게 변할 수 있다.",
+          "ENFJ는 INFP가 사사건건 반대한다고 오해하고, INFP는 ENFJ의 활동적이고 분주한 면을 이해하지 못할 수 있다.",
+          "상처를 더 많이 받는 쪽은 ENFJ가 되기 쉽고, 배신감과 과도한 걱정이 커질 수 있다."
+        ],
+        "positiveInfluence": [
+          "INFP는 ENFJ에게 내면 가치의 깊이를 보여 주고, ENFJ는 INFP에게 관계와 표현의 장을 열어 준다.",
+          "각자 떨어져 있을 때는 서로의 장점을 더 편안하게 인정할 수 있다."
+        ],
+        "lovePattern": "초반에는 서로의 가치 지향과 감성에 끌릴 수 있다. 그러나 ENFJ는 적극적으로 관계를 정착시키려 하고 INFP는 심리적 거리를 두려 해, ENFJ가 거절과 배신처럼 느끼기 쉽다.",
+        "marriagePattern": "장기 관계에서는 ENFJ가 관계를 살리려 할수록 더 많이 확인하고, INFP는 그 압박에서 멀어지려 한다. 같은 공간과 책임이 많아질수록 따뜻함이 형식적 조심스러움으로 바뀔 수 있다.",
+        "repairStrategy": [
+          "ENFJ는 INFP의 거리두기를 고의적 반대로 단정하지 않는다.",
+          "INFP는 침묵 대신 현재 필요한 거리와 마음을 짧게 말한다.",
+          "서로 떨어져 회복하는 시간을 관계의 일부로 합의한다."
+        ],
+        "reportLine": "ENFJ와 INFP는 흔한 이상궁합 이미지와 달리, 가까워질수록 심리적 거리와 오해를 세심하게 관리해야 하는 조합이다."
+      },
+      {
+        "withType": "ISFJ",
+        "label": "감독 관계",
+        "sourceRelationName": "Supervision",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 사람을 돌보고 관계의 조화를 중요하게 본다.",
+          "초반에는 배려와 책임감 때문에 서로를 좋은 사람으로 느낄 수 있다."
+        ],
+        "friction": [
+          "ISFJ는 감독자, ENFJ는 감독 대상자처럼 작동하며 ISFJ가 ENFJ를 변화시키려 할 수 있다.",
+          "ISFJ의 세세한 참견과 통제는 ENFJ에게 답답하게 느껴진다.",
+          "ENFJ는 논쟁하거나 명령하는 위치로 이동해 통제에서 벗어나려 할 수 있다."
+        ],
+        "positiveInfluence": [
+          "ISFJ는 ENFJ에게 세부와 생활 안정감을 주고, ENFJ는 ISFJ에게 더 넓은 관계와 비전을 보여 준다.",
+          "역할이 고정되지 않으면 돌봄과 리더십이 함께 작동할 수 있다."
+        ],
+        "lovePattern": "연애 초반에는 서로의 배려와 책임감에 끌린다. 하지만 ISFJ가 세세한 부분을 바로잡으려 하고 ENFJ가 통제에서 벗어나려 하면, 관계가 따뜻함보다 주도권 싸움으로 변한다.",
+        "marriagePattern": "장기 관계에서는 생활 세부 기준과 관계 방향을 누가 정할지가 핵심 갈등이 된다. ISFJ는 안정과 습관을 지키려 하고 ENFJ는 더 넓은 비전과 감정 흐름을 관리하려 한다.",
+        "repairStrategy": [
+          "세부 생활 기준과 관계 방향 결정권을 분리한다.",
+          "ISFJ는 조언 전에 ENFJ의 선택권을 확인한다.",
+          "ENFJ는 통제감을 느낄 때 명령조로 반격하지 말고 필요한 자유를 구체적으로 요청한다."
+        ],
+        "reportLine": "ENFJ와 ISFJ는 배려가 닮았지만, 한쪽이 고치려 하고 다른 한쪽이 벗어나려 하면 관계가 감독과 반발로 굳어진다."
+      },
+      {
+        "withType": "ISFP",
+        "label": "환상 관계",
+        "sourceRelationName": "Illusionary",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "다른 주제로 토론하면서도 긴장하지 않고 편안하게 대화할 수 있다.",
+          "서로에게 끌리며 따뜻하고 배려 넘치는 관계로 발전할 수 있다."
+        ],
+        "friction": [
+          "상대의 이야기가 흥미롭지만 제대로 이해하려면 많은 집중과 노력이 필요하다.",
+          "서로에게 기대하는 것이 달라 능력을 신뢰하기 쉽지 않다.",
+          "ENFJ는 관계의 방향과 표현을 원하고, ISFP는 자기 속도와 감각적 진정성을 중시한다."
+        ],
+        "positiveInfluence": [
+          "ENFJ는 ISFP에게 정서적 지지와 관계의 방향을 주고, ISFP는 ENFJ에게 현재의 감각과 부드러운 진정성을 준다.",
+          "서로 배려심이 많아 차이를 존중하면 따뜻한 관계가 된다."
+        ],
+        "lovePattern": "연애에서는 편안한 대화와 다정한 분위기 때문에 끌린다. ENFJ는 ISFP의 진솔함에 끌리고, ISFP는 ENFJ의 보호자 같은 따뜻함에 안정감을 느낀다. 다만 서로가 바라는 표현과 기대가 달라 신뢰가 흔들릴 수 있다.",
+        "marriagePattern": "장기 관계에서는 ENFJ가 관계를 계획하고 의미화하려 하고, ISFP는 자연스러운 흐름과 자기 공간을 원한다. 기대치를 말로 맞추지 않으면 따뜻함은 있어도 서로를 완전히 신뢰하지 못한다.",
+        "repairStrategy": [
+          "상대가 기대하는 도움과 표현 방식을 구체적으로 묻는다.",
+          "ENFJ는 ISFP의 느린 표현을 무관심으로 단정하지 않는다.",
+          "ISFP는 감정과 취향의 기준을 말로 조금씩 알려 준다."
+        ],
+        "reportLine": "ENFJ와 ISFP는 따뜻하게 끌릴 수 있지만, 서로가 기대하는 사랑의 방식이 달라 확인 없는 배려만으로는 부족하다."
+      },
+      {
+        "withType": "INFJ",
+        "label": "거울 관계",
+        "sourceRelationName": "Mirror",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "비슷한 관심과 아이디어를 가지고 있어 좋은 친구 관계가 되기 쉽다.",
+          "같은 문제를 약간 다르게 이해하기 때문에 서로의 사고방식을 흥미롭게 본다.",
+          "같은 프로젝트에서 상호 보완과 건설적 비판이 쉽다."
+        ],
+        "friction": [
+          "ENFJ는 외부 사람과 집단을 향해 움직이고, INFJ는 내면의 통찰과 깊이를 더 중시할 수 있다.",
+          "비슷하지만 다른 이해 방식 때문에 같은 말을 하면서도 방향이 조금씩 어긋난다."
+        ],
+        "positiveInfluence": [
+          "INFJ는 ENFJ의 비전에 깊은 통찰을 더하고, ENFJ는 INFJ의 아이디어를 사람들에게 전달되는 언어로 확장한다.",
+          "서로의 비슷한 마음을 빠르게 알아차려 안정감 있는 협력이 가능하다."
+        ],
+        "lovePattern": "연애에서는 가치관과 의미 있는 대화가 잘 통한다. ENFJ는 INFJ의 깊이를 존중하고, INFJ는 ENFJ의 따뜻한 표현과 실천력을 좋게 본다. 다만 외부 활동량과 내면 몰입의 차이를 조율해야 한다.",
+        "marriagePattern": "장기 관계에서는 비전과 관계의 의미를 함께 다루기 좋다. ENFJ가 외부 관계를 넓히고 INFJ가 내적 방향을 정리하며 보완하지만, 서로의 에너지 사용 방식이 다르면 피로가 생긴다.",
+        "repairStrategy": [
+          "외부 활동과 조용한 회복 시간을 둘 다 일정에 반영한다.",
+          "서로의 다른 이해 방식을 틀림이 아니라 관점 차이로 본다.",
+          "프로젝트에서는 ENFJ가 전달을, INFJ가 깊이와 방향을 맡는 식으로 역할을 나눈다."
+        ],
+        "reportLine": "ENFJ와 INFJ는 마음의 결이 닮아 좋은 동맹이 되기 쉽지만, 외부로 향하는 에너지와 내면으로 향하는 깊이를 함께 존중해야 한다."
+      }
+    ]
+  },
+  "myeongliBridgeHints": [
+    {
+      "signal": "도화",
+      "reason": "대중 앞에서의 말솜씨, 사회적 매력, 사람을 끌어들이는 리액션과 연결된다.",
+      "productDomains": [
+        "general",
+        "career",
+        "love",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "귀인",
+      "reason": "사람을 돕고 성장시키는 조력자 기질과 상담·교육·복지 적합성을 설명하는 데 유용하다.",
+      "productDomains": [
+        "career",
+        "parenting",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "정인",
+      "reason": "공감, 돌봄, 보호, 교육, 정신적 지주 역할과 연결된다.",
+      "productDomains": [
+        "general",
+        "love",
+        "parenting",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "정관",
+      "reason": "공동의 목표, 모범적 세계, 책임감, 사회적 명분과 질서를 중시하는 성향과 맞는다.",
+      "productDomains": [
+        "career",
+        "marriage",
+        "daeun",
+        "saeun"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "문창",
+      "reason": "말과 글의 재능, 설득력 있는 연설, 교육과 대중 커뮤니케이션에 연결된다.",
+      "productDomains": [
+        "career",
+        "study",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "식신",
+      "reason": "따뜻한 표현, 격려, 유머, 돌봄을 말과 행동으로 드러내는 힘과 연결된다.",
+      "productDomains": [
+        "love",
+        "parenting",
+        "career",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "화",
+      "reason": "사람 앞에서 밝게 드러나는 리더십, 대의명분, 열정적 설득력과 연결된다.",
+      "productDomains": [
+        "general",
+        "career",
+        "saeun"
+      ],
+      "sourceCoverage": "direct"
+    }
+  ],
+  "reportUseCases": {
+    "generalReport": [
+      "공감형 리더십, 사람 중심 판단, 비전 제시, 관계 중심 정체성을 핵심 성격 해석으로 사용한다.",
+      "공감 번아웃, 감정 경계, 가치 확신이 편가르기로 흐를 위험을 함께 다룬다."
+    ],
+    "careerReport": [
+      "교육자, 상담가, 사회복지사, 외교관, 방송·언론·PD, 공익 캠페인 기획을 우선 추천한다.",
+      "혼자 일하는 환경, 냉정한 능력주의, 강한 긴장과 경쟁, 단순 반복 업무는 피해야 할 조건으로 제시한다."
+    ],
+    "loveMarriageChildReport": [
+      "맹목적 애정, 감정 확인 욕구, 미래 설계형 연애, 이별 취약성을 연애·결혼 해석에 쓴다.",
+      "부모·자녀 해석에서는 자유로운 분위기, 예의 교육, 정신적 지주, 친화력 좋은 조력자 아이를 다룬다."
+    ],
+    "compatibilityReport": [
+      "ISTP, INTP, ESTP, ENFJ, ENTP, ISTJ, ESTJ, INTJ, ENTJ, ESFJ, ESFP, ENFP, INFP, ISFJ, ISFP, INFJ 관계를 notablePairs에서 우선 사용한다.",
+      "관계별로 감정 확인, 개인 공간, 리더십 주도권, 거리 조절, 공감 번아웃을 핵심 갈등 축으로 해석한다."
+    ],
+    "daeunReport": [
+      "정관·도화·문창·귀인 기운은 사람 앞에 서는 역할, 교육·상담·대중 설득, 명분 있는 리더십이 강해지는 흐름으로 번역한다.",
+      "정재·금 기운이 강한 대운은 감정과 명분에 구조, 숫자, 계약 기준을 붙이는 보완 시기로 읽는다."
+    ],
+    "saeunReport": [
+      "도화·홍염 세운은 대인 노출과 인기, 관계 확장이 커지는 해로 보되 감정 소모를 관리하게 한다.",
+      "편관·정관 세운은 책임과 사회적 명분이 커지는 해로 보고, 편가르기와 과도한 자기희생을 경계시킨다."
+    ]
+  },
+  "enrichment": {
+    "missingAreas": [
+      "investment direct detail",
+      "money direct detail",
+      "avoidJobs direct list"
+    ],
+    "needsRelationGapFill": false,
+    "notes": [
+      "금전과 투자 영역은 원문 직접 정보가 적어 ENFJ의 베풂, 평판, 가치 중심 성향에서 보수적으로 추론함.",
+      "통계표, 출처 표기, 정치 성향 수치, IQ·범죄율·질병성 단정은 상품용 해석에서 제외하거나 의미 단위로만 재구성함."
+    ]
+  }
+}
+
