@@ -1,0 +1,2264 @@
+﻿{
+  "type": "INTJ",
+  "titleKo": "용의주도한 전략가",
+  "archetype": "과학자형",
+  "oneLine": "보이는 규칙을 그대로 믿기보다 더 정교한 구조와 장기 전략을 설계하는 사람",
+  "sourceStatus": {
+    "rawSourceWasProvidedByUser": true,
+    "rawTextStoredVerbatim": false,
+    "cleanedAndRewritten": true,
+    "notes": "원문을 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+  },
+  "preferenceAxes": {
+    "energy": "I",
+    "perception": "N",
+    "judgment": "T",
+    "lifestyle": "J"
+  },
+  "functionStack": {
+    "dominant": "Ni",
+    "auxiliary": "Te",
+    "tertiary": "Fi",
+    "inferior": "Se"
+  },
+  "closeKeywords": [
+    "개선",
+    "개혁",
+    "계획과 전략",
+    "고유함",
+    "능동적",
+    "도식화",
+    "독립적",
+    "매니아",
+    "목표 지향",
+    "미래 지향",
+    "법",
+    "분석과 예측",
+    "비판적 사고",
+    "사실주의",
+    "수학적 감수성",
+    "실적주의",
+    "엄밀한 정의",
+    "원리원칙",
+    "이론 및 개념화",
+    "이성과 논리",
+    "자연과학",
+    "지적 우월의식",
+    "창의성",
+    "체계적",
+    "추상적 사고",
+    "통찰력",
+    "파고들기식 지식 확장",
+    "포커페이스",
+    "풍자",
+    "합리성"
+  ],
+  "farKeywords": [
+    "가벼운 대화",
+    "감정적 호소",
+    "경로 의존성",
+    "과거 지향",
+    "나열식 정보",
+    "대충 넘어가기",
+    "맹목적 순응",
+    "봉건적 질서",
+    "분위기 맞추기",
+    "사교성",
+    "사회적 암묵지",
+    "사회적 현실감각",
+    "상호 의존적 관계",
+    "선악의 이분법",
+    "성과 없는 과정",
+    "속물적",
+    "애정 표현",
+    "얕은 지식",
+    "여론 민감성",
+    "연고주의",
+    "예외주의",
+    "완곡어법",
+    "운",
+    "유행 민감성",
+    "인간관계 감수성",
+    "인기욕",
+    "일상적 의사소통",
+    "장황한 표현",
+    "칭찬",
+    "평범한 삶"
+  ],
+  "summary": {
+    "identity": "INTJ는 세상의 규칙과 관습을 그대로 받아들이지 않고, 보이지 않는 원리와 장기 구조를 먼저 찾는 유형이다. 혼자 생각하고 설계할 시간이 있을 때 판단이 가장 날카롭다.",
+    "strength": "복잡한 원리를 체계화하고, 비효율을 찾아내며, 목표 달성에 필요한 전략을 끝까지 밀어붙이는 힘이 크다.",
+    "risk": "논리와 기준이 과해지면 사람의 감정, 작은 애정 표현, 현장의 분위기를 무시한다. 똑똑함이 관계에서는 차가움과 거만함으로 보일 수 있다.",
+    "growthStrategy": "통찰과 전략을 버릴 필요는 없다. 다만 결론을 말하기 전에 상대가 받아들일 순서와 감정의 완충 장치를 설계해야 한다."
+  },
+  "traits": {
+    "identity": [
+      {
+        "id": "strategic_skeptic",
+        "label": "전략적 의심",
+        "plainKo": "INTJ는 거의 모든 일에 한 번쯤 의문을 던진다. 기존 규칙이 있다는 이유만으로 따르지 않고, 더 좋은 방법이 있다면 거절이나 비난을 감수하고도 구조를 바꾸려 한다.",
+        "strongLine": "당신은 정해진 길을 잘 걷는 사람이 아니라, 그 길이 왜 정답인지부터 다시 묻는 사람입니다.",
+        "positiveUse": "낡은 방식, 비효율적인 시스템, 막힌 조직 구조를 재설계하는 힘으로 쓰인다.",
+        "risk": "문제를 지적하는 속도가 너무 빠르면 주변에서는 협조보다 반항으로 받아들인다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "상관",
+          "수",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "independent_decision_maker",
+        "label": "독립적 결정",
+        "plainKo": "중요한 판단은 혼자 정리하고 싶어 한다. 함께 떠들며 정답을 찾기보다, 충분히 생각한 뒤 자기 기준으로 결론을 내릴 때 마음이 안정된다.",
+        "strongLine": "당신은 사람들 사이에서 확신을 얻기보다, 혼자 정리한 구조 속에서 확신을 얻습니다.",
+        "positiveUse": "책임 범위가 명확한 연구, 기획, 분석, 개발, 전략 업무에서 강한 몰입을 만든다.",
+        "risk": "상대가 합의 과정에 참여하지 못했다고 느끼면 관계와 조직에서 고립된다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "편인",
+          "정관"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "bold_dreamer_pessimist",
+        "label": "대담한 비관",
+        "plainKo": "큰 목표를 상상하면서도 사람들의 게으름, 상상력 부족, 평범함에는 냉소적이다. 꿈은 크지만 세상에 대한 기대는 낮은 편이다.",
+        "strongLine": "당신은 이상을 크게 보되, 그 이상을 망치는 인간적 허점을 매우 차갑게 계산합니다.",
+        "positiveUse": "비전과 리스크를 동시에 보며 장기 전략을 현실적인 설계로 바꾼다.",
+        "risk": "사람에 대한 기대가 너무 낮아지면 냉소가 관계의 기본 톤이 된다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "편관",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "hidden_warmth",
+        "label": "감춰진 온기",
+        "plainKo": "겉으로는 무심하고 차가워 보이지만, 가까운 사람에게는 자기 방식의 책임과 애정을 보인다. 다만 그 애정이 말이나 리액션보다 실질적인 도움으로 나타난다.",
+        "strongLine": "당신의 다정함은 말보다 해결책과 책임의 형태로 먼저 드러납니다.",
+        "positiveUse": "가까운 사람에게 정보, 전략, 보호, 문제 해결 능력을 제공한다.",
+        "risk": "상대가 원하는 애정 표현을 생략하면 진심과 무관하게 무심한 사람으로 보인다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정재",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "rare_outsider_position",
+        "label": "희소한 외부자",
+        "plainKo": "INTJ는 흔한 분위기와 대중적 기준에 잘 섞이지 않는다. 그래서 주변에서는 신비롭거나 냉정한 사람으로 보지만, 본인은 단지 쓸데없는 사회 규칙에 에너지를 쓰지 않는 쪽에 가깝다.",
+        "strongLine": "당신은 모두가 자연스럽게 받아들이는 분위기에도 쉽게 합류하지 않는 사람입니다.",
+        "positiveUse": "여론, 유행, 압박에 휩쓸리지 않고 독립적인 판단을 유지한다.",
+        "risk": "필요한 사회적 신호까지 무시하면 도움을 받아야 할 순간에도 혼자 남는다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "비견",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "life_as_strategy_board",
+        "label": "인생의 전략판",
+        "plainKo": "삶을 체스나 바둑처럼 읽는 경향이 있다. 눈앞의 반응보다 다음 수, 장기 목표, 자원 배치, 성공 확률을 먼저 계산한다.",
+        "strongLine": "당신에게 인생은 기분대로 걷는 길이 아니라, 여러 수 앞을 보고 두는 전략판에 가깝습니다.",
+        "positiveUse": "대학, 직업, 결혼, 자산, 이직처럼 장기 선택에서 냉정한 설계를 만든다.",
+        "risk": "인생의 우연과 감정까지 모두 계산하려 하면 스스로도 관계도 경직된다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "천문성"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "marriage",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "thinkingStyle": [
+      {
+        "id": "system_first_thinking",
+        "label": "시스템 우선",
+        "plainKo": "현상을 단편적으로 보지 않고, 그 뒤에 있는 원리와 구조를 먼저 찾는다. 패턴이 보이지 않거나 논리적 연결이 약한 설명은 쉽게 받아들이지 않는다.",
+        "strongLine": "당신은 사건보다 구조를 먼저 봅니다. 구조가 이해되지 않으면 결론을 믿지 않습니다.",
+        "positiveUse": "복잡한 문제를 모델화하고, 업무 프로세스나 이론 체계를 정교하게 정리한다.",
+        "risk": "사람들이 원하는 빠른 위로나 단순한 설명을 너무 가볍게 볼 수 있다.",
+        "matchingMyeongliSignals": [
+          "천문성",
+          "편인",
+          "문창"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "evidence_based_vision",
+        "label": "근거 있는 비전",
+        "plainKo": "미래를 상상하더라도 완전한 공상으로 가지 않는다. 자료, 추세, 원리, 이미 관찰한 패턴을 바탕으로 가능성을 예측한다.",
+        "strongLine": "당신의 상상력은 뜬구름이 아니라, 축적된 근거 위에서 미래를 계산하는 힘입니다.",
+        "positiveUse": "장기 기획, 연구, 시장 분석, 기술 예측, 커리어 설계에 강하게 쓰인다.",
+        "risk": "근거가 부족한 영역에서는 가능성을 너무 빨리 잘라낼 수 있다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "천문성",
+          "수"
+        ],
+        "productDomains": [
+          "career",
+          "investment",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "elegant_solution_drive",
+        "label": "우아한 해법",
+        "plainKo": "그냥 되는 방법보다 더 효율적이고 정교한 방법을 찾는다. 한 번 손댄 일은 불필요한 반복과 낭비를 줄이는 방향으로 다시 설계하려 한다.",
+        "strongLine": "당신은 문제를 푸는 데서 끝나지 않고, 더 깔끔한 해법이 없는지 끝까지 봅니다.",
+        "positiveUse": "자동화, 알고리즘, 운영 개선, 업무 표준화, 연구 방법론 개선에 강하다.",
+        "risk": "이미 충분히 괜찮은 일에도 완성도를 더 올리느라 속도가 늦어질 수 있다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "정관",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "definition_precision",
+        "label": "정의의 엄밀함",
+        "plainKo": "개념이 흐릿하거나 말의 기준이 흔들리면 답답함을 느낀다. 표현 하나, 전제 하나가 틀어져도 전체 논리가 흔들린다고 본다.",
+        "strongLine": "당신은 말이 그럴듯한지보다, 그 말의 정의와 전제가 맞는지를 먼저 봅니다.",
+        "positiveUse": "법, 수학, 과학, 기획 문서, 계약, 논증 구조를 다루는 일에서 강하다.",
+        "risk": "대화 중 작은 오류까지 잡아내면 상대는 이해받기보다 평가받는다고 느낀다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "문창",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "future_result_orientation",
+        "label": "미래 결과 중심",
+        "plainKo": "과정 자체보다 그것이 실제로 어떤 결과를 만들지에 관심이 많다. 창의적인 아이디어도 구현과 성과로 이어져야 가치가 있다고 본다.",
+        "strongLine": "당신에게 아이디어는 멋있는 말이 아니라, 현실을 바꾸는 결과로 증명되어야 합니다.",
+        "positiveUse": "비전과 실행 계획을 연결하고, 장기 목표를 수치와 단계로 바꾼다.",
+        "risk": "성과가 느린 관계, 예술, 회복 과정까지 실패로 판단할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "정재"
+        ],
+        "productDomains": [
+          "career",
+          "money",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "hidden_inconsistency_detector",
+        "label": "모순 포착",
+        "plainKo": "작은 불일치와 논리적 빈틈을 빨리 알아차린다. 남들이 그냥 넘어가는 말, 보고서, 제도, 관계의 모순까지 계속 보인다.",
+        "strongLine": "당신의 눈에는 사람들의 말보다 그 말이 서로 맞지 않는 지점이 먼저 들어옵니다.",
+        "positiveUse": "감사, 검토, 리스크 분석, 품질 관리, 연구 설계에서 치명적 오류를 줄인다.",
+        "risk": "지적이 습관화되면 대화가 모두 검증장처럼 변한다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "편관",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "general",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "career": [
+      {
+        "id": "science_tech_law_fit",
+        "label": "과학·기술·법 적합",
+        "plainKo": "원문은 INTJ가 과학, 기술, 컴퓨터, 법률 분야에서 자주 발견된다고 본다. 추상 개념, 규칙 체계, 논리적 증명, 장기 연구를 다루는 일이 잘 맞는다.",
+        "strongLine": "당신은 사람을 달래는 일보다 원리, 데이터, 규칙, 시스템을 다루는 일에서 힘이 납니다.",
+        "positiveUse": "연구, 개발, 법률 해석, 시스템 설계, 전략 기획처럼 고난도 구조를 다루는 직업에서 강하다.",
+        "risk": "친절한 응대와 반복적 정서 노동이 중심인 직무에서는 에너지가 빠르게 소모된다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "천문성",
+          "정관",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "purpose_over_promotion",
+        "label": "승진보다 목적",
+        "plainKo": "INTJ는 직위나 호칭보다 자신이 옳다고 보는 목표와 전문성을 더 중시한다. 승진 자체보다 의미 있는 문제를 해결하는 권한을 원한다.",
+        "strongLine": "당신은 자리보다 판을 바꾸는 권한을 원합니다.",
+        "positiveUse": "전문가 트랙, 연구직, 독립 프로젝트, 전략 책임자 역할에서 몰입도가 높다.",
+        "risk": "조직 정치와 위계 질서를 무시하면 실력과 별개로 기회를 잃을 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "비견",
+          "상관"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "small_team_deep_work",
+        "label": "소수 정예 몰입",
+        "plainKo": "많은 사람과 넓게 어울리는 조직보다 혼자 또는 소수의 능력 있는 사람과 깊게 일하는 구조가 맞다. 사적인 수다보다 문제 해결에 집중하는 팀이 좋다.",
+        "strongLine": "당신은 사람이 많은 팀보다 기준이 높은 소수 정예에서 더 빠르게 성과를 냅니다.",
+        "positiveUse": "연구팀, 개발팀, 컨설팅 태스크포스, 전략실, 독립 분석 업무에서 효율이 좋다.",
+        "risk": "협업이 필요한 순간까지 혼자 처리하려 하면 병목이 생긴다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "정관",
+          "금"
+        ],
+        "productDomains": [
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "meritocracy_expectation",
+        "label": "실력주의 기준",
+        "plainKo": "직장에서는 나이, 직급, 친분보다 능력과 결과를 본다. 위계가 있다고 해서 무조건 더 똑똑하거나 옳다고 인정하지 않는다.",
+        "strongLine": "당신은 윗사람이라는 이유만으로 납득하지 않습니다. 기준은 지위가 아니라 실력입니다.",
+        "positiveUse": "성과 중심 조직, 전문직, 기술 조직, 검증 가능한 결과가 있는 분야에서 신뢰를 얻는다.",
+        "risk": "권위적인 조직에서는 반항적이거나 버릇없는 사람으로 보일 수 있다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "편관",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "strategic_supervisor",
+        "label": "전략형 감독자",
+        "plainKo": "세부 감시보다 큰 방향과 구조를 잡는 감독 역할에 강하다. 아첨을 좋아하지 않고, 날카로운 비판을 할 수 있는 사람에게 일을 맡기는 편이다.",
+        "strongLine": "당신은 사람을 붙잡고 잔소리하기보다, 판의 구조를 잡고 능력 있는 사람에게 권한을 넘기는 쪽입니다.",
+        "positiveUse": "전략 리더, 기술 리드, 연구 책임자, 프로젝트 오너로서 기준과 방향을 제시한다.",
+        "risk": "상세한 돌봄과 동기 부여가 필요한 구성원에게는 차갑고 방치하는 상사로 보인다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "정관",
+          "천문성"
+        ],
+        "productDomains": [
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "autonomy_required_role",
+        "label": "권한 있는 책임",
+        "plainKo": "제대로 일하려면 책임만이 아니라 의사결정 권한도 필요하다. 지시만 따르는 자리보다 문제를 통째로 맡아 설계하는 역할에서 실력이 나온다.",
+        "strongLine": "당신에게 좋은 일은 시키는 일을 처리하는 일이 아니라, 문제 전체를 맡아 구조를 바꾸는 일입니다.",
+        "positiveUse": "오너십이 있는 프로젝트, 창업, 독립 컨설팅, 연구 과제, 시스템 구축에 강하다.",
+        "risk": "권한이 제한된 하위 실무에서는 불만과 냉소가 빨리 쌓인다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "편관",
+          "정재"
+        ],
+        "productDomains": [
+          "career",
+          "money",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "innovation_over_convention",
+        "label": "관습보다 개선",
+        "plainKo": "전통이 있다는 이유로 비효율을 유지하는 조직과 맞지 않는다. 이유 없는 규칙, 체면 중심의 보고, 사회적 암묵지는 INTJ에게 낭비로 보인다.",
+        "strongLine": "당신은 오래된 방식보다 더 나은 방식이 보이면, 그 전통의 권위를 크게 두려워하지 않습니다.",
+        "positiveUse": "프로세스 혁신, 디지털 전환, 연구 개선, 제도 개편에서 실질적 가치를 만든다.",
+        "risk": "사람들이 그 규칙에 붙여둔 정서적 의미를 무시하면 저항이 커진다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "편인",
+          "목"
+        ],
+        "productDomains": [
+          "career",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "workplace": [
+      {
+        "id": "anti_politics_work_style",
+        "label": "정치질 거부",
+        "plainKo": "가십, 사내 정치, 눈치 보기, 비공식 줄서기를 업무 능력으로 보지 않는다. 이런 요소가 많을수록 조직에 대한 흥미가 급격히 떨어진다.",
+        "strongLine": "당신은 일을 잘하는 사람보다 말을 잘 맞추는 사람이 올라가는 조직을 견디기 어렵습니다.",
+        "positiveUse": "공정한 평가 기준과 명확한 산출물이 있는 조직에서 실력으로 신뢰를 얻는다.",
+        "risk": "정치적 완충이 필요한 순간에도 직선적으로 움직여 불필요한 적을 만들 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "상관",
+          "금"
+        ],
+        "productDomains": [
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "boss_challenge_risk",
+        "label": "상사 지적 리스크",
+        "plainKo": "상사의 말이라도 논리가 맞지 않으면 문제를 짚고 싶어 한다. 실제로 권위적인 상사와 충돌할 수 있지만, 위험 감지가 완전히 약한 편은 아니라 상황을 보며 조절한다.",
+        "strongLine": "당신은 권위보다 논리를 먼저 보기 때문에, 틀린 지시 앞에서는 침묵이 쉽지 않습니다.",
+        "positiveUse": "조직이 놓친 오류를 초기에 발견하고 더 나은 방향을 제안한다.",
+        "risk": "말의 순서를 조절하지 않으면 옳은 지적도 공격으로 처리된다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "상관",
+          "편관"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "free_rider_intolerance",
+        "label": "무임승차 불가",
+        "plainKo": "능력 없이 분위기만 타거나 맡은 일을 흐리는 사람을 잘 참지 못한다. 일의 질이 떨어질 바에는 혼자 하는 것이 낫다고 느낀다.",
+        "strongLine": "당신은 느슨한 협업보다 혼자 책임지고 끝내는 쪽이 차라리 편할 때가 많습니다.",
+        "positiveUse": "품질을 끝까지 지키고, 책임 없는 사람에게 끌려가지 않는다.",
+        "risk": "팀원의 성장 여지를 기다리지 못하면 혼자 모든 일을 떠안게 된다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "정관",
+          "금"
+        ],
+        "productDomains": [
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "private_chatter_drain",
+        "label": "사적 수다 소모",
+        "plainKo": "동료와의 사적인 수다나 감정적 친목을 필수 업무처럼 요구받으면 피로가 커진다. 업무와 관계없는 대화가 길어질수록 집중력이 떨어진다.",
+        "strongLine": "당신은 친목이 성과를 대신하는 분위기에서 가장 빨리 지칩니다.",
+        "positiveUse": "회의를 짧게 만들고, 업무 논점과 결정 사항을 선명하게 정리한다.",
+        "risk": "동료들이 당신을 팀에 마음이 없는 사람으로 오해할 수 있다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "수",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "flattery_resistant",
+        "label": "아첨 면역",
+        "plainKo": "칭찬이나 아첨보다 실제 능력과 날카로운 비판을 신뢰한다. 자기 의견을 검증해줄 수 있는 사람을 더 높게 평가한다.",
+        "strongLine": "당신은 듣기 좋은 말보다, 틀린 부분을 정확히 짚는 사람에게 더 끌립니다.",
+        "positiveUse": "실력 있는 조언자, 비판적 동료, 전문가 네트워크를 통해 판단력을 높인다.",
+        "risk": "따뜻한 인정 표현까지 불필요하게 낮춰 보며 관계 자산을 잃을 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "현침살",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "broad_structure_leadership",
+        "label": "큰 구조 리더십",
+        "plainKo": "미세한 감정보다 큰 구조, 목표, 책임 배분을 잡는 데 강하다. 세세한 감시형 리더보다 방향을 정렬하는 전략형 리더에 가깝다.",
+        "strongLine": "당신의 리더십은 분위기를 띄우는 방식이 아니라, 판의 논리와 책임선을 정리하는 방식입니다.",
+        "positiveUse": "조직 개편, 기술 로드맵, 연구 계획, 장기 프로젝트 관리에서 강점을 낸다.",
+        "risk": "사람들의 불안과 동기를 관리하지 않으면 계획은 맞는데 팀이 따라오지 않는다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "정관",
+          "목"
+        ],
+        "productDomains": [
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "money": [
+      {
+        "id": "expertise_income_path",
+        "label": "전문성 수익",
+        "plainKo": "돈은 넓은 인기보다 희소한 전문성과 문제 해결 능력에서 만들어진다. 스스로의 지식과 전략이 시장에서 교환될 때 수입이 커진다.",
+        "strongLine": "당신의 돈은 친화력보다 전문성, 통찰, 문제 해결력에서 만들어지는 쪽입니다.",
+        "positiveUse": "고급 기술, 전문 자문, 법률·데이터·전략 업무, 지식 기반 창업에 적합하다.",
+        "risk": "사람을 설득하고 신뢰를 쌓는 과정을 낮춰 보면 실력의 가격이 제대로 전달되지 않는다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편재",
+          "문창"
+        ],
+        "productDomains": [
+          "money",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "financial_security_low_priority",
+        "label": "안정보다 목표",
+        "plainKo": "원문은 INTJ가 인간관계, 가족, 재정 안정, 지역사회 개발에 상대적으로 낮은 관심을 보인다고 정리한다. 돈 자체보다 장기 목표를 실현할 수 있는 구조가 더 중요하다.",
+        "strongLine": "당신은 안전한 돈보다, 돈이 어떤 전략을 가능하게 하는지를 먼저 봅니다.",
+        "positiveUse": "필요한 자원과 투자 우선순위를 목표 중심으로 정리한다.",
+        "risk": "생활 안정과 관계 비용을 과소평가하면 장기 전략의 기반이 흔들린다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "편관",
+          "목"
+        ],
+        "productDomains": [
+          "money",
+          "marriage",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "self_employment_potential",
+        "label": "독립 수입 가능성",
+        "plainKo": "독립성과 전문성이 강해 자기 사업, 독립 자문, 연구 기반 수입과 연결되기 쉽다. 다만 이는 보장된 수익이 아니라 권한과 전문성이 맞을 때 열리는 경로다.",
+        "strongLine": "당신은 남의 판에서 지시만 받을 때보다, 자기 기준으로 설계한 판에서 돈의 감각이 살아납니다.",
+        "positiveUse": "전문 지식을 상품화하거나 시스템으로 만들 때 수익 구조를 설계할 수 있다.",
+        "risk": "마케팅, 고객 감정, 반복 응대 같은 현실적 판매 과정을 무시하면 좋은 지식도 팔리지 않는다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "비견",
+          "상관"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
+      }
+    ],
+    "investment": [
+      {
+        "id": "anti_hype_investment",
+        "label": "유행 불신",
+        "plainKo": "유행, 여론, 운에 휘둘리는 선택과 거리가 멀다. 투자에서도 남들이 좋다고 몰리는 이야기보다 데이터, 구조, 리스크를 먼저 확인해야 마음이 놓인다.",
+        "strongLine": "당신은 소문으로 움직일수록 불안해지고, 근거와 구조가 보일수록 결정을 내립니다.",
+        "positiveUse": "장기 분석, 기업 구조 검토, 리스크 관리, 포트폴리오 원칙 수립에 맞다.",
+        "risk": "분석만 반복하다가 실행 타이밍을 놓치거나, 반대로 자기 모델을 과신할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편인",
+          "금"
+        ],
+        "productDomains": [
+          "investment",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "long_horizon_strategy",
+        "label": "장기 전략 투자",
+        "plainKo": "눈앞의 감정이나 단기 분위기보다 미래 구조와 장기 목표를 본다. 투자도 즉흥 매매보다 가설, 검증, 수정의 과정으로 접근하는 편이 맞다.",
+        "strongLine": "당신의 투자 감각은 짧은 흥분보다 긴 구조를 읽을 때 살아납니다.",
+        "positiveUse": "장기 계획, 자산 배분, 산업 변화 예측, 목표 기반 투자에 유리하다.",
+        "risk": "미래 예측에 자신감이 과하면 현실의 변동성과 현금 흐름을 얕볼 수 있다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "정재",
+          "천문성"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "inferred"
+      }
+    ],
+    "study": [
+      {
+        "id": "hard_discipline_affinity",
+        "label": "고난도 학문 적합",
+        "plainKo": "수학, 자연과학, 컴퓨터, 법처럼 원리와 논증이 뚜렷한 학문에 끌린다. 지식이 깊어질수록 더 몰입하고, 얕은 암기에는 쉽게 흥미를 잃는다.",
+        "strongLine": "당신은 쉬운 설명보다 어려워도 구조가 있는 지식에 더 오래 붙습니다.",
+        "positiveUse": "전문 시험, 연구, 프로그래밍, 법학, 수리적 분석에서 강한 집중을 만든다.",
+        "risk": "흥미 없는 과목은 최소한의 점수 관리도 귀찮아질 수 있다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "천문성",
+          "정인"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "deep_project_learning",
+        "label": "깊은 프로젝트",
+        "plainKo": "짧게 여러 가지를 훑기보다 하나의 주제를 깊게 파고드는 학습이 맞다. 장기 프로젝트로 구조를 잡으면 지식이 실제 실력으로 바뀐다.",
+        "strongLine": "당신은 넓게 찍는 공부보다, 한 주제를 끝까지 파고들 때 실력이 폭발합니다.",
+        "positiveUse": "논문, 포트폴리오, 연구 과제, 장기 자격 준비에 적합하다.",
+        "risk": "완성도를 올리느라 마감이나 기본 범위를 놓칠 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "편인",
+          "수"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "math_reflection_strategy",
+        "label": "수학 회고 전략",
+        "plainKo": "수학 성적이 기대보다 낮다면 문제 풀이 자체보다 사고 과정의 오류를 기록하는 방식이 맞다. 어떤 전제를 놓쳤는지, 어떤 유형에서 판단이 흐려졌는지 회고해야 한다.",
+        "strongLine": "당신의 공부는 더 많이 푸는 것보다, 왜 틀렸는지 구조를 기록할 때 좋아집니다.",
+        "positiveUse": "오답 노트, 수학 일지, 논증 흐름 기록으로 성적과 사고력을 동시에 올린다.",
+        "risk": "기록을 분석만 하고 반복 훈련으로 연결하지 않으면 실전 속도가 부족해진다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "정인",
+          "금"
+        ],
+        "productDomains": [
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "anti_shallow_knowledge",
+        "label": "얕은 지식 거부",
+        "plainKo": "겉핥기식 설명이나 그럴듯한 말에 만족하지 않는다. 원리와 근거가 충분히 연결될 때까지 더 파고들고 싶어 한다.",
+        "strongLine": "당신은 아는 척보다 진짜 아는 것을 원합니다.",
+        "positiveUse": "전문성, 연구 깊이, 고급 문제 해결력으로 이어진다.",
+        "risk": "사람들과 일상적인 수준의 대화를 이어가는 데 답답함을 느낄 수 있다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "문창",
+          "현침살"
+        ],
+        "productDomains": [
+          "study",
+          "general",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "love": [
+      {
+        "id": "slow_high_standard_love",
+        "label": "느린 고기준 연애",
+        "plainKo": "쉽게 빠지는 편이 아니다. 상대가 매력적인지보다 삶의 방향, 지적 기준, 장기 가능성이 맞는지를 오래 본다.",
+        "strongLine": "당신의 연애는 감정의 속도보다 기준의 통과가 먼저입니다.",
+        "positiveUse": "한 번 마음을 정하면 가볍게 흔들리지 않고 장기 관계로 이어갈 힘이 있다.",
+        "risk": "기준이 비현실적으로 높아지면 좋은 사람도 초반에 탈락시킨다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편인",
+          "정재"
+        ],
+        "productDomains": [
+          "love",
+          "marriage",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "strategic_romance_awkwardness",
+        "label": "전략적 어색함",
+        "plainKo": "연애 초반에는 무엇을 해야 하는지, 어떤 행동이 맞는지 분석하려 든다. 사랑도 이해해야 할 이론이나 해결해야 할 과제처럼 접근할 수 있다.",
+        "strongLine": "당신은 사랑을 느끼기 전에 사랑의 작동 방식을 이해하려는 사람입니다.",
+        "positiveUse": "경험이 쌓이면 관계의 패턴을 학습하고 안정적인 방식으로 성숙해진다.",
+        "risk": "상대는 계산적이거나 마음이 덜 열린 사람으로 느낄 수 있다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "정관",
+          "수"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "same_direction_attraction",
+        "label": "같은 방향성",
+        "plainKo": "외모나 분위기보다 인생의 방향이 맞는 사람에게 끌린다. 함께 미래를 설계할 수 있고, 서로의 목표를 방해하지 않는 관계를 원한다.",
+        "strongLine": "당신은 설렘만으로는 오래 가지 않고, 같은 방향으로 걸을 수 있어야 마음을 줍니다.",
+        "positiveUse": "커리어, 결혼, 자녀, 재정 계획을 함께 논의하는 성숙한 관계를 만든다.",
+        "risk": "로맨스의 작은 즐거움과 즉흥적 애정 표현을 과소평가할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "목"
+        ],
+        "productDomains": [
+          "love",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "knowledge_display_risk",
+        "label": "지식 과시 리스크",
+        "plainKo": "친밀한 시간을 보내야 할 때도 지식과 분석을 과하게 드러낼 수 있다. 상대를 즐겁게 하기보다 자신의 지적 세계를 보여주는 쪽으로 흐르면 관계가 건조해진다.",
+        "strongLine": "당신의 지성은 매력이지만, 연애에서는 증명보다 배려의 형태로 써야 합니다.",
+        "positiveUse": "상대가 좋아하는 주제와 문제를 이해하고 돕는 방식으로 지성을 쓰면 큰 매력이 된다.",
+        "risk": "데이트가 토론회처럼 변하면 상대는 사랑받기보다 평가받는다고 느낀다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "현침살",
+          "상관"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "marriage": [
+      {
+        "id": "future_planned_marriage",
+        "label": "미래 설계형 결혼",
+        "plainKo": "연애가 깊어지면 결혼, 자녀, 거주, 커리어, 돈의 방향까지 실제 계획으로 연결한다. 감정만 확인하는 관계보다 미래를 설계할 수 있는 관계에 안정감을 느낀다.",
+        "strongLine": "당신에게 결혼은 분위기가 아니라, 함께 살아갈 시스템을 설계하는 일입니다.",
+        "positiveUse": "장기 재정, 역할 분담, 자녀 교육, 커리어 조율을 현실적으로 준비한다.",
+        "risk": "배우자의 감정적 요구를 일정표와 해결책으로만 처리할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "토"
+        ],
+        "productDomains": [
+          "marriage",
+          "money",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "autonomy_in_marriage",
+        "label": "결혼 속 자율성",
+        "plainKo": "결혼해도 개인의 생각, 일, 시간, 목표는 존중받아야 한다. 모든 것을 함께 결정하고 감정적으로 공유해야 하는 관계는 답답하게 느껴진다.",
+        "strongLine": "당신은 가까운 관계일수록 더 정확한 거리와 자율성이 필요합니다.",
+        "positiveUse": "각자의 전문성과 독립성을 지키는 성숙한 부부 관계를 만들 수 있다.",
+        "risk": "배우자는 독립성을 거리감이나 무관심으로 오해할 수 있다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "편인",
+          "수"
+        ],
+        "productDomains": [
+          "marriage",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "devotion_without_display",
+        "label": "표현 적은 헌신",
+        "plainKo": "사랑하는 사람에게 순애보적 태도를 보일 수 있지만, 표현은 절제된다. 작은 애정 표현보다 문제 해결과 책임을 사랑의 증거로 삼는다.",
+        "strongLine": "당신은 사랑을 말로 많이 보여주기보다, 상대의 미래와 문제를 같이 짊어지는 방식으로 보여줍니다.",
+        "positiveUse": "어려운 시기에 쉽게 떠나지 않고 실질적인 대책을 함께 만든다.",
+        "risk": "감사의 말, 스킨십, 작은 기념일을 놓치면 헌신이 제대로 전달되지 않는다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관",
+          "정인"
+        ],
+        "productDomains": [
+          "marriage",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "parenting": [
+      {
+        "id": "teach_how_to_think",
+        "label": "생각법 교육",
+        "plainKo": "INTJ 부모는 아이에게 무엇을 생각하라고 강요하기보다 어떻게 생각해야 하는지를 가르치려 한다. 비판적 사고와 문제 해결 능력을 중요한 자산으로 본다.",
+        "strongLine": "당신은 아이에게 정답보다 사고의 구조를 물려주고 싶어 하는 부모입니다.",
+        "positiveUse": "아이의 독립적 판단, 논리적 사고, 학습 전략을 키워준다.",
+        "risk": "어린 아이에게도 지나치게 어른스러운 사고 수준을 기대할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "문창",
+          "정관"
+        ],
+        "productDomains": [
+          "parenting",
+          "child",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "independence_with_responsibility",
+        "label": "책임 있는 독립",
+        "plainKo": "자녀가 독립적이길 바라지만, 그 자유를 책임 있게 쓸 것을 요구한다. 무조건적 보호보다 스스로 판단하고 결과를 감당하는 훈련을 중시한다.",
+        "strongLine": "당신은 아이를 품 안에만 두기보다, 자기 인생을 설계할 힘을 갖게 만들고 싶어 합니다.",
+        "positiveUse": "자립심, 자기관리, 장기 목표 설정을 키운다.",
+        "risk": "감정적 위로가 필요한 시기에 해결과 책임만 강조할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "비견"
+        ],
+        "productDomains": [
+          "parenting",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "emotional_child_challenge",
+        "label": "감정형 자녀 난이도",
+        "plainKo": "통제하기 어렵고 감정 표현이 큰 아이를 이해하는 데 어려움을 느낄 수 있다. 어린 아이의 감정 폭발을 논리 부족이 아니라 발달 과정으로 받아들여야 한다.",
+        "strongLine": "당신에게 가장 어려운 양육은 아이의 감정을 해결할 문제가 아니라 그대로 견뎌야 할 신호로 보는 일입니다.",
+        "positiveUse": "감정과 행동을 분리해 가르치면 아이에게 안정적인 기준을 제공한다.",
+        "risk": "감정을 빨리 교정하려 들면 아이는 이해받지 못한다고 느낀다.",
+        "matchingMyeongliSignals": [
+          "수",
+          "정인",
+          "정관"
+        ],
+        "productDomains": [
+          "parenting",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "knowledge_centered_support",
+        "label": "지식 중심 지원",
+        "plainKo": "어려운 과목이나 복잡한 주제는 직접 가르치거나 좋은 자료를 찾아주려 한다. 무지보다 지식의 추구를 훨씬 높은 가치로 둔다.",
+        "strongLine": "당신은 아이에게 마음만 주는 부모가 아니라, 더 잘 생각할 도구까지 찾아주는 부모입니다.",
+        "positiveUse": "학습 자료, 진로 정보, 전문 지식, 문제 해결 전략을 제공한다.",
+        "risk": "아이가 원하는 애정 표현보다 공부와 방향 제시가 앞설 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "문창",
+          "편인"
+        ],
+        "productDomains": [
+          "parenting",
+          "study",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "child": [
+      {
+        "id": "knowledge_rich_child",
+        "label": "지식 많은 아이",
+        "plainKo": "INTJ 아이는 또래보다 특정 분야에 대해 많이 알고, 스스로 조사한 결론을 갖고 있을 수 있다. 단순한 호기심보다 분석과 결론이 함께 움직인다.",
+        "strongLine": "이 아이는 질문이 많은 정도를 넘어, 이미 자기만의 결론을 가지고 있을 때가 많습니다.",
+        "positiveUse": "전문 분야 탐구, 과학·수학·컴퓨터·역사 등 깊이 있는 학습에서 빠르게 성장한다.",
+        "risk": "또래와 관심사가 달라 사회 활동이 제한될 수 있다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "편인",
+          "천문성"
+        ],
+        "productDomains": [
+          "child",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "rule_questioning_child",
+        "label": "규칙 질문형",
+        "plainKo": "필요 없는 규칙과 형식적인 예절을 그냥 따르기 어려워한다. 왜 해야 하는지 납득하지 못하면 반항처럼 보일 수 있다.",
+        "strongLine": "이 아이는 말을 안 듣는 것이 아니라, 납득되지 않는 규칙을 받아들이기 어렵습니다.",
+        "positiveUse": "이유와 구조를 설명하면 자기 기준으로 책임 있게 따를 수 있다.",
+        "risk": "권위만 앞세우면 부모나 교사와 정면충돌한다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "비견",
+          "금"
+        ],
+        "productDomains": [
+          "child",
+          "parenting",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "intellectual_respect_need",
+        "label": "지적 존중 욕구",
+        "plainKo": "겸손한 태도나 형식적 인사보다 자신의 사고력과 독립성을 인정받고 싶어 한다. 어른이 아이 취급하며 눌러버리면 마음을 닫는다.",
+        "strongLine": "이 아이에게 필요한 것은 과한 칭찬보다, 생각하는 방식을 진지하게 들어주는 태도입니다.",
+        "positiveUse": "존중받는 환경에서 자기주도성과 학습 몰입이 커진다.",
+        "risk": "자존심이 상하면 조용히 단절하거나 냉소적으로 변한다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "편인",
+          "정인"
+        ],
+        "productDomains": [
+          "child",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "single_field_mastery",
+        "label": "한 분야 몰입",
+        "plainKo": "여러 활동을 넓게 하는 것보다 한 분야에서 최고가 되고 싶어 한다. 관심 분야가 생기면 깊게 파고들고, 무관한 활동에는 흥미가 급격히 낮다.",
+        "strongLine": "이 아이는 이것저것 잘하는 아이보다, 자기 분야를 끝까지 파고드는 아이에 가깝습니다.",
+        "positiveUse": "진로 탐색이 빨리 잡히면 강한 전문성과 포트폴리오를 만든다.",
+        "risk": "균형 잡힌 기초 활동이나 사회 경험을 귀찮게 여길 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "편인",
+          "문창"
+        ],
+        "productDomains": [
+          "child",
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "selective_friendship",
+        "label": "선별적 관계",
+        "plainKo": "아무에게나 시간과 에너지를 쓰지 않는다. 친구를 많이 만들기보다 기준이 맞는 사람과 깊게 연결되는 편을 선호한다.",
+        "strongLine": "당신은 넓은 인맥보다 오래 생각을 나눌 수 있는 소수의 사람을 원합니다.",
+        "positiveUse": "관계의 질을 높이고, 지적 자극과 신뢰가 있는 사람에게 깊이 헌신한다.",
+        "risk": "기준이 높아질수록 외로움과 고립이 커질 수 있다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "편인",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "deep_idea_bond",
+        "label": "깊은 대화 유대",
+        "plainKo": "가벼운 근황보다 세상, 지식, 미래, 가치, 원리를 두고 깊게 말할 수 있는 관계에서 친밀감을 느낀다.",
+        "strongLine": "당신은 함께 웃는 사람보다, 함께 생각을 넓힐 수 있는 사람에게 더 오래 마음이 갑니다.",
+        "positiveUse": "연구, 토론, 창작, 장기 목표를 공유하는 관계에서 큰 자극을 받는다.",
+        "risk": "일상적 정서 교류를 얕다고 느끼면 관계의 기본 온도가 낮아진다.",
+        "matchingMyeongliSignals": [
+          "천문성",
+          "문창",
+          "편인"
+        ],
+        "productDomains": [
+          "compatibility",
+          "love",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "insight_as_care",
+        "label": "통찰로 돕기",
+        "plainKo": "친구에게 물질적 보상보다 유용한 정보, 숨은 문제의 진단, 장기적으로 도움이 되는 조언을 주려 한다. 이것이 INTJ식 애정 표현이다.",
+        "strongLine": "당신은 다정한 말보다 상대의 문제를 정확히 풀어주는 방식으로 마음을 씁니다.",
+        "positiveUse": "친구와 가족의 진로, 문제 해결, 선택의 질을 높인다.",
+        "risk": "상대가 조언보다 공감을 원할 때는 차갑고 피곤한 사람으로 보인다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "정인",
+          "현침살"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "line_crossing_memory",
+        "label": "선 넘음 기억",
+        "plainKo": "한 번 기준을 넘은 사람에게는 오래 불편함을 느낀다. 겉으로 크게 싸우지 않아도 마음속 신뢰가 회복되기 어렵다.",
+        "strongLine": "당신은 한 번 무너진 신뢰를 쉽게 원래 자리로 되돌리지 않습니다.",
+        "positiveUse": "관계의 기준과 경계를 분명히 지켜 자기 에너지를 보호한다.",
+        "risk": "상대가 회복하려는 시도까지 무의미하다고 판단하면 관계가 너무 쉽게 닫힌다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "금"
+        ],
+        "productDomains": [
+          "compatibility",
+          "love",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "communication": [
+      {
+        "id": "blunt_fact_delivery",
+        "label": "직설적 사실 전달",
+        "plainKo": "듣기 좋은 말보다 정확한 말을 우선한다. 상대가 원하지 않는 사실도 문제 해결에 필요하다고 보면 말하고 싶어 한다.",
+        "strongLine": "당신의 말은 부드럽기보다 정확합니다. 그래서 도움이 되면서도 아플 수 있습니다.",
+        "positiveUse": "핵심을 빠르게 짚고, 문제를 회피하지 않게 만든다.",
+        "risk": "상대의 자존심과 감정 상태를 고려하지 않으면 관계가 바로 얼어붙는다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "상관",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "sarcastic_humor",
+        "label": "풍자적 유머",
+        "plainKo": "유머가 따뜻한 분위기보다 날카로운 풍자와 냉소로 드러날 수 있다. 지적 긴장감이 있는 사람에게는 매력적이지만, 민감한 사람에게는 공격처럼 들린다.",
+        "strongLine": "당신의 농담은 웃기려고 던진 말이어도, 누군가에게는 정확한 비판처럼 박힙니다.",
+        "positiveUse": "부조리와 모순을 짧고 강하게 드러낸다.",
+        "risk": "관계가 충분히 깊기 전에 쓰면 상대가 방어적으로 변한다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "현침살",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "low_praise_style",
+        "label": "칭찬 절제",
+        "plainKo": "칭찬이나 빈말을 많이 하지 않는다. 진심 없는 좋은 말보다 필요한 피드백을 주는 것이 더 정직하다고 느낀다.",
+        "strongLine": "당신은 괜찮다는 말을 쉽게 하지 않지만, 그래서 인정할 때의 무게가 큽니다.",
+        "positiveUse": "평가가 정확하고, 무의미한 감정 소비를 줄인다.",
+        "risk": "상대는 인정받지 못한다고 느껴 관계에서 지칠 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "금",
+          "수"
+        ],
+        "productDomains": [
+          "compatibility",
+          "love",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "abstract_conversation_preference",
+        "label": "추상 대화 선호",
+        "plainKo": "일상 잡담보다 원리, 미래, 철학, 과학, 예술, 사회 변화 같은 큰 주제를 더 편하게 느낀다.",
+        "strongLine": "당신은 오늘 뭐 먹었는지보다, 왜 세상이 이렇게 돌아가는지에 더 빨리 몰입합니다.",
+        "positiveUse": "깊은 대화, 전략 회의, 연구 토론, 창작 논의에서 존재감이 커진다.",
+        "risk": "상대가 원하는 가벼운 정서 교류를 건너뛰면 거리감이 생긴다.",
+        "matchingMyeongliSignals": [
+          "천문성",
+          "편인",
+          "문창"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "strengths": [
+      {
+        "id": "rational_under_pressure",
+        "label": "압박 속 합리성",
+        "plainKo": "어려운 상황에서도 감정에 휩쓸리기보다 구조와 대안을 보려 한다. 문제를 분해하고 판단 기준을 세우는 능력이 강하다.",
+        "strongLine": "당신은 위기에서도 먼저 감정을 터뜨리기보다, 문제의 구조를 해부하는 쪽입니다.",
+        "positiveUse": "위기 대응, 전략 수정, 복잡한 의사결정에서 흔들림을 줄인다.",
+        "risk": "감정적 위로가 필요한 사람에게는 너무 냉정한 대응처럼 보일 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "intellectual_depth",
+        "label": "지적 깊이",
+        "plainKo": "직감이나 추측보다 조사와 분석을 통해 결론을 내리려 한다. 지식이 단순 장식이 아니라 판단의 기반이다.",
+        "strongLine": "당신은 많이 아는 사람이 아니라, 아는 것을 근거로 판단할 줄 아는 사람입니다.",
+        "positiveUse": "전문 지식, 연구, 분석, 고급 의사결정에서 신뢰를 만든다.",
+        "risk": "지식이 부족한 사람을 쉽게 낮춰 보면 협업이 어려워진다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "정인",
+          "천문성"
+        ],
+        "productDomains": [
+          "study",
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "independent_creativity",
+        "label": "독립적 창의성",
+        "plainKo": "남의 방식을 따라 하기보다 자기만의 해결책을 만든다. 독립심과 창의성이 결합되어 기존 방식과 다른 구조를 제안한다.",
+        "strongLine": "당신의 창의성은 감성적 장식보다, 문제를 다른 구조로 푸는 독립성에서 나옵니다.",
+        "positiveUse": "새로운 기술, 방법론, 서비스 구조, 연구 가설을 만든다.",
+        "risk": "검증되지 않은 자기 방식에 지나치게 확신하면 피드백을 늦게 받아들인다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "편인",
+          "목"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "original_innovation",
+        "label": "독창적 혁신",
+        "plainKo": "원문은 INTJ가 독창적인 아이디어와 반항적인 성향으로 혁신을 만들어내는 데 꾸준히 기여한다고 본다.",
+        "strongLine": "당신은 모두가 맞다고 하는 것을 개선할 수 있을 때 가장 INTJ답게 빛납니다.",
+        "positiveUse": "새로운 분야 개척, 기존 체계 개선, 장기 프로젝트의 핵심 설계에 강하다.",
+        "risk": "혁신의 명분으로 사람들의 준비도와 현실 저항을 무시할 수 있다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "편관",
+          "목"
+        ],
+        "productDomains": [
+          "career",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "risks": [
+      {
+        "id": "arrogance_risk",
+        "label": "거만함",
+        "plainKo": "자신의 판단 기준이 강해 능력이 낮다고 본 사람을 쉽게 부정적으로 평가할 수 있다. 유용한 아이디어도 출처가 마음에 들지 않으면 무시하기 쉽다.",
+        "strongLine": "당신의 확신은 강점이지만, 과하면 다른 사람의 가능성을 보기도 전에 닫아버립니다.",
+        "positiveUse": "높은 기준을 유지하고 검증되지 않은 말을 걸러낸다.",
+        "risk": "협업, 연애, 가족 관계에서 상대를 평가 대상으로 만들 수 있다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "상관",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "low_sociability_risk",
+        "label": "낮은 사교성",
+        "plainKo": "솔직하고 날카로운 말이 장점이지만, 연인·친구·직장 관계에서는 사교성이 부족하다는 평가로 이어질 수 있다.",
+        "strongLine": "당신은 맞는 말을 해도, 그 말을 듣는 사람이 남아 있을지를 같이 계산해야 합니다.",
+        "positiveUse": "불필요한 친목과 감정 소비를 줄인다.",
+        "risk": "정확하지만 외로운 사람이 될 수 있다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "편인",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "over_intellectualizing_relationship",
+        "label": "관계의 과분석",
+        "plainKo": "관계를 감정으로 경험하기보다 분석하고 예측하려 한다. 상대가 원하는 것은 정답이 아니라 함께 느끼는 시간일 때도 많다.",
+        "strongLine": "당신은 관계를 이해하려고 애쓰지만, 때로는 이해보다 함께 있어 주는 것이 답입니다.",
+        "positiveUse": "반복되는 갈등 패턴을 파악하고 실질적 해결책을 만든다.",
+        "risk": "사랑과 우정을 프로젝트처럼 다루면 상대가 지친다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "정관",
+          "수"
+        ],
+        "productDomains": [
+          "love",
+          "marriage",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "ni_fi_loop_anxiety",
+        "label": "내면 루프 불안",
+        "plainKo": "미래에 대한 확신이 무너지면 내면의 가치와 불안이 꼬이며 예민해질 수 있다. 겉으로는 논리적이어도 속에서는 실패 가능성을 크게 확대한다.",
+        "strongLine": "당신은 미래가 보이지 않을 때, 논리보다 불안한 해석 안으로 깊게 들어갈 수 있습니다.",
+        "positiveUse": "중요한 가치와 장기 방향을 다시 점검하는 계기가 된다.",
+        "risk": "현실 확인 없이 혼자 결론을 닫으면 우울감과 냉소가 깊어진다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "수",
+          "정인"
+        ],
+        "productDomains": [
+          "general",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "sensory_reality_neglect",
+        "label": "현장 감각 소홀",
+        "plainKo": "장기 전략과 추상 구조에 몰입한 나머지 몸의 피로, 현장의 감각, 작은 생활 즐거움을 뒤로 미룰 수 있다.",
+        "strongLine": "당신은 머리로는 멀리 가지만, 몸과 일상의 신호를 놓치면 전략 전체가 흔들립니다.",
+        "positiveUse": "큰 목표에 흔들림 없이 집중한다.",
+        "risk": "휴식, 운동, 관계의 작은 즐거움을 무시하다 번아웃으로 이어질 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "화",
+          "토"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
+      }
+    ],
+    "growth": [
+      {
+        "id": "sequence_feedback_softly",
+        "label": "피드백 순서 조절",
+        "plainKo": "정확한 지적을 포기할 필요는 없다. 다만 사실을 말하기 전에 상대가 들을 준비가 되었는지, 어떤 순서로 말해야 덜 무너지는지를 먼저 설계해야 한다.",
+        "strongLine": "당신의 말은 틀리지 않아도, 순서를 잘못 잡으면 관계를 잃습니다.",
+        "positiveUse": "직장과 관계에서 날카로운 통찰을 실제 변화로 연결한다.",
+        "risk": "완충 없이 바로 지적하면 상대는 내용보다 공격성만 기억한다.",
+        "matchingMyeongliSignals": [
+          "수",
+          "현침살",
+          "정관"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "practice_small_affection",
+        "label": "작은 애정 연습",
+        "plainKo": "사랑을 책임으로만 보여주지 말고 작은 말, 짧은 확인, 고마움, 기념일 같은 감정 신호로도 번역해야 한다.",
+        "strongLine": "당신의 헌신이 보이려면, 해결책 사이사이에 애정의 언어를 넣어야 합니다.",
+        "positiveUse": "연인과 가족이 사랑받는다는 감각을 더 쉽게 느낀다.",
+        "risk": "표현을 끝까지 생략하면 깊은 마음이 관계 밖으로 전달되지 않는다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "수",
+          "도화"
+        ],
+        "productDomains": [
+          "love",
+          "marriage",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "invite_real_world_feedback",
+        "label": "현실 피드백 수용",
+        "plainKo": "머릿속 모델이 아무리 정교해도 현실의 데이터와 사람의 반응으로 검증해야 한다. 신뢰할 만한 사람에게 일부러 반론을 맡기는 습관이 도움이 된다.",
+        "strongLine": "당신의 전략은 현실의 저항을 통과할 때 비로소 강해집니다.",
+        "positiveUse": "과신을 줄이고, 실행 가능한 계획으로 바꾼다.",
+        "risk": "검증 없는 통찰은 결국 고립된 확신이 된다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "귀인",
+          "토"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "build_social_translation",
+        "label": "사회적 번역",
+        "plainKo": "사회적 암묵지와 분위기를 얕은 것으로만 보지 말고, 목표를 이루기 위한 전달 형식으로 이해하면 좋다. 논리의 내용과 전달의 문법을 분리해야 한다.",
+        "strongLine": "당신에게 필요한 사교성은 가식이 아니라, 좋은 전략을 사람들에게 통과시키는 번역 기술입니다.",
+        "positiveUse": "상사, 고객, 가족, 연인에게 자신의 판단을 더 잘 전달한다.",
+        "risk": "사회적 문법을 끝까지 무시하면 좋은 전략도 사람을 움직이지 못한다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "귀인",
+          "화"
+        ],
+        "productDomains": [
+          "career",
+          "love",
+          "compatibility",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ]
+  },
+  "recommendedJobs": [
+    {
+      "job": "과학 연구원",
+      "reason": "원리, 이론, 검증, 장기 연구를 다루는 분야라 INTJ의 통찰과 분석력이 잘 쓰인다.",
+      "matchingTraits": [
+        "system_first_thinking",
+        "hard_discipline_affinity",
+        "intellectual_depth"
+      ],
+      "matchingMyeongliSignals": [
+        "문창",
+        "천문성",
+        "정인"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "소프트웨어 엔지니어",
+      "reason": "복잡한 시스템을 구조화하고 더 효율적인 해결책을 설계하는 능력과 맞다.",
+      "matchingTraits": [
+        "elegant_solution_drive",
+        "science_tech_law_fit",
+        "autonomy_required_role"
+      ],
+      "matchingMyeongliSignals": [
+        "문창",
+        "상관",
+        "금"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "시스템 아키텍트",
+      "reason": "전체 구조를 읽고 장기 확장성과 책임선을 설계하는 역할에 적합하다.",
+      "matchingTraits": [
+        "life_as_strategy_board",
+        "broad_structure_leadership",
+        "system_first_thinking"
+      ],
+      "matchingMyeongliSignals": [
+        "천문성",
+        "정관",
+        "편관"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "job": "데이터 분석가",
+      "reason": "감이나 여론보다 자료, 패턴, 예측을 바탕으로 결론을 내리는 방식이 맞다.",
+      "matchingTraits": [
+        "evidence_based_vision",
+        "hidden_inconsistency_detector",
+        "definition_precision"
+      ],
+      "matchingMyeongliSignals": [
+        "문창",
+        "편인",
+        "금"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "job": "AI·머신러닝 엔지니어",
+      "reason": "수학적 감수성, 추상 모델, 기술 구현이 결합된 영역이라 INTJ의 사고 구조와 맞다.",
+      "matchingTraits": [
+        "hard_discipline_affinity",
+        "evidence_based_vision",
+        "original_innovation"
+      ],
+      "matchingMyeongliSignals": [
+        "문창",
+        "천문성",
+        "상관"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "job": "법률가",
+      "reason": "엄밀한 정의, 논증, 규칙 체계, 전제 검토가 필요한 분야라 강점을 살릴 수 있다.",
+      "matchingTraits": [
+        "definition_precision",
+        "science_tech_law_fit",
+        "rational_under_pressure"
+      ],
+      "matchingMyeongliSignals": [
+        "정관",
+        "문창",
+        "금"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "특허·지식재산 전문가",
+      "reason": "기술 원리와 법적 구조를 함께 다루므로 INTJ의 기술 이해와 엄밀한 판단이 결합된다.",
+      "matchingTraits": [
+        "science_tech_law_fit",
+        "definition_precision",
+        "expertise_income_path"
+      ],
+      "matchingMyeongliSignals": [
+        "문창",
+        "정관",
+        "정재"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "job": "전략 컨설턴트",
+      "reason": "문제의 구조를 파악하고 장기 목표에 맞는 실행 체계를 설계하는 일이 핵심이다.",
+      "matchingTraits": [
+        "life_as_strategy_board",
+        "strategic_skeptic",
+        "elegant_solution_drive"
+      ],
+      "matchingMyeongliSignals": [
+        "편관",
+        "천문성",
+        "상관"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "job": "정책 분석가",
+      "reason": "제도와 규칙의 장기 효과를 분석하고 개선안을 만드는 역할과 맞다.",
+      "matchingTraits": [
+        "innovation_over_convention",
+        "evidence_based_vision",
+        "system_first_thinking"
+      ],
+      "matchingMyeongliSignals": [
+        "정관",
+        "편인",
+        "목"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "job": "보안 분석가",
+      "reason": "숨은 취약점과 모순을 찾아내고 시스템 전체의 위험을 예측하는 일에 강하다.",
+      "matchingTraits": [
+        "hidden_inconsistency_detector",
+        "system_first_thinking",
+        "rational_under_pressure"
+      ],
+      "matchingMyeongliSignals": [
+        "현침살",
+        "금",
+        "편관"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "job": "기술 창업가",
+      "reason": "독립적 권한, 시스템 설계, 혁신 욕구가 결합될 때 자기 판을 만들 수 있다.",
+      "matchingTraits": [
+        "autonomy_required_role",
+        "self_employment_potential",
+        "original_innovation"
+      ],
+      "matchingMyeongliSignals": [
+        "비견",
+        "편재",
+        "상관"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "job": "대학원 연구자",
+      "reason": "한 주제를 깊게 파고들고 독립적으로 연구 설계를 세우는 방식과 맞다.",
+      "matchingTraits": [
+        "deep_project_learning",
+        "intellectual_depth",
+        "hard_discipline_affinity"
+      ],
+      "matchingMyeongliSignals": [
+        "정인",
+        "편인",
+        "문창"
+      ],
+      "sourceCoverage": "direct"
+    }
+  ],
+  "avoidJobsOrEnvironments": [
+    {
+      "name": "접수·안내 중심 직무",
+      "reason": "반복적인 친절 응대와 가벼운 대화가 중심이라 INTJ의 전략적 사고가 잘 쓰이지 않는다.",
+      "riskTraits": [
+        "private_chatter_drain",
+        "low_sociability_risk"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "호텔 서비스 현장",
+      "reason": "고객 감정에 맞춘 즉각적 응대와 부드러운 사회적 신호가 계속 요구된다.",
+      "riskTraits": [
+        "low_praise_style",
+        "blunt_fact_delivery"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "비서·보조 업무",
+      "reason": "타인의 일정과 지시를 보조하는 구조가 강해 독립적 판단과 권한 욕구가 막힌다.",
+      "riskTraits": [
+        "autonomy_required_role",
+        "boss_challenge_risk"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "텔레마케팅",
+      "reason": "짧은 설득, 반복 응대, 감정적 거절 처리 중심이라 에너지 소모가 크다.",
+      "riskTraits": [
+        "low_sociability_risk",
+        "private_chatter_drain"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "레크리에이션 강사",
+      "reason": "분위기 띄우기, 즉흥 리액션, 대중적 친화력이 핵심이라 INTJ의 선호와 거리가 멀다.",
+      "riskTraits": [
+        "abstract_conversation_preference",
+        "sensory_reality_neglect"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "유아·보육 중심 교직",
+      "reason": "감정 표현, 돌봄, 반복적 생활 지원이 많아 논리 중심 접근만으로는 피로가 커진다.",
+      "riskTraits": [
+        "emotional_child_challenge",
+        "practice_small_affection"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "요양·간호 보조",
+      "reason": "정서 노동과 신체 돌봄이 지속적으로 요구되어 추상적 전략과 독립 작업의 장점이 덜 드러난다.",
+      "riskTraits": [
+        "low_sociability_risk",
+        "sensory_reality_neglect"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "생산 라인 반복 업무",
+      "reason": "개선 권한 없이 반복만 요구되면 지루함과 냉소가 커진다.",
+      "riskTraits": [
+        "autonomy_required_role",
+        "innovation_over_convention"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "친목·정치 중심 조직",
+      "reason": "성과보다 사교, 줄서기, 눈치가 중요한 환경에서는 실력주의 기준이 계속 충돌한다.",
+      "riskTraits": [
+        "anti_politics_work_style",
+        "meritocracy_expectation"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "감정 상담 중심 사회복지 현장",
+      "reason": "원문에서 비선호 직무로 언급되며, 공감 표현과 반복적 정서 지지가 중심이라 소모가 크다.",
+      "riskTraits": [
+        "blunt_fact_delivery",
+        "over_intellectualizing_relationship"
+      ],
+      "sourceCoverage": "direct"
+    }
+  ],
+  "relationshipHints": {
+    "comfortableTypes": [
+      "ISTJ",
+      "INTP",
+      "INTJ",
+      "ENTJ"
+    ],
+    "challengingTypes": [
+      "ISFP",
+      "ISFJ",
+      "ESFP",
+      "ESFJ"
+    ],
+    "notablePairs": [
+      {
+        "withType": "INTJ",
+        "label": "동일 관계",
+        "sourceRelationName": "Identical",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 지식, 논리, 진리, 정의, 과학과 예술의 진보 같은 큰 주제에서 빠르게 유대감을 느낀다.",
+          "잡담보다 내용 있는 토론을 선호하고, 서로의 언어가 비슷하다고 느낀다.",
+          "일반적인 제도나 통념보다 더 나은 세계와 더 정교한 구조를 함께 상상한다."
+        ],
+        "friction": [
+          "서로 분석적인 경쟁심이 강해 토론이 의견 교환이 아니라 승패 싸움으로 변하기 쉽다.",
+          "비슷한 방식으로 생각한다고 믿다가 결론이 달라지면 누구보다 강하게 적대할 수 있다.",
+          "관계의 세월보다 논쟁에서 이기는 일을 더 앞세우면 관계가 급격히 식는다."
+        ],
+        "positiveInfluence": [
+          "둘이 함께 구조를 만들면 여러 사람보다 빠르게 정교한 시스템을 세울 수 있다.",
+          "서로의 사고방식이 거울처럼 작동해 자기 장단점을 더 명확히 보게 된다.",
+          "문화, 과학, 예술, 지식에 대한 존중이 관계의 깊이를 만든다."
+        ],
+        "lovePattern": "연애는 감정 폭발보다 지적 유대와 추상적 대화에서 시작된다. 다만 둘 다 현실 문제를 뒤로 미루거나 토론 승부에 빠지면 친밀감이 경쟁으로 바뀐다.",
+        "marriagePattern": "결혼에서는 공간, 일정, 지적 관심을 존중하기 쉽지만, 집안일과 현실 과제는 서로 미루거나 전략만 말하고 실행이 늦어질 수 있다.",
+        "repairStrategy": [
+          "논쟁의 목표를 승리가 아니라 공동 결론으로 합의한다.",
+          "제3자의 강제 화해보다 각자 생각할 시간을 준 뒤 다시 논점과 감정을 분리한다.",
+          "현실 과제는 추상 토론과 분리해 담당자, 기한, 실행 기준을 정한다."
+        ],
+        "reportLine": "INTJ와 INTJ는 같은 언어로 깊게 통하지만, 서로의 결론이 갈라지는 순간 지적 유대가 전투적인 논쟁으로 바뀔 수 있습니다."
+      },
+      {
+        "withType": "ISFP",
+        "label": "활동 관계",
+        "sourceRelationName": "Activity",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "서로의 강점이 상대의 약점을 보완하는 구조라 이질감이 있으면서도 끌림이 생긴다.",
+          "ISFP는 INTJ에게 감각적 디테일과 섬세한 현실 접점을 제공한다.",
+          "INTJ는 ISFP에게 방향, 구조, 장기 판단의 틀을 제공할 수 있다."
+        ],
+        "friction": [
+          "ISFP가 감정적으로 마음을 열기까지 시간이 걸려 INTJ는 관계의 흐름을 예측하기 어렵다.",
+          "INTJ의 건설적 비판은 ISFP에게 상처로 들어가고, ISFP의 섬세한 반응은 INTJ에게 비논리적으로 보일 수 있다.",
+          "감정과 논리의 우선순위가 달라 문제를 해결하는 속도와 방식이 갈린다."
+        ],
+        "positiveInfluence": [
+          "ISFP는 INTJ를 현장의 감각과 미학, 인간적 섬세함 쪽으로 열어준다.",
+          "INTJ는 ISFP의 가치와 감각을 장기 계획과 실행 구조로 옮겨준다.",
+          "서로의 차이를 인정하면 딱딱한 전략과 살아 있는 감각이 함께 작동한다."
+        ],
+        "lovePattern": "초반에는 다른 방식이 신선하게 느껴진다. INTJ는 ISFP의 감각적 부드러움에, ISFP는 INTJ의 확신과 방향성에 끌리지만 마음을 여는 속도 차이를 존중해야 한다.",
+        "marriagePattern": "장기 관계에서는 INTJ가 목표와 구조를 잡고 ISFP가 생활의 감각과 정서를 살리는 식으로 보완된다. 다만 비판의 온도와 감정 회복 시간이 핵심 갈등 지점이다.",
+        "repairStrategy": [
+          "INTJ는 피드백 전에 상대의 감정과 의도를 먼저 인정한다.",
+          "ISFP는 상처받은 지점을 침묵으로 닫지 말고 구체적인 행동 요청으로 바꾼다.",
+          "생활 결정은 논리 기준과 감각적 만족을 모두 반영해 합의한다."
+        ],
+        "reportLine": "INTJ와 ISFP는 전략과 감각이 만나는 보완 관계지만, 비판의 온도를 못 맞추면 INTJ의 조언이 ISFP에게 상처로 남습니다."
+      },
+      {
+        "withType": "ENTP",
+        "label": "흥미로운 관계",
+        "sourceRelationName": "Interesting / Alpha-Opposite",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 새로운 관점, 지식적 토론, 기존 규칙을 깨는 사고에서 빠르게 흥미를 느낀다.",
+          "감정적 교류보다 두뇌의 자극으로 관계가 시작되는 경향이 있다.",
+          "과학, 철학, 예술, 사회 변화 같은 추상적 주제를 함께 오래 다룰 수 있다."
+        ],
+        "friction": [
+          "둘 다 분석적으로 경쟁적이라 토론이 '내가 맞고 네가 틀리다'로 흐르기 쉽다.",
+          "ENTP는 자연스러운 흐름과 가벼운 대화를 선호하지만 INTJ는 조직적 과정과 엄숙한 집중을 원한다.",
+          "ENTP의 자유로운 일정과 INTJ의 빡빡한 계획이 생활에서 계속 충돌한다."
+        ],
+        "positiveInfluence": [
+          "ENTP는 INTJ에게 여유, 유머, 삶을 즐기는 감각을 제공한다.",
+          "INTJ는 ENTP에게 흐트러진 계획을 정리하고 끈기와 책임감을 보완해준다.",
+          "둘이 신뢰와 공감을 확보하면 독특한 아이디어와 실행 구조를 동시에 만들 수 있다."
+        ],
+        "lovePattern": "연애 초반에는 말이 잘 통하고 지적 자극이 강하다. 시간이 지나면 ENTP의 즉흥성과 INTJ의 통제 욕구가 부딪히므로 토론을 애정 표현으로 착각하지 않아야 한다.",
+        "marriagePattern": "결혼에서는 자유 시간, 일정, 정리정돈, 목표 몰입도가 핵심 갈등이다. INTJ가 모든 생활을 전략화하고 ENTP가 모든 구조를 느슨하게 만들면 피로가 쌓인다.",
+        "repairStrategy": [
+          "토론이 승부로 변하면 멈추고 합의해야 할 현실 과제를 따로 적는다.",
+          "INTJ는 ENTP의 여유 시간을 무책임으로 단정하지 않는다.",
+          "ENTP는 INTJ가 지키고 싶은 핵심 일정과 정리 기준을 존중한다."
+        ],
+        "reportLine": "INTJ와 ENTP는 지적 전류가 강한 조합이지만, 토론을 신뢰와 공감으로 받쳐주지 않으면 가장 흥미로운 사람이 가장 피곤한 상대가 됩니다."
+      },
+      {
+        "withType": "INFP",
+        "label": "이익 관계",
+        "sourceRelationName": "Benefit",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 지적 자극과 추상적 대화를 통해 관계를 추구한다.",
+          "문화, 과학, 예술의 가치를 높게 보고 세상이 더 나아질 수 있다고 믿는다.",
+          "세부 잡무보다 큰 관념과 변화 가능성에 더 빠르게 몰입한다."
+        ],
+        "friction": [
+          "INTJ는 논리와 효율을 보고 INFP는 가치와 윤리를 본다.",
+          "INFP는 자연스러운 흐름과 가벼운 대화를 편하게 느끼지만 INTJ는 통제된 집중과 정돈된 과정을 원한다.",
+          "INTJ는 INFP를 게으르다고 보고, INFP는 INTJ를 지나치게 형식적이고 차갑다고 볼 수 있다."
+        ],
+        "positiveInfluence": [
+          "INFP는 INTJ의 내면 가치와 인간적 의미를 열어준다.",
+          "INTJ는 INFP의 이상을 현실적 구조와 실행 계획으로 내려놓게 돕는다.",
+          "서로의 해석 방향이 다르기 때문에 문제를 논리와 윤리 양쪽에서 검토할 수 있다."
+        ],
+        "lovePattern": "초반에는 깊고 관념적인 대화로 끌린다. 하지만 사랑이 깊어질수록 INTJ의 효율 기준과 INFP의 가치 기준이 충돌하므로 서로의 선의를 번역해야 한다.",
+        "marriagePattern": "장기 관계에서는 정리정돈, 생활 리듬, 일하는 분위기, 목표 몰입도에서 차이가 드러난다. INTJ가 구조를 잡고 INFP가 의미를 살리되, 어느 한쪽이 상대를 교정 대상으로 보면 관계가 굳는다.",
+        "repairStrategy": [
+          "INTJ는 가치와 감정을 비효율로만 처리하지 않는다.",
+          "INFP는 윤리적 불편함을 추상적으로 말하지 말고 구체적인 요청으로 바꾼다.",
+          "정리정돈과 일정은 최소 기준을 합의하고, 나머지는 각자의 방식으로 둔다."
+        ],
+        "reportLine": "INTJ와 INFP는 세상을 바꾸고 싶다는 열정은 통하지만, 한쪽은 효율을 보고 한쪽은 윤리를 보므로 서로의 언어를 번역해야 합니다."
+      },
+      {
+        "withType": "ISTJ",
+        "label": "무난한 친선 관계",
+        "sourceRelationName": "Friendly",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "둘 다 책임, 체계, 정확성, 실질적 결과를 중요하게 보며 과장된 분위기를 선호하지 않는다.",
+          "정리된 일정과 명확한 기준이 있을 때 편안함을 느낀다."
+        ],
+        "friction": [
+          "ISTJ는 검증된 전례를 중시하고 INTJ는 기존 시스템을 재설계하려 하므로 변화 속도에서 충돌한다.",
+          "INTJ의 추상적 비전은 ISTJ에게 비현실로, ISTJ의 보수성은 INTJ에게 답답함으로 보인다."
+        ],
+        "positiveInfluence": [
+          "ISTJ는 INTJ의 비전을 현실 절차로 고정하고, INTJ는 ISTJ에게 더 큰 방향을 제시한다."
+        ],
+        "lovePattern": "둘 다 안정적이고 진지한 관계를 선호하지만, 한쪽은 전례를 보고 한쪽은 미래 설계를 본다. 초반 신뢰는 빠르지만 변화 문제에서 힘겨루기가 생긴다.",
+        "marriagePattern": "결혼에서는 생활 질서와 책임감이 잘 맞는다. 다만 주거, 직업, 자녀 교육의 변화가 필요할 때 ISTJ의 신중함과 INTJ의 재설계 욕구가 부딪힌다.",
+        "repairStrategy": [
+          "변화 제안에는 실제 근거와 단계표를 붙인다.",
+          "전례를 지킬 영역과 실험할 영역을 분리한다.",
+          "감정 표현이 부족해지지 않도록 정기적인 확인 시간을 둔다."
+        ],
+        "reportLine": "INTJ와 ISTJ는 체계와 책임으로 안정감을 만들지만, 전례와 혁신의 속도를 맞추지 못하면 서로를 답답하게 봅니다."
+      },
+      {
+        "withType": "INTP",
+        "label": "무난한 친선 관계",
+        "sourceRelationName": "Friendly",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "둘 다 지식, 논리, 원리, 추상적 대화를 좋아한다.",
+          "감정적 교류보다 사고의 자극에서 친밀감이 시작된다."
+        ],
+        "friction": [
+          "INTJ는 결론과 실행을 원하고 INTP는 가능성과 분석을 더 오래 열어두려 한다.",
+          "INTJ의 일정과 기준은 INTP에게 압박으로 느껴지고, INTP의 미결정성은 INTJ에게 답답함으로 보인다."
+        ],
+        "positiveInfluence": [
+          "INTP는 INTJ의 전략에 더 넓은 이론적 가능성을 열어주고, INTJ는 INTP의 분석을 실행 가능한 계획으로 닫아준다."
+        ],
+        "lovePattern": "지적 대화로 빠르게 가까워질 수 있지만, 관계가 깊어지면 결정 속도와 생활 구조가 갈등이 된다.",
+        "marriagePattern": "장기 관계에서는 각자의 연구와 개인 공간을 존중하기 쉽다. 하지만 집안일, 돈, 일정처럼 닫아야 할 문제를 계속 미루면 INTJ가 피로해진다.",
+        "repairStrategy": [
+          "분석할 시간과 결정할 시간을 따로 정한다.",
+          "INTJ는 INTP의 탐색을 게으름으로 단정하지 않는다.",
+          "INTP는 합의된 마감과 생활 규칙을 지킨다."
+        ],
+        "reportLine": "INTJ와 INTP는 머리로 깊게 통하지만, 결론을 닫는 속도가 다르면 지적 호감이 생활 피로로 바뀝니다."
+      },
+      {
+        "withType": "ENTJ",
+        "label": "무난한 친선 관계",
+        "sourceRelationName": "Friendly / Gamma",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "둘 다 목표, 성과, 전략, 능력 중심의 판단을 편하게 느낀다.",
+          "감정적 돌려 말하기보다 직접적인 기준과 실행 계획을 선호한다."
+        ],
+        "friction": [
+          "ENTJ의 외향적 지휘와 속도는 INTJ에게 침범처럼 느껴질 수 있다.",
+          "둘 다 통제권을 원해 누가 최종 결정을 내릴지에서 충돌한다."
+        ],
+        "positiveInfluence": [
+          "ENTJ는 INTJ의 전략을 빠르게 밖으로 밀어내고, INTJ는 ENTJ의 실행에 장기 구조와 리스크 검토를 붙인다."
+        ],
+        "lovePattern": "초반에는 능력과 목표 의식에 끌린다. 다만 연애가 프로젝트처럼 굳으면 애정 표현과 휴식이 부족해진다.",
+        "marriagePattern": "결혼에서는 커리어와 자산 목표를 함께 설계하기 좋다. 그러나 둘 다 강한 기준을 갖기 때문에 역할과 권한을 명확히 나누지 않으면 권력 싸움이 생긴다.",
+        "repairStrategy": [
+          "최종 결정권과 자문 영역을 명확히 나눈다.",
+          "속도를 올릴 때는 INTJ에게 검토 시간을 보장한다.",
+          "성과 회의와 감정 대화는 따로 둔다."
+        ],
+        "reportLine": "INTJ와 ENTJ는 전략과 실행이 강하게 맞물리지만, 권한 경계를 정하지 않으면 파트너가 아니라 경쟁자가 됩니다."
+      },
+      {
+        "withType": "INFJ",
+        "label": "흥미로운 관계",
+        "sourceRelationName": "Interesting",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "둘 다 직관적이고 깊은 의미, 미래 방향, 큰 그림에 관심이 많다.",
+          "가벼운 관계보다 내면의 세계와 장기 비전을 나누는 관계를 선호한다."
+        ],
+        "friction": [
+          "INTJ는 논리와 효율을 앞세우고 INFJ는 의미와 사람의 감정 흐름을 더 중시한다.",
+          "INTJ의 직설은 INFJ에게 차갑게 들어가고, INFJ의 암시적 표현은 INTJ에게 불명확하게 느껴진다."
+        ],
+        "positiveInfluence": [
+          "INFJ는 INTJ에게 관계의 맥락과 사람의 의미를 보게 하고, INTJ는 INFJ에게 현실적 전략과 실행 기준을 제공한다."
+        ],
+        "lovePattern": "초반에는 깊은 대화와 미래 지향성으로 끌린다. 하지만 감정의 언어와 논리의 언어가 다르기 때문에 오해가 쌓이지 않게 번역이 필요하다.",
+        "marriagePattern": "장기 관계에서는 삶의 의미와 큰 방향을 공유하기 좋지만, 가족 문제와 정서적 돌봄에서 INTJ가 해결책만 제시하면 INFJ가 외로움을 느낀다.",
+        "repairStrategy": [
+          "INTJ는 결론 전에 감정 확인을 먼저 한다.",
+          "INFJ는 암시보다 구체적인 요청을 말한다.",
+          "비전 대화와 생활 실행표를 함께 만든다."
+        ],
+        "reportLine": "INTJ와 INFJ는 미래를 깊게 말할 수 있지만, 한쪽은 논리로 보고 한쪽은 의미로 보므로 감정 번역이 관계의 핵심입니다."
+      },
+      {
+        "withType": "ENFJ",
+        "label": "흥미로운 관계",
+        "sourceRelationName": "Interesting",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "둘 다 더 나은 방향으로 사람과 상황을 변화시키고 싶어 한다.",
+          "초반에는 서로의 전혀 다른 에너지와 강점이 흥미롭게 느껴진다."
+        ],
+        "friction": [
+          "ENFJ는 관계와 분위기를 움직이고 INTJ는 구조와 효율을 움직인다.",
+          "ENFJ의 정서적 개입은 INTJ에게 부담이고, INTJ의 냉정한 판단은 ENFJ에게 무정함으로 보일 수 있다."
+        ],
+        "positiveInfluence": [
+          "ENFJ는 INTJ에게 사람을 움직이는 언어를 가르치고, INTJ는 ENFJ에게 전략적 선명함을 준다."
+        ],
+        "lovePattern": "초반에는 상반된 매력으로 빠르게 끌릴 수 있다. ENFJ의 표현력과 INTJ의 확신이 만나지만, 감정 요구가 많아지면 INTJ가 거리를 둔다.",
+        "marriagePattern": "결혼에서는 사회적 관계, 가족 행사, 감정 표현 빈도가 핵심 갈등이다. INTJ는 에너지 한계를 설명하고 ENFJ는 정서적 확인 욕구를 구체화해야 한다.",
+        "repairStrategy": [
+          "ENFJ는 INTJ의 혼자 있는 시간을 거절로 해석하지 않는다.",
+          "INTJ는 필요한 감정 표현을 일정처럼이라도 실행한다.",
+          "관계 행사와 개인 회복 시간을 균형 있게 배치한다."
+        ],
+        "reportLine": "INTJ와 ENFJ는 전략과 사람의 언어가 만나는 조합이지만, 감정 표현의 빈도를 합의하지 않으면 서로를 차갑거나 부담스럽게 느낍니다."
+      },
+      {
+        "withType": "ISTP",
+        "label": "상호 보완 관계",
+        "sourceRelationName": "Complementary",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "둘 다 독립적이고 불필요한 감정 표현보다 문제 해결을 선호한다.",
+          "각자 자기 영역과 개인 시간을 존중할 수 있다."
+        ],
+        "friction": [
+          "INTJ는 장기 전략과 추상 구조를 보고 ISTP는 당장 작동하는 현실과 도구를 본다.",
+          "INTJ의 계획은 ISTP에게 과하게 느껴지고, ISTP의 즉흥 대응은 INTJ에게 불안정하게 보인다."
+        ],
+        "positiveInfluence": [
+          "ISTP는 INTJ의 전략을 현장에서 시험하게 하고, INTJ는 ISTP의 실용성을 장기 방향에 연결한다."
+        ],
+        "lovePattern": "둘 다 과한 감정 요구가 적어 편할 수 있다. 다만 INTJ가 미래 계획을 강하게 밀고 ISTP가 현재의 자유를 지키려 하면 갈등이 생긴다.",
+        "marriagePattern": "장기 관계에서는 각자 공간을 보장하면 안정적이다. 집안일과 돈, 진로처럼 장기 합의가 필요한 영역은 INTJ가 구조를 만들고 ISTP가 현실성을 검토하는 방식이 좋다.",
+        "repairStrategy": [
+          "INTJ는 모든 행동을 장기 계획에 묶지 않는다.",
+          "ISTP는 핵심 일정과 약속만큼은 예측 가능하게 지킨다.",
+          "실험과 검토를 분리해 현장 피드백을 계획에 반영한다."
+        ],
+        "reportLine": "INTJ와 ISTP는 독립성과 문제 해결력으로 편하지만, 미래 설계와 현재 자유의 비율을 맞춰야 오래 갑니다."
+      },
+      {
+        "withType": "ESTP",
+        "label": "상호 보완 관계",
+        "sourceRelationName": "Complementary",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "둘 다 비효율과 허황된 말보다 실제 작동 여부를 중요하게 본다.",
+          "문제가 있으면 돌려 말하기보다 핵심을 잡고 해결하려는 면이 있다."
+        ],
+        "friction": [
+          "ESTP는 현장과 즉흥을 즐기고 INTJ는 장기 구조와 통제를 선호한다.",
+          "ESTP의 사교성과 활동성은 INTJ에게 피로가 되고, INTJ의 분석은 ESTP에게 지나치게 무겁게 느껴진다."
+        ],
+        "positiveInfluence": [
+          "ESTP는 INTJ에게 현실의 속도와 감각을 가르치고, INTJ는 ESTP에게 장기 리스크와 전략을 보완한다."
+        ],
+        "lovePattern": "초반에는 서로의 자신감과 문제 해결력에 끌릴 수 있다. 그러나 데이트의 즉흥성, 외부 활동, 말의 속도에서 INTJ가 쉽게 지친다.",
+        "marriagePattern": "결혼에서는 사교 일정, 소비, 위험 감수, 생활 규칙이 핵심 갈등이다. 즉흥 영역과 계획 영역을 명확히 나눠야 한다.",
+        "repairStrategy": [
+          "ESTP는 INTJ에게 혼자 충전할 시간을 보장한다.",
+          "INTJ는 모든 즉흥성을 무책임으로 보지 않는다.",
+          "위험한 결정은 사전 기준을 두고 합의한다."
+        ],
+        "reportLine": "INTJ와 ESTP는 전략과 현장 감각을 서로 보완하지만, 활동 속도와 위험 감수의 차이를 조절하지 않으면 피로가 빠르게 쌓입니다."
+      },
+      {
+        "withType": "ESTJ",
+        "label": "상호 보완 관계",
+        "sourceRelationName": "Complementary",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "둘 다 목표, 성과, 책임, 체계적 실행을 중요하게 본다.",
+          "감정보다 현실적 해결과 명확한 기준을 선호한다."
+        ],
+        "friction": [
+          "ESTJ는 검증된 절차와 조직 질서를 중시하고 INTJ는 더 나은 구조가 보이면 규칙을 바꾸려 한다.",
+          "ESTJ의 즉각적 지휘는 INTJ에게 압박이 되고, INTJ의 추상적 재설계는 ESTJ에게 비현실로 보인다."
+        ],
+        "positiveInfluence": [
+          "ESTJ는 INTJ의 전략을 운영 현장에 밀어붙이고, INTJ는 ESTJ의 실행에 장기 비전을 제공한다."
+        ],
+        "lovePattern": "초반에는 능력과 책임감에서 신뢰가 생긴다. 하지만 관계가 깊어지면 누가 기준을 정하는지, 전통을 지킬지 바꿀지에서 충돌한다.",
+        "marriagePattern": "결혼에서는 돈, 역할, 집안 규칙은 빠르게 잡히지만 감정 표현과 변화 수용에서 건조함이 생길 수 있다.",
+        "repairStrategy": [
+          "규칙을 바꿀 때는 실험 기간과 평가 기준을 정한다.",
+          "ESTJ는 INTJ에게 검토 시간을 주고, INTJ는 실행 가능한 단계표를 제시한다.",
+          "생활 질서와 감정 확인을 따로 관리한다."
+        ],
+        "reportLine": "INTJ와 ESTJ는 성과를 만드는 힘이 크지만, 전통과 재설계의 권한을 합의하지 않으면 강한 기준끼리 부딪힙니다."
+      },
+      {
+        "withType": "ENFP",
+        "label": "상호 보완 관계",
+        "sourceRelationName": "Complementary",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "둘 다 새로운 가능성과 기존 틀을 넘어서는 방향에 관심을 가진다.",
+          "서로의 전혀 다른 방식에서 배울 수 있는 여지가 크다."
+        ],
+        "friction": [
+          "ENFP는 열린 가능성과 감정 흐름을 따르고 INTJ는 장기 전략과 구조를 선호한다.",
+          "ENFP의 변화무쌍함은 INTJ에게 혼란이고, INTJ의 엄격함은 ENFP에게 구속으로 느껴진다."
+        ],
+        "positiveInfluence": [
+          "ENFP는 INTJ에게 인간적 활력과 열린 가능성을 제공하고, INTJ는 ENFP에게 실행 구조와 집중력을 준다."
+        ],
+        "lovePattern": "강한 상반 매력으로 시작될 수 있다. ENFP는 INTJ의 확신에, INTJ는 ENFP의 생동감에 끌리지만 생활 리듬과 감정 표현 빈도에서 조율이 필요하다.",
+        "marriagePattern": "장기 관계에서는 자유로운 탐색과 안정적 계획을 동시에 담을 그릇이 필요하다. 한쪽이 상대를 무책임하거나 차갑다고 단정하면 갈등이 커진다.",
+        "repairStrategy": [
+          "ENFP는 핵심 약속과 재정 기준을 지킨다.",
+          "INTJ는 즉흥적 즐거움과 감정 표현을 일정 밖의 낭비로만 보지 않는다.",
+          "큰 목표는 함께 정하되 접근 방식에는 여지를 둔다."
+        ],
+        "reportLine": "INTJ와 ENFP는 차이가 큰 만큼 성장 잠재력도 크지만, 자유와 구조의 균형을 못 맞추면 매력이 곧 피로가 됩니다."
+      },
+      {
+        "withType": "ISFJ",
+        "label": "장단점 역전 관계",
+        "sourceRelationName": "Opposite Strengths",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "둘 다 내향적이고 진지한 관계를 선호하며 가벼운 소란을 좋아하지 않는다.",
+          "상대에게 책임 있게 행동하려는 기본 태도는 공유할 수 있다."
+        ],
+        "friction": [
+          "ISFJ는 안정, 전통, 사람의 감정과 필요를 보고 INTJ는 구조, 효율, 장기 전략을 본다.",
+          "ISFJ의 배려와 챙김은 INTJ에게 간섭으로 느껴질 수 있고, INTJ의 냉정함은 ISFJ에게 무심함으로 보인다."
+        ],
+        "positiveInfluence": [
+          "ISFJ는 INTJ에게 생활의 세심함과 정서적 돌봄을 가르치고, INTJ는 ISFJ에게 더 큰 구조와 독립적 판단을 보여준다."
+        ],
+        "lovePattern": "초반에는 서로의 부족한 부분이 매력으로 보일 수 있다. 하지만 감정 확인과 논리적 해결의 우선순위가 다르므로 오해가 쌓이기 쉽다.",
+        "marriagePattern": "결혼에서는 가족 행사, 전통, 돌봄, 생활 루틴을 둘러싼 차이가 커진다. ISFJ는 정서적 안정, INTJ는 효율과 자율성을 원한다.",
+        "repairStrategy": [
+          "INTJ는 ISFJ의 챙김을 통제보다 애정 신호로 읽는다.",
+          "ISFJ는 INTJ의 혼자 있는 시간을 거절로 해석하지 않는다.",
+          "가족 의무와 개인 자율성의 경계를 문장으로 합의한다."
+        ],
+        "reportLine": "INTJ와 ISFJ는 서로의 약점을 보완할 수 있지만, 돌봄과 자율성의 경계를 못 잡으면 한쪽은 간섭받고 한쪽은 외면당한다고 느낍니다."
+      },
+      {
+        "withType": "ESFP",
+        "label": "장단점 역전 관계",
+        "sourceRelationName": "Opposite Strengths",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "서로에게 없는 강점이 뚜렷해 초반에는 강한 신선함을 느낄 수 있다.",
+          "ESFP는 현실의 즐거움과 사람의 반응을, INTJ는 장기 구조와 전략을 제공한다."
+        ],
+        "friction": [
+          "ESFP는 지금의 경험과 즐거움을 중시하고 INTJ는 미래의 목표와 효율을 중시한다.",
+          "ESFP의 표현과 활동성은 INTJ에게 과하고, INTJ의 분석과 침묵은 ESFP에게 차갑다."
+        ],
+        "positiveInfluence": [
+          "ESFP는 INTJ가 몸과 현재를 느끼게 하고, INTJ는 ESFP가 장기 선택을 생각하게 한다."
+        ],
+        "lovePattern": "매력은 강하게 생길 수 있지만 데이트 방식에서 차이가 크다. ESFP는 함께 즐기고 표현하길 원하고 INTJ는 조용하고 의미 있는 시간을 원한다.",
+        "marriagePattern": "결혼에서는 소비, 외부 활동, 친구 관계, 생활 속 즐거움의 비중이 갈등이 된다. INTJ가 모든 즐거움을 비효율로 보면 관계가 말라간다.",
+        "repairStrategy": [
+          "INTJ는 계획 안에 즐거움과 즉흥성을 일부러 넣는다.",
+          "ESFP는 장기 재정과 목표의 최소 기준을 존중한다.",
+          "사교 일정과 개인 회복 시간을 분리해 잡는다."
+        ],
+        "reportLine": "INTJ와 ESFP는 미래 전략과 현재의 즐거움이 맞서는 조합이라, 서로의 시간을 빼앗지 않고 나눠 쓰는 방식이 필요합니다."
+      },
+      {
+        "withType": "ESFJ",
+        "label": "장단점 역전 관계",
+        "sourceRelationName": "Opposite Strengths",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "둘 다 관계나 생활을 안정적으로 유지하려는 의지는 가질 수 있다.",
+          "서로의 약점을 보완하면 사회적 조율과 전략적 판단이 함께 작동한다."
+        ],
+        "friction": [
+          "ESFJ는 사회적 조화와 예의를 중시하고 INTJ는 논리와 효율을 우선한다.",
+          "ESFJ의 관계 중심 요구는 INTJ에게 부담이고, INTJ의 직설은 ESFJ에게 무례하게 들릴 수 있다.",
+          "가족 행사, 체면, 주변 사람 챙김에서 가치 차이가 크게 드러난다."
+        ],
+        "positiveInfluence": [
+          "ESFJ는 INTJ에게 사회적 감각과 관계 유지 기술을 알려주고, INTJ는 ESFJ에게 구조적 판단과 장기 전략을 제공한다."
+        ],
+        "lovePattern": "초반에는 서로의 부족한 면이 신기하게 보인다. 하지만 표현 빈도, 예의, 주변 사람과의 관계 관리에서 INTJ가 쉽게 지치고 ESFJ가 상처받는다.",
+        "marriagePattern": "결혼에서는 가족 모임, 의례, 친척 관계, 감정 표현이 핵심 갈등이다. INTJ가 필요성을 납득해야 움직이고, ESFJ는 그 과정을 무정함으로만 보지 않아야 한다.",
+        "repairStrategy": [
+          "ESFJ는 INTJ에게 사회적 의무의 이유와 범위를 구체적으로 말한다.",
+          "INTJ는 최소한의 예의와 표현을 전략이 아니라 관계 유지 비용으로 인정한다.",
+          "행사와 휴식의 한계를 미리 합의한다."
+        ],
+        "reportLine": "INTJ와 ESFJ는 논리와 조화의 기준이 달라 부딪히지만, 역할을 나누면 사회적 안정과 전략적 판단을 함께 얻을 수 있습니다."
+      }
+    ]
+  },
+  "myeongliBridgeHints": [
+    {
+      "signal": "편인",
+      "reason": "보이지 않는 구조, 이론, 미래 가능성, 독립적 사고를 파고드는 INTJ의 핵심 기질과 연결된다.",
+      "productDomains": [
+        "general",
+        "study",
+        "career",
+        "daeun"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "천문성",
+      "reason": "추상적 사고, 통찰, 과학·철학·예술의 큰 구조를 읽는 성향과 연결된다.",
+      "productDomains": [
+        "general",
+        "study",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "문창",
+      "reason": "지식, 연구, 논증, 법·기술·컴퓨터 분야의 학습 적성과 연결된다.",
+      "productDomains": [
+        "study",
+        "career"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "현침살",
+      "reason": "논리의 빈틈과 모순을 날카롭게 짚는 직설적 피드백과 연결된다.",
+      "productDomains": [
+        "career",
+        "compatibility",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "상관",
+      "reason": "기존 규칙을 의심하고 더 나은 방식으로 개혁하려는 성향과 연결된다.",
+      "productDomains": [
+        "career",
+        "daeun",
+        "saeun"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "정관",
+      "reason": "장기 목표, 책임, 전략, 기준을 세우고 결과를 관리하는 힘과 연결된다.",
+      "productDomains": [
+        "career",
+        "marriage",
+        "money",
+        "daeun"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "금",
+      "reason": "정확성, 판단, 절단, 분석, 논리적 검증의 기질과 연결된다.",
+      "productDomains": [
+        "general",
+        "career",
+        "study"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "수",
+      "reason": "깊은 사고와 내면 루프, 감정 완충이 필요한 성장 과제와 연결된다.",
+      "productDomains": [
+        "general",
+        "love",
+        "compatibility"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  ],
+  "reportUseCases": {
+    "generalReport": [
+      "전략적 의심, 독립적 결정, 근거 있는 비전, 낮은 사교성 리스크를 결합해 INTJ의 핵심 정체성을 설명한다.",
+      "명리의 편인·천문성·문창·금 신호와 연결해 지식형 통찰과 관계의 차가움을 함께 해석한다."
+    ],
+    "careerReport": [
+      "과학, 기술, 컴퓨터, 법률, 데이터, 전략 분야를 추천 축으로 쓰고 권한 없는 보조직과 친절 응대 중심 직무를 회피 환경으로 제시한다.",
+      "실력주의, 독립 업무, 전략형 감독자, 정치질 거부 성향을 조직 적합도 판단에 사용한다."
+    ],
+    "loveMarriageChildReport": [
+      "느린 고기준 연애, 같은 방향성, 표현 적은 헌신, 미래 설계형 결혼을 중심으로 관계 패턴을 설명한다.",
+      "부모 파트에서는 생각법 교육, 책임 있는 독립, 감정형 자녀와의 난이도, 애정 표현 보완을 핵심 축으로 쓴다."
+    ],
+    "compatibilityReport": [
+      "INTJ, ISFP, ENTP, INFP는 원문 상세 관계를 우선 사용한다.",
+      "ISTJ, INTP, ENTJ, INFJ, ENFJ, ISTP, ESTP, ESTJ, ENFP, ISFJ, ESFP, ESFJ는 TRUITY 관계군 분류와 INTJ trait 기반 보강문을 사용한다."
+    ],
+    "daeunReport": [
+      "편인·문창·천문성 대운은 연구, 기술, 학습, 전략 설계의 집중기로 해석한다.",
+      "정관·편관 대운은 권한, 책임, 성과 압박, 장기 목표를 현실화하는 시기로 번역한다."
+    ],
+    "saeunReport": [
+      "상관·목 기운이 강한 세운은 기존 구조를 바꾸고 싶은 충동과 개혁 기회로 읽되, 전달 방식의 충돌을 경고한다.",
+      "식신·화 기운은 표현, 애정, 휴식, 현장 감각을 보완하는 해석에 활용한다."
+    ]
+  },
+  "enrichment": {
+    "missingAreas": [
+      "group-only relationship pair detail needs later source expansion",
+      "investment detail is inferred from strategy and evidence traits",
+      "specific marriage conflict cases beyond source summary",
+      "sex/intimacy wording intentionally omitted for product safety"
+    ],
+    "needsRelationGapFill": false,
+    "notes": [
+      "원문에는 통계, 출처, 편집 주의문, 테스트별 별칭이 섞여 있어 상품용 trait으로만 재구성했다.",
+      "상세 궁합 설명이 있는 INTJ, ISFP, ENTP, INFP는 direct로 처리했고, 관계군 분류만 있는 유형은 inferred로 보강했다.",
+      "수익과 투자 항목은 원문에 보장성 정보가 없어 전문성, 독립성, 장기 전략 성향 기반으로만 조심스럽게 재구성했다."
+    ]
+  }
+}
