@@ -1,0 +1,2224 @@
+﻿{
+  "type": "INFP",
+  "titleKo": "중재자",
+  "archetype": "잔 다르크형",
+  "oneLine": "자기 안의 진정성과 이상을 지키며 사람의 가능성을 부드럽게 살리는 낭만적 중재자",
+  "sourceStatus": {
+    "rawSourceWasProvidedByUser": true,
+    "rawTextStoredVerbatim": false,
+    "cleanedAndRewritten": true,
+    "notes": "원문을 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+  },
+  "preferenceAxes": {
+    "energy": "I",
+    "perception": "N",
+    "judgment": "F",
+    "lifestyle": "P"
+  },
+  "functionStack": {
+    "dominant": "Fi",
+    "auxiliary": "Ne",
+    "tertiary": "Si",
+    "inferior": "Te"
+  },
+  "closeKeywords": [
+    "감수성",
+    "감정적",
+    "개방적 사고",
+    "개성적",
+    "개인주의",
+    "겸손함",
+    "공감과 이해",
+    "과정 중시",
+    "깊은 교류",
+    "느긋함",
+    "독립적",
+    "몽상가",
+    "비관적",
+    "상상력",
+    "상호 존중",
+    "세심함",
+    "수용적",
+    "수평적 관계",
+    "염세주의",
+    "예술적",
+    "융통성",
+    "이상주의",
+    "인간 중심",
+    "자아 성찰",
+    "자유주의",
+    "자율성",
+    "진솔함",
+    "창의성",
+    "추상적 사고",
+    "충동적"
+  ],
+  "farKeywords": [
+    "가스라이팅",
+    "갈등",
+    "객관적",
+    "결단력",
+    "관료주의",
+    "군중 심리",
+    "권력",
+    "권위주의",
+    "규칙과 규율",
+    "논리적 분석",
+    "논쟁과 토론",
+    "눈앞의 성과 집착",
+    "뒤끝",
+    "뒷담화",
+    "무조건적 순응",
+    "보수적",
+    "사회 불문율",
+    "사회적 통념",
+    "사회적 현실감각",
+    "위계질서",
+    "전통주의",
+    "정치질",
+    "주변 정리",
+    "지시와 명령",
+    "집단주의",
+    "통제와 간섭",
+    "편견",
+    "허세",
+    "현실 안주",
+    "현실주의"
+  ],
+  "summary": {
+    "identity": "INFP는 차분하고 부드러워 보이지만 내면에는 강한 가치관과 이상을 품고 있다. 사회가 정한 길보다 자기만의 진정한 길을 찾고, 사람의 가능성과 상처에 깊게 반응한다.",
+    "strength": "창의성, 공감, 진정성, 언어와 예술 감각이 강하다. 타인의 본질과 감정을 이해하고, 글·그림·음악·상담·교육처럼 마음과 의미를 다루는 분야에서 깊이를 만든다.",
+    "risk": "현실의 조직성, 결단, 반복 업무, 강한 위계와 통제에는 취약하다. 상처를 받으면 잠적하거나 자기 안으로 숨어들고, 이상과 현실의 괴리에서 비관으로 흐를 수 있다.",
+    "growthStrategy": "이상을 포기하지 않되 작은 실행 루틴, 감정 표현, 신체 활동, 논리적 근거 훈련, 다양한 사람과의 대화가 필요하다. 자신의 가치관과 현실의 절차를 연결하는 힘이 성장의 핵심이다."
+  },
+  "traits": {
+    "identity": [
+      {
+        "id": "authentic_inner_values",
+        "label": "진정성의 내면축",
+        "plainKo": "INFP는 사회가 정한 정답보다 자기 안에서 옳다고 느끼는 가치와 진정성을 우선한다. 자신을 포기하고 사회에 녹아들기보다, 불편하더라도 자기 자신에게 솔직한 쪽을 택한다.",
+        "strongLine": "당신은 남들이 정한 길보다 자기 안에서 진짜라고 느껴지는 길을 끝까지 찾는 사람입니다.",
+        "positiveUse": "삶의 방향, 관계 선택, 창작, 진로에서 타협하기 어려운 자기만의 기준을 만든다.",
+        "risk": "자기 가치가 공격받는다고 느끼면 극단적으로 방어적이거나 고립될 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "비견",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "gentle_joan_of_arc",
+        "label": "부드러운 투쟁가",
+        "plainKo": "INFP는 유하고 순수해 보이지만 불합리한 억압이나 약자를 해치는 상황을 보면 마음속에서 강한 저항이 일어난다. 자기 이상향의 세계를 천천히 만들어 가려는 잔 다르크형의 결이 있다.",
+        "strongLine": "당신의 부드러움은 약함이 아니라, 지키고 싶은 세계를 함부로 더럽히지 않으려는 방식입니다.",
+        "positiveUse": "인권, 복지, 교육, 사회적 가치, 창작에서 따뜻하지만 단단한 명분을 만든다.",
+        "risk": "현실의 복잡한 타협을 모두 배신처럼 느끼면 행동보다 내적 분노가 커진다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "정관",
+          "목"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "romantic_dreamer",
+        "label": "낭만적 몽상가",
+        "plainKo": "INFP는 모든 유형 중 공상에 쉽게 빠지는 편이며 자유롭게 상상의 나래를 펼친다. 현실성이 낮다는 평가를 받을 때도 있지만, 그 상상은 예술·문학·음악·게임·만화 같은 창작으로 이어질 수 있다.",
+        "strongLine": "당신의 공상은 허공에 흩어지는 생각이 아니라, 언젠가 작품과 세계관이 될 수 있는 원재료입니다.",
+        "positiveUse": "창작, 스토리텔링, 예술적 표현, 감정이 풍부한 콘텐츠 제작에서 강점이 된다.",
+        "risk": "상상만 반복되고 실행 구조가 없으면 아이디어가 머릿속에서만 끝난다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "식신",
+          "천문성"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "meaning_over_status",
+        "label": "의미 우선",
+        "plainKo": "INFP는 돈, 권력, 명예보다 흥미와 진정한 의미를 느끼는 일을 원한다. 사회적 성공 기준보다 자기 마음이 살아나는 일을 고르는 경향이 강하다.",
+        "strongLine": "당신은 많이 얻는 일보다 마음이 죽지 않는 일을 해야 오래 버틸 수 있습니다.",
+        "positiveUse": "소명감 있는 일, 예술, 상담, 교육, 복지, 개인 브랜드에서 지속성을 만든다.",
+        "risk": "현실적 수입과 조건을 확인하지 않으면 좋아하는 일을 하면서도 생활이 흔들릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "식신",
+          "정재"
+        ],
+        "productDomains": [
+          "career",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "soft_but_private",
+        "label": "부드럽지만 사적인 사람",
+        "plainKo": "INFP는 따뜻하지만 친해지기 전까지 그 따뜻함을 쉽게 표현하지 않는다. 소수의 친밀한 사람과 깊게 연결되기를 원하고, 넓고 시끄러운 관계망에서는 에너지가 빨리 고갈된다.",
+        "strongLine": "당신은 모두에게 활짝 열리는 사람이 아니라, 정말 믿을 수 있는 사람에게 깊게 열리는 사람입니다.",
+        "positiveUse": "소수의 깊은 관계에서 신뢰와 헌신을 만든다.",
+        "risk": "자신을 잘 드러내지 않으면 차갑거나 무심한 사람으로 오해받을 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "비견",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "sensitive_withdrawal",
+        "label": "상처 후 잠적",
+        "plainKo": "INFP는 순하고 무해해 보이지만 쉽게 상처받고 잠적할 수 있다. 마음의 평형을 위협받으면 위축되고 충전 시간이 필요하다.",
+        "strongLine": "당신은 상처를 크게 표현하지 않아도, 마음 안에서는 관계의 문을 조용히 닫고 있을 수 있습니다.",
+        "positiveUse": "불필요한 충돌을 줄이고 자신을 보호하는 거리 조절로 쓰인다.",
+        "risk": "문제를 말하지 않고 사라지면 상대는 이유를 알지 못하고 관계 회복이 어려워진다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "수",
+          "정인"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "thinkingStyle": [
+      {
+        "id": "fi_inner_alignment",
+        "label": "내면 가치 정렬",
+        "plainKo": "주기능 Fi는 INFP가 스스로의 자아와 가치관을 정립하게 만든다. 감정을 단순히 느끼는 데 그치지 않고, 무엇이 진짜이고 무엇이 옳은지 내부 기준으로 정리한다.",
+        "strongLine": "당신의 감정은 순간 기분이 아니라, 자기 가치가 어디에 서 있는지 알려주는 내면의 기준표입니다.",
+        "positiveUse": "진정성 있는 선택, 윤리적 판단, 창작의 주제 의식에 강점으로 쓰인다.",
+        "risk": "내면 기준만 붙들면 다른 관점과 현실 조건을 지나치게 밀어낼 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "비견",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "ne_branching_imagination",
+        "label": "가지 치는 상상력",
+        "plainKo": "부기능 Ne는 사소한 자극에서 수많은 가능성과 이야기를 떠올리게 한다. A에서 B, B에서 C로 이어지는 발산적 사고가 강해 참신한 아이디어가 자주 나온다.",
+        "strongLine": "당신의 머릿속에서는 작은 장면 하나가 금세 이야기와 세계관으로 뻗어갑니다.",
+        "positiveUse": "브레인스토밍, 스토리텔링, 예술 기획, 새로운 관점 제시에 강하다.",
+        "risk": "부정적으로 흐르면 나쁜 가능성을 끝없이 상상하며 현실과 이상의 괴리에 좌절한다.",
+        "matchingMyeongliSignals": [
+          "천문성",
+          "상관",
+          "목"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "empathic_projection",
+        "label": "감정 이입식 공감",
+        "plainKo": "INFP는 일반적인 기준보다 자신의 입장을 바꾸어 생각하는 역지사지식 공감을 한다. 비슷한 처지의 사람을 보면 그 사람의 감정을 상상하며 함께 웃거나 분노한다.",
+        "strongLine": "당신의 공감은 멀리서 이해하는 방식이 아니라, 상대의 자리에 마음을 옮겨 놓고 느껴보는 방식입니다.",
+        "positiveUse": "상담, 글쓰기, 연기, 음악, 사회적 약자에 대한 연대에서 깊은 힘이 된다.",
+        "risk": "경계선이 약하면 타인의 부정적 감정과 사고방식에 쉽게 영향을 받는다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "귀인",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "si_story_memory",
+        "label": "스토리 기반 기억",
+        "plainKo": "3차 Si는 INFP가 사람의 마음, 성격, 감상, 추억처럼 자기만의 스토리가 붙은 정보를 오래 기억하게 한다. 단순 숫자 암기보다 의미가 붙은 기억에 강하다.",
+        "strongLine": "당신은 숫자보다 이야기, 정보보다 마음이 붙은 장면을 오래 기억하는 사람입니다.",
+        "positiveUse": "역사, 문학, 인물 이해, 창작 설정, 관계의 디테일 기억에 강점이 된다.",
+        "risk": "부정적으로 흐르면 과거 상처를 반복해서 곱씹는 Fi-Si 루프에 빠질 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "문창",
+          "수"
+        ],
+        "productDomains": [
+          "study",
+          "general",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "te_execution_gap",
+        "label": "실행 구조의 빈틈",
+        "plainKo": "열등 Te 때문에 INFP는 목표만을 위해 빡세게 굴러가는 상황과 조직적 통제에 큰 스트레스를 받는다. 사람을 논리적으로 설득하거나 계획으로 밀어붙이는 힘은 약하게 나타날 수 있다.",
+        "strongLine": "당신은 의미 없는 효율 앞에서는 힘이 빠지고, 의미가 보일 때야 비로소 실행할 이유를 찾습니다.",
+        "positiveUse": "가치가 분명한 일에서는 성실하게 파고들고, 자기 방식으로 꾸준히 해낸다.",
+        "risk": "기한, 구조, 설득, 실행 관리가 약하면 좋은 아이디어가 현실로 내려오지 못한다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편관",
+          "토"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "contextual_truth_detection",
+        "label": "맥락적 진정성 감지",
+        "plainKo": "INFP는 말의 뉘앙스, 평소 성향과 현재 행동의 불협화음, 이야기의 논리적 비약, 은유적 의미를 연결해 진정성과 거짓의 배경을 파악한다.",
+        "strongLine": "당신은 말 한마디보다 그 말이 나온 맥락과 마음의 결을 함께 읽습니다.",
+        "positiveUse": "인터뷰, 비평, 상담, 창작, 사람의 동기 분석에서 강점으로 쓰인다.",
+        "risk": "맥락 추론이 과해지면 확인되지 않은 의미를 혼자 확정할 수 있다.",
+        "matchingMyeongliSignals": [
+          "천문성",
+          "현침살",
+          "편인"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "career": [
+      {
+        "id": "creative_arts_fit",
+        "label": "예술·창작 적합",
+        "plainKo": "INFP는 음악, 미술, 무용, 문학, 게임, 만화, 애니메이션처럼 상상력과 감정 표현이 중요한 분야에서 활약하기 쉽다. 감정이 풍부한 이야기를 엮어 깊은 공감을 불러일으킬 수 있다.",
+        "strongLine": "당신은 감정을 설명하기보다 작품으로 만들어 사람의 마음에 도착시키는 재능이 있습니다.",
+        "positiveUse": "작가, 배우, 가수, 화가, 디자이너, 콘텐츠 제작자, 작사가 같은 직업에서 강점이 난다.",
+        "risk": "자기 작품에 대한 직설적 비판에 쉽게 흔들리고 초고를 너무 빨리 지울 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "식신",
+          "문창"
+        ],
+        "productDomains": [
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "counseling_healing_fit",
+        "label": "상담·치유 적합",
+        "plainKo": "INFP는 복잡한 생각과 마음의 어려움을 호소하는 사람을 잘 이해한다. 편견 없이 이야기를 듣고, 상대의 가능성을 발견하도록 돕는 상담자적 성향이 강하다.",
+        "strongLine": "당신은 사람을 고쳐 쓰려 하기보다, 그 사람이 자기 안의 가능성을 다시 보게 돕는 쪽에 강합니다.",
+        "positiveUse": "심리상담사, 사회복지사, 간호사, NGO, 종교·돌봄 분야에서 강점이 된다.",
+        "risk": "타인의 고통을 과도하게 떠안으면 자신의 정서적 평형이 흔들린다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "귀인",
+          "수"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "education_gentle_teacher",
+        "label": "부드러운 교육자",
+        "plainKo": "INFP 교사는 학생을 강하게 꾸짖기보다 스스로 깨닫고 알아가도록 유도하는 성향이 있다. 아이의 자율성과 흥미를 존중하는 교육 방식과 맞는다.",
+        "strongLine": "당신은 지식을 주입하는 사람보다, 배우는 사람이 자기 안에서 의미를 찾게 돕는 교육자에 가깝습니다.",
+        "positiveUse": "교육자, 글쓰기 강사, 예술 교육, 대안교육, 상담형 교사 역할에서 강하다.",
+        "risk": "엄격한 훈육과 반복 관리가 필요한 환경에서는 부담을 느낄 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "문창",
+          "목"
+        ],
+        "productDomains": [
+          "career",
+          "parenting",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "small_independent_business",
+        "label": "작은 자율 사업",
+        "plainKo": "사업 전반과는 거리가 멀지만, 조직적 대형 사업보다 개인적으로 작게 운영하는 북카페, 분식집, 콘텐츠 기반 자영업처럼 자기 색이 반영되는 사업은 맞을 수 있다.",
+        "strongLine": "당신에게 맞는 사업은 규모를 키우는 전쟁보다 자기 취향과 가치가 살아 있는 작은 세계를 운영하는 일입니다.",
+        "positiveUse": "북카페, 공방, 개인 브랜드, 커뮤니티 운영, 창작 기반 자영업에서 자율성을 확보한다.",
+        "risk": "영업, 조직 확장, 권한 배분, 냉정한 수익 판단이 약하면 유지가 어렵다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "편재",
+          "비견"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "media_community_fit",
+        "label": "미디어·커뮤니티",
+        "plainKo": "PD, 인터넷 방송인, 커뮤니티 관리자, 파워블로거, 비평가, 사진사, 여행가처럼 감성·스토리·커뮤니티 감각이 필요한 분야도 원문에서 적성 분야로 제시된다.",
+        "strongLine": "당신은 사람과 콘텐츠 사이에 감정의 결을 만들고, 취향이 맞는 사람들을 조용히 모으는 힘이 있습니다.",
+        "positiveUse": "콘텐츠 기획, 커뮤니티 운영, 비평, 사진, 여행 글쓰기에서 강점이 된다.",
+        "risk": "대중 반응과 악성 피드백에 과하게 흔들릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "식신",
+          "역마"
+        ],
+        "productDomains": [
+          "career",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "bureaucracy_low_fit",
+        "label": "관료제 부적합",
+        "plainKo": "위계질서가 고착되어 있고 업무 재량이 거의 없는 관료제 사회와는 잘 맞지 않는다. 자유가 없고 역할이 딱딱하게 고정된 환경에서는 겉돌기 쉽다.",
+        "strongLine": "당신은 규칙을 못 지키는 사람이 아니라, 자기 영혼이 빠진 규칙 속에서 오래 버티기 어려운 사람입니다.",
+        "positiveUse": "자율적이고 창의적인 직무를 선택하도록 진로 기준을 세운다.",
+        "risk": "경직된 회사와 상명하복 조직에서는 직업 불만과 퇴사가 반복될 수 있다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "편인",
+          "목"
+        ],
+        "productDomains": [
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "workplace": [
+      {
+        "id": "autonomy_required",
+        "label": "자율성 필수",
+        "plainKo": "INFP는 업무 재량이 없고 위에서 정한 절차만 따라야 하는 환경에서 힘을 잃는다. 자신이 의미를 느끼고 방법을 선택할 수 있을 때 근면성실함이 살아난다.",
+        "strongLine": "당신은 자유가 주어질 때 흐트러지는 사람이 아니라, 자유가 있어야 책임감이 살아나는 사람입니다.",
+        "positiveUse": "자율 프로젝트, 창작, 상담, 교육, 개인 기획 업무에서 몰입한다.",
+        "risk": "통제와 감시가 강하면 겉으로는 순응해도 속으로는 급격히 멀어진다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "상관",
+          "목"
+        ],
+        "productDomains": [
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "low_competition_environment",
+        "label": "낮은 경쟁 압력",
+        "plainKo": "INFP는 경쟁을 크게 좋아하지 않으며, 경쟁심이 심한 환경에서는 스트레스를 많이 받는다. 우열과 서열이 강한 분위기보다 상호 존중과 수평성이 있는 환경이 맞다.",
+        "strongLine": "당신은 남을 이기기 위해 움직이기보다, 자기 안의 의미를 지키며 성장할 때 더 오래 갑니다.",
+        "positiveUse": "협력적 팀, 창작 공동체, 교육·복지 조직에서 조화롭게 기여한다.",
+        "risk": "강한 비교와 평가가 반복되면 위축되거나 잠적한다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "비견",
+          "수"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "meaning_driven_diligence",
+        "label": "의미 기반 성실함",
+        "plainKo": "INFP는 어떤 분야에서든 자신에게 주어진 일이라고 받아들이면 일 외에는 쳐다보지 않을 만큼 근면성실할 수 있다. 핵심은 그 일이 자기 가치와 연결되는지다.",
+        "strongLine": "당신은 게으른 사람이 아니라, 마음이 동의한 일에만 깊고 조용한 성실함이 켜지는 사람입니다.",
+        "positiveUse": "자기 가치와 맞는 일에서는 오래 집중하고 정성스럽게 결과물을 만든다.",
+        "risk": "의미가 보이지 않는 업무에서는 능력보다 낮은 평가를 받을 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "식신",
+          "토"
+        ],
+        "productDomains": [
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "soft_conflict_style",
+        "label": "부드러운 갈등 회피",
+        "plainKo": "INFP는 분쟁을 피하는 데 철저하고, 싫은 소리를 앞에서 잘 하지 않는다. 마음에 들지 않는 사람과는 조용히 거리를 두는 방식이 많다.",
+        "strongLine": "당신은 싸우기보다 멀어지는 방식으로 자신과 관계를 보호하려 합니다.",
+        "positiveUse": "불필요한 외적 충돌을 줄이고 부드러운 중재자로 기능한다.",
+        "risk": "문제 제기가 늦어져 불만이 누적되고 갑작스러운 단절로 이어진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "수",
+          "비견"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "second_leader_fit",
+        "label": "2인자형 영향력",
+        "plainKo": "INFP는 남을 통제하거나 위에 올라서는 데 인생의 의미를 두지 않는다. 높은 자리에 가더라도 1인자형 지휘보다 2인자나 3인자처럼 방향과 분위기를 살리는 역할이 맞기 쉽다.",
+        "strongLine": "당신은 지배하는 리더보다, 사람과 의미가 망가지지 않도록 곁에서 방향을 살리는 리더에 가깝습니다.",
+        "positiveUse": "창작팀, 가족기업, 작은 단체에서 가치와 분위기를 지키는 핵심 역할을 한다.",
+        "risk": "권한과 결정 책임이 필요한 순간을 계속 피하면 영향력이 줄어든다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "비견",
+          "식신"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "money": [
+      {
+        "id": "low_material_drive",
+        "label": "낮은 물질 욕구",
+        "plainKo": "원문은 INFP가 평균 개인 소득과 가구 소득 모두 낮은 편이라고 제시하며, 돈·권력·명예 같은 물질적 욕구에 미련이 적기 때문이라고 설명한다.",
+        "strongLine": "당신은 돈을 싫어하는 사람이 아니라, 돈만으로 움직이지 않는 사람입니다.",
+        "positiveUse": "가치와 의미를 지키는 선택을 하며 삶의 만족 기준을 스스로 세운다.",
+        "risk": "현실적 생활비와 장기 안전망을 놓치면 좋아하는 일을 해도 불안이 커진다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "money",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "creative_income_path",
+        "label": "창작형 수입",
+        "plainKo": "INFP의 수익은 대형 조직의 승진보다 글, 그림, 음악, 연기, 상담, 교육, 작은 자영업처럼 자기 색을 살린 분야에서 만들어지기 쉽다.",
+        "strongLine": "당신의 돈은 남들이 만든 사다리를 오를 때보다, 자기 세계를 작게라도 현실화할 때 생깁니다.",
+        "positiveUse": "작품, 콘텐츠, 상담, 교육, 커뮤니티, 개인 브랜드를 수입 구조로 연결한다.",
+        "risk": "가격 책정과 판매, 계약, 홍보를 미루면 재능이 수익으로 이어지지 않는다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "편재",
+          "도화"
+        ],
+        "productDomains": [
+          "money",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "generosity_boundary_money",
+        "label": "헌신 지출 경계",
+        "plainKo": "INFP는 믿는 사람이나 대의명분을 위해 기꺼이 희생할 수 있다. 누군가를 깊이 믿으면 올인하기 쉬워 돈과 시간을 함께 쏟을 수 있다.",
+        "strongLine": "당신은 마음을 주는 순간 시간과 돈까지 함께 내어주기 쉬우므로, 따뜻함에도 경계선이 필요합니다.",
+        "positiveUse": "좋은 사람과 가치 있는 일에 아낌없이 투자해 깊은 신뢰를 만든다.",
+        "risk": "상대에게 모든 것을 걸면 배신이나 실망이 큰 재정적·정서적 손실로 이어진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "겁재",
+          "편재"
+        ],
+        "productDomains": [
+          "money",
+          "love",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "investment": [
+      {
+        "id": "investment_needs_structure",
+        "label": "투자 구조 보강",
+        "plainKo": "원문에는 투자 성향의 직접 설명이 부족하다. 다만 INFP의 이상 지향, 물질 욕구의 약함, Te 열등을 고려하면 투자에서는 의미와 감정이 아니라 규칙과 손실 한도를 먼저 세워야 한다.",
+        "strongLine": "당신의 투자는 마음이 움직이는 대상보다, 미리 정한 규칙을 지킬 때 안전해집니다.",
+        "positiveUse": "사회적 가치나 장기 테마에 관심을 갖고 꾸준히 관찰하는 힘이 있다.",
+        "risk": "좋아하는 스토리나 신념에 끌려 숫자와 리스크 검증을 건너뛸 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편재",
+          "정인"
+        ],
+        "productDomains": [
+          "investment",
+          "money"
+        ],
+        "sourceCoverage": "needs_enrichment"
+      }
+    ],
+    "study": [
+      {
+        "id": "storytelling_learning",
+        "label": "스토리텔링 학습",
+        "plainKo": "INFP 아이는 암기와 반복보다 창의력, 상상력, 스토리텔링을 통한 학습을 선호한다. 자기만의 의미가 붙은 정보는 오래 기억할 수 있다.",
+        "strongLine": "당신은 외우기 위해 배우는 사람보다, 이야기가 생길 때 오래 기억하는 사람입니다.",
+        "positiveUse": "문학, 역사, 언어, 예술, 글쓰기, 발표형 과제에서 강점이 난다.",
+        "risk": "실용성이나 의미가 느껴지지 않는 과목은 동기가 급격히 떨어진다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "식신",
+          "정인"
+        ],
+        "productDomains": [
+          "study",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "math_logic_gap",
+        "label": "수학·논리 보강",
+        "plainKo": "INFP는 평균 IQ와 영재성은 높게 제시되지만 한국식 학업 성취도는 낮게 나타난다. 수학과 대수 영역은 연습장에 논리적 근거를 쓰는 습관이 필요하다.",
+        "strongLine": "당신에게 필요한 것은 머리가 아니라, 감으로 이해한 것을 단계와 근거로 적어내는 훈련입니다.",
+        "positiveUse": "풀이 과정을 말로 적고, 식 정리와 논증 습관을 만들면 성적 안정성이 오른다.",
+        "risk": "감각적으로 알 것 같다는 느낌만 믿으면 시험에서 점수로 연결되지 않는다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "정재",
+          "금"
+        ],
+        "productDomains": [
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "foreign_language_strength",
+        "label": "외국어 감각",
+        "plainKo": "원문은 INFP가 외국어 학습을 잘하는 경향이 있다고 제시한다. 언어의 뉘앙스, 감정, 이야기성을 느끼는 능력이 학습에 도움을 준다.",
+        "strongLine": "당신은 언어를 규칙으로만 배우기보다, 그 언어가 담은 정서와 이야기까지 함께 흡수하는 사람입니다.",
+        "positiveUse": "외국어, 번역, 문학, 가사, 콘텐츠 이해에서 강점이 된다.",
+        "risk": "체계적 반복이 부족하면 감은 좋은데 정확도가 흔들릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "식신",
+          "수"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "creative_brainstorm_method",
+        "label": "종이 브레인스토밍",
+        "plainKo": "INFP는 아이디어를 많이 내지만 금방 지우기 쉽다. 글쓰기나 그림의 초고는 종이에 충분히 적고, 이상해 보여도 남겨두며, 관련 문장을 묶어 재배치하는 방식이 좋다.",
+        "strongLine": "당신의 아이디어는 빨리 판단할수록 사라지고, 충분히 펼쳐 놓을수록 작품이 됩니다.",
+        "positiveUse": "초고, 마인드맵, 밑줄 표시, 재배치 과정을 통해 창작물의 완성도를 높인다.",
+        "risk": "초기 아이디어를 너무 빨리 검열하면 창의성이 결과물로 이어지지 않는다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "식신",
+          "천문성"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "love": [
+      {
+        "id": "deep_emotional_bond",
+        "label": "강렬한 정서 교감",
+        "plainKo": "INFP는 내면을 중시하고 상대와 강렬한 정서적 교감을 추구한다. 낭만적이고 사람에 대한 책임감이 강해 사랑에 빠지면 헌신적인 면모가 나타난다.",
+        "strongLine": "당신에게 사랑은 가벼운 호감이 아니라, 마음의 가장 깊은 방에 누군가를 들이는 일입니다.",
+        "positiveUse": "깊은 정서적 유대, 헌신, 진심 어린 배려를 만든다.",
+        "risk": "상대에게 마음을 다 걸면 작은 비판이나 실망도 크게 다친다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "도화",
+          "홍염"
+        ],
+        "productDomains": [
+          "love",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "artistic_dates",
+        "label": "예술적 데이트",
+        "plainKo": "창의적이고 예술적인 INFP는 영화, 전시회, 음악, 책, 산책처럼 감성과 상상을 자극하는 데이트를 즐긴다.",
+        "strongLine": "당신의 데이트는 소란스러운 이벤트보다 함께 감상을 나누고 의미를 발견하는 시간에 더 가깝습니다.",
+        "positiveUse": "예술적 경험을 통해 자연스럽게 마음을 열고 관계의 추억을 만든다.",
+        "risk": "상대가 감상과 의미를 전혀 공유하지 않으면 빠르게 거리감을 느낀다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "식신",
+          "문창"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "criticism_sensitive_love",
+        "label": "비판에 민감한 사랑",
+        "plainKo": "INFP는 장난으로라도 심한 말을 들으면 마음속 깊이 상처받는다. 연애를 시작할 때는 조심스럽게 다가가야 하며, 비판보다 정서적 지지가 훨씬 중요하다.",
+        "strongLine": "당신에게 농담처럼 던진 한마디도 관계의 안전감을 흔드는 깊은 상처가 될 수 있습니다.",
+        "positiveUse": "말의 온도를 잘 지키는 관계에서는 오래 헌신하고 깊이 사랑한다.",
+        "risk": "상처를 바로 표현하지 못하고 속으로 물러나 관계가 갑자기 멀어질 수 있다.",
+        "matchingMyeongliSignals": [
+          "수",
+          "정인",
+          "도화"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "passive_initiation_love",
+        "label": "주도 어려움",
+        "plainKo": "INFP는 연애에서 자신이 무언가를 주도해 나가는 것을 어려워할 수 있다. 특히 남성 INFP는 문화적 기대와 섬세한 성향 사이에서 연애를 어렵게 느낄 수 있다.",
+        "strongLine": "당신은 마음이 없어서 느린 것이 아니라, 관계를 함부로 밀어붙이는 방식이 자기답지 않게 느껴지는 사람입니다.",
+        "positiveUse": "신중하고 배려 있는 접근으로 상대에게 안정감을 준다.",
+        "risk": "표현과 주도가 너무 약하면 상대가 호감 자체를 알아차리지 못한다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "수",
+          "비견"
+        ],
+        "productDomains": [
+          "love",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "marriage": [
+      {
+        "id": "freedom_romance_marriage",
+        "label": "자유와 로망의 결혼",
+        "plainKo": "INFP는 결혼과 출산이 혼자 누리던 자유와 로망을 줄인다고 느낄 수 있다. 결혼 생활에서 의미와 개인 시간, 창작적 여백이 보장되어야 만족감이 올라간다.",
+        "strongLine": "당신에게 결혼은 사랑만으로 충분하지 않고, 자기 세계를 잃지 않을 자유까지 함께 필요합니다.",
+        "positiveUse": "서로의 자율성과 꿈을 존중하는 결혼에서 따뜻한 헌신이 살아난다.",
+        "risk": "생활 의무가 전부가 되면 결혼 자체에 불만이 쌓일 수 있다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "marriage",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "devotion_and_boundary",
+        "label": "헌신과 경계",
+        "plainKo": "INFP는 믿는 사람에게 헌신하고 관계 유지를 위해 적응하는 능력이 있다. 그러나 모든 것을 걸 정도로 다 퍼주면 배신이나 실망의 충격이 너무 크다.",
+        "strongLine": "당신의 헌신은 깊지만, 사랑이 오래 가려면 마음을 다 주는 것과 자신을 잃는 것을 구분해야 합니다.",
+        "positiveUse": "믿음이 형성되면 따뜻하고 충실한 배우자가 된다.",
+        "risk": "상대에게 올인하면 자기 삶의 축이 흔들리고 회복이 늦어진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "겁재",
+          "도화"
+        ],
+        "productDomains": [
+          "marriage",
+          "love",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "conflict_avoidance_marriage",
+        "label": "갈등 회피형 생활",
+        "plainKo": "INFP는 감정 표현에 신중하고 갈등을 피한다. 결혼 생활에서는 불만을 말하지 않고 참고 넘기다가 뒤늦게 크게 무너지지 않도록 작은 감정을 표현하는 연습이 필요하다.",
+        "strongLine": "당신의 평온함이 관계를 편하게 만들지만, 표현하지 않은 마음은 언젠가 관계의 큰 균열이 될 수 있습니다.",
+        "positiveUse": "부드러운 분위기와 배려로 가정의 긴장을 낮춘다.",
+        "risk": "속마음을 계속 숨기면 배우자는 문제를 알지 못하고 같은 행동을 반복한다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "식신",
+          "수"
+        ],
+        "productDomains": [
+          "marriage",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "parenting": [
+      {
+        "id": "autonomy_parent",
+        "label": "자율성 지향 부모",
+        "plainKo": "INFP 부모는 원리·원칙적이고 엄격한 부모보다 자녀의 자율성을 지향한다. 아이가 자기 의견과 자아를 형성하고 흥미 있는 일을 찾을 권리를 주고 싶어 한다.",
+        "strongLine": "당신은 아이를 틀에 맞추기보다, 아이가 자기만의 결을 찾도록 곁을 지켜주는 부모에 가깝습니다.",
+        "positiveUse": "아이의 개성, 흥미, 자기표현, 창의성을 존중한다.",
+        "risk": "일상 규칙과 생활 틀을 세우는 데 어려움을 겪을 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "비견",
+          "목"
+        ],
+        "productDomains": [
+          "parenting",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "moral_parent",
+        "label": "도덕성 교육",
+        "plainKo": "INFP 부모는 정직, 연민, 배려 같은 도덕성을 중시한다. 평소 규율을 강하게 밀지 않더라도 윤리적 문제나 타인에게 피해를 주는 행동에는 민감하다.",
+        "strongLine": "당신은 아이가 성공하는 것보다 먼저, 타인을 해치지 않는 따뜻한 사람으로 자라기를 바랍니다.",
+        "positiveUse": "아이에게 공감, 배려, 책임, 약자에 대한 감수성을 심어준다.",
+        "risk": "아이의 도덕적 실수를 자신의 양육 실패처럼 받아들일 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정인",
+          "귀인"
+        ],
+        "productDomains": [
+          "parenting",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "soft_discipline_parent",
+        "label": "엄격함의 어려움",
+        "plainKo": "INFP 부모는 따뜻하고 사랑스럽게 지지하려 하지만, 여린 성격 때문에 자녀가 잘못해도 엄하게 혼내기 어려울 수 있다. 학교 폭력 같은 문제에도 마음으로 깊이 공감하지만 적극 대응은 어려울 수 있다.",
+        "strongLine": "당신은 아이의 마음을 잘 안아주지만, 아이를 지키기 위해 단호해져야 하는 순간에는 별도의 용기가 필요합니다.",
+        "positiveUse": "정서적 지지와 안전감을 제공한다.",
+        "risk": "필요한 규칙과 보호 행동이 늦어지면 아이가 현실 문제 앞에서 취약해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "편관",
+          "수"
+        ],
+        "productDomains": [
+          "parenting",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "child": [
+      {
+        "id": "creative_child",
+        "label": "창조와 공감의 아이",
+        "plainKo": "INFP 아이는 무언가를 창조하거나 공감하고 이해하는 데 재능이 있다. 음악, 미술, 문학, 몽상, 상상력을 발휘할 수 있는 분야에서 자연스럽게 빛난다.",
+        "strongLine": "이 아이는 정답을 빠르게 맞히는 것보다 자기 안의 세계를 만들어 낼 때 가장 생생해집니다.",
+        "positiveUse": "예술, 글쓰기, 역할놀이, 스토리텔링 학습에서 강점을 보인다.",
+        "risk": "반복 암기와 권위적 학습 양식에서는 동기와 자신감이 떨어질 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "문창",
+          "도화"
+        ],
+        "productDomains": [
+          "child",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "sensitive_to_harshness_child",
+        "label": "거친 말에 약한 아이",
+        "plainKo": "INFP 아이는 고함, 엄격한 처벌, 비판, 불친절, 무관심, 무시에서 쉽게 충격을 받을 수 있다. 논리적 판단보다 정서적 지지와 공감이 먼저 필요하다.",
+        "strongLine": "이 아이는 혼나서 강해지는 아이가 아니라, 이해받을 때 다시 움직일 힘을 얻는 아이입니다.",
+        "positiveUse": "따뜻한 지지 속에서 자기표현과 창의성이 살아난다.",
+        "risk": "거친 훈육은 위축, 눈물, 회피, 자기비난으로 이어진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "수",
+          "귀인"
+        ],
+        "productDomains": [
+          "child",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "authority_conflict_child",
+        "label": "권위와 충돌",
+        "plainKo": "INFP 아이는 명령과 강요를 싫어한다. 전통적이고 권위적인 어른과 계속 마주하면 혼자 엇나가거나 방황할 가능성이 커진다.",
+        "strongLine": "이 아이에게 필요한 것은 강압적 명령이 아니라, 왜 그래야 하는지 마음으로 납득할 수 있는 설명입니다.",
+        "positiveUse": "존중받으면 자기만의 기준으로 책임을 배우고 성장한다.",
+        "risk": "강요가 반복되면 고집, 회피, 단절, 방황으로 나타날 수 있다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "비견",
+          "목"
+        ],
+        "productDomains": [
+          "child",
+          "parenting",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "socially_different_child",
+        "label": "관심사가 다른 아이",
+        "plainKo": "INFP 아이는 친구 사귀는 데 서툴 수 있고, 보통 아이들과 관심사가 달라 동떨어진 듯한 느낌을 자주 받는다. 하지만 사회적 기술이 부족할 뿐 타인에게 말 거는 것 자체를 두려워하지 않는 경우도 있다.",
+        "strongLine": "이 아이는 사람을 싫어하는 것이 아니라, 자기 관심사를 알아주는 사람을 찾기까지 시간이 걸리는 아이입니다.",
+        "positiveUse": "비슷한 취향과 감수성을 가진 친구를 만나면 매우 수다스럽고 깊게 연결된다.",
+        "risk": "주변이 이해하지 못하면 외로움과 소외감을 크게 느낀다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "도화",
+          "수"
+        ],
+        "productDomains": [
+          "child",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "presentation_emotion_child",
+        "label": "발표와 감정 표현",
+        "plainKo": "INFP 아이는 발표를 두려워하는 경우가 많지만, Ne가 강하면 자신의 감정과 아이디어를 외부에 표현할 기회로 여기며 좋아할 수도 있다. 이해받는 자리에서는 말이 많아진다.",
+        "strongLine": "이 아이는 무대가 무서운 것이 아니라, 자기 마음이 평가받는 느낌이 무서운 것일 수 있습니다.",
+        "positiveUse": "안전한 분위기에서는 발표, 글쓰기, 예술 표현을 통해 자기 세계를 보여준다.",
+        "risk": "비판적 분위기에서는 입을 닫고 감정을 숨긴다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "도화",
+          "문창"
+        ],
+        "productDomains": [
+          "child",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "deep_value_based_bonds",
+        "label": "가치 기반 깊은 관계",
+        "plainKo": "INFP는 공유된 가치에 기반한 깊고 의미 있는 관계를 갈망한다. 피상적 인간관계보다 서로를 진심으로 대우하는 관계를 원한다.",
+        "strongLine": "당신은 자주 만나는 사람보다, 자기 마음의 언어를 알아듣는 사람과 오래 연결됩니다.",
+        "positiveUse": "진정성 있는 우정과 헌신적 관계를 만든다.",
+        "risk": "가치가 맞지 않는 사람을 너무 빠르게 걸러내면 고립될 수 있다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "boundary_against_cruelty",
+        "label": "잔인함 앞의 단절",
+        "plainKo": "INFP는 잔인함과 불공평에 깊은 고통을 받는다. 상대가 이기적이거나 악의적이라고 판단하면 관계를 끊는 쪽으로 마음이 이동한다.",
+        "strongLine": "당신은 갈등을 싫어하지만, 누군가의 악의와 잔인함 앞에서는 마음의 문을 완전히 닫을 수 있습니다.",
+        "positiveUse": "해로운 관계에서 자기와 약자를 보호하는 기준이 된다.",
+        "risk": "한 번 악의로 해석한 사람에게는 회복 기회를 주기 어려울 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "상관",
+          "편관"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "emotional_distance",
+        "label": "따뜻한 심리적 거리",
+        "plainKo": "INFP는 타인의 정서를 잘 이해하고 원만한 관계를 맺지만 약간의 심리적 거리는 유지한다. 너무 깊이 침범당하면 자기 내면을 지키기 위해 물러난다.",
+        "strongLine": "당신은 따뜻하지만, 마음의 가장 안쪽 방까지 아무나 들이지는 않습니다.",
+        "positiveUse": "관계를 부드럽게 유지하면서도 자기 정체성을 보호한다.",
+        "risk": "상대에게는 친한 듯하면서도 멀게 느껴질 수 있다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "비견",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "low_interference_individualism",
+        "label": "간섭 없는 개인주의",
+        "plainKo": "INFP는 타인의 사생활에 함부로 간섭하거나 통제하는 일이 적다. 배려형 개인주의를 지키며, 상호 존중의 가치를 중요하게 여긴다.",
+        "strongLine": "당신은 사랑과 관심을 통제나 잔소리로 증명하지 않는 사람입니다.",
+        "positiveUse": "상대의 개성과 사생활을 존중하는 관계를 만든다.",
+        "risk": "필요한 개입과 요청까지 회피하면 관계 문제를 방치할 수 있다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "정인",
+          "목"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "communication": [
+      {
+        "id": "gentle_metaphoric_speech",
+        "label": "은유적 표현",
+        "plainKo": "INFP는 사려 깊고 상냥한 언어를 쓰며, 상대를 배려해 빙빙 돌려 은유적으로 표현할 때가 많다. 직설보다 마음이 다치지 않는 전달 방식을 선호한다.",
+        "strongLine": "당신은 말 한마디에도 상대의 마음이 다치지 않을 길을 찾으려 합니다.",
+        "positiveUse": "위로, 창작, 상담, 부드러운 중재에서 강점이 된다.",
+        "risk": "핵심 요구가 흐려져 상대가 진짜 문제를 알아차리지 못한다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "문창",
+          "정인"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "slow_to_show_affection",
+        "label": "애정 표현의 신중함",
+        "plainKo": "INFP는 마음이 따뜻하지만 애정 표시를 직접적으로 하지 못하는 경우가 있다. 친해지기 전까지는 조용하고 과묵하게 보일 수 있다.",
+        "strongLine": "당신은 마음이 없는 것이 아니라, 마음을 보여주는 데 시간이 필요한 사람입니다.",
+        "positiveUse": "신뢰가 쌓이면 깊고 진심 어린 애정을 보여준다.",
+        "risk": "표현이 늦어 상대가 관심이 없다고 오해할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "수",
+          "도화"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "anger_private_processing",
+        "label": "분노의 사적 처리",
+        "plainKo": "INFP는 분노를 겉으로 잘 드러내지 않는다. 스트레스를 받을 때 혼자 시간을 갖거나 자연을 보거나 전문가와 대화하며 감정을 처리하려 한다.",
+        "strongLine": "당신의 분노는 폭발보다 잠시 사라짐으로 표현될 때가 많습니다.",
+        "positiveUse": "큰 충돌을 줄이고 감정을 창의적으로 정리할 시간을 만든다.",
+        "risk": "불편함을 말하지 않으면 상황이 악화되고 상대는 아무것도 모른다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "수",
+          "식신"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "authenticity_over_skill",
+        "label": "기술보다 진심",
+        "plainKo": "INFP는 상투적인 인간관계 기술보다 서로를 진심으로 대우하는 것을 원한다. 페르소나와 가식은 매우 불편하게 느낀다.",
+        "strongLine": "당신은 능숙한 말보다 진짜 마음이 느껴지는 태도에 더 깊이 반응합니다.",
+        "positiveUse": "진솔한 대화와 깊은 신뢰를 만든다.",
+        "risk": "사회적 형식이나 가벼운 인사까지 가식으로 느껴 피로해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "비견",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "criticism_fragility",
+        "label": "비판 취약성",
+        "plainKo": "INFP는 민감하고 내성적인 성격 때문에 비판을 받아들이는 데 어려움을 겪는다. 창작물이나 가치관에 대한 직설적 비난은 마음을 크게 흔든다.",
+        "strongLine": "당신에게 비판은 의견 하나가 아니라, 자기 세계 전체가 평가받는 느낌으로 들어올 수 있습니다.",
+        "positiveUse": "섬세한 피드백 환경에서는 빠르게 성장하고 깊이 다듬는다.",
+        "risk": "직설적 비판 앞에서 방어, 잠적, 자기비난으로 흐를 수 있다.",
+        "matchingMyeongliSignals": [
+          "수",
+          "편인",
+          "정인"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "strengths": [
+      {
+        "id": "warm_worldview",
+        "label": "따뜻한 세계관",
+        "plainKo": "원문은 INFP의 장점으로 세상을 따뜻하게 바라보는 태도를 제시한다. 사람의 장점과 가능성을 발견하고, 그 가능성이 성취되도록 돕는다.",
+        "strongLine": "당신은 사람을 평가하기보다 그 사람 안에 아직 꺼내지지 않은 가능성을 먼저 보려 합니다.",
+        "positiveUse": "상담, 교육, 복지, 창작, 관계 회복에서 사람을 살리는 관점이 된다.",
+        "risk": "좋은 가능성만 보려 하면 현실의 위험 신호를 놓칠 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "귀인",
+          "목"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "conflict_mediation",
+        "label": "갈등 중재",
+        "plainKo": "INFP는 갈등을 싫어하지만 타인에 대한 이해력과 세심함으로 중재자 역할을 부드럽게 수행할 수 있다.",
+        "strongLine": "당신은 큰 목소리로 판정하기보다, 서로의 마음이 덜 다치도록 사이의 언어를 찾아주는 사람입니다.",
+        "positiveUse": "친구, 가족, 팀 안에서 감정의 온도를 낮추고 대화를 부드럽게 만든다.",
+        "risk": "중재하려다 자기 감정과 기준을 뒤로 미루면 소진된다.",
+        "matchingMyeongliSignals": [
+          "귀인",
+          "정인",
+          "토"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "creative_emotional_processing",
+        "label": "창의적 감정 처리",
+        "plainKo": "INFP는 그림, 일기, 음악 같은 창의적 활동을 통해 억눌린 감정과 스트레스를 처리할 수 있는 고유한 능력이 있다.",
+        "strongLine": "당신은 감정을 없애는 사람이 아니라, 감정을 작품과 언어로 바꾸며 살아나는 사람입니다.",
+        "positiveUse": "정서 회복, 창작, 자기성찰, 콘텐츠 제작의 원천이 된다.",
+        "risk": "표현 경로가 막히면 감정이 안에서 고여 비관으로 흐른다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "도화",
+          "문창"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "non_interfering_kindness",
+        "label": "무해한 배려",
+        "plainKo": "건강한 INFP는 순하고 착하며 포용력 있고 타인에게 무해한 이미지가 강하다. 공적인 공간에서 민폐가 적고, 타인을 통제하지 않는다.",
+        "strongLine": "당신의 선함은 과한 개입이 아니라, 상대가 자기답게 있을 수 있게 놓아주는 배려입니다.",
+        "positiveUse": "편안한 관계 분위기, 수평적 협업, 안전한 정서 공간을 만든다.",
+        "risk": "너무 무해하려 하다 필요한 주장과 경계 설정까지 약해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "귀인",
+          "비견"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "risks": [
+      {
+        "id": "emotional_overload",
+        "label": "감정 과부하",
+        "plainKo": "INFP는 주위의 사소한 안 좋은 자극에도 감정이 과도하게 개입할 수 있다. 감정 표현에 신중하다 보니 기분이 나빠도 제대로 표현하지 못해 상황을 악화시킨다.",
+        "strongLine": "당신은 작은 자극도 마음 깊이 들여보내기 때문에, 말하지 않은 감정이 쉽게 커집니다.",
+        "positiveUse": "섬세한 감수성으로 사람과 장면의 뉘앙스를 잘 포착한다.",
+        "risk": "표현하지 못한 감정이 회피, 피해감, 자기비난으로 굳어진다.",
+        "matchingMyeongliSignals": [
+          "수",
+          "정인",
+          "편인"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "reality_ideal_gap",
+        "label": "현실과 이상의 괴리",
+        "plainKo": "INFP는 현실이 이상적이지 못하다는 사실에 쉽게 좌절한다. 심하게 흔들리면 염세주의, 은둔, 무기력으로 흐를 수 있다.",
+        "strongLine": "당신은 현실을 몰라서 힘든 것이 아니라, 현실이 마음속 세계보다 너무 거칠 때 깊게 지칩니다.",
+        "positiveUse": "이상을 포기하지 않고 더 나은 방향을 상상하는 힘이 된다.",
+        "risk": "현실과 이상을 구분하지 못하면 행동 대신 망상과 회피에 머문다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "수",
+          "천문성"
+        ],
+        "productDomains": [
+          "general",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "weak_decision_execution",
+        "label": "결단·실행 약점",
+        "plainKo": "조직적이고 신속한 대처와 결단력이 중요한 사회에 적응하기 어렵다. Te 열등으로 실행 구조와 자기주장, 목적 중심 설득이 약해질 수 있다.",
+        "strongLine": "당신의 약점은 생각이 없어서가 아니라, 마음의 의미를 현실의 구조로 옮기는 단계에서 자주 생깁니다.",
+        "positiveUse": "가치가 분명한 작은 루틴부터 만들면 꾸준함이 살아난다.",
+        "risk": "결정과 실행을 미루면 좋은 기회가 지나간다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편관",
+          "토"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "over_screening_people",
+        "label": "사람 검열",
+        "plainKo": "INFP는 진정성과 가치관을 중시해 사람을 까다롭게 검열할 수 있다. 원문은 그렇게 하다 보면 결국 자기 자신만 남을 수 있음을 경고한다.",
+        "strongLine": "당신이 지키려는 순수함이 너무 날카로워지면, 곁에 남을 사람까지 밀어낼 수 있습니다.",
+        "positiveUse": "관계의 질을 지키고 가식적이거나 해로운 사람을 걸러낸다.",
+        "risk": "다름을 모두 위협으로 보면 관계와 세계가 지나치게 좁아진다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "편인",
+          "정관"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "burnout_from_unfit_work",
+        "label": "부적합 직장 소진",
+        "plainKo": "조직적이고 자율성이 낮으며 권위가 강한 회사 공간은 INFP에게 걸림돌이 많다. 직업 불만을 가질 가능성이 높고, 불건강해지기 전에 스스로 사표를 내는 흐름도 언급된다.",
+        "strongLine": "당신은 견디지 못해서 약한 것이 아니라, 자기답게 일할 여백이 없는 곳에서 빠르게 소진되는 사람입니다.",
+        "positiveUse": "맞지 않는 환경을 빨리 감지하고 더 적합한 직업 구조를 찾는 신호가 된다.",
+        "risk": "환경을 바꾸지 않고 참기만 하면 무기력과 회피가 커진다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "상관",
+          "수"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "overgiving_to_trusted_person",
+        "label": "믿는 사람에게 올인",
+        "plainKo": "INFP는 누군가를 깊게 믿는 일이 드문 만큼, 그런 사람이 생기면 헌신할 정도로 올인한다. 그러나 배신을 당하면 정신적 충격이 오래간다.",
+        "strongLine": "당신은 쉽게 믿지 않지만, 한 번 믿으면 너무 많이 주기 때문에 상처도 깊어집니다.",
+        "positiveUse": "진짜 믿는 관계에서는 흔들리지 않는 헌신과 따뜻함을 보인다.",
+        "risk": "상대에게 모든 것을 걸면 자기 삶의 중심을 잃는다.",
+        "matchingMyeongliSignals": [
+          "겁재",
+          "정인",
+          "도화"
+        ],
+        "productDomains": [
+          "love",
+          "marriage",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "growth": [
+      {
+        "id": "develop_ne_perspective",
+        "label": "Ne로 관점 열기",
+        "plainKo": "INFP가 왜곡된 관점에 빠지지 않으려면 Ne를 잘 개발해야 한다. Fi가 '내 가치관이 맞아'라고 굳을 때, Ne는 '내가 놓친 관점이 있을 수 있다'고 열어준다.",
+        "strongLine": "당신의 신념이 강할수록, 다른 가능성을 보는 능력이 당신을 더 건강하게 지켜줍니다.",
+        "positiveUse": "새 관점, 창의적 연결, 다양한 사람과의 대화로 내면을 확장한다.",
+        "risk": "Fi만 고립되면 자기 기준에 갇혀 현실과 관계를 좁게 해석한다.",
+        "matchingMyeongliSignals": [
+          "천문성",
+          "목",
+          "상관"
+        ],
+        "productDomains": [
+          "general",
+          "study",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "small_control_routine",
+        "label": "작은 통제력",
+        "plainKo": "너무 늘어지지 않는 꾸준함을 기르기 위해 아주 작은 일부터 통제력을 갖는 것이 필요하다. 열등 Te를 거대한 계획이 아니라 작은 루틴으로 훈련해야 한다.",
+        "strongLine": "당신에게 필요한 통제력은 큰 결심이 아니라, 매일 지킬 수 있는 아주 작은 약속입니다.",
+        "positiveUse": "생활 리듬, 창작 루틴, 공부 계획, 돈 관리의 안정성을 만든다.",
+        "risk": "루틴이 없으면 감정과 기분에 따라 삶의 리듬이 흔들린다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "토",
+          "정관"
+        ],
+        "productDomains": [
+          "general",
+          "study",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "body_activity_grounding",
+        "label": "몸으로 접지하기",
+        "plainKo": "원문은 독서와 운동, 단체 스포츠, 탁구·배드민턴, 헬스·수영 등을 추천한다. INFP는 몸을 움직이며 내면의 감정과 생각을 현실에 접지할 필요가 있다.",
+        "strongLine": "당신의 마음이 너무 멀리 떠날 때, 몸을 움직이는 일이 가장 현실적인 회복 통로가 됩니다.",
+        "positiveUse": "운동은 감정 과부하를 줄이고 현실 감각과 꾸준함을 키운다.",
+        "risk": "몸을 방치하면 생각과 감정이 안에서만 과열된다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "토",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "express_emotions_for_love",
+        "label": "감정 표현 훈련",
+        "plainKo": "공적인 장소가 아니라면 기쁨과 슬픔을 겉으로 표현하는 능력을 기르면 연애가 더 편해진다. 평온한 성격으로 편안함을 주더라도 오래 관계를 유지하려면 표현이 필요하다.",
+        "strongLine": "당신의 사랑이 오래 가려면, 마음속 깊이에만 두지 말고 상대가 알아들을 수 있는 표현으로 나와야 합니다.",
+        "positiveUse": "관계의 안정감과 친밀감을 높인다.",
+        "risk": "표현이 부족하면 상대는 헌신을 느끼지 못하고 관계가 느슨해진다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "도화",
+          "정인"
+        ],
+        "productDomains": [
+          "love",
+          "marriage",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ]
+  },
+  "recommendedJobs": [
+    {
+      "job": "작가",
+      "reason": "책과 언어에 관심이 많고 다층적 스토리텔링에 재능이 있어 감정이 깊은 이야기를 만들 수 있다.",
+      "matchingTraits": [
+        "creative_arts_fit",
+        "storytelling_learning",
+        "creative_brainstorm_method"
+      ],
+      "matchingMyeongliSignals": [
+        "문창",
+        "식신",
+        "천문성"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "배우",
+      "reason": "세밀한 감정 캐치 능력과 감수성이 강해 인물의 내면을 표현하는 직업과 맞는다.",
+      "matchingTraits": [
+        "creative_arts_fit",
+        "empathic_projection",
+        "contextual_truth_detection"
+      ],
+      "matchingMyeongliSignals": [
+        "도화",
+        "식신",
+        "수"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "가수·음악가",
+      "reason": "감정을 창의적으로 배출하고 음악으로 내면을 표현하는 능력이 강점으로 작동한다.",
+      "matchingTraits": [
+        "creative_emotional_processing",
+        "romantic_dreamer",
+        "creative_arts_fit"
+      ],
+      "matchingMyeongliSignals": [
+        "도화",
+        "식신",
+        "홍염"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "디자이너",
+      "reason": "예술적 감각과 개성, 상상력을 현실적인 형태로 표현할 수 있는 분야다.",
+      "matchingTraits": [
+        "creative_arts_fit",
+        "romantic_dreamer",
+        "creative_brainstorm_method"
+      ],
+      "matchingMyeongliSignals": [
+        "도화",
+        "식신",
+        "문창"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "심리상담사",
+      "reason": "복잡한 마음을 이해하고 편견 없이 들어주는 성향이 상담자 역할과 잘 맞는다.",
+      "matchingTraits": [
+        "counseling_healing_fit",
+        "empathic_projection",
+        "gentle_metaphoric_speech"
+      ],
+      "matchingMyeongliSignals": [
+        "정인",
+        "귀인",
+        "수"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "사회복지사",
+      "reason": "약자와 어려움을 겪는 사람에게 강한 공감과 사명감을 느끼는 성향과 연결된다.",
+      "matchingTraits": [
+        "gentle_joan_of_arc",
+        "warm_worldview",
+        "counseling_healing_fit"
+      ],
+      "matchingMyeongliSignals": [
+        "귀인",
+        "정인",
+        "목"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "교육자",
+      "reason": "학생이 스스로 깨닫도록 유도하고 자율성과 흥미를 존중하는 교육 방식과 맞는다.",
+      "matchingTraits": [
+        "education_gentle_teacher",
+        "autonomy_parent",
+        "storytelling_learning"
+      ],
+      "matchingMyeongliSignals": [
+        "정인",
+        "문창",
+        "목"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "PD",
+      "reason": "스토리, 감정, 의미, 사람의 가능성을 콘텐츠로 엮는 역할과 맞는다.",
+      "matchingTraits": [
+        "media_community_fit",
+        "creative_arts_fit",
+        "ne_branching_imagination"
+      ],
+      "matchingMyeongliSignals": [
+        "식신",
+        "도화",
+        "편재"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "인터넷 커뮤니티 관리자",
+      "reason": "취향과 가치가 맞는 사람들의 공간을 관리하고 갈등을 부드럽게 중재하는 데 강점이 있다.",
+      "matchingTraits": [
+        "media_community_fit",
+        "conflict_mediation",
+        "low_interference_individualism"
+      ],
+      "matchingMyeongliSignals": [
+        "귀인",
+        "정인",
+        "비견"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "NGO·사회적기업 활동가",
+      "reason": "이상과 사회적 관용, 약자에 대한 공감이 직업적 명분과 연결될 때 큰 힘이 난다.",
+      "matchingTraits": [
+        "gentle_joan_of_arc",
+        "meaning_over_status",
+        "warm_worldview"
+      ],
+      "matchingMyeongliSignals": [
+        "상관",
+        "정관",
+        "목"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "북카페·공방형 자영업자",
+      "reason": "대형 조직 사업보다 자기 취향과 가치가 살아 있는 작은 자율 사업이 적합하다.",
+      "matchingTraits": [
+        "small_independent_business",
+        "creative_income_path",
+        "autonomy_required"
+      ],
+      "matchingMyeongliSignals": [
+        "식신",
+        "편재",
+        "비견"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "사진사·여행가·비평가",
+      "reason": "감상, 관찰, 의미 부여, 개인적 시선이 중요한 분야에서 자기만의 색을 낼 수 있다.",
+      "matchingTraits": [
+        "media_community_fit",
+        "creative_arts_fit",
+        "contextual_truth_detection"
+      ],
+      "matchingMyeongliSignals": [
+        "도화",
+        "역마",
+        "문창"
+      ],
+      "sourceCoverage": "direct"
+    }
+  ],
+  "avoidJobsOrEnvironments": [
+    {
+      "name": "강한 관료제 조직",
+      "reason": "위계질서가 고착되어 있고 업무 재량이 없는 환경은 INFP의 자율성과 진정성 욕구를 크게 소모시킨다.",
+      "riskTraits": [
+        "bureaucracy_low_fit",
+        "autonomy_required",
+        "burnout_from_unfit_work"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "상명하복 군대식 문화",
+      "reason": "역할이 분명하게 고정되고 자유가 최소화되는 집단에서는 가장 보기 드문 유형으로 제시될 정도로 적응이 어렵다.",
+      "riskTraits": [
+        "authority_conflict_child",
+        "bureaucracy_low_fit",
+        "te_execution_gap"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "권위적이고 강압적인 상사",
+      "reason": "겉으로는 웃고 순응할 수 있지만 심한 경우 충성은커녕 상종하지 않으려는 태도로 돌아선다.",
+      "riskTraits": [
+        "soft_conflict_style",
+        "boundary_against_cruelty",
+        "burnout_from_unfit_work"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "영업·정치·권력 경쟁 중심 환경",
+      "reason": "정치나 사업, 남을 통제하고 위에 올라서는 일과 거리가 멀며 야망보다 로망이 두드러진다.",
+      "riskTraits": [
+        "low_material_drive",
+        "weak_decision_execution",
+        "second_leader_fit"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "반복 암기와 획일적 학습 환경",
+      "reason": "창의력과 스토리텔링 학습을 선호하며, 반복 암기와 권위적 학습 양식에는 맞지 않을 수 있다.",
+      "riskTraits": [
+        "storytelling_learning",
+        "math_logic_gap",
+        "creative_child"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "강한 경쟁과 서열 평가",
+      "reason": "경쟁을 좋아하지 않고, 우열이 존재하거나 집단적으로 떠드는 문화에서 겉돌기 쉽다.",
+      "riskTraits": [
+        "low_competition_environment",
+        "sensitive_withdrawal",
+        "reality_ideal_gap"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "현실 성과만 압박하는 직무",
+      "reason": "눈앞의 성과와 목적만 위해 돌아가는 상황은 이상과 의미를 추구하는 INFP에게 큰 스트레스가 된다.",
+      "riskTraits": [
+        "meaning_over_status",
+        "te_execution_gap",
+        "weak_decision_execution"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "거친 비판이 일상적인 팀",
+      "reason": "비판에 민감하고 창작물과 가치관에 대한 직설적 공격을 깊은 상처로 받아들이기 쉽다.",
+      "riskTraits": [
+        "criticism_fragility",
+        "emotional_overload",
+        "sensitive_to_harshness_child"
+      ],
+      "sourceCoverage": "direct"
+    }
+  ],
+  "relationshipHints": {
+    "comfortableTypes": [
+      "INFP",
+      "ENFP",
+      "ISTJ",
+      "ESTJ",
+      "ISFP",
+      "ISFJ",
+      "INTJ",
+      "ENTJ"
+    ],
+    "challengingTypes": [
+      "ENFJ",
+      "INFJ",
+      "ESTP",
+      "ISTP",
+      "ENTP",
+      "ESFP"
+    ],
+    "notablePairs": [
+      {
+        "withType": "INFP",
+        "label": "동일 관계",
+        "sourceRelationName": "Identical",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "같은 기능을 같은 순서로 사용해 생각과 감정의 흐름을 이해하기 쉽다.",
+          "진정성, 자율성, 깊은 감수성, 이상주의를 공유한다."
+        ],
+        "friction": [
+          "상호 보완은 약해 둘 다 실행과 현실 구조를 미룰 수 있다.",
+          "한쪽이 불건강해지면 다른 한쪽도 비관과 회피에 쉽게 영향을 받는다."
+        ],
+        "positiveInfluence": [
+          "서로의 섬세함과 독특한 세계를 인정하며 안전한 정서 공간을 만든다."
+        ],
+        "lovePattern": "연애에서는 서로의 감수성과 내면 세계를 빠르게 알아보고 깊게 공감한다. 다만 둘 다 표현과 결단을 미루면 관계가 아름답지만 흐릿하게 유지될 수 있다.",
+        "marriagePattern": "결혼에서는 자유와 감정적 이해가 강점이지만 생활 규칙, 돈 관리, 역할 분담을 명확히 하지 않으면 현실 문제가 쌓인다.",
+        "repairStrategy": [
+          "감정 공감 뒤에 구체적 행동 약속을 붙인다.",
+          "생활 관리와 돈 문제는 따로 문서화한다.",
+          "서로의 비관이 번지기 전에 외부 활동과 운동을 넣는다."
+        ],
+        "reportLine": "INFP와 INFP는 서로의 내면을 깊이 이해하지만, 현실을 붙잡는 구조가 없으면 둘만의 세계에 머물기 쉽습니다."
+      },
+      {
+        "withType": "ENFP",
+        "label": "거울 관계",
+        "sourceRelationName": "Mirror",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "성격, 가치관, 취향이 비슷해 동일 관계보다 좋은 시너지가 날 수 있다.",
+          "두 유형 모두 Fi-Ne 축을 공유해 진정성, 가능성, 창의성을 중시한다."
+        ],
+        "friction": [
+          "ENFP는 더 잘 나서고 행동으로 옮기며, INFP는 더 안쪽에서 오래 숙성한다.",
+          "ENFP의 빠른 확장성이 INFP에게 피로가 될 수 있고, INFP의 조심스러움은 ENFP에게 답답할 수 있다."
+        ],
+        "positiveInfluence": [
+          "ENFP는 INFP의 아이디어를 밖으로 꺼내고, INFP는 ENFP의 감정과 가치에 깊이를 더한다."
+        ],
+        "lovePattern": "연애에서는 I/E 차이가 크지 않게 느껴질 정도로 잘 통할 수 있다. ENFP의 활력은 INFP를 움직이게 하고, INFP의 깊이는 ENFP를 안정시키지만, 사회적 활동량은 조율해야 한다.",
+        "marriagePattern": "장기 관계에서는 창의성과 가치관이 잘 맞는다. 다만 ENFP가 일을 벌리고 INFP가 정리 없이 감정적으로 지치면 생활과 돈 관리가 흐트러질 수 있다.",
+        "repairStrategy": [
+          "ENFP는 INFP의 혼자 있는 시간을 존중한다.",
+          "INFP는 ENFP의 외부 활동 욕구를 가벼움으로 보지 않는다.",
+          "새로운 시도와 회복 시간을 일정에 함께 넣는다."
+        ],
+        "reportLine": "INFP와 ENFP는 감성과 가능성이 잘 맞는 거울 관계지만, 확장 속도와 회복 리듬을 맞춰야 오래 갑니다."
+      },
+      {
+        "withType": "ISTJ",
+        "label": "활동 관계",
+        "sourceRelationName": "Activity",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "상대의 강점이 자신의 약점, 자신의 강점이 상대의 약점으로 작동할 수 있다.",
+          "이질감이 비교적 적으면서도 상호 보완 가능성이 있다."
+        ],
+        "friction": [
+          "ISTJ의 통제와 절차는 INFP에게 억압으로 느껴질 수 있다.",
+          "INFP의 느슨함과 이상주의는 ISTJ에게 신중함과 절제심 부족으로 보일 수 있다."
+        ],
+        "positiveInfluence": [
+          "ISTJ는 INFP에게 현실적 기준과 절제를, INFP는 ISTJ에게 가치와 가능성의 부드러움을 제공한다."
+        ],
+        "lovePattern": "연애에서는 ISTJ의 안정감과 INFP의 따뜻함이 처음에는 편안하게 느껴진다. 그러나 ISTJ가 생활과 약속을 강하게 관리하려 하면 INFP는 자기 세계가 침해된다고 느낀다.",
+        "marriagePattern": "결혼에서는 ISTJ가 생활 구조를 만들고 INFP가 정서적 의미를 채울 수 있다. 하지만 규칙, 돈, 가족 의무에서 ISTJ의 통제와 INFP의 자유 욕구가 충돌한다.",
+        "repairStrategy": [
+          "ISTJ는 통제를 줄이고 존중을 먼저 보여준다.",
+          "INFP는 최소한의 약속과 생활 기준을 지킨다.",
+          "규칙은 강요가 아니라 서로의 안전망으로 설명한다."
+        ],
+        "reportLine": "INFP와 ISTJ는 자유와 질서가 만나는 관계이며, 통제와 회피를 줄이면 현실성과 따뜻함을 함께 얻을 수 있습니다."
+      },
+      {
+        "withType": "ESTJ",
+        "label": "이중성 관계",
+        "sourceRelationName": "Duality",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "같은 심리 기능을 반대 순서로 사용해 이론상 상호 보완이 강하다.",
+          "비슷한 가치관이나 지향점을 발견하면 이를 계기로 가까워질 수 있다."
+        ],
+        "friction": [
+          "현실적으로는 성향 차이가 매우 커 친해지기까지 어렵다.",
+          "ESTJ는 INFP를 신선하고 귀엽게 보거나, 이상하고 일 못하는 사람으로 볼 수 있다.",
+          "INFP는 ESTJ의 효율과 통제를 자기 가치에 대한 압박으로 느낄 수 있다."
+        ],
+        "positiveInfluence": [
+          "ESTJ는 INFP에게 실행과 구조를, INFP는 ESTJ에게 감정과 가치의 깊이를 보완한다."
+        ],
+        "lovePattern": "연애에서는 강한 끌림과 강한 거부감이 함께 생길 수 있다. ESTJ의 추진력은 INFP에게 안정감이 되기도 하지만, 비판적 관리로 느껴지면 INFP는 빠르게 물러난다.",
+        "marriagePattern": "결혼에서는 생활·돈·계획은 ESTJ가, 정서·가치·관계의 부드러움은 INFP가 담당하기 쉽다. 그러나 역할이 고정되면 한쪽은 통제하고 한쪽은 회피하는 구조가 된다.",
+        "repairStrategy": [
+          "ESTJ는 INFP를 고치려 하기 전 가치와 감정을 인정한다.",
+          "INFP는 실행과 책임을 모두 억압으로 해석하지 않는다.",
+          "공동 목표와 개인 자유 영역을 명확히 분리한다."
+        ],
+        "reportLine": "INFP와 ESTJ는 최강점과 최약점이 맞물리는 강한 보완 관계지만, 존중 없이 만나면 가장 쉽게 상처와 평가로 번질 수 있습니다."
+      },
+      {
+        "withType": "ENFJ",
+        "label": "반대 관계",
+        "sourceRelationName": "Contrary",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "두 유형 모두 NF로 사람과 가치, 의미를 중요하게 본다.",
+          "서로가 보지 못하는 부분을 보며 상호 보완적 영향을 줄 수 있다."
+        ],
+        "friction": [
+          "Fe-Fi 관점 차이를 해소하지 못하면 관계가 틀어진다.",
+          "ENFJ는 공동체 조화와 외부 감정 기준을, INFP는 개인의 진정성과 내면 가치를 우선한다."
+        ],
+        "positiveInfluence": [
+          "ENFJ는 INFP를 사회적 장으로 이끌고, INFP는 ENFJ에게 개인의 진정성을 더 깊게 보게 한다."
+        ],
+        "lovePattern": "연애에서는 따뜻함과 이상주의가 잘 맞아 보이지만, ENFJ가 관계의 방향을 적극적으로 조율하려 할 때 INFP는 자기 내면이 밀린다고 느낄 수 있다.",
+        "marriagePattern": "장기 관계에서는 ENFJ가 가족과 사회적 관계를 조율하고 INFP가 개인의 감정과 가치를 지키려 한다. 공동체 기준과 개인 진정성의 충돌을 계속 번역해야 한다.",
+        "repairStrategy": [
+          "ENFJ는 조화라는 이름으로 INFP의 감정을 일반화하지 않는다.",
+          "INFP는 ENFJ의 외부 조율을 가식으로만 보지 않는다.",
+          "공동체 약속과 개인 가치의 예외 범위를 합의한다."
+        ],
+        "reportLine": "INFP와 ENFJ는 같은 따뜻함을 말하지만, 한쪽은 모두의 조화를 보고 한쪽은 개인의 진정성을 보므로 Fe-Fi 차이를 다뤄야 합니다."
+      },
+      {
+        "withType": "INFJ",
+        "label": "준동일 관계",
+        "sourceRelationName": "Quasi-Identical",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "MBTI에서는 J/P만 달라 겉으로는 상당히 비슷해 보인다.",
+          "초반에는 생각보다 쉽게 가까워질 수 있다."
+        ],
+        "friction": [
+          "실제로는 사용하는 기능이 전부 달라 성향 차이가 크다.",
+          "INFP는 개인과 자율성을, INFJ는 관계의 방향과 공동체적 조율을 더 볼 수 있다."
+        ],
+        "positiveInfluence": [
+          "서로의 이상과 감수성을 인정하면 깊은 대화와 창작적 영감을 나눌 수 있다."
+        ],
+        "lovePattern": "연애 초반에는 비슷한 감성 때문에 빠르게 친밀해질 수 있다. 그러나 INFJ가 관계의 흐름을 읽고 정리하려 할 때 INFP는 자기 내면을 조율당한다고 느낄 수 있다.",
+        "marriagePattern": "결혼에서는 두 사람 모두 깊은 의미를 원하지만 의사결정 기준이 다르다. INFJ는 방향성과 조화를, INFP는 개인 진정성과 자유를 더 중시해 생활 문제에서 엇갈릴 수 있다.",
+        "repairStrategy": [
+          "비슷하다는 전제를 버리고 실제 판단 기준을 확인한다.",
+          "INFJ는 유도하지 말고 직접 요청한다.",
+          "INFP는 자기 감정과 필요한 자유를 구체적으로 설명한다."
+        ],
+        "reportLine": "INFP와 INFJ는 닮아 보여 가까워지기 쉽지만, 깊어질수록 기능과 판단 기준이 다르다는 사실을 인정해야 합니다."
+      },
+      {
+        "withType": "ESTP",
+        "label": "갈등 관계",
+        "sourceRelationName": "Conflicting",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "P 유형 간이라 갈등 관계 중에서도 비교적 괜찮게 흘러갈 여지는 있다.",
+          "서로 존중하면 이중성 관계처럼 상호 보완 가능성도 있다."
+        ],
+        "friction": [
+          "가치관과 취향 차이가 커 갈등이 벌어지는 경우가 많다.",
+          "ESTP는 INFP를 무시하거나, 반대로 취미와 재능을 칭찬하는 식으로 극단적으로 볼 수 있다.",
+          "ESTP의 현실 행동성과 INFP의 내면 가치 중심성이 충돌한다."
+        ],
+        "positiveInfluence": [
+          "ESTP는 INFP에게 현실 행동과 즉각 대응을, INFP는 ESTP에게 감정과 가치의 깊이를 보여준다."
+        ],
+        "lovePattern": "연애에서는 전혀 다른 세계가 호기심을 만들 수 있다. ESTP의 적극성과 생동감은 INFP에게 신선하지만, 거친 말이나 무시는 깊은 상처가 된다.",
+        "marriagePattern": "결혼에서는 생활 속도, 자극 수준, 돈과 활동 방식에서 충돌한다. ESTP는 현재의 경험을 원하고 INFP는 의미와 정서적 안전을 원한다.",
+        "repairStrategy": [
+          "ESTP는 INFP의 감수성을 약점으로 놀리지 않는다.",
+          "INFP는 ESTP의 즉흥성을 무조건 천박함으로 보지 않는다.",
+          "활동 시간과 회복 시간을 번갈아 설계한다."
+        ],
+        "reportLine": "INFP와 ESTP는 감수성과 행동성이 크게 달라 갈등이 쉽지만, 존중이 있으면 서로에게 부족한 현실감과 의미를 배울 수 있습니다."
+      },
+      {
+        "withType": "ISTP",
+        "label": "초자아 관계",
+        "sourceRelationName": "Super-Ego",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "기능 차이 때문에 관점 이해가 어렵지만 성향이 비슷하고 공감대가 겹치는 경우도 많다.",
+          "둘 다 개인 공간과 자율성을 중요하게 여길 수 있다."
+        ],
+        "friction": [
+          "ISTP의 논리·감각 중심 접근은 INFP에게 차갑게 느껴질 수 있다.",
+          "INFP의 감정·가치 중심 접근은 ISTP에게 복잡하고 비현실적으로 느껴질 수 있다."
+        ],
+        "positiveInfluence": [
+          "ISTP는 INFP에게 간결한 현실 판단을 주고, INFP는 ISTP에게 감정과 의미의 층위를 보여준다."
+        ],
+        "lovePattern": "연애에서는 조용함과 개인 공간이 맞아 편할 수 있지만, 감정 표현과 문제 해결 방식은 다르다. INFP는 마음을 알아주길 원하고 ISTP는 직접적이고 실용적으로 해결하려 한다.",
+        "marriagePattern": "장기 관계에서는 자유와 사생활은 잘 맞지만 정서적 교류의 양이 과제다. INFP가 깊은 교감을 원할 때 ISTP가 짧게 반응하면 외로움이 쌓인다.",
+        "repairStrategy": [
+          "ISTP는 감정 확인 문장을 짧게라도 표현한다.",
+          "INFP는 모든 침묵을 무관심으로 해석하지 않는다.",
+          "실용적 해결과 정서적 공감을 순서대로 나눈다."
+        ],
+        "reportLine": "INFP와 ISTP는 자율성은 맞지만, 감정의 깊이와 현실 해결 방식이 달라 서로의 언어를 의식적으로 번역해야 합니다."
+      },
+      {
+        "withType": "ISFP",
+        "label": "비교 관계",
+        "sourceRelationName": "Comparative",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "주기능 Fi와 열등기능 Te가 같아 감성적·예술적 면과 효율 판단의 어려움을 공유한다.",
+          "가치관과 취향이 유사해 서로 이해하기 쉽다."
+        ],
+        "friction": [
+          "INFP는 Ne로 가능성을 미리 시뮬레이션하고, ISFP는 Se로 눈앞의 상황에 대응한다.",
+          "INFP의 추상적 공상은 ISFP에게 길게 느껴지고, ISFP의 현재 중심성은 INFP에게 깊이가 부족하게 보일 수 있다."
+        ],
+        "positiveInfluence": [
+          "ISFP는 INFP에게 감각적 실행을, INFP는 ISFP에게 가능성과 이야기의 확장을 제공한다."
+        ],
+        "lovePattern": "연애에서는 감수성과 예술 취향이 잘 맞아 편안할 수 있다. 다만 INFP가 의미와 가능성을 길게 말할 때 ISFP는 현재의 기분과 경험을 더 중시한다.",
+        "marriagePattern": "결혼에서는 서로의 감정과 자유를 존중하지만 실행과 생활 관리가 모두 약해질 수 있다. 돈, 일정, 집안일은 별도 구조가 필요하다.",
+        "repairStrategy": [
+          "INFP는 생각을 너무 길게 돌리지 말고 작은 행동으로 옮긴다.",
+          "ISFP는 현재 감정만이 아니라 장기 방향도 함께 말한다.",
+          "생활 루틴은 외부 도구로 보완한다."
+        ],
+        "reportLine": "INFP와 ISFP는 감성과 가치가 잘 맞지만, 가능성 중심과 현재 경험 중심의 차이를 생활에서 조율해야 합니다."
+      },
+      {
+        "withType": "ENTP",
+        "label": "감독 관계",
+        "sourceRelationName": "Supervision",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "INFP는 ENTP를 흥미로운 사람으로 생각하기 쉽다.",
+          "INFP의 부기능 Ne가 ENTP의 주기능 Ne와 맞닿아 초반에는 사이가 좋을 수 있다."
+        ],
+        "friction": [
+          "관계가 불균형적이며 INFP가 ENTP에게 간섭하는 경향이 생길 수 있다.",
+          "ENTP는 INFP의 도움이나 충고에서 기대한 도움을 얻지 못하고 통제에서 벗어나려 한다.",
+          "ENTP는 INFP가 자신에게 무엇을 원하는지 이해하지 못해 갈등이 커질 수 있다."
+        ],
+        "positiveInfluence": [
+          "ENTP는 INFP의 상상력을 넓히고, INFP는 ENTP의 아이디어에 가치와 감정의 기준을 제공한다."
+        ],
+        "lovePattern": "연애 초반에는 아이디어와 대화가 흥미롭다. 그러나 INFP가 ENTP를 도와주거나 바로잡으려 하고 ENTP가 이를 간섭으로 느끼면 관계가 빠르게 피곤해진다.",
+        "marriagePattern": "장기 관계에서는 자유로운 아이디어는 풍부하지만 책임과 감정 기준이 부딪힌다. INFP는 진정성을 원하고 ENTP는 가능성과 토론의 자유를 원한다.",
+        "repairStrategy": [
+          "INFP는 ENTP를 고치려는 충고를 줄인다.",
+          "ENTP는 INFP의 가치 기준을 가볍게 조롱하지 않는다.",
+          "토론과 감정 대화를 분리한다."
+        ],
+        "reportLine": "INFP와 ENTP는 상상력으로 빠르게 가까워지지만, INFP의 가치 개입이 ENTP에게 통제로 느껴지면 불균형이 커집니다."
+      },
+      {
+        "withType": "INTP",
+        "label": "유사 관계",
+        "sourceRelationName": "Look-a-like",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "부기능 Ne와 3차 Si가 같아 아이디어, 가능성, 취향에서 겹치는 부분이 많다.",
+          "내향적이고 추상적 관심사를 공유하기 쉽다."
+        ],
+        "friction": [
+          "주기능과 열등기능이 달라 한 글자 차이치고 성향 차이가 크다.",
+          "INFP는 Fi로 감성적 상상에, INTP는 Ti로 과학적·논리적 공상에 초점을 둔다."
+        ],
+        "positiveInfluence": [
+          "INTP는 INFP에게 논리적 검증을, INFP는 INTP에게 가치와 감정의 방향성을 제공한다."
+        ],
+        "lovePattern": "연애에서는 대화 주제와 상상력이 잘 맞아 친해지기 쉽다. 그러나 INTP의 무심한 논리와 INFP의 민감한 가치가 부딪히면 서로를 이해한다고 생각했던 만큼 상처도 생긴다.",
+        "marriagePattern": "장기 관계에서는 개인 공간과 지적 대화가 강점이다. 하지만 감정 표현, 생활 실행, 돈 관리가 모두 약해질 수 있어 구조가 필요하다.",
+        "repairStrategy": [
+          "INTP는 비판 전에 감정적 안전감을 확인한다.",
+          "INFP는 논리적 반론을 가치 공격으로만 받아들이지 않는다.",
+          "생활 책임은 추상 대화와 별도로 체크리스트화한다."
+        ],
+        "reportLine": "INFP와 INTP는 가능성과 상상력은 잘 통하지만, 감정의 진정성과 논리의 정확성 중 무엇을 우선할지 자주 조율해야 합니다."
+      },
+      {
+        "withType": "ESFJ",
+        "label": "환상 관계",
+        "sourceRelationName": "Illusionary",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "주 기능과 열등 기능의 지표가 같아 한 글자만 겹치는 것치고 공감대가 있다.",
+          "ESFJ는 사교성이 높아 관계가 그럭저럭 무난하게 시작될 수 있다."
+        ],
+        "friction": [
+          "Fe-Fi 관점 차이를 극복하지 못하면 사이가 틀어진다.",
+          "ESFJ는 외부 조화와 사회적 정서를, INFP는 개인의 진정성과 내면 가치를 더 중시한다."
+        ],
+        "positiveInfluence": [
+          "ESFJ는 INFP에게 사회적 연결과 돌봄을, INFP는 ESFJ에게 개인의 내면과 진정성을 보게 한다."
+        ],
+        "lovePattern": "연애에서는 ESFJ의 다정함과 INFP의 깊이가 서로에게 편안하게 다가올 수 있다. 그러나 ESFJ가 모두에게 맞추는 태도를 보이면 INFP는 가식으로 느끼고, INFP의 개인성은 ESFJ에게 거리감으로 보일 수 있다.",
+        "marriagePattern": "결혼에서는 ESFJ가 가족과 일상 돌봄을 조율하고 INFP가 정서적 의미를 채운다. 다만 친척·사회적 의무·가정 내 규범에서 Fe-Fi 충돌이 생긴다.",
+        "repairStrategy": [
+          "ESFJ는 사회적 조화를 INFP에게 강요하지 않는다.",
+          "INFP는 ESFJ의 배려를 가식으로 단정하지 않는다.",
+          "가족 행사와 개인 회복 시간을 모두 일정에 넣는다."
+        ],
+        "reportLine": "INFP와 ESFJ는 다정함으로 시작하기 쉽지만, 외부 조화와 개인 진정성의 차이를 다루지 않으면 서운함이 쌓입니다."
+      },
+      {
+        "withType": "ENTJ",
+        "label": "반-이중성 관계",
+        "sourceRelationName": "Semi-Duality",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "주 기능과 열등 기능이 반대여서 이중성 관계와 유사한 보완성이 있다.",
+          "둘 다 개인주의 성향이 강해 ESTJ보다 공감 가는 요소가 많을 수 있다."
+        ],
+        "friction": [
+          "서로가 서로의 약점을 찌르기 때문에 답답함이 생긴다.",
+          "ENTJ의 강한 실행과 지휘는 INFP에게 압박이고, INFP의 감성적 기준은 ENTJ에게 비효율로 보일 수 있다."
+        ],
+        "positiveInfluence": [
+          "친해지면 ENTJ는 INFP의 실행을 돕고, INFP는 ENTJ에게 인간적 의미와 내면 가치를 보완한다."
+        ],
+        "lovePattern": "연애에서는 ENTJ의 강한 추진력과 INFP의 부드러운 진정성이 서로에게 인상적일 수 있다. 그러나 ENTJ가 목표를 밀어붙이고 INFP가 상처를 숨기면 관계가 압박과 회피로 굳어진다.",
+        "marriagePattern": "결혼에서는 ENTJ가 계획과 성취를, INFP가 정서와 의미를 담당하기 쉽다. 하지만 결정권이 ENTJ에게 쏠리면 INFP는 자기 삶이 통제된다고 느낀다.",
+        "repairStrategy": [
+          "ENTJ는 효율보다 INFP의 가치와 감정을 먼저 인정한다.",
+          "INFP는 필요한 구조와 결정 책임을 모두 폭력으로 해석하지 않는다.",
+          "공동 목표와 개인 창작·휴식 영역을 명확히 분리한다."
+        ],
+        "reportLine": "INFP와 ENTJ는 운명적 보완처럼 느껴질 수 있지만, 실행의 압박과 감정의 섬세함을 동시에 존중해야 관계가 깊어집니다."
+      },
+      {
+        "withType": "ISFJ",
+        "label": "이익 관계",
+        "sourceRelationName": "Benefit",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "ISFJ의 Si는 INFP의 3차 Si를 돕고, INFP의 Ne는 ISFJ의 열등 Ne를 돕는다.",
+          "이질감이 비교적 적으면서 좋은 상호 보완이 가능하다."
+        ],
+        "friction": [
+          "ISFJ는 안정과 역할을, INFP는 자율성과 가능성을 더 중시한다.",
+          "ISFJ의 돌봄이 INFP에게 통제로 느껴질 수 있고, INFP의 느슨함은 ISFJ에게 불안으로 보일 수 있다."
+        ],
+        "positiveInfluence": [
+          "ISFJ는 INFP에게 생활 안정과 기억의 기반을, INFP는 ISFJ에게 새로운 가능성과 부드러운 상상을 제공한다."
+        ],
+        "lovePattern": "연애에서는 ISFJ의 안정적 돌봄과 INFP의 따뜻한 감성이 잘 맞을 수 있다. 다만 ISFJ가 익숙한 방식으로 챙기려 할 때 INFP는 자기만의 길이 좁아진다고 느낀다.",
+        "marriagePattern": "결혼에서는 생활 안정과 정서적 부드러움이 강점이다. 하지만 가사, 가족 의무, 자녀 교육에서 ISFJ의 전통성과 INFP의 자율성이 충돌할 수 있다.",
+        "repairStrategy": [
+          "ISFJ는 돌봄을 규칙 강요로 바꾸지 않는다.",
+          "INFP는 최소한의 생활 안정 약속을 지킨다.",
+          "새로운 시도와 익숙한 루틴을 함께 배치한다."
+        ],
+        "reportLine": "INFP와 ISFJ는 안정과 가능성을 서로 보완할 수 있지만, 돌봄과 자율성의 경계선을 분명히 해야 합니다."
+      },
+      {
+        "withType": "INTJ",
+        "label": "이익 관계",
+        "sourceRelationName": "Benefit",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "INFP의 Fi는 INTJ의 3차 Fi에 도움을 주고, INTJ의 Te는 INFP의 열등 Te에 도움을 줄 수 있다.",
+          "이질감이 적으면서 상호 보완이 가능하다."
+        ],
+        "friction": [
+          "INTJ의 Te 실행 기준은 INFP에게 냉정하게 느껴질 수 있다.",
+          "INFP의 감성적 가치 기준은 INTJ에게 불분명하고 비효율적으로 보일 수 있다."
+        ],
+        "positiveInfluence": [
+          "INTJ는 INFP의 아이디어를 현실 구조로 바꾸고, INFP는 INTJ에게 자기 감정과 가치의 깊이를 열어준다."
+        ],
+        "lovePattern": "연애에서는 조용한 깊이와 독립성이 서로에게 매력이다. INTJ는 INFP의 따뜻한 내면에 끌리고, INFP는 INTJ의 선명한 방향성에 안정감을 느낄 수 있다.",
+        "marriagePattern": "장기 관계에서는 INTJ가 계획과 실행을 돕고 INFP가 정서적 의미를 제공한다. 다만 INTJ의 비판이 INFP의 자기 세계를 공격하는 말처럼 들리지 않게 조심해야 한다.",
+        "repairStrategy": [
+          "INTJ는 피드백을 감정 안전감과 함께 전달한다.",
+          "INFP는 구조화 도움을 통제로만 받아들이지 않는다.",
+          "비전과 실행 계획을 별도 단계로 나눈다."
+        ],
+        "reportLine": "INFP와 INTJ는 감정의 깊이와 실행의 구조가 만나는 관계이며, 비판과 통제의 언어만 조심하면 좋은 보완성이 살아납니다."
+      },
+      {
+        "withType": "ESFP",
+        "label": "감독 관계",
+        "sourceRelationName": "Supervision",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 Fi 축을 공유해 관계 초반에는 흥미와 친밀감이 생길 수 있다.",
+          "갈등을 피하는 성향이 있어 겉으로는 부드럽게 보일 수 있다."
+        ],
+        "friction": [
+          "ESFP는 INFP가 자신의 도움을 필요로 한다고 여기며 간섭할 수 있다.",
+          "INFP는 ESFP가 무엇을 바라는지 이해하지 못해 갈등이 커진다.",
+          "둘 다 불만을 말하지 못해 문제가 계속 커질 수 있다."
+        ],
+        "positiveInfluence": [
+          "ESFP는 INFP를 현재 경험과 행동으로 끌어내고, INFP는 ESFP에게 감정의 의미와 상상력을 더한다."
+        ],
+        "lovePattern": "연애 초반에는 ESFP의 생동감과 INFP의 감성이 서로를 끌어당긴다. 그러나 ESFP의 즉각적 개입이 INFP에게 간섭처럼 느껴지면 INFP는 조용히 멀어진다.",
+        "marriagePattern": "결혼에서는 현재의 즐거움과 내면의 의미가 균형을 이뤄야 한다. 갈등을 피하기만 하면 생활 문제와 감정 문제가 동시에 쌓인다.",
+        "repairStrategy": [
+          "ESFP는 도움을 주기 전에 INFP가 원하는지 묻는다.",
+          "INFP는 불편함을 숨기지 말고 구체적으로 표현한다.",
+          "즐거운 경험 뒤에 조용한 회복 시간을 배치한다."
+        ],
+        "reportLine": "INFP와 ESFP는 초반의 따뜻함이 좋지만, 간섭과 침묵이 반복되면 말하지 않은 불만이 관계를 키웁니다."
+      }
+    ]
+  },
+  "myeongliBridgeHints": [
+    {
+      "signal": "정인",
+      "reason": "공감, 돌봄, 진정성, 내면 가치, 상담·교육 성향과 연결된다.",
+      "productDomains": [
+        "general",
+        "career",
+        "love",
+        "parenting"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "식신",
+      "reason": "글쓰기, 음악, 그림, 이야기, 감정의 창의적 표현과 연결된다.",
+      "productDomains": [
+        "career",
+        "study",
+        "love"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "도화",
+      "reason": "예술 감각, 낭만성, 감정적 매력, 연애와 창작 취향과 연결된다.",
+      "productDomains": [
+        "love",
+        "career",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "천문성",
+      "reason": "공상, 상상력, 의미 해석, 가능성의 발산과 연결된다.",
+      "productDomains": [
+        "general",
+        "study",
+        "daeun"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "편인",
+      "reason": "혼자만의 시간, 내면 탐구, 고독한 자유, 이상과 현실의 간극과 연결된다.",
+      "productDomains": [
+        "general",
+        "study",
+        "daeun"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "상관",
+      "reason": "불합리한 권위에 대한 반감, 사회적 통념과 악습에 대한 저항, 창의적 발산과 연결된다.",
+      "productDomains": [
+        "career",
+        "general",
+        "saeun"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "정재",
+      "reason": "열등 Te 보강, 생활 구조, 돈 관리, 작은 통제력과 연결된다.",
+      "productDomains": [
+        "money",
+        "investment",
+        "career"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "비견",
+      "reason": "개인주의, 자율성, 자기만의 길, 상호 존중의 관계 방식과 연결된다.",
+      "productDomains": [
+        "general",
+        "compatibility",
+        "love"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "수",
+      "reason": "감수성, 상처, 잠적, 내면 정리, 감정의 깊이와 연결된다.",
+      "productDomains": [
+        "general",
+        "love",
+        "daeun"
+      ],
+      "sourceCoverage": "direct"
+    }
+  ],
+  "reportUseCases": {
+    "generalReport": [
+      "진정성의 내면축, 낭만적 몽상가, 의미 우선, 상처 후 잠적, 배려형 개인주의를 INFP 기본 해석에 사용한다.",
+      "정인·식신·도화·천문성 신호와 연결해 공감, 창작, 이상, 내면 탐구의 축을 설명한다."
+    ],
+    "careerReport": [
+      "작가, 배우, 가수, 디자이너, 상담사, 사회복지사, 교육자, PD, 커뮤니티 관리자, NGO, 작은 자영업, 사진·여행·비평 분야를 추천 축으로 사용한다.",
+      "관료제, 군대식 상명하복, 강압적 상사, 권력 경쟁, 반복 암기형 환경, 강한 경쟁과 서열, 거친 비판 팀은 회피 축으로 사용한다."
+    ],
+    "loveMarriageChildReport": [
+      "강렬한 정서 교감, 예술적 데이트, 비판 민감성, 주도 어려움, 자유와 로망의 결혼, 헌신과 경계를 연애·결혼 해석에 사용한다.",
+      "INFP 부모의 자율성 지향과 도덕성 교육, INFP 아이의 창의성·권위 충돌·정서적 지지 필요를 자녀/부모 리포트에 사용한다."
+    ],
+    "compatibilityReport": [
+      "INFP, ENFP, ISTJ, ESTJ, ENFJ, INFJ, ESTP, ISTP, ISFP, ENTP, INTP, ESFJ, ENTJ, ISFJ, INTJ, ESFP 관계를 notablePairs에서 직접 사용한다.",
+      "관계 해석에서는 Fi-Fe 충돌, 자유와 통제, 감수성과 실행력, 상상력과 현실성의 조율을 핵심 축으로 삼는다."
+    ],
+    "daeunReport": [
+      "천문성·편인·문창 기운이 강한 시기에는 창작, 공부, 내면 탐구, 언어·예술 작업이 깊어지는 시기로 해석한다.",
+      "정재·정관 기운이 들어오는 시기에는 작은 루틴, 돈 관리, 실행 구조, 현실 적응력 보강을 강조한다."
+    ],
+    "saeunReport": [
+      "식신·도화·상관 기운은 창작, 표현, 콘텐츠, 예술적 노출, 사회적 메시지의 시기로 사용한다.",
+      "수·편인 기운이 과해지는 시기에는 잠적, 비관, 감정 과부하, 현실 회피를 경계하는 문장으로 활용한다."
+    ]
+  },
+  "enrichment": {
+    "missingAreas": [
+      "investment source detail is not directly provided",
+      "health and diagnosis-like source fragments were excluded from product traits",
+      "some relationship descriptions are short and may benefit from later MBTI-RELATION-GAP-FILL expansion",
+      "money details are mostly based on income tendency, low material drive, and career fit"
+    ],
+    "needsRelationGapFill": false,
+    "notes": [
+      "원문의 출처 표기, 통계표 노이즈, 편집 주의문, 오진단 논쟁의 장문 설명은 제거하고 상품용 trait으로 재구성함",
+      "우울증, 질환, 범죄율처럼 진단·낙인으로 오해될 수 있는 표현은 직접 trait화하지 않고 감정 과부하와 회복 전략으로 완화해 반영함",
+      "관계 설명은 원문에 있는 유형별 관계명을 모두 notablePairs에 정리하고 리포트용 문장으로 재작성함"
+    ]
+  }
+}
