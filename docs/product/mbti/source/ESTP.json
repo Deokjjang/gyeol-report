@@ -1,0 +1,1711 @@
+﻿{
+  "type": "ESTP",
+  "titleKo": "모험을 즐기는 사업가",
+  "archetype": "현장형 문제해결사",
+  "oneLine": "지금 눈앞의 현실을 빠르게 읽고, 말보다 행동으로 기회를 잡아 문제를 해결하는 활동형 승부사",
+  "sourceStatus": {
+    "rawSourceWasProvidedByUser": true,
+    "rawTextStoredVerbatim": false,
+    "cleanedAndRewritten": true,
+    "notes": "원문을 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+  },
+  "preferenceAxes": {
+    "energy": "E",
+    "perception": "S",
+    "judgment": "T",
+    "lifestyle": "P"
+  },
+  "functionStack": {
+    "dominant": "Se",
+    "auxiliary": "Ti",
+    "tertiary": "Fe",
+    "inferior": "Ni"
+  },
+  "closeKeywords": [
+    "가벼운 대화",
+    "개방적",
+    "객관적",
+    "결과 중심적",
+    "낙천적",
+    "다수와 넓은 교류",
+    "단순함",
+    "내기",
+    "모험",
+    "민첩성",
+    "사실 중심적",
+    "솔직함",
+    "순발력",
+    "신속함",
+    "유흥",
+    "융통성",
+    "임기응변",
+    "자극 추구",
+    "자기애",
+    "자기 주장",
+    "자유 추구",
+    "적응력",
+    "직설적",
+    "쾌락주의",
+    "합리적 판단",
+    "현실주의",
+    "현실적 계산",
+    "현재지향적",
+    "활동적",
+    "효율적"
+  ],
+  "farKeywords": [
+    "감정 이입",
+    "감성팔이",
+    "거시적 안목",
+    "계획과 체계",
+    "국제 정치",
+    "규칙과 규율",
+    "깊이 있는 대화",
+    "끈기",
+    "다원주의",
+    "뒤끝",
+    "뜬구름 잡는 소리",
+    "목표지향적",
+    "미래지향적",
+    "보수적",
+    "부조리",
+    "브레인스토밍",
+    "돌려 말하기",
+    "우유부단",
+    "원칙",
+    "위계질서",
+    "이상주의",
+    "인내심",
+    "장기 집중력",
+    "장문의 글",
+    "집단주의",
+    "책임감",
+    "철학적 사고",
+    "추상적 사고",
+    "통제와 간섭",
+    "포커페이스"
+  ],
+  "summary": {
+    "identity": "ESTP는 현실 감각, 순발력, 관찰력, 적응력이 강한 현장형 유형이다. 긴 설명과 추상적 이론보다 지금 보고 듣고 만질 수 있는 경험을 믿고, 문제 앞에서는 빠르게 움직이며 타협책을 찾는다.",
+    "strength": "위기 대처, 임기응변, 활동성, 유머, 사회적 적응력, 오감 기반 판단이 강점이다. 사람과 상황을 선입견 없이 보고, 숨은 의도와 분위기를 빨리 읽어 실전에서 기회를 잡는다.",
+    "risk": "장기 계획, 깊은 감정 공감, 규칙적 지속성, 추상적 사고에는 취약하다. 자극과 자유를 너무 강하게 좇으면 말썽을 만들거나 관계에서 선을 넘고, 책임과 미래 준비가 뒤로 밀릴 수 있다.",
+    "growthStrategy": "순간의 감각과 행동력을 잃지 않되, 장기 목표를 작게 쪼개 꾸준히 관리해야 한다. 직설적 말과 과감한 행동이 주변에 어떤 영향을 주는지 한 번 더 확인하고, 자유와 책임을 함께 설계할 때 성숙해진다."
+  },
+  "traits": {
+    "identity": [
+      {
+        "id": "action_first_realist",
+        "label": "행동형 현실주의",
+        "plainKo": "ESTP는 현실에서 바로 확인되는 사실과 경험을 신뢰한다. 추상적 설명보다 직접 뛰어들어 해 보고, 상황 속에서 몸으로 배우는 방식이 훨씬 잘 맞는다.",
+        "strongLine": "당신은 설명을 오래 듣기보다 현장에 들어가 직접 부딪힐 때 가장 빠르게 이해하는 사람입니다.",
+        "positiveUse": "현장 대응, 영업, 스포츠, 응급 상황, 체험형 학습에서 빠르게 감을 잡는다.",
+        "risk": "사전 검토와 장기 계획을 건너뛰면 눈앞의 상황은 해결해도 뒤의 부담을 키울 수 있다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "식신",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "sensory_thrill_seeker",
+        "label": "오감형 자극 추구",
+        "plainKo": "ESTP는 운동, 음식, 여행, 스릴, 무대, 활동처럼 오감으로 바로 느낄 수 있는 것을 즐긴다. 삶을 머리로 분석하기보다 몸으로 경험하며 현재를 강하게 산다.",
+        "strongLine": "당신은 살아 있다는 감각이 선명할수록 에너지가 살아나는 사람입니다.",
+        "positiveUse": "활동형 직업, 스포츠, 여행, 공연, 라이브 콘텐츠, 체험형 관계에서 매력이 드러난다.",
+        "risk": "자극이 부족하면 쉽게 지루해하고, 더 강한 자극을 찾다가 무리한 선택을 할 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "역마",
+          "식신"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "open_minded_adapter",
+        "label": "개방적 적응력",
+        "plainKo": "ESTP는 사람이나 사물에 대한 선입견이 적고 관대한 편이다. 기준에 맞지 않는 사람과도 의외로 잘 지내며, 낯선 상황에서도 빠르게 분위기에 적응한다.",
+        "strongLine": "당신은 사람을 미리 재단하기보다 일단 만나 보고 상황 속에서 판단하는 쪽입니다.",
+        "positiveUse": "새로운 사람, 낯선 장소, 돌발 상황, 다양한 현장 네트워크에 강하다.",
+        "risk": "경계가 느슨해지면 위험 신호를 가볍게 넘기거나 책임 없는 관계에 휘말릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "비견",
+          "목"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "playful_center_stage",
+        "label": "무대 중심성",
+        "plainKo": "ESTP는 센스 있고 유머러스하며 관심을 즐기는 면이 있다. 사람들 사이에서 분위기를 띄우고, 직설적이고 가벼운 대화로 장면의 중심에 서기 쉽다.",
+        "strongLine": "당신은 조용히 배경에 머무르기보다 순간의 분위기를 장악해 사람들을 끌어당기는 쪽입니다.",
+        "positiveUse": "방송, 강의, 영업, 이벤트, 팀 활동에서 사람들의 주목과 반응을 끌어낸다.",
+        "risk": "관심과 웃음을 얻으려다 말이 거칠어지거나 상대의 감정을 놓칠 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "홍염",
+          "상관"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "freedom_over_control",
+        "label": "자유 우선",
+        "plainKo": "ESTP는 개방적이고 자유를 강하게 추구한다. 억압당하거나 소유당하는 느낌을 견디기 어렵고, 규칙과 통제가 과한 환경에서는 에너지가 급격히 떨어진다.",
+        "strongLine": "당신에게 자유는 선택지가 아니라 숨 쉴 공간에 가깝습니다.",
+        "positiveUse": "자율성이 보장된 현장, 활동, 관계에서 생동감과 추진력이 살아난다.",
+        "risk": "구속을 싫어하는 마음이 책임 회피처럼 보이거나 장기 관계의 안정감을 흔들 수 있다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "상관",
+          "비견"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "trouble_and_solution",
+        "label": "문제해결과 말썽",
+        "plainKo": "ESTP는 문제를 해결하는 능력이 뛰어나지만, 동시에 과감함과 자극 추구 때문에 문제를 만들기도 쉽다. 잘 쓰이면 해결사, 과하면 말썽꾸러기처럼 보인다.",
+        "strongLine": "당신은 위기를 뚫는 힘과 위기를 불러오는 힘을 동시에 가진 사람입니다.",
+        "positiveUse": "막힌 상황에서 빠른 판단과 행동으로 돌파구를 만든다.",
+        "risk": "즉흥성과 무모함이 커지면 주변에 부담을 주고 신뢰를 잃을 수 있다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "편관",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "thinkingStyle": [
+      {
+        "id": "se_now_data",
+        "label": "현재 데이터 감각",
+        "plainKo": "주기능 Se는 ESTP가 눈앞의 장면, 표정, 움직임, 냄새, 소리, 촉감 같은 현재 데이터를 빠르게 받아들이게 만든다. 그래서 분위기와 맥락을 몸으로 먼저 읽는다.",
+        "strongLine": "당신은 말로 설명되지 않은 현장의 신호를 눈과 몸으로 먼저 잡아내는 사람입니다.",
+        "positiveUse": "응급 대응, 경기, 협상, 방송, 현장 영업처럼 실시간 판단이 필요한 곳에서 강하다.",
+        "risk": "지금 보이는 정보에 강하게 반응해 보이지 않는 장기 흐름을 놓칠 수 있다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "도화",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "investment"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "ti_practical_analysis",
+        "label": "실용적 분석",
+        "plainKo": "부기능 Ti는 ESTP가 현실적이고 실용적인 문제에 대해 논리적으로 따져보게 한다. 다만 추상 이론보다 실제로 이해되고 작동하는 원리일 때 분석력이 살아난다.",
+        "strongLine": "당신의 논리는 책상 위 이론보다 현장에서 작동하는 원리를 향합니다.",
+        "positiveUse": "도구, 장비, 운동 기술, 게임 전략, 현장 문제의 원인을 빠르게 파악한다.",
+        "risk": "직접 경험으로 납득되지 않는 개념은 너무 빨리 무시할 수 있다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "현침살",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "fast_decision_objectivity",
+        "label": "빠른 객관 판단",
+        "plainKo": "ESTP는 감정보다 객관성과 결과를 보고 결정하려 한다. 생각과 행동이 빠르고 현실적이어서 우유부단하거나 감정적인 사람에게 답답함을 느끼기 쉽다.",
+        "strongLine": "당신은 망설이는 시간보다 바로 판단하고 움직이는 시간이 더 자연스러운 사람입니다.",
+        "positiveUse": "위기 대응, 경기 운영, 영업 현장, 갈등 상황에서 시간을 끌지 않는다.",
+        "risk": "상대가 감정을 정리할 시간을 필요로 할 때 재촉하거나 무심하게 보일 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "상관",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "weak_ni_long_term_gap",
+        "label": "장기전 약점",
+        "plainKo": "열등 Ni 때문에 ESTP는 단기전과 순간 대응에는 강하지만 장기적 목표, 미래 예측, 긴 집중에는 취약해지기 쉽다. 멀리 있는 위험보다 지금의 기회가 더 선명하게 보인다.",
+        "strongLine": "당신은 단기 승부에는 강하지만, 장기전은 의식적으로 구조를 짜야 버틸 수 있습니다.",
+        "positiveUse": "짧고 명확한 목표를 빠르게 달성하는 데 강하다.",
+        "risk": "미래 준비를 미루다가 중요한 책임과 관계의 누적 문제를 뒤늦게 맞닥뜨릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "study",
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "fe_social_adjustment",
+        "label": "사회적 조율",
+        "plainKo": "3차 Fe는 ESTP가 타인의 시선과 분위기를 읽고 태도를 조절하게 해준다. 평소에는 직설적이지만, 필요할 때는 말과 행동의 강도를 낮출 수 있다.",
+        "strongLine": "당신은 거칠게만 밀어붙이는 사람이 아니라, 필요하면 분위기에 맞춰 톤을 바꿀 줄 아는 사람입니다.",
+        "positiveUse": "농담, 친화력, 무대 감각, 관계 적응력을 통해 사람들과 빠르게 가까워진다.",
+        "risk": "분위기를 맞추는 능력을 순간적 매력으로만 쓰면 깊은 신뢰 형성은 약해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "홍염",
+          "식신"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "career": [
+      {
+        "id": "live_content_fit",
+        "label": "라이브 콘텐츠",
+        "plainKo": "ESTP는 무대 중심성, 유머, 순발력, 오감형 반응이 강해 인터넷 방송인처럼 실시간 반응과 현장감이 중요한 직업과 맞는다.",
+        "strongLine": "당신은 준비된 대본보다 살아 있는 반응이 오가는 장면에서 매력이 터지는 사람입니다.",
+        "positiveUse": "인터넷 방송, 진행, 이벤트, 라이브 커머스, 활동형 콘텐츠에서 강하다.",
+        "risk": "순간 반응을 좇다가 발언 수위나 관계 선을 넘을 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "홍염",
+          "상관"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "fitness_sports_fit",
+        "label": "운동과 피트니스",
+        "plainKo": "ESTP는 신체 감각, 민첩성, 승부 감각, 활동성이 강하다. 피트니스 트레이너, 운동선수처럼 몸을 쓰고 즉각 피드백을 받는 분야와 잘 맞는다.",
+        "strongLine": "당신은 몸으로 성과를 확인할 수 있는 분야에서 집중력과 에너지가 살아납니다.",
+        "positiveUse": "스포츠, 트레이닝, 체육 교육, 액티비티 코칭에서 실력을 발휘한다.",
+        "risk": "무리한 경쟁이나 즉흥적 위험 감수가 부상과 피로로 이어질 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "화",
+          "역마"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "field_emergency_fit",
+        "label": "현장 응급",
+        "plainKo": "ESTP는 빠른 상황 판단과 현실 대응력이 강해 간호사, 응급구조사, 직업군인처럼 현장에서 바로 판단하고 움직여야 하는 일과 맞는다.",
+        "strongLine": "당신은 긴 회의보다 현장에서 바로 판단해야 하는 순간에 더 강해집니다.",
+        "positiveUse": "응급구조, 현장 의료, 군, 안전 대응, 위기 관리에서 순발력을 발휘한다.",
+        "risk": "긴장감이 큰 환경에서 자극을 즐기다 휴식과 장기 관리가 밀릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "귀인",
+          "화"
+        ],
+        "productDomains": [
+          "career",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "teacher_activity_fit",
+        "label": "활동형 교육",
+        "plainKo": "원문은 ESTP 교사가 학생의 학교 적응에 긍정적으로 작용한다고 언급한다. ESTP는 딱딱한 설명보다 생생한 사례와 활동으로 학생을 끌어들이는 교육에 강하다.",
+        "strongLine": "당신은 긴 설명보다 현장감 있는 예시와 활동으로 배우는 사람을 깨우는 교육자에 가깝습니다.",
+        "positiveUse": "교사, 강사, 체험형 수업, 실습 교육, 스포츠 교육에서 강하다.",
+        "risk": "장문 설명과 체계적 반복이 필요한 학생에게는 성급하거나 가볍게 보일 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "문창",
+          "도화"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "travel_game_handson_fit",
+        "label": "여행·게임·현장",
+        "plainKo": "ESTP는 여행 가이드, 프로게이머, 3D 업종처럼 움직임, 감각, 빠른 판단, 현장 적응이 필요한 일에서 강점을 낸다.",
+        "strongLine": "당신은 정적인 책상보다 움직이는 현장에서 길과 기회를 찾는 사람입니다.",
+        "positiveUse": "여행 가이드, 프로게이머, 현장 기술직, 야외 활동 직무에서 적응력이 살아난다.",
+        "risk": "반복 행정, 장기 계획, 세밀한 문서 관리가 많아지면 급격히 지루해진다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "지살",
+          "식신"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "workplace": [
+      {
+        "id": "crisis_solver",
+        "label": "위기 해결사",
+        "plainKo": "ESTP는 예기치 않은 문제가 터졌을 때 빠르게 판단하고 움직인다. 복잡한 설명보다 현장을 보고 타협책을 찾는 데 강하다.",
+        "strongLine": "당신은 계획이 무너진 순간에도 현장을 보고 바로 다음 수를 찾는 사람입니다.",
+        "positiveUse": "돌발 변수, 고객 대응, 현장 사고, 경기와 협상에서 신속히 수습한다.",
+        "risk": "위기를 잘 해결한다는 자신감 때문에 사전 예방과 체계 관리가 약해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "상관",
+          "화"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "low_tolerance_for_boredom",
+        "label": "지루함 취약",
+        "plainKo": "ESTP는 이론적이고 추상적인 토론, 긴 설명, 장문의 글, 반복적 업무에 쉽게 지루함을 느낀다. 움직임과 즉각 피드백이 있는 환경에서 집중력이 살아난다.",
+        "strongLine": "당신의 집중력은 고요한 반복보다 움직이는 장면에서 훨씬 강해집니다.",
+        "positiveUse": "짧은 주기의 목표, 현장 활동, 사람과 접촉하는 업무에서 에너지가 유지된다.",
+        "risk": "꾸준함이 필요한 장기 프로젝트에서는 쉽게 흥미가 떨어진다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "상관",
+          "화"
+        ],
+        "productDomains": [
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "flexible_negotiator",
+        "label": "타협책 탐색",
+        "plainKo": "ESTP는 강한 현실 감각으로 완벽한 원칙보다 지금 가능한 타협책을 찾는다. 현장의 제약 안에서 작동하는 방법을 찾아내는 데 능하다.",
+        "strongLine": "당신은 정답을 고집하기보다 지금 이 상황에서 통하는 해법을 찾아내는 사람입니다.",
+        "positiveUse": "협상, 고객 응대, 현장 운영, 위기 조정에서 실용적인 절충안을 만든다.",
+        "risk": "장기적 원칙이나 신뢰보다 순간의 해결만 우선할 수 있다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "상관",
+          "토"
+        ],
+        "productDomains": [
+          "career",
+          "money",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "visible_charisma",
+        "label": "가시적 카리스마",
+        "plainKo": "ESTP는 활력 있고 사교적이며 행동으로 사람을 끌어당긴다. TP 유형 중 관계 형성이 수월한 편이고, 우두머리나 행동대장처럼 보일 수 있다.",
+        "strongLine": "당신은 말로 설계도를 설명하기보다 먼저 움직여 사람들을 따라오게 만드는 쪽입니다.",
+        "positiveUse": "팀의 현장 분위기와 실행 속도를 끌어올린다.",
+        "risk": "카리스마가 강해질수록 주변이 무리한 행동까지 따라가게 만들 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "비견",
+          "편관"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "money": [
+      {
+        "id": "high_income_action_drive",
+        "label": "활동형 수입력",
+        "plainKo": "원문은 ESTP의 평균 소득이 높은 편이라고 제시한다. 이는 사람을 만나고 기회를 포착하며, 현장에서 빠르게 움직이는 활동형 수입력과 연결된다.",
+        "strongLine": "당신은 책상 위 계획보다 사람과 현장 속에서 돈의 기회를 잡기 쉬운 사람입니다.",
+        "positiveUse": "영업, 방송, 피트니스, 현장 서비스, 이벤트, 이동형 직업에서 수입 기회를 만든다.",
+        "risk": "수입이 들어와도 즉각적 즐거움과 자극에 지출이 커질 수 있다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "식신",
+          "역마"
+        ],
+        "productDomains": [
+          "money",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "pleasure_spending_risk",
+        "label": "쾌락 지출",
+        "plainKo": "ESTP는 음식, 유흥, 운동, 여행, 스릴처럼 현재의 즐거움에 돈을 쓰기 쉽다. 돈은 안정의 상징이라기보다 지금의 경험을 넓히는 도구로 느껴진다.",
+        "strongLine": "당신에게 돈은 묶어두는 것보다 지금 더 생생한 경험을 열어주는 수단으로 느껴지기 쉽습니다.",
+        "positiveUse": "삶의 만족도와 관계 경험을 풍부하게 만드는 소비 감각이 있다.",
+        "risk": "장기 저축과 책임 지출이 뒤로 밀리면 미래의 선택지가 줄어든다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "편재",
+          "도화"
+        ],
+        "productDomains": [
+          "money",
+          "love",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "investment": [
+      {
+        "id": "risk_appetite",
+        "label": "위험 감수",
+        "plainKo": "ESTP는 내기, 스릴, 모험, 현실적 계산에 끌리는 성향이 있어 투자에서도 빠른 판단과 기회 포착에 강하지만 위험을 크게 잡을 수 있다.",
+        "strongLine": "당신은 기회가 보이면 망설이기보다 먼저 움직이는 투자 감각을 가질 수 있습니다.",
+        "positiveUse": "시장 변화, 현장 정보, 단기 기회, 실물 감각을 빠르게 포착한다.",
+        "risk": "도박적 판단과 과도한 자신감이 손실을 키울 수 있으므로 투자 수익을 보장하듯 판단하면 안 된다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "상관",
+          "화"
+        ],
+        "productDomains": [
+          "investment",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "short_term_market_sense",
+        "label": "단기 감각",
+        "plainKo": "ESTP는 단기전과 순간 대응에 특화되어 있어 빠르게 변하는 흐름을 읽는 감각이 있다. 반대로 장기 계획과 꾸준한 리밸런싱은 의식적으로 보완해야 한다.",
+        "strongLine": "당신의 강점은 빠른 감각이고, 보완점은 그 감각을 장기 규칙 안에 묶는 일입니다.",
+        "positiveUse": "짧은 주기의 시장 흐름, 협상, 가격 변동, 실물 기회를 빠르게 읽는다.",
+        "risk": "단기 판단만 반복하면 전체 자산 구조와 위험 관리가 느슨해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "현침살",
+          "정재"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
+      }
+    ],
+    "study": [
+      {
+        "id": "experiential_learning",
+        "label": "체험형 학습",
+        "plainKo": "ESTP는 사전 이론 공부보다 직접 뛰어들어 체험으로 배우는 편이 잘 맞는다. 실습, 실전, 사례, 게임화된 학습에서 이해 속도가 빨라진다.",
+        "strongLine": "당신은 오래 읽는 공부보다 직접 해 보는 순간 학습이 몸에 들어옵니다.",
+        "positiveUse": "실습 과목, 체육, 현장 훈련, 시뮬레이션, 프로젝트형 수업에 강하다.",
+        "risk": "이론 정리와 장문 독해를 소홀히 하면 시험형 성과가 흔들릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "역마",
+          "화"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "short_goal_strategy",
+        "label": "단기 목표 전략",
+        "plainKo": "원문은 xSxP 중 수학 성적이 약한 경우 장기와 단기 목표를 나누어 꾸준히 실천하는 전략이 필요하다고 제시한다. ESTP에게는 짧고 선명한 목표가 특히 중요하다.",
+        "strongLine": "당신의 공부는 긴 결심보다 오늘 끝낼 짧은 목표로 쪼갤 때 작동합니다.",
+        "positiveUse": "짧은 문제풀이, 체크리스트, 즉각 보상, 단계별 실습으로 성과를 올린다.",
+        "risk": "목표가 멀고 추상적이면 흥미가 빠르게 꺼진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "편인",
+          "토"
+        ],
+        "productDomains": [
+          "study",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "low_gpa_but_practical_skill",
+        "label": "성적보다 실전",
+        "plainKo": "원문은 ESTP의 평균 학점이 낮은 편이라고 언급하지만, 이는 능력 부족보다 이론과 장기 집중 중심의 환경과 맞지 않는 면이 크다. 실제 문제 해결과 활동형 과제에서는 다른 방식의 실력이 드러난다.",
+        "strongLine": "당신의 실력은 조용한 강의실보다 움직이는 현장에서 더 정확히 드러납니다.",
+        "positiveUse": "실무, 실습, 발표, 팀 활동, 현장 평가에서 강점을 낸다.",
+        "risk": "학점과 자격이 필요한 경로에서는 꾸준한 학습 구조를 의식적으로 만들어야 한다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "상관",
+          "편관"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "love": [
+      {
+        "id": "fun_active_love",
+        "label": "재미 중심 연애",
+        "plainKo": "ESTP는 가볍고 재미있는 연애를 선호한다. 함께 운동하고 맛집을 다니고 새로운 활동을 하는 관계에서 애정과 활력이 살아난다.",
+        "strongLine": "당신의 연애는 깊은 설명보다 함께 움직이고 웃는 시간에서 뜨거워집니다.",
+        "positiveUse": "데이트를 생동감 있게 만들고 관계에 활력을 준다.",
+        "risk": "관계의 깊은 대화와 감정 정리를 뒤로 미루면 상대가 가볍게 느낄 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "식신",
+          "역마"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "freedom_in_love",
+        "label": "구속 취약",
+        "plainKo": "ESTP는 자유로운 영혼에 가깝다. 연인이 구속하거나 소유하려 들면 관계 자체가 빠르게 틀어질 수 있다.",
+        "strongLine": "당신은 사랑받고 싶지만, 사랑이라는 이름으로 묶이는 순간 마음이 멀어집니다.",
+        "positiveUse": "각자의 활동과 사람 관계를 존중하는 연애에서 오래 생동감 있게 지낸다.",
+        "risk": "자유를 강조하다 상대에게 불안과 질투를 만들 수 있다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "상관",
+          "비견"
+        ],
+        "productDomains": [
+          "love",
+          "marriage",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "active_affection",
+        "label": "적극적 애정",
+        "plainKo": "ESTP는 애정 표현과 스킨십에도 적극적인 편이다. 마음을 무겁게 설명하기보다 직접적인 관심, 장난, 행동, 신체적 친밀감으로 표현한다.",
+        "strongLine": "당신의 애정은 조용한 고백보다 가까이 다가가고 함께 즐기는 행동으로 먼저 드러납니다.",
+        "positiveUse": "연애 초반의 긴장감을 풀고 관계의 물리적 친밀감을 빠르게 높인다.",
+        "risk": "상대의 속도와 경계를 충분히 확인하지 않으면 부담으로 닿을 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "홍염",
+          "식신"
+        ],
+        "productDomains": [
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "social_boundary_issue",
+        "label": "이성 관계 경계",
+        "plainKo": "ESTP는 주변 사람들에게 관심이 많고 넓게 어울리기 쉬워 연애에서 남사친, 여사친 문제로 다툴 수 있다.",
+        "strongLine": "당신의 넓은 친화력은 매력이지만, 연인에게는 불안의 신호로 보일 수 있습니다.",
+        "positiveUse": "사람들과 자연스럽게 어울리며 관계에 활기를 만든다.",
+        "risk": "연인의 감정적 안전감을 충분히 챙기지 않으면 불필요한 질투와 갈등이 생긴다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "비견",
+          "겁재"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "marriage": [
+      {
+        "id": "dynamic_marriage",
+        "label": "역동적 결혼",
+        "plainKo": "ESTP는 결혼에서도 지나치게 정적이고 규칙적인 생활보다 함께 즐기고 움직이는 리듬이 필요하다. 활동과 자유가 사라지면 관계가 답답해진다.",
+        "strongLine": "당신에게 결혼은 멈추는 것이 아니라 함께 더 넓게 움직일 수 있어야 오래갑니다.",
+        "positiveUse": "부부 생활에 여행, 운동, 취미, 사람 만남을 넣어 활력을 만든다.",
+        "risk": "생활 책임과 장기 계획을 상대에게 미루면 불균형이 커진다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "식신",
+          "편재"
+        ],
+        "productDomains": [
+          "marriage",
+          "love"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "commitment_structure_need",
+        "label": "책임 구조 필요",
+        "plainKo": "ESTP는 자유를 원하지만 장기 관계에서는 최소한의 약속, 재정, 생활 책임 구조가 필요하다. 이 구조가 없으면 순간의 즐거움이 관계의 안정성을 흔든다.",
+        "strongLine": "당신의 결혼이 자유를 지키려면 오히려 최소한의 책임 구조가 필요합니다.",
+        "positiveUse": "활동적이고 유쾌한 관계를 유지하면서도 지켜야 할 약속을 선명하게 만든다.",
+        "risk": "규칙을 모두 구속으로 느끼면 배우자의 불안이 커진다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "토"
+        ],
+        "productDomains": [
+          "marriage",
+          "money",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
+      }
+    ],
+    "parenting": [
+      {
+        "id": "free_parenting",
+        "label": "자유로운 양육",
+        "plainKo": "ESTP 부모는 자녀를 과하게 통제하기보다 개방적이고 자유롭게 키우는 편이다. 자녀가 직접 경험하고 인생을 즐기며 살도록 장려한다.",
+        "strongLine": "ESTP 부모는 아이에게 규칙보다 먼저 세상을 직접 경험할 용기를 주는 쪽입니다.",
+        "positiveUse": "자녀가 활동성, 독립성, 생활력, 도전 감각을 키우도록 돕는다.",
+        "risk": "규칙과 장기 습관 형성이 부족하면 자녀가 생활 구조를 놓칠 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "역마",
+          "목"
+        ],
+        "productDomains": [
+          "parenting",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "adventure_parent",
+        "label": "모험 동행 부모",
+        "plainKo": "ESTP 부모는 자녀와 여행을 많이 다니고, 자녀가 모험을 즐길 때 함께 도와주는 편이다. 아이의 세계를 넓히는 경험형 양육을 선호한다.",
+        "strongLine": "당신은 아이에게 조심하라고만 말하기보다 함께 나가 세상을 보여주는 부모가 되기 쉽습니다.",
+        "positiveUse": "여행, 스포츠, 체험 활동을 통해 자녀의 자신감과 적응력을 키운다.",
+        "risk": "안전 기준과 회복 시간을 충분히 챙기지 않으면 과한 자극이 될 수 있다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "지살",
+          "귀인"
+        ],
+        "productDomains": [
+          "parenting",
+          "child",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "self_development_support",
+        "label": "자기계발 지원",
+        "plainKo": "ESTP 부모는 자녀의 자기계발을 실제 활동과 기회로 도와주는 편이다. 말로만 응원하기보다 필요한 경험을 열어준다.",
+        "strongLine": "당신은 아이에게 가능성을 설명하기보다 해 볼 수 있는 장을 만들어주는 부모입니다.",
+        "positiveUse": "운동, 취미, 현장 경험, 사람 만남을 통해 아이의 능력을 키운다.",
+        "risk": "아이가 진지한 대화나 정서적 지지를 원할 때 활동 제안으로만 대응할 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "편재",
+          "귀인"
+        ],
+        "productDomains": [
+          "parenting",
+          "child",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "child": [
+      {
+        "id": "bet_and_play_child",
+        "label": "놀이와 내기",
+        "plainKo": "ESTP 아이는 내기를 좋아하고 인생을 즐기는 쪽으로 성장하기 쉽다. 놀이, 경쟁, 즉각적인 재미가 동기부여가 된다.",
+        "strongLine": "ESTP 아이는 재미와 승부가 붙으면 에너지가 살아나는 아이입니다.",
+        "positiveUse": "게임, 스포츠, 활동형 학습에서 몰입도가 높다.",
+        "risk": "재미가 없으면 쉽게 흥미를 잃고, 위험한 장난으로 주목을 끌 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "편관",
+          "화"
+        ],
+        "productDomains": [
+          "child",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "easygoing_friend_child",
+        "label": "관대한 친구",
+        "plainKo": "ESTP 아이는 친구들에게 관대한 편이고 갈등이 생겨도 크게 대수롭지 않게 넘긴다. 유쾌하고 씩씩한 아이로 보이는 경우가 많다.",
+        "strongLine": "ESTP 아이는 작은 갈등에 오래 머물기보다 다시 놀고 움직이려는 회복력이 강합니다.",
+        "positiveUse": "친구들과 빠르게 어울리고 분위기를 밝게 만든다.",
+        "risk": "자신의 말이나 행동이 친구에게 남긴 상처를 가볍게 넘길 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "식신",
+          "비견"
+        ],
+        "productDomains": [
+          "child",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "serious_talk_avoidance_child",
+        "label": "진지함 회피",
+        "plainKo": "ESTP 아이는 진지하고 긴 이야기를 좋아하지 않는다. 짧고 명확한 말, 직접 해 보는 활동, 즉각적인 피드백이 더 잘 통한다.",
+        "strongLine": "ESTP 아이에게 긴 설교보다 짧은 말과 바로 해 보는 경험이 훨씬 잘 먹힙니다.",
+        "positiveUse": "활동형 지도와 실전 피드백으로 빠르게 배운다.",
+        "risk": "감정 대화와 책임 설명을 계속 피하면 중요한 관계 수업을 놓친다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "식신",
+          "화"
+        ],
+        "productDomains": [
+          "child",
+          "parenting",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "happy_active_child",
+        "label": "활동적 행복감",
+        "plainKo": "원문은 건강한 ESTP 아이가 가장 행복한 유형에 가깝고, 유쾌하고 씩씩하게 성장하는 경우가 많다고 제시한다. 활발한 환경과 활동의 폭이 중요하다.",
+        "strongLine": "ESTP 아이는 몸을 움직이고 사람을 만나고 새로운 장면을 경험할 때 가장 밝게 자랍니다.",
+        "positiveUse": "활동적 환경에서 자신감과 사회성이 빠르게 자란다.",
+        "risk": "움직임을 과도하게 막으면 반항이나 무기력으로 드러날 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "도화",
+          "역마"
+        ],
+        "productDomains": [
+          "child",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "wide_social_circle",
+        "label": "넓은 교류",
+        "plainKo": "ESTP는 친구와 어울리기를 좋아하고 다수와 넓게 교류한다. 사람들 속에서 에너지가 살아나며, 낯선 사람과도 비교적 쉽게 친해진다.",
+        "strongLine": "당신은 관계를 오래 생각하기보다 함께 웃고 움직이면서 가까워지는 사람입니다.",
+        "positiveUse": "새로운 네트워크, 모임, 팀 활동에서 빠르게 관계를 만든다.",
+        "risk": "넓은 관계가 깊은 책임과 감정 돌봄을 대신할 수는 없다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "비견",
+          "식신"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "slow_to_cut_off",
+        "label": "늦지만 단호한 손절",
+        "plainKo": "ESTP는 절교까지 오래 걸리지만, 여러 번 선을 넘는 상대라고 판단하면 감정에 끌리지 않고 빠르게 이성적 판단을 실행한다.",
+        "strongLine": "당신은 한두 번은 넘기지만, 말이 통하지 않는다고 판단한 순간 관계를 냉정하게 정리할 수 있습니다.",
+        "positiveUse": "작은 갈등에 매달리지 않고, 반복적으로 해로운 관계는 단호히 끊는다.",
+        "risk": "정리 후 회복이 어려워 상대가 돌이킬 기회를 얻기 힘들 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "현침살",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "intent_reader",
+        "label": "의도 포착",
+        "plainKo": "ESTP는 타인의 행동 변화, 옷차림, 미세한 표정 변화를 잘 포착한다. 선입견 없이 관찰하고 분석해 상대의 숨은 의도나 감정을 읽어내는 재주가 있다.",
+        "strongLine": "당신은 사람이 말하지 않은 의도도 표정과 행동의 작은 변화에서 눈치챌 수 있습니다.",
+        "positiveUse": "협상, 연애, 영업, 팀 분위기 파악에서 빠르게 맥락을 읽는다.",
+        "risk": "빠른 촉을 과신하면 확인하지 않은 의도를 사실처럼 받아들일 수 있다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "도화",
+          "편인"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "low_grudge_high_motion",
+        "label": "뒤끝보다 움직임",
+        "plainKo": "ESTP는 뒤끝이 길기보다 갈등을 대수롭지 않게 넘기고 다시 움직이는 편이다. 관계를 무겁게 해석하기보다 현재의 분위기와 행동으로 회복하려 한다.",
+        "strongLine": "당신은 오래 곱씹기보다 다시 만나고 움직이며 관계를 회복하려는 쪽입니다.",
+        "positiveUse": "관계의 긴장을 빠르게 풀고 분위기를 되살린다.",
+        "risk": "상대에게는 충분히 사과하거나 설명하지 않은 채 넘어가려는 사람으로 보일 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "상관",
+          "목"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "communication": [
+      {
+        "id": "straight_humor",
+        "label": "직설적 유머",
+        "plainKo": "ESTP는 직설적인 유머감각을 가지고 있다. 말을 빙빙 돌리기보다 바로 던지고, 장면을 가볍게 만들며 사람들의 반응을 즐긴다.",
+        "strongLine": "당신의 말은 빠르고 솔직하며, 웃기기 위해서도 정면으로 들어가는 편입니다.",
+        "positiveUse": "긴장된 분위기를 풀고 사람들과 빠르게 가까워진다.",
+        "risk": "농담이 상대의 경계를 넘으면 무례함으로 받아들여진다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "도화",
+          "현침살"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "short_explanation_preference",
+        "label": "짧은 설명 선호",
+        "plainKo": "ESTP는 긴 설명과 장문의 글을 싫어한다. 핵심만 말하고 바로 해 보는 방식이 대화와 학습 모두에서 잘 맞는다.",
+        "strongLine": "당신에게 좋은 설명은 길고 정교한 말보다 바로 움직일 수 있게 해 주는 짧은 핵심입니다.",
+        "positiveUse": "회의와 교육에서 빠르게 핵심을 잡고 행동으로 옮긴다.",
+        "risk": "충분한 설명이 필요한 사람을 답답해하거나 중요한 맥락을 생략할 수 있다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "식신",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "no_poker_face",
+        "label": "표정이 드러남",
+        "plainKo": "원문에서 포커페이스는 먼 키워드로 제시된다. ESTP는 감정이나 반응이 얼굴과 행동에 비교적 빨리 드러나며, 이 덕분에 생동감 있지만 숨기기는 어렵다.",
+        "strongLine": "당신은 마음과 반응이 얼굴과 행동에 빨리 올라오는 생생한 사람입니다.",
+        "positiveUse": "진솔하고 활기 있는 인상을 주며 관계의 분위기를 빠르게 만든다.",
+        "risk": "불쾌감이나 지루함도 쉽게 드러나 상대가 상처받을 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "식신",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "emotion_impatience",
+        "label": "감정 대화 조급함",
+        "plainKo": "ESTP는 감정적이거나 우유부단한 사람에게 답답함을 느끼기 쉽다. 문제를 빨리 정리하고 움직이고 싶은데 상대가 감정에 머무르면 속도가 맞지 않는다.",
+        "strongLine": "당신은 감정이 길어질수록 해결해야 할 일만 더 선명하게 보이는 사람입니다.",
+        "positiveUse": "갈등을 장기화하지 않고 빠르게 다음 행동으로 넘어간다.",
+        "risk": "상대의 감정 처리 시간을 존중하지 않으면 공감 부족으로 받아들여진다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "금",
+          "상관"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "strengths": [
+      {
+        "id": "instant_adaptation",
+        "label": "즉시 적응",
+        "plainKo": "ESTP는 어디서든 적응을 잘한다. 낯선 사람, 낯선 장소, 돌발 변수 앞에서도 현재 상황을 빠르게 읽고 자기 방식으로 움직인다.",
+        "strongLine": "당신은 새로운 판에 던져져도 금방 흐름을 읽고 몸을 맞추는 사람입니다.",
+        "positiveUse": "현장 투입, 여행, 행사, 팀 이동, 새로운 시장 적응에 강하다.",
+        "risk": "적응력이 좋아 보이는 만큼 사전 준비의 중요성을 낮게 볼 수 있다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "지살",
+          "비견"
+        ],
+        "productDomains": [
+          "general",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "sharp_observation",
+        "label": "예리한 관찰",
+        "plainKo": "ESTP는 시각적 정보와 오감이 예민하게 발달되어 있어 작은 변화도 잘 포착한다. 이 관찰력은 사람의 의도와 현장의 위험을 읽는 데 도움이 된다.",
+        "strongLine": "당신은 남들이 지나친 작은 변화에서 상황의 핵심을 잡아낼 수 있습니다.",
+        "positiveUse": "협상, 스포츠, 응급, 영업, 콘텐츠 제작에서 현장 감각을 발휘한다.",
+        "risk": "관찰이 빠른 만큼 성급한 결론을 내릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "편인",
+          "금"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "fearless_initiative",
+        "label": "과감한 시작",
+        "plainKo": "ESTP는 모험과 스릴을 좋아하고, 기회가 보이면 빠르게 움직인다. 망설임이 적어 다른 사람이 머뭇거리는 장면에서 먼저 판을 연다.",
+        "strongLine": "당신은 완벽히 준비된 순간보다 기회가 열린 순간을 놓치지 않는 사람입니다.",
+        "positiveUse": "새로운 시장, 활동, 영업, 경기, 관계의 시작을 빠르게 만든다.",
+        "risk": "과감함이 무모함으로 바뀌면 손실과 관계 사고가 생긴다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "상관",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "investment"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "social_energy",
+        "label": "관계 에너지",
+        "plainKo": "ESTP는 사고형 중에서도 외향적 에너지가 강하다. 활동적이고 이성적인 판단을 하면서도 사람들과의 관계를 놓치지 않는다.",
+        "strongLine": "당신은 차갑게 계산만 하는 사람이 아니라, 사람들 속에서 계산과 행동을 동시에 굴리는 사람입니다.",
+        "positiveUse": "현장 리더, 행동대장, 활동형 팀원, 관계형 영업에서 강점이 된다.",
+        "risk": "관계가 넓어질수록 깊은 책임과 감정 정리는 부족해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "비견",
+          "식신"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "risks": [
+      {
+        "id": "impulsive_risk",
+        "label": "충동 위험",
+        "plainKo": "ESTP는 스릴과 내기를 좋아하고 빠르게 움직인다. 이 힘이 과해지면 자극을 좇는 선택이 커지고 위험을 과소평가할 수 있다.",
+        "strongLine": "당신의 속도는 강점이지만, 브레이크가 없으면 가장 큰 위험이 됩니다.",
+        "positiveUse": "순간 기회를 잡고 위기를 돌파한다.",
+        "risk": "무리한 승부, 과소비, 위험한 행동, 관계 선 넘기로 이어질 수 있다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "편관",
+          "겁재"
+        ],
+        "productDomains": [
+          "general",
+          "money",
+          "investment",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "low_long_term_persistence",
+        "label": "장기 지속력 약점",
+        "plainKo": "ESTP는 단기전에 강하지만 장기전에는 취약하다. 목표가 멀고 반복이 길어지면 흥미와 집중력이 떨어진다.",
+        "strongLine": "당신은 긴 길을 한 번에 보려 하면 지치지만, 짧은 구간으로 나누면 강하게 달릴 수 있습니다.",
+        "positiveUse": "짧은 승부, 빠른 결과, 단계별 성취에서는 높은 성과를 낸다.",
+        "risk": "장기 학업, 자산 계획, 결혼 생활, 커리어 축적에서 꾸준함이 약해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "정인",
+          "토"
+        ],
+        "productDomains": [
+          "study",
+          "career",
+          "marriage",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "emotional_bluntness",
+        "label": "정서 둔감",
+        "plainKo": "경험이 부족하거나 불건강한 ESTP는 자신의 말과 행동이 타인에게 어떤 영향을 주는지 덜 생각할 수 있다. 직설과 농담이 상처가 되는 지점을 놓치기 쉽다.",
+        "strongLine": "당신이 가볍게 던진 말이 상대에게는 오래 남는 상처가 될 수 있습니다.",
+        "positiveUse": "불필요한 감정 소모 없이 문제를 가볍게 넘기는 힘이 있다.",
+        "risk": "상대의 정서적 신호를 무시하면 관계 회복이 어려워진다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "현침살",
+          "금"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "freedom_responsibility_conflict",
+        "label": "자유와 책임 충돌",
+        "plainKo": "ESTP는 통제와 간섭을 싫어하지만, 관계와 일에서는 일정 수준의 책임이 필요하다. 자유 욕구가 책임을 밀어내면 신뢰가 흔들린다.",
+        "strongLine": "당신의 자유가 오래가려면 그 자유를 지킬 최소한의 책임이 함께 있어야 합니다.",
+        "positiveUse": "자율적인 환경에서 빠르게 성과를 낸다.",
+        "risk": "약속, 장기 계획, 재정 관리, 관계 안정성을 가볍게 볼 수 있다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "상관",
+          "정관"
+        ],
+        "productDomains": [
+          "love",
+          "marriage",
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "destructive_unhealthy_gap",
+        "label": "건강도 격차",
+        "plainKo": "원문은 ESTP가 건강할 때는 사회성 있고 활력 있는 모습이지만, 불건강할 때는 과격한 행동과 주변 파괴력이 커질 수 있다고 제시한다. 같은 에너지도 방향에 따라 매력과 위험이 갈린다.",
+        "strongLine": "당신의 에너지는 건강할 때 사람을 살리고, 무절제할 때 주변을 크게 흔듭니다.",
+        "positiveUse": "활력, 카리스마, 과감한 실행력으로 주변을 움직인다.",
+        "risk": "분노, 자극 추구, 무리한 행동이 과해지면 관계와 신뢰를 잃는다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "겁재",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "compatibility",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "growth": [
+      {
+        "id": "build_short_to_long_goals",
+        "label": "짧게 쪼개기",
+        "plainKo": "장기 목표를 막연히 세우기보다 오늘, 이번 주, 이번 달 단위로 잘라야 한다. 짧은 목표가 쌓이면 ESTP의 단기전 강점이 장기 성과로 바뀐다.",
+        "strongLine": "당신의 장기전은 멀리 버티는 힘이 아니라 짧은 승부를 계속 이어 붙이는 방식으로 만들어집니다.",
+        "positiveUse": "학업, 자격, 운동, 돈 관리, 커리어 축적에서 꾸준함을 만든다.",
+        "risk": "목표가 너무 멀고 추상적이면 금방 흥미를 잃는다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "study",
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "check_impact_before_action",
+        "label": "영향 확인",
+        "plainKo": "말과 행동을 하기 전 상대에게 어떤 영향을 줄지 한 번만 확인해도 ESTP의 매력은 훨씬 안전해진다. 속도를 낮추는 것이 아니라 사고를 줄이는 기술이다.",
+        "strongLine": "당신에게 필요한 것은 덜 과감해지는 것이 아니라, 과감하기 전에 한 번 더 확인하는 습관입니다.",
+        "positiveUse": "직설과 유머의 장점을 살리면서 관계 손상을 줄인다.",
+        "risk": "확인 없이 밀어붙이면 상처와 오해가 누적된다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "식신",
+          "수"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "design_responsible_freedom",
+        "label": "책임 있는 자유",
+        "plainKo": "ESTP에게 자유는 필수지만, 자유를 지키려면 최소한의 약속과 기준이 필요하다. 관계와 돈, 일에서 합의된 경계가 있어야 활동성이 오래 간다.",
+        "strongLine": "당신의 자유는 규칙이 없을 때가 아니라, 필요한 규칙만 스스로 선택할 때 가장 오래갑니다.",
+        "positiveUse": "자율성과 신뢰를 동시에 지킨다.",
+        "risk": "모든 기준을 구속으로 보면 주변은 불안해지고 본인도 선택지를 잃는다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "비견",
+          "토"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "marriage",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "use_observation_with_verification",
+        "label": "촉 검증",
+        "plainKo": "ESTP의 촉과 관찰력은 강하지만, 빠른 결론은 확인이 필요하다. 특히 사람의 의도와 감정은 관찰한 뒤 질문으로 검증해야 한다.",
+        "strongLine": "당신의 촉은 강력하지만, 진짜 실력은 그 촉을 확인하는 질문까지 붙일 때 완성됩니다.",
+        "positiveUse": "협상, 연애, 팀 관계에서 오해를 줄이고 정확도를 높인다.",
+        "risk": "확인 없는 촉은 상대를 오해하거나 관계를 불필요하게 흔든다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "편인",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
+      }
+    ]
+  },
+  "recommendedJobs": [
+    {
+      "job": "인터넷 방송인",
+      "reason": "실시간 반응, 유머, 무대 중심성, 사람들과의 즉각 교류가 ESTP의 강점과 맞는다.",
+      "matchingTraits": [
+        "live_content_fit",
+        "playful_center_stage",
+        "straight_humor"
+      ],
+      "matchingMyeongliSignals": [
+        "도화",
+        "홍염",
+        "상관"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "피트니스 트레이너",
+      "reason": "신체 감각, 활동성, 직접 피드백을 통한 지도 방식이 잘 맞는다.",
+      "matchingTraits": [
+        "fitness_sports_fit",
+        "sensory_thrill_seeker",
+        "teacher_activity_fit"
+      ],
+      "matchingMyeongliSignals": [
+        "식신",
+        "편관",
+        "화"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "교사 또는 강사",
+      "reason": "생생한 사례와 활동 중심의 교육으로 학생의 적응과 참여를 끌어낼 수 있다.",
+      "matchingTraits": [
+        "teacher_activity_fit",
+        "experiential_learning",
+        "visible_charisma"
+      ],
+      "matchingMyeongliSignals": [
+        "식신",
+        "문창",
+        "도화"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "현장 기술직",
+      "reason": "도구와 재료를 다루는 능력, 손과 몸으로 배우는 방식, 현장 적응력이 잘 맞는다.",
+      "matchingTraits": [
+        "travel_game_handson_fit",
+        "ti_practical_analysis",
+        "sharp_observation"
+      ],
+      "matchingMyeongliSignals": [
+        "현침살",
+        "식신",
+        "금"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "간호사 및 응급구조사",
+      "reason": "빠른 판단, 현장 대응, 위기 속 행동력이 필요한 직무와 맞는다.",
+      "matchingTraits": [
+        "field_emergency_fit",
+        "crisis_solver",
+        "fast_decision_objectivity"
+      ],
+      "matchingMyeongliSignals": [
+        "편관",
+        "귀인",
+        "화"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "직업군인",
+      "reason": "현장성, 위기 대응, 신체 활동, 빠른 판단이 필요한 환경에서 강점이 살아난다.",
+      "matchingTraits": [
+        "field_emergency_fit",
+        "fearless_initiative",
+        "crisis_solver"
+      ],
+      "matchingMyeongliSignals": [
+        "편관",
+        "화",
+        "비견"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "운동선수",
+      "reason": "오감, 신체 감각, 승부 감각, 단기 집중력이 ESTP의 핵심 강점과 맞는다.",
+      "matchingTraits": [
+        "fitness_sports_fit",
+        "sharp_observation",
+        "fearless_initiative"
+      ],
+      "matchingMyeongliSignals": [
+        "편관",
+        "화",
+        "식신"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "여행 가이드",
+      "reason": "현장 적응력, 넓은 교류, 활동성, 여행과 오감 경험을 즐기는 성향이 잘 맞는다.",
+      "matchingTraits": [
+        "travel_game_handson_fit",
+        "wide_social_circle",
+        "instant_adaptation"
+      ],
+      "matchingMyeongliSignals": [
+        "역마",
+        "지살",
+        "도화"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "프로게이머",
+      "reason": "빠른 반응, 시각 정보 처리, 단기전 집중, 전략적 실용 판단이 강점으로 작동한다.",
+      "matchingTraits": [
+        "travel_game_handson_fit",
+        "se_now_data",
+        "fast_decision_objectivity"
+      ],
+      "matchingMyeongliSignals": [
+        "현침살",
+        "편인",
+        "화"
+      ],
+      "sourceCoverage": "direct"
+    }
+  ],
+  "avoidJobsOrEnvironments": [
+    {
+      "name": "장문 문서와 긴 이론 설명 중심 업무",
+      "reason": "ESTP는 긴 설명, 장문의 글, 추상 개념에 쉽게 지루함을 느끼며 실전 감각을 쓰기 어렵다.",
+      "riskTraits": [
+        "short_explanation_preference",
+        "low_tolerance_for_boredom",
+        "experiential_learning"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "규칙과 위계가 과한 조직",
+      "reason": "ESTP는 자유 추구가 강해 통제와 간섭이 많은 환경에서 에너지가 떨어지고 반발이 커진다.",
+      "riskTraits": [
+        "freedom_over_control",
+        "freedom_responsibility_conflict",
+        "design_responsible_freedom"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "장기 집중과 꾸준한 반복만 요구하는 환경",
+      "reason": "단기전에는 강하지만 장기 목표와 반복 관리만 있는 환경에서는 흥미 유지가 어렵다.",
+      "riskTraits": [
+        "weak_ni_long_term_gap",
+        "low_long_term_persistence",
+        "build_short_to_long_goals"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "감정 공감이 핵심인 상담형 업무",
+      "reason": "ESTP는 감정에 오래 머무는 대화보다 해결과 행동을 선호해 깊은 정서 공감 중심 업무와 충돌할 수 있다.",
+      "riskTraits": [
+        "emotion_impatience",
+        "emotional_bluntness",
+        "fast_decision_objectivity"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "미래 전략과 추상 기획만 반복하는 자리",
+      "reason": "ESTP는 거시적 안목, 미래지향적 사고, 추상적 브레인스토밍이 지속되는 환경에서 집중이 약해진다.",
+      "riskTraits": [
+        "weak_ni_long_term_gap",
+        "ti_practical_analysis",
+        "low_tolerance_for_boredom"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "변화와 즉흥성이 거의 없는 정적 사무직",
+      "reason": "움직임, 사람, 현장 반응이 부족하면 ESTP의 장점인 적응력과 순발력이 쓰이지 않는다.",
+      "riskTraits": [
+        "sensory_thrill_seeker",
+        "instant_adaptation",
+        "travel_game_handson_fit"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "name": "포커페이스와 장기 정치가 필요한 환경",
+      "reason": "ESTP는 반응이 빠르고 표정과 말이 드러나는 편이라 장기적인 숨김과 정치적 계산이 많은 환경과 맞지 않는다.",
+      "riskTraits": [
+        "no_poker_face",
+        "straight_humor",
+        "fast_decision_objectivity"
+      ],
+      "sourceCoverage": "direct"
+    }
+  ],
+  "relationshipHints": {
+    "comfortableTypes": [
+      "ENFJ",
+      "ISTP",
+      "INFJ"
+    ],
+    "challengingTypes": [
+      "INFP"
+    ],
+    "notablePairs": [
+      {
+        "withType": "ISTP",
+        "label": "같은 Beta 그룹의 현장형 편안함",
+        "sourceRelationName": "Beta Comfort",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "둘 다 현실 감각과 행동성을 중시해 말보다 실제 능력과 결과로 서로를 평가한다.",
+          "활동, 도구, 몸으로 하는 경험, 실전 문제 해결에서 공통 리듬을 찾기 쉽다."
+        ],
+        "friction": [
+          "ESTP는 사람과 장면의 에너지를 즐기고 ISTP는 더 조용한 개인 공간을 원한다.",
+          "둘 다 감정 표현을 길게 다루지 않아 관계의 정서적 문제가 뒤로 밀릴 수 있다."
+        ],
+        "positiveInfluence": [
+          "ESTP는 ISTP를 더 넓은 활동과 사람 관계로 끌어낸다.",
+          "ISTP는 ESTP에게 과한 자극을 줄이고 기술적 정확성과 침착함을 보완한다."
+        ],
+        "lovePattern": "연애에서는 함께 움직이고 체험하는 데서 빠르게 가까워진다. 다만 ESTP의 넓은 사교성과 ISTP의 독립 욕구가 부딪히면 한쪽은 부담을, 한쪽은 방치감을 느낀다.",
+        "marriagePattern": "장기 관계에서는 자유와 개인 공간을 충분히 주면 편하다. 생활 책임과 감정 대화가 모두 약해질 수 있어 최소한의 약속과 점검 루틴이 필요하다.",
+        "repairStrategy": [
+          "함께 하는 활동과 혼자 쉬는 시간을 모두 일정에 둔다.",
+          "감정 문제를 농담이나 회피로 넘기지 말고 짧게라도 확인한다.",
+          "공동 책임은 말이 아니라 체크 가능한 행동으로 정한다."
+        ],
+        "reportLine": "ESTP와 ISTP는 실전 감각이 잘 맞는 편안한 조합이지만, 자유만 있고 정서 점검이 없으면 관계가 느슨하게 흩어집니다."
+      },
+      {
+        "withType": "ENFJ",
+        "label": "같은 Beta 그룹의 사람 중심 활동 관계",
+        "sourceRelationName": "Beta Comfort",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "둘 다 사람들 사이에서 에너지를 얻고 장면을 움직이는 힘이 있다.",
+          "ESTP의 행동력과 ENFJ의 관계 조율이 만나면 집단 안에서 큰 활력이 생긴다."
+        ],
+        "friction": [
+          "ESTP는 지금의 재미와 현실적 해결을 우선하고 ENFJ는 관계의 의미와 정서적 영향을 더 크게 본다.",
+          "ESTP의 직설적 농담은 ENFJ에게 배려 부족으로 느껴질 수 있고, ENFJ의 정서적 요구는 ESTP에게 무겁게 느껴질 수 있다."
+        ],
+        "positiveInfluence": [
+          "ENFJ는 ESTP가 사람들의 마음과 관계의 후속 효과를 더 보게 한다.",
+          "ESTP는 ENFJ가 지나치게 의미를 붙이기보다 지금 행동으로 옮기도록 돕는다."
+        ],
+        "lovePattern": "연애에서는 적극성과 사람을 좋아하는 에너지가 잘 맞아 빠르게 가까워진다. 시간이 지나면 ENFJ는 정서적 깊이를 원하고 ESTP는 가볍고 활동적인 흐름을 원해 속도 차이가 생긴다.",
+        "marriagePattern": "결혼에서는 ENFJ가 관계의 마음을 돌보고 ESTP가 생활의 활력을 만든다. 그러나 ESTP가 자유만 강조하고 ENFJ가 감정 확인을 계속 요구하면 서로를 통제적이거나 가볍게 느낀다.",
+        "repairStrategy": [
+          "ESTP는 농담과 행동 전에 상대의 감정 반응을 확인한다.",
+          "ENFJ는 감정 요구를 구체적인 행동 요청으로 바꾼다.",
+          "활동적인 데이트와 깊은 대화 시간을 모두 확보한다."
+        ],
+        "reportLine": "ESTP와 ENFJ는 사람을 움직이는 에너지가 강하지만, 행동의 재미와 관계의 의미를 같은 무게로 다룰 때 오래 갑니다."
+      },
+      {
+        "withType": "INFJ",
+        "label": "같은 Beta 그룹의 감각과 통찰 보완",
+        "sourceRelationName": "Beta Comfort",
+        "sourceCoverage": "inferred",
+        "sharedGround": [
+          "원문은 INFJ를 ESTP가 심리적으로 편안함을 느끼는 Beta 그룹으로 언급한다.",
+          "ESTP의 현장 감각과 INFJ의 의미 해석이 만나면 서로가 보지 못한 층위를 보완한다."
+        ],
+        "friction": [
+          "ESTP는 현재 경험과 빠른 행동을 중시하고 INFJ는 의미, 미래, 관계의 깊이를 오래 본다.",
+          "ESTP에게 INFJ의 진지한 대화는 무겁고, INFJ에게 ESTP의 즉흥성과 직설은 거칠게 느껴질 수 있다."
+        ],
+        "positiveInfluence": [
+          "INFJ는 ESTP가 장기적 방향과 사람의 내면을 더 보게 돕는다.",
+          "ESTP는 INFJ가 현실 속에서 움직이고 경험하도록 끌어낸다."
+        ],
+        "lovePattern": "연애에서는 서로의 낯선 매력에 끌릴 수 있다. ESTP는 INFJ의 깊이를 신기하게 보고, INFJ는 ESTP의 생동감에 끌리지만 감정 처리 속도와 대화 깊이에서 피로가 생긴다.",
+        "marriagePattern": "장기 관계에서는 ESTP가 생활의 움직임을 만들고 INFJ가 관계의 의미를 붙인다. 다만 ESTP가 깊은 대화를 회피하고 INFJ가 행동보다 해석에 머무르면 서로 멀어진다.",
+        "repairStrategy": [
+          "ESTP는 장기적 고민을 장난으로 넘기지 않는다.",
+          "INFJ는 추상적 불안을 구체적인 요청으로 표현한다.",
+          "체험과 대화를 번갈아 배치해 서로의 방식에 시간을 준다."
+        ],
+        "reportLine": "ESTP와 INFJ는 현장 감각과 깊은 통찰이 만나는 조합이며, 행동과 의미를 번갈아 존중할 때 서로를 크게 성장시킵니다."
+      },
+      {
+        "withType": "INFP",
+        "label": "갈등 관계",
+        "sourceRelationName": "Conflict",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "둘 다 자유를 중요하게 여길 수 있지만, 자유를 쓰는 방식은 크게 다르다.",
+          "ESTP는 경험과 행동으로, INFP는 가치와 진정성으로 자기다움을 지키려 한다."
+        ],
+        "friction": [
+          "ESTP는 현실, 재미, 빠른 행동을 중시하고 INFP는 감정적 깊이와 내면의 가치를 중시한다.",
+          "ESTP의 직설적 농담과 가벼운 태도는 INFP에게 상처가 되고, INFP의 깊은 감정 대화는 ESTP에게 무겁고 답답하게 느껴진다.",
+          "문제가 생겼을 때 ESTP는 넘기거나 움직이려 하고, INFP는 의미와 마음을 확인하려 해 속도가 크게 어긋난다."
+        ],
+        "positiveInfluence": [
+          "INFP는 ESTP에게 행동의 감정적 영향과 관계의 진정성을 보게 한다.",
+          "ESTP는 INFP에게 생각과 감정을 현실의 경험으로 풀어내게 돕는다."
+        ],
+        "lovePattern": "연애 초반에는 ESTP의 생동감과 INFP의 따뜻함이 서로를 끌 수 있다. 그러나 ESTP가 가볍게 던진 말이 INFP에게 깊게 남고, INFP가 상처를 오래 품으면 ESTP는 왜 문제가 커졌는지 이해하지 못한다.",
+        "marriagePattern": "장기 관계에서는 자유, 감정, 책임의 정의가 크게 갈린다. ESTP는 활동과 현재를 살고 싶어 하고 INFP는 관계의 의미와 정서적 안전감을 원하므로, 둘 다 상대의 핵심 욕구를 낮게 평가하면 충돌이 커진다.",
+        "repairStrategy": [
+          "ESTP는 농담과 직설이 상대에게 남긴 감정적 흔적을 확인한다.",
+          "INFP는 상처를 침묵으로 쌓지 말고 구체적인 행동 요청으로 표현한다.",
+          "무거운 대화 뒤에는 함께 움직이는 활동으로 관계의 긴장을 풀어준다."
+        ],
+        "reportLine": "ESTP와 INFP는 자유라는 단어를 공유하지만, 한쪽은 경험의 자유를 원하고 한쪽은 마음의 진정성을 원하므로 번역 없이 부딪히면 가장 피로한 관계가 됩니다."
+      }
+    ]
+  },
+  "myeongliBridgeHints": [
+    {
+      "signal": "역마",
+      "reason": "활동성, 여행, 현장 적응, 자유 추구, 직접 경험 선호와 연결된다.",
+      "productDomains": [
+        "general",
+        "career",
+        "love",
+        "parenting"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "식신",
+      "reason": "오감의 즐거움, 유머, 먹고 움직이고 경험하는 삶의 방식과 연결된다.",
+      "productDomains": [
+        "general",
+        "love",
+        "career",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "상관",
+      "reason": "직설, 자유 추구, 규칙 거부, 무대성, 즉흥적 표현과 연결된다.",
+      "productDomains": [
+        "general",
+        "career",
+        "compatibility",
+        "saeun"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "편재",
+      "reason": "현장 기회 포착, 활동형 수입력, 모험적 돈 감각과 연결된다.",
+      "productDomains": [
+        "money",
+        "investment",
+        "career"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "도화",
+      "reason": "무대 중심성, 사람을 끌어당기는 활력, 연애에서의 적극적 표현과 연결된다.",
+      "productDomains": [
+        "love",
+        "career",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "현침살",
+      "reason": "빠른 관찰, 직설적 말, 미세한 변화 포착, 현장 판단력과 연결된다.",
+      "productDomains": [
+        "career",
+        "compatibility",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "편관",
+      "reason": "스릴, 위기 대응, 승부 감각, 과감한 행동력과 연결된다.",
+      "productDomains": [
+        "career",
+        "general",
+        "saeun"
+      ],
+      "sourceCoverage": "direct"
+    }
+  ],
+  "reportUseCases": {
+    "generalReport": [
+      "행동형 현실주의, 오감형 자극 추구, 개방적 적응력, 자유 우선, 문제해결과 말썽 traits를 ESTP 기본 해석에 사용한다.",
+      "역마, 식신, 상관, 도화, 현침살 신호와 연결해 활동성, 오감, 직설, 매력, 현장 판단을 설명한다."
+    ],
+    "careerReport": [
+      "인터넷 방송인, 피트니스 트레이너, 교사/강사, 현장 기술직, 간호사/응급구조사, 직업군인, 운동선수, 여행 가이드, 프로게이머를 추천 축으로 사용한다.",
+      "장문 문서, 긴 이론, 규칙과 위계 과다, 장기 반복, 감정 공감 중심 업무는 회피 환경으로 사용한다."
+    ],
+    "loveMarriageChildReport": [
+      "재미 중심 연애, 구속 취약, 적극적 애정, 이성 관계 경계, 역동적 결혼, 책임 구조 필요 traits를 연애/결혼 해석에 사용한다.",
+      "ESTP 부모의 자유로운 양육, 모험 동행, 자기계발 지원과 ESTP 아이의 놀이·내기·유쾌함·진지함 회피를 부모/자녀 리포트에 사용한다."
+    ],
+    "compatibilityReport": [
+      "ISTP, ENFJ, INFJ, INFP 관계를 notablePairs에서 사용한다.",
+      "관계 해석에서는 자유와 책임, 활동과 깊이, 직설과 감정 안전감, 현재 경험과 장기 의미의 충돌을 핵심 축으로 사용한다."
+    ],
+    "daeunReport": [
+      "역마, 식신, 편재 기운이 강한 시기는 활동, 이동, 현장 기회, 수입 확장 가능성을 읽는 데 사용한다.",
+      "정관, 정인, 토 기운이 들어오는 시기는 단기 목표를 장기 구조로 묶는 훈련 시기로 해석한다."
+    ],
+    "saeunReport": [
+      "편관, 상관, 화 기운이 과한 해에는 충동, 말실수, 위험 감수, 관계 선 넘기를 조심하는 문장으로 사용한다.",
+      "도화, 홍염 기운이 강한 해에는 매력과 무대성은 살아나지만 연애 경계와 책임을 함께 다루도록 해석한다."
+    ]
+  },
+  "enrichment": {
+    "missingAreas": [
+      "relationship source only directly names Beta comfort types and INFP conflict, so most pair detail is inferred from ESTP traits",
+      "investment details are inferred from risk appetite, betting, thrill seeking, and short-term realism",
+      "health, crime, and diagnosis-like statistical fragments were excluded from product traits",
+      "marriage details are inferred from love style and freedom-responsibility traits because direct marriage source is sparse"
+    ],
+    "needsRelationGapFill": true,
+    "notes": [
+      "출처표기, 통계표, 편집 주의문, 낙인 가능성이 있는 통계성 문구는 제거하고 의미 단위만 상품용 trait으로 재구성함",
+      "궁합 정보는 원문에서 ENFJ, ISTP, INFJ의 편안함과 INFP 갈등만 직접 언급되어 있으며, 세부 연애/결혼 패턴은 ESTP 성향을 근거로 추론해 보강함",
+      "범죄율, 질병, 우울증 등 진단이나 낙인처럼 보일 수 있는 정보는 직접 trait화하지 않음"
+    ]
+  }
+}
