@@ -1,0 +1,1587 @@
+﻿{
+  "type": "ENFP",
+  "titleKo": "재기발랄한 활동가",
+  "archetype": "새 가능성을 사람들과 나누는 창의적 동기부여자",
+  "oneLine": "사람과 가능성 사이를 빠르게 연결하고, 밝은 에너지로 새로운 시도를 시작하게 만드는 사람",
+  "sourceStatus": {
+    "rawSourceWasProvidedByUser": true,
+    "rawTextStoredVerbatim": false,
+    "cleanedAndRewritten": true,
+    "notes": "원문을 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+  },
+  "preferenceAxes": {
+    "energy": "E",
+    "perception": "N",
+    "judgment": "F",
+    "lifestyle": "P"
+  },
+  "functionStack": {
+    "dominant": "Ne",
+    "auxiliary": "Fi",
+    "tertiary": "Te",
+    "inferior": "Si"
+  },
+  "closeKeywords": [
+    "가족애",
+    "감수성",
+    "감정적",
+    "개방성",
+    "개성",
+    "개인주의",
+    "공감과 이해",
+    "관심과 애정",
+    "낙천성",
+    "넓고 얕은 인간관계",
+    "느긋함",
+    "도전과 즉흥",
+    "독립성",
+    "명랑함",
+    "몽상가 기질",
+    "분위기 메이커",
+    "붙임성",
+    "수용성",
+    "스포트라이트",
+    "언변",
+    "유행 민감성",
+    "융통성",
+    "인기 욕심",
+    "이상주의",
+    "인간관계 솔직함",
+    "자율성",
+    "창의성",
+    "충동성",
+    "친화력",
+    "폭넓은 대화 주제",
+    "행동력"
+  ],
+  "farKeywords": [
+    "가식",
+    "객관적 사고",
+    "규칙과 규율",
+    "논리적 분석",
+    "논쟁과 토론",
+    "눈치 없음",
+    "뒤끝",
+    "사회 불문율",
+    "사회적 통념",
+    "사회적 현실감각",
+    "신속한 결론",
+    "실적주의",
+    "위계질서",
+    "전통",
+    "정치질",
+    "주변 정리",
+    "지적 우월의식",
+    "집단 내 충돌",
+    "집단주의",
+    "집중력",
+    "체계성",
+    "통제와 간섭",
+    "평범함 추구",
+    "포커페이스",
+    "한 우물 파기",
+    "차가운 합리성",
+    "허세",
+    "현실 안주",
+    "현실주의"
+  ],
+  "summary": {
+    "identity": "ENFP는 사람과 가능성에 강하게 반응하는 유형이다. 활기와 상상력이 많고, 새로운 경험과 대화를 통해 자기 세계를 넓히며, 관심 있는 일에는 빠른 실행력과 열정을 보인다.",
+    "strength": "창의적 발상, 풍부한 대화 주제, 스토리텔링, 공감과 격려, 분위기 전환 능력이 강하다. 상담, 교육, 예술, 커뮤니케이션, 이벤트성 역할에서 사람을 움직이는 힘이 있다.",
+    "risk": "반복 업무와 세부 정리에 쉽게 지루해지고, 한 일을 끝내기 전에 새 일을 벌이기 쉽다. 비판에 방어적으로 반응하고, 인정 욕구와 감정 기복이 커질 때 자기 소모가 생긴다.",
+    "growthStrategy": "흥미를 실행으로 옮기되 마무리 구조를 따로 세워야 한다. 감정의 진정성을 지키면서도 기록, 일정, 논리적 근거, 반복 훈련을 보완하면 창의성이 실제 성과로 굳어진다."
+  },
+  "traits": {
+    "identity": [
+      {
+        "id": "spark_of_possibility",
+        "label": "가능성의 스파크",
+        "plainKo": "ENFP는 지금 보이는 현실보다 앞으로 열릴 가능성에 먼저 반응한다. 새로운 사람, 장소, 아이디어를 만나면 머릿속에서 여러 연결이 빠르게 번지고, 그 가능성을 직접 시도해 보고 싶어 한다.",
+        "strongLine": "ENFP는 눈앞의 현실보다 아직 열리지 않은 가능성에 더 먼저 불이 붙는 사람이다.",
+        "positiveUse": "새 프로젝트, 캠페인, 콘텐츠, 모임, 진로 전환에서 시작 에너지를 만든다.",
+        "risk": "가능성에 끌려 시작은 빠르지만 끝맺음과 유지 관리가 약해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "천문성",
+          "식신",
+          "목"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "people_centered_energy",
+        "label": "사람 중심 에너지",
+        "plainKo": "ENFP는 사회적 상호작용에서 많은 에너지를 얻는다. 사람의 이야기, 감정, 경험을 흥미롭게 듣고, 그 안에서 새로운 대화와 관계의 가능성을 찾는다.",
+        "strongLine": "ENFP에게 사람은 피곤한 배경이 아니라 에너지와 영감을 주는 세계다.",
+        "positiveUse": "관계 형성, 상담, 교육, 영업, 커뮤니티 운영에서 친화력을 발휘한다.",
+        "risk": "관계가 넓어질수록 감정 에너지와 약속 관리가 분산될 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "비견",
+          "귀인"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "warm_individualist",
+        "label": "따뜻한 개인주의",
+        "plainKo": "ENFP는 사람을 좋아하지만 자기 고유의 감정과 가치도 강하게 지킨다. 타인의 입장을 상상해 볼 수 있지만, 최종 판단에서는 자신의 진심과 내적 기준이 중요하다.",
+        "strongLine": "ENFP의 다정함은 순응이 아니라 자기 마음을 지키면서도 타인을 이해하려는 태도다.",
+        "positiveUse": "다양한 사람을 수용하면서도 자기 색을 잃지 않는 관계를 만든다.",
+        "risk": "자기 감정이 강해질 때 객관적 피드백을 방어적으로 받아들일 수 있다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "정인",
+          "화"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "expressive_authenticity",
+        "label": "솔직한 표현",
+        "plainKo": "ENFP는 감정이 얼굴과 말투에 잘 드러난다. 가식적으로 숨기기보다는 좋고 싫음, 기쁨과 실망이 자연스럽게 밖으로 나온다.",
+        "strongLine": "ENFP의 표정은 마음의 날씨를 숨기지 못한다.",
+        "positiveUse": "진정성, 친근함, 감정 전달력이 강하게 느껴진다.",
+        "risk": "좋아하는 사람과 싫어하는 사람의 온도 차가 바로 보이면 관계 갈등이 생긴다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "홍염",
+          "식신"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "outer_bright_inner_quiet",
+        "label": "밖은 활발, 안은 조용",
+        "plainKo": "ENFP는 외향형이지만 혼자만의 시간도 필요하다. 밖에서는 사람들의 이야기를 듣고 분위기를 띄우다가도 집에 오면 조용히 자기 세계로 들어가는 모습이 나타난다.",
+        "strongLine": "ENFP는 사람들 속에서 빛나지만, 혼자 회복할 공간이 있어야 다시 살아난다.",
+        "positiveUse": "사교성과 자기 성찰을 함께 활용해 폭넓은 관계와 개인적 성장을 동시에 만든다.",
+        "risk": "주변이 계속 활발한 모습만 기대하면 에너지 고갈과 회피가 생긴다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "도화"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "thinkingStyle": [
+      {
+        "id": "ne_connection_thinking",
+        "label": "연결형 직관",
+        "plainKo": "ENFP의 직관은 단순한 호기심이 아니라 서로 관련 없어 보이는 것들 사이에서 의미와 연결을 찾아내는 방식이다. 어떤 사안의 세부보다 전체 맥락과 가능성을 먼저 잡는다.",
+        "strongLine": "ENFP는 흩어진 사건들 사이에서 아직 이름 붙지 않은 의미를 찾아낸다.",
+        "positiveUse": "기획, 상담, 스토리텔링, 진로 탐색, 창작에서 새로운 관점을 만든다.",
+        "risk": "대략적인 이해에 머무르면 세부 검증과 현실 조건을 놓칠 수 있다.",
+        "matchingMyeongliSignals": [
+          "천문성",
+          "편인",
+          "목"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "imaginative_storytelling",
+        "label": "스토리텔링",
+        "plainKo": "ENFP는 단순한 사건에도 긴장감과 유머를 더해 흥미로운 이야기로 만든다. 언어 습득과 대화 감각이 좋아 폭넓은 주제로 사람들을 끌어들인다.",
+        "strongLine": "ENFP는 작은 일도 사람들의 귀가 열리는 이야기로 바꿀 줄 안다.",
+        "positiveUse": "강의, 방송, 콘텐츠, 예술, 마케팅, 발표에서 몰입을 만든다.",
+        "risk": "흥미를 살리려다 사실의 정확도나 실무적 결론이 흐려질 수 있다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "도화",
+          "식신"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "meaning_before_fact",
+        "label": "의미 우선",
+        "plainKo": "ENFP는 무미건조한 사실보다 그 일이 어떤 의미를 갖는지, 사람에게 어떤 감정을 남기는지에 더 끌린다. 철학적 가치관과 개인적 성장의 주제도 자주 붙잡는다.",
+        "strongLine": "ENFP에게 정보는 그 자체보다 마음과 삶을 어떻게 움직이는지가 중요하다.",
+        "positiveUse": "상담, 교육, 예술, 브랜딩처럼 메시지와 의미가 중요한 영역에서 강하다.",
+        "risk": "객관적 자료와 논리적 근거가 부족하면 설득력이 감정에만 기대게 된다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "천문성",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "question_burst_pattern",
+        "label": "질문 폭발",
+        "plainKo": "상대의 말이 구체적이지 않으면 ENFP는 전체 정황을 파악하려고 질문을 쏟아낸다. 다만 질문을 던진 뒤 다음 가능성으로 생각이 이동해 답을 놓칠 때가 있다.",
+        "strongLine": "ENFP의 질문은 관심의 표현이지만, 답까지 붙잡아 두는 훈련이 필요하다.",
+        "positiveUse": "초기 탐색, 인터뷰, 상담, 기획 회의에서 숨은 맥락을 빠르게 드러낸다.",
+        "risk": "질문만 많고 듣는 집중이 약하면 상대는 산만하거나 가볍다고 느낀다.",
+        "matchingMyeongliSignals": [
+          "천문성",
+          "문창"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "emotion_amplified_processing",
+        "label": "감정 증폭 사고",
+        "plainKo": "ENFP는 감정의 기복이 크고, 비판을 받으면 생각이 과도하게 많아질 수 있다. 격려는 빠르게 회복시키지만, 날카로운 비판은 불안과 자기비난을 키운다.",
+        "strongLine": "ENFP는 한마디 비판을 오래 되새기지만, 진심 어린 격려에는 다시 움직일 힘을 얻는다.",
+        "positiveUse": "정서적 피드백에 민감해 사람의 분위기와 동기를 잘 읽는다.",
+        "risk": "비판을 성장 정보가 아니라 자기 부정으로 받아들이면 실행력이 멈춘다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "career": [
+      {
+        "id": "counseling_fit",
+        "label": "상담 적합성",
+        "plainKo": "ENFP는 사람의 이야기를 흥미롭게 듣고, 상상력을 통해 상대 입장에 쉽게 들어가 본다. 깊은 수준에서 인간 경험을 이해하려는 성향이 상담 분야와 맞는다.",
+        "strongLine": "ENFP는 상대의 이야기를 정보가 아니라 살아 있는 감정과 가능성으로 듣는다.",
+        "positiveUse": "상담, 코칭, 멘토링, 진로 대화에서 상대가 자기 마음을 말하게 돕는다.",
+        "risk": "상대의 감정보다 자신의 감정이 앞서면 상담의 중심이 흔들릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "귀인",
+          "정인",
+          "식신"
+        ],
+        "productDomains": [
+          "career",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "education_motivator",
+        "label": "교육 동기부여",
+        "plainKo": "교육 분야에서는 ENFP의 밝은 에너지, 대화 능력, 이야기를 만드는 능력이 학습 동기를 끌어올린다. 딱딱한 지식도 사람과 의미로 연결해 전달한다.",
+        "strongLine": "ENFP는 지식을 외우게 하기보다 배우고 싶게 만드는 사람이다.",
+        "positiveUse": "교육, 강의, 학습 코칭, 청소년 활동에서 분위기를 살리고 동기를 만든다.",
+        "risk": "구체적 커리큘럼과 반복 훈련이 약하면 재미는 있어도 성과가 흐려진다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "식신",
+          "정인"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "arts_and_creative_field",
+        "label": "예술·창작성",
+        "plainKo": "상상력, 표현력, 감정의 진정성, 스토리텔링이 강해 예술 분야에서 재능을 발휘하기 쉽다. 자기만의 색과 감정을 작품이나 콘텐츠로 풀어낼 수 있다.",
+        "strongLine": "ENFP의 창작은 기교보다 살아 있는 감정과 가능성의 확장에서 나온다.",
+        "positiveUse": "글쓰기, 공연, 음악, 영상, 디자인, 콘텐츠 제작에서 개성과 생동감을 만든다.",
+        "risk": "영감에 의존하면 꾸준한 제작 루틴과 마감 관리가 흔들린다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "홍염",
+          "식신"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "community_event_starter",
+        "label": "행사 주선자",
+        "plainKo": "아무도 나서지 않을 때 ENFP는 모임이나 일을 시작하게 만드는 역할을 맡는다. 다만 구체적 계획보다 일단 해보자는 제안에서 힘이 먼저 나온다.",
+        "strongLine": "ENFP는 멈춰 있는 사람들에게 첫 움직임을 만들어 주지만, 세부 계획표는 따로 필요하다.",
+        "positiveUse": "이벤트 기획, 커뮤니티 운영, 캠페인 시작, 팀 분위기 전환에 강하다.",
+        "risk": "세부 일정과 역할 분담이 없으면 시작만 있고 실행이 흩어진다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "비견",
+          "역마"
+        ],
+        "productDomains": [
+          "career",
+          "general",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "workplace": [
+      {
+        "id": "novelty_required_work",
+        "label": "새로움 필수",
+        "plainKo": "ENFP는 세부 반복이나 단순노동에 쉽게 지루함을 느낀다. 새로운 사람, 새로운 문제, 새로운 표현 방식이 있을 때 업무 에너지가 살아난다.",
+        "strongLine": "ENFP의 일 에너지는 반복보다 새로움에서 켜진다.",
+        "positiveUse": "초기 기획, 캠페인, 창작, 상담, 교육처럼 변화와 사람이 있는 업무에서 강하다.",
+        "risk": "반복 운영과 후속 관리가 길어지면 집중력이 빠르게 떨어진다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "식신",
+          "목"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "deadline_sprint_style",
+        "label": "몰아치기형 실행",
+        "plainKo": "계획을 세워 꾸준히 하기보다 막판에 몰아서 처리하는 편이다. 위기나 큰일에는 오히려 대처가 빠르지만, 작은 일과 사소한 일정에서는 당황하거나 놓칠 수 있다.",
+        "strongLine": "ENFP는 큰 위기에는 번뜩이지만, 작은 반복 일정에는 자주 발목을 잡힌다.",
+        "positiveUse": "긴급 상황, 단기 프로젝트, 창의적 문제 해결에서 집중 폭발력이 나온다.",
+        "risk": "마감 직전 몰아치기가 반복되면 품질과 신뢰가 흔들린다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "겁재",
+          "화"
+        ],
+        "productDomains": [
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "social_mood_maker",
+        "label": "분위기 메이커",
+        "plainKo": "ENFP는 밝은 분위기를 조성하고 사람들과 조화를 잘 이룬다. 분위기를 띄운 뒤 스스로 빠지는 모습도 있어, 팀의 감정 온도를 바꾸는 역할을 한다.",
+        "strongLine": "ENFP는 방 안의 공기를 밝히고, 사람들의 마음이 움직이면 조용히 다음 가능성으로 넘어간다.",
+        "positiveUse": "회의, 행사, 팀 빌딩, 고객 접점에서 긴장을 완화한다.",
+        "risk": "분위기만 띄우고 후속 책임을 맡지 않으면 가볍게 보일 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "식신",
+          "홍염"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "autonomy_over_control",
+        "label": "자율성 우선",
+        "plainKo": "ENFP는 통제와 간섭, 엄격한 규칙, 위계질서가 강한 환경에서 답답함을 느낀다. 자기 방식으로 해볼 수 있을 때 창의성과 책임감이 살아난다.",
+        "strongLine": "ENFP는 지시받을 때보다 믿고 맡겨질 때 더 크게 움직인다.",
+        "positiveUse": "자율 프로젝트, 창작 과제, 상담·교육 현장에서 유연하게 대응한다.",
+        "risk": "자율성이 구조 없이 방치되면 결과물과 일정이 흔들린다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "상관"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "money": [
+      {
+        "id": "experience_spending",
+        "label": "경험 지출",
+        "plainKo": "ENFP는 강렬하고 감각적인 삶, 새로운 경험, 사람들과 공유할 이야기에 끌린다. 돈도 물건보다 경험, 여행, 모임, 자기표현에 흐르기 쉽다.",
+        "strongLine": "ENFP의 돈은 안정만을 위해 쌓이기보다 경험과 이야기를 만들기 위해 움직인다.",
+        "positiveUse": "여행, 배움, 네트워킹, 창작 경험이 커리어와 관계 자산으로 이어질 수 있다.",
+        "risk": "즉흥적 지출이 반복되면 장기 저축과 생활 안정성이 약해진다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "식신",
+          "편재"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "income_needs_interest",
+        "label": "흥미 의존 수입",
+        "plainKo": "관심 있는 일에는 열성과 능력이 나오지만 싫은 일에는 인내심이 부족하다. 그래서 수입 안정성은 직업의 흥미도와 자유도에 크게 좌우된다.",
+        "strongLine": "ENFP의 돈은 억지로 버티는 자리보다 마음이 움직이는 자리에서 더 오래 살아난다.",
+        "positiveUse": "자기 관심과 사람을 연결하는 일을 찾으면 지속 가능성이 커진다.",
+        "risk": "흥미가 식을 때마다 수입원도 흔들릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "비견",
+          "식신"
+        ],
+        "productDomains": [
+          "money",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "investment": [
+      {
+        "id": "story_driven_investment",
+        "label": "스토리형 투자 주의",
+        "plainKo": "투자 정보는 원문에 직접 많지 않다. 다만 ENFP는 이야기, 가능성, 사람의 비전에 끌리기 쉬우므로 투자에서는 스토리와 숫자 검증을 분리해야 한다.",
+        "strongLine": "ENFP에게 매력적인 이야기가 곧 좋은 투자는 아니다.",
+        "positiveUse": "새 트렌드와 사람들의 욕구 변화를 빠르게 감지할 수 있다.",
+        "risk": "감정적 기대와 낙관이 손실 가능성을 가릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "천문성",
+          "정재"
+        ],
+        "productDomains": [
+          "investment",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "impulse_control_investment",
+        "label": "충동 통제",
+        "plainKo": "즉흥적이고 충동적인 성향은 투자 판단에서도 위험 요인이 된다. 매수·매도 기준, 손실 한도, 검토 시간을 미리 정해야 한다.",
+        "strongLine": "ENFP의 투자는 감정이 뜨거워지는 순간일수록 하루 더 식혀야 안전하다.",
+        "positiveUse": "관심 산업을 꾸준히 관찰하면 감각적 트렌드 포착이 장점이 된다.",
+        "risk": "순간의 설렘으로 결정하면 반복 손실이 생긴다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편관"
+        ],
+        "productDomains": [
+          "investment",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
+      }
+    ],
+    "study": [
+      {
+        "id": "interest_switch_learning",
+        "label": "관심 스위치 학습",
+        "plainKo": "ENFP는 관심이 있으면 매우 열심히 하고 높은 성취도 가능하지만, 관심이 없으면 버티기 어렵다. 공부의 성패는 의지보다 의미와 흥미를 어떻게 붙이는지에 달려 있다.",
+        "strongLine": "ENFP의 공부는 마음이 켜지는 순간 속도가 나고, 꺼지는 순간 멈춘다.",
+        "positiveUse": "주제를 자기 경험, 사람, 미래 가능성과 연결하면 몰입이 살아난다.",
+        "risk": "싫은 과목을 완전히 버리면 학업 편차가 커진다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "편인",
+          "식신"
+        ],
+        "productDomains": [
+          "study",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "logic_practice_needed",
+        "label": "논리 근거 훈련",
+        "plainKo": "원문은 xNFx 중 수학 성취가 약한 경우 논리적 근거를 연습장에 제시하는 습관이 필요하다고 말한다. ENFP에게는 머릿속 이해를 글로 구조화하는 훈련이 중요하다.",
+        "strongLine": "ENFP의 직관은 빠르지만, 공부에서는 그 직관을 식과 근거로 남겨야 성적이 오른다.",
+        "positiveUse": "오답 이유, 풀이 근거, 식 정리 과정을 기록하면 학습 안정성이 커진다.",
+        "risk": "감으로 이해했다고 넘기면 대수학과 반복 훈련에서 약점이 남는다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "정인",
+          "금"
+        ],
+        "productDomains": [
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "language_conversation_strength",
+        "label": "회화 강점",
+        "plainKo": "ENFP는 말을 거는 데 두려움이 적어 외국어 실력 자체보다 의사소통을 더 잘해 보일 수 있다. 회화와 실제 대화 환경에서 강점이 크다.",
+        "strongLine": "ENFP는 완벽한 문법보다 먼저 말을 걸고 연결하는 힘으로 언어를 익힌다.",
+        "positiveUse": "외국어 회화, 발표, 교환학생, 해외 네트워킹에서 빠르게 적응한다.",
+        "risk": "유창한 소통감에 비해 문법과 정확도 훈련이 부족할 수 있다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "도화",
+          "역마"
+        ],
+        "productDomains": [
+          "study",
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "love": [
+      {
+        "id": "passionate_romance",
+        "label": "열정적 사랑",
+        "plainKo": "ENFP는 사랑에 빠지면 적극적으로 마음을 표현하고 쟁취하려는 힘이 강하다. 리액션이 좋고 타인에게 관심이 많아 이성의 호감을 사기 쉽다.",
+        "strongLine": "ENFP의 사랑은 조용히 숨기기보다 반짝이는 표현으로 상대에게 닿으려 한다.",
+        "positiveUse": "초반 호감 형성, 감정 표현, 관계의 활기를 강하게 만든다.",
+        "risk": "감정이 빠르게 달아오르면 상대의 속도와 현실 조건을 놓칠 수 있다.",
+        "matchingMyeongliSignals": [
+          "홍염",
+          "도화",
+          "화"
+        ],
+        "productDomains": [
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "warm_confidant_partner",
+        "label": "다정한 비밀친구",
+        "plainKo": "연애를 시작하면 상대가 말하기 어려운 고민도 털어놓기 쉬운 다정다감한 연인이 된다. 상대의 이야기를 흥미롭게 듣고 감정적으로 가까워지는 힘이 있다.",
+        "strongLine": "ENFP는 연인에게 즐거움만 주는 사람이 아니라 속마음을 열게 만드는 사람이다.",
+        "positiveUse": "연인의 불안과 고민을 부드럽게 듣고 관계의 친밀감을 키운다.",
+        "risk": "상대의 문제를 자기 감정과 섞으면 관계가 쉽게 무거워진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "귀인",
+          "식신"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "spontaneous_love_risk",
+        "label": "즉흥 연애 리스크",
+        "plainKo": "ENFP는 즉흥적이고 충동적인 성향 때문에 연인을 당황하게 하는 말이나 행동을 할 수 있다. 본인은 생동감이라고 느끼지만 상대는 불안정함으로 받아들일 수 있다.",
+        "strongLine": "ENFP의 즉흥성은 사랑을 설레게도 만들고, 상대를 당황하게도 만든다.",
+        "positiveUse": "데이트와 대화에 새로움과 재미를 만든다.",
+        "risk": "약속, 감정 표현, 관계 방향이 자주 바뀌면 신뢰가 약해진다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "겁재",
+          "화"
+        ],
+        "productDomains": [
+          "love",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "rejection_difficulty",
+        "label": "거절 어려움",
+        "plainKo": "ENFP는 사람을 쉽게 밀쳐내지 못하고 거절도 잘 못한다. 연애에서도 상대에게 상처 주기 싫어 애매한 여지를 남길 수 있다.",
+        "strongLine": "ENFP는 마음이 약해 끊어야 할 관계에도 따뜻한 문을 오래 열어 둘 수 있다.",
+        "positiveUse": "상대의 마음을 배려하고 관계를 급하게 끊지 않는다.",
+        "risk": "경계가 흐리면 오해와 삼각 갈등, 감정 소모가 생긴다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "비견"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "marriage": [
+      {
+        "id": "creative_family_life",
+        "label": "창의적 가정",
+        "plainKo": "ENFP는 결혼 생활에서도 즐거움, 여행, 새로운 경험, 다양한 대화를 중요하게 여긴다. 가족의 일상이 너무 반복되면 답답함을 느낄 수 있다.",
+        "strongLine": "ENFP에게 좋은 가정은 안정만 있는 곳이 아니라 함께 웃고 경험이 쌓이는 살아 있는 공간이다.",
+        "positiveUse": "가족 여행, 놀이, 대화, 새로운 시도를 통해 활기 있는 가정을 만든다.",
+        "risk": "생활 루틴과 재정 관리가 약하면 가족의 안정감이 흔들린다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "역마",
+          "도화"
+        ],
+        "productDomains": [
+          "marriage",
+          "parenting"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "freedom_in_marriage",
+        "label": "자유가 필요한 결혼",
+        "plainKo": "ENFP는 사람을 좋아하지만 개인의 자율성도 중요하다. 결혼 후에도 자기 관심사와 새로운 인간관계를 탐색할 자유가 있어야 관계가 건강하게 유지된다.",
+        "strongLine": "ENFP의 결혼은 묶어 두는 약속보다 서로의 가능성을 지지하는 약속일 때 오래 간다.",
+        "positiveUse": "각자의 성장을 응원하며 관계에 신선한 자극을 가져온다.",
+        "risk": "상대가 자유를 무책임으로 느끼면 신뢰 문제가 생긴다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "역마"
+        ],
+        "productDomains": [
+          "marriage",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "domestic_follow_through_gap",
+        "label": "생활 마무리 약점",
+        "plainKo": "ENFP는 건망증, 물건 분실, 주변 정리 약점이 나타날 수 있다. 결혼 생활에서는 감정의 따뜻함만큼 반복 관리와 책임 분담이 중요하다.",
+        "strongLine": "ENFP의 다정함이 생활의 신뢰로 이어지려면 작은 약속과 정리 루틴이 필요하다.",
+        "positiveUse": "자동화, 체크리스트, 역할 분담을 쓰면 관계 에너지를 지키면서 생활 안정성을 높인다.",
+        "risk": "작은 일들이 반복적으로 누락되면 상대는 혼자 책임진다고 느낀다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관"
+        ],
+        "productDomains": [
+          "marriage",
+          "money"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "parenting": [
+      {
+        "id": "understanding_parent",
+        "label": "이해하려는 부모",
+        "plainKo": "ENFP 부모는 평소 자녀를 이해하려고 하고, 아이의 언어와 표정에 민감하다. 아이가 느끼는 즐거움과 행복을 중요한 양육 기준으로 삼는다.",
+        "strongLine": "ENFP 부모는 아이의 성적표보다 아이의 표정과 마음이 먼저 눈에 들어온다.",
+        "positiveUse": "자녀가 자기 감정과 생각을 편하게 말할 수 있는 분위기를 만든다.",
+        "risk": "학업과 규칙의 중요성을 지나치게 낮게 보면 장기 습관 형성이 약해진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "귀인",
+          "식신"
+        ],
+        "productDomains": [
+          "parenting",
+          "child"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "affectionate_support_parent",
+        "label": "애정 표현",
+        "plainKo": "ENFP 부모는 자녀에게 애정 표현과 스킨십을 많이 하고, 아이가 가는 길을 대체로 믿고 지지한다. 아이에게 정서적 안전감과 응원을 주는 부모가 되기 쉽다.",
+        "strongLine": "ENFP 부모의 사랑은 말과 표정과 몸짓으로 자주 확인된다.",
+        "positiveUse": "자녀의 자신감, 정서 안정, 자기표현을 돕는다.",
+        "risk": "지지가 훈육과 경계 없이 흐르면 아이가 책임을 배우기 어려워질 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "도화",
+          "식신"
+        ],
+        "productDomains": [
+          "parenting",
+          "child",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "travel_parent",
+        "label": "여행하는 부모",
+        "plainKo": "ENFP 부모는 자녀와 여행을 많이 다니고 싶어 한다. 교과서식 학습보다 실제 경험과 즐거움 속에서 아이의 세계를 넓히는 방식에 끌린다.",
+        "strongLine": "ENFP 부모에게 여행은 아이에게 세상이 넓다는 감각을 몸으로 알려 주는 교육이다.",
+        "positiveUse": "자녀의 사회성, 개방성, 호기심, 적응력을 키운다.",
+        "risk": "일상 루틴과 학습 기본기를 함께 세우지 않으면 경험만 많고 구조가 약해진다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "지살",
+          "목"
+        ],
+        "productDomains": [
+          "parenting",
+          "child",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "child": [
+      {
+        "id": "playful_social_child",
+        "label": "잘 노는 아이",
+        "plainKo": "ENFP 자녀는 놀기를 좋아하고 같이 놀 친구도 잘 만든다. 외향적이지만 혼자만의 시간도 괜찮아하는 편이라, 사람과 자기 세계를 오간다.",
+        "strongLine": "ENFP 아이는 놀이와 친구 속에서 배우지만, 혼자 상상할 공간도 필요하다.",
+        "positiveUse": "또래 관계, 역할 놀이, 발표, 협동 활동에서 장점이 잘 드러난다.",
+        "risk": "놀이는 좋아하지만 반복 학습과 정리 습관은 약해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "식신",
+          "비견"
+        ],
+        "productDomains": [
+          "child",
+          "study",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "all_or_nothing_study_child",
+        "label": "관심 따라 극단",
+        "plainKo": "공부에 관심이 있으면 매우 열심히 하지만 관심이 없으면 끝까지 버티기 어렵다. 좋아하는 분야와 싫어하는 분야의 차이가 크게 벌어지는 아이로 보일 수 있다.",
+        "strongLine": "ENFP 아이는 좋아하는 공부에는 전력 질주하고, 싫은 공부 앞에서는 거의 움직이지 않는다.",
+        "positiveUse": "관심사를 학습 동기로 연결하면 놀라운 집중과 성취가 나온다.",
+        "risk": "부모가 흥미 없는 과목을 힘으로만 밀면 충돌과 회피가 커진다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "편인",
+          "화"
+        ],
+        "productDomains": [
+          "child",
+          "study",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "sensitive_emotional_child",
+        "label": "눈물 많은 공감",
+        "plainKo": "ENFP 자녀는 자기 감정으로도 쉽게 울고, 타인의 감정에 공감해서도 금방 눈물이 날 수 있다. 감정 반응이 빠르고 깊다.",
+        "strongLine": "ENFP 아이의 눈물은 약함만이 아니라 세상을 마음으로 먼저 받아들이는 방식이다.",
+        "positiveUse": "공감, 배려, 예술적 표현, 친구 관계에서 따뜻함을 만든다.",
+        "risk": "감정을 부끄럽게 여기게 만들면 자기표현이 위축된다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "child",
+          "parenting",
+          "love"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "anti_conservative_child",
+        "label": "보수 문화와 충돌",
+        "plainKo": "엄격하고 보수적인 기성세대 문화와는 상극이다. 부모가 둔감하거나 통제적인 성향이면 아이의 자유와 감정이 부딪히기 쉽다.",
+        "strongLine": "ENFP 아이는 통제받는 순간 장난기보다 반발심이 먼저 살아난다.",
+        "positiveUse": "아이의 자율성과 감정을 인정하면 창의성과 사회성이 안정된다.",
+        "risk": "권위로 누르면 관계가 멀어지고, 아이는 자기 세계를 숨길 수 있다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "비견"
+        ],
+        "productDomains": [
+          "child",
+          "parenting",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "wide_light_network",
+        "label": "넓은 관계망",
+        "plainKo": "ENFP는 자연스럽고 적응력이 좋아 친구가 많다. 넓고 얕은 관계도 잘 만들고, 새로운 사람들과 쉽게 공유할 이야기와 일화를 모은다.",
+        "strongLine": "ENFP는 사람을 만나며 자기 세계를 넓히고, 그 경험을 다시 이야기로 나눈다.",
+        "positiveUse": "네트워킹, 커뮤니티, 모임, 협업 초기에서 빠르게 관계를 연다.",
+        "risk": "관계가 넓어질수록 깊은 책임과 일정 관리가 어려워질 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "비견",
+          "역마"
+        ],
+        "productDomains": [
+          "compatibility",
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "joy_giver",
+        "label": "타인을 기쁘게 함",
+        "plainKo": "ENFP는 타인을 기쁘게 하는 방법을 잘 안다. 리액션, 유머, 대화 주제, 따뜻한 관심으로 상대가 편하게 웃고 말하게 만든다.",
+        "strongLine": "ENFP는 사람을 설득하기 전에 먼저 마음을 풀어 주는 재능이 있다.",
+        "positiveUse": "연애, 상담, 교육, 서비스, 팀 분위기 조성에서 관계 만족도를 높인다.",
+        "risk": "타인을 기쁘게 하려다 거절과 경계 설정이 늦어진다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "도화",
+          "귀인"
+        ],
+        "productDomains": [
+          "compatibility",
+          "love",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "likes_and_dislikes_visible",
+        "label": "호불호가 보임",
+        "plainKo": "ENFP는 좋아하는 사람과 싫어하는 사람의 구분이 크고, 그 감정이 표정에 티가 난다. 솔직한 만큼 가식은 적지만, 관계 관리에는 주의가 필요하다.",
+        "strongLine": "ENFP는 마음의 온도를 숨기지 못해 관계의 신호가 얼굴에 먼저 나타난다.",
+        "positiveUse": "진심이 빠르게 전달되어 친밀감이 생긴다.",
+        "risk": "싫은 감정이 노출되면 불필요한 오해와 편가르기가 생긴다.",
+        "matchingMyeongliSignals": [
+          "홍염",
+          "비견"
+        ],
+        "productDomains": [
+          "compatibility",
+          "love",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "communication": [
+      {
+        "id": "easy_conversation",
+        "label": "쉬운 대화 연결",
+        "plainKo": "ENFP는 말을 거는 데 두려움이 적고, 대화할 때 리액션이 좋아 상대가 편하게 느낀다. 폭넓은 주제로 빠르게 공통점을 찾는다.",
+        "strongLine": "ENFP는 낯선 사람과도 대화의 첫 불씨를 쉽게 만든다.",
+        "positiveUse": "초면 대화, 외국어 회화, 영업, 인터뷰, 모임 운영에서 강하다.",
+        "risk": "대화가 너무 빠르게 번지면 핵심 결론이 흐려진다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "도화",
+          "식신"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "random_but_charming_speech",
+        "label": "아무말 매력",
+        "plainKo": "ENFP는 뜬금없는 말을 하거나 아무말대잔치를 잘할 수 있다. 산만해 보일 수 있지만, 그 말 속에서 분위기가 밝아지고 예상 못한 연결이 생긴다.",
+        "strongLine": "ENFP의 엉뚱한 말은 종종 분위기를 깨는 게 아니라 새 방향을 여는 장난감이 된다.",
+        "positiveUse": "브레인스토밍, 창작, 아이스브레이킹, 콘텐츠 대화에서 활기를 준다.",
+        "risk": "공식적 자리에서는 집중력 부족이나 가벼움으로 보일 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "천문성",
+          "도화"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "encouragement_over_criticism",
+        "label": "격려형 소통",
+        "plainKo": "ENFP에게는 날카로운 비판보다 격려가 더 효과적이다. 대화에서도 상대를 공격하기보다 가능성을 보고 응원하는 방식이 자연스럽다.",
+        "strongLine": "ENFP는 비판으로 몰아붙일 때보다 격려로 불을 붙일 때 훨씬 잘 움직인다.",
+        "positiveUse": "팀원 동기부여, 연인과의 대화, 자녀 교육에서 긍정적 힘을 만든다.",
+        "risk": "필요한 비판과 현실 점검을 피하면 문제가 반복된다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "식신"
+        ],
+        "productDomains": [
+          "career",
+          "love",
+          "parenting"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "strengths": [
+      {
+        "id": "creative_imagination",
+        "label": "상상력과 창의력",
+        "plainKo": "ENFP는 상상력이 풍부하고 창의적 가능성을 탐구하는 것을 좋아한다. 평범한 사실보다 새로운 조합과 해석에서 생동감을 느낀다.",
+        "strongLine": "ENFP는 이미 있는 답보다 아직 만들어지지 않은 선택지를 더 잘 본다.",
+        "positiveUse": "창작, 기획, 캠페인, 교육, 상담에서 새로운 접근을 만든다.",
+        "risk": "현실 검증 없이 가능성만 키우면 실행력이 약해진다.",
+        "matchingMyeongliSignals": [
+          "천문성",
+          "식신",
+          "목"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "friendly_leadership",
+        "label": "친화적 리더십",
+        "plainKo": "ENFP는 사람을 억지로 끌고 가기보다 밝은 에너지와 관계 감각으로 움직이게 한다. 아무도 나서지 않을 때 먼저 제안하고 분위기를 만든다.",
+        "strongLine": "ENFP의 리더십은 지시보다 함께 재미있게 해보자는 초대에 가깝다.",
+        "positiveUse": "팀 분위기 전환, 행사 시작, 커뮤니티 활성화에 강하다.",
+        "risk": "구체적 계획과 책임 배분이 빠지면 추진력이 지속되지 않는다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "비견",
+          "식신"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "crisis_big_picture",
+        "label": "큰일 대처력",
+        "plainKo": "ENFP는 작은 일에는 당황해도 큰일이 벌어지면 오히려 빠르게 가능성을 찾고 움직인다. 즉흥성과 창의성이 위기 대응으로 바뀔 때 강하다.",
+        "strongLine": "ENFP는 사소한 준비물은 잊어도, 큰 위기 앞에서는 뜻밖의 해결책을 꺼낸다.",
+        "positiveUse": "돌발 상황, 행사 문제, 관계 위기, 창의적 해결이 필요한 순간에 빠르게 움직인다.",
+        "risk": "큰 위기 대응력에 기대어 평소 준비를 소홀히 할 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "천문성"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "risks": [
+      {
+        "id": "unfinished_many_starts",
+        "label": "벌이고 미루기",
+        "plainKo": "ENFP는 한 가지 일을 끝내기 전에 다른 일을 또 벌이는 경향이 있다. 흥미가 여러 방향으로 튀기 때문에 시작의 수에 비해 마무리가 부족할 수 있다.",
+        "strongLine": "ENFP의 가능성은 많이 시작할수록 커지는 것이 아니라 끝까지 남긴 것에서 힘이 된다.",
+        "positiveUse": "아이디어 목록을 실행 후보와 보류 후보로 나누면 에너지를 아낀다.",
+        "risk": "미완성 경험이 쌓이면 신뢰와 자기효능감이 떨어진다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "겁재"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "detail_boredom",
+        "label": "세부 지루함",
+        "plainKo": "세부사항과 반복되는 단순노동은 ENFP에게 큰 지루함을 준다. 그러나 이 부분을 완전히 피하면 결과물의 완성도가 흔들린다.",
+        "strongLine": "ENFP가 싫어하는 세부가 ENFP의 큰 아이디어를 현실에 묶어 주는 마지막 고리다.",
+        "positiveUse": "체크리스트와 협업자를 두면 창의성과 완성도를 함께 지킬 수 있다.",
+        "risk": "반복 점검을 생략하면 실수, 분실, 일정 누락이 잦아진다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "marriage"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "criticism_sensitivity",
+        "label": "비판 민감성",
+        "plainKo": "ENFP는 비판을 받으면 방어적으로 대응하거나 지나치게 많은 생각에 빠질 수 있다. 자기비난이 커지면 행동력이 급격히 줄어든다.",
+        "strongLine": "ENFP에게 비판은 정보로 들어오기 전에 먼저 마음에 닿는다.",
+        "positiveUse": "격려와 구체적 개선점이 함께 오면 빠르게 회복하고 성장한다.",
+        "risk": "비판을 자기 존재에 대한 공격으로 받아들이면 관계와 성과가 멈춘다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "recognition_dependence",
+        "label": "인정 욕구",
+        "plainKo": "ENFP는 자신감을 뒷받침하기 위해 외부의 인정을 필요로 할 수 있다. 사람들의 반응이 좋으면 더 살아나지만, 무관심이나 부정적 반응에는 쉽게 흔들린다.",
+        "strongLine": "ENFP는 스스로 빛나지만, 그 빛이 확인받지 못할 때 급격히 작아질 수 있다.",
+        "positiveUse": "좋은 반응을 동력으로 삼아 더 적극적으로 표현하고 도전한다.",
+        "risk": "인정이 기준이 되면 자기 가치보다 타인의 반응에 끌려다닌다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "홍염",
+          "정인"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "career"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ],
+    "growth": [
+      {
+        "id": "make_completion_structure",
+        "label": "완료 구조 만들기",
+        "plainKo": "ENFP의 성장은 열정을 줄이는 것이 아니라 열정이 끝까지 가도록 구조를 붙이는 것이다. 시작 전 마감, 역할, 최소 완료 기준을 정하면 실행력이 안정된다.",
+        "strongLine": "ENFP의 자유는 구조가 없을 때보다 최소 구조가 있을 때 더 오래 살아남는다.",
+        "positiveUse": "아이디어를 실제 결과물과 성과로 연결한다.",
+        "risk": "구조 없이 열정만 믿으면 같은 미완성이 반복된다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재"
+        ],
+        "productDomains": [
+          "career",
+          "study",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "train_fact_and_logic",
+        "label": "근거 훈련",
+        "plainKo": "ENFP는 감정과 의미를 잘 읽지만 객관적 사고와 논리적 분석은 의식적으로 훈련해야 한다. 자기 생각을 설득력 있게 만들려면 근거를 남기는 습관이 필요하다.",
+        "strongLine": "ENFP의 직관은 근거를 만나야 사람을 설득하는 힘이 된다.",
+        "positiveUse": "학업, 발표, 기획, 투자 판단에서 신뢰도가 높아진다.",
+        "risk": "근거가 약하면 좋은 아이디어도 감상적 주장으로 보인다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "정재",
+          "금"
+        ],
+        "productDomains": [
+          "study",
+          "career",
+          "investment"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "id": "practice_boundaries",
+        "label": "경계선 연습",
+        "plainKo": "ENFP는 사람을 밀쳐내기 어렵고 거절도 잘 못한다. 따뜻함을 유지하면서도 내가 할 수 있는 것과 없는 것을 분명히 말하는 연습이 필요하다.",
+        "strongLine": "ENFP가 더 오래 사랑하고 돕기 위해서는 모든 문을 계속 열어 둘 필요가 없다.",
+        "positiveUse": "관계의 오해와 감정 소모를 줄이고 자기 에너지를 지킨다.",
+        "risk": "경계가 없으면 부탁, 관계, 약속이 쌓여 결국 회피로 이어진다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "정관"
+        ],
+        "productDomains": [
+          "love",
+          "compatibility",
+          "general"
+        ],
+        "sourceCoverage": "direct"
+      }
+    ]
+  },
+  "recommendedJobs": [
+    {
+      "job": "상담가",
+      "reason": "사람의 이야기를 흥미롭게 듣고, 감정과 가능성을 함께 읽는 능력이 상담 분야에 잘 맞는다.",
+      "matchingTraits": [
+        "counseling_fit",
+        "warm_confidant_partner",
+        "people_centered_energy"
+      ],
+      "matchingMyeongliSignals": [
+        "귀인",
+        "정인",
+        "식신"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "교육자",
+      "reason": "밝은 에너지와 스토리텔링으로 학습 동기를 만들고, 학생의 가능성을 발견하는 데 강하다.",
+      "matchingTraits": [
+        "education_motivator",
+        "interest_switch_learning",
+        "encouragement_over_criticism"
+      ],
+      "matchingMyeongliSignals": [
+        "문창",
+        "정인",
+        "식신"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "예술가",
+      "reason": "상상력, 감정 표현, 자기만의 개성, 창의적 스토리텔링을 작품으로 풀어내기 좋다.",
+      "matchingTraits": [
+        "arts_and_creative_field",
+        "creative_imagination",
+        "expressive_authenticity"
+      ],
+      "matchingMyeongliSignals": [
+        "도화",
+        "홍염",
+        "식신"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "콘텐츠 기획자",
+      "reason": "평범한 사건에도 이야기와 유머를 더하고, 사람들에게 공유할 만한 소재를 잘 만든다.",
+      "matchingTraits": [
+        "imaginative_storytelling",
+        "random_but_charming_speech",
+        "community_event_starter"
+      ],
+      "matchingMyeongliSignals": [
+        "문창",
+        "도화",
+        "천문성"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "job": "행사 기획자",
+      "reason": "아무도 나서지 않을 때 모임과 일을 시작하게 만드는 힘이 있고, 분위기를 밝게 조성한다.",
+      "matchingTraits": [
+        "community_event_starter",
+        "social_mood_maker",
+        "friendly_leadership"
+      ],
+      "matchingMyeongliSignals": [
+        "도화",
+        "비견",
+        "역마"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "job": "커뮤니티 매니저",
+      "reason": "넓은 관계망, 친화력, 리액션, 사람을 기쁘게 하는 감각이 커뮤니티 운영과 잘 맞는다.",
+      "matchingTraits": [
+        "wide_light_network",
+        "joy_giver",
+        "easy_conversation"
+      ],
+      "matchingMyeongliSignals": [
+        "도화",
+        "귀인",
+        "비견"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "job": "언어 회화 강사",
+      "reason": "말을 거는 데 두려움이 없고, 실제 대화 속에서 언어를 익히고 전달하는 강점이 크다.",
+      "matchingTraits": [
+        "language_conversation_strength",
+        "easy_conversation",
+        "education_motivator"
+      ],
+      "matchingMyeongliSignals": [
+        "문창",
+        "도화",
+        "역마"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "job": "종교·영성 커뮤니티 활동가",
+      "reason": "원문에서 상담, 교육, 종교 분야에 자주 보인다고 설명되며, 의미와 사람의 성장을 다루는 영역에 끌린다.",
+      "matchingTraits": [
+        "meaning_before_fact",
+        "counseling_fit",
+        "people_centered_energy"
+      ],
+      "matchingMyeongliSignals": [
+        "정인",
+        "천문성",
+        "귀인"
+      ],
+      "sourceCoverage": "direct"
+    }
+  ],
+  "avoidJobsOrEnvironments": [
+    {
+      "name": "반복 단순노동",
+      "reason": "세부사항과 반복 업무에 쉽게 지루함을 느끼며, 새로움과 사람의 의미가 없는 일에서는 열정이 떨어진다.",
+      "riskTraits": [
+        "detail_boredom",
+        "novelty_required_work"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "강한 규칙과 규율 중심 조직",
+      "reason": "자율성과 융통성을 중시하는 ENFP에게 촘촘한 통제와 간섭은 동기를 크게 낮춘다.",
+      "riskTraits": [
+        "autonomy_over_control",
+        "anti_conservative_child"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "위계질서가 강한 환경",
+      "reason": "수평적이고 자유로운 관계 속에서 더 잘 움직이며, 권위적 지시와 보수 문화에는 충돌하기 쉽다.",
+      "riskTraits": [
+        "autonomy_over_control",
+        "anti_conservative_child"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "단순 암기 중심 학습·직무",
+      "reason": "의미와 연결이 없는 암기에 약하며, 논리적 근거와 맥락 없이 반복만 요구하면 흥미가 꺼진다.",
+      "riskTraits": [
+        "meaning_based_study",
+        "logic_practice_needed"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "세부 정리와 물품 관리 중심 업무",
+      "reason": "건망증, 물건 분실, 주변 정리 약점이 드러나기 쉬워 업무 신뢰도에 부담이 된다.",
+      "riskTraits": [
+        "detail_boredom",
+        "domestic_follow_through_gap"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "한 분야만 오래 파야 하는 환경",
+      "reason": "다양한 것에 흥미를 갖지만 금방 질리는 경향이 있어 한 우물만 파는 구조에서는 활력이 약해진다.",
+      "riskTraits": [
+        "unfinished_many_starts",
+        "spark_of_possibility"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "냉정한 실적주의 환경",
+      "reason": "사람의 감정과 의미보다 결과만 압박하는 환경에서는 방어적 반응과 불안이 커질 수 있다.",
+      "riskTraits": [
+        "criticism_sensitivity",
+        "emotion_amplified_processing"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "name": "정치질과 사회 불문율이 강한 조직",
+      "reason": "가식과 정치질을 멀게 느끼고 감정이 표정에 드러나기 쉬워 은근한 권모술수 환경에서 손해를 볼 수 있다.",
+      "riskTraits": [
+        "expressive_authenticity",
+        "likes_and_dislikes_visible"
+      ],
+      "sourceCoverage": "direct"
+    }
+  ],
+  "relationshipHints": {
+    "comfortableTypes": [
+      "ESTJ",
+      "ISTJ",
+      "INFP",
+      "INFJ",
+      "ESFJ"
+    ],
+    "challengingTypes": [
+      "ISTP",
+      "ISFP"
+    ],
+    "notablePairs": [
+      {
+        "withType": "ENFP",
+        "label": "동일 관계",
+        "sourceRelationName": "Identical",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "같은 기능을 같은 순서로 사용해 서로의 감정, 가능성 탐색, 자유 욕구를 빠르게 이해한다.",
+          "친구로서는 말이 잘 통하고 함께 새로운 경험을 벌이기 쉽다."
+        ],
+        "friction": [
+          "상호 보완을 기대하기는 어렵고, 둘 다 마무리와 세부 관리가 약해질 수 있다.",
+          "한쪽이 불건강하면 다른 한쪽도 감정 기복, 충동성, 미완성 패턴에 쉽게 휩쓸린다."
+        ],
+        "positiveInfluence": [
+          "서로의 개성과 가능성을 잘 인정하며 밝은 에너지를 증폭시킨다.",
+          "서로를 거울처럼 보며 자신의 장단점을 더 선명하게 알 수 있다."
+        ],
+        "lovePattern": "연애에서는 초반 대화와 감정 표현이 빠르게 살아난다. 서로의 자유로움과 즉흥성을 좋아하지만, 둘 다 관계의 세부 약속과 현실 관리를 미루면 설렘은 큰데 안정감은 약해질 수 있다.",
+        "marriagePattern": "결혼에서는 즐겁고 창의적인 가정 분위기를 만들 수 있지만, 재정·정리·반복 루틴을 누가 맡을지 명확하지 않으면 생활 기반이 흔들린다.",
+        "repairStrategy": [
+          "즐거운 계획과 생활 책임을 같은 중요도로 적어 둔다.",
+          "감정이 커졌을 때 즉시 결론을 내리지 말고 하루 뒤 다시 이야기한다.",
+          "세부 관리 영역은 체크리스트와 외부 도구를 사용한다."
+        ],
+        "reportLine": "ENFP와 ENFP는 서로를 가장 빨리 이해하지만, 닮은 약점까지 증폭되기 때문에 자유만큼 구조가 필요하다."
+      },
+      {
+        "withType": "INFP",
+        "label": "거울 관계",
+        "sourceRelationName": "Mirror",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "성격, 가치관, 취향이 비슷해 서로의 감정과 이상을 이해하기 쉽다.",
+          "I/E 차이가 크지 않게 느껴지는 경우가 많아 대화와 정서적 공감이 자연스럽다."
+        ],
+        "friction": [
+          "ENFP는 외부 사람과 경험을 통해 에너지를 얻고, INFP는 내면의 감정과 조용한 몰입을 더 필요로 한다.",
+          "둘 다 현실 정리와 반복 실행이 약해질 수 있다."
+        ],
+        "positiveInfluence": [
+          "ENFP는 INFP의 생각을 밖으로 꺼내고, INFP는 ENFP의 감정을 더 깊게 정리해 준다.",
+          "동일 관계보다 보완감이 있어 창작과 관계에서 좋은 시너지가 난다."
+        ],
+        "lovePattern": "연애에서는 감정의 결이 잘 맞고 서로의 이상을 응원한다. ENFP는 INFP에게 더 넓은 경험을 열어 주고, INFP는 ENFP에게 깊이 있는 정서적 안식처가 된다. 다만 외부 활동량과 혼자 있는 시간의 균형이 핵심이다.",
+        "marriagePattern": "장기 관계에서는 서로의 내적 가치와 개성을 존중하기 쉽다. 하지만 생활 운영, 돈 관리, 마감, 정리 같은 반복 과제를 방치하면 둘 다 좋은 마음은 있어도 현실 피로가 쌓인다.",
+        "repairStrategy": [
+          "외부 활동과 조용한 회복 시간을 모두 일정에 반영한다.",
+          "현실 업무는 감정 상태와 별개로 역할을 나눈다.",
+          "서로의 회피를 배려로 포장하지 말고 필요한 문제를 짧게라도 다룬다."
+        ],
+        "reportLine": "ENFP와 INFP는 마음의 언어가 잘 통하지만, 현실 운영을 따로 설계하지 않으면 좋은 감정만으로는 오래 버티기 어렵다."
+      },
+      {
+        "withType": "INFJ",
+        "label": "보완 관계",
+        "sourceRelationName": "Supplement",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "두 유형 모두 깊은 공감과 관심을 공유하며 얕은 관계보다 의미 있는 유대를 선호한다.",
+          "ENFP의 활기와 창의성, INFJ의 안정성과 조직성이 서로를 보완한다.",
+          "가족과 직장에서 상호 보완적인 역할을 수행할 수 있다."
+        ],
+        "friction": [
+          "ENFP는 즉흥적이고 확장적이며, INFJ는 안정적이고 구조적인 방향을 선호한다.",
+          "ENFP의 감정과 경험 확장은 INFJ에게 산만하게 느껴질 수 있고, INFJ의 조직성은 ENFP에게 답답하게 느껴질 수 있다."
+        ],
+        "positiveInfluence": [
+          "ENFP는 INFJ에게 재미, 활력, 새로운 경험을 제공하고, INFJ는 ENFP에게 안정감과 균형을 제공한다.",
+          "서로 다른 사교적 스타일을 배우며 성장과 발전을 촉진한다."
+        ],
+        "lovePattern": "연애에서는 ENFP의 밝은 에너지와 INFJ의 깊은 이해가 강하게 끌린다. ENFP는 INFJ에게 생동감을 주고, INFJ는 ENFP에게 안정적인 정서적 중심을 제공한다. 다만 즉흥성과 구조성의 차이를 조율하지 않으면 단짠처럼 끌리면서도 피로해진다.",
+        "marriagePattern": "장기 관계에서는 ENFP가 가정에 재미와 창의성을 주고, INFJ가 구조와 조직을 제공해 균형 잡힌 가정 환경을 만들 수 있다. 역할이 존중되면 풍부하지만, 한쪽이 상대의 방식을 교정하려 하면 긴장이 생긴다.",
+        "repairStrategy": [
+          "ENFP는 INFJ가 안정감을 원한다는 점을 일정과 약속으로 보여 준다.",
+          "INFJ는 ENFP의 즉흥성을 무책임이 아니라 활력의 표현으로 분리해 본다.",
+          "공동 계획에는 자유 활동과 정리 시간을 함께 넣는다."
+        ],
+        "reportLine": "ENFP와 INFJ는 활기와 안정이 맞물리는 강한 보완 조합이지만, 즉흥성과 구조성을 서로 고치려 들지 않을 때 가장 풍부해진다."
+      },
+      {
+        "withType": "ESFJ",
+        "label": "이익 관계",
+        "sourceRelationName": "Benefit",
+        "sourceCoverage": "direct",
+        "sharedGround": [
+          "ESFJ는 ENFP를 귀엽고 매력적으로 느끼며 끌리기 쉽다.",
+          "ENFP도 ESFJ를 예뻐하고 다정하게 반응해 편안하고 애정 어린 분위기가 만들어진다."
+        ],
+        "friction": [
+          "ESFJ의 관계 관리와 생활 규범은 ENFP에게 가끔 답답하게 느껴질 수 있다.",
+          "ENFP의 즉흥성과 산만함은 ESFJ에게 불안정하게 보일 수 있다."
+        ],
+        "positiveInfluence": [
+          "ESFJ는 ENFP에게 생활 안정과 꾸준한 돌봄을 제공하고, ENFP는 ESFJ에게 활기와 새로운 경험을 준다.",
+          "서로를 귀엽게 보고 예뻐하는 정서가 관계의 부드러움을 만든다."
+        ],
+        "lovePattern": "연애에서는 애정 표현과 리액션이 잘 맞아 꽁냥거리는 분위기가 쉽게 생긴다. ESFJ는 ENFP의 밝은 매력에 끌리고, ENFP는 ESFJ의 세심한 관심을 편안하게 느낀다. 다만 생활 규칙과 즉흥성의 차이는 반복 갈등이 될 수 있다.",
+        "marriagePattern": "결혼에서는 ESFJ가 일상과 관계 의식을 챙기고 ENFP가 가정에 재미와 창의성을 더한다. 서로의 역할을 존중하면 따뜻하지만, ESFJ가 관리자가 되고 ENFP가 자유를 잃었다고 느끼면 긴장이 생긴다.",
+        "repairStrategy": [
+          "생활 규칙은 최소한으로 정하고 ENFP가 선택할 여지를 남긴다.",
+          "ENFP는 ESFJ의 세심함을 통제가 아니라 안정감 제공으로 인정한다.",
+          "애정 표현만큼 일정과 약속도 구체적으로 확인한다."
+        ],
+        "reportLine": "ENFP와 ESFJ는 다정하고 편안하게 끌리지만, 생활 규칙과 즉흥성의 균형을 맞춰야 애정이 안정으로 이어진다."
+      },
+      {
+        "withType": "ISFP",
+        "label": "감독 관계",
+        "sourceRelationName": "Supervision",
+        "sourceCoverage": "needs_enrichment",
+        "sharedGround": [],
+        "friction": [],
+        "positiveInfluence": [],
+        "lovePattern": "",
+        "marriagePattern": "",
+        "repairStrategy": [],
+        "reportLine": "",
+        "enrichmentNote": "원문에 ENFP 감독자-ISFP 피감독 관계 제목과 역할은 있으나 설명이 부족하여 MBTI-RELATION-GAP-FILL 단계에서 보강 필요"
+      },
+      {
+        "withType": "ISTP",
+        "label": "갈등 관계",
+        "sourceRelationName": "Conflict",
+        "sourceCoverage": "needs_enrichment",
+        "sharedGround": [],
+        "friction": [],
+        "positiveInfluence": [],
+        "lovePattern": "",
+        "marriagePattern": "",
+        "repairStrategy": [],
+        "reportLine": "",
+        "enrichmentNote": "원문에 가장 상극인 유형으로 ISTP가 제시되었으나 관계 설명이 부족하여 MBTI-RELATION-GAP-FILL 단계에서 보강 필요"
+      }
+    ]
+  },
+  "myeongliBridgeHints": [
+    {
+      "signal": "도화",
+      "reason": "밝은 분위기, 스포트라이트, 친화력, 대화 리액션으로 사람을 끌어들이는 성향과 연결된다.",
+      "productDomains": [
+        "general",
+        "career",
+        "love",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "식신",
+      "reason": "스토리텔링, 유머, 감정 표현, 즐거움을 나누는 힘과 맞는다.",
+      "productDomains": [
+        "career",
+        "love",
+        "parenting",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "천문성",
+      "reason": "서로 관련 없어 보이는 것들 사이에서 의미와 가능성을 찾아내는 직관과 연결된다.",
+      "productDomains": [
+        "general",
+        "career",
+        "study",
+        "daeun"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "역마",
+      "reason": "새 경험, 여행, 외부 세계에 대한 관심, 사람들과 공유할 이야기를 모으는 성향과 맞는다.",
+      "productDomains": [
+        "general",
+        "career",
+        "parenting",
+        "daeun"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "정인",
+      "reason": "공감, 격려, 상담, 애정 표현, 자녀를 이해하고 지지하는 양육 태도와 연결된다.",
+      "productDomains": [
+        "general",
+        "love",
+        "parenting",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
+      "signal": "편재",
+      "reason": "새로운 기회, 경험 소비, 넓은 관계망과 외부 자극을 통해 자원을 움직이는 성향과 연결된다.",
+      "productDomains": [
+        "money",
+        "investment",
+        "career"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  ],
+  "reportUseCases": {
+    "generalReport": [
+      "가능성 탐색, 사람 중심 에너지, 따뜻한 개인주의, 감정 표현, 외향 속 혼자 시간이 필요한 구조를 핵심 정체성으로 쓴다.",
+      "미완성, 세부 지루함, 비판 민감성, 인정 욕구를 성장 과제로 함께 제시한다."
+    ],
+    "careerReport": [
+      "상담, 교육, 예술, 콘텐츠, 행사·커뮤니티 운영, 언어 회화 분야를 추천한다.",
+      "반복 단순노동, 위계질서, 단순 암기, 세부 정리 중심 업무, 냉정한 실적주의 환경을 피해야 할 조건으로 제시한다."
+    ],
+    "loveMarriageChildReport": [
+      "열정적 사랑, 다정한 고민 상담자, 즉흥 연애 리스크, 거절 어려움을 연애 해석에 쓴다.",
+      "부모·자녀 해석에서는 이해하려는 부모, 애정 표현, 여행 양육, 잘 노는 아이, 관심 따라 극단적인 학습 패턴을 다룬다."
+    ],
+    "compatibilityReport": [
+      "ENFP, INFP, INFJ, ESFJ 관계는 원문 설명을 기반으로 우선 사용한다.",
+      "ISFP 감독 관계와 ISTP 갈등 관계는 needs_enrichment 표시 후 MBTI-RELATION-GAP-FILL에서 보강한다."
+    ],
+    "daeunReport": [
+      "도화·식신·천문성·역마가 강한 대운은 관계 확장, 창작, 여행, 새 경험, 커뮤니케이션 기회가 커지는 흐름으로 번역한다.",
+      "정관·정재가 강한 대운은 ENFP에게 마감, 루틴, 계약, 재정 구조를 붙이는 보완 시기로 읽는다."
+    ],
+    "saeunReport": [
+      "도화·홍염 세운은 인기와 노출, 연애 감정이 커지는 해로 보되 인정 욕구와 감정 기복을 관리하게 한다.",
+      "편재·역마 세운은 새 제안과 이동이 늘어나는 해로 보되 즉흥 지출과 미완성 프로젝트를 경계시킨다."
+    ]
+  },
+  "enrichment": {
+    "missingAreas": [
+      "investment direct detail",
+      "money direct detail",
+      "marriage direct detail",
+      "ISFP relation detail",
+      "ISTP relation detail",
+      "specific job list"
+    ],
+    "needsRelationGapFill": true,
+    "notes": [
+      "금전, 투자, 결혼 영역은 원문 직접 설명이 적어 ENFP 성향 기반으로 보수적으로 추론함.",
+      "관계 중 ISFP와 ISTP는 제목 또는 역할만 있어 needs_enrichment로 표시함.",
+      "통계표, 출처 표기, IQ·소득·ADHD·HSP 관련 단정은 상품용 DB에서 제외하거나 의미 단위로만 재구성함."
+    ]
+  }
+}
+
