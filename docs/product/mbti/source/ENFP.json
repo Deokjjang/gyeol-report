@@ -2249,7 +2249,7 @@
     "needsRelationGapFill": true,
     "notes": [
       "금전, 투자, 결혼 영역은 직접 설명이 적어 ENFP 성향 기반으로 보수적으로 추론함.",
-      "관계 중 ISFP와 ISTP는 제목 또는 역할만 있어 needs_enrichment로 표시함.",
+      "관계 중 ISFP와 ISTP는 제목 또는 역할 단서만 있어 보수적으로 재구성해 관리함.",
       "통계표, 출처 표기, IQ·소득·ADHD·HSP 관련 단정은 상품용 DB에서 제외하거나 의미 단위로만 재구성함."
     ]
   }

@@ -2180,7 +2180,7 @@
     "needsRelationGapFill": true,
     "notes": [
       "통계, 출처, 편집 주의문, 테스트별 별칭, 관계 이론 주의문은 제외하고 상품용 trait으로만 재구성했다.",
-      "관계 제목만 있고 설명이 빈 유형은 notablePairs에 placeholder를 두고 sourceCoverage를 needs_enrichment로 표시했다.",
+      "관계 제목만 있고 설명이 빈 유형은 notablePairs에서 제한 단서 기준으로 보수적으로 관리했다.",
       "투자 성향은 직접 투자 조언이 많지 않아 안정 수입, 보수성, 손익계산, 장기 누적 소득 정보를 기반으로 inferred 처리했다."
     ]
   }

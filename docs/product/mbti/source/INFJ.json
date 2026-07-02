@@ -2534,7 +2534,7 @@
                        "needsRelationGapFill":  true,
                        "notes":  [
                                     "출처 표기, 통계표 노이즈, 편집 주의문, 링크형 제목은 제거하고 상품용 trait으로 재구성함",
-                                     "관계 제목만 있는 ESFP, ISFP, ISTJ, ESFJ, ENTJ, INTJ 조합은 needs_enrichment placeholder로 남김",
+                                    "관계 제목만 있던 ESFP, ISFP, ISTJ, ESFJ, ENTJ, INTJ 조합은 제한 단서 기준으로 보수적으로 관리함",
                                      "직업 부적합 정보는 추천되지 않는 직업/환경 배열로 별도 정리함"
                                  ]
                    }
