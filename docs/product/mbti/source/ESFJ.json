@@ -944,6 +944,44 @@
                                                                "compatibility"
                                                            ],
                                         "sourceCoverage":  "direct"
+                                    },
+                                    {
+                                        "id":  "event_and_care_budget",
+                                        "label":  "행사·돌봄 예산",
+                                        "plainKo":  "ESFJ는 기념일, 경조사, 가족 모임, 선물, 식사처럼 관계를 따뜻하게 만드는 지출에 마음이 약하다. 결혼 후에는 정서 표현과 체면 비용이 생활비를 밀어내지 않도록 예산을 분리해야 한다.",
+                                        "strongLine":  "당신의 챙김은 관계를 살리지만, 한도 없는 관계 지출은 가정의 안정감을 흔듭니다.",
+                                        "positiveUse":  "행사비, 선물비, 가족 지원금, 생활비를 나누면 따뜻함과 재정 안정이 함께 살아난다.",
+                                        "risk":  "좋은 사람으로 보이려는 지출이 반복되면 배우자는 체면이 우리 생활보다 앞선다고 느낄 수 있다.",
+                                        "matchingMyeongliSignals":  [
+                                                                        "정재",
+                                                                        "식신",
+                                                                        "도화"
+                                                                    ],
+                                        "productDomains":  [
+                                                               "marriage",
+                                                               "money",
+                                                               "general"
+                                                           ],
+                                        "sourceCoverage":  "inferred"
+                                    },
+                                    {
+                                        "id":  "care_without_overreach",
+                                        "label":  "과관여 없는 챙김",
+                                        "plainKo":  "ESFJ는 배우자의 식사, 건강, 일정, 가족 관계까지 챙기며 사랑을 표현한다. 다만 상대가 스스로 선택하고 쉴 공간까지 관리하려 들면 챙김이 간섭으로 바뀐다.",
+                                        "strongLine":  "당신의 결혼은 많이 챙길수록 좋아지는 것이 아니라, 상대가 숨 쉴 공간을 남길 때 더 따뜻합니다.",
+                                        "positiveUse":  "필요한 도움과 요청받은 도움을 구분하면 배우자는 보호받으면서도 존중받는다고 느낀다.",
+                                        "risk":  "상대의 생활을 전부 조정하려 하면 사랑보다 과한 기대와 잔소리로 받아들여진다.",
+                                        "matchingMyeongliSignals":  [
+                                                                        "정인",
+                                                                        "식신",
+                                                                        "수"
+                                                                    ],
+                                        "productDomains":  [
+                                                               "marriage",
+                                                               "love",
+                                                               "compatibility"
+                                                           ],
+                                        "sourceCoverage":  "inferred"
                                     }
                                 ],
                    "parenting":  [

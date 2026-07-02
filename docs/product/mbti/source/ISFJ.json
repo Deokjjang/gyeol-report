@@ -882,6 +882,44 @@
           "compatibility"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "care_reciprocity_rule",
+        "label": "돌봄의 상호성",
+        "plainKo": "ISFJ는 배우자와 가족을 챙기는 일을 자연스럽게 떠안기 쉽다. 결혼에서는 돌봄을 혼자 알아서 하는 일이 아니라, 배우자도 일정, 가사, 정서 확인을 함께 맡는 구조로 만들어야 한다.",
+        "strongLine": "당신의 결혼은 당신이 더 참고 더 챙기는 구조가 아니라, 돌봄이 서로 오갈 때 오래 갑니다.",
+        "positiveUse": "가사, 병원, 가족 행사, 생활비, 감정 대화를 함께 나누면 ISFJ의 안정감이 지치지 않는다.",
+        "risk": "필요를 말하지 않고 계속 맞추면 배우자는 괜찮은 줄 알고 책임을 덜 느낄 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정재",
+          "토"
+        ],
+        "productDomains": [
+          "marriage",
+          "parenting",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "family_money_boundary",
+        "label": "가족 돈 경계",
+        "plainKo": "ISFJ는 가족과 가까운 사람의 필요를 보면 자기 몫을 줄여서라도 챙기려 한다. 결혼 후에는 생활비, 양가 지원, 기념일, 돌봄 비용에 한도를 정해야 따뜻함이 부담으로 변하지 않는다.",
+        "strongLine": "당신은 가족을 위해 쓰는 돈에 약하지만, 한도 없는 배려는 결국 당신의 생활을 압박합니다.",
+        "positiveUse": "가족 지원금, 경조사비, 돌봄 비용, 비상금을 분리하면 안정과 배려를 함께 지킨다.",
+        "risk": "상대와 합의 없이 계속 챙기면 공동재정과 배우자의 신뢰가 흔들릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정인",
+          "겁재"
+        ],
+        "productDomains": [
+          "marriage",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "parenting": [

@@ -918,6 +918,44 @@
           "compatibility"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "joint_finance_authority",
+        "label": "공동재정 권한",
+        "plainKo": "ESTJ는 결혼 생활에서 돈, 역할, 일정, 가족 계획이 명확해야 마음이 놓인다. 다만 재정을 잘 관리하는 힘이 강할수록 배우자에게는 협의가 아니라 결재를 받는 구조처럼 느껴질 수 있다.",
+        "strongLine": "당신의 돈 관리 능력은 강점이지만, 결혼에서는 통제권보다 공동 기준이 먼저입니다.",
+        "positiveUse": "예산, 저축, 보험, 주거 계획, 가족 비용을 체계적으로 관리해 생활 안정성을 높인다.",
+        "risk": "수입과 지출 권한을 한쪽이 쥐면 배우자는 책임을 나누는 대신 허락을 구한다고 느낀다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "marriage",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "emotional_leadership_practice",
+        "label": "정서적 리더십",
+        "plainKo": "ESTJ는 갈등이 생기면 감정보다 원인과 해결책을 먼저 잡으려 한다. 결혼에서는 문제를 해결하기 전에 배우자가 어떤 감정을 겪었는지 듣는 순서가 있어야 지시처럼 들리지 않는다.",
+        "strongLine": "당신은 문제를 잘 해결하지만, 배우자는 해결책보다 먼저 자기 마음이 이해받았는지 확인합니다.",
+        "positiveUse": "가족 회의, 역할 조정, 금전 계획을 실행력 있게 정리하면서도 정서적 안정감을 보완한다.",
+        "risk": "바로 결론부터 내리면 맞는 말도 명령처럼 들려 친밀감이 약해진다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "정인",
+          "금"
+        ],
+        "productDomains": [
+          "marriage",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "parenting": [
