@@ -2083,66 +2083,117 @@
   "myeongliBridgeHints": [
     {
       "signal": "도화",
-      "reason": "밝은 분위기, 스포트라이트, 친화력, 대화 리액션으로 사람을 끌어들이는 성향과 연결된다.",
+      "reason": "도화는 밝은 분위기, 친화력, 대화 리액션, 사람을 끌어들이는 힘과 연결한다. 관계·커리어에서는 설렘과 주목성이 장점이지만 인정 욕구와 감정 기복을 함께 점검한다.",
       "productDomains": [
         "general",
         "career",
         "love",
-        "compatibility"
+        "compatibility",
+        "relationship"
       ],
       "sourceCoverage": "direct"
     },
     {
+      "signal": "홍염",
+      "reason": "홍염은 강한 호감, 표현력, 감정 온도, 연애 접점이 커지는 흐름으로 읽는다. ENFP에게는 매력을 관계 신뢰로 이어가려면 자유 시간과 책임 기준을 같이 합의하게 한다.",
+      "productDomains": [
+        "love",
+        "relationship",
+        "career",
+        "saeun"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
       "signal": "식신",
-      "reason": "스토리텔링, 유머, 감정 표현, 즐거움을 나누는 힘과 맞는다.",
+      "reason": "식신은 스토리텔링, 유머, 감정 표현, 즐거움을 나누는 힘과 연결한다. 일·돈 문장에서는 아이디어를 콘텐츠와 반복 가능한 산출물로 바꾸는 단서로 쓴다.",
       "productDomains": [
         "career",
+        "money",
         "love",
         "parenting",
-        "child"
+        "growth"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "천문성",
-      "reason": "서로 관련 없어 보이는 것들 사이에서 의미와 가능성을 찾아내는 직관과 연결된다.",
+      "reason": "천문성은 관련 없어 보이는 것들 사이에서 의미와 가능성을 찾아내는 직관과 연결한다. 판단 문장에서는 가능성 탐색은 살리되 마감과 우선순위 기준을 붙이게 한다.",
       "productDomains": [
         "general",
         "career",
         "study",
+        "investment",
         "daeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "역마",
-      "reason": "새 경험, 여행, 외부 세계에 대한 관심, 사람들과 공유할 이야기를 모으는 성향과 맞는다.",
+      "reason": "역마는 새 경험, 여행, 이동, 외부 세계에 대한 관심과 연결한다. 커리어에서는 확장 신호로 쓰되 돈·관계 문장에서는 즉흥 지출과 미완성 프로젝트를 같이 점검한다.",
       "productDomains": [
         "general",
         "career",
-        "parenting",
+        "money",
+        "relationship",
         "daeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "정인",
-      "reason": "공감, 격려, 상담, 애정 표현, 자녀를 이해하고 지지하는 양육 태도와 연결된다.",
+      "reason": "정인은 공감, 격려, 상담, 애정 표현, 이해받고 싶은 욕구와 연결한다. 관계에서는 따뜻함이 강점이지만 감정 확인을 계속 요구하면 피로가 커질 수 있음을 함께 다룬다.",
       "productDomains": [
         "general",
         "love",
         "parenting",
-        "child"
+        "relationship",
+        "growth"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "편재",
-      "reason": "새로운 기회, 경험 소비, 넓은 관계망과 외부 자극을 통해 자원을 움직이는 성향과 연결된다.",
+      "reason": "편재는 새로운 기회, 경험 소비, 넓은 관계망, 프로젝트형 수입과 연결한다. 투자·돈 문장에서는 가능성에 끌리는 진입과 분산 과다를 줄이도록 예산과 종료 기준을 붙인다.",
       "productDomains": [
         "money",
         "investment",
-        "career"
+        "career",
+        "daeun"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "정재",
+      "reason": "정재는 반복 수입, 고정비, 계약, 자동 저축, 생활 루틴을 세우는 보완 단서다. ENFP에게는 자유를 줄이는 신호가 아니라 자유를 오래 유지하기 위한 최소 구조로 읽는다.",
+      "productDomains": [
+        "money",
+        "investment",
+        "marriage",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "관성",
+      "reason": "관성은 책임, 마감, 일정, 장기 계획을 요구하는 흐름으로 읽는다. 공부·결혼·커리어 문장에서는 산만함을 누르는 것이 아니라 약속과 후속 관리를 붙이는 성장 힌트다.",
+      "productDomains": [
+        "study",
+        "career",
+        "marriage",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "합충형파해",
+      "reason": "합충형파해는 관계나 환경 변화가 자유 욕구와 책임 문제를 동시에 건드리는 신호로 읽는다. 이때는 갑자기 멀어지기보다 일정, 돈, 역할, 감정 표현 빈도를 짧게 합의하게 한다.",
+      "productDomains": [
+        "relationship",
+        "marriage",
+        "career",
+        "daeun",
+        "saeun"
       ],
       "sourceCoverage": "inferred"
     }

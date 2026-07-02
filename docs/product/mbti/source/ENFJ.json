@@ -2103,42 +2103,48 @@
   "myeongliBridgeHints": [
     {
       "signal": "도화",
-      "reason": "대중 앞에서의 말솜씨, 사회적 매력, 사람을 끌어들이는 리액션과 연결된다.",
+      "reason": "도화는 대중 앞의 말솜씨, 사회적 매력, 리액션, 관계를 여는 힘과 연결한다. 연애·커리어 문장에서는 주목성이 장점이지만 인정 욕구와 감정 소모를 함께 점검한다.",
       "productDomains": [
         "general",
         "career",
         "love",
-        "compatibility"
+        "compatibility",
+        "relationship"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "귀인",
-      "reason": "사람을 돕고 성장시키는 조력자 기질과 상담·교육·복지 적합성을 설명하는 데 유용하다.",
+      "reason": "귀인은 사람을 돕고 성장시키는 조력자 기질과 상담·교육·복지 적합성을 읽는 단서다. ENFJ에게는 타인을 돕는 힘과 도움을 요청하는 능력을 함께 보완하게 한다.",
       "productDomains": [
         "career",
         "parenting",
-        "compatibility"
+        "compatibility",
+        "relationship",
+        "growth"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "정인",
-      "reason": "공감, 돌봄, 보호, 교육, 정신적 지주 역할과 연결된다.",
+      "reason": "정인은 공감, 돌봄, 보호, 교육, 정신적 지주 역할과 연결한다. 돈·일 문장에서는 사람을 챙기며 생기는 수입과 과도한 지원 지출의 경계를 같이 본다.",
       "productDomains": [
         "general",
         "love",
+        "money",
         "parenting",
-        "child"
+        "relationship"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "정관",
-      "reason": "공동의 목표, 모범적 세계, 책임감, 사회적 명분과 질서를 중시하는 성향과 맞는다.",
+      "reason": "정관은 공동 목표, 책임감, 사회적 명분, 질서와 연결한다. 결혼·조직 문장에서는 책임을 잘 지지만 상대의 역할까지 떠안는 패턴을 조율하게 한다.",
       "productDomains": [
         "career",
+        "workplace",
         "marriage",
+        "relationship",
         "daeun",
         "saeun"
       ],
@@ -2146,34 +2152,72 @@
     },
     {
       "signal": "문창",
-      "reason": "말과 글의 재능, 설득력 있는 연설, 교육과 대중 커뮤니케이션에 연결된다.",
+      "reason": "문창은 말과 글의 재능, 설득력 있는 연설, 교육과 대중 커뮤니케이션에 연결한다. 공부·커리어에서는 사람에게 설명하며 배우는 강점과 혼자 집중할 시간 확보를 같이 쓴다.",
       "productDomains": [
         "career",
         "study",
-        "general"
+        "general",
+        "growth"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "식신",
-      "reason": "따뜻한 표현, 격려, 유머, 돌봄을 말과 행동으로 드러내는 힘과 연결된다.",
+      "reason": "식신은 따뜻한 표현, 격려, 유머, 돌봄을 말과 행동으로 드러내는 힘과 연결한다. 관계에서는 확인과 위로를 잘하지만 감정 노동 한도를 정해야 한다.",
       "productDomains": [
         "love",
         "parenting",
         "career",
-        "compatibility"
+        "compatibility",
+        "relationship"
       ],
       "sourceCoverage": "direct"
     },
     {
+      "signal": "재성",
+      "reason": "재성은 관계 속 지출, 체면 비용, 브랜드·교육·조직 기반 수입, 현실 예산을 읽는 단서다. ENFJ에게는 지원하고 싶은 마음과 지원 한도를 분리하는 문장에 쓴다.",
+      "productDomains": [
+        "money",
+        "investment",
+        "career",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "편관",
+      "reason": "편관은 책임 압박, 리더십 부담, 사람을 이끌어야 하는 상황과 연결한다. 스트레스 문장에서는 갈등을 대신 떠안지 않고 역할과 결정 권한을 나누게 한다.",
+      "productDomains": [
+        "career",
+        "workplace",
+        "relationship",
+        "daeun",
+        "saeun"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
       "signal": "화",
-      "reason": "사람 앞에서 밝게 드러나는 리더십, 대의명분, 열정적 설득력과 연결된다.",
+      "reason": "화 기운은 사람 앞에서 밝게 드러나는 리더십, 대의명분, 열정적 설득력과 연결한다. 강하게 보이면 관계 확장이 커지므로 휴식, 감정 경계, 확인 욕구 조율을 함께 쓴다.",
       "productDomains": [
         "general",
         "career",
+        "relationship",
         "saeun"
       ],
       "sourceCoverage": "direct"
+    },
+    {
+      "signal": "합충형파해",
+      "reason": "합충형파해는 관계와 조직 내 역할 재조정 신호로 읽는다. ENFJ에게는 모두를 챙기는 방식에서 역할, 한도, 개인 시간을 다시 합의하는 성장 단서가 된다.",
+      "productDomains": [
+        "relationship",
+        "marriage",
+        "career",
+        "growth",
+        "daeun"
+      ],
+      "sourceCoverage": "inferred"
     }
   ],
   "reportUseCases": {

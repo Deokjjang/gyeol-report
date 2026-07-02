@@ -2353,97 +2353,138 @@
                                                    }
                                                ]
                           },
-    "myeongliBridgeHints":  [
-                                {
-                                    "signal":  "천문성",
-                                    "reason":  "미래 예측, 상징 해석, 직관적 통찰, 철학적 사색과 연결된다.",
-                                    "productDomains":  [
-                                                           "general",
-                                                           "study",
-                                                           "daeun"
-                                                       ],
-                                    "sourceCoverage":  "direct"
-                                },
-                                {
-                                    "signal":  "편인",
-                                    "reason":  "내면 세계, 고독, 직관, 자기만의 해석 체계, 세상과의 거리감과 연결된다.",
-                                    "productDomains":  [
-                                                           "general",
-                                                           "study"
-                                                       ],
-                                    "sourceCoverage":  "direct"
-                                },
-                                {
-                                    "signal":  "정인",
-                                    "reason":  "돌봄, 상담, 교육, 사람의 성장 지원, 안정적 정서 제공과 연결된다.",
-                                    "productDomains":  [
-                                                           "career",
-                                                           "love",
-                                                           "parenting",
-                                                           "child"
-                                                       ],
-                                    "sourceCoverage":  "direct"
-                                },
-                                {
-                                    "signal":  "귀인",
-                                    "reason":  "타인을 조용히 돕고, 사람의 회복과 자립을 지원하는 보호자적 면과 연결된다.",
-                                    "productDomains":  [
-                                                           "career",
-                                                           "compatibility",
-                                                           "love"
-                                                       ],
-                                    "sourceCoverage":  "direct"
-                                },
-                                {
-                                    "signal":  "도화",
-                                    "reason":  "예술, 문학, 음악, 로맨틱한 이상, 섬세한 언어와 매력적 분위기와 연결된다.",
-                                    "productDomains":  [
-                                                           "love",
-                                                           "career",
-                                                           "general"
-                                                       ],
-                                    "sourceCoverage":  "direct"
-                                },
-                                {
-                                    "signal":  "식신",
-                                    "reason":  "글쓰기, 창작, 부드러운 표현, 의미를 언어와 작품으로 바꾸는 힘과 연결된다.",
-                                    "productDomains":  [
-                                                           "career",
-                                                           "study",
-                                                           "love"
-                                                       ],
-                                    "sourceCoverage":  "direct"
-                                },
-                                {
-                                    "signal":  "정관",
-                                    "reason":  "확고한 가치관, 예의, 도덕 기준, 사회적 책임감과 연결된다.",
-                                    "productDomains":  [
-                                                           "general",
-                                                           "career",
-                                                           "marriage"
-                                                       ],
-                                    "sourceCoverage":  "direct"
-                                },
-                                {
-                                    "signal":  "수",
-                                    "reason":  "감정 흡수, 내면 사색, 고독, 직관, 조용한 회복 욕구와 연결된다.",
-                                    "productDomains":  [
-                                                           "general",
-                                                           "love"
-                                                       ],
-                                    "sourceCoverage":  "direct"
-                                },
-                                {
-                                    "signal":  "목",
-                                    "reason":  "사람의 성장, 진보, 이상, 교육과 사회적 개선 욕구와 연결된다.",
-                                    "productDomains":  [
-                                                           "career",
-                                                           "parenting",
-                                                           "daeun"
-                                                       ],
-                                    "sourceCoverage":  "direct"
-                                }
-                            ],
+    "myeongliBridgeHints": [
+      {
+        "signal": "천문성",
+        "reason": "천문성이 강하게 보일 때는 INFJ의 의미 탐색, 장기 방향, 사람의 의도를 오래 읽는 판단 방식과 함께 본다. 관계에서는 혼자 결론을 내리기보다 확인 질문을 붙이는 힌트로 쓴다.",
+        "productDomains": [
+          "general",
+          "study",
+          "relationship",
+          "growth",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "signal": "편인",
+        "reason": "편인은 내면 세계, 고독, 자기만의 해석 체계, 세상과의 거리감을 강화하는 단서다. 압박이 커질수록 닫히는 패턴이 생길 수 있어 실행과 대화의 작은 통로를 함께 제시한다.",
+        "productDomains": [
+          "general",
+          "study",
+          "relationship",
+          "growth",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "signal": "정인",
+        "reason": "정인은 돌봄, 상담, 교육, 사람의 성장 지원, 안정적 정서 제공과 연결한다. 일·돈 문장에서는 의미 있는 역할에서 지속성이 생기지만 감정 소모 비용을 관리해야 한다고 쓴다.",
+        "productDomains": [
+          "career",
+          "money",
+          "love",
+          "parenting",
+          "relationship"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "signal": "귀인",
+        "reason": "귀인은 도움, 완충, 보호 장치의 신호로 활용한다. INFJ에게는 타인을 조용히 돕는 힘과 함께, 혼자 버티지 않고 도움을 받는 성장 포인트를 같이 읽는다.",
+        "productDomains": [
+          "career",
+          "compatibility",
+          "love",
+          "relationship",
+          "growth"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "signal": "도화",
+        "reason": "도화는 예술, 문학, 섬세한 언어, 조용한 매력과 연결한다. 연애·관계 문장에서는 깊은 정서 교류를 만들지만 이상화와 기대 누적을 점검하는 단서로 쓴다.",
+        "productDomains": [
+          "love",
+          "career",
+          "general",
+          "relationship"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "signal": "식신",
+        "reason": "식신은 의미를 글, 창작, 상담 언어, 결과물로 바꾸는 힘과 연결한다. 공부·커리어에서는 조용한 몰입을 공개 가능한 산출물로 옮기는 보완 힌트다.",
+        "productDomains": [
+          "career",
+          "study",
+          "love",
+          "money",
+          "growth"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "signal": "정관",
+        "reason": "정관은 가치관, 예의, 사회적 책임, 장기 기준과 연결한다. 결혼·일 문장에서는 안정감을 주지만 기준이 높아질 때 상대를 오래 관찰하다 닫히는 리스크를 함께 다룬다.",
+        "productDomains": [
+          "general",
+          "career",
+          "marriage",
+          "relationship",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "signal": "재성",
+        "reason": "재성은 돈, 현실 감각, 자원 관리가 정서적 의미와 연결되는 지점을 읽는 단서다. INFJ에게는 가치 기준을 지키되 현금 흐름, 완충금, 실행 지연을 점검하게 한다.",
+        "productDomains": [
+          "money",
+          "investment",
+          "career",
+          "growth"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "수",
+        "reason": "수 기운은 감정 흡수, 내면 정리, 고독, 조용한 회복 욕구와 연결한다. 스트레스 문장에서는 감정 경계와 휴식 시간을 세우지 않으면 관계 피로가 커질 수 있음을 쓴다.",
+        "productDomains": [
+          "general",
+          "love",
+          "relationship",
+          "growth",
+          "saeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "signal": "목",
+        "reason": "목 기운은 사람의 성장, 교육, 이상, 사회적 개선 욕구와 연결한다. 커리어에서는 상담·교육·콘텐츠 방향을 강화하고, 관계에서는 상대를 바꾸려 하기보다 성장 속도를 맞추게 한다.",
+        "productDomains": [
+          "career",
+          "parenting",
+          "relationship",
+          "growth",
+          "daeun"
+        ],
+        "sourceCoverage": "direct"
+      },
+      {
+        "signal": "합충형파해",
+        "reason": "합충형파해가 강하게 보이면 관계나 환경의 마찰과 전환이 INFJ의 정서적 안전감을 흔드는 장면으로 읽는다. 이때는 단절보다 생활 리듬, 신뢰 확인, 경계 재설정을 제시한다.",
+        "productDomains": [
+          "relationship",
+          "marriage",
+          "career",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "inferred"
+      }
+    ],
     "reportUseCases":  {
                            "generalReport":  [
                                                  "selfUnderstanding 섹션에서는 의미, 깊이, 장기 방향, 정서적 안전감, 통찰을 INFJ의 기본 작동 방식으로 설명한다.",

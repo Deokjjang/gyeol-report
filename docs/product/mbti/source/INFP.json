@@ -2371,94 +2371,129 @@
   "myeongliBridgeHints": [
     {
       "signal": "정인",
-      "reason": "공감, 돌봄, 진정성, 내면 가치, 상담·교육 성향과 연결된다.",
+      "reason": "정인은 공감, 돌봄, 진정성, 내면 가치와 연결한다. INFP에게는 의미 있는 일에서 버티는 힘이 되지만, 현실 보상과 역할 경계를 같이 확인해야 한다.",
       "productDomains": [
         "general",
         "career",
         "love",
-        "parenting"
+        "parenting",
+        "growth"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "식신",
-      "reason": "글쓰기, 음악, 그림, 이야기, 감정의 창의적 표현과 연결된다.",
+      "reason": "식신은 글쓰기, 음악, 그림, 이야기처럼 감정을 결과물로 바꾸는 단서다. 공부·돈 문장에서는 창작을 지속 가능한 산출물, 가격, 마감 구조로 연결하게 한다.",
       "productDomains": [
         "career",
         "study",
-        "love"
+        "love",
+        "money",
+        "growth"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "도화",
-      "reason": "예술 감각, 낭만성, 감정적 매력, 연애와 창작 취향과 연결된다.",
+      "reason": "도화는 예술 감각, 낭만성, 감정적 매력, 취향 표현과 연결한다. 연애에서는 이상화가 커질 수 있으므로 상대의 실제 행동과 책임을 함께 보게 한다.",
       "productDomains": [
         "love",
         "career",
-        "general"
+        "general",
+        "relationship"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "천문성",
-      "reason": "공상, 상상력, 의미 해석, 가능성의 발산과 연결된다.",
+      "reason": "천문성은 상상력, 의미 해석, 가능성의 발산과 연결한다. 판단 문장에서는 내면의 서사를 존중하되 현실 검증과 실행 순서를 붙이는 힌트로 사용한다.",
       "productDomains": [
         "general",
         "study",
+        "relationship",
         "daeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "편인",
-      "reason": "혼자만의 시간, 내면 탐구, 고독한 자유, 이상과 현실의 간극과 연결된다.",
+      "reason": "편인은 혼자만의 시간, 내면 탐구, 이상과 현실의 간극을 읽는 단서다. 압박이 강해지면 잠적과 회피로 보일 수 있어 짧은 공유와 회복 시간을 함께 제시한다.",
       "productDomains": [
         "general",
         "study",
+        "relationship",
+        "growth",
         "daeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "상관",
-      "reason": "불합리한 권위에 대한 반감, 사회적 통념과 악습에 대한 저항, 창의적 발산과 연결된다.",
+      "reason": "상관은 불합리한 권위에 대한 반감, 사회적 통념에 대한 저항, 창의적 발산과 연결한다. 일에서는 메시지와 표현력이 되고, 관계에서는 말의 방향을 부드럽게 조율하게 한다.",
       "productDomains": [
         "career",
         "general",
+        "relationship",
         "saeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "정재",
-      "reason": "열등 Te 보강, 생활 구조, 돈 관리, 작은 통제력과 연결된다.",
+      "reason": "정재는 생활 구조, 돈 관리, 작은 통제력, 반복 수입 장치를 세우는 단서다. INFP에게는 가치를 포기하라는 뜻이 아니라 감정 소비와 저평가 노동을 줄이는 보완 신호다.",
       "productDomains": [
         "money",
         "investment",
-        "career"
+        "career",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "관성",
+      "reason": "관성은 책임, 마감, 계약, 현실 기준이 들어오는 흐름으로 읽는다. 결혼·커리어 문장에서는 자유와 진정성을 지키면서도 돈·가사·일정이 밀리지 않게 하는 단서로 쓴다.",
+      "productDomains": [
+        "career",
+        "marriage",
+        "study",
+        "growth"
       ],
       "sourceCoverage": "inferred"
     },
     {
       "signal": "비견",
-      "reason": "개인주의, 자율성, 자기만의 길, 상호 존중의 관계 방식과 연결된다.",
+      "reason": "비견은 개인주의, 자율성, 자기만의 길, 상호 존중의 관계 방식과 연결한다. 관계에서는 상대에게 맞추기보다 자신의 기준과 감정을 말로 꺼내는 보완 문장을 붙인다.",
       "productDomains": [
         "general",
         "compatibility",
-        "love"
+        "love",
+        "relationship"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "수",
-      "reason": "감수성, 상처, 잠적, 내면 정리, 감정의 깊이와 연결된다.",
+      "reason": "수 기운은 감수성, 내면 정리, 감정의 깊이와 연결한다. 스트레스 문장에서는 감정이 깊어질수록 확인을 미루지 않고 현실 기준을 작게 세우게 한다.",
       "productDomains": [
         "general",
         "love",
-        "daeun"
+        "relationship",
+        "daeun",
+        "saeun"
       ],
       "sourceCoverage": "direct"
+    },
+    {
+      "signal": "합충형파해",
+      "reason": "합충형파해는 관계와 환경의 마찰이 INFP의 이상화와 현실 책임을 동시에 건드리는 신호로 읽는다. 이때는 단절보다 불만, 돈, 일정, 역할 기준을 말로 정리하게 한다.",
+      "productDomains": [
+        "relationship",
+        "marriage",
+        "career",
+        "daeun",
+        "saeun"
+      ],
+      "sourceCoverage": "inferred"
     }
   ],
   "reportUseCases": {
