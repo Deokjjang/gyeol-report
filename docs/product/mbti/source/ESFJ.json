@@ -660,7 +660,7 @@
                                       {
                                           "id":  "stability_first_investment",
                                           "label":  "안정형 운용",
-                                          "plainKo":  "원문에서 투자 세부 전략은 부족하지만, 안정과 보장된 미래를 중시하는 직업관과 돈을 모으는 성향을 보면 고위험 단기 투기보다 예측 가능한 축적 방식이 맞다.",
+                                          "plainKo":  "ESFJ는 큰 승부보다 생활의 안정과 가족이 안심할 수 있는 미래를 먼저 본다. 투자에서도 고위험 단기 판단보다 예측 가능한 축적 방식이 마음에 맞다.",
                                           "strongLine":  "ESFJ의 자산 운용은 큰 승부보다 생활을 흔들지 않는 안정적 축적에서 힘을 얻습니다.",
                                           "positiveUse":  "저축, 보험, 장기 적립, 가족 재무 계획처럼 구조가 명확한 방식에 적응하기 쉽다.",
                                           "risk":  "주변 추천과 다수 분위기에 휩쓸리면 충분히 이해하지 못한 상품에 들어갈 수 있다.",
@@ -693,6 +693,63 @@
                                                                  "investment",
                                                                  "money",
                                                                  "general"
+                                                             ],
+                                          "sourceCoverage":  "inferred"
+                                      },
+                                      {
+                                          "id":  "relationship_info_filter",
+                                          "label":  "관계 정보 필터",
+                                          "plainKo":  "ESFJ는 신뢰하는 사람의 추천과 주변 평판을 쉽게 무시하지 못한다. 투자에서는 친분, 분위기, 호감과 실제 조건을 분리해서 확인해야 관계와 돈이 함께 흔들리지 않는다.",
+                                          "strongLine":  "당신은 누가 말했는지에 마음이 움직이기 쉬워서, 돈 문제에서는 정보와 관계를 따로 봐야 합니다.",
+                                          "positiveUse":  "추천을 바로 따르기보다 체크리스트와 공식 자료로 한 번 더 확인하면 안정감이 커진다.",
+                                          "risk":  "좋은 관계를 해치기 싫어 질문을 줄이면 나중에 돈보다 관계 상처가 더 커질 수 있다.",
+                                          "matchingMyeongliSignals":  [
+                                                                          "귀인",
+                                                                          "겁재",
+                                                                          "정재"
+                                                                      ],
+                                          "productDomains":  [
+                                                                 "investment",
+                                                                 "money",
+                                                                 "general"
+                                                             ],
+                                          "sourceCoverage":  "inferred"
+                                      },
+                                      {
+                                          "id":  "family_budget_separation",
+                                          "label":  "가족 예산 분리",
+                                          "plainKo":  "ESFJ는 가족과 가까운 사람을 위해 돈을 쓰는 마음이 강하다. 투자 판단에서도 가족 생활비, 돌봄 비용, 개인 운용 자금을 분리해야 안정과 관계를 함께 지킬 수 있다.",
+                                          "strongLine":  "당신의 투자는 가족을 위한다는 마음만으로는 부족하고, 생활비와 운용 자금을 선명하게 나눌 때 안전합니다.",
+                                          "positiveUse":  "가족 예산, 비상금, 장기 목표 자금을 분리하면 배려와 재정 안정이 함께 유지된다.",
+                                          "risk":  "가족을 위한 선택이라는 명분이 커지면 감당 가능한 범위를 넘기기 쉽다.",
+                                          "matchingMyeongliSignals":  [
+                                                                          "정재",
+                                                                          "정인",
+                                                                          "토"
+                                                                      ],
+                                          "productDomains":  [
+                                                                 "investment",
+                                                                 "money",
+                                                                 "marriage"
+                                                             ],
+                                          "sourceCoverage":  "inferred"
+                                      },
+                                      {
+                                          "id":  "approval_bias_control",
+                                          "label":  "인정 욕구 통제",
+                                          "plainKo":  "ESFJ는 주변이 좋게 보는 선택, 안정적으로 보이는 선택, 인정받을 만한 선택에 마음이 기울 수 있다. 투자에서는 남들이 어떻게 볼지보다 내 기준과 손실 허용 범위를 먼저 확인해야 한다.",
+                                          "strongLine":  "당신에게 필요한 투자 기준은 주변의 안심보다, 내가 감당할 수 있는 범위를 먼저 확인하는 것입니다.",
+                                          "positiveUse":  "가족과 상의하되 최종 기준표를 따로 두면 관계 배려와 독립 판단이 균형을 이룬다.",
+                                          "risk":  "체면과 인정 욕구가 섞이면 불편한 조건을 알면서도 거절이 늦어진다.",
+                                          "matchingMyeongliSignals":  [
+                                                                          "도화",
+                                                                          "정재",
+                                                                          "정관"
+                                                                      ],
+                                          "productDomains":  [
+                                                                 "investment",
+                                                                 "money",
+                                                                 "saeun"
                                                              ],
                                           "sourceCoverage":  "inferred"
                                       }

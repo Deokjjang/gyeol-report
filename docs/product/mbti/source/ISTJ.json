@@ -666,6 +666,63 @@
           "money"
         ],
         "sourceCoverage": "inferred"
+      },
+      {
+        "id": "verified_method_preference",
+        "label": "검증 방식 선호",
+        "plainKo": "ISTJ는 새로운 이야기보다 검증된 절차와 기록을 먼저 본다. 투자에서도 누가 좋다고 말했는지보다 어떤 근거로 오래 버틸 수 있는지, 같은 조건에서 반복 가능한지 확인해야 마음이 놓인다.",
+        "strongLine": "당신은 화려한 기회보다 기록과 절차가 확인된 방식에서 더 안정적으로 움직입니다.",
+        "positiveUse": "장기 성과 기록, 비용 구조, 위험 범위, 운용 원칙을 확인하며 안정적인 판단을 만든다.",
+        "risk": "검증된 방식만 찾다 보면 변화가 빠른 환경에서 대응이 늦어질 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관",
+          "금"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "scheduled_review_rule",
+        "label": "정기 점검",
+        "plainKo": "ISTJ에게 투자 관리는 감각보다 일정표와 점검표가 맞다. 월별 또는 분기별로 비중, 현금 여력, 손실 허용 범위를 확인하면 불안에 끌려 판단을 바꾸는 일이 줄어든다.",
+        "strongLine": "당신의 투자 안정감은 운 좋은 선택보다, 정해진 날짜에 원칙을 다시 보는 습관에서 나옵니다.",
+        "positiveUse": "정기 리밸런싱, 현금흐름 점검, 목표별 자산 분리처럼 반복 가능한 관리에 강하다.",
+        "risk": "점검 주기가 없으면 평소엔 방치하다가 불안할 때만 과하게 보수적으로 움직인다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "토",
+          "정인"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "saeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "family_finance_boundary",
+        "label": "가족 재정 경계",
+        "plainKo": "ISTJ는 가족과 생활 책임을 크게 보기 때문에 투자 판단도 공동재정과 연결된다. 내 기준으로는 합리적이어도 가족의 안정감과 비상 자금이 흔들리면 갈등이 커진다.",
+        "strongLine": "당신의 투자 원칙은 개인 판단만이 아니라 가족 생활비와 비상 자금까지 지킬 때 오래 갑니다.",
+        "positiveUse": "생활비, 비상금, 장기 목표 자금을 분리해 두면 책임감이 안정적인 자산 관리로 이어진다.",
+        "risk": "투자 기준을 혼자 정하면 상대는 안정성을 위한 선택도 통제로 느낄 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "marriage"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "study": [

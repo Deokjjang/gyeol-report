@@ -672,6 +672,63 @@
           "daeun"
         ],
         "sourceCoverage": "inferred"
+      },
+      {
+        "id": "objective_metric_rule",
+        "label": "객관 지표",
+        "plainKo": "ESTJ는 투자 판단에서도 숫자, 계약 조건, 책임 구조처럼 눈에 보이는 기준을 선호한다. 감이나 분위기보다 객관 지표를 두고 비교할 때 강점이 살아난다.",
+        "strongLine": "당신의 투자 판단은 느낌이 아니라 지표와 책임 구조가 분명할 때 가장 안정됩니다.",
+        "positiveUse": "비용, 현금흐름, 변동 폭, 운용 기준을 표로 비교하며 빠르고 현실적인 판단을 한다.",
+        "risk": "숫자로 보이는 지표만 믿으면 규제, 평판, 사람 심리 같은 비정량 리스크를 낮게 볼 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관",
+          "금"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "concentration_control",
+        "label": "집중 통제",
+        "plainKo": "ESTJ는 확신이 생기면 자원을 한쪽으로 강하게 밀어 넣고 싶어진다. 투자에서는 집중력이 강점이 되지만, 비중 한도와 손실 한도를 정하지 않으면 통제력이 오히려 압박으로 바뀐다.",
+        "strongLine": "당신은 확신이 강해질수록 더 큰 한도가 아니라 더 분명한 제한선이 필요합니다.",
+        "positiveUse": "자산별 비중 한도, 손실 한도, 단계별 확대 기준을 세우면 추진력과 안정성이 함께 산다.",
+        "risk": "내 판단이 맞다는 확신이 강하면 반대 신호를 늦게 받아들이고 한쪽에 과하게 실을 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "정재",
+          "겁재"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "authority_pressure_risk",
+        "label": "지시형 판단",
+        "plainKo": "ESTJ는 가정이나 조직에서 돈의 기준을 명확히 정하고 싶어 한다. 투자 판단도 내가 계산했으니 따르면 된다는 방식이 되면 주변 사람과 공동재정 갈등이 생긴다.",
+        "strongLine": "당신의 투자 원칙은 맞고 틀림만이 아니라, 함께 책임질 사람이 납득하는 과정까지 있어야 오래 갑니다.",
+        "positiveUse": "가족 예산, 공동 목표, 투자 한도를 문서로 합의하면 관리 능력이 신뢰로 바뀐다.",
+        "risk": "설명보다 지시가 앞서면 안정성을 위한 판단도 통제처럼 받아들여진다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편관",
+          "토"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "marriage"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "study": [

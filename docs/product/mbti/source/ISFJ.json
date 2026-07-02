@@ -638,6 +638,63 @@
           "money"
         ],
         "sourceCoverage": "inferred"
+      },
+      {
+        "id": "family_safety_priority",
+        "label": "가족 안전 우선",
+        "plainKo": "ISFJ는 투자에서도 내 생활과 가족의 안전을 먼저 생각한다. 수익률보다 생활비, 비상금, 돌봄 비용이 흔들리지 않는지가 더 중요하게 작동한다.",
+        "strongLine": "당신에게 좋은 투자는 마음 편히 잠들 수 있는 생활 안전선을 먼저 지키는 방식입니다.",
+        "positiveUse": "비상금, 생활비 분리, 가족 목표별 자금 관리처럼 안정적인 틀을 만드는 데 강하다.",
+        "risk": "안전을 너무 우선하면 필요한 성장 기회도 불안하다는 이유로 미룰 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정인",
+          "토"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "marriage"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "independent_check_needed",
+        "label": "독립 확인",
+        "plainKo": "ISFJ는 신뢰하는 사람의 말이나 주변의 안정적인 분위기에 영향을 받기 쉽다. 투자에서는 친절한 설명과 실제 조건을 분리하고, 혼자 확인하는 절차를 반드시 남겨야 한다.",
+        "strongLine": "당신은 믿을 만한 사람의 말을 쉽게 흘려듣지 않기 때문에, 돈 문제에서는 따로 확인하는 습관이 필요합니다.",
+        "positiveUse": "체크리스트, 공식 문서 확인, 제3자 검토를 두면 신중함이 안정적인 판단으로 이어진다.",
+        "risk": "관계가 가까울수록 거절과 질문을 어려워해 불리한 조건을 늦게 알아차릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "귀인",
+          "정재",
+          "겁재"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "loss_tolerance_boundary",
+        "label": "손실 허용 범위",
+        "plainKo": "ISFJ는 손실 자체보다 손실이 생활 안정과 가족 책임을 흔드는 상황에 더 민감하다. 투자 전에는 감당 가능한 금액, 확인 주기, 멈출 기준을 작게 정해야 불안이 커지지 않는다.",
+        "strongLine": "당신은 버틸 수 있는 범위를 먼저 정해야, 투자 중에도 마음과 생활이 함께 흔들리지 않습니다.",
+        "positiveUse": "손실 허용 범위와 점검 주기를 정하면 불안을 줄이고 장기 관리를 이어갈 수 있다.",
+        "risk": "불안이 커지면 판단을 미루다가 더 늦은 시점에 감정적으로 정리할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "수",
+          "토"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "saeun"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "study": [
