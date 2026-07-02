@@ -399,7 +399,7 @@
                                   {
                                       "id":  "entrepreneurial_income_potential",
                                       "label":  "기업가 잠재력",
-                                      "plainKo":  "강력한 기업가와 지도자가 될 잠재력이 높고, 수익과 매출 면에서도 강한 성향으로 묘사된다. 높은 목표, 자원 동원, 전략 실행이 소득과 연결된다.",
+                                      "plainKo":  "강력한 기업가와 지도자가 될 잠재력이 높고, 수익과 매출 면에서도 강한 성향이 드러난다. 높은 목표, 자원 동원, 전략 실행이 소득과 연결된다.",
                                       "strongLine":  "ENTJ의 수익성은 운보다 목표를 세우고 사람과 시스템을 움직이는 능력에서 나옵니다.",
                                       "positiveUse":  "창업, 임원, 컨설팅, 투자형 사업, 조직 확장에서 소득 확장성이 있다.",
                                       "risk":  "돈과 성과를 기준으로 관계와 자기 몸을 과도하게 밀어붙인다.",
@@ -436,6 +436,24 @@
                                                              "general"
                                                          ],
                                       "sourceCoverage":  "direct"
+                                  },
+                                  {
+                                      "id":  "scale_operator",
+                                      "label":  "확장 운영자",
+                                      "plainKo":  "ENTJ는 좋은 아이디어를 실행 조직, 일정, 숫자, 책임 체계로 바꾸는 데 강하다. 개인 성과보다 팀과 자원을 움직여 매출, 성장, 시장 확장 같은 큰 결과를 만드는 장면에서 힘이 난다.",
+                                      "strongLine":  "ENTJ의 커리어는 혼자 잘하는 자리보다, 사람과 자원을 묶어 판을 키우는 자리에서 커집니다.",
+                                      "positiveUse":  "사업 확장, 조직 운영, 성과 관리, 신규 지점 구축, 전략 실행에서 성과를 만든다.",
+                                      "risk":  "확장 속도가 사람의 흡수 속도를 넘으면 팀은 성과보다 압박을 먼저 느낀다.",
+                                      "matchingMyeongliSignals":  [
+                                                                      "편관",
+                                                                      "편재",
+                                                                      "정재"
+                                                                  ],
+                                      "productDomains":  [
+                                                             "career",
+                                                             "money"
+                                                         ],
+                                      "sourceCoverage":  "inferred"
                                   }
                               ],
                    "workplace":  [
@@ -529,14 +547,32 @@
                                                                          "편관",
                                                                          "금"
                                                                      ],
-                                         "productDomains":  [
-                                                                "career",
-                                                                "compatibility",
-                                                                "general"
-                                                            ],
-                                         "sourceCoverage":  "direct"
-                                     }
-                                 ],
+                                          "productDomains":  [
+                                                                 "career",
+                                                                 "compatibility",
+                                                                 "general"
+                                                             ],
+                                          "sourceCoverage":  "direct"
+                                      },
+                                      {
+                                          "id":  "delegation_pressure_control",
+                                          "label":  "위임 압박 조절",
+                                          "plainKo":  "ENTJ는 느린 사람을 기다리는 것보다 직접 지시하고 통제하는 편이 빠르다고 느낀다. 그러나 장기 조직에서는 위임 기준, 확인 주기, 피드백 톤을 정해야 유능한 사람도 남는다.",
+                                          "strongLine":  "ENTJ에게 필요한 리더십은 더 세게 밀어붙이는 힘만이 아니라, 사람이 버틸 수 있는 압력 조절입니다.",
+                                          "positiveUse":  "역할 위임표, 주간 점검, 성과 기준, 피드백 규칙을 만들면 팀의 실행력이 안정된다.",
+                                          "risk":  "기준 없이 몰아붙이면 유능한 구성원도 지시받는 부품처럼 느낀다.",
+                                          "matchingMyeongliSignals":  [
+                                                                          "정관",
+                                                                          "편관",
+                                                                          "비견"
+                                                                      ],
+                                          "productDomains":  [
+                                                                 "career",
+                                                                 "compatibility"
+                                                             ],
+                                          "sourceCoverage":  "inferred"
+                                      }
+                                  ],
                    "money":  [
                                  {
                                      "id":  "high_earning_orientation",

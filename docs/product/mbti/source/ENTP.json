@@ -412,6 +412,24 @@
           "daeun"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "prototype_to_market_path",
+        "label": "아이디어 시장화",
+        "plainKo": "ENTP는 머릿속 가능성을 말과 기획으로 빠르게 꺼내지만, 커리어 성장은 그것을 작은 실험, 고객 반응, 판매 가능한 제안으로 바꿀 때 열린다. 아이디어가 시장에서 검증되는 장면을 만들어야 돈과 평판이 붙는다.",
+        "strongLine": "ENTP의 아이디어는 말로 빛나지만, 커리어 가치는 시장에서 시험될 때 커집니다.",
+        "positiveUse": "프로토타입, 테스트 판매, 파일럿 프로젝트, 제안서, 데모 발표로 가능성을 빠르게 검증한다.",
+        "risk": "계속 새 판만 벌이면 실행자가 지치고 본인도 수익 구조를 놓친다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "편재",
+          "식신"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "workplace": [
@@ -500,6 +518,24 @@
           "compatibility"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "routine_owner_pairing",
+        "label": "운영 파트너 구조",
+        "plainKo": "ENTP는 반복 보고와 세부 운영을 혼자 오래 붙잡으면 에너지가 꺼진다. 실행 책임자, 체크리스트, 짧은 점검 리듬을 붙여야 자유로운 발상과 조직 신뢰를 함께 지킨다.",
+        "strongLine": "ENTP에게 반복 구조는 상상력을 막는 벽이 아니라, 아이디어를 끝까지 살리는 안전장치입니다.",
+        "positiveUse": "운영 담당자, 일정표, 마감 알림, 짧은 회고를 붙이면 새 기획이 실제 결과로 이어진다.",
+        "risk": "세부 운영을 계속 가볍게 보면 아이디어는 많아도 믿고 맡기기 어려운 사람으로 평가된다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "상관"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "money": [
