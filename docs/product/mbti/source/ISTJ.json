@@ -571,6 +571,63 @@
           "career"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "budget_and_reserve_plan",
+        "label": "예산·비상금",
+        "plainKo": "ISTJ는 돈을 벌 때도 관리할 때도 예측 가능한 구조가 있어야 안정된다. 월 예산, 비상금, 보험, 고정 저축, 장기 납입 계획처럼 규칙이 있는 방식에서 강하다. 돈을 한 번에 크게 움직이는 것보다 새지 않게 지키고 꾸준히 쌓는 능력이 수입의 기반이 된다.",
+        "strongLine": "당신의 돈은 큰 모험보다 예산, 비상금, 장기 계획으로 단단해집니다.",
+        "positiveUse": "월별 지출표, 목표별 통장, 연 단위 세금·보험 계획으로 생활 안정과 장기 자산을 함께 만든다.",
+        "risk": "계획이 틀어지는 상황을 지나치게 싫어하면 필요한 변화에도 늦게 반응한다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "money",
+          "investment",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "family_responsibility_spending",
+        "label": "가족 책임 지출",
+        "plainKo": "ISTJ는 가족과 가까운 사람에게 돈을 쓸 때도 감정 표현보다 책임 이행으로 움직인다. 주거, 교육, 병원, 부모·자녀 비용처럼 반드시 감당해야 할 항목을 먼저 챙긴다. 다만 책임감이 강해질수록 본인의 휴식비와 개인 욕구를 뒤로 미룰 수 있다.",
+        "strongLine": "당신은 사랑을 말보다 책임으로 보여주기 때문에, 가족 돈에서는 스스로를 마지막 순서로 두기 쉽습니다.",
+        "positiveUse": "가정의 고정비, 교육비, 장기 주거 계획, 부모·자녀 지원을 안정적으로 설계한다.",
+        "risk": "책임을 혼자 떠안으면 돈 문제는 해결해도 억울함과 피로가 관계 안에 쌓인다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정인",
+          "토"
+        ],
+        "productDomains": [
+          "money",
+          "marriage",
+          "parenting"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "informal_money_deal_risk",
+        "label": "비공식 돈거래 주의",
+        "plainKo": "ISTJ는 원칙과 문서가 분명한 돈에는 강하지만, 정 때문에 빌려주거나 구두 약속으로 처리하는 돈거래에는 스트레스가 크다. 관계를 믿고 시작해도 정산이 흐려지면 신뢰가 급격히 식는다. 가까운 사람일수록 금액, 기한, 책임 범위를 기록해야 마음이 편하다.",
+        "strongLine": "당신에게 돈거래는 친하니까 괜찮은 문제가 아니라, 친할수록 더 분명해야 하는 문제입니다.",
+        "positiveUse": "계약서, 이체 기록, 상환 일정, 정산 기준을 명확히 해 돈과 관계를 함께 지킨다.",
+        "risk": "정 때문에 기준을 늦게 세우면 손실보다 배신감이 더 크게 남는다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "겁재",
+          "금"
+        ],
+        "productDomains": [
+          "money",
+          "general",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "investment": [

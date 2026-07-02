@@ -597,6 +597,63 @@
                                                             "marriage"
                                                         ],
                                      "sourceCoverage":  "direct"
+                                 },
+                                 {
+                                     "id":  "service_community_income",
+                                     "label":  "서비스·커뮤니티 수입",
+                                     "plainKo":  "ESFJ의 돈은 사람을 챙기고 관리하며 공동체를 안정시키는 능력에서 만들어지기 쉽다. 교육, 의료, 서비스, 상담, 고객 관리, 커뮤니티 운영처럼 사람의 만족과 신뢰가 곧 수입으로 이어지는 일이 맞다. 혼자만 잘하는 일보다 관계 안에서 역할이 분명한 일이 오래 간다.",
+                                     "strongLine":  "당신의 돈은 사람을 편하게 만들고 관계를 안정시키는 능력이 직업 구조와 만날 때 커집니다.",
+                                     "positiveUse":  "고객 응대, 교육, 돌봄, 행사 운영, 커뮤니티 관리, 장기 고객 관계에서 안정적인 수입을 만든다.",
+                                     "risk":  "모두를 만족시키려 하면 일의 범위가 넓어지고 보상보다 감정 노동이 먼저 커진다.",
+                                     "matchingMyeongliSignals":  [
+                                                                     "식신",
+                                                                     "정재",
+                                                                     "귀인"
+                                                                 ],
+                                     "productDomains":  [
+                                                            "money",
+                                                            "career",
+                                                            "general"
+                                                        ],
+                                     "sourceCoverage":  "inferred"
+                                 },
+                                 {
+                                     "id":  "approval_spending_risk",
+                                     "label":  "인정 소비",
+                                     "plainKo":  "ESFJ는 상대가 좋아하는 표정, 고맙다는 말, 좋은 사람이라는 평가에 돈을 쓰는 이유가 생긴다. 선물, 식사, 모임비, 가족 행사비가 관계의 온도를 올려주지만 인정 욕구와 섞이면 지출 한도가 흐려진다. 돈을 쓰기 전에 마음을 보여줄 다른 방식도 같이 찾아야 한다.",
+                                     "strongLine":  "당신은 인정받고 싶은 마음이 커질수록 지갑도 함께 열리는 사람입니다.",
+                                     "positiveUse":  "필요한 순간의 센스 있는 소비로 관계 신뢰, 고객 만족, 가족 분위기를 높인다.",
+                                     "risk":  "칭찬과 감사가 지출의 기준이 되면 생활비보다 체면 비용이 먼저 커진다.",
+                                     "matchingMyeongliSignals":  [
+                                                                     "도화",
+                                                                     "홍염",
+                                                                     "편재"
+                                                                 ],
+                                     "productDomains":  [
+                                                            "money",
+                                                            "love",
+                                                            "general"
+                                                        ],
+                                     "sourceCoverage":  "inferred"
+                                 },
+                                 {
+                                     "id":  "event_family_budget_balance",
+                                     "label":  "행사·가족 예산",
+                                     "plainKo":  "ESFJ는 생일, 명절, 경조사, 가족 모임, 기념일을 그냥 넘기기 어렵다. 관계를 챙기는 힘은 장점이지만, 모든 행사를 완벽히 챙기려 하면 돈과 에너지가 함께 빠진다. 행사비와 가족 지원금은 미리 한도를 정해야 따뜻함이 부담으로 바뀌지 않는다.",
+                                     "strongLine":  "당신은 사람을 챙기는 데 돈을 잘 쓰지만, 모든 관계를 완벽히 챙기려 하면 생활이 먼저 흔들립니다.",
+                                     "positiveUse":  "연간 경조사 예산, 가족 행사비, 선물 한도를 정해 관계의 온도와 생활 안정을 함께 지킨다.",
+                                     "risk":  "모두를 서운하지 않게 하려는 마음이 커지면 정작 자기 돈과 휴식이 뒤로 밀린다.",
+                                     "matchingMyeongliSignals":  [
+                                                                     "정재",
+                                                                     "식신",
+                                                                     "정인"
+                                                                 ],
+                                     "productDomains":  [
+                                                            "money",
+                                                            "marriage",
+                                                            "parenting"
+                                                        ],
+                                     "sourceCoverage":  "inferred"
                                  }
                              ],
                    "investment":  [

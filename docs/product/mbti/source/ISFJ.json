@@ -543,6 +543,63 @@
           "marriage"
         ],
         "sourceCoverage": "inferred"
+      },
+      {
+        "id": "small_saving_persistence",
+        "label": "작은 저축 지속력",
+        "plainKo": "ISFJ는 큰 승부보다 작은 저축을 오래 이어가는 힘이 강하다. 매달 정해진 금액, 생활비 잔돈, 가족 목적 자금을 차곡차곡 쌓는 방식에서 안정감을 얻는다. 돈이 크게 늘어나는 속도보다 생활이 무너지지 않는 감각이 먼저다.",
+        "strongLine": "당신의 돈은 크게 흔들어 키우기보다, 작은 저축을 오래 지켜서 단단해집니다.",
+        "positiveUse": "생활비 통장, 비상금, 보험, 가족 목적 자금, 장기 적립을 꾸준히 관리한다.",
+        "risk": "너무 아끼기만 하면 필요한 자기 회복 비용과 성장 비용까지 줄일 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정인",
+          "토"
+        ],
+        "productDomains": [
+          "money",
+          "investment",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "care_labor_underpricing",
+        "label": "돌봄 저평가",
+        "plainKo": "ISFJ는 챙김과 돌봄을 자연스럽게 해내기 때문에 그 노동의 값을 낮게 잡기 쉽다. 남들이 귀찮아하는 일정 관리, 고객 응대, 정리, 기록, 보살핌이 실제로는 돈이 되는 능력이다. 친절함을 당연한 성격으로만 두면 보상 구조가 약해진다.",
+        "strongLine": "당신이 당연하게 해주는 챙김은 사실 돈으로 환산될 수 있는 실무 능력입니다.",
+        "positiveUse": "의료, 교육, 돌봄, 운영 지원, 고객 관리에서 신뢰와 반복 수입을 만든다.",
+        "risk": "좋은 사람이고 싶어 정당한 비용 청구를 미루면 헌신은 쌓이고 수입은 작아진다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "식신",
+          "귀인"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "family_budget_boundary",
+        "label": "가족 예산 경계",
+        "plainKo": "ISFJ는 가족과 가까운 사람을 챙기다 보면 자기 몫의 돈을 뒤로 미루기 쉽다. 장보기, 병원, 선물, 경조사, 생활 보조처럼 작고 반복되는 비용이 감정의 의무로 쌓인다. 가족 돈은 사랑의 크기가 아니라 역할과 한도를 정해야 오래 간다.",
+        "strongLine": "당신은 가족을 위해 돈을 아끼지 않지만, 한도 없는 돌봄은 결국 당신의 안전망을 줄입니다.",
+        "positiveUse": "가족 고정비, 돌봄 비용, 경조사 예산을 미리 나눠 안정적인 생활 흐름을 만든다.",
+        "risk": "감사받지 못하는 지출이 반복되면 돈보다 서운함이 먼저 커진다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정인",
+          "겁재"
+        ],
+        "productDomains": [
+          "money",
+          "marriage",
+          "parenting"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "investment": [
