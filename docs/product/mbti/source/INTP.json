@@ -2316,73 +2316,106 @@
   "myeongliBridgeHints": [
     {
       "signal": "편인",
-      "reason": "이론, 가능성, 내면 모델, 독립적 탐구를 파고드는 INTP의 핵심 기질과 연결된다.",
+      "reason": "편인이 강하게 보일 때는 INTP의 원리 분석, 개념 연결, 독립 탐구 욕구와 함께 읽는다. 압박이 커지면 관찰만 길어지는 실행 지연도 같이 점검한다.",
       "productDomains": [
         "general",
         "study",
         "career",
+        "growth",
         "daeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "문창",
-      "reason": "수학, 과학, 프로그래밍, 논문, 지식 설명, 연구 분야의 강점과 연결된다.",
+      "reason": "문창은 수학, 과학, 프로그래밍, 논문, 설명 능력을 지식 기반 수입과 학습 성과로 연결하는 단서다. 대운·세운에서는 아이디어를 문서와 결과물로 닫는 문장에 쓴다.",
       "productDomains": [
         "study",
         "career",
-        "money"
+        "money",
+        "daeun",
+        "saeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "현침살",
-      "reason": "논리적 허점, 거짓말, 꼼수, 무논리를 날카롭게 포착하고 직설적으로 말하는 성향과 연결된다.",
+      "reason": "현침살은 논리적 허점과 무리한 주장을 빠르게 포착하는 말의 칼날로 읽는다. 관계와 조직에서는 정확함보다 전달 강도를 조율해야 한다는 압박 패턴을 붙인다.",
       "productDomains": [
         "general",
         "career",
-        "compatibility"
+        "compatibility",
+        "relationship",
+        "saeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "상관",
-      "reason": "권위와 규칙을 의심하고 자유로운 아이디어와 비판적 사고를 추구하는 성향과 연결된다.",
+      "reason": "상관은 권위와 규칙을 의심하고 자유로운 아이디어로 틀을 흔드는 성향과 연결한다. 커리어에서는 창의적 문제 제기, 관계에서는 논쟁의 목적을 분명히 하는 단서로 쓴다.",
       "productDomains": [
         "career",
         "general",
+        "relationship",
+        "workplace",
         "saeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "비견",
-      "reason": "혼자 다니고, 자기 기준을 지키며, 남에게 신세지는 것을 부담스러워하는 독립성과 연결된다.",
+      "reason": "비견은 자기 기준, 지적 독립성, 혼자 정리할 시간이 필요한 흐름으로 읽는다. 연애·결혼에서는 거리 조절이 무관심으로 읽히지 않도록 대화 빈도 합의를 붙인다.",
       "productDomains": [
         "general",
         "love",
-        "marriage"
+        "marriage",
+        "relationship"
       ],
       "sourceCoverage": "direct"
     },
     {
-      "signal": "수",
-      "reason": "사색, 고독, 내면 루프, 비관과 공허감, 감정 번역 과제와 연결된다.",
+      "signal": "정재",
+      "reason": "정재는 생활 기반, 고정 지출, 자동 저축, 단순한 돈 관리 규칙을 세우는 단서로 쓴다. INTP에게는 흥미 없는 돈 관리를 방치하지 않게 만드는 보완 신호다.",
       "productDomains": [
-        "general",
-        "love",
+        "money",
+        "investment",
+        "marriage",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "관성",
+      "reason": "관성은 마감, 책임, 평가, 조직 규칙이 들어오는 흐름으로 읽는다. INTP에게는 자유를 빼앗는 신호로만 쓰지 않고, 산출물과 반복 루틴을 만들게 하는 성장 단서로 활용한다.",
+      "productDomains": [
+        "career",
+        "study",
+        "workplace",
         "daeun",
         "saeun"
       ],
       "sourceCoverage": "inferred"
     },
     {
-      "signal": "정재",
-      "reason": "늦게 수익 구조가 잡히는 전문성, 생활 기반과 돈 관리가 필요한 과제와 연결된다.",
+      "signal": "식상",
+      "reason": "식상은 머릿속 모델을 말, 글, 코드, 결과물로 꺼내는 생산성 단서다. 강하게 들어올 때는 새 설명을 늘리기보다 작은 산출물과 마감 기준으로 정리하게 한다.",
       "productDomains": [
+        "study",
+        "career",
         "money",
-        "investment",
-        "marriage"
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "수",
+      "reason": "수 기운은 사색, 고독, 내면 루프, 감정 번역 과제와 연결한다. 관계에서는 침묵이 방어처럼 보일 수 있어 감정 언어를 짧게라도 붙이는 문장에 쓴다.",
+      "productDomains": [
+        "general",
+        "love",
+        "relationship",
+        "daeun",
+        "saeun"
       ],
       "sourceCoverage": "inferred"
     }

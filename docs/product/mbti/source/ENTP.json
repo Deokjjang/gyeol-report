@@ -2308,48 +2308,63 @@
   "myeongliBridgeHints": [
     {
       "signal": "상관",
-      "reason": "규칙을 의심하고, 말과 아이디어로 기존 판을 흔드는 ENTP의 핵심 기질과 연결된다.",
+      "reason": "상관이 강하게 보일 때는 ENTP의 규칙 의심, 반박, 새로운 판 짜기와 함께 읽는다. 관계·조직에서는 말의 재미가 공격처럼 들리지 않도록 감정 확인과 후속 행동을 붙인다.",
       "productDomains": [
         "general",
         "career",
         "compatibility",
+        "relationship",
         "saeun"
       ],
       "sourceCoverage": "direct"
     },
     {
-      "signal": "문창",
-      "reason": "토론, 언변, 논리적 설명, 학습과 발표 능력을 상품 해석에서 연결하기 좋다.",
+      "signal": "식신",
+      "reason": "식신은 아이디어를 말, 콘텐츠, 발표, 실제 결과물로 꺼내는 생산성 단서다. ENTP에게는 새 주제를 늘리기보다 끝까지 마감하는 구조를 붙이는 보완 신호로 쓴다.",
       "productDomains": [
         "career",
         "study",
-        "general"
+        "money",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "문창",
+      "reason": "문창은 토론, 언변, 논리적 설명, 학습과 발표 능력을 강화하는 단서다. 공부·커리어 문장에서는 질문과 응용 강점을 살리되 반복 훈련을 붙이는 방향으로 쓴다.",
+      "productDomains": [
+        "career",
+        "study",
+        "general",
+        "daeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "천문성",
-      "reason": "서로 다른 분야를 연결하고 가능성을 직관적으로 포착하는 발상력과 맞는다.",
+      "reason": "천문성은 서로 다른 분야를 연결하고 가능성을 빠르게 포착하는 발상력과 연결한다. 다만 현실 검증 없이 선택지를 계속 늘리는 흐름은 마감 기준으로 조율한다.",
       "productDomains": [
         "general",
         "career",
+        "investment",
         "daeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "도화",
-      "reason": "스포트라이트, 재치, 사람을 끌어들이는 말맛과 외향적 매력에 연결된다.",
+      "reason": "도화는 재치, 말맛, 주목성, 사람을 끌어들이는 분위기와 연결한다. 연애·관계 문장에서는 끌림을 만들지만 장난과 진지함의 선을 합의해야 한다는 단서로 쓴다.",
       "productDomains": [
         "love",
         "career",
-        "compatibility"
+        "compatibility",
+        "relationship"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "편재",
-      "reason": "사업성, 기회 탐색, 영업과 광고, 새 시장을 읽는 확장적 감각과 연결된다.",
+      "reason": "편재는 사업성, 기회 탐색, 영업과 광고, 새 시장을 읽는 확장 감각과 연결한다. 돈·투자 문장에서는 즉흥 진입, 분산된 관심, 종료 기준 부족을 함께 점검한다.",
       "productDomains": [
         "money",
         "investment",
@@ -2359,25 +2374,49 @@
       "sourceCoverage": "inferred"
     },
     {
+      "signal": "정재",
+      "reason": "정재는 반복 수입, 계약, 마감, 재무 구조를 붙이는 단서로 쓴다. ENTP에게는 자유를 막는 신호가 아니라 아이디어를 유지 가능한 돈 흐름으로 고정하는 성장 포인트다.",
+      "productDomains": [
+        "money",
+        "investment",
+        "marriage",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
       "signal": "역마",
-      "reason": "여행, 모험, 낯선 환경 적응, 다양한 시도를 즐기는 움직임과 연결된다.",
+      "reason": "역마는 이동, 전환, 낯선 환경 적응, 다양한 실험을 즐기는 흐름과 연결한다. 커리어에서는 확장 단서로 쓰되, 관계와 돈에서는 약속·비용·마무리 기준을 함께 확인한다.",
       "productDomains": [
         "general",
         "career",
-        "parenting",
-        "daeun"
+        "relationship",
+        "daeun",
+        "saeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "현침살",
-      "reason": "논리적 허점을 찌르는 직설, 날카로운 비판, 토론 중 상대의 약점을 정확히 짚는 말의 힘과 연결된다.",
+      "reason": "현침살은 논리적 허점을 찌르는 직설, 비판, 토론 중 쟁점을 빠르게 잡는 말의 힘과 연결한다. 세운에서는 논쟁을 성과로 쓰되 말실수와 조직 충돌을 줄이는 문장에 쓴다.",
       "productDomains": [
         "career",
         "compatibility",
+        "relationship",
         "saeun"
       ],
       "sourceCoverage": "direct"
+    },
+    {
+      "signal": "관성",
+      "reason": "관성은 책임, 마감, 규칙, 장기 운영을 요구하는 흐름으로 읽는다. ENTP에게는 안정만 요구하는 압박이 아니라 반복 관리와 신뢰 회복을 만드는 보완 단서로 활용한다.",
+      "productDomains": [
+        "study",
+        "career",
+        "marriage",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
     }
   ],
   "reportUseCases": {

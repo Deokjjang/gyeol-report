@@ -2391,48 +2391,32 @@
   "myeongliBridgeHints": [
     {
       "signal": "편인",
-      "reason": "보이지 않는 구조, 이론, 미래 가능성, 독립적 사고를 파고드는 INTJ의 핵심 기질과 연결된다.",
+      "reason": "편인이 강하게 보일 때는 INTJ의 독립 분석, 장기 가설, 보이지 않는 구조를 붙잡는 판단 방식과 함께 읽는다. 다만 확신 전까지 실행을 늦추는 흐름도 같이 점검한다.",
       "productDomains": [
         "general",
         "study",
         "career",
+        "growth",
         "daeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "천문성",
-      "reason": "추상적 사고, 통찰, 과학·철학·예술의 큰 구조를 읽는 성향과 연결된다.",
+      "reason": "천문성은 INTJ가 사람과 사건의 배후 구조를 읽고 장기 방향을 잡는 단서로 활용한다. 관계에서는 상대의 의도를 혼자 단정하지 않도록 확인 질문을 붙인다.",
       "productDomains": [
         "general",
         "study",
-        "compatibility"
+        "compatibility",
+        "relationship"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "문창",
-      "reason": "지식, 연구, 논증, 법·기술·컴퓨터 분야의 학습 적성과 연결된다.",
+      "reason": "문창은 연구, 논증, 법·기술·컴퓨터 분야의 학습 단서를 강화한다. 대운·세운에서 함께 보이면 지식 축적을 결과물과 커리어 설계로 옮기는 문장에 쓴다.",
       "productDomains": [
         "study",
-        "career"
-      ],
-      "sourceCoverage": "direct"
-    },
-    {
-      "signal": "현침살",
-      "reason": "논리의 빈틈과 모순을 날카롭게 짚는 직설적 피드백과 연결된다.",
-      "productDomains": [
-        "career",
-        "compatibility",
-        "general"
-      ],
-      "sourceCoverage": "inferred"
-    },
-    {
-      "signal": "상관",
-      "reason": "기존 규칙을 의심하고 더 나은 방식으로 개혁하려는 성향과 연결된다.",
-      "productDomains": [
         "career",
         "daeun",
         "saeun"
@@ -2440,33 +2424,85 @@
       "sourceCoverage": "direct"
     },
     {
+      "signal": "현침살",
+      "reason": "현침살은 논리의 빈틈과 모순을 날카롭게 짚는 피드백으로 연결한다. 압박이 큰 시기에는 말이 평가처럼 들릴 수 있으므로 전달 강도와 관계 회복 문장을 함께 붙인다.",
+      "productDomains": [
+        "career",
+        "compatibility",
+        "general",
+        "relationship",
+        "saeun"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "상관",
+      "reason": "상관은 기존 규칙을 의심하고 더 나은 시스템으로 고치려는 개혁성으로 읽는다. 조직·관계에서는 비판이 성과 개선인지 권위 충돌인지 구분하게 한다.",
+      "productDomains": [
+        "career",
+        "workplace",
+        "relationship",
+        "daeun",
+        "saeun"
+      ],
+      "sourceCoverage": "direct"
+    },
+    {
       "signal": "정관",
-      "reason": "장기 목표, 책임, 전략, 기준을 세우고 결과를 관리하는 힘과 연결된다.",
+      "reason": "정관은 장기 목표, 책임, 기준, 결과 관리와 연결한다. INTJ에게는 권한과 책임이 정렬될 때 일·돈 성과가 안정되고, 관계에서는 역할 합의가 핵심이 된다.",
       "productDomains": [
         "career",
         "marriage",
         "money",
+        "relationship",
         "daeun"
       ],
       "sourceCoverage": "direct"
     },
     {
+      "signal": "재성",
+      "reason": "재성은 돈과 자원을 감정적 소비보다 장기 설계와 시스템 축적으로 다루는 흐름으로 읽는다. 투자 문장에서는 큰 그림 과신을 줄이고 현금 흐름과 리밸런싱 규칙을 붙인다.",
+      "productDomains": [
+        "money",
+        "investment",
+        "career",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
       "signal": "금",
-      "reason": "정확성, 판단, 절단, 분석, 논리적 검증의 기질과 연결된다.",
+      "reason": "금 기운은 정확성, 절단력, 분석 검증, 불필요한 낭비를 줄이는 기준으로 활용한다. 강할수록 냉정한 결론이 빨라질 수 있어 감정 표현 보완을 함께 제시한다.",
       "productDomains": [
         "general",
         "career",
-        "study"
+        "study",
+        "money",
+        "relationship"
       ],
       "sourceCoverage": "inferred"
     },
     {
       "signal": "수",
-      "reason": "깊은 사고와 내면 루프, 감정 완충이 필요한 성장 과제와 연결된다.",
+      "reason": "수 기운은 깊은 사색, 내면 루프, 말로 드러내기 전 오래 정리하는 패턴과 연결한다. 관계에서는 침묵이 거리감으로 읽히지 않도록 표현 빈도 조율을 붙인다.",
       "productDomains": [
         "general",
         "love",
-        "compatibility"
+        "compatibility",
+        "relationship",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "합충형파해",
+      "reason": "합충형파해가 관계·환경 전환 신호로 강하게 보이면 INTJ의 통제된 계획이 흔들리는 장면으로 읽는다. 이때는 기준을 버리기보다 역할, 일정, 감정 확인을 다시 합의하는 문장에 쓴다.",
+      "productDomains": [
+        "relationship",
+        "marriage",
+        "career",
+        "daeun",
+        "saeun"
       ],
       "sourceCoverage": "inferred"
     }
