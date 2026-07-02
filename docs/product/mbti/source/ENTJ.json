@@ -915,11 +915,11 @@
                                     },
                                     {
                                         "id":  "dominance_marriage_risk",
-                                        "label":  "지배 위험",
-                                        "plainKo":  "연애 능력이 미숙할 때는 연인을 지배하거나 무시하며 관계를 빠르게 깨뜨릴 수 있다. 결혼에서는 의사결정권과 감정 존중의 균형이 핵심이다.",
+                                        "label":  "통제 리스크",
+                                        "plainKo":  "관계가 미숙할 때는 결정을 빨리 내려 주는 일이 배우자에게 지시나 평가처럼 느껴질 수 있다. 결혼에서는 의사결정권과 감정 존중의 균형이 핵심이다.",
                                         "strongLine":  "ENTJ가 사랑을 관리와 통제로 착각하는 순간, 관계의 성과는 좋아져도 마음은 멀어집니다.",
                                         "positiveUse":  "책임과 결정을 회피하지 않아 가족의 방향을 세우는 데 강하다.",
-                                        "risk":  "배우자의 감정과 선택권을 낮게 보아 친밀감이 급격히 식는다.",
+                                        "risk":  "배우자의 감정과 선택권을 낮게 보면 친밀감이 약해진다.",
                                         "matchingMyeongliSignals":  [
                                                                         "편관",
                                                                         "겁재",
@@ -951,6 +951,46 @@
                                                                "compatibility"
                                                            ],
                                         "sourceCoverage":  "direct"
+                                    },
+                                    {
+                                        "id":  "decision_authority_agreement",
+                                        "label":  "결정권 합의",
+                                        "plainKo":  "ENTJ는 결혼 생활에서도 빠른 결정과 명확한 책임 구조를 원한다. 돈, 이사, 커리어, 자녀 교육처럼 큰 결정은 누가 결정권을 갖는지보다 어떤 기준으로 함께 합의할지를 먼저 정해야 한다.",
+                                        "strongLine":  "당신의 결혼은 방향을 잡는 힘이 강하지만, 그 방향을 배우자와 함께 정할 때 오래 갑니다.",
+                                        "positiveUse":  "가족 목표, 예산, 역할, 장기 계획을 빠르게 정리해 생활 추진력을 만든다.",
+                                        "risk":  "설명보다 결론이 먼저 나오면 배우자는 협의가 아니라 지시를 받는다고 느낀다.",
+                                        "matchingMyeongliSignals":  [
+                                                                        "정관",
+                                                                        "편관",
+                                                                        "정재",
+                                                                        "금"
+                                                                    ],
+                                        "productDomains":  [
+                                                               "marriage",
+                                                               "money",
+                                                               "career"
+                                                           ],
+                                        "sourceCoverage":  "inferred"
+                                    },
+                                    {
+                                        "id":  "work_family_boundary",
+                                        "label":  "일과 가정 경계",
+                                        "plainKo":  "ENTJ는 가족을 위해 더 크게 성취하려는 마음이 강하지만, 그 과정에서 집까지 성과 관리의 공간처럼 만들 수 있다. 결혼에서는 목표를 밀어붙이는 시간과 쉬는 시간을 분리해야 한다.",
+                                        "strongLine":  "당신에게 가정은 또 하나의 프로젝트가 아니라, 성과를 내려놓고 회복해야 하는 공간이기도 합니다.",
+                                        "positiveUse":  "일정과 목표를 관리하는 힘으로 가족 재정, 커리어, 자녀 교육의 방향을 잡는다.",
+                                        "risk":  "집에서도 평가와 개선만 반복하면 배우자는 사랑보다 압박을 먼저 느낀다.",
+                                        "matchingMyeongliSignals":  [
+                                                                        "편관",
+                                                                        "정관",
+                                                                        "화",
+                                                                        "토"
+                                                                    ],
+                                        "productDomains":  [
+                                                               "marriage",
+                                                               "career",
+                                                               "parenting"
+                                                           ],
+                                        "sourceCoverage":  "inferred"
                                     }
                                 ],
                    "parenting":  [

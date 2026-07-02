@@ -983,6 +983,45 @@
           "love"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "role_agreement_marriage",
+        "label": "역할 합의",
+        "plainKo": "INTJ는 결혼 생활에서도 감정의 흐름보다 구조와 역할을 먼저 정리하려 한다. 돈, 가사, 가족 일정, 커리어 조율을 말로 합의해 두면 관계가 훨씬 안정된다.",
+        "strongLine": "당신의 결혼은 사랑만으로 굴러가기보다, 돈과 역할과 시간을 어떻게 나눌지 합의할 때 안정됩니다.",
+        "positiveUse": "공동 예산, 가사 분담, 가족 일정, 장기 목표를 체계적으로 정리해 생활의 혼란을 줄인다.",
+        "risk": "합의가 기준표처럼 굳어지면 배우자는 감정과 상황을 설명할 공간이 없다고 느낄 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "토",
+          "금"
+        ],
+        "productDomains": [
+          "marriage",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "emotional_expression_routine",
+        "label": "정서 표현 루틴",
+        "plainKo": "INTJ는 책임을 다하면 마음도 전달됐다고 느끼기 쉽다. 결혼에서는 작은 감사, 안부 확인, 스킨십, 기념일처럼 반복되는 정서 표현을 의식적으로 넣어야 헌신이 차갑게 보이지 않는다.",
+        "strongLine": "당신의 헌신은 강하지만, 배우자는 그 헌신을 매일의 말과 온도로 확인하고 싶어 합니다.",
+        "positiveUse": "짧은 대화 루틴과 감사 표현을 정하면 실질적 책임과 정서적 안정이 함께 살아난다.",
+        "risk": "문제를 해결해 줬다는 이유로 감정 표현을 생략하면 배우자는 혼자 사는 느낌을 받을 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "식신",
+          "수"
+        ],
+        "productDomains": [
+          "marriage",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "parenting": [

@@ -889,6 +889,45 @@
           "money"
         ],
         "sourceCoverage": "inferred"
+      },
+      {
+        "id": "promise_money_repeat_system",
+        "label": "반복 책임 구조",
+        "plainKo": "ENTP는 큰 대화와 새로운 계획에는 강하지만 약속 시간, 생활비, 가사, 반복 구매 같은 작은 운영을 가볍게 볼 수 있다. 결혼에서는 반복 책임을 캘린더와 예산표로 고정해야 신뢰가 쌓인다.",
+        "strongLine": "당신의 결혼 생활은 멋진 아이디어보다, 약속과 돈과 가사가 반복해서 지켜질 때 안정됩니다.",
+        "positiveUse": "생활비 분담, 가사 루틴, 일정 알림, 공동 체크리스트를 두면 자유와 책임이 함께 유지된다.",
+        "risk": "작은 약속을 계속 즉흥으로 넘기면 배우자는 큰 미래보다 오늘의 신뢰를 먼저 의심한다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "marriage",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "novelty_within_structure",
+        "label": "구조 안의 새로움",
+        "plainKo": "ENTP는 결혼 생활이 너무 반복되면 관계 자체가 낡았다고 느낄 수 있다. 다만 새로움을 밖에서만 찾지 말고, 여행, 프로젝트, 공부, 취미처럼 가정 안에서 함께 바꿔 갈 장치를 만들어야 한다.",
+        "strongLine": "당신에게 좋은 결혼은 고정된 틀이 아니라, 안정된 구조 안에서 계속 새로워지는 관계입니다.",
+        "positiveUse": "공동 프로젝트, 여행 계획, 새로운 배움, 대화 주제를 만들어 관계의 활력을 유지한다.",
+        "risk": "변화를 핑계로 책임과 루틴을 계속 흔들면 배우자는 안정감을 잃는다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "식신",
+          "역마",
+          "목"
+        ],
+        "productDomains": [
+          "marriage",
+          "love",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "parenting": [
