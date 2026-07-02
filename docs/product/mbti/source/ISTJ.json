@@ -777,6 +777,42 @@
           "career"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "new_type_adaptation_drill",
+        "label": "새 유형 적응 훈련",
+        "plainKo": "ISTJ는 기출, 기본서, 검증된 풀이처럼 안정된 방식에 강하다. 다만 시험 유형이 바뀌거나 낯선 응용 문제가 나오면 기존 절차에 묶일 수 있어, 일부러 새 유형을 섞어 푸는 훈련이 필요하다.",
+        "strongLine": "당신의 공부는 검증된 방식이 강하지만, 새 유형을 피하면 시험장에서 손이 굳습니다.",
+        "positiveUse": "기출 반복 뒤 변형 문제, 응용 세트, 낯선 지문 훈련을 붙이면 안정성과 대응력이 함께 살아난다.",
+        "risk": "익숙한 문제만 반복하면 공부량은 많은데 새 조건 앞에서 판단이 늦어진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "문창",
+          "금"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "perfectionism_recovery_limit",
+        "label": "완벽주의 회복 한도",
+        "plainKo": "ISTJ는 계획표와 반복량을 성실하게 지키지만, 완벽하게 채우지 못한 날을 실패로 느끼기 쉽다. 장기 시험에서는 밀린 분량을 한 번에 만회하려 하기보다 복구 기준과 휴식 기준을 정해야 한다.",
+        "strongLine": "당신의 성실함은 강점이지만, 하루의 빈칸을 실패로 보면 공부가 오래 버티지 못합니다.",
+        "positiveUse": "주간 복구일, 최소 학습량, 휴식 체크리스트를 두면 반복 루틴이 무너지지 않는다.",
+        "risk": "완벽한 계획표에 집착하면 피로가 쌓이고, 계획이 깨진 순간 전체 리듬을 놓칠 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정인",
+          "토"
+        ],
+        "productDomains": [
+          "study",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "love": [

@@ -749,6 +749,42 @@
           "career"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "exam_anxiety_scope_lock",
+        "label": "시험 불안 범위 고정",
+        "plainKo": "ISFJ는 성실하게 준비하면서도 빠뜨린 것이 있을까 봐 불안해질 수 있다. 시험 준비에서는 범위, 회독 수, 오답 기준을 먼저 고정해야 끝없는 확인과 과잉 준비로 에너지가 새지 않는다.",
+        "strongLine": "당신의 공부는 더 많이 불안해하는 것이 아니라, 어디까지 하면 충분한지 기준을 정할 때 안정됩니다.",
+        "positiveUse": "범위표, 회독 체크, 오답 우선순위, 마감 전 휴식 루틴을 만들면 실전 집중이 살아난다.",
+        "risk": "불안을 줄이려고 계속 더 준비하면 정작 시험 직전에 체력과 자신감이 떨어진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정관",
+          "수"
+        ],
+        "productDomains": [
+          "study",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "confidence_recall_training",
+        "label": "자신감 인출 훈련",
+        "plainKo": "ISFJ는 배운 것을 조용히 쌓는 힘은 강하지만, 시험장에서는 내가 맞게 알고 있는지 의심하며 속도가 늦어질 수 있다. 암기한 내용을 말로 설명하고 시간 제한 안에서 꺼내는 인출 훈련이 필요하다.",
+        "strongLine": "당신은 모르는 사람이 아니라, 아는 것을 제때 꺼내는 자신감 훈련이 필요한 사람입니다.",
+        "positiveUse": "백지 복습, 구두 설명, 시간 제한 문제 풀이, 작은 모의고사로 실전 감각을 만든다.",
+        "risk": "확신이 생길 때까지 다시 읽기만 하면 문제를 푸는 속도와 판단력이 늦게 올라온다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "정인",
+          "금"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "love": [

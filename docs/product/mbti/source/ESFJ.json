@@ -791,11 +791,11 @@
                                                             "general"
                                                         ],
                                      "sourceCoverage":  "direct"
-                                 },
-                                 {
-                                     "id":  "concept_linking_needed",
-                                     "label":  "개념 연결 보강",
-                                     "plainKo":  "수학이나 개념형 과목이 약할 때는 여러 개념을 연결해 이해하는 전략이 필요하다. 단순히 외우는 양을 늘리기보다 관계도를 만들고 예시를 붙여야 한다.",
+                                  },
+                                  {
+                                      "id":  "concept_linking_needed",
+                                      "label":  "개념 연결 보강",
+                                      "plainKo":  "수학이나 개념형 과목이 약할 때는 여러 개념을 연결해 이해하는 전략이 필요하다. 단순히 외우는 양을 늘리기보다 관계도를 만들고 예시를 붙여야 한다.",
                                      "strongLine":  "ESFJ의 약한 과목은 더 많이 외우는 것만으로 해결되지 않고, 개념 사이의 연결고리를 눈에 보이게 만들어야 풀립니다.",
                                      "positiveUse":  "마인드맵, 사례표, 비교표, 단계별 절차를 쓰면 추상 과목의 부담을 줄인다.",
                                      "risk":  "이해가 안 되는 과목을 감정적으로 회피하거나, 잘하는 암기 과목만 붙잡는다.",
@@ -808,9 +808,45 @@
                                                             "study",
                                                             "general"
                                                         ],
-                                     "sourceCoverage":  "direct"
-                                 }
-                             ],
+                                      "sourceCoverage":  "direct"
+                                  },
+                                  {
+                                      "id":  "solo_focus_boundary",
+                                      "label":  "혼자 집중 경계",
+                                      "plainKo":  "ESFJ는 스터디, 설명, 체크인처럼 사람과 연결된 학습에서 힘을 얻는다. 다만 주변 일정과 감정에 계속 반응하면 자기 공부 시간이 줄어드니, 혼자 푸는 시간과 연락을 끊는 시간을 정해야 한다.",
+                                      "strongLine":  "당신의 공부는 사람과 함께할 때 살아나지만, 혼자 집중하는 시간이 없으면 점수가 남지 않습니다.",
+                                      "positiveUse":  "스터디 후 개인 복습, 연락 차단 시간, 혼자 푸는 문제 세트를 붙이면 학습이 안정된다.",
+                                      "risk":  "사람을 챙기고 분위기를 맞추다 보면 자기 진도와 약점 보완이 뒤로 밀린다.",
+                                      "matchingMyeongliSignals":  [
+                                                                      "정인",
+                                                                      "정관",
+                                                                      "수"
+                                                                  ],
+                                      "productDomains":  [
+                                                             "study",
+                                                             "career"
+                                                         ],
+                                      "sourceCoverage":  "inferred"
+                                  },
+                                  {
+                                      "id":  "evaluation_anxiety_routine",
+                                      "label":  "평가 불안 루틴",
+                                      "plainKo":  "ESFJ는 칭찬과 반응에서 힘을 얻지만 평가가 차갑게 느껴지면 불안이 커질 수 있다. 시험 준비에서는 타인의 반응보다 오답 수, 회독 수, 제한 시간처럼 객관 지표로 공부 상태를 확인해야 한다.",
+                                      "strongLine":  "당신의 공부는 칭찬을 기다리는 것보다, 숫자로 확인되는 작은 진전이 있을 때 덜 흔들립니다.",
+                                      "positiveUse":  "오답 개수, 회독표, 시간 기록, 과목별 체크인을 쓰면 인정 욕구가 실전 루틴으로 바뀐다.",
+                                      "risk":  "평가자의 표정과 말에 흔들리면 공부 리듬이 감정에 끌려간다.",
+                                      "matchingMyeongliSignals":  [
+                                                                      "문창",
+                                                                      "도화",
+                                                                      "정인"
+                                                                  ],
+                                      "productDomains":  [
+                                                             "study",
+                                                             "general"
+                                                         ],
+                                      "sourceCoverage":  "inferred"
+                                  }
+                              ],
                    "love":  [
                                 {
                                     "id":  "observing_then_devoted",
