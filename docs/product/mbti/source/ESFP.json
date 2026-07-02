@@ -909,8 +909,46 @@
                                                                "marriage",
                                                                "love",
                                                                "general"
-                                                           ],
+                                                            ],
                                         "sourceCoverage":  "direct"
+                                    },
+                                    {
+                                        "id":  "expression_budget_rhythm",
+                                        "label":  "표현·지출 리듬",
+                                        "plainKo":  "ESFP는 사랑을 말, 리액션, 선물, 외출, 스킨십, 이벤트로 표현하는 힘이 강하다. 결혼에서는 그 표현이 즐거움으로 남으려면 돈과 시간의 리듬을 정해 감정 결제가 생활비를 밀어내지 않게 해야 한다.",
+                                        "strongLine":  "당신의 표현력은 결혼을 살리지만, 감정이 돈과 시간을 전부 끌고 가면 안정감이 흔들립니다.",
+                                        "positiveUse":  "데이트비, 선물비, 모임비, 생활비를 나누면 즐거움과 현실 책임이 함께 유지된다.",
+                                        "risk":  "기분을 풀기 위한 지출이 반복되면 배우자는 애정 표현보다 부담을 먼저 느낀다.",
+                                        "matchingMyeongliSignals":  [
+                                                                        "도화",
+                                                                        "식신",
+                                                                        "정재"
+                                                                    ],
+                                        "productDomains":  [
+                                                               "marriage",
+                                                               "money",
+                                                               "love"
+                                                           ],
+                                        "sourceCoverage":  "inferred"
+                                    },
+                                    {
+                                        "id":  "shared_attention_security",
+                                        "label":  "관심 확인 안정감",
+                                        "plainKo":  "ESFP는 결혼 생활에서도 함께 웃고 반응하고 시간을 보내는 감각이 중요하다. 배우자가 조용하거나 바쁘면 사랑이 식었다고 느끼기 쉬우니, 서로의 외부 활동과 부부 시간을 보이는 방식으로 조율해야 한다.",
+                                        "strongLine":  "당신은 사랑을 마음속 확신보다, 같이 웃고 반응하는 현재의 장면에서 확인합니다.",
+                                        "positiveUse":  "짧은 안부, 함께하는 저녁, 주말 활동, 스킨십 루틴을 만들면 정서 안정감이 살아난다.",
+                                        "risk":  "상대의 조용한 회복 시간을 무관심으로 읽으면 확인 요구와 서운함이 커진다.",
+                                        "matchingMyeongliSignals":  [
+                                                                        "도화",
+                                                                        "홍염",
+                                                                        "수"
+                                                                    ],
+                                        "productDomains":  [
+                                                               "marriage",
+                                                               "love",
+                                                               "compatibility"
+                                                           ],
+                                        "sourceCoverage":  "inferred"
                                     }
                                 ],
                    "parenting":  [

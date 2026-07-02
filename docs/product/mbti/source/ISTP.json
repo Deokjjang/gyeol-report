@@ -876,6 +876,63 @@
           "love"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "practical_responsibility_signal",
+        "label": "실전 책임 표현",
+        "plainKo": "ISTP는 결혼 생활에서 애정을 길게 설명하기보다 필요한 순간에 고치고 해결하고 곁에 있는 방식으로 책임을 보인다. 배우자는 그 행동을 사랑으로 읽을 수 있게, 어떤 도움이 애정 표현인지 말로도 짧게 확인받아야 한다.",
+        "strongLine": "당신의 결혼은 말보다 행동이 강하지만, 그 행동이 사랑이라는 신호를 짧게라도 알려야 덜 오해받습니다.",
+        "positiveUse": "고장, 일정, 이동, 실무 문제처럼 현실적인 장면에서 침착하게 해결책을 만든다.",
+        "risk": "감정 설명을 계속 생략하면 배우자는 필요한 사람일 때만 곁에 있는 느낌을 받을 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "편관",
+          "금"
+        ],
+        "productDomains": [
+          "marriage",
+          "love",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "personal_time_agreement",
+        "label": "개인 시간 합의",
+        "plainKo": "ISTP는 결혼 후에도 혼자 정비하는 시간과 취미 공간이 있어야 안정된다. 이 시간을 숨기거나 갑자기 사라지듯 쓰면 회피로 보이니, 미리 빈도와 시간을 합의하는 편이 맞다.",
+        "strongLine": "당신에게 개인 시간은 관계 회피가 아니라, 다시 다정해지기 위해 필요한 정비 시간입니다.",
+        "positiveUse": "개인 취미, 휴식, 부부 시간을 나누면 자유와 책임이 동시에 유지된다.",
+        "risk": "말 없이 거리를 두면 배우자는 버려진 느낌을 받고 감정 확인을 더 강하게 요구할 수 있다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "편인",
+          "수"
+        ],
+        "productDomains": [
+          "marriage",
+          "compatibility",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "money_and_tool_boundary",
+        "label": "도구·취미 비용 경계",
+        "plainKo": "ISTP는 필요한 장비, 도구, 이동, 취미에는 돈을 아끼지 않을 수 있다. 결혼에서는 실용적인 지출이라도 공동재정에서 한도와 우선순위를 정해야 신뢰가 흔들리지 않는다.",
+        "strongLine": "당신에게 합리적인 지출도, 배우자와 기준을 맞추지 않으면 혼자 결정한 비용으로 보입니다.",
+        "positiveUse": "장비·취미 예산, 비상금, 수리비, 생활비를 분리하면 실용성과 안정성을 함께 지킨다.",
+        "risk": "필요하다는 이유로 설명 없이 지출하면 배우자는 돈보다 결정권을 문제 삼는다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편재",
+          "금"
+        ],
+        "productDomains": [
+          "marriage",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "parenting": [

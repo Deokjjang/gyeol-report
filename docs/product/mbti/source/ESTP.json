@@ -851,6 +851,63 @@
           "compatibility"
         ],
         "sourceCoverage": "inferred"
+      },
+      {
+        "id": "fast_decision_cooling_rule",
+        "label": "빠른 결정 냉각 규칙",
+        "plainKo": "ESTP는 이사, 여행, 큰 구매, 사람 만남처럼 현장에서 판단하고 바로 움직이는 힘이 강하다. 결혼에서는 속도가 장점이지만, 공동 생활에 영향을 주는 결정은 하루라도 식히고 배우자와 확인하는 규칙이 필요하다.",
+        "strongLine": "당신의 실행력은 강하지만, 결혼에서는 빠른 결정 앞에 짧은 확인 절차가 있어야 신뢰가 지켜집니다.",
+        "positiveUse": "현장 판단과 실행력으로 가족의 문제를 빠르게 풀고 기회를 현실로 만든다.",
+        "risk": "혼자 결정하고 통보하면 배우자는 함께 사는 관계가 아니라 따라가는 관계처럼 느낀다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "역마",
+          "화"
+        ],
+        "productDomains": [
+          "marriage",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "freedom_time_contract",
+        "label": "자유 시간 계약",
+        "plainKo": "ESTP는 결혼해도 친구, 운동, 외부 활동, 즉흥적인 시간이 있어야 숨통이 트인다. 이 자유를 숨기거나 즉흥으로만 쓰면 배우자의 불안이 커지니, 자주 나가는 시간과 부부 시간을 함께 정해야 한다.",
+        "strongLine": "당신의 자유는 금지할 문제가 아니라, 약속된 범위 안에서 살아야 관계를 덜 흔듭니다.",
+        "positiveUse": "개인 활동과 부부 활동을 분리하면 활력과 책임이 동시에 유지된다.",
+        "risk": "자유를 설명하지 않으면 배우자는 관계보다 바깥 자극이 먼저라고 느낀다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "역마",
+          "식신"
+        ],
+        "productDomains": [
+          "marriage",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "risk_spending_limit",
+        "label": "위험 지출 한도",
+        "plainKo": "ESTP는 좋은 기회와 재미있는 경험이 보이면 돈과 시간을 빠르게 투입할 수 있다. 결혼에서는 도전 자체를 막기보다 손실 한도, 생활비 보호선, 배우자 확인 기준을 정해야 한다.",
+        "strongLine": "당신의 과감함은 관계의 활력이 되지만, 한도 없는 지출은 배우자에게 불안으로 먼저 닿습니다.",
+        "positiveUse": "기회 포착과 현금화 감각을 살리면서도 가족 생활비와 비상금을 보호한다.",
+        "risk": "재미와 기회만 보고 반복 지출하면 신뢰가 돈 문제에서 먼저 흔들린다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "정재",
+          "겁재"
+        ],
+        "productDomains": [
+          "marriage",
+          "money",
+          "investment"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "parenting": [
