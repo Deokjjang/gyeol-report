@@ -358,6 +358,42 @@
           "daeun"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "idea_to_campaign_path",
+        "label": "아이디어 캠페인화",
+        "plainKo": "ENFP는 흩어진 가능성을 사람에게 닿는 이야기, 캠페인, 콘텐츠, 프로젝트로 바꾸는 데 강하다. 떠오른 아이디어를 메시지, 대상, 일정으로 정리하면 창의성이 실제 성과와 수입으로 연결된다.",
+        "strongLine": "당신의 아이디어는 머릿속에 있을 때보다, 사람을 움직이는 캠페인이 될 때 힘이 커집니다.",
+        "positiveUse": "콘텐츠 기획, 브랜드 캠페인, 커뮤니티 프로젝트, 교육 프로그램, 이벤트 런칭에서 빠르게 활력을 만든다.",
+        "risk": "아이디어가 많을수록 우선순위가 흐려져 시작한 일의 마무리가 약해질 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "도화",
+          "역마"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "portfolio_project_income",
+        "label": "프로젝트형 수입",
+        "plainKo": "ENFP는 하나의 고정 직무보다 여러 프로젝트, 콘텐츠, 사람 연결이 겹칠 때 기회가 늘어난다. 다만 수입이 들쑥날쑥해지기 쉬워 반복 상품, 계약 범위, 후속 관리 기준이 있어야 커리어가 안정된다.",
+        "strongLine": "당신에게 맞는 커리어는 자유로운 프로젝트를 반복 가능한 수익 구조로 묶을 때 안정됩니다.",
+        "positiveUse": "프리랜스 기획, 콘텐츠 운영, 강의, 커뮤니티, 협업 프로젝트를 포트폴리오형 경력으로 쌓는다.",
+        "risk": "새로운 제안만 따라가면 일정, 정산, 품질 관리가 흩어져 신뢰가 흔들릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "식신",
+          "비견"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "workplace": [
@@ -431,6 +467,42 @@
           "general"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "follow_through_system",
+        "label": "후속 관리 시스템",
+        "plainKo": "ENFP는 시작과 확산에는 강하지만 반복 확인, 문서 정리, 마감 후 조치가 길어지면 에너지가 떨어진다. 체크리스트, 담당자, 짧은 마감 단위가 있어야 자유로운 발상이 실제 결과로 남는다.",
+        "strongLine": "당신의 자유는 관리가 없을 때가 아니라, 최소한의 후속 장치가 있을 때 더 오래 살아납니다.",
+        "positiveUse": "기획 초기, 고객 접점, 팀 아이디어 발굴에서 활력을 만들고 실행의 첫 움직임을 빠르게 만든다.",
+        "risk": "후속 관리가 개인 기억에만 의존하면 약속 변동과 누락이 반복된다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편재",
+          "화"
+        ],
+        "productDomains": [
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "open_culture_fit",
+        "label": "개방형 조직 적합",
+        "plainKo": "ENFP는 의견을 내고 실험할 수 있는 조직에서 빠르게 살아난다. 반대로 절차만 반복하고 질문을 막는 분위기에서는 일의 의미가 사라져 성과보다 탈출 욕구가 먼저 커진다.",
+        "strongLine": "당신은 말할 수 있고 실험할 수 있는 일터에서 책임감과 창의성이 함께 켜집니다.",
+        "positiveUse": "브레인스토밍, 신규 프로젝트, 브랜드 기획, 커뮤니티 운영에서 사람과 아이디어를 연결한다.",
+        "risk": "개방성만 있고 우선순위가 없으면 회의는 활발하지만 결과물은 늦어진다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "비견",
+          "목"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "money": [

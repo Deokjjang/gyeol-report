@@ -378,6 +378,24 @@
           "saeun"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "people_growth_business",
+        "label": "사람 성장 사업화",
+        "plainKo": "ENFJ는 사람의 가능성을 읽고 교육, 코칭, 조직문화, 커뮤니티 운영으로 성장 구조를 만드는 일에 강하다. 격려만 하는 역할보다 목표, 과정, 피드백을 설계할 때 커리어와 수익이 함께 커진다.",
+        "strongLine": "당신의 일은 사람을 응원하는 데서 끝나지 않고, 성장하는 구조를 만들 때 값이 올라갑니다.",
+        "positiveUse": "교육 프로그램, HR, 브랜드 커뮤니티, 리더십 코칭, 조직문화 프로젝트에서 사람을 움직이는 성과를 만든다.",
+        "risk": "상대의 성장을 자기 책임처럼 끌어안으면 성과 관리보다 감정 소모가 앞선다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정관",
+          "귀인"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "workplace": [
@@ -465,6 +483,24 @@
           "compatibility"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "role_boundary_for_leadership",
+        "label": "리더십 역할 경계",
+        "plainKo": "ENFJ는 팀 분위기, 동료 감정, 성과 방향을 동시에 챙기려다 역할이 과해지기 쉽다. 책임 범위와 평가 기준이 명확해야 챙김이 감정 노동으로 번지지 않고 리더십으로 작동한다.",
+        "strongLine": "당신은 모두를 책임지려 할수록 지치고, 역할을 분명히 나눌수록 더 좋은 리더가 됩니다.",
+        "positiveUse": "팀 조율, 온보딩, 교육, 대외 협력에서 사람의 동기와 조직의 목표를 함께 묶는다.",
+        "risk": "권한 없이 책임만 맡으면 불만을 말하지 못한 채 관계와 업무를 동시에 떠안게 된다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "겁재",
+          "정인"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "money": [

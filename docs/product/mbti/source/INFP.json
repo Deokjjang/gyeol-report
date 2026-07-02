@@ -432,6 +432,24 @@
           "career"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "value_to_income_bridge",
+        "label": "가치 수익화 연결",
+        "plainKo": "INFP는 취향, 글, 창작, 돌봄을 실제 상품이나 서비스 구조로 바꿀 때 커리어가 안정된다. 의미 있는 일을 하더라도 가격, 범위, 납기 기준을 정해야 자기 가치를 낮게 넘기지 않는다.",
+        "strongLine": "당신의 일은 마음만 담을 때보다, 가치가 거래 가능한 형태를 가질 때 오래 갑니다.",
+        "positiveUse": "창작물, 상담형 서비스, 교육 콘텐츠, 작은 브랜드를 자기 색이 있는 수익 구조로 만든다.",
+        "risk": "좋아서 하는 일이라는 이유로 보상 기준을 흐리면 일은 늘고 자존감은 줄어든다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "정재",
+          "도화"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "workplace": [
@@ -523,6 +541,24 @@
           "money"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "feedback_safety_contract",
+        "label": "피드백 안전장치",
+        "plainKo": "INFP는 결과물에 자기 마음을 많이 담기 때문에 차가운 평가를 인격 거절처럼 받아들이기 쉽다. 기준, 수정 범위, 마감 횟수가 정해져 있으면 피드백을 상처보다 개선 과정으로 받아들이기 수월하다.",
+        "strongLine": "당신에게 좋은 일터는 마음을 꺾는 곳이 아니라, 기준을 분명히 세워 작품을 살리는 곳입니다.",
+        "positiveUse": "편집, 디자인, 글쓰기, 교육, 상담 업무에서 섬세한 수정과 깊은 공감을 결과물로 만든다.",
+        "risk": "피드백 방식이 거칠면 말없이 위축되고 필요한 협업까지 피할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "식신",
+          "수"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "money": [
