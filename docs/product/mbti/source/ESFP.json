@@ -409,6 +409,24 @@
                                                              "general"
                                                          ],
                                       "sourceCoverage":  "direct"
+                                  },
+                                  {
+                                      "id":  "experience_content_revenue",
+                                      "label":  "경험 콘텐츠 수익",
+                                      "plainKo":  "ESFP는 사람의 반응을 읽고 분위기를 살리는 힘이 콘텐츠, 행사, 서비스, 고객 경험으로 이어질 때 커리어가 강해진다. 즐거움을 만드는 능력이 반복 프로그램, 예약, 판매 구조와 만나야 수입 안정성이 생긴다.",
+                                      "strongLine":  "ESFP의 커리어는 즐거운 장면을 만드는 힘이 고객 경험과 반복 수익으로 연결될 때 값이 올라갑니다.",
+                                      "positiveUse":  "이벤트, 공연, 콘텐츠, 매장 경험, 고객 응대, 커뮤니티 활동에서 사람의 감정 온도를 빠르게 끌어올린다.",
+                                      "risk":  "현장 분위기만 살리고 정산, 일정, 후속 관리를 놓치면 실제 성과가 낮게 평가된다.",
+                                      "matchingMyeongliSignals":  [
+                                                                      "도화",
+                                                                      "식신",
+                                                                      "편재"
+                                                                  ],
+                                      "productDomains":  [
+                                                             "career",
+                                                             "money"
+                                                         ],
+                                      "sourceCoverage":  "inferred"
                                   }
                               ],
                    "workplace":  [
@@ -505,6 +523,24 @@
                                                                 "general"
                                                             ],
                                          "sourceCoverage":  "direct"
+                                     },
+                                     {
+                                         "id":  "responsive_team_needed",
+                                         "label":  "반응 있는 팀 필요",
+                                         "plainKo":  "ESFP는 혼자 오래 고립되어 반응 없는 일을 반복하면 에너지가 급격히 떨어진다. 고객, 동료, 관객처럼 즉각적인 피드백이 있는 환경에서 몰입이 살아나지만, 그만큼 감정 노동과 인정 욕구 관리가 필요하다.",
+                                         "strongLine":  "당신은 반응 없는 자리에서 버티기보다, 사람의 표정과 피드백이 오가는 자리에서 성과가 살아납니다.",
+                                         "positiveUse":  "고객 접점, 팀 프로젝트, 라이브 운영, 교육·행사 진행에서 분위기를 읽고 빠르게 조정한다.",
+                                         "risk":  "반응이 적으면 동기를 잃고, 반응이 지나치게 많으면 감정 소모가 커진다.",
+                                         "matchingMyeongliSignals":  [
+                                                                         "도화",
+                                                                         "홍염",
+                                                                         "비견"
+                                                                     ],
+                                         "productDomains":  [
+                                                                "career",
+                                                                "general"
+                                                            ],
+                                         "sourceCoverage":  "inferred"
                                      }
                                  ],
                    "money":  [

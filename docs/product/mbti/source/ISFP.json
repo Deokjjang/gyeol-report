@@ -416,6 +416,24 @@
           "daeun"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "taste_to_service_value",
+        "label": "취향 서비스 가치",
+        "plainKo": "ISFP는 감각, 취향, 손의 완성도를 고객이 체감하는 결과로 바꿀 때 커리어가 안정된다. 디자인, 미용, 음식, 돌봄, 공간, 현장 서비스처럼 말보다 결과물과 분위기로 신뢰를 만드는 업무가 잘 맞는다.",
+        "strongLine": "당신의 커리어는 취향과 섬세함이 고객이 느끼는 품질로 바뀔 때 값이 올라갑니다.",
+        "positiveUse": "디자인, 뷰티, 공예, 현장 서비스, 돌봄, 공간 연출에서 조용하지만 선명한 만족을 만든다.",
+        "risk": "가격과 범위를 분명히 말하지 않으면 좋은 결과를 내고도 보상에서 밀릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "도화",
+          "정재"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "workplace": [
@@ -510,6 +528,24 @@
           "career"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "gentle_feedback_space",
+        "label": "부드러운 피드백 공간",
+        "plainKo": "ISFP는 강한 평가와 공개 지적이 반복되는 조직에서 빠르게 닫힌다. 기준은 필요하지만 말투, 공간, 수정 시간이 존중될 때 감각적 완성도와 꾸준함이 살아난다.",
+        "strongLine": "당신은 압박을 세게 받을수록 빨라지는 사람이 아니라, 존중받을수록 더 섬세하게 완성하는 사람입니다.",
+        "positiveUse": "개별 피드백, 조용한 작업 공간, 명확한 수정 기준이 있으면 품질을 안정적으로 끌어올린다.",
+        "risk": "불편함을 말하지 않고 쌓으면 어느 순간 협업에서 조용히 빠져나간다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "식신",
+          "수"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "money": [

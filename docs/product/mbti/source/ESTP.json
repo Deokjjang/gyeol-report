@@ -396,6 +396,24 @@
           "money"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "deal_to_repeat_business",
+        "label": "거래 반복 수익화",
+        "plainKo": "ESTP는 사람을 만나고 현장에서 기회를 잡아 빠르게 거래를 만드는 힘이 있다. 이 강점이 오래 가려면 즉흥 계약에 그치지 않고 고객 기록, 재방문 구조, 손실 한도, 후속 관리로 연결되어야 한다.",
+        "strongLine": "당신의 커리어는 빠른 거래 감각을 반복 고객과 관리 구조로 묶을 때 안정됩니다.",
+        "positiveUse": "영업, 거래, 현장 운영, 스포츠·여행·서비스 비즈니스에서 기회를 빠르게 현금화한다.",
+        "risk": "당장의 성사에만 집중하면 조건 확인, 정산, 사후 관리에서 신뢰가 흔들릴 수 있다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "역마",
+          "식신"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "workplace": [
@@ -471,6 +489,24 @@
           "general"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "fast_approval_lane",
+        "label": "빠른 승인 구조",
+        "plainKo": "ESTP는 느린 승인, 반복 행정, 장기 문서 작업이 길어지면 현장 감각을 쓰기 전에 지친다. 권한 범위와 즉시 결정 가능한 기준이 있으면 돌발 상황에서 빠르게 움직이며 성과를 낸다.",
+        "strongLine": "당신은 승인만 기다리는 자리보다, 현장에서 판단하고 바로 움직일 수 있는 자리에서 힘이 납니다.",
+        "positiveUse": "현장 대응, 고객 협상, 긴급 운영, 단기 목표 실행에서 속도와 현실 감각을 살린다.",
+        "risk": "승인 절차를 모두 답답한 장애물로 보면 필요한 기록과 책임 관리가 빠질 수 있다.",
+        "matchingMyeongliSignals": [
+          "편관",
+          "편재",
+          "화"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "money": [
