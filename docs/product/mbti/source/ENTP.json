@@ -7,7 +7,7 @@
     "rawSourceWasProvidedByUser": true,
     "rawTextStoredVerbatim": false,
     "cleanedAndRewritten": true,
-    "notes": "원문을 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+    "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
   },
   "preferenceAxes": {
     "energy": "E",
@@ -1613,7 +1613,7 @@
     },
     {
       "job": "프로게이머",
-      "reason": "빠른 판단, 경쟁심, 즉흥 대응, 게임 구조를 읽는 감각이 원문에서 제시된 능력 발휘 분야와 맞는다.",
+      "reason": "빠른 판단, 경쟁심, 즉흥 대응, 게임 구조를 읽는 감각이 ENTP의 능력 발휘 분야와 맞는다.",
       "matchingTraits": [
         "challenge_seeking_confidence",
         "quick_adaptation",
@@ -1771,7 +1771,7 @@
     },
     {
       "name": "항공기 조종사",
-      "reason": "매뉴얼 준수, 반복 점검, 정해진 절차의 절대성이 큰 직무라 원문에서 비선호 직업으로 제시된다.",
+      "reason": "매뉴얼 준수, 반복 점검, 정해진 절차의 절대성이 큰 직무라 ENTP에게 피로가 큰 직업으로 정리된다.",
       "riskTraits": [
         "anti_authoritarian_spirit",
         "low_routine_tolerance"
@@ -2377,7 +2377,7 @@
     ],
     "needsRelationGapFill": false,
     "notes": [
-      "투자와 결혼 영역은 원문 직접 설명이 적어 ENTP 성향 기반으로 보수적으로 추론함.",
+      "투자와 결혼 영역은 직접 설명이 적어 ENTP 성향 기반으로 보수적으로 추론함.",
       "통계 수치, 출처 표기, 편집 문구, 검증되지 않은 인구·질병 관련 단정은 상품용 DB에서 제외함."
     ]
   }
