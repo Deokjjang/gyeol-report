@@ -7,7 +7,7 @@
     "rawSourceWasProvidedByUser": true,
     "rawTextStoredVerbatim": false,
     "cleanedAndRewritten": true,
-    "notes": "원문을 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+    "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
   },
   "preferenceAxes": {
     "energy": "E",
@@ -396,7 +396,7 @@
       {
         "id": "healthcare_authority_fit",
         "label": "전문 권위 직무",
-        "plainKo": "ESTJ는 자격, 책임, 전문 기준이 분명한 분야에서 실력을 쌓기 쉽다. 의료 분야처럼 정확한 판단과 안정적 수행이 필요한 직무도 원문에서 적합 분야로 제시된다.",
+        "plainKo": "ESTJ는 자격, 책임, 전문 기준이 분명한 분야에서 실력을 쌓기 쉽다. 의료 분야처럼 정확한 판단과 안정적 수행이 필요한 직무도 적합 분야로 정리된다.",
         "strongLine": "당신은 전문성과 권한이 분명한 자리에서 책임을 맡을수록 더 단단해집니다.",
         "positiveUse": "의사 등 의료 분야, 전문직, 자격 기반 직무에서 성과를 낸다.",
         "risk": "전문 권위가 강해질수록 다른 사람의 감정적 불안을 작게 볼 수 있다.",
@@ -1743,7 +1743,7 @@
     },
     {
       "job": "의료 분야 전문직",
-      "reason": "자격과 책임, 정확한 판단, 안정적 수행이 필요한 전문 직무로 원문에서 능력 발휘 분야로 제시된다.",
+      "reason": "자격과 책임, 정확한 판단, 안정적 수행이 필요한 전문 직무라 ESTJ가 능력을 발휘하기 쉽다.",
       "matchingTraits": [
         "healthcare_authority_fit",
         "crisis_rationality",
@@ -2432,7 +2432,7 @@
     "notes": [
       "출처표기, 통계표, 편집 문구, 주의문, 커뮤니티 안내는 제거하고 의미 단위만 상품용 trait으로 재구성함",
       "질병, 수감비율, 범죄 관련 내용은 진단이나 낙인으로 쓰지 않고 스트레스 관리와 위험 과잉 표현도 직접 trait화하지 않음",
-      "원문 관계 설명이 16유형 모두 제공되어 notablePairs에 직접 구조화함"
+      "16유형 관계 설명을 notablePairs에 직접 구조화함"
     ]
   }
 }
