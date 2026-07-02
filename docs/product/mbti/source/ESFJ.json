@@ -416,6 +416,24 @@
                                                              "general"
                                                          ],
                                       "sourceCoverage":  "direct"
+                                  },
+                                  {
+                                      "id":  "relationship_service_revenue",
+                                      "label":  "관계 서비스 수익",
+                                      "plainKo":  "ESFJ는 사람을 기억하고 챙기는 능력이 서비스 품질과 재방문으로 이어질 때 커리어가 강해진다. 고객 응대, 교육 운영, 의료·복지 접점, 커뮤니티 관리처럼 관계 신뢰가 곧 성과가 되는 업무에서 돈과 평판이 함께 쌓인다.",
+                                      "strongLine":  "ESFJ의 커리어는 사람을 편하게 만드는 능력이 반복 고객과 신뢰로 이어질 때 값이 올라갑니다.",
+                                      "positiveUse":  "고객 관리, 멤버십 운영, 교육·의료 서비스, 행사 운영, 커뮤니티 케어에서 안정적인 성과를 만든다.",
+                                      "risk":  "고객과 조직의 기대를 모두 맞추려 하면 서비스 범위가 넓어지고 감정 노동이 커진다.",
+                                      "matchingMyeongliSignals":  [
+                                                                      "식신",
+                                                                      "정재",
+                                                                      "도화"
+                                                                  ],
+                                      "productDomains":  [
+                                                             "career",
+                                                             "money"
+                                                         ],
+                                      "sourceCoverage":  "inferred"
                                   }
                               ],
                    "workplace":  [
@@ -535,6 +553,24 @@
                                                                 "saeun"
                                                             ],
                                          "sourceCoverage":  "direct"
+                                     },
+                                     {
+                                         "id":  "praise_boundary_balance",
+                                         "label":  "인정과 경계 균형",
+                                         "plainKo":  "ESFJ는 칭찬과 감사가 있을 때 더 책임 있게 움직이지만, 인정받기 위해 모든 부탁을 받아들이면 역할 과부하가 생긴다. 좋은 일터는 고마움만 말하는 곳이 아니라 업무 범위와 우선순위를 함께 정해주는 곳이다.",
+                                         "strongLine":  "ESFJ는 인정받을수록 더 잘하지만, 경계 없이 인정만 주는 조직에서는 너무 많이 떠안습니다.",
+                                         "positiveUse":  "팀 분위기, 고객 만족, 행사 운영, 내부 조율에서 사람들의 참여와 신뢰를 끌어올린다.",
+                                         "risk":  "평판을 지키려다 거절을 미루면 감정 피로와 체면 비용이 동시에 커진다.",
+                                         "matchingMyeongliSignals":  [
+                                                                         "정관",
+                                                                         "식신",
+                                                                         "도화"
+                                                                     ],
+                                         "productDomains":  [
+                                                                "career",
+                                                                "general"
+                                                            ],
+                                         "sourceCoverage":  "inferred"
                                      }
                                  ],
                    "money":  [

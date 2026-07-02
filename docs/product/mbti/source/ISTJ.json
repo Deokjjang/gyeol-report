@@ -419,6 +419,24 @@
           "study"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "process_quality_operator",
+        "label": "운영 품질 담당",
+        "plainKo": "ISTJ는 기준이 정해진 일을 정확하게 반복하고, 작은 오류를 줄여 조직의 신뢰를 지키는 업무에서 성과가 난다. 문서화, 계약, 정산, 품질 관리처럼 틀리면 손실이 생기는 장면에서 돈과 평판이 함께 쌓인다.",
+        "strongLine": "당신의 커리어는 화려한 발상보다 실수 없는 운영과 누적된 신뢰에서 값이 올라갑니다.",
+        "positiveUse": "운영 관리, 회계 보조, 품질 검수, 계약 관리, 공공 행정, 재고·문서 관리에서 안정적인 성과를 만든다.",
+        "risk": "새 방식이 충분히 검증되기 전까지 움직이지 않으면 변화가 필요한 시점에 늦게 반응한다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "금"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "workplace": [
@@ -512,6 +530,24 @@
           "general"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "clear_instruction_boundary",
+        "label": "명확한 지시 경계",
+        "plainKo": "ISTJ는 지시가 애매하거나 책임자가 자주 바뀌는 조직에서 빠르게 피로해진다. 해야 할 일, 판단 권한, 마감 기준이 분명하면 조용히 끝까지 밀고 가지만, 비공식 부탁이 쌓이면 불만을 오래 참는다.",
+        "strongLine": "당신은 알아서 눈치껏 하라는 조직보다 기준과 책임선이 분명한 조직에서 훨씬 강합니다.",
+        "positiveUse": "업무 범위, 승인 절차, 보고 기준을 정리해 팀의 실수와 중복을 줄인다.",
+        "risk": "예외 상황까지 규칙으로만 처리하면 동료에게 융통성이 부족하게 보일 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정재",
+          "토"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "money": [

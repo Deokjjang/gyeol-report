@@ -410,6 +410,24 @@
           "money"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "operations_scale_manager",
+        "label": "운영 확장 관리자",
+        "plainKo": "ESTJ는 목표, 인력, 일정, 비용을 한 판에 올려놓고 실행 순서를 정하는 업무에서 강하다. 사업 운영, 영업 조직, 지점 관리, 프로젝트 관리처럼 성과를 숫자와 책임으로 연결하는 장면에서 커리어와 수익이 커진다.",
+        "strongLine": "당신의 커리어는 사람과 자원을 정렬해 실제 성과로 바꿀 때 가장 강하게 올라갑니다.",
+        "positiveUse": "운영 총괄, 팀장, 매장·지점 관리, 프로젝트 리딩, 성과 관리에서 기준과 추진력을 만든다.",
+        "risk": "속도와 결과를 앞세우다 구성원의 감정, 학습 속도, 회복 시간을 낮게 볼 수 있다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "편재",
+          "편관"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "workplace": [
@@ -518,6 +536,24 @@
           "compatibility"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "delegation_with_feedback",
+        "label": "위임과 피드백 조율",
+        "plainKo": "ESTJ는 기준에 못 미치는 결과를 보면 바로 고치고 싶어 한다. 좋은 조직에서는 품질을 끌어올리지만, 과정 설명 없이 지적만 반복하면 동료와 부하에게 압박으로 읽히므로 위임 범위와 피드백 방식이 중요하다.",
+        "strongLine": "당신은 일을 되게 만드는 힘이 강하지만, 사람을 키우려면 기준만큼 설명과 위임도 필요합니다.",
+        "positiveUse": "목표, 역할, 점검 주기를 분명히 정해 팀의 실행 속도와 품질을 높인다.",
+        "risk": "모든 결정을 직접 잡으려 하면 팀은 의존적이 되고 본인은 계속 과부하에 놓인다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "겁재",
+          "편관"
+        ],
+        "productDomains": [
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "money": [

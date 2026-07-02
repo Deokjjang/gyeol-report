@@ -394,6 +394,24 @@
           "study"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "care_operations_income",
+        "label": "돌봄 운영 수익",
+        "plainKo": "ISFJ는 사람을 챙기는 마음을 일정, 기록, 안내, 후속 관리로 바꿀 때 직업적 가치가 커진다. 고객 관리, 병원·교육 운영, 복지 행정처럼 세심한 돌봄이 신뢰와 반복 수입으로 이어지는 업무에서 강하다.",
+        "strongLine": "당신의 커리어는 친절함이 체계적인 운영으로 바뀔 때 안정적인 가치가 생깁니다.",
+        "positiveUse": "고객 이력 관리, 환자·학생 케어, 예약 운영, 서비스 품질 관리, 반복 안내 업무에서 신뢰를 만든다.",
+        "risk": "도움을 당연하게 여기는 환경에서는 업무 범위가 넓어지고 보상보다 피로가 먼저 쌓인다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정재",
+          "귀인"
+        ],
+        "productDomains": [
+          "career",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "workplace": [
@@ -486,6 +504,24 @@
           "compatibility"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "recognition_and_boundary",
+        "label": "인정과 업무 경계",
+        "plainKo": "ISFJ는 조용히 더 챙기고 더 확인하는 방식으로 팀을 받친다. 하지만 감사 표현 없이 추가 업무만 쌓이면 서운함을 말하지 못한 채 소진되므로, 역할 범위와 인정 방식이 함께 필요하다.",
+        "strongLine": "당신은 조용히 버티는 사람이지만, 인정 없는 희생이 반복되면 일터에서 마음이 먼저 닫힙니다.",
+        "positiveUse": "팀의 빈틈을 메우고 고객과 구성원이 놓치기 쉬운 세부를 꾸준히 챙긴다.",
+        "risk": "거절을 늦게 하면 성실함이 장점이 아니라 과부하의 통로가 된다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "money": [
