@@ -2282,7 +2282,7 @@
   "myeongliBridgeHints": [
     {
       "signal": "도화",
-      "reason": "미학 감각, 매력, 색감, 표현력, 연애 지향성과 연결된다.",
+      "reason": "도화가 강하게 보일 때는 ISFP의 미학 감각, 색감, 조용한 매력, 관계에서의 부드러운 끌림과 함께 읽는다. 직업·연애 문장에서는 주목성보다 취향을 편안하게 드러내는 방식이 살아나는지 본다.",
       "productDomains": [
         "general",
         "career",
@@ -2293,7 +2293,7 @@
     },
     {
       "signal": "홍염",
-      "reason": "로맨틱한 끌림, 감각적 매력, 무대성과 예술 표현에 연결된다.",
+      "reason": "홍염은 로맨틱한 끌림, 감각적 매력, 예술 표현, 분위기 반응과 연결한다. 관계 문장에서는 표현이 크지 않아도 취향 공유와 섬세한 배려로 마음을 드러내는 흐름을 읽는다.",
       "productDomains": [
         "love",
         "career",
@@ -2303,7 +2303,7 @@
     },
     {
       "signal": "식신",
-      "reason": "예술, 창작, 감각적 결과물, 직접 경험과 표현 욕구에 연결된다.",
+      "reason": "식신은 예술, 창작, 감각적 결과물, 직접 경험과 표현 욕구에 연결한다. 돈·직업 문장에서는 취향과 돌봄을 수입으로 옮기는 힘을 쓰되, 작은 만족 소비가 늘어나는 지점도 같이 점검한다.",
       "productDomains": [
         "career",
         "study",
@@ -2314,27 +2314,29 @@
     },
     {
       "signal": "상관",
-      "reason": "통제 거부, 자기 표현, 감정이 행동으로 튀어나오는 위험과 연결된다.",
+      "reason": "상관은 통제 거부, 자기 표현, 거친 평가에 닫히는 반응과 연결한다. 직장·관계 문장에서는 강한 지시보다 선택지와 피드백 방식을 부드럽게 나눌 때 자기 속도가 살아난다는 힌트로 쓴다.",
       "productDomains": [
         "general",
         "career",
-        "compatibility"
+        "compatibility",
+        "workplace"
       ],
       "sourceCoverage": "inferred"
     },
     {
       "signal": "비견",
-      "reason": "개인주의, 자기 경계, 자유와 프라이버시를 지키는 성향과 연결된다.",
+      "reason": "비견은 자기 경계, 자유, 프라이버시, 편안한 공간을 지키려는 성향과 연결한다. 결혼·관계 문장에서는 맞춰주기만 하다 닫히지 않도록 돈, 일정, 혼자 쉬는 시간을 분리해 합의하게 한다.",
       "productDomains": [
         "general",
         "love",
-        "compatibility"
+        "compatibility",
+        "marriage"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "수",
-      "reason": "섬세한 감정선, 침묵, 회복 시간, 관계 피로와 연결된다.",
+      "reason": "수는 섬세한 감정선, 침묵, 회복 시간, 관계 피로와 연결한다. 연애·결혼 문장에서는 말이 줄어드는 순간을 회피로 단정하지 않고, 안전한 표현 방식과 회복 시간을 함께 잡게 한다.",
       "productDomains": [
         "general",
         "love",
@@ -2345,9 +2347,10 @@
     },
     {
       "signal": "역마",
-      "reason": "현장 경험, 직접 움직임, 활동형 직업과 작은 모험 욕구에 연결된다.",
+      "reason": "역마는 현장 경험, 직접 움직임, 활동형 직업, 작은 모험 욕구와 연결한다. 대운·세운 문장에서는 새로운 환경이 열릴 때 평가 압박보다 경험을 쌓는 순서와 비용 한도를 먼저 세우게 한다.",
       "productDomains": [
         "career",
+        "money",
         "daeun",
         "saeun"
       ],
@@ -2355,11 +2358,35 @@
     },
     {
       "signal": "정재",
-      "reason": "재능을 가격, 계약, 생활비, 안정 수입으로 고정해야 하는 과제와 연결된다.",
+      "reason": "정재는 재능을 가격, 계약, 생활비, 안정 수입으로 고정해야 하는 과제와 연결한다. ISFP에게는 감각과 돌봄을 낮게 책정하지 않고, 공동재정에서는 감정이 상하기 전에 기준을 숫자로 나누는 힌트가 된다.",
       "productDomains": [
         "money",
         "investment",
-        "marriage"
+        "marriage",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "정관",
+      "reason": "정관은 마감, 계약, 책임, 외부 기준을 감당하는 힘과 연결한다. ISFP에게는 자유를 빼앗는 압박이 아니라 취향을 현실 결과물로 고정하는 장치로 쓰며, 강한 평가 환경에서는 회복 루틴을 함께 둔다.",
+      "productDomains": [
+        "career",
+        "money",
+        "study",
+        "daeun"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "합충형파해",
+      "reason": "합충형파해는 관계 온도, 생활 공간, 일하는 환경이 흔들리는 전환 신호로 읽는다. ISFP에게는 갑자기 닫히기보다 취향, 돈, 일정, 개인 공간의 기준을 다시 말로 정리하게 하는 힌트가 된다.",
+      "productDomains": [
+        "relationship",
+        "marriage",
+        "career",
+        "daeun",
+        "saeun"
       ],
       "sourceCoverage": "inferred"
     }

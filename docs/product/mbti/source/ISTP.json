@@ -2085,19 +2085,21 @@
   "myeongliBridgeHints": [
     {
       "signal": "금",
-      "reason": "정밀함, 도구 감각, 냉정한 판단, 원리 분석이 ISTP의 핵심 작동 방식과 연결된다.",
+      "reason": "금이 강하게 보일 때는 ISTP의 정밀함, 도구 감각, 냉정한 판단, 원리 분석과 함께 읽는다. 직업·공부 문장에서는 기술을 손에 익히는 힘을 살리되 감정 표현이 짧아지는 지점도 같이 본다.",
       "productDomains": [
         "general",
         "career",
-        "study"
+        "study",
+        "growth"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "편관",
-      "reason": "위기 대응, 담력, 위험 상황에서의 빠른 판단, 현장 긴장감과 연결된다.",
+      "reason": "편관은 위기 대응, 담력, 위험 상황에서의 빠른 판단, 현장 긴장감과 연결한다. 대운·세운 문장에서는 도전이 커지는 시기일수록 손실 한도, 몸으로 확인하는 절차, 책임 범위를 먼저 세우게 한다.",
       "productDomains": [
         "career",
+        "investment",
         "daeun",
         "saeun"
       ],
@@ -2105,9 +2107,10 @@
     },
     {
       "signal": "역마",
-      "reason": "현장성, 이동, 모험, 새로운 경험, 외부 자극을 선호하는 면과 연결된다.",
+      "reason": "역마는 현장성, 이동, 새로운 경험, 외부 자극을 선호하는 흐름과 연결한다. 직업 문장에서는 책상보다 현장과 도구가 살아나는 환경을, 관계 문장에서는 자유 시간과 개인 리듬의 합의를 함께 제시한다.",
       "productDomains": [
         "career",
+        "relationship",
         "daeun",
         "saeun"
       ],
@@ -2115,40 +2118,79 @@
     },
     {
       "signal": "식신",
-      "reason": "손으로 만드는 결과물, 실습, 장비 활용, 취미 기반 표현과 연결된다.",
+      "reason": "식신은 손으로 만드는 결과물, 실습, 장비 활용, 취미 기반 표현과 연결한다. 공부·직업 문장에서는 직접 해보며 익히는 강점을 쓰고, 돈 문장에서는 도구·취미 지출을 수입 구조와 분리해 관리하게 한다.",
       "productDomains": [
         "career",
         "study",
-        "love"
+        "love",
+        "money"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "상관",
-      "reason": "무의미한 통제와 권위에 반응하고, 기존 규칙보다 실제 작동 방식을 우선하는 성향과 연결된다.",
+      "reason": "상관은 무의미한 통제와 권위에 반응하고 실제 작동 방식을 우선하는 흐름과 연결한다. 직장·관계 문장에서는 잔소리보다 기준과 이유를 짧게 공유해야 닫히지 않는다는 조율점으로 쓴다.",
       "productDomains": [
         "career",
-        "compatibility"
+        "compatibility",
+        "workplace",
+        "relationship"
       ],
       "sourceCoverage": "inferred"
     },
     {
       "signal": "비견",
-      "reason": "독립성, 자기 방식, 개인 시간, 간섭을 싫어하는 태도와 연결된다.",
+      "reason": "비견은 독립성, 자기 방식, 개인 시간, 간섭을 싫어하는 태도와 연결한다. 결혼·관계 문장에서는 함께 있어도 혼자 정리할 시간을 존중해야 행동형 책임이 안정적으로 나온다는 힌트로 쓴다.",
       "productDomains": [
         "general",
         "love",
-        "marriage"
+        "marriage",
+        "relationship"
       ],
       "sourceCoverage": "direct"
     },
     {
+      "signal": "정재",
+      "reason": "정재는 기술 수입, 필요한 장비 지출, 고정비, 장기 저축 루틴을 현실적으로 묶는 단서다. ISTP에게는 돈 관리를 감정 문제로 키우기보다 자동 이체, 한도, 기록 주기로 단순화하는 방향을 제시한다.",
+      "productDomains": [
+        "money",
+        "investment",
+        "marriage",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "정인",
+      "reason": "정인은 원리 이해, 매뉴얼, 안전 절차, 이론 축적과 연결한다. 공부 문장에서는 실습만 앞서지 않게 핵심 개념을 짧게 고정하고, 직업 문장에서는 기술을 반복 가능한 기준으로 정리하게 한다.",
+      "productDomains": [
+        "study",
+        "career",
+        "daeun",
+        "saeun"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
       "signal": "수",
-      "reason": "감정 번역과 회복 루틴이 보완되어야 하는 영역으로 연결된다.",
+      "reason": "수는 감정 번역, 회복 시간, 말로 풀기 어려운 피로를 읽는 보조 단서다. 연애·결혼 문장에서는 침묵을 무관심으로 단정하지 않고, 필요한 감정 표현과 거리 조절 방식을 작게 합의하게 한다.",
       "productDomains": [
         "love",
         "marriage",
-        "compatibility"
+        "compatibility",
+        "stress"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "합충형파해",
+      "reason": "합충형파해는 생활 환경, 관계 거리, 업무 방식이 바뀌는 전환 신호로 읽는다. ISTP에게는 감정 압박을 늘리기보다 개인 시간, 돈 사용, 도구 지출, 책임 범위를 다시 정하는 힌트가 된다.",
+      "productDomains": [
+        "relationship",
+        "marriage",
+        "career",
+        "daeun",
+        "saeun"
       ],
       "sourceCoverage": "inferred"
     }

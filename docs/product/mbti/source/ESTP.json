@@ -2217,76 +2217,117 @@
   "myeongliBridgeHints": [
     {
       "signal": "역마",
-      "reason": "활동성, 여행, 현장 적응, 자유 추구, 직접 경험 선호와 연결된다.",
+      "reason": "역마가 강하게 보일 때는 ESTP의 활동성, 현장 적응, 이동, 자유 추구, 직접 경험 선호와 함께 읽는다. 직업·대운 문장에서는 변화가 성과로 이어지려면 책임 범위와 이동 비용을 같이 정하게 한다.",
       "productDomains": [
         "general",
         "career",
         "love",
-        "parenting"
+        "parenting",
+        "daeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "식신",
-      "reason": "오감의 즐거움, 유머, 먹고 움직이고 경험하는 삶의 방식과 연결된다.",
+      "reason": "식신은 오감의 즐거움, 유머, 경험, 몸으로 움직이는 실행력과 연결한다. 연애·직업 문장에서는 분위기를 살리는 강점을 쓰되, 즉각 보상과 경험 지출이 커지는 지점도 함께 본다.",
       "productDomains": [
         "general",
         "love",
         "career",
-        "child"
+        "child",
+        "money"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "상관",
-      "reason": "직설, 자유 추구, 규칙 거부, 무대성, 즉흥적 표현과 연결된다.",
+      "reason": "상관은 직설, 자유 추구, 규칙 거부, 즉흥적 표현과 연결한다. 관계·직장 문장에서는 말의 속도와 강도가 커질 때 상대의 안전감이 흔들릴 수 있어 기준을 짧고 분명하게 합의하게 한다.",
       "productDomains": [
         "general",
         "career",
         "compatibility",
-        "saeun"
+        "saeun",
+        "relationship"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "편재",
-      "reason": "현장 기회 포착, 활동형 수입력, 모험적 돈 감각과 연결된다.",
+      "reason": "편재는 현장 기회 포착, 거래 감각, 빠른 현금화, 활동형 수입력과 연결한다. 돈·투자 문장에서는 기회 반응 속도를 강점으로 쓰되 진입 전 한도, 종료 기준, 지출 냉각 시간을 같이 붙인다.",
       "productDomains": [
         "money",
         "investment",
-        "career"
+        "career",
+        "daeun"
       ],
       "sourceCoverage": "inferred"
     },
     {
       "signal": "도화",
-      "reason": "무대 중심성, 사람을 끌어당기는 활력, 연애에서의 적극적 표현과 연결된다.",
+      "reason": "도화는 사람을 끌어당기는 활력, 즉각 반응, 연애에서의 적극적 표현과 연결한다. 서비스·영업·콘텐츠 문장에서는 매력과 현장 반응이 성과가 되지만, 관계 경계와 약속 관리도 함께 본다.",
       "productDomains": [
         "love",
         "career",
-        "general"
+        "general",
+        "compatibility"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "현침살",
-      "reason": "빠른 관찰, 직설적 말, 미세한 변화 포착, 현장 판단력과 연결된다.",
+      "reason": "현침살은 빠른 관찰, 직설적 말, 미세한 변화 포착, 현장 판단력과 연결한다. 직장·관계 문장에서는 정확한 지적이 공격처럼 들리지 않도록 말의 순서와 확인 질문을 보완점으로 둔다.",
       "productDomains": [
         "career",
         "compatibility",
-        "general"
+        "general",
+        "workplace"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "편관",
-      "reason": "스릴, 위기 대응, 승부 감각, 과감한 행동력과 연결된다.",
+      "reason": "편관은 위기 대응, 승부 감각, 과감한 행동력, 압박 속의 실행력과 연결한다. 세운 문장에서는 도전이 커지는 해일수록 자유만 밀어붙이지 않고 책임 분담과 안전장치를 먼저 세우게 한다.",
       "productDomains": [
         "career",
         "general",
-        "saeun"
+        "saeun",
+        "growth"
       ],
       "sourceCoverage": "direct"
+    },
+    {
+      "signal": "정재",
+      "reason": "정재는 빠른 수입을 고정비, 저축, 반복 가능한 수입 구조로 묶는 단서다. ESTP에게는 현장 감각이 돈으로 이어질 때 즉흥 지출과 위험 감수를 숫자 기준으로 제한하게 한다.",
+      "productDomains": [
+        "money",
+        "investment",
+        "marriage",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "정관",
+      "reason": "정관은 책임, 약속, 역할 분담, 조직 기준을 현실적으로 세우는 단서다. ESTP에게는 자유를 막는 신호가 아니라 결혼·직장에서 신뢰를 오래 유지하기 위한 반복 관리 장치로 쓴다.",
+      "productDomains": [
+        "marriage",
+        "career",
+        "workplace",
+        "daeun"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "합충형파해",
+      "reason": "합충형파해는 활동 무대, 관계 거리, 돈 사용, 책임 기준이 바뀌는 전환 신호로 읽는다. ESTP에게는 속도를 더 내기보다 자유 시간, 지출 한도, 약속 후속 관리를 다시 맞추는 힌트가 된다.",
+      "productDomains": [
+        "relationship",
+        "marriage",
+        "money",
+        "daeun",
+        "saeun"
+      ],
+      "sourceCoverage": "inferred"
     }
   ],
   "reportUseCases": {

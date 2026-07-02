@@ -2232,85 +2232,170 @@
                                                    }
                                                ]
                           },
-    "myeongliBridgeHints":  [
-                                {
-                                    "signal":  "도화",
-                                    "reason":  "스포트라이트, 사교성, 인기 욕구, 사람 앞에서 살아나는 매력을 해석하는 데 적합하다.",
-                                    "relatedTraits":  [
-                                                          "spotlight_identity",
-                                                          "social_easy_openness",
-                                                          "entertainment_fit"
-                                                      ],
-                                    "productDomains":  [
-                                                           "general",
-                                                           "love",
-                                                           "career",
-                                                           "compatibility"
-                                                       ],
-                                    "sourceCoverage":  "inferred"
-                                },
-                                {
-                                    "signal":  "홍염",
-                                    "reason":  "감정 표현, 로맨틱한 이벤트, 사람을 끌어당기는 밝은 매력을 보조 신호로 설명할 수 있다.",
-                                    "relatedTraits":  [
-                                                          "expressive_love_style",
-                                                          "romantic_surprise",
-                                                          "emotion_visible_relation"
-                                                      ],
-                                    "productDomains":  [
-                                                           "love",
-                                                           "general",
-                                                           "compatibility"
-                                                       ],
-                                    "sourceCoverage":  "inferred"
-                                },
-                                {
-                                    "signal":  "역마",
-                                    "reason":  "새로운 경험, 여행, 활동성, 가만히 있기 어려운 성향과 연결된다.",
-                                    "relatedTraits":  [
-                                                          "joy_first_life",
-                                                          "travel_parenting",
-                                                          "active_outdoor_child"
-                                                      ],
-                                    "productDomains":  [
-                                                           "career",
-                                                           "parenting",
-                                                           "child",
-                                                           "daeun"
-                                                       ],
-                                    "sourceCoverage":  "inferred"
-                                },
-                                {
-                                    "signal":  "식신",
-                                    "reason":  "즐거움, 표현, 사람을 기쁘게 하는 이벤트, 경험 소비와 연결된다.",
-                                    "relatedTraits":  [
-                                                          "surprise_generosity",
-                                                          "joy_first_life",
-                                                          "experience_spending"
-                                                      ],
-                                    "productDomains":  [
-                                                           "general",
-                                                           "money",
-                                                           "love",
-                                                           "career"
-                                                       ],
-                                    "sourceCoverage":  "inferred"
-                                },
-                                {
-                                    "signal":  "상관",
-                                    "reason":  "자유로운 표현, 규칙 반발, 무대성, 체계보다 즉흥을 앞세우는 패턴과 맞다.",
-                                    "relatedTraits":  [
-                                                          "anti_bureaucracy_work",
-                                                          "many_words_low_structure",
-                                                          "control_conflict"
-                                                      ],
-                                    "productDomains":  [
-                                                           "general",
-                                                           "career"
-                                                       ],
-                                    "sourceCoverage":  "inferred"
-                                }
-                            ],
+    "myeongliBridgeHints": [
+      {
+        "signal": "도화",
+        "reason": "도화가 강하게 보일 때는 ESFP의 스포트라이트 감각, 사교성, 사람 앞에서 살아나는 매력과 함께 읽는다. 연애·직업 문장에서는 주목성이 힘이 되지만 인정 반응에 과하게 흔들리는지도 같이 본다.",
+        "relatedTraits": [
+          "spotlight_identity",
+          "social_easy_openness",
+          "entertainment_fit"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "career",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "홍염",
+        "reason": "홍염은 감정 표현, 로맨틱한 이벤트, 밝은 끌림, 관계에서의 즉각 반응과 연결한다. 관계 문장에서는 표현이 매력이 되지만 서운함이 커질 때 감정 소비로 번지지 않게 조율한다.",
+        "relatedTraits": [
+          "expressive_love_style",
+          "romantic_surprise",
+          "emotion_visible_relation"
+        ],
+        "productDomains": [
+          "love",
+          "general",
+          "compatibility",
+          "relationship"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "역마",
+        "reason": "역마는 새로운 경험, 여행, 활동성, 가만히 있기 어려운 흐름과 연결한다. 대운·세운 문장에서는 이동과 만남이 많아질수록 돈 사용, 일정, 책임 후속 관리를 먼저 잡게 한다.",
+        "relatedTraits": [
+          "joy_first_life",
+          "travel_parenting",
+          "active_outdoor_child"
+        ],
+        "productDomains": [
+          "career",
+          "parenting",
+          "child",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "식신",
+        "reason": "식신은 즐거움, 표현, 사람을 기쁘게 하는 이벤트, 경험 소비와 연결한다. 돈·직업 문장에서는 서비스와 콘텐츠로 사람 반응을 얻는 힘을 쓰되, 즉흥 결제와 행사 비용을 한도로 묶게 한다.",
+        "relatedTraits": [
+          "surprise_generosity",
+          "joy_first_life",
+          "experience_spending"
+        ],
+        "productDomains": [
+          "general",
+          "money",
+          "love",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "상관",
+        "reason": "상관은 자유로운 표현, 규칙 반발, 무대성, 즉흥적 말과 행동과 연결한다. 직장·관계 문장에서는 분위기를 살리는 힘이 크지만 반복 운영과 마감 구조를 붙여야 신뢰가 쌓인다고 본다.",
+        "relatedTraits": [
+          "anti_bureaucracy_work",
+          "many_words_low_structure",
+          "control_conflict"
+        ],
+        "productDomains": [
+          "general",
+          "career",
+          "workplace",
+          "growth"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "정재",
+        "reason": "정재는 자동 저축, 고정비, 관계 지출 한도, 장기 재정 기준을 세우는 단서다. ESFP에게는 즐거움과 사람 관계에 쓰는 돈을 막기보다 예산 안에서 반복 가능하게 만드는 힌트가 된다.",
+        "relatedTraits": [
+          "experience_spending",
+          "surprise_generosity",
+          "joy_first_life"
+        ],
+        "productDomains": [
+          "money",
+          "investment",
+          "marriage",
+          "growth"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "정관",
+        "reason": "정관은 약속, 마감, 책임 분담, 결혼 생활의 기준을 현실적으로 세우는 단서다. ESFP에게는 자유와 표현을 줄이는 압박이 아니라 관계 신뢰와 직업 안정성을 유지하는 기본 틀로 읽는다.",
+        "relatedTraits": [
+          "anti_bureaucracy_work",
+          "control_conflict",
+          "emotion_visible_relation"
+        ],
+        "productDomains": [
+          "marriage",
+          "career",
+          "workplace",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "편재",
+        "reason": "편재는 사람을 만나 기회를 만들고 현장에서 빠르게 돈 흐름을 읽는 단서다. ESFP에게는 콘텐츠, 서비스, 행사, 소개 흐름이 수입으로 이어질 때 체면 비용과 충동 지출을 분리해 보게 한다.",
+        "relatedTraits": [
+          "social_easy_openness",
+          "entertainment_fit",
+          "experience_spending"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "investment",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "수",
+        "reason": "수는 감정 기복, 서운함, 회복 시간, 정서적 반응을 읽는 보조 단서다. 연애·결혼 문장에서는 감정을 바로 드러내는 힘을 살리되, 반응이 커지는 순간에는 표현 방식과 책임 기준을 분리하게 한다.",
+        "relatedTraits": [
+          "emotion_visible_relation",
+          "expressive_love_style",
+          "control_conflict"
+        ],
+        "productDomains": [
+          "love",
+          "marriage",
+          "compatibility",
+          "stress"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "합충형파해",
+        "reason": "합충형파해는 관계 분위기, 사회생활, 돈 사용, 생활 리듬이 바뀌는 전환 신호로 읽는다. ESFP에게는 즉흥 반응을 키우기보다 감정 표현 빈도, 지출 한도, 책임 분담을 다시 맞추는 힌트가 된다.",
+        "relatedTraits": [
+          "emotion_visible_relation",
+          "experience_spending",
+          "control_conflict"
+        ],
+        "productDomains": [
+          "relationship",
+          "marriage",
+          "money",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "inferred"
+      }
+    ],
     "reportUseCases": {
       "generalReport": [
         "selfUnderstanding 섹션에서는 표현, 즐거움, 사람 반응, 분위기 전환, 현재의 감정, 인정 욕구를 ESFP의 기본 정체성으로 사용한다.",
