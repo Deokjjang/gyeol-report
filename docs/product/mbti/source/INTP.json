@@ -596,6 +596,62 @@
           "investment"
         ],
         "sourceCoverage": "inferred"
+      },
+      {
+        "id": "automated_money_routine",
+        "label": "자동화 관리",
+        "plainKo": "INTP는 돈 관리를 매일 신경 쓰는 방식보다 한 번 구조를 짜고 자동으로 굴러가게 만드는 방식이 맞다. 생활비, 저축, 세금, 구독, 카드값을 분리해 두면 에너지를 덜 쓰고도 안정성이 올라간다. 반대로 모든 관리를 기억력과 기분에 맡기면 작은 누락이 반복된다.",
+        "strongLine": "당신의 돈 관리는 꼼꼼함보다 자동화된 구조가 잡아줘야 오래 갑니다.",
+        "positiveUse": "자동이체, 계좌 분리, 정기 점검표로 지출과 저축을 최소한의 에너지로 유지한다.",
+        "risk": "관리 시스템을 만들지 않으면 청구, 계약, 세금, 구독처럼 재미없는 돈 문제가 뒤늦게 터진다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "irregular_income_buffer",
+        "label": "불규칙 수입 완충",
+        "plainKo": "지식 기반 수입, 프리랜스, 기술 프로젝트는 INTP에게 잘 맞지만 수입 리듬이 일정하지 않을 수 있다. 흥미가 붙은 일은 깊게 파고들어 돈으로 연결하지만, 영업과 마감이 약하면 월별 현금흐름이 흔들린다. 그래서 자유로운 수입 구조일수록 최소 생활비와 비상자금이 먼저 필요하다.",
+        "strongLine": "당신에게 자유로운 돈은 매력적이지만, 완충자금이 없으면 자유가 바로 불안으로 바뀝니다.",
+        "positiveUse": "프로젝트 단위 수입을 장기 평균으로 보고 고정비, 세금, 휴식 기간 비용을 미리 떼어 둔다.",
+        "risk": "이번에 잘 벌었다는 감각으로 다음 수입 공백을 과소평가하면 생활 안정이 흔들린다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "정재",
+          "편인"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "interest_spending_drift",
+        "label": "관심사 지출",
+        "plainKo": "INTP의 소비는 화려한 과시보다 책, 장비, 강의, 소프트웨어, 취미 도구처럼 관심사를 확장하는 곳으로 흐른다. 본인에게는 연구비처럼 느껴지지만 실제 결과물로 이어지지 않으면 지출만 쌓인다. 돈을 쓸 때는 호기심이 아니라 완성할 결과를 먼저 정해야 한다.",
+        "strongLine": "당신은 사치보다 관심사에 돈을 쓰지만, 결과물이 없으면 그 지출도 새는 돈입니다.",
+        "positiveUse": "학습·장비·도구 지출을 프로젝트 결과물과 연결하면 전문성과 수익 기반이 함께 커진다.",
+        "risk": "흥미가 바뀔 때마다 새 도구와 자료를 사면 돈은 나가고 완성된 자산은 남지 않는다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "식신",
+          "문창"
+        ],
+        "productDomains": [
+          "money",
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "investment": [

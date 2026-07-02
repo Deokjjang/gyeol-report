@@ -620,6 +620,63 @@
           "daeun"
         ],
         "sourceCoverage": "inferred"
+      },
+      {
+        "id": "cashflow_system_design",
+        "label": "현금흐름 설계",
+        "plainKo": "INTJ는 돈을 기분으로 관리하기보다 구조로 통제할 때 안정된다. 예산, 자동이체, 목표별 계좌, 장기 자금 계획처럼 규칙이 보이면 지출 판단도 차분해진다. 돈 관리가 머릿속 계산에만 머물면 실제 현금흐름과 계획 사이에 오차가 생긴다.",
+        "strongLine": "당신의 돈 관리는 의지보다 시스템으로 묶을 때 가장 강해집니다.",
+        "positiveUse": "고정비, 저축, 투자 전 자금, 프로젝트 비용을 분리해 장기 목표를 흔들리지 않게 만든다.",
+        "risk": "계획이 정교하다는 이유로 실제 지출 기록과 가족·공동재정 변수를 늦게 반영할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "토",
+          "금"
+        ],
+        "productDomains": [
+          "money",
+          "investment",
+          "marriage"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "selective_big_goal_spending",
+        "label": "선택적 큰 지출",
+        "plainKo": "평소에는 쓸데없는 소비와 충동구매를 싫어하지만, 자기 목표에 필요하다고 판단한 장비, 교육, 기술, 독립 기반에는 과감해진다. 작은 낭비는 잘 막아도 큰 전략 지출은 스스로 설득하면 빠르게 결정한다. 그래서 INTJ의 지출 관리는 절약보다 우선순위 검증이 핵심이다.",
+        "strongLine": "당신은 사소한 낭비에는 냉정하지만, 목표에 필요하다고 판단한 돈에는 크게 움직입니다.",
+        "positiveUse": "전문성 강화, 장비, 자격, 독립 기반에 돈을 집중해 미래 수입의 기반을 만든다.",
+        "risk": "미래 가치가 있다는 판단이 강해지면 현재 생활비와 안전자금의 균형을 놓칠 수 있다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "편인",
+          "목"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "study"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "shared_finance_blind_spot",
+        "label": "공동재정 맹점",
+        "plainKo": "INTJ는 돈 문제를 논리와 목표로 정리하려 하지만, 가족이나 연인과의 돈은 감정과 신뢰가 함께 움직인다. 본인은 효율적인 결정이라고 생각해도 상대는 배려 없는 통보로 받아들일 수 있다. 공동재정에서는 정답보다 합의 과정이 돈의 안정성을 만든다.",
+        "strongLine": "당신에게 돈은 계산 문제지만, 가까운 사람에게는 존중받는 방식의 문제이기도 합니다.",
+        "positiveUse": "장기 계획, 주거, 교육비, 큰 구매를 구조적으로 정리해 관계의 재정 기반을 세운다.",
+        "risk": "상대의 불안과 생활 감각을 비용처럼만 처리하면 돈 관리는 맞아도 관계 신뢰가 약해진다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "money",
+          "marriage",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "investment": [

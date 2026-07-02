@@ -555,6 +555,63 @@
           "daeun"
         ],
         "sourceCoverage": "inferred"
+      },
+      {
+        "id": "idea_to_revenue_filter",
+        "label": "아이디어 수익화",
+        "plainKo": "ENTP는 돈이 될 만한 아이디어를 빨리 떠올리지만, 아이디어와 수익은 같은 것이 아니다. 말로 설득되는 순간보다 실제 고객, 반복 구매, 운영 비용을 확인할 때 돈이 남는다. 이 유형의 수입은 발상보다 검증된 실행 루트가 붙을 때 안정된다.",
+        "strongLine": "당신의 아이디어는 빠르지만, 돈은 검증된 판매 구조가 붙을 때 남습니다.",
+        "positiveUse": "신사업, 콘텐츠, 영업, 컨설팅, 기술 기획에서 아이디어를 상품과 제안서로 바꾼다.",
+        "risk": "그럴듯한 가능성만 믿고 비용을 먼저 쓰면 수입보다 실험비가 커진다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "식신",
+          "편재"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "investment"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "project_cost_sprawl",
+        "label": "프로젝트 비용 분산",
+        "plainKo": "ENTP는 동시에 여러 가능성을 열어두는 데 강하지만, 돈 관리에서는 그 방식이 비용 분산으로 나타난다. 새 도구, 새 모임, 새 사업 아이템, 새 강의에 조금씩 쓰다 보면 어느 지출이 수익으로 이어졌는지 흐려진다. 실험은 하되 프로젝트별 한도와 종료 기준을 먼저 잡아야 한다.",
+        "strongLine": "당신은 기회를 많이 여는 사람이라서, 돈도 한 프로젝트씩 닫아야 남습니다.",
+        "positiveUse": "작은 실험 예산을 정해 시장 반응을 빠르게 확인하고 가능성 높은 판에 집중한다.",
+        "risk": "열어둔 일이 많을수록 지출도 흩어져 현금흐름과 실행력이 동시에 약해진다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "겁재",
+          "역마"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "recurring_revenue_system",
+        "label": "반복 수입 장치",
+        "plainKo": "ENTP의 돈은 한 번의 번뜩임보다 반복되는 판매, 유지 계약, 구독, 리드 관리처럼 지루한 장치가 붙을 때 안정된다. 자유롭게 움직이려면 오히려 반복 수입 구조가 필요하다. 수입 루틴을 만들지 않으면 매번 새로운 판을 열어야 해서 에너지가 새어 나간다.",
+        "strongLine": "당신에게 반복 수입은 지루한 족쇄가 아니라, 다음 아이디어를 실험하게 해주는 기반입니다.",
+        "positiveUse": "정기 고객, 패키지 상품, 자동화된 영업 흐름, 유지보수 계약으로 수입 변동성을 낮춘다.",
+        "risk": "반복 관리가 싫다는 이유로 안정 장치를 만들지 않으면 기회가 많아도 돈이 남지 않는다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "식신",
+          "토"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "investment": [
