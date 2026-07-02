@@ -763,6 +763,41 @@
           "parenting"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "short_deadline_sprint",
+        "label": "짧은 마감 스프린트",
+        "plainKo": "ENTP는 큰 계획표보다 짧은 마감과 즉각적인 피드백이 있을 때 공부가 살아난다. 긴 시험 준비도 30분 단위, 하루 단위, 주간 발표처럼 작게 끊어야 끝까지 간다.",
+        "strongLine": "당신의 공부는 장기 결심보다 짧은 마감이 계속 걸려 있을 때 움직입니다.",
+        "positiveUse": "스터디 발표, 퀴즈, 작은 제출물, 타이머 학습으로 산만함을 성과로 묶는다.",
+        "risk": "마감이 멀면 흥미 있는 자료만 뒤지고 핵심 반복을 미룬다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "문창",
+          "화"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "repetition_finish_system",
+        "label": "반복 마무리 시스템",
+        "plainKo": "ENTP는 개념을 새롭게 연결하는 데 강하지만, 암기와 반복 훈련은 쉽게 지루해진다. 자격증과 시험에서는 재미 없는 기초도 체크리스트와 회전표로 끝까지 돌려야 한다.",
+        "strongLine": "당신은 똑똑하게 이해하는 것보다, 지루한 반복을 끝까지 닫는 시스템이 필요합니다.",
+        "positiveUse": "암기 카드, 오답 회전, 과목별 최소 반복 횟수로 실전 안정성을 만든다.",
+        "risk": "흥미가 식은 부분을 남겨두면 시험 직전에 빈틈이 한꺼번에 드러난다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "문창",
+          "토"
+        ],
+        "productDomains": [
+          "study"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "love": [

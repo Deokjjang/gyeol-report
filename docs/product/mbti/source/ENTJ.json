@@ -760,7 +760,7 @@
                                  {
                                      "id":  "high_achievement_study",
                                      "label":  "고성취 학습",
-                                     "plainKo":  "ENTJ 자녀와 성향은 학업 성취와 지식 축적에 강하게 연결된다. 지식이 풍부하고, 시험에서 높은 성과를 낼 수 있으며, 능력을 인정받는 학습 환경을 원한다.",
+                                    "plainKo":  "ENTJ는 학업을 실력 증명과 목표 달성의 장으로 받아들이기 쉽다. 목표 점수, 순위, 평가 기준이 분명할수록 집중력이 올라가고, 능력을 인정받는 환경에서 더 강하게 밀어붙인다.",
                                      "strongLine":  "ENTJ의 공부는 성적 그 자체보다 지적 우위와 실력 증명을 향해 움직입니다.",
                                      "positiveUse":  "경쟁 시험, 논리 과목, 전략적 학습, 고난도 목표에서 몰입한다.",
                                      "risk":  "겸손한 태도나 기초 반복을 낮게 보며 자기 방식만 고집한다.",
@@ -779,7 +779,7 @@
                                  {
                                      "id":  "math_log_strategy",
                                      "label":  "오답 기록",
-                                     "plainKo":  "xNTx 중 수학 성적이 낮을 때는 자기성찰노트나 수학일지를 활용하는 전략이 필요하다는 조언이 있다. 머리로 이해했다고 넘기지 말고 틀린 부분을 기록해야 성장이 이어진다.",
+                                    "plainKo":  "ENTJ는 이해했다고 판단하면 바로 다음 목표로 넘어가려 하지만, 수학과 시험형 과목에서는 틀린 지점을 기록해야 성과가 안정된다. 오답의 원인을 남겨야 같은 실수를 힘으로만 밀어붙이지 않는다.",
                                      "strongLine":  "ENTJ의 약한 공부는 더 세게 밀어붙이는 것보다, 틀린 지점을 기록하고 다시 검증할 때 해결됩니다.",
                                      "positiveUse":  "오답 기록, 전략 리뷰, 학습 데이터화로 빠른 개선을 만든다.",
                                      "risk":  "자신의 이해력을 과신해 같은 유형의 실수를 반복한다.",
@@ -794,10 +794,10 @@
                                                         ],
                                      "sourceCoverage":  "direct"
                                  },
-                                 {
-                                     "id":  "critique_and_debate_learning",
-                                     "label":  "토론형 학습",
-                                     "plainKo":  "논리적이고 광범위한 발상, 비판, 토론에 열정적이다. 깊은 대화와 지적 도전을 통해 학습 동기가 올라간다.",
+                                  {
+                                      "id":  "critique_and_debate_learning",
+                                      "label":  "토론형 학습",
+                                      "plainKo":  "논리적이고 광범위한 발상, 비판, 토론에 열정적이다. 깊은 대화와 지적 도전을 통해 학습 동기가 올라간다.",
                                      "strongLine":  "ENTJ는 조용히 외우는 공부보다 논쟁하고 검증하며 지식을 날카롭게 만드는 방식에서 살아납니다.",
                                      "positiveUse":  "세미나, 토론, 발표, 논술, 전략 회의형 학습에서 강하다.",
                                      "risk":  "배우는 과정에서도 이기려는 태도가 앞서 협력 학습을 어렵게 만든다.",
@@ -811,9 +811,44 @@
                                                             "career",
                                                             "compatibility"
                                                         ],
-                                     "sourceCoverage":  "direct"
-                                 }
-                             ],
+                                      "sourceCoverage":  "direct"
+                                  },
+                                  {
+                                      "id":  "score_project_management",
+                                      "label":  "점수 프로젝트 관리",
+                                      "plainKo":  "ENTJ는 공부를 프로젝트처럼 쪼개면 강하다. 시험일, 목표 점수, 주차별 범위, 모의고사 일정이 보이면 자원을 배치하고 속도를 만든다.",
+                                      "strongLine":  "당신의 공부는 의욕보다 프로젝트 관리표가 있을 때 가장 강하게 굴러갑니다.",
+                                      "positiveUse":  "장기 시험, 자격증, 승진 공부에서 일정표와 성과 지표를 활용한다.",
+                                      "risk":  "계획이 빡빡할수록 회복 시간을 무시해 후반 집중력이 꺾일 수 있다.",
+                                      "matchingMyeongliSignals":  [
+                                                                      "정관",
+                                                                      "편관",
+                                                                      "토"
+                                                                  ],
+                                      "productDomains":  [
+                                                             "study",
+                                                             "career"
+                                                         ],
+                                      "sourceCoverage":  "inferred"
+                                  },
+                                  {
+                                      "id":  "speed_blindspot_review",
+                                      "label":  "속도형 빈틈 점검",
+                                      "plainKo":  "ENTJ는 빠르게 판단하고 답을 밀어붙이는 힘이 있지만, 시험에서는 그 속도가 조건 누락과 단순 실수로 이어질 수 있다. 어려운 문제만 보는 것보다 쉬운 문제의 검산 루틴을 고정해야 한다.",
+                                      "strongLine":  "당신은 더 어려운 문제를 찾기 전에, 맞힐 수 있는 문제를 놓치지 않는 검산 루틴부터 잡아야 합니다.",
+                                      "positiveUse":  "검산 체크리스트, 시간 배분, 쉬운 문제 재확인으로 안정 점수를 만든다.",
+                                      "risk":  "실수를 실력 문제가 아니라고 넘기면 같은 감점이 반복된다.",
+                                      "matchingMyeongliSignals":  [
+                                                                      "문창",
+                                                                      "금",
+                                                                      "정인"
+                                                                  ],
+                                      "productDomains":  [
+                                                             "study"
+                                                         ],
+                                      "sourceCoverage":  "inferred"
+                                  }
+                              ],
                    "love":  [
                                 {
                                     "id":  "planned_intense_romance",

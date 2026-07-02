@@ -821,6 +821,24 @@
           "career"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "exam_routine_bridge",
+        "label": "시험 루틴 연결",
+        "plainKo": "INTP는 개념을 이해하면 이미 안다고 느끼기 쉽지만, 시험은 이해력과 별개로 시간 제한, 형식, 반복 회수로 갈린다. 흥미 없는 기초라도 짧은 루틴으로 묶어야 실제 점수로 연결된다.",
+        "strongLine": "당신의 공부는 원리 이해에서 끝나지 말고, 시험 형식에 맞춰 반복하는 다리가 필요합니다.",
+        "positiveUse": "개념 요약, 제한 시간 풀이, 최소 반복 회수, 마감 알림을 붙이면 잠재력이 성과로 바뀐다.",
+        "risk": "분석만 깊어지고 제출과 마감이 밀리면 아는 것과 점수 사이가 벌어진다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "정인",
+          "토"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "love": [

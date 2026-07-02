@@ -851,6 +851,24 @@
           "compatibility"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "perfectionism_start_gate",
+        "label": "완벽주의 시작 장벽",
+        "plainKo": "INTJ는 전체 설계가 납득되어야 공부를 시작한다. 전략이 잡히면 몰입은 깊지만, 완벽한 계획을 기다리면 첫 회독과 기초 반복이 늦어진다.",
+        "strongLine": "당신의 공부는 완벽한 계획보다, 불완전한 첫 실행을 먼저 열 때 성과가 붙습니다.",
+        "positiveUse": "목표 점수, 범위, 마감, 오답 기준을 정하면 장기 시험 준비가 안정된다.",
+        "risk": "계획 수정만 반복하면 공부한 시간보다 설계한 시간이 더 길어진다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "정인",
+          "정관"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "love": [
