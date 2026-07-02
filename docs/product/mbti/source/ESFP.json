@@ -627,7 +627,7 @@
                                       {
                                           "id":  "impulse_investment_risk",
                                           "label":  "충동 투자 주의",
-                                          "plainKo":  "원문에 투자 전략 자체는 부족하지만, 충동성과 즉시 보상 선호가 강하므로 투자에서는 분위기, 유행, 주변 이야기만으로 결정하지 않는 장치가 필요하다.",
+                                          "plainKo":  "ESFP는 분위기, 유행, 주변 반응, 즉시 보상에 빠르게 반응한다. 투자에서는 재미있어 보인다는 감각과 실제 돈을 움직여도 되는 판단을 분리하는 장치가 필요하다.",
                                           "strongLine":  "ESFP는 투자에서 재미있어 보인다는 감각과 실제 돈을 넣어도 된다는 판단을 반드시 분리해야 합니다.",
                                           "positiveUse":  "규칙 기반 적립, 자동화, 사전 한도 설정을 두면 충동 손실을 줄일 수 있다.",
                                           "risk":  "유행성 자산이나 주변 추천에 감정적으로 반응하면 손익보다 후회가 커진다.",
@@ -640,6 +640,63 @@
                                                                  "investment",
                                                                  "money",
                                                                  "general"
+                                                             ],
+                                          "sourceCoverage":  "inferred"
+                                      },
+                                      {
+                                          "id":  "cooling_time_rule",
+                                          "label":  "냉각 시간",
+                                          "plainKo":  "ESFP는 마음이 움직이는 순간 바로 행동하고 싶어질 수 있다. 투자에서는 하루 이상의 냉각 시간, 확인 질문, 손실 한도를 두어야 분위기와 판단이 분리된다.",
+                                          "strongLine":  "당신은 끌리는 순간일수록 시간을 두어야, 분위기와 실제 조건을 구분합니다.",
+                                          "positiveUse":  "냉각 시간과 체크리스트를 두면 빠른 감각을 잃지 않으면서 충동 판단을 줄인다.",
+                                          "risk":  "즉시 반응하면 좋은 기분이 기준처럼 느껴져 나중에 후회가 커진다.",
+                                          "matchingMyeongliSignals":  [
+                                                                          "도화",
+                                                                          "편재",
+                                                                          "정재"
+                                                                      ],
+                                          "productDomains":  [
+                                                                 "investment",
+                                                                 "money",
+                                                                 "general"
+                                                             ],
+                                          "sourceCoverage":  "inferred"
+                                      },
+                                      {
+                                          "id":  "auto_diversification_rule",
+                                          "label":  "자동 분산",
+                                          "plainKo":  "ESFP는 현재의 관심과 주변 이야기에 따라 돈의 방향이 바뀌기 쉽다. 자동 분산, 한도 설정, 목표별 계좌처럼 미리 짜인 구조가 있어야 장기 자산이 흔들리지 않는다.",
+                                          "strongLine":  "당신의 투자 안정감은 의지보다, 미리 나눠 둔 자동 분산 구조에서 나옵니다.",
+                                          "positiveUse":  "자동 적립, 목표별 예산, 한도 알림을 두면 감정 기복과 자산 관리를 분리할 수 있다.",
+                                          "risk":  "구조 없이 관리하면 유행, 관계, 기분에 따라 한쪽으로 쉽게 쏠린다.",
+                                          "matchingMyeongliSignals":  [
+                                                                          "정재",
+                                                                          "토",
+                                                                          "식신"
+                                                                      ],
+                                          "productDomains":  [
+                                                                 "investment",
+                                                                 "money",
+                                                                 "saeun"
+                                                             ],
+                                          "sourceCoverage":  "inferred"
+                                      },
+                                      {
+                                          "id":  "social_reaction_filter",
+                                          "label":  "반응 필터",
+                                          "plainKo":  "ESFP는 사람들의 반응, 인기, 분위기를 민감하게 읽는다. 이 감각은 트렌드를 보는 데 도움이 되지만, 투자 판단에서는 주변이 뜨겁다는 이유만으로 움직이지 않도록 기준을 따로 세워야 한다.",
+                                          "strongLine":  "당신은 분위기를 잘 읽는 만큼, 분위기가 뜨거울수록 내 기준표를 먼저 봐야 합니다.",
+                                          "positiveUse":  "소비자 반응, 대중의 관심, 현장 분위기를 빠르게 감지해 변화의 온도를 읽는다.",
+                                          "risk":  "주변 반응이 강하면 실제 조건보다 인기와 인정 욕구가 판단을 앞지를 수 있다.",
+                                          "matchingMyeongliSignals":  [
+                                                                          "도화",
+                                                                          "홍염",
+                                                                          "편재"
+                                                                      ],
+                                          "productDomains":  [
+                                                                 "investment",
+                                                                 "money",
+                                                                 "career"
                                                              ],
                                           "sourceCoverage":  "inferred"
                                       },

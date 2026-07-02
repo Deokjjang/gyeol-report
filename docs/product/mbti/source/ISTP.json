@@ -657,7 +657,7 @@
         "plainKo": "새로운 경험과 자극에 열려 있어 위험한 행동을 쉽게 시도할 수 있다. 투자에서도 재미와 속도가 붙으면 리스크를 낮게 볼 수 있다.",
         "strongLine": "당신에게 위험한 건 투자 지식 부족보다, 재미있어 보이는 순간 리스크를 가볍게 보는 태도입니다.",
         "positiveUse": "빠른 판단과 실행력은 기회 포착에 도움이 된다.",
-        "risk": "레버리지, 몰빵, 단기 자극형 매매는 손실을 키우기 쉽다.",
+        "risk": "과도한 차입, 한쪽 집중, 단기 자극형 거래는 손실을 키우기 쉽다.",
         "matchingMyeongliSignals": [
           "편재",
           "겁재",
@@ -668,6 +668,63 @@
           "money"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "practical_data_check",
+        "label": "실전 데이터 확인",
+        "plainKo": "ISTP는 말로 그럴듯한 설명보다 실제로 어떻게 작동하는지를 본다. 투자에서도 차트, 수치, 비용, 현물 가치처럼 직접 확인 가능한 데이터가 있어야 판단이 선명해진다.",
+        "strongLine": "당신은 남의 전망보다 눈앞에서 확인되는 작동 구조와 실제 데이터에 더 강하게 반응합니다.",
+        "positiveUse": "수치 확인, 비용 비교, 실물 가치 검토, 간단한 테스트를 통해 과장된 이야기를 걸러낸다.",
+        "risk": "직접 확인한 일부 데이터만 믿고 전체 구조나 장기 리스크를 작게 볼 수 있다.",
+        "matchingMyeongliSignals": [
+          "금",
+          "편관",
+          "정재"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "auto_review_needed",
+        "label": "자동 점검",
+        "plainKo": "ISTP는 관심이 식으면 기록과 점검을 귀찮아할 수 있다. 투자에서는 자동 알림, 월별 확인일, 손실 한도처럼 생각하지 않아도 작동하는 장치를 두어야 방치가 줄어든다.",
+        "strongLine": "당신의 투자 관리에는 의지보다 자동으로 확인되는 점검 구조가 더 잘 맞습니다.",
+        "positiveUse": "자동 기록, 한도 알림, 정해진 점검일을 두면 독립성과 관리력이 함께 살아난다.",
+        "risk": "흥미가 사라진 뒤에는 손실 기록과 비중 변화를 늦게 확인할 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "금",
+          "토"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "simple_rule_preference",
+        "label": "단순 규칙",
+        "plainKo": "ISTP에게 복잡한 투자 원칙은 오래 유지되기 어렵다. 핵심 기준 몇 개, 손실 한도, 정리 기준처럼 간단하고 실행 가능한 규칙일 때 성향의 장점이 살아난다.",
+        "strongLine": "당신에게 좋은 투자 규칙은 멋진 이론이 아니라, 귀찮아도 바로 적용되는 단순한 기준입니다.",
+        "positiveUse": "기준을 줄이고 반복 가능한 행동으로 만들면 빠른 판단과 실전 감각이 안정적으로 쓰인다.",
+        "risk": "규칙이 복잡해지면 처음엔 흥미로워도 곧 관리가 끊기고 즉흥 판단으로 돌아간다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편관",
+          "금"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "saeun"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "study": [

@@ -662,6 +662,63 @@
           "money"
         ],
         "sourceCoverage": "inferred"
+      },
+      {
+        "id": "comfort_based_risk_filter",
+        "label": "체감 안정감",
+        "plainKo": "ISFP는 숫자상으로 괜찮아 보여도 마음과 몸이 불편한 선택은 오래 들고 가기 어렵다. 투자에서는 체감 안정감과 실제 위험을 따로 확인해야 감정적 회피가 줄어든다.",
+        "strongLine": "당신은 마음이 불편한 투자를 오래 버티기 어렵기 때문에, 내 감각과 실제 리스크를 분리해서 봐야 합니다.",
+        "positiveUse": "자기 리듬에 맞는 금액, 기간, 확인 주기를 정하면 안정적으로 유지할 수 있다.",
+        "risk": "불편하다는 느낌만으로 숫자 확인을 미루거나 필요한 결정을 늦출 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "수",
+          "토"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "small_experiment_record",
+        "label": "소액 실험 기록",
+        "plainKo": "ISFP는 큰 계획보다 직접 해보고 감각을 잡는 방식이 맞다. 투자에서도 처음부터 크게 움직이기보다 작은 금액, 짧은 기간, 간단한 기록으로 내 반응과 기준을 확인해야 한다.",
+        "strongLine": "당신의 투자 학습은 크게 결심하는 것보다, 작게 시험하고 기록으로 남길 때 안정됩니다.",
+        "positiveUse": "소액 실험, 감정 기록, 결과 복기를 통해 자기에게 맞는 위험 범위를 찾는다.",
+        "risk": "기록 없이 감각만 믿으면 어떤 선택이 좋았고 나빴는지 흐려진다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "정재",
+          "금"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "study"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "aesthetic_attachment_risk",
+        "label": "취향 애착",
+        "plainKo": "ISFP는 브랜드의 감각, 디자인, 분위기, 실제 사용감에 마음이 움직인다. 투자에서는 좋아하는 취향과 실제 조건을 분리하지 않으면 감정적으로 안전해 보이는 선택에 쏠릴 수 있다.",
+        "strongLine": "당신은 마음에 드는 대상일수록 더 오래 좋게 보려 하므로, 취향과 조건을 따로 적어야 합니다.",
+        "positiveUse": "제품성, 미감, 사용자 경험, 브랜드 감도를 섬세하게 읽어 장기 관심 대상을 찾는다.",
+        "risk": "좋아하는 대상에는 가격, 비용, 변동 위험을 느슨하게 적용할 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "식신",
+          "편재"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "study": [
