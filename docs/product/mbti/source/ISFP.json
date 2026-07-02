@@ -567,6 +567,63 @@
           "career"
         ],
         "sourceCoverage": "inferred"
+      },
+      {
+        "id": "taste_service_income",
+        "label": "취향 서비스 수입",
+        "plainKo": "ISFP는 사람을 강하게 밀어붙이기보다 분위기, 감각, 취향, 실제 손길로 만족을 만든다. 디자인, 미용, 촬영, 돌봄, 치료 보조, 공예, 공간 연출처럼 말보다 결과물과 체감이 중요한 일에서 돈의 길이 열린다.",
+        "strongLine": "당신의 돈은 큰소리로 팔 때보다, 취향과 손길이 결과물로 보일 때 자연스럽게 따라옵니다.",
+        "positiveUse": "감각형 서비스, 창작물, 개인 작업, 현장 돌봄을 포트폴리오와 반복 고객으로 연결한다.",
+        "risk": "조용히 잘해주는 것만으로는 가격이 올라가지 않으니 메뉴, 단가, 작업 범위를 분명히 해야 한다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "도화",
+          "정재"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "comfort_spending_limit",
+        "label": "편안함 소비 한도",
+        "plainKo": "ISFP의 소비는 작고 편안한 만족으로 흐르기 쉽다. 맛있는 음식, 예쁜 물건, 미용, 공간 꾸미기, 취미 재료처럼 당장 기분과 감각을 안정시키는 지출이 많아질 수 있다. 작은 소비도 반복되면 큰돈이 되므로 월별 자유 예산이 필요하다.",
+        "strongLine": "당신은 큰 사치보다 작은 만족으로 돈이 새기 쉬운 사람입니다.",
+        "positiveUse": "감각 회복과 취향 유지에 필요한 돈을 예산 안에서 쓰면 삶의 질과 창작 에너지가 올라간다.",
+        "risk": "기분이 지친 날마다 작은 결제를 반복하면 저축과 생활비의 경계가 흐려진다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "정재",
+          "수"
+        ],
+        "productDomains": [
+          "money",
+          "general",
+          "love"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "steady_income_boundary",
+        "label": "꾸준한 수입 경계",
+        "plainKo": "ISFP는 자유와 자기 리듬이 중요하지만, 돈에서는 최소한의 반복 수입 구조가 있어야 마음이 안정된다. 월 단위 고정 고객, 정기 판매, 기본급, 예약제처럼 예측 가능한 흐름이 있으면 감각형 작업도 오래 간다. 싫은 소리를 못 해 추가 작업을 무료로 넘기지 않는 기준도 필요하다.",
+        "strongLine": "당신에게 안정 수입은 자유를 막는 틀이 아니라, 내 감각을 오래 지키게 해주는 바닥입니다.",
+        "positiveUse": "정기 고객, 예약제, 패키지 상품, 기본 단가표를 만들어 감각형 수입을 반복 가능하게 만든다.",
+        "risk": "경계가 약하면 추가 요청과 감정 노동이 늘어나고 실제 수익률은 낮아진다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "비견",
+          "토"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "marriage"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "investment": [

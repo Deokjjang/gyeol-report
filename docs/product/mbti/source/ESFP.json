@@ -564,6 +564,63 @@
                                                             "general"
                                                         ],
                                      "sourceCoverage":  "inferred"
+                                 },
+                                 {
+                                     "id":  "expression_service_income",
+                                     "label":  "표현·서비스 수입",
+                                     "plainKo":  "ESFP의 수입은 사람 앞에서 살아나는 매력, 표현력, 서비스 감각, 현장 대응력에서 만들어지기 쉽다. 영업, 공연, 방송, 뷰티, 매장, 행사, 콘텐츠처럼 반응이 바로 오는 일에서 돈의 흐름이 열린다.",
+                                     "strongLine":  "당신의 돈은 혼자 조용히 쌓는 일보다, 사람 앞에서 매력과 반응이 오갈 때 더 잘 움직입니다.",
+                                     "positiveUse":  "서비스, 판매, 무대, 콘텐츠, 개인 브랜딩, 고객 경험을 수입 구조로 연결한다.",
+                                     "risk":  "분위기와 인기만 믿고 계약, 단가, 반복 고객 구조를 놓치면 수입이 들쭉날쭉해진다.",
+                                     "matchingMyeongliSignals":  [
+                                                                     "도화",
+                                                                     "홍염",
+                                                                     "편재"
+                                                                 ],
+                                     "productDomains":  [
+                                                            "money",
+                                                            "career",
+                                                            "daeun"
+                                                        ],
+                                     "sourceCoverage":  "inferred"
+                                 },
+                                 {
+                                     "id":  "beauty_social_spending",
+                                     "label":  "외모·사회생활 지출",
+                                     "plainKo":  "ESFP는 꾸미기, 의상, 미용, 선물, 모임, 맛있는 음식, 이벤트처럼 사람과 분위기를 살리는 돈을 잘 쓴다. 이 지출은 매력과 관계를 키우는 힘이 되지만, 기준 없이 반복되면 체면 비용과 생활비가 섞인다.",
+                                     "strongLine":  "당신은 즐거운 장면을 만들기 위해 돈을 쓰지만, 그 장면이 반복되면 꽤 큰 고정비가 됩니다.",
+                                     "positiveUse":  "외모, 콘텐츠, 고객 접점, 사회생활 비용을 목표와 연결하면 돈이 이미지와 기회로 돌아온다.",
+                                     "risk":  "기분과 분위기에 맞춰 쓰다 보면 카드값이 늦게 현실감을 가져온다.",
+                                     "matchingMyeongliSignals":  [
+                                                                     "도화",
+                                                                     "식신",
+                                                                     "편재"
+                                                                 ],
+                                     "productDomains":  [
+                                                            "money",
+                                                            "love",
+                                                            "general"
+                                                        ],
+                                     "sourceCoverage":  "inferred"
+                                 },
+                                 {
+                                     "id":  "auto_saving_before_fun",
+                                     "label":  "선저축 장치",
+                                     "plainKo":  "ESFP는 돈을 모으려면 남은 돈을 저축하는 방식보다 먼저 빠져나가는 자동 저축이 맞다. 월급이나 매출이 들어오자마자 비상금, 세금, 고정 저축을 떼어두면 남은 돈을 즐겁게 써도 불안이 줄어든다.",
+                                     "strongLine":  "당신에게 저축은 참는 능력이 아니라, 즐기기 전에 먼저 빼두는 장치입니다.",
+                                     "positiveUse":  "자동저축, 자유 소비 예산, 단기 목표 통장을 분리해 즐거움과 안정성을 함께 지킨다.",
+                                     "risk":  "재미있는 일정이 먼저 잡히면 저축은 매번 다음 달로 밀린다.",
+                                     "matchingMyeongliSignals":  [
+                                                                     "정재",
+                                                                     "토",
+                                                                     "수"
+                                                                 ],
+                                     "productDomains":  [
+                                                            "money",
+                                                            "investment",
+                                                            "general"
+                                                        ],
+                                     "sourceCoverage":  "inferred"
                                  }
                              ],
                    "investment":  [
