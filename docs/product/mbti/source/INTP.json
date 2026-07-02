@@ -691,6 +691,63 @@
           "saeun"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "analysis_delay_risk",
+        "label": "분석 지연",
+        "plainKo": "INTP는 자료를 더 보면 더 정확해질 것 같아서 결정을 미루기 쉽다. 투자에서는 정보가 부족해서가 아니라, 기준이 닫히지 않아서 실행이 늦어지는 장면이 반복된다.",
+        "strongLine": "당신에게 필요한 것은 더 많은 자료가 아니라, 어느 지점에서 판단을 끝낼지 정한 규칙입니다.",
+        "positiveUse": "사전 체크리스트, 판단 마감 시간, 작은 단위의 실행 규칙을 두면 분석력이 실제 행동으로 이어진다.",
+        "risk": "관찰만 길어지면 좋은 가설도 생활 속 돈 관리와 자산 흐름으로 연결되지 않는다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "simple_rule_portfolio",
+        "label": "단순 규칙",
+        "plainKo": "복잡한 이론을 이해하는 능력은 강하지만, 투자 생활은 너무 복잡하면 관리가 끊긴다. INTP에게는 흥미가 식어도 돌아가는 단순한 비중 규칙과 자동 점검 구조가 필요하다.",
+        "strongLine": "당신의 투자 구조는 머리로만 정교할 때보다, 귀찮아도 유지되는 단순한 규칙일 때 오래 갑니다.",
+        "positiveUse": "자동 기록, 정해진 점검일, 단순한 자산 비중을 두면 흥미 기복에도 원칙이 유지된다.",
+        "risk": "새로운 이론을 계속 추가하면 포트폴리오보다 실험 노트가 더 복잡해진다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "편인",
+          "토"
+        ],
+        "productDomains": [
+          "investment",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "theory_detachment_guard",
+        "label": "이론 분리 방지",
+        "plainKo": "INTP는 논리적으로 아름다운 설명에 끌리지만, 실제 돈은 설명의 완성도보다 변동성과 시간 압박에 반응한다. 투자 전에는 이론이 아니라 내 생활이 감당할 수 있는 범위를 먼저 잡아야 한다.",
+        "strongLine": "당신은 이해한 것과 감당할 수 있는 것을 분리해서 봐야 투자 피로가 줄어듭니다.",
+        "positiveUse": "작은 실험 단위, 손실 한도, 생활비와 분리된 운용 범위를 정하면 탐구심이 안전하게 작동한다.",
+        "risk": "이론에 몰입하면 실제 손실, 세금, 현금 필요 시점 같은 현실 조건을 늦게 반영한다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "정재",
+          "문창",
+          "수"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "study"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "study": [

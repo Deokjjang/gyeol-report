@@ -618,7 +618,7 @@
       {
         "id": "idea_driven_investing",
         "label": "아이디어 투자 성향",
-        "plainKo": "투자 정보가 원문에 직접 많지는 않지만, ENTP의 가능성 탐색 성향은 새로운 산업, 기술, 사업 모델에 대한 관심으로 이어지기 쉽다. 다만 흥미로운 이야기와 검증된 수익 구조는 분리해서 봐야 한다.",
+        "plainKo": "ENTP의 가능성 탐색 성향은 새로운 산업, 기술, 사업 모델에 대한 빠른 관심으로 이어진다. 다만 흥미로운 이야기와 실제로 버틸 수 있는 구조는 분리해서 봐야 한다.",
         "strongLine": "ENTP는 투자에서도 이야기에 끌리지만, 숫자로 검증하지 않으면 아이디어가 리스크가 된다.",
         "positiveUse": "새로운 시장과 기술 변화의 방향을 빠르게 포착한다.",
         "risk": "논리적으로 그럴듯한 가설만 믿으면 손실 가능성을 과소평가한다.",
@@ -648,6 +648,65 @@
           "investment",
           "money",
           "saeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "investment_memo_rule",
+        "label": "투자 메모",
+        "plainKo": "ENTP는 좋은 아이디어가 떠오르면 머릿속에서 이미 논리가 완성된 것처럼 느낀다. 투자에서는 왜 들어가는지, 무엇이 틀리면 멈출지, 언제 다시 볼지를 짧게라도 기록해야 한다.",
+        "strongLine": "당신의 투자 메모는 자유를 묶는 숙제가 아니라, 흥미와 사실을 분리하는 안전장치입니다.",
+        "positiveUse": "진입 이유, 검증 지표, 종료 기준을 적어 두면 아이디어 감각이 실제 관리력으로 이어진다.",
+        "risk": "기록 없이 움직이면 그때그때 그럴듯한 말로 판단을 바꾸고, 손실 원인을 제대로 복기하지 못한다.",
+        "matchingMyeongliSignals": [
+          "상관",
+          "편재",
+          "문창",
+          "금"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "study"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "theme_hopping_risk",
+        "label": "테마 이동 리스크",
+        "plainKo": "새로운 가능성을 빨리 보는 만큼 관심이 다른 곳으로 옮겨가는 속도도 빠르다. ENTP는 투자 대상을 고르는 능력보다, 고른 뒤 계속 점검하는 루틴이 약해질 때 리스크가 커진다.",
+        "strongLine": "당신은 기회를 찾는 속도보다, 선택한 기회를 끝까지 관리하는 구조가 더 중요합니다.",
+        "positiveUse": "관심 목록을 줄이고 점검 주기를 고정하면 빠른 탐색력이 분산이 아니라 선별력으로 바뀐다.",
+        "risk": "흥미가 이동하면 여러 아이디어가 동시에 열리고, 어느 쪽도 충분히 관리하지 못한다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "상관",
+          "편재",
+          "화"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "saeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "experiment_budget_limit",
+        "label": "실험 예산 한도",
+        "plainKo": "ENTP에게 투자는 지적 실험처럼 느껴질 수 있다. 그래서 실험을 막기보다 실험 예산, 손실 한도, 종료 기준을 정해 두어야 호기심이 생활 재정을 흔들지 않는다.",
+        "strongLine": "당신의 투자 실험은 한도가 있을 때 아이디어가 되고, 한도가 없을 때 피로한 지출이 됩니다.",
+        "positiveUse": "정해진 범위 안에서만 새 기회를 시험하면 빠른 학습과 리스크 관리가 함께 살아난다.",
+        "risk": "작은 실험이 계속 늘어나면 전체 노출이 커지고, 처음 정한 목적을 잊기 쉽다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "비견",
+          "정재"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "general"
         ],
         "sourceCoverage": "inferred"
       }

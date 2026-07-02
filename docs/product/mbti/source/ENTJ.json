@@ -713,6 +713,47 @@
                                                                  "general"
                                                              ],
                                           "sourceCoverage":  "inferred"
+                                      },
+                                      {
+                                          "id":  "independent_risk_review",
+                                          "label":  "독립 검토",
+                                          "plainKo":  "ENTJ는 결정을 빠르게 내리고 책임도 직접 지려는 쪽에 가깝다. 투자에서는 이 속도가 강점이지만, 확신이 커질수록 반대 의견과 외부 검토를 의도적으로 넣어야 한다.",
+                                          "strongLine":  "당신의 투자 판단은 빠를수록 강하지만, 혼자 확신할수록 검증 장치가 필요합니다.",
+                                          "positiveUse":  "독립 검토자, 반대 근거 목록, 하루 이상의 냉각 시간을 두면 추진력이 무리한 확장으로 흐르지 않는다.",
+                                          "risk":  "목표가 분명하면 불편한 경고를 실행을 늦추는 방해물처럼 볼 수 있다.",
+                                          "matchingMyeongliSignals":  [
+                                                                          "편관",
+                                                                          "정관",
+                                                                          "현침살",
+                                                                          "금"
+                                                                      ],
+                                          "productDomains":  [
+                                                                 "investment",
+                                                                 "money",
+                                                                 "career"
+                                                             ],
+                                          "sourceCoverage":  "inferred"
+                                      },
+                                      {
+                                          "id":  "scale_limit_before_push",
+                                          "label":  "확장 전 한도",
+                                          "plainKo":  "ENTJ는 기회가 보이면 작게 시험하기보다 크게 밀어붙이고 싶어진다. 투자에서는 투입 한도, 손실 한도, 회수 시점을 먼저 정해야 공격성이 전략으로 남는다.",
+                                          "strongLine":  "당신에게 필요한 투자 원칙은 더 크게 가는 용기가 아니라, 어디까지 갈지 정하는 통제력입니다.",
+                                          "positiveUse":  "자금 한도, 단계별 확대 기준, 중단 조건을 문서화하면 큰 기회도 관리 가능한 범위 안에 둔다.",
+                                          "risk":  "성과 압박과 승부욕이 겹치면 투자 판단이 사업 확장처럼 커지고, 생활 재정까지 압박한다.",
+                                          "matchingMyeongliSignals":  [
+                                                                          "편재",
+                                                                          "편관",
+                                                                          "겁재",
+                                                                          "화"
+                                                                      ],
+                                          "productDomains":  [
+                                                                 "investment",
+                                                                 "money",
+                                                                 "daeun",
+                                                                 "saeun"
+                                                             ],
+                                          "sourceCoverage":  "inferred"
                                       }
                                   ],
                    "study":  [

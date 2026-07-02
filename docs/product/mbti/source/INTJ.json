@@ -717,6 +717,66 @@
           "saeun"
         ],
         "sourceCoverage": "inferred"
+      },
+      {
+        "id": "scenario_exit_rule",
+        "label": "시나리오 이탈 기준",
+        "plainKo": "INTJ는 투자에서도 먼저 큰 구조와 미래 시나리오를 세운다. 이 강점은 방향을 잃지 않게 만들지만, 처음 세운 가정이 틀렸을 때 빠져나오는 기준까지 있어야 완성된다.",
+        "strongLine": "당신의 투자 기준은 들어갈 이유보다, 틀렸을 때 멈출 기준까지 있을 때 강해집니다.",
+        "positiveUse": "사전에 핵심 가정, 점검 주기, 철수 기준을 정하면 장기 전략이 감정에 흔들리지 않는다.",
+        "risk": "자기 시나리오를 너무 믿으면 시장 변화보다 자기 논리를 더 오래 붙잡는다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "정재",
+          "천문성",
+          "금"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "model_overconfidence_risk",
+        "label": "모델 과신",
+        "plainKo": "분석이 깊어질수록 스스로 만든 모델에 확신이 붙는다. INTJ에게 필요한 투자 안전장치는 더 많은 정보보다, 내 판단이 틀렸을 때를 일부러 검토하는 반대 시나리오다.",
+        "strongLine": "당신은 남의 말보다 자기 분석을 더 믿기 때문에, 반대 근거를 의도적으로 넣어야 균형이 잡힙니다.",
+        "positiveUse": "반대 의견 검토, 가정 목록화, 리스크 체크리스트를 두면 전략적 판단이 날카로워진다.",
+        "risk": "큰 그림이 맞다는 확신이 강하면 작은 경고 신호와 현금 흐름 압박을 늦게 본다.",
+        "matchingMyeongliSignals": [
+          "현침살",
+          "편인",
+          "비견",
+          "금"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "rebalance_cashflow_guard",
+        "label": "현금흐름 점검",
+        "plainKo": "장기 목표가 뚜렷해도 현실의 현금흐름을 무시하면 전략이 생활을 압박한다. INTJ는 정해진 주기마다 비중, 유동성, 생활비 완충분을 점검할 때 투자 판단이 안정된다.",
+        "strongLine": "당신에게 리밸런싱은 흔들리는 마음을 달래는 일이 아니라, 전략이 현실을 이기려 들지 않게 막는 장치입니다.",
+        "positiveUse": "정기 점검일, 현금 비중 기준, 생활비 방어선을 두면 장기 투자를 오래 끌고 갈 수 있다.",
+        "risk": "큰 목표에 몰입하면 당장의 지출, 가족 재정, 비상 자금 같은 현실 변수를 낮게 볼 수 있다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "토",
+          "금"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "study": [
