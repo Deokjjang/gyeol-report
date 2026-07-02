@@ -586,7 +586,7 @@
       {
         "id": "values_aligned_investment",
         "label": "가치 정렬 투자",
-        "plainKo": "원문에는 투자 정보가 직접 많지 않다. 다만 ENFJ는 사회적 가치와 사람에게 주는 영향을 중시하므로, 투자에서도 명분과 영향력을 함께 보려는 경향으로 해석할 수 있다.",
+        "plainKo": "ENFJ는 돈의 크기만큼 그 돈이 사람과 사회에 어떤 영향을 주는지도 본다. 투자에서도 숫자와 명분이 함께 납득될 때 오래 관심을 유지한다.",
         "strongLine": "ENFJ의 투자는 숫자만 맞는 선택보다 마음이 납득되는 선택을 원한다.",
         "positiveUse": "교육, 복지, 커뮤니티, 사회적 가치가 있는 분야에 장기적 관심을 가질 수 있다.",
         "risk": "좋은 취지와 실제 수익성·리스크 검증을 분리하지 못하면 손실 판단이 흐려진다.",
@@ -615,6 +615,64 @@
         "productDomains": [
           "investment",
           "money"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "relationship_info_boundary",
+        "label": "관계 정보 경계",
+        "plainKo": "ENFJ는 사람의 말투, 비전, 팀 분위기, 추천자의 진심을 빠르게 읽는다. 이 장점은 초기 판단에 도움이 되지만, 가까운 사람이 전한 정보일수록 따로 검증해야 한다.",
+        "strongLine": "당신은 사람을 잘 읽지만, 투자에서는 좋은 사람과 좋은 조건을 따로 봐야 합니다.",
+        "positiveUse": "팀의 방향성, 브랜드 신뢰, 사람들의 반응을 읽어 장기 흐름을 포착한다.",
+        "risk": "관계 신뢰가 강하면 자료 확인보다 사람에 대한 믿음이 앞설 수 있다.",
+        "matchingMyeongliSignals": [
+          "귀인",
+          "정관",
+          "편재"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "support_limit_guard",
+        "label": "지원 한도",
+        "plainKo": "ENFJ는 누군가의 성장 가능성을 보면 도와주고 싶어 한다. 투자에서도 사람을 키우는 마음이 작동할 수 있으므로, 지원과 투자를 섞지 않도록 금액 한도와 책임 범위를 먼저 정해야 한다.",
+        "strongLine": "당신은 사람을 살리고 싶어 하는 만큼, 내 돈이 어디까지 책임질 수 있는지 먼저 정해야 합니다.",
+        "positiveUse": "멘토링, 교육, 커뮤니티형 프로젝트를 볼 때 사람의 성장 가능성을 세밀하게 읽는다.",
+        "risk": "상대의 가능성을 믿는 마음이 커지면 내 재정 한도와 검증 기준이 뒤로 밀린다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정관",
+          "편재",
+          "목"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "public_image_bias",
+        "label": "평판 편향",
+        "plainKo": "ENFJ는 사회적 평판, 브랜드 이미지, 대중의 반응을 민감하게 본다. 투자 판단에서는 사람들이 좋게 말하는 분위기와 실제 구조를 분리해야 체면이나 기대에 끌려가지 않는다.",
+        "strongLine": "당신에게 유명하고 좋아 보이는 선택일수록, 숫자와 조건을 따로 확인하는 과정이 필요합니다.",
+        "positiveUse": "대중 반응, 브랜드 신뢰, 커뮤니티 흐름을 빠르게 감지해 시장의 온도를 읽는다.",
+        "risk": "좋은 이미지와 주변의 기대가 강하면 불편한 리스크를 말하기 어려워진다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "정관",
+          "정재"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "saeun"
         ],
         "sourceCoverage": "inferred"
       }

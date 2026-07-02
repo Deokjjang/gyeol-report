@@ -630,12 +630,12 @@
                              ],
                    "investment":  [
                                       {
-                                          "id":  "investment_needs_enrichment",
-                                          "label":  "투자 정보 보강 필요",
-                                          "plainKo":  "원문에는 INFJ의 투자 성향을 직접 설명하는 정보가 부족하다. 다만 장기적 안목, 이상 추구, 현실 세부의 빈틈이라는 특징은 투자 판단에서 검증과 리스크 관리가 필요하다는 힌트를 준다.",
-                                          "strongLine":  "당신의 투자 판단은 큰 흐름을 보는 힘이 있지만, 숫자와 리스크 검증을 분리해서 확인해야 흔들리지 않습니다.",
-                                          "positiveUse":  "장기 테마와 사회적 가치가 있는 자산을 꾸준히 관찰하는 데 강점이 될 수 있다.",
-                                          "risk":  "좋은 의미나 큰 비전에 끌려 세부 재무와 손실 가능성을 덜 볼 수 있다.",
+                                          "id":  "values_based_long_horizon",
+                                          "label":  "가치 기반 장기성",
+                                          "plainKo":  "INFJ는 단기 흥분보다 오래 믿을 수 있는 방향과 의미를 본다. 투자에서도 숫자만 맞는 선택보다 자기 가치관과 장기 흐름이 함께 납득될 때 지속성이 생긴다.",
+                                          "strongLine":  "당신의 투자는 마음이 납득하는 가치와 장기 구조가 함께 보일 때 오래 갑니다.",
+                                          "positiveUse":  "사회적 가치, 장기 테마, 삶의 방향성과 맞는 자산을 꾸준히 관찰하는 데 강하다.",
+                                          "risk":  "좋은 의미와 큰 비전에 끌리면 세부 조건과 손실 가능성을 늦게 볼 수 있다.",
                                           "matchingMyeongliSignals":  [
                                                                           "정재",
                                                                           "편재",
@@ -645,7 +645,82 @@
                                                                  "investment",
                                                                  "money"
                                                              ],
-                                          "sourceCoverage":  "needs_enrichment"
+                                          "sourceCoverage":  "inferred"
+                                      },
+                                      {
+                                          "id":  "conviction_delay_risk",
+                                          "label":  "확신 지연",
+                                          "plainKo":  "INFJ는 내면에서 충분히 납득되지 않으면 쉽게 움직이지 않는다. 투자에서는 완벽한 확신을 기다리다 실행이 늦어지고, 판단이 끝났을 때는 이미 흐름이 지나간 장면이 생긴다.",
+                                          "strongLine":  "당신에게 필요한 것은 완벽한 확신이 아니라, 작은 단위로 검증하고 주기적으로 다시 보는 기준입니다.",
+                                          "positiveUse":  "작은 실험 단위, 점검 날짜, 판단 마감선을 두면 신중함이 실행력으로 연결된다.",
+                                          "risk":  "생각이 깊어질수록 결정이 늦어지고, 불확실성을 견디는 훈련이 부족해진다.",
+                                          "matchingMyeongliSignals":  [
+                                                                          "정인",
+                                                                          "편인",
+                                                                          "수"
+                                                                      ],
+                                          "productDomains":  [
+                                                                 "investment",
+                                                                 "money",
+                                                                 "general"
+                                                             ],
+                                          "sourceCoverage":  "inferred"
+                                      },
+                                      {
+                                          "id":  "emotional_discomfort_filter",
+                                          "label":  "불편감 회피",
+                                          "plainKo":  "INFJ는 마음에 걸리는 대상이나 윤리적으로 불편한 구조를 오래 들고 가기 어렵다. 이 감각은 중요한 보호 장치지만, 감정적 불편감과 객관적 리스크를 분리해서 확인해야 판단이 선명해진다.",
+                                          "strongLine":  "당신은 마음이 불편한 투자를 오래 견디기 어렵기 때문에, 가치 기준과 위험 기준을 따로 적어야 합니다.",
+                                          "positiveUse":  "자기 기준에 맞지 않는 선택을 걸러내고 장기 피로가 큰 대상을 피하는 데 유리하다.",
+                                          "risk":  "불편하다는 느낌만으로 확인을 미루면 실제 리스크와 기회를 함께 놓칠 수 있다.",
+                                          "matchingMyeongliSignals":  [
+                                                                          "정인",
+                                                                          "정재",
+                                                                          "수"
+                                                                      ],
+                                          "productDomains":  [
+                                                                 "investment",
+                                                                 "money"
+                                                             ],
+                                          "sourceCoverage":  "inferred"
+                                      },
+                                      {
+                                          "id":  "trust_story_verification",
+                                          "label":  "신뢰 검증",
+                                          "plainKo":  "INFJ는 사람의 진정성, 브랜드의 방향, 이야기의 깊이를 민감하게 읽는다. 투자에서는 이 감각을 쓰되, 믿음이 생긴 대상일수록 숫자와 조건을 따로 검증해야 한다.",
+                                          "strongLine":  "당신은 신뢰가 생기면 오래 가는 사람이라, 믿는 대상일수록 더 차갑게 확인해야 합니다.",
+                                          "positiveUse":  "장기적으로 신뢰할 수 있는 팀, 브랜드, 방향성을 선별하는 감각이 강점이 된다.",
+                                          "risk":  "진정성 있는 이야기와 실제 재무 구조를 같은 것으로 보면 판단이 흐려진다.",
+                                          "matchingMyeongliSignals":  [
+                                                                          "귀인",
+                                                                          "정재",
+                                                                          "천문성"
+                                                                      ],
+                                          "productDomains":  [
+                                                                 "investment",
+                                                                 "money",
+                                                                 "daeun"
+                                                             ],
+                                          "sourceCoverage":  "inferred"
+                                      },
+                                      {
+                                          "id":  "periodic_principle_review",
+                                          "label":  "원칙 점검",
+                                          "plainKo":  "INFJ는 한 번 정한 방향을 오래 품는 힘이 있다. 그래서 투자 원칙도 처음의 감동이 아니라 정기 점검표, 손실 허용 범위, 현금 완충선으로 관리해야 오래 흔들리지 않는다.",
+                                          "strongLine":  "당신의 장기성은 감정으로 버티는 힘이 아니라, 정해진 주기에 원칙을 다시 확인할 때 안정됩니다.",
+                                          "positiveUse":  "분기별 점검, 손실 허용 범위, 현금 완충선을 두면 깊은 신뢰와 현실 관리가 함께 작동한다.",
+                                          "risk":  "처음 세운 의미에 오래 머물면 현재 조건이 바뀌어도 판단을 늦게 수정한다.",
+                                          "matchingMyeongliSignals":  [
+                                                                          "정재",
+                                                                          "정관",
+                                                                          "토"
+                                                                      ],
+                                          "productDomains":  [
+                                                                 "investment",
+                                                                 "money",
+                                                                 "saeun"
+                                                             ],
+                                          "sourceCoverage":  "inferred"
                                       }
                                   ],
                    "study":  [

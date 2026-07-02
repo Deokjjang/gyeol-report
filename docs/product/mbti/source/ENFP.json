@@ -552,7 +552,7 @@
       {
         "id": "story_driven_investment",
         "label": "스토리형 투자 주의",
-        "plainKo": "투자 정보는 원문에 직접 많지 않다. 다만 ENFP는 이야기, 가능성, 사람의 비전에 끌리기 쉬우므로 투자에서는 스토리와 숫자 검증을 분리해야 한다.",
+        "plainKo": "ENFP는 이야기, 가능성, 사람의 비전에 빠르게 끌린다. 투자에서는 마음을 움직이는 스토리와 실제 조건을 분리해서 봐야 설렘이 판단을 덮지 않는다.",
         "strongLine": "ENFP에게 매력적인 이야기가 곧 좋은 투자는 아니다.",
         "positiveUse": "새 트렌드와 사람들의 욕구 변화를 빠르게 감지할 수 있다.",
         "risk": "감정적 기대와 낙관이 손실 가능성을 가릴 수 있다.",
@@ -570,7 +570,7 @@
       {
         "id": "impulse_control_investment",
         "label": "충동 통제",
-        "plainKo": "즉흥적이고 충동적인 성향은 투자 판단에서도 위험 요인이 된다. 매수·매도 기준, 손실 한도, 검토 시간을 미리 정해야 한다.",
+        "plainKo": "즉흥적이고 충동적인 성향은 투자 판단에서도 위험 요인이 된다. 진입 기준, 정리 기준, 손실 한도, 검토 시간을 미리 정해야 한다.",
         "strongLine": "ENFP의 투자는 감정이 뜨거워지는 순간일수록 하루 더 식혀야 안전하다.",
         "positiveUse": "관심 산업을 꾸준히 관찰하면 감각적 트렌드 포착이 장점이 된다.",
         "risk": "순간의 설렘으로 결정하면 반복 손실이 생긴다.",
@@ -581,6 +581,64 @@
         "productDomains": [
           "investment",
           "money"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "theme_spread_risk",
+        "label": "테마 분산",
+        "plainKo": "ENFP는 새로운 테마와 가능성을 빠르게 발견한다. 문제는 하나를 깊게 관리하기 전에 또 다른 가능성으로 마음이 옮겨가면서 투자 대상이 많아지고 점검 루틴이 약해지는 것이다.",
+        "strongLine": "당신은 기회를 많이 보는 사람이라, 투자에서는 더 많이 고르는 것보다 덜어내는 기준이 필요합니다.",
+        "positiveUse": "새로운 소비 흐름, 콘텐츠, 사람들의 관심 변화를 빠르게 포착한다.",
+        "risk": "관심이 넓어질수록 작은 선택이 많이 쌓이고, 전체 위험 규모를 늦게 알아차린다.",
+        "matchingMyeongliSignals": [
+          "역마",
+          "편재",
+          "상관",
+          "화"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "saeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "investment_memo_exit_rule",
+        "label": "투자 메모",
+        "plainKo": "ENFP는 당시의 설렘과 확신을 나중에 다르게 기억할 수 있다. 투자 전에는 왜 선택했는지, 무엇이 틀리면 멈출지, 언제 다시 볼지를 짧게 적어 두어야 감정과 사실이 분리된다.",
+        "strongLine": "당신의 투자 메모는 감정을 막는 장치가 아니라, 설렘이 지나간 뒤에도 기준을 남기는 장치입니다.",
+        "positiveUse": "진입 이유, 점검 날짜, 정리 기준을 남기면 가능성 감각이 관리 가능한 계획으로 바뀐다.",
+        "risk": "기록 없이 움직이면 그때의 기분이 판단 근거처럼 남아 반복 실수를 만든다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "정재",
+          "식신"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "study"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "cooling_period_guard",
+        "label": "냉각 시간",
+        "plainKo": "ENFP는 좋은 기회를 보면 지금 움직여야 할 것 같은 감정이 올라온다. 투자에서는 바로 행동하기보다 하루 이상 식히고, 같은 판단이 유지되는지 확인하는 시간이 필요하다.",
+        "strongLine": "당신은 확 끌리는 순간일수록 시간을 둬야, 진짜 기회와 순간의 흥분을 구분합니다.",
+        "positiveUse": "냉각 시간, 확인 질문, 손실 한도를 두면 빠른 감각을 무리 없이 활용할 수 있다.",
+        "risk": "기분이 뜨거운 상태에서 결정하면 작은 손실도 감정적으로 크게 흔들린다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "편재",
+          "정재"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "general"
         ],
         "sourceCoverage": "inferred"
       }

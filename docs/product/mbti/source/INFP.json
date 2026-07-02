@@ -641,9 +641,9 @@
     ],
     "investment": [
       {
-        "id": "investment_needs_structure",
-        "label": "투자 구조 보강",
-        "plainKo": "원문에는 투자 성향의 직접 설명이 부족하다. 다만 INFP의 이상 지향, 물질 욕구의 약함, Te 열등을 고려하면 투자에서는 의미와 감정이 아니라 규칙과 손실 한도를 먼저 세워야 한다.",
+        "id": "values_first_investment",
+        "label": "가치 우선 투자",
+        "plainKo": "INFP는 돈만 보고 움직이기보다 가치, 윤리, 취향, 의미가 맞는지 먼저 본다. 투자에서도 마음이 납득되는 대상에 오래 관심을 두지만, 의미와 현실 조건을 분리해서 확인해야 한다.",
         "strongLine": "당신의 투자는 마음이 움직이는 대상보다, 미리 정한 규칙을 지킬 때 안전해집니다.",
         "positiveUse": "사회적 가치나 장기 테마에 관심을 갖고 꾸준히 관찰하는 힘이 있다.",
         "risk": "좋아하는 스토리나 신념에 끌려 숫자와 리스크 검증을 건너뛸 수 있다.",
@@ -656,7 +656,82 @@
           "investment",
           "money"
         ],
-        "sourceCoverage": "needs_enrichment"
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "loss_check_avoidance",
+        "label": "손실 확인 회피",
+        "plainKo": "INFP는 불편한 현실을 바로 마주하기보다 마음속에서 정리할 시간이 필요하다. 투자에서는 손실 화면을 미루거나 기록을 피하는 습관이 리스크를 키우므로 확인 루틴을 자동화해야 한다.",
+        "strongLine": "당신은 보기 싫은 숫자를 미룰수록 마음은 편해져도 판단은 더 흐려집니다.",
+        "positiveUse": "정해진 날짜에만 잔고와 변동을 확인하면 감정 소모를 줄이면서 현실 감각을 유지한다.",
+        "risk": "손실 확인을 늦추면 작은 조정이 큰 불안으로 커지고, 대응 기준도 늦어진다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정인",
+          "수"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "automatic_record_guard",
+        "label": "자동 기록",
+        "plainKo": "INFP에게 투자 관리는 의지로 버티는 방식보다 자동 기록과 한도 설정이 맞다. 감정이 흔들릴 때도 원래 정한 금액, 기간, 허용 범위가 보이면 판단을 되돌릴 수 있다.",
+        "strongLine": "당신에게 투자 기록은 차가운 장부가 아니라, 감정이 흔들릴 때 나를 붙잡아 주는 기준입니다.",
+        "positiveUse": "자동 기록, 알림, 손실 허용 범위를 두면 마음의 기복과 재정 판단을 분리할 수 있다.",
+        "risk": "기록이 없으면 좋은 의도와 실제 결과가 섞여 같은 실수를 반복한다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "토",
+          "정인"
+        ],
+        "productDomains": [
+          "investment",
+          "money"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "story_attachment_risk",
+        "label": "스토리 애착",
+        "plainKo": "INFP는 마음을 움직이는 이야기와 사람의 진정성에 깊게 반응한다. 투자에서는 좋아하는 브랜드, 창작자, 가치관에 애착이 생길수록 사실 확인과 리스크 점검을 따로 해야 한다.",
+        "strongLine": "당신은 좋아하는 대상일수록 더 오래 믿기 때문에, 애착과 검증을 분리해야 합니다.",
+        "positiveUse": "사람들의 진심, 문화적 흐름, 브랜드의 메시지를 섬세하게 읽어 장기 관심 대상을 찾는다.",
+        "risk": "애정이 생긴 대상은 나쁜 신호가 보여도 마음속에서 좋게 해석하기 쉽다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "정인",
+          "편재"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "small_safe_experiment",
+        "label": "작은 실험",
+        "plainKo": "INFP는 돈 문제에서 과하게 조심하다가 아예 손을 놓거나, 반대로 마음이 움직인 대상에 갑자기 힘을 실을 수 있다. 처음부터 크게 판단하지 말고 작은 실험 단위와 중단 기준을 정하는 편이 맞다.",
+        "strongLine": "당신의 투자 안전장치는 큰 결심이 아니라, 작게 시험하고 멈출 수 있는 구조입니다.",
+        "positiveUse": "작은 금액, 제한된 기간, 명확한 복기 기준을 두면 불안과 호기심을 모두 관리한다.",
+        "risk": "모 아니면 도 식으로 접근하면 회피와 몰입이 번갈아 나타나 재정 흐름이 흔들린다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "비견",
+          "수"
+        ],
+        "productDomains": [
+          "investment",
+          "money",
+          "saeun"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "study": [
