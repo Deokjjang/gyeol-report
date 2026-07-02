@@ -743,7 +743,7 @@
       {
         "id": "flexible_goal_study",
         "label": "유연한 목표 공부",
-        "plainKo": "세세한 시간표보다 큰 방향과 단기 목표를 나누는 방식이 맞다. xSxP 계열의 학습 보완처럼 장기와 단기 목표를 나눠 꾸준히 실천하는 장치가 필요하다.",
+        "plainKo": "세세한 시간표보다 큰 방향과 단기 목표를 나누는 방식이 맞다. 장기 목표를 오늘 할 만큼의 작은 행동으로 쪼개야 자기 속도를 잃지 않고 이어진다.",
         "strongLine": "당신에게 필요한 건 빡빡한 시간표가 아니라, 작게 나눈 목표를 계속 이어가는 구조입니다.",
         "positiveUse": "작은 과제 단위와 실습 결과물을 쌓으면 학습 지속력이 올라간다.",
         "risk": "흥미가 떨어지면 중간에 놓아버리기 쉽다.",
@@ -793,6 +793,24 @@
           "career"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "comfortable_exam_routine",
+        "label": "편안한 시험 루틴",
+        "plainKo": "ISFP는 편안한 환경과 자기 속도가 보장될 때 집중이 살아난다. 압박이 강하거나 평가 분위기가 거칠면 마음이 닫히기 쉬우니, 시험 준비는 조용한 장소, 짧은 회차, 구체적 피드백으로 굴려야 한다.",
+        "strongLine": "당신의 공부는 몰아붙일수록 열리는 쪽이 아니라, 편안한 루틴 안에서 조용히 살아나는 쪽입니다.",
+        "positiveUse": "짧은 회독, 감각 자료, 예시 이미지, 구체 칭찬과 수정 포인트를 함께 쓰면 지속성이 올라간다.",
+        "risk": "불편한 과목을 계속 미루면 시험 직전에 압박이 커지고, 그 압박이 다시 회피를 만든다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "식신",
+          "토"
+        ],
+        "productDomains": [
+          "study",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "love": [
@@ -2345,9 +2363,9 @@
     ],
     "needsRelationGapFill": false,
     "notes": [
-      "원문에 있는 건강 통계성 문장은 질병 진단 위험이 있어 사용자-facing trait으로 직접 저장하지 않고 보강 필요 영역에만 표시함",
-      "관계 설명은 원문에 내용이 있는 ISFP, ESFP, INTJ, ENTJ, ISFJ, ESFJ, INTP, ENTP, ISTP, ESTP, INFJ, ENFJ, ISTJ, ESTJ, INFP, ENFP를 모두 notablePairs로 재구성함",
-      "원문에 포함된 직업군은 예술·사회봉사·보건의료·현장 자율성 축으로 상품용 추천 직업에 재분류함"
+      "건강 통계성 문장은 질병 진단 위험이 있어 사용자-facing trait으로 직접 저장하지 않고 보강 필요 영역에만 표시함",
+      "관계 설명은 ISFP, ESFP, INTJ, ENTJ, ISFJ, ESFJ, INTP, ENTP, ISTP, ESTP, INFJ, ENFJ, ISTJ, ESTJ, INFP, ENFP를 모두 notablePairs로 재구성함",
+      "직업군은 예술·사회봉사·보건의료·현장 자율성 축으로 상품용 추천 직업에 재분류함"
     ]
   }
 }
