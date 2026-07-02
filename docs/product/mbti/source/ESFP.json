@@ -7,7 +7,7 @@
                          "rawSourceWasProvidedByUser":  true,
                          "rawTextStoredVerbatim":  false,
                          "cleanedAndRewritten":  true,
-                         "notes":  "원문을 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함. 통계표, 출처 표기, 편집 문구, 반복 주의문은 제거하고 성향·직업·연애·부모·자녀·궁합 정보만 의미 단위로 보존함"
+                        "notes":  "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함. 통계표, 출처 표기, 편집 문구, 반복 주의문은 제거하고 성향·직업·연애·부모·자녀·궁합 정보만 의미 단위로 보존함"
                      },
     "preferenceAxes":  {
                            "energy":  "E",
@@ -2291,7 +2291,7 @@
                            "compatibilityReport":  [
                                                        "INTJ, ENTJ, ENFJ 관계는 끌림과 보완을 다루되 통제와 자유의 균형을 반드시 포함한다.",
                                                        "ESFJ, INTP 관계는 겉보기 유사성 또는 초반 끌림 뒤에 오는 소통 방식 차이를 중심으로 해석한다.",
-                                                       "ESTP 관계는 원문 설명이 부족하므로 관계 보강 단계에서 별도 확장한다."
+                                                      "ESTP 관계는 세부 설명이 부족하므로 관계 보강 단계에서 별도 확장한다."
                                                    ],
                            "daeunReport":  [
                                                "도화·홍염·식상·역마가 강한 대운은 대외 활동, 연애, 무대성, 직업 전환, 여행과 경험 확장으로 번역한다.",
@@ -2311,7 +2311,7 @@
                                         ],
                        "needsRelationGapFill":  true,
                        "notes":  [
-                                     "원문 관계 설명이 있는 INTJ, ENTJ, ENFJ, ESFJ, INTP는 notablePairs에 직접 재구성함",
+                                    "관계 설명이 있는 INTJ, ENTJ, ENFJ, ESFJ, INTP는 notablePairs에 직접 재구성함",
                                      "ESTP는 관계명만 있어 placeholder로 처리함",
                                      "통계표와 출처 표기는 저장하지 않고 성향 의미만 반영함"
                                  ]

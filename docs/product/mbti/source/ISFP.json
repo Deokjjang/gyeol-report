@@ -7,7 +7,7 @@
     "rawSourceWasProvidedByUser": true,
     "rawTextStoredVerbatim": false,
     "cleanedAndRewritten": true,
-    "notes": "원문을 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함. 출처표기, 통계표 노이즈, 편집 문구, 반복 주의문은 제거하고 성향·장면·직업·관계 패턴만 보존함"
+    "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함. 출처표기, 통계표 노이즈, 편집 문구, 반복 주의문은 제거하고 성향·장면·직업·관계 패턴만 보존함"
   },
   "preferenceAxes": {
     "energy": "I",

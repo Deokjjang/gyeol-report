@@ -7,7 +7,7 @@
     "rawSourceWasProvidedByUser": true,
     "rawTextStoredVerbatim": false,
     "cleanedAndRewritten": true,
-    "notes": "원문을 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함. 통계, 출처, 편집 안내, 반복 주의문은 제거하고 의미 단위만 보존함"
+    "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함. 통계, 출처, 편집 안내, 반복 주의문은 제거하고 의미 단위만 보존함"
   },
   "preferenceAxes": {
     "energy": "I",
@@ -2158,7 +2158,7 @@
     "notes": [
       "통계, 출처, 편집 주의문, 관계 이론 주의문, 인구 비율, 범죄율 같은 노이즈는 상품용 trait으로 쓰지 않고 의미 단위만 재구성했다.",
       "관계 정보는 ISFP만 세부 설명이 있어 direct로 정리했고, ENFJ/ESTP/INFJ/ENFP는 유형명 수준 단서만 있어 needs_enrichment placeholder로 남겼다.",
-      "투자 성향은 원문의 고품질 상품 투자, 위험 행동, 현실 감각, 절약 키워드를 기반으로 inferred/direct 혼합 처리했다."
+      "투자 성향은 고품질 상품 투자, 위험 행동, 현실 감각, 절약 키워드를 기반으로 inferred/direct 혼합 처리했다."
     ]
   }
 }

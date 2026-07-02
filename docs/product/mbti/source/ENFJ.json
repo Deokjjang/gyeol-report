@@ -7,7 +7,7 @@
     "rawSourceWasProvidedByUser": true,
     "rawTextStoredVerbatim": false,
     "cleanedAndRewritten": true,
-    "notes": "원문을 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+    "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
   },
   "preferenceAxes": {
     "energy": "E",
@@ -1432,7 +1432,7 @@
     },
     {
       "job": "언론인",
-      "reason": "대중의 분위기와 사회적 의미를 읽고 메시지를 전달하는 능력이 원문 직업 적합성과 맞는다.",
+      "reason": "대중의 분위기와 사회적 의미를 읽고 메시지를 전달하는 능력이 ENFJ의 직업 적합성과 맞는다.",
       "matchingTraits": [
         "public_communication_fit",
         "meaningful_discussion",
@@ -2174,7 +2174,7 @@
     ],
     "needsRelationGapFill": false,
     "notes": [
-      "금전과 투자 영역은 원문 직접 정보가 적어 ENFJ의 베풂, 평판, 가치 중심 성향에서 보수적으로 추론함.",
+      "금전과 투자 영역은 직접 정보가 적어 ENFJ의 베풂, 평판, 가치 중심 성향에서 보수적으로 추론함.",
       "통계표, 출처 표기, 정치 성향 수치, IQ·범죄율·질병성 단정은 상품용 해석에서 제외하거나 의미 단위로만 재구성함."
     ]
   }
