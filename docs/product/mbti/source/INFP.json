@@ -936,6 +936,44 @@
           "compatibility"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "ideal_and_reality_balance",
+        "label": "이상과 현실 균형",
+        "plainKo": "INFP는 결혼을 마음의 진정성과 깊은 이해로 받아들이지만, 매일의 생활은 돈, 가사, 일정, 건강 관리처럼 반복되는 책임으로 굴러간다. 이상적인 마음만 앞서면 현실의 피로가 뒤늦게 크게 쌓인다.",
+        "strongLine": "당신의 결혼은 진심만으로 버티는 관계가 아니라, 생활 책임을 함께 나눌 때 따뜻함이 오래 갑니다.",
+        "positiveUse": "예산, 집안일, 휴식 시간, 개인 작업 시간을 부드럽게 합의하면 내면의 안정과 생활 질서가 함께 살아난다.",
+        "risk": "현실 관리를 계속 미루면 사랑은 깊어도 배우자는 혼자 생활을 책임진다고 느낀다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정관",
+          "토"
+        ],
+        "productDomains": [
+          "marriage",
+          "money",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "inner_world_respect",
+        "label": "내면 존중",
+        "plainKo": "INFP는 배우자가 자신의 감정, 취향, 신념, 조용한 몰입 시간을 가볍게 다루지 않을 때 깊게 안정된다. 결혼 후에도 혼자 정리하고 꿈꾸는 시간이 있어야 마음이 닫히지 않는다.",
+        "strongLine": "당신에게 좋은 배우자는 당신을 고치려는 사람이 아니라, 당신의 안쪽 세계를 함부로 밟지 않는 사람입니다.",
+        "positiveUse": "개인의 취향과 창작적 여백을 존중하면 부드럽고 충실한 애정이 오래 유지된다.",
+        "risk": "배우자가 현실 기준만 앞세워 내면을 무시하면 INFP는 설명을 멈추고 조용히 멀어진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "비견",
+          "수"
+        ],
+        "productDomains": [
+          "marriage",
+          "love",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "parenting": [

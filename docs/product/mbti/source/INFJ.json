@@ -925,6 +925,44 @@
                                                                "compatibility"
                                                            ],
                                         "sourceCoverage":  "direct"
+                                    },
+                                    {
+                                        "id":  "trust_repair_pace",
+                                        "label":  "신뢰 회복 속도",
+                                        "plainKo":  "INFJ는 결혼 생활에서 정서적 안전감과 일관성을 깊게 본다. 말과 행동이 어긋나면 바로 폭발하기보다 오래 관찰하고 해석하지만, 한 번 닫힌 마음은 짧은 사과만으로 바로 풀리지 않는다.",
+                                        "strongLine":  "당신에게 신뢰는 말로 다시 세우는 것이 아니라, 같은 행동이 반복해서 쌓일 때 회복됩니다.",
+                                        "positiveUse":  "약속, 말투, 사과 방식, 재발 방지 기준을 차분히 정하면 관계의 안정감이 깊어진다.",
+                                        "risk":  "상대가 이미 끝난 일이라고 넘기면 INFJ는 혼자 마음속 결론을 내리고 거리를 둘 수 있다.",
+                                        "matchingMyeongliSignals":  [
+                                                                        "정인",
+                                                                        "정관",
+                                                                        "수"
+                                                                    ],
+                                        "productDomains":  [
+                                                               "marriage",
+                                                               "love",
+                                                               "compatibility"
+                                                           ],
+                                        "sourceCoverage":  "inferred"
+                                    },
+                                    {
+                                        "id":  "daily_reality_agreement",
+                                        "label":  "생활 현실 합의",
+                                        "plainKo":  "INFJ는 결혼의 의미와 가치관을 중요하게 보지만, 실제 생활은 돈, 가사, 가족 일정, 회복 시간의 합의가 있어야 안정된다. 깊은 대화만으로 생활 피로가 해결되지는 않는다.",
+                                        "strongLine":  "당신의 결혼은 마음의 깊이와 함께 생활의 역할표가 있을 때 덜 흔들립니다.",
+                                        "positiveUse":  "공동 예산, 가사 분담, 가족 행사 기준, 혼자 쉬는 시간을 미리 정해 정서 소모를 줄인다.",
+                                        "risk":  "생활 책임이 흐려지면 INFJ는 사랑이 부족해서가 아니라 안전감이 없어서 지친다.",
+                                        "matchingMyeongliSignals":  [
+                                                                        "정재",
+                                                                        "정관",
+                                                                        "토"
+                                                                    ],
+                                        "productDomains":  [
+                                                               "marriage",
+                                                               "money",
+                                                               "general"
+                                                           ],
+                                        "sourceCoverage":  "inferred"
                                     }
                                 ],
                    "parenting":  [

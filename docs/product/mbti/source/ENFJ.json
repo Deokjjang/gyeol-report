@@ -859,6 +859,44 @@
           "parenting"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "shared_care_responsibility",
+        "label": "돌봄 책임 분담",
+        "plainKo": "ENFJ는 결혼 생활에서 배우자와 가족의 상태를 먼저 읽고 챙기려 한다. 이 힘은 가정을 따뜻하게 만들지만, 돌봄과 감정 확인이 ENFJ 한 사람의 역할로 굳어지면 서운함이 쌓인다.",
+        "strongLine": "당신의 결혼은 당신만 애쓰는 구조가 아니라, 서로가 관계를 같이 책임질 때 안정됩니다.",
+        "positiveUse": "정서 대화, 집안일, 가족 일정, 돌봄 역할을 함께 나누면 ENFJ의 따뜻함이 지치지 않는다.",
+        "risk": "상대가 알아서 해주겠지라는 태도로 머물면 ENFJ는 사랑받는 감각보다 이용당하는 감각을 먼저 느낀다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정관",
+          "귀인"
+        ],
+        "productDomains": [
+          "marriage",
+          "parenting",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "family_social_boundary",
+        "label": "가족·사회 경계",
+        "plainKo": "ENFJ는 양가 가족, 친구, 모임, 사회적 평판까지 결혼 생활의 일부처럼 관리하려 한다. 관계망을 잘 챙기는 장점이 있지만, 부부만의 사생활과 쉬는 시간이 밀리면 가정이 계속 공개된 무대처럼 느껴진다.",
+        "strongLine": "당신은 관계를 넓게 챙기는 사람이라, 결혼에서는 바깥 사람보다 우리 둘의 경계를 먼저 세워야 합니다.",
+        "positiveUse": "경조사, 가족 모임, 커뮤니티 관계를 부드럽게 조율해 부부의 사회적 기반을 안정시킨다.",
+        "risk": "모든 사람을 만족시키려 하면 배우자는 우리 관계보다 주변 시선이 먼저라고 느낄 수 있다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "정관",
+          "식신"
+        ],
+        "productDomains": [
+          "marriage",
+          "general",
+          "love"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "parenting": [

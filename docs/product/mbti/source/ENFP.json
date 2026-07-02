@@ -824,6 +824,44 @@
           "money"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "freedom_with_agreement",
+        "label": "합의된 자유",
+        "plainKo": "ENFP는 결혼 안에서도 사람, 취미, 프로젝트, 새로운 경험을 탐색할 자유가 있어야 살아난다. 다만 자유가 일정, 돈, 약속의 기준 없이 흘러가면 배우자는 관계가 늘 즉흥에 맡겨진다고 느낀다.",
+        "strongLine": "당신의 자유는 막아야 할 것이 아니라, 함께 정한 기준 안에서 살아나야 관계를 지킵니다.",
+        "positiveUse": "개인 시간, 모임 빈도, 지출 한도, 여행 계획을 합의하면 ENFP의 생동감과 부부의 안정감이 함께 유지된다.",
+        "risk": "설렘을 이유로 합의를 계속 바꾸면 배우자는 사랑보다 불안정함을 먼저 느낀다.",
+        "matchingMyeongliSignals": [
+          "비견",
+          "역마",
+          "정재"
+        ],
+        "productDomains": [
+          "marriage",
+          "money",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "emotional_novelty_loop",
+        "label": "정서적 새로움",
+        "plainKo": "ENFP는 결혼 생활이 지나치게 반복되면 애정이 식은 것이 아닌데도 답답함을 크게 느낀다. 깊은 대화, 작은 이벤트, 함께 배우는 일처럼 관계 안에서 새로움을 만드는 루틴이 필요하다.",
+        "strongLine": "당신에게 결혼의 안정은 변화가 없는 상태가 아니라, 함께 계속 새로워지는 관계에서 나옵니다.",
+        "positiveUse": "정기 데이트, 가족 여행, 공동 프로젝트, 감정 대화 시간을 만들면 애정과 생활 리듬이 함께 살아난다.",
+        "risk": "새로움을 밖에서만 찾으면 배우자는 자신이 관계의 중심에서 밀려났다고 느낀다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "도화",
+          "목"
+        ],
+        "productDomains": [
+          "marriage",
+          "love",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "parenting": [
