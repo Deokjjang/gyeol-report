@@ -470,6 +470,82 @@
           "career"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "project_based_income",
+        "label": "프로젝트 수익",
+        "plainKo": "ENFP는 하나의 고정된 길보다 사람, 아이디어, 콘텐츠, 이벤트, 교육, 커뮤니티가 만나는 프로젝트형 수입과 잘 맞는다. 새 기회를 발견하고 사람을 연결하는 속도가 빠르다. 다만 프로젝트가 끝난 뒤 다음 수입으로 이어지는 장치를 만들지 않으면 매번 새 출발을 해야 한다.",
+        "strongLine": "당신의 돈은 사람과 아이디어가 만나는 프로젝트에서 살아나지만, 다음 매출로 이어지는 장치가 있어야 남습니다.",
+        "positiveUse": "콘텐츠, 강의, 행사, 상담, 캠페인, 브랜드 협업을 패키지화해 수익 흐름을 만든다.",
+        "risk": "재미있는 제안만 따라가면 수입은 바쁘게 움직이는데 정작 남는 구조가 약해진다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "도화",
+          "편재"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "possibility_spending_spread",
+        "label": "가능성 지출 분산",
+        "plainKo": "ENFP는 좋은 사람, 흥미로운 강의, 새 모임, 새로운 사업 아이디어를 보면 돈을 써볼 이유를 빨리 찾는다. 각각은 미래 가능성처럼 보이지만, 동시에 열리면 돈과 에너지가 흩어진다. 가능성 지출은 예산과 종료 기준이 있어야 성과로 남는다.",
+        "strongLine": "당신은 가능성을 보고 돈을 쓰는 사람이라서, 가능성마다 한도를 정해야 실제 결과가 남습니다.",
+        "positiveUse": "배움, 네트워킹, 장비, 콘텐츠 실험에 작은 예산을 배정해 빠르게 시장 반응을 확인한다.",
+        "risk": "설렘이 생길 때마다 결제하면 경험은 많아져도 저축과 실행 집중력이 약해진다.",
+        "matchingMyeongliSignals": [
+          "편재",
+          "겁재",
+          "역마"
+        ],
+        "productDomains": [
+          "money",
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "recurring_income_anchor",
+        "label": "반복 수입 기준점",
+        "plainKo": "ENFP가 자유롭게 움직이려면 오히려 반복 수입의 기준점이 필요하다. 정기 고객, 구독, 월 단위 패키지, 반복 강의, 유지 계약이 있으면 새 프로젝트를 벌여도 생활이 흔들리지 않는다. 안정 장치는 ENFP의 자유를 줄이는 것이 아니라 자유를 오래 쓰게 만든다.",
+        "strongLine": "당신에게 반복 수입은 답답한 틀이 아니라, 다음 모험을 가능하게 하는 안전판입니다.",
+        "positiveUse": "정기 상품, 멤버십, 월별 상담·교육 패키지, 재구매 구조로 수입 변동을 낮춘다.",
+        "risk": "반복 구조를 지루하다고 미루면 열정은 많아도 현금흐름이 매번 흔들린다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "식신",
+          "토"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "emotion_purchase_pause",
+        "label": "감정 결제 멈춤",
+        "plainKo": "ENFP는 기분이 올라오거나 사람과 분위기가 맞을 때 결정을 빠르게 내린다. 돈에서도 그 순간의 설렘, 응원하고 싶은 마음, 지금 아니면 놓칠 것 같은 감각이 결제를 당긴다. 큰 지출은 하루를 넘겨 식힌 뒤 결정해야 돈이 감정의 파도에 휩쓸리지 않는다.",
+        "strongLine": "당신의 지갑은 마음이 뜨거워질 때 가장 빨리 열리니, 큰돈은 하루 뒤에 결정해야 합니다.",
+        "positiveUse": "구매 전 대기 시간, 월별 자유 예산, 큰 지출 체크리스트를 두면 즐거움과 안정이 함께 간다.",
+        "risk": "순간의 분위기로 결제하면 다음 달 생활비와 장기 목표가 감정의 뒤처리를 하게 된다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "홍염",
+          "정재"
+        ],
+        "productDomains": [
+          "money",
+          "love",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "investment": [

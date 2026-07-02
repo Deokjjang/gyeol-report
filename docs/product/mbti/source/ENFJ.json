@@ -523,6 +523,63 @@
           "daeun"
         ],
         "sourceCoverage": "inferred"
+      },
+      {
+        "id": "growth_based_income",
+        "label": "성장 기반 수입",
+        "plainKo": "ENFJ의 수입은 사람을 성장시키고 조직을 움직이는 능력에서 만들어지기 쉽다. 교육, 상담, 브랜딩, 조직문화, 리더십, 대중 커뮤니케이션처럼 사람의 마음과 방향을 다루는 일이 돈으로 연결된다. 본인이 돕는 사람의 변화가 보일수록 일의 지속성도 커진다.",
+        "strongLine": "당신의 돈은 사람을 움직이고 성장시키는 힘이 직업 구조와 만날 때 커집니다.",
+        "positiveUse": "강의, 코칭, 상담, 커뮤니티 운영, 조직 리더십, 브랜드 메시지 설계에서 수입 기반을 만든다.",
+        "risk": "사람을 돕는 마음만 앞서면 무료 노동과 감정 노동이 늘고 실제 보상 구조는 약해진다.",
+        "matchingMyeongliSignals": [
+          "정관",
+          "정인",
+          "도화"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "status_and_care_spending",
+        "label": "체면·돌봄 지출",
+        "plainKo": "ENFJ는 관계의 분위기와 평판을 중요하게 보기에 모임, 선물, 경조사, 가족 지원, 좋은 인상을 위한 지출이 커지기 쉽다. 돈을 쓰는 순간에는 관계를 지키는 선택처럼 느껴지지만, 반복되면 자기 재정이 뒤로 밀린다. 체면 지출은 한도를 정해야 따뜻함이 부담으로 변하지 않는다.",
+        "strongLine": "당신은 관계를 지키려고 돈을 쓰지만, 한도 없는 배려는 결국 당신의 생활을 압박합니다.",
+        "positiveUse": "필요한 자리에서 센스 있게 쓰는 돈은 신뢰, 평판, 관계의 온도를 높인다.",
+        "risk": "좋은 사람으로 보이고 싶은 마음이 강해지면 거절하지 못한 지출이 고정비처럼 쌓인다.",
+        "matchingMyeongliSignals": [
+          "도화",
+          "정재",
+          "식신"
+        ],
+        "productDomains": [
+          "money",
+          "general",
+          "marriage"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "support_limit_rule",
+        "label": "지원 한도",
+        "plainKo": "ENFJ는 상대의 가능성을 보면 시간, 돈, 인맥, 기회를 함께 밀어주고 싶어 한다. 이 힘은 사람을 살리는 장점이지만, 상대가 스스로 책임져야 할 비용까지 대신 감당하면 관계가 불균형해진다. 지원은 금액보다 기준이 먼저다.",
+        "strongLine": "당신의 지원은 사람을 키우지만, 기준이 없으면 상대의 책임까지 떠안게 됩니다.",
+        "positiveUse": "멘토링, 교육비, 가족 지원, 팀 운영비를 목표와 기간으로 정리해 건강한 도움을 만든다.",
+        "risk": "상대의 성장을 믿는 마음이 강해질수록 회수되지 않는 지출과 감정 책임이 커진다.",
+        "matchingMyeongliSignals": [
+          "귀인",
+          "겁재",
+          "편재"
+        ],
+        "productDomains": [
+          "money",
+          "parenting",
+          "compatibility"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "investment": [

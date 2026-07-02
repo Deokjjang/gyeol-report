@@ -555,7 +555,7 @@
                                  {
                                      "id":  "avoid_impulse_spending_noise",
                                      "label":  "감정 소모형 소비 주의",
-                                     "plainKo":  "원문에 구체적인 소비 습관은 부족하지만, INFJ의 예민함과 소진 패턴을 보면 감정 피로를 줄이기 위한 회피성 예약, 취소, 휴식 소비가 생기기 쉽다.",
+                                     "plainKo":  "INFJ는 예민함과 소진이 쌓일수록 감정 피로를 줄이기 위한 예약, 휴식, 조용한 공간, 창작 도구에 돈을 쓰기 쉽다. 소비의 목적은 과시보다 회복과 마음의 정리 쪽에 가깝다.",
                                      "strongLine":  "당신은 사치를 위해 쓰기보다 지친 마음을 회복하려고 돈을 쓰기 쉽습니다.",
                                      "positiveUse":  "휴식, 책, 상담, 창작 도구처럼 회복과 성장에 쓰는 돈은 삶의 질을 높인다.",
                                      "risk":  "피로할 때 결정한 예약과 구매는 취소·후회로 이어질 수 있다.",
@@ -567,6 +567,63 @@
                                      "productDomains":  [
                                                             "money",
                                                             "general"
+                                                        ],
+                                     "sourceCoverage":  "inferred"
+                                 },
+                                 {
+                                     "id":  "quiet_accumulation_money",
+                                     "label":  "조용한 축적",
+                                     "plainKo":  "INFJ는 단기 성과를 과시하기보다 조용히 실력과 신뢰를 쌓아 돈의 기반을 만든다. 상담, 교육, 연구, 창작처럼 시간이 지나며 평판이 붙는 분야에서 수입 지속성이 생긴다. 빠르게 많이 벌겠다는 압박보다 오래 할 수 있는 구조를 잡는 편이 맞다.",
+                                     "strongLine":  "당신의 돈은 큰 소리로 끌어오는 돈보다, 오래 쌓인 신뢰에서 조용히 커지는 돈입니다.",
+                                     "positiveUse":  "장기 고객, 전문 포트폴리오, 꾸준한 콘텐츠, 신뢰 기반 소개로 안정적인 수입 흐름을 만든다.",
+                                     "risk":  "성과를 너무 늦게 드러내거나 가격을 낮게 잡으면 깊이에 비해 보상이 작아진다.",
+                                     "matchingMyeongliSignals":  [
+                                                                     "정재",
+                                                                     "정인",
+                                                                     "문창"
+                                                                 ],
+                                     "productDomains":  [
+                                                            "money",
+                                                            "career",
+                                                            "daeun"
+                                                        ],
+                                     "sourceCoverage":  "inferred"
+                                 },
+                                 {
+                                     "id":  "helping_boundary_spending",
+                                     "label":  "도움 지출 경계",
+                                     "plainKo":  "INFJ는 가까운 사람의 고통과 필요를 깊게 읽기 때문에 도움을 주는 돈이 자연스럽게 나온다. 좋은 의도라도 반복되면 상담비, 선물, 후원, 대신 책임지는 비용이 생활비를 압박한다. 돕는 돈은 한도를 정해야 관계도 재정도 오래 간다.",
+                                     "strongLine":  "당신은 사람을 살리려는 마음으로 돈을 쓰지만, 경계 없는 도움은 당신의 안전판부터 흔듭니다.",
+                                     "positiveUse":  "필요한 순간에 깊이 있는 지원을 하며 신뢰와 관계의 회복력을 만든다.",
+                                     "risk":  "상대의 문제를 자기 책임처럼 떠안으면 정서 소진과 재정 소모가 동시에 커진다.",
+                                     "matchingMyeongliSignals":  [
+                                                                     "귀인",
+                                                                     "정인",
+                                                                     "겁재"
+                                                                 ],
+                                     "productDomains":  [
+                                                            "money",
+                                                            "general",
+                                                            "love"
+                                                        ],
+                                     "sourceCoverage":  "inferred"
+                                 },
+                                 {
+                                     "id":  "perfection_delay_income",
+                                     "label":  "완성 지연 리스크",
+                                     "plainKo":  "INFJ는 결과물의 의미와 완성도를 깊게 보려 해서 판매, 제안, 공개, 계약을 미루기 쉽다. 돈은 내면의 확신만으로 들어오지 않고, 가격표와 제안서와 마감으로 현실에 연결된다. 완벽함보다 공개 가능한 기준을 정해야 수입이 움직인다.",
+                                     "strongLine":  "당신은 더 완벽해진 뒤 팔려고 하지만, 돈은 공개와 제안이 시작되는 순간부터 움직입니다.",
+                                     "positiveUse":  "품질 기준을 유지하면서도 출시일, 가격, 계약 조건을 정해 전문성을 실제 수입으로 전환한다.",
+                                     "risk":  "더 준비해야 한다는 생각이 길어지면 실력은 쌓여도 현금흐름은 늦게 열린다.",
+                                     "matchingMyeongliSignals":  [
+                                                                     "편인",
+                                                                     "식신",
+                                                                     "정재"
+                                                                 ],
+                                     "productDomains":  [
+                                                            "money",
+                                                            "career",
+                                                            "study"
                                                         ],
                                      "sourceCoverage":  "inferred"
                                  }

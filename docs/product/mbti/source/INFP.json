@@ -580,6 +580,63 @@
           "general"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "value_pricing_gap",
+        "label": "가치 가격화",
+        "plainKo": "INFP는 좋아서 하는 일, 의미 있는 일, 누군가에게 도움이 되는 일을 돈으로 환산할 때 머뭇거리기 쉽다. 정성과 진심이 들어갈수록 가격을 낮추거나 무료로 넘기려는 마음이 생긴다. 하지만 자신의 가치에 가격을 붙이지 않으면 지속할 힘도 약해진다.",
+        "strongLine": "당신은 진심을 팔고 싶지 않아 하지만, 가격을 세우지 않으면 좋아하는 일도 오래 지키기 어렵습니다.",
+        "positiveUse": "창작, 상담, 교육, 돌봄, 개인 브랜드의 가치를 패키지와 가격표로 정리해 안정적인 수입을 만든다.",
+        "risk": "좋은 마음으로 계속 낮게 받으면 상대는 편해지고 본인은 지쳐서 관계와 일 모두 흔들린다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "식신",
+          "도화"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "general"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "emotional_spending_shelter",
+        "label": "감정 피난 소비",
+        "plainKo": "INFP의 소비는 과시보다 마음을 달래고 자기 세계를 지키는 방향으로 흐르기 쉽다. 책, 음악, 굿즈, 취향 물건, 조용한 공간, 창작 도구가 감정의 피난처가 된다. 문제는 작은 위로 지출이 반복되면 생활비와 저축의 경계가 흐려진다는 점이다.",
+        "strongLine": "당신은 사치하려고 쓰기보다 마음을 지키려고 쓰지만, 위로도 반복되면 고정비가 됩니다.",
+        "positiveUse": "취향과 창작에 쓰는 돈을 결과물, 회복 루틴, 작업 환경으로 연결하면 삶의 질과 생산성이 함께 오른다.",
+        "risk": "상처받은 날마다 작은 소비로 버티면 감정은 잠깐 풀려도 돈의 불안은 더 커진다.",
+        "matchingMyeongliSignals": [
+          "편인",
+          "식신",
+          "수"
+        ],
+        "productDomains": [
+          "money",
+          "general",
+          "love"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "buffer_and_auto_money",
+        "label": "완충금 자동화",
+        "plainKo": "INFP는 현실 관리가 감정적으로 부담스러울수록 돈 문제를 미루기 쉽다. 그래서 생활비, 비상금, 세금, 저축은 의지보다 자동이체와 계좌 분리로 먼저 묶어야 한다. 완충금이 생기면 의미 있는 선택도 불안에 덜 흔들린다.",
+        "strongLine": "당신에게 돈 관리의 핵심은 더 독하게 사는 것이 아니라, 미루기 전에 자동으로 지켜지는 구조를 만드는 것입니다.",
+        "positiveUse": "고정 저축, 생활비 계좌, 비상금 계좌를 분리해 창작과 관계 선택의 안전판을 만든다.",
+        "risk": "돈 이야기를 피하면 당장은 마음이 편해도 계약, 청구, 세금, 생활비 문제가 한꺼번에 몰린다.",
+        "matchingMyeongliSignals": [
+          "정재",
+          "정인",
+          "토"
+        ],
+        "productDomains": [
+          "money",
+          "career",
+          "marriage"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "investment": [
