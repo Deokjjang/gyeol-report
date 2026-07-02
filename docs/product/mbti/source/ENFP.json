@@ -697,6 +697,41 @@
           "daeun"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "completion_checkpoint",
+        "label": "완료 체크포인트",
+        "plainKo": "ENFP는 시작이 빠르고 자료를 넓게 모으지만, 마무리 단계에서 흥미가 떨어지기 쉽다. 공부를 끝까지 가져가려면 큰 목표보다 오늘 끝낼 산출물과 짧은 체크포인트가 필요하다.",
+        "strongLine": "당신의 공부는 시작보다 마무리가 관건이고, 마무리는 작은 완료 기준이 있을 때 살아납니다.",
+        "positiveUse": "짧은 제출물, 하루 단위 목표, 체크리스트, 스터디 공유로 산만한 에너지를 결과로 묶는다.",
+        "risk": "새 자료를 계속 찾다 보면 정작 외워야 할 것과 풀어야 할 문제를 뒤로 미룬다.",
+        "matchingMyeongliSignals": [
+          "식신",
+          "문창",
+          "토"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "repeat_training_anchor",
+        "label": "반복 훈련 앵커",
+        "plainKo": "ENFP는 새로운 연결과 토론에는 강하지만, 같은 문제를 여러 번 돌리는 반복 훈련은 쉽게 지루해진다. 시험과 자격증 준비에서는 기초 문제, 암기 카드, 오답 회전을 짧게라도 매일 고정해야 한다.",
+        "strongLine": "당신의 호기심은 공부를 켜지만, 반복 훈련 앵커가 있어야 시험장에서 흔들리지 않습니다.",
+        "positiveUse": "암기 카드, 오답 회전, 짧은 타이머, 과목별 최소 반복 횟수로 실전 안정성을 만든다.",
+        "risk": "재미 있는 연결만 따라가면 기본 점수를 지키는 반복 구간이 약해진다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "문창",
+          "토"
+        ],
+        "productDomains": [
+          "study"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "love": [

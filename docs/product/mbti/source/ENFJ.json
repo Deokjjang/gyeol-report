@@ -717,8 +717,8 @@
       {
         "id": "answer_leader_child",
         "label": "대답왕 기질",
-        "plainKo": "ENFJ 자녀는 높은 외향성과 지식욕 때문에 교실에서 적극적으로 답하고 친구들을 격려하는 아이로 보일 수 있다.",
-        "strongLine": "ENFJ 아이는 배운 것을 가만히 품고 있기보다 말하고 나누며 반의 분위기를 움직인다.",
+        "plainKo": "ENFJ는 높은 외향성과 지식욕 때문에 수업에서 적극적으로 답하고 주변의 참여를 끌어내기 쉽다. 배운 것을 말하고 나눌 때 이해가 빨리 굳어진다.",
+        "strongLine": "ENFJ는 배운 것을 가만히 품고 있기보다 말하고 나누며 분위기 속에서 자기 것으로 만듭니다.",
         "positiveUse": "발표, 토론, 역할극, 협동 학습에서 자신감을 얻는다.",
         "risk": "칭찬과 반응에 지나치게 의존하면 조용한 집중 훈련이 부족해질 수 있다.",
         "matchingMyeongliSignals": [
@@ -731,6 +731,41 @@
           "study"
         ],
         "sourceCoverage": "direct"
+      },
+      {
+        "id": "protected_solo_study_time",
+        "label": "혼자 공부 시간 방어",
+        "plainKo": "ENFJ는 사람의 기대와 팀 분위기를 잘 읽지만, 그만큼 다른 사람 일정과 감정 관리에 공부 에너지를 빼앗기기 쉽다. 시험 준비에서는 하루 중 가장 좋은 시간을 자기 공부에 먼저 고정해야 한다.",
+        "strongLine": "당신의 공부는 남을 챙기고 남는 시간에 하는 것이 아니라, 먼저 지켜 둔 시간에서 살아납니다.",
+        "positiveUse": "아침 집중 시간, 혼자 푸는 시간, 연락 차단 시간, 개인 목표표를 정하면 성과가 안정된다.",
+        "risk": "타인의 부탁과 분위기를 계속 우선하면 자기 진도는 늘 마지막으로 밀린다.",
+        "matchingMyeongliSignals": [
+          "정인",
+          "정관",
+          "수"
+        ],
+        "productDomains": [
+          "study",
+          "career"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "id": "objective_logic_drill",
+        "label": "객관식·논리 드릴",
+        "plainKo": "ENFJ는 발표와 설명에는 강하지만 객관식, 수식, 논리 과목에서는 감정적 이해만으로 부족할 수 있다. 설명한 뒤에는 제한 시간 풀이와 오답 근거 기록으로 혼자 검증해야 한다.",
+        "strongLine": "당신은 잘 설명하는 힘이 있지만, 시험에서는 혼자 맞히는 반복 훈련까지 붙어야 점수가 안정됩니다.",
+        "positiveUse": "제한 시간 풀이, 근거 표시, 객관식 오답표, 혼자 복습 루틴으로 실전 감각을 만든다.",
+        "risk": "사람 앞에서 잘 말한 느낌만 믿으면 조용한 시험장에서 빈틈이 드러난다.",
+        "matchingMyeongliSignals": [
+          "문창",
+          "금",
+          "정인"
+        ],
+        "productDomains": [
+          "study"
+        ],
+        "sourceCoverage": "inferred"
       }
     ],
     "love": [
