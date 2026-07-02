@@ -2448,88 +2448,174 @@
                                                    }
                                                ]
                           },
-    "myeongliBridgeHints":  [
-                                {
-                                    "signal":  "도화",
-                                    "reason":  "사람을 끌어들이고 분위기를 살리는 사교성, 반응성, 대중 이미지 감각과 연결된다.",
-                                    "relatedTraits":  [
-                                                          "social_adaptation_engine",
-                                                          "visible_leadership",
-                                                          "small_talk_bonding"
-                                                      ],
-                                    "productDomains":  [
-                                                           "general",
-                                                           "love",
-                                                           "career",
-                                                           "compatibility"
-                                                       ],
-                                    "sourceCoverage":  "inferred"
-                                },
-                                {
-                                    "signal":  "정관",
-                                    "reason":  "예의, 역할, 전통, 책임, 조직 질서와 안정적 직업관을 해석하는 데 쓸 수 있다.",
-                                    "relatedTraits":  [
-                                                          "routine_loyalist",
-                                                          "structured_future_career",
-                                                          "traditional_role_expectation"
-                                                      ],
-                                    "productDomains":  [
-                                                           "career",
-                                                           "marriage",
-                                                           "parenting",
-                                                           "daeun"
-                                                       ],
-                                    "sourceCoverage":  "inferred"
-                                },
-                                {
-                                    "signal":  "식신",
-                                    "reason":  "돌봄, 베풂, 실용적 도움, 따뜻한 표현이 생활 속 행동으로 드러나는 패턴과 맞다.",
-                                    "relatedTraits":  [
-                                                          "warm_provider_identity",
-                                                          "care_based_romance",
-                                                          "practical_thinking"
-                                                      ],
-                                    "productDomains":  [
-                                                           "general",
-                                                           "love",
-                                                           "career",
-                                                           "money"
-                                                       ],
-                                    "sourceCoverage":  "inferred"
-                                },
-                                {
-                                    "signal":  "정인",
-                                    "reason":  "보호, 기억, 안정 욕구, 가족과 공동체를 돌보는 성향과 연결된다.",
-                                    "relatedTraits":  [
-                                                          "fe_si_file_cabinet",
-                                                          "protective_parenting",
-                                                          "service_helping_fit"
-                                                      ],
-                                    "productDomains":  [
-                                                           "parenting",
-                                                           "child",
-                                                           "career",
-                                                           "general"
-                                                       ],
-                                    "sourceCoverage":  "inferred"
-                                },
-                                {
-                                    "signal":  "토",
-                                    "reason":  "생활력, 반복 루틴, 안정, 가족과 조직의 기반을 유지하려는 성향을 해석하는 보조 신호로 쓸 수 있다.",
-                                    "relatedTraits":  [
-                                                          "repeat_process_strength",
-                                                          "domestic_spouse_pattern",
-                                                          "stability_first_investment"
-                                                      ],
-                                    "productDomains":  [
-                                                           "money",
-                                                           "marriage",
-                                                           "career",
-                                                           "daeun"
-                                                       ],
-                                    "sourceCoverage":  "inferred"
-                                }
-                            ],
+    "myeongliBridgeHints": [
+      {
+        "signal": "도화",
+        "reason": "도화는 사람을 끌어들이고 분위기를 살리는 사교성, 반응성, 대중 이미지 감각과 연결한다. 관계·커리어 문장에서는 장점으로 쓰되 인정 욕구와 평판 피로를 함께 점검한다.",
+        "relatedTraits": [
+          "social_adaptation_engine",
+          "visible_leadership",
+          "small_talk_bonding"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "career",
+          "compatibility",
+          "relationship"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "정관",
+        "reason": "정관은 예의, 역할, 전통, 책임, 조직 질서와 연결한다. 결혼·직장 문장에서는 안정감을 만들지만 역할 기대와 체면 책임이 과해지는 흐름을 같이 본다.",
+        "relatedTraits": [
+          "routine_loyalist",
+          "structured_future_career",
+          "traditional_role_expectation"
+        ],
+        "productDomains": [
+          "career",
+          "workplace",
+          "marriage",
+          "parenting",
+          "daeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "식신",
+        "reason": "식신은 돌봄, 베풂, 실용적 도움, 따뜻한 표현이 생활 속 행동으로 드러나는 패턴과 연결한다. 돈 문장에서는 챙김과 관계 지출이 커질 때 예산 기준을 붙인다.",
+        "relatedTraits": [
+          "warm_provider_identity",
+          "care_based_romance",
+          "practical_thinking"
+        ],
+        "productDomains": [
+          "general",
+          "love",
+          "career",
+          "money",
+          "relationship"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "정인",
+        "reason": "정인은 보호, 기억, 안정 욕구, 가족과 공동체를 돌보는 성향과 연결한다. ESFJ에게는 신뢰를 만드는 힘이지만 감정 노동과 과도한 책임을 구분하는 보완 신호가 된다.",
+        "relatedTraits": [
+          "fe_si_file_cabinet",
+          "protective_parenting",
+          "service_helping_fit"
+        ],
+        "productDomains": [
+          "parenting",
+          "child",
+          "career",
+          "general",
+          "growth"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "정재",
+        "reason": "정재는 생활비, 가족 예산, 고정비, 관계 유지 비용을 관리하는 단서로 쓴다. ESFJ에게는 사람을 챙기는 소비와 장기 재정 균형을 함께 보게 한다.",
+        "relatedTraits": [
+          "domestic_spouse_pattern",
+          "stability_first_investment",
+          "practical_thinking"
+        ],
+        "productDomains": [
+          "money",
+          "investment",
+          "marriage",
+          "growth"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "귀인",
+        "reason": "귀인은 도움, 완충, 보호 장치와 연결한다. ESFJ에게는 주변을 살피는 능력과 함께, 도움을 혼자 떠안지 않고 나누는 관계 전략으로 활용한다.",
+        "relatedTraits": [
+          "service_helping_fit",
+          "warm_provider_identity",
+          "social_adaptation_engine"
+        ],
+        "productDomains": [
+          "career",
+          "relationship",
+          "compatibility",
+          "growth"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "문창",
+        "reason": "문창은 설명, 기억, 기록, 스터디, 체크인을 통해 관계와 학습을 정리하는 단서다. 공부·직장 문장에서는 사람 일정에 휩쓸리지 않고 자기 집중 시간을 확보하게 한다.",
+        "relatedTraits": [
+          "fe_si_file_cabinet",
+          "repeat_process_strength",
+          "structured_future_career"
+        ],
+        "productDomains": [
+          "study",
+          "career",
+          "workplace",
+          "growth"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "토",
+        "reason": "토 기운은 생활력, 반복 루틴, 안정, 가족과 조직의 기반을 유지하려는 성향과 연결한다. 강하게 보이면 안정 운영은 커지지만 변화와 감정 표현이 늦어지는지도 같이 본다.",
+        "relatedTraits": [
+          "repeat_process_strength",
+          "domestic_spouse_pattern",
+          "stability_first_investment"
+        ],
+        "productDomains": [
+          "money",
+          "marriage",
+          "career",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "수",
+        "reason": "수 기운은 감정 분위기, 서운함 누적, 관계 회복 욕구와 연결한다. 관계 문장에서는 감사 표현을 기다리기만 하지 않고 필요한 표현과 역할을 말로 요청하게 한다.",
+        "relatedTraits": [
+          "care_based_romance",
+          "small_talk_bonding",
+          "warm_provider_identity"
+        ],
+        "productDomains": [
+          "love",
+          "relationship",
+          "marriage",
+          "growth"
+        ],
+        "sourceCoverage": "inferred"
+      },
+      {
+        "signal": "합충형파해",
+        "reason": "합충형파해는 가족 행사, 사회관계, 생활 기준이 흔들리는 전환 신호로 읽는다. ESFJ에게는 모두를 맞추려 하기보다 돈, 돌봄, 역할, 감정 표현 기준을 다시 나누게 한다.",
+        "relatedTraits": [
+          "traditional_role_expectation",
+          "domestic_spouse_pattern",
+          "service_helping_fit"
+        ],
+        "productDomains": [
+          "relationship",
+          "marriage",
+          "career",
+          "daeun",
+          "saeun"
+        ],
+        "sourceCoverage": "inferred"
+      }
+    ],
     "reportUseCases": {
       "generalReport": [
         "selfUnderstanding 섹션에서는 정서 교류, 인정 표현, 배려, 소속감, 관계 관리, 생활력을 ESFJ의 기본 정체성으로 사용한다.",

@@ -2358,78 +2358,122 @@
   "myeongliBridgeHints": [
     {
       "signal": "정관",
-      "reason": "규칙, 책임, 위계, 공정성, 사회적 역할을 중시하는 ESTJ의 핵심 성향과 직접 연결된다.",
+      "reason": "정관이 강하게 보일 때는 ESTJ의 책임, 역할 분담, 공정성, 사회적 역할 기준과 함께 읽는다. 조직·결혼 문장에서는 안정 운영이 강점이지만 기준이 압박으로 전달되는지도 같이 본다.",
       "productDomains": [
         "general",
         "career",
         "marriage",
-        "parenting"
+        "parenting",
+        "relationship"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "편관",
-      "reason": "강한 추진력, 통제, 위기 대응, 성과 압박, 리더십의 단호함과 연결된다.",
+      "reason": "편관은 강한 추진력, 위기 대응, 성과 압박, 리더십의 단호함과 연결한다. 스트레스 문장에서는 빠른 지시가 통제로 읽히지 않도록 권한과 피드백 방식을 나누게 한다.",
       "productDomains": [
         "career",
         "general",
         "compatibility",
+        "workplace",
         "saeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "정재",
-      "reason": "경제 안정, 손익계산, 책임 있는 돈 관리, 안정적 지위 추구와 연결된다.",
+      "reason": "정재는 예산 통제, 손익 계산, 안정 수입, 가족 재정 관리와 연결한다. 돈·투자 문장에서는 관리 강점과 함께 돈으로 역할을 압박하는 리스크를 점검하게 한다.",
       "productDomains": [
         "money",
         "investment",
         "career",
-        "marriage"
+        "marriage",
+        "growth"
       ],
       "sourceCoverage": "direct"
     },
     {
+      "signal": "편재",
+      "reason": "편재는 확장, 거래, 빠른 기회 판단, 자원 배분과 연결한다. ESTJ에게는 운영 능력을 키우는 신호가 될 수 있지만 과도한 집중 투자와 무리한 확장을 한도 기준으로 조율해야 한다.",
+      "productDomains": [
+        "money",
+        "investment",
+        "career",
+        "daeun"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
       "signal": "정인",
-      "reason": "검증된 방식, 전통, 교육, 매뉴얼, 루틴 학습 성향과 연결된다.",
+      "reason": "정인은 검증된 방식, 전통, 교육, 매뉴얼, 루틴 학습과 연결한다. 공부·직업 문장에서는 목표 관리와 반복력을 살리되, 새 방식과 유연한 과목에서 굳지 않게 한다.",
       "productDomains": [
         "study",
         "parenting",
         "career",
-        "general"
+        "general",
+        "growth"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "현침살",
-      "reason": "문제점을 빠르게 포착하고 직접 지적하는 직설 화법과 세밀한 관리 성향과 연결된다.",
+      "reason": "현침살은 문제점을 빠르게 포착하고 직접 지적하는 화법, 세밀한 관리 성향과 연결한다. 관계·직장에서는 정확한 지적이 평가처럼 들릴 수 있어 말의 순서와 인정 표현을 함께 제시한다.",
       "productDomains": [
         "career",
         "compatibility",
-        "general"
+        "general",
+        "relationship",
+        "workplace"
       ],
       "sourceCoverage": "direct"
     },
     {
+      "signal": "식상",
+      "reason": "식상은 결과물, 설명, 피드백, 실행 성과를 밖으로 드러내는 단서다. ESTJ에게는 해결책만 던지기보다 상대가 이해할 수 있는 말과 정서 확인을 붙이는 보완 신호가 된다.",
+      "productDomains": [
+        "career",
+        "relationship",
+        "study",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
       "signal": "금",
-      "reason": "정확성, 규정, 절차, 판단, 교정, 기준 중심 사고와 연결된다.",
+      "reason": "금 기운은 정확성, 규정, 절차, 판단, 교정, 기준 중심 판단과 연결한다. 강하게 보이면 효율이 올라가지만 사람의 감정 속도를 놓칠 수 있어 위임과 감정 확인을 같이 쓴다.",
       "productDomains": [
         "career",
         "study",
-        "compatibility"
+        "compatibility",
+        "relationship",
+        "growth"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "토",
-      "reason": "안정, 보수성, 조직화, 지속성, 생활 기반을 중시하는 성향과 연결된다.",
+      "reason": "토 기운은 안정, 조직화, 지속성, 생활 기반을 중시하는 성향과 연결한다. 대운·세운에서는 운영 기반을 다지는 흐름으로 읽되, 변화 지연과 과도한 통제를 같이 점검한다.",
       "productDomains": [
         "general",
         "money",
         "marriage",
-        "parenting"
+        "parenting",
+        "daeun",
+        "saeun"
       ],
       "sourceCoverage": "direct"
+    },
+    {
+      "signal": "합충형파해",
+      "reason": "합충형파해는 조직 권한, 가족 역할, 생활 기준이 흔들리는 전환 신호로 읽는다. ESTJ에게는 통제 강화보다 역할, 권한, 돈, 일정 기준을 다시 합의하는 힌트로 쓴다.",
+      "productDomains": [
+        "relationship",
+        "marriage",
+        "career",
+        "daeun",
+        "saeun"
+      ],
+      "sourceCoverage": "inferred"
     }
   ],
   "reportUseCases": {

@@ -2009,11 +2009,12 @@
   "myeongliBridgeHints": [
     {
       "signal": "정관",
-      "reason": "규칙, 책임, 절차, 평가 기준을 중시하는 ISTJ의 핵심 기질과 잘 맞는다.",
+      "reason": "정관이 강하게 보일 때는 ISTJ의 책임감, 약속 이행, 절차 준수, 역할 기준을 함께 읽는다. 관계와 일에서는 신뢰를 만들지만 기준이 굳으면 변화 피로와 감정 표현 부족을 같이 점검한다.",
       "productDomains": [
         "general",
         "career",
         "marriage",
+        "relationship",
         "saeun",
         "daeun"
       ],
@@ -2021,60 +2022,105 @@
     },
     {
       "signal": "정재",
-      "reason": "안정 수입, 고정비, 저축, 계약, 생활 기반을 중시하는 돈 감각과 연결된다.",
+      "reason": "정재는 안정 수입, 고정비, 저축, 계약, 생활 기반을 중시하는 돈 감각과 연결한다. 가족 공동재정과 투자 판단에서는 안전 기준이 강해질 수 있어 현금 흐름과 역할 분담을 같이 보게 한다.",
       "productDomains": [
         "money",
         "investment",
-        "marriage"
+        "marriage",
+        "growth"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "현침살",
-      "reason": "논리적 오류나 시스템 결함을 날카롭게 짚는 말투와 연결된다.",
+      "reason": "현침살은 오류, 누락, 시스템 결함을 빠르게 짚는 말투와 연결한다. 업무에서는 품질 관리 강점이지만 관계에서는 지적처럼 들릴 수 있어 말의 강도와 회복 문장을 함께 붙인다.",
       "productDomains": [
         "general",
         "career",
-        "compatibility"
+        "compatibility",
+        "relationship",
+        "saeun"
       ],
       "sourceCoverage": "inferred"
     },
     {
       "signal": "정인",
-      "reason": "반복 학습, 자격증, 문서, 매뉴얼, 전통 교육 환경에서 강한 면과 연결된다.",
+      "reason": "정인은 반복 학습, 자격증, 문서, 매뉴얼, 검증된 방식에 강한 흐름으로 읽는다. 공부와 직업 문장에서는 성실한 축적을 살리되 새 유형 문제와 변화형 과제에 굳지 않게 한다.",
       "productDomains": [
         "study",
-        "career"
+        "career",
+        "workplace",
+        "growth"
       ],
       "sourceCoverage": "direct"
     },
     {
+      "signal": "식상",
+      "reason": "식상은 감정과 생각을 결과물, 기록, 보고, 말로 꺼내는 보완 단서다. ISTJ에게는 행동으로만 책임지지 않고 필요한 애정 표현과 피드백을 작게 드러내게 하는 힌트로 쓴다.",
+      "productDomains": [
+        "love",
+        "relationship",
+        "career",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "비겁",
+      "reason": "비겁은 자기 기준, 독립성, 검증된 방식에 대한 고집과 연결한다. 조직·관계에서는 책임을 혼자 떠안거나 상대의 방식을 쉽게 신뢰하지 못하는 흐름을 조율하게 한다.",
+      "productDomains": [
+        "general",
+        "workplace",
+        "relationship",
+        "marriage"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
       "signal": "토",
-      "reason": "관리, 책임, 축적, 안정, 현실 기반을 중시하는 성향과 연결된다.",
+      "reason": "토 기운은 관리, 책임, 축적, 안정, 현실 기반을 중시하는 성향과 연결한다. 대운·세운에서 강하면 생활 기반을 다지는 시기로 읽되, 루틴이 과해질 때 변화 적응 전략을 함께 쓴다.",
       "productDomains": [
         "general",
         "money",
-        "daeun"
+        "marriage",
+        "daeun",
+        "saeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "금",
-      "reason": "판단, 절단, 규칙, 기술, 냉정한 오류 검증과 연결된다.",
+      "reason": "금 기운은 판단, 절단, 규칙, 기술, 냉정한 오류 검증과 연결한다. 강하게 보이면 일 처리 정확도는 올라가지만 감정 완충이 줄 수 있어 관계 문장에 표현 조율을 붙인다.",
       "productDomains": [
         "career",
         "general",
-        "study"
+        "study",
+        "relationship",
+        "growth"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "수",
-      "reason": "회복, 감정 유동성, 관계 완충이 부족하거나 보완이 필요한 영역으로 연결된다.",
+      "reason": "수 기운은 회복, 감정 유동성, 관계 완충을 보완하는 신호로 활용한다. ISTJ에게는 사실 정리만으로 끝내지 않고 감정 언어와 휴식 시간을 확보하게 하는 성장 단서가 된다.",
       "productDomains": [
         "love",
         "marriage",
-        "general"
+        "general",
+        "relationship",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "합충형파해",
+      "reason": "합충형파해는 환경 변화와 관계 마찰이 ISTJ의 안정 운영을 흔드는 신호로 읽는다. 이때는 원칙을 포기하기보다 돈, 일정, 역할, 감정 표현 빈도를 다시 합의하는 문장에 쓴다.",
+      "productDomains": [
+        "relationship",
+        "marriage",
+        "career",
+        "daeun",
+        "saeun"
       ],
       "sourceCoverage": "inferred"
     }

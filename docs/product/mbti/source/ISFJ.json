@@ -2238,21 +2238,23 @@
   "myeongliBridgeHints": [
     {
       "signal": "정인",
-      "reason": "돌봄, 보호, 기억, 회복, 생활 안정, 교육·의료 적성과 연결된다.",
+      "reason": "정인은 돌봄, 보호, 기억, 회복, 생활 안정과 연결한다. ISFJ에게는 안정감을 주는 힘이지만, 타인의 필요를 먼저 챙기며 자기 돈과 시간을 소모하는 흐름도 같이 점검한다.",
       "productDomains": [
         "general",
         "career",
         "love",
-        "parenting"
+        "parenting",
+        "growth"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "정관",
-      "reason": "책임, 역할, 규칙, 조직 안정, 예의와 형식 중시 성향과 연결된다.",
+      "reason": "정관은 책임, 역할, 예의, 조직 안정, 가족 의무를 다루는 단서다. 결혼·직장 문장에서는 오래 지키는 신뢰를 강조하되 역할이 불균형해질 때 서운함이 쌓이는 구조를 함께 쓴다.",
       "productDomains": [
         "career",
         "marriage",
+        "relationship",
         "daeun",
         "saeun"
       ],
@@ -2260,61 +2262,93 @@
     },
     {
       "signal": "귀인",
-      "reason": "타인을 돕고 신뢰를 만드는 조력자 이미지와 연결된다.",
+      "reason": "귀인은 도움, 완충, 보호 장치의 신호로 활용한다. ISFJ에게는 타인을 돕는 신뢰와 함께, 도움을 받는 것과 거절을 배우는 성장 포인트를 같이 연결한다.",
       "productDomains": [
         "general",
         "career",
-        "love"
+        "love",
+        "relationship",
+        "growth"
       ],
       "sourceCoverage": "inferred"
     },
     {
       "signal": "토",
-      "reason": "안정, 루틴, 가족과 조직의 기반, 책임을 오래 붙잡는 성향과 연결된다.",
+      "reason": "토 기운은 안정, 루틴, 가족과 조직의 기반, 오래 붙잡는 책임감과 연결한다. 강하게 보이면 생활을 지키는 힘이 되지만 변화와 감정 표현을 미루는 리스크를 함께 본다.",
       "productDomains": [
         "general",
         "career",
         "marriage",
-        "parenting"
+        "parenting",
+        "daeun"
       ],
       "sourceCoverage": "direct"
     },
     {
       "signal": "수",
-      "reason": "감정 분위기 감지, 관계 상처, 자기 감정 표현 보완 과제와 연결된다.",
+      "reason": "수 기운은 감정 분위기 감지, 관계 상처, 조용한 회복 욕구와 연결한다. 스트레스 문장에서는 참고 맞추는 시간이 길어질수록 감정 표현과 휴식 루틴을 세우게 한다.",
       "productDomains": [
         "love",
         "compatibility",
-        "general"
+        "general",
+        "relationship",
+        "growth"
       ],
       "sourceCoverage": "inferred"
     },
     {
       "signal": "식신",
-      "reason": "실질적 도움, 챙김, 선물, 생활 지원처럼 애정을 행동으로 표현하는 방식과 연결된다.",
+      "reason": "식신은 실질적 도움, 챙김, 선물, 생활 지원처럼 애정을 행동으로 표현하는 방식과 연결한다. 돈 문장에서는 가족·돌봄 지출이 커질 때 지출 한도와 감사 표현을 같이 보게 한다.",
       "productDomains": [
         "love",
         "career",
-        "parenting"
+        "parenting",
+        "money",
+        "relationship"
       ],
       "sourceCoverage": "inferred"
     },
     {
       "signal": "정재",
-      "reason": "안정 지향 돈 관리, 가족 비용, 생활비와 저축을 책임지는 방식과 연결된다.",
+      "reason": "정재는 생활비, 저축, 가족 비용, 안정 지향 돈 관리를 책임지는 방식과 연결한다. 투자·결혼 문장에서는 손실 회피와 가족 재정의 경계를 분리하는 단서로 쓴다.",
       "productDomains": [
         "money",
         "investment",
-        "marriage"
+        "marriage",
+        "growth"
       ],
       "sourceCoverage": "inferred"
     },
     {
       "signal": "문창",
-      "reason": "성실한 학습, 기록, 분류, 학교 과제 수행과 연결된다.",
+      "reason": "문창은 성실한 학습, 기록, 분류, 학교 과제 수행과 연결한다. 공부 문장에서는 꾸준함을 살리되 시험 불안과 과도한 준비를 범위 확정과 회복 루틴으로 조율하게 한다.",
       "productDomains": [
         "study",
-        "career"
+        "career",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "비겁",
+      "reason": "비겁은 가까운 사람을 내 편으로 묶고 책임을 같이 지려는 흐름과 연결한다. 관계에서는 혼자 희생하거나 서운함을 쌓기보다 역할과 도움의 범위를 나누게 한다.",
+      "productDomains": [
+        "relationship",
+        "marriage",
+        "general",
+        "growth"
+      ],
+      "sourceCoverage": "inferred"
+    },
+    {
+      "signal": "합충형파해",
+      "reason": "합충형파해는 가족·관계·생활 리듬의 마찰과 전환 신호로 읽는다. ISFJ에게는 급한 결론보다 역할, 돈, 돌봄, 감사 표현 기준을 다시 맞추는 문장에 쓴다.",
+      "productDomains": [
+        "relationship",
+        "marriage",
+        "career",
+        "daeun",
+        "saeun"
       ],
       "sourceCoverage": "inferred"
     }
