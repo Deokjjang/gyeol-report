@@ -5,3 +5,8 @@ export {
   DaeunTimelineTable,
   DaeunAnnualCompareTable,
 } from "./DaeunFortuneTable";
+export {
+  default as SaeunFortuneTable,
+  SaeunAnnualCompareTable,
+  SaeunMonthlyHalfTable,
+} from "./SaeunFortuneTable";

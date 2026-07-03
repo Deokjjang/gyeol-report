@@ -6,6 +6,9 @@ import {
   DaeunTimelineTable,
   ManseRyeokCommonTable,
   MbtiCommonProfileTable,
+  SaeunAnnualCompareTable,
+  SaeunFortuneTable,
+  SaeunMonthlyHalfTable,
 } from "../../../../src/components/report-tables";
 
 describe("report table component exports", () => {
@@ -15,5 +18,8 @@ describe("report table component exports", () => {
     expect(typeof DaeunFortuneTable).toBe("function");
     expect(typeof DaeunTimelineTable).toBe("function");
     expect(typeof DaeunAnnualCompareTable).toBe("function");
+    expect(typeof SaeunFortuneTable).toBe("function");
+    expect(typeof SaeunAnnualCompareTable).toBe("function");
+    expect(typeof SaeunMonthlyHalfTable).toBe("function");
   });
 });
