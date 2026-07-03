@@ -1,10 +1,12 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  buildDaeunFortuneTableData,
   buildManseRyeokCommonTableData,
   buildMbtiCommonProfileTableData,
   getMbtiFunctionDisplay,
   getStemDisplay,
+  type DaeunFortuneTableData,
   type ManseRyeokCommonTableData,
   type MbtiCommonProfileTableData,
 } from "../../../src/lib/report-tables";
@@ -46,8 +48,30 @@ describe("report table lib exports", () => {
           inferior: "Fi",
         },
       });
+    const daeunData: DaeunFortuneTableData = buildDaeunFortuneTableData({
+      currentYear: 2026,
+      selectedYear: 2026,
+      currentAge: 28,
+      currentDaeunCycle: {
+        ganji: "戊辰",
+      },
+      timelineYears: [
+        {
+          year: 2026,
+          majorGanji: "戊辰",
+          annualGanji: "丙午",
+        },
+      ],
+      annualFortunes: [
+        {
+          year: 2026,
+          ganji: "丙午",
+        },
+      ],
+    });
 
     expect(manseRyeokData.title).toBe("정덕민님의 만세력");
     expect(mbtiData.type).toBe("ENTJ");
+    expect(daeunData.currentDaeun.ganji).toBe("戊辰");
   });
 });

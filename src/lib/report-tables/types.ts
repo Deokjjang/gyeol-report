@@ -190,3 +190,79 @@ export type MbtiCommonProfileTableData = {
   readonly farKeywords: readonly string[];
   readonly reportUsageNotes: readonly MbtiReportUsageNote[];
 };
+
+export type DaeunPillarCard = {
+  readonly hanja: string;
+  readonly ko: string;
+  readonly tenGod: string | null;
+  readonly element: ReportTableFiveElement;
+  readonly yinYang: ReportTableYinYang;
+  readonly colorToken: ReportTableElementColorToken;
+};
+
+export type DaeunTimelineRow = {
+  readonly year: number;
+  readonly age: number | null;
+  readonly ageLabel: string | null;
+  readonly isCurrentYear: boolean;
+  readonly isTransitionYear: boolean;
+  readonly badges: readonly string[];
+  readonly daeunPillar: {
+    readonly ganji: string | null;
+    readonly stem: DaeunPillarCard | null;
+    readonly branch: DaeunPillarCard | null;
+  };
+  readonly annualPillar: {
+    readonly ganji: string | null;
+    readonly stem: DaeunPillarCard | null;
+    readonly branch: DaeunPillarCard | null;
+  };
+  readonly daeunTenGod: string | null;
+  readonly annualTenGod: string | null;
+  readonly keyInteractionLabel: string | null;
+  readonly oneLine: string | null;
+  readonly strategy: string | null;
+};
+
+export type DaeunAnnualCompareTableData = {
+  readonly daeunStem: DaeunPillarCard | null;
+  readonly daeunBranch: DaeunPillarCard | null;
+  readonly annualStem: DaeunPillarCard | null;
+  readonly annualBranch: DaeunPillarCard | null;
+  readonly hiddenStems: {
+    readonly daeun: readonly string[];
+    readonly annual: readonly string[];
+  };
+  readonly twelveLifeStage: {
+    readonly daeun: readonly string[];
+    readonly annual: readonly string[];
+  };
+  readonly twelveSinsal: {
+    readonly daeun: readonly string[];
+    readonly annual: readonly string[];
+  };
+  readonly sinsalAndGwiin: {
+    readonly daeun: readonly string[];
+    readonly annual: readonly string[];
+  };
+  readonly interactions: {
+    readonly daeun: readonly string[];
+    readonly annual: readonly string[];
+  };
+};
+
+export type DaeunFortuneTableData = {
+  readonly title: string;
+  readonly selectedYear: number;
+  readonly currentDaeun: {
+    readonly ganji: string | null;
+    readonly startYear: number | null;
+    readonly endYear: number | null;
+    readonly startAge: number | null;
+    readonly endAge: number | null;
+    readonly stem: DaeunPillarCard | null;
+    readonly branch: DaeunPillarCard | null;
+  };
+  readonly timelineRows: readonly DaeunTimelineRow[];
+  readonly annualCompareTable: DaeunAnnualCompareTableData;
+};
