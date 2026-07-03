@@ -91,3 +91,43 @@ export type BuildMyeongliMbtiBridgePacketInput = {
   readonly myeongliSignals: readonly MyeongliSignal[];
   readonly withMbtiType?: string | null;
 };
+
+export type ProductBridgeProductKey = BridgeProductContext;
+
+export type ProductBridgeEvidencePurpose =
+  | "identity"
+  | "career"
+  | "money"
+  | "investment"
+  | "study"
+  | "love"
+  | "marriage"
+  | "parenting"
+  | "relationship"
+  | "timing"
+  | "caution"
+  | "growth";
+
+export type ProductBridgeEvidenceItem = {
+  readonly evidenceId: string;
+  readonly purposes: readonly ProductBridgeEvidencePurpose[];
+  readonly evidence: MyeongliMbtiBridgeEvidence;
+};
+
+export type ProductBridgeEvidencePacket = {
+  readonly productKey: ProductBridgeProductKey;
+  readonly primaryEvidence: readonly ProductBridgeEvidenceItem[];
+  readonly supportingEvidence: readonly ProductBridgeEvidenceItem[];
+  readonly cautionEvidence: readonly ProductBridgeEvidenceItem[];
+  readonly recommendedTone: string;
+  readonly forbiddenAngles: readonly string[];
+};
+
+export type BridgeCompatibilityRelationCategory =
+  | "love"
+  | "marriage"
+  | "parentChild"
+  | "workplaceColleague"
+  | "bossSubordinate"
+  | "businessPartner"
+  | "friendSocial";
