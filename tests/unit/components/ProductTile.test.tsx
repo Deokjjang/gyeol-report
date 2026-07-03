@@ -37,6 +37,23 @@ const comingSoonProduct = {
   visualKey: "career_money_study",
 } as const satisfies ProductTileItem;
 
+const previewProduct = {
+  id: "career_money_study_report",
+  productKey: "career_money_study",
+  slug: "career-money-study",
+  nameKo: "직업·커리어·돈·학업 리포트",
+  versionBadgeKo: "v1.0 준비",
+  shortDescriptionKo: "타고난 직업성과 돈, 공부 전략을 함께 봅니다.",
+  status: "preview_available",
+  isPurchasable: false,
+  href: null,
+  previewHref: "/report/new?product=career-money-study",
+  previewCtaLabelKo: "입력 흐름 미리보기",
+  previewStatusKo: "준비 중 · 미리보기 가능",
+  badgeKo: "개발 preview",
+  visualKey: "career_money_study",
+} as const satisfies ProductTileItem;
+
 describe("ProductTile", () => {
   it("renders purchasable product state and CTA", () => {
     const html = renderToStaticMarkup(<ProductTile product={activeProduct} />);
@@ -59,6 +76,18 @@ describe("ProductTile", () => {
     expect(html).toContain("출시 준비 중");
     expect(html).toContain("disabled");
     expect(html).toContain('aria-disabled="true"');
+    expect(html).not.toContain("결제하고 리포트 생성하기");
+  });
+
+  it("renders preview product as a non-purchasable input flow link", () => {
+    const html = renderToStaticMarkup(<ProductTile product={previewProduct} />);
+
+    expect(html).toContain("직업·커리어·돈·학업 리포트");
+    expect(html).toContain("개발 preview");
+    expect(html).toContain("준비 중 · 미리보기 가능");
+    expect(html).toContain("입력 흐름 미리보기");
+    expect(html).toContain('href="/report/new?product=career-money-study"');
+    expect(html).not.toContain("구매 가능");
     expect(html).not.toContain("결제하고 리포트 생성하기");
   });
 });

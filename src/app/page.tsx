@@ -13,14 +13,19 @@ const launchProductGrid = [
   activeComprehensiveProduct,
   {
     id: "career_money_study_report",
+    productKey: "career_money_study",
+    slug: "career-money-study",
     nameKo: "직업·커리어·돈·학업 리포트",
     versionBadgeKo: "v1.0 준비",
     shortDescriptionKo:
       "타고난 직업성, 돈을 다루는 방식, 투자·저축 성향, 공부 루틴을 하나의 흐름으로 정리합니다.",
-    status: "coming_soon",
+    status: "preview_available",
     isPurchasable: false,
     href: null,
-    badgeKo: "리빌딩 중",
+    previewHref: "/report/new?product=career-money-study",
+    previewCtaLabelKo: "입력 흐름 미리보기",
+    previewStatusKo: "준비 중 · 미리보기 가능",
+    badgeKo: "개발 preview",
     visualKey: "career_money_study",
   },
   {

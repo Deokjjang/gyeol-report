@@ -5,11 +5,16 @@ import type { ProductTileVisualKey } from "./ProductTileVisual";
 
 export type ProductTileItem = {
   readonly id: string;
+  readonly productKey?: string;
+  readonly slug?: string;
   readonly nameKo: string;
   readonly versionBadgeKo: string;
   readonly status: string;
   readonly isPurchasable: boolean;
   readonly href: string | null;
+  readonly previewHref?: string;
+  readonly previewCtaLabelKo?: string;
+  readonly previewStatusKo?: string;
   readonly badgeKo: string;
   readonly visualKey: ProductTileVisualKey;
   readonly shortDescriptionKo?: string;
@@ -40,6 +45,7 @@ type ProductTileProps = {
 
 export default function ProductTile({ product }: ProductTileProps) {
   const isPurchasable = isPurchasableProduct(product);
+  const hasPreviewFlow = !isPurchasable && Boolean(product.previewHref);
 
   return (
     <article
@@ -77,6 +83,10 @@ export default function ProductTile({ product }: ProductTileProps) {
             {isPurchasable ? (
               <span className="rounded-full bg-[#c79a43]/15 px-3 py-1 text-xs font-bold text-[#7a5420]">
                 구매 가능
+              </span>
+            ) : hasPreviewFlow ? (
+              <span className="rounded-full border border-[#d8d1c4] bg-[#fffdf8] px-3 py-1 text-xs font-bold text-[#7b7165]">
+                {product.previewStatusKo ?? "미리보기 가능"}
               </span>
             ) : (
               <span className="rounded-full border border-[#d8d1c4] bg-[#fffdf8] px-3 py-1 text-xs font-bold text-[#7b7165]">
@@ -139,6 +149,13 @@ export default function ProductTile({ product }: ProductTileProps) {
               {product.priceLabelKo} 결제하고 리포트 생성하기
             </Link>
           </div>
+        ) : hasPreviewFlow ? (
+          <Link
+            href={product.previewHref ?? "#"}
+            className="inline-flex min-h-12 items-center justify-center rounded-lg border border-[#7f1d38]/25 bg-[#fffdf8] px-4 py-3 text-sm font-bold text-[#7f1d38] transition duration-200 hover:border-[#7f1d38]/45 hover:bg-white active:scale-[0.98]"
+          >
+            {product.previewCtaLabelKo ?? "입력 흐름 미리보기"}
+          </Link>
         ) : (
           <button
             type="button"

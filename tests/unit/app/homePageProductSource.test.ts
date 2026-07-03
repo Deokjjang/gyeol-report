@@ -19,7 +19,9 @@ describe("home page product source", () => {
       "구매 가능",
       "비활성",
       "출시 준비 중",
-      "리빌딩 중",
+      "개발 preview",
+      "준비 중 · 미리보기 가능",
+      "입력 흐름 미리보기",
       "런칭가",
       "990원",
       "정가",
@@ -29,6 +31,7 @@ describe("home page product source", () => {
       "사람 상담이 아닌 자동 생성 리포트",
       "990원 결제하고 리포트 생성하기",
       "/report/new",
+      "/report/new?product=career-money-study",
     ];
 
     for (const marker of requiredMarkers) {

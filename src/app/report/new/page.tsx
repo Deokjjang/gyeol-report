@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { use, useState } from "react";
 import type { FormEvent } from "react";
 
 import DevTossCheckoutLauncher, {
@@ -10,6 +10,8 @@ import DevTossCheckoutLauncher, {
 import { GYEOL_PRODUCTS } from "../../../lib/product/gyeolProducts";
 
 const ACTIVE_REPORT_PRODUCT = GYEOL_PRODUCTS[0];
+const CAREER_MONEY_STUDY_PRODUCT_KEY = "career_money_study";
+const CAREER_MONEY_STUDY_PRODUCT_SLUG = "career-money-study";
 const ACTIVE_REPORT_LIST_PRICE_LABEL_KO = "정가 1,290원";
 const ACTIVE_REPORT_SALE_PRICE_LABEL_KO = "런칭가 990원";
 const ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO = "결제금액 990원";
@@ -19,6 +21,65 @@ const REQUIRED_CHECKOUT_INPUT_MESSAGE_KO =
   "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.";
 const DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED =
   process.env.NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED === "1";
+
+type NewReportPageSearchParams = {
+  readonly product?: string | readonly string[];
+};
+
+type NewReportPageProps = {
+  readonly searchParams?: Promise<NewReportPageSearchParams>;
+};
+
+type SelectedReportProduct = {
+  readonly productKey: string;
+  readonly slug: string;
+  readonly nameKo: string;
+  readonly fullNameKo: string;
+  readonly inputTitleKo: string;
+  readonly introKo: string;
+  readonly formatLabelKo: string;
+  readonly deliveryTypeKo: string;
+  readonly statusLabelKo: string;
+  readonly isPurchasable: boolean;
+  readonly listPriceKo: string | null;
+  readonly priceKo: string | null;
+};
+
+const EMPTY_REPORT_SEARCH_PARAMS = Promise.resolve(
+  {} satisfies NewReportPageSearchParams,
+);
+
+const DEFAULT_SELECTED_REPORT_PRODUCT = {
+  productKey: ACTIVE_REPORT_PRODUCT.productType,
+  slug: ACTIVE_REPORT_PRODUCT.slug,
+  nameKo: ACTIVE_REPORT_PRODUCT.nameKo,
+  fullNameKo: ACTIVE_REPORT_PRODUCT.fullNameKo,
+  inputTitleKo: "종합 리포트 입력",
+  introKo:
+    "생년월일시와 MBTI를 입력하고 확인한 뒤 990원 결제창으로 이동합니다. 리포트는 결제 승인 후 생성됩니다. 자동 생성 디지털 리포트이며 상담이 아닌 참고용 리포트입니다.",
+  formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
+  deliveryTypeKo: ACTIVE_REPORT_PRODUCT.deliveryTypeKo,
+  statusLabelKo: "구매 가능",
+  isPurchasable: ACTIVE_REPORT_PRODUCT.isPurchasable,
+  listPriceKo: ACTIVE_REPORT_PRODUCT.listPriceKo,
+  priceKo: ACTIVE_REPORT_PRODUCT.priceKo,
+} as const satisfies SelectedReportProduct;
+
+const CAREER_MONEY_STUDY_SELECTED_REPORT_PRODUCT = {
+  productKey: CAREER_MONEY_STUDY_PRODUCT_KEY,
+  slug: CAREER_MONEY_STUDY_PRODUCT_SLUG,
+  nameKo: "직업·커리어·돈·학업 리포트",
+  fullNameKo: "직업·커리어·돈·학업 리포트",
+  inputTitleKo: "직업·커리어·돈·학업 리포트 입력",
+  introKo:
+    "출시 전 개발 preview 입력 흐름입니다. 결제는 연결하지 않고, 입력값과 직업·커리어·돈·학업 상품 context만 확인합니다.",
+  formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
+  deliveryTypeKo: "개발 preview 입력 흐름",
+  statusLabelKo: "준비 중 · 미리보기 가능",
+  isPurchasable: false,
+  listPriceKo: null,
+  priceKo: null,
+} as const satisfies SelectedReportProduct;
 
 const mbtiTypes = [
   "INTJ",
@@ -102,6 +163,26 @@ function formatCalendarTypeLabel(value: string): string {
   return "선택 안 함";
 }
 
+function getSearchParamValue(
+  value: string | readonly string[] | undefined,
+): string {
+  if (typeof value === "string") {
+    return value;
+  }
+
+  return value?.[0] ?? "";
+}
+
+function resolveSelectedReportProduct(
+  searchProduct: string | readonly string[] | undefined,
+): SelectedReportProduct {
+  if (getSearchParamValue(searchProduct) === CAREER_MONEY_STUDY_PRODUCT_SLUG) {
+    return CAREER_MONEY_STUDY_SELECTED_REPORT_PRODUCT;
+  }
+
+  return DEFAULT_SELECTED_REPORT_PRODUCT;
+}
+
 function formatBirthTimeSummary(
   mode: BirthTimeMode,
   exactTime: string,
@@ -144,7 +225,14 @@ function createCheckoutInputSnapshot(input: {
   };
 }
 
-export default function NewReportPage() {
+export default function NewReportPage({
+  searchParams = EMPTY_REPORT_SEARCH_PARAMS,
+}: NewReportPageProps) {
+  const resolvedSearchParams = use(searchParams);
+  const selectedProduct = resolveSelectedReportProduct(
+    resolvedSearchParams.product,
+  );
+  const isSelectedProductPurchasable = selectedProduct.isPurchasable;
   const [currentStep, setCurrentStep] = useState<ReportInputStep>(0);
   const [displayName, setDisplayName] = useState("");
   const [birthDate, setBirthDate] = useState("");
@@ -244,13 +332,20 @@ export default function NewReportPage() {
             Gyeol Report
           </p>
           <h1 className="text-4xl font-bold tracking-normal text-[#fffaf0]">
-            종합 리포트 입력
+            {selectedProduct.inputTitleKo}
           </h1>
           <p className="max-w-2xl text-base leading-8 text-[#cfc5b8]">
-            생년월일시와 MBTI를 입력하고 확인한 뒤 990원 결제창으로
-            이동합니다. 리포트는 결제 승인 후 생성됩니다. 자동 생성 디지털
-            리포트이며 상담이 아닌 참고용 리포트입니다.
+            {selectedProduct.introKo}
           </p>
+          <div className="inline-flex flex-wrap items-center gap-2 rounded-lg border border-[#4a3434] bg-[#211817]/80 px-4 py-3 text-sm">
+            <span className="font-semibold text-[#92877b]">선택 상품</span>
+            <span className="font-bold text-[#fffaf0]">
+              {selectedProduct.nameKo}
+            </span>
+            <span className="rounded-full border border-[#c79a43]/35 px-2 py-0.5 text-xs font-bold text-[#c79a43]">
+              {selectedProduct.statusLabelKo}
+            </span>
+          </div>
         </header>
 
         <div className="grid gap-6 lg:grid-cols-[22rem_1fr] lg:items-start">
@@ -305,6 +400,16 @@ export default function NewReportPage() {
 
             <input type="hidden" name="timezone" value="Asia/Seoul" />
             <input type="hidden" name="calendarType" value="SOLAR" />
+            <input
+              type="hidden"
+              name="productKey"
+              value={selectedProduct.productKey}
+            />
+            <input
+              type="hidden"
+              name="productSlug"
+              value={selectedProduct.slug}
+            />
             <input
               type="hidden"
               name="birthTimeUnknown"
@@ -555,6 +660,12 @@ export default function NewReportPage() {
                   </div>
                   <dl className="grid gap-3 text-sm">
                     <div className="flex justify-between gap-4">
+                      <dt className="text-neutral-500">선택 상품</dt>
+                      <dd className="text-right text-neutral-200">
+                        {selectedProduct.nameKo}
+                      </dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
                       <dt className="text-neutral-500">이름</dt>
                       <dd className="text-right text-neutral-200">
                         {displayName.trim() || "미입력"}
@@ -596,67 +707,105 @@ export default function NewReportPage() {
                 <section className="space-y-4 rounded-lg border border-sky-200 bg-white p-4 text-neutral-950">
                   <div className="space-y-2">
                     <p className="text-sm font-bold text-sky-700">
-                      전체 리포트
+                      {isSelectedProductPurchasable
+                        ? "전체 리포트"
+                        : "개발 preview 상품"}
                     </p>
                     <h3 className="text-xl font-extrabold">
-                      {ACTIVE_REPORT_PRODUCT.nameKo}
+                      {selectedProduct.nameKo}
                     </h3>
                     <p className="text-sm leading-6 text-neutral-600">
-                      {ACTIVE_REPORT_FORMAT_LABEL_KO} · 결제 승인 후 온라인 열람
+                      {selectedProduct.formatLabelKo} ·{" "}
+                      {selectedProduct.deliveryTypeKo}
                     </p>
                   </div>
-                  <dl className="grid gap-3 text-sm sm:grid-cols-3">
-                    <div
-                      aria-label={ACTIVE_REPORT_LIST_PRICE_LABEL_KO}
-                      className="rounded-lg border border-neutral-200 bg-neutral-50 p-3"
-                    >
-                      <dt className="text-neutral-500">정가</dt>
-                      <dd className="mt-1 font-semibold text-neutral-400 line-through">
-                        {ACTIVE_REPORT_PRODUCT.listPriceKo}
-                      </dd>
-                    </div>
-                    <div
-                      aria-label={ACTIVE_REPORT_SALE_PRICE_LABEL_KO}
-                      className="rounded-lg border border-rose-200 bg-rose-50 p-3"
-                    >
-                      <dt className="text-rose-700">런칭가</dt>
-                      <dd className="mt-1 text-xl font-extrabold text-rose-700">
-                        {ACTIVE_REPORT_PRODUCT.priceKo}
-                      </dd>
-                    </div>
-                    <div
-                      aria-label={ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO}
-                      className="rounded-lg border border-neutral-200 bg-neutral-50 p-3"
-                    >
-                      <dt className="text-neutral-500">결제금액</dt>
-                      <dd className="mt-1 font-bold text-neutral-950">
-                        {ACTIVE_REPORT_PRODUCT.priceKo}
-                      </dd>
-                    </div>
-                  </dl>
+                  {isSelectedProductPurchasable ? (
+                    <dl className="grid gap-3 text-sm sm:grid-cols-3">
+                      <div
+                        aria-label={ACTIVE_REPORT_LIST_PRICE_LABEL_KO}
+                        className="rounded-lg border border-neutral-200 bg-neutral-50 p-3"
+                      >
+                        <dt className="text-neutral-500">정가</dt>
+                        <dd className="mt-1 font-semibold text-neutral-400 line-through">
+                          {selectedProduct.listPriceKo}
+                        </dd>
+                      </div>
+                      <div
+                        aria-label={ACTIVE_REPORT_SALE_PRICE_LABEL_KO}
+                        className="rounded-lg border border-rose-200 bg-rose-50 p-3"
+                      >
+                        <dt className="text-rose-700">런칭가</dt>
+                        <dd className="mt-1 text-xl font-extrabold text-rose-700">
+                          {selectedProduct.priceKo}
+                        </dd>
+                      </div>
+                      <div
+                        aria-label={ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO}
+                        className="rounded-lg border border-neutral-200 bg-neutral-50 p-3"
+                      >
+                        <dt className="text-neutral-500">결제금액</dt>
+                        <dd className="mt-1 font-bold text-neutral-950">
+                          {selectedProduct.priceKo}
+                        </dd>
+                      </div>
+                    </dl>
+                  ) : (
+                    <dl className="grid gap-3 text-sm sm:grid-cols-3">
+                      <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3">
+                        <dt className="text-neutral-500">상태</dt>
+                        <dd className="mt-1 font-bold text-neutral-950">
+                          {selectedProduct.statusLabelKo}
+                        </dd>
+                      </div>
+                      <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3">
+                        <dt className="text-neutral-500">productKey</dt>
+                        <dd className="mt-1 font-bold text-neutral-950">
+                          {selectedProduct.productKey}
+                        </dd>
+                      </div>
+                      <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3">
+                        <dt className="text-neutral-500">slug</dt>
+                        <dd className="mt-1 font-bold text-neutral-950">
+                          {selectedProduct.slug}
+                        </dd>
+                      </div>
+                    </dl>
+                  )}
 
-                  {!isCheckoutInputComplete ? (
+                  {isSelectedProductPurchasable && !isCheckoutInputComplete ? (
                     <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm font-semibold text-amber-900">
                       {REQUIRED_CHECKOUT_INPUT_MESSAGE_KO}
                     </p>
                   ) : null}
 
-                  {DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED ? (
-                    <DevTossCheckoutLauncher
-                      inputSnapshot={checkoutInputSnapshot}
-                      ctaLabelKo={CHECKOUT_CTA_LABEL_KO}
-                      onEditInput={() => {
-                        setStepError("");
-                        setCurrentStep(0);
-                      }}
-                    />
+                  {isSelectedProductPurchasable ? (
+                    DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED ? (
+                      <DevTossCheckoutLauncher
+                        inputSnapshot={checkoutInputSnapshot}
+                        ctaLabelKo={CHECKOUT_CTA_LABEL_KO}
+                        onEditInput={() => {
+                          setStepError("");
+                          setCurrentStep(0);
+                        }}
+                      />
+                    ) : (
+                      <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
+                        <p className="text-sm font-semibold text-neutral-900">
+                          정식 결제 연결 준비 중입니다.
+                        </p>
+                        <p className="mt-2 text-sm leading-6 text-neutral-600">
+                          심사 및 결제 승인 연동 후 전체 리포트 구매가 가능합니다.
+                        </p>
+                      </div>
+                    )
                   ) : (
                     <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
                       <p className="text-sm font-semibold text-neutral-900">
-                        정식 결제 연결 준비 중입니다.
+                        직업·커리어·돈·학업 리포트 생성 준비 흐름입니다.
                       </p>
                       <p className="mt-2 text-sm leading-6 text-neutral-600">
-                        심사 및 결제 승인 연동 후 전체 리포트 구매가 가능합니다.
+                        입력값과 선택 상품 context를 유지합니다. 정식 결제와
+                        유료 생성은 별도 연결 단계에서 활성화합니다.
                       </p>
                     </div>
                   )}
@@ -695,38 +844,62 @@ export default function NewReportPage() {
           <aside className="space-y-5 rounded-lg border border-neutral-800 bg-neutral-900/60 p-6">
             <div className="space-y-3">
               <p className="text-sm font-semibold text-neutral-400">
-                구매 상품
+                선택 상품
               </p>
               <h2 className="text-2xl font-bold text-neutral-50">
-                {ACTIVE_REPORT_PRODUCT.nameKo}
+                {selectedProduct.nameKo}
               </h2>
               <p className="text-sm leading-6 text-neutral-400">
-                {ACTIVE_REPORT_PRODUCT.fullNameKo}
+                {selectedProduct.fullNameKo}
               </p>
             </div>
             <dl className="grid gap-3 text-sm sm:grid-cols-2">
               <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
                 <dt className="text-neutral-500">형태</dt>
                 <dd className="mt-1 font-semibold text-neutral-100">
-                  {ACTIVE_REPORT_FORMAT_LABEL_KO}
+                  {selectedProduct.formatLabelKo}
                 </dd>
               </div>
               <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
                 <dt className="text-neutral-500">제공 방식</dt>
                 <dd className="mt-1 font-semibold text-neutral-100">
-                  {ACTIVE_REPORT_PRODUCT.deliveryTypeKo}
+                  {selectedProduct.deliveryTypeKo}
                 </dd>
               </div>
-              <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                <dt className="text-neutral-500">정가</dt>
-                <dd className="mt-1 font-semibold text-neutral-400 line-through">
-                  {ACTIVE_REPORT_PRODUCT.listPriceKo}
+              <div
+                className={
+                  isSelectedProductPurchasable
+                    ? "rounded-lg border border-neutral-800 bg-neutral-950/70 p-4"
+                    : "rounded-lg border border-neutral-800 bg-neutral-950/70 p-4 sm:col-span-2"
+                }
+              >
+                <dt className="text-neutral-500">
+                  {isSelectedProductPurchasable ? "정가" : "상태"}
+                </dt>
+                <dd
+                  className={
+                    isSelectedProductPurchasable
+                      ? "mt-1 font-semibold text-neutral-400 line-through"
+                      : "mt-1 font-semibold text-neutral-100"
+                  }
+                >
+                  {isSelectedProductPurchasable
+                    ? selectedProduct.listPriceKo
+                    : selectedProduct.statusLabelKo}
                 </dd>
               </div>
-              <div className="rounded-lg border border-rose-900/50 bg-rose-950/20 p-4">
-                <dt className="text-rose-100/80">런칭가</dt>
-                <dd className="mt-1 text-2xl font-extrabold text-rose-100">
-                  {ACTIVE_REPORT_PRODUCT.priceKo}
+              {isSelectedProductPurchasable ? (
+                <div className="rounded-lg border border-rose-900/50 bg-rose-950/20 p-4">
+                  <dt className="text-rose-100/80">런칭가</dt>
+                  <dd className="mt-1 text-2xl font-extrabold text-rose-100">
+                    {selectedProduct.priceKo}
+                  </dd>
+                </div>
+              ) : null}
+              <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4 sm:col-span-2">
+                <dt className="text-neutral-500">선택 상품 context</dt>
+                <dd className="mt-1 font-semibold text-neutral-100">
+                  {selectedProduct.productKey} · {selectedProduct.slug}
                 </dd>
               </div>
             </dl>

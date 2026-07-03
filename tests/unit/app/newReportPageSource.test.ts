@@ -20,6 +20,8 @@ describe("new report page source", () => {
       'name="calendarType"',
       'name="timezone"',
       'name="displayName"',
+      'name="productKey"',
+      'name="productSlug"',
     ];
 
     for (const fieldName of fieldNames) {
@@ -48,6 +50,30 @@ describe("new report page source", () => {
       "정식 결제 연결 준비 중입니다.",
       "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.",
       "onEditInput",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+  });
+
+  it("keeps career money study product selection as a non-payment skeleton", () => {
+    const requiredMarkers = [
+      "CAREER_MONEY_STUDY_PRODUCT_KEY",
+      "career_money_study",
+      "CAREER_MONEY_STUDY_PRODUCT_SLUG",
+      "career-money-study",
+      "resolveSelectedReportProduct",
+      "DEFAULT_SELECTED_REPORT_PRODUCT",
+      "CAREER_MONEY_STUDY_SELECTED_REPORT_PRODUCT",
+      "직업·커리어·돈·학업 리포트 입력",
+      "준비 중 · 미리보기 가능",
+      "선택 상품",
+      "selectedProduct.productKey",
+      "selectedProduct.slug",
+      "직업·커리어·돈·학업 리포트 생성 준비 흐름입니다.",
+      "입력값과 선택 상품 context를 유지합니다.",
+      "isSelectedProductPurchasable",
     ];
 
     for (const marker of requiredMarkers) {
