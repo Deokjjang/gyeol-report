@@ -5,3 +5,4 @@ export * from "./mbtiProfileTableData";
 export * from "./mbtiSourceRegistry";
 export * from "./daeunTableData";
 export * from "./saeunFortuneTableData";
+export * from "./compatibilityTableData";

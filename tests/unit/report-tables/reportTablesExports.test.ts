@@ -1,12 +1,14 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  buildCompatibilityTableData,
   buildDaeunFortuneTableData,
   buildManseRyeokCommonTableData,
   buildMbtiCommonProfileTableData,
   buildSaeunFortuneTableData,
   getMbtiFunctionDisplay,
   getStemDisplay,
+  type CompatibilityTableData,
   type DaeunFortuneTableData,
   type ManseRyeokCommonTableData,
   type MbtiCommonProfileTableData,
@@ -83,10 +85,22 @@ describe("report table lib exports", () => {
         },
       ],
     });
+    const compatibilityData: CompatibilityTableData =
+      buildCompatibilityTableData({
+        relationCategory: "friendship",
+        personA: {
+          manseRyeok: manseRyeokData,
+          mbti: mbtiData,
+        },
+        personB: {
+          manseRyeok: manseRyeokData,
+        },
+      });
 
     expect(manseRyeokData.title).toBe("정덕민님의 만세력");
     expect(mbtiData.type).toBe("ENTJ");
     expect(daeunData.currentDaeun.ganji).toBe("戊辰");
     expect(saeunData.selectedYear).toBe(2026);
+    expect(compatibilityData.relationCategory).toBe("friendship");
   });
 });

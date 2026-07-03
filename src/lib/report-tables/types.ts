@@ -324,3 +324,43 @@ export type SaeunFortuneTableData = {
   readonly firstHalfMonthlyTable: SaeunMonthlyHalfTableData;
   readonly secondHalfMonthlyTable: SaeunMonthlyHalfTableData;
 };
+
+export type CompatibilityRelationCategory =
+  | "love"
+  | "marriage"
+  | "parentChild"
+  | "coworker"
+  | "managerReport"
+  | "businessPartner"
+  | "friendship";
+
+export type CompatibilityPersonTableData = {
+  readonly label: string;
+  readonly displayName: string | null;
+  readonly manseRyeok: ManseRyeokCommonTableData;
+  readonly mbti: MbtiCommonProfileTableData | null;
+};
+
+export type CompatibilityConnectionSummaryData = {
+  readonly compatibilityHeadline: string | null;
+  readonly overallTone: string | null;
+  readonly myeongliConnectionSummary: string | null;
+  readonly mbtiConnectionSummary: string | null;
+  readonly dayMasterRelation: string | null;
+  readonly dayBranchRelation: string | null;
+  readonly elementBalance: string | null;
+  readonly tenGodRelation: string | null;
+  readonly interactionLabels: readonly string[];
+  readonly sharedStrengths: readonly string[];
+  readonly frictionPoints: readonly string[];
+  readonly repairStrategy: string | null;
+  readonly timingNotes: readonly string[];
+};
+
+export type CompatibilityTableData = {
+  readonly title: string;
+  readonly relationCategory: CompatibilityRelationCategory;
+  readonly personA: CompatibilityPersonTableData;
+  readonly connectionSummary: CompatibilityConnectionSummaryData;
+  readonly personB: CompatibilityPersonTableData;
+};
