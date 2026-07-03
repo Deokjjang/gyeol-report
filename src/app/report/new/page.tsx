@@ -237,60 +237,63 @@ export default function NewReportPage() {
   }
 
   return (
-    <main className="min-h-screen bg-neutral-950 px-5 py-8 text-neutral-50 sm:px-8 lg:px-10">
+    <main className="min-h-screen bg-[#171211] px-5 py-8 text-[#fffaf0] sm:px-8 lg:px-10">
       <section className="mx-auto max-w-6xl space-y-8">
-        <header className="max-w-3xl space-y-4">
-          <p className="text-sm font-medium text-neutral-400">Gyeol Report</p>
-          <h1 className="text-4xl font-bold tracking-tight text-neutral-50">
+        <header className="max-w-3xl space-y-4 animate-[gyeol-reveal_520ms_ease-out]">
+          <p className="text-sm font-bold tracking-[0.18em] text-[#c79a43]">
+            Gyeol Report
+          </p>
+          <h1 className="text-4xl font-bold tracking-normal text-[#fffaf0]">
             종합 리포트 입력
           </h1>
-          <p className="max-w-2xl text-base leading-8 text-neutral-400">
+          <p className="max-w-2xl text-base leading-8 text-[#cfc5b8]">
             생년월일시와 MBTI를 입력하고 확인한 뒤 990원 결제창으로
-            이동합니다. 리포트는 결제 승인 후 생성됩니다.
+            이동합니다. 리포트는 결제 승인 후 생성됩니다. 자동 생성 디지털
+            리포트이며 상담이 아닌 참고용 리포트입니다.
           </p>
         </header>
 
         <div className="grid gap-6 lg:grid-cols-[22rem_1fr] lg:items-start">
           <form
             onSubmit={handleSubmit}
-            className="space-y-5 rounded-lg border border-neutral-800 bg-neutral-900/80 p-5 shadow-2xl shadow-black/20 lg:sticky lg:top-8"
+            className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-2xl shadow-black/25 lg:sticky lg:top-8"
           >
             <div className="space-y-2">
-              <h2 className="text-lg font-semibold text-neutral-100">
+              <h2 className="text-lg font-semibold text-[#fffaf0]">
                 {selectedStep.labelKo} · {selectedStep.titleKo}
               </h2>
-              <p className="text-sm leading-6 text-neutral-400">
+              <p className="text-sm leading-6 text-[#cfc5b8]">
                 입력한 정보는 결제 주문 정보와 함께 보관되어 이후 전체 리포트
                 생성에 사용됩니다.
               </p>
             </div>
 
-            <div className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+            <div className="space-y-3 rounded-lg border border-[#4a3434] bg-[#171211]/70 p-4">
               <div className="flex items-center justify-between gap-4">
-                <p className="text-sm font-semibold text-neutral-100">
+                <p className="text-sm font-semibold text-[#fffaf0]">
                   {currentStep + 1} / {reportInputSteps.length}
                 </p>
-                <p className="text-right text-sm text-neutral-400">
+                <p className="text-right text-sm text-[#cfc5b8]">
                   {selectedStep.labelKo} · {selectedStep.titleKo}
                 </p>
               </div>
               <div
                 aria-label="진행률"
-                className="h-2 overflow-hidden rounded-full bg-neutral-800"
+                className="h-2 overflow-hidden rounded-full bg-[#3a2c29]"
               >
                 <div
-                  className="h-full rounded-full bg-neutral-100"
+                  className="h-full rounded-full bg-[#c79a43] transition-all duration-300"
                   style={{ width: `${progressPercent}%` }}
                 />
               </div>
-              <ol className="grid gap-2 text-xs text-neutral-500 sm:grid-cols-4">
+              <ol className="grid gap-2 text-xs text-[#92877b] sm:grid-cols-4">
                 {reportInputSteps.map((step) => (
                   <li
                     key={step.step}
                     className={
                       step.step === currentStep
-                        ? "rounded-lg border border-neutral-600 bg-neutral-900 px-3 py-2 text-neutral-100"
-                        : "rounded-lg border border-neutral-800 px-3 py-2"
+                        ? "rounded-lg border border-[#c79a43]/60 bg-[#2c1e1f] px-3 py-2 text-[#fffaf0]"
+                        : "rounded-lg border border-[#4a3434] px-3 py-2"
                     }
                   >
                     <span className="font-semibold">{step.labelKo}</span>

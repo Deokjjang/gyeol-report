@@ -8,12 +8,18 @@ describe("home page product source", () => {
     const html = renderToStaticMarkup(Home());
     const requiredMarkers = [
       "결리포트",
+      "명리 기반 프리미엄 디지털 리포트",
+      "결리포트 상품군",
       "사주×MBTI 종합 리포트",
-      "하반기 운세",
+      "직업·커리어·돈·학업 리포트",
+      "연애·결혼·자녀 리포트",
       "대운 리포트",
       "세운 리포트",
       "궁합 리포트",
+      "구매 가능",
+      "비활성",
       "출시 준비 중",
+      "리빌딩 중",
       "런칭가",
       "990원",
       "정가",
@@ -28,6 +34,20 @@ describe("home page product source", () => {
     for (const marker of requiredMarkers) {
       expect(html).toContain(marker);
     }
+
+    const productNames = [
+      "사주×MBTI 종합 리포트",
+      "직업·커리어·돈·학업 리포트",
+      "연애·결혼·자녀 리포트",
+      "궁합 리포트",
+      "대운 리포트",
+      "세운 리포트",
+    ];
+
+    expect(productNames.every((productName) => html.includes(productName))).toBe(
+      true,
+    );
+    expect((html.match(/<article/g) ?? []).length).toBe(6);
 
     const blockedMarkers = [
       "오행팔찌 구매",

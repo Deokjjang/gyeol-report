@@ -35,6 +35,7 @@ describe("new report page source", () => {
   it("renders paid-first input confirmation and product summary", () => {
     const requiredMarkers = [
       "종합 리포트 입력",
+      "상담이 아닌 참고용 리포트",
       "입력값 최종 확인",
       "입력한 정보로 전체 리포트를 생성합니다.",
       "결제 승인 후 리포트가 생성되며, 결과는 온라인 열람 페이지로 제공됩니다.",
