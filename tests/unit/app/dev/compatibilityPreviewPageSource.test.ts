@@ -57,6 +57,8 @@ describe("compatibility preview page source", () => {
       "getCompatibilityScoreDisplayLabels",
       "getCompatibilityScoreExplanation",
       "scoreLabels[key]",
+      "CompatibilityTable",
+      "buildCompatibilityTableData",
       "두 사람 만세력 비교",
       "연주",
       "월주",

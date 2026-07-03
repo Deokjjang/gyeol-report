@@ -1,8 +1,19 @@
 import type { CompatibilityReportDraft } from "../../../lib/report-generation/compatibilityReportDraftTypes";
+import { CompatibilityTable } from "../../../components/report-tables";
 import {
   sanitizeCompatibilityKoreanCopy,
   sanitizeCompatibilityVisibleText,
 } from "../../../lib/report-generation/compatibilityReportDraftValidator";
+import {
+  buildCompatibilityTableData,
+  buildManseRyeokCommonTableData,
+  buildMbtiCommonProfileTableData,
+  getMbtiSourceByType,
+  type CompatibilityConnectionSummaryInput,
+  type CompatibilityRelationCategory,
+  type CompatibilityTableData,
+  type ManseRyeokFourPillarGridColumnInput,
+} from "../../../lib/report-tables";
 import {
   getCompatibilityRelationshipTypeLabel,
   getCompatibilityScoreCaution,
@@ -221,6 +232,62 @@ const pillarElementByChar: Record<string, string> = {
   癸: "water",
   子: "water",
   亥: "water",
+};
+
+const compatibilityTableSupportedStems = [
+  "甲",
+  "乙",
+  "丙",
+  "丁",
+  "戊",
+  "己",
+  "庚",
+  "辛",
+  "壬",
+  "癸",
+] as const;
+
+const compatibilityTableSupportedBranches = [
+  "子",
+  "丑",
+  "寅",
+  "卯",
+  "辰",
+  "巳",
+  "午",
+  "未",
+  "申",
+  "酉",
+  "戌",
+  "亥",
+] as const;
+
+const compatibilityTableStemToHanja: Record<string, string> = {
+  갑: "甲",
+  을: "乙",
+  병: "丙",
+  정: "丁",
+  무: "戊",
+  기: "己",
+  경: "庚",
+  신: "辛",
+  임: "壬",
+  계: "癸",
+};
+
+const compatibilityTableBranchToHanja: Record<string, string> = {
+  자: "子",
+  축: "丑",
+  인: "寅",
+  묘: "卯",
+  진: "辰",
+  사: "巳",
+  오: "午",
+  미: "未",
+  신: "申",
+  유: "酉",
+  술: "戌",
+  해: "亥",
 };
 
 const diagnosticOnlyChartLabelFragments = [
@@ -525,6 +592,251 @@ function formatCompatibilitySafetyNote(
 
 function formatTechnicalRelationLabel(relationLabel: string): string {
   return sanitizeCompatibilityKoreanCopy(relationLabel).replace("->", "→");
+}
+
+function buildCompatibilityTopTableData(
+  draft: CompatibilityReportDraft,
+): CompatibilityTableData {
+  return buildCompatibilityTableData({
+    title: `${draft.personALabel}님 × ${draft.personBLabel}님 궁합표`,
+    relationCategory: mapCompatibilityTableRelationCategory(
+      draft.relationshipType,
+    ),
+    personA: buildCompatibilityPersonTableInput({
+      label: "A",
+      displayLabel: draft.personALabel,
+      chart: draft.chartComparison.personA,
+    }),
+    personB: buildCompatibilityPersonTableInput({
+      label: "B",
+      displayLabel: draft.personBLabel,
+      chart: draft.chartComparison.personB,
+    }),
+    connectionSummary: buildCompatibilityConnectionSummary(draft),
+  });
+}
+
+function mapCompatibilityTableRelationCategory(
+  relationshipType: CompatibilityReportDraft["relationshipType"] | undefined,
+): CompatibilityRelationCategory {
+  switch (relationshipType ?? "love") {
+    case "love":
+    case "some":
+      return "love";
+    case "marriage":
+      return "marriage";
+    case "friendship":
+      return "friendship";
+    case "family":
+      return "parentChild";
+    case "business_work_partner":
+      return "businessPartner";
+    default:
+      return "love";
+  }
+}
+
+function buildCompatibilityPersonTableInput(input: {
+  readonly label: string;
+  readonly displayLabel: string;
+  readonly chart: CompatibilityReportDraft["chartComparison"]["personA"];
+}) {
+  const mbtiSource = getMbtiSourceByType(input.chart.mbti);
+
+  return {
+    label: input.label,
+    displayName: input.chart.displayName || input.displayLabel,
+    manseRyeok: buildManseRyeokCommonTableData({
+      title: `${input.displayLabel}님의 만세력`,
+      fourPillarGrid: buildCompatibilityFourPillarGrid(input.chart),
+    }),
+    mbti:
+      mbtiSource === null
+        ? null
+        : buildMbtiCommonProfileTableData(mbtiSource),
+  };
+}
+
+function buildCompatibilityFourPillarGrid(
+  chart: CompatibilityReportDraft["chartComparison"]["personA"],
+): readonly ManseRyeokFourPillarGridColumnInput[] {
+  return [
+    buildCompatibilityPillarColumn("hour", chart.pillars.hour),
+    buildCompatibilityPillarColumn("day", chart.pillars.day),
+    buildCompatibilityPillarColumn("month", chart.pillars.month),
+    buildCompatibilityPillarColumn("year", chart.pillars.year),
+  ].filter(
+    (column): column is ManseRyeokFourPillarGridColumnInput =>
+      column !== null,
+  );
+}
+
+function buildCompatibilityPillarColumn(
+  columnId: ManseRyeokFourPillarGridColumnInput["columnId"],
+  pillar: string | undefined,
+): ManseRyeokFourPillarGridColumnInput | null {
+  const normalizedPillar = normalizeCompatibilityPillarForTable(pillar);
+
+  if (normalizedPillar === null) {
+    return null;
+  }
+
+  return {
+    columnId,
+    pillar: normalizedPillar,
+  };
+}
+
+function normalizeCompatibilityPillarForTable(
+  pillar: string | undefined,
+): string | null {
+  if (pillar === undefined) {
+    return null;
+  }
+
+  const normalized = pillar.trim().replace(/일주$/u, "");
+
+  if (normalized.length < 2) {
+    return null;
+  }
+
+  const [rawStem, rawBranch] = [...normalized];
+  const stem = compatibilityTableStemToHanja[rawStem] ?? rawStem;
+  const branch = compatibilityTableBranchToHanja[rawBranch] ?? rawBranch;
+
+  if (
+    !compatibilityTableSupportedStems.includes(
+      stem as (typeof compatibilityTableSupportedStems)[number],
+    ) ||
+    !compatibilityTableSupportedBranches.includes(
+      branch as (typeof compatibilityTableSupportedBranches)[number],
+    )
+  ) {
+    return null;
+  }
+
+  return `${stem}${branch}`;
+}
+
+function buildCompatibilityConnectionSummary(
+  draft: CompatibilityReportDraft,
+): CompatibilityConnectionSummaryInput {
+  const deepNotes = getDraftDeepSajuBridge(draft)?.notes ?? [];
+  const dayMasterNote = findDeepSajuNote(deepNotes, ["day_master_relation"]);
+  const dayBranchNote = findDeepSajuNote(deepNotes, [
+    "branch_clash",
+    "branch_harm",
+    "branch_trine",
+    "spouse_palace",
+  ]);
+  const elementNote = findDeepSajuNote(deepNotes, [
+    "element_complement",
+    "combined_element_climate",
+  ]);
+  const tenGodNote = findDeepSajuNote(deepNotes, ["cross_ten_god"]);
+
+  return {
+    compatibilityHeadline: formatNullableCompatibilityText(
+      draft.coreLine,
+      draft.relationshipType,
+    ),
+    overallTone: draft.scoreSummary.scoreLabel,
+    myeongliConnectionSummary: formatNullableCompatibilityText(
+      deepNotes[0]?.plainKoreanSummary ?? draft.openingSummary,
+      draft.relationshipType,
+    ),
+    mbtiConnectionSummary: buildCompatibilityMbtiSummary(draft),
+    dayMasterRelation: formatDeepSajuNoteForSummary(
+      dayMasterNote,
+      draft.relationshipType,
+    ),
+    dayBranchRelation: formatDeepSajuNoteForSummary(
+      dayBranchNote,
+      draft.relationshipType,
+    ),
+    elementBalance: formatDeepSajuNoteForSummary(
+      elementNote,
+      draft.relationshipType,
+    ),
+    tenGodRelation: formatDeepSajuNoteForSummary(
+      tenGodNote,
+      draft.relationshipType,
+    ),
+    interactionLabels: deepNotes
+      .map((note) => formatTechnicalRelationLabel(note.relationLabel))
+      .filter((label) => label.length > 0)
+      .slice(0, 6),
+    sharedStrengths: formatCompatibilityList(
+      draft.keyCompatibilityPoints.strengthPoints.slice(0, 3),
+      draft.relationshipType,
+    ),
+    frictionPoints: formatCompatibilityList(
+      draft.keyCompatibilityPoints.frictionPoints.slice(0, 3),
+      draft.relationshipType,
+    ),
+    repairStrategy: formatNullableCompatibilityText(
+      draft.keyCompatibilityPoints.relationshipRules[0],
+      draft.relationshipType,
+    ),
+    timingNotes: formatCompatibilityList(
+      draft.keyCompatibilityPoints.attractionPoints.slice(0, 2),
+      draft.relationshipType,
+    ),
+  };
+}
+
+function findDeepSajuNote(
+  notes: readonly CompatibilityDeepSajuBridgeResult["notes"][number][],
+  layers: readonly CompatibilityDeepSajuLayer[],
+): CompatibilityDeepSajuBridgeResult["notes"][number] | undefined {
+  return notes.find((note) => layers.includes(note.layer));
+}
+
+function formatDeepSajuNoteForSummary(
+  note: CompatibilityDeepSajuBridgeResult["notes"][number] | undefined,
+  relationshipType: CompatibilityReportDraft["relationshipType"],
+): string | null {
+  if (note === undefined) {
+    return null;
+  }
+
+  return formatNullableCompatibilityText(
+    note.plainKoreanSummary || note.relationshipTranslation,
+    relationshipType,
+  );
+}
+
+function buildCompatibilityMbtiSummary(
+  draft: CompatibilityReportDraft,
+): string | null {
+  const personAMbti = draft.chartComparison.personA.mbti;
+  const personBMbti = draft.chartComparison.personB.mbti;
+
+  if (personAMbti === undefined && personBMbti === undefined) {
+    return null;
+  }
+
+  return `${personAMbti ?? "MBTI 미입력"} × ${personBMbti ?? "MBTI 미입력"}`;
+}
+
+function formatNullableCompatibilityText(
+  text: string | undefined,
+  relationshipType: CompatibilityReportDraft["relationshipType"],
+): string | null {
+  if (text === undefined || text.trim().length === 0) {
+    return null;
+  }
+
+  return formatCompatibilityDisplayText(text, relationshipType);
+}
+
+function formatCompatibilityList(
+  values: readonly string[],
+  relationshipType: CompatibilityReportDraft["relationshipType"],
+): readonly string[] {
+  return values
+    .map((value) => formatCompatibilityDisplayText(value, relationshipType))
+    .filter((value) => value.trim().length > 0);
 }
 
 function renderDeepSajuStructureCard(
@@ -896,6 +1208,8 @@ export function CompatibilityReportView({
   draft,
   reportId,
 }: CompatibilityReportViewProps) {
+  const compatibilityTableData = buildCompatibilityTopTableData(draft);
+
   return (
     <article className="space-y-8 rounded-xl border border-neutral-800 bg-neutral-900/80 p-5 shadow-2xl shadow-black/30 sm:p-6">
       <header className="space-y-5">
@@ -982,6 +1296,8 @@ export function CompatibilityReportView({
         </div>
         </dl>
       )}
+
+      <CompatibilityTable data={compatibilityTableData} defaultOpen={true} />
 
       {renderCompatibilityScoreCards(draft)}
 

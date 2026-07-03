@@ -65,6 +65,14 @@ describe("report result page source", () => {
       "isCompatibilityReportDraft",
       "renderGeneratedCompatibilityState",
       "사주×MBTI 궁합 리포트",
+      "CompatibilityTable",
+      "buildCompatibilityTableData",
+      "buildCompatibilityTopTableData",
+      "mapCompatibilityTableRelationCategory",
+      "buildCompatibilityPersonTableInput",
+      "buildCompatibilityFourPillarGrid",
+      "getMbtiSourceByType",
+      "buildMbtiCommonProfileTableData",
       "두 사람 만세력 비교",
       "관계 유형",
       "종합 궁합 점수",
@@ -217,5 +225,11 @@ describe("report result page source", () => {
     expect(compatibilityViewSource).not.toContain("찔리는 장면");
     expect(compatibilityViewSource).not.toContain("Chapter");
     expect(compatibilityViewSource).not.toContain("{note.layer}</");
+    expect(compatibilityViewSource.indexOf("<CompatibilityTable")).toBeGreaterThan(
+      compatibilityViewSource.indexOf("</dl>"),
+    );
+    expect(compatibilityViewSource.indexOf("<CompatibilityTable")).toBeLessThan(
+      compatibilityViewSource.indexOf("{renderCompatibilityScoreCards(draft)}"),
+    );
   });
 });
