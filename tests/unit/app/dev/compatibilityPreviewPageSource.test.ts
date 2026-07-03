@@ -59,11 +59,6 @@ describe("compatibility preview page source", () => {
       "scoreLabels[key]",
       "CompatibilityTable",
       "buildCompatibilityTableData",
-      "두 사람 만세력 비교",
-      "연주",
-      "월주",
-      "일주",
-      "시주",
       "draft.chapters.map",
       "chapter.directHitScenes",
       "반복될 수 있는 장면",
@@ -77,6 +72,8 @@ describe("compatibility preview page source", () => {
       expect(combinedSource).toContain(marker);
     }
     expect(combinedSource).not.toContain("사주×MBTI 궁합 리포트 v1.0");
+    expect(viewSource).not.toContain("두 사람 만세력 비교");
+    expect(viewSource).not.toContain("renderCompatibilityChartCard");
   });
 
   it("does not expose secrets or candidate recommendation copy", () => {

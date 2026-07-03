@@ -209,31 +209,6 @@ const expandedDeepSajuLayerOrder = [
   "hour_life_rhythm",
 ] as const satisfies readonly CompatibilityDeepSajuLayer[];
 
-const pillarElementByChar: Record<string, string> = {
-  甲: "wood",
-  乙: "wood",
-  寅: "wood",
-  卯: "wood",
-  丙: "fire",
-  丁: "fire",
-  巳: "fire",
-  午: "fire",
-  戊: "earth",
-  己: "earth",
-  辰: "earth",
-  戌: "earth",
-  丑: "earth",
-  未: "earth",
-  庚: "metal",
-  辛: "metal",
-  申: "metal",
-  酉: "metal",
-  壬: "water",
-  癸: "water",
-  子: "water",
-  亥: "water",
-};
-
 const compatibilityTableSupportedStems = [
   "甲",
   "乙",
@@ -290,98 +265,6 @@ const compatibilityTableBranchToHanja: Record<string, string> = {
   해: "亥",
 };
 
-const diagnosticOnlyChartLabelFragments = [
-  "백" + "호대살",
-  "백" + "호살",
-  "반" + "안살",
-] as const;
-
-const branchAnimalLabels = [
-  "쥐",
-  "소",
-  "호랑이",
-  "토끼",
-  "용",
-  "뱀",
-  "말",
-  "양",
-  "원숭이",
-  "닭",
-  "개",
-  "돼지",
-] as const;
-
-function renderPillarValue(pillar: string) {
-  return (
-    <span className="inline-flex flex-wrap gap-1">
-      {[...pillar].map((character, index) => {
-        const token = pillarElementByChar[character] ?? "unknown";
-
-        return (
-          <span
-            key={`${pillar}:${character}:${index}`}
-            className={`element-bg--${token} rounded px-1.5 py-0.5 font-semibold text-neutral-50`}
-          >
-            {character}
-          </span>
-        );
-      })}
-    </span>
-  );
-}
-
-function filterPublicChartLabels(labels: readonly string[]): readonly string[] {
-  return labels.filter((label) => {
-    const trimmed = label.trim();
-
-    return (
-      trimmed.length > 0 &&
-      !diagnosticOnlyChartLabelFragments.some((blocked) =>
-        trimmed.includes(blocked),
-      ) &&
-      !branchAnimalLabels.includes(trimmed as (typeof branchAnimalLabels)[number])
-    );
-  });
-}
-
-function getPersonCoreSummary(
-  chart: CompatibilityReportDraft["chartComparison"]["personA"],
-): string {
-  if (chart.mbti === "ENTJ") {
-    return "구조를 잡고 빠르게 결론을 내려는 쪽";
-  }
-  if (chart.mbti === "INTP") {
-    return "조건과 원리를 확인하며 안정감을 찾는 쪽";
-  }
-  if (chart.featureLabels.some((label) => label.includes("정관"))) {
-    return "기준과 책임을 먼저 확인하며 관계를 안정시키는 쪽";
-  }
-  if (chart.featureLabels.some((label) => label.includes("재고귀인"))) {
-    return "현실 감각과 축적된 기준으로 관계를 정리하는 쪽";
-  }
-
-  return `${chart.dayPillar}의 결을 중심으로 관계 리듬을 잡는 쪽`;
-}
-
-function getPersonCautionSummary(
-  chart: CompatibilityReportDraft["chartComparison"]["personA"],
-): string {
-  if (chart.mbti === "ENTJ") {
-    return "감정 완충이 짧아질 수 있음";
-  }
-  if (chart.mbti === "INTP") {
-    return "생각이 달아오르면 오래 머무를 수 있음";
-  }
-  if (chart.birthTimeConfidence === "unknown") {
-    return "출생시간 근거가 제한되어 생활 리듬 해석은 낮은 확신도로 봐야 함";
-  }
-  if (chart.featureLabels.some((label) => label.includes("원진살"))) {
-    return "가까운 관계일수록 작은 어긋남이 오래 남을 수 있음";
-  }
-
-  return "속도와 감정 표현을 상대 기준에 맞춰 확인할 필요가 있음";
-}
-
 function renderCompatibilityScoreCards(draft: CompatibilityReportDraft) {
   const scoreLabels = getCompatibilityScoreDisplayLabels(draft.relationshipType);
 
@@ -410,81 +293,6 @@ function renderCompatibilityScoreCards(draft: CompatibilityReportDraft) {
         ))}
       </div>
     </section>
-  );
-}
-
-function formatDayPillarLabel(dayPillar: string): string {
-  return dayPillar.endsWith("일주") ? dayPillar : `${dayPillar}일주`;
-}
-
-function formatBirthTimeReflectionLabel(
-  birthTimeConfidence: CompatibilityReportDraft["chartComparison"]["personA"]["birthTimeConfidence"],
-): string {
-  return birthTimeConfidence === "known" ? "시주 반영" : "시주 미반영";
-}
-
-function renderCompatibilityChartCard(input: {
-  readonly label: string;
-  readonly chart: CompatibilityReportDraft["chartComparison"]["personA"];
-}) {
-  const publicLabels = filterPublicChartLabels(input.chart.featureLabels).slice(0, 6);
-  const pillars = [
-    ["연주", input.chart.pillars.year],
-    ["월주", input.chart.pillars.month],
-    ["일주", input.chart.pillars.day],
-    ["시주", input.chart.pillars.hour ?? "-"],
-  ] as const;
-
-  return (
-    <article className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-      <div>
-        <h3 className="text-lg font-semibold text-neutral-50">{input.label}</h3>
-        <p className="text-sm text-neutral-500">
-          {input.chart.mbti ?? "MBTI 미입력"} ·{" "}
-          {formatDayPillarLabel(input.chart.dayPillar)} ·{" "}
-          {formatBirthTimeReflectionLabel(input.chart.birthTimeConfidence)}
-        </p>
-      </div>
-      <dl className="grid gap-2 rounded-md border border-neutral-800 bg-neutral-900/60 p-3 text-sm">
-        <div>
-          <dt className="text-xs font-semibold text-amber-200">핵심 결</dt>
-          <dd className="mt-1 leading-6 text-neutral-100">
-            {getPersonCoreSummary(input.chart)}
-          </dd>
-        </div>
-        <div>
-          <dt className="text-xs font-semibold text-neutral-400">주의 결</dt>
-          <dd className="mt-1 leading-6 text-neutral-300">
-            {getPersonCautionSummary(input.chart)}
-          </dd>
-        </div>
-      </dl>
-      <dl className="grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">
-        {pillars.map(([label, value]) => (
-          <div
-            key={label}
-            className="rounded-md border border-neutral-800 bg-neutral-900/70 p-3"
-          >
-            <dt className="text-xs font-semibold text-neutral-500">{label}</dt>
-            <dd className="mt-1 font-medium text-neutral-100">
-              {value === "-" ? "-" : renderPillarValue(value)}
-            </dd>
-          </div>
-        ))}
-      </dl>
-      {publicLabels.length === 0 ? null : (
-        <div className="flex flex-wrap gap-2">
-          {publicLabels.map((label) => (
-          <span
-            key={label}
-            className="rounded-full border border-neutral-700 bg-neutral-900 px-2.5 py-1 text-xs text-neutral-300"
-          >
-            {label}
-          </span>
-          ))}
-        </div>
-      )}
-    </article>
   );
 }
 
@@ -1300,22 +1108,6 @@ export function CompatibilityReportView({
       <CompatibilityTable data={compatibilityTableData} defaultOpen={true} />
 
       {renderCompatibilityScoreCards(draft)}
-
-      <section className="space-y-4" aria-label="두 사람 만세력 비교">
-        <h2 className="text-xl font-semibold text-neutral-50">
-          두 사람 만세력 비교
-        </h2>
-        <div className="grid gap-4 md:grid-cols-2">
-          {renderCompatibilityChartCard({
-            label: `${draft.personALabel}님`,
-            chart: draft.chartComparison.personA,
-          })}
-          {renderCompatibilityChartCard({
-            label: `${draft.personBLabel}님`,
-            chart: draft.chartComparison.personB,
-          })}
-        </div>
-      </section>
 
       {renderDeepSajuStructureCard(draft)}
 

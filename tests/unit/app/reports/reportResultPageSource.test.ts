@@ -73,7 +73,6 @@ describe("report result page source", () => {
       "buildCompatibilityFourPillarGrid",
       "getMbtiSourceByType",
       "buildMbtiCommonProfileTableData",
-      "두 사람 만세력 비교",
       "관계 유형",
       "종합 궁합 점수",
       "draft.personALabel",
@@ -90,13 +89,6 @@ describe("report result page source", () => {
       "scoreLabels[key]",
       "relationshipType: draft.relationshipType",
       "category: key",
-      "핵심 결",
-      "주의 결",
-      "formatDayPillarLabel",
-      "formatBirthTimeReflectionLabel",
-      "시주 반영",
-      "시주 미반영",
-      "filterPublicChartLabels",
       "getDraftDeepSajuBridge",
       "renderDeepSajuStructureCard",
       "두 사람 사이에 생기는 명리학 구조",
@@ -225,6 +217,9 @@ describe("report result page source", () => {
     expect(compatibilityViewSource).not.toContain("찔리는 장면");
     expect(compatibilityViewSource).not.toContain("Chapter");
     expect(compatibilityViewSource).not.toContain("{note.layer}</");
+    expect(compatibilityViewSource).not.toContain("두 사람 만세력 비교");
+    expect(compatibilityViewSource).not.toContain("renderCompatibilityChartCard");
+    expect(compatibilityViewSource).not.toContain("filterPublicChartLabels");
     expect(compatibilityViewSource.indexOf("<CompatibilityTable")).toBeGreaterThan(
       compatibilityViewSource.indexOf("</dl>"),
     );
