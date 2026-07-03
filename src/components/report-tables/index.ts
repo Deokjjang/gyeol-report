@@ -10,3 +10,7 @@ export {
   SaeunAnnualCompareTable,
   SaeunMonthlyHalfTable,
 } from "./SaeunFortuneTable";
+export {
+  default as CompatibilityTable,
+  ConnectionSummaryTable,
+} from "./CompatibilityTable";

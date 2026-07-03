@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  CompatibilityTable,
+  ConnectionSummaryTable,
   DaeunAnnualCompareTable,
   DaeunFortuneTable,
   DaeunTimelineTable,
@@ -21,5 +23,7 @@ describe("report table component exports", () => {
     expect(typeof SaeunFortuneTable).toBe("function");
     expect(typeof SaeunAnnualCompareTable).toBe("function");
     expect(typeof SaeunMonthlyHalfTable).toBe("function");
+    expect(typeof CompatibilityTable).toBe("function");
+    expect(typeof ConnectionSummaryTable).toBe("function");
   });
 });
