@@ -55,3 +55,43 @@ export type ReportTableStemDisplay = ReportTableGanjiDisplayBase & {
 export type ReportTableBranchDisplay = ReportTableGanjiDisplayBase & {
   readonly hanja: ReportTableEarthlyBranch;
 };
+
+export type ManseRyeokPillarKey = "hour" | "day" | "month" | "year";
+
+export type ManseRyeokStemBranchCell = {
+  readonly hanja: string;
+  readonly ko: string;
+  readonly tenGod: string | null;
+  readonly element: ReportTableFiveElement;
+  readonly yinYang: ReportTableYinYang;
+  readonly colorToken: ReportTableElementColorToken;
+};
+
+export type ManseRyeokDetailRowKey =
+  | "hiddenStems"
+  | "twelveLifeStage"
+  | "twelveSinsal"
+  | "sinsalAndGwiin"
+  | "interactions";
+
+export type ManseRyeokColumn = {
+  readonly key: ManseRyeokPillarKey;
+  readonly label: string;
+};
+
+export type ManseRyeokDetailRow = {
+  readonly key: ManseRyeokDetailRowKey;
+  readonly label: string;
+  readonly cells: Record<ManseRyeokPillarKey, readonly string[]>;
+};
+
+export type ManseRyeokCommonTableData = {
+  readonly title: string;
+  readonly columns: readonly ManseRyeokColumn[];
+  readonly stemRow: Record<ManseRyeokPillarKey, ManseRyeokStemBranchCell | null>;
+  readonly branchRow: Record<
+    ManseRyeokPillarKey,
+    ManseRyeokStemBranchCell | null
+  >;
+  readonly detailRows: readonly ManseRyeokDetailRow[];
+};
