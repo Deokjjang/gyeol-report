@@ -4,6 +4,7 @@ import type {
   HeavenlyStem,
   TenGod,
 } from "./annualFortuneTypes";
+import type { ProductBridgeEvidencePacket } from "./bridge/types";
 import type { UserContextProfile } from "./userContextTypes";
 
 export type CareerReportProductType = "career_money_study";
@@ -139,6 +140,7 @@ export interface CareerReportEvidencePacket {
   readonly workRiskWarnings: readonly CareerSignal[];
   readonly opportunitySignals: readonly CareerSignal[];
   readonly timingHints: readonly CareerSignal[];
+  readonly bridgeEvidence: ProductBridgeEvidencePacket;
   readonly safetyNotes: readonly string[];
 }
 

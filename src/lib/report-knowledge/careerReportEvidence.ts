@@ -7,6 +7,11 @@ import {
   getAnnualGanjiInfo,
   getTenGodForStemPair,
 } from "./annualFortuneYearRules";
+import {
+  buildMyeongliMbtiBridgePacket,
+  buildProductBridgeEvidence,
+  type MyeongliSignal,
+} from "./bridge";
 import type {
   CareerReportEvidencePacket,
   CareerReportFixturePerson,
@@ -74,6 +79,29 @@ const allTenGods = [
   "편인",
   "정인",
 ] as const satisfies readonly TenGod[];
+
+const tenGodGroupSignals = [
+  {
+    label: "재성",
+    targets: ["재성", "편재", "정재", "재다신약"],
+  },
+  {
+    label: "관성",
+    targets: ["관성", "편관", "정관"],
+  },
+  {
+    label: "식상",
+    targets: ["식상", "식신", "상관", "무식상"],
+  },
+  {
+    label: "인성",
+    targets: ["인성", "편인", "정인", "무인성"],
+  },
+  {
+    label: "비겁",
+    targets: ["비겁", "비견", "겁재"],
+  },
+] as const;
 
 const hardClaimPatterns = [
   "반드시",
@@ -1056,6 +1084,128 @@ function buildSafetyNotes(): readonly string[] {
   ];
 }
 
+function buildCareerMyeongliSignals(input: {
+  readonly dayMaster: HeavenlyStem;
+  readonly labels: readonly string[];
+  readonly myeongliCareerBasis: CareerReportEvidencePacket["myeongliCareerBasis"];
+}): readonly MyeongliSignal[] {
+  const signals: MyeongliSignal[] = [];
+  const seen = new Set<string>();
+  const basisEvidence = [
+    input.myeongliCareerBasis.careerPlain,
+    input.myeongliCareerBasis.moneyPlain,
+    input.myeongliCareerBasis.studyPlain,
+  ]
+    .filter((plain) => plain.length > 0)
+    .join(" ");
+  const pushSignal = (signal: MyeongliSignal) => {
+    const key = `${signal.kind}:${signal.label}:${signal.value ?? ""}`;
+
+    if (!seen.has(key)) {
+      seen.add(key);
+      signals.push(signal);
+    }
+  };
+
+  pushSignal({
+    kind: "pillar",
+    label: `${input.dayMaster}일간`,
+    value: input.dayMaster,
+    evidence: input.myeongliCareerBasis.dayMasterPlain,
+  });
+
+  for (const element of [
+    ...input.myeongliCareerBasis.dominantElements,
+    ...input.myeongliCareerBasis.heavyElements,
+    ...input.myeongliCareerBasis.missingElements,
+  ]) {
+    pushSignal({
+      kind: "element",
+      label: elementLabels[element],
+      value: element,
+      evidence: basisEvidence,
+    });
+  }
+
+  for (const tenGod of input.myeongliCareerBasis.tenGodFocus) {
+    pushSignal({
+      kind: "tenGod",
+      label: tenGod,
+      value: tenGod,
+      evidence: basisEvidence,
+    });
+  }
+
+  for (const group of tenGodGroupSignals) {
+    if (includesAny(input.labels, group.targets)) {
+      pushSignal({
+        kind: "tenGod",
+        label: group.label,
+        value: group.label,
+        evidence: basisEvidence,
+      });
+    }
+  }
+
+  for (const label of input.labels) {
+    if (label.includes("귀인") || label === "금여록") {
+      pushSignal({
+        kind: "gwiin",
+        label,
+        value: label,
+        evidence: label,
+      });
+      continue;
+    }
+
+    if (label.includes("살") || label === "공망") {
+      pushSignal({
+        kind: "shinsal",
+        label,
+        value: label,
+        evidence: label,
+      });
+      continue;
+    }
+
+    if (
+      label.includes("합") ||
+      label.includes("충") ||
+      label.includes("형") ||
+      label.includes("파") ||
+      label.includes("해")
+    ) {
+      pushSignal({
+        kind: "interaction",
+        label,
+        value: label,
+        evidence: label,
+      });
+    }
+  }
+
+  return signals;
+}
+
+function buildCareerBridgeEvidence(input: {
+  readonly mbtiType: string | null | undefined;
+  readonly dayMaster: HeavenlyStem;
+  readonly labels: readonly string[];
+  readonly myeongliCareerBasis: CareerReportEvidencePacket["myeongliCareerBasis"];
+}): CareerReportEvidencePacket["bridgeEvidence"] {
+  const bridgePacket = buildMyeongliMbtiBridgePacket({
+    mbtiType: input.mbtiType,
+    productContext: "careerMoneyStudy",
+    myeongliSignals: buildCareerMyeongliSignals({
+      dayMaster: input.dayMaster,
+      labels: input.labels,
+      myeongliCareerBasis: input.myeongliCareerBasis,
+    }),
+  });
+
+  return buildProductBridgeEvidence(bridgePacket, "careerMoneyStudy");
+}
+
 export function buildCareerReportEvidence(
   input: BuildCareerReportEvidenceInput,
 ): CareerReportEvidencePacket {
@@ -1092,6 +1242,12 @@ export function buildCareerReportEvidence(
     dayMaster,
     labels: input.person.labels,
   });
+  const bridgeEvidence = buildCareerBridgeEvidence({
+    mbtiType: input.person.mbti,
+    dayMaster,
+    labels: input.person.labels,
+    myeongliCareerBasis,
+  });
 
   return {
     productType: "career_money_study",
@@ -1113,6 +1269,7 @@ export function buildCareerReportEvidence(
     workRiskWarnings,
     opportunitySignals,
     timingHints,
+    bridgeEvidence,
     safetyNotes: buildSafetyNotes(),
   };
 }
@@ -1121,14 +1278,18 @@ function countPatternInText(
   packets: readonly CareerReportEvidencePacket[],
   patterns: readonly string[],
 ): number {
-  const text = packets.map((packet) => JSON.stringify(packet)).join("\n");
+  const text = packets.map(serializeQualityCheckedPacket).join("\n");
 
   return patterns.some((pattern) => text.includes(pattern)) ? 1 : 0;
 }
 
 function hasStockTicker(packets: readonly CareerReportEvidencePacket[]): boolean {
-  return stockTickerPattern.test(
-    packets.map((packet) => JSON.stringify(packet)).join("\n"),
+  return stockTickerPattern.test(packets.map(serializeQualityCheckedPacket).join("\n"));
+}
+
+function serializeQualityCheckedPacket(packet: CareerReportEvidencePacket): string {
+  return JSON.stringify(packet, (key, value: unknown) =>
+    key === "bridgeEvidence" ? undefined : value,
   );
 }
 
@@ -1146,8 +1307,8 @@ export function summarizeCareerReportEvidenceMatrixQuality(
   const deokminLeakageWarnings = packets
     .filter((packet) => packet.personLabel !== "덕민")
     .some((packet) =>
-      JSON.stringify(packet).includes("덕민") ||
-      JSON.stringify(packet).includes("개발·서비스 기획"),
+      serializeQualityCheckedPacket(packet).includes("덕민") ||
+      serializeQualityCheckedPacket(packet).includes("개발·서비스 기획"),
     )
     ? 1
     : 0;

@@ -33,6 +33,7 @@ function buildPromptPacket(packet: CareerReportEvidencePacket): object {
     workRiskWarnings: packet.workRiskWarnings,
     opportunitySignals: packet.opportunitySignals,
     timingHints: packet.timingHints,
+    bridgeEvidence: packet.bridgeEvidence,
     safetyNotes: packet.safetyNotes,
   };
 }
@@ -60,6 +61,9 @@ export function buildOpenAICareerReportWriterMessages(input: {
       "This report is deeper and more direct than the comprehensive report's career section.",
       "Myeongli is primary. MBTI is a behavioral/style layer.",
       "Do not scientifically equate MBTI and 사주. MBTI only explains execution style, decision style, money behavior, and study behavior.",
+      "Use bridgeEvidence only as supporting classification. Do not treat it as a calculation result or proof that 명리와 MBTI가 같은 원인이라는 뜻으로 쓰지 않는다.",
+      "Never turn bridgeEvidence.forbiddenAngles into user-facing claims.",
+      "Do not write deterministic predictions, 수익 보장, 합격 보장, 직업 성공 보장, or 투자 성과 보장.",
       "Use current status, fieldLabel, relationshipStatus, and life stage if present as interpretation filters. They do not change calculations.",
       "Be direct, specific, interesting, and immersive, but do not guarantee outcomes.",
       "Recommend actual job titles. Explain why each job fits. Explain what jobs are less suitable.",

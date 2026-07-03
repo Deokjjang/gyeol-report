@@ -25,6 +25,8 @@ describe("openaiCareerReportWriterPrompt", () => {
     expect(messages.developer).toContain("Myeongli is primary");
     expect(messages.developer).toContain("MBTI is a behavioral/style layer");
     expect(messages.developer).toContain("Do not scientifically equate MBTI and 사주");
+    expect(messages.developer).toContain("bridgeEvidence only as supporting classification");
+    expect(messages.developer).toContain("bridgeEvidence.forbiddenAngles");
   });
 
   it("requires actual job titles and less suitable jobs", () => {
@@ -53,6 +55,17 @@ describe("openaiCareerReportWriterPrompt", () => {
     expect(messages.user).toContain("career_money_study");
     expect(messages.user).toContain("recommendedJobs");
     expect(messages.user).toContain("investmentProfile");
+    expect(messages.user).toContain("bridgeEvidence");
+    expect(messages.user).toContain('"productKey": "careerMoneyStudy"');
     expect(messages.system).toContain("career_money_study_report_draft");
+  });
+
+  it("forbids turning bridge angles into career guarantees", () => {
+    const messages = buildMessages();
+
+    expect(messages.developer).toContain("수익 보장");
+    expect(messages.developer).toContain("합격 보장");
+    expect(messages.developer).toContain("직업 성공 보장");
+    expect(messages.developer).toContain("Never turn bridgeEvidence.forbiddenAngles");
   });
 });

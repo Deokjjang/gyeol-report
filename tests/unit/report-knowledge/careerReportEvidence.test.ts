@@ -32,6 +32,17 @@ describe("careerReportEvidence", () => {
     expect(evidence.recommendedJobs[0]).toMatchObject({
       fit: "high",
     });
+    expect(evidence.bridgeEvidence.productKey).toBe("careerMoneyStudy");
+    expect(evidence.bridgeEvidence.primaryEvidence.length).toBeGreaterThan(0);
+    expect(evidence.bridgeEvidence.primaryEvidence[0]?.purposes).toEqual(
+      expect.arrayContaining(["career", "money", "investment", "study"]),
+    );
+    expect(evidence.bridgeEvidence.cautionEvidence[0]?.purposes).toContain(
+      "caution",
+    );
+    expect(evidence.bridgeEvidence.forbiddenAngles).toEqual(
+      expect.arrayContaining(["수익 확정", "합격 확정", "승진·이직 확정"]),
+    );
   });
 
   it("derives Myeongli career evidence from ten-gods and elements", () => {
@@ -78,6 +89,30 @@ describe("careerReportEvidence", () => {
     expect(enfp.mbtiCareerBasis.workStylePlain).toMatch(/사람|표현|결과물/u);
     expect(unknownMbti.myeongliCareerBasis.moneyPlain).toContain("돈");
     expect(unknownMbti.mbtiCareerBasis.workStylePlain).toContain("MBTI");
+  });
+
+  it("keeps bridge evidence safe for unknown MBTI or sparse labels", () => {
+    const fixture = requireCareerReportFixture("career-sample-wealth-single");
+    const buildSparseUnknownMbtiEvidence = () =>
+      buildCareerReportEvidence({
+        person: {
+          ...fixture.person,
+          mbti: "ZZZZ",
+          labels: [],
+        },
+      });
+
+    expect(buildSparseUnknownMbtiEvidence).not.toThrow();
+
+    const evidence = buildSparseUnknownMbtiEvidence();
+
+    expect(evidence.bridgeEvidence.productKey).toBe("careerMoneyStudy");
+    expect(evidence.bridgeEvidence.primaryEvidence).toEqual([]);
+    expect(evidence.bridgeEvidence.supportingEvidence).toEqual([]);
+    expect(evidence.bridgeEvidence.cautionEvidence).toEqual([]);
+    expect(evidence.bridgeEvidence.forbiddenAngles).toEqual(
+      expect.arrayContaining(["수익 확정", "합격 확정", "승진·이직 확정"]),
+    );
   });
 
   it("combines Deokmin into an operations planning resource profile", () => {
