@@ -14,3 +14,8 @@ export {
   default as CompatibilityTable,
   ConnectionSummaryTable,
 } from "./CompatibilityTable";
+export {
+  default as CareerReportCommonTables,
+  CareerReportManseRyeokTable,
+  CareerReportMbtiProfileTable,
+} from "./CareerReportCommonTables";

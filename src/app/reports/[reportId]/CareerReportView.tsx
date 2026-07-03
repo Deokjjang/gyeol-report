@@ -1,14 +1,22 @@
 import type { ReactNode } from "react";
 
+import {
+  CareerReportManseRyeokTable,
+  CareerReportMbtiProfileTable,
+} from "../../../components/report-tables";
 import type { CareerReportDraft } from "../../../lib/report-generation/careerReportDraftTypes";
 import {
   sanitizeCareerReportVisibleText,
 } from "../../../lib/report-generation/careerReportDraftValidator";
+import type {
+  CareerReportEvidencePacket,
+} from "../../../lib/report-knowledge/careerReportTypes";
 
 type CareerReportViewProps = {
   readonly draft: CareerReportDraft;
   readonly reportId?: string;
   readonly devStatus?: string;
+  readonly evidencePacket?: CareerReportEvidencePacket;
   readonly manseRyeokTable?: ReactNode;
   readonly mbtiProfileTable?: ReactNode;
 };
@@ -207,9 +215,21 @@ export function CareerReportView({
   draft,
   reportId,
   devStatus,
+  evidencePacket,
   manseRyeokTable,
   mbtiProfileTable,
 }: CareerReportViewProps) {
+  const resolvedManseRyeokTable =
+    manseRyeokTable ??
+    (evidencePacket === undefined ? undefined : (
+      <CareerReportManseRyeokTable evidence={evidencePacket} />
+    ));
+  const resolvedMbtiProfileTable =
+    mbtiProfileTable ??
+    (evidencePacket === undefined || evidencePacket.mbtiType === null ? undefined : (
+      <CareerReportMbtiProfileTable evidence={evidencePacket} />
+    ));
+
   return (
     <article className="mx-auto max-w-5xl space-y-6 text-[#201a18]">
       {devStatus === undefined ? null : (
@@ -252,7 +272,10 @@ export function CareerReportView({
         </p>
       </header>
 
-      {renderCommonTableArea({ manseRyeokTable, mbtiProfileTable })}
+      {renderCommonTableArea({
+        manseRyeokTable: resolvedManseRyeokTable,
+        mbtiProfileTable: resolvedMbtiProfileTable,
+      })}
       {renderContextPills(draft)}
 
       <CareerSection

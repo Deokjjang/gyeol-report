@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  buildCareerReportCommonTablesData,
   buildCompatibilityTableData,
   buildDaeunFortuneTableData,
   buildManseRyeokCommonTableData,
@@ -14,6 +15,12 @@ import {
   type MbtiCommonProfileTableData,
   type SaeunFortuneTableData,
 } from "../../../src/lib/report-tables";
+import {
+  buildCareerReportEvidence,
+} from "../../../src/lib/report-knowledge/careerReportEvidence";
+import {
+  requireCareerReportFixture,
+} from "../../../src/lib/report-knowledge/careerReportFixtures";
 
 describe("report table lib exports", () => {
   it("exports display dictionary helpers", () => {
@@ -102,5 +109,18 @@ describe("report table lib exports", () => {
     expect(daeunData.currentDaeun.ganji).toBe("戊辰");
     expect(saeunData.selectedYear).toBe(2026);
     expect(compatibilityData.relationCategory).toBe("friendship");
+  });
+
+  it("exports career report table presenter", () => {
+    const fixture = requireCareerReportFixture("deokmin-career");
+    const careerTables = buildCareerReportCommonTablesData(
+      buildCareerReportEvidence({
+        fixtureId: fixture.id,
+        person: fixture.person,
+      }),
+    );
+
+    expect(careerTables.manseRyeokTableData.title).toBe("덕민님의 만세력");
+    expect(careerTables.mbtiProfileTableData?.type).toBe("ENTJ");
   });
 });

@@ -38,6 +38,11 @@ describe("CareerReportView source", () => {
     const requiredMarkers = [
       "manseRyeokTable?: ReactNode",
       "mbtiProfileTable?: ReactNode",
+      "evidencePacket?: CareerReportEvidencePacket",
+      "CareerReportManseRyeokTable",
+      "CareerReportMbtiProfileTable",
+      "resolvedManseRyeokTable",
+      "resolvedMbtiProfileTable",
       "renderCommonTableArea",
       "renderTableSlot",
       "공통 만세력표",

@@ -6,3 +6,4 @@ export * from "./mbtiSourceRegistry";
 export * from "./daeunTableData";
 export * from "./saeunFortuneTableData";
 export * from "./compatibilityTableData";
+export * from "./careerReportTablePresenter";
