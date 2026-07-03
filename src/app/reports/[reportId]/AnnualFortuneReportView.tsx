@@ -1,3 +1,4 @@
+import { SaeunFortuneTable } from "../../../components/report-tables";
 import type { AnnualFortuneReportDraft } from "../../../lib/report-generation/annualFortuneReportDraftTypes";
 import {
   buildAnnualDomainLockedFinalAdvice,
@@ -5,6 +6,7 @@ import {
   getAnnualMonthlySectionBasisNote,
   sanitizeAnnualFortuneVisibleText,
 } from "../../../lib/report-generation/annualFortuneReportDraftValidator";
+import { buildSaeunFortuneTableData } from "../../../lib/report-tables";
 
 type AnnualFortuneReportViewProps = {
   readonly draft: AnnualFortuneReportDraft;
@@ -239,6 +241,41 @@ function renderYearStructure(draft: AnnualFortuneReportDraft) {
   );
 }
 
+function renderSaeunFortuneTable(draft: AnnualFortuneReportDraft) {
+  if (draft.yearSummary.ganji.length === 0 && draft.monthlyFlow.length === 0) {
+    return null;
+  }
+
+  const tableData = buildSaeunFortuneTableData({
+    title: `${text(draft.personLabel)} ${draft.targetYear}년 세운표`,
+    selectedYear: draft.targetYear,
+    annualFortune: {
+      ganji: text(draft.yearSummary.ganji),
+      stemTenGod: text(draft.yearSummary.tenGodLabel),
+      interactions: [text(draft.annualStructure.branchInteractionExplanation)].filter(
+        (value) => value.length > 0,
+      ),
+    },
+    monthlyFortunes: draft.monthlyFlow.map((flow) => ({
+      month: flow.month,
+      monthLabel: text(flow.label),
+      monthGanji: flow.monthGanji === null ? undefined : text(flow.monthGanji),
+      oneLine: text(flow.headline),
+      caution:
+        flow.natalInteractionSummary === null
+          ? null
+          : text(flow.natalInteractionSummary),
+      basis: getMonthlyBasisDisplayLabel(flow.monthlyBasis),
+      interactions:
+        flow.natalInteractionSummary === null
+          ? []
+          : [text(flow.natalInteractionSummary)],
+    })),
+  });
+
+  return <SaeunFortuneTable data={tableData} defaultOpen={true} />;
+}
+
 export function AnnualFortuneReportView({
   draft,
   reportId,
@@ -338,6 +375,7 @@ export function AnnualFortuneReportView({
       )}
 
       {renderYearStructure(draft)}
+      {renderSaeunFortuneTable(draft)}
 
       <section className="space-y-3" aria-label="흐름 카드">
         <div className="flex flex-wrap gap-2">

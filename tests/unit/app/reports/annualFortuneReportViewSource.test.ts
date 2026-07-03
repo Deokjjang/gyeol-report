@@ -37,6 +37,12 @@ describe("AnnualFortuneReportView source", () => {
     expect(viewSource).toContain("draft.flowCards.map");
     expect(viewSource).toContain("draft.keySignals.map");
     expect(viewSource).toContain("draft.annualStructure.ganjiExplanation");
+    expect(viewSource).toContain("SaeunFortuneTable");
+    expect(viewSource).toContain("buildSaeunFortuneTableData");
+    expect(viewSource).toContain("renderSaeunFortuneTable");
+    expect(viewSource).toContain("draft.yearSummary.ganji.length === 0");
+    expect(viewSource).toContain("annualFortune");
+    expect(viewSource).toContain("monthlyFortunes");
     expect(viewSource).toContain("draft.chapters.map");
     expect(viewSource).toContain("chapter.likelyScenes");
     expect(viewSource).toContain("chapter.practicalAdvice");
@@ -48,6 +54,9 @@ describe("AnnualFortuneReportView source", () => {
     expect(viewSource).toContain("getAnnualMonthlyCardBasisLabel");
     expect(viewSource).toContain("getAnnualMonthlySectionBasisNote");
     expect(viewSource).toContain("getAnnualMonthlySectionBasisNote");
+    expect(viewSource).toContain("getMonthlyBasisDisplayLabel(flow.monthlyBasis)");
+    expect(viewSource).toContain("flow.monthGanji === null ? undefined");
+    expect(viewSource).toContain("{renderSaeunFortuneTable(draft)}");
     expect(viewSource).not.toContain(
       "기준: 월별 흐름은 달력월 기준 운영 가이드입니다",
     );
