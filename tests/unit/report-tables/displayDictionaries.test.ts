@@ -4,8 +4,12 @@ import {
   earthlyBranchDisplays,
   getBranchDisplay,
   getElementColorToken,
+  getMbtiFunctionDisplay,
+  getMbtiPreferenceDisplay,
   getStemDisplay,
   heavenlyStemDisplays,
+  mbtiFunctionDisplays,
+  mbtiPreferenceDisplays,
   reportTableElementColorTokens,
 } from "../../../src/lib/report-tables/displayDictionaries";
 
@@ -87,5 +91,62 @@ describe("report table display dictionaries", () => {
   it("throws for unsupported stem and branch values", () => {
     expect(() => getStemDisplay("A")).toThrow("Unsupported heavenly stem: A");
     expect(() => getBranchDisplay("A")).toThrow("Unsupported earthly branch: A");
+  });
+
+  it("defines MBTI preference display values", () => {
+    expect(Object.keys(mbtiPreferenceDisplays)).toEqual([
+      "E",
+      "I",
+      "S",
+      "N",
+      "T",
+      "F",
+      "J",
+      "P",
+    ]);
+    expect(getMbtiPreferenceDisplay("E")).toMatchObject({
+      code: "E",
+      nameKo: "외향",
+      nameEn: "Extravert",
+    });
+    expect(getMbtiPreferenceDisplay("N")).toMatchObject({
+      code: "N",
+      nameKo: "직관",
+      nameEn: "iNtuition",
+    });
+  });
+
+  it("defines MBTI cognitive function display values", () => {
+    expect(Object.keys(mbtiFunctionDisplays)).toEqual([
+      "Te",
+      "Ti",
+      "Fe",
+      "Fi",
+      "Se",
+      "Si",
+      "Ne",
+      "Ni",
+    ]);
+    expect(getMbtiFunctionDisplay("Te")).toMatchObject({
+      code: "Te",
+      nameKo: "외향 사고",
+      attitude: "외향",
+      domain: "사고",
+    });
+    expect(getMbtiFunctionDisplay("Fi")).toMatchObject({
+      code: "Fi",
+      nameKo: "내향 감정",
+      attitude: "내향",
+      domain: "감정",
+    });
+  });
+
+  it("throws for unsupported MBTI display values", () => {
+    expect(() => getMbtiPreferenceDisplay("A")).toThrow(
+      "Unsupported MBTI preference code: A",
+    );
+    expect(() => getMbtiFunctionDisplay("Tx")).toThrow(
+      "Unsupported MBTI function code: Tx",
+    );
   });
 });

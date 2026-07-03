@@ -95,3 +95,98 @@ export type ManseRyeokCommonTableData = {
   >;
   readonly detailRows: readonly ManseRyeokDetailRow[];
 };
+
+export type MbtiPreferenceAxisKey =
+  | "energy"
+  | "perception"
+  | "judgment"
+  | "lifestyle";
+
+export type MbtiPreferenceCode =
+  | "E"
+  | "I"
+  | "S"
+  | "N"
+  | "T"
+  | "F"
+  | "J"
+  | "P";
+
+export type MbtiPreferenceDisplay = {
+  readonly code: MbtiPreferenceCode;
+  readonly nameKo: string;
+  readonly nameEn: string;
+  readonly description: string;
+};
+
+export type MbtiPreferenceAxisOption = MbtiPreferenceDisplay & {
+  readonly selected: boolean;
+};
+
+export type MbtiPreferenceAxisRow = {
+  readonly axisKey: MbtiPreferenceAxisKey;
+  readonly label: string;
+  readonly selectedCode: MbtiPreferenceCode;
+  readonly left: MbtiPreferenceAxisOption;
+  readonly right: MbtiPreferenceAxisOption;
+};
+
+export type MbtiFunctionStackPosition =
+  | "dominant"
+  | "auxiliary"
+  | "tertiary"
+  | "inferior";
+
+export type MbtiFunctionCode =
+  | "Te"
+  | "Ti"
+  | "Fe"
+  | "Fi"
+  | "Se"
+  | "Si"
+  | "Ne"
+  | "Ni";
+
+export type MbtiFunctionDisplay = {
+  readonly code: MbtiFunctionCode;
+  readonly nameKo: string;
+  readonly attitude: "외향" | "내향";
+  readonly domain: "사고" | "감정" | "감각" | "직관";
+  readonly description: string;
+  readonly reportUsageNote: string;
+};
+
+export type MbtiFunctionStackRow = MbtiFunctionDisplay & {
+  readonly position: MbtiFunctionStackPosition;
+  readonly label: string;
+};
+
+export type MbtiCoreSummaryItem = {
+  readonly key: string;
+  readonly label: string;
+  readonly text: string;
+};
+
+export type MbtiReportUsageNote = {
+  readonly categoryKey: string;
+  readonly id: string | null;
+  readonly label: string;
+  readonly plainKo: string | null;
+  readonly strongLine: string | null;
+  readonly positiveUse: string | null;
+  readonly risk: string | null;
+  readonly productDomains: readonly string[];
+};
+
+export type MbtiCommonProfileTableData = {
+  readonly type: string;
+  readonly titleKo: string;
+  readonly archetype: string;
+  readonly oneLine: string;
+  readonly preferenceRows: readonly MbtiPreferenceAxisRow[];
+  readonly functionRows: readonly MbtiFunctionStackRow[];
+  readonly coreSummary: readonly MbtiCoreSummaryItem[];
+  readonly closeKeywords: readonly string[];
+  readonly farKeywords: readonly string[];
+  readonly reportUsageNotes: readonly MbtiReportUsageNote[];
+};
