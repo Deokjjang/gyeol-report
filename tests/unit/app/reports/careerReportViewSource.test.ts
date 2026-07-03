@@ -9,17 +9,45 @@ const source = readFileSync(
 
 describe("CareerReportView source", () => {
   it("renders product title without visible v1.0", () => {
-    expect(source).toContain("직업·커리어·금전·학업 리포트");
-    expect(source).not.toContain("직업·커리어·금전·학업 리포트 v1.0");
+    expect(source).toContain("직업·커리어·돈·학업 리포트");
+    expect(source).not.toContain("직업·커리어·돈·학업 리포트 v1.0");
   });
 
-  it("renders main career report sections", () => {
-    expect(source).toContain("잘 맞는 직업 추천");
-    expect(source).toContain("덜 맞는 직무·환경");
-    expect(source).toContain("돈 버는 방식");
-    expect(source).toContain("투자·저축 성향");
-    expect(source).toContain("학업·자격증·포트폴리오 전략");
-    expect(source).toContain("바로 실행할 액션 플랜");
+  it("renders launch-ready semantic career report sections", () => {
+    const requiredMarkers = [
+      'data-career-report-section="report_header"',
+      "data-career-report-section={id}",
+      "common_tables",
+      "핵심 요약",
+      "직업 정체성",
+      "돈 관리 성향",
+      "투자 성향",
+      "공부/자격증 전략",
+      "추천 직업",
+      "피해야 할 직무/환경",
+      "action plan",
+      "safety notes",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(source).toContain(marker);
+    }
+  });
+
+  it("keeps common table slots ready without requiring result data yet", () => {
+    const requiredMarkers = [
+      "manseRyeokTable?: ReactNode",
+      "mbtiProfileTable?: ReactNode",
+      "renderCommonTableArea",
+      "renderTableSlot",
+      "공통 만세력표",
+      "공통 MBTI표",
+      "표 데이터를 prop으로 받으면 그대로 렌더링",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(source).toContain(marker);
+    }
   });
 
   it("renders investment disclaimer and action plan labels", () => {
