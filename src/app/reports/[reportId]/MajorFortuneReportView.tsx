@@ -1,8 +1,15 @@
+import { DaeunFortuneTable } from "../../../components/report-tables";
 import type { MajorFortuneReportDraft } from "../../../lib/report-generation/majorFortuneReportDraftTypes";
 import {
   getMajorFortuneBasisDisplayLabel,
   sanitizeMajorFortuneVisibleText,
 } from "../../../lib/report-generation/majorFortuneReportDraftValidator";
+import {
+  buildDaeunFortuneTableData,
+  type DaeunAnnualFortuneInput,
+  type DaeunCurrentCycleInput,
+  type DaeunTimelineYearInput,
+} from "../../../lib/report-tables";
 
 type MajorFortuneReportViewProps = {
   readonly draft: MajorFortuneReportDraft;
@@ -130,79 +137,152 @@ function renderCycleBasis(draft: MajorFortuneReportDraft) {
   );
 }
 
-function renderTimeline(draft: MajorFortuneReportDraft) {
-  const ageBasisNote = draft.majorFortuneTimelineRows.find(
-    (row) => row.ageBasisLabel !== null,
-  )?.ageBasisLabel;
+function renderDaeunFortuneTable(draft: MajorFortuneReportDraft) {
+  if (draft.majorFortuneTimelineRows.length === 0) {
+    return null;
+  }
+
+  const currentTimelineRow =
+    draft.majorFortuneTimelineRows.find((row) => row.isCurrentYear) ??
+    draft.majorFortuneTimelineRows[0];
+
+  if (currentTimelineRow === undefined) {
+    return null;
+  }
+
+  const tableData = buildDaeunFortuneTableData({
+    title: `${text(draft.personLabel)} 대운표`,
+    currentYear: currentTimelineRow.year,
+    selectedYear: currentTimelineRow.year,
+    currentAge: parseAgeLabel(currentTimelineRow.ageLabel) ?? undefined,
+    currentDaeunCycle: buildCurrentDaeunCycleInput(draft),
+    timelineYears: buildTimelineYearInputs(draft),
+    annualFortunes: buildAnnualFortuneInputs(draft),
+  });
 
   return (
-    <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-      <div>
-        <h2 className="text-lg font-semibold text-neutral-50">
-          대운 타임라인
-        </h2>
-        <p className="mt-1 text-sm text-neutral-400">
-          대운과 세운을 나란히 놓고 10년의 전략 지점을 봅니다.
-        </p>
-        {ageBasisNote === undefined || ageBasisNote === null ? null : (
-          <p className="mt-1 text-xs text-neutral-500">
-            나이는 {text(ageBasisNote).replace(/ 나이$/u, "")}으로 표시합니다.
-          </p>
-        )}
-      </div>
-      <div className="overflow-hidden rounded-lg border border-neutral-800">
-        <div className="hidden grid-cols-[8rem_9rem_1fr] gap-0 bg-neutral-900/90 px-4 py-3 text-xs font-semibold text-neutral-500 md:grid">
-          <span>연도·년차</span>
-          <span>대운·세운</span>
-          <span>한 줄 전략</span>
-        </div>
-        <div className="divide-y divide-neutral-800">
-          {draft.majorFortuneTimelineRows.map((row) => (
-            <article
-              key={`${row.year}:${row.annualGanji}`}
-              className={
-                row.isCurrentYear
-                  ? "grid gap-3 bg-sky-950/35 px-4 py-4 text-sm ring-1 ring-inset ring-sky-500/35 md:grid-cols-[8rem_9rem_1fr]"
-                  : "grid gap-3 bg-neutral-950/40 px-4 py-4 text-sm md:grid-cols-[8rem_9rem_1fr]"
-              }
-            >
-              <div>
-                <p className="font-semibold text-neutral-50">
-                  {row.year}년 · {row.yearIndexInCycle}년차
-                </p>
-                {row.ageLabel === null ? null : (
-                  <p className="mt-1 text-[11px] text-neutral-500">
-                    {text(row.ageLabel)}
-                  </p>
-                )}
-                <div className="mt-1 flex flex-wrap gap-1">
-                  {row.badges.map((badge) => (
-                    <span
-                      key={badge}
-                      className="rounded-full border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 text-[11px] font-semibold text-sky-100"
-                    >
-                      {badge}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <p className="font-semibold leading-6 text-neutral-100">
-                대운 {text(row.majorGanji)}
-                <br />
-                세운 {text(row.annualGanji)}
-              </p>
-              <div className="space-y-2">
-                <p className="leading-6 text-neutral-200">{text(row.oneLine)}</p>
-                <p className="leading-6 text-sky-100">
-                  전략: {text(row.strategy)}
-                </p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+    <DaeunFortuneTable
+      data={tableData}
+      defaultOpen={true}
+      className="bg-white text-neutral-950"
+    />
   );
+}
+
+function buildCurrentDaeunCycleInput(
+  draft: MajorFortuneReportDraft,
+): DaeunCurrentCycleInput {
+  const sortedRows = [...draft.majorFortuneTimelineRows].sort(
+    (left, right) => left.year - right.year,
+  );
+  const firstRow = sortedRows[0];
+  const lastRow = sortedRows[sortedRows.length - 1];
+  const ageRange = parseNumberRange(draft.cycleSummary.ageRangeLabel);
+
+  return {
+    ganji: text(draft.cycleSummary.ganji),
+    startYear: firstRow?.year,
+    endYear: lastRow?.year,
+    startAge: ageRange?.start,
+    endAge: ageRange?.end,
+    stemTenGod: text(draft.myeongliLayers.tenGodLayer.majorStemTenGod),
+    hiddenStems: draft.myeongliLayers.hiddenStemLayer.majorBranchHiddenStems.map(text),
+    twelveLifeStage:
+      draft.myeongliLayers.twelveStageLayer === null
+        ? []
+        : [text(draft.myeongliLayers.twelveStageLayer.label)],
+    sinsalAndGwiin: draft.myeongliLayers.auxiliaryStarsLayer
+      .map((star) => text(star.label))
+      .filter(isVisibleText),
+    interactions: draft.myeongliLayers.branchInteractionLayer.interactions
+      .filter((interaction) => interaction.year === null)
+      .map(formatDaeunInteractionLabel)
+      .filter(isVisibleText),
+  };
+}
+
+function buildTimelineYearInputs(
+  draft: MajorFortuneReportDraft,
+): readonly DaeunTimelineYearInput[] {
+  return draft.majorFortuneTimelineRows.map((row) => ({
+    year: row.year,
+    ageLabel: row.ageLabel === null ? null : text(row.ageLabel),
+    isCurrentYear: row.isCurrentYear,
+    isCycleStartYear: row.isCycleStartYear,
+    badges: row.badges,
+    majorGanji: text(row.majorGanji),
+    annualGanji: text(row.annualGanji),
+    annualTenGodLabel: text(row.annualTenGodLabel),
+    keyInteractionLabel:
+      row.keyInteractionLabel === null ? null : text(row.keyInteractionLabel),
+    oneLine: text(row.oneLine),
+    strategy: text(row.strategy),
+  }));
+}
+
+function buildAnnualFortuneInputs(
+  draft: MajorFortuneReportDraft,
+): readonly DaeunAnnualFortuneInput[] {
+  const annualTenGodByYear = new Map(
+    draft.myeongliLayers.tenGodLayer.annualStemTenGodsInCycle.map((item) => [
+      item.year,
+      text(item.tenGod),
+    ]),
+  );
+  const annualInteractionLabelsByYear = new Map<number, string[]>();
+
+  for (const interaction of draft.myeongliLayers.branchInteractionLayer.interactions) {
+    if (interaction.year === null) {
+      continue;
+    }
+
+    const labels = annualInteractionLabelsByYear.get(interaction.year) ?? [];
+    labels.push(formatDaeunInteractionLabel(interaction));
+    annualInteractionLabelsByYear.set(interaction.year, labels);
+  }
+
+  return draft.majorFortuneTimelineRows.map((row) => ({
+    year: row.year,
+    ganji: text(row.annualGanji),
+    stemTenGod: annualTenGodByYear.get(row.year) ?? text(row.annualTenGodLabel),
+    interactions: annualInteractionLabelsByYear.get(row.year) ?? [],
+  }));
+}
+
+function formatDaeunInteractionLabel(
+  interaction: MajorFortuneReportDraft["myeongliLayers"]["branchInteractionLayer"]["interactions"][number],
+): string {
+  return text(`${interaction.type}: ${interaction.plainType}`);
+}
+
+function parseAgeLabel(ageLabel: string | null): number | null {
+  if (ageLabel === null) {
+    return null;
+  }
+
+  const parsedAge = Number.parseInt(ageLabel, 10);
+
+  return Number.isFinite(parsedAge) ? parsedAge : null;
+}
+
+function parseNumberRange(label: string): {
+  readonly start: number;
+  readonly end: number;
+} | null {
+  const matches = label.match(/\d+/gu);
+
+  if (matches === null || matches.length < 2) {
+    return null;
+  }
+
+  const start = Number.parseInt(matches[0] ?? "", 10);
+  const end = Number.parseInt(matches[1] ?? "", 10);
+
+  if (!Number.isFinite(start) || !Number.isFinite(end)) {
+    return null;
+  }
+
+  return { start, end };
 }
 
 function renderStrongYears(draft: MajorFortuneReportDraft) {
@@ -369,7 +449,7 @@ export function MajorFortuneReportView({
 
       {renderCurrentSituation(draft)}
       {renderCycleBasis(draft)}
-      {renderTimeline(draft)}
+      {renderDaeunFortuneTable(draft)}
 
       <section className="space-y-3 rounded-lg border border-sky-500/30 bg-sky-950/20 p-5">
         <p className="text-xs font-semibold text-sky-200">이 10년의 한 줄 결론</p>

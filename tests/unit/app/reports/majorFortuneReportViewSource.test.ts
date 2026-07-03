@@ -35,25 +35,25 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("현재 나의 연애");
     expect(viewSource).toContain("현재 하는 일");
     expect(viewSource).toContain("해석 기준");
-    expect(viewSource).toContain("대운 타임라인");
-    expect(viewSource).toContain("대운과 세운을 나란히");
-    expect(viewSource).toContain("연도·년차");
-    expect(viewSource).toContain("대운·세운");
-    expect(viewSource).toContain("{row.year}년 · {row.yearIndexInCycle}년차");
-    expect(viewSource).toContain("row.ageBasisLabel");
-    expect(viewSource).toContain("나이는 {text(ageBasisNote).replace(/ 나이$/u, \"\")}으로 표시합니다.");
+    expect(viewSource).toContain("DaeunFortuneTable");
+    expect(viewSource).toContain("buildDaeunFortuneTableData");
+    expect(viewSource).toContain("renderDaeunFortuneTable");
+    expect(viewSource).toContain("draft.majorFortuneTimelineRows.length === 0");
+    expect(viewSource).toContain("buildCurrentDaeunCycleInput");
+    expect(viewSource).toContain("buildTimelineYearInputs");
+    expect(viewSource).toContain("buildAnnualFortuneInputs");
     expect(viewSource).toContain("draft.majorFortuneTimelineRows.map");
     expect(viewSource).toContain("row.isCurrentYear");
-    expect(viewSource).toContain("row.badges.map");
-    expect(viewSource).toContain("대운 {text(row.majorGanji)}");
-    expect(viewSource).toContain("세운 {text(row.annualGanji)}");
+    expect(viewSource).toContain("row.badges");
+    expect(viewSource).toContain("majorGanji: text(row.majorGanji)");
+    expect(viewSource).toContain("annualGanji: text(row.annualGanji)");
     expect(viewSource).not.toContain("대운{");
     expect(viewSource).not.toContain("세운{");
     expect(viewSource).toContain("row.strategy");
   });
 
   it("renders big-picture strategic sections before domain strategy", () => {
-    expect(viewSource.indexOf("대운 타임라인")).toBeLessThan(
+    expect(viewSource.indexOf("{renderDaeunFortuneTable(draft)}")).toBeLessThan(
       viewSource.indexOf("현실 전략"),
     );
     expect(viewSource).toContain("이 10년의 한 줄 결론");
@@ -111,7 +111,7 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("현재 나의 연애");
     expect(viewSource).toContain("대운 기준 요약");
     expect(viewSource).toContain("이 10년의 한 줄 결론");
-    expect(viewSource).toContain("대운 타임라인");
+    expect(viewSource).toContain("renderDaeunFortuneTable");
     expect(viewSource).toContain("현실 전략");
   });
 
