@@ -266,3 +266,61 @@ export type DaeunFortuneTableData = {
   readonly timelineRows: readonly DaeunTimelineRow[];
   readonly annualCompareTable: DaeunAnnualCompareTableData;
 };
+
+export type SaeunAnnualCompareTableData = {
+  readonly daeunStem: DaeunPillarCard | null;
+  readonly daeunBranch: DaeunPillarCard | null;
+  readonly annualStem: DaeunPillarCard | null;
+  readonly annualBranch: DaeunPillarCard | null;
+  readonly hiddenStems: {
+    readonly daeun: readonly string[];
+    readonly annual: readonly string[];
+  };
+  readonly twelveLifeStage: {
+    readonly daeun: readonly string[];
+    readonly annual: readonly string[];
+  };
+  readonly twelveSinsal: {
+    readonly daeun: readonly string[];
+    readonly annual: readonly string[];
+  };
+  readonly sinsalAndGwiin: {
+    readonly daeun: readonly string[];
+    readonly annual: readonly string[];
+  };
+  readonly interactions: {
+    readonly daeun: readonly string[];
+    readonly annual: readonly string[];
+  };
+};
+
+export type SaeunMonthlyFortuneRow = {
+  readonly month: number;
+  readonly monthLabel: string;
+  readonly monthlyPillar: string | null;
+  readonly stemCell: DaeunPillarCard | null;
+  readonly branchCell: DaeunPillarCard | null;
+  readonly hiddenStems: readonly string[];
+  readonly twelveLifeStage: readonly string[];
+  readonly twelveSinsal: readonly string[];
+  readonly sinsalAndGwiin: readonly string[];
+  readonly interactions: readonly string[];
+  readonly oneLine: string | null;
+  readonly caution: string | null;
+  readonly basis: string | null;
+};
+
+export type SaeunMonthlyHalfTableData = {
+  readonly half: "first" | "second";
+  readonly title: string;
+  readonly monthRangeLabel: string;
+  readonly rows: readonly SaeunMonthlyFortuneRow[];
+};
+
+export type SaeunFortuneTableData = {
+  readonly title: string;
+  readonly selectedYear: number;
+  readonly daeunAnnualCompareTable: SaeunAnnualCompareTableData;
+  readonly firstHalfMonthlyTable: SaeunMonthlyHalfTableData;
+  readonly secondHalfMonthlyTable: SaeunMonthlyHalfTableData;
+};

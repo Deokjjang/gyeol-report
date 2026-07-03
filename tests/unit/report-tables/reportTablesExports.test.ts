@@ -4,11 +4,13 @@ import {
   buildDaeunFortuneTableData,
   buildManseRyeokCommonTableData,
   buildMbtiCommonProfileTableData,
+  buildSaeunFortuneTableData,
   getMbtiFunctionDisplay,
   getStemDisplay,
   type DaeunFortuneTableData,
   type ManseRyeokCommonTableData,
   type MbtiCommonProfileTableData,
+  type SaeunFortuneTableData,
 } from "../../../src/lib/report-tables";
 
 describe("report table lib exports", () => {
@@ -69,9 +71,22 @@ describe("report table lib exports", () => {
         },
       ],
     });
+    const saeunData: SaeunFortuneTableData = buildSaeunFortuneTableData({
+      selectedYear: 2026,
+      annualFortune: {
+        ganji: "丙午",
+      },
+      monthlyFortunes: [
+        {
+          month: 1,
+          monthGanji: "己丑",
+        },
+      ],
+    });
 
     expect(manseRyeokData.title).toBe("정덕민님의 만세력");
     expect(mbtiData.type).toBe("ENTJ");
     expect(daeunData.currentDaeun.ganji).toBe("戊辰");
+    expect(saeunData.selectedYear).toBe(2026);
   });
 });

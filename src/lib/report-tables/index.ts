@@ -4,3 +4,4 @@ export * from "./manseRyeokTableData";
 export * from "./mbtiProfileTableData";
 export * from "./mbtiSourceRegistry";
 export * from "./daeunTableData";
+export * from "./saeunFortuneTableData";
