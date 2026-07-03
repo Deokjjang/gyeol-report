@@ -1,7 +1,14 @@
 import type { ReactNode } from "react";
 
-import { ManseRyeokCommonTable } from "../../../components/report-tables";
-import { buildManseRyeokCommonTableData } from "../../../lib/report-tables";
+import {
+  ManseRyeokCommonTable,
+  MbtiCommonProfileTable,
+} from "../../../components/report-tables";
+import {
+  buildManseRyeokCommonTableData,
+  buildMbtiCommonProfileTableData,
+  getMbtiSourceByType,
+} from "../../../lib/report-tables";
 import { getPaidReportResult } from "../../../lib/reports/supabasePaidReportResultAdapter";
 import { createSupabasePaidReportResultClient } from "../../../lib/reports/supabasePaidReportResultClient";
 import type { PaidReportResult } from "../../../lib/reports/paidReportResultTypes";
@@ -624,6 +631,9 @@ function renderV2ProfileTable(
     title: "만세력",
     fourPillarGrid: normalizePillarGridForManseRyeokTable(pillarGrid),
   });
+  const mbtiSource = getMbtiSourceByType(profile.mbti);
+  const mbtiTableData =
+    mbtiSource === null ? null : buildMbtiCommonProfileTableData(mbtiSource);
   const symbolicNickname = draft.sajuSymbolicNickname;
   const nicknameTitleIsRepeated =
     symbolicNickname !== undefined &&
@@ -638,6 +648,12 @@ function renderV2ProfileTable(
         data={manseRyeokTableData}
         defaultOpen={true}
       />
+      {mbtiTableData === null ? null : (
+        <MbtiCommonProfileTable
+          data={mbtiTableData}
+          defaultOpen={true}
+        />
+      )}
       {symbolicNickname === undefined ? null : (
         <section className="rounded-lg border border-emerald-900/60 bg-emerald-950/20 p-4">
           <p className="text-xs font-semibold text-emerald-200">사주 한줄 별칭</p>

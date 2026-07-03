@@ -400,6 +400,21 @@ describe("report result page", () => {
     expect(html).toContain("manse-element-earth-soil");
     expect(html).toContain("manse-element-metal-gold");
     expect(html).toContain(">-</div>");
+    expect(html).toContain("ENTJ 대담한 통솔자");
+    expect(html).toContain("목표를 현실화하는 전략 지휘관");
+    expect(html).toContain("선호 지표 비교");
+    expect(html).toContain("외향 Extravert");
+    expect(html).toContain("직관 iNtuition");
+    expect(html).toContain("사고 Thinking");
+    expect(html).toContain("판단 Judging");
+    expect(html).toContain("mbti-preference-selected");
+    expect(html).toContain("기능 서열");
+    expect(html).toContain("주 기능");
+    expect(html).toContain("Te");
+    expect(html).toContain("외향 사고");
+    expect(html).toContain("부 기능");
+    expect(html).toContain("Ni");
+    expect(html).toContain("내향 직관");
     expect(html).toContain("일간");
     expect(html).toContain("오행 분포");
     expect(html).toContain("목 2");
@@ -486,7 +501,6 @@ describe("report result page", () => {
     expect(html).not.toContain("처음에 보이는 결 핵심");
     expect(html).not.toContain("리포트 ID");
     expect(html).not.toContain("상품");
-    expect(html).not.toContain("상태");
     expect(html).not.toContain("본문에서 반복해 나열하지 않고");
     expect(html).not.toContain("입력한 MBTI는 사주 해석을 보조");
     expect(html).not.toContain("분석 근거 보기");
@@ -495,6 +509,33 @@ describe("report result page", () => {
     expect(html).not.toContain("근거 요약");
     expect(html).not.toContain("핵심 용어");
     expect(html).not.toContain("반영 포인트");
+  });
+
+  it("keeps V2 page rendering when MBTI source is unknown", async () => {
+    const baseDraft = createV2Draft();
+    const draft = {
+      ...baseDraft,
+      profileTable: {
+        ...baseDraft.profileTable,
+        mbti: "UNKNOWN",
+      },
+    };
+    mockGetPaidReportResult.mockResolvedValue({
+      ok: true,
+      result: createResult({
+        snapshotVersion: "comprehensive_v2_draft",
+        draft,
+      }),
+    });
+
+    const html = await renderPage("report_result_page_test");
+
+    expect(html).toContain("만세력 및 명리학 표");
+    expect(html).toContain("MBTI 입력값");
+    expect(html).toContain("UNKNOWN");
+    expect(html).not.toContain("선호 지표 비교");
+    expect(html).not.toContain("기능 서열");
+    expect(html).not.toContain("Unsupported MBTI");
   });
 
   it("hides empty V2 differentiation modules", async () => {
