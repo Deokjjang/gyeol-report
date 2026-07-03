@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+import { ManseRyeokCommonTable } from "../../../components/report-tables";
+import { buildManseRyeokCommonTableData } from "../../../lib/report-tables";
 import { getPaidReportResult } from "../../../lib/reports/supabasePaidReportResultAdapter";
 import { createSupabasePaidReportResultClient } from "../../../lib/reports/supabasePaidReportResultClient";
 import type { PaidReportResult } from "../../../lib/reports/paidReportResultTypes";
@@ -450,35 +452,27 @@ const fiveElementLabelByToken = {
   water: "수 오행",
 } as const;
 
-const fiveElementKoByToken = {
-  wood: "목",
-  fire: "화",
-  earth: "토",
-  metal: "금",
-  water: "수",
-} as const;
-
-const stemDisplayInfoByValue = {
-  갑: { ko: "갑", hanja: "甲", elementKo: "목", token: "wood" },
-  甲: { ko: "갑", hanja: "甲", elementKo: "목", token: "wood" },
-  을: { ko: "을", hanja: "乙", elementKo: "목", token: "wood" },
-  乙: { ko: "을", hanja: "乙", elementKo: "목", token: "wood" },
-  병: { ko: "병", hanja: "丙", elementKo: "화", token: "fire" },
-  丙: { ko: "병", hanja: "丙", elementKo: "화", token: "fire" },
-  정: { ko: "정", hanja: "丁", elementKo: "화", token: "fire" },
-  丁: { ko: "정", hanja: "丁", elementKo: "화", token: "fire" },
-  무: { ko: "무", hanja: "戊", elementKo: "토", token: "earth" },
-  戊: { ko: "무", hanja: "戊", elementKo: "토", token: "earth" },
-  기: { ko: "기", hanja: "己", elementKo: "토", token: "earth" },
-  己: { ko: "기", hanja: "己", elementKo: "토", token: "earth" },
-  경: { ko: "경", hanja: "庚", elementKo: "금", token: "metal" },
-  庚: { ko: "경", hanja: "庚", elementKo: "금", token: "metal" },
-  신: { ko: "신", hanja: "辛", elementKo: "금", token: "metal" },
-  辛: { ko: "신", hanja: "辛", elementKo: "금", token: "metal" },
-  임: { ko: "임", hanja: "壬", elementKo: "수", token: "water" },
-  壬: { ko: "임", hanja: "壬", elementKo: "수", token: "water" },
-  계: { ko: "계", hanja: "癸", elementKo: "수", token: "water" },
-  癸: { ko: "계", hanja: "癸", elementKo: "수", token: "water" },
+const stemHanjaByValue = {
+  갑: "甲",
+  甲: "甲",
+  을: "乙",
+  乙: "乙",
+  병: "丙",
+  丙: "丙",
+  정: "丁",
+  丁: "丁",
+  무: "戊",
+  戊: "戊",
+  기: "己",
+  己: "己",
+  경: "庚",
+  庚: "庚",
+  신: "辛",
+  辛: "辛",
+  임: "壬",
+  壬: "壬",
+  계: "癸",
+  癸: "癸",
 } as const;
 
 type FiveElementToken = keyof typeof fiveElementLabelByToken;
@@ -516,79 +510,6 @@ function formatVisibleFiveElementBadgeText(text: string): string {
   return text
     .replace(/\s*·\s*(초록|빨강|갈색|금색|파랑)\s*$/u, "")
     .trim();
-}
-
-function renderElementChip(input: {
-  readonly elementKo: string;
-  readonly token: FiveElementToken;
-}) {
-  return (
-    <span
-      className={`element-chip element-chip--${input.token} element-bg--${input.token} rounded border border-neutral-700 px-1.5 py-0.5 text-[0.7rem] font-semibold text-neutral-100`}
-      aria-label={fiveElementLabelByToken[input.token]}
-    >
-      {input.elementKo}
-    </span>
-  );
-}
-
-function renderStemValue(value: string | readonly string[] | undefined) {
-  if (typeof value !== "string") {
-    return formatPillarGridValue(value);
-  }
-
-  const info = stemDisplayInfoByValue[value.trim() as keyof typeof stemDisplayInfoByValue];
-
-  if (info === undefined) {
-    return value.trim().length === 0 ? "-" : value;
-  }
-
-  return (
-    <span
-      className={`element-bg--${info.token} inline-flex flex-wrap items-center gap-1.5 rounded-md px-2 py-1`}
-    >
-      <span>{`${info.ko}(${info.hanja})`}</span>
-      {renderElementChip({ elementKo: info.elementKo, token: info.token })}
-    </span>
-  );
-}
-
-function renderBranchValue(value: string | readonly string[] | undefined) {
-  if (typeof value !== "string") {
-    return formatPillarGridValue(value);
-  }
-
-  const branch = getSajuBranchSymbolEntry(value);
-
-  if (branch === undefined) {
-    return value.trim().length === 0 ? "-" : value;
-  }
-
-  return (
-    <span
-      className={`element-bg--${branch.colorToken} inline-flex flex-wrap items-center gap-1.5 rounded-md px-2 py-1`}
-    >
-      <span>{`${branch.labelKo}(${branch.branch})`}</span>
-      {renderElementChip({
-        elementKo: fiveElementKoByToken[branch.element],
-        token: branch.colorToken,
-      })}
-    </span>
-  );
-}
-
-function renderPillarGridCell(input: {
-  readonly label: string;
-  readonly value: string | readonly string[] | undefined;
-}) {
-  if (input.label === "천간") {
-    return renderStemValue(input.value);
-  }
-  if (input.label === "지지") {
-    return renderBranchValue(input.value);
-  }
-
-  return formatPillarGridValue(input.value);
 }
 
 function splitProfilePillar(pillar: string | undefined) {
@@ -633,14 +554,44 @@ function getFallbackPillarGrid(
   }));
 }
 
-function formatPillarGridValue(value: string | readonly string[] | undefined) {
-  if (typeof value === "string") {
-    return value.trim().length === 0 ? "-" : value;
+function normalizeStemHanjaForManseRyeokTable(
+  stem: string | undefined,
+): string | undefined {
+  if (stem === undefined) {
+    return undefined;
   }
 
-  const values = value?.filter((item) => item.trim().length > 0);
+  return stemHanjaByValue[stem.trim() as keyof typeof stemHanjaByValue] ?? stem;
+}
 
-  return values === undefined || values.length === 0 ? "-" : values.join(" · ");
+function normalizeBranchHanjaForManseRyeokTable(
+  branch: string | undefined,
+): string | undefined {
+  if (branch === undefined) {
+    return undefined;
+  }
+
+  return getSajuBranchSymbolEntry(branch)?.branch ?? branch;
+}
+
+function normalizePillarGridForManseRyeokTable(
+  pillarGrid: readonly ComprehensiveReportV2PillarGridColumn[],
+): readonly ComprehensiveReportV2PillarGridColumn[] {
+  return pillarGrid.map((column) => {
+    const splitPillar = splitProfilePillar(column.pillar);
+    const heavenlyStem = normalizeStemHanjaForManseRyeokTable(
+      column.heavenlyStem ?? splitPillar.heavenlyStem,
+    );
+    const earthlyBranch = normalizeBranchHanjaForManseRyeokTable(
+      column.earthlyBranch ?? splitPillar.earthlyBranch,
+    );
+
+    return {
+      ...column,
+      ...(heavenlyStem === undefined ? {} : { heavenlyStem }),
+      ...(earthlyBranch === undefined ? {} : { earthlyBranch }),
+    };
+  });
 }
 
 function normalizeVisibleSentence(input: string): string {
@@ -663,51 +614,16 @@ function joinVisibleSentences(...sentences: readonly string[]): string {
     .join(" ");
 }
 
-const pillarGridRows = [
-  {
-    label: "천간",
-    getValue: (column: ComprehensiveReportV2PillarGridColumn) =>
-      column.heavenlyStem,
-  },
-  {
-    label: "지지",
-    getValue: (column: ComprehensiveReportV2PillarGridColumn) =>
-      column.earthlyBranch,
-  },
-  {
-    label: "십성",
-    getValue: (column: ComprehensiveReportV2PillarGridColumn) => column.tenGod,
-  },
-  {
-    label: "지장간",
-    getValue: (column: ComprehensiveReportV2PillarGridColumn) => column.hiddenStems,
-  },
-  {
-    label: "십이운성",
-    getValue: (column: ComprehensiveReportV2PillarGridColumn) =>
-      column.twelveLifeStage,
-  },
-  {
-    label: "십이신살",
-    getValue: (column: ComprehensiveReportV2PillarGridColumn) =>
-      column.twelveSinsal,
-  },
-  {
-    label: "신살",
-    getValue: (column: ComprehensiveReportV2PillarGridColumn) => column.sinsal,
-  },
-  {
-    label: "귀인",
-    getValue: (column: ComprehensiveReportV2PillarGridColumn) => column.gwiin,
-  },
-] as const;
-
 function renderV2ProfileTable(
   result: PaidReportResult,
   draft: Extract<ComprehensiveReportDraft, { readonly version: "comprehensive_v2_draft" }>,
 ) {
   const profile = draft.profileTable ?? createFallbackProfileTable(result);
   const pillarGrid = profile.fourPillarGrid ?? getFallbackPillarGrid(profile);
+  const manseRyeokTableData = buildManseRyeokCommonTableData({
+    title: "만세력",
+    fourPillarGrid: normalizePillarGridForManseRyeokTable(pillarGrid),
+  });
   const symbolicNickname = draft.sajuSymbolicNickname;
   const nicknameTitleIsRepeated =
     symbolicNickname !== undefined &&
@@ -718,45 +634,10 @@ function renderV2ProfileTable(
       <h2 className="text-lg font-semibold text-neutral-50">
         만세력 및 명리학 표
       </h2>
-      <div className="overflow-x-auto rounded-lg border border-neutral-800">
-        <table className="min-w-[36rem] w-full border-collapse text-left text-sm">
-          <thead className="bg-neutral-900/80 text-neutral-300">
-            <tr>
-              <th className="border-b border-neutral-800 px-3 py-2 font-semibold">
-                구분
-              </th>
-              {pillarGrid.map((column) => (
-                <th
-                  key={column.columnId}
-                  className="border-b border-neutral-800 px-3 py-2 font-semibold text-neutral-100"
-                >
-                  {column.labelKo}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {pillarGridRows.map((row) => (
-              <tr key={row.label} className="border-t border-neutral-800">
-                <th className="bg-neutral-950/80 px-3 py-2 font-semibold text-neutral-500">
-                  {row.label}
-                </th>
-                {pillarGrid.map((column) => (
-                  <td
-                    key={`${row.label}:${column.columnId}`}
-                    className="px-3 py-2 text-neutral-100"
-                  >
-                    {renderPillarGridCell({
-                      label: row.label,
-                      value: row.getValue(column),
-                    })}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <ManseRyeokCommonTable
+        data={manseRyeokTableData}
+        defaultOpen={true}
+      />
       {symbolicNickname === undefined ? null : (
         <section className="rounded-lg border border-emerald-900/60 bg-emerald-950/20 p-4">
           <p className="text-xs font-semibold text-emerald-200">사주 한줄 별칭</p>
