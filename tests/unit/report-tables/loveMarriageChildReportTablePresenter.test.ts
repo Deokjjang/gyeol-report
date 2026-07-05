@@ -29,14 +29,14 @@ const baseInput = {
       "정재",
       "정관",
       "편관",
-      "식신",
+      "상관",
       "현침살",
       "홍염살",
       "도화살",
       "화개살",
       "천을귀인",
       "월덕귀인",
-      "甲己합",
+      "연일 천간합 甲己",
       "申亥해",
     ],
   },
@@ -184,7 +184,7 @@ describe("love marriage child report table presenter", () => {
           twelveSinsal: ["겁살"],
           sinsal: ["현침"],
           gwiin: [],
-          interactions: ["연일 천간합 甲己"],
+          interactions: ["甲己합", "연일 천간합 甲己"],
         },
       ],
     } as const;
@@ -200,6 +200,9 @@ describe("love marriage child report table presenter", () => {
     expect(
       data.detailRows.find((row) => row.key === "interactions")?.cells.day,
     ).toEqual(["연일 천간합 甲己"]);
+    expect(
+      data.detailRows.find((row) => row.key === "interactions")?.cells.day,
+    ).not.toContain("甲己합");
   });
 
   it("uses formal full pillars before the day-pillar fallback", () => {

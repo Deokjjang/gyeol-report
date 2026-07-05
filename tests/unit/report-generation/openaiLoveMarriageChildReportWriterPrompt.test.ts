@@ -23,7 +23,7 @@ function buildMessages() {
         "현침살",
         "화개살",
         "천을귀인",
-        "甲己합",
+        "연일 천간합 甲己",
       ],
     },
   });
@@ -40,6 +40,12 @@ describe("openaiLoveMarriageChildReportWriterPrompt", () => {
     expect(messages.developer).toContain("명리는 근거");
     expect(messages.developer).toContain("MBTI는 행동 방식과 표현 방식의 보조 evidence");
     expect(messages.developer).toContain("명리와 MBTI를 같은 것으로 단정하지 않는다");
+    expect(messages.developer).toContain("나의 관계 성향 리포트");
+    expect(messages.developer).toContain("잘 맞기 쉬운 관계 스타일");
+    expect(messages.developer).toContain("잘 맞기 쉬운 MBTI 후보");
+    expect(messages.developer).toContain("명리적으로 편한 상대 특징");
+    expect(messages.developer).toContain("오래 피곤해지는 관계 스타일");
+    expect(messages.developer).toContain("궁합 리포트 영역");
     expect(messages.developer).toContain("연애, 결혼, 자녀를 예언하지 않는다");
   });
 
@@ -80,6 +86,12 @@ describe("openaiLoveMarriageChildReportWriterPrompt", () => {
     expect(messages.developer).toContain("mbtiBasis love/marriage/parenting/childRole");
     expect(messages.developer).toContain("bridgeEvidence");
     expect(messages.developer).toContain("bridgeEvidence.forbiddenAngles");
+    expect(messages.developer).toContain("attractionPattern에는 끌리는 사람");
+    expect(messages.developer).toContain("피로해지는 관계 스타일");
+    expect(messages.developer).toContain("MBTI 후보");
+    expect(messages.developer).toContain("명리 보완형");
+    expect(messages.developer).toContain("식신이 없고 상관만 있으면 식신이라고 쓰지 않는다");
+    expect(messages.developer).toContain("甲己합과 연일 천간합 甲己가 함께 있으면");
   });
 
   it("forbids deterministic relationship and family claims", () => {
@@ -121,5 +133,9 @@ describe("openaiLoveMarriageChildReportWriterPrompt", () => {
     expect(messages.developer).toContain("그럴 수 있습니다");
     expect(messages.developer).toContain("연애 조언 앱처럼 가볍게 쓰지 않는다");
     expect(messages.developer).toContain("배우자, 자녀, 재회 운명론을 쓰지 않는다");
+    expect(messages.developer).toContain("잘 맞는 관계 스타일은 과감하게 말한다");
+    expect(messages.developer).toContain("피로해지는 관계 스타일도 과감하게 말한다");
+    expect(messages.developer).toContain("추천 MBTI 후보를 쓸 때는 후보군으로만");
+    expect(messages.developer).toContain("INTJ·INTP");
   });
 });

@@ -126,7 +126,12 @@ function buildExplicitFourPillarGrid(
       const detailedPillar = detailedPillars.get(columnId);
 
       if (detailedPillar !== undefined) {
-        return detailedPillar;
+        return {
+          ...detailedPillar,
+          interactions: normalizeInteractionLabels(
+            detailedPillar.interactions ?? [],
+          ),
+        };
       }
 
       const pillar = userPillars[columnId];
@@ -168,8 +173,27 @@ function toFourPillarGridColumn(
     twelveSinsal: pillar.twelveSinsal ?? [],
     sinsal: pillar.sinsal ?? [],
     gwiin: pillar.gwiin ?? [],
-    interactions: pillar.interactions ?? [],
+    interactions: normalizeInteractionLabels(pillar.interactions ?? []),
   };
+}
+
+function normalizeInteractionLabels(labels: readonly string[]): readonly string[] {
+  const uniqueLabels = uniqueValues(labels);
+
+  return uniqueLabels.filter((label) => {
+    if (!label.endsWith("합")) {
+      return true;
+    }
+
+    const relationChars = label.replace("합", "");
+
+    return !uniqueLabels.some(
+      (candidate) =>
+        candidate !== label &&
+        candidate.includes("천간합") &&
+        [...relationChars].every((char) => candidate.includes(char)),
+    );
+  });
 }
 
 function buildTenGodLabels(

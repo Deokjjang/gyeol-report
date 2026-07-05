@@ -18,8 +18,8 @@ describe("LoveMarriageChildReportView source", () => {
       "readonly evidencePacket?: LoveMarriageChildReportEvidencePacket",
       "readonly manseRyeokTable?: ReactNode",
       "readonly mbtiProfileTable?: ReactNode",
-      "renderTableSlot(\"공통 만세력표\", manseRyeokTable)",
-      "renderTableSlot(\"공통 MBTI표\", mbtiProfileTable)",
+      "renderTableSlot(\"기초 만세력\", manseRyeokTable)",
+      "renderTableSlot(\"MBTI 성향표\", mbtiProfileTable)",
     ]) {
       expect(source).toContain(marker);
     }
@@ -34,6 +34,12 @@ describe("LoveMarriageChildReportView source", () => {
       "핵심 요약",
       "사랑 방식",
       "끌리는 사람과 반복 패턴",
+      'data-love-marriage-child-report-section="relationship_fit_profile"',
+      "잘 맞기 쉬운 관계 스타일",
+      "당신은 이런 결의 사람과 오래 갑니다",
+      'data-love-marriage-child-report-section="relationship_fatigue_profile"',
+      "피로해지는 관계 스타일",
+      "이런 관계는 오래 버티기 어렵습니다",
       "연애에서 강한 점",
       "연애에서 자주 막히는 점",
       "결혼 생활 리듬",
@@ -50,11 +56,47 @@ describe("LoveMarriageChildReportView source", () => {
     }
   });
 
+  it("renders a direct but non-deterministic relationship fit profile", () => {
+    for (const marker of [
+      "buildRelationshipFitGroups",
+      "생각이 깊고 독립적인 사람",
+      "생기와 감정 표현을 보태 주는 사람",
+      "말의 온도를 낮춰 주는 사람",
+      "책임 기준이 흐리지 않은 사람",
+      "INTJ·INTP·ENFP·ISFP",
+      "식상·인성 보완",
+      "실제 특정 상대와 맞는지는 상대의 사주와 MBTI까지 함께 보는",
+      "궁합 리포트의 영역",
+    ]) {
+      expect(source).toContain(marker);
+    }
+
+    expect(source).not.toContain("반드시 잘 맞습니다");
+    expect(source).not.toContain("궁합 확정");
+  });
+
+  it("renders fatigue relationship patterns without turning them into fate claims", () => {
+    for (const marker of [
+      "buildRelationshipFatigueGroups",
+      "감정 확인만 반복하는 사람",
+      "말은 많은데 책임이 약한 사람",
+      "기준을 전부 통제로 받는 사람",
+      "침묵과 회피로 버티는 사람",
+      "돈과 역할을 흐릿하게 두는 사람",
+    ]) {
+      expect(source).toContain(marker);
+    }
+
+    expect(source).not.toContain("무조건 피해야 합니다");
+  });
+
   it("renders Myeongli basis groups from evidence when available", () => {
     for (const marker of [
       "buildMyeongliSignalGroups",
       "resolvedEvidencePacket",
-      "pickTenGodSignals",
+      "pickTenGodLabels",
+      "fullPillars.flatMap",
+      "normalizeInteractionLabels",
       "재성",
       "관성",
       "식상",
