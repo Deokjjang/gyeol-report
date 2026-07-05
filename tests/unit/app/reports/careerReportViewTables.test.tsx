@@ -183,4 +183,40 @@ describe("CareerReportView common table slots", () => {
     expect(html).not.toContain("investment 섹션");
     expect(html).not.toContain("study 섹션");
   });
+
+  it("keeps dense body sections without repeating job fields and action labels", () => {
+    const expandedDraft: CareerReportDraft = {
+      ...draft,
+      recommendedJobs: Array.from({ length: 8 }, (_, index) => ({
+        title: `추천 직업 ${index + 1}`,
+        fit: index < 4 ? "high" : "medium",
+        tagline: "구조를 결과로 바꾸는 역할",
+        reason: "요구사항을 정리하고 실행 흐름으로 바꾸는 데 맞습니다.",
+        caution: "협업 기준을 문서로 맞춰야 합니다.",
+        exampleFields: ["핀테크", "정산", "운영 자동화"],
+      })),
+      careerTiming: [
+        ...draft.careerTiming,
+        {
+          year: 2026,
+          label: "실행",
+          headline: "현재 실행 기준을 잡습니다",
+          body: "올해 안에서 바로 줄일 것과 남길 것을 나눕니다.",
+          push: ["성과 문장화"],
+          avoid: ["범위 없는 책임"],
+        },
+      ],
+    };
+    const html = renderToStaticMarkup(<CareerReportView draft={expandedDraft} />);
+
+    expect(html).toContain("주요 예시 분야");
+    expect(html.match(/주요 예시 분야/g)).toHaveLength(1);
+    expect(html).toContain("나머지 추천 직업 2개 더 보기");
+    expect(html).toContain("정리 · 연도 흐름");
+    expect(html).toContain("실행 · 현재 실행 기준");
+    expect(html).toContain("바로 할 일");
+    expect(html).toContain("줄이는 방법");
+    expect(html).not.toContain("첫 행동:");
+    expect(html).not.toContain("예방:");
+  });
 });

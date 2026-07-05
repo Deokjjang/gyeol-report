@@ -90,6 +90,69 @@ function nonDuplicateBody(
     : body;
 }
 
+function uniqueTextValues(values: readonly string[]): string[] {
+  const seen = new Set<string>();
+  const result: string[] = [];
+
+  for (const value of values) {
+    const normalizedValue = value.replace(/\s+/gu, " ").trim();
+
+    if (normalizedValue.length > 0 && !seen.has(normalizedValue)) {
+      seen.add(normalizedValue);
+      result.push(value);
+    }
+  }
+
+  return result;
+}
+
+function limitedItems<T>(items: readonly T[], limit: number): readonly T[] {
+  return items.slice(0, Math.max(0, limit));
+}
+
+function getRecommendedJobExampleFields(
+  draft: CareerReportDraft,
+): readonly string[] {
+  return limitedItems(
+    uniqueTextValues(
+      draft.recommendedJobs.flatMap((job) => job.exampleFields),
+    ),
+    12,
+  );
+}
+
+function splitRecommendedJobs(draft: CareerReportDraft): {
+  readonly primaryJobs: CareerReportDraft["recommendedJobs"];
+  readonly secondaryJobs: CareerReportDraft["recommendedJobs"];
+} {
+  return {
+    primaryJobs: draft.recommendedJobs.slice(0, 6),
+    secondaryJobs: draft.recommendedJobs.slice(6),
+  };
+}
+
+function getTimingLabel(
+  timing: CareerReportDraft["careerTiming"][number],
+  index: number,
+  timings: readonly CareerReportDraft["careerTiming"][number][],
+): string {
+  const duplicateYearCount = timings.filter(
+    (item) => item.year === timing.year,
+  ).length;
+
+  if (duplicateYearCount <= 1) {
+    return text(timing.label);
+  }
+
+  const sameYearIndex = timings
+    .slice(0, index + 1)
+    .filter((item) => item.year === timing.year).length;
+
+  return sameYearIndex === 1
+    ? `${text(timing.label)} · 연도 흐름`
+    : `${text(timing.label)} · 현재 실행 기준`;
+}
+
 function renderList(items: readonly string[], label?: string) {
   if (items.length === 0) {
     return null;
@@ -133,6 +196,34 @@ function renderKeywordChips(items: readonly string[], label: string) {
         ))}
       </div>
     </div>
+  );
+}
+
+function renderRecommendedJobCard(
+  job: CareerReportDraft["recommendedJobs"][number],
+) {
+  return (
+    <section key={job.title} className="grid gap-3 py-4 first:pt-0 last:pb-0 md:grid-cols-[12rem_1fr]">
+      <div className="space-y-1">
+        <p className="text-xs font-extrabold text-[#7f1d38]">
+          {fitLabel(job.fit)}
+        </p>
+        <h3 className="text-lg font-extrabold text-[#201a18]">
+          {text(job.title)}
+        </h3>
+        <p className="text-sm font-bold text-[#6f675d]">
+          {text(job.tagline)}
+        </p>
+      </div>
+      <div className="space-y-3">
+        <p className="text-sm leading-7 text-[#51453d]">
+          {text(job.reason)}
+        </p>
+        <p className="text-sm leading-7 text-[#6f675d]">
+          주의 기준: {text(job.caution)}
+        </p>
+      </div>
+    </section>
   );
 }
 
@@ -256,13 +347,13 @@ function renderCommonTableArea({
         {renderTableSlot({
           title: "공통 만세력표",
           description:
-            "사주 원국 table data가 연결되면 이 위치에 만세력표가 표시됩니다.",
+            "사주 원국 정보가 준비되면 이 위치에 만세력표가 표시됩니다.",
           table: manseRyeokTable,
         })}
         {renderTableSlot({
           title: "공통 MBTI표",
           description:
-            "MBTI source registry data가 연결되면 이 위치에 MBTI 성향표가 표시됩니다.",
+            "MBTI 성향 정보가 준비되면 이 위치에 성향표가 표시됩니다.",
           table: mbtiProfileTable,
         })}
       </div>
@@ -288,6 +379,8 @@ export function CareerReportView({
     (evidencePacket === undefined || evidencePacket.mbtiType === null ? undefined : (
       <CareerReportMbtiProfileTable evidence={evidencePacket} />
     ));
+  const recommendedJobFields = getRecommendedJobExampleFields(draft);
+  const { primaryJobs, secondaryJobs } = splitRecommendedJobs(draft);
 
   return (
     <article className="mx-auto w-full min-w-0 max-w-5xl space-y-5 text-[#201a18] sm:space-y-6">
@@ -469,33 +562,22 @@ export function CareerReportView({
         id="recommended_jobs"
         eyebrow="추천 직업"
         title="잘 맞는 직업과 업무 포지션"
+        body="직업 후보는 한 번에 전부 고르는 목록이 아니라, 강점이 살아나는 업무 축을 비교하기 위한 기준입니다."
       >
+        {renderKeywordChips(recommendedJobFields, "주요 예시 분야")}
         <div className="divide-y divide-[#e5ddcf]">
-          {draft.recommendedJobs.map((job) => (
-            <section key={job.title} className="grid gap-3 py-4 first:pt-0 last:pb-0 md:grid-cols-[12rem_1fr]">
-              <div className="space-y-1">
-                <p className="text-xs font-extrabold text-[#7f1d38]">
-                  {fitLabel(job.fit)}
-                </p>
-                <h3 className="text-lg font-extrabold text-[#201a18]">
-                  {text(job.title)}
-                </h3>
-                <p className="text-sm font-bold text-[#6f675d]">
-                  {text(job.tagline)}
-                </p>
-              </div>
-              <div className="space-y-3">
-                <p className="text-sm leading-7 text-[#51453d]">
-                  {text(job.reason)}
-                </p>
-                <p className="text-sm leading-7 text-[#6f675d]">
-                  주의: {text(job.caution)}
-                </p>
-                {renderKeywordChips(job.exampleFields, "예시 분야")}
-              </div>
-            </section>
-          ))}
+          {primaryJobs.map(renderRecommendedJobCard)}
         </div>
+        {secondaryJobs.length === 0 ? null : (
+          <details className="rounded-lg border border-[#d8d1c4] bg-[#f8f4ed] p-4">
+            <summary className="cursor-pointer text-sm font-extrabold text-[#7f1d38]">
+              나머지 추천 직업 {secondaryJobs.length}개 더 보기
+            </summary>
+            <div className="mt-3 divide-y divide-[#e5ddcf]">
+              {secondaryJobs.map(renderRecommendedJobCard)}
+            </div>
+          </details>
+        )}
       </CareerSection>
 
       <CareerSection
@@ -533,7 +615,7 @@ export function CareerReportView({
                   {timing.year}
                 </p>
                 <p className="text-sm font-bold text-[#7f1d38]">
-                  {text(timing.label)}
+                  {getTimingLabel(timing, index, draft.careerTiming)}
                 </p>
               </div>
               <div className="space-y-3">
@@ -557,6 +639,7 @@ export function CareerReportView({
         id="action_plan"
         eyebrow="실행 기준"
         title="바로 실행할 행동 기준"
+        body="여섯 영역을 각각 길게 벌리기보다, 지금 바로 줄일 것과 남길 산출물을 먼저 정합니다."
       >
         <div className="grid gap-4 md:grid-cols-2">
           {draft.actionPlan.map((item) => (
@@ -570,9 +653,14 @@ export function CareerReportView({
               <p className="text-sm leading-7 text-[#51453d]">
                 {text(item.body)}
               </p>
-              <p className="text-sm font-bold leading-7 text-[#7f1d38]">
-                첫 행동: {text(item.firstAction)}
-              </p>
+              <div className="rounded-md border border-[#d8d1c4] bg-[#fffdf8] px-3 py-2">
+                <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#8b8174]">
+                  바로 할 일
+                </p>
+                <p className="mt-1 text-sm font-bold leading-7 text-[#7f1d38]">
+                  {text(item.firstAction)}
+                </p>
+              </div>
             </section>
           ))}
         </div>
@@ -592,9 +680,14 @@ export function CareerReportView({
               <p className="text-sm leading-7 text-[#51453d]">
                 {text(warning.body)}
               </p>
-              <p className="text-sm leading-7 text-[#6f675d]">
-                예방: {text(warning.prevention)}
-              </p>
+              <div className="rounded-md bg-[#f8f4ed] px-3 py-2">
+                <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#8b8174]">
+                  줄이는 방법
+                </p>
+                <p className="mt-1 text-sm leading-7 text-[#6f675d]">
+                  {text(warning.prevention)}
+                </p>
+              </div>
             </section>
           ))}
         </div>

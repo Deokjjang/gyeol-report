@@ -105,5 +105,10 @@ describe("openaiCareerReportWriterPrompt", () => {
     expect(messages.developer).toContain("문단 밀도를 살린다");
     expect(messages.developer).toContain("키워드 블록은 유지한다");
     expect(messages.developer).toContain("직업/돈/투자/공부를 분리하되 같은 성향 흐름");
+    expect(messages.developer).toContain("같은 문장, 같은 예시 분야");
+    expect(messages.developer).toContain("추천 직업은 상위 후보를 먼저");
+    expect(messages.developer).toContain("같은 연도가 반복되면");
+    expect(messages.developer).toContain("매번 같은 접두어를 반복하지 말고");
+    expect(messages.developer).toContain("같은 예방 문장을 복붙하지 말고");
   });
 });

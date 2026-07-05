@@ -58,7 +58,8 @@ describe("CareerReportView source", () => {
   it("renders investment disclaimer and action plan labels", () => {
     expect(source).toContain("investmentAndSavingStyle.forbiddenNote");
     expect(source).toContain("draft.actionPlan.map");
-    expect(source).toContain("첫 행동:");
+    expect(source).toContain("바로 할 일");
+    expect(source).not.toContain("첫 행동:");
   });
 
   it("uses stable timing keys when a year appears more than once", () => {
