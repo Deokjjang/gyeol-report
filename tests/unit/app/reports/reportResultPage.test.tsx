@@ -399,7 +399,8 @@ describe("report result page", () => {
     expect(html).toContain("manse-element-wood-green");
     expect(html).toContain("manse-element-earth-soil");
     expect(html).toContain("manse-element-metal-gold");
-    expect(html).toContain(">-</div>");
+    expect(html).toContain("정보 없음");
+    expect(html).toContain(">-</span>");
     expect(html).toContain("ENTJ 대담한 통솔자");
     expect(html).toContain("목표를 현실화하는 전략 지휘관");
     expect(html).toContain("선호 지표 비교");

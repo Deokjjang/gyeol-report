@@ -191,7 +191,8 @@ describe("ManseRyeokCommonTable", () => {
       <ManseRyeokCommonTable data={tableData} />,
     );
 
-    expect(html).toContain(">-</div>");
+    expect(html).toContain("정보 없음");
+    expect(html).toContain(">-</span>");
   });
 
   it("hides table content when defaultOpen is false", () => {

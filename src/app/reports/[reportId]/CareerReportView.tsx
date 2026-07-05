@@ -47,12 +47,12 @@ function renderList(items: readonly string[], label?: string) {
   return (
     <div className="space-y-2">
       {label === undefined ? null : (
-        <p className="text-sm font-bold text-[#7f1d38]">{label}</p>
+        <p className="text-sm font-extrabold text-[#7f1d38]">{label}</p>
       )}
-      <ul className="space-y-2 text-sm leading-6 text-[#51453d]">
+      <ul className="space-y-2 text-sm leading-6 text-[#4f453f]">
         {items.map((item) => (
-          <li key={item} className="flex gap-2">
-            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c79a43]" />
+          <li key={item} className="flex gap-2.5">
+            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b88932]" />
             <span>{text(item)}</span>
           </li>
         ))}
@@ -71,11 +71,11 @@ function renderKeywordChips(items: readonly string[], label: string) {
       <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#8b8174]">
         {label}
       </p>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2.5">
         {items.map((item) => (
           <span
             key={item}
-            className="rounded-full border border-[#d8d1c4] bg-[#fffdf8] px-3 py-1 text-xs font-bold text-[#3a2f29]"
+            className="rounded-full border border-[#d8d1c4] bg-[#fffaf1] px-3 py-1.5 text-xs font-bold text-[#3a2f29] shadow-[0_6px_18px_rgba(42,31,24,0.04)]"
           >
             {text(item)}
           </span>
@@ -87,14 +87,14 @@ function renderKeywordChips(items: readonly string[], label: string) {
 
 function sectionClassName(tone: SectionTone): string {
   if (tone === "summary") {
-    return "space-y-5 rounded-lg border border-[#7f1d38]/20 bg-[#fffdf8] p-5 shadow-[0_18px_60px_rgba(40,24,28,0.08)] sm:p-6";
+    return "motion-safe:animate-[gyeol-reveal_520ms_ease-out_both] space-y-5 rounded-lg border border-[#7f1d38]/20 bg-[#fffdf8] p-5 shadow-[0_22px_80px_rgba(40,24,28,0.08)] ring-1 ring-white/80 sm:p-6";
   }
 
   if (tone === "caution") {
-    return "space-y-5 rounded-lg border border-[#c79a43]/30 bg-[#fff8ea] p-5 sm:p-6";
+    return "motion-safe:animate-[gyeol-reveal_520ms_ease-out_both] space-y-5 rounded-lg border border-[#c79a43]/35 bg-[#fff8ea] p-5 shadow-[0_16px_60px_rgba(96,66,22,0.06)] ring-1 ring-white/70 sm:p-6";
   }
 
-  return "space-y-5 rounded-lg border border-[#d8d1c4] bg-[#fffdf8] p-5 sm:p-6";
+  return "motion-safe:animate-[gyeol-reveal_520ms_ease-out_both] space-y-5 rounded-lg border border-[#d8d1c4] bg-[#fffdf8] p-5 shadow-[0_16px_64px_rgba(42,31,24,0.06)] ring-1 ring-white/70 sm:p-6";
 }
 
 function CareerSection({
@@ -120,13 +120,17 @@ function CareerSection({
       data-career-report-section={id}
       className={sectionClassName(tone)}
     >
-      <div className="space-y-2">
-        <p className="text-sm font-extrabold text-[#7f1d38]">{eyebrow}</p>
-        <h2 id={titleId} className="text-2xl font-extrabold tracking-normal text-[#201a18]">
+      <div className="space-y-2.5">
+        <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#7f1d38]">
+          {eyebrow}
+        </p>
+        <h2 id={titleId} className="text-[1.45rem] font-extrabold leading-8 tracking-normal text-[#201a18] sm:text-2xl">
           {title}
         </h2>
         {body === undefined ? null : (
-          <p className="text-base leading-8 text-[#51453d]">{text(body)}</p>
+          <p className="max-w-4xl text-[15px] leading-8 text-[#51453d] sm:text-base">
+            {text(body)}
+          </p>
         )}
       </div>
       {children}
@@ -150,7 +154,7 @@ function renderContextPills(draft: CareerReportDraft) {
       {pills.map(([label, value]) => (
         <div
           key={label}
-          className="rounded-full border border-[#d8d1c4] bg-[#fffdf8] px-3 py-1.5 text-sm"
+          className="rounded-full border border-[#d8d1c4] bg-[#fffdf8]/95 px-3 py-1.5 text-sm shadow-[0_8px_24px_rgba(42,31,24,0.04)]"
         >
           <span className="text-[#8b8174]">{label}</span>
           <span className="ml-2 font-bold text-[#201a18]">{text(value)}</span>
@@ -166,7 +170,11 @@ function renderTableSlot(input: {
   readonly table?: ReactNode;
 }) {
   if (input.table !== undefined) {
-    return <div className="min-w-0">{input.table}</div>;
+    return (
+      <div className="min-w-0 overflow-hidden rounded-lg border border-[#e5ddcf] bg-[#fffaf3] p-2 shadow-[0_14px_46px_rgba(42,31,24,0.06)]">
+        {input.table}
+      </div>
+    );
   }
 
   return (
@@ -189,11 +197,11 @@ function renderCommonTableArea({
   return (
     <CareerSection
       id="common_tables"
-      eyebrow="공통 표"
-      title="만세력표와 MBTI 성향표"
-      body="모든 상품 결과 화면 상단에 공통 표가 들어가는 구조입니다. 현재 CareerReportView는 표 데이터를 prop으로 받으면 그대로 렌더링하고, 없으면 결과 화면 연결 준비 상태를 보여줍니다."
+      eyebrow="profile tables"
+      title="원국과 MBTI 행동층을 먼저 봅니다"
+      body="직업·돈·학업 해석에 들어가기 전, 사주 원국의 구조와 MBTI 행동 패턴을 같은 화면에서 확인할 수 있게 배치했습니다."
     >
-      <div className="grid gap-4">
+      <div className="grid gap-4 sm:gap-5">
         {renderTableSlot({
           title: "공통 만세력표",
           description:
@@ -231,45 +239,54 @@ export function CareerReportView({
     ));
 
   return (
-    <article className="mx-auto max-w-5xl space-y-6 text-[#201a18]">
+    <article className="mx-auto max-w-5xl space-y-5 text-[#201a18] sm:space-y-6">
       {devStatus === undefined ? null : (
-        <aside className="rounded-lg border border-[#d8d1c4] bg-[#fffdf8] px-4 py-3 text-xs text-[#6f675d]">
-          <span className="font-bold text-[#201a18]">개발 상태</span>
+        <aside className="w-fit rounded-md border border-[#d8d1c4] bg-[#fffdf8]/90 px-3 py-1.5 text-[11px] font-bold text-[#8b8174]">
+          <span className="text-[#7f1d38]">preview</span>
           <span className="ml-2">{text(devStatus)}</span>
         </aside>
       )}
 
       <header
         data-career-report-section="report_header"
-        className="space-y-5 rounded-lg border border-[#d8d1c4] bg-[#fffdf8] p-5 shadow-[0_22px_80px_rgba(40,24,28,0.10)] sm:p-7"
+        className="motion-safe:animate-[gyeol-reveal_520ms_ease-out_both] overflow-hidden rounded-lg border border-[#d8d1c4] bg-[#fffdf8] shadow-[0_28px_100px_rgba(42,31,24,0.12)] ring-1 ring-white/80"
       >
-        <div className="space-y-3">
-          <p className="text-sm font-extrabold tracking-[0.16em] text-[#7f1d38]">
-            직업·커리어·돈·학업 리포트
-          </p>
-          <h1 className="max-w-3xl text-3xl font-extrabold tracking-normal text-[#201a18] sm:text-4xl">
-            {text(draft.openingTitle)}
-          </h1>
-          <p className="max-w-3xl text-base leading-8 text-[#51453d]">
-            {text(draft.openingSummary)}
-          </p>
-        </div>
-        <div className="flex flex-wrap gap-2 text-xs font-bold text-[#4c433c]">
-          <span className="rounded-full border border-[#d8d1c4] bg-[#f4efe7] px-3 py-1">
-            {text(draft.personLabel)}
-          </span>
-          <span className="rounded-full border border-[#d8d1c4] bg-[#f4efe7] px-3 py-1">
-            {draft.productType}
-          </span>
-          {reportId === undefined ? null : (
-            <span className="rounded-full border border-[#d8d1c4] bg-[#f4efe7] px-3 py-1">
-              report {text(reportId)}
+        <div className="grid gap-6 border-b border-[#eadfce] bg-[#fffaf3] p-5 sm:p-7 md:grid-cols-[1fr_auto] md:items-start">
+          <div className="space-y-4">
+            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#7f1d38]">
+              직업·커리어·돈·학업 리포트
+            </p>
+            <div className="space-y-3">
+              <h1 className="max-w-3xl text-[2rem] font-extrabold leading-10 tracking-normal text-[#201a18] sm:text-[2.65rem] sm:leading-[3.1rem]">
+                {text(draft.openingTitle)}
+              </h1>
+              <p className="max-w-3xl text-base leading-8 text-[#51453d]">
+                {text(draft.openingSummary)}
+              </p>
+            </div>
+          </div>
+          <div className="grid gap-2 text-xs font-bold text-[#4c433c] sm:min-w-48">
+            <span className="rounded-md border border-[#d8d1c4] bg-[#fffdf8] px-3 py-2">
+              이름 · {text(draft.personLabel)}
             </span>
-          )}
+            <span className="rounded-md border border-[#d8d1c4] bg-[#fffdf8] px-3 py-2">
+              상품 · career money study
+            </span>
+            {reportId === undefined ? null : (
+              <span className="rounded-md border border-[#d8d1c4] bg-[#fffdf8] px-3 py-2">
+                report · {text(reportId)}
+              </span>
+            )}
+          </div>
         </div>
-        <p className="max-w-3xl rounded-lg border border-[#7f1d38]/20 bg-[#7f1d38]/10 p-4 text-base font-bold leading-8 text-[#7f1d38]">
-          {text(draft.coreLine)}
-        </p>
+        <div className="grid gap-4 p-5 sm:p-7 md:grid-cols-[1fr_0.8fr]">
+          <p className="rounded-lg border border-[#7f1d38]/20 bg-[#7f1d38]/10 p-4 text-base font-extrabold leading-8 text-[#7f1d38]">
+            {text(draft.coreLine)}
+          </p>
+          <p className="rounded-lg border border-[#c79a43]/30 bg-[#fff8ea] p-4 text-sm font-semibold leading-7 text-[#5a4633]">
+            상담이나 투자 조언이 아닌 자기이해용 디지털 리포트입니다. 직업 선택과 돈 관리는 현실 조건과 함께 판단하세요.
+          </p>
+        </div>
       </header>
 
       {renderCommonTableArea({

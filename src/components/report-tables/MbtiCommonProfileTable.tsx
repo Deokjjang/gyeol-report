@@ -25,7 +25,7 @@ export default function MbtiCommonProfileTable({
   return (
     <section
       className={joinClassNames(
-        "overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-sm",
+        "overflow-hidden rounded-lg border border-[#d8d1c4] bg-[#fffdf8] shadow-[0_14px_46px_rgba(42,31,24,0.07)]",
         className,
       )}
     >
@@ -34,18 +34,18 @@ export default function MbtiCommonProfileTable({
         aria-expanded={isOpen}
         aria-controls={contentId}
         onClick={() => setIsOpen((current) => !current)}
-        className="flex w-full items-center justify-between gap-3 bg-neutral-950 px-4 py-3 text-left text-white"
+        className="flex w-full items-center justify-between gap-3 bg-[#231c1a] px-4 py-3 text-left text-white transition-colors hover:bg-[#342623]"
       >
         <span className="min-w-0 text-base font-extrabold leading-6 break-keep">
           {data.type} {data.titleKo}
         </span>
-        <span className="shrink-0 text-sm font-bold">
+        <span className="shrink-0 rounded-full bg-white/10 px-2.5 py-1 text-xs font-bold">
           {isOpen ? "접기" : "펼치기"}
         </span>
       </button>
 
       {isOpen ? (
-        <div id={contentId} className="divide-y divide-neutral-100">
+        <div id={contentId} className="divide-y divide-[#eadfce]">
           <TypeHeader data={data} />
           <PreferenceAxesComparison data={data} />
           <FunctionStackTable data={data} />
@@ -53,12 +53,12 @@ export default function MbtiCommonProfileTable({
           <KeywordSection
             title="가까운 키워드"
             keywords={data.closeKeywords}
-            chipClassName="border-emerald-200 bg-emerald-50 text-emerald-800"
+            chipClassName="border-[#d7b56d] bg-[#fff8ea] text-[#5a4633]"
           />
           <KeywordSection
             title="먼 키워드"
             keywords={data.farKeywords}
-            chipClassName="border-neutral-200 bg-neutral-50 text-neutral-600"
+            chipClassName="border-[#d8d1c4] bg-[#f8f4ed] text-[#6f675d]"
           />
           <ReportUsageNotes notes={data.reportUsageNotes} />
         </div>
@@ -73,19 +73,19 @@ function TypeHeader({
   readonly data: MbtiCommonProfileTableData;
 }) {
   return (
-    <header className="space-y-3 bg-white px-4 py-4">
+    <header className="space-y-3 bg-[#fffaf3] px-4 py-4">
       <div className="flex flex-wrap items-center gap-2">
-        <span className="rounded-md bg-neutral-950 px-2.5 py-1 text-sm font-extrabold text-white">
+        <span className="rounded-md bg-[#231c1a] px-2.5 py-1 text-sm font-extrabold text-white">
           {data.type}
         </span>
-        <span className="text-base font-extrabold text-neutral-950">
+        <span className="text-base font-extrabold text-[#201a18]">
           {data.titleKo}
         </span>
       </div>
-      <p className="text-sm font-bold leading-6 text-neutral-800 break-keep">
+      <p className="text-sm font-bold leading-6 text-[#3a2f29] break-keep">
         {data.archetype}
       </p>
-      <p className="text-sm leading-6 text-neutral-600 break-keep">
+      <p className="text-sm leading-6 text-[#6f675d] break-keep">
         {data.oneLine}
       </p>
     </header>
@@ -98,15 +98,15 @@ function PreferenceAxesComparison({
   readonly data: MbtiCommonProfileTableData;
 }) {
   return (
-    <div className="bg-white">
-      <h3 className="bg-neutral-50 px-4 py-2 text-sm font-extrabold text-neutral-700">
+    <div className="bg-[#fffdf8]">
+      <h3 className="bg-[#f5efe5] px-4 py-2 text-sm font-extrabold text-[#5a4633]">
         선호 지표 비교
       </h3>
-      <div className="divide-y divide-neutral-100">
+      <div className="divide-y divide-[#eadfce]">
         {data.preferenceRows.map((row) => (
           <div
             key={row.axisKey}
-            className="grid grid-cols-[2.75rem_minmax(0,1fr)_minmax(0,1fr)_2.75rem] text-center text-sm"
+            className="grid grid-cols-[2.35rem_minmax(0,1fr)_minmax(0,1fr)_2.35rem] text-center text-sm sm:grid-cols-[2.75rem_minmax(0,1fr)_minmax(0,1fr)_2.75rem]"
           >
             <PreferenceCodeCell option={row.left} />
             <PreferenceDescriptionCell option={row.left} />
@@ -128,10 +128,10 @@ function PreferenceCodeCell({
     <div
       aria-current={option.selected ? "true" : undefined}
       className={joinClassNames(
-        "flex min-h-16 items-center justify-center border-l border-neutral-100 px-1 text-2xl font-extrabold first:border-l-0",
+        "flex min-h-16 items-center justify-center border-l border-[#eadfce] px-1 text-2xl font-extrabold first:border-l-0",
         option.selected
-          ? "mbti-preference-selected bg-rose-700 text-white"
-          : "bg-neutral-950 text-white",
+          ? "mbti-preference-selected bg-[#8a2550] text-white"
+          : "bg-[#231c1a] text-white",
       )}
     >
       {option.code}
@@ -148,16 +148,16 @@ function PreferenceDescriptionCell({
     <div
       aria-current={option.selected ? "true" : undefined}
       className={joinClassNames(
-        "flex min-h-16 flex-col justify-center gap-1 border-l border-neutral-100 px-2 py-2 text-center break-keep",
+        "flex min-h-16 flex-col justify-center gap-1 border-l border-[#eadfce] px-1.5 py-2 text-center break-keep sm:px-2",
         option.selected
-          ? "mbti-preference-selected bg-rose-700 text-white"
-          : "bg-white text-neutral-800",
+          ? "mbti-preference-selected bg-[#8a2550] text-white"
+          : "bg-[#fffdf8] text-[#3a2f29]",
       )}
     >
-      <span className="text-sm font-extrabold">
+      <span className="text-[13px] font-extrabold sm:text-sm">
         {option.nameKo} {option.nameEn}
       </span>
-      <span className="text-xs leading-5">{option.description}</span>
+      <span className="text-[11px] leading-5 sm:text-xs">{option.description}</span>
     </div>
   );
 }
@@ -168,14 +168,14 @@ function FunctionStackTable({
   readonly data: MbtiCommonProfileTableData;
 }) {
   return (
-    <div className="bg-white">
-      <h3 className="bg-neutral-50 px-4 py-2 text-sm font-extrabold text-neutral-700">
+    <div className="bg-[#fffdf8]">
+      <h3 className="bg-[#f5efe5] px-4 py-2 text-sm font-extrabold text-[#5a4633]">
         기능 서열
       </h3>
-      <div className="overflow-hidden">
+      <div className="overflow-x-auto">
         <table className="w-full table-fixed border-collapse text-left text-sm">
           <thead>
-            <tr className="bg-neutral-100 text-xs font-bold text-neutral-600">
+            <tr className="bg-[#efe6d8] text-xs font-bold text-[#6f675d]">
               <th scope="col" className="w-[5.5rem] px-2 py-2 text-center">
                 순서
               </th>
@@ -187,23 +187,23 @@ function FunctionStackTable({
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-neutral-100">
+          <tbody className="divide-y divide-[#eadfce]">
             {data.functionRows.map((row) => (
               <tr key={row.position}>
                 <th
                   scope="row"
-                  className="bg-rose-700 px-2 py-3 text-center text-sm font-extrabold text-white"
+                  className="bg-[#8a2550] px-2 py-3 text-center text-sm font-extrabold text-white"
                 >
                   {row.label}
                 </th>
-                <td className="px-2 py-3 text-center text-2xl font-extrabold text-neutral-900">
+                <td className="px-2 py-3 text-center text-2xl font-extrabold text-[#201a18]">
                   {row.code}
                 </td>
-                <td className="space-y-1 px-2 py-3 text-neutral-700">
-                  <p className="font-extrabold text-neutral-900">
+                <td className="space-y-1 px-2 py-3 text-[#51453d]">
+                  <p className="font-extrabold text-[#201a18]">
                     {row.nameKo}
                   </p>
-                  <p className="text-xs font-bold text-neutral-500">
+                  <p className="text-xs font-bold text-[#8b8174]">
                     {row.attitude} · {row.domain}
                   </p>
                   <p className="text-sm leading-6 break-keep">
@@ -225,17 +225,17 @@ function CoreSummary({
   readonly data: MbtiCommonProfileTableData;
 }) {
   return (
-    <div className="bg-white">
-      <h3 className="bg-neutral-50 px-4 py-2 text-sm font-extrabold text-neutral-700">
+    <div className="bg-[#fffdf8]">
+      <h3 className="bg-[#f5efe5] px-4 py-2 text-sm font-extrabold text-[#5a4633]">
         핵심 요약
       </h3>
       <dl className="grid gap-3 px-4 py-4">
         {data.coreSummary.map((item) => (
           <div key={item.key} className="grid gap-1">
-            <dt className="text-sm font-extrabold text-neutral-900">
+            <dt className="text-sm font-extrabold text-[#201a18]">
               {item.label}
             </dt>
-            <dd className="text-sm leading-6 text-neutral-600 break-keep">
+            <dd className="text-sm leading-6 text-[#6f675d] break-keep">
               {item.text}
             </dd>
           </div>
@@ -255,8 +255,8 @@ function KeywordSection({
   readonly chipClassName: string;
 }) {
   return (
-    <div className="bg-white px-4 py-4">
-      <h3 className="text-sm font-extrabold text-neutral-700">{title}</h3>
+    <div className="bg-[#fffdf8] px-4 py-4">
+      <h3 className="text-sm font-extrabold text-[#5a4633]">{title}</h3>
       <div className="mt-3 flex flex-wrap gap-2">
         {keywords.length > 0 ? (
           keywords.map((keyword) => (
@@ -271,7 +271,7 @@ function KeywordSection({
             </span>
           ))
         ) : (
-          <span className="text-sm font-bold text-neutral-400">-</span>
+          <span className="text-sm font-bold text-[#b7ab9a]" aria-label="정보 없음">-</span>
         )}
       </div>
     </div>
@@ -284,8 +284,8 @@ function ReportUsageNotes({
   readonly notes: readonly MbtiReportUsageNote[];
 }) {
   return (
-    <div className="bg-white">
-      <h3 className="bg-neutral-50 px-4 py-2 text-sm font-extrabold text-neutral-700">
+    <div className="bg-[#fffdf8]">
+      <h3 className="bg-[#f5efe5] px-4 py-2 text-sm font-extrabold text-[#5a4633]">
         리포트 활용 포인트
       </h3>
       <div className="grid gap-3 px-4 py-4">
@@ -293,13 +293,13 @@ function ReportUsageNotes({
           notes.map((note, index) => (
             <article
               key={`${note.categoryKey}-${note.id ?? index}`}
-              className="space-y-2 border-b border-neutral-100 pb-3 last:border-b-0 last:pb-0"
+              className="space-y-2 border-b border-[#eadfce] pb-3 last:border-b-0 last:pb-0"
             >
               <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-md bg-neutral-100 px-2 py-1 text-xs font-bold text-neutral-600">
+                <span className="rounded-md bg-[#f5efe5] px-2 py-1 text-xs font-bold text-[#6f675d]">
                   {note.categoryKey}
                 </span>
-                <h4 className="text-sm font-extrabold text-neutral-950">
+                <h4 className="text-sm font-extrabold text-[#201a18]">
                   {note.label}
                 </h4>
               </div>
@@ -312,7 +312,7 @@ function ReportUsageNotes({
                   {note.productDomains.map((domain) => (
                     <span
                       key={domain}
-                      className="rounded-full bg-neutral-50 px-2 py-0.5 text-[11px] font-bold text-neutral-500"
+                      className="rounded-full bg-[#f5efe5] px-2 py-0.5 text-[11px] font-bold text-[#8b8174]"
                     >
                       {domain}
                     </span>
@@ -322,7 +322,7 @@ function ReportUsageNotes({
             </article>
           ))
         ) : (
-          <p className="text-sm font-bold text-neutral-400">-</p>
+          <p className="text-sm font-bold text-[#b7ab9a]" aria-label="정보 없음">-</p>
         )}
       </div>
     </div>
@@ -334,7 +334,7 @@ function UsageLine({ text }: { readonly text: string | null }) {
     return null;
   }
 
-  return <p className="text-sm leading-6 text-neutral-600 break-keep">{text}</p>;
+  return <p className="text-sm leading-6 text-[#6f675d] break-keep">{text}</p>;
 }
 
 function joinClassNames(

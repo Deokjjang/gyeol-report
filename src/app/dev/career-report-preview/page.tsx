@@ -69,20 +69,21 @@ function PreviewShell({
   readonly devStatus?: string;
 }) {
   return (
-    <main className="min-h-screen bg-neutral-950 px-5 py-10 text-neutral-50 sm:px-8">
-      <section className="mx-auto flex max-w-5xl flex-col gap-6">
+    <main className="min-h-screen bg-[#f4efe7] px-4 py-7 text-[#201a18] sm:px-8 sm:py-10">
+      <section className="mx-auto flex max-w-5xl flex-col gap-5">
+        <div className="flex items-center justify-between gap-3 text-xs font-bold uppercase tracking-[0.16em] text-[#8b8174]">
+          <span>Gyeol Report</span>
+          <span>Career Preview</span>
+        </div>
         {devStatus === undefined ? null : (
           <aside
-            className="rounded-md border border-neutral-800 bg-neutral-900/70 px-3 py-2 text-xs text-neutral-500"
+            className="w-fit rounded-md border border-[#d8d1c4] bg-[#fffdf8]/90 px-3 py-1.5 text-[11px] font-bold text-[#8b8174]"
             aria-label="dev-only metadata"
           >
-            <span className="font-semibold text-neutral-400">개발 상태</span>
-            <span className="ml-2">{devStatus}</span>
+            <span className="text-[#7f1d38]">preview</span>
+            <span className="ml-2 normal-case tracking-normal">{devStatus}</span>
           </aside>
         )}
-        <p className="text-sm font-medium text-neutral-500">
-          결 리포트 개발 미리보기
-        </p>
         {children}
       </section>
     </main>
@@ -92,12 +93,12 @@ function PreviewShell({
 function renderMessage(title: string, message: string) {
   return (
     <PreviewShell>
-      <section className="space-y-4 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6">
-        <p className="text-sm font-semibold text-sky-200">
+      <section className="space-y-4 rounded-lg border border-[#d8d1c4] bg-[#fffdf8] p-6 shadow-[0_18px_70px_rgba(42,31,24,0.08)]">
+        <p className="text-sm font-extrabold text-[#7f1d38]">
           직업·커리어·돈·학업 리포트
         </p>
-        <h1 className="text-2xl font-bold text-neutral-50">{title}</h1>
-        <p className="whitespace-pre-line text-sm leading-6 text-neutral-400">
+        <h1 className="text-2xl font-extrabold text-[#201a18]">{title}</h1>
+        <p className="whitespace-pre-line text-sm leading-6 text-[#6f675d]">
           {message}
         </p>
       </section>
@@ -126,7 +127,7 @@ export default async function CareerReportPreviewPage({
   if (snapshotMode !== "latest") {
     return renderMessage(
       "snapshot=latest 모드만 지원합니다.",
-      "직업·커리어·돈·학업 dev preview는 브라우저에서 OpenAI를 호출하지 않고 snapshot 또는 fixture fallback만 사용합니다.",
+      "이 미리보기는 브라우저에서 writer를 호출하지 않고 저장된 snapshot 또는 fixture 화면 데이터를 사용합니다.",
     );
   }
 
@@ -142,7 +143,7 @@ export default async function CareerReportPreviewPage({
 
     return (
       <PreviewShell
-        devStatus={`fixture fallback · ${fixture.id} · writer disabled/no snapshot`}
+        devStatus={`fixture · ${fixture.id}`}
       >
         <CareerReportView
           draft={fallbackDraft}
@@ -154,7 +155,7 @@ export default async function CareerReportPreviewPage({
 
   return (
     <PreviewShell
-      devStatus={`preview snapshot · ${snapshot.fixtureId} · ${snapshot.generatedAt}`}
+      devStatus={`snapshot · ${snapshot.fixtureId} · ${snapshot.generatedAt}`}
     >
       <CareerReportView
         draft={snapshot.draft}

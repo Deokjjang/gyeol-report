@@ -57,7 +57,7 @@ export default function CareerReportCommonTables({
   const data = buildCareerReportCommonTablesData(evidence);
 
   return (
-    <div className={joinClassNames("grid gap-4", className)}>
+    <div className={joinClassNames("grid gap-4 sm:gap-5", className)}>
       <ManseRyeokCommonTable
         data={data.manseRyeokTableData}
         defaultOpen={defaultOpen}

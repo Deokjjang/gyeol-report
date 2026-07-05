@@ -47,7 +47,7 @@ describe("CareerReportView source", () => {
       "renderTableSlot",
       "공통 만세력표",
       "공통 MBTI표",
-      "표 데이터를 prop으로 받으면 그대로 렌더링",
+      "원국과 MBTI 행동층",
     ];
 
     for (const marker of requiredMarkers) {
