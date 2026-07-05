@@ -54,6 +54,23 @@ const previewProduct = {
   visualKey: "career_money_study",
 } as const satisfies ProductTileItem;
 
+const lovePreviewProduct = {
+  id: "love_marriage_child_report",
+  productKey: "love_marriage_child",
+  slug: "love-marriage-child",
+  nameKo: "연애·결혼·자녀 리포트",
+  versionBadgeKo: "v1.0 준비",
+  shortDescriptionKo: "관계 표현과 결혼 생활, 부모 역할을 함께 봅니다.",
+  status: "preview_available",
+  isPurchasable: false,
+  href: null,
+  previewHref: "/report/new?product=love-marriage-child",
+  previewCtaLabelKo: "입력 흐름 미리보기",
+  previewStatusKo: "준비 중 · 미리보기 가능",
+  badgeKo: "개발 preview",
+  visualKey: "love_marriage_child",
+} as const satisfies ProductTileItem;
+
 describe("ProductTile", () => {
   it("renders purchasable product state and CTA", () => {
     const html = renderToStaticMarkup(<ProductTile product={activeProduct} />);
@@ -87,6 +104,20 @@ describe("ProductTile", () => {
     expect(html).toContain("준비 중 · 미리보기 가능");
     expect(html).toContain("입력 흐름 미리보기");
     expect(html).toContain('href="/report/new?product=career-money-study"');
+    expect(html).not.toContain("구매 가능");
+    expect(html).not.toContain("결제하고 리포트 생성하기");
+  });
+
+  it("renders love marriage child preview product as a non-purchasable input flow link", () => {
+    const html = renderToStaticMarkup(
+      <ProductTile product={lovePreviewProduct} />,
+    );
+
+    expect(html).toContain("연애·결혼·자녀 리포트");
+    expect(html).toContain("개발 preview");
+    expect(html).toContain("준비 중 · 미리보기 가능");
+    expect(html).toContain("입력 흐름 미리보기");
+    expect(html).toContain('href="/report/new?product=love-marriage-child"');
     expect(html).not.toContain("구매 가능");
     expect(html).not.toContain("결제하고 리포트 생성하기");
   });

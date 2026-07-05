@@ -12,6 +12,8 @@ import { GYEOL_PRODUCTS } from "../../../lib/product/gyeolProducts";
 const ACTIVE_REPORT_PRODUCT = GYEOL_PRODUCTS[0];
 const CAREER_MONEY_STUDY_PRODUCT_KEY = "career_money_study";
 const CAREER_MONEY_STUDY_PRODUCT_SLUG = "career-money-study";
+const LOVE_MARRIAGE_CHILD_PRODUCT_KEY = "love_marriage_child";
+const LOVE_MARRIAGE_CHILD_PRODUCT_SLUG = "love-marriage-child";
 const ACTIVE_REPORT_LIST_PRICE_LABEL_KO = "정가 1,290원";
 const ACTIVE_REPORT_SALE_PRICE_LABEL_KO = "런칭가 990원";
 const ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO = "결제금액 990원";
@@ -75,6 +77,22 @@ const CAREER_MONEY_STUDY_SELECTED_REPORT_PRODUCT = {
     "출시 전 개발 preview 입력 흐름입니다. 결제는 연결하지 않고, 입력값과 직업·커리어·돈·학업 상품 context만 확인합니다.",
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
   deliveryTypeKo: "개발 preview 입력 흐름",
+  statusLabelKo: "준비 중 · 미리보기 가능",
+  isPurchasable: false,
+  listPriceKo: null,
+  priceKo: null,
+} as const satisfies SelectedReportProduct;
+
+const LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT = {
+  productKey: LOVE_MARRIAGE_CHILD_PRODUCT_KEY,
+  slug: LOVE_MARRIAGE_CHILD_PRODUCT_SLUG,
+  nameKo: "연애·결혼·자녀 리포트",
+  fullNameKo: "연애·결혼·자녀 리포트",
+  inputTitleKo: "연애·결혼·자녀 리포트 입력",
+  introKo:
+    "출시 전 미리보기 입력 흐름입니다. 결제는 연결하지 않고, 입력값과 관계·결혼·부모 역할 상품 context만 확인합니다.",
+  formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
+  deliveryTypeKo: "미리보기 입력 흐름",
   statusLabelKo: "준비 중 · 미리보기 가능",
   isPurchasable: false,
   listPriceKo: null,
@@ -176,8 +194,14 @@ function getSearchParamValue(
 function resolveSelectedReportProduct(
   searchProduct: string | readonly string[] | undefined,
 ): SelectedReportProduct {
-  if (getSearchParamValue(searchProduct) === CAREER_MONEY_STUDY_PRODUCT_SLUG) {
+  const productSlug = getSearchParamValue(searchProduct);
+
+  if (productSlug === CAREER_MONEY_STUDY_PRODUCT_SLUG) {
     return CAREER_MONEY_STUDY_SELECTED_REPORT_PRODUCT;
+  }
+
+  if (productSlug === LOVE_MARRIAGE_CHILD_PRODUCT_SLUG) {
+    return LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT;
   }
 
   return DEFAULT_SELECTED_REPORT_PRODUCT;
@@ -801,7 +825,7 @@ export default function NewReportPage({
                   ) : (
                     <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
                       <p className="text-sm font-semibold text-neutral-900">
-                        직업·커리어·돈·학업 리포트 생성 준비 흐름입니다.
+                        {selectedProduct.nameKo} 생성 준비 흐름입니다.
                       </p>
                       <p className="mt-2 text-sm leading-6 text-neutral-600">
                         입력값과 선택 상품 context를 유지합니다. 정식 결제와

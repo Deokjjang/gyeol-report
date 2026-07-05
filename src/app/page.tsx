@@ -30,14 +30,19 @@ const launchProductGrid = [
   },
   {
     id: "love_marriage_child_report",
+    productKey: "love_marriage_child",
+    slug: "love-marriage-child",
     nameKo: "연애·결혼·자녀 리포트",
-    versionBadgeKo: "v1.0 설계",
+    versionBadgeKo: "v1.0 준비",
     shortDescriptionKo:
       "관계에서 드러나는 표현 방식, 책임 방식, 생활 리듬과 가족 역할을 참고용으로 봅니다.",
-    status: "coming_soon",
+    status: "preview_available",
     isPurchasable: false,
     href: null,
-    badgeKo: "출시 준비 중",
+    previewHref: "/report/new?product=love-marriage-child",
+    previewCtaLabelKo: "입력 흐름 미리보기",
+    previewStatusKo: "준비 중 · 미리보기 가능",
+    badgeKo: "개발 preview",
     visualKey: "love_marriage_child",
   },
   {

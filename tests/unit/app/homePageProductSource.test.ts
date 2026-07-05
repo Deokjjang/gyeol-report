@@ -32,6 +32,8 @@ describe("home page product source", () => {
       "990원 결제하고 리포트 생성하기",
       "/report/new",
       "/report/new?product=career-money-study",
+      "/report/new?product=love-marriage-child",
+      "love-marriage-child",
     ];
 
     for (const marker of requiredMarkers) {

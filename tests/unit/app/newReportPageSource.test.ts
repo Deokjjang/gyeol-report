@@ -71,9 +71,31 @@ describe("new report page source", () => {
       "선택 상품",
       "selectedProduct.productKey",
       "selectedProduct.slug",
-      "직업·커리어·돈·학업 리포트 생성 준비 흐름입니다.",
+      "{selectedProduct.nameKo} 생성 준비 흐름입니다.",
       "입력값과 선택 상품 context를 유지합니다.",
       "isSelectedProductPurchasable",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+  });
+
+  it("keeps love marriage child product selection as a non-payment skeleton", () => {
+    const requiredMarkers = [
+      "LOVE_MARRIAGE_CHILD_PRODUCT_KEY",
+      "love_marriage_child",
+      "LOVE_MARRIAGE_CHILD_PRODUCT_SLUG",
+      "love-marriage-child",
+      "LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT",
+      "연애·결혼·자녀 리포트 입력",
+      "출시 전 미리보기 입력 흐름입니다.",
+      "관계·결혼·부모 역할 상품 context",
+      "미리보기 입력 흐름",
+      "준비 중 · 미리보기 가능",
+      "productSlug === LOVE_MARRIAGE_CHILD_PRODUCT_SLUG",
+      "return LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT",
+      "return DEFAULT_SELECTED_REPORT_PRODUCT",
     ];
 
     for (const marker of requiredMarkers) {
