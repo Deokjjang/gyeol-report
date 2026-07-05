@@ -519,3 +519,82 @@ export type CompatibilityPersonChartSummary = {
   readonly diagnosticFeatureLabels: readonly string[];
   readonly sajuFacts: ComputedSajuFacts;
 };
+
+export type CompatibilityEvidenceParticipant = {
+  readonly role: CompatibilityPersonInput["role"];
+  readonly label: "A" | "B";
+  readonly name: string;
+  readonly gender?: CompatibilityPersonInput["gender"];
+  readonly mbtiType: MbtiTypeCode | null;
+  readonly dayMaster: string;
+  readonly dayPillar: string;
+  readonly pillars: CompatibilityPillars;
+  readonly sajuFacts: ComputedSajuFacts;
+};
+
+export type CompatibilitySajuCompatibility = {
+  readonly dayMasterRelation: string | null;
+  readonly dayBranchRelation: string | null;
+  readonly elementBalance: readonly string[];
+  readonly tenGodRelation: string | null;
+  readonly branchInteractions: readonly string[];
+  readonly supportSignals: readonly string[];
+  readonly frictionSignals: readonly string[];
+  readonly roleBalance: string | null;
+  readonly gwiinSupport: readonly string[];
+  readonly sinsalFriction: readonly string[];
+  readonly timingHints: readonly string[];
+};
+
+export type CompatibilityMbtiCompatibilitySource =
+  | "notablePairs"
+  | "fallback"
+  | "partial"
+  | "unknown";
+
+export type CompatibilityMbtiCompatibility = {
+  readonly aType: MbtiTypeCode | null;
+  readonly bType: MbtiTypeCode | null;
+  readonly sharedGround: readonly string[];
+  readonly friction: readonly string[];
+  readonly positiveInfluence: readonly string[];
+  readonly communicationPattern: readonly string[];
+  readonly repairStrategy: readonly string[];
+  readonly pairLabel: string | null;
+  readonly reportLine: string | null;
+  readonly source: CompatibilityMbtiCompatibilitySource;
+};
+
+export type CompatibilityBridgeCompatibility = {
+  readonly agreementSignals: readonly string[];
+  readonly tensionSignals: readonly string[];
+  readonly amplificationSignals: readonly string[];
+  readonly cautionSignals: readonly string[];
+  readonly interpretationMode: string;
+};
+
+export type CompatibilityCategoryLens = {
+  readonly relationshipType: CompatibilityCanonicalRelationshipType;
+  readonly focus: readonly string[];
+  readonly strengthFocus: string;
+  readonly frictionFocus: string;
+  readonly repairFocus: string;
+  readonly safetyFocus: string;
+};
+
+export type CompatibilityDirectFindingType =
+  | "strength"
+  | "friction"
+  | "risk"
+  | "repair";
+
+export type CompatibilityDirectFindingIntensity = "low" | "medium" | "high";
+
+export type CompatibilityDirectFinding = {
+  readonly type: CompatibilityDirectFindingType;
+  readonly intensity: CompatibilityDirectFindingIntensity;
+  readonly title: string;
+  readonly evidence: readonly string[];
+  readonly interpretation: string;
+  readonly safeWording: string;
+};
