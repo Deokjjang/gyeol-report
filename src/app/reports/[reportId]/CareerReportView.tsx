@@ -39,6 +39,57 @@ function fitLabel(value: "high" | "medium" | "low"): string {
   return "주의 필요";
 }
 
+function displayArchetypeLabel(value: string): string {
+  const labels: Record<string, string> = {
+    operator_planner: "운영형 기획자",
+    builder_executor: "실행형 빌더",
+    specialist_researcher: "전문 탐구형",
+    sales_networker: "영업·네트워크형",
+    creator_expression: "표현형 크리에이터",
+    manager_controller: "관리·통제형 리더",
+    independent_freelancer: "독립형 실무자",
+    system_architect: "시스템 설계자",
+    salary_stability: "안정 수입형",
+    contract_project_income: "프로젝트 수입형",
+    business_trade_income: "사업·거래 수입형",
+    asset_accumulation: "자산 축적형",
+    high_risk_high_volatility: "고변동 주의형",
+    cost_control_first: "비용 관리형",
+    side_income_builder: "부수입 설계형",
+    certificate_based: "자격 증명형",
+    portfolio_based: "포트폴리오 증명형",
+    practice_repetition: "실습 반복형",
+    deep_research: "깊이 탐구형",
+    structured_curriculum: "커리큘럼형",
+    mentor_feedback: "피드백 성장형",
+    avoid_cramming: "벼락치기 주의형",
+    career_profile: "직업 성향",
+  };
+
+  if (labels[value] !== undefined) {
+    return labels[value];
+  }
+
+  return value.includes("_") ? "직업 성향" : value;
+}
+
+function nonDuplicateBody(
+  body: string,
+  compareWith: readonly string[],
+): string | undefined {
+  const normalizedBody = body.replace(/\s+/gu, " ").trim();
+
+  if (normalizedBody.length === 0) {
+    return undefined;
+  }
+
+  return compareWith.some(
+    (value) => value.replace(/\s+/gu, " ").trim() === normalizedBody,
+  )
+    ? undefined
+    : body;
+}
+
 function renderList(items: readonly string[], label?: string) {
   if (items.length === 0) {
     return null;
@@ -197,7 +248,7 @@ function renderCommonTableArea({
   return (
     <CareerSection
       id="common_tables"
-      eyebrow="profile tables"
+      eyebrow="기초 정보"
       title="원국과 MBTI 행동층을 먼저 봅니다"
       body="직업·돈·학업 해석에 들어가기 전, 사주 원국의 구조와 MBTI 행동 패턴을 같은 화면에서 확인할 수 있게 배치했습니다."
     >
@@ -242,7 +293,7 @@ export function CareerReportView({
     <article className="mx-auto max-w-5xl space-y-5 text-[#201a18] sm:space-y-6">
       {devStatus === undefined ? null : (
         <aside className="w-fit rounded-md border border-[#d8d1c4] bg-[#fffdf8]/90 px-3 py-1.5 text-[11px] font-bold text-[#8b8174]">
-          <span className="text-[#7f1d38]">preview</span>
+          <span className="text-[#7f1d38]">미리보기</span>
           <span className="ml-2">{text(devStatus)}</span>
         </aside>
       )}
@@ -270,7 +321,7 @@ export function CareerReportView({
               이름 · {text(draft.personLabel)}
             </span>
             <span className="rounded-md border border-[#d8d1c4] bg-[#fffdf8] px-3 py-2">
-              상품 · career money study
+              상품 · 직업·커리어·돈·학업
             </span>
             {reportId === undefined ? null : (
               <span className="rounded-md border border-[#d8d1c4] bg-[#fffdf8] px-3 py-2">
@@ -333,12 +384,14 @@ export function CareerReportView({
         id="career_identity"
         eyebrow="직업 정체성"
         title={text(draft.careerIdentity.headline)}
-        body={draft.careerIdentity.body}
+        body={nonDuplicateBody(draft.careerIdentity.body, [
+          draft.myeongliMbtiSummary.combinedReading,
+        ])}
       >
         <div className="grid gap-4 md:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-3 rounded-lg border border-[#d8d1c4] bg-[#f8f4ed] p-4">
             <p className="text-sm font-bold text-[#7f1d38]">
-              {text(draft.careerIdentity.archetypeLabel)}
+              {text(displayArchetypeLabel(draft.careerIdentity.archetypeLabel))}
             </p>
             <p className="text-sm leading-7 text-[#51453d]">
               강한 자리: {text(draft.careerIdentity.strongestFit)}
@@ -502,7 +555,7 @@ export function CareerReportView({
 
       <CareerSection
         id="action_plan"
-        eyebrow="action plan"
+        eyebrow="실행 기준"
         title="바로 실행할 행동 기준"
       >
         <div className="grid gap-4 md:grid-cols-2">
@@ -549,7 +602,7 @@ export function CareerReportView({
 
       <CareerSection
         id="safety_notes"
-        eyebrow="safety notes"
+        eyebrow="안전 안내"
         title="안전 안내"
         tone="caution"
       >

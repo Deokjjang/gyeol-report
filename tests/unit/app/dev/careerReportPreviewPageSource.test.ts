@@ -13,13 +13,13 @@ describe("career report preview page source", () => {
     expect(pageSource).toContain("snapshot?: string");
     expect(pageSource).toContain("getFixtureId");
     expect(pageSource).toContain("getSnapshotMode");
-    expect(pageSource).toContain("snapshot=latest");
+    expect(pageSource).toContain("\"latest\"");
   });
 
   it("uses the career-report-preview snapshot path through the snapshot helper", () => {
     expect(pageSource).toContain("readCareerReportPreviewSnapshot");
-    expect(pageSource).toContain("snapshot.fixtureId");
-    expect(pageSource).toContain("snapshot.generatedAt");
+    expect(pageSource).toContain("snapshot.draft");
+    expect(pageSource).toContain("저장된 화면");
   });
 
   it("renders a fixture fallback draft with evidence when no snapshot exists", () => {

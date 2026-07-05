@@ -35,7 +35,13 @@ describe("CareerReportCommonTables", () => {
     expect(html).toContain("ENTJ 대담한 통솔자");
     expect(html).toContain("선호 지표 비교");
     expect(html).toContain("기능 서열");
-    expect(html).toContain("직업·돈·학업 활용");
+    expect(html).toContain("직업 활용");
+    expect(html).toContain("돈 관리");
+    expect(html).not.toContain("career 섹션");
+    expect(html).not.toContain("workplace 문장");
+    expect(html).not.toContain("money 섹션");
+    expect(html).not.toContain("investment 섹션");
+    expect(html).not.toContain("study 섹션");
   });
 
   it("renders each slot wrapper separately", () => {

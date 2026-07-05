@@ -176,7 +176,7 @@ function buildReportUsageNotes(
     return traitItems.map((trait) => ({
       categoryKey,
       id: trait.id ?? null,
-      label: trait.label ?? trait.id ?? categoryKey,
+      label: trait.label ?? "활용 포인트",
       plainKo: trait.plainKo ?? null,
       strongLine: trait.strongLine ?? null,
       positiveUse: trait.positiveUse ?? null,

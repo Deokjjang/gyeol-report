@@ -195,6 +195,30 @@ describe("ManseRyeokCommonTable", () => {
     expect(html).toContain(">-</span>");
   });
 
+  it("hides detail rows when every pillar cell is empty", () => {
+    const html = renderToStaticMarkup(
+      <ManseRyeokCommonTable
+        data={{
+          ...tableData,
+          detailRows: [
+            {
+              key: "hiddenStems",
+              label: "지장간",
+              cells: {
+                hour: [],
+                day: [],
+                month: [],
+                year: [],
+              },
+            },
+          ],
+        }}
+      />,
+    );
+
+    expect(html).not.toContain("지장간");
+  });
+
   it("hides table content when defaultOpen is false", () => {
     const html = renderToStaticMarkup(
       <ManseRyeokCommonTable data={tableData} defaultOpen={false} />,

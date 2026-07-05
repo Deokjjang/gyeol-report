@@ -25,8 +25,8 @@ describe("CareerReportView source", () => {
       "공부/자격증 전략",
       "추천 직업",
       "피해야 할 직무/환경",
-      "action plan",
-      "safety notes",
+      "실행 기준",
+      "안전 안내",
     ];
 
     for (const marker of requiredMarkers) {
@@ -59,6 +59,14 @@ describe("CareerReportView source", () => {
     expect(source).toContain("investmentAndSavingStyle.forbiddenNote");
     expect(source).toContain("draft.actionPlan.map");
     expect(source).toContain("첫 행동:");
+  });
+
+  it("maps internal classifications to public labels", () => {
+    expect(source).toContain("displayArchetypeLabel");
+    expect(source).toContain("operator_planner: \"운영형 기획자\"");
+    expect(source).toContain("value.includes(\"_\") ? \"직업 성향\" : value");
+    expect(source).not.toContain("상품 · career money study");
+    expect(source).not.toContain("profile tables");
   });
 
   it("does not render hard deterministic claim examples", () => {

@@ -73,14 +73,14 @@ function PreviewShell({
       <section className="mx-auto flex max-w-5xl flex-col gap-5">
         <div className="flex items-center justify-between gap-3 text-xs font-bold uppercase tracking-[0.16em] text-[#8b8174]">
           <span>Gyeol Report</span>
-          <span>Career Preview</span>
+          <span>직업 리포트</span>
         </div>
         {devStatus === undefined ? null : (
           <aside
             className="w-fit rounded-md border border-[#d8d1c4] bg-[#fffdf8]/90 px-3 py-1.5 text-[11px] font-bold text-[#8b8174]"
             aria-label="dev-only metadata"
           >
-            <span className="text-[#7f1d38]">preview</span>
+            <span className="text-[#7f1d38]">미리보기</span>
             <span className="ml-2 normal-case tracking-normal">{devStatus}</span>
           </aside>
         )}
@@ -126,8 +126,8 @@ export default async function CareerReportPreviewPage({
 
   if (snapshotMode !== "latest") {
     return renderMessage(
-      "snapshot=latest 모드만 지원합니다.",
-      "이 미리보기는 브라우저에서 writer를 호출하지 않고 저장된 snapshot 또는 fixture 화면 데이터를 사용합니다.",
+      "미리보기 링크가 올바르지 않습니다.",
+      "제공된 리포트 미리보기 링크로 다시 접속해주세요.",
     );
   }
 
@@ -143,7 +143,7 @@ export default async function CareerReportPreviewPage({
 
     return (
       <PreviewShell
-        devStatus={`fixture · ${fixture.id}`}
+        devStatus="샘플 화면"
       >
         <CareerReportView
           draft={fallbackDraft}
@@ -155,7 +155,7 @@ export default async function CareerReportPreviewPage({
 
   return (
     <PreviewShell
-      devStatus={`snapshot · ${snapshot.fixtureId} · ${snapshot.generatedAt}`}
+      devStatus="저장된 화면"
     >
       <CareerReportView
         draft={snapshot.draft}

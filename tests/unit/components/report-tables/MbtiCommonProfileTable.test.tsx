@@ -243,11 +243,12 @@ describe("MbtiCommonProfileTable", () => {
       "목표 지휘관",
       "공통 목표를 세우고 사람을 끌어모아 추진한다.",
       "사람과 자원과 시간을 하나의 작전처럼 재배치한다.",
-      "general",
-      "career",
     ]) {
       expect(html).toContain(marker);
     }
+    expect(html).not.toContain(">identity</span>");
+    expect(html).not.toContain(">general</span>");
+    expect(html).not.toContain(">career</span>");
   });
 
   it("hides table content when defaultOpen is false", () => {

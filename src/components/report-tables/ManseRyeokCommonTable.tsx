@@ -34,6 +34,9 @@ export default function ManseRyeokCommonTable({
 }: ManseRyeokCommonTableProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const contentId = useId();
+  const visibleDetailRows = data.detailRows.filter((row) =>
+    data.columns.some((column) => row.cells[column.key].length > 0),
+  );
 
   return (
     <section
@@ -87,7 +90,7 @@ export default function ManseRyeokCommonTable({
             ))}
           </div>
 
-          {data.detailRows.map((row) => (
+          {visibleDetailRows.map((row) => (
             <div key={row.key} className="bg-[#fffdf8]">
               <h3 className="bg-[#f5efe5] px-3 py-2 text-center text-xs font-extrabold text-[#7a6f63]">
                 {row.label}
@@ -138,7 +141,9 @@ function StemBranchCard({
     >
       <span className="text-3xl font-extrabold leading-none">{cell.hanja}</span>
       <span className="text-xs font-semibold leading-4">{cell.ko}</span>
-      <span className="text-xs font-bold leading-4">{cell.tenGod ?? "-"}</span>
+      {cell.tenGod === null ? null : (
+        <span className="text-xs font-bold leading-4">{cell.tenGod}</span>
+      )}
     </div>
   );
 }

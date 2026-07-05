@@ -290,35 +290,18 @@ function ReportUsageNotes({
       </h3>
       <div className="grid gap-3 px-4 py-4">
         {notes.length > 0 ? (
-          notes.map((note, index) => (
+          notes.slice(0, 5).map((note, index) => (
             <article
               key={`${note.categoryKey}-${note.id ?? index}`}
               className="space-y-2 border-b border-[#eadfce] pb-3 last:border-b-0 last:pb-0"
             >
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-md bg-[#f5efe5] px-2 py-1 text-xs font-bold text-[#6f675d]">
-                  {note.categoryKey}
-                </span>
-                <h4 className="text-sm font-extrabold text-[#201a18]">
-                  {note.label}
-                </h4>
-              </div>
+              <h4 className="text-sm font-extrabold text-[#201a18]">
+                {note.label}
+              </h4>
               <UsageLine text={note.plainKo} />
               <UsageLine text={note.strongLine} />
               <UsageLine text={note.positiveUse} />
               <UsageLine text={note.risk} />
-              {note.productDomains.length > 0 ? (
-                <div className="flex flex-wrap gap-1">
-                  {note.productDomains.map((domain) => (
-                    <span
-                      key={domain}
-                      className="rounded-full bg-[#f5efe5] px-2 py-0.5 text-[11px] font-bold text-[#8b8174]"
-                    >
-                      {domain}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
             </article>
           ))
         ) : (

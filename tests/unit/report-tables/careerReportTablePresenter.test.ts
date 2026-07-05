@@ -60,21 +60,35 @@ describe("career report table presenter", () => {
     ]);
     expect(data?.closeKeywords.length).toBeGreaterThan(0);
     expect(data?.farKeywords.length).toBeGreaterThan(0);
+    expect(data?.closeKeywords.length).toBeLessThanOrEqual(6);
+    expect(data?.farKeywords.length).toBeLessThanOrEqual(6);
+    expect(data?.reportUsageNotes.length).toBeGreaterThan(0);
+    expect(data?.reportUsageNotes.length).toBeLessThanOrEqual(5);
     expect(data?.reportUsageNotes).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
-          categoryKey: "careerReportUseCases",
-          label: "직업·돈·학업 활용",
-          productDomains: ["career_money_study"],
+          categoryKey: "직업·돈·학업 활용",
+          label: "직업 활용",
+          plainKo: expect.stringContaining("직업 해석"),
+          productDomains: [],
         }),
       ]),
     );
     expect(
+      data?.reportUsageNotes.some((note) => note.plainKo.includes("career 섹션")),
+    ).toBe(false);
+    expect(
+      data?.reportUsageNotes.some((note) => note.plainKo.includes("workplace 문장")),
+    ).toBe(false);
+    expect(
+      data?.reportUsageNotes.some((note) => note.plainKo.includes("money 섹션")),
+    ).toBe(false);
+    expect(
       data?.reportUsageNotes.some((note) => note.categoryKey === "money"),
-    ).toBe(true);
+    ).toBe(false);
     expect(
       data?.reportUsageNotes.some((note) => note.categoryKey === "study"),
-    ).toBe(true);
+    ).toBe(false);
   });
 
   it("returns null MBTI table data for unknown MBTI without breaking manse table data", () => {

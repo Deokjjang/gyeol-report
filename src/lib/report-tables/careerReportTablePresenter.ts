@@ -2,7 +2,6 @@ import {
   getMbtiSourceProfile,
   type MbtiSourceProfile,
   type MbtiSourceTraitItem,
-  type MbtiTraitArea,
 } from "../report-knowledge/mbti";
 import type { CareerReportEvidencePacket } from "../report-knowledge/careerReportTypes";
 import {
@@ -24,17 +23,6 @@ export type CareerReportCommonTablesData = {
   readonly manseRyeokTableData: ManseRyeokCommonTableData;
   readonly mbtiProfileTableData: MbtiCommonProfileTableData | null;
 };
-
-const CAREER_MBTI_TRAIT_AREAS = [
-  "career",
-  "workplace",
-  "money",
-  "investment",
-  "study",
-  "strengths",
-  "risks",
-  "growth",
-] as const satisfies readonly MbtiTraitArea[];
 
 export function buildCareerReportCommonTablesData(
   evidence: CareerReportEvidencePacket,
@@ -150,28 +138,57 @@ function pickFunctionStack(
 function buildCareerMbtiTraits(
   source: MbtiSourceProfile,
 ): Readonly<Record<string, readonly MbtiSourceTraitItem[]>> {
-  const traits: Record<string, readonly MbtiSourceTraitItem[]> = {};
-
-  for (const area of CAREER_MBTI_TRAIT_AREAS) {
-    const items = source.traits?.[area];
-
-    if (items !== undefined && items.length > 0) {
-      traits[area] = items;
-    }
-  }
-
-  const reportUseCases = source.reportUseCases?.careerReport ?? [];
+  const reportUseCases = (source.reportUseCases?.careerReport ?? []).slice(0, 5);
 
   if (reportUseCases.length > 0) {
-    traits.careerReportUseCases = reportUseCases.map((line, index) => ({
-      id: `career_report_use_case_${index + 1}`,
-      label: "직업·돈·학업 활용",
-      plainKo: line,
-      productDomains: ["career_money_study"],
-    }));
+    return {
+      "직업·돈·학업 활용": reportUseCases.map((line, index) => ({
+        id: `career_report_use_case_${index + 1}`,
+        label: getCareerReportUseCaseLabel(index, line),
+        plainKo: sanitizeCareerReportUseCaseLine(line),
+        productDomains: [],
+      })),
+    };
   }
 
-  return traits;
+  return {};
+}
+
+function getCareerReportUseCaseLabel(index: number, line: string): string {
+  if (line.includes("workplace")) {
+    return "조직 적합도";
+  }
+  if (line.includes("money")) {
+    return "돈 관리";
+  }
+  if (line.includes("investment")) {
+    return "투자 태도";
+  }
+  if (line.includes("study")) {
+    return "공부 전략";
+  }
+
+  return [
+    "직업 활용",
+    "조직 적합도",
+    "돈 관리",
+    "투자 태도",
+    "성장 방향",
+  ][index] ?? "활용 포인트";
+}
+
+function sanitizeCareerReportUseCaseLine(line: string): string {
+  return line
+    .replaceAll("career 섹션", "직업 해석")
+    .replaceAll("career 리포트", "직업 리포트")
+    .replaceAll("workplace 문장", "직장·조직 해석")
+    .replaceAll("workplace 섹션", "직장·조직 해석")
+    .replaceAll("money 섹션", "돈 관리 해석")
+    .replaceAll("investment 섹션", "투자 성향 해석")
+    .replaceAll("study 섹션", "공부 전략 해석")
+    .replaceAll("compatibility 섹션", "관계 해석")
+    .replaceAll("daeun 섹션", "흐름 해석")
+    .replaceAll("saeun 섹션", "연간 흐름 해석");
 }
 
 function getStringArrayProperty(
@@ -184,5 +201,7 @@ function getStringArrayProperty(
     return [];
   }
 
-  return value.filter((item): item is string => typeof item === "string");
+  return value
+    .filter((item): item is string => typeof item === "string")
+    .slice(0, 6);
 }
