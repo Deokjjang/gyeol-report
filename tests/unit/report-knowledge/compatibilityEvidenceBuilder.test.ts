@@ -39,6 +39,7 @@ describe("REPORT-18A compatibility evidence builder", () => {
   it("adds warnings for missing time and missing MBTI", () => {
     const packet = buildCompatibilityEvidencePacketFromFixtureId("unknown-time-some");
 
+    expect(packet.input.relationshipType).toBe("love");
     expect(packet.warnings).toContain("personB birth time unknown");
     expect(packet.warnings).toContain("personB MBTI missing");
   });
@@ -50,5 +51,16 @@ describe("REPORT-18A compatibility evidence builder", () => {
     expect(packet.input.relationshipType).toBe("friendship");
     expect(packet.personAChartSummary.mbti).toBe("ISTJ");
     expect(packet.personBChartSummary.mbti).toBe("ESTP");
+  });
+
+  it("normalizes legacy fixture relationship types to canonical categories", () => {
+    expect(
+      buildCompatibilityEvidencePacketFromFixtureId("family-unknown-mbti").input
+        .relationshipType,
+    ).toBe("parentChild");
+    expect(
+      buildCompatibilityEvidencePacketFromFixtureId("business-work-partner-sample").input
+        .relationshipType,
+    ).toBe("businessPartner");
   });
 });

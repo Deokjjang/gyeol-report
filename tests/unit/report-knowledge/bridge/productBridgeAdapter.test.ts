@@ -120,22 +120,22 @@ describe("product bridge adapter", () => {
       "businessPartner",
     );
     expect(mapCompatibilityRelationCategory("workplace_colleague")).toBe(
-      "workplaceColleague",
+      "coworker",
     );
     expect(mapCompatibilityRelationCategory("coworker")).toBe(
-      "workplaceColleague",
+      "coworker",
     );
     expect(mapCompatibilityRelationCategory("boss_subordinate")).toBe(
-      "bossSubordinate",
+      "managerReport",
     );
     expect(mapCompatibilityRelationCategory("managerReport")).toBe(
-      "bossSubordinate",
+      "managerReport",
     );
     expect(mapCompatibilityRelationCategory("parent_child")).toBe("parentChild");
     expect(mapCompatibilityRelationCategory("parentChild")).toBe("parentChild");
-    expect(mapCompatibilityRelationCategory("friend_social")).toBe("friendSocial");
-    expect(mapCompatibilityRelationCategory("friendship")).toBe("friendSocial");
-    expect(mapCompatibilityRelationCategory("unknown")).toBeNull();
+    expect(mapCompatibilityRelationCategory("friend_social")).toBe("friendship");
+    expect(mapCompatibilityRelationCategory("friendship")).toBe("friendship");
+    expect(mapCompatibilityRelationCategory("unknown")).toBe("love");
   });
 
   it("keeps forbidden angles even for empty packets", () => {

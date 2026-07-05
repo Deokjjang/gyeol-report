@@ -6,6 +6,7 @@ import type {
   ManseRyeokCommonTableData,
   MbtiCommonProfileTableData,
 } from "./types";
+import { normalizeCompatibilityRelationCategory } from "../report-knowledge/compatibilityTypes";
 
 export type CompatibilityPersonTableInput = {
   readonly label?: string;
@@ -38,20 +39,11 @@ export type BuildCompatibilityTableDataInput = {
   readonly connectionSummary?: CompatibilityConnectionSummaryInput;
 };
 
-const SUPPORTED_RELATION_CATEGORIES: readonly CompatibilityRelationCategory[] = [
-  "love",
-  "marriage",
-  "parentChild",
-  "coworker",
-  "managerReport",
-  "businessPartner",
-  "friendship",
-];
-
 export function buildCompatibilityTableData(
   input: BuildCompatibilityTableDataInput,
 ): CompatibilityTableData {
-  const relationCategory = normalizeRelationCategory(input.relationCategory);
+  const relationCategory: CompatibilityRelationCategory =
+    normalizeCompatibilityRelationCategory(input.relationCategory);
 
   return {
     title: input.title ?? "궁합표",
@@ -60,20 +52,6 @@ export function buildCompatibilityTableData(
     connectionSummary: buildConnectionSummary(input.connectionSummary),
     personB: buildPersonTableData(input.personB, "B"),
   };
-}
-
-function normalizeRelationCategory(
-  relationCategory: string,
-): CompatibilityRelationCategory {
-  if (
-    SUPPORTED_RELATION_CATEGORIES.includes(
-      relationCategory as CompatibilityRelationCategory,
-    )
-  ) {
-    return relationCategory as CompatibilityRelationCategory;
-  }
-
-  throw new Error(`Unsupported compatibility relation category: ${relationCategory}`);
 }
 
 function buildPersonTableData(

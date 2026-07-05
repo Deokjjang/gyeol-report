@@ -9,6 +9,8 @@ import {
   getCompatibilityRelationshipTypeLabel,
   getCompatibilityScoreDisplayLabels,
   getCompatibilityScoreExplanation,
+  normalizeCompatibilityRelationCategory,
+  requireCompatibilityRelationCategory,
 } from "../../../src/lib/report-knowledge/compatibilityTypes";
 
 describe("REPORT-18A compatibility types", () => {
@@ -22,36 +24,72 @@ describe("REPORT-18A compatibility types", () => {
     expect(fixture.input.personB.mbti).toBe("INTP");
   });
 
-  it("supports exactly six compatibility relationship categories for v1", () => {
+  it("supports exactly seven canonical compatibility relationship categories", () => {
     expect(compatibilityRelationshipTypes).toEqual([
       "love",
       "marriage",
-      "some",
+      "parentChild",
+      "coworker",
+      "managerReport",
+      "businessPartner",
       "friendship",
-      "family",
-      "business_work_partner",
     ]);
   });
 
-  it("has labels and focus text for all six relationship types", () => {
+  it("has labels and focus text for all canonical relationship types", () => {
     expect(getCompatibilityRelationshipTypeLabel("love")).toBe("연애");
-    expect(getCompatibilityRelationshipTypeLabel("marriage")).toBe("결혼/장기연애");
-    expect(getCompatibilityRelationshipTypeLabel("some")).toBe("썸");
-    expect(getCompatibilityRelationshipTypeLabel("friendship")).toBe("친구");
-    expect(getCompatibilityRelationshipTypeLabel("family")).toBe("가족");
-    expect(getCompatibilityRelationshipTypeLabel("business_work_partner")).toBe(
-      "동업/업무 파트너",
-    );
+    expect(getCompatibilityRelationshipTypeLabel("marriage")).toBe("결혼");
+    expect(getCompatibilityRelationshipTypeLabel("parentChild")).toBe("부모·자식");
+    expect(getCompatibilityRelationshipTypeLabel("coworker")).toBe("직장 동료");
+    expect(getCompatibilityRelationshipTypeLabel("managerReport")).toBe("상사·부하");
+    expect(getCompatibilityRelationshipTypeLabel("businessPartner")).toBe("사업/협업");
+    expect(getCompatibilityRelationshipTypeLabel("friendship")).toBe("친구/인간관계");
 
     for (const relationshipType of compatibilityRelationshipTypes) {
       expect(getCompatibilityRelationshipTypeFocus(relationshipType).length).toBeGreaterThan(0);
     }
   });
 
+  it("maps legacy relationship inputs to canonical categories", () => {
+    expect(normalizeCompatibilityRelationCategory("some")).toBe("love");
+    expect(normalizeCompatibilityRelationCategory("dating")).toBe("love");
+    expect(normalizeCompatibilityRelationCategory("romance")).toBe("love");
+    expect(normalizeCompatibilityRelationCategory("family")).toBe("parentChild");
+    expect(normalizeCompatibilityRelationCategory("parent_child")).toBe("parentChild");
+    expect(normalizeCompatibilityRelationCategory("workplace_colleague")).toBe("coworker");
+    expect(normalizeCompatibilityRelationCategory("colleague")).toBe("coworker");
+    expect(normalizeCompatibilityRelationCategory("boss_subordinate")).toBe("managerReport");
+    expect(normalizeCompatibilityRelationCategory("manager_report")).toBe("managerReport");
+    expect(normalizeCompatibilityRelationCategory("business_work_partner")).toBe(
+      "businessPartner",
+    );
+    expect(normalizeCompatibilityRelationCategory("business_partner")).toBe(
+      "businessPartner",
+    );
+    expect(normalizeCompatibilityRelationCategory("friend_social")).toBe("friendship");
+    expect(normalizeCompatibilityRelationCategory("friend")).toBe("friendship");
+  });
+
+  it("falls back unknown external category to love and keeps strict helper for invariants", () => {
+    expect(normalizeCompatibilityRelationCategory("unknown")).toBe("love");
+    expect(normalizeCompatibilityRelationCategory(undefined)).toBe("love");
+    expect(() => requireCompatibilityRelationCategory("unknown")).toThrow(
+      "Unsupported compatibility relation category: unknown",
+    );
+  });
+
   it("uses relationship-specific score labels", () => {
     expect(getCompatibilityScoreDisplayLabels("love").attraction).toBe("끌림");
     expect(getCompatibilityScoreDisplayLabels("marriage").attraction).toBe("부부 온도");
-    expect(getCompatibilityScoreDisplayLabels("some").attraction).toBe("호감 신호");
+    expect(getCompatibilityScoreDisplayLabels("some").attraction).toBe("끌림");
+    expect(getCompatibilityScoreDisplayLabels("parentChild").attraction).toBe("정서 연결");
+    expect(getCompatibilityScoreDisplayLabels("coworker").attraction).toBe("협업 리듬");
+    expect(getCompatibilityScoreDisplayLabels("managerReport").attraction).toBe(
+      "업무 신뢰",
+    );
+    expect(getCompatibilityScoreDisplayLabels("businessPartner").attraction).toBe(
+      "협업 시너지",
+    );
     expect(getCompatibilityScoreDisplayLabels("friendship").attraction).toBe("친밀감");
     expect(getCompatibilityScoreDisplayLabels("family").attraction).toBe("정서 연결");
     expect(getCompatibilityScoreDisplayLabels("business_work_partner").attraction).toBe(
@@ -128,5 +166,7 @@ describe("REPORT-18A compatibility types", () => {
     );
     expect(getCompatibilityScoreCaution("family", 70)).toContain("말의 통로");
     expect(getCompatibilityScoreCaution("family", 70)).not.toContain("끌림");
+    expect(getCompatibilityScoreCaution("coworker", 70)).toContain("직장 동료");
+    expect(getCompatibilityScoreCaution("managerReport", 70)).toContain("상사·부하");
   });
 });

@@ -2,6 +2,15 @@ import type { MbtiTypeCode } from "./mbtiKnowledgeTypes";
 import type { ComputedSajuFacts } from "./sajuComputedFactsTypes";
 import type { CompatibilityDeepSajuLayer } from "./compatibilityDeepSajuBridge";
 
+export type CompatibilityCanonicalRelationshipType =
+  | "love"
+  | "marriage"
+  | "parentChild"
+  | "coworker"
+  | "managerReport"
+  | "businessPartner"
+  | "friendship";
+
 export type CompatibilityRelationshipType =
   | "love"
   | "marriage"
@@ -10,14 +19,101 @@ export type CompatibilityRelationshipType =
   | "family"
   | "business_work_partner";
 
+export type CompatibilityLegacyRelationshipType =
+  | CompatibilityRelationshipType
+  | "some"
+  | "dating"
+  | "romance"
+  | "family"
+  | "parent_child"
+  | "workplace_colleague"
+  | "colleague"
+  | "boss_subordinate"
+  | "manager_report"
+  | "business_work_partner"
+  | "business_partner"
+  | "friend_social"
+  | "friend";
+
+export type CompatibilityRelationshipCategoryInput =
+  | CompatibilityCanonicalRelationshipType
+  | CompatibilityLegacyRelationshipType;
+
 export const compatibilityRelationshipTypes = [
   "love",
   "marriage",
-  "some",
+  "parentChild",
+  "coworker",
+  "managerReport",
+  "businessPartner",
   "friendship",
-  "family",
-  "business_work_partner",
-] as const satisfies readonly CompatibilityRelationshipType[];
+] as const satisfies readonly CompatibilityCanonicalRelationshipType[];
+
+const compatibilityLegacyRelationshipTypeMap: Readonly<
+  Record<string, CompatibilityCanonicalRelationshipType>
+> = {
+  love: "love",
+  some: "love",
+  dating: "love",
+  romance: "love",
+  marriage: "marriage",
+  parentchild: "parentChild",
+  parent_child: "parentChild",
+  family: "parentChild",
+  workplace_colleague: "coworker",
+  workplacecolleague: "coworker",
+  colleague: "coworker",
+  coworker: "coworker",
+  boss_subordinate: "managerReport",
+  bosssubordinate: "managerReport",
+  manager_report: "managerReport",
+  managerreport: "managerReport",
+  business_work_partner: "businessPartner",
+  businessworkpartner: "businessPartner",
+  business_partner: "businessPartner",
+  businesspartner: "businessPartner",
+  friend_social: "friendship",
+  friendsocial: "friendship",
+  friend: "friendship",
+  friendship: "friendship",
+};
+
+function normalizeRelationshipTypeKey(input: string): string {
+  return input.trim().replace(/-/gu, "_");
+}
+
+function normalizeRelationCategoryLookupKey(input: string): string {
+  return normalizeRelationshipTypeKey(input).toLowerCase();
+}
+
+export function normalizeCompatibilityRelationCategory(
+  input: string | null | undefined,
+): CompatibilityCanonicalRelationshipType {
+  if (input === null || input === undefined) {
+    return "love";
+  }
+
+  return (
+    compatibilityLegacyRelationshipTypeMap[
+      normalizeRelationCategoryLookupKey(input)
+    ] ?? "love"
+  );
+}
+
+export function requireCompatibilityRelationCategory(
+  input: string,
+): CompatibilityCanonicalRelationshipType {
+  const normalized =
+    compatibilityLegacyRelationshipTypeMap[
+      normalizeRelationCategoryLookupKey(input)
+    ];
+
+  if (normalized === undefined) {
+    throw new Error(`Unsupported compatibility relation category: ${input}`);
+  }
+
+  return normalized;
+}
 
 export type CompatibilityPersonInput = {
   readonly role: "personA" | "personB";
@@ -34,7 +130,7 @@ export type CompatibilityPersonInput = {
 export type CompatibilityInput = {
   readonly productType: "saju_mbti_compatibility";
   readonly productVersion: "1.0";
-  readonly relationshipType: CompatibilityRelationshipType;
+  readonly relationshipType: CompatibilityRelationshipCategoryInput;
   readonly personA: CompatibilityPersonInput;
   readonly personB: CompatibilityPersonInput;
 };
@@ -57,32 +153,35 @@ export type CompatibilityScoreDisplayLabels = Record<
 
 const compatibilityRelationshipTypeLabels = {
   love: "연애",
-  marriage: "결혼/장기연애",
-  some: "썸",
-  friendship: "친구",
-  family: "가족",
-  business_work_partner: "동업/업무 파트너",
-} as const satisfies Record<CompatibilityRelationshipType, string>;
+  marriage: "결혼",
+  parentChild: "부모·자식",
+  coworker: "직장 동료",
+  managerReport: "상사·부하",
+  businessPartner: "사업/협업",
+  friendship: "친구/인간관계",
+} as const satisfies Record<CompatibilityCanonicalRelationshipType, string>;
 
 const compatibilityRelationshipTypeFocus = {
   love: "끌림, 감정 온도, 데이트 리듬, 대화 속도, 갈등 회복",
   marriage: "생활 리듬, 돈, 책임, 장기 안정성, 반복 갈등, 가족/현실 운영",
-  some: "호감 신호, 타이밍, 애매함 해소, 먼저 다가가는 속도, 관계 명확화",
-  friendship: "대화 리듬, 거리감, 도움 방식, 의리, 오래 가는 안정성",
-  family: "정서 연결, 오래된 패턴, 말의 통로, 생활 리듬, 경계와 역할",
-  business_work_partner:
+  parentChild: "정서 연결, 오래된 패턴, 말의 통로, 생활 리듬, 경계와 역할",
+  coworker: "업무 리듬, 역할 분담, 의사소통, 피드백 방식, 오해 회복",
+  managerReport: "권한과 책임, 보고 방식, 기대치 조율, 피드백, 신뢰 관리",
+  businessPartner:
     "역할 분담, 의사결정, 업무 속도, 돈/책임, 신뢰, 리스크 관리, 피드백 방식",
-} as const satisfies Record<CompatibilityRelationshipType, string>;
+  friendship: "대화 리듬, 거리감, 도움 방식, 의리, 오래 가는 안정성",
+} as const satisfies Record<CompatibilityCanonicalRelationshipType, string>;
 
 const compatibilityRelationshipTypeTone = {
   love: "감정 온도와 데이트 장면을 중심으로 부드럽게 조율한다.",
   marriage: "현실 운영과 장기 안정성을 중심으로 차분하게 조율한다.",
-  some: "애매한 신호와 타이밍을 중심으로 가볍지만 구체적으로 조율한다.",
-  friendship: "거리감과 의리를 중심으로 편안한 관계 언어로 조율한다.",
-  family: "오래된 패턴과 역할 경계를 중심으로 조심스럽고 따뜻하게 조율한다.",
-  business_work_partner:
+  parentChild: "오래된 패턴과 역할 경계를 중심으로 조심스럽고 따뜻하게 조율한다.",
+  coworker: "업무 리듬과 역할 조율을 중심으로 실무적인 관계 언어로 조율한다.",
+  managerReport: "권한, 책임, 보고와 피드백을 중심으로 차분하게 조율한다.",
+  businessPartner:
     "역할, 책임, 의사결정을 중심으로 실무적인 관계 언어로 조율한다.",
-} as const satisfies Record<CompatibilityRelationshipType, string>;
+  friendship: "거리감과 의리를 중심으로 편안한 관계 언어로 조율한다.",
+} as const satisfies Record<CompatibilityCanonicalRelationshipType, string>;
 
 const compatibilityScoreDisplayLabels = {
   love: {
@@ -101,13 +200,37 @@ const compatibilityScoreDisplayLabels = {
     longTermStability: "장기 안정성",
     growthComplement: "역할 보완",
   },
-  some: {
-    attraction: "호감 신호",
-    communication: "대화 신호",
-    lifestyleRhythm: "타이밍",
-    conflictRecovery: "애매함 해소",
-    longTermStability: "발전 가능성",
-    growthComplement: "서로 자극",
+  parentChild: {
+    attraction: "정서 연결",
+    communication: "말의 통로",
+    lifestyleRhythm: "생활 리듬",
+    conflictRecovery: "감정 회복",
+    longTermStability: "관계 안정성",
+    growthComplement: "역할 보완",
+  },
+  coworker: {
+    attraction: "협업 리듬",
+    communication: "의사소통",
+    lifestyleRhythm: "업무 리듬",
+    conflictRecovery: "오해 조정",
+    longTermStability: "협업 안정성",
+    growthComplement: "역할 보완",
+  },
+  managerReport: {
+    attraction: "업무 신뢰",
+    communication: "보고·피드백",
+    lifestyleRhythm: "업무 리듬",
+    conflictRecovery: "기대치 조정",
+    longTermStability: "신뢰 지속성",
+    growthComplement: "역할 보완",
+  },
+  businessPartner: {
+    attraction: "협업 시너지",
+    communication: "의사소통",
+    lifestyleRhythm: "업무 리듬",
+    conflictRecovery: "갈등 조정",
+    longTermStability: "신뢰 지속성",
+    growthComplement: "역할 보완",
   },
   friendship: {
     attraction: "친밀감",
@@ -117,24 +240,8 @@ const compatibilityScoreDisplayLabels = {
     longTermStability: "오래 가는 안정성",
     growthComplement: "서로 자극",
   },
-  family: {
-    attraction: "정서 연결",
-    communication: "말의 통로",
-    lifestyleRhythm: "생활 리듬",
-    conflictRecovery: "감정 회복",
-    longTermStability: "가족 안정성",
-    growthComplement: "역할 보완",
-  },
-  business_work_partner: {
-    attraction: "협업 시너지",
-    communication: "의사소통",
-    lifestyleRhythm: "업무 리듬",
-    conflictRecovery: "갈등 조정",
-    longTermStability: "신뢰 지속성",
-    growthComplement: "역할 보완",
-  },
 } as const satisfies Record<
-  CompatibilityRelationshipType,
+  CompatibilityCanonicalRelationshipType,
   CompatibilityScoreDisplayLabels
 >;
 
@@ -155,13 +262,37 @@ const compatibilityScoreExplanations = {
     longTermStability: "돈, 일정, 역할을 나누면 오래 버티는 힘이 생깁니다.",
     growthComplement: "각자 잘하는 역할을 인정할수록 현실 운영이 편해집니다.",
   },
-  some: {
-    attraction: "호감 신호는 분명하지만 관계를 명확히 하는 속도는 조율이 필요합니다.",
-    communication: "가벼운 대화 뒤에 의도를 한 번 더 확인해야 합니다.",
-    lifestyleRhythm: "타이밍이 어긋나면 좋은 신호도 애매하게 느껴질 수 있습니다.",
-    conflictRecovery: "불편한 신호를 오래 숨기지 말고 작게 확인해야 합니다.",
-    longTermStability: "관계를 어떻게 발전시킬지 말로 정하면 가능성이 커집니다.",
-    growthComplement: "서로에게 자극은 있지만 부담으로 바뀌지 않게 속도를 봐야 합니다.",
+  parentChild: {
+    attraction: "정서 연결은 있으나 익숙함 때문에 표현이 줄어들 수 있습니다.",
+    communication: "말의 통로를 만들어야 오래된 감정이 덜 쌓입니다.",
+    lifestyleRhythm: "생활 리듬을 존중하면 역할 갈등이 줄어듭니다.",
+    conflictRecovery: "감정이 커지기 전에 상황 단위로 다시 말해야 합니다.",
+    longTermStability: "역할과 경계를 정하면 관계 안정성이 올라갑니다.",
+    growthComplement: "서로의 역할을 고정하지 않을 때 보완성이 살아납니다.",
+  },
+  coworker: {
+    attraction: "같이 일하는 리듬은 있지만 역할과 확인 주기를 맞춰야 합니다.",
+    communication: "의사소통은 감보다 기준과 기록을 함께 두어야 안정됩니다.",
+    lifestyleRhythm: "업무 속도와 확인 주기를 맞추면 실행력이 올라갑니다.",
+    conflictRecovery: "작은 오해는 책임 범위와 작업 기준으로 다시 정리해야 합니다.",
+    longTermStability: "무리하지 않는 협업 규칙이 오래 가는 안정성을 만듭니다.",
+    growthComplement: "서로 다른 업무 방식이 자극이 되지만 선을 넘지 않는 게 중요합니다.",
+  },
+  managerReport: {
+    attraction: "업무 신뢰는 생길 수 있지만 권한과 기대치가 분명해야 합니다.",
+    communication: "보고와 피드백의 주기를 정하면 불필요한 오해가 줄어듭니다.",
+    lifestyleRhythm: "업무 속도와 의사결정 단계를 맞추면 부담이 줄어듭니다.",
+    conflictRecovery: "불편한 피드백은 감정보다 기준과 다음 행동으로 정리해야 합니다.",
+    longTermStability: "권한, 책임, 평가 기준을 맞추면 신뢰가 오래 유지됩니다.",
+    growthComplement: "상대 역할을 고정하지 않고 기대치를 조율할수록 보완성이 살아납니다.",
+  },
+  businessPartner: {
+    attraction: "협업 에너지는 있지만 역할 정의가 있어야 성과로 이어집니다.",
+    communication: "의사소통은 감보다 기준과 기록을 함께 두어야 안정됩니다.",
+    lifestyleRhythm: "업무 속도와 확인 주기를 맞추면 실행력이 올라갑니다.",
+    conflictRecovery: "의견 충돌이 생기면 감정보다 기준과 책임 범위를 먼저 정리해야 합니다.",
+    longTermStability: "신뢰를 유지하려면 돈, 일정, 권한을 문서로 남겨야 합니다.",
+    growthComplement: "역할 보완은 강하지만 결정권이 흐려지면 피로가 커집니다.",
   },
   friendship: {
     attraction: "친밀감은 있지만 서로의 공간을 인정할수록 편합니다.",
@@ -171,66 +302,66 @@ const compatibilityScoreExplanations = {
     longTermStability: "무리하지 않는 도움 방식이 오래 가는 안정성을 만듭니다.",
     growthComplement: "서로 다른 관점이 자극이 되지만 선을 넘지 않는 게 중요합니다.",
   },
-  family: {
-    attraction: "정서 연결은 있으나 익숙함 때문에 표현이 줄어들 수 있습니다.",
-    communication: "말의 통로를 만들어야 오래된 감정이 덜 쌓입니다.",
-    lifestyleRhythm: "생활 리듬을 존중하면 역할 갈등이 줄어듭니다.",
-    conflictRecovery: "감정이 커지기 전에 상황 단위로 다시 말해야 합니다.",
-    longTermStability: "역할과 경계를 정하면 가족 안정성이 올라갑니다.",
-    growthComplement: "서로의 역할을 고정하지 않을 때 보완성이 살아납니다.",
-  },
-  business_work_partner: {
-    attraction: "협업 에너지는 있지만 역할 정의가 있어야 성과로 이어집니다.",
-    communication: "의사소통은 감보다 기준과 기록을 함께 두어야 안정됩니다.",
-    lifestyleRhythm: "업무 속도와 확인 주기를 맞추면 실행력이 올라갑니다.",
-    conflictRecovery: "의견 충돌이 생기면 감정보다 기준과 책임 범위를 먼저 정리해야 합니다.",
-    longTermStability: "신뢰를 유지하려면 돈, 일정, 권한을 문서로 남겨야 합니다.",
-    growthComplement: "역할 보완은 강하지만 결정권이 흐려지면 피로가 커집니다.",
-  },
 } as const satisfies Record<
-  CompatibilityRelationshipType,
+  CompatibilityCanonicalRelationshipType,
   CompatibilityScoreDisplayLabels
 >;
 
 export function getCompatibilityRelationshipTypeLabel(
-  type: CompatibilityRelationshipType,
+  type: CompatibilityRelationshipCategoryInput,
 ): string {
-  return compatibilityRelationshipTypeLabels[type];
+  return compatibilityRelationshipTypeLabels[
+    normalizeCompatibilityRelationCategory(type)
+  ];
 }
 
 export function getCompatibilityRelationshipTypeFocus(
-  type: CompatibilityRelationshipType,
+  type: CompatibilityRelationshipCategoryInput,
 ): string {
-  return compatibilityRelationshipTypeFocus[type];
+  return compatibilityRelationshipTypeFocus[
+    normalizeCompatibilityRelationCategory(type)
+  ];
 }
 
 export function getCompatibilityRelationshipTypeTone(
-  type: CompatibilityRelationshipType,
+  type: CompatibilityRelationshipCategoryInput,
 ): string {
-  return compatibilityRelationshipTypeTone[type];
+  return compatibilityRelationshipTypeTone[
+    normalizeCompatibilityRelationCategory(type)
+  ];
 }
 
 export function getCompatibilityScoreDisplayLabels(
-  relationshipType: CompatibilityRelationshipType,
+  relationshipType: CompatibilityRelationshipCategoryInput,
 ): CompatibilityScoreDisplayLabels {
-  return compatibilityScoreDisplayLabels[relationshipType];
+  return compatibilityScoreDisplayLabels[
+    normalizeCompatibilityRelationCategory(relationshipType)
+  ];
 }
 
 export function getCompatibilityScoreExplanation(input: {
-  readonly relationshipType: CompatibilityRelationshipType;
+  readonly relationshipType: CompatibilityRelationshipCategoryInput;
   readonly category: CompatibilityScoreCategory;
   readonly score: number;
 }): string {
   void input.score;
 
-  return compatibilityScoreExplanations[input.relationshipType][input.category];
+  return compatibilityScoreExplanations[
+    normalizeCompatibilityRelationCategory(input.relationshipType)
+  ][input.category];
 }
 
 export function adaptCompatibilityTextForRelationshipType(
   text: string,
-  relationshipType: CompatibilityRelationshipType,
+  relationshipType: CompatibilityRelationshipCategoryInput,
 ): string {
-  if (relationshipType === "business_work_partner") {
+  const relationCategory = normalizeCompatibilityRelationCategory(relationshipType);
+
+  if (
+    relationCategory === "businessPartner" ||
+    relationCategory === "coworker" ||
+    relationCategory === "managerReport"
+  ) {
     return text
       .split("방향을 잡은 사람은 상대가 반응할 시간을 두고, 반응하는 사람은 고마움과 자기 의견을 함께 표현해야 합니다.")
       .join("기준을 잡은 사람은 실행 담당이 검토할 시간을 두고, 실행 담당은 수정 의견을 명확히 남겨야 합니다.")
@@ -275,7 +406,7 @@ export function adaptCompatibilityTextForRelationshipType(
       .split("현장 실행 피드백").join("현장 피드백");
   }
 
-  if (relationshipType === "family") {
+  if (relationCategory === "parentChild") {
     return text
       .split("방향을 잡은 사람은 상대가 반응할 시간을 두고, 반응하는 사람은 고마움과 자기 의견을 함께 표현해야 합니다.")
       .join("기준을 말한 사람은 상대가 받아들일 시간을 두고, 듣는 사람은 불편한 지점을 짧게 표현해야 합니다.")
@@ -295,7 +426,7 @@ export function adaptCompatibilityTextForRelationshipType(
       .split("끌림").join("정서 연결");
   }
 
-  if (relationshipType === "friendship") {
+  if (relationCategory === "friendship") {
     return text
       .split("연애").join("친구 관계")
       .split("데이트").join("만남")
@@ -308,23 +439,28 @@ export function adaptCompatibilityTextForRelationshipType(
 }
 
 export function getCompatibilityScoreCaution(
-  relationshipType: CompatibilityRelationshipType,
+  relationshipType: CompatibilityRelationshipCategoryInput,
   totalScore: number,
 ): string {
-  if (relationshipType === "love") {
+  const relationCategory = normalizeCompatibilityRelationCategory(relationshipType);
+
+  if (relationCategory === "love") {
     return `${totalScore}점은 안 맞는 점수가 아니라, 끌림과 보완은 있지만 속도·생활·회복 방식에 조율 장치가 필요한 궁합입니다.`;
   }
-  if (relationshipType === "some") {
-    return `${totalScore}점은 호감이 없다는 뜻이 아니라, 신호와 타이밍을 어떻게 맞추느냐에 따라 체감이 달라지는 궁합이라는 뜻입니다.`;
-  }
-  if (relationshipType === "marriage") {
+  if (relationCategory === "marriage") {
     return `${totalScore}점은 장기 관계의 가능성을 단정하지 않으며, 생활·돈·책임의 운영 방식에 따라 안정감이 달라진다는 뜻입니다.`;
   }
-  if (relationshipType === "friendship") {
+  if (relationCategory === "friendship") {
     return `${totalScore}점은 친구 관계의 좋고 나쁨을 단정하지 않으며, 거리감과 도움 방식이 맞을수록 오래 편해지는 관계라는 뜻입니다.`;
   }
-  if (relationshipType === "family") {
-    return `${totalScore}점은 가족 관계를 좋고 나쁘게 판정하는 값이 아니라, 말의 통로와 생활 리듬을 어떻게 조율해야 하는지 보여 주는 참고값입니다.`;
+  if (relationCategory === "parentChild") {
+    return `${totalScore}점은 부모·자식 관계를 좋고 나쁘게 판정하는 값이 아니라, 말의 통로와 생활 리듬을 어떻게 조율해야 하는지 보여 주는 참고값입니다.`;
+  }
+  if (relationCategory === "coworker") {
+    return `${totalScore}점은 직장 동료 관계의 좋고 나쁨을 단정하지 않으며, 역할·소통·업무 리듬을 어떻게 맞춰야 하는지 보여 주는 참고값입니다.`;
+  }
+  if (relationCategory === "managerReport") {
+    return `${totalScore}점은 상사·부하 관계의 성공을 단정하지 않으며, 권한·책임·피드백 기준을 어떻게 맞추느냐에 따라 체감이 달라진다는 뜻입니다.`;
   }
 
   return `${totalScore}점은 파트너십의 성공을 단정하지 않으며, 역할·권한·책임 범위를 어떻게 나누느냐에 따라 협업 체감이 달라진다는 뜻입니다.`;

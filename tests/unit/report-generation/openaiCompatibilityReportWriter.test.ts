@@ -172,7 +172,7 @@ describe("openaiCompatibilityReportWriter", () => {
       },
     });
 
-    expect(result.draft.relationshipType).toBe("business_work_partner");
+    expect(result.draft.relationshipType).toBe("businessPartner");
     expect(result.draft.scoreSummary.scoreCaution).toContain("역할·권한·책임");
     expect(result.draft.scoreSummary.scoreCaution).not.toContain("끌림");
     expect(JSON.stringify(result.draft)).not.toMatch(

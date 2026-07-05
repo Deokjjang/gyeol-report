@@ -1,6 +1,9 @@
 import type { MbtiTraitArea } from "../mbti";
+import {
+  normalizeCompatibilityRelationCategory,
+  type CompatibilityCanonicalRelationshipType,
+} from "../compatibilityTypes";
 import type {
-  BridgeCompatibilityRelationCategory,
   MyeongliMbtiBridgeEvidence,
   MyeongliMbtiBridgePacket,
   ProductBridgeEvidenceItem,
@@ -85,25 +88,6 @@ const TRAIT_AREA_PURPOSES = {
   growth: ["growth"],
 } as const satisfies Record<MbtiTraitArea, readonly ProductBridgeEvidencePurpose[]>;
 
-const COMPATIBILITY_RELATION_CATEGORY_MAP: Readonly<
-  Record<string, BridgeCompatibilityRelationCategory>
-> = {
-  love: "love",
-  loverelationship: "love",
-  romance: "love",
-  dating: "love",
-  marriage: "marriage",
-  parentchild: "parentChild",
-  workplacecolleague: "workplaceColleague",
-  coworker: "workplaceColleague",
-  bosssubordinate: "bossSubordinate",
-  managerreport: "bossSubordinate",
-  businessworkpartner: "businessPartner",
-  businesspartner: "businessPartner",
-  friendsocial: "friendSocial",
-  friendship: "friendSocial",
-};
-
 export function buildProductBridgeEvidence(
   packet: MyeongliMbtiBridgePacket,
   productKey: ProductBridgeProductKey,
@@ -133,12 +117,8 @@ export function buildProductBridgeEvidence(
 
 export function mapCompatibilityRelationCategory(
   input: string | null | undefined,
-): BridgeCompatibilityRelationCategory | null {
-  if (input === null || input === undefined) {
-    return null;
-  }
-
-  return COMPATIBILITY_RELATION_CATEGORY_MAP[normalizeRelationCategory(input)] ?? null;
+): CompatibilityCanonicalRelationshipType {
+  return normalizeCompatibilityRelationCategory(input);
 }
 
 function buildProductBridgeEvidenceItem(
@@ -192,8 +172,4 @@ function hasAnyPurpose(
   purposes: readonly ProductBridgeEvidencePurpose[],
 ): boolean {
   return purposes.some((purpose) => item.purposes.includes(purpose));
-}
-
-function normalizeRelationCategory(input: string): string {
-  return input.trim().toLowerCase().replace(/[^a-z0-9]/gu, "");
 }

@@ -15,8 +15,10 @@ import type {
   CompatibilityPersonChartSummary,
   CompatibilityPersonInput,
   CompatibilityPillars,
+  CompatibilityRelationshipType,
   CompatibilityScoreResult,
 } from "./compatibilityTypes";
+import { normalizeCompatibilityRelationCategory } from "./compatibilityTypes";
 import { isMbtiTypeCode } from "./mbtiTypeKnowledgeBase";
 import {
   getSajuFeatureDisplayPolicy,
@@ -180,13 +182,20 @@ function groupEvidenceBySection(
 export function buildCompatibilityEvidencePacket(
   input: BuildCompatibilityEvidenceInput,
 ): CompatibilityEvidencePacket {
+  const relationCategory = normalizeCompatibilityRelationCategory(
+    input.input.relationshipType,
+  );
+  const normalizedInput: CompatibilityInput = {
+    ...input.input,
+    relationshipType: relationCategory,
+  };
   const personAChartSummary = buildChartSummary({
-    person: input.input.personA,
+    person: normalizedInput.personA,
     facts: input.personASajuFacts,
     expectedPillars: input.expectedPillars?.personA,
   });
   const personBChartSummary = buildChartSummary({
-    person: input.input.personB,
+    person: normalizedInput.personB,
     facts: input.personBSajuFacts,
     expectedPillars: input.expectedPillars?.personB,
   });
@@ -195,15 +204,15 @@ export function buildCompatibilityEvidencePacket(
     personB: personBChartSummary,
   });
   const mbtiBridge = buildCompatibilityMbtiBridge({
-    personA: input.input.personA,
-    personB: input.input.personB,
+    personA: normalizedInput.personA,
+    personB: normalizedInput.personB,
   });
   const deepSajuBridge = sajuBridge.deepSajuBridge;
   const score: CompatibilityScoreResult = scoreCompatibility({
     sajuBridge,
     deepSajuBridge,
     mbtiBridge,
-    relationshipType: input.input.relationshipType,
+    relationshipType: relationCategory as CompatibilityRelationshipType,
     birthTimeConfidence: {
       personA: personAChartSummary.birthTimeConfidence,
       personB: personBChartSummary.birthTimeConfidence,
@@ -212,7 +221,7 @@ export function buildCompatibilityEvidencePacket(
   const evidenceItems = [...sajuBridge.evidenceItems, ...mbtiBridge.evidenceItems];
 
   return {
-    input: input.input,
+    input: normalizedInput,
     personAChartSummary,
     personBChartSummary,
     sajuBridge,
@@ -221,7 +230,7 @@ export function buildCompatibilityEvidencePacket(
     score,
     evidenceBySection: groupEvidenceBySection(evidenceItems),
     warnings: buildWarnings({
-      compatibilityInput: input.input,
+      compatibilityInput: normalizedInput,
       personA: personAChartSummary,
       personB: personBChartSummary,
     }),

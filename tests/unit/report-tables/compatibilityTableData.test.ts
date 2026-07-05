@@ -104,6 +104,27 @@ describe("buildCompatibilityTableData", () => {
     expect(data.relationCategory).toBe("businessPartner");
   });
 
+  it("normalizes legacy relationCategory values", () => {
+    expect(
+      buildCompatibilityTableData({
+        ...sampleInput,
+        relationCategory: "family",
+      }).relationCategory,
+    ).toBe("parentChild");
+    expect(
+      buildCompatibilityTableData({
+        ...sampleInput,
+        relationCategory: "business_work_partner",
+      }).relationCategory,
+    ).toBe("businessPartner");
+    expect(
+      buildCompatibilityTableData({
+        ...sampleInput,
+        relationCategory: "boss_subordinate",
+      }).relationCategory,
+    ).toBe("managerReport");
+  });
+
   it("builds connectionSummary", () => {
     const data = buildCompatibilityTableData(sampleInput);
 
@@ -153,12 +174,12 @@ describe("buildCompatibilityTableData", () => {
     expect(data.connectionSummary.repairStrategy).toBeNull();
   });
 
-  it("throws for unsupported relationCategory", () => {
-    expect(() =>
-      buildCompatibilityTableData({
-        ...sampleInput,
-        relationCategory: "enemy",
-      }),
-    ).toThrow("Unsupported compatibility relation category: enemy");
+  it("falls back unsupported external relationCategory to love", () => {
+    const data = buildCompatibilityTableData({
+      ...sampleInput,
+      relationCategory: "enemy",
+    });
+
+    expect(data.relationCategory).toBe("love");
   });
 });
