@@ -312,8 +312,8 @@ export function LoveMarriageChildReportView({
   const signalGroups = buildMyeongliSignalGroups(resolvedEvidencePacket);
 
   return (
-    <main className="min-h-screen bg-[#f6f0e7] text-[#241c19]">
-      <article className="mx-auto flex w-full max-w-5xl flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
+    <main className="min-h-screen w-full min-w-0 overflow-x-hidden bg-[#f6f0e7] text-[#241c19]">
+      <article className="mx-auto flex w-full min-w-0 max-w-[22.5rem] flex-col gap-8 px-0 py-8 sm:max-w-5xl sm:px-6 lg:px-8">
         <header
           data-love-marriage-child-report-section="report_header"
           className="rounded-[2rem] border border-[#e2d6c4] bg-[#2a211f] p-6 text-[#fff8ed] shadow-[0_24px_80px_rgba(32,22,17,0.24)] sm:p-9"

@@ -188,10 +188,32 @@ function toLoveMarriageChildMbtiProfileSource(
     oneLine: source.oneLine,
     preferenceAxes: pickPreferenceAxes(source.preferenceAxes),
     functionStack: pickFunctionStack(source.functionStack),
-    summary: source.summary,
+    summary: buildLoveMarriageChildSummary(source, evidence),
     traits: buildLoveMarriageChildMbtiTraits(source, evidence),
     closeKeywords: getStringArrayProperty(source, "closeKeywords"),
     farKeywords: getStringArrayProperty(source, "farKeywords"),
+  };
+}
+
+function buildLoveMarriageChildSummary(
+  source: MbtiSourceProfile,
+  evidence: LoveMarriageChildReportEvidencePacket,
+): Readonly<Record<string, string | undefined>> {
+  return {
+    identity:
+      evidence.mbtiBasis.loveTraits[0]?.plain ??
+      source.summary?.identity,
+    strength:
+      evidence.mbtiBasis.marriageTraits[0]?.plain ??
+      evidence.mbtiBasis.relationshipTraits[0]?.plain ??
+      source.summary?.strength,
+    risk:
+      evidence.mbtiBasis.communicationTraits[0]?.risk ??
+      evidence.mbtiBasis.risks[0]?.plain ??
+      source.summary?.risk,
+    growthStrategy:
+      evidence.mbtiBasis.growth[0]?.plain ??
+      source.summary?.growthStrategy,
   };
 }
 

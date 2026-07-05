@@ -6,6 +6,7 @@ import {
   buildLoveMarriageChildReportManseRyeokTableData,
   buildLoveMarriageChildReportMbtiProfileTableData,
 } from "../../lib/report-tables";
+import type { ManseRyeokCommonTableData } from "../../lib/report-tables";
 import ManseRyeokCommonTable from "./ManseRyeokCommonTable";
 import MbtiCommonProfileTable from "./MbtiCommonProfileTable";
 
@@ -15,6 +16,8 @@ type LoveMarriageChildReportTableProps = {
   readonly className?: string;
 };
 
+const LOVE_TABLE_SCOPE_CLASS = "love-marriage-child-table-scope";
+
 export function LoveMarriageChildReportManseRyeokTable({
   evidence,
   defaultOpen = true,
@@ -23,11 +26,11 @@ export function LoveMarriageChildReportManseRyeokTable({
   const data = buildLoveMarriageChildReportManseRyeokTableData(evidence);
 
   return (
-    <ManseRyeokCommonTable
-      data={data}
-      defaultOpen={defaultOpen}
-      className={className}
-    />
+    <div className={joinClassNames(LOVE_TABLE_SCOPE_CLASS, "grid gap-3", className)}>
+      <LoveMarriageChildTableOverflowStyle />
+      <LoveMarriageChildManseRyeokNote data={data} />
+      <ManseRyeokCommonTable data={data} defaultOpen={defaultOpen} />
+    </div>
   );
 }
 
@@ -43,12 +46,14 @@ export function LoveMarriageChildReportMbtiProfileTable({
   }
 
   return (
-    <MbtiCommonProfileTable
-      data={data}
-      defaultOpen={defaultOpen}
-      className={className}
-      variant="compact"
-    />
+    <div className={joinClassNames(LOVE_TABLE_SCOPE_CLASS, className)}>
+      <LoveMarriageChildTableOverflowStyle />
+      <MbtiCommonProfileTable
+        data={data}
+        defaultOpen={defaultOpen}
+        variant="compact"
+      />
+    </div>
   );
 }
 
@@ -60,7 +65,9 @@ export default function LoveMarriageChildReportCommonTables({
   const data = buildLoveMarriageChildReportCommonTablesData(evidence);
 
   return (
-    <div className={joinClassNames("grid gap-4 sm:gap-5", className)}>
+    <div className={joinClassNames(LOVE_TABLE_SCOPE_CLASS, "grid gap-4 sm:gap-5", className)}>
+      <LoveMarriageChildTableOverflowStyle />
+      <LoveMarriageChildManseRyeokNote data={data.manseRyeokTableData} />
       <ManseRyeokCommonTable
         data={data.manseRyeokTableData}
         defaultOpen={defaultOpen}
@@ -74,6 +81,55 @@ export default function LoveMarriageChildReportCommonTables({
       )}
     </div>
   );
+}
+
+function LoveMarriageChildTableOverflowStyle() {
+  return (
+    <style>{`
+      .${LOVE_TABLE_SCOPE_CLASS},
+      .${LOVE_TABLE_SCOPE_CLASS} * {
+        min-width: 0;
+      }
+
+      .${LOVE_TABLE_SCOPE_CLASS} .grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .${LOVE_TABLE_SCOPE_CLASS} .break-keep {
+        overflow-wrap: anywhere;
+      }
+    `}</style>
+  );
+}
+
+function LoveMarriageChildManseRyeokNote({
+  data,
+}: {
+  readonly data: ManseRyeokCommonTableData;
+}) {
+  if (!isDayPillarOnly(data)) {
+    return null;
+  }
+
+  return (
+    <p className="rounded-md border border-[#eadfce] bg-[#fffaf3] px-3 py-2 text-xs font-bold leading-5 text-[#7a6f63]">
+      관계 해석에서는 가까운 관계 반응을 보는 일주·일지 신호를 우선
+      표시합니다.
+    </p>
+  );
+}
+
+function isDayPillarOnly(data: ManseRyeokCommonTableData): boolean {
+  return data.columns.every((column) => {
+    const hasStem = data.stemRow[column.key] !== null;
+    const hasBranch = data.branchRow[column.key] !== null;
+
+    if (column.key === "day") {
+      return hasStem || hasBranch;
+    }
+
+    return !hasStem && !hasBranch;
+  });
 }
 
 function joinClassNames(

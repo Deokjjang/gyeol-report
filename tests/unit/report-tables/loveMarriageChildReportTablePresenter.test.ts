@@ -136,6 +136,7 @@ describe("love marriage child report table presenter", () => {
     ]);
     expect(data?.closeKeywords.length).toBeLessThanOrEqual(6);
     expect(data?.farKeywords.length).toBeLessThanOrEqual(6);
+    expect(data?.coreSummary.some((item) => item.text.includes("관계"))).toBe(true);
     expect(data?.reportUsageNotes.length).toBeGreaterThan(0);
     expect(data?.reportUsageNotes.length).toBeLessThanOrEqual(5);
     expect(data?.reportUsageNotes).toEqual(

@@ -48,6 +48,7 @@ describe("LoveMarriageChildReportCommonTables", () => {
     );
 
     expect(html).toContain("덕민님의 만세력");
+    expect(html).toContain("일주·일지 신호를 우선");
     expect(html).toContain("시주");
     expect(html).toContain("일주");
     expect(html).toContain("甲");
@@ -60,6 +61,7 @@ describe("LoveMarriageChildReportCommonTables", () => {
     expect(html).toContain("합충형파해");
     expect(html).toContain("甲己합");
     expect(html).toContain("ENTJ 대담한 통솔자");
+    expect(html).toContain("관계");
     expect(html).toContain("가까운 키워드");
     expect(html).toContain("먼 키워드");
     expect(html).toContain("선호 지표와 기능 서열 자세히 보기");

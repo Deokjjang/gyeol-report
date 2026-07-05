@@ -299,8 +299,8 @@ function PreviewShell({
 }) {
   return (
     <main className="min-h-screen bg-[#f4efe7] px-4 py-7 text-[#201a18] sm:px-8 sm:py-10">
-      <section className="mx-auto flex max-w-5xl flex-col gap-5">
-        <div className="flex items-center justify-between gap-3 text-xs font-bold uppercase tracking-[0.16em] text-[#8b8174]">
+      <section className="mx-auto flex w-full min-w-0 max-w-[22.5rem] flex-col gap-5 sm:max-w-5xl">
+        <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-bold uppercase tracking-[0.14em] text-[#8b8174]">
           <span>Gyeol Report</span>
           <span>연애·결혼·자녀 리포트</span>
         </div>
