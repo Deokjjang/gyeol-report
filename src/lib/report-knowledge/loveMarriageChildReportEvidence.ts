@@ -135,7 +135,10 @@ export function buildLoveMarriageChildReportEvidence(
   const attractionSignals = buildAttractionSignals(labels);
   const conflictSignals = buildConflictSignals(labels);
   const supportSignals = buildSupportSignals(labels);
-  const relationInteractionSignals = buildRelationInteractionSignals(labels);
+  const relationInteractionSignals = buildRelationInteractionSignals(
+    labels,
+    fullPillars,
+  );
   const myeongliSignals = buildBridgeSignals({
     dayMaster,
     dayPillar: input.saju.dayPillar,
@@ -195,13 +198,67 @@ export function buildLoveMarriageChildReportEvidence(
 function normalizeFullPillars(
   pillars: readonly LoveMarriageChildFullPillarEvidence[],
 ): readonly LoveMarriageChildFullPillarEvidence[] {
+  const validPillarChars = collectValidPillarChars(pillars);
+
   return pillars.map((pillar) => ({
     ...pillar,
     hiddenStems: [...(pillar.hiddenStems ?? [])],
+    twelveLifeStage: [...(pillar.twelveLifeStage ?? [])],
+    twelveSinsal: [...(pillar.twelveSinsal ?? [])],
     sinsal: [...(pillar.sinsal ?? [])],
     gwiin: [...(pillar.gwiin ?? [])],
-    interactions: [...(pillar.interactions ?? [])],
+    interactions: filterInteractionLabelsForPillars(
+      pillar.interactions ?? [],
+      validPillarChars,
+    ),
   }));
+}
+
+function collectValidPillarChars(
+  pillars: readonly LoveMarriageChildFullPillarEvidence[],
+): {
+  readonly stems: ReadonlySet<string>;
+  readonly branches: ReadonlySet<string>;
+} {
+  return {
+    stems: new Set(pillars.map((pillar) => pillar.stem)),
+    branches: new Set(pillars.map((pillar) => pillar.branch)),
+  };
+}
+
+function filterInteractionLabelsForPillars(
+  labels: readonly string[],
+  validPillarChars: {
+    readonly stems: ReadonlySet<string>;
+    readonly branches: ReadonlySet<string>;
+  },
+): readonly string[] {
+  if (
+    validPillarChars.stems.size === 0 &&
+    validPillarChars.branches.size === 0
+  ) {
+    return [...labels];
+  }
+
+  return labels.filter((label) =>
+    isInteractionLabelSupportedByPillars(label, validPillarChars),
+  );
+}
+
+function isInteractionLabelSupportedByPillars(
+  label: string,
+  validPillarChars: {
+    readonly stems: ReadonlySet<string>;
+    readonly branches: ReadonlySet<string>;
+  },
+): boolean {
+  const stemChars = heavenlyStems.filter((stem) => label.includes(stem));
+  const branchChars = earthlyBranches.filter((branch) => label.includes(branch));
+
+  return (
+    stemChars.every((stem) => validPillarChars.stems.has(stem)) &&
+    branchChars.every((branch) => validPillarChars.branches.has(branch))
+  );
 }
 
 function parseDayMaster(dayPillar: string): HeavenlyStem {
@@ -442,11 +499,16 @@ function buildSupportSignals(
 
 function buildRelationInteractionSignals(
   labels: readonly string[],
+  fullPillars: readonly LoveMarriageChildFullPillarEvidence[],
 ): readonly LoveMarriageChildSajuSignal[] {
-  const interactionLabels = labels.filter((label) =>
-    ["합", "충", "형", "파", "해", "원진"].some((keyword) =>
-      label.includes(keyword),
+  const validPillarChars = collectValidPillarChars(fullPillars);
+  const interactionLabels = filterInteractionLabelsForPillars(
+    labels.filter((label) =>
+      ["합", "충", "형", "파", "해", "원진"].some((keyword) =>
+        label.includes(keyword),
+      ),
     ),
+    validPillarChars,
   );
 
   return interactionLabels.map((label) =>

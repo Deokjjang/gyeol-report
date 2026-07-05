@@ -6,7 +6,6 @@ import type {
   LoveMarriageChildFullPillarEvidence,
   LoveMarriageChildMbtiTraitEvidence,
   LoveMarriageChildReportEvidencePacket,
-  LoveMarriageChildSajuSignal,
 } from "../report-knowledge/loveMarriageChildReportTypes";
 import {
   buildManseRyeokCommonTableData,
@@ -90,9 +89,9 @@ function buildLoveMarriageChildFourPillarGrid(
       hiddenStems: [],
       twelveLifeStage: [],
       twelveSinsal: [],
-      sinsal: buildSinsalLabels(evidence),
-      gwiin: buildGwiinLabels(evidence),
-      interactions: pickSignalLabels(evidence.sajuBasis.relationInteractionSignals),
+      sinsal: [],
+      gwiin: [],
+      interactions: [],
     },
   ];
 }
@@ -165,8 +164,8 @@ function toFourPillarGridColumn(
       tenGod === null || tenGod === undefined ? [] : [tenGod],
     ),
     hiddenStems: pillar.hiddenStems ?? [],
-    twelveLifeStage: [],
-    twelveSinsal: [],
+    twelveLifeStage: pillar.twelveLifeStage ?? [],
+    twelveSinsal: pillar.twelveSinsal ?? [],
     sinsal: pillar.sinsal ?? [],
     gwiin: pillar.gwiin ?? [],
     interactions: pillar.interactions ?? [],
@@ -183,27 +182,6 @@ function buildTenGodLabels(
       ...evidence.sajuBasis.parentingTenGodSignals,
     ].map((signal) => signal.tenGod),
   );
-}
-
-function buildSinsalLabels(
-  evidence: LoveMarriageChildReportEvidencePacket,
-): readonly string[] {
-  return uniqueValues([
-    ...pickSignalLabels(evidence.sajuBasis.attractionSignals),
-    ...pickSignalLabels(evidence.sajuBasis.conflictSignals),
-  ]);
-}
-
-function buildGwiinLabels(
-  evidence: LoveMarriageChildReportEvidencePacket,
-): readonly string[] {
-  return pickSignalLabels(evidence.sajuBasis.supportSignals);
-}
-
-function pickSignalLabels(
-  signals: readonly LoveMarriageChildSajuSignal[],
-): readonly string[] {
-  return uniqueValues(signals.map((signal) => signal.label));
 }
 
 function uniqueValues(values: readonly string[]): readonly string[] {

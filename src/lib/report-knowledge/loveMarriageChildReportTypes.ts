@@ -53,6 +53,8 @@ export interface LoveMarriageChildFullPillarEvidence {
   readonly stemTenGod?: TenGod | null;
   readonly branchTenGod?: TenGod | null;
   readonly hiddenStems?: readonly string[];
+  readonly twelveLifeStage?: readonly string[];
+  readonly twelveSinsal?: readonly string[];
   readonly sinsal?: readonly string[];
   readonly gwiin?: readonly string[];
   readonly interactions?: readonly string[];

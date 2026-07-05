@@ -68,12 +68,19 @@ describe("smoke_generate_love_marriage_child_report_draft source", () => {
       "stemTenGod",
       "branchTenGod",
       "hiddenStems",
+      "twelveLifeStage",
+      "twelveSinsal",
       "sinsal",
       "gwiin",
       "interactions",
     ]) {
       expect(scriptSource).toContain(marker);
     }
+
+    expect(scriptSource).toContain("연일 천간합 甲己");
+    expect(scriptSource).not.toContain("申亥해");
+    expect(scriptSource).not.toContain("도화살");
+    expect(scriptSource).not.toContain("홍염살");
   });
 
   it("keeps child and breakup reunion wording inside safe boundaries", () => {

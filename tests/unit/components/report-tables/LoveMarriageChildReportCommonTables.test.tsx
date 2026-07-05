@@ -48,9 +48,11 @@ const fullPillarInput = {
         stemTenGod: "정재",
         branchTenGod: "겁재",
         hiddenStems: ["乙 겁재"],
-        sinsal: ["도화살"],
-        gwiin: ["천을귀인"],
-        interactions: ["甲己합"],
+        twelveLifeStage: ["제왕"],
+        twelveSinsal: ["장성살"],
+        sinsal: ["현침살"],
+        gwiin: [],
+        interactions: ["연일 천간합 甲己"],
       },
       {
         key: "month",
@@ -59,9 +61,11 @@ const fullPillarInput = {
         branch: "未",
         stemTenGod: "정관",
         branchTenGod: "정재",
-        hiddenStems: ["丁 상관", "乙 겁재", "己 정재"],
-        sinsal: ["화개살"],
-        gwiin: ["월덕귀인"],
+        hiddenStems: ["己 정재", "丁 상관", "乙 겁재"],
+        twelveLifeStage: ["묘"],
+        twelveSinsal: ["화개살"],
+        sinsal: ["화개"],
+        gwiin: ["천을귀인"],
         interactions: [],
       },
       {
@@ -71,10 +75,12 @@ const fullPillarInput = {
         branch: "申",
         stemTenGod: "비견",
         branchTenGod: "편관",
-        hiddenStems: ["戊 편재", "壬 편인", "庚 편관"],
-        sinsal: ["현침살", "홍염살"],
-        gwiin: [],
-        interactions: ["申亥해"],
+        hiddenStems: ["庚 편관", "壬 편인", "戊 편재"],
+        twelveLifeStage: ["절"],
+        twelveSinsal: ["겁살"],
+        sinsal: ["망신살"],
+        gwiin: ["월덕귀인", "천덕귀인"],
+        interactions: ["연일 천간합 甲己", "申亥해"],
       },
       {
         key: "hour",
@@ -82,10 +88,12 @@ const fullPillarInput = {
         stem: "戊",
         branch: "辰",
         stemTenGod: "편재",
-        branchTenGod: "편재",
-        hiddenStems: ["乙 겁재", "癸 정인", "戊 편재"],
-        sinsal: [],
-        gwiin: ["천덕귀인"],
+        branchTenGod: null,
+        hiddenStems: ["戊 편재", "乙 겁재", "癸 정인"],
+        twelveLifeStage: ["쇠"],
+        twelveSinsal: ["반안살"],
+        sinsal: ["백호대살"],
+        gwiin: [],
         interactions: [],
       },
     ],
@@ -110,13 +118,11 @@ describe("LoveMarriageChildReportCommonTables", () => {
     expect(html).toContain("일주");
     expect(html).toContain("甲");
     expect(html).toContain("申");
-    expect(html).toContain("신살/귀인");
-    expect(html).toContain("도화");
-    expect(html).toContain("홍염");
-    expect(html).toContain("현침");
-    expect(html).toContain("귀인");
-    expect(html).toContain("합충형파해");
-    expect(html).toContain("甲己합");
+    expect(html).not.toContain("신살/귀인");
+    expect(html).not.toContain("도화");
+    expect(html).not.toContain("홍염");
+    expect(html).not.toContain("합충형파해");
+    expect(html).not.toContain("申亥해");
     expect(html).toContain("ENTJ 대담한 통솔자");
     expect(html).toContain("관계");
     expect(html).toContain("가까운 키워드");
@@ -156,8 +162,12 @@ describe("LoveMarriageChildReportCommonTables", () => {
     expect(html).toContain("己");
     expect(html).toContain("卯");
     expect(html).toContain("丁 상관");
+    expect(html).toContain("겁살");
+    expect(html).toContain("망신살");
     expect(html).toContain("월덕귀인");
     expect(html).toContain("천덕귀인");
+    expect(html).toContain("연일 천간합 甲己");
+    expect(html).not.toContain("申亥해");
     expect(html).not.toContain("일주·일지 신호를 우선");
   });
 

@@ -1,10 +1,17 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  buildCareerReportManseRyeokTableData,
   buildLoveMarriageChildReportCommonTablesData,
   buildLoveMarriageChildReportManseRyeokTableData,
   buildLoveMarriageChildReportMbtiProfileTableData,
 } from "../../../src/lib/report-tables";
+import {
+  buildCareerReportEvidence,
+} from "../../../src/lib/report-knowledge/careerReportEvidence";
+import {
+  requireCareerReportFixture,
+} from "../../../src/lib/report-knowledge/careerReportFixtures";
 import {
   buildLoveMarriageChildReportEvidence,
   type BuildLoveMarriageChildReportEvidenceInput,
@@ -48,9 +55,11 @@ const fullPillarInput = {
         stemTenGod: "정재",
         branchTenGod: "겁재",
         hiddenStems: ["乙 겁재"],
-        sinsal: ["도화살"],
-        gwiin: ["천을귀인"],
-        interactions: ["甲己합"],
+        twelveLifeStage: ["제왕"],
+        twelveSinsal: ["장성살"],
+        sinsal: ["현침살"],
+        gwiin: [],
+        interactions: ["연일 천간합 甲己"],
       },
       {
         key: "month",
@@ -59,9 +68,11 @@ const fullPillarInput = {
         branch: "未",
         stemTenGod: "정관",
         branchTenGod: "정재",
-        hiddenStems: ["丁 상관", "乙 겁재", "己 정재"],
-        sinsal: ["화개살"],
-        gwiin: ["월덕귀인"],
+        hiddenStems: ["己 정재", "丁 상관", "乙 겁재"],
+        twelveLifeStage: ["묘"],
+        twelveSinsal: ["화개살"],
+        sinsal: ["화개"],
+        gwiin: ["천을귀인"],
         interactions: [],
       },
       {
@@ -71,10 +82,12 @@ const fullPillarInput = {
         branch: "申",
         stemTenGod: "비견",
         branchTenGod: "편관",
-        hiddenStems: ["戊 편재", "壬 편인", "庚 편관"],
-        sinsal: ["현침살", "홍염살"],
-        gwiin: [],
-        interactions: ["申亥해"],
+        hiddenStems: ["庚 편관", "壬 편인", "戊 편재"],
+        twelveLifeStage: ["절"],
+        twelveSinsal: ["겁살"],
+        sinsal: ["망신살"],
+        gwiin: ["월덕귀인", "천덕귀인"],
+        interactions: ["연일 천간합 甲己", "申亥해"],
       },
       {
         key: "hour",
@@ -82,10 +95,12 @@ const fullPillarInput = {
         stem: "戊",
         branch: "辰",
         stemTenGod: "편재",
-        branchTenGod: "편재",
-        hiddenStems: ["乙 겁재", "癸 정인", "戊 편재"],
-        sinsal: [],
-        gwiin: ["천덕귀인"],
+        branchTenGod: null,
+        hiddenStems: ["戊 편재", "乙 겁재", "癸 정인"],
+        twelveLifeStage: ["쇠"],
+        twelveSinsal: ["반안살"],
+        sinsal: ["백호대살"],
+        gwiin: [],
         interactions: [],
       },
     ],
@@ -96,6 +111,17 @@ function buildFixtureEvidence(
   input: BuildLoveMarriageChildReportEvidenceInput = baseInput,
 ) {
   return buildLoveMarriageChildReportEvidence(input);
+}
+
+function buildCareerDeokminManseRyeokTableData() {
+  const fixture = requireCareerReportFixture("deokmin-career");
+
+  return buildCareerReportManseRyeokTableData(
+    buildCareerReportEvidence({
+      fixtureId: fixture.id,
+      person: fixture.person,
+    }),
+  );
 }
 
 describe("love marriage child report table presenter", () => {
@@ -125,10 +151,10 @@ describe("love marriage child report table presenter", () => {
     expect(data.branchRow.day?.tenGod).not.toBeNull();
     expect(
       data.detailRows.find((row) => row.key === "sinsalAndGwiin")?.cells.day,
-    ).toEqual(expect.arrayContaining(["도화", "홍염", "현침", "화개", "귀인"]));
+    ).toEqual([]);
     expect(
       data.detailRows.find((row) => row.key === "interactions")?.cells.day,
-    ).toEqual(expect.arrayContaining(["甲己합", "申亥해"]));
+    ).toEqual([]);
     expect(
       data.detailRows.find((row) => row.key === "hiddenStems")?.cells.day,
     ).toEqual([]);
@@ -147,7 +173,7 @@ describe("love marriage child report table presenter", () => {
           twelveSinsal: ["장성"],
           sinsal: ["도화"],
           gwiin: ["천을귀인"],
-          interactions: ["甲己합"],
+          interactions: ["연일 천간합 甲己"],
         },
         {
           columnId: "day",
@@ -158,7 +184,7 @@ describe("love marriage child report table presenter", () => {
           twelveSinsal: ["겁살"],
           sinsal: ["현침"],
           gwiin: [],
-          interactions: ["申亥해"],
+          interactions: ["연일 천간합 甲己"],
         },
       ],
     } as const;
@@ -173,7 +199,7 @@ describe("love marriage child report table presenter", () => {
     ).toEqual(["乙 겁재"]);
     expect(
       data.detailRows.find((row) => row.key === "interactions")?.cells.day,
-    ).toEqual(["申亥해"]);
+    ).toEqual(["연일 천간합 甲己"]);
   });
 
   it("uses formal full pillars before the day-pillar fallback", () => {
@@ -187,13 +213,47 @@ describe("love marriage child report table presenter", () => {
     expect(data.branchRow.year?.tenGod).toBe("겁재");
     expect(
       data.detailRows.find((row) => row.key === "hiddenStems")?.cells.hour,
-    ).toEqual(["乙 겁재", "癸 정인", "戊 편재"]);
+    ).toEqual(["戊 편재", "乙 겁재", "癸 정인"]);
+    expect(
+      data.detailRows.find((row) => row.key === "twelveLifeStage")?.cells.day,
+    ).toEqual(["절"]);
+    expect(
+      data.detailRows.find((row) => row.key === "twelveSinsal")?.cells.year,
+    ).toEqual(["장성살"]);
     expect(
       data.detailRows.find((row) => row.key === "sinsalAndGwiin")?.cells.month,
-    ).toEqual(["화개살", "월덕귀인"]);
+    ).toEqual(["화개", "천을귀인"]);
     expect(
       data.detailRows.find((row) => row.key === "interactions")?.cells.year,
-    ).toEqual(["甲己합"]);
+    ).toEqual(["연일 천간합 甲己"]);
+    expect(
+      data.detailRows.find((row) => row.key === "interactions")?.cells.day,
+    ).toEqual(["연일 천간합 甲己"]);
+    expect(
+      data.detailRows.find((row) => row.key === "interactions")?.cells.day,
+    ).not.toContain("申亥해");
+  });
+
+  it("matches the career product original table for the same deokmin input", () => {
+    const loveData = buildLoveMarriageChildReportManseRyeokTableData(
+      buildFixtureEvidence(fullPillarInput),
+    );
+    const careerData = buildCareerDeokminManseRyeokTableData();
+
+    expect(loveData.stemRow).toEqual(careerData.stemRow);
+    expect(loveData.branchRow).toEqual(careerData.branchRow);
+
+    for (const key of [
+      "hiddenStems",
+      "twelveLifeStage",
+      "twelveSinsal",
+      "sinsalAndGwiin",
+      "interactions",
+    ] as const) {
+      expect(loveData.detailRows.find((row) => row.key === key)?.cells).toEqual(
+        careerData.detailRows.find((row) => row.key === key)?.cells,
+      );
+    }
   });
 
   it("builds compact MBTI profile data with relationship-safe usage notes", () => {
