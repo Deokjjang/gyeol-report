@@ -46,6 +46,7 @@ describe("loveMarriageChildReportTypes source contract", () => {
   it("keeps the required MBTI and bridge evidence fields explicit", () => {
     for (const marker of [
       "interface LoveMarriageChildMbtiBasis",
+      "readonly reportUseCases: readonly string[]",
       "readonly loveTraits: readonly LoveMarriageChildMbtiTraitEvidence[]",
       "readonly marriageTraits: readonly LoveMarriageChildMbtiTraitEvidence[]",
       "readonly parentingTraits: readonly LoveMarriageChildMbtiTraitEvidence[]",

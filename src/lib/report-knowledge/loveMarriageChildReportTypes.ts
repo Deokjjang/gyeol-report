@@ -74,6 +74,7 @@ export interface LoveMarriageChildSajuBasis {
 }
 
 export interface LoveMarriageChildMbtiBasis {
+  readonly reportUseCases: readonly string[];
   readonly loveTraits: readonly LoveMarriageChildMbtiTraitEvidence[];
   readonly marriageTraits: readonly LoveMarriageChildMbtiTraitEvidence[];
   readonly parentingTraits: readonly LoveMarriageChildMbtiTraitEvidence[];
