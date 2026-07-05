@@ -47,14 +47,19 @@ const launchProductGrid = [
   },
   {
     id: "compatibility_report",
+    productKey: "saju_mbti_compatibility",
+    slug: "compatibility",
     nameKo: "궁합 리포트",
     versionBadgeKo: "v1.0 준비",
     shortDescriptionKo:
       "연애, 결혼, 가족, 동료, 협업 관계까지 두 사람의 연결 구조와 조율 포인트를 봅니다.",
-    status: "coming_soon",
+    status: "preview_available",
     isPurchasable: false,
     href: null,
-    badgeKo: "출시 준비 중",
+    previewHref: "/report/new?product=compatibility",
+    previewCtaLabelKo: "입력 흐름 미리보기",
+    previewStatusKo: "준비 중 · 미리보기 가능",
+    badgeKo: "개발 preview",
     visualKey: "compatibility",
   },
   {

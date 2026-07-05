@@ -14,6 +14,8 @@ const CAREER_MONEY_STUDY_PRODUCT_KEY = "career_money_study";
 const CAREER_MONEY_STUDY_PRODUCT_SLUG = "career-money-study";
 const LOVE_MARRIAGE_CHILD_PRODUCT_KEY = "love_marriage_child";
 const LOVE_MARRIAGE_CHILD_PRODUCT_SLUG = "love-marriage-child";
+const COMPATIBILITY_PRODUCT_KEY = "saju_mbti_compatibility";
+const COMPATIBILITY_PRODUCT_SLUG = "compatibility";
 const ACTIVE_REPORT_LIST_PRICE_LABEL_KO = "정가 1,290원";
 const ACTIVE_REPORT_SALE_PRICE_LABEL_KO = "런칭가 990원";
 const ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO = "결제금액 990원";
@@ -91,6 +93,22 @@ const LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT = {
   inputTitleKo: "연애·결혼·자녀 리포트 입력",
   introKo:
     "출시 전 미리보기 입력 흐름입니다. 결제는 연결하지 않고, 입력값과 관계·결혼·부모 역할 상품 context만 확인합니다.",
+  formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
+  deliveryTypeKo: "미리보기 입력 흐름",
+  statusLabelKo: "준비 중 · 미리보기 가능",
+  isPurchasable: false,
+  listPriceKo: null,
+  priceKo: null,
+} as const satisfies SelectedReportProduct;
+
+const COMPATIBILITY_SELECTED_REPORT_PRODUCT = {
+  productKey: COMPATIBILITY_PRODUCT_KEY,
+  slug: COMPATIBILITY_PRODUCT_SLUG,
+  nameKo: "궁합 리포트",
+  fullNameKo: "궁합 리포트",
+  inputTitleKo: "궁합 리포트 입력",
+  introKo:
+    "궁합 리포트 입력 흐름 준비 중입니다. 두 사람의 생년월일, 출생시간, MBTI, 관계 카테고리를 입력하는 전용 흐름으로 연결될 예정입니다.",
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
   deliveryTypeKo: "미리보기 입력 흐름",
   statusLabelKo: "준비 중 · 미리보기 가능",
@@ -202,6 +220,10 @@ function resolveSelectedReportProduct(
 
   if (productSlug === LOVE_MARRIAGE_CHILD_PRODUCT_SLUG) {
     return LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT;
+  }
+
+  if (productSlug === COMPATIBILITY_PRODUCT_SLUG) {
+    return COMPATIBILITY_SELECTED_REPORT_PRODUCT;
   }
 
   return DEFAULT_SELECTED_REPORT_PRODUCT;
@@ -433,6 +455,11 @@ export default function NewReportPage({
               type="hidden"
               name="productSlug"
               value={selectedProduct.slug}
+            />
+            <input
+              type="hidden"
+              name="productName"
+              value={selectedProduct.nameKo}
             />
             <input
               type="hidden"

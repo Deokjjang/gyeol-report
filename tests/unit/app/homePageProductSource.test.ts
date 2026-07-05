@@ -33,7 +33,9 @@ describe("home page product source", () => {
       "/report/new",
       "/report/new?product=career-money-study",
       "/report/new?product=love-marriage-child",
+      "/report/new?product=compatibility",
       "love-marriage-child",
+      "compatibility",
     ];
 
     for (const marker of requiredMarkers) {

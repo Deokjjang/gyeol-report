@@ -22,6 +22,7 @@ describe("new report page source", () => {
       'name="displayName"',
       'name="productKey"',
       'name="productSlug"',
+      'name="productName"',
     ];
 
     for (const fieldName of fieldNames) {
@@ -96,6 +97,29 @@ describe("new report page source", () => {
       "productSlug === LOVE_MARRIAGE_CHILD_PRODUCT_SLUG",
       "return LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT",
       "return DEFAULT_SELECTED_REPORT_PRODUCT",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+  });
+
+  it("keeps compatibility product selection as a non-payment skeleton", () => {
+    const requiredMarkers = [
+      "COMPATIBILITY_PRODUCT_KEY",
+      "saju_mbti_compatibility",
+      "COMPATIBILITY_PRODUCT_SLUG",
+      "compatibility",
+      "COMPATIBILITY_SELECTED_REPORT_PRODUCT",
+      "궁합 리포트 입력",
+      "궁합 리포트 입력 흐름 준비 중입니다.",
+      "두 사람의 생년월일, 출생시간, MBTI, 관계 카테고리",
+      "전용 흐름으로 연결될 예정입니다.",
+      "productSlug === COMPATIBILITY_PRODUCT_SLUG",
+      "return COMPATIBILITY_SELECTED_REPORT_PRODUCT",
+      "return DEFAULT_SELECTED_REPORT_PRODUCT",
+      "isSelectedProductPurchasable",
+      "isPurchasable: false",
     ];
 
     for (const marker of requiredMarkers) {
