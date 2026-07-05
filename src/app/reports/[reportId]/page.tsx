@@ -28,8 +28,12 @@ import type {
 import {
   isCompatibilityReportDraft,
 } from "../../../lib/report-generation/compatibilityReportDraftTypes";
+import type {
+  LoveMarriageChildReportDraft,
+} from "../../../lib/report-generation/loveMarriageChildReportDraftTypes";
 import { getSajuBranchSymbolEntry } from "../../../lib/report-knowledge/sajuBranchSymbolKnowledge";
 import { CompatibilityReportView } from "./CompatibilityReportView";
+import { LoveMarriageChildReportView } from "./LoveMarriageChildReportView";
 
 export const dynamic = "force-dynamic";
 
@@ -304,11 +308,42 @@ function renderGeneratedState(result: PaidReportResult) {
     return renderGeneratedCompatibilityState(result, unknownDraft);
   }
 
+  if (isLoveMarriageChildReportDraft(unknownDraft)) {
+    return renderGeneratedLoveMarriageChildState(unknownDraft);
+  }
+
   if (isComprehensiveReportV2Draft(draft)) {
     return renderGeneratedV2State(result, draft);
   }
 
   return renderGeneratedV1State(result, draft);
+}
+
+function isLoveMarriageChildReportDraft(
+  value: unknown,
+): value is LoveMarriageChildReportDraft {
+  if (typeof value !== "object" || value === null) {
+    return false;
+  }
+
+  const draft = value as Partial<LoveMarriageChildReportDraft>;
+
+  return (
+    draft.version === "v1" &&
+    draft.productType === "love_marriage_child" &&
+    draft.productVersion === "v1" &&
+    typeof draft.personLabel === "string" &&
+    typeof draft.headline === "string" &&
+    typeof draft.openingSummary === "string" &&
+    typeof draft.loveStyle === "object" &&
+    draft.loveStyle !== null &&
+    typeof draft.marriageRhythm === "object" &&
+    draft.marriageRhythm !== null &&
+    typeof draft.parentMode === "object" &&
+    draft.parentMode !== null &&
+    typeof draft.breakupReunionPattern === "object" &&
+    draft.breakupReunionPattern !== null
+  );
 }
 
 function renderReportMetadata(result: PaidReportResult) {
@@ -341,6 +376,17 @@ function renderGeneratedCompatibilityState(
         reportId={result.reportId}
       />
     </ResultShell>
+  );
+}
+
+function renderGeneratedLoveMarriageChildState(
+  draft: LoveMarriageChildReportDraft,
+) {
+  return (
+    <LoveMarriageChildReportView
+      draft={draft}
+      evidencePacket={draft.evidencePacket}
+    />
   );
 }
 

@@ -13,6 +13,9 @@ import {
   COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
   type ComprehensiveReportSectionDefinition,
 } from "../../../../src/lib/report-knowledge/reportSectionSchema";
+import type {
+  LoveMarriageChildReportDraft,
+} from "../../../../src/lib/report-generation/loveMarriageChildReportDraftTypes";
 
 vi.mock("../../../../src/lib/reports/supabasePaidReportResultAdapter", () => ({
   getPaidReportResult: vi.fn(),
@@ -310,6 +313,75 @@ function createResult(
   };
 }
 
+function createLoveMarriageChildDraft(): LoveMarriageChildReportDraft {
+  const section = {
+    headline: "기준이 맞을 때 안정되는 관계입니다",
+    body:
+      "당신은 감정만으로 관계를 끌고 가기보다 약속, 역할, 생활 기준을 함께 확인할 때 편해집니다.",
+    keyPoints: ["명확한 약속", "생활 기준", "대화 순서"],
+    caution: "기준을 너무 빠르게 제시하면 상대가 평가받는 느낌을 받을 수 있습니다.",
+  };
+  const patternSection = {
+    ...section,
+    repeatedPattern: ["상대의 책임감을 빠르게 봅니다."],
+    betterUse: ["초반에는 기준을 묻되 결론은 늦춥니다."],
+  };
+
+  return {
+    version: "v1",
+    productType: "love_marriage_child",
+    productVersion: "v1",
+    personLabel: "덕민",
+    headline: "기준과 책임이 선명할수록 안정되는 관계 구조",
+    openingSummary:
+      "관계가 깊어질수록 감정만큼 생활 기준과 책임의 균형이 중요해집니다.",
+    loveStyle: section,
+    attractionPattern: patternSection,
+    loveStrengths: section,
+    loveFriction: patternSection,
+    marriageRhythm: section,
+    householdMoneyAndRoleSplit: section,
+    conflictRecovery: section,
+    parentMode: {
+      ...section,
+      parentingRolePattern: ["생활 루틴을 잡아줍니다."],
+      avoidProjection: ["내 속도를 아이의 속도로 착각하지 않습니다."],
+    },
+    breakupReunionPattern: {
+      ...section,
+      myLoop: ["빠른 판단으로 결론을 앞당기려 합니다."],
+      emotionalProcessing: ["감정을 사실과 분리해 적습니다."],
+      repairBoundary: ["내가 바꿀 수 있는 행동과 상대 몫을 나눕니다."],
+    },
+    relationshipTimingHints: [
+      {
+        label: "관계 점검",
+        headline: "감정이 커지기 전 기준을 맞춥니다",
+        body:
+          "갈등 신호는 결론이 아니라 말투, 속도, 생활 기준을 조율하라는 기준입니다.",
+        push: ["생활 기준 정리"],
+        avoid: ["상대 단정"],
+      },
+    ],
+    actionPlan: [
+      {
+        label: "연애",
+        headline: "관계 속도를 말로 확인하기",
+        body: "호감만 확인하지 말고 서로의 관계 속도와 기준을 확인합니다.",
+        firstAction: "원하는 관계 속도를 한 문장으로 적습니다.",
+      },
+    ],
+    riskManagement: [
+      {
+        title: "기준이 압박으로 들리는 위험",
+        body: "빠른 판단이 상대에게는 평가처럼 들릴 수 있습니다.",
+        prevention: "요청과 판단을 분리해 말합니다.",
+      },
+    ],
+    safetyNotes: ["관계 성향과 반복 패턴을 해석한 참고용입니다."],
+  };
+}
+
 async function renderPage(reportId: string | undefined): Promise<string> {
   const element = await ReportResultPage({
     params: Promise.resolve({ reportId }),
@@ -507,6 +579,34 @@ describe("report result page", () => {
     expect(html).not.toContain("근거 요약");
     expect(html).not.toContain("핵심 용어");
     expect(html).not.toContain("반영 포인트");
+  });
+
+  it("renders a love marriage child draft through the dedicated result branch", async () => {
+    const loveResult = {
+      ...createResult({
+        snapshotVersion: null,
+        draft: null,
+      }),
+      productType: "saju_mbti_full",
+      draft: createLoveMarriageChildDraft(),
+    } as unknown as PaidReportResult;
+    mockGetPaidReportResult.mockResolvedValue({
+      ok: true,
+      result: loveResult,
+    });
+
+    const html = await renderPage("love_marriage_child_result_test");
+
+    expect(html).toContain("연애·결혼·자녀 리포트");
+    expect(html).toContain("덕민님의 관계 리포트");
+    expect(html).toContain("명리 핵심 근거");
+    expect(html).toContain("사랑 방식");
+    expect(html).toContain("내가 부모가 되었을 때");
+    expect(html).toContain("이별/재회 고민이 있을 때");
+    expect(html).toContain("관계 성향과 반복 패턴을 해석한 참고용");
+    expect(html).not.toContain("사주×MBTI 종합 리포트");
+    expect(html).not.toContain("재회 확률");
+    expect(html).not.toContain("자식복");
   });
 
   it("keeps V2 page rendering when MBTI source is unknown", async () => {
