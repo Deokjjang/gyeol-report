@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 
 import {
+  LoveMarriageChildReportManseRyeokTable,
+  LoveMarriageChildReportMbtiProfileTable,
   ManseRyeokCommonTable,
   MbtiCommonProfileTable,
 } from "../../../components/report-tables";
@@ -382,10 +384,22 @@ function renderGeneratedCompatibilityState(
 function renderGeneratedLoveMarriageChildState(
   draft: LoveMarriageChildReportDraft,
 ) {
+  const evidencePacket = draft.evidencePacket;
+
   return (
     <LoveMarriageChildReportView
       draft={draft}
-      evidencePacket={draft.evidencePacket}
+      evidencePacket={evidencePacket}
+      manseRyeokTable={
+        evidencePacket === undefined ? undefined : (
+          <LoveMarriageChildReportManseRyeokTable evidence={evidencePacket} />
+        )
+      }
+      mbtiProfileTable={
+        evidencePacket === undefined ? undefined : (
+          <LoveMarriageChildReportMbtiProfileTable evidence={evidencePacket} />
+        )
+      }
     />
   );
 }

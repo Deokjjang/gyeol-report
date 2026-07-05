@@ -68,6 +68,9 @@ describe("LoveMarriageChildReportView source", () => {
     ]) {
       expect(source).toContain(marker);
     }
+
+    expect(source).toContain("이번 화면에서는 본문을 중심으로 관계 기준을 읽습니다.");
+    expect(source).not.toContain("draft 본문");
   });
 
   it("keeps parent-mode and breakup/reunion copy inside safe boundaries", () => {

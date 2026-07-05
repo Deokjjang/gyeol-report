@@ -16,6 +16,9 @@ import {
 import type {
   LoveMarriageChildReportDraft,
 } from "../../../../src/lib/report-generation/loveMarriageChildReportDraftTypes";
+import {
+  buildLoveMarriageChildReportEvidence,
+} from "../../../../src/lib/report-knowledge/loveMarriageChildReportEvidence";
 
 vi.mock("../../../../src/lib/reports/supabasePaidReportResultAdapter", () => ({
   getPaidReportResult: vi.fn(),
@@ -313,7 +316,36 @@ function createResult(
   };
 }
 
-function createLoveMarriageChildDraft(): LoveMarriageChildReportDraft {
+function createLoveMarriageChildEvidencePacket() {
+  return buildLoveMarriageChildReportEvidence({
+    name: "덕민",
+    gender: "male",
+    mbtiType: "ENTJ",
+    relationshipStatus: "single",
+    saju: {
+      dayPillar: "甲申",
+      labels: [
+        "편재",
+        "정재",
+        "정관",
+        "편관",
+        "식신",
+        "현침살",
+        "홍염살",
+        "도화살",
+        "화개살",
+        "천을귀인",
+        "월덕귀인",
+        "甲己합",
+        "申亥해",
+      ],
+    },
+  });
+}
+
+function createLoveMarriageChildDraft(
+  input: { readonly withEvidencePacket?: boolean } = {},
+): LoveMarriageChildReportDraft {
   const section = {
     headline: "기준이 맞을 때 안정되는 관계입니다",
     body:
@@ -327,6 +359,8 @@ function createLoveMarriageChildDraft(): LoveMarriageChildReportDraft {
     betterUse: ["초반에는 기준을 묻되 결론은 늦춥니다."],
   };
 
+  const withEvidencePacket = input.withEvidencePacket ?? true;
+
   return {
     version: "v1",
     productType: "love_marriage_child",
@@ -335,6 +369,9 @@ function createLoveMarriageChildDraft(): LoveMarriageChildReportDraft {
     headline: "기준과 책임이 선명할수록 안정되는 관계 구조",
     openingSummary:
       "관계가 깊어질수록 감정만큼 생활 기준과 책임의 균형이 중요해집니다.",
+    ...(withEvidencePacket
+      ? { evidencePacket: createLoveMarriageChildEvidencePacket() }
+      : {}),
     loveStyle: section,
     attractionPattern: patternSection,
     loveStrengths: section,
@@ -599,7 +636,12 @@ describe("report result page", () => {
 
     expect(html).toContain("연애·결혼·자녀 리포트");
     expect(html).toContain("덕민님의 관계 리포트");
+    expect(html).toContain("공통 만세력표");
+    expect(html).toContain("덕민님의 만세력");
+    expect(html).toContain("공통 MBTI표");
+    expect(html).toContain("ENTJ 대담한 통솔자");
     expect(html).toContain("명리 핵심 근거");
+    expect(html).toContain("재성");
     expect(html).toContain("사랑 방식");
     expect(html).toContain("내가 부모가 되었을 때");
     expect(html).toContain("이별/재회 고민이 있을 때");
@@ -607,6 +649,29 @@ describe("report result page", () => {
     expect(html).not.toContain("사주×MBTI 종합 리포트");
     expect(html).not.toContain("재회 확률");
     expect(html).not.toContain("자식복");
+  });
+
+  it("renders the love marriage child branch safely without evidence packet", async () => {
+    const loveResult = {
+      ...createResult({
+        snapshotVersion: null,
+        draft: null,
+      }),
+      productType: "saju_mbti_full",
+      draft: createLoveMarriageChildDraft({ withEvidencePacket: false }),
+    } as unknown as PaidReportResult;
+    mockGetPaidReportResult.mockResolvedValue({
+      ok: true,
+      result: loveResult,
+    });
+
+    const html = await renderPage("love_marriage_child_no_evidence_test");
+
+    expect(html).toContain("연애·결혼·자녀 리포트");
+    expect(html).toContain("이번 화면에서는 본문을 중심으로 관계 기준을 읽습니다.");
+    expect(html).not.toContain("draft 본문");
+    expect(html).not.toContain("공통 만세력표");
+    expect(html).not.toContain("공통 MBTI표");
   });
 
   it("keeps V2 page rendering when MBTI source is unknown", async () => {

@@ -353,7 +353,7 @@ export function LoveMarriageChildReportView({
           </h2>
           {signalGroups.length === 0 ? (
             <p className="mt-4 text-base leading-8 text-[#4f453f]">
-              이번 화면에서는 draft 본문을 중심으로 관계 기준을 읽습니다. 명리
+              이번 화면에서는 본문을 중심으로 관계 기준을 읽습니다. 명리
               상세 근거가 전달되면 십성, 매력 신호, 갈등 신호, 귀인, 조율
               지점을 함께 보여줍니다.
             </p>
