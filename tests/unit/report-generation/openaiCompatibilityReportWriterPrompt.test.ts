@@ -182,6 +182,9 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     );
     expect(promptText).toContain("businessPartner는 수익/손실 확정 금지");
     expect(promptText).toContain("friendship은 관계 단절 확정 금지");
+    expect(promptText).toContain("love/marriage는 이별·결혼·이혼 단정 금지");
+    expect(promptText).toContain("parentChild는 자식복/부모복 낙인 금지");
+    expect(promptText).toContain("managerReport/coworker는 해고/승진 확정 금지");
     expect(promptText).toContain("Never output 빈 오행.");
     expect(promptText).toContain("finalAdvice labels must be unique where possible.");
     expect(promptText).toContain(

@@ -27,6 +27,7 @@ import {
 } from "../src/lib/report-generation/compatibilityPreviewSnapshot";
 import type { CompatibilityReportDraft } from "../src/lib/report-generation";
 import type { CompatibilityReportChapterId } from "../src/lib/report-generation/compatibilityReportDraftTypes";
+import type { CompatibilityRelationshipCategoryInput } from "../src/lib/report-knowledge/compatibilityTypes";
 
 const compatibilitySmokeFixtureIds = [
   "deokmin-sodam-love",
@@ -54,6 +55,20 @@ function getFixtureId(argv: readonly string[]): string {
 
   return inline?.split("=")[1] ?? (flagIndex >= 0 ? argv[flagIndex + 1] : undefined) ??
     compatibilitySmokeFixtureIds[0];
+}
+
+function getRelationshipTypeOverride(
+  argv: readonly string[],
+): CompatibilityRelationshipCategoryInput | undefined {
+  const flagIndex = argv.findIndex((arg) => arg === "--relationshipType");
+  const inline = argv.find((arg) => arg.startsWith("--relationshipType="));
+  const value =
+    inline?.split("=")[1] ??
+    (flagIndex >= 0 ? argv[flagIndex + 1] : undefined);
+
+  return value === undefined || value.trim().length === 0
+    ? undefined
+    : (value as CompatibilityRelationshipCategoryInput);
 }
 
 function shouldPrintBody(argv: readonly string[]): boolean {
@@ -621,15 +636,29 @@ async function main(): Promise<void> {
   const printBody = shouldPrintBody(argv);
   const writePreview = shouldWritePreview(argv);
   const fixture = requireCompatibilityFixture(getFixtureId(argv));
-  const packet = buildCompatibilityEvidencePacketFromFixture(fixture);
+  const relationshipTypeOverride = getRelationshipTypeOverride(argv);
+  const effectiveFixture =
+    relationshipTypeOverride === undefined
+      ? fixture
+      : {
+          ...fixture,
+          input: {
+            ...fixture.input,
+            relationshipType: relationshipTypeOverride,
+          },
+        };
+  const packet = buildCompatibilityEvidencePacketFromFixture(effectiveFixture);
   const scoreLabels = getCompatibilityScoreDisplayLabels(
-    fixture.input.relationshipType,
+    packet.input.relationshipType,
   );
 
   writeLine(`compatibility fixture: ${fixture.id}`);
-  writeLine(`relationship type: ${fixture.input.relationshipType}`);
+  if (relationshipTypeOverride !== undefined) {
+    writeLine(`relationship type override: ${relationshipTypeOverride}`);
+  }
+  writeLine(`relationship type: ${packet.input.relationshipType}`);
   writeLine(
-    `relationship label: ${getCompatibilityRelationshipTypeLabel(fixture.input.relationshipType)}`,
+    `relationship label: ${getCompatibilityRelationshipTypeLabel(packet.input.relationshipType)}`,
   );
   writeScoreLabels(scoreLabels);
   writeExpectedDeepLayerHints(fixture.id);

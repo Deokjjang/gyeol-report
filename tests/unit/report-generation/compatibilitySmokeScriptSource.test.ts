@@ -11,6 +11,10 @@ describe("compatibility smoke report draft source", () => {
   it("creates a screen QA fallback snapshot when the writer is disabled", () => {
     expect(smokeSource).toContain("buildScreenQaCompatibilityDraft");
     expect(smokeSource).toContain("handleScreenQaFallback");
+    expect(smokeSource).toContain("getRelationshipTypeOverride");
+    expect(smokeSource).toContain("--relationshipType");
+    expect(smokeSource).toContain("relationship type override:");
+    expect(smokeSource).toContain("relationshipType: relationshipTypeOverride");
     expect(smokeSource).toContain("SKIPPED, OpenAI writer not enabled");
     expect(smokeSource).toContain("fallback screen QA draft generated");
     expect(smokeSource).toContain("relationshipAnalysis: present");

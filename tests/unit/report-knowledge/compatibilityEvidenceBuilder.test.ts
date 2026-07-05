@@ -87,24 +87,30 @@ describe("REPORT-18A compatibility evidence builder", () => {
   });
 
   it("builds categoryLens for all seven canonical relationship categories", () => {
-    const categories = [
-      "love",
-      "marriage",
-      "parentChild",
-      "coworker",
-      "managerReport",
-      "businessPartner",
-      "friendship",
-    ] as const;
+    const expectedFocusByCategory = {
+      love: ["끌림", "감정 표현", "속도", "갈등 회복"],
+      marriage: ["생활 리듬", "돈", "역할 분담", "장기 책임"],
+      parentChild: ["권위", "기대", "정서 안전감", "독립성"],
+      coworker: ["업무 속도", "피드백", "책임 범위", "협업 피로"],
+      managerReport: ["지시/평가", "권한 거리", "피드백 수용성", "신뢰 관리"],
+      businessPartner: ["돈", "리스크", "의사결정", "신뢰 경계"],
+      friendship: ["거리감", "의리", "감정 부담", "오래 가는 리듬"],
+    } as const;
+    const focusSignatures = new Set<string>();
 
-    for (const category of categories) {
+    for (const [category, expectedFocus] of Object.entries(expectedFocusByCategory)) {
       const packet = buildPacketWithRelationshipType(category);
 
       expect(packet.relationshipType).toBe(category);
       expect(packet.categoryLens.relationshipType).toBe(category);
-      expect(packet.categoryLens.focus.length).toBeGreaterThan(0);
+      expect(packet.categoryLens.focus).toEqual(expectedFocus);
       expect(packet.categoryLens.repairFocus.length).toBeGreaterThan(0);
+      expect(packet.categoryLens.frictionFocus.length).toBeGreaterThan(0);
+      expect(packet.categoryLens.safetyFocus.length).toBeGreaterThan(0);
+      focusSignatures.add(packet.categoryLens.focus.join("|"));
     }
+
+    expect(focusSignatures.size).toBe(Object.keys(expectedFocusByCategory).length);
   });
 
   it("falls back unknown relationship category to love", () => {
