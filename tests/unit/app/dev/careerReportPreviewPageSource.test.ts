@@ -18,8 +18,15 @@ describe("career report preview page source", () => {
 
   it("uses the career-report-preview snapshot path through the snapshot helper", () => {
     expect(pageSource).toContain("readCareerReportPreviewSnapshot");
-    expect(pageSource).toContain(".tmp/career-report-preview");
-    expect(pageSource).toContain("smoke_generate_career_report_draft.ts");
+    expect(pageSource).toContain("snapshot.fixtureId");
+    expect(pageSource).toContain("snapshot.generatedAt");
+  });
+
+  it("renders a fixture fallback draft with evidence when no snapshot exists", () => {
+    expect(pageSource).toContain("buildCareerReportEvidence");
+    expect(pageSource).toContain("buildCareerReportScreenQaFallbackDraft");
+    expect(pageSource).toContain("evidencePacket={fallbackEvidencePacket}");
+    expect(pageSource).toContain("evidencePacket={snapshot.evidencePacket}");
   });
 
   it("gates preview by CAREER_REPORT_DEV_PREVIEW_ENABLED", () => {

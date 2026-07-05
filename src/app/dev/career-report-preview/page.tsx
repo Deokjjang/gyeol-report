@@ -5,6 +5,12 @@ import {
   requireCareerReportFixture,
 } from "../../../lib/report-knowledge/careerReportFixtures";
 import {
+  buildCareerReportEvidence,
+} from "../../../lib/report-knowledge/careerReportEvidence";
+import {
+  buildCareerReportScreenQaFallbackDraft,
+} from "../../../lib/report-generation/careerReportDraftTypes";
+import {
   readCareerReportPreviewSnapshot,
 } from "../../../lib/report-generation/careerReportPreviewSnapshot";
 import { CareerReportView } from "../../reports/[reportId]/CareerReportView";
@@ -88,7 +94,7 @@ function renderMessage(title: string, message: string) {
     <PreviewShell>
       <section className="space-y-4 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6">
         <p className="text-sm font-semibold text-sky-200">
-          직업·커리어·금전·학업 리포트
+          직업·커리어·돈·학업 리포트
         </p>
         <h1 className="text-2xl font-bold text-neutral-50">{title}</h1>
         <p className="whitespace-pre-line text-sm leading-6 text-neutral-400">
@@ -96,17 +102,6 @@ function renderMessage(title: string, message: string) {
         </p>
       </section>
     </PreviewShell>
-  );
-}
-
-function renderMissingSnapshotState(fixtureId: string) {
-  return renderMessage(
-    "직업·커리어·금전·학업 preview snapshot이 없습니다.",
-    [
-      "Preview snapshot not found. Run:",
-      `pnpm dlx tsx scripts/smoke_generate_career_report_draft.ts --fixture ${fixtureId} --write-preview`,
-      "Snapshot path: .tmp/career-report-preview",
-    ].join("\n"),
   );
 }
 
@@ -120,9 +115,10 @@ export default async function CareerReportPreviewPage({
   const resolvedSearchParams = await searchParams;
   const fixtureId = getFixtureId(resolvedSearchParams);
   const snapshotMode = getSnapshotMode(resolvedSearchParams);
+  let fixture: ReturnType<typeof requireCareerReportFixture>;
 
   try {
-    requireCareerReportFixture(fixtureId);
+    fixture = requireCareerReportFixture(fixtureId);
   } catch {
     notFound();
   }
@@ -130,21 +126,40 @@ export default async function CareerReportPreviewPage({
   if (snapshotMode !== "latest") {
     return renderMessage(
       "snapshot=latest 모드만 지원합니다.",
-      "직업·커리어·금전·학업 dev preview는 브라우저에서 OpenAI를 호출하지 않고 .tmp/career-report-preview snapshot만 읽습니다.",
+      "직업·커리어·돈·학업 dev preview는 브라우저에서 OpenAI를 호출하지 않고 snapshot 또는 fixture fallback만 사용합니다.",
     );
   }
 
   const snapshot = await readCareerReportPreviewSnapshot(fixtureId);
 
   if (snapshot === null) {
-    return renderMissingSnapshotState(fixtureId);
+    const fallbackEvidencePacket = buildCareerReportEvidence({
+      fixtureId: fixture.id,
+      person: fixture.person,
+    });
+    const fallbackDraft =
+      buildCareerReportScreenQaFallbackDraft(fallbackEvidencePacket);
+
+    return (
+      <PreviewShell
+        devStatus={`fixture fallback · ${fixture.id} · writer disabled/no snapshot`}
+      >
+        <CareerReportView
+          draft={fallbackDraft}
+          evidencePacket={fallbackEvidencePacket}
+        />
+      </PreviewShell>
+    );
   }
 
   return (
     <PreviewShell
       devStatus={`preview snapshot · ${snapshot.fixtureId} · ${snapshot.generatedAt}`}
     >
-      <CareerReportView draft={snapshot.draft} />
+      <CareerReportView
+        draft={snapshot.draft}
+        evidencePacket={snapshot.evidencePacket}
+      />
     </PreviewShell>
   );
 }

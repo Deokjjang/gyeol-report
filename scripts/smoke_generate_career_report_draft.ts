@@ -11,6 +11,9 @@ import {
   validateCareerReportDraft,
 } from "../src/lib/report-generation/careerReportDraftValidator";
 import {
+  buildCareerReportScreenQaFallbackDraft,
+} from "../src/lib/report-generation/careerReportDraftTypes";
+import {
   getCareerReportPreviewSnapshotRelativePath,
   getCareerReportPreviewUrl,
   writeCareerReportPreviewSnapshot,
@@ -18,6 +21,8 @@ import {
 
 const openAIKeyEnvName = ["OPENAI", "API", "KEY"].join("_");
 const defaultFixtureId = "deokmin-career";
+const writerDisabledSkipMessage =
+  "SKIP draft generation, OpenAI writer disabled";
 
 function getFixtureId(argv: readonly string[]): string {
   const flagIndex = argv.findIndex((arg) => arg === "--fixture");
@@ -68,6 +73,74 @@ function hasEvidenceReadiness(
     packet.investmentProfile.disclaimer.length > 0 &&
     packet.studyCertificateStrategy.recommendedMethods.length > 0
   );
+}
+
+async function writePreviewSnapshot(input: {
+  readonly fixtureId: string;
+  readonly packet: ReturnType<typeof buildCareerReportEvidence>;
+  readonly draft: Parameters<typeof validateCareerReportDraft>[0];
+}): Promise<void> {
+  const validation = validateCareerReportDraft(input.draft);
+
+  if (!validation.ok || validation.value === undefined) {
+    throw new Error(validation.errors.join("\n"));
+  }
+
+  await writeCareerReportPreviewSnapshot({
+    fixtureId: input.fixtureId,
+    evidencePacket: input.packet,
+    draft: validation.value,
+  });
+  writeLine("snapshot root: .tmp/career-report-preview");
+  writeLine("preview route: http://localhost:3000/dev/career-report-preview");
+  writeLine(`snapshot: ${getCareerReportPreviewSnapshotRelativePath(input.fixtureId)}`);
+  writeLine(`url: ${getCareerReportPreviewUrl(input.fixtureId)}`);
+}
+
+async function handleFallbackPreview(input: {
+  readonly fixtureId: string;
+  readonly packet: ReturnType<typeof buildCareerReportEvidence>;
+  readonly reason: string;
+  readonly writePreview: boolean;
+}): Promise<void> {
+  const fallbackDraft = buildCareerReportScreenQaFallbackDraft(input.packet);
+  const validation = validateCareerReportDraft(fallbackDraft);
+
+  if (!validation.ok || validation.value === undefined) {
+    throw new Error(validation.errors.join("\n"));
+  }
+
+  const quality = summarizeCareerReportDraftQuality(validation.value);
+
+  writeLine(
+    input.reason === "OpenAI writer disabled"
+      ? writerDisabledSkipMessage
+      : `SKIP draft generation, ${input.reason}`,
+  );
+  writeLine(`SKIP OpenAI draft generation, ${input.reason}`);
+  writeLine("fallback draft: screen QA structure");
+  writeLine(`recommended jobs: ${validation.value.recommendedJobs.length}`);
+  writeLine(`unsuitable jobs: ${validation.value.unsuitableJobs.length}`);
+  writeLine(`career paths: ${validation.value.careerPaths.length}`);
+  writeLine(`career timing: ${validation.value.careerTiming.length}`);
+  writeLine(`action plan: ${validation.value.actionPlan.length}`);
+  writeLine(`safety notes: ${validation.value.safetyNotes.length}`);
+  writeLine(`hard claim warnings: ${quality.hardClaimWarnings}`);
+  writeLine(`financial guarantee warnings: ${quality.financialGuaranteeWarnings}`);
+  writeLine(`ticker warnings: ${quality.tickerWarnings}`);
+  writeLine(`buy/sell instruction warnings: ${quality.buySellInstructionWarnings}`);
+
+  if (input.writePreview) {
+    await writePreviewSnapshot({
+      fixtureId: input.fixtureId,
+      packet: input.packet,
+      draft: validation.value,
+    });
+    return;
+  }
+
+  writeLine(`preview url: ${getCareerReportPreviewUrl(input.fixtureId)}`);
+  writeLine("preview source: in-memory fixture fallback when snapshot is missing");
 }
 
 function writeMatrixReadinessSummary(): void {
@@ -148,11 +221,21 @@ async function main(): Promise<void> {
   );
 
   if (!isWriterEnabled()) {
-    writeLine("SKIP draft generation, OpenAI writer disabled");
+    await handleFallbackPreview({
+      fixtureId: fixture.id,
+      packet,
+      reason: "OpenAI writer disabled",
+      writePreview,
+    });
     return;
   }
   if (!hasWriterConfig()) {
-    writeLine("SKIP draft generation, OpenAI writer env incomplete");
+    await handleFallbackPreview({
+      fixtureId: fixture.id,
+      packet,
+      reason: "OpenAI writer env incomplete",
+      writePreview,
+    });
     return;
   }
 
@@ -215,15 +298,11 @@ async function main(): Promise<void> {
   writeLine(`safety note warnings: ${quality.safetyNoteWarnings}`);
 
   if (writePreview) {
-    await writeCareerReportPreviewSnapshot({
+    await writePreviewSnapshot({
       fixtureId: fixture.id,
-      evidencePacket: packet,
+      packet,
       draft: validation.value,
     });
-    writeLine("snapshot root: .tmp/career-report-preview");
-    writeLine("preview route: http://localhost:3000/dev/career-report-preview");
-    writeLine(`snapshot: ${getCareerReportPreviewSnapshotRelativePath(fixture.id)}`);
-    writeLine(`url: ${getCareerReportPreviewUrl(fixture.id)}`);
   }
 }
 
