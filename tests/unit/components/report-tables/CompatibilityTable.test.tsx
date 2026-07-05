@@ -14,6 +14,10 @@ const personAManseRyeok = buildManseRyeokCommonTableData({
       heavenlyStem: "甲",
       earthlyBranch: "子",
       tenGod: ["천간 비견", "지지 정인"],
+      hiddenStems: ["癸 정인"],
+      sinsal: ["도화살"],
+      gwiin: ["천을귀인"],
+      interactions: ["子辰 반합"],
     },
   ],
 });
@@ -132,60 +136,53 @@ describe("CompatibilityTable", () => {
       "A 사람 요약",
       "정A",
       "A님의 만세력",
-      "ENTJ 대담한 통솔자",
+      "ENTJ",
+      "대담한 통솔자",
       "B 사람 요약",
       "정B",
       "B님의 만세력",
-      "ISFP 호기심 많은 예술가",
+      "ISFP",
+      "호기심 많은 예술가",
     ]) {
       expect(html).toContain(marker);
     }
   });
 
-  it("renders connection summary fields", () => {
+  it("renders a compact connection bridge between A and B", () => {
     const html = renderToStaticMarkup(<CompatibilityTable data={tableData} />);
 
     for (const marker of [
-      "연결/궁합 요약표",
-      "궁합 헤드라인",
+      "♡",
+      "A × B · 두 사람 연결",
       "속도와 구조가 만나는 관계",
-      "전체 톤",
-      "강한 실행형 조합",
-      "명리 연결 요약",
-      "일간 기준으로 역할이 선명하다.",
-      "MBTI 연결 요약",
-      "목표 설정과 실행 기준이 빠르게 맞는다.",
-      "일간 관계",
-      "갑목과 신금",
-      "일지 관계",
-      "자유 관계",
-      "오행 균형",
-      "목과 금의 긴장",
-      "십성 관계",
-      "관성 중심",
-      "관계 라벨",
-      "합",
-      "충",
-      "공유 강점",
-      "실행력",
-      "마찰 지점",
-      "통제감",
-      "회복 전략",
-      "역할과 결정권을 먼저 분리한다.",
-      "타이밍 메모",
-      "분기별 재합의",
     ]) {
       expect(html).toContain(marker);
     }
+    expect(html).not.toContain("연결/궁합 요약표");
+    expect(html).not.toContain("궁합 헤드라인");
+    expect(html).not.toContain("목표 설정과 실행 기준이 빠르게 맞는다.");
   });
 
   it("renders MBTI tables in compact mode with detail closed by default", () => {
     const html = renderToStaticMarkup(<CompatibilityTable data={tableData} />);
 
     expect(html).toContain("선호 지표와 기능 서열 자세히 보기");
+    expect(html).not.toContain("선호 지표와 기능 서열 접기");
     expect(html).toContain("핵심 요약");
     expect(html).not.toContain("선호 지표 비교");
     expect(html).not.toContain("리포트 활용 포인트");
+  });
+
+  it("renders manse ryeok as a compact chart with detail closed by default", () => {
+    const html = renderToStaticMarkup(<CompatibilityTable data={tableData} />);
+
+    expect(html).toContain("A님의 만세력");
+    expect(html).toContain("甲");
+    expect(html).toContain("子");
+    expect(html).toContain("비견");
+    expect(html).toContain("지장간·신살·합충 상세 보기");
+    expect(html).not.toContain("지장간·신살·합충 상세 접기");
+    expect(html).not.toContain("癸 정인");
   });
 
   it("handles empty and null fields safely", () => {

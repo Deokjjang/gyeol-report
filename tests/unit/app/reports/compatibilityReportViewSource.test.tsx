@@ -51,7 +51,7 @@ function createDraft(): CompatibilityReportDraft {
     openingSummary:
       "두 사람은 끌림이 있지만 속도와 확인 방식이 달라 조율 장치가 필요합니다.",
     coreLine:
-      "좋게 보면 보완이고, 현실적으로 보면 속도 차이가 큰 조합입니다.",
+      "끌림은 있지만, 속도와 확정 타이밍을 맞추지 않으면 금방 피곤해지는 조합입니다.",
     scoreSummary: {
       totalScore: 69,
       scoreLabel: "조율형 궁합",
@@ -122,9 +122,18 @@ describe("CompatibilityReportView", () => {
     );
 
     expect(html).toContain("궁합 리포트");
+    expect(html).not.toContain("직업 리포트");
     expect(html).toContain("두 사람 기초표");
+    expect(html).toContain("가운데의 작은 연결 지점");
     expect(html).toContain("한 줄 판정");
     expect(html).toContain("두 사람 연결 요약");
+    expect(html).toContain("궁합 핵심 표");
+    expect(html).toContain("전체 톤");
+    expect(html).toContain("명리 연결");
+    expect(html).toContain("MBTI 연결");
+    expect(html).toContain("일간·일지");
+    expect(html).toContain("오행 균형");
+    expect(html).toContain("십성 관계");
     expect(html).toContain("첫 인상과 끌림");
     expect(html).toContain("오래 가는 힘");
     expect(html).toContain("자주 부딪히는 지점");
@@ -141,6 +150,31 @@ describe("CompatibilityReportView", () => {
     expect(html).not.toContain("relationshipAnalysis");
     expect(html).not.toContain("directFindings");
     expect(html).not.toContain("draft");
+  });
+
+  it("translates raw saju relation labels before rendering user-facing text", () => {
+    const draft = createDraft();
+    const rawDraft = {
+      ...draft,
+      relationshipAnalysis: {
+        ...draft.relationshipAnalysis,
+        riskManagement: [
+          "申子辰 삼합 수 흐름 · 亥卯未 삼합 목 흐름",
+          "丑未 충",
+          "子未 해 · 申亥 해",
+        ],
+      },
+    };
+    const html = renderToStaticMarkup(<CompatibilityReportView draft={rawDraft} />);
+
+    expect(html).not.toContain("申子辰 삼합 수 흐름");
+    expect(html).not.toContain("亥卯未 삼합 목 흐름");
+    expect(html).not.toContain("丑未 충");
+    expect(html).not.toContain("子未 해");
+    expect(html).not.toContain("申亥 해");
+    expect(html).toContain("대화 흐름이 강해지는 신호");
+    expect(html).toContain("생활 기준, 가족관, 역할 분담");
+    expect(html).toContain("말하지 않은 불편감과 피로가 누적");
   });
 
   it("keeps seven canonical relationship labels available in source", () => {

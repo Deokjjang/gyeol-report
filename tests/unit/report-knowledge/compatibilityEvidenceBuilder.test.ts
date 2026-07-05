@@ -122,14 +122,41 @@ describe("REPORT-18A compatibility evidence builder", () => {
     expect(packet.sajuCompatibility.dayMasterRelation).toBeTruthy();
     expect(packet.sajuCompatibility.tenGodRelation).toBeTruthy();
     expect(packet.sajuCompatibility.branchInteractions.length).toBeGreaterThan(0);
+    expect(
+      [
+        ...packet.sajuCompatibility.elementComplementSignals,
+        ...packet.sajuCompatibility.sharedWeakElementSignals,
+        ...packet.sajuCompatibility.overloadedElementSignals,
+      ].join("\n"),
+    ).toMatch(/오행|흐름|기운|보완|과해/u);
     expect(packet.mbtiCompatibility.source).toBe("notablePairs");
     expect(packet.mbtiCompatibility.sharedGround.length).toBeGreaterThan(0);
     expect(packet.mbtiCompatibility.reportLine).toContain("ENTJ");
+    expect(packet.mbtiCompatibility.lovePattern).toContain("ENTJ");
+    expect(packet.mbtiCompatibility.marriagePattern).toContain("생활");
     expect(packet.bridgeCompatibility.interpretationMode).toContain("명리");
     expect(packet.bridgeCompatibility.interpretationMode).toContain("MBTI");
+    expect(packet.bridgeCompatibility.cautionSignals.join("\n")).toContain(
+      "생활 기준",
+    );
+    expect(packet.bridgeCompatibility.cautionSignals.join("\n")).not.toContain(
+      "丑未 충",
+    );
+    expect(packet.bridgeCompatibility.cautionSignals.join("\n")).not.toContain(
+      "申亥 해",
+    );
     expect(new Set(packet.directFindings.map((finding) => finding.type))).toEqual(
       new Set(["strength", "friction", "risk", "repair"]),
     );
+    expect(packet.directFindings.map((finding) => finding.title).join("\n")).toContain(
+      "A가 B에게 주는 압박",
+    );
+    expect(
+      packet.directFindings.map((finding) => finding.interpretation).join("\n"),
+    ).toContain("결론과 실행");
+    expect(
+      packet.directFindings.flatMap((finding) => finding.evidence).join("\n"),
+    ).not.toContain("丑未 충");
     expect(packet.strengths.length).toBeGreaterThan(0);
     expect(packet.frictionPoints.length).toBeGreaterThan(0);
     expect(packet.repairStrategies.length).toBeGreaterThan(0);

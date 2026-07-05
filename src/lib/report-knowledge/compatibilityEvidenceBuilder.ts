@@ -40,6 +40,7 @@ import {
 } from "./sajuFeatureDisplayPolicy";
 import { mapComputedSajuFactsToFeatureIds } from "./sajuComputedFactsMapper";
 import type { ComputedSajuFacts } from "./sajuComputedFactsTypes";
+import type { FiveElement } from "./sajuKnowledgeTypes";
 import { requireSajuFeatureEntry } from "./sajuFeatureTaxonomy";
 
 export type BuildCompatibilityEvidenceInput = {
@@ -232,6 +233,22 @@ function buildParticipant(input: {
 
 const earthlyBranchChars = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"] as const;
 
+const compatibilityElementKo = {
+  wood: "목",
+  fire: "화",
+  earth: "토",
+  metal: "금",
+  water: "수",
+} as const satisfies Record<FiveElement, string>;
+
+const compatibilityElementMeaning = {
+  wood: "방향성과 성장",
+  fire: "표현의 온도와 반응 속도",
+  earth: "현실감, 책임, 생활 기준",
+  metal: "판단, 경계, 실행 기준",
+  water: "감정 회복, 생각의 유연성, 대화 흐름",
+} as const satisfies Record<FiveElement, string>;
+
 function extractPillarBranches(pillars: CompatibilityPillars): ReadonlySet<string> {
   return new Set(
     [pillars.year, pillars.month, pillars.day, pillars.hour]
@@ -292,6 +309,11 @@ function buildSajuCompatibility(input: {
       (label) => label.endsWith("살") && !label.includes("귀인"),
     ),
   );
+  const elementSignals = buildCompatibilityElementSignals({
+    personA: input.personA,
+    personB: input.personB,
+    elementNotes,
+  });
 
   return {
     dayMasterRelation: dayMaster?.plainKoreanSummary ?? dayMaster?.summary ?? null,
@@ -300,6 +322,9 @@ function buildSajuCompatibility(input: {
       ...input.sajuBridge.complementaryElementNotes,
       ...elementNotes.map((note) => note.plainKoreanSummary),
     ]),
+    elementComplementSignals: elementSignals.complement,
+    sharedWeakElementSignals: elementSignals.sharedWeakness,
+    overloadedElementSignals: elementSignals.overload,
     tenGodRelation: tenGod?.plainKoreanSummary ?? tenGod?.summary ?? null,
     branchInteractions,
     supportSignals: unique([
@@ -323,6 +348,82 @@ function buildSajuCompatibility(input: {
         .filter((note) => ["month_rhythm", "hour_life_rhythm"].includes(note.layer))
         .map((note) => note.actionRule),
     ),
+  };
+}
+
+function buildCompatibilityElementSignals(input: {
+  readonly personA: CompatibilityPersonChartSummary;
+  readonly personB: CompatibilityPersonChartSummary;
+  readonly elementNotes: readonly NonNullable<CompatibilityDeepSajuBridgeResult>["notes"][number][];
+}): {
+  readonly complement: readonly string[];
+  readonly sharedWeakness: readonly string[];
+  readonly overload: readonly string[];
+} {
+  const personAMissing = new Set(input.personA.sajuFacts.missingElements);
+  const personBMissing = new Set(input.personB.sajuFacts.missingElements);
+  const personAExcessive = new Set(input.personA.sajuFacts.excessiveElements);
+  const personBExcessive = new Set(input.personB.sajuFacts.excessiveElements);
+  const allElements = ["wood", "fire", "earth", "metal", "water"] as const;
+  const complement = unique([
+    ...input.elementNotes
+      .filter((note) => note.layer === "element_complement")
+      .map((note) => note.plainKoreanSummary),
+    ...allElements.flatMap((element) => {
+      const aNeeds = personAMissing.has(element);
+      const bNeeds = personBMissing.has(element);
+      const aHas = input.personA.sajuFacts.fiveElementCounts[element] > 0;
+      const bHas = input.personB.sajuFacts.fiveElementCounts[element] > 0;
+
+      if (aNeeds && bHas) {
+        return [
+          `${input.personB.displayName}님의 ${compatibilityElementKo[element]} 흐름은 ${input.personA.displayName}님에게 ${compatibilityElementMeaning[element]}을 보태는 보완 신호입니다.`,
+        ];
+      }
+      if (bNeeds && aHas) {
+        return [
+          `${input.personA.displayName}님의 ${compatibilityElementKo[element]} 흐름은 ${input.personB.displayName}님에게 ${compatibilityElementMeaning[element]}을 보태는 보완 신호입니다.`,
+        ];
+      }
+
+      return [];
+    }),
+  ]);
+  const sharedWeakness = unique(
+    allElements.flatMap((element) =>
+      personAMissing.has(element) && personBMissing.has(element)
+        ? [
+            `두 사람 모두 ${compatibilityElementKo[element]} 흐름이 약하면 ${compatibilityElementMeaning[element]}이 늦게 켜져 같은 문제를 오래 붙잡을 수 있습니다.`,
+          ]
+        : [],
+    ),
+  );
+  const overload = unique([
+    ...input.elementNotes
+      .filter((note) => note.layer === "combined_element_climate")
+      .map((note) => note.plainKoreanSummary),
+    ...allElements.flatMap((element) => {
+      const combinedCount =
+        input.personA.sajuFacts.fiveElementCounts[element] +
+        input.personB.sajuFacts.fiveElementCounts[element];
+
+      if (
+        combinedCount >= 6 ||
+        (personAExcessive.has(element) && personBExcessive.has(element))
+      ) {
+        return [
+          `둘이 함께 있을 때 ${compatibilityElementKo[element]} 기운이 과해지면 ${compatibilityElementMeaning[element]}이 장점보다 부담으로 체감될 수 있습니다.`,
+        ];
+      }
+
+      return [];
+    }),
+  ]);
+
+  return {
+    complement,
+    sharedWeakness,
+    overload,
   };
 }
 
@@ -356,6 +457,8 @@ function buildMbtiCompatibility(input: {
       repairStrategy: pair.repairStrategy,
       pairLabel: input.mbtiBridge.pairLabel,
       reportLine: pair.reportLine,
+      lovePattern: pair.lovePattern,
+      marriagePattern: pair.marriagePattern,
       source: "notablePairs",
     };
   }
@@ -370,6 +473,8 @@ function buildMbtiCompatibility(input: {
     repairStrategy: input.mbtiBridge.conflictRecoveryNotes,
     pairLabel: hasA || hasB ? input.mbtiBridge.pairLabel : null,
     reportLine: null,
+    lovePattern: null,
+    marriagePattern: null,
     source: hasA && hasB ? "fallback" : hasA || hasB ? "partial" : "unknown",
   };
 }
@@ -394,12 +499,45 @@ function buildBridgeCompatibility(input: {
       input.sajuCompatibility.roleBalance,
     ]),
     cautionSignals: unique([
-      ...input.sajuCompatibility.branchInteractions,
+      ...input.sajuCompatibility.branchInteractions.map(
+        interpretCompatibilityBranchInteraction,
+      ),
       ...input.mbtiCompatibility.repairStrategy.slice(0, 2),
     ]),
     interpretationMode:
       "명리는 두 사람 사이에서 반복되는 구조를 보고, MBTI는 그 구조가 대화와 행동으로 드러나는 방식을 보조 근거로만 사용합니다.",
   };
+}
+
+function interpretCompatibilityBranchInteraction(label: string): string {
+  const compact = label.replace(/\s+/gu, "");
+
+  if (compact.includes("申子辰") && compact.includes("삼합")) {
+    return "두 사람이 만나면 생각, 감정 처리, 대화 흐름이 강해지는 신호입니다. 좋게 쓰면 깊은 대화와 정서적 연결이 생기지만, 나쁘게 쓰면 말은 많아지고 결론은 늦어질 수 있습니다.";
+  }
+  if (compact.includes("亥卯未") && compact.includes("삼합")) {
+    return "관계가 성장, 계획, 방향성 쪽으로 커지기 쉬운 신호입니다. 함께 무언가를 키우는 힘은 있지만, 한쪽이 너무 앞서가면 다른 쪽은 따라가야 한다는 부담을 느낄 수 있습니다.";
+  }
+  if (compact.includes("丑未") && compact.includes("충")) {
+    return "생활 기준, 가족관, 역할 분담, 돈 쓰는 방식에서 정면으로 부딪힐 수 있는 신호입니다. 감정 문제가 아니라 생활 운영 방식의 충돌로 봐야 합니다.";
+  }
+  if (
+    (compact.includes("子未") || compact.includes("申亥")) &&
+    compact.includes("해")
+  ) {
+    return "겉으로 크게 싸우지 않아도 서운함이나 피로가 천천히 쌓일 수 있는 신호입니다. 바로 터지는 충돌보다 말하지 않은 불편감이 누적되기 쉽습니다.";
+  }
+  if (compact.includes("충")) {
+    return "두 사람의 기준이 정면으로 맞서는 신호입니다. 관계가 나쁘다는 뜻이 아니라 생활 방식과 결정 기준을 먼저 조율해야 한다는 뜻입니다.";
+  }
+  if (compact.includes("해")) {
+    return "크게 드러나지 않는 불편감이 누적되기 쉬운 신호입니다. 사소한 서운함을 늦게 꺼내면 회복 비용이 커질 수 있습니다.";
+  }
+  if (compact.includes("삼합")) {
+    return "두 사람의 흐름이 한 방향으로 커지는 신호입니다. 잘 쓰면 추진력과 연결감이 생기지만, 과해지면 한쪽이 따라가야 한다는 부담이 생길 수 있습니다.";
+  }
+
+  return "지지 관계 신호는 두 사람 사이에서 반복될 수 있는 생활 리듬과 조율 지점으로만 참고합니다.";
 }
 
 function buildCategoryLens(
@@ -467,6 +605,8 @@ function buildCategoryLens(
 }
 
 function buildDirectFindings(input: {
+  readonly personA: CompatibilityPersonChartSummary;
+  readonly personB: CompatibilityPersonChartSummary;
   readonly score: CompatibilityScoreResult;
   readonly sajuCompatibility: CompatibilitySajuCompatibility;
   readonly mbtiCompatibility: CompatibilityMbtiCompatibility;
@@ -484,49 +624,69 @@ function buildDirectFindings(input: {
     ...input.mbtiCompatibility.repairStrategy.slice(0, 2),
     input.sajuCompatibility.roleBalance,
   ]);
+  const pairLine = input.mbtiCompatibility.reportLine;
+  const lovePattern = input.mbtiCompatibility.lovePattern;
+  const marriagePattern = input.mbtiCompatibility.marriagePattern;
+  const elementPressure = firstNonEmpty([
+    ...input.sajuCompatibility.overloadedElementSignals,
+    ...input.sajuCompatibility.sharedWeakElementSignals,
+    ...input.sajuCompatibility.elementComplementSignals,
+    ...input.sajuCompatibility.elementBalance,
+  ]);
+  const aType = input.mbtiCompatibility.aType ?? "A";
+  const bType = input.mbtiCompatibility.bType ?? "B";
+  const aName = input.personA.displayName;
+  const bName = input.personB.displayName;
 
   return [
     {
       type: "strength",
       intensity: input.score.totalScore >= 75 ? "high" : "medium",
-      title: "잘 맞는 지점은 분명하지만 자동으로 굴러가지는 않습니다.",
-      evidence: strengthEvidence,
+      title: "끌림의 이유는 실행력과 사고력의 맞물림입니다.",
+      evidence: unique([pairLine, lovePattern, ...strengthEvidence]),
       interpretation:
-        "좋게 보면 보완이고, 현실적으로 보면 역할과 속도를 맞출 때 장점이 살아나는 조합입니다.",
+        pairLine ??
+        `${aType}와 ${bType}는 서로의 빈칸을 자극할 수 있습니다. 좋게 쓰이면 한쪽의 실행감과 다른 한쪽의 검토력이 만나 관계가 더 입체적으로 움직입니다.`,
       safeWording:
-        "강점은 관계의 결론이 아니라 잘 써야 살아나는 재료로 봅니다.",
+        "강점은 관계의 결론이 아니라 둘이 어떻게 쓰느냐에 따라 살아나는 재료입니다.",
     },
     {
       type: "friction",
       intensity: frictionEvidence.length >= 2 ? "high" : "medium",
-      title: "마찰은 성격 문제가 아니라 처리 순서 차이에서 커질 수 있습니다.",
-      evidence: frictionEvidence,
-      interpretation:
-        "한쪽은 바로 정리하려 하고 다른 쪽은 확인 시간이 필요할 수 있어, 대화 순서가 맞지 않으면 피로가 빨리 쌓입니다.",
+      title: "피곤해지는 이유는 속도와 확정 타이밍이 다르기 때문입니다.",
+      evidence: unique([lovePattern, ...frictionEvidence]),
+      interpretation: `${aName}님은 문제를 보면 빠르게 결론과 실행을 잡으려 하고, ${bName}님은 전제와 논리가 납득되어야 움직이기 쉽습니다. 한쪽은 해결이라고 생각하지만 다른 쪽은 생각할 시간을 빼앗긴다고 느낄 수 있습니다.`,
       safeWording:
         "마찰은 관계 판정이 아니라 조율해야 할 반복 패턴으로만 봅니다.",
     },
     {
       type: "risk",
       intensity: input.bridgeCompatibility.cautionSignals.length >= 2 ? "high" : "medium",
-      title: "경계와 책임을 흐리면 좋은 보완도 부담으로 바뀝니다.",
-      evidence: input.bridgeCompatibility.cautionSignals,
-      interpretation:
-        "감정, 돈, 역할, 일정 중 하나라도 기준이 흐려지면 상대의 장점이 압박으로 체감될 수 있습니다.",
+      title: "A가 B에게 주는 압박과 B가 A에게 주는 답답함이 다릅니다.",
+      evidence: unique([
+        elementPressure,
+        marriagePattern,
+        ...input.bridgeCompatibility.cautionSignals,
+      ]),
+      interpretation: `${aName}님은 기준을 세우는 방식으로 관계를 안정시키려 하지만, ${bName}님에게는 그 기준이 압박처럼 들어갈 수 있습니다. 반대로 ${bName}님의 숙고와 거리 조절은 ${aName}님에게 회피나 비협조처럼 보이기 쉽습니다.`,
       safeWording:
         "위험 신호는 미래 예언이 아니라 미리 관리할 조건입니다.",
     },
     {
       type: "repair",
       intensity: repairEvidence.length >= 2 ? "high" : "medium",
-      title: "회복은 감정 설득보다 기준 재정렬에서 빨라집니다.",
+      title: "오래 가려면 결론 시간과 검토 시간을 따로 둬야 합니다.",
       evidence: repairEvidence,
       interpretation:
-        "서로를 바꾸려 하기보다 말하는 순서, 책임 범위, 다시 확인할 시간을 정하면 관계 체감이 달라집니다.",
+        "이 조합은 누가 맞고 틀린지보다 순서가 중요합니다. 감정 확인, 사실 검토, 실행 결정을 한 번에 처리하지 말고 따로 놓아야 서로의 장점이 피로로 바뀌는 속도를 늦출 수 있습니다.",
       safeWording:
         "유지 전략은 보장이 아니라 갈등 비용을 낮추는 실행 기준입니다.",
     },
   ];
+}
+
+function firstNonEmpty(values: readonly (string | null | undefined)[]): string | null {
+  return values.find((value): value is string => Boolean(value?.trim())) ?? null;
 }
 
 function buildSafetyNotes(
@@ -612,6 +772,8 @@ export function buildCompatibilityEvidencePacket(
   });
   const categoryLens = buildCategoryLens(relationCategory);
   const directFindings = buildDirectFindings({
+    personA: personAChartSummary,
+    personB: personBChartSummary,
     score,
     sajuCompatibility,
     mbtiCompatibility,

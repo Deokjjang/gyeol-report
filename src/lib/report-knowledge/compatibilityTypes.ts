@@ -536,6 +536,9 @@ export type CompatibilitySajuCompatibility = {
   readonly dayMasterRelation: string | null;
   readonly dayBranchRelation: string | null;
   readonly elementBalance: readonly string[];
+  readonly elementComplementSignals: readonly string[];
+  readonly sharedWeakElementSignals: readonly string[];
+  readonly overloadedElementSignals: readonly string[];
   readonly tenGodRelation: string | null;
   readonly branchInteractions: readonly string[];
   readonly supportSignals: readonly string[];
@@ -562,6 +565,8 @@ export type CompatibilityMbtiCompatibility = {
   readonly repairStrategy: readonly string[];
   readonly pairLabel: string | null;
   readonly reportLine: string | null;
+  readonly lovePattern: string | null;
+  readonly marriagePattern: string | null;
   readonly source: CompatibilityMbtiCompatibilitySource;
 };
 

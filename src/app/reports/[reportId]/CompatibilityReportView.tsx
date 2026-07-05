@@ -19,6 +19,9 @@ import {
   getCompatibilityScoreCaution,
   normalizeCompatibilityRelationCategory,
 } from "../../../lib/report-knowledge/compatibilityTypes";
+import {
+  buildSajuPillarGridColumns,
+} from "../../../lib/report-knowledge/sajuPillarFeaturePlacement";
 import { CompatibilityTable } from "../../../components/report-tables";
 
 /*
@@ -104,6 +107,34 @@ const relationshipTypeFocusCopy = {
   friendship: "거리감, 의리, 감정 부담, 오래 가는 리듬",
 } as const;
 
+const compatibilityRawSignalReplacements = [
+  {
+    pattern: /申子辰\s*삼합\s*수\s*흐름/gu,
+    replacement:
+      "생각, 감정 처리, 대화 흐름이 강해지는 신호",
+  },
+  {
+    pattern: /亥卯未\s*삼합\s*목\s*흐름/gu,
+    replacement:
+      "성장, 계획, 방향성 쪽으로 관계가 커지기 쉬운 신호",
+  },
+  {
+    pattern: /丑未\s*충/gu,
+    replacement:
+      "생활 기준, 가족관, 역할 분담, 돈 쓰는 방식이 정면으로 부딪히는 신호",
+  },
+  {
+    pattern: /子未\s*해/gu,
+    replacement:
+      "겉으로 크게 싸우지 않아도 서운함이 천천히 쌓이는 신호",
+  },
+  {
+    pattern: /申亥\s*해/gu,
+    replacement:
+      "말하지 않은 불편감과 피로가 누적되기 쉬운 신호",
+  },
+] as const;
+
 function formatCompatibilityRelationshipType(
   relationshipType: CompatibilityReportDraft["relationshipType"],
 ): string {
@@ -114,7 +145,17 @@ function formatCompatibilityDisplayText(
   text: string,
   relationshipType: CompatibilityReportDraft["relationshipType"],
 ): string {
-  return sanitizeCompatibilityVisibleText(text, relationshipType);
+  return translateCompatibilityRawSignals(
+    sanitizeCompatibilityVisibleText(text, relationshipType),
+  );
+}
+
+function translateCompatibilityRawSignals(text: string): string {
+  return compatibilityRawSignalReplacements.reduce(
+    (current, { pattern, replacement }) =>
+      current.replace(pattern, replacement),
+    text,
+  );
 }
 
 function formatCompatibilitySafetyNote(
@@ -221,6 +262,12 @@ function buildCompatibilityPersonTableInput(input: {
 function buildCompatibilityFourPillarGrid(
   chart: CompatibilityReportDraft["chartComparison"]["personA"],
 ): readonly ManseRyeokFourPillarGridColumnInput[] {
+  const detailedGrid = buildCompatibilityDetailedFourPillarGrid(chart);
+
+  if (detailedGrid.length > 0) {
+    return detailedGrid;
+  }
+
   return [
     buildCompatibilityPillarColumn("hour", chart.pillars.hour),
     buildCompatibilityPillarColumn("day", chart.pillars.day),
@@ -230,6 +277,59 @@ function buildCompatibilityFourPillarGrid(
     (column): column is ManseRyeokFourPillarGridColumnInput =>
       column !== null,
   );
+}
+
+function buildCompatibilityDetailedFourPillarGrid(
+  chart: CompatibilityReportDraft["chartComparison"]["personA"],
+): readonly ManseRyeokFourPillarGridColumnInput[] {
+  return buildSajuPillarGridColumns({
+    yearPillar: chart.sajuFacts.yearPillar ?? chart.pillars.year,
+    monthPillar: chart.sajuFacts.monthPillar ?? chart.pillars.month,
+    dayPillar: chart.sajuFacts.dayPillar ?? chart.pillars.day,
+    hourPillar: chart.sajuFacts.hourPillar ?? chart.pillars.hour,
+    dayMaster: chart.sajuFacts.dayMaster ?? chart.dayMaster,
+    productionFeatureIds: chart.featureIds,
+  })
+    .filter(
+      (column) =>
+        column.pillar !== undefined ||
+        column.heavenlyStem !== undefined ||
+        column.earthlyBranch !== undefined,
+    )
+    .map((column) => ({
+      columnId: column.columnId,
+      labelKo: column.labelKo,
+      pillar: normalizeCompatibilityPillarForTable(column.pillar) ?? undefined,
+      heavenlyStem: normalizeCompatibilityStemForTable(column.heavenlyStem),
+      earthlyBranch: normalizeCompatibilityBranchForTable(column.earthlyBranch),
+      tenGod: column.tenGod ?? [],
+      hiddenStems: column.hiddenStems ?? [],
+      twelveLifeStage: column.twelveLifeStage ?? [],
+      twelveSinsal: column.twelveSinsal ?? [],
+      sinsal: column.sinsal ?? [],
+      gwiin: column.gwiin ?? [],
+      interactions: [],
+    }));
+}
+
+function normalizeCompatibilityStemForTable(
+  stem: string | undefined,
+): string | undefined {
+  if (stem === undefined) {
+    return undefined;
+  }
+
+  return compatibilityTableStemToHanja[stem] ?? stem;
+}
+
+function normalizeCompatibilityBranchForTable(
+  branch: string | undefined,
+): string | undefined {
+  if (branch === undefined) {
+    return undefined;
+  }
+
+  return compatibilityTableBranchToHanja[branch] ?? branch;
 }
 
 function buildCompatibilityPillarColumn(
@@ -261,9 +361,9 @@ function normalizeCompatibilityPillarForTable(
     return null;
   }
 
-  const [rawStem, rawBranch] = [...normalized];
-  const stem = compatibilityTableStemToHanja[rawStem] ?? rawStem;
-  const branch = compatibilityTableBranchToHanja[rawBranch] ?? rawBranch;
+  const [inputStem, inputBranch] = [...normalized];
+  const stem = compatibilityTableStemToHanja[inputStem] ?? inputStem;
+  const branch = compatibilityTableBranchToHanja[inputBranch] ?? inputBranch;
 
   if (
     !compatibilityTableSupportedStems.includes(
@@ -420,17 +520,17 @@ function SectionShell({
       className={[
         "space-y-4 rounded-xl border p-5 sm:p-6",
         accent
-          ? "border-amber-500/30 bg-amber-950/20"
-          : "border-neutral-800 bg-neutral-950/60",
+          ? "border-[#d7b56d]/50 bg-[#fff8ea]"
+          : "border-[#eadfce] bg-[#fffdf8]",
       ].join(" ")}
     >
       <div className="space-y-2">
         {eyebrow === undefined ? null : (
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-200">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a2f]">
             {eyebrow}
           </p>
         )}
-        <h2 className="text-xl font-semibold tracking-tight text-neutral-50">
+        <h2 className="text-xl font-semibold tracking-tight text-[#201a18]">
           {title}
         </h2>
       </div>
@@ -454,7 +554,7 @@ function ParagraphSection({
 }) {
   return (
     <SectionShell title={title} eyebrow={eyebrow} accent={accent}>
-      <p className="max-w-3xl whitespace-pre-line text-base leading-8 text-neutral-200">
+      <p className="max-w-3xl whitespace-pre-line text-base leading-8 text-[#3a2f29]">
         {formatCompatibilityDisplayText(body, relationshipType)}
       </p>
     </SectionShell>
@@ -480,10 +580,10 @@ function ListSection({
 
   return (
     <SectionShell title={title} eyebrow={eyebrow}>
-      <ul className="space-y-3 text-base leading-7 text-neutral-200">
+      <ul className="space-y-3 text-base leading-7 text-[#3a2f29]">
         {visibleItems.map((item) => (
           <li key={item} className="flex gap-3">
-            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />
+            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d7b56d]" />
             <span>{item}</span>
           </li>
         ))}
@@ -499,7 +599,7 @@ function renderFatigueSection(
   return (
     <section className="grid gap-4 md:grid-cols-2" aria-label="A/B 피로 지점">
       <SectionShell title={`A가 B에게 주는 피로`} eyebrow={draft.personALabel}>
-        <p className="text-base leading-8 text-neutral-200">
+        <p className="text-base leading-8 text-[#3a2f29]">
           {formatCompatibilityDisplayText(
             analysis.aToBFatigue,
             draft.relationshipType,
@@ -507,7 +607,7 @@ function renderFatigueSection(
         </p>
       </SectionShell>
       <SectionShell title={`B가 A에게 주는 피로`} eyebrow={draft.personBLabel}>
-        <p className="text-base leading-8 text-neutral-200">
+        <p className="text-base leading-8 text-[#3a2f29]">
           {formatCompatibilityDisplayText(
             analysis.bToAFatigue,
             draft.relationshipType,
@@ -515,6 +615,99 @@ function renderFatigueSection(
         </p>
       </SectionShell>
     </section>
+  );
+}
+
+function ConnectionSummarySection({
+  analysis,
+  draft,
+  tableData,
+}: {
+  readonly analysis: CompatibilityRelationshipAnalysis;
+  readonly draft: CompatibilityReportDraft;
+  readonly tableData: CompatibilityTableData;
+}) {
+  const summary = tableData.connectionSummary;
+  const summaryRows = [
+    {
+      label: "전체 톤",
+      value: summary.overallTone,
+    },
+    {
+      label: "명리 연결",
+      value: summary.myeongliConnectionSummary ?? summary.dayMasterRelation,
+    },
+    {
+      label: "MBTI 연결",
+      value: summary.mbtiConnectionSummary,
+    },
+    {
+      label: "일간·일지",
+      value: [summary.dayMasterRelation, summary.dayBranchRelation]
+        .filter((value): value is string => Boolean(value?.trim()))
+        .join("\n"),
+    },
+    {
+      label: "오행 균형",
+      value: summary.elementBalance,
+    },
+    {
+      label: "십성 관계",
+      value: summary.tenGodRelation,
+    },
+    {
+      label: "공유 강점",
+      value: summary.sharedStrengths.slice(0, 2).join(" · "),
+    },
+    {
+      label: "부딪히는 지점",
+      value: summary.frictionPoints.slice(0, 2).join(" · "),
+    },
+    {
+      label: "회복 조건",
+      value: summary.repairStrategy,
+    },
+  ].flatMap((row) => {
+    if (row.value === null || row.value.trim().length === 0) {
+      return [];
+    }
+
+    return [
+      {
+        ...row,
+        value: formatCompatibilityDisplayText(row.value, draft.relationshipType),
+      },
+    ];
+  });
+
+  return (
+    <SectionShell title="두 사람 연결 요약" eyebrow="A × B">
+      <div className="space-y-4">
+        <p className="max-w-3xl whitespace-pre-line text-base leading-8 text-[#3a2f29]">
+          {formatCompatibilityDisplayText(
+            analysis.connectionSummary,
+            draft.relationshipType,
+          )}
+        </p>
+        {summaryRows.length === 0 ? null : (
+          <div className="grid gap-3 sm:grid-cols-2" aria-label="궁합 핵심 표">
+            {summaryRows.map((row) => (
+              <dl
+                key={row.label}
+                className="rounded-xl border border-[#eadfce] bg-[#fffaf3] px-4 py-3"
+              >
+                <dt className="text-xs font-extrabold uppercase tracking-[0.14em] text-[#9a7a2f]">
+                  {row.label}
+                </dt>
+                <dd className="mt-2 text-sm font-bold leading-6 text-[#3a2f29] break-keep">
+                  {row.value}
+                </dd>
+              </dl>
+            ))}
+          </div>
+        )}
+      </div>
+    </SectionShell>
   );
 }
 
@@ -529,67 +722,67 @@ export function CompatibilityReportView({
   );
 
   return (
-    <article className="space-y-8 rounded-2xl border border-neutral-800 bg-neutral-900/80 p-5 shadow-2xl shadow-black/30 sm:p-7">
-      <header className="space-y-5 rounded-2xl border border-amber-500/20 bg-neutral-950/70 p-5 sm:p-6">
+    <article className="space-y-8 rounded-2xl border border-[#d8d1c4] bg-[#fffaf3] p-5 text-[#201a18] shadow-[0_24px_80px_rgba(42,31,24,0.13)] sm:p-7">
+      <header className="space-y-5 rounded-2xl border border-[#d7b56d]/35 bg-[#fffdf8] p-5 sm:p-6">
         <div className="space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-200">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a2f]">
             궁합 리포트
           </p>
-          <h1 className="max-w-4xl text-2xl font-bold tracking-tight text-neutral-50 sm:text-3xl">
+          <h1 className="max-w-4xl text-2xl font-bold tracking-tight text-[#201a18] sm:text-3xl">
             {formatCompatibilityDisplayText(draft.openingTitle, draft.relationshipType)}
           </h1>
           <div className="flex flex-wrap items-center gap-2 text-sm">
-            <span className="font-semibold text-neutral-100">
+            <span className="font-semibold text-[#3a2f29]">
               {draft.personALabel}님 × {draft.personBLabel}님
             </span>
-            <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-xs font-semibold text-amber-100">
+            <span className="rounded-full border border-[#d7b56d]/50 bg-[#fff8ea] px-2.5 py-1 text-xs font-semibold text-[#7f1d38]">
               {relationshipLabel}
             </span>
           </div>
         </div>
         <div className="grid gap-4 lg:grid-cols-[12rem_1fr]">
           <div
-            className="rounded-xl border border-amber-500/40 bg-amber-500/10 p-4"
+            className="rounded-xl border border-[#d7b56d]/60 bg-[#fff8ea] p-4"
             aria-label="궁합 점수"
           >
-            <p className="text-xs font-semibold text-amber-200">관계 온도</p>
-            <p className="mt-2 text-5xl font-bold tracking-tight text-amber-100">
+            <p className="text-xs font-semibold text-[#9a7a2f]">관계 온도</p>
+            <p className="mt-2 text-5xl font-bold tracking-tight text-[#7f1d38]">
               {draft.scoreSummary.totalScore}점
             </p>
-            <p className="mt-2 text-sm font-semibold leading-6 text-amber-100">
+            <p className="mt-2 text-sm font-semibold leading-6 text-[#5a4633]">
               {draft.scoreSummary.scoreLabel}
             </p>
           </div>
-          <div className="space-y-3 rounded-xl border border-neutral-800 bg-neutral-900/70 p-4">
-            <p className="text-lg font-semibold leading-8 text-neutral-50">
+          <div className="space-y-3 rounded-xl border border-[#eadfce] bg-[#fffaf3] p-4">
+            <p className="text-lg font-semibold leading-8 text-[#201a18]">
               {formatCompatibilityDisplayText(draft.coreLine, draft.relationshipType)}
             </p>
-            <p className="text-sm leading-6 text-neutral-300">
+            <p className="text-sm leading-6 text-[#5a4633]">
               {formatCompatibilityDisplayText(
                 draft.openingSummary,
                 draft.relationshipType,
               )}
             </p>
-            <p className="text-sm leading-6 text-neutral-400">
+            <p className="text-sm leading-6 text-[#7b6a58]">
               상담이나 예언이 아니라, 두 사람의 반복 패턴과 조율 조건을 보는 관계 분석 리포트입니다.
             </p>
           </div>
         </div>
         {reportId === undefined ? null : (
-          <dl className="grid gap-3 rounded-xl border border-neutral-800 bg-neutral-950/60 p-4 text-sm">
+          <dl className="grid gap-3 rounded-xl border border-[#eadfce] bg-[#fffaf3] p-4 text-sm">
             <div className="grid gap-1 sm:grid-cols-[9rem_1fr]">
-              <dt className="font-medium text-neutral-500">리포트 ID</dt>
-              <dd className="break-words text-neutral-100">{reportId}</dd>
+              <dt className="font-medium text-[#7b6a58]">리포트 ID</dt>
+              <dd className="break-words text-[#201a18]">{reportId}</dd>
             </div>
             <div className="grid gap-1 sm:grid-cols-[9rem_1fr]">
-              <dt className="font-medium text-neutral-500">두 사람</dt>
-              <dd className="text-neutral-100">
+              <dt className="font-medium text-[#7b6a58]">두 사람</dt>
+              <dd className="text-[#201a18]">
                 {draft.personALabel}님 × {draft.personBLabel}님
               </dd>
             </div>
             <div className="grid gap-1 sm:grid-cols-[9rem_1fr]">
-              <dt className="font-medium text-neutral-500">관계 카테고리</dt>
-              <dd className="text-neutral-100">{relationshipLabel}</dd>
+              <dt className="font-medium text-[#7b6a58]">관계 카테고리</dt>
+              <dd className="text-[#201a18]">{relationshipLabel}</dd>
             </div>
           </dl>
         )}
@@ -597,11 +790,11 @@ export function CompatibilityReportView({
 
       <section className="space-y-4" aria-label="상단 궁합 기초표">
         <div className="space-y-2">
-          <h2 className="text-xl font-semibold text-neutral-50">
+          <h2 className="text-xl font-semibold text-[#201a18]">
             두 사람 기초표
           </h2>
-          <p className="text-sm leading-6 text-neutral-400">
-            각자의 기초 만세력과 MBTI 성향표를 먼저 놓고, 가운데에서 두 사람이 만났을 때의 연결 지점을 봅니다.
+          <p className="text-sm leading-6 text-[#6f675d]">
+            A와 B의 기초 만세력, MBTI 성향표를 각각 놓고 가운데의 작은 연결 지점만 먼저 확인합니다. 자세한 궁합 해석은 아래 본문에서 풀어갑니다.
           </p>
         </div>
         <CompatibilityTable data={compatibilityTableData} defaultOpen={true} />
@@ -618,10 +811,10 @@ export function CompatibilityReportView({
         accent
       />
 
-      <ParagraphSection
-        title="두 사람 연결 요약"
-        body={analysis.connectionSummary}
-        relationshipType={draft.relationshipType}
+      <ConnectionSummarySection
+        analysis={analysis}
+        draft={draft}
+        tableData={compatibilityTableData}
       />
 
       <ParagraphSection
@@ -699,7 +892,7 @@ export function CompatibilityReportView({
       />
 
       <SectionShell title="안전 안내">
-        <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-500">
+        <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-[#7b6a58]">
           {draft.safetyNotes.map((note) => (
             <li key={note}>
               {formatCompatibilitySafetyNote(note, draft.relationshipType)}
