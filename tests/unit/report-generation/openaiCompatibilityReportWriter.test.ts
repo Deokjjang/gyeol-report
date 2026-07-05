@@ -43,6 +43,33 @@ function createValidCompatibilityDraft(): CompatibilityReportDraft {
       frictionPoints: ["한쪽은 빠른 결론, 한쪽은 조건 확인이 필요해 대화 속도가 어긋날 수 있습니다."],
       relationshipRules: ["중요한 결정은 결론 시간과 검토 시간을 따로 정해야 합니다."],
     },
+    relationshipAnalysis: {
+      connectionSummary:
+        "빠른 구조화와 깊은 검토가 만나 끌림은 있지만 속도 조율이 필요한 궁합입니다.",
+      firstImpression:
+        "덕민님은 방향을 먼저 잡고, 소담님은 전제와 조건을 확인하며 관계를 읽습니다.",
+      stayingPower:
+        "결론 시간과 검토 시간을 분리하면 서로의 방식이 장기 안정성으로 바뀝니다.",
+      frictionPoints: [
+        "빠른 결론과 느린 검토가 같은 대화 안에서 부딪힐 수 있습니다.",
+      ],
+      categoryReading:
+        "연애 관계에서는 끌림보다 대화 속도와 감정 확인 방식이 체감 궁합을 좌우합니다.",
+      aToBFatigue:
+        "덕민님은 소담님의 검토가 길어질수록 결정이 미뤄진다고 느낄 수 있습니다.",
+      bToAFatigue:
+        "소담님은 덕민님의 결론 속도가 빠를수록 감정과 전제를 건너뛴다고 느낄 수 있습니다.",
+      communicationRecovery:
+        "싸운 뒤 바로 결론을 내기보다 감정 확인과 실행 결정을 분리해야 회복이 빠릅니다.",
+      roleMoneyLifeRhythm:
+        "돈과 일정은 각자 관리하되 공유 기준만 먼저 맞추는 쪽이 덜 지칩니다.",
+      categorySpecificAdvice: [
+        "연애에서는 답을 재촉하기보다 언제 다시 이야기할지 먼저 정하세요.",
+      ],
+      timingCautions: ["중요한 약속 변경은 즉시 결론보다 확인 시간을 먼저 둬야 합니다."],
+      repairStrategy: ["결론, 검토, 실행을 한 번에 처리하지 말고 단계로 나누세요."],
+      riskManagement: ["속도 차이를 성의 부족으로 해석하지 않는 규칙이 필요합니다."],
+    },
     chapters: [
       "overview",
       "attraction",
@@ -83,6 +110,31 @@ function openAIResponse(rawText: string): Response {
 }
 
 describe("openaiCompatibilityReportWriter", () => {
+  it("keeps writer disabled flow without calling OpenAI", async () => {
+    const packet = buildCompatibilityEvidencePacketFromFixtureId("deokmin-sodam-love");
+    let callCount = 0;
+    const fetchImpl: typeof fetch = async () => {
+      callCount += 1;
+
+      return openAIResponse("{}");
+    };
+
+    await expect(
+      generateCompatibilityReportDraft({
+        evidencePacket: packet,
+        config: {
+          apiKey: "sk-test",
+          model: "test-model",
+          enabled: false,
+          fetchImpl,
+        },
+      }),
+    ).rejects.toMatchObject({
+      code: "OPENAI_REPORT_WRITER_DISABLED",
+    });
+    expect(callCount).toBe(0);
+  });
+
   it("builds a compatibility request and returns a validated draft", async () => {
     const packet = buildCompatibilityEvidencePacketFromFixtureId("deokmin-sodam-love");
     const requests: unknown[] = [];

@@ -38,6 +38,22 @@ export type CompatibilityReportChapter = {
   readonly practicalAdvice: readonly string[];
 };
 
+export type CompatibilityReportRelationshipAnalysis = {
+  readonly connectionSummary: string;
+  readonly firstImpression: string;
+  readonly stayingPower: string;
+  readonly frictionPoints: readonly string[];
+  readonly categoryReading: string;
+  readonly aToBFatigue: string;
+  readonly bToAFatigue: string;
+  readonly communicationRecovery: string;
+  readonly roleMoneyLifeRhythm: string;
+  readonly categorySpecificAdvice: readonly string[];
+  readonly timingCautions: readonly string[];
+  readonly repairStrategy: readonly string[];
+  readonly riskManagement: readonly string[];
+};
+
 export type CompatibilityReportDraft = {
   readonly version: "compatibility_v1_draft";
   readonly productType: "saju_mbti_compatibility";
@@ -64,6 +80,7 @@ export type CompatibilityReportDraft = {
     readonly frictionPoints: readonly string[];
     readonly relationshipRules: readonly string[];
   };
+  readonly relationshipAnalysis: CompatibilityReportRelationshipAnalysis;
   readonly chapters: readonly CompatibilityReportChapter[];
   readonly finalAdvice: readonly string[];
   readonly safetyNotes: readonly string[];

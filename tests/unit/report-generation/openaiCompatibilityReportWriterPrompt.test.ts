@@ -25,15 +25,25 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain("long_term_rules");
     expect(promptText).toContain("relationshipType");
     expect(promptText).toContain(
-      "v1 관계 유형은 연애, 결혼/장기연애, 썸, 친구, 가족, 동업/업무 파트너만 지원한다.",
+      "v1 관계 유형은 love, marriage, parentChild, coworker, managerReport, businessPartner, friendship 7개 canonical category만 지원한다.",
     );
     expect(promptText).toContain("love=연애");
-    expect(promptText).toContain("marriage=결혼/장기연애");
-    expect(promptText).toContain("some=썸");
+    expect(promptText).toContain("marriage=결혼");
+    expect(promptText).toContain("parentChild=부모·자식");
+    expect(promptText).toContain("coworker=직장 동료");
+    expect(promptText).toContain("managerReport=상사·부하");
+    expect(promptText).toContain("businessPartner=사업/협업");
     expect(promptText).toContain("friendship=친구");
-    expect(promptText).toContain("family=가족");
-    expect(promptText).toContain("business_work_partner=동업/업무 파트너");
-    expect(promptText).toContain("business_work_partner는 동업/업무 파트너 관계");
+    expect(promptText).toContain("legacy category인 some, family, business_work_partner는 출력하지 마라.");
+    expect(promptText).toContain("directFindings는 매운맛 핵심 근거");
+    expect(promptText).toContain("궁합은 좋게만 돌려 말하지 않는다");
+    expect(promptText).toContain("A가 B에게 주는 피로와 B가 A에게 주는 피로를 분리");
+    expect(promptText).toContain("명리는 관계 구조, 반복 패턴");
+    expect(promptText).toContain("MBTI는 대화 방식, 반응 속도");
+    expect(promptText).toContain("명리와 MBTI를 같은 근거로 단정하지 마라");
+    expect(promptText).toContain("relationshipAnalysis는 필수다");
+    expect(promptText).toContain("aToBFatigue");
+    expect(promptText).toContain("bToAFatigue");
     expect(promptText).toContain(
       "Different relationship types must not reuse the same report structure verbatim.",
     );
@@ -46,27 +56,24 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain(
       "For marriage, write as a long-term living and commitment relationship",
     );
-    expect(promptText).toContain("For some, write as timing and ambiguity");
+    expect(promptText).toContain("For parentChild, write as expectation");
+    expect(promptText).toContain("For coworker, write as work speed");
+    expect(promptText).toContain("For managerReport, write as instruction");
+    expect(promptText).toContain("For businessPartner, write as money");
     expect(promptText).toContain(
       "For friendship, write as distance, help, and conversation",
     );
     expect(promptText).toContain(
-      "For family, write as family rhythm, roles, and emotional passage",
+      "parentChild/coworker/managerReport/businessPartner/friendship에서는 연애, 데이트, 애인, 설렘 같은 표현을 쓰지 마라.",
     );
     expect(promptText).toContain(
-      "For business_work_partner, write as role, responsibility, decision, and feedback",
+      "For businessPartner/coworker/managerReport, never use dating or romance language.",
     );
     expect(promptText).toContain(
-      "family/business_work_partner/friendship에서는 연애, 데이트, 애인, 설렘 같은 표현을 쓰지 마라.",
+      "For parentChild/friendship, never use dating or romance language.",
     );
     expect(promptText).toContain(
-      "For business_work_partner, never use dating or romance language.",
-    );
-    expect(promptText).toContain(
-      "For family/friendship, never use dating or romance language.",
-    );
-    expect(promptText).toContain(
-      "love/some/marriage에서는 업무 파트너처럼만 해석하지 마라.",
+      "love/marriage에서는 업무 파트너처럼만 해석하지 마라.",
     );
     expect(promptText).toContain(
       "relationshipType에 맞지 않는 score label이나 chapter wording을 만들지 마라.",
@@ -133,22 +140,22 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
       "relationshipType controls finalAdvice labels.",
     );
     expect(promptText).toContain(
-      "Never use business labels in love/some finalAdvice.",
+      "Never use business labels in love finalAdvice.",
     );
     expect(promptText).toContain(
-      "love/some must not use 피드백 규칙, 의사결정, 신뢰 관리, or 업무 기준.",
+      "love/marriage must not use 피드백 규칙, 의사결정, 신뢰 관리, or 업무 기준",
     );
     expect(promptText).toContain(
-      "business_work_partner finalAdvice labels should use 의사결정, 역할 분담, 돈과 자원, 피드백 규칙, 갈등 조정, 신뢰 관리, 업무 기준.",
+      "businessPartner/coworker/managerReport finalAdvice labels should use 의사결정, 역할 분담, 돈과 자원, 피드백 규칙, 갈등 조정, 신뢰 관리, 업무 기준.",
     );
     expect(promptText).toContain(
-      "Never use romance vocabulary in business/family/friendship.",
+      "Never use romance vocabulary in parentChild/coworker/managerReport/businessPartner/friendship.",
     );
     expect(promptText).toContain(
-      "For business_work_partner, use 협업/역할/책임/권한/피드백/기록 language.",
+      "For businessPartner/coworker/managerReport, use 협업/역할/책임/권한/피드백/기록 language.",
     );
     expect(promptText).toContain(
-      "For family, use 가족/생활/정서/말의 통로/역할 language.",
+      "For parentChild, use 가족/생활/정서/말의 통로/역할 language.",
     );
     expect(promptText).toContain("label the concept as 갈등 회복");
     expect(promptText).toContain("목·금가");
@@ -161,6 +168,8 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain(
       "Safety notes must not mention internal policy terms like diagnostic-only, 진단용, evidence, or debug.",
     );
+    expect(promptText).toContain("businessPartner는 수익/손실 확정 금지");
+    expect(promptText).toContain("friendship은 관계 단절 확정 금지");
     expect(promptText).toContain("Never output 빈 오행.");
     expect(promptText).toContain("finalAdvice labels must be unique where possible.");
     expect(promptText).toContain(

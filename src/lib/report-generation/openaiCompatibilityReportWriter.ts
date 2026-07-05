@@ -1,6 +1,7 @@
 import type { CompatibilityEvidencePacket } from "../report-knowledge/compatibilityEvidenceBuilder";
 import {
   getCompatibilityScoreCaution,
+  normalizeCompatibilityRelationCategory,
   type CompatibilityRelationshipType,
 } from "../report-knowledge/compatibilityTypes";
 import type { CompatibilityReportDraft } from "./compatibilityReportDraftTypes";
@@ -205,12 +206,12 @@ function attachDeterministicEvidence(input: {
     version: "compatibility_v1_draft",
     productType: "saju_mbti_compatibility",
     productVersion: "1.0",
-    relationshipType: input.evidencePacket.input.relationshipType,
+    relationshipType: input.evidencePacket.relationshipType,
     personALabel: input.evidencePacket.input.personA.displayName,
     personBLabel: input.evidencePacket.input.personB.displayName,
     scoreSummary: buildCompatibilityDraftScoreSummary({
       score: input.evidencePacket.score,
-      relationshipType: input.evidencePacket.input.relationshipType,
+      relationshipType: input.evidencePacket.relationshipType,
     }),
     chartComparison: {
       personA: input.evidencePacket.personAChartSummary,
@@ -266,10 +267,12 @@ function getSanitizedSafetyNote(
   relationshipType: CompatibilityRelationshipType | undefined,
   originalText: string,
 ): string {
-  if (relationshipType === "family" && /MBTI|missing|미입력|입력되지/u.test(originalText)) {
+  const relationCategory = normalizeCompatibilityRelationCategory(relationshipType);
+
+  if (relationCategory === "parentChild" && /MBTI|missing|미입력|입력되지/u.test(originalText)) {
     return "MBTI가 입력되지 않은 사람은 실제 대화 습관과 생활 리듬을 더 우선해서 보세요.";
   }
-  if (relationshipType === "business_work_partner") {
+  if (relationCategory === "businessPartner") {
     return "이 리포트는 파트너십의 성공이나 실패를 단정하지 않습니다.";
   }
 

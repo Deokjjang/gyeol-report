@@ -2,6 +2,7 @@ import type { CompatibilityReportDraft } from "./compatibilityReportDraftTypes";
 import { COMPATIBILITY_REPORT_CHAPTER_IDS } from "./compatibilityReportDraftTypes";
 import {
   adaptCompatibilityTextForRelationshipType,
+  normalizeCompatibilityRelationCategory,
   type CompatibilityRelationshipType,
 } from "../report-knowledge/compatibilityTypes";
 
@@ -23,6 +24,23 @@ const unsafeCompatibilityPhrases = [
   "운명 확정",
   "무조건",
   "반드시",
+  "무조건 헤어짐",
+  "반드시 결혼",
+  "절대 안 맞음",
+  "파국",
+  "이혼한다",
+  "상대가 돌아온다",
+  "재회 확률",
+  "임신",
+  "출산 확정",
+  "자식복 없다",
+  "배우자복 없다",
+  "수익 보장",
+  "사업 성공 보장",
+  "질병",
+  "사고가 난다",
+  "사고 확정",
+  "사망 예언",
   "100%",
   "이별 확정",
   "이혼 확정",
@@ -172,6 +190,22 @@ const internalArtifactPhrases = [
   "debug",
 ] as const;
 
+const compatibilityReportCanonicalRelationshipTypes = [
+  "love",
+  "marriage",
+  "parentChild",
+  "coworker",
+  "managerReport",
+  "businessPartner",
+  "friendship",
+] as const;
+
+const genericCompatibilityAdvicePhrases = [
+  "서로 배려하세요",
+  "서로 이해하세요",
+  "대화를 많이 하세요",
+] as const;
+
 export function sanitizeCompatibilityKoreanCopy(text: string): string {
   return text
     .split("정화을").join("정화를")
@@ -236,15 +270,16 @@ function sanitizeCompatibilitySafetyNote(
   relationshipType: CompatibilityReportDraft["relationshipType"],
 ): string {
   const sanitized = sanitizeCompatibilityVisibleText(text, relationshipType);
+  const relationCategory = normalizeCompatibilityRelationCategory(relationshipType);
 
   if (!containsInternalArtifactText(sanitized)) {
     return sanitized;
   }
 
-  if (relationshipType === "family" && /MBTI|missing|미입력|입력되지/u.test(text)) {
+  if (relationCategory === "parentChild" && /MBTI|missing|미입력|입력되지/u.test(text)) {
     return "MBTI가 입력되지 않은 사람은 실제 대화 습관과 생활 리듬을 더 우선해서 보세요.";
   }
-  if (relationshipType === "business_work_partner") {
+  if (relationCategory === "businessPartner") {
     return "이 리포트는 파트너십의 성공이나 실패를 단정하지 않습니다.";
   }
 
@@ -277,6 +312,54 @@ function sanitizeChartSummary(
       chart.diagnosticFeatureLabels,
       relationshipType,
     ),
+  };
+}
+
+function sanitizeRelationshipAnalysis(
+  analysis: CompatibilityReportDraft["relationshipAnalysis"],
+  relationshipType: CompatibilityReportDraft["relationshipType"],
+): CompatibilityReportDraft["relationshipAnalysis"] {
+  return {
+    connectionSummary: sanitizeCompatibilityVisibleText(
+      analysis.connectionSummary,
+      relationshipType,
+    ),
+    firstImpression: sanitizeCompatibilityVisibleText(
+      analysis.firstImpression,
+      relationshipType,
+    ),
+    stayingPower: sanitizeCompatibilityVisibleText(
+      analysis.stayingPower,
+      relationshipType,
+    ),
+    frictionPoints: sanitizeStringArray(analysis.frictionPoints, relationshipType),
+    categoryReading: sanitizeCompatibilityVisibleText(
+      analysis.categoryReading,
+      relationshipType,
+    ),
+    aToBFatigue: sanitizeCompatibilityVisibleText(
+      analysis.aToBFatigue,
+      relationshipType,
+    ),
+    bToAFatigue: sanitizeCompatibilityVisibleText(
+      analysis.bToAFatigue,
+      relationshipType,
+    ),
+    communicationRecovery: sanitizeCompatibilityVisibleText(
+      analysis.communicationRecovery,
+      relationshipType,
+    ),
+    roleMoneyLifeRhythm: sanitizeCompatibilityVisibleText(
+      analysis.roleMoneyLifeRhythm,
+      relationshipType,
+    ),
+    categorySpecificAdvice: sanitizeStringArray(
+      analysis.categorySpecificAdvice,
+      relationshipType,
+    ),
+    timingCautions: sanitizeStringArray(analysis.timingCautions, relationshipType),
+    repairStrategy: sanitizeStringArray(analysis.repairStrategy, relationshipType),
+    riskManagement: sanitizeStringArray(analysis.riskManagement, relationshipType),
   };
 }
 
@@ -336,6 +419,10 @@ function sanitizeCompatibilityDraft(
         draft.relationshipType,
       ),
     },
+    relationshipAnalysis: sanitizeRelationshipAnalysis(
+      draft.relationshipAnalysis,
+      draft.relationshipType,
+    ),
     chapters: draft.chapters.map((chapter) => ({
       ...chapter,
       title: sanitizeCompatibilityVisibleText(chapter.title, draft.relationshipType),
@@ -372,6 +459,30 @@ function isScore(value: unknown): value is number {
   return typeof value === "number" && Number.isInteger(value) && value >= 35 && value <= 95;
 }
 
+function isRelationshipAnalysis(
+  value: unknown,
+): value is CompatibilityReportDraft["relationshipAnalysis"] {
+  if (!isRecord(value)) {
+    return false;
+  }
+
+  return (
+    typeof value.connectionSummary === "string" &&
+    typeof value.firstImpression === "string" &&
+    typeof value.stayingPower === "string" &&
+    isStringArray(value.frictionPoints) &&
+    typeof value.categoryReading === "string" &&
+    typeof value.aToBFatigue === "string" &&
+    typeof value.bToAFatigue === "string" &&
+    typeof value.communicationRecovery === "string" &&
+    typeof value.roleMoneyLifeRhythm === "string" &&
+    isStringArray(value.categorySpecificAdvice) &&
+    isStringArray(value.timingCautions) &&
+    isStringArray(value.repairStrategy) &&
+    isStringArray(value.riskManagement)
+  );
+}
+
 function isCompatibilityReportDraftShape(
   value: unknown,
 ): value is CompatibilityReportDraft {
@@ -402,6 +513,7 @@ function isCompatibilityReportDraftShape(
     isScore(candidate.scoreSummary.breakdown.growthComplement) &&
     isRecord(candidate.chartComparison) &&
     isRecord(candidate.keyCompatibilityPoints) &&
+    isRelationshipAnalysis(candidate.relationshipAnalysis) &&
     Array.isArray(candidate.chapters) &&
     isStringArray(candidate.finalAdvice) &&
     isStringArray(candidate.safetyNotes)
@@ -419,6 +531,19 @@ function collectVisibleStrings(draft: CompatibilityReportDraft): readonly string
     ...draft.keyCompatibilityPoints.strengthPoints,
     ...draft.keyCompatibilityPoints.frictionPoints,
     ...draft.keyCompatibilityPoints.relationshipRules,
+    draft.relationshipAnalysis.connectionSummary,
+    draft.relationshipAnalysis.firstImpression,
+    draft.relationshipAnalysis.stayingPower,
+    ...draft.relationshipAnalysis.frictionPoints,
+    draft.relationshipAnalysis.categoryReading,
+    draft.relationshipAnalysis.aToBFatigue,
+    draft.relationshipAnalysis.bToAFatigue,
+    draft.relationshipAnalysis.communicationRecovery,
+    draft.relationshipAnalysis.roleMoneyLifeRhythm,
+    ...draft.relationshipAnalysis.categorySpecificAdvice,
+    ...draft.relationshipAnalysis.timingCautions,
+    ...draft.relationshipAnalysis.repairStrategy,
+    ...draft.relationshipAnalysis.riskManagement,
     ...draft.chapters.flatMap((chapter) => [
       chapter.title,
       chapter.headline,
@@ -458,10 +583,74 @@ function validateRequiredChapters(
   }
 }
 
+function validateCanonicalRelationshipType(
+  relationshipType: string,
+  errors: string[],
+): void {
+  if (
+    !compatibilityReportCanonicalRelationshipTypes.some(
+      (candidate) => candidate === relationshipType,
+    )
+  ) {
+    errors.push(`COMPATIBILITY_RELATIONSHIP_TYPE_NOT_CANONICAL: ${relationshipType}`);
+  }
+}
+
+function validateRelationshipAnalysis(
+  draft: CompatibilityReportDraft,
+  errors: string[],
+): void {
+  const analysis = draft.relationshipAnalysis;
+  const requiredTextFields = [
+    ["connectionSummary", analysis.connectionSummary],
+    ["firstImpression", analysis.firstImpression],
+    ["stayingPower", analysis.stayingPower],
+    ["categoryReading", analysis.categoryReading],
+    ["aToBFatigue", analysis.aToBFatigue],
+    ["bToAFatigue", analysis.bToAFatigue],
+    ["communicationRecovery", analysis.communicationRecovery],
+    ["roleMoneyLifeRhythm", analysis.roleMoneyLifeRhythm],
+  ] as const;
+  const requiredListFields = [
+    ["frictionPoints", analysis.frictionPoints],
+    ["categorySpecificAdvice", analysis.categorySpecificAdvice],
+    ["timingCautions", analysis.timingCautions],
+    ["repairStrategy", analysis.repairStrategy],
+    ["riskManagement", analysis.riskManagement],
+  ] as const;
+
+  for (const [field, value] of requiredTextFields) {
+    if (value.trim().length === 0) {
+      errors.push(`COMPATIBILITY_RELATIONSHIP_ANALYSIS_MISSING: ${field}`);
+    }
+  }
+
+  for (const [field, values] of requiredListFields) {
+    if (values.length === 0 || values.every((value) => value.trim().length === 0)) {
+      errors.push(`COMPATIBILITY_RELATIONSHIP_ANALYSIS_MISSING: ${field}`);
+    }
+  }
+
+  if (analysis.aToBFatigue.trim().length === 0) {
+    errors.push("COMPATIBILITY_A_TO_B_FATIGUE_MISSING");
+  }
+  if (analysis.bToAFatigue.trim().length === 0) {
+    errors.push("COMPATIBILITY_B_TO_A_FATIGUE_MISSING");
+  }
+}
+
 function validateUnsafeCopy(text: string, errors: string[]): void {
   for (const phrase of unsafeCompatibilityPhrases) {
     if (text.includes(phrase)) {
       errors.push(`UNSAFE_COMPATIBILITY_COPY: ${phrase}`);
+    }
+  }
+}
+
+function validateGenericCompatibilityAdvice(text: string, errors: string[]): void {
+  for (const phrase of genericCompatibilityAdvicePhrases) {
+    if (text.includes(phrase)) {
+      errors.push(`GENERIC_COMPATIBILITY_ADVICE: ${phrase}`);
     }
   }
 }
@@ -594,10 +783,12 @@ export function validateCompatibilityReportDraft(
 
   const sanitizedDraft = sanitizeCompatibilityDraft(draft);
 
+  validateCanonicalRelationshipType(sanitizedDraft.relationshipType, errors);
   if (!isScore(sanitizedDraft.scoreSummary.totalScore)) {
     errors.push("COMPATIBILITY_SCORE_MISSING");
   }
   validateRequiredChapters(sanitizedDraft, errors);
+  validateRelationshipAnalysis(sanitizedDraft, errors);
   if (sanitizedDraft.finalAdvice.length < 3) {
     errors.push("COMPATIBILITY_FINAL_ADVICE_MISSING");
   }
@@ -607,6 +798,7 @@ export function validateCompatibilityReportDraft(
 
   const text = collectVisibleStrings(sanitizedDraft).join("\n");
   validateUnsafeCopy(text, errors);
+  validateGenericCompatibilityAdvice(text, errors);
   validateMbtiCandidateRecommendations({
     text,
     allowedMbtiTerms: options.allowedMbtiTerms ?? [],

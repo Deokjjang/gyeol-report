@@ -42,6 +42,33 @@ function createValidCompatibilityDraft(): CompatibilityReportDraft {
       frictionPoints: ["한쪽은 빠른 결론, 한쪽은 조건 확인이 필요해 대화 속도가 어긋날 수 있습니다."],
       relationshipRules: ["중요한 결정은 결론 시간과 검토 시간을 따로 정해야 합니다."],
     },
+    relationshipAnalysis: {
+      connectionSummary:
+        "빠른 구조화와 깊은 검토가 만나 끌림은 있지만 속도 조율이 필요한 궁합입니다.",
+      firstImpression:
+        "덕민님은 방향을 먼저 잡고, 소담님은 전제와 조건을 확인하며 관계를 읽습니다.",
+      stayingPower:
+        "결론 시간과 검토 시간을 분리하면 서로의 방식이 장기 안정성으로 바뀝니다.",
+      frictionPoints: [
+        "빠른 결론과 느린 검토가 같은 대화 안에서 부딪힐 수 있습니다.",
+      ],
+      categoryReading:
+        "연애 관계에서는 끌림보다 대화 속도와 감정 확인 방식이 체감 궁합을 좌우합니다.",
+      aToBFatigue:
+        "덕민님은 소담님의 검토가 길어질수록 결정이 미뤄진다고 느낄 수 있습니다.",
+      bToAFatigue:
+        "소담님은 덕민님의 결론 속도가 빠를수록 감정과 전제를 건너뛴다고 느낄 수 있습니다.",
+      communicationRecovery:
+        "싸운 뒤 바로 결론을 내기보다 감정 확인과 실행 결정을 분리해야 회복이 빠릅니다.",
+      roleMoneyLifeRhythm:
+        "돈과 일정은 각자 관리하되 공유 기준만 먼저 맞추는 쪽이 덜 지칩니다.",
+      categorySpecificAdvice: [
+        "연애에서는 답을 재촉하기보다 언제 다시 이야기할지 먼저 정하세요.",
+      ],
+      timingCautions: ["중요한 약속 변경은 즉시 결론보다 확인 시간을 먼저 둬야 합니다."],
+      repairStrategy: ["결론, 검토, 실행을 한 번에 처리하지 말고 단계로 나누세요."],
+      riskManagement: ["속도 차이를 성의 부족으로 해석하지 않는 규칙이 필요합니다."],
+    },
     chapters: [
       "overview",
       "attraction",
@@ -118,6 +145,70 @@ describe("compatibilityReportDraftValidator", () => {
     });
 
     expect(result.errors).toContain("UNSAFE_COMPATIBILITY_COPY: 천생연분 확정");
+  });
+
+  it("rejects launch forbidden relationship and business guarantee copy", () => {
+    const draft = createValidCompatibilityDraft();
+    const result = validate({
+      ...draft,
+      relationshipAnalysis: {
+        ...draft.relationshipAnalysis,
+        riskManagement: [
+          ...draft.relationshipAnalysis.riskManagement,
+          "이 조합은 파국으로 갑니다. 사업 성공 보장도 가능합니다.",
+        ],
+      },
+    });
+
+    expect(result.errors).toEqual(
+      expect.arrayContaining([
+        "UNSAFE_COMPATIBILITY_COPY: 파국",
+        "UNSAFE_COMPATIBILITY_COPY: 사업 성공 보장",
+      ]),
+    );
+  });
+
+  it("rejects missing A to B and B to A fatigue sections", () => {
+    const draft = createValidCompatibilityDraft();
+    const result = validate({
+      ...draft,
+      relationshipAnalysis: {
+        ...draft.relationshipAnalysis,
+        aToBFatigue: "",
+        bToAFatigue: "",
+      },
+    });
+
+    expect(result.errors).toEqual(
+      expect.arrayContaining([
+        "COMPATIBILITY_RELATIONSHIP_ANALYSIS_MISSING: aToBFatigue",
+        "COMPATIBILITY_RELATIONSHIP_ANALYSIS_MISSING: bToAFatigue",
+        "COMPATIBILITY_A_TO_B_FATIGUE_MISSING",
+        "COMPATIBILITY_B_TO_A_FATIGUE_MISSING",
+      ]),
+    );
+  });
+
+  it("rejects legacy relationshipType values in writer drafts", () => {
+    const draft = createValidCompatibilityDraft();
+    const result = validate({
+      ...draft,
+      relationshipType: "business_work_partner",
+    });
+
+    expect(result.errors).toContain(
+      "COMPATIBILITY_RELATIONSHIP_TYPE_NOT_CANONICAL: business_work_partner",
+    );
+  });
+
+  it("rejects generic relationship advice without concrete situation", () => {
+    const draft = createValidCompatibilityDraft();
+    const result = validate({
+      ...draft,
+      finalAdvice: [...draft.finalAdvice, "서로 배려하세요"],
+    });
+
+    expect(result.errors).toContain("GENERIC_COMPATIBILITY_ADVICE: 서로 배려하세요");
   });
 
   it("blocks internal artifact labels from visible draft fields", () => {
@@ -334,7 +425,7 @@ describe("compatibilityReportDraftValidator", () => {
     const draft = createValidCompatibilityDraft();
     const business = validate({
       ...draft,
-      relationshipType: "business_work_partner",
+      relationshipType: "businessPartner",
       openingSummary:
         "연애 데이트 애인 설렘 호감 끌림 관계의 온도 즐거움보다 의무 관계가 쉽게 흩어지지 않고 상대가 내 부족한 부분을 넘깁니다.",
       scoreSummary: {
@@ -344,7 +435,7 @@ describe("compatibilityReportDraftValidator", () => {
     });
     const family = validate({
       ...draft,
-      relationshipType: "family",
+      relationshipType: "parentChild",
       openingSummary:
         "연애 데이트 애인 설렘 호감 끌림 방향과 구조 온도와 반응 관계가 입체적으로 굴러갑니다.",
     });
@@ -401,11 +492,11 @@ describe("compatibilityReportDraftValidator", () => {
         "실행 피드백만 하는 구조.",
         "자기 방식으로 실행 피드백하면 됩니다.",
       ].join(" "),
-      "business_work_partner",
+      "businessPartner",
     );
     const reaction = sanitizeCompatibilityVisibleText(
       "상황이 바뀌면 빠르게 반응합니다.",
-      "business_work_partner",
+      "businessPartner",
     );
 
     expect(sanitized).toContain("협업 시너지를 만듭니다.");

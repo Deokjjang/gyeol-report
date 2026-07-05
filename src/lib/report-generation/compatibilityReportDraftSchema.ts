@@ -39,6 +39,41 @@ const chapterSchema = {
   },
 } as const;
 
+const relationshipAnalysisSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: [
+    "connectionSummary",
+    "firstImpression",
+    "stayingPower",
+    "frictionPoints",
+    "categoryReading",
+    "aToBFatigue",
+    "bToAFatigue",
+    "communicationRecovery",
+    "roleMoneyLifeRhythm",
+    "categorySpecificAdvice",
+    "timingCautions",
+    "repairStrategy",
+    "riskManagement",
+  ],
+  properties: {
+    connectionSummary: { type: "string" },
+    firstImpression: { type: "string" },
+    stayingPower: { type: "string" },
+    frictionPoints: stringArraySchema,
+    categoryReading: { type: "string" },
+    aToBFatigue: { type: "string" },
+    bToAFatigue: { type: "string" },
+    communicationRecovery: { type: "string" },
+    roleMoneyLifeRhythm: { type: "string" },
+    categorySpecificAdvice: stringArraySchema,
+    timingCautions: stringArraySchema,
+    repairStrategy: stringArraySchema,
+    riskManagement: stringArraySchema,
+  },
+} as const;
+
 export const compatibilityReportDraftJsonSchema = {
   type: "object",
   additionalProperties: false,
@@ -55,6 +90,7 @@ export const compatibilityReportDraftJsonSchema = {
     "scoreSummary",
     "chartComparison",
     "keyCompatibilityPoints",
+    "relationshipAnalysis",
     "chapters",
     "finalAdvice",
     "safetyNotes",
@@ -68,10 +104,11 @@ export const compatibilityReportDraftJsonSchema = {
       enum: [
         "love",
         "marriage",
-        "some",
+        "parentChild",
+        "coworker",
+        "managerReport",
+        "businessPartner",
         "friendship",
-        "family",
-        "business_work_partner",
       ],
     },
     personALabel: { type: "string" },
@@ -134,6 +171,7 @@ export const compatibilityReportDraftJsonSchema = {
         relationshipRules: stringArraySchema,
       },
     },
+    relationshipAnalysis: relationshipAnalysisSchema,
     chapters: {
       type: "array",
       items: chapterSchema,

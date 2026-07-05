@@ -35,10 +35,11 @@ describe("compatibilityReportDraftSchema", () => {
       enum: [
         "love",
         "marriage",
-        "some",
+        "parentChild",
+        "coworker",
+        "managerReport",
+        "businessPartner",
         "friendship",
-        "family",
-        "business_work_partner",
       ],
     });
     expect(getCompatibilityReportDraftSchemaTopLevelKeys()).toEqual(
@@ -46,6 +47,7 @@ describe("compatibilityReportDraftSchema", () => {
         "scoreSummary",
         "chartComparison",
         "keyCompatibilityPoints",
+        "relationshipAnalysis",
         "chapters",
         "finalAdvice",
         "safetyNotes",
@@ -66,6 +68,8 @@ describe("compatibilityReportDraftSchema", () => {
       type: "array",
       items: { type: "string" },
     });
+    expect(serialized).toContain("aToBFatigue");
+    expect(serialized).toContain("bToAFatigue");
     expect(serialized).not.toContain("unknown");
     expect(serialized).not.toContain("anyOf");
     expect(serialized).not.toContain("oneOf");
