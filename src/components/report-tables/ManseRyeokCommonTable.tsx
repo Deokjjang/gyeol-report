@@ -41,7 +41,7 @@ export default function ManseRyeokCommonTable({
   return (
     <section
       className={joinClassNames(
-        "overflow-hidden rounded-lg border border-[#d8d1c4] bg-[#fffdf8] shadow-[0_14px_46px_rgba(42,31,24,0.07)]",
+        "max-w-full overflow-hidden rounded-lg border border-[#d8d1c4] bg-[#fffdf8] shadow-[0_14px_46px_rgba(42,31,24,0.07)]",
         className,
       )}
     >

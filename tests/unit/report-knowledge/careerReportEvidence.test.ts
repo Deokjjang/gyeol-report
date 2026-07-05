@@ -28,6 +28,13 @@ describe("careerReportEvidence", () => {
     expect(evidence.userContext.fieldLabel).toBe("개발·서비스 기획");
     expect(evidence.dayMaster).toBe("甲");
     expect(evidence.mbtiType).toBe("ENTJ");
+    expect(evidence.manseRyeokPillars).toHaveLength(4);
+    expect(evidence.manseRyeokPillars?.find((pillar) => pillar.columnId === "day")).toMatchObject({
+      pillar: "甲申",
+      tenGod: expect.arrayContaining(["비견", "편관"]),
+      hiddenStems: expect.arrayContaining(["庚 편관"]),
+      twelveLifeStage: ["절"],
+    });
     expect(evidence.investmentProfile.disclaimer).toContain("금융 자문이 아닙니다");
     expect(evidence.recommendedJobs[0]).toMatchObject({
       fit: "high",

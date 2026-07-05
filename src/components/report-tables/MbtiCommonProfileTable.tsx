@@ -25,7 +25,7 @@ export default function MbtiCommonProfileTable({
   return (
     <section
       className={joinClassNames(
-        "overflow-hidden rounded-lg border border-[#d8d1c4] bg-[#fffdf8] shadow-[0_14px_46px_rgba(42,31,24,0.07)]",
+        "max-w-full overflow-hidden rounded-lg border border-[#d8d1c4] bg-[#fffdf8] shadow-[0_14px_46px_rgba(42,31,24,0.07)]",
         className,
       )}
     >
@@ -148,13 +148,13 @@ function PreferenceDescriptionCell({
     <div
       aria-current={option.selected ? "true" : undefined}
       className={joinClassNames(
-        "flex min-h-16 flex-col justify-center gap-1 border-l border-[#eadfce] px-1.5 py-2 text-center break-keep sm:px-2",
+        "flex min-h-16 min-w-0 flex-col justify-center gap-1 border-l border-[#eadfce] px-1.5 py-2 text-center [overflow-wrap:anywhere] sm:px-2",
         option.selected
           ? "mbti-preference-selected bg-[#8a2550] text-white"
           : "bg-[#fffdf8] text-[#3a2f29]",
       )}
     >
-      <span className="text-[13px] font-extrabold sm:text-sm">
+      <span className="min-w-0 text-[13px] font-extrabold sm:text-sm">
         {option.nameKo} {option.nameEn}
       </span>
       <span className="text-[11px] leading-5 sm:text-xs">{option.description}</span>

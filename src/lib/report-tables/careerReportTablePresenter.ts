@@ -57,11 +57,18 @@ export function buildCareerReportMbtiProfileTableData(
 function buildCareerFourPillarGrid(
   evidence: CareerReportEvidencePacket,
 ): readonly ManseRyeokFourPillarGridColumnInput[] {
+  const detailedPillars = new Map(
+    (evidence.manseRyeokPillars ?? []).map((pillar) => [
+      pillar.columnId,
+      pillar,
+    ]),
+  );
+
   return [
-    buildPillarColumn("year", evidence.userPillars.year),
-    buildPillarColumn("month", evidence.userPillars.month),
-    buildPillarColumn("day", evidence.userPillars.day),
-    buildPillarColumn("hour", evidence.userPillars.hour),
+    buildPillarColumn("year", evidence.userPillars.year, detailedPillars),
+    buildPillarColumn("month", evidence.userPillars.month, detailedPillars),
+    buildPillarColumn("day", evidence.userPillars.day, detailedPillars),
+    buildPillarColumn("hour", evidence.userPillars.hour, detailedPillars),
   ].filter(
     (column): column is ManseRyeokFourPillarGridColumnInput =>
       column !== null,
@@ -71,7 +78,29 @@ function buildCareerFourPillarGrid(
 function buildPillarColumn(
   columnId: ManseRyeokFourPillarGridColumnInput["columnId"],
   pillar: string | undefined,
+  detailedPillars: ReadonlyMap<
+    ManseRyeokFourPillarGridColumnInput["columnId"],
+    NonNullable<CareerReportEvidencePacket["manseRyeokPillars"]>[number]
+  >,
 ): ManseRyeokFourPillarGridColumnInput | null {
+  const detailedPillar = detailedPillars.get(columnId);
+
+  if (detailedPillar !== undefined) {
+    return {
+      columnId,
+      pillar: detailedPillar.pillar,
+      heavenlyStem: detailedPillar.heavenlyStem,
+      earthlyBranch: detailedPillar.earthlyBranch,
+      tenGod: detailedPillar.tenGod,
+      hiddenStems: detailedPillar.hiddenStems,
+      twelveLifeStage: detailedPillar.twelveLifeStage,
+      twelveSinsal: detailedPillar.twelveSinsal,
+      sinsal: detailedPillar.sinsal,
+      gwiin: detailedPillar.gwiin,
+      interactions: detailedPillar.interactions,
+    };
+  }
+
   if (pillar === undefined || pillar.trim().length === 0) {
     return null;
   }

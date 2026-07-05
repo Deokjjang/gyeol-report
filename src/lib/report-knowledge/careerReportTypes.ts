@@ -62,6 +62,22 @@ export interface CareerSignal {
   readonly plain: string;
 }
 
+export type CareerReportPillarKey = "year" | "month" | "day" | "hour";
+
+export interface CareerReportManseRyeokPillarDetail {
+  readonly columnId: CareerReportPillarKey;
+  readonly pillar: string;
+  readonly heavenlyStem: HeavenlyStem;
+  readonly earthlyBranch: EarthlyBranch;
+  readonly tenGod: readonly string[];
+  readonly hiddenStems: readonly string[];
+  readonly twelveLifeStage: readonly string[];
+  readonly twelveSinsal: readonly string[];
+  readonly sinsal: readonly string[];
+  readonly gwiin: readonly string[];
+  readonly interactions: readonly string[];
+}
+
 export interface CareerReportEvidencePacket {
   readonly productType: CareerReportProductType;
   readonly productVersion: "v1";
@@ -74,6 +90,7 @@ export interface CareerReportEvidencePacket {
     readonly day: string;
     readonly hour?: string;
   };
+  readonly manseRyeokPillars?: readonly CareerReportManseRyeokPillarDetail[];
   readonly natalLabels: readonly string[];
   readonly mbtiType?: string | null;
   readonly myeongliCareerBasis: {

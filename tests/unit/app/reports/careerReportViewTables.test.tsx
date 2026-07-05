@@ -165,6 +165,11 @@ describe("CareerReportView common table slots", () => {
     );
 
     expect(html).toContain("덕민님의 만세력");
+    expect(html).toContain("지장간");
+    expect(html).toContain("십이운성");
+    expect(html).toContain("십이신살");
+    expect(html).toContain("신살/귀인");
+    expect(html).toContain("합충형파해");
     expect(html).toContain("ENTJ 대담한 통솔자");
     expect(html).toContain("선호 지표 비교");
     expect(html).toContain("기능 서열");

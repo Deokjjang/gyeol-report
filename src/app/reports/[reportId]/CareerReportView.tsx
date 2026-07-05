@@ -138,14 +138,14 @@ function renderKeywordChips(items: readonly string[], label: string) {
 
 function sectionClassName(tone: SectionTone): string {
   if (tone === "summary") {
-    return "motion-safe:animate-[gyeol-reveal_520ms_ease-out_both] space-y-5 rounded-lg border border-[#7f1d38]/20 bg-[#fffdf8] p-5 shadow-[0_22px_80px_rgba(40,24,28,0.08)] ring-1 ring-white/80 sm:p-6";
+    return "motion-safe:animate-[gyeol-reveal_520ms_ease-out_both] min-w-0 max-w-full space-y-5 overflow-hidden rounded-lg border border-[#7f1d38]/20 bg-[#fffdf8] p-5 shadow-[0_22px_80px_rgba(40,24,28,0.08)] ring-1 ring-white/80 sm:p-6";
   }
 
   if (tone === "caution") {
-    return "motion-safe:animate-[gyeol-reveal_520ms_ease-out_both] space-y-5 rounded-lg border border-[#c79a43]/35 bg-[#fff8ea] p-5 shadow-[0_16px_60px_rgba(96,66,22,0.06)] ring-1 ring-white/70 sm:p-6";
+    return "motion-safe:animate-[gyeol-reveal_520ms_ease-out_both] min-w-0 max-w-full space-y-5 overflow-hidden rounded-lg border border-[#c79a43]/35 bg-[#fff8ea] p-5 shadow-[0_16px_60px_rgba(96,66,22,0.06)] ring-1 ring-white/70 sm:p-6";
   }
 
-  return "motion-safe:animate-[gyeol-reveal_520ms_ease-out_both] space-y-5 rounded-lg border border-[#d8d1c4] bg-[#fffdf8] p-5 shadow-[0_16px_64px_rgba(42,31,24,0.06)] ring-1 ring-white/70 sm:p-6";
+  return "motion-safe:animate-[gyeol-reveal_520ms_ease-out_both] min-w-0 max-w-full space-y-5 overflow-hidden rounded-lg border border-[#d8d1c4] bg-[#fffdf8] p-5 shadow-[0_16px_64px_rgba(42,31,24,0.06)] ring-1 ring-white/70 sm:p-6";
 }
 
 function CareerSection({
@@ -171,11 +171,11 @@ function CareerSection({
       data-career-report-section={id}
       className={sectionClassName(tone)}
     >
-      <div className="space-y-2.5">
+      <div className="min-w-0 space-y-2.5">
         <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#7f1d38]">
           {eyebrow}
         </p>
-        <h2 id={titleId} className="text-[1.45rem] font-extrabold leading-8 tracking-normal text-[#201a18] sm:text-2xl">
+        <h2 id={titleId} className="text-[1.45rem] font-extrabold leading-8 tracking-normal text-[#201a18] [overflow-wrap:anywhere] sm:text-2xl">
           {title}
         </h2>
         {body === undefined ? null : (
@@ -252,7 +252,7 @@ function renderCommonTableArea({
       title="원국과 MBTI 행동층을 먼저 봅니다"
       body="직업·돈·학업 해석에 들어가기 전, 사주 원국의 구조와 MBTI 행동 패턴을 같은 화면에서 확인할 수 있게 배치했습니다."
     >
-      <div className="grid gap-4 sm:gap-5">
+      <div className="grid min-w-0 gap-4 sm:gap-5">
         {renderTableSlot({
           title: "공통 만세력표",
           description:
@@ -290,7 +290,7 @@ export function CareerReportView({
     ));
 
   return (
-    <article className="mx-auto max-w-5xl space-y-5 text-[#201a18] sm:space-y-6">
+    <article className="mx-auto w-full min-w-0 max-w-5xl space-y-5 text-[#201a18] sm:space-y-6">
       {devStatus === undefined ? null : (
         <aside className="w-fit rounded-md border border-[#d8d1c4] bg-[#fffdf8]/90 px-3 py-1.5 text-[11px] font-bold text-[#8b8174]">
           <span className="text-[#7f1d38]">미리보기</span>
@@ -302,13 +302,13 @@ export function CareerReportView({
         data-career-report-section="report_header"
         className="motion-safe:animate-[gyeol-reveal_520ms_ease-out_both] overflow-hidden rounded-lg border border-[#d8d1c4] bg-[#fffdf8] shadow-[0_28px_100px_rgba(42,31,24,0.12)] ring-1 ring-white/80"
       >
-        <div className="grid gap-6 border-b border-[#eadfce] bg-[#fffaf3] p-5 sm:p-7 md:grid-cols-[1fr_auto] md:items-start">
-          <div className="space-y-4">
+        <div className="grid min-w-0 gap-6 border-b border-[#eadfce] bg-[#fffaf3] p-5 sm:p-7 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
+          <div className="min-w-0 space-y-4">
             <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#7f1d38]">
               직업·커리어·돈·학업 리포트
             </p>
             <div className="space-y-3">
-              <h1 className="max-w-3xl text-[2rem] font-extrabold leading-10 tracking-normal text-[#201a18] sm:text-[2.65rem] sm:leading-[3.1rem]">
+              <h1 className="max-w-3xl text-[1.85rem] font-extrabold leading-9 tracking-normal text-[#201a18] [overflow-wrap:anywhere] sm:text-[2.65rem] sm:leading-[3.1rem]">
                 {text(draft.openingTitle)}
               </h1>
               <p className="max-w-3xl text-base leading-8 text-[#51453d]">
@@ -316,7 +316,7 @@ export function CareerReportView({
               </p>
             </div>
           </div>
-          <div className="grid gap-2 text-xs font-bold text-[#4c433c] sm:min-w-48">
+          <div className="grid min-w-0 gap-2 text-xs font-bold text-[#4c433c] sm:min-w-48">
             <span className="rounded-md border border-[#d8d1c4] bg-[#fffdf8] px-3 py-2">
               이름 · {text(draft.personLabel)}
             </span>
@@ -330,8 +330,8 @@ export function CareerReportView({
             )}
           </div>
         </div>
-        <div className="grid gap-4 p-5 sm:p-7 md:grid-cols-[1fr_0.8fr]">
-          <p className="rounded-lg border border-[#7f1d38]/20 bg-[#7f1d38]/10 p-4 text-base font-extrabold leading-8 text-[#7f1d38]">
+        <div className="grid min-w-0 gap-4 p-5 sm:p-7 md:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)]">
+          <p className="rounded-lg border border-[#7f1d38]/20 bg-[#7f1d38]/10 p-4 text-base font-extrabold leading-8 text-[#7f1d38] [overflow-wrap:anywhere]">
             {text(draft.coreLine)}
           </p>
           <p className="rounded-lg border border-[#c79a43]/30 bg-[#fff8ea] p-4 text-sm font-semibold leading-7 text-[#5a4633]">
@@ -526,8 +526,8 @@ export function CareerReportView({
         title="강하게 밀 시기와 줄일 시기"
       >
         <div className="space-y-4">
-          {draft.careerTiming.map((timing) => (
-            <section key={timing.year} className="grid gap-3 border-l-2 border-[#c79a43] pl-4 md:grid-cols-[8rem_1fr]">
+          {draft.careerTiming.map((timing, index) => (
+            <section key={`${timing.year}-${timing.label}-${index}`} className="grid gap-3 border-l-2 border-[#c79a43] pl-4 md:grid-cols-[8rem_1fr]">
               <div>
                 <p className="text-xl font-extrabold text-[#201a18]">
                   {timing.year}

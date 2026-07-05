@@ -35,14 +35,24 @@ describe("career report table presenter", () => {
     expect(data.stemRow.day).toMatchObject({
       hanja: "甲",
       ko: "갑",
+      tenGod: "비견",
       colorToken: "wood-green",
     });
     expect(data.branchRow.day).toMatchObject({
       hanja: "申",
       ko: "신",
+      tenGod: "편관",
       colorToken: "metal-gold",
     });
-    expect(data.detailRows[0].cells.day).toEqual([]);
+    expect(data.detailRows.find((row) => row.key === "hiddenStems")?.cells.day).toEqual(
+      expect.arrayContaining(["庚 편관"]),
+    );
+    expect(data.detailRows.find((row) => row.key === "twelveLifeStage")?.cells.day).toEqual([
+      "절",
+    ]);
+    expect(data.detailRows.find((row) => row.key === "twelveSinsal")?.cells.day.length).toBeGreaterThan(0);
+    expect(data.detailRows.find((row) => row.key === "sinsalAndGwiin")?.cells.day.length).toBeGreaterThan(0);
+    expect(data.detailRows.find((row) => row.key === "interactions")?.cells.day.length).toBeGreaterThan(0);
   });
 
   it("builds MBTI profile table data from the runtime source adapter", () => {

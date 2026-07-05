@@ -12,9 +12,21 @@ import {
   buildProductBridgeEvidence,
   type MyeongliSignal,
 } from "./bridge";
+import { calculateSaju } from "../saju/calculateSaju";
+import type {
+  EarthlyBranch as SajuEarthlyBranch,
+  Gender as SajuGender,
+  HeavenlyStem as SajuHeavenlyStem,
+  Pillar as SajuPillar,
+  SajuCalcInput,
+  SajuCalcResult,
+  TenGod as SajuTenGod,
+} from "../saju/types";
 import type {
   CareerReportEvidencePacket,
   CareerReportFixturePerson,
+  CareerReportManseRyeokPillarDetail,
+  CareerReportPillarKey,
   CareerSignal,
   InvestmentStyleArchetype,
   MoneyStyleArchetype,
@@ -79,6 +91,179 @@ const allTenGods = [
   "편인",
   "정인",
 ] as const satisfies readonly TenGod[];
+
+const sajuTenGodLabels = {
+  比肩: "비견",
+  劫財: "겁재",
+  食神: "식신",
+  傷官: "상관",
+  偏財: "편재",
+  正財: "정재",
+  偏官: "편관",
+  正官: "정관",
+  偏印: "편인",
+  正印: "정인",
+} as const satisfies Record<SajuTenGod, TenGod>;
+
+const careerPillarKeys = [
+  "year",
+  "month",
+  "day",
+  "hour",
+] as const satisfies readonly CareerReportPillarKey[];
+
+const pillarPositionLabels = {
+  year: "연",
+  month: "월",
+  day: "일",
+  hour: "시",
+} as const satisfies Record<CareerReportPillarKey, string>;
+
+const twelveLifeStageByDayStem = {
+  甲: {
+    亥: "장생",
+    子: "목욕",
+    丑: "관대",
+    寅: "건록",
+    卯: "제왕",
+    辰: "쇠",
+    巳: "병",
+    午: "사",
+    未: "묘",
+    申: "절",
+    酉: "태",
+    戌: "양",
+  },
+  乙: {
+    午: "장생",
+    巳: "목욕",
+    辰: "관대",
+    卯: "건록",
+    寅: "제왕",
+    丑: "쇠",
+    子: "병",
+    亥: "사",
+    戌: "묘",
+    酉: "절",
+    申: "태",
+    未: "양",
+  },
+  丙: {
+    寅: "장생",
+    卯: "목욕",
+    辰: "관대",
+    巳: "건록",
+    午: "제왕",
+    未: "쇠",
+    申: "병",
+    酉: "사",
+    戌: "묘",
+    亥: "절",
+    子: "태",
+    丑: "양",
+  },
+  丁: {
+    酉: "장생",
+    申: "목욕",
+    未: "관대",
+    午: "건록",
+    巳: "제왕",
+    辰: "쇠",
+    卯: "병",
+    寅: "사",
+    丑: "묘",
+    子: "절",
+    亥: "태",
+    戌: "양",
+  },
+  戊: {
+    寅: "장생",
+    卯: "목욕",
+    辰: "관대",
+    巳: "건록",
+    午: "제왕",
+    未: "쇠",
+    申: "병",
+    酉: "사",
+    戌: "묘",
+    亥: "절",
+    子: "태",
+    丑: "양",
+  },
+  己: {
+    酉: "장생",
+    申: "목욕",
+    未: "관대",
+    午: "건록",
+    巳: "제왕",
+    辰: "쇠",
+    卯: "병",
+    寅: "사",
+    丑: "묘",
+    子: "절",
+    亥: "태",
+    戌: "양",
+  },
+  庚: {
+    巳: "장생",
+    午: "목욕",
+    未: "관대",
+    申: "건록",
+    酉: "제왕",
+    戌: "쇠",
+    亥: "병",
+    子: "사",
+    丑: "묘",
+    寅: "절",
+    卯: "태",
+    辰: "양",
+  },
+  辛: {
+    子: "장생",
+    亥: "목욕",
+    戌: "관대",
+    酉: "건록",
+    申: "제왕",
+    未: "쇠",
+    午: "병",
+    巳: "사",
+    辰: "묘",
+    卯: "절",
+    寅: "태",
+    丑: "양",
+  },
+  壬: {
+    申: "장생",
+    酉: "목욕",
+    戌: "관대",
+    亥: "건록",
+    子: "제왕",
+    丑: "쇠",
+    寅: "병",
+    卯: "사",
+    辰: "묘",
+    巳: "절",
+    午: "태",
+    未: "양",
+  },
+  癸: {
+    卯: "장생",
+    寅: "목욕",
+    丑: "관대",
+    子: "건록",
+    亥: "제왕",
+    戌: "쇠",
+    酉: "병",
+    申: "사",
+    未: "묘",
+    午: "절",
+    巳: "태",
+    辰: "양",
+  },
+} as const satisfies Record<
+  SajuHeavenlyStem,
+  Record<SajuEarthlyBranch, string>
+>;
 
 const tenGodGroupSignals = [
   {
@@ -1206,6 +1391,214 @@ function buildCareerBridgeEvidence(input: {
   return buildProductBridgeEvidence(bridgePacket, "careerMoneyStudy");
 }
 
+function buildCareerSajuCalcInput(
+  person: CareerReportFixturePerson,
+): SajuCalcInput | null {
+  if (person.birthDate === undefined) {
+    return null;
+  }
+
+  const birthTime = person.birthTime?.trim();
+
+  return {
+    birthDate: person.birthDate,
+    ...(birthTime === undefined || birthTime.length === 0
+      ? {}
+      : { birthTime }),
+    birthTimeUnknown: birthTime === undefined || birthTime.length === 0,
+    calendarType: "SOLAR",
+    gender: toSajuGender(person.gender),
+    timezone: "Asia/Seoul",
+  };
+}
+
+function toSajuGender(gender: string | undefined): SajuGender {
+  if (gender === "male") {
+    return "MALE";
+  }
+
+  if (gender === "female") {
+    return "FEMALE";
+  }
+
+  return "OTHER_OR_UNSPECIFIED";
+}
+
+function buildCareerManseRyeokPillars(
+  person: CareerReportFixturePerson,
+): readonly CareerReportManseRyeokPillarDetail[] {
+  const sajuInput = buildCareerSajuCalcInput(person);
+
+  if (sajuInput === null) {
+    return [];
+  }
+
+  try {
+    return buildCareerManseRyeokPillarsFromSaju(calculateSaju(sajuInput));
+  } catch {
+    return [];
+  }
+}
+
+function buildCareerManseRyeokPillarsFromSaju(
+  result: SajuCalcResult,
+): readonly CareerReportManseRyeokPillarDetail[] {
+  return careerPillarKeys
+    .map((columnId) => {
+      const pillar = result.pillars[columnId];
+
+      if (pillar === undefined) {
+        return null;
+      }
+
+      return buildCareerManseRyeokPillarDetail({
+        columnId,
+        pillar,
+        result,
+      });
+    })
+    .filter(
+      (detail): detail is CareerReportManseRyeokPillarDetail =>
+        detail !== null,
+    );
+}
+
+function buildCareerManseRyeokPillarDetail(input: {
+  readonly columnId: CareerReportPillarKey;
+  readonly pillar: SajuPillar;
+  readonly result: SajuCalcResult;
+}): CareerReportManseRyeokPillarDetail {
+  return {
+    columnId: input.columnId,
+    pillar: `${input.pillar.stem}${input.pillar.branch}`,
+    heavenlyStem: input.pillar.stem,
+    earthlyBranch: input.pillar.branch,
+    tenGod: buildPillarTenGodLabels(input),
+    hiddenStems: buildHiddenStemLabels(input),
+    twelveLifeStage: [
+      twelveLifeStageByDayStem[input.result.dayMaster][input.pillar.branch],
+    ],
+    twelveSinsal: buildShinsalLabels(input, "twelve"),
+    sinsal: buildShinsalLabels(input, "sinsal"),
+    gwiin: buildShinsalLabels(input, "gwiin"),
+    interactions: buildPillarInteractionLabels({
+      position: input.columnId,
+      result: input.result,
+    }),
+  };
+}
+
+function buildPillarTenGodLabels(input: {
+  readonly columnId: CareerReportPillarKey;
+  readonly pillar: SajuPillar;
+  readonly result: SajuCalcResult;
+}): readonly string[] {
+  const stemTenGod =
+    input.columnId === "day"
+      ? "비견"
+      : toKoreanTenGod(input.result.tenGods.stems[input.columnId]);
+  const branchTenGod = getMainHiddenStemTenGod(input);
+
+  return uniqueValues([stemTenGod, branchTenGod]);
+}
+
+function getMainHiddenStemTenGod(input: {
+  readonly pillar: SajuPillar;
+  readonly result: SajuCalcResult;
+}): TenGod | null {
+  const mainEntry = input.result.tenGods.hiddenStems
+    .filter((entry) => entry.branch === input.pillar.branch)
+    .sort((first, second) => second.weight - first.weight)[0];
+
+  return toKoreanTenGod(mainEntry?.tenGod);
+}
+
+function buildHiddenStemLabels(input: {
+  readonly pillar: SajuPillar;
+  readonly result: SajuCalcResult;
+}): readonly string[] {
+  return uniqueValues(
+    input.result.tenGods.hiddenStems
+      .filter((entry) => entry.branch === input.pillar.branch)
+      .map((entry) =>
+        [entry.stem, toKoreanTenGod(entry.tenGod)].filter(Boolean).join(" "),
+      ),
+  );
+}
+
+function buildShinsalLabels(
+  input: {
+    readonly columnId: CareerReportPillarKey;
+    readonly result: SajuCalcResult;
+  },
+  target: "twelve" | "sinsal" | "gwiin",
+): readonly string[] {
+  return uniqueValues(
+    input.result.shinsal
+      .filter((item) => item.positions.includes(input.columnId))
+      .filter((item) => {
+        if (target === "twelve") {
+          return item.category === "TWELVE_SHINSAL";
+        }
+
+        if (target === "gwiin") {
+          return item.category === "NOBLE_HELP";
+        }
+
+        return (
+          item.category !== "TWELVE_SHINSAL" &&
+          item.category !== "NOBLE_HELP"
+        );
+      })
+      .map((item) => item.labelKo),
+  );
+}
+
+function buildPillarInteractionLabels(input: {
+  readonly position: CareerReportPillarKey;
+  readonly result: SajuCalcResult;
+}): readonly string[] {
+  return uniqueValues([
+    ...input.result.relations.stemCombinations
+      .filter((relation) => relationIncludesPosition(relation, input.position))
+      .map((relation) => formatRelationLabel(relation, "천간합")),
+    ...input.result.relations.branchCombinations
+      .filter((relation) => relationIncludesPosition(relation, input.position))
+      .map((relation) => formatRelationLabel(relation, "지지합")),
+    ...input.result.relations.branchClashes
+      .filter((relation) => relationIncludesPosition(relation, input.position))
+      .map((relation) => formatRelationLabel(relation, "지지충")),
+  ]);
+}
+
+function relationIncludesPosition(
+  relation: string,
+  position: CareerReportPillarKey,
+): boolean {
+  const [positions] = relation.split(":");
+
+  return positions?.split("-").includes(position) ?? false;
+}
+
+function formatRelationLabel(relation: string, label: string): string {
+  const [positions = "", pair = ""] = relation.split(":");
+  const positionLabel = positions
+    .split("-")
+    .map((position) => pillarPositionLabels[position as CareerReportPillarKey])
+    .filter(Boolean)
+    .join("");
+
+  return [positionLabel, label, pair].filter(Boolean).join(" ");
+}
+
+function toKoreanTenGod(tenGod: SajuTenGod | undefined): TenGod | null {
+  return tenGod === undefined ? null : sajuTenGodLabels[tenGod];
+}
+
+function uniqueValues(values: readonly (string | null | undefined)[]): readonly string[] {
+  return [...new Set(values.filter((value): value is string => Boolean(value)))];
+}
+
 export function buildCareerReportEvidence(
   input: BuildCareerReportEvidenceInput,
 ): CareerReportEvidencePacket {
@@ -1256,6 +1649,7 @@ export function buildCareerReportEvidence(
     userContext: input.person.userContext,
     dayMaster,
     userPillars: input.person.pillars,
+    manseRyeokPillars: buildCareerManseRyeokPillars(input.person),
     natalLabels: input.person.labels,
     mbtiType: normalizeMbtiType(input.person.mbti),
     myeongliCareerBasis,

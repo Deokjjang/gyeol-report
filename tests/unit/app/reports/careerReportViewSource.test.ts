@@ -61,6 +61,12 @@ describe("CareerReportView source", () => {
     expect(source).toContain("첫 행동:");
   });
 
+  it("uses stable timing keys when a year appears more than once", () => {
+    expect(source).toContain("draft.careerTiming.map((timing, index)");
+    expect(source).toContain("`${timing.year}-${timing.label}-${index}`");
+    expect(source).not.toContain("key={timing.year}");
+  });
+
   it("maps internal classifications to public labels", () => {
     expect(source).toContain("displayArchetypeLabel");
     expect(source).toContain("operator_planner: \"운영형 기획자\"");
