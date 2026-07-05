@@ -14,6 +14,8 @@ export type LoveMarriageChildSignalStrength = "low" | "medium" | "high";
 
 export type LoveMarriageChildSignalTone = "support" | "friction" | "mixed";
 
+export type LoveMarriageChildFullPillarKey = "year" | "month" | "day" | "hour";
+
 export type LoveMarriageChildBridgeEvidence = ProductBridgeEvidencePacket & {
   readonly productKey: "loveMarriageChild";
 };
@@ -43,6 +45,19 @@ export interface LoveMarriageChildSpousePalaceSignal
   readonly dayBranch: EarthlyBranch;
 }
 
+export interface LoveMarriageChildFullPillarEvidence {
+  readonly key: LoveMarriageChildFullPillarKey;
+  readonly pillar: string;
+  readonly stem: HeavenlyStem;
+  readonly branch: EarthlyBranch;
+  readonly stemTenGod?: TenGod | null;
+  readonly branchTenGod?: TenGod | null;
+  readonly hiddenStems?: readonly string[];
+  readonly sinsal?: readonly string[];
+  readonly gwiin?: readonly string[];
+  readonly interactions?: readonly string[];
+}
+
 export interface LoveMarriageChildTimingHint {
   readonly label: string;
   readonly headline: string;
@@ -63,6 +78,7 @@ export interface LoveMarriageChildSajuBasis {
   readonly dayMaster: HeavenlyStem;
   readonly dayPillar: string;
   readonly dayBranch: EarthlyBranch;
+  readonly fullPillars: readonly LoveMarriageChildFullPillarEvidence[];
   readonly spousePalaceSignal: LoveMarriageChildSpousePalaceSignal | null;
   readonly loveTenGodSignals: readonly LoveMarriageChildTenGodSignal[];
   readonly marriageTenGodSignals: readonly LoveMarriageChildTenGodSignal[];

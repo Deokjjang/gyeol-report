@@ -35,6 +35,63 @@ const baseInput = {
   },
 } as const satisfies BuildLoveMarriageChildReportEvidenceInput;
 
+const fullPillarInput = {
+  ...baseInput,
+  saju: {
+    ...baseInput.saju,
+    fullPillars: [
+      {
+        key: "year",
+        pillar: "己卯",
+        stem: "己",
+        branch: "卯",
+        stemTenGod: "정재",
+        branchTenGod: "겁재",
+        hiddenStems: ["乙 겁재"],
+        sinsal: ["도화살"],
+        gwiin: ["천을귀인"],
+        interactions: ["甲己합"],
+      },
+      {
+        key: "month",
+        pillar: "辛未",
+        stem: "辛",
+        branch: "未",
+        stemTenGod: "정관",
+        branchTenGod: "정재",
+        hiddenStems: ["丁 상관", "乙 겁재", "己 정재"],
+        sinsal: ["화개살"],
+        gwiin: ["월덕귀인"],
+        interactions: [],
+      },
+      {
+        key: "day",
+        pillar: "甲申",
+        stem: "甲",
+        branch: "申",
+        stemTenGod: "비견",
+        branchTenGod: "편관",
+        hiddenStems: ["戊 편재", "壬 편인", "庚 편관"],
+        sinsal: ["현침살", "홍염살"],
+        gwiin: [],
+        interactions: ["申亥해"],
+      },
+      {
+        key: "hour",
+        pillar: "戊辰",
+        stem: "戊",
+        branch: "辰",
+        stemTenGod: "편재",
+        branchTenGod: "편재",
+        hiddenStems: ["乙 겁재", "癸 정인", "戊 편재"],
+        sinsal: [],
+        gwiin: ["천덕귀인"],
+        interactions: [],
+      },
+    ],
+  },
+} as const satisfies BuildLoveMarriageChildReportEvidenceInput;
+
 function buildFixtureEvidence(
   input: BuildLoveMarriageChildReportEvidenceInput = baseInput,
 ) {
@@ -117,6 +174,26 @@ describe("love marriage child report table presenter", () => {
     expect(
       data.detailRows.find((row) => row.key === "interactions")?.cells.day,
     ).toEqual(["申亥해"]);
+  });
+
+  it("uses formal full pillars before the day-pillar fallback", () => {
+    const data = buildLoveMarriageChildReportManseRyeokTableData(
+      buildFixtureEvidence(fullPillarInput),
+    );
+
+    expect(data.stemRow.hour?.hanja).toBe("戊");
+    expect(data.branchRow.hour?.hanja).toBe("辰");
+    expect(data.stemRow.month?.tenGod).toBe("정관");
+    expect(data.branchRow.year?.tenGod).toBe("겁재");
+    expect(
+      data.detailRows.find((row) => row.key === "hiddenStems")?.cells.hour,
+    ).toEqual(["乙 겁재", "癸 정인", "戊 편재"]);
+    expect(
+      data.detailRows.find((row) => row.key === "sinsalAndGwiin")?.cells.month,
+    ).toEqual(["화개살", "월덕귀인"]);
+    expect(
+      data.detailRows.find((row) => row.key === "interactions")?.cells.year,
+    ).toEqual(["甲己합"]);
   });
 
   it("builds compact MBTI profile data with relationship-safe usage notes", () => {

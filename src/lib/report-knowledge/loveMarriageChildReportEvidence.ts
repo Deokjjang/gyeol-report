@@ -15,6 +15,7 @@ import {
 } from "./mbti";
 import type {
   LoveMarriageChildBridgeEvidence,
+  LoveMarriageChildFullPillarEvidence,
   LoveMarriageChildGender,
   LoveMarriageChildMbtiTraitEvidence,
   LoveMarriageChildReportEvidencePacket,
@@ -33,6 +34,7 @@ export interface LoveMarriageChildSajuEvidenceInput {
   readonly dayMaster?: HeavenlyStem;
   readonly dayPillar: string;
   readonly dayBranch?: EarthlyBranch;
+  readonly fullPillars?: readonly LoveMarriageChildFullPillarEvidence[];
   readonly labels?: readonly string[];
   readonly tenGods?: readonly TenGod[];
   readonly sinsal?: readonly string[];
@@ -108,11 +110,19 @@ export function buildLoveMarriageChildReportEvidence(
 ): LoveMarriageChildReportEvidencePacket {
   const dayMaster = input.saju.dayMaster ?? parseDayMaster(input.saju.dayPillar);
   const dayBranch = input.saju.dayBranch ?? parseDayBranch(input.saju.dayPillar);
+  const fullPillars = normalizeFullPillars(input.saju.fullPillars ?? []);
   const labels = uniqueValues([
     ...(input.saju.labels ?? []),
     ...(input.saju.sinsal ?? []),
     ...(input.saju.gwiin ?? []),
     ...(input.saju.interactions ?? []),
+    ...fullPillars.flatMap((pillar) => [
+      pillar.stemTenGod ?? "",
+      pillar.branchTenGod ?? "",
+      ...(pillar.sinsal ?? []),
+      ...(pillar.gwiin ?? []),
+      ...(pillar.interactions ?? []),
+    ]),
   ]);
   const activeTenGods = collectTenGods(input.saju, labels);
   const spousePalaceSignal = buildSpousePalaceSignal({
@@ -161,6 +171,7 @@ export function buildLoveMarriageChildReportEvidence(
       dayMaster,
       dayPillar: input.saju.dayPillar,
       dayBranch,
+      fullPillars,
       spousePalaceSignal,
       loveTenGodSignals,
       marriageTenGodSignals,
@@ -179,6 +190,18 @@ export function buildLoveMarriageChildReportEvidence(
     }),
     safetyNotes: [...defaultSafetyNotes],
   };
+}
+
+function normalizeFullPillars(
+  pillars: readonly LoveMarriageChildFullPillarEvidence[],
+): readonly LoveMarriageChildFullPillarEvidence[] {
+  return pillars.map((pillar) => ({
+    ...pillar,
+    hiddenStems: [...(pillar.hiddenStems ?? [])],
+    sinsal: [...(pillar.sinsal ?? [])],
+    gwiin: [...(pillar.gwiin ?? [])],
+    interactions: [...(pillar.interactions ?? [])],
+  }));
 }
 
 function parseDayMaster(dayPillar: string): HeavenlyStem {

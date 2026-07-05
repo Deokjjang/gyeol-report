@@ -57,6 +57,25 @@ describe("smoke_generate_love_marriage_child_report_draft source", () => {
     }
   });
 
+  it("includes full four-pillar fixture data for the preview manse ryeok table", () => {
+    expect(scriptSource).toContain("fullPillars");
+
+    for (const marker of [
+      "key: \"year\"",
+      "key: \"month\"",
+      "key: \"day\"",
+      "key: \"hour\"",
+      "stemTenGod",
+      "branchTenGod",
+      "hiddenStems",
+      "sinsal",
+      "gwiin",
+      "interactions",
+    ]) {
+      expect(scriptSource).toContain(marker);
+    }
+  });
+
   it("keeps child and breakup reunion wording inside safe boundaries", () => {
     expect(scriptSource).toContain("부모가 되었을 때");
     expect(scriptSource).toContain("내 반복 패턴");

@@ -35,6 +35,63 @@ const baseInput = {
   },
 } as const satisfies BuildLoveMarriageChildReportEvidenceInput;
 
+const fullPillarInput = {
+  ...baseInput,
+  saju: {
+    ...baseInput.saju,
+    fullPillars: [
+      {
+        key: "year",
+        pillar: "己卯",
+        stem: "己",
+        branch: "卯",
+        stemTenGod: "정재",
+        branchTenGod: "겁재",
+        hiddenStems: ["乙 겁재"],
+        sinsal: ["도화살"],
+        gwiin: ["천을귀인"],
+        interactions: ["甲己합"],
+      },
+      {
+        key: "month",
+        pillar: "辛未",
+        stem: "辛",
+        branch: "未",
+        stemTenGod: "정관",
+        branchTenGod: "정재",
+        hiddenStems: ["丁 상관", "乙 겁재", "己 정재"],
+        sinsal: ["화개살"],
+        gwiin: ["월덕귀인"],
+        interactions: [],
+      },
+      {
+        key: "day",
+        pillar: "甲申",
+        stem: "甲",
+        branch: "申",
+        stemTenGod: "비견",
+        branchTenGod: "편관",
+        hiddenStems: ["戊 편재", "壬 편인", "庚 편관"],
+        sinsal: ["현침살", "홍염살"],
+        gwiin: [],
+        interactions: ["申亥해"],
+      },
+      {
+        key: "hour",
+        pillar: "戊辰",
+        stem: "戊",
+        branch: "辰",
+        stemTenGod: "편재",
+        branchTenGod: "편재",
+        hiddenStems: ["乙 겁재", "癸 정인", "戊 편재"],
+        sinsal: [],
+        gwiin: ["천덕귀인"],
+        interactions: [],
+      },
+    ],
+  },
+} as const satisfies BuildLoveMarriageChildReportEvidenceInput;
+
 function buildFixtureEvidence(
   input: BuildLoveMarriageChildReportEvidenceInput = baseInput,
 ) {
@@ -83,6 +140,25 @@ describe("LoveMarriageChildReportCommonTables", () => {
 
     expect(manseHtml).toContain("덕민님의 만세력");
     expect(mbtiHtml).toContain("ENTJ 대담한 통솔자");
+  });
+
+  it("renders full four-pillar manse ryeok details without the day-pillar note", () => {
+    const html = renderToStaticMarkup(
+      <LoveMarriageChildReportManseRyeokTable
+        evidence={buildFixtureEvidence(fullPillarInput)}
+      />,
+    );
+
+    expect(html).toContain("戊");
+    expect(html).toContain("辰");
+    expect(html).toContain("辛");
+    expect(html).toContain("未");
+    expect(html).toContain("己");
+    expect(html).toContain("卯");
+    expect(html).toContain("丁 상관");
+    expect(html).toContain("월덕귀인");
+    expect(html).toContain("천덕귀인");
+    expect(html).not.toContain("일주·일지 신호를 우선");
   });
 
   it("renders no MBTI slot when evidence has no known MBTI type", () => {

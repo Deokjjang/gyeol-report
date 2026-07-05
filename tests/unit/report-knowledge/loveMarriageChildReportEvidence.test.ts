@@ -38,6 +38,63 @@ const baseInput = {
   },
 } as const satisfies BuildLoveMarriageChildReportEvidenceInput;
 
+const fullPillarInput = {
+  ...baseInput,
+  saju: {
+    ...baseInput.saju,
+    fullPillars: [
+      {
+        key: "year",
+        pillar: "己卯",
+        stem: "己",
+        branch: "卯",
+        stemTenGod: "정재",
+        branchTenGod: "겁재",
+        hiddenStems: ["乙 겁재"],
+        sinsal: ["도화살"],
+        gwiin: ["천을귀인"],
+        interactions: ["甲己합"],
+      },
+      {
+        key: "month",
+        pillar: "辛未",
+        stem: "辛",
+        branch: "未",
+        stemTenGod: "정관",
+        branchTenGod: "정재",
+        hiddenStems: ["丁 상관", "乙 겁재", "己 정재"],
+        sinsal: ["화개살"],
+        gwiin: ["월덕귀인"],
+        interactions: [],
+      },
+      {
+        key: "day",
+        pillar: "甲申",
+        stem: "甲",
+        branch: "申",
+        stemTenGod: "비견",
+        branchTenGod: "편관",
+        hiddenStems: ["戊 편재", "壬 편인", "庚 편관"],
+        sinsal: ["현침살", "홍염살"],
+        gwiin: [],
+        interactions: ["申亥해"],
+      },
+      {
+        key: "hour",
+        pillar: "戊辰",
+        stem: "戊",
+        branch: "辰",
+        stemTenGod: "편재",
+        branchTenGod: "편재",
+        hiddenStems: ["乙 겁재", "癸 정인", "戊 편재"],
+        sinsal: [],
+        gwiin: ["천덕귀인"],
+        interactions: [],
+      },
+    ],
+  },
+} as const satisfies BuildLoveMarriageChildReportEvidenceInput;
+
 describe("love marriage child report evidence", () => {
   it("builds the product identity, person context, and day-pillar basis", () => {
     const evidence = buildLoveMarriageChildReportEvidence(baseInput);
@@ -81,6 +138,35 @@ describe("love marriage child report evidence", () => {
     expect(
       evidence.sajuBasis.relationInteractionSignals.map((signal) => signal.label),
     ).toEqual(expect.arrayContaining(["甲己합", "申亥해"]));
+  });
+
+  it("preserves full four-pillar evidence for table rendering", () => {
+    const evidence = buildLoveMarriageChildReportEvidence(fullPillarInput);
+
+    expect(evidence.sajuBasis.fullPillars.map((pillar) => pillar.key)).toEqual([
+      "year",
+      "month",
+      "day",
+      "hour",
+    ]);
+    expect(evidence.sajuBasis.fullPillars[0]).toMatchObject({
+      key: "year",
+      pillar: "己卯",
+      stem: "己",
+      branch: "卯",
+      stemTenGod: "정재",
+      branchTenGod: "겁재",
+      hiddenStems: ["乙 겁재"],
+      sinsal: ["도화살"],
+      gwiin: ["천을귀인"],
+      interactions: ["甲己합"],
+    });
+    expect(evidence.sajuBasis.fullPillars[3]).toMatchObject({
+      key: "hour",
+      pillar: "戊辰",
+      stemTenGod: "편재",
+      branchTenGod: "편재",
+    });
   });
 
   it("connects known MBTI source traits and love-marriage-child bridge evidence", () => {

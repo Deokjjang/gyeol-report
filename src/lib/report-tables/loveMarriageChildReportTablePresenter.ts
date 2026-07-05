@@ -3,6 +3,7 @@ import {
   type MbtiSourceProfile,
 } from "../report-knowledge/mbti";
 import type {
+  LoveMarriageChildFullPillarEvidence,
   LoveMarriageChildMbtiTraitEvidence,
   LoveMarriageChildReportEvidencePacket,
   LoveMarriageChildSajuSignal,
@@ -101,6 +102,12 @@ function buildExplicitFourPillarGrid(
 ): readonly ManseRyeokFourPillarGridColumnInput[] {
   const evidenceWithPillars =
     evidence as LoveMarriageChildEvidenceWithOptionalPillars;
+  const fullPillars = new Map(
+    evidence.sajuBasis.fullPillars.map((pillar) => [
+      pillar.key,
+      toFourPillarGridColumn(pillar),
+    ]),
+  );
   const detailedPillars = new Map(
     (evidenceWithPillars.manseRyeokPillars ?? []).map((pillar) => [
       pillar.columnId,
@@ -111,6 +118,12 @@ function buildExplicitFourPillarGrid(
 
   return (["year", "month", "day", "hour"] as const)
     .map((columnId) => {
+      const fullPillar = fullPillars.get(columnId);
+
+      if (fullPillar !== undefined) {
+        return fullPillar;
+      }
+
       const detailedPillar = detailedPillars.get(columnId);
 
       if (detailedPillar !== undefined) {
@@ -138,6 +151,26 @@ function buildExplicitFourPillarGrid(
       (column): column is ManseRyeokFourPillarGridColumnInput =>
         column !== null,
     );
+}
+
+function toFourPillarGridColumn(
+  pillar: LoveMarriageChildFullPillarEvidence,
+): ManseRyeokFourPillarGridColumnInput {
+  return {
+    columnId: pillar.key,
+    pillar: pillar.pillar,
+    heavenlyStem: pillar.stem,
+    earthlyBranch: pillar.branch,
+    tenGod: [pillar.stemTenGod, pillar.branchTenGod].flatMap((tenGod) =>
+      tenGod === null || tenGod === undefined ? [] : [tenGod],
+    ),
+    hiddenStems: pillar.hiddenStems ?? [],
+    twelveLifeStage: [],
+    twelveSinsal: [],
+    sinsal: pillar.sinsal ?? [],
+    gwiin: pillar.gwiin ?? [],
+    interactions: pillar.interactions ?? [],
+  };
 }
 
 function buildTenGodLabels(
