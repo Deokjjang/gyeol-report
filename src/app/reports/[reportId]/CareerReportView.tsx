@@ -131,26 +131,84 @@ function splitRecommendedJobs(draft: CareerReportDraft): {
   };
 }
 
-function getTimingLabel(
+function getTimingDisplay(
   timing: CareerReportDraft["careerTiming"][number],
   index: number,
   timings: readonly CareerReportDraft["careerTiming"][number][],
-): string {
+): {
+  readonly heading: string;
+  readonly label: string;
+  readonly isCurrentExecution: boolean;
+} {
   const duplicateYearCount = timings.filter(
     (item) => item.year === timing.year,
   ).length;
 
   if (duplicateYearCount <= 1) {
-    return text(timing.label);
+    return {
+      heading: String(timing.year),
+      label: text(timing.label),
+      isCurrentExecution: false,
+    };
   }
 
   const sameYearIndex = timings
     .slice(0, index + 1)
     .filter((item) => item.year === timing.year).length;
 
-  return sameYearIndex === 1
-    ? `${text(timing.label)} · 연도 흐름`
-    : `${text(timing.label)} · 현재 실행 기준`;
+  if (sameYearIndex === 1) {
+    return {
+      heading: String(timing.year),
+      label: `${text(timing.label)} · 연도별 흐름`,
+      isCurrentExecution: false,
+    };
+  }
+
+  return {
+    heading: "현재 실행 기준",
+    label: "지금 바로 조정할 기준",
+    isCurrentExecution: true,
+  };
+}
+
+function getRiskPreventionText(
+  warning: CareerReportDraft["riskWarnings"][number],
+): string {
+  const primaryText = `${warning.title} ${warning.body}`;
+
+  if (primaryText.includes("권한") || primaryText.includes("책임")) {
+    return "역할 범위와 승인선을 문서로 고정합니다.";
+  }
+
+  if (
+    primaryText.includes("성과") ||
+    primaryText.includes("노출") ||
+    primaryText.includes("산출물") ||
+    primaryText.includes("포트폴리오")
+  ) {
+    return "주간 산출물과 포트폴리오 기록을 남깁니다.";
+  }
+
+  if (
+    primaryText.includes("회복") ||
+    primaryText.includes("휴식") ||
+    primaryText.includes("루틴") ||
+    primaryText.includes("과열")
+  ) {
+    return "휴식과 정리 시간을 캘린더에 먼저 고정합니다.";
+  }
+
+  if (
+    primaryText.includes("확장") ||
+    primaryText.includes("투입") ||
+    primaryText.includes("회수") ||
+    primaryText.includes("철수") ||
+    primaryText.includes("한도")
+  ) {
+    return "투입 한도, 회수 시점, 철수 기준을 숫자로 정합니다.";
+  }
+
+  return text(warning.prevention);
 }
 
 function renderList(items: readonly string[], label?: string) {
@@ -361,6 +419,45 @@ function renderCommonTableArea({
   );
 }
 
+function renderMyeongliSignalBasis(
+  evidencePacket: CareerReportEvidencePacket | undefined,
+) {
+  const interpretations = evidencePacket?.myeongliSignalInterpretations ?? [];
+
+  if (interpretations.length === 0) {
+    return null;
+  }
+
+  return (
+    <CareerSection
+      id="myeongli_signal_basis"
+      eyebrow="명리 근거"
+      title="이번 리포트에서 실제로 쓰는 명리 근거"
+      body="아래 문장은 만세력표에 실제로 표시된 십성, 신살·귀인, 합충형파해를 직업·돈·공부 해석으로 연결한 기준입니다."
+      tone="summary"
+    >
+      <div className="grid gap-3 md:grid-cols-2">
+        {interpretations.map((item) => (
+          <section
+            key={item.label}
+            className="space-y-2 rounded-lg border border-[#d8d1c4] bg-[#fffaf3] p-4"
+          >
+            <p className="text-sm font-extrabold text-[#7f1d38]">
+              {text(item.label)}
+            </p>
+            <p className="text-xs font-bold leading-5 text-[#8b8174]">
+              {text(item.basis)}
+            </p>
+            <p className="text-sm leading-7 text-[#51453d]">
+              {text(item.interpretation)}
+            </p>
+          </section>
+        ))}
+      </div>
+    </CareerSection>
+  );
+}
+
 export function CareerReportView({
   draft,
   reportId,
@@ -437,6 +534,7 @@ export function CareerReportView({
         manseRyeokTable: resolvedManseRyeokTable,
         mbtiProfileTable: resolvedMbtiProfileTable,
       })}
+      {renderMyeongliSignalBasis(evidencePacket)}
       {renderContextPills(draft)}
 
       <CareerSection
@@ -608,30 +706,51 @@ export function CareerReportView({
         title="강하게 밀 시기와 줄일 시기"
       >
         <div className="space-y-4">
-          {draft.careerTiming.map((timing, index) => (
-            <section key={`${timing.year}-${timing.label}-${index}`} className="grid gap-3 border-l-2 border-[#c79a43] pl-4 md:grid-cols-[8rem_1fr]">
-              <div>
-                <p className="text-xl font-extrabold text-[#201a18]">
-                  {timing.year}
-                </p>
-                <p className="text-sm font-bold text-[#7f1d38]">
-                  {getTimingLabel(timing, index, draft.careerTiming)}
-                </p>
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-base font-extrabold text-[#201a18]">
-                  {text(timing.headline)}
-                </h3>
-                <p className="text-sm leading-7 text-[#51453d]">
-                  {text(timing.body)}
-                </p>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {renderList(timing.push, "밀어볼 것")}
-                  {renderList(timing.avoid, "줄일 것")}
+          {draft.careerTiming.map((timing, index) => {
+            const timingDisplay = getTimingDisplay(
+              timing,
+              index,
+              draft.careerTiming,
+            );
+
+            return (
+              <section
+                key={`${timing.year}-${timing.label}-${index}`}
+                className={`grid gap-3 border-l-2 pl-4 md:grid-cols-[8rem_1fr] ${
+                  timingDisplay.isCurrentExecution
+                    ? "border-[#7f1d38] rounded-r-lg bg-[#fffaf3] py-3 pr-3"
+                    : "border-[#c79a43]"
+                }`}
+              >
+                <div>
+                  <p
+                    className={
+                      timingDisplay.isCurrentExecution
+                        ? "text-base font-extrabold text-[#201a18]"
+                        : "text-xl font-extrabold text-[#201a18]"
+                    }
+                  >
+                    {timingDisplay.heading}
+                  </p>
+                  <p className="text-sm font-bold text-[#7f1d38]">
+                    {timingDisplay.label}
+                  </p>
                 </div>
-              </div>
-            </section>
-          ))}
+                <div className="space-y-3">
+                  <h3 className="text-base font-extrabold text-[#201a18]">
+                    {text(timing.headline)}
+                  </h3>
+                  <p className="text-sm leading-7 text-[#51453d]">
+                    {text(timing.body)}
+                  </p>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {renderList(timing.push, "밀어볼 것")}
+                    {renderList(timing.avoid, "줄일 것")}
+                  </div>
+                </div>
+              </section>
+            );
+          })}
         </div>
       </CareerSection>
 
@@ -685,7 +804,7 @@ export function CareerReportView({
                   줄이는 방법
                 </p>
                 <p className="mt-1 text-sm leading-7 text-[#6f675d]">
-                  {text(warning.prevention)}
+                  {getRiskPreventionText(warning)}
                 </p>
               </div>
             </section>
@@ -696,7 +815,7 @@ export function CareerReportView({
       <CareerSection
         id="safety_notes"
         eyebrow="안전 안내"
-        title="안전 안내"
+        title="참고 기준"
         tone="caution"
       >
         {renderList(draft.safetyNotes)}

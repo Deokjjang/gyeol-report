@@ -18,6 +18,7 @@ describe("CareerReportView source", () => {
       'data-career-report-section="report_header"',
       "data-career-report-section={id}",
       "common_tables",
+      "myeongli_signal_basis",
       "핵심 요약",
       "직업 정체성",
       "돈 관리 성향",
@@ -27,6 +28,7 @@ describe("CareerReportView source", () => {
       "피해야 할 직무/환경",
       "실행 기준",
       "안전 안내",
+      "참고 기준",
     ];
 
     for (const marker of requiredMarkers) {

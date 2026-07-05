@@ -50,6 +50,31 @@ describe("careerReportEvidence", () => {
     expect(evidence.bridgeEvidence.forbiddenAngles).toEqual(
       expect.arrayContaining(["수익 확정", "합격 확정", "승진·이직 확정"]),
     );
+    expect(evidence.myeongliSignalInterpretations?.length).toBeGreaterThanOrEqual(5);
+    expect(evidence.myeongliSignalInterpretations).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          label: expect.stringContaining("편재"),
+          interpretation: expect.stringContaining("계약"),
+        }),
+        expect.objectContaining({
+          label: expect.stringContaining("편관"),
+          interpretation: expect.stringContaining("조직"),
+        }),
+        expect.objectContaining({
+          label: "현침살",
+          interpretation: expect.stringContaining("피드백"),
+        }),
+        expect.objectContaining({
+          label: expect.stringContaining("천을귀인"),
+          interpretation: expect.stringContaining("멘토"),
+        }),
+        expect.objectContaining({
+          label: "화개",
+          interpretation: expect.stringContaining("문서형 공부"),
+        }),
+      ]),
+    );
   });
 
   it("derives Myeongli career evidence from ten-gods and elements", () => {

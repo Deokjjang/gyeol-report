@@ -170,6 +170,12 @@ describe("CareerReportView common table slots", () => {
     expect(html).toContain("십이신살");
     expect(html).toContain("신살/귀인");
     expect(html).toContain("합충형파해");
+    expect(html).toContain("이번 리포트에서 실제로 쓰는 명리 근거");
+    expect(html).toContain("편재");
+    expect(html).toContain("정재");
+    expect(html).toContain("현침살");
+    expect(html).toContain("천을귀인");
+    expect(html).toContain("문서형 공부");
     expect(html).toContain("ENTJ 대담한 통솔자");
     expect(html).toContain("가까운 키워드");
     expect(html).toContain("먼 키워드");
@@ -206,16 +212,46 @@ describe("CareerReportView common table slots", () => {
           avoid: ["범위 없는 책임"],
         },
       ],
+      riskWarnings: [
+        {
+          title: "권한 없는 책임",
+          body: "책임과 일정이 한쪽으로 몰립니다.",
+          prevention: "역할, 돈, 일정 기준을 문서로 고정하고 회복 루틴을 일정에 넣습니다.",
+        },
+        {
+          title: "성과 노출 부족",
+          body: "결과물이 밖으로 보이지 않으면 평가에서 손해를 봅니다.",
+          prevention: "역할, 돈, 일정 기준을 문서로 고정하고 회복 루틴을 일정에 넣습니다.",
+        },
+        {
+          title: "회복 루틴 부족",
+          body: "과열되기 쉬운 패턴이 있습니다.",
+          prevention: "역할, 돈, 일정 기준을 문서로 고정하고 회복 루틴을 일정에 넣습니다.",
+        },
+        {
+          title: "기준 없는 확장",
+          body: "일과 돈을 동시에 넓히면 기준이 흐려집니다.",
+          prevention: "역할, 돈, 일정 기준을 문서로 고정하고 회복 루틴을 일정에 넣습니다.",
+        },
+      ],
     };
     const html = renderToStaticMarkup(<CareerReportView draft={expandedDraft} />);
 
     expect(html).toContain("주요 예시 분야");
     expect(html.match(/주요 예시 분야/g)).toHaveLength(1);
     expect(html).toContain("나머지 추천 직업 2개 더 보기");
-    expect(html).toContain("정리 · 연도 흐름");
-    expect(html).toContain("실행 · 현재 실행 기준");
+    expect(html).toContain("정리 · 연도별 흐름");
+    expect(html).toContain("현재 실행 기준");
+    expect(html).toContain("지금 바로 조정할 기준");
+    expect(html).not.toContain("실행 · 현재 실행 기준");
+    expect(html).not.toContain("2026 · 현재 실행 기준");
     expect(html).toContain("바로 할 일");
     expect(html).toContain("줄이는 방법");
+    expect(html).toContain("역할 범위와 승인선을 문서로 고정합니다.");
+    expect(html).toContain("주간 산출물과 포트폴리오 기록을 남깁니다.");
+    expect(html).toContain("휴식과 정리 시간을 캘린더에 먼저 고정합니다.");
+    expect(html).toContain("투입 한도, 회수 시점, 철수 기준을 숫자로 정합니다.");
+    expect(html).not.toContain("역할, 돈, 일정 기준을 문서로 고정하고 회복 루틴을 일정에 넣습니다.");
     expect(html).not.toContain("첫 행동:");
     expect(html).not.toContain("예방:");
   });

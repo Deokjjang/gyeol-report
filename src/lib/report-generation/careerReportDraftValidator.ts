@@ -96,6 +96,8 @@ function replaceAllLiteral(value: string, from: string, to: string): string {
 export function sanitizeCareerReportVisibleText(text: string): string {
   let output = text;
 
+  output = replaceAllLiteral(output, "흐름으로 읽힙니다", "기준으로 봅니다");
+
   for (const [from, to] of hardClaimReplacements) {
     output = replaceAllLiteral(output, from, to);
   }
@@ -116,6 +118,59 @@ export function sanitizeCareerReportVisibleText(text: string): string {
   }
 
   return output.replace(/\s+/gu, " ").trim();
+}
+
+function sanitizePersonAddressingText(text: string, personLabel: string): string {
+  if (personLabel.trim().length === 0) {
+    return text;
+  }
+
+  let output = text;
+  const replacements = [
+    [`${personLabel}님의`, "당신의"],
+    [`${personLabel}님은`, "당신은"],
+    [`${personLabel}님는`, "당신은"],
+    [`${personLabel}님이`, "당신이"],
+    [`${personLabel}님가`, "당신이"],
+    [`${personLabel}님에게`, "당신에게"],
+    [`${personLabel}의`, "당신의"],
+    [`${personLabel}은`, "당신은"],
+    [`${personLabel}는`, "당신은"],
+    [`${personLabel}이`, "당신이"],
+    [`${personLabel}가`, "당신이"],
+    [`${personLabel}에게`, "당신에게"],
+  ] as const;
+
+  for (const [from, to] of replacements) {
+    output = replaceAllLiteral(output, from, to);
+  }
+
+  return output;
+}
+
+function sanitizePersonAddressing(
+  value: unknown,
+  personLabel: string,
+  key?: string,
+): unknown {
+  if (typeof value === "string") {
+    return key === "personLabel" || key === "openingTitle"
+      ? value
+      : sanitizePersonAddressingText(value, personLabel);
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => sanitizePersonAddressing(item, personLabel));
+  }
+  if (!isRecord(value)) {
+    return value;
+  }
+
+  return Object.fromEntries(
+    Object.entries(value).map(([entryKey, item]) => [
+      entryKey,
+      sanitizePersonAddressing(item, personLabel, entryKey),
+    ]),
+  );
 }
 
 function sanitizeValue(value: unknown): unknown {
@@ -261,17 +316,25 @@ export function validateCareerReportDraft(
   const originalTickerWarnings = countPattern(value, tickerPattern);
   const originalBuySellWarnings = countPattern(value, buySellPattern);
   const originalInternalWarnings = countInternalArtifacts(value);
-  const sanitized = sanitizeValue(value);
+  const sanitizedValue = sanitizeValue(value);
   const errors: string[] = [];
   const warnings: string[] = [];
 
-  if (!isRecord(sanitized)) {
+  if (!isRecord(sanitizedValue)) {
     return {
       ok: false,
       errors: ["CAREER_REPORT_DRAFT_NOT_OBJECT"],
       warnings,
     };
   }
+
+  const sanitizedPersonLabel = isNonEmptyString(sanitizedValue.personLabel)
+    ? sanitizedValue.personLabel
+    : "";
+  const sanitized = sanitizePersonAddressing(
+    sanitizedValue,
+    sanitizedPersonLabel,
+  ) as Record<string, unknown>;
 
   if (sanitized.version !== "v1") {
     errors.push("CAREER_REPORT_VERSION_INVALID");

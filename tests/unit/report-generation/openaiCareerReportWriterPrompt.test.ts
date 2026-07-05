@@ -75,6 +75,7 @@ describe("openaiCareerReportWriterPrompt", () => {
     const messages = buildMessages();
 
     expect(messages.user).toContain("career_money_study");
+    expect(messages.user).toContain("myeongliSignalInterpretations");
     expect(messages.user).toContain("recommendedJobs");
     expect(messages.user).toContain("investmentProfile");
     expect(messages.user).toContain("bridgeEvidence");
@@ -108,7 +109,23 @@ describe("openaiCareerReportWriterPrompt", () => {
     expect(messages.developer).toContain("같은 문장, 같은 예시 분야");
     expect(messages.developer).toContain("추천 직업은 상위 후보를 먼저");
     expect(messages.developer).toContain("같은 연도가 반복되면");
+    expect(messages.developer).toContain("연도 숫자 없는 현재 실행 기준");
     expect(messages.developer).toContain("매번 같은 접두어를 반복하지 말고");
     expect(messages.developer).toContain("같은 예방 문장을 복붙하지 말고");
+    expect(messages.developer).toContain("권한 없는 책임은 역할 범위와 승인선 문서화");
+    expect(messages.developer).toContain("성과 노출 부족은 주간 산출물과 포트폴리오 기록");
+    expect(messages.developer).toContain("회복 루틴 부족은 휴식/정리 시간 캘린더 고정");
+    expect(messages.developer).toContain("기준 없는 확장은 투입 한도/회수 시점/철수 기준 설정");
+  });
+
+  it("requires evidence-based Myeongli signal usage without unsupported missing or excess terms", () => {
+    const messages = buildMessages();
+
+    expect(messages.developer).toContain("Myeongli signal usage");
+    expect(messages.developer).toContain("myeongliSignalInterpretations");
+    expect(messages.developer).toContain("편재, 정재, 정관, 편관, 현침살");
+    expect(messages.developer).toContain("무인성, 무식상, 과다, 부족, 강함, 약함");
+    expect(messages.developer).toContain("unless the exact term is present in the evidence packet");
+    expect(messages.developer).not.toContain("토 과다, 무식상/무인성");
   });
 });

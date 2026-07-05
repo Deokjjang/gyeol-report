@@ -275,6 +275,37 @@ describe("careerReportDraftValidator", () => {
     expect(JSON.stringify(validation.value)).not.toMatch(/AAPL|매수하세요|원금 보장/u);
   });
 
+  it("normalizes body address to 당신 while keeping the report header name", () => {
+    const validation = validateCareerReportDraft({
+      ...createValidDraft(),
+      openingTitle: "덕민님의 직업 리포트",
+      openingSummary: "덕민은 기준을 잡는 힘이 있습니다.",
+      coreLine: "덕민의 강점은 구조화입니다.",
+      careerIdentity: {
+        ...createValidDraft().careerIdentity,
+        body: "덕민님은 권한과 책임이 같이 있는 자리에서 강해집니다.",
+      },
+      careerTiming: [
+        {
+          ...createValidDraft().careerTiming[0],
+          body: "2028년은 외부 프로젝트와 수익화 접점을 검토하기 좋은 흐름으로 읽힙니다.",
+        },
+        ...createValidDraft().careerTiming.slice(1),
+      ],
+    });
+    const serialized = JSON.stringify(validation.value);
+
+    expect(validation.ok).toBe(true);
+    expect(validation.value?.openingTitle).toBe("덕민님의 직업 리포트");
+    expect(serialized).toContain("당신은 기준을 잡는 힘이 있습니다.");
+    expect(serialized).toContain("당신의 강점은 구조화입니다.");
+    expect(serialized).toContain("당신은 권한과 책임이 같이 있는 자리에서 강해집니다.");
+    expect(serialized).toContain("기준으로 봅니다");
+    expect(serialized).not.toContain("흐름으로 읽힙니다");
+    expect(serialized).not.toContain("덕민은");
+    expect(serialized).not.toContain("덕민의");
+  });
+
   it("allows strong safe investment phrases", () => {
     const draft = {
       ...createValidDraft(),

@@ -78,6 +78,12 @@ export interface CareerReportManseRyeokPillarDetail {
   readonly interactions: readonly string[];
 }
 
+export interface CareerReportMyeongliSignalInterpretation {
+  readonly label: string;
+  readonly basis: string;
+  readonly interpretation: string;
+}
+
 export interface CareerReportEvidencePacket {
   readonly productType: CareerReportProductType;
   readonly productVersion: "v1";
@@ -91,6 +97,7 @@ export interface CareerReportEvidencePacket {
     readonly hour?: string;
   };
   readonly manseRyeokPillars?: readonly CareerReportManseRyeokPillarDetail[];
+  readonly myeongliSignalInterpretations?: readonly CareerReportMyeongliSignalInterpretation[];
   readonly natalLabels: readonly string[];
   readonly mbtiType?: string | null;
   readonly myeongliCareerBasis: {

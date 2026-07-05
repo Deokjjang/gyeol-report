@@ -26,6 +26,7 @@ import type {
   CareerReportEvidencePacket,
   CareerReportFixturePerson,
   CareerReportManseRyeokPillarDetail,
+  CareerReportMyeongliSignalInterpretation,
   CareerReportPillarKey,
   CareerSignal,
   InvestmentStyleArchetype,
@@ -1599,6 +1600,118 @@ function uniqueValues(values: readonly (string | null | undefined)[]): readonly 
   return [...new Set(values.filter((value): value is string => Boolean(value)))];
 }
 
+function collectMyeongliTableSignalText(
+  pillars: readonly CareerReportManseRyeokPillarDetail[],
+): readonly string[] {
+  return uniqueValues(
+    pillars.flatMap((pillar) => [
+      ...pillar.tenGod,
+      ...pillar.hiddenStems,
+      ...pillar.twelveLifeStage,
+      ...pillar.twelveSinsal,
+      ...pillar.sinsal,
+      ...pillar.gwiin,
+      ...pillar.interactions,
+    ]),
+  );
+}
+
+function hasMyeongliSignal(
+  signals: readonly string[],
+  targets: readonly string[],
+): boolean {
+  return targets.some((target) =>
+    signals.some((signal) => signal.includes(target)),
+  );
+}
+
+function presentMyeongliSignals(
+  signals: readonly string[],
+  targets: readonly string[],
+): readonly string[] {
+  return targets.filter((target) => hasMyeongliSignal(signals, [target]));
+}
+
+function joinSignalTerms(terms: readonly string[]): string {
+  return terms.join("·");
+}
+
+function buildMyeongliSignalInterpretations(
+  pillars: readonly CareerReportManseRyeokPillarDetail[],
+): CareerReportEvidencePacket["myeongliSignalInterpretations"] {
+  const signals = collectMyeongliTableSignalText(pillars);
+  const interpretations: CareerReportMyeongliSignalInterpretation[] = [];
+  const wealthTerms = presentMyeongliSignals(signals, ["편재", "정재"]);
+  const officerTerms = presentMyeongliSignals(signals, ["정관", "편관"]);
+  const nobleTerms = presentMyeongliSignals(signals, [
+    "천을귀인",
+    "월덕귀인",
+    "천덕귀인",
+  ]);
+
+  if (wealthTerms.length > 0) {
+    interpretations.push({
+      label: joinSignalTerms(wealthTerms),
+      basis: `${joinSignalTerms(wealthTerms)}가 만세력표에 보입니다.`,
+      interpretation:
+        "돈을 감으로 쓰기보다 계약, 정산, 고정비, 수익 구조, 자원 배치로 다룰 때 강점이 살아납니다.",
+    });
+  }
+
+  if (officerTerms.length > 0) {
+    interpretations.push({
+      label: joinSignalTerms(officerTerms),
+      basis: `${joinSignalTerms(officerTerms)}이 만세력표에 보입니다.`,
+      interpretation:
+        "조직, 책임, 평가, 기준이 있는 환경에서 역할이 커집니다. 다만 책임이 한쪽으로 몰리면 압박도 같이 커집니다.",
+    });
+  }
+
+  if (hasMyeongliSignal(signals, ["현침살"])) {
+    interpretations.push({
+      label: "현침살",
+      basis: "현침살이 만세력표에 보입니다.",
+      interpretation:
+        "판단과 말이 날카롭게 나오는 신호입니다. 직업에서는 분석력과 빠른 문제 지적이 되지만, 피드백이 차갑게 들리지 않게 기준과 표현을 분리해야 합니다.",
+    });
+  }
+
+  if (nobleTerms.length > 0) {
+    interpretations.push({
+      label: joinSignalTerms(nobleTerms),
+      basis: `${joinSignalTerms(nobleTerms)}이 만세력표에 보입니다.`,
+      interpretation:
+        "혼자 밀어붙이는 구조보다 좋은 상사, 멘토, 협업자, 완충 장치가 있을 때 일이 부드럽게 풀리는 근거로 씁니다.",
+    });
+  }
+
+  if (hasMyeongliSignal(signals, ["화개"])) {
+    interpretations.push({
+      label: "화개",
+      basis: "화개가 만세력표에 보입니다.",
+      interpretation:
+        "혼자 파고드는 몰입, 전문성, 문서형 공부와 연결됩니다. 공부와 자격증은 결과물을 포트폴리오로 남길 때 힘이 납니다.",
+    });
+  }
+
+  if (hasMyeongliSignal(signals, ["천간합", "지지합", "지지충"])) {
+    interpretations.push({
+      label: "합충형파해",
+      basis: signals
+        .filter((signal) =>
+          ["천간합", "지지합", "지지충"].some((target) =>
+            signal.includes(target),
+          ),
+        )
+        .join(" · "),
+      interpretation:
+        "관계와 환경을 그냥 밀어붙이기보다 조율해야 하는 지점입니다. 직장에서는 권한, 책임, 보고 라인을 먼저 맞추는 쪽이 안정적입니다.",
+    });
+  }
+
+  return interpretations.slice(0, 6);
+}
+
 export function buildCareerReportEvidence(
   input: BuildCareerReportEvidenceInput,
 ): CareerReportEvidencePacket {
@@ -1641,6 +1754,7 @@ export function buildCareerReportEvidence(
     labels: input.person.labels,
     myeongliCareerBasis,
   });
+  const manseRyeokPillars = buildCareerManseRyeokPillars(input.person);
 
   return {
     productType: "career_money_study",
@@ -1649,7 +1763,9 @@ export function buildCareerReportEvidence(
     userContext: input.person.userContext,
     dayMaster,
     userPillars: input.person.pillars,
-    manseRyeokPillars: buildCareerManseRyeokPillars(input.person),
+    manseRyeokPillars,
+    myeongliSignalInterpretations:
+      buildMyeongliSignalInterpretations(manseRyeokPillars),
     natalLabels: input.person.labels,
     mbtiType: normalizeMbtiType(input.person.mbti),
     myeongliCareerBasis,
