@@ -87,7 +87,11 @@ function PersonTableBlock({
       {person.mbti === null ? (
         <EmptySubTable title={`${person.label} MBTI표`} />
       ) : (
-        <MbtiCommonProfileTable data={person.mbti} defaultOpen={true} />
+        <MbtiCommonProfileTable
+          data={person.mbti}
+          defaultOpen={true}
+          variant="compact"
+        />
       )}
     </section>
   );

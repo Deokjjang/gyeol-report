@@ -35,6 +35,12 @@ const personAMbti = buildMbtiCommonProfileTableData({
   titleKo: "대담한 통솔자",
   archetype: "목표를 현실화하는 전략 지휘관",
   oneLine: "목표를 구조화해 실행하는 사람",
+  summary: {
+    identity: "목표와 기준을 먼저 잡는다.",
+    strength: "역할과 방향을 빠르게 정리한다.",
+    risk: "감정 온도를 생략하기 쉽다.",
+    growthStrategy: "속도와 확인 시간을 분리한다.",
+  },
   preferenceAxes: {
     energy: "E",
     perception: "N",
@@ -54,6 +60,12 @@ const personBMbti = buildMbtiCommonProfileTableData({
   titleKo: "호기심 많은 예술가",
   archetype: "감각과 가치로 현재를 조율하는 사람",
   oneLine: "자기 기준과 현실 감각을 함께 쓰는 사람",
+  summary: {
+    identity: "현재의 감각과 자기 기준을 본다.",
+    strength: "정서와 생활 온도를 섬세하게 살핀다.",
+    risk: "불편함을 말보다 거리로 표현하기 쉽다.",
+    growthStrategy: "감정과 요청을 함께 말한다.",
+  },
   preferenceAxes: {
     energy: "I",
     perception: "S",
@@ -165,6 +177,15 @@ describe("CompatibilityTable", () => {
     ]) {
       expect(html).toContain(marker);
     }
+  });
+
+  it("renders MBTI tables in compact mode with detail closed by default", () => {
+    const html = renderToStaticMarkup(<CompatibilityTable data={tableData} />);
+
+    expect(html).toContain("선호 지표와 기능 서열 자세히 보기");
+    expect(html).toContain("핵심 요약");
+    expect(html).not.toContain("선호 지표 비교");
+    expect(html).not.toContain("리포트 활용 포인트");
   });
 
   it("handles empty and null fields safely", () => {
