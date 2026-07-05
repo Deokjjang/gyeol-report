@@ -113,6 +113,30 @@ describe("REPORT-18A compatibility evidence builder", () => {
     expect(focusSignatures.size).toBe(Object.keys(expectedFocusByCategory).length);
   });
 
+  it("uses category-specific safety notes without unrelated work/business wording", () => {
+    const expectedSafetyNoteByCategory = {
+      love: "연애 관계에서는 관계의 결말, 재회 여부, 결혼 여부를 단정하지 않습니다.",
+      marriage: "결혼 관계에서는 장기 관계의 결말이나 가족 계획 결과를 단정하지 않습니다.",
+      parentChild: "부모·자식 관계에서는 복의 유무나 효불효 같은 낙인으로 판단하지 않습니다.",
+      coworker: "직장 동료 관계에서는 조직 선택, 평가, 성과 결과를 확정하지 않습니다.",
+      managerReport: "상사·부하 관계에서는 평가, 권한 변화, 인사 결과를 확정하지 않습니다.",
+      businessPartner: "사업·협업 관계에서는 수익, 손실, 사업 결과를 확정하지 않습니다.",
+      friendship: "친구 관계에서는 관계의 지속이나 단절을 확정하지 않습니다.",
+    } as const;
+
+    for (const [category, expectedSafetyNote] of Object.entries(
+      expectedSafetyNoteByCategory,
+    )) {
+      const packet = buildPacketWithRelationshipType(category);
+      const safetyText = packet.safetyNotes.join("\n");
+
+      expect(safetyText).toContain(expectedSafetyNote);
+      expect(safetyText).not.toContain(
+        "업무·사업 관계에서는 성과와 금전 결과를 확정하지 않습니다.",
+      );
+    }
+  });
+
   it("falls back unknown relationship category to love", () => {
     const packet = buildPacketWithRelationshipType(
       "unknown" as CompatibilityRelationshipCategoryInput,

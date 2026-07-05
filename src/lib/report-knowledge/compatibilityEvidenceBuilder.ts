@@ -689,6 +689,16 @@ function firstNonEmpty(values: readonly (string | null | undefined)[]): string |
   return values.find((value): value is string => Boolean(value?.trim())) ?? null;
 }
 
+const categorySafetyNote = {
+  love: "연애 관계에서는 관계의 결말, 재회 여부, 결혼 여부를 단정하지 않습니다.",
+  marriage: "결혼 관계에서는 장기 관계의 결말이나 가족 계획 결과를 단정하지 않습니다.",
+  parentChild: "부모·자식 관계에서는 복의 유무나 효불효 같은 낙인으로 판단하지 않습니다.",
+  coworker: "직장 동료 관계에서는 조직 선택, 평가, 성과 결과를 확정하지 않습니다.",
+  managerReport: "상사·부하 관계에서는 평가, 권한 변화, 인사 결과를 확정하지 않습니다.",
+  businessPartner: "사업·협업 관계에서는 수익, 손실, 사업 결과를 확정하지 않습니다.",
+  friendship: "친구 관계에서는 관계의 지속이나 단절을 확정하지 않습니다.",
+} as const satisfies Record<CompatibilityCanonicalRelationshipType, string>;
+
 function buildSafetyNotes(
   relationshipType: CompatibilityCanonicalRelationshipType,
 ): readonly string[] {
@@ -698,7 +708,7 @@ function buildSafetyNotes(
     `이 리포트는 ${categoryLabel}을 중심으로 두 사람의 조율 지점을 정리한 참고 자료입니다.`,
     "명리 근거와 MBTI 근거는 서로 다른 언어이며, 같은 원인으로 단정하지 않습니다.",
     "관계의 최종 결론이나 상대의 선택을 대신 판단하지 않습니다.",
-    "업무·사업 관계에서는 성과와 금전 결과를 확정하지 않습니다.",
+    categorySafetyNote[relationshipType],
     "의료, 법률, 사건 예측이 필요한 영역은 전문 판단을 우선합니다.",
   ];
 }

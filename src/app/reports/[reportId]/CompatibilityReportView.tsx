@@ -212,6 +212,23 @@ function getRelationshipFocus(
   return relationshipTypeFocusCopy[category];
 }
 
+function getFirstContactSectionTitle(
+  relationshipType: CompatibilityReportDraft["relationshipType"],
+): string {
+  const category = normalizeCompatibilityRelationCategory(relationshipType);
+  const titleByCategory = {
+    love: "첫 인상과 끌림",
+    marriage: "첫 생활 리듬",
+    parentChild: "첫 접점과 정서 거리",
+    coworker: "첫 협업 리듬",
+    managerReport: "첫 업무 신뢰",
+    businessPartner: "첫 의사결정 리듬",
+    friendship: "첫 인상과 거리감",
+  } as const;
+
+  return titleByCategory[category];
+}
+
 function buildCompatibilityTopTableData(
   draft: CompatibilityReportDraft,
 ): CompatibilityTableData {
@@ -818,7 +835,7 @@ export function CompatibilityReportView({
       />
 
       <ParagraphSection
-        title="첫 인상과 끌림"
+        title={getFirstContactSectionTitle(draft.relationshipType)}
         body={analysis.firstImpression}
         relationshipType={draft.relationshipType}
       />

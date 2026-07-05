@@ -214,7 +214,7 @@ function buildScreenQaRelationshipAnalysis(
     ]
       .filter((line): line is string => Boolean(line?.trim()))
       .join("\n\n"),
-    firstImpression: `${aName}님은 관계의 방향과 기준을 먼저 잡고, ${bName}님은 반응 속도와 확인 방식으로 관계를 읽습니다. 처음에는 이 차이가 끌림이 됩니다. 한쪽은 답을 빠르게 정리하고, 다른 한쪽은 그 답이 성립하는 전제와 예외를 확인합니다.\n\n문제는 가까워진 뒤입니다. ${aName}님이 해결을 위해 속도를 내면 ${bName}님은 생각할 시간을 빼앗긴다고 느끼고, ${bName}님이 신중하게 멈추면 ${aName}님은 관계가 제자리에서 맴돈다고 느낍니다. 이 조합은 감정이 없는 게 아니라, 대화 속도가 안 맞을 때 빠르게 피곤해집니다.`,
+    firstImpression: `${aName}님은 관계의 방향과 기준을 먼저 잡고, ${bName}님은 반응 속도와 확인 방식으로 관계를 읽습니다. 처음에는 이 차이가 선명한 접점이 됩니다. 한쪽은 답을 빠르게 정리하고, 다른 한쪽은 그 답이 성립하는 전제와 예외를 확인합니다.\n\n문제는 가까워진 뒤입니다. ${aName}님이 해결을 위해 속도를 내면 ${bName}님은 생각할 시간을 빼앗긴다고 느끼고, ${bName}님이 신중하게 멈추면 ${aName}님은 관계가 제자리에서 맴돈다고 느낍니다. 이 조합은 감정이 없는 게 아니라, 대화 속도가 안 맞을 때 빠르게 피곤해집니다.`,
     stayingPower: [
       pairMarriagePattern,
       "오래 가려면 감정, 역할, 책임 범위를 한 번에 처리하지 말고 단계로 나누어야 합니다. 이 조합은 서로의 차이를 없애야 안정되는 관계가 아닙니다. 빠르게 정리하는 힘과 오래 검토하는 힘을 같은 자리에서 충돌시키지 않을 때 안정됩니다.",
@@ -230,11 +230,11 @@ function buildScreenQaRelationshipAnalysis(
         ...packet.mbtiCompatibility.friction,
       ],
       [
-        "끌림은 빠르게 생기지만 가까워질수록 결론 속도와 확인 방식의 차이가 피로로 쌓일 수 있습니다.",
+        "접점은 생기지만 가까워질수록 결론 속도와 확인 방식의 차이가 피로로 쌓일 수 있습니다.",
       ],
       4,
     ),
-    categoryReading: `${relationLabel} 관계에서는 ${relationFocus}가 핵심입니다. 이 조합은 장점만 보면 편해 보이지만, 실제로는 기준을 누가 잡고 누가 확인하는지에 따라 체감이 크게 갈립니다.\n\n${elementSummary}\n\n명리에서는 이 차이를 생활 기준, 역할 압박, 회복 속도의 문제로 보고, MBTI에서는 결론을 앞당기는 사람과 전제를 더 확인하려는 사람의 대화 습관으로 봅니다. 같은 차이가 처음에는 매력이고, 가까워지면 피로가 되는 이유가 여기에 있습니다.`,
+    categoryReading: `${relationLabel}에서는 ${relationFocus}을 중심으로 봅니다. 이 조합은 장점만 보면 편해 보이지만, 실제로는 기준을 누가 잡고 누가 확인하는지에 따라 체감이 크게 갈립니다.\n\n${elementSummary}\n\n명리에서는 이 차이를 생활 기준, 역할 압박, 회복 속도의 문제로 보고, MBTI에서는 결론을 앞당기는 사람과 전제를 더 확인하려는 사람의 대화 습관으로 봅니다. 같은 차이가 처음에는 매력이고, 가까워지면 피로가 되는 이유가 여기에 있습니다.`,
     aToBFatigue: `${aName}님은 ${bName}님의 확인 시간이 길어지거나 반응이 늦어질 때 관계가 멈춘다고 느낍니다. ${aName}님 입장에서는 이미 핵심이 보였고 이제 정리하면 되는데, ${bName}님이 다시 전제를 확인하면 답답함이 올라옵니다.`,
     bToAFatigue: `${bName}님은 ${aName}님의 결론 속도와 기준 제시가 빠를 때 충분히 설명받기 전에 밀린다고 느낍니다. ${bName}님 입장에서는 아직 생각이 끝나지 않았는데, ${aName}님이 결론을 요구하면 대화가 아니라 압박처럼 들어옵니다.`,
     communicationRecovery: [
@@ -244,7 +244,7 @@ function buildScreenQaRelationshipAnalysis(
     ]
       .filter((line): line is string => Boolean(line?.trim()))
       .join("\n\n"),
-    roleMoneyLifeRhythm: `${relationLabel} 관계에서도 돈, 역할, 일정, 생활 리듬은 감으로 넘기지 않는 편이 낫습니다. 기준이 흐려지면 좋은 보완도 관리 부담으로 바뀝니다.\n\n특히 한쪽이 더 빨리 책임을 잡고 다른 한쪽이 더 오래 생각하는 구조에서는, 역할과 결정권을 말로 분리해야 합니다. 누가 결정하고, 누가 검토하고, 언제 다시 이야기할지 정하지 않으면 사소한 일정과 돈 문제가 관계의 주도권 싸움으로 커집니다.`,
+    roleMoneyLifeRhythm: `${relationLabel}에서도 돈, 역할, 일정, 생활 리듬은 감으로 넘기지 않는 편이 낫습니다. 기준이 흐려지면 좋은 보완도 관리 부담으로 바뀝니다.\n\n특히 한쪽이 더 빨리 책임을 잡고 다른 한쪽이 더 오래 생각하는 구조에서는, 역할과 결정권을 말로 분리해야 합니다. 누가 결정하고, 누가 검토하고, 언제 다시 이야기할지 정하지 않으면 사소한 일정과 돈 문제가 관계의 주도권 싸움으로 커집니다.`,
     categorySpecificAdvice: takeNonEmpty(
       [
         packet.categoryLens.repairFocus,
@@ -309,12 +309,12 @@ function buildScreenQaChapters(
       practicalAdvice: "중요한 결정은 기준 제시와 확인 시간을 나누어 진행하세요.",
     },
     attraction: {
-      title: "첫 인상과 끌림",
+      title: "첫 접점과 체감 차이",
       headline: "처음에는 서로 다른 처리 방식이 매력으로 보입니다.",
       body: analysis.firstImpression,
       directHitScene:
         "빠르게 정리하는 사람과 깊게 확인하는 사람이 서로에게 새 자극으로 느껴집니다.",
-      practicalAdvice: "끌림이 생겨도 관계 속도는 말로 확인하세요.",
+      practicalAdvice: "관계 접점이 생겨도 속도는 말로 확인하세요.",
     },
     strengths: {
       title: "오래 가는 힘",
@@ -404,9 +404,9 @@ function buildScreenQaCompatibilityDraft(
     personBLabel: bName,
     openingTitle: `${aName}님과 ${bName}님의 ${relationLabel} 궁합`,
     openingSummary:
-      "두 사람은 장점과 피로가 같이 드러나는 조합입니다. 끌림은 빠르게 생기지만 가까워질수록 속도, 기준, 확인 방식이 관계의 체감 온도를 가릅니다. 한쪽은 빠르게 해결하려 하고, 다른 한쪽은 충분히 생각한 뒤 움직이려 합니다.",
+      "두 사람은 장점과 피로가 같이 드러나는 조합입니다. 접점은 생기지만 가까워질수록 속도, 기준, 확인 방식이 관계의 체감 온도를 가릅니다. 한쪽은 빠르게 해결하려 하고, 다른 한쪽은 충분히 생각한 뒤 움직이려 합니다.",
     coreLine:
-      "끌림은 있지만, 속도와 확정 타이밍을 맞추지 않으면 금방 피곤해지는 조합입니다.",
+      "접점은 있지만, 속도와 확정 타이밍을 맞추지 않으면 금방 피곤해지는 조합입니다.",
     scoreSummary: {
       ...packet.score,
       scoreCaution: getCompatibilityScoreCaution(

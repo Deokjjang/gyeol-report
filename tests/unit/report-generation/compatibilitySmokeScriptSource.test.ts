@@ -21,7 +21,7 @@ describe("compatibility smoke report draft source", () => {
     expect(smokeSource).toContain("writeCompatibilityPreviewSnapshot");
     expect(smokeSource).toContain("getCompatibilityPreviewUrl");
     expect(smokeSource).toContain("A가 주는 피로와 B가 주는 피로");
-    expect(smokeSource).toContain("끌림은 빠르게 생기지만");
+    expect(smokeSource).toContain("접점은 생기지만");
     expect(smokeSource).toContain("대화 속도가 안 맞을 때 빠르게 피곤해집니다");
     expect(smokeSource).toContain("해결을 위해 속도를 내면");
     expect(smokeSource).toContain("결론 속도와 기준 제시가 빠를 때");
