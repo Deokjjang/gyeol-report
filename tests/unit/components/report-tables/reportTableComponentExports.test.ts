@@ -11,6 +11,9 @@ import {
   DaeunTimelineTable,
   ManseRyeokCommonTable,
   MbtiCommonProfileTable,
+  LoveMarriageChildReportCommonTables,
+  LoveMarriageChildReportManseRyeokTable,
+  LoveMarriageChildReportMbtiProfileTable,
   SaeunAnnualCompareTable,
   SaeunFortuneTable,
   SaeunMonthlyHalfTable,
@@ -31,5 +34,8 @@ describe("report table component exports", () => {
     expect(typeof CareerReportCommonTables).toBe("function");
     expect(typeof CareerReportManseRyeokTable).toBe("function");
     expect(typeof CareerReportMbtiProfileTable).toBe("function");
+    expect(typeof LoveMarriageChildReportCommonTables).toBe("function");
+    expect(typeof LoveMarriageChildReportManseRyeokTable).toBe("function");
+    expect(typeof LoveMarriageChildReportMbtiProfileTable).toBe("function");
   });
 });

@@ -23,8 +23,11 @@ describe("love marriage child report preview page source", () => {
     expect(pageSource).toContain("buildLoveMarriageChildReportEvidence");
     expect(pageSource).toContain("buildScreenQaDraft");
     expect(pageSource).toContain("LoveMarriageChildReportView");
-    expect(pageSource).toContain("evidencePacket={snapshot.evidencePacket}");
-    expect(pageSource).toContain("evidencePacket={evidencePacket}");
+    expect(pageSource).toContain("renderReportView");
+    expect(pageSource).toContain("LoveMarriageChildReportManseRyeokTable");
+    expect(pageSource).toContain("LoveMarriageChildReportMbtiProfileTable");
+    expect(pageSource).toContain("manseRyeokTable=");
+    expect(pageSource).toContain("mbtiProfileTable=");
   });
 
   it("reads optional preview snapshots without importing the writer", () => {

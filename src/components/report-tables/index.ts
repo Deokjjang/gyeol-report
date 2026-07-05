@@ -19,3 +19,8 @@ export {
   CareerReportManseRyeokTable,
   CareerReportMbtiProfileTable,
 } from "./CareerReportCommonTables";
+export {
+  default as LoveMarriageChildReportCommonTables,
+  LoveMarriageChildReportManseRyeokTable,
+  LoveMarriageChildReportMbtiProfileTable,
+} from "./LoveMarriageChildReportCommonTables";

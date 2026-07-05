@@ -7,3 +7,4 @@ export * from "./daeunTableData";
 export * from "./saeunFortuneTableData";
 export * from "./compatibilityTableData";
 export * from "./careerReportTablePresenter";
+export * from "./loveMarriageChildReportTablePresenter";

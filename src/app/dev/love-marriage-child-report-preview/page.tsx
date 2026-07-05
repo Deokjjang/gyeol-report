@@ -15,6 +15,10 @@ import {
   type BuildLoveMarriageChildReportEvidenceInput,
 } from "../../../lib/report-knowledge/loveMarriageChildReportEvidence";
 import {
+  LoveMarriageChildReportManseRyeokTable,
+  LoveMarriageChildReportMbtiProfileTable,
+} from "../../../components/report-tables";
+import {
   LoveMarriageChildReportView,
 } from "../../reports/[reportId]/LoveMarriageChildReportView";
 
@@ -331,6 +335,24 @@ function renderMessage(title: string, message: string) {
   );
 }
 
+function renderReportView(
+  draft: LoveMarriageChildReportDraft,
+  evidencePacket: LoveMarriageChildReportEvidencePacket,
+) {
+  return (
+    <LoveMarriageChildReportView
+      draft={draft}
+      evidencePacket={evidencePacket}
+      manseRyeokTable={
+        <LoveMarriageChildReportManseRyeokTable evidence={evidencePacket} />
+      }
+      mbtiProfileTable={
+        <LoveMarriageChildReportMbtiProfileTable evidence={evidencePacket} />
+      }
+    />
+  );
+}
+
 export default async function LoveMarriageChildReportPreviewPage({
   searchParams,
 }: LoveMarriageChildPreviewPageProps) {
@@ -355,10 +377,7 @@ export default async function LoveMarriageChildReportPreviewPage({
   if (snapshot !== null) {
     return (
       <PreviewShell devStatus="저장된 화면">
-        <LoveMarriageChildReportView
-          draft={snapshot.draft}
-          evidencePacket={snapshot.evidencePacket}
-        />
+        {renderReportView(snapshot.draft, snapshot.evidencePacket)}
       </PreviewShell>
     );
   }
@@ -368,10 +387,7 @@ export default async function LoveMarriageChildReportPreviewPage({
 
   return (
     <PreviewShell devStatus="샘플 화면">
-      <LoveMarriageChildReportView
-        draft={draft}
-        evidencePacket={evidencePacket}
-      />
+      {renderReportView(draft, evidencePacket)}
     </PreviewShell>
   );
 }

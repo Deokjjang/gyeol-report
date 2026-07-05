@@ -4,6 +4,7 @@ import {
   buildCareerReportCommonTablesData,
   buildCompatibilityTableData,
   buildDaeunFortuneTableData,
+  buildLoveMarriageChildReportCommonTablesData,
   buildManseRyeokCommonTableData,
   buildMbtiCommonProfileTableData,
   buildSaeunFortuneTableData,
@@ -21,6 +22,9 @@ import {
 import {
   requireCareerReportFixture,
 } from "../../../src/lib/report-knowledge/careerReportFixtures";
+import {
+  buildLoveMarriageChildReportEvidence,
+} from "../../../src/lib/report-knowledge/loveMarriageChildReportEvidence";
 
 describe("report table lib exports", () => {
   it("exports display dictionary helpers", () => {
@@ -122,5 +126,23 @@ describe("report table lib exports", () => {
 
     expect(careerTables.manseRyeokTableData.title).toBe("덕민님의 만세력");
     expect(careerTables.mbtiProfileTableData?.type).toBe("ENTJ");
+  });
+
+  it("exports love marriage child report table presenter", () => {
+    const loveTables = buildLoveMarriageChildReportCommonTablesData(
+      buildLoveMarriageChildReportEvidence({
+        name: "덕민",
+        gender: "male",
+        mbtiType: "ENTJ",
+        relationshipStatus: "single",
+        saju: {
+          dayPillar: "甲申",
+          labels: ["편재", "정재", "도화살", "천을귀인", "甲己합"],
+        },
+      }),
+    );
+
+    expect(loveTables.manseRyeokTableData.title).toBe("덕민님의 만세력");
+    expect(loveTables.mbtiProfileTableData?.type).toBe("ENTJ");
   });
 });
