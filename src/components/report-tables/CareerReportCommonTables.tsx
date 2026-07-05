@@ -45,6 +45,7 @@ export function CareerReportMbtiProfileTable({
       data={data}
       defaultOpen={defaultOpen}
       className={className}
+      variant="compact"
     />
   );
 }
@@ -66,6 +67,7 @@ export default function CareerReportCommonTables({
         <MbtiCommonProfileTable
           data={data.mbtiProfileTableData}
           defaultOpen={defaultOpen}
+          variant="compact"
         />
       )}
     </div>

@@ -251,6 +251,36 @@ describe("MbtiCommonProfileTable", () => {
     expect(html).not.toContain(">career</span>");
   });
 
+  it("renders compact content without the detailed MBTI tables by default", () => {
+    const html = renderToStaticMarkup(
+      <MbtiCommonProfileTable data={tableData} variant="compact" />,
+    );
+
+    for (const marker of [
+      "ENTJ",
+      "대담한 통솔자",
+      "목표를 현실화하는 전략 지휘관",
+      "비효율을 발견하면 구조를 새로 짜고 목표를 현실로 밀어붙이는 사람",
+      "핵심 요약",
+      "정체성",
+      "성장 전략",
+      "가까운 키워드",
+      "먼 키워드",
+      "결과 중시",
+      "시간 낭비",
+      "선호 지표와 기능 서열 자세히 보기",
+    ]) {
+      expect(html).toContain(marker);
+    }
+
+    expect(html).not.toContain("선호 지표 비교");
+    expect(html).not.toContain("리포트 활용 포인트");
+    expect(html).not.toContain("외향 Extravert");
+    expect(html).not.toContain("내향 Introvert");
+    expect(html).not.toContain("외향 사고");
+    expect(html).not.toContain("목표 지휘관");
+  });
+
   it("hides table content when defaultOpen is false", () => {
     const html = renderToStaticMarkup(
       <MbtiCommonProfileTable data={tableData} defaultOpen={false} />,

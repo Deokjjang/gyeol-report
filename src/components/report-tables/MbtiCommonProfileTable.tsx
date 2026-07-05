@@ -12,15 +12,19 @@ type MbtiCommonProfileTableProps = {
   readonly data: MbtiCommonProfileTableData;
   readonly defaultOpen?: boolean;
   readonly className?: string;
+  readonly variant?: "full" | "compact";
 };
 
 export default function MbtiCommonProfileTable({
   data,
   defaultOpen = true,
   className,
+  variant = "full",
 }: MbtiCommonProfileTableProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
+  const [isDetailOpen, setIsDetailOpen] = useState(false);
   const contentId = useId();
+  const detailContentId = useId();
 
   return (
     <section
@@ -46,24 +50,96 @@ export default function MbtiCommonProfileTable({
 
       {isOpen ? (
         <div id={contentId} className="divide-y divide-[#eadfce]">
-          <TypeHeader data={data} />
-          <PreferenceAxesComparison data={data} />
-          <FunctionStackTable data={data} />
-          <CoreSummary data={data} />
-          <KeywordSection
-            title="가까운 키워드"
-            keywords={data.closeKeywords}
-            chipClassName="border-[#d7b56d] bg-[#fff8ea] text-[#5a4633]"
-          />
-          <KeywordSection
-            title="먼 키워드"
-            keywords={data.farKeywords}
-            chipClassName="border-[#d8d1c4] bg-[#f8f4ed] text-[#6f675d]"
-          />
-          <ReportUsageNotes notes={data.reportUsageNotes} />
+          {variant === "compact" ? (
+            <CompactProfile
+              data={data}
+              detailContentId={detailContentId}
+              isDetailOpen={isDetailOpen}
+              onToggleDetail={() => setIsDetailOpen((current) => !current)}
+            />
+          ) : (
+            <FullProfile data={data} />
+          )}
         </div>
       ) : null}
     </section>
+  );
+}
+
+function FullProfile({
+  data,
+}: {
+  readonly data: MbtiCommonProfileTableData;
+}) {
+  return (
+    <>
+      <TypeHeader data={data} />
+      <PreferenceAxesComparison data={data} />
+      <FunctionStackTable data={data} />
+      <CoreSummary data={data} />
+      <KeywordSection
+        title="가까운 키워드"
+        keywords={data.closeKeywords}
+        chipClassName="border-[#d7b56d] bg-[#fff8ea] text-[#5a4633]"
+      />
+      <KeywordSection
+        title="먼 키워드"
+        keywords={data.farKeywords}
+        chipClassName="border-[#d8d1c4] bg-[#f8f4ed] text-[#6f675d]"
+      />
+      <ReportUsageNotes notes={data.reportUsageNotes} />
+    </>
+  );
+}
+
+function CompactProfile({
+  data,
+  detailContentId,
+  isDetailOpen,
+  onToggleDetail,
+}: {
+  readonly data: MbtiCommonProfileTableData;
+  readonly detailContentId: string;
+  readonly isDetailOpen: boolean;
+  readonly onToggleDetail: () => void;
+}) {
+  return (
+    <>
+      <TypeHeader data={data} />
+      <CoreSummary data={data} limit={3} />
+      <KeywordSection
+        title="가까운 키워드"
+        keywords={data.closeKeywords}
+        limit={6}
+        chipClassName="border-[#d7b56d] bg-[#fff8ea] text-[#5a4633]"
+      />
+      <KeywordSection
+        title="먼 키워드"
+        keywords={data.farKeywords}
+        limit={6}
+        chipClassName="border-[#d8d1c4] bg-[#f8f4ed] text-[#6f675d]"
+      />
+      <div className="bg-[#fffdf8] px-4 py-3">
+        <button
+          type="button"
+          aria-expanded={isDetailOpen}
+          aria-controls={detailContentId}
+          onClick={onToggleDetail}
+          className="inline-flex w-full items-center justify-center rounded-md border border-[#d8d1c4] bg-[#fffaf3] px-3 py-2 text-sm font-extrabold text-[#5a4633] transition-colors hover:bg-[#f5efe5] sm:w-auto"
+        >
+          {isDetailOpen
+            ? "선호 지표와 기능 서열 접기"
+            : "선호 지표와 기능 서열 자세히 보기"}
+        </button>
+      </div>
+      {isDetailOpen ? (
+        <div id={detailContentId} className="divide-y divide-[#eadfce]">
+          <PreferenceAxesComparison data={data} />
+          <FunctionStackTable data={data} />
+          <ReportUsageNotes notes={data.reportUsageNotes} />
+        </div>
+      ) : null}
+    </>
   );
 }
 
@@ -221,16 +297,21 @@ function FunctionStackTable({
 
 function CoreSummary({
   data,
+  limit,
 }: {
   readonly data: MbtiCommonProfileTableData;
+  readonly limit?: number;
 }) {
+  const items =
+    limit === undefined ? data.coreSummary : data.coreSummary.slice(0, limit);
+
   return (
     <div className="bg-[#fffdf8]">
       <h3 className="bg-[#f5efe5] px-4 py-2 text-sm font-extrabold text-[#5a4633]">
         핵심 요약
       </h3>
       <dl className="grid gap-3 px-4 py-4">
-        {data.coreSummary.map((item) => (
+        {items.map((item) => (
           <div key={item.key} className="grid gap-1">
             <dt className="text-sm font-extrabold text-[#201a18]">
               {item.label}
@@ -249,17 +330,22 @@ function KeywordSection({
   title,
   keywords,
   chipClassName,
+  limit,
 }: {
   readonly title: string;
   readonly keywords: readonly string[];
   readonly chipClassName: string;
+  readonly limit?: number;
 }) {
+  const visibleKeywords =
+    limit === undefined ? keywords : keywords.slice(0, limit);
+
   return (
     <div className="bg-[#fffdf8] px-4 py-4">
       <h3 className="text-sm font-extrabold text-[#5a4633]">{title}</h3>
       <div className="mt-3 flex flex-wrap gap-2">
-        {keywords.length > 0 ? (
-          keywords.map((keyword) => (
+        {visibleKeywords.length > 0 ? (
+          visibleKeywords.map((keyword) => (
             <span
               key={keyword}
               className={joinClassNames(

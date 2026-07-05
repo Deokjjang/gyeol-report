@@ -40,10 +40,12 @@ describe("CareerReportCommonTables", () => {
     expect(html).toContain("신살/귀인");
     expect(html).toContain("합충형파해");
     expect(html).toContain("ENTJ 대담한 통솔자");
-    expect(html).toContain("선호 지표 비교");
-    expect(html).toContain("기능 서열");
-    expect(html).toContain("직업 활용");
-    expect(html).toContain("돈 관리");
+    expect(html).toContain("가까운 키워드");
+    expect(html).toContain("먼 키워드");
+    expect(html).toContain("선호 지표와 기능 서열 자세히 보기");
+    expect(html).not.toContain("선호 지표 비교");
+    expect(html).not.toContain("리포트 활용 포인트");
+    expect(html).not.toContain("외향 사고");
     expect(html).not.toContain("career 섹션");
     expect(html).not.toContain("workplace 문장");
     expect(html).not.toContain("money 섹션");
