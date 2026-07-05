@@ -122,7 +122,8 @@ describe("new report page source", () => {
       "return DEFAULT_SELECTED_REPORT_PRODUCT",
       "isSelectedProductPurchasable",
       "isPurchasable: false",
-      "궁합 리포트 생성 준비 중",
+      "궁합 리포트 미리보기 준비됨",
+      "필수 정보를 입력해 주세요",
     ];
 
     for (const marker of requiredMarkers) {
@@ -133,6 +134,11 @@ describe("new report page source", () => {
   it("renders compatibility A/B input branch fields and relationship categories", () => {
     const requiredMarkers = [
       "renderCompatibilityPersonInputSection",
+      "CompatibilityPersonInputState",
+      "compatibilityPersonA",
+      "compatibilityPersonB",
+      "compatibilityRelationshipType",
+      "isCompatibilityPersonRequiredInputComplete",
       "A 사람 입력",
       "B 사람 입력",
       "첫 번째 사람의 기본 정보를 입력합니다.",
@@ -169,6 +175,34 @@ describe("new report page source", () => {
     expect(
       pageSource.indexOf("selectedProduct.productKey === COMPATIBILITY_PRODUCT_KEY"),
     ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
+  });
+
+  it("renders compatibility preview handoff summary without API or payment calls", () => {
+    const requiredMarkers = [
+      "입력 확인 요약",
+      "실제 생성 전 단계",
+      "현재 입력값이 어떤 궁합 context로",
+      "A 사람",
+      "B 사람",
+      "관계 카테고리",
+      "상품 context",
+      "productKey:",
+      "productSlug:",
+      "formatCompatibilityBirthTimeSummary",
+      "formatCompatibilityRelationshipLabel",
+      "isCompatibilityInputReady",
+      "compatibilityCtaLabel",
+      "궁합 리포트 미리보기 준비됨",
+      "필수 정보를 입력해 주세요",
+      "현재 입력값으로 실제 리포트를 생성하지 않습니다.",
+      "추후 입력값 기반 preview generation 예정",
+      "fixture preview",
+      "event.preventDefault()",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
   });
 
   it("passes actual form state into the Toss checkout launcher", () => {

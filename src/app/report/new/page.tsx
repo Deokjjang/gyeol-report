@@ -168,6 +168,16 @@ const timeBranches = [
 type TimeBranchValue = (typeof timeBranches)[number]["value"];
 type TimeBranchSelection = TimeBranchValue | "";
 
+type CompatibilityPersonInputState = {
+  readonly name: string;
+  readonly birthDate: string;
+  readonly birthTime: string;
+  readonly timeBranch: TimeBranchSelection;
+  readonly birthTimeUnknown: boolean;
+  readonly gender: string;
+  readonly mbtiType: string;
+};
+
 const compatibilityRelationshipOptions = [
   { value: "love", labelKo: "연애" },
   { value: "marriage", labelKo: "결혼" },
@@ -177,6 +187,21 @@ const compatibilityRelationshipOptions = [
   { value: "businessPartner", labelKo: "사업·협업" },
   { value: "friendship", labelKo: "친구·인간관계" },
 ] as const;
+
+type CompatibilityRelationshipTypeSelection =
+  (typeof compatibilityRelationshipOptions)[number]["value"];
+
+function createCompatibilityPersonInputState(): CompatibilityPersonInputState {
+  return {
+    name: "",
+    birthDate: "",
+    birthTime: "",
+    timeBranch: "",
+    birthTimeUnknown: false,
+    gender: "",
+    mbtiType: "",
+  };
+}
 
 function getRepresentativeBirthTime(branch: TimeBranchValue): string {
   return (
@@ -207,6 +232,39 @@ function formatCalendarTypeLabel(value: string): string {
   }
 
   return "선택 안 함";
+}
+
+function formatCompatibilityRelationshipLabel(
+  value: CompatibilityRelationshipTypeSelection,
+): string {
+  return (
+    compatibilityRelationshipOptions.find((option) => option.value === value)
+      ?.labelKo ?? "연애"
+  );
+}
+
+function formatCompatibilityBirthTimeSummary(
+  input: CompatibilityPersonInputState,
+): string {
+  if (input.birthTimeUnknown) {
+    return "출생시간 모름";
+  }
+
+  if (input.birthTime.trim().length > 0) {
+    return `정확한 시간 · ${input.birthTime}`;
+  }
+
+  if (input.timeBranch !== "") {
+    return formatBirthTimeSummary("branch", "", input.timeBranch);
+  }
+
+  return "미입력";
+}
+
+function isCompatibilityPersonRequiredInputComplete(
+  input: CompatibilityPersonInputState,
+): boolean {
+  return input.name.trim().length > 0 && input.birthDate.trim().length > 0;
 }
 
 function getSearchParamValue(
@@ -285,8 +343,10 @@ function renderCompatibilityPersonInputSection(input: {
   readonly prefix: "personA" | "personB";
   readonly titleKo: string;
   readonly descriptionKo: string;
+  readonly value: CompatibilityPersonInputState;
+  readonly onChange: (value: CompatibilityPersonInputState) => void;
 }) {
-  const { prefix, titleKo, descriptionKo } = input;
+  const { prefix, titleKo, descriptionKo, value, onChange } = input;
 
   return (
     <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
@@ -307,8 +367,10 @@ function renderCompatibilityPersonInputSection(input: {
             id={`${prefix}Name`}
             name={`${prefix}Name`}
             type="text"
+            value={value.name}
             maxLength={20}
             placeholder={prefix === "personA" ? "예: 덕민" : "예: 소담"}
+            onChange={(event) => onChange({ ...value, name: event.target.value })}
             className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
           />
         </div>
@@ -324,7 +386,11 @@ function renderCompatibilityPersonInputSection(input: {
             id={`${prefix}BirthDate`}
             name={`${prefix}BirthDate`}
             type="date"
+            value={value.birthDate}
             style={{ colorScheme: "dark" }}
+            onChange={(event) =>
+              onChange({ ...value, birthDate: event.target.value })
+            }
             className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
           />
         </div>
@@ -340,7 +406,15 @@ function renderCompatibilityPersonInputSection(input: {
             id={`${prefix}BirthTime`}
             name={`${prefix}BirthTime`}
             type="time"
+            value={value.birthTime}
             style={{ colorScheme: "dark" }}
+            onChange={(event) =>
+              onChange({
+                ...value,
+                birthTime: event.target.value,
+                birthTimeUnknown: false,
+              })
+            }
             className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
           />
         </div>
@@ -355,6 +429,14 @@ function renderCompatibilityPersonInputSection(input: {
           <select
             id={`${prefix}TimeBranch`}
             name={`${prefix}TimeBranch`}
+            value={value.timeBranch}
+            onChange={(event) =>
+              onChange({
+                ...value,
+                timeBranch: event.target.value as TimeBranchSelection,
+                birthTimeUnknown: false,
+              })
+            }
             className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
           >
             <option value="">시간대를 선택해 주세요</option>
@@ -370,6 +452,15 @@ function renderCompatibilityPersonInputSection(input: {
           <input
             type="checkbox"
             name={`${prefix}BirthTimeUnknown`}
+            checked={value.birthTimeUnknown}
+            onChange={(event) =>
+              onChange({
+                ...value,
+                birthTimeUnknown: event.target.checked,
+                birthTime: event.target.checked ? "" : value.birthTime,
+                timeBranch: event.target.checked ? "" : value.timeBranch,
+              })
+            }
             className="h-4 w-4"
           />
           출생시간 모름
@@ -385,6 +476,10 @@ function renderCompatibilityPersonInputSection(input: {
           <select
             id={`${prefix}Gender`}
             name={`${prefix}Gender`}
+            value={value.gender}
+            onChange={(event) =>
+              onChange({ ...value, gender: event.target.value })
+            }
             className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
           >
             <option value="">선택</option>
@@ -403,6 +498,10 @@ function renderCompatibilityPersonInputSection(input: {
           <select
             id={`${prefix}MbtiType`}
             name={`${prefix}MbtiType`}
+            value={value.mbtiType}
+            onChange={(event) =>
+              onChange({ ...value, mbtiType: event.target.value })
+            }
             className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
           >
             <option value="">선택</option>
@@ -435,6 +534,12 @@ export default function NewReportPage({
   const [gender, setGender] = useState("");
   const [mbtiType, setMbtiType] = useState("");
   const [stepError, setStepError] = useState("");
+  const [compatibilityPersonA, setCompatibilityPersonA] =
+    useState<CompatibilityPersonInputState>(createCompatibilityPersonInputState);
+  const [compatibilityPersonB, setCompatibilityPersonB] =
+    useState<CompatibilityPersonInputState>(createCompatibilityPersonInputState);
+  const [compatibilityRelationshipType, setCompatibilityRelationshipType] =
+    useState<CompatibilityRelationshipTypeSelection>("love");
 
   const selectedStep = reportInputSteps[currentStep];
   const progressPercent = ((currentStep + 1) / reportInputSteps.length) * 100;
@@ -464,6 +569,16 @@ export default function NewReportPage({
   });
   const isCheckoutInputComplete =
     isDevTossCheckoutInputComplete(checkoutInputSnapshot);
+  const isCompatibilityInputReady =
+    isCompatibilityPersonRequiredInputComplete(compatibilityPersonA) &&
+    isCompatibilityPersonRequiredInputComplete(compatibilityPersonB) &&
+    compatibilityRelationshipType.trim().length > 0;
+  const compatibilityCtaLabel = isCompatibilityInputReady
+    ? "궁합 리포트 미리보기 준비됨"
+    : "필수 정보를 입력해 주세요";
+  const compatibilityRelationshipLabel = formatCompatibilityRelationshipLabel(
+    compatibilityRelationshipType,
+  );
 
   if (selectedProduct.productKey === COMPATIBILITY_PRODUCT_KEY) {
     return (
@@ -512,11 +627,15 @@ export default function NewReportPage({
                 prefix: "personA",
                 titleKo: "A 사람 입력",
                 descriptionKo: "첫 번째 사람의 기본 정보를 입력합니다.",
+                value: compatibilityPersonA,
+                onChange: setCompatibilityPersonA,
               })}
               {renderCompatibilityPersonInputSection({
                 prefix: "personB",
                 titleKo: "B 사람 입력",
                 descriptionKo: "두 번째 사람의 기본 정보를 입력합니다.",
+                value: compatibilityPersonB,
+                onChange: setCompatibilityPersonB,
               })}
             </div>
 
@@ -540,7 +659,12 @@ export default function NewReportPage({
                   <select
                     id="relationshipType"
                     name="relationshipType"
-                    defaultValue="love"
+                    value={compatibilityRelationshipType}
+                    onChange={(event) =>
+                      setCompatibilityRelationshipType(
+                        event.target.value as CompatibilityRelationshipTypeSelection,
+                      )
+                    }
                     className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
                   >
                     {compatibilityRelationshipOptions.map((option) => (
@@ -556,16 +680,90 @@ export default function NewReportPage({
                   aria-disabled="true"
                   className="min-h-12 rounded-lg border border-[#c79a43]/40 bg-[#2c1e1f] px-5 py-3 text-sm font-bold text-[#c79a43]/80"
                 >
-                  궁합 리포트 생성 준비 중
+                  {compatibilityCtaLabel}
                 </button>
               </div>
+            </section>
+
+            <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
+              <div className="space-y-2">
+                <p className="text-sm font-bold text-[#c79a43]">
+                  입력 확인 요약
+                </p>
+                <p className="text-sm leading-6 text-[#cfc5b8]">
+                  실제 생성 전 단계이며, 현재 입력값이 어떤 궁합 context로
+                  유지되는지 확인합니다.
+                </p>
+              </div>
+
+              <dl className="grid gap-3 text-sm lg:grid-cols-2">
+                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                  <dt className="font-semibold text-neutral-200">A 사람</dt>
+                  <dd className="mt-2 space-y-1 text-neutral-400">
+                    <p>이름: {compatibilityPersonA.name.trim() || "미입력"}</p>
+                    <p>생년월일: {compatibilityPersonA.birthDate || "미입력"}</p>
+                    <p>
+                      출생시간:{" "}
+                      {formatCompatibilityBirthTimeSummary(compatibilityPersonA)}
+                    </p>
+                    <p>성별: {formatGenderLabel(compatibilityPersonA.gender)}</p>
+                    <p>MBTI: {compatibilityPersonA.mbtiType || "미선택"}</p>
+                  </dd>
+                </div>
+
+                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                  <dt className="font-semibold text-neutral-200">B 사람</dt>
+                  <dd className="mt-2 space-y-1 text-neutral-400">
+                    <p>이름: {compatibilityPersonB.name.trim() || "미입력"}</p>
+                    <p>생년월일: {compatibilityPersonB.birthDate || "미입력"}</p>
+                    <p>
+                      출생시간:{" "}
+                      {formatCompatibilityBirthTimeSummary(compatibilityPersonB)}
+                    </p>
+                    <p>성별: {formatGenderLabel(compatibilityPersonB.gender)}</p>
+                    <p>MBTI: {compatibilityPersonB.mbtiType || "미선택"}</p>
+                  </dd>
+                </div>
+
+                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                  <dt className="font-semibold text-neutral-200">
+                    관계 카테고리
+                  </dt>
+                  <dd className="mt-2 text-neutral-400">
+                    {compatibilityRelationshipLabel} · {compatibilityRelationshipType}
+                  </dd>
+                </div>
+
+                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                  <dt className="font-semibold text-neutral-200">상품 context</dt>
+                  <dd className="mt-2 space-y-1 text-neutral-400">
+                    <p>productKey: {selectedProduct.productKey}</p>
+                    <p>productSlug: {selectedProduct.slug}</p>
+                  </dd>
+                </div>
+              </dl>
+
+              <p
+                className={
+                  isCompatibilityInputReady
+                    ? "rounded-lg border border-emerald-900/50 bg-emerald-950/20 p-4 text-sm font-semibold text-emerald-100"
+                    : "rounded-lg border border-amber-900/50 bg-amber-950/20 p-4 text-sm font-semibold text-amber-100"
+                }
+              >
+                {compatibilityCtaLabel}
+              </p>
             </section>
 
             <aside className="space-y-3 rounded-lg border border-[#4a3434] bg-[#171211]/70 p-5 text-sm leading-6 text-[#cfc5b8]">
               <p className="font-semibold text-[#fffaf0]">개발 미리보기</p>
               <p>
                 현재 화면은 전용 입력 흐름을 연결하기 위한 준비 화면입니다.
-                실제 생성, 결제, 저장은 이후 단계에서 연결합니다.
+                현재 입력값으로 실제 리포트를 생성하지 않습니다. 실제 생성,
+                결제, 저장은 이후 단계에서 연결합니다.
+              </p>
+              <p>
+                추후 입력값 기반 preview generation 예정이며, 지금은 smoke
+                fixture preview로 화면을 확인합니다.
               </p>
               <p className="break-words text-[#c79a43]">
                 /dev/compatibility-preview?fixture=deokmin-sodam-love&amp;snapshot=latest
