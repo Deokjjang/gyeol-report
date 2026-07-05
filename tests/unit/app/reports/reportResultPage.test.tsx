@@ -329,15 +329,14 @@ function createLoveMarriageChildEvidencePacket() {
         "정재",
         "정관",
         "편관",
-        "식신",
+        "상관",
         "현침살",
         "홍염살",
         "도화살",
         "화개살",
         "천을귀인",
         "월덕귀인",
-        "甲己합",
-        "申亥해",
+        "연일 천간합 甲己",
       ],
     },
   });
@@ -636,9 +635,9 @@ describe("report result page", () => {
 
     expect(html).toContain("연애·결혼·자녀 리포트");
     expect(html).toContain("덕민님의 관계 리포트");
-    expect(html).toContain("공통 만세력표");
+    expect(html).toContain("기초 만세력");
     expect(html).toContain("덕민님의 만세력");
-    expect(html).toContain("공통 MBTI표");
+    expect(html).toContain("MBTI 성향표");
     expect(html).toContain("ENTJ 대담한 통솔자");
     expect(html).toContain("명리 핵심 근거");
     expect(html).toContain("재성");
@@ -670,8 +669,8 @@ describe("report result page", () => {
     expect(html).toContain("연애·결혼·자녀 리포트");
     expect(html).toContain("이번 화면에서는 본문을 중심으로 관계 기준을 읽습니다.");
     expect(html).not.toContain("draft 본문");
-    expect(html).not.toContain("공통 만세력표");
-    expect(html).not.toContain("공통 MBTI표");
+    expect(html).not.toContain("기초 만세력");
+    expect(html).not.toContain("MBTI 성향표");
   });
 
   it("keeps V2 page rendering when MBTI source is unknown", async () => {
