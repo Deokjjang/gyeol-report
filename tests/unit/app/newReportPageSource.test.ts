@@ -111,20 +111,64 @@ describe("new report page source", () => {
       "COMPATIBILITY_PRODUCT_SLUG",
       "compatibility",
       "COMPATIBILITY_SELECTED_REPORT_PRODUCT",
+      "selectedProduct.productKey === COMPATIBILITY_PRODUCT_KEY",
       "궁합 리포트 입력",
-      "궁합 리포트 입력 흐름 준비 중입니다.",
       "두 사람의 생년월일, 출생시간, MBTI, 관계 카테고리",
+      "바탕으로 궁합 리포트를 구성합니다.",
+      "상담이나 예언이 아닌 관계 분석용 디지털 리포트입니다.",
       "전용 흐름으로 연결될 예정입니다.",
       "productSlug === COMPATIBILITY_PRODUCT_SLUG",
       "return COMPATIBILITY_SELECTED_REPORT_PRODUCT",
       "return DEFAULT_SELECTED_REPORT_PRODUCT",
       "isSelectedProductPurchasable",
       "isPurchasable: false",
+      "궁합 리포트 생성 준비 중",
     ];
 
     for (const marker of requiredMarkers) {
       expect(pageSource).toContain(marker);
     }
+  });
+
+  it("renders compatibility A/B input branch fields and relationship categories", () => {
+    const requiredMarkers = [
+      "renderCompatibilityPersonInputSection",
+      "A 사람 입력",
+      "B 사람 입력",
+      "첫 번째 사람의 기본 정보를 입력합니다.",
+      "두 번째 사람의 기본 정보를 입력합니다.",
+      "이름",
+      "생년월일",
+      "출생시간",
+      "대략적인 시간대",
+      "출생시간 모름",
+      "성별",
+      "MBTI",
+      'name="relationshipType"',
+      'value: "love"',
+      'labelKo: "연애"',
+      'value: "marriage"',
+      'labelKo: "결혼"',
+      'value: "parentChild"',
+      'labelKo: "부모·자식"',
+      'value: "coworker"',
+      'labelKo: "직장 동료"',
+      'value: "managerReport"',
+      'labelKo: "상사·부하"',
+      'value: "businessPartner"',
+      'labelKo: "사업·협업"',
+      'value: "friendship"',
+      'labelKo: "친구·인간관계"',
+      "/dev/compatibility-preview?fixture=deokmin-sodam-love",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+
+    expect(
+      pageSource.indexOf("selectedProduct.productKey === COMPATIBILITY_PRODUCT_KEY"),
+    ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
   });
 
   it("passes actual form state into the Toss checkout launcher", () => {

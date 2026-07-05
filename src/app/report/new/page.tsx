@@ -168,6 +168,16 @@ const timeBranches = [
 type TimeBranchValue = (typeof timeBranches)[number]["value"];
 type TimeBranchSelection = TimeBranchValue | "";
 
+const compatibilityRelationshipOptions = [
+  { value: "love", labelKo: "연애" },
+  { value: "marriage", labelKo: "결혼" },
+  { value: "parentChild", labelKo: "부모·자식" },
+  { value: "coworker", labelKo: "직장 동료" },
+  { value: "managerReport", labelKo: "상사·부하" },
+  { value: "businessPartner", labelKo: "사업·협업" },
+  { value: "friendship", labelKo: "친구·인간관계" },
+] as const;
+
 function getRepresentativeBirthTime(branch: TimeBranchValue): string {
   return (
     timeBranches.find((item) => item.value === branch)?.representativeTime ??
@@ -271,6 +281,143 @@ function createCheckoutInputSnapshot(input: {
   };
 }
 
+function renderCompatibilityPersonInputSection(input: {
+  readonly prefix: "personA" | "personB";
+  readonly titleKo: string;
+  readonly descriptionKo: string;
+}) {
+  const { prefix, titleKo, descriptionKo } = input;
+
+  return (
+    <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
+      <div className="space-y-2">
+        <p className="text-sm font-bold text-[#c79a43]">{titleKo}</p>
+        <p className="text-sm leading-6 text-[#cfc5b8]">{descriptionKo}</p>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div className="space-y-2">
+          <label
+            htmlFor={`${prefix}Name`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            이름
+          </label>
+          <input
+            id={`${prefix}Name`}
+            name={`${prefix}Name`}
+            type="text"
+            maxLength={20}
+            placeholder={prefix === "personA" ? "예: 덕민" : "예: 소담"}
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor={`${prefix}BirthDate`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            생년월일
+          </label>
+          <input
+            id={`${prefix}BirthDate`}
+            name={`${prefix}BirthDate`}
+            type="date"
+            style={{ colorScheme: "dark" }}
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor={`${prefix}BirthTime`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            출생시간
+          </label>
+          <input
+            id={`${prefix}BirthTime`}
+            name={`${prefix}BirthTime`}
+            type="time"
+            style={{ colorScheme: "dark" }}
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor={`${prefix}TimeBranch`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            대략적인 시간대
+          </label>
+          <select
+            id={`${prefix}TimeBranch`}
+            name={`${prefix}TimeBranch`}
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+          >
+            <option value="">시간대를 선택해 주세요</option>
+            {timeBranches.map((branch) => (
+              <option key={branch.value} value={branch.value}>
+                {branch.labelKo}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <label className="flex min-h-12 items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200">
+          <input
+            type="checkbox"
+            name={`${prefix}BirthTimeUnknown`}
+            className="h-4 w-4"
+          />
+          출생시간 모름
+        </label>
+
+        <div className="space-y-2">
+          <label
+            htmlFor={`${prefix}Gender`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            성별
+          </label>
+          <select
+            id={`${prefix}Gender`}
+            name={`${prefix}Gender`}
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+          >
+            <option value="">선택</option>
+            <option value="MALE">남성</option>
+            <option value="FEMALE">여성</option>
+          </select>
+        </div>
+
+        <div className="space-y-2 sm:col-span-2">
+          <label
+            htmlFor={`${prefix}MbtiType`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            MBTI
+          </label>
+          <select
+            id={`${prefix}MbtiType`}
+            name={`${prefix}MbtiType`}
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+          >
+            <option value="">선택</option>
+            {mbtiTypes.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function NewReportPage({
   searchParams = EMPTY_REPORT_SEARCH_PARAMS,
 }: NewReportPageProps) {
@@ -317,6 +464,118 @@ export default function NewReportPage({
   });
   const isCheckoutInputComplete =
     isDevTossCheckoutInputComplete(checkoutInputSnapshot);
+
+  if (selectedProduct.productKey === COMPATIBILITY_PRODUCT_KEY) {
+    return (
+      <main className="min-h-screen bg-[#171211] px-5 py-8 text-[#fffaf0] sm:px-8 lg:px-10">
+        <section className="mx-auto max-w-6xl space-y-8">
+          <header className="max-w-3xl space-y-4 animate-[gyeol-reveal_520ms_ease-out]">
+            <p className="text-sm font-bold tracking-[0.18em] text-[#c79a43]">
+              Gyeol Report
+            </p>
+            <h1 className="text-4xl font-bold tracking-normal text-[#fffaf0]">
+              궁합 리포트 입력
+            </h1>
+            <p className="max-w-2xl text-base leading-8 text-[#cfc5b8]">
+              두 사람의 생년월일, 출생시간, MBTI, 관계 카테고리를
+              바탕으로 궁합 리포트를 구성합니다.
+            </p>
+            <p className="max-w-2xl rounded-lg border border-[#4a3434] bg-[#211817]/80 px-4 py-3 text-sm leading-6 text-[#cfc5b8]">
+              상담이나 예언이 아닌 관계 분석용 디지털 리포트입니다.
+            </p>
+          </header>
+
+          <form
+            onSubmit={(event) => event.preventDefault()}
+            className="grid gap-6"
+          >
+            <input type="hidden" name="timezone" value="Asia/Seoul" />
+            <input type="hidden" name="calendarType" value="SOLAR" />
+            <input
+              type="hidden"
+              name="productKey"
+              value={selectedProduct.productKey}
+            />
+            <input
+              type="hidden"
+              name="productSlug"
+              value={selectedProduct.slug}
+            />
+            <input
+              type="hidden"
+              name="productName"
+              value={selectedProduct.nameKo}
+            />
+
+            <div className="grid gap-5 lg:grid-cols-2">
+              {renderCompatibilityPersonInputSection({
+                prefix: "personA",
+                titleKo: "A 사람 입력",
+                descriptionKo: "첫 번째 사람의 기본 정보를 입력합니다.",
+              })}
+              {renderCompatibilityPersonInputSection({
+                prefix: "personB",
+                titleKo: "B 사람 입력",
+                descriptionKo: "두 번째 사람의 기본 정보를 입력합니다.",
+              })}
+            </div>
+
+            <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
+              <div className="space-y-2">
+                <p className="text-sm font-bold text-[#c79a43]">
+                  관계 카테고리
+                </p>
+                <p className="text-sm leading-6 text-[#cfc5b8]">
+                  같은 두 사람이라도 관계 맥락에 따라 해석 초점이 달라집니다.
+                </p>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
+                <div className="space-y-2">
+                  <label
+                    htmlFor="relationshipType"
+                    className="block text-sm font-medium text-neutral-200"
+                  >
+                    관계 선택
+                  </label>
+                  <select
+                    id="relationshipType"
+                    name="relationshipType"
+                    defaultValue="love"
+                    className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                  >
+                    {compatibilityRelationshipOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.labelKo}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <button
+                  type="button"
+                  disabled
+                  aria-disabled="true"
+                  className="min-h-12 rounded-lg border border-[#c79a43]/40 bg-[#2c1e1f] px-5 py-3 text-sm font-bold text-[#c79a43]/80"
+                >
+                  궁합 리포트 생성 준비 중
+                </button>
+              </div>
+            </section>
+
+            <aside className="space-y-3 rounded-lg border border-[#4a3434] bg-[#171211]/70 p-5 text-sm leading-6 text-[#cfc5b8]">
+              <p className="font-semibold text-[#fffaf0]">개발 미리보기</p>
+              <p>
+                현재 화면은 전용 입력 흐름을 연결하기 위한 준비 화면입니다.
+                실제 생성, 결제, 저장은 이후 단계에서 연결합니다.
+              </p>
+              <p className="break-words text-[#c79a43]">
+                /dev/compatibility-preview?fixture=deokmin-sodam-love&amp;snapshot=latest
+              </p>
+            </aside>
+          </form>
+        </section>
+      </main>
+    );
+  }
 
   function isBirthTimeStepValid(): boolean {
     if (birthTimeMode === "unknown") {
