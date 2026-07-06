@@ -16,6 +16,8 @@ const LOVE_MARRIAGE_CHILD_PRODUCT_KEY = "love_marriage_child";
 const LOVE_MARRIAGE_CHILD_PRODUCT_SLUG = "love-marriage-child";
 const COMPATIBILITY_PRODUCT_KEY = "saju_mbti_compatibility";
 const COMPATIBILITY_PRODUCT_SLUG = "compatibility";
+const MAJOR_FORTUNE_PRODUCT_KEY = "major_fortune";
+const MAJOR_FORTUNE_PRODUCT_SLUG = "major-fortune";
 const ACTIVE_REPORT_LIST_PRICE_LABEL_KO = "정가 1,290원";
 const ACTIVE_REPORT_SALE_PRICE_LABEL_KO = "런칭가 990원";
 const ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO = "결제금액 990원";
@@ -109,6 +111,22 @@ const COMPATIBILITY_SELECTED_REPORT_PRODUCT = {
   inputTitleKo: "궁합 리포트 입력",
   introKo:
     "궁합 리포트 입력 흐름 준비 중입니다. 두 사람의 생년월일, 출생시간, MBTI, 관계 카테고리를 입력하는 전용 흐름으로 연결될 예정입니다.",
+  formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
+  deliveryTypeKo: "미리보기 입력 흐름",
+  statusLabelKo: "준비 중 · 미리보기 가능",
+  isPurchasable: false,
+  listPriceKo: null,
+  priceKo: null,
+} as const satisfies SelectedReportProduct;
+
+const MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT = {
+  productKey: MAJOR_FORTUNE_PRODUCT_KEY,
+  slug: MAJOR_FORTUNE_PRODUCT_SLUG,
+  nameKo: "대운 리포트",
+  fullNameKo: "대운 리포트",
+  inputTitleKo: "대운 리포트 입력",
+  introKo:
+    "대운 리포트 입력 흐름 준비 중입니다. 현재 대운과 올해 세운의 교차를 읽는 전용 흐름으로 연결될 예정입니다. 개발 미리보기: /dev/major-fortune-preview?fixture=deokmin-current-major-fortune&snapshot=latest",
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
   deliveryTypeKo: "미리보기 입력 흐름",
   statusLabelKo: "준비 중 · 미리보기 가능",
@@ -292,6 +310,10 @@ function resolveSelectedReportProduct(
 
   if (productSlug === COMPATIBILITY_PRODUCT_SLUG) {
     return COMPATIBILITY_SELECTED_REPORT_PRODUCT;
+  }
+
+  if (productSlug === MAJOR_FORTUNE_PRODUCT_SLUG) {
+    return MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT;
   }
 
   return DEFAULT_SELECTED_REPORT_PRODUCT;

@@ -64,14 +64,19 @@ const launchProductGrid = [
   },
   {
     id: "daewoon_report",
+    productKey: "major_fortune",
+    slug: "major-fortune",
     nameKo: "대운 리포트",
     versionBadgeKo: "v1.0 준비",
     shortDescriptionKo:
       "10년 단위의 큰 흐름과 올해 세운을 교차해 일, 돈, 관계의 배경 변화를 정리합니다.",
-    status: "coming_soon",
+    status: "preview_available",
     isPurchasable: false,
     href: null,
-    badgeKo: "출시 준비 중",
+    previewHref: "/report/new?product=major-fortune",
+    previewCtaLabelKo: "입력 흐름 미리보기",
+    previewStatusKo: "준비 중 · 미리보기 가능",
+    badgeKo: "개발 preview",
     visualKey: "daewoon",
   },
   {

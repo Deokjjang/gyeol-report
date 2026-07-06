@@ -131,6 +131,32 @@ describe("new report page source", () => {
     }
   });
 
+  it("keeps major fortune product selection as a non-payment skeleton", () => {
+    const requiredMarkers = [
+      "MAJOR_FORTUNE_PRODUCT_KEY",
+      "major_fortune",
+      "MAJOR_FORTUNE_PRODUCT_SLUG",
+      "major-fortune",
+      "MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT",
+      "대운 리포트 입력",
+      "대운 리포트 입력 흐름 준비 중입니다.",
+      "현재 대운과 올해 세운의 교차",
+      "전용 흐름으로 연결될 예정입니다.",
+      "/dev/major-fortune-preview?fixture=deokmin-current-major-fortune",
+      "미리보기 입력 흐름",
+      "준비 중 · 미리보기 가능",
+      "productSlug === MAJOR_FORTUNE_PRODUCT_SLUG",
+      "return MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT",
+      "return DEFAULT_SELECTED_REPORT_PRODUCT",
+      "isSelectedProductPurchasable",
+      "isPurchasable: false",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+  });
+
   it("renders compatibility A/B input branch fields and relationship categories", () => {
     const requiredMarkers = [
       "renderCompatibilityPersonInputSection",

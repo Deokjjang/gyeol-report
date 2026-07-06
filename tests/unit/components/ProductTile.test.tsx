@@ -88,6 +88,23 @@ const compatibilityPreviewProduct = {
   visualKey: "compatibility",
 } as const satisfies ProductTileItem;
 
+const majorFortunePreviewProduct = {
+  id: "daewoon_report",
+  productKey: "major_fortune",
+  slug: "major-fortune",
+  nameKo: "대운 리포트",
+  versionBadgeKo: "v1.0 준비",
+  shortDescriptionKo: "10년 흐름과 올해 세운 교차를 봅니다.",
+  status: "preview_available",
+  isPurchasable: false,
+  href: null,
+  previewHref: "/report/new?product=major-fortune",
+  previewCtaLabelKo: "입력 흐름 미리보기",
+  previewStatusKo: "준비 중 · 미리보기 가능",
+  badgeKo: "개발 preview",
+  visualKey: "daewoon",
+} as const satisfies ProductTileItem;
+
 describe("ProductTile", () => {
   it("renders purchasable product state and CTA", () => {
     const html = renderToStaticMarkup(<ProductTile product={activeProduct} />);
@@ -149,6 +166,20 @@ describe("ProductTile", () => {
     expect(html).toContain("준비 중 · 미리보기 가능");
     expect(html).toContain("입력 흐름 미리보기");
     expect(html).toContain('href="/report/new?product=compatibility"');
+    expect(html).not.toContain("구매 가능");
+    expect(html).not.toContain("결제하고 리포트 생성하기");
+  });
+
+  it("renders major fortune preview product as a non-purchasable input flow link", () => {
+    const html = renderToStaticMarkup(
+      <ProductTile product={majorFortunePreviewProduct} />,
+    );
+
+    expect(html).toContain("대운 리포트");
+    expect(html).toContain("개발 preview");
+    expect(html).toContain("준비 중 · 미리보기 가능");
+    expect(html).toContain("입력 흐름 미리보기");
+    expect(html).toContain('href="/report/new?product=major-fortune"');
     expect(html).not.toContain("구매 가능");
     expect(html).not.toContain("결제하고 리포트 생성하기");
   });
