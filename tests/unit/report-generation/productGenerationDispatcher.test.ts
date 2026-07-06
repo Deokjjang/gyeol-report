@@ -151,7 +151,8 @@ describe("product generation dispatcher", () => {
       (kind) =>
         kind !== "careerMoneyStudy" &&
         kind !== "compatibility" &&
-        kind !== "loveMarriageChild",
+        kind !== "loveMarriageChild" &&
+        kind !== "majorFortune",
     )) {
       const result = dispatchProductGenerationInput(makeNormalizedInput(kind));
 
@@ -183,13 +184,6 @@ describe("product generation dispatcher", () => {
 
   it("routes valid disconnected product payloads to not implemented by kind", async () => {
     const payloads = [
-      {
-        payload: makeSinglePayload({
-          productKey: "major_fortune",
-          productSlug: "major-fortune",
-        }),
-        kind: "majorFortune",
-      },
       {
         payload: makeSinglePayload({
           productKey: "annual_fortune",
@@ -264,6 +258,36 @@ describe("product generation dispatcher", () => {
     });
   });
 
+  it("routes valid major fortune payloads to generated draft output", async () => {
+    const result = await prepareProductGenerationFromPayload(
+      makeSinglePayload({
+        productKey: "major_fortune",
+        productSlug: "major-fortune",
+      }),
+    );
+
+    expect(result).toMatchObject({
+      ok: true,
+      kind: "majorFortune",
+      draft: {
+        version: "v1",
+        productType: "major_fortune",
+        productVersion: "v1",
+        personLabel: "김도윤",
+      },
+      evidencePacket: {
+        productType: "major_fortune",
+        productVersion: "v1",
+        personLabel: "김도윤",
+        userContext: {
+          lifeStatus: "employee",
+          fieldLabel: "서비스 기획자",
+          relationshipStatus: "single",
+        },
+      },
+    });
+  });
+
   it("routes valid compatibility payloads to generated draft output", async () => {
     const result = await prepareProductGenerationFromPayload(makeCompatibilityPayload());
 
@@ -288,7 +312,7 @@ describe("product generation dispatcher", () => {
       "careerMoneyStudy: handleCareerMoneyStudyGeneration",
       "loveMarriageChild: handleLoveMarriageChildGeneration",
       "compatibility: handleCompatibilityGeneration",
-      "majorFortune: createNotImplementedHandler",
+      "majorFortune: handleMajorFortuneGeneration",
       "annualFortune: createNotImplementedHandler",
       "satisfies Record<ReportProductKind, ProductGenerationHandler>",
     ];

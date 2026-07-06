@@ -188,6 +188,17 @@ async function loadProductPreviewPageState(
     };
   }
 
+  if (productPreview.productType === "major_fortune") {
+    if (!isMajorFortuneReportDraft(productPreview.draft)) {
+      return { kind: "invalidSnapshot" };
+    }
+
+    return {
+      kind: "productPreview",
+      productPreview,
+    };
+  }
+
   return { kind: "unsupportedProductPreview" };
 }
 
@@ -635,6 +646,10 @@ function renderProductPreviewState(productPreview: ProductPreviewSnapshot) {
     return renderProductPreviewLoveMarriageChildState(productPreview);
   }
 
+  if (productPreview.productType === "major_fortune") {
+    return renderProductPreviewMajorFortuneState(productPreview);
+  }
+
   return renderUnsupportedProductPreviewState();
 }
 
@@ -680,6 +695,35 @@ function getLoveMarriageChildPreviewEvidencePacket(
   return isLoveMarriageChildReportDraft(productPreview.draft)
     ? productPreview.draft.evidencePacket
     : undefined;
+}
+
+function renderProductPreviewMajorFortuneState(
+  productPreview: ProductPreviewSnapshot,
+) {
+  if (!isMajorFortuneReportDraft(productPreview.draft)) {
+    return renderInvalidSnapshotState();
+  }
+
+  return (
+    <MajorFortuneReportView
+      draft={productPreview.draft}
+      reportId={productPreview.reportId}
+      evidencePacket={getMajorFortunePreviewEvidencePacket(productPreview)}
+    />
+  );
+}
+
+function getMajorFortunePreviewEvidencePacket(
+  productPreview: ProductPreviewSnapshot,
+): MajorFortuneEvidencePacket | undefined {
+  if (
+    isRecord(productPreview.evidencePacket) &&
+    productPreview.evidencePacket.productType === "major_fortune"
+  ) {
+    return productPreview.evidencePacket as unknown as MajorFortuneEvidencePacket;
+  }
+
+  return undefined;
 }
 
 function renderGeneratedLoveMarriageChildState(

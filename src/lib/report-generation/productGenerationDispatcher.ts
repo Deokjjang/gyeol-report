@@ -11,6 +11,10 @@ import {
   type LoveMarriageChildGenerationHandlerOptions,
 } from "./loveMarriageChildGenerationHandler";
 import {
+  generateMajorFortuneProductDraft,
+  type MajorFortuneGenerationHandlerOptions,
+} from "./majorFortuneGenerationHandler";
+import {
   normalizeReportInputPayload,
   type CompatibilityGenerationInput,
   type ReportGenerationInput,
@@ -62,13 +66,14 @@ export type ProductGenerationDispatcherOptions = {
   readonly careerMoneyStudy?: CareerMoneyStudyGenerationHandlerOptions;
   readonly compatibility?: CompatibilityGenerationHandlerOptions;
   readonly loveMarriageChild?: LoveMarriageChildGenerationHandlerOptions;
+  readonly majorFortune?: MajorFortuneGenerationHandlerOptions;
 };
 
 const PRODUCT_GENERATION_HANDLERS = {
   careerMoneyStudy: handleCareerMoneyStudyGeneration,
   loveMarriageChild: handleLoveMarriageChildGeneration,
   compatibility: handleCompatibilityGeneration,
-  majorFortune: createNotImplementedHandler("majorFortune"),
+  majorFortune: handleMajorFortuneGeneration,
   annualFortune: createNotImplementedHandler("annualFortune"),
 } as const satisfies Record<ReportProductKind, ProductGenerationHandler>;
 
@@ -188,6 +193,35 @@ async function handleCareerMoneyStudyGeneration(
   return {
     ok: false,
     kind: "careerMoneyStudy",
+    error: {
+      code: "INVALID_REPORT_INPUT",
+      message: `${result.error.code}: ${result.error.message}`,
+    },
+  };
+}
+
+async function handleMajorFortuneGeneration(
+  input: ReportGenerationInput,
+  options: ProductGenerationDispatcherOptions = {},
+): Promise<ProductGenerationResult> {
+  if (input.kind !== "majorFortune") {
+    return invalidInputResult(
+      `Generation input kind mismatch: expected majorFortune, received ${input.kind}`,
+    );
+  }
+
+  const result = await generateMajorFortuneProductDraft(
+    input,
+    options.majorFortune,
+  );
+
+  if (result.ok) {
+    return result;
+  }
+
+  return {
+    ok: false,
+    kind: "majorFortune",
     error: {
       code: "INVALID_REPORT_INPUT",
       message: `${result.error.code}: ${result.error.message}`,

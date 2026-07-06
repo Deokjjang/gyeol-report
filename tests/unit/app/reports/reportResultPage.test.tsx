@@ -1108,6 +1108,22 @@ async function persistMajorFortuneProductPreview(reportId: string): Promise<void
   await persistProductPreviewRecord(reportId, productPreviewResult.value);
 }
 
+async function persistAnnualFortuneProductPreview(reportId: string): Promise<void> {
+  const productPreviewResult = createProductPreviewSnapshot({
+    reportId,
+    createdAtIso: createdAt,
+    productKey: "annual_fortune",
+    productSlug: "annual-fortune",
+    draft: createAnnualFortuneDraft(),
+  });
+
+  if (!productPreviewResult.ok) {
+    throw new Error(`Product preview fixture failed: ${productPreviewResult.error}`);
+  }
+
+  await persistProductPreviewRecord(reportId, productPreviewResult.value);
+}
+
 describe("report result page", () => {
   beforeEach(() => {
     mockGetPaidReportResult.mockReset();
@@ -1161,15 +1177,30 @@ describe("report result page", () => {
     expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
   });
 
-  it("keeps unsupported product preview snapshots on the safe preparation screen", async () => {
+  it("renders major fortune product preview snapshot before paid result lookup", async () => {
     await persistMajorFortuneProductPreview("report_product_preview_major");
 
     const html = await renderPage("report_product_preview_major");
 
     expect(mockGetPaidReportResult).not.toHaveBeenCalled();
+    expect(html).toContain("대운 리포트");
+    expect(html).toContain("덕민님의 戊辰 대운 리포트");
+    expect(html).toContain("현재 대운 요약");
+    expect(html).toContain("현재 대운·올해 세운 교차");
+    expect(html).toContain("대운 타임라인");
+    expect(html).not.toContain("사주×MBTI 종합 리포트");
+    expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
+  });
+
+  it("keeps unsupported product preview snapshots on the safe preparation screen", async () => {
+    await persistAnnualFortuneProductPreview("report_product_preview_annual");
+
+    const html = await renderPage("report_product_preview_annual");
+
+    expect(mockGetPaidReportResult).not.toHaveBeenCalled();
     expect(html).toContain("상품 미리보기 준비 중입니다.");
     expect(html).toContain("이 상품의 결과 화면 연결은 아직 준비 중입니다.");
-    expect(html).not.toContain("대운 리포트");
+    expect(html).not.toContain("세운 리포트");
   });
 
   it("loads by report id and renders a generated comprehensive draft", async () => {

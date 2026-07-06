@@ -167,6 +167,13 @@ const careerMoneyStudyPayload = {
   productOptions: {},
 } as const;
 
+const majorFortunePayload = {
+  ...singleProductPayload,
+  productKey: "major_fortune",
+  productSlug: "major-fortune",
+  productOptions: {},
+} as const;
+
 function readFile(relativePath: string): string {
   return readFileSync(join(process.cwd(), relativePath), "utf8");
 }
@@ -388,6 +395,30 @@ describe("create report route", () => {
       expect(body.productPreview.productKey).toBe("career_money_study");
       expect(body.productPreview.productSlug).toBe("career-money-study");
       expect(body.productPreview.draft.productType).toBe("career_money_study");
+      expect(body.productPreview.access).toEqual({
+        mode: "preview",
+        isPaid: false,
+        isUnlocked: false,
+      });
+      expect(body).not.toHaveProperty("report");
+    }
+  });
+
+  it("returns product preview response for major fortune payload", async () => {
+    const response = await POST(createJsonRequest(majorFortunePayload));
+
+    expect(response.status).toBe(200);
+
+    const body = await readApiResponseBody(response);
+
+    expect(body.ok).toBe(true);
+    if (body.ok && "snapshotKind" in body) {
+      expect(body.reportId).toMatch(/^report_/);
+      expect(body.snapshotKind).toBe("product_preview");
+      expect(body.productPreview.productType).toBe("major_fortune");
+      expect(body.productPreview.productKey).toBe("major_fortune");
+      expect(body.productPreview.productSlug).toBe("major-fortune");
+      expect(body.productPreview.draft.productType).toBe("major_fortune");
       expect(body.productPreview.access).toEqual({
         mode: "preview",
         isPaid: false,
