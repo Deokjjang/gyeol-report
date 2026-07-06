@@ -43,17 +43,19 @@ describe("smoke_generate_annual_fortune_report_draft source", () => {
     expect(source).toContain("grammar residue warnings:");
     expect(source).toContain("parenthetical term warnings:");
     expect(source).toContain("monthly basis:");
-    expect(source).toContain("calendar_month_approximation");
     expect(source).toContain("life area signals");
     expect(source).toContain("difficulty signals");
     expect(source).toContain("opportunity signals");
-    expect(source).toContain("SKIP draft generation, OpenAI writer disabled");
-    expect(source).toContain("SKIP draft generation, OpenAI writer env incomplete");
+    expect(source).not.toContain("calendar_month_approximation");
+    expect(source).toContain("writer disabled fallback draft: enabled");
+    expect(source).toContain("writer config fallback draft: enabled");
   });
 
-  it("writes annual-fortune-preview snapshots only after draft generation", () => {
+  it("writes annual-fortune-preview snapshots after generated or local draft validation", () => {
     expect(source).toContain("generateAnnualFortuneReportDraft");
     expect(source).toContain("validateAnnualFortuneReportDraft");
+    expect(source).toContain("buildWriterDisabledAnnualFortuneDraft");
+    expect(source).toContain("reportAnnualFortuneDraftResult");
     expect(source).toContain("writeAnnualFortunePreviewSnapshot");
     expect(source).toContain("getAnnualFortunePreviewSnapshotRelativePath");
     expect(source).toContain("getAnnualFortunePreviewUrl");
