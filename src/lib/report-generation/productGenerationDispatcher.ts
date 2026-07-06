@@ -1,4 +1,8 @@
 import {
+  generateCareerMoneyStudyProductDraft,
+  type CareerMoneyStudyGenerationHandlerOptions,
+} from "./careerMoneyStudyGenerationHandler";
+import {
   generateCompatibilityProductDraft,
   type CompatibilityGenerationHandlerOptions,
 } from "./compatibilityGenerationHandler";
@@ -55,12 +59,13 @@ export type ProductGenerationHandler = (
 ) => Promise<ProductGenerationResult>;
 
 export type ProductGenerationDispatcherOptions = {
+  readonly careerMoneyStudy?: CareerMoneyStudyGenerationHandlerOptions;
   readonly compatibility?: CompatibilityGenerationHandlerOptions;
   readonly loveMarriageChild?: LoveMarriageChildGenerationHandlerOptions;
 };
 
 const PRODUCT_GENERATION_HANDLERS = {
-  careerMoneyStudy: createNotImplementedHandler("careerMoneyStudy"),
+  careerMoneyStudy: handleCareerMoneyStudyGeneration,
   loveMarriageChild: handleLoveMarriageChildGeneration,
   compatibility: handleCompatibilityGeneration,
   majorFortune: createNotImplementedHandler("majorFortune"),
@@ -154,6 +159,35 @@ async function handleLoveMarriageChildGeneration(
   return {
     ok: false,
     kind: "loveMarriageChild",
+    error: {
+      code: "INVALID_REPORT_INPUT",
+      message: `${result.error.code}: ${result.error.message}`,
+    },
+  };
+}
+
+async function handleCareerMoneyStudyGeneration(
+  input: ReportGenerationInput,
+  options: ProductGenerationDispatcherOptions = {},
+): Promise<ProductGenerationResult> {
+  if (input.kind !== "careerMoneyStudy") {
+    return invalidInputResult(
+      `Generation input kind mismatch: expected careerMoneyStudy, received ${input.kind}`,
+    );
+  }
+
+  const result = await generateCareerMoneyStudyProductDraft(
+    input,
+    options.careerMoneyStudy,
+  );
+
+  if (result.ok) {
+    return result;
+  }
+
+  return {
+    ok: false,
+    kind: "careerMoneyStudy",
     error: {
       code: "INVALID_REPORT_INPUT",
       message: `${result.error.code}: ${result.error.message}`,

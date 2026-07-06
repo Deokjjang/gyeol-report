@@ -33,6 +33,18 @@ import type {
 import {
   buildLoveMarriageChildReportEvidence,
 } from "../../../../src/lib/report-knowledge/loveMarriageChildReportEvidence";
+import {
+  buildCareerReportEvidence,
+} from "../../../../src/lib/report-knowledge/careerReportEvidence";
+import {
+  buildCareerReportScreenQaFallbackDraft,
+} from "../../../../src/lib/report-generation/careerReportDraftTypes";
+import type {
+  CareerReportDraft,
+} from "../../../../src/lib/report-generation/careerReportDraftTypes";
+import type {
+  CareerReportEvidencePacket,
+} from "../../../../src/lib/report-knowledge/careerReportTypes";
 
 vi.mock("../../../../src/lib/reports/supabasePaidReportResultAdapter", () => ({
   getPaidReportResult: vi.fn(),
@@ -473,6 +485,49 @@ function createLoveMarriageChildEvidencePacket() {
       ],
     },
   });
+}
+
+function createCareerReportEvidencePacket(): CareerReportEvidencePacket {
+  return buildCareerReportEvidence({
+    fixtureId: "career-product-preview-result-test",
+    person: {
+      label: "덕민",
+      birthDate: "1999-07-31",
+      birthTime: "07:30",
+      gender: "male",
+      mbti: "ENTJ",
+      userContext: {
+        lifeStatus: "employee",
+        fieldLabel: "서비스 기획자",
+        relationshipStatus: "single",
+      },
+      pillars: {
+        year: "己卯",
+        month: "辛未",
+        day: "甲申",
+        hour: "戊辰",
+      },
+      labels: [
+        "편재",
+        "정재",
+        "정관",
+        "편관",
+        "상관",
+        "재성",
+        "관성",
+        "토 과다",
+        "화 부족",
+        "수 부족",
+        "재다신약",
+        "무인성",
+        "무식상",
+      ],
+    },
+  });
+}
+
+function createCareerReportDraft(): CareerReportDraft {
+  return buildCareerReportScreenQaFallbackDraft(createCareerReportEvidencePacket());
 }
 
 function createLoveMarriageChildDraft(
@@ -1018,6 +1073,25 @@ async function persistLoveMarriageChildProductPreview(
   await persistProductPreviewRecord(reportId, productPreviewResult.value);
 }
 
+async function persistCareerMoneyStudyProductPreview(
+  reportId: string,
+): Promise<void> {
+  const productPreviewResult = createProductPreviewSnapshot({
+    reportId,
+    createdAtIso: createdAt,
+    productKey: "career_money_study",
+    productSlug: "career-money-study",
+    draft: createCareerReportDraft(),
+    evidencePacket: createCareerReportEvidencePacket(),
+  });
+
+  if (!productPreviewResult.ok) {
+    throw new Error(`Product preview fixture failed: ${productPreviewResult.error}`);
+  }
+
+  await persistProductPreviewRecord(reportId, productPreviewResult.value);
+}
+
 async function persistMajorFortuneProductPreview(reportId: string): Promise<void> {
   const productPreviewResult = createProductPreviewSnapshot({
     reportId,
@@ -1067,6 +1141,22 @@ describe("report result page", () => {
     expect(html).toContain("덕민님의 만세력");
     expect(html).toContain("MBTI 성향표");
     expect(html).toContain("사랑 방식");
+    expect(html).not.toContain("사주×MBTI 종합 리포트");
+    expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
+  });
+
+  it("renders career money study product preview snapshot before paid result lookup", async () => {
+    await persistCareerMoneyStudyProductPreview("report_product_preview_career");
+
+    const html = await renderPage("report_product_preview_career");
+
+    expect(mockGetPaidReportResult).not.toHaveBeenCalled();
+    expect(html).toContain("직업·커리어·돈·학업 리포트");
+    expect(html).toContain("덕민님의 직업·커리어·돈·학업 리포트");
+    expect(html).toContain("기초 정보");
+    expect(html).toContain("서비스 기획자");
+    expect(html).toContain("잘 맞는 직업과 업무 포지션");
+    expect(html).toContain("돈 관리 성향");
     expect(html).not.toContain("사주×MBTI 종합 리포트");
     expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
   });

@@ -148,7 +148,10 @@ describe("product generation dispatcher", () => {
 
   it("returns not implemented for product handlers that are still disconnected", async () => {
     for (const kind of productKinds.filter(
-      (kind) => kind !== "compatibility" && kind !== "loveMarriageChild",
+      (kind) =>
+        kind !== "careerMoneyStudy" &&
+        kind !== "compatibility" &&
+        kind !== "loveMarriageChild",
     )) {
       const result = dispatchProductGenerationInput(makeNormalizedInput(kind));
 
@@ -181,10 +184,6 @@ describe("product generation dispatcher", () => {
   it("routes valid disconnected product payloads to not implemented by kind", async () => {
     const payloads = [
       {
-        payload: makeSinglePayload(),
-        kind: "careerMoneyStudy",
-      },
-      {
         payload: makeSinglePayload({
           productKey: "major_fortune",
           productSlug: "major-fortune",
@@ -212,6 +211,31 @@ describe("product generation dispatcher", () => {
         },
       });
     }
+  });
+
+  it("routes valid career money study payloads to generated draft output", async () => {
+    const result = await prepareProductGenerationFromPayload(makeSinglePayload());
+
+    expect(result).toMatchObject({
+      ok: true,
+      kind: "careerMoneyStudy",
+      draft: {
+        version: "v1",
+        productType: "career_money_study",
+        productVersion: "v1",
+        personLabel: "김도윤",
+      },
+      evidencePacket: {
+        productType: "career_money_study",
+        productVersion: "v1",
+        personLabel: "김도윤",
+        userContext: {
+          lifeStatus: "employee",
+          fieldLabel: "서비스 기획자",
+          relationshipStatus: "single",
+        },
+      },
+    });
   });
 
   it("routes valid love marriage child payloads to generated draft output", async () => {
@@ -261,7 +285,7 @@ describe("product generation dispatcher", () => {
 
   it("keeps product kind handler mapping explicit in source", () => {
     const requiredMarkers = [
-      "careerMoneyStudy: createNotImplementedHandler",
+      "careerMoneyStudy: handleCareerMoneyStudyGeneration",
       "loveMarriageChild: handleLoveMarriageChildGeneration",
       "compatibility: handleCompatibilityGeneration",
       "majorFortune: createNotImplementedHandler",

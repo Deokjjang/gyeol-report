@@ -39,6 +39,12 @@ import type {
   LoveMarriageChildReportEvidencePacket,
 } from "../../../lib/report-knowledge/loveMarriageChildReportTypes";
 import type {
+  CareerReportDraft,
+} from "../../../lib/report-generation/careerReportDraftTypes";
+import type {
+  CareerReportEvidencePacket,
+} from "../../../lib/report-knowledge/careerReportTypes";
+import type {
   MajorFortuneReportDraft,
 } from "../../../lib/report-generation/majorFortuneReportDraftTypes";
 import type {
@@ -49,6 +55,7 @@ import type {
 } from "../../../lib/report-knowledge/majorFortuneTypes";
 import { getSajuBranchSymbolEntry } from "../../../lib/report-knowledge/sajuBranchSymbolKnowledge";
 import { AnnualFortuneReportView } from "./AnnualFortuneReportView";
+import { CareerReportView } from "./CareerReportView";
 import { CompatibilityReportView } from "./CompatibilityReportView";
 import { LoveMarriageChildReportView } from "./LoveMarriageChildReportView";
 import { MajorFortuneReportView } from "./MajorFortuneReportView";
@@ -147,6 +154,17 @@ async function loadProductPreviewPageState(
   }
 
   const productPreview = record.productPreview;
+
+  if (productPreview.productType === "career_money_study") {
+    if (!isCareerReportDraft(productPreview.draft)) {
+      return { kind: "invalidSnapshot" };
+    }
+
+    return {
+      kind: "productPreview",
+      productPreview,
+    };
+  }
 
   if (productPreview.productType === "saju_mbti_compatibility") {
     if (!isCompatibilityReportDraft(productPreview.draft)) {
@@ -448,6 +466,31 @@ function isLoveMarriageChildReportDraft(
   );
 }
 
+function isCareerReportDraft(
+  value: unknown,
+): value is CareerReportDraft {
+  if (!isRecord(value)) {
+    return false;
+  }
+
+  return (
+    value.version === "v1" &&
+    value.productType === "career_money_study" &&
+    value.productVersion === "v1" &&
+    typeof value.personLabel === "string" &&
+    typeof value.openingTitle === "string" &&
+    typeof value.openingSummary === "string" &&
+    typeof value.coreLine === "string" &&
+    isRecord(value.userContextSummary) &&
+    isRecord(value.careerIdentity) &&
+    isRecord(value.moneyEarningStyle) &&
+    isRecord(value.studyCertificatePlan) &&
+    Array.isArray(value.recommendedJobs) &&
+    Array.isArray(value.actionPlan) &&
+    Array.isArray(value.safetyNotes)
+  );
+}
+
 type MajorFortuneReportDraftWithEvidence = MajorFortuneReportDraft & {
   readonly evidencePacket?: MajorFortuneEvidencePacket;
 };
@@ -580,6 +623,10 @@ function renderProductPreviewLoveMarriageChildState(
 }
 
 function renderProductPreviewState(productPreview: ProductPreviewSnapshot) {
+  if (productPreview.productType === "career_money_study") {
+    return renderProductPreviewCareerMoneyStudyState(productPreview);
+  }
+
   if (productPreview.productType === "saju_mbti_compatibility") {
     return renderProductPreviewCompatibilityState(productPreview);
   }
@@ -589,6 +636,35 @@ function renderProductPreviewState(productPreview: ProductPreviewSnapshot) {
   }
 
   return renderUnsupportedProductPreviewState();
+}
+
+function renderProductPreviewCareerMoneyStudyState(
+  productPreview: ProductPreviewSnapshot,
+) {
+  if (!isCareerReportDraft(productPreview.draft)) {
+    return renderInvalidSnapshotState();
+  }
+
+  return (
+    <CareerReportView
+      draft={productPreview.draft}
+      reportId={productPreview.reportId}
+      evidencePacket={getCareerPreviewEvidencePacket(productPreview)}
+    />
+  );
+}
+
+function getCareerPreviewEvidencePacket(
+  productPreview: ProductPreviewSnapshot,
+): CareerReportEvidencePacket | undefined {
+  if (
+    isRecord(productPreview.evidencePacket) &&
+    productPreview.evidencePacket.productType === "career_money_study"
+  ) {
+    return productPreview.evidencePacket as unknown as CareerReportEvidencePacket;
+  }
+
+  return undefined;
 }
 
 function getLoveMarriageChildPreviewEvidencePacket(
