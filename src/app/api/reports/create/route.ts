@@ -3,7 +3,17 @@ import { NextResponse } from "next/server";
 import { createReportApiEnvelopeFromJson } from "../../../../lib/api/createReport";
 import type { CreatePersistedReportInput } from "../../../../lib/persistence/reportPersistenceAdapter";
 import { createReportPersistenceRuntime } from "../../../../lib/persistence/reportPersistenceRuntime";
+import type { PersistedReportRecord } from "../../../../lib/persistence/reportPersistenceTypes";
+import {
+  createProductPreviewSnapshot,
+  type ProductPreviewProductType,
+  type ProductPreviewSnapshot,
+  type ProductPreviewSnapshotDraft,
+  type ReportProductSlug,
+} from "../../../../lib/report-generation/productPreviewSnapshot";
+import { prepareProductGenerationFromPayload } from "../../../../lib/report-generation/productGenerationDispatcher";
 import { buildReportPersistencePayload } from "../../../../lib/report/reportPersistencePayload";
+import type { ReportOutput } from "../../../../lib/report/types";
 
 const REPORT_CREATE_ERROR_MESSAGE =
   "리포트를 생성하지 못했습니다. 입력값을 확인한 뒤 다시 시도해 주세요.";
@@ -13,12 +23,23 @@ const REPORT_PERSISTENCE_RUNTIME_FAILED_MESSAGE =
   "리포트 저장 환경을 준비하지 못했습니다.";
 const REPORT_PERSISTENCE_CREATE_FAILED_MESSAGE =
   "리포트를 저장하지 못했습니다.";
+const PRODUCT_PREVIEW_SNAPSHOT_FAILED_MESSAGE =
+  "상품 미리보기 저장 형식을 준비하지 못했습니다.";
 const previewReportIdByRequestKey = new Map<string, string>();
 
 type ReportPersistenceRouteErrorCode =
   | "REPORT_PERSISTENCE_PAYLOAD_FAILED"
   | "REPORT_PERSISTENCE_RUNTIME_FAILED"
-  | "REPORT_PERSISTENCE_CREATE_FAILED";
+  | "REPORT_PERSISTENCE_CREATE_FAILED"
+  | "PRODUCT_PREVIEW_SNAPSHOT_FAILED";
+
+const productPreviewLegacyReport: ReportOutput = {
+  version: "v1",
+  titleKo: "상품 미리보기",
+  subtitleKo: "상품 미리보기 snapshot",
+  sections: [],
+  notices: [],
+};
 
 function isJsonObject(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -50,6 +71,26 @@ function getCalendarTypeField(
   return calendarType === "SOLAR" || calendarType === "LUNAR"
     ? calendarType
     : undefined;
+}
+
+function getRecordField(
+  value: Record<string, unknown>,
+  field: string,
+): Record<string, unknown> | undefined {
+  const fieldValue = value[field];
+
+  return isJsonObject(fieldValue) ? fieldValue : undefined;
+}
+
+function isProductReportInputPayload(value: unknown): value is Record<string, unknown> {
+  if (!isJsonObject(value)) {
+    return false;
+  }
+
+  return (
+    typeof value.productKey === "string" &&
+    typeof value.productSlug === "string"
+  );
 }
 
 function createPersistenceFailureResponse(
@@ -85,6 +126,176 @@ function withReportId(
   };
 }
 
+function createProductPreviewFailureResponse(
+  code:
+    | "INVALID_REPORT_INPUT"
+    | "PRODUCT_GENERATION_NOT_IMPLEMENTED"
+    | "COMPATIBILITY_GENERATION_FAILED"
+    | "COMPATIBILITY_DRAFT_INVALID"
+    | "PRODUCT_PREVIEW_SNAPSHOT_FAILED"
+    | "REPORT_PERSISTENCE_PAYLOAD_FAILED"
+    | "REPORT_PERSISTENCE_RUNTIME_FAILED"
+    | "REPORT_PERSISTENCE_CREATE_FAILED",
+  message: string,
+  status: number,
+): NextResponse {
+  return NextResponse.json(
+    {
+      ok: false,
+      code,
+      message,
+    },
+    { status },
+  );
+}
+
+function getProductPersistenceSeedPerson(
+  json: Record<string, unknown>,
+): Record<string, unknown> | undefined {
+  return getRecordField(json, "personA") ?? getRecordField(json, "person");
+}
+
+function createProductPreviewPersistenceInput(
+  baseInput: CreatePersistedReportInput,
+  productPreview: ProductPreviewSnapshot,
+): CreatePersistedReportInput {
+  const record: PersistedReportRecord = {
+    ...baseInput.record,
+    reportVersion: productPreview.productVersion,
+    reportSnapshot: {
+      snapshotKind: "product_preview",
+      productPreview,
+      report: productPreviewLegacyReport,
+      reportVersion: productPreview.productVersion,
+      renderVersion: productPreview.productVersion,
+      createdAt: baseInput.record.createdAt,
+    },
+  };
+
+  return {
+    record,
+  };
+}
+
+async function createProductPreviewResponse(
+  json: Record<string, unknown>,
+): Promise<NextResponse> {
+  const generationResult = await prepareProductGenerationFromPayload(json);
+
+  if (!generationResult.ok) {
+    const code = generationResult.error.code;
+
+    if (code === "PRODUCT_GENERATION_NOT_IMPLEMENTED") {
+      return createProductPreviewFailureResponse(
+        code,
+        generationResult.error.message,
+        501,
+      );
+    }
+
+    if (code === "INVALID_REPORT_INPUT") {
+      return createProductPreviewFailureResponse(
+        code,
+        generationResult.error.message,
+        400,
+      );
+    }
+
+    return createProductPreviewFailureResponse(
+      code,
+      generationResult.error.message,
+      500,
+    );
+  }
+
+  const seedPerson = getProductPersistenceSeedPerson(json);
+
+  if (seedPerson === undefined) {
+    return createProductPreviewFailureResponse(
+      "INVALID_REPORT_INPUT",
+      "Invalid report input: missing product person payload.",
+      400,
+    );
+  }
+
+  const payloadResult = buildReportPersistencePayload({
+    birthDate: getStringField(seedPerson, "birthDate") ?? "",
+    birthTime: getStringField(seedPerson, "birthTime") ?? null,
+    birthTimeUnknown: getBooleanField(seedPerson, "birthTimeUnknown"),
+    calendarType: "SOLAR",
+    timezone: "Asia/Seoul",
+    gender: getStringField(seedPerson, "gender"),
+    mbti: getStringField(seedPerson, "mbtiType"),
+    report: productPreviewLegacyReport,
+  });
+
+  if (!payloadResult.ok) {
+    return createProductPreviewFailureResponse(
+      "REPORT_PERSISTENCE_PAYLOAD_FAILED",
+      REPORT_PERSISTENCE_PAYLOAD_FAILED_MESSAGE,
+      500,
+    );
+  }
+
+  const requestKey = createPreviewReportIdRequestKey(json);
+  const cachedReportId = previewReportIdByRequestKey.get(requestKey);
+  const reportId = cachedReportId ?? payloadResult.input.record.reportId;
+  const productPreviewResult = createProductPreviewSnapshot({
+    reportId,
+    createdAtIso: payloadResult.input.record.createdAt,
+    productKey: json.productKey as ProductPreviewProductType,
+    productSlug: json.productSlug as ReportProductSlug,
+    draft: generationResult.draft as ProductPreviewSnapshotDraft,
+    ...(generationResult.evidencePacket === undefined
+      ? {}
+      : { evidencePacket: generationResult.evidencePacket }),
+  });
+
+  if (!productPreviewResult.ok) {
+    return createProductPreviewFailureResponse(
+      "PRODUCT_PREVIEW_SNAPSHOT_FAILED",
+      PRODUCT_PREVIEW_SNAPSHOT_FAILED_MESSAGE,
+      500,
+    );
+  }
+
+  const runtime = createReportPersistenceRuntime({ mode: "preview_memory" });
+
+  if (!runtime.ok) {
+    return createProductPreviewFailureResponse(
+      "REPORT_PERSISTENCE_RUNTIME_FAILED",
+      REPORT_PERSISTENCE_RUNTIME_FAILED_MESSAGE,
+      500,
+    );
+  }
+
+  const createInput = createProductPreviewPersistenceInput(
+    withReportId(payloadResult.input, reportId),
+    productPreviewResult.value,
+  );
+  const createResult = await runtime.adapter.create(createInput);
+
+  if (!createResult.ok) {
+    return createProductPreviewFailureResponse(
+      "REPORT_PERSISTENCE_CREATE_FAILED",
+      REPORT_PERSISTENCE_CREATE_FAILED_MESSAGE,
+      500,
+    );
+  }
+
+  previewReportIdByRequestKey.set(requestKey, createResult.record.reportId);
+
+  return NextResponse.json(
+    {
+      ok: true,
+      reportId: createResult.record.reportId,
+      snapshotKind: "product_preview",
+      productPreview: productPreviewResult.value,
+    },
+    { status: 200 },
+  );
+}
+
 export async function POST(request: Request): Promise<NextResponse> {
   let json: unknown;
 
@@ -108,6 +319,10 @@ export async function POST(request: Request): Promise<NextResponse> {
       },
       { status: 400 },
     );
+  }
+
+  if (isProductReportInputPayload(json)) {
+    return createProductPreviewResponse(json);
   }
 
   const envelope = createReportApiEnvelopeFromJson(json);

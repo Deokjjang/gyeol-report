@@ -52,7 +52,45 @@ type ApiSuccessBody = {
   };
 };
 
-type ApiResponseBody = ApiErrorBody | ApiSuccessBody;
+type ProductApiErrorBody = {
+  ok: false;
+  code:
+    | "INVALID_REPORT_INPUT"
+    | "PRODUCT_GENERATION_NOT_IMPLEMENTED"
+    | "COMPATIBILITY_GENERATION_FAILED"
+    | "COMPATIBILITY_DRAFT_INVALID"
+    | "PRODUCT_PREVIEW_SNAPSHOT_FAILED"
+    | "REPORT_PERSISTENCE_PAYLOAD_FAILED"
+    | "REPORT_PERSISTENCE_RUNTIME_FAILED"
+    | "REPORT_PERSISTENCE_CREATE_FAILED";
+  message: string;
+};
+
+type ProductApiSuccessBody = {
+  ok: true;
+  reportId: string;
+  snapshotKind: "product_preview";
+  productPreview: {
+    productType: string;
+    productKey: string;
+    productSlug: string;
+    draft: {
+      productType: string;
+      relationshipType?: string;
+    };
+    access: {
+      mode: string;
+      isPaid: boolean;
+      isUnlocked: boolean;
+    };
+  };
+};
+
+type ApiResponseBody =
+  | ApiErrorBody
+  | ApiSuccessBody
+  | ProductApiErrorBody
+  | ProductApiSuccessBody;
 
 const apiErrorMessageKo =
   "리포트를 생성하지 못했습니다. 입력값을 확인한 뒤 다시 시도해 주세요.";
@@ -74,6 +112,45 @@ const expectedSectionIds = [
   "ACTION_GUIDE",
   "DISCLAIMER",
 ] as const;
+
+const compatibilityPerson = {
+  name: "A",
+  birthDate: "1996-12-06",
+  birthTime: "",
+  birthTimeUnknown: true,
+  approximateBirthTimeSlot: "",
+  gender: "MALE",
+  mbtiType: "ENTJ",
+} as const;
+
+const compatibilityPayload = {
+  productKey: "saju_mbti_compatibility",
+  productSlug: "compatibility",
+  relationshipType: "love",
+  personA: compatibilityPerson,
+  personB: {
+    ...compatibilityPerson,
+    name: "B",
+    birthDate: "1997-03-14",
+    gender: "FEMALE",
+    mbtiType: "INTP",
+  },
+} as const;
+
+const singleProductPayload = {
+  productKey: "annual_fortune",
+  productSlug: "annual-fortune",
+  person: compatibilityPerson,
+  userContext: {
+    relationshipStatus: "single",
+    jobStatus: "employee",
+    detailJob: "서비스 기획자",
+    focusAreas: ["직업", "돈"],
+  },
+  productOptions: {
+    selectedYear: "2026",
+  },
+} as const;
 
 function readFile(relativePath: string): string {
   return readFileSync(join(process.cwd(), relativePath), "utf8");
@@ -127,6 +204,10 @@ function isApiResponseBody(value: unknown): value is ApiResponseBody {
   }
 
   if (value.ok === false) {
+    if (typeof value.code === "string" && typeof value.message === "string") {
+      return true;
+    }
+
     return (
       isApiErrorSummary(value.error) &&
       Array.isArray(value.errors) &&
@@ -136,10 +217,13 @@ function isApiResponseBody(value: unknown): value is ApiResponseBody {
 
   return (
     typeof value.reportId === "string" &&
-    isRecord(value.report) &&
-    typeof value.report.version === "string" &&
-    typeof value.report.titleKo === "string" &&
-    Array.isArray(value.report.sections)
+    ((isRecord(value.report) &&
+      typeof value.report.version === "string" &&
+      typeof value.report.titleKo === "string" &&
+      Array.isArray(value.report.sections)) ||
+      (value.snapshotKind === "product_preview" &&
+        isRecord(value.productPreview) &&
+        typeof value.productPreview.productType === "string"))
   );
 }
 
@@ -188,6 +272,69 @@ describe("create report route", () => {
       expect(body.report).toBeDefined();
       expect(body.reportId).toMatch(/^report_/);
       expect("error" in body).toBe(false);
+    }
+  });
+
+  it("returns product preview response for compatibility payload", async () => {
+    const response = await POST(createJsonRequest(compatibilityPayload));
+
+    expect(response.status).toBe(200);
+
+    const body = await readApiResponseBody(response);
+
+    expect(body.ok).toBe(true);
+    if (body.ok && "snapshotKind" in body) {
+      expect(body.reportId).toMatch(/^report_/);
+      expect(body.snapshotKind).toBe("product_preview");
+      expect(body.productPreview.productType).toBe("saju_mbti_compatibility");
+      expect(body.productPreview.productKey).toBe("saju_mbti_compatibility");
+      expect(body.productPreview.productSlug).toBe("compatibility");
+      expect(body.productPreview.draft.productType).toBe(
+        "saju_mbti_compatibility",
+      );
+      expect(body.productPreview.draft.relationshipType).toBe("love");
+      expect(body.productPreview.access).toEqual({
+        mode: "preview",
+        isPaid: false,
+        isUnlocked: false,
+      });
+      expect(body).not.toHaveProperty("report");
+    }
+  });
+
+  it("returns not implemented for non-compatibility product payload", async () => {
+    const response = await POST(createJsonRequest(singleProductPayload));
+
+    expect(response.status).toBe(501);
+
+    const body = await readApiResponseBody(response);
+
+    expect(body.ok).toBe(false);
+    if (!body.ok && "code" in body) {
+      expect(body.code).toBe("PRODUCT_GENERATION_NOT_IMPLEMENTED");
+      expect(body.message).toContain("annualFortune");
+    }
+  });
+
+  it("returns invalid input for malformed product payload", async () => {
+    const response = await POST(
+      createJsonRequest({
+        ...compatibilityPayload,
+        personB: {
+          ...compatibilityPayload.personB,
+          name: "",
+        },
+      }),
+    );
+
+    expect(response.status).toBe(400);
+
+    const body = await readApiResponseBody(response);
+
+    expect(body.ok).toBe(false);
+    if (!body.ok && "code" in body) {
+      expect(body.code).toBe("INVALID_REPORT_INPUT");
+      expect(body.message).toContain("INVALID_PERSON_NAME");
     }
   });
 
