@@ -10,6 +10,7 @@ import {
   type UserContextProfile,
   type UserLifeStatus,
 } from "../../../src/lib/report-knowledge/userContextTypes";
+import { hydrateMajorFortuneCycle } from "../../../src/lib/report-knowledge/majorFortuneRules";
 
 function buildFromFixture(fixtureId: string) {
   const fixture = requireAnnualFortuneFixture(fixtureId);
@@ -69,9 +70,33 @@ describe("annualFortuneEvidence", () => {
 
     expect(packet.productType).toBe("annual_fortune");
     expect(packet.productVersion).toBe("v1");
+    expect(packet.selectedYear).toBe(2026);
     expect(packet.targetYear).toBe(2026);
     expect(packet.currentDate).toBe("2026-06-18");
     expect(packet.mode).toBe("current_year");
+    expect(packet.yearAccessPolicy).toMatchObject({
+      selectedYear: 2026,
+      currentYear: 2026,
+      status: "selectable",
+      isNewYearPreview: false,
+      availableYearRange: {
+        from: 2021,
+        to: 2026,
+      },
+    });
+    expect(packet.personContext).toMatchObject({
+      name: "덕민",
+      mbtiType: "ENTJ",
+    });
+    expect(packet.baseSaju).toMatchObject({
+      dayMaster: "甲",
+      pillars: {
+        year: "己卯",
+        month: "辛未",
+        day: "甲申",
+        hour: "戊辰",
+      },
+    });
     expect(packet.userContext).toEqual({
       lifeStatus: "employee",
       fieldLabel: "개발·서비스 기획",
@@ -91,6 +116,19 @@ describe("annualFortuneEvidence", () => {
     expect(packet.annualGanji.ganji).toBe("丙午");
     expect(packet.dayMaster).toBe("甲");
     expect(packet.annualTenGod.stemTenGod).toBe("식신");
+    expect(packet.annualFortune).toMatchObject({
+      year: 2026,
+      ganji: "丙午",
+      stem: "丙",
+      branch: "午",
+      stemTenGod: "식신",
+    });
+    expect(packet.currentMajorFortune).toBeNull();
+    expect(packet.majorAnnualCross).toBeNull();
+    expect(packet.natalAnnualRelations.annualBranch).toBe("午");
+    expect(packet.natalAnnualRelations.interactions).toBe(
+      packet.branchInteractions,
+    );
     expect(packet.elementEffect.fillsMissing).toContain("fire");
     expect(packet.elementEffect.overloadsHeavy).toContain("earth");
     expect(packet.elementEffect.plain).toContain("간접");
@@ -115,6 +153,31 @@ describe("annualFortuneEvidence", () => {
       ]),
     );
     expect(packet.monthlyFortuneSeeds).toHaveLength(12);
+    expect(packet.monthlyFortunes).toHaveLength(12);
+    expect(packet.monthlyFortunes[0]).toMatchObject({
+      month: 1,
+      label: "1월",
+      ganji: "庚寅",
+      stem: "庚",
+      branch: "寅",
+    });
+    expect(Object.keys(packet.domainFlows)).toEqual([
+      "careerWork",
+      "moneyResource",
+      "relationshipLove",
+      "healthRoutine",
+      "socialFamily",
+      "studyGrowth",
+    ]);
+    expect(packet.yearlyThemeSummary.headline).toContain("丙午");
+    expect(packet.riskPatterns.length).toBeGreaterThan(0);
+    expect(packet.actionGuides.length).toBeGreaterThan(0);
+    expect(packet.safetyNotes.join("\n")).not.toContain("투자 수익 보장");
+    expect(packet.mbtiBasis).toMatchObject({
+      type: "ENTJ",
+      reportUseCase: "saeunReport",
+    });
+    expect(packet.bridgeEvidence?.productKey).toBe("saeun");
     expect(packet.monthlyFortuneSeeds[0]).toMatchObject({
       month: 1,
       label: "1월",
@@ -136,6 +199,39 @@ describe("annualFortuneEvidence", () => {
           seed.monthGanji.basis === "calendar_month_approximation",
       ),
     ).toBe(true);
+  });
+
+  it("adds current major fortune and major annual cross when cycles are supplied", () => {
+    const fixture = requireAnnualFortuneFixture("deokmin-2026-current");
+    const packet = buildAnnualFortuneEvidence({
+      targetYear: fixture.targetYear,
+      currentDate: new Date(`${fixture.currentDate}T00:00:00+09:00`),
+      person: {
+        ...fixture.person,
+        majorFortuneCycles: [
+          hydrateMajorFortuneCycle({
+            index: 3,
+            startAge: 27,
+            endAge: 36,
+            startYear: 2026,
+            endYear: 2035,
+            ganji: "戊辰",
+          }),
+        ],
+      },
+    });
+
+    expect(packet.currentMajorFortune).toMatchObject({
+      ganji: "戊辰",
+      stemTenGod: "편재",
+      branchTenGod: "편재",
+      yearRange: "2026년~2035년",
+      ageRange: "한국나이 27세~36세",
+    });
+    expect(packet.majorAnnualCross).toMatchObject({
+      majorGanji: "戊辰",
+      annualGanji: "丙午",
+    });
   });
 
   it("builds context translation hints by life status", () => {
@@ -192,9 +288,18 @@ describe("annualFortuneEvidence", () => {
       isSelectable: false,
       mode: "locked_future",
     });
+    expect(locked.yearAccessPolicy).toMatchObject({
+      status: "locked",
+      isNewYearPreview: false,
+      reason: "2027년 신년운세는 2026-12-01부터 열립니다.",
+    });
     expect(open.yearAccess).toMatchObject({
       isSelectable: true,
       mode: "new_year_preview",
+    });
+    expect(open.yearAccessPolicy).toMatchObject({
+      status: "new_year_preview",
+      isNewYearPreview: true,
     });
   });
 });

@@ -97,3 +97,16 @@ export interface AnnualBranchInteraction {
   readonly plain: string;
   readonly affectedPillars?: readonly AnnualPillarPosition[];
 }
+
+export type AnnualFortuneYearAccessStatus =
+  | "selectable"
+  | "new_year_preview"
+  | "locked";
+
+export type AnnualFortuneDomainFlowKey =
+  | "careerWork"
+  | "moneyResource"
+  | "relationshipLove"
+  | "healthRoutine"
+  | "socialFamily"
+  | "studyGrowth";

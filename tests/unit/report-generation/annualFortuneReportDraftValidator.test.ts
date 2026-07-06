@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import type { AnnualFortuneReportDraft } from "../../../src/lib/report-generation/annualFortuneReportDraftTypes";
+import type {
+  AnnualFortuneDraftFlowSection,
+  AnnualFortuneReportDraft,
+} from "../../../src/lib/report-generation/annualFortuneReportDraftTypes";
 import {
   buildAnnualDomainLockedFinalAdvice,
   inferAnnualAdviceDomain,
@@ -19,6 +22,16 @@ function createValidAnnualDraft(
       : mode === "new_year_preview"
         ? "신년 준비와 활용, 기회와 조심할 지점을 봅니다."
         : "올해 준비와 활용, 기회와 조심할 지점을 봅니다.";
+  const flowSection = (
+    title: string,
+    summary: string,
+  ): AnnualFortuneDraftFlowSection => ({
+    title,
+    summary,
+    supportingSignals: ["식신 흐름", "화 기운 보완"],
+    frictionSignals: ["토 책임 증가"],
+    actionHint: "월별로 산출물과 책임 범위를 작게 나누세요.",
+  });
 
   return {
     version: "v1",
@@ -34,8 +47,51 @@ function createValidAnnualDraft(
         "올해 흐름은 직장·프로젝트·보고·서비스 운영 장면을 중심으로 번역했습니다.",
     },
     openingTitle: "2026년 세운 흐름",
+    headline: "올해는 결과물을 밖으로 꺼내되 책임 범위를 좁혀야 합니다.",
     openingSummary: modeText,
     coreLine: "丙午의 화 기운이 표현과 실행을 밀어 올리는 흐름입니다.",
+    selectedYearSummary:
+      "2026년 丙午 세운은 표현과 산출물을 활성화하지만 현실 책임도 함께 키웁니다.",
+    yearAccessNotice:
+      "2026년은 세운 v1 조회 범위 안에서 선택 가능한 올해 흐름입니다.",
+    majorAnnualCrossReading:
+      "현재 대운 정보가 있으면 그 10년 배경 위에 올해 세운이 어떻게 올라오는지 함께 읽습니다.",
+    natalAnnualReading:
+      "午 지지는 원국에 실제로 있는 지지와 맞물리는 작용만 생활 장면으로 해석합니다.",
+    monthlyFlowReading:
+      "12개월 월운은 달력월 기준 운영 가이드로 보며 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다.",
+    monthlyHighlights: [
+      {
+        monthLabel: "1월",
+        headline: "기준을 작게 세우는 달",
+        body: "프로젝트와 생활 리듬을 동시에 정리해야 합니다.",
+        actionHint: "월초에 마감과 돈 기준을 먼저 적어 두세요.",
+      },
+    ],
+    careerWorkFlow: flowSection(
+      "직업·일 흐름",
+      "개발·서비스 기획 맥락에서는 보고서, 프로젝트 결과물, 회의 발표로 식신 흐름이 드러납니다.",
+    ),
+    moneyResourceFlow: flowSection(
+      "돈·자원 흐름",
+      "돈은 수익 확정보다 생활비, 정산, 계약 기준을 먼저 관리하는 장면으로 봅니다.",
+    ),
+    relationshipFlow: flowSection(
+      "관계·연애 흐름",
+      "관계에서는 연락 주기와 약속의 온도를 현실적으로 조율하는 흐름입니다.",
+    ),
+    healthRoutineFlow: flowSection(
+      "건강관리·생활 리듬",
+      "건강은 진단이 아니라 수면, 식사, 회복 루틴을 지키는 기준으로 해석합니다.",
+    ),
+    mbtiExpression:
+      "ENTJ 성향은 올해 흐름을 빠른 정리와 실행으로 드러내지만, 확정 전 책임 범위를 좁히는 연습이 필요합니다.",
+    riskManagement: [
+      "책임과 돈 기준이 동시에 올라올 때는 계약과 정산일을 먼저 확인하세요.",
+    ],
+    actionPlan: [
+      "월별로 결과물, 돈 기준, 연락 리듬, 회복 시간을 나눠 점검하세요.",
+    ],
     yearSummary: {
       ganji: "丙午",
       displayTitle: "2026년 丙午",
@@ -454,6 +510,30 @@ describe("annualFortuneReportDraftValidator", () => {
     delete draft.monthlyFlow;
 
     expect(validateAnnualFortuneReportDraft(draft).ok).toBe(false);
+  });
+
+  it("rejects missing launch-ready sections", () => {
+    const result = validateAnnualFortuneReportDraft({
+      ...createValidAnnualDraft(),
+      selectedYearSummary: "",
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors).toContain(
+      "ANNUAL_FORTUNE_REQUIRED_SECTION_EMPTY:selectedYearSummary",
+    );
+  });
+
+  it("rejects forbidden deterministic expressions", () => {
+    const result = validateAnnualFortuneReportDraft({
+      ...createValidAnnualDraft(),
+      riskManagement: ["투자 수익 보장"],
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors).toContain(
+      "ANNUAL_FORTUNE_FORBIDDEN_EXPRESSION:투자 수익 보장",
+    );
   });
 
   it("rejects monthlyFlow not length 12", () => {

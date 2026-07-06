@@ -56,12 +56,46 @@ type AnnualFortuneMonthlyFlowInput = Omit<
 
 type AnnualFortuneReportDraftInput = Omit<
   AnnualFortuneReportDraft,
-  "scoreSummary" | "userContextSummary" | "monthlyFlow"
+  | "scoreSummary"
+  | "userContextSummary"
+  | "monthlyFlow"
+  | "headline"
+  | "selectedYearSummary"
+  | "yearAccessNotice"
+  | "majorAnnualCrossReading"
+  | "natalAnnualReading"
+  | "monthlyFlowReading"
+  | "monthlyHighlights"
+  | "careerWorkFlow"
+  | "moneyResourceFlow"
+  | "relationshipFlow"
+  | "healthRoutineFlow"
+  | "mbtiExpression"
+  | "riskManagement"
+  | "actionPlan"
 > & {
   readonly scoreSummary: AnnualFortuneScoreSummaryInput;
   readonly userContextSummary?: AnnualFortuneReportDraft["userContextSummary"];
   readonly monthlyFlow: readonly AnnualFortuneMonthlyFlowInput[];
-};
+} & Partial<
+    Pick<
+      AnnualFortuneReportDraft,
+      | "headline"
+      | "selectedYearSummary"
+      | "yearAccessNotice"
+      | "majorAnnualCrossReading"
+      | "natalAnnualReading"
+      | "monthlyFlowReading"
+      | "monthlyHighlights"
+      | "careerWorkFlow"
+      | "moneyResourceFlow"
+      | "relationshipFlow"
+      | "healthRoutineFlow"
+      | "mbtiExpression"
+      | "riskManagement"
+      | "actionPlan"
+    >
+  >;
 
 const hardClaimReplacements = [
   ["반드시", "흐름상"],
@@ -138,6 +172,22 @@ const futureDevelopmentForbiddenPhrases = [
   "고도화됩니다",
   "개발 예정",
   "future task",
+] as const;
+
+const deterministicForbiddenExpressions = [
+  "특정 사건/날짜 예언",
+  "질병/사고/사망 예언",
+  "사망 예언",
+  "투자 수익 보장",
+  "수익 보장",
+  "합격 확정",
+  "승진 확정",
+  "이직 확정",
+  "결혼 확정",
+  "이혼 확정",
+  "임신 확정",
+  "출산 확정",
+  "공포 조장",
 ] as const;
 
 const grammarResiduePhrases = [
@@ -722,7 +772,55 @@ function sanitizeUserContextSummary(
   };
 }
 
+function sanitizeDraftFlowSection(
+  section: AnnualFortuneReportDraft["careerWorkFlow"],
+): AnnualFortuneReportDraft["careerWorkFlow"] {
+  return {
+    title: sanitizeAnnualFortuneKoreanCopy(section.title),
+    summary: sanitizeAnnualFortuneKoreanCopy(section.summary),
+    supportingSignals: sanitizeStringArray(section.supportingSignals),
+    frictionSignals: sanitizeStringArray(section.frictionSignals),
+    actionHint: sanitizeAnnualFortuneKoreanCopy(section.actionHint),
+  };
+}
+
+function buildFallbackDraftFlowSection(input: {
+  readonly title: string;
+  readonly summary: string;
+  readonly actionHint: string;
+}): AnnualFortuneReportDraft["careerWorkFlow"] {
+  return {
+    title: input.title,
+    summary: input.summary,
+    supportingSignals: [],
+    frictionSignals: [],
+    actionHint: input.actionHint,
+  };
+}
+
+function buildFallbackMonthlyHighlights(
+  monthlyFlow: readonly AnnualFortuneMonthlyFlowInput[],
+): AnnualFortuneReportDraft["monthlyHighlights"] {
+  return monthlyFlow.slice(0, 3).map((flow) => ({
+    monthLabel: sanitizeAnnualFortuneKoreanCopy(flow.label),
+    headline: sanitizeAnnualFortuneKoreanCopy(flow.headline),
+    body: sanitizeAnnualFortuneKoreanCopy(flow.body),
+    actionHint: sanitizeAnnualFortuneKoreanCopy(flow.advice),
+  }));
+}
+
 function sanitizeDraft(draft: AnnualFortuneReportDraftInput): AnnualFortuneReportDraft {
+  const fallbackHeadline = draft.coreLine;
+  const fallbackSelectedYearSummary = `${draft.targetYear}년 ${draft.yearSummary.displayTitle} 흐름을 선택 연도 기준으로 정리했습니다.`;
+  const fallbackYearAccessNotice = `${draft.targetYear}년 세운은 조회 정책에 맞춰 선택 연도 흐름으로 읽습니다.`;
+  const fallbackMajorAnnualCrossReading =
+    "현재 대운 정보가 제공되면 선택 연도 세운과의 교차를 함께 읽고, 없으면 연운과 원국 작용을 중심으로 봅니다.";
+  const fallbackNatalAnnualReading =
+    draft.annualStructure.branchInteractionExplanation;
+  const fallbackMonthlyFlowReading =
+    "12개월 월운은 달력월 기준 운영 가이드로 보며, 월별 행동 기준을 작게 조정하는 데 사용합니다.";
+  const sanitizedScoreSummary = sanitizeScoreSummary(draft.scoreSummary);
+
   return {
     version: draft.version,
     productType: draft.productType,
@@ -732,8 +830,80 @@ function sanitizeDraft(draft: AnnualFortuneReportDraftInput): AnnualFortuneRepor
     personLabel: sanitizeAnnualFortuneKoreanCopy(draft.personLabel),
     userContextSummary: sanitizeUserContextSummary(draft.userContextSummary),
     openingTitle: sanitizeAnnualFortuneKoreanCopy(draft.openingTitle),
+    headline: sanitizeAnnualFortuneKoreanCopy(
+      draft.headline ?? fallbackHeadline,
+    ),
     openingSummary: sanitizeAnnualFortuneKoreanCopy(draft.openingSummary),
     coreLine: sanitizeAnnualFortuneKoreanCopy(draft.coreLine),
+    selectedYearSummary: sanitizeAnnualFortuneKoreanCopy(
+      draft.selectedYearSummary ?? fallbackSelectedYearSummary,
+    ),
+    yearAccessNotice: sanitizeAnnualFortuneKoreanCopy(
+      draft.yearAccessNotice ?? fallbackYearAccessNotice,
+    ),
+    majorAnnualCrossReading: sanitizeAnnualFortuneKoreanCopy(
+      draft.majorAnnualCrossReading ?? fallbackMajorAnnualCrossReading,
+    ),
+    natalAnnualReading: sanitizeAnnualFortuneKoreanCopy(
+      draft.natalAnnualReading ?? fallbackNatalAnnualReading,
+    ),
+    monthlyFlowReading: sanitizeAnnualFortuneKoreanCopy(
+      draft.monthlyFlowReading ?? fallbackMonthlyFlowReading,
+    ),
+    monthlyHighlights: (draft.monthlyHighlights ?? buildFallbackMonthlyHighlights(
+      draft.monthlyFlow,
+    )).map((highlight) => ({
+      monthLabel: sanitizeAnnualFortuneKoreanCopy(highlight.monthLabel),
+      headline: sanitizeAnnualFortuneKoreanCopy(highlight.headline),
+      body: sanitizeAnnualFortuneKoreanCopy(highlight.body),
+      actionHint: sanitizeAnnualFortuneKoreanCopy(highlight.actionHint),
+    })),
+    careerWorkFlow: sanitizeDraftFlowSection(
+      draft.careerWorkFlow ??
+        buildFallbackDraftFlowSection({
+          title: "직업·일 흐름",
+          summary: draft.flowCards.find((card) => card.label === "일·성과")?.body ??
+            "선택 연도의 일과 결과물 흐름을 정리합니다.",
+          actionHint: "일은 결과물과 책임 범위를 먼저 나눠 봅니다.",
+        }),
+    ),
+    moneyResourceFlow: sanitizeDraftFlowSection(
+      draft.moneyResourceFlow ??
+        buildFallbackDraftFlowSection({
+          title: "돈·자원 흐름",
+          summary: draft.flowCards.find((card) => card.label === "돈·현실")?.body ??
+            "선택 연도의 돈과 현실 자원 흐름을 정리합니다.",
+          actionHint: "돈은 결과 확정이 아니라 기준과 지출 관리로 읽습니다.",
+        }),
+    ),
+    relationshipFlow: sanitizeDraftFlowSection(
+      draft.relationshipFlow ??
+        buildFallbackDraftFlowSection({
+          title: "관계·연애 흐름",
+          summary: draft.flowCards.find((card) => card.label === "인간관계")?.body ??
+            "선택 연도의 관계와 표현 리듬을 정리합니다.",
+          actionHint: "관계는 확정 결론보다 거리와 약속 기준을 조정합니다.",
+        }),
+    ),
+    healthRoutineFlow: sanitizeDraftFlowSection(
+      draft.healthRoutineFlow ??
+        buildFallbackDraftFlowSection({
+          title: "건강관리·생활 리듬",
+          summary: draft.flowCards.find((card) => card.label === "몸·생활 리듬")?.body ??
+            "선택 연도의 회복과 생활 리듬 흐름을 정리합니다.",
+          actionHint: "건강은 진단이 아니라 수면, 식사, 회복 기준으로 읽습니다.",
+        }),
+    ),
+    mbtiExpression: sanitizeAnnualFortuneKoreanCopy(
+      draft.mbtiExpression ??
+        "MBTI가 제공되면 선택 연도 흐름이 행동과 말투로 드러나는 방식을 보조로 해석합니다.",
+    ),
+    riskManagement: sanitizeStringArray(
+      draft.riskManagement ?? [sanitizedScoreSummary.flowIndexCaution],
+    ),
+    actionPlan: sanitizeStringArray(
+      draft.actionPlan ?? draft.finalAdvice.slice(0, 3),
+    ),
     yearSummary: {
       ganji: sanitizeAnnualFortuneKoreanCopy(draft.yearSummary.ganji),
       displayTitle: sanitizeAnnualFortuneKoreanCopy(draft.yearSummary.displayTitle),
@@ -742,7 +912,7 @@ function sanitizeDraft(draft: AnnualFortuneReportDraftInput): AnnualFortuneRepor
       modeLabel: sanitizeAnnualFortuneKoreanCopy(draft.yearSummary.modeLabel),
       yearTone: sanitizeAnnualFortuneKoreanCopy(draft.yearSummary.yearTone),
     },
-    scoreSummary: sanitizeScoreSummary(draft.scoreSummary),
+    scoreSummary: sanitizedScoreSummary,
     flowCards: draft.flowCards.map((card) => ({
       label: sanitizeAnnualFortuneKoreanCopy(card.label),
       score: clampScore(card.score),
@@ -811,6 +981,33 @@ function hasScoreSummaryShape(
   );
 }
 
+function hasDraftFlowSectionShape(value: unknown): boolean {
+  if (!isRecord(value)) {
+    return false;
+  }
+
+  return (
+    typeof value.title === "string" &&
+    typeof value.summary === "string" &&
+    isStringArray(value.supportingSignals) &&
+    isStringArray(value.frictionSignals) &&
+    typeof value.actionHint === "string"
+  );
+}
+
+function hasMonthlyHighlightShape(value: unknown): boolean {
+  if (!isRecord(value)) {
+    return false;
+  }
+
+  return (
+    typeof value.monthLabel === "string" &&
+    typeof value.headline === "string" &&
+    typeof value.body === "string" &&
+    typeof value.actionHint === "string"
+  );
+}
+
 function hasDraftShape(value: unknown): value is AnnualFortuneReportDraftInput {
   if (!isRecord(value)) {
     return false;
@@ -828,6 +1025,33 @@ function hasDraftShape(value: unknown): value is AnnualFortuneReportDraftInput {
     typeof draft.openingTitle === "string" &&
     typeof draft.openingSummary === "string" &&
     typeof draft.coreLine === "string" &&
+    (draft.headline === undefined || typeof draft.headline === "string") &&
+    (draft.selectedYearSummary === undefined ||
+      typeof draft.selectedYearSummary === "string") &&
+    (draft.yearAccessNotice === undefined ||
+      typeof draft.yearAccessNotice === "string") &&
+    (draft.majorAnnualCrossReading === undefined ||
+      typeof draft.majorAnnualCrossReading === "string") &&
+    (draft.natalAnnualReading === undefined ||
+      typeof draft.natalAnnualReading === "string") &&
+    (draft.monthlyFlowReading === undefined ||
+      typeof draft.monthlyFlowReading === "string") &&
+    (draft.monthlyHighlights === undefined ||
+      (Array.isArray(draft.monthlyHighlights) &&
+        draft.monthlyHighlights.every(hasMonthlyHighlightShape))) &&
+    (draft.careerWorkFlow === undefined ||
+      hasDraftFlowSectionShape(draft.careerWorkFlow)) &&
+    (draft.moneyResourceFlow === undefined ||
+      hasDraftFlowSectionShape(draft.moneyResourceFlow)) &&
+    (draft.relationshipFlow === undefined ||
+      hasDraftFlowSectionShape(draft.relationshipFlow)) &&
+    (draft.healthRoutineFlow === undefined ||
+      hasDraftFlowSectionShape(draft.healthRoutineFlow)) &&
+    (draft.mbtiExpression === undefined ||
+      typeof draft.mbtiExpression === "string") &&
+    (draft.riskManagement === undefined ||
+      isStringArray(draft.riskManagement)) &&
+    (draft.actionPlan === undefined || isStringArray(draft.actionPlan)) &&
     isRecord(draft.yearSummary) &&
     typeof draft.yearSummary.ganji === "string" &&
     typeof draft.yearSummary.displayTitle === "string" &&
@@ -853,8 +1077,35 @@ function hasDraftShape(value: unknown): value is AnnualFortuneReportDraftInput {
 function collectVisibleStrings(draft: AnnualFortuneReportDraft): readonly string[] {
   return [
     draft.openingTitle,
+    draft.headline,
     draft.openingSummary,
     draft.coreLine,
+    draft.selectedYearSummary,
+    draft.yearAccessNotice,
+    draft.majorAnnualCrossReading,
+    draft.natalAnnualReading,
+    draft.monthlyFlowReading,
+    ...draft.monthlyHighlights.flatMap((highlight) => [
+      highlight.monthLabel,
+      highlight.headline,
+      highlight.body,
+      highlight.actionHint,
+    ]),
+    ...[
+      draft.careerWorkFlow,
+      draft.moneyResourceFlow,
+      draft.relationshipFlow,
+      draft.healthRoutineFlow,
+    ].flatMap((section) => [
+      section.title,
+      section.summary,
+      ...section.supportingSignals,
+      ...section.frictionSignals,
+      section.actionHint,
+    ]),
+    draft.mbtiExpression,
+    ...draft.riskManagement,
+    ...draft.actionPlan,
     draft.userContextSummary.lifeStatusLabel,
     draft.userContextSummary.fieldLabel ?? "",
     draft.userContextSummary.translationNote,
@@ -1194,6 +1445,15 @@ function validateArrayLengths(
   draft: AnnualFortuneReportDraft,
   errors: string[],
 ): void {
+  if (draft.monthlyHighlights.length === 0) {
+    errors.push("ANNUAL_FORTUNE_MONTHLY_HIGHLIGHTS_REQUIRED");
+  }
+  if (draft.riskManagement.length === 0) {
+    errors.push("ANNUAL_FORTUNE_RISK_MANAGEMENT_REQUIRED");
+  }
+  if (draft.actionPlan.length === 0) {
+    errors.push("ANNUAL_FORTUNE_ACTION_PLAN_REQUIRED");
+  }
   if (draft.chapters.length < 6 || draft.chapters.length > 10) {
     errors.push("ANNUAL_FORTUNE_CHAPTER_COUNT_INVALID");
   }
@@ -1216,6 +1476,44 @@ function validateArrayLengths(
   }
   if (draft.safetyNotes.length < 2 || draft.safetyNotes.length > 4) {
     errors.push("ANNUAL_FORTUNE_SAFETY_NOTES_INVALID");
+  }
+}
+
+function validateLaunchSections(
+  draft: AnnualFortuneReportDraft,
+  errors: string[],
+): void {
+  const requiredTextSections = [
+    ["headline", draft.headline],
+    ["selectedYearSummary", draft.selectedYearSummary],
+    ["yearAccessNotice", draft.yearAccessNotice],
+    ["majorAnnualCrossReading", draft.majorAnnualCrossReading],
+    ["natalAnnualReading", draft.natalAnnualReading],
+    ["monthlyFlowReading", draft.monthlyFlowReading],
+    ["mbtiExpression", draft.mbtiExpression],
+  ] as const;
+
+  for (const [fieldName, value] of requiredTextSections) {
+    if (value.trim().length === 0) {
+      errors.push(`ANNUAL_FORTUNE_REQUIRED_SECTION_EMPTY:${fieldName}`);
+    }
+  }
+
+  const requiredFlowSections = [
+    ["careerWorkFlow", draft.careerWorkFlow],
+    ["moneyResourceFlow", draft.moneyResourceFlow],
+    ["relationshipFlow", draft.relationshipFlow],
+    ["healthRoutineFlow", draft.healthRoutineFlow],
+  ] as const;
+
+  for (const [fieldName, section] of requiredFlowSections) {
+    if (
+      section.title.trim().length === 0 ||
+      section.summary.trim().length === 0 ||
+      section.actionHint.trim().length === 0
+    ) {
+      errors.push(`ANNUAL_FORTUNE_DOMAIN_FLOW_EMPTY:${fieldName}`);
+    }
   }
 }
 
@@ -1285,6 +1583,7 @@ export function validateAnnualFortuneReportDraft(
 
   const sanitizedDraft = sanitizeDraft(draft);
   validateArrayLengths(sanitizedDraft, errors);
+  validateLaunchSections(sanitizedDraft, errors);
 
   const visibleText = collectVisibleStrings(sanitizedDraft).join("\n");
   validateModeTone(sanitizedDraft, visibleText, errors);
@@ -1300,6 +1599,11 @@ export function validateAnnualFortuneReportDraft(
   for (const word of internalForbiddenWords) {
     if (visibleText.toLowerCase().includes(word.toLowerCase())) {
       errors.push(`ANNUAL_FORTUNE_INTERNAL_WORD_VISIBLE:${word}`);
+    }
+  }
+  for (const expression of deterministicForbiddenExpressions) {
+    if (visibleText.includes(expression)) {
+      errors.push(`ANNUAL_FORTUNE_FORBIDDEN_EXPRESSION:${expression}`);
     }
   }
 

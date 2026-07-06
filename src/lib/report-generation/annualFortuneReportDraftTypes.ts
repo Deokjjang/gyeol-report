@@ -20,6 +20,21 @@ export type AnnualFortuneKeySignalType =
   | "recovery"
   | "caution";
 
+export interface AnnualFortuneDraftFlowSection {
+  readonly title: string;
+  readonly summary: string;
+  readonly supportingSignals: readonly string[];
+  readonly frictionSignals: readonly string[];
+  readonly actionHint: string;
+}
+
+export interface AnnualFortuneDraftMonthlyHighlight {
+  readonly monthLabel: string;
+  readonly headline: string;
+  readonly body: string;
+  readonly actionHint: string;
+}
+
 export interface AnnualFortuneReportDraft {
   readonly version: "v1";
   readonly productType: "annual_fortune";
@@ -33,8 +48,22 @@ export interface AnnualFortuneReportDraft {
     readonly translationNote: string;
   };
   readonly openingTitle: string;
+  readonly headline: string;
   readonly openingSummary: string;
   readonly coreLine: string;
+  readonly selectedYearSummary: string;
+  readonly yearAccessNotice: string;
+  readonly majorAnnualCrossReading: string;
+  readonly natalAnnualReading: string;
+  readonly monthlyFlowReading: string;
+  readonly monthlyHighlights: readonly AnnualFortuneDraftMonthlyHighlight[];
+  readonly careerWorkFlow: AnnualFortuneDraftFlowSection;
+  readonly moneyResourceFlow: AnnualFortuneDraftFlowSection;
+  readonly relationshipFlow: AnnualFortuneDraftFlowSection;
+  readonly healthRoutineFlow: AnnualFortuneDraftFlowSection;
+  readonly mbtiExpression: string;
+  readonly riskManagement: readonly string[];
+  readonly actionPlan: readonly string[];
   readonly yearSummary: {
     readonly ganji: string;
     readonly displayTitle: string;
@@ -104,6 +133,37 @@ const numberSchema = { type: "number" } as const;
 const stringArraySchema = {
   type: "array",
   items: stringSchema,
+} as const;
+
+const draftFlowSectionSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: [
+    "title",
+    "summary",
+    "supportingSignals",
+    "frictionSignals",
+    "actionHint",
+  ],
+  properties: {
+    title: stringSchema,
+    summary: stringSchema,
+    supportingSignals: stringArraySchema,
+    frictionSignals: stringArraySchema,
+    actionHint: stringSchema,
+  },
+} as const;
+
+const monthlyHighlightSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["monthLabel", "headline", "body", "actionHint"],
+  properties: {
+    monthLabel: stringSchema,
+    headline: stringSchema,
+    body: stringSchema,
+    actionHint: stringSchema,
+  },
 } as const;
 
 const flowCardSchema = {
@@ -196,8 +256,22 @@ export const annualFortuneReportDraftJsonSchema = {
     "personLabel",
     "userContextSummary",
     "openingTitle",
+    "headline",
     "openingSummary",
     "coreLine",
+    "selectedYearSummary",
+    "yearAccessNotice",
+    "majorAnnualCrossReading",
+    "natalAnnualReading",
+    "monthlyFlowReading",
+    "monthlyHighlights",
+    "careerWorkFlow",
+    "moneyResourceFlow",
+    "relationshipFlow",
+    "healthRoutineFlow",
+    "mbtiExpression",
+    "riskManagement",
+    "actionPlan",
     "yearSummary",
     "scoreSummary",
     "flowCards",
@@ -220,8 +294,25 @@ export const annualFortuneReportDraftJsonSchema = {
     personLabel: stringSchema,
     userContextSummary: userContextSummarySchema,
     openingTitle: stringSchema,
+    headline: stringSchema,
     openingSummary: stringSchema,
     coreLine: stringSchema,
+    selectedYearSummary: stringSchema,
+    yearAccessNotice: stringSchema,
+    majorAnnualCrossReading: stringSchema,
+    natalAnnualReading: stringSchema,
+    monthlyFlowReading: stringSchema,
+    monthlyHighlights: {
+      type: "array",
+      items: monthlyHighlightSchema,
+    },
+    careerWorkFlow: draftFlowSectionSchema,
+    moneyResourceFlow: draftFlowSectionSchema,
+    relationshipFlow: draftFlowSectionSchema,
+    healthRoutineFlow: draftFlowSectionSchema,
+    mbtiExpression: stringSchema,
+    riskManagement: stringArraySchema,
+    actionPlan: stringArraySchema,
     yearSummary: {
       type: "object",
       additionalProperties: false,
