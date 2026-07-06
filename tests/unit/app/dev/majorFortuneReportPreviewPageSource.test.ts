@@ -23,6 +23,14 @@ describe("major fortune report preview page source", () => {
     expect(pageSource).toContain("evidencePacket={snapshot.evidencePacket}");
   });
 
+  it("wraps the dev preview in the same light result tone as the launch view", () => {
+    expect(pageSource).toContain("bg-[#f6f0e7]");
+    expect(pageSource).toContain("max-w-6xl");
+    expect(pageSource).toContain("bg-[#fffaf1]");
+    expect(pageSource).not.toContain("bg-neutral-950");
+    expect(pageSource).not.toContain("bg-neutral-900");
+  });
+
   it("renders an in-memory fixture preview when no snapshot exists", () => {
     expect(pageSource).toContain("buildMajorFortuneEvidence");
     expect(pageSource).toContain("buildInMemoryMajorFortunePreviewDraft");

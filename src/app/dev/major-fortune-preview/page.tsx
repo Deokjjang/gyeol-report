@@ -79,18 +79,18 @@ function PreviewShell({
   readonly devStatus?: string;
 }) {
   return (
-    <main className="min-h-screen bg-neutral-950 px-5 py-10 text-neutral-50 sm:px-8">
-      <section className="mx-auto flex max-w-4xl flex-col gap-6">
+    <main className="min-h-screen bg-[#f6f0e7] px-4 py-8 text-[#2b211b] sm:px-6 lg:px-8">
+      <section className="mx-auto flex min-w-0 max-w-6xl flex-col gap-6">
         {devStatus === undefined ? null : (
           <aside
-            className="rounded-md border border-neutral-800 bg-neutral-900/70 px-3 py-2 text-xs text-neutral-500"
+            className="min-w-0 break-words rounded-[8px] border border-[#ded2c2] bg-[#fffaf1] px-3 py-2 text-xs text-[#76685c]"
             aria-label="dev-only metadata"
           >
-            <span className="font-semibold text-neutral-400">개발 상태</span>
-            <span className="ml-2">{devStatus}</span>
+            <span className="font-semibold text-[#6f1d35]">개발 상태</span>
+            <span className="mt-1 block break-words sm:ml-2 sm:mt-0 sm:inline">{devStatus}</span>
           </aside>
         )}
-        <p className="text-sm font-medium text-neutral-500">
+        <p className="text-sm font-medium text-[#76685c]">
           결 리포트 개발 미리보기
         </p>
         {children}
@@ -102,12 +102,12 @@ function PreviewShell({
 function renderMessage(title: string, message: string) {
   return (
     <PreviewShell>
-      <section className="space-y-4 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6">
-        <p className="text-sm font-semibold text-sky-200">
+      <section className="space-y-4 rounded-[8px] border border-[#ded2c2] bg-[#fffaf1] p-6">
+        <p className="text-sm font-semibold text-[#8b6d2d]">
           대운 리포트
         </p>
-        <h1 className="text-2xl font-bold text-neutral-50">{title}</h1>
-        <p className="whitespace-pre-line text-sm leading-6 text-neutral-400">
+        <h1 className="text-2xl font-bold text-[#2b211b]">{title}</h1>
+        <p className="whitespace-pre-line text-sm leading-6 text-[#5a4d42]">
           {message}
         </p>
       </section>

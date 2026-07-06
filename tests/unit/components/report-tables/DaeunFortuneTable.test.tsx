@@ -221,6 +221,14 @@ describe("DaeunFortuneTable", () => {
     expect(html).toContain("daeun-element-fire-red");
   });
 
+  it("keeps long timeline and detail text wrapped inside the table width", () => {
+    const html = renderToStaticMarkup(<DaeunFortuneTable data={tableData} />);
+
+    expect(html).toContain("max-w-full");
+    expect(html).toContain("overflow-hidden");
+    expect(html).toContain("break-words");
+  });
+
   it("renders hyphens when detail lists are empty", () => {
     const html = renderToStaticMarkup(
       <DaeunFortuneTable

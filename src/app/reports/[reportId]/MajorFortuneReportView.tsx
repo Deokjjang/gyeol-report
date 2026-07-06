@@ -35,11 +35,18 @@ const domainFlowSections = [
 ] as const satisfies ReadonlyArray<{ key: DomainFlowKey; label: string }>;
 
 const panelClass =
-  "rounded-[8px] border border-[#ded2c2] bg-[#fffaf1] p-5 shadow-[0_16px_40px_rgba(62,45,35,0.08)]";
+  "min-w-0 rounded-[8px] border border-[#ded2c2] bg-[#fffaf1] p-5 shadow-[0_16px_40px_rgba(62,45,35,0.08)]";
 const mutedPanelClass =
-  "rounded-[8px] border border-[#e5dbcc] bg-[#fbf6ee] p-4 text-sm leading-7 text-[#5f554b]";
+  "min-w-0 rounded-[8px] border border-[#e5dbcc] bg-[#fbf6ee] p-4 text-sm leading-7 break-words text-[#5f554b]";
 const sectionTitleClass =
   "text-xl font-semibold tracking-normal text-[#2b211b] sm:text-2xl";
+const fiveElementLabelByValue: Record<string, string> = {
+  wood: "목",
+  fire: "화",
+  earth: "토",
+  metal: "금",
+  water: "수",
+};
 
 function text(value: string | number | null | undefined): string {
   return sanitizeMajorFortuneVisibleText(value === undefined || value === null ? "" : String(value)).trim();
@@ -53,7 +60,7 @@ function isVisibleText(value: string | null | undefined): value is string {
 
 function renderList(
   items: readonly (string | number | null | undefined)[],
-  className = "space-y-2 text-sm leading-7 text-[#51463c]",
+  className = "space-y-2 text-sm leading-7 break-words text-[#51463c]",
 ) {
   const visibleItems = items.map(text).filter(Boolean);
 
@@ -64,9 +71,9 @@ function renderList(
   return (
     <ul className={className}>
       {visibleItems.map((item) => (
-        <li key={item} className="flex gap-2">
+        <li key={item} className="flex min-w-0 gap-2">
           <span className="mt-[0.72em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#9f7a2d]" />
-          <span>{item}</span>
+          <span className="min-w-0 break-words">{item}</span>
         </li>
       ))}
     </ul>
@@ -81,7 +88,7 @@ function renderParagraphs(items: readonly (string | null | undefined)[]) {
   }
 
   return (
-    <div className="space-y-3 text-[15px] leading-8 text-[#4f453c]">
+    <div className="space-y-3 break-words text-[15px] leading-8 text-[#4f453c]">
       {visibleItems.map((item) => (
         <p key={item}>{item}</p>
       ))}
@@ -89,9 +96,32 @@ function renderParagraphs(items: readonly (string | null | undefined)[]) {
   );
 }
 
+function compactSentence(value: string | null | undefined): string {
+  const visibleValue = text(value);
+
+  if (!visibleValue) return "";
+
+  return visibleValue.split(/[.!?。]\s*|[.。]\s*/u)[0]?.trim() || visibleValue;
+}
+
 function formatSignalList(values: readonly string[] | undefined): string {
   const visibleValues = values?.map(text).filter(Boolean) ?? [];
   return visibleValues.length > 0 ? visibleValues.join(" · ") : "뚜렷한 신호는 본문 해석에서 보완합니다.";
+}
+
+function formatFiveElementValues(
+  values: readonly string[] | undefined,
+  fallback: string | null | undefined,
+): string {
+  const visibleValues = values
+    ?.map((value) => fiveElementLabelByValue[text(value).toLowerCase()] ?? text(value))
+    .filter(Boolean);
+
+  if (visibleValues && visibleValues.length > 0) {
+    return visibleValues.join(" · ");
+  }
+
+  return text(fallback);
 }
 
 function renderPill(label: string, value: string | number | null | undefined) {
@@ -102,9 +132,9 @@ function renderPill(label: string, value: string | number | null | undefined) {
   }
 
   return (
-    <div className="rounded-[8px] border border-[#e4d8c8] bg-[#fffdf8] px-4 py-3">
+    <div className="min-w-0 rounded-[8px] border border-[#e4d8c8] bg-[#fffdf8] px-4 py-3">
       <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#95733a]">{label}</p>
-      <p className="mt-1 text-sm font-semibold text-[#2f251f]">{visibleValue}</p>
+      <p className="mt-1 break-words text-sm font-semibold text-[#2f251f]">{visibleValue}</p>
     </div>
   );
 }
@@ -172,10 +202,10 @@ function renderCommonFoundation(
   const mbtiBasis = evidencePacket?.mbtiBasis;
   const mbtiFallback = [
     text(mbtiBasis?.type) ? `${text(mbtiBasis?.type)} · ${text(mbtiBasis?.titleKo || mbtiBasis?.archetype)}` : "",
-    text(mbtiBasis?.decisionPattern),
-    text(mbtiBasis?.workPattern),
-    text(draft.mbtiExpression),
-  ].filter(Boolean);
+    compactSentence(mbtiBasis?.decisionPattern),
+    compactSentence(mbtiBasis?.workPattern),
+    evidencePacket === undefined ? compactSentence(draft.mbtiExpression) : "",
+  ].filter(Boolean).slice(0, 3);
 
   return (
     <section className="space-y-4">
@@ -183,7 +213,7 @@ function renderCommonFoundation(
         <p className="text-sm font-semibold text-[#8b6d2d]">기초 정보</p>
         <h2 className={sectionTitleClass}>대운 해석에 쓰는 기본 표</h2>
       </div>
-      <div className="grid gap-4 xl:grid-cols-2">
+      <div className="grid items-start gap-4 xl:grid-cols-2">
         <div className={panelClass}>
           <div className="mb-4">
             <h3 className="text-lg font-semibold text-[#2b211b]">기초 만세력</h3>
@@ -193,8 +223,8 @@ function renderCommonFoundation(
           </div>
           {manseRyeokTable ?? (
             <div className={mutedPanelClass}>
-              입력된 대운표와 draft 기준으로 먼저 읽습니다. 원국 데이터가 연결된 결과에서는
-              기초 만세력이 이 영역에 표시됩니다.
+              입력된 대운표 기준으로 먼저 읽습니다. 원국 데이터가 연결된 결과에서는 기초
+              만세력이 이 영역에 표시됩니다.
             </div>
           )}
         </div>
@@ -243,7 +273,10 @@ function renderCurrentMajorFortune(
         {renderPill("대운", currentCycle?.ganji ?? draft.cycleSummary.ganji)}
         {renderPill("천간 십성", currentCycle?.stemTenGod ?? draft.cycleSummary.tenGodLabel)}
         {renderPill("지지 십성", currentCycle?.branchTenGod)}
-        {renderPill("오행 초점", currentCycle?.elementFocus?.join(" · ") ?? draft.cycleSummary.elementLabel)}
+        {renderPill(
+          "오행 초점",
+          formatFiveElementValues(currentCycle?.elementFocus, draft.cycleSummary.elementLabel),
+        )}
       </div>
       {interpretation ? <div className="mt-5">{renderParagraphs([interpretation])}</div> : null}
       <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -290,8 +323,8 @@ function renderTenYearSummary(draft: MajorFortuneReportDraft, evidencePacket: Ma
   const summary = [
     text(evidencePacket?.tenYearFlowSummary?.headline),
     text(evidencePacket?.tenYearFlowSummary?.summary),
-    text(draft.tenYearTheme),
-    text(draft.openingSummary),
+    evidencePacket === undefined ? text(draft.tenYearTheme) : "",
+    evidencePacket === undefined ? text(draft.openingSummary) : "",
     text(draft.previousToCurrentShift.plain),
     ...draft.previousToCurrentShift.whatChanged.map(text),
   ].filter(Boolean);

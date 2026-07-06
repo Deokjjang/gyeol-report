@@ -74,7 +74,7 @@ export default function DaeunFortuneTable({
         onClick={() => setIsOpen((current) => !current)}
         className="flex w-full items-center justify-between gap-3 bg-[#6f1d35] px-4 py-3 text-left text-white"
       >
-        <span className="min-w-0 text-base font-extrabold leading-6 break-keep">
+        <span className="min-w-0 break-words text-base font-extrabold leading-6">
           {data.title}
         </span>
         <span className="shrink-0 text-sm font-bold">
@@ -165,10 +165,10 @@ function TimelineRow({
         </div>
 
         <div className="grid gap-1 leading-5 text-[#5a4d42]">
-          <p className="text-xs font-bold text-[#8a7c70] break-keep">
+          <p className="break-words text-xs font-bold text-[#8a7c70]">
             {row.keyInteractionLabel ?? "-"}
           </p>
-          <p className="text-sm font-semibold text-[#2b211b] break-keep">
+          <p className="break-words text-sm font-semibold text-[#2b211b]">
             {row.oneLine ?? "-"}
           </p>
         </div>
@@ -228,10 +228,10 @@ export function DaeunAnnualCompareTable({
             {row.label}
           </h4>
           <div className="grid grid-cols-2 text-center text-xs leading-5 text-[#5a4d42]">
-            <div className="min-h-10 px-2 py-2 break-keep">
+            <div className="min-h-10 break-words px-2 py-2">
               {formatDetailValues(data[row.key].daeun)}
             </div>
-            <div className="min-h-10 border-l border-[#eadfce] px-2 py-2 break-keep">
+            <div className="min-h-10 break-words border-l border-[#eadfce] px-2 py-2">
               {formatDetailValues(data[row.key].annual)}
             </div>
           </div>

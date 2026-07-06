@@ -26,6 +26,9 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("기초 만세력");
     expect(viewSource).toContain("MBTI 성향표");
     expect(viewSource).toContain("MBTI는 대운의 원인이 아니라");
+    expect(viewSource).toContain("items-start");
+    expect(viewSource).toContain("입력된 대운표 기준");
+    expect(viewSource).not.toContain("draft 기준");
     expect(viewSource).not.toContain("공통 만세력표");
     expect(viewSource).not.toContain("공통 MBTI표");
   });
@@ -35,6 +38,8 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("evidencePacket?.currentMajorFortune");
     expect(viewSource).toContain("현재 대운 요약");
     expect(viewSource).toContain("currentCycle?.keyTheme");
+    expect(viewSource).toContain("formatFiveElementValues");
+    expect(viewSource).toContain("earth: \"토\"");
     expect(viewSource).toContain("evidencePacket?.currentAnnualCross");
     expect(viewSource).toContain("현재 대운·올해 세운 교차");
     expect(viewSource).toContain("annualCross?.cycleToAnnualRelation");
