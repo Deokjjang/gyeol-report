@@ -146,11 +146,11 @@ describe("product generation dispatcher", () => {
     }
   });
 
-  it("returns not implemented for every product handler", () => {
-    for (const kind of productKinds) {
+  it("returns not implemented for non-compatibility product handlers", async () => {
+    for (const kind of productKinds.filter((kind) => kind !== "compatibility")) {
       const result = dispatchProductGenerationInput(makeNormalizedInput(kind));
 
-      expect(result).toEqual({
+      await expect(result).resolves.toEqual({
         ok: false,
         kind,
         error: {
@@ -161,8 +161,8 @@ describe("product generation dispatcher", () => {
     }
   });
 
-  it("maps adapter invalid results to INVALID_REPORT_INPUT", () => {
-    const result = prepareProductGenerationFromPayload({
+  it("maps adapter invalid results to INVALID_REPORT_INPUT", async () => {
+    const result = await prepareProductGenerationFromPayload({
       ...makeSinglePayload(),
       productKey: "unknown",
     });
@@ -176,7 +176,7 @@ describe("product generation dispatcher", () => {
     });
   });
 
-  it("routes valid career, love, major, annual, and compatibility payloads by kind", () => {
+  it("routes valid non-compatibility payloads to not implemented by kind", async () => {
     const payloads = [
       {
         payload: makeSinglePayload(),
@@ -206,14 +206,10 @@ describe("product generation dispatcher", () => {
         }),
         kind: "annualFortune",
       },
-      {
-        payload: makeCompatibilityPayload(),
-        kind: "compatibility",
-      },
     ] as const;
 
     for (const { payload, kind } of payloads) {
-      expect(prepareProductGenerationFromPayload(payload)).toMatchObject({
+      await expect(prepareProductGenerationFromPayload(payload)).resolves.toMatchObject({
         ok: false,
         kind,
         error: {
@@ -223,11 +219,30 @@ describe("product generation dispatcher", () => {
     }
   });
 
+  it("routes valid compatibility payloads to generated draft output", async () => {
+    const result = await prepareProductGenerationFromPayload(makeCompatibilityPayload());
+
+    expect(result).toMatchObject({
+      ok: true,
+      kind: "compatibility",
+      draft: {
+        version: "compatibility_v1_draft",
+        productType: "saju_mbti_compatibility",
+        productVersion: "1.0",
+        relationshipType: "love",
+      },
+      evidencePacket: {
+        productType: "saju_mbti_compatibility",
+        relationshipType: "love",
+      },
+    });
+  });
+
   it("keeps product kind handler mapping explicit in source", () => {
     const requiredMarkers = [
       "careerMoneyStudy: createNotImplementedHandler",
       "loveMarriageChild: createNotImplementedHandler",
-      "compatibility: createNotImplementedHandler",
+      "compatibility: handleCompatibilityGeneration",
       "majorFortune: createNotImplementedHandler",
       "annualFortune: createNotImplementedHandler",
       "satisfies Record<ReportProductKind, ProductGenerationHandler>",

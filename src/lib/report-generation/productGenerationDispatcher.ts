@@ -1,5 +1,10 @@
 import {
+  generateCompatibilityProductDraft,
+  type CompatibilityGenerationHandlerOptions,
+} from "./compatibilityGenerationHandler";
+import {
   normalizeReportInputPayload,
+  type CompatibilityGenerationInput,
   type ReportGenerationInput,
   type ReportInputPayload,
   type ReportProductKind,
@@ -7,6 +12,8 @@ import {
 
 export type ProductGenerationErrorCode =
   | "PRODUCT_GENERATION_NOT_IMPLEMENTED"
+  | "COMPATIBILITY_GENERATION_FAILED"
+  | "COMPATIBILITY_DRAFT_INVALID"
   | "INVALID_REPORT_INPUT";
 
 export type ProductGenerationSuccessResult = {
@@ -20,7 +27,7 @@ export type ProductGenerationNotImplementedResult = {
   readonly ok: false;
   readonly kind: ReportProductKind;
   readonly error: {
-    readonly code: "PRODUCT_GENERATION_NOT_IMPLEMENTED";
+    readonly code: ProductGenerationErrorCode;
     readonly message: string;
   };
 };
@@ -40,12 +47,17 @@ export type ProductGenerationResult =
 
 export type ProductGenerationHandler = (
   input: ReportGenerationInput,
-) => ProductGenerationResult;
+  options?: ProductGenerationDispatcherOptions,
+) => Promise<ProductGenerationResult>;
+
+export type ProductGenerationDispatcherOptions = {
+  readonly compatibility?: CompatibilityGenerationHandlerOptions;
+};
 
 const PRODUCT_GENERATION_HANDLERS = {
   careerMoneyStudy: createNotImplementedHandler("careerMoneyStudy"),
   loveMarriageChild: createNotImplementedHandler("loveMarriageChild"),
-  compatibility: createNotImplementedHandler("compatibility"),
+  compatibility: handleCompatibilityGeneration,
   majorFortune: createNotImplementedHandler("majorFortune"),
   annualFortune: createNotImplementedHandler("annualFortune"),
 } as const satisfies Record<ReportProductKind, ProductGenerationHandler>;
@@ -58,26 +70,30 @@ export function getProductGenerationHandler(
 
 export function dispatchProductGenerationInput(
   input: ReportGenerationInput,
-): ProductGenerationResult {
+  options: ProductGenerationDispatcherOptions = {},
+): Promise<ProductGenerationResult> {
   const handler = getProductGenerationHandler(input.kind);
-  return handler(input);
+  return handler(input, options);
 }
 
 export function prepareProductGenerationFromPayload(
   payload: ReportInputPayload | unknown,
-): ProductGenerationResult {
+  options: ProductGenerationDispatcherOptions = {},
+): Promise<ProductGenerationResult> {
   const normalized = normalizeReportInputPayload(payload);
   if (!normalized.ok) {
-    return invalidInputResult(`Invalid report input: ${normalized.error}`);
+    return Promise.resolve(
+      invalidInputResult(`Invalid report input: ${normalized.error}`),
+    );
   }
 
-  return dispatchProductGenerationInput(normalized.value);
+  return dispatchProductGenerationInput(normalized.value, options);
 }
 
 function createNotImplementedHandler(
   kind: ReportProductKind,
 ): ProductGenerationHandler {
-  return (input) => {
+  return async (input) => {
     if (input.kind !== kind) {
       return invalidInputResult(
         `Generation input kind mismatch: expected ${kind}, received ${input.kind}`,
@@ -93,6 +109,22 @@ function createNotImplementedHandler(
       },
     };
   };
+}
+
+async function handleCompatibilityGeneration(
+  input: ReportGenerationInput,
+  options: ProductGenerationDispatcherOptions = {},
+): Promise<ProductGenerationResult> {
+  if (input.kind !== "compatibility") {
+    return invalidInputResult(
+      `Generation input kind mismatch: expected compatibility, received ${input.kind}`,
+    );
+  }
+
+  return generateCompatibilityProductDraft(
+    input as CompatibilityGenerationInput,
+    options.compatibility,
+  );
 }
 
 function invalidInputResult(message: string): ProductGenerationInvalidInputResult {
