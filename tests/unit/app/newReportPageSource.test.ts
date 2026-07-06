@@ -157,6 +157,32 @@ describe("new report page source", () => {
     }
   });
 
+  it("keeps annual fortune product selection as a non-payment skeleton", () => {
+    const requiredMarkers = [
+      "ANNUAL_FORTUNE_PRODUCT_KEY",
+      "annual_fortune",
+      "ANNUAL_FORTUNE_PRODUCT_SLUG",
+      "annual-fortune",
+      "ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT",
+      "세운 리포트 입력",
+      "세운 리포트 입력 흐름 준비 중입니다.",
+      "선택 연도 흐름과 현재 대운, 12개월 월운",
+      "전용 흐름으로 연결될 예정입니다.",
+      "/dev/annual-fortune-preview?fixture=deokmin-2026-current",
+      "미리보기 입력 흐름",
+      "준비 중 · 미리보기 가능",
+      "productSlug === ANNUAL_FORTUNE_PRODUCT_SLUG",
+      "return ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT",
+      "return DEFAULT_SELECTED_REPORT_PRODUCT",
+      "isSelectedProductPurchasable",
+      "isPurchasable: false",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+  });
+
   it("renders compatibility A/B input branch fields and relationship categories", () => {
     const requiredMarkers = [
       "renderCompatibilityPersonInputSection",

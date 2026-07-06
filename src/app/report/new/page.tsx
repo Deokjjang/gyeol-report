@@ -18,6 +18,8 @@ const COMPATIBILITY_PRODUCT_KEY = "saju_mbti_compatibility";
 const COMPATIBILITY_PRODUCT_SLUG = "compatibility";
 const MAJOR_FORTUNE_PRODUCT_KEY = "major_fortune";
 const MAJOR_FORTUNE_PRODUCT_SLUG = "major-fortune";
+const ANNUAL_FORTUNE_PRODUCT_KEY = "annual_fortune";
+const ANNUAL_FORTUNE_PRODUCT_SLUG = "annual-fortune";
 const ACTIVE_REPORT_LIST_PRICE_LABEL_KO = "정가 1,290원";
 const ACTIVE_REPORT_SALE_PRICE_LABEL_KO = "런칭가 990원";
 const ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO = "결제금액 990원";
@@ -127,6 +129,22 @@ const MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT = {
   inputTitleKo: "대운 리포트 입력",
   introKo:
     "대운 리포트 입력 흐름 준비 중입니다. 현재 대운과 올해 세운의 교차를 읽는 전용 흐름으로 연결될 예정입니다. 개발 미리보기: /dev/major-fortune-preview?fixture=deokmin-current-major-fortune&snapshot=latest",
+  formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
+  deliveryTypeKo: "미리보기 입력 흐름",
+  statusLabelKo: "준비 중 · 미리보기 가능",
+  isPurchasable: false,
+  listPriceKo: null,
+  priceKo: null,
+} as const satisfies SelectedReportProduct;
+
+const ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT = {
+  productKey: ANNUAL_FORTUNE_PRODUCT_KEY,
+  slug: ANNUAL_FORTUNE_PRODUCT_SLUG,
+  nameKo: "세운 리포트",
+  fullNameKo: "세운 리포트",
+  inputTitleKo: "세운 리포트 입력",
+  introKo:
+    "세운 리포트 입력 흐름 준비 중입니다. 선택 연도 흐름과 현재 대운, 12개월 월운을 읽는 전용 흐름으로 연결될 예정입니다. 개발 미리보기: /dev/annual-fortune-preview?fixture=deokmin-2026-current&snapshot=latest",
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
   deliveryTypeKo: "미리보기 입력 흐름",
   statusLabelKo: "준비 중 · 미리보기 가능",
@@ -314,6 +332,10 @@ function resolveSelectedReportProduct(
 
   if (productSlug === MAJOR_FORTUNE_PRODUCT_SLUG) {
     return MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT;
+  }
+
+  if (productSlug === ANNUAL_FORTUNE_PRODUCT_SLUG) {
+    return ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT;
   }
 
   return DEFAULT_SELECTED_REPORT_PRODUCT;

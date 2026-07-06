@@ -1,7 +1,14 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 
 import Home from "../../../src/app/page";
+
+const homePageSource = readFileSync(
+  join(process.cwd(), "src/app/page.tsx"),
+  "utf8",
+);
 
 describe("home page product source", () => {
   it("shows the active product and purchase path", () => {
@@ -17,8 +24,6 @@ describe("home page product source", () => {
       "세운 리포트",
       "궁합 리포트",
       "구매 가능",
-      "비활성",
-      "출시 준비 중",
       "개발 preview",
       "준비 중 · 미리보기 가능",
       "입력 흐름 미리보기",
@@ -35,9 +40,11 @@ describe("home page product source", () => {
       "/report/new?product=love-marriage-child",
       "/report/new?product=compatibility",
       "/report/new?product=major-fortune",
+      "/report/new?product=annual-fortune",
       "love-marriage-child",
       "compatibility",
       "major-fortune",
+      "annual-fortune",
     ];
 
     for (const marker of requiredMarkers) {
@@ -81,6 +88,23 @@ describe("home page product source", () => {
 
     for (const marker of blockedMarkers) {
       expect(html).not.toContain(marker);
+    }
+  });
+
+  it("opens the annual fortune card as a non-purchasable preview entry", () => {
+    const requiredSourceMarkers = [
+      'id: "saewoon_report"',
+      'productKey: "annual_fortune"',
+      'slug: "annual-fortune"',
+      'status: "preview_available"',
+      "isPurchasable: false",
+      'previewHref: "/report/new?product=annual-fortune"',
+      'previewStatusKo: "준비 중 · 미리보기 가능"',
+      'badgeKo: "개발 preview"',
+    ];
+
+    for (const marker of requiredSourceMarkers) {
+      expect(homePageSource).toContain(marker);
     }
   });
 });

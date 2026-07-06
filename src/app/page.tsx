@@ -81,14 +81,19 @@ const launchProductGrid = [
   },
   {
     id: "saewoon_report",
+    productKey: "annual_fortune",
+    slug: "annual-fortune",
     nameKo: "세운 리포트",
     versionBadgeKo: "v1.0 준비",
     shortDescriptionKo:
       "선택 연도의 흐름과 월운을 상반기·하반기 기준으로 읽고 행동 기준을 정리합니다.",
-    status: "coming_soon",
+    status: "preview_available",
     isPurchasable: false,
     href: null,
-    badgeKo: "출시 준비 중",
+    previewHref: "/report/new?product=annual-fortune",
+    previewCtaLabelKo: "입력 흐름 미리보기",
+    previewStatusKo: "준비 중 · 미리보기 가능",
+    badgeKo: "개발 preview",
     visualKey: "saewoon",
   },
 ] as const satisfies readonly ProductTileItem[];
