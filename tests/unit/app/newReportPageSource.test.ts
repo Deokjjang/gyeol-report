@@ -154,7 +154,7 @@ describe("new report page source", () => {
     ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
   });
 
-  it("keeps compatibility product selection as a non-payment skeleton", () => {
+  it("keeps compatibility product selection as a preview-only input branch", () => {
     const requiredMarkers = [
       "COMPATIBILITY_PRODUCT_KEY",
       "saju_mbti_compatibility",
@@ -172,7 +172,8 @@ describe("new report page source", () => {
       "return DEFAULT_SELECTED_REPORT_PRODUCT",
       "isSelectedProductPurchasable",
       "isPurchasable: false",
-      "궁합 리포트 미리보기 준비됨",
+      "궁합 리포트 미리보기 생성",
+      "궁합 리포트 생성 중",
       "필수 정보를 입력해 주세요",
     ];
 
@@ -423,11 +424,10 @@ describe("new report page source", () => {
     ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
   });
 
-  it("renders compatibility preview handoff summary without API or payment calls", () => {
+  it("renders compatibility preview handoff summary without payment calls", () => {
     const requiredMarkers = [
       "입력 확인 요약",
-      "실제 생성 전 단계",
-      "현재 입력값이 어떤 궁합 context로",
+      "현재 입력값이 어떤 궁합 preview payload로",
       "A 사람",
       "B 사람",
       "관계 카테고리",
@@ -438,11 +438,12 @@ describe("new report page source", () => {
       "formatCompatibilityRelationshipLabel",
       "isCompatibilityInputReady",
       "compatibilityCtaLabel",
-      "궁합 리포트 미리보기 준비됨",
+      "궁합 리포트 미리보기 생성",
+      "궁합 리포트 생성 중",
       "필수 정보를 입력해 주세요",
-      "현재 입력값으로 실제 리포트를 생성하지 않습니다.",
-      "추후 입력값 기반 preview generation 예정",
-      "fixture preview",
+      "입력값 기반 궁합 preview generation을 실행합니다.",
+      "결제와 유료 저장은 이후 단계에서 연결합니다.",
+      "샘플 미리보기",
       "event.preventDefault()",
     ];
 
@@ -451,7 +452,37 @@ describe("new report page source", () => {
     }
   });
 
-  it("builds preview-only report input payloads without submitting them", () => {
+  it("submits compatibility preview payload to the create API and redirects to the result page", () => {
+    const requiredMarkers = [
+      "function isCompatibilityPreviewCreateSuccessResponse",
+      "function getCompatibilityPreviewCreateErrorMessage",
+      "isCompatibilitySubmitting",
+      "compatibilitySubmitError",
+      "function handleCompatibilityPreviewSubmit",
+      "if (!isCompatibilityInputReady || isCompatibilitySubmitting)",
+      "COMPATIBILITY_REQUIRED_INPUT_MESSAGE_KO",
+      "buildCompatibilityReportInputPayload({",
+      "relationshipType: compatibilityRelationshipType",
+      "personA: compatibilityPersonA",
+      "personB: compatibilityPersonB",
+      'REPORT_CREATE_API_PATH = "/api/reports/create"',
+      "fetch(REPORT_CREATE_API_PATH",
+      'method: "POST"',
+      '"content-type": "application/json"',
+      "body: JSON.stringify(payload)",
+      'snapshotKind === "product_preview"',
+      "router.push(`/reports/${createResult.reportId}`)",
+      "COMPATIBILITY_PREVIEW_CREATE_ERROR_MESSAGE_KO",
+      "onSubmit={handleCompatibilityPreviewSubmit}",
+      'type="submit"',
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+  });
+
+  it("builds report input payloads for preview flows", () => {
     const requiredMarkers = [
       "../../../lib/report-generation/reportInputTypes",
       "SinglePersonReportInputPayload",
@@ -602,8 +633,6 @@ describe("new report page source", () => {
     const blockedMarkers = [
       "무료 미리보기 생성",
       "결제 " + "비활성 안내",
-      'fetch("/api/',
-      'fetch("/api/reports/create"',
       "createReport(",
       "generateReport(",
       "/api/reports/mock-paid-complete",

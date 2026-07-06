@@ -3,6 +3,10 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { createInMemoryReportPersistenceAdapter } from "@/lib/persistence/inMemoryReportPersistenceAdapter";
+import {
+  createReportPersistenceRuntime,
+  PREVIEW_REPORT_PERSISTENCE_ADAPTER_GLOBAL_KEY,
+} from "@/lib/persistence/reportPersistenceRuntime";
 import type { PersistedReportRecord } from "@/lib/persistence/reportPersistenceTypes";
 import {
   createProductPreviewSnapshot,
@@ -15,6 +19,11 @@ const sourcePath = join(
   "src/lib/persistence/inMemoryReportPersistenceAdapter.ts",
 );
 const source = readFileSync(sourcePath, "utf8");
+const runtimeSourcePath = join(
+  process.cwd(),
+  "src/lib/persistence/reportPersistenceRuntime.ts",
+);
+const runtimeSource = readFileSync(runtimeSourcePath, "utf8");
 
 const createdAt = "2026-01-01T00:00:00.000Z";
 const laterAt = "2026-01-02T00:00:00.000Z";
@@ -199,6 +208,36 @@ describe("createInMemoryReportPersistenceAdapter", () => {
           record.reportSnapshot.productPreview,
         );
         expect(findResult.record).not.toHaveProperty("report");
+      }
+    }
+  });
+
+  it("shares product preview snapshots across preview-memory runtime instances", async () => {
+    const firstRuntime = createReportPersistenceRuntime({
+      mode: "preview_memory",
+    });
+    const secondRuntime = createReportPersistenceRuntime({
+      mode: "preview_memory",
+    });
+    const record = createProductPreviewRecord();
+
+    expect(firstRuntime.ok).toBe(true);
+    expect(secondRuntime.ok).toBe(true);
+
+    if (!firstRuntime.ok || !secondRuntime.ok) {
+      throw new Error("Preview memory runtime fixture failed.");
+    }
+
+    await firstRuntime.adapter.create({ record });
+    const findResult = await secondRuntime.adapter.find({
+      reportId: record.reportId,
+    });
+
+    expect(findResult.ok).toBe(true);
+    if (findResult.ok) {
+      expect(findResult.record.snapshotKind).toBe("product_preview");
+      if (findResult.record.snapshotKind === "product_preview") {
+        expect(findResult.record.productPreview.reportId).toBe(record.reportId);
       }
     }
   });
@@ -406,5 +445,13 @@ describe("createInMemoryReportPersistenceAdapter", () => {
     expect(source).not.toContain("supabase");
     expect(source).not.toContain("payment");
     expect(source).not.toContain("api/reports");
+  });
+
+  it("keeps preview-memory runtime on a unique globalThis store", () => {
+    expect(runtimeSource).toContain("globalThis");
+    expect(runtimeSource).toContain(PREVIEW_REPORT_PERSISTENCE_ADAPTER_GLOBAL_KEY);
+    expect(PREVIEW_REPORT_PERSISTENCE_ADAPTER_GLOBAL_KEY).toBe(
+      "__gyeol_report_preview_persistence_adapter_v1__",
+    );
   });
 });

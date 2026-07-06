@@ -2,6 +2,7 @@
 
 import { use, useState } from "react";
 import type { FormEvent } from "react";
+import { useRouter } from "next/navigation";
 
 import DevTossCheckoutLauncher, {
   type DevTossCheckoutInputSnapshot,
@@ -39,6 +40,11 @@ const REQUIRED_CHECKOUT_INPUT_MESSAGE_KO =
   "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.";
 const SINGLE_PRODUCT_CONTEXT_NOTICE_KO =
   "현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.";
+const COMPATIBILITY_REQUIRED_INPUT_MESSAGE_KO =
+  "A/B 이름과 생년월일, 관계 카테고리를 입력해 주세요.";
+const COMPATIBILITY_PREVIEW_CREATE_ERROR_MESSAGE_KO =
+  "궁합 리포트 미리보기를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.";
+const REPORT_CREATE_API_PATH = "/api/reports/create";
 const DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED =
   process.env.NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED === "1";
 
@@ -541,6 +547,43 @@ function buildReportInputPayload(input: {
   }
 
   return null;
+}
+
+function isCompatibilityPreviewCreateSuccessResponse(
+  value: unknown,
+): value is {
+  readonly ok: true;
+  readonly reportId: string;
+  readonly snapshotKind: "product_preview";
+} {
+  if (typeof value !== "object" || value === null) {
+    return false;
+  }
+
+  const response = value as Record<string, unknown>;
+  return (
+    response.ok === true &&
+    typeof response.reportId === "string" &&
+    response.reportId.trim().length > 0 &&
+    response.snapshotKind === "product_preview"
+  );
+}
+
+function getCompatibilityPreviewCreateErrorMessage(value: unknown): string {
+  if (typeof value !== "object" || value === null) {
+    return COMPATIBILITY_PREVIEW_CREATE_ERROR_MESSAGE_KO;
+  }
+
+  const response = value as Record<string, unknown>;
+  if (typeof response.message === "string" && response.message.trim() !== "") {
+    return response.message;
+  }
+
+  if (typeof response.error === "string" && response.error.trim() !== "") {
+    return response.error;
+  }
+
+  return COMPATIBILITY_PREVIEW_CREATE_ERROR_MESSAGE_KO;
 }
 
 function isCompatibilityPersonRequiredInputComplete(
@@ -1163,6 +1206,7 @@ function renderSingleProductCommonInputSection(input: {
 export default function NewReportPage({
   searchParams = EMPTY_REPORT_SEARCH_PARAMS,
 }: NewReportPageProps) {
+  const router = useRouter();
   const resolvedSearchParams = use(searchParams);
   const selectedProduct = resolveSelectedReportProduct(
     resolvedSearchParams.product,
@@ -1185,6 +1229,9 @@ export default function NewReportPage({
     useState<CompatibilityPersonInputState>(createCompatibilityPersonInputState);
   const [compatibilityRelationshipType, setCompatibilityRelationshipType] =
     useState<CompatibilityRelationshipTypeSelection>("love");
+  const [isCompatibilitySubmitting, setIsCompatibilitySubmitting] =
+    useState(false);
+  const [compatibilitySubmitError, setCompatibilitySubmitError] = useState("");
   const [majorFortuneInput, setMajorFortuneInput] =
     useState<MajorFortuneInputState>(createMajorFortuneInputState);
   const [annualFortuneInput, setAnnualFortuneInput] =
@@ -1222,9 +1269,11 @@ export default function NewReportPage({
     isCompatibilityPersonRequiredInputComplete(compatibilityPersonA) &&
     isCompatibilityPersonRequiredInputComplete(compatibilityPersonB) &&
     compatibilityRelationshipType.trim().length > 0;
-  const compatibilityCtaLabel = isCompatibilityInputReady
-    ? "궁합 리포트 미리보기 준비됨"
-    : "필수 정보를 입력해 주세요";
+  const compatibilityCtaLabel = isCompatibilitySubmitting
+    ? "궁합 리포트 생성 중"
+    : isCompatibilityInputReady
+      ? "궁합 리포트 미리보기 생성"
+      : "필수 정보를 입력해 주세요";
   const compatibilityRelationshipLabel = formatCompatibilityRelationshipLabel(
     compatibilityRelationshipType,
   );
@@ -1258,6 +1307,55 @@ export default function NewReportPage({
       compatibilityPersonB,
       compatibilityRelationshipType,
     });
+  }
+
+  async function handleCompatibilityPreviewSubmit(
+    event: FormEvent<HTMLFormElement>,
+  ) {
+    event.preventDefault();
+    setCompatibilitySubmitError("");
+
+    if (!isCompatibilityInputReady || isCompatibilitySubmitting) {
+      setCompatibilitySubmitError(COMPATIBILITY_REQUIRED_INPUT_MESSAGE_KO);
+      return;
+    }
+
+    const payload = buildCompatibilityReportInputPayload({
+      relationshipType: compatibilityRelationshipType,
+      personA: compatibilityPersonA,
+      personB: compatibilityPersonB,
+    });
+
+    setIsCompatibilitySubmitting(true);
+
+    try {
+      const response = await fetch(REPORT_CREATE_API_PATH, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      const createResult: unknown = await response.json();
+
+      if (
+        response.ok &&
+        isCompatibilityPreviewCreateSuccessResponse(createResult)
+      ) {
+        router.push(`/reports/${createResult.reportId}`);
+        return;
+      }
+
+      setCompatibilitySubmitError(
+        getCompatibilityPreviewCreateErrorMessage(createResult),
+      );
+    } catch {
+      setCompatibilitySubmitError(
+        COMPATIBILITY_PREVIEW_CREATE_ERROR_MESSAGE_KO,
+      );
+    }
+
+    setIsCompatibilitySubmitting(false);
   }
 
   if (isSinglePersonPreviewProduct(selectedProduct.productKey)) {
@@ -2480,7 +2578,7 @@ export default function NewReportPage({
             </p>
           </header>
 
-          <form onSubmit={handlePreviewOnlySubmit} className="grid gap-6">
+          <form onSubmit={handleCompatibilityPreviewSubmit} className="grid gap-6">
             <input type="hidden" name="timezone" value="Asia/Seoul" />
             <input type="hidden" name="calendarType" value="SOLAR" />
             <input
@@ -2552,10 +2650,14 @@ export default function NewReportPage({
                   </select>
                 </div>
                 <button
-                  type="button"
-                  disabled
-                  aria-disabled="true"
-                  className="min-h-12 rounded-lg border border-[#c79a43]/40 bg-[#2c1e1f] px-5 py-3 text-sm font-bold text-[#c79a43]/80"
+                  type="submit"
+                  disabled={!isCompatibilityInputReady || isCompatibilitySubmitting}
+                  aria-disabled={!isCompatibilityInputReady || isCompatibilitySubmitting}
+                  className={
+                    isCompatibilityInputReady && !isCompatibilitySubmitting
+                      ? "min-h-12 rounded-lg border border-[#c79a43] bg-[#c79a43] px-5 py-3 text-sm font-bold text-[#171211] transition hover:bg-[#d8ad58]"
+                      : "min-h-12 rounded-lg border border-[#c79a43]/40 bg-[#2c1e1f] px-5 py-3 text-sm font-bold text-[#c79a43]/80"
+                  }
                 >
                   {compatibilityCtaLabel}
                 </button>
@@ -2568,8 +2670,8 @@ export default function NewReportPage({
                   입력 확인 요약
                 </p>
                 <p className="text-sm leading-6 text-[#cfc5b8]">
-                  실제 생성 전 단계이며, 현재 입력값이 어떤 궁합 context로
-                  유지되는지 확인합니다.
+                  현재 입력값이 어떤 궁합 preview payload로 생성되는지
+                  확인합니다.
                 </p>
               </div>
 
@@ -2629,18 +2731,21 @@ export default function NewReportPage({
               >
                 {compatibilityCtaLabel}
               </p>
+              {compatibilitySubmitError ? (
+                <p className="rounded-lg border border-rose-900/50 bg-rose-950/25 p-4 text-sm font-semibold text-rose-100">
+                  {compatibilitySubmitError}
+                </p>
+              ) : null}
             </section>
 
             <aside className="space-y-3 rounded-lg border border-[#4a3434] bg-[#171211]/70 p-5 text-sm leading-6 text-[#cfc5b8]">
               <p className="font-semibold text-[#fffaf0]">개발 미리보기</p>
               <p>
-                현재 화면은 전용 입력 흐름을 연결하기 위한 준비 화면입니다.
-                현재 입력값으로 실제 리포트를 생성하지 않습니다. 실제 생성,
-                결제, 저장은 이후 단계에서 연결합니다.
+                현재 화면은 입력값 기반 궁합 preview generation을 실행합니다.
+                결제와 유료 저장은 이후 단계에서 연결합니다.
               </p>
               <p>
-                추후 입력값 기반 preview generation 예정이며, 지금은 smoke
-                fixture preview로 화면을 확인합니다.
+                아래 링크는 입력과 무관한 샘플 미리보기입니다.
               </p>
               <p className="break-words text-[#c79a43]">
                 /dev/compatibility-preview?fixture=deokmin-sodam-love&amp;snapshot=latest

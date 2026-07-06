@@ -36,16 +36,28 @@ export type ReportPersistenceRuntimeEnvironment = Readonly<
 export const REPORT_PERSISTENCE_MODE_ENV = "REPORT_PERSISTENCE_MODE";
 export const SUPABASE_URL_ENV = "SUPABASE_URL";
 export const SUPABASE_ANON_KEY_ENV = "SUPABASE_ANON_KEY";
+export const PREVIEW_REPORT_PERSISTENCE_ADAPTER_GLOBAL_KEY =
+  "__gyeol_report_preview_persistence_adapter_v1__";
+
+type PreviewReportPersistenceGlobal = typeof globalThis & {
+  [PREVIEW_REPORT_PERSISTENCE_ADAPTER_GLOBAL_KEY]?:
+    | ReportPersistenceAdapter
+    | undefined;
+};
 
 let previewReportPersistenceAdapter: ReportPersistenceAdapter | undefined;
 
 export function createPreviewReportPersistenceAdapter(): ReportPersistenceAdapter {
-  previewReportPersistenceAdapter ??= createInMemoryReportPersistenceAdapter(
-    [],
-    {
+  const sharedGlobal = globalThis as PreviewReportPersistenceGlobal;
+
+  sharedGlobal[PREVIEW_REPORT_PERSISTENCE_ADAPTER_GLOBAL_KEY] ??=
+    previewReportPersistenceAdapter ??
+    createInMemoryReportPersistenceAdapter([], {
       duplicateCreateMode: "return_existing",
-    },
-  );
+    });
+
+  previewReportPersistenceAdapter =
+    sharedGlobal[PREVIEW_REPORT_PERSISTENCE_ADAPTER_GLOBAL_KEY];
 
   return previewReportPersistenceAdapter;
 }

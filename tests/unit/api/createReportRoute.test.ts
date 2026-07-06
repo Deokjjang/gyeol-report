@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { POST } from "@/app/api/reports/create/route";
+import { createReportPersistenceRuntime } from "@/lib/persistence/reportPersistenceRuntime";
 import type { ReportRequestRawInput } from "@/lib/validation/types";
 
 const validRawInput: ReportRequestRawInput = {
@@ -299,6 +300,38 @@ describe("create report route", () => {
         isUnlocked: false,
       });
       expect(body).not.toHaveProperty("report");
+    }
+  });
+
+  it("persists compatibility product preview responses into shared preview memory", async () => {
+    const response = await POST(createJsonRequest(compatibilityPayload));
+    const body = await readApiResponseBody(response);
+
+    expect(response.status).toBe(200);
+    expect(body.ok).toBe(true);
+
+    if (!(body.ok && "snapshotKind" in body)) {
+      throw new Error("Compatibility product preview response fixture failed.");
+    }
+
+    const runtime = createReportPersistenceRuntime({ mode: "preview_memory" });
+
+    expect(runtime.ok).toBe(true);
+    if (!runtime.ok) {
+      throw new Error("Preview memory runtime fixture failed.");
+    }
+
+    const findResult = await runtime.adapter.find({ reportId: body.reportId });
+
+    expect(findResult.ok).toBe(true);
+    if (findResult.ok) {
+      expect(findResult.record.snapshotKind).toBe("product_preview");
+      if (findResult.record.snapshotKind === "product_preview") {
+        expect(findResult.record.productPreview.reportId).toBe(body.reportId);
+        expect(findResult.record.productPreview.productType).toBe(
+          "saju_mbti_compatibility",
+        );
+      }
     }
   });
 
