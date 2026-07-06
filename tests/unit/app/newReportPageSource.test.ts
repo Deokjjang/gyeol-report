@@ -157,7 +157,7 @@ describe("new report page source", () => {
     }
   });
 
-  it("keeps annual fortune product selection as a non-payment skeleton", () => {
+  it("keeps annual fortune product selection as a non-payment input branch", () => {
     const requiredMarkers = [
       "ANNUAL_FORTUNE_PRODUCT_KEY",
       "annual_fortune",
@@ -165,9 +165,10 @@ describe("new report page source", () => {
       "annual-fortune",
       "ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT",
       "세운 리포트 입력",
-      "세운 리포트 입력 흐름 준비 중입니다.",
-      "선택 연도 흐름과 현재 대운, 12개월 월운",
-      "전용 흐름으로 연결될 예정입니다.",
+      "세운은 선택한 한 해의 흐름을 보는 리포트입니다.",
+      "현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
+      "실제 생성/결제 연결은",
+      "준비 중입니다.",
       "/dev/annual-fortune-preview?fixture=deokmin-2026-current",
       "미리보기 입력 흐름",
       "준비 중 · 미리보기 가능",
@@ -176,11 +177,90 @@ describe("new report page source", () => {
       "return DEFAULT_SELECTED_REPORT_PRODUCT",
       "isSelectedProductPurchasable",
       "isPurchasable: false",
+      "selectedProduct.productKey === ANNUAL_FORTUNE_PRODUCT_KEY",
+      "세운 리포트 미리보기 준비됨",
+      "필수 정보를 입력해 주세요",
     ];
 
     for (const marker of requiredMarkers) {
       expect(pageSource).toContain(marker);
     }
+  });
+
+  it("renders annual fortune input branch fields, selected year, and handoff summary", () => {
+    const requiredMarkers = [
+      "AnnualFortuneInputState",
+      "annualFortuneInput",
+      "setAnnualFortuneInput",
+      "createAnnualFortuneInputState",
+      "isAnnualFortuneRequiredInputComplete",
+      "formatAnnualBirthTimeSummary",
+      "formatAnnualRelationshipStatus",
+      "formatAnnualJobStatus",
+      "toggleAnnualFocusArea",
+      "annualRelationshipStatusOptions",
+      "annualJobStatusOptions",
+      "annualDetailedJobOptions",
+      "annualFocusAreaOptions",
+      "공통 입력값",
+      "모든 단독 인물 리포트가 공유하는 기본 정보입니다.",
+      'name="name"',
+      'name="birthDate"',
+      'name="birthTime"',
+      'name="timeBranch"',
+      'name="birthTimeUnknown"',
+      'name="gender"',
+      'name="mbtiType"',
+      'name="relationshipStatus"',
+      'name="jobStatus"',
+      'name="detailedJob"',
+      'name="focusAreas"',
+      'name="selectedYear"',
+      "현재 연애 상태",
+      "직업 상태",
+      "세부 직업",
+      "관심 영역",
+      "선택 입력입니다. 직업, 돈, 연애, 관계, 건강관리, 공부,",
+      "세운 전용 조회 연도",
+      "기본값은 현재 연도입니다.",
+      "과거 5년과 올해",
+      "12월 1일 이후에는 다음 해 신년사주 preview",
+      "2년 이상 미래 조회는 아직 준비 중",
+      "과거 10년 조회는",
+      "입력 확인 요약",
+      "현실 맥락",
+      "조회 연도",
+      "productKey:",
+      "productSlug:",
+      "세운 리포트 미리보기 준비됨",
+      "필수 정보를 입력해 주세요",
+      "현재 입력값으로 실제 리포트를 생성하지 않습니다.",
+      "실제 생성, 결제, 저장은 이후 단계에서 연결합니다.",
+      "/dev/annual-fortune-preview?fixture=deokmin-2026-current",
+      "event.preventDefault()",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+
+    const removedMarkers = [
+      "currentConcern",
+      'name="currentConcern"',
+      "현재 고민",
+      "관심 분야 또는 현재 고민",
+      "currentJob",
+      'name="currentJob"',
+      "현재 직업/상태",
+    ];
+
+    for (const marker of removedMarkers) {
+      expect(pageSource).not.toContain(marker);
+    }
+
+    expect(
+      pageSource.indexOf("selectedProduct.productKey === ANNUAL_FORTUNE_PRODUCT_KEY"),
+    ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
   });
 
   it("renders compatibility A/B input branch fields and relationship categories", () => {
