@@ -37,9 +37,13 @@ import type {
   MajorFortuneReportDraft,
 } from "../../../lib/report-generation/majorFortuneReportDraftTypes";
 import type {
+  AnnualFortuneReportDraft,
+} from "../../../lib/report-generation/annualFortuneReportDraftTypes";
+import type {
   MajorFortuneEvidencePacket,
 } from "../../../lib/report-knowledge/majorFortuneTypes";
 import { getSajuBranchSymbolEntry } from "../../../lib/report-knowledge/sajuBranchSymbolKnowledge";
+import { AnnualFortuneReportView } from "./AnnualFortuneReportView";
 import { CompatibilityReportView } from "./CompatibilityReportView";
 import { LoveMarriageChildReportView } from "./LoveMarriageChildReportView";
 import { MajorFortuneReportView } from "./MajorFortuneReportView";
@@ -325,6 +329,10 @@ function renderGeneratedState(result: PaidReportResult) {
     return renderGeneratedMajorFortuneState(result, unknownDraft);
   }
 
+  if (isAnnualFortuneReportDraft(unknownDraft)) {
+    return renderGeneratedAnnualFortuneState(result, unknownDraft);
+  }
+
   if (isComprehensiveReportV2Draft(draft)) {
     return renderGeneratedV2State(result, draft);
   }
@@ -404,6 +412,29 @@ function getMajorFortuneEvidencePacket(
     : undefined;
 }
 
+function isAnnualFortuneReportDraft(
+  value: unknown,
+): value is AnnualFortuneReportDraft {
+  if (!isRecord(value)) {
+    return false;
+  }
+
+  return (
+    value.version === "v1" &&
+    value.productType === "annual_fortune" &&
+    value.productVersion === "v1" &&
+    typeof value.personLabel === "string" &&
+    typeof value.openingTitle === "string" &&
+    typeof value.openingSummary === "string" &&
+    typeof value.coreLine === "string" &&
+    isRecord(value.yearSummary) &&
+    isRecord(value.scoreSummary) &&
+    Array.isArray(value.monthlyFlow) &&
+    Array.isArray(value.finalAdvice) &&
+    Array.isArray(value.safetyNotes)
+  );
+}
+
 function renderReportMetadata(result: PaidReportResult) {
   return (
     <dl className="grid gap-3 rounded-lg border border-neutral-800 bg-neutral-950/60 p-4 text-sm">
@@ -469,6 +500,18 @@ function renderGeneratedMajorFortuneState(
       draft={draft}
       reportId={result.reportId}
       evidencePacket={getMajorFortuneEvidencePacket(draft)}
+    />
+  );
+}
+
+function renderGeneratedAnnualFortuneState(
+  result: PaidReportResult,
+  draft: AnnualFortuneReportDraft,
+) {
+  return (
+    <AnnualFortuneReportView
+      draft={draft}
+      reportId={result.reportId}
     />
   );
 }

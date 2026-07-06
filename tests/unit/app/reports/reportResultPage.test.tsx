@@ -19,6 +19,9 @@ import type {
 import type {
   MajorFortuneReportDraft,
 } from "../../../../src/lib/report-generation/majorFortuneReportDraftTypes";
+import type {
+  AnnualFortuneReportDraft,
+} from "../../../../src/lib/report-generation/annualFortuneReportDraftTypes";
 import {
   buildLoveMarriageChildReportEvidence,
 } from "../../../../src/lib/report-knowledge/loveMarriageChildReportEvidence";
@@ -654,6 +657,150 @@ function createMajorFortuneDraft(): MajorFortuneReportDraft {
   };
 }
 
+function createAnnualFortuneDraft(): AnnualFortuneReportDraft {
+  const flow = (title: string) => ({
+    title,
+    summary: `${title}에서는 2026년의 선택 기준을 생활 장면으로 다시 정리합니다.`,
+    supportingSignals: [`${title}에서 결과물과 운영 기준을 잡는 힘`],
+    frictionSignals: [`${title}에서 책임과 회복 리듬이 동시에 올라오는 부담`],
+    actionHint: `${title}에서는 이번 달에 조정할 기준을 하나만 먼저 정합니다.`,
+  });
+
+  return {
+    version: "v1",
+    productType: "annual_fortune",
+    productVersion: "v1",
+    targetYear: 2026,
+    mode: "current_year",
+    personLabel: "덕민",
+    userContextSummary: {
+      lifeStatusLabel: "직장인",
+      fieldLabel: "개발·서비스 기획",
+      translationNote:
+        "현재 상태는 세운 흐름을 생활 장면으로 번역하기 위한 맥락입니다.",
+    },
+    openingTitle: "덕민님의 2026년 세운 리포트",
+    headline: "丙午 세운은 결과물과 운영 기준을 함께 묻는 해입니다.",
+    openingSummary:
+      "2026년은 올해 준비와 활용, 조율 기준을 함께 보는 현재 세운입니다.",
+    coreLine: "식신 흐름이 결과물과 표현을 밖으로 꺼내게 합니다.",
+    selectedYearSummary:
+      "2026년 丙午 세운은 직업, 돈, 관계, 회복 리듬을 올해 기준으로 다시 정리하게 만듭니다.",
+    yearAccessNotice:
+      "2026년은 세운 v1 조회 범위 안에서 선택 가능한 올해 흐름입니다.",
+    majorAnnualCrossReading:
+      "현재 대운은 10년 배경이고 세운은 그 위에 올라오는 1년 자극입니다.",
+    natalAnnualReading:
+      "원국과 세운 관계는 실제 지지 작용만 생활 장면으로 해석합니다.",
+    monthlyFlowReading:
+      "12개월 월운은 선택 연도 안에서 운영 리듬을 나누어 보는 기준입니다.",
+    monthlyHighlights: [
+      {
+        monthLabel: "1~3월",
+        headline: "상반기 기준 잡기",
+        body: "초반에는 일과 돈의 기준을 작게 잡아야 합니다.",
+        actionHint: "월초에 마감과 정산 기준을 적어 둡니다.",
+      },
+    ],
+    careerWorkFlow: flow("직업·일 흐름"),
+    moneyResourceFlow: flow("돈·자원 흐름"),
+    relationshipFlow: flow("관계·연애 흐름"),
+    healthRoutineFlow: flow("건강관리·생활 리듬"),
+    mbtiExpression:
+      "ENTJ 성향은 올해 흐름을 빠른 정리와 실행으로 드러내지만, 책임 범위를 좁히는 연습이 필요합니다.",
+    riskManagement: [
+      "일과 돈 기준이 동시에 올라오면 역할, 기간, 금액을 문장으로 나누어 확인합니다.",
+    ],
+    actionPlan: [
+      "월초에는 일, 돈, 관계, 회복 기준 중 하나를 먼저 정리합니다.",
+    ],
+    yearSummary: {
+      ganji: "丙午",
+      displayTitle: "2026년 丙午",
+      elementLabel: "화의 해",
+      tenGodLabel: "식신의 해",
+      modeLabel: "올해 흐름",
+      yearTone: "올해 준비와 활용, 조율 기준을 함께 봅니다.",
+    },
+    scoreSummary: {
+      flowIndex: 72,
+      flowTypeLabel: "선택 연도 운영 기준 강화형",
+      flowIndexCaution:
+        "좋고 나쁨보다 올해 체감될 관리 강도를 보기 위한 보조 기준입니다.",
+    },
+    flowCards: [
+      {
+        label: "일·성과",
+        score: 74,
+        headline: "결과물을 밖으로 꺼내기 쉽습니다.",
+        body: "직장이나 작업에서 보여 줄 결과가 생기기 쉽습니다.",
+      },
+    ],
+    keySignals: [
+      {
+        type: "opportunity",
+        title: "살릴 흐름",
+        body: "말과 결과물이 밖으로 나오는 장면이 생길 수 있습니다.",
+        evidenceLabel: "식신",
+      },
+      {
+        type: "difficulty",
+        title: "관리할 흐름",
+        body: "일과 돈의 기준을 직접 정리해야 하는 장면이 생길 수 있습니다.",
+        evidenceLabel: "토 과다",
+      },
+    ],
+    annualStructure: {
+      ganjiExplanation: "丙午는 화의 기운이 강하게 들어오는 해입니다.",
+      tenGodExplanation: "식신은 결과물을 꾸준히 밖으로 꺼내는 기운입니다.",
+      elementEffectExplanation: "화 부족을 채우지만 토 책임도 같이 무거워질 수 있습니다.",
+      branchInteractionExplanation:
+        "午未 육합: 실제 약속과 움직임이 묶이는 흐름입니다.",
+    },
+    chapters: [
+      "직업·일",
+      "돈·자원",
+      "인간관계",
+      "연애·가족",
+      "학업·자격증",
+      "몸·생활 리듬",
+    ].map((title) => ({
+      title,
+      headline: `${title}에서 기준을 다시 잡습니다.`,
+      body: `${title}에서는 선택 연도 흐름을 실제 생활 기준으로 옮겨 읽습니다.`,
+      likelyScenes: [
+        `${title}에서 역할과 리듬을 다시 묻는 장면입니다.`,
+        `${title}에서 기준을 작게 정리해야 하는 장면입니다.`,
+      ],
+      practicalAdvice: [
+        `${title} 기준을 한 문장으로 남깁니다.`,
+        "결과를 바로 단정하지 말고 이번 달 조정 기준을 확인합니다.",
+      ],
+    })),
+    monthlyFlow: Array.from({ length: 12 }, (_, index) => ({
+      month: index + 1,
+      label: `${index + 1}월`,
+      headline: `${index + 1}월 운영 흐름`,
+      monthGanji: "甲子",
+      monthlyBasis: "달력월 기준 운영 가이드",
+      elementFocus: "식신",
+      natalInteractionSummary: "원국과 월운 작용은 생활 리듬으로 풀어 읽습니다.",
+      body: "일과 생활의 리듬을 같이 확인해야 합니다.",
+      advice: "무리한 확정보다 기준 정리를 먼저 합니다.",
+    })),
+    finalAdvice: [
+      "일정과 책임을 한 문장으로 정리하세요.",
+      "돈과 기록은 미루지 말고 같은 날 확인하세요.",
+      "몸의 리듬이 무너지면 약속을 줄이세요.",
+      "결과를 내야 하는 일은 작은 단위로 쪼개세요.",
+    ],
+    safetyNotes: [
+      "이 리포트는 결과를 단정하지 않습니다.",
+      "입력되지 않았거나 확실하지 않은 정보는 제한적으로만 반영했습니다.",
+    ],
+  };
+}
+
 async function renderPage(reportId: string | undefined): Promise<string> {
   const element = await ReportResultPage({
     params: Promise.resolve({ reportId }),
@@ -934,6 +1081,36 @@ describe("report result page", () => {
     expect(html).toContain("직업·일");
     expect(html).toContain("MBTI 성향 발현 방식");
     expect(html).not.toContain("사주×MBTI 종합 리포트");
+    expect(html).not.toContain("연애·결혼·자녀 리포트");
+  });
+
+  it("renders an annual fortune draft through the dedicated result branch", async () => {
+    const annualFortuneResult = {
+      ...createResult({
+        snapshotVersion: null,
+        draft: null,
+      }),
+      productType: "saju_mbti_full",
+      draft: createAnnualFortuneDraft(),
+    } as unknown as PaidReportResult;
+    mockGetPaidReportResult.mockResolvedValue({
+      ok: true,
+      result: annualFortuneResult,
+    });
+
+    const html = await renderPage("annual_fortune_result_test");
+
+    expect(html).toContain("세운 리포트");
+    expect(html).toContain("덕민님의 2026년 세운 리포트");
+    expect(html).toContain("선택 연도 흐름과 현재 대운 교차를 함께 읽는 리포트");
+    expect(html).toContain("조회 가능 연도 안내");
+    expect(html).toContain("선택 연도 세운");
+    expect(html).toContain("현재 대운과 선택 연도 세운 교차");
+    expect(html).toContain("원국과 세운 관계");
+    expect(html).toContain("월운 12개월 흐름");
+    expect(html).toContain("MBTI 성향 발현 방식");
+    expect(html).not.toContain("사주×MBTI 종합 리포트");
+    expect(html).not.toContain("대운 리포트");
     expect(html).not.toContain("연애·결혼·자녀 리포트");
   });
 
