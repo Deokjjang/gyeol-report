@@ -115,14 +115,9 @@ export function DaeunTimelineTable({
 }
 
 const TIMELINE_DETAIL_SECTIONS = [
-  { key: "careerWork", label: "직업·일" },
-  { key: "moneyResource", label: "돈·자원" },
-  { key: "relationshipLove", label: "관계·연애" },
-  { key: "healthRoutine", label: "건강관리·생활 리듬" },
-  { key: "socialFamily", label: "사회·가족" },
-  { key: "studyGrowth", label: "공부·성장" },
-  { key: "mbtiExpression", label: "MBTI 발현" },
-  { key: "caution", label: "주의할 패턴" },
+  { key: "coreFlow", label: "올해의 핵심 흐름" },
+  { key: "realWorldScenes", label: "현실에서 드러나는 장면" },
+  { key: "cautionPoint", label: "주의할 지점" },
   { key: "actionStandard", label: "실행 기준" },
 ] as const;
 
@@ -203,29 +198,13 @@ function TimelineYearDetail({ row }: { readonly row: DaeunTimelineRow }) {
 
   return (
     <div className="mt-4 grid min-w-0 gap-4 rounded-[8px] border border-[#eadfce] bg-[#fffdf8] p-4">
-      <div className="grid gap-3 md:grid-cols-3">
+      {TIMELINE_DETAIL_SECTIONS.map((section) => (
         <DetailBlock
-          label="간지·십성"
-          body={row.yearDetail.myeongliSummary}
+          key={section.key}
+          label={section.label}
+          body={row.yearDetail?.[section.key] ?? ""}
         />
-        <DetailBlock
-          label="대운과의 관계"
-          body={row.yearDetail.daeunAnnualRelation}
-        />
-        <DetailBlock
-          label="원국·세운 작용"
-          body={row.yearDetail.natalAnnualRelation}
-        />
-      </div>
-      <div className="grid gap-3 md:grid-cols-2">
-        {TIMELINE_DETAIL_SECTIONS.map((section) => (
-          <DetailBlock
-            key={section.key}
-            label={section.label}
-            body={row.yearDetail?.[section.key] ?? ""}
-          />
-        ))}
-      </div>
+      ))}
     </div>
   );
 }
@@ -237,14 +216,59 @@ function DetailBlock({
   readonly label: string;
   readonly body: string;
 }) {
+  const paragraphs = splitDetailParagraphs(label, body);
+
   return (
-    <section className="min-w-0 rounded-[8px] border border-[#f0e5d6] bg-[#fffaf1] p-3">
-      <h4 className="text-xs font-extrabold text-[#7d1f39]">{label}</h4>
-      <p className="mt-2 break-words text-sm leading-6 text-[#51463c]">
-        {body || "-"}
-      </p>
+    <section className="min-w-0 rounded-[8px] border border-[#f0e5d6] bg-[#fffaf1] p-4">
+      <h4 className="text-sm font-extrabold text-[#7d1f39]">{label}</h4>
+      <div className="mt-3 space-y-3 break-words text-[15px] leading-8 text-[#51463c]">
+        {paragraphs.length > 0 ? (
+          paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
+        ) : (
+          <p>-</p>
+        )}
+      </div>
     </section>
   );
+}
+
+function splitDetailParagraphs(label: string, body: string): readonly string[] {
+  const explicitParagraphs = body
+    .split(/\n{2,}/u)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
+
+  if (explicitParagraphs.length > 1 || label !== "현실에서 드러나는 장면") {
+    return explicitParagraphs;
+  }
+
+  const [singleParagraph] = explicitParagraphs;
+  if (!singleParagraph) {
+    return [];
+  }
+
+  const mbtiIndex = singleParagraph.search(/(?:ENTJ|INTJ|INTP|ENFP|ISFP|MBTI|MBTI)\s*(?:는|성향)/u);
+  if (mbtiIndex > 40) {
+    return [
+      singleParagraph.slice(0, mbtiIndex).trim(),
+      singleParagraph.slice(mbtiIndex).trim(),
+    ].filter(Boolean);
+  }
+
+  const sentences = singleParagraph
+    .split(/(?<=다\.)\s+/u)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean);
+
+  if (sentences.length < 4) {
+    return [singleParagraph];
+  }
+
+  const splitAt = Math.ceil(sentences.length / 2);
+  return [
+    sentences.slice(0, splitAt).join(" "),
+    sentences.slice(splitAt).join(" "),
+  ].filter(Boolean);
 }
 
 function TimelinePillar({
@@ -271,6 +295,10 @@ export function DaeunAnnualCompareTable({
   readonly selectedYear: number;
   readonly data: DaeunAnnualCompareTableData;
 }) {
+  const visibleDetailRows = COMPARE_DETAIL_ROWS.filter(
+    (row) => hasDetailValues(data[row.key].daeun) || hasDetailValues(data[row.key].annual),
+  );
+
   return (
     <div className="bg-[#fffaf1]">
       <h3 className="bg-[#f3eadc] px-4 py-2 text-center text-sm font-extrabold text-[#5a4d42]">
@@ -292,7 +320,7 @@ export function DaeunAnnualCompareTable({
         <PillarCard cell={data.annualBranch} ariaLabel="연운 지지" />
       </div>
 
-      {COMPARE_DETAIL_ROWS.map((row) => (
+      {visibleDetailRows.map((row) => (
         <div key={row.key} className="bg-[#fffaf1]">
           <h4 className="bg-[#f7efe5] px-3 py-2 text-center text-xs font-bold text-[#8a7c70]">
             {row.label}
@@ -350,6 +378,10 @@ function formatDetailValues(values: readonly string[] | undefined): string {
   }
 
   return values.join(" · ");
+}
+
+function hasDetailValues(values: readonly string[] | undefined): boolean {
+  return values !== undefined && values.length > 0;
 }
 
 function joinClassNames(

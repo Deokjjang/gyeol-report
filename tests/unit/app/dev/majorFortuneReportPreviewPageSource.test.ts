@@ -34,6 +34,8 @@ describe("major fortune report preview page source", () => {
   it("renders an in-memory fixture preview when no snapshot exists", () => {
     expect(pageSource).toContain("buildMajorFortuneEvidence");
     expect(pageSource).toContain("buildInMemoryMajorFortunePreviewDraft");
+    expect(pageSource).toContain("buildPreviewContextualYearScene");
+    expect(pageSource).toContain("userContextReading");
     expect(pageSource).toContain("in-memory fixture");
     expect(pageSource).toContain("draft={draft}");
     expect(pageSource).toContain("evidencePacket={evidencePacket}");
@@ -51,6 +53,7 @@ describe("major fortune report preview page source", () => {
   it("does not add user-visible raw or forbidden markers", () => {
     expect(pageSource).not.toContain("source registry");
     expect(pageSource).not.toContain("placeholder");
+    expect(pageSource).not.toContain("현실 장면은 따로 움직이지 않습니다");
     expect(pageSource).not.toContain("투자 수익 보장");
     expect(pageSource).not.toContain("합격 확정");
     expect(pageSource).not.toContain("승진 확정");

@@ -41,6 +41,11 @@ describe("major fortune smoke script source", () => {
     expect(scriptSource).toContain("riskManagement");
     expect(scriptSource).toContain("actionPlan");
     expect(scriptSource).toContain("safetyNotes");
+    expect(scriptSource).toContain("buildContextualYearScene");
+    expect(scriptSource).toContain("userContextReading");
+    expect(scriptSource).toContain("currentField");
+    expect(scriptSource).toContain("focusAreas");
+    expect(scriptSource).not.toContain("현실 장면은 따로 움직이지 않습니다");
   });
 
   it("keeps OpenAI writer dynamically imported only for enabled writer mode", () => {

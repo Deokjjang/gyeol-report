@@ -353,6 +353,144 @@ function explainPreviewMajorSignal(value: string | null): string {
   return signal;
 }
 
+function buildPreviewYearMbtiLine(input: {
+  readonly year: number;
+  readonly tenGod: string;
+  readonly mbtiType: string | null;
+}): string {
+  const type = input.mbtiType ?? "MBTI";
+
+  if (input.tenGod.includes("식신")) {
+    return `${type} 성향은 작은 결과물을 빨리 만들어 반응을 확인하는 방식으로 켜집니다. 완성도를 오래 붙잡기보다 먼저 보여 줄 범위를 작게 자르면 속도가 성과로 남습니다.`;
+  }
+  if (input.tenGod.includes("상관")) {
+    return `${type} 성향은 기존 기준에 질문을 던지고 개선안을 바로 제시하는 쪽으로 강해집니다. 말이 앞서기 쉬운 해라 제안, 근거, 일정표를 한 묶음으로 내야 힘이 생깁니다.`;
+  }
+  if (input.tenGod.includes("편재")) {
+    return `${type} 성향은 외부 기회와 계약 앞에서 빠르게 판을 키우려는 방식으로 작동합니다. 확장 감각이 장점이지만 정산일, 책임 범위, 철수 기준을 먼저 잠가야 합니다.`;
+  }
+  if (input.tenGod.includes("정재")) {
+    return `${type} 성향은 돈과 시간을 숫자로 정리하고 관리표를 만들려는 쪽으로 드러납니다. 안정화에는 강하지만 검토만 길어지면 움직임이 늦어질 수 있습니다.`;
+  }
+  if (input.tenGod.includes("편관")) {
+    return `${type} 성향은 압박이 들어올수록 바로 결론을 내고 책임 구조를 세우려는 쪽으로 켜집니다. 위기 대응은 빠르지만 권한 없는 책임까지 떠안지 않아야 합니다.`;
+  }
+  if (input.tenGod.includes("정관")) {
+    return `${type} 성향은 평가, 직장 질서, 역할 기준을 공식화하려는 방식으로 드러납니다. 기준을 세우는 힘은 좋지만 지나치게 딱딱해지면 주변과 속도가 벌어집니다.`;
+  }
+  if (input.tenGod.includes("편인")) {
+    return `${type} 성향은 새 정보를 파고들고 다른 가능성을 검토하는 방식으로 작동합니다. 생각이 깊어지는 만큼 기록, 자료 정리, 회복 시간을 실제 일정에 넣어야 합니다.`;
+  }
+  if (input.tenGod.includes("정인")) {
+    return `${type} 성향은 문서, 자격, 학습 루틴을 체계화하려는 쪽으로 드러납니다. 안정적인 정리는 강점이지만 결정을 지나치게 미루면 대운의 속도를 놓칠 수 있습니다.`;
+  }
+  if (input.tenGod.includes("비견")) {
+    return `${type} 성향은 내 방향을 직접 정하고 독립적으로 밀고 가려는 쪽으로 강해집니다. 자기 기준은 선명해지지만 협업에서는 역할 경계를 먼저 말해야 합니다.`;
+  }
+  if (input.tenGod.includes("겁재")) {
+    return `${type} 성향은 경쟁, 동료 관계, 공동 비용 앞에서 주도권을 잡으려는 방식으로 켜집니다. 사람과 돈이 섞이는 장면은 정서보다 기준을 먼저 분리해야 합니다.`;
+  }
+
+  return `${type} 성향은 판단 속도와 실행 기준을 앞세우는 방식으로 작동합니다.`;
+}
+
+function formatPreviewFocusAreas(values: readonly string[]): string {
+  return values.length > 0 ? values.join("·") : "직업·돈·관계·공부";
+}
+
+function buildPreviewYearCoreFlow(input: {
+  readonly packet: MajorFortuneEvidencePacket;
+  readonly row: MajorFortuneEvidencePacket["majorFortuneTimelineRows"][number];
+  readonly yearReading:
+    | MajorFortuneEvidencePacket["cycleYearTimeline"][number]
+    | undefined;
+}): string {
+  const interaction = explainPreviewMajorSignal(input.row.keyInteractionLabel);
+  const interactionSentence = interaction ? ` ${interaction}` : "";
+  const headline = input.yearReading?.headline ?? input.row.oneLine;
+
+  return `${input.row.year}년 ${input.row.annualGanji} 세운은 ${input.row.annualTenGodLabel} 흐름입니다. ${input.packet.currentMajorFortune.ganji} 대운의 ${input.packet.currentMajorFortune.stemTenGod} 배경 위에서 "${headline}" 흐름을 실제 선택으로 당기는 해입니다.${interactionSentence}`;
+}
+
+function buildPreviewContextualYearScene(input: {
+  readonly packet: MajorFortuneEvidencePacket;
+  readonly row: MajorFortuneEvidencePacket["majorFortuneTimelineRows"][number];
+  readonly yearReading:
+    | MajorFortuneEvidencePacket["cycleYearTimeline"][number]
+    | undefined;
+  readonly mbtiLine: string;
+}): string {
+  const context = input.packet.userContextReading;
+  const field = context.currentField ?? "현재 분야";
+  const focus = formatPreviewFocusAreas(context.focusAreas);
+  const concern =
+    context.currentConcern ||
+    `${field}에서 ${focus} 흐름을 어디에 쓸지 정하는 것`;
+  const tenGod = input.row.annualTenGodLabel;
+
+  if (tenGod.includes("편재")) {
+    return `편재가 강하게 잡히는 해라 돈, 계약, 외부 프로젝트, 부업성 수익처럼 현실 자원이 밖으로 움직입니다. ${field} 맥락에서는 서비스 수익화, 외부 제안, 프로젝트 단위 협업을 실제로 검토하기 쉬워지고, ${focus} 중에서도 돈과 일의 연결이 먼저 체감될 수 있습니다.\n\n이 해의 재미는 기회가 보인다는 데 있지만, 핵심은 기회를 잡는 속도가 아니라 조건을 잠그는 순서입니다. ${concern}이 중요해지는 만큼 계약서, 정산일, 책임 범위, 철수 기준을 먼저 정해야 합니다. ${input.mbtiLine}`;
+  }
+  if (tenGod.includes("정재")) {
+    return `정재 흐름은 돈, 시간, 고정비, 정산 기준을 숫자로 고정하려는 해입니다. ${field}에서는 새 기회를 크게 벌리기보다 이미 움직이는 일의 비용 구조, 반복 지출, 수익화 조건을 표로 정리할 때 힘이 납니다.\n\n${focus}를 모두 건드리더라도 중심은 안정화입니다. 관계에서도 좋은 말보다 약속한 시간, 맡을 역할, 돈의 경계를 분명히 할수록 덜 지칩니다. ${input.mbtiLine}`;
+  }
+  if (tenGod.includes("식신")) {
+    return `식신 흐름은 생각을 밖으로 꺼내 결과물로 보여 주는 해입니다. ${field}에서는 기획안, 기능 개선안, 운영 문서, 포트폴리오처럼 남는 산출물이 힘을 얻고, ${focus} 중에서도 직업과 공부가 실제 결과물로 연결되기 쉽습니다.\n\n많이 만드는 해가 아니라 먼저 검증할 결과물을 고르는 해로 써야 합니다. 작은 결과물 하나를 정하고 반응을 확인하면 이후 돈과 관계의 책임도 덜 무거워집니다. ${input.mbtiLine}`;
+  }
+  if (tenGod.includes("상관")) {
+    return `상관 흐름은 말, 제안, 개선안, 불편한 기준을 건드리는 해입니다. ${field}에서는 기존 방식의 허점을 보고 더 나은 구조를 제안하기 쉬우며, ${focus} 중 직업과 관계에서는 말의 속도와 표현 방식이 체감으로 드러납니다.\n\n이 해는 똑똑하게 말하는 것보다 증거와 순서를 같이 내는 것이 중요합니다. 제안이 많아질수록 일정, 책임자, 다음 확인일을 붙여야 말이 성과로 남습니다. ${input.mbtiLine}`;
+  }
+  if (tenGod.includes("편관")) {
+    return `편관 흐름은 압박, 책임, 평가, 갑작스러운 역할 검증이 강해지는 해입니다. ${field}에서는 일이 빨리 커지거나 기준이 엄격해져 누가 결정하고 누가 책임지는지를 바로 정해야 하는 장면이 생길 수 있습니다.\n\n좋게 쓰면 위기 대응력과 추진력이 살아나지만, 나쁘게 쓰면 권한 없이 책임만 떠안습니다. ${concern}을 현실화하려면 맡을 일, 거절할 일, 보고 라인을 먼저 분리해야 합니다. ${input.mbtiLine}`;
+  }
+  if (tenGod.includes("정관")) {
+    return `정관 흐름은 공식적인 역할, 평가 기준, 직장 질서가 선명해지는 해입니다. ${field}에서는 성과를 말로 증명하기보다 기준, 문서, 프로세스로 보여 주는 장면이 중요해지고, ${focus} 중 직업과 관계는 약속의 안정감으로 체감됩니다.\n\n이 해에는 무리하게 판을 키우기보다 신뢰를 잃지 않는 운영 방식이 더 중요합니다. 기준을 세우되 상대의 속도를 너무 몰아붙이지 않아야 장기 책임으로 이어집니다. ${input.mbtiLine}`;
+  }
+  if (tenGod.includes("편인")) {
+    return `편인 흐름은 새 정보, 방향 재검토, 회복, 공부가 안쪽으로 깊어지는 해입니다. ${field}에서는 당장 확장하기보다 자료를 모으고, 배운 것을 다시 분류하고, 다음 선택의 근거를 만드는 시간이 중요해집니다.\n\n겉으로는 느려 보여도 이 해의 성과는 판단 기준이 정교해지는 데 있습니다. ${focus}를 모두 밀어붙이기보다 공부와 회복 루틴을 먼저 잡아야 다음 해에 덜 흔들립니다. ${input.mbtiLine}`;
+  }
+  if (tenGod.includes("정인")) {
+    return `정인 흐름은 문서, 자격, 안정적인 학습, 회복 루틴을 정리하는 해입니다. ${field}에서는 이미 쌓인 경험을 체계화하고, 자료와 기록을 다음 단계의 자산으로 바꾸기 쉽습니다.\n\n이 해는 새 판을 여는 맛보다 기반을 다지는 맛이 큽니다. 돈과 관계도 크게 흔들기보다 생활 리듬, 공부 시간, 고정 지출을 안정화할수록 대운의 부담이 줄어듭니다. ${input.mbtiLine}`;
+  }
+  if (tenGod.includes("비견")) {
+    return `비견 흐름은 내 기준, 독립성, 경쟁심이 선명해지는 해입니다. ${field}에서는 남의 방식에 맞추기보다 내가 끌고 갈 방향을 직접 정하고 싶어질 수 있으며, ${focus} 중 직업과 공부에서는 자기 주도성이 강해집니다.\n\n다만 독립성이 강해질수록 협업에서는 말하지 않은 기준이 갈등이 됩니다. 같이 할 일과 혼자 할 일을 먼저 나누고, 비용과 역할이 섞이는 장면은 초반에 정리해야 합니다. ${input.mbtiLine}`;
+  }
+  if (tenGod.includes("겁재")) {
+    return `겁재 흐름은 동료, 경쟁자, 공동 비용, 관계 속 경계를 건드리는 해입니다. ${field}에서는 같이 움직이는 사람과 속도가 맞으면 힘이 커지지만, 기준이 흐리면 돈과 책임이 섞여 피로가 커질 수 있습니다.\n\n이 해의 핵심은 사람을 멀리하는 것이 아니라 함께할 조건을 분명히 하는 것입니다. ${concern}을 현실화하려면 공동 프로젝트, 비용 분담, 역할 범위를 말로만 두지 말고 기록으로 남겨야 합니다. ${input.mbtiLine}`;
+  }
+
+  return `${input.yearReading?.strategicFocus ?? input.row.strategy} 기준이 실제 선택의 중심이 됩니다. ${field}에서 ${focus}를 어디에 쓸지 정리할 때 이 해의 흐름이 구체적으로 드러납니다.\n\n${input.mbtiLine}`;
+}
+
+function buildPreviewYearCaution(row: MajorFortuneEvidencePacket["majorFortuneTimelineRows"][number]): string {
+  const tenGod = row.annualTenGodLabel;
+
+  if (tenGod.includes("식신")) return `${row.year}년에는 결과물을 빨리 내는 힘이 커지는 만큼, 검증되지 않은 산출물을 너무 많이 벌리는 것이 부담이 됩니다. 먼저 보여 줄 결과물 하나와 피드백 받을 날짜를 정하세요.`;
+  if (tenGod.includes("상관")) return `${row.year}년에는 말과 제안이 빨라지며 기준을 건드릴 수 있습니다. 불만을 바로 던지기보다 근거, 대안, 일정표를 함께 제시해야 충돌이 줄어듭니다.`;
+  if (tenGod.includes("편재")) return `${row.year}년에는 외부 기회가 커 보일수록 돈, 계약, 책임 범위가 먼저 흔들릴 수 있습니다. 구두 약속과 감으로 하는 확장은 줄이세요.`;
+  if (tenGod.includes("정재")) return `${row.year}년에는 안정화가 강점이지만 지나친 보수성으로 기회를 놓칠 수 있습니다. 숫자는 고정하되, 실험 비용은 작게 남겨 두는 편이 좋습니다.`;
+  if (tenGod.includes("편관")) return `${row.year}년에는 압박을 빨리 해결하려다 권한 없는 책임까지 떠안을 수 있습니다. 급한 일일수록 승인선과 거절 기준을 먼저 확인하세요.`;
+  if (tenGod.includes("정관")) return `${row.year}년에는 기준과 평가가 선명해지는 대신 유연성이 줄 수 있습니다. 규칙을 세우되 사람의 속도까지 통제하려 하면 피로가 쌓입니다.`;
+  if (tenGod.includes("편인")) return `${row.year}년에는 생각이 깊어지는 만큼 실행이 늦어질 수 있습니다. 공부와 회복을 핑계로 결정을 끝없이 미루지 않도록 기준 날짜를 두세요.`;
+  if (tenGod.includes("정인")) return `${row.year}년에는 안정적인 정리가 필요하지만, 준비만 하다 흐름을 놓칠 수 있습니다. 문서화와 실행을 한 주기 안에 같이 배치하세요.`;
+  if (tenGod.includes("비견")) return `${row.year}년에는 내 기준이 강해지는 만큼 협업에서 고집으로 보일 수 있습니다. 독립성과 역할 분담을 초반에 분리하세요.`;
+  if (tenGod.includes("겁재")) return `${row.year}년에는 사람과 비용이 섞이며 피로가 커질 수 있습니다. 공동 비용, 책임 범위, 중단 기준을 먼저 말해야 합니다.`;
+
+  return `${row.year}년에는 ${row.strategy}`;
+}
+
+function buildPreviewYearActionStandard(row: MajorFortuneEvidencePacket["majorFortuneTimelineRows"][number]): string {
+  const tenGod = row.annualTenGodLabel;
+
+  if (/식신|상관/.test(tenGod)) return "작은 결과물 1개, 검증 날짜, 다음 수정 범위를 먼저 정하고 움직입니다.";
+  if (/편재|정재/.test(tenGod)) return "계약서, 정산일, 책임 범위, 철수 기준을 숫자로 고정한 뒤 확장합니다.";
+  if (/편관|정관/.test(tenGod)) return "승인선, 담당 범위, 평가 기준, 거절할 일을 먼저 문서화합니다.";
+  if (/편인|정인/.test(tenGod)) return "학습 목표, 기록 방식, 회복 루틴, 실행 날짜를 한 세트로 묶습니다.";
+  if (/비견|겁재/.test(tenGod)) return "혼자 할 일, 함께할 일, 비용을 나눌 일을 초반에 분리합니다.";
+
+  return "그해 먼저 고정할 역할, 돈 기준, 회복 루틴을 하나씩 정합니다.";
+}
+
 function buildPreviewTimelineYearDetails(
   packet: MajorFortuneEvidencePacket,
 ): MajorFortuneReportDraft["majorFortuneTimelineRows"] {
@@ -360,10 +498,17 @@ function buildPreviewTimelineYearDetails(
     const yearReading =
       packet.cycleYearTimeline.find((item) => item.year === row.year) ??
       packet.cycleYearTimeline[0];
-    const mbtiLine =
-      packet.mbtiBasis.type === null
-        ? "MBTI가 없어도 이 해의 판단 방식은 실제 기록과 생활 반응을 보며 보완합니다."
-        : `${packet.mbtiBasis.type} 성향은 ${packet.mbtiBasis.decisionPattern} ${packet.mbtiBasis.workPattern} 흐름으로 드러나기 쉽습니다. 명리 흐름의 원인이 아니라 실행 속도와 판단 방식의 표현입니다.`;
+    const mbtiLine = buildPreviewYearMbtiLine({
+      year: row.year,
+      tenGod: row.annualTenGodLabel,
+      mbtiType: packet.mbtiBasis.type,
+    });
+    const realWorldScenes = buildPreviewContextualYearScene({
+      packet,
+      row,
+      yearReading,
+      mbtiLine,
+    });
 
     return {
       ...row,
@@ -375,23 +520,10 @@ function buildPreviewTimelineYearDetails(
             ? row.ageBasisLabel
             : `${row.ageBasisLabel} · 한국나이`,
       yearDetail: {
-        myeongliSummary: `${row.year}년 ${row.annualGanji} 연운은 ${row.annualTenGodLabel} 흐름으로 ${packet.currentMajorFortune.ganji} 대운 안에서 ${yearReading?.headline ?? row.oneLine} 장면을 강조합니다.`,
-        daeunAnnualRelation:
-          yearReading?.roleOfYearInCycle ??
-          `${packet.currentMajorFortune.ganji} 대운 위에 ${row.annualGanji} 세운이 올라와 단기 자극을 만듭니다.`,
-        natalAnnualRelation: `${row.year}년 기준, ${explainPreviewMajorSignal(row.keyInteractionLabel)}`,
-        careerWork: `${row.year}년 ${packet.domainFlows.careerWork.title}: ${packet.domainFlows.careerWork.summary} 이 해에는 ${yearReading?.strategicFocus ?? row.strategy}`,
-        moneyResource: `${row.year}년 ${packet.domainFlows.moneyResource.title}: ${row.annualTenGodLabel} 흐름을 돈으로 바로 키우기보다 ${packet.domainFlows.moneyResource.actionHint}`,
-        relationshipLove: `${row.year}년 ${packet.domainFlows.relationshipLove.title}: ${row.annualGanji} 세운은 관계에서 ${packet.domainFlows.relationshipLove.actionHint}`,
-        healthRoutine: `${row.year}년 ${packet.domainFlows.healthRoutine.title}: ${row.annualTenGodLabel} 압박이 커질수록 ${packet.domainFlows.healthRoutine.actionHint}`,
-        socialFamily: `${row.year}년 ${packet.domainFlows.socialFamily.title}: ${yearReading?.roleOfYearInCycle ?? row.oneLine} 흐름에서는 ${packet.domainFlows.socialFamily.actionHint}`,
-        studyGrowth: `${row.year}년 ${packet.domainFlows.studyGrowth.title}: ${yearReading?.strategicFocus ?? row.strategy} 기준으로 ${packet.domainFlows.studyGrowth.actionHint}`,
-        mbtiExpression: `${row.year}년에는 ${mbtiLine}`,
-        caution: `${row.year}년 주의점은 ${row.strategy} ${packet.currentAnnualCross.caution}`,
-        actionStandard:
-          yearReading?.strategicFocus ??
-          row.strategy ??
-          "그해 먼저 고정할 역할, 돈 기준, 회복 루틴을 하나씩 정합니다.",
+        coreFlow: buildPreviewYearCoreFlow({ packet, row, yearReading }),
+        realWorldScenes,
+        cautionPoint: buildPreviewYearCaution(row),
+        actionStandard: buildPreviewYearActionStandard(row),
       },
     };
   });

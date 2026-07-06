@@ -32,6 +32,7 @@ import type {
   MajorFortuneSignal,
 } from "./majorFortuneTypes";
 import {
+  USER_LIFE_STATUS_LABELS,
   USER_RELATIONSHIP_STATUS_LABELS,
   type UserContextProfile,
   type UserRelationshipStatus,
@@ -171,7 +172,7 @@ function getCurrentAge(input: {
     return input.currentYear;
   }
 
-  return input.currentYear - birthYear;
+  return input.currentYear - birthYear + 1;
 }
 
 function getElementsFromLabels(
@@ -246,6 +247,34 @@ function buildCyclePosition(input: {
     yearIndexInCycle,
     positionLabel: `${input.currentYear}년 기준 ${yearIndexInCycle}년차`,
     progressLabel,
+  };
+}
+
+function buildUserContextReading(
+  userContext: UserContextProfile,
+): MajorFortuneEvidencePacket["userContextReading"] {
+  const currentRole = USER_LIFE_STATUS_LABELS[userContext.lifeStatus];
+  const currentField = userContext.fieldLabel ?? null;
+  const relationshipStatus =
+    USER_RELATIONSHIP_STATUS_LABELS[userContext.relationshipStatus ?? "unknown"];
+  const focusAreas = unique([
+    "직업",
+    "돈",
+    "관계",
+    currentRole.includes("학생") || currentRole.includes("수험")
+      ? "공부"
+      : "공부",
+  ]);
+  const fieldLabel = currentField ?? "현재 분야";
+
+  return {
+    currentRole,
+    currentField,
+    relationshipStatus,
+    focusAreas,
+    currentConcern: `${fieldLabel}에서 직업·돈·관계·공부 흐름을 현실적으로 배치하는 것`,
+    interpretationUse:
+      "현재 맥락은 대운 계산의 원인이 아니라 10년 흐름을 실제 생활 장면과 실행 기준으로 번역하기 위한 참고 정보입니다.",
   };
 }
 
@@ -1578,7 +1607,7 @@ function buildMajorFortuneTimelineRows(input: {
 
       return {
         year,
-        ageLabel: `${input.currentAge + (year - input.currentYear)}세`,
+        ageLabel: `${input.currentCycle.startAge + index}세`,
         ageBasisLabel: "대운표 기준 나이",
         yearIndexInCycle,
         phase,
@@ -2439,6 +2468,7 @@ export function buildMajorFortuneEvidence(input: {
       userContext: input.person.userContext,
     },
     userContext: input.person.userContext,
+    userContextReading: buildUserContextReading(input.person.userContext),
     currentYear: input.currentYear,
     currentAge,
     dayMaster,

@@ -1,13 +1,50 @@
 import {
+  getTenGodForStemPair as getStemTenGodForPair,
+} from "../report-knowledge/annualFortuneYearRules";
+import type { HeavenlyStem } from "../report-knowledge/annualFortuneTypes";
+import {
+  getMbtiSourceProfile,
+  type MbtiSourceProfile,
+  type MbtiSourceTraitItem,
+} from "../report-knowledge/mbti";
+import type { MajorFortuneEvidencePacket } from "../report-knowledge/majorFortuneTypes";
+import {
   getBranchDisplay,
   getStemDisplay,
 } from "./displayDictionaries";
+import {
+  buildManseRyeokCommonTableData,
+  type ManseRyeokFourPillarGridColumnInput,
+} from "./manseRyeokTableData";
+import {
+  buildMbtiCommonProfileTableData,
+  type MbtiCommonProfileSourceInput,
+} from "./mbtiProfileTableData";
 import type {
   DaeunAnnualCompareTableData,
   DaeunFortuneTableData,
   DaeunPillarCard,
   DaeunTimelineRow,
+  ManseRyeokCommonTableData,
+  MbtiCommonProfileTableData,
+  MbtiFunctionStackPosition,
+  MbtiPreferenceAxisKey,
 } from "./types";
+
+const HIDDEN_STEMS_BY_BRANCH: Record<string, readonly string[]> = {
+  子: ["癸"],
+  丑: ["己", "癸", "辛"],
+  寅: ["甲", "丙", "戊"],
+  卯: ["乙"],
+  辰: ["戊", "乙", "癸"],
+  巳: ["丙", "戊", "庚"],
+  午: ["丁", "己"],
+  未: ["己", "丁", "乙"],
+  申: ["庚", "壬", "戊"],
+  酉: ["辛"],
+  戌: ["戊", "辛", "丁"],
+  亥: ["壬", "甲"],
+};
 
 type DaeunGanjiInput = {
   readonly ganji?: string;
@@ -71,6 +108,41 @@ export type BuildDaeunFortuneTableDataInput = {
   readonly annualFortunes: readonly DaeunAnnualFortuneInput[];
 };
 
+export type MajorFortuneReportCommonTablesData = {
+  readonly manseRyeokTableData: ManseRyeokCommonTableData;
+  readonly mbtiProfileTableData: MbtiCommonProfileTableData | null;
+};
+
+export function buildMajorFortuneReportCommonTablesData(
+  evidence: MajorFortuneEvidencePacket,
+): MajorFortuneReportCommonTablesData {
+  return {
+    manseRyeokTableData: buildMajorFortuneReportManseRyeokTableData(evidence),
+    mbtiProfileTableData: buildMajorFortuneReportMbtiProfileTableData(evidence),
+  };
+}
+
+export function buildMajorFortuneReportManseRyeokTableData(
+  evidence: MajorFortuneEvidencePacket,
+): ManseRyeokCommonTableData {
+  return buildManseRyeokCommonTableData({
+    displayName: evidence.personLabel,
+    fourPillarGrid: buildMajorFortuneFourPillarGrid(evidence),
+  });
+}
+
+export function buildMajorFortuneReportMbtiProfileTableData(
+  evidence: MajorFortuneEvidencePacket,
+): MbtiCommonProfileTableData | null {
+  const source = getMbtiSourceProfile(evidence.mbtiBasis.type);
+
+  if (source === null) {
+    return null;
+  }
+
+  return buildMbtiCommonProfileTableData(toMajorFortuneMbtiProfileSource(source));
+}
+
 export function buildDaeunFortuneTableData(
   input: BuildDaeunFortuneTableDataInput,
 ): DaeunFortuneTableData {
@@ -98,6 +170,187 @@ export function buildDaeunFortuneTableData(
       selectedAnnualFortune,
     ),
   };
+}
+
+function buildMajorFortuneFourPillarGrid(
+  evidence: MajorFortuneEvidencePacket,
+): readonly ManseRyeokFourPillarGridColumnInput[] {
+  return [
+    buildMajorFortunePillarColumn("year", evidence.baseSaju.pillars.year, evidence),
+    buildMajorFortunePillarColumn("month", evidence.baseSaju.pillars.month, evidence),
+    buildMajorFortunePillarColumn("day", evidence.baseSaju.pillars.day, evidence),
+    buildMajorFortunePillarColumn("hour", evidence.baseSaju.pillars.hour, evidence),
+  ].filter(
+    (column): column is ManseRyeokFourPillarGridColumnInput =>
+      column !== null,
+  );
+}
+
+function buildMajorFortunePillarColumn(
+  columnId: ManseRyeokFourPillarGridColumnInput["columnId"],
+  pillar: string | undefined,
+  evidence: MajorFortuneEvidencePacket,
+): ManseRyeokFourPillarGridColumnInput | null {
+  if (pillar === undefined || pillar.trim().length < 2) {
+    return null;
+  }
+
+  const stem = pillar.trim().slice(0, 1);
+  const branch = pillar.trim().slice(1, 2);
+
+  return {
+    columnId,
+    pillar,
+    heavenlyStem: stem,
+    earthlyBranch: branch,
+    tenGod: buildPillarTenGodPair({
+      dayMaster: evidence.dayMaster,
+      stem,
+      branch,
+    }),
+    hiddenStems: getHiddenStemsForBranch(branch),
+    twelveLifeStage: [],
+    twelveSinsal: [],
+    sinsal: [],
+    gwiin: [],
+    interactions: [],
+  };
+}
+
+function buildPillarTenGodPair(input: {
+  readonly dayMaster: HeavenlyStem;
+  readonly stem: string;
+  readonly branch: string;
+}): readonly string[] {
+  const stemTenGod = isHeavenlyStem(input.stem)
+    ? getStemTenGodForPair(input.dayMaster, input.stem)
+    : null;
+  const branchMainStem = getHiddenStemsForBranch(input.branch)[0];
+  const branchTenGod =
+    branchMainStem !== undefined && isHeavenlyStem(branchMainStem)
+      ? getStemTenGodForPair(input.dayMaster, branchMainStem)
+      : null;
+
+  return [
+    stemTenGod === null ? null : `천간 ${stemTenGod}`,
+    branchTenGod === null ? null : `지지 ${branchTenGod}`,
+  ].filter((value): value is string => value !== null);
+}
+
+function isHeavenlyStem(value: string): value is HeavenlyStem {
+  return [
+    "甲",
+    "乙",
+    "丙",
+    "丁",
+    "戊",
+    "己",
+    "庚",
+    "辛",
+    "壬",
+    "癸",
+  ].includes(value);
+}
+
+function toMajorFortuneMbtiProfileSource(
+  source: MbtiSourceProfile,
+): MbtiCommonProfileSourceInput {
+  return {
+    type: source.type,
+    titleKo: source.titleKo,
+    archetype: source.archetype,
+    oneLine: source.oneLine,
+    preferenceAxes: pickPreferenceAxes(source.preferenceAxes),
+    functionStack: pickFunctionStack(source.functionStack),
+    summary: source.summary,
+    traits: buildMajorFortuneMbtiTraits(source),
+    closeKeywords: getStringArrayProperty(source, "closeKeywords"),
+    farKeywords: getStringArrayProperty(source, "farKeywords"),
+  };
+}
+
+function pickPreferenceAxes(
+  sourceAxes: Readonly<Record<string, string>> | undefined,
+): Partial<Record<MbtiPreferenceAxisKey, string>> | undefined {
+  if (sourceAxes === undefined) {
+    return undefined;
+  }
+
+  return {
+    energy: sourceAxes.energy,
+    perception: sourceAxes.perception,
+    judgment: sourceAxes.judgment,
+    lifestyle: sourceAxes.lifestyle,
+  };
+}
+
+function pickFunctionStack(
+  sourceStack: Readonly<Record<string, string>> | undefined,
+): Partial<Record<MbtiFunctionStackPosition, string>> | undefined {
+  if (sourceStack === undefined) {
+    return undefined;
+  }
+
+  return {
+    dominant: sourceStack.dominant,
+    auxiliary: sourceStack.auxiliary,
+    tertiary: sourceStack.tertiary,
+    inferior: sourceStack.inferior,
+  };
+}
+
+function buildMajorFortuneMbtiTraits(
+  source: MbtiSourceProfile,
+): Readonly<Record<string, readonly MbtiSourceTraitItem[]>> {
+  const reportUseCases = (source.reportUseCases?.daeunReport ?? []).slice(0, 5);
+
+  if (reportUseCases.length === 0) {
+    return {};
+  }
+
+  return {
+    "대운 활용": reportUseCases.map((line, index) => ({
+      id: `daeun_report_use_case_${index + 1}`,
+      label: getMajorFortuneReportUseCaseLabel(index),
+      plainKo: sanitizeMajorFortuneReportUseCaseLine(line),
+      productDomains: [],
+    })),
+  };
+}
+
+function getMajorFortuneReportUseCaseLabel(index: number): string {
+  return [
+    "10년 흐름",
+    "일과 역할",
+    "돈과 자원",
+    "관계 리듬",
+    "성장 방식",
+  ][index] ?? "활용 포인트";
+}
+
+function sanitizeMajorFortuneReportUseCaseLine(line: string): string {
+  return line
+    .replaceAll("daeun 섹션", "대운 해석")
+    .replaceAll("daeun 리포트", "대운 리포트")
+    .replaceAll("career 섹션", "직업 흐름")
+    .replaceAll("money 섹션", "돈 흐름")
+    .replaceAll("relationship 섹션", "관계 흐름")
+    .replaceAll("source", "근거");
+}
+
+function getStringArrayProperty(
+  source: MbtiSourceProfile,
+  key: "closeKeywords" | "farKeywords",
+): readonly string[] {
+  const value = source[key];
+
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  return value
+    .filter((item): item is string => typeof item === "string")
+    .slice(0, 6);
 }
 
 function buildTitle(input: BuildDaeunFortuneTableDataInput): string {
@@ -184,8 +437,12 @@ function buildAnnualCompareTable(
     annualStem: buildStemCard(selectedAnnualFortune),
     annualBranch: buildBranchCard(selectedAnnualFortune),
     hiddenStems: {
-      daeun: currentDaeunCycle.hiddenStems ?? [],
-      annual: selectedAnnualFortune?.hiddenStems ?? [],
+      daeun:
+        currentDaeunCycle.hiddenStems ??
+        getHiddenStemsForBranch(getBranch(currentDaeunCycle)),
+      annual:
+        selectedAnnualFortune?.hiddenStems ??
+        getHiddenStemsForBranch(getBranch(selectedAnnualFortune)),
     },
     twelveLifeStage: {
       daeun: currentDaeunCycle.twelveLifeStage ?? [],
@@ -204,6 +461,10 @@ function buildAnnualCompareTable(
       annual: selectedAnnualFortune?.interactions ?? [],
     },
   };
+}
+
+function getHiddenStemsForBranch(branch: string | null): readonly string[] {
+  return branch === null ? [] : HIDDEN_STEMS_BY_BRANCH[branch] ?? [];
 }
 
 function buildPillarDisplay(input: DaeunGanjiInput | undefined): {

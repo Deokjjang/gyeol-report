@@ -49,6 +49,8 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("tenYearFlowSummary");
     expect(text).toContain("currentAnnualCross");
     expect(text).toContain("domainFlows");
+    expect(text).toContain("userContextReading");
+    expect(text).toContain("currentConcern");
     expect(text).toContain("riskPatterns");
     expect(text).toContain("actionGuides");
     expect(text).toContain("mbtiBasis");
@@ -109,9 +111,14 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("majorGanji and annualGanji side by side");
     expect(text).toContain("The main body of this product is the 10-year year-by-year flow");
     expect(text).toContain("Each majorFortuneTimelineRows item must include yearDetail");
-    expect(text).toContain("yearDetail must include myeongliSummary");
-    expect(text).toContain("직업·일, 돈·자원, 관계·연애, 건강관리·생활 리듬");
-    expect(text).toContain("Do not leave MBTI in a separate generic block only");
+    expect(text).toContain("yearDetail must include exactly the four prose blocks");
+    expect(text).toContain("coreFlow, realWorldScenes, cautionPoint, and actionStandard");
+    expect(text).toContain("Do not write yearDetail as a checklist");
+    expect(text).toContain("realWorldScenes blends work, money, relationship");
+    expect(text).toContain("userContextReading");
+    expect(text).toContain("Do not use field-assembly prose");
+    expect(text).toContain("현실 장면은 따로 움직이지 않습니다");
+    expect(text).toContain("Vary the MBTI angle by ten-god");
     expect(text).toContain("Do not output raw branch interaction labels alone");
     expect(text).toContain("Age labels in majorFortuneTimelineRows must use 한국나이 wording");
     expect(text).toContain("Highlight the current year row with 올해 badge");
@@ -136,6 +143,8 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     const text = promptText();
 
     expect(text).toContain("Use userContext.lifeStatus");
+    expect(text).toContain("Use userContextReading.currentRole");
+    expect(text).toContain("not a calculation cause");
     expect(text).toContain("translation layer");
     expect(text).toContain("Use userContext.relationshipStatus");
     expect(text).toContain("Do not change calculations based on userContext");

@@ -2,20 +2,24 @@ import { describe, expect, it } from "vitest";
 
 import {
   buildDaeunFortuneTableData,
+  buildMajorFortuneReportManseRyeokTableData,
+  buildMajorFortuneReportMbtiProfileTableData,
   type BuildDaeunFortuneTableDataInput,
 } from "../../../src/lib/report-tables/daeunTableData";
+import { buildMajorFortuneEvidence } from "../../../src/lib/report-knowledge/majorFortuneEvidence";
+import { requireMajorFortuneFixture } from "../../../src/lib/report-knowledge/majorFortuneFixtures";
 
 const sampleInput: BuildDaeunFortuneTableDataInput = {
   displayName: "정덕민",
   currentYear: 2026,
   selectedYear: 2026,
-  currentAge: 28,
+  currentAge: 27,
   currentDaeunCycle: {
     ganji: "戊辰",
     startYear: 2026,
     endYear: 2035,
-    startAge: 28,
-    endAge: 37,
+    startAge: 27,
+    endAge: 36,
     stemTenGod: "편재",
     branchTenGod: "편재",
     hiddenStems: ["乙", "癸", "戊"],
@@ -28,7 +32,7 @@ const sampleInput: BuildDaeunFortuneTableDataInput = {
   timelineYears: [
     {
       year: 2027,
-      ageLabel: "29세",
+      ageLabel: "28세",
       majorGanji: "戊辰",
       annualGanji: "丁未",
       annualTenGodLabel: "상관",
@@ -36,23 +40,15 @@ const sampleInput: BuildDaeunFortuneTableDataInput = {
       oneLine: "역할이 구체화되는 해",
       strategy: "책임 범위를 먼저 정리한다.",
       yearDetail: {
-        myeongliSummary: "2027년 丁未 연운은 상관 흐름으로 표현과 결과물을 자극합니다.",
-        daeunAnnualRelation: "대운의 장기 배경 안에서 초반 기준을 시험하는 해입니다.",
-        natalAnnualRelation: "원국·세운 작용은 생활 리듬과 역할 조율로 풀어 읽습니다.",
-        careerWork: "직업·일에서는 보고와 결과물 기준을 맞춥니다.",
-        moneyResource: "돈·자원에서는 반복 지출을 확인합니다.",
-        relationshipLove: "관계·연애에서는 말의 온도를 조절합니다.",
-        healthRoutine: "건강관리·생활 리듬에서는 무리한 마감을 줄입니다.",
-        socialFamily: "사회·가족에서는 부탁의 범위를 좁힙니다.",
-        studyGrowth: "공부·성장에서는 포트폴리오를 정리합니다.",
-        mbtiExpression: "ENTJ는 기준을 먼저 세우려 하지만 회복 시간을 같이 잡아야 합니다.",
-        caution: "주의할 패턴은 말과 일정이 앞서는 것입니다.",
+        coreFlow: "2027년 丁未 연운은 상관 흐름으로 표현과 결과물을 자극하고, 대운의 장기 배경 안에서 초반 기준을 시험하는 해입니다.",
+        realWorldScenes: "직업에서는 보고와 결과물 기준을 맞추고, 돈은 반복 지출을 확인하며, 관계에서는 말의 온도를 조절합니다. ENTJ는 기준을 먼저 세우려 하지만 회복 시간을 같이 잡아야 합니다.",
+        cautionPoint: "주의할 패턴은 말과 일정이 앞서는 것입니다.",
         actionStandard: "실행 기준은 기록과 회고를 남기는 것입니다.",
       },
     },
     {
       year: 2026,
-      ageLabel: "28세",
+      ageLabel: "27세",
       isCycleStartYear: true,
       badges: ["강함"],
       majorGanji: "戊辰",
@@ -62,17 +58,9 @@ const sampleInput: BuildDaeunFortuneTableDataInput = {
       oneLine: "대운이 시작되는 해",
       strategy: "속도를 내기 전에 기준을 고정한다.",
       yearDetail: {
-        myeongliSummary: "2026년 丙午 연운은 식신 흐름으로 결과물을 압박합니다.",
-        daeunAnnualRelation: "대운 위에 연운이 올라와 실행 압력이 커지는 해입니다.",
-        natalAnnualRelation: "辰申 반합 수 흐름: 생각과 회복, 정보 흐름이 부분적으로 살아나는 장면입니다.",
-        careerWork: "직업·일에서는 책임 범위를 먼저 좁힙니다.",
-        moneyResource: "돈·자원에서는 계약과 정산 기준을 숫자로 확인합니다.",
-        relationshipLove: "관계·연애에서는 연락과 거리 기준이 중요합니다.",
-        healthRoutine: "건강관리·생활 리듬에서는 회복 시간을 먼저 고정합니다.",
-        socialFamily: "사회·가족에서는 역할 기대를 먼저 조율합니다.",
-        studyGrowth: "공부·성장에서는 배운 것을 문서로 남깁니다.",
-        mbtiExpression: "ENTJ는 이 흐름을 빠른 결정과 실행 압력으로 드러내기 쉽습니다.",
-        caution: "주의할 패턴은 권한 없는 책임을 떠안는 것입니다.",
+        coreFlow: "2026년 丙午 연운은 식신 흐름으로 결과물을 압박합니다. 辰申 반합 수 흐름은 생각과 회복, 정보 흐름이 부분적으로 살아나는 장면입니다.",
+        realWorldScenes: "직업에서는 책임 범위를 먼저 좁히고, 돈은 계약과 정산 기준을 숫자로 확인합니다. 관계와 생활 리듬에서는 거리 기준과 회복 시간이 중요하며, ENTJ는 빠른 결정과 실행 압력으로 드러나기 쉽습니다.",
+        cautionPoint: "주의할 패턴은 권한 없는 책임을 떠안는 것입니다.",
         actionStandard: "실행 기준은 역할, 돈, 회복 루틴을 하나씩 고정하는 것입니다.",
       },
     },
@@ -105,7 +93,7 @@ describe("buildDaeunFortuneTableData", () => {
 
     expect(data.title).toBe("정덕민님의 대운표");
     expect(data.timelineRows.map((row) => row.year)).toEqual([2026, 2027]);
-    expect(data.timelineRows.map((row) => row.age)).toEqual([28, 29]);
+    expect(data.timelineRows.map((row) => row.age)).toEqual([27, 28]);
   });
 
   it("adds current year and transition badges", () => {
@@ -124,8 +112,8 @@ describe("buildDaeunFortuneTableData", () => {
       ganji: "戊辰",
       startYear: 2026,
       endYear: 2035,
-      startAge: 28,
-      endAge: 37,
+      startAge: 27,
+      endAge: 36,
     });
     expect(data.currentDaeun.stem).toMatchObject({
       hanja: "戊",
@@ -159,6 +147,28 @@ describe("buildDaeunFortuneTableData", () => {
     });
   });
 
+  it("builds common manse ryeok and MBTI compact data from major fortune evidence", () => {
+    const fixture = requireMajorFortuneFixture("deokmin-current-major-fortune");
+    const evidence = buildMajorFortuneEvidence({
+      fixtureId: fixture.id,
+      currentYear: fixture.currentYear,
+      person: fixture.person,
+    });
+    const manseRyeok = buildMajorFortuneReportManseRyeokTableData(evidence);
+    const mbti = buildMajorFortuneReportMbtiProfileTableData(evidence);
+
+    expect(manseRyeok.title).toBe("덕민님의 만세력");
+    expect(manseRyeok.stemRow.year?.hanja).toBe("己");
+    expect(manseRyeok.branchRow.hour?.hanja).toBe("辰");
+    expect(
+      manseRyeok.detailRows.find((row) => row.key === "hiddenStems")?.cells.hour,
+    ).toEqual(["戊", "乙", "癸"]);
+    expect(mbti?.type).toBe("ENTJ");
+    expect(mbti?.reportUsageNotes.map((note) => note.label)).toContain(
+      "10년 흐름",
+    );
+  });
+
   it("adds element color tokens to timeline daeun and annual pillars", () => {
     const data = buildDaeunFortuneTableData(sampleInput);
     const currentYearRow = data.timelineRows[0];
@@ -174,10 +184,11 @@ describe("buildDaeunFortuneTableData", () => {
     const currentYearRow = data.timelineRows[0];
 
     expect(currentYearRow.yearDetail).toMatchObject({
-      careerWork: "직업·일에서는 책임 범위를 먼저 좁힙니다.",
-      moneyResource: "돈·자원에서는 계약과 정산 기준을 숫자로 확인합니다.",
-      mbtiExpression:
-        "ENTJ는 이 흐름을 빠른 결정과 실행 압력으로 드러내기 쉽습니다.",
+      coreFlow:
+        "2026년 丙午 연운은 식신 흐름으로 결과물을 압박합니다. 辰申 반합 수 흐름은 생각과 회복, 정보 흐름이 부분적으로 살아나는 장면입니다.",
+      realWorldScenes:
+        "직업에서는 책임 범위를 먼저 좁히고, 돈은 계약과 정산 기준을 숫자로 확인합니다. 관계와 생활 리듬에서는 거리 기준과 회복 시간이 중요하며, ENTJ는 빠른 결정과 실행 압력으로 드러나기 쉽습니다.",
+      cautionPoint: "주의할 패턴은 권한 없는 책임을 떠안는 것입니다.",
       actionStandard: "실행 기준은 역할, 돈, 회복 루틴을 하나씩 고정하는 것입니다.",
     });
   });
@@ -207,7 +218,7 @@ describe("buildDaeunFortuneTableData", () => {
     });
   });
 
-  it("normalizes missing comparison list values to empty arrays", () => {
+  it("fills hidden stems from branch lookup and keeps unavailable rows empty", () => {
     const data = buildDaeunFortuneTableData({
       currentYear: 2026,
       selectedYear: 2026,
@@ -231,8 +242,8 @@ describe("buildDaeunFortuneTableData", () => {
     });
 
     expect(data.annualCompareTable.hiddenStems).toEqual({
-      daeun: [],
-      annual: [],
+      daeun: ["戊", "乙", "癸"],
+      annual: ["丁", "己"],
     });
     expect(data.annualCompareTable.twelveLifeStage).toEqual({
       daeun: [],

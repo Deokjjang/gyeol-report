@@ -65,6 +65,15 @@ describe("majorFortuneEvidence", () => {
       mbtiType: "ENTJ",
       currentYear: 2026,
     });
+    expect(evidence.userContextReading).toMatchObject({
+      currentRole: "직장인",
+      currentField: "개발·서비스 기획",
+      relationshipStatus: "미입력",
+      focusAreas: ["직업", "돈", "관계", "공부"],
+    });
+    expect(evidence.userContextReading.interpretationUse).toContain(
+      "계산의 원인이 아니라",
+    );
     expect(evidence.baseSaju).toMatchObject({
       dayMaster: "甲",
       pillars: fixture.person.pillars,
@@ -209,7 +218,12 @@ describe("majorFortuneEvidence", () => {
       isCycleStartYear: true,
       majorGanji: "戊辰",
       annualGanji: "丙午",
+      ageLabel: "27세",
       ageBasisLabel: "대운표 기준 나이",
+    });
+    expect(evidence.majorFortuneTimelineRows[9]).toMatchObject({
+      year: 2035,
+      ageLabel: "36세",
     });
     expect(evidence.majorFortuneTimelineRows[0]?.badges).toContain("올해");
     expect(evidence.majorFortuneTimelineRows[0]?.badges).toContain("전환");

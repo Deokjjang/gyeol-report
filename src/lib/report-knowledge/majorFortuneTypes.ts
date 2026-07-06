@@ -73,6 +73,14 @@ export interface MajorFortuneEvidencePacket {
     readonly userContext: UserContextProfile;
   };
   readonly userContext: UserContextProfile;
+  readonly userContextReading: {
+    readonly currentRole: string;
+    readonly currentField: string | null;
+    readonly relationshipStatus: string;
+    readonly focusAreas: readonly string[];
+    readonly currentConcern: string;
+    readonly interpretationUse: string;
+  };
   readonly currentYear: number;
   readonly currentAge: number;
   readonly dayMaster: HeavenlyStem;

@@ -23,14 +23,23 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("manseRyeokTable?: ReactNode");
     expect(viewSource).toContain("mbtiProfileTable?: ReactNode");
     expect(viewSource).toContain("renderCommonFoundation");
+    expect(viewSource).toContain("ManseRyeokCommonTable");
+    expect(viewSource).toContain("MbtiCommonProfileTable");
+    expect(viewSource).toContain("buildMajorFortuneReportManseRyeokTableData");
+    expect(viewSource).toContain("buildMajorFortuneReportMbtiProfileTableData");
+    expect(viewSource).toContain("resolvedManseRyeokTable");
+    expect(viewSource).toContain("resolvedMbtiProfileTable");
     expect(viewSource).toContain("기초 만세력");
     expect(viewSource).toContain("MBTI 성향표");
     expect(viewSource).toContain("MBTI는 대운의 원인이 아니라");
     expect(viewSource).toContain("items-start");
-    expect(viewSource).toContain("원국표 데이터가 연결되면");
+    expect(viewSource).toContain("대운 해석의 기준이 되는 사주 원국표입니다.");
+    expect(viewSource).toContain("원국 데이터가 없는 결과라 대운표와 본문 해석을 중심으로 읽습니다.");
+    expect(viewSource).not.toContain("기초 만세력은 입력 원국 데이터가 연결된 결과에서 표시됩니다.");
     expect(viewSource).not.toContain("draft 기준");
     expect(viewSource).not.toContain("공통 만세력표");
     expect(viewSource).not.toContain("공통 MBTI표");
+    expect(viewSource).not.toContain("원국표 데이터가 연결되면");
   });
 
   it("prioritizes the launch evidence contract for the current cycle and annual cross", () => {
@@ -54,6 +63,8 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("buildTimelineYearInputs");
     expect(viewSource).toContain("buildTimelineYearDetail");
     expect(viewSource).toContain("buildAnnualFortuneInputs");
+    expect(viewSource).toContain("cycleBasedAge");
+    expect(viewSource).toContain("displayAgeLabel");
     expect(viewSource).toContain("row.majorGanji");
     expect(viewSource).toContain("row.annualGanji");
     expect(viewSource.indexOf("{renderAnnualCross(draft, evidencePacket)}")).toBeLessThan(
@@ -61,17 +72,17 @@ describe("MajorFortuneReportView source", () => {
     );
   });
 
-  it("folds domain flow labels into yearly detail and keeps a compact MBTI section", () => {
-    expect(viewSource).toContain("직업·일");
-    expect(viewSource).toContain("돈·자원");
-    expect(viewSource).toContain("관계·연애");
-    expect(viewSource).toContain("건강관리·생활 리듬");
-    expect(viewSource).toContain("사회·가족");
-    expect(viewSource).toContain("공부·성장");
+  it("folds domain flows into long yearly prose and keeps a compact MBTI section", () => {
+    expect(viewSource).toContain("coreFlow");
+    expect(viewSource).toContain("realWorldScenes");
+    expect(viewSource).toContain("cautionPoint");
+    expect(viewSource).toContain("getYearMbtiExpression");
     expect(viewSource).toContain("yearDetail");
+    expect(viewSource).not.toContain("현실 장면은 따로 움직이지 않습니다");
     expect(viewSource).not.toContain("{renderDomainFlows(draft, evidencePacket)}");
     expect(viewSource).toContain("가 이 대운을 쓰는 방식");
     expect(viewSource).toContain("명리는 긴 흐름의 방향을 잡고");
+    expect(viewSource).not.toContain("원국표 데이터가 연결되면");
   });
 
   it("renders risk, action, myeongli, and safety sections without raw UI labels", () => {

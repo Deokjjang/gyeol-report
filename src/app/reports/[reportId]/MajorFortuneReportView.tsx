@@ -1,6 +1,10 @@
 import type { ReactNode } from "react";
 
-import { DaeunFortuneTable } from "../../../components/report-tables";
+import {
+  DaeunFortuneTable,
+  ManseRyeokCommonTable,
+  MbtiCommonProfileTable,
+} from "../../../components/report-tables";
 import type { MajorFortuneReportDraft } from "../../../lib/report-generation/majorFortuneReportDraftTypes";
 import {
   sanitizeMajorFortuneVisibleText,
@@ -8,6 +12,8 @@ import {
 import type { MajorFortuneEvidencePacket } from "../../../lib/report-knowledge/majorFortuneTypes";
 import {
   buildDaeunFortuneTableData,
+  buildMajorFortuneReportManseRyeokTableData,
+  buildMajorFortuneReportMbtiProfileTableData,
   type DaeunAnnualFortuneInput,
   type DaeunCurrentCycleInput,
   type DaeunTimelineYearInput,
@@ -24,8 +30,6 @@ type MajorFortuneReportViewProps = {
 
 const panelClass =
   "min-w-0 rounded-[8px] border border-[#ded2c2] bg-[#fffaf1] p-5 shadow-[0_16px_40px_rgba(62,45,35,0.08)]";
-const mutedPanelClass =
-  "min-w-0 rounded-[8px] border border-[#e5dbcc] bg-[#fbf6ee] p-4 text-sm leading-7 break-words text-[#5f554b]";
 const sectionTitleClass =
   "text-xl font-semibold tracking-normal text-[#2b211b] sm:text-2xl";
 const fiveElementLabelByValue: Record<string, string> = {
@@ -97,9 +101,44 @@ function formatKoreanAgeText(value: string | number | null | undefined): string 
 
   if (!visibleValue) return "";
   if (visibleValue.includes("한국나이")) return visibleValue;
+  if (/^\d+\s*[~-]\s*\d+$/.test(visibleValue)) {
+    return `한국나이 ${visibleValue.replace(/\s/g, "").replace("-", "세~")}세`;
+  }
   if (visibleValue.includes("세")) return `한국나이 ${visibleValue}`;
 
   return visibleValue;
+}
+
+function joinSentences(items: readonly (string | null | undefined)[]): string {
+  return items.map(text).filter(Boolean).join(" ");
+}
+
+function getYearMbtiExpression(input: {
+  readonly year: number;
+  readonly annualTenGodLabel: string;
+  readonly mbtiType: string | null | undefined;
+  readonly fallback: string;
+}): string {
+  const type = text(input.mbtiType) || "MBTI";
+  const tenGod = text(input.annualTenGodLabel);
+
+  if (/식신|상관/.test(tenGod)) {
+    return `${input.year}년에는 ${type} 성향이 산출물, 발표, 제안, 결과물 속도로 드러납니다. 바로 밀어붙이기보다 먼저 보여 줄 결과물의 크기를 작게 정해야 합니다.`;
+  }
+  if (/편재|정재/.test(tenGod)) {
+    return `${input.year}년에는 ${type} 성향이 돈, 계약, 수익 구조, 비용 관리 판단으로 드러납니다. 확장 감각이 빨라질수록 정산일과 책임 범위를 숫자로 잠가야 합니다.`;
+  }
+  if (/편관|정관/.test(tenGod)) {
+    return `${input.year}년에는 ${type} 성향이 책임, 평가, 직장 질서, 역할 검증을 빠르게 정리하려는 태도로 드러납니다. 기준 제시는 강점이지만 승인선 없이 떠안는 일은 줄여야 합니다.`;
+  }
+  if (/편인|정인/.test(tenGod)) {
+    return `${input.year}년에는 ${type} 성향이 공부, 회복, 문서, 자격, 내면 정리의 방식으로 드러납니다. 생각을 오래 붙잡기보다 기록과 기준표로 남겨야 흐름을 씁니다.`;
+  }
+  if (/비견|겁재/.test(tenGod)) {
+    return `${input.year}년에는 ${type} 성향이 독립성, 경쟁심, 관계와 돈의 경계 설정으로 드러납니다. 내 기준을 세우되 사람과 비용이 섞이는 장면은 먼저 분리해야 합니다.`;
+  }
+
+  return text(input.fallback) || `${input.year}년에는 ${type} 성향이 판단 속도와 실행 기준으로 드러납니다.`;
 }
 
 function formatSignalList(values: readonly string[] | undefined): string {
@@ -241,6 +280,25 @@ function renderCommonFoundation(
   draft: MajorFortuneReportDraft,
 ) {
   const mbtiBasis = evidencePacket?.mbtiBasis;
+  const resolvedManseRyeokTable =
+    manseRyeokTable ??
+    (evidencePacket === undefined ? undefined : (
+      <ManseRyeokCommonTable
+        data={buildMajorFortuneReportManseRyeokTableData(evidencePacket)}
+        defaultOpen
+      />
+    ));
+  const resolvedMbtiProfileTable =
+    mbtiProfileTable ??
+    (evidencePacket === undefined
+      ? undefined
+      : (() => {
+          const data = buildMajorFortuneReportMbtiProfileTableData(evidencePacket);
+
+          return data === null ? undefined : (
+            <MbtiCommonProfileTable data={data} defaultOpen variant="compact" />
+          );
+        })());
   const mbtiFallback = [
     text(mbtiBasis?.type) ? `${text(mbtiBasis?.type)} · ${text(mbtiBasis?.titleKo || mbtiBasis?.archetype)}` : "",
     compactSentence(mbtiBasis?.decisionPattern),
@@ -259,13 +317,15 @@ function renderCommonFoundation(
           <div className="mb-4">
             <h3 className="text-lg font-semibold text-[#2b211b]">기초 만세력</h3>
             <p className="mt-1 text-sm leading-6 text-[#76685c]">
-              원국이 연결되면 대운 해석의 기준이 되는 사주 원국표를 함께 표시합니다.
+              {resolvedManseRyeokTable
+                ? "대운 해석의 기준이 되는 사주 원국표입니다."
+                : "기초 만세력은 원국 데이터가 있는 결과에서만 간단히 표시합니다."}
             </p>
           </div>
-          {manseRyeokTable ?? (
-            <div className={mutedPanelClass}>
-              원국표 데이터가 연결되면 이 영역에 기초 만세력을 표시합니다.
-            </div>
+          {resolvedManseRyeokTable ?? (
+            <p className="text-sm leading-7 text-[#76685c]">
+              원국 데이터가 없는 결과라 대운표와 본문 해석을 중심으로 읽습니다.
+            </p>
           )}
         </div>
         <div className={panelClass}>
@@ -275,14 +335,14 @@ function renderCommonFoundation(
               MBTI는 대운의 원인이 아니라 흐름이 행동과 선택으로 드러나는 방식을 보조합니다.
             </p>
           </div>
-          {mbtiProfileTable ?? (
+          {resolvedMbtiProfileTable ?? (
             <div className="space-y-3">
               {mbtiFallback.length > 0 ? (
                 renderList(mbtiFallback)
               ) : (
-                <div className={mutedPanelClass}>
-                  MBTI가 연결되면 행동 발현 방식만 짧게 요약합니다.
-                </div>
+                <p className="text-sm leading-7 text-[#76685c]">
+                  MBTI 성향표는 유형 데이터가 연결된 결과에서 표시됩니다.
+                </p>
               )}
             </div>
           )}
@@ -382,6 +442,7 @@ function buildCurrentDaeunCycleInput(
     stemTenGod: current?.stemTenGod ?? draft.cycleSummary.tenGodLabel,
     branchTenGod: current?.branchTenGod,
     tenGod: current?.stemTenGod ?? draft.cycleSummary.tenGodLabel,
+    hiddenStems: draft.myeongliLayers.hiddenStemLayer.majorBranchHiddenStems,
     startYear: parsedYearRange?.start,
     endYear: parsedYearRange?.end,
     startAge: parsedAgeRange?.start,
@@ -398,55 +459,49 @@ function buildTimelineYearDetail(
   evidencePacket: MajorFortuneEvidencePacket | undefined,
 ): NonNullable<DaeunTimelineYearInput["yearDetail"]> {
   const cycleYear = draft.cycleYearTimeline.find((year) => year.year === row.year);
+  const detail = row.yearDetail as unknown as Record<string, string | undefined>;
   const mbtiLine =
-    text(row.yearDetail?.mbtiExpression) ||
-    text(draft.mbtiExpression) ||
-    text(evidencePacket?.mbtiBasis?.decisionPattern) ||
-    "MBTI는 대운의 원인이 아니라 판단 속도와 실행 방식으로 드러나는 보조 신호입니다.";
+    text(detail.mbtiExpression) ||
+    getYearMbtiExpression({
+      year: row.year,
+      annualTenGodLabel: row.annualTenGodLabel,
+      mbtiType: evidencePacket?.mbtiBasis.type,
+      fallback: draft.mbtiExpression ?? evidencePacket?.mbtiBasis.decisionPattern ?? "",
+    });
+  const coreFlow = joinSentences([
+    detail.coreFlow,
+    detail.myeongliSummary,
+    detail.daeunAnnualRelation,
+    detail.natalAnnualRelation,
+    detail.coreFlow === undefined
+      ? `${row.year}년 ${text(row.annualGanji)} 연운은 ${text(row.annualTenGodLabel)} 흐름으로 ${text(cycleYear?.headline) || text(row.oneLine)} 장면을 강조합니다.`
+      : "",
+  ]);
+  const realWorldScenes = joinSentences([
+    detail.realWorldScenes,
+    detail.careerWork,
+    detail.moneyResource,
+    detail.relationshipLove,
+    detail.healthRoutine,
+    detail.socialFamily,
+    detail.studyGrowth,
+    mbtiLine,
+  ]);
 
   return {
-    myeongliSummary:
-      text(row.yearDetail?.myeongliSummary) ||
-      `${row.year}년 ${text(row.annualGanji)} 연운은 ${text(row.annualTenGodLabel)} 흐름으로 ${text(cycleYear?.headline) || text(row.oneLine)} 장면을 강조합니다.`,
-    daeunAnnualRelation:
-      text(row.yearDetail?.daeunAnnualRelation) ||
-      text(cycleYear?.roleOfYearInCycle) ||
-      `${text(row.majorGanji)} 대운 위에 ${text(row.annualGanji)} 연운이 올라와 단기 자극을 만듭니다.`,
-    natalAnnualRelation:
-      text(row.yearDetail?.natalAnnualRelation) ||
-      explainMyeongliSignal(row.keyInteractionLabel) ||
-      text(cycleYear?.whyItMatters),
-    careerWork:
-      text(row.yearDetail?.careerWork) ||
-      text(draft.careerWorkFlow?.summary) ||
-      "직업·일에서는 맡을 역할과 성과 기준을 먼저 좁혀야 합니다.",
-    moneyResource:
-      text(row.yearDetail?.moneyResource) ||
-      text(draft.moneyResourceFlow?.summary) ||
-      "돈·자원에서는 지출, 계약, 정산 기준을 숫자로 확인해야 합니다.",
-    relationshipLove:
-      text(row.yearDetail?.relationshipLove) ||
-      text(draft.relationshipFlow?.summary) ||
-      "관계·연애에서는 감정보다 연락, 거리, 약속 기준이 체감에 크게 작동합니다.",
-    healthRoutine:
-      text(row.yearDetail?.healthRoutine) ||
-      text(draft.healthRoutineFlow?.summary) ||
-      "건강관리·생활 리듬에서는 수면, 식사, 회복 시간을 일정처럼 고정합니다.",
-    socialFamily:
-      text(row.yearDetail?.socialFamily) ||
-      text(draft.finalAdvice.find((advice) => /인간관계|연애·가족/.test(advice.label))?.body) ||
-      "사회·가족에서는 역할 기대와 생활 반경의 경계를 먼저 맞춰야 합니다.",
-    studyGrowth:
-      text(row.yearDetail?.studyGrowth) ||
-      text(draft.finalAdvice.find((advice) => /학업|자격/.test(advice.label))?.body) ||
-      "공부·성장에서는 배운 내용을 문서, 자격, 포트폴리오처럼 남기는 방식이 좋습니다.",
-    mbtiExpression: mbtiLine,
-    caution:
-      text(row.yearDetail?.caution) ||
+    coreFlow:
+      coreFlow ||
+      `${row.year}년 ${text(row.annualGanji)} 연운은 ${text(row.annualTenGodLabel)} 흐름으로 대운 안에서 강조되는 장면을 만듭니다.`,
+    realWorldScenes:
+      realWorldScenes ||
+      "직업·일, 돈·자원, 관계·연애, 건강관리·생활 리듬, 사회·가족, 공부·성장이 한 해의 선택 흐름으로 이어집니다.",
+    cautionPoint:
+      text(detail.cautionPoint) ||
+      text(detail.caution) ||
       text(row.strategy) ||
       "주의할 점은 특정 사건 예언이 아니라 반복되는 피로와 과부하 관리입니다.",
     actionStandard:
-      text(row.yearDetail?.actionStandard) ||
+      text(detail.actionStandard) ||
       text(cycleYear?.strategicFocus) ||
       text(row.strategy) ||
       "그해 먼저 고정할 역할, 돈 기준, 회복 루틴을 하나씩 정합니다.",
@@ -457,13 +512,28 @@ function buildTimelineYearInputs(
   draft: MajorFortuneReportDraft,
   evidencePacket: MajorFortuneEvidencePacket | undefined,
 ): DaeunTimelineYearInput[] {
+  const cycleAgeRange = parseAgeLabel(
+    evidencePacket?.currentMajorFortune.ageRange ?? draft.cycleSummary.ageRangeLabel,
+  );
+  const cycleYearRange = parseNumberRange(
+    evidencePacket?.currentMajorFortune.yearRange ?? draft.cycleSummary.yearRangeLabel,
+  );
+
   return draft.majorFortuneTimelineRows.map((row) => {
-    const rowAgeRange = parseAgeLabel(row.ageLabel);
+    const cycleBasedAge =
+      cycleAgeRange?.start !== undefined && cycleYearRange?.start !== undefined
+        ? cycleAgeRange.start + (row.year - cycleYearRange.start)
+        : undefined;
+    const displayAgeLabel =
+      cycleBasedAge === undefined
+        ? formatKoreanAgeText(row.ageLabel)
+        : `한국나이 ${cycleBasedAge}세`;
+    const rowAgeRange = parseAgeLabel(displayAgeLabel);
 
     return {
       year: row.year,
       age: rowAgeRange?.start,
-      ageLabel: formatKoreanAgeText(row.ageLabel),
+      ageLabel: displayAgeLabel,
       isCurrentYear: row.isCurrentYear,
       isCycleStartYear: row.isCycleStartYear,
       isTransitionYear: row.isCycleStartYear || row.isCycleEndYear,
@@ -717,10 +787,10 @@ function renderStrongYears(draft: MajorFortuneReportDraft) {
 
   return (
     <section className={panelClass}>
-      <p className="text-sm font-semibold text-[#8b6d2d]">체감이 강한 해</p>
-      <h2 className={`${sectionTitleClass} mt-1`}>대운 안에서 더 선명하게 느껴지는 연도</h2>
+      <p className="text-sm font-semibold text-[#8b6d2d]">강하게 체감되는 해 요약</p>
+      <h2 className={`${sectionTitleClass} mt-1`}>타임라인에서 한 번 더 확인할 연도</h2>
       <div className="mt-5 grid gap-4 md:grid-cols-2">
-        {draft.strongYears.slice(0, 5).map((year) => (
+        {draft.strongYears.slice(0, 3).map((year) => (
           <article key={`${year.year}-${year.ganji}`} className="rounded-[8px] border border-[#eadfce] bg-[#fffdf8] p-4">
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-lg font-semibold text-[#2b211b]">{year.year}</span>

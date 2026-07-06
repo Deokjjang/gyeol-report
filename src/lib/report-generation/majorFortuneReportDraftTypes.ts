@@ -23,7 +23,14 @@ export interface MajorFortuneDraftFlowSection {
   readonly actionHint: string;
 }
 
-export interface MajorFortuneTimelineYearDetail {
+export interface MajorFortuneTimelineYearProseDetail {
+  readonly coreFlow: string;
+  readonly realWorldScenes: string;
+  readonly cautionPoint: string;
+  readonly actionStandard: string;
+}
+
+export interface MajorFortuneTimelineYearLegacyDetail {
   readonly myeongliSummary: string;
   readonly daeunAnnualRelation: string;
   readonly natalAnnualRelation: string;
@@ -37,6 +44,10 @@ export interface MajorFortuneTimelineYearDetail {
   readonly caution: string;
   readonly actionStandard: string;
 }
+
+export type MajorFortuneTimelineYearDetail =
+  | MajorFortuneTimelineYearProseDetail
+  | MajorFortuneTimelineYearLegacyDetail;
 
 export interface MajorFortuneReportDraft {
   readonly version: "v1";
@@ -439,31 +450,15 @@ const timelineYearDetailSchema = {
   type: "object",
   additionalProperties: false,
   required: [
-    "myeongliSummary",
-    "daeunAnnualRelation",
-    "natalAnnualRelation",
-    "careerWork",
-    "moneyResource",
-    "relationshipLove",
-    "healthRoutine",
-    "socialFamily",
-    "studyGrowth",
-    "mbtiExpression",
-    "caution",
+    "coreFlow",
+    "realWorldScenes",
+    "cautionPoint",
     "actionStandard",
   ],
   properties: {
-    myeongliSummary: stringSchema,
-    daeunAnnualRelation: stringSchema,
-    natalAnnualRelation: stringSchema,
-    careerWork: stringSchema,
-    moneyResource: stringSchema,
-    relationshipLove: stringSchema,
-    healthRoutine: stringSchema,
-    socialFamily: stringSchema,
-    studyGrowth: stringSchema,
-    mbtiExpression: stringSchema,
-    caution: stringSchema,
+    coreFlow: stringSchema,
+    realWorldScenes: stringSchema,
+    cautionPoint: stringSchema,
     actionStandard: stringSchema,
   },
 } as const;

@@ -11,8 +11,8 @@ const tableData: DaeunFortuneTableData = {
     ganji: "戊辰",
     startYear: 2026,
     endYear: 2035,
-    startAge: 28,
-    endAge: 37,
+    startAge: 27,
+    endAge: 36,
     stem: {
       hanja: "戊",
       ko: "무",
@@ -33,8 +33,8 @@ const tableData: DaeunFortuneTableData = {
   timelineRows: [
     {
       year: 2026,
-      age: 28,
-      ageLabel: "28세",
+      age: 27,
+      ageLabel: "한국나이 27세",
       isCurrentYear: true,
       isTransitionYear: true,
       badges: ["올해", "전환"],
@@ -82,24 +82,16 @@ const tableData: DaeunFortuneTableData = {
       oneLine: "대운이 시작되는 해",
       strategy: "속도를 내기 전에 기준을 고정한다.",
       yearDetail: {
-        myeongliSummary: "2026년 丙午 연운은 식신 흐름으로 대운 戊辰 안에서 결과물을 압박합니다.",
-        daeunAnnualRelation: "대운 위에 연운이 올라와 실행 압력이 커지는 해입니다.",
-        natalAnnualRelation: "辰申 반합 수 흐름: 생각과 회복, 정보 흐름이 부분적으로 살아나는 장면입니다.",
-        careerWork: "직업·일에서는 책임 범위를 먼저 좁힙니다.",
-        moneyResource: "돈·자원에서는 계약과 정산 기준을 숫자로 확인합니다.",
-        relationshipLove: "관계·연애에서는 연락과 거리 기준이 중요합니다.",
-        healthRoutine: "건강관리·생활 리듬에서는 회복 시간을 먼저 고정합니다.",
-        socialFamily: "사회·가족에서는 역할 기대를 먼저 조율합니다.",
-        studyGrowth: "공부·성장에서는 배운 것을 문서로 남깁니다.",
-        mbtiExpression: "ENTJ는 이 흐름을 빠른 결정과 실행 압력으로 드러내기 쉽습니다.",
-        caution: "주의할 패턴은 권한 없는 책임을 떠안는 것입니다.",
+        coreFlow: "2026년 丙午 연운은 식신 흐름으로 대운 戊辰 안에서 결과물을 압박합니다. 辰申 반합 수 흐름은 생각과 회복, 정보 흐름이 부분적으로 살아나는 장면입니다.",
+        realWorldScenes: "직업에서는 책임 범위를 먼저 좁히고, 돈은 계약과 정산 기준을 숫자로 확인합니다. 관계와 생활 리듬에서는 거리 기준과 회복 시간이 중요하며, ENTJ는 빠른 결정과 실행 압력으로 드러납니다.",
+        cautionPoint: "주의할 패턴은 권한 없는 책임을 떠안는 것입니다.",
         actionStandard: "실행 기준은 역할, 돈, 회복 루틴을 하나씩 고정하는 것입니다.",
       },
     },
     {
       year: 2027,
-      age: 29,
-      ageLabel: "29세",
+      age: 28,
+      ageLabel: "한국나이 28세",
       isCurrentYear: false,
       isTransitionYear: false,
       badges: [],
@@ -119,17 +111,9 @@ const tableData: DaeunFortuneTableData = {
       oneLine: "역할이 구체화되는 해",
       strategy: null,
       yearDetail: {
-        myeongliSummary: "2027년 丁未 연운은 상관 흐름으로 표현과 결과물을 자극합니다.",
-        daeunAnnualRelation: "대운의 장기 배경 안에서 초반 기준을 시험하는 해입니다.",
-        natalAnnualRelation: "원국·세운 작용은 생활 리듬과 역할 조율로 풀어 읽습니다.",
-        careerWork: "직업·일에서는 보고와 결과물 기준을 맞춥니다.",
-        moneyResource: "돈·자원에서는 반복 지출을 확인합니다.",
-        relationshipLove: "관계·연애에서는 말의 온도를 조절합니다.",
-        healthRoutine: "건강관리·생활 리듬에서는 무리한 마감을 줄입니다.",
-        socialFamily: "사회·가족에서는 부탁의 범위를 좁힙니다.",
-        studyGrowth: "공부·성장에서는 포트폴리오를 정리합니다.",
-        mbtiExpression: "ENTJ는 기준을 먼저 세우려 하지만 회복 시간을 같이 잡아야 합니다.",
-        caution: "주의할 패턴은 말과 일정이 앞서는 것입니다.",
+        coreFlow: "2027년 丁未 연운은 상관 흐름으로 표현과 결과물을 자극합니다. 대운의 장기 배경 안에서 초반 기준을 시험하는 해입니다.",
+        realWorldScenes: "직업에서는 보고와 결과물 기준을 맞추고, 돈은 반복 지출을 확인합니다. 관계에서는 말의 온도를 조절하며, ENTJ는 기준을 먼저 세우려 하지만 회복 시간을 같이 잡아야 합니다.",
+        cautionPoint: "주의할 패턴은 말과 일정이 앞서는 것입니다.",
         actionStandard: "실행 기준은 기록과 회고를 남기는 것입니다.",
       },
     },
@@ -197,9 +181,9 @@ describe("DaeunFortuneTable", () => {
     expect(html).toContain("정덕민님의 대운표");
     expect(html).toContain("대운 타임라인");
     expect(html).toContain("2026년");
-    expect(html).toContain("28세");
+    expect(html).toContain("한국나이 27세");
     expect(html).toContain("2027년");
-    expect(html).toContain("29세");
+    expect(html).toContain("한국나이 28세");
   });
 
   it("renders annual comparison before the ten-year timeline", () => {
@@ -229,23 +213,24 @@ describe("DaeunFortuneTable", () => {
     expect(html).toContain("대운이 시작되는 해");
   });
 
-  it("renders yearly accordion details with domain and MBTI markers", () => {
+  it("renders yearly accordion details as long prose blocks", () => {
     const html = renderToStaticMarkup(<DaeunFortuneTable data={tableData} />);
 
     for (const marker of [
-      "직업·일",
-      "돈·자원",
-      "관계·연애",
-      "건강관리·생활 리듬",
-      "사회·가족",
-      "공부·성장",
-      "MBTI 발현",
-      "주의할 패턴",
+      "올해의 핵심 흐름",
+      "현실에서 드러나는 장면",
+      "주의할 지점",
       "실행 기준",
-      "辰申 반합 수 흐름: 생각과 회복",
+      "辰申 반합 수 흐름은 생각과 회복",
+      "ENTJ는 빠른 결정과 실행 압력",
     ]) {
       expect(html).toContain(marker);
     }
+    expect(html).toContain(
+      "<p>ENTJ는 빠른 결정과 실행 압력으로 드러납니다.</p>",
+    );
+    expect(html).not.toContain("직업·일</h4>");
+    expect(html).not.toContain("MBTI 발현</h4>");
   });
 
   it("renders daeun and annual comparison table", () => {
@@ -276,6 +261,27 @@ describe("DaeunFortuneTable", () => {
     expect(html).toContain("daeun-element-fire-red");
   });
 
+  it("hides comparison detail rows when both sides are empty", () => {
+    const html = renderToStaticMarkup(
+      <DaeunFortuneTable
+        data={{
+          ...tableData,
+          annualCompareTable: {
+            ...tableData.annualCompareTable,
+            twelveLifeStage: { daeun: [], annual: [] },
+            twelveSinsal: { daeun: [], annual: [] },
+            sinsalAndGwiin: { daeun: [], annual: [] },
+          },
+        }}
+      />,
+    );
+
+    expect(html).not.toContain("십이운성");
+    expect(html).not.toContain("십이신살");
+    expect(html).not.toContain("신살·귀인");
+    expect(html).toContain("지장간");
+  });
+
   it("keeps long timeline and detail text wrapped inside the table width", () => {
     const html = renderToStaticMarkup(<DaeunFortuneTable data={tableData} />);
 
@@ -284,7 +290,7 @@ describe("DaeunFortuneTable", () => {
     expect(html).toContain("break-words");
   });
 
-  it("renders hyphens when detail lists are empty", () => {
+  it("hides empty comparison detail rows instead of repeating hyphens", () => {
     const html = renderToStaticMarkup(
       <DaeunFortuneTable
         data={{
@@ -304,7 +310,9 @@ describe("DaeunFortuneTable", () => {
       />,
     );
 
-    expect(html).toContain(">-</div>");
+    expect(html).not.toContain("지장간");
+    expect(html).not.toContain("십이운성");
+    expect(html).not.toContain(">-</div>");
   });
 
   it("hides table content when defaultOpen is false", () => {
