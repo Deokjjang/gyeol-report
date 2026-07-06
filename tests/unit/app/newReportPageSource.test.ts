@@ -451,6 +451,42 @@ describe("new report page source", () => {
     }
   });
 
+  it("builds preview-only report input payloads without submitting them", () => {
+    const requiredMarkers = [
+      "../../../lib/report-generation/reportInputTypes",
+      "SinglePersonReportInputPayload",
+      "CompatibilityReportInputPayload",
+      "ReportInputPayload",
+      "ReportPersonInputPayload",
+      "function createReportPersonInputPayload",
+      "birthTimeUnknown: input.birthTimeUnknown",
+      "approximateBirthTimeSlot",
+      "function createSingleProductOptions",
+      "selectedYear: input.selectedYear.trim()",
+      "function buildSinglePersonReportInputPayload",
+      "person: createReportPersonInputPayload(input)",
+      "relationshipStatus: input.relationshipStatus as RelationshipStatus",
+      "jobStatus: input.jobStatus as JobStatus",
+      "detailJob: input.detailedJob.trim()",
+      "focusAreas: input.focusAreas.filter(isFocusArea)",
+      "productOptions: createSingleProductOptions(product.productKey, input)",
+      "function buildCompatibilityReportInputPayload",
+      "relationshipType: input.relationshipType",
+      "personA: createReportPersonInputPayload(input.personA)",
+      "personB: createReportPersonInputPayload(input.personB)",
+      "function buildReportInputPayload",
+      "return buildSinglePersonReportInputPayload",
+      "return buildCompatibilityReportInputPayload",
+      "function handlePreviewOnlySubmit",
+      "buildReportInputPayload({",
+      "onSubmit={handlePreviewOnlySubmit}",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+  });
+
   it("passes actual form state into the Toss checkout launcher", () => {
     const requiredMarkers = [
       "createCheckoutInputSnapshot",
@@ -566,7 +602,10 @@ describe("new report page source", () => {
     const blockedMarkers = [
       "무료 미리보기 생성",
       "결제 " + "비활성 안내",
+      'fetch("/api/',
       'fetch("/api/reports/create"',
+      "createReport(",
+      "generateReport(",
       "/api/reports/mock-paid-complete",
       "window.location.assign",
       "sharePath",

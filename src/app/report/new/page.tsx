@@ -8,6 +8,16 @@ import DevTossCheckoutLauncher, {
   isDevTossCheckoutInputComplete,
 } from "../../../components/payment/DevTossCheckoutLauncher";
 import { GYEOL_PRODUCTS } from "../../../lib/product/gyeolProducts";
+import type {
+  CompatibilityRelationshipType,
+  CompatibilityReportInputPayload,
+  FocusArea,
+  JobStatus,
+  RelationshipStatus,
+  ReportInputPayload,
+  ReportPersonInputPayload,
+  SinglePersonReportInputPayload,
+} from "../../../lib/report-generation/reportInputTypes";
 
 const ACTIVE_REPORT_PRODUCT = GYEOL_PRODUCTS[0];
 const CAREER_MONEY_STUDY_PRODUCT_KEY = "career_money_study";
@@ -227,7 +237,7 @@ const compatibilityRelationshipOptions = [
 ] as const;
 
 type CompatibilityRelationshipTypeSelection =
-  (typeof compatibilityRelationshipOptions)[number]["value"];
+  CompatibilityRelationshipType;
 
 type AnnualFortuneInputState = {
   readonly name: string;
@@ -299,7 +309,7 @@ const annualFocusAreaOptions = [
   "공부",
   "가족",
   "생활 리듬",
-] as const;
+] as const satisfies readonly FocusArea[];
 
 function createCompatibilityPersonInputState(): CompatibilityPersonInputState {
   return {
@@ -443,6 +453,94 @@ function toggleAnnualFocusArea(
   return focusAreas.includes(value)
     ? focusAreas.filter((item) => item !== value)
     : [...focusAreas, value];
+}
+
+function isFocusArea(value: string): value is FocusArea {
+  return annualFocusAreaOptions.includes(value as FocusArea);
+}
+
+function createReportPersonInputPayload(
+  input: CompatibilityPersonInputState | AnnualFortuneInputState,
+): ReportPersonInputPayload {
+  return {
+    name: input.name.trim(),
+    birthDate: input.birthDate.trim(),
+    birthTime: input.birthTimeUnknown ? "" : input.birthTime.trim(),
+    birthTimeUnknown: input.birthTimeUnknown,
+    approximateBirthTimeSlot: input.birthTimeUnknown ? "" : input.timeBranch,
+    gender: input.gender as ReportPersonInputPayload["gender"],
+    mbtiType: input.mbtiType as ReportPersonInputPayload["mbtiType"],
+  };
+}
+
+function createSingleProductOptions(
+  productKey: string,
+  input: AnnualFortuneInputState,
+): SinglePersonReportInputPayload["productOptions"] {
+  if (productKey === ANNUAL_FORTUNE_PRODUCT_KEY) {
+    return {
+      selectedYear: input.selectedYear.trim(),
+    };
+  }
+
+  return {};
+}
+
+function buildSinglePersonReportInputPayload(
+  product: SelectedReportProduct,
+  input: AnnualFortuneInputState,
+): SinglePersonReportInputPayload {
+  return {
+    productKey: product.productKey as SinglePersonReportInputPayload["productKey"],
+    productSlug: product.slug as SinglePersonReportInputPayload["productSlug"],
+    person: createReportPersonInputPayload(input),
+    userContext: {
+      relationshipStatus: input.relationshipStatus as RelationshipStatus,
+      jobStatus: input.jobStatus as JobStatus,
+      detailJob: input.detailedJob.trim(),
+      focusAreas: input.focusAreas.filter(isFocusArea),
+    },
+    productOptions: createSingleProductOptions(product.productKey, input),
+  };
+}
+
+function buildCompatibilityReportInputPayload(input: {
+  readonly relationshipType: CompatibilityRelationshipTypeSelection;
+  readonly personA: CompatibilityPersonInputState;
+  readonly personB: CompatibilityPersonInputState;
+}): CompatibilityReportInputPayload {
+  return {
+    productKey: COMPATIBILITY_PRODUCT_KEY,
+    productSlug: COMPATIBILITY_PRODUCT_SLUG,
+    relationshipType: input.relationshipType,
+    personA: createReportPersonInputPayload(input.personA),
+    personB: createReportPersonInputPayload(input.personB),
+  };
+}
+
+function buildReportInputPayload(input: {
+  readonly selectedProduct: SelectedReportProduct;
+  readonly singleProductInput: AnnualFortuneInputState;
+  readonly compatibilityPersonA: CompatibilityPersonInputState;
+  readonly compatibilityPersonB: CompatibilityPersonInputState;
+  readonly compatibilityRelationshipType: CompatibilityRelationshipTypeSelection;
+}): ReportInputPayload | null {
+  if (isSinglePersonPreviewProduct(input.selectedProduct.productKey)) {
+    return buildSinglePersonReportInputPayload(
+      input.selectedProduct,
+      input.singleProductInput,
+    );
+  }
+
+  if (input.selectedProduct.productKey === COMPATIBILITY_PRODUCT_KEY) {
+    return buildCompatibilityReportInputPayload({
+      relationshipType: input.compatibilityRelationshipType,
+      personA: input.compatibilityPersonA,
+      personB: input.compatibilityPersonB,
+    });
+  }
+
+  return null;
 }
 
 function isCompatibilityPersonRequiredInputComplete(
@@ -1151,6 +1249,16 @@ export default function NewReportPage({
   const annualFortuneCtaLabel = isAnnualFortuneInputReady
     ? "세운 리포트 미리보기 준비됨"
     : "필수 정보를 입력해 주세요";
+  function handlePreviewOnlySubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    buildReportInputPayload({
+      selectedProduct,
+      singleProductInput,
+      compatibilityPersonA,
+      compatibilityPersonB,
+      compatibilityRelationshipType,
+    });
+  }
 
   if (isSinglePersonPreviewProduct(selectedProduct.productKey)) {
     return (
@@ -1173,7 +1281,7 @@ export default function NewReportPage({
           </header>
 
           <form
-            onSubmit={(event) => event.preventDefault()}
+            onSubmit={handlePreviewOnlySubmit}
             className="grid gap-6"
           >
             <input type="hidden" name="timezone" value="Asia/Seoul" />
@@ -1404,7 +1512,7 @@ export default function NewReportPage({
           </header>
 
           <form
-            onSubmit={(event) => event.preventDefault()}
+            onSubmit={handlePreviewOnlySubmit}
             className="grid gap-6"
           >
             <input type="hidden" name="timezone" value="Asia/Seoul" />
@@ -1874,7 +1982,7 @@ export default function NewReportPage({
           </header>
 
           <form
-            onSubmit={(event) => event.preventDefault()}
+            onSubmit={handlePreviewOnlySubmit}
             className="grid gap-6"
           >
             <input type="hidden" name="timezone" value="Asia/Seoul" />
@@ -2372,10 +2480,7 @@ export default function NewReportPage({
             </p>
           </header>
 
-          <form
-            onSubmit={(event) => event.preventDefault()}
-            className="grid gap-6"
-          >
+          <form onSubmit={handlePreviewOnlySubmit} className="grid gap-6">
             <input type="hidden" name="timezone" value="Asia/Seoul" />
             <input type="hidden" name="calendarType" value="SOLAR" />
             <input
