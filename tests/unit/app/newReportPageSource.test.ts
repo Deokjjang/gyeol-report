@@ -131,7 +131,7 @@ describe("new report page source", () => {
     }
   });
 
-  it("keeps major fortune product selection as a non-payment skeleton", () => {
+  it("keeps major fortune product selection as a non-payment input branch", () => {
     const requiredMarkers = [
       "MAJOR_FORTUNE_PRODUCT_KEY",
       "major_fortune",
@@ -139,9 +139,10 @@ describe("new report page source", () => {
       "major-fortune",
       "MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT",
       "대운 리포트 입력",
-      "대운 리포트 입력 흐름 준비 중입니다.",
-      "현재 대운과 올해 세운의 교차",
-      "전용 흐름으로 연결될 예정입니다.",
+      "대운은 입력된 생년월일과 출생시간 기반의 10년 흐름을 보는 리포트입니다.",
+      "현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
+      "실제 생성/결제 연결은",
+      "준비 중입니다.",
       "/dev/major-fortune-preview?fixture=deokmin-current-major-fortune",
       "미리보기 입력 흐름",
       "준비 중 · 미리보기 가능",
@@ -150,11 +151,71 @@ describe("new report page source", () => {
       "return DEFAULT_SELECTED_REPORT_PRODUCT",
       "isSelectedProductPurchasable",
       "isPurchasable: false",
+      "selectedProduct.productKey === MAJOR_FORTUNE_PRODUCT_KEY",
+      "대운 리포트 미리보기 준비됨",
+      "필수 정보를 입력해 주세요",
     ];
 
     for (const marker of requiredMarkers) {
       expect(pageSource).toContain(marker);
     }
+  });
+
+  it("renders major fortune input branch with common solo-person fields and summary", () => {
+    const requiredMarkers = [
+      "MajorFortuneInputState",
+      "majorFortuneInput",
+      "setMajorFortuneInput",
+      "createMajorFortuneInputState",
+      "isMajorFortuneRequiredInputComplete",
+      "formatAnnualBirthTimeSummary",
+      "formatAnnualRelationshipStatus",
+      "formatAnnualJobStatus",
+      "toggleAnnualFocusArea",
+      "annualRelationshipStatusOptions",
+      "annualJobStatusOptions",
+      "annualDetailedJobOptions",
+      "annualFocusAreaOptions",
+      "공통 입력값",
+      "모든 단독 인물 리포트가 공유하는 기본 정보입니다.",
+      'name="name"',
+      'name="birthDate"',
+      'name="birthTime"',
+      'name="timeBranch"',
+      'name="birthTimeUnknown"',
+      'name="gender"',
+      'name="mbtiType"',
+      'name="relationshipStatus"',
+      'name="jobStatus"',
+      'name="detailedJob"',
+      'name="focusAreas"',
+      "현재 연애 상태",
+      "직업 상태",
+      "세부 직업",
+      "관심 영역",
+      "대운 리포트 기준",
+      "별도 추가 질문 없이 공통 입력값을 기준으로 10년 흐름",
+      "입력 확인 요약",
+      "기본 정보",
+      "현재 맥락",
+      "상품 정보",
+      "productKey:",
+      "productSlug:",
+      "대운 리포트 미리보기 준비됨",
+      "필수 정보를 입력해 주세요",
+      "현재 입력값으로 실제 리포트를 생성하지 않습니다.",
+      "실제 생성, 결제, 저장은 이후 단계에서 연결합니다.",
+      "/dev/major-fortune-preview?fixture=deokmin-current-major-fortune",
+      "event.preventDefault()",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+
+    expect(
+      pageSource.indexOf("selectedProduct.productKey === MAJOR_FORTUNE_PRODUCT_KEY"),
+    ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
   });
 
   it("keeps annual fortune product selection as a non-payment input branch", () => {

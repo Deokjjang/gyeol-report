@@ -128,7 +128,7 @@ const MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT = {
   fullNameKo: "대운 리포트",
   inputTitleKo: "대운 리포트 입력",
   introKo:
-    "대운 리포트 입력 흐름 준비 중입니다. 현재 대운과 올해 세운의 교차를 읽는 전용 흐름으로 연결될 예정입니다. 개발 미리보기: /dev/major-fortune-preview?fixture=deokmin-current-major-fortune&snapshot=latest",
+    "대운은 입력된 생년월일과 출생시간 기반의 10년 흐름을 보는 리포트입니다. 현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
   deliveryTypeKo: "미리보기 입력 흐름",
   statusLabelKo: "준비 중 · 미리보기 가능",
@@ -242,6 +242,12 @@ type AnnualFortuneInputState = {
   readonly selectedYear: string;
 };
 
+type MajorFortuneInputState = Omit<AnnualFortuneInputState, "selectedYear">;
+type FortuneBirthTimeSummaryInput = Pick<
+  AnnualFortuneInputState,
+  "birthTimeUnknown" | "birthTime" | "timeBranch"
+>;
+
 const annualRelationshipStatusOptions = [
   { value: "", labelKo: "미입력" },
   { value: "single", labelKo: "솔로" },
@@ -322,6 +328,22 @@ function createAnnualFortuneInputState(): AnnualFortuneInputState {
   };
 }
 
+function createMajorFortuneInputState(): MajorFortuneInputState {
+  return {
+    name: "",
+    birthDate: "",
+    birthTime: "",
+    timeBranch: "",
+    birthTimeUnknown: false,
+    gender: "",
+    mbtiType: "",
+    relationshipStatus: "",
+    jobStatus: "",
+    detailedJob: "",
+    focusAreas: [],
+  };
+}
+
 function getRepresentativeBirthTime(branch: TimeBranchValue): string {
   return (
     timeBranches.find((item) => item.value === branch)?.representativeTime ??
@@ -380,7 +402,9 @@ function formatCompatibilityBirthTimeSummary(
   return "미입력";
 }
 
-function formatAnnualBirthTimeSummary(input: AnnualFortuneInputState): string {
+function formatAnnualBirthTimeSummary(
+  input: FortuneBirthTimeSummaryInput,
+): string {
   if (input.birthTimeUnknown) {
     return "출생시간 모름";
   }
@@ -433,6 +457,12 @@ function isAnnualFortuneRequiredInputComplete(
     input.birthDate.trim().length > 0 &&
     input.selectedYear.trim().length > 0
   );
+}
+
+function isMajorFortuneRequiredInputComplete(
+  input: MajorFortuneInputState,
+): boolean {
+  return input.name.trim().length > 0 && input.birthDate.trim().length > 0;
 }
 
 function getSearchParamValue(
@@ -716,6 +746,8 @@ export default function NewReportPage({
     useState<CompatibilityPersonInputState>(createCompatibilityPersonInputState);
   const [compatibilityRelationshipType, setCompatibilityRelationshipType] =
     useState<CompatibilityRelationshipTypeSelection>("love");
+  const [majorFortuneInput, setMajorFortuneInput] =
+    useState<MajorFortuneInputState>(createMajorFortuneInputState);
   const [annualFortuneInput, setAnnualFortuneInput] =
     useState<AnnualFortuneInputState>(createAnnualFortuneInputState);
 
@@ -757,11 +789,487 @@ export default function NewReportPage({
   const compatibilityRelationshipLabel = formatCompatibilityRelationshipLabel(
     compatibilityRelationshipType,
   );
+  const isMajorFortuneInputReady =
+    isMajorFortuneRequiredInputComplete(majorFortuneInput);
+  const majorFortuneCtaLabel = isMajorFortuneInputReady
+    ? "대운 리포트 미리보기 준비됨"
+    : "필수 정보를 입력해 주세요";
   const isAnnualFortuneInputReady =
     isAnnualFortuneRequiredInputComplete(annualFortuneInput);
   const annualFortuneCtaLabel = isAnnualFortuneInputReady
     ? "세운 리포트 미리보기 준비됨"
     : "필수 정보를 입력해 주세요";
+
+  if (selectedProduct.productKey === MAJOR_FORTUNE_PRODUCT_KEY) {
+    return (
+      <main className="min-h-screen bg-[#171211] px-5 py-8 text-[#fffaf0] sm:px-8 lg:px-10">
+        <section className="mx-auto max-w-5xl space-y-8">
+          <header className="max-w-3xl space-y-4 animate-[gyeol-reveal_520ms_ease-out]">
+            <p className="text-sm font-bold tracking-[0.18em] text-[#c79a43]">
+              Gyeol Report
+            </p>
+            <h1 className="text-4xl font-bold tracking-normal text-[#fffaf0]">
+              대운 리포트 입력
+            </h1>
+            <p className="max-w-2xl text-base leading-8 text-[#cfc5b8]">
+              대운은 입력된 생년월일과 출생시간 기반의 10년 흐름을 보는
+              리포트입니다.
+            </p>
+            <p className="max-w-2xl rounded-lg border border-[#4a3434] bg-[#211817]/80 px-4 py-3 text-sm leading-6 text-[#cfc5b8]">
+              현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산
+              원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.
+              실제 생성/결제 연결은 준비 중입니다.
+            </p>
+          </header>
+
+          <form
+            onSubmit={(event) => event.preventDefault()}
+            className="grid gap-6"
+          >
+            <input type="hidden" name="timezone" value="Asia/Seoul" />
+            <input type="hidden" name="calendarType" value="SOLAR" />
+            <input
+              type="hidden"
+              name="productKey"
+              value={selectedProduct.productKey}
+            />
+            <input
+              type="hidden"
+              name="productSlug"
+              value={selectedProduct.slug}
+            />
+            <input
+              type="hidden"
+              name="productName"
+              value={selectedProduct.nameKo}
+            />
+
+            <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
+              <div className="space-y-2">
+                <p className="text-sm font-bold text-[#c79a43]">
+                  공통 입력값
+                </p>
+                <p className="text-sm leading-6 text-[#cfc5b8]">
+                  모든 단독 인물 리포트가 공유하는 기본 정보입니다.
+                </p>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="space-y-2">
+                  <label
+                    htmlFor="majorName"
+                    className="block text-sm font-medium text-neutral-200"
+                  >
+                    이름
+                  </label>
+                  <input
+                    id="majorName"
+                    name="name"
+                    type="text"
+                    value={majorFortuneInput.name}
+                    maxLength={20}
+                    placeholder="예: 덕민"
+                    onChange={(event) =>
+                      setMajorFortuneInput({
+                        ...majorFortuneInput,
+                        name: event.target.value,
+                      })
+                    }
+                    className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label
+                    htmlFor="majorBirthDate"
+                    className="block text-sm font-medium text-neutral-200"
+                  >
+                    생년월일
+                  </label>
+                  <input
+                    id="majorBirthDate"
+                    name="birthDate"
+                    type="date"
+                    value={majorFortuneInput.birthDate}
+                    style={{ colorScheme: "dark" }}
+                    onChange={(event) =>
+                      setMajorFortuneInput({
+                        ...majorFortuneInput,
+                        birthDate: event.target.value,
+                      })
+                    }
+                    className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label
+                    htmlFor="majorBirthTime"
+                    className="block text-sm font-medium text-neutral-200"
+                  >
+                    출생시간
+                  </label>
+                  <input
+                    id="majorBirthTime"
+                    name="birthTime"
+                    type="time"
+                    value={majorFortuneInput.birthTime}
+                    style={{ colorScheme: "dark" }}
+                    onChange={(event) =>
+                      setMajorFortuneInput({
+                        ...majorFortuneInput,
+                        birthTime: event.target.value,
+                        birthTimeUnknown: false,
+                      })
+                    }
+                    className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label
+                    htmlFor="majorTimeBranch"
+                    className="block text-sm font-medium text-neutral-200"
+                  >
+                    대략적인 시간대
+                  </label>
+                  <select
+                    id="majorTimeBranch"
+                    name="timeBranch"
+                    value={majorFortuneInput.timeBranch}
+                    onChange={(event) =>
+                      setMajorFortuneInput({
+                        ...majorFortuneInput,
+                        timeBranch: event.target.value as TimeBranchSelection,
+                        birthTimeUnknown: false,
+                      })
+                    }
+                    className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                  >
+                    <option value="">시간대를 선택해 주세요</option>
+                    {timeBranches.map((branch) => (
+                      <option key={branch.value} value={branch.value}>
+                        {branch.labelKo}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <label className="flex min-h-12 items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200">
+                  <input
+                    type="checkbox"
+                    name="birthTimeUnknown"
+                    checked={majorFortuneInput.birthTimeUnknown}
+                    onChange={(event) =>
+                      setMajorFortuneInput({
+                        ...majorFortuneInput,
+                        birthTimeUnknown: event.target.checked,
+                        birthTime: event.target.checked
+                          ? ""
+                          : majorFortuneInput.birthTime,
+                        timeBranch: event.target.checked
+                          ? ""
+                          : majorFortuneInput.timeBranch,
+                      })
+                    }
+                    className="h-4 w-4"
+                  />
+                  출생시간 모름
+                </label>
+
+                <div className="space-y-2">
+                  <label
+                    htmlFor="majorGender"
+                    className="block text-sm font-medium text-neutral-200"
+                  >
+                    성별
+                  </label>
+                  <select
+                    id="majorGender"
+                    name="gender"
+                    value={majorFortuneInput.gender}
+                    onChange={(event) =>
+                      setMajorFortuneInput({
+                        ...majorFortuneInput,
+                        gender: event.target.value,
+                      })
+                    }
+                    className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                  >
+                    <option value="">선택</option>
+                    <option value="MALE">남성</option>
+                    <option value="FEMALE">여성</option>
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <label
+                    htmlFor="majorMbtiType"
+                    className="block text-sm font-medium text-neutral-200"
+                  >
+                    MBTI
+                  </label>
+                  <select
+                    id="majorMbtiType"
+                    name="mbtiType"
+                    value={majorFortuneInput.mbtiType}
+                    onChange={(event) =>
+                      setMajorFortuneInput({
+                        ...majorFortuneInput,
+                        mbtiType: event.target.value,
+                      })
+                    }
+                    className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                  >
+                    <option value="">선택</option>
+                    {mbtiTypes.map((type) => (
+                      <option key={type} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <label
+                    htmlFor="majorRelationshipStatus"
+                    className="block text-sm font-medium text-neutral-200"
+                  >
+                    현재 연애 상태
+                  </label>
+                  <select
+                    id="majorRelationshipStatus"
+                    name="relationshipStatus"
+                    value={majorFortuneInput.relationshipStatus}
+                    onChange={(event) =>
+                      setMajorFortuneInput({
+                        ...majorFortuneInput,
+                        relationshipStatus: event.target.value,
+                      })
+                    }
+                    className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                  >
+                    {annualRelationshipStatusOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.labelKo}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <label
+                    htmlFor="majorJobStatus"
+                    className="block text-sm font-medium text-neutral-200"
+                  >
+                    직업 상태
+                  </label>
+                  <select
+                    id="majorJobStatus"
+                    name="jobStatus"
+                    value={majorFortuneInput.jobStatus}
+                    onChange={(event) =>
+                      setMajorFortuneInput({
+                        ...majorFortuneInput,
+                        jobStatus: event.target.value,
+                      })
+                    }
+                    className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
+                  >
+                    {annualJobStatusOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.labelKo}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="space-y-2 sm:col-span-2">
+                  <label
+                    htmlFor="majorDetailedJob"
+                    className="block text-sm font-medium text-neutral-200"
+                  >
+                    세부 직업
+                  </label>
+                  <input
+                    id="majorDetailedJob"
+                    name="detailedJob"
+                    type="text"
+                    value={majorFortuneInput.detailedJob}
+                    list="majorDetailedJobOptions"
+                    placeholder="예: 서비스 기획자"
+                    onChange={(event) =>
+                      setMajorFortuneInput({
+                        ...majorFortuneInput,
+                        detailedJob: event.target.value,
+                      })
+                    }
+                    className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
+                  />
+                  <datalist id="majorDetailedJobOptions">
+                    {annualDetailedJobOptions.map((option) => (
+                      <option key={option} value={option} />
+                    ))}
+                  </datalist>
+                  <p className="text-xs leading-5 text-neutral-500">
+                    예: 고등학생, 대학생, 개발자, 서비스 기획자, 디자이너,
+                    마케터, 변호사, 의사, 교사, 유튜버, 인플루언서,
+                    연예인, 자영업자, 기타 직접 입력
+                  </p>
+                </div>
+
+                <fieldset className="space-y-3 sm:col-span-2">
+                  <legend className="text-sm font-medium text-neutral-200">
+                    관심 영역
+                  </legend>
+                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                    {annualFocusAreaOptions.map((area) => (
+                      <label
+                        key={area}
+                        className="flex min-h-12 items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200"
+                      >
+                        <input
+                          type="checkbox"
+                          name="focusAreas"
+                          value={area}
+                          checked={majorFortuneInput.focusAreas.includes(area)}
+                          onChange={() =>
+                            setMajorFortuneInput({
+                              ...majorFortuneInput,
+                              focusAreas: toggleAnnualFocusArea(
+                                majorFortuneInput.focusAreas,
+                                area,
+                              ),
+                            })
+                          }
+                          className="h-4 w-4"
+                        />
+                        {area}
+                      </label>
+                    ))}
+                  </div>
+                  <p className="text-xs leading-5 text-neutral-500">
+                    선택 입력입니다. 직업, 돈, 연애, 관계, 건강관리, 공부,
+                    가족, 생활 리듬 중 관심 있는 영역만 고르세요.
+                  </p>
+                </fieldset>
+              </div>
+            </section>
+
+            <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
+              <div className="space-y-2">
+                <p className="text-sm font-bold text-[#c79a43]">
+                  대운 리포트 기준
+                </p>
+                <p className="text-sm leading-6 text-[#cfc5b8]">
+                  별도 추가 질문 없이 공통 입력값을 기준으로 10년 흐름
+                  리포트 입력 context를 준비합니다.
+                </p>
+                <p className="text-sm leading-6 text-[#92877b]">
+                  대운은 입력된 생년월일과 출생시간을 바탕으로 큰 흐름을
+                  읽고, 현재 맥락 정보는 해석을 현실 장면으로 바꾸는 데만
+                  사용합니다.
+                </p>
+              </div>
+              <button
+                type="button"
+                disabled
+                aria-disabled="true"
+                className="min-h-12 rounded-lg border border-[#c79a43]/40 bg-[#2c1e1f] px-5 py-3 text-sm font-bold text-[#c79a43]/80"
+              >
+                {majorFortuneCtaLabel}
+              </button>
+            </section>
+
+            <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
+              <div className="space-y-2">
+                <p className="text-sm font-bold text-[#c79a43]">
+                  입력 확인 요약
+                </p>
+                <p className="text-sm leading-6 text-[#cfc5b8]">
+                  실제 생성 전 단계이며, 현재 입력값이 어떤 대운 context로
+                  유지되는지 확인합니다.
+                </p>
+              </div>
+
+              <dl className="grid gap-3 text-sm lg:grid-cols-2">
+                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                  <dt className="font-semibold text-neutral-200">기본 정보</dt>
+                  <dd className="mt-2 space-y-1 text-neutral-400">
+                    <p>이름: {majorFortuneInput.name.trim() || "미입력"}</p>
+                    <p>생년월일: {majorFortuneInput.birthDate || "미입력"}</p>
+                    <p>
+                      출생시간: {formatAnnualBirthTimeSummary(majorFortuneInput)}
+                    </p>
+                    <p>성별: {formatGenderLabel(majorFortuneInput.gender)}</p>
+                    <p>MBTI: {majorFortuneInput.mbtiType || "미선택"}</p>
+                  </dd>
+                </div>
+
+                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                  <dt className="font-semibold text-neutral-200">현재 맥락</dt>
+                  <dd className="mt-2 space-y-1 text-neutral-400">
+                    <p>
+                      현재 연애 상태:{" "}
+                      {formatAnnualRelationshipStatus(
+                        majorFortuneInput.relationshipStatus,
+                      )}
+                    </p>
+                    <p>
+                      직업 상태:{" "}
+                      {formatAnnualJobStatus(majorFortuneInput.jobStatus)}
+                    </p>
+                    <p>
+                      세부 직업:{" "}
+                      {majorFortuneInput.detailedJob.trim() || "미입력"}
+                    </p>
+                    <p>
+                      관심 영역:{" "}
+                      {majorFortuneInput.focusAreas.length > 0
+                        ? majorFortuneInput.focusAreas.join(", ")
+                        : "미입력"}
+                    </p>
+                  </dd>
+                </div>
+
+                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4 lg:col-span-2">
+                  <dt className="font-semibold text-neutral-200">상품 정보</dt>
+                  <dd className="mt-2 space-y-1 text-neutral-400">
+                    <p>productKey: {selectedProduct.productKey}</p>
+                    <p>productSlug: {selectedProduct.slug}</p>
+                  </dd>
+                </div>
+              </dl>
+
+              <p
+                className={
+                  isMajorFortuneInputReady
+                    ? "rounded-lg border border-emerald-900/50 bg-emerald-950/20 p-4 text-sm font-semibold text-emerald-100"
+                    : "rounded-lg border border-amber-900/50 bg-amber-950/20 p-4 text-sm font-semibold text-amber-100"
+                }
+              >
+                {majorFortuneCtaLabel}
+              </p>
+            </section>
+
+            <aside className="space-y-3 rounded-lg border border-[#4a3434] bg-[#171211]/70 p-5 text-sm leading-6 text-[#cfc5b8]">
+              <p className="font-semibold text-[#fffaf0]">개발 미리보기</p>
+              <p>
+                현재 화면은 대운 전용 입력 흐름을 연결하기 위한 준비 화면입니다.
+                현재 입력값으로 실제 리포트를 생성하지 않습니다.
+              </p>
+              <p>
+                실제 생성, 결제, 저장은 이후 단계에서 연결합니다.
+              </p>
+              <p className="break-words text-[#c79a43]">
+                /dev/major-fortune-preview?fixture=deokmin-current-major-fortune&amp;snapshot=latest
+              </p>
+            </aside>
+          </form>
+        </section>
+      </main>
+    );
+  }
 
   if (selectedProduct.productKey === ANNUAL_FORTUNE_PRODUCT_KEY) {
     return (
