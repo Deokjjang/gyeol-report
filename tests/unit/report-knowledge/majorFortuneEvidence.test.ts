@@ -70,7 +70,26 @@ describe("majorFortuneEvidence", () => {
       pillars: fixture.person.pillars,
     });
     expect(evidence.mbtiBasis.type).toBe("ENTJ");
+    expect(evidence.mbtiBasis.titleKo).toBeTruthy();
+    expect(evidence.mbtiBasis.archetype).toBeTruthy();
+    expect(evidence.mbtiBasis.reportUseCase).toBe("daeunReport");
+    expect(evidence.mbtiBasis.coreTraits.length).toBeGreaterThan(0);
+    expect(evidence.mbtiBasis.stressPattern.length).toBeGreaterThan(0);
+    expect(evidence.mbtiBasis.decisionPattern.length).toBeGreaterThan(0);
+    expect(evidence.mbtiBasis.workPattern.length).toBeGreaterThan(0);
+    expect(evidence.mbtiBasis.relationshipPattern.length).toBeGreaterThan(0);
+    expect(evidence.mbtiBasis.growthPattern.length).toBeGreaterThan(0);
     expect(evidence.mbtiBasis.reportUseCases.join("\n")).toContain("10년 흐름");
+    expect(evidence.bridgeEvidence?.productKey).toBe("daeun");
+    expect(evidence.bridgeEvidence?.forbiddenAngles.join("\n")).toContain(
+      "10년 결과 보장",
+    );
+    expect(evidence.bridgeEvidence?.primaryEvidence.length).toBeGreaterThan(0);
+    expect(
+      evidence.bridgeEvidence?.primaryEvidence[0]?.evidence.myeongliEvidence.signals.some(
+        (signal) => signal.id === "daeun-annual-cross",
+      ),
+    ).toBe(true);
     expect(evidence.currentCycle.ganji).toBe("戊辰");
     expect(evidence.currentCycle.startYear).toBe(2026);
     expect(evidence.currentCycle.endYear).toBe(2035);
@@ -298,6 +317,26 @@ describe("majorFortuneEvidence", () => {
     );
     expect(marriedEvidence.relationshipStatusTranslationHints.join("\n")).toContain(
       "기혼",
+    );
+  });
+
+  it("keeps daeun bridge evidence safe for unknown MBTI", () => {
+    const fixture = requireMajorFortuneFixture("deokmin-current-major-fortune");
+    const evidence = buildMajorFortuneEvidence({
+      fixtureId: fixture.id,
+      currentYear: fixture.currentYear,
+      person: {
+        ...fixture.person,
+        mbti: "XXXX",
+      },
+    });
+
+    expect(evidence.mbtiBasis.type).toBeNull();
+    expect(evidence.mbtiBasis.reportUseCase).toBe("daeunReport");
+    expect(evidence.bridgeEvidence?.productKey).toBe("daeun");
+    expect(evidence.bridgeEvidence?.primaryEvidence).toHaveLength(0);
+    expect(evidence.bridgeEvidence?.forbiddenAngles.join("\n")).toContain(
+      "10년 결과 보장",
     );
   });
 

@@ -14,6 +14,17 @@ import {
 import {
   getMajorFortuneCycleForYear,
 } from "./majorFortuneRules";
+import {
+  buildMyeongliMbtiBridgePacket,
+  buildProductBridgeEvidence,
+  type MyeongliSignal,
+} from "./bridge";
+import {
+  getMbtiReportUseCase,
+  getMbtiSourceProfile,
+  getMbtiTraitArea,
+  type MbtiSourceTraitItem,
+} from "./mbti";
 import type {
   MajorFortuneCycleBasis,
   MajorFortuneCycle,
@@ -1614,25 +1625,126 @@ function getBranchTenGod(
   return getTenGodForStemPair(dayMaster, mainHiddenStem);
 }
 
+function traitToPlainText(trait: MbtiSourceTraitItem): string | null {
+  return (
+    trait.plainKo ??
+    trait.strongLine ??
+    trait.positiveUse ??
+    trait.risk ??
+    trait.label ??
+    null
+  );
+}
+
+function collectMbtiTraitTexts(
+  mbtiType: string,
+  areas: readonly string[],
+  limit: number,
+): readonly string[] {
+  return unique(
+    areas.flatMap((area) =>
+      (getMbtiTraitArea(mbtiType, area) ?? [])
+        .map(traitToPlainText)
+        .filter((text): text is string => text !== null && text.trim().length > 0),
+    ),
+  ).slice(0, limit);
+}
+
+function firstOrFallback(
+  values: readonly string[],
+  fallback: string,
+): string {
+  return values.find((value) => value.trim().length > 0) ?? fallback;
+}
+
 function buildMbtiBasis(
   mbtiType: string | null | undefined,
 ): MajorFortuneEvidencePacket["mbtiBasis"] {
-  const normalizedType =
-    typeof mbtiType === "string" && mbtiType.trim().length > 0
-      ? mbtiType.trim().toUpperCase()
-      : null;
+  const profile = getMbtiSourceProfile(mbtiType);
+
+  if (profile === null) {
+    return {
+      type: null,
+      titleKo: null,
+      archetype: null,
+      summary: "MBTI가 입력되지 않아 대운 해석은 명리 흐름 중심으로 구성합니다.",
+      coreTraits: [],
+      stressPattern:
+        "MBTI stress pattern은 입력된 유형이 있을 때만 보조 evidence로 사용합니다.",
+      decisionPattern:
+        "의사결정 방식은 대운의 명리 흐름과 현재 사용자 맥락을 중심으로 해석합니다.",
+      workPattern:
+        "일의 발현 방식은 대운 십성, 오행, 세운 교차를 중심으로 봅니다.",
+      relationshipPattern:
+        "관계 반응은 관계 상태를 단정하지 않고 생활 반경과 역할 조율 중심으로 봅니다.",
+      growthPattern:
+        "성장 방식은 10년 흐름의 반복 과제를 덜 소모적으로 쓰는 방향으로 봅니다.",
+      reportUseCase: "daeunReport",
+      reportUseCases: [
+        "대운의 10년 흐름이 행동 방식으로 드러나는 장면을 보조합니다.",
+        "명리 근거와 같은 원인으로 단정하지 않고 표현 방식의 보조 evidence로만 씁니다.",
+      ],
+    };
+  }
+
+  const reportUseCases = getMbtiReportUseCase(profile.type, "daeunReport") ?? [];
+  const daeunReportUseCases = unique([
+    ...reportUseCases,
+    "대운의 10년 흐름이 행동 방식으로 드러나는 장면을 보조합니다.",
+    "직업, 돈, 관계, 공부 흐름에서 선택 속도와 압박 반응을 해석할 때 사용합니다.",
+    "명리 근거와 같은 원인으로 단정하지 않고 표현 방식의 보조 evidence로만 씁니다.",
+  ]);
+  const coreTraits = unique([
+    profile.oneLine,
+    ...reportUseCases,
+    ...collectMbtiTraitTexts(profile.type, ["career", "money", "growth"], 4),
+  ]).slice(0, 6);
+  const decisionTraits = collectMbtiTraitTexts(
+    profile.type,
+    ["thinkingStyle", "growth", "investment"],
+    3,
+  );
+  const workTraits = collectMbtiTraitTexts(
+    profile.type,
+    ["career", "workplace", "money"],
+    3,
+  );
+  const relationshipTraits = collectMbtiTraitTexts(
+    profile.type,
+    ["relationships", "communication"],
+    3,
+  );
+  const riskTraits = collectMbtiTraitTexts(profile.type, ["risks"], 3);
+  const growthTraits = collectMbtiTraitTexts(profile.type, ["growth"], 3);
 
   return {
-    type: normalizedType,
-    summary:
-      normalizedType === null
-        ? "MBTI가 입력되지 않아 대운 해석은 명리 흐름 중심으로 구성합니다."
-        : `${normalizedType} 성향은 대운의 10년 배경이 실제 판단, 실행 속도, 관계 조율 방식으로 드러나는 방식을 보조합니다.`,
-    reportUseCases: [
-      "대운의 10년 흐름이 행동 방식으로 드러나는 장면을 보조합니다.",
-      "직업, 돈, 관계, 공부 흐름에서 선택 속도와 압박 반응을 해석할 때 사용합니다.",
-      "명리 근거와 같은 원인으로 단정하지 않고 표현 방식의 보조 evidence로만 씁니다.",
-    ],
+    type: profile.type,
+    titleKo: profile.titleKo,
+    archetype: profile.archetype,
+    summary: `${profile.type} · ${profile.titleKo}: ${profile.oneLine}`,
+    coreTraits,
+    stressPattern: firstOrFallback(
+      riskTraits,
+      `${profile.type} 성향은 압박이 커질수록 결정, 기준, 속도 문제로 스트레스를 드러낼 수 있습니다.`,
+    ),
+    decisionPattern: firstOrFallback(
+      decisionTraits,
+      `${profile.type} 성향은 대운의 장기 흐름을 판단 기준과 실행 우선순위로 번역합니다.`,
+    ),
+    workPattern: firstOrFallback(
+      workTraits,
+      `${profile.type} 성향은 직업·돈 흐름에서 목표, 기준, 실행 구조를 먼저 세우는 방식으로 나타납니다.`,
+    ),
+    relationshipPattern: firstOrFallback(
+      relationshipTraits,
+      `${profile.type} 성향은 관계에서 감정보다 기준, 일정, 역할 조율 방식으로 드러날 수 있습니다.`,
+    ),
+    growthPattern: firstOrFallback(
+      growthTraits,
+      `${profile.type} 성향은 10년 흐름을 자기 기준과 성장 과제로 재정렬할 때 안정됩니다.`,
+    ),
+    reportUseCase: "daeunReport",
+    reportUseCases: daeunReportUseCases,
   };
 }
 
@@ -1882,6 +1994,93 @@ function buildActionGuides(input: {
       timingHint: input.currentAnnualCross.interpretation,
     },
   ].slice(0, 6);
+}
+
+function buildDaeunBridgeSignals(input: {
+  readonly currentMajorFortune: MajorFortuneEvidencePacket["currentMajorFortune"];
+  readonly currentAnnualCross: MajorFortuneEvidencePacket["currentAnnualCross"];
+  readonly domainFlows: MajorFortuneEvidencePacket["domainFlows"];
+  readonly elementEffect: MajorFortuneEvidencePacket["elementEffect"];
+  readonly branchInteractions: MajorFortuneEvidencePacket["branchInteractions"];
+}): readonly MyeongliSignal[] {
+  const cycle = input.currentMajorFortune;
+  const elementSignals: MyeongliSignal[] = cycle.elementFocus.map((element) => ({
+    id: `daeun-element-${element}`,
+    kind: "element",
+    label: `${elementKo[element]} 대운 흐름`,
+    value: element,
+    evidence: input.elementEffect.plain,
+    weight: 2,
+  }));
+  const interactionSignals: MyeongliSignal[] = input.branchInteractions.map(
+    (interaction, index) => ({
+      id: `daeun-interaction-${index}`,
+      kind: "interaction",
+      label: `${interaction.type} 작용`,
+      value: interaction.branches.join(""),
+      evidence: interaction.plain,
+      weight: ["충", "형", "파", "해"].includes(interaction.type) ? 3 : 2,
+    }),
+  );
+  const domainSignals: MyeongliSignal[] = Object.entries(input.domainFlows).map(
+    ([key, flow]) => ({
+      id: `daeun-domain-${key}`,
+      kind: "fortuneCycle",
+      label: flow.title,
+      value: key,
+      evidence: [flow.summary, flow.actionHint].join(" "),
+      weight: 1,
+    }),
+  );
+
+  return [
+    {
+      id: "daeun-current-cycle",
+      kind: "fortuneCycle",
+      label: "현재 대운",
+      value: cycle.ganji,
+      evidence: cycle.interpretation,
+      weight: 3,
+    },
+    {
+      id: "daeun-cycle-stem",
+      kind: "pillar",
+      label: "대운 천간",
+      value: cycle.stem,
+      evidence: `${cycle.ganji} 대운의 천간 ${cycle.stem}은 ${cycle.stemTenGod}으로 작용합니다.`,
+      weight: 2,
+    },
+    {
+      id: "daeun-cycle-branch",
+      kind: "pillar",
+      label: "대운 지지",
+      value: cycle.branch,
+      evidence: `${cycle.ganji} 대운의 지지 ${cycle.branch}는 ${cycle.branchTenGod}의 현실 장면을 품습니다.`,
+      weight: 2,
+    },
+    {
+      id: "daeun-cycle-ten-god",
+      kind: "tenGod",
+      label: cycle.stemTenGod,
+      value: cycle.stemTenGod,
+      evidence: cycle.supportSignals.join(" "),
+      weight: 3,
+    },
+    {
+      id: "daeun-annual-cross",
+      kind: "fortuneCycle",
+      label: "올해 세운 교차",
+      value: input.currentAnnualCross.annualGanji,
+      evidence: [
+        input.currentAnnualCross.annualFocus,
+        input.currentAnnualCross.caution,
+      ].join(" "),
+      weight: 3,
+    },
+    ...elementSignals,
+    ...interactionSignals,
+    ...domainSignals,
+  ];
 }
 
 function buildCalculationBasis(
@@ -2211,6 +2410,18 @@ export function buildMajorFortuneEvidence(input: {
     strategicThemes,
     currentAnnualCross,
   });
+  const bridgePacket = buildMyeongliMbtiBridgePacket({
+    mbtiType: input.person.mbti,
+    productContext: "daeun",
+    myeongliSignals: buildDaeunBridgeSignals({
+      currentMajorFortune,
+      currentAnnualCross,
+      domainFlows,
+      elementEffect,
+      branchInteractions,
+    }),
+  });
+  const bridgeEvidence = buildProductBridgeEvidence(bridgePacket, "daeun");
 
   return {
     productType: "major_fortune",
@@ -2237,6 +2448,7 @@ export function buildMajorFortuneEvidence(input: {
       natalLabels: input.person.labels,
     },
     mbtiBasis: buildMbtiBasis(input.person.mbti),
+    bridgeEvidence,
     userPillars: input.person.pillars,
     natalLabels: input.person.labels,
     currentCycle: cycleAccess.currentCycle,

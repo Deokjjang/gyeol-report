@@ -42,6 +42,35 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("대운은 특정 사건 예언이 아니라 10년짜리 구조와 반복 패턴");
   });
 
+  it("passes launch evidence, MBTI basis, and bridgeEvidence into the prompt", () => {
+    const text = promptText();
+
+    expect(text).toContain("currentMajorFortune");
+    expect(text).toContain("tenYearFlowSummary");
+    expect(text).toContain("currentAnnualCross");
+    expect(text).toContain("domainFlows");
+    expect(text).toContain("riskPatterns");
+    expect(text).toContain("actionGuides");
+    expect(text).toContain("mbtiBasis");
+    expect(text).toContain("bridgeEvidence");
+    expect(text).toContain('"productKey": "daeun"');
+    expect(text).toContain('"reportUseCase": "daeunReport"');
+    expect(text).toContain("10년 결과 보장");
+  });
+
+  it("prioritizes 대운 contract fields and treats MBTI as supporting evidence", () => {
+    const text = promptText();
+
+    expect(text).toContain("Evidence priority for this launch contract");
+    expect(text).toContain("currentMajorFortune");
+    expect(text).toContain("currentAnnualCross");
+    expect(text).toContain("올해 세운은 현재 대운 위에 올라오는 단기 자극");
+    expect(text).toContain("MBTI는 명리 흐름의 원인이 아니다");
+    expect(text).toContain("행동 발현 방식");
+    expect(text).toContain("Use bridgeEvidence.productKey === daeun as support only");
+    expect(text).toContain("Never turn bridgeEvidence.forbiddenAngles into claims");
+  });
+
   it("requires phase timeline and strong years explanation", () => {
     const text = promptText();
 
@@ -213,5 +242,17 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("evidence, debug, fixture, precomputed, or schema");
     expect(text).toContain("이 리포트는 대운의 10년 배경과 반복 패턴을 해석한 것이며");
     expect(text).toContain("건강 관련 문장은 생활 리듬과 자기관리 관점");
+  });
+
+  it("forbids deterministic daeun claims in writer policy", () => {
+    const text = promptText();
+
+    expect(text).toContain("Forbidden daeun claims");
+    expect(text).toContain("특정 사건/날짜 예언 금지");
+    expect(text).toContain("질병·사고·사망 예언 금지");
+    expect(text).toContain("투자 수익 보장 금지");
+    expect(text).toContain("합격·승진·이직 확정 금지");
+    expect(text).toContain("결혼·이혼 확정 금지");
+    expect(text).toContain("공포 조장 금지");
   });
 });

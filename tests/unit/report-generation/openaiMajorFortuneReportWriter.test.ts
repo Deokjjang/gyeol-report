@@ -503,6 +503,11 @@ describe("openaiMajorFortuneReportWriter", () => {
     expect(requestText).toContain('"schema"');
     expect(requestText).toContain("major_fortune");
     expect(requestText).toContain("lifeAreaSignals");
+    expect(requestText).toContain("currentMajorFortune");
+    expect(requestText).toContain("currentAnnualCross");
+    expect(requestText).toContain("domainFlows");
+    expect(requestText).toContain("bridgeEvidence");
+    expect(requestText).toContain("mbtiBasis");
     expect(requestText).not.toContain("sk-test");
   });
 
@@ -536,6 +541,10 @@ describe("openaiMajorFortuneReportWriter", () => {
     expect(promptText).toContain("10-year background");
     expect(promptText).toContain(packet.currentCycle.ganji);
     expect(promptText).toContain(packet.majorTenGod.stemTenGod);
+    expect(promptText).toContain(packet.currentMajorFortune.ganji);
+    expect(promptText).toContain(packet.currentAnnualCross.annualGanji);
+    expect(promptText).toContain('"productKey": "daeun"');
+    expect(promptText).toContain("MBTI는 명리 흐름의 원인이 아니다");
   });
 
   it("exposes safe diagnostics without leaking the API key", async () => {

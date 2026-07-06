@@ -88,7 +88,16 @@ export interface MajorFortuneEvidencePacket {
   };
   readonly mbtiBasis: {
     readonly type: string | null;
+    readonly titleKo: string | null;
+    readonly archetype: string | null;
     readonly summary: string;
+    readonly coreTraits: readonly string[];
+    readonly stressPattern: string;
+    readonly decisionPattern: string;
+    readonly workPattern: string;
+    readonly relationshipPattern: string;
+    readonly growthPattern: string;
+    readonly reportUseCase: "daeunReport";
     readonly reportUseCases: readonly string[];
   };
   readonly bridgeEvidence?: ProductBridgeEvidencePacket;
