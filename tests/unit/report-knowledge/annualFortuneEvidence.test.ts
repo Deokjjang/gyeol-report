@@ -177,7 +177,11 @@ describe("annualFortuneEvidence", () => {
       type: "ENTJ",
       reportUseCase: "saeunReport",
     });
+    expect(packet.mbtiBasis.workPattern.length).toBeGreaterThan(0);
     expect(packet.bridgeEvidence?.productKey).toBe("saeun");
+    expect(packet.bridgeEvidence?.forbiddenAngles).toEqual(
+      expect.arrayContaining(["정확한 날짜 예언", "월별 사건 확정"]),
+    );
     expect(packet.monthlyFortuneSeeds[0]).toMatchObject({
       month: 1,
       label: "1월",
@@ -232,6 +236,13 @@ describe("annualFortuneEvidence", () => {
       majorGanji: "戊辰",
       annualGanji: "丙午",
     });
+    expect(JSON.stringify(packet.bridgeEvidence)).toContain(
+      "saeun-current-major-fortune",
+    );
+    expect(JSON.stringify(packet.bridgeEvidence)).toContain(
+      "saeun-major-annual-cross",
+    );
+    expect(JSON.stringify(packet.bridgeEvidence)).toContain("saeun-month-12");
   });
 
   it("builds context translation hints by life status", () => {

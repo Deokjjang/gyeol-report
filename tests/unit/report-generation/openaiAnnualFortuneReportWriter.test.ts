@@ -204,6 +204,12 @@ describe("openaiAnnualFortuneReportWriter", () => {
     expect(requestText).toContain('"schema"');
     expect(requestText).toContain("annual_fortune");
     expect(requestText).toContain("lifeAreaSignals");
+    expect(requestText).toContain("yearAccessPolicy");
+    expect(requestText).toContain("annualFortune");
+    expect(requestText).toContain("monthlyFortunes");
+    expect(requestText).toContain("domainFlows");
+    expect(requestText).toContain("bridgeEvidence");
+    expect(requestText).toContain("saeun");
     expect(requestText).not.toContain("sk-test");
   });
 

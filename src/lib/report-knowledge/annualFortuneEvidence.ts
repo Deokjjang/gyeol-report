@@ -85,6 +85,7 @@ export interface AnnualFortuneEvidencePacket {
     readonly coreTraits: readonly string[];
     readonly stressPattern: string;
     readonly decisionPattern: string;
+    readonly workPattern: string;
     readonly relationshipPattern: string;
     readonly growthPattern: string;
     readonly reportUseCase: "saeunReport";
@@ -581,6 +582,7 @@ function buildMbtiBasis(
       coreTraits: [],
       stressPattern: "입력된 MBTI 기준 스트레스 패턴 없음",
       decisionPattern: "입력된 MBTI 기준 의사결정 패턴 없음",
+      workPattern: "입력된 MBTI 기준 일 처리 패턴 없음",
       relationshipPattern: "입력된 MBTI 기준 관계 반응 패턴 없음",
       growthPattern: "입력된 MBTI 기준 성장 패턴 없음",
       reportUseCase: "saeunReport",
@@ -613,6 +615,14 @@ function buildMbtiBasis(
       profile.traits?.thinkingStyle?.map(traitToPlainText).find(
         (value): value is string => value !== null,
       ) ?? "선택 연도의 흐름을 판단과 실행 방식으로 드러냅니다.",
+    workPattern:
+      [
+        ...(profile.traits?.workplace ?? []),
+        ...(profile.traits?.career ?? []),
+      ]
+        .map(traitToPlainText)
+        .find((value): value is string => value !== null) ??
+      "선택 연도의 흐름을 일 처리 속도와 역할 조율 방식으로 드러냅니다.",
     relationshipPattern:
       profile.traits?.relationships?.map(traitToPlainText).find(
         (value): value is string => value !== null,
@@ -930,6 +940,8 @@ function buildActionGuides(input: {
 
 function buildSaeunBridgeSignals(input: {
   readonly annualFortune: AnnualFortuneEvidencePacket["annualFortune"];
+  readonly currentMajorFortune: AnnualFortuneEvidencePacket["currentMajorFortune"];
+  readonly majorAnnualCross: AnnualFortuneEvidencePacket["majorAnnualCross"];
   readonly natalAnnualRelations: AnnualFortuneEvidencePacket["natalAnnualRelations"];
   readonly domainFlows: AnnualFortuneEvidencePacket["domainFlows"];
   readonly monthlyFortunes: AnnualFortuneEvidencePacket["monthlyFortunes"];
@@ -953,6 +965,48 @@ function buildSaeunBridgeSignals(input: {
       evidence: interaction.plain,
       weight: ["충", "형", "파", "해"].includes(interaction.type) ? 3 : 2,
     }));
+  const majorSignals: MyeongliSignal[] =
+    input.currentMajorFortune === null
+      ? []
+      : [
+          {
+            id: "saeun-current-major-fortune",
+            kind: "fortuneCycle",
+            label: "현재 대운 배경",
+            value: input.currentMajorFortune.ganji,
+            evidence: input.currentMajorFortune.keyTheme,
+            weight: 2,
+          },
+          {
+            id: "saeun-current-major-ten-god",
+            kind: "tenGod",
+            label: `${input.currentMajorFortune.stemTenGod} 대운`,
+            value: input.currentMajorFortune.stemTenGod,
+            evidence: input.currentMajorFortune.ageRange,
+            weight: 2,
+          },
+        ];
+  const crossSignals: MyeongliSignal[] =
+    input.majorAnnualCross === null
+      ? []
+      : [
+          {
+            id: "saeun-major-annual-cross",
+            kind: "fortuneCycle",
+            label: "대운·세운 교차",
+            value: `${input.majorAnnualCross.majorGanji}-${input.majorAnnualCross.annualGanji}`,
+            evidence: input.majorAnnualCross.interpretation,
+            weight: 3,
+          },
+          {
+            id: "saeun-major-annual-ten-god-cross",
+            kind: "tenGod",
+            label: "대운·세운 십성 교차",
+            value: input.majorAnnualCross.majorTenGodToAnnualTenGod,
+            evidence: input.majorAnnualCross.caution,
+            weight: 2,
+          },
+        ];
   const domainSignals: MyeongliSignal[] = Object.entries(input.domainFlows).map(
     ([key, flow]) => ({
       id: `saeun-domain-${key}`,
@@ -964,7 +1018,6 @@ function buildSaeunBridgeSignals(input: {
     }),
   );
   const monthlySignals: MyeongliSignal[] = input.monthlyFortunes
-    .slice(0, 3)
     .map((month) => ({
       id: `saeun-month-${month.month}`,
       kind: "fortuneCycle",
@@ -991,7 +1044,17 @@ function buildSaeunBridgeSignals(input: {
       evidence: input.annualFortune.yearTheme,
       weight: 3,
     },
+    {
+      id: "saeun-annual-branch-ten-god",
+      kind: "tenGod",
+      label: `${input.annualFortune.branchTenGod} 세운 지지`,
+      value: input.annualFortune.branchTenGod,
+      evidence: input.annualFortune.caution,
+      weight: 2,
+    },
     ...elementSignals,
+    ...majorSignals,
+    ...crossSignals,
     ...interactionSignals,
     ...domainSignals,
     ...monthlySignals,
@@ -1419,6 +1482,8 @@ export function buildAnnualFortuneEvidence(input: {
     productContext: "saeun",
     myeongliSignals: buildSaeunBridgeSignals({
       annualFortune,
+      currentMajorFortune,
+      majorAnnualCross,
       natalAnnualRelations,
       domainFlows,
       monthlyFortunes,

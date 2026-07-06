@@ -115,6 +115,40 @@ describe("openaiAnnualFortuneReportWriterPrompt", () => {
     expect(prompt).toContain("연락");
   });
 
+  it("passes launch contract evidence into the prompt packet", () => {
+    const prompt = buildMessagesText();
+
+    expect(prompt).toContain('"selectedYear": 2026');
+    expect(prompt).toContain('"yearAccessPolicy"');
+    expect(prompt).toContain('"annualFortune"');
+    expect(prompt).toContain('"currentMajorFortune"');
+    expect(prompt).toContain('"majorAnnualCross"');
+    expect(prompt).toContain('"natalAnnualRelations"');
+    expect(prompt).toContain('"monthlyFortunes"');
+    expect(prompt).toContain('"domainFlows"');
+    expect(prompt).toContain('"mbtiBasis"');
+    expect(prompt).toContain('"workPattern"');
+    expect(prompt).toContain('"bridgeEvidence"');
+    expect(prompt).toContain('"productKey": "saeun"');
+    expect(prompt).toContain('"forbiddenAngles"');
+  });
+
+  it("states saeun launch policies for annual, major cross, monthly, and MBTI usage", () => {
+    const prompt = buildMessagesText();
+
+    expect(prompt).toContain("Evidence priority for this launch contract");
+    expect(prompt).toContain("세운은 선택 연도 1년 흐름이 중심");
+    expect(prompt).toContain("현재 대운은 그 해가 놓인 10년 배경");
+    expect(prompt).toContain("majorAnnualCross가 있으면 대운·세운 교차");
+    expect(prompt).toContain("monthlyFortunes must contain 12 months");
+    expect(prompt).toContain("상반기/하반기 흐름 또는 핵심 월별 장면");
+    expect(prompt).toContain("MBTI is not the cause of the annual fortune");
+    expect(prompt).toContain("Use bridgeEvidence.productKey === saeun");
+    expect(prompt).toContain("과거 5년과 올해는 기본 조회 가능");
+    expect(prompt).toContain("매년 12월 1일부터 다음 해 신년사주");
+    expect(prompt).toContain("userContext는 계산 원인이 아니라");
+  });
+
   it("prevents final polish regressions in hero, monthly wording, and finalAdvice", () => {
     const prompt = buildMessagesText();
 
@@ -147,6 +181,9 @@ describe("openaiAnnualFortuneReportWriterPrompt", () => {
     expect(prompt).toContain("Do not guarantee outcomes");
     expect(prompt).toContain("반드시");
     expect(prompt).toContain("무조건");
+    expect(prompt).toContain("특정 사건/날짜 예언");
+    expect(prompt).toContain("투자 수익 보장");
+    expect(prompt).toContain("질병/사고/사망 예언");
     expect(prompt).toContain("합격합니다");
     expect(prompt).toContain("돈을 법니다");
     expect(prompt).toContain("올해는 책임이 커질 수 있습니다.");
