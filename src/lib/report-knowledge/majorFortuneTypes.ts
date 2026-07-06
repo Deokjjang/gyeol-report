@@ -5,6 +5,7 @@ import type {
   TenGod,
   YinYang,
 } from "./annualFortuneTypes";
+import type { ProductBridgeEvidencePacket } from "./bridge/types";
 import type { UserContextProfile } from "./userContextTypes";
 
 export type MajorFortuneCycleBasis =
@@ -50,14 +51,47 @@ export interface MajorFortuneSignal {
   readonly plain: string;
 }
 
+export type MajorFortuneDomainFlowKey =
+  | "careerWork"
+  | "moneyResource"
+  | "relationshipLove"
+  | "healthRoutine"
+  | "socialFamily"
+  | "studyGrowth";
+
 export interface MajorFortuneEvidencePacket {
   readonly productType: "major_fortune";
   readonly productVersion: "v1";
   readonly personLabel: string;
+  readonly personContext: {
+    readonly name: string;
+    readonly birthDate?: string;
+    readonly gender?: string;
+    readonly mbtiType?: string | null;
+    readonly currentYear: number;
+    readonly currentAge: number;
+    readonly userContext: UserContextProfile;
+  };
   readonly userContext: UserContextProfile;
   readonly currentYear: number;
   readonly currentAge: number;
   readonly dayMaster: HeavenlyStem;
+  readonly baseSaju: {
+    readonly dayMaster: HeavenlyStem;
+    readonly pillars: {
+      readonly year: string;
+      readonly month: string;
+      readonly day: string;
+      readonly hour?: string;
+    };
+    readonly natalLabels: readonly string[];
+  };
+  readonly mbtiBasis: {
+    readonly type: string | null;
+    readonly summary: string;
+    readonly reportUseCases: readonly string[];
+  };
+  readonly bridgeEvidence?: ProductBridgeEvidencePacket;
   readonly userPillars: {
     readonly year: string;
     readonly month: string;
@@ -86,6 +120,74 @@ export interface MajorFortuneEvidencePacket {
     readonly ageBasisLabel: string;
     readonly note: string;
   };
+  readonly currentMajorFortune: {
+    readonly cycleIndex: number;
+    readonly ageRange: string;
+    readonly yearRange: string;
+    readonly ganji: string;
+    readonly stem: HeavenlyStem;
+    readonly branch: EarthlyBranch;
+    readonly stemTenGod: TenGod;
+    readonly branchTenGod: TenGod;
+    readonly elementFocus: readonly FiveElement[];
+    readonly keyTheme: string;
+    readonly supportSignals: readonly string[];
+    readonly frictionSignals: readonly string[];
+    readonly interpretation: string;
+  };
+  readonly majorFortuneTimeline: readonly {
+    readonly cycleIndex: number;
+    readonly ageRange: string;
+    readonly yearRange: string;
+    readonly ganji: string;
+    readonly stem: HeavenlyStem;
+    readonly branch: EarthlyBranch;
+    readonly stemTenGod: TenGod;
+    readonly branchTenGod: TenGod;
+    readonly elementFocus: readonly FiveElement[];
+    readonly isCurrent: boolean;
+    readonly supportSignals: readonly string[];
+    readonly cautionSignals: readonly string[];
+    readonly shortInterpretation: string;
+  }[];
+  readonly currentAnnualCross: {
+    readonly selectedYear: number;
+    readonly annualGanji: string;
+    readonly annualStemTenGod: TenGod;
+    readonly annualBranchTenGod: TenGod;
+    readonly cycleToAnnualRelation: string;
+    readonly natalToAnnualRelation: string;
+    readonly annualFocus: string;
+    readonly interpretation: string;
+    readonly caution: string;
+  };
+  readonly tenYearFlowSummary: {
+    readonly headline: string;
+    readonly summary: string;
+    readonly keySignals: readonly string[];
+  };
+  readonly domainFlows: Record<
+    MajorFortuneDomainFlowKey,
+    {
+      readonly title: string;
+      readonly summary: string;
+      readonly supportingSignals: readonly string[];
+      readonly frictionSignals: readonly string[];
+      readonly actionHint: string;
+    }
+  >;
+  readonly riskPatterns: readonly {
+    readonly title: string;
+    readonly summary: string;
+    readonly evidence: readonly string[];
+    readonly prevention: string;
+  }[];
+  readonly actionGuides: readonly {
+    readonly title: string;
+    readonly action: string;
+    readonly timingHint: string;
+  }[];
+  readonly safetyNotes: readonly string[];
   readonly majorTenGod: {
     readonly stemTenGod: TenGod;
     readonly plain: string;

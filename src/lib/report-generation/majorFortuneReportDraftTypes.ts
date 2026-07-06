@@ -15,11 +15,20 @@ export type MajorFortuneKeySignalType =
 
 export type MajorFortunePhase = "early" | "middle" | "late";
 
+export interface MajorFortuneDraftFlowSection {
+  readonly title: string;
+  readonly summary: string;
+  readonly supportingSignals: readonly string[];
+  readonly frictionSignals: readonly string[];
+  readonly actionHint: string;
+}
+
 export interface MajorFortuneReportDraft {
   readonly version: "v1";
   readonly productType: "major_fortune";
   readonly productVersion: "v1";
   readonly personLabel: string;
+  readonly headline?: string;
   readonly openingTitle: string;
   readonly openingSummary: string;
   readonly coreLine: string;
@@ -212,6 +221,17 @@ export interface MajorFortuneReportDraft {
     readonly strategicFocus: string;
     readonly whyItMatters: string;
   }[];
+  readonly currentCycleSummary?: string;
+  readonly tenYearTheme?: string;
+  readonly timelineReading?: string;
+  readonly annualCrossReading?: string;
+  readonly careerWorkFlow?: MajorFortuneDraftFlowSection;
+  readonly moneyResourceFlow?: MajorFortuneDraftFlowSection;
+  readonly relationshipFlow?: MajorFortuneDraftFlowSection;
+  readonly healthRoutineFlow?: MajorFortuneDraftFlowSection;
+  readonly mbtiExpression?: string;
+  readonly riskManagement?: readonly string[];
+  readonly actionPlan?: readonly string[];
   readonly finalAdvice: readonly {
     readonly label: MajorFortuneDomainLabel;
     readonly body: string;
@@ -236,6 +256,25 @@ const booleanSchema = { type: "boolean" } as const;
 const stringArraySchema = {
   type: "array",
   items: stringSchema,
+} as const;
+
+const launchFlowSectionSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: [
+    "title",
+    "summary",
+    "supportingSignals",
+    "frictionSignals",
+    "actionHint",
+  ],
+  properties: {
+    title: stringSchema,
+    summary: stringSchema,
+    supportingSignals: stringArraySchema,
+    frictionSignals: stringArraySchema,
+    actionHint: stringSchema,
+  },
 } as const;
 
 const domainLabelSchema = {
@@ -697,6 +736,7 @@ export const majorFortuneReportDraftJsonSchema = {
     "productType",
     "productVersion",
     "personLabel",
+    "headline",
     "openingTitle",
     "openingSummary",
     "coreLine",
@@ -716,6 +756,17 @@ export const majorFortuneReportDraftJsonSchema = {
     "strongYears",
     "majorFortuneTimelineRows",
     "cycleYearTimeline",
+    "currentCycleSummary",
+    "tenYearTheme",
+    "timelineReading",
+    "annualCrossReading",
+    "careerWorkFlow",
+    "moneyResourceFlow",
+    "relationshipFlow",
+    "healthRoutineFlow",
+    "mbtiExpression",
+    "riskManagement",
+    "actionPlan",
     "finalAdvice",
     "safetyNotes",
   ],
@@ -724,6 +775,7 @@ export const majorFortuneReportDraftJsonSchema = {
     productType: { type: "string", enum: ["major_fortune"] },
     productVersion: { type: "string", enum: ["v1"] },
     personLabel: stringSchema,
+    headline: stringSchema,
     openingTitle: stringSchema,
     openingSummary: stringSchema,
     coreLine: stringSchema,
@@ -767,6 +819,17 @@ export const majorFortuneReportDraftJsonSchema = {
       type: "array",
       items: cycleYearTimelineSchema,
     },
+    currentCycleSummary: stringSchema,
+    tenYearTheme: stringSchema,
+    timelineReading: stringSchema,
+    annualCrossReading: stringSchema,
+    careerWorkFlow: launchFlowSectionSchema,
+    moneyResourceFlow: launchFlowSectionSchema,
+    relationshipFlow: launchFlowSectionSchema,
+    healthRoutineFlow: launchFlowSectionSchema,
+    mbtiExpression: stringSchema,
+    riskManagement: stringArraySchema,
+    actionPlan: stringArraySchema,
     finalAdvice: {
       type: "array",
       items: finalAdviceSchema,

@@ -30,6 +30,7 @@ type MajorPersonInput = {
   readonly label: string;
   readonly birthDate?: string;
   readonly gender?: string;
+  readonly mbti?: string | null;
   readonly pillars: {
     readonly year: string;
     readonly month: string;
@@ -1585,6 +1586,304 @@ function buildMajorFortuneTimelineRows(input: {
   );
 }
 
+const majorFortuneSafetyNotes = [
+  "대운은 10년 단위의 배경 흐름이며 특정 사건이나 날짜를 예언하지 않습니다.",
+  "직업, 돈, 관계 해석은 입력값과 명리 근거를 바탕으로 한 참고용 방향성입니다.",
+  "투자 수익, 합격, 승진, 이직, 결혼, 이혼 같은 결과를 보장하지 않습니다.",
+  "건강 관련 내용은 생활 리듬과 자기관리 관점이며 의학적 진단이 아닙니다.",
+] as const;
+
+function formatCycleAgeRange(cycle: MajorFortuneCycle): string {
+  return `${cycle.startAge}세~${cycle.endAge}세`;
+}
+
+function formatCycleYearRange(cycle: MajorFortuneCycle): string {
+  return `${cycle.startYear}년~${cycle.endYear}년`;
+}
+
+function uniqueElements(elements: readonly FiveElement[]): readonly FiveElement[] {
+  return [...new Set(elements)];
+}
+
+function getBranchTenGod(
+  dayMaster: HeavenlyStem,
+  branch: EarthlyBranch,
+): TenGod {
+  const [mainHiddenStem] = hiddenStemsByBranch[branch];
+
+  return getTenGodForStemPair(dayMaster, mainHiddenStem);
+}
+
+function buildMbtiBasis(
+  mbtiType: string | null | undefined,
+): MajorFortuneEvidencePacket["mbtiBasis"] {
+  const normalizedType =
+    typeof mbtiType === "string" && mbtiType.trim().length > 0
+      ? mbtiType.trim().toUpperCase()
+      : null;
+
+  return {
+    type: normalizedType,
+    summary:
+      normalizedType === null
+        ? "MBTI가 입력되지 않아 대운 해석은 명리 흐름 중심으로 구성합니다."
+        : `${normalizedType} 성향은 대운의 10년 배경이 실제 판단, 실행 속도, 관계 조율 방식으로 드러나는 방식을 보조합니다.`,
+    reportUseCases: [
+      "대운의 10년 흐름이 행동 방식으로 드러나는 장면을 보조합니다.",
+      "직업, 돈, 관계, 공부 흐름에서 선택 속도와 압박 반응을 해석할 때 사용합니다.",
+      "명리 근거와 같은 원인으로 단정하지 않고 표현 방식의 보조 evidence로만 씁니다.",
+    ],
+  };
+}
+
+function buildCurrentMajorFortune(input: {
+  readonly currentCycle: MajorFortuneCycle;
+  readonly dayMaster: HeavenlyStem;
+  readonly majorTenGod: TenGod;
+  readonly elementEffect: MajorFortuneEvidencePacket["elementEffect"];
+  readonly branchInteractions: MajorFortuneEvidencePacket["branchInteractions"];
+  readonly decadeArchetype: MajorFortuneEvidencePacket["decadeArchetype"];
+}): MajorFortuneEvidencePacket["currentMajorFortune"] {
+  return {
+    cycleIndex: input.currentCycle.index,
+    ageRange: formatCycleAgeRange(input.currentCycle),
+    yearRange: formatCycleYearRange(input.currentCycle),
+    ganji: input.currentCycle.ganji,
+    stem: input.currentCycle.stem,
+    branch: input.currentCycle.branch,
+    stemTenGod: input.majorTenGod,
+    branchTenGod: getBranchTenGod(input.dayMaster, input.currentCycle.branch),
+    elementFocus: uniqueElements([
+      input.currentCycle.stemElement,
+      input.currentCycle.branchElement,
+    ]),
+    keyTheme: input.decadeArchetype.label,
+    supportSignals: [
+      input.elementEffect.plain,
+      ...input.branchInteractions
+        .filter((interaction) => ["육합", "삼합", "반합"].includes(interaction.type))
+        .map((interaction) => interaction.plain),
+    ].slice(0, 4),
+    frictionSignals: [
+      ...input.branchInteractions
+        .filter((interaction) => ["충", "형", "파", "해"].includes(interaction.type))
+        .map((interaction) => interaction.plain),
+      ...input.elementEffect.overloadsHeavy.map(
+        (element) => `${elementKo[element]} 흐름이 무거워져 책임과 피로가 누적될 수 있습니다.`,
+      ),
+    ].slice(0, 4),
+    interpretation: input.decadeArchetype.plain,
+  };
+}
+
+function buildMajorFortuneTimelineContract(input: {
+  readonly cycles: readonly MajorFortuneCycle[];
+  readonly currentCycle: MajorFortuneCycle;
+  readonly dayMaster: HeavenlyStem;
+}): MajorFortuneEvidencePacket["majorFortuneTimeline"] {
+  return input.cycles.map((cycle) => {
+    const stemTenGod = getTenGodForStemPair(input.dayMaster, cycle.stem);
+    const branchTenGod = getBranchTenGod(input.dayMaster, cycle.branch);
+    const isCurrent = cycle.index === input.currentCycle.index;
+
+    return {
+      cycleIndex: cycle.index,
+      ageRange: formatCycleAgeRange(cycle),
+      yearRange: formatCycleYearRange(cycle),
+      ganji: cycle.ganji,
+      stem: cycle.stem,
+      branch: cycle.branch,
+      stemTenGod,
+      branchTenGod,
+      elementFocus: uniqueElements([cycle.stemElement, cycle.branchElement]),
+      isCurrent,
+      supportSignals: [
+        `${cycle.ganji} 대운의 천간은 ${input.dayMaster} 일간에게 ${stemTenGod}으로 작용합니다.`,
+        `${cycle.branch} 지지는 안쪽에 ${branchTenGod}의 현실 장면을 품습니다.`,
+      ],
+      cautionSignals: isCurrent
+        ? ["현재 대운은 올해 세운과 함께 읽어야 체감 장면이 분명해집니다."]
+        : ["전체 대운표의 장기 배경으로 참고합니다."],
+      shortInterpretation: isCurrent
+        ? `${cycle.ganji}은 현재 10년 흐름의 중심 구간입니다.`
+        : `${cycle.ganji}은 이전·이후 흐름을 비교할 때 쓰는 기준 구간입니다.`,
+    };
+  });
+}
+
+function buildCurrentAnnualCross(input: {
+  readonly currentYear: number;
+  readonly currentCycle: MajorFortuneCycle;
+  readonly dayMaster: HeavenlyStem;
+  readonly natalBranches: readonly EarthlyBranch[];
+  readonly timelineRows: MajorFortuneEvidencePacket["majorFortuneTimelineRows"];
+}): MajorFortuneEvidencePacket["currentAnnualCross"] {
+  const annualGanji = getAnnualGanjiInfo(input.currentYear);
+  const annualStemTenGod = getTenGodForStemPair(input.dayMaster, annualGanji.stem);
+  const annualBranchTenGod = getBranchTenGod(input.dayMaster, annualGanji.branch);
+  const interactions = getAnnualBranchInteractions({
+    annualBranch: annualGanji.branch,
+    natalBranches: [input.currentCycle.branch, ...input.natalBranches],
+  });
+  const currentRow = input.timelineRows.find((row) => row.isCurrentYear);
+  const cycleToAnnualRelation =
+    annualGanji.stemElement === input.currentCycle.stemElement ||
+    annualGanji.branchElement === input.currentCycle.branchElement
+      ? `${input.currentCycle.ganji} 대운의 ${elementKo[input.currentCycle.branchElement]} 책임이 ${annualGanji.ganji} 세운에서 구체화됩니다.`
+      : `${annualGanji.ganji} 세운은 ${input.currentCycle.ganji} 대운의 장기 과제를 올해 행동 기준으로 드러냅니다.`;
+  const natalToAnnualRelation =
+    interactions.length === 0
+      ? "올해 세운과 원국·대운 사이에 큰 충돌 신호보다 기본 과제 운영이 먼저 보입니다."
+      : interactions
+          .map((interaction) => `${interaction.type}: ${plainTypeByInteraction[interaction.type]}`)
+          .join(" / ");
+
+  return {
+    selectedYear: input.currentYear,
+    annualGanji: annualGanji.ganji,
+    annualStemTenGod,
+    annualBranchTenGod,
+    cycleToAnnualRelation,
+    natalToAnnualRelation,
+    annualFocus:
+      currentRow?.oneLine ??
+      `${input.currentYear}년 ${annualGanji.ganji}은 ${input.currentCycle.ganji} 대운의 올해 실행 장면입니다.`,
+    interpretation: `${input.currentYear}년은 ${input.currentCycle.ganji} 대운 안에서 ${annualStemTenGod}의 행동 방식이 드러나는 해입니다.`,
+    caution:
+      currentRow?.strategy ??
+      "올해의 선택은 10년 흐름의 기준을 만드는 작은 운영 규칙으로 남기는 쪽이 안전합니다.",
+  };
+}
+
+function buildTenYearFlowSummary(input: {
+  readonly currentMajorFortune: MajorFortuneEvidencePacket["currentMajorFortune"];
+  readonly currentAnnualCross: MajorFortuneEvidencePacket["currentAnnualCross"];
+  readonly strategicThemes: MajorFortuneEvidencePacket["strategicThemes"];
+}): MajorFortuneEvidencePacket["tenYearFlowSummary"] {
+  return {
+    headline: `${input.currentMajorFortune.ganji} 대운은 ${input.currentMajorFortune.keyTheme} 흐름입니다.`,
+    summary: `${input.currentMajorFortune.yearRange}에는 ${input.currentMajorFortune.stemTenGod}의 현실 장면과 ${input.currentAnnualCross.selectedYear}년 세운의 실행 압박을 함께 봅니다.`,
+    keySignals: [
+      input.currentMajorFortune.interpretation,
+      input.currentAnnualCross.interpretation,
+      ...input.strategicThemes.map((theme) => theme.plain),
+    ].slice(0, 5),
+  };
+}
+
+function buildDomainFlows(input: {
+  readonly majorTenGod: TenGod;
+  readonly elementEffect: MajorFortuneEvidencePacket["elementEffect"];
+  readonly branchInteractions: MajorFortuneEvidencePacket["branchInteractions"];
+  readonly strategicThemes: MajorFortuneEvidencePacket["strategicThemes"];
+  readonly currentAnnualCross: MajorFortuneEvidencePacket["currentAnnualCross"];
+}): MajorFortuneEvidencePacket["domainFlows"] {
+  const support = [
+    `${input.majorTenGod} 대운은 현실 선택과 반복 역할을 키웁니다.`,
+    input.elementEffect.plain,
+    input.currentAnnualCross.interpretation,
+  ];
+  const friction = [
+    ...input.branchInteractions.map((interaction) => interaction.plain),
+    ...input.elementEffect.overloadsHeavy.map(
+      (element) => `${elementKo[element]} 흐름이 과해지면 일정, 책임, 몸의 피로가 같이 무거워집니다.`,
+    ),
+  ];
+  const themePlain = input.strategicThemes.map((theme) => theme.plain);
+
+  return {
+    careerWork: {
+      title: "직업·일 흐름",
+      summary: themePlain[0] ?? "일에서는 역할, 기준, 책임 범위가 장기 과제로 올라옵니다.",
+      supportingSignals: support.slice(0, 3),
+      frictionSignals: friction.slice(0, 3),
+      actionHint: "역할, 권한, 마감 기준을 문서로 남기고 반복 업무는 시스템으로 고정하세요.",
+    },
+    moneyResource: {
+      title: "돈·자원 흐름",
+      summary: "돈은 한 번의 기회보다 계약, 정산, 고정비, 책임 비용을 관리하는 장면으로 나타납니다.",
+      supportingSignals: [`${input.majorTenGod}은 돈과 현실 자원을 움직이는 십성입니다.`, ...support.slice(1, 3)],
+      frictionSignals: friction.slice(0, 3),
+      actionHint: "수입 기대보다 고정비, 계약 조건, 책임 비용을 먼저 분리하세요.",
+    },
+    relationshipLove: {
+      title: "관계·연애 흐름",
+      summary: "관계에서는 감정 자체보다 만나는 주기, 연락 방식, 맡을 역할을 현실적으로 맞추는 일이 중요해집니다.",
+      supportingSignals: support.slice(0, 2),
+      frictionSignals: friction.slice(0, 3),
+      actionHint: "좋은 말보다 시간, 역할, 기대치를 짧고 구체적으로 맞추세요.",
+    },
+    healthRoutine: {
+      title: "건강관리·생활 리듬",
+      summary: "대운의 압박은 사건보다 수면, 식사, 회복 시간 같은 생활 리듬에서 먼저 체감될 수 있습니다.",
+      supportingSignals: support.slice(1, 3),
+      frictionSignals: friction.slice(0, 3),
+      actionHint: "수면, 식사, 회복 시간을 일정표에 먼저 고정하고 과밀한 주간에는 일을 덜어내세요.",
+    },
+    socialFamily: {
+      title: "사회·가족 흐름",
+      summary: "가까운 사람과 사회적 역할 사이에서 대신 맡는 일과 맡지 않을 일을 다시 나누는 흐름입니다.",
+      supportingSignals: support.slice(0, 3),
+      frictionSignals: friction.slice(0, 3),
+      actionHint: "부탁과 역할은 바로 수락하지 말고 시간, 비용, 책임 범위를 먼저 확인하세요.",
+    },
+    studyGrowth: {
+      title: "학업·성장 흐름",
+      summary: "공부는 오래 붙잡는 방식보다 자격증, 문서, 포트폴리오처럼 남는 결과물로 묶을 때 대운의 힘을 쓰기 쉽습니다.",
+      supportingSignals: support.slice(0, 3),
+      frictionSignals: friction.slice(0, 3),
+      actionHint: "공부 시간을 늘리기보다 결과물 단위를 정하고 매달 남길 자료를 고정하세요.",
+    },
+  };
+}
+
+function buildRiskPatterns(input: {
+  readonly longRangeRisks: MajorFortuneEvidencePacket["longRangeRisks"];
+  readonly currentAnnualCross: MajorFortuneEvidencePacket["currentAnnualCross"];
+}): MajorFortuneEvidencePacket["riskPatterns"] {
+  return [
+    ...input.longRangeRisks.map((risk) => ({
+      title: risk.label,
+      summary: risk.plain,
+      evidence: [input.currentAnnualCross.cycleToAnnualRelation],
+      prevention: risk.prevention,
+    })),
+    {
+      title: "올해 세운 교차 압박",
+      summary: input.currentAnnualCross.annualFocus,
+      evidence: [
+        input.currentAnnualCross.cycleToAnnualRelation,
+        input.currentAnnualCross.natalToAnnualRelation,
+      ],
+      prevention: input.currentAnnualCross.caution,
+    },
+  ].slice(0, 5);
+}
+
+function buildActionGuides(input: {
+  readonly longRangeOpportunities: MajorFortuneEvidencePacket["longRangeOpportunities"];
+  readonly strongYears: MajorFortuneEvidencePacket["strongYearsWithinCycle"];
+  readonly currentAnnualCross: MajorFortuneEvidencePacket["currentAnnualCross"];
+}): MajorFortuneEvidencePacket["actionGuides"] {
+  return [
+    ...input.longRangeOpportunities.map((opportunity) => ({
+      title: opportunity.label,
+      action: opportunity.action,
+      timingHint: "10년 흐름 안에서 반복 기준으로 가져갈 행동입니다.",
+    })),
+    ...input.strongYears.slice(0, 3).map((year) => ({
+      title: `${year.year}년 ${year.headline}`,
+      action: year.pushStrategy,
+      timingHint: year.whyStrong,
+    })),
+    {
+      title: `${input.currentAnnualCross.selectedYear}년 실행 기준`,
+      action: input.currentAnnualCross.caution,
+      timingHint: input.currentAnnualCross.interpretation,
+    },
+  ].slice(0, 6);
+}
+
 function buildCalculationBasis(
   currentYear: number,
   majorCycleBasis: MajorFortuneEvidencePacket["majorCycleBasis"],
@@ -1883,15 +2182,61 @@ export function buildMajorFortuneEvidence(input: {
     natalBranches,
     strongYears: strongYearsWithinCycle,
   });
+  const cycleYearTimeline = buildCycleYearTimeline({
+    currentCycle: cycleAccess.currentCycle,
+    dayMaster,
+    majorTenGod,
+    natalBranches,
+    elementEffect,
+  });
+  const currentMajorFortune = buildCurrentMajorFortune({
+    currentCycle: cycleAccess.currentCycle,
+    dayMaster,
+    majorTenGod,
+    elementEffect,
+    branchInteractions,
+    decadeArchetype,
+  });
+  const currentAnnualCross = buildCurrentAnnualCross({
+    currentYear: input.currentYear,
+    currentCycle: cycleAccess.currentCycle,
+    dayMaster,
+    natalBranches,
+    timelineRows: majorFortuneTimelineRows,
+  });
+  const domainFlows = buildDomainFlows({
+    majorTenGod,
+    elementEffect,
+    branchInteractions,
+    strategicThemes,
+    currentAnnualCross,
+  });
 
   return {
     productType: "major_fortune",
     productVersion: "v1",
     personLabel: input.person.label,
+    personContext: {
+      name: input.person.label,
+      ...(input.person.birthDate === undefined
+        ? {}
+        : { birthDate: input.person.birthDate }),
+      ...(input.person.gender === undefined ? {} : { gender: input.person.gender }),
+      mbtiType: input.person.mbti ?? null,
+      currentYear: input.currentYear,
+      currentAge,
+      userContext: input.person.userContext,
+    },
     userContext: input.person.userContext,
     currentYear: input.currentYear,
     currentAge,
     dayMaster,
+    baseSaju: {
+      dayMaster,
+      pillars: input.person.pillars,
+      natalLabels: input.person.labels,
+    },
+    mbtiBasis: buildMbtiBasis(input.person.mbti),
     userPillars: input.person.pillars,
     natalLabels: input.person.labels,
     currentCycle: cycleAccess.currentCycle,
@@ -1900,6 +2245,29 @@ export function buildMajorFortuneEvidence(input: {
     majorCycleBasis,
     cyclePosition,
     calculationBasis: buildCalculationBasis(input.currentYear, majorCycleBasis),
+    currentMajorFortune,
+    majorFortuneTimeline: buildMajorFortuneTimelineContract({
+      cycles: input.person.majorFortuneCycles,
+      currentCycle: cycleAccess.currentCycle,
+      dayMaster,
+    }),
+    currentAnnualCross,
+    tenYearFlowSummary: buildTenYearFlowSummary({
+      currentMajorFortune,
+      currentAnnualCross,
+      strategicThemes,
+    }),
+    domainFlows,
+    riskPatterns: buildRiskPatterns({
+      longRangeRisks,
+      currentAnnualCross,
+    }),
+    actionGuides: buildActionGuides({
+      longRangeOpportunities,
+      strongYears: strongYearsWithinCycle,
+      currentAnnualCross,
+    }),
+    safetyNotes: majorFortuneSafetyNotes,
     majorTenGod: {
       stemTenGod: majorTenGod,
       plain: `${cycleAccess.currentCycle.ganji} 대운의 천간 ${cycleAccess.currentCycle.stem}은 ${dayMaster} 일간에게 ${majorTenGod}으로 작용합니다.`,
@@ -1937,13 +2305,7 @@ export function buildMajorFortuneEvidence(input: {
     myeongliLayers,
     strongYearsWithinCycle,
     majorFortuneTimelineRows,
-    cycleYearTimeline: buildCycleYearTimeline({
-      currentCycle: cycleAccess.currentCycle,
-      dayMaster,
-      majorTenGod,
-      natalBranches,
-      elementEffect,
-    }),
+    cycleYearTimeline,
     warnings: buildWarnings({
       labels: input.person.labels,
       cycleBasis: input.person.majorFortuneCycleBasis,

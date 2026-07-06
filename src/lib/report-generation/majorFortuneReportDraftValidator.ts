@@ -1,5 +1,6 @@
 import {
   majorFortuneDomainLabels,
+  type MajorFortuneDraftFlowSection,
   type MajorFortuneDomainLabel,
   type MajorFortunePhase,
   type MajorFortuneReportDraft,
@@ -82,6 +83,20 @@ const internalForbiddenWords = [
   "fixture",
   "precomputed",
   "백호대살",
+] as const;
+
+const deterministicForbiddenExpressions = [
+  "특정 사건/날짜 예언",
+  "질병/사고/사망 예언",
+  "사망 예언",
+  "투자 수익 보장",
+  "수익 보장",
+  "합격 확정",
+  "승진 확정",
+  "이직 확정",
+  "결혼 확정",
+  "이혼 확정",
+  "공포 조장",
 ] as const;
 
 const stemDayMasterReplacements = [
@@ -633,6 +648,83 @@ function repairMajorFortuneBigThemes(
   );
 }
 
+function sanitizeOptionalString(
+  value: unknown,
+  fallback: string,
+): string {
+  return sanitizeMajorFortuneVisibleText(
+    typeof value === "string" ? value : fallback,
+  );
+}
+
+function sanitizeOptionalStringArray(
+  value: unknown,
+  fallback: readonly string[],
+): readonly string[] {
+  if (!Array.isArray(value)) {
+    return sanitizeStringArray(fallback);
+  }
+
+  const normalized = value
+    .filter((item): item is string => typeof item === "string")
+    .filter((item) => item.trim().length > 0);
+
+  return sanitizeStringArray(normalized);
+}
+
+function sanitizeLaunchFlowSection(
+  value: unknown,
+  fallback: MajorFortuneDraftFlowSection,
+): MajorFortuneDraftFlowSection {
+  if (!isRecord(value)) {
+    return {
+      title: sanitizeMajorFortuneVisibleText(fallback.title),
+      summary: sanitizeMajorFortuneVisibleText(fallback.summary),
+      supportingSignals: sanitizeStringArray(fallback.supportingSignals),
+      frictionSignals: sanitizeStringArray(fallback.frictionSignals),
+      actionHint: sanitizeMajorFortuneVisibleText(fallback.actionHint),
+    };
+  }
+
+  return {
+    title: sanitizeOptionalString(value.title, fallback.title),
+    summary: sanitizeOptionalString(value.summary, fallback.summary),
+    supportingSignals: sanitizeOptionalStringArray(
+      value.supportingSignals,
+      fallback.supportingSignals,
+    ),
+    frictionSignals: sanitizeOptionalStringArray(
+      value.frictionSignals,
+      fallback.frictionSignals,
+    ),
+    actionHint: sanitizeOptionalString(value.actionHint, fallback.actionHint),
+  };
+}
+
+function findFinalAdviceBody(
+  draft: MajorFortuneReportDraft,
+  label: MajorFortuneDomainLabel,
+  fallback: string,
+): string {
+  return draft.finalAdvice.find((advice) => advice.label === label)?.body ?? fallback;
+}
+
+function buildFallbackLaunchFlowSection(input: {
+  readonly title: string;
+  readonly summary: string;
+  readonly support: readonly string[];
+  readonly friction: readonly string[];
+  readonly action: string;
+}): MajorFortuneDraftFlowSection {
+  return {
+    title: input.title,
+    summary: input.summary,
+    supportingSignals: input.support,
+    frictionSignals: input.friction,
+    actionHint: input.action,
+  };
+}
+
 function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft {
   const sanitizedUserContextSummary = sanitizeUserContextSummary(
     draft.userContextSummary,
@@ -647,12 +739,30 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
     })),
     sanitizedUserContextSummary.relationshipStatusLabel,
   );
+  const cycleSummaryText = `${draft.cycleSummary.displayTitle}은 ${draft.cycleSummary.yearRangeLabel}에 반복되는 ${draft.cycleSummary.tenGodLabel} 흐름입니다.`;
+  const firstTimeline = draft.cycleYearTimeline[0];
+  const annualFallback =
+    firstTimeline === undefined
+      ? `${draft.cycleSummary.currentPositionLabel} 기준으로 올해 세운과 현재 대운을 함께 봅니다.`
+      : `${firstTimeline.year}년 ${firstTimeline.ganji}: ${firstTimeline.plainInterpretation}`;
+  const supportSignals = [
+    draft.decadeArchetype.plain,
+    draft.majorStructure.tenGodExplanation,
+    draft.majorStructure.elementEffectExplanation,
+  ];
+  const frictionSignals = [
+    draft.majorStructure.branchInteractionExplanation,
+    ...draft.keySignals
+      .filter((signal) => signal.type === "difficulty" || signal.type === "caution")
+      .map((signal) => signal.body),
+  ];
 
   return {
     version: "v1",
     productType: "major_fortune",
     productVersion: "v1",
     personLabel: sanitizeMajorFortuneVisibleText(draft.personLabel),
+    headline: sanitizeOptionalString(draft.headline, draft.openingTitle),
     openingTitle: sanitizeMajorFortuneVisibleText(draft.openingTitle),
     openingSummary: sanitizeMajorFortuneVisibleText(draft.openingSummary),
     coreLine: sanitizeMajorFortuneVisibleText(draft.coreLine),
@@ -903,6 +1013,114 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
       strategicFocus: sanitizeMajorFortuneVisibleText(year.strategicFocus),
       whyItMatters: sanitizeMajorFortuneVisibleText(year.whyItMatters),
     })),
+    currentCycleSummary: sanitizeOptionalString(
+      draft.currentCycleSummary,
+      cycleSummaryText,
+    ),
+    tenYearTheme: sanitizeOptionalString(
+      draft.tenYearTheme,
+      draft.decadeArchetype.plain,
+    ),
+    timelineReading: sanitizeOptionalString(
+      draft.timelineReading,
+      draft.cycleYearTimeline
+        .map((year) => `${year.year}년 ${year.ganji}: ${year.strategicFocus}`)
+        .join("\n"),
+    ),
+    annualCrossReading: sanitizeOptionalString(
+      draft.annualCrossReading,
+      annualFallback,
+    ),
+    careerWorkFlow: sanitizeLaunchFlowSection(
+      draft.careerWorkFlow,
+      buildFallbackLaunchFlowSection({
+        title: "직업·일 흐름",
+        summary: findFinalAdviceBody(
+          draft,
+          "일·성과",
+          "일에서는 역할, 책임, 기준을 문서로 정리하는 흐름이 중요합니다.",
+        ),
+        support: supportSignals,
+        friction: frictionSignals,
+        action: findFinalAdviceBody(
+          draft,
+          "일·성과",
+          "프로젝트·보고·문서화는 중간 점검 기준을 먼저 잡아 두세요.",
+        ),
+      }),
+    ),
+    moneyResourceFlow: sanitizeLaunchFlowSection(
+      draft.moneyResourceFlow,
+      buildFallbackLaunchFlowSection({
+        title: "돈·자원 흐름",
+        summary: findFinalAdviceBody(
+          draft,
+          "돈·현실",
+          "돈은 수입 기대보다 고정비, 계약, 정산 기준을 먼저 봐야 합니다.",
+        ),
+        support: supportSignals,
+        friction: frictionSignals,
+        action: findFinalAdviceBody(
+          draft,
+          "돈·현실",
+          "급여·생활비·정산·계약은 월초에 분리해 두세요.",
+        ),
+      }),
+    ),
+    relationshipFlow: sanitizeLaunchFlowSection(
+      draft.relationshipFlow,
+      buildFallbackLaunchFlowSection({
+        title: "관계·연애 흐름",
+        summary: findFinalAdviceBody(
+          draft,
+          "인간관계",
+          "관계에서는 감정만이 아니라 연락, 거리, 역할 기준을 조율해야 합니다.",
+        ),
+        support: supportSignals,
+        friction: frictionSignals,
+        action: findFinalAdviceBody(
+          draft,
+          "연애·가족",
+          "연인·가족·부모와의 약속은 시간과 역할을 먼저 맞춰 두세요.",
+        ),
+      }),
+    ),
+    healthRoutineFlow: sanitizeLaunchFlowSection(
+      draft.healthRoutineFlow,
+      buildFallbackLaunchFlowSection({
+        title: "건강관리·생활 리듬",
+        summary: findFinalAdviceBody(
+          draft,
+          "몸·생활 리듬",
+          "생활 리듬은 대운 압박을 오래 버티는 기본 운영 장치입니다.",
+        ),
+        support: supportSignals,
+        friction: frictionSignals,
+        action: findFinalAdviceBody(
+          draft,
+          "몸·생활 리듬",
+          "수면·식사·회복 시간을 일정처럼 고정하세요.",
+        ),
+      }),
+    ),
+    mbtiExpression: sanitizeOptionalString(
+      draft.mbtiExpression,
+      "MBTI는 대운의 장기 흐름이 실제 판단 속도, 실행 방식, 관계 조율로 드러나는 방식을 보조합니다.",
+    ),
+    riskManagement: sanitizeOptionalStringArray(
+      draft.riskManagement,
+      [
+        ...frictionSignals,
+        "특정 사건을 단정하기보다 반복되는 피로와 책임 과부하를 먼저 관리하세요.",
+      ],
+    ).slice(0, 6),
+    actionPlan: sanitizeOptionalStringArray(
+      draft.actionPlan,
+      [
+        ...draft.finalAdvice.map((advice) => advice.body),
+        "올해 세운에서 먼저 움직이는 영역을 기록하고 다음 달 실행 기준으로 옮기세요.",
+      ],
+    ).slice(0, 8),
     finalAdvice: draft.finalAdvice.map((advice) => ({
       label: advice.label,
       body: sanitizeMajorFortuneVisibleText(advice.body),
@@ -1107,6 +1325,7 @@ function hasDraftShape(value: unknown): value is MajorFortuneReportDraft {
 function collectVisibleStrings(draft: MajorFortuneReportDraft): readonly string[] {
   return [
     draft.personLabel,
+    draft.headline ?? "",
     draft.openingTitle,
     draft.openingSummary,
     draft.coreLine,
@@ -1215,6 +1434,29 @@ function collectVisibleStrings(draft: MajorFortuneReportDraft): readonly string[
       year.strategicFocus,
       year.whyItMatters,
     ]),
+    draft.currentCycleSummary ?? "",
+    draft.tenYearTheme ?? "",
+    draft.timelineReading ?? "",
+    draft.annualCrossReading ?? "",
+    ...[
+      draft.careerWorkFlow,
+      draft.moneyResourceFlow,
+      draft.relationshipFlow,
+      draft.healthRoutineFlow,
+    ].flatMap((flow) =>
+      flow === undefined
+        ? []
+        : [
+            flow.title,
+            flow.summary,
+            ...flow.supportingSignals,
+            ...flow.frictionSignals,
+            flow.actionHint,
+          ],
+    ),
+    draft.mbtiExpression ?? "",
+    ...(draft.riskManagement ?? []),
+    ...(draft.actionPlan ?? []),
     ...draft.finalAdvice.flatMap((advice) => [advice.label, advice.body]),
     ...draft.safetyNotes,
   ];
@@ -1273,6 +1515,28 @@ function collectInterpretiveStrings(
       year.strategicFocus,
       year.whyItMatters,
     ]),
+    draft.currentCycleSummary ?? "",
+    draft.tenYearTheme ?? "",
+    draft.timelineReading ?? "",
+    draft.annualCrossReading ?? "",
+    ...[
+      draft.careerWorkFlow,
+      draft.moneyResourceFlow,
+      draft.relationshipFlow,
+      draft.healthRoutineFlow,
+    ].flatMap((flow) =>
+      flow === undefined
+        ? []
+        : [
+            flow.summary,
+            ...flow.supportingSignals,
+            ...flow.frictionSignals,
+            flow.actionHint,
+          ],
+    ),
+    draft.mbtiExpression ?? "",
+    ...(draft.riskManagement ?? []),
+    ...(draft.actionPlan ?? []),
     ...draft.finalAdvice.map((advice) => advice.body),
   ];
 }
@@ -1889,6 +2153,82 @@ function validateDomainSet(
   }
 }
 
+function isBlankText(value: string | undefined): boolean {
+  return value === undefined || value.trim().length === 0;
+}
+
+function validateLaunchFlowSection(
+  flow: MajorFortuneDraftFlowSection | undefined,
+  errors: string[],
+  errorCode: string,
+): void {
+  if (flow === undefined) {
+    errors.push(`${errorCode}:missing`);
+    return;
+  }
+  if (
+    isBlankText(flow.title) ||
+    isBlankText(flow.summary) ||
+    isBlankText(flow.actionHint)
+  ) {
+    errors.push(`${errorCode}:text`);
+  }
+  if (flow.supportingSignals.length === 0) {
+    errors.push(`${errorCode}:supportingSignals`);
+  }
+  if (flow.frictionSignals.length === 0) {
+    errors.push(`${errorCode}:frictionSignals`);
+  }
+}
+
+function validateLaunchContract(
+  draft: MajorFortuneReportDraft,
+  errors: string[],
+): void {
+  const requiredTextSections = [
+    ["headline", draft.headline],
+    ["currentCycleSummary", draft.currentCycleSummary],
+    ["tenYearTheme", draft.tenYearTheme],
+    ["timelineReading", draft.timelineReading],
+    ["annualCrossReading", draft.annualCrossReading],
+    ["mbtiExpression", draft.mbtiExpression],
+  ] as const;
+
+  for (const [fieldName, value] of requiredTextSections) {
+    if (isBlankText(value)) {
+      errors.push(`MAJOR_FORTUNE_LAUNCH_SECTION_MISSING:${fieldName}`);
+    }
+  }
+
+  validateLaunchFlowSection(
+    draft.careerWorkFlow,
+    errors,
+    "MAJOR_FORTUNE_DOMAIN_FLOW_INVALID:careerWorkFlow",
+  );
+  validateLaunchFlowSection(
+    draft.moneyResourceFlow,
+    errors,
+    "MAJOR_FORTUNE_DOMAIN_FLOW_INVALID:moneyResourceFlow",
+  );
+  validateLaunchFlowSection(
+    draft.relationshipFlow,
+    errors,
+    "MAJOR_FORTUNE_DOMAIN_FLOW_INVALID:relationshipFlow",
+  );
+  validateLaunchFlowSection(
+    draft.healthRoutineFlow,
+    errors,
+    "MAJOR_FORTUNE_DOMAIN_FLOW_INVALID:healthRoutineFlow",
+  );
+
+  if ((draft.riskManagement ?? []).length < 2) {
+    errors.push("MAJOR_FORTUNE_RISK_MANAGEMENT_INVALID");
+  }
+  if ((draft.actionPlan ?? []).length < 3) {
+    errors.push("MAJOR_FORTUNE_ACTION_PLAN_INVALID");
+  }
+}
+
 function validateArrayLengths(
   draft: MajorFortuneReportDraft,
   errors: string[],
@@ -1958,6 +2298,7 @@ function validateArrayLengths(
   if (draft.safetyNotes.length < 2 || draft.safetyNotes.length > 4) {
     errors.push("MAJOR_FORTUNE_SAFETY_NOTES_INVALID");
   }
+  validateLaunchContract(draft, errors);
 }
 
 export function validateMajorFortuneReportDraft(
@@ -1985,6 +2326,11 @@ export function validateMajorFortuneReportDraft(
   for (const word of internalForbiddenWords) {
     if (visibleText.toLowerCase().includes(word.toLowerCase())) {
       errors.push(`MAJOR_FORTUNE_INTERNAL_WORD_VISIBLE:${word}`);
+    }
+  }
+  for (const expression of deterministicForbiddenExpressions) {
+    if (visibleText.includes(expression)) {
+      errors.push(`MAJOR_FORTUNE_FORBIDDEN_EXPRESSION:${expression}`);
     }
   }
   const quality = summarizeMajorFortuneDraftQuality(sanitizedDraft);

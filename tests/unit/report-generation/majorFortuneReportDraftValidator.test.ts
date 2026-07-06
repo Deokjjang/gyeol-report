@@ -17,6 +17,7 @@ export function createValidMajorFortuneDraft(
     productType: "major_fortune",
     productVersion: "v1",
     personLabel: "덕민",
+    headline: "덕민님의 戊辰 대운 리포트",
     openingTitle: "현재 대운 戊辰 흐름",
     openingSummary:
       "이 대운은 10년 동안 역할과 책임 기준을 다시 잡는 배경으로 체감될 수 있습니다.",
@@ -493,6 +494,58 @@ export function createValidMajorFortuneDraft(
         whyItMatters: reasons[index] ?? "같은 현실 테마가 반복되며 장기 선택의 기준이 되기 때문입니다.",
       };
     }),
+    currentCycleSummary:
+      "戊辰 대운은 2026년부터 2035년까지 현실 구조, 돈, 역할 기준을 다시 까는 10년 흐름입니다.",
+    tenYearTheme:
+      "편재와 토의 흐름이 강해져 계약, 책임, 고정비, 역할 경계가 장기 과제로 올라옵니다.",
+    timelineReading:
+      "초반에는 기준을 세우고, 중반에는 책임이 구체화되며, 후반에는 다음 대운으로 가져갈 구조만 남기는 흐름입니다.",
+    annualCrossReading:
+      "2026년 丙午 세운은 戊辰 대운의 첫해에 속도와 노출을 더해 책임 범위를 초반부터 정리하게 만듭니다.",
+    careerWorkFlow: {
+      title: "직업·일 흐름",
+      summary:
+        "일에서는 프로젝트 기준, 문서화, 보고 체계처럼 책임 범위를 보이게 만드는 일이 반복됩니다.",
+      supportingSignals: ["편재 대운", "戊辰 토 흐름", "2026년 丙午 세운"],
+      frictionSignals: ["권한 없는 책임", "기록 없는 구두 지시"],
+      actionHint: "역할과 마감 기준을 말보다 문서로 남기세요.",
+    },
+    moneyResourceFlow: {
+      title: "돈·자원 흐름",
+      summary:
+        "돈은 한 번의 기회보다 고정비, 계약, 정산, 책임 비용을 관리하는 장면으로 나타납니다.",
+      supportingSignals: ["편재", "정산 기준", "현실 자원"],
+      frictionSignals: ["감으로 하는 투자", "애매한 돈거래"],
+      actionHint: "수입 기대보다 고정비와 책임 비용을 먼저 분리하세요.",
+    },
+    relationshipFlow: {
+      title: "관계·연애 흐름",
+      summary:
+        "관계에서는 감정보다 만나는 주기, 연락 방식, 맡을 역할을 현실적으로 맞추는 일이 중요합니다.",
+      supportingSignals: ["생활 역할", "연락 기준", "관계 경계"],
+      frictionSignals: ["말하지 않은 기대", "무리한 대신 처리"],
+      actionHint: "가까운 관계에서도 시간과 역할을 짧게 확인하세요.",
+    },
+    healthRoutineFlow: {
+      title: "건강관리·생활 리듬",
+      summary:
+        "생활 리듬은 큰 사건보다 수면, 식사, 회복 시간이 밀리는 방식으로 먼저 신호를 줄 수 있습니다.",
+      supportingSignals: ["회복 루틴", "생활 구조", "토 책임"],
+      frictionSignals: ["일정 과밀", "회복 시간 부족"],
+      actionHint: "수면과 식사 시간을 일정표에 먼저 고정하세요.",
+    },
+    mbtiExpression:
+      "ENTJ 성향은 戊辰 대운의 책임 흐름을 빠른 판단, 기준 제시, 실행 압박으로 드러나게 만들 수 있습니다.",
+    riskManagement: [
+      "권한 없는 책임은 역할 범위와 승인선을 문서화해 줄입니다.",
+      "고정비와 책임 비용은 월초에 나누어 관리합니다.",
+      "회복 루틴은 일정처럼 고정해 과밀한 주간을 버팁니다.",
+    ],
+    actionPlan: [
+      "역할과 마감 기준을 문서로 남깁니다.",
+      "고정지출과 계약 조건을 월 단위로 분리합니다.",
+      "수면, 식사, 회복 시간을 일정표에 먼저 넣습니다.",
+    ],
     finalAdvice: [
       {
         label: "일·성과",
@@ -533,8 +586,56 @@ describe("majorFortuneReportDraftValidator", () => {
 
     expect(result.ok).toBe(true);
     expect(result.value?.productType).toBe("major_fortune");
+    expect(result.value?.headline).toContain("대운 리포트");
+    expect(result.value?.annualCrossReading).toContain("2026년");
+    expect(result.value?.careerWorkFlow?.supportingSignals.length).toBeGreaterThan(0);
+    expect(result.value?.riskManagement?.length).toBeGreaterThanOrEqual(2);
     expect(result.value?.phaseTimeline).toHaveLength(3);
     expect(result.value?.finalAdvice).toHaveLength(6);
+  });
+
+  it("rejects empty launch contract sections", () => {
+    const result = validateMajorFortuneReportDraft(
+      createValidMajorFortuneDraft({
+        headline: "",
+        annualCrossReading: "",
+        careerWorkFlow: {
+          title: "",
+          summary: "",
+          supportingSignals: [],
+          frictionSignals: [],
+          actionHint: "",
+        },
+        riskManagement: [],
+        actionPlan: [],
+      }),
+    );
+
+    expect(result.ok).toBe(false);
+    expect(result.errors).toContain(
+      "MAJOR_FORTUNE_LAUNCH_SECTION_MISSING:headline",
+    );
+    expect(result.errors).toContain(
+      "MAJOR_FORTUNE_DOMAIN_FLOW_INVALID:careerWorkFlow:text",
+    );
+    expect(result.errors).toContain(
+      "MAJOR_FORTUNE_DOMAIN_FLOW_INVALID:careerWorkFlow:supportingSignals",
+    );
+    expect(result.errors).toContain("MAJOR_FORTUNE_RISK_MANAGEMENT_INVALID");
+    expect(result.errors).toContain("MAJOR_FORTUNE_ACTION_PLAN_INVALID");
+  });
+
+  it("rejects deterministic forbidden launch expressions", () => {
+    const result = validateMajorFortuneReportDraft(
+      createValidMajorFortuneDraft({
+        annualCrossReading: "이 구간은 투자 수익 보장 흐름입니다.",
+      }),
+    );
+
+    expect(result.ok).toBe(false);
+    expect(result.errors).toContain(
+      "MAJOR_FORTUNE_FORBIDDEN_EXPRESSION:투자 수익 보장",
+    );
   });
 
   it("keeps valid safetyNotes unchanged", () => {

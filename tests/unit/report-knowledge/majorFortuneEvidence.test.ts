@@ -60,6 +60,17 @@ describe("majorFortuneEvidence", () => {
 
     expect(evidence.productType).toBe("major_fortune");
     expect(evidence.productVersion).toBe("v1");
+    expect(evidence.personContext).toMatchObject({
+      name: "덕민",
+      mbtiType: "ENTJ",
+      currentYear: 2026,
+    });
+    expect(evidence.baseSaju).toMatchObject({
+      dayMaster: "甲",
+      pillars: fixture.person.pillars,
+    });
+    expect(evidence.mbtiBasis.type).toBe("ENTJ");
+    expect(evidence.mbtiBasis.reportUseCases.join("\n")).toContain("10년 흐름");
     expect(evidence.currentCycle.ganji).toBe("戊辰");
     expect(evidence.currentCycle.startYear).toBe(2026);
     expect(evidence.currentCycle.endYear).toBe(2035);
@@ -70,6 +81,54 @@ describe("majorFortuneEvidence", () => {
     expect(evidence.majorCycleBasis.basisType).toBe(
       "user_supplied_major_fortune_table",
     );
+    expect(evidence.currentMajorFortune).toMatchObject({
+      cycleIndex: 3,
+      ageRange: "27세~36세",
+      yearRange: "2026년~2035년",
+      ganji: "戊辰",
+      stem: "戊",
+      branch: "辰",
+      stemTenGod: "편재",
+    });
+    expect(evidence.currentMajorFortune.branchTenGod).toBe("편재");
+    expect(evidence.currentMajorFortune.elementFocus).toContain("earth");
+    expect(evidence.majorFortuneTimeline.length).toBe(
+      fixture.person.majorFortuneCycles.length,
+    );
+    expect(evidence.majorFortuneTimeline.find((row) => row.isCurrent)).toMatchObject({
+      ganji: "戊辰",
+      cycleIndex: 3,
+    });
+    expect(evidence.currentAnnualCross).toMatchObject({
+      selectedYear: 2026,
+      annualGanji: "丙午",
+      annualStemTenGod: "식신",
+    });
+    expect(evidence.currentAnnualCross.cycleToAnnualRelation).toContain("戊辰");
+    expect(evidence.currentAnnualCross.natalToAnnualRelation.length).toBeGreaterThan(0);
+    expect(evidence.tenYearFlowSummary.headline).toContain("戊辰");
+    expect(Object.keys(evidence.domainFlows).sort()).toEqual([
+      "careerWork",
+      "healthRoutine",
+      "moneyResource",
+      "relationshipLove",
+      "socialFamily",
+      "studyGrowth",
+    ]);
+    expect(
+      Object.values(evidence.domainFlows).every(
+        (flow) =>
+          flow.title.length > 0 &&
+          flow.summary.length > 0 &&
+          flow.supportingSignals.length > 0 &&
+          flow.frictionSignals.length > 0 &&
+          flow.actionHint.length > 0,
+      ),
+    ).toBe(true);
+    expect(evidence.riskPatterns.length).toBeGreaterThan(0);
+    expect(evidence.actionGuides.length).toBeGreaterThan(0);
+    expect(evidence.safetyNotes.join("\n")).toContain("특정 사건이나 날짜");
+    expect(evidence.safetyNotes.join("\n")).not.toContain("수익 보장");
     expect(evidence.cyclePosition.positionLabel).toBe("2026년 기준 1년차");
     expect(evidence.previousToCurrentShift.currentGanji).toBe("戊辰");
     expect(evidence.decadeArchetype.label).toBe("현실 구조 재편형");
