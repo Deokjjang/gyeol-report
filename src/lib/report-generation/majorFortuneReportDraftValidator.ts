@@ -144,6 +144,21 @@ const repeatedTerms = [
 
 const phaseOrder = ["early", "middle", "late"] as const satisfies readonly MajorFortunePhase[];
 
+const timelineYearDetailFields = [
+  "myeongliSummary",
+  "daeunAnnualRelation",
+  "natalAnnualRelation",
+  "careerWork",
+  "moneyResource",
+  "relationshipLove",
+  "healthRoutine",
+  "socialFamily",
+  "studyGrowth",
+  "mbtiExpression",
+  "caution",
+  "actionStandard",
+] as const;
+
 const annualTonePhrases = [
   "올해",
   "이번 해",
@@ -315,6 +330,15 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 function isStringArray(value: unknown): value is readonly string[] {
   return Array.isArray(value) && value.every((item) => typeof item === "string");
+}
+
+function isTimelineYearDetail(
+  value: unknown,
+): value is MajorFortuneReportDraft["majorFortuneTimelineRows"][number]["yearDetail"] {
+  return (
+    isRecord(value) &&
+    timelineYearDetailFields.every((field) => typeof value[field] === "string")
+  );
 }
 
 function isNumber(value: unknown): value is number {
@@ -701,6 +725,56 @@ function sanitizeLaunchFlowSection(
   };
 }
 
+function sanitizeTimelineYearDetail(
+  value: unknown,
+): MajorFortuneReportDraft["majorFortuneTimelineRows"][number]["yearDetail"] {
+  const fallback = {
+    myeongliSummary:
+      "그 해의 간지와 십성은 대운 안에서 어떤 장면이 강조되는지 보는 기준입니다.",
+    daeunAnnualRelation:
+      "대운의 장기 배경 위에 연운의 단기 자극이 올라오는 해로 해석합니다.",
+    natalAnnualRelation:
+      "원국과 세운의 작용은 생활 리듬, 역할, 관계 조율의 장면으로 풀어 읽습니다.",
+    careerWork:
+      "직업·일에서는 맡은 역할과 성과 기준을 먼저 좁혀야 합니다.",
+    moneyResource:
+      "돈·자원에서는 지출, 계약, 정산 기준을 감이 아니라 숫자로 확인합니다.",
+    relationshipLove:
+      "관계·연애에서는 감정보다 연락, 거리, 약속 기준이 체감에 크게 작동합니다.",
+    healthRoutine:
+      "건강관리·생활 리듬에서는 수면, 식사, 회복 시간을 일정처럼 고정합니다.",
+    socialFamily:
+      "사회·가족에서는 누가 어떤 역할을 맡는지 먼저 합의해야 피로가 줄어듭니다.",
+    studyGrowth:
+      "공부·성장에서는 배운 내용을 문서, 자격, 포트폴리오처럼 남기는 방식이 좋습니다.",
+    mbtiExpression:
+      "MBTI는 이 해의 흐름이 판단 속도와 실행 방식으로 드러나는 방식을 보조합니다.",
+    caution:
+      "주의할 점은 특정 사건 예언이 아니라 반복되는 피로와 과부하 관리입니다.",
+    actionStandard:
+      "실행 기준은 올해 한 가지 역할, 한 가지 돈 기준, 한 가지 회복 루틴을 먼저 고정하는 것입니다.",
+  } satisfies MajorFortuneReportDraft["majorFortuneTimelineRows"][number]["yearDetail"];
+
+  if (!isRecord(value)) {
+    return fallback;
+  }
+
+  return {
+    myeongliSummary: sanitizeOptionalString(value.myeongliSummary, fallback.myeongliSummary),
+    daeunAnnualRelation: sanitizeOptionalString(value.daeunAnnualRelation, fallback.daeunAnnualRelation),
+    natalAnnualRelation: sanitizeOptionalString(value.natalAnnualRelation, fallback.natalAnnualRelation),
+    careerWork: sanitizeOptionalString(value.careerWork, fallback.careerWork),
+    moneyResource: sanitizeOptionalString(value.moneyResource, fallback.moneyResource),
+    relationshipLove: sanitizeOptionalString(value.relationshipLove, fallback.relationshipLove),
+    healthRoutine: sanitizeOptionalString(value.healthRoutine, fallback.healthRoutine),
+    socialFamily: sanitizeOptionalString(value.socialFamily, fallback.socialFamily),
+    studyGrowth: sanitizeOptionalString(value.studyGrowth, fallback.studyGrowth),
+    mbtiExpression: sanitizeOptionalString(value.mbtiExpression, fallback.mbtiExpression),
+    caution: sanitizeOptionalString(value.caution, fallback.caution),
+    actionStandard: sanitizeOptionalString(value.actionStandard, fallback.actionStandard),
+  };
+}
+
 function findFinalAdviceBody(
   draft: MajorFortuneReportDraft,
   label: MajorFortuneDomainLabel,
@@ -997,6 +1071,7 @@ function sanitizeDraft(draft: MajorFortuneReportDraft): MajorFortuneReportDraft 
           : sanitizeMajorFortuneVisibleText(row.keyInteractionLabel),
       oneLine: sanitizeMajorFortuneVisibleText(row.oneLine),
       strategy: sanitizeMajorFortuneVisibleText(row.strategy),
+      yearDetail: sanitizeTimelineYearDetail(row.yearDetail),
     })),
     cycleYearTimeline: draft.cycleYearTimeline.map((year) => ({
       year: year.year,
@@ -1296,7 +1371,8 @@ function hasDraftShape(value: unknown): value is MajorFortuneReportDraft {
         (typeof row.keyInteractionLabel === "string" ||
           row.keyInteractionLabel === null) &&
         typeof row.oneLine === "string" &&
-        typeof row.strategy === "string",
+        typeof row.strategy === "string" &&
+        isTimelineYearDetail(row.yearDetail),
     ) &&
     Array.isArray(draft.cycleYearTimeline) &&
     draft.cycleYearTimeline.every(
@@ -1425,6 +1501,7 @@ function collectVisibleStrings(draft: MajorFortuneReportDraft): readonly string[
       row.keyInteractionLabel ?? "",
       row.oneLine,
       row.strategy,
+      ...timelineYearDetailFields.map((field) => row.yearDetail[field]),
     ]),
     ...draft.cycleYearTimeline.flatMap((year) => [
       year.ganji,
@@ -1507,6 +1584,7 @@ function collectInterpretiveStrings(
     ...draft.majorFortuneTimelineRows.flatMap((row) => [
       row.oneLine,
       row.strategy,
+      ...timelineYearDetailFields.map((field) => row.yearDetail[field]),
     ]),
     ...draft.cycleYearTimeline.flatMap((year) => [
       year.headline,

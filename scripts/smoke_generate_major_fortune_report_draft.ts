@@ -333,6 +333,107 @@ function buildDraftCycleYearTimeline(packet: MajorFortuneEvidencePacket) {
   }));
 }
 
+function toKoreanAgeLabel(ageLabel: string | null): string | null {
+  if (ageLabel === null || ageLabel.trim().length === 0) {
+    return null;
+  }
+  if (ageLabel.includes("한국나이")) {
+    return ageLabel;
+  }
+
+  return `한국나이 ${ageLabel}`;
+}
+
+function explainMajorFortuneSignal(value: string | null): string {
+  const signal = value?.trim() ?? "";
+
+  if (signal.length === 0) {
+    return "원국과 세운의 작용은 생활 리듬, 역할, 관계 조율의 장면으로 풀어 읽습니다.";
+  }
+  if (/辰申.*반합|申辰.*반합/u.test(signal)) {
+    return `${signal}: 생각과 회복, 정보 흐름이 부분적으로 살아나는 장면입니다. 좋게 쓰면 판단 재료가 많아지고, 과하면 결론이 늦어질 수 있습니다.`;
+  }
+  if (/卯辰.*해|辰卯.*해/u.test(signal)) {
+    return `${signal}: 크게 터지는 충돌보다 작지만 반복되는 어긋남과 누적 피로로 보기 쉽습니다.`;
+  }
+  if (/辰辰.*형/u.test(signal)) {
+    return `${signal}: 외부 사건보다 스스로 기준을 높이고 압박을 반복해서 키우는 장면으로 해석합니다.`;
+  }
+  if (signal.includes("충")) {
+    return `${signal}: 익숙한 구조와 새 요구가 부딪혀 역할, 계약, 일정 기준을 다시 맞춰야 하는 장면입니다.`;
+  }
+  if (signal.includes("해")) {
+    return `${signal}: 겉으로 크게 싸우지 않아도 불편감과 서운함이 천천히 쌓일 수 있는 지점입니다.`;
+  }
+  if (signal.includes("형")) {
+    return `${signal}: 반복 압박이 커지기 쉬워 기준을 좁히고 회복 시간을 먼저 확보해야 하는 장면입니다.`;
+  }
+  if (signal.includes("파")) {
+    return `${signal}: 기존 방식이 깨지고 다시 맞춰야 하는 장면이 생기기 쉬운 흐름입니다.`;
+  }
+  if (signal.includes("반합")) {
+    return `${signal}: 일부 흐름이 살아나지만 결론까지 가려면 속도와 기준 조율이 필요한 장면입니다.`;
+  }
+  if (signal.includes("삼합")) {
+    return `${signal}: 같은 방향의 힘이 커져 장점과 과열이 함께 생길 수 있는 흐름입니다.`;
+  }
+  if (signal.includes("합")) {
+    return `${signal}: 약속, 관계, 일정이 묶이며 실제 움직임이 생기기 쉬운 흐름입니다.`;
+  }
+
+  return signal;
+}
+
+function buildTimelineYearDetails(
+  packet: MajorFortuneEvidencePacket,
+): MajorFortuneReportDraft["majorFortuneTimelineRows"] {
+  return packet.majorFortuneTimelineRows.map((row) => {
+    const yearReading =
+      packet.cycleYearTimeline.find((item) => item.year === row.year) ??
+      packet.cycleYearTimeline[0];
+    const careerFlow = packet.domainFlows.careerWork;
+    const moneyFlow = packet.domainFlows.moneyResource;
+    const relationshipFlow = packet.domainFlows.relationshipLove;
+    const healthFlow = packet.domainFlows.healthRoutine;
+    const socialFlow = packet.domainFlows.socialFamily;
+    const studyFlow = packet.domainFlows.studyGrowth;
+    const mbtiLine =
+      packet.mbtiBasis.type === null
+        ? "MBTI가 없어도 이 해의 판단 방식은 실제 기록과 생활 반응을 보며 보완합니다."
+        : `${packet.mbtiBasis.type} 성향은 이 해에 ${packet.mbtiBasis.decisionPattern} ${packet.mbtiBasis.workPattern} 흐름으로 드러나기 쉽습니다. 명리 흐름의 원인이 아니라 실행 속도와 판단 방식의 표현입니다.`;
+
+    return {
+      ...row,
+      ageLabel: toKoreanAgeLabel(row.ageLabel),
+      ageBasisLabel:
+        row.ageBasisLabel === null
+          ? "입력 대운표 기준 한국나이"
+          : row.ageBasisLabel.includes("한국나이")
+            ? row.ageBasisLabel
+            : `${row.ageBasisLabel} · 한국나이`,
+      yearDetail: {
+        myeongliSummary: `${row.year}년 ${row.annualGanji} 연운은 ${row.annualTenGodLabel} 흐름으로, ${packet.currentMajorFortune.ganji} 대운 안에서 ${yearReading?.headline ?? row.oneLine} 장면을 강조합니다.`,
+        daeunAnnualRelation:
+          yearReading?.roleOfYearInCycle ??
+          `${packet.currentMajorFortune.ganji} 대운 위에 ${row.annualGanji} 세운이 올라와 그해의 실행 압력을 만듭니다.`,
+        natalAnnualRelation: `${row.year}년 기준, ${explainMajorFortuneSignal(row.keyInteractionLabel)}`,
+        careerWork: `${row.year}년 ${careerFlow.title}: ${careerFlow.summary} 이 해에는 ${yearReading?.strategicFocus ?? row.strategy}`,
+        moneyResource: `${row.year}년 ${moneyFlow.title}: ${row.annualTenGodLabel} 흐름을 돈으로 바로 키우기보다 ${moneyFlow.actionHint}`,
+        relationshipLove: `${row.year}년 ${relationshipFlow.title}: ${row.annualGanji} 세운은 관계에서 ${relationshipFlow.actionHint}`,
+        healthRoutine: `${row.year}년 ${healthFlow.title}: ${row.annualTenGodLabel} 압박이 커질수록 ${healthFlow.actionHint}`,
+        socialFamily: `${row.year}년 ${socialFlow.title}: ${yearReading?.roleOfYearInCycle ?? row.oneLine} 흐름에서는 ${socialFlow.actionHint}`,
+        studyGrowth: `${row.year}년 ${studyFlow.title}: ${yearReading?.strategicFocus ?? row.strategy} 기준으로 ${studyFlow.actionHint}`,
+        mbtiExpression: `${row.year}년에는 ${mbtiLine}`,
+        caution: `${row.year}년 주의점은 ${row.strategy} ${packet.currentAnnualCross.caution}`,
+        actionStandard:
+          yearReading?.strategicFocus ??
+          row.strategy ??
+          "그해 먼저 고정할 역할, 돈 기준, 회복 루틴을 하나씩 정합니다.",
+      },
+    };
+  });
+}
+
 function buildWriterDisabledMajorFortuneDraft(
   packet: MajorFortuneEvidencePacket,
 ): MajorFortuneReportDraft {
@@ -418,7 +519,7 @@ function buildWriterDisabledMajorFortuneDraft(
     cycleChapters: buildCycleChapters(packet),
     phaseTimeline: buildPhaseTimeline(packet),
     strongYears: buildStrongYears(packet),
-    majorFortuneTimelineRows: packet.majorFortuneTimelineRows,
+    majorFortuneTimelineRows: buildTimelineYearDetails(packet),
     cycleYearTimeline: buildDraftCycleYearTimeline(packet),
     currentCycleSummary: current.interpretation,
     tenYearTheme: `${packet.tenYearFlowSummary.headline}: ${packet.tenYearFlowSummary.summary}`,

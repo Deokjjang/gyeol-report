@@ -27,7 +27,7 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("MBTI 성향표");
     expect(viewSource).toContain("MBTI는 대운의 원인이 아니라");
     expect(viewSource).toContain("items-start");
-    expect(viewSource).toContain("입력된 대운표 기준");
+    expect(viewSource).toContain("원국표 데이터가 연결되면");
     expect(viewSource).not.toContain("draft 기준");
     expect(viewSource).not.toContain("공통 만세력표");
     expect(viewSource).not.toContain("공통 MBTI표");
@@ -46,30 +46,31 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).toContain("annualCross?.natalToAnnualRelation");
   });
 
-  it("keeps DaeunFortuneTable connected after the ten-year summary", () => {
+  it("renders annual cross before the detailed ten-year table", () => {
     expect(viewSource).toContain("DaeunFortuneTable");
     expect(viewSource).toContain("buildDaeunFortuneTableData");
     expect(viewSource).toContain("renderDaeunFortuneTable");
     expect(viewSource).toContain("buildCurrentDaeunCycleInput");
     expect(viewSource).toContain("buildTimelineYearInputs");
+    expect(viewSource).toContain("buildTimelineYearDetail");
     expect(viewSource).toContain("buildAnnualFortuneInputs");
     expect(viewSource).toContain("row.majorGanji");
     expect(viewSource).toContain("row.annualGanji");
-    expect(viewSource.indexOf("{renderDaeunFortuneTable(draft, evidencePacket)}")).toBeLessThan(
-      viewSource.indexOf("{renderAnnualCross(draft, evidencePacket)}"),
+    expect(viewSource.indexOf("{renderAnnualCross(draft, evidencePacket)}")).toBeLessThan(
+      viewSource.indexOf("{renderDaeunFortuneTable(draft, evidencePacket)}"),
     );
   });
 
-  it("renders six domain flow labels and MBTI expression section", () => {
-    expect(viewSource).toContain("직업/일");
-    expect(viewSource).toContain("돈/자원");
-    expect(viewSource).toContain("관계/연애");
-    expect(viewSource).toContain("건강관리/생활 리듬");
-    expect(viewSource).toContain("사회/가족");
-    expect(viewSource).toContain("공부/성장");
-    expect(viewSource).toContain("renderDomainFlows");
-    expect(viewSource).toContain("domainFlows[key]");
-    expect(viewSource).toContain("MBTI 성향 발현 방식");
+  it("folds domain flow labels into yearly detail and keeps a compact MBTI section", () => {
+    expect(viewSource).toContain("직업·일");
+    expect(viewSource).toContain("돈·자원");
+    expect(viewSource).toContain("관계·연애");
+    expect(viewSource).toContain("건강관리·생활 리듬");
+    expect(viewSource).toContain("사회·가족");
+    expect(viewSource).toContain("공부·성장");
+    expect(viewSource).toContain("yearDetail");
+    expect(viewSource).not.toContain("{renderDomainFlows(draft, evidencePacket)}");
+    expect(viewSource).toContain("가 이 대운을 쓰는 방식");
     expect(viewSource).toContain("명리는 긴 흐름의 방향을 잡고");
   });
 
@@ -83,5 +84,7 @@ describe("MajorFortuneReportView source", () => {
     expect(viewSource).not.toContain("source registry");
     expect(viewSource).not.toContain("productKey");
     expect(viewSource).not.toContain("bridgeEvidence.productKey");
+    expect(viewSource).toContain("한국나이");
+    expect(viewSource).not.toContain("만 나이");
   });
 });

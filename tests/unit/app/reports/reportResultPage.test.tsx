@@ -599,6 +599,20 @@ function createMajorFortuneDraft(): MajorFortuneReportDraft {
         keyInteractionLabel: null,
         oneLine: "새 대운의 첫 기준을 산출물로 남기는 해입니다.",
         strategy: "책임 범위를 좁히고 결과물을 기록합니다.",
+        yearDetail: {
+          myeongliSummary: "2026년 丙午 연운은 식신 흐름으로 결과물을 압박합니다.",
+          daeunAnnualRelation: "대운 위에 연운이 올라와 실행 압력이 커지는 해입니다.",
+          natalAnnualRelation: "원국·세운 작용은 생활 리듬과 역할 조율로 풀어 읽습니다.",
+          careerWork: "직업·일에서는 책임 범위를 먼저 좁힙니다.",
+          moneyResource: "돈·자원에서는 계약과 정산 기준을 숫자로 확인합니다.",
+          relationshipLove: "관계·연애에서는 연락과 거리 기준이 중요합니다.",
+          healthRoutine: "건강관리·생활 리듬에서는 회복 시간을 먼저 고정합니다.",
+          socialFamily: "사회·가족에서는 역할 기대를 먼저 조율합니다.",
+          studyGrowth: "공부·성장에서는 배운 것을 문서로 남깁니다.",
+          mbtiExpression: "ENTJ는 이 흐름을 빠른 결정과 실행 압력으로 드러내기 쉽습니다.",
+          caution: "주의할 패턴은 권한 없는 책임을 떠안는 것입니다.",
+          actionStandard: "실행 기준은 역할, 돈, 회복 루틴을 하나씩 고정하는 것입니다.",
+        },
       },
     ],
     cycleYearTimeline: [
@@ -917,7 +931,7 @@ describe("report result page", () => {
     expect(html).toContain("현재 대운 요약");
     expect(html).toContain("대운 타임라인");
     expect(html).toContain("현재 대운·올해 세운 교차");
-    expect(html).toContain("직업/일");
+    expect(html).toContain("직업·일");
     expect(html).toContain("MBTI 성향 발현 방식");
     expect(html).not.toContain("사주×MBTI 종합 리포트");
     expect(html).not.toContain("연애·결혼·자녀 리포트");

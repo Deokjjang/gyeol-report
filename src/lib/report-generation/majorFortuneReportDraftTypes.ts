@@ -23,6 +23,21 @@ export interface MajorFortuneDraftFlowSection {
   readonly actionHint: string;
 }
 
+export interface MajorFortuneTimelineYearDetail {
+  readonly myeongliSummary: string;
+  readonly daeunAnnualRelation: string;
+  readonly natalAnnualRelation: string;
+  readonly careerWork: string;
+  readonly moneyResource: string;
+  readonly relationshipLove: string;
+  readonly healthRoutine: string;
+  readonly socialFamily: string;
+  readonly studyGrowth: string;
+  readonly mbtiExpression: string;
+  readonly caution: string;
+  readonly actionStandard: string;
+}
+
 export interface MajorFortuneReportDraft {
   readonly version: "v1";
   readonly productType: "major_fortune";
@@ -209,6 +224,7 @@ export interface MajorFortuneReportDraft {
     readonly keyInteractionLabel: string | null;
     readonly oneLine: string;
     readonly strategy: string;
+    readonly yearDetail: MajorFortuneTimelineYearDetail;
   }[];
   readonly cycleYearTimeline: readonly {
     readonly year: number;
@@ -419,6 +435,39 @@ const timelineBadgesSchema = {
   items: timelineBadgeSchema,
 } as const;
 
+const timelineYearDetailSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: [
+    "myeongliSummary",
+    "daeunAnnualRelation",
+    "natalAnnualRelation",
+    "careerWork",
+    "moneyResource",
+    "relationshipLove",
+    "healthRoutine",
+    "socialFamily",
+    "studyGrowth",
+    "mbtiExpression",
+    "caution",
+    "actionStandard",
+  ],
+  properties: {
+    myeongliSummary: stringSchema,
+    daeunAnnualRelation: stringSchema,
+    natalAnnualRelation: stringSchema,
+    careerWork: stringSchema,
+    moneyResource: stringSchema,
+    relationshipLove: stringSchema,
+    healthRoutine: stringSchema,
+    socialFamily: stringSchema,
+    studyGrowth: stringSchema,
+    mbtiExpression: stringSchema,
+    caution: stringSchema,
+    actionStandard: stringSchema,
+  },
+} as const;
+
 const majorTimelineRowSchema = {
   type: "object",
   additionalProperties: false,
@@ -438,6 +487,7 @@ const majorTimelineRowSchema = {
     "keyInteractionLabel",
     "oneLine",
     "strategy",
+    "yearDetail",
   ],
   properties: {
     year: numberSchema,
@@ -458,6 +508,7 @@ const majorTimelineRowSchema = {
     keyInteractionLabel: nullableStringSchema,
     oneLine: stringSchema,
     strategy: stringSchema,
+    yearDetail: timelineYearDetailSchema,
   },
 } as const;
 

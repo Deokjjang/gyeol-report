@@ -53,6 +53,7 @@ export type DaeunTimelineYearInput = DaeunGanjiInput & {
   readonly keyInteractionLabel?: string | null;
   readonly oneLine?: string | null;
   readonly strategy?: string | null;
+  readonly yearDetail?: DaeunTimelineRow["yearDetail"];
 };
 
 export type DaeunAnnualFortuneInput = DaeunGanjiInput & {
@@ -168,6 +169,7 @@ function buildTimelineRows(
         keyInteractionLabel: row.keyInteractionLabel ?? null,
         oneLine: row.oneLine ?? null,
         strategy: row.strategy ?? null,
+        yearDetail: row.yearDetail,
       };
     });
 }

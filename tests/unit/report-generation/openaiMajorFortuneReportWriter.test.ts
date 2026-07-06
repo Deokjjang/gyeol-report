@@ -355,6 +355,33 @@ function createValidDraft(): MajorFortuneReportDraft {
           year === 2030
             ? "크게 벌리기보다 계약, 역할, 일정의 충돌 지점을 먼저 줄이세요."
             : "결과물을 만들되, 책임 범위와 회복 시간을 같이 잡으세요.",
+        yearDetail: {
+          myeongliSummary: `${year}년 ${annualGanjis[index] ?? "丙午"} 연운은 ${annualTenGods[index] ?? "식신"} 흐름으로 대운 戊辰 안에서 역할과 생활 기준을 건드립니다.`,
+          daeunAnnualRelation:
+            "대운의 장기 배경 위에 연운의 단기 자극이 올라와 실행 압력을 만드는 해입니다.",
+          natalAnnualRelation:
+            year === 2030
+              ? "辰戌 충은 익숙한 구조와 새 책임이 부딪혀 역할, 계약, 일정 기준을 다시 맞춰야 하는 장면입니다."
+              : "원국과 세운의 작용은 생활 리듬, 역할, 관계 조율의 장면으로 풀어 읽습니다.",
+          careerWork:
+            "직업·일에서는 맡은 역할과 성과 기준을 먼저 좁혀야 합니다.",
+          moneyResource:
+            "돈·자원에서는 지출, 계약, 정산 기준을 숫자로 확인해야 합니다.",
+          relationshipLove:
+            "관계·연애에서는 감정보다 연락, 거리, 약속 기준이 체감에 크게 작동합니다.",
+          healthRoutine:
+            "건강관리·생활 리듬에서는 수면, 식사, 회복 시간을 일정처럼 고정합니다.",
+          socialFamily:
+            "사회·가족에서는 역할 기대와 생활 반경의 경계를 먼저 맞춰야 합니다.",
+          studyGrowth:
+            "공부·성장에서는 배운 내용을 문서, 자격, 포트폴리오처럼 남기는 방식이 좋습니다.",
+          mbtiExpression:
+            "ENTJ 성향은 이 해의 흐름을 빠른 결정과 실행 기준으로 드러내기 쉽지만, 대운의 원인은 아닙니다.",
+          caution:
+            "주의할 점은 특정 사건 예언이 아니라 반복되는 피로와 과부하 관리입니다.",
+          actionStandard:
+            "그해 먼저 고정할 역할, 돈 기준, 회복 루틴을 하나씩 정합니다.",
+        },
       };
     }),
     cycleYearTimeline: Array.from({ length: 10 }, (_, index) => {

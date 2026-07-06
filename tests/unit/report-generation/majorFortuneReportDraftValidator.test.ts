@@ -434,6 +434,33 @@ export function createValidMajorFortuneDraft(
             ? "2026년 丙午: 대운 戊辰이 시작되고, 세운 丙午가 속도와 노출을 올립니다. 일을 크게 벌리기보다 책임 범위부터 좁혀야 하는 해입니다."
             : `${year}년 ${annualGanjis[index] ?? "丙午"}: 세운 ${annualTenGods[index] ?? "식신"} 테마가 대운 戊辰 안에서 다른 장면으로 드러납니다. 해당 해에는 돈, 역할, 관계 중 먼저 움직이는 영역을 골라 전략을 조정합니다.`,
         strategy: strategies[index] ?? "책임 범위와 회복 시간을 같이 잡으세요.",
+        yearDetail: {
+          myeongliSummary: `${year}년 ${annualGanjis[index] ?? "丙午"} 연운은 ${annualTenGods[index] ?? "식신"} 흐름으로 대운 戊辰 안에서 역할과 생활 기준을 건드립니다.`,
+          daeunAnnualRelation:
+            `${year}년에는 대운의 장기 배경 위에 연운의 단기 자극이 올라와 ${annualTenGods[index] ?? "식신"} 방식의 실행 압력을 만듭니다.`,
+          natalAnnualRelation:
+            year === 2030
+              ? "辰戌 충은 익숙한 구조와 새 책임이 부딪혀 역할, 계약, 일정 기준을 다시 맞춰야 하는 장면입니다."
+              : `${year}년 원국과 세운의 작용은 생활 리듬, 역할, 관계 조율의 장면으로 풀어 읽습니다.`,
+          careerWork:
+            `${year}년 직업·일에서는 맡은 역할과 성과 기준을 먼저 좁혀야 합니다.`,
+          moneyResource:
+            `${year}년 돈·자원에서는 지출, 계약, 정산 기준을 숫자로 확인해야 합니다.`,
+          relationshipLove:
+            `${year}년 관계·연애에서는 감정보다 연락, 거리, 약속 기준이 체감에 크게 작동합니다.`,
+          healthRoutine:
+            `${year}년 건강관리·생활 리듬에서는 수면, 식사, 회복 시간을 일정처럼 고정합니다.`,
+          socialFamily:
+            `${year}년 사회·가족에서는 역할 기대와 생활 반경의 경계를 먼저 맞춰야 합니다.`,
+          studyGrowth:
+            `${year}년 공부·성장에서는 배운 내용을 문서, 자격, 포트폴리오처럼 남기는 방식이 좋습니다.`,
+          mbtiExpression:
+            `ENTJ 성향은 ${year}년 흐름을 빠른 결정과 실행 기준으로 드러내기 쉽지만, 대운의 원인은 아닙니다.`,
+          caution:
+            `${year}년 주의할 점은 특정 사건 예언이 아니라 반복되는 피로와 과부하 관리입니다.`,
+          actionStandard:
+            strategies[index] ?? "그해 먼저 고정할 역할, 돈 기준, 회복 루틴을 하나씩 정합니다.",
+        },
       };
     }),
     cycleYearTimeline: Array.from({ length: 10 }, (_, index) => {

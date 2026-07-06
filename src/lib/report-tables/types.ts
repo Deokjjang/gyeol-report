@@ -222,6 +222,20 @@ export type DaeunTimelineRow = {
   readonly keyInteractionLabel: string | null;
   readonly oneLine: string | null;
   readonly strategy: string | null;
+  readonly yearDetail?: {
+    readonly myeongliSummary: string;
+    readonly daeunAnnualRelation: string;
+    readonly natalAnnualRelation: string;
+    readonly careerWork: string;
+    readonly moneyResource: string;
+    readonly relationshipLove: string;
+    readonly healthRoutine: string;
+    readonly socialFamily: string;
+    readonly studyGrowth: string;
+    readonly mbtiExpression: string;
+    readonly caution: string;
+    readonly actionStandard: string;
+  };
 };
 
 export type DaeunAnnualCompareTableData = {

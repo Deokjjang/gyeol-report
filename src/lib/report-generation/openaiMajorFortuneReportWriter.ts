@@ -287,6 +287,56 @@ function formatBranchLabel(packet: MajorFortuneEvidencePacket): string {
   return `${packet.currentCycle.branch} · ${yinYangKo[packet.currentCycle.branchYinYang]}${elementStemKo[packet.currentCycle.branchElement]}`;
 }
 
+function buildAttachedTimelineRows(
+  packet: MajorFortuneEvidencePacket,
+): MajorFortuneReportDraft["majorFortuneTimelineRows"] {
+  return packet.majorFortuneTimelineRows.map((row) => {
+    const yearReading =
+      packet.cycleYearTimeline.find((item) => item.year === row.year) ??
+      packet.cycleYearTimeline[0];
+    const mbtiExpression =
+      packet.mbtiBasis.type === null
+        ? "MBTI가 없어도 이 해의 판단 방식은 실제 기록과 생활 반응을 보며 보완합니다."
+        : `${packet.mbtiBasis.type} 성향은 ${packet.mbtiBasis.decisionPattern} ${packet.mbtiBasis.workPattern} 흐름으로 드러나기 쉽습니다. 명리 흐름의 원인이 아니라 실행 속도와 판단 방식의 표현입니다.`;
+
+    return {
+      ...row,
+      ageLabel:
+        row.ageLabel === null || row.ageLabel.includes("한국나이")
+          ? row.ageLabel
+          : `한국나이 ${row.ageLabel}`,
+      ageBasisLabel:
+        row.ageBasisLabel === null
+          ? "입력 대운표 기준 한국나이"
+          : row.ageBasisLabel.includes("한국나이")
+            ? row.ageBasisLabel
+            : `${row.ageBasisLabel} · 한국나이`,
+      yearDetail: {
+        myeongliSummary: `${row.year}년 ${row.annualGanji} 연운은 ${row.annualTenGodLabel} 흐름으로 ${packet.currentMajorFortune.ganji} 대운 안에서 ${yearReading?.headline ?? row.oneLine} 장면을 강조합니다.`,
+        daeunAnnualRelation:
+          yearReading?.roleOfYearInCycle ??
+          `${packet.currentMajorFortune.ganji} 대운 위에 ${row.annualGanji} 세운이 올라와 단기 자극을 만듭니다.`,
+        natalAnnualRelation:
+          row.keyInteractionLabel === null
+            ? `${row.year}년 원국과 세운의 작용은 생활 리듬, 역할, 관계 조율의 장면으로 풀어 읽습니다.`
+            : `${row.year}년 ${row.keyInteractionLabel}: 원국과 세운의 작용은 역할, 생활 리듬, 관계 조율의 장면으로 번역해 읽습니다.`,
+        careerWork: `${row.year}년 ${packet.domainFlows.careerWork.title}: ${packet.domainFlows.careerWork.summary} 이 해에는 ${yearReading?.strategicFocus ?? row.strategy}`,
+        moneyResource: `${row.year}년 ${packet.domainFlows.moneyResource.title}: ${row.annualTenGodLabel} 흐름을 돈으로 바로 키우기보다 ${packet.domainFlows.moneyResource.actionHint}`,
+        relationshipLove: `${row.year}년 ${packet.domainFlows.relationshipLove.title}: ${row.annualGanji} 세운은 관계에서 ${packet.domainFlows.relationshipLove.actionHint}`,
+        healthRoutine: `${row.year}년 ${packet.domainFlows.healthRoutine.title}: ${row.annualTenGodLabel} 압박이 커질수록 ${packet.domainFlows.healthRoutine.actionHint}`,
+        socialFamily: `${row.year}년 ${packet.domainFlows.socialFamily.title}: ${yearReading?.roleOfYearInCycle ?? row.oneLine} 흐름에서는 ${packet.domainFlows.socialFamily.actionHint}`,
+        studyGrowth: `${row.year}년 ${packet.domainFlows.studyGrowth.title}: ${yearReading?.strategicFocus ?? row.strategy} 기준으로 ${packet.domainFlows.studyGrowth.actionHint}`,
+        mbtiExpression: `${row.year}년에는 ${mbtiExpression}`,
+        caution: `${row.year}년 주의점은 ${row.strategy} ${packet.currentAnnualCross.caution}`,
+        actionStandard:
+          yearReading?.strategicFocus ??
+          row.strategy ??
+          "그해 먼저 고정할 역할, 돈 기준, 회복 루틴을 하나씩 정합니다.",
+      },
+    };
+  });
+}
+
 function attachDeterministicEvidence(input: {
   readonly parsed: unknown;
   readonly evidencePacket: MajorFortuneEvidencePacket;
@@ -372,7 +422,7 @@ function attachDeterministicEvidence(input: {
       pushStrategy: year.pushStrategy,
       reduceStrategy: year.reduceStrategy,
     })),
-    majorFortuneTimelineRows: input.evidencePacket.majorFortuneTimelineRows,
+    majorFortuneTimelineRows: buildAttachedTimelineRows(input.evidencePacket),
     cycleYearTimeline: input.evidencePacket.cycleYearTimeline.map((year) => ({
       year: year.year,
       ganji: year.ganji,

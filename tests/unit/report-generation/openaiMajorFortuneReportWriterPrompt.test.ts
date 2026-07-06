@@ -107,6 +107,13 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("The full 10-year timeline must appear");
     expect(text).toContain("majorFortuneTimelineRows must be used");
     expect(text).toContain("majorGanji and annualGanji side by side");
+    expect(text).toContain("The main body of this product is the 10-year year-by-year flow");
+    expect(text).toContain("Each majorFortuneTimelineRows item must include yearDetail");
+    expect(text).toContain("yearDetail must include myeongliSummary");
+    expect(text).toContain("직업·일, 돈·자원, 관계·연애, 건강관리·생활 리듬");
+    expect(text).toContain("Do not leave MBTI in a separate generic block only");
+    expect(text).toContain("Do not output raw branch interaction labels alone");
+    expect(text).toContain("Age labels in majorFortuneTimelineRows must use 한국나이 wording");
     expect(text).toContain("Highlight the current year row with 올해 badge");
     expect(text).toContain("Strong years are TOP highlights only");
     expect(text).toContain("Do not use currentCycle.index as a score");

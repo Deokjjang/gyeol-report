@@ -311,6 +311,92 @@ function buildPreviewCycleYearTimeline(packet: MajorFortuneEvidencePacket) {
   }));
 }
 
+function toPreviewKoreanAgeLabel(ageLabel: string | null): string | null {
+  if (ageLabel === null || ageLabel.trim().length === 0) {
+    return null;
+  }
+  if (ageLabel.includes("한국나이")) {
+    return ageLabel;
+  }
+
+  return `한국나이 ${ageLabel}`;
+}
+
+function explainPreviewMajorSignal(value: string | null): string {
+  const signal = value?.trim() ?? "";
+
+  if (!signal) {
+    return "원국과 세운의 작용은 생활 리듬, 역할, 관계 조율의 장면으로 풀어 읽습니다.";
+  }
+  if (/辰申.*반합|申辰.*반합/u.test(signal)) {
+    return `${signal}: 생각과 회복, 정보 흐름이 부분적으로 살아나는 장면입니다.`;
+  }
+  if (/卯辰.*해|辰卯.*해/u.test(signal)) {
+    return `${signal}: 작지만 반복되는 어긋남과 누적 피로로 보기 쉽습니다.`;
+  }
+  if (/辰辰.*형/u.test(signal)) {
+    return `${signal}: 스스로 기준을 높이고 압박을 반복해서 키우는 장면입니다.`;
+  }
+  if (signal.includes("충")) {
+    return `${signal}: 익숙한 구조와 새 요구가 부딪혀 역할, 계약, 일정 기준을 다시 맞춰야 하는 장면입니다.`;
+  }
+  if (signal.includes("해")) {
+    return `${signal}: 겉으로 크지 않아도 불편감이 천천히 쌓일 수 있는 지점입니다.`;
+  }
+  if (signal.includes("형")) {
+    return `${signal}: 반복 압박이 커지기 쉬워 기준을 좁히고 회복 시간을 먼저 확보해야 하는 장면입니다.`;
+  }
+  if (signal.includes("파")) {
+    return `${signal}: 기존 방식이 깨지고 다시 맞춰야 하는 장면이 생기기 쉬운 흐름입니다.`;
+  }
+
+  return signal;
+}
+
+function buildPreviewTimelineYearDetails(
+  packet: MajorFortuneEvidencePacket,
+): MajorFortuneReportDraft["majorFortuneTimelineRows"] {
+  return packet.majorFortuneTimelineRows.map((row) => {
+    const yearReading =
+      packet.cycleYearTimeline.find((item) => item.year === row.year) ??
+      packet.cycleYearTimeline[0];
+    const mbtiLine =
+      packet.mbtiBasis.type === null
+        ? "MBTI가 없어도 이 해의 판단 방식은 실제 기록과 생활 반응을 보며 보완합니다."
+        : `${packet.mbtiBasis.type} 성향은 ${packet.mbtiBasis.decisionPattern} ${packet.mbtiBasis.workPattern} 흐름으로 드러나기 쉽습니다. 명리 흐름의 원인이 아니라 실행 속도와 판단 방식의 표현입니다.`;
+
+    return {
+      ...row,
+      ageLabel: toPreviewKoreanAgeLabel(row.ageLabel),
+      ageBasisLabel:
+        row.ageBasisLabel === null
+          ? "입력 대운표 기준 한국나이"
+          : row.ageBasisLabel.includes("한국나이")
+            ? row.ageBasisLabel
+            : `${row.ageBasisLabel} · 한국나이`,
+      yearDetail: {
+        myeongliSummary: `${row.year}년 ${row.annualGanji} 연운은 ${row.annualTenGodLabel} 흐름으로 ${packet.currentMajorFortune.ganji} 대운 안에서 ${yearReading?.headline ?? row.oneLine} 장면을 강조합니다.`,
+        daeunAnnualRelation:
+          yearReading?.roleOfYearInCycle ??
+          `${packet.currentMajorFortune.ganji} 대운 위에 ${row.annualGanji} 세운이 올라와 단기 자극을 만듭니다.`,
+        natalAnnualRelation: `${row.year}년 기준, ${explainPreviewMajorSignal(row.keyInteractionLabel)}`,
+        careerWork: `${row.year}년 ${packet.domainFlows.careerWork.title}: ${packet.domainFlows.careerWork.summary} 이 해에는 ${yearReading?.strategicFocus ?? row.strategy}`,
+        moneyResource: `${row.year}년 ${packet.domainFlows.moneyResource.title}: ${row.annualTenGodLabel} 흐름을 돈으로 바로 키우기보다 ${packet.domainFlows.moneyResource.actionHint}`,
+        relationshipLove: `${row.year}년 ${packet.domainFlows.relationshipLove.title}: ${row.annualGanji} 세운은 관계에서 ${packet.domainFlows.relationshipLove.actionHint}`,
+        healthRoutine: `${row.year}년 ${packet.domainFlows.healthRoutine.title}: ${row.annualTenGodLabel} 압박이 커질수록 ${packet.domainFlows.healthRoutine.actionHint}`,
+        socialFamily: `${row.year}년 ${packet.domainFlows.socialFamily.title}: ${yearReading?.roleOfYearInCycle ?? row.oneLine} 흐름에서는 ${packet.domainFlows.socialFamily.actionHint}`,
+        studyGrowth: `${row.year}년 ${packet.domainFlows.studyGrowth.title}: ${yearReading?.strategicFocus ?? row.strategy} 기준으로 ${packet.domainFlows.studyGrowth.actionHint}`,
+        mbtiExpression: `${row.year}년에는 ${mbtiLine}`,
+        caution: `${row.year}년 주의점은 ${row.strategy} ${packet.currentAnnualCross.caution}`,
+        actionStandard:
+          yearReading?.strategicFocus ??
+          row.strategy ??
+          "그해 먼저 고정할 역할, 돈 기준, 회복 루틴을 하나씩 정합니다.",
+      },
+    };
+  });
+}
+
 function buildInMemoryMajorFortunePreviewDraft(
   packet: MajorFortuneEvidencePacket,
 ): MajorFortuneReportDraft {
@@ -385,7 +471,7 @@ function buildInMemoryMajorFortunePreviewDraft(
     },
     cycleChapters: buildPreviewCycleChapters(packet),
     phaseTimeline: buildPreviewPhaseTimeline(packet),
-    majorFortuneTimelineRows: packet.majorFortuneTimelineRows,
+    majorFortuneTimelineRows: buildPreviewTimelineYearDetails(packet),
     cycleYearTimeline: buildPreviewCycleYearTimeline(packet),
     currentCycleSummary: current.interpretation,
     tenYearTheme: `${packet.tenYearFlowSummary.headline}: ${packet.tenYearFlowSummary.summary}`,

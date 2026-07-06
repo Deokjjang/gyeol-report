@@ -84,11 +84,11 @@ export default function DaeunFortuneTable({
 
       {isOpen ? (
         <div id={contentId} className="divide-y divide-[#eadfce]">
-          <DaeunTimelineTable rows={data.timelineRows} />
           <DaeunAnnualCompareTable
             selectedYear={data.selectedYear}
             data={data.annualCompareTable}
           />
+          <DaeunTimelineTable rows={data.timelineRows} />
         </div>
       ) : null}
     </section>
@@ -114,66 +114,136 @@ export function DaeunTimelineTable({
   );
 }
 
+const TIMELINE_DETAIL_SECTIONS = [
+  { key: "careerWork", label: "직업·일" },
+  { key: "moneyResource", label: "돈·자원" },
+  { key: "relationshipLove", label: "관계·연애" },
+  { key: "healthRoutine", label: "건강관리·생활 리듬" },
+  { key: "socialFamily", label: "사회·가족" },
+  { key: "studyGrowth", label: "공부·성장" },
+  { key: "mbtiExpression", label: "MBTI 발현" },
+  { key: "caution", label: "주의할 패턴" },
+  { key: "actionStandard", label: "실행 기준" },
+] as const;
+
 function TimelineRow({
   row,
 }: {
   readonly row: DaeunTimelineRow;
 }) {
   return (
-    <div
+    <details
+      open={row.isCurrentYear}
       className={joinClassNames(
-        "grid grid-cols-[4.75rem_minmax(0,1fr)] gap-3 px-3 py-3 text-sm sm:grid-cols-[5.5rem_minmax(0,1fr)]",
+        "group px-3 py-3 text-sm",
         row.isCurrentYear
           ? "daeun-current-year-row border-l-4 border-[#b88932] bg-[#fff6df]"
           : "bg-[#fffaf1]",
       )}
     >
-      <div className="flex flex-col justify-center gap-1">
-        <span className="text-base font-extrabold text-[#2b211b]">
-          {row.year}년
-        </span>
-        <span className="text-xs font-bold text-[#8a7c70]">
-          {row.ageLabel ?? "-"}
-        </span>
+      <summary className="grid cursor-pointer list-none grid-cols-[4.75rem_minmax(0,1fr)] gap-3 sm:grid-cols-[5.5rem_minmax(0,1fr)] [&::-webkit-details-marker]:hidden">
+        <div className="flex flex-col justify-center gap-1">
+          <span className="text-base font-extrabold text-[#2b211b]">
+            {row.year}년
+          </span>
+          <span className="text-xs font-bold text-[#8a7c70]">
+            {row.ageLabel ?? "-"}
+          </span>
+        </div>
+        <div className="grid min-w-0 gap-2">
+          <div className="flex flex-wrap items-center gap-1">
+            {row.badges.length > 0 ? (
+              row.badges.map((badge) => (
+                <span
+                  key={badge}
+                  className={joinClassNames(
+                    "rounded px-1.5 py-0.5 text-[0.68rem] font-extrabold",
+                    badge === "올해"
+                      ? "bg-[#6f1d35] text-white"
+                      : badge === "전환"
+                        ? "bg-[#9f7a2d] text-white"
+                        : "bg-[#f1e6d7] text-[#5a4d42]",
+                  )}
+                >
+                  {badge}
+                </span>
+              ))
+            ) : (
+              <span className="text-xs font-bold text-[#aa9f93]">-</span>
+            )}
+            <span className="ml-auto shrink-0 text-xs font-bold text-[#8a7c70]">
+              자세히 보기
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 gap-2">
+            <TimelinePillar label="대운" row={row.daeunPillar} />
+            <TimelinePillar label="연운" row={row.annualPillar} />
+          </div>
+
+          <div className="grid gap-1 leading-5 text-[#5a4d42]">
+            <p className="break-words text-xs font-bold text-[#8a7c70]">
+              {row.keyInteractionLabel ?? "-"}
+            </p>
+            <p className="break-words text-sm font-semibold text-[#2b211b]">
+              {row.oneLine ?? "-"}
+            </p>
+          </div>
+        </div>
+      </summary>
+      <TimelineYearDetail row={row} />
+    </details>
+  );
+}
+
+function TimelineYearDetail({ row }: { readonly row: DaeunTimelineRow }) {
+  if (!row.yearDetail) {
+    return null;
+  }
+
+  return (
+    <div className="mt-4 grid min-w-0 gap-4 rounded-[8px] border border-[#eadfce] bg-[#fffdf8] p-4">
+      <div className="grid gap-3 md:grid-cols-3">
+        <DetailBlock
+          label="간지·십성"
+          body={row.yearDetail.myeongliSummary}
+        />
+        <DetailBlock
+          label="대운과의 관계"
+          body={row.yearDetail.daeunAnnualRelation}
+        />
+        <DetailBlock
+          label="원국·세운 작용"
+          body={row.yearDetail.natalAnnualRelation}
+        />
       </div>
-      <div className="grid min-w-0 gap-2">
-        <div className="flex flex-wrap items-center gap-1">
-          {row.badges.length > 0 ? (
-            row.badges.map((badge) => (
-              <span
-                key={badge}
-                className={joinClassNames(
-                  "rounded px-1.5 py-0.5 text-[0.68rem] font-extrabold",
-                  badge === "올해"
-                    ? "bg-[#6f1d35] text-white"
-                    : badge === "전환"
-                      ? "bg-[#9f7a2d] text-white"
-                      : "bg-[#f1e6d7] text-[#5a4d42]",
-                )}
-              >
-                {badge}
-              </span>
-            ))
-          ) : (
-            <span className="text-xs font-bold text-[#aa9f93]">-</span>
-          )}
-        </div>
-
-        <div className="grid grid-cols-2 gap-2">
-          <TimelinePillar label="대운" row={row.daeunPillar} />
-          <TimelinePillar label="연운" row={row.annualPillar} />
-        </div>
-
-        <div className="grid gap-1 leading-5 text-[#5a4d42]">
-          <p className="break-words text-xs font-bold text-[#8a7c70]">
-            {row.keyInteractionLabel ?? "-"}
-          </p>
-          <p className="break-words text-sm font-semibold text-[#2b211b]">
-            {row.oneLine ?? "-"}
-          </p>
-        </div>
+      <div className="grid gap-3 md:grid-cols-2">
+        {TIMELINE_DETAIL_SECTIONS.map((section) => (
+          <DetailBlock
+            key={section.key}
+            label={section.label}
+            body={row.yearDetail?.[section.key] ?? ""}
+          />
+        ))}
       </div>
     </div>
+  );
+}
+
+function DetailBlock({
+  label,
+  body,
+}: {
+  readonly label: string;
+  readonly body: string;
+}) {
+  return (
+    <section className="min-w-0 rounded-[8px] border border-[#f0e5d6] bg-[#fffaf1] p-3">
+      <h4 className="text-xs font-extrabold text-[#7d1f39]">{label}</h4>
+      <p className="mt-2 break-words text-sm leading-6 text-[#51463c]">
+        {body || "-"}
+      </p>
+    </section>
   );
 }
 
