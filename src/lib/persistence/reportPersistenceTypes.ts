@@ -1,4 +1,5 @@
 import type { ReportOutput } from "../report/types";
+import type { ProductPreviewSnapshot } from "../report-generation/productPreviewSnapshot";
 
 export type ReportPersistenceStatus =
   | "draft"
@@ -25,12 +26,26 @@ export type PersistedReportInputSnapshot = {
   mbti?: string;
 };
 
-export type PersistedReportSnapshot = {
+export type ComprehensiveReportOutputSnapshot = {
+  snapshotKind?: "comprehensive_report_output";
   report: ReportOutput;
   reportVersion: string;
   renderVersion: string;
   createdAt: string;
 };
+
+export type ProductPreviewPersistedSnapshot = {
+  snapshotKind: "product_preview";
+  productPreview: ProductPreviewSnapshot;
+  report: ReportOutput;
+  reportVersion: string;
+  renderVersion: string;
+  createdAt: string;
+};
+
+export type PersistedReportSnapshot =
+  | ComprehensiveReportOutputSnapshot
+  | ProductPreviewPersistedSnapshot;
 
 export type PersistedPaymentLinkage = {
   orderId: string;
@@ -62,13 +77,26 @@ export type PersistedReportRecord = {
   deletedAt?: string;
 };
 
-export type PublicReportPreviewRecord = {
+type PublicReportPreviewRecordBase = {
   reportId: string;
   createdAt: string;
   status: ReportPersistenceStatus;
   accessMode: ReportAccessMode;
+};
+
+export type PublicComprehensiveReportPreviewRecord = PublicReportPreviewRecordBase & {
+  snapshotKind?: "comprehensive_report_output";
   report: ReportOutput;
 };
+
+export type PublicProductPreviewRecord = PublicReportPreviewRecordBase & {
+  snapshotKind: "product_preview";
+  productPreview: ProductPreviewSnapshot;
+};
+
+export type PublicReportPreviewRecord =
+  | PublicComprehensiveReportPreviewRecord
+  | PublicProductPreviewRecord;
 
 export type PublicReportErrorCode =
   | "REPORT_NOT_FOUND"

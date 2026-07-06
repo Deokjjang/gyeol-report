@@ -9,8 +9,34 @@ import type {
 } from "./reportPersistenceAdapter";
 import type {
   PersistedReportRecord,
+  PublicReportPreviewRecord,
   PublicReportResult,
 } from "./reportPersistenceTypes";
+
+function mapRecordToPublicRecord(
+  record: PersistedReportRecord,
+): PublicReportPreviewRecord {
+  const base = {
+    reportId: record.reportId,
+    createdAt: record.createdAt,
+    status: record.status,
+    accessMode: record.accessMode,
+  };
+
+  if (record.reportSnapshot.snapshotKind === "product_preview") {
+    return {
+      ...base,
+      snapshotKind: "product_preview",
+      productPreview: record.reportSnapshot.productPreview,
+    };
+  }
+
+  return {
+    ...base,
+    snapshotKind: "comprehensive_report_output",
+    report: record.reportSnapshot.report,
+  };
+}
 
 export function createInMemoryReportPersistenceAdapter(
   initialRecords: readonly PersistedReportRecord[] = [],
@@ -104,13 +130,7 @@ export function createInMemoryReportPersistenceAdapter(
 
       return {
         ok: true,
-        record: {
-          reportId: record.reportId,
-          createdAt: record.createdAt,
-          status: record.status,
-          accessMode: record.accessMode,
-          report: record.reportSnapshot.report,
-        },
+        record: mapRecordToPublicRecord(record),
       };
     },
 

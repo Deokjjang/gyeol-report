@@ -1,7 +1,20 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { createInMemoryReportPersistenceAdapter } from "@/lib/persistence/inMemoryReportPersistenceAdapter";
 import type { PersistedReportRecord } from "@/lib/persistence/reportPersistenceTypes";
+import {
+  createProductPreviewSnapshot,
+  type ProductPreviewSnapshot,
+  type ProductPreviewSnapshotDraft,
+} from "@/lib/report-generation/productPreviewSnapshot";
+
+const sourcePath = join(
+  process.cwd(),
+  "src/lib/persistence/inMemoryReportPersistenceAdapter.ts",
+);
+const source = readFileSync(sourcePath, "utf8");
 
 const createdAt = "2026-01-01T00:00:00.000Z";
 const laterAt = "2026-01-02T00:00:00.000Z";
@@ -13,6 +26,59 @@ const minimalReport = {
   sections: [],
   notices: [],
 } as const;
+
+const compatibilityDraft = {
+  version: "compatibility_v1_draft",
+  productType: "saju_mbti_compatibility",
+  productVersion: "1.0",
+  relationshipType: "love",
+  personALabel: "A",
+  personBLabel: "B",
+  openingTitle: "A님과 B님의 궁합",
+  openingSummary: "요약",
+  coreLine: "핵심",
+  scoreSummary: {
+    totalScore: 70,
+    scoreLabel: "조율형",
+    scoreCaution: "참고값",
+    breakdown: {
+      attraction: 70,
+      communication: 70,
+      lifestyleRhythm: 70,
+      conflictRecovery: 70,
+      longTermStability: 70,
+      growthComplement: 70,
+    },
+  },
+  chartComparison: {
+    personA: {},
+    personB: {},
+  },
+  keyCompatibilityPoints: {
+    attractionPoints: ["끌림"],
+    strengthPoints: ["강점"],
+    frictionPoints: ["마찰"],
+    relationshipRules: ["규칙"],
+  },
+  relationshipAnalysis: {
+    connectionSummary: "연결",
+    firstImpression: "첫인상",
+    stayingPower: "지속력",
+    frictionPoints: ["마찰"],
+    categoryReading: "관계 해석",
+    aToBFatigue: "A 피로",
+    bToAFatigue: "B 피로",
+    communicationRecovery: "회복",
+    roleMoneyLifeRhythm: "생활",
+    categorySpecificAdvice: ["조언"],
+    timingCautions: ["타이밍"],
+    repairStrategy: ["유지"],
+    riskManagement: ["리스크"],
+  },
+  chapters: [],
+  finalAdvice: ["조언"],
+  safetyNotes: ["안내"],
+} as ProductPreviewSnapshotDraft;
 
 function createRecord(
   overrides: Partial<PersistedReportRecord> = {},
@@ -47,6 +113,37 @@ function createRecord(
   };
 }
 
+function createProductPreview(): ProductPreviewSnapshot {
+  const result = createProductPreviewSnapshot({
+    reportId: "report_productpreview",
+    createdAtIso: createdAt,
+    productKey: "saju_mbti_compatibility",
+    productSlug: "compatibility",
+    draft: compatibilityDraft,
+  });
+
+  if (!result.ok) {
+    throw new Error(`Product preview fixture failed: ${result.error}`);
+  }
+
+  return result.value;
+}
+
+function createProductPreviewRecord(): PersistedReportRecord {
+  return createRecord({
+    reportId: "report_productpreview",
+    reportVersion: "product_preview_v1",
+    reportSnapshot: {
+      snapshotKind: "product_preview",
+      productPreview: createProductPreview(),
+      report: minimalReport,
+      reportVersion: "product_preview_v1",
+      renderVersion: "product_preview_v1",
+      createdAt,
+    },
+  });
+}
+
 describe("createInMemoryReportPersistenceAdapter", () => {
   it("creates and finds a report", async () => {
     const adapter = createInMemoryReportPersistenceAdapter();
@@ -59,7 +156,50 @@ describe("createInMemoryReportPersistenceAdapter", () => {
     expect(findResult.ok).toBe(true);
     if (findResult.ok) {
       expect(findResult.record.reportId).toBe(record.reportId);
-      expect(findResult.record.report).toEqual(minimalReport);
+      expect(findResult.record.snapshotKind).toBe(
+        "comprehensive_report_output",
+      );
+      if (findResult.record.snapshotKind === "comprehensive_report_output") {
+        expect(findResult.record.report).toEqual(minimalReport);
+      }
+    }
+  });
+
+  it("normalizes legacy comprehensive snapshots without snapshotKind", async () => {
+    const adapter = createInMemoryReportPersistenceAdapter();
+    const record = createRecord();
+
+    expect(record.reportSnapshot.snapshotKind).toBeUndefined();
+
+    await adapter.create({ record });
+    const findResult = await adapter.find({ reportId: record.reportId });
+
+    expect(findResult.ok).toBe(true);
+    if (findResult.ok) {
+      expect(findResult.record.snapshotKind).toBe(
+        "comprehensive_report_output",
+      );
+    }
+  });
+
+  it("creates and finds a product preview snapshot", async () => {
+    const adapter = createInMemoryReportPersistenceAdapter();
+    const record = createProductPreviewRecord();
+
+    const createResult = await adapter.create({ record });
+    const findResult = await adapter.find({ reportId: record.reportId });
+
+    expect(createResult.ok).toBe(true);
+    expect(findResult.ok).toBe(true);
+    if (findResult.ok) {
+      expect(findResult.record.reportId).toBe(record.reportId);
+      expect(findResult.record.snapshotKind).toBe("product_preview");
+      if (findResult.record.snapshotKind === "product_preview") {
+        expect(findResult.record.productPreview).toEqual(
+          record.reportSnapshot.productPreview,
+        );
+        expect(findResult.record).not.toHaveProperty("report");
+      }
     }
   });
 
@@ -240,5 +380,11 @@ describe("createInMemoryReportPersistenceAdapter", () => {
     expect(listResult).toHaveLength(1);
     expect(listResult[0]?.updatedAt).toBe(laterAt);
     expect(listResult[0]?.status).toBe("paid_unlocked");
+  });
+
+  it("does not import Supabase, payment, or API routes", () => {
+    expect(source).not.toContain("supabase");
+    expect(source).not.toContain("payment");
+    expect(source).not.toContain("api/reports");
   });
 });
