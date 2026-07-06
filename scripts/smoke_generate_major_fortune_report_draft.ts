@@ -10,6 +10,20 @@ import {
   summarizeMajorFortuneDraftQuality,
   validateMajorFortuneReportDraft,
 } from "../src/lib/report-generation/majorFortuneReportDraftValidator";
+import type {
+  MajorFortuneDomainLabel,
+  MajorFortuneDraftFlowSection,
+  MajorFortuneReportDraft,
+} from "../src/lib/report-generation/majorFortuneReportDraftTypes";
+import { majorFortuneDomainLabels } from "../src/lib/report-generation/majorFortuneReportDraftTypes";
+import type {
+  MajorFortuneDomainFlowKey,
+  MajorFortuneEvidencePacket,
+} from "../src/lib/report-knowledge/majorFortuneTypes";
+import {
+  USER_LIFE_STATUS_LABELS,
+  USER_RELATIONSHIP_STATUS_LABELS,
+} from "../src/lib/report-knowledge/userContextTypes";
 import {
   getMajorFortunePreviewSnapshotRelativePath,
   getMajorFortunePreviewUrl,
@@ -69,6 +83,364 @@ function writeList(label: string, values: readonly string[]): void {
   for (const value of values) {
     writeLine(`- ${value}`);
   }
+}
+
+const domainFlowKeyByLabel = {
+  "일·성과": "careerWork",
+  "돈·현실": "moneyResource",
+  인간관계: "socialFamily",
+  "연애·가족": "relationshipLove",
+  "학업·자격증": "studyGrowth",
+  "몸·생활 리듬": "healthRoutine",
+} as const satisfies Record<MajorFortuneDomainLabel, MajorFortuneDomainFlowKey>;
+
+const fallbackSafetyNotes = [
+  "이 리포트는 특정 사건이나 날짜를 예언하지 않고, 10년 흐름 안에서 선택과 관리 기준을 잡기 위한 참고 자료입니다.",
+  "건강은 질병 진단이 아니라 생활 리듬과 회복 루틴의 관리 관점으로만 해석합니다.",
+  "돈과 투자는 수익을 보장하지 않으며, 지출·계약·리스크 관리 기준을 정리하는 용도로만 읽어 주세요.",
+  "합격, 승진, 이직, 결혼, 이혼을 확정하지 않고 현재 흐름에서 점검할 선택 기준만 제시합니다.",
+] as const;
+
+function firstSentence(value: string): string {
+  return value.split(/[.!?。]\s*|[.。]\s*/u)[0]?.trim() || value.trim();
+}
+
+function ensureMinimumItems(
+  items: readonly string[],
+  fallbackItems: readonly string[],
+  minimum: number,
+): readonly string[] {
+  const result = [...items.filter((item) => item.trim().length > 0)];
+
+  for (const fallbackItem of fallbackItems) {
+    if (result.length >= minimum) break;
+    if (!result.includes(fallbackItem)) {
+      result.push(fallbackItem);
+    }
+  }
+
+  return result;
+}
+
+function getFlow(
+  packet: MajorFortuneEvidencePacket,
+  key: MajorFortuneDomainFlowKey,
+): MajorFortuneDraftFlowSection {
+  const flow = packet.domainFlows[key];
+
+  return {
+    title: flow.title,
+    summary: flow.summary,
+    supportingSignals: flow.supportingSignals,
+    frictionSignals: flow.frictionSignals,
+    actionHint: flow.actionHint,
+  };
+}
+
+function buildDecadeCards(packet: MajorFortuneEvidencePacket) {
+  return majorFortuneDomainLabels.map((label, index) => {
+    const flow = packet.domainFlows[domainFlowKeyByLabel[label]];
+
+    return {
+      label,
+      index: 72 - index * 3,
+      headline: flow.title,
+      body: `${flow.summary} ${flow.actionHint}`,
+    };
+  });
+}
+
+function buildBigThemes(packet: MajorFortuneEvidencePacket) {
+  const evidenceThemes = packet.strategicThemes.slice(0, 5).map((theme) => ({
+    title: theme.label,
+    metaphor: theme.metaphor,
+    body: theme.plain,
+    likelyScenes: theme.concreteImplications,
+    strategy: theme.strategy,
+  }));
+  const fallbackThemes = [
+    {
+      title: packet.currentMajorFortune.keyTheme,
+      metaphor: `${packet.currentMajorFortune.ganji} 대운이 생활의 기준선을 다시 잡는 흐름`,
+      body: packet.currentMajorFortune.interpretation,
+      likelyScenes: packet.currentMajorFortune.supportSignals,
+      strategy: packet.actionGuides[0]?.action ?? "역할과 돈, 시간을 한 장의 기준표로 먼저 정리합니다.",
+    },
+    {
+      title: packet.tenYearFlowSummary.headline,
+      metaphor: "10년짜리 흐름을 해마다 나누어 쓰는 방식",
+      body: packet.tenYearFlowSummary.summary,
+      likelyScenes: packet.tenYearFlowSummary.keySignals,
+      strategy: packet.actionGuides[1]?.action ?? "매년 반복되는 압박을 기록하고 줄일 항목을 먼저 정합니다.",
+    },
+    {
+      title: "올해 세운과 만나는 지점",
+      metaphor: "긴 대운 위에 올해의 자극이 올라오는 장면",
+      body: packet.currentAnnualCross.interpretation,
+      likelyScenes: [packet.currentAnnualCross.annualFocus, packet.currentAnnualCross.caution],
+      strategy: packet.actionGuides[2]?.action ?? "올해는 확장보다 기준 재정비를 먼저 끝냅니다.",
+    },
+  ];
+
+  return [...evidenceThemes, ...fallbackThemes].slice(0, 5).slice(0, Math.max(3, evidenceThemes.length));
+}
+
+function buildKeySignals(packet: MajorFortuneEvidencePacket) {
+  const opportunity = packet.opportunitySignals[0];
+  const difficulty = packet.difficultySignals[0];
+  const transition = packet.transitionSignals[0];
+
+  return [
+    {
+      type: "opportunity" as const,
+      title: "살릴 흐름",
+      body: opportunity?.plain ?? packet.currentMajorFortune.supportSignals[0] ?? packet.currentMajorFortune.keyTheme,
+      evidenceLabel: opportunity?.type ?? "support",
+    },
+    {
+      type: "difficulty" as const,
+      title: "관리할 흐름",
+      body: difficulty?.plain ?? packet.currentMajorFortune.frictionSignals[0] ?? packet.currentAnnualCross.caution,
+      evidenceLabel: difficulty?.type ?? "friction",
+    },
+    {
+      type: "transition" as const,
+      title: "전환 신호",
+      body: transition?.plain ?? packet.previousToCurrentShift.plain,
+      evidenceLabel: transition?.type ?? "previous_to_current",
+    },
+  ];
+}
+
+function buildCycleChapters(packet: MajorFortuneEvidencePacket) {
+  return majorFortuneDomainLabels.map((label) => {
+    const flow = packet.domainFlows[domainFlowKeyByLabel[label]];
+    const supportSignal = flow.supportingSignals[0];
+    const frictionSignal = flow.frictionSignals[0];
+
+    return {
+      title: flow.title,
+      headline: firstSentence(flow.summary),
+      body: `${flow.summary} ${flow.actionHint}`,
+      likelyScenes: [...flow.supportingSignals, ...flow.frictionSignals].slice(0, 4),
+      practicalAdvice: ensureMinimumItems(
+        [
+          flow.actionHint,
+          supportSignal
+            ? `${supportSignal}은 이번 대운에서 먼저 살릴 기준으로 두고, 성과가 보이는 형태로 기록합니다.`
+            : "",
+          frictionSignal
+            ? `${frictionSignal}은 일정, 돈, 역할 중 하나의 기준으로 쪼개어 과부하가 쌓이기 전에 조정합니다.`
+            : "",
+        ],
+        [
+          "말로 넘기기보다 역할, 돈, 시간을 문서나 체크리스트로 남겨 반복되는 부담을 줄입니다.",
+          "무리한 확장보다 지금 반복되는 압박을 먼저 정리하고, 남는 힘을 다음 선택에 배치합니다.",
+        ],
+        2,
+      ),
+    };
+  });
+}
+
+function buildPhaseTimeline(packet: MajorFortuneEvidencePacket) {
+  const phaseLabels = {
+    early: "초반 1~3년",
+    middle: "중반 4~7년",
+    late: "후반 8~10년",
+  } as const;
+
+  return (["early", "middle", "late"] as const).map((phase) => {
+    const rows = packet.cycleYearTimeline.filter((row) => row.phase === phase);
+    const firstRow = rows[0] ?? packet.cycleYearTimeline[0];
+
+    return {
+      phase,
+      label: phaseLabels[phase],
+      headline: firstRow?.headline ?? `${phaseLabels[phase]} 흐름`,
+      body:
+        rows.map((row) => row.plainInterpretation).join(" ") ||
+        packet.tenYearFlowSummary.summary,
+      advice:
+        firstRow?.strategicFocus ??
+        "해마다 반복되는 압박과 선택 기준을 기록해 다음 단계의 기준으로 넘깁니다.",
+    };
+  });
+}
+
+function buildStrongYears(packet: MajorFortuneEvidencePacket) {
+  return packet.strongYearsWithinCycle.slice(0, 5).map((year) => ({
+    year: year.year,
+    ganji: year.ganji,
+    headline: year.headline,
+    body: year.reason,
+    advice: year.action,
+    whyStrong: year.whyStrong,
+    likelyArea: year.likelyArea,
+    pushStrategy: year.pushStrategy,
+    reduceStrategy: year.reduceStrategy,
+  }));
+}
+
+function buildFinalAdvice(packet: MajorFortuneEvidencePacket) {
+  return majorFortuneDomainLabels.map((label) => {
+    const flow = packet.domainFlows[domainFlowKeyByLabel[label]];
+
+    return {
+      label,
+      body: `${flow.summary} ${flow.actionHint}`,
+    };
+  });
+}
+
+function buildDraftMyeongliLayers(packet: MajorFortuneEvidencePacket) {
+  return {
+    tenGodLayer: packet.myeongliLayers.tenGodLayer,
+    elementLayer: packet.myeongliLayers.elementLayer,
+    branchInteractionLayer: {
+      plain: packet.myeongliLayers.branchInteractionLayer.plain,
+      interactions: packet.myeongliLayers.branchInteractionLayer.interactions.map(
+        (interaction) => ({
+          year: interaction.year ?? null,
+          type: interaction.type,
+          plainType: interaction.plainType,
+          plain: interaction.plain,
+          impactArea: interaction.impactArea,
+        }),
+      ),
+    },
+    hiddenStemLayer: packet.myeongliLayers.hiddenStemLayer,
+    twelveStageLayer: packet.myeongliLayers.twelveStageLayer,
+    auxiliaryStarsLayer: packet.myeongliLayers.auxiliaryStarsLayer.map((star) => ({
+      label: star.label,
+      plain: star.plain,
+      caution: star.caution ?? null,
+    })),
+  };
+}
+
+function buildDraftCycleYearTimeline(packet: MajorFortuneEvidencePacket) {
+  return packet.cycleYearTimeline.map((row) => ({
+    year: row.year,
+    ganji: row.ganji,
+    yearIndexInCycle: row.yearIndexInCycle,
+    phase: row.phase,
+    headline: row.headline,
+    roleOfYearInCycle: row.roleOfYearInCycle,
+    plainInterpretation: row.plainInterpretation,
+    strategicFocus: row.strategicFocus,
+    whyItMatters: row.whyItMatters,
+  }));
+}
+
+function buildWriterDisabledMajorFortuneDraft(
+  packet: MajorFortuneEvidencePacket,
+): MajorFortuneReportDraft {
+  const current = packet.currentMajorFortune;
+  const userContext = packet.personContext.userContext;
+  const relationshipStatus = userContext.relationshipStatus ?? "unknown";
+  const riskManagement = ensureMinimumItems(
+    packet.riskPatterns.map((risk) => `${risk.title}: ${risk.summary} ${risk.prevention}`),
+    [
+      "과도한 책임 누적: 맡을 일과 맡지 않을 일을 문서로 나누고, 매주 회복 시간을 일정에 고정합니다.",
+      "돈과 역할의 경계 흐림: 새 계약이나 지출은 금액, 기간, 회수 기준을 먼저 확인합니다.",
+    ],
+    2,
+  );
+  const actionPlan = ensureMinimumItems(
+    packet.actionGuides.map((guide) => `${guide.title}: ${guide.action} ${guide.timingHint}`),
+    [
+      "첫 기준 세우기: 현재 맡은 역할과 반복 지출을 한 장으로 정리합니다.",
+      "월간 점검: 대운의 압박이 일, 돈, 관계 중 어디에서 반복되는지 기록합니다.",
+      "연간 조정: 올해 세운이 건드리는 초점을 보고 무리한 확장보다 조율할 항목을 먼저 닫습니다.",
+    ],
+    3,
+  );
+
+  return {
+    version: "v1",
+    productType: "major_fortune",
+    productVersion: "v1",
+    personLabel: packet.personLabel,
+    headline: `${packet.personLabel}님의 ${current.ganji} 대운 리포트`,
+    openingTitle: `${current.ganji} 대운의 10년 흐름`,
+    openingSummary:
+      `${packet.tenYearFlowSummary.summary} 올해는 ${packet.currentAnnualCross.annualGanji} 세운이 올라와 ` +
+      `${packet.currentAnnualCross.annualFocus}을 더 선명하게 건드립니다.`,
+    coreLine: current.keyTheme,
+    userContextSummary: {
+      lifeStatusLabel: USER_LIFE_STATUS_LABELS[userContext.lifeStatus],
+      fieldLabel: userContext.fieldLabel ?? null,
+      relationshipStatusLabel: USER_RELATIONSHIP_STATUS_LABELS[relationshipStatus],
+      translationNote:
+        "현재 직업, 관계 상태, MBTI는 대운 흐름이 실제 행동과 생활 장면에서 어떻게 드러나는지 보조하는 기준으로만 사용했습니다.",
+    },
+    cycleSummary: {
+      ganji: current.ganji,
+      displayTitle: `${current.ganji} 대운`,
+      cycleIndexLabel: `${current.cycleIndex}번째 대운`,
+      currentPositionLabel: packet.cyclePosition.positionLabel,
+      ageRangeLabel: current.ageRange,
+      yearRangeLabel: current.yearRange,
+      stemLabel: current.stem,
+      branchLabel: current.branch,
+      elementLabel: current.elementFocus.join(" · "),
+      tenGodLabel: current.stemTenGod,
+      basisLabel: packet.calculationBasis.displayLabel,
+    },
+    calculationBasis: packet.calculationBasis,
+    previousToCurrentShift: {
+      previousGanji: packet.previousToCurrentShift.previousGanji ?? null,
+      currentGanji: packet.previousToCurrentShift.currentGanji,
+      plain: packet.previousToCurrentShift.plain,
+      whatChanged: packet.previousToCurrentShift.whatChanged,
+    },
+    decadeArchetype: packet.decadeArchetype,
+    flowIndexSummary: {
+      flowIndex: 72,
+      flowTypeLabel: "10년 흐름 재정렬형",
+      flowIndexCaution:
+        "이 지표는 좋고 나쁨이 아니라 10년 동안 반복될 체감 강도를 보기 위한 보조 기준입니다.",
+    },
+    bigThemes: buildBigThemes(packet),
+    myeongliLayers: buildDraftMyeongliLayers(packet),
+    decadeCards: buildDecadeCards(packet),
+    keySignals: buildKeySignals(packet),
+    majorStructure: {
+      ganjiExplanation: `${current.ganji} 대운은 ${current.stem}${current.branch}의 천간·지지 흐름이 장기 배경으로 작동합니다.`,
+      tenGodExplanation: packet.majorTenGod.plain,
+      elementEffectExplanation: packet.elementEffect.plain,
+      branchInteractionExplanation:
+        packet.branchInteractions.map((interaction) => interaction.plain).join(" ") ||
+        "원국과 대운의 지지 작용은 생활 리듬, 관계 거리, 역할 조율의 장면으로 번역합니다.",
+      transitionExplanation: packet.previousToCurrentShift.plain,
+    },
+    cycleChapters: buildCycleChapters(packet),
+    phaseTimeline: buildPhaseTimeline(packet),
+    strongYears: buildStrongYears(packet),
+    majorFortuneTimelineRows: packet.majorFortuneTimelineRows,
+    cycleYearTimeline: buildDraftCycleYearTimeline(packet),
+    currentCycleSummary: current.interpretation,
+    tenYearTheme: `${packet.tenYearFlowSummary.headline}: ${packet.tenYearFlowSummary.summary}`,
+    timelineReading:
+      "대운 타임라인은 한 해의 길흉을 단정하기보다, 현재 대운 안에서 어떤 해가 시작·중반·정리 역할을 맡는지 보여 줍니다.",
+    annualCrossReading:
+      `${packet.currentAnnualCross.annualGanji} 세운은 현재 대운 위에서 ${packet.currentAnnualCross.interpretation} ` +
+      `${packet.currentAnnualCross.caution}`,
+    careerWorkFlow: getFlow(packet, "careerWork"),
+    moneyResourceFlow: getFlow(packet, "moneyResource"),
+    relationshipFlow: getFlow(packet, "relationshipLove"),
+    healthRoutineFlow: getFlow(packet, "healthRoutine"),
+    mbtiExpression:
+      packet.mbtiBasis.type === null
+        ? "MBTI가 입력되지 않아도 대운의 큰 방향은 원국과 대운표 기준으로 읽습니다. 다만 행동 방식은 실제 생활 기록을 통해 보완해 보는 편이 좋습니다."
+        : `${packet.mbtiBasis.type} 성향은 ${packet.mbtiBasis.decisionPattern} ${packet.mbtiBasis.workPattern} 대운의 압박은 원인이 아니라, 이 성향이 판단 속도와 실행 방식으로 드러나는 배경입니다.`,
+    riskManagement,
+    actionPlan,
+    finalAdvice: buildFinalAdvice(packet),
+    safetyNotes:
+      packet.safetyNotes.length > 0 ? packet.safetyNotes : fallbackSafetyNotes,
+  };
 }
 
 function hasMyeongliLayers(
@@ -180,52 +552,57 @@ async function main(): Promise<void> {
     ),
   );
 
+  let draft: MajorFortuneReportDraft;
+
   if (!isWriterEnabled()) {
-    writeLine("SKIP draft generation, OpenAI writer disabled");
-    return;
-  }
-  if (!hasWriterConfig()) {
-    writeLine("SKIP draft generation, OpenAI writer env incomplete");
-    return;
+    writeLine("SKIP draft generation, OpenAI writer disabled -> using local preview draft");
+    writeLine("writer disabled fallback draft: enabled");
+    draft = buildWriterDisabledMajorFortuneDraft(packet);
+  } else if (!hasWriterConfig()) {
+    writeLine("SKIP draft generation, OpenAI writer env incomplete -> using local preview draft");
+    writeLine("writer config fallback draft: enabled");
+    draft = buildWriterDisabledMajorFortuneDraft(packet);
+  } else {
+    const [
+      writerModule,
+      promptModule,
+      typesModule,
+    ] = await Promise.all([
+      import("../src/lib/report-generation/openaiMajorFortuneReportWriter"),
+      import("../src/lib/report-generation/openaiMajorFortuneReportWriterPrompt"),
+      import("../src/lib/report-generation/majorFortuneReportDraftTypes"),
+    ]);
+    const messages = promptModule.buildOpenAIMajorFortuneReportWriterMessages({
+      evidencePacket: packet,
+    });
+
+    if (getEnvValue("OPENAI_REPORT_WRITER_DEBUG_SAFE") === "1") {
+      writeLine("OpenAI request debug:");
+      writeLine(`model: ${getEnvValue("OPENAI_REPORT_MODEL")}`);
+      writeLine(`response format: ${writerModule.majorFortuneResponseFormatName}`);
+      writeLine(
+        `schema keys: ${typesModule.getMajorFortuneReportDraftSchemaTopLevelKeys().join(", ")}`,
+      );
+      writeLine(
+        `schema approx chars: ${JSON.stringify(typesModule.majorFortuneReportDraftJsonSchema).length}`,
+      );
+      writeLine(`system chars: ${messages.system.length}`);
+      writeLine(`developer chars: ${messages.developer.length}`);
+      writeLine(`user chars: ${messages.user.length}`);
+    }
+
+    const result = await writerModule.generateMajorFortuneReportDraft({
+      evidencePacket: packet,
+      config: {
+        enabled: true,
+        apiKey: getEnvValue(openAIKeyEnvName) ?? "",
+        model: getEnvValue("OPENAI_REPORT_MODEL") ?? "",
+      },
+    });
+    draft = result.draft;
   }
 
-  const [
-    writerModule,
-    promptModule,
-    typesModule,
-  ] = await Promise.all([
-    import("../src/lib/report-generation/openaiMajorFortuneReportWriter"),
-    import("../src/lib/report-generation/openaiMajorFortuneReportWriterPrompt"),
-    import("../src/lib/report-generation/majorFortuneReportDraftTypes"),
-  ]);
-  const messages = promptModule.buildOpenAIMajorFortuneReportWriterMessages({
-    evidencePacket: packet,
-  });
-
-  if (getEnvValue("OPENAI_REPORT_WRITER_DEBUG_SAFE") === "1") {
-    writeLine("OpenAI request debug:");
-    writeLine(`model: ${getEnvValue("OPENAI_REPORT_MODEL")}`);
-    writeLine(`response format: ${writerModule.majorFortuneResponseFormatName}`);
-    writeLine(
-      `schema keys: ${typesModule.getMajorFortuneReportDraftSchemaTopLevelKeys().join(", ")}`,
-    );
-    writeLine(
-      `schema approx chars: ${JSON.stringify(typesModule.majorFortuneReportDraftJsonSchema).length}`,
-    );
-    writeLine(`system chars: ${messages.system.length}`);
-    writeLine(`developer chars: ${messages.developer.length}`);
-    writeLine(`user chars: ${messages.user.length}`);
-  }
-
-  const result = await writerModule.generateMajorFortuneReportDraft({
-    evidencePacket: packet,
-    config: {
-      enabled: true,
-      apiKey: getEnvValue(openAIKeyEnvName) ?? "",
-      model: getEnvValue("OPENAI_REPORT_MODEL") ?? "",
-    },
-  });
-  const validation = validateMajorFortuneReportDraft(result.draft);
+  const validation = validateMajorFortuneReportDraft(draft);
 
   if (!validation.ok || validation.value === undefined) {
     throw new Error(validation.errors.join("\n"));
