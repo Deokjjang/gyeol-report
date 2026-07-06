@@ -11,9 +11,11 @@ import {
   buildMbtiCommonProfileTableData,
   getMbtiSourceByType,
 } from "../../../lib/report-tables";
+import { createReportPersistenceRuntime } from "../../../lib/persistence/reportPersistenceRuntime";
 import { getPaidReportResult } from "../../../lib/reports/supabasePaidReportResultAdapter";
 import { createSupabasePaidReportResultClient } from "../../../lib/reports/supabasePaidReportResultClient";
 import type { PaidReportResult } from "../../../lib/reports/paidReportResultTypes";
+import type { ProductPreviewSnapshot } from "../../../lib/report-generation/productPreviewSnapshot";
 import type {
   ComprehensiveReportDraft,
   ComprehensiveReportDraftSection,
@@ -67,6 +69,13 @@ type PageState =
       readonly kind: "unavailable";
     }
   | {
+      readonly kind: "unsupportedProductPreview";
+    }
+  | {
+      readonly kind: "productPreview";
+      readonly productPreview: ProductPreviewSnapshot;
+    }
+  | {
       readonly kind: "ready";
       readonly result: PaidReportResult;
     };
@@ -81,6 +90,12 @@ function createResultClient() {
 }
 
 async function loadPageState(reportId: string): Promise<PageState> {
+  const previewResult = await loadProductPreviewPageState(reportId);
+
+  if (previewResult !== null) {
+    return previewResult;
+  }
+
   const result = await getPaidReportResult({
     reportId,
     client: createResultClient(),
@@ -104,6 +119,43 @@ async function loadPageState(reportId: string): Promise<PageState> {
   return {
     kind: "ready",
     result: result.result,
+  };
+}
+
+async function loadProductPreviewPageState(
+  reportId: string,
+): Promise<PageState | null> {
+  const runtime = createReportPersistenceRuntime({ mode: "preview_memory" });
+
+  if (!runtime.ok) {
+    return null;
+  }
+
+  const previewResult = await runtime.adapter.find({ reportId });
+
+  if (!previewResult.ok) {
+    return null;
+  }
+
+  const record = previewResult.record;
+
+  if (record.snapshotKind !== "product_preview") {
+    return null;
+  }
+
+  const productPreview = record.productPreview;
+
+  if (productPreview.productType !== "saju_mbti_compatibility") {
+    return { kind: "unsupportedProductPreview" };
+  }
+
+  if (!isCompatibilityReportDraft(productPreview.draft)) {
+    return { kind: "invalidSnapshot" };
+  }
+
+  return {
+    kind: "productPreview",
+    productPreview,
   };
 }
 
@@ -200,6 +252,21 @@ function renderInvalidSnapshotState() {
         </h1>
         <p className="text-base leading-7 text-neutral-400">
           저장된 리포트 형식을 확인할 수 없습니다.
+        </p>
+      </div>
+    </ResultShell>
+  );
+}
+
+function renderUnsupportedProductPreviewState() {
+  return (
+    <ResultShell>
+      <div className="space-y-4 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
+        <h1 className="text-3xl font-bold tracking-tight text-neutral-50">
+          상품 미리보기 준비 중입니다.
+        </h1>
+        <p className="text-base leading-7 text-neutral-400">
+          이 상품의 결과 화면 연결은 아직 준비 중입니다.
         </p>
       </div>
     </ResultShell>
@@ -463,6 +530,23 @@ function renderGeneratedCompatibilityState(
       <CompatibilityReportView
         draft={draft}
         reportId={result.reportId}
+      />
+    </ResultShell>
+  );
+}
+
+function renderProductPreviewCompatibilityState(
+  productPreview: ProductPreviewSnapshot,
+) {
+  if (!isCompatibilityReportDraft(productPreview.draft)) {
+    return renderInvalidSnapshotState();
+  }
+
+  return (
+    <ResultShell>
+      <CompatibilityReportView
+        draft={productPreview.draft}
+        reportId={productPreview.reportId}
       />
     </ResultShell>
   );
@@ -1152,6 +1236,14 @@ export default async function ReportResultPage({
 
   if (state.kind === "invalidSnapshot") {
     return renderInvalidSnapshotState();
+  }
+
+  if (state.kind === "unsupportedProductPreview") {
+    return renderUnsupportedProductPreviewState();
+  }
+
+  if (state.kind === "productPreview") {
+    return renderProductPreviewCompatibilityState(state.productPreview);
   }
 
   return renderGeneratedState(state.result);

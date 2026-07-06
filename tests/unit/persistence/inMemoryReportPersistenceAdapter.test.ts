@@ -218,6 +218,26 @@ describe("createInMemoryReportPersistenceAdapter", () => {
     }
   });
 
+  it("can return existing record for duplicate create when configured", async () => {
+    const adapter = createInMemoryReportPersistenceAdapter([], {
+      duplicateCreateMode: "return_existing",
+    });
+    const record = createRecord();
+
+    await adapter.create({ record });
+    const duplicateResult = await adapter.create({
+      record: {
+        ...record,
+        updatedAt: laterAt,
+      },
+    });
+
+    expect(duplicateResult.ok).toBe(true);
+    if (duplicateResult.ok) {
+      expect(duplicateResult.record.updatedAt).toBe(createdAt);
+    }
+  });
+
   it("updates allowed fields", async () => {
     const adapter = createInMemoryReportPersistenceAdapter();
     const record = createRecord();

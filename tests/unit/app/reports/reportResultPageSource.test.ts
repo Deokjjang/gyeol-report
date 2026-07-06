@@ -83,6 +83,12 @@ describe("report result page source", () => {
       "renderGeneratedAnnualFortuneState",
       "annual_fortune",
       "renderGeneratedCompatibilityState",
+      "loadProductPreviewPageState",
+      'snapshotKind !== "product_preview"',
+      'productPreview.productType !== "saju_mbti_compatibility"',
+      "renderProductPreviewCompatibilityState",
+      "상품 미리보기 준비 중입니다.",
+      "createReportPersistenceRuntime",
       "CompatibilityTable",
       "buildCompatibilityTopTableData",
       "getCompatibilityRelationshipAnalysis",
@@ -172,6 +178,19 @@ describe("report result page source", () => {
     for (const marker of blockedMarkers) {
       expect(source).not.toContain(marker);
     }
+
+    expect(pageSource.indexOf("loadProductPreviewPageState(reportId)")).toBeLessThan(
+      pageSource.indexOf("getPaidReportResult({"),
+    );
+    expect(pageSource.indexOf("isCompatibilityReportDraft(unknownDraft)")).toBeLessThan(
+      pageSource.indexOf("isLoveMarriageChildReportDraft(unknownDraft)"),
+    );
+    expect(pageSource.indexOf("isLoveMarriageChildReportDraft(unknownDraft)")).toBeLessThan(
+      pageSource.indexOf("isMajorFortuneReportDraft(unknownDraft)"),
+    );
+    expect(pageSource.indexOf("isMajorFortuneReportDraft(unknownDraft)")).toBeLessThan(
+      pageSource.indexOf("isAnnualFortuneReportDraft(unknownDraft)"),
+    );
 
     expect(compatibilityViewSource).not.toContain("preview snapshot");
     expect(source).not.toContain("사주×MBTI 종합 리포트 v1.0");

@@ -37,8 +37,17 @@ export const REPORT_PERSISTENCE_MODE_ENV = "REPORT_PERSISTENCE_MODE";
 export const SUPABASE_URL_ENV = "SUPABASE_URL";
 export const SUPABASE_ANON_KEY_ENV = "SUPABASE_ANON_KEY";
 
+let previewReportPersistenceAdapter: ReportPersistenceAdapter | undefined;
+
 export function createPreviewReportPersistenceAdapter(): ReportPersistenceAdapter {
-  return createInMemoryReportPersistenceAdapter();
+  previewReportPersistenceAdapter ??= createInMemoryReportPersistenceAdapter(
+    [],
+    {
+      duplicateCreateMode: "return_existing",
+    },
+  );
+
+  return previewReportPersistenceAdapter;
 }
 
 export function createProductionReportPersistenceAdapter(

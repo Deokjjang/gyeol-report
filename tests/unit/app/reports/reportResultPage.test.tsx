@@ -2,12 +2,19 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import ReportResultPage from "../../../../src/app/reports/[reportId]/page";
+import { createReportPersistenceRuntime } from "../../../../src/lib/persistence/reportPersistenceRuntime";
+import {
+  createProductPreviewSnapshot,
+} from "../../../../src/lib/report-generation/productPreviewSnapshot";
 import { getPaidReportResult } from "../../../../src/lib/reports/supabasePaidReportResultAdapter";
 import type {
   ComprehensiveReportDraft,
   ComprehensiveReportV2ChapterId,
   ComprehensiveReportV2Draft,
 } from "../../../../src/lib/report-generation/comprehensiveReportDraftTypes";
+import type {
+  CompatibilityReportDraft,
+} from "../../../../src/lib/report-generation/compatibilityReportDraftTypes";
 import type { PaidReportResult } from "../../../../src/lib/reports/paidReportResultTypes";
 import {
   COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
@@ -33,6 +40,53 @@ vi.mock("../../../../src/lib/reports/supabasePaidReportResultAdapter", () => ({
 const mockGetPaidReportResult = vi.mocked(getPaidReportResult);
 const createdAt = "2026-06-12T10:00:00.000Z";
 const updatedAt = "2026-06-12T10:00:01.000Z";
+const productPreviewReport = {
+  version: "v1",
+  titleKo: "상품 미리보기",
+  subtitleKo: "상품 미리보기 snapshot",
+  sections: [],
+  notices: [],
+} as const;
+
+function createCompatibilityChartSummary(input: {
+  readonly role: "personA" | "personB";
+  readonly displayName: string;
+  readonly mbti: "ENTJ" | "INTP";
+}) {
+  return {
+    role: input.role,
+    displayName: input.displayName,
+    mbti: input.mbti,
+    birthTimeConfidence: "unknown",
+    pillars: {
+      year: "기묘",
+      month: "신미",
+      day: input.role === "personA" ? "갑신" : "정해",
+    },
+    dayMaster: input.role === "personA" ? "갑" : "정",
+    dayPillar: input.role === "personA" ? "갑신" : "정해",
+    featureIds: [],
+    featureLabels: [],
+    diagnosticFeatureLabels: [],
+    sajuFacts: {
+      dayMaster: input.role === "personA" ? "갑" : "정",
+      dayPillar: input.role === "personA" ? "갑신" : "정해",
+      fiveElementCounts: {
+        wood: 2,
+        fire: 1,
+        earth: 2,
+        metal: 1,
+        water: 1,
+      },
+      excessiveElements: [],
+      missingElements: [],
+      tenGodSignals: [],
+      specialPatterns: [],
+      sinsal: [],
+      gwiin: [],
+    },
+  };
+}
 
 function createDraftSection(definition: ComprehensiveReportSectionDefinition) {
   const isMbtiDisplay =
@@ -67,6 +121,78 @@ function createDraft(): ComprehensiveReportDraft {
     finalAdvice:
       "강하게 드러나는 성향은 성과로 쓰되, 감정 순환과 휴식은 의식적으로 챙기는 편이 좋습니다.",
     safetyNotes: ["자기이해용 참고 콘텐츠입니다."],
+  };
+}
+
+function createCompatibilityDraft(): CompatibilityReportDraft {
+  return {
+    version: "compatibility_v1_draft",
+    productType: "saju_mbti_compatibility",
+    productVersion: "1.0",
+    relationshipType: "love",
+    personALabel: "도윤",
+    personBLabel: "소담",
+    openingTitle: "도윤님과 소담님의 궁합",
+    openingSummary:
+      "서로 끌리는 지점과 피로해지는 지점이 동시에 보이는 조합입니다.",
+    coreLine: "끌림은 분명하지만 속도 조율이 관계의 핵심입니다.",
+    scoreSummary: {
+      totalScore: 72,
+      scoreLabel: "조율형 궁합",
+      scoreCaution: "점수는 관계의 좋고 나쁨을 단정하지 않는 참고값입니다.",
+      breakdown: {
+        attraction: 74,
+        communication: 70,
+        lifestyleRhythm: 68,
+        conflictRecovery: 71,
+        longTermStability: 72,
+        growthComplement: 77,
+      },
+    },
+    chartComparison: {
+      personA: createCompatibilityChartSummary({
+        role: "personA",
+        displayName: "도윤",
+        mbti: "ENTJ",
+      }),
+      personB: createCompatibilityChartSummary({
+        role: "personB",
+        displayName: "소담",
+        mbti: "INTP",
+      }),
+    },
+    keyCompatibilityPoints: {
+      attractionPoints: ["생각의 깊이와 실행 속도가 서로를 자극합니다."],
+      strengthPoints: ["서로의 부족한 리듬을 보완할 수 있습니다."],
+      frictionPoints: ["한쪽은 빠르고 한쪽은 확인 시간이 필요합니다."],
+      relationshipRules: ["결론 전에 생각할 시간을 먼저 합의해야 합니다."],
+    },
+    relationshipAnalysis: {
+      connectionSummary:
+        "도윤님은 결론과 실행을 앞당기고, 소담님은 전제와 맥락을 더 확인하려는 흐름입니다.",
+      firstImpression:
+        "처음에는 추진력과 깊이가 서로를 매력적으로 보이게 합니다.",
+      stayingPower:
+        "오래 가려면 빠른 정리와 충분한 검토 시간을 함께 인정해야 합니다.",
+      frictionPoints: ["결론을 내는 타이밍", "대화 속도", "역할 기대"],
+      categoryReading:
+        "연애에서는 호감보다 대화 속도와 감정 회복 방식이 더 중요합니다.",
+      aToBFatigue:
+        "도윤님은 해결이라고 생각하지만 소담님은 압박으로 느낄 수 있습니다.",
+      bToAFatigue:
+        "소담님은 신중함이라고 생각하지만 도윤님은 회피로 받아들일 수 있습니다.",
+      communicationRecovery:
+        "갈등이 생기면 결론부터 내기보다 질문, 감정 확인, 합의 순서로 돌아와야 합니다.",
+      roleMoneyLifeRhythm:
+        "생활 리듬에서는 속도와 기준을 미리 나누는 편이 피로를 줄입니다.",
+      categorySpecificAdvice: ["데이트 빈도보다 회복 대화의 순서를 먼저 맞추세요."],
+      timingCautions: ["바쁜 시기에는 메시지 속도 차이가 서운함으로 번질 수 있습니다."],
+      repairStrategy: ["하루 안에 결론을 강요하지 않는 규칙을 두세요."],
+      riskManagement: ["작은 서운함을 오래 쌓아 두지 않는 점검 시간이 필요합니다."],
+    },
+    chapters: [],
+    finalAdvice: ["끌림과 피로를 둘 다 인정할 때 오래 갈 수 있습니다."],
+    safetyNotes: ["상담이나 예언이 아니라 관계 분석용 참고 리포트입니다."],
   };
 }
 
@@ -809,9 +935,81 @@ async function renderPage(reportId: string | undefined): Promise<string> {
   return renderToStaticMarkup(element);
 }
 
+async function persistCompatibilityProductPreview(reportId: string): Promise<void> {
+  const productPreviewResult = createProductPreviewSnapshot({
+    reportId,
+    createdAtIso: createdAt,
+    productKey: "saju_mbti_compatibility",
+    productSlug: "compatibility",
+    draft: createCompatibilityDraft(),
+    evidencePacket: {
+      productType: "saju_mbti_compatibility",
+      relationshipType: "love",
+    },
+  });
+
+  if (!productPreviewResult.ok) {
+    throw new Error(`Product preview fixture failed: ${productPreviewResult.error}`);
+  }
+
+  const runtime = createReportPersistenceRuntime({ mode: "preview_memory" });
+
+  if (!runtime.ok) {
+    throw new Error("Preview memory runtime unavailable.");
+  }
+
+  await runtime.adapter.create({
+    record: {
+      reportId,
+      createdAt,
+      updatedAt,
+      status: "generated",
+      reportVersion: "1.0",
+      calculationVersion: "product-preview-v1",
+      locale: "ko-KR",
+      accessMode: "preview",
+      accessTokenHash: "sha256:productpreviewtest",
+      accessTokenCreatedAt: createdAt,
+      accessTokenVersion: "v1",
+      inputSnapshot: {
+        birthDate: "1996-12-06",
+        birthTime: null,
+        birthTimeUnknown: true,
+        calendarType: "SOLAR",
+        timezone: "Asia/Seoul",
+        mbti: "ENTJ",
+      },
+      reportSnapshot: {
+        snapshotKind: "product_preview",
+        productPreview: productPreviewResult.value,
+        report: productPreviewReport,
+        reportVersion: "1.0",
+        renderVersion: "1.0",
+        createdAt,
+      },
+    },
+  });
+}
+
 describe("report result page", () => {
   beforeEach(() => {
     mockGetPaidReportResult.mockReset();
+  });
+
+  it("renders compatibility product preview snapshot before paid result lookup", async () => {
+    await persistCompatibilityProductPreview("report_product_preview_compat");
+
+    const html = await renderPage("report_product_preview_compat");
+
+    expect(mockGetPaidReportResult).not.toHaveBeenCalled();
+    expect(html).toContain("궁합 리포트");
+    expect(html).toContain("도윤님과 소담님의 궁합");
+    expect(html).toContain("도윤님 × 소담님");
+    expect(html).toContain("두 사람 연결 요약");
+    expect(html).toContain("A가 B에게 주는 피로");
+    expect(html).toContain("B가 A에게 주는 피로");
+    expect(html).not.toContain("사주×MBTI 종합 리포트");
+    expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
   });
 
   it("loads by report id and renders a generated comprehensive draft", async () => {

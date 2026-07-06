@@ -13,6 +13,10 @@ import type {
   PublicReportResult,
 } from "./reportPersistenceTypes";
 
+export type InMemoryReportPersistenceAdapterOptions = {
+  readonly duplicateCreateMode?: "reject" | "return_existing";
+};
+
 function mapRecordToPublicRecord(
   record: PersistedReportRecord,
 ): PublicReportPreviewRecord {
@@ -40,6 +44,7 @@ function mapRecordToPublicRecord(
 
 export function createInMemoryReportPersistenceAdapter(
   initialRecords: readonly PersistedReportRecord[] = [],
+  options: InMemoryReportPersistenceAdapterOptions = {},
 ): ReportPersistenceAdapter {
   const records = new Map<string, PersistedReportRecord>();
 
@@ -49,7 +54,16 @@ export function createInMemoryReportPersistenceAdapter(
 
   return {
     async create(input): Promise<ReportPersistenceWriteResult> {
-      if (records.has(input.record.reportId)) {
+      const current = records.get(input.record.reportId);
+
+      if (current !== undefined) {
+        if (options.duplicateCreateMode === "return_existing") {
+          return {
+            ok: true,
+            record: current,
+          };
+        }
+
         return {
           ok: false,
           error: {
