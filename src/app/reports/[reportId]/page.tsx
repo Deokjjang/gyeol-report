@@ -33,9 +33,16 @@ import {
 import type {
   LoveMarriageChildReportDraft,
 } from "../../../lib/report-generation/loveMarriageChildReportDraftTypes";
+import type {
+  MajorFortuneReportDraft,
+} from "../../../lib/report-generation/majorFortuneReportDraftTypes";
+import type {
+  MajorFortuneEvidencePacket,
+} from "../../../lib/report-knowledge/majorFortuneTypes";
 import { getSajuBranchSymbolEntry } from "../../../lib/report-knowledge/sajuBranchSymbolKnowledge";
 import { CompatibilityReportView } from "./CompatibilityReportView";
 import { LoveMarriageChildReportView } from "./LoveMarriageChildReportView";
+import { MajorFortuneReportView } from "./MajorFortuneReportView";
 
 export const dynamic = "force-dynamic";
 
@@ -314,6 +321,10 @@ function renderGeneratedState(result: PaidReportResult) {
     return renderGeneratedLoveMarriageChildState(unknownDraft);
   }
 
+  if (isMajorFortuneReportDraft(unknownDraft)) {
+    return renderGeneratedMajorFortuneState(result, unknownDraft);
+  }
+
   if (isComprehensiveReportV2Draft(draft)) {
     return renderGeneratedV2State(result, draft);
   }
@@ -346,6 +357,51 @@ function isLoveMarriageChildReportDraft(
     typeof draft.breakupReunionPattern === "object" &&
     draft.breakupReunionPattern !== null
   );
+}
+
+type MajorFortuneReportDraftWithEvidence = MajorFortuneReportDraft & {
+  readonly evidencePacket?: MajorFortuneEvidencePacket;
+};
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null;
+}
+
+function isMajorFortuneReportDraft(
+  value: unknown,
+): value is MajorFortuneReportDraftWithEvidence {
+  if (!isRecord(value)) {
+    return false;
+  }
+
+  return (
+    value.version === "v1" &&
+    value.productType === "major_fortune" &&
+    value.productVersion === "v1" &&
+    typeof value.personLabel === "string" &&
+    typeof value.openingTitle === "string" &&
+    typeof value.openingSummary === "string" &&
+    typeof value.coreLine === "string" &&
+    isRecord(value.cycleSummary) &&
+    isRecord(value.calculationBasis) &&
+    Array.isArray(value.majorFortuneTimelineRows) &&
+    Array.isArray(value.finalAdvice) &&
+    Array.isArray(value.safetyNotes)
+  );
+}
+
+function getMajorFortuneEvidencePacket(
+  draft: MajorFortuneReportDraftWithEvidence,
+): MajorFortuneEvidencePacket | undefined {
+  const evidencePacket = draft.evidencePacket;
+
+  if (!isRecord(evidencePacket)) {
+    return undefined;
+  }
+
+  return evidencePacket.productType === "major_fortune"
+    ? (evidencePacket as MajorFortuneEvidencePacket)
+    : undefined;
 }
 
 function renderReportMetadata(result: PaidReportResult) {
@@ -400,6 +456,19 @@ function renderGeneratedLoveMarriageChildState(
           <LoveMarriageChildReportMbtiProfileTable evidence={evidencePacket} />
         )
       }
+    />
+  );
+}
+
+function renderGeneratedMajorFortuneState(
+  result: PaidReportResult,
+  draft: MajorFortuneReportDraftWithEvidence,
+) {
+  return (
+    <MajorFortuneReportView
+      draft={draft}
+      reportId={result.reportId}
+      evidencePacket={getMajorFortuneEvidencePacket(draft)}
     />
   );
 }

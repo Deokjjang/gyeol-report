@@ -16,6 +16,9 @@ import {
 import type {
   LoveMarriageChildReportDraft,
 } from "../../../../src/lib/report-generation/loveMarriageChildReportDraftTypes";
+import type {
+  MajorFortuneReportDraft,
+} from "../../../../src/lib/report-generation/majorFortuneReportDraftTypes";
 import {
   buildLoveMarriageChildReportEvidence,
 } from "../../../../src/lib/report-knowledge/loveMarriageChildReportEvidence";
@@ -418,6 +421,225 @@ function createLoveMarriageChildDraft(
   };
 }
 
+function createMajorFortuneDraft(): MajorFortuneReportDraft {
+  const flow = (title: string) => ({
+    title,
+    summary: `${title}에서는 10년 동안 책임과 선택 기준을 다시 정리하는 흐름이 반복됩니다.`,
+    supportingSignals: [`${title} 기준을 문서와 루틴으로 남기는 힘`],
+    frictionSignals: [`${title} 책임이 한 번에 몰릴 때 생기는 압박`],
+    actionHint: `${title}에서 맡을 일과 미룰 일을 먼저 나눕니다.`,
+  });
+
+  return {
+    version: "v1",
+    productType: "major_fortune",
+    productVersion: "v1",
+    personLabel: "덕민",
+    headline: "덕민님의 戊辰 대운 리포트",
+    openingTitle: "戊辰 대운의 10년 흐름",
+    openingSummary:
+      "이번 대운은 현실 책임과 돈, 역할 기준을 다시 세우는 흐름으로 읽습니다.",
+    coreLine: "10년 흐름을 올해 세운과 함께 읽어 실행 기준을 잡습니다.",
+    userContextSummary: {
+      lifeStatusLabel: "직장인",
+      fieldLabel: "개발·서비스 기획",
+      relationshipStatusLabel: null,
+      translationNote: "현재 상태는 대운 흐름을 생활 장면으로 번역하기 위한 맥락입니다.",
+    },
+    cycleSummary: {
+      ganji: "戊辰",
+      displayTitle: "戊辰 대운",
+      cycleIndexLabel: "3번째 대운",
+      currentPositionLabel: "2026년 기준 1년차",
+      ageRangeLabel: "27~36세",
+      yearRangeLabel: "2026년~2035년",
+      stemLabel: "戊",
+      branchLabel: "辰",
+      elementLabel: "토",
+      tenGodLabel: "편재",
+      basisLabel: "입력된 대운표 기준",
+    },
+    calculationBasis: {
+      basisType: "user_supplied_major_fortune_table",
+      displayLabel: "입력된 대운표 기준",
+      explanation: "입력된 대운표를 기준으로 현재 10년 흐름을 읽습니다.",
+      ageBasisLabel: "대운표 기준 나이",
+      note: "특정 사건보다 선택 기준과 관리 루틴을 중심으로 봅니다.",
+    },
+    previousToCurrentShift: {
+      previousGanji: "丁卯",
+      currentGanji: "戊辰",
+      plain: "이전 표현 중심 흐름에서 현실 책임과 자원 관리 흐름으로 무게가 옮겨갑니다.",
+      whatChanged: ["역할 경계", "돈과 계약 기준"],
+    },
+    decadeArchetype: {
+      label: "현실 구조 재편형",
+      metaphor: "흙더미를 설계도로 바꾸는 10년",
+      plain: "쌓이는 책임을 구조로 나누어야 오래 갑니다.",
+    },
+    flowIndexSummary: {
+      flowIndex: 72,
+      flowTypeLabel: "책임·구조 재편형",
+      flowIndexCaution: "좋고 나쁨보다 반복될 체감 강도를 보여 주는 기준입니다.",
+    },
+    bigThemes: [
+      {
+        title: "기준을 직접 세우는 10년",
+        metaphor: "흙더미에 길을 내는 흐름",
+        body: "돈과 역할, 계약 기준이 커지며 현실 운영력이 중요해집니다.",
+        likelyScenes: ["역할 범위를 문서화하는 장면", "고정비를 다시 나누는 장면"],
+        strategy: "초반부터 맡을 일과 맡지 않을 일을 구분합니다.",
+      },
+    ],
+    myeongliLayers: {
+      tenGodLayer: {
+        majorStemTenGod: "편재",
+        annualStemTenGodsInCycle: [
+          {
+            year: 2026,
+            stem: "丙",
+            tenGod: "식신",
+            plain: "2026년은 결과물과 표현을 밖으로 꺼내는 흐름입니다.",
+          },
+        ],
+        plain: "戊辰 대운의 천간 戊는 편재로 작용해 돈과 현실 자원을 움직입니다.",
+      },
+      elementLayer: {
+        majorElements: ["토"],
+        fillMissing: [],
+        overloadHeavy: ["토"],
+        plain: "토의 책임과 현실 기준이 커지는 흐름입니다.",
+      },
+      branchInteractionLayer: {
+        interactions: [],
+        plain: "원국과 대운 지지 작용은 생활 리듬과 역할 경계에서 체감됩니다.",
+      },
+      hiddenStemLayer: {
+        majorBranchHiddenStems: ["戊(편재)", "乙(겁재)", "癸(정인)"],
+        plain: "辰 안의 지장간은 돈, 관계 경계, 회복 기준을 함께 건드립니다.",
+      },
+      twelveStageLayer: null,
+      auxiliaryStarsLayer: [],
+    },
+    decadeCards: [
+      "일·성과",
+      "돈·현실",
+      "인간관계",
+      "연애·가족",
+      "학업·자격증",
+      "몸·생활 리듬",
+    ].map((label, index) => ({
+      label: label as MajorFortuneReportDraft["decadeCards"][number]["label"],
+      index: 72 - index,
+      headline: `${label} 흐름`,
+      body: `${label}에서 10년 단위의 책임과 기준을 다시 잡습니다.`,
+    })),
+    keySignals: [
+      {
+        type: "opportunity",
+        title: "살릴 흐름",
+        body: "돈, 자원, 역할 기준을 실제 구조로 만들 기회입니다.",
+        evidenceLabel: "편재",
+      },
+    ],
+    majorStructure: {
+      ganjiExplanation: "戊辰 대운은 현실 구조를 다시 짜는 흐름입니다.",
+      tenGodExplanation: "편재는 돈, 자원, 거래, 현실을 움직이는 힘입니다.",
+      elementEffectExplanation: "토 흐름이 강해져 책임과 기준이 무거워집니다.",
+      branchInteractionExplanation: "지지 작용은 생활 리듬과 관계 경계에서 체감됩니다.",
+      transitionExplanation: "이전 대운에서 현재 대운으로 역할의 무게가 이동합니다.",
+    },
+    cycleChapters: [
+      {
+        title: "일·성과",
+        headline: "역할 기준을 다시 잡습니다",
+        body: "일에서는 책임 범위와 성과 기준을 먼저 정리해야 합니다.",
+        likelyScenes: ["프로젝트 기준 정리", "권한 없는 책임 조정"],
+        practicalAdvice: ["역할 범위를 문서화합니다.", "주간 산출물을 기록합니다."],
+      },
+    ],
+    phaseTimeline: [
+      {
+        phase: "early",
+        label: "초반",
+        headline: "기준 설정",
+        body: "초반에는 책임 범위를 좁혀야 합니다.",
+        advice: "초반 기준을 기록합니다.",
+      },
+      {
+        phase: "middle",
+        label: "중반",
+        headline: "구조 운영",
+        body: "중반에는 반복되는 역할을 구조화합니다.",
+        advice: "반복 업무를 체계화합니다.",
+      },
+      {
+        phase: "late",
+        label: "후반",
+        headline: "다음 흐름 준비",
+        body: "후반에는 다음 대운으로 넘길 기준을 정리합니다.",
+        advice: "남길 것과 줄일 것을 나눕니다.",
+      },
+    ],
+    strongYears: [],
+    majorFortuneTimelineRows: [
+      {
+        year: 2026,
+        ageLabel: "27세",
+        ageBasisLabel: "대운표 기준",
+        yearIndexInCycle: 1,
+        phase: "early",
+        isCurrentYear: true,
+        isCycleStartYear: true,
+        isCycleEndYear: false,
+        badges: ["올해", "전환"],
+        majorGanji: "戊辰",
+        annualGanji: "丙午",
+        annualTenGodLabel: "식신",
+        keyInteractionLabel: null,
+        oneLine: "새 대운의 첫 기준을 산출물로 남기는 해입니다.",
+        strategy: "책임 범위를 좁히고 결과물을 기록합니다.",
+      },
+    ],
+    cycleYearTimeline: [
+      {
+        year: 2026,
+        ganji: "丙午",
+        yearIndexInCycle: 1,
+        phase: "early",
+        headline: "새 기준을 잡는 해",
+        roleOfYearInCycle: "대운 첫해",
+        plainInterpretation: "대운의 첫 기준이 이후 10년에 반복될 수 있습니다.",
+        strategicFocus: "권한과 책임 범위를 먼저 정합니다.",
+        whyItMatters: "초반 기준이 이후 선택의 기본값이 됩니다.",
+      },
+    ],
+    currentCycleSummary: "현재 대운은 현실 책임과 자원 기준을 다시 잡는 흐름입니다.",
+    tenYearTheme: "10년 동안 돈, 역할, 관계 기준을 구조화합니다.",
+    timelineReading: "대운 타임라인은 반복되는 책임과 선택 기준을 보는 표입니다.",
+    annualCrossReading: "올해 세운은 새 대운 위에서 결과물과 표현을 자극합니다.",
+    careerWorkFlow: flow("직업/일"),
+    moneyResourceFlow: flow("돈/자원"),
+    relationshipFlow: flow("관계/연애"),
+    healthRoutineFlow: flow("건강관리/생활 리듬"),
+    mbtiExpression: "ENTJ 성향은 대운의 책임 흐름을 빠른 결정과 구조화로 드러냅니다.",
+    riskManagement: ["권한 없는 책임은 역할 범위와 승인선을 문서화해 줄입니다."],
+    actionPlan: ["이번 주 맡은 역할과 반복 지출을 한 장으로 정리합니다."],
+    finalAdvice: [
+      "일·성과",
+      "돈·현실",
+      "인간관계",
+      "연애·가족",
+      "학업·자격증",
+      "몸·생활 리듬",
+    ].map((label) => ({
+      label: label as MajorFortuneReportDraft["finalAdvice"][number]["label"],
+      body: `${label}에서는 무리한 확장보다 기준 정리가 먼저입니다.`,
+    })),
+    safetyNotes: ["특정 사건이나 날짜를 예언하지 않는 참고용 리포트입니다."],
+  };
+}
+
 async function renderPage(reportId: string | undefined): Promise<string> {
   const element = await ReportResultPage({
     params: Promise.resolve({ reportId }),
@@ -671,6 +893,34 @@ describe("report result page", () => {
     expect(html).not.toContain("draft 본문");
     expect(html).not.toContain("기초 만세력");
     expect(html).not.toContain("MBTI 성향표");
+  });
+
+  it("renders a major fortune draft through the dedicated result branch", async () => {
+    const majorFortuneResult = {
+      ...createResult({
+        snapshotVersion: null,
+        draft: null,
+      }),
+      productType: "saju_mbti_full",
+      draft: createMajorFortuneDraft(),
+    } as unknown as PaidReportResult;
+    mockGetPaidReportResult.mockResolvedValue({
+      ok: true,
+      result: majorFortuneResult,
+    });
+
+    const html = await renderPage("major_fortune_result_test");
+
+    expect(html).toContain("대운 리포트");
+    expect(html).toContain("덕민님의 戊辰 대운 리포트");
+    expect(html).toContain("10년 흐름과 올해 세운 교차를 함께 읽는 리포트");
+    expect(html).toContain("현재 대운 요약");
+    expect(html).toContain("대운 타임라인");
+    expect(html).toContain("현재 대운·올해 세운 교차");
+    expect(html).toContain("직업/일");
+    expect(html).toContain("MBTI 성향 발현 방식");
+    expect(html).not.toContain("사주×MBTI 종합 리포트");
+    expect(html).not.toContain("연애·결혼·자녀 리포트");
   });
 
   it("keeps V2 page rendering when MBTI source is unknown", async () => {
