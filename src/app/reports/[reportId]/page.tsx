@@ -51,6 +51,9 @@ import type {
   AnnualFortuneReportDraft,
 } from "../../../lib/report-generation/annualFortuneReportDraftTypes";
 import type {
+  AnnualFortuneEvidencePacket,
+} from "../../../lib/report-knowledge/annualFortuneEvidence";
+import type {
   MajorFortuneEvidencePacket,
 } from "../../../lib/report-knowledge/majorFortuneTypes";
 import { getSajuBranchSymbolEntry } from "../../../lib/report-knowledge/sajuBranchSymbolKnowledge";
@@ -190,6 +193,17 @@ async function loadProductPreviewPageState(
 
   if (productPreview.productType === "major_fortune") {
     if (!isMajorFortuneReportDraft(productPreview.draft)) {
+      return { kind: "invalidSnapshot" };
+    }
+
+    return {
+      kind: "productPreview",
+      productPreview,
+    };
+  }
+
+  if (productPreview.productType === "annual_fortune") {
+    if (!isAnnualFortuneReportDraft(productPreview.draft)) {
       return { kind: "invalidSnapshot" };
     }
 
@@ -650,6 +664,10 @@ function renderProductPreviewState(productPreview: ProductPreviewSnapshot) {
     return renderProductPreviewMajorFortuneState(productPreview);
   }
 
+  if (productPreview.productType === "annual_fortune") {
+    return renderProductPreviewAnnualFortuneState(productPreview);
+  }
+
   return renderUnsupportedProductPreviewState();
 }
 
@@ -721,6 +739,35 @@ function getMajorFortunePreviewEvidencePacket(
     productPreview.evidencePacket.productType === "major_fortune"
   ) {
     return productPreview.evidencePacket as unknown as MajorFortuneEvidencePacket;
+  }
+
+  return undefined;
+}
+
+function renderProductPreviewAnnualFortuneState(
+  productPreview: ProductPreviewSnapshot,
+) {
+  if (!isAnnualFortuneReportDraft(productPreview.draft)) {
+    return renderInvalidSnapshotState();
+  }
+
+  return (
+    <AnnualFortuneReportView
+      draft={productPreview.draft}
+      reportId={productPreview.reportId}
+      evidencePacket={getAnnualFortunePreviewEvidencePacket(productPreview)}
+    />
+  );
+}
+
+function getAnnualFortunePreviewEvidencePacket(
+  productPreview: ProductPreviewSnapshot,
+): AnnualFortuneEvidencePacket | undefined {
+  if (
+    isRecord(productPreview.evidencePacket) &&
+    productPreview.evidencePacket.productType === "annual_fortune"
+  ) {
+    return productPreview.evidencePacket as unknown as AnnualFortuneEvidencePacket;
   }
 
   return undefined;

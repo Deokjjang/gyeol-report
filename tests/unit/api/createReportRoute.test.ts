@@ -428,17 +428,27 @@ describe("create report route", () => {
     }
   });
 
-  it("returns not implemented for annual product payload", async () => {
+  it("returns product preview response for annual fortune payload", async () => {
     const response = await POST(createJsonRequest(singleProductPayload));
 
-    expect(response.status).toBe(501);
+    expect(response.status).toBe(200);
 
     const body = await readApiResponseBody(response);
 
-    expect(body.ok).toBe(false);
-    if (!body.ok && "code" in body) {
-      expect(body.code).toBe("PRODUCT_GENERATION_NOT_IMPLEMENTED");
-      expect(body.message).toContain("annualFortune");
+    expect(body.ok).toBe(true);
+    if (body.ok && "snapshotKind" in body) {
+      expect(body.reportId).toMatch(/^report_/);
+      expect(body.snapshotKind).toBe("product_preview");
+      expect(body.productPreview.productType).toBe("annual_fortune");
+      expect(body.productPreview.productKey).toBe("annual_fortune");
+      expect(body.productPreview.productSlug).toBe("annual-fortune");
+      expect(body.productPreview.draft.productType).toBe("annual_fortune");
+      expect(body.productPreview.access).toEqual({
+        mode: "preview",
+        isPaid: false,
+        isUnlocked: false,
+      });
+      expect(body).not.toHaveProperty("report");
     }
   });
 

@@ -3,13 +3,11 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import {
-  dispatchProductGenerationInput,
   getProductGenerationHandler,
   prepareProductGenerationFromPayload,
 } from "../../../src/lib/report-generation/productGenerationDispatcher";
 import type {
   CompatibilityReportInputPayload,
-  ReportGenerationInput,
   ReportProductKind,
   SinglePersonReportInputPayload,
 } from "../../../src/lib/report-generation/reportInputAdapter";
@@ -78,67 +76,6 @@ function makeCompatibilityPayload(
   };
 }
 
-function makeNormalizedInput(kind: ReportProductKind): ReportGenerationInput {
-  if (kind === "compatibility") {
-    return {
-      kind: "compatibility",
-      productKey: "saju_mbti_compatibility",
-      productSlug: "compatibility",
-      relationshipType: "love",
-      personA: {
-        ...basePerson,
-        name: "A",
-        calendarType: "solar",
-        timezone: "Asia/Seoul",
-      },
-      personB: {
-        ...basePerson,
-        name: "B",
-        mbtiType: "INTP",
-        calendarType: "solar",
-        timezone: "Asia/Seoul",
-      },
-      productOptions: {},
-    };
-  }
-
-  const productByKind = {
-    careerMoneyStudy: {
-      productKey: "career_money_study",
-      productSlug: "career-money-study",
-      productOptions: {},
-    },
-    loveMarriageChild: {
-      productKey: "love_marriage_child",
-      productSlug: "love-marriage-child",
-      productOptions: {},
-    },
-    majorFortune: {
-      productKey: "major_fortune",
-      productSlug: "major-fortune",
-      productOptions: {},
-    },
-    annualFortune: {
-      productKey: "annual_fortune",
-      productSlug: "annual-fortune",
-      productOptions: {
-        selectedYear: "2026",
-      },
-    },
-  } as const;
-
-  return {
-    kind,
-    ...productByKind[kind],
-    person: {
-      ...basePerson,
-      calendarType: "solar",
-      timezone: "Asia/Seoul",
-    },
-    userContext: baseUserContext,
-  };
-}
-
 describe("product generation dispatcher", () => {
   it("has a handler for every product kind", () => {
     for (const kind of productKinds) {
@@ -146,25 +83,15 @@ describe("product generation dispatcher", () => {
     }
   });
 
-  it("returns not implemented for product handlers that are still disconnected", async () => {
-    for (const kind of productKinds.filter(
-      (kind) =>
-        kind !== "careerMoneyStudy" &&
-        kind !== "compatibility" &&
-        kind !== "loveMarriageChild" &&
-        kind !== "majorFortune",
-    )) {
-      const result = dispatchProductGenerationInput(makeNormalizedInput(kind));
-
-      await expect(result).resolves.toEqual({
-        ok: false,
-        kind,
-        error: {
-          code: "PRODUCT_GENERATION_NOT_IMPLEMENTED",
-          message: `Product generation is not implemented for ${kind}.`,
-        },
-      });
-    }
+  it("does not leave configured product handlers disconnected", () => {
+    expect(source).not.toContain("createNotImplementedHandler");
+    expect(productKinds).toEqual([
+      "careerMoneyStudy",
+      "loveMarriageChild",
+      "compatibility",
+      "majorFortune",
+      "annualFortune",
+    ]);
   });
 
   it("maps adapter invalid results to INVALID_REPORT_INPUT", async () => {
@@ -180,31 +107,6 @@ describe("product generation dispatcher", () => {
         message: "Invalid report input: UNKNOWN_PRODUCT_KEY",
       },
     });
-  });
-
-  it("routes valid disconnected product payloads to not implemented by kind", async () => {
-    const payloads = [
-      {
-        payload: makeSinglePayload({
-          productKey: "annual_fortune",
-          productSlug: "annual-fortune",
-          productOptions: {
-            selectedYear: "2026",
-          },
-        }),
-        kind: "annualFortune",
-      },
-    ] as const;
-
-    for (const { payload, kind } of payloads) {
-      await expect(prepareProductGenerationFromPayload(payload)).resolves.toMatchObject({
-        ok: false,
-        kind,
-        error: {
-          code: "PRODUCT_GENERATION_NOT_IMPLEMENTED",
-        },
-      });
-    }
   });
 
   it("routes valid career money study payloads to generated draft output", async () => {
@@ -288,6 +190,61 @@ describe("product generation dispatcher", () => {
     });
   });
 
+  it("routes valid annual fortune payloads to generated draft output", async () => {
+    const result = await prepareProductGenerationFromPayload(
+      makeSinglePayload({
+        productKey: "annual_fortune",
+        productSlug: "annual-fortune",
+        productOptions: {
+          selectedYear: "2026",
+        },
+      }),
+    );
+
+    expect(result).toMatchObject({
+      ok: true,
+      kind: "annualFortune",
+      draft: {
+        version: "v1",
+        productType: "annual_fortune",
+        productVersion: "v1",
+        targetYear: 2026,
+        personLabel: "김도윤",
+      },
+      evidencePacket: {
+        productType: "annual_fortune",
+        productVersion: "v1",
+        selectedYear: 2026,
+        personContext: {
+          name: "김도윤",
+          userContext: {
+            lifeStatus: "employee",
+            fieldLabel: "서비스 기획자",
+            relationshipStatus: "single",
+          },
+        },
+      },
+    });
+  });
+
+  it("keeps annual selectedYear validation in the adapter path", async () => {
+    const result = await prepareProductGenerationFromPayload(
+      makeSinglePayload({
+        productKey: "annual_fortune",
+        productSlug: "annual-fortune",
+        productOptions: {},
+      }),
+    );
+
+    expect(result).toEqual({
+      ok: false,
+      error: {
+        code: "INVALID_REPORT_INPUT",
+        message: "Invalid report input: SELECTED_YEAR_REQUIRED",
+      },
+    });
+  });
+
   it("routes valid compatibility payloads to generated draft output", async () => {
     const result = await prepareProductGenerationFromPayload(makeCompatibilityPayload());
 
@@ -313,7 +270,7 @@ describe("product generation dispatcher", () => {
       "loveMarriageChild: handleLoveMarriageChildGeneration",
       "compatibility: handleCompatibilityGeneration",
       "majorFortune: handleMajorFortuneGeneration",
-      "annualFortune: createNotImplementedHandler",
+      "annualFortune: handleAnnualFortuneGeneration",
       "satisfies Record<ReportProductKind, ProductGenerationHandler>",
     ];
 

@@ -1192,15 +1192,20 @@ describe("report result page", () => {
     expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
   });
 
-  it("keeps unsupported product preview snapshots on the safe preparation screen", async () => {
+  it("renders annual fortune product preview snapshot before paid result lookup", async () => {
     await persistAnnualFortuneProductPreview("report_product_preview_annual");
 
     const html = await renderPage("report_product_preview_annual");
 
     expect(mockGetPaidReportResult).not.toHaveBeenCalled();
-    expect(html).toContain("상품 미리보기 준비 중입니다.");
-    expect(html).toContain("이 상품의 결과 화면 연결은 아직 준비 중입니다.");
-    expect(html).not.toContain("세운 리포트");
+    expect(html).toContain("세운 리포트");
+    expect(html).toContain("덕민님의 2026년 세운 리포트");
+    expect(html).toContain("조회 가능 연도 안내");
+    expect(html).toContain("선택 연도 세운");
+    expect(html).toContain("현재 대운과 선택 연도 세운 교차");
+    expect(html).toContain("월운 12개월 흐름");
+    expect(html).not.toContain("사주×MBTI 종합 리포트");
+    expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
   });
 
   it("loads by report id and renders a generated comprehensive draft", async () => {

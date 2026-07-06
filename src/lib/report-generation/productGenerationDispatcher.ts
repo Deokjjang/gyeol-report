@@ -15,6 +15,10 @@ import {
   type MajorFortuneGenerationHandlerOptions,
 } from "./majorFortuneGenerationHandler";
 import {
+  generateAnnualFortuneProductDraft,
+  type AnnualFortuneGenerationHandlerOptions,
+} from "./annualFortuneGenerationHandler";
+import {
   normalizeReportInputPayload,
   type CompatibilityGenerationInput,
   type ReportGenerationInput,
@@ -67,6 +71,7 @@ export type ProductGenerationDispatcherOptions = {
   readonly compatibility?: CompatibilityGenerationHandlerOptions;
   readonly loveMarriageChild?: LoveMarriageChildGenerationHandlerOptions;
   readonly majorFortune?: MajorFortuneGenerationHandlerOptions;
+  readonly annualFortune?: AnnualFortuneGenerationHandlerOptions;
 };
 
 const PRODUCT_GENERATION_HANDLERS = {
@@ -74,7 +79,7 @@ const PRODUCT_GENERATION_HANDLERS = {
   loveMarriageChild: handleLoveMarriageChildGeneration,
   compatibility: handleCompatibilityGeneration,
   majorFortune: handleMajorFortuneGeneration,
-  annualFortune: createNotImplementedHandler("annualFortune"),
+  annualFortune: handleAnnualFortuneGeneration,
 } as const satisfies Record<ReportProductKind, ProductGenerationHandler>;
 
 export function getProductGenerationHandler(
@@ -103,27 +108,6 @@ export function prepareProductGenerationFromPayload(
   }
 
   return dispatchProductGenerationInput(normalized.value, options);
-}
-
-function createNotImplementedHandler(
-  kind: ReportProductKind,
-): ProductGenerationHandler {
-  return async (input) => {
-    if (input.kind !== kind) {
-      return invalidInputResult(
-        `Generation input kind mismatch: expected ${kind}, received ${input.kind}`,
-      );
-    }
-
-    return {
-      ok: false,
-      kind,
-      error: {
-        code: "PRODUCT_GENERATION_NOT_IMPLEMENTED",
-        message: `Product generation is not implemented for ${kind}.`,
-      },
-    };
-  };
 }
 
 async function handleCompatibilityGeneration(
@@ -222,6 +206,35 @@ async function handleMajorFortuneGeneration(
   return {
     ok: false,
     kind: "majorFortune",
+    error: {
+      code: "INVALID_REPORT_INPUT",
+      message: `${result.error.code}: ${result.error.message}`,
+    },
+  };
+}
+
+async function handleAnnualFortuneGeneration(
+  input: ReportGenerationInput,
+  options: ProductGenerationDispatcherOptions = {},
+): Promise<ProductGenerationResult> {
+  if (input.kind !== "annualFortune") {
+    return invalidInputResult(
+      `Generation input kind mismatch: expected annualFortune, received ${input.kind}`,
+    );
+  }
+
+  const result = await generateAnnualFortuneProductDraft(
+    input,
+    options.annualFortune,
+  );
+
+  if (result.ok) {
+    return result;
+  }
+
+  return {
+    ok: false,
+    kind: "annualFortune",
     error: {
       code: "INVALID_REPORT_INPUT",
       message: `${result.error.code}: ${result.error.message}`,
