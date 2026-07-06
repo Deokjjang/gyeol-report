@@ -27,6 +27,8 @@ const ACTIVE_REPORT_FORMAT_LABEL_KO = "자동 생성 디지털 리포트";
 const CHECKOUT_CTA_LABEL_KO = "990원 결제하고 리포트 생성하기";
 const REQUIRED_CHECKOUT_INPUT_MESSAGE_KO =
   "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.";
+const SINGLE_PRODUCT_CONTEXT_NOTICE_KO =
+  "현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.";
 const DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED =
   process.env.NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED === "1";
 
@@ -80,7 +82,7 @@ const CAREER_MONEY_STUDY_SELECTED_REPORT_PRODUCT = {
   fullNameKo: "직업·커리어·돈·학업 리포트",
   inputTitleKo: "직업·커리어·돈·학업 리포트 입력",
   introKo:
-    "출시 전 개발 preview 입력 흐름입니다. 결제는 연결하지 않고, 입력값과 직업·커리어·돈·학업 상품 context만 확인합니다.",
+    `출시 전 개발 preview 입력 흐름입니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
   deliveryTypeKo: "개발 preview 입력 흐름",
   statusLabelKo: "준비 중 · 미리보기 가능",
@@ -96,7 +98,7 @@ const LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT = {
   fullNameKo: "연애·결혼·자녀 리포트",
   inputTitleKo: "연애·결혼·자녀 리포트 입력",
   introKo:
-    "출시 전 미리보기 입력 흐름입니다. 결제는 연결하지 않고, 입력값과 관계·결혼·부모 역할 상품 context만 확인합니다.",
+    `출시 전 미리보기 입력 흐름입니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
   deliveryTypeKo: "미리보기 입력 흐름",
   statusLabelKo: "준비 중 · 미리보기 가능",
@@ -128,7 +130,7 @@ const MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT = {
   fullNameKo: "대운 리포트",
   inputTitleKo: "대운 리포트 입력",
   introKo:
-    "대운은 입력된 생년월일과 출생시간 기반의 10년 흐름을 보는 리포트입니다. 현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
+    `대운은 입력된 생년월일과 출생시간 기반의 10년 흐름을 보는 리포트입니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
   deliveryTypeKo: "미리보기 입력 흐름",
   statusLabelKo: "준비 중 · 미리보기 가능",
@@ -144,7 +146,7 @@ const ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT = {
   fullNameKo: "세운 리포트",
   inputTitleKo: "세운 리포트 입력",
   introKo:
-    "세운은 선택한 한 해의 흐름을 보는 리포트입니다. 현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
+    `세운은 선택한 한 해의 흐름을 보는 리포트입니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
   deliveryTypeKo: "미리보기 입력 흐름",
   statusLabelKo: "준비 중 · 미리보기 가능",
@@ -503,6 +505,55 @@ function resolveSelectedReportProduct(
   return DEFAULT_SELECTED_REPORT_PRODUCT;
 }
 
+function isSinglePersonPreviewProduct(productKey: string): boolean {
+  return (
+    productKey === CAREER_MONEY_STUDY_PRODUCT_KEY ||
+    productKey === LOVE_MARRIAGE_CHILD_PRODUCT_KEY ||
+    productKey === MAJOR_FORTUNE_PRODUCT_KEY ||
+    productKey === ANNUAL_FORTUNE_PRODUCT_KEY
+  );
+}
+
+function getSingleProductLeadText(productKey: string): string {
+  if (productKey === CAREER_MONEY_STUDY_PRODUCT_KEY) {
+    return "직업, 커리어, 돈, 학업 흐름을 한 사람 기준으로 보는 리포트입니다.";
+  }
+
+  if (productKey === LOVE_MARRIAGE_CHILD_PRODUCT_KEY) {
+    return "나의 연애, 결혼, 부모 역할 성향을 한 사람 기준으로 보는 리포트입니다.";
+  }
+
+  if (productKey === MAJOR_FORTUNE_PRODUCT_KEY) {
+    return "대운은 입력된 생년월일과 출생시간 기반의 10년 흐름을 보는 리포트입니다.";
+  }
+
+  if (productKey === ANNUAL_FORTUNE_PRODUCT_KEY) {
+    return "세운은 선택한 한 해의 흐름을 보는 리포트입니다.";
+  }
+
+  return "단독 인물 리포트 입력 흐름입니다.";
+}
+
+function getSingleProductDevPreviewHref(productKey: string): string {
+  if (productKey === CAREER_MONEY_STUDY_PRODUCT_KEY) {
+    return "/dev/career-report-preview?fixture=deokmin-career&snapshot=latest";
+  }
+
+  if (productKey === LOVE_MARRIAGE_CHILD_PRODUCT_KEY) {
+    return "/dev/love-marriage-child-report-preview?fixture=deokmin-love&snapshot=latest";
+  }
+
+  if (productKey === MAJOR_FORTUNE_PRODUCT_KEY) {
+    return "/dev/major-fortune-preview?fixture=deokmin-current-major-fortune&snapshot=latest";
+  }
+
+  if (productKey === ANNUAL_FORTUNE_PRODUCT_KEY) {
+    return "/dev/annual-fortune-preview?fixture=deokmin-2026-current&snapshot=latest";
+  }
+
+  return "";
+}
+
 function formatBirthTimeSummary(
   mode: BirthTimeMode,
   exactTime: string,
@@ -723,6 +774,294 @@ function renderCompatibilityPersonInputSection(input: {
   );
 }
 
+function renderSingleProductCommonInputSection(input: {
+  readonly prefix: string;
+  readonly value: AnnualFortuneInputState;
+  readonly onChange: (value: AnnualFortuneInputState) => void;
+}) {
+  const { prefix, value, onChange } = input;
+
+  return (
+    <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
+      <div className="space-y-2">
+        <p className="text-sm font-bold text-[#c79a43]">공통 입력값</p>
+        <p className="text-sm leading-6 text-[#cfc5b8]">
+          모든 단독 인물 리포트가 공유하는 기본 정보입니다.
+        </p>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div className="space-y-2">
+          <label
+            htmlFor={`${prefix}Name`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            이름
+          </label>
+          <input
+            id={`${prefix}Name`}
+            name="name"
+            type="text"
+            value={value.name}
+            maxLength={20}
+            placeholder="예: 덕민"
+            onChange={(event) => onChange({ ...value, name: event.target.value })}
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor={`${prefix}BirthDate`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            생년월일
+          </label>
+          <input
+            id={`${prefix}BirthDate`}
+            name="birthDate"
+            type="date"
+            value={value.birthDate}
+            style={{ colorScheme: "dark" }}
+            onChange={(event) =>
+              onChange({ ...value, birthDate: event.target.value })
+            }
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor={`${prefix}BirthTime`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            출생시간
+          </label>
+          <input
+            id={`${prefix}BirthTime`}
+            name="birthTime"
+            type="time"
+            value={value.birthTime}
+            style={{ colorScheme: "dark" }}
+            onChange={(event) =>
+              onChange({
+                ...value,
+                birthTime: event.target.value,
+                birthTimeUnknown: false,
+              })
+            }
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor={`${prefix}TimeBranch`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            대략적인 시간대
+          </label>
+          <select
+            id={`${prefix}TimeBranch`}
+            name="timeBranch"
+            value={value.timeBranch}
+            onChange={(event) =>
+              onChange({
+                ...value,
+                timeBranch: event.target.value as TimeBranchSelection,
+                birthTimeUnknown: false,
+              })
+            }
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+          >
+            <option value="">시간대를 선택해 주세요</option>
+            {timeBranches.map((branch) => (
+              <option key={branch.value} value={branch.value}>
+                {branch.labelKo}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <label className="flex min-h-12 items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200">
+          <input
+            type="checkbox"
+            name="birthTimeUnknown"
+            checked={value.birthTimeUnknown}
+            onChange={(event) =>
+              onChange({
+                ...value,
+                birthTimeUnknown: event.target.checked,
+                birthTime: event.target.checked ? "" : value.birthTime,
+                timeBranch: event.target.checked ? "" : value.timeBranch,
+              })
+            }
+            className="h-4 w-4"
+          />
+          출생시간 모름
+        </label>
+
+        <div className="space-y-2">
+          <label
+            htmlFor={`${prefix}Gender`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            성별
+          </label>
+          <select
+            id={`${prefix}Gender`}
+            name="gender"
+            value={value.gender}
+            onChange={(event) => onChange({ ...value, gender: event.target.value })}
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+          >
+            <option value="">선택</option>
+            <option value="MALE">남성</option>
+            <option value="FEMALE">여성</option>
+          </select>
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor={`${prefix}MbtiType`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            MBTI
+          </label>
+          <select
+            id={`${prefix}MbtiType`}
+            name="mbtiType"
+            value={value.mbtiType}
+            onChange={(event) =>
+              onChange({ ...value, mbtiType: event.target.value })
+            }
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+          >
+            <option value="">선택</option>
+            {mbtiTypes.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor={`${prefix}RelationshipStatus`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            현재 연애 상태
+          </label>
+          <select
+            id={`${prefix}RelationshipStatus`}
+            name="relationshipStatus"
+            value={value.relationshipStatus}
+            onChange={(event) =>
+              onChange({ ...value, relationshipStatus: event.target.value })
+            }
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+          >
+            {annualRelationshipStatusOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.labelKo}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor={`${prefix}JobStatus`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            직업 상태
+          </label>
+          <select
+            id={`${prefix}JobStatus`}
+            name="jobStatus"
+            value={value.jobStatus}
+            onChange={(event) =>
+              onChange({ ...value, jobStatus: event.target.value })
+            }
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
+          >
+            {annualJobStatusOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.labelKo}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="space-y-2 sm:col-span-2">
+          <label
+            htmlFor={`${prefix}DetailedJob`}
+            className="block text-sm font-medium text-neutral-200"
+          >
+            세부 직업
+          </label>
+          <input
+            id={`${prefix}DetailedJob`}
+            name="detailedJob"
+            type="text"
+            value={value.detailedJob}
+            list={`${prefix}DetailedJobOptions`}
+            placeholder="예: 서비스 기획자"
+            onChange={(event) =>
+              onChange({ ...value, detailedJob: event.target.value })
+            }
+            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
+          />
+          <datalist id={`${prefix}DetailedJobOptions`}>
+            {annualDetailedJobOptions.map((option) => (
+              <option key={option} value={option} />
+            ))}
+          </datalist>
+          <p className="text-xs leading-5 text-neutral-500">
+            예: 고등학생, 대학생, 개발자, 서비스 기획자, 디자이너,
+            마케터, 변호사, 의사, 교사, 유튜버, 인플루언서, 연예인,
+            자영업자, 기타 직접 입력
+          </p>
+        </div>
+
+        <fieldset className="space-y-3 sm:col-span-2">
+          <legend className="text-sm font-medium text-neutral-200">
+            관심 영역
+          </legend>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {annualFocusAreaOptions.map((area) => (
+              <label
+                key={area}
+                className="flex min-h-12 items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200"
+              >
+                <input
+                  type="checkbox"
+                  name="focusAreas"
+                  value={area}
+                  checked={value.focusAreas.includes(area)}
+                  onChange={() =>
+                    onChange({
+                      ...value,
+                      focusAreas: toggleAnnualFocusArea(value.focusAreas, area),
+                    })
+                  }
+                  className="h-4 w-4"
+                />
+                {area}
+              </label>
+            ))}
+          </div>
+          <p className="text-xs leading-5 text-neutral-500">
+            선택 입력입니다. 직업, 돈, 연애, 관계, 건강관리, 공부, 가족,
+            생활 리듬 중 관심 있는 영역만 고르세요.
+          </p>
+        </fieldset>
+      </div>
+    </section>
+  );
+}
+
 export default function NewReportPage({
   searchParams = EMPTY_REPORT_SEARCH_PARAMS,
 }: NewReportPageProps) {
@@ -740,6 +1079,8 @@ export default function NewReportPage({
   const [gender, setGender] = useState("");
   const [mbtiType, setMbtiType] = useState("");
   const [stepError, setStepError] = useState("");
+  const [singleProductInput, setSingleProductInput] =
+    useState<AnnualFortuneInputState>(createAnnualFortuneInputState);
   const [compatibilityPersonA, setCompatibilityPersonA] =
     useState<CompatibilityPersonInputState>(createCompatibilityPersonInputState);
   const [compatibilityPersonB, setCompatibilityPersonB] =
@@ -789,6 +1130,17 @@ export default function NewReportPage({
   const compatibilityRelationshipLabel = formatCompatibilityRelationshipLabel(
     compatibilityRelationshipType,
   );
+  const isSingleProductAnnual =
+    selectedProduct.productKey === ANNUAL_FORTUNE_PRODUCT_KEY;
+  const isSingleProductInputReady = isSingleProductAnnual
+    ? isAnnualFortuneRequiredInputComplete(singleProductInput)
+    : isMajorFortuneRequiredInputComplete(singleProductInput);
+  const singleProductCtaLabel = isSingleProductInputReady
+    ? `${selectedProduct.nameKo} 미리보기 준비됨`
+    : "필수 정보를 입력해 주세요";
+  const singleProductDevPreviewHref = getSingleProductDevPreviewHref(
+    selectedProduct.productKey,
+  );
   const isMajorFortuneInputReady =
     isMajorFortuneRequiredInputComplete(majorFortuneInput);
   const majorFortuneCtaLabel = isMajorFortuneInputReady
@@ -799,6 +1151,235 @@ export default function NewReportPage({
   const annualFortuneCtaLabel = isAnnualFortuneInputReady
     ? "세운 리포트 미리보기 준비됨"
     : "필수 정보를 입력해 주세요";
+
+  if (isSinglePersonPreviewProduct(selectedProduct.productKey)) {
+    return (
+      <main className="min-h-screen bg-[#171211] px-5 py-8 text-[#fffaf0] sm:px-8 lg:px-10">
+        <section className="mx-auto max-w-5xl space-y-8">
+          <header className="max-w-3xl space-y-4 animate-[gyeol-reveal_520ms_ease-out]">
+            <p className="text-sm font-bold tracking-[0.18em] text-[#c79a43]">
+              Gyeol Report
+            </p>
+            <h1 className="text-4xl font-bold tracking-normal text-[#fffaf0]">
+              {selectedProduct.inputTitleKo}
+            </h1>
+            <p className="max-w-2xl text-base leading-8 text-[#cfc5b8]">
+              {getSingleProductLeadText(selectedProduct.productKey)}
+            </p>
+            <p className="max-w-2xl rounded-lg border border-[#4a3434] bg-[#211817]/80 px-4 py-3 text-sm leading-6 text-[#cfc5b8]">
+              {SINGLE_PRODUCT_CONTEXT_NOTICE_KO} 실제 생성/결제 연결은 준비
+              중입니다.
+            </p>
+          </header>
+
+          <form
+            onSubmit={(event) => event.preventDefault()}
+            className="grid gap-6"
+          >
+            <input type="hidden" name="timezone" value="Asia/Seoul" />
+            <input type="hidden" name="calendarType" value="SOLAR" />
+            <input
+              type="hidden"
+              name="productKey"
+              value={selectedProduct.productKey}
+            />
+            <input
+              type="hidden"
+              name="productSlug"
+              value={selectedProduct.slug}
+            />
+            <input
+              type="hidden"
+              name="productName"
+              value={selectedProduct.nameKo}
+            />
+
+            {renderSingleProductCommonInputSection({
+              prefix: "singleProduct",
+              value: singleProductInput,
+              onChange: setSingleProductInput,
+            })}
+
+            {isSingleProductAnnual ? (
+              <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
+                <div className="space-y-2">
+                  <p className="text-sm font-bold text-[#c79a43]">
+                    세운 전용 조회 연도
+                  </p>
+                  <p className="text-sm leading-6 text-[#cfc5b8]">
+                    기본값은 현재 연도입니다. 과거 5년과 올해를 우선 조회하고,
+                    12월 1일 이후에는 다음 해 신년사주 preview가 열립니다.
+                  </p>
+                  <p className="text-sm leading-6 text-[#92877b]">
+                    2년 이상 미래 조회는 아직 준비 중이며, 과거 10년 조회는
+                    2차 확장으로 안내합니다.
+                  </p>
+                </div>
+                <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="selectedYear"
+                      className="block text-sm font-medium text-neutral-200"
+                    >
+                      조회 연도
+                    </label>
+                    <input
+                      id="selectedYear"
+                      name="selectedYear"
+                      type="number"
+                      inputMode="numeric"
+                      value={singleProductInput.selectedYear}
+                      onChange={(event) =>
+                        setSingleProductInput({
+                          ...singleProductInput,
+                          selectedYear: event.target.value,
+                        })
+                      }
+                      className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    disabled
+                    aria-disabled="true"
+                    className="min-h-12 rounded-lg border border-[#c79a43]/40 bg-[#2c1e1f] px-5 py-3 text-sm font-bold text-[#c79a43]/80"
+                  >
+                    {singleProductCtaLabel}
+                  </button>
+                </div>
+              </section>
+            ) : (
+              <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
+                <div className="space-y-2">
+                  <p className="text-sm font-bold text-[#c79a43]">
+                    {selectedProduct.nameKo} 기준
+                  </p>
+                  <p className="text-sm leading-6 text-[#cfc5b8]">
+                    별도 추가 질문 없이 공통 입력값을 기준으로 리포트 입력
+                    context를 준비합니다.
+                  </p>
+                  <p className="text-sm leading-6 text-[#92877b]">
+                    현재 맥락 정보는 계산 원인이 아니라 해석을 현실 장면으로
+                    바꾸는 데만 사용합니다.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  disabled
+                  aria-disabled="true"
+                  className="min-h-12 rounded-lg border border-[#c79a43]/40 bg-[#2c1e1f] px-5 py-3 text-sm font-bold text-[#c79a43]/80"
+                >
+                  {singleProductCtaLabel}
+                </button>
+              </section>
+            )}
+
+            <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
+              <div className="space-y-2">
+                <p className="text-sm font-bold text-[#c79a43]">
+                  입력 확인 요약
+                </p>
+                <p className="text-sm leading-6 text-[#cfc5b8]">
+                  실제 생성 전 단계이며, 현재 입력값이 어떤 상품 context로
+                  유지되는지 확인합니다.
+                </p>
+              </div>
+
+              <dl className="grid gap-3 text-sm lg:grid-cols-2">
+                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                  <dt className="font-semibold text-neutral-200">기본 정보</dt>
+                  <dd className="mt-2 space-y-1 text-neutral-400">
+                    <p>이름: {singleProductInput.name.trim() || "미입력"}</p>
+                    <p>생년월일: {singleProductInput.birthDate || "미입력"}</p>
+                    <p>
+                      출생시간: {formatAnnualBirthTimeSummary(singleProductInput)}
+                    </p>
+                    <p>성별: {formatGenderLabel(singleProductInput.gender)}</p>
+                    <p>MBTI: {singleProductInput.mbtiType || "미선택"}</p>
+                  </dd>
+                </div>
+
+                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                  <dt className="font-semibold text-neutral-200">현재 맥락</dt>
+                  <dd className="mt-2 space-y-1 text-neutral-400">
+                    <p>
+                      현재 연애 상태:{" "}
+                      {formatAnnualRelationshipStatus(
+                        singleProductInput.relationshipStatus,
+                      )}
+                    </p>
+                    <p>
+                      직업 상태:{" "}
+                      {formatAnnualJobStatus(singleProductInput.jobStatus)}
+                    </p>
+                    <p>
+                      세부 직업:{" "}
+                      {singleProductInput.detailedJob.trim() || "미입력"}
+                    </p>
+                    <p>
+                      관심 영역:{" "}
+                      {singleProductInput.focusAreas.length > 0
+                        ? singleProductInput.focusAreas.join(", ")
+                        : "미입력"}
+                    </p>
+                  </dd>
+                </div>
+
+                {isSingleProductAnnual ? (
+                  <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                    <dt className="font-semibold text-neutral-200">조회 연도</dt>
+                    <dd className="mt-2 text-neutral-400">
+                      {singleProductInput.selectedYear || "미입력"}
+                    </dd>
+                  </div>
+                ) : null}
+
+                <div
+                  className={
+                    isSingleProductAnnual
+                      ? "rounded-lg border border-neutral-800 bg-neutral-950/70 p-4"
+                      : "rounded-lg border border-neutral-800 bg-neutral-950/70 p-4 lg:col-span-2"
+                  }
+                >
+                  <dt className="font-semibold text-neutral-200">상품 정보</dt>
+                  <dd className="mt-2 space-y-1 text-neutral-400">
+                    <p>productKey: {selectedProduct.productKey}</p>
+                    <p>productSlug: {selectedProduct.slug}</p>
+                  </dd>
+                </div>
+              </dl>
+
+              <p
+                className={
+                  isSingleProductInputReady
+                    ? "rounded-lg border border-emerald-900/50 bg-emerald-950/20 p-4 text-sm font-semibold text-emerald-100"
+                    : "rounded-lg border border-amber-900/50 bg-amber-950/20 p-4 text-sm font-semibold text-amber-100"
+                }
+              >
+                {singleProductCtaLabel}
+              </p>
+            </section>
+
+            <aside className="space-y-3 rounded-lg border border-[#4a3434] bg-[#171211]/70 p-5 text-sm leading-6 text-[#cfc5b8]">
+              <p className="font-semibold text-[#fffaf0]">개발 미리보기</p>
+              <p>
+                현재 화면은 단독 인물 상품 입력 흐름을 연결하기 위한 준비
+                화면입니다. 현재 입력값으로 실제 리포트를 생성하지 않습니다.
+              </p>
+              <p>
+                실제 생성, 결제, 저장은 이후 단계에서 연결합니다.
+              </p>
+              {singleProductDevPreviewHref ? (
+                <p className="break-words text-[#c79a43]">
+                  {singleProductDevPreviewHref}
+                </p>
+              ) : null}
+            </aside>
+          </form>
+        </section>
+      </main>
+    );
+  }
 
   if (selectedProduct.productKey === MAJOR_FORTUNE_PRODUCT_KEY) {
     return (

@@ -58,7 +58,7 @@ describe("new report page source", () => {
     }
   });
 
-  it("keeps career money study product selection as a non-payment skeleton", () => {
+  it("keeps career money study product selection as a non-payment input branch", () => {
     const requiredMarkers = [
       "CAREER_MONEY_STUDY_PRODUCT_KEY",
       "career_money_study",
@@ -68,12 +68,13 @@ describe("new report page source", () => {
       "DEFAULT_SELECTED_REPORT_PRODUCT",
       "CAREER_MONEY_STUDY_SELECTED_REPORT_PRODUCT",
       "직업·커리어·돈·학업 리포트 입력",
+      "직업, 커리어, 돈, 학업 흐름을 한 사람 기준으로 보는 리포트입니다.",
+      "현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
+      "/dev/career-report-preview?fixture=deokmin-career",
       "준비 중 · 미리보기 가능",
-      "선택 상품",
-      "selectedProduct.productKey",
-      "selectedProduct.slug",
-      "{selectedProduct.nameKo} 생성 준비 흐름입니다.",
-      "입력값과 선택 상품 context를 유지합니다.",
+      "isSinglePersonPreviewProduct",
+      "getSingleProductLeadText",
+      "getSingleProductDevPreviewHref",
       "isSelectedProductPurchasable",
     ];
 
@@ -82,7 +83,7 @@ describe("new report page source", () => {
     }
   });
 
-  it("keeps love marriage child product selection as a non-payment skeleton", () => {
+  it("keeps love marriage child product selection as a non-payment input branch", () => {
     const requiredMarkers = [
       "LOVE_MARRIAGE_CHILD_PRODUCT_KEY",
       "love_marriage_child",
@@ -90,8 +91,9 @@ describe("new report page source", () => {
       "love-marriage-child",
       "LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT",
       "연애·결혼·자녀 리포트 입력",
-      "출시 전 미리보기 입력 흐름입니다.",
-      "관계·결혼·부모 역할 상품 context",
+      "나의 연애, 결혼, 부모 역할 성향을 한 사람 기준으로 보는 리포트입니다.",
+      "현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
+      "/dev/love-marriage-child-report-preview?fixture=deokmin-love",
       "미리보기 입력 흐름",
       "준비 중 · 미리보기 가능",
       "productSlug === LOVE_MARRIAGE_CHILD_PRODUCT_SLUG",
@@ -102,6 +104,54 @@ describe("new report page source", () => {
     for (const marker of requiredMarkers) {
       expect(pageSource).toContain(marker);
     }
+  });
+
+  it("renders the shared solo-person input branch for preview single products", () => {
+    const requiredMarkers = [
+      "isSinglePersonPreviewProduct(selectedProduct.productKey)",
+      "singleProductInput",
+      "setSingleProductInput",
+      "isSingleProductInputReady",
+      "singleProductCtaLabel",
+      "renderSingleProductCommonInputSection",
+      "현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
+      "공통 입력값",
+      "모든 단독 인물 리포트가 공유하는 기본 정보입니다.",
+      'name="name"',
+      'name="birthDate"',
+      'name="birthTime"',
+      'name="timeBranch"',
+      'name="birthTimeUnknown"',
+      'name="gender"',
+      'name="mbtiType"',
+      'name="relationshipStatus"',
+      'name="jobStatus"',
+      'name="detailedJob"',
+      'name="focusAreas"',
+      "현재 연애 상태",
+      "직업 상태",
+      "세부 직업",
+      "관심 영역",
+      "입력 확인 요약",
+      "기본 정보",
+      "현재 맥락",
+      "상품 정보",
+      "productKey:",
+      "productSlug:",
+      "미리보기 준비됨",
+      "필수 정보를 입력해 주세요",
+      "현재 입력값으로 실제 리포트를 생성하지 않습니다.",
+      "실제 생성, 결제, 저장은 이후 단계에서 연결합니다.",
+      "event.preventDefault()",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+
+    expect(
+      pageSource.indexOf("isSinglePersonPreviewProduct(selectedProduct.productKey)"),
+    ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
   });
 
   it("keeps compatibility product selection as a non-payment skeleton", () => {
@@ -313,6 +363,9 @@ describe("new report page source", () => {
       "currentJob",
       'name="currentJob"',
       "현재 직업/상태",
+      "자녀 계획",
+      "자녀 유무",
+      "결혼 상태",
     ];
 
     for (const marker of removedMarkers) {
