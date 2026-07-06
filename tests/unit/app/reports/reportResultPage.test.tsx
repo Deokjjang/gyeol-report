@@ -5,6 +5,7 @@ import ReportResultPage from "../../../../src/app/reports/[reportId]/page";
 import { createReportPersistenceRuntime } from "../../../../src/lib/persistence/reportPersistenceRuntime";
 import {
   createProductPreviewSnapshot,
+  type ProductPreviewSnapshot,
 } from "../../../../src/lib/report-generation/productPreviewSnapshot";
 import { getPaidReportResult } from "../../../../src/lib/reports/supabasePaidReportResultAdapter";
 import type {
@@ -935,23 +936,10 @@ async function renderPage(reportId: string | undefined): Promise<string> {
   return renderToStaticMarkup(element);
 }
 
-async function persistCompatibilityProductPreview(reportId: string): Promise<void> {
-  const productPreviewResult = createProductPreviewSnapshot({
-    reportId,
-    createdAtIso: createdAt,
-    productKey: "saju_mbti_compatibility",
-    productSlug: "compatibility",
-    draft: createCompatibilityDraft(),
-    evidencePacket: {
-      productType: "saju_mbti_compatibility",
-      relationshipType: "love",
-    },
-  });
-
-  if (!productPreviewResult.ok) {
-    throw new Error(`Product preview fixture failed: ${productPreviewResult.error}`);
-  }
-
+async function persistProductPreviewRecord(
+  reportId: string,
+  productPreview: ProductPreviewSnapshot,
+): Promise<void> {
   const runtime = createReportPersistenceRuntime({ mode: "preview_memory" });
 
   if (!runtime.ok) {
@@ -981,7 +969,7 @@ async function persistCompatibilityProductPreview(reportId: string): Promise<voi
       },
       reportSnapshot: {
         snapshotKind: "product_preview",
-        productPreview: productPreviewResult.value,
+        productPreview,
         report: productPreviewReport,
         reportVersion: "1.0",
         renderVersion: "1.0",
@@ -989,6 +977,61 @@ async function persistCompatibilityProductPreview(reportId: string): Promise<voi
       },
     },
   });
+}
+
+async function persistCompatibilityProductPreview(reportId: string): Promise<void> {
+  const productPreviewResult = createProductPreviewSnapshot({
+    reportId,
+    createdAtIso: createdAt,
+    productKey: "saju_mbti_compatibility",
+    productSlug: "compatibility",
+    draft: createCompatibilityDraft(),
+    evidencePacket: {
+      productType: "saju_mbti_compatibility",
+      relationshipType: "love",
+    },
+  });
+
+  if (!productPreviewResult.ok) {
+    throw new Error(`Product preview fixture failed: ${productPreviewResult.error}`);
+  }
+
+  await persistProductPreviewRecord(reportId, productPreviewResult.value);
+}
+
+async function persistLoveMarriageChildProductPreview(
+  reportId: string,
+): Promise<void> {
+  const productPreviewResult = createProductPreviewSnapshot({
+    reportId,
+    createdAtIso: createdAt,
+    productKey: "love_marriage_child",
+    productSlug: "love-marriage-child",
+    draft: createLoveMarriageChildDraft({ withEvidencePacket: false }),
+    evidencePacket: createLoveMarriageChildEvidencePacket(),
+  });
+
+  if (!productPreviewResult.ok) {
+    throw new Error(`Product preview fixture failed: ${productPreviewResult.error}`);
+  }
+
+  await persistProductPreviewRecord(reportId, productPreviewResult.value);
+}
+
+async function persistMajorFortuneProductPreview(reportId: string): Promise<void> {
+  const productPreviewResult = createProductPreviewSnapshot({
+    reportId,
+    createdAtIso: createdAt,
+    productKey: "major_fortune",
+    productSlug: "major-fortune",
+    draft: createMajorFortuneDraft(),
+  });
+
+  if (!productPreviewResult.ok) {
+    throw new Error(`Product preview fixture failed: ${productPreviewResult.error}`);
+  }
+
+  await persistProductPreviewRecord(reportId, productPreviewResult.value);
 }
 
 describe("report result page", () => {
@@ -1010,6 +1053,33 @@ describe("report result page", () => {
     expect(html).toContain("B가 A에게 주는 피로");
     expect(html).not.toContain("사주×MBTI 종합 리포트");
     expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
+  });
+
+  it("renders love marriage child product preview snapshot before paid result lookup", async () => {
+    await persistLoveMarriageChildProductPreview("report_product_preview_love");
+
+    const html = await renderPage("report_product_preview_love");
+
+    expect(mockGetPaidReportResult).not.toHaveBeenCalled();
+    expect(html).toContain("연애·결혼·자녀 리포트");
+    expect(html).toContain("덕민님의 관계 리포트");
+    expect(html).toContain("기초 만세력");
+    expect(html).toContain("덕민님의 만세력");
+    expect(html).toContain("MBTI 성향표");
+    expect(html).toContain("사랑 방식");
+    expect(html).not.toContain("사주×MBTI 종합 리포트");
+    expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
+  });
+
+  it("keeps unsupported product preview snapshots on the safe preparation screen", async () => {
+    await persistMajorFortuneProductPreview("report_product_preview_major");
+
+    const html = await renderPage("report_product_preview_major");
+
+    expect(mockGetPaidReportResult).not.toHaveBeenCalled();
+    expect(html).toContain("상품 미리보기 준비 중입니다.");
+    expect(html).toContain("이 상품의 결과 화면 연결은 아직 준비 중입니다.");
+    expect(html).not.toContain("대운 리포트");
   });
 
   it("loads by report id and renders a generated comprehensive draft", async () => {

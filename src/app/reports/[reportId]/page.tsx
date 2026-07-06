@@ -36,6 +36,9 @@ import type {
   LoveMarriageChildReportDraft,
 } from "../../../lib/report-generation/loveMarriageChildReportDraftTypes";
 import type {
+  LoveMarriageChildReportEvidencePacket,
+} from "../../../lib/report-knowledge/loveMarriageChildReportTypes";
+import type {
   MajorFortuneReportDraft,
 } from "../../../lib/report-generation/majorFortuneReportDraftTypes";
 import type {
@@ -145,18 +148,29 @@ async function loadProductPreviewPageState(
 
   const productPreview = record.productPreview;
 
-  if (productPreview.productType !== "saju_mbti_compatibility") {
-    return { kind: "unsupportedProductPreview" };
+  if (productPreview.productType === "saju_mbti_compatibility") {
+    if (!isCompatibilityReportDraft(productPreview.draft)) {
+      return { kind: "invalidSnapshot" };
+    }
+
+    return {
+      kind: "productPreview",
+      productPreview,
+    };
   }
 
-  if (!isCompatibilityReportDraft(productPreview.draft)) {
-    return { kind: "invalidSnapshot" };
+  if (productPreview.productType === "love_marriage_child") {
+    if (!isLoveMarriageChildReportDraft(productPreview.draft)) {
+      return { kind: "invalidSnapshot" };
+    }
+
+    return {
+      kind: "productPreview",
+      productPreview,
+    };
   }
 
-  return {
-    kind: "productPreview",
-    productPreview,
-  };
+  return { kind: "unsupportedProductPreview" };
 }
 
 function isDisplaySection(section: ComprehensiveReportDraftSection): boolean {
@@ -552,10 +566,51 @@ function renderProductPreviewCompatibilityState(
   );
 }
 
+function renderProductPreviewLoveMarriageChildState(
+  productPreview: ProductPreviewSnapshot,
+) {
+  if (!isLoveMarriageChildReportDraft(productPreview.draft)) {
+    return renderInvalidSnapshotState();
+  }
+
+  return renderGeneratedLoveMarriageChildState(
+    productPreview.draft,
+    getLoveMarriageChildPreviewEvidencePacket(productPreview),
+  );
+}
+
+function renderProductPreviewState(productPreview: ProductPreviewSnapshot) {
+  if (productPreview.productType === "saju_mbti_compatibility") {
+    return renderProductPreviewCompatibilityState(productPreview);
+  }
+
+  if (productPreview.productType === "love_marriage_child") {
+    return renderProductPreviewLoveMarriageChildState(productPreview);
+  }
+
+  return renderUnsupportedProductPreviewState();
+}
+
+function getLoveMarriageChildPreviewEvidencePacket(
+  productPreview: ProductPreviewSnapshot,
+): LoveMarriageChildReportEvidencePacket | undefined {
+  if (
+    isRecord(productPreview.evidencePacket) &&
+    productPreview.evidencePacket.productType === "love_marriage_child"
+  ) {
+    return productPreview.evidencePacket as unknown as LoveMarriageChildReportEvidencePacket;
+  }
+
+  return isLoveMarriageChildReportDraft(productPreview.draft)
+    ? productPreview.draft.evidencePacket
+    : undefined;
+}
+
 function renderGeneratedLoveMarriageChildState(
   draft: LoveMarriageChildReportDraft,
+  evidencePacketOverride?: LoveMarriageChildReportEvidencePacket,
 ) {
-  const evidencePacket = draft.evidencePacket;
+  const evidencePacket = evidencePacketOverride ?? draft.evidencePacket;
 
   return (
     <LoveMarriageChildReportView
@@ -1243,7 +1298,7 @@ export default async function ReportResultPage({
   }
 
   if (state.kind === "productPreview") {
-    return renderProductPreviewCompatibilityState(state.productPreview);
+    return renderProductPreviewState(state.productPreview);
   }
 
   return renderGeneratedState(state.result);

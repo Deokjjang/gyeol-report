@@ -153,6 +153,13 @@ const singleProductPayload = {
   },
 } as const;
 
+const loveMarriageChildPayload = {
+  ...singleProductPayload,
+  productKey: "love_marriage_child",
+  productSlug: "love-marriage-child",
+  productOptions: {},
+} as const;
+
 function readFile(relativePath: string): string {
   return readFileSync(join(process.cwd(), relativePath), "utf8");
 }
@@ -335,7 +342,31 @@ describe("create report route", () => {
     }
   });
 
-  it("returns not implemented for non-compatibility product payload", async () => {
+  it("returns product preview response for love marriage child payload", async () => {
+    const response = await POST(createJsonRequest(loveMarriageChildPayload));
+
+    expect(response.status).toBe(200);
+
+    const body = await readApiResponseBody(response);
+
+    expect(body.ok).toBe(true);
+    if (body.ok && "snapshotKind" in body) {
+      expect(body.reportId).toMatch(/^report_/);
+      expect(body.snapshotKind).toBe("product_preview");
+      expect(body.productPreview.productType).toBe("love_marriage_child");
+      expect(body.productPreview.productKey).toBe("love_marriage_child");
+      expect(body.productPreview.productSlug).toBe("love-marriage-child");
+      expect(body.productPreview.draft.productType).toBe("love_marriage_child");
+      expect(body.productPreview.access).toEqual({
+        mode: "preview",
+        isPaid: false,
+        isUnlocked: false,
+      });
+      expect(body).not.toHaveProperty("report");
+    }
+  });
+
+  it("returns not implemented for annual product payload", async () => {
     const response = await POST(createJsonRequest(singleProductPayload));
 
     expect(response.status).toBe(501);

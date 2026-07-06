@@ -146,8 +146,10 @@ describe("product generation dispatcher", () => {
     }
   });
 
-  it("returns not implemented for non-compatibility product handlers", async () => {
-    for (const kind of productKinds.filter((kind) => kind !== "compatibility")) {
+  it("returns not implemented for product handlers that are still disconnected", async () => {
+    for (const kind of productKinds.filter(
+      (kind) => kind !== "compatibility" && kind !== "loveMarriageChild",
+    )) {
       const result = dispatchProductGenerationInput(makeNormalizedInput(kind));
 
       await expect(result).resolves.toEqual({
@@ -176,18 +178,11 @@ describe("product generation dispatcher", () => {
     });
   });
 
-  it("routes valid non-compatibility payloads to not implemented by kind", async () => {
+  it("routes valid disconnected product payloads to not implemented by kind", async () => {
     const payloads = [
       {
         payload: makeSinglePayload(),
         kind: "careerMoneyStudy",
-      },
-      {
-        payload: makeSinglePayload({
-          productKey: "love_marriage_child",
-          productSlug: "love-marriage-child",
-        }),
-        kind: "loveMarriageChild",
       },
       {
         payload: makeSinglePayload({
@@ -219,6 +214,32 @@ describe("product generation dispatcher", () => {
     }
   });
 
+  it("routes valid love marriage child payloads to generated draft output", async () => {
+    const result = await prepareProductGenerationFromPayload(
+      makeSinglePayload({
+        productKey: "love_marriage_child",
+        productSlug: "love-marriage-child",
+      }),
+    );
+
+    expect(result).toMatchObject({
+      ok: true,
+      kind: "loveMarriageChild",
+      draft: {
+        version: "v1",
+        productType: "love_marriage_child",
+        productVersion: "v1",
+      },
+      evidencePacket: {
+        productType: "love_marriage_child",
+        productVersion: "v1",
+        personContext: {
+          relationshipStatus: "single",
+        },
+      },
+    });
+  });
+
   it("routes valid compatibility payloads to generated draft output", async () => {
     const result = await prepareProductGenerationFromPayload(makeCompatibilityPayload());
 
@@ -241,7 +262,7 @@ describe("product generation dispatcher", () => {
   it("keeps product kind handler mapping explicit in source", () => {
     const requiredMarkers = [
       "careerMoneyStudy: createNotImplementedHandler",
-      "loveMarriageChild: createNotImplementedHandler",
+      "loveMarriageChild: handleLoveMarriageChildGeneration",
       "compatibility: handleCompatibilityGeneration",
       "majorFortune: createNotImplementedHandler",
       "annualFortune: createNotImplementedHandler",

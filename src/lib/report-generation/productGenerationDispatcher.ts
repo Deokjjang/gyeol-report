@@ -3,6 +3,10 @@ import {
   type CompatibilityGenerationHandlerOptions,
 } from "./compatibilityGenerationHandler";
 import {
+  generateLoveMarriageChildProductDraft,
+  type LoveMarriageChildGenerationHandlerOptions,
+} from "./loveMarriageChildGenerationHandler";
+import {
   normalizeReportInputPayload,
   type CompatibilityGenerationInput,
   type ReportGenerationInput,
@@ -52,11 +56,12 @@ export type ProductGenerationHandler = (
 
 export type ProductGenerationDispatcherOptions = {
   readonly compatibility?: CompatibilityGenerationHandlerOptions;
+  readonly loveMarriageChild?: LoveMarriageChildGenerationHandlerOptions;
 };
 
 const PRODUCT_GENERATION_HANDLERS = {
   careerMoneyStudy: createNotImplementedHandler("careerMoneyStudy"),
-  loveMarriageChild: createNotImplementedHandler("loveMarriageChild"),
+  loveMarriageChild: handleLoveMarriageChildGeneration,
   compatibility: handleCompatibilityGeneration,
   majorFortune: createNotImplementedHandler("majorFortune"),
   annualFortune: createNotImplementedHandler("annualFortune"),
@@ -125,6 +130,35 @@ async function handleCompatibilityGeneration(
     input as CompatibilityGenerationInput,
     options.compatibility,
   );
+}
+
+async function handleLoveMarriageChildGeneration(
+  input: ReportGenerationInput,
+  options: ProductGenerationDispatcherOptions = {},
+): Promise<ProductGenerationResult> {
+  if (input.kind !== "loveMarriageChild") {
+    return invalidInputResult(
+      `Generation input kind mismatch: expected loveMarriageChild, received ${input.kind}`,
+    );
+  }
+
+  const result = await generateLoveMarriageChildProductDraft(
+    input,
+    options.loveMarriageChild,
+  );
+
+  if (result.ok) {
+    return result;
+  }
+
+  return {
+    ok: false,
+    kind: "loveMarriageChild",
+    error: {
+      code: "INVALID_REPORT_INPUT",
+      message: `${result.error.code}: ${result.error.message}`,
+    },
+  };
 }
 
 function invalidInputResult(message: string): ProductGenerationInvalidInputResult {
