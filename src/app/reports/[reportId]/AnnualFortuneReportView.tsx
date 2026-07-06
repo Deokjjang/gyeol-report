@@ -1,4 +1,10 @@
-import { SaeunFortuneTable } from "../../../components/report-tables";
+import type { ReactNode } from "react";
+
+import {
+  ManseRyeokCommonTable,
+  MbtiCommonProfileTable,
+  SaeunFortuneTable,
+} from "../../../components/report-tables";
 import type { AnnualFortuneReportDraft } from "../../../lib/report-generation/annualFortuneReportDraftTypes";
 import {
   buildAnnualDomainLockedFinalAdvice,
@@ -6,12 +12,25 @@ import {
   getAnnualMonthlySectionBasisNote,
   sanitizeAnnualFortuneVisibleText,
 } from "../../../lib/report-generation/annualFortuneReportDraftValidator";
-import { buildSaeunFortuneTableData } from "../../../lib/report-tables";
+import type { AnnualFortuneEvidencePacket } from "../../../lib/report-knowledge/annualFortuneEvidence";
+import {
+  buildAnnualFortuneReportManseRyeokTableData,
+  buildAnnualFortuneReportMbtiProfileTableData,
+  buildSaeunFortuneTableData,
+} from "../../../lib/report-tables";
 
 type AnnualFortuneReportViewProps = {
   readonly draft: AnnualFortuneReportDraft;
   readonly reportId?: string;
+  readonly evidencePacket?: AnnualFortuneEvidencePacket;
+  readonly manseRyeokTable?: ReactNode;
+  readonly mbtiProfileTable?: ReactNode;
 };
+
+const panelClass =
+  "min-w-0 rounded-[8px] border border-[#ded2c2] bg-[#fffaf1] p-5 shadow-[0_16px_40px_rgba(62,45,35,0.08)]";
+const sectionTitleClass =
+  "text-xl font-semibold tracking-normal text-[#2b211b] sm:text-2xl";
 
 type StemMeta = {
   readonly element: string;
@@ -47,16 +66,18 @@ const branchMetaByBranch: Record<string, StemMeta> = {
 };
 
 const annualFortuneFlowAreaLabels = [
-  "일·성과",
-  "돈·현실",
-  "인간관계",
-  "연애·가족",
-  "학업·자격증",
-  "몸·생활 리듬",
+  "직업·일",
+  "돈·자원",
+  "관계·연애",
+  "건강관리·생활 리듬",
+  "사회·가족",
+  "공부·성장",
 ] as const;
 
-function text(value: string): string {
-  return sanitizeAnnualFortuneVisibleText(value);
+function text(value: string | number | null | undefined): string {
+  return sanitizeAnnualFortuneVisibleText(
+    value === null || value === undefined ? "" : String(value),
+  );
 }
 
 function getMonthlyBasisDisplayLabel(basis: string | null): string {
@@ -141,48 +162,6 @@ function getAnnualFlowIndexHeading(
   return "올해 흐름 지표";
 }
 
-function getAnnualFlowMetricLabel(label: string): string {
-  if (label === "일·성과") {
-    return "활성도";
-  }
-  if (label === "돈·현실") {
-    return "체감도";
-  }
-  if (label === "인간관계") {
-    return "노출도";
-  }
-  if (label === "연애·가족") {
-    return "조율도";
-  }
-  if (label === "학업·자격증") {
-    return "활용도";
-  }
-  if (label === "몸·생활 리듬") {
-    return "주의도";
-  }
-
-  return "체감도";
-}
-
-function getAnnualKeySignalDisplayLabel(
-  type: AnnualFortuneReportDraft["keySignals"][number]["type"],
-): string {
-  if (type === "opportunity") {
-    return "기회 신호";
-  }
-  if (type === "difficulty") {
-    return "부담 신호";
-  }
-  if (type === "mixed") {
-    return "양면 신호";
-  }
-  if (type === "recovery") {
-    return "연결 신호";
-  }
-
-  return "주의 신호";
-}
-
 function getGanjiParts(ganji: string): {
   readonly stem: string;
   readonly branch: string;
@@ -194,11 +173,42 @@ function getGanjiParts(ganji: string): {
 
 function renderList(items: readonly string[]) {
   return (
-    <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-300">
+    <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-[#51463c]">
       {items.map((item) => (
         <li key={item}>{text(item)}</li>
       ))}
     </ul>
+  );
+}
+
+function renderParagraphs(items: readonly (string | null | undefined)[]) {
+  const visibleItems = items.map((item) => text(item ?? "")).filter(Boolean);
+
+  if (visibleItems.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="space-y-3 break-words text-[15px] leading-8 text-[#4f453c]">
+      {visibleItems.map((item) => (
+        <p key={item}>{item}</p>
+      ))}
+    </div>
+  );
+}
+
+function renderPill(label: string, value: string | number | null | undefined) {
+  const visibleValue = value === null || value === undefined ? "" : text(String(value));
+
+  if (!visibleValue) {
+    return null;
+  }
+
+  return (
+    <div className="min-w-0 rounded-[8px] border border-[#e4d8c8] bg-[#fffdf8] px-4 py-3">
+      <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#95733a]">{label}</p>
+      <p className="mt-1 break-words text-sm font-semibold text-[#2f251f]">{visibleValue}</p>
+    </div>
   );
 }
 
@@ -222,16 +232,17 @@ function renderYearStructure(draft: AnnualFortuneReportDraft) {
   ] as const;
 
   return (
-    <section className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-      <h2 className="text-lg font-semibold text-neutral-50">연도 구조</h2>
+    <section className={panelClass}>
+      <p className="text-sm font-semibold text-[#8b6d2d]">선택 연도 세운 요약</p>
+      <h2 className={`${sectionTitleClass} mt-1`}>연도 구조</h2>
       <dl className="mt-4 grid gap-2 text-sm">
         {rows.map(([label, value]) => (
           <div
             key={label}
-            className="grid grid-cols-[5rem_1fr] rounded-md border border-neutral-800 bg-neutral-900/70"
+            className="grid grid-cols-[5rem_1fr] rounded-md border border-[#eadfce] bg-[#fffdf8]"
           >
-            <dt className="px-3 py-2 font-semibold text-neutral-500">{label}</dt>
-            <dd className="px-3 py-2 font-medium text-neutral-100">
+            <dt className="px-3 py-2 font-semibold text-[#806c58]">{label}</dt>
+            <dd className="px-3 py-2 font-medium text-[#2f251f]">
               {text(value)}
             </dd>
           </div>
@@ -241,44 +252,454 @@ function renderYearStructure(draft: AnnualFortuneReportDraft) {
   );
 }
 
-function renderSaeunFortuneTable(draft: AnnualFortuneReportDraft) {
-  if (draft.yearSummary.ganji.length === 0 && draft.monthlyFlow.length === 0) {
+function explainAnnualSignal(value: string | null | undefined): string {
+  const signal = text(value ?? "");
+
+  if (!signal) {
+    return "";
+  }
+  if (/장면|흐름|누적|조율|압박|회복|기준|리듬/.test(signal) && signal.length > 18) {
+    return signal;
+  }
+  if (signal.includes("충")) {
+    return `${signal}: 익숙한 흐름과 새 요구가 부딪혀 일정, 역할, 관계 기준을 다시 맞춰야 하는 장면입니다.`;
+  }
+  if (signal.includes("해")) {
+    return `${signal}: 크게 터지는 충돌보다 서운함이나 피로가 천천히 쌓일 수 있는 지점입니다.`;
+  }
+  if (signal.includes("형")) {
+    return `${signal}: 반복 압박이 커질 수 있어 회복 시간과 책임 범위를 먼저 좁혀야 하는 장면입니다.`;
+  }
+  if (signal.includes("파")) {
+    return `${signal}: 기존 방식이 흔들리며 다시 맞춰야 하는 장면이 생기기 쉬운 흐름입니다.`;
+  }
+  if (signal.includes("반합")) {
+    return `${signal}: 일부 흐름이 살아나지만 결론까지 가려면 속도와 기준 조율이 필요합니다.`;
+  }
+  if (signal.includes("삼합")) {
+    return `${signal}: 같은 방향의 힘이 커져 장점과 과열이 함께 생길 수 있는 흐름입니다.`;
+  }
+  if (signal.includes("합")) {
+    return `${signal}: 약속, 관계, 일정이 묶이며 실제 움직임이 생기기 쉬운 흐름입니다.`;
+  }
+
+  return signal;
+}
+
+function renderSaeunFortuneTable(
+  draft: AnnualFortuneReportDraft,
+  evidencePacket: AnnualFortuneEvidencePacket | undefined,
+) {
+  if (
+    evidencePacket === undefined &&
+    draft.yearSummary.ganji.length === 0 &&
+    draft.monthlyFlow.length === 0
+  ) {
     return null;
   }
 
-  const tableData = buildSaeunFortuneTableData({
-    title: `${text(draft.personLabel)} ${draft.targetYear}년 세운표`,
-    selectedYear: draft.targetYear,
-    annualFortune: {
-      ganji: text(draft.yearSummary.ganji),
-      stemTenGod: text(draft.yearSummary.tenGodLabel),
-      interactions: [text(draft.annualStructure.branchInteractionExplanation)].filter(
-        (value) => value.length > 0,
-      ),
-    },
-    monthlyFortunes: draft.monthlyFlow.map((flow) => ({
-      month: flow.month,
-      monthLabel: text(flow.label),
-      monthGanji: flow.monthGanji === null ? undefined : text(flow.monthGanji),
-      oneLine: text(flow.headline),
-      caution:
-        flow.natalInteractionSummary === null
-          ? null
-          : text(flow.natalInteractionSummary),
-      basis: getMonthlyBasisDisplayLabel(flow.monthlyBasis),
-      interactions:
-        flow.natalInteractionSummary === null
-          ? []
-          : [text(flow.natalInteractionSummary)],
-    })),
-  });
+  const tableData =
+    evidencePacket === undefined
+      ? buildSaeunFortuneTableData({
+          title: `${text(draft.personLabel)} ${draft.targetYear}년 세운표`,
+          selectedYear: draft.targetYear,
+          annualFortune: {
+            ganji: text(draft.yearSummary.ganji),
+            stemTenGod: text(draft.yearSummary.tenGodLabel),
+            interactions: [explainAnnualSignal(draft.annualStructure.branchInteractionExplanation)].filter(
+              (value) => value.length > 0,
+            ),
+          },
+          monthlyFortunes: draft.monthlyFlow.map((flow) => ({
+            month: flow.month,
+            monthLabel: text(flow.label),
+            monthGanji: flow.monthGanji === null ? undefined : text(flow.monthGanji),
+            oneLine: text(flow.headline),
+            caution:
+              flow.natalInteractionSummary === null
+                ? null
+                : explainAnnualSignal(flow.natalInteractionSummary),
+            basis: getMonthlyBasisDisplayLabel(flow.monthlyBasis),
+            interactions:
+              flow.natalInteractionSummary === null
+                ? []
+                : [explainAnnualSignal(flow.natalInteractionSummary)],
+          })),
+        })
+      : buildSaeunFortuneTableData({
+          title: `${text(evidencePacket.personContext.name)} ${evidencePacket.selectedYear}년 세운표`,
+          selectedYear: evidencePacket.selectedYear,
+          currentDaeunCycle:
+            evidencePacket.currentMajorFortune === null
+              ? undefined
+              : {
+                  ganji: evidencePacket.currentMajorFortune.ganji,
+                  stemTenGod: evidencePacket.currentMajorFortune.stemTenGod,
+                  branchTenGod: evidencePacket.currentMajorFortune.branchTenGod,
+                  interactions: [
+                    evidencePacket.majorAnnualCross?.majorToAnnualRelation,
+                    evidencePacket.majorAnnualCross?.majorTenGodToAnnualTenGod,
+                  ]
+                    .map(explainAnnualSignal)
+                    .filter(Boolean),
+                },
+          annualFortune: {
+            year: evidencePacket.selectedYear,
+            ganji: evidencePacket.annualFortune.ganji,
+            stem: evidencePacket.annualFortune.stem,
+            branch: evidencePacket.annualFortune.branch,
+            stemTenGod: evidencePacket.annualFortune.stemTenGod,
+            branchTenGod: evidencePacket.annualFortune.branchTenGod,
+            interactions: evidencePacket.natalAnnualRelations.interactions
+              .map((interaction) => explainAnnualSignal(interaction.plain))
+              .filter(Boolean),
+          },
+          monthlyFortunes: evidencePacket.monthlyFortunes.map((month) => ({
+            month: month.month,
+            monthLabel: month.label,
+            monthGanji: month.ganji,
+            stem: month.stem,
+            branch: month.branch,
+            stemTenGod: month.stemTenGod,
+            branchTenGod: month.branchTenGod,
+            oneLine: month.monthTheme,
+            caution: month.caution,
+            basis: "달력월 기준 운영 가이드",
+            interactions: [...month.supportSignals, ...month.frictionSignals].map(
+              explainAnnualSignal,
+            ),
+          })),
+        });
 
   return <SaeunFortuneTable data={tableData} defaultOpen={true} />;
+}
+
+function renderYearAccessNotice(
+  draft: AnnualFortuneReportDraft,
+  evidencePacket: AnnualFortuneEvidencePacket | undefined,
+) {
+  const policy = evidencePacket?.yearAccessPolicy;
+  const statusLine =
+    policy === undefined
+      ? draft.yearAccessNotice
+      : policy.status === "locked"
+        ? policy.notice
+        : policy.isNewYearPreview
+          ? `${policy.selectedYear}년은 신년사주 성격으로 미리 열리는 세운입니다.`
+          : policy.notice;
+
+  return (
+    <section className={panelClass}>
+      <p className="text-sm font-semibold text-[#8b6d2d]">조회 가능 연도 안내</p>
+      <h2 className={`${sectionTitleClass} mt-1`}>세운 조회 기준</h2>
+      <div className="mt-5">{renderParagraphs([
+        statusLine,
+        policy?.policyLabel ??
+          "기본 조회 가능 연도는 과거 5년과 올해이며, 매년 12월부터 다음 해 신년사주가 열립니다.",
+      ])}</div>
+    </section>
+  );
+}
+
+function renderCommonFoundation(
+  manseRyeokTable: ReactNode | undefined,
+  mbtiProfileTable: ReactNode | undefined,
+  evidencePacket: AnnualFortuneEvidencePacket | undefined,
+  draft: AnnualFortuneReportDraft,
+) {
+  const resolvedManseRyeokTable =
+    manseRyeokTable ??
+    (evidencePacket === undefined ? undefined : (
+      <ManseRyeokCommonTable
+        data={buildAnnualFortuneReportManseRyeokTableData(evidencePacket)}
+        defaultOpen
+      />
+    ));
+  const resolvedMbtiProfileTable =
+    mbtiProfileTable ??
+    (evidencePacket === undefined
+      ? undefined
+      : (() => {
+          const data = buildAnnualFortuneReportMbtiProfileTableData(evidencePacket);
+
+          return data === null ? undefined : (
+            <MbtiCommonProfileTable data={data} defaultOpen variant="compact" />
+          );
+        })());
+
+  return (
+    <section className="space-y-4">
+      <div>
+        <p className="text-sm font-semibold text-[#8b6d2d]">공통 기초 정보</p>
+        <h2 className={sectionTitleClass}>세운 해석에 쓰는 기본 표</h2>
+      </div>
+      <div className="grid items-start gap-4 xl:grid-cols-2">
+        <div className={panelClass}>
+          <div className="mb-4">
+            <h3 className="text-lg font-semibold text-[#2b211b]">기초 만세력</h3>
+            <p className="mt-1 text-sm leading-6 text-[#76685c]">
+              {resolvedManseRyeokTable
+                ? "선택 연도 세운이 올라오는 기준 원국표입니다."
+                : "기초 만세력은 원국 데이터가 연결된 결과에서만 간단히 표시합니다."}
+            </p>
+          </div>
+          {resolvedManseRyeokTable ?? (
+            <p className="text-sm leading-7 text-[#76685c]">
+              원국표 데이터가 없는 결과라 세운표와 본문 해석을 중심으로 읽습니다.
+            </p>
+          )}
+        </div>
+        <div className={panelClass}>
+          <div className="mb-4">
+            <h3 className="text-lg font-semibold text-[#2b211b]">MBTI 성향표</h3>
+            <p className="mt-1 text-sm leading-6 text-[#76685c]">
+              MBTI는 세운의 원인이 아니라 흐름이 행동과 선택으로 드러나는 방식을 보조합니다.
+            </p>
+          </div>
+          {resolvedMbtiProfileTable ?? (
+            <p className="text-sm leading-7 text-[#76685c]">
+              {text(draft.mbtiExpression) || "MBTI 성향표는 유형 데이터가 연결된 결과에서 표시됩니다."}
+            </p>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function renderAnnualFortuneSummary(
+  draft: AnnualFortuneReportDraft,
+  evidencePacket: AnnualFortuneEvidencePacket | undefined,
+) {
+  const annual = evidencePacket?.annualFortune;
+
+  return (
+    <section className={panelClass}>
+      <p className="text-sm font-semibold text-[#8b6d2d]">선택 연도 세운</p>
+      <h2 className={`${sectionTitleClass} mt-1`}>
+        {text(annual?.yearTheme) || text(draft.headline) || "선택 연도 흐름"}
+      </h2>
+      <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {renderPill("선택 연도", annual?.year ?? draft.targetYear)}
+        {renderPill("간지", annual?.ganji ?? draft.yearSummary.ganji)}
+        {renderPill("천간 십성", annual?.stemTenGod ?? draft.yearSummary.tenGodLabel)}
+        {renderPill("지지 십성", annual?.branchTenGod)}
+      </div>
+      <div className="mt-5">{renderParagraphs([
+        draft.selectedYearSummary,
+        annual?.interpretation,
+        annual?.caution,
+      ])}</div>
+      <div className="mt-5 grid gap-4 md:grid-cols-2">
+        <div className="rounded-[8px] border border-[#eadfce] bg-[#fffdf8] p-4">
+          <h3 className="text-sm font-semibold text-[#6f1d35]">도움이 되는 신호</h3>
+          {renderList(annual?.supportSignals ?? [])}
+        </div>
+        <div className="rounded-[8px] border border-[#eadfce] bg-[#fffdf8] p-4">
+          <h3 className="text-sm font-semibold text-[#6f1d35]">마찰로 느껴질 수 있는 신호</h3>
+          {renderList(annual?.frictionSignals ?? [])}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function renderMajorAnnualCross(
+  draft: AnnualFortuneReportDraft,
+  evidencePacket: AnnualFortuneEvidencePacket | undefined,
+) {
+  const major = evidencePacket?.currentMajorFortune;
+  const cross = evidencePacket?.majorAnnualCross;
+
+  return (
+    <section className={panelClass}>
+      <p className="text-sm font-semibold text-[#8b6d2d]">현재 대운과 선택 연도 세운 교차</p>
+      <h2 className={`${sectionTitleClass} mt-1`}>10년 배경 위에 올라오는 1년 자극</h2>
+      <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {renderPill("현재 대운", major?.ganji)}
+        {renderPill("대운 십성", major?.stemTenGod)}
+        {renderPill("선택 연도", cross?.annualGanji ?? evidencePacket?.annualFortune.ganji)}
+        {renderPill("교차", cross?.majorToAnnualRelation)}
+      </div>
+      <div className="mt-5">{renderParagraphs([
+        draft.majorAnnualCrossReading,
+        major?.keyTheme,
+        cross?.interpretation,
+        cross?.caution,
+      ])}</div>
+    </section>
+  );
+}
+
+function renderNatalAnnualRelations(
+  draft: AnnualFortuneReportDraft,
+  evidencePacket: AnnualFortuneEvidencePacket | undefined,
+) {
+  const relations = evidencePacket?.natalAnnualRelations;
+  const interactionTexts =
+    relations?.interactions.map((interaction) =>
+      explainAnnualSignal(interaction.plain),
+    ) ?? [draft.annualStructure.branchInteractionExplanation];
+
+  return (
+    <section className={panelClass}>
+      <p className="text-sm font-semibold text-[#8b6d2d]">원국과 세운 관계</p>
+      <h2 className={`${sectionTitleClass} mt-1`}>선택 연도가 원국에 닿는 지점</h2>
+      <div className="mt-5">{renderParagraphs([
+        draft.natalAnnualReading,
+        relations?.interpretation,
+        relations?.caution,
+        ...interactionTexts,
+      ])}</div>
+    </section>
+  );
+}
+
+function renderMonthlyFortuneReading(
+  draft: AnnualFortuneReportDraft,
+  evidencePacket: AnnualFortuneEvidencePacket | undefined,
+) {
+  const monthly = evidencePacket?.monthlyFortunes ?? [];
+  const highlights =
+    draft.monthlyHighlights.length > 0
+      ? draft.monthlyHighlights
+      : monthly.slice(0, 4).map((month) => ({
+          monthLabel: month.label,
+          headline: month.monthTheme,
+          body: month.interpretation,
+          actionHint: month.actionHint,
+        }));
+
+  return (
+    <section className={panelClass}>
+      <p className="text-sm font-semibold text-[#8b6d2d]">월운 12개월 흐름</p>
+      <h2 className={`${sectionTitleClass} mt-1`}>월별 운영 리듬</h2>
+      <div className="mt-5">{renderParagraphs([
+        draft.monthlyFlowReading,
+        getAnnualMonthlySectionBasisNote(),
+      ])}</div>
+      <div className="mt-6 grid gap-3 md:grid-cols-2">
+        {highlights.slice(0, 6).map((highlight) => (
+          <article
+            key={`${highlight.monthLabel}:${highlight.headline}`}
+            className="rounded-[8px] border border-[#eadfce] bg-[#fffdf8] p-4"
+          >
+            <p className="text-xs font-semibold text-[#8b6d2d]">
+              {text(highlight.monthLabel)}
+            </p>
+            <h3 className="mt-1 text-base font-semibold text-[#2f251f]">
+              {text(highlight.headline)}
+            </h3>
+            <p className="mt-2 text-sm leading-7 text-[#5a4d42]">
+              {text(highlight.body)}
+            </p>
+            <p className="mt-3 text-sm leading-7 text-[#6d5f52]">
+              {text(highlight.actionHint)}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function renderDomainFlows(
+  draft: AnnualFortuneReportDraft,
+  evidencePacket: AnnualFortuneEvidencePacket | undefined,
+) {
+  const domainFlows = evidencePacket?.domainFlows;
+  const flows = [
+    [annualFortuneFlowAreaLabels[0], domainFlows?.careerWork ?? draft.careerWorkFlow],
+    [annualFortuneFlowAreaLabels[1], domainFlows?.moneyResource ?? draft.moneyResourceFlow],
+    [annualFortuneFlowAreaLabels[2], domainFlows?.relationshipLove ?? draft.relationshipFlow],
+    [annualFortuneFlowAreaLabels[3], domainFlows?.healthRoutine ?? draft.healthRoutineFlow],
+    [annualFortuneFlowAreaLabels[4], domainFlows?.socialFamily],
+    [annualFortuneFlowAreaLabels[5], domainFlows?.studyGrowth],
+  ] as const;
+
+  return (
+    <section className={panelClass}>
+      <p className="text-sm font-semibold text-[#8b6d2d]">영역별 흐름</p>
+      <h2 className={`${sectionTitleClass} mt-1`}>올해 흐름이 생활 영역에 나타나는 방식</h2>
+      <div className="mt-5 grid gap-3 md:grid-cols-2">
+        {flows.map(([label, flow]) =>
+          flow === undefined ? null : (
+            <article key={label} className="rounded-[8px] border border-[#eadfce] bg-[#fffdf8] p-4">
+              <p className="text-xs font-semibold text-[#8b6d2d]">{label}</p>
+              <h3 className="mt-1 text-base font-semibold text-[#2f251f]">
+                {text(flow.title)}
+              </h3>
+              <p className="mt-2 text-sm leading-7 text-[#5a4d42]">
+                {text(flow.summary)}
+              </p>
+              <p className="mt-3 text-sm leading-7 text-[#6d5f52]">
+                {text(flow.actionHint)}
+              </p>
+            </article>
+          ),
+        )}
+      </div>
+    </section>
+  );
+}
+
+function renderMbtiExpression(
+  draft: AnnualFortuneReportDraft,
+  evidencePacket: AnnualFortuneEvidencePacket | undefined,
+) {
+  const mbti = evidencePacket?.mbtiBasis;
+
+  return (
+    <section className={panelClass}>
+      <p className="text-sm font-semibold text-[#8b6d2d]">MBTI 성향 발현 방식</p>
+      <h2 className={`${sectionTitleClass} mt-1`}>
+        {text(mbti?.type) ? `${text(mbti?.type)}가 이 세운을 쓰는 방식` : "흐름이 행동으로 드러나는 방식"}
+      </h2>
+      <div className="mt-5">{renderParagraphs([
+        draft.mbtiExpression,
+        mbti?.decisionPattern,
+        mbti?.workPattern,
+        mbti?.relationshipPattern,
+      ])}</div>
+    </section>
+  );
+}
+
+function renderRiskAndActionSections(
+  draft: AnnualFortuneReportDraft,
+  evidencePacket: AnnualFortuneEvidencePacket | undefined,
+) {
+  const riskItems =
+    evidencePacket?.riskPatterns.map((risk) =>
+      `${risk.title}: ${risk.summary} ${risk.prevention}`,
+    ) ?? draft.riskManagement;
+  const actionItems =
+    evidencePacket?.actionGuides.map((guide) =>
+      `${guide.title}: ${guide.action} ${guide.timingHint}`,
+    ) ?? draft.actionPlan;
+
+  return (
+    <div className="grid gap-4 lg:grid-cols-2">
+      <section className={panelClass}>
+        <p className="text-sm font-semibold text-[#8b6d2d]">조심할 패턴</p>
+        <h2 className={`${sectionTitleClass} mt-1`}>과열과 부담을 줄이는 기준</h2>
+        {renderList(riskItems)}
+      </section>
+      <section className={panelClass}>
+        <p className="text-sm font-semibold text-[#8b6d2d]">실행 기준</p>
+        <h2 className={`${sectionTitleClass} mt-1`}>올해 먼저 정할 것</h2>
+        {renderList(actionItems)}
+      </section>
+    </div>
+  );
 }
 
 export function AnnualFortuneReportView({
   draft,
   reportId,
+  evidencePacket,
+  manseRyeokTable,
+  mbtiProfileTable,
 }: AnnualFortuneReportViewProps) {
   const userContextSummary = draft.userContextSummary ?? {
     lifeStatusLabel: "기타",
@@ -302,194 +723,117 @@ export function AnnualFortuneReportView({
   );
 
   return (
-    <article className="space-y-8 rounded-xl border border-neutral-800 bg-neutral-900/80 p-5 shadow-2xl shadow-black/30 sm:p-6">
-      <header className="space-y-5 rounded-xl border border-amber-500/20 bg-neutral-950/70 p-5">
-        <p className="text-xs font-semibold uppercase text-amber-200">
-          세운 리포트
-        </p>
-        <div className="space-y-3">
+    <article className="min-w-0 space-y-8 rounded-[8px] border border-[#d8c8b5] bg-[#f8f0e6] p-5 text-[#2b211b] shadow-[0_22px_70px_rgba(77,48,35,0.12)] sm:p-6">
+      <header className="overflow-hidden rounded-[8px] border border-[#d9c8b5] bg-[#fffaf1] shadow-[0_22px_70px_rgba(77,48,35,0.12)]">
+        <div className="border-b border-[#e6d9c8] bg-[#f4eadc] px-6 py-4">
+          <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-[#7d1f39]">
+            <span className="rounded-full border border-[#c8a565] bg-[#fff7df] px-3 py-1 text-[#6f4e16]">
+              세운 리포트
+            </span>
+            <span>{heroPersonLabel}의 {draft.targetYear}년 흐름</span>
+            {reportId ? <span className="text-[#8a8077]">Report {reportId}</span> : null}
+          </div>
+        </div>
+        <div className="px-6 py-8 sm:px-8 sm:py-10">
+          <p className="text-sm font-semibold text-[#8b6d2d]">
+            선택 연도 흐름과 현재 대운 교차를 함께 읽는 리포트
+          </p>
           {renderOpeningTitle ? (
-            <h1 className="text-2xl font-bold tracking-tight text-neutral-50 sm:text-3xl">
+            <h1 className="mt-3 max-w-4xl text-3xl font-semibold leading-tight tracking-normal text-[#2b211b] sm:text-4xl">
               {text(draft.openingTitle)}
             </h1>
-          ) : null}
+          ) : (
+            <h1 className="mt-3 max-w-4xl text-3xl font-semibold leading-tight tracking-normal text-[#2b211b] sm:text-4xl">
+              {text(draft.headline) || text(draft.coreLine)}
+            </h1>
+          )}
           {heroContextLine.length === 0 ? null : (
-            <p className="text-sm font-semibold leading-6 text-neutral-200">
+            <p className="mt-4 text-sm font-semibold leading-6 text-[#5a4d42]">
               {heroContextLine}
             </p>
           )}
-          {userContextSummary.fieldLabel === null ? null : (
-            <p className="text-sm leading-6 text-neutral-400">
-              {text(userContextSummary.fieldLabel)} 기준으로 해석
-            </p>
-          )}
-          <div className="flex flex-wrap gap-2 text-sm">
-            <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 font-semibold text-amber-100">
-              {text(draft.yearSummary.displayTitle)}
-            </span>
-            <span className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 text-neutral-300">
-              {text(draft.yearSummary.modeLabel)}
-            </span>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-[#5a4d42]">
+            {text(draft.openingSummary)}
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            {renderPill("선택 연도", draft.targetYear)}
+            {renderPill("세운", draft.yearSummary.displayTitle)}
+            {renderPill("모드", draft.yearSummary.modeLabel)}
           </div>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-[10rem_1fr]">
-          <section
-            className="rounded-lg border border-amber-500/40 bg-amber-500/10 p-4"
-            aria-label={getAnnualFlowIndexHeading(draft.mode)}
-          >
-            <p className="text-xs font-semibold text-amber-200">
+          <div className="mt-5 rounded-[8px] border border-[#eadfce] bg-[#fffdf8] p-4">
+            <p className="text-xs font-semibold text-[#8b6d2d]">
               {getAnnualFlowIndexHeading(draft.mode)}
             </p>
-            <p className="mt-2 text-5xl font-bold tracking-tight text-amber-100">
+            <p className="mt-2 text-4xl font-semibold tracking-tight text-[#6f1d35]">
               {draft.scoreSummary.flowIndex}
             </p>
-            <p className="mt-2 text-sm font-semibold leading-6 text-amber-100">
+            <p className="mt-2 text-sm font-semibold leading-6 text-[#2f251f]">
               {text(draft.scoreSummary.flowTypeLabel)}
             </p>
-          </section>
-          <section className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
-            <p className="text-base font-semibold leading-7 text-neutral-50">
-              {text(draft.coreLine)}
-            </p>
-            <p className="mt-3 text-sm leading-6 text-neutral-300">
+            <p className="mt-2 text-sm leading-7 text-[#5a4d42]">
               {text(draft.scoreSummary.flowIndexCaution)}
             </p>
-          </section>
+          </div>
         </div>
-        <p className="max-w-prose text-base leading-7 text-neutral-300">
-          {text(draft.openingSummary)}
-        </p>
       </header>
 
-      {reportId === undefined ? null : (
-        <dl className="grid gap-2 rounded-lg border border-neutral-800 bg-neutral-950/60 p-4 text-sm">
-          <div className="grid gap-1 sm:grid-cols-[8rem_1fr]">
-            <dt className="font-medium text-neutral-500">리포트 ID</dt>
-            <dd className="break-words text-neutral-100">{reportId}</dd>
-          </div>
-          <div className="grid gap-1 sm:grid-cols-[8rem_1fr]">
-            <dt className="font-medium text-neutral-500">상품</dt>
-            <dd className="text-neutral-100">세운 리포트</dd>
-          </div>
-        </dl>
+      {renderYearAccessNotice(draft, evidencePacket)}
+      {renderCommonFoundation(
+        manseRyeokTable,
+        mbtiProfileTable,
+        evidencePacket,
+        draft,
       )}
-
+      {renderAnnualFortuneSummary(draft, evidencePacket)}
+      {renderMajorAnnualCross(draft, evidencePacket)}
+      {renderNatalAnnualRelations(draft, evidencePacket)}
       {renderYearStructure(draft)}
-      {renderSaeunFortuneTable(draft)}
-
-      <section className="space-y-3" aria-label="흐름 카드">
-        <div className="flex flex-wrap gap-2">
-          {annualFortuneFlowAreaLabels.map((label) => (
-            <span
-              key={label}
-              className="rounded-full border border-neutral-800 bg-neutral-950/60 px-3 py-1 text-xs font-semibold text-neutral-300"
-            >
-              {text(label)}
-            </span>
-          ))}
+      <section className="space-y-4">
+        <div>
+          <p className="text-sm font-semibold text-[#8b6d2d]">세운·월운 표</p>
+          <h2 className={sectionTitleClass}>선택 연도와 월별 운영 기준</h2>
+          <p className="mt-2 text-sm leading-7 text-[#76685c]">
+            대운·세운 비교와 12개월 월운을 표로 먼저 확인한 뒤, 본문에서는 핵심 월과 영역별 흐름을 읽습니다.
+          </p>
         </div>
-        <div className="grid gap-3 md:grid-cols-2">
-          {draft.flowCards.map((card) => (
-            <article
-              key={`${card.label}:${card.headline}`}
-              className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <h2 className="text-sm font-semibold text-neutral-400">
-                  {text(card.label)} {getAnnualFlowMetricLabel(card.label)}
-                </h2>
-                <span className="text-xl font-bold text-amber-100">
-                  {card.score}
-                </span>
-              </div>
-              <p className="mt-3 text-base font-semibold leading-7 text-neutral-50">
-                {text(card.headline)}
-              </p>
-              <p className="mt-2 text-sm leading-6 text-neutral-300">
-                {text(card.body)}
-              </p>
-            </article>
-          ))}
-        </div>
+        {renderSaeunFortuneTable(draft, evidencePacket)}
       </section>
-
-      <section className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-        <h2 className="text-lg font-semibold text-neutral-50">핵심 신호</h2>
-        <div className="grid gap-3 md:grid-cols-2">
-          {draft.keySignals.map((signal) => (
-            <article
-              key={`${signal.type}:${signal.title}`}
-              className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
-            >
-              <p className="text-xs font-semibold text-amber-200">
-                {getAnnualKeySignalDisplayLabel(signal.type)}
-              </p>
-              <h3 className="mt-1 text-base font-semibold text-neutral-50">
-                {text(signal.title)}
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-neutral-300">
-                {text(signal.body)}
-              </p>
-              <p className="mt-3 text-xs text-neutral-500">
-                근거: {text(signal.evidenceLabel)}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-        <h2 className="text-lg font-semibold text-neutral-50">
-          올해 구조 해석
-        </h2>
-        <dl className="grid gap-3">
-          {[
-            ["간지", draft.annualStructure.ganjiExplanation],
-            ["십성", draft.annualStructure.tenGodExplanation],
-            ["오행", draft.annualStructure.elementEffectExplanation],
-            ["지지 작용", draft.annualStructure.branchInteractionExplanation],
-          ].map(([label, body]) => (
-            <div
-              key={label}
-              className="rounded-md border border-neutral-800 bg-neutral-900/70 p-4"
-            >
-              <dt className="text-xs font-semibold text-amber-200">{label}</dt>
-              <dd className="mt-1 text-sm leading-6 text-neutral-300">
-                {text(body)}
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </section>
+      {renderMonthlyFortuneReading(draft, evidencePacket)}
+      {renderDomainFlows(draft, evidencePacket)}
+      {renderMbtiExpression(draft, evidencePacket)}
 
       <section className="space-y-5" aria-label="세운 리포트 본문">
+        <div>
+          <p className="text-sm font-semibold text-[#8b6d2d]">본문 해석</p>
+          <h2 className={sectionTitleClass}>선택 연도 흐름을 생활 장면으로 읽기</h2>
+        </div>
         {draft.chapters.map((chapter) => (
           <section
             key={`${chapter.title}:${chapter.headline}`}
-            className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5"
+            className={panelClass}
           >
             <div className="space-y-2">
-              <h2 className="text-xl font-semibold text-neutral-50">
+              <h3 className="text-xl font-semibold text-[#2b211b]">
                 {text(chapter.title)}
-              </h2>
-              <p className="text-base font-semibold leading-7 text-amber-100">
+              </h3>
+              <p className="text-base font-semibold leading-7 text-[#7d1f39]">
                 {text(chapter.headline)}
               </p>
             </div>
-            <p className="max-w-prose whitespace-pre-line text-base leading-8 text-neutral-200">
+            <p className="mt-4 max-w-prose whitespace-pre-line text-base leading-8 text-[#4f453c]">
               {text(chapter.body)}
             </p>
-            <div className="grid gap-3 md:grid-cols-2">
-              <section className="rounded-lg border border-amber-500/30 bg-amber-950/20 p-4">
-                <h3 className="text-sm font-semibold text-amber-100">
+            <div className="mt-5 grid gap-3 md:grid-cols-2">
+              <section className="rounded-[8px] border border-[#eadfce] bg-[#fffdf8] p-4">
+                <h4 className="text-sm font-semibold text-[#6f1d35]">
                   나타날 수 있는 장면
-                </h3>
+                </h4>
                 {renderList(chapter.likelyScenes)}
               </section>
-              <section className="rounded-lg border border-neutral-700 bg-neutral-900/70 p-4">
-                <h3 className="text-sm font-semibold text-neutral-100">
+              <section className="rounded-[8px] border border-[#eadfce] bg-[#fffdf8] p-4">
+                <h4 className="text-sm font-semibold text-[#6f1d35]">
                   실전 조언
-                </h3>
+                </h4>
                 {renderList(chapter.practicalAdvice)}
               </section>
             </div>
@@ -497,66 +841,21 @@ export function AnnualFortuneReportView({
         ))}
       </section>
 
-      <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-        <h2 className="text-lg font-semibold text-neutral-50">
-          월별 운영 가이드
-        </h2>
-        <p className="text-sm leading-6 text-neutral-400">
-          {getAnnualMonthlySectionBasisNote()}
-        </p>
-        <div className="grid gap-3 md:grid-cols-2">
-          {draft.monthlyFlow.map((flow) => (
-            <article
-              key={flow.month}
-              className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
-            >
-              <p className="text-xs font-semibold text-amber-200">
-                {text(flow.label)}
-              </p>
-              <h3 className="mt-1 text-base font-semibold text-neutral-50">
-                {text(flow.headline)}
-              </h3>
-              {flow.elementFocus === null ? null : (
-                <p className="mt-2 text-xs text-neutral-500">
-                  오행 포인트: {text(flow.elementFocus)}
-                </p>
-              )}
-              {flow.monthGanji === null ? null : (
-                <p className="mt-2 text-xs text-neutral-500">
-                  월 간지: {text(flow.monthGanji)}
-                </p>
-              )}
-              <p className="mt-2 text-xs text-neutral-500">
-                기준: {getMonthlyBasisDisplayLabel(flow.monthlyBasis)}
-              </p>
-              {flow.natalInteractionSummary === null ? null : (
-                <p className="mt-2 text-xs text-neutral-500">
-                  원국과의 작용: {text(flow.natalInteractionSummary)}
-                </p>
-              )}
-              <p className="mt-2 text-sm leading-6 text-neutral-300">
-                {text(flow.body)}
-              </p>
-              <p className="mt-3 text-sm leading-6 text-neutral-400">
-                {text(flow.advice)}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
+      {renderRiskAndActionSections(draft, evidencePacket)}
 
-      <section className="space-y-4 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-        <h2 className="text-lg font-semibold text-neutral-50">마지막 조언</h2>
-        <ol className="grid gap-3">
+      <section className={panelClass}>
+        <p className="text-sm font-semibold text-[#8b6d2d]">마지막 조언</p>
+        <h2 className={`${sectionTitleClass} mt-1`}>영역별 마무리 기준</h2>
+        <ol className="mt-5 grid gap-3">
           {domainLockedFinalAdvice.map((advice, index) => (
             <li
               key={advice.label}
-              className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4"
+              className="rounded-[8px] border border-[#eadfce] bg-[#fffdf8] p-4"
             >
-              <p className="text-sm font-semibold text-amber-100">
+              <p className="text-sm font-semibold text-[#6f1d35]">
                 {index + 1}. {advice.label}
               </p>
-              <p className="mt-2 text-sm leading-6 text-neutral-300">
+              <p className="mt-2 text-sm leading-7 text-[#5a4d42]">
                 {text(advice.body)}
               </p>
             </li>
@@ -564,9 +863,10 @@ export function AnnualFortuneReportView({
         </ol>
       </section>
 
-      <section className="space-y-3 rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
-        <h2 className="text-sm font-semibold text-neutral-400">안전 안내</h2>
-        {renderList(draft.safetyNotes)}
+      <section className={panelClass}>
+        <p className="text-sm font-semibold text-[#8b6d2d]">안전 안내</p>
+        <h2 className={`${sectionTitleClass} mt-1`}>리포트를 읽는 기준</h2>
+        {renderList(evidencePacket?.safetyNotes ?? draft.safetyNotes)}
       </section>
     </article>
   );

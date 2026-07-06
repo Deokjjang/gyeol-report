@@ -49,7 +49,7 @@ export default function SaeunFortuneTable({
   return (
     <section
       className={joinClassNames(
-        "overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-sm",
+        "overflow-hidden rounded-lg border border-[#d8c8b5] bg-[#fffaf1] shadow-[0_16px_40px_rgba(62,45,35,0.08)]",
         className,
       )}
     >
@@ -58,7 +58,7 @@ export default function SaeunFortuneTable({
         aria-expanded={isOpen}
         aria-controls={contentId}
         onClick={() => setIsOpen((current) => !current)}
-        className="flex w-full items-center justify-between gap-3 bg-teal-600 px-4 py-3 text-left text-white"
+        className="flex w-full items-center justify-between gap-3 bg-[#6f1d35] px-4 py-3 text-left text-[#fff7e8]"
       >
         <span className="min-w-0 text-base font-extrabold leading-6 break-keep">
           {data.title}
@@ -89,36 +89,42 @@ export function SaeunAnnualCompareTable({
   readonly selectedYear: number;
   readonly data: SaeunAnnualCompareTableData;
 }) {
+  const visibleDetailRows = DETAIL_ROWS.filter(
+    (row) =>
+      hasDetailValues(data[row.key].daeun) ||
+      hasDetailValues(data[row.key].annual),
+  );
+
   return (
-    <div className="bg-white">
-      <h3 className="bg-neutral-50 px-4 py-2 text-center text-sm font-extrabold text-neutral-700">
+    <div className="bg-[#fffdf8]">
+      <h3 className="bg-[#f3eadf] px-4 py-2 text-center text-sm font-extrabold text-[#5c4433]">
         대운 · 연운
       </h3>
-      <div className="grid grid-cols-2 bg-white text-center text-sm font-bold text-neutral-600">
+      <div className="grid grid-cols-2 bg-[#fffdf8] text-center text-sm font-bold text-[#6c5b4c]">
         <div className="px-2 py-2">대운</div>
-        <div className="border-l border-neutral-100 px-2 py-2">
+        <div className="border-l border-[#eadfce] px-2 py-2">
           연운 ({selectedYear})
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-px bg-white">
+      <div className="grid grid-cols-2 gap-px bg-[#fffdf8]">
         <PillarCard cell={data.daeunStem} ariaLabel="대운 천간" />
         <PillarCard cell={data.annualStem} ariaLabel="연운 천간" />
       </div>
-      <div className="grid grid-cols-2 gap-px bg-white">
+      <div className="grid grid-cols-2 gap-px bg-[#fffdf8]">
         <PillarCard cell={data.daeunBranch} ariaLabel="대운 지지" />
         <PillarCard cell={data.annualBranch} ariaLabel="연운 지지" />
       </div>
 
-      {DETAIL_ROWS.map((row) => (
-        <div key={row.key} className="bg-white">
-          <h4 className="bg-neutral-50 px-3 py-2 text-center text-xs font-bold text-neutral-500">
+      {visibleDetailRows.map((row) => (
+        <div key={row.key} className="bg-[#fffdf8]">
+          <h4 className="bg-[#f7efe5] px-3 py-2 text-center text-xs font-bold text-[#806c58]">
             {row.label}
           </h4>
-          <div className="grid grid-cols-2 text-center text-xs leading-5 text-neutral-600">
+          <div className="grid grid-cols-2 text-center text-xs leading-5 text-[#66584c]">
             <div className="min-h-10 px-2 py-2 break-keep">
               {formatDetailValues(data[row.key].daeun)}
             </div>
-            <div className="min-h-10 border-l border-neutral-100 px-2 py-2 break-keep">
+            <div className="min-h-10 border-l border-[#eadfce] px-2 py-2 break-keep">
               {formatDetailValues(data[row.key].annual)}
             </div>
           </div>
@@ -133,29 +139,33 @@ export function SaeunMonthlyHalfTable({
 }: {
   readonly data: SaeunMonthlyHalfTableData;
 }) {
+  const visibleDetailRows = DETAIL_ROWS.filter((detailRow) =>
+    data.rows.some((row) => hasDetailValues(row[detailRow.key])),
+  );
+
   return (
-    <div className="bg-white">
-      <h3 className="bg-rose-100 px-4 py-2 text-center text-sm font-extrabold text-neutral-800">
+    <div className="bg-[#fffdf8]">
+      <h3 className="bg-[#f2dfd0] px-4 py-2 text-center text-sm font-extrabold text-[#4b372e]">
         {data.title}
       </h3>
-      <p className="bg-white px-4 py-2 text-center text-xs font-bold text-neutral-500">
+      <p className="bg-[#fffdf8] px-4 py-2 text-center text-xs font-bold text-[#806c58]">
         {data.monthRangeLabel}
       </p>
       {data.rows.length === 0 ? (
-        <div className="px-4 py-6 text-center text-sm font-bold text-neutral-400">
+        <div className="px-4 py-6 text-center text-sm font-bold text-[#9b8d7d]">
           -
         </div>
       ) : (
         <div className="overflow-x-auto">
           <div className="min-w-[42rem]">
-            <div className="grid grid-cols-6 bg-white text-center text-sm font-bold text-neutral-600">
+            <div className="grid grid-cols-6 bg-[#fffdf8] text-center text-sm font-bold text-[#6c5b4c]">
               {data.rows.map((row) => (
                 <div key={row.month} className="px-2 py-2">
                   {row.monthLabel}
                 </div>
               ))}
             </div>
-            <div className="grid grid-cols-6 gap-px bg-white">
+            <div className="grid grid-cols-6 gap-px bg-[#fffdf8]">
               {data.rows.map((row) => (
                 <PillarCard
                   key={`${row.month}-stem`}
@@ -164,7 +174,7 @@ export function SaeunMonthlyHalfTable({
                 />
               ))}
             </div>
-            <div className="grid grid-cols-6 gap-px bg-white">
+            <div className="grid grid-cols-6 gap-px bg-[#fffdf8]">
               {data.rows.map((row) => (
                 <PillarCard
                   key={`${row.month}-branch`}
@@ -173,16 +183,16 @@ export function SaeunMonthlyHalfTable({
                 />
               ))}
             </div>
-            {DETAIL_ROWS.map((detailRow) => (
-              <div key={detailRow.key} className="bg-white">
-                <h4 className="bg-neutral-50 px-3 py-2 text-center text-xs font-bold text-neutral-500">
+            {visibleDetailRows.map((detailRow) => (
+              <div key={detailRow.key} className="bg-[#fffdf8]">
+                <h4 className="bg-[#f7efe5] px-3 py-2 text-center text-xs font-bold text-[#806c58]">
                   {detailRow.label}
                 </h4>
-                <div className="grid grid-cols-6 text-center text-xs leading-5 text-neutral-600">
+                <div className="grid grid-cols-6 text-center text-xs leading-5 text-[#66584c]">
                   {data.rows.map((row) => (
                     <div
                       key={`${detailRow.key}-${row.month}`}
-                      className="min-h-10 border-l border-neutral-100 px-1.5 py-2 first:border-l-0 break-keep"
+                      className="min-h-10 border-l border-[#eadfce] px-1.5 py-2 first:border-l-0 break-keep"
                     >
                       {formatDetailValues(row[detailRow.key])}
                     </div>
@@ -210,15 +220,15 @@ function MonthlyTextRow({
   readonly field: "oneLine" | "caution" | "basis";
 }) {
   return (
-    <div className="bg-white">
-      <h4 className="bg-neutral-50 px-3 py-2 text-center text-xs font-bold text-neutral-500">
+    <div className="bg-[#fffdf8]">
+      <h4 className="bg-[#f7efe5] px-3 py-2 text-center text-xs font-bold text-[#806c58]">
         {label}
       </h4>
-      <div className="grid grid-cols-6 text-center text-xs leading-5 text-neutral-600">
+      <div className="grid grid-cols-6 text-center text-xs leading-5 text-[#66584c]">
         {rows.map((row) => (
           <div
             key={`${field}-${row.month}`}
-            className="min-h-10 border-l border-neutral-100 px-1.5 py-2 first:border-l-0 break-keep"
+            className="min-h-10 border-l border-[#eadfce] px-1.5 py-2 first:border-l-0 break-keep"
           >
             {row[field] ?? "-"}
           </div>
@@ -239,7 +249,7 @@ function PillarCard({
     return (
       <div
         aria-label={ariaLabel}
-        className="flex min-h-24 flex-col items-center justify-center gap-1 border border-neutral-100 bg-neutral-50 px-1 py-3 text-center text-neutral-400"
+        className="flex min-h-24 flex-col items-center justify-center gap-1 border border-[#eadfce] bg-[#f8f0e6] px-1 py-3 text-center text-[#9b8d7d]"
       >
         <span className="text-sm font-bold">-</span>
       </div>
@@ -267,6 +277,10 @@ function formatDetailValues(values: readonly string[] | undefined): string {
   }
 
   return values.join(" · ");
+}
+
+function hasDetailValues(values: readonly string[] | undefined): boolean {
+  return values !== undefined && values.some((value) => value.trim().length > 0);
 }
 
 function joinClassNames(

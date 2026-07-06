@@ -178,11 +178,11 @@ describe("buildSaeunFortuneTableData", () => {
     expect(data.daeunAnnualCompareTable.daeunStem).toBeNull();
     expect(data.daeunAnnualCompareTable.hiddenStems).toEqual({
       daeun: [],
-      annual: [],
+      annual: ["丁", "己"],
     });
     expect(january).toMatchObject({
       monthLabel: "1월",
-      hiddenStems: [],
+      hiddenStems: ["己", "癸", "辛"],
       twelveLifeStage: [],
       twelveSinsal: [],
       sinsalAndGwiin: [],
