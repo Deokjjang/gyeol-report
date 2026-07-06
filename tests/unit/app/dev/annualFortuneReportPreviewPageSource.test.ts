@@ -39,6 +39,7 @@ describe("annual fortune report preview page source", () => {
 
   it("uses the same light result tone and avoids blocked user-facing markers", () => {
     expect(pageSource).toContain("bg-[#f6f0e7]");
+    expect(pageSource).toContain("w-full overflow-x-hidden");
     expect(pageSource).toContain("max-w-6xl");
     expect(pageSource).toContain("bg-[#fffaf1]");
     expect(pageSource).not.toContain("bg-neutral-950");

@@ -28,9 +28,9 @@ type AnnualFortuneReportViewProps = {
 };
 
 const panelClass =
-  "min-w-0 rounded-[8px] border border-[#ded2c2] bg-[#fffaf1] p-5 shadow-[0_16px_40px_rgba(62,45,35,0.08)]";
+  "min-w-0 break-words [overflow-wrap:anywhere] rounded-[8px] border border-[#ded2c2] bg-[#fffaf1] p-5 shadow-[0_16px_40px_rgba(62,45,35,0.08)]";
 const sectionTitleClass =
-  "text-xl font-semibold tracking-normal text-[#2b211b] sm:text-2xl";
+  "break-words [overflow-wrap:anywhere] text-xl font-semibold tracking-normal text-[#2b211b] sm:text-2xl";
 
 type StemMeta = {
   readonly element: string;
@@ -189,7 +189,7 @@ function renderParagraphs(items: readonly (string | null | undefined)[]) {
   }
 
   return (
-    <div className="space-y-3 break-words text-[15px] leading-8 text-[#4f453c]">
+    <div className="space-y-3 break-words [overflow-wrap:anywhere] text-[15px] leading-8 text-[#4f453c]">
       {visibleItems.map((item) => (
         <p key={item}>{item}</p>
       ))}
@@ -423,7 +423,11 @@ function renderCommonFoundation(
           const data = buildAnnualFortuneReportMbtiProfileTableData(evidencePacket);
 
           return data === null ? undefined : (
-            <MbtiCommonProfileTable data={data} defaultOpen variant="compact" />
+            <MbtiCommonProfileTable
+              data={data}
+              defaultOpen={false}
+              variant="compact"
+            />
           );
         })());
 
@@ -443,7 +447,11 @@ function renderCommonFoundation(
                 : "기초 만세력은 원국 데이터가 연결된 결과에서만 간단히 표시합니다."}
             </p>
           </div>
-          {resolvedManseRyeokTable ?? (
+          {resolvedManseRyeokTable ? (
+            <div className="max-w-full overflow-x-auto">
+              {resolvedManseRyeokTable}
+            </div>
+          ) : (
             <p className="text-sm leading-7 text-[#76685c]">
               원국표 데이터가 없는 결과라 세운표와 본문 해석을 중심으로 읽습니다.
             </p>
@@ -456,7 +464,11 @@ function renderCommonFoundation(
               MBTI는 세운의 원인이 아니라 흐름이 행동과 선택으로 드러나는 방식을 보조합니다.
             </p>
           </div>
-          {resolvedMbtiProfileTable ?? (
+          {resolvedMbtiProfileTable ? (
+            <div className="max-w-full overflow-x-auto">
+              {resolvedMbtiProfileTable}
+            </div>
+          ) : (
             <p className="text-sm leading-7 text-[#76685c]">
               {text(draft.mbtiExpression) || "MBTI 성향표는 유형 데이터가 연결된 결과에서 표시됩니다."}
             </p>
@@ -723,27 +735,29 @@ export function AnnualFortuneReportView({
   );
 
   return (
-    <article className="min-w-0 space-y-8 rounded-[8px] border border-[#d8c8b5] bg-[#f8f0e6] p-5 text-[#2b211b] shadow-[0_22px_70px_rgba(77,48,35,0.12)] sm:p-6">
-      <header className="overflow-hidden rounded-[8px] border border-[#d9c8b5] bg-[#fffaf1] shadow-[0_22px_70px_rgba(77,48,35,0.12)]">
+    <article className="w-full min-w-0 max-w-full overflow-x-hidden break-words [overflow-wrap:anywhere] space-y-8 rounded-[8px] border border-[#d8c8b5] bg-[#f8f0e6] p-5 text-[#2b211b] shadow-[0_22px_70px_rgba(77,48,35,0.12)] sm:p-6">
+      <header className="w-full min-w-0 max-w-full overflow-hidden rounded-[8px] border border-[#d9c8b5] bg-[#fffaf1] shadow-[0_22px_70px_rgba(77,48,35,0.12)]">
         <div className="border-b border-[#e6d9c8] bg-[#f4eadc] px-6 py-4">
-          <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-[#7d1f39]">
+          <div className="flex min-w-0 flex-wrap items-center gap-2 text-xs font-medium text-[#7d1f39]">
             <span className="rounded-full border border-[#c8a565] bg-[#fff7df] px-3 py-1 text-[#6f4e16]">
               세운 리포트
             </span>
-            <span>{heroPersonLabel}의 {draft.targetYear}년 흐름</span>
+            <span className="min-w-0 break-words [overflow-wrap:anywhere]">
+              {heroPersonLabel}의 {draft.targetYear}년 흐름
+            </span>
             {reportId ? <span className="text-[#8a8077]">Report {reportId}</span> : null}
           </div>
         </div>
-        <div className="px-6 py-8 sm:px-8 sm:py-10">
+        <div className="min-w-0 px-6 py-8 sm:px-8 sm:py-10">
           <p className="text-sm font-semibold text-[#8b6d2d]">
             선택 연도 흐름과 현재 대운 교차를 함께 읽는 리포트
           </p>
           {renderOpeningTitle ? (
-            <h1 className="mt-3 max-w-4xl text-3xl font-semibold leading-tight tracking-normal text-[#2b211b] sm:text-4xl">
+            <h1 className="mt-3 max-w-4xl break-words [overflow-wrap:anywhere] text-3xl font-semibold leading-tight tracking-normal text-[#2b211b] sm:text-4xl">
               {text(draft.openingTitle)}
             </h1>
           ) : (
-            <h1 className="mt-3 max-w-4xl text-3xl font-semibold leading-tight tracking-normal text-[#2b211b] sm:text-4xl">
+            <h1 className="mt-3 max-w-4xl break-words [overflow-wrap:anywhere] text-3xl font-semibold leading-tight tracking-normal text-[#2b211b] sm:text-4xl">
               {text(draft.headline) || text(draft.coreLine)}
             </h1>
           )}
@@ -752,7 +766,7 @@ export function AnnualFortuneReportView({
               {heroContextLine}
             </p>
           )}
-          <p className="mt-5 max-w-3xl text-base leading-8 text-[#5a4d42]">
+          <p className="mt-5 max-w-3xl break-words [overflow-wrap:anywhere] text-base leading-8 text-[#5a4d42]">
             {text(draft.openingSummary)}
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-3">

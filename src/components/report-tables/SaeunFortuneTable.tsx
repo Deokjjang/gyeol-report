@@ -49,7 +49,7 @@ export default function SaeunFortuneTable({
   return (
     <section
       className={joinClassNames(
-        "overflow-hidden rounded-lg border border-[#d8c8b5] bg-[#fffaf1] shadow-[0_16px_40px_rgba(62,45,35,0.08)]",
+        "w-full min-w-0 max-w-full overflow-hidden rounded-lg border border-[#d8c8b5] bg-[#fffaf1] shadow-[0_16px_40px_rgba(62,45,35,0.08)]",
         className,
       )}
     >
@@ -58,9 +58,9 @@ export default function SaeunFortuneTable({
         aria-expanded={isOpen}
         aria-controls={contentId}
         onClick={() => setIsOpen((current) => !current)}
-        className="flex w-full items-center justify-between gap-3 bg-[#6f1d35] px-4 py-3 text-left text-[#fff7e8]"
+        className="flex w-full min-w-0 items-center justify-between gap-3 bg-[#6f1d35] px-4 py-3 text-left text-[#fff7e8]"
       >
-        <span className="min-w-0 text-base font-extrabold leading-6 break-keep">
+        <span className="min-w-0 break-words text-base font-extrabold leading-6 [overflow-wrap:anywhere]">
           {data.title}
         </span>
         <span className="shrink-0 text-sm font-bold">
@@ -121,10 +121,10 @@ export function SaeunAnnualCompareTable({
             {row.label}
           </h4>
           <div className="grid grid-cols-2 text-center text-xs leading-5 text-[#66584c]">
-            <div className="min-h-10 px-2 py-2 break-keep">
+            <div className="min-h-10 min-w-0 break-words px-2 py-2 [overflow-wrap:anywhere]">
               {formatDetailValues(data[row.key].daeun)}
             </div>
-            <div className="min-h-10 border-l border-[#eadfce] px-2 py-2 break-keep">
+            <div className="min-h-10 min-w-0 break-words border-l border-[#eadfce] px-2 py-2 [overflow-wrap:anywhere]">
               {formatDetailValues(data[row.key].annual)}
             </div>
           </div>
@@ -156,8 +156,8 @@ export function SaeunMonthlyHalfTable({
           -
         </div>
       ) : (
-        <div className="overflow-x-auto">
-          <div className="min-w-[42rem]">
+        <div className="max-w-full overflow-x-auto overscroll-x-contain">
+          <div className="min-w-full sm:min-w-[42rem]">
             <div className="grid grid-cols-6 bg-[#fffdf8] text-center text-sm font-bold text-[#6c5b4c]">
               {data.rows.map((row) => (
                 <div key={row.month} className="px-2 py-2">
@@ -192,7 +192,7 @@ export function SaeunMonthlyHalfTable({
                   {data.rows.map((row) => (
                     <div
                       key={`${detailRow.key}-${row.month}`}
-                      className="min-h-10 border-l border-[#eadfce] px-1.5 py-2 first:border-l-0 break-keep"
+                      className="min-h-10 min-w-0 break-words border-l border-[#eadfce] px-1.5 py-2 first:border-l-0 [overflow-wrap:anywhere]"
                     >
                       {formatDetailValues(row[detailRow.key])}
                     </div>
@@ -228,7 +228,7 @@ function MonthlyTextRow({
         {rows.map((row) => (
           <div
             key={`${field}-${row.month}`}
-            className="min-h-10 border-l border-[#eadfce] px-1.5 py-2 first:border-l-0 break-keep"
+            className="min-h-10 min-w-0 break-words border-l border-[#eadfce] px-1.5 py-2 first:border-l-0 [overflow-wrap:anywhere]"
           >
             {row[field] ?? "-"}
           </div>
@@ -260,13 +260,19 @@ function PillarCard({
     <div
       aria-label={ariaLabel}
       className={joinClassNames(
-        "flex min-h-24 flex-col items-center justify-center gap-1 border px-1 py-3 text-center",
+        "flex min-h-24 min-w-0 max-w-full flex-col items-center justify-center gap-1 border px-1 py-3 text-center",
         ELEMENT_CARD_CLASS_BY_TOKEN[cell.colorToken],
       )}
     >
-      <span className="text-3xl font-extrabold leading-none">{cell.hanja}</span>
-      <span className="text-xs font-semibold leading-4">{cell.ko}</span>
-      <span className="text-xs font-bold leading-4">{cell.tenGod ?? "-"}</span>
+      <span className="max-w-full text-3xl font-extrabold leading-none">
+        {cell.hanja}
+      </span>
+      <span className="max-w-full break-words text-xs font-semibold leading-4 [overflow-wrap:anywhere]">
+        {cell.ko}
+      </span>
+      <span className="max-w-full break-words text-xs font-bold leading-4 [overflow-wrap:anywhere]">
+        {cell.tenGod ?? "-"}
+      </span>
     </div>
   );
 }

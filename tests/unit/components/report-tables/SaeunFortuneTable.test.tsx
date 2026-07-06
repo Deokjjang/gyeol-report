@@ -196,6 +196,10 @@ describe("SaeunFortuneTable", () => {
     expect(html).toContain("달력월 기준 운영 가이드");
     expect(html).toContain("saeun-element-earth-soil");
     expect(html).toContain("saeun-element-wood-green");
+    expect(html).toContain("max-w-full overflow-x-auto overscroll-x-contain");
+    expect(html).toContain("min-w-full sm:min-w-[42rem]");
+    expect(html).toContain("break-words");
+    expect(html).toContain("overflow-wrap:anywhere");
   });
 
   it("renders safe empty state for empty monthly sections", () => {

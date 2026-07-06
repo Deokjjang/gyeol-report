@@ -76,8 +76,8 @@ function PreviewShell({
   readonly devStatus?: string;
 }) {
   return (
-    <main className="min-h-screen bg-[#f6f0e7] px-4 py-8 text-[#2b211b] sm:px-6 lg:px-8">
-      <section className="mx-auto flex min-w-0 max-w-6xl flex-col gap-6">
+    <main className="min-h-screen w-full overflow-x-hidden bg-[#f6f0e7] px-4 py-8 text-[#2b211b] sm:px-6 lg:px-8">
+      <section className="mx-auto flex w-full min-w-0 max-w-6xl flex-col gap-6">
         {devStatus === undefined ? null : (
           <aside
             className="min-w-0 break-words rounded-[8px] border border-[#ded2c2] bg-[#fffaf1] px-3 py-2 text-xs text-[#76685c]"
@@ -87,7 +87,7 @@ function PreviewShell({
             <span className="mt-1 block break-words sm:ml-2 sm:mt-0 sm:inline">{devStatus}</span>
           </aside>
         )}
-        <p className="text-sm font-medium text-[#76685c]">
+        <p className="min-w-0 break-words text-sm font-medium text-[#76685c]">
           결 리포트 개발 미리보기
         </p>
         {children}

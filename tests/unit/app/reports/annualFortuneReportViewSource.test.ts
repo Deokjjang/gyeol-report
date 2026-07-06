@@ -10,6 +10,8 @@ const viewSource = readFileSync(
 describe("AnnualFortuneReportView source", () => {
   it("renders annual fortune hero and year structure table labels", () => {
     expect(viewSource).toContain("세운 리포트");
+    expect(viewSource).toContain("overflow-x-hidden break-words");
+    expect(viewSource).toContain("max-w-4xl break-words");
     expect(viewSource).not.toContain("세운 리포트 v1.0");
     expect(viewSource).toContain("연도 구조");
     expect(viewSource).toContain("연도");
@@ -39,6 +41,8 @@ describe("AnnualFortuneReportView source", () => {
     expect(viewSource).toContain("renderCommonFoundation");
     expect(viewSource).toContain("ManseRyeokCommonTable");
     expect(viewSource).toContain("MbtiCommonProfileTable");
+    expect(viewSource).toContain('className="max-w-full overflow-x-auto"');
+    expect(viewSource).toContain("defaultOpen={false}");
     expect(viewSource).toContain("buildAnnualFortuneReportManseRyeokTableData");
     expect(viewSource).toContain("buildAnnualFortuneReportMbtiProfileTableData");
     expect(viewSource).toContain("renderAnnualFortuneSummary");
