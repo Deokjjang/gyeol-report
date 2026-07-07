@@ -151,6 +151,11 @@ export type ComprehensiveSajuFeatureDictionaryEntry = {
   readonly id: string;
   readonly rawLabel: string;
   readonly category: ComprehensiveSajuFeatureDictionaryCategory;
+  readonly userTitle: string;
+  readonly plainMeaning: string;
+  readonly howItShowsInYou: string;
+  readonly strength: string;
+  readonly fatiguePoint: string;
   readonly interpretationTitle: string;
   readonly description: string;
   readonly strengths: readonly string[];

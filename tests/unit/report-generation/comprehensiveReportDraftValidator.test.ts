@@ -279,6 +279,59 @@ function createLongformReadings(): ComprehensiveReportV2Draft["longformReadings"
   }));
 }
 
+function createSajuFeatureChapter(): ComprehensiveReportV2Draft["sajuFeatureChapter"] {
+  return {
+    titleKo: "명리 특징 해석",
+    subtitleKo: "공통 만세력표는 근거이고, 이 챕터는 원국 특징을 현실 언어로 풀어보는 해석입니다.",
+    intro:
+      "공통 만세력표에 표시되는 신살, 귀인, 합충, 지장간은 이름만 보면 어렵게 느껴질 수 있습니다. 이 챕터에서는 현침살, 재고귀인, 지장간 같은 원국 특징을 사건 예언이 아니라 말투, 판단 속도, 도움을 요청하는 방식, 회복 루틴으로 번역합니다.",
+    items: [
+      {
+        rawLabel: "현침살",
+        userTitle: "말과 판단이 날카롭게 들어가는 구조",
+        plainMeaning:
+          "현침살은 말, 판단, 분석이 날카롭게 들어가 핵심을 빨리 찌르는 신호입니다.",
+        howItShowsInYou:
+          "덕민님에게는 상대 설명 중 오류가 먼저 보이거나, 카톡 답장이 짧아 차갑게 보이는 장면으로 드러날 수 있습니다.",
+        strength:
+          "분석, 교정, 기획, 문장, 기술처럼 정밀한 사고가 필요한 일에서 강점이 됩니다.",
+        fatiguePoint:
+          "정확한 말도 표현 온도가 낮으면 상대에게 평가나 상처처럼 느껴질 수 있습니다.",
+        practicalUse:
+          "핵심을 말하기 전, 제가 이해한 핵심은 이것이라고 한 문장 되받은 뒤 판단을 꺼내세요.",
+      },
+      {
+        rawLabel: "재고귀인",
+        userTitle: "도움받는 통로와 자원을 저장하는 감각",
+        plainMeaning:
+          "재고귀인은 자원, 돈, 기회가 흘러갈 때 그것을 저장하고 구조화하는 데 도움받는 통로를 뜻합니다.",
+        howItShowsInYou:
+          "덕민님에게는 돈이나 자료가 들어왔을 때 어디에 묶어둘지 먼저 생각하는 장면으로 드러날 수 있습니다.",
+        strength:
+          "수익, 자료, 기회를 감으로 흘려보내지 않고 계좌와 기록, 구조로 남기는 힘이 됩니다.",
+        fatiguePoint:
+          "기회를 너무 관리 대상으로만 보면 사람과 관계까지 손익으로 계산하는 피로가 생길 수 있습니다.",
+        practicalUse:
+          "새 기회마다 수익 구조, 비용 구조, 손실 제한선을 같이 적어 두세요.",
+      },
+      {
+        rawLabel: "일주 지장간 戊",
+        userTitle: "겉 기운 안에 숨어 있는 역할",
+        plainMeaning:
+          "지장간은 겉으로 보이는 기운 안쪽에 숨어 있는 욕구, 역할, 회복 포인트를 읽기 위한 보조 근거입니다.",
+        howItShowsInYou:
+          "덕민님에게는 겉으로는 빠르게 판단하지만 안쪽에서는 책임과 안정 조건을 동시에 확인하려는 장면으로 나타날 수 있습니다.",
+        strength:
+          "겉 행동만으로 보이지 않는 숨은 욕구와 회복 포인트를 찾아 선택을 더 입체적으로 볼 수 있습니다.",
+        fatiguePoint:
+          "겉 행동과 안쪽 욕구가 다르게 움직이면 선택이 늦어지거나 설명하기 어려운 피로가 쌓일 수 있습니다.",
+        practicalUse:
+          "큰 결정을 할 때 겉으로 원하는 것과 안쪽에서 회복을 원하는 조건을 따로 적어 보세요.",
+      },
+    ],
+  };
+}
+
 function createValidV2Draft(): ComprehensiveReportV2Draft {
   return {
     version: "comprehensive_v2_draft",
@@ -300,6 +353,7 @@ function createValidV2Draft(): ComprehensiveReportV2Draft {
       gwiin: ["재고귀인"],
       mbti: "ENTJ",
     },
+    sajuFeatureChapter: createSajuFeatureChapter(),
     chapters: [
       createV2Chapter("opening", "처음에 보이는 결"),
       createV2Chapter("saju_identity", "사주가 보여주는 기본 형상"),
@@ -428,6 +482,47 @@ describe("comprehensive report draft validator", () => {
     expect(result.ok).toBe(false);
     expect(result.errors.join("\n")).toContain(
       "LONGFORM_READING_TOO_SHORT: baseSajuReading",
+    );
+  });
+
+  it("requires the explicit Saju feature interpretation chapter in V2 drafts", () => {
+    const draftWithoutFeatureChapter = Object.fromEntries(
+      Object.entries({
+        ...createValidV2Draft(),
+        longformReadings: createLongformReadings(),
+      }).filter(
+        ([key]) => key !== "sajuFeatureChapter",
+      ),
+    );
+    const result = validateComprehensiveReportDraft(draftWithoutFeatureChapter);
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("SAJU_FEATURE_CHAPTER_MISSING");
+  });
+
+  it("rejects Saju feature chapter items that only expose raw labels", () => {
+    const result = validateComprehensiveReportDraft({
+      ...createValidV2Draft(),
+      sajuFeatureChapter: {
+        ...createSajuFeatureChapter(),
+        items: [
+          {
+            rawLabel: "현침살",
+            userTitle: "현침살 현침살 현침살",
+            plainMeaning: "현침살 현침살 현침살 현침살 현침살",
+            howItShowsInYou: "현침살 현침살 현침살 현침살 현침살 현침살",
+            strength: "현침살 현침살 현침살 현침살",
+            fatiguePoint: "현침살 현침살 현침살 현침살",
+            practicalUse: "현침살 현침살 현침살 현침살",
+          },
+          ...createSajuFeatureChapter().items.slice(1),
+        ],
+      },
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "SAJU_FEATURE_ITEM_INCOMPLETE: 현침살",
     );
   });
 

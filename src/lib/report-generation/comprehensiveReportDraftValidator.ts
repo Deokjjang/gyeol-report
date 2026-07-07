@@ -9,6 +9,8 @@ import type {
   ComprehensiveReportV2LongformReading,
   ComprehensiveReportV2LongformReadingId,
   ComprehensiveReportV2ProfileTable,
+  ComprehensiveReportV2SajuFeatureChapter,
+  ComprehensiveReportV2SajuFeatureChapterItem,
 } from "./comprehensiveReportDraftTypes";
 import {
   COMPREHENSIVE_REPORT_V2_CHAPTER_IDS,
@@ -72,6 +74,9 @@ const repairableDraftValidationErrorCodes = [
   "FINAL_MESSAGE_SOLUTIONS_MISSING",
   "LONGFORM_READING_MISSING",
   "LONGFORM_READING_TOO_SHORT",
+  "SAJU_FEATURE_CHAPTER_MISSING",
+  "SAJU_FEATURE_CHAPTER_TOO_SHORT",
+  "SAJU_FEATURE_ITEM_INCOMPLETE",
   "EVERYDAY_SCENE_MISSING",
   "MBTI_SUPPORT_MISSING",
   "RAW_SAJU_LABEL_EXPLANATION_MISSING",
@@ -253,6 +258,7 @@ const draftV2RootKeys = [
   "reportDifferentiationModules",
   "chapters",
   "longformReadings",
+  "sajuFeatureChapter",
   "finalAdvice",
   "safetyNotes",
 ] as const;
@@ -277,6 +283,21 @@ const chapterKeys = [
   "keyPhrases",
   "sajuTermsUsed",
   "mbtiTermsUsed",
+] as const;
+const sajuFeatureChapterKeys = [
+  "titleKo",
+  "subtitleKo",
+  "intro",
+  "items",
+] as const;
+const sajuFeatureChapterItemKeys = [
+  "rawLabel",
+  "userTitle",
+  "plainMeaning",
+  "howItShowsInYou",
+  "strength",
+  "fatiguePoint",
+  "practicalUse",
 ] as const;
 const longformReadingKeys = [
   "readingId",
@@ -955,7 +976,7 @@ function collectStrings(value: unknown): string[] {
   }
   if (isRecord(value)) {
     return Object.entries(value).flatMap(([key, item]) => [
-      key,
+      ...(key === "rawLabel" ? [] : [key]),
       ...collectStrings(item),
     ]);
   }
@@ -1895,6 +1916,137 @@ function parseLongformReadings(
   }
 
   return readings;
+}
+
+function parseSajuFeatureChapterItem(
+  errors: string[],
+  value: unknown,
+  index: number,
+): ComprehensiveReportV2SajuFeatureChapterItem | undefined {
+  if (!isRecord(value)) {
+    errors.push(`sajuFeatureChapter item ${index} must be an object.`);
+    return undefined;
+  }
+
+  appendUnknownKeyErrors(
+    errors,
+    `sajuFeatureChapter item ${index}`,
+    value,
+    sajuFeatureChapterItemKeys,
+  );
+  appendRawMetadataErrors(errors, `sajuFeatureChapter item ${index}`, value);
+
+  const rawLabel = value.rawLabel;
+  const userTitle = value.userTitle;
+  const plainMeaning = value.plainMeaning;
+  const howItShowsInYou = value.howItShowsInYou;
+  const strength = value.strength;
+  const fatiguePoint = value.fatiguePoint;
+  const practicalUse = value.practicalUse;
+
+  if (!validateStringField(errors, `sajuFeatureChapter.items.${index}.rawLabel`, rawLabel, 1)) {
+    return undefined;
+  }
+  if (!validateStringField(errors, `sajuFeatureChapter.items.${index}.userTitle`, userTitle, 8)) {
+    return undefined;
+  }
+  if (!validateStringField(errors, `sajuFeatureChapter.items.${index}.plainMeaning`, plainMeaning, 16)) {
+    return undefined;
+  }
+  if (!validateStringField(errors, `sajuFeatureChapter.items.${index}.howItShowsInYou`, howItShowsInYou, 20)) {
+    return undefined;
+  }
+  if (!validateStringField(errors, `sajuFeatureChapter.items.${index}.strength`, strength, 12)) {
+    return undefined;
+  }
+  if (!validateStringField(errors, `sajuFeatureChapter.items.${index}.fatiguePoint`, fatiguePoint, 12)) {
+    return undefined;
+  }
+  if (!validateStringField(errors, `sajuFeatureChapter.items.${index}.practicalUse`, practicalUse, 12)) {
+    return undefined;
+  }
+
+  const explanationText = [
+    userTitle,
+    plainMeaning,
+    howItShowsInYou,
+    strength,
+    fatiguePoint,
+    practicalUse,
+  ].join("\n");
+
+  if (!hasRawSajuLabelExplanation({ text: explanationText, term: rawLabel })) {
+    errors.push(`SAJU_FEATURE_ITEM_INCOMPLETE: ${rawLabel}`);
+  }
+
+  return {
+    rawLabel,
+    userTitle,
+    plainMeaning,
+    howItShowsInYou,
+    strength,
+    fatiguePoint,
+    practicalUse,
+  };
+}
+
+function parseSajuFeatureChapter(
+  errors: string[],
+  value: unknown,
+  options: {
+    readonly required: boolean;
+  },
+): ComprehensiveReportV2SajuFeatureChapter | undefined {
+  if (value === undefined) {
+    if (options.required) {
+      errors.push("SAJU_FEATURE_CHAPTER_MISSING");
+    }
+    return undefined;
+  }
+  if (!isRecord(value)) {
+    errors.push("sajuFeatureChapter must be an object.");
+    return undefined;
+  }
+
+  appendUnknownKeyErrors(
+    errors,
+    "sajuFeatureChapter",
+    value,
+    sajuFeatureChapterKeys,
+  );
+  appendRawMetadataErrors(errors, "sajuFeatureChapter", value);
+
+  if (value.titleKo !== "명리 특징 해석") {
+    errors.push("sajuFeatureChapter.titleKo must be 명리 특징 해석.");
+  }
+  validateStringField(errors, "sajuFeatureChapter.subtitleKo", value.subtitleKo, 10);
+  validateStringField(errors, "sajuFeatureChapter.intro", value.intro, 80);
+
+  if (!Array.isArray(value.items)) {
+    errors.push("sajuFeatureChapter.items must be an array.");
+    return undefined;
+  }
+
+  const items = value.items
+    .map((item, index) => parseSajuFeatureChapterItem(errors, item, index))
+    .filter(
+      (item): item is ComprehensiveReportV2SajuFeatureChapterItem =>
+        item !== undefined,
+    );
+
+  if (items.length === 0) {
+    errors.push("SAJU_FEATURE_CHAPTER_TOO_SHORT");
+  }
+  if (items.length > 0 && items.length < 3) {
+    errors.push("SAJU_FEATURE_CHAPTER_TOO_SHORT");
+  }
+
+  return {
+    titleKo: "명리 특징 해석",
+    subtitleKo: value.subtitleKo as string,
+    intro: value.intro as string,
+    items,
+  };
 }
 
 function parseOptionalProfilePillar(
@@ -2986,6 +3138,13 @@ function parseV2Draft(
     input.reportDifferentiationModules,
   );
   const longformReadings = parseLongformReadings(errors, input.longformReadings);
+  const sajuFeatureChapter = parseSajuFeatureChapter(
+    errors,
+    input.sajuFeatureChapter,
+    {
+      required: input.longformReadings !== undefined,
+    },
+  );
 
   if (!isStringArray(input.safetyNotes)) {
     errors.push("safetyNotes must be a string array.");
@@ -3057,6 +3216,7 @@ function parseV2Draft(
       : { reportDifferentiationModules }),
     chapters,
     ...(longformReadings === undefined ? {} : { longformReadings }),
+    ...(sajuFeatureChapter === undefined ? {} : { sajuFeatureChapter }),
     finalAdvice: input.finalAdvice as string,
     safetyNotes: input.safetyNotes as readonly string[],
   };

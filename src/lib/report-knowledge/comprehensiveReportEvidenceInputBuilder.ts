@@ -636,6 +636,11 @@ function toSajuFeatureDictionaryEntry(
     id: `feature_${feature.id}`,
     rawLabel: feature.labelKo,
     category: feature.category,
+    userTitle: feature.symbolicImage,
+    plainMeaning: feature.summary,
+    howItShowsInYou: feature.sceneSeeds[0] ?? feature.positiveReading,
+    strength: feature.positiveReading,
+    fatiguePoint: feature.cautionReading,
     interpretationTitle: feature.symbolicImage,
     description: feature.summary,
     strengths: uniqueStrings([feature.positiveReading, feature.practicalUse]),
@@ -664,6 +669,15 @@ function buildHiddenStemDictionary(input: {
       id: `hidden_stem_${column.columnId}_${index + 1}`,
       rawLabel: `${column.labelKo} 지장간 ${hiddenStem}`,
       category: "hidden_stem" as const,
+      userTitle: "겉 기운 안에 숨어 있는 역할",
+      plainMeaning:
+        "지장간은 겉으로 보이는 지지 안쪽에 숨어 있는 욕구, 역할, 회복 포인트를 읽기 위한 보조 근거입니다.",
+      howItShowsInYou:
+        "겉 행동과 다른 속도의 욕구가 안쪽에서 움직여 선택, 회복, 관계 반응에 미세한 방향을 만들 수 있습니다.",
+      strength:
+        "겉으로 바로 드러나지 않는 재능과 보완 기운을 찾는 데 도움이 됩니다.",
+      fatiguePoint:
+        "겉 행동과 안쪽 욕구가 다르게 움직이면 선택이 늦어지거나 피로가 쌓일 수 있습니다.",
       interpretationTitle: "겉 기운 안에 숨어 있는 역할",
       description:
         "지장간은 겉으로 보이는 지지 안쪽에 숨어 있는 욕구, 역할, 회복 포인트를 읽기 위한 보조 근거입니다.",

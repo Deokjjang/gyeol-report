@@ -101,6 +101,23 @@ export type ComprehensiveReportV2LongformReading = {
   readonly mbtiTermsUsed: readonly string[];
 };
 
+export type ComprehensiveReportV2SajuFeatureChapterItem = {
+  readonly rawLabel: string;
+  readonly userTitle: string;
+  readonly plainMeaning: string;
+  readonly howItShowsInYou: string;
+  readonly strength: string;
+  readonly fatiguePoint: string;
+  readonly practicalUse: string;
+};
+
+export type ComprehensiveReportV2SajuFeatureChapter = {
+  readonly titleKo: "명리 특징 해석";
+  readonly subtitleKo: string;
+  readonly intro: string;
+  readonly items: readonly ComprehensiveReportV2SajuFeatureChapterItem[];
+};
+
 export type ComprehensiveReportV2PillarGridColumnId =
   | "hour"
   | "day"
@@ -156,6 +173,7 @@ export type ComprehensiveReportV2Draft = {
   readonly reportDifferentiationModules?: readonly ReportDifferentiationModule[];
   readonly chapters: readonly ComprehensiveReportV2Chapter[];
   readonly longformReadings?: readonly ComprehensiveReportV2LongformReading[];
+  readonly sajuFeatureChapter?: ComprehensiveReportV2SajuFeatureChapter;
   readonly finalAdvice: string;
   readonly safetyNotes: readonly string[];
 };
