@@ -8,6 +8,7 @@ import type {
   ComprehensiveReportV2Draft,
   ComprehensiveReportV2NarrativeDraft,
   ComprehensiveReportV2ProfileTable,
+  ComprehensiveReportV2SajuFeatureChapter,
 } from "./comprehensiveReportDraftTypes";
 import { sanitizeComprehensiveReportNarrativeDraft } from "./comprehensiveReportDraftSanitizer";
 import { normalizeComprehensiveReportFinalMessage } from "./comprehensiveReportNarrativePostProcessor";
@@ -360,6 +361,45 @@ function getFinalMessageNormalizerWarnings(
     : [];
 }
 
+export function buildDeterministicSajuFeatureChapter(
+  evidencePacket: ComprehensiveReportEvidencePacket,
+): ComprehensiveReportV2SajuFeatureChapter | undefined {
+  const entries = evidencePacket.sajuFeatureDictionary
+    ?.filter((entry) =>
+      [
+        entry.rawLabel,
+        entry.userTitle,
+        entry.plainMeaning,
+        entry.howItShowsInYou,
+        entry.strength,
+        entry.fatiguePoint,
+        entry.practicalUse,
+      ].every((value) => value.trim().length > 0),
+    )
+    .slice(0, 6);
+
+  if (entries === undefined || entries.length < 3) {
+    return undefined;
+  }
+
+  return {
+    titleKo: "명리 특징 해석",
+    subtitleKo:
+      "공통 만세력표는 근거표로 유지하고, 이 챕터는 신살·귀인·합충·지장간을 현실 언어로 풀어보는 해석입니다.",
+    intro:
+      "공통 만세력표에 표시되는 신살, 귀인, 합충, 지장간은 이름만 보면 어렵게 느껴질 수 있습니다. 이 챕터에서는 제공된 원국 특징을 사건 예언이 아니라 말투, 판단 속도, 도움을 요청하는 방식, 관계 반응, 일 처리 패턴, 회복 루틴으로 번역합니다.",
+    items: entries.map((entry) => ({
+      rawLabel: entry.rawLabel,
+      userTitle: entry.userTitle,
+      plainMeaning: entry.plainMeaning,
+      howItShowsInYou: entry.howItShowsInYou,
+      strength: entry.strength,
+      fatiguePoint: entry.fatiguePoint,
+      practicalUse: entry.practicalUse,
+    })),
+  };
+}
+
 function attachDeterministicProfileTable(input: {
   readonly parsed: unknown;
   readonly evidencePacket: ComprehensiveReportEvidencePacket;
@@ -375,6 +415,9 @@ function attachDeterministicProfileTable(input: {
   ) {
     return input.parsed;
   }
+  const sajuFeatureChapter = buildDeterministicSajuFeatureChapter(
+    input.evidencePacket,
+  );
 
   return {
     ...input.parsed,
@@ -399,6 +442,10 @@ function attachDeterministicProfileTable(input: {
     ...(input.evidencePacket.sajuSymbolicNickname === undefined
       ? {}
       : { sajuSymbolicNickname: input.evidencePacket.sajuSymbolicNickname }),
+    ...(sajuFeatureChapter === undefined ||
+    "sajuFeatureChapter" in input.parsed
+      ? {}
+      : { sajuFeatureChapter }),
   };
 }
 

@@ -48,6 +48,11 @@ describe("OpenAI report writer prompt", () => {
 
     expect(combined).toContain("사주가 1차 근거");
     expect(combined).toContain("MBTI는 보조 근거");
+    expect(combined).toContain("공통 만세력표는 시스템이 따로 렌더링하는 근거표");
+    expect(combined).toContain("sajuFeatureChapter는 명칭, 쉬운 뜻, 내 구조에서 드러나는 방식");
+    expect(combined).toContain("신살·귀인·합충·지장간 raw label만 단독으로 보여주지 말고");
+    expect(combined).toContain("MBTI DB의 topic traits, function stack, keywords, reportUseCases, myeongliBridgeHints");
+    expect(combined).toContain("명리 구조가 MBTI 성향에서 어떻게 드러나는지");
     expect(combined).toContain("ENTJ라서 그렇다 금지");
     expect(combined).toContain("Use only provided evidence");
     expect(combined).toContain("Do not invent Saju facts");
@@ -126,6 +131,7 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("덜 닳게 오래 가는 법");
     expect(combined).toContain("회복과 표현을 시스템에 넣는 일");
     expect(combined).toContain("profileTable은 시스템이 deterministic facts로 붙인다");
+    expect(combined).toContain("sajuFeatureChapter는 시스템 후처리에서도 evidence 기반으로 붙지만");
     expect(combined).toContain("만세력 및 명리학 표는 deterministic profileTable로 제공된다");
     expect(combined).toContain("너는 profileTable을 출력하지 않는다");
     expect(combined).toContain("profileTable 필드는 절대 출력하지 않는다");
@@ -528,6 +534,8 @@ describe("OpenAI report writer prompt", () => {
     const combined = [messages.system, messages.developer, messages.user].join("\n");
 
     expect(combined).toContain("SOLUTION_LINES_MISSING: work_money_study");
+    expect(combined).toContain("SAJU_FEATURE_CHAPTER_MISSING이나 SAJU_FEATURE_ITEM_INCOMPLETE");
+    expect(combined).toContain("쉬운 뜻, 드러나는 방식, 강점, 피로, 실제 사용법");
     expect(combined).toContain("일·돈·공부 챕터에는 실제 행동 문장 3개 이상");
     expect(combined).toContain("돈, 공부, 업무, 프로젝트, 계좌, 기록, 루틴");
     expect(combined).toContain("MBTI_SUPPORT_MISSING: work_money_study");

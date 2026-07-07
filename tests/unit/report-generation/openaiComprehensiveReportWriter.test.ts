@@ -10,6 +10,7 @@ import type {
   ComprehensiveReportV2ChapterId,
   ComprehensiveReportV2NarrativeDraft,
 } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
+import { isComprehensiveReportV2Draft } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../../../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
 import type { ComputedSajuFacts } from "../../../src/lib/report-knowledge/sajuComputedFactsTypes";
 
@@ -371,6 +372,20 @@ describe("OpenAI comprehensive report writer", () => {
         mbti: "ENTJ",
       },
     });
+    expect(isComprehensiveReportV2Draft(result.draft)).toBe(true);
+    if (isComprehensiveReportV2Draft(result.draft)) {
+      expect(result.draft.sajuFeatureChapter).toMatchObject({
+        titleKo: "명리 특징 해석",
+        items: expect.arrayContaining([
+          expect.objectContaining({
+            rawLabel: "현침살",
+            plainMeaning: expect.stringContaining("말"),
+            howItShowsInYou: expect.any(String),
+            practicalUse: expect.any(String),
+          }),
+        ]),
+      });
+    }
     expect(result.rawText).toBe(JSON.stringify(modelDraft));
     expect(result.warnings).toEqual([
       "MEETING_SCENE_DENSITY_WARNING: 회의",

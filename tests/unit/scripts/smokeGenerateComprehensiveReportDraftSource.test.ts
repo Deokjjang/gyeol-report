@@ -24,6 +24,15 @@ describe("generate comprehensive report draft smoke script source", () => {
       "isComprehensiveReportV2Draft",
       "isSafeReportGenerationError",
       "OPENAI_REPORT_WRITER_DEBUG_SAFE",
+      "--write-preview",
+      "buildLocalFallbackDraft",
+      "buildDeterministicSajuFeatureChapter",
+      "validateComprehensiveReportDraft",
+      "writer disabled: using local deterministic draft builder.",
+      "sajuFeatureChapter",
+      "longformReadings",
+      "preview snapshot written:",
+      ".tmp/comprehensive-report-preview",
       "OpenAI request debug:",
       "input message count",
       "approx prompt chars",
@@ -65,6 +74,23 @@ describe("generate comprehensive report draft smoke script source", () => {
       "selected evidence narrowness",
     ]) {
       expect(debugHelperSource).toContain(marker);
+    }
+  });
+
+  it("keeps writer-disabled fallback preview quality markers in source", () => {
+    for (const marker of [
+      "공통 만세력표는 근거이고",
+      "buildDeterministicSajuFeatureChapter",
+      "신살·귀인·합충·지장간",
+      "selectedTraitSeeds",
+      "myeongliSignalLabels",
+      "mbtiTraitTopic",
+      "LOCAL_COMPREHENSIVE_DRAFT_INVALID",
+      "SAJU_FEATURE_CHAPTER_UNAVAILABLE",
+      "getPreviewSnapshotRelativePath",
+      "writePreviewSnapshot",
+    ]) {
+      expect(source).toContain(marker);
     }
   });
 
