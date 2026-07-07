@@ -4,6 +4,10 @@ import { describe, expect, it } from "vitest";
 
 const pagePath = join(process.cwd(), "src/app/report/new/page.tsx");
 const pageSource = readFileSync(pagePath, "utf8");
+const singlePersonPreviewBranchSource = pageSource.slice(
+  pageSource.indexOf("if (isSinglePersonPreviewProduct(selectedProduct.productKey))"),
+  pageSource.indexOf("if (selectedProduct.productKey === MAJOR_FORTUNE_PRODUCT_KEY)"),
+);
 
 describe("new report page source", () => {
   it("is a client component", () => {
@@ -69,12 +73,10 @@ describe("new report page source", () => {
       "CAREER_MONEY_STUDY_SELECTED_REPORT_PRODUCT",
       "직업·커리어·돈·학업 리포트 입력",
       "직업, 커리어, 돈, 학업 흐름을 한 사람 기준으로 보는 리포트입니다.",
-      "현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
-      "/dev/career-report-preview?fixture=deokmin-career",
+      "현재 연애 상태, 직업 상태, 세부 직업은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
       "준비 중 · 미리보기 가능",
       "isSinglePersonPreviewProduct",
       "getSingleProductLeadText",
-      "getSingleProductDevPreviewHref",
       "isSelectedProductPurchasable",
     ];
 
@@ -92,8 +94,7 @@ describe("new report page source", () => {
       "LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT",
       "연애·결혼·자녀 리포트 입력",
       "나의 연애, 결혼, 부모 역할 성향을 한 사람 기준으로 보는 리포트입니다.",
-      "현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
-      "/dev/love-marriage-child-report-preview?fixture=deokmin-love",
+      "현재 연애 상태, 직업 상태, 세부 직업은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
       "미리보기 입력 흐름",
       "준비 중 · 미리보기 가능",
       "productSlug === LOVE_MARRIAGE_CHILD_PRODUCT_SLUG",
@@ -114,9 +115,10 @@ describe("new report page source", () => {
       "isSingleProductInputReady",
       "singleProductCtaLabel",
       "renderSingleProductCommonInputSection",
-      "현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
-      "공통 입력값",
-      "모든 단독 인물 리포트가 공유하는 기본 정보입니다.",
+      "현재 연애 상태, 직업 상태, 세부 직업은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
+      "기본 정보 입력",
+      "리포트 생성에 필요한 기본 정보를 입력해 주세요.",
+      "이름을 입력해 주세요",
       'name="name"',
       'name="birthDate"',
       'name="birthTime"',
@@ -127,28 +129,93 @@ describe("new report page source", () => {
       'name="relationshipStatus"',
       'name="jobStatus"',
       'name="detailedJob"',
-      'name="focusAreas"',
       "현재 연애 상태",
       "직업 상태",
       "세부 직업",
-      "관심 영역",
-      "입력 확인 요약",
-      "기본 정보",
-      "현재 맥락",
-      "상품 정보",
-      "productKey:",
-      "productSlug:",
       "미리보기 준비됨",
       "필수 정보를 입력해 주세요",
-      "현재 입력값으로 실제 리포트를 생성하지 않습니다.",
-      "실제 생성, 결제, 저장은 이후 단계에서 연결합니다.",
       "event.preventDefault()",
+      "bg-[#f6f0e7]",
+      "bg-[#fffdf8]",
+      "border-[#6f1d35]",
+      "border-[#d7b56d]",
     ];
 
     for (const marker of requiredMarkers) {
       expect(pageSource).toContain(marker);
     }
 
+    expect(
+      pageSource.indexOf("isSinglePersonPreviewProduct(selectedProduct.productKey)"),
+    ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
+  });
+
+  it("keeps removed solo-person UI and developer copy out of visible source text", () => {
+    const removedVisibleMarkers = [
+      "관심 영역",
+      'name="focusAreas"',
+      "preview generation",
+      "상품 context",
+      "선택 상품 context",
+      "개발 미리보기",
+      "&snapshot=",
+      "입력 확인 요약",
+      "샘플 보기",
+      "/dev/comprehensive-preview",
+      "예: 덕민",
+    ];
+
+    for (const marker of removedVisibleMarkers) {
+      expect(singlePersonPreviewBranchSource).not.toContain(marker);
+    }
+
+    expect(pageSource).toContain("focusAreas: []");
+    expect(pageSource).toContain("focusAreas: input.focusAreas.filter(isFocusArea)");
+    expect(pageSource).not.toContain("예: 덕민");
+    expect(pageSource).not.toMatch(/<p>\s*productKey:/);
+    expect(pageSource).not.toMatch(/<p>\s*productSlug:/);
+  });
+
+  it("connects saju-mbti-full to the comprehensive V2 preview submit flow", () => {
+    const requiredMarkers = [
+      "SAJU_MBTI_FULL_PRODUCT_KEY",
+      "saju_mbti_full",
+      "SAJU_MBTI_FULL_PRODUCT_SLUG",
+      "saju-mbti-full",
+      "SAJU_MBTI_FULL_SELECTED_REPORT_PRODUCT",
+      "사주×MBTI 종합 리포트",
+      "명리 구조와 MBTI 행동 패턴을 함께 읽는 자기이해 종합 리포트입니다.",
+      "productSlug === SAJU_MBTI_FULL_PRODUCT_SLUG",
+      "return SAJU_MBTI_FULL_SELECTED_REPORT_PRODUCT",
+      "productKey === SAJU_MBTI_FULL_PRODUCT_KEY",
+      "isSingleProductComprehensiveV2",
+      "COMPREHENSIVE_V2_REQUIRED_INPUT_MESSAGE_KO",
+      "COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO",
+      "function handleSingleProductPreviewSubmit",
+      "if (!isSingleProductComprehensiveV2)",
+      "buildSinglePersonReportInputPayload(",
+      'REPORT_CREATE_API_PATH = "/api/reports/create"',
+      "fetch(REPORT_CREATE_API_PATH",
+      'method: "POST"',
+      '"content-type": "application/json"',
+      "body: JSON.stringify(payload)",
+      'snapshotKind === "product_preview"',
+      "router.push(`/reports/${createResult.reportId}`)",
+      "종합 리포트 미리보기 생성",
+      "종합 리포트 생성 중",
+      "필수 정보를 입력해 주세요",
+      "onSubmit={handleSingleProductPreviewSubmit}",
+      'type={isSingleProductComprehensiveV2 ? "submit" : "button"}',
+      "입력한 정보를 바탕으로 종합 미리보기 리포트를 생성합니다. 현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다.",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+
+    expect(pageSource.indexOf("SAJU_MBTI_FULL_PRODUCT_SLUG")).toBeLessThan(
+      pageSource.indexOf("return DEFAULT_SELECTED_REPORT_PRODUCT"),
+    );
     expect(
       pageSource.indexOf("isSinglePersonPreviewProduct(selectedProduct.productKey)"),
     ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
@@ -191,7 +258,7 @@ describe("new report page source", () => {
       "MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT",
       "대운 리포트 입력",
       "대운은 입력된 생년월일과 출생시간 기반의 10년 흐름을 보는 리포트입니다.",
-      "현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
+      "현재 연애 상태, 직업 상태, 세부 직업은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
       "실제 생성/결제 연결은",
       "준비 중입니다.",
       "/dev/major-fortune-preview?fixture=deokmin-current-major-fortune",
@@ -222,7 +289,6 @@ describe("new report page source", () => {
       "formatAnnualBirthTimeSummary",
       "formatAnnualRelationshipStatus",
       "formatAnnualJobStatus",
-      "toggleAnnualFocusArea",
       "annualRelationshipStatusOptions",
       "annualJobStatusOptions",
       "annualDetailedJobOptions",
@@ -239,19 +305,16 @@ describe("new report page source", () => {
       'name="relationshipStatus"',
       'name="jobStatus"',
       'name="detailedJob"',
-      'name="focusAreas"',
       "현재 연애 상태",
       "직업 상태",
       "세부 직업",
-      "관심 영역",
       "대운 리포트 기준",
       "별도 추가 질문 없이 공통 입력값을 기준으로 10년 흐름",
       "입력 확인 요약",
       "기본 정보",
-      "현재 맥락",
-      "상품 정보",
-      "productKey:",
-      "productSlug:",
+      "선택한 리포트",
+      "리포트 종류:",
+      "생성 방식:",
       "대운 리포트 미리보기 준비됨",
       "필수 정보를 입력해 주세요",
       "현재 입력값으로 실제 리포트를 생성하지 않습니다.",
@@ -278,7 +341,7 @@ describe("new report page source", () => {
       "ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT",
       "세운 리포트 입력",
       "세운은 선택한 한 해의 흐름을 보는 리포트입니다.",
-      "현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
+      "현재 연애 상태, 직업 상태, 세부 직업은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
       "실제 생성/결제 연결은",
       "준비 중입니다.",
       "/dev/annual-fortune-preview?fixture=deokmin-2026-current",
@@ -309,7 +372,6 @@ describe("new report page source", () => {
       "formatAnnualBirthTimeSummary",
       "formatAnnualRelationshipStatus",
       "formatAnnualJobStatus",
-      "toggleAnnualFocusArea",
       "annualRelationshipStatusOptions",
       "annualJobStatusOptions",
       "annualDetailedJobOptions",
@@ -326,24 +388,22 @@ describe("new report page source", () => {
       'name="relationshipStatus"',
       'name="jobStatus"',
       'name="detailedJob"',
-      'name="focusAreas"',
       'name="selectedYear"',
       "현재 연애 상태",
       "직업 상태",
       "세부 직업",
-      "관심 영역",
-      "선택 입력입니다. 직업, 돈, 연애, 관계, 건강관리, 공부,",
       "세운 전용 조회 연도",
       "기본값은 현재 연도입니다.",
       "과거 5년과 올해",
-      "12월 1일 이후에는 다음 해 신년사주 preview",
+      "12월 1일 이후에는 다음 해 신년사주 미리보기",
       "2년 이상 미래 조회는 아직 준비 중",
       "과거 10년 조회는",
       "입력 확인 요약",
       "현실 맥락",
       "조회 연도",
-      "productKey:",
-      "productSlug:",
+      "선택한 리포트",
+      "리포트 종류:",
+      "생성 방식:",
       "세운 리포트 미리보기 준비됨",
       "필수 정보를 입력해 주세요",
       "현재 입력값으로 실제 리포트를 생성하지 않습니다.",
@@ -427,13 +487,13 @@ describe("new report page source", () => {
   it("renders compatibility preview handoff summary without payment calls", () => {
     const requiredMarkers = [
       "입력 확인 요약",
-      "현재 입력값이 어떤 궁합 preview payload로",
+      "현재 입력값이 궁합 리포트에 어떻게 반영되는지 확인합니다.",
       "A 사람",
       "B 사람",
       "관계 카테고리",
-      "상품 context",
-      "productKey:",
-      "productSlug:",
+      "선택한 리포트",
+      "리포트 종류:",
+      "생성 방식: 입력값 기반 미리보기",
       "formatCompatibilityBirthTimeSummary",
       "formatCompatibilityRelationshipLabel",
       "isCompatibilityInputReady",
@@ -441,9 +501,9 @@ describe("new report page source", () => {
       "궁합 리포트 미리보기 생성",
       "궁합 리포트 생성 중",
       "필수 정보를 입력해 주세요",
-      "입력값 기반 궁합 preview generation을 실행합니다.",
+      "입력한 정보를 바탕으로 궁합 미리보기 리포트를 생성합니다.",
       "결제와 유료 저장은 이후 단계에서 연결합니다.",
-      "샘플 미리보기",
+      "샘플 보기",
       "event.preventDefault()",
     ];
 
@@ -554,7 +614,7 @@ describe("new report page source", () => {
       "이전",
       "이름",
       "리포트에서 불러드릴 이름입니다. 사주 계산에는 사용하지 않습니다.",
-      "예: 덕짱",
+      "이름을 입력해 주세요",
       "미입력",
       "양력 기준 생년월일",
       "현재 V1은 양력 기준 생년월일만 지원합니다.",

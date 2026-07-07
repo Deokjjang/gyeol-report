@@ -31,6 +31,8 @@ const MAJOR_FORTUNE_PRODUCT_KEY = "major_fortune";
 const MAJOR_FORTUNE_PRODUCT_SLUG = "major-fortune";
 const ANNUAL_FORTUNE_PRODUCT_KEY = "annual_fortune";
 const ANNUAL_FORTUNE_PRODUCT_SLUG = "annual-fortune";
+const SAJU_MBTI_FULL_PRODUCT_KEY = "saju_mbti_full";
+const SAJU_MBTI_FULL_PRODUCT_SLUG = "saju-mbti-full";
 const ACTIVE_REPORT_LIST_PRICE_LABEL_KO = "정가 1,290원";
 const ACTIVE_REPORT_SALE_PRICE_LABEL_KO = "런칭가 990원";
 const ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO = "결제금액 990원";
@@ -39,11 +41,15 @@ const CHECKOUT_CTA_LABEL_KO = "990원 결제하고 리포트 생성하기";
 const REQUIRED_CHECKOUT_INPUT_MESSAGE_KO =
   "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.";
 const SINGLE_PRODUCT_CONTEXT_NOTICE_KO =
-  "현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.";
+  "현재 연애 상태, 직업 상태, 세부 직업은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.";
 const COMPATIBILITY_REQUIRED_INPUT_MESSAGE_KO =
   "A/B 이름과 생년월일, 관계 카테고리를 입력해 주세요.";
 const COMPATIBILITY_PREVIEW_CREATE_ERROR_MESSAGE_KO =
   "궁합 리포트 미리보기를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.";
+const COMPREHENSIVE_V2_REQUIRED_INPUT_MESSAGE_KO =
+  "이름과 생년월일을 입력해 주세요.";
+const COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO =
+  "종합 리포트 미리보기를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.";
 const REPORT_CREATE_API_PATH = "/api/reports/create";
 const DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED =
   process.env.NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED === "1";
@@ -98,9 +104,9 @@ const CAREER_MONEY_STUDY_SELECTED_REPORT_PRODUCT = {
   fullNameKo: "직업·커리어·돈·학업 리포트",
   inputTitleKo: "직업·커리어·돈·학업 리포트 입력",
   introKo:
-    `출시 전 개발 preview 입력 흐름입니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
+    `출시 전 미리보기 입력 흐름입니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
-  deliveryTypeKo: "개발 preview 입력 흐름",
+  deliveryTypeKo: "미리보기 입력 흐름",
   statusLabelKo: "준비 중 · 미리보기 가능",
   isPurchasable: false,
   listPriceKo: null,
@@ -163,6 +169,22 @@ const ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT = {
   inputTitleKo: "세운 리포트 입력",
   introKo:
     `세운은 선택한 한 해의 흐름을 보는 리포트입니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
+  formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
+  deliveryTypeKo: "미리보기 입력 흐름",
+  statusLabelKo: "준비 중 · 미리보기 가능",
+  isPurchasable: false,
+  listPriceKo: null,
+  priceKo: null,
+} as const satisfies SelectedReportProduct;
+
+const SAJU_MBTI_FULL_SELECTED_REPORT_PRODUCT = {
+  productKey: SAJU_MBTI_FULL_PRODUCT_KEY,
+  slug: SAJU_MBTI_FULL_PRODUCT_SLUG,
+  nameKo: "종합 리포트",
+  fullNameKo: "사주×MBTI 종합 리포트",
+  inputTitleKo: "종합 리포트 입력",
+  introKo:
+    `명리 구조와 MBTI 행동 패턴을 함께 읽는 종합 V2 미리보기 입력 흐름입니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
   deliveryTypeKo: "미리보기 입력 흐름",
   statusLabelKo: "준비 중 · 미리보기 가능",
@@ -452,15 +474,6 @@ function formatAnnualJobStatus(value: string): string {
   );
 }
 
-function toggleAnnualFocusArea(
-  focusAreas: readonly string[],
-  value: string,
-): readonly string[] {
-  return focusAreas.includes(value)
-    ? focusAreas.filter((item) => item !== value)
-    : [...focusAreas, value];
-}
-
 function isFocusArea(value: string): value is FocusArea {
   return annualFocusAreaOptions.includes(value as FocusArea);
 }
@@ -570,8 +583,18 @@ function isCompatibilityPreviewCreateSuccessResponse(
 }
 
 function getCompatibilityPreviewCreateErrorMessage(value: unknown): string {
+  return getProductPreviewCreateErrorMessage(
+    value,
+    COMPATIBILITY_PREVIEW_CREATE_ERROR_MESSAGE_KO,
+  );
+}
+
+function getProductPreviewCreateErrorMessage(
+  value: unknown,
+  fallbackMessage: string,
+): string {
   if (typeof value !== "object" || value === null) {
-    return COMPATIBILITY_PREVIEW_CREATE_ERROR_MESSAGE_KO;
+    return fallbackMessage;
   }
 
   const response = value as Record<string, unknown>;
@@ -583,7 +606,7 @@ function getCompatibilityPreviewCreateErrorMessage(value: unknown): string {
     return response.error;
   }
 
-  return COMPATIBILITY_PREVIEW_CREATE_ERROR_MESSAGE_KO;
+  return fallbackMessage;
 }
 
 function isCompatibilityPersonRequiredInputComplete(
@@ -643,6 +666,10 @@ function resolveSelectedReportProduct(
     return ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT;
   }
 
+  if (productSlug === SAJU_MBTI_FULL_PRODUCT_SLUG) {
+    return SAJU_MBTI_FULL_SELECTED_REPORT_PRODUCT;
+  }
+
   return DEFAULT_SELECTED_REPORT_PRODUCT;
 }
 
@@ -651,7 +678,8 @@ function isSinglePersonPreviewProduct(productKey: string): boolean {
     productKey === CAREER_MONEY_STUDY_PRODUCT_KEY ||
     productKey === LOVE_MARRIAGE_CHILD_PRODUCT_KEY ||
     productKey === MAJOR_FORTUNE_PRODUCT_KEY ||
-    productKey === ANNUAL_FORTUNE_PRODUCT_KEY
+    productKey === ANNUAL_FORTUNE_PRODUCT_KEY ||
+    productKey === SAJU_MBTI_FULL_PRODUCT_KEY
   );
 }
 
@@ -672,27 +700,11 @@ function getSingleProductLeadText(productKey: string): string {
     return "세운은 선택한 한 해의 흐름을 보는 리포트입니다.";
   }
 
+  if (productKey === SAJU_MBTI_FULL_PRODUCT_KEY) {
+    return "명리 구조와 MBTI 행동 패턴을 함께 읽는 자기이해 종합 리포트입니다.";
+  }
+
   return "단독 인물 리포트 입력 흐름입니다.";
-}
-
-function getSingleProductDevPreviewHref(productKey: string): string {
-  if (productKey === CAREER_MONEY_STUDY_PRODUCT_KEY) {
-    return "/dev/career-report-preview?fixture=deokmin-career&snapshot=latest";
-  }
-
-  if (productKey === LOVE_MARRIAGE_CHILD_PRODUCT_KEY) {
-    return "/dev/love-marriage-child-report-preview?fixture=deokmin-love&snapshot=latest";
-  }
-
-  if (productKey === MAJOR_FORTUNE_PRODUCT_KEY) {
-    return "/dev/major-fortune-preview?fixture=deokmin-current-major-fortune&snapshot=latest";
-  }
-
-  if (productKey === ANNUAL_FORTUNE_PRODUCT_KEY) {
-    return "/dev/annual-fortune-preview?fixture=deokmin-2026-current&snapshot=latest";
-  }
-
-  return "";
 }
 
 function formatBirthTimeSummary(
@@ -767,7 +779,11 @@ function renderCompatibilityPersonInputSection(input: {
             type="text"
             value={value.name}
             maxLength={20}
-            placeholder={prefix === "personA" ? "예: 덕민" : "예: 소담"}
+            placeholder={
+              prefix === "personA"
+                ? "이름을 입력해 주세요"
+                : "상대 이름을 입력해 주세요"
+            }
             onChange={(event) => onChange({ ...value, name: event.target.value })}
             className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
           />
@@ -923,11 +939,11 @@ function renderSingleProductCommonInputSection(input: {
   const { prefix, value, onChange } = input;
 
   return (
-    <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
+    <section className="space-y-5 rounded-lg border border-[#ded2c2] bg-[#fffdf8] p-5 shadow-sm shadow-[#6f1d35]/5">
       <div className="space-y-2">
-        <p className="text-sm font-bold text-[#c79a43]">공통 입력값</p>
-        <p className="text-sm leading-6 text-[#cfc5b8]">
-          모든 단독 인물 리포트가 공유하는 기본 정보입니다.
+        <p className="text-sm font-bold text-[#c79a43]">기본 정보 입력</p>
+        <p className="text-sm leading-6 text-[#6b5a4d]">
+          리포트 생성에 필요한 기본 정보를 입력해 주세요.
         </p>
       </div>
 
@@ -935,7 +951,7 @@ function renderSingleProductCommonInputSection(input: {
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}Name`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             이름
           </label>
@@ -945,16 +961,16 @@ function renderSingleProductCommonInputSection(input: {
             type="text"
             value={value.name}
             maxLength={20}
-            placeholder="예: 덕민"
+            placeholder="이름을 입력해 주세요"
             onChange={(event) => onChange({ ...value, name: event.target.value })}
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none placeholder:text-[#9b8a78] focus:border-[#6f1d35]"
           />
         </div>
 
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}BirthDate`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             생년월일
           </label>
@@ -963,18 +979,18 @@ function renderSingleProductCommonInputSection(input: {
             name="birthDate"
             type="date"
             value={value.birthDate}
-            style={{ colorScheme: "dark" }}
+            style={{ colorScheme: "light" }}
             onChange={(event) =>
               onChange({ ...value, birthDate: event.target.value })
             }
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
           />
         </div>
 
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}BirthTime`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             출생시간
           </label>
@@ -983,7 +999,7 @@ function renderSingleProductCommonInputSection(input: {
             name="birthTime"
             type="time"
             value={value.birthTime}
-            style={{ colorScheme: "dark" }}
+            style={{ colorScheme: "light" }}
             onChange={(event) =>
               onChange({
                 ...value,
@@ -991,14 +1007,14 @@ function renderSingleProductCommonInputSection(input: {
                 birthTimeUnknown: false,
               })
             }
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
           />
         </div>
 
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}TimeBranch`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             대략적인 시간대
           </label>
@@ -1013,7 +1029,7 @@ function renderSingleProductCommonInputSection(input: {
                 birthTimeUnknown: false,
               })
             }
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
           >
             <option value="">시간대를 선택해 주세요</option>
             {timeBranches.map((branch) => (
@@ -1024,7 +1040,7 @@ function renderSingleProductCommonInputSection(input: {
           </select>
         </div>
 
-        <label className="flex min-h-12 items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200">
+        <label className="flex min-h-12 items-center gap-3 rounded-lg border border-[#ded2c2] bg-[#fffaf1] px-4 py-3 text-sm font-medium text-[#3f3129]">
           <input
             type="checkbox"
             name="birthTimeUnknown"
@@ -1045,7 +1061,7 @@ function renderSingleProductCommonInputSection(input: {
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}Gender`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             성별
           </label>
@@ -1054,7 +1070,7 @@ function renderSingleProductCommonInputSection(input: {
             name="gender"
             value={value.gender}
             onChange={(event) => onChange({ ...value, gender: event.target.value })}
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
           >
             <option value="">선택</option>
             <option value="MALE">남성</option>
@@ -1065,7 +1081,7 @@ function renderSingleProductCommonInputSection(input: {
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}MbtiType`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             MBTI
           </label>
@@ -1076,7 +1092,7 @@ function renderSingleProductCommonInputSection(input: {
             onChange={(event) =>
               onChange({ ...value, mbtiType: event.target.value })
             }
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
           >
             <option value="">선택</option>
             {mbtiTypes.map((type) => (
@@ -1090,7 +1106,7 @@ function renderSingleProductCommonInputSection(input: {
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}RelationshipStatus`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             현재 연애 상태
           </label>
@@ -1101,7 +1117,7 @@ function renderSingleProductCommonInputSection(input: {
             onChange={(event) =>
               onChange({ ...value, relationshipStatus: event.target.value })
             }
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
           >
             {annualRelationshipStatusOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -1114,7 +1130,7 @@ function renderSingleProductCommonInputSection(input: {
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}JobStatus`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             직업 상태
           </label>
@@ -1125,7 +1141,7 @@ function renderSingleProductCommonInputSection(input: {
             onChange={(event) =>
               onChange({ ...value, jobStatus: event.target.value })
             }
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none placeholder:text-[#9b8a78] focus:border-[#6f1d35]"
           >
             {annualJobStatusOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -1138,7 +1154,7 @@ function renderSingleProductCommonInputSection(input: {
         <div className="space-y-2 sm:col-span-2">
           <label
             htmlFor={`${prefix}DetailedJob`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             세부 직업
           </label>
@@ -1152,52 +1168,20 @@ function renderSingleProductCommonInputSection(input: {
             onChange={(event) =>
               onChange({ ...value, detailedJob: event.target.value })
             }
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none placeholder:text-[#9b8a78] focus:border-[#6f1d35]"
           />
           <datalist id={`${prefix}DetailedJobOptions`}>
             {annualDetailedJobOptions.map((option) => (
               <option key={option} value={option} />
             ))}
           </datalist>
-          <p className="text-xs leading-5 text-neutral-500">
+          <p className="text-xs leading-5 text-[#7d6d60]">
             예: 고등학생, 대학생, 개발자, 서비스 기획자, 디자이너,
             마케터, 변호사, 의사, 교사, 유튜버, 인플루언서, 연예인,
             자영업자, 기타 직접 입력
           </p>
         </div>
 
-        <fieldset className="space-y-3 sm:col-span-2">
-          <legend className="text-sm font-medium text-neutral-200">
-            관심 영역
-          </legend>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {annualFocusAreaOptions.map((area) => (
-              <label
-                key={area}
-                className="flex min-h-12 items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200"
-              >
-                <input
-                  type="checkbox"
-                  name="focusAreas"
-                  value={area}
-                  checked={value.focusAreas.includes(area)}
-                  onChange={() =>
-                    onChange({
-                      ...value,
-                      focusAreas: toggleAnnualFocusArea(value.focusAreas, area),
-                    })
-                  }
-                  className="h-4 w-4"
-                />
-                {area}
-              </label>
-            ))}
-          </div>
-          <p className="text-xs leading-5 text-neutral-500">
-            선택 입력입니다. 직업, 돈, 연애, 관계, 건강관리, 공부, 가족,
-            생활 리듬 중 관심 있는 영역만 고르세요.
-          </p>
-        </fieldset>
       </div>
     </section>
   );
@@ -1232,6 +1216,9 @@ export default function NewReportPage({
   const [isCompatibilitySubmitting, setIsCompatibilitySubmitting] =
     useState(false);
   const [compatibilitySubmitError, setCompatibilitySubmitError] = useState("");
+  const [isSingleProductSubmitting, setIsSingleProductSubmitting] =
+    useState(false);
+  const [singleProductSubmitError, setSingleProductSubmitError] = useState("");
   const [majorFortuneInput, setMajorFortuneInput] =
     useState<MajorFortuneInputState>(createMajorFortuneInputState);
   const [annualFortuneInput, setAnnualFortuneInput] =
@@ -1279,15 +1266,18 @@ export default function NewReportPage({
   );
   const isSingleProductAnnual =
     selectedProduct.productKey === ANNUAL_FORTUNE_PRODUCT_KEY;
+  const isSingleProductComprehensiveV2 =
+    selectedProduct.productKey === SAJU_MBTI_FULL_PRODUCT_KEY;
   const isSingleProductInputReady = isSingleProductAnnual
     ? isAnnualFortuneRequiredInputComplete(singleProductInput)
     : isMajorFortuneRequiredInputComplete(singleProductInput);
-  const singleProductCtaLabel = isSingleProductInputReady
-    ? `${selectedProduct.nameKo} 미리보기 준비됨`
-    : "필수 정보를 입력해 주세요";
-  const singleProductDevPreviewHref = getSingleProductDevPreviewHref(
-    selectedProduct.productKey,
-  );
+  const singleProductCtaLabel = isSingleProductSubmitting
+    ? "종합 리포트 생성 중"
+    : isSingleProductComprehensiveV2 && isSingleProductInputReady
+      ? "종합 리포트 미리보기 생성"
+      : isSingleProductInputReady
+        ? `${selectedProduct.nameKo} 미리보기 준비됨`
+        : "필수 정보를 입력해 주세요";
   const isMajorFortuneInputReady =
     isMajorFortuneRequiredInputComplete(majorFortuneInput);
   const majorFortuneCtaLabel = isMajorFortuneInputReady
@@ -1307,6 +1297,68 @@ export default function NewReportPage({
       compatibilityPersonB,
       compatibilityRelationshipType,
     });
+  }
+
+  async function handleSingleProductPreviewSubmit(
+    event: FormEvent<HTMLFormElement>,
+  ) {
+    event.preventDefault();
+    setSingleProductSubmitError("");
+
+    if (!isSingleProductComprehensiveV2) {
+      buildReportInputPayload({
+        selectedProduct,
+        singleProductInput,
+        compatibilityPersonA,
+        compatibilityPersonB,
+        compatibilityRelationshipType,
+      });
+      return;
+    }
+
+    if (!isSingleProductInputReady || isSingleProductSubmitting) {
+      setSingleProductSubmitError(COMPREHENSIVE_V2_REQUIRED_INPUT_MESSAGE_KO);
+      return;
+    }
+
+    const payload = buildSinglePersonReportInputPayload(
+      selectedProduct,
+      singleProductInput,
+    );
+
+    setIsSingleProductSubmitting(true);
+
+    try {
+      const response = await fetch(REPORT_CREATE_API_PATH, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      const createResult: unknown = await response.json();
+
+      if (
+        response.ok &&
+        isCompatibilityPreviewCreateSuccessResponse(createResult)
+      ) {
+        router.push(`/reports/${createResult.reportId}`);
+        return;
+      }
+
+      setSingleProductSubmitError(
+        getProductPreviewCreateErrorMessage(
+          createResult,
+          COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO,
+        ),
+      );
+    } catch {
+      setSingleProductSubmitError(
+        COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO,
+      );
+    }
+
+    setIsSingleProductSubmitting(false);
   }
 
   async function handleCompatibilityPreviewSubmit(
@@ -1360,26 +1412,27 @@ export default function NewReportPage({
 
   if (isSinglePersonPreviewProduct(selectedProduct.productKey)) {
     return (
-      <main className="min-h-screen bg-[#171211] px-5 py-8 text-[#fffaf0] sm:px-8 lg:px-10">
+      <main className="min-h-screen bg-[#f6f0e7] px-5 py-8 text-[#2b211b] sm:px-8 lg:px-10">
         <section className="mx-auto max-w-5xl space-y-8">
           <header className="max-w-3xl space-y-4 animate-[gyeol-reveal_520ms_ease-out]">
             <p className="text-sm font-bold tracking-[0.18em] text-[#c79a43]">
               Gyeol Report
             </p>
-            <h1 className="text-4xl font-bold tracking-normal text-[#fffaf0]">
+            <h1 className="text-4xl font-bold tracking-normal text-[#2b211b]">
               {selectedProduct.inputTitleKo}
             </h1>
-            <p className="max-w-2xl text-base leading-8 text-[#cfc5b8]">
+            <p className="max-w-2xl text-base leading-8 text-[#5f5045]">
               {getSingleProductLeadText(selectedProduct.productKey)}
             </p>
-            <p className="max-w-2xl rounded-lg border border-[#4a3434] bg-[#211817]/80 px-4 py-3 text-sm leading-6 text-[#cfc5b8]">
-              {SINGLE_PRODUCT_CONTEXT_NOTICE_KO} 실제 생성/결제 연결은 준비
-              중입니다.
+            <p className="max-w-2xl rounded-lg border border-[#d7b56d]/60 bg-[#fffaf1] px-4 py-3 text-sm leading-6 text-[#5f5045]">
+              {isSingleProductComprehensiveV2
+                ? "입력한 정보를 바탕으로 종합 미리보기 리포트를 생성합니다. 현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다."
+                : "입력한 정보를 바탕으로 리포트 입력 정보를 준비합니다. 현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다."}
             </p>
           </header>
 
           <form
-            onSubmit={handlePreviewOnlySubmit}
+            onSubmit={handleSingleProductPreviewSubmit}
             className="grid gap-6"
           >
             <input type="hidden" name="timezone" value="Asia/Seoul" />
@@ -1407,16 +1460,16 @@ export default function NewReportPage({
             })}
 
             {isSingleProductAnnual ? (
-              <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
+              <section className="space-y-5 rounded-lg border border-[#ded2c2] bg-[#fffdf8] p-5 shadow-sm shadow-[#6f1d35]/5">
                 <div className="space-y-2">
                   <p className="text-sm font-bold text-[#c79a43]">
                     세운 전용 조회 연도
                   </p>
-                  <p className="text-sm leading-6 text-[#cfc5b8]">
+                  <p className="text-sm leading-6 text-[#6b5a4d]">
                     기본값은 현재 연도입니다. 과거 5년과 올해를 우선 조회하고,
-                    12월 1일 이후에는 다음 해 신년사주 preview가 열립니다.
+                    12월 1일 이후에는 다음 해 신년사주 미리보기가 열립니다.
                   </p>
-                  <p className="text-sm leading-6 text-[#92877b]">
+                  <p className="text-sm leading-6 text-[#7d6d60]">
                     2년 이상 미래 조회는 아직 준비 중이며, 과거 10년 조회는
                     2차 확장으로 안내합니다.
                   </p>
@@ -1425,7 +1478,7 @@ export default function NewReportPage({
                   <div className="space-y-2">
                     <label
                       htmlFor="selectedYear"
-                      className="block text-sm font-medium text-neutral-200"
+                      className="block text-sm font-medium text-[#3f3129]"
                     >
                       조회 연도
                     </label>
@@ -1441,146 +1494,42 @@ export default function NewReportPage({
                           selectedYear: event.target.value,
                         })
                       }
-                      className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                      className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
                     />
                   </div>
-                  <button
-                    type="button"
-                    disabled
-                    aria-disabled="true"
-                    className="min-h-12 rounded-lg border border-[#c79a43]/40 bg-[#2c1e1f] px-5 py-3 text-sm font-bold text-[#c79a43]/80"
-                  >
-                    {singleProductCtaLabel}
-                  </button>
                 </div>
               </section>
-            ) : (
-              <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
-                <div className="space-y-2">
-                  <p className="text-sm font-bold text-[#c79a43]">
-                    {selectedProduct.nameKo} 기준
-                  </p>
-                  <p className="text-sm leading-6 text-[#cfc5b8]">
-                    별도 추가 질문 없이 공통 입력값을 기준으로 리포트 입력
-                    context를 준비합니다.
-                  </p>
-                  <p className="text-sm leading-6 text-[#92877b]">
-                    현재 맥락 정보는 계산 원인이 아니라 해석을 현실 장면으로
-                    바꾸는 데만 사용합니다.
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  disabled
-                  aria-disabled="true"
-                  className="min-h-12 rounded-lg border border-[#c79a43]/40 bg-[#2c1e1f] px-5 py-3 text-sm font-bold text-[#c79a43]/80"
-                >
-                  {singleProductCtaLabel}
-                </button>
-              </section>
-            )}
+            ) : null}
 
-            <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
-              <div className="space-y-2">
-                <p className="text-sm font-bold text-[#c79a43]">
-                  입력 확인 요약
-                </p>
-                <p className="text-sm leading-6 text-[#cfc5b8]">
-                  실제 생성 전 단계이며, 현재 입력값이 어떤 상품 context로
-                  유지되는지 확인합니다.
-                </p>
-              </div>
-
-              <dl className="grid gap-3 text-sm lg:grid-cols-2">
-                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                  <dt className="font-semibold text-neutral-200">기본 정보</dt>
-                  <dd className="mt-2 space-y-1 text-neutral-400">
-                    <p>이름: {singleProductInput.name.trim() || "미입력"}</p>
-                    <p>생년월일: {singleProductInput.birthDate || "미입력"}</p>
-                    <p>
-                      출생시간: {formatAnnualBirthTimeSummary(singleProductInput)}
-                    </p>
-                    <p>성별: {formatGenderLabel(singleProductInput.gender)}</p>
-                    <p>MBTI: {singleProductInput.mbtiType || "미선택"}</p>
-                  </dd>
-                </div>
-
-                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                  <dt className="font-semibold text-neutral-200">현재 맥락</dt>
-                  <dd className="mt-2 space-y-1 text-neutral-400">
-                    <p>
-                      현재 연애 상태:{" "}
-                      {formatAnnualRelationshipStatus(
-                        singleProductInput.relationshipStatus,
-                      )}
-                    </p>
-                    <p>
-                      직업 상태:{" "}
-                      {formatAnnualJobStatus(singleProductInput.jobStatus)}
-                    </p>
-                    <p>
-                      세부 직업:{" "}
-                      {singleProductInput.detailedJob.trim() || "미입력"}
-                    </p>
-                    <p>
-                      관심 영역:{" "}
-                      {singleProductInput.focusAreas.length > 0
-                        ? singleProductInput.focusAreas.join(", ")
-                        : "미입력"}
-                    </p>
-                  </dd>
-                </div>
-
-                {isSingleProductAnnual ? (
-                  <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                    <dt className="font-semibold text-neutral-200">조회 연도</dt>
-                    <dd className="mt-2 text-neutral-400">
-                      {singleProductInput.selectedYear || "미입력"}
-                    </dd>
-                  </div>
-                ) : null}
-
-                <div
-                  className={
-                    isSingleProductAnnual
-                      ? "rounded-lg border border-neutral-800 bg-neutral-950/70 p-4"
-                      : "rounded-lg border border-neutral-800 bg-neutral-950/70 p-4 lg:col-span-2"
-                  }
-                >
-                  <dt className="font-semibold text-neutral-200">상품 정보</dt>
-                  <dd className="mt-2 space-y-1 text-neutral-400">
-                    <p>productKey: {selectedProduct.productKey}</p>
-                    <p>productSlug: {selectedProduct.slug}</p>
-                  </dd>
-                </div>
-              </dl>
-
-              <p
+            <div className="space-y-3">
+              <button
+                type={isSingleProductComprehensiveV2 ? "submit" : "button"}
+                disabled={
+                  !isSingleProductComprehensiveV2 ||
+                  !isSingleProductInputReady ||
+                  isSingleProductSubmitting
+                }
+                aria-disabled={
+                  !isSingleProductComprehensiveV2 ||
+                  !isSingleProductInputReady ||
+                  isSingleProductSubmitting
+                }
                 className={
-                  isSingleProductInputReady
-                    ? "rounded-lg border border-emerald-900/50 bg-emerald-950/20 p-4 text-sm font-semibold text-emerald-100"
-                    : "rounded-lg border border-amber-900/50 bg-amber-950/20 p-4 text-sm font-semibold text-amber-100"
+                  isSingleProductComprehensiveV2 &&
+                  isSingleProductInputReady &&
+                  !isSingleProductSubmitting
+                    ? "min-h-12 rounded-lg border border-[#6f1d35] bg-[#6f1d35] px-5 py-3 text-sm font-bold text-[#fffdf8] transition hover:bg-[#7f2440]"
+                    : "min-h-12 rounded-lg border border-[#d7b56d] bg-[#fffaf1] px-5 py-3 text-sm font-bold text-[#8b6d2d]"
                 }
               >
                 {singleProductCtaLabel}
-              </p>
-            </section>
-
-            <aside className="space-y-3 rounded-lg border border-[#4a3434] bg-[#171211]/70 p-5 text-sm leading-6 text-[#cfc5b8]">
-              <p className="font-semibold text-[#fffaf0]">개발 미리보기</p>
-              <p>
-                현재 화면은 단독 인물 상품 입력 흐름을 연결하기 위한 준비
-                화면입니다. 현재 입력값으로 실제 리포트를 생성하지 않습니다.
-              </p>
-              <p>
-                실제 생성, 결제, 저장은 이후 단계에서 연결합니다.
-              </p>
-              {singleProductDevPreviewHref ? (
-                <p className="break-words text-[#c79a43]">
-                  {singleProductDevPreviewHref}
+              </button>
+              {singleProductSubmitError ? (
+                <p className="rounded-lg border border-[#b94b5a]/40 bg-[#fff1f2] p-4 text-sm font-semibold text-[#8a1d3d]">
+                  {singleProductSubmitError}
                 </p>
               ) : null}
-            </aside>
+            </div>
           </form>
         </section>
       </main>
@@ -1603,8 +1552,7 @@ export default function NewReportPage({
               리포트입니다.
             </p>
             <p className="max-w-2xl rounded-lg border border-[#4a3434] bg-[#211817]/80 px-4 py-3 text-sm leading-6 text-[#cfc5b8]">
-              현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산
-              원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.
+              {SINGLE_PRODUCT_CONTEXT_NOTICE_KO}
               실제 생성/결제 연결은 준비 중입니다.
             </p>
           </header>
@@ -1655,7 +1603,7 @@ export default function NewReportPage({
                     type="text"
                     value={majorFortuneInput.name}
                     maxLength={20}
-                    placeholder="예: 덕민"
+                    placeholder="이름을 입력해 주세요"
                     onChange={(event) =>
                       setMajorFortuneInput({
                         ...majorFortuneInput,
@@ -1905,41 +1853,6 @@ export default function NewReportPage({
                   </p>
                 </div>
 
-                <fieldset className="space-y-3 sm:col-span-2">
-                  <legend className="text-sm font-medium text-neutral-200">
-                    관심 영역
-                  </legend>
-                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                    {annualFocusAreaOptions.map((area) => (
-                      <label
-                        key={area}
-                        className="flex min-h-12 items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200"
-                      >
-                        <input
-                          type="checkbox"
-                          name="focusAreas"
-                          value={area}
-                          checked={majorFortuneInput.focusAreas.includes(area)}
-                          onChange={() =>
-                            setMajorFortuneInput({
-                              ...majorFortuneInput,
-                              focusAreas: toggleAnnualFocusArea(
-                                majorFortuneInput.focusAreas,
-                                area,
-                              ),
-                            })
-                          }
-                          className="h-4 w-4"
-                        />
-                        {area}
-                      </label>
-                    ))}
-                  </div>
-                  <p className="text-xs leading-5 text-neutral-500">
-                    선택 입력입니다. 직업, 돈, 연애, 관계, 건강관리, 공부,
-                    가족, 생활 리듬 중 관심 있는 영역만 고르세요.
-                  </p>
-                </fieldset>
               </div>
             </section>
 
@@ -1950,7 +1863,7 @@ export default function NewReportPage({
                 </p>
                 <p className="text-sm leading-6 text-[#cfc5b8]">
                   별도 추가 질문 없이 공통 입력값을 기준으로 10년 흐름
-                  리포트 입력 context를 준비합니다.
+                  리포트 입력 정보를 준비합니다.
                 </p>
                 <p className="text-sm leading-6 text-[#92877b]">
                   대운은 입력된 생년월일과 출생시간을 바탕으로 큰 흐름을
@@ -1974,8 +1887,7 @@ export default function NewReportPage({
                   입력 확인 요약
                 </p>
                 <p className="text-sm leading-6 text-[#cfc5b8]">
-                  실제 생성 전 단계이며, 현재 입력값이 어떤 대운 context로
-                  유지되는지 확인합니다.
+                  현재 입력값이 대운 리포트에 어떻게 반영되는지 확인합니다.
                 </p>
               </div>
 
@@ -2010,20 +1922,16 @@ export default function NewReportPage({
                       세부 직업:{" "}
                       {majorFortuneInput.detailedJob.trim() || "미입력"}
                     </p>
-                    <p>
-                      관심 영역:{" "}
-                      {majorFortuneInput.focusAreas.length > 0
-                        ? majorFortuneInput.focusAreas.join(", ")
-                        : "미입력"}
-                    </p>
                   </dd>
                 </div>
 
                 <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4 lg:col-span-2">
-                  <dt className="font-semibold text-neutral-200">상품 정보</dt>
+                  <dt className="font-semibold text-neutral-200">
+                    선택한 리포트
+                  </dt>
                   <dd className="mt-2 space-y-1 text-neutral-400">
-                    <p>productKey: {selectedProduct.productKey}</p>
-                    <p>productSlug: {selectedProduct.slug}</p>
+                    <p>리포트 종류: {selectedProduct.nameKo}</p>
+                    <p>생성 방식: 미리보기 준비</p>
                   </dd>
                 </div>
               </dl>
@@ -2040,7 +1948,7 @@ export default function NewReportPage({
             </section>
 
             <aside className="space-y-3 rounded-lg border border-[#4a3434] bg-[#171211]/70 p-5 text-sm leading-6 text-[#cfc5b8]">
-              <p className="font-semibold text-[#fffaf0]">개발 미리보기</p>
+              <p className="font-semibold text-[#fffaf0]">샘플 보기</p>
               <p>
                 현재 화면은 대운 전용 입력 흐름을 연결하기 위한 준비 화면입니다.
                 현재 입력값으로 실제 리포트를 생성하지 않습니다.
@@ -2049,7 +1957,7 @@ export default function NewReportPage({
                 실제 생성, 결제, 저장은 이후 단계에서 연결합니다.
               </p>
               <p className="break-words text-[#c79a43]">
-                /dev/major-fortune-preview?fixture=deokmin-current-major-fortune&amp;snapshot=latest
+                /dev/major-fortune-preview?fixture=deokmin-current-major-fortune
               </p>
             </aside>
           </form>
@@ -2073,8 +1981,7 @@ export default function NewReportPage({
               세운은 선택한 한 해의 흐름을 보는 리포트입니다.
             </p>
             <p className="max-w-2xl rounded-lg border border-[#4a3434] bg-[#211817]/80 px-4 py-3 text-sm leading-6 text-[#cfc5b8]">
-              현재 연애 상태, 직업 상태, 세부 직업, 관심 영역은 계산
-              원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.
+              {SINGLE_PRODUCT_CONTEXT_NOTICE_KO}
               실제 생성/결제 연결은 준비 중입니다.
             </p>
           </header>
@@ -2125,7 +2032,7 @@ export default function NewReportPage({
                     type="text"
                     value={annualFortuneInput.name}
                     maxLength={20}
-                    placeholder="예: 덕민"
+                    placeholder="이름을 입력해 주세요"
                     onChange={(event) =>
                       setAnnualFortuneInput({
                         ...annualFortuneInput,
@@ -2375,41 +2282,6 @@ export default function NewReportPage({
                   </p>
                 </div>
 
-                <fieldset className="space-y-3 sm:col-span-2">
-                  <legend className="text-sm font-medium text-neutral-200">
-                    관심 영역
-                  </legend>
-                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                    {annualFocusAreaOptions.map((area) => (
-                      <label
-                        key={area}
-                        className="flex min-h-12 items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200"
-                      >
-                        <input
-                          type="checkbox"
-                          name="focusAreas"
-                          value={area}
-                          checked={annualFortuneInput.focusAreas.includes(area)}
-                          onChange={() =>
-                            setAnnualFortuneInput({
-                              ...annualFortuneInput,
-                              focusAreas: toggleAnnualFocusArea(
-                                annualFortuneInput.focusAreas,
-                                area,
-                              ),
-                            })
-                          }
-                          className="h-4 w-4"
-                        />
-                        {area}
-                      </label>
-                    ))}
-                  </div>
-                  <p className="text-xs leading-5 text-neutral-500">
-                    선택 입력입니다. 직업, 돈, 연애, 관계, 건강관리, 공부,
-                    가족, 생활 리듬 중 관심 있는 영역만 고르세요.
-                  </p>
-                </fieldset>
               </div>
             </section>
 
@@ -2420,7 +2292,7 @@ export default function NewReportPage({
                 </p>
                 <p className="text-sm leading-6 text-[#cfc5b8]">
                   기본값은 현재 연도입니다. 과거 5년과 올해를 우선 조회하고,
-                  12월 1일 이후에는 다음 해 신년사주 preview가 열립니다.
+                  12월 1일 이후에는 다음 해 신년사주 미리보기가 열립니다.
                 </p>
                 <p className="text-sm leading-6 text-[#92877b]">
                   2년 이상 미래 조회는 아직 준비 중이며, 과거 10년 조회는
@@ -2467,8 +2339,7 @@ export default function NewReportPage({
                   입력 확인 요약
                 </p>
                 <p className="text-sm leading-6 text-[#cfc5b8]">
-                  실제 생성 전 단계이며, 현재 입력값이 어떤 세운 context로
-                  유지되는지 확인합니다.
+                  현재 입력값이 세운 리포트에 어떻게 반영되는지 확인합니다.
                 </p>
               </div>
 
@@ -2503,12 +2374,6 @@ export default function NewReportPage({
                       세부 직업:{" "}
                       {annualFortuneInput.detailedJob.trim() || "미입력"}
                     </p>
-                    <p>
-                      관심 영역:{" "}
-                      {annualFortuneInput.focusAreas.length > 0
-                        ? annualFortuneInput.focusAreas.join(", ")
-                        : "미입력"}
-                    </p>
                   </dd>
                 </div>
 
@@ -2520,10 +2385,12 @@ export default function NewReportPage({
                 </div>
 
                 <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                  <dt className="font-semibold text-neutral-200">상품 context</dt>
+                  <dt className="font-semibold text-neutral-200">
+                    선택한 리포트
+                  </dt>
                   <dd className="mt-2 space-y-1 text-neutral-400">
-                    <p>productKey: {selectedProduct.productKey}</p>
-                    <p>productSlug: {selectedProduct.slug}</p>
+                    <p>리포트 종류: {selectedProduct.nameKo}</p>
+                    <p>생성 방식: 미리보기 준비</p>
                   </dd>
                 </div>
               </dl>
@@ -2540,7 +2407,7 @@ export default function NewReportPage({
             </section>
 
             <aside className="space-y-3 rounded-lg border border-[#4a3434] bg-[#171211]/70 p-5 text-sm leading-6 text-[#cfc5b8]">
-              <p className="font-semibold text-[#fffaf0]">개발 미리보기</p>
+              <p className="font-semibold text-[#fffaf0]">샘플 보기</p>
               <p>
                 현재 화면은 세운 전용 입력 흐름을 연결하기 위한 준비 화면입니다.
                 현재 입력값으로 실제 리포트를 생성하지 않습니다.
@@ -2549,7 +2416,7 @@ export default function NewReportPage({
                 실제 생성, 결제, 저장은 이후 단계에서 연결합니다.
               </p>
               <p className="break-words text-[#c79a43]">
-                /dev/annual-fortune-preview?fixture=deokmin-2026-current&amp;snapshot=latest
+                /dev/annual-fortune-preview?fixture=deokmin-2026-current
               </p>
             </aside>
           </form>
@@ -2670,8 +2537,7 @@ export default function NewReportPage({
                   입력 확인 요약
                 </p>
                 <p className="text-sm leading-6 text-[#cfc5b8]">
-                  현재 입력값이 어떤 궁합 preview payload로 생성되는지
-                  확인합니다.
+                  현재 입력값이 궁합 리포트에 어떻게 반영되는지 확인합니다.
                 </p>
               </div>
 
@@ -2714,10 +2580,12 @@ export default function NewReportPage({
                 </div>
 
                 <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                  <dt className="font-semibold text-neutral-200">상품 context</dt>
+                  <dt className="font-semibold text-neutral-200">
+                    선택한 리포트
+                  </dt>
                   <dd className="mt-2 space-y-1 text-neutral-400">
-                    <p>productKey: {selectedProduct.productKey}</p>
-                    <p>productSlug: {selectedProduct.slug}</p>
+                    <p>리포트 종류: {selectedProduct.nameKo}</p>
+                    <p>생성 방식: 입력값 기반 미리보기</p>
                   </dd>
                 </div>
               </dl>
@@ -2739,16 +2607,16 @@ export default function NewReportPage({
             </section>
 
             <aside className="space-y-3 rounded-lg border border-[#4a3434] bg-[#171211]/70 p-5 text-sm leading-6 text-[#cfc5b8]">
-              <p className="font-semibold text-[#fffaf0]">개발 미리보기</p>
+              <p className="font-semibold text-[#fffaf0]">샘플 보기</p>
               <p>
-                현재 화면은 입력값 기반 궁합 preview generation을 실행합니다.
+                입력한 정보를 바탕으로 궁합 미리보기 리포트를 생성합니다.
                 결제와 유료 저장은 이후 단계에서 연결합니다.
               </p>
               <p>
                 아래 링크는 입력과 무관한 샘플 미리보기입니다.
               </p>
               <p className="break-words text-[#c79a43]">
-                /dev/compatibility-preview?fixture=deokmin-sodam-love&amp;snapshot=latest
+                /dev/compatibility-preview?fixture=deokmin-sodam-love
               </p>
             </aside>
           </form>
@@ -2922,7 +2790,7 @@ export default function NewReportPage({
                     value={displayName}
                     maxLength={20}
                     onChange={(event) => setDisplayName(event.target.value)}
-                    placeholder="예: 덕짱"
+                    placeholder="이름을 입력해 주세요"
                     className="w-full rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
                   />
                   <p className="text-xs leading-5 text-neutral-500">
@@ -3199,7 +3067,7 @@ export default function NewReportPage({
                     <p className="text-sm font-bold text-sky-700">
                       {isSelectedProductPurchasable
                         ? "전체 리포트"
-                        : "개발 preview 상품"}
+                        : "미리보기 상품"}
                     </p>
                     <h3 className="text-xl font-extrabold">
                       {selectedProduct.nameKo}
@@ -3248,15 +3116,15 @@ export default function NewReportPage({
                         </dd>
                       </div>
                       <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3">
-                        <dt className="text-neutral-500">productKey</dt>
+                        <dt className="text-neutral-500">리포트 종류</dt>
                         <dd className="mt-1 font-bold text-neutral-950">
-                          {selectedProduct.productKey}
+                          {selectedProduct.nameKo}
                         </dd>
                       </div>
                       <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3">
-                        <dt className="text-neutral-500">slug</dt>
+                        <dt className="text-neutral-500">생성 방식</dt>
                         <dd className="mt-1 font-bold text-neutral-950">
-                          {selectedProduct.slug}
+                          미리보기 준비
                         </dd>
                       </div>
                     </dl>
@@ -3294,7 +3162,7 @@ export default function NewReportPage({
                         {selectedProduct.nameKo} 생성 준비 흐름입니다.
                       </p>
                       <p className="mt-2 text-sm leading-6 text-neutral-600">
-                        입력값과 선택 상품 context를 유지합니다. 정식 결제와
+                        입력값과 선택한 리포트 정보를 유지합니다. 정식 결제와
                         유료 생성은 별도 연결 단계에서 활성화합니다.
                       </p>
                     </div>
@@ -3387,9 +3255,9 @@ export default function NewReportPage({
                 </div>
               ) : null}
               <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4 sm:col-span-2">
-                <dt className="text-neutral-500">선택 상품 context</dt>
+                <dt className="text-neutral-500">선택한 리포트</dt>
                 <dd className="mt-1 font-semibold text-neutral-100">
-                  {selectedProduct.productKey} · {selectedProduct.slug}
+                  {selectedProduct.nameKo}
                 </dd>
               </div>
             </dl>
