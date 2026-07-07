@@ -485,6 +485,24 @@ describe("comprehensive report draft validator", () => {
     );
   });
 
+  it("rejects assembled V2 longform scaffolds and Korean particle regressions", () => {
+    const draft: ComprehensiveReportV2Draft = {
+      ...createValidV2Draft(),
+      longformReadings: createLongformReadings()?.map((reading) =>
+        reading.readingId === "workMoneyStudyReading"
+          ? {
+              ...reading,
+              body: `${reading.body} 일·돈·공부은 어떤 생활 장면으로 바뀌는지 읽습니다. 일·돈·공부에서 ENTJ는 원인이 아니라 같은 문장 틀로 반복됩니다. 정재을 반복하는 조사 오류도 사용자 화면에 남으면 안 됩니다. 재고귀인을 중심에 두고 전체 결을 긴 호흡으로 풀어보는 장입니다. 목표 지휘관 단서는 화면에 남으면 안 되고, 신호가 함께 나타날 수 있습니다 같은 문장도 조립문입니다. 토 과다을, 토 과다은, 편재이, 화개은 같은 조사 오류도 막아야 합니다. 가장 먼저 체감되는 기준입니다, 흐름이 생기므로, 로 힘을 얻지만, 좋습니다 이, 합니다 재다신약은, 장면. 같은 문장도 사용자 화면에 남으면 안 됩니다.`,
+            }
+          : reading,
+      ),
+    };
+    const result = validateComprehensiveReportDraft(draft);
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("ASSEMBLED_LONGFORM_PATTERN");
+  });
+
   it("requires the explicit Saju feature interpretation chapter in V2 drafts", () => {
     const draftWithoutFeatureChapter = Object.fromEntries(
       Object.entries({

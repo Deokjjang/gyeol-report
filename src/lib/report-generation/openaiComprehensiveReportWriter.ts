@@ -333,11 +333,91 @@ function sanitizeParsedNarrativeDraft(parsed: unknown): {
   }
 
   const result = sanitizeComprehensiveReportNarrativeDraft(parsed);
+  const particleResult = sanitizeKoreanParticleRegressions(result.draft);
 
   return {
-    parsed: result.draft,
-    sanitized: result.sanitized,
-    sanitizedTerms: result.sanitizedTerms,
+    parsed: particleResult.value,
+    sanitized: result.sanitized || particleResult.sanitized,
+    sanitizedTerms: particleResult.sanitized
+      ? [...result.sanitizedTerms, "korean-particle-regression"]
+      : result.sanitizedTerms,
+  };
+}
+
+function sanitizeKoreanParticleRegressionText(value: string): string {
+  return value
+    .replaceAll("정재" + "을", "정재를")
+    .replaceAll("편재" + "을", "편재를")
+    .replaceAll("토 과다" + "을", "토 과다를")
+    .replaceAll("토 과다" + "은", "토 과다는")
+    .replaceAll("편재" + "이", "편재가")
+    .replaceAll("화개" + "은", "화개는")
+    .replaceAll("편재은", "편재는")
+    .replaceAll("정재은", "정재는")
+    .replaceAll("갑신일주" + "을", "갑신일주를")
+    .replaceAll("갑신일주" + "이", "갑신일주가")
+    .replaceAll("갑신일주은", "갑신일주는")
+    .replaceAll("마지막 정리" + "은", "마지막 정리는")
+    .replaceAll("사람, 가족, 환경" + "는", "사람, 가족, 환경은")
+    .replaceAll("나타납니다" + "로 나타납니다", "나타납니다")
+    .replaceAll("나타납니다" + "로", "나타납니다")
+    .replaceAll("입니다로 나타납니다", "입니다")
+    .replaceAll("습니다로 나타납니다", "습니다")
+    .replaceAll("합니다 " + "그래서", "합니다. 그래서")
+    .replaceAll("장면. " + "강점으로", "장면입니다. 강점으로")
+    .replaceAll("살아납니다 " + "쪽", "살아나는 방향")
+    .replaceAll("조심해야 합니다 " + "쪽", "조심해야 하는 방향")
+    .replaceAll("느낍니다가", "느끼는 흐름이")
+    .replaceAll("잘 쓰면 잘 쓰면", "잘 쓰면")
+    .replace(/([가-힣A-Za-z0-9·]+은)\s+\1\s+/gu, "$1 ");
+}
+
+function sanitizeKoreanParticleRegressions<T>(value: T): {
+  readonly value: T;
+  readonly sanitized: boolean;
+} {
+  if (typeof value === "string") {
+    const nextValue = sanitizeKoreanParticleRegressionText(value);
+
+    return {
+      value: nextValue as T,
+      sanitized: nextValue !== value,
+    };
+  }
+  if (Array.isArray(value)) {
+    let sanitized = false;
+    const nextValue = value.map((item) => {
+      const result = sanitizeKoreanParticleRegressions(item);
+      sanitized = sanitized || result.sanitized;
+
+      return result.value;
+    });
+
+    return {
+      value: nextValue as T,
+      sanitized,
+    };
+  }
+  if (value !== null && typeof value === "object") {
+    let sanitized = false;
+    const nextValue = Object.fromEntries(
+      Object.entries(value).map(([key, item]) => {
+        const result = sanitizeKoreanParticleRegressions(item);
+        sanitized = sanitized || result.sanitized;
+
+        return [key, result.value];
+      }),
+    );
+
+    return {
+      value: nextValue as T,
+      sanitized,
+    };
+  }
+
+  return {
+    value,
+    sanitized: false,
   };
 }
 

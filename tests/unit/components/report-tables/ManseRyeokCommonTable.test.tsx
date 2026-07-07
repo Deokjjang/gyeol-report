@@ -38,12 +38,12 @@ const tableData: ManseRyeokCommonTableData = {
       colorToken: "metal-gold",
     },
     year: {
-      hanja: "丙",
-      ko: "병",
-      tenGod: "식신",
-      element: "fire",
-      yinYang: "yang",
-      colorToken: "fire-red",
+      hanja: "己",
+      ko: "기",
+      tenGod: "정재",
+      element: "earth",
+      yinYang: "yin",
+      colorToken: "earth-soil",
     },
   },
   branchRow: {
@@ -72,13 +72,48 @@ const tableData: ManseRyeokCommonTableData = {
       colorToken: "earth-soil",
     },
     year: {
-      hanja: "子",
-      ko: "자",
-      tenGod: "정인",
-      element: "water",
-      yinYang: "yang",
-      colorToken: "water-sky",
+      hanja: "卯",
+      ko: "묘",
+      tenGod: "겁재",
+      element: "wood",
+      yinYang: "yin",
+      colorToken: "wood-green",
     },
+  },
+  fiveElementDistribution: {
+    basisLabel: "천간·지지 8글자 기준",
+    items: [
+      {
+        element: "wood",
+        label: "목",
+        count: 2,
+        colorToken: "wood-green",
+      },
+      {
+        element: "fire",
+        label: "화",
+        count: 0,
+        colorToken: "fire-red",
+      },
+      {
+        element: "earth",
+        label: "토",
+        count: 4,
+        colorToken: "earth-soil",
+      },
+      {
+        element: "metal",
+        label: "금",
+        count: 2,
+        colorToken: "metal-gold",
+      },
+      {
+        element: "water",
+        label: "수",
+        count: 0,
+        colorToken: "water-sky",
+      },
+    ],
   },
   detailRows: [
     {
@@ -184,6 +219,27 @@ describe("ManseRyeokCommonTable", () => {
     ]) {
       expect(html).toContain(marker);
     }
+  });
+
+  it("renders the five-element distribution including zero counts", () => {
+    const html = renderToStaticMarkup(
+      <ManseRyeokCommonTable data={tableData} />,
+    );
+
+    for (const marker of [
+      "오행 분포",
+      "기준: 천간·지지 8글자 기준",
+      "manse-five-element-grid",
+      "목 2",
+      "화 0",
+      "토 4",
+      "금 2",
+      "수 0",
+    ]) {
+      expect(html).toContain(marker);
+    }
+    expect(html).toContain('aria-label="목 2"');
+    expect(html).not.toContain("sr-only");
   });
 
   it("renders hyphens for empty values", () => {

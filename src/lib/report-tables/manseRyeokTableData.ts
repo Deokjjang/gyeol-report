@@ -7,6 +7,8 @@ import type {
   ManseRyeokDetailRow,
   ManseRyeokPillarKey,
   ManseRyeokStemBranchCell,
+  ReportTableElementColorToken,
+  ReportTableFiveElement,
 } from "./types";
 
 export type ManseRyeokFourPillarGridColumnInput = {
@@ -48,6 +50,57 @@ const DETAIL_ROW_DEFINITIONS: readonly Pick<
   { key: "interactions", label: "합충형파해" },
 ];
 
+const FIVE_ELEMENT_ORDER = [
+  "wood",
+  "fire",
+  "earth",
+  "metal",
+  "water",
+] as const satisfies readonly ReportTableFiveElement[];
+
+const FIVE_ELEMENT_LABEL_BY_ELEMENT = {
+  wood: "목",
+  fire: "화",
+  earth: "토",
+  metal: "금",
+  water: "수",
+} as const satisfies Record<ReportTableFiveElement, "목" | "화" | "토" | "금" | "수">;
+
+const FIVE_ELEMENT_COLOR_TOKEN_BY_ELEMENT = {
+  wood: "wood-green",
+  fire: "fire-red",
+  earth: "earth-soil",
+  metal: "metal-gold",
+  water: "water-sky",
+} as const satisfies Record<ReportTableFiveElement, ReportTableElementColorToken>;
+
+const FIVE_ELEMENT_BY_GANJI_CHARACTER: Readonly<
+  Record<string, ReportTableFiveElement>
+> = {
+  甲: "wood",
+  乙: "wood",
+  寅: "wood",
+  卯: "wood",
+  丙: "fire",
+  丁: "fire",
+  巳: "fire",
+  午: "fire",
+  戊: "earth",
+  己: "earth",
+  辰: "earth",
+  戌: "earth",
+  丑: "earth",
+  未: "earth",
+  庚: "metal",
+  辛: "metal",
+  申: "metal",
+  酉: "metal",
+  壬: "water",
+  癸: "water",
+  亥: "water",
+  子: "water",
+};
+
 export function buildManseRyeokCommonTableData(
   input: BuildManseRyeokCommonTableDataInput,
 ): ManseRyeokCommonTableData {
@@ -62,6 +115,7 @@ export function buildManseRyeokCommonTableData(
     columns: MANSE_RYEOK_COLUMNS,
     stemRow: buildStemRow(pillarsByKey),
     branchRow: buildBranchRow(pillarsByKey),
+    fiveElementDistribution: buildFiveElementDistribution(pillarsByKey),
     detailRows: buildDetailRows(pillarsByKey),
   };
 }
@@ -142,6 +196,52 @@ function buildDetailRows(
       year: getDetailValues(pillarsByKey.get("year"), definition.key),
     },
   }));
+}
+
+function buildFiveElementDistribution(
+  pillarsByKey: ReadonlyMap<ManseRyeokPillarKey, ManseRyeokFourPillarGridColumnInput>,
+): ManseRyeokCommonTableData["fiveElementDistribution"] {
+  const counts: Record<ReportTableFiveElement, number> = {
+    wood: 0,
+    fire: 0,
+    earth: 0,
+    metal: 0,
+    water: 0,
+  };
+
+  for (const column of MANSE_RYEOK_COLUMNS) {
+    const pillar = pillarsByKey.get(column.key);
+
+    incrementFiveElementCount(counts, getStemHanja(pillar));
+    incrementFiveElementCount(counts, getBranchHanja(pillar));
+  }
+
+  return {
+    basisLabel: "천간·지지 8글자 기준",
+    items: FIVE_ELEMENT_ORDER.map((element) => ({
+      element,
+      label: FIVE_ELEMENT_LABEL_BY_ELEMENT[element],
+      count: counts[element],
+      colorToken: FIVE_ELEMENT_COLOR_TOKEN_BY_ELEMENT[element],
+    })),
+  };
+}
+
+function incrementFiveElementCount(
+  counts: Record<ReportTableFiveElement, number>,
+  ganjiCharacter: string | null,
+): void {
+  if (ganjiCharacter === null) {
+    return;
+  }
+
+  const element = FIVE_ELEMENT_BY_GANJI_CHARACTER[ganjiCharacter.trim()];
+
+  if (element === undefined) {
+    return;
+  }
+
+  counts[element] += 1;
 }
 
 function getStemHanja(

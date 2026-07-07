@@ -39,6 +39,7 @@ const deokminSampleFacts = {
 } as const satisfies ComputedSajuFacts;
 
 function createChapter(chapterId: ComprehensiveReportV2ChapterId, titleKo: string) {
+  const titleWithTopic = titleKo === "사람, 가족, 환경" ? `${titleKo}은` : `${titleKo}는`;
   const topicExtra =
     chapterId === "work_money_study"
       ? "공부/일 루틴은 자격증, 전문서, 직무 학습, 사업 학습을 2주 단위 목표로 쪼개는 방식이 맞습니다. 돈은 공격 계획과 방어 계획을 분리해야 하며, 현금흐름과 투자와 자기계발 예산을 따로 보아야 합니다."
@@ -113,7 +114,7 @@ function createChapter(chapterId: ComprehensiveReportV2ChapterId, titleKo: strin
   return {
     chapterId,
     titleKo,
-    headline: `${titleKo}는 갑목과 갑신일주를 먼저 놓고 읽습니다.`,
+    headline: `${titleWithTopic} 갑목과 갑신일주를 먼저 놓고 읽습니다.`,
     hitReadingLines,
     body:
       chapterId === "final_message"

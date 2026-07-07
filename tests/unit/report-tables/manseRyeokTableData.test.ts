@@ -101,6 +101,28 @@ describe("buildManseRyeokCommonTableData", () => {
     expect(data.branchRow.month?.colorToken).toBe("earth-soil");
   });
 
+  it("calculates five-element distribution from heavenly stems and earthly branches only", () => {
+    const data = buildManseRyeokCommonTableData({
+      fourPillarGrid: sampleFourPillarGrid,
+    });
+
+    expect(data.fiveElementDistribution.basisLabel).toBe(
+      "천간·지지 8글자 기준",
+    );
+    expect(
+      data.fiveElementDistribution.items.map((item) => [
+        item.label,
+        item.count,
+      ]),
+    ).toEqual([
+      ["목", 2],
+      ["화", 0],
+      ["토", 4],
+      ["금", 2],
+      ["수", 0],
+    ]);
+  });
+
   it("builds detail rows in the spec order", () => {
     const data = buildManseRyeokCommonTableData({
       fourPillarGrid: sampleFourPillarGrid,

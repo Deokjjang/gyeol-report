@@ -4,6 +4,7 @@ import { useId, useState, type ReactNode } from "react";
 
 import type {
   ManseRyeokCommonTableData,
+  ManseRyeokFiveElementDistribution,
   ManseRyeokStemBranchCell,
   ReportTableElementColorToken,
 } from "../../lib/report-tables/types";
@@ -90,6 +91,8 @@ export default function ManseRyeokCommonTable({
             ))}
           </div>
 
+          <FiveElementDistribution data={data.fiveElementDistribution} />
+
           {visibleDetailRows.map((row) => (
             <div key={row.key} className="bg-[#fffdf8]">
               <h3 className="bg-[#f5efe5] px-3 py-2 text-center text-xs font-extrabold text-[#7a6f63]">
@@ -99,7 +102,7 @@ export default function ManseRyeokCommonTable({
                 {data.columns.map((column) => (
                   <div
                     key={`${row.key}-${column.key}`}
-                    className="min-h-10 border-l border-[#efe6d8] px-1.5 py-2 first:border-l-0 break-keep"
+                    className="min-h-10 border-l border-[#efe6d8] px-1.5 py-2 first:border-l-0 break-keep [overflow-wrap:anywhere]"
                   >
                     {formatDetailValues(row.cells[column.key])}
                   </div>
@@ -109,6 +112,41 @@ export default function ManseRyeokCommonTable({
           ))}
         </div>
       ) : null}
+    </section>
+  );
+}
+
+function FiveElementDistribution({
+  data,
+}: {
+  readonly data: ManseRyeokFiveElementDistribution;
+}) {
+  return (
+    <section
+      className="space-y-3 bg-[#fffdf8] px-3 py-4"
+      aria-label="오행 분포"
+    >
+      <div className="space-y-1">
+        <h3 className="text-sm font-extrabold text-[#5a4633]">오행 분포</h3>
+      </div>
+      <div className="manse-five-element-grid grid grid-cols-5 gap-2">
+        {data.items.map((item) => (
+          <div
+            key={item.element}
+            aria-label={`${item.label} ${item.count}`}
+            className={joinClassNames(
+              "min-w-0 rounded-[8px] border px-2 py-2 text-center",
+              ELEMENT_CARD_CLASS_BY_TOKEN[item.colorToken],
+            )}
+          >
+            <p className="text-xs font-extrabold leading-4">{item.label}</p>
+            <p className="mt-1 text-xl font-black leading-none">{item.count}</p>
+          </div>
+        ))}
+      </div>
+      <p className="min-w-0 break-words text-xs font-bold text-[#8b7c70]">
+        기준: {data.basisLabel}
+      </p>
     </section>
   );
 }

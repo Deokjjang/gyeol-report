@@ -1401,6 +1401,7 @@ export function validateComprehensiveReportDraftAfterRepair(
   if (value !== undefined) {
     appendUserVisiblePromptArtifactErrors(errors, value);
     appendGenericUserLabelErrors(errors, value);
+    appendAssembledLongformPatternErrors(errors, value);
   }
 
   if (
@@ -3259,6 +3260,90 @@ const questionLikeEndings = [
 
 const userVisiblePromptArtifactPhrases = ["draft"] as const;
 const forbiddenGenericUserLabels = ["사용자님", "고객님", "유저님"] as const;
+const forbiddenAssembledLongformPatterns = [
+  {
+    label: "life-scene-headline",
+    pattern: /은 어떤 생활 장면으로 바뀌는지 읽습니다/u,
+  },
+  {
+    label: "life-scene-transfer",
+    pattern: /를 생활 장면으로 옮겨 읽을 때 힘이 생깁니다/u,
+  },
+  {
+    label: "mbti-cause-scaffold",
+    pattern: /에서 ENTJ는 원인이 아니라/u,
+  },
+  {
+    label: "question-record-scaffold",
+    pattern: /부담은 .{0,40}에 맞는 질문과 기록으로 줄여야 합니다/u,
+  },
+  {
+    label: "fast-conclusion-scaffold",
+    pattern: /특히 .{0,40}에서는 결론이 빨리 보이는 대화/u,
+  },
+  {
+    label: "long-breath-scaffold",
+    pattern: /을 중심에 두고 전체 결을 긴 호흡으로/u,
+  },
+  {
+    label: "speech-speed-scaffold",
+    pattern: /의 핵심은 .{0,40}를 사람의 말투와 선택 속도/u,
+  },
+  {
+    label: "db-label-seed-scaffold",
+    pattern: / 단서는/u,
+  },
+  {
+    label: "signal-coappearance-scaffold",
+    pattern: /신호가 함께 나타날 수 있습니다/u,
+  },
+  {
+    label: "temperature-table-scaffold",
+    pattern: /에서는 표현의 온도보다 기준표가 먼저 놓이고/u,
+  },
+  {
+    label: "watch-direction-scaffold",
+    pattern: /쪽을 조심/u,
+  },
+  {
+    label: "felt-standard-scaffold",
+    pattern: /가장 먼저 체감되는 기준입니다/u,
+  },
+  {
+    label: "bold-commander-scaffold",
+    pattern: /대담한 통솔자 성향은/u,
+  },
+  {
+    label: "flow-created-scaffold",
+    pattern: /흐름이 생기므로/u,
+  },
+  {
+    label: "gain-strength-scaffold",
+    pattern: /로 힘을 얻지만/u,
+  },
+  {
+    label: "cost-scaffold",
+    pattern: /관계와 일정의 비용이 커질 수 있습니다/u,
+  },
+  {
+    label: "repeated-core-question",
+    pattern: /결론을 말하기 전, 제가 이해한 핵심은 이것이라고 시작하세요/u,
+  },
+  {
+    label: "particle-regression",
+    pattern:
+      /정재을|편재을|토 과다을|토 과다은|편재이|갑신일주이|마지막 정리은|화개은/u,
+  },
+  {
+    label: "sentence-regression",
+    pattern:
+      /나타납니다로|합니다 그래서|좋습니다 이|좋습니다 당신에게|좋습니다 갑신일주는|합니다 재다신약은|해야 합니다 수 부족은|장면\.|살아납니다 쪽|조심해야 합니다 쪽|위로보다 평가처럼 들릴 수 있습니다 위로보다 평가처럼/u,
+  },
+  {
+    label: "relationship-particle-regression",
+    pattern: /관계는 [^.。!?]{0,40}이/u,
+  },
+] as const;
 
 function collectUserVisibleDraftStrings(
   draft: ComprehensiveReportDraft,
@@ -3313,6 +3398,24 @@ function collectUserVisibleDraftStrings(
           item.practicalLine ?? "",
         ]),
       ]) ?? []),
+      ...(draft.longformReadings?.flatMap((reading) => [
+        reading.titleKo,
+        reading.body,
+        ...reading.sajuTermsUsed,
+        ...reading.mbtiTermsUsed,
+      ]) ?? []),
+      ...(draft.sajuFeatureChapter?.items.flatMap((item) => [
+        draft.sajuFeatureChapter?.titleKo ?? "",
+        draft.sajuFeatureChapter?.subtitleKo ?? "",
+        draft.sajuFeatureChapter?.intro ?? "",
+        item.rawLabel,
+        item.userTitle,
+        item.plainMeaning,
+        item.howItShowsInYou,
+        item.strength,
+        item.fatiguePoint,
+        item.practicalUse,
+      ]) ?? []),
     ];
   }
 
@@ -3353,6 +3456,19 @@ function appendGenericUserLabelErrors(
   for (const label of forbiddenGenericUserLabels) {
     if (text.includes(label)) {
       errors.push(`GENERIC_USER_LABEL_COPY: ${label}`);
+    }
+  }
+}
+
+function appendAssembledLongformPatternErrors(
+  errors: string[],
+  draft: ComprehensiveReportDraft,
+): void {
+  const text = collectUserVisibleDraftStrings(draft).join("\n");
+
+  for (const forbiddenPattern of forbiddenAssembledLongformPatterns) {
+    if (forbiddenPattern.pattern.test(text)) {
+      errors.push(`ASSEMBLED_LONGFORM_PATTERN: ${forbiddenPattern.label}`);
     }
   }
 }
@@ -3551,6 +3667,7 @@ export function validateComprehensiveReportDraft(
   if (value !== undefined) {
     appendUserVisiblePromptArtifactErrors(errors, value);
     appendGenericUserLabelErrors(errors, value);
+    appendAssembledLongformPatternErrors(errors, value);
   }
 
   if (

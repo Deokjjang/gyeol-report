@@ -85,6 +85,18 @@ export type ManseRyeokDetailRow = {
   readonly cells: Record<ManseRyeokPillarKey, readonly string[]>;
 };
 
+export type ManseRyeokFiveElementDistributionItem = {
+  readonly element: ReportTableFiveElement;
+  readonly label: "목" | "화" | "토" | "금" | "수";
+  readonly count: number;
+  readonly colorToken: ReportTableElementColorToken;
+};
+
+export type ManseRyeokFiveElementDistribution = {
+  readonly basisLabel: "천간·지지 8글자 기준";
+  readonly items: readonly ManseRyeokFiveElementDistributionItem[];
+};
+
 export type ManseRyeokCommonTableData = {
   readonly title: string;
   readonly columns: readonly ManseRyeokColumn[];
@@ -93,6 +105,7 @@ export type ManseRyeokCommonTableData = {
     ManseRyeokPillarKey,
     ManseRyeokStemBranchCell | null
   >;
+  readonly fiveElementDistribution: ManseRyeokFiveElementDistribution;
   readonly detailRows: readonly ManseRyeokDetailRow[];
 };
 
