@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import {
+  createProductGenerationDispatcherOptionsFromWriterRuntime,
   getProductGenerationHandler,
   prepareProductGenerationFromPayload,
 } from "../../../src/lib/report-generation/productGenerationDispatcher";
@@ -273,6 +274,57 @@ describe("product generation dispatcher", () => {
     });
   });
 
+  it("maps enabled writer runtime to every product handler option", () => {
+    const options = createProductGenerationDispatcherOptionsFromWriterRuntime({
+      enabled: true,
+      config: {
+        enabled: true,
+        apiKey: "test-key",
+        model: "test-model",
+      },
+    });
+
+    expect(options.careerMoneyStudy?.writer).toEqual({
+      enabled: true,
+      config: {
+        enabled: true,
+        apiKey: "test-key",
+        model: "test-model",
+      },
+    });
+    expect(options.loveMarriageChild?.writer).toEqual(
+      options.careerMoneyStudy?.writer,
+    );
+    expect(options.compatibility?.writer).toEqual(
+      options.careerMoneyStudy?.writer,
+    );
+    expect(options.majorFortune?.writer).toEqual(
+      options.careerMoneyStudy?.writer,
+    );
+    expect(options.annualFortune?.writer).toEqual(
+      options.careerMoneyStudy?.writer,
+    );
+    expect(options.comprehensiveV2?.writer).toEqual(
+      options.careerMoneyStudy?.writer,
+    );
+  });
+
+  it("maps disabled writer runtime to safe fallback handler options", () => {
+    const options = createProductGenerationDispatcherOptionsFromWriterRuntime({
+      enabled: false,
+      reason: "flag_disabled",
+    });
+
+    expect(options).toMatchObject({
+      careerMoneyStudy: { writer: { enabled: false } },
+      loveMarriageChild: { writer: { enabled: false } },
+      compatibility: { writer: { enabled: false } },
+      majorFortune: { writer: { enabled: false } },
+      annualFortune: { writer: { enabled: false } },
+      comprehensiveV2: { writer: { enabled: false } },
+    });
+  });
+
   it("routes valid compatibility payloads to generated draft output", async () => {
     const result = await prepareProductGenerationFromPayload(makeCompatibilityPayload());
 
@@ -301,6 +353,8 @@ describe("product generation dispatcher", () => {
       "annualFortune: handleAnnualFortuneGeneration",
       "comprehensiveV2: handleComprehensiveV2Generation",
       "satisfies Record<ReportProductKind, ProductGenerationHandler>",
+      "createProductGenerationDispatcherOptionsFromWriterRuntime",
+      "disableWriterForKind",
     ];
 
     for (const marker of requiredMarkers) {

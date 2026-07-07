@@ -25,6 +25,8 @@ describe("create report route product preview source", () => {
     const source = readRouteSource();
     const expectedMarkers = [
       "prepareProductGenerationFromPayload",
+      "resolveReportWriterRuntime",
+      "createProductGenerationDispatcherOptionsFromWriterRuntime",
       "createProductPreviewSnapshot",
       'snapshotKind: "product_preview"',
       "productPreview",
@@ -57,6 +59,9 @@ describe("create report route product preview source", () => {
       "openai",
       "fetch(",
       "process.env",
+      "OPENAI_REPORT_WRITER_ENABLED",
+      "OPENAI_API_KEY",
+      "OPENAI_REPORT_MODEL",
     ];
 
     for (const marker of forbiddenMarkers) {

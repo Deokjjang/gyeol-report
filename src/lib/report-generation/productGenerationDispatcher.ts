@@ -29,6 +29,7 @@ import {
   type ReportInputPayload,
   type ReportProductKind,
 } from "./reportInputAdapter";
+import type { ReportWriterRuntime } from "./reportWriterRuntime";
 
 export type ProductGenerationErrorCode =
   | "PRODUCT_GENERATION_NOT_IMPLEMENTED"
@@ -88,6 +89,28 @@ const PRODUCT_GENERATION_HANDLERS = {
   comprehensiveV2: handleComprehensiveV2Generation,
 } as const satisfies Record<ReportProductKind, ProductGenerationHandler>;
 
+export function createProductGenerationDispatcherOptionsFromWriterRuntime(
+  runtime: ReportWriterRuntime,
+): ProductGenerationDispatcherOptions {
+  const writer = runtime.enabled
+    ? {
+        enabled: true,
+        config: runtime.config,
+      }
+    : {
+        enabled: false,
+      };
+
+  return {
+    careerMoneyStudy: { writer },
+    compatibility: { writer },
+    loveMarriageChild: { writer },
+    majorFortune: { writer },
+    annualFortune: { writer },
+    comprehensiveV2: { writer },
+  };
+}
+
 export function getProductGenerationHandler(
   kind: ReportProductKind,
 ): ProductGenerationHandler {
@@ -99,7 +122,14 @@ export function dispatchProductGenerationInput(
   options: ProductGenerationDispatcherOptions = {},
 ): Promise<ProductGenerationResult> {
   const handler = getProductGenerationHandler(input.kind);
-  return handler(input, options);
+
+  return handler(input, options).then((result) => {
+    if (result.ok || !isWriterEnabledForKind(input.kind, options)) {
+      return result;
+    }
+
+    return handler(input, disableWriterForKind(input.kind, options));
+  });
 }
 
 export function prepareProductGenerationFromPayload(
@@ -285,4 +315,58 @@ function invalidInputResult(message: string): ProductGenerationInvalidInputResul
       message,
     },
   };
+}
+
+function isWriterEnabledForKind(
+  kind: ReportProductKind,
+  options: ProductGenerationDispatcherOptions,
+): boolean {
+  return getOptionsForKind(kind, options)?.writer?.enabled === true;
+}
+
+function disableWriterForKind(
+  kind: ReportProductKind,
+  options: ProductGenerationDispatcherOptions,
+): ProductGenerationDispatcherOptions {
+  switch (kind) {
+    case "careerMoneyStudy":
+      return { ...options, careerMoneyStudy: { writer: { enabled: false } } };
+    case "loveMarriageChild":
+      return { ...options, loveMarriageChild: { writer: { enabled: false } } };
+    case "compatibility":
+      return { ...options, compatibility: { writer: { enabled: false } } };
+    case "majorFortune":
+      return { ...options, majorFortune: { writer: { enabled: false } } };
+    case "annualFortune":
+      return { ...options, annualFortune: { writer: { enabled: false } } };
+    case "comprehensiveV2":
+      return { ...options, comprehensiveV2: { writer: { enabled: false } } };
+  }
+}
+
+function getOptionsForKind(
+  kind: ReportProductKind,
+  options: ProductGenerationDispatcherOptions,
+):
+  | CareerMoneyStudyGenerationHandlerOptions
+  | LoveMarriageChildGenerationHandlerOptions
+  | CompatibilityGenerationHandlerOptions
+  | MajorFortuneGenerationHandlerOptions
+  | AnnualFortuneGenerationHandlerOptions
+  | ComprehensiveV2GenerationHandlerOptions
+  | undefined {
+  switch (kind) {
+    case "careerMoneyStudy":
+      return options.careerMoneyStudy;
+    case "loveMarriageChild":
+      return options.loveMarriageChild;
+    case "compatibility":
+      return options.compatibility;
+    case "majorFortune":
+      return options.majorFortune;
+    case "annualFortune":
+      return options.annualFortune;
+    case "comprehensiveV2":
+      return options.comprehensiveV2;
+  }
 }

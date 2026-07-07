@@ -11,9 +11,13 @@ import {
   type ProductPreviewSnapshotDraft,
   type ReportProductSlug,
 } from "../../../../lib/report-generation/productPreviewSnapshot";
-import { prepareProductGenerationFromPayload } from "../../../../lib/report-generation/productGenerationDispatcher";
+import {
+  createProductGenerationDispatcherOptionsFromWriterRuntime,
+  prepareProductGenerationFromPayload,
+} from "../../../../lib/report-generation/productGenerationDispatcher";
 import { buildReportPersistencePayload } from "../../../../lib/report/reportPersistencePayload";
 import type { ReportOutput } from "../../../../lib/report/types";
+import { resolveReportWriterRuntime } from "../../../../lib/report-generation/reportWriterRuntime";
 
 const REPORT_CREATE_ERROR_MESSAGE =
   "리포트를 생성하지 못했습니다. 입력값을 확인한 뒤 다시 시도해 주세요.";
@@ -180,7 +184,14 @@ function createProductPreviewPersistenceInput(
 async function createProductPreviewResponse(
   json: Record<string, unknown>,
 ): Promise<NextResponse> {
-  const generationResult = await prepareProductGenerationFromPayload(json);
+  const generationOptions =
+    createProductGenerationDispatcherOptionsFromWriterRuntime(
+      resolveReportWriterRuntime(),
+    );
+  const generationResult = await prepareProductGenerationFromPayload(
+    json,
+    generationOptions,
+  );
 
   if (!generationResult.ok) {
     const code = generationResult.error.code;
