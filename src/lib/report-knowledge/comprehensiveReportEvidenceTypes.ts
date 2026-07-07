@@ -17,6 +17,10 @@ import type { ReportDifferentiationModule } from "./reportDifferentiationModules
 import type { SajuSymbolicNickname } from "./sajuSymbolicNickname";
 import type { SelectedMbtiKnowledge } from "./mbtiKnowledgeSelector";
 import type { SajuMbtiBridgeEvidence } from "./sajuMbtiBridgeScorer";
+import type {
+  MbtiKnowledgeContext,
+  MbtiTypeCode,
+} from "./mbtiKnowledgeTypes";
 
 export type EvidenceRole =
   | "primary_saju"
@@ -68,10 +72,119 @@ export type SelectedSajuFeatureEvidence = {
   readonly features: readonly SelectedSajuFeatureEvidenceItem[];
 };
 
+export type ComprehensiveMbtiBasisTrait = {
+  readonly id?: string;
+  readonly label: string;
+  readonly plainKo?: string;
+  readonly strongLine?: string;
+  readonly positiveUse?: string;
+  readonly risk?: string;
+  readonly matchingMyeongliSignals: readonly string[];
+  readonly productDomains: readonly string[];
+};
+
+export type ComprehensiveMbtiBasisTraitArea = {
+  readonly area:
+    | "identity"
+    | "thinkingStyle"
+    | "career"
+    | "workplace"
+    | "money"
+    | "investment"
+    | "study"
+    | "love"
+    | "marriage"
+    | "parenting"
+    | "child"
+    | "relationships"
+    | "communication"
+    | "strengths"
+    | "risks"
+    | "growth";
+  readonly traits: readonly ComprehensiveMbtiBasisTrait[];
+};
+
+export type ComprehensiveMbtiBasisFunctionStack = {
+  readonly position: string;
+  readonly code: string;
+};
+
+export type ComprehensiveMbtiBasisBridgeHint = {
+  readonly signal: string;
+  readonly reason: string;
+  readonly relatedTraits: readonly string[];
+  readonly productDomains: readonly string[];
+};
+
+export type ComprehensiveMbtiBasisSelectedTraitSeed = {
+  readonly id: string;
+  readonly context: MbtiKnowledgeContext;
+  readonly label: string;
+  readonly description: string;
+  readonly strengths: readonly string[];
+  readonly risks: readonly string[];
+  readonly practicalSwitches: readonly string[];
+  readonly tags: readonly string[];
+};
+
+export type ComprehensiveMbtiBasis = {
+  readonly type: MbtiTypeCode;
+  readonly titleKo: string;
+  readonly archetype: string;
+  readonly oneLine: string;
+  readonly coreSummary: readonly string[];
+  readonly closeKeywords: readonly string[];
+  readonly farKeywords: readonly string[];
+  readonly functionStack: readonly ComprehensiveMbtiBasisFunctionStack[];
+  readonly traitAreas: readonly ComprehensiveMbtiBasisTraitArea[];
+  readonly myeongliBridgeHints: readonly ComprehensiveMbtiBasisBridgeHint[];
+  readonly reportUseCases: readonly string[];
+  readonly selectedTraitSeeds: readonly ComprehensiveMbtiBasisSelectedTraitSeed[];
+};
+
+export type ComprehensiveSajuFeatureDictionaryCategory =
+  | SajuFeatureCategory
+  | "hidden_stem"
+  | "relation";
+
+export type ComprehensiveSajuFeatureDictionaryEntry = {
+  readonly id: string;
+  readonly rawLabel: string;
+  readonly category: ComprehensiveSajuFeatureDictionaryCategory;
+  readonly interpretationTitle: string;
+  readonly description: string;
+  readonly strengths: readonly string[];
+  readonly fatiguePoints: readonly string[];
+  readonly sceneExamples: readonly string[];
+  readonly practicalUse: string;
+  readonly sourceFeatureId?: string;
+  readonly sourcePillar?: string;
+};
+
+export type ComprehensiveSajuMbtiBridgeInterpretation = {
+  readonly chapterId: SajuFeatureChapterId;
+  readonly mbti: MbtiTypeCode;
+  readonly traitId: string;
+  readonly mbtiTraitTopic: MbtiKnowledgeContext;
+  readonly myeongliSignalIds: readonly string[];
+  readonly myeongliSignalLabels: readonly string[];
+  readonly interpretation: string;
+  readonly fatiguePoint: string;
+  readonly practicalUse: string;
+  readonly sceneSeed: string;
+  readonly bridgeNeed: string;
+  readonly score: number;
+};
+
 export type ComprehensiveReportEvidencePacket = {
+  readonly productKey?: "saju_mbti_full";
+  readonly productSlug?: "saju-mbti-full";
+  readonly productType?: "saju_mbti_full";
   readonly mbtiType: MbtiType;
   readonly sajuEntryIds: readonly string[];
   readonly sections: readonly ComprehensiveReportSectionEvidence[];
+  readonly mbtiBasis?: ComprehensiveMbtiBasis;
+  readonly sajuFeatureDictionary?: readonly ComprehensiveSajuFeatureDictionaryEntry[];
   readonly selectedSajuFeatureEvidence?: readonly SelectedSajuFeatureEvidence[];
   readonly sajuPillarFeaturePlacements?: readonly SajuPillarFeaturePlacement[];
   readonly sajuFeatureSpotlight?: SajuFeatureSpotlightSection;
@@ -80,5 +193,6 @@ export type ComprehensiveReportEvidencePacket = {
   readonly sajuSymbolicNickname?: SajuSymbolicNickname;
   readonly selectedMbtiKnowledge?: SelectedMbtiKnowledge;
   readonly sajuMbtiBridgeEvidence?: readonly SajuMbtiBridgeEvidence[];
+  readonly interpretedSajuMbtiBridgeEvidence?: readonly ComprehensiveSajuMbtiBridgeInterpretation[];
   readonly globalWarnings: readonly string[];
 };

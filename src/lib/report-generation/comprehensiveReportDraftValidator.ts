@@ -6,9 +6,14 @@ import type {
   ComprehensiveReportV2Chapter,
   ComprehensiveReportV2ChapterId,
   ComprehensiveReportV2Draft,
+  ComprehensiveReportV2LongformReading,
+  ComprehensiveReportV2LongformReadingId,
   ComprehensiveReportV2ProfileTable,
 } from "./comprehensiveReportDraftTypes";
-import { COMPREHENSIVE_REPORT_V2_CHAPTER_IDS } from "./comprehensiveReportDraftTypes";
+import {
+  COMPREHENSIVE_REPORT_V2_CHAPTER_IDS,
+  COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS,
+} from "./comprehensiveReportDraftTypes";
 import {
   COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
   COMPREHENSIVE_REPORT_SECTION_IDS,
@@ -65,8 +70,11 @@ const repairableDraftValidationErrorCodes = [
   "FINAL_MESSAGE_CLOSING_MISSING",
   "FINAL_MESSAGE_TOO_SHORT",
   "FINAL_MESSAGE_SOLUTIONS_MISSING",
+  "LONGFORM_READING_MISSING",
+  "LONGFORM_READING_TOO_SHORT",
   "EVERYDAY_SCENE_MISSING",
   "MBTI_SUPPORT_MISSING",
+  "RAW_SAJU_LABEL_EXPLANATION_MISSING",
   "V2_TEMPLATE_LABEL_COPY",
   "MILD_INTERNAL_META_COPY",
   "UNSAFE_MEDICAL_COPY",
@@ -101,6 +109,16 @@ const forbiddenOutputPhrases = [
   "절대 " + "성공한다",
   "절대 " + "실패한다",
   "몇월 " + "며칠에 " + "반드시",
+  "투자 수익 보장",
+  "합격 확정",
+  "승진 확정",
+  "이직 확정",
+  "결혼 확정",
+  "이혼 확정",
+  "임신 확정",
+  "출산 확정",
+  "특정 사건/날짜 예언",
+  "공포 조장",
 ] as const;
 
 const repairableMildInternalMetaPhrases = [
@@ -234,6 +252,7 @@ const draftV2RootKeys = [
   "sajuSignatureScenes",
   "reportDifferentiationModules",
   "chapters",
+  "longformReadings",
   "finalAdvice",
   "safetyNotes",
 ] as const;
@@ -256,6 +275,14 @@ const chapterKeys = [
   "body",
   "solutionLines",
   "keyPhrases",
+  "sajuTermsUsed",
+  "mbtiTermsUsed",
+] as const;
+const longformReadingKeys = [
+  "readingId",
+  "titleKo",
+  "body",
+  "linkedChapterIds",
   "sajuTermsUsed",
   "mbtiTermsUsed",
 ] as const;
@@ -761,6 +788,32 @@ const mbtiSupportMarkers = [
   "지휘",
   "애매함",
 ] as const;
+const rawSajuLabelMeaningMarkers = {
+  현침살: ["말", "판단", "분석", "날카", "정밀"],
+  도화: ["존재감", "호감", "매력", "보여"],
+  도화살: ["존재감", "호감", "매력", "보여"],
+  홍염: ["존재감", "호감", "매력", "보여"],
+  홍염살: ["존재감", "호감", "매력", "보여"],
+  역마: ["이동", "전환", "현장", "머물"],
+  역마살: ["이동", "전환", "현장", "머물"],
+  문창: ["언어", "공부", "글", "정리"],
+  문창귀인: ["언어", "공부", "글", "정리"],
+  문곡: ["언어", "공부", "글", "정리"],
+  천을귀인: ["도움", "통로", "완충", "기회"],
+  양인: ["추진력", "정면", "고집", "승부"],
+  양인살: ["추진력", "정면", "고집", "승부"],
+  귀문관살: ["깊게", "꽂히", "예민", "판단"],
+  귀문: ["깊게", "꽂히", "예민", "판단"],
+  화개: ["혼자", "깊게", "예술", "사색", "고독"],
+  화개살: ["혼자", "깊게", "예술", "사색", "고독"],
+  합: ["묶임", "끌림", "연결", "역할"],
+  육합: ["묶임", "끌림", "연결", "역할"],
+  충: ["변화", "압력", "충돌", "새 요구"],
+  형: ["반복", "압박", "내부 긴장"],
+  파: ["깨지", "조정", "다시"],
+  해: ["어긋남", "누적", "피로", "작지만"],
+  지장간: ["숨어", "욕구", "역할", "회복"],
+} as const;
 const v2SceneRequiredChapterIds = [
   "personality_pattern",
   "work_money_study",
@@ -866,6 +919,17 @@ function isV2ChapterId(value: unknown): value is ComprehensiveReportV2ChapterId 
   return (
     typeof value === "string" &&
     (COMPREHENSIVE_REPORT_V2_CHAPTER_IDS as readonly string[]).includes(value)
+  );
+}
+
+function isV2LongformReadingId(
+  value: unknown,
+): value is ComprehensiveReportV2LongformReadingId {
+  return (
+    typeof value === "string" &&
+    (COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS as readonly string[]).includes(
+      value,
+    )
   );
 }
 
@@ -1740,6 +1804,99 @@ function parseChapter(
   };
 }
 
+function parseLongformReading(
+  errors: string[],
+  value: unknown,
+  index: number,
+): ComprehensiveReportV2LongformReading | undefined {
+  if (!isRecord(value)) {
+    errors.push(`longformReadings ${index} must be an object.`);
+    return undefined;
+  }
+
+  appendUnknownKeyErrors(
+    errors,
+    `longformReadings ${index}`,
+    value,
+    longformReadingKeys,
+  );
+  appendRawMetadataErrors(errors, `longformReadings ${index}`, value);
+
+  const readingId = value.readingId;
+  const titleKo = value.titleKo;
+  const body = value.body;
+  const linkedChapterIds = value.linkedChapterIds;
+  const sajuTermsUsed = value.sajuTermsUsed;
+  const mbtiTermsUsed = value.mbtiTermsUsed;
+
+  if (!isV2LongformReadingId(readingId)) {
+    errors.push(`longformReadings ${index} has invalid reading id.`);
+    return undefined;
+  }
+  if (!validateStringField(errors, `${readingId}.titleKo`, titleKo, 1)) {
+    return undefined;
+  }
+  if (!validateStringField(errors, `${readingId}.body`, body, 260)) {
+    return undefined;
+  }
+  if (!Array.isArray(linkedChapterIds) || !linkedChapterIds.every(isV2ChapterId)) {
+    errors.push(`${readingId}.linkedChapterIds must be a V2 chapter id array.`);
+    return undefined;
+  }
+  if (!isStringArray(sajuTermsUsed)) {
+    errors.push(`${readingId}.sajuTermsUsed must be a string array.`);
+    return undefined;
+  }
+  if (!isStringArray(mbtiTermsUsed)) {
+    errors.push(`${readingId}.mbtiTermsUsed must be a string array.`);
+    return undefined;
+  }
+
+  return {
+    readingId,
+    titleKo,
+    body,
+    linkedChapterIds,
+    sajuTermsUsed,
+    mbtiTermsUsed,
+  };
+}
+
+function parseLongformReadings(
+  errors: string[],
+  value: unknown,
+): readonly ComprehensiveReportV2LongformReading[] | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!Array.isArray(value)) {
+    errors.push("longformReadings must be an array when provided.");
+    return undefined;
+  }
+
+  const readings = value
+    .map((reading, index) => parseLongformReading(errors, reading, index))
+    .filter(
+      (reading): reading is ComprehensiveReportV2LongformReading =>
+        reading !== undefined,
+    );
+  const seen = new Set<ComprehensiveReportV2LongformReadingId>();
+
+  for (const reading of readings) {
+    if (seen.has(reading.readingId)) {
+      errors.push(`draft has duplicate longform reading: ${reading.readingId}`);
+    }
+    seen.add(reading.readingId);
+  }
+  for (const readingId of COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS) {
+    if (!seen.has(readingId)) {
+      errors.push(`LONGFORM_READING_MISSING: ${readingId}`);
+    }
+  }
+
+  return readings;
+}
+
 function parseOptionalProfilePillar(
   errors: string[],
   value: unknown,
@@ -2395,6 +2552,60 @@ function appendV2ChapterDensityErrors(
   }
 }
 
+function hasRawSajuLabelExplanation(input: {
+  readonly text: string;
+  readonly term: string;
+}): boolean {
+  const markers = (
+    rawSajuLabelMeaningMarkers as Readonly<Record<string, readonly string[]>>
+  )[input.term];
+
+  if (markers === undefined || !input.text.includes(input.term)) {
+    return true;
+  }
+
+  return markers.some((marker) => input.text.includes(marker));
+}
+
+function appendV2RawSajuLabelExplanationErrors(
+  errors: string[],
+  chapters: readonly ComprehensiveReportV2Chapter[],
+): void {
+  for (const chapter of chapters) {
+    const chapterText = getEffectiveV2ChapterText(chapter);
+
+    for (const term of chapter.sajuTermsUsed) {
+      if (!hasRawSajuLabelExplanation({ text: chapterText, term })) {
+        errors.push(
+          `RAW_SAJU_LABEL_EXPLANATION_MISSING: ${chapter.chapterId}:${term}`,
+        );
+      }
+    }
+  }
+}
+
+function appendV2LongformReadingDensityErrors(
+  errors: string[],
+  readings: readonly ComprehensiveReportV2LongformReading[] | undefined,
+): void {
+  if (readings === undefined) {
+    return;
+  }
+
+  for (const reading of readings) {
+    if (reading.body.trim().length < 450) {
+      errors.push(`LONGFORM_READING_TOO_SHORT: ${reading.readingId}`);
+    }
+    for (const term of reading.sajuTermsUsed) {
+      if (!hasRawSajuLabelExplanation({ text: reading.body, term })) {
+        errors.push(
+          `RAW_SAJU_LABEL_EXPLANATION_MISSING: ${reading.readingId}:${term}`,
+        );
+      }
+    }
+  }
+}
+
 function appendV2MbtiFirstErrors(
   errors: string[],
   input: {
@@ -2774,6 +2985,7 @@ function parseV2Draft(
     errors,
     input.reportDifferentiationModules,
   );
+  const longformReadings = parseLongformReadings(errors, input.longformReadings);
 
   if (!isStringArray(input.safetyNotes)) {
     errors.push("safetyNotes must be a string array.");
@@ -2789,6 +3001,8 @@ function parseV2Draft(
 
   appendChapterCoverageErrors(errors, chapters);
   appendV2ChapterDensityErrors(errors, chapters);
+  appendV2RawSajuLabelExplanationErrors(errors, chapters);
+  appendV2LongformReadingDensityErrors(errors, longformReadings);
   appendV2MbtiFirstErrors(errors, {
     openingSummary: typeof input.openingSummary === "string" ? input.openingSummary : "",
     coreLine: typeof input.coreLine === "string" ? input.coreLine : "",
@@ -2842,6 +3056,7 @@ function parseV2Draft(
       ? {}
       : { reportDifferentiationModules }),
     chapters,
+    ...(longformReadings === undefined ? {} : { longformReadings }),
     finalAdvice: input.finalAdvice as string,
     safetyNotes: input.safetyNotes as readonly string[],
   };

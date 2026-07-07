@@ -1,20 +1,30 @@
 import { buildComprehensiveReportEvidencePacket } from "./comprehensiveReportEvidenceBuilder";
 import type {
+  ComprehensiveMbtiBasis,
   ComprehensiveReportEvidencePacket,
+  ComprehensiveSajuFeatureDictionaryEntry,
+  ComprehensiveSajuMbtiBridgeInterpretation,
   SelectedSajuFeatureEvidence,
   SelectedSajuFeatureEvidenceItem,
 } from "./comprehensiveReportEvidenceTypes";
-import type { MbtiType } from "./mbtiKnowledgeTypes";
+import type { MbtiKnowledgeContext, MbtiType } from "./mbtiKnowledgeTypes";
 import { scoreSajuFeatures } from "./sajuFeatureScoring";
 import { selectSajuFeaturesForChapter } from "./sajuFeatureSelector";
 import { shouldShowFeatureInNarrative } from "./sajuFeatureDisplayPolicy";
 import { buildSajuFeatureSpotlight } from "./sajuFeatureSpotlight";
-import { buildSajuPillarFeaturePlacements } from "./sajuPillarFeaturePlacement";
+import {
+  buildSajuPillarFeaturePlacements,
+  buildSajuPillarGridColumns,
+} from "./sajuPillarFeaturePlacement";
 import { selectSajuSignatureScenes } from "./sajuSignatureSceneRules";
 import { buildReportDifferentiationModules } from "./reportDifferentiationModules";
 import { buildSajuSymbolicNickname } from "./sajuSymbolicNickname";
-import { selectMbtiKnowledge } from "./mbtiKnowledgeSelector";
+import {
+  selectMbtiKnowledge,
+  type SelectedMbtiKnowledge,
+} from "./mbtiKnowledgeSelector";
 import { scoreSajuMbtiBridgeEvidence } from "./sajuMbtiBridgeScorer";
+import type { SajuMbtiBridgeEvidence } from "./sajuMbtiBridgeScorer";
 import { requireSajuFeatureEntry } from "./sajuFeatureTaxonomy";
 import type {
   SajuFeatureCategory,
@@ -29,6 +39,13 @@ import {
   type MappedSajuKnowledgeInput,
 } from "./sajuComputedFactsMapper";
 import type { ComputedSajuFacts } from "./sajuComputedFactsTypes";
+import {
+  MBTI_TRAIT_AREAS,
+  getMbtiMyeongliBridgeHints,
+  getMbtiReportUseCase,
+  getMbtiSourceProfile,
+  type MbtiSourceTraitItem,
+} from "./mbti/sourceRuntimeAdapter";
 
 const v2FeatureChapterIds = [
   "opening",
@@ -487,6 +504,253 @@ function buildSelectedSajuFeatureEvidence(
   }));
 }
 
+function uniqueStrings(values: readonly string[], limit?: number): readonly string[] {
+  const result = [...new Set(values.map((value) => value.trim()).filter(Boolean))];
+
+  return limit === undefined ? result : result.slice(0, limit);
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function getStringArrayProperty(
+  value: unknown,
+  key: string,
+): readonly string[] {
+  if (!isRecord(value)) {
+    return [];
+  }
+
+  const property = value[key];
+
+  return Array.isArray(property) && property.every((item) => typeof item === "string")
+    ? property
+    : [];
+}
+
+function getStringRecordValues(
+  value: unknown,
+): readonly string[] {
+  if (!isRecord(value)) {
+    return [];
+  }
+
+  return Object.values(value).filter((item): item is string => typeof item === "string");
+}
+
+function getFunctionStackRows(
+  functionStack: Readonly<Record<string, string>> | undefined,
+): ComprehensiveMbtiBasis["functionStack"] {
+  if (functionStack === undefined) {
+    return [];
+  }
+
+  return Object.entries(functionStack)
+    .filter(([, code]) => code.trim().length > 0)
+    .map(([position, code]) => ({
+      position,
+      code,
+    }));
+}
+
+function toMbtiBasisTrait(
+  trait: MbtiSourceTraitItem,
+): ComprehensiveMbtiBasis["traitAreas"][number]["traits"][number] | undefined {
+  const label = trait.label ?? trait.plainKo;
+
+  if (label === undefined || label.trim().length === 0) {
+    return undefined;
+  }
+
+  return {
+    ...(trait.id === undefined ? {} : { id: trait.id }),
+    label,
+    ...(trait.plainKo === undefined ? {} : { plainKo: trait.plainKo }),
+    ...(trait.strongLine === undefined ? {} : { strongLine: trait.strongLine }),
+    ...(trait.positiveUse === undefined ? {} : { positiveUse: trait.positiveUse }),
+    ...(trait.risk === undefined ? {} : { risk: trait.risk }),
+    matchingMyeongliSignals: trait.matchingMyeongliSignals ?? [],
+    productDomains: trait.productDomains ?? [],
+  };
+}
+
+function buildComprehensiveMbtiBasis(input: {
+  readonly mbtiType: MbtiType;
+  readonly selectedMbtiKnowledge?: SelectedMbtiKnowledge;
+}): ComprehensiveMbtiBasis | undefined {
+  const source = getMbtiSourceProfile(input.mbtiType);
+
+  if (source === null) {
+    return undefined;
+  }
+
+  return {
+    type: source.type,
+    titleKo: source.titleKo,
+    archetype: source.archetype,
+    oneLine: source.oneLine,
+    coreSummary: uniqueStrings([
+      ...getStringRecordValues(source.summary),
+      source.oneLine,
+    ]),
+    closeKeywords: getStringArrayProperty(source, "closeKeywords"),
+    farKeywords: getStringArrayProperty(source, "farKeywords"),
+    functionStack: getFunctionStackRows(source.functionStack),
+    traitAreas: MBTI_TRAIT_AREAS.map((area) => ({
+      area,
+      traits: (source.traits?.[area] ?? [])
+        .map(toMbtiBasisTrait)
+        .filter(
+          (trait): trait is ComprehensiveMbtiBasis["traitAreas"][number]["traits"][number] =>
+            trait !== undefined,
+        ),
+    })).filter((area) => area.traits.length > 0),
+    myeongliBridgeHints: (getMbtiMyeongliBridgeHints(source.type) ?? []).map(
+      (hint) => ({
+        signal: hint.signal,
+        reason: hint.reason,
+        relatedTraits: hint.relatedTraits,
+        productDomains: hint.productDomains,
+      }),
+    ),
+    reportUseCases: getMbtiReportUseCase(source.type, "generalReport") ?? [],
+    selectedTraitSeeds:
+      input.selectedMbtiKnowledge?.selectedTraits.map((trait) => ({
+        id: trait.id,
+        context: trait.context,
+        label: trait.label,
+        description: trait.description,
+        strengths: trait.strengths,
+        risks: trait.risks,
+        practicalSwitches: trait.practicalSwitches,
+        tags: trait.tags,
+      })) ?? [],
+  };
+}
+
+function toSajuFeatureDictionaryEntry(
+  feature: SelectedSajuFeatureEvidenceItem,
+): ComprehensiveSajuFeatureDictionaryEntry {
+  return {
+    id: `feature_${feature.id}`,
+    rawLabel: feature.labelKo,
+    category: feature.category,
+    interpretationTitle: feature.symbolicImage,
+    description: feature.summary,
+    strengths: uniqueStrings([feature.positiveReading, feature.practicalUse]),
+    fatiguePoints: uniqueStrings([feature.cautionReading]),
+    sceneExamples: feature.sceneSeeds,
+    practicalUse: feature.practicalUse,
+    sourceFeatureId: feature.id,
+  };
+}
+
+function buildHiddenStemDictionary(input: {
+  readonly sajuFacts: ComputedSajuFacts;
+  readonly featureIds: readonly string[];
+}): readonly ComprehensiveSajuFeatureDictionaryEntry[] {
+  const pillarGrid = buildSajuPillarGridColumns({
+    yearPillar: input.sajuFacts.yearPillar,
+    monthPillar: input.sajuFacts.monthPillar,
+    dayPillar: input.sajuFacts.dayPillar,
+    hourPillar: input.sajuFacts.hourPillar,
+    dayMaster: input.sajuFacts.dayMaster,
+    productionFeatureIds: input.featureIds,
+  });
+
+  return pillarGrid.flatMap((column) =>
+    (column.hiddenStems ?? []).map((hiddenStem, index) => ({
+      id: `hidden_stem_${column.columnId}_${index + 1}`,
+      rawLabel: `${column.labelKo} 지장간 ${hiddenStem}`,
+      category: "hidden_stem" as const,
+      interpretationTitle: "겉 기운 안에 숨어 있는 역할",
+      description:
+        "지장간은 겉으로 보이는 지지 안쪽에 숨어 있는 욕구, 역할, 회복 포인트를 읽기 위한 보조 근거입니다.",
+      strengths: [
+        "겉으로 바로 드러나지 않는 재능과 보완 기운을 찾는 데 도움이 됩니다.",
+      ],
+      fatiguePoints: [
+        "겉 행동과 안쪽 욕구가 다르게 움직이면 선택이 늦어지거나 피로가 쌓일 수 있습니다.",
+      ],
+      sceneExamples: [
+        "겉으로는 단순히 버티는 것처럼 보여도 안쪽에서는 다른 역할과 욕구가 동시에 움직이는 장면",
+      ],
+      practicalUse:
+        "겉으로 보이는 간지와 함께 읽어야 하며, 지장간만으로 사건을 단정하지 않습니다.",
+      sourcePillar: column.labelKo,
+    })),
+  );
+}
+
+function buildSajuFeatureDictionary(input: {
+  readonly selectedSajuFeatureEvidence: readonly SelectedSajuFeatureEvidence[];
+  readonly sajuFacts: ComputedSajuFacts;
+  readonly featureIds: readonly string[];
+}): readonly ComprehensiveSajuFeatureDictionaryEntry[] {
+  const featureEntries = input.selectedSajuFeatureEvidence
+    .flatMap((chapter) => chapter.features)
+    .map(toSajuFeatureDictionaryEntry);
+  const hiddenStemEntries = buildHiddenStemDictionary({
+    sajuFacts: input.sajuFacts,
+    featureIds: input.featureIds,
+  });
+  const entriesById = new Map<string, ComprehensiveSajuFeatureDictionaryEntry>();
+
+  for (const entry of [...featureEntries, ...hiddenStemEntries]) {
+    if (!entriesById.has(entry.id)) {
+      entriesById.set(entry.id, entry);
+    }
+  }
+
+  return [...entriesById.values()];
+}
+
+function buildInterpretedBridgeEvidence(input: {
+  readonly bridgeEvidence: readonly SajuMbtiBridgeEvidence[];
+  readonly selectedMbtiKnowledge?: SelectedMbtiKnowledge;
+  readonly dictionary: readonly ComprehensiveSajuFeatureDictionaryEntry[];
+}): readonly ComprehensiveSajuMbtiBridgeInterpretation[] {
+  const traitsById = new Map(
+    input.selectedMbtiKnowledge?.selectedTraits.map((trait) => [trait.id, trait]) ?? [],
+  );
+  const dictionaryByFeatureId = new Map(
+    input.dictionary
+      .filter((entry) => entry.sourceFeatureId !== undefined)
+      .map((entry) => [entry.sourceFeatureId as string, entry]),
+  );
+
+  return input.bridgeEvidence.map((bridge) => {
+    const trait = traitsById.get(bridge.traitId);
+    const relatedSignals = bridge.relatedSajuFeatureIds.flatMap((featureId) => {
+      const dictionaryEntry = dictionaryByFeatureId.get(featureId);
+
+      return dictionaryEntry === undefined ? [] : [dictionaryEntry.rawLabel];
+    });
+    const traitTopic: MbtiKnowledgeContext = trait?.context ?? "core_identity";
+    const fatiguePoint =
+      trait?.risks[0] ??
+      "명리 신호와 행동 성향이 과열되면 속도, 말투, 책임 범위에서 피로가 커질 수 있습니다.";
+
+    return {
+      chapterId: bridge.chapterId,
+      mbti: bridge.mbti,
+      traitId: bridge.traitId,
+      mbtiTraitTopic: traitTopic,
+      myeongliSignalIds: bridge.relatedSajuFeatureIds,
+      myeongliSignalLabels: relatedSignals,
+      interpretation: `${uniqueStrings(relatedSignals).join(" · ")} 신호는 ${
+        trait?.label ?? "선택된 MBTI trait"
+      } 성향과 만나 ${bridge.sentenceSeed}`,
+      fatiguePoint,
+      practicalUse: bridge.practicalSwitch,
+      sceneSeed: bridge.sceneSeed,
+      bridgeNeed: bridge.bridgeNeed,
+      score: bridge.score,
+    };
+  });
+}
+
 export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
   readonly mbtiType: MbtiType;
   readonly sajuFacts: ComputedSajuFacts;
@@ -540,10 +804,29 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
     productType: "comprehensive",
     limit: 8,
   });
+  const mbtiBasis = buildComprehensiveMbtiBasis({
+    mbtiType: input.mbtiType,
+    selectedMbtiKnowledge,
+  });
+  const sajuFeatureDictionary = buildSajuFeatureDictionary({
+    selectedSajuFeatureEvidence,
+    sajuFacts: input.sajuFacts,
+    featureIds: mappedFeatures.featureIds,
+  });
+  const interpretedSajuMbtiBridgeEvidence = buildInterpretedBridgeEvidence({
+    bridgeEvidence: sajuMbtiBridgeEvidence,
+    selectedMbtiKnowledge,
+    dictionary: sajuFeatureDictionary,
+  });
 
   return {
     packet: {
       ...packet,
+      productKey: "saju_mbti_full",
+      productSlug: "saju-mbti-full",
+      productType: "saju_mbti_full",
+      ...(mbtiBasis === undefined ? {} : { mbtiBasis }),
+      ...(sajuFeatureDictionary.length === 0 ? {} : { sajuFeatureDictionary }),
       selectedSajuFeatureEvidence,
       ...(sajuPillarFeaturePlacements.length === 0
         ? {}
@@ -558,6 +841,9 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
       ...(sajuMbtiBridgeEvidence.length === 0
         ? {}
         : { sajuMbtiBridgeEvidence }),
+      ...(interpretedSajuMbtiBridgeEvidence.length === 0
+        ? {}
+        : { interpretedSajuMbtiBridgeEvidence }),
       globalWarnings: [
         ...packet.globalWarnings,
         ...mappedSaju.warnings,

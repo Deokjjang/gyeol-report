@@ -4,6 +4,7 @@ import type {
   ComprehensiveReportV1Draft,
   ComprehensiveReportV2Draft,
 } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
+import { COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
 import {
   areAllDraftValidationErrorsRepairable,
   getComprehensiveReportDraftValidationIssues,
@@ -239,6 +240,45 @@ function createV2Chapter(
   };
 }
 
+function createLongformBody(input: {
+  readonly title: string;
+  readonly sajuTerm?: string;
+}): string {
+  const sajuTerm = input.sajuTerm ?? "갑목";
+
+  return [
+    `${input.title}에서는 ${sajuTerm}을 먼저 놓고 명리 구조가 실제 생활의 장면으로 어떻게 번역되는지 길게 읽습니다.`,
+    "현침살처럼 말과 판단, 분석이 날카롭게 들어가는 신호가 있으면 단순히 예민하다는 말로 끝내지 않고, 회의에서 오류를 빨리 보고 메시지에서 답이 짧아지는 방식까지 풀어야 합니다.",
+    "입력한 ENTJ 성향은 원인이 아니라 행동 발현 방식입니다. 이 구조가 ENTJ의 효율, 목표, 역할 정리 감각과 만나면 결론을 빨리 세우고 책임 범위를 나누려는 장면으로 드러날 수 있습니다.",
+    "좋게 쓰면 기준을 세우고 판을 정리하는 힘이 되지만, 과하면 상대가 말하기 전에 이미 평가가 끝난 듯 보일 수 있습니다.",
+    "그래서 이 섹션의 실행 기준은 용어를 외우는 것이 아니라, 결론을 말하기 전에 상대의 핵심을 한 문장으로 되받고 책임 범위를 문장으로 남기는 것입니다.",
+    "직업, 돈, 관계, 공부를 따로 떼어 한 줄씩 나열하지 않고 같은 명리 구조가 각 생활 영역에서 다른 얼굴로 나타나는 과정을 문단으로 이어 읽어야 합니다.",
+    "이렇게 읽으면 신살과 귀인, 지장간 같은 용어도 점술적 딱지가 아니라 말투, 선택 속도, 도움을 요청하는 방식, 회복 루틴을 조정하는 실제 정보가 됩니다.",
+  ].join(" ");
+}
+
+function createLongformReadings(): ComprehensiveReportV2Draft["longformReadings"] {
+  return COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS.map((readingId) => ({
+    readingId,
+    titleKo: `장문 ${readingId}`,
+    body: createLongformBody({ title: `장문 ${readingId}`, sajuTerm: "현침살" }),
+    linkedChapterIds:
+      readingId === "finalMessage"
+        ? ["final_message"]
+        : readingId === "workMoneyStudyReading"
+          ? ["work_money_study"]
+          : readingId === "loveRelationshipReading"
+            ? ["love_relationships"]
+            : readingId === "peopleFamilyEnvironmentReading"
+              ? ["people_family_environment"]
+              : readingId === "riskGrowthReading"
+                ? ["risk_and_growth"]
+                : ["saju_identity", "personality_pattern"],
+    sajuTermsUsed: ["현침살"],
+    mbtiTermsUsed: ["ENTJ"],
+  }));
+}
+
 function createValidV2Draft(): ComprehensiveReportV2Draft {
   return {
     version: "comprehensive_v2_draft",
@@ -329,6 +369,87 @@ describe("comprehensive report draft validator", () => {
         "SAJU_FEATURE_SPOTLIGHT_EMPTY",
         "SAJU_SIGNATURE_SCENES_EMPTY",
       ]),
+    );
+  });
+
+  it("accepts V2 longform reading sections when they are dense and interpreted", () => {
+    const draft: ComprehensiveReportV2Draft = {
+      ...createValidV2Draft(),
+      longformReadings: createLongformReadings(),
+    };
+    const result = validateComprehensiveReportDraft(draft, {
+      allowedSajuTerms: [
+        "갑목",
+        "갑신",
+        "갑신일주",
+        "토 과다",
+        "수 부족",
+        "화 부족",
+        "편재",
+        "정재",
+        "정관",
+        "편관",
+        "재다신약",
+        "재고귀인",
+        "무인성",
+        "무식상",
+        "현침살",
+        "홍염살",
+      ],
+      allowedMbtiTerms: ["ENTJ"],
+    });
+
+    expect(result.ok).toBe(true);
+    expect(result.errors).toEqual([]);
+    expect(result.value).toMatchObject({
+      longformReadings: expect.arrayContaining([
+        expect.objectContaining({ readingId: "baseSajuReading" }),
+        expect.objectContaining({ readingId: "sajuMbtiBridgeReading" }),
+        expect.objectContaining({ readingId: "finalMessage" }),
+      ]),
+    });
+  });
+
+  it("rejects V2 longform readings that are too thin", () => {
+    const draft: ComprehensiveReportV2Draft = {
+      ...createValidV2Draft(),
+      longformReadings: createLongformReadings()?.map((reading) =>
+        reading.readingId === "baseSajuReading"
+          ? {
+              ...reading,
+              body:
+                "현침살은 말과 판단, 분석이 날카로운 신호입니다. 이 문장은 필드는 갖췄지만 종합 리포트 장문 섹션으로는 부족합니다. ENTJ는 보조 기준입니다. 현침살은 말과 판단, 분석이 날카로운 신호입니다. 직업과 돈과 관계를 조금 언급하지만 실제 장면으로 충분히 풀지 못합니다. 그래서 파싱 가능한 길이는 넘기되 장문 리포트의 밀도에는 미치지 못해야 합니다. 명리 구조와 MBTI 행동 발현을 모두 말하지만, 구체적인 생활 장면과 실행 기준은 아직 충분히 이어지지 않은 상태입니다.",
+            }
+          : reading,
+      ),
+    };
+    const result = validateComprehensiveReportDraft(draft);
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "LONGFORM_READING_TOO_SHORT: baseSajuReading",
+    );
+  });
+
+  it("rejects raw Saju labels in V2 text when no user-language meaning is attached", () => {
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter) =>
+        chapter.chapterId === "personality_pattern"
+          ? {
+              ...chapter,
+              body:
+                "성격과 판단 패턴에서는 지장간이라는 용어가 반복됩니다. 덕민님은 상황을 오래 구경하기보다 기준을 세우고 판을 정리하려는 쪽으로 움직입니다. 그래서 이 문단은 길이는 충분하지만 지장간이 어떤 사용자 언어로 번역되는지 설명하지 않습니다. 입력한 ENTJ 성향도 이 지점과 맞물리지만, 결론은 MBTI가 아니라 사주 구조에서 먼저 나옵니다. 좋은 환경에서는 이 힘이 추진력과 책임감으로 살아나고, 나쁜 환경에서는 쉬지 못하고 계속 자신을 몰아붙이는 압박으로 바뀔 수 있습니다. 성격과 판단 패턴에서는 결론을 바로 던지기 전에 질문을 한 번 넣는 루틴을 두어야 합니다.",
+              sajuTermsUsed: ["지장간"],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "RAW_SAJU_LABEL_EXPLANATION_MISSING: personality_pattern:지장간",
     );
   });
 
@@ -603,6 +724,25 @@ describe("comprehensive report draft validator", () => {
     expect(result.ok).toBe(false);
     expect(result.errors.join("\n")).toContain("UNSAFE_ADVERTISING_COPY");
     expect(result.errors.join("\n")).toContain("보장");
+  });
+
+  it("rejects explicit deterministic life-result claims in V2 output", () => {
+    const result = validateComprehensiveReportDraft({
+      ...createValidV2Draft(),
+      finalAdvice:
+        "투자 수익 보장, 합격 확정, 승진 확정 같은 표현은 종합 리포트에 남으면 안 됩니다.",
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "FORBIDDEN_PROPHECY_PHRASE: 투자 수익 보장",
+    );
+    expect(result.errors.join("\n")).toContain(
+      "FORBIDDEN_PROPHECY_PHRASE: 합격 확정",
+    );
+    expect(result.errors.join("\n")).toContain(
+      "FORBIDDEN_PROPHECY_PHRASE: 승진 확정",
+    );
   });
 
   it("still blocks raw evidence label copy when sanitizer is not run", () => {

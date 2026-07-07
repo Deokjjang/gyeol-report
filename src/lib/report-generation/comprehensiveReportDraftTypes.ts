@@ -67,6 +67,40 @@ export type ComprehensiveReportV2Chapter = {
   readonly mbtiTermsUsed: readonly string[];
 };
 
+export type ComprehensiveReportV2LongformReadingId =
+  | "opening"
+  | "baseSajuReading"
+  | "sajuFeatureReading"
+  | "mbtiReading"
+  | "sajuMbtiBridgeReading"
+  | "workMoneyStudyReading"
+  | "loveRelationshipReading"
+  | "peopleFamilyEnvironmentReading"
+  | "riskGrowthReading"
+  | "finalMessage";
+
+export const COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS = [
+  "opening",
+  "baseSajuReading",
+  "sajuFeatureReading",
+  "mbtiReading",
+  "sajuMbtiBridgeReading",
+  "workMoneyStudyReading",
+  "loveRelationshipReading",
+  "peopleFamilyEnvironmentReading",
+  "riskGrowthReading",
+  "finalMessage",
+] as const satisfies readonly ComprehensiveReportV2LongformReadingId[];
+
+export type ComprehensiveReportV2LongformReading = {
+  readonly readingId: ComprehensiveReportV2LongformReadingId;
+  readonly titleKo: string;
+  readonly body: string;
+  readonly linkedChapterIds: readonly ComprehensiveReportV2ChapterId[];
+  readonly sajuTermsUsed: readonly string[];
+  readonly mbtiTermsUsed: readonly string[];
+};
+
 export type ComprehensiveReportV2PillarGridColumnId =
   | "hour"
   | "day"
@@ -121,6 +155,7 @@ export type ComprehensiveReportV2Draft = {
   readonly sajuSignatureScenes?: readonly SajuSignatureScene[];
   readonly reportDifferentiationModules?: readonly ReportDifferentiationModule[];
   readonly chapters: readonly ComprehensiveReportV2Chapter[];
+  readonly longformReadings?: readonly ComprehensiveReportV2LongformReading[];
   readonly finalAdvice: string;
   readonly safetyNotes: readonly string[];
 };
