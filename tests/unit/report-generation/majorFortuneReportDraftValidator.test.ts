@@ -601,6 +601,26 @@ describe("majorFortuneReportDraftValidator", () => {
     expect(result.value?.finalAdvice).toHaveLength(6);
   });
 
+  it("rejects repeated long visible sentences across the draft", () => {
+    const repeated =
+      "동시에 이미 무거운 오행을 크게 더하는 흐름은 약하므로 이 문장은 한 번만 요약되어야 합니다.";
+    const baseDraft = createValidMajorFortuneDraft();
+    const result = validateMajorFortuneReportDraft({
+      ...baseDraft,
+      openingSummary: repeated,
+      coreLine: repeated,
+      decadeArchetype: {
+        ...baseDraft.decadeArchetype,
+        plain: repeated,
+      },
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "MAJOR_FORTUNE_REPEATED_LONG_SENTENCE",
+    );
+  });
+
   it("rejects empty launch contract sections", () => {
     const result = validateMajorFortuneReportDraft(
       createValidMajorFortuneDraft({

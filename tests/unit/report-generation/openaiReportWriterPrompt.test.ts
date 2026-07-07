@@ -65,6 +65,15 @@ describe("OpenAI report writer prompt", () => {
     expect(combined).toContain("위임보다 직접 통제");
     expect(combined).toContain("work는 career/workplace/money/study");
     expect(combined).toContain("sajuMbtiBridgeReading에는 이런 연결 문장을 최소 4개 이상");
+    expect(combined).toContain("40자 이상 같은 문장이 전체 리포트에 3회 이상 나오면 실패");
+    expect(combined).toContain("같은 생활 장면 문장을 여러 챕터에 재사용하지 마라");
+    expect(combined).toContain("같은 MBTI bridge sentence를 여러 longform section에 복붙하지 마라");
+    expect(combined).toContain("같은 명리 caution 문장을 다른 섹션에 반복하지 마라");
+    expect(combined).toContain("각 장은 다른 현실 장면, 다른 행동 기준, 다른 표현");
+    expect(combined).toContain("회의나 카톡 설명을 듣다가 틀린 부분이 먼저 보이는 장면은 한 번만");
+    expect(combined).toContain("일주 설명을 [일주]은 단순한 이름이 아니라");
+    expect(combined).toContain("갑신일주은, 정축일주은");
+    expect(combined).toContain("prompt의 좋은 예 문장은 방향 참고용");
     expect(combined).toContain("각 장문 섹션은 대표 명리 feature를 의미 있게 골라라");
     expect(combined).toContain("일·돈·공부에는 재성·관성·식상·인성·재고귀인·문창계열");
     expect(combined).toContain("연애·관계에는 도화·홍염·합·해·현침");

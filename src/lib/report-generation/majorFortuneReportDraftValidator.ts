@@ -1923,6 +1923,47 @@ function countRepeatedSummaryWarnings(visibleText: string): number {
   return [...counts.values()].filter((count) => count > 5).length;
 }
 
+function splitLongSentencesForRepetition(text: string): readonly string[] {
+  return text
+    .split(/(?<=[.!?。！？])\s+|\n+/u)
+    .map((sentence) =>
+      sentence
+        .replace(/[“”"']/g, "")
+        .replace(/\s+/g, " ")
+        .replace(/[.!?。！？]+$/u, "")
+        .trim(),
+    )
+    .filter((sentence) => sentence.length >= 40)
+    .filter(
+      (sentence) =>
+        !sentence.includes("특정 사건") &&
+        !sentence.includes("결과를 보장하지") &&
+        !sentence.includes("의학적 진단"),
+    )
+    .filter(
+      (sentence) =>
+        sentence.includes("이미 무거운 오행") ||
+        sentence.includes("같은 오행 support/friction"),
+    );
+}
+
+function appendLongSentenceRepetitionErrors(
+  errors: string[],
+  visibleText: string,
+): void {
+  const counts = new Map<string, number>();
+
+  for (const sentence of splitLongSentencesForRepetition(visibleText)) {
+    counts.set(sentence, (counts.get(sentence) ?? 0) + 1);
+  }
+
+  for (const [sentence, count] of counts) {
+    if (count >= 3) {
+      errors.push(`MAJOR_FORTUNE_REPEATED_LONG_SENTENCE:${sentence}`);
+    }
+  }
+}
+
 function countWeakStrategyWarnings(visibleText: string): number {
   return weakStrategyPhrases.reduce(
     (count, phrase) => count + countOccurrences(visibleText, phrase),
@@ -2450,6 +2491,7 @@ export function validateMajorFortuneReportDraft(
       errors.push(`MAJOR_FORTUNE_FORBIDDEN_EXPRESSION:${expression}`);
     }
   }
+  appendLongSentenceRepetitionErrors(errors, visibleText);
   const quality = summarizeMajorFortuneDraftQuality(sanitizedDraft);
 
   if (safetyNotesRepairSummary.warningCount > 0) {

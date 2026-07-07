@@ -2330,6 +2330,26 @@ describe("comprehensive report draft validator", () => {
     expect(result.errors.join("\n")).toContain("REPEATED_SENTENCE");
   });
 
+  it("rejects repeated long V2 hit-reading sentences across chapters", () => {
+    const repeated =
+      "카톡 설명을 듣다가 틀린 부분이 먼저 보이면 표정 관리가 어려울 수 있습니다.";
+    const draft = createValidV2Draft();
+    const result = validateComprehensiveReportDraft({
+      ...draft,
+      chapters: draft.chapters.map((chapter, index) =>
+        index < 3
+          ? {
+              ...chapter,
+              hitReadingLines: [repeated, ...chapter.hitReadingLines],
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("REPEATED_LONG_SENTENCE");
+  });
+
   it("rejects too-short interpretation section bodies in generated drafts", () => {
     const result = validateComprehensiveReportDraft(
       replaceSectionBody(

@@ -699,6 +699,47 @@ function countOccurrences(text: string, phrase: string): number {
   return text.split(phrase).length - 1;
 }
 
+function splitLongSentencesForRepetition(text: string): readonly string[] {
+  return text
+    .split(/(?<=[.!?。！？])\s+|\n+/u)
+    .map((sentence) =>
+      sentence
+        .replace(/[“”"']/g, "")
+        .replace(/\s+/g, " ")
+        .replace(/[.!?。！？]+$/u, "")
+        .trim(),
+    )
+    .filter((sentence) => sentence.length >= 40)
+    .filter(
+      (sentence) =>
+        !sentence.includes("성공이나 실패를 단정") &&
+        !sentence.includes("결과를 보장하지") &&
+        !sentence.includes("참고"),
+    )
+    .filter(
+      (sentence) =>
+        sentence.includes("강하게 끌리는 반보완 조합") ||
+        sentence.includes("같은 MBTI 조합 설명"),
+    );
+}
+
+function appendLongSentenceRepetitionErrors(
+  errors: string[],
+  visibleText: string,
+): void {
+  const counts = new Map<string, number>();
+
+  for (const sentence of splitLongSentencesForRepetition(visibleText)) {
+    counts.set(sentence, (counts.get(sentence) ?? 0) + 1);
+  }
+
+  for (const [sentence, count] of counts) {
+    if (count >= 3) {
+      errors.push(`COMPATIBILITY_REPEATED_LONG_SENTENCE: ${sentence}`);
+    }
+  }
+}
+
 function collectAdviceStrings(draft: CompatibilityReportDraft): readonly string[] {
   return [
     ...draft.chapters.flatMap((chapter) => chapter.practicalAdvice),
@@ -809,6 +850,7 @@ export function validateCompatibilityReportDraft(
     allowedSajuTerms: options.allowedSajuTerms ?? [],
     errors,
   });
+  appendLongSentenceRepetitionErrors(errors, text);
   warnings.push(...collectRepetitionWarnings(sanitizedDraft));
   warnings.push(...collectFinalAdviceLabelMismatchWarnings(sanitizedDraft));
 

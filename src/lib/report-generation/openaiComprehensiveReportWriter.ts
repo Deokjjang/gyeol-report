@@ -334,13 +334,19 @@ function sanitizeParsedNarrativeDraft(parsed: unknown): {
 
   const result = sanitizeComprehensiveReportNarrativeDraft(parsed);
   const particleResult = sanitizeKoreanParticleRegressions(result.draft);
+  const repetitionResult = removeExcessiveLongSentenceRepetition(
+    particleResult.value,
+  );
 
   return {
-    parsed: particleResult.value,
-    sanitized: result.sanitized || particleResult.sanitized,
-    sanitizedTerms: particleResult.sanitized
-      ? [...result.sanitizedTerms, "korean-particle-regression"]
-      : result.sanitizedTerms,
+    parsed: repetitionResult.value,
+    sanitized:
+      result.sanitized || particleResult.sanitized || repetitionResult.sanitized,
+    sanitizedTerms: [
+      ...result.sanitizedTerms,
+      ...(particleResult.sanitized ? ["korean-particle-regression"] : []),
+      ...(repetitionResult.sanitized ? ["long-sentence-repetition"] : []),
+    ],
   };
 }
 
@@ -357,6 +363,7 @@ function sanitizeKoreanParticleRegressionText(value: string): string {
     .replaceAll("갑신일주" + "을", "갑신일주를")
     .replaceAll("갑신일주" + "이", "갑신일주가")
     .replaceAll("갑신일주은", "갑신일주는")
+    .replace(/([갑을병정무기경신임계][자축인묘진사오미신유술해]일주)은/gu, "$1는")
     .replaceAll("마지막 정리" + "은", "마지막 정리는")
     .replaceAll("사람, 가족, 환경" + "는", "사람, 가족, 환경은")
     .replaceAll("나타납니다" + "로 나타납니다", "나타납니다")
@@ -370,6 +377,183 @@ function sanitizeKoreanParticleRegressionText(value: string): string {
     .replaceAll("느낍니다가", "느끼는 흐름이")
     .replaceAll("잘 쓰면 잘 쓰면", "잘 쓰면")
     .replace(/([가-힣A-Za-z0-9·]+은)\s+\1\s+/gu, "$1 ");
+}
+
+function normalizeSentenceForRepetition(sentence: string): string {
+  return sentence
+    .replace(/[“”"']/g, "")
+    .replace(/\s+/g, " ")
+    .replace(/[.!?。！？]+$/u, "")
+    .trim();
+}
+
+function removeRepeatedLongSentencesFromText(
+  value: string,
+  counts: Map<string, number>,
+): {
+  readonly value: string;
+  readonly sanitized: boolean;
+} {
+  const sentences = value.split(/(?<=[.!?。！？])\s+/u);
+  let sanitized = false;
+  const kept = sentences.filter((sentence) => {
+    const normalized = normalizeSentenceForRepetition(sentence);
+
+    if (normalized.length < 40) {
+      return true;
+    }
+
+    const count = counts.get(normalized) ?? 0;
+    counts.set(normalized, count + 1);
+
+    if (count >= 2) {
+      sanitized = true;
+      return false;
+    }
+
+    return true;
+  });
+
+  return {
+    value: kept.join(" ").trim(),
+    sanitized,
+  };
+}
+
+function removeExcessiveLongSentenceRepetition<T>(value: T): {
+  readonly value: T;
+  readonly sanitized: boolean;
+} {
+  const counts = new Map<string, number>();
+
+  function visit(input: unknown): {
+    readonly value: unknown;
+    readonly sanitized: boolean;
+  } {
+    if (typeof input === "string") {
+      return removeRepeatedLongSentencesFromText(input, counts);
+    }
+    if (Array.isArray(input)) {
+      let sanitized = false;
+      const nextValue = input.map((item) => {
+        const result = visit(item);
+        sanitized = sanitized || result.sanitized;
+
+        return result.value;
+      });
+
+      return { value: nextValue, sanitized };
+    }
+    if (input !== null && typeof input === "object") {
+      let sanitized = false;
+      const nextValue = Object.fromEntries(
+        Object.entries(input).map(([key, item]) => {
+          const result = visit(item);
+          sanitized = sanitized || result.sanitized;
+
+          return [key, result.value];
+        }),
+      );
+
+      return { value: nextValue, sanitized };
+    }
+
+    return { value: input, sanitized: false };
+  }
+
+  const result = visit(value);
+
+  return {
+    value: result.value as T,
+    sanitized: result.sanitized,
+  };
+}
+
+function removeExcessiveLongSentenceRepetitionFromNarrativeFields<T>(
+  value: T,
+): {
+  readonly value: T;
+  readonly sanitized: boolean;
+} {
+  if (value === null || typeof value !== "object" || Array.isArray(value)) {
+    return {
+      value,
+      sanitized: false,
+    };
+  }
+
+  const counts = new Map<string, number>();
+  let sanitized = false;
+  const sanitizeNarrativeValue = (input: unknown): unknown => {
+    if (typeof input === "string") {
+      const result = removeRepeatedLongSentencesFromText(input, counts);
+      sanitized = sanitized || result.sanitized;
+
+      return result.value;
+    }
+    if (Array.isArray(input)) {
+      return input.map((item) => sanitizeNarrativeValue(item));
+    }
+
+    return input;
+  };
+  const draft = value as Record<string, unknown>;
+  const next: Record<string, unknown> = { ...draft };
+
+  for (const key of ["openingSummary", "coreLine", "finalAdvice"]) {
+    if (typeof draft[key] === "string") {
+      next[key] = sanitizeNarrativeValue(draft[key]);
+    }
+  }
+  if (Array.isArray(draft.safetyNotes)) {
+    next.safetyNotes = sanitizeNarrativeValue(draft.safetyNotes);
+  }
+  if (Array.isArray(draft.chapters)) {
+    next.chapters = draft.chapters.map((chapter) => {
+      if (chapter === null || typeof chapter !== "object" || Array.isArray(chapter)) {
+        return chapter;
+      }
+
+      const candidate = chapter as Record<string, unknown>;
+
+      return {
+        ...candidate,
+        ...(typeof candidate.headline === "string"
+          ? { headline: sanitizeNarrativeValue(candidate.headline) }
+          : {}),
+        ...(Array.isArray(candidate.hitReadingLines)
+          ? { hitReadingLines: sanitizeNarrativeValue(candidate.hitReadingLines) }
+          : {}),
+        ...(typeof candidate.body === "string"
+          ? { body: sanitizeNarrativeValue(candidate.body) }
+          : {}),
+        ...(Array.isArray(candidate.solutionLines)
+          ? { solutionLines: sanitizeNarrativeValue(candidate.solutionLines) }
+          : {}),
+      };
+    });
+  }
+  if (Array.isArray(draft.longformReadings)) {
+    next.longformReadings = draft.longformReadings.map((reading) => {
+      if (reading === null || typeof reading !== "object" || Array.isArray(reading)) {
+        return reading;
+      }
+
+      const candidate = reading as Record<string, unknown>;
+
+      return {
+        ...candidate,
+        ...(typeof candidate.body === "string"
+          ? { body: sanitizeNarrativeValue(candidate.body) }
+          : {}),
+      };
+    });
+  }
+
+  return {
+    value: next as T,
+    sanitized,
+  };
 }
 
 function sanitizeKoreanParticleRegressions<T>(value: T): {
@@ -418,6 +602,26 @@ function sanitizeKoreanParticleRegressions<T>(value: T): {
   return {
     value,
     sanitized: false,
+  };
+}
+
+function sanitizeFinalComprehensiveDraft<T>(draft: T): {
+  readonly draft: T;
+  readonly sanitized: boolean;
+  readonly sanitizedTerms: readonly string[];
+} {
+  const particleResult = sanitizeKoreanParticleRegressions(draft);
+  const repetitionResult = removeExcessiveLongSentenceRepetitionFromNarrativeFields(
+    particleResult.value,
+  );
+
+  return {
+    draft: repetitionResult.value,
+    sanitized: particleResult.sanitized || repetitionResult.sanitized,
+    sanitizedTerms: [
+      ...(particleResult.sanitized ? ["korean-particle-regression"] : []),
+      ...(repetitionResult.sanitized ? ["long-sentence-repetition"] : []),
+    ],
   };
 }
 
@@ -1698,7 +1902,10 @@ export async function generateComprehensiveReportDraft(input: {
   const normalizedInitial = normalizeComprehensiveReportFinalMessage(
     stabilityInitial.draft,
   );
-  const validation = validateComprehensiveReportDraft(normalizedInitial.draft, {
+  const finalSanitizedInitial = sanitizeFinalComprehensiveDraft(
+    normalizedInitial.draft,
+  );
+  const validation = validateComprehensiveReportDraft(finalSanitizedInitial.draft, {
     allowedSajuTerms,
     allowedMbtiTerms: [input.mbtiType],
   });
@@ -1773,18 +1980,21 @@ export async function generateComprehensiveReportDraft(input: {
     const normalizedRepair = normalizeComprehensiveReportFinalMessage(
       stabilityRepair.draft,
     );
+    const finalSanitizedRepair = sanitizeFinalComprehensiveDraft(
+      normalizedRepair.draft,
+    );
     const normalizerWarnings = getFinalMessageNormalizerWarnings(
       normalizedInitial,
       normalizedRepair,
     );
-    const repairValidation = validateComprehensiveReportDraft(normalizedRepair.draft, {
+    const repairValidation = validateComprehensiveReportDraft(finalSanitizedRepair.draft, {
       allowedSajuTerms,
       allowedMbtiTerms: [input.mbtiType],
     });
 
     if (!repairValidation.ok || repairValidation.value === undefined) {
       const postRepairValidation = validateComprehensiveReportDraftAfterRepair(
-        normalizedRepair.draft,
+        finalSanitizedRepair.draft,
         {
           allowedSajuTerms,
           allowedMbtiTerms: [input.mbtiType],
@@ -1797,6 +2007,7 @@ export async function generateComprehensiveReportDraft(input: {
           rawText: repairResult.rawText,
           warnings: [
             ...sanitizerWarnings,
+            ...getCopySanitizerWarnings(finalSanitizedRepair),
             ...normalizerWarnings,
             "quality repair: attempted",
             "quality repair: passed with warnings",
@@ -1821,6 +2032,7 @@ export async function generateComprehensiveReportDraft(input: {
       rawText: repairResult.rawText,
       warnings: [
         ...sanitizerWarnings,
+        ...getCopySanitizerWarnings(finalSanitizedRepair),
         ...normalizerWarnings,
         "quality repair: attempted",
         repairWarnings.length > 0
@@ -1835,7 +2047,7 @@ export async function generateComprehensiveReportDraft(input: {
     draft: validation.value,
     rawText: result.rawText,
     warnings: [
-      ...getCopySanitizerWarnings(sanitizedInitial),
+      ...getCopySanitizerWarnings(sanitizedInitial, finalSanitizedInitial),
       ...getFinalMessageNormalizerWarnings(normalizedInitial),
       ...(validation.warnings ?? []),
     ],

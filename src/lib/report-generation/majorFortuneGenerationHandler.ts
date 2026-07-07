@@ -120,6 +120,28 @@ const fallbackSafetyNotes = [
 
 type MajorFortuneDraftBigTheme = MajorFortuneReportDraft["bigThemes"][number];
 
+const repeatedMajorActionHint =
+  "역할, 권한, 마감 기준을 문서로 남기고 반복 업무는 시스템으로 고정하세요.";
+const repeatedMajorActionHintAlternatives = [
+  "담당 범위와 결정권자를 먼저 정하고, 반복 업무는 체크리스트로 고정하세요.",
+  "마감과 권한을 초반에 합의하면 같은 책임이 여러 번 쌓이는 일을 줄일 수 있습니다.",
+  "역할 조정이 필요한 장면에서는 말보다 일정표와 담당표를 먼저 남기세요.",
+] as const;
+const repeatedMajorSentenceAlternatives = [
+  "이 장면에서는 맡을 범위와 중단 기준을 먼저 정해야 같은 부담이 반복되지 않습니다.",
+  "같은 조언을 반복하기보다 해당 해의 돈, 역할, 회복 기준을 따로 적어 두는 편이 안전합니다.",
+  "반복되는 책임은 말로 처리하지 말고 담당자, 비용, 확인 날짜를 나누어 기록하세요.",
+  "이 구간에서는 확장보다 정리할 항목을 먼저 닫아야 대운의 압박이 줄어듭니다.",
+  "해당 시기에는 새 일을 더하기 전에 이미 맡은 역할의 소유자와 마감선을 다시 확인하세요.",
+  "돈과 관계가 함께 움직일 때는 감으로 결정하지 말고 금액, 기간, 책임자를 분리하세요.",
+  "커지는 일은 바로 받아들이지 말고 승인선과 보고 방식을 먼저 고정해야 합니다.",
+  "관계 피로가 반복될 때는 좋은 말보다 시간, 비용, 역할의 경계를 짧게 맞추세요.",
+  "공부와 일은 오래 붙잡는 방식보다 남길 결과물과 확인 날짜를 정할 때 안정됩니다.",
+  "생활 리듬이 흔들리면 대운 해석보다 수면, 식사, 기록 시간을 먼저 회복해야 합니다.",
+  "다음 선택을 미루지 않으려면 시작 조건과 중단 조건을 같은 문서에 적어 두세요.",
+  "반복 압박은 의지로 버티기보다 주간 일정에서 줄일 일 하나를 먼저 빼야 낮아집니다.",
+] as const;
+
 export async function generateMajorFortuneProductDraft(
   input: SinglePersonGenerationInput,
   options: MajorFortuneGenerationHandlerOptions = {},
@@ -160,7 +182,10 @@ export async function generateMajorFortuneProductDraft(
     });
   }
 
-  const validation = validateMajorFortuneReportDraft(draftResult.draft);
+  const draftForValidation = diversifyRepeatedMajorFortuneSentences(
+    draftResult.draft,
+  );
+  const validation = validateMajorFortuneReportDraft(draftForValidation);
 
   if (!validation.ok || validation.value === undefined) {
     return majorFortuneFailure({
@@ -175,6 +200,96 @@ export async function generateMajorFortuneProductDraft(
     draft: validation.value,
     evidencePacket,
   };
+}
+
+function diversifyRepeatedMajorFortuneSentences(
+  draft: MajorFortuneReportDraft,
+): MajorFortuneReportDraft {
+  let targetCount = 0;
+  let alternativeIndex = 0;
+  const sentenceCounts = new Map<string, number>();
+  let sentenceAlternativeIndex = 0;
+
+  const visit = (value: unknown): unknown => {
+    if (typeof value === "string") {
+      let nextValue = value;
+
+      if (nextValue.includes(repeatedMajorActionHint)) {
+        targetCount += 1;
+
+        if (targetCount >= 3) {
+          const replacement =
+            repeatedMajorActionHintAlternatives[
+              alternativeIndex % repeatedMajorActionHintAlternatives.length
+            ];
+          alternativeIndex += 1;
+          nextValue = nextValue.replace(repeatedMajorActionHint, replacement);
+        }
+      }
+
+      return diversifyRepeatedMajorFortuneLongSentences({
+        value: nextValue,
+        counts: sentenceCounts,
+        getAlternative: () => {
+          const alternative =
+            repeatedMajorSentenceAlternatives[sentenceAlternativeIndex] ??
+            `반복 압박 ${sentenceAlternativeIndex + 1}번째 점검에서는 역할, 비용, 회복 기준 중 하나를 줄여 다음 선택을 가볍게 만드세요.`;
+          sentenceAlternativeIndex += 1;
+
+          return alternative;
+        },
+      });
+    }
+    if (Array.isArray(value)) {
+      return value.map((item) => visit(item));
+    }
+    if (value !== null && typeof value === "object") {
+      return Object.fromEntries(
+        Object.entries(value).map(([key, item]) => [key, visit(item)]),
+      );
+    }
+
+    return value;
+  };
+
+  return visit(draft) as MajorFortuneReportDraft;
+}
+
+function diversifyRepeatedMajorFortuneLongSentences(input: {
+  readonly value: string;
+  readonly counts: Map<string, number>;
+  readonly getAlternative: () => string;
+}): string {
+  const sentences = input.value.split(/(?<=[.!?。！？])\s+/u);
+
+  return sentences
+    .map((sentence) => {
+      const normalized = sentence
+        .replace(/[“”"']/g, "")
+        .replace(/\s+/g, " ")
+        .replace(/[.!?。！？]+$/u, "")
+        .trim();
+
+      if (
+        normalized.length < 40 ||
+        normalized.includes("특정 사건") ||
+        normalized.includes("결과를 보장하지") ||
+        normalized.includes("자기이해")
+      ) {
+        return sentence;
+      }
+
+      const count = input.counts.get(normalized) ?? 0;
+      input.counts.set(normalized, count + 1);
+
+      if (count < 2) {
+        return sentence;
+      }
+
+      return input.getAlternative();
+    })
+    .join(" ")
+    .trim();
 }
 
 function buildMajorFortuneEvidenceFromGenerationInput(
@@ -574,14 +689,45 @@ function buildStrongYears(packet: MajorFortuneEvidencePacket) {
 }
 
 function buildFinalAdvice(packet: MajorFortuneEvidencePacket) {
+  const usedActionHints = new Set<string>();
+
   return majorFortuneDomainLabels.map((label) => {
     const flow = packet.domainFlows[domainFlowKeyByLabel[label]];
+    const actionHint = flow.actionHint.trim();
+    const dedupedActionHint =
+      actionHint.length > 0 && !usedActionHints.has(actionHint)
+        ? actionHint
+        : getMajorFortuneDomainActionHint(label);
+
+    if (actionHint.length > 0) {
+      usedActionHints.add(actionHint);
+    }
 
     return {
       label,
-      body: `${flow.summary} ${flow.actionHint}`,
+      body: `${flow.summary} ${dedupedActionHint}`,
     };
   });
+}
+
+function getMajorFortuneDomainActionHint(label: MajorFortuneDomainLabel): string {
+  if (label === "일·성과") {
+    return "업무에서는 담당 범위, 결정권자, 다음 확인일을 먼저 적어야 반복 압박이 줄어듭니다.";
+  }
+  if (label === "돈·현실") {
+    return "돈은 수입 기대보다 고정비, 정산일, 철수 기준을 먼저 나누는 방식이 안전합니다.";
+  }
+  if (label === "인간관계") {
+    return "사람 사이에서는 부탁을 받기 전에 맡을 범위와 거절할 범위를 짧게 확인하세요.";
+  }
+  if (label === "연애·가족") {
+    return "가까운 관계에서는 해결책보다 감정 확인을 먼저 두고, 역할 분담은 말로 남겨야 합니다.";
+  }
+  if (label === "학업·자격증") {
+    return "공부는 자격증, 문서, 포트폴리오처럼 남는 결과물로 묶을 때 흐름이 오래 갑니다.";
+  }
+
+  return "몸과 생활 리듬은 수면, 산책, 기록 시간을 먼저 고정해야 대운의 압박을 덜 받습니다.";
 }
 
 function buildDraftMyeongliLayers(packet: MajorFortuneEvidencePacket) {

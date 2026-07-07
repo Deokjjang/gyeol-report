@@ -273,6 +273,33 @@ describe("compatibilityReportDraftValidator", () => {
     );
   });
 
+  it("rejects repeated long MBTI pair summary sentences", () => {
+    const draft = createValidCompatibilityDraft();
+    const repeated =
+      "ENTJ와 INTP는 강하게 끌리는 반보완 조합이지만, 결혼 운영에서는 생활 리듬과 책임 기준을 따로 세워야 합니다.";
+    const result = validate({
+      ...draft,
+      openingSummary: repeated,
+      relationshipAnalysis: {
+        ...draft.relationshipAnalysis,
+        connectionSummary: repeated,
+      },
+      chapters: draft.chapters.map((chapter, index) =>
+        index === 0
+          ? {
+              ...chapter,
+              body: repeated,
+            }
+          : chapter,
+      ),
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "COMPATIBILITY_REPEATED_LONG_SENTENCE",
+    );
+  });
+
   it("does not fail or warn on reasonable phrase reuse", () => {
     const draft = createValidCompatibilityDraft();
     const result = validate({

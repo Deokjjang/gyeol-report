@@ -190,6 +190,16 @@ describe("major fortune generation handler", () => {
     }
   });
 
+  it("diversifies repeated long action hints before preview validation", async () => {
+    const result = await generateMajorFortuneProductDraft(baseInput);
+    const visibleText = collectVisibleDraftText(result);
+    const repeatedActionHint =
+      "역할, 권한, 마감 기준을 문서로 남기고 반복 업무는 시스템으로 고정하세요.";
+    const count = visibleText.split(repeatedActionHint).length - 1;
+
+    expect(count).toBeLessThan(3);
+  });
+
   it("does not connect API, persistence, payment, or unconditional writer execution", () => {
     const forbiddenMarkers = [
       "api/reports",

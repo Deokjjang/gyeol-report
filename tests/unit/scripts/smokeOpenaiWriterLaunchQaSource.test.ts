@@ -73,6 +73,36 @@ describe("OpenAI writer launch QA smoke source", () => {
     }
   });
 
+  it("uses varied launch QA fixtures across products and compatibility categories", () => {
+    const requiredMarkers = [
+      "writerLaunchQaSingleFixtures",
+      "writerLaunchQaCompatibilityFixtures",
+      "서비스 기획자",
+      "브랜드 디자이너",
+      "영상 전공 대학생",
+      "온라인 쇼핑몰 대표",
+      "데이터 분석 취업 준비생",
+      "birthTimeUnknown: true",
+      "approximateBirthTimeSlot: \"YUSI\"",
+      "approximateBirthTimeSlot: \"HAESI\"",
+      "relationshipStatus: \"dating\"",
+      "jobStatus: \"freelancer\"",
+      "jobStatus: \"student\"",
+      "jobStatus: \"business_owner\"",
+      "jobStatus: \"job_seeker\"",
+      "mbtiType: \"INTJ\"",
+      "mbtiType: \"ENFP\"",
+      "mbtiType: \"ISTJ\"",
+      "mbtiType: \"ISFP\"",
+      "personA: fixture.personA",
+      "personB: fixture.personB",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(source).toContain(marker);
+    }
+  });
+
   it("checks writer QA quality markers and failure path", () => {
     const requiredMarkers = [
       "forbiddenVisibleMarkers",
@@ -83,11 +113,32 @@ describe("OpenAI writer launch QA smoke source", () => {
       "internal",
       "assertMinimumTextLength",
       "assertNoExcessiveSentenceRepetition",
+      "splitSentencesForRepetition",
+      "sentence.length >= 40",
+      "count >= 3",
       "assertLongformSections",
       "process.exitCode = 1",
       "OpenAI writer launch QA complete",
       "FAIL product=",
       "PASS product=",
+      "label=${qaCase.label}",
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(source).toContain(marker);
+    }
+  });
+
+  it("supports targeted writer QA reruns", () => {
+    const requiredMarkers = [
+      "--only",
+      "getOnlySelectors",
+      "selectWriterLaunchQaCases",
+      "writerLaunchQaCaseAliases",
+      "comprehensive",
+      "major-fortune",
+      "compatibility:marriage",
+      "--only matched no writer QA cases",
     ];
 
     for (const marker of requiredMarkers) {

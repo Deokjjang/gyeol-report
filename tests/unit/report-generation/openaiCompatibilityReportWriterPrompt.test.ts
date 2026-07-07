@@ -99,6 +99,12 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain(
       "Do not repeat the same advice concept in more than two sections.",
     );
+    expect(promptText).toContain("40자 이상 같은 문장이 전체 궁합 리포트에 3회 이상 나오면 실패");
+    expect(promptText).toContain("같은 생활 장면 문장을 여러 챕터에 재사용하지 마라");
+    expect(promptText).toContain("같은 MBTI 조합 설명을 여러 섹션에 복붙하지 마라");
+    expect(promptText).toContain("같은 명리 caution 문장을 다른 섹션에 반복하지 마라");
+    expect(promptText).toContain("marriage에서는 MBTI 조합 한줄평을 opening에서 1회만");
+    expect(promptText).toContain("ENTJ와 INFP는 강하게 끌리는 반보완 조합이지만 같은 문장을");
     expect(promptText).toContain("챕터마다 다른 명리학 레이어를 사용하라");
     expect(promptText).toContain("최소 5개 이상");
     expect(promptText).toContain("일간 관계");

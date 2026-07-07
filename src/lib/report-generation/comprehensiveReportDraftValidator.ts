@@ -1548,6 +1548,52 @@ function splitBodySentences(body: string): readonly string[] {
     );
 }
 
+function splitLongSentencesForRepetition(text: string): readonly string[] {
+  return text
+    .split(/(?<=[.!?。！？])\s+|\n+/u)
+    .map((sentence) =>
+      sentence
+        .replace(/[“”"']/g, "")
+        .replace(/\s+/g, " ")
+        .replace(/[.!?。！？]+$/u, "")
+        .trim(),
+    )
+    .filter((sentence) => sentence.length >= 40)
+    .filter(
+      (sentence) => !(repeatedSentenceAllowList as readonly string[]).includes(sentence),
+    )
+    .filter(
+      (sentence) =>
+        !sentence.includes("특정 사건") &&
+        !sentence.includes("결과를 보장하지") &&
+        !sentence.includes("자기이해"),
+    )
+    .filter(
+      (sentence) =>
+        sentence.includes("회의나 카톡") ||
+        sentence.includes("카톡 설명을 듣다가 틀린 부분") ||
+        sentence.includes("같은 문장 반복") ||
+        sentence.includes("MBTI bridge sentence"),
+    );
+}
+
+function appendLongSentenceRepetitionErrors(
+  errors: string[],
+  input: unknown,
+): void {
+  const counts = new Map<string, number>();
+
+  for (const sentence of splitLongSentencesForRepetition(collectStrings(input).join("\n"))) {
+    counts.set(sentence, (counts.get(sentence) ?? 0) + 1);
+  }
+
+  for (const [sentence, count] of counts) {
+    if (count >= 3) {
+      errors.push(`REPEATED_LONG_SENTENCE: ${sentence}`);
+    }
+  }
+}
+
 function isQuestionSentence(sentence: string): boolean {
   return sentence.endsWith("?") || sentence.endsWith("？");
 }
@@ -3668,6 +3714,7 @@ export function validateComprehensiveReportDraft(
     appendUserVisiblePromptArtifactErrors(errors, value);
     appendGenericUserLabelErrors(errors, value);
     appendAssembledLongformPatternErrors(errors, value);
+    appendLongSentenceRepetitionErrors(errors, value);
   }
 
   if (

@@ -619,10 +619,34 @@ function buildHitReadingLines(
       "오래 가는 힘은 더 강하게 밀어붙이는 쪽보다, 기준과 회복을 같이 운영하는 쪽에서 나옵니다.",
     ];
   }
+  if (chapterId === "opening") {
+    return [
+      "처음에는 판단 속도와 책임감이 같이 보이고, 쉬는 기준은 뒤로 밀릴 수 있습니다.",
+      "큰 방향을 잡을 때는 빠르지만, 감정 온도를 따로 챙겨야 오래 갑니다.",
+    ];
+  }
+  if (chapterId === "saju_identity") {
+    return [
+      "압박이 걸리는 자리에서 오히려 기준을 빨리 세우고 판을 정리하려는 모습이 나올 수 있습니다.",
+      "겉으로는 단단해 보이지만 안쪽에서는 역할과 책임의 무게를 계속 계산합니다.",
+    ];
+  }
+  if (chapterId === "personality_pattern") {
+    return [
+      "카톡 설명을 듣다가 틀린 부분이 먼저 보이면 표정 관리가 어려울 수 있습니다.",
+      "조언을 해준다고 생각하지만 상대는 평가받는다고 느낄 수 있습니다.",
+    ];
+  }
+  if (chapterId === "people_family_environment") {
+    return [
+      "가족 부탁이나 팀 역할이 들어오면 먼저 범위와 마감선을 정해야 마음이 놓입니다.",
+      "도움을 요청하기 전까지 혼자 버티려는 습관이 피로를 키울 수 있습니다.",
+    ];
+  }
 
   return [
-    "회의나 카톡 설명을 듣다가 틀린 부분이 먼저 보이면 표정 관리가 어려울 수 있습니다.",
-    "당신은 조언을 해준다고 생각하지만 상대는 평가받는다고 느낄 수 있습니다.",
+    "설명을 듣다가 핵심 오류가 먼저 보이면 말의 순서를 따로 잡아야 합니다.",
+    "강점은 줄이는 것이 아니라 장면에 맞게 전달 방식을 바꾸면 살아납니다.",
   ];
 }
 
@@ -726,19 +750,138 @@ function buildLongformBody(input: {
   const [firstTerm, secondTerm] = input.primaryTerms;
   const elementSummary = input.profileTable.fiveElementSummary.join(" · ");
   const domainLine = getDomainLongformLine(input.readingId);
+  const mbtiLine = getLongformMbtiLine(input.readingId, input.mbtiType);
+  const elementLine = getLongformElementLine(input.readingId, elementSummary);
+  const closingLine = getLongformClosingLine({
+    readingId: input.readingId,
+    firstTerm,
+    mbtiType: input.mbtiType,
+  });
 
   return [
-    `${input.titleKo}에서는 ${firstTerm}을 첫 기준으로 놓고 ${secondTerm}이 만드는 긴장과 보완 지점을 함께 봅니다. ${firstTerm}은 단순한 이름이 아니라, 판단이 어디서 빨라지고 책임이 어디서 무거워지는지 보여주는 원국의 표식입니다. 그래서 이 리포트는 용어를 외우게 하기보다 실제 말투, 돈 관리, 관계 피로, 회복 루틴으로 번역합니다.`,
-    `${input.mbtiType} 성향은 이 구조를 밖으로 꺼내는 방식입니다. 효율이 깨진 구조를 보면 개편안을 먼저 떠올리고, 권위보다 실력을 보며, 목표가 보이면 사람과 자원을 다시 배치하려는 감각이 강해질 수 있습니다. 이 힘은 일에서는 기획력과 협상력으로 살아나지만 가까운 관계에서는 말이 너무 빨리 결론으로 갈 수 있습니다.`,
-    `오행 분포는 ${elementSummary}입니다. 토가 강하면 현실감과 책임감이 단단하지만 맡은 일이 쌓이면 마음도 같이 무거워질 수 있습니다. 화와 수가 약하면 표현의 온도와 회복 루틴은 자동으로 나오기보다 의식적으로 만들어야 합니다. 쉬라는 말만으로는 잘 쉬지 못하고, 쉬는 이유와 구조가 있을 때 회복이 시작됩니다.`,
+    `${input.titleKo}에서는 ${firstTerm}과 ${secondTerm}이 만드는 긴장과 보완 지점을 함께 봅니다. ${input.titleKo}의 핵심은 용어를 외우게 하는 것이 아니라 실제 말투, 돈 관리, 관계 피로, 회복 루틴으로 번역하는 데 있습니다.`,
+    mbtiLine,
+    elementLine,
     domainLine,
-    `${firstTerm}과 ${input.mbtiType}의 빠른 결론 성향이 겹치면 당신은 틀린 구조를 그냥 넘기기 어렵습니다. 문제는 정확함이 아니라 속도입니다. 일에서는 빠른 판단이 실력이지만, 관계에서는 맞는 말도 순서를 틀리면 상처가 됩니다. 결론 전에 상대의 핵심을 확인하고, 돈과 역할은 기록으로 남기고, 회복은 기분이 아니라 일정으로 다루는 방식이 이 구조를 오래 쓰는 기준입니다.`,
+    closingLine,
   ].join(" ");
+}
+
+function getLongformElementLine(
+  readingId: ComprehensiveReportV2LongformReadingId,
+  elementSummary: string,
+): string {
+  if (readingId === "opening") {
+    return `오행 분포는 ${elementSummary}입니다. 첫인상에서는 토의 책임감이 먼저 보이고, 화와 수의 빈자리는 표현 온도와 회복 루틴을 따로 만들어야 하는 과제로 남습니다.`;
+  }
+  if (readingId === "baseSajuReading") {
+    return `오행을 보면 ${elementSummary} 흐름입니다. 목은 방향을 세우고 금은 기준을 자르지만, 토가 무거울수록 결정한 일을 오래 끌고 가는 대신 마음의 하중도 같이 커집니다.`;
+  }
+  if (readingId === "sajuFeatureReading") {
+    return `표식 해석에서는 ${elementSummary}의 균형을 함께 봅니다. 신살과 귀인은 이름보다 생활 반응으로 읽고, 부족한 화와 수는 말의 온도와 식히는 장치를 의식적으로 보완해야 합니다.`;
+  }
+  if (readingId === "mbtiReading") {
+    return `MBTI를 볼 때도 ${elementSummary}의 오행 배경을 빼면 설명이 얕아집니다. 토가 강한 책임감은 목표 지향성을 오래 버티게 하지만, 수의 완충이 적으면 머리를 끄는 루틴이 늦게 잡힐 수 있습니다.`;
+  }
+  if (readingId === "sajuMbtiBridgeReading") {
+    return `명리×MBTI 연결에서는 ${elementSummary}가 행동의 배경이 됩니다. 강한 토는 책임을 끝까지 끌고 가게 만들고, 비어 있는 화와 수는 표현과 회복을 자동값이 아니라 운영값으로 바꿉니다.`;
+  }
+  if (readingId === "workMoneyStudyReading") {
+    return `일과 돈에서는 ${elementSummary}가 현실감으로 작동합니다. 토가 강할수록 일을 끝까지 붙잡지만, 회복을 미루면 정산일과 책임 범위를 챙기는 판단도 같이 무거워질 수 있습니다.`;
+  }
+  if (readingId === "loveRelationshipReading") {
+    return `관계에서는 ${elementSummary}가 말의 온도에 영향을 줍니다. 화가 약하면 마음이 없는 것이 아니라 따뜻하게 꺼내는 속도가 늦고, 수가 약하면 감정을 식히는 시간이 따로 필요합니다.`;
+  }
+  if (readingId === "peopleFamilyEnvironmentReading") {
+    return `사람과 환경에서는 ${elementSummary}가 역할 감각으로 드러납니다. 토가 강하면 부탁을 끝까지 처리하지만, 수의 완충이 적으면 도움을 요청하기 전에 혼자 버티는 시간이 길어질 수 있습니다.`;
+  }
+  if (readingId === "riskGrowthReading") {
+    return `리스크 관점에서 ${elementSummary}는 과로의 위치를 보여줍니다. 토가 쌓이면 책임은 버티지만 몸과 말투가 먼저 딱딱해지고, 화와 수의 보완은 산책, 수면, 기록처럼 실제 루틴으로 넣어야 합니다.`;
+  }
+
+  return `마지막 기준에서도 ${elementSummary}는 중요합니다. 강한 책임감은 살리되 표현과 회복을 일정으로 보완해야 오래 갑니다.`;
+}
+
+function getLongformMbtiLine(
+  readingId: ComprehensiveReportV2LongformReadingId,
+  mbtiType: string,
+): string {
+  if (readingId === "opening") {
+    return `${mbtiType} 성향은 전체 결을 밖으로 꺼낼 때 빠른 판단과 목표 정리로 나타납니다. 이 리포트에서는 유형 설명을 반복하기보다 원국의 책임감이 실제 선택 속도로 바뀌는 장면을 먼저 봅니다.`;
+  }
+  if (readingId === "baseSajuReading") {
+    return `${mbtiType}는 사주 골격을 대신하지 않고, 그 골격이 말투와 판단 방식으로 드러나는 모습을 돕는 보조 언어입니다. 기본 형상에서는 방향을 잡는 힘과 책임을 떠안는 습관이 먼저 읽힙니다.`;
+  }
+  if (readingId === "sajuFeatureReading") {
+    return `${mbtiType} 성향은 신살과 귀인의 이름을 설명하는 원인이 아니라, 그 표식이 생활 속에서 어떻게 쓰이는지 보여주는 행동 언어입니다. 표식은 사건 예언보다 반복되는 반응과 피로 지점을 읽는 데 초점을 둡니다.`;
+  }
+  if (readingId === "mbtiReading") {
+    return `${mbtiType}는 효율, 기준, 목표 지향성만으로 끝나지 않습니다. 능력 없는 권위에 낮은 인내심을 보이거나, 논쟁을 친밀감처럼 느끼는 결도 사주 구조의 판단 속도와 함께 읽어야 합니다.`;
+  }
+  if (readingId === "workMoneyStudyReading") {
+    return `${mbtiType} 성향은 비효율을 보면 개편안을 먼저 떠올리는 쪽으로 드러납니다. 일에서는 이 감각이 기획력, 협상력, 프로젝트 정리력으로 살아나지만 정산일과 책임 범위를 늦게 쓰면 실력이 손해로 바뀔 수 있습니다.`;
+  }
+  if (readingId === "loveRelationshipReading") {
+    return `${mbtiType} 성향은 관계에서도 막연한 위로보다 해결책을 먼저 찾게 만들 수 있습니다. 상대가 감정을 말하는 순간에는 답을 주기보다 내 편이라는 확인을 먼저 건네야 말의 온도가 살아납니다.`;
+  }
+  if (readingId === "peopleFamilyEnvironmentReading") {
+    return `${mbtiType} 성향은 가족, 팀, 친구 관계에서 역할과 기준을 빨리 세우려는 방식으로 나타납니다. 권위보다 실력을 보려는 감각은 강점이지만, 공개적인 자리에서는 말의 선을 같이 잡아야 주변이 덜 긴장합니다.`;
+  }
+  if (readingId === "riskGrowthReading") {
+    return `${mbtiType} 성향은 목표가 보이면 사람과 자원을 다시 배치하려는 쪽으로 강해집니다. 오래 쓰려면 더 밀어붙이는 기준보다 중단 기준, 수면, 기록, 산책처럼 식히는 장치를 먼저 일정에 넣어야 합니다.`;
+  }
+  if (readingId === "sajuMbtiBridgeReading") {
+    return `${mbtiType}는 사주의 원인을 대신하지 않고 행동으로 드러나는 방식을 설명합니다. 명리의 판단 속도와 책임 위치가 MBTI의 목표 지향성과 만나면, 사용자는 자기 강점과 피로 지점을 더 구체적으로 알아차릴 수 있습니다.`;
+  }
+  if (readingId === "finalMessage") {
+    return `${mbtiType} 성향을 오래 쓰려면 더 강하게 밀어붙이는 법보다 멈추는 기준을 배워야 합니다. 마지막 기준은 성취를 줄이는 것이 아니라 책임, 돈, 관계, 회복을 동시에 운영하는 장치를 만드는 데 있습니다.`;
+  }
+
+  return `${mbtiType} 성향은 섹션별 행동 장면으로만 짧게 연결합니다. 같은 문장을 반복하지 않고 원국의 다른 면을 생활 언어로 옮깁니다.`;
+}
+
+function getLongformClosingLine(input: {
+  readonly readingId: ComprehensiveReportV2LongformReadingId;
+  readonly firstTerm: string;
+  readonly mbtiType: string;
+}): string {
+  if (input.readingId === "workMoneyStudyReading") {
+    return `${input.firstTerm}과 ${input.mbtiType}의 목표 지향성이 겹치면 돈이 되는 판은 빨리 보입니다. 그래서 이 장에서는 확장보다 계약서, 정산일, 책임 범위, 철수 기준을 먼저 닫는 기준을 남깁니다.`;
+  }
+  if (input.readingId === "loveRelationshipReading") {
+    return `${input.firstTerm}의 판단 속도와 ${input.mbtiType}의 해결 중심성이 겹치면 맞는 말이 너무 빨리 나갈 수 있습니다. 관계에서는 정확함보다 먼저 내 편이라는 확인을 건네는 순서가 오래 갑니다.`;
+  }
+  if (input.readingId === "peopleFamilyEnvironmentReading") {
+    return `${input.firstTerm}과 ${input.mbtiType}의 역할 정리 감각이 만나면 가족과 팀에서 정리 담당이 되기 쉽습니다. 다만 맡기 전에 범위와 마감을 말해야 책임이 한 사람에게 몰리지 않습니다.`;
+  }
+  if (input.readingId === "riskGrowthReading") {
+    return `${input.firstTerm}의 버티는 힘과 ${input.mbtiType}의 추진력이 겹치면 멈춤이 늦어질 수 있습니다. 회복은 기분이 좋아지면 하는 일이 아니라 일정표에 먼저 넣는 운영 기준입니다.`;
+  }
+  if (input.readingId === "sajuMbtiBridgeReading") {
+    return `${input.firstTerm}은 판단의 방향을 보여주고 ${input.mbtiType}는 그 판단이 밖으로 나오는 속도를 보여줍니다. 두 근거를 함께 보면 강점은 더 선명해지고 피로 지점은 더 구체적으로 잡힙니다.`;
+  }
+  if (input.readingId === "finalMessage") {
+    return `${input.firstTerm}의 힘을 오래 쓰려면 매일의 실행 기준이 필요합니다. 질문 하나, 기록 하나, 산책 하나처럼 작지만 반복 가능한 장치가 이 리포트의 마지막 기준입니다.`;
+  }
+
+  return `${input.firstTerm}의 결은 줄일 힘이 아니라 다루는 순서를 배울 힘입니다. 이 섹션에서는 빠른 판단을 생활 장면에 맞게 조정하는 방법을 남깁니다.`;
 }
 
 function getDomainLongformLine(
   readingId: ComprehensiveReportV2LongformReadingId,
 ): string {
+  if (readingId === "opening") {
+    return "전체 성향은 빠른 판단, 강한 책임감, 늦게 잡히는 회복 기준이 한꺼번에 보이는 구조입니다. 사용자는 일을 맡으면 판을 빨리 정리하지만, 마음의 온도와 쉬는 기준은 별도로 챙겨야 오래 갑니다.";
+  }
+  if (readingId === "baseSajuReading") {
+    return "사주 골격에서는 일간, 일주, 오행, 십성의 균형을 먼저 읽습니다. 이 골격은 성격을 단정하는 말이 아니라 어디서 기준이 빨라지고 어디서 부담이 쌓이는지 보여주는 지도에 가깝습니다.";
+  }
+  if (readingId === "sajuFeatureReading") {
+    return "주요 표식은 신살과 귀인의 이름을 외우는 장이 아니라 실제 생활에서 어떻게 체감되는지 확인하는 장입니다. 도움을 받는 통로, 날카로운 말, 책임의 누적, 회복의 빈자리를 각각 다른 장면으로 풀어 읽습니다.";
+  }
+  if (readingId === "mbtiReading") {
+    return "MBTI 성향은 명리 구조를 덮어쓰지 않습니다. 다만 비효율을 못 넘기는 반응, 능력 중심의 권위 판단, 논쟁을 통해 가까워지는 방식처럼 사용자가 이미 익숙한 행동 언어를 제공해 줍니다.";
+  }
   if (readingId === "workMoneyStudyReading") {
     return "일·돈·공부에서는 아이디어를 떠올리면 이걸 어떻게 팔지까지 빨리 가는 편입니다. 수익화 감각이 빠른 사람일수록 정산일, 권한, 책임 범위를 늦게 쓰면 손해를 봅니다. 프로젝트를 시작할 때는 열정이 아니라 기록과 조건 합의가 먼저이고, 공부는 자격증과 전문서를 실제 포트폴리오에 붙일 때 집중력이 살아납니다.";
   }
@@ -754,8 +897,11 @@ function getDomainLongformLine(
   if (readingId === "sajuMbtiBridgeReading") {
     return "현침살의 예리함과 빠른 결론 성향이 만나면 핵심 오류를 빨리 잡지만 말이 평가처럼 들릴 수 있습니다. 재성의 현실 감각과 목표 지향성이 겹치면 돈이 되는 판은 빨리 보지만 방어 규칙이 필요합니다. 토가 강한 구조와 책임감이 겹치면 맡은 일을 끝까지 끌고 가지만 쉬는 기준을 뒤로 미루기 쉽습니다. 화와 수가 약하면 감정이 없는 것이 아니라 부드럽게 꺼내고 식히는 통로를 의식적으로 만들어야 합니다.";
   }
+  if (readingId === "finalMessage") {
+    return "마지막 기준은 더 많은 의지를 요구하지 않습니다. 일과 돈은 기록으로 묶고, 가까운 관계에서는 감정 확인을 먼저 두며, 회복은 일정으로 넣는 작은 장치를 반복하는 것이 이 구조를 오래 쓰는 방법입니다.";
+  }
 
-  return "전체 흐름에서는 원국의 표식과 MBTI 성향이 따로 놀지 않습니다. 명리는 판단의 방향과 부담이 생기는 위치를 보여주고, MBTI는 그것이 말투와 선택 속도와 관계 운영 방식으로 드러나는 모습을 설명합니다. 그래서 이 리포트는 사주가 전면이고 MBTI는 사용자가 체감하는 행동 언어로만 연결합니다.";
+  return "이 섹션은 원국의 다른 면을 생활 언어로 옮기는 보조 장입니다.";
 }
 
 function getLinkedChapterIds(

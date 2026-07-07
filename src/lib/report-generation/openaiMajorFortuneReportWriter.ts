@@ -108,6 +108,69 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
+function normalizeSentenceForRepetition(sentence: string): string {
+  return sentence
+    .replace(/[“”"']/g, "")
+    .replace(/\s+/g, " ")
+    .replace(/[.!?。！？]+$/u, "")
+    .trim();
+}
+
+function removeRepeatedLongSentencesFromText(
+  value: string,
+  counts: Map<string, number>,
+): {
+  readonly value: string;
+  readonly sanitized: boolean;
+} {
+  const sentences = value.split(/(?<=[.!?。！？])\s+/u);
+  let sanitized = false;
+  const kept = sentences.filter((sentence) => {
+    const normalized = normalizeSentenceForRepetition(sentence);
+
+    if (normalized.length < 40) {
+      return true;
+    }
+
+    const count = counts.get(normalized) ?? 0;
+    counts.set(normalized, count + 1);
+
+    if (count >= 2) {
+      sanitized = true;
+      return false;
+    }
+
+    return true;
+  });
+
+  return {
+    value: kept.join(" ").trim(),
+    sanitized,
+  };
+}
+
+function removeExcessiveLongSentenceRepetition<T>(value: T): T {
+  const counts = new Map<string, number>();
+
+  function visit(input: unknown): unknown {
+    if (typeof input === "string") {
+      return removeRepeatedLongSentencesFromText(input, counts).value;
+    }
+    if (Array.isArray(input)) {
+      return input.map((item) => visit(item));
+    }
+    if (input !== null && typeof input === "object") {
+      return Object.fromEntries(
+        Object.entries(input).map(([key, item]) => [key, visit(item)]),
+      );
+    }
+
+    return input;
+  }
+
+  return visit(value) as T;
+}
+
 function sanitizeDiagnosticText(value: string): string {
   return value
     .replace(/Bearer\s+[A-Za-z0-9._~+/=-]+/g, "Bearer [redacted]")
@@ -658,10 +721,12 @@ export async function generateMajorFortuneReportDraft(input: {
     });
   }
 
-  const parsed = attachDeterministicEvidence({
+  const parsed = removeExcessiveLongSentenceRepetition(
+    attachDeterministicEvidence({
     parsed: parseJson(rawText),
     evidencePacket: input.evidencePacket,
-  });
+    }),
+  );
   const validation = validateMajorFortuneReportDraft(parsed);
 
   if (!validation.ok) {
