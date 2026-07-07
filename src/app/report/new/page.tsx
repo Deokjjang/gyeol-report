@@ -50,6 +50,8 @@ const COMPREHENSIVE_V2_REQUIRED_INPUT_MESSAGE_KO =
   "이름과 생년월일을 입력해 주세요.";
 const COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO =
   "종합 리포트 미리보기를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.";
+const SINGLE_PRODUCT_PREVIEW_CREATE_ERROR_MESSAGE_KO =
+  "리포트 미리보기를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.";
 const REPORT_CREATE_API_PATH = "/api/reports/create";
 const DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED =
   process.env.NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED === "1";
@@ -707,6 +709,46 @@ function getSingleProductLeadText(productKey: string): string {
   return "단독 인물 리포트 입력 흐름입니다.";
 }
 
+function getSingleProductReadyCtaLabel(productKey: string): string {
+  if (productKey === CAREER_MONEY_STUDY_PRODUCT_KEY) {
+    return "직업 리포트 미리보기 생성";
+  }
+
+  if (productKey === LOVE_MARRIAGE_CHILD_PRODUCT_KEY) {
+    return "연애 리포트 미리보기 생성";
+  }
+
+  if (productKey === MAJOR_FORTUNE_PRODUCT_KEY) {
+    return "대운 리포트 미리보기 생성";
+  }
+
+  if (productKey === ANNUAL_FORTUNE_PRODUCT_KEY) {
+    return "세운 리포트 미리보기 생성";
+  }
+
+  return "종합 리포트 미리보기 생성";
+}
+
+function getSingleProductLoadingCtaLabel(productKey: string): string {
+  if (productKey === CAREER_MONEY_STUDY_PRODUCT_KEY) {
+    return "직업 리포트 생성 중";
+  }
+
+  if (productKey === LOVE_MARRIAGE_CHILD_PRODUCT_KEY) {
+    return "연애 리포트 생성 중";
+  }
+
+  if (productKey === MAJOR_FORTUNE_PRODUCT_KEY) {
+    return "대운 리포트 생성 중";
+  }
+
+  if (productKey === ANNUAL_FORTUNE_PRODUCT_KEY) {
+    return "세운 리포트 생성 중";
+  }
+
+  return "종합 리포트 생성 중";
+}
+
 function formatBirthTimeSummary(
   mode: BirthTimeMode,
   exactTime: string,
@@ -1272,12 +1314,10 @@ export default function NewReportPage({
     ? isAnnualFortuneRequiredInputComplete(singleProductInput)
     : isMajorFortuneRequiredInputComplete(singleProductInput);
   const singleProductCtaLabel = isSingleProductSubmitting
-    ? "종합 리포트 생성 중"
-    : isSingleProductComprehensiveV2 && isSingleProductInputReady
-      ? "종합 리포트 미리보기 생성"
-      : isSingleProductInputReady
-        ? `${selectedProduct.nameKo} 미리보기 준비됨`
-        : "필수 정보를 입력해 주세요";
+    ? getSingleProductLoadingCtaLabel(selectedProduct.productKey)
+    : isSingleProductInputReady
+      ? getSingleProductReadyCtaLabel(selectedProduct.productKey)
+      : "필수 정보를 입력해 주세요";
   const isMajorFortuneInputReady =
     isMajorFortuneRequiredInputComplete(majorFortuneInput);
   const majorFortuneCtaLabel = isMajorFortuneInputReady
@@ -1304,17 +1344,6 @@ export default function NewReportPage({
   ) {
     event.preventDefault();
     setSingleProductSubmitError("");
-
-    if (!isSingleProductComprehensiveV2) {
-      buildReportInputPayload({
-        selectedProduct,
-        singleProductInput,
-        compatibilityPersonA,
-        compatibilityPersonB,
-        compatibilityRelationshipType,
-      });
-      return;
-    }
 
     if (!isSingleProductInputReady || isSingleProductSubmitting) {
       setSingleProductSubmitError(COMPREHENSIVE_V2_REQUIRED_INPUT_MESSAGE_KO);
@@ -1349,12 +1378,16 @@ export default function NewReportPage({
       setSingleProductSubmitError(
         getProductPreviewCreateErrorMessage(
           createResult,
-          COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO,
+          isSingleProductComprehensiveV2
+            ? COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO
+            : SINGLE_PRODUCT_PREVIEW_CREATE_ERROR_MESSAGE_KO,
         ),
       );
     } catch {
       setSingleProductSubmitError(
-        COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO,
+        isSingleProductComprehensiveV2
+          ? COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO
+          : SINGLE_PRODUCT_PREVIEW_CREATE_ERROR_MESSAGE_KO,
       );
     }
 
@@ -1503,19 +1536,16 @@ export default function NewReportPage({
 
             <div className="space-y-3">
               <button
-                type={isSingleProductComprehensiveV2 ? "submit" : "button"}
+                type="submit"
                 disabled={
-                  !isSingleProductComprehensiveV2 ||
                   !isSingleProductInputReady ||
                   isSingleProductSubmitting
                 }
                 aria-disabled={
-                  !isSingleProductComprehensiveV2 ||
                   !isSingleProductInputReady ||
                   isSingleProductSubmitting
                 }
                 className={
-                  isSingleProductComprehensiveV2 &&
                   isSingleProductInputReady &&
                   !isSingleProductSubmitting
                     ? "min-h-12 rounded-lg border border-[#6f1d35] bg-[#6f1d35] px-5 py-3 text-sm font-bold text-[#fffdf8] transition hover:bg-[#7f2440]"

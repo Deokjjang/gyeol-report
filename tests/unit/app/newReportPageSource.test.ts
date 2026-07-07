@@ -192,7 +192,6 @@ describe("new report page source", () => {
       "COMPREHENSIVE_V2_REQUIRED_INPUT_MESSAGE_KO",
       "COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO",
       "function handleSingleProductPreviewSubmit",
-      "if (!isSingleProductComprehensiveV2)",
       "buildSinglePersonReportInputPayload(",
       'REPORT_CREATE_API_PATH = "/api/reports/create"',
       "fetch(REPORT_CREATE_API_PATH",
@@ -205,7 +204,7 @@ describe("new report page source", () => {
       "종합 리포트 생성 중",
       "필수 정보를 입력해 주세요",
       "onSubmit={handleSingleProductPreviewSubmit}",
-      'type={isSingleProductComprehensiveV2 ? "submit" : "button"}',
+      'type="submit"',
       "입력한 정보를 바탕으로 종합 미리보기 리포트를 생성합니다. 현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다.",
     ];
 
@@ -219,6 +218,56 @@ describe("new report page source", () => {
     expect(
       pageSource.indexOf("isSinglePersonPreviewProduct(selectedProduct.productKey)"),
     ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
+  });
+
+  it("connects career love major and annual single product submit flows", () => {
+    const requiredMarkers = [
+      "getSingleProductReadyCtaLabel",
+      "getSingleProductLoadingCtaLabel",
+      "SINGLE_PRODUCT_PREVIEW_CREATE_ERROR_MESSAGE_KO",
+      "CAREER_MONEY_STUDY_PRODUCT_KEY",
+      "career_money_study",
+      "CAREER_MONEY_STUDY_PRODUCT_SLUG",
+      "career-money-study",
+      "직업 리포트 미리보기 생성",
+      "직업 리포트 생성 중",
+      "LOVE_MARRIAGE_CHILD_PRODUCT_KEY",
+      "love_marriage_child",
+      "LOVE_MARRIAGE_CHILD_PRODUCT_SLUG",
+      "love-marriage-child",
+      "연애 리포트 미리보기 생성",
+      "연애 리포트 생성 중",
+      "MAJOR_FORTUNE_PRODUCT_KEY",
+      "major_fortune",
+      "MAJOR_FORTUNE_PRODUCT_SLUG",
+      "major-fortune",
+      "대운 리포트 미리보기 생성",
+      "대운 리포트 생성 중",
+      "ANNUAL_FORTUNE_PRODUCT_KEY",
+      "annual_fortune",
+      "ANNUAL_FORTUNE_PRODUCT_SLUG",
+      "annual-fortune",
+      "selectedYear: input.selectedYear.trim()",
+      "세운 리포트 미리보기 생성",
+      "세운 리포트 생성 중",
+      "if (!isSingleProductInputReady || isSingleProductSubmitting)",
+      "fetch(REPORT_CREATE_API_PATH",
+      "router.push(`/reports/${createResult.reportId}`)",
+      'type="submit"',
+    ];
+
+    for (const marker of requiredMarkers) {
+      expect(pageSource).toContain(marker);
+    }
+
+    expect(pageSource).not.toContain("if (!isSingleProductComprehensiveV2)");
+    expect(pageSource).not.toContain(
+      'type={isSingleProductComprehensiveV2 ? "submit" : "button"}',
+    );
+    expect(singlePersonPreviewBranchSource).toContain(
+      "onSubmit={handleSingleProductPreviewSubmit}",
+    );
+    expect(singlePersonPreviewBranchSource).not.toContain("<DevTossCheckoutLauncher");
   });
 
   it("keeps compatibility product selection as a preview-only input branch", () => {

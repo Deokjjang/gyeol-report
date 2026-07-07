@@ -661,31 +661,59 @@ function renderProductPreviewLoveMarriageChildState(
 }
 
 function renderProductPreviewState(productPreview: ProductPreviewSnapshot) {
+  let content: ReactNode;
+
   if (productPreview.productType === "career_money_study") {
-    return renderProductPreviewCareerMoneyStudyState(productPreview);
+    content = renderProductPreviewCareerMoneyStudyState(productPreview);
+  } else if (productPreview.productType === "saju_mbti_compatibility") {
+    content = renderProductPreviewCompatibilityState(productPreview);
+  } else if (productPreview.productType === "love_marriage_child") {
+    content = renderProductPreviewLoveMarriageChildState(productPreview);
+  } else if (productPreview.productType === "major_fortune") {
+    content = renderProductPreviewMajorFortuneState(productPreview);
+  } else if (productPreview.productType === "annual_fortune") {
+    content = renderProductPreviewAnnualFortuneState(productPreview);
+  } else if (productPreview.productType === "saju_mbti_full") {
+    content = renderProductPreviewComprehensiveV2State(productPreview);
+  } else {
+    return renderUnsupportedProductPreviewState();
   }
 
-  if (productPreview.productType === "saju_mbti_compatibility") {
-    return renderProductPreviewCompatibilityState(productPreview);
-  }
+  return (
+    <>
+      {content}
+      {renderProductPreviewReentryCta(productPreview.productSlug)}
+    </>
+  );
+}
 
-  if (productPreview.productType === "love_marriage_child") {
-    return renderProductPreviewLoveMarriageChildState(productPreview);
-  }
-
-  if (productPreview.productType === "major_fortune") {
-    return renderProductPreviewMajorFortuneState(productPreview);
-  }
-
-  if (productPreview.productType === "annual_fortune") {
-    return renderProductPreviewAnnualFortuneState(productPreview);
-  }
-
-  if (productPreview.productType === "saju_mbti_full") {
-    return renderProductPreviewComprehensiveV2State(productPreview);
-  }
-
-  return renderUnsupportedProductPreviewState();
+function renderProductPreviewReentryCta(productSlug: string) {
+  return (
+    <section className="bg-[#f6f0e7] px-5 py-10 text-[#2b211b] sm:px-8">
+      <div className="mx-auto flex max-w-5xl flex-col gap-4 rounded-lg border border-[#d7b56d] bg-[#fffdf8] p-5 shadow-sm shadow-[#6f1d35]/10 sm:flex-row sm:items-center sm:justify-between">
+        <div className="space-y-1">
+          <p className="text-sm font-bold text-[#6f1d35]">결리포트</p>
+          <p className="text-base font-semibold">
+            내 정보로도 리포트를 만들어 볼 수 있습니다.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={`/report/new?product=${productSlug}`}
+            className="rounded-lg border border-[#6f1d35] bg-[#6f1d35] px-4 py-3 text-sm font-bold text-[#fffdf8] transition hover:bg-[#7f2440]"
+          >
+            나도 내 리포트 보기
+          </a>
+          <a
+            href="/report/new"
+            className="rounded-lg border border-[#d7b56d] bg-[#fffaf1] px-4 py-3 text-sm font-bold text-[#8b6d2d] transition hover:bg-[#fff4dc]"
+          >
+            내 사주×MBTI 리포트 만들기
+          </a>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function renderProductPreviewCareerMoneyStudyState(
