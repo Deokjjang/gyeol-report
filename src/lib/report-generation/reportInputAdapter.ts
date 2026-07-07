@@ -24,6 +24,7 @@ export type ReportProductKind =
   | "loveMarriageChild"
   | "majorFortune"
   | "annualFortune"
+  | "comprehensiveV2"
   | "compatibility";
 
 export type ReportInputAdapterErrorCode =
@@ -95,6 +96,7 @@ const PRODUCT_KIND_BY_KEY = {
   love_marriage_child: "loveMarriageChild",
   major_fortune: "majorFortune",
   annual_fortune: "annualFortune",
+  saju_mbti_full: "comprehensiveV2",
   saju_mbti_compatibility: "compatibility",
 } as const satisfies Record<ReportProductKey, ReportProductKind>;
 
@@ -103,6 +105,7 @@ const PRODUCT_SLUG_BY_KEY = {
   love_marriage_child: "love-marriage-child",
   major_fortune: "major-fortune",
   annual_fortune: "annual-fortune",
+  saju_mbti_full: "saju-mbti-full",
   saju_mbti_compatibility: "compatibility",
 } as const satisfies Record<ReportProductKey, ReportProductSlug>;
 
@@ -323,6 +326,7 @@ function isReportProductKey(value: unknown): value is ReportProductKey {
     value === "love_marriage_child" ||
     value === "major_fortune" ||
     value === "annual_fortune" ||
+    value === "saju_mbti_full" ||
     value === "saju_mbti_compatibility"
   );
 }
@@ -334,7 +338,8 @@ function isSinglePersonProductKey(
     value === "career_money_study" ||
     value === "love_marriage_child" ||
     value === "major_fortune" ||
-    value === "annual_fortune"
+    value === "annual_fortune" ||
+    value === "saju_mbti_full"
   );
 }
 

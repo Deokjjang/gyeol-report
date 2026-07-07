@@ -281,6 +281,57 @@ function createV2Draft(): ComprehensiveReportV2Draft {
       gwiinGilshin: ["천을귀인", "문창귀인", "재고귀인"],
       mbti: "ENTJ",
     },
+    sajuFeatureChapter: {
+      titleKo: "명리 특징 해석",
+      subtitleKo:
+        "공통 만세력표는 근거이고, 이 챕터는 원국 특징을 현실 언어로 풀어보는 해석입니다.",
+      intro:
+        "공통 만세력표에 표시되는 신살, 귀인, 합충, 지장간은 이름만 보면 어렵게 느껴질 수 있습니다. 이 챕터에서는 원국에 실제로 잡힌 표식을 사건 예언이 아니라 말투, 판단 속도, 도움을 요청하는 방식, 관계 반응, 회복 루틴으로 번역합니다.",
+      items: [
+        {
+          rawLabel: "천을귀인",
+          userTitle: "막힌 길에서 도움의 통로가 열리는 표식",
+          plainMeaning:
+            "천을귀인은 도움, 통로, 완충, 기회가 붙는 방향을 보는 표식입니다.",
+          howItShowsInYou:
+            "혼자 버티기보다 필요한 것을 정확히 요청할 때 사람이나 제도의 도움을 받는 장면으로 드러납니다.",
+          strength:
+            "중요한 순간에 고립되지 않고 도움의 경로를 열어 두는 힘이 됩니다.",
+          fatiguePoint:
+            "도움을 요청하지 않고 혼자 해결하려 하면 좋은 통로를 놓칠 수 있습니다.",
+          practicalUse:
+            "필요한 도움과 요청 문장을 미리 정리해 두면 이 표식이 더 잘 살아납니다.",
+        },
+        {
+          rawLabel: "현침살",
+          userTitle: "말과 판단이 날카롭게 들어가는 구조",
+          plainMeaning:
+            "현침살은 말, 판단, 분석이 날카롭게 들어가 정밀하게 핵심을 보는 표식입니다.",
+          howItShowsInYou:
+            "상대 설명 중 틀린 부분이 먼저 보이거나 짧은 답이 차갑게 느껴지는 장면으로 드러납니다.",
+          strength:
+            "분석, 교정, 기획, 글쓰기처럼 정밀한 사고가 필요한 일에서 강점이 됩니다.",
+          fatiguePoint:
+            "정확한 말도 표현 온도가 낮으면 상대에게 평가처럼 들릴 수 있습니다.",
+          practicalUse:
+            "핵심을 말하기 전 상대의 말을 한 문장으로 되받고 판단을 꺼내세요.",
+        },
+        {
+          rawLabel: "재다신약",
+          userTitle: "돈과 책임이 먼저 커지는 구조",
+          plainMeaning:
+            "재다신약은 자원과 현실 과제가 커질 때 몸과 마음의 부담도 같이 커지는 구조 판단입니다.",
+          howItShowsInYou:
+            "돈이 되는 판을 빨리 보지만 정산일과 손실 한도 없이 확장하면 책임이 먼저 커질 수 있습니다.",
+          strength:
+            "자원을 구조화하고 수익화의 가능성을 빠르게 보는 감각으로 살아납니다.",
+          fatiguePoint:
+            "돈과 역할을 모두 떠안으면 쉬는 기준이 뒤로 밀릴 수 있습니다.",
+          practicalUse:
+            "프로젝트마다 비용 상한선과 철수 기준을 먼저 적어 두세요.",
+        },
+      ],
+    },
     sajuSymbolicNickname: {
       title: "큰 나무가 날카로운 금 위에 선 사람",
       subtitle:
@@ -1124,6 +1175,27 @@ async function persistAnnualFortuneProductPreview(reportId: string): Promise<voi
   await persistProductPreviewRecord(reportId, productPreviewResult.value);
 }
 
+async function persistComprehensiveV2ProductPreview(
+  reportId: string,
+): Promise<void> {
+  const productPreviewResult = createProductPreviewSnapshot({
+    reportId,
+    createdAtIso: createdAt,
+    productKey: "saju_mbti_full",
+    productSlug: "saju-mbti-full",
+    draft: {
+      ...createV2Draft(),
+      productVersion: "v2",
+    },
+  });
+
+  if (!productPreviewResult.ok) {
+    throw new Error(`Product preview fixture failed: ${productPreviewResult.error}`);
+  }
+
+  await persistProductPreviewRecord(reportId, productPreviewResult.value);
+}
+
 describe("report result page", () => {
   beforeEach(() => {
     mockGetPaidReportResult.mockReset();
@@ -1205,6 +1277,19 @@ describe("report result page", () => {
     expect(html).toContain("현재 대운과 선택 연도 세운 교차");
     expect(html).toContain("월운 12개월 흐름");
     expect(html).not.toContain("사주×MBTI 종합 리포트");
+    expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
+  });
+
+  it("renders comprehensive V2 product preview snapshot before paid result lookup", async () => {
+    await persistComprehensiveV2ProductPreview("report_product_preview_full_v2");
+
+    const html = await renderPage("report_product_preview_full_v2");
+
+    expect(mockGetPaidReportResult).not.toHaveBeenCalled();
+    expect(html).toContain("기초 정보");
+    expect(html).toContain("덕민님의 결은 큰 방향과 빠른 판단에 있습니다");
+    expect(html).toContain("오행 분포로 보는 에너지 구조");
+    expect(html).toContain("내 사주의 주요 표식 해석");
     expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
   });
 

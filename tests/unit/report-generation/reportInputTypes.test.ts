@@ -25,6 +25,7 @@ describe("report input payload contract", () => {
       "love_marriage_child",
       "major_fortune",
       "annual_fortune",
+      "saju_mbti_full",
       "saju_mbti_compatibility",
     ]);
     expect(SINGLE_PERSON_REPORT_PRODUCT_KEYS).toEqual([
@@ -32,12 +33,14 @@ describe("report input payload contract", () => {
       "love_marriage_child",
       "major_fortune",
       "annual_fortune",
+      "saju_mbti_full",
     ]);
     expect(REPORT_PRODUCT_SLUGS).toEqual([
       "career-money-study",
       "love-marriage-child",
       "major-fortune",
       "annual-fortune",
+      "saju-mbti-full",
       "compatibility",
     ]);
   });

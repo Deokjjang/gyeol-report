@@ -41,6 +41,7 @@ const productKinds: readonly ReportProductKind[] = [
   "compatibility",
   "majorFortune",
   "annualFortune",
+  "comprehensiveV2",
 ];
 
 function makeSinglePayload(
@@ -91,6 +92,7 @@ describe("product generation dispatcher", () => {
       "compatibility",
       "majorFortune",
       "annualFortune",
+      "comprehensiveV2",
     ]);
   });
 
@@ -227,6 +229,32 @@ describe("product generation dispatcher", () => {
     });
   });
 
+  it("routes valid comprehensive V2 payloads to generated draft output", async () => {
+    const result = await prepareProductGenerationFromPayload(
+      makeSinglePayload({
+        productKey: "saju_mbti_full",
+        productSlug: "saju-mbti-full",
+        productOptions: {},
+      }),
+    );
+
+    expect(result).toMatchObject({
+      ok: true,
+      kind: "comprehensiveV2",
+      draft: {
+        version: "comprehensive_v2_draft",
+        productType: "saju_mbti_full",
+        productVersion: "v2",
+      },
+      evidencePacket: {
+        productKey: "saju_mbti_full",
+        productSlug: "saju-mbti-full",
+        productType: "saju_mbti_full",
+        mbtiType: "ENTJ",
+      },
+    });
+  });
+
   it("keeps annual selectedYear validation in the adapter path", async () => {
     const result = await prepareProductGenerationFromPayload(
       makeSinglePayload({
@@ -271,6 +299,7 @@ describe("product generation dispatcher", () => {
       "compatibility: handleCompatibilityGeneration",
       "majorFortune: handleMajorFortuneGeneration",
       "annualFortune: handleAnnualFortuneGeneration",
+      "comprehensiveV2: handleComprehensiveV2Generation",
       "satisfies Record<ReportProductKind, ProductGenerationHandler>",
     ];
 

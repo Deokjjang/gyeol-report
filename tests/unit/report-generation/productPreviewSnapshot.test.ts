@@ -6,6 +6,7 @@ import {
   createProductPreviewSnapshot,
   isProductPreviewSnapshot,
   PRODUCT_PREVIEW_PRODUCT_TYPES,
+  type ComprehensiveV2ProductPreviewDraft,
   type ProductPreviewSnapshotDraft,
 } from "../../../src/lib/report-generation/productPreviewSnapshot";
 import type { CompatibilityReportDraft } from "../../../src/lib/report-generation/compatibilityReportDraftTypes";
@@ -69,6 +70,28 @@ const compatibilityDraft = {
   safetyNotes: ["안내"],
 } as unknown as CompatibilityReportDraft;
 
+const comprehensiveV2Draft = {
+  version: "comprehensive_v2_draft",
+  productType: "saju_mbti_full",
+  productVersion: "v2",
+  openingTitle: "덕민님의 종합 리포트",
+  openingSummary: "사주 원국을 먼저 보고 MBTI는 행동 발현 방식으로 연결합니다.",
+  coreLine: "명리 구조와 ENTJ 성향이 함께 읽힙니다.",
+  profileTable: {
+    fiveElementSummary: ["목 2", "화 0", "토 4", "금 2", "수 0"],
+    excessiveElements: ["토 과다"],
+    missingElements: ["화 부족", "수 부족"],
+    tenGodSummary: ["정재", "편재"],
+    specialPatterns: ["재다신약"],
+    sinsal: ["현침살"],
+    gwiin: ["천을귀인"],
+    mbti: "ENTJ",
+  },
+  chapters: [],
+  finalAdvice: "자기이해용 참고 기준입니다.",
+  safetyNotes: ["확정 예언이 아닙니다."],
+} as unknown as ComprehensiveV2ProductPreviewDraft;
+
 function createCompatibilitySnapshot() {
   return createProductPreviewSnapshot({
     reportId: "preview-report-1",
@@ -87,6 +110,7 @@ describe("product preview snapshot contract", () => {
       "saju_mbti_compatibility",
       "major_fortune",
       "annual_fortune",
+      "saju_mbti_full",
     ]);
   });
 
@@ -108,6 +132,32 @@ describe("product preview snapshot contract", () => {
           mode: "preview",
           isPaid: false,
           isUnlocked: false,
+        },
+      },
+    });
+  });
+
+  it("creates a comprehensive V2 preview snapshot", () => {
+    const result = createProductPreviewSnapshot({
+      reportId: "preview-report-comprehensive-v2",
+      createdAtIso: "2026-07-07T00:00:00.000Z",
+      productKey: "saju_mbti_full",
+      productSlug: "saju-mbti-full",
+      draft: comprehensiveV2Draft,
+    });
+
+    expect(result).toMatchObject({
+      ok: true,
+      value: {
+        reportId: "preview-report-comprehensive-v2",
+        productKey: "saju_mbti_full",
+        productSlug: "saju-mbti-full",
+        productType: "saju_mbti_full",
+        productVersion: "v2",
+        draft: {
+          version: "comprehensive_v2_draft",
+          productType: "saju_mbti_full",
+          productVersion: "v2",
         },
       },
     });

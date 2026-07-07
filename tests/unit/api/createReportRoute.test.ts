@@ -77,6 +77,8 @@ type ProductApiSuccessBody = {
     productSlug: string;
     draft: {
       productType: string;
+      version?: string;
+      productVersion?: string;
       relationshipType?: string;
     };
     access: {
@@ -171,6 +173,13 @@ const majorFortunePayload = {
   ...singleProductPayload,
   productKey: "major_fortune",
   productSlug: "major-fortune",
+  productOptions: {},
+} as const;
+
+const comprehensiveV2Payload = {
+  ...singleProductPayload,
+  productKey: "saju_mbti_full",
+  productSlug: "saju-mbti-full",
   productOptions: {},
 } as const;
 
@@ -443,6 +452,32 @@ describe("create report route", () => {
       expect(body.productPreview.productKey).toBe("annual_fortune");
       expect(body.productPreview.productSlug).toBe("annual-fortune");
       expect(body.productPreview.draft.productType).toBe("annual_fortune");
+      expect(body.productPreview.access).toEqual({
+        mode: "preview",
+        isPaid: false,
+        isUnlocked: false,
+      });
+      expect(body).not.toHaveProperty("report");
+    }
+  });
+
+  it("returns product preview response for comprehensive V2 payload", async () => {
+    const response = await POST(createJsonRequest(comprehensiveV2Payload));
+
+    expect(response.status).toBe(200);
+
+    const body = await readApiResponseBody(response);
+
+    expect(body.ok).toBe(true);
+    if (body.ok && "snapshotKind" in body) {
+      expect(body.reportId).toMatch(/^report_/);
+      expect(body.snapshotKind).toBe("product_preview");
+      expect(body.productPreview.productType).toBe("saju_mbti_full");
+      expect(body.productPreview.productKey).toBe("saju_mbti_full");
+      expect(body.productPreview.productSlug).toBe("saju-mbti-full");
+      expect(body.productPreview.draft.version).toBe("comprehensive_v2_draft");
+      expect(body.productPreview.draft.productType).toBe("saju_mbti_full");
+      expect(body.productPreview.draft.productVersion).toBe("v2");
       expect(body.productPreview.access).toEqual({
         mode: "preview",
         isPaid: false,

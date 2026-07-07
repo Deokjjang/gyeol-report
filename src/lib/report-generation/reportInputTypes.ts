@@ -3,6 +3,7 @@ export const REPORT_PRODUCT_KEYS = [
   "love_marriage_child",
   "major_fortune",
   "annual_fortune",
+  "saju_mbti_full",
   "saju_mbti_compatibility",
 ] as const;
 
@@ -13,6 +14,7 @@ export const SINGLE_PERSON_REPORT_PRODUCT_KEYS = [
   "love_marriage_child",
   "major_fortune",
   "annual_fortune",
+  "saju_mbti_full",
 ] as const;
 
 export type SinglePersonReportProductKey =
@@ -23,6 +25,7 @@ export const REPORT_PRODUCT_SLUGS = [
   "love-marriage-child",
   "major-fortune",
   "annual-fortune",
+  "saju-mbti-full",
   "compatibility",
 ] as const;
 

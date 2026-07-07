@@ -86,6 +86,10 @@ describe("report input adapter", () => {
       ok: true,
       value: "annualFortune",
     });
+    expect(getReportProductKind("saju_mbti_full")).toEqual({
+      ok: true,
+      value: "comprehensiveV2",
+    });
     expect(getReportProductKind("saju_mbti_compatibility")).toEqual({
       ok: true,
       value: "compatibility",
@@ -102,6 +106,10 @@ describe("report input adapter", () => {
       makeSinglePayload({
         productKey: "major_fortune",
         productSlug: "major-fortune",
+      }),
+      makeSinglePayload({
+        productKey: "saju_mbti_full",
+        productSlug: "saju-mbti-full",
       }),
     ];
 
@@ -134,6 +142,15 @@ describe("report input adapter", () => {
           kind: "majorFortune",
           productKey: "major_fortune",
           productSlug: "major-fortune",
+          productOptions: {},
+        },
+      },
+      {
+        ok: true,
+        value: {
+          kind: "comprehensiveV2",
+          productKey: "saju_mbti_full",
+          productSlug: "saju-mbti-full",
           productOptions: {},
         },
       },

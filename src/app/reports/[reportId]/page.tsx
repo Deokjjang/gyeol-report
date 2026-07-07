@@ -20,6 +20,7 @@ import type {
   ComprehensiveReportDraft,
   ComprehensiveReportDraftSection,
   ComprehensiveReportV2Chapter,
+  ComprehensiveReportV2Draft,
   ComprehensiveReportV2PillarGridColumn,
   ComprehensiveReportV2ProfileTable,
 } from "../../../lib/report-generation/comprehensiveReportDraftTypes";
@@ -59,6 +60,7 @@ import type {
 import { getSajuBranchSymbolEntry } from "../../../lib/report-knowledge/sajuBranchSymbolKnowledge";
 import { AnnualFortuneReportView } from "./AnnualFortuneReportView";
 import { CareerReportView } from "./CareerReportView";
+import { ComprehensiveReportV2View } from "./ComprehensiveReportV2View";
 import { CompatibilityReportView } from "./CompatibilityReportView";
 import { LoveMarriageChildReportView } from "./LoveMarriageChildReportView";
 import { MajorFortuneReportView } from "./MajorFortuneReportView";
@@ -204,6 +206,17 @@ async function loadProductPreviewPageState(
 
   if (productPreview.productType === "annual_fortune") {
     if (!isAnnualFortuneReportDraft(productPreview.draft)) {
+      return { kind: "invalidSnapshot" };
+    }
+
+    return {
+      kind: "productPreview",
+      productPreview,
+    };
+  }
+
+  if (productPreview.productType === "saju_mbti_full") {
+    if (!isComprehensiveV2ProductPreviewDraft(productPreview.draft)) {
       return { kind: "invalidSnapshot" };
     }
 
@@ -668,6 +681,10 @@ function renderProductPreviewState(productPreview: ProductPreviewSnapshot) {
     return renderProductPreviewAnnualFortuneState(productPreview);
   }
 
+  if (productPreview.productType === "saju_mbti_full") {
+    return renderProductPreviewComprehensiveV2State(productPreview);
+  }
+
   return renderUnsupportedProductPreviewState();
 }
 
@@ -771,6 +788,27 @@ function getAnnualFortunePreviewEvidencePacket(
   }
 
   return undefined;
+}
+
+function renderProductPreviewComprehensiveV2State(
+  productPreview: ProductPreviewSnapshot,
+) {
+  if (!isComprehensiveV2ProductPreviewDraft(productPreview.draft)) {
+    return renderInvalidSnapshotState();
+  }
+
+  return (
+    <ComprehensiveReportV2View
+      draft={productPreview.draft}
+      reportId={productPreview.reportId}
+    />
+  );
+}
+
+function isComprehensiveV2ProductPreviewDraft(
+  value: ProductPreviewSnapshot["draft"],
+): value is ComprehensiveReportV2Draft & ProductPreviewSnapshot["draft"] {
+  return isComprehensiveReportV2Draft(value as ComprehensiveReportDraft);
 }
 
 function renderGeneratedLoveMarriageChildState(

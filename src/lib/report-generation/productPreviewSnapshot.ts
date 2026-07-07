@@ -1,5 +1,6 @@
 import type { AnnualFortuneReportDraft } from "./annualFortuneReportDraftTypes";
 import type { CareerReportDraft } from "./careerReportDraftTypes";
+import type { ComprehensiveReportV2Draft } from "./comprehensiveReportDraftTypes";
 import type { CompatibilityReportDraft } from "./compatibilityReportDraftTypes";
 import type { LoveMarriageChildReportDraft } from "./loveMarriageChildReportDraftTypes";
 import type { MajorFortuneReportDraft } from "./majorFortuneReportDraftTypes";
@@ -14,17 +15,24 @@ export const PRODUCT_PREVIEW_PRODUCT_TYPES = [
   "saju_mbti_compatibility",
   "major_fortune",
   "annual_fortune",
+  "saju_mbti_full",
 ] as const;
 
 export type ProductPreviewProductType =
   (typeof PRODUCT_PREVIEW_PRODUCT_TYPES)[number];
+
+export type ComprehensiveV2ProductPreviewDraft =
+  ComprehensiveReportV2Draft & {
+    readonly productVersion: "v2";
+  };
 
 export type ProductPreviewSnapshotDraft =
   | CareerReportDraft
   | LoveMarriageChildReportDraft
   | CompatibilityReportDraft
   | MajorFortuneReportDraft
-  | AnnualFortuneReportDraft;
+  | AnnualFortuneReportDraft
+  | ComprehensiveV2ProductPreviewDraft;
 
 export type ProductPreviewSnapshotAccess = {
   readonly mode: "preview";
@@ -80,6 +88,7 @@ const productSlugByType = {
   saju_mbti_compatibility: "compatibility",
   major_fortune: "major-fortune",
   annual_fortune: "annual-fortune",
+  saju_mbti_full: "saju-mbti-full",
 } as const satisfies Record<ProductPreviewProductType, ReportProductSlug>;
 
 export function createProductPreviewSnapshot(
@@ -190,7 +199,8 @@ function isProductPreviewProductType(
     value === "love_marriage_child" ||
     value === "saju_mbti_compatibility" ||
     value === "major_fortune" ||
-    value === "annual_fortune"
+    value === "annual_fortune" ||
+    value === "saju_mbti_full"
   );
 }
 

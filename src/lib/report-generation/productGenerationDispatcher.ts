@@ -19,6 +19,10 @@ import {
   type AnnualFortuneGenerationHandlerOptions,
 } from "./annualFortuneGenerationHandler";
 import {
+  generateComprehensiveV2ProductDraft,
+  type ComprehensiveV2GenerationHandlerOptions,
+} from "./comprehensiveV2GenerationHandler";
+import {
   normalizeReportInputPayload,
   type CompatibilityGenerationInput,
   type ReportGenerationInput,
@@ -72,6 +76,7 @@ export type ProductGenerationDispatcherOptions = {
   readonly loveMarriageChild?: LoveMarriageChildGenerationHandlerOptions;
   readonly majorFortune?: MajorFortuneGenerationHandlerOptions;
   readonly annualFortune?: AnnualFortuneGenerationHandlerOptions;
+  readonly comprehensiveV2?: ComprehensiveV2GenerationHandlerOptions;
 };
 
 const PRODUCT_GENERATION_HANDLERS = {
@@ -80,6 +85,7 @@ const PRODUCT_GENERATION_HANDLERS = {
   compatibility: handleCompatibilityGeneration,
   majorFortune: handleMajorFortuneGeneration,
   annualFortune: handleAnnualFortuneGeneration,
+  comprehensiveV2: handleComprehensiveV2Generation,
 } as const satisfies Record<ReportProductKind, ProductGenerationHandler>;
 
 export function getProductGenerationHandler(
@@ -235,6 +241,35 @@ async function handleAnnualFortuneGeneration(
   return {
     ok: false,
     kind: "annualFortune",
+    error: {
+      code: "INVALID_REPORT_INPUT",
+      message: `${result.error.code}: ${result.error.message}`,
+    },
+  };
+}
+
+async function handleComprehensiveV2Generation(
+  input: ReportGenerationInput,
+  options: ProductGenerationDispatcherOptions = {},
+): Promise<ProductGenerationResult> {
+  if (input.kind !== "comprehensiveV2") {
+    return invalidInputResult(
+      `Generation input kind mismatch: expected comprehensiveV2, received ${input.kind}`,
+    );
+  }
+
+  const result = await generateComprehensiveV2ProductDraft(
+    input,
+    options.comprehensiveV2,
+  );
+
+  if (result.ok) {
+    return result;
+  }
+
+  return {
+    ok: false,
+    kind: "comprehensiveV2",
     error: {
       code: "INVALID_REPORT_INPUT",
       message: `${result.error.code}: ${result.error.message}`,
