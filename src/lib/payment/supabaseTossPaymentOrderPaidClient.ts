@@ -162,7 +162,7 @@ function mapRpcRow(
     !isNonEmptyString(row.provider_order_id) ||
     row.product_type !== "saju_mbti_full" ||
     row.provider !== "toss" ||
-    row.amount !== 990 ||
+    row.amount !== 1290 ||
     row.currency !== "KRW" ||
     row.status !== "paid" ||
     !isTimestamp(row.paid_at) ||

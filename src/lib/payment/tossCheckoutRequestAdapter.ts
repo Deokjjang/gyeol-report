@@ -1,4 +1,5 @@
 import type { PaymentCheckoutSessionDraft } from "./paymentCheckoutSessionTypes";
+import { getReportProduct } from "./reportProductCatalog";
 import type { TossCheckoutRequestDraft } from "./tossCheckoutRequestTypes";
 
 export type TossCheckoutRequestErrorCode =
@@ -67,15 +68,18 @@ function isPreparedTossSession(value: unknown): value is TossCheckoutSession {
     return false;
   }
 
+  const product = getReportProduct(value.productType);
+
   if (
+    product === null ||
     !isNonEmptyString(value.paymentOrderId) ||
     !isNonEmptyString(value.providerOrderId) ||
     !isNonEmptyString(value.productType) ||
     !isNonEmptyString(value.productLabelKo) ||
     value.status !== "prepared" ||
     value.checkoutMode !== "provider_redirect_pending" ||
-    value.amount !== 990 ||
-    value.currency !== "KRW"
+    value.amount !== product.amount ||
+    value.currency !== product.currency
   ) {
     return false;
   }

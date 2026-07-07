@@ -11,16 +11,12 @@ import { createReadyPaymentOrder } from "../../../../lib/payment/supabaseReadyPa
 import { createSupabaseReadyPaymentOrderClient } from "../../../../lib/payment/supabaseReadyPaymentOrderClient";
 
 type CheckoutPrepareRouteErrorCode =
-  | "PAYMENT_CHECKOUT_PREPARE_API_DISABLED"
   | "PAYMENT_CHECKOUT_PREPARE_INVALID_REQUEST"
   | "PAYMENT_CHECKOUT_PREPARE_CREATE_FAILED"
   | "PAYMENT_TOSS_CHECKOUT_CONFIG_MISSING";
 
-const checkoutPrepareApiEnabledEnv = "PAYMENT_CHECKOUT_PREPARE_API_ENABLED";
-const tossCheckoutRequestDraftEnabledEnv = "TOSS_CHECKOUT_REQUEST_DRAFT_ENABLED";
-const tossClientKeyEnv = "TOSS_CLIENT_KEY";
-const tossSuccessUrlEnv = "TOSS_SUCCESS_URL";
-const tossFailUrlEnv = "TOSS_FAIL_URL";
+const tossClientKeyEnv = "NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY";
+const tossSecretKeyEnv = "TOSS_PAYMENTS_SECRET_KEY";
 const tossAllowLocalhostRedirectsEnv = "TOSS_ALLOW_LOCALHOST_REDIRECTS";
 const defaultProductType = "saju_mbti_full";
 const invalidRequestMessage = "Checkout prepare request is invalid.";
@@ -159,6 +155,7 @@ function createSuccessBody(
 
 function createOptionalTossCheckoutRequest(
   session: PaymentCheckoutSessionDraft,
+  requestUrl: string,
 ):
   | {
       readonly ok: true;
@@ -168,21 +165,22 @@ function createOptionalTossCheckoutRequest(
       readonly ok: false;
       readonly response: NextResponse;
     } {
-  if (
-    session.provider !== "toss" ||
-    process.env[tossCheckoutRequestDraftEnabledEnv] !== "1"
-  ) {
+  if (session.provider !== "toss") {
     return { ok: true };
   }
 
   const clientKey = process.env[tossClientKeyEnv];
-  const successUrl = process.env[tossSuccessUrlEnv];
-  const failUrl = process.env[tossFailUrlEnv];
+  const secretKey = process.env[tossSecretKeyEnv];
+  const requestOrigin = new URL(requestUrl).origin;
+  const successUrl = new URL("/payments/toss/success", requestOrigin).toString();
+  const failUrl = new URL("/payments/toss/fail", requestOrigin).toString();
+  const requestHostname = new URL(requestOrigin).hostname;
+  const isLocalhostRedirect =
+    requestHostname === "localhost" || requestHostname === "127.0.0.1";
 
   if (
     !isNonEmptyString(clientKey) ||
-    !isNonEmptyString(successUrl) ||
-    !isNonEmptyString(failUrl)
+    !isNonEmptyString(secretKey)
   ) {
     return {
       ok: false,
@@ -200,7 +198,7 @@ function createOptionalTossCheckoutRequest(
     successUrl,
     failUrl,
     allowLocalhostRedirects:
-      process.env[tossAllowLocalhostRedirectsEnv] === "1",
+      isLocalhostRedirect || process.env[tossAllowLocalhostRedirectsEnv] === "1",
   });
 
   if (!tossResult.ok) {
@@ -221,14 +219,6 @@ function createOptionalTossCheckoutRequest(
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
-  if (process.env[checkoutPrepareApiEnabledEnv] !== "1") {
-    return createErrorResponse(
-      "PAYMENT_CHECKOUT_PREPARE_API_DISABLED",
-      "Checkout prepare API is disabled.",
-      404,
-    );
-  }
-
   let json: unknown;
 
   try {
@@ -301,6 +291,7 @@ export async function POST(request: Request): Promise<NextResponse> {
 
   const tossCheckoutRequestResult = createOptionalTossCheckoutRequest(
     checkoutResult.session,
+    request.url,
   );
 
   if (!tossCheckoutRequestResult.ok) {

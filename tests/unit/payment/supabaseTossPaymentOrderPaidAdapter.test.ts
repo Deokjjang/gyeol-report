@@ -62,7 +62,7 @@ describe("Supabase Toss payment order paid adapter", () => {
     const result = await markTossPaymentOrderPaid({
       providerOrderId: "provider_order_paid_adapter_test",
       providerPaymentId: "toss_payment_paid_adapter_test",
-      amount: 990,
+      amount: 1290,
       currency: "KRW",
       paidAt,
       client: fake.client,
@@ -74,7 +74,7 @@ describe("Supabase Toss payment order paid adapter", () => {
         providerOrderId: "provider_order_paid_adapter_test",
         productType: "saju_mbti_full",
         provider: "toss",
-        amount: 990,
+        amount: 1290,
         currency: "KRW",
         status: "paid",
         paidAt,
@@ -84,7 +84,7 @@ describe("Supabase Toss payment order paid adapter", () => {
       {
         providerOrderId: "provider_order_paid_adapter_test",
         providerPaymentId: "toss_payment_paid_adapter_test",
-        amount: 990,
+        amount: 1290,
         currency: "KRW",
         paidAt,
       },
@@ -96,7 +96,7 @@ describe("Supabase Toss payment order paid adapter", () => {
     const result = await markTossPaymentOrderPaid({
       providerOrderId: "",
       providerPaymentId: "toss_payment_paid_adapter_test",
-      amount: 990,
+      amount: 1290,
       currency: "KRW",
       client: fake.client,
     });
@@ -116,7 +116,7 @@ describe("Supabase Toss payment order paid adapter", () => {
     const result = await markTossPaymentOrderPaid({
       providerOrderId: "provider_order_paid_adapter_test",
       providerPaymentId: "",
-      amount: 990,
+      amount: 1290,
       currency: "KRW",
       client: fake.client,
     });
@@ -130,12 +130,12 @@ describe("Supabase Toss payment order paid adapter", () => {
     expect(fake.calls).toEqual([]);
   });
 
-  it("enforces amount 990", async () => {
+  it("enforces amount 1290", async () => {
     const fake = createFakeClient();
     const result = await markTossPaymentOrderPaid({
       providerOrderId: "provider_order_paid_adapter_test",
       providerPaymentId: "toss_payment_paid_adapter_test",
-      amount: 1290,
+      amount: 990,
       currency: "KRW",
       client: fake.client,
     });
@@ -154,7 +154,7 @@ describe("Supabase Toss payment order paid adapter", () => {
     const result = await markTossPaymentOrderPaid({
       providerOrderId: "provider_order_paid_adapter_test",
       providerPaymentId: "toss_payment_paid_adapter_test",
-      amount: 990,
+      amount: 1290,
       currency: "USD",
       client: fake.client,
     });
@@ -173,7 +173,7 @@ describe("Supabase Toss payment order paid adapter", () => {
     const result = await markTossPaymentOrderPaid({
       providerOrderId: "provider_order_paid_adapter_test",
       providerPaymentId: "toss_payment_paid_adapter_test",
-      amount: 990,
+      amount: 1290,
       currency: "KRW",
       client: fake.client,
     });

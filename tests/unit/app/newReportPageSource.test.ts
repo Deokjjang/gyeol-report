@@ -53,7 +53,7 @@ describe("new report page source", () => {
       "열람 기간",
       "90일",
       "자동 생성 디지털 리포트",
-      "결제창 연결 안내",
+      "TossPaymentWidgetLauncher",
       "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.",
       "onEditInput",
     ];
@@ -148,7 +148,7 @@ describe("new report page source", () => {
 
     expect(
       pageSource.indexOf("isSinglePersonPreviewProduct(selectedProduct.productKey)"),
-    ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
+    ).toBeLessThan(pageSource.indexOf("<TossPaymentWidgetLauncher"));
   });
 
   it("keeps removed solo-person UI and developer copy out of visible source text", () => {
@@ -175,12 +175,12 @@ describe("new report page source", () => {
     expect(pageSource).not.toContain("예: 덕민");
     expect(pageSource).not.toContain("response.message");
     expect(pageSource).not.toContain("response.error");
-    expect(pageSource).toContain("response.userMessage");
+    expect(pageSource).not.toContain("response.userMessage");
     expect(pageSource).not.toMatch(/<p>\s*productKey:/);
     expect(pageSource).not.toMatch(/<p>\s*productSlug:/);
   });
 
-  it("connects saju-mbti-full to the comprehensive V2 preview submit flow", () => {
+  it("connects saju-mbti-full to the comprehensive V2 payment handoff flow", () => {
     const requiredMarkers = [
       "SAJU_MBTI_FULL_PRODUCT_KEY",
       "saju_mbti_full",
@@ -193,22 +193,16 @@ describe("new report page source", () => {
       "return SAJU_MBTI_FULL_SELECTED_REPORT_PRODUCT",
       "productKey === SAJU_MBTI_FULL_PRODUCT_KEY",
       "isSingleProductComprehensiveV2",
-      "COMPREHENSIVE_V2_REQUIRED_INPUT_MESSAGE_KO",
-      "COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO",
-      "function handleSingleProductPreviewSubmit",
       "buildSinglePersonReportInputPayload(",
-      'REPORT_CREATE_API_PATH = "/api/reports/create"',
-      "fetch(REPORT_CREATE_API_PATH",
-      'method: "POST"',
-      '"content-type": "application/json"',
-      "body: JSON.stringify(payload)",
-      'snapshotKind === "product_preview"',
-      "router.push(`/reports/${createResult.reportId}`)",
+      "singleProductReportInputPayload",
+      "singleProductCheckoutInputSnapshot",
+      "reportInputPayload: singleProductReportInputPayload",
+      "TossPaymentWidgetLauncher",
+      "productType={selectedProduct.productKey}",
+      "productLabelKo={selectedProduct.nameKo}",
       "1,290원 결제하고 종합 리포트 생성하기",
-      "종합 리포트 생성 중",
       "필수 정보를 입력해 주세요",
-      "onSubmit={handleSingleProductPreviewSubmit}",
-      'type="submit"',
+      "onSubmit={handlePreviewOnlySubmit}",
       "입력한 정보를 바탕으로 종합 리포트를 생성합니다. 현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다.",
     ];
 
@@ -221,43 +215,36 @@ describe("new report page source", () => {
     );
     expect(
       pageSource.indexOf("isSinglePersonPreviewProduct(selectedProduct.productKey)"),
-    ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
+    ).toBeLessThan(pageSource.indexOf("<TossPaymentWidgetLauncher"));
   });
 
-  it("connects career love major and annual single product submit flows", () => {
+  it("connects career love major and annual single product payment flows", () => {
     const requiredMarkers = [
       "getSingleProductReadyCtaLabel",
-      "getSingleProductLoadingCtaLabel",
-      "SINGLE_PRODUCT_PREVIEW_CREATE_ERROR_MESSAGE_KO",
       "CAREER_MONEY_STUDY_PRODUCT_KEY",
       "career_money_study",
       "CAREER_MONEY_STUDY_PRODUCT_SLUG",
       "career-money-study",
       "1,290원 결제하고 직업 리포트 생성하기",
-      "직업 리포트 생성 중",
       "LOVE_MARRIAGE_CHILD_PRODUCT_KEY",
       "love_marriage_child",
       "LOVE_MARRIAGE_CHILD_PRODUCT_SLUG",
       "love-marriage-child",
       "1,290원 결제하고 연애 리포트 생성하기",
-      "연애 리포트 생성 중",
       "MAJOR_FORTUNE_PRODUCT_KEY",
       "major_fortune",
       "MAJOR_FORTUNE_PRODUCT_SLUG",
       "major-fortune",
       "1,290원 결제하고 대운 리포트 생성하기",
-      "대운 리포트 생성 중",
       "ANNUAL_FORTUNE_PRODUCT_KEY",
       "annual_fortune",
       "ANNUAL_FORTUNE_PRODUCT_SLUG",
       "annual-fortune",
       "selectedYear: input.selectedYear.trim()",
       "1,290원 결제하고 세운 리포트 생성하기",
-      "세운 리포트 생성 중",
-      "if (!isSingleProductInputReady || isSingleProductSubmitting)",
-      "fetch(REPORT_CREATE_API_PATH",
-      "router.push(`/reports/${createResult.reportId}`)",
-      'type="submit"',
+      "singleProductCheckoutInputSnapshot",
+      "reportInputPayload: singleProductReportInputPayload",
+      "TossPaymentWidgetLauncher",
     ];
 
     for (const marker of requiredMarkers) {
@@ -269,9 +256,10 @@ describe("new report page source", () => {
       'type={isSingleProductComprehensiveV2 ? "submit" : "button"}',
     );
     expect(singlePersonPreviewBranchSource).toContain(
-      "onSubmit={handleSingleProductPreviewSubmit}",
+      "onSubmit={handlePreviewOnlySubmit}",
     );
-    expect(singlePersonPreviewBranchSource).not.toContain("<DevTossCheckoutLauncher");
+    expect(singlePersonPreviewBranchSource).toContain("<TossPaymentWidgetLauncher");
+    expect(singlePersonPreviewBranchSource).not.toContain("/api/reports/create");
   });
 
   it("keeps compatibility product selection as a paid input branch", () => {
@@ -292,7 +280,6 @@ describe("new report page source", () => {
       "isSelectedProductPurchasable",
       "isPurchasable: true",
       "1,290원 결제하고 궁합 리포트 생성하기",
-      "궁합 리포트 생성 중",
       "필수 정보를 입력해 주세요",
     ];
 
@@ -376,9 +363,12 @@ describe("new report page source", () => {
       expect(pageSource).toContain(marker);
     }
 
-    expect(
-      pageSource.indexOf("selectedProduct.productKey === MAJOR_FORTUNE_PRODUCT_KEY"),
-    ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
+    const branchStart = pageSource.indexOf(
+      "selectedProduct.productKey === MAJOR_FORTUNE_PRODUCT_KEY",
+    );
+
+    expect(pageSource.indexOf("<TossPaymentWidgetLauncher", branchStart))
+      .toBeGreaterThan(branchStart);
   });
 
   it("keeps annual fortune product selection as a paid product input branch", () => {
@@ -479,9 +469,12 @@ describe("new report page source", () => {
       expect(pageSource).not.toContain(marker);
     }
 
-    expect(
-      pageSource.indexOf("selectedProduct.productKey === ANNUAL_FORTUNE_PRODUCT_KEY"),
-    ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
+    const branchStart = pageSource.indexOf(
+      "selectedProduct.productKey === ANNUAL_FORTUNE_PRODUCT_KEY",
+    );
+
+    expect(pageSource.indexOf("<TossPaymentWidgetLauncher", branchStart))
+      .toBeGreaterThan(branchStart);
   });
 
   it("renders compatibility A/B input branch fields and relationship categories", () => {
@@ -525,12 +518,15 @@ describe("new report page source", () => {
       expect(pageSource).toContain(marker);
     }
 
-    expect(
-      pageSource.indexOf("selectedProduct.productKey === COMPATIBILITY_PRODUCT_KEY"),
-    ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
+    const branchStart = pageSource.indexOf(
+      "selectedProduct.productKey === COMPATIBILITY_PRODUCT_KEY",
+    );
+
+    expect(pageSource.indexOf("<TossPaymentWidgetLauncher", branchStart))
+      .toBeGreaterThan(branchStart);
   });
 
-  it("renders compatibility create controls without payment calls", () => {
+  it("renders compatibility checkout controls without report create calls", () => {
     const requiredMarkers = [
       "A 사람",
       "B 사람",
@@ -538,9 +534,10 @@ describe("new report page source", () => {
       "isCompatibilityInputReady",
       "compatibilityCtaLabel",
       "1,290원 결제하고 궁합 리포트 생성하기",
-      "궁합 리포트 생성 중",
       "필수 정보를 입력해 주세요",
       "event.preventDefault()",
+      "compatibilityCheckoutInputSnapshot",
+      "reportInputPayload: compatibilityReportInputPayload",
     ];
 
     for (const marker of requiredMarkers) {
@@ -548,34 +545,27 @@ describe("new report page source", () => {
     }
   });
 
-  it("submits compatibility preview payload to the create API and redirects to the result page", () => {
+  it("preserves compatibility payload for Toss payment handoff without report creation", () => {
     const requiredMarkers = [
-      "function isCompatibilityPreviewCreateSuccessResponse",
-      "function getCompatibilityPreviewCreateErrorMessage",
-      "isCompatibilitySubmitting",
-      "compatibilitySubmitError",
-      "function handleCompatibilityPreviewSubmit",
-      "if (!isCompatibilityInputReady || isCompatibilitySubmitting)",
       "COMPATIBILITY_REQUIRED_INPUT_MESSAGE_KO",
       "buildCompatibilityReportInputPayload({",
       "relationshipType: compatibilityRelationshipType",
       "personA: compatibilityPersonA",
       "personB: compatibilityPersonB",
-      'REPORT_CREATE_API_PATH = "/api/reports/create"',
-      "fetch(REPORT_CREATE_API_PATH",
-      'method: "POST"',
-      '"content-type": "application/json"',
-      "body: JSON.stringify(payload)",
-      'snapshotKind === "product_preview"',
-      "router.push(`/reports/${createResult.reportId}`)",
-      "COMPATIBILITY_PREVIEW_CREATE_ERROR_MESSAGE_KO",
-      "onSubmit={handleCompatibilityPreviewSubmit}",
-      'type="submit"',
+      "compatibilityReportInputPayload",
+      "compatibilityCheckoutInputSnapshot",
+      "reportInputPayload: compatibilityReportInputPayload",
+      "onSubmit={handlePreviewOnlySubmit}",
+      "TossPaymentWidgetLauncher",
     ];
 
     for (const marker of requiredMarkers) {
       expect(pageSource).toContain(marker);
     }
+
+    expect(pageSource).not.toContain("/api/reports/create");
+    expect(pageSource).not.toContain("fetch(REPORT_CREATE_API_PATH");
+    expect(pageSource).not.toContain("router.push(`/reports/${createResult.reportId}`)");
   });
 
   it("builds report input payloads for preview flows", () => {
@@ -617,9 +607,9 @@ describe("new report page source", () => {
   it("passes actual form state into the Toss checkout launcher", () => {
     const requiredMarkers = [
       "createCheckoutInputSnapshot",
-      "DevTossCheckoutInputSnapshot",
+      "TossPaymentWidgetInputSnapshot",
       "checkoutInputSnapshot",
-      "isDevTossCheckoutInputComplete(checkoutInputSnapshot)",
+      "isTossPaymentWidgetInputComplete(checkoutInputSnapshot)",
       "mbti: input.mbtiType",
       "gender: input.gender",
       'timezone: "Asia/Seoul"',
@@ -628,6 +618,7 @@ describe("new report page source", () => {
       'calendarType: "SOLAR"',
       "birthTimeUnknown: input.birthTimeUnknown",
       "displayName: trimmedDisplayName",
+      "reportInputPayload",
       "inputSnapshot={checkoutInputSnapshot}",
     ];
 

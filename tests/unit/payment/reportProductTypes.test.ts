@@ -16,21 +16,23 @@ describe("report product types", () => {
   it("defines current and planned report product types", () => {
     expect(reportProductTypes).toEqual([
       "saju_mbti_full",
-      "saju_basic",
-      "saju_full",
-      "daewoon",
-      "saewoon",
-      "compatibility",
+      "career_money_study",
+      "love_marriage_child",
+      "saju_mbti_compatibility",
+      "major_fortune",
+      "annual_fortune",
     ]);
   });
 
   it("parses known report product types only", () => {
     expect(parseReportProductType("saju_mbti_full")).toBe("saju_mbti_full");
-    expect(parseReportProductType("saju_basic")).toBe("saju_basic");
-    expect(parseReportProductType("saju_full")).toBe("saju_full");
-    expect(parseReportProductType("daewoon")).toBe("daewoon");
-    expect(parseReportProductType("saewoon")).toBe("saewoon");
-    expect(parseReportProductType("compatibility")).toBe("compatibility");
+    expect(parseReportProductType("career_money_study")).toBe("career_money_study");
+    expect(parseReportProductType("love_marriage_child")).toBe("love_marriage_child");
+    expect(parseReportProductType("saju_mbti_compatibility")).toBe(
+      "saju_mbti_compatibility",
+    );
+    expect(parseReportProductType("major_fortune")).toBe("major_fortune");
+    expect(parseReportProductType("annual_fortune")).toBe("annual_fortune");
     expect(parseReportProductType("unknown_product")).toBeNull();
   });
 

@@ -19,7 +19,7 @@ vi.mock("../../../src/lib/payment/supabaseTossPaymentOrderPaidAdapter", () => ({
 }));
 
 const originalConfirmApiEnabled = process.env.TOSS_CONFIRM_API_ENABLED;
-const originalTossSecretKey = process.env.TOSS_SECRET_KEY;
+const originalTossSecretKey = process.env.TOSS_PAYMENTS_SECRET_KEY;
 const originalSupabaseUrl = process.env.SUPABASE_URL;
 const originalSupabaseAnonKey = process.env.SUPABASE_ANON_KEY;
 const secretKey = "test_sk_route_confirm_secret";
@@ -61,7 +61,7 @@ function createProviderSuccessResponse(
   return new Response(
     JSON.stringify({
       orderId: "provider_order_route_confirm",
-      totalAmount: 990,
+      totalAmount: 1290,
       currency: "KRW",
       status: "DONE",
       method: "카드",
@@ -91,7 +91,7 @@ function createPaidOrder() {
     providerOrderId: "provider_order_route_confirm",
     productType: "saju_mbti_full",
     provider: "toss",
-    amount: 990,
+    amount: 1290,
     currency: "KRW",
     status: "paid",
     paidAt: "2026-06-11T12:00:00+09:00",
@@ -108,7 +108,7 @@ function createFulfillment() {
     reportId: "report_route_fulfillment",
     productType: "saju_mbti_full",
     status: "paid",
-    amount: 990,
+    amount: 1290,
     currency: "KRW",
     createdAt: "2026-06-11T11:59:00+09:00",
     updatedAt: "2026-06-11T12:00:02+09:00",
@@ -146,7 +146,7 @@ function createValidRequest(): Request {
   return createJsonRequest({
     paymentKey: "pay_route_confirm_key",
     orderId: "provider_order_route_confirm",
-    amount: 990,
+    amount: 1290,
   });
 }
 
@@ -163,14 +163,14 @@ describe("Toss confirm route", () => {
       order: createPaidOrder(),
     });
     delete process.env.TOSS_CONFIRM_API_ENABLED;
-    delete process.env.TOSS_SECRET_KEY;
+    delete process.env.TOSS_PAYMENTS_SECRET_KEY;
     delete process.env.SUPABASE_URL;
     delete process.env.SUPABASE_ANON_KEY;
   });
 
   afterEach(() => {
     restoreOptionalEnv("TOSS_CONFIRM_API_ENABLED", originalConfirmApiEnabled);
-    restoreOptionalEnv("TOSS_SECRET_KEY", originalTossSecretKey);
+    restoreOptionalEnv("TOSS_PAYMENTS_SECRET_KEY", originalTossSecretKey);
     restoreOptionalEnv("SUPABASE_URL", originalSupabaseUrl);
     restoreOptionalEnv("SUPABASE_ANON_KEY", originalSupabaseAnonKey);
     vi.unstubAllGlobals();
@@ -201,7 +201,7 @@ describe("Toss confirm route", () => {
 
     expect(response.status).toBe(500);
     expectErrorBody(body, "TOSS_CONFIRM_CONFIG_MISSING");
-    expect(serialized).not.toContain("TOSS_SECRET_KEY");
+    expect(serialized).not.toContain("TOSS_PAYMENTS_SECRET_KEY");
     expect(fetchMock).not.toHaveBeenCalled();
     expect(mockMarkTossPaymentOrderPaid).not.toHaveBeenCalled();
     expect(mockFulfillPaidPaymentOrder).not.toHaveBeenCalled();
@@ -209,7 +209,7 @@ describe("Toss confirm route", () => {
 
   it("rejects invalid JSON body", async () => {
     process.env.TOSS_CONFIRM_API_ENABLED = "1";
-    process.env.TOSS_SECRET_KEY = secretKey;
+    process.env.TOSS_PAYMENTS_SECRET_KEY = secretKey;
 
     const response = await POST(createInvalidJsonRequest());
     const body = await readJsonObject(response);
@@ -222,12 +222,12 @@ describe("Toss confirm route", () => {
 
   it("rejects missing paymentKey", async () => {
     process.env.TOSS_CONFIRM_API_ENABLED = "1";
-    process.env.TOSS_SECRET_KEY = secretKey;
+    process.env.TOSS_PAYMENTS_SECRET_KEY = secretKey;
 
     const response = await POST(
       createJsonRequest({
         orderId: "provider_order_route_confirm",
-        amount: 990,
+        amount: 1290,
       }),
     );
     const body = await readJsonObject(response);
@@ -240,7 +240,7 @@ describe("Toss confirm route", () => {
 
   it("rejects missing orderId", async () => {
     process.env.TOSS_CONFIRM_API_ENABLED = "1";
-    process.env.TOSS_SECRET_KEY = secretKey;
+    process.env.TOSS_PAYMENTS_SECRET_KEY = secretKey;
 
     const response = await POST(
       createJsonRequest({
@@ -258,13 +258,13 @@ describe("Toss confirm route", () => {
 
   it("rejects amount mismatch", async () => {
     process.env.TOSS_CONFIRM_API_ENABLED = "1";
-    process.env.TOSS_SECRET_KEY = secretKey;
+    process.env.TOSS_PAYMENTS_SECRET_KEY = secretKey;
 
     const response = await POST(
       createJsonRequest({
         paymentKey: "pay_route_confirm_key",
         orderId: "provider_order_route_confirm",
-        amount: 1290,
+        amount: 990,
       }),
     );
     const body = await readJsonObject(response);
@@ -278,7 +278,7 @@ describe("Toss confirm route", () => {
   it("calls Toss confirm API, marks the order paid, fulfills it, and returns safe result", async () => {
     const fetchMock = vi.fn(async () => createProviderSuccessResponse());
     process.env.TOSS_CONFIRM_API_ENABLED = "1";
-    process.env.TOSS_SECRET_KEY = secretKey;
+    process.env.TOSS_PAYMENTS_SECRET_KEY = secretKey;
     process.env.SUPABASE_URL = "https://example.supabase.co";
     process.env.SUPABASE_ANON_KEY = "test-anon-key";
     vi.stubGlobal("fetch", fetchMock);
@@ -306,7 +306,7 @@ describe("Toss confirm route", () => {
         provider: "toss",
         paymentKeyReceived: true,
         orderId: "provider_order_route_confirm",
-        amount: 990,
+        amount: 1290,
         status: "DONE",
         method: "카드",
         approvedAt: "2026-06-11T12:00:00+09:00",
@@ -320,7 +320,7 @@ describe("Toss confirm route", () => {
         providerOrderId: "provider_order_route_confirm",
         productType: "saju_mbti_full",
         provider: "toss",
-        amount: 990,
+        amount: 1290,
         currency: "KRW",
         status: "paid",
         paidAt: "2026-06-11T12:00:00+09:00",
@@ -335,7 +335,7 @@ describe("Toss confirm route", () => {
         reportId: "report_route_fulfillment",
         productType: "saju_mbti_full",
         status: "paid",
-        amount: 990,
+        amount: 1290,
         currency: "KRW",
       });
     }
@@ -345,7 +345,7 @@ describe("Toss confirm route", () => {
       expect.objectContaining({
         providerOrderId: "provider_order_route_confirm",
         providerPaymentId: "pay_route_confirm_key",
-        amount: 990,
+        amount: 1290,
         currency: "KRW",
         paidAt: "2026-06-11T12:00:00+09:00",
         client: expect.any(Object),
@@ -376,7 +376,7 @@ describe("Toss confirm route", () => {
   it("keeps duplicate same-payment confirm idempotent when paid and fulfillment adapters are idempotent", async () => {
     const fetchMock = vi.fn(async () => createProviderSuccessResponse());
     process.env.TOSS_CONFIRM_API_ENABLED = "1";
-    process.env.TOSS_SECRET_KEY = secretKey;
+    process.env.TOSS_PAYMENTS_SECRET_KEY = secretKey;
     process.env.SUPABASE_URL = "https://example.supabase.co";
     process.env.SUPABASE_ANON_KEY = "test-anon-key";
     vi.stubGlobal("fetch", fetchMock);
@@ -401,7 +401,7 @@ describe("Toss confirm route", () => {
       }),
     );
     process.env.TOSS_CONFIRM_API_ENABLED = "1";
-    process.env.TOSS_SECRET_KEY = secretKey;
+    process.env.TOSS_PAYMENTS_SECRET_KEY = secretKey;
     vi.stubGlobal("fetch", fetchMock);
 
     const response = await POST(createValidRequest());
@@ -415,7 +415,7 @@ describe("Toss confirm route", () => {
     if (isRecord(body.error) && isRecord(body.error.context)) {
       expect(body.error.context).toMatchObject({
         orderId: "provider_order_route_confirm",
-        amount: 990,
+        amount: 1290,
         confirmStatus: "WAITING_FOR_DEPOSIT",
         rawPaymentStatus: "WAITING_FOR_DEPOSIT",
       });
@@ -432,7 +432,7 @@ describe("Toss confirm route", () => {
       },
     });
     process.env.TOSS_CONFIRM_API_ENABLED = "1";
-    process.env.TOSS_SECRET_KEY = secretKey;
+    process.env.TOSS_PAYMENTS_SECRET_KEY = secretKey;
     vi.stubGlobal("fetch", fetchMock);
 
     const response = await POST(createValidRequest());
@@ -460,7 +460,7 @@ describe("Toss confirm route", () => {
       },
     });
     process.env.TOSS_CONFIRM_API_ENABLED = "1";
-    process.env.TOSS_SECRET_KEY = secretKey;
+    process.env.TOSS_PAYMENTS_SECRET_KEY = secretKey;
     vi.stubGlobal("fetch", fetchMock);
 
     const response = await POST(createValidRequest());
@@ -501,7 +501,7 @@ describe("Toss confirm route", () => {
       ),
     );
     process.env.TOSS_CONFIRM_API_ENABLED = "1";
-    process.env.TOSS_SECRET_KEY = secretKey;
+    process.env.TOSS_PAYMENTS_SECRET_KEY = secretKey;
     vi.stubGlobal("fetch", fetchMock);
 
     const response = await POST(createValidRequest());
@@ -530,7 +530,7 @@ describe("Toss confirm route", () => {
       "TOSS_PAYMENT_NOT_DONE",
       "PAYMENT_MARK_PAID_FAILED",
       "PAYMENT_FULFILLMENT_FAILED",
-      "TOSS_SECRET_KEY",
+      "TOSS_PAYMENTS_SECRET_KEY",
       "confirmTossPayment",
       "markTossPaymentOrderPaid",
       "await markTossPaymentOrderPaid",

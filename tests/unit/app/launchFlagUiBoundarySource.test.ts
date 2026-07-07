@@ -62,11 +62,10 @@ describe("launch flag UI boundary source", () => {
       "전체 리포트",
       "결제금액 1,290원",
       "1,290원 결제하고 리포트 생성하기",
-      "결제창 연결 안내",
-      "결제 환경 확인 후 1,290원 결제창으로 이동합니다.",
       "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.",
       "inputSnapshot={checkoutInputSnapshot}",
       "onEditInput",
+      "TossPaymentWidgetLauncher",
     ];
 
     for (const marker of expectedMarkers) {
@@ -83,12 +82,12 @@ describe("launch flag UI boundary source", () => {
     );
   });
 
-  it("keeps report new page from starting real payment flow", () => {
+  it("keeps report new page scoped to checkout preparation only", () => {
     const source = readFile("src/app/report/new/page.tsx");
     const expectedCheckoutMarkers = [
-      "NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED",
-      "DevTossCheckoutLauncher",
+      "TossPaymentWidgetLauncher",
       "checkoutInputSnapshot",
+      "productType={selectedProduct.productKey}",
     ];
     const paymentFlowMarkers = [
       "/api/reports/un" + "lock",

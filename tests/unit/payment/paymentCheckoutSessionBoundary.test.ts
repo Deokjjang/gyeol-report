@@ -13,7 +13,7 @@ const readyOrder = {
   providerOrderId: "provider_order_checkout_test",
   productType: "saju_mbti_full",
   provider: "toss",
-  amount: 990,
+  amount: 1290,
   currency: "KRW",
   status: "ready",
 } as const satisfies PreparePaymentCheckoutSessionInput;
@@ -57,17 +57,17 @@ describe("payment checkout session boundary", () => {
       paymentOrderId: "payment_order_checkout_test",
       providerOrderId: "provider_order_checkout_test",
       productType: "saju_mbti_full",
-      productLabelKo: "사주×MBTI 전체 리포트",
+      productLabelKo: "사주×MBTI 종합 리포트",
       provider: "toss",
-      amount: 990,
+      amount: 1290,
       currency: "KRW",
       status: "prepared",
       checkoutMode: "provider_redirect_pending",
       providerPayload: {
         provider: "toss",
         orderId: "provider_order_checkout_test",
-        orderName: "사주×MBTI 전체 리포트",
-        amount: 990,
+        orderName: "사주×MBTI 종합 리포트",
+        amount: 1290,
         currency: "KRW",
         customerNameLabel: "결리포트 고객",
       },
@@ -85,9 +85,9 @@ describe("payment checkout session boundary", () => {
     expect(session.providerPayload).toEqual({
       provider: "kakao_pay",
       partnerOrderId: "provider_order_checkout_test",
-      itemName: "사주×MBTI 전체 리포트",
+      itemName: "사주×MBTI 종합 리포트",
       quantity: 1,
-      totalAmount: 990,
+      totalAmount: 1290,
       currency: "KRW",
     });
   });
@@ -101,12 +101,12 @@ describe("payment checkout session boundary", () => {
       }),
     );
 
-    expect(tossSession.productLabelKo).toBe("사주×MBTI 전체 리포트");
+    expect(tossSession.productLabelKo).toBe("사주×MBTI 종합 리포트");
     expect(tossSession.providerPayload).toMatchObject({
-      orderName: "사주×MBTI 전체 리포트",
+      orderName: "사주×MBTI 종합 리포트",
     });
     expect(kakaoPaySession.providerPayload).toMatchObject({
-      itemName: "사주×MBTI 전체 리포트",
+      itemName: "사주×MBTI 종합 리포트",
     });
   });
 
@@ -161,14 +161,14 @@ describe("payment checkout session boundary", () => {
     );
   });
 
-  it("rejects disabled future product", () => {
+  it("rejects unsupported product", () => {
     expectError(
       {
         ...readyOrder,
-        productType: "daewoon",
-        amount: 0,
+        productType: "unknown_product",
+        amount: 1290,
       },
-      "PAYMENT_CHECKOUT_PRODUCT_NOT_PURCHASABLE",
+      "PAYMENT_CHECKOUT_INVALID_ORDER",
     );
   });
 
@@ -176,7 +176,7 @@ describe("payment checkout session boundary", () => {
     expectError(
       {
         ...readyOrder,
-        amount: 1290,
+        amount: 990,
       },
       "PAYMENT_CHECKOUT_AMOUNT_MISMATCH",
     );

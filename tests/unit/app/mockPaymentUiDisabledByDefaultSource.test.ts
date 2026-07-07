@@ -26,10 +26,9 @@ describe("mock payment UI production safety", () => {
     }
   });
 
-  it("keeps the Toss checkout test launcher as the only payment entry", () => {
+  it("keeps the Toss payment widget launcher as the only payment entry", () => {
     const requiredMarkers = [
-      "NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED",
-      "DevTossCheckoutLauncher",
+      "TossPaymentWidgetLauncher",
       "inputSnapshot={checkoutInputSnapshot}",
       "1,290원 결제하고 리포트 생성하기",
     ];

@@ -23,10 +23,10 @@ const requestDraft = {
   requestPayment: {
     method: "CARD",
     orderId: "provider_order_toss_client_launcher_test",
-    orderName: "사주×MBTI 전체 리포트",
+    orderName: "사주×MBTI 종합 리포트",
     amount: {
       currency: "KRW",
-      value: 990,
+      value: 1290,
     },
     successUrl: "https://gyeol.example/payments/toss/success",
     failUrl: "https://gyeol.example/payments/toss/fail",

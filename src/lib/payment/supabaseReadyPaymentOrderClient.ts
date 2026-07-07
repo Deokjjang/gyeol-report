@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import { parsePaymentProviderId } from "./paymentProviderBoundary";
 import type { PaymentProviderId } from "./paymentProviderTypes";
 import type { ReportProductCurrency } from "./reportProductCatalog";
+import { getReportProduct } from "./reportProductCatalog";
 import { parseReportProductType } from "./reportProductTypes";
 import type { ReportProductType } from "./reportProductTypes";
 
@@ -151,13 +152,15 @@ function mapRpcRow(
 ): SupabaseReadyPaymentOrderQueryResult<ReadyPaymentOrderSafeRow> {
   const productType = parseReportProductType(row.product_type);
   const provider = parsePaymentProviderId(row.provider);
+  const product = getReportProduct(productType);
 
   if (
+    product === null ||
     !isNonEmptyString(row.payment_order_id) ||
     productType === null ||
     provider === null ||
-    row.amount !== 990 ||
-    row.currency !== "KRW" ||
+    row.amount !== product.amount ||
+    row.currency !== product.currency ||
     row.status !== "ready" ||
     (row.provider_order_id !== null && !isNonEmptyString(row.provider_order_id)) ||
     !isTimestamp(row.created_at) ||

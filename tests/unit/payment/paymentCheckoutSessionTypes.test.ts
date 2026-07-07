@@ -16,8 +16,8 @@ function readSource(relativePath: string): string {
 const tossPayload = {
   provider: "toss",
   orderId: "provider_order_toss_type_test",
-  orderName: "사주×MBTI 전체 리포트",
-  amount: 990,
+  orderName: "사주×MBTI 종합 리포트",
+  amount: 1290,
   currency: "KRW",
   customerNameLabel: "결리포트 고객",
 } as const satisfies TossCheckoutProviderPayload;
@@ -25,9 +25,9 @@ const tossPayload = {
 const kakaoPayPayload = {
   provider: "kakao_pay",
   partnerOrderId: "provider_order_kakao_type_test",
-  itemName: "사주×MBTI 전체 리포트",
+  itemName: "사주×MBTI 종합 리포트",
   quantity: 1,
-  totalAmount: 990,
+  totalAmount: 1290,
   currency: "KRW",
 } as const satisfies KakaoPayCheckoutProviderPayload;
 
@@ -35,9 +35,9 @@ const session = {
   paymentOrderId: "payment_order_type_test",
   providerOrderId: "provider_order_toss_type_test",
   productType: "saju_mbti_full",
-  productLabelKo: "사주×MBTI 전체 리포트",
+  productLabelKo: "사주×MBTI 종합 리포트",
   provider: "toss",
-  amount: 990,
+  amount: 1290,
   currency: "KRW",
   status: "prepared",
   checkoutMode: "provider_redirect_pending",

@@ -59,7 +59,7 @@ type TossConfirmRouteResponse =
     };
 
 const tossConfirmApiEnabledEnv = "TOSS_CONFIRM_API_ENABLED";
-const tossSecretKeyEnv = "TOSS_SECRET_KEY";
+const tossSecretKeyEnv = "TOSS_PAYMENTS_SECRET_KEY";
 const supabaseUrlEnv = "SUPABASE_URL";
 const supabaseAnonKeyEnv = "SUPABASE_ANON_KEY";
 const invalidRequestMessage = "Toss confirm request is invalid.";

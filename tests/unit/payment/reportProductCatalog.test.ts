@@ -20,48 +20,45 @@ describe("report product catalog", () => {
 
     expect(product).toEqual({
       productType: "saju_mbti_full",
-      labelKo: "사주×MBTI 전체 리포트",
-      descriptionKo: "사주 구조와 MBTI 입력을 함께 보는 전체 리포트입니다.",
-      amount: 990,
+      labelKo: "사주×MBTI 종합 리포트",
+      descriptionKo: "명리 구조와 MBTI 행동 패턴을 함께 읽는 종합 리포트입니다.",
+      amount: 1290,
       currency: "KRW",
-      listPriceAmount: 1290,
-      salePriceAmount: 990,
-      priceLabelKo: "990원",
-      listPriceLabelKo: "1,290원",
-      salePriceLabelKo: "런칭가 990원",
+      priceLabelKo: "1,290원",
       isPurchasable: true,
     });
     expect(isPurchasableReportProduct("saju_mbti_full")).toBe(true);
   });
 
-  it("keeps planned future products non-purchasable", () => {
-    const futureProductTypes = [
-      "saju_basic",
-      "saju_full",
-      "daewoon",
-      "saewoon",
-      "compatibility",
+  it("keeps all launch products purchasable at the fixed amount", () => {
+    const launchProductTypes = [
+      "career_money_study",
+      "love_marriage_child",
+      "saju_mbti_compatibility",
+      "major_fortune",
+      "annual_fortune",
     ];
 
-    expect(getInactiveReportProductTypes()).toEqual(futureProductTypes);
+    expect(getInactiveReportProductTypes()).toEqual([]);
 
-    for (const productType of futureProductTypes) {
+    for (const productType of launchProductTypes) {
       const product = getReportProduct(productType);
 
-      expect(product?.isPurchasable).toBe(false);
+      expect(product?.isPurchasable).toBe(true);
+      expect(product?.amount).toBe(1290);
       expect(product?.currency).toBe("KRW");
-      expect(isPurchasableReportProduct(productType)).toBe(false);
+      expect(isPurchasableReportProduct(productType)).toBe(true);
     }
   });
 
   it("has one catalog item for every report product type", () => {
     expect(getReportProductCatalog().map((product) => product.productType)).toEqual([
       "saju_mbti_full",
-      "saju_basic",
-      "saju_full",
-      "daewoon",
-      "saewoon",
-      "compatibility",
+      "career_money_study",
+      "love_marriage_child",
+      "saju_mbti_compatibility",
+      "major_fortune",
+      "annual_fortune",
     ]);
   });
 

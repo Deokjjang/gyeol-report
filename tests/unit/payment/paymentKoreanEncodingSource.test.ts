@@ -26,7 +26,7 @@ describe("payment Korean encoding source guard", () => {
   it("keeps checkout labels as readable UTF-8 Korean text", () => {
     const combinedSource = checkedSourceFiles.map(readSource).join("\n");
 
-    expect(combinedSource).toContain("사주×MBTI 전체 리포트");
+    expect(combinedSource).toContain("사주×MBTI 종합 리포트");
     expect(combinedSource).toContain("결리포트 고객");
 
     for (const marker of mojibakeMarkers) {

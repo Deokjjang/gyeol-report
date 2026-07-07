@@ -87,12 +87,13 @@ describe("Toss PG review checkout path source", () => {
   });
 
   it("keeps success and result pages ready for capture", () => {
-    expect(successPageSource).toContain("결제 승인 완료");
+    expect(successPageSource).toContain("결제 정보 확인 완료");
     expect(successPageSource).toContain(
-      "결제가 정상 승인되었고 리포트 생성이 완료되었습니다.",
+      "리포트 생성과 최종 승인 처리는 다음 단계에서 연결됩니다.",
     );
-    expect(successPageSource).toContain("리포트 보기");
-    expect(successPageSource).toContain("/reports/");
+    expect(successPageSource).toContain("다른 리포트 보기");
+    expect(successPageSource).toContain("/report/new");
+    expect(successPageSource).not.toContain("/api/payments/toss/confirm");
 
     expect(resultPageSource).toContain("사주×MBTI 종합 리포트");
     expect(resultPageSource).toContain("리포트 본문");

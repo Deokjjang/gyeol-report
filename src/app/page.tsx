@@ -2,12 +2,7 @@ import Link from "next/link";
 
 import GyeolBrandHeader from "../components/brand/GyeolBrandHeader";
 import ProductGrid from "../components/product/ProductGrid";
-import {
-  GYEOL_HOME_PRODUCT_GRID,
-  GYEOL_PRODUCTS,
-} from "../lib/product/gyeolProducts";
-
-const activeComprehensiveProduct = GYEOL_PRODUCTS[0];
+import { GYEOL_HOME_PRODUCT_GRID } from "../lib/product/gyeolProducts";
 
 export default function Home() {
   return (

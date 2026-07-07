@@ -164,7 +164,7 @@ function mapRpcRow(
     !isNonEmptyString(row.report_id) ||
     row.product_type !== "saju_mbti_full" ||
     row.status !== "paid" ||
-    row.amount !== 990 ||
+    row.amount !== 1290 ||
     row.currency !== "KRW" ||
     !isTimestamp(row.created_at) ||
     !isTimestamp(row.updated_at)

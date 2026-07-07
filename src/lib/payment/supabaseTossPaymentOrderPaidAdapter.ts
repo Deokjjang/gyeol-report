@@ -80,7 +80,7 @@ function parseInput(
     };
   }
 
-  if (input.amount !== 990) {
+  if (input.amount !== 1290) {
     return {
       ok: false,
       result: failure(
@@ -118,7 +118,7 @@ function parseInput(
     value: {
       providerOrderId: input.providerOrderId.trim(),
       providerPaymentId: input.providerPaymentId.trim(),
-      amount: 990,
+      amount: 1290,
       currency: "KRW",
       ...(input.paidAt === undefined ? {} : { paidAt: input.paidAt }),
     },

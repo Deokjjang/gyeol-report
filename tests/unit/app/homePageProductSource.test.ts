@@ -5,10 +5,6 @@ import { describe, expect, it } from "vitest";
 
 import Home from "../../../src/app/page";
 
-const homePageSource = readFileSync(
-  join(process.cwd(), "src/app/page.tsx"),
-  "utf8",
-);
 const productCatalogSource = readFileSync(
   join(process.cwd(), "src/lib/product/gyeolProducts.ts"),
   "utf8",

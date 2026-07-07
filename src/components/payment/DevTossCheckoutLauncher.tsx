@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { prePaymentPrivacyNoticeKo } from "../../lib/legal/privacyPolicy";
 import { prePaymentRefundNoticeKo } from "../../lib/legal/refundPolicy";
+import type { ReportProductType } from "../../lib/payment/reportProductTypes";
 import { loadTossPaymentsBrowserSdk } from "../../lib/payment/tossBrowserSdkLoader";
 import { launchTossCheckout } from "../../lib/payment/tossClientCheckoutLauncher";
 import type {
@@ -12,8 +13,6 @@ import type {
   TossClientSdkLoader,
 } from "../../lib/payment/tossClientCheckoutTypes";
 
-const DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED =
-  process.env.NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED === "1";
 const DEV_TOSS_CHECKOUT_CUSTOMER_KEY = "gyeol_local_test_customer";
 const DEV_TOSS_CHECKOUT_ERROR_MESSAGE =
   "결제창을 시작하지 못했습니다. 환경값을 확인한 뒤 다시 시도해 주세요.";
@@ -35,11 +34,16 @@ export type DevTossCheckoutInputSnapshot = {
   readonly calendarType: string;
   readonly birthTimeUnknown: boolean;
   readonly displayName?: string;
+  readonly reportInputPayload?: unknown;
 };
 
 type DevTossCheckoutLauncherProps = {
   readonly inputSnapshot: DevTossCheckoutInputSnapshot;
+  readonly productType?: ReportProductType;
+  readonly productLabelKo?: string;
   readonly ctaLabelKo?: string;
+  readonly disabled?: boolean;
+  readonly disabledMessageKo?: string;
   readonly onEditInput?: () => void;
 };
 
@@ -59,6 +63,10 @@ export type DevTossCheckoutLauncherRuntime = {
     input: unknown,
   ) => Promise<TossClientCheckoutLaunchResult>;
   readonly loadTossPayments: TossClientSdkLoader;
+};
+
+type DevTossCheckoutRunOptions = {
+  readonly productType?: ReportProductType;
 };
 
 export type DevTossCheckoutLegalConfirmations = {
@@ -214,16 +222,10 @@ export function isDevTossCheckoutInputComplete(
   const hasRequiredText =
     (inputSnapshot.displayName ?? "").trim().length > 0 &&
     inputSnapshot.birthDate.trim().length > 0 &&
-    inputSnapshot.gender.trim().length > 0 &&
-    inputSnapshot.mbti.trim().length > 0 &&
     inputSnapshot.calendarType.trim().length > 0 &&
     inputSnapshot.timezone.trim().length > 0;
 
-  return (
-    hasRequiredText &&
-    (inputSnapshot.birthTimeUnknown ||
-      inputSnapshot.birthTime.trim().length > 0)
-  );
+  return hasRequiredText;
 }
 
 function parseBirthDate(value: string): Date | null {
@@ -368,6 +370,7 @@ export async function runDevTossCheckout(
   inputSnapshot: DevTossCheckoutInputSnapshot,
   legalConfirmations: DevTossCheckoutLegalConfirmations,
   runtime: DevTossCheckoutLauncherRuntime = defaultRuntime,
+  options: DevTossCheckoutRunOptions = {},
 ): Promise<DevTossCheckoutLauncherResult> {
   if (!isDevTossCheckoutInputComplete(inputSnapshot)) {
     return createFailureResult({
@@ -410,7 +413,7 @@ export async function runDevTossCheckout(
       },
       body: JSON.stringify({
         provider: "toss",
-        productType: "saju_mbti_full",
+        productType: options.productType ?? "saju_mbti_full",
         inputSnapshot,
       }),
     });
@@ -475,7 +478,11 @@ export async function runDevTossCheckout(
 
 export default function DevTossCheckoutLauncher({
   inputSnapshot,
+  productType = "saju_mbti_full",
+  productLabelKo = "사주×MBTI 종합 리포트",
   ctaLabelKo = "1,290원 결제하고 리포트 생성하기",
+  disabled = false,
+  disabledMessageKo = REQUIRED_CHECKOUT_INPUT_MESSAGE_KO,
   onEditInput,
 }: DevTossCheckoutLauncherProps) {
   const [isLaunching, setIsLaunching] = useState(false);
@@ -488,10 +495,6 @@ export default function DevTossCheckoutLauncher({
     useState<DevTossCheckoutErrorDetail | null>(null);
   const [statusMessage, setStatusMessage] = useState("");
 
-  if (!DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED) {
-    return null;
-  }
-
   const isInputComplete = isDevTossCheckoutInputComplete(inputSnapshot);
   const ageGateStatus = getDevTossCheckoutAgeGateStatus(inputSnapshot.birthDate);
   const isUnder14Blocked = ageGateStatus === "under_14";
@@ -502,7 +505,7 @@ export default function DevTossCheckoutLauncher({
       legalConfirmations,
     );
   const canLaunchCheckout =
-    isInputComplete && !isUnder14Blocked && isLegalConfirmationComplete;
+    !disabled && isInputComplete && !isUnder14Blocked && isLegalConfirmationComplete;
 
   function updateLegalConfirmation(
     field: keyof DevTossCheckoutLegalConfirmations,
@@ -527,6 +530,8 @@ export default function DevTossCheckoutLauncher({
     const result = await runDevTossCheckout(
       inputSnapshot,
       legalConfirmations,
+      defaultRuntime,
+      { productType },
     );
 
     if (!result.ok) {
@@ -583,7 +588,7 @@ export default function DevTossCheckoutLauncher({
       <section className="space-y-3 rounded-lg border border-sky-200 bg-white p-4">
         <h3 className="text-base font-extrabold text-neutral-950">결제 정보</h3>
         <dl className="grid gap-3 text-sm">
-          <ReviewRow labelKo="상품명" valueKo="사주×MBTI 종합 리포트" />
+          <ReviewRow labelKo="상품명" valueKo={productLabelKo} />
           <ReviewRow labelKo="판매가" valueKo="1,290원" />
           <ReviewRow labelKo="총 결제금액" valueKo="1,290원" />
           <ReviewRow labelKo="제공 방식" valueKo="결제 후 온라인 열람" />
@@ -708,6 +713,11 @@ export default function DevTossCheckoutLauncher({
       {!isInputComplete ? (
         <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm font-semibold text-amber-900">
           {REQUIRED_CHECKOUT_INPUT_MESSAGE_KO}
+        </p>
+      ) : null}
+      {disabled && isInputComplete ? (
+        <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm font-semibold text-amber-900">
+          {disabledMessageKo}
         </p>
       ) : null}
       {isInputComplete && !isUnder14Blocked && !isLegalConfirmationComplete ? (

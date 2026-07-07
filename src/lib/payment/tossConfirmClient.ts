@@ -9,7 +9,7 @@ import type {
 
 export const TOSS_CONFIRM_API_URL =
   "https://api.tosspayments.com/v1/payments/confirm";
-export const TOSS_CONFIRM_REQUIRED_AMOUNT = 990;
+export const TOSS_CONFIRM_REQUIRED_AMOUNT = 1290;
 const tossConfirmRequiredCurrency = "KRW";
 
 type TossConfirmFetchResponse = {

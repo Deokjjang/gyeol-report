@@ -8,172 +8,12 @@ type TossSuccessPageProps = {
   }>;
 };
 
-type InitialSuccessState = "loading" | "missing" | "amount-mismatch";
+type InitialSuccessState = "received" | "missing" | "amount-mismatch";
 
 const requiredPaymentAmount = 1290;
 
-export const tossSuccessAutoConfirmScript = `
-(function () {
-  var requiredAmount = 1290;
-  var globalKeyName = "__gyeolTossSuccessConfirmRequestKey";
-  var globalPromiseName = "__gyeolTossSuccessConfirmPromise";
-
-  function readParam(params, name) {
-    var value = params.get(name);
-    return typeof value === "string" ? value.trim() : "";
-  }
-
-  function select(selector) {
-    return document.querySelector(selector);
-  }
-
-  function setText(selector, value) {
-    var element = select(selector);
-    if (element) {
-      element.textContent = value;
-    }
-  }
-
-  function setHidden(selector, hidden) {
-    var element = select(selector);
-    if (element) {
-      element.hidden = hidden;
-    }
-  }
-
-  function updateReportLink(reportId) {
-    var element = select("[data-report-link]");
-    if (!element) {
-      return;
-    }
-
-    if (typeof reportId !== "string" || reportId.trim().length === 0) {
-      element.hidden = true;
-      element.removeAttribute("href");
-      return;
-    }
-
-    element.setAttribute("href", "/reports/" + encodeURIComponent(reportId));
-    element.hidden = false;
-  }
-
-  function safeText(value) {
-    return typeof value === "string" && value.trim().length > 0
-      ? value.slice(0, 160)
-      : "not provided";
-  }
-
-  function showInvalid(message) {
-    setText("[data-confirm-title]", message);
-    setText("[data-confirm-message]", "결제 승인에 필요한 정보가 누락되었습니다.");
-    setHidden("[data-confirm-details]", true);
-    setHidden("[data-confirm-error]", true);
-    updateReportLink("");
-  }
-
-  function showAmountMismatch(orderId, amount) {
-    setText("[data-confirm-title]", "결제 금액이 올바르지 않습니다.");
-    setText("[data-confirm-message]", "결제 승인 요청 금액을 다시 확인해 주세요.");
-    setText("[data-confirm-order-id]", safeText(orderId));
-    setText("[data-confirm-amount]", safeText(amount));
-    setHidden("[data-confirm-details]", false);
-    setHidden("[data-confirm-error]", true);
-    updateReportLink("");
-  }
-
-  function showFailure(error, orderId, amount) {
-    setText("[data-confirm-title]", "결제 승인 실패");
-    setText("[data-confirm-message]", "서버 승인 처리 중 문제가 발생했습니다.");
-    setText("[data-confirm-order-id]", safeText(orderId));
-    setText("[data-confirm-amount]", safeText(amount));
-    setText("[data-confirm-status]", "failed");
-    setText("[data-confirm-report-id]", "not ready");
-    setText("[data-confirm-error-code]", safeText(error && error.code));
-    setText("[data-confirm-error-message]", safeText(error && error.message));
-    setHidden("[data-confirm-details]", false);
-    setHidden("[data-confirm-error]", false);
-    updateReportLink("");
-  }
-
-  function showSuccess(body) {
-    setText("[data-confirm-title]", "결제 승인 완료");
-    setText(
-      "[data-confirm-message]",
-      "결제가 정상 승인되었고 리포트 생성이 완료되었습니다.",
-    );
-    setText("[data-confirm-order-id]", safeText(body.confirm.orderId));
-    setText("[data-confirm-amount]", "1,290원");
-    setText("[data-confirm-status]", safeText(body.paymentOrder.status));
-    setText("[data-confirm-report-id]", safeText(body.fulfillment.reportId));
-    setHidden("[data-confirm-details]", false);
-    setHidden("[data-confirm-error]", true);
-    updateReportLink(body.fulfillment.reportId);
-  }
-
-  function isSuccessBody(value) {
-    return Boolean(
-      value &&
-        value.ok === true &&
-        value.confirm &&
-        value.confirm.status === "DONE" &&
-        value.paymentOrder &&
-        value.paymentOrder.status === "paid" &&
-        value.fulfillment &&
-        typeof value.fulfillment.reportId === "string" &&
-        value.fulfillment.reportId.length > 0,
-    );
-  }
-
-  async function run() {
-    var params = new URLSearchParams(window.location.search);
-    var paymentKey = readParam(params, "paymentKey");
-    var orderId = readParam(params, "orderId");
-    var amount = readParam(params, "amount");
-
-    if (!paymentKey || !orderId || !amount) {
-      showInvalid("결제 정보가 부족합니다.");
-      return;
-    }
-
-    if (Number(amount) !== requiredAmount) {
-      showAmountMismatch(orderId, amount);
-      return;
-    }
-
-    var requestKey = orderId + ":" + amount + ":" + paymentKey;
-    if (window[globalKeyName] === requestKey) {
-      return;
-    }
-    window[globalKeyName] = requestKey;
-
-    try {
-      var response = await fetch("/api/payments/toss/confirm", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({
-          paymentKey: paymentKey,
-          orderId: orderId,
-          amount: requiredAmount,
-        }),
-      });
-      var body = await response.json();
-
-      if (!response.ok || !isSuccessBody(body)) {
-        showFailure(body && body.error, orderId, amount);
-        return;
-      }
-
-      showSuccess(body);
-    } catch (error) {
-      showFailure({ code: "CONFIRM_REQUEST_FAILED", message: "Confirm request failed." }, orderId, amount);
-    }
-  }
-
-  window[globalPromiseName] = run();
-})();
-`;
+export const tossSuccessConfirmDeferredMarker =
+  "TOSS_CONFIRM_DEFERRED_UNTIL_REPORT_FULFILLMENT";
 
 function readQueryValue(value: string | string[] | undefined): string {
   const firstValue = Array.isArray(value) ? value[0] : value;
@@ -198,7 +38,7 @@ function parseInitialState(input: {
     return "amount-mismatch";
   }
 
-  return "loading";
+  return "received";
 }
 
 function createInitialCopy(state: InitialSuccessState): {
@@ -220,8 +60,9 @@ function createInitialCopy(state: InitialSuccessState): {
   }
 
   return {
-    title: "결제 승인 처리 중",
-    message: "Toss 결제 인증을 서버에서 승인하고 있습니다.",
+    title: "결제 정보 확인 완료",
+    message:
+      "결제창에서 결제 인증 정보를 받았습니다. 리포트 생성과 최종 승인 처리는 다음 단계에서 연결됩니다.",
   };
 }
 
@@ -238,7 +79,6 @@ export default async function TossPaymentSuccessPage({
   const paymentKey = readQueryValue(query.paymentKey);
   const initialState = parseInitialState({ paymentKey, orderId, amount });
   const initialCopy = createInitialCopy(initialState);
-  const shouldRunAutoConfirm = initialState === "loading";
 
   return (
     <main className="min-h-screen bg-neutral-950 px-5 py-10 text-neutral-50 sm:px-8">
@@ -277,22 +117,22 @@ export default async function TossPaymentSuccessPage({
             <div className="grid gap-1 sm:grid-cols-[10rem_1fr]">
               <dt className="font-medium text-neutral-500">결제금액</dt>
               <dd className="break-words text-neutral-100" data-confirm-amount>
-                {initialState === "loading" ? "1,290원" : renderValue(amount)}
+                {initialState === "received" ? "1,290원" : renderValue(amount)}
               </dd>
             </div>
             <div className="grid gap-1 sm:grid-cols-[10rem_1fr]">
               <dt className="font-medium text-neutral-500">상태</dt>
               <dd className="text-neutral-100" data-confirm-status>
-                {initialState === "loading" ? "confirming" : "not ready"}
+                {initialState === "received" ? "confirm deferred" : "not ready"}
               </dd>
             </div>
             <div className="grid gap-1 sm:grid-cols-[10rem_1fr]">
-              <dt className="font-medium text-neutral-500">리포트 ID</dt>
+              <dt className="font-medium text-neutral-500">다음 단계</dt>
               <dd
                 className="break-words text-neutral-100"
                 data-confirm-report-id
               >
-                not ready
+                결제 승인 확인 후 리포트 생성 연결 예정
               </dd>
             </div>
           </dl>
@@ -313,18 +153,12 @@ export default async function TossPaymentSuccessPage({
           <a
             className="inline-flex w-full items-center justify-center rounded-lg bg-neutral-50 px-4 py-3 text-sm font-semibold text-neutral-950 transition hover:bg-white sm:w-auto"
             data-report-link
-            hidden
+            href="/report/new"
           >
-            리포트 보기
+            다른 리포트 보기
           </a>
         </div>
       </section>
-
-      {shouldRunAutoConfirm ? (
-        <script
-          dangerouslySetInnerHTML={{ __html: tossSuccessAutoConfirmScript }}
-        />
-      ) : null}
     </main>
   );
 }

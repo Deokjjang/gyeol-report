@@ -7,25 +7,22 @@ const pageSource = readFileSync(
   "utf8",
 );
 const launcherSource = readFileSync(
-  join(process.cwd(), "src/components/payment/DevTossCheckoutLauncher.tsx"),
+  join(process.cwd(), "src/components/payment/TossPaymentWidgetLauncher.tsx"),
   "utf8",
 );
 const pageLauncherSource = [
   pageSource.match(
-    /import DevTossCheckoutLauncher[\s\S]*?from "\.\.\/\.\.\/\.\.\/components\/payment\/DevTossCheckoutLauncher";/,
+    /import TossPaymentWidgetLauncher[\s\S]*?from "\.\.\/\.\.\/\.\.\/components\/payment\/TossPaymentWidgetLauncher";/,
   )?.[0] ?? "",
   pageSource.match(
-    /const DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED =\r?\n  process\.env\.NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED === "1";/,
-  )?.[0] ?? "",
-  pageSource.match(
-    /\{DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED \? \(\r?\n\s*<DevTossCheckoutLauncher\r?\n\s*inputSnapshot=\{checkoutInputSnapshot\}/,
+    /<TossPaymentWidgetLauncher\r?\n\s*inputSnapshot=\{checkoutInputSnapshot\}/,
   )?.[0] ?? "",
 ].join("\n");
 
 describe("report new page Toss launcher source", () => {
-  it("imports and renders the dev Toss launcher with actual input snapshot", () => {
+  it("imports and renders the Toss payment widget launcher with actual input snapshot", () => {
     expect(pageSource).toContain(
-      'from "../../../components/payment/DevTossCheckoutLauncher"',
+      'from "../../../components/payment/TossPaymentWidgetLauncher"',
     );
     expect(pageSource).toContain("입력값 최종 확인");
     expect(pageSource).toContain("전체 리포트");
@@ -33,24 +30,16 @@ describe("report new page Toss launcher source", () => {
     expect(pageSource).toContain("결제금액 1,290원");
     expect(pageSource).toContain("90일");
     expect(pageSource).toContain("onEditInput");
-    expect(pageSource).toContain("결제창 연결 안내");
-    expect(pageSource).toContain("DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED ? (");
     expect(pageSource).toContain("inputSnapshot={checkoutInputSnapshot}");
+    expect(pageSource).toContain("productType={selectedProduct.productKey}");
+    expect(pageSource).toContain("productLabelKo={selectedProduct.nameKo}");
     expect(pageSource).toContain("1,290원 결제하고 리포트 생성하기");
     expect(pageSource).not.toContain("무료 미리보기 생성");
     expect(pageSource).not.toContain("런칭가");
     expect(pageSource).not.toContain("990원");
     expect(pageSource).not.toContain("결제 " + "비활성 안내");
-    expect(launcherSource).toContain(
-      "NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED",
-    );
-    expect(launcherSource).toContain(
-      "process.env.NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED === \"1\"",
-    );
-    expect(launcherSource).toContain(
-      "if (!DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED)",
-    );
-    expect(launcherSource).toContain("return null");
+    expect(launcherSource).toContain("runTossPaymentWidgetCheckout");
+    expect(launcherSource).toContain("TossPaymentWidgetInputSnapshot");
   });
 
   it("does not add unsafe payment behavior to the report page", () => {

@@ -17,7 +17,7 @@ const readyOrder = {
   providerOrderId: "provider_order_toss_checkout_test",
   productType: "saju_mbti_full",
   provider: "toss",
-  amount: 990,
+  amount: 1290,
   currency: "KRW",
   status: "ready",
 } as const;
@@ -95,10 +95,10 @@ describe("Toss checkout request adapter", () => {
       requestPayment: {
         method: "CARD",
         orderId: "provider_order_toss_checkout_test",
-        orderName: "사주×MBTI 전체 리포트",
+        orderName: "사주×MBTI 종합 리포트",
         amount: {
           currency: "KRW",
-          value: 990,
+          value: 1290,
         },
         successUrl,
         failUrl,

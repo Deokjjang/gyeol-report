@@ -2,14 +2,14 @@
 
 import { use, useState } from "react";
 import type { FormEvent } from "react";
-import { useRouter } from "next/navigation";
 
 import GyeolBrandHeader from "../../../components/brand/GyeolBrandHeader";
-import DevTossCheckoutLauncher, {
-  type DevTossCheckoutInputSnapshot,
-  isDevTossCheckoutInputComplete,
-} from "../../../components/payment/DevTossCheckoutLauncher";
+import TossPaymentWidgetLauncher, {
+  type TossPaymentWidgetInputSnapshot,
+  isTossPaymentWidgetInputComplete,
+} from "../../../components/payment/TossPaymentWidgetLauncher";
 import { GYEOL_PRODUCTS } from "../../../lib/product/gyeolProducts";
+import type { ReportProductType } from "../../../lib/payment/reportProductTypes";
 import type {
   CompatibilityRelationshipType,
   CompatibilityReportInputPayload,
@@ -47,17 +47,6 @@ const SINGLE_PRODUCT_CONTEXT_NOTICE_KO =
   "현재 연애 상태, 직업 상태, 세부 직업은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.";
 const COMPATIBILITY_REQUIRED_INPUT_MESSAGE_KO =
   "A/B 이름과 생년월일, 관계 카테고리를 입력해 주세요.";
-const COMPATIBILITY_PREVIEW_CREATE_ERROR_MESSAGE_KO =
-  "궁합 리포트를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.";
-const COMPREHENSIVE_V2_REQUIRED_INPUT_MESSAGE_KO =
-  "이름과 생년월일을 입력해 주세요.";
-const COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO =
-  "종합 리포트를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.";
-const SINGLE_PRODUCT_PREVIEW_CREATE_ERROR_MESSAGE_KO =
-  "리포트를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.";
-const REPORT_CREATE_API_PATH = "/api/reports/create";
-const DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED =
-  process.env.NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED === "1";
 
 type NewReportPageSearchParams = {
   readonly product?: string | readonly string[];
@@ -68,7 +57,7 @@ type NewReportPageProps = {
 };
 
 type SelectedReportProduct = {
-  readonly productKey: string;
+  readonly productKey: ReportProductType;
   readonly slug: string;
   readonly nameKo: string;
   readonly fullNameKo: string;
@@ -538,52 +527,6 @@ function buildReportInputPayload(input: {
   return null;
 }
 
-function isCompatibilityPreviewCreateSuccessResponse(
-  value: unknown,
-): value is {
-  readonly ok: true;
-  readonly reportId: string;
-  readonly snapshotKind: "product_preview";
-} {
-  if (typeof value !== "object" || value === null) {
-    return false;
-  }
-
-  const response = value as Record<string, unknown>;
-  return (
-    response.ok === true &&
-    typeof response.reportId === "string" &&
-    response.reportId.trim().length > 0 &&
-    response.snapshotKind === "product_preview"
-  );
-}
-
-function getCompatibilityPreviewCreateErrorMessage(value: unknown): string {
-  return getProductPreviewCreateErrorMessage(
-    value,
-    COMPATIBILITY_PREVIEW_CREATE_ERROR_MESSAGE_KO,
-  );
-}
-
-function getProductPreviewCreateErrorMessage(
-  value: unknown,
-  fallbackMessage: string,
-): string {
-  if (typeof value !== "object" || value === null) {
-    return fallbackMessage;
-  }
-
-  const response = value as Record<string, unknown>;
-  if (
-    typeof response.userMessage === "string" &&
-    response.userMessage.trim() !== ""
-  ) {
-    return response.userMessage;
-  }
-
-  return fallbackMessage;
-}
-
 function isCompatibilityPersonRequiredInputComplete(
   input: CompatibilityPersonInputState,
 ): boolean {
@@ -702,26 +645,6 @@ function getSingleProductReadyCtaLabel(productKey: string): string {
   return "1,290원 결제하고 종합 리포트 생성하기";
 }
 
-function getSingleProductLoadingCtaLabel(productKey: string): string {
-  if (productKey === CAREER_MONEY_STUDY_PRODUCT_KEY) {
-    return "직업 리포트 생성 중";
-  }
-
-  if (productKey === LOVE_MARRIAGE_CHILD_PRODUCT_KEY) {
-    return "연애 리포트 생성 중";
-  }
-
-  if (productKey === MAJOR_FORTUNE_PRODUCT_KEY) {
-    return "대운 리포트 생성 중";
-  }
-
-  if (productKey === ANNUAL_FORTUNE_PRODUCT_KEY) {
-    return "세운 리포트 생성 중";
-  }
-
-  return "종합 리포트 생성 중";
-}
-
 function formatBirthTimeSummary(
   mode: BirthTimeMode,
   exactTime: string,
@@ -749,7 +672,8 @@ function createCheckoutInputSnapshot(input: {
   readonly birthTimeUnknown: boolean;
   readonly gender: string;
   readonly mbtiType: string;
-}): DevTossCheckoutInputSnapshot {
+  readonly reportInputPayload?: ReportInputPayload;
+}): TossPaymentWidgetInputSnapshot {
   const trimmedDisplayName = input.displayName.trim();
 
   return {
@@ -761,6 +685,9 @@ function createCheckoutInputSnapshot(input: {
     calendarType: "SOLAR",
     birthTimeUnknown: input.birthTimeUnknown,
     ...(trimmedDisplayName ? { displayName: trimmedDisplayName } : {}),
+    ...(input.reportInputPayload === undefined
+      ? {}
+      : { reportInputPayload: input.reportInputPayload }),
   };
 }
 
@@ -1205,7 +1132,6 @@ function renderSingleProductCommonInputSection(input: {
 export default function NewReportPage({
   searchParams = EMPTY_REPORT_SEARCH_PARAMS,
 }: NewReportPageProps) {
-  const router = useRouter();
   const resolvedSearchParams = use(searchParams);
   const selectedProduct = resolveSelectedReportProduct(
     resolvedSearchParams.product,
@@ -1228,12 +1154,6 @@ export default function NewReportPage({
     useState<CompatibilityPersonInputState>(createCompatibilityPersonInputState);
   const [compatibilityRelationshipType, setCompatibilityRelationshipType] =
     useState<CompatibilityRelationshipTypeSelection>("love");
-  const [isCompatibilitySubmitting, setIsCompatibilitySubmitting] =
-    useState(false);
-  const [compatibilitySubmitError, setCompatibilitySubmitError] = useState("");
-  const [isSingleProductSubmitting, setIsSingleProductSubmitting] =
-    useState(false);
-  const [singleProductSubmitError, setSingleProductSubmitError] = useState("");
   const [majorFortuneInput, setMajorFortuneInput] =
     useState<MajorFortuneInputState>(createMajorFortuneInputState);
   const [annualFortuneInput, setAnnualFortuneInput] =
@@ -1266,16 +1186,14 @@ export default function NewReportPage({
     mbtiType,
   });
   const isCheckoutInputComplete =
-    isDevTossCheckoutInputComplete(checkoutInputSnapshot);
+    isTossPaymentWidgetInputComplete(checkoutInputSnapshot);
   const isCompatibilityInputReady =
     isCompatibilityPersonRequiredInputComplete(compatibilityPersonA) &&
     isCompatibilityPersonRequiredInputComplete(compatibilityPersonB) &&
     compatibilityRelationshipType.trim().length > 0;
-  const compatibilityCtaLabel = isCompatibilitySubmitting
-    ? "궁합 리포트 생성 중"
-    : isCompatibilityInputReady
-      ? "1,290원 결제하고 궁합 리포트 생성하기"
-      : "필수 정보를 입력해 주세요";
+  const compatibilityCtaLabel = isCompatibilityInputReady
+    ? "1,290원 결제하고 궁합 리포트 생성하기"
+    : "필수 정보를 입력해 주세요";
   const isSingleProductAnnual =
     selectedProduct.productKey === ANNUAL_FORTUNE_PRODUCT_KEY;
   const isSingleProductComprehensiveV2 =
@@ -1283,11 +1201,39 @@ export default function NewReportPage({
   const isSingleProductInputReady = isSingleProductAnnual
     ? isAnnualFortuneRequiredInputComplete(singleProductInput)
     : isMajorFortuneRequiredInputComplete(singleProductInput);
-  const singleProductCtaLabel = isSingleProductSubmitting
-    ? getSingleProductLoadingCtaLabel(selectedProduct.productKey)
-    : isSingleProductInputReady
-      ? getSingleProductReadyCtaLabel(selectedProduct.productKey)
-      : "필수 정보를 입력해 주세요";
+  const singleProductCtaLabel = isSingleProductInputReady
+    ? getSingleProductReadyCtaLabel(selectedProduct.productKey)
+    : "필수 정보를 입력해 주세요";
+  const singleProductReportInputPayload = buildSinglePersonReportInputPayload(
+    selectedProduct,
+    singleProductInput,
+  );
+  const singleProductCheckoutInputSnapshot = createCheckoutInputSnapshot({
+    displayName: singleProductInput.name,
+    birthDate: singleProductInput.birthDate,
+    birthTime: singleProductInput.birthTime,
+    birthTimeUnknown: singleProductInput.birthTimeUnknown,
+    gender: singleProductInput.gender,
+    mbtiType: singleProductInput.mbtiType,
+    reportInputPayload: singleProductReportInputPayload,
+  });
+  const compatibilityReportInputPayload = buildCompatibilityReportInputPayload({
+    relationshipType: compatibilityRelationshipType,
+    personA: compatibilityPersonA,
+    personB: compatibilityPersonB,
+  });
+  const compatibilityCheckoutInputSnapshot = createCheckoutInputSnapshot({
+    displayName: [compatibilityPersonA.name, compatibilityPersonB.name]
+      .map((value) => value.trim())
+      .filter(Boolean)
+      .join(" · "),
+    birthDate: compatibilityPersonA.birthDate,
+    birthTime: compatibilityPersonA.birthTime,
+    birthTimeUnknown: compatibilityPersonA.birthTimeUnknown,
+    gender: compatibilityPersonA.gender,
+    mbtiType: compatibilityPersonA.mbtiType,
+    reportInputPayload: compatibilityReportInputPayload,
+  });
   const isMajorFortuneInputReady =
     isMajorFortuneRequiredInputComplete(majorFortuneInput);
   const majorFortuneCtaLabel = isMajorFortuneInputReady
@@ -1307,110 +1253,6 @@ export default function NewReportPage({
       compatibilityPersonB,
       compatibilityRelationshipType,
     });
-  }
-
-  async function handleSingleProductPreviewSubmit(
-    event: FormEvent<HTMLFormElement>,
-  ) {
-    event.preventDefault();
-    setSingleProductSubmitError("");
-
-    if (!isSingleProductInputReady || isSingleProductSubmitting) {
-      setSingleProductSubmitError(COMPREHENSIVE_V2_REQUIRED_INPUT_MESSAGE_KO);
-      return;
-    }
-
-    const payload = buildSinglePersonReportInputPayload(
-      selectedProduct,
-      singleProductInput,
-    );
-
-    setIsSingleProductSubmitting(true);
-
-    try {
-      const response = await fetch(REPORT_CREATE_API_PATH, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-      const createResult: unknown = await response.json();
-
-      if (
-        response.ok &&
-        isCompatibilityPreviewCreateSuccessResponse(createResult)
-      ) {
-        router.push(`/reports/${createResult.reportId}`);
-        return;
-      }
-
-      setSingleProductSubmitError(
-        getProductPreviewCreateErrorMessage(
-          createResult,
-          isSingleProductComprehensiveV2
-            ? COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO
-            : SINGLE_PRODUCT_PREVIEW_CREATE_ERROR_MESSAGE_KO,
-        ),
-      );
-    } catch {
-      setSingleProductSubmitError(
-        isSingleProductComprehensiveV2
-          ? COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO
-          : SINGLE_PRODUCT_PREVIEW_CREATE_ERROR_MESSAGE_KO,
-      );
-    }
-
-    setIsSingleProductSubmitting(false);
-  }
-
-  async function handleCompatibilityPreviewSubmit(
-    event: FormEvent<HTMLFormElement>,
-  ) {
-    event.preventDefault();
-    setCompatibilitySubmitError("");
-
-    if (!isCompatibilityInputReady || isCompatibilitySubmitting) {
-      setCompatibilitySubmitError(COMPATIBILITY_REQUIRED_INPUT_MESSAGE_KO);
-      return;
-    }
-
-    const payload = buildCompatibilityReportInputPayload({
-      relationshipType: compatibilityRelationshipType,
-      personA: compatibilityPersonA,
-      personB: compatibilityPersonB,
-    });
-
-    setIsCompatibilitySubmitting(true);
-
-    try {
-      const response = await fetch(REPORT_CREATE_API_PATH, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-      const createResult: unknown = await response.json();
-
-      if (
-        response.ok &&
-        isCompatibilityPreviewCreateSuccessResponse(createResult)
-      ) {
-        router.push(`/reports/${createResult.reportId}`);
-        return;
-      }
-
-      setCompatibilitySubmitError(
-        getCompatibilityPreviewCreateErrorMessage(createResult),
-      );
-    } catch {
-      setCompatibilitySubmitError(
-        COMPATIBILITY_PREVIEW_CREATE_ERROR_MESSAGE_KO,
-      );
-    }
-
-    setIsCompatibilitySubmitting(false);
   }
 
   if (isSinglePersonPreviewProduct(selectedProduct.productKey)) {
@@ -1441,7 +1283,7 @@ export default function NewReportPage({
           </header>
 
           <form
-            onSubmit={handleSingleProductPreviewSubmit}
+            onSubmit={handlePreviewOnlySubmit}
             className="grid gap-6"
           >
             <input type="hidden" name="timezone" value="Asia/Seoul" />
@@ -1510,32 +1352,14 @@ export default function NewReportPage({
               </section>
             ) : null}
 
-            <div className="sticky bottom-0 z-20 -mx-5 space-y-3 border-t border-[#ded2c2] bg-[#f6f0e7]/95 px-5 py-4 backdrop-blur sm:mx-0 sm:rounded-lg sm:border sm:bg-[#fffdf8]/95">
-              <button
-                type="submit"
-                disabled={
-                  !isSingleProductInputReady ||
-                  isSingleProductSubmitting
-                }
-                aria-disabled={
-                  !isSingleProductInputReady ||
-                  isSingleProductSubmitting
-                }
-                className={
-                  isSingleProductInputReady &&
-                  !isSingleProductSubmitting
-                    ? "w-full min-h-12 rounded-lg border border-[#6f1d35] bg-[#6f1d35] px-5 py-3 text-sm font-bold text-[#fffdf8] shadow-[0_12px_30px_rgba(111,29,53,0.18)] transition hover:bg-[#7f2440] active:scale-[0.99]"
-                    : "w-full min-h-12 rounded-lg border border-[#d7b56d] bg-[#fffaf1] px-5 py-3 text-sm font-bold text-[#8b6d2d]"
-                }
-              >
-                {singleProductCtaLabel}
-              </button>
-              {singleProductSubmitError ? (
-                <p className="rounded-lg border border-[#b94b5a]/40 bg-[#fff1f2] p-4 text-sm font-semibold text-[#8a1d3d]">
-                  {singleProductSubmitError}
-                </p>
-              ) : null}
-            </div>
+            <TossPaymentWidgetLauncher
+              inputSnapshot={singleProductCheckoutInputSnapshot}
+              productType={selectedProduct.productKey}
+              productLabelKo={selectedProduct.nameKo}
+              ctaLabelKo={singleProductCtaLabel}
+              disabled={!isSingleProductInputReady}
+              disabledMessageKo="필수 정보를 입력해 주세요"
+            />
           </form>
         </section>
       </main>
@@ -2440,7 +2264,7 @@ export default function NewReportPage({
             </div>
           </header>
 
-          <form onSubmit={handleCompatibilityPreviewSubmit} className="grid gap-6">
+          <form onSubmit={handlePreviewOnlySubmit} className="grid gap-6">
             <input type="hidden" name="timezone" value="Asia/Seoul" />
             <input type="hidden" name="calendarType" value="SOLAR" />
             <input
@@ -2485,7 +2309,7 @@ export default function NewReportPage({
                   같은 두 사람이라도 관계 맥락에 따라 해석 초점이 달라집니다.
                 </p>
               </div>
-              <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
+              <div className="grid gap-4">
                 <div className="space-y-2">
                   <label
                     htmlFor="relationshipType"
@@ -2511,25 +2335,17 @@ export default function NewReportPage({
                     ))}
                   </select>
                 </div>
-                <button
-                  type="submit"
-                  disabled={!isCompatibilityInputReady || isCompatibilitySubmitting}
-                  aria-disabled={!isCompatibilityInputReady || isCompatibilitySubmitting}
-                  className={
-                    isCompatibilityInputReady && !isCompatibilitySubmitting
-                      ? "min-h-12 rounded-lg border border-[#6f1d35] bg-[#6f1d35] px-5 py-3 text-sm font-bold text-[#fffdf8] transition hover:bg-[#7f2440] active:scale-[0.99]"
-                      : "min-h-12 rounded-lg border border-[#d7b56d] bg-[#fffaf1] px-5 py-3 text-sm font-bold text-[#8b6d2d]"
-                  }
-                >
-                  {compatibilityCtaLabel}
-                </button>
               </div>
-              {compatibilitySubmitError ? (
-                <p className="rounded-lg border border-[#b94b5a]/40 bg-[#fff1f2] p-4 text-sm font-semibold text-[#8a1d3d]">
-                  {compatibilitySubmitError}
-                </p>
-              ) : null}
             </section>
+
+            <TossPaymentWidgetLauncher
+              inputSnapshot={compatibilityCheckoutInputSnapshot}
+              productType={selectedProduct.productKey}
+              productLabelKo={selectedProduct.nameKo}
+              ctaLabelKo={compatibilityCtaLabel}
+              disabled={!isCompatibilityInputReady}
+              disabledMessageKo={COMPATIBILITY_REQUIRED_INPUT_MESSAGE_KO}
+            />
           </form>
         </section>
       </main>
@@ -3042,25 +2858,16 @@ export default function NewReportPage({
                   ) : null}
 
                   {isSelectedProductPurchasable ? (
-                    DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED ? (
-                      <DevTossCheckoutLauncher
-                        inputSnapshot={checkoutInputSnapshot}
-                        ctaLabelKo={CHECKOUT_CTA_LABEL_KO}
-                        onEditInput={() => {
-                          setStepError("");
-                          setCurrentStep(0);
-                        }}
-                      />
-                    ) : (
-                      <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
-                        <p className="text-sm font-semibold text-neutral-900">
-                          결제창 연결 안내
-                        </p>
-                        <p className="mt-2 text-sm leading-6 text-neutral-600">
-                          결제 환경 확인 후 1,290원 결제창으로 이동합니다.
-                        </p>
-                      </div>
-                    )
+                    <TossPaymentWidgetLauncher
+                      inputSnapshot={checkoutInputSnapshot}
+                      productType={selectedProduct.productKey}
+                      productLabelKo={selectedProduct.nameKo}
+                      ctaLabelKo={CHECKOUT_CTA_LABEL_KO}
+                      onEditInput={() => {
+                        setStepError("");
+                        setCurrentStep(0);
+                      }}
+                    />
                   ) : (
                     <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
                       <p className="text-sm font-semibold text-neutral-900">

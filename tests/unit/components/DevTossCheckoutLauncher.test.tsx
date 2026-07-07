@@ -10,7 +10,6 @@ const componentPath = join(
   "src/components/payment/DevTossCheckoutLauncher.tsx",
 );
 const componentSource = readFileSync(componentPath, "utf8");
-const envName = "NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED";
 
 const validInputSnapshot = {
   mbti: "INFP",
@@ -32,14 +31,8 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-async function importLauncherModule(enabled: boolean) {
+async function importLauncherModule() {
   vi.resetModules();
-
-  if (enabled) {
-    process.env[envName] = "1";
-  } else {
-    delete process.env[envName];
-  }
 
   return import("../../../src/components/payment/DevTossCheckoutLauncher");
 }
@@ -50,7 +43,7 @@ function createTossRequestDraft(): Record<string, unknown> {
     clientKey: "test_client_key",
     requestPayment: {
       orderId: "provider_order_test_1",
-      orderName: "사주×MBTI 전체 리포트",
+      orderName: "사주×MBTI 종합 리포트",
       amount: {
         currency: "KRW",
         value: 1290,
@@ -196,25 +189,13 @@ function parseRequestBody(init: RequestInit): Record<string, unknown> {
 }
 
 afterEach(() => {
-  delete process.env[envName];
   vi.resetModules();
   vi.restoreAllMocks();
 });
 
 describe("DevTossCheckoutLauncher", () => {
-  it("does not render when the public env gate is off", async () => {
-    const launcherModule = await importLauncherModule(false);
-    const Component = launcherModule.default;
-
-    const html = renderToStaticMarkup(
-      <Component inputSnapshot={validInputSnapshot} />,
-    );
-
-    expect(html).toBe("");
-  });
-
-  it("renders dev-only Toss launcher copy when the public env gate is on", async () => {
-    const launcherModule = await importLauncherModule(true);
+  it("renders Toss widget launcher copy", async () => {
+    const launcherModule = await importLauncherModule();
     const Component = launcherModule.default;
 
     const html = renderToStaticMarkup(
@@ -260,7 +241,7 @@ describe("DevTossCheckoutLauncher", () => {
   });
 
   it("uses the provided inputSnapshot in the checkout prepare request", async () => {
-    const launcherModule = await importLauncherModule(true);
+    const launcherModule = await importLauncherModule();
     const tossCheckoutRequest = createTossRequestDraft();
     const harness = createHarness({
       responseBody: {
@@ -307,7 +288,7 @@ describe("DevTossCheckoutLauncher", () => {
   });
 
   it("does not call prepare API when required input is missing", async () => {
-    const launcherModule = await importLauncherModule(true);
+    const launcherModule = await importLauncherModule();
     const harness = createHarness();
 
     const result = await launcherModule.runDevTossCheckout(
@@ -332,7 +313,7 @@ describe("DevTossCheckoutLauncher", () => {
   });
 
   it("shows a missing input message for invalid input", async () => {
-    const launcherModule = await importLauncherModule(true);
+    const launcherModule = await importLauncherModule();
     const Component = launcherModule.default;
 
     const html = renderToStaticMarkup(
@@ -346,7 +327,7 @@ describe("DevTossCheckoutLauncher", () => {
   });
 
   it("blocks checkout until all legal confirmations are checked", async () => {
-    const launcherModule = await importLauncherModule(true);
+    const launcherModule = await importLauncherModule();
     const harness = createHarness();
 
     const result = await launcherModule.runDevTossCheckout(
@@ -371,7 +352,7 @@ describe("DevTossCheckoutLauncher", () => {
   });
 
   it("calculates age gate with a deterministic date", async () => {
-    const launcherModule = await importLauncherModule(true);
+    const launcherModule = await importLauncherModule();
     const asOfDate = new Date(Date.UTC(2026, 5, 14));
 
     expect(
@@ -386,7 +367,7 @@ describe("DevTossCheckoutLauncher", () => {
   });
 
   it("requires minor legal representative confirmation for users under 19", async () => {
-    const launcherModule = await importLauncherModule(true);
+    const launcherModule = await importLauncherModule();
     const asOfDate = new Date(Date.UTC(2026, 5, 14));
     const minorInputSnapshot = {
       ...validInputSnapshot,
@@ -413,7 +394,7 @@ describe("DevTossCheckoutLauncher", () => {
   });
 
   it("renders under-14 block and minor legal notice", async () => {
-    const launcherModule = await importLauncherModule(true);
+    const launcherModule = await importLauncherModule();
     const Component = launcherModule.default;
 
     const under14Html = renderToStaticMarkup(
@@ -444,7 +425,7 @@ describe("DevTossCheckoutLauncher", () => {
   });
 
   it("requires a Toss checkout request in the prepare API response", async () => {
-    const launcherModule = await importLauncherModule(true);
+    const launcherModule = await importLauncherModule();
     const harness = createHarness({
       responseBody: {
         ok: true,
@@ -462,7 +443,7 @@ describe("DevTossCheckoutLauncher", () => {
   });
 
   it("shows safe prepare API error code and message", async () => {
-    const launcherModule = await importLauncherModule(true);
+    const launcherModule = await importLauncherModule();
     const hiddenClientKey = "test" + "_ck_" + "abcdefghijklmnopqrstuvwxyz";
     const hiddenSecretKey = "test" + "_sk_" + "abcdefghijklmnopqrstuvwxyz";
     const harness = createHarness({
@@ -498,7 +479,7 @@ describe("DevTossCheckoutLauncher", () => {
   });
 
   it("launches through the injected Toss checkout boundary", async () => {
-    const launcherModule = await importLauncherModule(true);
+    const launcherModule = await importLauncherModule();
     const harness = createHarness({
       launcherUsesLoader: true,
     });
@@ -516,10 +497,10 @@ describe("DevTossCheckoutLauncher", () => {
 
   it("keeps source scoped to checkout preparation only", () => {
     const requiredMarkers = [
-      "NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED",
       "DevTossCheckoutInputSnapshot",
       "inputSnapshot",
       "isDevTossCheckoutInputComplete",
+      "productType",
       "입력값 최종 확인",
       "결제 정보",
       "서비스 제공 방식",

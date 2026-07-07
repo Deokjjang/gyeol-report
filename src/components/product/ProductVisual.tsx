@@ -3,7 +3,7 @@ type ProductVisualProps = {
 };
 
 export default function ProductVisual({
-  title = "사주×MBTI 전체 리포트 상품 비주얼",
+  title = "사주×MBTI 종합 리포트 상품 비주얼",
 }: ProductVisualProps) {
   return (
     <figure

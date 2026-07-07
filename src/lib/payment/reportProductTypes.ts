@@ -1,18 +1,18 @@
 export type ReportProductType =
   | "saju_mbti_full"
-  | "saju_basic"
-  | "saju_full"
-  | "daewoon"
-  | "saewoon"
-  | "compatibility";
+  | "career_money_study"
+  | "love_marriage_child"
+  | "saju_mbti_compatibility"
+  | "major_fortune"
+  | "annual_fortune";
 
 export const reportProductTypes = [
   "saju_mbti_full",
-  "saju_basic",
-  "saju_full",
-  "daewoon",
-  "saewoon",
-  "compatibility",
+  "career_money_study",
+  "love_marriage_child",
+  "saju_mbti_compatibility",
+  "major_fortune",
+  "annual_fortune",
 ] as const satisfies readonly ReportProductType[];
 
 export function parseReportProductType(

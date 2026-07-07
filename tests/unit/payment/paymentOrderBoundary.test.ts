@@ -47,7 +47,7 @@ describe("payment order boundary", () => {
       order: {
         productType: "saju_mbti_full",
         provider: "toss",
-        amount: 990,
+        amount: 1290,
         currency: "KRW",
         status: "ready",
         inputSnapshot,
@@ -72,7 +72,7 @@ describe("payment order boundary", () => {
       order: {
         productType: "saju_mbti_full",
         provider: "kakao_pay",
-        amount: 990,
+        amount: 1290,
         currency: "KRW",
         status: "ready",
       },
@@ -89,7 +89,7 @@ describe("payment order boundary", () => {
       ok: true,
       order: {
         productType: "saju_mbti_full",
-        amount: 990,
+        amount: 1290,
         currency: "KRW",
       },
     });
@@ -108,7 +108,7 @@ describe("payment order boundary", () => {
     expect(result).toMatchObject({
       ok: true,
       order: {
-        amount: 990,
+        amount: 1290,
         currency: "KRW",
         status: "ready",
       },
@@ -131,27 +131,29 @@ describe("payment order boundary", () => {
     });
   });
 
-  it("rejects non-purchasable future products", () => {
-    const futureProductTypes = [
-      "saju_basic",
-      "saju_full",
-      "daewoon",
-      "saewoon",
-      "compatibility",
+  it("creates ready payment orders for every launch product", () => {
+    const launchProductTypes = [
+      "career_money_study",
+      "love_marriage_child",
+      "saju_mbti_compatibility",
+      "major_fortune",
+      "annual_fortune",
     ];
 
-    for (const productType of futureProductTypes) {
+    for (const productType of launchProductTypes) {
       expect(
         createPaymentOrderDraft({
           productType,
           provider: "toss",
           inputSnapshot,
         }),
-      ).toEqual({
-        ok: false,
-        error: {
-          code: "PAYMENT_PRODUCT_NOT_PURCHASABLE",
-          messageKo: "아직 결제할 수 없는 리포트 상품입니다.",
+      ).toMatchObject({
+        ok: true,
+        order: {
+          productType,
+          amount: 1290,
+          currency: "KRW",
+          status: "ready",
         },
       });
     }

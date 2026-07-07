@@ -71,7 +71,7 @@ describe("supabase ready payment order adapter", () => {
       order: {
         productType: "saju_mbti_full",
         provider: "toss",
-        amount: 990,
+        amount: 1290,
         currency: "KRW",
         status: "ready",
         providerOrderId: "provider_order_ready_adapter_toss",
@@ -96,7 +96,7 @@ describe("supabase ready payment order adapter", () => {
       order: {
         productType: "saju_mbti_full",
         provider: "kakao_pay",
-        amount: 990,
+        amount: 1290,
         currency: "KRW",
         status: "ready",
         providerOrderId: "provider_order_ready_adapter_kakao",
@@ -104,7 +104,7 @@ describe("supabase ready payment order adapter", () => {
     });
     expect(fake.calls[0]).toMatchObject({
       provider: "kakao_pay",
-      amount: 990,
+      amount: 1290,
       currency: "KRW",
     });
   });
@@ -120,28 +120,30 @@ describe("supabase ready payment order adapter", () => {
     });
 
     expect(fake.calls[0]).toMatchObject({
-      amount: 990,
+      amount: 1290,
       currency: "KRW",
     });
   });
 
-  it("rejects disabled future product before RPC", async () => {
+  it("creates ready order for every launch product before RPC", async () => {
     const fake = createFakeClient();
     const result = await createReadyPaymentOrder({
-      productType: "daewoon",
+      productType: "major_fortune",
       provider: "toss",
       inputSnapshot,
       client: fake.client,
     });
 
-    expect(result).toEqual({
-      ok: false,
-      error: {
-        code: "PAYMENT_PRODUCT_NOT_PURCHASABLE",
-        messageKo: "아직 결제할 수 없는 리포트 상품입니다.",
+    expect(result).toMatchObject({
+      ok: true,
+      order: {
+        productType: "major_fortune",
+        amount: 1290,
+        currency: "KRW",
+        status: "ready",
       },
     });
-    expect(fake.calls).toEqual([]);
+    expect(fake.calls).toHaveLength(1);
   });
 
   it("rejects unsupported provider before RPC", async () => {
