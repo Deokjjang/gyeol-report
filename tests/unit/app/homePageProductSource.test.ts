@@ -9,14 +9,19 @@ const homePageSource = readFileSync(
   join(process.cwd(), "src/app/page.tsx"),
   "utf8",
 );
+const productCatalogSource = readFileSync(
+  join(process.cwd(), "src/lib/product/gyeolProducts.ts"),
+  "utf8",
+);
 
 describe("home page product source", () => {
   it("shows the active product and purchase path", () => {
     const html = renderToStaticMarkup(Home());
     const requiredMarkers = [
       "결리포트",
-      "명리 기반 프리미엄 디지털 리포트",
-      "결리포트 상품군",
+      "Gyeol Report",
+      "사주×MBTI 종합 리포트",
+      "결리포트 리포트",
       "사주×MBTI 종합 리포트",
       "직업·커리어·돈·학업 리포트",
       "연애·결혼·자녀 리포트",
@@ -24,18 +29,13 @@ describe("home page product source", () => {
       "세운 리포트",
       "궁합 리포트",
       "구매 가능",
-      "개발 preview",
-      "준비 중 · 미리보기 가능",
-      "입력 흐름 미리보기",
-      "런칭가",
-      "990원",
-      "정가",
       "1,290원",
+      "90일간 열람",
       "결제 후 온라인 열람",
       "자동 생성 디지털 리포트",
-      "사람 상담이 아닌 자동 생성 리포트",
-      "990원 결제하고 리포트 생성하기",
-      "/report/new",
+      "상담이 아닌 참고용 리포트",
+      "1,290원 결제하고 리포트 생성하기",
+      "/report/new?product=saju-mbti-full",
       "/report/new?product=career-money-study",
       "/report/new?product=love-marriage-child",
       "/report/new?product=compatibility",
@@ -84,6 +84,19 @@ describe("home page product source", () => {
       "보장",
       "반드시",
       "운명 확정",
+      "개발 preview",
+      "preview generation",
+      "productKey",
+      "productSlug",
+      "snapshot",
+      "source registry",
+      "fallback",
+      "v1.0 준비",
+      "준비 중 · 미리보기 가능",
+      "입력 흐름 미리보기",
+      "990원",
+      "런칭가",
+      "확장 예정",
     ];
 
     for (const marker of blockedMarkers) {
@@ -91,20 +104,21 @@ describe("home page product source", () => {
     }
   });
 
-  it("opens the annual fortune card as a non-purchasable preview entry", () => {
+  it("opens the annual fortune card as a purchasable entry", () => {
     const requiredSourceMarkers = [
       'id: "saewoon_report"',
-      'productKey: "annual_fortune"',
+      'productType: "annual_fortune"',
       'slug: "annual-fortune"',
-      'status: "preview_available"',
-      "isPurchasable: false",
-      'previewHref: "/report/new?product=annual-fortune"',
-      'previewStatusKo: "준비 중 · 미리보기 가능"',
-      'badgeKo: "개발 preview"',
+      'status: "available"',
+      "isPurchasable: true",
+      'href: "/report/new?product=annual-fortune"',
+      'badgeKo: "구매 가능"',
+      "paymentAmount: PRODUCT_PRICE_AMOUNT",
+      'retentionKo: "생성일로부터 90일 열람"',
     ];
 
     for (const marker of requiredSourceMarkers) {
-      expect(homePageSource).toContain(marker);
+      expect(productCatalogSource).toContain(marker);
     }
   });
 });

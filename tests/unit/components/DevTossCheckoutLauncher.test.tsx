@@ -53,7 +53,7 @@ function createTossRequestDraft(): Record<string, unknown> {
       orderName: "사주×MBTI 전체 리포트",
       amount: {
         currency: "KRW",
-        value: 990,
+        value: 1290,
       },
       successUrl: "https://example.com/payments/toss/success",
       failUrl: "https://example.com/payments/toss/fail",
@@ -240,10 +240,10 @@ describe("DevTossCheckoutLauncher", () => {
     expect(html).toContain("INFP");
     expect(html).toContain("상품명");
     expect(html).toContain("사주×MBTI 종합 리포트");
-    expect(html).toContain("정가");
+    expect(html).toContain("판매가");
     expect(html).toContain("1,290원");
     expect(html).toContain("총 결제금액");
-    expect(html).toContain("990원");
+    expect(html).toContain("90일");
     expect(html).toContain("결제 후 온라인 열람");
     expect(html).toContain("자동 생성 디지털 리포트");
     expect(html).toContain("생성 시작 후 단순 변심에 의한 환불이 제한될 수 있으며");
@@ -255,7 +255,7 @@ describe("DevTossCheckoutLauncher", () => {
       "리포트 생성을 위해 이름 또는 닉네임, 생년월일, 출생시간, 성별, MBTI가 처리됩니다.",
     );
     expect(html).toContain("[필수] 만 14세 이상입니다.");
-    expect(html).toContain("990원 결제하고 리포트 생성하기");
+    expect(html).toContain("1,290원 결제하고 리포트 생성하기");
     expect(html).toContain("disabled");
   });
 
@@ -528,7 +528,7 @@ describe("DevTossCheckoutLauncher", () => {
       "prePaymentPrivacyNoticeKo",
       "만 14세 미만",
       "법정대리인",
-      "990원 결제하고 리포트 생성하기",
+      "1,290원 결제하고 리포트 생성하기",
       "/api/payment-checkout/prepare",
       "launchTossCheckout",
       "loadTossPaymentsBrowserSdk",

@@ -29,15 +29,17 @@ describe("report new page Toss launcher source", () => {
     );
     expect(pageSource).toContain("입력값 최종 확인");
     expect(pageSource).toContain("전체 리포트");
-    expect(pageSource).toContain("정가 1,290원");
-    expect(pageSource).toContain("런칭가 990원");
-    expect(pageSource).toContain("결제금액 990원");
+    expect(pageSource).toContain("판매가");
+    expect(pageSource).toContain("결제금액 1,290원");
+    expect(pageSource).toContain("90일");
     expect(pageSource).toContain("onEditInput");
-    expect(pageSource).toContain("정식 결제 연결 준비 중입니다.");
+    expect(pageSource).toContain("결제창 연결 안내");
     expect(pageSource).toContain("DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED ? (");
     expect(pageSource).toContain("inputSnapshot={checkoutInputSnapshot}");
-    expect(pageSource).toContain("990원 결제하고 리포트 생성하기");
+    expect(pageSource).toContain("1,290원 결제하고 리포트 생성하기");
     expect(pageSource).not.toContain("무료 미리보기 생성");
+    expect(pageSource).not.toContain("런칭가");
+    expect(pageSource).not.toContain("990원");
     expect(pageSource).not.toContain("결제 " + "비활성 안내");
     expect(launcherSource).toContain(
       "NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED",

@@ -28,7 +28,7 @@ export default function ComingSoonProductCard({
         aria-disabled="true"
         className="rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm font-semibold text-neutral-500"
       >
-        출시 준비 중
+        리포트 보기
       </button>
     </article>
   );

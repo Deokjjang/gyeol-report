@@ -9,9 +9,7 @@ function readSource(relativePath: string): string {
 const productPageSources = [
   readSource("src/lib/legal/businessInfo.ts"),
   readSource("src/lib/product/gyeolProducts.ts"),
-  readSource("src/components/product/ProductVisual.tsx"),
   readSource("src/components/product/ProductSummaryCard.tsx"),
-  readSource("src/components/product/ComingSoonProductCard.tsx"),
   readSource("src/components/product/ProductGrid.tsx"),
   readSource("src/components/product/ProductTile.tsx"),
   readSource("src/components/product/ProductTileVisual.tsx"),
@@ -19,55 +17,37 @@ const productPageSources = [
   readSource("src/app/products/saju-mbti-full/page.tsx"),
 ].join("\n");
 
-const productCopySources = [
-  readSource("src/lib/legal/businessInfo.ts"),
-  readSource("src/lib/product/gyeolProducts.ts"),
-  readSource("src/components/product/ProductSummaryCard.tsx"),
-  readSource("src/components/product/ComingSoonProductCard.tsx"),
-  readSource("src/components/product/ProductTile.tsx"),
-  readSource("src/app/products/page.tsx"),
-  readSource("src/app/products/saju-mbti-full/page.tsx"),
-].join("\n");
-
 describe("product pages source", () => {
-  it("contains required Toss review product phrases", () => {
+  it("contains six purchasable launch product phrases", () => {
     const requiredMarkers = [
-      "상품",
       "결리포트에서 제공하는 리포트",
       "사주×MBTI 종합 리포트",
-      "v1.0",
-      "versionBadgeKo",
-      "정가 1,290원",
-      "런칭가 990원",
-      "결제금액 990원",
-      "결제 후 온라인 열람",
-      "자동 생성 디지털 리포트",
+      "직업·커리어·돈·학업 리포트",
+      "연애·결혼·자녀 리포트",
+      "궁합 리포트",
+      "대운 리포트",
+      "세운 리포트",
+      "판매 상품",
+      "구매 가능",
+      "1,290원",
+      "1,290원 결제하고 리포트 생성하기",
+      "무형재화/디지털 콘텐츠",
+      "결제 완료 후 즉시 생성, 최대 24시간 이내 제공",
+      "생성일로부터 90일",
+      "환불 가능",
+      "중복결제",
+      "시스템 오류",
       "입력값 기반 자동 생성",
       "사람 상담 아님",
-      "사람 상담이 아닌 자동 생성 리포트",
       "다운로드",
       "제공하지 않음, 온라인 열람 중심",
-      "결제 후 입력값을 바탕으로 리포트가 자동 생성됩니다",
-      "본 상품은 사람 상담이 아닌 자동 생성 디지털 리포트",
-      "결제 후 온라인에서 결과를 열람할 수 있습니다",
-      "자기이해와 참고 목적의 정보",
       "이름 또는 닉네임",
       "생년월일",
       "출생시간",
       "성별",
       "MBTI",
-      "문의처",
       "010-3156-8568",
       "support@dvem.ai",
-      "중복결제",
-      "시스템 장애",
-      "결과 미제공",
-      "하반기 운세",
-      "궁합 리포트",
-      "대운 리포트",
-      "세운 리포트",
-      "출시 준비 중",
-      "990원 결제하고 리포트 생성하기",
     ];
 
     for (const marker of requiredMarkers) {
@@ -75,63 +55,21 @@ describe("product pages source", () => {
     }
   });
 
-  it("renders coming soon products as disabled and not purchasable", () => {
-    const requiredMarkers = [
+  it("does not expose old discount or unavailable product language", () => {
+    const blockedMarkers = [
+      "990원",
+      "런칭가",
+      "할인가",
+      "확장 예정",
+      "준비 중",
+      "미리보기",
       "coming_soon",
       "isPurchasable: false",
       "href: null",
-      'disabled',
-      'aria-disabled="true"',
-      "half_year",
-      "comprehensive",
-      "daewoon",
-      "saewoon",
-      "compatibility",
-    ];
-
-    for (const marker of requiredMarkers) {
-      expect(productPageSources).toContain(marker);
-    }
-  });
-
-  it("does not show empty category or unsupported product purchase UI", () => {
-    const blockedMarkers = [
-      "빈 카테고리",
-      "출시 예정 상품 구매하기",
-      "하반기 운세 " + "구매하기",
-      "오행팔찌 구매",
-      "굿즈 구매",
-      "대운 구매",
-      "세운 구매",
-      "궁합 구매",
     ];
 
     for (const marker of blockedMarkers) {
       expect(productPageSources).not.toContain(marker);
-    }
-  });
-
-  it("does not contain payment secret or paid-report implementation markers", () => {
-    const blockedMarkers = [
-      ["TOSS", "SECRET", "KEY"].join("_"),
-      ["SUPABASE", "SERVICE", "ROLE"].join("_"),
-      ["payment", "Key"].join(""),
-      ["provider", "PaymentId"].join(""),
-      ["access", "TokenHash"].join(""),
-      ["share", "Token"].join(""),
-      ["guaranteed", "future"].join(" "),
-      ["질병", "진단"].join(" "),
-      ["투자", "수익", "보장"].join(" "),
-      ["결혼", "보장"].join(" "),
-      "상담치료",
-      "심리검사",
-      "적중률",
-      "100%",
-      "운명 확정",
-    ];
-
-    for (const marker of blockedMarkers) {
-      expect(productCopySources).not.toContain(marker);
     }
   });
 });

@@ -117,7 +117,7 @@ function createConfirmSuccessResponse(): Response {
         provider: "toss",
         paymentKeyReceived: true,
         orderId: "provider_order_toss_success_test",
-        amount: 990,
+        amount: 1290,
         status: "DONE",
         method: "카드",
         approvedAt: "2026-06-11T12:00:00+09:00",
@@ -128,7 +128,7 @@ function createConfirmSuccessResponse(): Response {
         providerOrderId: "provider_order_toss_success_test",
         productType: "saju_mbti_full",
         provider: "toss",
-        amount: 990,
+        amount: 1290,
         currency: "KRW",
         status: "paid",
         paidAt: "2026-06-11T12:00:00+09:00",
@@ -142,7 +142,7 @@ function createConfirmSuccessResponse(): Response {
         reportId: "report_toss_success_test",
         productType: "saju_mbti_full",
         status: "paid",
-        amount: 990,
+        amount: 1290,
         currency: "KRW",
         createdAt: "2026-06-11T11:59:00+09:00",
         updatedAt: "2026-06-11T12:00:01+09:00",
@@ -172,22 +172,22 @@ describe("Toss payment success auto confirm page", () => {
     const html = await renderSuccessPage({
       paymentKey: fullPaymentKey,
       orderId: "provider_order_toss_success_test",
-      amount: "990",
+      amount: "1290",
     });
 
     expect(html).toContain("결제 승인 처리 중");
     expect(html).toContain("Toss 결제 인증을 서버에서 승인하고 있습니다.");
     expect(html).toContain("provider_order_toss_success_test");
-    expect(html).toContain("990원");
+    expect(html).toContain("1,290원");
     expect(html).toContain("/api/payments/toss/confirm");
     expect(html).toContain("리포트 보기");
     expect(html).not.toContain(fullPaymentKey);
   });
 
-  it("calls server confirm API with paymentKey orderId and amount 990", async () => {
+  it("calls server confirm API with paymentKey orderId and amount 1290", async () => {
     const fullPaymentKey = "pay_full_payment_key_value_for_request";
     const harness = createScriptHarness({
-      search: `?paymentKey=${encodeURIComponent(fullPaymentKey)}&orderId=provider_order_toss_success_test&amount=990`,
+      search: `?paymentKey=${encodeURIComponent(fullPaymentKey)}&orderId=provider_order_toss_success_test&amount=1290`,
       fetchImpl: async () => createConfirmSuccessResponse(),
     });
 
@@ -209,14 +209,14 @@ describe("Toss payment success auto confirm page", () => {
     expect(JSON.parse(String(request?.body))).toEqual({
       paymentKey: fullPaymentKey,
       orderId: "provider_order_toss_success_test",
-      amount: 990,
+      amount: 1290,
     });
   });
 
   it("shows paid report-ready state after successful confirm", async () => {
     const fullPaymentKey = "pay_full_payment_key_value_must_not_render";
     const harness = createScriptHarness({
-      search: `?paymentKey=${encodeURIComponent(fullPaymentKey)}&orderId=provider_order_toss_success_test&amount=990`,
+      search: `?paymentKey=${encodeURIComponent(fullPaymentKey)}&orderId=provider_order_toss_success_test&amount=1290`,
       fetchImpl: async () => createConfirmSuccessResponse(),
     });
 
@@ -252,7 +252,7 @@ describe("Toss payment success auto confirm page", () => {
 
   it("does not call confirm API when paymentKey is missing", async () => {
     const harness = createScriptHarness({
-      search: "?orderId=provider_order_toss_success_test&amount=990",
+      search: "?orderId=provider_order_toss_success_test&amount=1290",
       fetchImpl: async () => createConfirmSuccessResponse(),
     });
 
@@ -266,7 +266,7 @@ describe("Toss payment success auto confirm page", () => {
 
   it("does not call confirm API when orderId is missing", async () => {
     const harness = createScriptHarness({
-      search: "?paymentKey=pay_missing_order&amount=990",
+      search: "?paymentKey=pay_missing_order&amount=1290",
       fetchImpl: async () => createConfirmSuccessResponse(),
     });
 
@@ -292,9 +292,9 @@ describe("Toss payment success auto confirm page", () => {
     );
   });
 
-  it("does not call confirm API when amount is not 990", async () => {
+  it("does not call confirm API when amount is not 1290", async () => {
     const harness = createScriptHarness({
-      search: "?paymentKey=pay_wrong_amount&orderId=provider_order&amount=1290",
+      search: "?paymentKey=pay_wrong_amount&orderId=provider_order&amount=990",
       fetchImpl: async () => createConfirmSuccessResponse(),
     });
 
@@ -309,7 +309,7 @@ describe("Toss payment success auto confirm page", () => {
   it("shows safe failure state when confirm API fails", async () => {
     const fullPaymentKey = "pay_full_payment_key_failure_must_not_render";
     const harness = createScriptHarness({
-      search: `?paymentKey=${encodeURIComponent(fullPaymentKey)}&orderId=provider_order_toss_failure_test&amount=990`,
+      search: `?paymentKey=${encodeURIComponent(fullPaymentKey)}&orderId=provider_order_toss_failure_test&amount=1290`,
       fetchImpl: async () =>
         new Response(
           JSON.stringify({
@@ -358,7 +358,7 @@ describe("Toss payment success auto confirm page", () => {
     const windowValue: ScriptWindow = {
       location: {
         search:
-          "?paymentKey=pay_duplicate_guard&orderId=provider_order&amount=990",
+          "?paymentKey=pay_duplicate_guard&orderId=provider_order&amount=1290",
       },
     };
     const context = {

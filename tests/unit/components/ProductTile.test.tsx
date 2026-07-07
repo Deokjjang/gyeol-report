@@ -2,217 +2,47 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 
 import ProductTile from "../../../src/components/product/ProductTile";
-import type {
-  ProductTileItem,
-} from "../../../src/components/product/ProductTile";
-
-const activeProduct = {
-  id: "comprehensive",
-  nameKo: "사주×MBTI 종합 리포트",
-  versionBadgeKo: "v1.0",
-  status: "available",
-  isPurchasable: true,
-  href: "/report/new",
-  badgeKo: "런칭가",
-  visualKey: "comprehensive",
-  summaryKo:
-    "결제 후 입력값을 바탕으로 자동 생성되는 유료 디지털 리포트입니다.",
-  salePriceKo: "런칭가 990원",
-  listPriceKo: "1,290원",
-  listPriceLabelKo: "1,290원",
-  priceLabelKo: "990원",
-  deliveryTypeKo: "결제 후 온라인 열람",
-  formatKo: "자동 생성 디지털 리포트",
-} as const satisfies ProductTileItem;
-
-const comingSoonProduct = {
-  id: "career_money_study_report",
-  nameKo: "직업·커리어·돈·학업 리포트",
-  versionBadgeKo: "v1.0 준비",
-  shortDescriptionKo: "타고난 직업성과 돈, 공부 전략을 함께 봅니다.",
-  status: "coming_soon",
-  isPurchasable: false,
-  href: null,
-  badgeKo: "리빌딩 중",
-  visualKey: "career_money_study",
-} as const satisfies ProductTileItem;
-
-const previewProduct = {
-  id: "career_money_study_report",
-  productKey: "career_money_study",
-  slug: "career-money-study",
-  nameKo: "직업·커리어·돈·학업 리포트",
-  versionBadgeKo: "v1.0 준비",
-  shortDescriptionKo: "타고난 직업성과 돈, 공부 전략을 함께 봅니다.",
-  status: "preview_available",
-  isPurchasable: false,
-  href: null,
-  previewHref: "/report/new?product=career-money-study",
-  previewCtaLabelKo: "입력 흐름 미리보기",
-  previewStatusKo: "준비 중 · 미리보기 가능",
-  badgeKo: "개발 preview",
-  visualKey: "career_money_study",
-} as const satisfies ProductTileItem;
-
-const lovePreviewProduct = {
-  id: "love_marriage_child_report",
-  productKey: "love_marriage_child",
-  slug: "love-marriage-child",
-  nameKo: "연애·결혼·자녀 리포트",
-  versionBadgeKo: "v1.0 준비",
-  shortDescriptionKo: "관계 표현과 결혼 생활, 부모 역할을 함께 봅니다.",
-  status: "preview_available",
-  isPurchasable: false,
-  href: null,
-  previewHref: "/report/new?product=love-marriage-child",
-  previewCtaLabelKo: "입력 흐름 미리보기",
-  previewStatusKo: "준비 중 · 미리보기 가능",
-  badgeKo: "개발 preview",
-  visualKey: "love_marriage_child",
-} as const satisfies ProductTileItem;
-
-const compatibilityPreviewProduct = {
-  id: "compatibility_report",
-  productKey: "saju_mbti_compatibility",
-  slug: "compatibility",
-  nameKo: "궁합 리포트",
-  versionBadgeKo: "v1.0 준비",
-  shortDescriptionKo: "두 사람의 연결 구조와 조율 포인트를 봅니다.",
-  status: "preview_available",
-  isPurchasable: false,
-  href: null,
-  previewHref: "/report/new?product=compatibility",
-  previewCtaLabelKo: "입력 흐름 미리보기",
-  previewStatusKo: "준비 중 · 미리보기 가능",
-  badgeKo: "개발 preview",
-  visualKey: "compatibility",
-} as const satisfies ProductTileItem;
-
-const majorFortunePreviewProduct = {
-  id: "daewoon_report",
-  productKey: "major_fortune",
-  slug: "major-fortune",
-  nameKo: "대운 리포트",
-  versionBadgeKo: "v1.0 준비",
-  shortDescriptionKo: "10년 흐름과 올해 세운 교차를 봅니다.",
-  status: "preview_available",
-  isPurchasable: false,
-  href: null,
-  previewHref: "/report/new?product=major-fortune",
-  previewCtaLabelKo: "입력 흐름 미리보기",
-  previewStatusKo: "준비 중 · 미리보기 가능",
-  badgeKo: "개발 preview",
-  visualKey: "daewoon",
-} as const satisfies ProductTileItem;
-
-const annualFortunePreviewProduct = {
-  id: "saewoon_report",
-  productKey: "annual_fortune",
-  slug: "annual-fortune",
-  nameKo: "세운 리포트",
-  versionBadgeKo: "v1.0 준비",
-  shortDescriptionKo:
-    "선택 연도의 흐름과 월운을 상반기·하반기 기준으로 읽고 행동 기준을 정리합니다.",
-  status: "preview_available",
-  isPurchasable: false,
-  href: null,
-  previewHref: "/report/new?product=annual-fortune",
-  previewCtaLabelKo: "입력 흐름 미리보기",
-  previewStatusKo: "준비 중 · 미리보기 가능",
-  badgeKo: "개발 preview",
-  visualKey: "saewoon",
-} as const satisfies ProductTileItem;
+import { GYEOL_PRODUCTS } from "../../../src/lib/product/gyeolProducts";
 
 describe("ProductTile", () => {
-  it("renders purchasable product state and CTA", () => {
-    const html = renderToStaticMarkup(<ProductTile product={activeProduct} />);
+  it("renders purchasable product state and 1290 won CTA", () => {
+    const html = renderToStaticMarkup(
+      <ProductTile product={GYEOL_PRODUCTS[0]} />,
+    );
 
     expect(html).toContain("사주×MBTI 종합 리포트");
     expect(html).toContain("구매 가능");
-    expect(html).toContain("런칭가 990원");
-    expect(html).toContain("990원 결제하고 리포트 생성하기");
-    expect(html).toContain('href="/report/new"');
+    expect(html).toContain("1,290원");
+    expect(html).toContain("1,290원 결제하고 리포트 생성하기");
+    expect(html).toContain("생성일로부터 90일 열람");
+    expect(html).toContain("결제 완료 후 즉시 생성, 최대 24시간 이내 제공");
+    expect(html).toContain('href="/report/new?product=saju-mbti-full"');
+    expect(html).not.toContain("990원");
+    expect(html).not.toContain("런칭가");
+    expect(html).not.toContain("확장 예정");
   });
 
-  it("renders coming soon product as disabled", () => {
-    const html = renderToStaticMarkup(
-      <ProductTile product={comingSoonProduct} />,
-    );
+  it("renders all six launch products as purchasable report cards", () => {
+    const html = GYEOL_PRODUCTS.map((product) =>
+      renderToStaticMarkup(<ProductTile product={product} />),
+    ).join("\n");
 
-    expect(html).toContain("직업·커리어·돈·학업 리포트");
-    expect(html).toContain("리빌딩 중");
-    expect(html).toContain("비활성");
-    expect(html).toContain("출시 준비 중");
-    expect(html).toContain("disabled");
-    expect(html).toContain('aria-disabled="true"');
-    expect(html).not.toContain("결제하고 리포트 생성하기");
-  });
+    const productNames = [
+      "사주×MBTI 종합 리포트",
+      "직업·커리어·돈·학업 리포트",
+      "연애·결혼·자녀 리포트",
+      "궁합 리포트",
+      "대운 리포트",
+      "세운 리포트",
+    ];
 
-  it("renders preview product as a non-purchasable input flow link", () => {
-    const html = renderToStaticMarkup(<ProductTile product={previewProduct} />);
+    for (const productName of productNames) {
+      expect(html).toContain(productName);
+    }
 
-    expect(html).toContain("직업·커리어·돈·학업 리포트");
-    expect(html).toContain("개발 preview");
-    expect(html).toContain("준비 중 · 미리보기 가능");
-    expect(html).toContain("입력 흐름 미리보기");
-    expect(html).toContain('href="/report/new?product=career-money-study"');
-    expect(html).not.toContain("구매 가능");
-    expect(html).not.toContain("결제하고 리포트 생성하기");
-  });
-
-  it("renders love marriage child preview product as a non-purchasable input flow link", () => {
-    const html = renderToStaticMarkup(
-      <ProductTile product={lovePreviewProduct} />,
-    );
-
-    expect(html).toContain("연애·결혼·자녀 리포트");
-    expect(html).toContain("개발 preview");
-    expect(html).toContain("준비 중 · 미리보기 가능");
-    expect(html).toContain("입력 흐름 미리보기");
-    expect(html).toContain('href="/report/new?product=love-marriage-child"');
-    expect(html).not.toContain("구매 가능");
-    expect(html).not.toContain("결제하고 리포트 생성하기");
-  });
-
-  it("renders compatibility preview product as a non-purchasable input flow link", () => {
-    const html = renderToStaticMarkup(
-      <ProductTile product={compatibilityPreviewProduct} />,
-    );
-
-    expect(html).toContain("궁합 리포트");
-    expect(html).toContain("개발 preview");
-    expect(html).toContain("준비 중 · 미리보기 가능");
-    expect(html).toContain("입력 흐름 미리보기");
-    expect(html).toContain('href="/report/new?product=compatibility"');
-    expect(html).not.toContain("구매 가능");
-    expect(html).not.toContain("결제하고 리포트 생성하기");
-  });
-
-  it("renders major fortune preview product as a non-purchasable input flow link", () => {
-    const html = renderToStaticMarkup(
-      <ProductTile product={majorFortunePreviewProduct} />,
-    );
-
-    expect(html).toContain("대운 리포트");
-    expect(html).toContain("개발 preview");
-    expect(html).toContain("준비 중 · 미리보기 가능");
-    expect(html).toContain("입력 흐름 미리보기");
-    expect(html).toContain('href="/report/new?product=major-fortune"');
-    expect(html).not.toContain("구매 가능");
-    expect(html).not.toContain("결제하고 리포트 생성하기");
-  });
-
-  it("renders annual fortune preview product as a non-purchasable input flow link", () => {
-    const html = renderToStaticMarkup(
-      <ProductTile product={annualFortunePreviewProduct} />,
-    );
-
-    expect(html).toContain("세운 리포트");
-    expect(html).toContain("개발 preview");
-    expect(html).toContain("준비 중 · 미리보기 가능");
-    expect(html).toContain("입력 흐름 미리보기");
-    expect(html).toContain('href="/report/new?product=annual-fortune"');
-    expect(html).not.toContain("구매 가능");
-    expect(html).not.toContain("결제하고 리포트 생성하기");
+    expect(GYEOL_PRODUCTS).toHaveLength(6);
+    expect((html.match(/1,290원 결제하고 리포트 생성하기/g) ?? [])).toHaveLength(6);
+    expect(html).not.toContain("다른 리포트 보기");
+    expect(html).not.toContain("준비 중");
   });
 });

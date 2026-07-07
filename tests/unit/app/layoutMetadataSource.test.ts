@@ -79,8 +79,8 @@ describe("app layout metadata source", () => {
       "GYEOL_HOME_PRODUCT_GRID",
       "ProductGrid",
       "사주×MBTI 종합 리포트",
-      "결제 후 입력값을 바탕으로 자동 생성되는 유료 디지털",
-      "사람 상담이 아닌 자동 생성 리포트",
+      "입력한 생년월일과 MBTI를 바탕으로 명리 구조와 행동 패턴",
+      "상담이 아닌 참고용 리포트",
     ];
 
     for (const value of expectedValues) {
@@ -100,10 +100,8 @@ describe("app layout metadata source", () => {
       "ProductGrid",
       "GYEOL_HOME_PRODUCT_GRID",
       "사주×MBTI 종합 리포트",
-      "런칭가",
-      "990원",
-      "정가",
       "1,290원",
+      "90일간 열람",
     ];
 
     for (const value of expectedValues) {
@@ -113,8 +111,8 @@ describe("app layout metadata source", () => {
 
   it("renders landing page trust and support placeholders", () => {
     const expectedValues = [
-      "사람 상담이 아닌 자동 생성 리포트",
-      "온라인에서 결과를 열람할 수 있습니다",
+      "상담이 아닌 참고용 리포트",
+      "결제 후 온라인 열람",
     ];
 
     for (const value of expectedValues) {

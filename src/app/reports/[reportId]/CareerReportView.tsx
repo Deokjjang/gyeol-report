@@ -483,7 +483,7 @@ export function CareerReportView({
     <article className="mx-auto w-full min-w-0 max-w-5xl space-y-5 text-[#201a18] sm:space-y-6">
       {devStatus === undefined ? null : (
         <aside className="w-fit rounded-md border border-[#d8d1c4] bg-[#fffdf8]/90 px-3 py-1.5 text-[11px] font-bold text-[#8b8174]">
-          <span className="text-[#7f1d38]">미리보기</span>
+          <span className="text-[#7f1d38]">리포트</span>
           <span className="ml-2">{text(devStatus)}</span>
         </aside>
       )}

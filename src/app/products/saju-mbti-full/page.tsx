@@ -5,9 +5,7 @@ import { GYEOL_BUSINESS_INFO } from "../../../lib/legal/businessInfo";
 import { GYEOL_PRODUCTS } from "../../../lib/product/gyeolProducts";
 
 const product = GYEOL_PRODUCTS[0];
-const listPriceLabelKo = "정가 1,290원";
-const salePriceLabelKo = "런칭가 990원";
-const paymentPriceLabelKo = "결제금액 990원";
+const paymentPriceLabelKo = "결제금액 1,290원";
 
 const reportContents = [
   "사주 기본 구조",
@@ -32,9 +30,9 @@ const cautions = [
 ] as const;
 
 const refundSummaries = [
-  "결제 후 생성 시작 전에는 취소 요청이 가능합니다.",
-  "생성 시작 후 단순 변심 환불은 제한될 수 있습니다.",
-  "시스템 장애, 중복결제, 결과 미제공 등은 확인 후 재생성 또는 환불을 지원합니다.",
+  "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능합니다.",
+  "리포트 생성이 시작되거나 결과가 제공된 이후에는 디지털 콘텐츠 특성상 환불이 제한될 수 있습니다.",
+  "미제공, 중복결제, 시스템 오류는 환불 또는 재제공합니다.",
 ] as const;
 
 const productDetails = [
@@ -42,7 +40,8 @@ const productDetails = [
   ["상품 유형", product.formatKo],
   ["제공 방식", product.deliveryTypeKo],
   ["생성 방식", "입력값 기반 자동 생성"],
-  ["열람 방식", "결제 후 온라인 열람"],
+  ["서비스 제공기간", "결제 완료 후 즉시 생성, 최대 24시간 이내 제공"],
+  ["열람 가능 기간", "생성일로부터 90일"],
   ["다운로드", "제공하지 않음, 온라인 열람 중심"],
   ["상담 여부", "사람 상담 아님"],
 ] as const;
@@ -70,15 +69,9 @@ export default function SajuMbtiFullProductPage() {
 
             <dl className="grid gap-3 text-sm sm:grid-cols-3">
               <PriceCard
-                labelKo="정가"
-                valueKo={product.listPriceKo}
-                ariaLabel={listPriceLabelKo}
-                subdued
-              />
-              <PriceCard
-                labelKo="런칭가"
+                labelKo="판매가"
                 valueKo={product.priceKo}
-                ariaLabel={salePriceLabelKo}
+                ariaLabel={paymentPriceLabelKo}
                 strong
               />
               <PriceCard
@@ -91,10 +84,10 @@ export default function SajuMbtiFullProductPage() {
             </dl>
 
             <Link
-              href="/report/new"
+              href="/report/new?product=saju-mbti-full"
               className="inline-flex w-full items-center justify-center rounded-lg bg-neutral-950 px-5 py-4 text-sm font-bold text-white transition hover:bg-neutral-800 sm:w-auto"
             >
-              990원 결제하고 리포트 생성하기
+              1,290원 결제하고 리포트 생성하기
             </Link>
           </div>
           <ProductVisual />
@@ -203,10 +196,10 @@ export default function SajuMbtiFullProductPage() {
               </p>
             </div>
             <Link
-              href="/report/new"
+              href="/report/new?product=saju-mbti-full"
               className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-4 text-sm font-bold text-neutral-950 transition hover:bg-neutral-100"
             >
-              990원 결제하고 리포트 생성하기
+              1,290원 결제하고 리포트 생성하기
             </Link>
           </div>
         </section>

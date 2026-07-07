@@ -17,17 +17,28 @@ export default function RefundPage() {
           <p className="text-sm font-medium text-neutral-400">결리포트 정책</p>
           <h1 className="text-4xl font-bold tracking-tight">환불정책</h1>
           <p className="text-base leading-8 text-neutral-400">
-            사주×MBTI 종합 리포트는 입력값 기반 자동 생성 디지털
-            리포트이며, 결제 후 온라인 열람 방식으로 제공됩니다. 사람 상담이
-            아닌 자기이해와 참고 목적의 디지털 콘텐츠입니다.
+            결리포트의 6개 리포트는 입력값 기반 자동 생성 디지털
+            콘텐츠이며, 결제 후 온라인 열람 방식으로 제공됩니다. 사람 상담이
+            아닌 자기이해와 참고 목적의 무형재화입니다.
           </p>
         </header>
 
         <dl className="grid gap-4 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 text-sm leading-7 text-neutral-300 sm:grid-cols-2">
-          <PolicyFact labelKo="상품 유형" valueKo="자동 생성 디지털 리포트" />
-          <PolicyFact labelKo="상품명" valueKo="사주×MBTI 종합 리포트" />
-          <PolicyFact labelKo="실제 결제금액" valueKo="990원" />
+          <PolicyFact
+            labelKo="상품 유형"
+            valueKo="무형재화/자동 생성 디지털 콘텐츠"
+          />
+          <PolicyFact
+            labelKo="판매 상품"
+            valueKo="사주×MBTI 종합, 직업·커리어·돈·학업, 연애·결혼·자녀, 궁합, 대운, 세운 리포트"
+          />
+          <PolicyFact labelKo="실제 결제금액" valueKo="1,290원" />
           <PolicyFact labelKo="제공 방식" valueKo="결제 후 온라인 열람" />
+          <PolicyFact
+            labelKo="서비스 제공기간"
+            valueKo="결제 완료 후 즉시 생성, 최대 24시간 이내 제공"
+          />
+          <PolicyFact labelKo="열람 가능 기간" valueKo="생성일로부터 90일" />
           <PolicyFact labelKo="생성 방식" valueKo="입력값 기반 자동 생성" />
           <PolicyFact labelKo="상담 여부" valueKo="사람 상담 아님" />
         </dl>

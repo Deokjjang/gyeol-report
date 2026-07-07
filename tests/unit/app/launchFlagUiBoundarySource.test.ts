@@ -30,10 +30,12 @@ describe("launch flag UI boundary source", () => {
       "ProductGrid",
       "GYEOL_HOME_PRODUCT_GRID",
       "사주×MBTI 종합 리포트",
-      "결제 후 입력값을 바탕으로 자동 생성되는 유료 디지털",
-      "사람 상담이 아닌 자동 생성 리포트",
+      "입력한 생년월일과 MBTI를 바탕으로 명리 구조와 행동 패턴",
+      "상담이 아닌 참고용 리포트",
       "결제 후 온라인 열람",
       "자동 생성 디지털 리포트",
+      "1,290원 결제하고 리포트 생성하기",
+      "90일간 열람",
     ];
     const activePurchaseMarkers = [
       "결제" + "하기",
@@ -50,7 +52,6 @@ describe("launch flag UI boundary source", () => {
       expect(source).not.toContain(marker);
     }
     expect(source).not.toContain("현재 구매 가능한 " + "상품 1개");
-    expect(source).not.toContain("현재 구매 가능한 " + "리포트");
     expect(source).not.toContain("이용 " + "흐름");
   });
 
@@ -59,12 +60,10 @@ describe("launch flag UI boundary source", () => {
     const expectedMarkers = [
       "입력값 최종 확인",
       "전체 리포트",
-      "정가 1,290원",
-      "런칭가 990원",
-      "결제금액 990원",
-      "990원 결제하고 리포트 생성하기",
-      "정식 결제 연결 준비 중입니다.",
-      "심사 및 결제 승인 연동 후 전체 리포트 구매가 가능합니다.",
+      "결제금액 1,290원",
+      "1,290원 결제하고 리포트 생성하기",
+      "결제창 연결 안내",
+      "결제 환경 확인 후 1,290원 결제창으로 이동합니다.",
       "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.",
       "inputSnapshot={checkoutInputSnapshot}",
       "onEditInput",

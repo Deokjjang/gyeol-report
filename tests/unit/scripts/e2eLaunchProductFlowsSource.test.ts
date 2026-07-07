@@ -61,9 +61,17 @@ describe("launch product browser E2E source", () => {
   it("checks report redirect and result page markers", () => {
     const requiredMarkers = [
       'const reportPathPrefix = "/reports/"',
-      "waitForLocationPath(client, reportPathPrefix)",
+      "waitForLocationPath(client, reportPathPrefix, generationTimeoutMs)",
+      "LAUNCH_E2E_GENERATION_TIMEOUT_MS",
+      "generationTimeoutMs",
       "/reports/ redirect check",
       "종합 리포트",
+      "종합 리포트 생성",
+      "직업 리포트 생성",
+      "연애 리포트 생성",
+      "대운 리포트 생성",
+      "세운 리포트 생성",
+      "궁합 리포트 생성",
       "직업·커리어·돈·학업 리포트",
       "연애·결혼·자녀 리포트",
       "대운 리포트",
@@ -76,7 +84,6 @@ describe("launch product browser E2E source", () => {
       "두 사람 기초표",
       "관계 카테고리",
       "리포트를 찾을 수 없습니다",
-      "상품 미리보기 준비 중입니다",
     ];
 
     for (const marker of requiredMarkers) {
@@ -87,13 +94,15 @@ describe("launch product browser E2E source", () => {
   it("checks shared result URL and reentry CTA", () => {
     const requiredMarkers = [
       "const ctaText = \"나도 내 리포트 보기\"",
-      "const secondaryCtaText = \"내 사주×MBTI 리포트 만들기\"",
+      "const shareCtaText = \"리포트 공유하기\"",
+      "const secondaryCtaText = \"다른 리포트 보기\"",
       "const resultUrl = await getLocationHref(client)",
       "await navigate(client, resultUrl)",
       "sharedResultText",
       "clickLinkByText(client, ctaText)",
       'await waitForLocationPath(client, "/report/new")',
-      "내 사주×MBTI 리포트 만들기",
+      "리포트 공유하기",
+      "다른 리포트 보기",
     ];
 
     for (const marker of requiredMarkers) {

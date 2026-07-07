@@ -21,7 +21,7 @@ export default function ProductSummaryCard({
               현재 구매 가능
             </span>
             <span className="rounded-full bg-rose-50 px-3 py-1 text-xs font-bold text-rose-700">
-              {product.salePriceKo}
+              {product.priceLabelKo}
             </span>
           </div>
           <h2 className="text-2xl font-bold tracking-tight text-neutral-950">
@@ -37,19 +37,10 @@ export default function ProductSummaryCard({
 
         <dl className="grid gap-3 text-sm sm:grid-cols-2">
           <div
-            aria-label={`정가 ${product.listPriceKo}`}
-            className="rounded-lg border border-neutral-200 bg-neutral-50 p-4"
-          >
-            <dt className="text-neutral-500">정가</dt>
-            <dd className="mt-1 text-base font-semibold text-neutral-400 line-through">
-              {product.listPriceLabelKo}
-            </dd>
-          </div>
-          <div
-            aria-label={product.salePriceKo}
+            aria-label={`판매가 ${product.priceKo}`}
             className="rounded-lg border border-rose-200 bg-rose-50 p-4"
           >
-            <dt className="text-rose-700">런칭가</dt>
+            <dt className="text-rose-700">판매가</dt>
             <dd className="mt-1 text-2xl font-extrabold text-rose-700">
               {product.priceLabelKo}
             </dd>
@@ -61,15 +52,30 @@ export default function ProductSummaryCard({
             </dd>
           </div>
           <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
+            <dt className="text-neutral-500">열람 가능 기간</dt>
+            <dd className="mt-1 font-semibold text-neutral-900">
+              {product.retentionKo}
+            </dd>
+          </div>
+          <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
             <dt className="text-neutral-500">제공 방식</dt>
             <dd className="mt-1 font-semibold text-neutral-900">
               {product.deliveryTypeKo}
+            </dd>
+          </div>
+          <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 sm:col-span-2">
+            <dt className="text-neutral-500">서비스 제공기간</dt>
+            <dd className="mt-1 font-semibold text-neutral-900">
+              {product.servicePeriodKo}
             </dd>
           </div>
         </dl>
 
         <p className="text-sm leading-6 text-neutral-500">
           {product.cautionKo}
+        </p>
+        <p className="text-sm leading-6 text-neutral-500">
+          {product.refundSummaryKo}
         </p>
 
         <div className="flex flex-col gap-3 sm:flex-row">

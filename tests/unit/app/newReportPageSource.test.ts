@@ -48,11 +48,12 @@ describe("new report page source", () => {
       "결제 승인 후 리포트가 생성되며, 결과는 온라인 열람 페이지로 제공됩니다.",
       "전체 리포트",
       "종합 리포트",
-      "정가 1,290원",
-      "런칭가 990원",
-      "결제금액 990원",
+      "판매가",
+      "결제금액 1,290원",
+      "열람 기간",
+      "90일",
       "자동 생성 디지털 리포트",
-      "정식 결제 연결 준비 중입니다.",
+      "결제창 연결 안내",
       "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.",
       "onEditInput",
     ];
@@ -62,7 +63,7 @@ describe("new report page source", () => {
     }
   });
 
-  it("keeps career money study product selection as a non-payment input branch", () => {
+  it("keeps career money study product selection as a paid product input branch", () => {
     const requiredMarkers = [
       "CAREER_MONEY_STUDY_PRODUCT_KEY",
       "career_money_study",
@@ -74,7 +75,7 @@ describe("new report page source", () => {
       "직업·커리어·돈·학업 리포트 입력",
       "직업, 커리어, 돈, 학업 흐름을 한 사람 기준으로 보는 리포트입니다.",
       "현재 연애 상태, 직업 상태, 세부 직업은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
-      "준비 중 · 미리보기 가능",
+      "구매 가능",
       "isSinglePersonPreviewProduct",
       "getSingleProductLeadText",
       "isSelectedProductPurchasable",
@@ -85,7 +86,7 @@ describe("new report page source", () => {
     }
   });
 
-  it("keeps love marriage child product selection as a non-payment input branch", () => {
+  it("keeps love marriage child product selection as a paid product input branch", () => {
     const requiredMarkers = [
       "LOVE_MARRIAGE_CHILD_PRODUCT_KEY",
       "love_marriage_child",
@@ -95,8 +96,8 @@ describe("new report page source", () => {
       "연애·결혼·자녀 리포트 입력",
       "나의 연애, 결혼, 부모 역할 성향을 한 사람 기준으로 보는 리포트입니다.",
       "현재 연애 상태, 직업 상태, 세부 직업은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
-      "미리보기 입력 흐름",
-      "준비 중 · 미리보기 가능",
+      "온라인 리포트",
+      "구매 가능",
       "productSlug === LOVE_MARRIAGE_CHILD_PRODUCT_SLUG",
       "return LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT",
       "return DEFAULT_SELECTED_REPORT_PRODUCT",
@@ -132,7 +133,7 @@ describe("new report page source", () => {
       "현재 연애 상태",
       "직업 상태",
       "세부 직업",
-      "미리보기 준비됨",
+      "리포트 생성",
       "필수 정보를 입력해 주세요",
       "event.preventDefault()",
       "bg-[#f6f0e7]",
@@ -172,6 +173,9 @@ describe("new report page source", () => {
     expect(pageSource).toContain("focusAreas: []");
     expect(pageSource).toContain("focusAreas: input.focusAreas.filter(isFocusArea)");
     expect(pageSource).not.toContain("예: 덕민");
+    expect(pageSource).not.toContain("response.message");
+    expect(pageSource).not.toContain("response.error");
+    expect(pageSource).toContain("response.userMessage");
     expect(pageSource).not.toMatch(/<p>\s*productKey:/);
     expect(pageSource).not.toMatch(/<p>\s*productSlug:/);
   });
@@ -200,12 +204,12 @@ describe("new report page source", () => {
       "body: JSON.stringify(payload)",
       'snapshotKind === "product_preview"',
       "router.push(`/reports/${createResult.reportId}`)",
-      "종합 리포트 미리보기 생성",
+      "1,290원 결제하고 종합 리포트 생성하기",
       "종합 리포트 생성 중",
       "필수 정보를 입력해 주세요",
       "onSubmit={handleSingleProductPreviewSubmit}",
       'type="submit"',
-      "입력한 정보를 바탕으로 종합 미리보기 리포트를 생성합니다. 현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다.",
+      "입력한 정보를 바탕으로 종합 리포트를 생성합니다. 현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다.",
     ];
 
     for (const marker of requiredMarkers) {
@@ -229,26 +233,26 @@ describe("new report page source", () => {
       "career_money_study",
       "CAREER_MONEY_STUDY_PRODUCT_SLUG",
       "career-money-study",
-      "직업 리포트 미리보기 생성",
+      "1,290원 결제하고 직업 리포트 생성하기",
       "직업 리포트 생성 중",
       "LOVE_MARRIAGE_CHILD_PRODUCT_KEY",
       "love_marriage_child",
       "LOVE_MARRIAGE_CHILD_PRODUCT_SLUG",
       "love-marriage-child",
-      "연애 리포트 미리보기 생성",
+      "1,290원 결제하고 연애 리포트 생성하기",
       "연애 리포트 생성 중",
       "MAJOR_FORTUNE_PRODUCT_KEY",
       "major_fortune",
       "MAJOR_FORTUNE_PRODUCT_SLUG",
       "major-fortune",
-      "대운 리포트 미리보기 생성",
+      "1,290원 결제하고 대운 리포트 생성하기",
       "대운 리포트 생성 중",
       "ANNUAL_FORTUNE_PRODUCT_KEY",
       "annual_fortune",
       "ANNUAL_FORTUNE_PRODUCT_SLUG",
       "annual-fortune",
       "selectedYear: input.selectedYear.trim()",
-      "세운 리포트 미리보기 생성",
+      "1,290원 결제하고 세운 리포트 생성하기",
       "세운 리포트 생성 중",
       "if (!isSingleProductInputReady || isSingleProductSubmitting)",
       "fetch(REPORT_CREATE_API_PATH",
@@ -270,7 +274,7 @@ describe("new report page source", () => {
     expect(singlePersonPreviewBranchSource).not.toContain("<DevTossCheckoutLauncher");
   });
 
-  it("keeps compatibility product selection as a preview-only input branch", () => {
+  it("keeps compatibility product selection as a paid input branch", () => {
     const requiredMarkers = [
       "COMPATIBILITY_PRODUCT_KEY",
       "saju_mbti_compatibility",
@@ -282,13 +286,12 @@ describe("new report page source", () => {
       "두 사람의 생년월일, 출생시간, MBTI, 관계 카테고리",
       "바탕으로 궁합 리포트를 구성합니다.",
       "상담이나 예언이 아닌 관계 분석용 디지털 리포트입니다.",
-      "전용 흐름으로 연결될 예정입니다.",
       "productSlug === COMPATIBILITY_PRODUCT_SLUG",
       "return COMPATIBILITY_SELECTED_REPORT_PRODUCT",
       "return DEFAULT_SELECTED_REPORT_PRODUCT",
       "isSelectedProductPurchasable",
-      "isPurchasable: false",
-      "궁합 리포트 미리보기 생성",
+      "isPurchasable: true",
+      "1,290원 결제하고 궁합 리포트 생성하기",
       "궁합 리포트 생성 중",
       "필수 정보를 입력해 주세요",
     ];
@@ -298,7 +301,7 @@ describe("new report page source", () => {
     }
   });
 
-  it("keeps major fortune product selection as a non-payment input branch", () => {
+  it("keeps major fortune product selection as a paid product input branch", () => {
     const requiredMarkers = [
       "MAJOR_FORTUNE_PRODUCT_KEY",
       "major_fortune",
@@ -308,18 +311,15 @@ describe("new report page source", () => {
       "대운 리포트 입력",
       "대운은 입력된 생년월일과 출생시간 기반의 10년 흐름을 보는 리포트입니다.",
       "현재 연애 상태, 직업 상태, 세부 직업은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
-      "실제 생성/결제 연결은",
-      "준비 중입니다.",
-      "/dev/major-fortune-preview?fixture=deokmin-current-major-fortune",
-      "미리보기 입력 흐름",
-      "준비 중 · 미리보기 가능",
+      "온라인 리포트",
+      "구매 가능",
       "productSlug === MAJOR_FORTUNE_PRODUCT_SLUG",
       "return MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT",
       "return DEFAULT_SELECTED_REPORT_PRODUCT",
       "isSelectedProductPurchasable",
-      "isPurchasable: false",
+      "isPurchasable: true",
       "selectedProduct.productKey === MAJOR_FORTUNE_PRODUCT_KEY",
-      "대운 리포트 미리보기 준비됨",
+      "대운 리포트 생성 준비 완료",
       "필수 정보를 입력해 주세요",
     ];
 
@@ -328,7 +328,7 @@ describe("new report page source", () => {
     }
   });
 
-  it("renders major fortune input branch with common solo-person fields and summary", () => {
+  it("keeps legacy major fortune branch free of dev sample copy", () => {
     const requiredMarkers = [
       "MajorFortuneInputState",
       "majorFortuneInput",
@@ -359,16 +359,16 @@ describe("new report page source", () => {
       "세부 직업",
       "대운 리포트 기준",
       "별도 추가 질문 없이 공통 입력값을 기준으로 10년 흐름",
-      "입력 확인 요약",
+      "입력 정보",
       "기본 정보",
       "선택한 리포트",
       "리포트 종류:",
       "생성 방식:",
-      "대운 리포트 미리보기 준비됨",
+      "대운 리포트 생성 준비 완료",
       "필수 정보를 입력해 주세요",
-      "현재 입력값으로 실제 리포트를 생성하지 않습니다.",
-      "실제 생성, 결제, 저장은 이후 단계에서 연결합니다.",
-      "/dev/major-fortune-preview?fixture=deokmin-current-major-fortune",
+      "서비스 안내",
+      "결제 완료 후 즉시 생성되며, 시스템 상황에 따라 최대 24시간 이내 제공됩니다.",
+      "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능하며",
       "event.preventDefault()",
     ];
 
@@ -381,7 +381,7 @@ describe("new report page source", () => {
     ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
   });
 
-  it("keeps annual fortune product selection as a non-payment input branch", () => {
+  it("keeps annual fortune product selection as a paid product input branch", () => {
     const requiredMarkers = [
       "ANNUAL_FORTUNE_PRODUCT_KEY",
       "annual_fortune",
@@ -391,18 +391,15 @@ describe("new report page source", () => {
       "세운 리포트 입력",
       "세운은 선택한 한 해의 흐름을 보는 리포트입니다.",
       "현재 연애 상태, 직업 상태, 세부 직업은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
-      "실제 생성/결제 연결은",
-      "준비 중입니다.",
-      "/dev/annual-fortune-preview?fixture=deokmin-2026-current",
-      "미리보기 입력 흐름",
-      "준비 중 · 미리보기 가능",
+      "온라인 리포트",
+      "구매 가능",
       "productSlug === ANNUAL_FORTUNE_PRODUCT_SLUG",
       "return ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT",
       "return DEFAULT_SELECTED_REPORT_PRODUCT",
       "isSelectedProductPurchasable",
-      "isPurchasable: false",
+      "isPurchasable: true",
       "selectedProduct.productKey === ANNUAL_FORTUNE_PRODUCT_KEY",
-      "세운 리포트 미리보기 준비됨",
+      "세운 리포트 생성 준비 완료",
       "필수 정보를 입력해 주세요",
     ];
 
@@ -444,20 +441,20 @@ describe("new report page source", () => {
       "세운 전용 조회 연도",
       "기본값은 현재 연도입니다.",
       "과거 5년과 올해",
-      "12월 1일 이후에는 다음 해 신년사주 미리보기",
-      "2년 이상 미래 조회는 아직 준비 중",
+      "12월 1일 이후에는 다음 해 신년사주 조회",
+      "2년 이상 미래 조회와 과거 10년 조회는 단계적으로 제공합니다.",
       "과거 10년 조회는",
-      "입력 확인 요약",
+      "입력 정보",
       "현실 맥락",
       "조회 연도",
       "선택한 리포트",
       "리포트 종류:",
       "생성 방식:",
-      "세운 리포트 미리보기 준비됨",
+      "세운 리포트 생성 준비 완료",
       "필수 정보를 입력해 주세요",
-      "현재 입력값으로 실제 리포트를 생성하지 않습니다.",
-      "실제 생성, 결제, 저장은 이후 단계에서 연결합니다.",
-      "/dev/annual-fortune-preview?fixture=deokmin-2026-current",
+      "서비스 안내",
+      "결제 완료 후 즉시 생성되며, 시스템 상황에 따라 최대 24시간 이내 제공됩니다.",
+      "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능하며",
       "event.preventDefault()",
     ];
 
@@ -521,7 +518,7 @@ describe("new report page source", () => {
       'labelKo: "사업·협업"',
       'value: "friendship"',
       'labelKo: "친구·인간관계"',
-      "/dev/compatibility-preview?fixture=deokmin-sodam-love",
+      "1,290원 결제하고 궁합 리포트 생성하기",
     ];
 
     for (const marker of requiredMarkers) {
@@ -533,26 +530,16 @@ describe("new report page source", () => {
     ).toBeLessThan(pageSource.indexOf("<DevTossCheckoutLauncher"));
   });
 
-  it("renders compatibility preview handoff summary without payment calls", () => {
+  it("renders compatibility create controls without payment calls", () => {
     const requiredMarkers = [
-      "입력 확인 요약",
-      "현재 입력값이 궁합 리포트에 어떻게 반영되는지 확인합니다.",
       "A 사람",
       "B 사람",
       "관계 카테고리",
-      "선택한 리포트",
-      "리포트 종류:",
-      "생성 방식: 입력값 기반 미리보기",
-      "formatCompatibilityBirthTimeSummary",
-      "formatCompatibilityRelationshipLabel",
       "isCompatibilityInputReady",
       "compatibilityCtaLabel",
-      "궁합 리포트 미리보기 생성",
+      "1,290원 결제하고 궁합 리포트 생성하기",
       "궁합 리포트 생성 중",
       "필수 정보를 입력해 주세요",
-      "입력한 정보를 바탕으로 궁합 미리보기 리포트를 생성합니다.",
-      "결제와 유료 저장은 이후 단계에서 연결합니다.",
-      "샘플 보기",
       "event.preventDefault()",
     ];
 

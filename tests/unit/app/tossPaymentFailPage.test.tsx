@@ -22,8 +22,8 @@ async function renderFailPage(query: {
   return renderToStaticMarkup(element);
 }
 
-describe("Toss payment fail placeholder page", () => {
-  it("renders safe failure placeholder fields", async () => {
+describe("Toss payment fail page", () => {
+  it("renders safe failure fields", async () => {
     const html = await renderFailPage({
       code: "PAY_PROCESS_CANCELED",
       message: "사용자가 결제를 취소했습니다.",
@@ -43,11 +43,11 @@ describe("Toss payment fail placeholder page", () => {
     expect(html).toContain("not provided");
   });
 
-  it("source contains placeholder copy and no payment completion behavior", () => {
+  it("source contains user-facing failure copy and no payment completion behavior", () => {
     const requiredMarkers = [
       "결제 실패 또는 취소",
       "Toss 결제창에서 실패 또는 취소로 돌아온 상태입니다",
-      "검증용 임시 화면",
+      "다시 시도하거나 고객센터로 문의해 주세요",
       "code",
       "message",
       "orderId",

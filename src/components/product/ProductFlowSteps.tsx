@@ -1,8 +1,8 @@
 const flowSteps = [
   "생년월일시 입력",
   "MBTI 선택",
-  "무료 미리보기 확인",
-  "결제 후 전체 리포트 열람",
+  "결제 후 리포트 생성",
+  "90일 온라인 열람",
 ] as const;
 
 export default function ProductFlowSteps() {

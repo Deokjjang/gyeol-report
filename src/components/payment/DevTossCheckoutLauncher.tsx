@@ -475,7 +475,7 @@ export async function runDevTossCheckout(
 
 export default function DevTossCheckoutLauncher({
   inputSnapshot,
-  ctaLabelKo = "990원 결제하고 리포트 생성하기",
+  ctaLabelKo = "1,290원 결제하고 리포트 생성하기",
   onEditInput,
 }: DevTossCheckoutLauncherProps) {
   const [isLaunching, setIsLaunching] = useState(false);
@@ -584,9 +584,8 @@ export default function DevTossCheckoutLauncher({
         <h3 className="text-base font-extrabold text-neutral-950">결제 정보</h3>
         <dl className="grid gap-3 text-sm">
           <ReviewRow labelKo="상품명" valueKo="사주×MBTI 종합 리포트" />
-          <ReviewRow labelKo="정가" valueKo="1,290원" />
-          <ReviewRow labelKo="런칭가" valueKo="990원" />
-          <ReviewRow labelKo="총 결제금액" valueKo="990원" />
+          <ReviewRow labelKo="판매가" valueKo="1,290원" />
+          <ReviewRow labelKo="총 결제금액" valueKo="1,290원" />
           <ReviewRow labelKo="제공 방식" valueKo="결제 후 온라인 열람" />
         </dl>
       </section>
@@ -600,6 +599,8 @@ export default function DevTossCheckoutLauncher({
           <li>생성 방식: 입력값 기반 자동 생성 디지털 리포트</li>
           <li>상담 여부: 사람 상담 아님</li>
           <li>열람 방식: 결제 후 온라인 열람</li>
+          <li>서비스 제공기간: 결제 완료 후 즉시 생성, 최대 24시간 이내 제공</li>
+          <li>열람 가능 기간: 생성일로부터 90일</li>
         </ul>
       </section>
 

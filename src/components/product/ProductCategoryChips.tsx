@@ -1,4 +1,4 @@
-const categoryChips = ["전체", "구매 가능", "준비 중"] as const;
+const categoryChips = ["전체", "구매 가능", "디지털 리포트"] as const;
 
 export default function ProductCategoryChips() {
   return (

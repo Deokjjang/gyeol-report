@@ -25,6 +25,10 @@ export type ProductTileItem = {
   readonly priceLabelKo?: string;
   readonly deliveryTypeKo?: string;
   readonly formatKo?: string;
+  readonly retentionKo?: string;
+  readonly servicePeriodKo?: string;
+  readonly refundSummaryKo?: string;
+  readonly policySummaryKo?: string;
 };
 
 type PurchasableProductTileItem = ProductTileItem & {
@@ -37,6 +41,10 @@ type PurchasableProductTileItem = ProductTileItem & {
   readonly priceLabelKo: string;
   readonly deliveryTypeKo: string;
   readonly formatKo: string;
+  readonly retentionKo: string;
+  readonly servicePeriodKo: string;
+  readonly refundSummaryKo: string;
+  readonly policySummaryKo: string;
 };
 
 type ProductTileProps = {
@@ -51,8 +59,8 @@ export default function ProductTile({ product }: ProductTileProps) {
     <article
       className={
         isPurchasable
-          ? "group flex h-full flex-col gap-4 rounded-lg border border-[#321820]/20 bg-[#fffdf8] p-4 shadow-[0_18px_50px_rgba(40,24,28,0.10)] transition duration-300 hover:-translate-y-1 hover:border-[#7f1d38]/35 hover:shadow-[0_24px_70px_rgba(40,24,28,0.16)]"
-          : "group relative flex h-full flex-col gap-4 overflow-hidden rounded-lg border border-[#d8d1c4] bg-[#fbf8f1] p-4 shadow-[0_14px_40px_rgba(40,24,28,0.07)] transition duration-300 hover:-translate-y-0.5 hover:border-[#b8ab98]"
+          ? "group motion-safe:animate-[gyeol-reveal_520ms_ease-out_both] flex h-full flex-col gap-4 rounded-lg border border-[#321820]/20 bg-[#fffdf8] p-4 shadow-[0_18px_50px_rgba(40,24,28,0.10)] transition duration-300 hover:-translate-y-1 hover:border-[#7f1d38]/35 hover:shadow-[0_24px_70px_rgba(40,24,28,0.16)]"
+          : "group motion-safe:animate-[gyeol-reveal_520ms_ease-out_both] relative flex h-full flex-col gap-4 overflow-hidden rounded-lg border border-[#d8d1c4] bg-[#fbf8f1] p-4 shadow-[0_14px_40px_rgba(40,24,28,0.07)] transition duration-300 hover:-translate-y-0.5 hover:border-[#b8ab98]"
       }
     >
       {!isPurchasable ? (
@@ -86,11 +94,11 @@ export default function ProductTile({ product }: ProductTileProps) {
               </span>
             ) : hasPreviewFlow ? (
               <span className="rounded-full border border-[#d8d1c4] bg-[#fffdf8] px-3 py-1 text-xs font-bold text-[#7b7165]">
-                {product.previewStatusKo ?? "미리보기 가능"}
+                {product.previewStatusKo ?? "다른 리포트"}
               </span>
             ) : (
               <span className="rounded-full border border-[#d8d1c4] bg-[#fffdf8] px-3 py-1 text-xs font-bold text-[#7b7165]">
-                비활성
+                다른 리포트
               </span>
             )}
           </div>
@@ -109,10 +117,7 @@ export default function ProductTile({ product }: ProductTileProps) {
               </p>
               <ul className="flex flex-wrap gap-2 text-xs font-bold">
                 <li className="rounded-full bg-[#7f1d38]/10 px-3 py-1 text-[#7f1d38]">
-                  {product.salePriceKo}
-                </li>
-                <li className="rounded-full bg-[#f0ebe3] px-3 py-1 text-[#4c433c]">
-                  정가 {product.listPriceKo}
+                  {product.priceLabelKo}
                 </li>
                 <li className="rounded-full bg-[#f0ebe3] px-3 py-1 text-[#4c433c]">
                   {product.deliveryTypeKo}
@@ -121,9 +126,12 @@ export default function ProductTile({ product }: ProductTileProps) {
                   {product.formatKo}
                 </li>
                 <li className="rounded-full bg-[#f0ebe3] px-3 py-1 text-[#4c433c]">
-                  사람 상담이 아닌 자동 생성 리포트
+                  {product.retentionKo}
                 </li>
               </ul>
+              <p className="text-xs leading-5 text-[#6f675d]">
+                {product.servicePeriodKo}
+              </p>
             </div>
           ) : (
             <p className="text-sm leading-6 text-[#6f675d]">
@@ -135,9 +143,6 @@ export default function ProductTile({ product }: ProductTileProps) {
         {isPurchasable ? (
           <div className="flex items-end justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold text-[#8b8174] line-through">
-                {product.listPriceLabelKo}
-              </p>
               <p className="text-2xl font-extrabold text-[#201a18]">
                 {product.priceLabelKo}
               </p>
@@ -154,7 +159,7 @@ export default function ProductTile({ product }: ProductTileProps) {
             href={product.previewHref ?? "#"}
             className="inline-flex min-h-12 items-center justify-center rounded-lg border border-[#7f1d38]/25 bg-[#fffdf8] px-4 py-3 text-sm font-bold text-[#7f1d38] transition duration-200 hover:border-[#7f1d38]/45 hover:bg-white active:scale-[0.98]"
           >
-            {product.previewCtaLabelKo ?? "입력 흐름 미리보기"}
+            {product.previewCtaLabelKo ?? "리포트 보기"}
           </Link>
         ) : (
           <button
@@ -163,7 +168,7 @@ export default function ProductTile({ product }: ProductTileProps) {
             aria-disabled="true"
             className="min-h-12 rounded-lg border border-[#d8d1c4] bg-[#efe9df] px-4 py-3 text-sm font-bold text-[#786e62]"
           >
-            출시 준비 중
+            리포트 보기
           </button>
         )}
       </div>

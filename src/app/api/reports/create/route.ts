@@ -28,7 +28,9 @@ const REPORT_PERSISTENCE_RUNTIME_FAILED_MESSAGE =
 const REPORT_PERSISTENCE_CREATE_FAILED_MESSAGE =
   "리포트를 저장하지 못했습니다.";
 const PRODUCT_PREVIEW_SNAPSHOT_FAILED_MESSAGE =
-  "상품 미리보기 저장 형식을 준비하지 못했습니다.";
+  "리포트 저장 형식을 준비하지 못했습니다.";
+const PRODUCT_PREVIEW_CREATE_FAILED_MESSAGE =
+  "리포트 생성에 실패했습니다. 잠시 후 다시 시도해 주세요.";
 const previewReportIdByRequestKey = new Map<string, string>();
 
 type ReportPersistenceRouteErrorCode =
@@ -37,10 +39,21 @@ type ReportPersistenceRouteErrorCode =
   | "REPORT_PERSISTENCE_CREATE_FAILED"
   | "PRODUCT_PREVIEW_SNAPSHOT_FAILED";
 
+type ProductPreviewFailureCode =
+  | "INVALID_REPORT_INPUT"
+  | "PRODUCT_GENERATION_NOT_IMPLEMENTED"
+  | "PRODUCT_GENERATION_FAILED"
+  | "COMPATIBILITY_GENERATION_FAILED"
+  | "COMPATIBILITY_DRAFT_INVALID"
+  | "PRODUCT_PREVIEW_SNAPSHOT_FAILED"
+  | "REPORT_PERSISTENCE_PAYLOAD_FAILED"
+  | "REPORT_PERSISTENCE_RUNTIME_FAILED"
+  | "REPORT_PERSISTENCE_CREATE_FAILED";
+
 const productPreviewLegacyReport: ReportOutput = {
   version: "v1",
-  titleKo: "상품 미리보기",
-  subtitleKo: "상품 미리보기 snapshot",
+  titleKo: "상품 리포트",
+  subtitleKo: "상품 리포트",
   sections: [],
   notices: [],
 };
@@ -131,15 +144,7 @@ function withReportId(
 }
 
 function createProductPreviewFailureResponse(
-  code:
-    | "INVALID_REPORT_INPUT"
-    | "PRODUCT_GENERATION_NOT_IMPLEMENTED"
-    | "COMPATIBILITY_GENERATION_FAILED"
-    | "COMPATIBILITY_DRAFT_INVALID"
-    | "PRODUCT_PREVIEW_SNAPSHOT_FAILED"
-    | "REPORT_PERSISTENCE_PAYLOAD_FAILED"
-    | "REPORT_PERSISTENCE_RUNTIME_FAILED"
-    | "REPORT_PERSISTENCE_CREATE_FAILED",
+  code: ProductPreviewFailureCode,
   message: string,
   status: number,
 ): NextResponse {
@@ -147,11 +152,22 @@ function createProductPreviewFailureResponse(
     {
       ok: false,
       code,
-      message,
+      message: createPublicProductPreviewFailureMessage(message),
     },
     { status },
   );
 }
+
+function createPublicProductPreviewFailureMessage(message: string): string {
+  if (message === PRODUCT_GENERATION_NOT_IMPLEMENTED_MESSAGE) {
+    return PRODUCT_GENERATION_NOT_IMPLEMENTED_MESSAGE;
+  }
+
+  return PRODUCT_PREVIEW_CREATE_FAILED_MESSAGE;
+}
+
+const PRODUCT_GENERATION_NOT_IMPLEMENTED_MESSAGE =
+  "현재 제공되지 않는 리포트입니다.";
 
 function getProductPersistenceSeedPerson(
   json: Record<string, unknown>,
@@ -199,7 +215,7 @@ async function createProductPreviewResponse(
     if (code === "PRODUCT_GENERATION_NOT_IMPLEMENTED") {
       return createProductPreviewFailureResponse(
         code,
-        generationResult.error.message,
+        PRODUCT_GENERATION_NOT_IMPLEMENTED_MESSAGE,
         501,
       );
     }
@@ -213,7 +229,7 @@ async function createProductPreviewResponse(
     }
 
     return createProductPreviewFailureResponse(
-      code,
+      "PRODUCT_GENERATION_FAILED",
       generationResult.error.message,
       500,
     );

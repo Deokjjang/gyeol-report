@@ -10,7 +10,11 @@ const compatibilityViewSource = readFileSync(
   join(process.cwd(), "src/app/reports/[reportId]/CompatibilityReportView.tsx"),
   "utf8",
 );
-const source = `${pageSource}\n${compatibilityViewSource}`;
+const shareActionsSource = readFileSync(
+  join(process.cwd(), "src/components/report/ReportShareActions.tsx"),
+  "utf8",
+);
+const source = `${pageSource}\n${compatibilityViewSource}\n${shareActionsSource}`;
 
 describe("report result page source", () => {
   it("renders generated report draft sections and safe fallback states", () => {
@@ -106,17 +110,20 @@ describe("report result page source", () => {
       "renderProductPreviewAnnualFortuneState",
       "renderProductPreviewComprehensiveV2State",
       "renderProductPreviewReentryCta",
+      "ReportShareActions",
+      "리포트 공유하기",
       "나도 내 리포트 보기",
-      "내 사주×MBTI 리포트 만들기",
-      'href={`/report/new?product=${productSlug}`}',
-      'href="/report/new"',
+      "다른 리포트 보기",
+      "navigator.share",
+      "navigator.clipboard",
       "renderProductPreviewState",
       "getCareerPreviewEvidencePacket",
       "getLoveMarriageChildPreviewEvidencePacket",
       "getMajorFortunePreviewEvidencePacket",
       "getAnnualFortunePreviewEvidencePacket",
       "productPreview.evidencePacket",
-      "상품 미리보기 준비 중입니다.",
+      "리포트 화면을 열 수 없습니다.",
+      "이 리포트 형식은 현재 화면에서 지원하지 않습니다.",
       "createReportPersistenceRuntime",
       "CompatibilityTable",
       "buildCompatibilityTopTableData",

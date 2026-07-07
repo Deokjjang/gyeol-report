@@ -40,8 +40,8 @@ export default async function TossPaymentFailPage({
 
         <div className="space-y-5 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
           <p className="text-base leading-7 text-neutral-300">
-            Toss 결제창에서 실패 또는 취소로 돌아온 상태입니다. 이 화면은 개발
-            검증용 임시 화면입니다.
+            Toss 결제창에서 실패 또는 취소로 돌아온 상태입니다. 입력 화면에서
+            다시 시도하거나 고객센터로 문의해 주세요.
           </p>
 
           <dl className="grid gap-3 rounded-lg border border-neutral-800 bg-neutral-950/60 p-4 text-sm">

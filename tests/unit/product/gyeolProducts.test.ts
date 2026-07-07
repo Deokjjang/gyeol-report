@@ -7,10 +7,10 @@ import {
 } from "../../../src/lib/product/gyeolProducts";
 
 describe("GYEOL_PRODUCTS", () => {
-  it("defines the single purchasable public product for Toss review", () => {
-    expect(GYEOL_PRODUCTS).toHaveLength(1);
+  it("defines all six public products as purchasable launch products", () => {
+    expect(GYEOL_PRODUCTS).toHaveLength(6);
     expect(GYEOL_PRODUCTS.filter((product) => product.isPurchasable)).toHaveLength(
-      1,
+      6,
     );
 
     expect(GYEOL_PRODUCTS[0]).toMatchObject({
@@ -20,58 +20,41 @@ describe("GYEOL_PRODUCTS", () => {
       slug: "saju-mbti-full",
       nameKo: "사주×MBTI 종합 리포트",
       fullNameKo: "사주×MBTI 종합 리포트",
-      versionBadgeKo: "v1.0",
-      priceAmount: 990,
+      versionBadgeKo: "판매 상품",
+      priceAmount: 1290,
       listPriceAmount: 1290,
-      salePriceAmount: 990,
-      paymentAmount: 990,
+      salePriceAmount: 1290,
+      paymentAmount: 1290,
       currency: "KRW",
-      priceKo: "990원",
+      priceKo: "1,290원",
       listPriceKo: "1,290원",
-      salePriceKo: "런칭가 990원",
+      salePriceKo: "판매가 1,290원",
       status: "available",
       isPurchasable: true,
-      href: "/report/new",
-      ctaHref: "/report/new",
+      href: "/report/new?product=saju-mbti-full",
+      ctaHref: "/report/new?product=saju-mbti-full",
       formatKo: "자동 생성 디지털 리포트",
-      deliveryTypeKo: "결제 후 온라인 열람",
+      deliveryTypeKo: "결제 후 온라인 리포트 생성/열람",
+      retentionKo: "생성일로부터 90일 열람",
     });
   });
 
-  it("defines coming soon products as display-only cards", () => {
-    const comingSoonNames = GYEOL_COMING_SOON_PRODUCTS.map(
-      (product) => product.nameKo,
-    );
-
-    expect(comingSoonNames).toEqual([
-      "하반기 운세",
-      "궁합 리포트",
-      "대운 리포트",
-      "세운 리포트",
-    ]);
-    expect(
-      GYEOL_COMING_SOON_PRODUCTS.every(
-        (product) =>
-          product.status === "coming_soon" &&
-          product.isPurchasable === false &&
-          product.href === null &&
-          product.versionBadgeKo === "v1.0" &&
-          product.badgeKo === "출시 준비 중",
-      ),
-    ).toBe(true);
+  it("does not expose coming-soon products in the launch catalog", () => {
+    expect(GYEOL_COMING_SOON_PRODUCTS).toHaveLength(0);
   });
 
-  it("orders the home product grid with only the comprehensive report purchasable", () => {
+  it("orders the home product grid with all six products purchasable", () => {
     expect(GYEOL_HOME_PRODUCT_GRID.map((product) => product.nameKo)).toEqual([
-      "하반기 운세",
       "사주×MBTI 종합 리포트",
+      "직업·커리어·돈·학업 리포트",
+      "연애·결혼·자녀 리포트",
+      "궁합 리포트",
       "대운 리포트",
       "세운 리포트",
-      "궁합 리포트",
     ]);
     expect(
       GYEOL_HOME_PRODUCT_GRID.filter((product) => product.isPurchasable),
-    ).toEqual([GYEOL_PRODUCTS[0]]);
+    ).toHaveLength(6);
   });
 
   it("does not expose blocked future markers as public sellable products", () => {

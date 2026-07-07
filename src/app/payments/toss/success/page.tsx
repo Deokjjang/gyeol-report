@@ -10,11 +10,11 @@ type TossSuccessPageProps = {
 
 type InitialSuccessState = "loading" | "missing" | "amount-mismatch";
 
-const requiredPaymentAmount = 990;
+const requiredPaymentAmount = 1290;
 
 export const tossSuccessAutoConfirmScript = `
 (function () {
-  var requiredAmount = 990;
+  var requiredAmount = 1290;
   var globalKeyName = "__gyeolTossSuccessConfirmRequestKey";
   var globalPromiseName = "__gyeolTossSuccessConfirmPromise";
 
@@ -102,7 +102,7 @@ export const tossSuccessAutoConfirmScript = `
       "결제가 정상 승인되었고 리포트 생성이 완료되었습니다.",
     );
     setText("[data-confirm-order-id]", safeText(body.confirm.orderId));
-    setText("[data-confirm-amount]", "990원");
+    setText("[data-confirm-amount]", "1,290원");
     setText("[data-confirm-status]", safeText(body.paymentOrder.status));
     setText("[data-confirm-report-id]", safeText(body.fulfillment.reportId));
     setHidden("[data-confirm-details]", false);
@@ -277,7 +277,7 @@ export default async function TossPaymentSuccessPage({
             <div className="grid gap-1 sm:grid-cols-[10rem_1fr]">
               <dt className="font-medium text-neutral-500">결제금액</dt>
               <dd className="break-words text-neutral-100" data-confirm-amount>
-                {initialState === "loading" ? "990원" : renderValue(amount)}
+                {initialState === "loading" ? "1,290원" : renderValue(amount)}
               </dd>
             </div>
             <div className="grid gap-1 sm:grid-cols-[10rem_1fr]">

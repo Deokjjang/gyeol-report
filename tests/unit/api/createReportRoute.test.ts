@@ -58,6 +58,7 @@ type ProductApiErrorBody = {
   code:
     | "INVALID_REPORT_INPUT"
     | "PRODUCT_GENERATION_NOT_IMPLEMENTED"
+    | "PRODUCT_GENERATION_FAILED"
     | "COMPATIBILITY_GENERATION_FAILED"
     | "COMPATIBILITY_DRAFT_INVALID"
     | "PRODUCT_PREVIEW_SNAPSHOT_FAILED"
@@ -505,7 +506,10 @@ describe("create report route", () => {
     expect(body.ok).toBe(false);
     if (!body.ok && "code" in body) {
       expect(body.code).toBe("INVALID_REPORT_INPUT");
-      expect(body.message).toContain("INVALID_PERSON_NAME");
+      expect(body.message).toBe(
+        "리포트 생성에 실패했습니다. 잠시 후 다시 시도해 주세요.",
+      );
+      expect(body.message).not.toContain("INVALID_PERSON_NAME");
     }
   });
 

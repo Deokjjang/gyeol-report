@@ -31,7 +31,7 @@ describe("mock payment UI production safety", () => {
       "NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED",
       "DevTossCheckoutLauncher",
       "inputSnapshot={checkoutInputSnapshot}",
-      "990원 결제하고 리포트 생성하기",
+      "1,290원 결제하고 리포트 생성하기",
     ];
 
     for (const marker of requiredMarkers) {

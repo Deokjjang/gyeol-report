@@ -36,17 +36,19 @@ describe("Toss PG review checkout path source", () => {
     expect(homePathSource).toContain("GYEOL_HOME_PRODUCT_GRID");
     expect(homePathSource).toContain("상품 목록");
     expect(homePathSource).toContain("사주×MBTI 종합 리포트");
-    expect(homePathSource).toContain('href: "/report/new"');
+    expect(homePathSource).toContain('href: "/report/new?product=saju-mbti-full"');
     expect(homePathSource).toContain("href={product.href}");
-    expect(homePathSource).toContain("priceLabelKo: \"990원\"");
+    expect(homePathSource).toContain("const PRODUCT_PRICE_KO = \"1,290원\"");
+    expect(homePathSource).toContain("priceLabelKo: PRODUCT_PRICE_KO");
+    expect(homePathSource).toContain("retentionKo");
     expect(homePathSource).toContain("결제하고 리포트 생성하기");
 
-    expect(productDetailSource).toContain('href="/report/new"');
+    expect(productDetailSource).toContain('href="/report/new?product=saju-mbti-full"');
     expect(productDetailSource).toContain("상품명");
-    expect(productDetailSource).toContain("정가 1,290원");
-    expect(productDetailSource).toContain("런칭가 990원");
-    expect(productDetailSource).toContain("결제금액 990원");
-    expect(productDetailSource).toContain("결제 후 온라인 열람");
+    expect(productDetailSource).toContain("판매가");
+    expect(productDetailSource).toContain("결제금액 1,290원");
+    expect(productDetailSource).toContain("90일");
+    expect(productDetailSource).toContain("결제 후 온라인 리포트 생성/열람");
     expect(productDetailSource).toContain("자동 생성 디지털 리포트");
   });
 
@@ -62,10 +64,10 @@ describe("Toss PG review checkout path source", () => {
       "결제 직전 확인",
       "상품명",
       "사주×MBTI 종합 리포트",
-      "정가",
-      "런칭가",
+      "판매가",
       "총 결제금액",
-      "990원",
+      "1,290원",
+      "90일",
       "결제 후 온라인 열람",
       "자동 생성 디지털 리포트",
       "생성 시작 후 단순 변심",
@@ -75,7 +77,7 @@ describe("Toss PG review checkout path source", () => {
       "사업자정보",
       "만 14세",
       "법정대리인",
-      "990원 결제하고 리포트 생성하기",
+      "1,290원 결제하고 리포트 생성하기",
       "Toss 결제창 여는 중...",
     ];
 

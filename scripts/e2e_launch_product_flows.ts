@@ -50,19 +50,24 @@ const baseUrl =
   process.env.LAUNCH_E2E_BASE_URL?.replace(/\/$/, "") ??
   "http://localhost:3000";
 const cdpPort = Number(process.env.LAUNCH_E2E_CDP_PORT ?? "9337");
+const generationTimeoutMs = Number(
+  process.env.LAUNCH_E2E_GENERATION_TIMEOUT_MS ?? "180000",
+);
 const ctaText = "나도 내 리포트 보기";
-const secondaryCtaText = "내 사주×MBTI 리포트 만들기";
+const shareCtaText = "리포트 공유하기";
+const secondaryCtaText = "다른 리포트 보기";
 const reportPathPrefix = "/reports/";
 const productCases: readonly E2eProductCase[] = [
   {
     productSlug: "saju-mbti-full",
     urlPath: "/report/new?product=saju-mbti-full",
-    ctaLabel: "종합 리포트 미리보기 생성",
+    ctaLabel: "1,290원 결제하고 종합 리포트 생성하기",
     resultMarkers: [
       "종합 리포트",
       "오행 분포",
       "내 사주의 주요 표식 해석",
       "명리×MBTI",
+      shareCtaText,
       ctaText,
       secondaryCtaText,
     ],
@@ -71,11 +76,12 @@ const productCases: readonly E2eProductCase[] = [
   {
     productSlug: "career-money-study",
     urlPath: "/report/new?product=career-money-study",
-    ctaLabel: "직업 리포트 미리보기 생성",
+    ctaLabel: "1,290원 결제하고 직업 리포트 생성하기",
     resultMarkers: [
       "직업·커리어·돈·학업 리포트",
       "만세력",
       "오행 분포",
+      shareCtaText,
       ctaText,
       secondaryCtaText,
     ],
@@ -84,11 +90,12 @@ const productCases: readonly E2eProductCase[] = [
   {
     productSlug: "love-marriage-child",
     urlPath: "/report/new?product=love-marriage-child",
-    ctaLabel: "연애 리포트 미리보기 생성",
+    ctaLabel: "1,290원 결제하고 연애 리포트 생성하기",
     resultMarkers: [
       "연애·결혼·자녀 리포트",
       "만세력",
       "오행 분포",
+      shareCtaText,
       ctaText,
       secondaryCtaText,
     ],
@@ -97,20 +104,29 @@ const productCases: readonly E2eProductCase[] = [
   {
     productSlug: "major-fortune",
     urlPath: "/report/new?product=major-fortune",
-    ctaLabel: "대운 리포트 미리보기 생성",
-    resultMarkers: ["대운 리포트", "만세력", "오행 분포", "대운", ctaText, secondaryCtaText],
+    ctaLabel: "1,290원 결제하고 대운 리포트 생성하기",
+    resultMarkers: [
+      "대운 리포트",
+      "만세력",
+      "오행 분포",
+      "대운",
+      shareCtaText,
+      ctaText,
+      secondaryCtaText,
+    ],
     fillForm: fillSinglePersonProductForm,
   },
   {
     productSlug: "annual-fortune",
     urlPath: "/report/new?product=annual-fortune",
-    ctaLabel: "세운 리포트 미리보기 생성",
+    ctaLabel: "1,290원 결제하고 세운 리포트 생성하기",
     resultMarkers: [
       "세운 리포트",
       "만세력",
       "오행 분포",
       "세운",
       "월운",
+      shareCtaText,
       ctaText,
       secondaryCtaText,
     ],
@@ -122,11 +138,12 @@ const productCases: readonly E2eProductCase[] = [
   {
     productSlug: "compatibility",
     urlPath: "/report/new?product=compatibility",
-    ctaLabel: "궁합 리포트 미리보기 생성",
+    ctaLabel: "1,290원 결제하고 궁합 리포트 생성하기",
     resultMarkers: [
       "궁합 리포트",
       "두 사람 기초표",
       "관계 카테고리",
+      shareCtaText,
       ctaText,
       secondaryCtaText,
     ],
@@ -136,7 +153,6 @@ const productCases: readonly E2eProductCase[] = [
 
 const forbiddenResultMarkers = [
   "리포트를 찾을 수 없습니다",
-  "상품 미리보기 준비 중입니다",
   "placeholder",
   "fallback",
   "source registry",
@@ -277,7 +293,7 @@ async function runProductCase(
   await productCase.fillForm(client);
   await waitForButton(client, productCase.ctaLabel);
   await clickButtonByText(client, productCase.ctaLabel);
-  await waitForLocationPath(client, reportPathPrefix);
+  await waitForLocationPath(client, reportPathPrefix, generationTimeoutMs);
 
   const resultUrl = await getLocationHref(client);
   const resultText = await getVisibleText(client);
@@ -427,11 +443,13 @@ async function clickLinkByText(client: CdpClient, text: string): Promise<void> {
 async function waitForLocationPath(
   client: CdpClient,
   pathnamePrefix: string,
+  timeoutMs = 60_000,
 ): Promise<void> {
   await waitForBrowserCondition(
     client,
     `location.pathname.startsWith(${JSON.stringify(pathnamePrefix)})`,
     `/reports/ redirect check`,
+    timeoutMs,
   );
 }
 
@@ -468,9 +486,9 @@ async function waitForBrowserCondition(
   client: CdpClient,
   expression: string,
   label: string,
+  timeoutMs = 60_000,
 ): Promise<void> {
   const startedAt = Date.now();
-  const timeoutMs = 60_000;
 
   while (Date.now() - startedAt < timeoutMs) {
     const ok = await evaluate<boolean>(client, `Boolean(${expression})`);

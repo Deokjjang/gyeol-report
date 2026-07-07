@@ -46,6 +46,15 @@ describe("create report route product preview source", () => {
     expect(source).toContain("runtime.adapter.create");
   });
 
+  it("uses public product generation failure copy instead of handler internals", () => {
+    const source = readRouteSource();
+
+    expect(source).toContain("PRODUCT_PREVIEW_CREATE_FAILED_MESSAGE");
+    expect(source).toContain("createPublicProductPreviewFailureMessage");
+    expect(source).toContain('"PRODUCT_GENERATION_FAILED"');
+    expect(source).not.toContain("message: generationResult.error.message");
+  });
+
   it("does not directly connect payment, Supabase, paid unlock, fetch, or OpenAI writer", () => {
     const source = readRouteSource();
     const forbiddenMarkers = [

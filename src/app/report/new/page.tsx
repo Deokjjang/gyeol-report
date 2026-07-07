@@ -4,6 +4,7 @@ import { use, useState } from "react";
 import type { FormEvent } from "react";
 import { useRouter } from "next/navigation";
 
+import GyeolBrandHeader from "../../../components/brand/GyeolBrandHeader";
 import DevTossCheckoutLauncher, {
   type DevTossCheckoutInputSnapshot,
   isDevTossCheckoutInputComplete,
@@ -33,11 +34,13 @@ const ANNUAL_FORTUNE_PRODUCT_KEY = "annual_fortune";
 const ANNUAL_FORTUNE_PRODUCT_SLUG = "annual-fortune";
 const SAJU_MBTI_FULL_PRODUCT_KEY = "saju_mbti_full";
 const SAJU_MBTI_FULL_PRODUCT_SLUG = "saju-mbti-full";
-const ACTIVE_REPORT_LIST_PRICE_LABEL_KO = "정가 1,290원";
-const ACTIVE_REPORT_SALE_PRICE_LABEL_KO = "런칭가 990원";
-const ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO = "결제금액 990원";
+const ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO = "결제금액 1,290원";
 const ACTIVE_REPORT_FORMAT_LABEL_KO = "자동 생성 디지털 리포트";
-const CHECKOUT_CTA_LABEL_KO = "990원 결제하고 리포트 생성하기";
+const CHECKOUT_CTA_LABEL_KO = "1,290원 결제하고 리포트 생성하기";
+const PRODUCT_SERVICE_POLICY_NOTICE_KO =
+  "무형재화/디지털 콘텐츠입니다. 결제 완료 후 즉시 생성되며, 시스템 상황에 따라 최대 24시간 이내 제공됩니다. 생성일로부터 90일간 온라인 열람 가능합니다.";
+const PRODUCT_REFUND_POLICY_NOTICE_KO =
+  "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능하며, 생성 시작 또는 결과 제공 이후에는 디지털 콘텐츠 특성상 환불이 제한될 수 있습니다. 미제공·중복결제·시스템 오류는 환불 또는 재제공합니다.";
 const REQUIRED_CHECKOUT_INPUT_MESSAGE_KO =
   "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.";
 const SINGLE_PRODUCT_CONTEXT_NOTICE_KO =
@@ -45,13 +48,13 @@ const SINGLE_PRODUCT_CONTEXT_NOTICE_KO =
 const COMPATIBILITY_REQUIRED_INPUT_MESSAGE_KO =
   "A/B 이름과 생년월일, 관계 카테고리를 입력해 주세요.";
 const COMPATIBILITY_PREVIEW_CREATE_ERROR_MESSAGE_KO =
-  "궁합 리포트 미리보기를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.";
+  "궁합 리포트를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.";
 const COMPREHENSIVE_V2_REQUIRED_INPUT_MESSAGE_KO =
   "이름과 생년월일을 입력해 주세요.";
 const COMPREHENSIVE_V2_PREVIEW_CREATE_ERROR_MESSAGE_KO =
-  "종합 리포트 미리보기를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.";
+  "종합 리포트를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.";
 const SINGLE_PRODUCT_PREVIEW_CREATE_ERROR_MESSAGE_KO =
-  "리포트 미리보기를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.";
+  "리포트를 생성하지 못했습니다. 잠시 후 다시 시도해 주세요.";
 const REPORT_CREATE_API_PATH = "/api/reports/create";
 const DEV_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED =
   process.env.NEXT_PUBLIC_TOSS_CHECKOUT_LAUNCHER_UI_ENABLED === "1";
@@ -90,7 +93,7 @@ const DEFAULT_SELECTED_REPORT_PRODUCT = {
   fullNameKo: ACTIVE_REPORT_PRODUCT.fullNameKo,
   inputTitleKo: "종합 리포트 입력",
   introKo:
-    "생년월일시와 MBTI를 입력하고 확인한 뒤 990원 결제창으로 이동합니다. 리포트는 결제 승인 후 생성됩니다. 자동 생성 디지털 리포트이며 상담이 아닌 참고용 리포트입니다.",
+    "생년월일시와 MBTI를 입력하고 확인한 뒤 1,290원 결제창으로 이동합니다. 리포트는 결제 승인 후 생성됩니다. 자동 생성 디지털 리포트이며 상담이 아닌 참고용 리포트입니다.",
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
   deliveryTypeKo: ACTIVE_REPORT_PRODUCT.deliveryTypeKo,
   statusLabelKo: "구매 가능",
@@ -105,14 +108,13 @@ const CAREER_MONEY_STUDY_SELECTED_REPORT_PRODUCT = {
   nameKo: "직업·커리어·돈·학업 리포트",
   fullNameKo: "직업·커리어·돈·학업 리포트",
   inputTitleKo: "직업·커리어·돈·학업 리포트 입력",
-  introKo:
-    `출시 전 미리보기 입력 흐름입니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
+  introKo: `입력한 정보를 바탕으로 리포트를 생성합니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
-  deliveryTypeKo: "미리보기 입력 흐름",
-  statusLabelKo: "준비 중 · 미리보기 가능",
-  isPurchasable: false,
-  listPriceKo: null,
-  priceKo: null,
+  deliveryTypeKo: "온라인 리포트",
+  statusLabelKo: "구매 가능",
+  isPurchasable: true,
+  listPriceKo: "1,290원",
+  priceKo: "1,290원",
 } as const satisfies SelectedReportProduct;
 
 const LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT = {
@@ -121,14 +123,13 @@ const LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT = {
   nameKo: "연애·결혼·자녀 리포트",
   fullNameKo: "연애·결혼·자녀 리포트",
   inputTitleKo: "연애·결혼·자녀 리포트 입력",
-  introKo:
-    `출시 전 미리보기 입력 흐름입니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
+  introKo: `입력한 정보를 바탕으로 리포트를 생성합니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
-  deliveryTypeKo: "미리보기 입력 흐름",
-  statusLabelKo: "준비 중 · 미리보기 가능",
-  isPurchasable: false,
-  listPriceKo: null,
-  priceKo: null,
+  deliveryTypeKo: "온라인 리포트",
+  statusLabelKo: "구매 가능",
+  isPurchasable: true,
+  listPriceKo: "1,290원",
+  priceKo: "1,290원",
 } as const satisfies SelectedReportProduct;
 
 const COMPATIBILITY_SELECTED_REPORT_PRODUCT = {
@@ -138,13 +139,13 @@ const COMPATIBILITY_SELECTED_REPORT_PRODUCT = {
   fullNameKo: "궁합 리포트",
   inputTitleKo: "궁합 리포트 입력",
   introKo:
-    "궁합 리포트 입력 흐름 준비 중입니다. 두 사람의 생년월일, 출생시간, MBTI, 관계 카테고리를 입력하는 전용 흐름으로 연결될 예정입니다.",
+    "두 사람의 생년월일, 출생시간, MBTI, 관계 카테고리를 바탕으로 관계 리포트를 생성합니다.",
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
-  deliveryTypeKo: "미리보기 입력 흐름",
-  statusLabelKo: "준비 중 · 미리보기 가능",
-  isPurchasable: false,
-  listPriceKo: null,
-  priceKo: null,
+  deliveryTypeKo: "온라인 리포트",
+  statusLabelKo: "구매 가능",
+  isPurchasable: true,
+  listPriceKo: "1,290원",
+  priceKo: "1,290원",
 } as const satisfies SelectedReportProduct;
 
 const MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT = {
@@ -156,11 +157,11 @@ const MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT = {
   introKo:
     `대운은 입력된 생년월일과 출생시간 기반의 10년 흐름을 보는 리포트입니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
-  deliveryTypeKo: "미리보기 입력 흐름",
-  statusLabelKo: "준비 중 · 미리보기 가능",
-  isPurchasable: false,
-  listPriceKo: null,
-  priceKo: null,
+  deliveryTypeKo: "온라인 리포트",
+  statusLabelKo: "구매 가능",
+  isPurchasable: true,
+  listPriceKo: "1,290원",
+  priceKo: "1,290원",
 } as const satisfies SelectedReportProduct;
 
 const ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT = {
@@ -172,11 +173,11 @@ const ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT = {
   introKo:
     `세운은 선택한 한 해의 흐름을 보는 리포트입니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
-  deliveryTypeKo: "미리보기 입력 흐름",
-  statusLabelKo: "준비 중 · 미리보기 가능",
-  isPurchasable: false,
-  listPriceKo: null,
-  priceKo: null,
+  deliveryTypeKo: "온라인 리포트",
+  statusLabelKo: "구매 가능",
+  isPurchasable: true,
+  listPriceKo: "1,290원",
+  priceKo: "1,290원",
 } as const satisfies SelectedReportProduct;
 
 const SAJU_MBTI_FULL_SELECTED_REPORT_PRODUCT = {
@@ -186,13 +187,13 @@ const SAJU_MBTI_FULL_SELECTED_REPORT_PRODUCT = {
   fullNameKo: "사주×MBTI 종합 리포트",
   inputTitleKo: "종합 리포트 입력",
   introKo:
-    `명리 구조와 MBTI 행동 패턴을 함께 읽는 종합 V2 미리보기 입력 흐름입니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
+    `명리 구조와 MBTI 행동 패턴을 함께 읽는 종합 리포트입니다. ${SINGLE_PRODUCT_CONTEXT_NOTICE_KO}`,
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
-  deliveryTypeKo: "미리보기 입력 흐름",
-  statusLabelKo: "준비 중 · 미리보기 가능",
-  isPurchasable: false,
-  listPriceKo: null,
-  priceKo: null,
+  deliveryTypeKo: "온라인 리포트",
+  statusLabelKo: "구매 가능",
+  isPurchasable: true,
+  listPriceKo: "1,290원",
+  priceKo: "1,290원",
 } as const satisfies SelectedReportProduct;
 
 const mbtiTypes = [
@@ -417,33 +418,6 @@ function formatCalendarTypeLabel(value: string): string {
   return "선택 안 함";
 }
 
-function formatCompatibilityRelationshipLabel(
-  value: CompatibilityRelationshipTypeSelection,
-): string {
-  return (
-    compatibilityRelationshipOptions.find((option) => option.value === value)
-      ?.labelKo ?? "연애"
-  );
-}
-
-function formatCompatibilityBirthTimeSummary(
-  input: CompatibilityPersonInputState,
-): string {
-  if (input.birthTimeUnknown) {
-    return "출생시간 모름";
-  }
-
-  if (input.birthTime.trim().length > 0) {
-    return `정확한 시간 · ${input.birthTime}`;
-  }
-
-  if (input.timeBranch !== "") {
-    return formatBirthTimeSummary("branch", "", input.timeBranch);
-  }
-
-  return "미입력";
-}
-
 function formatAnnualBirthTimeSummary(
   input: FortuneBirthTimeSummaryInput,
 ): string {
@@ -600,12 +574,11 @@ function getProductPreviewCreateErrorMessage(
   }
 
   const response = value as Record<string, unknown>;
-  if (typeof response.message === "string" && response.message.trim() !== "") {
-    return response.message;
-  }
-
-  if (typeof response.error === "string" && response.error.trim() !== "") {
-    return response.error;
+  if (
+    typeof response.userMessage === "string" &&
+    response.userMessage.trim() !== ""
+  ) {
+    return response.userMessage;
   }
 
   return fallbackMessage;
@@ -711,22 +684,22 @@ function getSingleProductLeadText(productKey: string): string {
 
 function getSingleProductReadyCtaLabel(productKey: string): string {
   if (productKey === CAREER_MONEY_STUDY_PRODUCT_KEY) {
-    return "직업 리포트 미리보기 생성";
+    return "1,290원 결제하고 직업 리포트 생성하기";
   }
 
   if (productKey === LOVE_MARRIAGE_CHILD_PRODUCT_KEY) {
-    return "연애 리포트 미리보기 생성";
+    return "1,290원 결제하고 연애 리포트 생성하기";
   }
 
   if (productKey === MAJOR_FORTUNE_PRODUCT_KEY) {
-    return "대운 리포트 미리보기 생성";
+    return "1,290원 결제하고 대운 리포트 생성하기";
   }
 
   if (productKey === ANNUAL_FORTUNE_PRODUCT_KEY) {
-    return "세운 리포트 미리보기 생성";
+    return "1,290원 결제하고 세운 리포트 생성하기";
   }
 
-  return "종합 리포트 미리보기 생성";
+  return "1,290원 결제하고 종합 리포트 생성하기";
 }
 
 function getSingleProductLoadingCtaLabel(productKey: string): string {
@@ -801,17 +774,17 @@ function renderCompatibilityPersonInputSection(input: {
   const { prefix, titleKo, descriptionKo, value, onChange } = input;
 
   return (
-    <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
+    <section className="space-y-5 rounded-lg border border-[#ded2c2] bg-[#fffdf8] p-5 shadow-sm shadow-[#6f1d35]/5">
       <div className="space-y-2">
         <p className="text-sm font-bold text-[#c79a43]">{titleKo}</p>
-        <p className="text-sm leading-6 text-[#cfc5b8]">{descriptionKo}</p>
+        <p className="text-sm leading-6 text-[#6b5a4d]">{descriptionKo}</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}Name`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             이름
           </label>
@@ -827,14 +800,14 @@ function renderCompatibilityPersonInputSection(input: {
                 : "상대 이름을 입력해 주세요"
             }
             onChange={(event) => onChange({ ...value, name: event.target.value })}
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none placeholder:text-neutral-600 focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none placeholder:text-[#9b8a78] focus:border-[#6f1d35]"
           />
         </div>
 
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}BirthDate`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             생년월일
           </label>
@@ -843,18 +816,18 @@ function renderCompatibilityPersonInputSection(input: {
             name={`${prefix}BirthDate`}
             type="date"
             value={value.birthDate}
-            style={{ colorScheme: "dark" }}
+            style={{ colorScheme: "light" }}
             onChange={(event) =>
               onChange({ ...value, birthDate: event.target.value })
             }
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
           />
         </div>
 
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}BirthTime`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             출생시간
           </label>
@@ -863,7 +836,7 @@ function renderCompatibilityPersonInputSection(input: {
             name={`${prefix}BirthTime`}
             type="time"
             value={value.birthTime}
-            style={{ colorScheme: "dark" }}
+            style={{ colorScheme: "light" }}
             onChange={(event) =>
               onChange({
                 ...value,
@@ -871,14 +844,14 @@ function renderCompatibilityPersonInputSection(input: {
                 birthTimeUnknown: false,
               })
             }
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
           />
         </div>
 
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}TimeBranch`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             대략적인 시간대
           </label>
@@ -893,7 +866,7 @@ function renderCompatibilityPersonInputSection(input: {
                 birthTimeUnknown: false,
               })
             }
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
           >
             <option value="">시간대를 선택해 주세요</option>
             {timeBranches.map((branch) => (
@@ -904,7 +877,7 @@ function renderCompatibilityPersonInputSection(input: {
           </select>
         </div>
 
-        <label className="flex min-h-12 items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-sm font-medium text-neutral-200">
+        <label className="flex min-h-12 items-center gap-3 rounded-lg border border-[#ded2c2] bg-[#fffaf1] px-4 py-3 text-sm font-medium text-[#3f3129]">
           <input
             type="checkbox"
             name={`${prefix}BirthTimeUnknown`}
@@ -925,7 +898,7 @@ function renderCompatibilityPersonInputSection(input: {
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}Gender`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             성별
           </label>
@@ -936,7 +909,7 @@ function renderCompatibilityPersonInputSection(input: {
             onChange={(event) =>
               onChange({ ...value, gender: event.target.value })
             }
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
           >
             <option value="">선택</option>
             <option value="MALE">남성</option>
@@ -947,7 +920,7 @@ function renderCompatibilityPersonInputSection(input: {
         <div className="space-y-2 sm:col-span-2">
           <label
             htmlFor={`${prefix}MbtiType`}
-            className="block text-sm font-medium text-neutral-200"
+            className="block text-sm font-medium text-[#3f3129]"
           >
             MBTI
           </label>
@@ -958,7 +931,7 @@ function renderCompatibilityPersonInputSection(input: {
             onChange={(event) =>
               onChange({ ...value, mbtiType: event.target.value })
             }
-            className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
           >
             <option value="">선택</option>
             {mbtiTypes.map((type) => (
@@ -1301,11 +1274,8 @@ export default function NewReportPage({
   const compatibilityCtaLabel = isCompatibilitySubmitting
     ? "궁합 리포트 생성 중"
     : isCompatibilityInputReady
-      ? "궁합 리포트 미리보기 생성"
+      ? "1,290원 결제하고 궁합 리포트 생성하기"
       : "필수 정보를 입력해 주세요";
-  const compatibilityRelationshipLabel = formatCompatibilityRelationshipLabel(
-    compatibilityRelationshipType,
-  );
   const isSingleProductAnnual =
     selectedProduct.productKey === ANNUAL_FORTUNE_PRODUCT_KEY;
   const isSingleProductComprehensiveV2 =
@@ -1321,12 +1291,12 @@ export default function NewReportPage({
   const isMajorFortuneInputReady =
     isMajorFortuneRequiredInputComplete(majorFortuneInput);
   const majorFortuneCtaLabel = isMajorFortuneInputReady
-    ? "대운 리포트 미리보기 준비됨"
+    ? "대운 리포트 생성 준비 완료"
     : "필수 정보를 입력해 주세요";
   const isAnnualFortuneInputReady =
     isAnnualFortuneRequiredInputComplete(annualFortuneInput);
   const annualFortuneCtaLabel = isAnnualFortuneInputReady
-    ? "세운 리포트 미리보기 준비됨"
+    ? "세운 리포트 생성 준비 완료"
     : "필수 정보를 입력해 주세요";
   function handlePreviewOnlySubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -1447,10 +1417,8 @@ export default function NewReportPage({
     return (
       <main className="min-h-screen bg-[#f6f0e7] px-5 py-8 text-[#2b211b] sm:px-8 lg:px-10">
         <section className="mx-auto max-w-5xl space-y-8">
+          <GyeolBrandHeader taglineKo="입력 후 온라인 리포트를 생성합니다." />
           <header className="max-w-3xl space-y-4 animate-[gyeol-reveal_520ms_ease-out]">
-            <p className="text-sm font-bold tracking-[0.18em] text-[#c79a43]">
-              Gyeol Report
-            </p>
             <h1 className="text-4xl font-bold tracking-normal text-[#2b211b]">
               {selectedProduct.inputTitleKo}
             </h1>
@@ -1459,9 +1427,17 @@ export default function NewReportPage({
             </p>
             <p className="max-w-2xl rounded-lg border border-[#d7b56d]/60 bg-[#fffaf1] px-4 py-3 text-sm leading-6 text-[#5f5045]">
               {isSingleProductComprehensiveV2
-                ? "입력한 정보를 바탕으로 종합 미리보기 리포트를 생성합니다. 현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다."
-                : "입력한 정보를 바탕으로 리포트 입력 정보를 준비합니다. 현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다."}
+                ? "입력한 정보를 바탕으로 종합 리포트를 생성합니다. 현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다."
+                : "입력한 정보를 바탕으로 리포트를 생성합니다. 현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다."}
             </p>
+            <div className="grid gap-3 text-sm leading-6 text-[#5f5045] sm:grid-cols-2">
+              <p className="rounded-lg border border-[#ded2c2] bg-[#fffdf8] px-4 py-3">
+                {PRODUCT_SERVICE_POLICY_NOTICE_KO}
+              </p>
+              <p className="rounded-lg border border-[#ded2c2] bg-[#fffdf8] px-4 py-3">
+                {PRODUCT_REFUND_POLICY_NOTICE_KO}
+              </p>
+            </div>
           </header>
 
           <form
@@ -1500,11 +1476,11 @@ export default function NewReportPage({
                   </p>
                   <p className="text-sm leading-6 text-[#6b5a4d]">
                     기본값은 현재 연도입니다. 과거 5년과 올해를 우선 조회하고,
-                    12월 1일 이후에는 다음 해 신년사주 미리보기가 열립니다.
+                    12월 1일 이후에는 다음 해 신년사주 조회가 열립니다.
                   </p>
                   <p className="text-sm leading-6 text-[#7d6d60]">
-                    2년 이상 미래 조회는 아직 준비 중이며, 과거 10년 조회는
-                    2차 확장으로 안내합니다.
+                    2년 이상 미래 조회와 과거 10년 조회는 단계적으로
+                    확장합니다.
                   </p>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
@@ -1534,7 +1510,7 @@ export default function NewReportPage({
               </section>
             ) : null}
 
-            <div className="space-y-3">
+            <div className="sticky bottom-0 z-20 -mx-5 space-y-3 border-t border-[#ded2c2] bg-[#f6f0e7]/95 px-5 py-4 backdrop-blur sm:mx-0 sm:rounded-lg sm:border sm:bg-[#fffdf8]/95">
               <button
                 type="submit"
                 disabled={
@@ -1548,8 +1524,8 @@ export default function NewReportPage({
                 className={
                   isSingleProductInputReady &&
                   !isSingleProductSubmitting
-                    ? "min-h-12 rounded-lg border border-[#6f1d35] bg-[#6f1d35] px-5 py-3 text-sm font-bold text-[#fffdf8] transition hover:bg-[#7f2440]"
-                    : "min-h-12 rounded-lg border border-[#d7b56d] bg-[#fffaf1] px-5 py-3 text-sm font-bold text-[#8b6d2d]"
+                    ? "w-full min-h-12 rounded-lg border border-[#6f1d35] bg-[#6f1d35] px-5 py-3 text-sm font-bold text-[#fffdf8] shadow-[0_12px_30px_rgba(111,29,53,0.18)] transition hover:bg-[#7f2440] active:scale-[0.99]"
+                    : "w-full min-h-12 rounded-lg border border-[#d7b56d] bg-[#fffaf1] px-5 py-3 text-sm font-bold text-[#8b6d2d]"
                 }
               >
                 {singleProductCtaLabel}
@@ -1583,7 +1559,7 @@ export default function NewReportPage({
             </p>
             <p className="max-w-2xl rounded-lg border border-[#4a3434] bg-[#211817]/80 px-4 py-3 text-sm leading-6 text-[#cfc5b8]">
               {SINGLE_PRODUCT_CONTEXT_NOTICE_KO}
-              실제 생성/결제 연결은 준비 중입니다.
+              결제 후 온라인 리포트 생성 흐름으로 제공됩니다.
             </p>
           </header>
 
@@ -1914,7 +1890,7 @@ export default function NewReportPage({
             <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
               <div className="space-y-2">
                 <p className="text-sm font-bold text-[#c79a43]">
-                  입력 확인 요약
+                  입력 정보
                 </p>
                 <p className="text-sm leading-6 text-[#cfc5b8]">
                   현재 입력값이 대운 리포트에 어떻게 반영되는지 확인합니다.
@@ -1961,7 +1937,7 @@ export default function NewReportPage({
                   </dt>
                   <dd className="mt-2 space-y-1 text-neutral-400">
                     <p>리포트 종류: {selectedProduct.nameKo}</p>
-                    <p>생성 방식: 미리보기 준비</p>
+                    <p>생성 방식: 온라인 리포트 생성</p>
                   </dd>
                 </div>
               </dl>
@@ -1978,17 +1954,9 @@ export default function NewReportPage({
             </section>
 
             <aside className="space-y-3 rounded-lg border border-[#4a3434] bg-[#171211]/70 p-5 text-sm leading-6 text-[#cfc5b8]">
-              <p className="font-semibold text-[#fffaf0]">샘플 보기</p>
-              <p>
-                현재 화면은 대운 전용 입력 흐름을 연결하기 위한 준비 화면입니다.
-                현재 입력값으로 실제 리포트를 생성하지 않습니다.
-              </p>
-              <p>
-                실제 생성, 결제, 저장은 이후 단계에서 연결합니다.
-              </p>
-              <p className="break-words text-[#c79a43]">
-                /dev/major-fortune-preview?fixture=deokmin-current-major-fortune
-              </p>
+              <p className="font-semibold text-[#fffaf0]">서비스 안내</p>
+              <p>{PRODUCT_SERVICE_POLICY_NOTICE_KO}</p>
+              <p>{PRODUCT_REFUND_POLICY_NOTICE_KO}</p>
             </aside>
           </form>
         </section>
@@ -2012,7 +1980,7 @@ export default function NewReportPage({
             </p>
             <p className="max-w-2xl rounded-lg border border-[#4a3434] bg-[#211817]/80 px-4 py-3 text-sm leading-6 text-[#cfc5b8]">
               {SINGLE_PRODUCT_CONTEXT_NOTICE_KO}
-              실제 생성/결제 연결은 준비 중입니다.
+              결제 후 온라인 리포트 생성 흐름으로 제공됩니다.
             </p>
           </header>
 
@@ -2322,11 +2290,10 @@ export default function NewReportPage({
                 </p>
                 <p className="text-sm leading-6 text-[#cfc5b8]">
                   기본값은 현재 연도입니다. 과거 5년과 올해를 우선 조회하고,
-                  12월 1일 이후에는 다음 해 신년사주 미리보기가 열립니다.
+                  12월 1일 이후에는 다음 해 신년사주 조회가 열립니다.
                 </p>
                 <p className="text-sm leading-6 text-[#92877b]">
-                  2년 이상 미래 조회는 아직 준비 중이며, 과거 10년 조회는
-                  2차 확장으로 안내합니다.
+                  2년 이상 미래 조회와 과거 10년 조회는 단계적으로 제공합니다.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
@@ -2366,7 +2333,7 @@ export default function NewReportPage({
             <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
               <div className="space-y-2">
                 <p className="text-sm font-bold text-[#c79a43]">
-                  입력 확인 요약
+                  입력 정보
                 </p>
                 <p className="text-sm leading-6 text-[#cfc5b8]">
                   현재 입력값이 세운 리포트에 어떻게 반영되는지 확인합니다.
@@ -2420,7 +2387,7 @@ export default function NewReportPage({
                   </dt>
                   <dd className="mt-2 space-y-1 text-neutral-400">
                     <p>리포트 종류: {selectedProduct.nameKo}</p>
-                    <p>생성 방식: 미리보기 준비</p>
+                    <p>생성 방식: 온라인 리포트 생성</p>
                   </dd>
                 </div>
               </dl>
@@ -2437,17 +2404,9 @@ export default function NewReportPage({
             </section>
 
             <aside className="space-y-3 rounded-lg border border-[#4a3434] bg-[#171211]/70 p-5 text-sm leading-6 text-[#cfc5b8]">
-              <p className="font-semibold text-[#fffaf0]">샘플 보기</p>
-              <p>
-                현재 화면은 세운 전용 입력 흐름을 연결하기 위한 준비 화면입니다.
-                현재 입력값으로 실제 리포트를 생성하지 않습니다.
-              </p>
-              <p>
-                실제 생성, 결제, 저장은 이후 단계에서 연결합니다.
-              </p>
-              <p className="break-words text-[#c79a43]">
-                /dev/annual-fortune-preview?fixture=deokmin-2026-current
-              </p>
+              <p className="font-semibold text-[#fffaf0]">서비스 안내</p>
+              <p>{PRODUCT_SERVICE_POLICY_NOTICE_KO}</p>
+              <p>{PRODUCT_REFUND_POLICY_NOTICE_KO}</p>
             </aside>
           </form>
         </section>
@@ -2457,22 +2416,28 @@ export default function NewReportPage({
 
   if (selectedProduct.productKey === COMPATIBILITY_PRODUCT_KEY) {
     return (
-      <main className="min-h-screen bg-[#171211] px-5 py-8 text-[#fffaf0] sm:px-8 lg:px-10">
+      <main className="min-h-screen bg-[#f6f0e7] px-5 py-8 text-[#2b211b] sm:px-8 lg:px-10">
         <section className="mx-auto max-w-6xl space-y-8">
+          <GyeolBrandHeader taglineKo="두 사람의 관계 리포트를 생성합니다." />
           <header className="max-w-3xl space-y-4 animate-[gyeol-reveal_520ms_ease-out]">
-            <p className="text-sm font-bold tracking-[0.18em] text-[#c79a43]">
-              Gyeol Report
-            </p>
-            <h1 className="text-4xl font-bold tracking-normal text-[#fffaf0]">
+            <h1 className="text-4xl font-bold tracking-normal text-[#2b211b]">
               궁합 리포트 입력
             </h1>
-            <p className="max-w-2xl text-base leading-8 text-[#cfc5b8]">
+            <p className="max-w-2xl text-base leading-8 text-[#5f5045]">
               두 사람의 생년월일, 출생시간, MBTI, 관계 카테고리를
               바탕으로 궁합 리포트를 구성합니다.
             </p>
-            <p className="max-w-2xl rounded-lg border border-[#4a3434] bg-[#211817]/80 px-4 py-3 text-sm leading-6 text-[#cfc5b8]">
+            <p className="max-w-2xl rounded-lg border border-[#d7b56d]/60 bg-[#fffaf1] px-4 py-3 text-sm leading-6 text-[#5f5045]">
               상담이나 예언이 아닌 관계 분석용 디지털 리포트입니다.
             </p>
+            <div className="grid gap-3 text-sm leading-6 text-[#5f5045] sm:grid-cols-2">
+              <p className="rounded-lg border border-[#ded2c2] bg-[#fffdf8] px-4 py-3">
+                {PRODUCT_SERVICE_POLICY_NOTICE_KO}
+              </p>
+              <p className="rounded-lg border border-[#ded2c2] bg-[#fffdf8] px-4 py-3">
+                {PRODUCT_REFUND_POLICY_NOTICE_KO}
+              </p>
+            </div>
           </header>
 
           <form onSubmit={handleCompatibilityPreviewSubmit} className="grid gap-6">
@@ -2511,12 +2476,12 @@ export default function NewReportPage({
               })}
             </div>
 
-            <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
+            <section className="space-y-5 rounded-lg border border-[#ded2c2] bg-[#fffdf8] p-5 shadow-sm shadow-[#6f1d35]/5">
               <div className="space-y-2">
                 <p className="text-sm font-bold text-[#c79a43]">
                   관계 카테고리
                 </p>
-                <p className="text-sm leading-6 text-[#cfc5b8]">
+                <p className="text-sm leading-6 text-[#6b5a4d]">
                   같은 두 사람이라도 관계 맥락에 따라 해석 초점이 달라집니다.
                 </p>
               </div>
@@ -2524,7 +2489,7 @@ export default function NewReportPage({
                 <div className="space-y-2">
                   <label
                     htmlFor="relationshipType"
-                    className="block text-sm font-medium text-neutral-200"
+                    className="block text-sm font-medium text-[#3f3129]"
                   >
                     관계 선택
                   </label>
@@ -2537,7 +2502,7 @@ export default function NewReportPage({
                         event.target.value as CompatibilityRelationshipTypeSelection,
                       )
                     }
-                    className="w-full min-w-0 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 text-neutral-50 outline-none focus:border-neutral-400"
+                    className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
                   >
                     {compatibilityRelationshipOptions.map((option) => (
                       <option key={option.value} value={option.value}>
@@ -2552,103 +2517,19 @@ export default function NewReportPage({
                   aria-disabled={!isCompatibilityInputReady || isCompatibilitySubmitting}
                   className={
                     isCompatibilityInputReady && !isCompatibilitySubmitting
-                      ? "min-h-12 rounded-lg border border-[#c79a43] bg-[#c79a43] px-5 py-3 text-sm font-bold text-[#171211] transition hover:bg-[#d8ad58]"
-                      : "min-h-12 rounded-lg border border-[#c79a43]/40 bg-[#2c1e1f] px-5 py-3 text-sm font-bold text-[#c79a43]/80"
+                      ? "min-h-12 rounded-lg border border-[#6f1d35] bg-[#6f1d35] px-5 py-3 text-sm font-bold text-[#fffdf8] transition hover:bg-[#7f2440] active:scale-[0.99]"
+                      : "min-h-12 rounded-lg border border-[#d7b56d] bg-[#fffaf1] px-5 py-3 text-sm font-bold text-[#8b6d2d]"
                   }
                 >
                   {compatibilityCtaLabel}
                 </button>
               </div>
-            </section>
-
-            <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
-              <div className="space-y-2">
-                <p className="text-sm font-bold text-[#c79a43]">
-                  입력 확인 요약
-                </p>
-                <p className="text-sm leading-6 text-[#cfc5b8]">
-                  현재 입력값이 궁합 리포트에 어떻게 반영되는지 확인합니다.
-                </p>
-              </div>
-
-              <dl className="grid gap-3 text-sm lg:grid-cols-2">
-                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                  <dt className="font-semibold text-neutral-200">A 사람</dt>
-                  <dd className="mt-2 space-y-1 text-neutral-400">
-                    <p>이름: {compatibilityPersonA.name.trim() || "미입력"}</p>
-                    <p>생년월일: {compatibilityPersonA.birthDate || "미입력"}</p>
-                    <p>
-                      출생시간:{" "}
-                      {formatCompatibilityBirthTimeSummary(compatibilityPersonA)}
-                    </p>
-                    <p>성별: {formatGenderLabel(compatibilityPersonA.gender)}</p>
-                    <p>MBTI: {compatibilityPersonA.mbtiType || "미선택"}</p>
-                  </dd>
-                </div>
-
-                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                  <dt className="font-semibold text-neutral-200">B 사람</dt>
-                  <dd className="mt-2 space-y-1 text-neutral-400">
-                    <p>이름: {compatibilityPersonB.name.trim() || "미입력"}</p>
-                    <p>생년월일: {compatibilityPersonB.birthDate || "미입력"}</p>
-                    <p>
-                      출생시간:{" "}
-                      {formatCompatibilityBirthTimeSummary(compatibilityPersonB)}
-                    </p>
-                    <p>성별: {formatGenderLabel(compatibilityPersonB.gender)}</p>
-                    <p>MBTI: {compatibilityPersonB.mbtiType || "미선택"}</p>
-                  </dd>
-                </div>
-
-                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                  <dt className="font-semibold text-neutral-200">
-                    관계 카테고리
-                  </dt>
-                  <dd className="mt-2 text-neutral-400">
-                    {compatibilityRelationshipLabel} · {compatibilityRelationshipType}
-                  </dd>
-                </div>
-
-                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
-                  <dt className="font-semibold text-neutral-200">
-                    선택한 리포트
-                  </dt>
-                  <dd className="mt-2 space-y-1 text-neutral-400">
-                    <p>리포트 종류: {selectedProduct.nameKo}</p>
-                    <p>생성 방식: 입력값 기반 미리보기</p>
-                  </dd>
-                </div>
-              </dl>
-
-              <p
-                className={
-                  isCompatibilityInputReady
-                    ? "rounded-lg border border-emerald-900/50 bg-emerald-950/20 p-4 text-sm font-semibold text-emerald-100"
-                    : "rounded-lg border border-amber-900/50 bg-amber-950/20 p-4 text-sm font-semibold text-amber-100"
-                }
-              >
-                {compatibilityCtaLabel}
-              </p>
               {compatibilitySubmitError ? (
-                <p className="rounded-lg border border-rose-900/50 bg-rose-950/25 p-4 text-sm font-semibold text-rose-100">
+                <p className="rounded-lg border border-[#b94b5a]/40 bg-[#fff1f2] p-4 text-sm font-semibold text-[#8a1d3d]">
                   {compatibilitySubmitError}
                 </p>
               ) : null}
             </section>
-
-            <aside className="space-y-3 rounded-lg border border-[#4a3434] bg-[#171211]/70 p-5 text-sm leading-6 text-[#cfc5b8]">
-              <p className="font-semibold text-[#fffaf0]">샘플 보기</p>
-              <p>
-                입력한 정보를 바탕으로 궁합 미리보기 리포트를 생성합니다.
-                결제와 유료 저장은 이후 단계에서 연결합니다.
-              </p>
-              <p>
-                아래 링크는 입력과 무관한 샘플 미리보기입니다.
-              </p>
-              <p className="break-words text-[#c79a43]">
-                /dev/compatibility-preview?fixture=deokmin-sodam-love
-              </p>
-            </aside>
           </form>
         </section>
       </main>
@@ -3097,7 +2978,7 @@ export default function NewReportPage({
                     <p className="text-sm font-bold text-sky-700">
                       {isSelectedProductPurchasable
                         ? "전체 리포트"
-                        : "미리보기 상품"}
+                        : "리포트 상품"}
                     </p>
                     <h3 className="text-xl font-extrabold">
                       {selectedProduct.nameKo}
@@ -3110,30 +2991,24 @@ export default function NewReportPage({
                   {isSelectedProductPurchasable ? (
                     <dl className="grid gap-3 text-sm sm:grid-cols-3">
                       <div
-                        aria-label={ACTIVE_REPORT_LIST_PRICE_LABEL_KO}
+                        aria-label={ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO}
                         className="rounded-lg border border-neutral-200 bg-neutral-50 p-3"
                       >
-                        <dt className="text-neutral-500">정가</dt>
-                        <dd className="mt-1 font-semibold text-neutral-400 line-through">
-                          {selectedProduct.listPriceKo}
-                        </dd>
-                      </div>
-                      <div
-                        aria-label={ACTIVE_REPORT_SALE_PRICE_LABEL_KO}
-                        className="rounded-lg border border-rose-200 bg-rose-50 p-3"
-                      >
-                        <dt className="text-rose-700">런칭가</dt>
+                        <dt className="text-rose-700">판매가</dt>
                         <dd className="mt-1 text-xl font-extrabold text-rose-700">
                           {selectedProduct.priceKo}
                         </dd>
                       </div>
-                      <div
-                        aria-label={ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO}
-                        className="rounded-lg border border-neutral-200 bg-neutral-50 p-3"
-                      >
-                        <dt className="text-neutral-500">결제금액</dt>
+                      <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3">
+                        <dt className="text-neutral-500">열람 기간</dt>
                         <dd className="mt-1 font-bold text-neutral-950">
-                          {selectedProduct.priceKo}
+                          생성일로부터 90일
+                        </dd>
+                      </div>
+                      <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3">
+                        <dt className="text-neutral-500">제공기간</dt>
+                        <dd className="mt-1 font-bold text-neutral-950">
+                          최대 24시간 이내 제공
                         </dd>
                       </div>
                     </dl>
@@ -3154,7 +3029,7 @@ export default function NewReportPage({
                       <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3">
                         <dt className="text-neutral-500">생성 방식</dt>
                         <dd className="mt-1 font-bold text-neutral-950">
-                          미리보기 준비
+                          온라인 리포트 생성
                         </dd>
                       </div>
                     </dl>
@@ -3179,21 +3054,21 @@ export default function NewReportPage({
                     ) : (
                       <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
                         <p className="text-sm font-semibold text-neutral-900">
-                          정식 결제 연결 준비 중입니다.
+                          결제창 연결 안내
                         </p>
                         <p className="mt-2 text-sm leading-6 text-neutral-600">
-                          심사 및 결제 승인 연동 후 전체 리포트 구매가 가능합니다.
+                          결제 환경 확인 후 1,290원 결제창으로 이동합니다.
                         </p>
                       </div>
                     )
                   ) : (
                     <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
                       <p className="text-sm font-semibold text-neutral-900">
-                        {selectedProduct.nameKo} 생성 준비 흐름입니다.
+                        {selectedProduct.nameKo} 생성 흐름입니다.
                       </p>
                       <p className="mt-2 text-sm leading-6 text-neutral-600">
-                        입력값과 선택한 리포트 정보를 유지합니다. 정식 결제와
-                        유료 생성은 별도 연결 단계에서 활성화합니다.
+                        입력값과 선택한 리포트 정보를 기준으로 온라인 리포트를
+                        생성합니다.
                       </p>
                     </div>
                   )}
@@ -3262,25 +3137,25 @@ export default function NewReportPage({
                 }
               >
                 <dt className="text-neutral-500">
-                  {isSelectedProductPurchasable ? "정가" : "상태"}
+                  {isSelectedProductPurchasable ? "판매가" : "상태"}
                 </dt>
                 <dd
                   className={
                     isSelectedProductPurchasable
-                      ? "mt-1 font-semibold text-neutral-400 line-through"
+                      ? "mt-1 font-semibold text-neutral-100"
                       : "mt-1 font-semibold text-neutral-100"
                   }
                 >
                   {isSelectedProductPurchasable
-                    ? selectedProduct.listPriceKo
+                    ? selectedProduct.priceKo
                     : selectedProduct.statusLabelKo}
                 </dd>
               </div>
               {isSelectedProductPurchasable ? (
-                <div className="rounded-lg border border-rose-900/50 bg-rose-950/20 p-4">
-                  <dt className="text-rose-100/80">런칭가</dt>
-                  <dd className="mt-1 text-2xl font-extrabold text-rose-100">
-                    {selectedProduct.priceKo}
+                <div className="rounded-lg border border-neutral-800 bg-neutral-950/70 p-4">
+                  <dt className="text-neutral-500">열람 기간</dt>
+                  <dd className="mt-1 font-semibold text-neutral-100">
+                    생성일로부터 90일
                   </dd>
                 </div>
               ) : null}

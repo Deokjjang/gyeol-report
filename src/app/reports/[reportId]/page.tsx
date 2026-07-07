@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+import GyeolBrandHeader from "../../../components/brand/GyeolBrandHeader";
+import ReportShareActions from "../../../components/report/ReportShareActions";
 import {
   LoveMarriageChildReportManseRyeokTable,
   LoveMarriageChildReportMbtiProfileTable,
@@ -274,9 +276,9 @@ function ResultShell({
   readonly children: ReactNode;
 }) {
   return (
-    <main className="min-h-screen bg-neutral-950 px-5 py-10 text-neutral-50 sm:px-8">
+    <main className="min-h-screen bg-[#f6f0e7] px-5 py-10 text-[#2b211b] sm:px-8">
       <section className="mx-auto flex min-h-[70vh] max-w-3xl flex-col justify-center gap-6">
-        <p className="text-sm font-medium text-neutral-500">결리포트</p>
+        <GyeolBrandHeader />
         {children}
       </section>
     </main>
@@ -286,11 +288,11 @@ function ResultShell({
 function renderInvalidState() {
   return (
     <ResultShell>
-      <div className="space-y-4 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
-        <h1 className="text-3xl font-bold tracking-tight text-neutral-50">
+      <div className="space-y-4 rounded-xl border border-[#d8d1c4] bg-[#fffdf8] p-6 shadow-[0_22px_80px_rgba(40,24,28,0.10)]">
+        <h1 className="text-3xl font-bold tracking-tight text-[#211815]">
           리포트 정보가 올바르지 않습니다.
         </h1>
-        <p className="text-base leading-7 text-neutral-400">
+        <p className="text-base leading-7 text-[#6f675d]">
           리포트 주소를 다시 확인해 주세요.
         </p>
       </div>
@@ -301,11 +303,11 @@ function renderInvalidState() {
 function renderUnavailableState() {
   return (
     <ResultShell>
-      <div className="space-y-4 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
-        <h1 className="text-3xl font-bold tracking-tight text-neutral-50">
+      <div className="space-y-4 rounded-xl border border-[#d8d1c4] bg-[#fffdf8] p-6 shadow-[0_22px_80px_rgba(40,24,28,0.10)]">
+        <h1 className="text-3xl font-bold tracking-tight text-[#211815]">
           리포트를 찾을 수 없습니다.
         </h1>
-        <p className="text-base leading-7 text-neutral-400">
+        <p className="text-base leading-7 text-[#6f675d]">
           결제가 완료된 리포트만 조회할 수 있습니다.
         </p>
       </div>
@@ -316,11 +318,11 @@ function renderUnavailableState() {
 function renderInvalidSnapshotState() {
   return (
     <ResultShell>
-      <div className="space-y-4 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
-        <h1 className="text-3xl font-bold tracking-tight text-neutral-50">
+      <div className="space-y-4 rounded-xl border border-[#d8d1c4] bg-[#fffdf8] p-6 shadow-[0_22px_80px_rgba(40,24,28,0.10)]">
+        <h1 className="text-3xl font-bold tracking-tight text-[#211815]">
           리포트를 불러오지 못했습니다.
         </h1>
-        <p className="text-base leading-7 text-neutral-400">
+        <p className="text-base leading-7 text-[#6f675d]">
           저장된 리포트 형식을 확인할 수 없습니다.
         </p>
       </div>
@@ -331,12 +333,12 @@ function renderInvalidSnapshotState() {
 function renderUnsupportedProductPreviewState() {
   return (
     <ResultShell>
-      <div className="space-y-4 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
-        <h1 className="text-3xl font-bold tracking-tight text-neutral-50">
-          상품 미리보기 준비 중입니다.
+      <div className="space-y-4 rounded-xl border border-[#d8d1c4] bg-[#fffdf8] p-6 shadow-[0_22px_80px_rgba(40,24,28,0.10)]">
+        <h1 className="text-3xl font-bold tracking-tight text-[#211815]">
+          리포트 화면을 열 수 없습니다.
         </h1>
-        <p className="text-base leading-7 text-neutral-400">
-          이 상품의 결과 화면 연결은 아직 준비 중입니다.
+        <p className="text-base leading-7 text-[#6f675d]">
+          이 리포트 형식은 현재 화면에서 지원하지 않습니다.
         </p>
       </div>
     </ResultShell>
@@ -690,27 +692,15 @@ function renderProductPreviewState(productPreview: ProductPreviewSnapshot) {
 function renderProductPreviewReentryCta(productSlug: string) {
   return (
     <section className="bg-[#f6f0e7] px-5 py-10 text-[#2b211b] sm:px-8">
-      <div className="mx-auto flex max-w-5xl flex-col gap-4 rounded-lg border border-[#d7b56d] bg-[#fffdf8] p-5 shadow-sm shadow-[#6f1d35]/10 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto grid max-w-5xl gap-5 rounded-lg border border-[#d7b56d] bg-[#fffdf8] p-5 shadow-sm shadow-[#6f1d35]/10">
         <div className="space-y-1">
           <p className="text-sm font-bold text-[#6f1d35]">결리포트</p>
           <p className="text-base font-semibold">
-            내 정보로도 리포트를 만들어 볼 수 있습니다.
+            이 리포트가 필요했던 사람에게 공유하거나, 내 정보로 다시
+            생성해 볼 수 있습니다.
           </p>
         </div>
-        <div className="flex flex-wrap gap-3">
-          <a
-            href={`/report/new?product=${productSlug}`}
-            className="rounded-lg border border-[#6f1d35] bg-[#6f1d35] px-4 py-3 text-sm font-bold text-[#fffdf8] transition hover:bg-[#7f2440]"
-          >
-            나도 내 리포트 보기
-          </a>
-          <a
-            href="/report/new"
-            className="rounded-lg border border-[#d7b56d] bg-[#fffaf1] px-4 py-3 text-sm font-bold text-[#8b6d2d] transition hover:bg-[#fff4dc]"
-          >
-            내 사주×MBTI 리포트 만들기
-          </a>
-        </div>
+        <ReportShareActions productSlug={productSlug} />
       </div>
     </section>
   );
