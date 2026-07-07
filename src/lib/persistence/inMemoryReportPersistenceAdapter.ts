@@ -132,6 +132,19 @@ export function createInMemoryReportPersistenceAdapter(
         };
       }
 
+      if (
+        record.expiresAt !== undefined &&
+        Date.parse(record.expiresAt) <= Date.now()
+      ) {
+        return {
+          ok: false,
+          error: {
+            code: "REPORT_EXPIRED",
+            messageKo: "열람 기간이 만료된 리포트입니다.",
+          },
+        };
+      }
+
       if (input.accessMode === "paid" && record.accessMode !== "paid") {
         return {
           ok: false,

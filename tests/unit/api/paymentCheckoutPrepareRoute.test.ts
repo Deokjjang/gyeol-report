@@ -1,15 +1,8 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 
 import { POST } from "../../../src/app/api/payment-checkout/prepare/route";
-import { createReadyPaymentOrder } from "../../../src/lib/payment/supabaseReadyPaymentOrderAdapter";
-import type { ReadyPaymentOrderAdapterResult } from "../../../src/lib/payment/supabaseReadyPaymentOrderAdapter";
-import type { PaymentProviderId } from "../../../src/lib/payment/paymentProviderTypes";
-
-vi.mock("../../../src/lib/payment/supabaseReadyPaymentOrderAdapter", () => ({
-  createReadyPaymentOrder: vi.fn(),
-}));
 
 const routeSource = readFileSync(
   join(process.cwd(), "src/app/api/payment-checkout/prepare/route.ts"),
@@ -32,8 +25,6 @@ const inputSnapshot = {
   },
 } as const;
 
-const mockCreateReadyPaymentOrder = vi.mocked(createReadyPaymentOrder);
-
 function restoreOptionalEnv(name: string, value: string | undefined): void {
   if (value === undefined) {
     delete process.env[name];
@@ -51,25 +42,6 @@ function createJsonRequest(body: unknown): Request {
     },
     body: JSON.stringify(body),
   });
-}
-
-function createReadyResult(
-  provider: PaymentProviderId,
-): ReadyPaymentOrderAdapterResult {
-  return {
-    ok: true,
-    order: {
-      paymentOrderId: `payment_order_checkout_${provider}`,
-      productType: "saju_mbti_full",
-      provider,
-      amount: 1290,
-      currency: "KRW",
-      status: "ready",
-      providerOrderId: `provider_order_checkout_${provider}`,
-      createdAt: "2026-01-01T00:00:00.000Z",
-      updatedAt: "2026-01-01T00:00:01.000Z",
-    },
-  };
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -93,12 +65,16 @@ function expectErrorBody(body: Record<string, unknown>, code: string): void {
   if (isRecord(body.error)) {
     expect(body.error.code).toBe(code);
     expect(typeof body.error.message).toBe("string");
+    expect(JSON.stringify(body)).not.toContain(
+      "PAYMENT_CHECKOUT_PREPARE_CREATE_FAILED",
+    );
+    expect(body.error.message).not.toContain("Checkout could not be prepared");
+    expect(body.error.message).not.toContain("Toss checkout request configuration");
   }
 }
 
 describe("payment checkout prepare route", () => {
   beforeEach(() => {
-    mockCreateReadyPaymentOrder.mockReset();
     process.env.SUPABASE_URL = "https://example.supabase.co";
     process.env.SUPABASE_ANON_KEY = "test-anon-key";
     process.env.NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY = "test_toss_client_key";
@@ -116,8 +92,6 @@ describe("payment checkout prepare route", () => {
   });
 
   it("prepares Toss checkout draft with fixed amount and route success fail URLs", async () => {
-    mockCreateReadyPaymentOrder.mockResolvedValue(createReadyResult("toss"));
-
     const response = await POST(
       createJsonRequest({
         provider: "toss",
@@ -147,7 +121,7 @@ describe("payment checkout prepare route", () => {
       clientKey: "test_toss_client_key",
       requestPayment: {
         method: "CARD",
-        orderId: "provider_order_checkout_toss",
+        orderId: expect.stringMatching(/^provider_order_/),
         orderName: "사주×MBTI 종합 리포트",
         successUrl: "http://localhost:3000/payments/toss/success",
         failUrl: "http://localhost:3000/payments/toss/fail",
@@ -158,22 +132,15 @@ describe("payment checkout prepare route", () => {
         },
       },
       metadata: {
-        paymentOrderId: "payment_order_checkout_toss",
+        paymentOrderId: expect.stringMatching(/^payment_order_/),
         productType: "saju_mbti_full",
       },
     });
-    expect(mockCreateReadyPaymentOrder).toHaveBeenCalledWith(
-      expect.objectContaining({
-        productType: "saju_mbti_full",
-        provider: "toss",
-        inputSnapshot,
-      }),
-    );
+    expect(JSON.stringify(body)).not.toContain("test_toss_secret_key");
   });
 
   it("returns safe config error when Toss env is missing", async () => {
     delete process.env.NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY;
-    mockCreateReadyPaymentOrder.mockResolvedValue(createReadyResult("toss"));
 
     const response = await POST(
       createJsonRequest({
@@ -185,13 +152,14 @@ describe("payment checkout prepare route", () => {
     const body = await readJsonObject(response);
 
     expect(response.status).toBe(500);
-    expectErrorBody(body, "PAYMENT_TOSS_CHECKOUT_CONFIG_MISSING");
+    expectErrorBody(body, "PAYMENT_CHECKOUT_UNAVAILABLE");
+    expect(JSON.stringify(body)).toContain(
+      "결제창을 시작하지 못했습니다. 잠시 후 다시 시도해 주세요.",
+    );
     expect(JSON.stringify(body)).not.toContain("test_toss_secret_key");
   });
 
   it("keeps non-Toss providers out of Toss request drafting", async () => {
-    mockCreateReadyPaymentOrder.mockResolvedValue(createReadyResult("kakao_pay"));
-
     const response = await POST(
       createJsonRequest({
         provider: "kakao_pay",
@@ -229,23 +197,25 @@ describe("payment checkout prepare route", () => {
     expect(nonObjectResponse.status).toBe(400);
     expectErrorBody(
       await readJsonObject(missingResponse),
-      "PAYMENT_CHECKOUT_PREPARE_INVALID_REQUEST",
+      "PAYMENT_CHECKOUT_INVALID_REQUEST",
     );
     expectErrorBody(
       await readJsonObject(nonObjectResponse),
-      "PAYMENT_CHECKOUT_PREPARE_INVALID_REQUEST",
+      "PAYMENT_CHECKOUT_INVALID_REQUEST",
     );
-    expect(mockCreateReadyPaymentOrder).not.toHaveBeenCalled();
   });
 
   it("source stays scoped to checkout preparation only", () => {
     const requiredMarkers = [
       "NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY",
       "TOSS_PAYMENTS_SECRET_KEY",
-      "PAYMENT_TOSS_CHECKOUT_CONFIG_MISSING",
+      "PAYMENT_CHECKOUT_UNAVAILABLE",
+      "결제창을 시작하지 못했습니다. 잠시 후 다시 시도해 주세요.",
       "preparePaymentCheckoutSession",
       "prepareTossCheckoutRequest",
-      "createReadyPaymentOrder",
+      "createPaymentOrderDraft",
+      "createPaymentOrderPersistenceRuntime",
+      "createReadyPaymentOrderRecord",
       "/payments/toss/success",
       "/payments/toss/fail",
       "tossCheckoutRequest",
@@ -256,12 +226,16 @@ describe("payment checkout prepare route", () => {
       "/v1/" + "payments/confirm",
       "fetch" + "(",
       "payment" + "Key",
-      "provider" + "Payment" + "Id",
       "share" + "Token",
       "access" + "TokenHash",
       "report" + "_snapshot",
       "persistPaidFullReport",
       "issueReport" + "Share" + "Token",
+      "createSupabaseReadyPaymentOrderClient",
+      "supabaseReadyPaymentOrderAdapter",
+      "PAYMENT_CHECKOUT_PREPARE_CREATE_FAILED",
+      "Checkout could not be prepared",
+      "Toss checkout request configuration is missing",
     ];
 
     for (const marker of requiredMarkers) {

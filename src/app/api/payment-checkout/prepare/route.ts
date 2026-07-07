@@ -4,25 +4,37 @@ import { NextResponse } from "next/server";
 
 import type { PaymentCheckoutSessionDraft } from "../../../../lib/payment/paymentCheckoutSessionTypes";
 import { preparePaymentCheckoutSession } from "../../../../lib/payment/paymentCheckoutSessionBoundary";
+import { createPaymentOrderDraft } from "../../../../lib/payment/paymentOrderBoundary";
+import type { PaymentOrderRecord } from "../../../../lib/payment/paymentOrderPersistenceTypes";
+import { createPaymentOrderPersistenceRuntime } from "../../../../lib/payment/paymentOrderRuntime";
 import type { TossCheckoutRequestDraft } from "../../../../lib/payment/tossCheckoutRequestTypes";
 import { prepareTossCheckoutRequest } from "../../../../lib/payment/tossCheckoutRequestAdapter";
-import type { ReadyPaymentOrderView } from "../../../../lib/payment/supabaseReadyPaymentOrderAdapter";
-import { createReadyPaymentOrder } from "../../../../lib/payment/supabaseReadyPaymentOrderAdapter";
-import { createSupabaseReadyPaymentOrderClient } from "../../../../lib/payment/supabaseReadyPaymentOrderClient";
+
+type ReadyPaymentOrderView = {
+  readonly paymentOrderId: PaymentOrderRecord["paymentOrderId"];
+  readonly productType: PaymentOrderRecord["productType"];
+  readonly provider: PaymentOrderRecord["provider"];
+  readonly amount: PaymentOrderRecord["amount"];
+  readonly currency: PaymentOrderRecord["currency"];
+  readonly status: "ready";
+  readonly providerOrderId: PaymentOrderRecord["providerOrderId"];
+  readonly createdAt: PaymentOrderRecord["createdAt"];
+  readonly updatedAt: PaymentOrderRecord["updatedAt"];
+};
 
 type CheckoutPrepareRouteErrorCode =
-  | "PAYMENT_CHECKOUT_PREPARE_INVALID_REQUEST"
-  | "PAYMENT_CHECKOUT_PREPARE_CREATE_FAILED"
-  | "PAYMENT_TOSS_CHECKOUT_CONFIG_MISSING";
+  | "PAYMENT_CHECKOUT_INVALID_REQUEST"
+  | "PAYMENT_CHECKOUT_UNAVAILABLE";
 
 const tossClientKeyEnv = "NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY";
 const tossSecretKeyEnv = "TOSS_PAYMENTS_SECRET_KEY";
 const tossAllowLocalhostRedirectsEnv = "TOSS_ALLOW_LOCALHOST_REDIRECTS";
 const defaultProductType = "saju_mbti_full";
-const invalidRequestMessage = "Checkout prepare request is invalid.";
-const createFailedMessage = "Checkout could not be prepared.";
+const invalidRequestMessage = "결제 요청 정보가 올바르지 않습니다.";
+const createFailedMessage =
+  "결제창을 시작하지 못했습니다. 잠시 후 다시 시도해 주세요.";
 const tossCheckoutConfigMissingMessage =
-  "Toss checkout request configuration is missing.";
+  "결제창을 시작하지 못했습니다. 잠시 후 다시 시도해 주세요.";
 const jsonResponseHeaders = {
   "content-type": "application/json; charset=utf-8",
 } as const;
@@ -66,6 +78,68 @@ function isClientInputError(code: string): boolean {
 
 function createProviderOrderId(): string {
   return `provider_order_${randomUUID()}`;
+}
+
+function mapRecordToReadyOrderView(record: PaymentOrderRecord): ReadyPaymentOrderView {
+  return {
+    paymentOrderId: record.paymentOrderId,
+    productType: record.productType,
+    provider: record.provider,
+    amount: record.amount,
+    currency: record.currency,
+    status: "ready",
+    providerOrderId: record.providerOrderId,
+    createdAt: record.createdAt,
+    updatedAt: record.updatedAt,
+  };
+}
+
+function createReadyPaymentOrderRecord(input: {
+  readonly productType: unknown;
+  readonly provider: unknown;
+  readonly inputSnapshot: unknown;
+  readonly providerOrderId: string;
+}):
+  | {
+      readonly ok: true;
+      readonly record: PaymentOrderRecord;
+    }
+  | {
+      readonly ok: false;
+      readonly code: string;
+    } {
+  const draftResult = createPaymentOrderDraft({
+    productType: input.productType,
+    provider: input.provider,
+    inputSnapshot: input.inputSnapshot,
+  });
+
+  if (!draftResult.ok) {
+    return {
+      ok: false,
+      code: draftResult.error.code,
+    };
+  }
+
+  const createdAt = draftResult.order.createdAt;
+
+  return {
+    ok: true,
+    record: {
+      ...draftResult.order,
+      providerPaymentId: null,
+      providerOrderId: input.providerOrderId,
+      reportId: null,
+      reportGenerationStatus: "not_started",
+      updatedAt: createdAt,
+      requestedAt: createdAt,
+      paidAt: null,
+      failedAt: null,
+      canceledAt: null,
+      refundedAt: null,
+      deletedAt: null,
+    },
+  };
 }
 
 function mapReadyOrderForResponse(order: ReadyPaymentOrderView): ReadyPaymentOrderView {
@@ -185,7 +259,7 @@ function createOptionalTossCheckoutRequest(
     return {
       ok: false,
       response: createErrorResponse(
-        "PAYMENT_TOSS_CHECKOUT_CONFIG_MISSING",
+        "PAYMENT_CHECKOUT_UNAVAILABLE",
         tossCheckoutConfigMissingMessage,
         500,
       ),
@@ -205,7 +279,7 @@ function createOptionalTossCheckoutRequest(
     return {
       ok: false,
       response: createErrorResponse(
-        "PAYMENT_TOSS_CHECKOUT_CONFIG_MISSING",
+        "PAYMENT_CHECKOUT_UNAVAILABLE",
         tossCheckoutConfigMissingMessage,
         500,
       ),
@@ -225,7 +299,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     json = await request.json();
   } catch {
     return createErrorResponse(
-      "PAYMENT_CHECKOUT_PREPARE_INVALID_REQUEST",
+      "PAYMENT_CHECKOUT_INVALID_REQUEST",
       invalidRequestMessage,
       400,
     );
@@ -233,7 +307,7 @@ export async function POST(request: Request): Promise<NextResponse> {
 
   if (!isJsonObject(json)) {
     return createErrorResponse(
-      "PAYMENT_CHECKOUT_PREPARE_INVALID_REQUEST",
+      "PAYMENT_CHECKOUT_INVALID_REQUEST",
       invalidRequestMessage,
       400,
     );
@@ -241,7 +315,7 @@ export async function POST(request: Request): Promise<NextResponse> {
 
   if (typeof json.provider !== "string") {
     return createErrorResponse(
-      "PAYMENT_CHECKOUT_PREPARE_INVALID_REQUEST",
+      "PAYMENT_CHECKOUT_INVALID_REQUEST",
       invalidRequestMessage,
       400,
     );
@@ -249,41 +323,50 @@ export async function POST(request: Request): Promise<NextResponse> {
 
   if (!isJsonObject(json.inputSnapshot)) {
     return createErrorResponse(
-      "PAYMENT_CHECKOUT_PREPARE_INVALID_REQUEST",
+      "PAYMENT_CHECKOUT_INVALID_REQUEST",
       invalidRequestMessage,
       400,
     );
   }
 
-  const client = createSupabaseReadyPaymentOrderClient({
-    supabaseUrl: process.env.SUPABASE_URL,
-    supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
-  });
-  const readyOrderResult = await createReadyPaymentOrder({
+  const readyOrderRecordResult = createReadyPaymentOrderRecord({
     productType: json.productType ?? defaultProductType,
     provider: json.provider,
     inputSnapshot: json.inputSnapshot,
     providerOrderId: createProviderOrderId(),
-    client,
   });
 
-  if (!readyOrderResult.ok) {
-    const isInvalidRequest = isClientInputError(readyOrderResult.error.code);
+  if (!readyOrderRecordResult.ok) {
+    const isInvalidRequest = isClientInputError(readyOrderRecordResult.code);
 
     return createErrorResponse(
       isInvalidRequest
-        ? "PAYMENT_CHECKOUT_PREPARE_INVALID_REQUEST"
-        : "PAYMENT_CHECKOUT_PREPARE_CREATE_FAILED",
+        ? "PAYMENT_CHECKOUT_INVALID_REQUEST"
+        : "PAYMENT_CHECKOUT_UNAVAILABLE",
       isInvalidRequest ? invalidRequestMessage : createFailedMessage,
       isInvalidRequest ? 400 : 500,
     );
   }
 
-  const checkoutResult = preparePaymentCheckoutSession(readyOrderResult.order);
+  const orderRuntime = createPaymentOrderPersistenceRuntime();
+  const createOrderResult = await orderRuntime.create(
+    readyOrderRecordResult.record,
+  );
+
+  if (!createOrderResult.ok) {
+    return createErrorResponse(
+      "PAYMENT_CHECKOUT_UNAVAILABLE",
+      createFailedMessage,
+      500,
+    );
+  }
+
+  const readyOrder = mapRecordToReadyOrderView(createOrderResult.value);
+  const checkoutResult = preparePaymentCheckoutSession(readyOrder);
 
   if (!checkoutResult.ok) {
     return createErrorResponse(
-      "PAYMENT_CHECKOUT_PREPARE_CREATE_FAILED",
+      "PAYMENT_CHECKOUT_UNAVAILABLE",
       createFailedMessage,
       500,
     );
@@ -300,7 +383,7 @@ export async function POST(request: Request): Promise<NextResponse> {
 
   return NextResponse.json(
     createSuccessBody(
-      readyOrderResult.order,
+      readyOrder,
       checkoutResult.session,
       tossCheckoutRequestResult.draft,
     ),

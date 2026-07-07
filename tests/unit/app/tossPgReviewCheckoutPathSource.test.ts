@@ -89,8 +89,11 @@ describe("Toss PG review checkout path source", () => {
   it("keeps success and result pages ready for capture", () => {
     expect(successPageSource).toContain("결제 정보 확인 완료");
     expect(successPageSource).toContain(
-      "리포트 생성과 최종 승인 처리는 다음 단계에서 연결됩니다.",
+      "결제 승인과 리포트 생성 처리는 서버 설정이 켜진 뒤 진행됩니다.",
     );
+    expect(successPageSource).toContain("결제 승인 처리 중");
+    expect(successPageSource).toContain("confirmTossPayment");
+    expect(successPageSource).toContain("fulfillPaidProductReport");
     expect(successPageSource).toContain("다른 리포트 보기");
     expect(successPageSource).toContain("/report/new");
     expect(successPageSource).not.toContain("/api/payments/toss/confirm");

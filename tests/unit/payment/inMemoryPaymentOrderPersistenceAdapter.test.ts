@@ -15,6 +15,7 @@ const failedAt = "2026-01-04T00:00:00.000Z";
 const canceledAt = "2026-01-05T00:00:00.000Z";
 const refundedAt = "2026-01-06T00:00:00.000Z";
 const deletedAt = "2026-01-07T00:00:00.000Z";
+const reportExpiresAt = "2026-04-03T00:00:00.000Z";
 
 const inputSnapshot = {
   displayName: "PAYMENT_ORDER_ADAPTER_TEST",
@@ -107,6 +108,26 @@ describe("in-memory payment order persistence adapter", () => {
 
     await expect(
       adapter.findByPaymentOrderId("payment_order_missing"),
+    ).resolves.toBeNull();
+  });
+
+  it("finds an order by provider order id", async () => {
+    const adapter = createInMemoryPaymentOrderPersistenceAdapter([
+      createOrder({
+        providerOrderId: "provider_order_lookup_test",
+      }),
+    ]);
+
+    const foundOrder = await adapter.findByProviderOrderId(
+      "provider_order_lookup_test",
+    );
+
+    expect(foundOrder).toMatchObject({
+      paymentOrderId: "payment_order_adapter_test_1",
+      providerOrderId: "provider_order_lookup_test",
+    });
+    await expect(
+      adapter.findByProviderOrderId("provider_order_missing"),
     ).resolves.toBeNull();
   });
 
@@ -210,12 +231,49 @@ describe("in-memory payment order persistence adapter", () => {
       await adapter.attachReport({
         paymentOrderId: "payment_order_adapter_test_1",
         reportId: "report_paid_1",
+        reportExpiresAt,
         updatedAt,
       }),
     );
 
     expect(linkedOrder.reportId).toBe("report_paid_1");
+    expect(linkedOrder.reportGenerationStatus).toBe("completed");
+    expect(linkedOrder.reportExpiresAt).toBe(reportExpiresAt);
     expect(linkedOrder.updatedAt).toBe(updatedAt);
+  });
+
+  it("records report generation failure after payment", async () => {
+    const adapter = createInMemoryPaymentOrderPersistenceAdapter([
+      createOrder(),
+    ]);
+
+    expectOk(
+      await adapter.markPaid({
+        paymentOrderId: "payment_order_adapter_test_1",
+        providerPaymentId: "provider_payment_test_1",
+        paidAt,
+        updatedAt,
+      }),
+    );
+
+    const failedGenerationOrder = expectOk(
+      await adapter.markReportGenerationFailed({
+        paymentOrderId: "payment_order_adapter_test_1",
+        code: "REPORT_GENERATION_FAILED",
+        messageKo: "리포트 생성 실패",
+        failedAt,
+        updatedAt,
+      }),
+    );
+
+    expect(failedGenerationOrder.status).toBe("paid");
+    expect(failedGenerationOrder.reportGenerationStatus).toBe("failed");
+    expect(failedGenerationOrder.reportGenerationError).toEqual({
+      code: "REPORT_GENERATION_FAILED",
+      messageKo: "리포트 생성 실패",
+      failedAt,
+    });
+    expect(failedGenerationOrder.updatedAt).toBe(updatedAt);
   });
 
   it("does not create a paid order directly", async () => {

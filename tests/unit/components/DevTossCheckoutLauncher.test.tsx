@@ -303,10 +303,9 @@ describe("DevTossCheckoutLauncher", () => {
       throw new Error("expected input validation failure");
     }
 
-    expect(result.detail).toEqual({
-      stage: "input_validation",
-      errorCode: "REPORT_INPUT_REQUIRED",
-      errorMessage: "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.",
+    expect(result).toEqual({
+      ok: false,
+      messageKo: "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.",
     });
     expect(harness.fetchCalls).toHaveLength(0);
     expect(harness.launchInputs).toHaveLength(0);
@@ -342,10 +341,9 @@ describe("DevTossCheckoutLauncher", () => {
       throw new Error("expected legal confirmation failure");
     }
 
-    expect(result.detail).toEqual({
-      stage: "input_validation",
-      errorCode: "REPORT_LEGAL_CONFIRMATION_REQUIRED",
-      errorMessage: "결제 전 필수 확인 항목에 모두 동의해 주세요.",
+    expect(result).toEqual({
+      ok: false,
+      messageKo: "결제 전 필수 확인 항목에 모두 동의해 주세요.",
     });
     expect(harness.fetchCalls).toHaveLength(0);
     expect(harness.launchInputs).toHaveLength(0);
@@ -442,7 +440,7 @@ describe("DevTossCheckoutLauncher", () => {
     expect(harness.launchInputs).toHaveLength(0);
   });
 
-  it("shows safe prepare API error code and message", async () => {
+  it("returns only safe user copy when prepare API fails", async () => {
     const launcherModule = await importLauncherModule();
     const hiddenClientKey = "test" + "_ck_" + "abcdefghijklmnopqrstuvwxyz";
     const hiddenSecretKey = "test" + "_sk_" + "abcdefghijklmnopqrstuvwxyz";
@@ -469,13 +467,46 @@ describe("DevTossCheckoutLauncher", () => {
       throw new Error("expected prepare failure");
     }
 
-    expect(result.detail).toEqual({
-      stage: "prepare_api",
-      errorCode: "PAYMENT_TOSS_CHECKOUT_CONFIG_MISSING",
-      errorMessage: "Toss config failed for [masked_key] and [masked_key]",
+    expect(result).toEqual({
+      ok: false,
+      messageKo: "결제창을 시작하지 못했습니다. 잠시 후 다시 시도해 주세요.",
     });
     expect(JSON.stringify(result)).not.toContain(hiddenClientKey);
     expect(JSON.stringify(result)).not.toContain(hiddenSecretKey);
+    expect(JSON.stringify(result)).not.toContain("PAYMENT_TOSS_CHECKOUT_CONFIG_MISSING");
+    expect(JSON.stringify(result)).not.toContain("prepare_api");
+  });
+
+  it("keeps internal checkout error detail out of rendered user copy", () => {
+    const forbiddenVisibleDetailMarkers = [
+      ">stage<",
+      "prepare_api",
+      "오류 코드",
+      "오류 메시지",
+      "PAYMENT_CHECKOUT_PREPARE_CREATE_FAILED",
+      "Checkout could not be prepared",
+    ];
+
+    expect(componentSource).toContain(
+      "결제창을 시작하지 못했습니다. 잠시 후 다시 시도해 주세요.",
+    );
+
+    for (const marker of forbiddenVisibleDetailMarkers) {
+      expect(componentSource).not.toContain(marker);
+    }
+  });
+
+  it("allows retry after prepare failure without keeping stale UI state", () => {
+    const retryMarkers = [
+      "if (isLaunching || !canLaunchCheckout)",
+      "setErrorMessage(\"\")",
+      "setStatusMessage(\"\")",
+      "setIsLaunching(false)",
+    ];
+
+    for (const marker of retryMarkers) {
+      expect(componentSource).toContain(marker);
+    }
   });
 
   it("launches through the injected Toss checkout boundary", async () => {
@@ -514,13 +545,6 @@ describe("DevTossCheckoutLauncher", () => {
       "launchTossCheckout",
       "loadTossPaymentsBrowserSdk",
       "gyeol_local_test_customer",
-      "UNKNOWN_TOSS_CHECKOUT_ERROR",
-      "prepare_api",
-      "sdk_load",
-      "request_payment",
-      "[masked_key]",
-      "REPORT_LEGAL_CONFIRMATION_REQUIRED",
-      "REPORT_USER_UNDER_14",
     ];
     const riskCopyMarkers = [
       "진단",

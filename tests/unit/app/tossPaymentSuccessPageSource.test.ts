@@ -8,11 +8,22 @@ const source = readFileSync(
 );
 
 describe("Toss payment success page source", () => {
-  it("receives Toss return params without running confirm or report generation", () => {
+  it("confirms paid orders server-side before report generation", () => {
     const requiredMarkers = [
-      "TOSS_CONFIRM_DEFERRED_UNTIL_REPORT_FULFILLMENT",
+      "TOSS_CONFIRM_API_ENABLED",
+      "TOSS_PAYMENTS_SECRET_KEY",
+      "confirmTossPayment",
+      "fulfillPaidProductReport",
+      "createPaymentOrderPersistenceRuntime",
+      "createReportPersistenceRuntime",
+      "resolveReportWriterRuntime",
+      "markReportGenerationFailed",
+      "reportExpiresAt",
+      "redirect(`/reports/${finalState.redirectReportId}`)",
       "결제 정보 확인 완료",
-      "리포트 생성과 최종 승인 처리는 다음 단계에서 연결됩니다.",
+      "결제 승인 처리 중",
+      "결제 승인 확인 후 리포트를 생성하고 있습니다.",
+      "결제는 완료되었고 리포트 생성 처리 중 문제가 발생했습니다.",
       "결제 정보가 부족합니다.",
       "결제 금액이 올바르지 않습니다.",
       "다른 리포트 보기",
@@ -25,16 +36,9 @@ describe("Toss payment success page source", () => {
       "/api/reports/create",
       "fetch(",
       "dangerouslySetInnerHTML",
-      "/v1/" + "payments/confirm",
-      "TOSS" + "_SECRET" + "_KEY",
       "NEXT" + "_PUBLIC" + "_TOSS" + "_SECRET" + "_KEY",
-      "create" + "Report",
-      "generate" + "Report",
-      "fulfillment",
-      "reportId",
       "share" + "Token",
       "access" + "TokenHash",
-      "provider" + "PaymentId",
       "input" + "Snapshot",
       "report" + "_snapshot",
       "service" + "_role",

@@ -63,6 +63,20 @@ describe("new report page source", () => {
     }
   });
 
+  it("does not expose internal checkout error detail markers in user page source", () => {
+    const forbiddenMarkers = [
+      "prepare_api",
+      "오류 코드",
+      "오류 메시지",
+      "PAYMENT_CHECKOUT_PREPARE_CREATE_FAILED",
+      "Checkout could not be prepared",
+    ];
+
+    for (const marker of forbiddenMarkers) {
+      expect(pageSource).not.toContain(marker);
+    }
+  });
+
   it("keeps career money study product selection as a paid product input branch", () => {
     const requiredMarkers = [
       "CAREER_MONEY_STUDY_PRODUCT_KEY",

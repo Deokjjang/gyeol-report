@@ -86,6 +86,9 @@ type PageState =
       readonly kind: "unavailable";
     }
   | {
+      readonly kind: "expired";
+    }
+  | {
       readonly kind: "unsupportedProductPreview";
     }
   | {
@@ -151,6 +154,10 @@ async function loadProductPreviewPageState(
   const previewResult = await runtime.adapter.find({ reportId });
 
   if (!previewResult.ok) {
+    if (previewResult.error.code === "REPORT_EXPIRED") {
+      return { kind: "expired" };
+    }
+
     return null;
   }
 
@@ -309,6 +316,22 @@ function renderUnavailableState() {
         </h1>
         <p className="text-base leading-7 text-[#6f675d]">
           결제가 완료된 리포트만 조회할 수 있습니다.
+        </p>
+      </div>
+    </ResultShell>
+  );
+}
+
+function renderExpiredState() {
+  return (
+    <ResultShell>
+      <div className="space-y-4 rounded-xl border border-[#d8d1c4] bg-[#fffdf8] p-6 shadow-[0_22px_80px_rgba(40,24,28,0.10)]">
+        <h1 className="text-3xl font-bold tracking-tight text-[#211815]">
+          리포트 열람 기간이 만료되었습니다.
+        </h1>
+        <p className="text-base leading-7 text-[#6f675d]">
+          생성일로부터 90일이 지나면 리포트와 입력 정보는 순차적으로 삭제될 수
+          있습니다.
         </p>
       </div>
     </ResultShell>
@@ -1510,6 +1533,10 @@ export default async function ReportResultPage({
 
   if (state.kind === "unavailable") {
     return renderUnavailableState();
+  }
+
+  if (state.kind === "expired") {
+    return renderExpiredState();
   }
 
   if (state.kind === "invalidSnapshot") {

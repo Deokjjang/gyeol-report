@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 
 import TossPaymentSuccessPage from "../../../src/app/payments/toss/success/page";
 
@@ -22,8 +22,30 @@ async function renderSuccessPage(query: {
   return renderToStaticMarkup(element);
 }
 
-describe("Toss payment success deferred page", () => {
-  it("renders received state without exposing full payment key", async () => {
+const originalConfirmEnabled = process.env.TOSS_CONFIRM_API_ENABLED;
+const originalSecretKey = process.env.TOSS_PAYMENTS_SECRET_KEY;
+
+function restoreOptionalEnv(name: string, value: string | undefined): void {
+  if (value === undefined) {
+    delete process.env[name];
+    return;
+  }
+
+  process.env[name] = value;
+}
+
+describe("Toss payment success page", () => {
+  beforeEach(() => {
+    delete process.env.TOSS_CONFIRM_API_ENABLED;
+    delete process.env.TOSS_PAYMENTS_SECRET_KEY;
+  });
+
+  afterEach(() => {
+    restoreOptionalEnv("TOSS_CONFIRM_API_ENABLED", originalConfirmEnabled);
+    restoreOptionalEnv("TOSS_PAYMENTS_SECRET_KEY", originalSecretKey);
+  });
+
+  it("renders server-disabled received state without exposing full payment key", async () => {
     const fullPaymentKey = "pay_full_payment_key_value_must_not_render";
     const html = await renderSuccessPage({
       paymentKey: fullPaymentKey,
@@ -32,14 +54,15 @@ describe("Toss payment success deferred page", () => {
     });
 
     expect(html).toContain("결제 정보 확인 완료");
-    expect(html).toContain("리포트 생성과 최종 승인 처리는 다음 단계에서 연결됩니다.");
+    expect(html).toContain(
+      "결제 승인과 리포트 생성 처리는 서버 설정이 켜진 뒤 진행됩니다.",
+    );
     expect(html).toContain("provider_order_toss_success_test");
     expect(html).toContain("1,290원");
-    expect(html).toContain("confirm deferred");
-    expect(html).toContain("결제 승인 확인 후 리포트 생성 연결 예정");
+    expect(html).toContain("confirm_disabled");
     expect(html).toContain("다른 리포트 보기");
     expect(html).not.toContain(fullPaymentKey);
-    expect(html).not.toContain("/api/payments/toss/confirm");
+    expect(html).not.toContain("test_toss_secret_key");
   });
 
   it("shows missing state when payment params are incomplete", async () => {
@@ -64,26 +87,42 @@ describe("Toss payment success deferred page", () => {
     expect(html).toContain("990");
   });
 
-  it("keeps confirm and report generation calls out of the success page", () => {
+  it("keeps confirm and report generation server-side only", () => {
+    const requiredMarkers = [
+      "TOSS_CONFIRM_API_ENABLED",
+      "TOSS_PAYMENTS_SECRET_KEY",
+      "confirmTossPayment",
+      "fulfillPaidProductReport",
+      "createPaymentOrderPersistenceRuntime",
+      "createReportPersistenceRuntime",
+      "resolveReportWriterRuntime",
+      "reportExpiresAt",
+      "requiredPaymentAmount = 1290",
+      "redirect(`/reports/${finalState.redirectReportId}`)",
+      paidGenerationFailureMessageSourceMarker(),
+    ];
     const blockedMarkers = [
       "/api/payments/toss/confirm",
       "/api/reports/create",
       "fetch(",
       "dangerouslySetInnerHTML",
       "payment" + "KeyReceived",
-      "fulfillment",
       "reportSnapshot",
       "share" + "Token",
       "access" + "TokenHash",
+      "NEXT" + "_PUBLIC" + "_TOSS" + "_SECRET" + "_KEY",
     ];
+
+    for (const marker of requiredMarkers) {
+      expect(successPageSource).toContain(marker);
+    }
 
     for (const marker of blockedMarkers) {
       expect(successPageSource).not.toContain(marker);
     }
-
-    expect(successPageSource).toContain(
-      "TOSS_CONFIRM_DEFERRED_UNTIL_REPORT_FULFILLMENT",
-    );
-    expect(successPageSource).toContain("requiredPaymentAmount = 1290");
   });
 });
+
+function paidGenerationFailureMessageSourceMarker(): string {
+  return "결제는 완료되었고 리포트 생성 처리 중 문제가 발생했습니다.";
+}

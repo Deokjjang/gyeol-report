@@ -73,6 +73,7 @@ export type PersistedReportRecord = {
   accessTokenVersion: string;
   inputSnapshot: PersistedReportInputSnapshot;
   reportSnapshot: PersistedReportSnapshot;
+  expiresAt?: string;
   payment?: PersistedPaymentLinkage;
   deletedAt?: string;
 };
@@ -101,6 +102,7 @@ export type PublicReportPreviewRecord =
 export type PublicReportErrorCode =
   | "REPORT_NOT_FOUND"
   | "REPORT_DELETED"
+  | "REPORT_EXPIRED"
   | "REPORT_ACCESS_DENIED"
   | "REPORT_STORAGE_ERROR";
 

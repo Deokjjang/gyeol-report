@@ -14,7 +14,12 @@ export type UpdatePersistedReportInput = {
   patch: Partial<
     Pick<
       PersistedReportRecord,
-      "updatedAt" | "status" | "accessMode" | "payment" | "deletedAt"
+      | "updatedAt"
+      | "status"
+      | "accessMode"
+      | "payment"
+      | "expiresAt"
+      | "deletedAt"
     >
   >;
 };

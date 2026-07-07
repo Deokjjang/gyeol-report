@@ -4,6 +4,7 @@ import type {
   MarkPaymentOrderCanceledInput,
   MarkPaymentOrderFailedInput,
   MarkPaymentOrderPaidInput,
+  MarkPaymentOrderReportGenerationFailedInput,
   MarkPaymentOrderRefundedInput,
   PaymentOrderPersistenceAdapter,
   PaymentOrderPersistenceErrorCode,
@@ -57,6 +58,18 @@ export function createInMemoryPaymentOrderPersistenceAdapter(
       const order = orders.get(paymentOrderId);
 
       return order === undefined ? null : copyPaymentOrderRecord(order);
+    },
+
+    async findByProviderOrderId(
+      providerOrderId: string,
+    ): Promise<PaymentOrderRecord | null> {
+      for (const order of orders.values()) {
+        if (order.providerOrderId === providerOrderId) {
+          return copyPaymentOrderRecord(order);
+        }
+      }
+
+      return null;
     },
 
     async markPaid(
@@ -158,7 +171,37 @@ export function createInMemoryPaymentOrderPersistenceAdapter(
         return success({
           ...order,
           reportId: input.reportId,
+          reportGenerationStatus: "completed",
+          ...(input.reportExpiresAt === undefined
+            ? {}
+            : { reportExpiresAt: input.reportExpiresAt }),
           updatedAt: input.updatedAt ?? nowIso(),
+        });
+      });
+    },
+
+    async markReportGenerationFailed(
+      input: MarkPaymentOrderReportGenerationFailedInput,
+    ): Promise<PaymentOrderPersistenceResult<PaymentOrderRecord>> {
+      return updateOrder(input.paymentOrderId, (order) => {
+        const transitionFailure = assertTransitionAllowed(order, ["paid"]);
+
+        if (transitionFailure !== null) {
+          return transitionFailure;
+        }
+
+        const updatedAt = input.updatedAt ?? nowIso();
+        const failedAt = input.failedAt ?? updatedAt;
+
+        return success({
+          ...order,
+          reportGenerationStatus: "failed",
+          reportGenerationError: {
+            code: input.code,
+            messageKo: input.messageKo,
+            failedAt,
+          },
+          updatedAt,
         });
       });
     },

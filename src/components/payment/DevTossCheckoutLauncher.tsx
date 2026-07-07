@@ -7,15 +7,11 @@ import { prePaymentRefundNoticeKo } from "../../lib/legal/refundPolicy";
 import type { ReportProductType } from "../../lib/payment/reportProductTypes";
 import { loadTossPaymentsBrowserSdk } from "../../lib/payment/tossBrowserSdkLoader";
 import { launchTossCheckout } from "../../lib/payment/tossClientCheckoutLauncher";
-import type {
-  TossClientCheckoutLaunchResult,
-  TossClientSdk,
-  TossClientSdkLoader,
-} from "../../lib/payment/tossClientCheckoutTypes";
+import type { TossClientCheckoutLaunchResult, TossClientSdkLoader } from "../../lib/payment/tossClientCheckoutTypes";
 
 const DEV_TOSS_CHECKOUT_CUSTOMER_KEY = "gyeol_local_test_customer";
 const DEV_TOSS_CHECKOUT_ERROR_MESSAGE =
-  "결제창을 시작하지 못했습니다. 환경값을 확인한 뒤 다시 시도해 주세요.";
+  "결제창을 시작하지 못했습니다. 잠시 후 다시 시도해 주세요.";
 const REQUIRED_CHECKOUT_INPUT_MESSAGE_KO =
   "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.";
 const REQUIRED_CONFIRMATION_MESSAGE_KO =
@@ -84,19 +80,6 @@ export type DevTossCheckoutAgeGateStatus =
   | "under_14"
   | "invalid_birthdate";
 
-type DevTossCheckoutErrorStage =
-  | "input_validation"
-  | "prepare_api"
-  | "sdk_load"
-  | "request_payment"
-  | "unknown";
-
-type DevTossCheckoutErrorDetail = {
-  readonly stage: DevTossCheckoutErrorStage;
-  readonly errorCode: string;
-  readonly errorMessage: string;
-};
-
 export type DevTossCheckoutLauncherResult =
   | {
       readonly ok: true;
@@ -105,82 +88,18 @@ export type DevTossCheckoutLauncherResult =
   | {
       readonly ok: false;
       readonly messageKo: string;
-      readonly detail: DevTossCheckoutErrorDetail;
     };
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-function readStringField(value: unknown, field: string): string | undefined {
-  if (!isRecord(value)) {
-    return undefined;
-  }
-
-  const fieldValue = value[field];
-
-  return typeof fieldValue === "string" ? fieldValue : undefined;
-}
-
-function sanitizeDevErrorText(value: string): string {
-  const restrictedMarkers = [
-    "TOSS" + "_SECRET" + "_KEY",
-    "NEXT" + "_PUBLIC" + "_TOSS" + "_SECRET" + "_KEY",
-    "payment" + "Key",
-    "provider" + "PaymentId",
-    "provider" + "_payment" + "_id",
-    "access" + "TokenHash",
-    "share" + "Token",
-    "report" + "_snapshot",
-    "SUPABASE" + "_URL",
-    "SUPABASE" + "_ANON" + "_KEY",
-  ];
-
-  let sanitized = value
-    .replace(/\b(?:test|live)_(?:ck|sk)_[A-Za-z0-9_-]+/g, "[masked_key]")
-    .replace(/\b[A-Za-z0-9_-]{25,}\b/g, (token) =>
-      /^[A-Z0-9_]+$/.test(token) ? token : "[masked_token]",
-    )
-    .slice(0, 240);
-
-  for (const marker of restrictedMarkers) {
-    sanitized = sanitized.split(marker).join("[masked]");
-  }
-
-  return sanitized.trim() || "No safe error message was provided.";
-}
-
-function extractSafeErrorDetail(
-  stage: DevTossCheckoutErrorStage,
-  error: unknown,
-): DevTossCheckoutErrorDetail {
-  const rawCode =
-    readStringField(error, "code") ??
-    readStringField(error, "errorCode") ??
-    "UNKNOWN_TOSS_CHECKOUT_ERROR";
-  const rawMessage =
-    readStringField(error, "message") ??
-    readStringField(error, "messageKo") ??
-    (typeof error === "string" ? error : "No safe error message was provided.");
-
-  return {
-    stage,
-    errorCode:
-      sanitizeDevErrorText(rawCode) || "UNKNOWN_TOSS_CHECKOUT_ERROR",
-    errorMessage: sanitizeDevErrorText(rawMessage),
-  };
-}
-
 function createFailureResult(
-  detail: DevTossCheckoutErrorDetail = extractSafeErrorDetail(
-    "unknown",
-    undefined,
-  ),
+  messageKo = DEV_TOSS_CHECKOUT_ERROR_MESSAGE,
 ): DevTossCheckoutLauncherResult {
   return {
     ok: false,
-    messageKo: DEV_TOSS_CHECKOUT_ERROR_MESSAGE,
-    detail,
+    messageKo,
   };
 }
 
@@ -201,20 +120,6 @@ export const confirmedAdultDevTossCheckoutLegalConfirmations = {
   age14OrOlder: true,
   minorLegalRepresentative: false,
 } as const satisfies DevTossCheckoutLegalConfirmations;
-
-function getLaunchFailureStage(
-  result: Extract<TossClientCheckoutLaunchResult, { ok: false }>,
-): DevTossCheckoutErrorStage {
-  if (result.error.code === "TOSS_CLIENT_CHECKOUT_SDK_LOAD_FAILED") {
-    return "sdk_load";
-  }
-
-  if (result.error.code === "TOSS_CLIENT_CHECKOUT_REQUEST_FAILED") {
-    return "request_payment";
-  }
-
-  return "unknown";
-}
 
 export function isDevTossCheckoutInputComplete(
   inputSnapshot: DevTossCheckoutInputSnapshot,
@@ -327,39 +232,6 @@ export function isDevTossCheckoutLegalConfirmationComplete(
     : true;
 }
 
-function createDetailCapturingLoader(
-  sdkLoader: TossClientSdkLoader,
-  captureDetail: (detail: DevTossCheckoutErrorDetail) => void,
-): TossClientSdkLoader {
-  return async (clientKey) => {
-    let sdk: TossClientSdk;
-
-    try {
-      sdk = await sdkLoader(clientKey);
-    } catch (error) {
-      captureDetail(extractSafeErrorDetail("sdk_load", error));
-      throw error;
-    }
-
-    return {
-      payment(params) {
-        const paymentWindow = sdk.payment(params);
-
-        return {
-          async requestPayment(paymentRequest) {
-            try {
-              await paymentWindow.requestPayment(paymentRequest);
-            } catch (error) {
-              captureDetail(extractSafeErrorDetail("request_payment", error));
-              throw error;
-            }
-          },
-        };
-      },
-    };
-  };
-}
-
 const defaultRuntime = {
   fetch: (input, init) => fetch(input, init),
   launchTossCheckout,
@@ -373,21 +245,13 @@ export async function runDevTossCheckout(
   options: DevTossCheckoutRunOptions = {},
 ): Promise<DevTossCheckoutLauncherResult> {
   if (!isDevTossCheckoutInputComplete(inputSnapshot)) {
-    return createFailureResult({
-      stage: "input_validation",
-      errorCode: "REPORT_INPUT_REQUIRED",
-      errorMessage: REQUIRED_CHECKOUT_INPUT_MESSAGE_KO,
-    });
+    return createFailureResult(REQUIRED_CHECKOUT_INPUT_MESSAGE_KO);
   }
 
   if (
     getDevTossCheckoutAgeGateStatus(inputSnapshot.birthDate) === "under_14"
   ) {
-    return createFailureResult({
-      stage: "input_validation",
-      errorCode: "REPORT_USER_UNDER_14",
-      errorMessage: UNDER_14_BLOCK_MESSAGE_KO,
-    });
+    return createFailureResult(UNDER_14_BLOCK_MESSAGE_KO);
   }
 
   if (
@@ -396,11 +260,7 @@ export async function runDevTossCheckout(
       legalConfirmations,
     )
   ) {
-    return createFailureResult({
-      stage: "input_validation",
-      errorCode: "REPORT_LEGAL_CONFIRMATION_REQUIRED",
-      errorMessage: REQUIRED_CONFIRMATION_MESSAGE_KO,
-    });
+    return createFailureResult(REQUIRED_CONFIRMATION_MESSAGE_KO);
   }
 
   let response: DevTossCheckoutFetchResponse;
@@ -417,16 +277,16 @@ export async function runDevTossCheckout(
         inputSnapshot,
       }),
     });
-  } catch (error) {
-    return createFailureResult(extractSafeErrorDetail("prepare_api", error));
+  } catch {
+    return createFailureResult();
   }
 
   let body: unknown;
 
   try {
     body = await response.json();
-  } catch (error) {
-    return createFailureResult(extractSafeErrorDetail("prepare_api", error));
+  } catch {
+    return createFailureResult();
   }
 
   if (
@@ -435,21 +295,9 @@ export async function runDevTossCheckout(
     body.ok !== true ||
     !isRecord(body.tossCheckoutRequest)
   ) {
-    const responseError =
-      isRecord(body) && isRecord(body.error) ? body.error : undefined;
-
-    return createFailureResult(
-      extractSafeErrorDetail("prepare_api", responseError),
-    );
+    return createFailureResult();
   }
 
-  let capturedDetail: DevTossCheckoutErrorDetail | null = null;
-  const loadTossPayments = createDetailCapturingLoader(
-    runtime.loadTossPayments,
-    (detail) => {
-      capturedDetail = detail;
-    },
-  );
   let launchResult: TossClientCheckoutLaunchResult;
 
   try {
@@ -457,17 +305,14 @@ export async function runDevTossCheckout(
       tossCheckoutRequest: body.tossCheckoutRequest,
       // TODO: production customerKey must be stable and non-guessable.
       customerKey: DEV_TOSS_CHECKOUT_CUSTOMER_KEY,
-      loadTossPayments,
+      loadTossPayments: runtime.loadTossPayments,
     });
-  } catch (error) {
-    return createFailureResult(extractSafeErrorDetail("unknown", error));
+  } catch {
+    return createFailureResult();
   }
 
   if (!launchResult.ok) {
-    return createFailureResult(
-      capturedDetail ??
-        extractSafeErrorDetail(getLaunchFailureStage(launchResult), launchResult.error),
-    );
+    return createFailureResult();
   }
 
   return {
@@ -491,8 +336,6 @@ export default function DevTossCheckoutLauncher({
       emptyDevTossCheckoutLegalConfirmations,
     );
   const [errorMessage, setErrorMessage] = useState("");
-  const [errorDetail, setErrorDetail] =
-    useState<DevTossCheckoutErrorDetail | null>(null);
   const [statusMessage, setStatusMessage] = useState("");
 
   const isInputComplete = isDevTossCheckoutInputComplete(inputSnapshot);
@@ -524,7 +367,6 @@ export default function DevTossCheckoutLauncher({
 
     setIsLaunching(true);
     setErrorMessage("");
-    setErrorDetail(null);
     setStatusMessage("");
 
     const result = await runDevTossCheckout(
@@ -536,7 +378,6 @@ export default function DevTossCheckoutLauncher({
 
     if (!result.ok) {
       setErrorMessage(result.messageKo);
-      setErrorDetail(result.detail);
       setIsLaunching(false);
       return;
     }
@@ -736,28 +577,8 @@ export default function DevTossCheckoutLauncher({
           : ctaLabelKo}
       </button>
       {errorMessage ? (
-        <div className="space-y-3 rounded-lg border border-red-900/60 bg-red-950/30 p-3 text-sm leading-6 text-red-100">
+        <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm font-semibold leading-6 text-red-800">
           <p>{errorMessage}</p>
-          {errorDetail ? (
-            <dl className="grid gap-2 rounded-lg border border-red-900/50 bg-neutral-950/60 p-3">
-              <div className="grid gap-1 sm:grid-cols-[7rem_1fr]">
-                <dt className="font-medium text-red-200/80">stage</dt>
-                <dd className="break-words text-red-50">{errorDetail.stage}</dd>
-              </div>
-              <div className="grid gap-1 sm:grid-cols-[7rem_1fr]">
-                <dt className="font-medium text-red-200/80">오류 코드</dt>
-                <dd className="break-words text-red-50">
-                  {errorDetail.errorCode}
-                </dd>
-              </div>
-              <div className="grid gap-1 sm:grid-cols-[7rem_1fr]">
-                <dt className="font-medium text-red-200/80">오류 메시지</dt>
-                <dd className="break-words text-red-50">
-                  {errorDetail.errorMessage}
-                </dd>
-              </div>
-            </dl>
-          ) : null}
         </div>
       ) : null}
       {statusMessage ? (
