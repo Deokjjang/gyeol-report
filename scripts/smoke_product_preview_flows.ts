@@ -12,7 +12,8 @@ type SmokeCase = {
     | "love_marriage_child"
     | "saju_mbti_compatibility"
     | "major_fortune"
-    | "annual_fortune";
+    | "annual_fortune"
+    | "saju_mbti_full";
   readonly payload: ReportInputPayload;
   readonly assertExtra?: (body: ProductPreviewSuccessBody) => void;
 };
@@ -65,6 +66,16 @@ const partnerPerson: ReportPersonInputPayload = {
   mbtiType: "INTP",
 };
 
+const comprehensiveV2Person: ReportPersonInputPayload = {
+  name: "덕민",
+  birthDate: "1996-12-06",
+  birthTime: "09:30",
+  birthTimeUnknown: false,
+  approximateBirthTimeSlot: "",
+  gender: "MALE",
+  mbtiType: "ENTJ",
+};
+
 const singlePersonUserContext = {
   relationshipStatus: "single",
   jobStatus: "employee",
@@ -79,14 +90,16 @@ function createSingleProductPayload(
       | "career-money-study"
       | "love-marriage-child"
       | "major-fortune"
-      | "annual-fortune";
+      | "annual-fortune"
+      | "saju-mbti-full";
     readonly selectedYear?: string;
+    readonly person?: ReportPersonInputPayload;
   },
 ): ReportInputPayload {
   return {
     productKey: input.expectedProductType,
     productSlug: input.productSlug,
-    person: basePerson,
+    person: input.person ?? basePerson,
     userContext: singlePersonUserContext,
     productOptions:
       input.selectedYear === undefined
@@ -151,6 +164,22 @@ const smokeCases: readonly SmokeCase[] = [
       );
     },
   },
+  {
+    label: "saju-mbti-full",
+    expectedProductType: "saju_mbti_full",
+    payload: createSingleProductPayload({
+      expectedProductType: "saju_mbti_full",
+      productSlug: "saju-mbti-full",
+      person: comprehensiveV2Person,
+    }),
+    assertExtra: (body) => {
+      assertEqual(
+        body.productPreview.draft.version,
+        "comprehensive_v2_draft",
+        "draft version",
+      );
+    },
+  },
   ...compatibilityRelationshipTypes.map((relationshipType): SmokeCase => ({
     label: `compatibility:${relationshipType}`,
     expectedProductType: "saju_mbti_compatibility",
@@ -170,6 +199,8 @@ const smokeCases: readonly SmokeCase[] = [
   })),
 ];
 
+const expectedSmokeCaseCount = 12;
+
 function createJsonRequest(body: unknown): Request {
   return new Request("http://localhost/api/reports/create", {
     method: "POST",
@@ -188,7 +219,7 @@ function assertEqual(actual: unknown, expected: unknown, label: string): void {
 
 function assertProductPreviewBody(
   body: unknown,
-  expectedProductType: SmokeCase["expectedProductType"],
+  smokeCase: SmokeCase,
 ): asserts body is ProductPreviewSuccessBody {
   if (typeof body !== "object" || body === null) {
     throw new Error("response body is not an object");
@@ -208,8 +239,9 @@ function assertProductPreviewBody(
     throw new Error("productPreview is missing");
   }
 
-  assertEqual(productPreview.productType, expectedProductType, "productType");
-  assertEqual(productPreview.productKey, expectedProductType, "productKey");
+  assertEqual(productPreview.productType, smokeCase.expectedProductType, "productType");
+  assertEqual(productPreview.productKey, smokeCase.expectedProductType, "productKey");
+  assertEqual(productPreview.productSlug, smokeCase.payload.productSlug, "productSlug");
 
   if (
     typeof productPreview.draft !== "object" ||
@@ -220,7 +252,7 @@ function assertProductPreviewBody(
 
   assertEqual(
     productPreview.draft.productType,
-    expectedProductType,
+    smokeCase.expectedProductType,
     "draft productType",
   );
 }
@@ -233,7 +265,7 @@ async function runSmokeCase(smokeCase: SmokeCase): Promise<void> {
     throw new Error(`status ${response.status}: ${JSON.stringify(body)}`);
   }
 
-  assertProductPreviewBody(body, smokeCase.expectedProductType);
+  assertProductPreviewBody(body, smokeCase);
   smokeCase.assertExtra?.(body);
 
   process.stdout.write(
@@ -242,6 +274,14 @@ async function runSmokeCase(smokeCase: SmokeCase): Promise<void> {
 }
 
 async function main(): Promise<void> {
+  if (smokeCases.length !== expectedSmokeCaseCount) {
+    process.exitCode = 1;
+    process.stderr.write(
+      `FAIL product preview flow smoke case count expected ${expectedSmokeCaseCount}, received ${smokeCases.length}\n`,
+    );
+    return;
+  }
+
   let failures = 0;
 
   for (const smokeCase of smokeCases) {

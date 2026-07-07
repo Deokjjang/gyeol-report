@@ -18,11 +18,15 @@ describe("product preview flow smoke source", () => {
       "major_fortune",
       "annual-fortune",
       "annual_fortune",
+      "saju-mbti-full",
+      "saju_mbti_full",
+      "comprehensive_v2_draft",
       "saju_mbti_compatibility",
       "compatibility:",
       "POST(createJsonRequest",
       "snapshotKind",
       "product_preview",
+      "productSlug",
       "draft productType",
       "reportId",
     ];
@@ -54,6 +58,11 @@ describe("product preview flow smoke source", () => {
     expect(scriptSource).toContain('selectedYear: "2026"');
     expect(scriptSource).toContain("draft targetYear");
     expect(scriptSource).toContain("evidence selectedYear");
+  });
+
+  it("expects twelve preview smoke cases after adding comprehensive V2", () => {
+    expect(scriptSource).toContain("const expectedSmokeCaseCount = 12");
+    expect(scriptSource).toContain("product preview flow smoke case count");
   });
 
   it("keeps the smoke script away from paid or external writer imports", () => {
