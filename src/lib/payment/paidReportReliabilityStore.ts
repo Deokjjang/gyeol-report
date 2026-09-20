@@ -7,9 +7,14 @@ export type ReliabilityResult = { ok: boolean; code?: string; [key: string]: unk
 export type ReliabilityStore = { call(action: string, data?: Record<string, unknown>): Promise<ReliabilityResult> };
 
 export function createPaidReportReliabilityStore(env = process.env): ReliabilityStore {
-  const url = env.SUPABASE_URL ?? env.NEXT_PUBLIC_SUPABASE_URL;
+  const productionEnabled = env.NODE_ENV !== "production" || env.PAID_REPORT_RELIABILITY_ENABLED === "1";
+  const url = env.NODE_ENV === "production"
+    ? env.SUPABASE_URL
+    : env.SUPABASE_URL ?? env.NEXT_PUBLIC_SUPABASE_URL;
   const key = env.SUPABASE_SERVICE_ROLE_KEY;
-  const client = url && key ? createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } }) : null;
+  const client = productionEnabled && url && key
+    ? createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } })
+    : null;
   return {
     async call(action, data = {}) {
       if (!client) return { ok: false, code: "DURABLE_STORAGE_UNAVAILABLE" };
