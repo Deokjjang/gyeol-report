@@ -8,11 +8,13 @@ const pageSource = readFileSync(
 );
 
 describe("comprehensive report preview page source", () => {
-  it("reads the deterministic comprehensive v2 smoke snapshot", () => {
+  it("generates a gated deterministic snapshot through the shared pipeline", () => {
     expect(pageSource).toContain(
-      ".tmp/comprehensive-report-preview/deokmin-external-manse.latest.json",
+      "shared product generation pipeline",
     );
     expect(pageSource).toContain("readComprehensivePreviewSnapshot");
+    expect(pageSource).toContain("generateProductReport");
+    expect(pageSource).toContain("evidencePacket={snapshot.evidencePacket}");
     expect(pageSource).toContain("getPreviewDisplayName");
     expect(pageSource).toContain("ComprehensiveReportV2View");
     expect(pageSource).toContain("draft={snapshot.draft}");
@@ -24,7 +26,7 @@ describe("comprehensive report preview page source", () => {
   it("renders a short missing snapshot guide", () => {
     expect(pageSource).toContain("renderMissingSnapshot");
     expect(pageSource).toContain(
-      "pnpm dlx tsx scripts/smoke_generate_comprehensive_report_draft.ts --fixture deokmin --write-preview",
+      "pnpm test -- tests/unit/payment/paidReportReliability.test.ts",
     );
   });
 

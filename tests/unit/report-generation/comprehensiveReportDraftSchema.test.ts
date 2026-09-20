@@ -116,6 +116,7 @@ describe("comprehensive report draft JSON schema", () => {
       "openingSummary",
       "coreLine",
       "chapters",
+      "longformReadings",
       "finalAdvice",
       "safetyNotes",
     ]);
@@ -126,6 +127,7 @@ describe("comprehensive report draft JSON schema", () => {
       "openingSummary",
       "coreLine",
       "chapters",
+      "longformReadings",
       "finalAdvice",
       "safetyNotes",
     ]);

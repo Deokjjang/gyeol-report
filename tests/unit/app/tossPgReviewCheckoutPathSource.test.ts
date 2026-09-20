@@ -93,7 +93,7 @@ describe("Toss PG review checkout path source", () => {
     );
     expect(successPageSource).toContain("결제 승인 처리 중");
     expect(successPageSource).toContain("confirmTossPayment");
-    expect(successPageSource).toContain("fulfillPaidProductReport");
+    expect(successPageSource).toContain("confirmPaidReport");
     expect(successPageSource).toContain("다른 리포트 보기");
     expect(successPageSource).toContain("/report/new");
     expect(successPageSource).not.toContain("/api/payments/toss/confirm");

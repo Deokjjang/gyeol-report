@@ -232,6 +232,7 @@ export async function confirmTossPayment(
       headers: {
         authorization: createAuthorizationHeader(input.secretKey),
         "content-type": "application/json",
+        "Idempotency-Key": `confirm-${input.orderId}`,
       },
       body: JSON.stringify({
         paymentKey: input.paymentKey,

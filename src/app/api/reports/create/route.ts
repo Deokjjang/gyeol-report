@@ -1,3 +1,4 @@
+import { generateProductReport } from "../../../../lib/report-generation/generateProductReport";
 import { NextResponse } from "next/server";
 
 import { createReportApiEnvelopeFromJson } from "../../../../lib/api/createReport";
@@ -11,10 +12,7 @@ import {
   type ProductPreviewSnapshotDraft,
   type ReportProductSlug,
 } from "../../../../lib/report-generation/productPreviewSnapshot";
-import {
-  createProductGenerationDispatcherOptionsFromWriterRuntime,
-  prepareProductGenerationFromPayload,
-} from "../../../../lib/report-generation/productGenerationDispatcher";
+
 import { buildReportPersistencePayload } from "../../../../lib/report/reportPersistencePayload";
 import type { ReportOutput } from "../../../../lib/report/types";
 import { resolveReportWriterRuntime } from "../../../../lib/report-generation/reportWriterRuntime";
@@ -200,14 +198,8 @@ function createProductPreviewPersistenceInput(
 async function createProductPreviewResponse(
   json: Record<string, unknown>,
 ): Promise<NextResponse> {
-  const generationOptions =
-    createProductGenerationDispatcherOptionsFromWriterRuntime(
-      resolveReportWriterRuntime(),
-    );
-  const generationResult = await prepareProductGenerationFromPayload(
-    json,
-    generationOptions,
-  );
+  const writer = resolveReportWriterRuntime();
+  const generationResult = await generateProductReport(json, writer, writer.enabled ? "normal_writer" : "deterministic_fallback");
 
   if (!generationResult.ok) {
     const code = generationResult.error.code;
@@ -223,14 +215,14 @@ async function createProductPreviewResponse(
     if (code === "INVALID_REPORT_INPUT") {
       return createProductPreviewFailureResponse(
         code,
-        generationResult.error.message,
+        "리포트를 준비하지 못했습니다. 입력 정보를 확인해 주세요.",
         400,
       );
     }
 
     return createProductPreviewFailureResponse(
       "PRODUCT_GENERATION_FAILED",
-      generationResult.error.message,
+      "리포트를 준비하지 못했습니다. 잠시 후 다시 시도해 주세요.",
       500,
     );
   }

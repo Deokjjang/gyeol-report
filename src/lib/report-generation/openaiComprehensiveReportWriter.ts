@@ -645,6 +645,54 @@ function getFinalMessageNormalizerWarnings(
     : [];
 }
 
+export function normalizeSajuFeatureChapter(
+  chapter: ComprehensiveReportV2SajuFeatureChapter,
+): ComprehensiveReportV2SajuFeatureChapter {
+  return {
+    ...chapter,
+    items: chapter.items.map((item) => {
+      const clarifier = getRawLabelClarifier(item.rawLabel);
+
+      if (clarifier.length === 0) {
+        return item;
+      }
+
+      return {
+        ...item,
+        plainMeaning: appendSentence(item.plainMeaning, clarifier),
+        howItShowsInYou: appendSentence(item.howItShowsInYou, clarifier),
+      };
+    }),
+  };
+}
+
+function getRawLabelClarifier(rawLabel: string): string {
+  if (rawLabel.includes("양인")) {
+    return "양인살은 강한 추진력, 정면 돌파, 고집, 승부 감각이 함께 올라오는 표식입니다.";
+  }
+  if (rawLabel.includes("현침")) {
+    return "현침살은 말, 판단, 분석이 날카롭게 들어가 정밀하게 핵심을 보는 표식입니다.";
+  }
+  if (rawLabel.includes("천을")) {
+    return "천을귀인은 도움의 통로와 위기 완충, 필요한 기회를 요청하는 감각으로 읽습니다.";
+  }
+  if (rawLabel.includes("화개")) {
+    return "화개는 혼자 깊게 정리하고 사색하며 표현의 깊이를 만드는 표식입니다.";
+  }
+  if (rawLabel.includes("망신")) {
+    return "망신살은 말과 행동이 밖으로 드러나는 장면에서 표현의 선을 신경 쓰게 하는 표식입니다.";
+  }
+  if (rawLabel.includes("백호")) {
+    return "백호대살은 긴장 속 대응력과 강한 돌파력이 같이 살아나는 표식입니다.";
+  }
+
+  return "";
+}
+
+function appendSentence(text: string, sentence: string): string {
+  return text.includes(sentence) ? text : `${text} ${sentence}`;
+}
+
 export function buildDeterministicSajuFeatureChapter(
   evidencePacket: ComprehensiveReportEvidencePacket,
 ): ComprehensiveReportV2SajuFeatureChapter | undefined {
@@ -666,7 +714,7 @@ export function buildDeterministicSajuFeatureChapter(
     return undefined;
   }
 
-  return {
+  return normalizeSajuFeatureChapter({
     titleKo: "명리 특징 해석",
     subtitleKo:
       "공통 만세력표는 근거표로 유지하고, 이 챕터는 신살·귀인·합충·지장간을 현실 언어로 풀어보는 해석입니다.",
@@ -681,7 +729,7 @@ export function buildDeterministicSajuFeatureChapter(
       fatiguePoint: entry.fatiguePoint,
       practicalUse: entry.practicalUse,
     })),
-  };
+  });
 }
 
 function attachDeterministicProfileTable(input: {
@@ -1911,7 +1959,7 @@ export async function generateComprehensiveReportDraft(input: {
   });
 
   if (!validation.ok || validation.value === undefined) {
-    if (!areAllDraftValidationErrorsRepairable(validation.errors)) {
+    if (input.config.allowRepair === false || !areAllDraftValidationErrorsRepairable(validation.errors)) {
       throw new SafeReportGenerationFailure({
         code: "OPENAI_REPORT_WRITER_INVALID_JSON",
         stage: "draft_validation",

@@ -58,6 +58,7 @@ export type ProductGenerationInvalidInputResult = {
   readonly error: {
     readonly code: "INVALID_REPORT_INPUT";
     readonly message: string;
+    readonly validationErrors?: readonly string[];
   };
 };
 
@@ -72,6 +73,7 @@ export type ProductGenerationHandler = (
 ) => Promise<ProductGenerationResult>;
 
 export type ProductGenerationDispatcherOptions = {
+  readonly automaticFallback?: boolean;
   readonly careerMoneyStudy?: CareerMoneyStudyGenerationHandlerOptions;
   readonly compatibility?: CompatibilityGenerationHandlerOptions;
   readonly loveMarriageChild?: LoveMarriageChildGenerationHandlerOptions;
@@ -124,7 +126,7 @@ export function dispatchProductGenerationInput(
   const handler = getProductGenerationHandler(input.kind);
 
   return handler(input, options).then((result) => {
-    if (result.ok || !isWriterEnabledForKind(input.kind, options)) {
+    if (result.ok || options.automaticFallback === false || !isWriterEnabledForKind(input.kind, options)) {
       return result;
     }
 

@@ -1,3 +1,4 @@
+import { createDurablePaymentOrderAdapter } from "./paidReportReliabilityStore";
 import { createInMemoryPaymentOrderPersistenceAdapter } from "./inMemoryPaymentOrderPersistenceAdapter";
 import type { PaymentOrderPersistenceAdapter } from "./paymentOrderPersistenceTypes";
 
@@ -15,6 +16,7 @@ let paymentOrderPersistenceAdapter:
   | undefined;
 
 export function createPaymentOrderPersistenceRuntime(): PaymentOrderPersistenceAdapter {
+  if (process.env.NODE_ENV !== "test") return createDurablePaymentOrderAdapter();
   const sharedGlobal = globalThis as PaymentOrderPersistenceGlobal;
 
   sharedGlobal[PAYMENT_ORDER_PERSISTENCE_ADAPTER_GLOBAL_KEY] ??=

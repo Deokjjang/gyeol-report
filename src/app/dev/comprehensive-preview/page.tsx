@@ -1,5 +1,4 @@
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
+import { generateProductReport } from "../../../lib/report-generation/generateProductReport";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 
@@ -8,17 +7,13 @@ import { ComprehensiveReportV2View } from "../../reports/[reportId]/Comprehensiv
 
 export const dynamic = "force-dynamic";
 
-const comprehensivePreviewSnapshotRelativePath =
-  ".tmp/comprehensive-report-preview/deokmin-external-manse.latest.json";
-const comprehensivePreviewSnapshotPath = join(
-  process.cwd(),
-  comprehensivePreviewSnapshotRelativePath,
-);
+const comprehensivePreviewSnapshotRelativePath = "shared product generation pipeline";
 
 type ComprehensivePreviewSnapshot = {
   readonly fixtureId?: string;
   readonly generatedAt?: string;
   readonly draft: ComprehensiveReportV2Draft;
+  readonly evidencePacket: unknown;
 };
 
 function isPreviewEnabled(): boolean {
@@ -28,53 +23,13 @@ function isPreviewEnabled(): boolean {
   );
 }
 
-function isObjectRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === "object" && value !== null && !Array.isArray(value);
-}
-
-function isComprehensiveV2Draft(value: unknown): value is ComprehensiveReportV2Draft {
-  return (
-    isObjectRecord(value) &&
-    value.version === "comprehensive_v2_draft" &&
-    value.productType === "saju_mbti_full" &&
-    isObjectRecord(value.profileTable) &&
-    Array.isArray(value.chapters)
-  );
-}
-
-async function readComprehensivePreviewSnapshot(): Promise<
-  ComprehensivePreviewSnapshot | null
-> {
-  try {
-    const text = await readFile(comprehensivePreviewSnapshotPath, "utf8");
-    const parsed = JSON.parse(text) as unknown;
-
-    if (!isObjectRecord(parsed) || !isComprehensiveV2Draft(parsed.draft)) {
-      return null;
-    }
-
-    return {
-      fixtureId:
-        typeof parsed.fixtureId === "string" ? parsed.fixtureId : undefined,
-      generatedAt:
-        typeof parsed.generatedAt === "string" ? parsed.generatedAt : undefined,
-      draft: parsed.draft,
-    };
-  } catch (error) {
-    if (isMissingFileError(error)) {
-      return null;
-    }
-
-    throw error;
-  }
-}
-
-function isMissingFileError(error: unknown): boolean {
-  return (
-    isObjectRecord(error) &&
-    "code" in error &&
-    (error as { readonly code?: unknown }).code === "ENOENT"
-  );
+async function readComprehensivePreviewSnapshot(): Promise<ComprehensivePreviewSnapshot | null> {
+  const result = await generateProductReport({
+    productKey: "saju_mbti_full", productSlug: "saju-mbti-full",
+    person: { name: "덕민", birthDate: "1996-12-06", birthTime: "09:30", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ" },
+    userContext: { relationshipStatus: "single", jobStatus: "employee", detailJob: "서비스 기획자", focusAreas: ["직업", "돈"] }, productOptions: {},
+  }, { enabled: false, reason: "flag_disabled" }, "deterministic_fallback");
+  return result.ok ? { fixtureId: "deokmin-external-manse", draft: result.draft as ComprehensiveReportV2Draft, evidencePacket: result.evidencePacket } : null;
 }
 
 function PreviewShell({
@@ -121,7 +76,7 @@ function renderMissingSnapshot() {
           아래 명령으로 최신 미리보기 데이터를 만든 뒤 다시 열어 주세요.
         </p>
         <code className="block overflow-x-auto rounded-[8px] border border-[#eadfce] bg-white px-3 py-2 text-xs text-[#6f1d35]">
-          pnpm dlx tsx scripts/smoke_generate_comprehensive_report_draft.ts --fixture deokmin --write-preview
+          pnpm test -- tests/unit/payment/paidReportReliability.test.ts
         </code>
       </section>
     </PreviewShell>
@@ -151,6 +106,7 @@ export default async function ComprehensivePreviewPage() {
     >
       <ComprehensiveReportV2View
         draft={snapshot.draft}
+        evidencePacket={snapshot.evidencePacket}
         reportId="dev-comprehensive-preview"
         displayName={getPreviewDisplayName(snapshot.fixtureId)}
       />

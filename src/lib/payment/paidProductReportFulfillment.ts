@@ -1,9 +1,6 @@
 import type { ReportPersistenceAdapter } from "../persistence/reportPersistenceAdapter";
 import type { PersistedReportRecord } from "../persistence/reportPersistenceTypes";
-import {
-  createProductGenerationDispatcherOptionsFromWriterRuntime,
-  prepareProductGenerationFromPayload,
-} from "../report-generation/productGenerationDispatcher";
+import { generateProductReport } from "../report-generation/generateProductReport";
 import {
   createProductPreviewSnapshot,
   type ProductPreviewProductType,
@@ -194,14 +191,7 @@ export async function fulfillPaidProductReport(
     );
   }
 
-  const generationOptions =
-    createProductGenerationDispatcherOptionsFromWriterRuntime(
-      input.writerRuntime,
-    );
-  const generationResult = await prepareProductGenerationFromPayload(
-    payload,
-    generationOptions,
-  );
+  const generationResult = await generateProductReport(payload, input.writerRuntime, input.writerRuntime.enabled ? "normal_writer" : "deterministic_fallback");
 
   if (!generationResult.ok) {
     return failure(

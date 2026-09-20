@@ -1,3 +1,7 @@
+import { readPublishedReport } from "../../../lib/payment/paidReportReliability";
+import { createPaidReportReliabilityStore } from "../../../lib/payment/paidReportReliabilityStore";
+import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
+import { ReportGenerationStatus } from "../../../components/report/ReportGenerationStatus";
 import type { ReactNode } from "react";
 
 import GyeolBrandHeader from "../../../components/brand/GyeolBrandHeader";
@@ -76,6 +80,7 @@ type ReportResultPageProps = {
 };
 
 type PageState =
+  | { readonly kind: "processing"; readonly attention: boolean }
   | {
       readonly kind: "invalid";
     }
@@ -110,6 +115,15 @@ function createResultClient() {
 }
 
 async function loadPageState(reportId: string): Promise<PageState> {
+  if (process.env.NODE_ENV !== "test") {
+    const durable = await readPublishedReport(createPaidReportReliabilityStore(), reportId);
+    if (durable.ok) {
+      if (durable.status === "EXPIRED") return { kind: "expired" };
+      if (durable.status === "COMPLETED" && durable.snapshot) return { kind: "productPreview", productPreview: durable.snapshot as ProductPreviewSnapshot };
+      return { kind: "processing", attention: durable.status === "FAILED_REQUIRES_ATTENTION" };
+    }
+    if (process.env.NODE_ENV === "production") return { kind: "unavailable" };
+  }
   const previewResult = await loadProductPreviewPageState(reportId);
 
   if (previewResult !== null) {
@@ -168,6 +182,9 @@ async function loadProductPreviewPageState(
   }
 
   const productPreview = record.productPreview;
+  if (record.accessMode === "paid" && !validateProductPublication(productPreview.productType, productPreview.draft, productPreview.evidencePacket).ok) {
+    return { kind: "invalidSnapshot" };
+  }
 
   if (productPreview.productType === "career_money_study") {
     if (!isCareerReportDraft(productPreview.draft)) {
@@ -841,6 +858,7 @@ function renderProductPreviewComprehensiveV2State(
   return (
     <ComprehensiveReportV2View
       draft={productPreview.draft}
+      evidencePacket={productPreview.evidencePacket}
       reportId={productPreview.reportId}
     />
   );
@@ -1526,6 +1544,8 @@ export default async function ReportResultPage({
 }: ReportResultPageProps) {
   const routeParams = await params;
   const state = await loadPageState(routeParams.reportId ?? "");
+
+  if (state.kind === "processing") return <ResultShell><ReportGenerationStatus attention={state.attention} /></ResultShell>;
 
   if (state.kind === "invalid") {
     return renderInvalidState();

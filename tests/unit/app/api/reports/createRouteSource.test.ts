@@ -24,9 +24,8 @@ describe("create report route product preview source", () => {
   it("uses dispatcher and product preview snapshot for product payloads", () => {
     const source = readRouteSource();
     const expectedMarkers = [
-      "prepareProductGenerationFromPayload",
+      "generateProductReport",
       "resolveReportWriterRuntime",
-      "createProductGenerationDispatcherOptionsFromWriterRuntime",
       "createProductPreviewSnapshot",
       'snapshotKind: "product_preview"',
       "productPreview",

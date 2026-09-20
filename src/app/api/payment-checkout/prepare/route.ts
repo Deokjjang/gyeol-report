@@ -1,3 +1,4 @@
+import { normalizeReportInputPayload } from "../../../../lib/report-generation/reportInputAdapter";
 import { randomUUID } from "node:crypto";
 
 import { NextResponse } from "next/server";
@@ -293,6 +294,10 @@ function createOptionalTossCheckoutRequest(
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
+  if (process.env.NODE_ENV === "production" && (process.env.PAID_REPORT_RELIABILITY_ENABLED !== "1" ||
+    !process.env.SUPABASE_SERVICE_ROLE_KEY || !process.env.CRON_SECRET || !process.env.REPORT_ADMIN_SECRET)) {
+    return createErrorResponse("PAYMENT_CHECKOUT_UNAVAILABLE", "현재 결제를 준비 중입니다. 잠시 후 다시 확인해 주세요.", 503);
+  }
   let json: unknown;
 
   try {
@@ -327,6 +332,16 @@ export async function POST(request: Request): Promise<NextResponse> {
       invalidRequestMessage,
       400,
     );
+  }
+
+  // Production must reject unfulfillable inputs before any payment is launched.
+  {
+    const normalized = normalizeReportInputPayload(json.inputSnapshot.reportInputPayload);
+    if (!normalized.ok || normalized.value.productKey !== (json.productType ?? defaultProductType) ||
+      (normalized.value.kind === "comprehensiveV2" &&
+        (normalized.value.person.birthTimeUnknown || !normalized.value.person.birthTime.trim()))) {
+      return createErrorResponse("PAYMENT_CHECKOUT_INVALID_REQUEST", "리포트 입력 정보를 확인해 주세요. 종합 리포트에는 출생 시간이 필요합니다.", 400);
+    }
   }
 
   const readyOrderRecordResult = createReadyPaymentOrderRecord({

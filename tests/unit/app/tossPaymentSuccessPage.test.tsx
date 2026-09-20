@@ -92,11 +92,8 @@ describe("Toss payment success page", () => {
       "TOSS_CONFIRM_API_ENABLED",
       "TOSS_PAYMENTS_SECRET_KEY",
       "confirmTossPayment",
-      "fulfillPaidProductReport",
-      "createPaymentOrderPersistenceRuntime",
-      "createReportPersistenceRuntime",
-      "resolveReportWriterRuntime",
-      "reportExpiresAt",
+      "confirmPaidReport",
+      "createPaidReportReliabilityStore",
       "requiredPaymentAmount = 1290",
       "redirect(`/reports/${finalState.redirectReportId}`)",
       paidGenerationFailureMessageSourceMarker(),
@@ -124,5 +121,5 @@ describe("Toss payment success page", () => {
 });
 
 function paidGenerationFailureMessageSourceMarker(): string {
-  return "결제는 완료되었고 리포트 생성 처리 중 문제가 발생했습니다.";
+  return "결제와 리포트 준비 상태를 확인하고 있습니다.";
 }

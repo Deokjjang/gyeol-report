@@ -38,7 +38,7 @@ export type ProductPreviewSnapshotAccess = {
   readonly mode: "preview";
   readonly isPaid: false;
   readonly isUnlocked: false;
-};
+} | { readonly mode: "paid"; readonly isPaid: true; readonly isUnlocked: true };
 
 export type ProductPreviewSnapshot = {
   readonly id: string;
@@ -169,9 +169,8 @@ export function isProductPreviewSnapshot(
     value.draft.productType === value.productType &&
     value.draft.productVersion === value.productVersion &&
     isRecord(value.access) &&
-    value.access.mode === "preview" &&
-    value.access.isPaid === false &&
-    value.access.isUnlocked === false
+    ((value.access.mode === "preview" && value.access.isPaid === false && value.access.isUnlocked === false) ||
+      (value.access.mode === "paid" && value.access.isPaid === true && value.access.isUnlocked === true))
   );
 }
 

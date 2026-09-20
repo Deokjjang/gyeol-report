@@ -88,7 +88,7 @@ function createMockPaymentId(prefix: string): string {
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
-  if (process.env[mockApiEnabledEnv] !== "1") {
+  if (process.env.NODE_ENV === "production" || process.env[mockApiEnabledEnv] !== "1") {
     return createErrorResponse("MOCK_PAID_REPORT_API_DISABLED", 404);
   }
 

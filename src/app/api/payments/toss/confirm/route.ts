@@ -1,13 +1,11 @@
+import { confirmPaidReport } from "../../../../../lib/payment/paidReportReliability";
+import { createPaidReportReliabilityStore } from "../../../../../lib/payment/paidReportReliabilityStore";
 import { NextResponse } from "next/server";
 
 import {
   confirmTossPayment,
   TOSS_CONFIRM_REQUIRED_AMOUNT,
 } from "../../../../../lib/payment/tossConfirmClient";
-import { fulfillPaidPaymentOrder } from "../../../../../lib/payment/supabasePaidReportFulfillmentAdapter";
-import { createSupabasePaidReportFulfillmentClient } from "../../../../../lib/payment/supabasePaidReportFulfillmentClient";
-import { markTossPaymentOrderPaid } from "../../../../../lib/payment/supabaseTossPaymentOrderPaidAdapter";
-import { createSupabaseTossPaymentOrderPaidClient } from "../../../../../lib/payment/supabaseTossPaymentOrderPaidClient";
 import type { FulfillPaidPaymentOrderResult } from "../../../../../lib/payment/paidReportFulfillmentTypes";
 import type { MarkTossPaymentOrderPaidResult } from "../../../../../lib/payment/tossPaymentOrderPaidTypes";
 import type {
@@ -60,15 +58,10 @@ type TossConfirmRouteResponse =
 
 const tossConfirmApiEnabledEnv = "TOSS_CONFIRM_API_ENABLED";
 const tossSecretKeyEnv = "TOSS_PAYMENTS_SECRET_KEY";
-const supabaseUrlEnv = "SUPABASE_URL";
-const supabaseAnonKeyEnv = "SUPABASE_ANON_KEY";
 const invalidRequestMessage = "Toss confirm request is invalid.";
 const amountMismatchMessage =
   "Toss confirm amount does not match the order amount.";
 const configMissingMessage = "Toss confirm configuration is missing.";
-const tossPaymentNotDoneMessage = "Toss payment is not done.";
-const paymentMarkPaidFailedMessage = "Payment order could not be marked paid.";
-const paymentFulfillmentFailedMessage = "Payment order could not be fulfilled.";
 const jsonResponseHeaders = {
   "content-type": "application/json; charset=utf-8",
 } as const;
@@ -168,68 +161,9 @@ function parseConfirmRequest(
   };
 }
 
-function mapConfirmFailureStatus(code: TossConfirmErrorCode): number {
-  if (code === "TOSS_CONFIRM_CONFIG_MISSING") {
-    return 500;
-  }
-
-  if (
-    code === "TOSS_CONFIRM_INVALID_REQUEST" ||
-    code === "TOSS_CONFIRM_AMOUNT_MISMATCH"
-  ) {
-    return 400;
-  }
-
-  return 502;
-}
-
-function mapConfirmForResponse(
-  confirm: TossConfirmSafeResult,
-): TossConfirmRouteSafeConfirm {
-  return {
-    provider: confirm.provider,
-    paymentKeyReceived: true,
-    orderId: confirm.orderId,
-    amount: confirm.amount,
-    status: confirm.status,
-    method: confirm.method ?? null,
-    approvedAt: confirm.approvedAt ?? null,
-    rawPaymentStatus: confirm.rawPaymentStatus ?? confirm.status,
-  };
-}
-
-function createConfirmContext(
-  confirm: TossConfirmRouteSafeConfirm,
-  paymentOrder?: MarkTossPaymentOrderPaidResult,
-): TossConfirmRouteErrorContext {
-  return {
-    orderId: confirm.orderId,
-    amount: confirm.amount,
-    confirmStatus: confirm.status,
-    rawPaymentStatus: confirm.rawPaymentStatus,
-    ...(paymentOrder === undefined
-      ? {}
-      : { paymentOrderStatus: paymentOrder.status }),
-  };
-}
-
-function createPaidOrderClient() {
-  return createSupabaseTossPaymentOrderPaidClient({
-    supabaseUrl: process.env[supabaseUrlEnv],
-    supabaseAnonKey: process.env[supabaseAnonKeyEnv],
-  });
-}
-
-function createFulfillmentClient() {
-  return createSupabasePaidReportFulfillmentClient({
-    supabaseUrl: process.env[supabaseUrlEnv],
-    supabaseAnonKey: process.env[supabaseAnonKeyEnv],
-  });
-}
-
 export async function POST(
   request: Request,
-): Promise<NextResponse<TossConfirmRouteResponse>> {
+): Promise<NextResponse> {
   if (process.env[tossConfirmApiEnabledEnv] !== "1") {
     return createErrorResponse(
       "TOSS_CONFIRM_API_DISABLED",
@@ -266,79 +200,10 @@ export async function POST(
     );
   }
 
-  const result = await confirmTossPayment({
-    secretKey,
-    paymentKey: parsedRequest.request.paymentKey,
-    orderId: parsedRequest.request.orderId,
-    amount: parsedRequest.request.amount,
-  });
-
-  if (!result.ok) {
-    return createErrorResponse(
-      result.error.code,
-      result.error.message,
-      mapConfirmFailureStatus(result.error.code),
-    );
-  }
-
-  const confirm = mapConfirmForResponse(result.confirm);
-
-  if (confirm.status !== "DONE") {
-    return createErrorResponse(
-      "TOSS_PAYMENT_NOT_DONE",
-      tossPaymentNotDoneMessage,
-      409,
-      createConfirmContext(confirm),
-    );
-  }
-
-  const paidResult = await markTossPaymentOrderPaid({
-    providerOrderId: confirm.orderId,
-    providerPaymentId: parsedRequest.request.paymentKey,
-    amount: confirm.amount,
-    currency: "KRW",
-    ...(confirm.approvedAt === null ? {} : { paidAt: confirm.approvedAt }),
-    client: createPaidOrderClient(),
-  });
-
-  if (!paidResult.ok) {
-    return createErrorResponse(
-      "PAYMENT_MARK_PAID_FAILED",
-      paymentMarkPaidFailedMessage,
-      500,
-      createConfirmContext(confirm),
-    );
-  }
-
-  const fulfillmentResult = await fulfillPaidPaymentOrder({
-    providerOrderId: confirm.orderId,
-    client: createFulfillmentClient(),
-  });
-
-  if (!fulfillmentResult.ok) {
-    return createErrorResponse(
-      "PAYMENT_FULFILLMENT_FAILED",
-      paymentFulfillmentFailedMessage,
-      500,
-      createConfirmContext(confirm, paidResult.order),
-    );
-  }
-
-  const paymentOrder = {
-    ...paidResult.order,
-    reportId: fulfillmentResult.fulfillment.reportId,
-  };
-
-  return NextResponse.json<TossConfirmRouteResponse>(
-    {
-      ok: true,
-      confirm,
-      paymentOrder,
-      fulfillment: fulfillmentResult.fulfillment,
-    },
-    {
-      status: 200,
-      headers: jsonResponseHeaders,
-    },
-  );
+  const result = await confirmPaidReport(parsedRequest.request, createPaidReportReliabilityStore(),
+    (payment) => confirmTossPayment({ ...payment, secretKey }));
+  if (!result.ok) return createErrorResponse("PAYMENT_FULFILLMENT_FAILED", "결제 상태를 확인 중입니다. 잠시 후 다시 확인해 주세요.", 503);
+  return NextResponse.json({ ok: true, reportId: result.reportId ?? null, status: result.pending ? "PAYMENT_PENDING" : "QUEUED",
+    paymentOrder: { status: "paid", reportId: result.reportId ?? null },
+    fulfillment: { reportId: result.reportId ?? null } }, { status: result.pending ? 202 : 200 });
 }

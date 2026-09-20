@@ -5,6 +5,7 @@ import { defineConfig } from "vitest/config";
 const rootDir = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  test: { setupFiles: ["./tests/networkGuard.ts"] },
   resolve: {
     alias: {
       "@": resolve(rootDir, "src"),

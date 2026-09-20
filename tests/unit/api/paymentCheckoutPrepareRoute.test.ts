@@ -22,6 +22,8 @@ const inputSnapshot = {
   reportInputPayload: {
     productKey: "saju_mbti_full",
     productSlug: "saju-mbti-full",
+    person: { name: "테스트", birthDate: "1996-12-06", birthTime: "09:30", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ" },
+    userContext: { relationshipStatus: "single", jobStatus: "employee", detailJob: "기획자", focusAreas: [] }, productOptions: {},
   },
 } as const;
 

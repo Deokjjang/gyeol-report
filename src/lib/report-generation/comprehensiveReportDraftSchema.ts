@@ -1,5 +1,5 @@
 import { COMPREHENSIVE_REPORT_SECTION_IDS } from "../report-knowledge/reportSectionSchema";
-import { COMPREHENSIVE_REPORT_V2_CHAPTER_IDS } from "./comprehensiveReportDraftTypes";
+import { COMPREHENSIVE_REPORT_V2_CHAPTER_IDS, COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS } from "./comprehensiveReportDraftTypes";
 
 const productTypeSchema = {
   type: "string",
@@ -500,6 +500,7 @@ export const openAIComprehensiveReportV2NarrativeDraftJsonSchema = {
     "openingSummary",
     "coreLine",
     "chapters",
+    "longformReadings",
     "finalAdvice",
     "safetyNotes",
   ],
@@ -525,6 +526,21 @@ export const openAIComprehensiveReportV2NarrativeDraftJsonSchema = {
       maxLength: 260,
     },
     chapters: comprehensiveReportV2DraftJsonSchema.properties.chapters,
+    longformReadings: {
+      type: "array", minItems: 10, maxItems: 10,
+      items: {
+        type: "object", additionalProperties: false,
+        required: ["readingId", "titleKo", "body", "linkedChapterIds", "sajuTermsUsed", "mbtiTermsUsed"],
+        properties: {
+          readingId: { type: "string", enum: COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS },
+          titleKo: { type: "string", minLength: 1 },
+          body: { type: "string", minLength: 600, maxLength: 6000 },
+          linkedChapterIds: { type: "array", items: { type: "string", enum: COMPREHENSIVE_REPORT_V2_CHAPTER_IDS } },
+          sajuTermsUsed: stringArraySchema,
+          mbtiTermsUsed: stringArraySchema,
+        },
+      },
+    },
     finalAdvice: {
       type: "string",
       minLength: 1,

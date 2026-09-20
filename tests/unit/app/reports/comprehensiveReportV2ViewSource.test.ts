@@ -33,19 +33,17 @@ describe("comprehensive report v2 view source", () => {
     expect(viewSource).toContain("과하면 피로");
     expect(viewSource).toContain("실제로 쓰는 법");
     expect(viewSource).toContain("buildFeatureClosingLine");
-    expect(viewSource).toContain("buildQuickFeatureLine");
+    expect(viewSource).toContain("{item.plainMeaning} {item.practicalUse}");
+    expect(viewSource).not.toContain("이름보다 실제 행동에서 어디를 바꿀지");
     expect(viewSource).toContain("buildFeatureCategoryLabel");
     expect(viewSource).toContain("groupQuickFeatureItems");
     expect(viewSource).toContain("화개·화개살");
-    expect(viewSource).toContain("화개와 화개살은 혼자 깊게 정리할 때");
     expect(viewSource).toContain("{item.rawLabel}");
     expect(viewSource).not.toContain("{buildFeatureCategoryLabel(item.rawLabel)} · {item.rawLabel}");
     expect(viewSource).toContain("돈이 저절로 쌓인다는 뜻이 아니라");
     expect(viewSource).toContain("말의 순서를 바꾸라는 뜻");
     expect(viewSource).toContain("숨은 역할과 회복 포인트");
     expect(viewSource).toContain("아래 표식은 사건 예언이 아니라");
-    expect(viewSource).toContain("급한 상황에서는 빨리 움직이지만");
-    expect(viewSource).toContain("표현의 선을 더 신경");
   });
 
   it("renders a five-element energy interpretation section", () => {

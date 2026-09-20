@@ -1,3 +1,4 @@
+import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
 import {
   ManseRyeokCommonTable,
   MbtiCommonProfileTable,
@@ -17,6 +18,7 @@ import { getSajuBranchSymbolEntry } from "../../../lib/report-knowledge/sajuBran
 
 type ComprehensiveReportV2ViewProps = {
   readonly draft: ComprehensiveReportV2Draft;
+  readonly evidencePacket?: unknown;
   readonly reportId?: string;
   readonly displayName?: string;
 };
@@ -60,7 +62,11 @@ const stemHanjaByValue = {
 export function ComprehensiveReportV2View({
   draft,
   displayName,
+  evidencePacket,
 }: ComprehensiveReportV2ViewProps) {
+  if (evidencePacket !== undefined && !validateProductPublication("saju_mbti_full", draft, evidencePacket).ok) {
+    return <p>리포트를 준비하고 있습니다. 잠시 후 다시 확인해 주세요.</p>;
+  }
   const manseRyeokTableData = buildManseRyeokTableData({
     profile: draft.profileTable,
     displayName,
@@ -240,7 +246,7 @@ export function ComprehensiveReportV2View({
                         {item.rawLabel}
                       </h4>
                       <p className="mt-2 text-sm leading-7 text-[#4f433b]">
-                        {buildQuickFeatureLine(item.rawLabel)}
+                        {item.plainMeaning} {item.practicalUse}
                       </p>
                     </article>
                   ))}
@@ -636,44 +642,6 @@ function buildFeatureClosingLine(rawLabel: string): string {
   }
 
   return "이 신호는 운명을 단정하는 말이 아니라, 반복되는 선택 습관을 다루는 기준입니다.";
-}
-
-function buildQuickFeatureLine(rawLabel: string): string {
-  if (rawLabel === "백호대살") {
-    return "강한 돌파력과 긴장 속 대응력이 두드러지는 표식입니다. 급한 상황에서는 빨리 움직이지만, 평소에도 긴장 모드로 살면 몸과 말투가 같이 날카로워질 수 있습니다.";
-  }
-  if (rawLabel === "망신살") {
-    return "숨기기보다 밖으로 드러나는 장면에서 표현 관리가 필요한 표식입니다. 말과 행동이 빠르게 퍼질 수 있으므로 공개적인 자리에서는 표현의 선을 더 신경 써야 합니다.";
-  }
-  if (rawLabel === "월덕귀인") {
-    return "사람, 기준, 제도에서 도움과 완충을 얻는 통로입니다. 막힌 일을 혼자 밀어붙이기보다 조언과 절차를 열어 둘 때 부드럽게 풀립니다.";
-  }
-  if (rawLabel === "천덕귀인") {
-    return "급한 상황을 부드럽게 넘기게 해주는 보호와 완충의 통로입니다. 무리해서 버티기보다 도움을 요청할 기준을 분명히 할 때 더 잘 살아납니다.";
-  }
-  if (rawLabel === "화개·화개살") {
-    return "화개와 화개살은 혼자 깊게 정리할 때 판단과 표현의 깊이가 살아나는 표식입니다. 다만 고독이 길어지면 관계 온도가 늦게 따라올 수 있으니, 혼자 정리한 결론을 짧게 공유하는 장치가 필요합니다.";
-  }
-  if (rawLabel === "화개") {
-    return "혼자 깊게 정리할 때 판단과 표현의 깊이가 살아나는 표식입니다. 긴 정리 시간이 필요하지만, 관계에서는 결론을 공유하는 타이밍도 같이 잡아야 합니다.";
-  }
-  if (rawLabel === "화개살") {
-    return "십이신살에서 보는 화개살은 고독 자체보다 사색과 정리의 리듬을 보여줍니다. 조용히 깊어지는 힘은 장점이지만, 오래 닫히면 주변은 거리감으로 느낄 수 있습니다.";
-  }
-  if (rawLabel === "장성살") {
-    return "앞에 서서 기준을 잡고 역할을 정리하는 힘입니다. 권한 없이 책임만 떠안으면 지치기 쉬우니 역할과 마감선을 같이 정해야 합니다.";
-  }
-  if (rawLabel === "반안살") {
-    return "인정받는 자리에서 집중력과 품질을 끌어올리는 표식입니다. 남의 반응에 흔들리기보다 내 체크리스트로 성과 기준을 잡을 때 안정됩니다.";
-  }
-  if (rawLabel === "겁살") {
-    return "급한 선택 앞에서 비용, 일정, 철수 기준을 확인하라는 표식입니다. 속도는 빠른 대응력이지만, 검토 없이 움직이면 시간과 돈이 새기 쉽습니다.";
-  }
-  if (rawLabel === "연일 천간합 甲己") {
-    return "개인의 방향성과 현실 책임이 묶이며 실행 기준을 만드는 흐름입니다. 하고 싶은 일과 맡은 역할이 부딪힐 때 한 문장 기준을 먼저 세우면 흔들림이 줄어듭니다.";
-  }
-
-  return "반복되는 선택 습관을 확인하고 생활 리듬에서 조정할 보조 표식입니다. 이름보다 실제 행동에서 어디를 바꿀지 보는 편이 더 정확합니다.";
 }
 
 function isDetailedFeatureLabel(rawLabel: string): boolean {

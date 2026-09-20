@@ -3,6 +3,7 @@ export type OpenAIReportWriterClientConfig = {
   readonly model: string;
   readonly enabled: boolean;
   readonly fetchImpl?: typeof fetch;
+  readonly allowRepair?: boolean;
 };
 
 export type OpenAIReportWriterMessagesForClient = {
@@ -338,6 +339,7 @@ export async function callOpenAIReportWriter(input: {
   const fetchImpl = input.config.fetchImpl ?? fetch;
   const model = input.config.model.trim();
   const response = await fetchImpl(openAIResponsesEndpoint, {
+    signal: AbortSignal.timeout(120_000),
     method: "POST",
     headers: {
       Authorization: `Bearer ${input.config.apiKey}`,

@@ -179,6 +179,7 @@ const majorFortunePayload = {
 
 const comprehensiveV2Payload = {
   ...singleProductPayload,
+  person: { ...singleProductPayload.person, birthTime: "09:30", birthTimeUnknown: false },
   productKey: "saju_mbti_full",
   productSlug: "saju-mbti-full",
   productOptions: {},

@@ -1,10 +1,9 @@
+import { ReportGenerationStatus } from "../../../../components/report/ReportGenerationStatus";
+import { confirmPaidReport } from "../../../../lib/payment/paidReportReliability";
+import { createPaidReportReliabilityStore } from "../../../../lib/payment/paidReportReliabilityStore";
 import { redirect } from "next/navigation";
 
-import { createReportPersistenceRuntime } from "../../../../lib/persistence/reportPersistenceRuntime";
-import { fulfillPaidProductReport } from "../../../../lib/payment/paidProductReportFulfillment";
-import { createPaymentOrderPersistenceRuntime } from "../../../../lib/payment/paymentOrderRuntime";
 import { confirmTossPayment } from "../../../../lib/payment/tossConfirmClient";
-import { resolveReportWriterRuntime } from "../../../../lib/report-generation/reportWriterRuntime";
 
 export const dynamic = "force-dynamic";
 
@@ -29,7 +28,7 @@ const requiredPaymentAmount = 1290;
 const tossConfirmApiEnabledEnv = "TOSS_CONFIRM_API_ENABLED";
 const tossSecretKeyEnv = "TOSS_PAYMENTS_SECRET_KEY";
 const paidGenerationFailureMessage =
-  "결제는 완료되었고 리포트 생성 처리 중 문제가 발생했습니다. 고객센터로 문의해 주세요.";
+  "결제와 리포트 준비 상태를 확인하고 있습니다. 잠시 후 이 페이지에서 다시 확인해 주세요.";
 
 function readQueryValue(value: string | string[] | undefined): string {
   const firstValue = Array.isArray(value) ? value[0] : value;
@@ -123,107 +122,11 @@ async function confirmAndGenerateReport(input: {
   readonly orderId: string;
   readonly amount: number;
 }): Promise<InitialSuccessState | { readonly redirectReportId: string }> {
-  const orderRuntime = createPaymentOrderPersistenceRuntime();
-  const storedOrder = await orderRuntime.findByProviderOrderId(input.orderId);
-
-  if (storedOrder === null) {
-    return "order_not_found";
-  }
-
-  if (storedOrder.amount !== input.amount || storedOrder.currency !== "KRW") {
-    await orderRuntime.markFailed({
-      paymentOrderId: storedOrder.paymentOrderId,
-    });
-
-    return "amount_mismatch";
-  }
-
-  if (storedOrder.status === "paid" && storedOrder.reportId !== null) {
-    return { redirectReportId: storedOrder.reportId };
-  }
-
-  const secretKey = process.env[tossSecretKeyEnv];
-
-  if (secretKey === undefined || secretKey.trim().length === 0) {
-    return "payment_failed";
-  }
-
-  const confirmResult = await confirmTossPayment({
-    secretKey,
-    paymentKey: input.paymentKey,
-    orderId: input.orderId,
-    amount: input.amount,
-  });
-
-  if (!confirmResult.ok || confirmResult.confirm.status !== "DONE") {
-    await orderRuntime.markFailed({
-      paymentOrderId: storedOrder.paymentOrderId,
-    });
-
-    return "payment_failed";
-  }
-
-  const paidResult =
-    storedOrder.status === "paid"
-      ? { ok: true as const, value: storedOrder }
-      : await orderRuntime.markPaid({
-          paymentOrderId: storedOrder.paymentOrderId,
-          providerOrderId: confirmResult.confirm.orderId,
-          providerPaymentId: input.paymentKey,
-          ...(confirmResult.confirm.approvedAt === undefined
-            ? {}
-            : { paidAt: confirmResult.confirm.approvedAt }),
-        });
-
-  if (!paidResult.ok) {
-    return "payment_failed";
-  }
-
-  const reportRuntime = createReportPersistenceRuntime({ mode: "preview_memory" });
-
-  if (!reportRuntime.ok) {
-    await orderRuntime.markReportGenerationFailed({
-      paymentOrderId: paidResult.value.paymentOrderId,
-      code: "REPORT_PERSISTENCE_RUNTIME_FAILED",
-      messageKo: paidGenerationFailureMessage,
-    });
-
-    return "generation_failed";
-  }
-
-  const generationResult = await fulfillPaidProductReport({
-    order: paidResult.value,
-    reportAdapter: reportRuntime.adapter,
-    writerRuntime: resolveReportWriterRuntime(),
-  });
-
-  if (!generationResult.ok) {
-    await orderRuntime.markReportGenerationFailed({
-      paymentOrderId: paidResult.value.paymentOrderId,
-      code: generationResult.error.code,
-      messageKo: paidGenerationFailureMessage,
-    });
-
-    return "generation_failed";
-  }
-
-  const attachResult = await orderRuntime.attachReport({
-    paymentOrderId: paidResult.value.paymentOrderId,
-    reportId: generationResult.reportId,
-    reportExpiresAt: generationResult.expiresAt,
-  });
-
-  if (!attachResult.ok) {
-    await orderRuntime.markReportGenerationFailed({
-      paymentOrderId: paidResult.value.paymentOrderId,
-      code: "PAYMENT_ORDER_REPORT_LINK_FAILED",
-      messageKo: paidGenerationFailureMessage,
-    });
-
-    return "generation_failed";
-  }
-
-  return { redirectReportId: generationResult.reportId };
+  const result = await confirmPaidReport(input, createPaidReportReliabilityStore(),
+    (payment) => confirmTossPayment({ ...payment, secretKey: process.env[tossSecretKeyEnv] ?? "" }));
+  if (result.ok && typeof result.reportId === "string") return { redirectReportId: result.reportId };
+  if (result.ok && result.pending) return "ready_to_confirm";
+  return "generation_failed";
 }
 
 export default async function TossPaymentSuccessPage({
@@ -252,6 +155,8 @@ export default async function TossPaymentSuccessPage({
   return (
     <main className="min-h-screen bg-neutral-950 px-5 py-10 text-neutral-50 sm:px-8">
       <section className="mx-auto flex min-h-[70vh] max-w-3xl flex-col justify-center gap-6">
+        {finalState === "ready_to_confirm" || finalState === "generation_failed" ? <ReportGenerationStatus paymentPending /> : null}
+
         <div className="space-y-2">
           <p className="text-sm font-medium text-neutral-500">
             Gyeol Report / 결리포트

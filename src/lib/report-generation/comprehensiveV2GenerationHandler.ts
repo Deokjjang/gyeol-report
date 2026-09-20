@@ -57,6 +57,7 @@ import {
 } from "./comprehensiveReportDraftValidator";
 import {
   buildDeterministicSajuFeatureChapter,
+  normalizeSajuFeatureChapter,
   generateComprehensiveReportDraft,
 } from "./openaiComprehensiveReportWriter";
 import type { ComprehensiveV2ProductPreviewDraft } from "./productPreviewSnapshot";
@@ -722,13 +723,19 @@ function buildLocalLongformReading(input: {
 }): ComprehensiveReportV2LongformReading {
   const titleKo = longformTitleById[input.readingId];
   const linkedChapterIds = getLinkedChapterIds(input.readingId);
+  const chapterByReading: Partial<Record<ComprehensiveReportV2LongformReadingId, ComprehensiveReportV2ChapterId>> = {
+    opening: "opening", baseSajuReading: "saju_identity", sajuMbtiBridgeReading: "personality_pattern",
+    workMoneyStudyReading: "work_money_study", loveRelationshipReading: "love_relationships",
+    peopleFamilyEnvironmentReading: "people_family_environment", riskGrowthReading: "risk_and_growth", finalMessage: "final_message",
+  };
+  const linkedScene = chapterByReading[input.readingId];
   const body = buildLongformBody({
     titleKo,
     readingId: input.readingId,
     mbtiType: input.mbtiType,
     primaryTerms: input.primaryTerms,
     profileTable: input.profileTable,
-  });
+  }) + (linkedScene ? "\n\n" + buildHitReadingLines(linkedScene).join(" ") : "");
 
   return {
     readingId: input.readingId,
@@ -928,54 +935,6 @@ function buildBasicSajuFeatureChapter(
       "공통 만세력표에 표시되는 신살, 귀인, 합충, 지장간은 이름만 보면 어렵게 느껴질 수 있습니다. 이 챕터에서는 원국에 실제로 잡힌 표식을 사건 예언이 아니라 말투, 판단 속도, 도움을 요청하는 방식, 관계 반응, 회복 루틴으로 번역합니다.",
     items: getBasicFeatureItems(profileTable),
   };
-}
-
-function normalizeSajuFeatureChapter(
-  chapter: ComprehensiveReportV2SajuFeatureChapter,
-): ComprehensiveReportV2SajuFeatureChapter {
-  return {
-    ...chapter,
-    items: chapter.items.map((item) => {
-      const clarifier = getRawLabelClarifier(item.rawLabel);
-
-      if (clarifier.length === 0) {
-        return item;
-      }
-
-      return {
-        ...item,
-        plainMeaning: appendSentence(item.plainMeaning, clarifier),
-        howItShowsInYou: appendSentence(item.howItShowsInYou, clarifier),
-      };
-    }),
-  };
-}
-
-function getRawLabelClarifier(rawLabel: string): string {
-  if (rawLabel.includes("양인")) {
-    return "양인살은 강한 추진력, 정면 돌파, 고집, 승부 감각이 함께 올라오는 표식입니다.";
-  }
-  if (rawLabel.includes("현침")) {
-    return "현침살은 말, 판단, 분석이 날카롭게 들어가 정밀하게 핵심을 보는 표식입니다.";
-  }
-  if (rawLabel.includes("천을")) {
-    return "천을귀인은 도움의 통로와 위기 완충, 필요한 기회를 요청하는 감각으로 읽습니다.";
-  }
-  if (rawLabel.includes("화개")) {
-    return "화개는 혼자 깊게 정리하고 사색하며 표현의 깊이를 만드는 표식입니다.";
-  }
-  if (rawLabel.includes("망신")) {
-    return "망신살은 말과 행동이 밖으로 드러나는 장면에서 표현의 선을 신경 쓰게 하는 표식입니다.";
-  }
-  if (rawLabel.includes("백호")) {
-    return "백호대살은 긴장 속 대응력과 강한 돌파력이 같이 살아나는 표식입니다.";
-  }
-
-  return "";
-}
-
-function appendSentence(text: string, sentence: string): string {
-  return text.includes(sentence) ? text : `${text} ${sentence}`;
 }
 
 function getBasicFeatureItems(
