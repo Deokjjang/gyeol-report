@@ -113,6 +113,31 @@ async function createProductionFixture(): Promise<PGlite> {
 }
 
 describe("production test report cleanup migration", () => {
+  it("reproduces the previous ON COMMIT DROP scope failure and removes that dependency", async () => {
+    const db = new PGlite();
+
+    try {
+      await db.exec(`
+        create temporary table production_test_report_cleanup_allowlist (
+          report_id text
+        ) on commit drop
+      `);
+
+      await expect(
+        db.query("select * from production_test_report_cleanup_allowlist"),
+      ).rejects.toThrow("does not exist");
+      expect(cleanupMigration).not.toContain("create temporary table");
+      expect(cleanupMigration).not.toContain("pg_temp.");
+      expect(cleanupMigration).not.toContain(
+        "production_test_report_cleanup_allowlist",
+      );
+      expect(cleanupMigration).toContain("v_allowlist constant jsonb");
+      expect(cleanupMigration).toContain("jsonb_to_recordset(v_allowlist)");
+    } finally {
+      await db.close();
+    }
+  });
+
   it("deletes only the exact ten reports and clears the orphan preflight blocker", async () => {
     const db = await createProductionFixture();
 

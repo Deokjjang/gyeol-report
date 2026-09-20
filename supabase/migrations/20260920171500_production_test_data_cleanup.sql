@@ -13,7 +13,30 @@ begin;
 set local lock_timeout='5s';
 set local statement_timeout='60s';
 
-do $cleanup_schema_preconditions$
+do $cleanup_exact_allowlist$
+declare
+  v_allowlist constant jsonb := $allowlist$[
+    {"report_id":"report_b12iwpy7s23ne","payment_order_id":"smoke_order_share_lookup","payment_provider":"smoke"},
+    {"report_id":"report_i2ktw0p6be77i","payment_order_id":"smoke_order_share_token_storage","payment_provider":"smoke"},
+    {"report_id":"report_jd1lqbwcp0qiq","payment_order_id":"smoke_order_share_lookup_mq5uhfg5_3ks5cxjv","payment_provider":"smoke"},
+    {"report_id":"report_mur46odg213h5","payment_order_id":"smoke_order_share_lookup_mq5tj85t_o6uc7cyw","payment_provider":"smoke"},
+    {"report_id":"report_zs55p86hos9p3","payment_order_id":"smoke_order_paid_report_storage","payment_provider":"smoke"},
+    {"report_id":"report_w8suvtp17higq","payment_order_id":"mock_order_2e5b35e4-59eb-4ebe-b44b-247656351632","payment_provider":"mock_toss"},
+    {"report_id":"report_y45g50grdvbvg","payment_order_id":"mock_order_d58665de-2201-496d-98c3-7fd99b654187","payment_provider":"mock_toss"},
+    {"report_id":"report_aeb9toph86oy6","payment_order_id":"mock_order_4e6c50e1-0d8e-403a-9b8e-22a12a24cf78","payment_provider":"mock_kakao_pay"},
+    {"report_id":"report_b4k7l4omljn7l","payment_order_id":"mock_order_fdd68a0b-a71d-4a15-8550-b5ed9f68dc65","payment_provider":"mock_toss"},
+    {"report_id":"report_no9kgoe8s9bgf","payment_order_id":"mock_order_60d2cf33-0e6d-423a-a196-53ab82671966","payment_provider":"mock_kakao_pay"}
+  ]$allowlist$::jsonb;
+  v_allowlist_count bigint;
+  v_distinct_report_id_count bigint;
+  v_target_count bigint;
+  v_mismatch_count bigint;
+  v_existing_order_count bigint;
+  v_report_count_before bigint;
+  v_payment_order_count_before bigint;
+  v_deleted_count bigint;
+  v_report_count_after bigint;
+  v_payment_order_count_after bigint;
 begin
   if to_regclass('public.reports') is null then
     raise exception 'TEST_DATA_CLEANUP_ABORTED: public.reports is missing';
@@ -44,55 +67,23 @@ begin
   ) then
     raise exception 'TEST_DATA_CLEANUP_ABORTED: required schema contract mismatch';
   end if;
-end
-$cleanup_schema_preconditions$;
 
--- Freeze the two small legacy tables while assertions and deletion run so the
--- before/after counts describe one consistent state. Reads remain available.
-lock table public.payment_orders in share row exclusive mode;
-lock table public.reports in share row exclusive mode;
+  -- Freeze the two small legacy tables while assertions and deletion run so
+  -- the before/after counts describe one consistent state. Reads remain available.
+  lock table public.payment_orders in share row exclusive mode;
+  lock table public.reports in share row exclusive mode;
 
-create temporary table production_test_report_cleanup_allowlist (
-  report_id text primary key,
-  payment_order_id text not null,
-  payment_provider text not null
-) on commit drop;
-
-insert into pg_temp.production_test_report_cleanup_allowlist (
-  report_id,
-  payment_order_id,
-  payment_provider
-)
-values
-  ('report_b12iwpy7s23ne','smoke_order_share_lookup','smoke'),
-  ('report_i2ktw0p6be77i','smoke_order_share_token_storage','smoke'),
-  ('report_jd1lqbwcp0qiq','smoke_order_share_lookup_mq5uhfg5_3ks5cxjv','smoke'),
-  ('report_mur46odg213h5','smoke_order_share_lookup_mq5tj85t_o6uc7cyw','smoke'),
-  ('report_zs55p86hos9p3','smoke_order_paid_report_storage','smoke'),
-  ('report_w8suvtp17higq','mock_order_2e5b35e4-59eb-4ebe-b44b-247656351632','mock_toss'),
-  ('report_y45g50grdvbvg','mock_order_d58665de-2201-496d-98c3-7fd99b654187','mock_toss'),
-  ('report_aeb9toph86oy6','mock_order_4e6c50e1-0d8e-403a-9b8e-22a12a24cf78','mock_kakao_pay'),
-  ('report_b4k7l4omljn7l','mock_order_fdd68a0b-a71d-4a15-8550-b5ed9f68dc65','mock_toss'),
-  ('report_no9kgoe8s9bgf','mock_order_60d2cf33-0e6d-423a-a196-53ab82671966','mock_kakao_pay');
-
-do $cleanup_exact_allowlist$
-declare
-  v_allowlist_count bigint;
-  v_target_count bigint;
-  v_mismatch_count bigint;
-  v_existing_order_count bigint;
-  v_report_count_before bigint;
-  v_payment_order_count_before bigint;
-  v_deleted_count bigint;
-  v_report_count_after bigint;
-  v_payment_order_count_after bigint;
-begin
   select count(*)
-  into v_allowlist_count
-  from pg_temp.production_test_report_cleanup_allowlist;
+       , count(distinct expected.report_id)
+  into v_allowlist_count,v_distinct_report_id_count
+  from jsonb_to_recordset(v_allowlist) as expected(
+    report_id text,
+    payment_order_id text,
+    payment_provider text
+  );
 
-  if v_allowlist_count<>10 then
-    raise exception 'TEST_DATA_CLEANUP_ABORTED: allowlist count is %, expected 10',v_allowlist_count;
+  if v_allowlist_count<>10 or v_distinct_report_id_count<>10 then
+    raise exception 'TEST_DATA_CLEANUP_ABORTED: allowlist count is % with % distinct report IDs, expected 10',v_allowlist_count,v_distinct_report_id_count;
   end if;
 
   select count(*),(
@@ -105,7 +96,11 @@ begin
   select count(*)
   into v_target_count
   from public.reports r
-  join pg_temp.production_test_report_cleanup_allowlist expected
+  join jsonb_to_recordset(v_allowlist) as expected(
+    report_id text,
+    payment_order_id text,
+    payment_provider text
+  )
     on expected.report_id=r.report_id;
 
   if v_target_count<>10 then
@@ -115,7 +110,11 @@ begin
   select count(*)
   into v_mismatch_count
   from public.reports r
-  join pg_temp.production_test_report_cleanup_allowlist expected
+  join jsonb_to_recordset(v_allowlist) as expected(
+    report_id text,
+    payment_order_id text,
+    payment_provider text
+  )
     on expected.report_id=r.report_id
   where r.payment_order_id is distinct from expected.payment_order_id
      or r.payment_provider is distinct from expected.payment_provider
@@ -129,7 +128,11 @@ begin
 
   select count(*)
   into v_existing_order_count
-  from pg_temp.production_test_report_cleanup_allowlist expected
+  from jsonb_to_recordset(v_allowlist) as expected(
+    report_id text,
+    payment_order_id text,
+    payment_provider text
+  )
   join public.payment_orders po
     on po.payment_order_id=expected.payment_order_id;
 
@@ -138,7 +141,11 @@ begin
   end if;
 
   delete from public.reports r
-  using pg_temp.production_test_report_cleanup_allowlist expected
+  using jsonb_to_recordset(v_allowlist) as expected(
+    report_id text,
+    payment_order_id text,
+    payment_provider text
+  )
   where r.report_id=expected.report_id
     and r.payment_order_id=expected.payment_order_id
     and r.payment_provider=expected.payment_provider
@@ -155,7 +162,11 @@ begin
   if exists (
     select 1
     from public.reports r
-    join pg_temp.production_test_report_cleanup_allowlist expected
+    join jsonb_to_recordset(v_allowlist) as expected(
+      report_id text,
+      payment_order_id text,
+      payment_provider text
+    )
       on expected.report_id=r.report_id
   ) then
     raise exception 'TEST_DATA_CLEANUP_ABORTED: an allowlisted report remains after deletion';
