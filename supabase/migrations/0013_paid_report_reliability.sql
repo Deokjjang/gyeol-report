@@ -12,6 +12,7 @@ create table public.report_input_snapshots (
   created_at timestamptz not null default now(),
   expires_at timestamptz not null default now() + interval '90 days'
 );
+create index report_input_snapshots_expires_at_idx on public.report_input_snapshots(expires_at);
 create table public.paid_report_snapshots (
   report_id text primary key,
   order_id text not null unique references public.payment_orders(payment_order_id),
@@ -25,6 +26,7 @@ create table public.paid_report_snapshots (
   check ((status = 'COMPLETED' and snapshot_json is not null and gate_version = 'paid-report-v1') or
     (status <> 'COMPLETED' and snapshot_json is null))
 );
+create index paid_report_snapshots_expires_at_idx on public.paid_report_snapshots(expires_at);
 create table public.report_generation_jobs (
   job_id uuid primary key default gen_random_uuid(),
   order_id text not null unique references public.payment_orders(payment_order_id),
@@ -55,6 +57,7 @@ create table public.report_generation_attempts (
   validation_errors jsonb not null default '[]',
   unique(job_id, run_number, attempt)
 );
+create index report_generation_attempts_report_id_idx on public.report_generation_attempts(report_id);
 alter table public.report_input_snapshots enable row level security;
 alter table public.paid_report_snapshots enable row level security;
 alter table public.report_generation_jobs enable row level security;

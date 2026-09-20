@@ -8,7 +8,7 @@ The requested project name is `gyeol-report`. Its Supabase project reference, Ve
 
 Reliability release: `43c8c78a94199a4830bb26d2acc5bf6c7d4b02b2`, pushed to `origin/master` and verified against the remote ref. Existing unrelated brand changes remain outside this commit. A Git push is not proof of a successful hosting deployment.
 
-Migration 0013 SHA-256: `513bd9d347708c55be1788cc9695adece1d4df73639b87585c0c3ddf07149dcf`.
+Migration 0013 SHA-256: `94918d4736e9964c723036c542da3f31883937d9e62c1b7a89014d81202cd69f`.
 
 ## 1. Identify and back up the target
 
@@ -28,7 +28,42 @@ psql service=gyeol-production -X -v ON_ERROR_STOP=1 -f scripts/paid_report_produ
 
 Store backup location, timestamp, checksum and restore verification. Listing a dump is only a readability check; test restoring into an isolated database before relying on it. Do not restore over production. If managed-schema permissions prevent a full logical backup, use an authenticated platform backup and verify its restore scope instead of silently accepting an incomplete dump. See [Supabase backup guidance](https://supabase.com/docs/guides/platform/backups).
 
-If `supabase_migrations.schema_migrations` exists, read its versions/names. Compare its history AND actual schema against active `0001_*`–`0012_*`. The repository also has **`001_init.sql`, an incompatible older schema**. Do not run an unfiltered `supabase db push` over this directory. Do not mark missing migrations as applied to bypass drift. Reconcile drift first, preserving existing data.
+If `supabase_migrations.schema_migrations` exists, read its versions/names. Compare its history AND actual schema against active `0001_*`–`0012_*`. The repository also has **`001_init.sql`, an incompatible older schema**. Never use `--include-all`. Do not mark missing migrations as applied to bypass drift. Reconcile drift first, preserving existing data.
+
+### Exact Supabase CLI sequence
+
+These commands pin the verified CLI version and use an explicit project ref on every remote command. They do not use the Supabase plugin. Replace the two bracketed values locally; do not paste credentials into source files or chat.
+
+```sh
+cd /Users/Deokmin/Dev/projects/gyeol-report
+pnpm dlx supabase@2.117.0 login
+pnpm dlx supabase@2.117.0 projects list
+export GYEOL_SUPABASE_PROJECT_REF='<20-lowercase-project-ref>'
+export GYEOL_BACKUP_DIR='<absolute-private-backup-directory>'
+mkdir -p "$GYEOL_BACKUP_DIR"
+chmod 700 "$GYEOL_BACKUP_DIR"
+pnpm dlx supabase@2.117.0 migration list --project-ref "$GYEOL_SUPABASE_PROJECT_REF"
+pnpm dlx supabase@2.117.0 db query --project-ref "$GYEOL_SUPABASE_PROJECT_REF" "select version,name from supabase_migrations.schema_migrations order by version"
+pnpm dlx supabase@2.117.0 db dump --project-ref "$GYEOL_SUPABASE_PROJECT_REF" --role-only --file "$GYEOL_BACKUP_DIR/pre-0013-roles.sql"
+pnpm dlx supabase@2.117.0 db dump --project-ref "$GYEOL_SUPABASE_PROJECT_REF" --schema public --file "$GYEOL_BACKUP_DIR/pre-0013-public-schema.sql"
+pnpm dlx supabase@2.117.0 db dump --project-ref "$GYEOL_SUPABASE_PROJECT_REF" --schema public --data-only --use-copy --file "$GYEOL_BACKUP_DIR/pre-0013-public-data.sql"
+shasum -a 256 "$GYEOL_BACKUP_DIR/pre-0013-roles.sql" "$GYEOL_BACKUP_DIR/pre-0013-public-schema.sql" "$GYEOL_BACKUP_DIR/pre-0013-public-data.sql"
+pnpm dlx supabase@2.117.0 db query --project-ref "$GYEOL_SUPABASE_PROJECT_REF" --file scripts/paid_report_production_audit.sql
+pnpm dlx supabase@2.117.0 db push --project-ref "$GYEOL_SUPABASE_PROJECT_REF" --dry-run --skip-vault
+```
+
+Stop here unless all of the following are true: the project ref is production `gyeol-report`; backup files exist and have nonzero size; remote history and actual schema match active `0001`–`0012`; the audit shows `reports.report_id` and `payment_orders`; and the dry run lists **only** `0013_paid_report_reliability.sql`. If it lists `001_init.sql`, any earlier migration, no migration, or schema drift, do not apply anything.
+
+Only after that gate passes, run:
+
+```sh
+pnpm dlx supabase@2.117.0 db push --project-ref "$GYEOL_SUPABASE_PROJECT_REF" --skip-vault
+pnpm dlx supabase@2.117.0 migration list --project-ref "$GYEOL_SUPABASE_PROJECT_REF"
+pnpm dlx supabase@2.117.0 db query --project-ref "$GYEOL_SUPABASE_PROJECT_REF" --file scripts/paid_report_production_audit.sql
+pnpm dlx supabase@2.117.0 db lint --project-ref "$GYEOL_SUPABASE_PROJECT_REF" --schema public --level warning --fail-on error
+pnpm dlx supabase@2.117.0 db advisors --project-ref "$GYEOL_SUPABASE_PROJECT_REF" --type security --level warn --fail-on error
+pnpm dlx supabase@2.117.0 db advisors --project-ref "$GYEOL_SUPABASE_PROJECT_REF" --type performance --level warn --fail-on error
+```
 
 ## 2. Apply and verify 0013
 
@@ -39,10 +74,10 @@ Run the audit again and compare before/after. All must hold:
 | Object | Required result |
 | --- | --- |
 | `payment_orders` | Existing rows preserved; provider order and payment key unique; confirmation lease/token columns |
-| `report_input_snapshots` | Order PK/FK, non-null payload, default expiry +90 days, RLS |
-| `paid_report_snapshots` | Unique order, report PK, +90-day default, completion/snapshot/gate constraint, attention/expiry states, RLS |
+| `report_input_snapshots` | Order PK/FK, non-null payload, default expiry +90 days, expiry index, RLS |
+| `paid_report_snapshots` | Unique order, report PK, +90-day default, expiry index, completion/snapshot/gate constraint, attention/expiry states, RLS |
 | `report_generation_jobs` | Unique order and report; due index; attempts 0–3; lease/token/run/retry fields; attention state; RLS |
-| `report_generation_attempts` | Unique job/run/attempt, timestamps, strategy and error audit, RLS |
+| `report_generation_attempts` | Unique job/run/attempt, indexed report FK, timestamps, strategy and error audit, RLS |
 | `paid_report_reliability(text,jsonb)` | Security definer, pinned search path, service-role execute only; admin retry and fenced claims |
 | Legacy RPCs named in 0013 | No effective `anon`/`authenticated` execute privilege |
 | New snapshot/job tables | No effective public-client read/write privileges, including inherited PUBLIC grants |
@@ -98,14 +133,15 @@ For expiry, also check the original timestamps are exactly 90 days apart before 
 
 ## Local release verification
 
-Verified the exact reliability commit in an isolated export, without `.env.local` or provider keys:
+The production launch preparation was verified locally with provider calls disabled:
 
-- `pnpm test`: 321 files / 2,358 tests passed. This excludes the unrelated, uncommitted brand test added in the working directory.
+- `pnpm test`: 321 files / 2,359 tests passed.
 - Reliability suite: 22/22 passed, including the original ten required scenarios.
 - `pnpm lint`: passed.
-- `pnpm build`: passed, including TypeScript. The isolated export initially needed a local dependency copy for Turbopack; the build then required network access for Google Fonts. No OpenAI/Toss calls were used.
+- `pnpm build`: passed with `OPENAI_REPORT_WRITER_ENABLED=0`, `TOSS_CONFIRM_API_ENABLED=0`, and `PAID_REPORT_RELIABILITY_ENABLED=0`, including TypeScript. Network access was needed only for Google Fonts.
 - `git diff --check`: passed.
-- Read-only audit SQL: passed against empty local PostgreSQL, active 0001–0012, and after 0013; five required tables and admin retry detected after migration.
+- Active `0001`–`0013` applied cleanly to local PostgreSQL. Catalog checks found all five required RLS tables, service-role-only RPC access, exact +90-day defaults, no unindexed reliability foreign keys, and all expiry cleanup indexes.
+- Applying legacy `001_init.sql` after the active sequence failed on its incompatible `reports(id)` foreign key, confirming it must never be included in the production push.
 
 These checks do not establish remote schema, secrets, scheduler operation or staging acceptance.
 
