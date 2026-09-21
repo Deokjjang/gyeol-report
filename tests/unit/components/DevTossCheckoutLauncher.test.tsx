@@ -1,9 +1,10 @@
+import { adultCheckoutConsent } from "../../fixtures/checkoutConsent";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import type { DevTossCheckoutInputSnapshot } from "../../../src/components/payment/DevTossCheckoutLauncher";
+import type { DevTossCheckoutInputSnapshot, DevTossCheckoutLauncherRuntime } from "../../../src/components/payment/DevTossCheckoutLauncher";
 
 const componentPath = join(
   process.cwd(),
@@ -89,7 +90,7 @@ function createHarness(options?: {
       }),
     };
   };
-  const runtime = {
+  const runtime: DevTossCheckoutLauncherRuntime = {
     fetch: async (input: string, init: RequestInit) => {
       if (options?.rejectFetch) {
         throw new Error("prepare failed");
@@ -268,6 +269,7 @@ describe("DevTossCheckoutLauncher", () => {
     expect(requestBody.provider).toBe("toss");
     expect(requestBody.productType).toBe("saju_mbti_full");
     expect(requestBody.inputSnapshot).toEqual(validInputSnapshot);
+    expect(requestBody.consent).toEqual(adultCheckoutConsent());
     expect(harness.launchInputs).toHaveLength(1);
 
     const launchInput = harness.launchInputs[0];
@@ -343,6 +345,17 @@ describe("DevTossCheckoutLauncher", () => {
       messageKo: "결제 전 필수 확인 항목에 모두 동의해 주세요.",
     });
     expect(harness.fetchCalls).toHaveLength(0);
+    expect(harness.launchInputs).toHaveLength(0);
+  });
+
+  it.each([
+    ["필수 항목을 확인해 주세요.", "필수 항목을 확인해 주세요."],
+    ["CONSENT_VERSION_MISMATCH private detail", "결제창을 시작하지 못했습니다. 잠시 후 다시 시도해 주세요."],
+  ])("only displays the allowlisted server consent message: %s", async (message, expected) => {
+    const launcherModule = await importLauncherModule();
+    const harness = createHarness({ responseOk: false, responseBody: { ok: false, error: { message } } });
+    const result = await launcherModule.runDevTossCheckout(validInputSnapshot, launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations, harness.runtime);
+    expect(result).toEqual({ ok: false, messageKo: expected });
     expect(harness.launchInputs).toHaveLength(0);
   });
 

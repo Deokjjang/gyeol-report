@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
+import { createCheckoutConsentAssertion, calculateCheckoutAge, getCheckoutAgeGateStatus, type CheckoutLegalConfirmations, type CheckoutAgeGateStatus } from "../../lib/payment/checkoutConsent";
 import styles from "./paidFunnel.module.css";
 import { getReportProduct } from "../../lib/payment/reportProductCatalog";
 
@@ -71,20 +72,8 @@ type DevTossCheckoutRunOptions = {
   readonly productType?: ReportProductType;
 };
 
-export type DevTossCheckoutLegalConfirmations = {
-  readonly inputAccuracy: boolean;
-  readonly digitalReportStart: boolean;
-  readonly refundRestriction: boolean;
-  readonly policyAgreement: boolean;
-  readonly age14OrOlder: boolean;
-  readonly minorLegalRepresentative: boolean;
-};
-
-export type DevTossCheckoutAgeGateStatus =
-  | "adult"
-  | "minor"
-  | "under_14"
-  | "invalid_birthdate";
+export type DevTossCheckoutLegalConfirmations = CheckoutLegalConfirmations;
+export type DevTossCheckoutAgeGateStatus = CheckoutAgeGateStatus;
 
 export type DevTossCheckoutLauncherResult =
   | {
@@ -139,70 +128,8 @@ export function isDevTossCheckoutInputComplete(
   return hasRequiredText;
 }
 
-function parseBirthDate(value: string): Date | null {
-  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
-
-  if (!match) {
-    return null;
-  }
-
-  const year = Number(match[1]);
-  const month = Number(match[2]);
-  const day = Number(match[3]);
-  const parsedDate = new Date(Date.UTC(year, month - 1, day));
-
-  if (
-    parsedDate.getUTCFullYear() !== year ||
-    parsedDate.getUTCMonth() !== month - 1 ||
-    parsedDate.getUTCDate() !== day
-  ) {
-    return null;
-  }
-
-  return parsedDate;
-}
-
-export function calculateDevTossCheckoutAge(
-  birthDate: string,
-  asOfDate: Date,
-): number | null {
-  const parsedBirthDate = parseBirthDate(birthDate);
-
-  if (!parsedBirthDate) {
-    return null;
-  }
-
-  let age = asOfDate.getUTCFullYear() - parsedBirthDate.getUTCFullYear();
-  const monthDiff = asOfDate.getUTCMonth() - parsedBirthDate.getUTCMonth();
-  const dayDiff = asOfDate.getUTCDate() - parsedBirthDate.getUTCDate();
-
-  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-    age -= 1;
-  }
-
-  return age;
-}
-
-export function getDevTossCheckoutAgeGateStatus(
-  birthDate: string,
-  asOfDate: Date = new Date(),
-): DevTossCheckoutAgeGateStatus {
-  const age = calculateDevTossCheckoutAge(birthDate, asOfDate);
-
-  if (age === null) {
-    return "invalid_birthdate";
-  }
-
-  if (age < 14) {
-    return "under_14";
-  }
-
-  if (age < 19) {
-    return "minor";
-  }
-
-  return "adult";
-}
+export const calculateDevTossCheckoutAge = calculateCheckoutAge;
+export const getDevTossCheckoutAgeGateStatus = getCheckoutAgeGateStatus;
 
 export function isDevTossCheckoutLegalConfirmationComplete(
   inputSnapshot: DevTossCheckoutInputSnapshot,
@@ -281,6 +208,7 @@ export async function runDevTossCheckout(
         provider: "toss",
         productType: options.productType ?? "saju_mbti_full",
         inputSnapshot,
+        consent: createCheckoutConsentAssertion(legalConfirmations),
       }),
     });
   } catch {
@@ -301,7 +229,8 @@ export async function runDevTossCheckout(
     body.ok !== true ||
     !isRecord(body.tossCheckoutRequest)
   ) {
-    return createFailureResult();
+    return createFailureResult(isRecord(body) && isRecord(body.error) && body.error.message === "필수 항목을 확인해 주세요."
+      ? "필수 항목을 확인해 주세요." : DEV_TOSS_CHECKOUT_ERROR_MESSAGE);
   }
 
   let launchResult: TossClientCheckoutLaunchResult;

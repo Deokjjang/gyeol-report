@@ -1,3 +1,4 @@
+import { adultCheckoutConsent } from "../../fixtures/checkoutConsent";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { POST } from "../../../src/app/api/payment-checkout/prepare/route";
 
@@ -7,7 +8,7 @@ const person = { name: "검증", birthDate: "1996-12-06", birthTime: "14:15", bi
 function request(input: object) {
   return new Request("https://example.test/api/payment-checkout/prepare", {
     method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
-      provider: "toss", productType: "saju_mbti_full", inputSnapshot: {
+      consent: adultCheckoutConsent(), provider: "toss", productType: "saju_mbti_full", inputSnapshot: {
         displayName: person.name, birthDate: person.birthDate,
         reportInputPayload: { productKey: "saju_mbti_full", productSlug: "saju-mbti-full", person: input, userContext: { focusAreas: [] }, productOptions: {} },
       },

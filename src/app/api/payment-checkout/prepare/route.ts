@@ -1,3 +1,4 @@
+import { createCheckoutConsentEvidence } from "../../../../lib/payment/checkoutConsent";
 import { createAnnualCommerceAcceptance } from "../../../../lib/payment/annualPurchasePolicy";
 import { normalizeReportInputPayload } from "../../../../lib/report-generation/reportInputAdapter";
 import { randomUUID } from "node:crypto";
@@ -341,6 +342,7 @@ export async function POST(request: Request): Promise<NextResponse> {
   const acceptedAt = new Date();
   const inputSnapshot = { ...json.inputSnapshot };
   delete inputSnapshot.annualCommerceAcceptance;
+  delete inputSnapshot.consentEvidence;
   // Production must reject unfulfillable inputs before any payment is launched.
   {
     const normalized = normalizeReportInputPayload(inputSnapshot.reportInputPayload, { now: () => acceptedAt });
@@ -350,6 +352,11 @@ export async function POST(request: Request): Promise<NextResponse> {
         : "출생시간을 포함한 리포트 입력 정보를 확인해 주세요.";
       return createErrorResponse("PAYMENT_CHECKOUT_INVALID_REQUEST", message, 400);
     }
+    // Age follows the existing UI's purchaser basis: person / compatibility person A.
+    const birthDate = normalized.value.kind === "compatibility" ? normalized.value.personA.birthDate : normalized.value.person.birthDate;
+    const consentEvidence = createCheckoutConsentEvidence(json.consent, birthDate, acceptedAt);
+    if (!consentEvidence) return createErrorResponse("PAYMENT_CHECKOUT_INVALID_REQUEST", "필수 항목을 확인해 주세요.", 400);
+    inputSnapshot.consentEvidence = consentEvidence;
     if (normalized.value.kind === "annualFortune") {
       inputSnapshot.annualCommerceAcceptance = createAnnualCommerceAcceptance(
         Number(normalized.value.productOptions.selectedYear), acceptedAt,

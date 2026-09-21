@@ -1,3 +1,4 @@
+import { adultCheckoutConsent } from "../../fixtures/checkoutConsent";
 import { PGlite } from "@electric-sql/pglite";
 import { readFileSync, readdirSync } from "node:fs";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
@@ -24,7 +25,7 @@ beforeAll(async () => {
   for (const file of readdirSync("supabase/migrations").filter(name => /^\d{4}_.*\.sql$/u.test(name)).sort()) {
     await db.exec(readFileSync(`supabase/migrations/${file}`, "utf8").replace(/^\uFEFF/u, ""));
   }
-  for (const file of ["supabase/migrations/20260920163924_production_reliability_reconcile.sql", "scripts/paid_report_quarantine_recovery_patch.sql", "scripts/paid_payment_confirm_recovery_queue_patch.sql", "scripts/paid_report_publish_expiry_patch.sql"]) {
+  for (const file of ["supabase/migrations/20260920163924_production_reliability_reconcile.sql", "scripts/paid_report_quarantine_recovery_patch.sql", "scripts/paid_payment_confirm_recovery_queue_patch.sql", "scripts/paid_report_publish_expiry_patch.sql", "scripts/paid_report_external_call_guard_patch.sql", "scripts/paid_checkout_consent_evidence_patch.sql"]) {
     await db.exec(readFileSync(file, "utf8"));
   }
   store = { async call(action, data = {}) {
@@ -47,7 +48,7 @@ afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
 async function checkout(year: string, snapshotExtra: Record<string, unknown> = {}, payloadExtra: Record<string, unknown> = {}) {
   const response = await POST(new Request("http://localhost/api/payment-checkout/prepare", {
     method: "POST", headers: { "content-type": "application/json" },
-    body: JSON.stringify({ provider: "toss", productType: "annual_fortune", inputSnapshot: { ...snapshotExtra, reportInputPayload: { ...payloadFor(year), ...payloadExtra } } }),
+    body: JSON.stringify({ consent: adultCheckoutConsent(), provider: "toss", productType: "annual_fortune", inputSnapshot: { ...snapshotExtra, reportInputPayload: { ...payloadFor(year), ...payloadExtra } } }),
   }));
   return { status: response.status, body: await response.json() };
 }
@@ -133,7 +134,7 @@ describe("annual purchase policy — real prepare / SQL / worker, no providers",
       ? { productKey, productSlug, relationshipType: "love", personA: person, personB: { ...person, name: "상대", mbtiType: "INTP" } }
       : { ...payloadFor("2021"), productKey, productSlug, productOptions: {} };
     const response = await POST(new Request("http://localhost/api/payment-checkout/prepare", {
-      method: "POST", body: JSON.stringify({ provider: "toss", productType: productKey, inputSnapshot: { reportInputPayload: payload } }),
+      method: "POST", body: JSON.stringify({ consent: adultCheckoutConsent(), provider: "toss", productType: productKey, inputSnapshot: { reportInputPayload: payload } }),
     }));
     expect(response.status).toBe(200);
     const body = await response.json();

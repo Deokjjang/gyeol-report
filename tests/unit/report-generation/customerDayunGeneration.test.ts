@@ -1,3 +1,4 @@
+import { adultCheckoutConsent } from "../../fixtures/checkoutConsent";
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { readFileSync } from "node:fs";
 import { normalizeReportInputPayload } from "../../../src/lib/report-generation/reportInputAdapter";
@@ -40,7 +41,7 @@ describe("customer Dayun production boundaries", () => {
       storage.create.mockClear();
       const p = payload(product, changes);
       const r = await prepareCheckout(new Request("https://example.test/api/payment-checkout/prepare", {
-        method: "POST", body: JSON.stringify({ provider: "toss", productType: product, ready: true, inputSnapshot: {
+        method: "POST", body: JSON.stringify({ consent: adultCheckoutConsent(), provider: "toss", productType: product, ready: true, inputSnapshot: {
           displayName: p.person.name, birthDate: p.person.birthDate, reportInputPayload: p,
         } }),
       }));

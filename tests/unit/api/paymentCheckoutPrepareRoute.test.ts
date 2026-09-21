@@ -1,3 +1,4 @@
+import { adultCheckoutConsent } from "../../fixtures/checkoutConsent";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
@@ -42,7 +43,7 @@ function createJsonRequest(body: unknown): Request {
     headers: {
       "content-type": "application/json",
     },
-    body: JSON.stringify(body),
+    body: JSON.stringify(isRecord(body) ? { consent: adultCheckoutConsent(), ...body } : body),
   });
 }
 
