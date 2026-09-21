@@ -1016,7 +1016,7 @@ function buildLongRangeOpportunities(input: {
       plain:
         input.elementEffect.fillsMissing.length > 0
           ? `${formatElementList(input.elementEffect.fillsMissing)} 부족을 보완하며 평소 늦게 켜지던 기능을 훈련할 수 있습니다.`
-          : "부족을 직접 채우는 대운은 아니어도 반복 압박을 통해 필요한 기능을 훈련하게 됩니다.",
+          : "부족을 직접 채우는 대운은 아니어도 누적되는 부담을 다루며 필요한 기능을 훈련하게 됩니다.",
       action:
         "한 번에 바꾸려 하지 말고 10년 동안 반복할 수 있는 작고 안정적인 루틴을 만드세요.",
     },
@@ -1919,60 +1919,92 @@ function buildDomainFlows(input: {
   readonly strategicThemes: MajorFortuneEvidencePacket["strategicThemes"];
   readonly currentAnnualCross: MajorFortuneEvidencePacket["currentAnnualCross"];
 }): MajorFortuneEvidencePacket["domainFlows"] {
-  const support = [
-    `${input.majorTenGod} 대운은 현실 선택과 반복 역할을 키웁니다.`,
-    input.elementEffect.plain,
-    input.currentAnnualCross.interpretation,
-  ];
-  const friction = [
-    ...input.branchInteractions.map((interaction) => interaction.plain),
-    ...input.elementEffect.overloadsHeavy.map(
-      (element) => `${elementKo[element]} 흐름이 과해지면 일정, 책임, 몸의 피로가 같이 무거워집니다.`,
-    ),
-  ];
-  const themePlain = input.strategicThemes.map((theme) => theme.plain);
+  const primaryTheme = input.strategicThemes[0]?.plain;
+  const relationshipTheme = input.strategicThemes.find((theme) =>
+    /관계|생활 반경/u.test(theme.label),
+  )?.plain;
+  const studyTheme = input.strategicThemes.find((theme) =>
+    /공부|학업|성장|자격/u.test(theme.label),
+  )?.plain;
+  const firstInteraction = input.branchInteractions[0]?.plain;
+  const overloadedElements = formatElementList(input.elementEffect.overloadsHeavy);
+  const missingElements = formatElementList(input.elementEffect.fillsMissing);
 
   return {
     careerWork: {
       title: "직업·일 흐름",
-      summary: themePlain[0] ?? "일에서는 역할, 기준, 책임 범위가 장기 과제로 올라옵니다.",
-      supportingSignals: support.slice(0, 3),
-      frictionSignals: friction.slice(0, 3),
+      summary: primaryTheme ?? "일에서는 역할, 기준, 책임 범위가 장기 과제로 올라옵니다.",
+      supportingSignals: [
+        `${input.majorTenGod} 대운은 직업에서 역할과 성과 기준을 장기 과제로 올립니다.`,
+        input.currentAnnualCross.annualFocus,
+      ],
+      frictionSignals: [
+        firstInteraction ?? "업무 관계에서는 권한과 책임이 어긋나지 않도록 범위를 먼저 확인해야 합니다.",
+      ],
       actionHint: "역할, 권한, 마감 기준을 문서로 남기고 반복 업무는 시스템으로 고정하세요.",
     },
     moneyResource: {
       title: "돈·자원 흐름",
       summary: "돈은 한 번의 기회보다 계약, 정산, 고정비, 책임 비용을 관리하는 장면으로 나타납니다.",
-      supportingSignals: [`${input.majorTenGod}은 돈과 현실 자원을 움직이는 십성입니다.`, ...support.slice(1, 3)],
-      frictionSignals: friction.slice(0, 3),
+      supportingSignals: [
+        `${input.majorTenGod} 대운의 현실 과제를 수입·지출·계약 기준과 함께 봅니다.`,
+        input.elementEffect.plain,
+      ],
+      frictionSignals: [
+        input.elementEffect.overloadsHeavy.length > 0
+          ? `${overloadedElements} 과다가 돈과 책임 비용을 함께 무겁게 만들 수 있습니다.`
+          : "수입 기대가 커질수록 반복 지출과 책임 비용을 따로 점검해야 합니다.",
+      ],
       actionHint: "수입 기대보다 고정비, 계약 조건, 책임 비용을 먼저 분리하세요.",
     },
     relationshipLove: {
       title: "관계·연애 흐름",
       summary: "관계에서는 감정 자체보다 만나는 주기, 연락 방식, 맡을 역할을 현실적으로 맞추는 일이 중요해집니다.",
-      supportingSignals: support.slice(0, 2),
-      frictionSignals: friction.slice(0, 3),
+      supportingSignals: [
+        relationshipTheme ?? "가까운 관계에서는 일정과 역할을 맞추는 과정이 장기 흐름의 핵심 장면이 됩니다.",
+      ],
+      frictionSignals: [
+        firstInteraction ?? "관계의 기대와 실제로 맡을 수 있는 범위가 달라질 때 피로가 쌓일 수 있습니다.",
+      ],
       actionHint: "좋은 말보다 시간, 역할, 기대치를 짧고 구체적으로 맞추세요.",
     },
     healthRoutine: {
       title: "건강관리·생활 리듬",
       summary: "대운의 압박은 사건보다 수면, 식사, 회복 시간 같은 생활 리듬에서 먼저 체감될 수 있습니다.",
-      supportingSignals: support.slice(1, 3),
-      frictionSignals: friction.slice(0, 3),
+      supportingSignals: [
+        input.elementEffect.fillsMissing.length > 0
+          ? `${missingElements} 부족을 보완하는 흐름은 회복 루틴을 다시 세우는 데 활용할 수 있습니다.`
+          : "생활 리듬은 대운의 압박을 오래 감당할 수 있게 하는 기본 관리 기준입니다.",
+      ],
+      frictionSignals: [
+        input.elementEffect.overloadsHeavy.length > 0
+          ? `${overloadedElements} 흐름이 과해지면 일정과 몸의 피로가 함께 무거워질 수 있습니다.`
+          : input.currentAnnualCross.caution,
+      ],
       actionHint: "수면, 식사, 회복 시간을 일정표에 먼저 고정하고 과밀한 주간에는 일을 덜어내세요.",
     },
     socialFamily: {
       title: "사회·가족 흐름",
       summary: "가까운 사람과 사회적 역할 사이에서 대신 맡는 일과 맡지 않을 일을 다시 나누는 흐름입니다.",
-      supportingSignals: support.slice(0, 3),
-      frictionSignals: friction.slice(0, 3),
+      supportingSignals: [
+        `${input.currentAnnualCross.annualGanji} 세운의 초점은 사회적 역할과 가족 일정 사이의 우선순위를 확인하는 참고점이 됩니다.`,
+      ],
+      frictionSignals: [
+        firstInteraction
+          ? `사회·가족 관계에서는 ${firstInteraction}`
+          : "대신 맡는 일이 늘어날 때는 가능한 시간과 책임 범위를 먼저 확인해야 합니다.",
+      ],
       actionHint: "부탁과 역할은 바로 수락하지 말고 시간, 비용, 책임 범위를 먼저 확인하세요.",
     },
     studyGrowth: {
       title: "학업·성장 흐름",
       summary: "공부는 오래 붙잡는 방식보다 자격증, 문서, 포트폴리오처럼 남는 결과물로 묶을 때 대운의 힘을 쓰기 쉽습니다.",
-      supportingSignals: support.slice(0, 3),
-      frictionSignals: friction.slice(0, 3),
+      supportingSignals: [
+        studyTheme ?? `${input.majorTenGod} 대운의 경험을 문서와 결과물로 정리하면 다음 선택의 근거가 됩니다.`,
+      ],
+      frictionSignals: [
+        "학습 범위를 넓히기만 하고 결과물과 확인 날짜를 정하지 않으면 준비가 길어질 수 있습니다.",
+      ],
       actionHint: "공부 시간을 늘리기보다 결과물 단위를 정하고 매달 남길 자료를 고정하세요.",
     },
   };

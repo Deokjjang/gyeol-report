@@ -272,6 +272,13 @@ const genericTimelinePhrases = [
 const repeatedStrategyLimit = 3;
 const repeatedStrongYearStrategyLimit = 1;
 
+const artificialRepetitionFillerPatterns = [
+  /반복\s*압박\s*(?:\d+|N)번째/iu,
+  /(?:\d+|N)번째\s*점검(?:에서는|에서|은|을)?/iu,
+  /대체\s*문장\s*(?:\d+|N)?/iu,
+  /문장\s*교체/iu,
+] as const;
+
 const relationshipKnownClaimPhrases = [
   "솔로탈출",
   "애인",
@@ -1938,28 +1945,65 @@ function splitLongSentencesForRepetition(text: string): readonly string[] {
       (sentence) =>
         !sentence.includes("특정 사건") &&
         !sentence.includes("결과를 보장하지") &&
-        !sentence.includes("의학적 진단"),
-    )
-    .filter(
-      (sentence) =>
-        sentence.includes("이미 무거운 오행") ||
-        sentence.includes("같은 오행 support/friction"),
+        !sentence.includes("의학적 진단") &&
+        !sentence.includes("자기이해"),
     );
+}
+
+function normalizeLongSentenceMeaning(
+  sentence: string,
+  personLabel: string,
+): string {
+  const withoutPerson = personLabel.trim().length === 0
+    ? sentence
+    : sentence.replace(new RegExp(`${escapeRegExp(personLabel)}(?:님)?`, "gu"), "PERSON");
+
+  return withoutPerson
+    .replace(/(?:19|20)\d{2}년?/gu, "YEAR")
+    .replace(/\b\d+번째\b/gu, "N번째")
+    .replace(/\s+/gu, " ")
+    .trim();
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
 }
 
 function appendLongSentenceRepetitionErrors(
   errors: string[],
   visibleText: string,
+  personLabel: string,
+  strictProductionBasis: boolean,
 ): void {
-  const counts = new Map<string, number>();
+  const exactCounts = new Map<string, number>();
+  const normalizedCounts = new Map<string, number>();
 
-  for (const sentence of splitLongSentencesForRepetition(visibleText)) {
-    counts.set(sentence, (counts.get(sentence) ?? 0) + 1);
+  const sentences = splitLongSentencesForRepetition(visibleText).filter(
+    (sentence) =>
+      strictProductionBasis ||
+      sentence.includes("이미 무거운 오행") ||
+      sentence.includes("같은 오행 support/friction"),
+  );
+
+  for (const sentence of sentences) {
+    exactCounts.set(sentence, (exactCounts.get(sentence) ?? 0) + 1);
+    const normalized = normalizeLongSentenceMeaning(sentence, personLabel);
+    normalizedCounts.set(normalized, (normalizedCounts.get(normalized) ?? 0) + 1);
   }
 
-  for (const [sentence, count] of counts) {
-    if (count >= 3) {
+  for (const [sentence, count] of exactCounts) {
+    const limit = strictProductionBasis ? 8 : 3;
+    if (count >= limit) {
       errors.push(`MAJOR_FORTUNE_REPEATED_LONG_SENTENCE:${sentence}`);
+    }
+  }
+  for (const [sentence, count] of normalizedCounts) {
+    if (
+      strictProductionBasis &&
+      count >= 8 &&
+      (exactCounts.get(sentence) ?? 0) < 8
+    ) {
+      errors.push(`MAJOR_FORTUNE_NORMALIZED_REPETITION:${sentence}`);
     }
   }
 }
@@ -2491,7 +2535,16 @@ export function validateMajorFortuneReportDraft(
       errors.push(`MAJOR_FORTUNE_FORBIDDEN_EXPRESSION:${expression}`);
     }
   }
-  appendLongSentenceRepetitionErrors(errors, visibleText);
+  if (artificialRepetitionFillerPatterns.some((pattern) => pattern.test(visibleText))) {
+    errors.push("MAJOR_FORTUNE_ARTIFICIAL_REPETITION_FILLER");
+  }
+  appendLongSentenceRepetitionErrors(
+    errors,
+    visibleText,
+    sanitizedDraft.personLabel,
+    sanitizedDraft.calculationBasis.basisType ===
+      "manse_engine_major_fortune_table",
+  );
   const quality = summarizeMajorFortuneDraftQuality(sanitizedDraft);
 
   if (safetyNotesRepairSummary.warningCount > 0) {

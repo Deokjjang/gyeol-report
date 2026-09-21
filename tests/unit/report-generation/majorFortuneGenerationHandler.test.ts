@@ -193,7 +193,7 @@ describe("major fortune generation handler", () => {
     }
   });
 
-  it("diversifies repeated long action hints before preview validation", async () => {
+  it("does not synthesize replacement advice while validating fallback content", async () => {
     const result = await generateMajorFortuneProductDraft(baseInput);
     const visibleText = collectVisibleDraftText(result);
     const repeatedActionHint =
@@ -201,6 +201,7 @@ describe("major fortune generation handler", () => {
     const count = visibleText.split(repeatedActionHint).length - 1;
 
     expect(count).toBeLessThan(3);
+    expect(visibleText).not.toMatch(/반복\s*압박\s*\d+번째|\d+번째\s*점검/u);
   });
 
   it("does not connect API, persistence, payment, or unconditional writer execution", () => {

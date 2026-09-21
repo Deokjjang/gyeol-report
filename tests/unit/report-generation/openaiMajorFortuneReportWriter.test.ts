@@ -538,6 +538,40 @@ describe("openaiMajorFortuneReportWriter", () => {
     expect(requestText).not.toContain("sk-test");
   });
 
+  it("preserves distinct writer prose while removing only excessive exact repetition", async () => {
+    const repeatedSentence =
+      "같은 장기 신호를 설명하는 이 문장은 중복 후처리 경계를 확인할 만큼 충분히 길게 작성되었습니다.";
+    const draft = createValidDraft();
+    const writerDraft: MajorFortuneReportDraft = {
+      ...draft,
+      openingSummary:
+        "서로 다른 근거를 연결한 정상 문장은 후처리 뒤에도 뜻과 표현이 그대로 남아야 합니다.",
+      cycleChapters: draft.cycleChapters.map((chapter, index) => ({
+        ...chapter,
+        body: `${repeatedSentence} ${index + 1}번째 영역에서만 필요한 고유한 해석 문장은 그대로 보존합니다.`,
+      })),
+    };
+    const result = await generateMajorFortuneReportDraft({
+      evidencePacket: buildPacket(),
+      config: {
+        enabled: true,
+        apiKey: "sk-test",
+        model: "test-model",
+        fetchImpl: async () => openAIResponse(JSON.stringify(writerDraft)),
+      },
+    });
+    const serialized = JSON.stringify(result.draft);
+
+    expect(result.draft.openingSummary).toBe(writerDraft.openingSummary);
+    expect(serialized.match(new RegExp(repeatedSentence, "gu"))).toHaveLength(2);
+    for (let index = 0; index < writerDraft.cycleChapters.length; index += 1) {
+      expect(result.draft.cycleChapters[index]?.body).toContain(
+        `${index + 1}번째 영역에서만 필요한 고유한 해석 문장`,
+      );
+    }
+    expect(serialized).not.toMatch(/반복 압박\s*\d+번째|\d+번째\s*점검/u);
+  });
+
   it("keeps the major draft json schema strict-compatible", () => {
     expect(majorFortuneReportDraftJsonSchema.properties.phaseTimeline.items.required).toEqual([
       "phase",

@@ -543,7 +543,7 @@ function buildPairPlain(input: {
     return `${branchText} 해는 ${pillarText}에서 작은 어긋남이나 미묘한 피로가 누적되기 쉬운 신호입니다.`;
   }
   if (input.type === "형") {
-    return `${branchText} 형은 ${pillarText}에서 반복 압박이나 스스로 몰아붙이는 흐름이 커질 수 있음을 봅니다.`;
+    return `${branchText} 형은 ${pillarText}에서 누적 부담이나 스스로 몰아붙이는 흐름이 커질 수 있음을 봅니다.`;
   }
   if (input.type === "파") {
     return `${branchText} 파는 ${pillarText}에서 기존 방식이 깨지거나 다시 조정되는 장면을 만들 수 있습니다.`;

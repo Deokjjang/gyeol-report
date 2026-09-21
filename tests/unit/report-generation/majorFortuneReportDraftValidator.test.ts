@@ -591,7 +591,7 @@ describe("majorFortuneReportDraftValidator", () => {
   it("accepts a valid major fortune draft", () => {
     const result = validateMajorFortuneReportDraft(createValidMajorFortuneDraft());
 
-    expect(result.ok).toBe(true);
+    expect(result.ok, result.errors.join("\n")).toBe(true);
     expect(result.value?.productType).toBe("major_fortune");
     expect(result.value?.headline).toContain("대운 리포트");
     expect(result.value?.annualCrossReading).toContain("2026년");
@@ -613,11 +613,50 @@ describe("majorFortuneReportDraftValidator", () => {
         ...baseDraft.decadeArchetype,
         plain: repeated,
       },
+      timelineReading: repeated,
     });
 
     expect(result.ok).toBe(false);
     expect(result.errors.join("\n")).toContain(
       "MAJOR_FORTUNE_REPEATED_LONG_SENTENCE",
+    );
+  });
+
+  it("rejects artificial numbered repetition filler", () => {
+    const result = validateMajorFortuneReportDraft(
+      createValidMajorFortuneDraft({
+        openingSummary:
+          "반복 압박 69번째 점검에서는 역할, 비용, 회복 기준 중 하나를 줄여 다음 선택을 가볍게 만드세요.",
+      }),
+    );
+
+    expect(result.ok).toBe(false);
+    expect(result.errors).toContain(
+      "MAJOR_FORTUNE_ARTIFICIAL_REPETITION_FILLER",
+    );
+  });
+
+  it("rejects excessive year-only normalized repetition on production basis", () => {
+    const baseDraft = createValidMajorFortuneDraft();
+    const repeatedRows = baseDraft.majorFortuneTimelineRows.map((row) => ({
+      ...row,
+      yearDetail: {
+        ...row.yearDetail,
+        realWorldScenes: `${row.year}년 직업·일에서는 역할 기준을 먼저 좁히고 돈·관계·회복의 우선순위를 같은 순서로 확인합니다.`,
+      },
+    }));
+    const result = validateMajorFortuneReportDraft({
+      ...baseDraft,
+      calculationBasis: {
+        ...baseDraft.calculationBasis,
+        basisType: "manse_engine_major_fortune_table",
+      },
+      majorFortuneTimelineRows: repeatedRows,
+    });
+
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain(
+      "MAJOR_FORTUNE_NORMALIZED_REPETITION",
     );
   });
 

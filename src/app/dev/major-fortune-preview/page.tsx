@@ -344,7 +344,7 @@ function explainPreviewMajorSignal(value: string | null): string {
     return `${signal}: 겉으로 크지 않아도 불편감이 천천히 쌓일 수 있는 지점입니다.`;
   }
   if (signal.includes("형")) {
-    return `${signal}: 반복 압박이 커지기 쉬워 기준을 좁히고 회복 시간을 먼저 확보해야 하는 장면입니다.`;
+    return `${signal}: 누적 부담이 커지기 쉬워 기준을 좁히고 회복 시간을 먼저 확보해야 하는 장면입니다.`;
   }
   if (signal.includes("파")) {
     return `${signal}: 기존 방식이 깨지고 다시 맞춰야 하는 장면이 생기기 쉬운 흐름입니다.`;

@@ -119,28 +119,6 @@ const fallbackSafetyNotes = [
 
 type MajorFortuneDraftBigTheme = MajorFortuneReportDraft["bigThemes"][number];
 
-const repeatedMajorActionHint =
-  "역할, 권한, 마감 기준을 문서로 남기고 반복 업무는 시스템으로 고정하세요.";
-const repeatedMajorActionHintAlternatives = [
-  "담당 범위와 결정권자를 먼저 정하고, 반복 업무는 체크리스트로 고정하세요.",
-  "마감과 권한을 초반에 합의하면 같은 책임이 여러 번 쌓이는 일을 줄일 수 있습니다.",
-  "역할 조정이 필요한 장면에서는 말보다 일정표와 담당표를 먼저 남기세요.",
-] as const;
-const repeatedMajorSentenceAlternatives = [
-  "이 장면에서는 맡을 범위와 중단 기준을 먼저 정해야 같은 부담이 반복되지 않습니다.",
-  "같은 조언을 반복하기보다 해당 해의 돈, 역할, 회복 기준을 따로 적어 두는 편이 안전합니다.",
-  "반복되는 책임은 말로 처리하지 말고 담당자, 비용, 확인 날짜를 나누어 기록하세요.",
-  "이 구간에서는 확장보다 정리할 항목을 먼저 닫아야 대운의 압박이 줄어듭니다.",
-  "해당 시기에는 새 일을 더하기 전에 이미 맡은 역할의 소유자와 마감선을 다시 확인하세요.",
-  "돈과 관계가 함께 움직일 때는 감으로 결정하지 말고 금액, 기간, 책임자를 분리하세요.",
-  "커지는 일은 바로 받아들이지 말고 승인선과 보고 방식을 먼저 고정해야 합니다.",
-  "관계 피로가 반복될 때는 좋은 말보다 시간, 비용, 역할의 경계를 짧게 맞추세요.",
-  "공부와 일은 오래 붙잡는 방식보다 남길 결과물과 확인 날짜를 정할 때 안정됩니다.",
-  "생활 리듬이 흔들리면 대운 해석보다 수면, 식사, 기록 시간을 먼저 회복해야 합니다.",
-  "다음 선택을 미루지 않으려면 시작 조건과 중단 조건을 같은 문서에 적어 두세요.",
-  "반복 압박은 의지로 버티기보다 주간 일정에서 줄일 일 하나를 먼저 빼야 낮아집니다.",
-] as const;
-
 export async function generateMajorFortuneProductDraft(
   input: SinglePersonGenerationInput,
   options: MajorFortuneGenerationHandlerOptions = {},
@@ -190,10 +168,7 @@ export async function generateMajorFortuneProductDraft(
     });
   }
 
-  const draftForValidation = diversifyRepeatedMajorFortuneSentences(
-    draftResult.draft,
-  );
-  const validation = validateMajorFortuneReportDraft(draftForValidation);
+  const validation = validateMajorFortuneReportDraft(draftResult.draft);
 
   if (!validation.ok || validation.value === undefined) {
     return majorFortuneFailure({
@@ -212,96 +187,6 @@ export async function generateMajorFortuneProductDraft(
     },
     evidencePacket: withReportInputEvidence(evidencePacket, input),
   };
-}
-
-function diversifyRepeatedMajorFortuneSentences(
-  draft: MajorFortuneReportDraft,
-): MajorFortuneReportDraft {
-  let targetCount = 0;
-  let alternativeIndex = 0;
-  const sentenceCounts = new Map<string, number>();
-  let sentenceAlternativeIndex = 0;
-
-  const visit = (value: unknown): unknown => {
-    if (typeof value === "string") {
-      let nextValue = value;
-
-      if (nextValue.includes(repeatedMajorActionHint)) {
-        targetCount += 1;
-
-        if (targetCount >= 3) {
-          const replacement =
-            repeatedMajorActionHintAlternatives[
-              alternativeIndex % repeatedMajorActionHintAlternatives.length
-            ];
-          alternativeIndex += 1;
-          nextValue = nextValue.replace(repeatedMajorActionHint, replacement);
-        }
-      }
-
-      return diversifyRepeatedMajorFortuneLongSentences({
-        value: nextValue,
-        counts: sentenceCounts,
-        getAlternative: () => {
-          const alternative =
-            repeatedMajorSentenceAlternatives[sentenceAlternativeIndex] ??
-            `반복 압박 ${sentenceAlternativeIndex + 1}번째 점검에서는 역할, 비용, 회복 기준 중 하나를 줄여 다음 선택을 가볍게 만드세요.`;
-          sentenceAlternativeIndex += 1;
-
-          return alternative;
-        },
-      });
-    }
-    if (Array.isArray(value)) {
-      return value.map((item) => visit(item));
-    }
-    if (value !== null && typeof value === "object") {
-      return Object.fromEntries(
-        Object.entries(value).map(([key, item]) => [key, visit(item)]),
-      );
-    }
-
-    return value;
-  };
-
-  return visit(draft) as MajorFortuneReportDraft;
-}
-
-function diversifyRepeatedMajorFortuneLongSentences(input: {
-  readonly value: string;
-  readonly counts: Map<string, number>;
-  readonly getAlternative: () => string;
-}): string {
-  const sentences = input.value.split(/(?<=[.!?。！？])\s+/u);
-
-  return sentences
-    .map((sentence) => {
-      const normalized = sentence
-        .replace(/[“”"']/g, "")
-        .replace(/\s+/g, " ")
-        .replace(/[.!?。！？]+$/u, "")
-        .trim();
-
-      if (
-        normalized.length < 40 ||
-        normalized.includes("특정 사건") ||
-        normalized.includes("결과를 보장하지") ||
-        normalized.includes("자기이해")
-      ) {
-        return sentence;
-      }
-
-      const count = input.counts.get(normalized) ?? 0;
-      input.counts.set(normalized, count + 1);
-
-      if (count < 2) {
-        return sentence;
-      }
-
-      return input.getAlternative();
-    })
-    .join(" ")
-    .trim();
 }
 
 function buildMajorFortuneEvidenceFromGenerationInput(
@@ -525,7 +410,7 @@ function buildDecadeCards(packet: MajorFortuneEvidencePacket) {
       label,
       index: 72 - index * 3,
       headline: flow.title,
-      body: `${flow.summary} ${flow.actionHint}`,
+      body: flow.summary,
     };
   });
 }
@@ -624,20 +509,26 @@ function buildCycleChapters(packet: MajorFortuneEvidencePacket) {
     return {
       title: flow.title,
       headline: firstSentence(flow.summary),
-      body: `${flow.summary} ${flow.actionHint}`,
+      body:
+        supportSignal && frictionSignal
+          ? `도움이 되는 근거는 ${supportSignal} 관리할 근거는 ${frictionSignal}`
+          : flow.summary,
       likelyScenes: ensureMinimumItems(
-        [...flow.supportingSignals, ...flow.frictionSignals],
-        [flow.summary, flow.actionHint],
+        [
+          ...flow.supportingSignals.map((signal) => `살릴 장면: ${signal}`),
+          ...flow.frictionSignals.map((signal) => `조절할 장면: ${signal}`),
+        ],
+        [`핵심 장면: ${flow.summary}`, `실행 장면: ${flow.actionHint}`],
         2,
       ).slice(0, 4),
       practicalAdvice: ensureMinimumItems(
         [
-          flow.actionHint,
+          getMajorFortuneDomainActionHint(label),
           supportSignal
-            ? `${supportSignal}은 이번 대운에서 먼저 살릴 기준으로 두고, 성과가 보이는 형태로 기록합니다.`
+            ? `이 영역에서 살릴 근거인 ${supportSignal}을 실제 선택 기록에 남깁니다.`
             : "",
           frictionSignal
-            ? `${frictionSignal}은 일정, 돈, 역할 중 하나의 기준으로 쪼개어 과부하가 쌓이기 전에 조정합니다.`
+            ? `관리 근거인 ${frictionSignal}은 과부하가 쌓이기 전에 범위를 좁혀 조정합니다.`
             : "",
         ],
         [
@@ -660,14 +551,16 @@ function buildPhaseTimeline(packet: MajorFortuneEvidencePacket) {
   return (["early", "middle", "late"] as const).map((phase) => {
     const rows = packet.cycleYearTimeline.filter((row) => row.phase === phase);
     const firstRow = rows[0] ?? packet.cycleYearTimeline[0];
+    const lastRow = rows.at(-1) ?? firstRow;
 
     return {
       phase,
       label: phaseLabels[phase],
       headline: firstRow?.headline ?? `${phaseLabels[phase]} 흐름`,
       body:
-        rows.map((row) => row.plainInterpretation).join(" ") ||
-        packet.tenYearFlowSummary.summary,
+        firstRow === undefined
+          ? packet.tenYearFlowSummary.summary
+          : `${phaseLabels[phase]}에는 ${firstRow.roleOfYearInCycle} ${lastRow?.whyItMatters ?? firstRow.whyItMatters}`,
       advice:
         firstRow?.strategicFocus ??
         "해마다 반복되는 압박과 선택 기준을 기록해 다음 단계의 기준으로 넘깁니다.",
@@ -702,31 +595,18 @@ function buildStrongYears(packet: MajorFortuneEvidencePacket) {
   return [...fromEvidence, ...fallback].slice(0, Math.max(3, fromEvidence.length));
 }
 
-function buildFinalAdvice(packet: MajorFortuneEvidencePacket) {
-  const usedActionHints = new Set<string>();
-
+function buildFinalAdvice() {
   return majorFortuneDomainLabels.map((label) => {
-    const flow = packet.domainFlows[domainFlowKeyByLabel[label]];
-    const actionHint = flow.actionHint.trim();
-    const dedupedActionHint =
-      actionHint.length > 0 && !usedActionHints.has(actionHint)
-        ? actionHint
-        : getMajorFortuneDomainActionHint(label);
-
-    if (actionHint.length > 0) {
-      usedActionHints.add(actionHint);
-    }
-
     return {
       label,
-      body: `${flow.summary} ${dedupedActionHint}`,
+      body: `${label} 기준: ${getMajorFortuneDomainActionHint(label)}`,
     };
   });
 }
 
 function getMajorFortuneDomainActionHint(label: MajorFortuneDomainLabel): string {
   if (label === "일·성과") {
-    return "업무에서는 담당 범위, 결정권자, 다음 확인일을 먼저 적어야 반복 압박이 줄어듭니다.";
+    return "업무에서는 담당 범위, 결정권자, 다음 확인일을 먼저 적어야 과부하를 줄일 수 있습니다.";
   }
   if (label === "돈·현실") {
     return "돈은 수입 기대보다 고정비, 정산일, 철수 기준을 먼저 나누는 방식이 안전합니다.";
@@ -735,7 +615,7 @@ function getMajorFortuneDomainActionHint(label: MajorFortuneDomainLabel): string
     return "사람 사이에서는 부탁을 받기 전에 맡을 범위와 거절할 범위를 짧게 확인하세요.";
   }
   if (label === "연애·가족") {
-    return "가까운 관계에서는 해결책보다 감정 확인을 먼저 두고, 역할 분담은 말로 남겨야 합니다.";
+    return "가까운 관계에서는 해결책보다 감정 확인을 먼저 두고, 시간과 맡을 일을 구체적으로 합의하세요.";
   }
   if (label === "학업·자격증") {
     return "공부는 자격증, 문서, 포트폴리오처럼 남는 결과물로 묶을 때 흐름이 오래 갑니다.";
@@ -925,7 +805,7 @@ function buildMajorFortuneFallbackDraft(
         : `${packet.mbtiBasis.type} 성향은 ${packet.mbtiBasis.decisionPattern} ${packet.mbtiBasis.workPattern} 대운의 압박은 원인이 아니라, 이 성향이 판단 속도와 실행 방식으로 드러나는 배경입니다.`,
     riskManagement,
     actionPlan,
-    finalAdvice: buildFinalAdvice(packet),
+    finalAdvice: buildFinalAdvice(),
     safetyNotes:
       packet.safetyNotes.length > 0 ? packet.safetyNotes : fallbackSafetyNotes,
   };
@@ -955,7 +835,7 @@ function explainMajorFortuneSignal(value: string | null): string {
     return `${signal}: 겉으로 크게 싸우지 않아도 불편감과 서운함이 천천히 쌓일 수 있는 지점입니다.`;
   }
   if (signal.includes("형")) {
-    return `${signal}: 반복 압박이 커지기 쉬워 기준을 좁히고 회복 시간을 먼저 확보해야 하는 장면입니다.`;
+    return `${signal}: 누적 부담이 커지기 쉬워 기준을 좁히고 회복 시간을 먼저 확보해야 하는 장면입니다.`;
   }
   if (signal.includes("파")) {
     return `${signal}: 기존 방식이 깨지고 다시 맞춰야 하는 장면이 생기기 쉬운 흐름입니다.`;
@@ -983,7 +863,11 @@ function buildYearCoreFlow(input: {
   const interaction = explainMajorFortuneSignal(input.row.keyInteractionLabel);
   const headline = input.yearReading?.headline ?? input.row.oneLine;
 
-  return `${input.row.year}년 ${input.row.annualGanji} 세운은 ${input.row.annualTenGodLabel} 흐름입니다. ${input.packet.currentMajorFortune.ganji} 대운의 ${input.packet.currentMajorFortune.stemTenGod} 배경 위에서 "${headline}" 흐름을 실제 선택으로 당기는 해입니다. ${interaction}`;
+  const interactionReading = interaction
+    ? `${input.row.annualGanji} 세운의 ${interaction}`
+    : "원국과 세운의 작용은 생활 리듬, 역할, 관계 조율의 장면으로 풀어 읽습니다.";
+
+  return `${input.row.year}년 ${input.row.annualGanji} 세운은 ${input.row.annualTenGodLabel} 흐름입니다. ${input.row.annualGanji} 세운은 ${input.packet.currentMajorFortune.ganji} 대운의 ${input.packet.currentMajorFortune.stemTenGod} 배경 위에서 "${headline}" 흐름을 실제 선택으로 당깁니다. ${interactionReading}`;
 }
 
 function buildContextualYearScene(input: {
@@ -1003,40 +887,66 @@ function buildContextualYearScene(input: {
     context.currentConcern ||
     `${field}에서 ${focus} 흐름을 어디에 쓸지 정하는 것`;
 
-  return `${field} 맥락에서는 ${input.row.strategy} 기준이 실제 장면으로 드러납니다. ${focus} 중에서도 ${input.row.annualTenGodLabel}이 건드리는 영역을 먼저 좁혀야 하고, ${concern}이 중요해지는 해입니다.\n\n이 해는 한 가지 사건을 맞히는 해석이 아니라 대운 안에서 반복될 운영 방식을 정하는 장면입니다. ${input.yearReading?.strategicFocus ?? input.row.strategy} ${input.mbtiLine}`;
+  return `${field} 맥락에서는 ${input.row.strategy} 기준이 실제 장면으로 드러납니다. ${focus} 중에서도 ${input.row.annualTenGodLabel}이 건드리는 영역을 먼저 좁혀야 하고, ${concern}이 중요해지는 해입니다.\n\n${input.row.year}년의 실행 초점은 ${input.yearReading?.strategicFocus ?? input.row.strategy} ${input.mbtiLine}`;
 }
 
 function buildYearMbtiLine(input: {
   readonly tenGod: string;
   readonly basis: MajorFortuneEvidencePacket["mbtiBasis"];
 }): string {
-  if (!input.basis.type) return `${input.tenGod}의 연도 흐름은 명리 근거로 읽습니다. MBTI가 입력되지 않아 유형별 행동 성향은 추정하지 않습니다.`;
-  return `${input.tenGod}의 연도 흐름과 별도로, 입력한 ${input.basis.type}의 행동 성향을 참고합니다. ${input.basis.workPattern} ${input.basis.decisionPattern}`;
+  if (!input.basis.type) {
+    return `${input.tenGod}의 연도 흐름은 명리 근거로 읽으며, 입력되지 않은 MBTI 행동 성향은 추정하지 않습니다.`;
+  }
+
+  const type = input.basis.type;
+  if (input.tenGod.includes("식신")) return `${type} 성향은 작은 결과물을 먼저 보여 주고 반응을 확인하는 방식으로 식신의 실행력을 살릴 수 있습니다.`;
+  if (input.tenGod.includes("상관")) return `${type} 성향은 개선안을 제안할 때 근거와 일정표를 함께 내는 방식으로 상관의 표현력을 조절할 수 있습니다.`;
+  if (input.tenGod.includes("편재")) return `${type} 성향은 외부 기회를 빠르게 읽되 정산일과 책임 범위를 먼저 정하는 방식으로 편재의 확장성을 다룹니다.`;
+  if (input.tenGod.includes("정재")) return `${type} 성향은 돈과 시간을 숫자로 정리하되 작은 실험 범위를 남기는 방식으로 정재의 안정성을 씁니다.`;
+  if (input.tenGod.includes("편관")) return `${type} 성향은 압박 속에서도 권한과 책임을 분리하는 방식으로 편관의 추진력을 과부하 없이 씁니다.`;
+  if (input.tenGod.includes("정관")) return `${type} 성향은 평가와 역할 기준을 문서화하되 상대의 속도를 확인하는 방식으로 정관의 질서를 만듭니다.`;
+  if (input.tenGod.includes("편인")) return `${type} 성향은 새 정보를 검토한 뒤 실행 날짜를 정하는 방식으로 편인의 탐색이 지연으로 바뀌지 않게 합니다.`;
+  if (input.tenGod.includes("정인")) return `${type} 성향은 학습과 기록을 실제 일정에 묶는 방식으로 정인의 정리 능력을 결과로 남깁니다.`;
+  if (input.tenGod.includes("비견")) return `${type} 성향은 혼자 할 일과 함께할 일을 초반에 나누는 방식으로 비견의 자기 기준을 협업에 연결합니다.`;
+  if (input.tenGod.includes("겁재")) return `${type} 성향은 공동 비용과 역할 범위를 먼저 합의하는 방식으로 겁재의 경쟁과 협업 에너지를 관리합니다.`;
+
+  return `${type} 성향은 ${input.tenGod} 흐름에서 판단 기준과 실행 순서를 명확히 할 때 장점이 살아납니다.`;
 }
 
 function buildYearCaution(
   row: MajorFortuneEvidencePacket["majorFortuneTimelineRows"][number],
 ): string {
-  return `${row.year}년에는 ${row.strategy} 기준을 놓치면 대운의 압박이 일, 돈, 관계 중 한쪽으로 몰릴 수 있습니다. 먼저 줄일 범위와 확인 날짜를 정하세요.`;
+  const tenGod = row.annualTenGodLabel;
+  if (tenGod.includes("식신")) return `${row.year}년에는 결과물을 너무 많이 벌리기보다 먼저 보여 줄 한 가지와 피드백 날짜를 정해야 합니다.`;
+  if (tenGod.includes("상관")) return `${row.year}년에는 빠른 제안이 충돌로 번지지 않도록 근거, 대안, 다음 확인일을 함께 제시하세요.`;
+  if (tenGod.includes("편재")) return `${row.year}년에는 외부 기회보다 계약 조건, 정산일, 철수 기준을 먼저 확인해야 비용 누수를 줄일 수 있습니다.`;
+  if (tenGod.includes("정재")) return `${row.year}년에는 안정화에만 머물지 않도록 고정비를 정리한 뒤 감당 가능한 실험 범위를 남겨 두세요.`;
+  if (tenGod.includes("편관")) return `${row.year}년에는 급한 책임을 떠안기 전에 승인선, 결정 권한, 거절할 일을 먼저 확인하세요.`;
+  if (tenGod.includes("정관")) return `${row.year}년에는 규칙을 세우되 사람의 속도까지 통제하지 않도록 평가 기준과 조율 범위를 나누세요.`;
+  if (tenGod.includes("편인")) return `${row.year}년에는 검토가 길어져 실행이 늦어지지 않도록 조사 종료일과 첫 행동 날짜를 함께 정하세요.`;
+  if (tenGod.includes("정인")) return `${row.year}년에는 준비만 이어지지 않도록 학습 기록과 실제 적용을 같은 주기에 배치하세요.`;
+  if (tenGod.includes("비견")) return `${row.year}년에는 자기 기준이 협업의 고집으로 보이지 않도록 혼자 할 일과 합의할 일을 구분하세요.`;
+  if (tenGod.includes("겁재")) return `${row.year}년에는 사람과 비용이 섞이지 않도록 공동 지출, 역할, 중단 조건을 초반에 합의하세요.`;
+
+  return `${row.year}년에는 ${row.strategy} 실행 범위와 확인 날짜를 함께 정하세요.`;
 }
 
 function buildYearActionStandard(
   row: MajorFortuneEvidencePacket["majorFortuneTimelineRows"][number],
 ): string {
-  if (/식신|상관/u.test(row.annualTenGodLabel)) {
-    return "작은 결과물 1개, 검증 날짜, 다음 수정 범위를 먼저 정하고 움직입니다.";
-  }
-  if (/편재|정재/u.test(row.annualTenGodLabel)) {
-    return "계약서, 정산일, 책임 범위, 철수 기준을 숫자로 고정한 뒤 확장합니다.";
-  }
-  if (/편관|정관/u.test(row.annualTenGodLabel)) {
-    return "승인선, 담당 범위, 평가 기준, 거절할 일을 먼저 문서화합니다.";
-  }
-  if (/편인|정인/u.test(row.annualTenGodLabel)) {
-    return "학습 목표, 기록 방식, 회복 루틴, 실행 날짜를 한 세트로 묶습니다.";
-  }
+  const tenGod = row.annualTenGodLabel;
+  if (tenGod.includes("식신")) return "먼저 보여 줄 결과물 하나와 피드백 날짜를 정합니다.";
+  if (tenGod.includes("상관")) return "제안 하나마다 근거, 대안, 담당자, 다음 확인일을 붙입니다.";
+  if (tenGod.includes("편재")) return "새 계약의 금액, 정산일, 책임 범위, 철수 기준을 숫자로 적습니다.";
+  if (tenGod.includes("정재")) return "고정비와 반복 일정을 먼저 잠그고 작은 실험 예산을 따로 둡니다.";
+  if (tenGod.includes("편관")) return "급한 일일수록 승인선, 권한, 거절 범위를 먼저 확인합니다.";
+  if (tenGod.includes("정관")) return "평가 기준과 보고 방식을 문서로 남기고 조율 날짜를 정합니다.";
+  if (tenGod.includes("편인")) return "조사 종료일, 선택 기준, 첫 실행 날짜를 한 세트로 묶습니다.";
+  if (tenGod.includes("정인")) return "학습 기록 하나를 실제 업무나 생활에 적용하는 날짜를 잡습니다.";
+  if (tenGod.includes("비견")) return "혼자 결정할 일과 함께 합의할 일을 초반에 나눕니다.";
+  if (tenGod.includes("겁재")) return "공동 비용, 역할, 보상, 중단 조건을 시작 전에 합의합니다.";
 
-  return "혼자 할 일, 함께할 일, 비용을 나눌 일을 초반에 분리합니다.";
+  return "그해 먼저 고정할 역할, 돈 기준, 회복 루틴을 하나씩 정합니다.";
 }
 
 function ensureMinimumItems(

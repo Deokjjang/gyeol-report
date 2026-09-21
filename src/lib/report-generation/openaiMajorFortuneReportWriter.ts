@@ -144,9 +144,17 @@ function removeRepeatedLongSentencesFromText(
 
     return true;
   });
+  const cleaned = kept.join(" ").trim();
+
+  if (cleaned.length === 0) {
+    return {
+      value,
+      sanitized: false,
+    };
+  }
 
   return {
-    value: kept.join(" ").trim(),
+    value: cleaned,
     sanitized,
   };
 }
