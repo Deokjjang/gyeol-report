@@ -185,7 +185,7 @@ export type ComprehensiveReportEvidencePacket = {
   readonly productKey?: "saju_mbti_full";
   readonly productSlug?: "saju-mbti-full";
   readonly productType?: "saju_mbti_full";
-  readonly mbtiType: MbtiType;
+  readonly mbtiType: MbtiType | "";
   readonly sajuEntryIds: readonly string[];
   readonly sections: readonly ComprehensiveReportSectionEvidence[];
   readonly mbtiBasis?: ComprehensiveMbtiBasis;

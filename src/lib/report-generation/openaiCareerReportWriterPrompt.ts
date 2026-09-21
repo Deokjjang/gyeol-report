@@ -130,7 +130,7 @@ export function buildOpenAICareerReportWriterMessages(input: {
         "actionPlan: exactly six labels: 직업, 커리어, 돈, 투자·저축, 학업·자격증, 포트폴리오",
         "riskWarnings and safetyNotes",
       ]),
-      "Deokmin-like example:",
+      "조건부 예시: 아래 예시는 관련 명리 신호·MBTI·직업 근거가 실제 evidence에 있을 때만 사용한다. 다른 고객에게 그대로 적용하지 않는다.",
       "명리: evidence에 보이는 십성·신살·귀인·합충형파해를 근거로 현실 책임, 돈·자원·계약, 조직 기준, 운영 구조를 설명한다.",
       "MBTI ENTJ: 전략, 효율, 구조화, 리더십은 명리 근거를 실행하는 행동 방식으로만 쓴다.",
       "해석: 서비스 기획자, PM/PO, 운영기획, 사업개발, B2B/SaaS/핀테크/정산 서비스 기획처럼 실제 직업군으로 연결한다.",

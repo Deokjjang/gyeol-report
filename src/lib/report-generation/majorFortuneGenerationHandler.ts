@@ -1,3 +1,4 @@
+import { withReportInputEvidence } from "./reportInputEvidence";
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import { calculateCustomerDayun, selectCustomerDayun } from "../saju/customerDayun";
 import { getAnnualFortuneCurrentYear } from "../report-knowledge/annualFortuneYearRules";
@@ -209,7 +210,7 @@ export async function generateMajorFortuneProductDraft(
       dayunContext: selection.value,
       openingSummary: [validation.value.openingSummary, selection.value.notice].filter(Boolean).join(" "),
     },
-    evidencePacket,
+    evidencePacket: withReportInputEvidence(evidencePacket, input),
   };
 }
 
@@ -792,7 +793,7 @@ function buildTimelineYearDetails(
       packet.cycleYearTimeline[0];
     const mbtiLine = buildYearMbtiLine({
       tenGod: row.annualTenGodLabel,
-      mbtiType: packet.mbtiBasis.type,
+      basis: packet.mbtiBasis,
     });
 
     return {
@@ -1007,27 +1008,10 @@ function buildContextualYearScene(input: {
 
 function buildYearMbtiLine(input: {
   readonly tenGod: string;
-  readonly mbtiType: string | null;
+  readonly basis: MajorFortuneEvidencePacket["mbtiBasis"];
 }): string {
-  const type = input.mbtiType ?? "MBTI";
-
-  if (/식신|상관/u.test(input.tenGod)) {
-    return `${type} 성향은 산출물, 표현, 발표, 결과물 속도로 드러납니다. 먼저 보여 줄 범위를 작게 자르면 속도가 성과로 남습니다.`;
-  }
-  if (/편재|정재/u.test(input.tenGod)) {
-    return `${type} 성향은 돈, 계약, 수익 구조, 비용 관리 앞에서 빠르게 기준을 세우려는 방식으로 작동합니다.`;
-  }
-  if (/편관|정관/u.test(input.tenGod)) {
-    return `${type} 성향은 책임, 평가, 직장 질서, 역할 검증 앞에서 결론과 구조를 먼저 잡으려는 방식으로 켜집니다.`;
-  }
-  if (/편인|정인/u.test(input.tenGod)) {
-    return `${type} 성향은 공부, 회복, 문서, 자격, 내면 정리를 체계화하려는 쪽으로 드러납니다.`;
-  }
-  if (/비견|겁재/u.test(input.tenGod)) {
-    return `${type} 성향은 독립성, 경쟁, 관계와 돈의 경계를 직접 정하려는 방식으로 강해집니다.`;
-  }
-
-  return `${type} 성향은 판단 속도와 실행 기준을 앞세우는 방식으로 작동합니다.`;
+  if (!input.basis.type) return `${input.tenGod}의 연도 흐름은 명리 근거로 읽습니다. MBTI가 입력되지 않아 유형별 행동 성향은 추정하지 않습니다.`;
+  return `${input.tenGod}의 연도 흐름과 별도로, 입력한 ${input.basis.type}의 행동 성향을 참고합니다. ${input.basis.workPattern} ${input.basis.decisionPattern}`;
 }
 
 function buildYearCaution(

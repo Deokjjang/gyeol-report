@@ -576,7 +576,7 @@ function toMbtiBasisTrait(
 }
 
 function buildComprehensiveMbtiBasis(input: {
-  readonly mbtiType: MbtiType;
+  readonly mbtiType: MbtiType | "";
   readonly selectedMbtiKnowledge?: SelectedMbtiKnowledge;
 }): ComprehensiveMbtiBasis | undefined {
   const source = getMbtiSourceProfile(input.mbtiType);
@@ -766,7 +766,7 @@ function buildInterpretedBridgeEvidence(input: {
 }
 
 export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
-  readonly mbtiType: MbtiType;
+  readonly mbtiType: MbtiType | "";
   readonly sajuFacts: ComputedSajuFacts;
 }): {
   readonly packet: ComprehensiveReportEvidencePacket;
@@ -805,12 +805,12 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
     mbtiType: input.mbtiType,
   });
   const sajuSymbolicNickname = buildSajuSymbolicNickname(input.sajuFacts);
-  const selectedMbtiKnowledge = selectMbtiKnowledge({
+  const selectedMbtiKnowledge = input.mbtiType ? selectMbtiKnowledge({
     mbti: input.mbtiType,
     contexts: comprehensiveMbtiContexts,
     productType: "comprehensive",
     maxTraitsPerContext: 2,
-  });
+  }) : undefined;
   const sajuMbtiBridgeEvidence = scoreSajuMbtiBridgeEvidence({
     selectedMbtiKnowledge,
     selectedSajuFeatureEvidence,

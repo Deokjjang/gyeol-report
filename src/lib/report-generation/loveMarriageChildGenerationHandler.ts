@@ -1,3 +1,4 @@
+import { withReportInputEvidence } from "./reportInputEvidence";
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import { calculateSaju } from "../saju/calculateSaju";
 import type {
@@ -148,7 +149,7 @@ export async function generateLoveMarriageChildProductDraft(
     ok: true,
     kind: "loveMarriageChild",
     draft: validation.value,
-    evidencePacket,
+    evidencePacket: withReportInputEvidence(evidencePacket, input),
   };
 }
 
@@ -353,7 +354,11 @@ function buildLoveMarriageChildFallbackDraft(input: {
   const contextLine = formatUserContextLine(input.userContext);
   const focusLine = formatFocusAreas(input.userContext.focusAreas);
   const tenGodLine = formatTenGodLine(input.evidencePacket);
-  const mbtiType = input.evidencePacket.personContext.mbtiType ?? "MBTI 미입력";
+  const mbtiType = input.evidencePacket.personContext.mbtiType;
+  const relationshipTraits = input.evidencePacket.mbtiBasis.relationshipTraits;
+  const mbtiReading = mbtiType
+    ? `${mbtiType}의 관계 성향을 함께 살펴봅니다. ${relationshipTraits.slice(0, 2).map(trait => [trait.plain, trait.risk, trait.growth].filter(Boolean).join(" ")).join(" ")}`
+    : "MBTI가 입력되지 않아 유형별 판단이나 표현 방식을 추정하지 않습니다. 실제 관계에서 편안했던 대화와 어려웠던 장면을 구분하며 명리 풀이와 비교해 보세요.";
 
   return {
     version: "v1",
@@ -366,7 +371,7 @@ function buildLoveMarriageChildFallbackDraft(input: {
     loveStyle: {
       headline: "호감보다 반복 행동을 더 믿는 연애 방식",
       body:
-        `${personLabel}님은 감정 표현이 있어도 상대의 반복 행동, 약속을 지키는 방식, 관계 속도가 맞는지를 함께 봅니다. ${focusLine} 관계에서도 애정 확인만큼 일정, 돈, 일의 리듬이 실제 피로를 좌우합니다.\n\n${mbtiType} 성향은 이 흐름을 빠른 판단과 정리 욕구로 드러내기 쉽습니다. 좋게 쓰면 관계를 방치하지 않는 힘이고, 과하면 상대가 아직 마음을 설명하기 전에 결론부터 요구받는 느낌을 받을 수 있습니다.`,
+        `${personLabel}님은 감정 표현이 있어도 상대의 반복 행동, 약속을 지키는 방식, 관계 속도가 맞는지를 함께 봅니다. ${focusLine} 관계에서도 애정 확인만큼 일정, 돈, 일의 리듬이 실제 피로를 좌우합니다.\n\n${mbtiReading}`,
       keyPoints: ["반복 행동", "관계 속도", "생활 리듬"],
       caution: "기준을 빨리 세우되 상대를 평가하는 말투로 굳히지는 않아야 합니다.",
     },

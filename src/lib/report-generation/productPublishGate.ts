@@ -1,5 +1,6 @@
 import { publicationBirthTimeContexts, publishedPillarMatches } from "./birthTimePublication";
 import { validateDayunPublication } from "./dayunPublication";
+import { validateProductEvidence } from "./productEvidenceValidation";
 import { COMPREHENSIVE_REPORT_SECTION_IDS } from "../report-knowledge/reportSectionSchema";
 import { deriveAllowedCompatibilityMbtiTerms, deriveAllowedCompatibilitySajuTerms } from "./openaiCompatibilityReportWriterPrompt";
 import type { CompatibilityEvidencePacket } from "../report-knowledge/compatibilityEvidenceBuilder";
@@ -31,6 +32,7 @@ export function validateProductPublication(product: string, draft: unknown, evid
   const birthContexts = publicationBirthTimeContexts(evidence);
   if (isRecord(evidence) && evidence.birthTimeContexts !== undefined && !birthContexts) errors.push("BIRTH_TIME_CONTEXT_INVALID");
   if (!isRecord(draft)) return { ok: false, errors: ["DRAFT_REQUIRED"] };
+  errors.push(...validateProductEvidence(product, draft, evidence, inputPayload));
   if (product === "major_fortune" || product === "annual_fortune") errors.push(...validateDayunPublication(product, draft, evidence, inputPayload));
   if (draft.productType !== product) errors.push("PRODUCT_MISMATCH");
   if (!isRecord(evidence) || Object.keys(evidence).length < 3) errors.push("EVIDENCE_REQUIRED");
@@ -70,7 +72,7 @@ export function validateProductPublication(product: string, draft: unknown, evid
   if (!validation?.ok) errors.push(...(validation?.errors ?? ["UNSUPPORTED_PRODUCT"]));
   if (product === "saju_mbti_full") {
     if (!isRecord(evidence) || !Array.isArray(evidence.sajuEntryIds) || evidence.sajuEntryIds.length === 0 ||
-      !Array.isArray(evidence.sections) || evidence.sections.length === 0 || !isRecord(evidence.mbtiBasis) ||
+      !Array.isArray(evidence.sections) || evidence.sections.length === 0 || (evidence.mbtiType !== "" && !isRecord(evidence.mbtiBasis)) ||
       !Array.isArray(evidence.sajuFeatureDictionary) || evidence.sajuFeatureDictionary.length < 3) errors.push("EVIDENCE_INCOMPLETE");
     if (isRecord(evidence) && Array.isArray(evidence.sections)) {
       const sectionIds = evidence.sections.flatMap((s) => isRecord(s) && typeof s.sectionId === "string" ? [s.sectionId] : []);
@@ -107,8 +109,9 @@ export function validateProductPublication(product: string, draft: unknown, evid
       elements.filter((s) => typeof s === "string" && new RegExp(`^${label}\\s*\\d+$`, "u").test(s.trim())).length === 1)) {
       errors.push("FIVE_ELEMENTS_INCOMPLETE");
     }
-    if (!nonempty(profile.mbti) || !/^[IE][NS][TF][JP]$/.test(profile.mbti)) errors.push("MBTI_REQUIRED");
-    if (isRecord(evidence) && evidence.mbtiType !== profile.mbti) errors.push("EVIDENCE_MBTI_MISMATCH");
+    const expectedMbti = isRecord(evidence) && evidence.mbtiType === "" ? "미입력" : isRecord(evidence) ? evidence.mbtiType : undefined;
+    if (!nonempty(profile.mbti) || (!/^[IE][NS][TF][JP]$/.test(profile.mbti) && profile.mbti !== "미입력")) errors.push("MBTI_REQUIRED");
+    if (expectedMbti !== profile.mbti) errors.push("EVIDENCE_MBTI_MISMATCH");
     const features = isRecord(draft.sajuFeatureChapter) && Array.isArray(draft.sajuFeatureChapter.items)
       ? draft.sajuFeatureChapter.items : [];
     if (features.length < 3) errors.push("SAJU_FEATURES_REQUIRED");
@@ -133,7 +136,7 @@ export function validateProductPublication(product: string, draft: unknown, evid
     const meanings = features.flatMap((f) => isRecord(f) && nonempty(f.plainMeaning) ? [f.plainMeaning.trim()] : []);
     if (new Set(meanings).size !== meanings.length) errors.push("GENERIC_FEATURE_REPETITION");
   }
-  if (strings(draft).some((s) => /INTERNAL_META|TODO|PLACEHOLDER|\[object Object\]|fixture|fallback|validation_errors/iu.test(s))) {
+  if (strings(draft).some((s) => /INTERNAL_META|TODO|PLACEHOLDER|\[object Object\]|fixture|fallback|validation_errors|sourceStatus|\b(?:mock|sample|deokmin|internal|validator|writer)\b/iu.test(s))) {
     errors.push("INTERNAL_MARKER");
   }
   return { ok: errors.length === 0, errors };

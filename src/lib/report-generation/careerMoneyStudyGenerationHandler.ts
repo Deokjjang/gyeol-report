@@ -1,3 +1,4 @@
+import { withReportInputEvidence } from "./reportInputEvidence";
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import { buildCareerReportEvidence } from "../report-knowledge/careerReportEvidence";
 import type {
@@ -145,7 +146,7 @@ export async function generateCareerMoneyStudyProductDraft(
     ok: true,
     kind: "careerMoneyStudy",
     draft: validation.value,
-    evidencePacket,
+    evidencePacket: withReportInputEvidence(evidencePacket, input),
   };
 }
 

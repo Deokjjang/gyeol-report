@@ -187,7 +187,7 @@ function hasSelectedFeature(
 
 function buildContextualAdviceItems(input: {
   readonly selectedFeatures: readonly SelectedSajuFeatureEvidenceItem[];
-  readonly mbtiType: MbtiType;
+  readonly mbtiType: MbtiType | "";
 }): readonly ReportDifferentiationModuleItem[] {
   const items: ReportDifferentiationModuleItem[] = [];
   const hasJaego = hasSelectedFeature(input.selectedFeatures, "gwiin_jaego");
@@ -246,7 +246,7 @@ function buildContextualAdviceItems(input: {
 
 function buildSwitchActionItems(input: {
   readonly selectedFeatures: readonly SelectedSajuFeatureEvidenceItem[];
-  readonly mbtiType: MbtiType;
+  readonly mbtiType: MbtiType | "";
   readonly scenes?: readonly SajuSignatureScene[];
   readonly spotlight?: SajuFeatureSpotlightSection;
 }): readonly ReportDifferentiationModuleItem[] {
@@ -278,7 +278,7 @@ function buildSwitchActionItems(input: {
 
 function buildRelationshipNeedItems(input: {
   readonly selectedEvidence: readonly SelectedSajuFeatureEvidence[] | undefined;
-  readonly mbtiType: MbtiType;
+  readonly mbtiType: MbtiType | "";
 }): readonly ReportDifferentiationModuleItem[] {
   const loveFeatures =
     input.selectedEvidence
@@ -299,7 +299,7 @@ function buildRelationshipNeedItems(input: {
     {
       title: "관계 조건",
       body:
-        `${input.mbtiType} 유형명 자체보다 감정 표현 속도, 약속 습관, 생활 리듬, 책임감이 중요합니다.`,
+        `${input.mbtiType ? `${input.mbtiType} 유형명 자체보다` : "MBTI가 미입력이므로 유형을 추정하지 않고"} 감정 표현 속도, 약속 습관, 생활 리듬, 책임감이 중요합니다.`,
       practicalLine:
         "상대를 유형 목록으로 고르지 말고, 실제 대화 속도와 약속을 지키는 방식을 확인해야 합니다.",
       sourceFeatureIds: loveFeatures.slice(0, 3).map((feature) => feature.id),
@@ -329,7 +329,7 @@ export function buildReportDifferentiationModules(input: {
   readonly selectedSajuFeatureEvidence: readonly SelectedSajuFeatureEvidence[] | undefined;
   readonly sajuFeatureSpotlight?: SajuFeatureSpotlightSection;
   readonly sajuSignatureScenes?: readonly SajuSignatureScene[];
-  readonly mbtiType: MbtiType;
+  readonly mbtiType: MbtiType | "";
 }): readonly ReportDifferentiationModule[] {
   const selectedFeatures = collectSelectedFeatures(input.selectedSajuFeatureEvidence);
   const modules = [

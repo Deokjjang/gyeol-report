@@ -1,3 +1,4 @@
+import { withReportInputEvidence } from "./reportInputEvidence";
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import { calculateCustomerDayun, selectCustomerDayun } from "../saju/customerDayun";
 import {
@@ -165,7 +166,7 @@ export async function generateAnnualFortuneProductDraft(
       dayunContext: selection.value,
       majorAnnualCrossReading: [validation.value.majorAnnualCrossReading, selection.value.notice].filter(Boolean).join(" "),
     },
-    evidencePacket,
+    evidencePacket: withReportInputEvidence(evidencePacket, input),
   };
 }
 

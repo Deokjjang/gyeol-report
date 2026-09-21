@@ -46,6 +46,27 @@ beforeEach(async () => {
 });
 
 describe("paid report reliability — actual SQL, mock providers", () => {
+  it.each(["timeout", "malformed", "empty", "invalid"])("writer %s → two durable retries → canonical fallback publication", async failure => {
+    const id = await paid();
+    const transport = vi.fn<typeof fetch>(async () => {
+      if (failure === "timeout") throw new DOMException("mock timeout", "AbortError");
+      return Response.json({ output_text: failure === "malformed" ? "{broken" : failure === "empty" ? "" : "{}" });
+    });
+    const writerRuntime = { enabled: true as const, config: { enabled: true as const, apiKey: "mock-only", model: "mock", fetchImpl: transport } };
+    for (let i = 0; i < 2; i++) {
+      await due();
+      expect(await runPaidReportJob(store, writerRuntime)).toMatchObject({ status: "RETRYING" });
+      expect((await readPublishedReport(store, id)).snapshot).toBeNull();
+    }
+    const calls = transport.mock.calls.length;
+    await due();
+    expect(await runPaidReportJob(store, writerRuntime)).toMatchObject({ status: "COMPLETED" });
+    expect(transport).toHaveBeenCalledTimes(calls);
+    const result = await readPublishedReport(store, id);
+    expect(result.snapshot).toMatchObject({ evidencePacket: valid.evidencePacket });
+    expect((await rows("payment_orders"))[0].status).toBe("paid");
+    expect(await rows("report_generation_attempts")).toHaveLength(3);
+  });
   it("1 paid → generation success → COMPLETED", async () => {
     const id = await paid();
     expect(await runPaidReportJob(store, runtime, vi.fn(async () => structuredClone(valid)))).toMatchObject({ ok: true, status: "COMPLETED" });

@@ -226,7 +226,7 @@ function buildSectionWarnings(input: {
 function buildSectionEvidence(input: {
   readonly sectionDefinition: ComprehensiveReportSectionDefinition;
   readonly sajuEntries: readonly SajuKnowledgeEntry[];
-  readonly mbtiEntry: MbtiKnowledgeEntry;
+  readonly mbtiEntry?: MbtiKnowledgeEntry;
   readonly sajuEntryIds: readonly string[];
   readonly sajuTags: readonly InterpretationTagId[];
   readonly mbtiTags: readonly InterpretationTagId[];
@@ -254,7 +254,7 @@ function buildSectionEvidence(input: {
           mbtiTags: input.mbtiTags,
         });
   const supportingMbti =
-    input.sectionDefinition.primaryBasis === "display"
+    input.sectionDefinition.primaryBasis === "display" || !input.mbtiEntry
       ? []
       : [
           buildMbtiEvidenceItem({
@@ -266,7 +266,7 @@ function buildSectionEvidence(input: {
         ];
   const fusionRules =
     input.sectionDefinition.primaryBasis === "display" ||
-    input.sectionDefinition.id === "mbti_core"
+    input.sectionDefinition.id === "mbti_core" || !input.mbtiEntry
       ? []
       : getFusionRulesForSection({
           sectionDefinition: input.sectionDefinition,
@@ -292,13 +292,13 @@ function buildSectionEvidence(input: {
 }
 
 export function buildComprehensiveReportEvidencePacket(input: {
-  readonly mbtiType: MbtiType;
+  readonly mbtiType: MbtiType | "";
   readonly sajuEntryIds: readonly string[];
 }): ComprehensiveReportEvidencePacket {
   const sajuEntries = getSajuKnowledgeByIds(input.sajuEntryIds);
-  const mbtiEntry = getMbtiKnowledge(input.mbtiType);
+  const mbtiEntry = input.mbtiType ? getMbtiKnowledge(input.mbtiType) : undefined;
   const sajuTags = collectSajuTags(sajuEntries);
-  const mbtiTags = collectMbtiTags(mbtiEntry);
+  const mbtiTags = mbtiEntry ? collectMbtiTags(mbtiEntry) : [];
   const sections = COMPREHENSIVE_REPORT_SECTION_DEFINITIONS.map((sectionDefinition) =>
     buildSectionEvidence({
       sectionDefinition,

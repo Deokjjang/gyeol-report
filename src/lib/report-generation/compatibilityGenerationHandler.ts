@@ -1,3 +1,4 @@
+import { withReportInputEvidence } from "./reportInputEvidence";
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import { calculateSaju } from "../saju/calculateSaju";
 import type {
@@ -209,7 +210,7 @@ export async function generateCompatibilityProductDraft(
     ok: true,
     kind: "compatibility",
     draft: validation.value,
-    evidencePacket,
+    evidencePacket: withReportInputEvidence(evidencePacket, input),
   };
 }
 

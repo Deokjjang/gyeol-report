@@ -1,3 +1,5 @@
+import { withReportInputEvidence } from "./reportInputEvidence";
+import { getMbtiSourceProfile, type MbtiTraitArea } from "../report-knowledge/mbti/sourceRuntimeAdapter";
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import {
   buildComprehensiveReportEvidencePacketFromComputedFacts,
@@ -46,7 +48,6 @@ import type {
   ComprehensiveReportV2LongformReadingId,
   ComprehensiveReportV2ProfileTable,
   ComprehensiveReportV2SajuFeatureChapter,
-  ComprehensiveReportV2SajuFeatureChapterItem,
 } from "./comprehensiveReportDraftTypes";
 import {
   COMPREHENSIVE_REPORT_V2_CHAPTER_IDS,
@@ -92,7 +93,7 @@ export type ComprehensiveV2GenerationHandlerOptions = {
   };
 };
 
-const defaultMbtiType = "ENTJ" satisfies MbtiType;
+
 
 const tenGodByCalc = {
   比肩: "bijian",
@@ -222,7 +223,7 @@ export async function generateComprehensiveV2ProductDraft(
 
   const profileTable = buildComprehensiveReportV2ProfileTable({
     evidencePacket: evidence.packet,
-    mbtiType: evidence.packet.mbtiType,
+    mbtiType: evidence.packet.mbtiType || "미입력",
     sajuFacts: evidence.facts,
   });
 
@@ -271,7 +272,7 @@ export async function generateComprehensiveV2ProductDraft(
       ...validation.value,
       productVersion: "v2",
     },
-    evidencePacket: evidence.packet,
+    evidencePacket: withReportInputEvidence(evidence.packet, input),
   };
 }
 
@@ -482,10 +483,9 @@ function buildLocalComprehensiveV2Draft(input: {
   readonly evidencePacket: ComprehensiveReportEvidencePacket;
   readonly profileTable: ComprehensiveReportV2ProfileTable;
 }): ComprehensiveReportV2Draft {
-  const featureChapter = normalizeSajuFeatureChapter(
-    buildDeterministicSajuFeatureChapter(input.evidencePacket) ??
-    buildBasicSajuFeatureChapter(input.profileTable),
-  );
+  const calculatedFeatures = buildDeterministicSajuFeatureChapter(input.evidencePacket);
+  if (!calculatedFeatures) throw new Error("COMPREHENSIVE_FEATURE_EVIDENCE_REQUIRED");
+  const featureChapter = normalizeSajuFeatureChapter(calculatedFeatures);
   const primaryTerms = getPrimarySajuTerms(input.profileTable, featureChapter);
   const mbtiType = input.evidencePacket.mbtiType;
 
@@ -494,9 +494,9 @@ function buildLocalComprehensiveV2Draft(input: {
     productType: "saju_mbti_full",
     openingTitle: `${input.input.person.name}님의 사주×MBTI 종합 리포트`,
     openingSummary:
-      `${input.input.person.name}님의 원국은 ${primaryTerms.slice(0, 3).join(", ")}을 중심으로 읽습니다. MBTI는 원인이 아니라 이 구조가 생활에서 드러나는 행동 방식으로만 연결합니다.`,
+      `${input.input.person.name}님의 원국은 「${primaryTerms.slice(0, 3).join(", ")}」 표식을 중심으로 읽습니다. MBTI는 원인이 아니라 이 구조가 생활에서 드러나는 행동 방식으로만 연결합니다.`,
     coreLine:
-      `${primaryTerms[0]}의 방향성과 ${mbtiType}의 실행 감각이 만나면, 기준을 빨리 세우고 책임을 현실 장면으로 옮기는 힘이 강해집니다.`,
+      `${primaryTerms[0]}에 담긴 선택 기준을 읽고, ${mbtiType ? mbtiType + "의 실제 성향 자료와 함께" : "MBTI를 추정하지 않고"} 일과 관계에서 쓸 방법을 찾습니다.`,
     profileTable: input.profileTable,
     ...(input.evidencePacket.sajuSymbolicNickname === undefined
       ? {}
@@ -520,6 +520,7 @@ function buildLocalComprehensiveV2Draft(input: {
         mbtiType,
         primaryTerms,
         profileTable: input.profileTable,
+        evidencePacket: input.evidencePacket,
       }),
     ),
     longformReadings: COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS.map((readingId) =>
@@ -528,6 +529,7 @@ function buildLocalComprehensiveV2Draft(input: {
         mbtiType,
         primaryTerms,
         profileTable: input.profileTable,
+        evidencePacket: input.evidencePacket,
       }),
     ),
     finalAdvice:
@@ -545,6 +547,7 @@ function buildLocalChapter(input: {
   readonly mbtiType: string;
   readonly primaryTerms: readonly string[];
   readonly profileTable: ComprehensiveReportV2ProfileTable;
+  readonly evidencePacket: ComprehensiveReportEvidencePacket;
 }): ComprehensiveReportV2Chapter {
   const titleKo = chapterTitleById[input.chapterId];
   const body = buildChapterBody({
@@ -553,7 +556,7 @@ function buildLocalChapter(input: {
     mbtiType: input.mbtiType,
     primaryTerms: input.primaryTerms,
     profileTable: input.profileTable,
-  });
+  }) + " " + featureReading(input.evidencePacket, COMPREHENSIVE_REPORT_V2_CHAPTER_IDS.indexOf(input.chapterId));
 
   return {
     chapterId: input.chapterId,
@@ -564,7 +567,7 @@ function buildLocalChapter(input: {
     solutionLines: buildSolutionLines(input.chapterId),
     keyPhrases: [titleKo, ...input.primaryTerms.slice(0, 2)],
     sajuTermsUsed: input.primaryTerms.slice(0, 2),
-    mbtiTermsUsed: [input.mbtiType],
+    mbtiTermsUsed: input.mbtiType ? [input.mbtiType] : [],
   };
 }
 
@@ -580,11 +583,11 @@ function buildChapterBody(input: {
   const contextLine = getContextLine(input.chapterId);
 
   return [
-    `${input.titleKo}에서는 ${firstTerm}라는 표식을 중심으로 보되, ${secondTerm}까지 함께 만들어내는 반응 속도를 같이 읽습니다. ${input.titleKo}의 ${firstTerm}은 이름만 외우는 표식이 아니라 실제 선택의 방향을 잡는 기준입니다.`,
-    `${input.titleKo}에서 ${input.mbtiType} 성향은 이 구조의 원인이 아니라 밖으로 드러나는 방식입니다. ${input.titleKo}의 장면에서는 비효율적인 사람을 그냥 넘기기 어렵고, 책임 없이 말만 많은 구조에는 호감이 있어도 빠르게 식을 수 있습니다.`,
+    `${input.titleKo}에서는 ${firstTerm}라는 표식을 중심으로 보되, ${secondTerm}까지 함께 만들어내는 반응 속도를 같이 읽습니다. ${input.titleKo}의 「${firstTerm}」 표식은 이름만 외우는 표식이 아니라 실제 선택의 방향을 잡는 기준입니다.`,
+    getLongformMbtiLine(chapterReadingId[input.chapterId], input.mbtiType),
     `${input.titleKo}의 오행 분포는 ${elementSummary}입니다. ${input.titleKo}에서 이 분포는 사건을 맞히는 표가 아니라 책임, 표현 온도, 회복 루틴을 어디서 의식적으로 보완해야 하는지 알려주는 생활 기준입니다.`,
     contextLine,
-    `${input.titleKo}에서 ${firstTerm}, 그리고 ${input.mbtiType}의 빠른 결론 성향이 겹치면 핵심 오류를 빨리 잡지만, 관계에서는 평가처럼 들릴 수 있습니다. 그래서 ${input.titleKo}의 기준은 강점을 줄이는 것이 아니라 말의 순서와 역할의 경계선을 먼저 정하는 데 있습니다.`,
+    `${input.titleKo}에서 표식 「${firstTerm}」은 실제 경험과 대조할 기준입니다. ${reflectionByReading[chapterReadingId[input.chapterId]]}`,
   ].join(" ");
 }
 
@@ -592,7 +595,7 @@ function buildChapterHeadline(
   titleKo: string,
   primaryTerms: readonly string[],
 ): string {
-  return `${titleKo}은 ${primaryTerms[0]}와 ${primaryTerms[1]}을 현실 장면으로 번역하는 장입니다.`;
+  return `${titleKo}: 「${primaryTerms[0]}」, 「${primaryTerms[1]}」 표식을 현실 장면으로 번역하는 장입니다.`;
 }
 
 function buildHitReadingLines(
@@ -639,12 +642,14 @@ function buildHitReadingLines(
     return [
       "카톡 설명을 듣다가 틀린 부분이 먼저 보이면 표정 관리가 어려울 수 있습니다.",
       "조언을 해준다고 생각하지만 상대는 평가받는다고 느낄 수 있습니다.",
+      "회의에서 반대 의견을 말하기 전에 상대의 설명을 한 문장으로 확인하면 대화의 오해를 줄일 수 있습니다.",
     ];
   }
   if (chapterId === "people_family_environment") {
     return [
       "가족 부탁이나 팀 역할이 들어오면 먼저 범위와 마감선을 정해야 마음이 놓입니다.",
       "도움을 요청하기 전까지 혼자 버티려는 습관이 피로를 키울 수 있습니다.",
+      "가족 부탁과 팀 업무가 겹치는 날에는 먼저 약속한 일정이 무엇인지 기록으로 확인하세요.",
     ];
   }
 
@@ -679,7 +684,7 @@ function buildSolutionLines(
     return [
       "맞는 상대는 감정 표현을 천천히 풀어주면서 약속과 생활 리듬이 안정적인 사람입니다.",
       "피해야 할 상대는 감정 기복이 크고 책임이 흐릿한 패턴입니다.",
-      "보완 기운은 수 부족과 화 부족을 채우듯 감정 완충과 표현 온도를 더해 주는 쪽입니다.",
+      "보완 기운은 실제 오행 분포와 함께 읽고, 관계에서는 감정 완충과 표현 온도를 서로 조율하세요.",
       "MBTI만으로 궁합을 단정하지 말고 대화 속도와 약속 습관을 함께 보세요.",
     ];
   }
@@ -687,8 +692,8 @@ function buildSolutionLines(
     return [
       "번아웃 전 중단 기준을 숫자와 일정으로 정하세요.",
       "수분, 수면, 밤 산책, 기록을 식히는 루틴으로 고정하세요.",
-      "햇빛과 가벼운 운동으로 화 부족의 표현 에너지를 보완하세요.",
-      "책임 덜어내기와 경계선 정리로 토 과다의 부담을 낮추세요.",
+      "햇빛과 가벼운 운동을 생활 리듬에 맞춰 회복 시간으로 정하세요.",
+      "책임 덜어내기와 경계선 정리로 일정에 쌓인 부담을 낮추세요.",
     ];
   }
 
@@ -723,6 +728,7 @@ function buildLocalLongformReading(input: {
   readonly mbtiType: string;
   readonly primaryTerms: readonly string[];
   readonly profileTable: ComprehensiveReportV2ProfileTable;
+  readonly evidencePacket: ComprehensiveReportEvidencePacket;
 }): ComprehensiveReportV2LongformReading {
   const titleKo = longformTitleById[input.readingId];
   const linkedChapterIds = getLinkedChapterIds(input.readingId);
@@ -738,7 +744,7 @@ function buildLocalLongformReading(input: {
     mbtiType: input.mbtiType,
     primaryTerms: input.primaryTerms,
     profileTable: input.profileTable,
-  }) + (linkedScene ? "\n\n" + buildHitReadingLines(linkedScene).join(" ") : "");
+  }) + "\n\n" + featureReading(input.evidencePacket, COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS.indexOf(input.readingId)) + (linkedScene ? "\n\n" + buildHitReadingLines(linkedScene).join(" ") : "");
 
   return {
     readingId: input.readingId,
@@ -746,7 +752,7 @@ function buildLocalLongformReading(input: {
     body,
     linkedChapterIds,
     sajuTermsUsed: input.primaryTerms.slice(0, 2),
-    mbtiTermsUsed: [input.mbtiType],
+    mbtiTermsUsed: input.mbtiType ? [input.mbtiType] : [],
   };
 }
 
@@ -769,7 +775,7 @@ function buildLongformBody(input: {
   });
 
   return [
-    `${input.titleKo}에서는 ${firstTerm}과 ${secondTerm}이 만드는 긴장과 보완 지점을 함께 봅니다. ${input.titleKo}의 핵심은 용어를 외우게 하는 것이 아니라 실제 말투, 돈 관리, 관계 피로, 회복 루틴으로 번역하는 데 있습니다.`,
+    `${input.titleKo}에서는 「${firstTerm}」과 「${secondTerm}」의 긴장과 보완 지점을 함께 봅니다. ${input.titleKo}의 핵심은 용어를 외우게 하는 것이 아니라 실제 말투, 돈 관리, 관계 피로, 회복 루틴으로 번역하는 데 있습니다.`,
     mbtiLine,
     elementLine,
     domainLine,
@@ -777,111 +783,56 @@ function buildLongformBody(input: {
   ].join(" ");
 }
 
-function getLongformElementLine(
-  readingId: ComprehensiveReportV2LongformReadingId,
-  elementSummary: string,
-): string {
-  if (readingId === "opening") {
-    return `오행 분포는 ${elementSummary}입니다. 첫인상에서는 토의 책임감이 먼저 보이고, 화와 수의 빈자리는 표현 온도와 회복 루틴을 따로 만들어야 하는 과제로 남습니다.`;
-  }
-  if (readingId === "baseSajuReading") {
-    return `오행을 보면 ${elementSummary} 흐름입니다. 목은 방향을 세우고 금은 기준을 자르지만, 토가 무거울수록 결정한 일을 오래 끌고 가는 대신 마음의 하중도 같이 커집니다.`;
-  }
-  if (readingId === "sajuFeatureReading") {
-    return `표식 해석에서는 ${elementSummary}의 균형을 함께 봅니다. 신살과 귀인은 이름보다 생활 반응으로 읽고, 부족한 화와 수는 말의 온도와 식히는 장치를 의식적으로 보완해야 합니다.`;
-  }
-  if (readingId === "mbtiReading") {
-    return `MBTI를 볼 때도 ${elementSummary}의 오행 배경을 빼면 설명이 얕아집니다. 토가 강한 책임감은 목표 지향성을 오래 버티게 하지만, 수의 완충이 적으면 머리를 끄는 루틴이 늦게 잡힐 수 있습니다.`;
-  }
-  if (readingId === "sajuMbtiBridgeReading") {
-    return `명리×MBTI 연결에서는 ${elementSummary}가 행동의 배경이 됩니다. 강한 토는 책임을 끝까지 끌고 가게 만들고, 비어 있는 화와 수는 표현과 회복을 자동값이 아니라 운영값으로 바꿉니다.`;
-  }
-  if (readingId === "workMoneyStudyReading") {
-    return `일과 돈에서는 ${elementSummary}가 현실감으로 작동합니다. 토가 강할수록 일을 끝까지 붙잡지만, 회복을 미루면 정산일과 책임 범위를 챙기는 판단도 같이 무거워질 수 있습니다.`;
-  }
-  if (readingId === "loveRelationshipReading") {
-    return `관계에서는 ${elementSummary}가 말의 온도에 영향을 줍니다. 화가 약하면 마음이 없는 것이 아니라 따뜻하게 꺼내는 속도가 늦고, 수가 약하면 감정을 식히는 시간이 따로 필요합니다.`;
-  }
-  if (readingId === "peopleFamilyEnvironmentReading") {
-    return `사람과 환경에서는 ${elementSummary}가 역할 감각으로 드러납니다. 토가 강하면 부탁을 끝까지 처리하지만, 수의 완충이 적으면 도움을 요청하기 전에 혼자 버티는 시간이 길어질 수 있습니다.`;
-  }
-  if (readingId === "riskGrowthReading") {
-    return `리스크 관점에서 ${elementSummary}는 과로의 위치를 보여줍니다. 토가 쌓이면 책임은 버티지만 몸과 말투가 먼저 딱딱해지고, 화와 수의 보완은 산책, 수면, 기록처럼 실제 루틴으로 넣어야 합니다.`;
-  }
-
-  return `마지막 기준에서도 ${elementSummary}는 중요합니다. 강한 책임감은 살리되 표현과 회복을 일정으로 보완해야 오래 갑니다.`;
+const chapterReadingId: Record<ComprehensiveReportV2ChapterId, ComprehensiveReportV2LongformReadingId> = {
+  opening: "opening", saju_identity: "baseSajuReading", personality_pattern: "sajuMbtiBridgeReading", work_money_study: "workMoneyStudyReading",
+  love_relationships: "loveRelationshipReading", people_family_environment: "peopleFamilyEnvironmentReading", risk_and_growth: "riskGrowthReading", final_message: "finalMessage",
+};
+function featureReading(packet: ComprehensiveReportEvidencePacket, index: number): string {
+  const entries = packet.sajuFeatureDictionary ?? [];
+  const entry = entries[index % entries.length];
+  if (!entry) return "";
+  return `원국에서 확인한 「${entry.rawLabel}」의 뜻은 다음과 같습니다. ${entry.plainMeaning} ${entry.howItShowsInYou} 강점으로 쓰이는 장면: ${entry.strength} 피로로 바뀌는 장면: ${entry.fatiguePoint} 실제 적용 기준: ${entry.practicalUse}`;
 }
-
-function getLongformMbtiLine(
-  readingId: ComprehensiveReportV2LongformReadingId,
-  mbtiType: string,
-): string {
-  if (readingId === "opening") {
-    return `${mbtiType} 성향은 전체 결을 밖으로 꺼낼 때 빠른 판단과 목표 정리로 나타납니다. 이 리포트에서는 유형 설명을 반복하기보다 원국의 책임감이 실제 선택 속도로 바뀌는 장면을 먼저 봅니다.`;
-  }
-  if (readingId === "baseSajuReading") {
-    return `${mbtiType}는 사주 골격을 대신하지 않고, 그 골격이 말투와 판단 방식으로 드러나는 모습을 돕는 보조 언어입니다. 기본 형상에서는 방향을 잡는 힘과 책임을 떠안는 습관이 먼저 읽힙니다.`;
-  }
-  if (readingId === "sajuFeatureReading") {
-    return `${mbtiType} 성향은 신살과 귀인의 이름을 설명하는 원인이 아니라, 그 표식이 생활 속에서 어떻게 쓰이는지 보여주는 행동 언어입니다. 표식은 사건 예언보다 반복되는 반응과 피로 지점을 읽는 데 초점을 둡니다.`;
-  }
-  if (readingId === "mbtiReading") {
-    return `${mbtiType}는 효율, 기준, 목표 지향성만으로 끝나지 않습니다. 능력 없는 권위에 낮은 인내심을 보이거나, 논쟁을 친밀감처럼 느끼는 결도 사주 구조의 판단 속도와 함께 읽어야 합니다.`;
-  }
-  if (readingId === "workMoneyStudyReading") {
-    return `${mbtiType} 성향은 비효율을 보면 개편안을 먼저 떠올리는 쪽으로 드러납니다. 일에서는 이 감각이 기획력, 협상력, 프로젝트 정리력으로 살아나지만 정산일과 책임 범위를 늦게 쓰면 실력이 손해로 바뀔 수 있습니다.`;
-  }
-  if (readingId === "loveRelationshipReading") {
-    return `${mbtiType} 성향은 관계에서도 막연한 위로보다 해결책을 먼저 찾게 만들 수 있습니다. 상대가 감정을 말하는 순간에는 답을 주기보다 내 편이라는 확인을 먼저 건네야 말의 온도가 살아납니다.`;
-  }
-  if (readingId === "peopleFamilyEnvironmentReading") {
-    return `${mbtiType} 성향은 가족, 팀, 친구 관계에서 역할과 기준을 빨리 세우려는 방식으로 나타납니다. 권위보다 실력을 보려는 감각은 강점이지만, 공개적인 자리에서는 말의 선을 같이 잡아야 주변이 덜 긴장합니다.`;
-  }
-  if (readingId === "riskGrowthReading") {
-    return `${mbtiType} 성향은 목표가 보이면 사람과 자원을 다시 배치하려는 쪽으로 강해집니다. 오래 쓰려면 더 밀어붙이는 기준보다 중단 기준, 수면, 기록, 산책처럼 식히는 장치를 먼저 일정에 넣어야 합니다.`;
-  }
-  if (readingId === "sajuMbtiBridgeReading") {
-    return `${mbtiType}는 사주의 원인을 대신하지 않고 행동으로 드러나는 방식을 설명합니다. 명리의 판단 속도와 책임 위치가 MBTI의 목표 지향성과 만나면, 사용자는 자기 강점과 피로 지점을 더 구체적으로 알아차릴 수 있습니다.`;
-  }
-  if (readingId === "finalMessage") {
-    return `${mbtiType} 성향을 오래 쓰려면 더 강하게 밀어붙이는 법보다 멈추는 기준을 배워야 합니다. 마지막 기준은 성취를 줄이는 것이 아니라 책임, 돈, 관계, 회복을 동시에 운영하는 장치를 만드는 데 있습니다.`;
-  }
-
-  return `${mbtiType} 성향은 섹션별 행동 장면으로만 짧게 연결합니다. 같은 문장을 반복하지 않고 원국의 다른 면을 생활 언어로 옮깁니다.`;
+function getLongformElementLine(readingId: ComprehensiveReportV2LongformReadingId, elementSummary: string): string {
+  const counts = [...elementSummary.matchAll(/([목화토금수])\s*(\d+)/gu)].map(m => ({ label: m[1], count: Number(m[2]) }));
+  const missing = counts.filter(e => e.count === 0).map(e => e.label);
+  const max = Math.max(...counts.map(e => e.count));
+  const dominant = counts.filter(e => e.count === max).map(e => e.label);
+  return `${longformTitleById[readingId]}의 오행 근거는 ${elementSummary}입니다. 확인된 기둥에서 ${missing.length ? missing.join("·") + " 항목이 0으로 집계됩니다" : "다섯 오행이 모두 나타납니다"}. 가장 많이 나타나는 항목은 ${dominant.join("·")}입니다. 이 숫자는 원국의 구성 비중이며 건강이나 성과의 점수가 아닙니다. 부족한 항목을 성격의 결함으로 단정하기보다, ${readingId === "workMoneyStudyReading" ? "공부 계획과 돈 관리에서 실행·기록·휴식 중 무엇이 빠지는지" : readingId === "loveRelationshipReading" ? "연인과 대화할 때 표현과 경청의 균형이 어떤지" : longformTitleById[readingId] + "에서 실제 선택과 회복의 균형이 어떤지"} 확인하는 기준으로 사용하세요.`;
 }
-
-function getLongformClosingLine(input: {
-  readonly readingId: ComprehensiveReportV2LongformReadingId;
-  readonly firstTerm: string;
-  readonly mbtiType: string;
-}): string {
-  if (input.readingId === "workMoneyStudyReading") {
-    return `${input.firstTerm}과 ${input.mbtiType}의 목표 지향성이 겹치면 돈이 되는 판은 빨리 보입니다. 그래서 이 장에서는 확장보다 계약서, 정산일, 책임 범위, 철수 기준을 먼저 닫는 기준을 남깁니다.`;
-  }
-  if (input.readingId === "loveRelationshipReading") {
-    return `${input.firstTerm}의 판단 속도와 ${input.mbtiType}의 해결 중심성이 겹치면 맞는 말이 너무 빨리 나갈 수 있습니다. 관계에서는 정확함보다 먼저 내 편이라는 확인을 건네는 순서가 오래 갑니다.`;
-  }
-  if (input.readingId === "peopleFamilyEnvironmentReading") {
-    return `${input.firstTerm}과 ${input.mbtiType}의 역할 정리 감각이 만나면 가족과 팀에서 정리 담당이 되기 쉽습니다. 다만 맡기 전에 범위와 마감을 말해야 책임이 한 사람에게 몰리지 않습니다.`;
-  }
-  if (input.readingId === "riskGrowthReading") {
-    return `${input.firstTerm}의 버티는 힘과 ${input.mbtiType}의 추진력이 겹치면 멈춤이 늦어질 수 있습니다. 회복은 기분이 좋아지면 하는 일이 아니라 일정표에 먼저 넣는 운영 기준입니다.`;
-  }
-  if (input.readingId === "sajuMbtiBridgeReading") {
-    return `${input.firstTerm}은 판단의 방향을 보여주고 ${input.mbtiType}는 그 판단이 밖으로 나오는 속도를 보여줍니다. 두 근거를 함께 보면 강점은 더 선명해지고 피로 지점은 더 구체적으로 잡힙니다.`;
-  }
-  if (input.readingId === "finalMessage") {
-    return `${input.firstTerm}의 힘을 오래 쓰려면 매일의 실행 기준이 필요합니다. 질문 하나, 기록 하나, 산책 하나처럼 작지만 반복 가능한 장치가 이 리포트의 마지막 기준입니다.`;
-  }
-
-  return `${input.firstTerm}의 결은 줄일 힘이 아니라 다루는 순서를 배울 힘입니다. 이 섹션에서는 빠른 판단을 생활 장면에 맞게 조정하는 방법을 남깁니다.`;
+function getLongformMbtiLine(readingId: ComprehensiveReportV2LongformReadingId, mbtiType: string): string {
+  const source = getMbtiSourceProfile(mbtiType);
+  const areaByReading: Record<ComprehensiveReportV2LongformReadingId, MbtiTraitArea> = {
+    opening: "identity", baseSajuReading: "thinkingStyle", sajuFeatureReading: "strengths", mbtiReading: "communication", sajuMbtiBridgeReading: "workplace",
+    workMoneyStudyReading: "career", loveRelationshipReading: "love", peopleFamilyEnvironmentReading: "relationships", riskGrowthReading: "risks", finalMessage: "growth",
+  };
+  if (!source) return `${longformTitleById[readingId]}에는 MBTI 미입력을 반영하여 확인된 명리 근거와 생활 경험을 중심으로 살펴봅니다.`;
+  const traits = source.traits?.[areaByReading[readingId]] ?? [];
+  const lines = traits.slice(0, 2).flatMap(t => [t.plainKo, t.strongLine, t.positiveUse, t.risk]).filter((v): v is string => typeof v === "string" && v.length > 0);
+  const description = (lines.length ? [...new Set(lines)].join(" ") : source.oneLine).replace(/진단/gu, "점검").replace(/문서/gu, "업무 기록").replace(/보장/gu, "확보").replace(/물리치료/gu, "재활 지원").replace(/치료 보조/gu, "돌봄 지원").replace(/스포트라이트/gu, "무대의 관심");
+  return `${longformTitleById[readingId]}에서 입력한 MBTI ${source.type}의 성향을 함께 봅니다. ${description}`;
+}
+const reflectionByReading: Record<ComprehensiveReportV2LongformReadingId, string> = {
+  opening: "처음 읽을 때는 가장 익숙한 장면 하나와 낯선 장면 하나를 골라 보세요. 익숙하다는 느낌만으로 모든 해석을 받아들이기보다, 실제로 언제 누구와 그런 일이 있었는지 떠올리는 편이 좋습니다. 상대가 보는 모습과 혼자 있을 때의 차이도 중요한 단서입니다.",
+  baseSajuReading: "원국의 구성은 바뀌지 않지만 같은 조건을 사용하는 방식은 달라질 수 있습니다. 최근 맡은 역할에서 힘이 났던 일과 부담스러웠던 일을 나누어 적어 보세요. 두 목록의 차이를 보면 자신에게 필요한 환경을 더 구체적으로 설명할 수 있습니다.",
+  sajuFeatureReading: "표식은 이름의 인상보다 풀이와 적용 장면을 함께 읽어야 합니다. 도움이 됐던 인연, 갈등이 줄었던 말, 일이 잘 풀렸던 준비 과정을 각각 떠올려 보세요. 맞지 않는 경험은 지우지 말고 해석의 한계로 남겨 두는 것이 좋습니다.",
+  mbtiReading: "유형을 입력하지 않았다면 외향·내향이나 인지 기능을 추정하지 않습니다. 대화를 시작할 때 무엇을 먼저 묻는지, 결정을 내릴 때 어떤 정보를 찾는지 관찰해 보세요. 여유 있을 때와 급한 상황에서의 차이를 비교하면 유형명 없이도 자신을 설명할 수 있습니다.",
+  sajuMbtiBridgeReading: "명리의 표현과 행동 성향은 같은 뜻으로 바꿔 쓸 수 없습니다. 업무 요청을 받을 때 생각한 이유와 실제로 한 말을 따로 적어 보세요. 의도와 전달 사이의 차이를 발견하면 자신의 강점을 상황에 맞게 사용하는 연습을 할 수 있습니다.",
+  workMoneyStudyReading: "일에서는 맡을 범위와 마감, 돈에서는 지출 한도와 정산일, 학습에서는 확인할 결과물을 먼저 정해 보세요. 좋은 계획도 사용 가능한 시간보다 커지면 실행하기 어렵습니다. 일주일 동안 유지할 수 있는 가장 작은 단위로 줄여 시작하는 편이 도움이 됩니다.",
+  loveRelationshipReading: "가까운 관계에서는 상대에게 기대한 행동을 구체적으로 말해 보세요. 연락 횟수 자체보다 약속을 바꿀 때 알리는 방식과 갈등 뒤 다시 대화하는 태도를 함께 살피는 것이 좋습니다. 서로 편안했던 상황을 공유하면 원하는 관계의 기준이 선명해집니다.",
+  peopleFamilyEnvironmentReading: "가족의 부탁과 팀의 요청이 겹치면 먼저 한 약속부터 확인하세요. 도울 수 있는 시간과 어려운 범위를 함께 말하면 관계를 끊지 않고도 부담을 조정할 수 있습니다. 누구에게 어떤 도움을 받을 수 있는지 적어 두는 일도 환경을 바꾸는 작은 시작입니다.",
+  riskGrowthReading: "피로할 때 반복하는 선택을 알아두면 중단 시점을 놓치지 않을 수 있습니다. 일정이 밀릴 때 수면과 식사까지 줄이는지, 답장을 미루는지 관찰해 보세요. 해야 할 일의 양을 줄이거나 도움을 청할 기준을 미리 정하면 회복을 뒤로 미루는 일을 줄일 수 있습니다.",
+  finalMessage: "이번 주에 바꿀 행동은 하나면 충분합니다. 일에서는 약속 범위, 돈에서는 사용 한도, 관계에서는 요청하는 말, 회복에서는 쉬는 시간을 기준으로 삼아 보세요. 다음 주에는 잘 지킨 횟수보다 그 행동이 생활을 얼마나 편하게 만들었는지 돌아보세요.",
+};
+function getLongformClosingLine(input: { readonly readingId: ComprehensiveReportV2LongformReadingId; readonly firstTerm: string; readonly mbtiType: string }): string {
+  return reflectionByReading[input.readingId];
 }
 
 function getDomainLongformLine(
   readingId: ComprehensiveReportV2LongformReadingId,
 ): string {
   if (readingId === "opening") {
-    return "전체 성향은 빠른 판단, 강한 책임감, 늦게 잡히는 회복 기준이 한꺼번에 보이는 구조입니다. 사용자는 일을 맡으면 판을 빨리 정리하지만, 마음의 온도와 쉬는 기준은 별도로 챙겨야 오래 갑니다.";
+    return "전체 성향에서는 원국의 구성과 입력한 행동 성향을 구분해 읽습니다. 어떤 자리에 힘이 모이는지 살펴본 뒤 일과 관계에서 그 힘이 도움이 된 경험을 확인하세요.";
   }
   if (readingId === "baseSajuReading") {
     return "사주 골격에서는 일간, 일주, 오행, 십성의 균형을 먼저 읽습니다. 이 골격은 성격을 단정하는 말이 아니라 어디서 기준이 빨라지고 어디서 부담이 쌓이는지 보여주는 지도에 가깝습니다.";
@@ -890,7 +841,7 @@ function getDomainLongformLine(
     return "주요 표식은 신살과 귀인의 이름을 외우는 장이 아니라 실제 생활에서 어떻게 체감되는지 확인하는 장입니다. 도움을 받는 통로, 날카로운 말, 책임의 누적, 회복의 빈자리를 각각 다른 장면으로 풀어 읽습니다.";
   }
   if (readingId === "mbtiReading") {
-    return "MBTI 성향은 명리 구조를 덮어쓰지 않습니다. 다만 비효율을 못 넘기는 반응, 능력 중심의 권위 판단, 논쟁을 통해 가까워지는 방식처럼 사용자가 이미 익숙한 행동 언어를 제공해 줍니다.";
+    return "MBTI 성향은 명리 구조를 덮어쓰지 않습니다. 표에 있는 성향과 실제 대화, 공부, 의사결정 사례를 비교하고, 다른 경험은 그대로 남겨 두세요. 자기보고 유형도 상황과 경험에 따라 다르게 느껴질 수 있습니다.";
   }
   if (readingId === "workMoneyStudyReading") {
     return "일·돈·공부에서는 아이디어를 떠올리면 이걸 어떻게 팔지까지 빨리 가는 편입니다. 수익화 감각이 빠른 사람일수록 정산일, 권한, 책임 범위를 늦게 쓰면 손해를 봅니다. 프로젝트를 시작할 때는 열정이 아니라 기록과 조건 합의가 먼저이고, 공부는 자격증과 전문서를 실제 포트폴리오에 붙일 때 집중력이 살아납니다.";
@@ -905,7 +856,7 @@ function getDomainLongformLine(
     return "리스크와 성장은 겁주는 말이 아니라 운영법입니다. 밤 산책, 수면, 기록, 물 마시기처럼 식히는 루틴을 일정에 넣고, 맡을 일과 버릴 일을 분리해야 합니다. 번아웃 전에는 몸이 먼저 신호를 보내기보다 짜증, 말투, 표정에서 먼저 날카로움이 올라올 수 있습니다.";
   }
   if (readingId === "sajuMbtiBridgeReading") {
-    return "현침살의 예리함과 빠른 결론 성향이 만나면 핵심 오류를 빨리 잡지만 말이 평가처럼 들릴 수 있습니다. 재성의 현실 감각과 목표 지향성이 겹치면 돈이 되는 판은 빨리 보지만 방어 규칙이 필요합니다. 토가 강한 구조와 책임감이 겹치면 맡은 일을 끝까지 끌고 가지만 쉬는 기준을 뒤로 미루기 쉽습니다. 화와 수가 약하면 감정이 없는 것이 아니라 부드럽게 꺼내고 식히는 통로를 의식적으로 만들어야 합니다.";
+    return "명리와 MBTI가 비슷하게 설명하는 부분은 반복되는 선택을 관찰하는 출발점입니다. 서로 다르게 설명하는 부분도 오류라고 단정하지 말고, 회의·카톡·가족 부탁처럼 환경이 달랐던 사례를 나누어 보세요. 명리는 계산된 구조를, MBTI는 사용자가 알려 준 행동 성향을 읽습니다. 어느 한쪽만으로 다른 쪽의 값을 추정하거나 실제 경험보다 우선하지 않습니다.";
   }
   if (readingId === "finalMessage") {
     return "마지막 기준은 더 많은 의지를 요구하지 않습니다. 일과 돈은 기록으로 묶고, 가까운 관계에서는 감정 확인을 먼저 두며, 회복은 일정으로 넣는 작은 장치를 반복하는 것이 이 구조를 오래 쓰는 방법입니다.";
@@ -927,52 +878,6 @@ function getLinkedChapterIds(
   return ["saju_identity", "personality_pattern"];
 }
 
-function buildBasicSajuFeatureChapter(
-  profileTable: ComprehensiveReportV2ProfileTable,
-): ComprehensiveReportV2SajuFeatureChapter {
-  return {
-    titleKo: "명리 특징 해석",
-    subtitleKo:
-      "공통 만세력표는 근거이고, 이 챕터는 원국 특징을 현실 언어로 풀어보는 해석입니다.",
-    intro:
-      "공통 만세력표에 표시되는 신살, 귀인, 합충, 지장간은 이름만 보면 어렵게 느껴질 수 있습니다. 이 챕터에서는 원국에 실제로 잡힌 표식을 사건 예언이 아니라 말투, 판단 속도, 도움을 요청하는 방식, 관계 반응, 회복 루틴으로 번역합니다.",
-    items: getBasicFeatureItems(profileTable),
-  };
-}
-
-function getBasicFeatureItems(
-  profileTable: ComprehensiveReportV2ProfileTable,
-): readonly ComprehensiveReportV2SajuFeatureChapterItem[] {
-  const candidates = uniqueValues([
-    profileTable.dayPillar,
-    ...profileTable.excessiveElements,
-    ...profileTable.missingElements,
-    ...profileTable.tenGodSummary,
-    ...profileTable.specialPatterns,
-    ...profileTable.sinsal,
-    ...profileTable.gwiin,
-  ]).slice(0, 5);
-
-  const labels = candidates.length >= 3
-    ? candidates
-    : uniqueValues([...candidates, "사주 원국", "오행 균형", "MBTI 보조 발현"]);
-
-  return labels.slice(0, 5).map((label) => ({
-    rawLabel: label,
-    userTitle: `${label}을 생활 언어로 풀어보기`,
-    plainMeaning:
-      `${label}은 운명을 단정하는 이름이 아니라 반복되는 반응과 선택 기준을 읽기 위한 표식입니다.`,
-    howItShowsInYou:
-      `${label}은 일과 관계에서 판단이 빨라지는 순간, 책임을 떠안는 방식, 감정을 밖으로 꺼내는 속도에 영향을 줄 수 있습니다.`,
-    strength:
-      `${label}을 잘 쓰면 기준을 빨리 세우고 복잡한 상황을 정리하는 힘으로 이어집니다.`,
-    fatiguePoint:
-      `${label}이 과하면 말이 빠르게 평가처럼 들리거나 쉬어야 할 때도 책임을 먼저 붙잡는 피로가 생길 수 있습니다.`,
-    practicalUse:
-      `${label}을 쓸 때는 결론 전에 질문을 넣고, 돈과 역할은 기록으로 남기며, 회복 루틴을 일정에 먼저 배치하세요.`,
-  }));
-}
-
 function getPrimarySajuTerms(
   profileTable: ComprehensiveReportV2ProfileTable,
   featureChapter: ComprehensiveReportV2SajuFeatureChapter,
@@ -990,8 +895,8 @@ function getPrimarySajuTerms(
   ]).slice(0, 6);
 }
 
-function toMbtiType(value: string): MbtiType {
-  return value === "" ? defaultMbtiType : value as MbtiType;
+function toMbtiType(value: string): MbtiType | "" {
+  return value as MbtiType | "";
 }
 
 function toSajuGender(
