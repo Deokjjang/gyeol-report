@@ -5,6 +5,15 @@ import ProductTile from "../../../src/components/product/ProductTile";
 import { GYEOL_PRODUCTS } from "../../../src/lib/product/gyeolProducts";
 
 describe("ProductTile", () => {
+  it.each(GYEOL_PRODUCTS)("keeps $slug price and destination in the home presentation", (product) => {
+    const html = renderToStaticMarkup(<ProductTile product={product} presentation="editorial" />);
+    expect(html).toContain(`href="${product.href}"`);
+    expect(html).toContain(`aria-label="${product.nameKo} 시작하기"`);
+    expect(html.match(/1,290원/g)).toHaveLength(1);
+    expect(html).toContain(`<h3>${product.nameKo.replace(/ 리포트$/u, "")}</h3>`);
+    expect(html).not.toMatch(/구매 가능|판매 상품|90일|결제하고 리포트/);
+  });
+
   it("renders purchasable product state and 1290 won CTA", () => {
     const html = renderToStaticMarkup(
       <ProductTile product={GYEOL_PRODUCTS[0]} />,

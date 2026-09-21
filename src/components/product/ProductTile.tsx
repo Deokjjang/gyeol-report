@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import ProductTileVisual from "./ProductTileVisual";
 import type { ProductTileVisualKey } from "./ProductTileVisual";
+import styles from "./editorialProduct.module.css";
 
 export type ProductTileItem = {
   readonly id: string;
@@ -49,11 +50,43 @@ type PurchasableProductTileItem = ProductTileItem & {
 
 type ProductTileProps = {
   readonly product: ProductTileItem;
+  readonly presentation?: "editorial";
 };
 
-export default function ProductTile({ product }: ProductTileProps) {
+const editorialDescriptions: Partial<Record<ProductTileVisualKey, string>> = {
+  comprehensive: "명리의 구조와 MBTI로 읽는 나의 성향과 일상의 선택.",
+  career_money_study: "일하는 성향과 돈을 다루는 방식, 나에게 맞는 공부 루틴.",
+  love_marriage_child: "사랑을 표현하는 방식과 생활 리듬, 가족 안에서의 나.",
+  compatibility: "두 사람의 닮은 점과 다른 점, 관계의 조율점을 살펴봅니다.",
+  daewoon: "10년 단위의 큰 흐름 속에서 지금의 나를 돌아봅니다.",
+  saewoon: "한 해와 월별 흐름을 읽으며, 일상의 선택 기준을 정리합니다.",
+};
+
+export default function ProductTile({ product, presentation }: ProductTileProps) {
   const isPurchasable = isPurchasableProduct(product);
   const hasPreviewFlow = !isPurchasable && Boolean(product.previewHref);
+
+  if (presentation === "editorial" && isPurchasable) {
+    return (
+      <div className={styles.reveal} data-reveal>
+        <article className={styles.card}>
+          <div className={styles.visual}>
+            <ProductTileVisual variant={product.visualKey} title={`${product.nameKo} 상품 비주얼`} />
+          </div>
+          <div className={styles.body}>
+            <h3>{product.nameKo.replace(/ 리포트$/u, "")}</h3>
+            <p className={styles.description}>{editorialDescriptions[product.visualKey] ?? product.summaryKo}</p>
+            <div className={styles.purchase}>
+              <p className={styles.price}>{product.priceLabelKo}</p>
+              <Link href={product.href} className={styles.cta} aria-label={`${product.nameKo} 시작하기`}>
+                시작하기 <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
+          </div>
+        </article>
+      </div>
+    );
+  }
 
   return (
     <article

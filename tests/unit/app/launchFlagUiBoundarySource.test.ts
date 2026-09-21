@@ -29,13 +29,13 @@ describe("launch flag UI boundary source", () => {
     const expectedMarkers = [
       "ProductGrid",
       "GYEOL_HOME_PRODUCT_GRID",
-      "사주×MBTI 종합 리포트",
-      "입력한 생년월일과 MBTI를 바탕으로 명리 구조와 행동 패턴",
+      "사주 × MBTI 종합 리포트",
+      "명리의 구조와 MBTI의 행동 패턴을 함께 읽어",
       "상담이 아닌 참고용 리포트",
-      "결제 후 온라인 열람",
+      "생성일로부터 90일 온라인 열람",
       "자동 생성 디지털 리포트",
-      "1,290원 결제하고 리포트 생성하기",
-      "90일간 열람",
+      "내 리포트 만들기",
+      "최대 24시간 이내 제공",
     ];
     const activePurchaseMarkers = [
       "결제" + "하기",

@@ -9,13 +9,13 @@ const legalLinks = [
 
 export default function BusinessFooter() {
   return (
-    <footer className="border-t border-neutral-200 bg-white px-5 py-4 text-neutral-600 sm:px-8 lg:px-10">
-      <div className="mx-auto flex max-w-5xl flex-col gap-3 text-xs leading-5 sm:text-sm">
-        <section className="space-y-2" aria-label="사업자 정보">
-          <p className="font-extrabold text-neutral-950">
+    <footer className="border-t border-[#e9e1d7] bg-[#f4efe7] px-6 py-10 text-[#71665e] sm:px-10 lg:px-16">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 text-xs leading-6">
+        <section className="space-y-5" aria-label="사업자 정보">
+          <p className="text-sm font-semibold text-[#493b32]">
             {GYEOL_BUSINESS_INFO.serviceNameKo}
           </p>
-          <dl className="flex flex-wrap gap-x-4 gap-y-1">
+          <dl className="grid grid-cols-[7rem_minmax(0,1fr)] items-baseline gap-x-4 gap-y-2 [&_dd]:break-words [&_dt]:font-normal [&_dt]:text-[#71665e] lg:grid-cols-[7rem_minmax(0,1fr)_7rem_minmax(0,1fr)]">
             <dt className="font-semibold text-neutral-800">상호명</dt>
             <dd>{GYEOL_BUSINESS_INFO.businessName}</dd>
             <dt className="font-semibold text-neutral-800">대표</dt>
@@ -32,7 +32,7 @@ export default function BusinessFooter() {
             <dd>
               <a
                 href={`tel:${GYEOL_BUSINESS_INFO.customerServicePhone}`}
-                className="font-semibold text-neutral-900 underline underline-offset-4"
+                className="inline-flex min-h-11 items-center text-[#493b32] underline decoration-[#c9bdae] underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#7f1d38]"
               >
                 {GYEOL_BUSINESS_INFO.customerServicePhone}
               </a>
@@ -41,7 +41,7 @@ export default function BusinessFooter() {
             <dd>
               <a
                 href={`mailto:${GYEOL_BUSINESS_INFO.supportContactEmail}`}
-                className="font-semibold text-neutral-900 underline underline-offset-4"
+                className="inline-flex min-h-11 items-center text-[#493b32] underline decoration-[#c9bdae] underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#7f1d38]"
               >
                 {GYEOL_BUSINESS_INFO.supportContactEmail}
               </a>
@@ -51,12 +51,12 @@ export default function BusinessFooter() {
           </dl>
         </section>
 
-        <nav aria-label="정책 링크" className="flex flex-wrap gap-x-4 gap-y-2">
+        <nav aria-label="정책 링크" className="flex flex-wrap gap-x-6 border-t border-[#e2d9cc] pt-3">
           {legalLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="font-extrabold text-neutral-950 underline underline-offset-4"
+              className="inline-flex min-h-11 items-center font-semibold text-[#493b32] underline decoration-[#c9bdae] underline-offset-4 hover:text-[#7f1d38] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#7f1d38]"
             >
               {link.labelKo}
             </a>

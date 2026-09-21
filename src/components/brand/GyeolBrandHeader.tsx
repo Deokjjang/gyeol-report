@@ -20,7 +20,7 @@ export default function GyeolBrandHeader({
     <div className={`flex items-center justify-between gap-4 ${className}`}>
       <Link
         href="/"
-        className="group inline-flex min-h-12 items-center transition duration-200 active:scale-[0.98]"
+        className="group inline-flex min-h-12 items-center rounded-sm transition-opacity duration-200 hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8a6b2f] motion-safe:active:scale-[0.98]"
         aria-label="결리포트 홈"
       >
         <span className="grid gap-0.5">

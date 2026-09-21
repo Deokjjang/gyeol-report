@@ -1,0 +1,52 @@
+.grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; }
+.reveal { min-width: 0; }
+.card { display: flex; flex-direction: column; height: 100%; border: 1px solid #eae3d9; border-radius: 5px; background: #fffdf8; transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
+.visual { padding: 12px 12px 0; }
+.visual figure { border-radius: 2px; }
+.visual svg > circle:first-of-type { transform-box: fill-box; transform-origin: center; transition: transform 350ms ease; }
+.visual svg > rect:nth-of-type(2) { transform-box: fill-box; transform-origin: center; transition: transform 350ms ease; }
+.body { display: flex; flex: 1; flex-direction: column; padding: 25px 22px 18px; }
+.body h3 { font-size: 19px; font-weight: 600; line-height: 1.5; letter-spacing: -.035em; word-break: keep-all; }
+.description { min-height: 3.7em; margin: 12px 0 26px; color: #71665e; font-size: 14px; line-height: 1.85; word-break: keep-all; }
+.purchase { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 14px; border-top: 1px solid #eee7de; }
+.price { color: #493b32; font-size: 16px; font-variant-numeric: tabular-nums; }
+.cta { display: inline-flex; min-height: 44px; min-width: 106px; align-items: center; justify-content: space-between; gap: 16px; border-radius: 3px; padding: 10px 12px; color: #7f1d38; font-size: 13px; font-weight: 600; transition: background-color 180ms ease, transform 180ms ease; }
+.cta span { font-size: 18px; font-weight: 400; }
+.cta:focus-visible { outline: 2px solid #7f1d38; outline-offset: 3px; }
+.cta:active { background: #f1e6e4; transform: scale(.98); }
+.reveal:focus-within { animation: none; }
+@keyframes cardEntrance {
+  from { opacity: .35; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal[data-revealed="true"] { animation: cardEntrance 480ms ease-out both; }
+  .reveal[data-revealed="true"]:focus-within { animation: none; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { transform: translateY(-3px); border-color: #d6c7b7; box-shadow: 0 12px 28px rgb(40 24 28 / 5%); }
+  .card:hover .visual svg > circle:first-of-type { transform: scale(1.025); }
+  .card:hover .visual svg > rect:nth-of-type(2) { transform: translateY(-2px); }
+  .cta:hover { background: #f4ece6; }
+}
+@media (min-width: 640px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; grid-auto-rows: 1fr; }
+  .reveal:nth-child(2n) { animation-delay: 65ms; }
+}
+@media (min-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+  .reveal:nth-child(3n + 1) { animation-delay: 0ms; }
+  .reveal:nth-child(3n + 2) { animation-delay: 65ms; }
+  .reveal:nth-child(3n) { animation-delay: 130ms; }
+  .body { padding-inline: 24px; }
+}
+@media (max-width: 639px) {
+  @keyframes cardEntrance {
+    from { opacity: .6; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal[data-revealed="true"] { animation-duration: 320ms; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .card, .cta, .visual svg > circle, .visual svg > rect { animation: none !important; transform: none !important; transition: none; }
+}

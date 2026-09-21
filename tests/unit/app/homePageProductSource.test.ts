@@ -17,20 +17,19 @@ describe("home page product source", () => {
       "결리포트",
       "Gyeol Report",
       "사주×MBTI 종합 리포트",
-      "결리포트 리포트",
+      "어떤 리포트를 볼까요?",
       "사주×MBTI 종합 리포트",
       "직업·커리어·돈·학업 리포트",
       "연애·결혼·자녀 리포트",
       "대운 리포트",
       "세운 리포트",
       "궁합 리포트",
-      "구매 가능",
       "1,290원",
-      "90일간 열람",
-      "결제 후 온라인 열람",
+      "생성일로부터 90일 온라인 열람",
+      "최대 24시간 이내 제공",
       "자동 생성 디지털 리포트",
       "상담이 아닌 참고용 리포트",
-      "1,290원 결제하고 리포트 생성하기",
+      "내 리포트 만들기",
       "/report/new?product=saju-mbti-full",
       "/report/new?product=career-money-study",
       "/report/new?product=love-marriage-child",
@@ -62,6 +61,10 @@ describe("home page product source", () => {
     expect((html.match(/<article/g) ?? []).length).toBe(6);
 
     const blockedMarkers = [
+      "구매 가능",
+      "판매 상품",
+      "구매 상태",
+      "1,290원 결제하고 리포트 생성하기",
       "오행팔찌 구매",
       "굿즈 구매",
       "대운 구매",
@@ -97,6 +100,30 @@ describe("home page product source", () => {
 
     for (const marker of blockedMarkers) {
       expect(html).not.toContain(marker);
+    }
+  });
+
+  it("shows one price and one working start link per card, with policy once below the grid", () => {
+    const html = renderToStaticMarkup(Home());
+    const cards = html.match(/<article\b[\s\S]*?<\/article>/g) ?? [];
+    expect(cards).toHaveLength(6);
+    for (const card of cards) {
+      expect(card.match(/1,290원/g)).toHaveLength(1);
+      expect(card.match(/<a\b/g)).toHaveLength(1);
+      expect(card).toMatch(/href="\/report\/new\?product=[a-z-]+"/);
+      expect(card).toContain("시작하기");
+      expect(card).not.toMatch(/구매 가능|판매 상품|자동 생성 디지털|90일|최대 24시간/);
+    }
+    expect(html.match(/최대 24시간 이내 제공/g)).toHaveLength(1);
+    expect(html.indexOf("공통 상품 안내")).toBeGreaterThan(html.lastIndexOf("</article>"));
+  });
+
+  it("keeps motion optional and focus styles explicit", () => {
+    for (const file of ["src/app/home.module.css", "src/components/product/editorialProduct.module.css"]) {
+      const css = readFileSync(join(process.cwd(), file), "utf8");
+      expect(css).toContain("prefers-reduced-motion: reduce");
+      expect(css).toContain(":focus-visible");
+      expect(css).not.toMatch(/transition:\s*all/);
     }
   });
 
