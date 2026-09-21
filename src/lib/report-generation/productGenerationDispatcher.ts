@@ -1,3 +1,4 @@
+import type { BirthTimeCalculationContext } from "../saju/birthTimePrecisionTypes";
 import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
 import {
   generateCareerMoneyStudyProductDraft,
@@ -60,6 +61,7 @@ export type ProductGenerationInvalidInputResult = {
     readonly code: "INVALID_REPORT_INPUT";
     readonly message: string;
     readonly validationErrors?: readonly string[];
+    readonly birthTimeContext?: BirthTimeCalculationContext;
   };
 };
 
@@ -160,7 +162,9 @@ export function prepareProductGenerationFromPayload(
   });
   if (!normalized.ok) {
     return Promise.resolve(
-      invalidInputResult(`Invalid report input: ${normalized.error}`),
+      invalidInputResult(normalized.birthTimeContext
+        ? "출생시간 범위에 따라 원국이 달라집니다. 시간을 더 구체적으로 확인해 주세요."
+        : `Invalid report input: ${normalized.error}`, normalized.birthTimeContext),
     );
   }
 
@@ -328,12 +332,13 @@ async function handleComprehensiveV2Generation(
   };
 }
 
-function invalidInputResult(message: string): ProductGenerationInvalidInputResult {
+function invalidInputResult(message: string, birthTimeContext?: BirthTimeCalculationContext): ProductGenerationInvalidInputResult {
   return {
     ok: false,
     error: {
       code: "INVALID_REPORT_INPUT",
       message,
+      ...(birthTimeContext ? { birthTimeContext } : {}),
     },
   };
 }

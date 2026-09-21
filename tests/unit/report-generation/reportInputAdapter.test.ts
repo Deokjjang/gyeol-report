@@ -160,7 +160,8 @@ describe("report input adapter", () => {
       expect(result.ok).toBe(true);
       if (!result.ok) continue;
       expect(result.value.person).toMatchObject({
-        calendarType: "solar",
+        birthTimePrecision: "unknown",
+          calendarType: "solar",
         timezone: "Asia/Seoul",
         birthTimeUnknown: true,
         birthTime: "",
@@ -189,6 +190,7 @@ describe("report input adapter", () => {
         productSlug: "annual-fortune",
         person: {
           ...basePerson,
+          birthTimePrecision: "unknown",
           calendarType: "solar",
           timezone: "Asia/Seoul",
         },
@@ -279,6 +281,7 @@ describe("report input adapter", () => {
         personA: {
           ...basePerson,
           name: "A",
+          birthTimePrecision: "unknown",
           calendarType: "solar",
           timezone: "Asia/Seoul",
         },
@@ -286,6 +289,7 @@ describe("report input adapter", () => {
           ...basePerson,
           name: "B",
           mbtiType: "INTP",
+          birthTimePrecision: "unknown",
           calendarType: "solar",
           timezone: "Asia/Seoul",
         },

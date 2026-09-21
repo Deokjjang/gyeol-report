@@ -1,3 +1,4 @@
+import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import {
   buildAnnualFortuneEvidence,
   type AnnualFortuneEvidencePacket,
@@ -182,11 +183,11 @@ function buildAnnualFortuneEvidenceFromGenerationInput(
     labels: deriveAnnualFortuneLabels(saju, input),
   };
 
-  return buildAnnualFortuneEvidence({
+  return withBirthTimeEvidence(buildAnnualFortuneEvidence({
     targetYear: selectedYear,
     currentDate: policyDate,
     person,
-  });
+  }), { person: saju.birthTimeContext });
 }
 
 function getSelectedYear(
@@ -219,7 +220,9 @@ function calculateAnnualFortuneSaju(
     ...(person.birthTimeUnknown || birthTime.length === 0
       ? {}
       : { birthTime }),
-    birthTimeUnknown: person.birthTimeUnknown || birthTime.length === 0,
+    birthTimeUnknown: person.birthTimeUnknown,
+    birthTimePrecision: person.birthTimePrecision,
+    approximateBirthTimeSlot: person.approximateBirthTimeSlot,
     calendarType: "SOLAR",
     gender: toSajuGender(person.gender),
     timezone: "Asia/Seoul",

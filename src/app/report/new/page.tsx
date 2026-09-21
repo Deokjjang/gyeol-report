@@ -1,5 +1,6 @@
 "use client";
 
+import { BIRTH_TIME_SLOT_DEFINITIONS, normalizeBirthTimePrecision } from "../../../lib/saju/birthTimePrecisionTypes";
 import { use, useState } from "react";
 import type { FormEvent } from "react";
 
@@ -224,20 +225,7 @@ const reportInputSteps = [
   readonly titleKo: string;
 }[];
 
-const timeBranches = [
-  { value: "JASI", labelKo: "자시 23:00~00:59", representativeTime: "00:30" },
-  { value: "CHUKSI", labelKo: "축시 01:00~02:59", representativeTime: "02:00" },
-  { value: "INSI", labelKo: "인시 03:00~04:59", representativeTime: "04:00" },
-  { value: "MYOSI", labelKo: "묘시 05:00~06:59", representativeTime: "06:00" },
-  { value: "JINSI", labelKo: "진시 07:00~08:59", representativeTime: "08:00" },
-  { value: "SASI", labelKo: "사시 09:00~10:59", representativeTime: "10:00" },
-  { value: "OSI", labelKo: "오시 11:00~12:59", representativeTime: "12:00" },
-  { value: "MISI", labelKo: "미시 13:00~14:59", representativeTime: "14:00" },
-  { value: "SINSI", labelKo: "신시 15:00~16:59", representativeTime: "16:00" },
-  { value: "YUSI", labelKo: "유시 17:00~18:59", representativeTime: "18:00" },
-  { value: "SULSI", labelKo: "술시 19:00~20:59", representativeTime: "20:00" },
-  { value: "HAESI", labelKo: "해시 21:00~22:59", representativeTime: "22:00" },
-] as const;
+const timeBranches = BIRTH_TIME_SLOT_DEFINITIONS;
 
 type TimeBranchValue = (typeof timeBranches)[number]["value"];
 type TimeBranchSelection = TimeBranchValue | "";
@@ -395,13 +383,6 @@ function createMajorFortuneInputState(): MajorFortuneInputState {
   };
 }
 
-function getRepresentativeBirthTime(branch: TimeBranchValue): string {
-  return (
-    timeBranches.find((item) => item.value === branch)?.representativeTime ??
-    "00:30"
-  );
-}
-
 function isMidnightBoundaryTime(value: string): boolean {
   return value.startsWith("23:") || value.startsWith("00:");
 }
@@ -468,6 +449,7 @@ function createReportPersonInputPayload(
   return {
     name: input.name.trim(),
     birthDate: input.birthDate.trim(),
+    birthTimePrecision: input.paidBirthTimeMode,
     birthTime: input.birthTimeUnknown ? "" : input.birthTime.trim(),
     birthTimeUnknown: input.birthTimeUnknown,
     approximateBirthTimeSlot: input.birthTimeUnknown ? "" : input.timeBranch,
@@ -549,7 +531,8 @@ function buildReportInputPayload(input: {
 function isCompatibilityPersonRequiredInputComplete(
   input: CompatibilityPersonInputState,
 ): boolean {
-  return input.name.trim().length > 0 && input.birthDate.trim().length > 0;
+  return input.name.trim().length > 0 && input.birthDate.trim().length > 0 &&
+    normalizeBirthTimePrecision(createReportPersonInputPayload(input)).ok;
 }
 
 function isAnnualFortuneRequiredInputComplete(
@@ -560,6 +543,7 @@ function isAnnualFortuneRequiredInputComplete(
   return (
     input.name.trim().length > 0 &&
     input.birthDate.trim().length > 0 &&
+    normalizeBirthTimePrecision(createReportPersonInputPayload(input)).ok &&
     Number.isInteger(selectedYear) &&
     getAnnualFortuneYearOptions().includes(selectedYear)
   );
@@ -568,7 +552,8 @@ function isAnnualFortuneRequiredInputComplete(
 function isMajorFortuneRequiredInputComplete(
   input: MajorFortuneInputState,
 ): boolean {
-  return input.name.trim().length > 0 && input.birthDate.trim().length > 0;
+  return input.name.trim().length > 0 && input.birthDate.trim().length > 0 &&
+    normalizeBirthTimePrecision(createReportPersonInputPayload(input)).ok;
 }
 
 function getSearchParamValue(
@@ -748,7 +733,8 @@ function renderPaidFunnelBirthTimeFields({
 
   return (
     <fieldset className={styles.birthTimeFieldset}>
-      <legend>출생시간 · 선택</legend>
+      <legend>출생시간</legend>
+      <p className={styles.birthTimeNote}>아는 범위에 맞게 선택해 주세요. 시간을 모르면 ‘몰라요’를 선택할 수 있습니다.</p>
       <div className={styles.birthTimeModes}>
         {([
           ["exact", "정확히 알아요"],
@@ -817,8 +803,12 @@ function renderPaidFunnelBirthTimeFields({
         </div>
       ) : null}
 
+      {mode === "approximate" && value.timeBranch === "JASI" ? (
+        <p className={styles.birthTimeNote}>입력한 생년월일의 전날 23:00부터 당일 00:59까지입니다. 자정 전후로 일주가 달라져, 현재 리포트는 정확한 시간을 확인해야 생성할 수 있습니다.</p>
+      ) : null}
+
       {mode === "unknown" ? (
-        <p className={styles.birthTimeNote}>출생시간을 모르는 상태로 진행합니다.</p>
+        <p className={styles.birthTimeNote}>시주를 확정하지 않고 해석합니다. 절기 경계일에는 시간을 더 구체적으로 확인해야 할 수 있습니다.</p>
       ) : null}
 
       <input
@@ -1188,13 +1178,7 @@ export default function NewReportPage({
   const selectedStep = reportInputSteps[currentStep];
   const progressPercent = ((currentStep + 1) / reportInputSteps.length) * 100;
   const birthTimeUnknown = birthTimeMode === "unknown";
-  const normalizedBirthTime = birthTimeUnknown
-    ? undefined
-    : birthTimeMode === "branch"
-      ? timeBranch
-        ? getRepresentativeBirthTime(timeBranch)
-        : undefined
-      : birthTime;
+  const normalizedBirthTime = birthTimeMode === "exact" ? birthTime : undefined;
   const birthTimeSummary = formatBirthTimeSummary(
     birthTimeMode,
     birthTime,

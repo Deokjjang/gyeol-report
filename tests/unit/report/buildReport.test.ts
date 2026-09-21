@@ -324,7 +324,7 @@ describe("buildReport", () => {
 
   it("renders missing hour as 모름", () => {
     const unknownInput: SajuCalcInput = {
-      birthDate: "2024-02-04",
+      birthDate: "1996-12-06",
       birthTimeUnknown: true,
       calendarType: "SOLAR",
       gender: "MALE",

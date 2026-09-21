@@ -1,3 +1,4 @@
+import { birthTimePromptContext } from "./birthTimePublication";
 import type { MajorFortuneEvidencePacket } from "../report-knowledge/majorFortuneTypes";
 
 export type OpenAIMajorFortuneReportWriterMessages = {
@@ -12,6 +13,7 @@ function formatList(values: readonly string[]): string {
 
 function buildPromptPacket(packet: MajorFortuneEvidencePacket): object {
   return {
+    ...birthTimePromptContext(packet),
     productType: packet.productType,
     productVersion: packet.productVersion,
     personLabel: packet.personLabel,

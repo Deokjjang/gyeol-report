@@ -1,3 +1,4 @@
+import { birthTimePromptContext } from "./birthTimePublication";
 import type { CareerReportEvidencePacket } from "../report-knowledge/careerReportTypes";
 
 export type OpenAICareerReportWriterMessages = {
@@ -14,6 +15,7 @@ function formatList(values: readonly string[]): string {
 
 function buildPromptPacket(packet: CareerReportEvidencePacket): object {
   return {
+    ...birthTimePromptContext(packet),
     productType: packet.productType,
     productVersion: packet.productVersion,
     personLabel: packet.personLabel,

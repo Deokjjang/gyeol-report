@@ -1,3 +1,4 @@
+import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import {
   buildComprehensiveReportEvidencePacketFromComputedFacts,
 } from "../report-knowledge/comprehensiveReportEvidenceInputBuilder";
@@ -288,7 +289,7 @@ function buildComprehensiveV2EvidenceFromGenerationInput(
     sajuFacts: facts,
   });
 
-  return { packet, facts };
+  return { packet: withBirthTimeEvidence(packet, { person: saju.birthTimeContext }), facts };
 }
 
 async function generateWriterDraft(input: {
@@ -322,7 +323,9 @@ function calculateComprehensiveSaju(
     ...(person.birthTimeUnknown || birthTime.length === 0
       ? {}
       : { birthTime }),
-    birthTimeUnknown: person.birthTimeUnknown || birthTime.length === 0,
+    birthTimeUnknown: person.birthTimeUnknown,
+    birthTimePrecision: person.birthTimePrecision,
+    approximateBirthTimeSlot: person.approximateBirthTimeSlot,
     calendarType: "SOLAR",
     gender: toSajuGender(person.gender),
     timezone: "Asia/Seoul",

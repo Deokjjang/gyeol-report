@@ -1,3 +1,4 @@
+import type { BirthTimePrecision } from "../saju/birthTimePrecisionTypes";
 import type { MbtiTypeCode } from "./mbtiKnowledgeTypes";
 import type { ComputedSajuFacts } from "./sajuComputedFactsTypes";
 import type { CompatibilityDeepSajuLayer } from "./compatibilityDeepSajuBridge";
@@ -123,6 +124,7 @@ export type CompatibilityPersonInput = {
   readonly birthDate: string;
   readonly birthTime?: string | null;
   readonly birthTimeKnown: boolean;
+  readonly birthTimePrecision?: BirthTimePrecision;
   readonly timezone: string;
   readonly mbti?: string | null;
 };

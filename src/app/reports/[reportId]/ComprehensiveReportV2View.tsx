@@ -1,3 +1,4 @@
+import { publicationBirthTimeContexts } from "../../../lib/report-generation/birthTimePublication";
 import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
 import readingStyles from "../../../components/report/reportReading.module.css";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
@@ -69,7 +70,9 @@ export function ComprehensiveReportV2View({
   if (evidencePacket !== undefined && !validateProductPublication("saju_mbti_full", draft, evidencePacket).ok) {
     return <p>리포트를 준비하고 있습니다. 잠시 후 다시 확인해 주세요.</p>;
   }
+  const birthTimeContext = publicationBirthTimeContexts(evidencePacket)?.person;
   const manseRyeokTableData = buildManseRyeokTableData({
+    allowUnknownHour: birthTimeContext?.birthTimePrecision === "unknown",
     profile: draft.profileTable,
     displayName,
   });
@@ -106,6 +109,8 @@ export function ComprehensiveReportV2View({
             title="기초 정보"
             body="만세력표와 MBTI 성향표는 해석의 근거입니다. 신살·귀인·합충·지장간의 의미는 아래 본문에서 따로 풀어 읽습니다."
           />
+          {birthTimeContext?.birthTimePrecision === "unknown" && <CompactNotice message="출생시간 모름으로 시주는 확정하지 않았습니다. 연·월·일주를 기준으로 읽어 주세요." />}
+          {birthTimeContext?.birthTimePrecision === "approximate" && <CompactNotice message="선택한 시간대 전체에서 동일한 기둥을 확인했습니다. 정확한 출생시각을 확정한 것은 아닙니다." />}
           <div className="grid min-w-0 gap-4">
             {manseRyeokTableData === null ? (
               <CompactNotice message="만세력표는 시주·일주·월주·연주가 모두 연결된 결과에서 표시됩니다." />
@@ -480,11 +485,12 @@ function groupQuickFeatureItems(
 function buildManseRyeokTableData(input: {
   readonly profile: ComprehensiveReportV2ProfileTable;
   readonly displayName?: string;
+  readonly allowUnknownHour?: boolean;
 }) {
   const profile = input.profile;
   const pillarGrid = profile.fourPillarGrid ?? getFallbackPillarGrid(profile);
 
-  if (!hasCompletePillarGrid(pillarGrid)) {
+  if (!hasCompletePillarGrid(pillarGrid, input.allowUnknownHour)) {
     return null;
   }
 
@@ -528,10 +534,12 @@ function getFallbackPillarGrid(
 
 function hasCompletePillarGrid(
   pillarGrid: readonly ComprehensiveReportV2PillarGridColumn[],
+  allowUnknownHour = false,
 ): boolean {
-  const requiredColumns = new Set(["hour", "day", "month", "year"]);
+  const requiredColumns = new Set(allowUnknownHour ? ["day", "month", "year"] : ["hour", "day", "month", "year"]);
 
   return pillarGrid.every((column) => {
+    if (allowUnknownHour && column.columnId === "hour") return !column.pillar;
     const splitPillar = splitProfilePillar(column.pillar);
     const heavenlyStem = column.heavenlyStem ?? splitPillar.heavenlyStem;
     const earthlyBranch = column.earthlyBranch ?? splitPillar.earthlyBranch;

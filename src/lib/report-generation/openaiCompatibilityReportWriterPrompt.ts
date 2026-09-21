@@ -1,3 +1,4 @@
+import { birthTimePromptContext } from "./birthTimePublication";
 import type { CompatibilityEvidencePacket } from "../report-knowledge/compatibilityEvidenceBuilder";
 
 export type OpenAICompatibilityReportWriterMessages = {
@@ -66,6 +67,7 @@ function collectUnsupportedCompatibilityTerms(
 
 function buildPromptPacket(packet: CompatibilityEvidencePacket): object {
   return {
+    ...birthTimePromptContext(packet),
     input: packet.input,
     participants: packet.participants,
     personAChartSummary: packet.personAChartSummary,

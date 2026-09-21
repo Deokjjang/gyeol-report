@@ -1,5 +1,6 @@
+import { normalizeBirthTimePrecision, type BirthTimePrecision, type BirthTimeCalculationContext } from "../saju/birthTimePrecisionTypes";
+import { resolveBirthTimeCalculation } from "../saju/birthTimePrecision";
 import {
-  BIRTH_TIME_SLOTS,
   COMPATIBILITY_RELATIONSHIP_TYPES,
   FOCUS_AREAS,
   GENDER_VALUES,
@@ -38,6 +39,8 @@ export type ReportInputAdapterErrorCode =
   | "INVALID_PRODUCT_SLUG"
   | "INVALID_PERSON_NAME"
   | "INVALID_PERSON_BIRTH_DATE"
+  | "INVALID_BIRTH_TIME_PRECISION"
+  | "BIRTH_TIME_UNCERTAIN"
   | "INVALID_USER_CONTEXT"
   | "SELECTED_YEAR_REQUIRED"
   | "SELECTED_YEAR_INVALID"
@@ -51,9 +54,11 @@ export type ReportInputAdapterResult<T> =
   | {
       readonly ok: false;
       readonly error: ReportInputAdapterErrorCode;
+      readonly birthTimeContext?: BirthTimeCalculationContext;
     };
 
 export type GenerationPersonInput = {
+  readonly birthTimePrecision?: BirthTimePrecision;
   readonly name: string;
   readonly birthDate: string;
   readonly birthTime: string;
@@ -252,18 +257,26 @@ function normalizePerson(
     return { ok: false, error: "INVALID_PERSON_BIRTH_DATE" };
   }
 
+  const time = normalizeBirthTimePrecision(value);
+  if (!time.ok) return { ok: false, error: "INVALID_BIRTH_TIME_PRECISION" };
+  try {
+    const context = resolveBirthTimeCalculation({ ...value, birthDate });
+    if (!context.confirmed.year || !context.confirmed.month || !context.confirmed.day) {
+      return { ok: false, error: "BIRTH_TIME_UNCERTAIN", birthTimeContext: context };
+    }
+  } catch {
+    return { ok: false, error: "INVALID_PERSON_BIRTH_DATE" };
+  }
+
   return {
     ok: true,
     value: {
+      birthTimePrecision: time.precision,
       name,
       birthDate,
-      birthTime: normalizeString(value.birthTime),
-      birthTimeUnknown: value.birthTimeUnknown === true,
-      approximateBirthTimeSlot: isBirthTimeSlot(
-        value.approximateBirthTimeSlot,
-      )
-        ? value.approximateBirthTimeSlot
-        : "",
+      birthTime: time.time,
+      birthTimeUnknown: time.precision === "unknown",
+      approximateBirthTimeSlot: time.slot,
       gender: isReportGender(value.gender) ? value.gender : "",
       mbtiType: isMbtiType(value.mbtiType) ? value.mbtiType : "",
       calendarType: "solar",
@@ -360,10 +373,6 @@ function isSinglePersonProductKey(
     value === "annual_fortune" ||
     value === "saju_mbti_full"
   );
-}
-
-function isBirthTimeSlot(value: unknown): value is BirthTimeSlot {
-  return BIRTH_TIME_SLOTS.includes(value as BirthTimeSlot);
 }
 
 function isReportGender(value: unknown): value is ReportGender {

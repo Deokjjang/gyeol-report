@@ -59,10 +59,10 @@ function agreeAll() {
 }
 function complete() {
   if (hooks.product === "compatibility") {
-    change("personAName", "사람 하나"); change("personABirthDate", "1999-07-31");
-    change("personBName", "사람 둘"); change("personBBirthDate", "2000-02-03");
+    change("personAName", "사람 하나"); change("personABirthDate", "1999-07-31"); change("personABirthTime", "08:30");
+    change("personBName", "사람 둘"); change("personBBirthDate", "2000-02-03"); change("personBBirthTime", "14:15");
   } else {
-    change("name", "검증 이름"); change("birthDate", "1999-07-31");
+    change("name", "검증 이름"); change("birthDate", "1999-07-31"); change("birthTime", "08:30");
   }
 }
 const products = [
@@ -125,6 +125,7 @@ describe("paid funnel contracts and progressive review", () => {
     (input(modeName, "exact").props.onChange as () => void)();
     snapshot = checkout().entry.props.inputSnapshot as typeof snapshot;
     expect(snapshot.reportInputPayload.person ?? snapshot.reportInputPayload.personA).toMatchObject({ birthTime: "", approximateBirthTimeSlot: "", birthTimeUnknown: false });
+    expect(paymentButton()).toBeUndefined();
   });
 
   it("keeps all seven compatibility relationships and distinct A/B review values", () => {

@@ -1,3 +1,4 @@
+import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import {
   buildMajorFortuneEvidence,
 } from "../report-knowledge/majorFortuneEvidence";
@@ -298,7 +299,7 @@ function buildMajorFortuneEvidenceFromGenerationInput(
   const fixture = requireMajorFortuneFixture(majorFortuneDefaultFixtureId);
   const saju = calculateMajorFortuneSaju(input.person);
 
-  return buildMajorFortuneEvidence({
+  return withBirthTimeEvidence(buildMajorFortuneEvidence({
     fixtureId: "product-preview-major-fortune",
     currentYear: majorFortunePreviewCurrentYear,
     person: {
@@ -312,7 +313,7 @@ function buildMajorFortuneEvidenceFromGenerationInput(
       majorFortuneCycleBasis: fixture.person.majorFortuneCycleBasis,
       majorFortuneCycles: fixture.person.majorFortuneCycles,
     },
-  });
+  }), { person: saju.birthTimeContext });
 }
 
 function calculateMajorFortuneSaju(
@@ -325,7 +326,9 @@ function calculateMajorFortuneSaju(
     ...(person.birthTimeUnknown || birthTime.length === 0
       ? {}
       : { birthTime }),
-    birthTimeUnknown: person.birthTimeUnknown || birthTime.length === 0,
+    birthTimeUnknown: person.birthTimeUnknown,
+    birthTimePrecision: person.birthTimePrecision,
+    approximateBirthTimeSlot: person.approximateBirthTimeSlot,
     calendarType: "SOLAR",
     gender: toSajuGender(person.gender),
     timezone: "Asia/Seoul",

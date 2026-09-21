@@ -1,3 +1,4 @@
+import { birthTimePromptContext } from "./birthTimePublication";
 import type {
   LoveMarriageChildReportEvidencePacket,
 } from "../report-knowledge/loveMarriageChildReportTypes";
@@ -16,6 +17,7 @@ function formatList(values: readonly string[]): string {
 
 function buildPromptPacket(packet: LoveMarriageChildReportEvidencePacket): object {
   return {
+    ...birthTimePromptContext(packet),
     productType: packet.productType,
     productVersion: packet.productVersion,
     personContext: packet.personContext,

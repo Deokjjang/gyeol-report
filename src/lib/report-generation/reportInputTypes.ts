@@ -1,3 +1,4 @@
+import { BIRTH_TIME_SLOT_DEFINITIONS, type BirthTimePrecision } from "../saju/birthTimePrecisionTypes";
 export const REPORT_PRODUCT_KEYS = [
   "career_money_study",
   "love_marriage_child",
@@ -35,21 +36,7 @@ export type SinglePersonReportProductSlug = Exclude<
   "compatibility"
 >;
 
-export const BIRTH_TIME_SLOTS = [
-  "",
-  "JASI",
-  "CHUKSI",
-  "INSI",
-  "MYOSI",
-  "JINSI",
-  "SASI",
-  "OSI",
-  "MISI",
-  "SINSI",
-  "YUSI",
-  "SULSI",
-  "HAESI",
-] as const;
+export const BIRTH_TIME_SLOTS = ["", ...BIRTH_TIME_SLOT_DEFINITIONS.map((slot) => slot.value)] as const;
 
 export type BirthTimeSlot = (typeof BIRTH_TIME_SLOTS)[number];
 
@@ -132,6 +119,7 @@ export type CompatibilityRelationshipType =
   (typeof COMPATIBILITY_RELATIONSHIP_TYPES)[number];
 
 export type ReportPersonInputPayload = {
+  readonly birthTimePrecision?: BirthTimePrecision;
   readonly name: string;
   readonly birthDate: string;
   readonly birthTime: string;

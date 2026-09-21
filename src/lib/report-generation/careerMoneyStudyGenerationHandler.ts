@@ -1,3 +1,4 @@
+import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import { buildCareerReportEvidence } from "../report-knowledge/careerReportEvidence";
 import type {
   CareerReportEvidencePacket,
@@ -165,10 +166,11 @@ function buildCareerEvidenceFromGenerationInput(
     labels: deriveCareerLabels(saju, input),
   };
 
-  return buildCareerReportEvidence({
+  return withBirthTimeEvidence(buildCareerReportEvidence({
     fixtureId: "product-preview-career-money-study",
     person,
-  });
+    calculatedSaju: saju,
+  }), { person: saju.birthTimeContext });
 }
 
 function calculateCareerSaju(
@@ -181,7 +183,9 @@ function calculateCareerSaju(
     ...(person.birthTimeUnknown || birthTime.length === 0
       ? {}
       : { birthTime }),
-    birthTimeUnknown: person.birthTimeUnknown || birthTime.length === 0,
+    birthTimeUnknown: person.birthTimeUnknown,
+    birthTimePrecision: person.birthTimePrecision,
+    approximateBirthTimeSlot: person.approximateBirthTimeSlot,
     calendarType: "SOLAR",
     gender: toSajuGender(person.gender),
     timezone: "Asia/Seoul",

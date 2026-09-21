@@ -39,6 +39,7 @@ import type { UserLifeStatus } from "./userContextTypes";
 type BuildCareerReportEvidenceInput = {
   readonly fixtureId?: string;
   readonly person: CareerReportFixturePerson;
+  readonly calculatedSaju?: SajuCalcResult;
 };
 
 type MbtiCareerProfile = CareerReportEvidencePacket["mbtiCareerBasis"];
@@ -1754,7 +1755,9 @@ export function buildCareerReportEvidence(
     labels: input.person.labels,
     myeongliCareerBasis,
   });
-  const manseRyeokPillars = buildCareerManseRyeokPillars(input.person);
+  const manseRyeokPillars = input.calculatedSaju
+    ? buildCareerManseRyeokPillarsFromSaju(input.calculatedSaju)
+    : buildCareerManseRyeokPillars(input.person);
 
   return {
     productType: "career_money_study",

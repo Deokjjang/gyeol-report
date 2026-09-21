@@ -21,7 +21,7 @@ const careerPayload: ReportInputPayload = {
     birthDate: "1996-12-06",
     birthTime: "08:30",
     birthTimeUnknown: false,
-    approximateBirthTimeSlot: "JINSI",
+    approximateBirthTimeSlot: "",
     gender: "MALE",
     mbtiType: "ENTJ",
   },

@@ -5,7 +5,7 @@ import {
 } from "./analyze";
 import { analyzeRelations } from "./relations";
 import { detectShinsal } from "./shinsal";
-import { createSajuCalendarContext } from "./lunarJavascriptPillars";
+import { resolveBirthTimeCalculation, UncertainBirthTimeError } from "./birthTimePrecision";
 import { analyzeSajuStructure } from "./structureAnalysis";
 import type { SajuCalcInput, SajuCalcResult } from "./types";
 
@@ -21,18 +21,6 @@ type SajuCalcResultWithoutStructureAnalysis = Omit<
   SajuCalcResult,
   "structureAnalysis"
 >;
-
-function getBirthTimeForSolarTerm(input: SajuCalcInput): string {
-  if (input.birthTimeUnknown) {
-    return "12:00";
-  }
-
-  if (!input.birthTime) {
-    throw new Error("Birth time is required when birthTimeUnknown is false.");
-  }
-
-  return input.birthTime;
-}
 
 function formatRelation(relation: FormattableRelation): string {
   return `${relation.positions[0]}-${relation.positions[1]}:${relation.pair[0]}${relation.pair[1]}`;
@@ -50,12 +38,10 @@ export function calculateSaju(input: SajuCalcInput): SajuCalcResult {
   }
 
   const notices: string[] = [];
-  const birthTimeForSolarTerm = getBirthTimeForSolarTerm(input);
-  const solarDateTimeKst = `${input.birthDate}T${birthTimeForSolarTerm}:00+09:00`;
-  const calendar = createSajuCalendarContext(solarDateTimeKst);
-  const { year, month, day } = calendar.pillars;
-  // Preserve the existing unknown-time/noon behavior; uncertainty policy is separate.
-  const pillars = input.birthTimeUnknown ? { year, month, day } : calendar.pillars;
+  const calendar = resolveBirthTimeCalculation(input);
+  const { year, month, day, hour } = calendar.confirmed;
+  if (!year || !month || !day) throw new UncertainBirthTimeError(calendar);
+  const pillars = { year, month, day, ...(hour ? { hour } : {}) };
   const elements = analyzeFullElements(pillars);
   const tenGods = analyzeFullTenGods(pillars);
   const yinYang = analyzeVisibleYinYang(pillars);
@@ -68,7 +54,8 @@ export function calculateSaju(input: SajuCalcInput): SajuCalcResult {
 
   const baseResult: SajuCalcResultWithoutStructureAnalysis = {
     input,
-    calculationVersion: calendar.calculationVersion,
+    calculationVersion: calendar.calendarVersion,
+    birthTimeContext: calendar,
     converted: {
       solarDate: input.birthDate,
       ...(typeof input.isLeapMonth === "boolean"

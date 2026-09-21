@@ -1,3 +1,4 @@
+import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import { calculateSaju } from "../saju/calculateSaju";
 import type {
   Gender as SajuCalcGender,
@@ -165,7 +166,7 @@ function buildLoveMarriageChildEvidenceFromGenerationInput(
     saju: toLoveMarriageChildSajuEvidenceInput(saju),
   };
 
-  return buildLoveMarriageChildReportEvidence(evidenceInput);
+  return withBirthTimeEvidence(buildLoveMarriageChildReportEvidence(evidenceInput), { person: saju.birthTimeContext });
 }
 
 function calculateLoveMarriageChildSaju(
@@ -178,7 +179,9 @@ function calculateLoveMarriageChildSaju(
     ...(person.birthTimeUnknown || birthTime.length === 0
       ? {}
       : { birthTime }),
-    birthTimeUnknown: person.birthTimeUnknown || birthTime.length === 0,
+    birthTimeUnknown: person.birthTimeUnknown,
+    birthTimePrecision: person.birthTimePrecision,
+    approximateBirthTimeSlot: person.approximateBirthTimeSlot,
     calendarType: "SOLAR",
     gender: toSajuGender(person.gender),
     timezone: "Asia/Seoul",

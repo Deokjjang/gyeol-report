@@ -686,7 +686,7 @@ describe("new report page source", () => {
 
   it("renders traditional time branch and midnight warning copy", () => {
     const branchMarkers = [
-      "자시 23:00~00:59",
+      "자시 전날 23:00~당일 00:59",
       "진시 07:00~08:59",
       "유시 17:00~18:59",
       "해시 21:00~22:59",
@@ -696,7 +696,7 @@ describe("new report page source", () => {
     ];
 
     for (const marker of branchMarkers) {
-      expect(pageSource).toContain(marker);
+      expect(pageSource + readFileSync(join(process.cwd(), "src/lib/saju/birthTimePrecisionTypes.ts"), "utf8")).toContain(marker);
     }
   });
 

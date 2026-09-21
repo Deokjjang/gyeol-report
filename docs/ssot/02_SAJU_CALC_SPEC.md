@@ -755,9 +755,37 @@ calcSpecVersion: "SAJU_CALC_SPEC_v0.1"
 버전 없는 기존 snapshot을 새 버전으로 표시하거나 읽을 때 재계산하지 않는다.
 이 버전은 원국만 식별하며 고객별 대운/getYun 정확성을 보증하지 않는다.
 
-현재 unknown time은 기존대로 정오 대체 후 시주를 생략한다. 절기 경계일의
-연주·월주 불확실성과 generation에서 무시되는 approximate slot은 별도 해결 대상이다.
-원국 교정을 이유로 입력/판매 허용 정책을 변경하지 않는다.
+출생시간 정밀도 계약 (`SAJU-BIRTH-TIME-PRECISION-ENGINE-01`):
+
+- `exact`: 입력한 분의 `:00` 시각으로 기존 원국 계산을 유지한다.
+- `approximate`: `BIRTH_TIME_SLOT_DEFINITIONS`의 2시간 범위 전체를 평가한다.
+  `JASI`는 입력 날짜 D의 **전날 23:00부터 당일 00:59:59까지**이다.
+  일주는 계속 00:00에 바뀌므로 자시의 두 일주·시주 후보를 보존한다.
+- `unknown`: D의 00:00부터 23:59:59까지 평가하고 시주는 확정하지 않는다.
+  일반 날짜의 연·월·일주만 사용하며, 절기 경계일의 연·월주 후보는 보존한다.
+- 범위의 시작/끝 및 절기·자정·시지 변경 event 양쪽을 초 단위로 비교한다.
+  연·월주의 event 좌표는 canonical 엔진과 동일한 라이브러리 UTC+08:00
+  절기표를 절대시각으로 변환한다. 날짜·시지는 원래 고정 KST 좌표를 유지한다.
+- `BirthTimeCalculationContext`는 `calendarVersion`, `birthTimePrecision`,
+  `range`, 기둥별 `stable` / `candidates` / `confirmed`를 가진다.
+  후보는 해석용 확정 사실로 사용하지 않는다.
+- UI/payload에서 precision을 명시하고 서버는 time/slot/unknown 충돌을 거부한다.
+  명시적 precision이 없는 기존 입력도 나머지 필드가 상호배타적으로 유효할 때만 수용한다.
+- 현재 6상품은 단일 일간·원국을 해석한다. 연·월·일주 중 하나라도 불확실하면
+  adapter는 후보 context를 포함한 실패를 반환하고, checkout prepare는 주문 저장 전에
+  거부한다. generation 직접 호출도 임의 후보로 진행하지 않는다.
+- 안정적인 unknown은 삼주로 생성한다. 오행·십성·신살·관계는 확정 기둥에서만
+  파생한다. 종합 publish gate는 유효한 unknown context가 있을 때만 시주 부재를
+  허용하고 가짜 시주/시주 의존 표 항목을 거부한다. 만세력 삼주, MBTI,
+  필수 장문·밀도·반복 검사는 유지한다. 기존 snapshot에 자동 적용하지 않는다.
+- 6상품 evidence와 신규 snapshot에 `calendarVersion`, `birthTimePrecision`,
+  `birthTimeContexts`를 추가 기록한다. writer에도 확정 기둥과 정밀도 제한을 전달한다.
+
+대운 계산 준비 상태는 원국 안정성과 별개다. exact는 입력 시각이 있으나 `getYun`
+sect·성별 계약은 아직 확정하지 않았다. approximate에서 원국이 같아도 절기까지의
+시간 차이는 범위이므로 대표시간으로 대운 시작 시점을 확정할 수 없다. unstable 및
+unknown 역시 단일 Yun 시각을 만들 수 없다. 고객별 대운/세운 fixture P0는 별도
+미해결이며, 이번 정밀도 작업의 통과가 대운 정확성이나 판매 가능 판정을 뜻하지 않는다.
 
 계산 정책이 바뀔 경우 기존 리포트와 신규 리포트를 구분할 수 있어야 한다.
 

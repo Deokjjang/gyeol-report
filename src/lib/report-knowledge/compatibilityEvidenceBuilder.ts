@@ -145,7 +145,8 @@ function buildChartSummary(input: {
     role: input.person.role,
     displayName: input.person.displayName,
     mbti: normalizeMbti(input.person.mbti),
-    birthTimeConfidence: input.person.birthTimeKnown ? "known" : "unknown",
+    // Chart confidence: a stable approximate slot also supplies a confirmed hour pillar.
+    birthTimeConfidence: input.person.birthTimeKnown || input.person.birthTimePrecision === "approximate" ? "known" : "unknown",
     pillars: toPillars(input.facts, input.expectedPillars),
     dayMaster: input.facts.dayMaster,
     dayPillar: input.facts.dayPillar,
@@ -163,10 +164,10 @@ function buildWarnings(input: {
 }): readonly string[] {
   const warnings: string[] = [];
 
-  if (!input.compatibilityInput.personA.birthTimeKnown) {
+  if (input.personA.birthTimeConfidence === "unknown") {
     warnings.push("personA birth time unknown");
   }
-  if (!input.compatibilityInput.personB.birthTimeKnown) {
+  if (input.personB.birthTimeConfidence === "unknown") {
     warnings.push("personB birth time unknown");
   }
   if (input.personA.mbti === undefined) {

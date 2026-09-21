@@ -337,10 +337,11 @@ export async function POST(request: Request): Promise<NextResponse> {
   // Production must reject unfulfillable inputs before any payment is launched.
   {
     const normalized = normalizeReportInputPayload(json.inputSnapshot.reportInputPayload);
-    if (!normalized.ok || normalized.value.productKey !== (json.productType ?? defaultProductType) ||
-      (normalized.value.kind === "comprehensiveV2" &&
-        (normalized.value.person.birthTimeUnknown || !normalized.value.person.birthTime.trim()))) {
-      return createErrorResponse("PAYMENT_CHECKOUT_INVALID_REQUEST", "리포트 입력 정보를 확인해 주세요. 종합 리포트에는 출생 시간이 필요합니다.", 400);
+    if (!normalized.ok || normalized.value.productKey !== (json.productType ?? defaultProductType)) {
+      const message = !normalized.ok && normalized.birthTimeContext
+        ? "출생시간 범위에 따라 원국이 달라집니다. 시간을 더 구체적으로 확인해 주세요."
+        : "출생시간을 포함한 리포트 입력 정보를 확인해 주세요.";
+      return createErrorResponse("PAYMENT_CHECKOUT_INVALID_REQUEST", message, 400);
     }
   }
 

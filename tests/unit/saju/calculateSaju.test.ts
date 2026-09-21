@@ -101,7 +101,7 @@ describe("calculateSaju", () => {
 
   it("omits hour pillar when birth time is unknown", () => {
     const input: SajuCalcInput = {
-      ...baseInput,
+      ...broadYearProductionInput,
       birthTime: undefined,
       birthTimeUnknown: true,
     };
@@ -116,7 +116,7 @@ describe("calculateSaju", () => {
     expect(result.pillars.day).toBeDefined();
   });
 
-  it("uses noon for year and month boundary when birth time is unknown", () => {
+  it("rejects uncertain year and month instead of a noon surrogate", () => {
     const input: SajuCalcInput = {
       birthDate: "2024-02-04",
       birthTimeUnknown: true,
@@ -124,10 +124,7 @@ describe("calculateSaju", () => {
       gender: "MALE",
       timezone: "Asia/Seoul",
     };
-    const result = calculateSaju(input);
-
-    expect(result.pillars.year).toEqual({ stem: "癸", branch: "卯" });
-    expect(result.pillars.month).toEqual({ stem: "乙", branch: "丑" });
+    expect(() => calculateSaju(input)).toThrow("출생시간 범위에 따라 원국이 달라집니다");
   });
 
   it("uses new year and month after the IPCHUN boundary with known birth time", () => {
@@ -268,7 +265,7 @@ describe("calculateSaju", () => {
     };
 
     expect(() => calculateSaju(input)).toThrow(
-      "Birth time is required when birthTimeUnknown is false.",
+      "출생시간 입력을 확인해 주세요.",
     );
   });
 
@@ -288,7 +285,7 @@ describe("calculateSaju", () => {
     };
 
     expect(() => calculateSaju(input)).toThrow(
-      "Invalid birth time format. Expected HH:mm.",
+      "출생시간 입력을 확인해 주세요.",
     );
   });
 

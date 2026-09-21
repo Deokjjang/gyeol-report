@@ -223,3 +223,31 @@ export class UnsupportedSolarTermYearError extends Error {
     this.name = "UnsupportedSolarTermYearError";
   }
 }
+
+// Read all term events (including non-Jie terms, harmless extra checkpoints).
+// Raw library objects stay inside this adapter; callers receive absolute instants.
+export function getSolarTermInstants(startKst: string, endKst: string): readonly number[] {
+  const instants = new Set<number>();
+  for (const value of [startKst, endKst]) {
+    parseKstDateTime(value);
+    const civil = new Date(Date.parse(value) + 8 * 60 * 60 * 1000);
+    const solar = getSolarFactory().fromYmdHms(civil.getUTCFullYear(), civil.getUTCMonth() + 1,
+      civil.getUTCDate(), civil.getUTCHours(), civil.getUTCMinutes(), civil.getUTCSeconds());
+    if (!isSolarLike(solar)) throw new Error("Invalid calendar result.");
+    const lunar = solar.getLunar();
+    if (!hasFunctionProperty(lunar, "getJieQiTable")) throw new Error("Calendar events unavailable.");
+    const table = lunar.getJieQiTable();
+    if (typeof table !== "object" || table === null) throw new Error("Calendar events unavailable.");
+    for (const term of Object.values(table)) {
+      if (!hasFunctionProperty(term, "toYmdHms")) throw new Error("Invalid calendar event.");
+      const date = term.toYmdHms();
+      if (typeof date !== "string" || !/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/.test(date)) {
+        throw new Error("Invalid calendar event.");
+      }
+      const instant = Date.parse(date.replace(" ", "T") + "+08:00");
+      if (!Number.isFinite(instant)) throw new Error("Invalid calendar event.");
+      instants.add(instant);
+    }
+  }
+  return [...instants].sort((a, b) => a - b);
+}

@@ -1,3 +1,4 @@
+import { publicationBirthTimeContexts, publishedPillarMatches } from "./birthTimePublication";
 import { COMPREHENSIVE_REPORT_SECTION_IDS } from "../report-knowledge/reportSectionSchema";
 import { deriveAllowedCompatibilityMbtiTerms, deriveAllowedCompatibilitySajuTerms } from "./openaiCompatibilityReportWriterPrompt";
 import type { CompatibilityEvidencePacket } from "../report-knowledge/compatibilityEvidenceBuilder";
@@ -26,10 +27,28 @@ function strings(value: unknown): string[] {
 // The older draft validators remain available for legacy imports and repair diagnostics.
 export function validateProductPublication(product: string, draft: unknown, evidence: unknown) {
   const errors: string[] = [];
+  const birthContexts = publicationBirthTimeContexts(evidence);
+  if (isRecord(evidence) && evidence.birthTimeContexts !== undefined && !birthContexts) errors.push("BIRTH_TIME_CONTEXT_INVALID");
   if (!isRecord(draft)) return { ok: false, errors: ["DRAFT_REQUIRED"] };
   if (draft.productType !== product) errors.push("PRODUCT_MISMATCH");
   if (!isRecord(evidence) || Object.keys(evidence).length < 3) errors.push("EVIDENCE_REQUIRED");
   else if (evidence.productType !== product) errors.push("EVIDENCE_PRODUCT_MISMATCH");
+  if (birthContexts && isRecord(evidence) && product !== "saju_mbti_full") {
+    for (const [role, context] of Object.entries(birthContexts)) {
+      let pillars: Record<string, unknown> = {};
+      if (product === "saju_mbti_compatibility" && isRecord(evidence.participants)) {
+        const participant = evidence.participants[role === "personA" ? "a" : "b"];
+        if (isRecord(participant) && isRecord(participant.pillars)) pillars = participant.pillars;
+      } else if (product === "love_marriage_child" && isRecord(evidence.sajuBasis) && Array.isArray(evidence.sajuBasis.fullPillars)) {
+        pillars = Object.fromEntries(evidence.sajuBasis.fullPillars.filter(isRecord).map((p) => [String(p.key), p.pillar]));
+      } else if (isRecord(evidence.userPillars)) pillars = evidence.userPillars;
+      for (const key of ["year", "month", "day", "hour"] as const) {
+        if (key === "hour" && context.birthTimePrecision === "unknown") {
+          if (nonempty(pillars.hour)) errors.push("UNCONFIRMED_HOUR_PUBLISHED");
+        } else if (!publishedPillarMatches(pillars[key], context.confirmed[key])) errors.push(`BIRTH_TIME_PILLAR_MISMATCH:${role}:${key}`);
+      }
+    }
+  }
   const { productVersion: _version, ...candidate } = draft;
   void _version;
   const validators: Record<string, (value: unknown) => { ok: boolean; errors: readonly string[] }> = {
@@ -60,6 +79,18 @@ export function validateProductPublication(product: string, draft: unknown, evid
     for (const id of ["hour", "day", "month", "year"]) {
       const columns = grid.filter((column) => isRecord(column) && column.columnId === id);
       const column = columns[0];
+      const birthContext = birthContexts?.person;
+      if (id === "hour" && birthContext?.birthTimePrecision === "unknown") {
+        if (nonempty(profile.hourPillar) || columns.length > 1 ||
+          (isRecord(column) && (nonempty(column.pillar) || nonempty(column.heavenlyStem) || nonempty(column.earthlyBranch) ||
+            ["hiddenStems", "tenGod", "twelveLifeStage", "twelveSinsal", "sinsal", "gwiin"].some((key) => Array.isArray(column[key]) && column[key].length > 0)))) {
+          errors.push("UNCONFIRMED_HOUR_PUBLISHED");
+        }
+        continue;
+      }
+      if (birthContext && isRecord(column) && !publishedPillarMatches(column.pillar, birthContext.confirmed[id as "year" | "month" | "day" | "hour"])) {
+        errors.push(`BIRTH_TIME_PILLAR_MISMATCH:${id}`);
+      }
       if (columns.length !== 1 || !isRecord(column) || !nonempty(column.pillar)) {
         errors.push(`PILLAR_REQUIRED:${id}`);
       } else if (!nonempty(column.heavenlyStem) || !nonempty(column.earthlyBranch) ||

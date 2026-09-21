@@ -186,6 +186,7 @@ describe("createReportFromRawInput", () => {
   it("renders missing hour and notices for valid unknown-time input", () => {
     const report = getSuccessfulReport({
       ...validRawInput,
+      birthDate: "1996-12-06",
       birthTime: undefined,
       birthTimeUnknown: true,
     });

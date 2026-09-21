@@ -1,3 +1,4 @@
+import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import { calculateSaju } from "../saju/calculateSaju";
 import type {
   ElementLabel,
@@ -227,7 +228,7 @@ function buildCompatibilityEvidenceFromGenerationInput(
     personB: personBInput,
   };
 
-  return buildCompatibilityEvidencePacket({
+  return withBirthTimeEvidence(buildCompatibilityEvidencePacket({
     input: compatibilityInput,
     personASajuFacts: toComputedSajuFacts(personASaju),
     personBSajuFacts: toComputedSajuFacts(personBSaju),
@@ -235,7 +236,7 @@ function buildCompatibilityEvidenceFromGenerationInput(
       personA: toCompatibilityPillars(personASaju),
       personB: toCompatibilityPillars(personBSaju),
     },
-  });
+  }), { personA: personASaju.birthTimeContext, personB: personBSaju.birthTimeContext });
 }
 
 function toCompatibilityPersonInput(
@@ -252,6 +253,7 @@ function toCompatibilityPersonInput(
     birthDate: person.birthDate,
     birthTime: person.birthTimeUnknown || birthTime.length === 0 ? null : birthTime,
     birthTimeKnown: !person.birthTimeUnknown && birthTime.length > 0,
+    birthTimePrecision: person.birthTimePrecision,
     timezone: person.timezone,
     mbti: person.mbtiType === "" ? null : person.mbtiType,
   };
@@ -267,7 +269,9 @@ function calculateCompatibilitySaju(
     ...(person.birthTimeUnknown || birthTime.length === 0
       ? {}
       : { birthTime }),
-    birthTimeUnknown: person.birthTimeUnknown || birthTime.length === 0,
+    birthTimeUnknown: person.birthTimeUnknown,
+    birthTimePrecision: person.birthTimePrecision,
+    approximateBirthTimeSlot: person.approximateBirthTimeSlot,
     calendarType: "SOLAR",
     gender: toSajuGender(person.gender),
     timezone: "Asia/Seoul",

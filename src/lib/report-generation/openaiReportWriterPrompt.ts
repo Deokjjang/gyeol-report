@@ -1,3 +1,4 @@
+import { birthTimePromptContext } from "./birthTimePublication";
 import type { ComprehensiveReportEvidencePacket } from "../report-knowledge/comprehensiveReportEvidenceTypes";
 import { SAJU_KNOWLEDGE_BASE } from "../report-knowledge/sajuKnowledgeBase";
 import type { SajuKnowledgeEntry } from "../report-knowledge/sajuKnowledgeTypes";
@@ -167,6 +168,7 @@ function buildPromptEvidencePacket(input: {
 
   return {
     ...input.packet,
+    ...birthTimePromptContext(input.packet),
     sections: input.packet.sections.map((section) => ({
       ...section,
       fusion: section.fusion.filter((item) => {

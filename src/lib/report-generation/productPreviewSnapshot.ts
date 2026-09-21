@@ -1,3 +1,4 @@
+import type { BirthTimeContexts, BirthTimePrecision } from "../saju/birthTimePrecisionTypes";
 import type { AnnualFortuneReportDraft } from "./annualFortuneReportDraftTypes";
 import type { CareerReportDraft } from "./careerReportDraftTypes";
 import type { ComprehensiveReportV2Draft } from "./comprehensiveReportDraftTypes";
@@ -42,6 +43,9 @@ export type ProductPreviewSnapshotAccess = {
 
 export type ProductPreviewSnapshot = {
   readonly calendarCalculationVersion?: string;
+  readonly calendarVersion?: string;
+  readonly birthTimePrecision?: BirthTimePrecision | { personA?: BirthTimePrecision; personB?: BirthTimePrecision };
+  readonly birthTimeContexts?: BirthTimeContexts;
   readonly id: string;
   readonly reportId: string;
   readonly createdAtIso: string;
@@ -140,6 +144,11 @@ export function createProductPreviewSnapshot(
       draft: params.draft,
       ...(isRecord(params.evidencePacket) && typeof params.evidencePacket.calendarCalculationVersion === "string"
         ? { calendarCalculationVersion: params.evidencePacket.calendarCalculationVersion }
+        : {}),
+      ...(isRecord(params.evidencePacket) && isRecord(params.evidencePacket.birthTimeContexts)
+        ? { calendarVersion: params.evidencePacket.calendarVersion as string,
+            birthTimePrecision: params.evidencePacket.birthTimePrecision as ProductPreviewSnapshot["birthTimePrecision"],
+            birthTimeContexts: params.evidencePacket.birthTimeContexts as BirthTimeContexts }
         : {}),
       ...(params.evidencePacket === undefined
         ? {}

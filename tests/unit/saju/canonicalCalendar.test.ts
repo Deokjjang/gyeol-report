@@ -81,10 +81,9 @@ describe("canonical fixed-KST calendar", () => {
     expect(result.pillars).toEqual(createSajuCalendarContext(civil.replace(" ", "T") + "+09:00").pillars);
   });
 
-  it("preserves unknown time with a corrected day and no hour", () => {
-    const result = calculateSaju({ ...inputFor("2024-02-04 12:00:00"), birthTime: undefined, birthTimeUnknown: true });
-    expect(result.pillars).toEqual({ year: { stem: "癸", branch: "卯" }, month: { stem: "乙", branch: "丑" }, day: { stem: "戊", branch: "戌" } });
-    expect(result.notices).toContain("출생시간을 모르면 년·월·일주 중심으로 분석됩니다.");
+  it("does not finalize a noon surrogate on an unknown solar-term day", () => {
+    expect(() => calculateSaju({ ...inputFor("2024-02-04 12:00:00"), birthTime: undefined, birthTimeUnknown: true }))
+      .toThrow("출생시간 범위에 따라 원국이 달라집니다");
   });
 
   it("derives elements/ten gods/yin-yang from the corrected pillars", () => {

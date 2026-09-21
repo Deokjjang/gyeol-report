@@ -1,5 +1,6 @@
 import type { ShinsalDetection } from "./shinsalTypes";
 import type { SajuStructureAnalysis } from "./structureAnalysisTypes";
+import type { ApproximateBirthTimeSlot, BirthTimePrecision, BirthTimeCalculationContext } from "./birthTimePrecisionTypes";
 
 export const SAJU_CALC_SPEC_VERSION = "SAJU_CALC_SPEC_v0.1" as const;
 
@@ -58,6 +59,8 @@ export type SajuCalcInput = {
   birthDate: string;
   birthTime?: string;
   birthTimeUnknown: boolean;
+  birthTimePrecision?: BirthTimePrecision;
+  approximateBirthTimeSlot?: ApproximateBirthTimeSlot | "";
   calendarType: CalendarType;
   isLeapMonth?: boolean;
   gender: Gender;
@@ -93,6 +96,7 @@ export type HiddenStemEntry = {
 export type SajuCalcResult = {
   /** Absent on historical fixtures/snapshots; never inferred during read. */
   calculationVersion?: string;
+  birthTimeContext?: BirthTimeCalculationContext;
   input: SajuCalcInput;
   converted?: {
     solarDate: string;
