@@ -18,13 +18,13 @@ const verifiedParityFixtures: readonly VerifiedParityFixture[] = [
     name: "2024 IPCHUN full Saju fixture",
     input: {
       birthDate: "2024-02-04",
-      birthTime: "17:27",
+      birthTime: "17:28",
       birthTimeUnknown: false,
       calendarType: "SOLAR",
       gender: "MALE",
       timezone: "Asia/Seoul",
     },
-    isoDateTimeKst: "2024-02-04T17:27:00+09:00",
+    isoDateTimeKst: "2024-02-04T17:28:00+09:00",
     expectedYear: { stem: "甲", branch: "辰" },
     expectedMonth: { stem: "丙", branch: "寅" },
   },
@@ -82,13 +82,11 @@ describe("getLunarJavascriptPillarsFromSolarDateTime", () => {
   });
 
   for (const fixture of verifiedParityFixtures) {
-    it(`matches verified-table year-month primary path for ${fixture.name}`, () => {
+    it(`matches the canonical year-month path for ${fixture.name}`, () => {
       const calculatedPillars = getCalculatedPillarSet(fixture.input);
       const lunarJavascriptPillars =
         getLunarJavascriptPillarsFromSolarDateTime(fixture.isoDateTimeKst);
 
-      // The verified solar-term table owns year/month boundary behavior.
-      // Existing project tests keep the current day/hour policy fixed separately.
       expect(calculatedPillars.year).toEqual(fixture.expectedYear);
       expect(lunarJavascriptPillars.year).toEqual(fixture.expectedYear);
       if (fixture.expectedMonth) {
@@ -102,7 +100,7 @@ describe("getLunarJavascriptPillarsFromSolarDateTime", () => {
     });
   }
 
-  it("keeps DAESEOL late-night parity scope at month level", () => {
+  it("does not switch month at the erroneous former DAESEOL boundary", () => {
     const input: SajuCalcInput = {
       birthDate: "2024-12-06",
       birthTime: "23:17",
@@ -117,10 +115,11 @@ describe("getLunarJavascriptPillarsFromSolarDateTime", () => {
         "2024-12-06T23:17:00+09:00",
       );
 
-    // 23:17 is inside the 子 hour, so this boundary fixture checks the verified
-    // solar-term table value and documents the external engine's boundary result
-    // without forcing a day-boundary policy decision here.
-    expect(calculatedPillars.month).toEqual({ stem: "丙", branch: "子" });
+    // The true KST boundary is after midnight on December 7.
+    expect(calculatedPillars.month).toEqual({ stem: "乙", branch: "亥" });
+    expect(calculatedPillars.day).toEqual({ stem: "甲", branch: "辰" });
+    expect(calculatedPillars.hour).toEqual({ stem: "甲", branch: "子" });
+    expect(lunarJavascriptPillars).toEqual(calculatedPillars);
     expect(lunarJavascriptPillars.month).toEqual({
       stem: "乙",
       branch: "亥",

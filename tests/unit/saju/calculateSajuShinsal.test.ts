@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { detectShinsal } from "../../../src/lib/saju/shinsal";
 import { calculateSaju } from "@/lib/saju/calculateSaju";
 import type { SajuCalcInput } from "@/lib/saju/types";
 
@@ -31,14 +32,15 @@ describe("calculateSaju shinsal integration", () => {
     const result = calculateSaju(knownTimeInput);
     const codes = result.shinsal.map((item) => item.code);
 
+    // HKO date golden + product KST hour policy: before 2024 Ipchun.
+    const expected = detectShinsal({
+      year: { stem: "癸", branch: "卯" },
+      month: { stem: "乙", branch: "丑" },
+      day: { stem: "戊", branch: "戌" },
+      hour: { stem: "辛", branch: "酉" },
+    });
+    expect(result.shinsal).toEqual(expected);
     expect(codes).toContain("HYEONCHIMSAL");
-    expect(codes).toContain("HONGYEOMSAL");
-    expect(codes).toContain("BAEKHODAESAL");
-    expect(codes).toContain("YEOKMASAL");
-    expect(codes).toContain("DOHWASAL");
-    expect(codes).toContain("CHEON_EUL_GWIIN");
-    expect(codes).toContain("WOL_DEOK_GWIIN");
-    expect(codes).toContain("CHEON_DEOK_GWIIN");
   });
 
   it("includes Twelve Shinsal detections for known-time calculation", () => {

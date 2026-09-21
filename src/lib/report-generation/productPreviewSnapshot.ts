@@ -41,6 +41,7 @@ export type ProductPreviewSnapshotAccess = {
 } | { readonly mode: "paid"; readonly isPaid: true; readonly isUnlocked: true };
 
 export type ProductPreviewSnapshot = {
+  readonly calendarCalculationVersion?: string;
   readonly id: string;
   readonly reportId: string;
   readonly createdAtIso: string;
@@ -137,6 +138,9 @@ export function createProductPreviewSnapshot(
       productType,
       productVersion: params.draft.productVersion,
       draft: params.draft,
+      ...(isRecord(params.evidencePacket) && typeof params.evidencePacket.calendarCalculationVersion === "string"
+        ? { calendarCalculationVersion: params.evidencePacket.calendarCalculationVersion }
+        : {}),
       ...(params.evidencePacket === undefined
         ? {}
         : { evidencePacket: params.evidencePacket }),

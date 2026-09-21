@@ -91,6 +91,8 @@ export type HiddenStemEntry = {
 };
 
 export type SajuCalcResult = {
+  /** Absent on historical fixtures/snapshots; never inferred during read. */
+  calculationVersion?: string;
   input: SajuCalcInput;
   converted?: {
     solarDate: string;

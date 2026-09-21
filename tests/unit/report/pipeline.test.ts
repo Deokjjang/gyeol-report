@@ -6,7 +6,7 @@ import type { ReportRequestRawInput } from "@/lib/validation/types";
 
 const validRawInput: ReportRequestRawInput = {
   birthDate: "2024-02-04",
-  birthTime: "17:27",
+  birthTime: "17:28",
   birthTimeUnknown: false,
   calendarType: "SOLAR",
   gender: "MALE",
@@ -169,18 +169,18 @@ describe("createReportFromRawInput", () => {
     expect(block?.keyValues).toEqual([
       { keyKo: "년주", valueKo: "甲辰 갑진 — 갑목 + 진토" },
       { keyKo: "월주", valueKo: "丙寅 병인 — 병화 + 인목" },
-      { keyKo: "일주", valueKo: "丙申 병신 — 병화 + 신금" },
-      { keyKo: "시주", valueKo: "丁酉 정유 — 정화 + 유금" },
+      { keyKo: "일주", valueKo: "戊戌 무술 — 무토 + 술토" },
+      { keyKo: "시주", valueKo: "辛酉 신유 — 신금 + 유금" },
     ]);
   });
 
-  it("keeps fixture day pillar as Byeongsin", () => {
+  it("renders the independently verified Musul day instead of the old wrong Byeongsin", () => {
     const report = getSuccessfulReport(validRawInput);
     const section = findSection(report.sections, "SAJU_CORE");
     const block = getFirstBlock(section);
     const dayValue = block?.keyValues?.find((item) => item.keyKo === "일주");
 
-    expect(dayValue?.valueKo).toBe("丙申 병신 — 병화 + 신금");
+    expect(dayValue?.valueKo).toBe("戊戌 무술 — 무토 + 술토");
   });
 
   it("renders missing hour and notices for valid unknown-time input", () => {

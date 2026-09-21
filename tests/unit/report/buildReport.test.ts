@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { createLegacyInterpretationFixture } from "../../fixtures/saju/legacyInterpretationFixture";
 import { evaluateSajuMbtiBridge } from "@/lib/bridge/evaluate";
 import { getMbtiProfile } from "@/lib/mbti/types";
 import { buildReport } from "@/lib/report/buildReport";
@@ -9,15 +10,6 @@ import { extractSajuTags } from "@/lib/saju/extractTags";
 import type { ReportInput } from "@/lib/report/types";
 import type { SajuTag } from "@/lib/saju/tags";
 import type { SajuCalcInput } from "@/lib/saju/types";
-
-const knownTimeInput: SajuCalcInput = {
-  birthDate: "2024-02-04",
-  birthTime: "17:27",
-  birthTimeUnknown: false,
-  calendarType: "SOLAR",
-  gender: "MALE",
-  timezone: "Asia/Seoul",
-};
 
 const mbtiSuggestionNotice =
   "입력한 MBTI는 사용자의 자기보고 정보로 존중하며, 사주 기반 제안은 보조 해석으로만 사용합니다.";
@@ -94,7 +86,7 @@ const blockedCommerceWords = [
 ] as const;
 
 function createReportInput(overrides?: Partial<ReportInput>): ReportInput {
-  const saju = calculateSaju(knownTimeInput);
+  const { saju } = createLegacyInterpretationFixture();
   const sajuTags = extractSajuTags(saju);
   const mbti = getMbtiProfile("ENTJ");
   const bridge = evaluateSajuMbtiBridge({

@@ -3,31 +3,31 @@ import { describe, expect, it } from "vitest";
 import { getDayPillarFromSolarDate } from "@/lib/saju/pillars";
 
 describe("getDayPillarFromSolarDate", () => {
-  it("returns 甲子 for the fixed epoch date", () => {
+  it("returns independently verified 丙寅 on 1984-02-02", () => {
     expect(getDayPillarFromSolarDate("1984-02-02")).toEqual({
-      stem: "甲",
-      branch: "子",
+      stem: "丙",
+      branch: "寅",
     });
   });
 
-  it("returns 乙丑 for the day after the epoch", () => {
+  it("returns 丁卯 on the following day", () => {
     expect(getDayPillarFromSolarDate("1984-02-03")).toEqual({
+      stem: "丁",
+      branch: "卯",
+    });
+  });
+
+  it("returns 乙丑 on the preceding day", () => {
+    expect(getDayPillarFromSolarDate("1984-02-01")).toEqual({
       stem: "乙",
       branch: "丑",
     });
   });
 
-  it("returns 癸亥 for the day before the epoch", () => {
-    expect(getDayPillarFromSolarDate("1984-02-01")).toEqual({
-      stem: "癸",
-      branch: "亥",
-    });
-  });
-
-  it("returns 甲子 again after 60 days", () => {
+  it("returns 丙寅 again after 60 days", () => {
     expect(getDayPillarFromSolarDate("1984-04-02")).toEqual({
-      stem: "甲",
-      branch: "子",
+      stem: "丙",
+      branch: "寅",
     });
   });
 
@@ -63,8 +63,8 @@ describe("getDayPillarFromSolarDate", () => {
 
   it("handles dates before the epoch with positive modulo", () => {
     expect(getDayPillarFromSolarDate("1983-12-04")).toEqual({
-      stem: "甲",
-      branch: "子",
+      stem: "丙",
+      branch: "寅",
     });
   });
 

@@ -2,18 +2,10 @@ import {
   analyzeFullElements,
   analyzeFullTenGods,
   analyzeVisibleYinYang,
-  type PillarSet,
 } from "./analyze";
-import {
-  getDayPillarFromSolarDate,
-  getHourPillarFromBirthTime,
-  getMonthPillarFromSolarDateTime,
-  getYearPillarFromSolarDateTime,
-} from "./pillars";
 import { analyzeRelations } from "./relations";
 import { detectShinsal } from "./shinsal";
-import { getLunarJavascriptPillarsFromSolarDateTime } from "./lunarJavascriptPillars";
-import { UnsupportedSolarTermYearError } from "./solarTerms";
+import { createSajuCalendarContext } from "./lunarJavascriptPillars";
 import { analyzeSajuStructure } from "./structureAnalysis";
 import type { SajuCalcInput, SajuCalcResult } from "./types";
 
@@ -46,60 +38,6 @@ function formatRelation(relation: FormattableRelation): string {
   return `${relation.positions[0]}-${relation.positions[1]}:${relation.pair[0]}${relation.pair[1]}`;
 }
 
-function getPillarsFromVerifiedTable(
-  input: SajuCalcInput,
-  birthTimeForSolarTerm: string,
-  solarDateTimeKst: string,
-): PillarSet {
-  const day = getDayPillarFromSolarDate(input.birthDate);
-  const hour = input.birthTimeUnknown
-    ? undefined
-    : getHourPillarFromBirthTime(birthTimeForSolarTerm, day.stem);
-  const year = getYearPillarFromSolarDateTime(solarDateTimeKst);
-  const month = getMonthPillarFromSolarDateTime(solarDateTimeKst);
-
-  return hour
-    ? {
-        year,
-        month,
-        day,
-        hour,
-      }
-    : {
-        year,
-        month,
-        day,
-      };
-}
-
-function getPillarsWithBroadYearFallback(
-  input: SajuCalcInput,
-  birthTimeForSolarTerm: string,
-  solarDateTimeKst: string,
-): PillarSet {
-  try {
-    return getPillarsFromVerifiedTable(
-      input,
-      birthTimeForSolarTerm,
-      solarDateTimeKst,
-    );
-  } catch (error) {
-    if (!(error instanceof UnsupportedSolarTermYearError)) {
-      throw error;
-    }
-
-    const pillars = getLunarJavascriptPillarsFromSolarDateTime(solarDateTimeKst);
-
-    return input.birthTimeUnknown
-      ? {
-          year: pillars.year,
-          month: pillars.month,
-          day: pillars.day,
-        }
-      : pillars;
-  }
-}
-
 export function calculateSaju(input: SajuCalcInput): SajuCalcResult {
   const timezone = input.timezone as string;
 
@@ -114,11 +52,10 @@ export function calculateSaju(input: SajuCalcInput): SajuCalcResult {
   const notices: string[] = [];
   const birthTimeForSolarTerm = getBirthTimeForSolarTerm(input);
   const solarDateTimeKst = `${input.birthDate}T${birthTimeForSolarTerm}:00+09:00`;
-  const pillars = getPillarsWithBroadYearFallback(
-    input,
-    birthTimeForSolarTerm,
-    solarDateTimeKst,
-  );
+  const calendar = createSajuCalendarContext(solarDateTimeKst);
+  const { year, month, day } = calendar.pillars;
+  // Preserve the existing unknown-time/noon behavior; uncertainty policy is separate.
+  const pillars = input.birthTimeUnknown ? { year, month, day } : calendar.pillars;
   const elements = analyzeFullElements(pillars);
   const tenGods = analyzeFullTenGods(pillars);
   const yinYang = analyzeVisibleYinYang(pillars);
@@ -131,6 +68,7 @@ export function calculateSaju(input: SajuCalcInput): SajuCalcResult {
 
   const baseResult: SajuCalcResultWithoutStructureAnalysis = {
     input,
+    calculationVersion: calendar.calculationVersion,
     converted: {
       solarDate: input.birthDate,
       ...(typeof input.isLeapMonth === "boolean"

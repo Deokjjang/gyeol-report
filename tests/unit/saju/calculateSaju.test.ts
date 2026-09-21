@@ -7,7 +7,7 @@ import type { Pillar, SajuCalcInput } from "@/lib/saju/types";
 
 const baseInput: SajuCalcInput = {
   birthDate: "2024-02-04",
-  birthTime: "17:27",
+  birthTime: "17:28",
   birthTimeUnknown: false,
   calendarType: "SOLAR",
   gender: "MALE",
@@ -47,10 +47,10 @@ describe("calculateSaju", () => {
     expect(result.pillars).toEqual({
       year: { stem: "甲", branch: "辰" },
       month: { stem: "丙", branch: "寅" },
-      day: { stem: "丙", branch: "申" },
-      hour: { stem: "丁", branch: "酉" },
+      day: { stem: "戊", branch: "戌" },
+      hour: { stem: "辛", branch: "酉" },
     });
-    expect(result.dayMaster).toBe("丙");
+    expect(result.dayMaster).toBe("戊");
     expect(result.notices).toEqual([]);
     expect(result.elements.visible).toBeDefined();
     expect(result.elements.weighted).toBeDefined();
@@ -130,7 +130,7 @@ describe("calculateSaju", () => {
     expect(result.pillars.month).toEqual({ stem: "乙", branch: "丑" });
   });
 
-  it("uses new year and month at the IPCHUN boundary with known birth time", () => {
+  it("uses new year and month after the IPCHUN boundary with known birth time", () => {
     const result = calculateSaju(baseInput);
 
     expect(result.pillars.year).toEqual({ stem: "甲", branch: "辰" });
@@ -175,7 +175,7 @@ describe("calculateSaju", () => {
     expect(serializedResult).not.toContain("SOLAR_TERM_YEAR_UNSUPPORTED");
   });
 
-  it("keeps verified solar-term table fixture for 2024 IPCHUN boundary", () => {
+  it("uses canonical pillars after 2024 IPCHUN", () => {
     const result = calculateSaju(baseInput);
     const serializedResult = JSON.stringify(result);
 
@@ -183,8 +183,8 @@ describe("calculateSaju", () => {
     expect(result.pillars).toEqual({
       year: { stem: "甲", branch: "辰" },
       month: { stem: "丙", branch: "寅" },
-      day: { stem: "丙", branch: "申" },
-      hour: { stem: "丁", branch: "酉" },
+      day: { stem: "戊", branch: "戌" },
+      hour: { stem: "辛", branch: "酉" },
     });
     expect(serializedResult).not.toContain("SOLAR_TERM_YEAR_UNSUPPORTED");
   });

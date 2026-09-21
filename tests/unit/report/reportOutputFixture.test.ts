@@ -1,16 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { createReportFromRawInput } from "@/lib/report/pipeline";
-
-const fixtureInput = {
-  birthDate: "2024-02-04",
-  birthTime: "17:27",
-  birthTimeUnknown: false,
-  calendarType: "SOLAR",
-  gender: "MALE",
-  timezone: "Asia/Seoul",
-  mbtiType: "ENTJ",
-} as const;
+import { buildReport } from "../../../src/lib/report/buildReport";
+import { createLegacyInterpretationFixture } from "../../fixtures/saju/legacyInterpretationFixture";
 
 const forbiddenWords = [
   "무조" + "건",
@@ -54,19 +45,11 @@ const expectedSectionIds = [
   "DISCLAIMER",
 ] as const;
 
-type PipelineResult = ReturnType<typeof createReportFromRawInput>;
-type FixtureReport = Extract<PipelineResult, { ok: true }>["report"];
+type FixtureReport = ReturnType<typeof buildReport>;
 type FixtureSection = FixtureReport["sections"][number];
 
 function getFixtureReport(): FixtureReport {
-  const result = createReportFromRawInput(fixtureInput);
-
-  expect(result.ok).toBe(true);
-  if (!result.ok) {
-    throw new Error("fixture report generation failed");
-  }
-
-  return result.report;
+  return buildReport(createLegacyInterpretationFixture());
 }
 
 function findSection(report: FixtureReport, id: FixtureSection["id"]): FixtureSection {
@@ -88,7 +71,7 @@ function countMatches(text: string, pattern: RegExp): number {
   return text.match(pattern)?.length ?? 0;
 }
 
-describe("report output fixture", () => {
+describe("unversioned legacy report output fixture", () => {
   it("produces stable 15-section report", () => {
     const report = getFixtureReport();
 
@@ -230,12 +213,12 @@ describe("report output fixture", () => {
     expect(block.itemsKo).toContain(
       "현침살이 보여, 남들이 놓치는 작은 차이를 빠르게 포착하는 예리함이 드러납니다.",
     );
-    expect(block.itemsKo.some((item) => item.includes("현침살: 현침살은"))).toBe(
+    expect(block.itemsKo?.some((item) => item.includes("현침살: 현침살은"))).toBe(
       false,
     );
-    expect(block.itemsKo.some((item) => item.startsWith("현침살:"))).toBe(false);
-    expect(block.itemsKo.some((item) => item.startsWith("홍염살:"))).toBe(false);
-    expect(block.itemsKo.some((item) => item.startsWith("월덕귀인:"))).toBe(
+    expect(block.itemsKo?.some((item) => item.startsWith("현침살:"))).toBe(false);
+    expect(block.itemsKo?.some((item) => item.startsWith("홍염살:"))).toBe(false);
+    expect(block.itemsKo?.some((item) => item.startsWith("월덕귀인:"))).toBe(
       false,
     );
   });

@@ -66,6 +66,11 @@ KST UTC+09:00
 
 결리포트 V1은 한국 사용자 중심 서비스이므로 모든 출생시간은 기본적으로 한국 표준시 기준으로 계산한다.
 
+현재 원국 엔진 `saju-calendar-kst-v2`는 고정 UTC+09:00의 양력 입력을 사용한다.
+과거 Asia/Seoul IANA 표준시·서머타임 이력은 자동 적용하지 않는다.
+`createSajuCalendarContext`가 원래 KST 날짜·시각과 절기 비교 좌표를 함께 보관한다.
+연도별 자체 절기표/라이브러리 fallback 분기 없이 동일 경로로 계산한다.
+
 Overseas Birth
 
 V1에서는 해외 출생지 보정을 지원하지 않는다.
@@ -174,11 +179,22 @@ Requirement
 * 단순 날짜 기준으로 월주를 계산하지 않는다.
 * 절기 데이터는 검증 가능한 소스 또는 라이브러리를 사용한다.
 
+현재 구현은 lunar-javascript 1.7.7의 UTC+8 절기 좌표에 입력 instant를 정규화하여
+연주·월주만 얻는다. 일주·시주는 이 좌표에서 가져오지 않는다.
+예: KST 2024-12-07 00:16 → 절기 비교 좌표 2024-12-06 23:16 UTC+8.
+대설은 KST 12-07 00:17 부근이며, 과거 자체 표의 12-06 23:17을 사용하지 않는다.
+독립 월력의 분 단위 검증과 라이브러리의 초 단위 경계 회귀 검증은 구분한다.
+
 ⸻
 
 9. Day Pillar Policy
 
 일주는 기준일과 60갑자 순환으로 계산한다.
+
+현재 epoch는 홍콩천문대 월력의 2024-02-04 = 戊戌(index 34)이다.
+KST 날짜의 일수 차이를 host timezone과 무관한 UTC 날짜 산술로 계산한다.
+1984-02-02 = 丙寅, 2024-02-29 = 癸亥와 일치한다.
+과거 코드의 1984-02-02 = 甲子 기준은 잘못된 값이며 폐기한다.
 
 Requirement
 
@@ -247,6 +263,10 @@ Time Range	Hour Branch
 시천간 계산
 
 시천간은 일간 기준 공식으로 계산한다.
+
+23시대에도 해당 KST 날짜의 일간을 사용한다. 다음 날 일간을 사용하는
+lunar-javascript의 raw 시주는 채택하지 않는다.
+예: 1988-02-15 23:30 = 庚子일 丙子시, 02-16 00:00 = 辛丑일 戊子시.
 
 Day Stem Group	子 Hour Stem
 甲 / 己	甲子
@@ -727,6 +747,17 @@ Store
 Required Field
 
 calcSpecVersion: "SAJU_CALC_SPEC_v0.1"
+
+원국 계산 엔진 식별자는 별도로 `SAJU_CALENDAR_VERSION = "saju-calendar-kst-v2"`이다.
+새 계산 결과에는 `calculationVersion`, 공통 상품 생성 evidence와 새 snapshot에는
+`calendarCalculationVersion`을 기록한다. 기존 `REPORT_CALCULATION_VERSION`
+(`saju-mbti-v1`)과 `productVersion`은 기존 리포트 계약 식별자로 유지한다.
+버전 없는 기존 snapshot을 새 버전으로 표시하거나 읽을 때 재계산하지 않는다.
+이 버전은 원국만 식별하며 고객별 대운/getYun 정확성을 보증하지 않는다.
+
+현재 unknown time은 기존대로 정오 대체 후 시주를 생략한다. 절기 경계일의
+연주·월주 불확실성과 generation에서 무시되는 approximate slot은 별도 해결 대상이다.
+원국 교정을 이유로 입력/판매 허용 정책을 변경하지 않는다.
 
 계산 정책이 바뀔 경우 기존 리포트와 신규 리포트를 구분할 수 있어야 한다.
 

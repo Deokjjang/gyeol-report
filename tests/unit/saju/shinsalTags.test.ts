@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { detectShinsal } from "../../../src/lib/saju/shinsal";
 import { calculateSaju } from "@/lib/saju/calculateSaju";
 import { extractSajuTags } from "@/lib/saju/extractTags";
 import type { SajuCalcInput } from "@/lib/saju/types";
@@ -24,16 +25,18 @@ describe("shinsal tag extraction", () => {
   it("contains expected shinsal tag codes", () => {
     const result = calculateSaju(knownTimeInput);
     const tags = extractSajuTags(result);
-    const codes = tags.map((tag) => tag.code);
+    const codes: string[] = tags.map((tag) => tag.code);
 
-    expect(codes).toContain("SHINSAL_HYEONCHIMSAL");
-    expect(codes).toContain("SHINSAL_HONGYEOMSAL");
-    expect(codes).toContain("SHINSAL_BAEKHODAESAL");
-    expect(codes).toContain("SHINSAL_YEOKMASAL");
-    expect(codes).toContain("SHINSAL_DOHWASAL");
-    expect(codes).toContain("SHINSAL_CHEON_EUL_GWIIN");
-    expect(codes).toContain("SHINSAL_WOL_DEOK_GWIIN");
-    expect(codes).toContain("SHINSAL_CHEON_DEOK_GWIIN");
+    // HKO date golden + product KST hour policy: before 2024 Ipchun.
+    const expected = detectShinsal({
+      year: { stem: "癸", branch: "卯" },
+      month: { stem: "乙", branch: "丑" },
+      day: { stem: "戊", branch: "戌" },
+      hour: { stem: "辛", branch: "酉" },
+    });
+    expect(codes.filter((code) => code.startsWith("SHINSAL_"))).toEqual(
+      expected.map((item) => `SHINSAL_${item.code}`),
+    );
   });
 
   it("emits Twelve Shinsal tag codes in the Shinsal category", () => {

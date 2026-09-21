@@ -13,8 +13,8 @@ describe("year pillar calculation", () => {
     });
   });
 
-  it("returns 甲辰 for 2024 at IPCHUN", () => {
-    expect(getYearPillarFromSolarDateTime("2024-02-04T17:27:00+09:00")).toEqual({
+  it("returns 甲辰 for 2024 after IPCHUN", () => {
+    expect(getYearPillarFromSolarDateTime("2024-02-04T17:28:00+09:00")).toEqual({
       stem: "甲",
       branch: "辰",
     });
@@ -37,7 +37,7 @@ describe("year pillar calculation", () => {
 
 describe("month pillar calculation", () => {
   it("returns 丙寅 for 2024 IPCHUN boundary", () => {
-    expect(getMonthPillarFromSolarDateTime("2024-02-04T17:27:00+09:00")).toEqual({
+    expect(getMonthPillarFromSolarDateTime("2024-02-04T17:28:00+09:00")).toEqual({
       stem: "丙",
       branch: "寅",
     });
@@ -51,7 +51,7 @@ describe("month pillar calculation", () => {
   });
 
   it("returns 丙子 for 2024 DAESEOL boundary", () => {
-    expect(getMonthPillarFromSolarDateTime("2024-12-06T23:17:00+09:00")).toEqual({
+    expect(getMonthPillarFromSolarDateTime("2024-12-07T00:18:00+09:00")).toEqual({
       stem: "丙",
       branch: "子",
     });
@@ -68,8 +68,8 @@ describe("month pillar calculation", () => {
 describe("year and month pillar errors", () => {
   it("throws for unsupported year", () => {
     expect(() =>
-      getYearPillarFromSolarDateTime("1900-01-01T12:00:00+09:00"),
-    ).toThrow("Solar term data for year 1900 is not available.");
+      getYearPillarFromSolarDateTime("0000-01-01T12:00:00+09:00"),
+    ).toThrow("Solar term data for year 0 is not available.");
   });
 
   it("throws for invalid KST datetime format", () => {

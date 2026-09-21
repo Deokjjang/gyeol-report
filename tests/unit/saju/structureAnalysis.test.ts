@@ -1,17 +1,21 @@
 import { describe, expect, it } from "vitest";
 
 import { analyzeSajuStructure } from "@/lib/saju/structureAnalysis";
-import { calculateSaju } from "@/lib/saju/calculateSaju";
-import type { SajuCalcInput } from "@/lib/saju/types";
+import { analyzeFullElements, analyzeFullTenGods } from "../../../src/lib/saju/analyze";
+import type { SajuCalcResult } from "@/lib/saju/types";
 
-const fixtureInput = {
-  birthDate: "2024-02-04",
-  birthTime: "17:27",
-  birthTimeUnknown: false,
-  calendarType: "SOLAR",
-  gender: "MALE",
-  timezone: "Asia/Seoul",
-} as const satisfies SajuCalcInput;
+// Synthetic structure-analysis fixture, not a birth-date calendar golden.
+// Keeps the existing rule/format coverage independent of calendar correction.
+const fixturePillars = {
+  year: { stem: "甲", branch: "辰" },
+  month: { stem: "丙", branch: "寅" },
+  day: { stem: "丙", branch: "申" },
+  hour: { stem: "丁", branch: "酉" },
+} as const satisfies SajuCalcResult["pillars"];
+const fixtureAnalysisInput = {
+  tenGods: analyzeFullTenGods(fixturePillars),
+  elements: analyzeFullElements(fixturePillars),
+};
 
 const structureAnalysisNotice =
   "신강신약과 구조 후보는 단정이 아니라 현재 계산된 오행·십성 신호를 바탕으로 한 해석 기준입니다.";
@@ -32,7 +36,7 @@ const forbiddenWords = [
 ] as const;
 
 function getFixtureAnalysis() {
-  return analyzeSajuStructure(calculateSaju(fixtureInput));
+  return analyzeSajuStructure(fixtureAnalysisInput);
 }
 
 describe("analyzeSajuStructure", () => {
@@ -110,7 +114,7 @@ describe("analyzeSajuStructure", () => {
   });
 
   it("returns deterministic output", () => {
-    const saju = calculateSaju(fixtureInput);
+    const saju = fixtureAnalysisInput;
 
     expect(analyzeSajuStructure(saju)).toEqual(analyzeSajuStructure(saju));
   });

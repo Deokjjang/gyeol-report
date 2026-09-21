@@ -1,3 +1,4 @@
+import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
 import {
   generateCareerMoneyStudyProductDraft,
   type CareerMoneyStudyGenerationHandlerOptions,
@@ -125,13 +126,27 @@ export function dispatchProductGenerationInput(
 ): Promise<ProductGenerationResult> {
   const handler = getProductGenerationHandler(input.kind);
 
-  return handler(input, options).then((result) => {
-    if (result.ok || options.automaticFallback === false || !isWriterEnabledForKind(input.kind, options)) {
-      return result;
-    }
+  return handler(input, options)
+    .then((result) => {
+      if (result.ok || options.automaticFallback === false || !isWriterEnabledForKind(input.kind, options)) {
+        return result;
+      }
 
-    return handler(input, disableWriterForKind(input.kind, options));
-  });
+      return handler(input, disableWriterForKind(input.kind, options));
+    })
+    .then((result) => {
+      // Stamp only newly generated evidence, after the writer has completed.
+      if (!result.ok || typeof result.evidencePacket !== "object" || result.evidencePacket === null) {
+        return result;
+      }
+      return {
+        ...result,
+        evidencePacket: {
+          ...result.evidencePacket,
+          calendarCalculationVersion: SAJU_CALENDAR_VERSION,
+        },
+      };
+    });
 }
 
 export function prepareProductGenerationFromPayload(

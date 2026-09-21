@@ -37,10 +37,10 @@ describe("extractSajuTags", () => {
   it("includes day master tag first", () => {
     const tags = extractSajuTags(calculateSaju(knownTimeInput));
 
-    expect(tags[0]?.code).toBe("DAY_MASTER_BYEONG_FIRE");
+    expect(tags[0]?.code).toBe("DAY_MASTER_MU_EARTH");
     expect(tags[0]?.category).toBe("DAY_MASTER");
     expect(tags[0]?.confidence).toBe("HIGH");
-    expect(tags[0]?.evidence).toContain("dayMaster:丙");
+    expect(tags[0]?.evidence).toContain("dayMaster:戊");
   });
 
   it("includes birth time known tag", () => {
