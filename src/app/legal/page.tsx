@@ -29,12 +29,12 @@ export default function LegalIndexPage() {
       titleKo="정책 안내"
       descriptionKo="결리포트의 사업자 정보, 이용약관, 개인정보처리방침, 환불/취소 정책을 확인할 수 있습니다."
     >
-      <nav aria-label="정책 페이지" className="grid gap-4">
+      <nav aria-label="정책 페이지" className="divide-y divide-[#36312c]">
         {legalPages.map((page) => (
           <a
             key={page.href}
             href={page.href}
-            className="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 transition hover:bg-neutral-900"
+            className="block py-6"
           >
             <p className="text-lg font-semibold text-neutral-100">
               {page.titleKo}

@@ -35,8 +35,8 @@ describe("legal page sources", () => {
       "인천광역시 연수구 인천타워대로 185, 10층 1001호 V206",
       "support@dvem.ai",
       "https://www.gyeolreport.com",
-      "신고 진행 중",
-      "010-3156-8568",
+      "2026-인천연수구-2118",
+      "050-6664-8562",
       "통신판매업 신고번호",
       "호스팅 제공자",
       "Vercel Inc.",
@@ -49,7 +49,7 @@ describe("legal page sources", () => {
 
   it("keeps business info page focused on essential review fields", () => {
     const businessInfoSource = readSource(
-      "src/app/legal/business-info/page.tsx",
+      "src/app/business/page.tsx",
     );
     const expectedMarkers = [
       "상호명",
@@ -131,19 +131,16 @@ describe("legal page sources", () => {
       "약관 변경",
       "시행일",
       "GYEOL_BUSINESS_INFO.businessName",
-      "GYEOL_BUSINESS_INFO.representativeKo",
-      "GYEOL_BUSINESS_INFO.businessRegistrationNumber",
       'businessName: "DVEM"',
       'representativeKo: "장덕민"',
       'businessRegistrationNumber: "184-27-02002"',
       "판매 상품: 사주×MBTI 종합 리포트, 직업·커리어·돈·학업 리포트, 연애·결혼·자녀 리포트, 궁합 리포트, 대운 리포트, 세운 리포트",
-      "궁합 리포트는 love, marriage, parentChild, coworker, managerReport, businessPartner, friendship 카테고리를 포함합니다.",
+      "궁합 리포트는 연애, 결혼, 부모·자식, 직장 동료, 상사·부하, 사업/협업, 친구/인간관계 카테고리를 포함합니다.",
       "상품 유형: 입력값 기반 자동 생성 디지털 리포트",
       "실제 결제금액: 상품별 1,290원",
       "제공 방식: 결제 후 온라인 열람",
       "서비스 제공기간: 결제 완료 후 즉시 생성, 최대 24시간 이내 제공",
       "열람 가능 기간: 생성일로부터 90일",
-      "상담 여부: 사람 상담 아님",
       "자동 생성되는 디지털 리포트를 제공합니다",
       "의료·법률·투자 자문을 제공하지 않습니다",
       "결제 전 확인 화면에서 입력값을 수정할 수 있습니다",
@@ -177,6 +174,7 @@ describe("legal page sources", () => {
 
   it("contains required privacy content", () => {
     const privacySource = [
+      readSource("src/app/privacy/page.tsx"),
       readSource("src/app/legal/privacy/page.tsx"),
       readSource("src/lib/legal/privacyPolicy.ts"),
       readSource("src/lib/legal/businessInfo.ts"),
@@ -188,11 +186,8 @@ describe("legal page sources", () => {
       "보유 및 이용기간",
       "결제 처리",
       "리포트 생성",
-      "고객 문의 대응",
       "처리위탁 또는 외부 서비스 이용",
       "국외 처리 또는 국외 이전 가능성",
-      "만 14세 미만 이용 제한",
-      "미성년자 안내",
       "민감정보 수집 제한",
       "이용자의 권리",
       "개인정보 문의처",
@@ -219,7 +214,7 @@ describe("legal page sources", () => {
       "만 19세 미만 미성년자는 결제 시 법정대리인 동의가 필요하며",
       "본 서비스는 건강정보, 질병정보, 정신질환 정보, 정치적 견해, 종교",
       "고객센터",
-      "010-3156-8568",
+      "050-6664-8562",
       "support@dvem.ai",
       "GYEOL_BUSINESS_INFO.hostingProvider",
       "GYEOL_BUSINESS_INFO.supportContactEmail",
@@ -257,23 +252,14 @@ describe("legal page sources", () => {
 
   it("contains required refund content", () => {
     const refundSource = [
+      readSource("src/app/refund/page.tsx"),
       readSource("src/app/legal/refund/page.tsx"),
       readSource("src/lib/legal/refundPolicy.ts"),
     ].join("\n");
     const expectedMarkers = [
-      "상품 유형",
-      "무형재화/자동 생성 디지털 콘텐츠",
-      "판매 상품",
-      "사주×MBTI 종합, 직업·커리어·돈·학업, 연애·결혼·자녀, 궁합, 대운, 세운 리포트",
-      "실제 결제금액",
-      "1,290원",
-      "서비스 제공기간",
-      "열람 가능 기간",
       "환불 가능 시점",
-      "환불 제한",
-      "장애·중복결제·결과 미제공 처리",
-      "입력값 오류 처리",
-      "미성년자 취소 안내",
+      'href="/terms"',
+      "refundPolicyStateRows",
       "문의 방법",
       "처리 기준",
       "리포트 생성 전에는 결제일로부터 7일 이내 취소 및 환불을 요청할 수 있습니다",

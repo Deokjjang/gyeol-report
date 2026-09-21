@@ -1,8 +1,5 @@
 import { GYEOL_BUSINESS_INFO } from "./businessInfo";
-import {
-  prePaymentRefundNoticeKo,
-  refundPolicyRequiredNotices,
-} from "./refundPolicy";
+import { refundPolicyRequiredNotices } from "./refundPolicy";
 
 export type TermsPolicySection = {
   readonly titleKo: string;
@@ -24,14 +21,7 @@ export const termsPolicySections = [
   {
     titleKo: "사업자 정보",
     bodyKo: [
-      `상호명: ${GYEOL_BUSINESS_INFO.businessName}`,
-      `대표자명: ${GYEOL_BUSINESS_INFO.representativeKo}`,
-      `사업자등록번호: ${GYEOL_BUSINESS_INFO.businessRegistrationNumber}`,
-      `사업장 주소: ${GYEOL_BUSINESS_INFO.businessAddressKo}`,
-      `고객센터: ${GYEOL_BUSINESS_INFO.customerServicePhone}`,
-      `이메일: ${GYEOL_BUSINESS_INFO.supportContactEmail}`,
-      `통신판매업 신고번호: ${GYEOL_BUSINESS_INFO.mailOrderSalesRegistrationNumber}`,
-      `호스팅 제공자: ${GYEOL_BUSINESS_INFO.hostingProvider}`,
+      `결리포트는 ${GYEOL_BUSINESS_INFO.businessName}이 운영합니다. 사업자 신원 및 고객 문의 정보는 사업자정보에서 확인할 수 있습니다.`,
     ],
   },
   {
@@ -46,13 +36,12 @@ export const termsPolicySections = [
     titleKo: "상품 및 제공 방식",
     bodyKo: [
       "판매 상품: 사주×MBTI 종합 리포트, 직업·커리어·돈·학업 리포트, 연애·결혼·자녀 리포트, 궁합 리포트, 대운 리포트, 세운 리포트",
-      "궁합 리포트는 love, marriage, parentChild, coworker, managerReport, businessPartner, friendship 카테고리를 포함합니다.",
+      "궁합 리포트는 연애, 결혼, 부모·자식, 직장 동료, 상사·부하, 사업/협업, 친구/인간관계 카테고리를 포함합니다.",
       "상품 유형: 입력값 기반 자동 생성 디지털 리포트",
       "실제 결제금액: 상품별 1,290원",
       "제공 방식: 결제 후 온라인 열람",
       "서비스 제공기간: 결제 완료 후 즉시 생성, 최대 24시간 이내 제공",
       "열람 가능 기간: 생성일로부터 90일",
-      "상담 여부: 사람 상담 아님",
     ],
   },
   {
@@ -87,7 +76,6 @@ export const termsPolicySections = [
       refundPolicyRequiredNotices[1],
       refundPolicyRequiredNotices[2],
       refundPolicyRequiredNotices[4],
-      prePaymentRefundNoticeKo,
     ],
   },
   {

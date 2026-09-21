@@ -54,7 +54,7 @@ export const privacyPolicyExternalServiceRows = [
   },
   {
     providerKo: "OpenAI API",
-    purposeKo: "입력값과 deterministic evidence를 바탕으로 리포트 문장 생성 보조",
+    purposeKo: "입력값과 산출된 해석 근거를 바탕으로 리포트 문장 생성 보조",
   },
   {
     providerKo: "호스팅 제공자",

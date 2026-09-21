@@ -1,12 +1,22 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 
 import GyeolBrandHeader from "../brand/GyeolBrandHeader";
+import styles from "./legal.module.css";
+
+export const legalLinks = [
+  { href: "/terms", labelKo: "이용약관" },
+  { href: "/privacy", labelKo: "개인정보처리방침" },
+  { href: "/refund", labelKo: "환불정책" },
+  { href: "/business", labelKo: "사업자정보" },
+] as const;
 
 type LegalPageLayoutProps = {
   readonly eyebrowKo?: string;
   readonly titleKo: string;
   readonly descriptionKo: string;
   readonly children: ReactNode;
+  readonly currentPath?: string;
 };
 
 export default function LegalPageLayout({
@@ -14,22 +24,31 @@ export default function LegalPageLayout({
   titleKo,
   descriptionKo,
   children,
+  currentPath,
 }: LegalPageLayoutProps) {
   return (
-    <main className="min-h-screen bg-neutral-950 px-5 py-10 text-neutral-50 sm:px-8 lg:px-10">
-      <section className="mx-auto max-w-3xl space-y-8">
+    <main className={styles.page}>
+      <div className={styles.document}>
         <GyeolBrandHeader tone="dark" />
 
-        <header className="space-y-4">
-          <p className="text-sm font-medium text-neutral-400">{eyebrowKo}</p>
-          <h1 className="text-4xl font-bold tracking-tight">{titleKo}</h1>
-          <p className="text-base leading-8 text-neutral-400">
+        <header className={styles.header}>
+          <p className={styles.eyebrow}>{eyebrowKo}</p>
+          <h1>{titleKo}</h1>
+          <p className={styles.description}>
             {descriptionKo}
           </p>
         </header>
 
-        {children}
-      </section>
+        <div className={styles.body}>{children}</div>
+        <nav className={styles.navigation} aria-label="정책 문서 탐색">
+          {legalLinks.map((link) => (
+            <a key={link.href} href={link.href} aria-current={currentPath === link.href ? "page" : undefined}>
+              {link.labelKo}
+            </a>
+          ))}
+          <Link href="/">홈으로 돌아가기</Link>
+        </nav>
+      </div>
     </main>
   );
 }

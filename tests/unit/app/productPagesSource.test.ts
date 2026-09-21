@@ -46,7 +46,7 @@ describe("product pages source", () => {
       "출생시간",
       "성별",
       "MBTI",
-      "010-3156-8568",
+      "050-6664-8562",
       "support@dvem.ai",
     ];
 

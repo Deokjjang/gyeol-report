@@ -9,22 +9,17 @@ describe("BusinessFooter", () => {
 
     const expectedText = [
       "결리포트",
-      "상호명",
       "DVEM",
       "대표",
       "장덕민",
       "사업자등록번호",
       "184-27-02002",
       "통신판매업 신고번호",
-      "신고 진행 중",
-      "사업장 주소",
+      "2026-인천연수구-2118",
       "인천광역시 연수구 인천타워대로 185, 10층 1001호 V206",
       "고객센터",
-      "010-3156-8568",
-      "이메일",
+      "050-6664-8562",
       "support@dvem.ai",
-      "호스팅 제공자",
-      "Vercel Inc.",
     ];
 
     for (const text of expectedText) {
@@ -32,6 +27,8 @@ describe("BusinessFooter", () => {
     }
 
     const hiddenDetailText = [
+      "호스팅 제공자",
+      "Vercel Inc.",
       "과세" + "유형",
       "일반" + "과세자",
       "개인정보보호 " + "책임자",

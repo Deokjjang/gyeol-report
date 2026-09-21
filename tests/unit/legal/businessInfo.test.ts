@@ -15,8 +15,8 @@ describe("Gyeol business info", () => {
       officialContactEmail: "support@dvem.ai",
       supportContactEmail: "support@dvem.ai",
       domain: "https://www.gyeolreport.com",
-      mailOrderSalesRegistrationNumber: "신고 진행 중",
-      customerServicePhone: "010-3156-8568",
+      mailOrderSalesRegistrationNumber: "2026-인천연수구-2118",
+      customerServicePhone: "050-6664-8562",
       privacyOfficerName: "장덕민",
       privacyOfficerEmail: "support@dvem.ai",
       hostingProvider: "Vercel Inc.",
@@ -24,13 +24,13 @@ describe("Gyeol business info", () => {
     expect("taxTypeKo" in GYEOL_BUSINESS_INFO).toBe(false);
   });
 
-  it("keeps only the mail-order registration as pending", () => {
+  it("publishes the confirmed registration and business phone", () => {
     const oldPhonePlaceholder = "준비 " + "중";
 
     expect(GYEOL_BUSINESS_INFO.mailOrderSalesRegistrationNumber).toBe(
-      "신고 진행 중",
+      "2026-인천연수구-2118",
     );
-    expect(GYEOL_BUSINESS_INFO.customerServicePhone).toBe("010-3156-8568");
+    expect(GYEOL_BUSINESS_INFO.customerServicePhone).toBe("050-6664-8562");
     expect(GYEOL_BUSINESS_INFO).not.toMatchObject({
       customerServicePhone: oldPhonePlaceholder,
     });

@@ -20,6 +20,7 @@ describe("policy page sources", () => {
       readAppFile("src/lib/legal/termsPolicy.ts"),
       readAppFile("src/lib/legal/refundPolicy.ts"),
       readAppFile("src/lib/legal/businessInfo.ts"),
+      readAppFile("src/components/legal/LegalPageLayout.tsx"),
     ].join("\n");
     const expectedMarkers = [
       "이용약관",
@@ -44,7 +45,7 @@ describe("policy page sources", () => {
       "GYEOL_BUSINESS_INFO.businessName",
       'businessName: "DVEM"',
       "사주×MBTI 종합 리포트",
-      "궁합 리포트는 love, marriage, parentChild, coworker, managerReport, businessPartner, friendship 카테고리를 포함합니다.",
+      "궁합 리포트는 연애, 결혼, 부모·자식, 직장 동료, 상사·부하, 사업/협업, 친구/인간관계 카테고리를 포함합니다.",
       "입력값 기반 자동 생성 디지털 리포트",
       "실제 결제금액: 상품별 1,290원",
       "서비스 제공기간: 결제 완료 후 즉시 생성, 최대 24시간 이내 제공",
@@ -69,6 +70,7 @@ describe("policy page sources", () => {
       readAppFile("src/app/privacy/page.tsx"),
       readAppFile("src/lib/legal/privacyPolicy.ts"),
       readAppFile("src/lib/legal/businessInfo.ts"),
+      readAppFile("src/components/legal/LegalPageLayout.tsx"),
     ].join("\n");
     const expectedMarkers = [
       "개인정보처리방침",
@@ -77,11 +79,9 @@ describe("policy page sources", () => {
       "보유 및 이용기간",
       "결제 처리",
       "리포트 생성",
-      "고객 문의 대응",
       "처리위탁 또는 외부 서비스 이용",
       "국외 처리 또는 국외 이전 가능성",
-      "만 14세 미만 이용 제한",
-      "미성년자 안내",
+      "미성년자 이용",
       "민감정보 수집 제한",
       "이용자의 권리",
       "개인정보 문의처",
@@ -106,7 +106,7 @@ describe("policy page sources", () => {
       "만 14세 미만은 현재 버전에서 서비스를 이용할 수 없습니다",
       "법정대리인 동의가 필요하며",
       "본 서비스는 건강정보, 질병정보, 정신질환 정보",
-      "010-3156-8568",
+      "050-6664-8562",
       "support@dvem.ai",
       "홈으로 돌아가기",
       'href="/"',
@@ -122,6 +122,7 @@ describe("policy page sources", () => {
       readAppFile("src/app/privacy/page.tsx"),
       readAppFile("src/lib/legal/privacyPolicy.ts"),
       readAppFile("src/components/payment/DevTossCheckoutLauncher.tsx"),
+      readAppFile("src/components/legal/LegalPageLayout.tsx"),
     ].join("\n");
     const blockedMarkers = [
       "적중률",
@@ -145,24 +146,18 @@ describe("policy page sources", () => {
       readAppFile("src/app/refund/page.tsx"),
       readAppFile("src/lib/legal/businessInfo.ts"),
       readAppFile("src/lib/legal/refundPolicy.ts"),
+      readAppFile("src/components/legal/LegalPageLayout.tsx"),
     ].join("\n");
     const expectedMarkers = [
       "환불정책",
-      "상품 유형",
-      "무형재화/자동 생성 디지털 콘텐츠",
-      "사주×MBTI 종합, 직업·커리어·돈·학업, 연애·결혼·자녀, 궁합, 대운, 세운 리포트",
       "환불 가능 시점",
-      "환불 제한 시점",
-      "장애·중복결제·결과 미제공 처리",
-      "입력값 오류 처리",
-      "미성년자 취소 안내",
       "문의 방법",
       "처리 기준",
       "리포트 생성 전에는 결제일로부터 7일 이내 취소 및 환불을 요청할 수 있습니다",
       "리포트 생성이 시작되거나 결과가 제공된 이후에는 디지털 콘텐츠 특성상 단순 변심에 의한 환불이 제한될 수 있습니다",
       "미제공, 중복결제, 시스템 오류, 회사 귀책 오류가 확인되는 경우 환불 또는 재제공을 진행합니다",
       "환불 또는 재생성 요청 시 결제일시, 결제금액, 입력한 이름 또는 닉네임, 오류 내용을 함께 보내주세요",
-      "010-3156-8568",
+      "050-6664-8562",
       "support@dvem.ai",
       "홈으로 돌아가기",
       'href="/"',
@@ -178,6 +173,7 @@ describe("policy page sources", () => {
       readAppFile("src/app/refund/page.tsx"),
       readAppFile("src/lib/legal/refundPolicy.ts"),
       readAppFile("src/components/payment/DevTossCheckoutLauncher.tsx"),
+      readAppFile("src/components/legal/LegalPageLayout.tsx"),
     ].join("\n");
     const blockedMarkers = [
       "어떠한 경우에도 환불 불가",

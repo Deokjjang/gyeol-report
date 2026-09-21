@@ -28,6 +28,7 @@ const successPageSource = readSource(
 const resultPageSource = readSource("src/app/reports/[reportId]/page.tsx");
 const footerSource = [
   readSource("src/components/legal/BusinessFooter.tsx"),
+  readSource("src/components/legal/LegalPageLayout.tsx"),
   readSource("src/lib/legal/businessInfo.ts"),
 ].join("\n");
 
@@ -109,18 +110,15 @@ describe("Toss PG review checkout path source", () => {
   it("keeps footer business and policy links visible for review captures", () => {
     const requiredMarkers = [
       "사업자 정보",
-      "상호명",
       "DVEM",
       "대표",
       "장덕민",
       "사업자등록번호",
       "184-27-02002",
       "통신판매업 신고번호",
-      "신고 진행 중",
-      "사업장 주소",
+      "2026-인천연수구-2118",
       "고객센터",
-      "010-3156-8568",
-      "이메일",
+      "050-6664-8562",
       "support@dvem.ai",
       "/terms",
       "/privacy",
