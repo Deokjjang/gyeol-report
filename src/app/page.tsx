@@ -15,20 +15,30 @@ export default function Home() {
           taglineKo="사주와 MBTI를 함께 읽는 자기이해 리포트"
         />
         <header className={styles.hero}>
-          <p className={styles.eyebrow}>결리포트</p>
-          <h1 className={styles.headline}>나를 읽는<br />또 하나의 방식</h1>
-          <div className={styles.introduction}>
-            <p className={styles.product}>사주 × MBTI 종합 리포트</p>
-            <p className={styles.description}>
-              명리의 구조와 MBTI의 행동 패턴을 함께 읽어{" "}<br className={styles.desktopBreak} />
-              나를 조금 더 선명하게 이해하는 리포트.
-            </p>
-          </div>
-          <div className={styles.action}>
-            <p className={styles.meta}>1,290원 · 결제 후 자동 생성 · 90일 열람</p>
-            <Link href="/report/new?product=saju-mbti-full" className={styles.primaryCta}>
-              내 리포트 만들기 <span aria-hidden="true">↗</span>
-            </Link>
+          <h1 className={styles.headline}>
+            나를 읽는
+            <br />
+            또 하나의 방식
+          </h1>
+          <div className={styles.secondary}>
+            <div className={styles.introduction}>
+              <p className={styles.product}>사주 × MBTI 종합 리포트</p>
+              <p className={styles.description}>
+                명리의 구조와 MBTI의 행동 패턴을 함께 읽어 나를 조금 더
+                선명하게 이해하는 리포트.
+              </p>
+            </div>
+            <div className={styles.action}>
+              <p className={styles.meta}>
+                <strong>1,290원</strong> · 결제 후 자동 생성 · 90일 열람
+              </p>
+              <Link
+                href="/report/new?product=saju-mbti-full"
+                className={styles.primaryCta}
+              >
+                내 리포트 만들기 <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
           </div>
         </header>
         <section className={styles.collection} aria-labelledby="report-collection-title">

@@ -9,6 +9,14 @@ const productCatalogSource = readFileSync(
   join(process.cwd(), "src/lib/product/gyeolProducts.ts"),
   "utf8",
 );
+const homeSource = readFileSync(
+  join(process.cwd(), "src/app/page.tsx"),
+  "utf8",
+);
+const homeStyles = readFileSync(
+  join(process.cwd(), "src/app/home.module.css"),
+  "utf8",
+);
 
 describe("home page product source", () => {
   it("shows the active product and purchase path", () => {
@@ -125,6 +133,23 @@ describe("home page product source", () => {
       expect(css).toContain(":focus-visible");
       expect(css).not.toMatch(/transition:\s*all/);
     }
+  });
+
+  it("uses a focused editorial hero without repeating the brand eyebrow", () => {
+    const html = renderToStaticMarkup(Home());
+    const hero = html.match(/<header\b[\s\S]*?<\/header>/)?.[0] ?? "";
+
+    expect(hero).toContain("나를 읽는<br/>또 하나의 방식");
+    expect(hero).toContain("사주 × MBTI 종합 리포트");
+    expect(hero).toContain("1,290원");
+    expect(hero).toContain("90일 열람");
+    expect(hero).toContain('href="/report/new?product=saju-mbti-full"');
+    expect(hero).not.toContain(">결리포트<");
+    expect(homeSource).not.toContain("styles.eyebrow");
+    expect(homeStyles).toContain("grid-template-columns");
+    expect(homeStyles).toContain("@media (min-width: 1024px)");
+    expect(homeStyles).toContain("@media (prefers-reduced-motion: reduce)");
+    expect(homeStyles).not.toMatch(/transition:\s*all/);
   });
 
   it("opens the annual fortune card as a purchasable entry", () => {

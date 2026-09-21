@@ -6,6 +6,10 @@ const layoutPath = join(process.cwd(), "src/app/layout.tsx");
 const layoutSource = readFileSync(layoutPath, "utf8");
 const pagePath = join(process.cwd(), "src/app/page.tsx");
 const pageSource = readFileSync(pagePath, "utf8");
+const brandHeaderSource = readFileSync(
+  join(process.cwd(), "src/components/brand/GyeolBrandHeader.tsx"),
+  "utf8",
+);
 
 describe("app layout metadata source", () => {
   it("exports metadata", () => {
@@ -92,7 +96,8 @@ describe("app layout metadata source", () => {
     expect(pageSource).toContain("사주 × MBTI 종합 리포트");
     expect(pageSource).toContain("생성일로부터 90일 온라인 열람");
     expect(pageSource).toContain("자동 생성 디지털 리포트");
-    expect(pageSource).toContain("결리포트");
+    expect(pageSource).toContain("GyeolBrandHeader");
+    expect(brandHeaderSource).toContain("결리포트");
   });
 
   it("renders landing page report value content", () => {
