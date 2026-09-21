@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import {
   getAnnualBranchInteractions,
+  getAnnualFortuneCommerceYearPolicy,
+  getAnnualFortuneCurrentYear,
   getAnnualFortuneYearAccess,
   getAnnualGanjiInfo,
   getAnnualMonthGanjiInfo,
@@ -9,6 +11,37 @@ import {
 } from "../../../src/lib/report-knowledge/annualFortuneYearRules";
 
 describe("annualFortuneYearRules", () => {
+  it("keeps the commerce range at the past five years plus the current Seoul year", () => {
+    const policy2026 = getAnnualFortuneCommerceYearPolicy(
+      new Date("2026-06-18T00:00:00+09:00"),
+    );
+    const policy2027 = getAnnualFortuneCommerceYearPolicy(
+      new Date("2027-06-18T00:00:00+09:00"),
+    );
+
+    expect(policy2026).toEqual({
+      currentYear: 2026,
+      firstYear: 2021,
+      lastYear: 2026,
+      selectableYears: [2021, 2022, 2023, 2024, 2025, 2026],
+    });
+    expect(policy2027).toEqual({
+      currentYear: 2027,
+      firstYear: 2022,
+      lastYear: 2027,
+      selectableYears: [2022, 2023, 2024, 2025, 2026, 2027],
+    });
+  });
+
+  it("rolls the current year over at midnight in Asia/Seoul", () => {
+    expect(
+      getAnnualFortuneCurrentYear(new Date("2026-12-31T14:59:59.000Z")),
+    ).toBe(2026);
+    expect(
+      getAnnualFortuneCurrentYear(new Date("2026-12-31T15:00:00.000Z")),
+    ).toBe(2027);
+  });
+
   it("calculates annual ganji for the supported v1 review window", () => {
     expect(getAnnualGanjiInfo(2021).ganji).toBe("辛丑");
     expect(getAnnualGanjiInfo(2022).ganji).toBe("壬寅");
@@ -87,6 +120,27 @@ describe("annualFortuneYearRules", () => {
         currentDate: june2026,
       }),
     ).toMatchObject({ isSelectable: false, mode: "locked_future" });
+  });
+
+  it("keeps December next-year preview separate from the commerce range", () => {
+    const beforePreview = new Date("2026-11-30T23:59:59+09:00");
+    const afterPreview = new Date("2026-12-01T00:00:00+09:00");
+
+    expect(
+      getAnnualFortuneYearAccess({
+        targetYear: 2027,
+        currentDate: beforePreview,
+      }),
+    ).toMatchObject({ isSelectable: false, mode: "locked_future" });
+    expect(
+      getAnnualFortuneYearAccess({
+        targetYear: 2027,
+        currentDate: afterPreview,
+      }),
+    ).toMatchObject({ isSelectable: true, mode: "new_year_preview" });
+    expect(
+      getAnnualFortuneCommerceYearPolicy(afterPreview).selectableYears,
+    ).toEqual([2021, 2022, 2023, 2024, 2025, 2026]);
   });
 
   it("calculates ten-god relationship from day master to annual stem", () => {

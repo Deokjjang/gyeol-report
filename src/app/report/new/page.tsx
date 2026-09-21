@@ -11,6 +11,10 @@ import TossPaymentWidgetLauncher, {
   isTossPaymentWidgetInputComplete,
 } from "../../../components/payment/TossPaymentWidgetLauncher";
 import { GYEOL_PRODUCTS } from "../../../lib/product/gyeolProducts";
+import {
+  getAnnualFortuneCommerceYearPolicy,
+  getAnnualFortuneCurrentYear,
+} from "../../../lib/report-knowledge/annualFortuneYearRules";
 import type { ReportProductType } from "../../../lib/payment/reportProductTypes";
 import type {
   CompatibilityRelationshipType,
@@ -335,26 +339,12 @@ const annualFocusAreaOptions = [
   "생활 리듬",
 ] as const satisfies readonly FocusArea[];
 
-const ANNUAL_FORTUNE_BASE_YEAR_COUNT = 6;
-
-export function getAsiaSeoulCurrentYear(referenceDate = new Date()): number {
-  return Number(
-    new Intl.DateTimeFormat("en-US", {
-      timeZone: "Asia/Seoul",
-      year: "numeric",
-    }).format(referenceDate),
-  );
-}
+export const getAsiaSeoulCurrentYear = getAnnualFortuneCurrentYear;
 
 export function getAnnualFortuneYearOptions(
   referenceDate = new Date(),
 ): readonly number[] {
-  const currentYear = getAsiaSeoulCurrentYear(referenceDate);
-
-  return Array.from(
-    { length: ANNUAL_FORTUNE_BASE_YEAR_COUNT },
-    (_, index) => currentYear - (ANNUAL_FORTUNE_BASE_YEAR_COUNT - 1) + index,
-  );
+  return getAnnualFortuneCommerceYearPolicy(referenceDate).selectableYears;
 }
 
 function createCompatibilityPersonInputState(): CompatibilityPersonInputState {

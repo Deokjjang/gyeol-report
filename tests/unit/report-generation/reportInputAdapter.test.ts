@@ -178,6 +178,7 @@ describe("report input adapter", () => {
           selectedYear: "2026",
         },
       }),
+      { now: () => new Date("2026-06-18T00:00:00+09:00") },
     );
 
     expect(result).toEqual({
@@ -197,6 +198,72 @@ describe("report input adapter", () => {
         },
       },
     });
+  });
+
+  it.each([
+    ["2020", false],
+    ["2021", true],
+    ["2022", true],
+    ["2023", true],
+    ["2024", true],
+    ["2025", true],
+    ["2026", true],
+    ["2027", false],
+    ["2028", false],
+  ])("validates the 2026 commerce year %s at the server boundary", (selectedYear, allowed) => {
+    const result = normalizeReportInputPayload(
+      makeSinglePayload({
+        productKey: "annual_fortune",
+        productSlug: "annual-fortune",
+        productOptions: { selectedYear },
+      }),
+      { now: () => new Date("2026-06-18T00:00:00+09:00") },
+    );
+
+    expect(result.ok).toBe(allowed);
+    if (!allowed) {
+      expect(result).toEqual({ ok: false, error: "SELECTED_YEAR_INVALID" });
+    }
+  });
+
+  it.each([
+    ["2021", false],
+    ["2022", true],
+    ["2023", true],
+    ["2024", true],
+    ["2025", true],
+    ["2026", true],
+    ["2027", true],
+    ["2028", false],
+  ])("validates the 2027 commerce year %s after Seoul rollover", (selectedYear, allowed) => {
+    const result = normalizeReportInputPayload(
+      makeSinglePayload({
+        productKey: "annual_fortune",
+        productSlug: "annual-fortune",
+        productOptions: { selectedYear },
+      }),
+      { now: () => new Date("2026-12-31T15:00:00.000Z") },
+    );
+
+    expect(result.ok).toBe(allowed);
+    if (!allowed) {
+      expect(result).toEqual({ ok: false, error: "SELECTED_YEAR_INVALID" });
+    }
+  });
+
+  it("rejects malformed annual years at the server boundary", () => {
+    for (const selectedYear of ["not-a-year", "2026x", "2026.5"]) {
+      expect(
+        normalizeReportInputPayload(
+          makeSinglePayload({
+            productKey: "annual_fortune",
+            productSlug: "annual-fortune",
+            productOptions: { selectedYear },
+          }),
+          { now: () => new Date("2026-06-18T00:00:00+09:00") },
+        ),
+      ).toEqual({ ok: false, error: "SELECTED_YEAR_INVALID" });
+    }
   });
 
   it("normalizes compatibility A/B payloads", () => {

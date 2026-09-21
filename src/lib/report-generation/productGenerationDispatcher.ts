@@ -138,7 +138,11 @@ export function prepareProductGenerationFromPayload(
   payload: ReportInputPayload | unknown,
   options: ProductGenerationDispatcherOptions = {},
 ): Promise<ProductGenerationResult> {
-  const normalized = normalizeReportInputPayload(payload);
+  const normalized = normalizeReportInputPayload(payload, {
+    ...(options.annualFortune?.now === undefined
+      ? {}
+      : { now: options.annualFortune.now }),
+  });
   if (!normalized.ok) {
     return Promise.resolve(
       invalidInputResult(`Invalid report input: ${normalized.error}`),

@@ -12,6 +12,86 @@ import type {
   YinYang,
 } from "./annualFortuneTypes";
 
+export const ANNUAL_FORTUNE_TIME_ZONE = "Asia/Seoul";
+export const ANNUAL_FORTUNE_COMMERCE_YEAR_COUNT = 6;
+
+export type AnnualFortuneSeoulDateParts = {
+  readonly year: number;
+  readonly month: number;
+  readonly day: number;
+};
+
+export type AnnualFortuneCommerceYearPolicy = {
+  readonly currentYear: number;
+  readonly firstYear: number;
+  readonly lastYear: number;
+  readonly selectableYears: readonly number[];
+};
+
+const annualFortuneSeoulDateFormatter = new Intl.DateTimeFormat("en-US", {
+  timeZone: ANNUAL_FORTUNE_TIME_ZONE,
+  year: "numeric",
+  month: "numeric",
+  day: "numeric",
+});
+
+export function getAnnualFortuneSeoulDateParts(
+  referenceDate = new Date(),
+): AnnualFortuneSeoulDateParts {
+  const parts = annualFortuneSeoulDateFormatter.formatToParts(referenceDate);
+  const year = getDatePart(parts, "year");
+  const month = getDatePart(parts, "month");
+  const day = getDatePart(parts, "day");
+
+  return { year, month, day };
+}
+
+export function getAnnualFortuneCurrentYear(
+  referenceDate = new Date(),
+): number {
+  return getAnnualFortuneSeoulDateParts(referenceDate).year;
+}
+
+export function getAnnualFortuneCommerceYearPolicy(
+  referenceDate = new Date(),
+): AnnualFortuneCommerceYearPolicy {
+  const currentYear = getAnnualFortuneCurrentYear(referenceDate);
+  const firstYear = currentYear - (ANNUAL_FORTUNE_COMMERCE_YEAR_COUNT - 1);
+
+  return {
+    currentYear,
+    firstYear,
+    lastYear: currentYear,
+    selectableYears: Array.from(
+      { length: ANNUAL_FORTUNE_COMMERCE_YEAR_COUNT },
+      (_, index) => firstYear + index,
+    ),
+  };
+}
+
+export function isAnnualFortuneCommerceYearSelectable(
+  targetYear: number,
+  referenceDate = new Date(),
+): boolean {
+  return getAnnualFortuneCommerceYearPolicy(referenceDate).selectableYears.includes(
+    targetYear,
+  );
+}
+
+function getDatePart(
+  parts: readonly Intl.DateTimeFormatPart[],
+  type: Intl.DateTimeFormatPartTypes,
+): number {
+  const value = parts.find((part) => part.type === type)?.value;
+  const parsed = Number(value);
+
+  if (!Number.isInteger(parsed)) {
+    throw new Error(`Invalid ${ANNUAL_FORTUNE_TIME_ZONE} date part: ${type}`);
+  }
+
+  return parsed;
+}
+
 const heavenlyStems = [
   "甲",
   "乙",
@@ -347,11 +427,12 @@ export function getAnnualFortuneYearAccess(params: {
   readonly targetYear: number;
   readonly currentDate: Date;
 }): AnnualFortuneYearAccess {
-  const currentYear = params.currentDate.getFullYear();
-  const decemberFirst = new Date(currentYear, 11, 1);
+  const policy = getAnnualFortuneCommerceYearPolicy(params.currentDate);
+  const seoulDate = getAnnualFortuneSeoulDateParts(params.currentDate);
+  const currentYear = policy.currentYear;
 
   if (
-    params.targetYear >= currentYear - 5 &&
+    params.targetYear >= policy.firstYear &&
     params.targetYear <= currentYear - 1
   ) {
     return {
@@ -372,7 +453,7 @@ export function getAnnualFortuneYearAccess(params: {
   }
 
   if (params.targetYear === currentYear + 1) {
-    const isOpen = params.currentDate.getTime() >= decemberFirst.getTime();
+    const isOpen = seoulDate.month === 12 && seoulDate.day >= 1;
 
     return {
       year: params.targetYear,

@@ -49,6 +49,10 @@ const baseInput: SinglePersonGenerationInput = {
   },
 };
 
+const fixed2026Options = {
+  now: () => new Date("2026-06-18T00:00:00+09:00"),
+} as const;
+
 function collectVisibleDraftText(
   result: Awaited<ReturnType<typeof generateAnnualFortuneProductDraft>>,
 ): string {
@@ -94,7 +98,7 @@ function collectVisibleDraftText(
 
 describe("annual fortune generation handler", () => {
   it("builds a validated annual fortune draft and evidence packet", async () => {
-    const result = await generateAnnualFortuneProductDraft(baseInput);
+    const result = await generateAnnualFortuneProductDraft(baseInput, fixed2026Options);
 
     expect(result).toMatchObject({
       ok: true,
@@ -130,7 +134,7 @@ describe("annual fortune generation handler", () => {
   });
 
   it("passes selectedYear into annual evidence and draft sections", async () => {
-    const result = await generateAnnualFortuneProductDraft(baseInput);
+    const result = await generateAnnualFortuneProductDraft(baseInput, fixed2026Options);
 
     expect(result).toMatchObject({
       ok: true,
@@ -151,7 +155,7 @@ describe("annual fortune generation handler", () => {
   });
 
   it("uses fixture major fortune cycles for the major annual cross context", async () => {
-    const result = await generateAnnualFortuneProductDraft(baseInput);
+    const result = await generateAnnualFortuneProductDraft(baseInput, fixed2026Options);
 
     expect(result).toMatchObject({
       ok: true,
@@ -169,7 +173,7 @@ describe("annual fortune generation handler", () => {
   });
 
   it("uses userContext as visible scene context without making it a calculation cause", async () => {
-    const result = await generateAnnualFortuneProductDraft(baseInput);
+    const result = await generateAnnualFortuneProductDraft(baseInput, fixed2026Options);
     const visibleText = collectVisibleDraftText(result);
 
     expect(visibleText).toContain("서비스 기획자");
@@ -183,7 +187,7 @@ describe("annual fortune generation handler", () => {
       productOptions: {
         selectedYear: "not-a-year",
       },
-    });
+    }, fixed2026Options);
 
     expect(result).toMatchObject({
       ok: false,
@@ -195,7 +199,7 @@ describe("annual fortune generation handler", () => {
   });
 
   it("does not expose forbidden or internal wording in visible draft fields", async () => {
-    const result = await generateAnnualFortuneProductDraft(baseInput);
+    const result = await generateAnnualFortuneProductDraft(baseInput, fixed2026Options);
     const visibleText = collectVisibleDraftText(result);
     const forbiddenMarkers = [
       "투자 수익 보장",
@@ -219,6 +223,70 @@ describe("annual fortune generation handler", () => {
     }
   });
 
+  it("generates deterministic evidence and drafts for all six 2026 commerce years", async () => {
+    for (const selectedYear of [2021, 2022, 2023, 2024, 2025, 2026]) {
+      const result = await generateAnnualFortuneProductDraft(
+        {
+          ...baseInput,
+          productOptions: { selectedYear: String(selectedYear) },
+        },
+        fixed2026Options,
+      );
+
+      expect(result).toMatchObject({
+        ok: true,
+        evidencePacket: {
+          selectedYear,
+          annualFortune: { year: selectedYear },
+          yearAccess: { isSelectable: true },
+        },
+        draft: { targetYear: selectedYear },
+      });
+    }
+  });
+
+  it.each(["2020", "2027", "2028"])(
+    "rejects server-bypass year %s before generation",
+    async (selectedYear) => {
+      const result = await generateAnnualFortuneProductDraft(
+        {
+          ...baseInput,
+          productOptions: { selectedYear },
+        },
+        fixed2026Options,
+      );
+
+      expect(result).toMatchObject({
+        ok: false,
+        kind: "annualFortune",
+        error: { code: "ANNUAL_FORTUNE_GENERATION_FAILED" },
+      });
+    },
+  );
+
+  it("uses the Seoul runtime year after the 2027 rollover", async () => {
+    const result = await generateAnnualFortuneProductDraft(
+      {
+        ...baseInput,
+        productOptions: { selectedYear: "2027" },
+      },
+      { now: () => new Date("2026-12-31T15:00:00.000Z") },
+    );
+
+    expect(result).toMatchObject({
+      ok: true,
+      evidencePacket: {
+        currentDate: "2027-01-01",
+        selectedYear: 2027,
+        mode: "current_year",
+        yearAccessPolicy: {
+          currentYear: 2027,
+          availableYearRange: { from: 2022, to: 2027 },
+        },
+      },
+    });
+  });
+
   it("does not connect API, persistence, payment, or unconditional writer execution", () => {
     const forbiddenMarkers = [
       "api/reports",
@@ -234,6 +302,7 @@ describe("annual fortune generation handler", () => {
     }
 
     expect(source).toContain("options.writer?.enabled === true");
+    expect(source).not.toContain("2026-06-18");
     expect(dispatcherSource).toContain("annualFortune: handleAnnualFortuneGeneration");
   });
 });

@@ -3,6 +3,7 @@ import {
   type AnnualFortuneEvidencePacket,
   type AnnualPersonInput,
 } from "../report-knowledge/annualFortuneEvidence";
+import { isAnnualFortuneCommerceYearSelectable } from "../report-knowledge/annualFortuneYearRules";
 import {
   requireMajorFortuneFixture,
 } from "../report-knowledge/majorFortuneFixtures";
@@ -59,13 +60,13 @@ export type AnnualFortuneGenerationResult =
     };
 
 export type AnnualFortuneGenerationHandlerOptions = {
+  readonly now?: () => Date;
   readonly writer?: {
     readonly enabled: boolean;
     readonly config?: AnnualFortuneReportWriterConfig;
   };
 };
 
-const annualFortunePreviewCurrentDateIso = "2026-06-18T00:00:00+09:00";
 const majorFortuneDefaultFixtureId = "deokmin-current-major-fortune";
 const annualFortuneMonthlyBasisFallback = "달력월 기준 운영 가이드";
 
@@ -111,9 +112,13 @@ export async function generateAnnualFortuneProductDraft(
     });
   }
 
+  const policyDate = options.now?.() ?? new Date();
   let evidencePacket: AnnualFortuneEvidencePacket;
   try {
-    evidencePacket = buildAnnualFortuneEvidenceFromGenerationInput(input);
+    evidencePacket = buildAnnualFortuneEvidenceFromGenerationInput(
+      input,
+      policyDate,
+    );
   } catch (error) {
     return annualFortuneFailure({
       code: "ANNUAL_FORTUNE_GENERATION_FAILED",
@@ -159,8 +164,9 @@ export async function generateAnnualFortuneProductDraft(
 
 function buildAnnualFortuneEvidenceFromGenerationInput(
   input: SinglePersonGenerationInput,
+  policyDate: Date,
 ): AnnualFortuneEvidencePacket {
-  const selectedYear = getSelectedYear(input);
+  const selectedYear = getSelectedYear(input, policyDate);
   const majorFortuneFixture = requireMajorFortuneFixture(
     majorFortuneDefaultFixtureId,
   );
@@ -178,20 +184,26 @@ function buildAnnualFortuneEvidenceFromGenerationInput(
 
   return buildAnnualFortuneEvidence({
     targetYear: selectedYear,
-    currentDate: new Date(annualFortunePreviewCurrentDateIso),
+    currentDate: policyDate,
     person,
   });
 }
 
-function getSelectedYear(input: SinglePersonGenerationInput): number {
+function getSelectedYear(
+  input: SinglePersonGenerationInput,
+  policyDate: Date,
+): number {
   if (!("selectedYear" in input.productOptions)) {
     throw new Error("Annual fortune selectedYear is required.");
   }
 
-  const selectedYear = Number.parseInt(input.productOptions.selectedYear, 10);
+  const selectedYear = Number(input.productOptions.selectedYear);
 
-  if (!Number.isInteger(selectedYear)) {
-    throw new Error("Annual fortune selectedYear must be a valid year.");
+  if (
+    !Number.isInteger(selectedYear) ||
+    !isAnnualFortuneCommerceYearSelectable(selectedYear, policyDate)
+  ) {
+    throw new Error("Annual fortune selectedYear is outside the commerce range.");
   }
 
   return selectedYear;

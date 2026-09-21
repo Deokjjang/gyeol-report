@@ -18,6 +18,11 @@ import {
   type SinglePersonReportProductKey,
   type SinglePersonReportProductSlug,
 } from "./reportInputTypes";
+import { isAnnualFortuneCommerceYearSelectable } from "../report-knowledge/annualFortuneYearRules";
+
+export type ReportInputAdapterOptions = {
+  readonly now?: () => Date;
+};
 
 export type ReportProductKind =
   | "careerMoneyStudy"
@@ -35,6 +40,7 @@ export type ReportInputAdapterErrorCode =
   | "INVALID_PERSON_BIRTH_DATE"
   | "INVALID_USER_CONTEXT"
   | "SELECTED_YEAR_REQUIRED"
+  | "SELECTED_YEAR_INVALID"
   | "RELATIONSHIP_TYPE_REQUIRED";
 
 export type ReportInputAdapterResult<T> =
@@ -124,6 +130,7 @@ export function getReportProductKind(
 
 export function normalizeReportInputPayload(
   payload: unknown,
+  options: ReportInputAdapterOptions = {},
 ): ReportInputAdapterResult<ReportGenerationInput> {
   if (!isRecord(payload)) {
     return { ok: false, error: "INVALID_PAYLOAD" };
@@ -138,11 +145,12 @@ export function normalizeReportInputPayload(
     return toCompatibilityGenerationInput(payload);
   }
 
-  return toSinglePersonGenerationInput(payload);
+  return toSinglePersonGenerationInput(payload, options);
 }
 
 export function toSinglePersonGenerationInput(
   payload: unknown,
+  options: ReportInputAdapterOptions = {},
 ): ReportInputAdapterResult<SinglePersonGenerationInput> {
   if (!isRecord(payload) || !isSinglePersonProductKey(payload.productKey)) {
     return { ok: false, error: "UNKNOWN_PRODUCT_KEY" };
@@ -166,6 +174,7 @@ export function toSinglePersonGenerationInput(
   const productOptionsResult = normalizeSingleProductOptions(
     payload.productKey,
     payload.productOptions,
+    options,
   );
   if (!productOptionsResult.ok) {
     return productOptionsResult;
@@ -290,6 +299,7 @@ function normalizeUserContext(
 function normalizeSingleProductOptions(
   productKey: SinglePersonReportProductKey,
   value: unknown,
+  options: ReportInputAdapterOptions,
 ): ReportInputAdapterResult<SinglePersonGenerationInput["productOptions"]> {
   if (productKey !== "annual_fortune") {
     return { ok: true, value: {} };
@@ -302,6 +312,15 @@ function normalizeSingleProductOptions(
   const selectedYear = normalizeString(value.selectedYear);
   if (!selectedYear) {
     return { ok: false, error: "SELECTED_YEAR_REQUIRED" };
+  }
+
+  const parsedYear = Number(selectedYear);
+  const policyDate = options.now?.() ?? new Date();
+  if (
+    !Number.isInteger(parsedYear) ||
+    !isAnnualFortuneCommerceYearSelectable(parsedYear, policyDate)
+  ) {
+    return { ok: false, error: "SELECTED_YEAR_INVALID" };
   }
 
   return {

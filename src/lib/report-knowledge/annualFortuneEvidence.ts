@@ -31,9 +31,11 @@ import type {
 import { USER_LIFE_STATUS_LABELS } from "./userContextTypes";
 import {
   getAnnualBranchInteractions,
+  getAnnualFortuneCommerceYearPolicy,
   getAnnualFortuneYearAccess,
   getAnnualGanjiInfo,
   getAnnualMonthGanjiInfo,
+  getAnnualFortuneSeoulDateParts,
   getBranchElement,
   getGeneratedElement,
   getTenGodForStemPair,
@@ -384,11 +386,11 @@ function formatElementList(elements: readonly FiveElement[]): string {
 }
 
 function formatDateOnly(date: Date): string {
-  const year = date.getFullYear();
-  const month = `${date.getMonth() + 1}`.padStart(2, "0");
-  const day = `${date.getDate()}`.padStart(2, "0");
+  const seoulDate = getAnnualFortuneSeoulDateParts(date);
+  const month = `${seoulDate.month}`.padStart(2, "0");
+  const day = `${seoulDate.day}`.padStart(2, "0");
 
-  return `${year}-${month}-${day}`;
+  return `${seoulDate.year}-${month}-${day}`;
 }
 
 function contextPlain(input: {
@@ -651,11 +653,12 @@ function buildYearAccessPolicy(input: {
   readonly currentDate: Date;
   readonly yearAccess: AnnualFortuneYearAccess;
 }): AnnualFortuneEvidencePacket["yearAccessPolicy"] {
-  const currentYear = input.currentDate.getFullYear();
+  const commercePolicy = getAnnualFortuneCommerceYearPolicy(input.currentDate);
+  const currentYear = commercePolicy.currentYear;
   const status = getYearAccessStatus(input.yearAccess);
   const availableYearRange = {
-    from: currentYear - 5,
-    to: currentYear,
+    from: commercePolicy.firstYear,
+    to: commercePolicy.lastYear,
   };
   const policyLabel =
     "기본 조회 가능 연도는 과거 5년과 올해이며, 매년 12월 1일부터 다음 해 신년사주가 열립니다.";

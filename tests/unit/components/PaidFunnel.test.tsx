@@ -150,6 +150,8 @@ describe("paid funnel contracts and progressive review", () => {
   });
 
   it("uses the Asia/Seoul year and exposes only the existing six-year annual range", () => {
+    expect(getAnnualFortuneYearOptions(new Date("2026-06-18T00:00:00+09:00"))).toEqual([2021, 2022, 2023, 2024, 2025, 2026]);
+    expect(getAnnualFortuneYearOptions(new Date("2026-12-01T00:00:00+09:00"))).toEqual([2021, 2022, 2023, 2024, 2025, 2026]);
     expect(getAsiaSeoulCurrentYear(new Date("2026-12-31T15:30:00.000Z"))).toBe(2027);
     expect(getAnnualFortuneYearOptions(new Date("2026-12-31T15:30:00.000Z"))).toEqual([2022, 2023, 2024, 2025, 2026, 2027]);
     hooks.product = "annual-fortune";
