@@ -14,6 +14,9 @@ function formatList(values: readonly string[]): string {
 function buildPromptPacket(packet: AnnualFortuneEvidencePacket): object {
   return {
     ...birthTimePromptContext(packet),
+    customerDayun: packet.customerDayun,
+    dayunSelection: packet.dayunSelection,
+    dayunTransitionRule: "선택 연도가 대운 전환연도이면 이전·이후 대운을 함께 읽습니다. 연초부터 전환이 끝났다고 단정하거나, 범위 입력의 교운일을 하나의 정확한 날짜로 확정하지 않습니다.",
     productType: packet.productType,
     productVersion: packet.productVersion,
     selectedYear: packet.selectedYear,

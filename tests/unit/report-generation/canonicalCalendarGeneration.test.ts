@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { SAJU_CALENDAR_VERSION } from "../../../src/lib/saju/calendarVersion";
 import { prepareProductGenerationFromPayload } from "../../../src/lib/report-generation/productGenerationDispatcher";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
@@ -20,7 +20,9 @@ const products = [
   ["annual_fortune", "annual-fortune"],
 ] as const;
 
-afterEach(() => vi.unstubAllGlobals());
+// This birth starts its first real DaYun in 2034; use an eligible evaluation year.
+beforeEach(() => { vi.useFakeTimers(); vi.setSystemTime(new Date("2035-09-21T00:00:00Z")); });
+afterEach(() => { vi.useRealTimers(); vi.unstubAllGlobals(); });
 
 describe("canonical calendar through six deterministic product pipelines", () => {
   it.each(products)("preserves corrected pillars/version in %s snapshot", async (productKey, productSlug) => {
@@ -33,7 +35,7 @@ describe("canonical calendar through six deterministic product pipelines", () =>
     } : {
       productKey, productSlug: productSlug as Exclude<typeof productSlug, "compatibility">, person,
       userContext: { relationshipStatus: "single", jobStatus: "employee", detailJob: "서비스 기획자", focusAreas: ["직업", "돈"] },
-      productOptions: productKey === "annual_fortune" ? { selectedYear: "2026" } : {},
+      productOptions: productKey === "annual_fortune" ? { selectedYear: "2035" } : {},
     };
     const result = await prepareProductGenerationFromPayload(payload, {
       careerMoneyStudy: { writer: { enabled: false } },
@@ -41,7 +43,7 @@ describe("canonical calendar through six deterministic product pipelines", () =>
       compatibility: { writer: { enabled: false } },
       comprehensiveV2: { writer: { enabled: false } },
       majorFortune: { writer: { enabled: false } },
-      annualFortune: { writer: { enabled: false }, now: () => new Date("2026-09-21T00:00:00Z") },
+      annualFortune: { writer: { enabled: false }, now: () => new Date("2035-09-21T00:00:00Z") },
     });
     expect(result.ok).toBe(true);
     if (!result.ok) throw new Error("Expected deterministic generation success");
@@ -62,11 +64,11 @@ describe("canonical calendar through six deterministic product pipelines", () =>
         b: { pillars: { year: "丙子", month: "己亥", day: "丁丑", hour: "丁未" } },
       } });
     } else {
-      // Only natal pillars are asserted here; major-cycle fixtures are a separate P0.
+      // Natal calendar golden remains independent from the DaYun product-contract golden.
       expect(result.evidencePacket).toMatchObject({ userPillars: expectedPillars });
     }
     const params = {
-      reportId: "calendar-test", createdAtIso: "2026-09-21T00:00:00Z",
+      reportId: "calendar-test", createdAtIso: "2035-09-21T00:00:00Z",
       productKey, productSlug, draft: result.draft as ProductPreviewSnapshotDraft,
     };
     const snapshot = createProductPreviewSnapshot({ ...params, evidencePacket: result.evidencePacket });

@@ -7,6 +7,7 @@ import type {
 } from "./annualFortuneTypes";
 import type { ProductBridgeEvidencePacket } from "./bridge/types";
 import type { UserContextProfile } from "./userContextTypes";
+import type { CustomerDayun, DayunSelection } from "../saju/customerDayun";
 
 export type MajorFortuneCycleBasis =
   | "manse_engine_major_fortune_table"
@@ -60,6 +61,8 @@ export type MajorFortuneDomainFlowKey =
   | "studyGrowth";
 
 export interface MajorFortuneEvidencePacket {
+  readonly customerDayun?: CustomerDayun;
+  readonly dayunSelection?: DayunSelection;
   readonly productType: "major_fortune";
   readonly productVersion: "v1";
   readonly personLabel: string;

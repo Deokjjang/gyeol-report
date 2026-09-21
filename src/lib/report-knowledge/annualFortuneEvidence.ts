@@ -1,3 +1,4 @@
+import type { CustomerDayun, DayunSelection } from "../saju/customerDayun";
 import type {
   AnnualBranchInteraction,
   AnnualFortuneDomainFlowKey,
@@ -42,6 +43,8 @@ import {
 } from "./annualFortuneYearRules";
 
 export interface AnnualFortuneEvidencePacket {
+  readonly customerDayun?: CustomerDayun;
+  readonly dayunSelection?: DayunSelection;
   readonly productType: "annual_fortune";
   readonly productVersion: "v1";
   readonly selectedYear: number;
@@ -715,7 +718,7 @@ function buildCurrentMajorFortune(input: {
     stemTenGod,
     branchTenGod,
     yearRange: `${cycle.startYear}년~${cycle.endYear}년`,
-    ageRange: `한국나이 ${cycle.startAge}세~${cycle.endAge}세`,
+    ageRange: `대운표 기준 ${cycle.startAge}세~${cycle.endAge}세`,
     keyTheme: `${cycle.ganji} 대운은 ${stemTenGod}·${branchTenGod}의 10년 배경 위에서 움직입니다.`,
   };
 }

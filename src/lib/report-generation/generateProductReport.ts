@@ -15,6 +15,6 @@ export async function generateProductReport(payload: unknown, runtime: ReportWri
     } : {}),
   });
   if (!result.ok) return result;
-  const gate = validateProductPublication(isRecord(payload) ? String(payload.productKey) : "", result.draft, result.evidencePacket);
+  const gate = validateProductPublication(isRecord(payload) ? String(payload.productKey) : "", result.draft, result.evidencePacket, payload);
   return gate.ok ? result : { ok: false, error: { code: "INVALID_REPORT_INPUT", message: gate.errors.join("; "), validationErrors: gate.errors } };
 }

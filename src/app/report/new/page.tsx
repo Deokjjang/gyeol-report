@@ -1,7 +1,7 @@
 "use client";
 
 import { BIRTH_TIME_SLOT_DEFINITIONS, normalizeBirthTimePrecision } from "../../../lib/saju/birthTimePrecisionTypes";
-import { use, useState } from "react";
+import { use, useEffect, useState } from "react";
 import type { FormEvent } from "react";
 
 import PaidFunnelHeader from "../../../components/payment/PaidFunnelHeader";
@@ -947,6 +947,7 @@ function renderCompatibilityPersonInputSection(input: {
 
 function renderSingleProductCommonInputSection(input: {
   readonly prefix: string;
+  readonly requiresGender?: boolean;
   readonly value: AnnualFortuneInputState;
   readonly onChange: (value: AnnualFortuneInputState) => void;
 }) {
@@ -957,7 +958,7 @@ function renderSingleProductCommonInputSection(input: {
       <div className="space-y-2">
         <h2 className={styles.sectionTitle}>기본 정보</h2>
         <p className={styles.hint}>
-          이름과 생년월일은 결제와 생성에 필요한 필수 정보입니다. 양력 · 한국 시간 기준입니다.
+          {input.requiresGender ? "이름, 생년월일과 성별은 결제와 생성에 필요한 필수 정보입니다." : "이름과 생년월일은 결제와 생성에 필요한 필수 정보입니다."} 양력 · 한국 시간 기준입니다.
         </p>
       </div>
 
@@ -1020,11 +1021,12 @@ function renderSingleProductCommonInputSection(input: {
             htmlFor={`${prefix}Gender`}
             className="block text-sm font-medium text-[#3f3129]"
           >
-            성별 · 선택
+            성별 · {input.requiresGender ? "필수" : "선택"}
           </label>
           <select
             id={`${prefix}Gender`}
             name="gender"
+            aria-required={input.requiresGender || undefined}
             value={value.gender}
             onChange={(event) => onChange({ ...value, gender: event.target.value })}
             className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
@@ -1205,14 +1207,36 @@ export default function NewReportPage({
   const isSingleProductAnnual =
     selectedProduct.productKey === ANNUAL_FORTUNE_PRODUCT_KEY;
   const annualFortuneYearOptions = getAnnualFortuneYearOptions();
-  const isSingleProductInputReady = isSingleProductAnnual
+  const requiresDayun = selectedProduct.productKey === MAJOR_FORTUNE_PRODUCT_KEY || isSingleProductAnnual;
+  const isSingleProductFieldsReady = (isSingleProductAnnual
     ? isAnnualFortuneRequiredInputComplete(singleProductInput)
-    : isMajorFortuneRequiredInputComplete(singleProductInput);
+    : isMajorFortuneRequiredInputComplete(singleProductInput)) &&
+    (!requiresDayun || singleProductInput.gender === "MALE" || singleProductInput.gender === "FEMALE");
   const singleProductCtaLabel = getSingleProductReadyCtaLabel(selectedProduct.productKey);
   const singleProductReportInputPayload = buildSinglePersonReportInputPayload(
     selectedProduct,
     singleProductInput,
   );
+  const readinessKey = requiresDayun && isSingleProductFieldsReady ? JSON.stringify(singleProductReportInputPayload) : "";
+  const [dayunReadiness, setDayunReadiness] = useState({ key: "", ok: false, message: "" });
+  useEffect(() => {
+    if (!readinessKey) return;
+    const controller = new AbortController();
+    const timer = setTimeout(async () => {
+      try {
+        const response = await fetch("/api/reports/validate-input", {
+          method: "POST", headers: { "Content-Type": "application/json" }, body: readinessKey, signal: controller.signal,
+        });
+        const result = await response.json() as { ok?: boolean; message?: string };
+        if (!controller.signal.aborted) setDayunReadiness({ key: readinessKey, ok: response.ok && result.ok === true, message: result.message ?? "입력 정보를 확인해 주세요." });
+      } catch {
+        if (!controller.signal.aborted) setDayunReadiness({ key: readinessKey, ok: false, message: "입력 확인이 지연되고 있습니다. 잠시 후 다시 입력해 주세요." });
+      }
+    }, 250);
+    return () => { controller.abort(); clearTimeout(timer); };
+  }, [readinessKey]);
+  const isSingleProductInputReady = isSingleProductFieldsReady &&
+    (!requiresDayun || (dayunReadiness.key === readinessKey && dayunReadiness.ok));
   const singleProductCheckoutInputSnapshot = createCheckoutInputSnapshot({
     displayName: singleProductInput.name,
     birthDate: singleProductInput.birthDate,
@@ -1294,6 +1318,7 @@ export default function NewReportPage({
 
             {renderSingleProductCommonInputSection({
               prefix: "singleProduct",
+              requiresGender: requiresDayun,
               value: singleProductInput,
               onChange: setSingleProductInput,
             })}
@@ -1340,6 +1365,9 @@ export default function NewReportPage({
               </section>
             ) : null}
 
+            {readinessKey && !isSingleProductInputReady ? <p role="status" className={styles.hint}>
+              {dayunReadiness.key === readinessKey ? dayunReadiness.message : "입력 정보를 확인하고 있습니다."}
+            </p> : null}
             <TossPaymentWidgetLauncher
               inputSnapshot={singleProductCheckoutInputSnapshot}
               productType={selectedProduct.productKey}

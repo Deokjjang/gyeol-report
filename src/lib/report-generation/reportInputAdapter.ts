@@ -1,5 +1,6 @@
 import { normalizeBirthTimePrecision, type BirthTimePrecision, type BirthTimeCalculationContext } from "../saju/birthTimePrecisionTypes";
 import { resolveBirthTimeCalculation } from "../saju/birthTimePrecision";
+import { calculateCustomerDayun, selectCustomerDayun } from "../saju/customerDayun";
 import {
   COMPATIBILITY_RELATIONSHIP_TYPES,
   FOCUS_AREAS,
@@ -19,7 +20,7 @@ import {
   type SinglePersonReportProductKey,
   type SinglePersonReportProductSlug,
 } from "./reportInputTypes";
-import { isAnnualFortuneCommerceYearSelectable } from "../report-knowledge/annualFortuneYearRules";
+import { getAnnualFortuneCurrentYear, isAnnualFortuneCommerceYearSelectable } from "../report-knowledge/annualFortuneYearRules";
 
 export type ReportInputAdapterOptions = {
   readonly now?: () => Date;
@@ -41,6 +42,11 @@ export type ReportInputAdapterErrorCode =
   | "INVALID_PERSON_BIRTH_DATE"
   | "INVALID_BIRTH_TIME_PRECISION"
   | "BIRTH_TIME_UNCERTAIN"
+  | "DAYUN_GENDER_REQUIRED"
+  | "DAYUN_UNCERTAIN"
+  | "DAYUN_INVALID_INPUT"
+  | "DAYUN_CALENDAR_MISMATCH"
+  | "DAYUN_CYCLE_UNAVAILABLE"
   | "INVALID_USER_CONTEXT"
   | "SELECTED_YEAR_REQUIRED"
   | "SELECTED_YEAR_INVALID"
@@ -183,6 +189,16 @@ export function toSinglePersonGenerationInput(
   );
   if (!productOptionsResult.ok) {
     return productOptionsResult;
+  }
+
+  if (payload.productKey === "major_fortune" || payload.productKey === "annual_fortune") {
+    const calculated = calculateCustomerDayun(personResult.value);
+    if (!calculated.ok) return calculated;
+    const selectedYear = payload.productKey === "annual_fortune"
+      ? Number(productOptionsResult.value.selectedYear)
+      : getAnnualFortuneCurrentYear(options.now?.());
+    const selected = selectCustomerDayun(calculated.value, selectedYear);
+    if (!selected.ok) return selected;
   }
 
   return {

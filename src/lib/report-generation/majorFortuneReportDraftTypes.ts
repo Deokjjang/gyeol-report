@@ -1,3 +1,5 @@
+import type { DayunSelection } from "../saju/customerDayun";
+
 export type MajorFortuneDomainLabel =
   | "일·성과"
   | "돈·현실"
@@ -50,6 +52,7 @@ export type MajorFortuneTimelineYearDetail =
   | MajorFortuneTimelineYearLegacyDetail;
 
 export interface MajorFortuneReportDraft {
+  readonly dayunContext?: DayunSelection;
   readonly version: "v1";
   readonly productType: "major_fortune";
   readonly productVersion: "v1";

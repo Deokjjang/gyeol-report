@@ -1,10 +1,9 @@
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
+import { calculateCustomerDayun, selectCustomerDayun } from "../saju/customerDayun";
+import { getAnnualFortuneCurrentYear } from "../report-knowledge/annualFortuneYearRules";
 import {
   buildMajorFortuneEvidence,
 } from "../report-knowledge/majorFortuneEvidence";
-import {
-  requireMajorFortuneFixture,
-} from "../report-knowledge/majorFortuneFixtures";
 import type {
   MajorFortuneDomainFlowKey,
   MajorFortuneEvidencePacket,
@@ -63,14 +62,12 @@ export type MajorFortuneGenerationResult =
     };
 
 export type MajorFortuneGenerationHandlerOptions = {
+  readonly now?: () => Date;
   readonly writer?: {
     readonly enabled: boolean;
     readonly config?: MajorFortuneReportWriterConfig;
   };
 };
-
-const majorFortuneDefaultFixtureId = "deokmin-current-major-fortune";
-const majorFortunePreviewCurrentYear = 2026;
 
 const tenGodKoByHanja = {
   比肩: "비견",
@@ -155,8 +152,17 @@ export async function generateMajorFortuneProductDraft(
   }
 
   let evidencePacket: MajorFortuneEvidencePacket;
+  const now = options.now?.() ?? new Date();
+  const calculated = calculateCustomerDayun(input.person);
+  if (!calculated.ok) return majorFortuneFailure({ code: "INVALID_REPORT_INPUT", message: calculated.error });
+  const selection = selectCustomerDayun(calculated.value, getAnnualFortuneCurrentYear(now), now);
+  if (!selection.ok) return majorFortuneFailure({ code: "INVALID_REPORT_INPUT", message: selection.error });
   try {
-    evidencePacket = buildMajorFortuneEvidenceFromGenerationInput(input);
+    evidencePacket = {
+      ...buildMajorFortuneEvidenceFromGenerationInput(input, calculated.value.cycles, selection.value.targetYear),
+      customerDayun: calculated.value,
+      dayunSelection: selection.value,
+    };
   } catch (error) {
     return majorFortuneFailure({
       code: "MAJOR_FORTUNE_GENERATION_FAILED",
@@ -198,7 +204,11 @@ export async function generateMajorFortuneProductDraft(
   return {
     ok: true,
     kind: "majorFortune",
-    draft: validation.value,
+    draft: {
+      ...validation.value,
+      dayunContext: selection.value,
+      openingSummary: [validation.value.openingSummary, selection.value.notice].filter(Boolean).join(" "),
+    },
     evidencePacket,
   };
 }
@@ -295,13 +305,13 @@ function diversifyRepeatedMajorFortuneLongSentences(input: {
 
 function buildMajorFortuneEvidenceFromGenerationInput(
   input: SinglePersonGenerationInput,
+  cycles: MajorFortuneEvidencePacket["currentCycle"][],
+  currentYear: number,
 ): MajorFortuneEvidencePacket {
-  const fixture = requireMajorFortuneFixture(majorFortuneDefaultFixtureId);
   const saju = calculateMajorFortuneSaju(input.person);
 
   return withBirthTimeEvidence(buildMajorFortuneEvidence({
-    fixtureId: "product-preview-major-fortune",
-    currentYear: majorFortunePreviewCurrentYear,
+    currentYear,
     person: {
       label: input.person.name,
       birthDate: input.person.birthDate,
@@ -310,8 +320,8 @@ function buildMajorFortuneEvidenceFromGenerationInput(
       userContext: toMajorFortuneUserContext(input),
       pillars: toMajorFortunePillars(saju),
       labels: deriveMajorFortuneLabels(saju, input),
-      majorFortuneCycleBasis: fixture.person.majorFortuneCycleBasis,
-      majorFortuneCycles: fixture.person.majorFortuneCycles,
+      majorFortuneCycleBasis: "manse_engine_major_fortune_table",
+      majorFortuneCycles: cycles,
     },
   }), { person: saju.birthTimeContext });
 }

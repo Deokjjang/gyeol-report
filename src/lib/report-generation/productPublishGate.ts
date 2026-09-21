@@ -1,4 +1,5 @@
 import { publicationBirthTimeContexts, publishedPillarMatches } from "./birthTimePublication";
+import { validateDayunPublication } from "./dayunPublication";
 import { COMPREHENSIVE_REPORT_SECTION_IDS } from "../report-knowledge/reportSectionSchema";
 import { deriveAllowedCompatibilityMbtiTerms, deriveAllowedCompatibilitySajuTerms } from "./openaiCompatibilityReportWriterPrompt";
 import type { CompatibilityEvidencePacket } from "../report-knowledge/compatibilityEvidenceBuilder";
@@ -25,11 +26,12 @@ function strings(value: unknown): string[] {
 
 // Validate the exact JSON that will be persisted, including deterministic evidence.
 // The older draft validators remain available for legacy imports and repair diagnostics.
-export function validateProductPublication(product: string, draft: unknown, evidence: unknown) {
+export function validateProductPublication(product: string, draft: unknown, evidence: unknown, inputPayload?: unknown) {
   const errors: string[] = [];
   const birthContexts = publicationBirthTimeContexts(evidence);
   if (isRecord(evidence) && evidence.birthTimeContexts !== undefined && !birthContexts) errors.push("BIRTH_TIME_CONTEXT_INVALID");
   if (!isRecord(draft)) return { ok: false, errors: ["DRAFT_REQUIRED"] };
+  if (product === "major_fortune" || product === "annual_fortune") errors.push(...validateDayunPublication(product, draft, evidence, inputPayload));
   if (draft.productType !== product) errors.push("PRODUCT_MISMATCH");
   if (!isRecord(evidence) || Object.keys(evidence).length < 3) errors.push("EVIDENCE_REQUIRED");
   else if (evidence.productType !== product) errors.push("EVIDENCE_PRODUCT_MISMATCH");

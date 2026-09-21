@@ -26,6 +26,7 @@ export type MajorFortuneFixture = {
   };
 };
 
+// Historical manual layout/example data, not a calculation golden or production customer basis.
 const deokminMajorFortuneCycles = [
   {
     index: 1,

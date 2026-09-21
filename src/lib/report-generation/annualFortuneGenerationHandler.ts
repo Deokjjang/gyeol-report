@@ -1,13 +1,11 @@
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
+import { calculateCustomerDayun, selectCustomerDayun } from "../saju/customerDayun";
 import {
   buildAnnualFortuneEvidence,
   type AnnualFortuneEvidencePacket,
   type AnnualPersonInput,
 } from "../report-knowledge/annualFortuneEvidence";
 import { isAnnualFortuneCommerceYearSelectable } from "../report-knowledge/annualFortuneYearRules";
-import {
-  requireMajorFortuneFixture,
-} from "../report-knowledge/majorFortuneFixtures";
 import {
   USER_LIFE_STATUS_LABELS,
   type UserContextProfile,
@@ -68,7 +66,6 @@ export type AnnualFortuneGenerationHandlerOptions = {
   };
 };
 
-const majorFortuneDefaultFixtureId = "deokmin-current-major-fortune";
 const annualFortuneMonthlyBasisFallback = "달력월 기준 운영 가이드";
 
 const tenGodKoByHanja = {
@@ -114,12 +111,17 @@ export async function generateAnnualFortuneProductDraft(
   }
 
   const policyDate = options.now?.() ?? new Date();
+  const calculated = calculateCustomerDayun(input.person);
+  if (!calculated.ok) return annualFortuneFailure({ code: "INVALID_REPORT_INPUT", message: calculated.error });
+  const selection = selectCustomerDayun(calculated.value, Number(input.productOptions.selectedYear));
+  if (!selection.ok) return annualFortuneFailure({ code: "INVALID_REPORT_INPUT", message: selection.error });
   let evidencePacket: AnnualFortuneEvidencePacket;
   try {
-    evidencePacket = buildAnnualFortuneEvidenceFromGenerationInput(
-      input,
-      policyDate,
-    );
+    evidencePacket = {
+      ...buildAnnualFortuneEvidenceFromGenerationInput(input, policyDate, calculated.value.cycles),
+      customerDayun: calculated.value,
+      dayunSelection: selection.value,
+    };
   } catch (error) {
     return annualFortuneFailure({
       code: "ANNUAL_FORTUNE_GENERATION_FAILED",
@@ -158,7 +160,11 @@ export async function generateAnnualFortuneProductDraft(
   return {
     ok: true,
     kind: "annualFortune",
-    draft: validation.value,
+    draft: {
+      ...validation.value,
+      dayunContext: selection.value,
+      majorAnnualCrossReading: [validation.value.majorAnnualCrossReading, selection.value.notice].filter(Boolean).join(" "),
+    },
     evidencePacket,
   };
 }
@@ -166,11 +172,9 @@ export async function generateAnnualFortuneProductDraft(
 function buildAnnualFortuneEvidenceFromGenerationInput(
   input: SinglePersonGenerationInput,
   policyDate: Date,
+  cycles: NonNullable<AnnualPersonInput["majorFortuneCycles"]>,
 ): AnnualFortuneEvidencePacket {
   const selectedYear = getSelectedYear(input, policyDate);
-  const majorFortuneFixture = requireMajorFortuneFixture(
-    majorFortuneDefaultFixtureId,
-  );
   const saju = calculateAnnualFortuneSaju(input.person);
   const person: AnnualPersonInput = {
     label: input.person.name,
@@ -178,7 +182,7 @@ function buildAnnualFortuneEvidenceFromGenerationInput(
     gender: toAnnualFortuneGender(input.person.gender),
     mbti: input.person.mbtiType === "" ? null : input.person.mbtiType,
     userContext: toAnnualFortuneUserContext(input),
-    majorFortuneCycles: majorFortuneFixture.person.majorFortuneCycles,
+    majorFortuneCycles: cycles,
     pillars: toAnnualFortunePillars(saju),
     labels: deriveAnnualFortuneLabels(saju, input),
   };

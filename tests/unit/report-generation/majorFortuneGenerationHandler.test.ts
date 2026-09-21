@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
   generateMajorFortuneProductDraft,
@@ -93,6 +93,8 @@ function collectVisibleDraftText(
 }
 
 describe("major fortune generation handler", () => {
+  beforeEach(() => { vi.useFakeTimers(); vi.setSystemTime(new Date("2026-09-21T12:00:00+09:00")); });
+  afterEach(() => vi.useRealTimers());
   it("builds a validated major fortune draft and evidence packet", async () => {
     const result = await generateMajorFortuneProductDraft(baseInput);
 
@@ -125,17 +127,18 @@ describe("major fortune generation handler", () => {
     expect(result.draft.majorFortuneTimelineRows).toHaveLength(10);
   });
 
-  it("uses fixture major fortune cycles as preview fallback without inventing a new engine", async () => {
+  it("uses the calculated customer cycle for deterministic fallback", async () => {
     const result = await generateMajorFortuneProductDraft(baseInput);
 
     expect(result).toMatchObject({
       ok: true,
       evidencePacket: {
         majorCycleBasis: {
-          basisType: "user_supplied_major_fortune_table",
+          basisType: "manse_engine_major_fortune_table",
         },
         currentMajorFortune: {
-          yearRange: "2026년~2035년",
+          ganji: "己巳",
+          yearRange: "2017년~2026년",
         },
       },
     });
@@ -163,7 +166,7 @@ describe("major fortune generation handler", () => {
       ok: false,
       kind: "majorFortune",
       error: {
-        code: "MAJOR_FORTUNE_GENERATION_FAILED",
+        code: "INVALID_REPORT_INPUT",
       },
     });
   });

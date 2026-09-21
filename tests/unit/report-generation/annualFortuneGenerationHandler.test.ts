@@ -154,18 +154,18 @@ describe("annual fortune generation handler", () => {
     });
   });
 
-  it("uses fixture major fortune cycles for the major annual cross context", async () => {
+  it("uses the customer cycle at the selected year for annual cross context", async () => {
     const result = await generateAnnualFortuneProductDraft(baseInput, fixed2026Options);
 
     expect(result).toMatchObject({
       ok: true,
       evidencePacket: {
         currentMajorFortune: {
-          ganji: "戊辰",
-          yearRange: "2026년~2035년",
+          ganji: "己巳",
+          yearRange: "2017년~2026년",
         },
         majorAnnualCross: {
-          majorGanji: "戊辰",
+          majorGanji: "己巳",
           annualGanji: "丙午",
         },
       },
@@ -193,7 +193,7 @@ describe("annual fortune generation handler", () => {
       ok: false,
       kind: "annualFortune",
       error: {
-        code: "ANNUAL_FORTUNE_GENERATION_FAILED",
+        code: "INVALID_REPORT_INPUT",
       },
     });
   });

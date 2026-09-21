@@ -1,4 +1,5 @@
 import type { AnnualFortuneMode } from "../report-knowledge/annualFortuneTypes";
+import type { DayunSelection } from "../saju/customerDayun";
 
 export type AnnualFortuneReportMode = Exclude<
   AnnualFortuneMode,
@@ -36,6 +37,7 @@ export interface AnnualFortuneDraftMonthlyHighlight {
 }
 
 export interface AnnualFortuneReportDraft {
+  readonly dayunContext?: DayunSelection;
   readonly version: "v1";
   readonly productType: "annual_fortune";
   readonly productVersion: "v1";

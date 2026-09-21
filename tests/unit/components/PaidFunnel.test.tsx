@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { isValidElement, type ReactElement, type ReactNode } from "react";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import NewReportPage, {
   getAnnualFortuneYearOptions,
   getAsiaSeoulCurrentYear,
@@ -15,6 +15,14 @@ vi.mock("react", async (importOriginal) => ({
   ...await importOriginal<typeof import("react")>(),
   use: () => ({ product: hooks.product }),
   useId: () => "checkout-notice",
+  useEffect: (effect: () => void | (() => void), deps: unknown[]) => {
+    const index = hooks.cursor++;
+    const previous = hooks.slots[index] as { deps: unknown[]; cleanup?: () => void } | undefined;
+    if (!previous || deps.some((d, i) => d !== previous.deps[i])) {
+      previous?.cleanup?.();
+      hooks.slots[index] = { deps, cleanup: effect() };
+    }
+  },
   useState: (initial: unknown) => {
     const index = hooks.cursor++;
     if (!(index in hooks.slots)) hooks.slots[index] = typeof initial === "function" ? initial() : initial;
@@ -63,29 +71,37 @@ function complete() {
     change("personBName", "사람 둘"); change("personBBirthDate", "2000-02-03"); change("personBBirthTime", "14:15");
   } else {
     change("name", "검증 이름"); change("birthDate", "1999-07-31"); change("birthTime", "08:30");
+    if (["major-fortune", "annual-fortune"].includes(hooks.product)) change("gender", "MALE");
   }
 }
+async function settleReadiness() { page(); await vi.advanceTimersByTimeAsync(251); page(); }
 const products = [
   ["saju-mbti-full", "saju_mbti_full"], ["career-money-study", "career_money_study"],
   ["love-marriage-child", "love_marriage_child"], ["compatibility", "saju_mbti_compatibility"],
   ["major-fortune", "major_fortune"], ["annual-fortune", "annual_fortune"],
 ] as const;
 
-beforeEach(() => { hooks.slots = []; hooks.cursor = 0; hooks.product = "saju-mbti-full"; });
+beforeEach(() => {
+  hooks.slots = []; hooks.cursor = 0; hooks.product = "saju-mbti-full";
+  vi.useFakeTimers(); vi.setSystemTime(new Date("2026-09-21T12:00:00+09:00"));
+  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ ok: true })));
+});
+afterEach(() => { vi.clearAllTimers(); vi.useRealTimers(); vi.unstubAllGlobals(); });
 
 describe("paid funnel contracts and progressive review", () => {
-  it.each(products)("%s preserves product, catalog price, required fields and five separate consents", (slug, type) => {
+  it.each(products)("%s preserves product, catalog price, required fields and five separate consents", async (slug, type) => {
     hooks.product = slug;
     expect(getReportProduct(type)?.amount).toBe(1290);
     expect(checkout().entry.props.productType).toBe(type);
     expect(paymentButton()).toBeUndefined();
     expect(JSON.stringify(checkout().tree)).toContain("필수 정보를 입력하면 결제 전 내용을 확인할 수 있습니다.");
     expect(JSON.stringify(checkout().tree)).not.toContain("최종 확인");
-    const required = elements(page()).filter((el) => el.props["aria-required"] === "true").map((el) => el.props.name);
+    const required = elements(page()).filter((el) => el.props["aria-required"] === "true" || el.props["aria-required"] === true).map((el) => el.props.name);
     expect(required).toEqual(slug === "compatibility"
       ? ["personAName", "personABirthDate", "personBName", "personBBirthDate", "relationshipType"]
-      : ["name", "birthDate", ...(slug === "annual-fortune" ? ["selectedYear"] : [])]);
+      : ["name", "birthDate", ...(["major-fortune", "annual-fortune"].includes(slug) ? ["gender"] : []), ...(slug === "annual-fortune" ? ["selectedYear"] : [])]);
     complete();
+    await settleReadiness();
     expect(JSON.stringify(checkout().tree)).toContain("최종 확인");
     expect(paymentButton()?.props.disabled).toBe(true);
     expect(agreeAll()).toBe(5);
@@ -101,7 +117,26 @@ describe("paid funnel contracts and progressive review", () => {
     change(name, "");
     expect(paymentButton()).toBeUndefined();
     change(name, "수정 이름");
+    await settleReadiness();
     expect(paymentButton()?.props.disabled).toBe(false); // Launcher state survives edits.
+  });
+
+  it.each(["major-fortune", "annual-fortune"])("keeps %s payment disabled for missing gender, pending or rejected calculation", async slug => {
+    hooks.product = slug; complete(); change("gender", "");
+    await settleReadiness();
+    expect(fetch).not.toHaveBeenCalled();
+    expect(paymentButton()).toBeUndefined();
+    change("gender", "MALE");
+    vi.mocked(fetch).mockResolvedValueOnce(Response.json({ ok: false, message: "정확한 출생시간을 입력해 주세요." }, { status: 400 }));
+    expect(paymentButton()).toBeUndefined();
+    await settleReadiness();
+    expect(paymentButton()).toBeUndefined();
+    expect(JSON.stringify(page())).toContain("정확한 출생시간을 입력해 주세요.");
+    change("birthTime", "08:31");
+    await settleReadiness(); agreeAll();
+    expect(paymentButton()?.props.disabled).toBe(false);
+    change("birthTime", "08:32");
+    expect(paymentButton()).toBeUndefined(); // Earlier success cannot authorize changed input.
   });
 
   it.each(["saju-mbti-full", "compatibility"])("%s preserves exact / approximate / unknown behavior and payload", (slug) => {
@@ -137,13 +172,14 @@ describe("paid funnel contracts and progressive review", () => {
     for (const text of ["사람 A", "사람 B", "사람 하나", "사람 둘", "2000-02-03", "사업·협업"]) expect(review).toContain(text);
   });
 
-  it("keeps annual year and optional context in the original payload", () => {
-    hooks.product = "annual-fortune"; complete(); agreeAll();
+  it("keeps annual year and optional context in the original payload", async () => {
+    hooks.product = "annual-fortune"; complete(); await settleReadiness(); agreeAll();
     const currentYear = getAsiaSeoulCurrentYear();
     change("selectedYear", ""); expect(paymentButton()).toBeUndefined();
     change("selectedYear", String(currentYear - 6)); expect(paymentButton()).toBeUndefined();
     change("selectedYear", String(currentYear));
     change("jobStatus", "student"); change("relationshipStatus", "single"); change("detailedJob", "대학생");
+    await settleReadiness();
     const snapshot = checkout().entry.props.inputSnapshot as { reportInputPayload: unknown };
     expect(snapshot.reportInputPayload).toMatchObject({ productOptions: { selectedYear: String(currentYear) }, userContext: { jobStatus: "student", relationshipStatus: "single", detailJob: "대학생", focusAreas: [] } });
     expect(JSON.stringify(checkout().entry.props.reviewGroups)).toContain(String(currentYear));

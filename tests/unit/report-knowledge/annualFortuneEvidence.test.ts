@@ -230,7 +230,7 @@ describe("annualFortuneEvidence", () => {
       stemTenGod: "편재",
       branchTenGod: "편재",
       yearRange: "2026년~2035년",
-      ageRange: "한국나이 27세~36세",
+      ageRange: "대운표 기준 27세~36세",
     });
     expect(packet.majorAnnualCross).toMatchObject({
       majorGanji: "戊辰",
