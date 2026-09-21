@@ -241,6 +241,7 @@ type TimeBranchSelection = TimeBranchValue | "";
 type CompatibilityPersonInputState = {
   readonly name: string;
   readonly birthDate: string;
+  readonly paidBirthTimeMode: "exact" | "approximate" | "unknown";
   readonly birthTime: string;
   readonly timeBranch: TimeBranchSelection;
   readonly birthTimeUnknown: boolean;
@@ -264,6 +265,7 @@ type CompatibilityRelationshipTypeSelection =
 type AnnualFortuneInputState = {
   readonly name: string;
   readonly birthDate: string;
+  readonly paidBirthTimeMode: "exact" | "approximate" | "unknown";
   readonly birthTime: string;
   readonly timeBranch: TimeBranchSelection;
   readonly birthTimeUnknown: boolean;
@@ -279,7 +281,7 @@ type AnnualFortuneInputState = {
 type MajorFortuneInputState = Omit<AnnualFortuneInputState, "selectedYear">;
 type FortuneBirthTimeSummaryInput = Pick<
   AnnualFortuneInputState,
-  "birthTimeUnknown" | "birthTime" | "timeBranch"
+  "paidBirthTimeMode" | "birthTimeUnknown" | "birthTime" | "timeBranch"
 >;
 
 const annualRelationshipStatusOptions = [
@@ -333,10 +335,33 @@ const annualFocusAreaOptions = [
   "생활 리듬",
 ] as const satisfies readonly FocusArea[];
 
+const ANNUAL_FORTUNE_BASE_YEAR_COUNT = 6;
+
+export function getAsiaSeoulCurrentYear(referenceDate = new Date()): number {
+  return Number(
+    new Intl.DateTimeFormat("en-US", {
+      timeZone: "Asia/Seoul",
+      year: "numeric",
+    }).format(referenceDate),
+  );
+}
+
+export function getAnnualFortuneYearOptions(
+  referenceDate = new Date(),
+): readonly number[] {
+  const currentYear = getAsiaSeoulCurrentYear(referenceDate);
+
+  return Array.from(
+    { length: ANNUAL_FORTUNE_BASE_YEAR_COUNT },
+    (_, index) => currentYear - (ANNUAL_FORTUNE_BASE_YEAR_COUNT - 1) + index,
+  );
+}
+
 function createCompatibilityPersonInputState(): CompatibilityPersonInputState {
   return {
     name: "",
     birthDate: "",
+    paidBirthTimeMode: "exact",
     birthTime: "",
     timeBranch: "",
     birthTimeUnknown: false,
@@ -349,6 +374,7 @@ function createAnnualFortuneInputState(): AnnualFortuneInputState {
   return {
     name: "",
     birthDate: "",
+    paidBirthTimeMode: "exact",
     birthTime: "",
     timeBranch: "",
     birthTimeUnknown: false,
@@ -358,7 +384,7 @@ function createAnnualFortuneInputState(): AnnualFortuneInputState {
     jobStatus: "",
     detailedJob: "",
     focusAreas: [],
-    selectedYear: String(new Date().getFullYear()),
+    selectedYear: String(getAsiaSeoulCurrentYear()),
   };
 }
 
@@ -366,6 +392,7 @@ function createMajorFortuneInputState(): MajorFortuneInputState {
   return {
     name: "",
     birthDate: "",
+    paidBirthTimeMode: "exact",
     birthTime: "",
     timeBranch: "",
     birthTimeUnknown: false,
@@ -538,10 +565,13 @@ function isCompatibilityPersonRequiredInputComplete(
 function isAnnualFortuneRequiredInputComplete(
   input: AnnualFortuneInputState,
 ): boolean {
+  const selectedYear = Number(input.selectedYear);
+
   return (
     input.name.trim().length > 0 &&
     input.birthDate.trim().length > 0 &&
-    input.selectedYear.trim().length > 0
+    Number.isInteger(selectedYear) &&
+    getAnnualFortuneYearOptions().includes(selectedYear)
   );
 }
 
@@ -687,6 +717,129 @@ function createCheckoutInputSnapshot(input: {
   };
 }
 
+type PaidFunnelBirthTimeMode = "exact" | "approximate" | "unknown";
+
+function getPaidFunnelBirthTimeMode(
+  value: FortuneBirthTimeSummaryInput,
+): PaidFunnelBirthTimeMode {
+  return value.paidBirthTimeMode;
+}
+
+function renderPaidFunnelBirthTimeFields({
+  prefix,
+  names,
+  value,
+  onChange,
+}: {
+  readonly prefix: string;
+  readonly names: {
+    readonly birthTime: string;
+    readonly timeBranch: string;
+    readonly birthTimeUnknown: string;
+  };
+  readonly value: FortuneBirthTimeSummaryInput;
+  readonly onChange: (value: FortuneBirthTimeSummaryInput) => void;
+}) {
+  const mode = getPaidFunnelBirthTimeMode(value);
+
+  function selectMode(nextMode: PaidFunnelBirthTimeMode) {
+    if (nextMode === "unknown") {
+      onChange({ paidBirthTimeMode: "unknown", birthTime: "", timeBranch: "", birthTimeUnknown: true });
+      return;
+    }
+
+    if (nextMode === "approximate") {
+      onChange({ paidBirthTimeMode: "approximate", birthTime: "", timeBranch: value.timeBranch, birthTimeUnknown: false });
+      return;
+    }
+
+    onChange({ paidBirthTimeMode: "exact", birthTime: value.birthTime, timeBranch: "", birthTimeUnknown: false });
+  }
+
+  return (
+    <fieldset className={styles.birthTimeFieldset}>
+      <legend>출생시간 · 선택</legend>
+      <div className={styles.birthTimeModes}>
+        {([
+          ["exact", "정확히 알아요"],
+          ["approximate", "대략 알아요"],
+          ["unknown", "몰라요"],
+        ] as const).map(([option, labelKo]) => (
+          <label key={option} className={styles.birthTimeMode}>
+            <input
+              type="radio"
+              name={`${prefix}BirthTimeMode`}
+              value={option}
+              checked={mode === option}
+              onChange={() => selectMode(option)}
+            />
+            <span>{labelKo}</span>
+          </label>
+        ))}
+      </div>
+
+      {mode === "exact" ? (
+        <div className={styles.birthTimeControl}>
+          <label htmlFor={`${prefix}BirthTime`}>정확한 시간</label>
+          <input
+            id={`${prefix}BirthTime`}
+            name={names.birthTime}
+            type="time"
+            value={value.birthTime}
+            style={{ colorScheme: "light" }}
+            onChange={(event) =>
+              onChange({
+                birthTime: event.target.value,
+                paidBirthTimeMode: "exact",
+                timeBranch: "",
+                birthTimeUnknown: false,
+              })
+            }
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
+          />
+        </div>
+      ) : null}
+
+      {mode === "approximate" ? (
+        <div className={styles.birthTimeControl}>
+          <label htmlFor={`${prefix}TimeBranch`}>대략적인 시간대</label>
+          <select
+            id={`${prefix}TimeBranch`}
+            name={names.timeBranch}
+            value={value.timeBranch}
+            onChange={(event) =>
+              onChange({
+                birthTime: "",
+                paidBirthTimeMode: "approximate",
+                timeBranch: event.target.value as TimeBranchSelection,
+                birthTimeUnknown: false,
+              })
+            }
+            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
+          >
+            <option value="">시간대를 선택해 주세요</option>
+            {timeBranches.map((branch) => (
+              <option key={branch.value} value={branch.value}>
+                {branch.labelKo}
+              </option>
+            ))}
+          </select>
+        </div>
+      ) : null}
+
+      {mode === "unknown" ? (
+        <p className={styles.birthTimeNote}>출생시간을 모르는 상태로 진행합니다.</p>
+      ) : null}
+
+      <input
+        type="hidden"
+        name={names.birthTimeUnknown}
+        value={value.birthTimeUnknown ? "on" : ""}
+      />
+    </fieldset>
+  );
+}
+
 function renderCompatibilityPersonInputSection(input: {
   readonly prefix: "personA" | "personB";
   readonly titleKo: string;
@@ -749,88 +902,24 @@ function renderCompatibilityPersonInputSection(input: {
           />
         </div>
 
-        <div className="space-y-2">
-          <label
-            htmlFor={`${prefix}BirthTime`}
-            className="block text-sm font-medium text-[#3f3129]"
-          >
-            출생시간
-          </label>
-          <input
-            id={`${prefix}BirthTime`}
-            name={`${prefix}BirthTime`}
-            type="time"
-            aria-describedby={`${prefix}TimeHelp`}
-            value={value.birthTime}
-            style={{ colorScheme: "light" }}
-            onChange={(event) =>
-              onChange({
-                ...value,
-                birthTime: event.target.value,
-                birthTimeUnknown: false,
-              })
-            }
-            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label
-            htmlFor={`${prefix}TimeBranch`}
-            className="block text-sm font-medium text-[#3f3129]"
-          >
-            대략적인 시간대
-          </label>
-          <select
-            id={`${prefix}TimeBranch`}
-            name={`${prefix}TimeBranch`}
-            aria-describedby={`${prefix}TimeHelp`}
-            value={value.timeBranch}
-            onChange={(event) =>
-              onChange({
-                ...value,
-                timeBranch: event.target.value as TimeBranchSelection,
-                birthTimeUnknown: false,
-              })
-            }
-            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
-          >
-            <option value="">시간대를 선택해 주세요</option>
-            {timeBranches.map((branch) => (
-              <option key={branch.value} value={branch.value}>
-                {branch.labelKo}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <p id={`${prefix}TimeHelp`} className={styles.timeHelp}>
-          정확한 시간을 모르시면 시간대를 선택하거나 ‘출생시간 모름’을 선택해 주세요. 둘 다 입력하면 정확한 시간을 기준으로 합니다.
-        </p>
-        <label className={styles.unknown}>
-          <input
-            type="checkbox"
-            name={`${prefix}BirthTimeUnknown`}
-            checked={value.birthTimeUnknown}
-            onChange={(event) =>
-              onChange({
-                ...value,
-                birthTimeUnknown: event.target.checked,
-                birthTime: event.target.checked ? "" : value.birthTime,
-                timeBranch: event.target.checked ? "" : value.timeBranch,
-              })
-            }
-            className="h-4 w-4"
-          />
-          출생시간 모름
-        </label>
+        {renderPaidFunnelBirthTimeFields({
+          prefix,
+          names: {
+            birthTime: `${prefix}BirthTime`,
+            timeBranch: `${prefix}TimeBranch`,
+            birthTimeUnknown: `${prefix}BirthTimeUnknown`,
+          },
+          value,
+          onChange: (birthTimeValue) =>
+            onChange({ ...value, ...birthTimeValue }),
+        })}
 
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}Gender`}
             className="block text-sm font-medium text-[#3f3129]"
           >
-            성별
+            성별 · 선택
           </label>
           <select
             id={`${prefix}Gender`}
@@ -852,7 +941,7 @@ function renderCompatibilityPersonInputSection(input: {
             htmlFor={`${prefix}MbtiType`}
             className="block text-sm font-medium text-[#3f3129]"
           >
-            MBTI
+            MBTI · 선택
           </label>
           <select
             id={`${prefix}MbtiType`}
@@ -886,9 +975,9 @@ function renderSingleProductCommonInputSection(input: {
   return (
     <section className={styles.inputSection}>
       <div className="space-y-2">
-        <h2 className={styles.sectionTitle}>01 정보 입력</h2>
+        <h2 className={styles.sectionTitle}>기본 정보</h2>
         <p className={styles.hint}>
-          기본 정보는 이름과 생년월일만 필수입니다. 양력 · 한국 시간 기준입니다.
+          이름과 생년월일은 결제와 생성에 필요한 필수 정보입니다. 양력 · 한국 시간 기준입니다.
         </p>
       </div>
 
@@ -934,88 +1023,24 @@ function renderSingleProductCommonInputSection(input: {
           />
         </div>
 
-        <div className="space-y-2">
-          <label
-            htmlFor={`${prefix}BirthTime`}
-            className="block text-sm font-medium text-[#3f3129]"
-          >
-            출생시간
-          </label>
-          <input
-            id={`${prefix}BirthTime`}
-            name="birthTime"
-            type="time"
-            aria-describedby={`${prefix}TimeHelp`}
-            value={value.birthTime}
-            style={{ colorScheme: "light" }}
-            onChange={(event) =>
-              onChange({
-                ...value,
-                birthTime: event.target.value,
-                birthTimeUnknown: false,
-              })
-            }
-            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label
-            htmlFor={`${prefix}TimeBranch`}
-            className="block text-sm font-medium text-[#3f3129]"
-          >
-            대략적인 시간대
-          </label>
-          <select
-            id={`${prefix}TimeBranch`}
-            name="timeBranch"
-            aria-describedby={`${prefix}TimeHelp`}
-            value={value.timeBranch}
-            onChange={(event) =>
-              onChange({
-                ...value,
-                timeBranch: event.target.value as TimeBranchSelection,
-                birthTimeUnknown: false,
-              })
-            }
-            className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
-          >
-            <option value="">시간대를 선택해 주세요</option>
-            {timeBranches.map((branch) => (
-              <option key={branch.value} value={branch.value}>
-                {branch.labelKo}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <p id={`${prefix}TimeHelp`} className={styles.timeHelp}>
-          정확한 시간을 모르시면 시간대를 선택하거나 ‘출생시간 모름’을 선택해 주세요. 둘 다 입력하면 정확한 시간을 기준으로 합니다.
-        </p>
-        <label className={styles.unknown}>
-          <input
-            type="checkbox"
-            name="birthTimeUnknown"
-            checked={value.birthTimeUnknown}
-            onChange={(event) =>
-              onChange({
-                ...value,
-                birthTimeUnknown: event.target.checked,
-                birthTime: event.target.checked ? "" : value.birthTime,
-                timeBranch: event.target.checked ? "" : value.timeBranch,
-              })
-            }
-            className="h-4 w-4"
-          />
-          출생시간 모름
-        </label>
+        {renderPaidFunnelBirthTimeFields({
+          prefix,
+          names: {
+            birthTime: "birthTime",
+            timeBranch: "timeBranch",
+            birthTimeUnknown: "birthTimeUnknown",
+          },
+          value,
+          onChange: (birthTimeValue) =>
+            onChange({ ...value, ...birthTimeValue }),
+        })}
 
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}Gender`}
             className="block text-sm font-medium text-[#3f3129]"
           >
-            성별
+            성별 · 선택
           </label>
           <select
             id={`${prefix}Gender`}
@@ -1035,7 +1060,7 @@ function renderSingleProductCommonInputSection(input: {
             htmlFor={`${prefix}MbtiType`}
             className="block text-sm font-medium text-[#3f3129]"
           >
-            MBTI
+            MBTI · 선택
           </label>
           <select
             id={`${prefix}MbtiType`}
@@ -1057,14 +1082,14 @@ function renderSingleProductCommonInputSection(input: {
 
         <fieldset className={styles.context}>
           <legend>현재 상황 · 선택</legend>
-          <p className={styles.hint}>현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다.</p>
+          <p className={styles.hint}>선택 정보는 현재 상황에 맞춰 해석을 더 구체화하는 데 사용됩니다.</p>
           <div className={styles.fields}>
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}RelationshipStatus`}
             className="block text-sm font-medium text-[#3f3129]"
           >
-            현재 연애 상태
+            현재 연애 상태 · 선택
           </label>
           <select
             id={`${prefix}RelationshipStatus`}
@@ -1088,7 +1113,7 @@ function renderSingleProductCommonInputSection(input: {
             htmlFor={`${prefix}JobStatus`}
             className="block text-sm font-medium text-[#3f3129]"
           >
-            직업 상태
+            직업 상태 · 선택
           </label>
           <select
             id={`${prefix}JobStatus`}
@@ -1112,7 +1137,7 @@ function renderSingleProductCommonInputSection(input: {
             htmlFor={`${prefix}DetailedJob`}
             className="block text-sm font-medium text-[#3f3129]"
           >
-            세부 직업
+            세부 직업 · 선택
           </label>
           <input
             id={`${prefix}DetailedJob`}
@@ -1205,6 +1230,7 @@ export default function NewReportPage({
   const compatibilityCtaLabel = getSingleProductReadyCtaLabel(COMPATIBILITY_PRODUCT_KEY);
   const isSingleProductAnnual =
     selectedProduct.productKey === ANNUAL_FORTUNE_PRODUCT_KEY;
+  const annualFortuneYearOptions = getAnnualFortuneYearOptions();
   const isSingleProductInputReady = isSingleProductAnnual
     ? isAnnualFortuneRequiredInputComplete(singleProductInput)
     : isMajorFortuneRequiredInputComplete(singleProductInput);
@@ -1302,18 +1328,13 @@ export default function NewReportPage({
               <section className={styles.inputSection}>
                 <div className="space-y-2">
                   <h2 className={styles.sectionTitle}>
-                    세운 전용 조회 연도
+                    조회 연도
                   </h2>
-                  <p className="text-sm leading-6 text-[#6b5a4d]">
-                    기본값은 현재 연도입니다. 과거 5년과 올해를 우선 조회하고,
-                    12월 1일 이후에는 다음 해 신년사주 조회가 열립니다.
-                  </p>
-                  <p className="text-sm leading-6 text-[#7d6d60]">
-                    2년 이상 미래 조회와 과거 10년 조회는 단계적으로
-                    확장합니다.
+                  <p className={styles.hint}>
+                    올해를 포함한 최근 6개 연도 중 확인하고 싶은 한 해를 선택해 주세요.
                   </p>
                 </div>
-                <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
+                <div className="grid gap-4 sm:max-w-sm">
                   <div className="space-y-2">
                     <label
                       htmlFor="selectedYear"
@@ -1321,12 +1342,10 @@ export default function NewReportPage({
                     >
                       조회 연도 · 필수
                     </label>
-                    <input
+                    <select
                       id="selectedYear"
                       name="selectedYear"
                       aria-required="true"
-                      type="number"
-                      inputMode="numeric"
                       value={singleProductInput.selectedYear}
                       onChange={(event) =>
                         setSingleProductInput({
@@ -1335,7 +1354,13 @@ export default function NewReportPage({
                         })
                       }
                       className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
-                    />
+                    >
+                      {annualFortuneYearOptions.map((year) => (
+                        <option key={year} value={String(year)}>
+                          {year}년
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
               </section>
@@ -2106,14 +2131,10 @@ export default function NewReportPage({
             <section className="space-y-5 rounded-lg border border-[#4a3434] bg-[#211817]/90 p-5 shadow-xl shadow-black/20">
               <div className="space-y-2">
                 <p className="text-sm font-bold text-[#c79a43]">
-                  세운 전용 조회 연도
+                  조회 연도
                 </p>
                 <p className="text-sm leading-6 text-[#cfc5b8]">
-                  기본값은 현재 연도입니다. 과거 5년과 올해를 우선 조회하고,
-                  12월 1일 이후에는 다음 해 신년사주 조회가 열립니다.
-                </p>
-                <p className="text-sm leading-6 text-[#92877b]">
-                  2년 이상 미래 조회와 과거 10년 조회는 단계적으로 제공합니다.
+                  올해를 포함한 최근 6개 연도 중 확인하고 싶은 한 해를 선택해 주세요.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
@@ -2291,7 +2312,7 @@ export default function NewReportPage({
                     htmlFor="relationshipType"
                     className="block text-sm font-medium text-[#3f3129]"
                   >
-                    관계 선택
+                    관계 선택 · 필수
                   </label>
                   <select
                     id="relationshipType"

@@ -405,17 +405,23 @@ export default function DevTossCheckoutLauncher({
   ];
   const groups = reviewGroups ?? [{ rows: fallbackReviewRows }];
 
+  if (!reviewReady) {
+    return (
+      <p className={styles.pendingReview} role="status" data-checkout-ready="false">
+        필수 정보를 입력하면 결제 전 내용을 확인할 수 있습니다.
+      </p>
+    );
+  }
+
   return (
-    <section className={styles.review} aria-label="결제 직전 확인" data-checkout-ready={reviewReady}>
+    <section className={styles.review} aria-label="결제 직전 확인" data-checkout-ready="true">
       <div className={styles.reviewHeader}>
-        <h2><span>02</span>최종 확인</h2>
-        {reviewReady && onEditInput ? (
+        <h2>최종 확인</h2>
+        {onEditInput ? (
           <button type="button" onClick={onEditInput} className={styles.edit}>입력값 수정하기</button>
         ) : null}
       </div>
-      {/* Keep confirmations mounted when input becomes incomplete so edits preserve state. */}
-      <div className={styles.reviewBody} hidden={!reviewReady}>
-        <p className={styles.product}>{productLabelKo}</p>
+      <div className={styles.reviewBody}>
         <section aria-label="입력값 최종 확인">
           <div className={styles.reviewGroups}>
             {groups.map((group, index) => (
@@ -426,6 +432,10 @@ export default function DevTossCheckoutLauncher({
             ))}
           </div>
         </section>
+        <dl className={styles.orderSummary}>
+          <div><dt>상품</dt><dd>{productLabelKo}</dd></div>
+          <div><dt>총 결제금액</dt><dd>{priceLabel}</dd></div>
+        </dl>
         <section>
           <h3>서비스 제공 방식</h3>
           <ul>
@@ -443,12 +453,6 @@ export default function DevTossCheckoutLauncher({
         <fieldset className={styles.consents}>
           <legend>약관 및 개인정보 동의</legend>
           <p>{prePaymentPrivacyNoticeKo}</p>
-          <nav aria-label="결제 전 정책 링크" className={styles.policyLinks}>
-            <a href="/terms">이용약관</a>
-            <a href="/privacy">개인정보처리방침</a>
-            <a href="/refund">환불정책</a>
-            <a href="/business">사업자정보</a>
-          </nav>
           <p>만 14세 이상만 이용할 수 있습니다. 만 19세 미만 사용자는 법정대리인 동의가 필요할 수 있습니다.</p>
           {isUnder14Blocked ? <p role="alert" className={styles.error}>{UNDER_14_BLOCK_MESSAGE_KO}</p> : null}
           {shouldShowMinorNotice ? <p>{MINOR_NOTICE_MESSAGE_KO}</p> : null}
@@ -474,6 +478,12 @@ export default function DevTossCheckoutLauncher({
               updateLegalConfirmation("refundRestriction", checked)
             }
           />
+          <nav aria-label="결제 전 정책 링크" className={styles.policyLinks}>
+            <a href="/terms">이용약관</a>
+            <a href="/privacy">개인정보처리방침</a>
+            <a href="/refund">환불정책</a>
+            <a href="/business">사업자정보</a>
+          </nav>
           <ConfirmationCheckbox
             checked={legalConfirmations.policyAgreement}
             labelKo="[필수] 이용약관, 개인정보처리방침, 환불정책을 확인하고 동의합니다."
@@ -500,7 +510,6 @@ export default function DevTossCheckoutLauncher({
           ) : null}
           </div>
         </fieldset>
-        <dl className={styles.total}><dt>총 결제금액</dt><dd>{priceLabel}</dd></dl>
       </div>
       <p id={noticeId} className={styles.notice} aria-live="polite">
         {!isInputComplete

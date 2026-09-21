@@ -131,8 +131,8 @@ describe("new report page source", () => {
       "singleProductCtaLabel",
       "renderSingleProductCommonInputSection",
       "현재 연애 상태, 직업 상태, 세부 직업은 계산 원인이 아니라 해석을 현실 장면으로 바꾸는 참고 정보입니다.",
-      "01 정보 입력",
-      "기본 정보는 이름과 생년월일만 필수입니다.",
+      "기본 정보",
+      "이름과 생년월일은 결제와 생성에 필요한 필수 정보입니다.",
       "이름을 입력해 주세요",
       'name="name"',
       'name="birthDate"',
@@ -216,7 +216,7 @@ describe("new report page source", () => {
       "getSingleProductReadyCtaLabel",
       "필수 정보를 입력해 주세요",
       "onSubmit={handlePreviewOnlySubmit}",
-      "현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다.",
+      "선택 정보는 현재 상황에 맞춰 해석을 더 구체화하는 데 사용됩니다.",
     ];
 
     for (const marker of requiredMarkers) {
@@ -439,12 +439,9 @@ describe("new report page source", () => {
       "현재 연애 상태",
       "직업 상태",
       "세부 직업",
-      "세운 전용 조회 연도",
-      "기본값은 현재 연도입니다.",
-      "과거 5년과 올해",
-      "12월 1일 이후에는 다음 해 신년사주 조회",
-      "2년 이상 미래 조회와 과거 10년 조회는 단계적으로 제공합니다.",
-      "과거 10년 조회는",
+      "getAsiaSeoulCurrentYear",
+      "getAnnualFortuneYearOptions",
+      "올해를 포함한 최근 6개 연도 중 확인하고 싶은 한 해를 선택해 주세요.",
       "입력 정보",
       "현실 맥락",
       "조회 연도",
@@ -461,6 +458,16 @@ describe("new report page source", () => {
 
     for (const marker of requiredMarkers) {
       expect(pageSource).toContain(marker);
+    }
+
+    for (const removedRoadmapMarker of [
+      "세운 전용 조회 연도",
+      "12월 1일 이후에는 다음 해 신년사주 조회",
+      "2년 이상 미래 조회",
+      "과거 10년 조회",
+      "단계적으로 제공합니다",
+    ]) {
+      expect(pageSource).not.toContain(removedRoadmapMarker);
     }
 
     const removedMarkers = [

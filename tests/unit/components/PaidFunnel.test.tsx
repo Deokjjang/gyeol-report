@@ -1,7 +1,10 @@
 import { readFileSync } from "node:fs";
 import { isValidElement, type ReactElement, type ReactNode } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import NewReportPage from "../../../src/app/report/new/page";
+import NewReportPage, {
+  getAnnualFortuneYearOptions,
+  getAsiaSeoulCurrentYear,
+} from "../../../src/app/report/new/page";
 import Launcher from "../../../src/components/payment/DevTossCheckoutLauncher";
 import { getReportProduct } from "../../../src/lib/payment/reportProductCatalog";
 import { prePaymentRefundNoticeKo } from "../../../src/lib/legal/refundPolicy";
@@ -36,8 +39,10 @@ function checkout() {
   const entry = elements(tree).find((element) => element.type === Launcher)!;
   return { entry, tree: Launcher(entry.props as Parameters<typeof Launcher>[0]) };
 }
-function input(name: string) {
-  return elements(page()).find((element) => element.props.name === name)!;
+function input(name: string, value?: string) {
+  return elements(page()).find((element) =>
+    element.props.name === name && (value === undefined || element.props.value === value),
+  )!;
 }
 function change(name: string, value: string, checked = false) {
   const field = input(name);
@@ -45,7 +50,7 @@ function change(name: string, value: string, checked = false) {
   (field.props.onChange as (event: unknown) => void)({ target: { value, checked } });
 }
 function paymentButton() {
-  return elements(checkout().tree).find((element) => element.type === "button" && element.props["aria-describedby"] === "checkout-notice")!;
+  return elements(checkout().tree).find((element) => element.type === "button" && element.props["aria-describedby"] === "checkout-notice");
 }
 function agreeAll() {
   const checks = elements(checkout().tree).filter((element) => typeof element.props.labelKo === "string" && "checked" in element.props);
@@ -73,47 +78,53 @@ describe("paid funnel contracts and progressive review", () => {
     hooks.product = slug;
     expect(getReportProduct(type)?.amount).toBe(1290);
     expect(checkout().entry.props.productType).toBe(type);
-    expect(paymentButton().props.disabled).toBe(true);
-    expect(elements(checkout().tree).find((el) => "hidden" in el.props)?.props.hidden).toBe(true);
+    expect(paymentButton()).toBeUndefined();
+    expect(JSON.stringify(checkout().tree)).toContain("필수 정보를 입력하면 결제 전 내용을 확인할 수 있습니다.");
+    expect(JSON.stringify(checkout().tree)).not.toContain("최종 확인");
     const required = elements(page()).filter((el) => el.props["aria-required"] === "true").map((el) => el.props.name);
     expect(required).toEqual(slug === "compatibility"
       ? ["personAName", "personABirthDate", "personBName", "personBBirthDate", "relationshipType"]
       : ["name", "birthDate", ...(slug === "annual-fortune" ? ["selectedYear"] : [])]);
     complete();
-    expect(elements(checkout().tree).find((el) => "hidden" in el.props)?.props.hidden).toBe(false);
-    expect(paymentButton().props.disabled).toBe(true);
+    expect(JSON.stringify(checkout().tree)).toContain("최종 확인");
+    expect(paymentButton()?.props.disabled).toBe(true);
     expect(agreeAll()).toBe(5);
-    expect(paymentButton().props.disabled).toBe(false);
+    expect(paymentButton()?.props.disabled).toBe(false);
     // Every consent still independently gates payment.
     for (let index = 0; index < 5; index++) {
       const checks = elements(checkout().tree).filter((el) => typeof el.props.labelKo === "string" && "checked" in el.props);
       (checks[index].props.onChange as (value: boolean) => void)(false);
-      expect(paymentButton().props.disabled).toBe(true);
+      expect(paymentButton()?.props.disabled).toBe(true);
       (checks[index].props.onChange as (value: boolean) => void)(true);
     }
     const name = slug === "compatibility" ? "personBName" : "name";
     change(name, "");
-    expect(paymentButton().props.disabled).toBe(true);
-    expect(elements(checkout().tree).find((el) => "hidden" in el.props)?.props.hidden).toBe(true);
+    expect(paymentButton()).toBeUndefined();
     change(name, "수정 이름");
-    expect(paymentButton().props.disabled).toBe(false); // Mounted consent state survives edits.
+    expect(paymentButton()?.props.disabled).toBe(false); // Launcher state survives edits.
   });
 
   it.each(["saju-mbti-full", "compatibility"])("%s preserves exact / approximate / unknown behavior and payload", (slug) => {
     hooks.product = slug; complete();
     const name = (field: string) => slug === "compatibility" ? `personA${field[0].toUpperCase()}${field.slice(1)}` : field;
+    const modeName = slug === "compatibility" ? "personABirthTimeMode" : "singleProductBirthTimeMode";
     change(name("birthTime"), "08:30");
-    change(name("timeBranch"), "JINSI");
     let snapshot = checkout().entry.props.inputSnapshot as { reportInputPayload: { person?: Record<string, unknown>; personA?: Record<string, unknown> } };
-    expect(snapshot.reportInputPayload.person ?? snapshot.reportInputPayload.personA).toMatchObject({ birthTime: "08:30", approximateBirthTimeSlot: "JINSI", birthTimeUnknown: false });
-    change(name("birthTimeUnknown"), "", true);
-    expect(input(name("birthTime")).props.value).toBe("");
-    expect(input(name("timeBranch")).props.value).toBe("");
-    change(name("timeBranch"), "MYOSI");
-    expect(input(name("birthTimeUnknown")).props.checked).toBe(false);
+    expect(snapshot.reportInputPayload.person ?? snapshot.reportInputPayload.personA).toMatchObject({ birthTime: "08:30", approximateBirthTimeSlot: "", birthTimeUnknown: false });
+
+    (input(modeName, "approximate").props.onChange as () => void)();
+    change(name("timeBranch"), "JINSI");
     snapshot = checkout().entry.props.inputSnapshot as typeof snapshot;
-    expect(snapshot.reportInputPayload.person ?? snapshot.reportInputPayload.personA).toMatchObject({ birthTime: "", approximateBirthTimeSlot: "MYOSI", birthTimeUnknown: false });
-    expect(JSON.stringify(checkout().entry.props.reviewGroups)).toContain("묘시");
+    expect(snapshot.reportInputPayload.person ?? snapshot.reportInputPayload.personA).toMatchObject({ birthTime: "", approximateBirthTimeSlot: "JINSI", birthTimeUnknown: false });
+
+    (input(modeName, "unknown").props.onChange as () => void)();
+    snapshot = checkout().entry.props.inputSnapshot as typeof snapshot;
+    expect(snapshot.reportInputPayload.person ?? snapshot.reportInputPayload.personA).toMatchObject({ birthTime: "", approximateBirthTimeSlot: "", birthTimeUnknown: true });
+    expect(JSON.stringify(checkout().entry.props.reviewGroups)).toContain("출생시간 모름");
+
+    (input(modeName, "exact").props.onChange as () => void)();
+    snapshot = checkout().entry.props.inputSnapshot as typeof snapshot;
+    expect(snapshot.reportInputPayload.person ?? snapshot.reportInputPayload.personA).toMatchObject({ birthTime: "", approximateBirthTimeSlot: "", birthTimeUnknown: false });
   });
 
   it("keeps all seven compatibility relationships and distinct A/B review values", () => {
@@ -127,13 +138,23 @@ describe("paid funnel contracts and progressive review", () => {
 
   it("keeps annual year and optional context in the original payload", () => {
     hooks.product = "annual-fortune"; complete(); agreeAll();
-    change("selectedYear", ""); expect(paymentButton().props.disabled).toBe(true);
-    change("selectedYear", "2026");
+    const currentYear = getAsiaSeoulCurrentYear();
+    change("selectedYear", ""); expect(paymentButton()).toBeUndefined();
+    change("selectedYear", String(currentYear - 6)); expect(paymentButton()).toBeUndefined();
+    change("selectedYear", String(currentYear));
     change("jobStatus", "student"); change("relationshipStatus", "single"); change("detailedJob", "대학생");
     const snapshot = checkout().entry.props.inputSnapshot as { reportInputPayload: unknown };
-    expect(snapshot.reportInputPayload).toMatchObject({ productOptions: { selectedYear: "2026" }, userContext: { jobStatus: "student", relationshipStatus: "single", detailJob: "대학생", focusAreas: [] } });
-    expect(JSON.stringify(checkout().entry.props.reviewGroups)).toContain("2026");
-    expect(paymentButton().props.disabled).toBe(false);
+    expect(snapshot.reportInputPayload).toMatchObject({ productOptions: { selectedYear: String(currentYear) }, userContext: { jobStatus: "student", relationshipStatus: "single", detailJob: "대학생", focusAreas: [] } });
+    expect(JSON.stringify(checkout().entry.props.reviewGroups)).toContain(String(currentYear));
+    expect(paymentButton()?.props.disabled).toBe(false);
+  });
+
+  it("uses the Asia/Seoul year and exposes only the existing six-year annual range", () => {
+    expect(getAsiaSeoulCurrentYear(new Date("2026-12-31T15:30:00.000Z"))).toBe(2027);
+    expect(getAnnualFortuneYearOptions(new Date("2026-12-31T15:30:00.000Z"))).toEqual([2022, 2023, 2024, 2025, 2026, 2027]);
+    hooks.product = "annual-fortune";
+    const values = elements(input("selectedYear")).filter((element) => element.type === "option").map((element) => Number(element.props.value));
+    expect(values).toEqual(getAnnualFortuneYearOptions());
   });
 
   it("keeps under-14 blocking and the additional minor confirmation", () => {
@@ -142,11 +163,11 @@ describe("paid funnel contracts and progressive review", () => {
     const checks = elements(checkout().tree).filter((el) => typeof el.props.labelKo === "string" && "checked" in el.props);
     expect(checks).toHaveLength(6);
     for (const check of checks.slice(0, 5)) (check.props.onChange as (v: boolean) => void)(true);
-    expect(paymentButton().props.disabled).toBe(true);
+    expect(paymentButton()?.props.disabled).toBe(true);
     (checks[5].props.onChange as (v: boolean) => void)(true);
-    expect(paymentButton().props.disabled).toBe(false);
+    expect(paymentButton()?.props.disabled).toBe(false);
     change("birthDate", `${year - 10}-01-01`); agreeAll();
-    expect(paymentButton().props.disabled).toBe(true);
+    expect(paymentButton()?.props.disabled).toBe(true);
   });
 
   it("keeps canonical disclosures, policy links, accessible groups and reduced motion", () => {
@@ -160,5 +181,9 @@ describe("paid funnel contracts and progressive review", () => {
     expect(css).toContain("prefers-reduced-motion: reduce");
     expect(css).toContain(":focus-visible");
     expect(css).not.toContain("transition: all");
+    const pageSource = readFileSync("src/app/report/new/page.tsx", "utf8");
+    for (const roadmapCopy of ["단계적으로 확장", "2년 이상 미래 조회", "과거 10년 조회", "12월 1일 이후", "신년사주 조회가 열립니다"]) {
+      expect(pageSource).not.toContain(roadmapCopy);
+    }
   });
 });

@@ -316,9 +316,10 @@ describe("DevTossCheckoutLauncher", () => {
     );
 
     expect(html).toContain(
-      "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.",
+      "필수 정보를 입력하면 결제 전 내용을 확인할 수 있습니다.",
     );
-    expect(html).toContain("disabled");
+    expect(html).not.toContain("최종 확인");
+    expect(html).not.toContain("<button");
   });
 
   it("blocks checkout until all legal confirmations are checked", async () => {
