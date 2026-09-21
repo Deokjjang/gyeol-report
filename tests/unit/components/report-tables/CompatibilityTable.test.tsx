@@ -152,13 +152,13 @@ describe("CompatibilityTable", () => {
     const html = renderToStaticMarkup(<CompatibilityTable data={tableData} />);
 
     for (const marker of [
-      "♡",
       "A × B · 두 사람 연결",
       "속도와 구조가 만나는 관계",
     ]) {
       expect(html).toContain(marker);
     }
     expect(html).not.toContain("연결/궁합 요약표");
+    expect(html).not.toContain("♡");
     expect(html).not.toContain("궁합 헤드라인");
     expect(html).not.toContain("목표 설정과 실행 기준이 빠르게 맞는다.");
   });

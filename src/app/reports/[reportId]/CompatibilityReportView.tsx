@@ -1,3 +1,4 @@
+import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
 import type { ReactNode } from "react";
 
 import type { CompatibilityReportDraft } from "../../../lib/report-generation/compatibilityReportDraftTypes";
@@ -534,6 +535,7 @@ function SectionShell({
 }) {
   return (
     <section
+      id={`관계-${title.replace(/[^가-힣a-zA-Z0-9]+/gu, "-")}`} tabIndex={-1} data-reading-section=""
       className={[
         "space-y-4 rounded-xl border p-5 sm:p-6",
         accent
@@ -730,7 +732,6 @@ function ConnectionSummarySection({
 
 export function CompatibilityReportView({
   draft,
-  reportId,
 }: CompatibilityReportViewProps) {
   const analysis = getCompatibilityRelationshipAnalysis(draft);
   const compatibilityTableData = buildCompatibilityTopTableData(draft);
@@ -740,72 +741,19 @@ export function CompatibilityReportView({
 
   return (
     <article className="space-y-8 rounded-2xl border border-[#d8d1c4] bg-[#fffaf3] p-5 text-[#201a18] shadow-[0_24px_80px_rgba(42,31,24,0.13)] sm:p-7">
-      <header className="space-y-5 rounded-2xl border border-[#d7b56d]/35 bg-[#fffdf8] p-5 sm:p-6">
-        <div className="space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a2f]">
-            궁합 리포트
-          </p>
-          <h1 className="max-w-4xl text-2xl font-bold tracking-tight text-[#201a18] sm:text-3xl">
-            {formatCompatibilityDisplayText(draft.openingTitle, draft.relationshipType)}
-          </h1>
-          <div className="flex flex-wrap items-center gap-2 text-sm">
-            <span className="font-semibold text-[#3a2f29]">
-              {draft.personALabel}님 × {draft.personBLabel}님
-            </span>
-            <span className="rounded-full border border-[#d7b56d]/50 bg-[#fff8ea] px-2.5 py-1 text-xs font-semibold text-[#7f1d38]">
-              {relationshipLabel}
-            </span>
-          </div>
-        </div>
-        <div className="grid gap-4 lg:grid-cols-[12rem_1fr]">
-          <div
-            className="rounded-xl border border-[#d7b56d]/60 bg-[#fff8ea] p-4"
-            aria-label="궁합 점수"
-          >
-            <p className="text-xs font-semibold text-[#9a7a2f]">관계 온도</p>
-            <p className="mt-2 text-5xl font-bold tracking-tight text-[#7f1d38]">
-              {draft.scoreSummary.totalScore}점
-            </p>
-            <p className="mt-2 text-sm font-semibold leading-6 text-[#5a4633]">
-              {draft.scoreSummary.scoreLabel}
-            </p>
-          </div>
-          <div className="space-y-3 rounded-xl border border-[#eadfce] bg-[#fffaf3] p-4">
-            <p className="text-lg font-semibold leading-8 text-[#201a18]">
-              {formatCompatibilityDisplayText(draft.coreLine, draft.relationshipType)}
-            </p>
-            <p className="text-sm leading-6 text-[#5a4633]">
-              {formatCompatibilityDisplayText(
-                draft.openingSummary,
-                draft.relationshipType,
-              )}
-            </p>
-            <p className="text-sm leading-6 text-[#7b6a58]">
-              상담이나 예언이 아니라, 두 사람의 반복 패턴과 조율 조건을 보는 관계 분석 리포트입니다.
-            </p>
-          </div>
-        </div>
-        {reportId === undefined ? null : (
-          <dl className="grid gap-3 rounded-xl border border-[#eadfce] bg-[#fffaf3] p-4 text-sm">
-            <div className="grid gap-1 sm:grid-cols-[9rem_1fr]">
-              <dt className="font-medium text-[#7b6a58]">리포트 ID</dt>
-              <dd className="break-words text-[#201a18]">{reportId}</dd>
-            </div>
-            <div className="grid gap-1 sm:grid-cols-[9rem_1fr]">
-              <dt className="font-medium text-[#7b6a58]">두 사람</dt>
-              <dd className="text-[#201a18]">
-                {draft.personALabel}님 × {draft.personBLabel}님
-              </dd>
-            </div>
-            <div className="grid gap-1 sm:grid-cols-[9rem_1fr]">
-              <dt className="font-medium text-[#7b6a58]">관계 카테고리</dt>
-              <dd className="text-[#201a18]">{relationshipLabel}</dd>
-            </div>
-          </dl>
-        )}
-      </header>
+      <ReportCover product={`궁합 리포트 · ${relationshipLabel}`} title={formatCompatibilityDisplayText(draft.openingTitle, draft.relationshipType)} summary={formatCompatibilityDisplayText(draft.openingSummary, draft.relationshipType)} core={formatCompatibilityDisplayText(draft.coreLine, draft.relationshipType)}>
+        <p>{draft.personALabel}님 × {draft.personBLabel}님</p>
+        <dl aria-label="궁합 점수"><div><dt>관계 온도</dt><dd>{draft.scoreSummary.totalScore}점 · {draft.scoreSummary.scoreLabel}</dd></div></dl>
+        <p>상담이나 예언이 아니라, 두 사람의 반복 패턴과 조율 조건을 보는 관계 분석 리포트입니다.</p>
+      </ReportCover>
+      <ReportContents items={[
+        { id: "report-foundation", label: "두 사람 기초표" },
+        { id: "관계-한-줄-판정", label: "관계의 핵심" },
+        { id: "관계-대화와-갈등-회복", label: "대화와 갈등 회복" },
+        ...(analysis.repairStrategy.length ? [{ id: "관계-유지-전략", label: "유지 전략" }] : []),
+      ]} />
 
-      <section className="space-y-4" aria-label="상단 궁합 기초표">
+      <section className="space-y-4" id="report-foundation" tabIndex={-1} aria-label="상단 궁합 기초표">
         <div className="space-y-2">
           <h2 className="text-xl font-semibold text-[#201a18]">
             두 사람 기초표

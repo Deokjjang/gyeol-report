@@ -1,3 +1,4 @@
+import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
 import type { ReactNode } from "react";
 
 import type {
@@ -399,6 +400,7 @@ function renderTextSection(input: {
 }) {
   return (
     <section
+      id={input.id} tabIndex={-1} data-reading-section=""
       data-love-marriage-child-report-section={input.id}
       className="rounded-[1.65rem] border border-[#e4d8c8] bg-white/85 p-5 shadow-[0_18px_48px_rgba(48,34,25,0.07)] sm:p-7"
     >
@@ -429,6 +431,7 @@ function renderPatternSection(input: {
 }) {
   return (
     <section
+      id={input.id} tabIndex={-1} data-reading-section=""
       data-love-marriage-child-report-section={input.id}
       className="rounded-[1.65rem] border border-[#e4d8c8] bg-white/85 p-5 shadow-[0_18px_48px_rgba(48,34,25,0.07)] sm:p-7"
     >
@@ -450,6 +453,7 @@ function renderPatternSection(input: {
 function renderParentMode(section: LoveMarriageChildParentModeSection) {
   return (
     <section
+      id="parent_mode" tabIndex={-1} data-reading-section=""
       data-love-marriage-child-report-section="parent_mode"
       className="rounded-[1.65rem] border border-[#e4d8c8] bg-white/85 p-5 shadow-[0_18px_48px_rgba(48,34,25,0.07)] sm:p-7"
     >
@@ -473,6 +477,7 @@ function renderBreakupReunion(
 ) {
   return (
     <section
+      id="breakup_reunion_pattern" tabIndex={-1} data-reading-section=""
       data-love-marriage-child-report-section="breakup_reunion_pattern"
       className="rounded-[1.65rem] border border-[#e4d8c8] bg-white/85 p-5 shadow-[0_18px_48px_rgba(48,34,25,0.07)] sm:p-7"
     >
@@ -506,36 +511,32 @@ export function LoveMarriageChildReportView({
     buildRelationshipFatigueGroups(resolvedEvidencePacket);
 
   return (
-    <main className="min-h-screen w-full min-w-0 overflow-x-hidden bg-[#f6f0e7] text-[#241c19]">
+    <div className="min-h-screen w-full min-w-0 overflow-x-hidden bg-[#f6f0e7] text-[#241c19]">
       <article className="mx-auto flex w-full min-w-0 max-w-[22.5rem] flex-col gap-8 px-0 py-8 sm:max-w-5xl sm:px-6 lg:px-8">
-        <header
-          data-love-marriage-child-report-section="report_header"
-          className="rounded-[2rem] border border-[#e2d6c4] bg-[#2a211f] p-6 text-[#fff8ed] shadow-[0_24px_80px_rgba(32,22,17,0.24)] sm:p-9"
-        >
-          <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#d8b36a]">
-            연애·결혼·자녀 리포트
-          </p>
-          <h1 className="mt-4 text-3xl font-black leading-tight sm:text-4xl">
-            {draft.personLabel}님의 관계 리포트
-          </h1>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-[#f3e7d8]">
-            {draft.headline}
-          </p>
-          <p className="mt-3 max-w-3xl text-sm leading-7 text-[#d9c8b7]">
-            상담이나 예언이 아니라, 명리 근거와 MBTI 행동층을 함께 읽어
-            관계에서 반복되는 기준과 선택 방식을 정리합니다.
-          </p>
-        </header>
+        <ReportCover product="연애·결혼·자녀 리포트" title={`${draft.personLabel}님의 관계 리포트`} summary={draft.headline}>
+          <p>상담이나 예언이 아니라, 명리 근거와 MBTI 행동층을 함께 읽어 관계에서 반복되는 기준과 선택 방식을 정리합니다.</p>
+        </ReportCover>
+        <ReportContents items={[
+          { id: "common_tables", label: "원국과 행동 성향" },
+          { id: "love_strengths", label: "연애에서 강한 점" },
+          { id: "marriage_rhythm", label: "결혼 생활 리듬" },
+          { id: "parent_mode", label: "부모로서의 관계" },
+          { id: "conflict_recovery", label: "갈등 회복" },
+          { id: "action_plan", label: "실행 기준" },
+        ]} />
 
         <section
+          id="common_tables" tabIndex={-1}
           data-love-marriage-child-report-section="common_tables"
           className="grid gap-5"
         >
+          <h2 className="text-2xl font-semibold">원국과 행동 성향</h2>
           {renderTableSlot("기초 만세력", manseRyeokTable)}
           {renderTableSlot("MBTI 성향표", mbtiProfileTable)}
         </section>
 
         <section
+          id="myeongli_signal_basis" tabIndex={-1} data-reading-section=""
           data-love-marriage-child-report-section="myeongli_signal_basis"
           className="rounded-[1.65rem] border border-[#e2d6c4] bg-[#fffaf1] p-5 shadow-[0_18px_48px_rgba(48,34,25,0.08)] sm:p-7"
         >
@@ -574,6 +575,7 @@ export function LoveMarriageChildReportView({
         </section>
 
         <section
+          id="opening_summary" tabIndex={-1} data-reading-section=""
           data-love-marriage-child-report-section="opening_summary"
           className="rounded-[1.65rem] border border-[#e4d8c8] bg-white/85 p-5 shadow-[0_18px_48px_rgba(48,34,25,0.07)] sm:p-7"
         >
@@ -600,6 +602,7 @@ export function LoveMarriageChildReportView({
         })}
         {relationshipFitGroups.length === 0 ? null : (
           <section
+            id="relationship_fit_profile" tabIndex={-1} data-reading-section=""
             data-love-marriage-child-report-section="relationship_fit_profile"
             className="rounded-[1.65rem] border border-[#e2d6c4] bg-[#fffaf1] p-5 shadow-[0_18px_48px_rgba(48,34,25,0.08)] sm:p-7"
           >
@@ -650,6 +653,7 @@ export function LoveMarriageChildReportView({
         )}
         {relationshipFatigueGroups.length === 0 ? null : (
           <section
+            id="relationship_fatigue_profile" tabIndex={-1} data-reading-section=""
             data-love-marriage-child-report-section="relationship_fatigue_profile"
             className="rounded-[1.65rem] border border-[#e2d6c4] bg-white/85 p-5 shadow-[0_18px_48px_rgba(48,34,25,0.07)] sm:p-7"
           >
@@ -720,6 +724,7 @@ export function LoveMarriageChildReportView({
         {renderBreakupReunion(draft.breakupReunionPattern)}
 
         <section
+          id="relationship_timing_hints" tabIndex={-1} data-reading-section=""
           data-love-marriage-child-report-section="relationship_timing_hints"
           className="rounded-[1.65rem] border border-[#e4d8c8] bg-white/85 p-5 shadow-[0_18px_48px_rgba(48,34,25,0.07)] sm:p-7"
         >
@@ -751,6 +756,7 @@ export function LoveMarriageChildReportView({
         </section>
 
         <section
+          id="action_plan" tabIndex={-1} data-reading-section=""
           data-love-marriage-child-report-section="action_plan"
           className="rounded-[1.65rem] border border-[#e4d8c8] bg-white/85 p-5 shadow-[0_18px_48px_rgba(48,34,25,0.07)] sm:p-7"
         >
@@ -781,6 +787,7 @@ export function LoveMarriageChildReportView({
         </section>
 
         <section
+          id="risk_management" tabIndex={-1} data-reading-section=""
           data-love-marriage-child-report-section="risk_management"
           className="rounded-[1.65rem] border border-[#e4d8c8] bg-white/85 p-5 shadow-[0_18px_48px_rgba(48,34,25,0.07)] sm:p-7"
         >
@@ -809,6 +816,7 @@ export function LoveMarriageChildReportView({
         </section>
 
         <section
+          id="safety_notes" tabIndex={-1} data-reading-section=""
           data-love-marriage-child-report-section="safety_notes"
           className="rounded-[1.65rem] border border-[#e6d8c5] bg-[#2a211f] p-5 text-[#fff8ed] shadow-[0_18px_48px_rgba(48,34,25,0.16)] sm:p-7"
         >
@@ -818,6 +826,6 @@ export function LoveMarriageChildReportView({
           {renderList(draft.safetyNotes)}
         </section>
       </article>
-    </main>
+    </div>
   );
 }

@@ -1272,7 +1272,7 @@ describe("report result page", () => {
     expect(mockGetPaidReportResult).not.toHaveBeenCalled();
     expect(html).toContain("세운 리포트");
     expect(html).toContain("덕민님의 2026년 세운 리포트");
-    expect(html).toContain("조회 가능 연도 안내");
+    expect(html).toContain("선택 연도");
     expect(html).toContain("선택 연도 세운");
     expect(html).toContain("현재 대운과 선택 연도 세운 교차");
     expect(html).toContain("월운 12개월 흐름");
@@ -1553,7 +1553,7 @@ describe("report result page", () => {
 
     expect(html).toContain("대운 리포트");
     expect(html).toContain("덕민님의 戊辰 대운 리포트");
-    expect(html).toContain("10년 흐름과 올해 세운 교차를 함께 읽는 리포트");
+    expect(html).toContain("10년 흐름");
     expect(html).toContain("현재 대운 요약");
     expect(html).toContain("대운 타임라인");
     expect(html).toContain("현재 대운·올해 세운 교차");
@@ -1581,8 +1581,8 @@ describe("report result page", () => {
 
     expect(html).toContain("세운 리포트");
     expect(html).toContain("덕민님의 2026년 세운 리포트");
-    expect(html).toContain("선택 연도 흐름과 현재 대운 교차를 함께 읽는 리포트");
-    expect(html).toContain("조회 가능 연도 안내");
+    expect(html).toContain("세운 리포트");
+    expect(html).toContain("선택 연도");
     expect(html).toContain("선택 연도 세운");
     expect(html).toContain("현재 대운과 선택 연도 세운 교차");
     expect(html).toContain("원국과 세운 관계");

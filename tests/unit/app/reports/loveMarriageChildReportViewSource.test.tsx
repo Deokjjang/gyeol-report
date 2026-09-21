@@ -27,7 +27,7 @@ describe("LoveMarriageChildReportView source", () => {
 
   it("renders the required top flow and body sections", () => {
     for (const marker of [
-      'data-love-marriage-child-report-section="report_header"',
+      'ReportCover',
       'data-love-marriage-child-report-section="common_tables"',
       'data-love-marriage-child-report-section="myeongli_signal_basis"',
       'data-love-marriage-child-report-section="opening_summary"',

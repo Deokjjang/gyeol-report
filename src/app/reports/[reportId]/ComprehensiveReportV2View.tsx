@@ -1,3 +1,5 @@
+import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
+import readingStyles from "../../../components/report/reportReading.module.css";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
 import {
   ManseRyeokCommonTable,
@@ -84,39 +86,22 @@ export function ComprehensiveReportV2View({
     (item) => !isDetailedFeatureLabel(item.rawLabel),
   ) ?? [];
   const groupedQuickFeatureItems = groupQuickFeatureItems(quickFeatureItems);
-  const visibleLongformReadings = (draft.longformReadings ?? []).filter(
-    (reading) =>
-      reading.readingId !== "sajuFeatureReading" &&
-      reading.readingId !== "mbtiReading" &&
-      reading.readingId !== "finalMessage",
-  );
+  const visibleLongformReadings = draft.longformReadings ?? [];
 
   return (
     <article className="min-w-0 overflow-hidden rounded-[8px] border border-[#ded2c2] bg-[#fffdf8] text-[#2b211b] shadow-[0_18px_60px_rgba(68,44,28,0.10)]">
-      <header className="space-y-5 border-b border-[#eadfce] bg-[#fff8ed] px-5 py-7 sm:px-8">
-        <div className="flex flex-wrap items-center gap-2 text-xs font-extrabold text-[#8b6d2d]">
-          <span className="rounded-full border border-[#d7b56d] bg-[#fffaf1] px-3 py-1">
-            사주×MBTI 종합 리포트
-          </span>
-          <span className="rounded-full border border-[#eadfce] bg-white px-3 py-1">
-            자기이해 리포트
-          </span>
-        </div>
-        <div className="max-w-4xl space-y-3">
-          <h1 className="text-3xl font-extrabold tracking-tight text-[#2b211b] sm:text-4xl">
-            {draft.openingTitle}
-          </h1>
-          <p className="text-base leading-8 text-[#5a4d42] sm:text-lg">
-            {draft.openingSummary}
-          </p>
-        </div>
-        <p className="max-w-4xl rounded-[8px] border border-[#d7b56d] bg-[#fffaf1] px-4 py-3 text-base font-bold leading-8 text-[#6f1d35]">
-          {draft.coreLine}
-        </p>
-      </header>
+      <ReportCover product="사주×MBTI 종합 리포트" title={draft.openingTitle} summary={draft.openingSummary} core={draft.coreLine} />
+      <ReportContents items={[
+        { id: "report-foundation", label: "나의 원국과 행동 성향" },
+        ...(fiveElementEnergyItems.length ? [{ id: "report-elements", label: "오행의 균형" }] : []),
+        ...(draft.sajuFeatureChapter ? [{ id: "report-features", label: "명리 특징" }] : []),
+        { id: "report-readings", label: "나의 이야기" },
+        { id: "report-actions", label: "오늘부터 바꿀 기준" },
+        { id: "report-conclusion", label: "마지막 정리" },
+      ]} />
 
-      <div className="space-y-8 px-5 py-7 sm:px-8">
-        <section className="space-y-4" aria-label="기초 정보">
+      <div className="space-y-8">
+        <section id="report-foundation" tabIndex={-1} className="space-y-4" aria-label="기초 정보">
           <SectionHeading
             title="기초 정보"
             body="만세력표와 MBTI 성향표는 해석의 근거입니다. 신살·귀인·합충·지장간의 의미는 아래 본문에서 따로 풀어 읽습니다."
@@ -147,7 +132,7 @@ export function ComprehensiveReportV2View({
         {fiveElementEnergyItems.length === 0 ? null : (
           <section
             className="space-y-4"
-            aria-label="오행 분포로 보는 에너지 구조"
+            id="report-elements" tabIndex={-1} data-reading-section="" aria-label="오행 분포로 보는 에너지 구조"
           >
             <SectionHeading
               eyebrow="오행"
@@ -179,7 +164,7 @@ export function ComprehensiveReportV2View({
         )}
 
         {draft.sajuFeatureChapter === undefined ? null : (
-          <section className="space-y-4" aria-label="명리 특징 해석">
+          <section className="space-y-4" id="report-features" tabIndex={-1} data-reading-section="" aria-label="명리 특징 해석">
             <SectionHeading
               eyebrow="본문 챕터"
               title="내 사주의 주요 표식 해석"
@@ -256,28 +241,28 @@ export function ComprehensiveReportV2View({
           </section>
         )}
 
-        <section className="space-y-4" aria-label="본문 해석">
+        <section className="space-y-4" id="report-readings" tabIndex={-1} data-reading-section="" aria-label="본문 해석">
           <SectionHeading
             eyebrow="본문"
             title="전체 성향 핵심부터 읽기"
             body="명리 구조와 MBTI 행동 발현이 실제 생활에서 어떻게 이어지는지 문단 중심으로 읽습니다."
           />
-          <div className="grid min-w-0 gap-4">
+          <div className={readingStyles.prose}>
             {visibleLongformReadings.map((reading) => (
               <section
                 key={reading.readingId}
                 className="min-w-0 space-y-3 rounded-[8px] border border-[#eadfce] bg-white p-4 sm:p-5"
               >
-                <h2 className="text-xl font-extrabold text-[#2b211b]">
+                <h3 className="text-xl font-extrabold text-[#2b211b]">
                   {reading.titleKo}
-                </h2>
+                </h3>
                 <LongformBody body={reading.body} />
               </section>
             ))}
           </div>
         </section>
 
-        <section className="space-y-4" aria-label="오늘부터 바꿀 기준">
+        <section className="space-y-4" id="report-actions" tabIndex={-1} data-reading-section="" aria-label="오늘부터 바꿀 기준">
           <SectionHeading
             eyebrow="실행 기준"
             title="오늘부터 바꿀 기준"
@@ -297,7 +282,7 @@ export function ComprehensiveReportV2View({
           )}
         </section>
 
-        <section className="rounded-[8px] border border-[#d7b56d] bg-[#fffaf1] p-5">
+        <section id="report-conclusion" tabIndex={-1} data-reading-section="" className="rounded-[8px] border border-[#d7b56d] bg-[#fffaf1] p-5">
           <h2 className="text-xl font-extrabold text-[#2b211b]">마지막 정리</h2>
           <p className="mt-3 text-base leading-8 text-[#4f433b]">
             {draft.finalAdvice}

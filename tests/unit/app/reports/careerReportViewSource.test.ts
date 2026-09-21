@@ -15,7 +15,7 @@ describe("CareerReportView source", () => {
 
   it("renders launch-ready semantic career report sections", () => {
     const requiredMarkers = [
-      'data-career-report-section="report_header"',
+      'ReportCover',
       "data-career-report-section={id}",
       "common_tables",
       "myeongli_signal_basis",

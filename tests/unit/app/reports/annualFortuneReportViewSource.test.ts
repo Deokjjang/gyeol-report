@@ -11,7 +11,7 @@ describe("AnnualFortuneReportView source", () => {
   it("renders annual fortune hero and year structure table labels", () => {
     expect(viewSource).toContain("세운 리포트");
     expect(viewSource).toContain("overflow-x-hidden break-words");
-    expect(viewSource).toContain("max-w-4xl break-words");
+    expect(viewSource).toContain("ReportCover");
     expect(viewSource).not.toContain("세운 리포트 v1.0");
     expect(viewSource).toContain("연도 구조");
     expect(viewSource).toContain("연도");
@@ -36,8 +36,8 @@ describe("AnnualFortuneReportView source", () => {
     expect(viewSource).toContain("건강관리·생활 리듬");
     expect(viewSource).toContain("사회·가족");
     expect(viewSource).toContain("공부·성장");
-    expect(viewSource).toContain("renderYearAccessNotice");
-    expect(viewSource).toContain("조회 가능 연도 안내");
+    expect(viewSource).not.toContain("renderYearAccessNotice");
+    expect(viewSource).toContain("ReportContents");
     expect(viewSource).toContain("renderCommonFoundation");
     expect(viewSource).toContain("ManseRyeokCommonTable");
     expect(viewSource).toContain("MbtiCommonProfileTable");
@@ -97,7 +97,7 @@ describe("AnnualFortuneReportView source", () => {
     expect(viewSource).toContain("heroPersonLabel");
     expect(viewSource).toContain("getHeroDayMasterLabel");
     expect(viewSource).toContain("甲(갑목) 일간");
-    expect(viewSource).toContain("선택 연도 흐름과 현재 대운 교차를 함께 읽는 리포트");
+    expect(viewSource).toContain("${draft.targetYear}년 세운 리포트");
     expect(viewSource).toContain("draft.yearSummary.displayTitle");
     expect(viewSource).toContain("draft.yearSummary.modeLabel");
     expect(viewSource).not.toContain("개발·서비스 기획 직장인 · 甲(갑목) 일간 · 직장인");

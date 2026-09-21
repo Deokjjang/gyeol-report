@@ -63,32 +63,34 @@ export default function ManseRyeokCommonTable({
 
       {isOpen ? (
         <div id={contentId} className="divide-y divide-[#eadfce]">
-          <div className="grid grid-cols-4 bg-[#fffaf3] text-center text-sm font-extrabold text-[#5a4633]">
-            {data.columns.map((column) => (
-              <div key={column.key} className="px-2 py-2">
-                {column.label}
-              </div>
-            ))}
-          </div>
+          <div role="table" aria-label={`${data.title} 사주 원국`}>
+            <div role="row" className="grid grid-cols-4 bg-[#fffaf3] text-center text-sm font-extrabold text-[#5a4633]">
+              {data.columns.map((column) => (
+                <div role="columnheader" key={column.key} className="px-2 py-2">
+                  {column.label}
+                </div>
+              ))}
+            </div>
 
-          <div className="grid grid-cols-4 gap-px bg-[#f5efe5]">
-            {data.columns.map((column) => (
-              <StemBranchCard
-                key={`stem-${column.key}`}
-                cell={data.stemRow[column.key]}
-                ariaLabel={`${column.label} 천간`}
-              />
-            ))}
-          </div>
+            <div role="row" aria-label="천간" className="grid grid-cols-4 gap-px bg-[#f5efe5]">
+              {data.columns.map((column) => (
+                <StemBranchCard
+                  key={`stem-${column.key}`}
+                  cell={data.stemRow[column.key]}
+                  ariaLabel={`${column.label} 천간`}
+                />
+              ))}
+            </div>
 
-          <div className="grid grid-cols-4 gap-px bg-[#f5efe5]">
-            {data.columns.map((column) => (
-              <StemBranchCard
-                key={`branch-${column.key}`}
-                cell={data.branchRow[column.key]}
-                ariaLabel={`${column.label} 지지`}
-              />
-            ))}
+            <div role="row" aria-label="지지" className="grid grid-cols-4 gap-px bg-[#f5efe5]">
+              {data.columns.map((column) => (
+                <StemBranchCard
+                  key={`branch-${column.key}`}
+                  cell={data.branchRow[column.key]}
+                  ariaLabel={`${column.label} 지지`}
+                />
+              ))}
+            </div>
           </div>
 
           <FiveElementDistribution data={data.fiveElementDistribution} />
@@ -161,6 +163,7 @@ function StemBranchCard({
   if (!cell) {
     return (
       <div
+        role="cell"
         aria-label={ariaLabel}
         className="flex min-h-24 flex-col items-center justify-center gap-1 border border-[#efe6d8] bg-[#f8f4ed] px-1 py-3 text-center text-[#b7ab9a]"
       >
@@ -171,7 +174,8 @@ function StemBranchCard({
 
   return (
     <div
-      aria-label={ariaLabel}
+      role="cell"
+      aria-label={`${ariaLabel} ${cell.hanja} ${cell.ko} ${cell.tenGod ?? ""}`.trim()}
       className={joinClassNames(
         "flex min-h-24 flex-col items-center justify-center gap-1 border px-1 py-3 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.45)]",
         ELEMENT_CARD_CLASS_BY_TOKEN[cell.colorToken],

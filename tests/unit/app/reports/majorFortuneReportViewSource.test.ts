@@ -10,7 +10,7 @@ const viewSource = readFileSync(
 describe("MajorFortuneReportView source", () => {
   it("uses the launch header and premium result tone", () => {
     expect(viewSource).toContain("대운 리포트");
-    expect(viewSource).toContain("10년 흐름과 올해 세운 교차를 함께 읽는 리포트");
+    expect(viewSource).toContain("ReportCover");
     expect(viewSource).toContain("bg-[#f6f0e7]");
     expect(viewSource).toContain("bg-[#fffaf1]");
     expect(viewSource).toContain("text-[#2b211b]");

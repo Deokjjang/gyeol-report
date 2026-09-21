@@ -1,3 +1,4 @@
+import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
 import type { ReactNode } from "react";
 
 import {
@@ -316,6 +317,9 @@ function CareerSection({
 
   return (
     <section
+      id={id}
+      tabIndex={-1}
+      data-reading-section=""
       aria-labelledby={titleId}
       data-career-report-section={id}
       className={sectionClassName(tone)}
@@ -460,8 +464,6 @@ function renderMyeongliSignalBasis(
 
 export function CareerReportView({
   draft,
-  reportId,
-  devStatus,
   evidencePacket,
   manseRyeokTable,
   mbtiProfileTable,
@@ -481,54 +483,17 @@ export function CareerReportView({
 
   return (
     <article className="mx-auto w-full min-w-0 max-w-5xl space-y-5 text-[#201a18] sm:space-y-6">
-      {devStatus === undefined ? null : (
-        <aside className="w-fit rounded-md border border-[#d8d1c4] bg-[#fffdf8]/90 px-3 py-1.5 text-[11px] font-bold text-[#8b8174]">
-          <span className="text-[#7f1d38]">리포트</span>
-          <span className="ml-2">{text(devStatus)}</span>
-        </aside>
-      )}
-
-      <header
-        data-career-report-section="report_header"
-        className="motion-safe:animate-[gyeol-reveal_520ms_ease-out_both] overflow-hidden rounded-lg border border-[#d8d1c4] bg-[#fffdf8] shadow-[0_28px_100px_rgba(42,31,24,0.12)] ring-1 ring-white/80"
-      >
-        <div className="grid min-w-0 gap-6 border-b border-[#eadfce] bg-[#fffaf3] p-5 sm:p-7 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
-          <div className="min-w-0 space-y-4">
-            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#7f1d38]">
-              직업·커리어·돈·학업 리포트
-            </p>
-            <div className="space-y-3">
-              <h1 className="max-w-3xl text-[1.85rem] font-extrabold leading-9 tracking-normal text-[#201a18] [overflow-wrap:anywhere] sm:text-[2.65rem] sm:leading-[3.1rem]">
-                {text(draft.openingTitle)}
-              </h1>
-              <p className="max-w-3xl text-base leading-8 text-[#51453d]">
-                {text(draft.openingSummary)}
-              </p>
-            </div>
-          </div>
-          <div className="grid min-w-0 gap-2 text-xs font-bold text-[#4c433c] sm:min-w-48">
-            <span className="rounded-md border border-[#d8d1c4] bg-[#fffdf8] px-3 py-2">
-              이름 · {text(draft.personLabel)}
-            </span>
-            <span className="rounded-md border border-[#d8d1c4] bg-[#fffdf8] px-3 py-2">
-              상품 · 직업·커리어·돈·학업
-            </span>
-            {reportId === undefined ? null : (
-              <span className="rounded-md border border-[#d8d1c4] bg-[#fffdf8] px-3 py-2">
-                report · {text(reportId)}
-              </span>
-            )}
-          </div>
-        </div>
-        <div className="grid min-w-0 gap-4 p-5 sm:p-7 md:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)]">
-          <p className="rounded-lg border border-[#7f1d38]/20 bg-[#7f1d38]/10 p-4 text-base font-extrabold leading-8 text-[#7f1d38] [overflow-wrap:anywhere]">
-            {text(draft.coreLine)}
-          </p>
-          <p className="rounded-lg border border-[#c79a43]/30 bg-[#fff8ea] p-4 text-sm font-semibold leading-7 text-[#5a4633]">
-            상담이나 투자 조언이 아닌 자기이해용 디지털 리포트입니다. 직업 선택과 돈 관리는 현실 조건과 함께 판단하세요.
-          </p>
-        </div>
-      </header>
+      <ReportCover product="직업·커리어·돈·학업 리포트" title={text(draft.openingTitle)} summary={text(draft.openingSummary)} core={text(draft.coreLine)}>
+        <p>상담이나 투자 조언이 아닌 자기이해용 디지털 리포트입니다. 직업 선택과 돈 관리는 현실 조건과 함께 판단하세요.</p>
+      </ReportCover>
+      <ReportContents items={[
+        { id: "common_tables", label: "원국과 행동 성향" },
+        { id: "core_summary", label: "일·돈·학업의 핵심" },
+        { id: "career_identity", label: "나에게 맞는 일" },
+        { id: "money_management", label: "돈 관리" },
+        { id: "study_certificate_strategy", label: "학업과 자격" },
+        { id: "action_plan", label: "실행 기준" },
+      ]} />
 
       {renderCommonTableArea({
         manseRyeokTable: resolvedManseRyeokTable,

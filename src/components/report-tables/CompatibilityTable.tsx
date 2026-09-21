@@ -505,8 +505,8 @@ function CompatibilityConnectionBridge({
       <div className="mx-auto flex max-w-md flex-col items-center gap-3 text-center">
         <div className="flex w-full items-center gap-3">
           <span className="h-px flex-1 bg-[#d8c6a4]" />
-          <span className="flex h-16 w-16 items-center justify-center rounded-full border border-[#d7b56d] bg-[#fff8ea] text-4xl font-black text-[#7f1d38] shadow-sm">
-            ♡
+          <span aria-hidden="true" className="flex h-10 w-10 items-center justify-center text-2xl font-light text-[#7f1d38]">
+            ×
           </span>
           <span className="h-px flex-1 bg-[#d8c6a4]" />
         </div>

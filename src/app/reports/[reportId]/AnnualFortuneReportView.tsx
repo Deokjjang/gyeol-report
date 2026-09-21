@@ -1,3 +1,5 @@
+import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
+import readingStyles from "../../../components/report/reportReading.module.css";
 import type { ReactNode } from "react";
 
 import {
@@ -174,8 +176,8 @@ function getGanjiParts(ganji: string): {
 function renderList(items: readonly string[]) {
   return (
     <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-[#51463c]">
-      {items.map((item) => (
-        <li key={item}>{text(item)}</li>
+      {items.map((item, index) => (
+        <li key={`${index}:${item}`}>{text(item)}</li>
       ))}
     </ul>
   );
@@ -190,8 +192,8 @@ function renderParagraphs(items: readonly (string | null | undefined)[]) {
 
   return (
     <div className="space-y-3 break-words [overflow-wrap:anywhere] text-[15px] leading-8 text-[#4f453c]">
-      {visibleItems.map((item) => (
-        <p key={item}>{item}</p>
+      {visibleItems.map((item, index) => (
+        <p key={`${index}:${item}`}>{item}</p>
       ))}
     </div>
   );
@@ -232,7 +234,7 @@ function renderYearStructure(draft: AnnualFortuneReportDraft) {
   ] as const;
 
   return (
-    <section className={panelClass}>
+    <section data-reading-section="" className={panelClass}>
       <p className="text-sm font-semibold text-[#8b6d2d]">선택 연도 세운 요약</p>
       <h2 className={`${sectionTitleClass} mt-1`}>연도 구조</h2>
       <dl className="mt-4 grid gap-2 text-sm">
@@ -374,33 +376,6 @@ function renderSaeunFortuneTable(
   return <SaeunFortuneTable data={tableData} defaultOpen={true} />;
 }
 
-function renderYearAccessNotice(
-  draft: AnnualFortuneReportDraft,
-  evidencePacket: AnnualFortuneEvidencePacket | undefined,
-) {
-  const policy = evidencePacket?.yearAccessPolicy;
-  const statusLine =
-    policy === undefined
-      ? draft.yearAccessNotice
-      : policy.status === "locked"
-        ? policy.notice
-        : policy.isNewYearPreview
-          ? `${policy.selectedYear}년은 신년사주 성격으로 미리 열리는 세운입니다.`
-          : policy.notice;
-
-  return (
-    <section className={panelClass}>
-      <p className="text-sm font-semibold text-[#8b6d2d]">조회 가능 연도 안내</p>
-      <h2 className={`${sectionTitleClass} mt-1`}>세운 조회 기준</h2>
-      <div className="mt-5">{renderParagraphs([
-        statusLine,
-        policy?.policyLabel ??
-          "기본 조회 가능 연도는 과거 5년과 올해이며, 매년 12월부터 다음 해 신년사주가 열립니다.",
-      ])}</div>
-    </section>
-  );
-}
-
 function renderCommonFoundation(
   manseRyeokTable: ReactNode | undefined,
   mbtiProfileTable: ReactNode | undefined,
@@ -432,7 +407,7 @@ function renderCommonFoundation(
         })());
 
   return (
-    <section className="space-y-4">
+    <section id="report-foundation" tabIndex={-1} className="space-y-4">
       <div>
         <p className="text-sm font-semibold text-[#8b6d2d]">공통 기초 정보</p>
         <h2 className={sectionTitleClass}>세운 해석에 쓰는 기본 표</h2>
@@ -486,7 +461,7 @@ function renderAnnualFortuneSummary(
   const annual = evidencePacket?.annualFortune;
 
   return (
-    <section className={panelClass}>
+    <section id="report-year" tabIndex={-1} data-reading-section="" className={panelClass}>
       <p className="text-sm font-semibold text-[#8b6d2d]">선택 연도 세운</p>
       <h2 className={`${sectionTitleClass} mt-1`}>
         {text(annual?.yearTheme) || text(draft.headline) || "선택 연도 흐름"}
@@ -524,7 +499,7 @@ function renderMajorAnnualCross(
   const cross = evidencePacket?.majorAnnualCross;
 
   return (
-    <section className={panelClass}>
+    <section data-reading-section="" className={panelClass}>
       <p className="text-sm font-semibold text-[#8b6d2d]">현재 대운과 선택 연도 세운 교차</p>
       <h2 className={`${sectionTitleClass} mt-1`}>10년 배경 위에 올라오는 1년 자극</h2>
       <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -554,7 +529,7 @@ function renderNatalAnnualRelations(
     ) ?? [draft.annualStructure.branchInteractionExplanation];
 
   return (
-    <section className={panelClass}>
+    <section data-reading-section="" className={panelClass}>
       <p className="text-sm font-semibold text-[#8b6d2d]">원국과 세운 관계</p>
       <h2 className={`${sectionTitleClass} mt-1`}>선택 연도가 원국에 닿는 지점</h2>
       <div className="mt-5">{renderParagraphs([
@@ -583,7 +558,7 @@ function renderMonthlyFortuneReading(
         }));
 
   return (
-    <section className={panelClass}>
+    <section id="report-months" tabIndex={-1} data-reading-section="" className={panelClass}>
       <p className="text-sm font-semibold text-[#8b6d2d]">월운 12개월 흐름</p>
       <h2 className={`${sectionTitleClass} mt-1`}>월별 운영 리듬</h2>
       <div className="mt-5">{renderParagraphs([
@@ -630,7 +605,7 @@ function renderDomainFlows(
   ] as const;
 
   return (
-    <section className={panelClass}>
+    <section data-reading-section="" className={panelClass}>
       <p className="text-sm font-semibold text-[#8b6d2d]">영역별 흐름</p>
       <h2 className={`${sectionTitleClass} mt-1`}>올해 흐름이 생활 영역에 나타나는 방식</h2>
       <div className="mt-5 grid gap-3 md:grid-cols-2">
@@ -662,7 +637,7 @@ function renderMbtiExpression(
   const mbti = evidencePacket?.mbtiBasis;
 
   return (
-    <section className={panelClass}>
+    <section data-reading-section="" className={panelClass}>
       <p className="text-sm font-semibold text-[#8b6d2d]">MBTI 성향 발현 방식</p>
       <h2 className={`${sectionTitleClass} mt-1`}>
         {text(mbti?.type) ? `${text(mbti?.type)}가 이 세운을 쓰는 방식` : "흐름이 행동으로 드러나는 방식"}
@@ -692,12 +667,12 @@ function renderRiskAndActionSections(
 
   return (
     <div className="grid gap-4 lg:grid-cols-2">
-      <section className={panelClass}>
+      <section data-reading-section="" className={panelClass}>
         <p className="text-sm font-semibold text-[#8b6d2d]">조심할 패턴</p>
         <h2 className={`${sectionTitleClass} mt-1`}>과열과 부담을 줄이는 기준</h2>
         {renderList(riskItems)}
       </section>
-      <section className={panelClass}>
+      <section data-reading-section="" className={panelClass}>
         <p className="text-sm font-semibold text-[#8b6d2d]">실행 기준</p>
         <h2 className={`${sectionTitleClass} mt-1`}>올해 먼저 정할 것</h2>
         {renderList(actionItems)}
@@ -708,7 +683,6 @@ function renderRiskAndActionSections(
 
 export function AnnualFortuneReportView({
   draft,
-  reportId,
   evidencePacket,
   manseRyeokTable,
   mbtiProfileTable,
@@ -736,62 +710,23 @@ export function AnnualFortuneReportView({
 
   return (
     <article className="w-full min-w-0 max-w-full overflow-x-hidden break-words [overflow-wrap:anywhere] space-y-8 rounded-[8px] border border-[#d8c8b5] bg-[#f8f0e6] p-5 text-[#2b211b] shadow-[0_22px_70px_rgba(77,48,35,0.12)] sm:p-6">
-      <header className="w-full min-w-0 max-w-full overflow-hidden rounded-[8px] border border-[#d9c8b5] bg-[#fffaf1] shadow-[0_22px_70px_rgba(77,48,35,0.12)]">
-        <div className="border-b border-[#e6d9c8] bg-[#f4eadc] px-6 py-4">
-          <div className="flex min-w-0 flex-wrap items-center gap-2 text-xs font-medium text-[#7d1f39]">
-            <span className="rounded-full border border-[#c8a565] bg-[#fff7df] px-3 py-1 text-[#6f4e16]">
-              세운 리포트
-            </span>
-            <span className="min-w-0 break-words [overflow-wrap:anywhere]">
-              {heroPersonLabel}의 {draft.targetYear}년 흐름
-            </span>
-            {reportId ? <span className="text-[#8a8077]">Report {reportId}</span> : null}
-          </div>
-        </div>
-        <div className="min-w-0 px-6 py-8 sm:px-8 sm:py-10">
-          <p className="text-sm font-semibold text-[#8b6d2d]">
-            선택 연도 흐름과 현재 대운 교차를 함께 읽는 리포트
-          </p>
-          {renderOpeningTitle ? (
-            <h1 className="mt-3 max-w-4xl break-words [overflow-wrap:anywhere] text-3xl font-semibold leading-tight tracking-normal text-[#2b211b] sm:text-4xl">
-              {text(draft.openingTitle)}
-            </h1>
-          ) : (
-            <h1 className="mt-3 max-w-4xl break-words [overflow-wrap:anywhere] text-3xl font-semibold leading-tight tracking-normal text-[#2b211b] sm:text-4xl">
-              {text(draft.headline) || text(draft.coreLine)}
-            </h1>
-          )}
-          {heroContextLine.length === 0 ? null : (
-            <p className="mt-4 text-sm font-semibold leading-6 text-[#5a4d42]">
-              {heroContextLine}
-            </p>
-          )}
-          <p className="mt-5 max-w-3xl break-words [overflow-wrap:anywhere] text-base leading-8 text-[#5a4d42]">
-            {text(draft.openingSummary)}
-          </p>
-          <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            {renderPill("선택 연도", draft.targetYear)}
-            {renderPill("세운", draft.yearSummary.displayTitle)}
-            {renderPill("모드", draft.yearSummary.modeLabel)}
-          </div>
-          <div className="mt-5 rounded-[8px] border border-[#eadfce] bg-[#fffdf8] p-4">
-            <p className="text-xs font-semibold text-[#8b6d2d]">
-              {getAnnualFlowIndexHeading(draft.mode)}
-            </p>
-            <p className="mt-2 text-4xl font-semibold tracking-tight text-[#6f1d35]">
-              {draft.scoreSummary.flowIndex}
-            </p>
-            <p className="mt-2 text-sm font-semibold leading-6 text-[#2f251f]">
-              {text(draft.scoreSummary.flowTypeLabel)}
-            </p>
-            <p className="mt-2 text-sm leading-7 text-[#5a4d42]">
-              {text(draft.scoreSummary.flowIndexCaution)}
-            </p>
-          </div>
-        </div>
-      </header>
+      <ReportCover product={`${draft.targetYear}년 세운 리포트`} title={renderOpeningTitle ? text(draft.openingTitle) : text(draft.headline) || text(draft.coreLine)} summary={text(draft.openingSummary)} core={text(draft.coreLine)}>
+        <p>{heroContextLine}</p>
+        <dl>
+          <div><dt>선택 연도</dt><dd>{draft.targetYear}년</dd></div>
+          <div><dt>세운</dt><dd>{draft.yearSummary.displayTitle}</dd></div>
+          <div><dt>{getAnnualFlowIndexHeading(draft.mode)}</dt><dd>{draft.scoreSummary.flowIndex} · {text(draft.scoreSummary.flowTypeLabel)}</dd></div>
+        </dl>
+        <p>{text(draft.scoreSummary.flowIndexCaution)}</p>
+      </ReportCover>
+      <ReportContents items={[
+        { id: "report-foundation", label: "원국과 행동 성향" },
+        { id: "report-year", label: "선택 연도의 핵심" },
+        { id: "report-months", label: "12개월 흐름" },
+        { id: "report-readings", label: "생활 장면으로 읽기" },
+        { id: "report-conclusion", label: "마무리 기준" },
+      ]} />
 
-      {renderYearAccessNotice(draft, evidencePacket)}
       {renderCommonFoundation(
         manseRyeokTable,
         mbtiProfileTable,
@@ -816,7 +751,7 @@ export function AnnualFortuneReportView({
       {renderDomainFlows(draft, evidencePacket)}
       {renderMbtiExpression(draft, evidencePacket)}
 
-      <section className="space-y-5" aria-label="세운 리포트 본문">
+      <section className="space-y-5" id="report-readings" tabIndex={-1} data-reading-section="" aria-label="세운 리포트 본문">
         <div>
           <p className="text-sm font-semibold text-[#8b6d2d]">본문 해석</p>
           <h2 className={sectionTitleClass}>선택 연도 흐름을 생활 장면으로 읽기</h2>
@@ -824,7 +759,7 @@ export function AnnualFortuneReportView({
         {draft.chapters.map((chapter) => (
           <section
             key={`${chapter.title}:${chapter.headline}`}
-            className={panelClass}
+            className={readingStyles.prose}
           >
             <div className="space-y-2">
               <h3 className="text-xl font-semibold text-[#2b211b]">
@@ -857,7 +792,7 @@ export function AnnualFortuneReportView({
 
       {renderRiskAndActionSections(draft, evidencePacket)}
 
-      <section className={panelClass}>
+      <section id="report-conclusion" tabIndex={-1} data-reading-section="" className={panelClass}>
         <p className="text-sm font-semibold text-[#8b6d2d]">마지막 조언</p>
         <h2 className={`${sectionTitleClass} mt-1`}>영역별 마무리 기준</h2>
         <ol className="mt-5 grid gap-3">
@@ -877,7 +812,7 @@ export function AnnualFortuneReportView({
         </ol>
       </section>
 
-      <section className={panelClass}>
+      <section data-reading-section="" className={panelClass}>
         <p className="text-sm font-semibold text-[#8b6d2d]">안전 안내</p>
         <h2 className={`${sectionTitleClass} mt-1`}>리포트를 읽는 기준</h2>
         {renderList(evidencePacket?.safetyNotes ?? draft.safetyNotes)}

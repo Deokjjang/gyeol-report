@@ -170,6 +170,14 @@ const tableData: ManseRyeokCommonTableData = {
 };
 
 describe("ManseRyeokCommonTable", () => {
+  it("exposes the compact four-pillar grid as a table with readable cell values", () => {
+    const html = renderToStaticMarkup(<ManseRyeokCommonTable data={tableData} />);
+    expect(html).toContain('role="table"');
+    expect(html.match(/role="columnheader"/g)).toHaveLength(4);
+    expect(html.match(/role="cell"/g)).toHaveLength(8);
+    expect(html).toContain('aria-label="시주 천간 戊 무 편재"');
+    expect(html).toContain('aria-expanded="true"');
+  });
   it("renders the table title", () => {
     const html = renderToStaticMarkup(
       <ManseRyeokCommonTable data={tableData} />,

@@ -1,3 +1,4 @@
+import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
 import type { ReactNode } from "react";
 
 import {
@@ -219,8 +220,6 @@ function renderPill(label: string, value: string | number | null | undefined) {
 
 function renderHero(
   draft: MajorFortuneReportDraft,
-  reportId: string | undefined,
-  devStatus: string | undefined,
   evidencePacket: MajorFortuneEvidencePacket | undefined,
 ) {
   const name = text(evidencePacket?.personContext.name) || "사용자";
@@ -236,40 +235,13 @@ function renderHero(
     "입력된 대운표 기준으로 현재 10년의 방향을 정리합니다.";
 
   return (
-    <header className="overflow-hidden rounded-[8px] border border-[#d9c8b5] bg-[#fffaf1] shadow-[0_22px_70px_rgba(77,48,35,0.12)]">
-      <div className="border-b border-[#e6d9c8] bg-[#f4eadc] px-6 py-4">
-        <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-[#7d1f39]">
-          <span className="rounded-full border border-[#c8a565] bg-[#fff7df] px-3 py-1 text-[#6f4e16]">
-            대운 리포트
-          </span>
-          <span>{name}님의 10년 흐름</span>
-          {reportId ? <span className="text-[#8a8077]">Report {reportId}</span> : null}
-          {devStatus ? <span className="text-[#8a8077]">{text(devStatus)}</span> : null}
-        </div>
-      </div>
-      <div className="px-6 py-8 sm:px-8 sm:py-10">
-        <p className="text-sm font-semibold text-[#8b6d2d]">
-          10년 흐름과 올해 세운 교차를 함께 읽는 리포트
-        </p>
-        <h1 className="mt-3 max-w-4xl text-3xl font-semibold leading-tight tracking-normal text-[#2b211b] sm:text-4xl">
-          {headline}
-        </h1>
-        <p className="mt-5 max-w-3xl text-base leading-8 text-[#5a4d42]">{currentLine}</p>
-        <div className="mt-6 grid gap-3 sm:grid-cols-3">
-          {renderPill("현재 대운", currentCycle?.ganji ?? draft.cycleSummary.ganji)}
-          {renderPill(
-            "나이 구간",
-            formatKoreanAgeText(
-              currentCycle?.ageRange ?? draft.cycleSummary.ageRangeLabel,
-            ),
-          )}
-          {renderPill(
-            "연도 구간",
-            currentCycle?.yearRange ?? draft.cycleSummary.yearRangeLabel,
-          )}
-        </div>
-      </div>
-    </header>
+    <ReportCover product="대운 리포트" title={`${name}님의 10년 흐름`} summary={currentLine} core={headline}>
+      <dl>
+        <div><dt>현재 대운</dt><dd>{currentCycle?.ganji ?? draft.cycleSummary.ganji}</dd></div>
+        <div><dt>나이 구간</dt><dd>{formatKoreanAgeText(currentCycle?.ageRange ?? draft.cycleSummary.ageRangeLabel)}</dd></div>
+        <div><dt>연도 구간</dt><dd>{currentCycle?.yearRange ?? draft.cycleSummary.yearRangeLabel}</dd></div>
+      </dl>
+    </ReportCover>
   );
 }
 
@@ -307,7 +279,7 @@ function renderCommonFoundation(
   ].filter(Boolean).slice(0, 3);
 
   return (
-    <section className="space-y-4">
+    <section id="report-foundation" tabIndex={-1} className="space-y-4">
       <div>
         <p className="text-sm font-semibold text-[#8b6d2d]">기초 정보</p>
         <h2 className={sectionTitleClass}>대운 해석에 쓰는 기본 표</h2>
@@ -364,7 +336,7 @@ function renderCurrentMajorFortune(
     text(draft.decadeArchetype.plain);
 
   return (
-    <section className={panelClass}>
+    <section id="report-current" tabIndex={-1} data-reading-section="" className={panelClass}>
       <p className="text-sm font-semibold text-[#8b6d2d]">현재 대운 요약</p>
       <h2 className={`${sectionTitleClass} mt-1`}>
         {text(currentCycle?.keyTheme) || text(draft.cycleSummary.displayTitle) || "현재 10년의 중심 흐름"}
@@ -408,7 +380,7 @@ function renderTenYearSummary(draft: MajorFortuneReportDraft, evidencePacket: Ma
   ].filter(Boolean);
 
   return (
-    <section className={panelClass}>
+    <section data-reading-section="" className={panelClass}>
       <p className="text-sm font-semibold text-[#8b6d2d]">10년 흐름 핵심</p>
       <h2 className={`${sectionTitleClass} mt-1`}>이번 대운이 바꾸는 방향</h2>
       <div className="mt-5">{renderParagraphs(summary)}</div>
@@ -620,7 +592,7 @@ function renderDaeunFortuneTable(
   });
 
   return (
-    <section className="space-y-4">
+    <section id="report-timeline" tabIndex={-1} className="space-y-4">
       <div>
         <p className="text-sm font-semibold text-[#8b6d2d]">대운 타임라인</p>
         <h2 className={sectionTitleClass}>10년 연도별 상세 흐름</h2>
@@ -653,7 +625,7 @@ function renderAnnualCross(
   const annualYear = annualCross?.selectedYear ?? currentAnnual?.year;
 
   return (
-    <section className={panelClass}>
+    <section id="report-annual" tabIndex={-1} data-reading-section="" className={panelClass}>
       <p className="text-sm font-semibold text-[#8b6d2d]">현재 대운·올해 세운 교차</p>
       <h2 className={`${sectionTitleClass} mt-1`}>
         {annualYear ?? "올해"} 세운이 현재 대운 위에 올리는 자극
@@ -684,7 +656,7 @@ function renderMbtiExpression(
   ].filter(isVisibleText);
 
   return (
-    <section className={panelClass}>
+    <section data-reading-section="" className={panelClass}>
       <p className="text-sm font-semibold text-[#8b6d2d]">MBTI 성향 발현 방식</p>
       <h2 className={`${sectionTitleClass} mt-1`}>
         {text(mbtiBasis?.type)
@@ -766,7 +738,7 @@ function renderActionGuides(
   if (guides.length === 0) return null;
 
   return (
-    <section className={panelClass}>
+    <section id="report-actions" tabIndex={-1} data-reading-section="" className={panelClass}>
       <p className="text-sm font-semibold text-[#8b6d2d]">실행 기준</p>
       <h2 className={`${sectionTitleClass} mt-1`}>이번 대운을 실제 선택으로 바꾸는 기준</h2>
       <div className="mt-6 grid gap-4 lg:grid-cols-3">
@@ -786,7 +758,7 @@ function renderStrongYears(draft: MajorFortuneReportDraft) {
   if (draft.strongYears.length === 0) return null;
 
   return (
-    <section className={panelClass}>
+    <section data-reading-section="" className={panelClass}>
       <p className="text-sm font-semibold text-[#8b6d2d]">강하게 체감되는 해 요약</p>
       <h2 className={`${sectionTitleClass} mt-1`}>타임라인에서 한 번 더 확인할 연도</h2>
       <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -847,7 +819,7 @@ function renderMyeongliDetails(draft: MajorFortuneReportDraft) {
   ].filter((item): item is { title: string; evidence: string; interpretation: string } => item !== null);
 
   return (
-    <section className={panelClass}>
+    <section data-reading-section="" className={panelClass}>
       <p className="text-sm font-semibold text-[#8b6d2d]">명리 근거</p>
       <h2 className={`${sectionTitleClass} mt-1`}>대운 해석에 실제로 쓰는 신호</h2>
       <div className="mt-5 space-y-4">
@@ -889,16 +861,22 @@ function renderSafetyNotes(
 
 export function MajorFortuneReportView({
   draft,
-  reportId,
-  devStatus,
   evidencePacket,
   manseRyeokTable,
   mbtiProfileTable,
 }: MajorFortuneReportViewProps) {
+  const actionGuides = renderActionGuides(draft, evidencePacket);
   return (
-    <main className="min-w-0 bg-[#f6f0e7] px-4 py-8 text-[#2b211b] sm:px-6 lg:px-8">
+    <div className="min-w-0 bg-[#f6f0e7] px-4 py-8 text-[#2b211b] sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-6xl flex-col gap-8">
-        {renderHero(draft, reportId, devStatus, evidencePacket)}
+        {renderHero(draft, evidencePacket)}
+        <ReportContents items={[
+          { id: "report-foundation", label: "원국과 행동 성향" },
+          { id: "report-current", label: "현재 10년의 방향" },
+          { id: "report-annual", label: "올해와의 교차" },
+          { id: "report-timeline", label: "10년 타임라인" },
+          ...(actionGuides ? [{ id: "report-actions", label: "실행 기준" }] : []),
+        ]} />
         {renderCommonFoundation(manseRyeokTable, mbtiProfileTable, evidencePacket, draft)}
         {renderCurrentMajorFortune(draft, evidencePacket)}
         {renderAnnualCross(draft, evidencePacket)}
@@ -908,10 +886,10 @@ export function MajorFortuneReportView({
         {renderStrongYears(draft)}
         {renderMyeongliDetails(draft)}
         {renderRiskPatterns(draft, evidencePacket)}
-        {renderActionGuides(draft, evidencePacket)}
+        {actionGuides}
         {renderSafetyNotes(draft, evidencePacket)}
       </div>
-    </main>
+    </div>
   );
 }
 

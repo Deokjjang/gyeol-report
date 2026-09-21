@@ -1,3 +1,4 @@
+import { ReportReadingFrame, ReportReentry } from "../../../components/report/ReportReadingFrame";
 import { readPublishedReport } from "../../../lib/payment/paidReportReliability";
 import { createPaidReportReliabilityStore } from "../../../lib/payment/paidReportReliabilityStore";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
@@ -6,7 +7,6 @@ import { ReportStatusView } from "../../../components/report/ReportStatusView";
 import type { ReactNode } from "react";
 
 import GyeolBrandHeader from "../../../components/brand/GyeolBrandHeader";
-import ReportShareActions from "../../../components/report/ReportShareActions";
 import {
   LoveMarriageChildReportManseRyeokTable,
   LoveMarriageChildReportMbtiProfileTable,
@@ -665,12 +665,10 @@ function renderProductPreviewCompatibilityState(
   }
 
   return (
-    <ResultShell>
-      <CompatibilityReportView
-        draft={productPreview.draft}
-        reportId={productPreview.reportId}
-      />
-    </ResultShell>
+    <CompatibilityReportView
+      draft={productPreview.draft}
+      reportId={productPreview.reportId}
+    />
   );
 }
 
@@ -707,28 +705,15 @@ function renderProductPreviewState(productPreview: ProductPreviewSnapshot) {
   }
 
   return (
-    <>
+    <ReportReadingFrame createdAtIso={productPreview.createdAtIso}>
       {content}
       {renderProductPreviewReentryCta(productPreview.productSlug)}
-    </>
+    </ReportReadingFrame>
   );
 }
 
 function renderProductPreviewReentryCta(productSlug: string) {
-  return (
-    <section className="bg-[#f6f0e7] px-5 py-10 text-[#2b211b] sm:px-8">
-      <div className="mx-auto grid max-w-5xl gap-5 rounded-lg border border-[#d7b56d] bg-[#fffdf8] p-5 shadow-sm shadow-[#6f1d35]/10">
-        <div className="space-y-1">
-          <p className="text-sm font-bold text-[#6f1d35]">결리포트</p>
-          <p className="text-base font-semibold">
-            이 리포트가 필요했던 사람에게 공유하거나, 내 정보로 다시
-            생성해 볼 수 있습니다.
-          </p>
-        </div>
-        <ReportShareActions productSlug={productSlug} />
-      </div>
-    </section>
-  );
+  return <ReportReentry productSlug={productSlug} />;
 }
 
 function renderProductPreviewCareerMoneyStudyState(
