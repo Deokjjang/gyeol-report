@@ -10,6 +10,7 @@ import type { ReliabilityStore, ReliabilityResult } from "../../../src/lib/payme
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
 import type { ProductGenerationSuccessResult } from "../../../src/lib/report-generation/productGenerationDispatcher";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
+import { recoverPendingPayment } from "../../../src/lib/payment/paymentConfirmRecovery";
 
 const payload = { productKey: "saju_mbti_full", productSlug: "saju-mbti-full", person: { name: "신뢰성검증", birthDate: "1996-12-06", birthTime: "09:30", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ" }, userContext: { relationshipStatus: "single", jobStatus: "employee", detailJob: "기획자", focusAreas: [] }, productOptions: {} };
 const runtime = { enabled: false as const, reason: "flag_disabled" as const };
@@ -33,6 +34,7 @@ beforeAll(async () => {
   }
   await db.exec(readFileSync("supabase/migrations/20260920163924_production_reliability_reconcile.sql", "utf8"));
   await db.exec(readFileSync("scripts/paid_report_quarantine_recovery_patch.sql", "utf8"));
+  await db.exec(readFileSync("scripts/paid_payment_confirm_recovery_queue_patch.sql", "utf8"));
   store = { async call(action, data = {}) {
     const result = await db.query<{ value: ReliabilityResult }>("select public.paid_report_reliability($1,$2::jsonb) as value", [action, JSON.stringify(data)]);
     return result.rows[0].value;
@@ -48,6 +50,20 @@ beforeEach(async () => {
 });
 
 describe("paid report reliability — actual SQL, mock providers", () => {
+  it("a failed payment recovery and an existing generation job make independent durable progress", async () => {
+    const id = await paid();
+    await store.call("create_order", { paymentOrderId: "recover-other", providerOrderId: "recover-order", productType: payload.productKey, provider: "toss", amount: 1290, inputSnapshot: { reportInputPayload: payload } });
+    await store.call("confirm_claim", { orderId: "recover-order", paymentKey: "mock-recover", amount: 1290 });
+    await db.exec("update payment_orders set confirm_lease_until=now()-interval '1 second' where payment_order_id='recover-other'");
+    const [recovery, generation] = await Promise.all([
+      recoverPendingPayment(store, async () => ({ ok: false, error: { code: "TOSS_CONFIRM_PROVIDER_ERROR", message: "mock outage" } })),
+      runPaidReportJob(store, runtime, async () => structuredClone(valid)),
+    ]);
+    expect(recovery).toMatchObject({ attention: false });
+    expect(generation).toMatchObject({ status: "COMPLETED" });
+    expect(await readPublishedReport(store, id)).toMatchObject({ status: "COMPLETED" });
+    expect((await rows("payment_orders")).find(o => o.payment_order_id==='recover-other')).toMatchObject({ status: "ready", recovery_attempt_count: 1 });
+  });
   it.each(["timeout", "malformed", "empty", "invalid"])("writer %s → two durable retries → canonical fallback publication", async failure => {
     const id = await paid();
     const transport = vi.fn<typeof fetch>(async () => {
@@ -463,6 +479,7 @@ describe("quarantined snapshot preservation and recovery", () => {
       const permissions = await db.query<{ allowed: boolean }>("select has_function_privilege($1, 'public.paid_report_reliability(text,jsonb)', 'EXECUTE') as allowed", [role]);
       expect(permissions.rows[0].allowed).toBe(role === "service_role");
     }
+    await db.exec(readFileSync("scripts/paid_payment_confirm_recovery_queue_patch.sql", "utf8"));
   });
 
   it("old callers without an observation cannot change storage after the RPC patch", async () => {

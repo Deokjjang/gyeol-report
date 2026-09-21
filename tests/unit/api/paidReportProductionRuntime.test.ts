@@ -8,6 +8,7 @@ const mocks = vi.hoisted(() => ({
   resolveWriter: vi.fn(),
   runJob: vi.fn(),
   storeCall: vi.fn(),
+  confirmProvider: vi.fn(),
 }));
 
 vi.mock("../../../src/lib/payment/paidReportReliabilityStore", () => ({
@@ -21,7 +22,7 @@ vi.mock("../../../src/lib/report-generation/reportWriterRuntime", () => ({
   resolveReportWriterRuntime: mocks.resolveWriter,
 }));
 vi.mock("../../../src/lib/payment/tossConfirmClient", () => ({
-  confirmTossPayment: vi.fn(),
+  confirmTossPayment: mocks.confirmProvider,
 }));
 
 import { GET as runWorker } from "../../../src/app/api/internal/report-jobs/route";
@@ -47,9 +48,10 @@ beforeEach(() => {
   mocks.resolveWriter.mockReset().mockReturnValue({ enabled: false, reason: "flag_disabled" });
   mocks.runJob.mockReset().mockResolvedValue({ ok: true });
   mocks.confirmPaidReport.mockReset();
+  mocks.confirmProvider.mockReset();
 });
 
-afterEach(() => vi.unstubAllEnvs());
+afterEach(() => { vi.unstubAllEnvs(); vi.useRealTimers(); });
 
 describe("production paid report runtime boundaries", () => {
   it("fails closed when production reliability env is incomplete", async () => {
@@ -125,6 +127,36 @@ describe("production paid report runtime boundaries", () => {
       ["attention"],
       ["admin_retry", { reportId: "report-test" }],
     ]);
+  });
+
+  it("a hanging recovery provider does not delay generation and is aborted after ten seconds", async () => {
+    vi.useFakeTimers();
+    vi.stubEnv("TOSS_CONFIRM_API_ENABLED", "1");
+    mocks.storeCall.mockImplementation(async (action: string) => action === "claim_payment_recovery"
+      ? { ok: true, token: "mock-token", order: { payment_order_id: "safe-order", provider_order_id: "provider-order", provider_payment_id: "mock-key", amount: 1290 } }
+      : { ok: true });
+    mocks.confirmProvider.mockImplementation(() => new Promise(() => {}));
+    const running = runWorker(authorizedRequest("/api/internal/report-jobs", "mock-cron-secret"));
+    await vi.advanceTimersByTimeAsync(1);
+    expect(mocks.runJob).toHaveBeenCalledTimes(1);
+    expect(mocks.confirmProvider).toHaveBeenCalledTimes(1);
+    const signal = mocks.confirmProvider.mock.calls[0][0].signal as AbortSignal;
+    expect(signal.aborted).toBe(false);
+    await vi.advanceTimersByTimeAsync(10000);
+    expect((await running).status).toBe(200);
+    expect(signal.aborted).toBe(true);
+    expect(mocks.storeCall).toHaveBeenCalledWith("payment_recovery_failed", expect.objectContaining({ code: "RECOVERY_TIMEOUT" }));
+  });
+
+  it("a recovery storage exception cannot stop an already queued generation job", async () => {
+    vi.stubEnv("TOSS_CONFIRM_API_ENABLED", "1");
+    mocks.storeCall.mockImplementation(async (action: string) => {
+      if (action === "claim_payment_recovery") throw new Error("mock DB outage");
+      return { ok: true };
+    });
+    expect((await runWorker(authorizedRequest("/api/internal/report-jobs", "mock-cron-secret"))).status).toBe(200);
+    expect(mocks.runJob).toHaveBeenCalledTimes(1);
+    expect(mocks.confirmProvider).not.toHaveBeenCalled();
   });
 
   it("keeps the cron contract and customer-safe status copy", () => {

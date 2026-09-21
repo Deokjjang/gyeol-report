@@ -26,6 +26,7 @@ type TossConfirmFetch = (
 type ConfirmTossPaymentInput = TossConfirmRequest & {
   readonly secretKey: string;
   readonly fetchImpl?: TossConfirmFetch;
+  readonly signal?: AbortSignal;
 };
 
 function failure(
@@ -228,6 +229,7 @@ export async function confirmTossPayment(
 
   try {
     response = await fetchImpl(TOSS_CONFIRM_API_URL, {
+      ...(input.signal ? { signal: input.signal } : {}),
       method: "POST",
       headers: {
         authorization: createAuthorizationHeader(input.secretKey),
