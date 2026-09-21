@@ -35,6 +35,7 @@ beforeAll(async () => {
   await db.exec(readFileSync("supabase/migrations/20260920163924_production_reliability_reconcile.sql", "utf8"));
   await db.exec(readFileSync("scripts/paid_report_quarantine_recovery_patch.sql", "utf8"));
   await db.exec(readFileSync("scripts/paid_payment_confirm_recovery_queue_patch.sql", "utf8"));
+  await db.exec(readFileSync("scripts/paid_report_publish_expiry_patch.sql", "utf8"));
   store = { async call(action, data = {}) {
     const result = await db.query<{ value: ReliabilityResult }>("select public.paid_report_reliability($1,$2::jsonb) as value", [action, JSON.stringify(data)]);
     return result.rows[0].value;
@@ -161,11 +162,13 @@ describe("paid report reliability — actual SQL, mock providers", () => {
     expect(snapshot.evidencePacket).toEqual(valid.evidencePacket);
     expect(snapshot.draft).toEqual(valid.draft);
   });
-  it("10 report expiry = createdAt + 90 days; cleanup retains financial records", async () => {
+  it("10 report expiry = first publication + 90 days; cleanup retains financial records", async () => {
     const id = await paid();
+    expect((await rows("paid_report_snapshots"))[0].expires_at).toBeNull();
+    await runPaidReportJob(store, runtime, async () => valid);
     const row = (await rows("paid_report_snapshots"))[0];
-    expect(Date.parse(String(row.expires_at)) - Date.parse(String(row.created_at))).toBe(90 * 86400000);
-    await db.exec("update paid_report_snapshots set expires_at=now()-interval '1 second'; update report_input_snapshots set expires_at=now()-interval '1 second'");
+    expect(Date.parse(String(row.expires_at)) - Date.parse(String(row.published_at))).toBe(90 * 86400000);
+    await db.exec("update paid_report_snapshots set published_at=now()-interval '2160 hours'-interval '1 second',expires_at=now()-interval '1 second'; update report_input_snapshots set expires_at=now()-interval '1 second'");
     expect(await readPublishedReport(store, id)).toMatchObject({ status: "EXPIRED", snapshot: null });
     await store.call("expire");
     expect(await rows("report_input_snapshots")).toHaveLength(0);
@@ -452,7 +455,7 @@ describe("quarantined snapshot preservation and recovery", () => {
   it("expiry hides and then clears quarantined content on the existing 90-day cleanup path", async () => {
     const { id, original, before } = await corruptCompleted();
     await readPublishedReport(store, id);
-    await db.exec("update paid_report_snapshots set expires_at=now()-interval '1 second'; update report_input_snapshots set expires_at=now()-interval '1 second'");
+    await db.exec("update paid_report_snapshots set published_at=now()-interval '2160 hours'-interval '1 second',expires_at=now()-interval '1 second'; update report_input_snapshots set expires_at=now()-interval '1 second'");
     expect(await readPublishedReport(store, id)).toMatchObject({ status: "EXPIRED", snapshot: null });
     expect(await storedText()).toBe(before);
     expect(await store.call("admin_retry", { reportId: id })).toMatchObject({ ok: false, code: "NOT_RETRYABLE" });
@@ -480,6 +483,7 @@ describe("quarantined snapshot preservation and recovery", () => {
       expect(permissions.rows[0].allowed).toBe(role === "service_role");
     }
     await db.exec(readFileSync("scripts/paid_payment_confirm_recovery_queue_patch.sql", "utf8"));
+    await db.exec(readFileSync("scripts/paid_report_publish_expiry_patch.sql", "utf8"));
   });
 
   it("old callers without an observation cannot change storage after the RPC patch", async () => {

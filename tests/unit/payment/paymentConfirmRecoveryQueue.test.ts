@@ -28,6 +28,7 @@ afterAll(async () => { await db?.close(); });
 beforeEach(async () => {
   await db.exec("truncate payment_orders cascade");
   await db.exec(readFileSync("scripts/paid_payment_confirm_recovery_queue_patch.sql", "utf8"));
+  await db.exec(readFileSync("scripts/paid_report_publish_expiry_patch.sql", "utf8"));
 });
 afterEach(() => vi.useRealTimers());
 async function order(id: string) {
