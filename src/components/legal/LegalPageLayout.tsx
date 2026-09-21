@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+import GyeolBrandHeader from "../brand/GyeolBrandHeader";
+
 type LegalPageLayoutProps = {
   readonly eyebrowKo?: string;
   readonly titleKo: string;
@@ -16,6 +18,8 @@ export default function LegalPageLayout({
   return (
     <main className="min-h-screen bg-neutral-950 px-5 py-10 text-neutral-50 sm:px-8 lg:px-10">
       <section className="mx-auto max-w-3xl space-y-8">
+        <GyeolBrandHeader tone="dark" />
+
         <header className="space-y-4">
           <p className="text-sm font-medium text-neutral-400">{eyebrowKo}</p>
           <h1 className="text-4xl font-bold tracking-tight">{titleKo}</h1>

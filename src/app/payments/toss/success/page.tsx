@@ -3,6 +3,7 @@ import { confirmPaidReport } from "../../../../lib/payment/paidReportReliability
 import { createPaidReportReliabilityStore } from "../../../../lib/payment/paidReportReliabilityStore";
 import { redirect } from "next/navigation";
 
+import GyeolBrandHeader from "../../../../components/brand/GyeolBrandHeader";
 import { confirmTossPayment } from "../../../../lib/payment/tossConfirmClient";
 
 export const dynamic = "force-dynamic";
@@ -155,12 +156,10 @@ export default async function TossPaymentSuccessPage({
   return (
     <main className="min-h-screen bg-neutral-950 px-5 py-10 text-neutral-50 sm:px-8">
       <section className="mx-auto flex min-h-[70vh] max-w-3xl flex-col justify-center gap-6">
+        <GyeolBrandHeader tone="dark" />
         {finalState === "ready_to_confirm" || finalState === "generation_failed" ? <ReportGenerationStatus paymentPending /> : null}
 
         <div className="space-y-2">
-          <p className="text-sm font-medium text-neutral-500">
-            Gyeol Report / 결리포트
-          </p>
           <h1
             className="text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl"
             data-confirm-title

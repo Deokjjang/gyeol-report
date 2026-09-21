@@ -3,33 +3,43 @@ import Link from "next/link";
 type GyeolBrandHeaderProps = {
   readonly className?: string;
   readonly taglineKo?: string;
+  readonly tone?: "light" | "dark";
 };
 
 export default function GyeolBrandHeader({
   className = "",
   taglineKo,
+  tone = "light",
 }: GyeolBrandHeaderProps) {
+  const isDark = tone === "dark";
+  const brandClassName = isDark ? "text-neutral-50" : "text-[#211815]";
+  const englishClassName = isDark ? "text-[#d7b56d]" : "text-[#8a6b2f]";
+  const taglineClassName = isDark ? "text-neutral-400" : "text-[#776b60]";
+
   return (
     <div className={`flex items-center justify-between gap-4 ${className}`}>
       <Link
         href="/"
-        className="group inline-flex min-h-12 items-center gap-3 rounded-full pr-3 transition duration-200 active:scale-[0.98]"
+        className="group inline-flex min-h-12 items-center transition duration-200 active:scale-[0.98]"
         aria-label="결리포트 홈"
       >
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#c79a43]/55 bg-[#7f1d38] text-lg font-extrabold text-[#fffaf0] shadow-[0_10px_28px_rgba(127,29,56,0.22)] transition group-hover:bg-[#8f2543]">
-          결
-        </span>
         <span className="grid gap-0.5">
-          <span className="text-lg font-extrabold tracking-normal text-[#211815]">
+          <span
+            className={`text-xl font-extrabold tracking-normal ${brandClassName}`}
+          >
             결리포트
           </span>
-          <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8a6b2f]">
+          <span
+            className={`text-[11px] font-bold uppercase tracking-[0.18em] ${englishClassName}`}
+          >
             Gyeol Report
           </span>
         </span>
       </Link>
       {taglineKo ? (
-        <p className="hidden max-w-xs text-right text-xs font-semibold leading-5 text-[#776b60] sm:block">
+        <p
+          className={`hidden max-w-xs text-right text-xs font-semibold leading-5 sm:block ${taglineClassName}`}
+        >
           {taglineKo}
         </p>
       ) : null}

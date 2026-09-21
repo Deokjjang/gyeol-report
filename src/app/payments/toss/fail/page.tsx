@@ -1,3 +1,5 @@
+import GyeolBrandHeader from "../../../../components/brand/GyeolBrandHeader";
+
 export const dynamic = "force-dynamic";
 
 type TossFailPageProps = {
@@ -29,10 +31,9 @@ export default async function TossPaymentFailPage({
   return (
     <main className="min-h-screen bg-neutral-950 px-5 py-10 text-neutral-50 sm:px-8">
       <section className="mx-auto flex min-h-[70vh] max-w-3xl flex-col justify-center gap-6">
+        <GyeolBrandHeader tone="dark" />
+
         <div className="space-y-2">
-          <p className="text-sm font-medium text-neutral-500">
-            Gyeol Report / 결리포트
-          </p>
           <h1 className="text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl">
             결제 실패 또는 취소
           </h1>
