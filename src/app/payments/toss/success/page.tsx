@@ -1,9 +1,8 @@
-import { ReportGenerationStatus } from "../../../../components/report/ReportGenerationStatus";
+import { ReportStatusView } from "../../../../components/report/ReportStatusView";
 import { confirmPaidReport } from "../../../../lib/payment/paidReportReliability";
 import { createPaidReportReliabilityStore } from "../../../../lib/payment/paidReportReliabilityStore";
 import { redirect } from "next/navigation";
 
-import GyeolBrandHeader from "../../../../components/brand/GyeolBrandHeader";
 import { confirmTossPayment } from "../../../../lib/payment/tossConfirmClient";
 
 export const dynamic = "force-dynamic";
@@ -29,7 +28,7 @@ const requiredPaymentAmount = 1290;
 const tossConfirmApiEnabledEnv = "TOSS_CONFIRM_API_ENABLED";
 const tossSecretKeyEnv = "TOSS_PAYMENTS_SECRET_KEY";
 const paidGenerationFailureMessage =
-  "결제와 리포트 준비 상태를 확인하고 있습니다. 잠시 후 이 페이지에서 다시 확인해 주세요.";
+  "결제 상태 확인이 더 필요합니다. 잠시 후 이 주소에서 다시 확인해 주세요. 확인이 어려우시면 고객센터로 문의해 주세요.";
 
 function readQueryValue(value: string | string[] | undefined): string {
   const firstValue = Array.isArray(value) ? value[0] : value;
@@ -95,27 +94,23 @@ function createInitialCopy(state: InitialSuccessState): {
 
   if (state === "generation_failed") {
     return {
-      title: "리포트 생성 처리 중 문제가 발생했습니다.",
+      title: "결제 상태를 확인해 주세요.",
       message: paidGenerationFailureMessage,
     };
   }
 
   if (state === "confirm_disabled") {
     return {
-      title: "결제 정보 확인 완료",
+      title: "결제 상태를 확인해 주세요.",
       message:
-        "결제창에서 결제 인증 정보를 받았습니다. 결제 승인과 리포트 생성 처리는 서버 설정이 켜진 뒤 진행됩니다.",
+        "아직 결제 완료 여부를 확인하지 못했습니다. 고객센터로 문의해 주시면 확인해 드리겠습니다.",
     };
   }
 
   return {
-    title: "결제 승인 처리 중",
-    message: "결제 승인 확인 후 리포트를 생성하고 있습니다.",
+    title: "결제 상태를 확인해 주세요.",
+    message: "결제 확인에 시간이 조금 더 걸리고 있습니다. 잠시 후 이 주소에서 다시 확인해 주세요.",
   };
-}
-
-function renderValue(value: string): string {
-  return value.trim().length > 0 ? value : "not provided";
 }
 
 async function confirmAndGenerateReport(input: {
@@ -154,62 +149,11 @@ export default async function TossPaymentSuccessPage({
   const initialCopy = createInitialCopy(finalState);
 
   return (
-    <main className="min-h-screen bg-neutral-950 px-5 py-10 text-neutral-50 sm:px-8">
-      <section className="mx-auto flex min-h-[70vh] max-w-3xl flex-col justify-center gap-6">
-        <GyeolBrandHeader tone="dark" />
-        {finalState === "ready_to_confirm" || finalState === "generation_failed" ? <ReportGenerationStatus paymentPending /> : null}
-
-        <div className="space-y-2">
-          <h1
-            className="text-3xl font-bold tracking-tight text-neutral-50 sm:text-4xl"
-            data-confirm-title
-          >
-            {initialCopy.title}
-          </h1>
-        </div>
-
-        <div className="space-y-5 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
-          <p className="text-base leading-7 text-neutral-300" data-confirm-message>
-            {initialCopy.message}
-          </p>
-
-          <dl
-            className="grid gap-3 rounded-lg border border-neutral-800 bg-neutral-950/60 p-4 text-sm"
-            data-confirm-details
-            hidden={finalState === "missing"}
-          >
-            <div className="grid gap-1 sm:grid-cols-[10rem_1fr]">
-              <dt className="font-medium text-neutral-500">주문번호</dt>
-              <dd
-                className="break-words text-neutral-100"
-                data-confirm-order-id
-              >
-                {renderValue(orderId)}
-              </dd>
-            </div>
-            <div className="grid gap-1 sm:grid-cols-[10rem_1fr]">
-              <dt className="font-medium text-neutral-500">결제금액</dt>
-              <dd className="break-words text-neutral-100" data-confirm-amount>
-                {finalState === "confirm_disabled" ? "1,290원" : renderValue(amount)}
-              </dd>
-            </div>
-            <div className="grid gap-1 sm:grid-cols-[10rem_1fr]">
-              <dt className="font-medium text-neutral-500">상태</dt>
-              <dd className="text-neutral-100" data-confirm-status>
-                {finalState}
-              </dd>
-            </div>
-          </dl>
-
-          <a
-            className="inline-flex w-full items-center justify-center rounded-lg bg-neutral-50 px-4 py-3 text-sm font-semibold text-neutral-950 transition hover:bg-white sm:w-auto"
-            data-report-link
-            href="/report/new"
-          >
-            다른 리포트 보기
-          </a>
-        </div>
-      </section>
-    </main>
+    <ReportStatusView
+      state="payment-check"
+      title={initialCopy.title}
+      message={initialCopy.message}
+      support
+    />
   );
 }

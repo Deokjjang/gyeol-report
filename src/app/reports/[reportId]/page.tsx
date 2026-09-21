@@ -2,6 +2,7 @@ import { readPublishedReport } from "../../../lib/payment/paidReportReliability"
 import { createPaidReportReliabilityStore } from "../../../lib/payment/paidReportReliabilityStore";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
 import { ReportGenerationStatus } from "../../../components/report/ReportGenerationStatus";
+import { ReportStatusView } from "../../../components/report/ReportStatusView";
 import type { ReactNode } from "react";
 
 import GyeolBrandHeader from "../../../components/brand/GyeolBrandHeader";
@@ -80,7 +81,7 @@ type ReportResultPageProps = {
 };
 
 type PageState =
-  | { readonly kind: "processing"; readonly attention: boolean }
+  | { readonly kind: "processing"; readonly attention: boolean; readonly delayed: boolean }
   | {
       readonly kind: "invalid";
     }
@@ -120,7 +121,7 @@ async function loadPageState(reportId: string): Promise<PageState> {
     if (durable.ok) {
       if (durable.status === "EXPIRED") return { kind: "expired" };
       if (durable.status === "COMPLETED" && durable.snapshot) return { kind: "productPreview", productPreview: durable.snapshot as ProductPreviewSnapshot };
-      return { kind: "processing", attention: durable.status === "FAILED_REQUIRES_ATTENTION" };
+      return { kind: "processing", attention: durable.status === "FAILED_REQUIRES_ATTENTION", delayed: durable.status === "RETRYING" };
     }
     if (process.env.NODE_ENV === "production") return { kind: "unavailable" };
   }
@@ -326,33 +327,17 @@ function renderInvalidState() {
 
 function renderUnavailableState() {
   return (
-    <ResultShell>
-      <div className="space-y-4 rounded-xl border border-[#d8d1c4] bg-[#fffdf8] p-6 shadow-[0_22px_80px_rgba(40,24,28,0.10)]">
-        <h1 className="text-3xl font-bold tracking-tight text-[#211815]">
-          리포트를 찾을 수 없습니다.
-        </h1>
-        <p className="text-base leading-7 text-[#6f675d]">
-          결제가 완료된 리포트만 조회할 수 있습니다.
-        </p>
-      </div>
-    </ResultShell>
+    <ReportStatusView
+      state="payment-check"
+      title="리포트 상태를 확인하지 못했습니다"
+      message="잠시 후 이 주소에서 다시 확인해 주세요. 계속 확인이 어려우시면 고객센터로 문의해 주세요."
+      support
+    />
   );
 }
 
 function renderExpiredState() {
-  return (
-    <ResultShell>
-      <div className="space-y-4 rounded-xl border border-[#d8d1c4] bg-[#fffdf8] p-6 shadow-[0_22px_80px_rgba(40,24,28,0.10)]">
-        <h1 className="text-3xl font-bold tracking-tight text-[#211815]">
-          리포트 열람 기간이 만료되었습니다.
-        </h1>
-        <p className="text-base leading-7 text-[#6f675d]">
-          생성일로부터 90일이 지나면 리포트와 입력 정보는 순차적으로 삭제될 수
-          있습니다.
-        </p>
-      </div>
-    </ResultShell>
-  );
+  return <ReportStatusView state="expired" />;
 }
 
 function renderInvalidSnapshotState() {
@@ -1545,7 +1530,7 @@ export default async function ReportResultPage({
   const routeParams = await params;
   const state = await loadPageState(routeParams.reportId ?? "");
 
-  if (state.kind === "processing") return <ResultShell><ReportGenerationStatus attention={state.attention} /></ResultShell>;
+  if (state.kind === "processing") return <ReportGenerationStatus attention={state.attention} delayed={state.delayed} />;
 
   if (state.kind === "invalid") {
     return renderInvalidState();

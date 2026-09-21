@@ -16,14 +16,11 @@ describe("Toss payment success page source", () => {
       "confirmPaidReport",
       "createPaidReportReliabilityStore",
       "redirect(`/reports/${finalState.redirectReportId}`)",
-      "결제 정보 확인 완료",
-      "결제 승인 처리 중",
-      "결제 승인 확인 후 리포트를 생성하고 있습니다.",
-      "결제와 리포트 준비 상태를 확인하고 있습니다.",
+      "결제 상태를 확인해 주세요.",
+      "결제 상태 확인이 더 필요합니다.",
       "결제 정보가 부족합니다.",
       "결제 금액이 올바르지 않습니다.",
-      "다른 리포트 보기",
-      "/report/new",
+      "ReportStatusView",
       "requiredPaymentAmount = 1290",
     ];
     const blockedMarkers = [

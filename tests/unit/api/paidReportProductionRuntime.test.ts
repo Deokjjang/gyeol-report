@@ -142,9 +142,9 @@ describe("production paid report runtime boundaries", () => {
       path: "/api/internal/report-jobs",
       schedule: "* * * * *",
     });
-    expect(statusSource).toContain("결제가 완료되었습니다");
-    expect(statusSource).toContain("리포트를 생성하고 있습니다");
+    expect(statusSource).toContain("ReportStatusView");
+    expect(statusSource).toContain("if (attention || refreshing) return");
     expect(statusSource).not.toContain("FAILED_REQUIRES_ATTENTION");
-    expect(resultSource).toContain("리포트 열람 기간이 만료되었습니다.");
+    expect(resultSource).toContain('<ReportStatusView state="expired" />');
   });
 });

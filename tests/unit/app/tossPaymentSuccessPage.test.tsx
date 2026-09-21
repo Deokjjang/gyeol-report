@@ -53,14 +53,14 @@ describe("Toss payment success page", () => {
       amount: "1290",
     });
 
-    expect(html).toContain("결제 정보 확인 완료");
+    expect(html).toContain("결제 상태를 확인해 주세요.");
     expect(html).toContain(
-      "결제 승인과 리포트 생성 처리는 서버 설정이 켜진 뒤 진행됩니다.",
+      "아직 결제 완료 여부를 확인하지 못했습니다.",
     );
-    expect(html).toContain("provider_order_toss_success_test");
-    expect(html).toContain("1,290원");
-    expect(html).toContain("confirm_disabled");
-    expect(html).toContain("다른 리포트 보기");
+    expect(html).not.toContain("provider_order_toss_success_test");
+    expect(html).not.toContain("1,290원");
+    expect(html).not.toContain("confirm_disabled");
+    expect(html).not.toContain("다른 리포트 보기");
     expect(html).not.toContain(fullPaymentKey);
     expect(html).not.toContain("test_toss_secret_key");
   });
@@ -84,7 +84,7 @@ describe("Toss payment success page", () => {
 
     expect(html).toContain("결제 금액이 올바르지 않습니다.");
     expect(html).toContain("결제 승인 요청 금액을 다시 확인해 주세요.");
-    expect(html).toContain("990");
+    expect(html).not.toContain("990");
   });
 
   it("keeps confirm and report generation server-side only", () => {
@@ -121,5 +121,5 @@ describe("Toss payment success page", () => {
 });
 
 function paidGenerationFailureMessageSourceMarker(): string {
-  return "결제와 리포트 준비 상태를 확인하고 있습니다.";
+  return "결제 상태 확인이 더 필요합니다.";
 }

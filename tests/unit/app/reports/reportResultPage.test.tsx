@@ -1214,7 +1214,7 @@ describe("report result page", () => {
     expect(html).toContain("A가 B에게 주는 피로");
     expect(html).toContain("B가 A에게 주는 피로");
     expect(html).not.toContain("사주×MBTI 종합 리포트");
-    expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
+    expect(html).not.toContain("잠시 후 이 주소에서 다시 확인해 주세요.");
   });
 
   it("renders love marriage child product preview snapshot before paid result lookup", async () => {
@@ -1230,7 +1230,7 @@ describe("report result page", () => {
     expect(html).toContain("MBTI 성향표");
     expect(html).toContain("사랑 방식");
     expect(html).not.toContain("사주×MBTI 종합 리포트");
-    expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
+    expect(html).not.toContain("잠시 후 이 주소에서 다시 확인해 주세요.");
   });
 
   it("renders career money study product preview snapshot before paid result lookup", async () => {
@@ -1246,7 +1246,7 @@ describe("report result page", () => {
     expect(html).toContain("잘 맞는 직업과 업무 포지션");
     expect(html).toContain("돈 관리 성향");
     expect(html).not.toContain("사주×MBTI 종합 리포트");
-    expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
+    expect(html).not.toContain("잠시 후 이 주소에서 다시 확인해 주세요.");
   });
 
   it("renders major fortune product preview snapshot before paid result lookup", async () => {
@@ -1261,7 +1261,7 @@ describe("report result page", () => {
     expect(html).toContain("현재 대운·올해 세운 교차");
     expect(html).toContain("대운 타임라인");
     expect(html).not.toContain("사주×MBTI 종합 리포트");
-    expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
+    expect(html).not.toContain("잠시 후 이 주소에서 다시 확인해 주세요.");
   });
 
   it("renders annual fortune product preview snapshot before paid result lookup", async () => {
@@ -1277,7 +1277,7 @@ describe("report result page", () => {
     expect(html).toContain("현재 대운과 선택 연도 세운 교차");
     expect(html).toContain("월운 12개월 흐름");
     expect(html).not.toContain("사주×MBTI 종합 리포트");
-    expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
+    expect(html).not.toContain("잠시 후 이 주소에서 다시 확인해 주세요.");
   });
 
   it("renders comprehensive V2 product preview snapshot before paid result lookup", async () => {
@@ -1290,7 +1290,7 @@ describe("report result page", () => {
     expect(html).toContain("덕민님의 결은 큰 방향과 빠른 판단에 있습니다");
     expect(html).toContain("오행 분포로 보는 에너지 구조");
     expect(html).toContain("내 사주의 주요 표식 해석");
-    expect(html).not.toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
+    expect(html).not.toContain("잠시 후 이 주소에서 다시 확인해 주세요.");
   });
 
   it("loads by report id and renders a generated comprehensive draft", async () => {
@@ -1688,8 +1688,8 @@ describe("report result page", () => {
 
     const html = await renderPage("report_missing_result");
 
-    expect(html).toContain("리포트를 찾을 수 없습니다.");
-    expect(html).toContain("결제가 완료된 리포트만 조회할 수 있습니다.");
+    expect(html).toContain("리포트 상태를 확인하지 못했습니다");
+    expect(html).toContain("잠시 후 이 주소에서 다시 확인해 주세요.");
     expect(html).not.toContain("provider" + "Payment" + "Id");
     expect(html).not.toContain("share" + "Token");
     expect(html).not.toContain("access" + "TokenHash");
