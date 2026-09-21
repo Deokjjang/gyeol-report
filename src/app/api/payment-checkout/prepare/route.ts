@@ -1,3 +1,4 @@
+import { createAnnualCommerceAcceptance } from "../../../../lib/payment/annualPurchasePolicy";
 import { normalizeReportInputPayload } from "../../../../lib/report-generation/reportInputAdapter";
 import { randomUUID } from "node:crypto";
 
@@ -100,6 +101,7 @@ function createReadyPaymentOrderRecord(input: {
   readonly provider: unknown;
   readonly inputSnapshot: unknown;
   readonly providerOrderId: string;
+  readonly acceptedAt: Date;
 }):
   | {
       readonly ok: true;
@@ -113,6 +115,7 @@ function createReadyPaymentOrderRecord(input: {
     productType: input.productType,
     provider: input.provider,
     inputSnapshot: input.inputSnapshot,
+    nowIso: input.acceptedAt.toISOString(),
   });
 
   if (!draftResult.ok) {
@@ -334,21 +337,31 @@ export async function POST(request: Request): Promise<NextResponse> {
     );
   }
 
+  // One server clock for validation and durable acceptance, even across midnight.
+  const acceptedAt = new Date();
+  const inputSnapshot = { ...json.inputSnapshot };
+  delete inputSnapshot.annualCommerceAcceptance;
   // Production must reject unfulfillable inputs before any payment is launched.
   {
-    const normalized = normalizeReportInputPayload(json.inputSnapshot.reportInputPayload);
+    const normalized = normalizeReportInputPayload(inputSnapshot.reportInputPayload, { now: () => acceptedAt });
     if (!normalized.ok || normalized.value.productKey !== (json.productType ?? defaultProductType)) {
       const message = !normalized.ok && normalized.birthTimeContext
         ? "출생시간 범위에 따라 원국이 달라집니다. 시간을 더 구체적으로 확인해 주세요."
         : "출생시간을 포함한 리포트 입력 정보를 확인해 주세요.";
       return createErrorResponse("PAYMENT_CHECKOUT_INVALID_REQUEST", message, 400);
     }
+    if (normalized.value.kind === "annualFortune") {
+      inputSnapshot.annualCommerceAcceptance = createAnnualCommerceAcceptance(
+        Number(normalized.value.productOptions.selectedYear), acceptedAt,
+      );
+    }
   }
 
   const readyOrderRecordResult = createReadyPaymentOrderRecord({
     productType: json.productType ?? defaultProductType,
     provider: json.provider,
-    inputSnapshot: json.inputSnapshot,
+    inputSnapshot,
+    acceptedAt,
     providerOrderId: createProviderOrderId(),
   });
 

@@ -1,3 +1,4 @@
+import { getAnnualPurchasePolicyDate, type AnnualCommerceAcceptance } from "./annualPurchasePolicy";
 import { generateProductReport, type GenerationStrategy } from "../report-generation/generateProductReport";
 import { isRecord, PUBLISH_GATE_VERSION, validateProductPublication } from "../report-generation/productPublishGate";
 import { createProductPreviewSnapshot, type ProductPreviewSnapshotDraft, type ProductPreviewProductType, type ReportProductSlug } from "../report-generation/productPreviewSnapshot";
@@ -27,7 +28,7 @@ export async function confirmPaidReport(input: TossConfirmRequest, store: Reliab
   return store.call("confirm_finish", { ...input, token: claim.token, paidAt });
 }
 
-export type ProductGenerator = (payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy) => Promise<ProductGenerationResult>;
+export type ProductGenerator = (payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance) => Promise<ProductGenerationResult>;
 export async function runPaidReportJob(store: ReliabilityStore, runtime: ReportWriterRuntime, generate: ProductGenerator = generateProductReport) {
   const claimed = await store.call("claim_job", { model: runtime.enabled ? runtime.config.model : "deterministic" });
   if (!claimed.ok || !isRecord(claimed.job)) return claimed;
@@ -39,7 +40,24 @@ export async function runPaidReportJob(store: ReliabilityStore, runtime: ReportW
     jobId: job.job_id, token: job.lease_token, durationMs: Date.now() - started, ...data,
   });
   try {
-    const result = await generate(job.payload, runtime, strategy);
+    let annualAcceptance: AnnualCommerceAcceptance | undefined;
+    if (job.product_type === "annual_fortune") {
+      // find_order returns the immutable server-owned input snapshot, not request data.
+      const found = await store.call("find_order", { paymentOrderId: job.order_id });
+      const order = isRecord(found.order) ? found.order : undefined;
+      const input = isRecord(order?.input_snapshot) ? order.input_snapshot : undefined;
+      const context = input?.annualCommerceAcceptance;
+      if (!found.ok || order?.status !== "paid" || order.payment_order_id !== job.order_id ||
+        order.product_type !== job.product_type || order.report_id !== job.report_id ||
+        !getAnnualPurchasePolicyDate(context, job.payload) ||
+        !getAnnualPurchasePolicyDate(context, input?.reportInputPayload)) {
+        return finish({ success: false, stage: "validation", code: "ANNUAL_PURCHASE_CONTEXT_INVALID", errors: ["ANNUAL_PURCHASE_CONTEXT_INVALID"] });
+      }
+      annualAcceptance = context as AnnualCommerceAcceptance;
+    }
+    const result = annualAcceptance === undefined
+      ? await generate(job.payload, runtime, strategy)
+      : await generate(job.payload, runtime, strategy, annualAcceptance);
     if (!result.ok) {
       const errors = "validationErrors" in result.error ? result.error.validationErrors : undefined;
       return finish({ success: false, stage: errors ? "validation" : "generation", code: errors ? "PUBLISH_REJECTED" : "GENERATION_FAILED", errors: errors ?? [result.error.code] });
