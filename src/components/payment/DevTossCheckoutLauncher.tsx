@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
+import styles from "./paidFunnel.module.css";
+import { getReportProduct } from "../../lib/payment/reportProductCatalog";
 
 import { prePaymentPrivacyNoticeKo } from "../../lib/legal/privacyPolicy";
 import { prePaymentRefundNoticeKo } from "../../lib/legal/refundPolicy";
@@ -41,6 +43,10 @@ type DevTossCheckoutLauncherProps = {
   readonly disabled?: boolean;
   readonly disabledMessageKo?: string;
   readonly onEditInput?: () => void;
+  readonly reviewGroups?: readonly {
+    readonly titleKo?: string;
+    readonly rows: readonly { readonly labelKo: string; readonly valueKo: string }[];
+  }[];
 };
 
 type DevTossCheckoutFetchResponse = {
@@ -325,11 +331,14 @@ export default function DevTossCheckoutLauncher({
   inputSnapshot,
   productType = "saju_mbti_full",
   productLabelKo = "사주×MBTI 종합 리포트",
-  ctaLabelKo = "1,290원 결제하고 리포트 생성하기",
+  ctaLabelKo,
   disabled = false,
   disabledMessageKo = REQUIRED_CHECKOUT_INPUT_MESSAGE_KO,
   onEditInput,
+  reviewGroups,
 }: DevTossCheckoutLauncherProps) {
+  const noticeId = useId();
+  const priceLabel = getReportProduct(productType)?.priceLabelKo ?? "";
   const [isLaunching, setIsLaunching] = useState(false);
   const [legalConfirmations, setLegalConfirmations] =
     useState<DevTossCheckoutLegalConfirmations>(
@@ -386,123 +395,64 @@ export default function DevTossCheckoutLauncher({
     setIsLaunching(false);
   }
 
+  const reviewReady = isInputComplete && !disabled;
+  const fallbackReviewRows = [
+    { labelKo: "이름", valueKo: inputSnapshot.displayName ?? "" },
+    { labelKo: "생년월일", valueKo: inputSnapshot.birthDate },
+    { labelKo: "출생시간", valueKo: inputSnapshot.birthTimeUnknown ? "출생시간 모름" : inputSnapshot.birthTime },
+    { labelKo: "성별", valueKo: formatCheckoutGender(inputSnapshot.gender) },
+    { labelKo: "MBTI", valueKo: inputSnapshot.mbti },
+  ];
+  const groups = reviewGroups ?? [{ rows: fallbackReviewRows }];
+
   return (
-    <section className="space-y-5 rounded-lg border-2 border-sky-400 bg-sky-50 p-4 text-neutral-950 shadow-sm">
-      <div className="space-y-2">
-        <p className="text-sm font-bold text-sky-900">결제 직전 확인</p>
-        <p className="text-sm leading-6 text-sky-800">
-          아래 입력값과 거래조건을 확인한 뒤 결제창으로 이동합니다.
-        </p>
-      </div>
-
-      <section className="space-y-3 rounded-lg border border-sky-200 bg-white p-4">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <h3 className="text-base font-extrabold text-neutral-950">
-            입력값 최종 확인
-          </h3>
-          {onEditInput ? (
-            <button
-              type="button"
-              onClick={onEditInput}
-              className="rounded-lg border border-neutral-300 px-3 py-2 text-sm font-bold text-neutral-800 transition hover:bg-neutral-50"
-            >
-              입력값 수정하기
-            </button>
-          ) : null}
-        </div>
-        <dl className="grid gap-3 text-sm sm:grid-cols-2">
-          <ReviewRow labelKo="이름" valueKo={inputSnapshot.displayName ?? ""} />
-          <ReviewRow labelKo="생년월일" valueKo={inputSnapshot.birthDate} />
-          <ReviewRow
-            labelKo="출생시간"
-            valueKo={
-              inputSnapshot.birthTimeUnknown
-                ? "출생시간 모름"
-                : inputSnapshot.birthTime
-            }
-          />
-          <ReviewRow labelKo="성별" valueKo={formatCheckoutGender(inputSnapshot.gender)} />
-          <ReviewRow labelKo="MBTI" valueKo={inputSnapshot.mbti} />
-        </dl>
-      </section>
-
-      <section className="space-y-3 rounded-lg border border-sky-200 bg-white p-4">
-        <h3 className="text-base font-extrabold text-neutral-950">결제 정보</h3>
-        <dl className="grid gap-3 text-sm">
-          <ReviewRow labelKo="상품명" valueKo={productLabelKo} />
-          <ReviewRow labelKo="판매가" valueKo="1,290원" />
-          <ReviewRow labelKo="총 결제금액" valueKo="1,290원" />
-          <ReviewRow labelKo="제공 방식" valueKo="결제 후 온라인 열람" />
-        </dl>
-      </section>
-
-      <section className="space-y-3 rounded-lg border border-sky-200 bg-white p-4">
-        <h3 className="text-base font-extrabold text-neutral-950">
-          서비스 제공 방식
-        </h3>
-        <ul className="space-y-2 text-sm leading-6 text-neutral-700">
-          <li>상품 유형: 자동 생성 디지털 리포트</li>
-          <li>생성 방식: 입력값 기반 자동 생성 디지털 리포트</li>
-          <li>상담 여부: 사람 상담 아님</li>
-          <li>열람 방식: 결제 후 온라인 열람</li>
-          <li>서비스 제공기간: 결제 완료 후 즉시 생성, 최대 24시간 이내 제공</li>
-          <li>열람 가능 기간: 생성일로부터 90일</li>
-        </ul>
-      </section>
-
-      <section className="space-y-3 rounded-lg border border-sky-200 bg-white p-4">
-        <h3 className="text-base font-extrabold text-neutral-950">
-          환불 및 청약철회 안내
-        </h3>
-        <p className="text-sm leading-6 text-neutral-700">
-          결제 완료 후 온라인 열람형 디지털 리포트 생성 절차가 시작됩니다.{" "}
-          {prePaymentRefundNoticeKo}
-        </p>
-      </section>
-
-      <section className="space-y-3 rounded-lg border border-sky-200 bg-white p-4">
-        <h3 className="text-base font-extrabold text-neutral-950">
-          미성년자 안내
-        </h3>
-        {isUnder14Blocked ? (
-          <p className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm font-bold leading-6 text-red-800">
-            {UNDER_14_BLOCK_MESSAGE_KO}
-          </p>
-        ) : (
-          <p className="text-sm leading-6 text-neutral-700">
-            만 14세 이상만 이용할 수 있습니다. 만 19세 미만 사용자는
-            법정대리인 동의가 필요할 수 있습니다.
-          </p>
-        )}
-        {shouldShowMinorNotice ? (
-          <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm leading-6 text-amber-900">
-            {MINOR_NOTICE_MESSAGE_KO}
-          </p>
+    <section className={styles.review} aria-label="결제 직전 확인" data-checkout-ready={reviewReady}>
+      <div className={styles.reviewHeader}>
+        <h2><span>02</span>최종 확인</h2>
+        {reviewReady && onEditInput ? (
+          <button type="button" onClick={onEditInput} className={styles.edit}>입력값 수정하기</button>
         ) : null}
-      </section>
-
-      <section className="space-y-4 rounded-lg border border-sky-200 bg-white p-4">
-        <h3 className="text-base font-extrabold text-neutral-950">
-          약관 및 개인정보 동의
-        </h3>
-        <nav aria-label="결제 전 정책 링크" className="flex flex-wrap gap-3 text-sm">
-          <a href="/terms" className="font-bold text-neutral-900 underline underline-offset-4">
-            이용약관
-          </a>
-          <a href="/privacy" className="font-bold text-neutral-900 underline underline-offset-4">
-            개인정보처리방침
-          </a>
-          <a href="/refund" className="font-bold text-neutral-900 underline underline-offset-4">
-            환불정책
-          </a>
-          <a href="/business" className="font-bold text-neutral-900 underline underline-offset-4">
-            사업자정보
-          </a>
-        </nav>
-        <p className="rounded-lg border border-neutral-200 bg-neutral-50 p-3 text-sm leading-6 text-neutral-700">
-          {prePaymentPrivacyNoticeKo}
-        </p>
-        <div className="space-y-3">
+      </div>
+      {/* Keep confirmations mounted when input becomes incomplete so edits preserve state. */}
+      <div className={styles.reviewBody} hidden={!reviewReady}>
+        <p className={styles.product}>{productLabelKo}</p>
+        <section aria-label="입력값 최종 확인">
+          <div className={styles.reviewGroups}>
+            {groups.map((group, index) => (
+              <div key={group.titleKo ?? index}>
+                {group.titleKo ? <h3>{group.titleKo}</h3> : null}
+                <dl>{group.rows.map((row) => <ReviewRow key={row.labelKo} {...row} />)}</dl>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section>
+          <h3>서비스 제공 방식</h3>
+          <ul>
+            <li>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님</li>
+            <li>결제 완료 후 즉시 생성, 최대 24시간 이내 제공</li>
+            <li>생성일로부터 90일 · 결제 후 온라인 열람</li>
+          </ul>
+          {productType === "saju_mbti_compatibility" ? <p>상담이나 예언이 아닌 관계 분석용 디지털 리포트입니다.</p> : null}
+        </section>
+        <section>
+          <h3>환불 및 청약철회 안내</h3>
+          <p>{prePaymentRefundNoticeKo}</p>
+          <a href="/refund" className={styles.policyLink}>환불정책 자세히 보기</a>
+        </section>
+        <fieldset className={styles.consents}>
+          <legend>약관 및 개인정보 동의</legend>
+          <p>{prePaymentPrivacyNoticeKo}</p>
+          <nav aria-label="결제 전 정책 링크" className={styles.policyLinks}>
+            <a href="/terms">이용약관</a>
+            <a href="/privacy">개인정보처리방침</a>
+            <a href="/refund">환불정책</a>
+            <a href="/business">사업자정보</a>
+          </nav>
+          <p>만 14세 이상만 이용할 수 있습니다. 만 19세 미만 사용자는 법정대리인 동의가 필요할 수 있습니다.</p>
+          {isUnder14Blocked ? <p role="alert" className={styles.error}>{UNDER_14_BLOCK_MESSAGE_KO}</p> : null}
+          {shouldShowMinorNotice ? <p>{MINOR_NOTICE_MESSAGE_KO}</p> : null}
+          <div>
           <ConfirmationCheckbox
             checked={legalConfirmations.inputAccuracy}
             labelKo="[필수] 입력한 정보가 정확하며, 결제 후 입력값을 기준으로 리포트 생성이 진행되는 것을 확인했습니다."
@@ -548,44 +498,33 @@ export default function DevTossCheckoutLauncher({
               }
             />
           ) : null}
-        </div>
-      </section>
-
-      {!isInputComplete ? (
-        <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm font-semibold text-amber-900">
-          {REQUIRED_CHECKOUT_INPUT_MESSAGE_KO}
-        </p>
-      ) : null}
-      {disabled && isInputComplete ? (
-        <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm font-semibold text-amber-900">
-          {disabledMessageKo}
-        </p>
-      ) : null}
-      {isInputComplete && !isUnder14Blocked && !isLegalConfirmationComplete ? (
-        <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm font-semibold text-amber-900">
-          {REQUIRED_CONFIRMATION_MESSAGE_KO}
-        </p>
-      ) : null}
+          </div>
+        </fieldset>
+        <dl className={styles.total}><dt>총 결제금액</dt><dd>{priceLabel}</dd></dl>
+      </div>
+      <p id={noticeId} className={styles.notice} aria-live="polite">
+        {!isInputComplete
+          ? REQUIRED_CHECKOUT_INPUT_MESSAGE_KO
+          : disabled
+            ? disabledMessageKo
+            : isUnder14Blocked
+              ? "만 14세 이상만 결제할 수 있습니다."
+              : !isLegalConfirmationComplete
+                ? REQUIRED_CONFIRMATION_MESSAGE_KO
+                : "입력 정보와 결제금액을 확인했습니다. 결제를 진행해 주세요."}
+      </p>
       <button
         type="button"
         disabled={isLaunching || !canLaunchCheckout}
+        aria-describedby={noticeId}
         onClick={() => void handleLaunch()}
-        className="w-full rounded-lg bg-sky-700 px-4 py-3 text-sm font-bold text-white transition hover:bg-sky-800 disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:text-neutral-500"
+        className={styles.submit}
       >
-        {isLaunching
-          ? "Toss 결제창 여는 중..."
-          : ctaLabelKo}
+        {isLaunching ? "Toss 결제창 여는 중..." : (ctaLabelKo ?? `${priceLabel} 결제하기`)}
+        <span aria-hidden="true">→</span>
       </button>
-      {errorMessage ? (
-        <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm font-semibold leading-6 text-red-800">
-          <p>{errorMessage}</p>
-        </div>
-      ) : null}
-      {statusMessage ? (
-        <p className="rounded-lg border border-sky-200 bg-white p-3 text-sm leading-6 text-sky-900">
-          {statusMessage}
-        </p>
-      ) : null}
+      {errorMessage ? <p role="alert" className={styles.error}>{errorMessage}</p> : null}
+      {statusMessage ? <p role="status" className={styles.notice}>{statusMessage}</p> : null}
     </section>
   );
 }
@@ -610,9 +549,9 @@ function ReviewRow({
   readonly valueKo: string;
 }) {
   return (
-    <div className="flex justify-between gap-4 rounded-lg border border-neutral-200 bg-neutral-50 p-3">
-      <dt className="font-semibold text-neutral-500">{labelKo}</dt>
-      <dd className="text-right font-bold text-neutral-950">
+    <div className={styles.reviewRow}>
+      <dt>{labelKo}</dt>
+      <dd>
         {valueKo.trim() || "미입력"}
       </dd>
     </div>
@@ -631,9 +570,10 @@ function ConfirmationCheckbox({
   readonly onChange: (checked: boolean) => void;
 }) {
   return (
-    <label className="flex gap-3 rounded-lg border border-neutral-200 bg-neutral-50 p-3 text-sm font-semibold leading-6 text-neutral-800">
+    <label className={styles.checkbox}>
       <input
         type="checkbox"
+        aria-required="true"
         checked={checked}
         disabled={disabled}
         onChange={(event) => onChange(event.target.checked)}

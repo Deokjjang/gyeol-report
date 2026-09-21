@@ -204,10 +204,8 @@ describe("DevTossCheckoutLauncher", () => {
 
     expect(html).toContain("결제 직전 확인");
     expect(html).toContain("입력값 최종 확인");
-    expect(html).toContain("결제 정보");
     expect(html).toContain("서비스 제공 방식");
     expect(html).toContain("환불 및 청약철회 안내");
-    expect(html).toContain("미성년자 안내");
     expect(html).toContain("약관 및 개인정보 동의");
     expect(html).toContain("이름");
     expect(html).toContain("민지");
@@ -219,9 +217,7 @@ describe("DevTossCheckoutLauncher", () => {
     expect(html).toContain("남성");
     expect(html).toContain("MBTI");
     expect(html).toContain("INFP");
-    expect(html).toContain("상품명");
     expect(html).toContain("사주×MBTI 종합 리포트");
-    expect(html).toContain("판매가");
     expect(html).toContain("1,290원");
     expect(html).toContain("총 결제금액");
     expect(html).toContain("90일");
@@ -236,7 +232,7 @@ describe("DevTossCheckoutLauncher", () => {
       "리포트 생성을 위해 이름 또는 닉네임, 생년월일, 출생시간, 성별, MBTI가 처리됩니다.",
     );
     expect(html).toContain("[필수] 만 14세 이상입니다.");
-    expect(html).toContain("1,290원 결제하고 리포트 생성하기");
+    expect(html).toContain("1,290원 결제하기");
     expect(html).toContain("disabled");
   });
 
@@ -533,14 +529,14 @@ describe("DevTossCheckoutLauncher", () => {
       "isDevTossCheckoutInputComplete",
       "productType",
       "입력값 최종 확인",
-      "결제 정보",
+      "총 결제금액",
       "서비스 제공 방식",
       "환불 및 청약철회 안내",
       "약관 및 개인정보 동의",
       "prePaymentPrivacyNoticeKo",
       "만 14세 미만",
       "법정대리인",
-      "1,290원 결제하고 리포트 생성하기",
+      "getReportProduct(productType)",
       "/api/payment-checkout/prepare",
       "launchTossCheckout",
       "loadTossPaymentsBrowserSdk",

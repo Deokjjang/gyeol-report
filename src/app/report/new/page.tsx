@@ -3,7 +3,9 @@
 import { use, useState } from "react";
 import type { FormEvent } from "react";
 
-import GyeolBrandHeader from "../../../components/brand/GyeolBrandHeader";
+import PaidFunnelHeader from "../../../components/payment/PaidFunnelHeader";
+import styles from "../../../components/payment/paidFunnel.module.css";
+import { getReportProduct } from "../../../lib/payment/reportProductCatalog";
 import TossPaymentWidgetLauncher, {
   type TossPaymentWidgetInputSnapshot,
   isTossPaymentWidgetInputComplete,
@@ -626,23 +628,17 @@ function getSingleProductLeadText(productKey: string): string {
 }
 
 function getSingleProductReadyCtaLabel(productKey: string): string {
-  if (productKey === CAREER_MONEY_STUDY_PRODUCT_KEY) {
-    return "1,290원 결제하고 직업 리포트 생성하기";
-  }
+  return `${getReportProduct(productKey)?.priceLabelKo ?? ""} 결제하기`;
+}
 
-  if (productKey === LOVE_MARRIAGE_CHILD_PRODUCT_KEY) {
-    return "1,290원 결제하고 연애 리포트 생성하기";
-  }
-
-  if (productKey === MAJOR_FORTUNE_PRODUCT_KEY) {
-    return "1,290원 결제하고 대운 리포트 생성하기";
-  }
-
-  if (productKey === ANNUAL_FORTUNE_PRODUCT_KEY) {
-    return "1,290원 결제하고 세운 리포트 생성하기";
-  }
-
-  return "1,290원 결제하고 종합 리포트 생성하기";
+function getPersonReviewRows(input: CompatibilityPersonInputState) {
+  return [
+    { labelKo: "이름", valueKo: input.name },
+    { labelKo: "생년월일", valueKo: input.birthDate },
+    { labelKo: "출생시간", valueKo: formatAnnualBirthTimeSummary(input) },
+    { labelKo: "성별", valueKo: formatGenderLabel(input.gender) },
+    { labelKo: "MBTI", valueKo: input.mbtiType || "선택 안 함" },
+  ];
 }
 
 function formatBirthTimeSummary(
@@ -701,25 +697,26 @@ function renderCompatibilityPersonInputSection(input: {
   const { prefix, titleKo, descriptionKo, value, onChange } = input;
 
   return (
-    <section className="space-y-5 rounded-lg border border-[#ded2c2] bg-[#fffdf8] p-5 shadow-sm shadow-[#6f1d35]/5">
+    <section className={styles.inputSection}>
       <div className="space-y-2">
-        <p className="text-sm font-bold text-[#c79a43]">{titleKo}</p>
-        <p className="text-sm leading-6 text-[#6b5a4d]">{descriptionKo}</p>
+        <h2 className={styles.sectionTitle}>{titleKo}</h2>
+        <p className={styles.hint}>{descriptionKo}</p>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className={styles.fields}>
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}Name`}
             className="block text-sm font-medium text-[#3f3129]"
           >
-            이름
+            이름 · 필수
           </label>
           <input
             id={`${prefix}Name`}
             name={`${prefix}Name`}
             type="text"
             value={value.name}
+            aria-required="true"
             maxLength={20}
             placeholder={
               prefix === "personA"
@@ -736,11 +733,12 @@ function renderCompatibilityPersonInputSection(input: {
             htmlFor={`${prefix}BirthDate`}
             className="block text-sm font-medium text-[#3f3129]"
           >
-            생년월일
+            생년월일 · 필수
           </label>
           <input
             id={`${prefix}BirthDate`}
             name={`${prefix}BirthDate`}
+            aria-required="true"
             type="date"
             value={value.birthDate}
             style={{ colorScheme: "light" }}
@@ -762,6 +760,7 @@ function renderCompatibilityPersonInputSection(input: {
             id={`${prefix}BirthTime`}
             name={`${prefix}BirthTime`}
             type="time"
+            aria-describedby={`${prefix}TimeHelp`}
             value={value.birthTime}
             style={{ colorScheme: "light" }}
             onChange={(event) =>
@@ -785,6 +784,7 @@ function renderCompatibilityPersonInputSection(input: {
           <select
             id={`${prefix}TimeBranch`}
             name={`${prefix}TimeBranch`}
+            aria-describedby={`${prefix}TimeHelp`}
             value={value.timeBranch}
             onChange={(event) =>
               onChange({
@@ -804,7 +804,10 @@ function renderCompatibilityPersonInputSection(input: {
           </select>
         </div>
 
-        <label className="flex min-h-12 items-center gap-3 rounded-lg border border-[#ded2c2] bg-[#fffaf1] px-4 py-3 text-sm font-medium text-[#3f3129]">
+        <p id={`${prefix}TimeHelp`} className={styles.timeHelp}>
+          정확한 시간을 모르시면 시간대를 선택하거나 ‘출생시간 모름’을 선택해 주세요. 둘 다 입력하면 정확한 시간을 기준으로 합니다.
+        </p>
+        <label className={styles.unknown}>
           <input
             type="checkbox"
             name={`${prefix}BirthTimeUnknown`}
@@ -844,7 +847,7 @@ function renderCompatibilityPersonInputSection(input: {
           </select>
         </div>
 
-        <div className="space-y-2 sm:col-span-2">
+        <div className="space-y-2">
           <label
             htmlFor={`${prefix}MbtiType`}
             className="block text-sm font-medium text-[#3f3129]"
@@ -881,27 +884,28 @@ function renderSingleProductCommonInputSection(input: {
   const { prefix, value, onChange } = input;
 
   return (
-    <section className="space-y-5 rounded-lg border border-[#ded2c2] bg-[#fffdf8] p-5 shadow-sm shadow-[#6f1d35]/5">
+    <section className={styles.inputSection}>
       <div className="space-y-2">
-        <p className="text-sm font-bold text-[#c79a43]">기본 정보 입력</p>
-        <p className="text-sm leading-6 text-[#6b5a4d]">
-          리포트 생성에 필요한 기본 정보를 입력해 주세요.
+        <h2 className={styles.sectionTitle}>01 정보 입력</h2>
+        <p className={styles.hint}>
+          기본 정보는 이름과 생년월일만 필수입니다. 양력 · 한국 시간 기준입니다.
         </p>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className={styles.fields}>
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}Name`}
             className="block text-sm font-medium text-[#3f3129]"
           >
-            이름
+            이름 · 필수
           </label>
           <input
             id={`${prefix}Name`}
             name="name"
             type="text"
             value={value.name}
+            aria-required="true"
             maxLength={20}
             placeholder="이름을 입력해 주세요"
             onChange={(event) => onChange({ ...value, name: event.target.value })}
@@ -914,11 +918,12 @@ function renderSingleProductCommonInputSection(input: {
             htmlFor={`${prefix}BirthDate`}
             className="block text-sm font-medium text-[#3f3129]"
           >
-            생년월일
+            생년월일 · 필수
           </label>
           <input
             id={`${prefix}BirthDate`}
             name="birthDate"
+            aria-required="true"
             type="date"
             value={value.birthDate}
             style={{ colorScheme: "light" }}
@@ -940,6 +945,7 @@ function renderSingleProductCommonInputSection(input: {
             id={`${prefix}BirthTime`}
             name="birthTime"
             type="time"
+            aria-describedby={`${prefix}TimeHelp`}
             value={value.birthTime}
             style={{ colorScheme: "light" }}
             onChange={(event) =>
@@ -963,6 +969,7 @@ function renderSingleProductCommonInputSection(input: {
           <select
             id={`${prefix}TimeBranch`}
             name="timeBranch"
+            aria-describedby={`${prefix}TimeHelp`}
             value={value.timeBranch}
             onChange={(event) =>
               onChange({
@@ -982,7 +989,10 @@ function renderSingleProductCommonInputSection(input: {
           </select>
         </div>
 
-        <label className="flex min-h-12 items-center gap-3 rounded-lg border border-[#ded2c2] bg-[#fffaf1] px-4 py-3 text-sm font-medium text-[#3f3129]">
+        <p id={`${prefix}TimeHelp`} className={styles.timeHelp}>
+          정확한 시간을 모르시면 시간대를 선택하거나 ‘출생시간 모름’을 선택해 주세요. 둘 다 입력하면 정확한 시간을 기준으로 합니다.
+        </p>
+        <label className={styles.unknown}>
           <input
             type="checkbox"
             name="birthTimeUnknown"
@@ -1045,6 +1055,10 @@ function renderSingleProductCommonInputSection(input: {
           </select>
         </div>
 
+        <fieldset className={styles.context}>
+          <legend>현재 상황 · 선택</legend>
+          <p className={styles.hint}>현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다.</p>
+          <div className={styles.fields}>
         <div className="space-y-2">
           <label
             htmlFor={`${prefix}RelationshipStatus`}
@@ -1117,13 +1131,10 @@ function renderSingleProductCommonInputSection(input: {
               <option key={option} value={option} />
             ))}
           </datalist>
-          <p className="text-xs leading-5 text-[#7d6d60]">
-            예: 고등학생, 대학생, 개발자, 서비스 기획자, 디자이너,
-            마케터, 변호사, 의사, 교사, 유튜버, 인플루언서, 연예인,
-            자영업자, 기타 직접 입력
-          </p>
-        </div>
 
+        </div>
+          </div>
+        </fieldset>
       </div>
     </section>
   );
@@ -1191,19 +1202,13 @@ export default function NewReportPage({
     isCompatibilityPersonRequiredInputComplete(compatibilityPersonA) &&
     isCompatibilityPersonRequiredInputComplete(compatibilityPersonB) &&
     compatibilityRelationshipType.trim().length > 0;
-  const compatibilityCtaLabel = isCompatibilityInputReady
-    ? "1,290원 결제하고 궁합 리포트 생성하기"
-    : "필수 정보를 입력해 주세요";
+  const compatibilityCtaLabel = getSingleProductReadyCtaLabel(COMPATIBILITY_PRODUCT_KEY);
   const isSingleProductAnnual =
     selectedProduct.productKey === ANNUAL_FORTUNE_PRODUCT_KEY;
-  const isSingleProductComprehensiveV2 =
-    selectedProduct.productKey === SAJU_MBTI_FULL_PRODUCT_KEY;
   const isSingleProductInputReady = isSingleProductAnnual
     ? isAnnualFortuneRequiredInputComplete(singleProductInput)
     : isMajorFortuneRequiredInputComplete(singleProductInput);
-  const singleProductCtaLabel = isSingleProductInputReady
-    ? getSingleProductReadyCtaLabel(selectedProduct.productKey)
-    : "필수 정보를 입력해 주세요";
+  const singleProductCtaLabel = getSingleProductReadyCtaLabel(selectedProduct.productKey);
   const singleProductReportInputPayload = buildSinglePersonReportInputPayload(
     selectedProduct,
     singleProductInput,
@@ -1257,34 +1262,17 @@ export default function NewReportPage({
 
   if (isSinglePersonPreviewProduct(selectedProduct.productKey)) {
     return (
-      <main className="min-h-screen bg-[#f6f0e7] px-5 py-8 text-[#2b211b] sm:px-8 lg:px-10">
-        <section className="mx-auto max-w-5xl space-y-8">
-          <GyeolBrandHeader taglineKo="입력 후 온라인 리포트를 생성합니다." />
-          <header className="max-w-3xl space-y-4 animate-[gyeol-reveal_520ms_ease-out]">
-            <h1 className="text-4xl font-bold tracking-normal text-[#2b211b]">
-              {selectedProduct.inputTitleKo}
-            </h1>
-            <p className="max-w-2xl text-base leading-8 text-[#5f5045]">
-              {getSingleProductLeadText(selectedProduct.productKey)}
-            </p>
-            <p className="max-w-2xl rounded-lg border border-[#d7b56d]/60 bg-[#fffaf1] px-4 py-3 text-sm leading-6 text-[#5f5045]">
-              {isSingleProductComprehensiveV2
-                ? "입력한 정보를 바탕으로 종합 리포트를 생성합니다. 현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다."
-                : "입력한 정보를 바탕으로 리포트를 생성합니다. 현재 연애 상태와 직업 정보는 해석을 현실 장면에 맞추는 참고 정보로만 사용됩니다."}
-            </p>
-            <div className="grid gap-3 text-sm leading-6 text-[#5f5045] sm:grid-cols-2">
-              <p className="rounded-lg border border-[#ded2c2] bg-[#fffdf8] px-4 py-3">
-                {PRODUCT_SERVICE_POLICY_NOTICE_KO}
-              </p>
-              <p className="rounded-lg border border-[#ded2c2] bg-[#fffdf8] px-4 py-3">
-                {PRODUCT_REFUND_POLICY_NOTICE_KO}
-              </p>
-            </div>
-          </header>
+      <main className={styles.page}>
+        <section className={styles.shell}>
+          <PaidFunnelHeader
+            title={selectedProduct.fullNameKo}
+            description={getSingleProductLeadText(selectedProduct.productKey)}
+            ready={isSingleProductInputReady}
+          />
 
           <form
             onSubmit={handlePreviewOnlySubmit}
-            className="grid gap-6"
+            className={styles.form}
           >
             <input type="hidden" name="timezone" value="Asia/Seoul" />
             <input type="hidden" name="calendarType" value="SOLAR" />
@@ -1311,11 +1299,11 @@ export default function NewReportPage({
             })}
 
             {isSingleProductAnnual ? (
-              <section className="space-y-5 rounded-lg border border-[#ded2c2] bg-[#fffdf8] p-5 shadow-sm shadow-[#6f1d35]/5">
+              <section className={styles.inputSection}>
                 <div className="space-y-2">
-                  <p className="text-sm font-bold text-[#c79a43]">
+                  <h2 className={styles.sectionTitle}>
                     세운 전용 조회 연도
-                  </p>
+                  </h2>
                   <p className="text-sm leading-6 text-[#6b5a4d]">
                     기본값은 현재 연도입니다. 과거 5년과 올해를 우선 조회하고,
                     12월 1일 이후에는 다음 해 신년사주 조회가 열립니다.
@@ -1331,11 +1319,12 @@ export default function NewReportPage({
                       htmlFor="selectedYear"
                       className="block text-sm font-medium text-[#3f3129]"
                     >
-                      조회 연도
+                      조회 연도 · 필수
                     </label>
                     <input
                       id="selectedYear"
                       name="selectedYear"
+                      aria-required="true"
                       type="number"
                       inputMode="numeric"
                       value={singleProductInput.selectedYear}
@@ -1357,6 +1346,13 @@ export default function NewReportPage({
               productType={selectedProduct.productKey}
               productLabelKo={selectedProduct.nameKo}
               ctaLabelKo={singleProductCtaLabel}
+              reviewGroups={[{
+                rows: [
+                  ...getPersonReviewRows(singleProductInput),
+                  ...(isSingleProductAnnual ? [{ labelKo: "조회 연도", valueKo: singleProductInput.selectedYear }] : []),
+                ],
+              }]}
+              onEditInput={() => document.getElementById("singleProductName")?.focus()}
               disabled={!isSingleProductInputReady}
               disabledMessageKo="필수 정보를 입력해 주세요"
             />
@@ -2240,31 +2236,11 @@ export default function NewReportPage({
 
   if (selectedProduct.productKey === COMPATIBILITY_PRODUCT_KEY) {
     return (
-      <main className="min-h-screen bg-[#f6f0e7] px-5 py-8 text-[#2b211b] sm:px-8 lg:px-10">
-        <section className="mx-auto max-w-6xl space-y-8">
-          <GyeolBrandHeader taglineKo="두 사람의 관계 리포트를 생성합니다." />
-          <header className="max-w-3xl space-y-4 animate-[gyeol-reveal_520ms_ease-out]">
-            <h1 className="text-4xl font-bold tracking-normal text-[#2b211b]">
-              궁합 리포트 입력
-            </h1>
-            <p className="max-w-2xl text-base leading-8 text-[#5f5045]">
-              두 사람의 생년월일, 출생시간, MBTI, 관계 카테고리를
-              바탕으로 궁합 리포트를 구성합니다.
-            </p>
-            <p className="max-w-2xl rounded-lg border border-[#d7b56d]/60 bg-[#fffaf1] px-4 py-3 text-sm leading-6 text-[#5f5045]">
-              상담이나 예언이 아닌 관계 분석용 디지털 리포트입니다.
-            </p>
-            <div className="grid gap-3 text-sm leading-6 text-[#5f5045] sm:grid-cols-2">
-              <p className="rounded-lg border border-[#ded2c2] bg-[#fffdf8] px-4 py-3">
-                {PRODUCT_SERVICE_POLICY_NOTICE_KO}
-              </p>
-              <p className="rounded-lg border border-[#ded2c2] bg-[#fffdf8] px-4 py-3">
-                {PRODUCT_REFUND_POLICY_NOTICE_KO}
-              </p>
-            </div>
-          </header>
+      <main className={styles.page}>
+        <section className={styles.shell}>
+          <PaidFunnelHeader title={selectedProduct.fullNameKo} ready={isCompatibilityInputReady} compatibility />
 
-          <form onSubmit={handlePreviewOnlySubmit} className="grid gap-6">
+          <form onSubmit={handlePreviewOnlySubmit} className={styles.form}>
             <input type="hidden" name="timezone" value="Asia/Seoul" />
             <input type="hidden" name="calendarType" value="SOLAR" />
             <input
@@ -2283,7 +2259,7 @@ export default function NewReportPage({
               value={selectedProduct.nameKo}
             />
 
-            <div className="grid gap-5 lg:grid-cols-2">
+            <div className="grid gap-9">
               {renderCompatibilityPersonInputSection({
                 prefix: "personA",
                 titleKo: "A 사람 입력",
@@ -2300,11 +2276,11 @@ export default function NewReportPage({
               })}
             </div>
 
-            <section className="space-y-5 rounded-lg border border-[#ded2c2] bg-[#fffdf8] p-5 shadow-sm shadow-[#6f1d35]/5">
+            <section className={styles.inputSection}>
               <div className="space-y-2">
-                <p className="text-sm font-bold text-[#c79a43]">
+                <h2 className={styles.sectionTitle}>
                   관계 카테고리
-                </p>
+                </h2>
                 <p className="text-sm leading-6 text-[#6b5a4d]">
                   같은 두 사람이라도 관계 맥락에 따라 해석 초점이 달라집니다.
                 </p>
@@ -2320,6 +2296,7 @@ export default function NewReportPage({
                   <select
                     id="relationshipType"
                     name="relationshipType"
+                    aria-required="true"
                     value={compatibilityRelationshipType}
                     onChange={(event) =>
                       setCompatibilityRelationshipType(
@@ -2343,6 +2320,12 @@ export default function NewReportPage({
               productType={selectedProduct.productKey}
               productLabelKo={selectedProduct.nameKo}
               ctaLabelKo={compatibilityCtaLabel}
+              reviewGroups={[
+                { titleKo: "사람 A", rows: getPersonReviewRows(compatibilityPersonA) },
+                { titleKo: "사람 B", rows: getPersonReviewRows(compatibilityPersonB) },
+                { titleKo: "관계", rows: [{ labelKo: "관계 카테고리", valueKo: compatibilityRelationshipOptions.find((option) => option.value === compatibilityRelationshipType)?.labelKo ?? "" }] },
+              ]}
+              onEditInput={() => document.getElementById("personAName")?.focus()}
               disabled={!isCompatibilityInputReady}
               disabledMessageKo={COMPATIBILITY_REQUIRED_INPUT_MESSAGE_KO}
             />
