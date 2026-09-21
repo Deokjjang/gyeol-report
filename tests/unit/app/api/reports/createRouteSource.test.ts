@@ -72,8 +72,10 @@ describe("create report route product preview source", () => {
       "OPENAI_REPORT_MODEL",
     ];
 
+    // Environment selection is required to close this route in production.
+    const boundarySource = source.replace(/\bprocess\.env\.NODE_ENV\b/g, "");
     for (const marker of forbiddenMarkers) {
-      expect(source).not.toContain(marker);
+      expect(boundarySource).not.toContain(marker);
     }
   });
 });

@@ -316,6 +316,15 @@ async function createProductPreviewResponse(
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
+  // Direct generation is for local development/tests. Paid jobs import the
+  // generator server-side and never enter this public route.
+  if (process.env.NODE_ENV !== "development" && process.env.NODE_ENV !== "test") {
+    return NextResponse.json(
+      { ok: false, message: "요청을 처리할 수 없습니다." },
+      { status: 404, headers: { "Cache-Control": "no-store" } },
+    );
+  }
+
   let json: unknown;
 
   try {

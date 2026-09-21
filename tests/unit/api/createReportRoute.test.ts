@@ -1,10 +1,19 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { POST } from "@/app/api/reports/create/route";
 import { createReportPersistenceRuntime } from "@/lib/persistence/reportPersistenceRuntime";
 import type { ReportRequestRawInput } from "@/lib/validation/types";
+import * as generator from "../../../src/lib/report-generation/generateProductReport";
+import * as writerRuntime from "../../../src/lib/report-generation/reportWriterRuntime";
+import * as writer from "../../../src/lib/report-generation/openaiReportWriterClient";
+import * as careerWriter from "../../../src/lib/report-generation/openaiCareerReportWriter";
+import * as loveWriter from "../../../src/lib/report-generation/openaiLoveMarriageChildReportWriter";
+import * as majorWriter from "../../../src/lib/report-generation/openaiMajorFortuneReportWriter";
+import * as annualWriter from "../../../src/lib/report-generation/openaiAnnualFortuneReportWriter";
+import * as legacyGenerator from "../../../src/lib/api/createReport";
+import * as persistence from "../../../src/lib/persistence/reportPersistenceRuntime";
 
 const validRawInput: ReportRequestRawInput = {
   birthDate: "2024-02-04",
@@ -698,8 +707,159 @@ describe("create report route", () => {
 
     expect(source).toContain('mode: "preview_memory"');
 
+    const boundarySource = source.replace(/\bprocess\.env\.NODE_ENV\b/g, "");
     for (const marker of unsafeMarkers) {
-      expect(source).not.toContain(marker);
+      expect(boundarySource).not.toContain(marker);
     }
   });
+});
+
+describe("public direct report generation production boundary", () => {
+  const person = {
+    name: "보안 테스트", birthDate: "1996-12-06", birthTime: "09:30",
+    birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ",
+  };
+  const products = [
+    ["saju_mbti_full", "saju-mbti-full"],
+    ["career_money_study", "career-money-study"],
+    ["love_marriage_child", "love-marriage-child"],
+    ["saju_mbti_compatibility", "compatibility"],
+    ["major_fortune", "major-fortune"],
+    ["annual_fortune", "annual-fortune"],
+  ] as const;
+  function payload(productKey = "saju_mbti_full", productSlug = "saju-mbti-full") {
+    return {
+      productKey, productSlug, person,
+      userContext: { relationshipStatus: "single", jobStatus: "employee", detailJob: "기획", focusAreas: [] },
+      productOptions: { selectedYear: "2026" },
+      ...(productKey === "saju_mbti_compatibility"
+        ? { relationshipType: "love", personA: person, personB: { ...person, name: "상대" } }
+        : {}),
+    };
+  }
+  function request(body: unknown = payload(), query = "", headers: HeadersInit = {}) {
+    return new Request(`http://localhost/api/reports/create${query}`, {
+      method: "POST", headers: { "content-type": "application/json", ...headers },
+      body: JSON.stringify(body),
+    });
+  }
+
+  beforeEach(() => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("OPENAI_REPORT_WRITER_ENABLED", "1");
+    vi.stubEnv("OPENAI_API_KEY", "mock-key-not-a-credential");
+    vi.stubEnv("OPENAI_REPORT_MODEL", "mock-model");
+    vi.spyOn(generator, "generateProductReport").mockResolvedValue({
+      ok: false, error: { code: "INVALID_REPORT_INPUT", message: "mock generation boundary" },
+    });
+    vi.spyOn(writerRuntime, "resolveReportWriterRuntime").mockReturnValue({
+      enabled: true, config: { enabled: true, apiKey: "mock-key", model: "mock-model" },
+    });
+    vi.spyOn(writer, "callOpenAIReportWriter").mockRejectedValue(new Error("Unexpected writer invocation"));
+    vi.spyOn(careerWriter, "generateCareerReportDraft").mockRejectedValue(new Error("Unexpected writer invocation"));
+    vi.spyOn(loveWriter, "generateLoveMarriageChildReportDraft").mockRejectedValue(new Error("Unexpected writer invocation"));
+    vi.spyOn(majorWriter, "generateMajorFortuneReportDraft").mockRejectedValue(new Error("Unexpected writer invocation"));
+    vi.spyOn(annualWriter, "generateAnnualFortuneReportDraft").mockRejectedValue(new Error("Unexpected writer invocation"));
+    vi.spyOn(legacyGenerator, "createReportApiEnvelopeFromJson").mockImplementation(() => {
+      throw new Error("Unexpected legacy generation");
+    });
+    vi.spyOn(persistence, "createReportPersistenceRuntime").mockImplementation(() => {
+      throw new Error("Unexpected persistence access");
+    });
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+    vi.unstubAllEnvs();
+  });
+
+  function expectNoGeneration() {
+    expect(generator.generateProductReport).not.toHaveBeenCalled();
+    expect(writerRuntime.resolveReportWriterRuntime).not.toHaveBeenCalled();
+    expect(writer.callOpenAIReportWriter).not.toHaveBeenCalled();
+    expect(careerWriter.generateCareerReportDraft).not.toHaveBeenCalled();
+    expect(loveWriter.generateLoveMarriageChildReportDraft).not.toHaveBeenCalled();
+    expect(majorWriter.generateMajorFortuneReportDraft).not.toHaveBeenCalled();
+    expect(annualWriter.generateAnnualFortuneReportDraft).not.toHaveBeenCalled();
+    expect(legacyGenerator.createReportApiEnvelopeFromJson).not.toHaveBeenCalled();
+    expect(persistence.createReportPersistenceRuntime).not.toHaveBeenCalled();
+    expect(fetch).not.toHaveBeenCalled();
+  }
+
+  async function expectBlocked(input: Request) {
+    const parse = vi.spyOn(input, "json");
+    const response = await POST(input);
+    expect(response.status).toBe(404);
+    expect(response.headers.get("cache-control")).toBe("no-store");
+    expect(await response.json()).toEqual({ ok: false, message: "요청을 처리할 수 없습니다." });
+    expect(parse).not.toHaveBeenCalled();
+    expectNoGeneration();
+  }
+
+    it.each(products)("blocks anonymous %s before parsing or generation", async (key, slug) => {
+      await expectBlocked(request(payload(key, slug)));
+    });
+
+    it("blocks malformed JSON before expensive work", async () => {
+      await expectBlocked(new Request("http://localhost/api/reports/create", { method: "POST", body: "{" }));
+    });
+
+    it("blocks the legacy deterministic report path", async () => {
+      await expectBlocked(request({ ...person, calendarType: "SOLAR", timezone: "Asia/Seoul" }));
+    });
+
+    it.each([
+      { paymentKey: "fake-key", orderId: "fake-order", amount: 1290, status: "PAID", isPaid: true },
+      { reportId: "report_fake", access: { mode: "paid", isUnlocked: true } },
+      { productKey: "unknown", productType: "saju_mbti_full" },
+    ])("rejects forged payment/report/product fields: %j", async (fields) => {
+      await expectBlocked(request({ ...payload(), ...fields }));
+    });
+
+    it("does not trust preview query, cookies, environment headers, or fake internal authorization", async () => {
+      await expectBlocked(request(payload(), "?preview=1&dev=1&NODE_ENV=test", {
+        "x-preview": "1", "x-node-env": "development", cookie: "preview=1",
+        authorization: "Bearer fake-internal-secret",
+      }));
+    });
+
+    it("stays closed with every existing preview/mock flag enabled in production", async () => {
+      for (const flag of [
+        "COMPREHENSIVE_DEV_PREVIEW_ENABLED", "CAREER_REPORT_DEV_PREVIEW_ENABLED",
+        "LOVE_MARRIAGE_CHILD_DEV_PREVIEW_ENABLED", "COMPATIBILITY_DEV_PREVIEW_ENABLED",
+        "MAJOR_FORTUNE_DEV_PREVIEW_ENABLED", "ANNUAL_FORTUNE_DEV_PREVIEW_ENABLED",
+        "MOCK_PAID_REPORT_API_ENABLED", "PAID_REPORT_RELIABILITY_ENABLED",
+        "PAYMENT_ENABLED", "PAID_UNLOCK_ENABLED", "PUBLIC_PAID_LAUNCH_ENABLED", "INTERNAL_PREVIEW_ENABLED",
+      ]) vi.stubEnv(flag, "1");
+      vi.stubEnv("REPORT_PERSISTENCE_MODE", "preview_memory");
+      await expectBlocked(request());
+    });
+
+    it("also blocks deterministic fallback when the writer is disabled", async () => {
+      vi.stubEnv("OPENAI_REPORT_WRITER_ENABLED", "0");
+      await expectBlocked(request());
+    });
+
+    it("keeps generator, all writer entry points, storage and network at zero for 100 concurrent POSTs", async () => {
+      await Promise.all(Array.from({ length: 100 }, () => expectBlocked(request())));
+      expectNoGeneration();
+    });
+
+    it.each([undefined, "", "staging"])("fails closed for an unspecified/unsupported environment: %s", async (environment) => {
+      vi.stubEnv("NODE_ENV", environment);
+      await expectBlocked(request());
+    });
+
+    it.each(["development", "test"])("preserves explicit %s direct-generation callers", async (environment) => {
+      vi.stubEnv("NODE_ENV", environment);
+      const input = request();
+      const parse = vi.spyOn(input, "json");
+      const response = await POST(input);
+      expect(response.status).toBe(400); // The mock generator's existing invalid-input response.
+      expect(parse).toHaveBeenCalledTimes(1);
+      expect(generator.generateProductReport).toHaveBeenCalledExactlyOnceWith(
+        payload(), expect.objectContaining({ enabled: true }), "normal_writer",
+      );
+      expect(fetch).not.toHaveBeenCalled();
+    });
 });

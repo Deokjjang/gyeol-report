@@ -43,8 +43,9 @@ describe("create report API persistence source", () => {
 
     expect(source).toContain('mode: "preview_memory"');
 
+    const boundarySource = source.replace(/\bprocess\.env\.NODE_ENV\b/g, "");
     for (const marker of blockedMarkers) {
-      expect(source).not.toContain(marker);
+      expect(boundarySource).not.toContain(marker);
     }
   });
 
@@ -144,8 +145,9 @@ describe("create report API persistence source", () => {
       "access token",
     ];
 
+    const boundarySource = source.replace(/\bprocess\.env\.NODE_ENV\b/g, "");
     for (const marker of unsafeMarkers) {
-      expect(source).not.toContain(marker);
+      expect(boundarySource).not.toContain(marker);
     }
   });
 });
