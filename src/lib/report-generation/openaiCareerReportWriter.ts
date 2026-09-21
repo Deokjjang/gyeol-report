@@ -1,3 +1,4 @@
+import { guardedReportFetch, type WriterCallBudget } from "./reportWriterCallGuard";
 import type { CareerReportEvidencePacket } from "../report-knowledge/careerReportTypes";
 import { USER_RELATIONSHIP_STATUS_LABELS } from "../report-knowledge/userContextTypes";
 import {
@@ -18,6 +19,7 @@ export type CareerReportWriterConfig = {
   readonly model: string;
   readonly enabled: boolean;
   readonly fetchImpl?: typeof fetch;
+  readonly callBudget?: WriterCallBudget;
 };
 
 export type CareerReportWriterResult = {
@@ -325,7 +327,7 @@ export async function generateCareerReportDraft(input: {
     evidencePacket: input.evidencePacket,
   });
   const model = input.config.model.trim();
-  const fetchImpl = input.config.fetchImpl ?? fetch;
+  const fetchImpl = guardedReportFetch(input.config, "career");
   let response: Response;
 
   try {

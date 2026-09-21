@@ -1,3 +1,4 @@
+import type { WriterCallBudget } from "./reportWriterCallGuard";
 export type ReportWriterRuntimeEnvironment = {
   readonly [key: string]: string | undefined;
   readonly OPENAI_REPORT_WRITER_ENABLED?: string;
@@ -18,6 +19,8 @@ export type ReportWriterRuntime =
         readonly enabled: true;
         readonly apiKey: string;
         readonly model: string;
+        readonly fetchImpl?: typeof fetch;
+        readonly callBudget?: WriterCallBudget;
       };
     }
   | {

@@ -1,3 +1,4 @@
+import { guardedReportFetch, type WriterCallBudget } from "./reportWriterCallGuard";
 import type {
   LoveMarriageChildReportEvidencePacket,
 } from "../report-knowledge/loveMarriageChildReportTypes";
@@ -17,6 +18,7 @@ export type LoveMarriageChildReportWriterConfig = {
   readonly model: string;
   readonly enabled: boolean;
   readonly fetchImpl?: typeof fetch;
+  readonly callBudget?: WriterCallBudget;
 };
 
 export type LoveMarriageChildReportWriterResult = {
@@ -477,7 +479,7 @@ export async function generateLoveMarriageChildReportDraft(input: {
     evidencePacket: input.evidencePacket,
   });
   const model = input.config.model.trim();
-  const fetchImpl = input.config.fetchImpl ?? fetch;
+  const fetchImpl = guardedReportFetch(input.config, "love");
   let response: Response;
 
   try {

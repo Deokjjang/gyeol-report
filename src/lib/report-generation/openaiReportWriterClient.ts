@@ -1,8 +1,10 @@
+import { guardedReportFetch, type WriterCallBudget } from "./reportWriterCallGuard";
 export type OpenAIReportWriterClientConfig = {
   readonly apiKey: string;
   readonly model: string;
   readonly enabled: boolean;
   readonly fetchImpl?: typeof fetch;
+  readonly callBudget?: WriterCallBudget;
   readonly allowRepair?: boolean;
 };
 
@@ -322,6 +324,7 @@ function buildOpenAIReportWriterPayload(input: {
 }
 
 export async function callOpenAIReportWriter(input: {
+  readonly product?: "comprehensive" | "compatibility";
   readonly config: OpenAIReportWriterClientConfig;
   readonly messages: OpenAIReportWriterMessagesForClient;
   readonly jsonSchema: object;
@@ -336,10 +339,9 @@ export async function callOpenAIReportWriter(input: {
     throw createWriterError("OPENAI_REPORT_WRITER_CONFIG_MISSING");
   }
 
-  const fetchImpl = input.config.fetchImpl ?? fetch;
+  const fetchImpl = guardedReportFetch(input.config, input.product ?? "comprehensive");
   const model = input.config.model.trim();
   const response = await fetchImpl(openAIResponsesEndpoint, {
-    signal: AbortSignal.timeout(120_000),
     method: "POST",
     headers: {
       Authorization: `Bearer ${input.config.apiKey}`,

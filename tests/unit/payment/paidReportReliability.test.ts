@@ -36,6 +36,7 @@ beforeAll(async () => {
   await db.exec(readFileSync("scripts/paid_report_quarantine_recovery_patch.sql", "utf8"));
   await db.exec(readFileSync("scripts/paid_payment_confirm_recovery_queue_patch.sql", "utf8"));
   await db.exec(readFileSync("scripts/paid_report_publish_expiry_patch.sql", "utf8"));
+  await db.exec(readFileSync("scripts/paid_report_external_call_guard_patch.sql", "utf8"));
   store = { async call(action, data = {}) {
     const result = await db.query<{ value: ReliabilityResult }>("select public.paid_report_reliability($1,$2::jsonb) as value", [action, JSON.stringify(data)]);
     return result.rows[0].value;
@@ -51,6 +52,35 @@ beforeEach(async () => {
 });
 
 describe("paid report reliability — actual SQL, mock providers", () => {
+  it("records allowlisted per-call usage with attempt/strategy and preserves it on idempotent patch", async () => {
+    await paid();
+    const audit = { sequence: 1, model: "mock-model", inputTokens: 120, outputTokens: 240, totalTokens: 360, durationMs: 30, outcome: "completed" as const };
+    expect(await runPaidReportJob(store, runtime, async () => ({ ...structuredClone(valid), externalCalls: [{ ...audit, rawPrompt: "PRIVATE", authorization: "SECRET" }] }))).toMatchObject({ status: "COMPLETED" });
+    const attempts = await rows("report_generation_attempts");
+    expect(attempts[0]).toMatchObject({ attempt: 1, strategy: "normal_writer", external_calls: [audit] });
+    expect(JSON.stringify(attempts[0].external_calls)).not.toMatch(/PRIVATE|SECRET/);
+    await db.exec(readFileSync("scripts/paid_report_external_call_guard_patch.sql", "utf8"));
+    expect(await rows("report_generation_attempts")).toEqual(attempts);
+    const verification = await db.query<{ pass: boolean }>(readFileSync("scripts/paid_report_external_call_guard_verify.sql", "utf8"));
+    expect(verification.rows.every(row => row.pass)).toBe(true);
+    for (const role of ["anon", "authenticated", "service_role"]) {
+      const permission = await db.query<{ allowed: boolean }>("select has_function_privilege($1,'public.paid_report_reliability(text,jsonb)','EXECUTE') as allowed", [role]);
+      expect(permission.rows[0].allowed).toBe(role === "service_role");
+    }
+  });
+  it("100 repeated worker executions cannot exceed two paid writer HTTP calls", async () => {
+    await paid();
+    const transport = vi.fn<typeof fetch>(async () => Response.json({ output_text: "{malformed", usage: { input_tokens: 22, output_tokens: 1, total_tokens: 23 } }));
+    const writerRuntime = { enabled: true as const, config: { enabled: true as const, apiKey: "mock-only", model: "mock", fetchImpl: transport } };
+    for (let i=0; i<100; i++) { await due(); await runPaidReportJob(store, writerRuntime); }
+    expect(transport).toHaveBeenCalledTimes(2);
+    const attempts = await rows("report_generation_attempts");
+    expect(attempts).toHaveLength(3);
+    expect(attempts[0]).toMatchObject({ error_code: "OPENAI_MALFORMED", external_calls: [{ inputTokens: 22, outputTokens: 1, totalTokens: 23, outcome: "malformed" }] });
+    expect(attempts[2].external_calls).toEqual([]);
+    expect((await rows("payment_orders"))[0].status).toBe("paid");
+  });
+
   it("a failed payment recovery and an existing generation job make independent durable progress", async () => {
     const id = await paid();
     await store.call("create_order", { paymentOrderId: "recover-other", providerOrderId: "recover-order", productType: payload.productKey, provider: "toss", amount: 1290, inputSnapshot: { reportInputPayload: payload } });
@@ -327,6 +357,8 @@ describe("quarantined snapshot preservation and recovery", () => {
     expect(orders[0].status).toBe("paid");
     expect(await rows("report_input_snapshots")).toEqual(inputs);
     expect(await rows("report_generation_attempts")).toEqual(attempts);
+    const verification = await db.query<{ pass: boolean }>(readFileSync("scripts/paid_report_external_call_guard_verify.sql", "utf8"));
+    expect(verification.rows.every(row => row.pass)).toBe(true);
     expect(await store.call("attention")).toMatchObject({ ok: true, jobs: [{ report_id: id, last_error_code: "PUBLISHED_SNAPSHOT_VALIDATION_FAILED" }] });
   });
 
@@ -339,6 +371,8 @@ describe("quarantined snapshot preservation and recovery", () => {
     expect(await storedText()).toBe(before);
     expect(await rows("report_generation_jobs")).toEqual(jobs);
     expect(await rows("report_generation_attempts")).toEqual(attempts);
+    const verification = await db.query<{ pass: boolean }>(readFileSync("scripts/paid_report_external_call_guard_verify.sql", "utf8"));
+    expect(verification.rows.every(row => row.pass)).toBe(true);
     expect(attempts).toHaveLength(1);
   });
 
@@ -408,6 +442,8 @@ describe("quarantined snapshot preservation and recovery", () => {
     expect(await rows("paid_report_snapshots")).toEqual(report);
     expect(await rows("report_generation_jobs")).toEqual(jobs);
     expect(await rows("report_generation_attempts")).toEqual(attempts);
+    const verification = await db.query<{ pass: boolean }>(readFileSync("scripts/paid_report_external_call_guard_verify.sql", "utf8"));
+    expect(verification.rows.every(row => row.pass)).toBe(true);
     if (state !== "COMPLETED") expect(await storedText()).toBe(before);
     else expect(await readPublishedReport(store, id)).toMatchObject({ status: "COMPLETED" });
   });
@@ -484,6 +520,7 @@ describe("quarantined snapshot preservation and recovery", () => {
     }
     await db.exec(readFileSync("scripts/paid_payment_confirm_recovery_queue_patch.sql", "utf8"));
     await db.exec(readFileSync("scripts/paid_report_publish_expiry_patch.sql", "utf8"));
+  await db.exec(readFileSync("scripts/paid_report_external_call_guard_patch.sql", "utf8"));
   });
 
   it("old callers without an observation cannot change storage after the RPC patch", async () => {

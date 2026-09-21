@@ -29,6 +29,7 @@ beforeEach(async () => {
   await db.exec("truncate payment_orders cascade");
   await db.exec(readFileSync("scripts/paid_payment_confirm_recovery_queue_patch.sql", "utf8"));
   await db.exec(readFileSync("scripts/paid_report_publish_expiry_patch.sql", "utf8"));
+  await db.exec(readFileSync("scripts/paid_report_external_call_guard_patch.sql", "utf8"));
 });
 afterEach(() => vi.useRealTimers());
 async function order(id: string) {
@@ -256,7 +257,7 @@ describe("fair durable payment recovery", () => {
     const controller=new AbortController();
     const fetchImpl=vi.fn(async () => ({ ok:true,status:200,json:async () => ({ orderId:'order-A',totalAmount:1290,status:'DONE',currency:'KRW' }) }));
     expect(await confirmTossPayment({ ...request('A'),secretKey:'mock-secret',signal:controller.signal,fetchImpl })).toMatchObject({ ok:true });
-    expect(fetchImpl.mock.calls[0]).toEqual(['https://api.tosspayments.com/v1/payments/confirm',expect.objectContaining({ method:'POST',signal:controller.signal,headers:expect.objectContaining({ 'Idempotency-Key':'confirm-order-A' }),body:JSON.stringify({ paymentKey:'mock-A',orderId:'order-A',amount:1290 }) })]);
+    expect(fetchImpl.mock.calls[0]).toEqual(['https://api.tosspayments.com/v1/payments/confirm',expect.objectContaining({ method:'POST',signal:expect.any(AbortSignal),headers:expect.objectContaining({ 'Idempotency-Key':'confirm-order-A' }),body:JSON.stringify({ paymentKey:'mock-A',orderId:'order-A',amount:1290 }) })]);
   });
 
   it("reapplying the patch preserves active leases and counters, and keeps RPC service-only", async () => {

@@ -1,3 +1,4 @@
+import { ExternalCallTimeout, withDeadline } from "../network/withDeadline";
 import type { ReliabilityStore } from "./paidReportReliabilityStore";
 import type { TossConfirmClientResult, TossConfirmRequest } from "./tossConfirmTypes";
 import { isRecord } from "../report-generation/productPublishGate";
@@ -16,20 +17,12 @@ export async function recoverPendingPayment(store: ReliabilityStore, confirm: Re
   });
   let paidAt: string | undefined;
   if (!claim.alreadyPaid) {
-    const controller = new AbortController();
-    let timer: ReturnType<typeof setTimeout> | undefined;
-    let result: TossConfirmClientResult | null;
+    let result: TossConfirmClientResult;
     try {
-      result = await Promise.race([
-        Promise.resolve().then(() => confirm(payment, controller.signal)),
-        new Promise<null>(resolve => { timer = setTimeout(() => { controller.abort(); resolve(null); }, PAYMENT_RECOVERY_TIMEOUT_MS); }),
-      ]);
-    } catch {
-      return failed(controller.signal.aborted ? "RECOVERY_TIMEOUT" : "RECOVERY_PROVIDER_UNCERTAIN");
-    } finally {
-      clearTimeout(timer);
+      result = await withDeadline(signal => confirm(payment, signal), PAYMENT_RECOVERY_TIMEOUT_MS);
+    } catch (error) {
+      return failed(error instanceof ExternalCallTimeout ? "RECOVERY_TIMEOUT" : "RECOVERY_PROVIDER_UNCERTAIN");
     }
-    if (result === null) return failed("RECOVERY_TIMEOUT");
     if (!result.ok) {
       if (result.error.code === "TOSS_CONFIRM_CONFIG_MISSING") return failed("RECOVERY_CONFIG_MISSING", true);
       if (result.error.code === "TOSS_CONFIRM_AMOUNT_MISMATCH" || result.error.code === "TOSS_CONFIRM_INVALID_REQUEST") return failed("RECOVERY_PROVIDER_MISMATCH", true);

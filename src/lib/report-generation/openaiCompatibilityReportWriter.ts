@@ -408,6 +408,7 @@ export async function generateCompatibilityReportDraft(input: {
 
   try {
     const result = await callOpenAIReportWriter({
+      product: "compatibility",
       config: input.config,
       messages,
       jsonSchema: compatibilityReportDraftJsonSchema,
@@ -455,6 +456,7 @@ export async function generateCompatibilityReportDraft(input: {
 
   try {
     const repaired = await callOpenAIReportWriter({
+      product: "compatibility",
       config: input.config,
       messages: repairMessages,
       jsonSchema: compatibilityReportDraftJsonSchema,

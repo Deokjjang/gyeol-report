@@ -1,3 +1,4 @@
+import { withDeadline } from "../network/withDeadline";
 import { Buffer } from "node:buffer";
 
 import type {
@@ -9,6 +10,7 @@ import type {
 
 export const TOSS_CONFIRM_API_URL =
   "https://api.tosspayments.com/v1/payments/confirm";
+export const TOSS_CONFIRM_TIMEOUT_MS = 15_000;
 export const TOSS_CONFIRM_REQUIRED_AMOUNT = 1290;
 const tossConfirmRequiredCurrency = "KRW";
 
@@ -226,22 +228,26 @@ export async function confirmTossPayment(
   const fetchImpl =
     input.fetchImpl ?? ((url: string, init: RequestInit) => fetch(url, init));
   let response: TossConfirmFetchResponse;
+  let body: unknown;
 
   try {
-    response = await fetchImpl(TOSS_CONFIRM_API_URL, {
-      ...(input.signal ? { signal: input.signal } : {}),
-      method: "POST",
-      headers: {
-        authorization: createAuthorizationHeader(input.secretKey),
-        "content-type": "application/json",
-        "Idempotency-Key": `confirm-${input.orderId}`,
-      },
-      body: JSON.stringify({
-        paymentKey: input.paymentKey,
-        orderId: input.orderId,
-        amount: TOSS_CONFIRM_REQUIRED_AMOUNT,
-      }),
-    });
+    ({ response, body } = await withDeadline(async signal => {
+      const response = await fetchImpl(TOSS_CONFIRM_API_URL, {
+        signal,
+        method: "POST",
+        headers: {
+          authorization: createAuthorizationHeader(input.secretKey),
+          "content-type": "application/json",
+          "Idempotency-Key": `confirm-${input.orderId}`,
+        },
+        body: JSON.stringify({
+          paymentKey: input.paymentKey,
+          orderId: input.orderId,
+          amount: TOSS_CONFIRM_REQUIRED_AMOUNT,
+        }),
+      });
+      return { response, body: await readJsonSafely(response) };
+    }, TOSS_CONFIRM_TIMEOUT_MS, input.signal));
   } catch (error) {
     const message =
       error instanceof Error
@@ -250,8 +256,6 @@ export async function confirmTossPayment(
 
     return failure("TOSS_CONFIRM_PROVIDER_ERROR", message);
   }
-
-  const body = await readJsonSafely(response);
 
   if (!response.ok) {
     return failure(

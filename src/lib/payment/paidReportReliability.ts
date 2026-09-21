@@ -36,8 +36,9 @@ export async function runPaidReportJob(store: ReliabilityStore, runtime: ReportW
   const attempt = Number(job.attempt_count);
   const strategy: GenerationStrategy = attempt === 1 ? "normal_writer" : attempt === 2 ? "writer_regeneration" : "deterministic_fallback";
   const started = Date.now();
+  let externalCalls: ProductGenerationResult["externalCalls"] = [];
   const finish = (data: Record<string, unknown>) => store.call("finish_job", {
-    jobId: job.job_id, token: job.lease_token, durationMs: Date.now() - started, ...data,
+    jobId: job.job_id, token: job.lease_token, durationMs: Date.now() - started, externalCalls, ...data,
   });
   try {
     let annualAcceptance: AnnualCommerceAcceptance | undefined;
@@ -58,9 +59,10 @@ export async function runPaidReportJob(store: ReliabilityStore, runtime: ReportW
     const result = annualAcceptance === undefined
       ? await generate(job.payload, runtime, strategy)
       : await generate(job.payload, runtime, strategy, annualAcceptance);
+    externalCalls = result.externalCalls ?? [];
     if (!result.ok) {
       const errors = "validationErrors" in result.error ? result.error.validationErrors : undefined;
-      return finish({ success: false, stage: errors ? "validation" : "generation", code: errors ? "PUBLISH_REJECTED" : "GENERATION_FAILED", errors: errors ?? [result.error.code] });
+      return finish({ success: false, stage: errors ? "validation" : "generation", code: result.externalFailure ?? (errors ? "PUBLISH_REJECTED" : "GENERATION_FAILED"), errors: errors ?? [result.error.code] });
     }
     // Do not trust a generator, including a deterministic fallback or a mock, to publish itself.
     const gate = validateProductPublication(String(job.product_type), result.draft, result.evidencePacket);

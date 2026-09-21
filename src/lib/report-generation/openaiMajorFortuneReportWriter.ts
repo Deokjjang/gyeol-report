@@ -1,3 +1,4 @@
+import { guardedReportFetch, type WriterCallBudget } from "./reportWriterCallGuard";
 import type { FiveElement, YinYang } from "../report-knowledge/annualFortuneTypes";
 import type { MajorFortuneEvidencePacket } from "../report-knowledge/majorFortuneTypes";
 import { USER_RELATIONSHIP_STATUS_LABELS } from "../report-knowledge/userContextTypes";
@@ -19,6 +20,7 @@ export type MajorFortuneReportWriterConfig = {
   readonly model: string;
   readonly enabled: boolean;
   readonly fetchImpl?: typeof fetch;
+  readonly callBudget?: WriterCallBudget;
 };
 
 export type MajorFortuneReportWriterResult = {
@@ -670,7 +672,7 @@ export async function generateMajorFortuneReportDraft(input: {
     evidencePacket: input.evidencePacket,
   });
   const model = input.config.model.trim();
-  const fetchImpl = input.config.fetchImpl ?? fetch;
+  const fetchImpl = guardedReportFetch(input.config, "major");
   let response: Response;
 
   try {

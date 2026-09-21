@@ -1,3 +1,4 @@
+import { guardedReportFetch, type WriterCallBudget } from "./reportWriterCallGuard";
 import type { AnnualFortuneEvidencePacket } from "../report-knowledge/annualFortuneEvidence";
 import type { FiveElement } from "../report-knowledge/annualFortuneTypes";
 import {
@@ -19,6 +20,7 @@ export type AnnualFortuneReportWriterConfig = {
   readonly model: string;
   readonly enabled: boolean;
   readonly fetchImpl?: typeof fetch;
+  readonly callBudget?: WriterCallBudget;
 };
 
 export type AnnualFortuneReportWriterResult = {
@@ -366,7 +368,7 @@ export async function generateAnnualFortuneReportDraft(input: {
     evidencePacket: input.evidencePacket,
   });
   const model = input.config.model.trim();
-  const fetchImpl = input.config.fetchImpl ?? fetch;
+  const fetchImpl = guardedReportFetch(input.config, "annual");
   let response: Response;
 
   try {

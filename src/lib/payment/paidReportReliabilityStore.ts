@@ -1,10 +1,12 @@
 import { createClient } from "@supabase/supabase-js";
+import { withDeadline } from "../network/withDeadline";
 import { isRecord } from "../report-generation/productPublishGate";
 import { mapPaymentOrderRowToRecord, type PaymentOrderRow } from "./paymentOrderPersistenceMapper";
 import type { PaymentOrderPersistenceAdapter } from "./paymentOrderPersistenceTypes";
 
 export type ReliabilityResult = { ok: boolean; code?: string; [key: string]: unknown };
 export type ReliabilityStore = { call(action: string, data?: Record<string, unknown>): Promise<ReliabilityResult> };
+export const RELIABILITY_RPC_TIMEOUT_MS = 10_000;
 
 export function createPaidReportReliabilityStore(env = process.env): ReliabilityStore {
   const productionEnabled = env.NODE_ENV !== "production" || env.PAID_REPORT_RELIABILITY_ENABLED === "1";
@@ -19,7 +21,9 @@ export function createPaidReportReliabilityStore(env = process.env): Reliability
     async call(action, data = {}) {
       if (!client) return { ok: false, code: "DURABLE_STORAGE_UNAVAILABLE" };
       try {
-        const result = await client.rpc("paid_report_reliability", { p_action: action, p_data: data });
+        const result = await withDeadline(async signal =>
+          await client.rpc("paid_report_reliability", { p_action: action, p_data: data }).abortSignal(signal),
+        RELIABILITY_RPC_TIMEOUT_MS);
         return !result.error && isRecord(result.data) && typeof result.data.ok === "boolean"
           ? result.data as ReliabilityResult : { ok: false, code: "DURABLE_STORAGE_FAILED" };
       } catch {
