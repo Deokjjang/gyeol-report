@@ -1,10 +1,14 @@
+import { careerSignalMatches, selectCareerMbti, selectCareerRoles, selectCareerJobs, selectCareerAvoid, traitText, type CareerMbtiSelection } from "./careerEvidenceSelection";
 import type {
+  EarthlyBranch,
   FiveElement,
   HeavenlyStem,
   TenGod,
 } from "./annualFortuneTypes";
 import {
   getAnnualGanjiInfo,
+  getAnnualFortuneCurrentYear,
+  getAnnualBranchInteractions,
   getTenGodForStemPair,
 } from "./annualFortuneYearRules";
 import {
@@ -40,6 +44,7 @@ type BuildCareerReportEvidenceInput = {
   readonly fixtureId?: string;
   readonly person: CareerReportFixturePerson;
   readonly calculatedSaju?: SajuCalcResult;
+  readonly referenceDate?: Date;
 };
 
 type MbtiCareerProfile = CareerReportEvidencePacket["mbtiCareerBasis"];
@@ -319,7 +324,7 @@ function unique<T>(values: readonly T[]): readonly T[] {
 }
 
 function includesAny(labels: readonly string[], targets: readonly string[]): boolean {
-  return targets.some((target) => labels.some((label) => label.includes(target)));
+  return targets.some((target) => careerSignalMatches(labels, target));
 }
 
 function parseDayMaster(dayPillar: string): HeavenlyStem {
@@ -343,27 +348,9 @@ function getElementsFromLabels(
 
 function getTenGodFocus(labels: readonly string[]): readonly TenGod[] {
   const direct = allTenGods.filter((tenGod) =>
-    labels.some((label) => label.includes(tenGod)),
+    careerSignalMatches(labels, tenGod),
   );
-  const expanded: TenGod[] = [...direct];
-
-  if (includesAny(labels, ["재성 강함", "재다신약"])) {
-    expanded.push("편재", "정재");
-  }
-  if (includesAny(labels, ["관성 강함"])) {
-    expanded.push("편관", "정관");
-  }
-  if (includesAny(labels, ["식상 과다", "무식상"])) {
-    expanded.push("식신", "상관");
-  }
-  if (includesAny(labels, ["인성 강함", "무인성"])) {
-    expanded.push("편인", "정인");
-  }
-  if (includesAny(labels, ["비겁 강함"])) {
-    expanded.push("비견", "겁재");
-  }
-
-  return unique(expanded);
+  return direct;
 }
 
 function buildDayMasterPlain(dayMaster: HeavenlyStem): string {
@@ -460,103 +447,24 @@ function buildMyeongliCareerBasis(input: {
 }
 
 function normalizeMbtiType(type: string | null | undefined): string | null {
-  if (type === undefined || type === null) {
-    return null;
-  }
-
-  const normalized = type.trim().toUpperCase();
-
-  return normalized.length === 4 ? normalized : null;
+  return selectCareerMbti(type, []).profile?.type ?? null;
 }
 
-function buildMbtiCareerBasis(type: string | null | undefined): MbtiCareerProfile {
-  const normalized = normalizeMbtiType(type);
-
-  if (normalized === "ENTJ") {
-    return {
-      type: normalized,
-      workStylePlain:
-        "ENTJ는 전략, 구조, 결정, 목표, 효율을 중시합니다. 일에서는 방향을 잡고 기준을 세운 뒤 사람과 자원을 움직이는 방식이 강합니다.",
-      strengthPlain:
-        "리더십, 우선순위 판단, 실행 압박, 성과 기준 설정이 강점입니다.",
-      riskPlain:
-        "모호함을 오래 참기 어렵고, 감정 유지나 세부 회복 신호를 과소평가할 수 있습니다.",
-      moneyBehaviorPlain:
-        "돈은 규모, ROI, 성과형 보상, 투자 논리로 보려는 경향이 강합니다. 통제감이 커지면 공격적으로 움직일 위험이 있습니다.",
-      studyPlain:
-        "공부는 목표 기반, 시험 전략, 산출물 중심, 레버리지를 높이는 자격증일 때 효율이 올라갑니다.",
-    };
-  }
-  if (normalized === "INTP") {
-    return {
-      type: normalized,
-      workStylePlain:
-        "INTP는 원리, 분석, 연구, 시스템 이해가 강합니다. 일에서는 깊게 파고 정확한 구조를 찾아내는 방식이 맞습니다.",
-      strengthPlain: "복잡한 문제 분석, 모델링, 연구, 논리 검증이 강점입니다.",
-      riskPlain:
-        "완벽히 이해하기 전까지 실행을 미루거나 현실 마감과 소통을 늦출 수 있습니다.",
-      moneyBehaviorPlain:
-        "돈은 즉흥 확장보다 분석, 비교, 리스크 검토 뒤 움직이는 쪽이 맞습니다.",
-      studyPlain:
-        "공부는 깊은 연구, 원리 이해, 긴 호흡의 탐구형 학습이 잘 맞습니다.",
-    };
-  }
-  if (normalized === "ENFP" || normalized === "ESFP") {
-    return {
-      type: normalized,
-      workStylePlain:
-        `${normalized}는 사람, 표현, 현장 반응, 새로운 시도를 통해 힘이 납니다. 일에서는 콘텐츠, 판매, 커뮤니티, 공개된 결과물에서 장점이 보입니다.`,
-      strengthPlain:
-        "사람을 끌어들이는 힘, 표현력, 빠른 반응, 아이디어 확장이 강점입니다.",
-      riskPlain:
-        "흥미가 떨어지면 마무리가 약해지고, 충동적 소비나 즉흥 결정이 늘어날 수 있습니다.",
-      moneyBehaviorPlain:
-        "돈은 사람과 기회가 움직이는 곳에서 접점이 생기지만, 지출 기준을 세우지 않으면 새는 돈이 커질 수 있습니다.",
-      studyPlain:
-        "공부는 발표, 피드백, 실습, 콘텐츠화처럼 밖으로 꺼내는 방식이 잘 맞습니다.",
-    };
-  }
-  if (normalized === "ISTJ" || normalized === "ESTJ") {
-    return {
-      type: normalized,
-      workStylePlain:
-        `${normalized}는 질서, 책임, 반복 가능한 기준, 관리 체계를 중시합니다. 일에서는 규칙과 평가 기준이 있는 환경에서 안정성이 큽니다.`,
-      strengthPlain:
-        "절차 준수, 일정 관리, 책임감, 기록과 검증이 강점입니다.",
-      riskPlain:
-        "변수가 많은 환경에서는 보수적으로 굳거나 새 기회를 늦게 잡을 수 있습니다.",
-      moneyBehaviorPlain:
-        "돈은 월급, 고정비, 예산, 안정적 축적처럼 관리 가능한 구조가 잘 맞습니다.",
-      studyPlain:
-        "공부는 커리큘럼, 기출 반복, 체크리스트, 자격증형 준비에 강합니다.",
-    };
-  }
-  if (normalized === "ISFP") {
-    return {
-      type: normalized,
-      workStylePlain:
-        "ISFP는 감각, 취향, 실제 결과물, 조용한 집중이 중요합니다. 일에서는 손에 잡히는 산출물과 자기 리듬이 맞아야 오래 갑니다.",
-      strengthPlain:
-        "디테일 감각, 결과물 완성, 취향 기반 선택, 현장 적응이 강점입니다.",
-      riskPlain:
-        "과도한 경쟁과 강한 통제 환경에서는 소진되거나 자기 표현이 줄어들 수 있습니다.",
-      moneyBehaviorPlain:
-        "돈은 큰 모험보다 자기 기술을 꾸준히 수익화하고 지출 리듬을 안정시키는 방식이 맞습니다.",
-      studyPlain:
-        "공부는 반복 실습, 포트폴리오 제작, 멘토 피드백이 있을 때 유지됩니다.",
-    };
-  }
-
+function buildMbtiCareerBasis(mbti: CareerMbtiSelection): MbtiCareerProfile {
+  if (!mbti.profile) return {
+    type: null, workStylePlain: "MBTI는 입력하지 않아 행동 유형을 추정하지 않습니다.",
+    strengthPlain: "원국에서 확인된 역할과 환경을 중심으로 비교합니다.",
+    riskPlain: "실제 업무 경험을 함께 확인해 적합도를 판단하세요.",
+    moneyBehaviorPlain: "유형별 소비 성향 대신 자신의 지출 기록을 기준으로 점검하세요.",
+    studyPlain: "학습 방식은 원국 근거와 실제 학습 경험을 함께 살펴봅니다.",
+  };
   return {
-    type: normalized,
-    workStylePlain:
-      "MBTI가 없거나 지원 범위 밖이면 명리 근거를 중심으로 직업·돈·학업 방향을 봅니다.",
-    strengthPlain: "행동 성향 정보는 보조 근거로만 반영합니다.",
-    riskPlain:
-      "MBTI 정보가 없어도 사주 원국의 구조와 현재 상태 근거는 유지됩니다.",
-    moneyBehaviorPlain:
-      "돈 성향은 재성, 오행 과다부족, 현재 직업 상태를 중심으로 봅니다.",
-    studyPlain: "학업 전략은 인성, 식상, 현재 준비 분야를 중심으로 봅니다.",
+    type: mbti.profile.type,
+    workStylePlain: `${mbti.profile.type}: ${traitText(mbti.career, "plainKo").slice(0, 2).join(" ")} ${traitText(mbti.workplace, "plainKo")[0] ?? ""}`,
+    strengthPlain: traitText(mbti.career, "positiveUse").join(" "),
+    riskPlain: traitText(mbti.workplace, "risk").join(" "),
+    moneyBehaviorPlain: traitText(mbti.money, "plainKo").join(" "),
+    studyPlain: traitText(mbti.study, "plainKo").join(" "),
   };
 }
 
@@ -578,12 +486,6 @@ function buildWorkStyleArchetypes(input: {
   }
   if (includesAny(input.labels, ["비겁", "비견", "겁재"]) || input.lifeStatus === "freelancer") {
     result.push("independent_freelancer");
-  }
-  if (normalizeMbtiType(input.mbtiType) === "ENTJ") {
-    result.push("system_architect", "manager_controller");
-  }
-  if (normalizeMbtiType(input.mbtiType) === "ENTP") {
-    result.push("sales_networker");
   }
 
   return unique(result.length > 0 ? result : ["builder_executor"]);
@@ -607,26 +509,10 @@ function buildMoneyStyleArchetypes(
   return unique(result.length > 0 ? result : ["salary_stability"]);
 }
 
-function buildInvestmentStyleArchetypes(
-  labels: readonly string[],
-): readonly InvestmentStyleArchetype[] {
-  const result: InvestmentStyleArchetype[] = [
-    "blue_chip_monthly_dca",
-    "index_diversification",
-    "avoid_leverage",
-  ];
-
-  if (includesAny(labels, ["토 과다", "정재", "재성"])) {
-    result.push("long_term_accumulation", "cashflow_first");
-  }
-  if (includesAny(labels, ["토 과다"])) {
-    result.push("real_asset_preference");
-  }
-  if (includesAny(labels, ["편재"])) {
-    result.push("active_trading_caution");
-  }
-
-  return unique(result);
+function buildInvestmentStyleArchetypes(labels: readonly string[]): readonly InvestmentStyleArchetype[] {
+  return includesAny(labels, ["편재"])
+    ? ["cashflow_first", "active_trading_caution", "avoid_leverage"]
+    : ["cashflow_first", "long_term_accumulation", "avoid_leverage"];
 }
 
 function buildStudyStyleArchetypes(
@@ -663,14 +549,7 @@ function buildCombinedCareerProfile(input: {
   const moneyStyleArchetypes = buildMoneyStyleArchetypes(input.labels);
   const investmentStyleArchetypes = buildInvestmentStyleArchetypes(input.labels);
   const studyStyleArchetypes = buildStudyStyleArchetypes(input.labels);
-  const hasDeokminLikeStructure =
-    includesAny(input.labels, ["재다신약"]) &&
-    includesAny(input.labels, ["무인성"]) &&
-    includesAny(input.labels, ["무식상"]) &&
-    mbtiType === "ENTJ";
-  const headline = hasDeokminLikeStructure
-    ? "운영형 기획자 / 전략형 PM / 수익 구조를 이해하는 서비스 기획"
-    : workStyleArchetypes.includes("creator_expression")
+  const headline = workStyleArchetypes.includes("creator_expression")
       ? "결과물로 설득하는 표현형 커리어"
       : workStyleArchetypes.includes("specialist_researcher")
         ? "깊게 파고 증명하는 연구·자격형 커리어"
@@ -687,7 +566,7 @@ function buildCombinedCareerProfile(input: {
   return {
     headline,
     plain:
-      `명리는 자원과 구조, MBTI는 행동 스타일을 보여주는 보조 레이어입니다. ${input.myeongli.careerPlain} ${input.mbti.workStylePlain} ${tension}`,
+      `명리는 자원과 구조, MBTI는 행동 스타일을 보여주는 보조 레이어입니다. ${input.mbti.strengthPlain} ${tension} 선호하는 작업 방식과 실제 맡게 될 책임을 함께 비교하세요.`,
     workStyleArchetypes,
     moneyStyleArchetypes,
     investmentStyleArchetypes,
@@ -695,318 +574,7 @@ function buildCombinedCareerProfile(input: {
   };
 }
 
-function buildRecommendedJobs(input: {
-  readonly labels: readonly string[];
-  readonly fieldLabel?: string | null;
-}): CareerReportEvidencePacket["recommendedJobs"] {
-  if (
-    includesAny(input.labels, ["재다신약", "편재", "정재"]) &&
-    includesAny(input.labels, ["정관", "편관", "토 과다"])
-  ) {
-    return [
-      {
-        title: "서비스 기획자",
-        fit: "high",
-        reason: "요구사항, 일정, 비용, 성과 기준을 구조화하는 역할에서 강점이 살아납니다.",
-        caution: "아이디어만 내고 권한 없는 책임을 떠안는 구조는 피해야 합니다.",
-      },
-      {
-        title: "PM / PO",
-        fit: "high",
-        reason: "돈·자원·계약 감각과 조직 기준을 함께 다루는 일이 맞습니다.",
-        caution: "결정권 없이 조율만 하는 자리는 소모가 커질 수 있습니다.",
-      },
-      {
-        title: "프로젝트 매니저",
-        fit: "high",
-        reason: "일정, 역할, 예산, 리스크를 묶어 관리하는 힘이 필요합니다.",
-        caution: "구두 지시와 모호한 범위는 기록으로 고정해야 합니다.",
-      },
-      {
-        title: "사업개발",
-        fit: "high",
-        reason: "외부 기회, 계약, 수익화 접점을 현실 구조로 바꾸는 역할입니다.",
-        caution: "조건이 불명확한 제휴나 돈거래는 불리해질 수 있습니다.",
-      },
-      {
-        title: "전략기획",
-        fit: "high",
-        reason: "큰 방향을 숫자, 실행 구조, 운영 기준으로 바꾸는 일이 맞습니다.",
-        caution: "현장 데이터 없이 추상 전략만 다루면 힘이 빠질 수 있습니다.",
-      },
-      {
-        title: "운영기획",
-        fit: "high",
-        reason: "토 과다와 재성은 관리, 비용, 프로세스, 정산 구조에 강하게 반응합니다.",
-        caution: "모든 잡무를 대신 떠안는 운영 담당자는 피해야 합니다.",
-      },
-      {
-        title: "데이터 기반 기획",
-        fit: "medium",
-        reason: "감보다 숫자로 성과 기준을 잡을 때 설득력이 올라갑니다.",
-        caution: "분석만 하고 제품 결정으로 연결하지 못하면 장점이 줄어듭니다.",
-      },
-      {
-        title: "B2B 서비스 기획",
-        fit: "high",
-        reason: "계약, 정산, 고객 요구사항, 운영 안정성을 함께 다루는 분야입니다.",
-        caution: "고객 요구를 모두 수용하는 구조는 손실을 키울 수 있습니다.",
-      },
-      {
-        title: "핀테크/결제/정산 서비스 기획",
-        fit: "high",
-        reason: "돈의 흐름, 정산 기준, 리스크 통제가 직무 자체와 맞물립니다.",
-        caution: "규정과 책임 범위를 정확히 확인해야 합니다.",
-      },
-      {
-        title: "SaaS 운영/기획",
-        fit: "medium",
-        reason: "반복 운영, 지표, 고객 흐름, 비용 구조를 개선하는 일이 맞습니다.",
-        caution: "반복 업무만 남고 개선 권한이 없는 자리는 피해야 합니다.",
-      },
-      {
-        title: "커머스 운영기획",
-        fit: "medium",
-        reason: "상품, 비용, 정산, 고객 흐름을 현실적으로 관리하는 분야입니다.",
-        caution: "매출 압박만 있고 기준 설계 권한이 없으면 소모됩니다.",
-      },
-      {
-        title: "CRM/마케팅 오퍼레이션",
-        fit: "medium",
-        reason: "고객 데이터와 운영 루틴을 묶어 성과 기준을 만드는 일이 맞습니다.",
-        caution: "감성 카피만 반복하는 마케팅은 장점이 덜 살아납니다.",
-      },
-      {
-        title: "제품 운영 매니저",
-        fit: "high",
-        reason: "제품이 굴러가는 기준, 일정, 이슈, 성과를 끝까지 붙드는 역할입니다.",
-        caution: "지원 조직처럼만 쓰이면 책임 대비 보상이 약해질 수 있습니다.",
-      },
-      {
-        title: "정책/구조 설계형 기획",
-        fit: "medium",
-        reason: "UX 리서치 자체보다 정책, 권한, 비용, 운영 구조를 설계하는 쪽이 맞습니다.",
-        caution: "사용자 감정 조사만 길게 하는 역할은 추진력이 약해질 수 있습니다.",
-      },
-      {
-        title: "반복 단순 업무",
-        fit: "low",
-        reason: "구조를 바꾸거나 기준을 세울 여지가 적습니다.",
-        caution: "성과 증명이 약해지고 답답함이 커질 수 있습니다.",
-      },
-    ];
-  }
 
-  if (includesAny(input.labels, ["식상", "식신", "상관"])) {
-    return [
-      {
-        title: "콘텐츠 기획자",
-        fit: "high",
-        reason: "아이디어를 결과물과 공개 성과로 바꾸는 역할이 맞습니다.",
-        caution: "마감과 수익 모델 없이 표현만 늘리면 소모됩니다.",
-      },
-      {
-        title: "브랜드 콘텐츠 운영",
-        fit: "high",
-        reason: "표현, 반응, 판매 흐름을 함께 다루는 일이 강점입니다.",
-        caution: "감정 반응에만 끌리면 비용 관리가 약해질 수 있습니다.",
-      },
-      {
-        title: "교육 콘텐츠 사업",
-        fit: "medium",
-        reason: "지식을 상품화하고 반복 판매 구조를 만들 수 있습니다.",
-        caution: "커리큘럼과 정산 기준을 먼저 잡아야 합니다.",
-      },
-      {
-        title: "포트폴리오형 프리랜서",
-        fit: "medium",
-        reason: "보이는 결과물이 바로 영업 자산이 됩니다.",
-        caution: "계약서 없이 움직이면 새는 돈이 커질 수 있습니다.",
-      },
-      {
-        title: "반복 행정 업무",
-        fit: "low",
-        reason: "표현과 결과물의 장점이 잘 보이지 않습니다.",
-        caution: "장기적으로 흥미가 빨리 떨어질 수 있습니다.",
-      },
-      {
-        title: "퍼포먼스 마케팅",
-        fit: "medium",
-        reason: "표현과 숫자 반응을 함께 볼 수 있습니다.",
-        caution: "단기 지표만 쫓으면 콘텐츠 완성도가 흔들립니다.",
-      },
-      {
-        title: "커뮤니티 매니저",
-        fit: "medium",
-        reason: "사람의 반응과 콘텐츠 흐름을 연결할 수 있습니다.",
-        caution: "감정 노동이 과해지면 회복 리듬이 무너질 수 있습니다.",
-      },
-      {
-        title: "세일즈 콘텐츠 기획",
-        fit: "high",
-        reason: "말과 결과물을 매출 접점으로 연결하는 역할입니다.",
-        caution: "성과 기준과 보상 구조를 명확히 해야 합니다.",
-      },
-    ];
-  }
-
-  if (includesAny(input.labels, ["인성", "편인", "정인"])) {
-    return [
-      {
-        title: "데이터 분석가",
-        fit: "high",
-        reason: "자료를 모으고 구조화해 해석하는 힘이 살아납니다.",
-        caution: "분석 결과를 실제 의사결정으로 연결해야 합니다.",
-      },
-      {
-        title: "리서처",
-        fit: "high",
-        reason: "깊게 파고 문서화하는 방식이 맞습니다.",
-        caution: "완성 전까지 공개를 미루면 기회가 늦어질 수 있습니다.",
-      },
-      {
-        title: "자격 기반 전문직 준비",
-        fit: "medium",
-        reason: "시험, 커리큘럼, 문서형 실력 증명이 맞습니다.",
-        caution: "공부만 길어지고 현장 경험이 부족해지지 않게 해야 합니다.",
-      },
-      {
-        title: "기술 문서/매뉴얼 작성",
-        fit: "medium",
-        reason: "복잡한 지식을 정리해 전달하는 데 강점이 있습니다.",
-        caution: "독자와 사용 장면을 놓치면 너무 이론적이 됩니다.",
-      },
-      {
-        title: "즉흥 영업",
-        fit: "low",
-        reason: "깊은 준비 없이 빠르게 설득하는 방식은 부담이 큽니다.",
-        caution: "즉흥성과 감정 압박이 커질 수 있습니다.",
-      },
-      {
-        title: "정책 분석",
-        fit: "medium",
-        reason: "문서, 규정, 구조를 읽고 정리하는 데 맞습니다.",
-        caution: "현실 실행과 연결해야 커리어 레버리지가 생깁니다.",
-      },
-      {
-        title: "교육 설계",
-        fit: "medium",
-        reason: "지식을 커리큘럼으로 재구성하는 역할입니다.",
-        caution: "수강자의 실제 결과물을 확인해야 합니다.",
-      },
-      {
-        title: "품질 검수",
-        fit: "medium",
-        reason: "기준과 오류를 세밀하게 보는 힘을 쓸 수 있습니다.",
-        caution: "검수만 반복하면 성장감이 약할 수 있습니다.",
-      },
-    ];
-  }
-
-  if (includesAny(input.labels, ["비겁", "비견", "겁재"])) {
-    return [
-      {
-        title: "프리랜서 크리에이터",
-        fit: "high",
-        reason: "자기 기준과 결과물을 직접 시장에 내는 방식이 맞습니다.",
-        caution: "가격, 범위, 수정 횟수를 정하지 않으면 손해가 커집니다.",
-      },
-      {
-        title: "영상 편집자",
-        fit: "high",
-        reason: "손에 잡히는 결과물로 실력을 증명할 수 있습니다.",
-        caution: "포트폴리오 없이 저가 작업만 반복하면 소모됩니다.",
-      },
-      {
-        title: "1인 브랜드 운영",
-        fit: "medium",
-        reason: "자기 기준과 취향을 상품화할 여지가 있습니다.",
-        caution: "협업 경계와 수익 구조를 명확히 해야 합니다.",
-      },
-      {
-        title: "협업형 프로젝트",
-        fit: "medium",
-        reason: "동료와 경쟁이 자극이 될 수 있습니다.",
-        caution: "돈과 역할을 섞으면 관계 피로가 커질 수 있습니다.",
-      },
-      {
-        title: "강한 위계 조직의 단순 보조",
-        fit: "low",
-        reason: "자기 기준과 독립성이 눌릴 수 있습니다.",
-        caution: "장기적으로 의욕이 떨어질 가능성이 큽니다.",
-      },
-      {
-        title: "디자인/편집 운영",
-        fit: "medium",
-        reason: "취향과 반복 실무를 함께 쓸 수 있습니다.",
-        caution: "기준 없는 수정 요청을 제한해야 합니다.",
-      },
-      {
-        title: "커뮤니티 기반 판매",
-        fit: "medium",
-        reason: "관계와 자기 브랜드가 수익 접점이 될 수 있습니다.",
-        caution: "친구 돈거래와 구두 약속은 피해야 합니다.",
-      },
-      {
-        title: "포트폴리오형 취업",
-        fit: "high",
-        reason: "학벌보다 결과물과 실습 기록으로 설득할 수 있습니다.",
-        caution: "마감과 제출 형식을 엄격히 관리해야 합니다.",
-      },
-    ];
-  }
-
-  return [
-    {
-      title: input.fieldLabel ?? "운영 실무",
-      fit: "medium",
-      reason: "현재 입력된 분야를 중심으로 구조화된 결과물을 만들 수 있습니다.",
-      caution: "구체적인 산출물과 기준이 없으면 방향이 흐려질 수 있습니다.",
-    },
-    {
-      title: "프로젝트 실무",
-      fit: "medium",
-      reason: "일정과 결과물을 붙들고 경험을 쌓기 좋습니다.",
-      caution: "역할 범위를 문서로 확인해야 합니다.",
-    },
-    {
-      title: "자격 기반 직무",
-      fit: "medium",
-      reason: "공부와 실무 증명을 연결할 수 있습니다.",
-      caution: "자격증만 있고 포트폴리오가 없으면 약합니다.",
-    },
-    {
-      title: "반복 단순 업무",
-      fit: "low",
-      reason: "성장 증거가 남기 어렵습니다.",
-      caution: "장기적으로 커리어 설명력이 떨어질 수 있습니다.",
-    },
-    {
-      title: "고객 운영",
-      fit: "medium",
-      reason: "사람과 프로세스를 함께 다루는 경험을 얻을 수 있습니다.",
-      caution: "감정 노동이 과하면 회복 루틴을 먼저 잡아야 합니다.",
-    },
-    {
-      title: "문서 기반 기획",
-      fit: "medium",
-      reason: "생각을 구조로 정리하는 힘을 키울 수 있습니다.",
-      caution: "문서가 실행으로 이어져야 합니다.",
-    },
-    {
-      title: "분석 보조",
-      fit: "medium",
-      reason: "데이터와 근거를 다루는 감각을 만들 수 있습니다.",
-      caution: "분석 목표가 없으면 자료 정리에 머물 수 있습니다.",
-    },
-    {
-      title: "현장 운영",
-      fit: "medium",
-      reason: "현실 문제를 바로 조정하는 경험이 됩니다.",
-      caution: "몸과 일정 소모를 관리해야 합니다.",
-    },
-  ];
-}
 
 function buildCareerPaths(input: {
   readonly labels: readonly string[];
@@ -1071,72 +639,34 @@ function buildMoneyStrategies(
   ];
 }
 
-function buildInvestmentProfile(
-  labels: readonly string[],
-): CareerReportEvidencePacket["investmentProfile"] {
-  const preferred = buildInvestmentStyleArchetypes(labels);
-
+function buildInvestmentProfile(labels: readonly string[], mbti: CareerMbtiSelection): CareerReportEvidencePacket["investmentProfile"] {
+  const wealth = includesAny(labels, ["정재", "편재"]);
   return {
-    headline: "단기 투기보다 분산·적립·현금흐름 관리가 먼저입니다",
-    preferred,
-    plain:
-      "이 구조는 감정으로 사고파는 단타보다 우량 자산을 매달 일정 금액으로 나누어 쌓고, 지수형 분산과 현금흐름 점검을 병행하는 쪽이 더 안정적으로 맞습니다. 편재가 강하게 작동하면 외부 프로젝트나 성과형 보상 접점은 늘어날 수 있지만, 레버리지와 몰빵은 불리해질 수 있습니다.",
-    suitablePatterns: [
-      "우량 자산 월 적립",
-      "지수형 분산",
-      "현금흐름 우선 관리",
-      "투자 전 고정비 절감",
-      "장기 적립형 포트폴리오",
-    ],
-    cautionPatterns: [
-      "레버리지",
-      "몰빵",
-      "감정 단타",
-      "구두 돈거래",
-      "친구 돈거래",
-      "확정 수익처럼 포장된 제안",
-    ],
-    disclaimer:
-      "이 내용은 성향 기반 해석이며 금융 자문이 아닙니다. 실제 투자는 본인의 판단과 별도 검토가 필요합니다.",
+    headline: "결정 속도와 손실 대응 기준을 분리합니다",
+    preferred: buildInvestmentStyleArchetypes(labels),
+    plain: `${traitText(mbti.investment, "plainKo").join(" ") || "투자 성향을 유형으로 추정하지 않고 실제 의사결정 기록을 살펴봅니다."} ${wealth ? "재성 신호는 자원의 대가를 비교하는 관점이며 실제 투자 능력을 뜻하지 않습니다." : "원국만으로 투자 능력이나 감당할 수 있는 손실을 판단하지 않습니다."}`,
+    suitablePatterns: ["결정 이유와 재검토 조건을 함께 기록", "생활에 필요한 자금과 위험 한도 분리", "손실 때도 유지할 판단 기준 사전 설정"],
+    cautionPatterns: [...traitText(mbti.investment, "risk"), "손실을 만회하려고 한도를 늘리는 결정", "검증되지 않은 고수익 제안"],
+    disclaimer: "이 내용은 성향 기반 해석이며 금융 자문이 아닙니다. 실제 투자는 본인의 판단과 별도 검토가 필요합니다.",
   };
 }
 
 function buildStudyCertificateStrategy(input: {
-  readonly labels: readonly string[];
-  readonly fieldLabel?: string | null;
+  readonly labels: readonly string[]; readonly fieldLabel?: string | null;
+  readonly mbti: CareerMbtiSelection;
 }): CareerReportEvidencePacket["studyCertificateStrategy"] {
-  const isPlanningField = input.fieldLabel?.includes("기획") === true;
-  const hasResource = includesAny(input.labels, ["인성", "편인", "정인"]);
-  const hasExpression = includesAny(input.labels, ["식상", "식신", "상관"]);
-
+  const resource = includesAny(input.labels, ["인성", "편인", "정인"]);
+  const expression = includesAny(input.labels, ["식상", "식신", "상관"]);
+  const precise = includesAny(input.labels, ["현침", "문창"]);
+  const angle = resource ? "인성 신호는 개념과 자료를 쌓는 학습으로 읽습니다. 이해한 내용을 기준표로 정리하고 시험에서는 적용 문제로 검증하세요."
+    : expression ? "식상 신호는 배운 내용을 설명하거나 제작하는 학습으로 읽습니다. 짧은 발표나 포트폴리오에서 이해의 빈틈을 확인하세요."
+    : "원국만으로 학습 능력을 단정하지 않습니다. 읽기와 직접 풀기를 비교해 실제로 남는 방식을 고르세요.";
   return {
-    headline: hasResource
-      ? "자격증과 문서형 실력 증명이 잘 맞습니다"
-      : "공부는 결과물과 포트폴리오로 묶어야 힘이 납니다",
-    plain:
-      "학업은 오래 앉아 있는 시간보다 직무에서 설명 가능한 증거를 남기는 방식이 중요합니다. 시험이나 자격증은 일정과 오답 루틴으로 관리하고, 포트폴리오는 문제 정의, 실행 과정, 숫자 결과까지 남겨야 합니다.",
-    recommendedFields: unique([
-      isPlanningField ? "서비스 기획" : "현재 준비 분야",
-      "데이터 분석",
-      "SQL",
-      "재무·회계 기초",
-      "PM/PO 실무",
-      hasResource ? "자격증형 커리큘럼" : "포트폴리오형 실습",
-    ]),
-    recommendedMethods: unique([
-      "기출·오답 루틴",
-      "주간 산출물",
-      "포트폴리오 케이스 정리",
-      hasExpression ? "발표와 피드백" : "문서화와 체크리스트",
-      "실무 예제 반복",
-    ]),
-    avoidMethods: unique([
-      "벼락치기",
-      "요약만 읽고 끝내기",
-      "결과물 없는 공부",
-      "시험 일정 없는 장기 계획",
-      "실무 연결 없는 자격증 수집",
-    ]),
+    headline: input.mbti.study[0]?.label ?? (resource ? "개념을 적용 문제로 연결하는 공부" : "작은 결과물로 확인하는 공부"),
+    plain: `${angle} ${traitText(input.mbti.study, "plainKo").join(" ")}${precise ? ` ${["문창", "현침"].filter((label) => includesAny(input.labels, [label])).join("·")} 신호는 문장이나 풀이의 세부를 검토하는 방식과 연결해 볼 수 있습니다.` : ""}`,
+    recommendedFields: [input.fieldLabel || "관심 직무의 기초 과목", resource ? "개념·사례 비교" : "실습형 과제", expression ? "발표·제작 과제" : "적용 문제 풀이"],
+    recommendedMethods: [...traitText(input.mbti.study, "positiveUse"), resource ? "이론별 적용 사례 대조" : "작은 과제 완성 후 피드백", expression ? "배운 내용을 다른 사람에게 설명" : "틀린 판단의 근거를 다시 확인", precise ? "풀이와 문서의 세부 검토" : "실제 학습 결과로 계획 조정"],
+    avoidMethods: [...traitText(input.mbti.study, "risk"), "시험 요건 확인 없는 자격증 수집", "검증 없이 익숙한 풀이만 반복", "휴식 없이 학습 시간만 늘리기"],
   };
 }
 
@@ -1212,54 +742,37 @@ function buildOpportunitySignals(
 }
 
 function buildTimingHints(input: {
-  readonly dayMaster: HeavenlyStem;
-  readonly labels: readonly string[];
+  readonly dayMaster: HeavenlyStem; readonly pillars: CareerReportFixturePerson["pillars"];
+  readonly referenceDate?: Date;
 }): readonly CareerSignal[] {
-  const years = [2026, 2027, 2028, 2029, 2030];
-
-  return years.map((year) => {
+  // Preserve the existing five-row career horizon; annual commerce has a separate policy.
+  const currentYear = getAnnualFortuneCurrentYear(input.referenceDate);
+  const angles: Record<TenGod, { title: string; plain: string; push: readonly string[]; avoid: readonly string[] }> = {
+    비견: { title: "자기 기준과 협업 범위", plain: "동료와 역할이 겹칠 때 기여 범위를 설명하는 쪽을 점검하세요.", push: ["기여 범위 합의", "협업 분담 확인", "자기 성과 기록"], avoid: ["기준 없는 경쟁", "기여 혼동", "일방적 역할 확대"] },
+    겁재: { title: "공동 자원과 배분 기준", plain: "함께 쓰는 비용과 성과의 배분 기준을 먼저 점검하세요.", push: ["공동 비용 기록", "보상 기준 확인", "협업 한도 설정"], avoid: ["모호한 공동 지출", "비교에 따른 지출", "구두 배분 약속"] },
+    식신: { title: "꾸준히 완성하는 결과물", plain: "익힌 기술을 실제 결과물로 이어가는 과정을 점검하세요.", push: ["완성한 작업 축적", "제작 과정 개선", "사용자 피드백"], avoid: ["완성 없는 반복", "품질 기준 생략", "과정만 설명하기"] },
+    상관: { title: "제안과 표현의 전달 방식", plain: "개선 제안을 상대가 검토할 수 있는 근거로 바꾸는 쪽을 점검하세요.", push: ["제안 근거 정리", "발표와 피드백", "개선안 실험"], avoid: ["근거 없는 비판", "합의 없는 변경", "전달 방식 생략"] },
+    편재: { title: "외부 접점과 거래 조건", plain: "새 접점은 수익 예고가 아닙니다. 제안의 범위와 회수 조건을 점검하세요.", push: ["제안 범위 비교", "거래 조건 확인", "투입 한도 설정"], avoid: ["매출만 보는 계약", "회수 조건 생략", "기회 과대평가"] },
+    정재: { title: "지속 수입과 비용의 균형", plain: "확정된 대가와 반복 비용을 분리해 유지 가능한 업무량을 점검하세요.", push: ["반복 비용 확인", "정산 일정 기록", "업무량과 대가 비교"], avoid: ["비용 누락", "정산 미루기", "과도한 고정 지출"] },
+    편관: { title: "부담과 대응 권한", plain: "압박을 성과로 단정하지 않고 부담에 대응할 권한이 있는지 점검하세요.", push: ["대응 권한 확인", "업무 우선순위", "지원 요청 기준"], avoid: ["혼자 감당하기", "한도 없는 책임", "긴급 업무 상시화"] },
+    정관: { title: "역할과 평가 기준", plain: "승진을 예고하기보다 평가 기준과 실제 역할의 일치를 점검하세요.", push: ["평가 기준 확인", "역할 명문화", "책임 범위 조율"], avoid: ["직함만 따르기", "모호한 승인선", "평가 기준 오해"] },
+    편인: { title: "새 관점의 검증", plain: "다른 방법을 탐구하되 실제 과제에 적용해 유효성을 점검하세요.", push: ["대안 비교", "작은 적용 실험", "학습 근거 확인"], avoid: ["검증 없는 해석", "준비만 반복", "피드백 단절"] },
+    정인: { title: "기초 지식과 지원 활용", plain: "문서와 학습 자원을 실제 업무 판단에 연결하는 쪽을 점검하세요.", push: ["기초 개념 정리", "검토자 피드백", "문서와 사례 대조"], avoid: ["자료만 수집", "권위만 신뢰", "적용 없는 암기"] },
+  };
+  const natalBranches = [input.pillars.year, input.pillars.month, input.pillars.day, input.pillars.hour]
+    .filter((p): p is string => typeof p === "string" && /^[甲乙丙丁戊己庚辛壬癸][子丑寅卯辰巳午未申酉戌亥]$/u.test(p))
+    .map((p) => p[1] as EarthlyBranch);
+  return Array.from({ length: 5 }, (_, i) => {
+    const year = currentYear + i;
     const ganji = getAnnualGanjiInfo(year);
     const tenGod = getTenGodForStemPair(input.dayMaster, ganji.stem);
-
-    if (year === 2026) {
-      return signal(
-        "timing_hint",
-        "medium",
-        "2026 새 기준과 산출물",
-        `${year}년 ${ganji.ganji}은 ${tenGod} 흐름으로 새 역할의 기준과 첫 산출물을 잡기 쉬운 시기입니다.`,
-      );
-    }
-    if (year === 2027) {
-      return signal(
-        "timing_hint",
-        "medium",
-        "2027 결과물·표현 압박",
-        `${year}년 ${ganji.ganji}은 ${tenGod} 흐름으로 발표, 제안서, 결과물이 빨라질 수 있습니다.`,
-      );
-    }
-    if (year === 2028) {
-      return signal(
-        "timing_hint",
-        "high",
-        "2028 외부 프로젝트·수익화",
-        `${year}년 ${ganji.ganji}은 ${tenGod} 흐름이 강해 외부 프로젝트, 계약, 수익화 접점을 검토하기 쉬운 흐름입니다.`,
-      );
-    }
-    if (year === 2029) {
-      return signal(
-        "timing_hint",
-        "medium",
-        "2029 정산·고정비·현금흐름",
-        `${year}년 ${ganji.ganji}은 ${tenGod} 흐름으로 돈을 감보다 숫자로 고정하기 좋은 시기입니다.`,
-      );
-    }
-
-    return signal(
-      "timing_hint",
-      "medium",
-      "2030 구조 재배치",
-      `${year}년 ${ganji.ganji}은 ${tenGod} 흐름으로 역할 경계, 직무 전환, 계약 조건을 다시 검토하기 쉬운 흐름입니다.`,
-    );
+    const angle = angles[tenGod];
+    const interactions = getAnnualBranchInteractions({ annualBranch: ganji.branch, natalBranches })
+      .map((r) => `${r.branches.join("·")} ${r.type}`);
+    return { type: "timing_hint", strength: "medium", title: `${year} ${angle.title}`,
+      plain: `${year}년 ${ganji.ganji}의 천간 ${ganji.stem}은 ${input.dayMaster} 일간에 ${tenGod}입니다. ${angle.plain}${interactions.length ? ` 원국 지지와의 ${interactions.join(", ")}도 함께 살펴보되, 사건이나 성과를 확정하는 근거로 보지 않습니다.` : " 원국 지지와의 주요 합충형파해가 확인되지 않아 특정 사건을 덧붙이지 않습니다."}`,
+      evidenceIds: [`annual:${year}:${ganji.ganji}`, `day-master:${input.dayMaster}`],
+      yearBasis: { year, ganji: ganji.ganji, tenGod, interactions, push: angle.push, avoid: angle.avoid } };
   });
 }
 
@@ -1304,7 +817,6 @@ function buildCareerMyeongliSignals(input: {
   for (const element of [
     ...input.myeongliCareerBasis.dominantElements,
     ...input.myeongliCareerBasis.heavyElements,
-    ...input.myeongliCareerBasis.missingElements,
   ]) {
     pushSignal({
       kind: "element",
@@ -1721,7 +1233,9 @@ export function buildCareerReportEvidence(
     dayMaster,
     labels: input.person.labels,
   });
-  const mbtiCareerBasis = buildMbtiCareerBasis(input.person.mbti);
+  const mbti = selectCareerMbti(input.person.mbti, input.person.labels);
+  const mbtiCareerBasis = buildMbtiCareerBasis(mbti);
+  const roles = selectCareerRoles(input.person.labels);
   const combinedCareerProfile = buildCombinedCareerProfile({
     myeongli: myeongliCareerBasis,
     mbti: mbtiCareerBasis,
@@ -1729,25 +1243,40 @@ export function buildCareerReportEvidence(
     lifeStatus: input.person.userContext.lifeStatus,
     labels: input.person.labels,
   });
-  const recommendedJobs = buildRecommendedJobs({
-    labels: input.person.labels,
-    fieldLabel: input.person.userContext.fieldLabel,
-  });
+  const recommendedJobs = selectCareerJobs(input.person.labels, mbti, roles);
   const careerPaths = buildCareerPaths({
     labels: input.person.labels,
     fieldLabel: input.person.userContext.fieldLabel,
   });
-  const moneyStrategies = buildMoneyStrategies(input.person.labels);
-  const investmentProfile = buildInvestmentProfile(input.person.labels);
+  const moneyStrategies = buildMoneyStrategies(input.person.labels).map((strategy, index) => ({
+    ...strategy,
+    plain: `${strategy.plain} ${traitText(mbti.money, "plainKo")[index] ?? ""}`.trim(),
+    push: [...strategy.push, ...traitText(mbti.money.slice(index, index + 1), "positiveUse")],
+    avoid: [...strategy.avoid, ...traitText(mbti.money.slice(index, index + 1), "risk")],
+  }));
+  const investmentProfile = buildInvestmentProfile(input.person.labels, mbti);
   const studyCertificateStrategy = buildStudyCertificateStrategy({
+    mbti,
     labels: input.person.labels,
     fieldLabel: input.person.userContext.fieldLabel,
   });
-  const workRiskWarnings = buildWorkRiskWarnings(input.person.labels);
-  const opportunitySignals = buildOpportunitySignals(input.person.labels);
+  const workRiskWarnings = [...selectCareerAvoid(mbti), ...buildWorkRiskWarnings(input.person.labels)];
+  const opportunitySignals = [
+    ...buildOpportunitySignals(input.person.labels),
+    ...[
+      { signals: ["역마"], title: "이동과 업무 인수인계", plain: "역마 신호는 변화하는 접점을 살펴보는 관점입니다. 이동 자체를 직업 적성으로 단정하기보다 업무 전환 때 기록과 인수인계를 남길 수 있는지 보세요." },
+      { signals: ["도화", "홍염"], title: "사람과 만나는 표현 방식", plain: "사람에게 보이는 표현과 반응을 점검하는 관점입니다. 설득 역할을 비교하되 감정노동이나 영업 능력을 확정하지 않습니다." },
+      { signals: ["천을귀인", "월덕귀인", "천덕귀인"], title: "도움을 구하는 업무 구조", plain: "확인된 귀인 신호는 조언과 검토를 구하는 환경으로 연결합니다. 혼자 판단하기 전에 질문할 창구와 피드백 기회를 확인하세요." },
+    ].flatMap((item) => {
+      const matched = item.signals.filter((s) => includesAny(input.person.labels, [s]));
+      return matched.length ? [{ type: "career_fit" as const, strength: "medium" as const,
+        title: item.title, plain: item.plain, evidenceIds: matched.map((s) => `natal:${s}`) }] : [];
+    }),
+  ];
   const timingHints = buildTimingHints({
     dayMaster,
-    labels: input.person.labels,
+    pillars: input.person.pillars,
+    referenceDate: input.referenceDate,
   });
   const bridgeEvidence = buildCareerBridgeEvidence({
     mbtiType: input.person.mbti,
@@ -1769,6 +1298,14 @@ export function buildCareerReportEvidence(
     manseRyeokPillars,
     myeongliSignalInterpretations:
       buildMyeongliSignalInterpretations(manseRyeokPillars),
+    mbtiSourceSelection: { type: mbti.profile?.type ?? null,
+      traitIds: Object.fromEntries((["career", "workplace", "money", "investment", "study"] as const).map((area) => [area, mbti[area].flatMap((t) => t.id ? [t.id] : [])])),
+      reportUseCases: mbti.reportUseCases },
+    ...(input.calculatedSaju ? { elementCounts: {
+      wood: input.calculatedSaju.elements.visible.WOOD, fire: input.calculatedSaju.elements.visible.FIRE,
+      earth: input.calculatedSaju.elements.visible.EARTH, metal: input.calculatedSaju.elements.visible.METAL,
+      water: input.calculatedSaju.elements.visible.WATER,
+    } } : {}),
     natalLabels: input.person.labels,
     mbtiType: normalizeMbtiType(input.person.mbti),
     myeongliCareerBasis,

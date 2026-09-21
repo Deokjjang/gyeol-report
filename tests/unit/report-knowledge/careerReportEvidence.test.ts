@@ -117,7 +117,7 @@ describe("careerReportEvidence", () => {
     expect(deokmin.combinedCareerProfile.plain).toContain(
       "명리는 자원과 구조",
     );
-    expect(intp.mbtiCareerBasis.workStylePlain).toMatch(/분석|연구/u);
+    expect(intp.mbtiCareerBasis.workStylePlain).toMatch(/분석|연구|원리|이론/u);
     expect(enfp.mbtiCareerBasis.workStylePlain).toMatch(/사람|표현|결과물/u);
     expect(unknownMbti.myeongliCareerBasis.moneyPlain).toContain("돈");
     expect(unknownMbti.mbtiCareerBasis.workStylePlain).toContain("MBTI");
@@ -147,12 +147,11 @@ describe("careerReportEvidence", () => {
     );
   });
 
-  it("combines Deokmin into an operations planning resource profile", () => {
+  it("derives roles without a personal MBTI-specific shortcut", () => {
     const evidence = buildFixtureEvidence("deokmin-career");
 
-    expect(evidence.combinedCareerProfile.headline).toContain("운영형 기획자");
-    expect(evidence.combinedCareerProfile.headline).toContain("전략형 PM");
-    expect(evidence.combinedCareerProfile.headline).toContain("수익 구조");
+    expect(evidence.combinedCareerProfile.headline).toContain("운영형");
+    expect(evidence.myeongliCareerBasis.tenGodFocus).not.toEqual(expect.arrayContaining(["식신", "정인"]));
     expect(evidence.combinedCareerProfile.workStyleArchetypes).toContain(
       "operator_planner",
     );
@@ -166,14 +165,8 @@ describe("careerReportEvidence", () => {
     const other = buildFixtureEvidence("career-sample-expression-married");
 
     expect(deokmin.recommendedJobs.length).toBeGreaterThanOrEqual(8);
-    expect(deokmin.recommendedJobs.map((job) => job.title)).toEqual(
-      expect.arrayContaining([
-        "서비스 기획자",
-        "PM / PO",
-        "운영기획",
-        "핀테크/결제/정산 서비스 기획",
-      ]),
-    );
+    expect(deokmin.recommendedJobs.some((job) => job.evidenceIds?.some((id) => id.startsWith("mbti:ENTJ:")))).toBe(true);
+    expect(deokmin.recommendedJobs.some((job) => job.role === "자원·거래 조율")).toBe(true);
     expect(
       deokmin.recommendedJobs.every(
         (job) => job.reason.length > 0 && job.caution.length > 0,
@@ -193,22 +186,19 @@ describe("careerReportEvidence", () => {
     );
     expect(evidence.investmentProfile.preferred).toEqual(
       expect.arrayContaining([
-        "blue_chip_monthly_dca",
-        "index_diversification",
+        "cashflow_first",
         "avoid_leverage",
       ]),
     );
     expect(evidence.investmentProfile.plain).toMatch(
-      /우량 자산|월|분산|적립/u,
+      /투자 능력|의사결정/u,
     );
     expect(serialized).not.toMatch(/\b(?:AAPL|TSLA|NVDA|005930)\b/u);
     expect(serialized).not.toContain("투자 수익이 납니다");
-    expect(evidence.studyCertificateStrategy.recommendedMethods).toContain(
-      "포트폴리오 케이스 정리",
-    );
+    expect(evidence.studyCertificateStrategy.recommendedMethods.length).toBeGreaterThanOrEqual(3);
     expect(evidence.timingHints.length).toBeGreaterThan(0);
     expect(evidence.timingHints.map((signal) => signal.plain).join("\n")).toMatch(
-      /가능성|쉬운 흐름|수 있습니다/u,
+      /점검|확정/u,
     );
     expect(new Set(evidence.timingHints.map((signal) => signal.title)).size).toBe(
       evidence.timingHints.length,

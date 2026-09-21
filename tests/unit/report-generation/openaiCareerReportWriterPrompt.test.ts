@@ -56,8 +56,8 @@ describe("openaiCareerReportWriterPrompt", () => {
 
     expect(messages.developer).toContain("Recommend actual job titles");
     expect(messages.developer).toContain("unsuitableJobs");
-    expect(messages.developer).toContain("서비스 기획자");
-    expect(messages.developer).toContain("PM/PO");
+    expect(messages.developer).toContain("claim-specific recommendation evidence");
+    expect(messages.developer).not.toContain("MBTI ENTJ:");
   });
 
   it("requires direct money and investment style with safety boundaries", () => {

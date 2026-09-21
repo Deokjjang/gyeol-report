@@ -1,3 +1,4 @@
+import { buildCareerReportScreenQaFallbackDraft } from "../../../src/lib/report-generation/careerReportDraftTypes";
 import { describe, expect, it, vi } from "vitest";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -161,7 +162,7 @@ describe("openaiCareerReportWriter", () => {
     const fetchImpl = vi.fn<typeof fetch>().mockResolvedValue(
       new Response(
         JSON.stringify({
-          output_text: JSON.stringify(createDraft()),
+          output_text: JSON.stringify(buildCareerReportScreenQaFallbackDraft(buildPacket())),
         }),
         {
           status: 200,

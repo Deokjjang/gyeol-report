@@ -1,3 +1,4 @@
+import { validateCareerEvidenceClaims } from "./careerEvidenceClaims";
 import {
   careerActionPlanLabels,
   type CareerReportDraft,
@@ -310,6 +311,7 @@ function hasRecommendedJobVariety(jobs: unknown): boolean {
 
 export function validateCareerReportDraft(
   value: unknown,
+  evidence?: unknown,
 ): CareerReportDraftValidationResult {
   const originalHardClaimWarnings = countPattern(value, hardClaimPattern);
   const originalFinancialWarnings = countPattern(value, financialPattern);
@@ -317,7 +319,7 @@ export function validateCareerReportDraft(
   const originalBuySellWarnings = countPattern(value, buySellPattern);
   const originalInternalWarnings = countInternalArtifacts(value);
   const sanitizedValue = sanitizeValue(value);
-  const errors: string[] = [];
+  const errors: string[] = evidence === undefined ? [] : validateCareerEvidenceClaims(value, evidence);
   const warnings: string[] = [];
 
   if (!isRecord(sanitizedValue)) {

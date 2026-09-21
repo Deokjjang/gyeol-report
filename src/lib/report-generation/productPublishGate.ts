@@ -57,7 +57,7 @@ export function validateProductPublication(product: string, draft: unknown, evid
   void _version;
   const validators: Record<string, (value: unknown) => { ok: boolean; errors: readonly string[] }> = {
     saju_mbti_full: validateComprehensiveReportDraft,
-    career_money_study: validateCareerReportDraft,
+    career_money_study: (value) => validateCareerReportDraft(value, evidence),
     love_marriage_child: validateLoveMarriageChildReportDraft,
     saju_mbti_compatibility: (value) => validateCompatibilityReportDraft(value, {
       allowedSajuTerms: deriveAllowedCompatibilitySajuTerms(evidence as CompatibilityEvidencePacket),

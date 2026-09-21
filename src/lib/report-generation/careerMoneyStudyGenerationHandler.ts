@@ -56,6 +56,7 @@ export type CareerMoneyStudyGenerationResult =
     };
 
 export type CareerMoneyStudyGenerationHandlerOptions = {
+  readonly now?: () => Date;
   readonly writer?: {
     readonly enabled: boolean;
     readonly config?: CareerReportWriterConfig;
@@ -106,7 +107,7 @@ export async function generateCareerMoneyStudyProductDraft(
 
   let evidencePacket: CareerReportEvidencePacket;
   try {
-    evidencePacket = buildCareerEvidenceFromGenerationInput(input);
+    evidencePacket = buildCareerEvidenceFromGenerationInput(input, options.now?.());
   } catch (error) {
     return careerMoneyStudyFailure({
       code: "CAREER_MONEY_STUDY_GENERATION_FAILED",
@@ -133,7 +134,7 @@ export async function generateCareerMoneyStudyProductDraft(
     });
   }
 
-  const validation = validateCareerReportDraft(draftResult.draft);
+  const validation = validateCareerReportDraft(draftResult.draft, evidencePacket);
 
   if (!validation.ok || validation.value === undefined) {
     return careerMoneyStudyFailure({
@@ -152,6 +153,7 @@ export async function generateCareerMoneyStudyProductDraft(
 
 function buildCareerEvidenceFromGenerationInput(
   input: SinglePersonGenerationInput,
+  referenceDate?: Date,
 ): CareerReportEvidencePacket {
   const saju = calculateCareerSaju(input.person);
   const person: CareerReportFixturePerson = {
@@ -171,6 +173,7 @@ function buildCareerEvidenceFromGenerationInput(
     fixtureId: "product-preview-career-money-study",
     person,
     calculatedSaju: saju,
+    referenceDate,
   }), { person: saju.birthTimeContext });
 }
 

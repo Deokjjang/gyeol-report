@@ -1,7 +1,4 @@
-import type {
-  CareerReportEvidencePacket,
-  CareerSignal,
-} from "../report-knowledge/careerReportTypes";
+import type { CareerReportEvidencePacket } from "../report-knowledge/careerReportTypes";
 import {
   USER_LIFE_STATUS_LABELS,
   USER_RELATIONSHIP_STATUS_LABELS,
@@ -397,8 +394,6 @@ export function getCareerReportDraftSchemaTopLevelKeys(): readonly string[] {
   return Object.keys(careerReportDraftJsonSchema.properties);
 }
 
-const fallbackCareerTimingYear = 2026;
-
 function compactStrings(values: readonly (string | null | undefined)[]): readonly string[] {
   return [...new Set(values.map((value) => value?.trim()).filter(
     (value): value is string => value !== undefined && value.length > 0,
@@ -411,7 +406,7 @@ function takeWithFallback(
   min: number,
   max: number,
 ): readonly string[] {
-  const result = compactStrings([...values, ...fallback]);
+  const result = compactStrings(values.length >= min ? values : [...values, ...fallback]);
 
   return result.slice(0, Math.max(min, Math.min(max, result.length)));
 }
@@ -425,7 +420,7 @@ function takeRecordsWithFallback<T extends { readonly title?: string; readonly l
   const seen = new Set<string>();
   const result: T[] = [];
 
-  for (const item of [...values, ...fallback]) {
+  for (const item of (values.length >= min ? values : [...values, ...fallback])) {
     const key = [
       item.title,
       item.label,
@@ -444,12 +439,6 @@ function takeRecordsWithFallback<T extends { readonly title?: string; readonly l
   return result.slice(0, Math.max(min, Math.min(max, result.length)));
 }
 
-function getTimingYear(signal: CareerSignal, index: number): number {
-  const year = `${signal.title} ${signal.plain}`.match(/\b20\d{2}\b/u)?.[0];
-
-  return year === undefined ? fallbackCareerTimingYear + index : Number(year);
-}
-
 function buildFallbackRecommendedJobs(
   evidence: CareerReportEvidencePacket,
 ): CareerReportDraft["recommendedJobs"] {
@@ -462,47 +451,18 @@ function buildFallbackRecommendedJobs(
     fit: job.fit,
     tagline:
       job.fit === "high"
-        ? "강점이 바로 드러나는 업무 축"
+        ? "두 근거가 겹치는 직무 예시"
         : job.fit === "medium"
           ? "조건을 맞추면 활용 가능한 업무 축"
           : "주의해서 비교할 업무 축",
     reason: job.reason,
     caution: job.caution,
-    exampleFields:
-      exampleFields.length > 0 ? exampleFields : ["기획", "운영", "데이터"],
+    exampleFields: job.role && job.environment
+      ? [job.role, job.environment]
+      : exampleFields.length > 0 ? exampleFields : ["업무 조건 비교"],
   }));
 
-  return takeRecordsWithFallback(
-    jobs,
-    [
-      {
-        title: "서비스 기획자",
-        fit: "high",
-        tagline: "요구사항을 구조로 바꾸는 자리",
-        reason: "입력 근거가 부족해도 기획·운영 축은 화면 검수용 기본 후보로 유지합니다.",
-        caution: "실제 판매용 문장에서는 writer가 evidence를 다시 정리합니다.",
-        exampleFields: ["서비스 기획", "운영", "정책"],
-      },
-      {
-        title: "프로젝트 매니저",
-        fit: "medium",
-        tagline: "일정과 역할을 묶는 자리",
-        reason: "일의 범위와 산출물을 정리하는 흐름을 보여주는 기본 후보입니다.",
-        caution: "권한과 책임 범위를 먼저 확인해야 합니다.",
-        exampleFields: ["프로젝트", "운영", "협업"],
-      },
-      {
-        title: "데이터 기반 기획",
-        fit: "medium",
-        tagline: "숫자로 기준을 잡는 자리",
-        reason: "직업·돈·학업 화면에서 분석 축을 보여주는 기본 후보입니다.",
-        caution: "분석이 실행으로 이어져야 합니다.",
-        exampleFields: ["데이터", "지표", "리포팅"],
-      },
-    ],
-    8,
-    20,
-  );
+  return jobs;
 }
 
 function buildFallbackUnsuitableJobs(
@@ -575,38 +535,10 @@ function buildFallbackCareerPaths(
 function buildFallbackCareerTiming(
   evidence: CareerReportEvidencePacket,
 ): CareerReportDraft["careerTiming"] {
-  return takeRecordsWithFallback(
-    evidence.timingHints.map((signal, index) => ({
-      year: getTimingYear(signal, index),
-      label: signal.strength === "high" ? "강한 활용" : "정리",
-      headline: signal.title,
-      body: signal.plain,
-      push: takeWithFallback(
-        evidence.opportunitySignals.map((item) => item.title),
-        ["산출물 만들기", "역할 기준 정리", "성과 문장화"],
-        3,
-        5,
-      ),
-      avoid: takeWithFallback(
-        evidence.workRiskWarnings.map((item) => item.title),
-        ["무리한 확장", "구두 약속", "범위 없는 책임"],
-        3,
-        5,
-      ),
-    })),
-    [
-      {
-        year: fallbackCareerTimingYear,
-        label: "정리",
-        headline: "직업 기준을 다시 잡는 시기",
-        body: "업무 범위, 돈의 흐름, 공부 산출물을 한 번에 정리하는 흐름입니다.",
-        push: ["직무 기준 정리", "포트폴리오 작성", "현금흐름 점검"],
-        avoid: ["무리한 확장", "계획 없는 지출", "결과물 없는 공부"],
-      },
-    ],
-    3,
-    8,
-  );
+  return evidence.timingHints.flatMap((signal) => signal.yearBasis ? [{
+    year: signal.yearBasis.year, label: "점검 관점", headline: signal.title,
+    body: signal.plain, push: signal.yearBasis.push, avoid: signal.yearBasis.avoid,
+  }] : []);
 }
 
 function buildFallbackActionPlan(
@@ -627,7 +559,7 @@ function buildFallbackActionPlan(
       return {
         label,
         headline: "성과 기준을 문장으로 남깁니다",
-        body: evidence.myeongliCareerBasis.careerPlain,
+        body: evidence.recommendedJobs[0]?.environment ?? "실제 공고의 업무 범위와 평가 기준을 비교합니다",
         firstAction: "최근 프로젝트 3개를 문제, 행동, 결과 순서로 정리합니다.",
       };
     }
@@ -635,7 +567,7 @@ function buildFallbackActionPlan(
       return {
         label,
         headline: moneyStrategy?.label ?? "현금흐름을 먼저 고정합니다",
-        body: moneyStrategy?.plain ?? evidence.myeongliCareerBasis.moneyPlain,
+        body: moneyStrategy?.push.slice(0, 3).join(" · ") ?? "수입과 지출의 조건을 확인합니다",
         firstAction: "월 수입, 고정비, 저축액, 변동비를 한 표로 분리합니다.",
       };
     }
@@ -643,7 +575,7 @@ function buildFallbackActionPlan(
       return {
         label,
         headline: evidence.investmentProfile.headline,
-        body: evidence.investmentProfile.plain,
+        body: evidence.investmentProfile.suitablePatterns.join(" · "),
         firstAction: "투자 전 비상금, 손실 한도, 점검일을 먼저 적습니다.",
       };
     }
@@ -651,7 +583,7 @@ function buildFallbackActionPlan(
       return {
         label,
         headline: evidence.studyCertificateStrategy.headline,
-        body: evidence.studyCertificateStrategy.plain,
+        body: evidence.studyCertificateStrategy.recommendedMethods[0] ?? evidence.studyCertificateStrategy.headline,
         firstAction: "이번 달에 남길 산출물 1개와 시험·학습 일정을 같이 정합니다.",
       };
     }
@@ -701,7 +633,7 @@ export function buildCareerReportScreenQaFallbackDraft(
     personLabel: evidence.personLabel,
     openingTitle: `${evidence.personLabel}님의 직업·커리어·돈·학업 리포트`,
     openingSummary:
-      "직업, 돈, 투자, 공부 전략을 한 흐름으로 묶어 화면에서 확인할 수 있게 정리했습니다.",
+      "원국의 역할 신호와 입력한 행동 성향을 바탕으로 직업 환경, 돈 관리, 학습 방식을 비교합니다.",
     coreLine: evidence.combinedCareerProfile.headline,
     userContextSummary: {
       lifeStatusLabel: USER_LIFE_STATUS_LABELS[evidence.userContext.lifeStatus],
@@ -711,7 +643,7 @@ export function buildCareerReportScreenQaFallbackDraft(
           ? null
           : USER_RELATIONSHIP_STATUS_LABELS[relationshipStatus],
       contextNote:
-        "현재 직업과 관심 분야는 계산 기준이 아니라 적합도를 비교하는 현실 맥락으로만 사용합니다.",
+        `현재 직업과 관심 분야는 계산 기준이 아니라 적합도를 비교하는 현실 맥락으로만 사용합니다. ${fieldLabel ? `${fieldLabel}라는 직업명만으로 세부 업무를 확정하지 않습니다. 실제 업무가 ${evidence.recommendedJobs[0]?.environment ?? "추천 환경"}에 가까운지, ${evidence.recommendedJobs[0]?.role ?? "추천 역할"}을 맡고 있는지 비교하세요.` : "현재 업무를 입력하지 않아 직업을 추정하지 않습니다."}`,
     },
     careerIdentity: {
       headline: evidence.combinedCareerProfile.headline,
@@ -733,7 +665,7 @@ export function buildCareerReportScreenQaFallbackDraft(
     careerPaths: buildFallbackCareerPaths(evidence),
     moneyEarningStyle: {
       headline: evidence.moneyStrategies[0]?.label ?? "현금흐름과 정산 기준을 먼저 잡습니다",
-      body: evidence.myeongliCareerBasis.moneyPlain,
+      body: `${evidence.myeongliCareerBasis.moneyPlain} ${evidence.mbtiCareerBasis.moneyBehaviorPlain}`,
       bestIncomeChannels: takeWithFallback(
         moneyPush,
         ["월급", "프로젝트 수입", "성과급", "포트폴리오 기반 부수입"],

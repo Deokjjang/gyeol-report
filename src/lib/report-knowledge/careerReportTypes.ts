@@ -60,6 +60,11 @@ export interface CareerSignal {
   readonly strength: "low" | "medium" | "high";
   readonly title: string;
   readonly plain: string;
+  readonly evidenceIds?: readonly string[];
+  readonly yearBasis?: {
+    readonly year: number; readonly ganji: string; readonly tenGod: TenGod;
+    readonly interactions: readonly string[]; readonly push: readonly string[]; readonly avoid: readonly string[];
+  };
 }
 
 export type CareerReportPillarKey = "year" | "month" | "day" | "hour";
@@ -98,6 +103,12 @@ export interface CareerReportEvidencePacket {
   };
   readonly manseRyeokPillars?: readonly CareerReportManseRyeokPillarDetail[];
   readonly myeongliSignalInterpretations?: readonly CareerReportMyeongliSignalInterpretation[];
+  readonly mbtiSourceSelection?: {
+    readonly type: string | null;
+    readonly traitIds: Readonly<Record<string, readonly string[]>>;
+    readonly reportUseCases: readonly string[];
+  };
+  readonly elementCounts?: Readonly<Record<FiveElement, number>>;
   readonly natalLabels: readonly string[];
   readonly mbtiType?: string | null;
   readonly myeongliCareerBasis: {
@@ -131,6 +142,9 @@ export interface CareerReportEvidencePacket {
     readonly fit: "high" | "medium" | "low";
     readonly reason: string;
     readonly caution: string;
+    readonly evidenceIds?: readonly string[];
+    readonly role?: string;
+    readonly environment?: string;
   }[];
   readonly careerPaths: readonly {
     readonly label: string;

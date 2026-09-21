@@ -381,7 +381,7 @@ export async function generateCareerReportDraft(input: {
     parsed: parseJson(rawText),
     evidencePacket: input.evidencePacket,
   });
-  const validation = validateCareerReportDraft(parsed);
+  const validation = validateCareerReportDraft(parsed, input.evidencePacket);
 
   if (!validation.ok) {
     throw new CareerReportWriterFailure({
