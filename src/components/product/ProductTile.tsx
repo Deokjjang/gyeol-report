@@ -69,9 +69,9 @@ export default function ProductTile({ product, presentation }: ProductTileProps)
   if (presentation === "editorial" && isPurchasable) {
     return (
       <div className={styles.reveal} data-reveal>
-        <article className={styles.card}>
+        <article className={styles.card} data-product-card>
           <div className={styles.visual}>
-            <ProductTileVisual variant={product.visualKey} title={`${product.nameKo} 상품 비주얼`} />
+            <ProductTileVisual variant={product.visualKey} />
           </div>
           <div className={styles.body}>
             <h3>{product.nameKo.replace(/ 리포트$/u, "")}</h3>
@@ -105,7 +105,6 @@ export default function ProductTile({ product, presentation }: ProductTileProps)
       <div className="relative z-10">
         <ProductTileVisual
           variant={product.visualKey}
-          title={`${product.nameKo} 상품 비주얼`}
         />
       </div>
 

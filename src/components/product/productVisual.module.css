@@ -1,0 +1,33 @@
+/* Collection tokens inherit the existing ivory / wine / gold brand palette. */
+.canvas {
+  --visual-wine: #7f1d38;
+  --visual-gold: #a38247;
+  --visual-ink: #493b32;
+  --visual-paper: #f4efe7;
+  --visual-guide: #d8ccbb;
+  background: var(--visual-paper);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.canvas svg { display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; }
+.ink { stroke: var(--visual-ink); stroke-width: 1.35; }
+.wine { stroke: var(--visual-wine); stroke-width: 1.7; }
+.gold { stroke: var(--visual-gold); stroke-width: 1.7; }
+.guide { stroke: var(--visual-guide); stroke-width: 1; }
+.nodeWine { fill: var(--visual-wine); stroke: var(--visual-paper); stroke-width: 1.5; }
+.nodeGold { fill: var(--visual-gold); stroke: var(--visual-paper); stroke-width: 1.5; }
+.intersection { fill: var(--visual-gold); fill-opacity: .1; stroke: var(--visual-ink); stroke-width: 1.35; }
+.timeContours { stroke: var(--visual-ink); stroke-opacity: .5; }
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .canvas [data-visual-motion] { transform-box: view-box; transform-origin: 50% 50%; transition: transform 360ms ease; }
+  .canvas [data-visual-motion="node"] { transform-box: fill-box; transform-origin: center; }
+  .canvas .intersection { transition: fill-opacity 360ms ease; }
+  [data-product-card]:is(:hover, :focus-within) .canvas [data-visual-motion="orbit"] { transform: rotate(2deg); }
+  [data-product-card]:is(:hover, :focus-within) .canvas [data-visual-motion="node"] { transform: translateY(-1px) scale(1.03); }
+  [data-product-card]:is(:hover, :focus-within) .canvas .intersection { fill-opacity: .18; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .canvas [data-visual-motion] { animation: none; transform: none; transition: none; }
+  .canvas .intersection { transition: none; }
+}
