@@ -83,7 +83,7 @@ describe("validated completed report reading", () => {
     const html = renderToStaticMarkup(await ReportResultPage({ params: Promise.resolve({ reportId: snapshot.reportId }) }));
     expect(html).not.toContain("리포트 공유하기");
     expect(html).not.toContain("김도윤");
-    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId: snapshot.reportId }], ["quarantine", { reportId: snapshot.reportId }]]);
+    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId: snapshot.reportId }], ["quarantine", { reportId: snapshot.reportId, expectedSnapshot: snapshot }]]);
     expect(JSON.stringify(snapshot)).toBe(before);
   });
 });

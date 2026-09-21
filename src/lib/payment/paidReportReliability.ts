@@ -65,7 +65,9 @@ export async function readPublishedReport(store: ReliabilityStore, reportId: str
   if (!result.ok || result.status !== "COMPLETED") return { ...result, snapshot: null };
   const snapshot = result.snapshot;
   if (!isRecord(snapshot) || snapshot.reportId !== reportId || !validateProductPublication(String(snapshot.productType), snapshot.draft, snapshot.evidencePacket).ok) {
-    await store.call("quarantine", { reportId });
+    // Compare the observed value under DB locks so a delayed read cannot
+    // quarantine a replacement published by an admin recovery run.
+    await store.call("quarantine", { reportId, expectedSnapshot: snapshot ?? null });
     return { ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null };
   }
   return result;

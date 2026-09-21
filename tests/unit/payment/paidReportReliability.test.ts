@@ -31,6 +31,8 @@ beforeAll(async () => {
   for (const file of readdirSync("supabase/migrations").filter((name) => /^\d{4}_.*\.sql$/u.test(name)).sort()) {
     await db.exec(readFileSync(`supabase/migrations/${file}`, "utf8").replace(/^\uFEFF/u, ""));
   }
+  await db.exec(readFileSync("supabase/migrations/20260920163924_production_reliability_reconcile.sql", "utf8"));
+  await db.exec(readFileSync("scripts/paid_report_quarantine_recovery_patch.sql", "utf8"));
   store = { async call(action, data = {}) {
     const result = await db.query<{ value: ReliabilityResult }>("select public.paid_report_reliability($1,$2::jsonb) as value", [action, JSON.stringify(data)]);
     return result.rows[0].value;
@@ -245,8 +247,9 @@ describe("paid report reliability — actual SQL, mock providers", () => {
     const id = await paid();
     await runPaidReportJob(store, runtime, async () => valid);
     await db.exec("update paid_report_snapshots set snapshot_json=snapshot_json-'evidencePacket'");
+    const original = (await rows("paid_report_snapshots"))[0].snapshot_json;
     expect(await readPublishedReport(store, id)).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
-    expect((await rows("paid_report_snapshots"))[0].snapshot_json).toBeNull();
+    expect((await rows("paid_report_snapshots"))[0].snapshot_json).toEqual(original);
     expect(await store.call("admin_retry", { reportId: id })).toMatchObject({ ok: true });
   });
 
@@ -277,4 +280,195 @@ describe("paid report reliability — actual SQL, mock providers", () => {
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
+});
+
+// These tests run the exact manual production patch against local Postgres
+// (PGlite). Providers are mocked; stored JSON text is compared before/after.
+describe("quarantined snapshot preservation and recovery", () => {
+  async function corruptCompleted() {
+    const id = await paid();
+    await runPaidReportJob(store, runtime, async () => structuredClone(valid));
+    await db.exec("update paid_report_snapshots set snapshot_json=snapshot_json #- '{evidencePacket,inputBasis}'");
+    const original = (await rows("paid_report_snapshots"))[0];
+    const before = (await db.query<{ content: string }>("select snapshot_json::text as content from paid_report_snapshots")).rows[0].content;
+    return { id, original, before };
+  }
+  async function storedText() {
+    return (await db.query<{ content: string | null }>("select snapshot_json::text as content from paid_report_snapshots")).rows[0].content;
+  }
+
+  it("retains identical JSON, input, order and attempts while recording attention on report + job", async () => {
+    const { id, original, before } = await corruptCompleted();
+    const orders = await rows("payment_orders"), inputs = await rows("report_input_snapshots"), attempts = await rows("report_generation_attempts");
+    expect(await readPublishedReport(store, id)).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
+    expect(await storedText()).toBe(before);
+    expect((await rows("paid_report_snapshots"))[0]).toEqual({ ...original, status: "FAILED_REQUIRES_ATTENTION" });
+    expect((await rows("report_generation_jobs"))[0]).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", last_error_code: "PUBLISHED_SNAPSHOT_VALIDATION_FAILED" });
+    expect(await rows("payment_orders")).toEqual(orders);
+    expect(orders[0].status).toBe("paid");
+    expect(await rows("report_input_snapshots")).toEqual(inputs);
+    expect(await rows("report_generation_attempts")).toEqual(attempts);
+    expect(await store.call("attention")).toMatchObject({ ok: true, jobs: [{ report_id: id, last_error_code: "PUBLISHED_SNAPSHOT_VALIDATION_FAILED" }] });
+  });
+
+  it("repeated and simultaneous invalid reads create one transition and no extra audit attempts", async () => {
+    const { id, before } = await corruptCompleted();
+    const results = await Promise.all(Array.from({ length: 12 }, () => readPublishedReport(store, id)));
+    for (const result of results) expect(result).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
+    const jobs = await rows("report_generation_jobs"), attempts = await rows("report_generation_attempts");
+    for (let i = 0; i < 3; i++) expect(await readPublishedReport(store, id)).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
+    expect(await storedText()).toBe(before);
+    expect(await rows("report_generation_jobs")).toEqual(jobs);
+    expect(await rows("report_generation_attempts")).toEqual(attempts);
+    expect(attempts).toHaveLength(1);
+  });
+
+  it("admin recovery uses durable input and replaces the forensic snapshot only on successful publication", async () => {
+    const { id, before } = await corruptCompleted();
+    await readPublishedReport(store, id);
+    expect(await store.call("admin_retry", { reportId: id })).toMatchObject({ ok: true });
+    expect((await rows("report_generation_jobs"))[0]).toMatchObject({ status: "QUEUED", run_number: 2, attempt_count: 0 });
+    expect(await readPublishedReport(store, id)).toMatchObject({ status: "QUEUED", snapshot: null });
+    expect(await storedText()).toBe(before);
+    const generate = vi.fn(async (input: unknown) => {
+      expect(input).toEqual(payload);
+      expect(await storedText()).toBe(before);
+      expect(await readPublishedReport(store, id)).toMatchObject({ status: "GENERATING", snapshot: null });
+      return structuredClone(valid);
+    });
+    expect(await runPaidReportJob(store, runtime, generate)).toMatchObject({ status: "COMPLETED" });
+    expect(generate).toHaveBeenCalledTimes(1);
+    expect(await storedText()).not.toBe(before);
+    expect(await readPublishedReport(store, id)).toMatchObject(JSON.parse(JSON.stringify({ status: "COMPLETED", snapshot: { evidencePacket: valid.evidencePacket, draft: valid.draft } })));
+    expect((await rows("payment_orders"))[0].status).toBe("paid");
+    expect((await rows("report_generation_attempts")).map(a => [a.run_number, a.attempt])).toEqual([[1, 1], [2, 1]]);
+  });
+
+  it("all failed recovery attempts retain the old snapshot and finish in attention with PAID/input intact", async () => {
+    const { id, before } = await corruptCompleted();
+    const inputs = await rows("report_input_snapshots");
+    await readPublishedReport(store, id);
+    await store.call("admin_retry", { reportId: id });
+    const generate = vi.fn(async () => ({ ...valid, evidencePacket: undefined }));
+    for (let i = 0; i < 3; i++) {
+      await due();
+      const status = i < 2 ? "RETRYING" : "FAILED_REQUIRES_ATTENTION";
+      expect(await runPaidReportJob(store, runtime, generate)).toMatchObject({ status });
+      expect(await readPublishedReport(store, id)).toMatchObject({ status, snapshot: null });
+      expect(await storedText()).toBe(before);
+    }
+    expect((await rows("payment_orders"))[0].status).toBe("paid");
+    expect(await rows("report_input_snapshots")).toEqual(inputs);
+    expect(await rows("report_generation_attempts")).toHaveLength(4);
+    expect(await store.call("admin_retry", { reportId: id })).toMatchObject({ ok: true });
+    expect(await storedText()).toBe(before);
+  });
+
+  it("worker lease exhaustion during recovery also retains the forensic snapshot", async () => {
+    const { id, before } = await corruptCompleted();
+    await readPublishedReport(store, id);
+    await store.call("admin_retry", { reportId: id });
+    for (let i = 0; i < 3; i++) {
+      expect((await store.call("claim_job")).job).not.toBeNull();
+      await db.exec("update report_generation_jobs set lease_until=now()-interval '1 second'");
+    }
+    expect((await store.call("claim_job")).job).toBeNull();
+    expect(await readPublishedReport(store, id)).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
+    expect(await storedText()).toBe(before);
+  });
+
+  it.each(["QUEUED", "RUNNING", "COMPLETED"])("a delayed quarantine cannot disturb a recovery in %s", async state => {
+    const { id, original, before } = await corruptCompleted();
+    // Reader one has observed the invalid snapshot; reader two isolates it.
+    await readPublishedReport(store, id);
+    await store.call("admin_retry", { reportId: id });
+    if (state === "RUNNING") await store.call("claim_job");
+    if (state === "COMPLETED") await runPaidReportJob(store, runtime, async () => structuredClone(valid));
+    const report = await rows("paid_report_snapshots"), jobs = await rows("report_generation_jobs"), attempts = await rows("report_generation_attempts");
+    expect(await store.call("quarantine", { reportId: id, expectedSnapshot: original.snapshot_json })).toEqual({ ok: true, quarantined: false });
+    expect(await rows("paid_report_snapshots")).toEqual(report);
+    expect(await rows("report_generation_jobs")).toEqual(jobs);
+    expect(await rows("report_generation_attempts")).toEqual(attempts);
+    if (state !== "COMPLETED") expect(await storedText()).toBe(before);
+    else expect(await readPublishedReport(store, id)).toMatchObject({ status: "COMPLETED" });
+  });
+
+  it("interleaves an actual stale read with quarantine, admin retry and republish without returning invalid content", async () => {
+    const { id } = await corruptCompleted();
+    let release!: () => void;
+    let observed!: () => void;
+    const suspended = new Promise<void>(resolve => { release = resolve; });
+    const observation = new Promise<void>(resolve => { observed = resolve; });
+    const slowReader: ReliabilityStore = { async call(action, data) {
+      if (action === "quarantine") { observed(); await suspended; }
+      return store.call(action, data);
+    } };
+    const pendingRead = readPublishedReport(slowReader, id);
+    await observation;
+    await readPublishedReport(store, id);
+    await store.call("admin_retry", { reportId: id });
+    await runPaidReportJob(store, runtime, async () => structuredClone(valid));
+    const report = await rows("paid_report_snapshots");
+    release();
+    expect(await pendingRead).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
+    expect(await rows("paid_report_snapshots")).toEqual(report);
+    expect(await readPublishedReport(store, id)).toMatchObject({ status: "COMPLETED" });
+  });
+
+  it("isolates a corrupt COMPLETED JSON null without weakening the SQL NOT NULL publication check", async () => {
+    const id = await paid();
+    await runPaidReportJob(store, runtime, async () => valid);
+    await expect(db.exec("update paid_report_snapshots set snapshot_json=null")).rejects.toThrow(/check constraint/);
+    await db.exec("update paid_report_snapshots set snapshot_json='null'::jsonb");
+    expect(await readPublishedReport(store, id)).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
+    expect((await rows("report_generation_jobs"))[0].status).toBe("FAILED_REQUIRES_ATTENTION");
+  });
+
+  it("fails closed when the attention write is unavailable without leaking any snapshot", async () => {
+    const { id } = await corruptCompleted();
+    const unavailable: ReliabilityStore = { call: (action, data) => action === "quarantine"
+      ? Promise.resolve({ ok: false, code: "DURABLE_STORAGE_FAILED" }) : store.call(action, data) };
+    expect(await readPublishedReport(unavailable, id)).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
+    expect((await rows("paid_report_snapshots"))[0].status).toBe("COMPLETED");
+    expect(await readPublishedReport(store, id)).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
+  });
+
+  it("expiry hides and then clears quarantined content on the existing 90-day cleanup path", async () => {
+    const { id, original, before } = await corruptCompleted();
+    await readPublishedReport(store, id);
+    await db.exec("update paid_report_snapshots set expires_at=now()-interval '1 second'; update report_input_snapshots set expires_at=now()-interval '1 second'");
+    expect(await readPublishedReport(store, id)).toMatchObject({ status: "EXPIRED", snapshot: null });
+    expect(await storedText()).toBe(before);
+    expect(await store.call("admin_retry", { reportId: id })).toMatchObject({ ok: false, code: "NOT_RETRYABLE" });
+    await store.call("expire");
+    expect(await storedText()).toBeNull();
+    expect(await rows("report_input_snapshots")).toHaveLength(0);
+    expect((await rows("report_generation_jobs"))[0].status).toBe("EXPIRED");
+    expect((await rows("payment_orders"))[0].status).toBe("paid");
+    expect(await rows("report_generation_attempts")).toHaveLength(1);
+    expect(await store.call("quarantine", { reportId: id, expectedSnapshot: original.snapshot_json })).toEqual({ ok: true, quarantined: false });
+    expect((await rows("paid_report_snapshots"))[0].status).toBe("EXPIRED");
+  });
+
+  it("the manual patch is idempotent on populated storage and retains service-only privileges", async () => {
+    const { before } = await corruptCompleted();
+    const report = await rows("paid_report_snapshots"), jobs = await rows("report_generation_jobs"), orders = await rows("payment_orders");
+    const patch = readFileSync("scripts/paid_report_quarantine_recovery_patch.sql", "utf8");
+    await db.exec(patch); await db.exec(patch);
+    expect(await storedText()).toBe(before);
+    expect(await rows("paid_report_snapshots")).toEqual(report);
+    expect(await rows("report_generation_jobs")).toEqual(jobs);
+    expect(await rows("payment_orders")).toEqual(orders);
+    for (const role of ["anon", "authenticated", "service_role"]) {
+      const permissions = await db.query<{ allowed: boolean }>("select has_function_privilege($1, 'public.paid_report_reliability(text,jsonb)', 'EXECUTE') as allowed", [role]);
+      expect(permissions.rows[0].allowed).toBe(role === "service_role");
+    }
+  });
+
+  it("old callers without an observation cannot change storage after the RPC patch", async () => {
+    const { id, before } = await corruptCompleted();
+    expect(await store.call("quarantine", { reportId: id })).toMatchObject({ ok: false, code: "QUARANTINE_OBSERVATION_REQUIRED" });
+    expect(await storedText()).toBe(before);
+    expect((await rows("paid_report_snapshots"))[0].status).toBe("COMPLETED");
+  });
 });

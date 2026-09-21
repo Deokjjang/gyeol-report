@@ -128,7 +128,28 @@ describe("post-payment canonical route, mock transport only", () => {
     const html = renderToStaticMarkup(await ReportResultPage({ params: Promise.resolve({ reportId }) }));
     expect(html).toContain("확인이 필요합니다");
     expect(html).not.toContain("리포트 공유하기");
-    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }], ["quarantine", { reportId }]]);
+    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }], ["quarantine", { reportId, expectedSnapshot: { ...snapshot, evidencePacket: undefined } }]]);
+  });
+
+  it.each(["FAILED_REQUIRES_ATTENTION", "QUEUED", "GENERATING", "RETRYING", "EXPIRED"])("never shares or renders retained forensic content in %s", async status => {
+    // Even an adapter returning the retained value must not make it public.
+    mocks.call.mockResolvedValue({ ok: true, status, snapshot, code: "PUBLISHED_SNAPSHOT_VALIDATION_FAILED" });
+    const html = renderToStaticMarkup(await ReportResultPage({ params: Promise.resolve({ reportId }) }));
+    expect(html).not.toContain("리포트 공유하기");
+    expect(html).not.toContain("기초 정보");
+    expect(html).not.toContain("PUBLISHED_SNAPSHOT_VALIDATION_FAILED");
+    expect(html).not.toContain('href="/report/new');
+    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }]]);
+  });
+
+  it("hides invalid content and internal errors when quarantine storage is unavailable", async () => {
+    mocks.call.mockResolvedValueOnce({ ok: true, status: "COMPLETED", snapshot: null })
+      .mockResolvedValueOnce({ ok: false, code: "DURABLE_STORAGE_FAILED" });
+    const html = renderToStaticMarkup(await ReportResultPage({ params: Promise.resolve({ reportId }) }));
+    expect(html).toContain("추가 결제는 필요하지 않습니다");
+    expect(html).not.toContain("리포트 공유하기");
+    expect(html).not.toContain("DURABLE_STORAGE_FAILED");
+    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }], ["quarantine", { reportId, expectedSnapshot: null }]]);
   });
 
   it("redirects successful confirmation immediately without rendering provider data", async () => {
