@@ -82,19 +82,18 @@ export function ComprehensiveReportV2View({
   const fiveElementEnergySummary = fiveElementEnergyItems
     .map((item) => `${item.label} ${item.count}`)
     .join(" · ");
-  const detailedFeatureItems = draft.sajuFeatureChapter?.items.filter((item) =>
-    isDetailedFeatureLabel(item.rawLabel),
-  ) ?? [];
-  const quickFeatureItems = draft.sajuFeatureChapter?.items.filter(
-    (item) => !isDetailedFeatureLabel(item.rawLabel),
-  ) ?? [];
+  const featureItems = draft.sajuFeatureChapter?.items ?? [];
+  const detailedFeatureItems = featureItems.filter((item,index)=>index<3 || isDetailedFeatureLabel(item.rawLabel));
+  const quickFeatureItems = featureItems.filter(item=>!detailedFeatureItems.includes(item));
   const groupedQuickFeatureItems = groupQuickFeatureItems(quickFeatureItems);
-  const visibleLongformReadings = draft.longformReadings ?? [];
+  const coreReadings = (draft.longformReadings ?? []).filter(r=>r.readingId === "opening");
+  const visibleLongformReadings = (draft.longformReadings ?? []).filter(r=>r.readingId !== "opening");
 
   return (
     <article className="min-w-0 overflow-hidden rounded-[8px] border border-[#ded2c2] bg-[#fffdf8] text-[#2b211b] shadow-[0_18px_60px_rgba(68,44,28,0.10)]">
       <ReportCover product="사주×MBTI 종합 리포트" title={draft.openingTitle} summary={draft.openingSummary} core={draft.coreLine} />
       <ReportContents items={[
+        { id: "report-core", label: "나를 관통하는 핵심 결" },
         { id: "report-foundation", label: "나의 원국과 행동 성향" },
         ...(fiveElementEnergyItems.length ? [{ id: "report-elements", label: "오행의 균형" }] : []),
         ...(draft.sajuFeatureChapter ? [{ id: "report-features", label: "명리 특징" }] : []),
@@ -104,6 +103,12 @@ export function ComprehensiveReportV2View({
       ]} />
 
       <div className="space-y-8">
+        {coreReadings.map(reading=>(
+          <section key={reading.readingId} id="report-core" tabIndex={-1} data-reading-section="" className={`space-y-4 p-4 sm:p-5 ${readingStyles.prose}`} aria-label="나를 관통하는 핵심 결">
+            <h2 className="text-2xl font-extrabold">{reading.titleKo}</h2>
+            <LongformBody body={reading.body} />
+          </section>
+        ))}
         <section id="report-foundation" tabIndex={-1} className="space-y-4" aria-label="기초 정보">
           <SectionHeading
             title="기초 정보"
@@ -176,7 +181,7 @@ export function ComprehensiveReportV2View({
               body={draft.sajuFeatureChapter.intro}
             />
             <div className="grid min-w-0 gap-4">
-              {detailedFeatureItems.map((item) => (
+              {detailedFeatureItems.map((item, index) => (
                 <article
                   key={`${item.rawLabel}:${item.userTitle}`}
                   className="min-w-0 space-y-4 rounded-[8px] border border-[#eadfce] bg-[#fffaf3] p-4 sm:p-5"
@@ -208,9 +213,11 @@ export function ComprehensiveReportV2View({
                     <p className="mt-2 text-base leading-8 text-[#3a2f29]">
                       {item.practicalUse}
                     </p>
-                    <p className="mt-3 border-t border-[#eadfce] pt-3 text-base font-bold leading-8 text-[#6f1d35]">
-                      {buildFeatureClosingLine(item.rawLabel)}
-                    </p>
+                    {detailedFeatureItems.findIndex(feature => buildFeatureClosingLine(feature.rawLabel) === buildFeatureClosingLine(item.rawLabel)) === index ? (
+                      <p className="mt-3 border-t border-[#eadfce] pt-3 text-base font-bold leading-8 text-[#6f1d35]">
+                        {buildFeatureClosingLine(item.rawLabel)}
+                      </p>
+                    ) : null}
                   </div>
                 </article>
               ))}
@@ -370,22 +377,8 @@ function LongformBody({ body }: { readonly body: string }) {
 function buildActionGuideLines(
   draft: ComprehensiveReportV2Draft,
 ): readonly string[] {
-  const lines = draft.chapters.flatMap((chapter) => chapter.solutionLines);
-  const priorities = [
-    "공부와 일 루틴",
-    "돈은 공격 계획과 방어 계획",
-    "프로젝트를 키우기 전",
-    "결론을 바로 말하기 전에",
-    "맡을 일과 내려놓을 일",
-    "밤 산책, 기록, 수면",
-  ];
-
-  return priorities
-    .map((priority) => lines.find((line) => line.includes(priority)))
-    .filter((line): line is string => line !== undefined)
-    .map((line) => line.trim())
-    .filter((line, index, allLines) => line.length > 0 && allLines.indexOf(line) === index)
-    .slice(0, 6);
+  return [...new Set(draft.chapters.find(chapter=>chapter.chapterId === "final_message")?.solutionLines ?? [])]
+    .filter(line=>line.trim().length>0).slice(0, 6);
 }
 
 const fiveElementEnergyCopyByLabel = {

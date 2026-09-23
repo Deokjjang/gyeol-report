@@ -199,11 +199,17 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
   const forbiddenSajuTermLines = formatSajuTermLines(
     createForbiddenSajuTerms({ allowedSajuTerms }),
   );
+  const promptPacket = buildPromptEvidencePacket({ packet: input.evidencePacket, allowedSajuTerms });
   const evidenceJson = JSON.stringify(
-    buildPromptEvidencePacket({
-      packet: input.evidencePacket,
-      allowedSajuTerms,
-    }),
+    {
+      ...promptPacket,
+      ...(promptPacket.narrativePlan ? { sectionSelectedEvidence: promptPacket.narrativePlan.sections.map(section=>({
+        ...section,
+        features: promptPacket.sajuFeatureDictionary?.filter(f=>section.featureIds.includes(f.id)),
+        mbtiTraits: promptPacket.mbtiBasis?.traitAreas.flatMap(({area,traits})=>traits.filter(t=>section.mbtiTraitIds.includes(`mbti:${promptPacket.mbtiType}:traits:${area}:${t.id}`))),
+        interactions: promptPacket.sajuMbtiBridgeEvidence?.filter(s=>section.interactionIds.includes(s.interaction?.interactionId??"")),
+      })) } : {}),
+    },
     null,
     2,
   );
@@ -212,6 +218,7 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
     system: [
       "You are writing a Korean Saju-first paid report.",
       "Use only provided evidence.",
+      "narrativePlan이 있으면 themes의 실제 교차 근거를 먼저 해석하고, sections에 배정된 근거를 그 질문에 맞게 사용한다. 같은 interaction의 scene은 지정된 한 장에서만 쓴다. 연결 근거가 없거나 MBTI 미입력이면 명리만으로 읽고 상호작용을 만들지 않는다.",
       "Do not invent Saju facts.",
       "Do not mention Saju entries not present in the evidence packet.",
       "Do not mention any Saju term that is not present in primary Saju evidence or matched fusion evidence.",
@@ -278,7 +285,7 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       "직접 체감 문장을 넣어라. 예: 비효율적인 사람을 보면 그냥 넘기기 어렵습니다. 책임 없이 말만 많은 사람에게는 호감이 있어도 금방 식을 수 있습니다. 쉬라는 말만 들으면 잘 못 쉬고, 쉬는 이유와 구조가 있어야 쉽습니다.",
       "MBTI topic traits는 섹션별로 다르게 골라라. 일·돈·공부는 career/workplace/money/study, 연애·관계는 love/marriage/relationships/communication, 사람·가족·환경은 relationships/communication/workplace, 리스크·성장은 risks/growth/stressPattern을 우선한다.",
       "각 장문 섹션은 대표 명리 feature를 의미 있게 골라라. 일·돈·공부에는 재성·관성·식상·인성·재고귀인·문창계열을 우선하고, 연애·관계에는 도화·홍염·합·해·현침을 우선하며, 리스크·성장에는 형·충·파·해·귀문·현침·오행 과다/부족을 우선한다.",
-      "각 장문 섹션마다 최소 한 번은 명리 신호와 MBTI trait를 한 문장 안에서 연결하라. sajuMbtiBridgeReading에는 이런 연결 문장을 최소 4개 이상 넣어라. 예: 현침살의 예리함과 ENTJ의 Te가 만나면 문제의 핵심을 빨리 잡지만 말이 평가처럼 들릴 수 있다.",
+      "명리와 MBTI의 일치·긴장·보완은 검증된 interaction이 있을 때만 연결하라. 연결 개수를 맞추기 위해 없는 근거를 만들지 않는다.",
       "40자 이상 같은 문장이 전체 리포트에 3회 이상 나오면 실패다.",
       "같은 생활 장면 문장을 여러 챕터에 재사용하지 마라.",
       "같은 MBTI bridge sentence를 여러 longform section에 복붙하지 마라.",

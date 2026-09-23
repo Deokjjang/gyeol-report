@@ -1,3 +1,4 @@
+import type { ComprehensiveNarrativePlan } from "../report-generation/comprehensiveNarrative";
 import type { BridgeInteractionTrace } from "./bridge/factConditions";
 import type { InterpretationTagId } from "./interpretationTags";
 import type { MbtiType } from "./mbtiKnowledgeTypes";
@@ -186,6 +187,7 @@ export type ComprehensiveSajuMbtiBridgeInterpretation = {
 };
 
 export type ComprehensiveReportEvidencePacket = {
+  readonly narrativePlan?: ComprehensiveNarrativePlan;
   readonly productKey?: "saju_mbti_full";
   readonly productSlug?: "saju-mbti-full";
   readonly productType?: "saju_mbti_full";

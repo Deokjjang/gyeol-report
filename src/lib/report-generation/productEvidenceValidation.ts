@@ -3,6 +3,7 @@ import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
 import { normalizeBirthTimePrecision } from "../saju/birthTimePrecisionTypes";
 import { STEM_ELEMENT, BRANCH_MAIN_ELEMENT } from "../saju/constants";
 import { getAnnualGanjiInfo, getAnnualMonthGanjiInfo } from "../report-knowledge/annualFortuneYearRules";
+import { COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS } from "./comprehensiveReportDraftTypes";
 
 type Row = Record<string, unknown>;
 const record = (v: unknown): v is Row => v !== null && typeof v === "object" && !Array.isArray(v);
@@ -77,6 +78,39 @@ export function validateProductEvidence(product: string, draft: Row, value: unkn
     } else need(fields(e.mbtiBasis, ["type", "titleKo", "oneLine"]) && record(e.mbtiBasis) && e.mbtiBasis.type === e.mbtiType &&
       Array.isArray(e.mbtiBasis.traitAreas) && e.mbtiBasis.traitAreas.length > 0, "mbtiBasis");
     need(rows(e.sajuFeatureDictionary, ["id", "rawLabel", "plainMeaning", "howItShowsInYou", "strength", "fatiguePoint", "practicalUse"], 3), "sajuFeatureDictionary");
+    if (e.narrativePlan !== undefined) {
+      const plan = record(e.narrativePlan) ? e.narrativePlan : {};
+      const dictionary = Array.isArray(e.sajuFeatureDictionary) ? e.sajuFeatureDictionary.filter(record) : [];
+      const facts = new Set([...(Array.isArray(e.bridgeFactIds) ? e.bridgeFactIds : []), ...dictionary.map(f=>f.sourceFeatureId)]);
+      const featureIds = new Set(dictionary.map(f=>f.id));
+      const mbti = record(e.mbtiBasis) ? e.mbtiBasis : {};
+      const traitIds = new Set((Array.isArray(mbti.traitAreas) ? mbti.traitAreas.filter(record) : []).flatMap(a=>
+        (Array.isArray(a.traits) ? a.traits.filter(record) : []).map(t=>`mbti:${e.mbtiType}:traits:${a.area}:${t.id}`)));
+      const scenes = Array.isArray(e.sajuMbtiBridgeEvidence) ? e.sajuMbtiBridgeEvidence.filter(record) : [];
+      const traces = scenes.flatMap(s=>record(s.interaction) ? [s.interaction] : []);
+      const traceIds = new Set(traces.map(t=>t.interactionId));
+      const supported = (ids: unknown, valid: Set<unknown>) => texts(ids) && (ids as unknown[]).every(id=>valid.has(id));
+      need(plan.version === "comprehensive_narrative_v2" && Array.isArray(plan.themes) && plan.themes.length >= 2 && plan.themes.length <= 4, "narrative_themes");
+      if (Array.isArray(plan.themes)) for (const theme of plan.themes) {
+        if (!record(theme)) { need(false,"narrative_theme"); continue; }
+        need(fields(theme,["title","reading"]) && supported(theme.sajuEvidenceIds,facts) && Array.isArray(theme.sajuEvidenceIds) && theme.sajuEvidenceIds.length>0, "narrative_theme_facts");
+        const trace=traces.find(t=>t.interactionId===theme.interactionId);
+        need(theme.interactionId === undefined
+          ? Array.isArray(theme.mbtiEvidenceIds) && theme.mbtiEvidenceIds.length===0
+          : !!trace && JSON.stringify(trace.myeongliEvidenceIds)===JSON.stringify(theme.sajuEvidenceIds) && JSON.stringify(trace.mbtiEvidenceIds)===JSON.stringify(theme.mbtiEvidenceIds), "narrative_theme_interaction");
+      }
+      need(rows(plan.sections,["readingId","question"],10) && plan.sections.length===10, "narrative_sections");
+      need(Array.isArray(plan.sections) && COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS.every(id =>
+        (plan.sections as unknown[]).filter(s => record(s) && s.readingId === id).length === 1), "narrative_section_coverage");
+      const allocated:unknown[]=[];
+      if(Array.isArray(plan.sections)) for(const section of plan.sections) {
+        if(!record(section)) continue;
+        need(supported(section.featureIds,featureIds) && supported(section.mbtiTraitIds,traitIds) && supported(section.interactionIds,traceIds), "narrative_section_refs");
+        if(Array.isArray(section.interactionIds)) allocated.push(...section.interactionIds);
+      }
+      need(new Set(allocated).size===allocated.length && traceIds.size===allocated.length, "narrative_scene_ownership");
+    }
+
     need(Array.isArray(e.sections) && e.sections.every(s => record(s) && rows(s.primarySaju, ["sourceId", "sourceLabelKo", "summary"], ["manse_table", "mbti_table", "mbti_core"].includes(String(s.sectionId)) ? 0 : 1) && Array.isArray(s.supportingMbti) && Array.isArray(s.fusion)), "section_evidence");
   } else if (product === "career_money_study") {
     need(fields(e.myeongliCareerBasis, ["dayMasterPlain", "careerPlain", "moneyPlain", "studyPlain"]) && record(e.myeongliCareerBasis) &&

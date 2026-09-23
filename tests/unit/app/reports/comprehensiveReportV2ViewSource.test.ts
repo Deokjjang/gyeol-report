@@ -63,8 +63,8 @@ describe("comprehensive report v2 view source", () => {
     expect(viewSource).toContain("LongformBody");
     expect(viewSource).toContain("오늘부터 바꿀 기준");
     expect(viewSource).toContain(".slice(0, 6)");
-    expect(viewSource).toContain("공부와 일 루틴");
-    expect(viewSource).toContain("돈은 공격 계획과 방어 계획");
+    expect(viewSource).toContain('chapter.chapterId === "final_message"');
+    expect(viewSource).not.toContain("돈은 공격 계획과 방어 계획");
     expect(viewSource).not.toContain("흐름별 핵심 장면");
     expect(viewSource).not.toContain("장문형 V2");
     expect(viewSource).not.toContain("Preview ID");
