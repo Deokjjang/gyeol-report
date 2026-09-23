@@ -94,11 +94,10 @@ describe("majorFortuneEvidence", () => {
       "10년 결과 보장",
     );
     expect(evidence.bridgeEvidence?.primaryEvidence.length).toBeGreaterThan(0);
-    expect(
-      evidence.bridgeEvidence?.primaryEvidence[0]?.evidence.myeongliEvidence.signals.some(
-        (signal) => signal.id === "daeun-annual-cross",
-      ),
-    ).toBe(true);
+    expect(evidence.currentAnnualCross.annualGanji).toBe("丙午");
+    expect(evidence.bridgeEvidence?.primaryEvidence[0]?.evidence.interactions?.every(
+      (interaction) => interaction.myeongliEvidenceIds.length > 0 && interaction.mbtiEvidenceIds.length > 0,
+    )).toBe(true);
     expect(evidence.currentCycle.ganji).toBe("戊辰");
     expect(evidence.currentCycle.startYear).toBe(2026);
     expect(evidence.currentCycle.endYear).toBe(2035);

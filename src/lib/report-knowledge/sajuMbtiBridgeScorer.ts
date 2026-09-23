@@ -1,3 +1,5 @@
+import { requireMbtiTypeKnowledge } from "./mbtiTypeKnowledgeBase";
+import type { BridgeInteractionTrace } from "./bridge/factConditions";
 import type {
   SelectedSajuFeatureEvidence,
   SelectedSajuFeatureEvidenceItem,
@@ -18,6 +20,7 @@ export type SajuMbtiBridgeNeed =
   | "execution_to_reflection";
 
 export type SajuMbtiBridgeEvidence = {
+  readonly interaction?: BridgeInteractionTrace;
   readonly chapterId:
     | "opening"
     | "saju_identity"
@@ -38,6 +41,8 @@ export type SajuMbtiBridgeEvidence = {
 };
 
 type BridgeRule = {
+  readonly requiredTraitId: string;
+  readonly interactionType: BridgeInteractionTrace["interactionType"];
   readonly mbti: MbtiTypeCode;
   readonly requiredFeatureIds: readonly string[];
   readonly optionalFeatureIds?: readonly string[];
@@ -63,6 +68,8 @@ const bridgeRules: readonly BridgeRule[] = [
   {
     mbti: "INTP",
     requiredFeatureIds: ["structure_no_resource"],
+    requiredTraitId: "mbti_intp_core_identity_2",
+    interactionType: "amplification",
     chapterId: "risk_and_growth",
     preferredContexts: ["core_identity", "stress", "growth"],
     preferredTags: ["support_request", "analysis_to_action"],
@@ -78,6 +85,8 @@ const bridgeRules: readonly BridgeRule[] = [
   {
     mbti: "INTP",
     requiredFeatureIds: ["gwiin_jaego"],
+    requiredTraitId: "mbti_intp_money_1",
+    interactionType: "agreement",
     chapterId: "work_money_study",
     preferredContexts: ["money", "study", "work"],
     preferredTags: ["money_structure", "analysis_to_action"],
@@ -94,6 +103,8 @@ const bridgeRules: readonly BridgeRule[] = [
     mbti: "INTP",
     requiredFeatureIds: ["day_pillar_jeongchuk"],
     optionalFeatureIds: ["ten_god_shi_shen", "gwiin_amrok", "sinsal_cheonmun"],
+    requiredTraitId: "mbti_intp_core_identity_1",
+    interactionType: "agreement",
     chapterId: "saju_identity",
     preferredContexts: ["core_identity", "communication", "study"],
     preferredTags: ["conditions", "logic", "analysis_to_action"],
@@ -109,6 +120,8 @@ const bridgeRules: readonly BridgeRule[] = [
   {
     mbti: "ENTJ",
     requiredFeatureIds: ["sinsal_hyeonchim"],
+    requiredTraitId: "mbti_entj_communication_2",
+    interactionType: "amplification",
     chapterId: "personality_pattern",
     preferredContexts: ["communication", "decision", "growth"],
     preferredTags: ["speed_control", "communication"],
@@ -125,6 +138,8 @@ const bridgeRules: readonly BridgeRule[] = [
     mbti: "ENTJ",
     requiredFeatureIds: ["gwiin_jaego"],
     optionalFeatureIds: ["ten_god_pian_cai", "ten_god_zheng_cai", "gwiin_geumyeorok"],
+    requiredTraitId: "mbti_entj_money_2",
+    interactionType: "agreement",
     chapterId: "work_money_study",
     preferredContexts: ["money", "work", "decision"],
     preferredTags: ["money_structure", "structure_building"],
@@ -141,6 +156,8 @@ const bridgeRules: readonly BridgeRule[] = [
     mbti: "ENTJ",
     requiredFeatureIds: ["ten_god_qi_sha"],
     optionalFeatureIds: ["day_pillar_gapsin", "ten_god_zheng_guan"],
+    requiredTraitId: "mbti_entj_work_1",
+    interactionType: "expression",
     chapterId: "people_family_environment",
     preferredContexts: ["work", "family", "growth"],
     preferredTags: ["structure_building", "relationship_boundary"],
@@ -181,19 +198,8 @@ function selectTrait(input: {
   readonly knowledge: SelectedMbtiKnowledge;
   readonly rule: BridgeRule;
 }): SelectedMbtiKnowledge["selectedTraits"][number] | undefined {
-  return [...input.knowledge.selectedTraits]
-    .sort((left, right) => {
-      const leftContextScore = input.rule.preferredContexts.includes(left.context) ? 10 : 0;
-      const rightContextScore = input.rule.preferredContexts.includes(right.context) ? 10 : 0;
-      const leftTagScore = left.tags.filter((tag) =>
-        input.rule.preferredTags.includes(tag),
-      ).length;
-      const rightTagScore = right.tags.filter((tag) =>
-        input.rule.preferredTags.includes(tag),
-      ).length;
-
-      return rightContextScore + rightTagScore - (leftContextScore + leftTagScore);
-    })[0];
+  if (!input.knowledge.selectedTraits.some((trait) => trait.id === input.rule.requiredTraitId)) return undefined;
+  return requireMbtiTypeKnowledge(input.knowledge.mbti).traitSeeds.find((trait) => trait.id === input.rule.requiredTraitId);
 }
 
 export function scoreSajuMbtiBridgeEvidence(
@@ -208,10 +214,7 @@ export function scoreSajuMbtiBridgeEvidence(
     return [];
   }
 
-  const selectedFeatureIds = new Set([
-    ...collectSelectedFeatureIds(input.selectedSajuFeatureEvidence),
-    ...(input.computedFeatureIds ?? []),
-  ]);
+  const selectedFeatureIds = new Set(input.computedFeatureIds ?? collectSelectedFeatureIds(input.selectedSajuFeatureEvidence));
   const evidence: SajuMbtiBridgeEvidence[] = [];
 
   for (const rule of bridgeRules) {
@@ -243,7 +246,13 @@ export function scoreSajuMbtiBridgeEvidence(
       0,
     );
 
+    const ruleId = `scene:${rule.mbti}:${rule.requiredTraitId}:${rule.requiredFeatureIds.join("+")}`;
     evidence.push({
+      interaction: {
+        interactionId: ruleId, ruleId, interactionType: rule.interactionType,
+        myeongliEvidenceIds: rule.requiredFeatureIds,
+        mbtiEvidenceIds: [trait.id], contexts: [rule.chapterId], confidence: "inferred", intensity: "low",
+      },
       chapterId: rule.chapterId,
       mbti: rule.mbti,
       traitId: trait.id,

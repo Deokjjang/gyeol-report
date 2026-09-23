@@ -42,9 +42,9 @@ describe("careerReportEvidence", () => {
     expect(evidence.bridgeEvidence.productKey).toBe("careerMoneyStudy");
     expect(evidence.bridgeEvidence.primaryEvidence.length).toBeGreaterThan(0);
     expect(evidence.bridgeEvidence.primaryEvidence[0]?.purposes).toEqual(
-      expect.arrayContaining(["career", "money", "investment", "study"]),
+      expect.arrayContaining(["career", "money"]),
     );
-    expect(evidence.bridgeEvidence.cautionEvidence[0]?.purposes).toContain(
+    expect(evidence.bridgeEvidence.primaryEvidence[0]?.purposes).toContain(
       "caution",
     );
     expect(evidence.bridgeEvidence.forbiddenAngles).toEqual(

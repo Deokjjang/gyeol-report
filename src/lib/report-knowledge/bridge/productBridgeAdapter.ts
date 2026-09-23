@@ -106,7 +106,9 @@ export function buildProductBridgeEvidence(
         !hasAnyPurpose(item, PRODUCT_PRIMARY_PURPOSES[productKey]) &&
         hasAnyPurpose(item, PRODUCT_SUPPORTING_PURPOSES[productKey]),
     ),
-    cautionEvidence: items.filter((item) => item.purposes.includes("caution")),
+    cautionEvidence: items.filter((item) => item.purposes.includes("caution") &&
+      !hasAnyPurpose(item, PRODUCT_PRIMARY_PURPOSES[productKey]) &&
+      !hasAnyPurpose(item, PRODUCT_SUPPORTING_PURPOSES[productKey])),
     recommendedTone: PRODUCT_TONES[productKey],
     forbiddenAngles: [
       ...DEFAULT_FORBIDDEN_BRIDGE_ANGLES,

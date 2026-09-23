@@ -1,3 +1,4 @@
+import type { BridgeInteractionTrace } from "./factConditions";
 import type {
   MbtiMyeongliBridgeHint,
   MbtiRelationshipPair,
@@ -51,6 +52,7 @@ export type MbtiTraitEvidence = {
 };
 
 export type MyeongliMbtiBridgeEvidence = {
+  readonly interactions?: readonly BridgeInteractionTrace[];
   readonly id: string;
   readonly productContext: BridgeProductContext;
   readonly mbtiType: MbtiSourceType;

@@ -44,15 +44,14 @@ describe("buildMyeongliMbtiBridgePacket", () => {
       const packet = buildMyeongliMbtiBridgePacket({
         mbtiType: "ENTJ",
         productContext,
-        myeongliSignals: sampleSignals.slice(0, 1),
+        myeongliSignals: [{ kind: "element", label: "화" }, { kind: "tenGod", label: "정관" }, ...sampleSignals],
       });
 
       expect(packet.reportUseCaseKey).toBe(
         BRIDGE_PRODUCT_REPORT_USE_CASE_MAP[productContext],
       );
-      expect(packet.evidences[0]?.mbtiEvidence.reportUseCases.length).toBeGreaterThan(
-        0,
-      );
+      for (const evidence of packet.evidences) expect(evidence.mbtiEvidence.reportUseCases.length).toBeGreaterThan(0);
+      expect(packet.isEmpty).toBe(packet.evidences.length === 0);
     }
   });
 
@@ -66,36 +65,14 @@ describe("buildMyeongliMbtiBridgePacket", () => {
 
     expect(packet.relationshipPair?.withType).toBe("ISFP");
     expect(packet.withMbtiType).toBe("ISFP");
-    expect(packet.evidences[0]?.mbtiEvidence.relationshipPair?.withType).toBe(
-      "ISFP",
-    );
-    expect(packet.evidences[0]?.intensity).toBe("medium");
+    expect(packet.evidences).toEqual([]); // Pair-only evidence is not a Myeongli interaction.
   });
 
-  it("calculates intensity from signal count", () => {
-    expect(
-      buildMyeongliMbtiBridgePacket({
-        mbtiType: "ENTJ",
-        productContext: "general",
-        myeongliSignals: [],
-      }).evidences[0]?.intensity,
-    ).toBe("low");
-
-    expect(
-      buildMyeongliMbtiBridgePacket({
-        mbtiType: "ENTJ",
-        productContext: "general",
-        myeongliSignals: sampleSignals.slice(0, 2),
-      }).evidences[0]?.intensity,
-    ).toBe("medium");
-
-    expect(
-      buildMyeongliMbtiBridgePacket({
-        mbtiType: "ENTJ",
-        productContext: "general",
-        myeongliSignals: sampleSignals,
-      }).evidences[0]?.intensity,
-    ).toBe("high");
+  it("never converts signal count or prose strength into high intensity", () => {
+    for (const signals of [[], sampleSignals, [...sampleSignals, ...sampleSignals, ...sampleSignals]]) {
+      const packet = buildMyeongliMbtiBridgePacket({ mbtiType: "ENTJ", productContext: "careerMoneyStudy", myeongliSignals: signals });
+      expect(packet.evidences.every((e) => e.intensity !== "high")).toBe(true);
+    }
   });
 
   it("matches MBTI bridge hints against myeongli signals", () => {
@@ -106,9 +83,9 @@ describe("buildMyeongliMbtiBridgePacket", () => {
     });
     const evidence = packet.evidences[0];
 
-    expect(evidence?.signalKinds).toEqual(["tenGod", "element", "shinsal"]);
+    expect(evidence?.signalKinds).toEqual(["element", "shinsal"]);
     expect(evidence?.myeongliEvidence.bridgeHints.map((hint) => hint.signal)).toEqual(
-      expect.arrayContaining(["편관", "금", "현침살"]),
+      ["현침살", "금"],
     );
     expect(evidence?.mbtiEvidence.traits.length).toBeGreaterThan(0);
   });

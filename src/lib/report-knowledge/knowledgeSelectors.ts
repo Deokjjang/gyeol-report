@@ -1,3 +1,7 @@
+import { getMbtiSourceProfile } from "./mbti/sourceRuntimeAdapter";
+import { fusionFactIds } from "./fusionFactContext";
+import { BRIDGE_HINT_FACTS, matchFactCondition, interactionKey } from "./bridge/factConditions";
+import type { ComputedSajuFacts } from "./sajuComputedFactsTypes";
 import {
   COMPREHENSIVE_REPORT_SECTION_DEFINITIONS,
   type ComprehensiveReportSectionId,
@@ -174,36 +178,77 @@ export function getMbtiTopicEvidence(input: {
   };
 }
 
+const fusionTraitAreas: Record<SajuKnowledgeTopic, readonly string[]> = {
+  personality: ["identity", "thinkingStyle"], strengths: ["strengths"], weaknesses: ["risks"],
+  work_career: ["career", "workplace"], money_asset: ["money", "investment"],
+  love_relationship: ["love", "marriage"], human_relations: ["relationships", "communication"],
+  family_independence: ["parenting", "child"], study_growth: ["study", "growth"],
+  environment_luck: ["career", "relationships"], final_advice: ["growth"],
+};
+
+/** Source identity, topic and an authored trait condition must all match. */
+export function getFusionRuleMbtiEvidenceIds(
+  rule: FusionKnowledgeRule,
+  mbtiType: MbtiType,
+  matchedFactIds: readonly string[],
+): readonly string[] {
+  if (!rule.mbtiTypes?.includes(mbtiType)) return [];
+  const tags = collectMbtiTags(getMbtiKnowledge(mbtiType));
+  if (!hasAllTags(tags, rule.requiredMbtiTags)) return [];
+  if (rule.requiredMbtiTags?.length) {
+    return rule.requiredMbtiTags.map((tag) => `mbti:${mbtiType}:tag:${tag}`);
+  }
+  const traitFactIds = new Set(matchedFactIds);
+  // A measured strong/excess fact also proves presence, solely for source trait linkage.
+  for (const id of [
+    "ten_god_bijian", "ten_god_jie_cai", "ten_god_shi_shen", "ten_god_shang_guan", "ten_god_pian_cai",
+    "ten_god_zheng_cai", "ten_god_qi_sha", "ten_god_zheng_guan", "ten_god_pian_yin", "ten_god_zheng_yin",
+    "element_wood", "element_fire", "element_earth", "element_metal", "element_water",
+  ]) {
+    if (traitFactIds.has(`${id}:strong`) || traitFactIds.has(`${id}:excess`)) traitFactIds.add(id);
+  }
+  if (traitFactIds.has("element_metal_strong")) traitFactIds.add("element_metal");
+  if (traitFactIds.has("element_earth_excess")) traitFactIds.add("element_earth");
+  return Object.entries(getMbtiSourceProfile(mbtiType)?.traits ?? {})
+    .filter(([area]) => fusionTraitAreas[rule.topic].includes(area))
+    .flatMap(([area, traits]) => (traits ?? [])
+      .filter((trait) => trait.id && (trait.matchingMyeongliSignals ?? []).some((signal) =>
+        (BRIDGE_HINT_FACTS[signal] ?? []).some((id) => traitFactIds.has(id))))
+      .slice(0, 2)
+      .map((trait) => `mbti:${mbtiType}:traits:${area}:${trait.id}`));
+}
+
 export function findFusionRules(input: {
   readonly sajuEntryIds: readonly string[];
   readonly mbtiType: MbtiType;
   readonly topic?: SajuKnowledgeTopic;
+  readonly computedFacts?: ComputedSajuFacts;
 }): FusionKnowledgeRule[] {
-  const selectedSajuEntries = getSajuKnowledgeByIds(input.sajuEntryIds);
-  const selectedSajuIds = new Set(selectedSajuEntries.map((entry) => entry.id));
-  const sajuTags = collectSajuTags(selectedSajuEntries);
-  const mbtiEntry = getMbtiKnowledge(input.mbtiType);
-  const mbtiTags = collectMbtiTags(mbtiEntry);
-
-  return FUSION_KNOWLEDGE_BASE.filter((rule) => {
-    const hasSajuIdBasis = rule.sajuEntryIds.some((id) => selectedSajuIds.has(id));
-    const hasSajuTagBasis =
-      rule.requiredSajuTags !== undefined &&
-      rule.requiredSajuTags.length > 0 &&
-      hasAllTags(sajuTags, rule.requiredSajuTags);
-    const hasSajuBasis = hasSajuIdBasis || hasSajuTagBasis;
-    const matchesMbti =
-      rule.mbtiTypes === undefined || rule.mbtiTypes.includes(input.mbtiType);
-    const matchesTopic = input.topic === undefined || rule.topic === input.topic;
-
-    return (
-      hasSajuBasis &&
-      matchesMbti &&
-      matchesTopic &&
-      hasAllTags(sajuTags, rule.requiredSajuTags) &&
-      hasAllTags(mbtiTags, rule.requiredMbtiTags)
-    );
-  }).sort((left, right) => right.priority - left.priority);
+  if (!input.mbtiType || !MBTI_KNOWLEDGE_BY_TYPE.has(input.mbtiType)) return [];
+  const facts = fusionFactIds(input.sajuEntryIds, input.computedFacts);
+  const seen = new Set<string>();
+  return [...FUSION_KNOWLEDGE_BASE].sort((a, b) => b.priority - a.priority).flatMap((rule) => {
+    const matched = matchFactCondition(rule.requires, facts);
+    if (rule.availability || !matched || (rule.mbtiTypes && !rule.mbtiTypes.includes(input.mbtiType)) ||
+      (input.topic && rule.topic !== input.topic)) return [];
+    if (!rule.mbtiTypes) return []; // Single-system knowledge is not a cross-system interaction.
+    const mbtiEvidenceIds = getFusionRuleMbtiEvidenceIds(rule, input.mbtiType, matched);
+    if (!mbtiEvidenceIds.length) return [];
+    const match = {
+      interactionId: rule.id,
+      ruleId: rule.id,
+      interactionType: rule.interactionType,
+      myeongliEvidenceIds: matched,
+      mbtiEvidenceIds,
+      contexts: [rule.topic],
+      confidence: "inferred" as const,
+      intensity: "low" as const,
+    };
+    const key = interactionKey(match);
+    if (seen.has(key)) return [];
+    seen.add(key);
+    return [{ ...rule, match }];
+  });
 }
 
 export function buildSectionEvidence(

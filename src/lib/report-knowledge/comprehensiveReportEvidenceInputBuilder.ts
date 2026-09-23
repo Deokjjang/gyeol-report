@@ -1,3 +1,5 @@
+import { fusionFactIds } from "./fusionFactContext";
+import { selectMatchedBridgeHints } from "./bridge/bridgeHintSelection";
 import { buildComprehensiveReportEvidencePacket } from "./comprehensiveReportEvidenceBuilder";
 import type {
   ComprehensiveMbtiBasis,
@@ -41,7 +43,6 @@ import {
 import type { ComputedSajuFacts } from "./sajuComputedFactsTypes";
 import {
   MBTI_TRAIT_AREAS,
-  getMbtiMyeongliBridgeHints,
   getMbtiReportUseCase,
   getMbtiSourceProfile,
   type MbtiSourceTraitItem,
@@ -578,6 +579,7 @@ function toMbtiBasisTrait(
 function buildComprehensiveMbtiBasis(input: {
   readonly mbtiType: MbtiType | "";
   readonly selectedMbtiKnowledge?: SelectedMbtiKnowledge;
+  readonly factIds: ReadonlySet<string>;
 }): ComprehensiveMbtiBasis | undefined {
   const source = getMbtiSourceProfile(input.mbtiType);
 
@@ -606,8 +608,8 @@ function buildComprehensiveMbtiBasis(input: {
             trait !== undefined,
         ),
     })).filter((area) => area.traits.length > 0),
-    myeongliBridgeHints: (getMbtiMyeongliBridgeHints(source.type) ?? []).map(
-      (hint) => ({
+    myeongliBridgeHints: selectMatchedBridgeHints({ mbtiType: source.type, productContext: "general", factIds: input.factIds }).map(
+      ({ hint }) => ({
         signal: hint.signal,
         reason: hint.reason,
         relatedTraits: hint.relatedTraits,
@@ -747,6 +749,7 @@ function buildInterpretedBridgeEvidence(input: {
       "명리 신호와 행동 성향이 과열되면 속도, 말투, 책임 범위에서 피로가 커질 수 있습니다.";
 
     return {
+      interactionId: bridge.interaction?.interactionId,
       chapterId: bridge.chapterId,
       mbti: bridge.mbti,
       traitId: bridge.traitId,
@@ -778,6 +781,7 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
   const packet = buildComprehensiveReportEvidencePacket({
     mbtiType: input.mbtiType,
     sajuEntryIds: mappedSaju.sajuEntryIds,
+    computedFacts: input.sajuFacts,
   });
   const selectedSajuFeatureEvidence = buildSelectedSajuFeatureEvidence(
     mappedFeatures.featureIds,
@@ -821,6 +825,7 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
   const mbtiBasis = buildComprehensiveMbtiBasis({
     mbtiType: input.mbtiType,
     selectedMbtiKnowledge,
+    factIds: fusionFactIds(mappedSaju.sajuEntryIds, input.sajuFacts),
   });
   const sajuFeatureDictionary = buildSajuFeatureDictionary({
     selectedSajuFeatureEvidence,
@@ -836,6 +841,7 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
   return {
     packet: {
       ...packet,
+      bridgeFactIds: uniqueStrings([...(packet.bridgeFactIds ?? []), ...mappedFeatures.featureIds]),
       productKey: "saju_mbti_full",
       productSlug: "saju-mbti-full",
       productType: "saju_mbti_full",

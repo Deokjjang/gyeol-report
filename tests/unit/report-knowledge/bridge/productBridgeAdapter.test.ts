@@ -42,15 +42,15 @@ describe("product bridge adapter", () => {
     const packet = buildMyeongliMbtiBridgePacket({
       mbtiType: "ENTJ",
       productContext: "general",
-      myeongliSignals: sampleSignals,
+      myeongliSignals: [...sampleSignals, { kind: "element", label: "화" }],
     });
     const productEvidence = buildProductBridgeEvidence(packet, "general");
 
     expect(productEvidence.productKey).toBe("general");
     expect(productEvidence.primaryEvidence.length).toBeGreaterThan(0);
-    expect(productEvidence.cautionEvidence.length).toBeGreaterThan(0);
+    expect(productEvidence.cautionEvidence).toEqual([]);
     expect(productEvidence.primaryEvidence[0]?.purposes).toEqual(
-      expect.arrayContaining(["identity", "growth", "caution"]),
+      expect.arrayContaining(["identity", "caution"]),
     );
     expect(productEvidence.recommendedTone).toContain("명리 중심");
   });
@@ -68,7 +68,7 @@ describe("product bridge adapter", () => {
 
     expect(productEvidence.primaryEvidence.length).toBeGreaterThan(0);
     expect(productEvidence.primaryEvidence[0]?.purposes).toEqual(
-      expect.arrayContaining(["career", "money", "investment", "study"]),
+      expect.arrayContaining(["career"]),
     );
     expect(productEvidence.forbiddenAngles).toEqual(
       expect.arrayContaining(["수익 확정", "합격 확정", "승진·이직 확정"]),
@@ -79,14 +79,14 @@ describe("product bridge adapter", () => {
     const packet = buildMyeongliMbtiBridgePacket({
       mbtiType: "ENTJ",
       productContext: "compatibility",
-      myeongliSignals: [],
+      myeongliSignals: [{ kind: "shinsal", label: "현침살" }],
       withMbtiType: "ISFP",
     });
     const productEvidence = buildProductBridgeEvidence(packet, "compatibility");
 
     expect(productEvidence.primaryEvidence.length).toBeGreaterThan(0);
     expect(productEvidence.primaryEvidence[0]?.purposes).toContain("relationship");
-    expect(productEvidence.cautionEvidence.length).toBeGreaterThan(0);
+    expect(productEvidence.cautionEvidence).toEqual([]);
     expect(productEvidence.forbiddenAngles).toEqual(
       expect.arrayContaining(["절대 안 맞음", "관계 파탄 확정", "결혼 확정"]),
     );
@@ -96,12 +96,12 @@ describe("product bridge adapter", () => {
     const daeunPacket = buildMyeongliMbtiBridgePacket({
       mbtiType: "ENTJ",
       productContext: "daeun",
-      myeongliSignals: sampleSignals.slice(0, 1),
+      myeongliSignals: [{ kind: "tenGod", label: "정관" }, { kind: "element", label: "화" }],
     });
     const saeunPacket = buildMyeongliMbtiBridgePacket({
       mbtiType: "ENTJ",
       productContext: "saeun",
-      myeongliSignals: sampleSignals.slice(0, 1),
+      myeongliSignals: [{ kind: "tenGod", label: "정관" }, { kind: "element", label: "화" }],
     });
 
     expect(
@@ -142,7 +142,7 @@ describe("product bridge adapter", () => {
     const emptyPacket = buildMyeongliMbtiBridgePacket({
       mbtiType: "UNKNOWN",
       productContext: "general",
-      myeongliSignals: sampleSignals,
+      myeongliSignals: [...sampleSignals, { kind: "element", label: "화" }],
     });
     const productEvidence = buildProductBridgeEvidence(emptyPacket, "general");
 

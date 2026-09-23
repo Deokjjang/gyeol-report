@@ -1,3 +1,4 @@
+import type { BridgeInteractionTrace } from "./bridge/factConditions";
 import type { InterpretationTagId } from "./interpretationTags";
 import type { MbtiType } from "./mbtiKnowledgeTypes";
 import type { ComprehensiveReportSectionId } from "./reportSectionSchema";
@@ -32,6 +33,7 @@ export type EvidenceRole =
 
 export type ReportEvidenceItem = {
   readonly role: EvidenceRole;
+  readonly interaction?: BridgeInteractionTrace;
   readonly sourceId: string;
   readonly sourceLabelKo: string;
   readonly summary: string;
@@ -167,6 +169,7 @@ export type ComprehensiveSajuFeatureDictionaryEntry = {
 };
 
 export type ComprehensiveSajuMbtiBridgeInterpretation = {
+  readonly interactionId?: string;
   readonly chapterId: SajuFeatureChapterId;
   readonly mbti: MbtiTypeCode;
   readonly traitId: string;
@@ -187,6 +190,7 @@ export type ComprehensiveReportEvidencePacket = {
   readonly productType?: "saju_mbti_full";
   readonly mbtiType: MbtiType | "";
   readonly sajuEntryIds: readonly string[];
+  readonly bridgeFactIds?: readonly string[];
   readonly sections: readonly ComprehensiveReportSectionEvidence[];
   readonly mbtiBasis?: ComprehensiveMbtiBasis;
   readonly sajuFeatureDictionary?: readonly ComprehensiveSajuFeatureDictionaryEntry[];

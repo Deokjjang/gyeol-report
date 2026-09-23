@@ -20,6 +20,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_wealth_strong_entj_achievement",
     kind: "reinforcement",
+    requires: { allOf: [["ten_god_pian_cai:strong", "ten_god_zheng_cai:strong", "pattern_jaeda_sinyak"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["ten_god_pian_cai", "ten_god_zheng_cai", "pattern_jaeda_sinyak"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["money_orientation"],
@@ -35,6 +37,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_gapsin_entj_leadership_control",
     kind: "reinforcement",
+    requires: { allOf: [["day_pillar_gapsin"], ["day_master_gabmok"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["day_pillar_gapsin", "day_master_gabmok"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["leadership"],
@@ -50,6 +54,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_qi_sha_entj_responsibility",
     kind: "reinforcement",
+    requires: { allOf: [["ten_god_qi_sha"]] },
+    interactionType: "amplification",
     sajuEntryIds: ["ten_god_qi_sha"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["responsibility_pressure"],
@@ -65,6 +71,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_zheng_guan_entj_authority",
     kind: "reinforcement",
+    requires: { allOf: [["ten_god_zheng_guan"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["ten_god_zheng_guan"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["authority_orientation"],
@@ -80,6 +88,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_hyeonchim_entj_direct_speech",
     kind: "reinforcement",
+    requires: { allOf: [["sinsal_hyeonchim"]] },
+    interactionType: "amplification",
     sajuEntryIds: ["sinsal_hyeonchim"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["sharp_analysis"],
@@ -95,6 +105,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_water_no_resource_entj_dryness",
     kind: "compensation",
+    requires: { allOf: [["element_water_missing"], ["pattern_no_resource"]] },
+    interactionType: "expression",
     sajuEntryIds: ["element_water_missing", "pattern_no_resource"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["emotional_dryness"],
@@ -110,6 +122,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_water_missing_entj_emotional_dryness",
     kind: "reinforcement",
+    requires: { allOf: [["element_water_missing"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["element_water_missing"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["emotional_dryness"],
@@ -125,6 +139,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_fire_no_output_entj_expression_contrast",
     kind: "contrast",
+    requires: { allOf: [["element_fire_missing", "pattern_no_output"]] },
+    interactionType: "tension",
     sajuEntryIds: ["element_fire_missing", "pattern_no_output"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["expression_weakness"],
@@ -140,6 +156,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_no_output_entj_self_promotion",
     kind: "contrast",
+    requires: { allOf: [["pattern_no_output"]] },
+    interactionType: "tension",
     sajuEntryIds: ["pattern_no_output"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["expression_weakness"],
@@ -155,6 +173,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_jaeda_sinyak_entj_workaholic",
     kind: "reinforcement",
+    requires: { allOf: [["pattern_jaeda_sinyak"]] },
+    interactionType: "amplification",
     sajuEntryIds: ["pattern_jaeda_sinyak"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["burnout_risk"],
@@ -170,6 +190,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_earth_excess_entj_reality",
     kind: "reinforcement",
+    requires: { allOf: [["element_earth_excess"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["element_earth_excess"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["asset_building"],
@@ -185,6 +207,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_metal_strong_entj_judgment",
     kind: "reinforcement",
+    requires: { allOf: [["element_metal_strong"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["element_metal_strong"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["sharp_analysis"],
@@ -200,6 +224,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_gabmok_gapsin_entj_command",
     kind: "topic_specialization",
+    requires: { allOf: [["day_pillar_gapsin"], ["day_master_gabmok"]] },
+    interactionType: "expression",
     sajuEntryIds: ["day_master_gabmok", "day_pillar_gapsin"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["leadership"],
@@ -215,6 +241,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_gwan_entj_leadership_work",
     kind: "topic_specialization",
+    requires: { allOf: [["ten_god_qi_sha", "ten_god_zheng_guan"]] },
+    interactionType: "expression",
     sajuEntryIds: ["ten_god_qi_sha", "ten_god_zheng_guan"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["leadership"],
@@ -230,6 +258,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_hyeonchim_entj_strategy_work",
     kind: "topic_specialization",
+    requires: { allOf: [["sinsal_hyeonchim"]] },
+    interactionType: "expression",
     sajuEntryIds: ["sinsal_hyeonchim"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["precision_skill"],
@@ -245,6 +275,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_water_missing_entj_burnout_work",
     kind: "compensation",
+    requires: { allOf: [["element_water_missing"]] },
+    interactionType: "expression",
     sajuEntryIds: ["element_water_missing"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["low_rest_capacity"],
@@ -260,6 +292,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_wealth_entj_money_design",
     kind: "topic_specialization",
+    requires: { allOf: [["ten_god_pian_cai"], ["ten_god_zheng_cai"]] },
+    interactionType: "expression",
     sajuEntryIds: ["ten_god_pian_cai", "ten_god_zheng_cai"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["money_orientation"],
@@ -275,6 +309,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_jaeda_entj_money_risk",
     kind: "topic_specialization",
+    requires: { allOf: [["pattern_jaeda_sinyak"]] },
+    interactionType: "expression",
     sajuEntryIds: ["pattern_jaeda_sinyak"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["burnout_risk"],
@@ -290,6 +326,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_jaego_entj_asset",
     kind: "topic_specialization",
+    requires: { allOf: [["gwiin_jaego", "nobleman_jaego"]] },
+    interactionType: "expression",
     sajuEntryIds: ["gwiin_jaego", "nobleman_jaego"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["asset_building"],
@@ -304,6 +342,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_hongyeom_entj_charisma",
     kind: "reinforcement",
+    requires: { allOf: [["sinsal_hongyeom"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["sinsal_hongyeom"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["romantic_attraction"],
@@ -319,6 +359,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_dohwa_entj_public_love",
     kind: "topic_specialization",
+    requires: { allOf: [["sinsal_dohwa"]] },
+    interactionType: "expression",
     sajuEntryIds: ["sinsal_dohwa"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["public_presence"],
@@ -334,6 +376,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_fire_missing_entj_love_expression",
     kind: "contrast",
+    requires: { allOf: [["element_fire_missing"]] },
+    interactionType: "tension",
     sajuEntryIds: ["element_fire_missing"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["expression_weakness"],
@@ -349,6 +393,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_wealth_entj_love_realism",
     kind: "topic_specialization",
+    requires: { allOf: [["ten_god_pian_cai:strong", "ten_god_zheng_cai:strong"]] },
+    interactionType: "expression",
     sajuEntryIds: ["ten_god_pian_cai", "ten_god_zheng_cai"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["money_orientation"],
@@ -364,6 +410,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_no_resource_entj_listening",
     kind: "compensation",
+    requires: { allOf: [["pattern_no_resource"]] },
+    interactionType: "expression",
     sajuEntryIds: ["pattern_no_resource"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["emotional_dryness"],
@@ -379,6 +427,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_gwan_entj_high_standard",
     kind: "contrast",
+    requires: { allOf: [["ten_god_qi_sha:strong", "ten_god_zheng_guan:strong"]] },
+    interactionType: "tension",
     sajuEntryIds: ["ten_god_qi_sha", "ten_god_zheng_guan"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["authority_orientation"],
@@ -394,6 +444,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_bijie_entj_competition",
     kind: "reinforcement",
+    requires: { allOf: [["ten_god_bijian", "ten_god_jie_cai"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["ten_god_bijian", "ten_god_jie_cai"],
     mbtiTypes: ["ENTJ"],
     requiredSajuTags: ["competition"],
@@ -409,6 +461,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_wood_nt_strategy",
     kind: "reinforcement",
+    requires: { allOf: [["element_wood", "day_master_gabmok"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["element_wood", "day_master_gabmok"],
     mbtiTypes: ["INTJ", "INTP", "ENTJ", "ENTP"],
     requiredSajuTags: ["growth_orientation"],
@@ -423,6 +477,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_wood_missing_j_rigidity",
     kind: "contrast",
+    requires: { allOf: [["element_wood_missing"]] },
+    interactionType: "tension",
     sajuEntryIds: ["element_wood_missing"],
     mbtiTypes: ["INTJ", "ENTJ", "INFJ", "ENFJ", "ISTJ", "ESTJ", "ISFJ", "ESFJ"],
     requiredSajuTags: ["flexibility_need"],
@@ -438,6 +494,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_fire_e_expression",
     kind: "reinforcement",
+    requires: { allOf: [["element_fire"], ["ten_god_shi_shen", "ten_god_shang_guan"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["element_fire", "ten_god_shi_shen", "ten_god_shang_guan"],
     mbtiTypes: ["ENTJ", "ENTP", "ENFJ", "ENFP", "ESTJ", "ESFJ", "ESTP", "ESFP"],
     requiredSajuTags: ["public_presence"],
@@ -452,6 +510,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_fire_missing_e_expression_contrast",
     kind: "contrast",
+    requires: { allOf: [["element_fire_missing"]] },
+    interactionType: "tension",
     sajuEntryIds: ["element_fire_missing"],
     mbtiTypes: ["ENTJ", "ENTP", "ENFJ", "ENFP", "ESTJ", "ESFJ", "ESTP", "ESFP"],
     requiredSajuTags: ["expression_weakness"],
@@ -466,6 +526,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_earth_tj_asset",
     kind: "reinforcement",
+    requires: { allOf: [["element_earth", "element_earth_excess"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["element_earth", "element_earth_excess"],
     mbtiTypes: ["INTJ", "ENTJ", "ISTJ", "ESTJ"],
     requiredSajuTags: ["asset_building"],
@@ -480,6 +542,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_earth_excess_j_overload",
     kind: "contrast",
+    requires: { allOf: [["element_earth_excess"]] },
+    interactionType: "tension",
     sajuEntryIds: ["element_earth_excess"],
     mbtiTypes: ["INTJ", "ENTJ", "INFJ", "ENFJ", "ISTJ", "ESTJ", "ISFJ", "ESFJ"],
     requiredSajuTags: ["responsibility_pressure"],
@@ -495,6 +559,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_metal_t_precision",
     kind: "reinforcement",
+    requires: { allOf: [["element_metal", "element_metal_strong"], ["sinsal_hyeonchim"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["element_metal", "element_metal_strong", "sinsal_hyeonchim"],
     mbtiTypes: ["INTJ", "INTP", "ENTJ", "ENTP", "ISTJ", "ISTP", "ESTJ", "ESTP"],
     requiredSajuTags: ["precision_skill"],
@@ -510,6 +576,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_metal_excess_t_coldness",
     kind: "contrast",
+    requires: { allOf: [["element_metal_strong"]] },
+    interactionType: "tension",
     sajuEntryIds: ["element_metal_strong"],
     mbtiTypes: ["INTJ", "INTP", "ENTJ", "ENTP", "ISTJ", "ISTP", "ESTJ", "ESTP"],
     requiredSajuTags: ["direct_speech"],
@@ -525,6 +593,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_water_nf_inner_flow",
     kind: "reinforcement",
+    requires: { allOf: [["element_water"], ["ten_god_zheng_yin", "ten_god_pian_yin"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["element_water", "ten_god_zheng_yin", "ten_god_pian_yin"],
     mbtiTypes: ["INFJ", "INFP", "ENFJ", "ENFP"],
     requiredSajuTags: ["emotional_depth"],
@@ -539,6 +609,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_water_missing_t_empathy_gap",
     kind: "compensation",
+    requires: { allOf: [["element_water_missing"]] },
+    interactionType: "expression",
     sajuEntryIds: ["element_water_missing", "pattern_no_resource"],
     mbtiTypes: ["INTJ", "INTP", "ENTJ", "ENTP", "ISTJ", "ISTP", "ESTJ", "ESTP"],
     requiredSajuTags: ["emotional_dryness"],
@@ -553,6 +625,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_pian_cai_e_business",
     kind: "topic_specialization",
+    requires: { allOf: [["ten_god_pian_cai"]] },
+    interactionType: "expression",
     sajuEntryIds: ["ten_god_pian_cai"],
     mbtiTypes: ["ENTJ", "ENTP", "ESTP", "ENFP"],
     requiredSajuTags: ["money_orientation"],
@@ -567,6 +641,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_zheng_cai_sj_asset",
     kind: "topic_specialization",
+    requires: { allOf: [["ten_god_zheng_cai"]] },
+    interactionType: "expression",
     sajuEntryIds: ["ten_god_zheng_cai"],
     mbtiTypes: ["ISTJ", "ISFJ", "ESTJ", "ESFJ"],
     requiredSajuTags: ["asset_building"],
@@ -581,6 +657,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_qi_sha_tj_pressure_leadership",
     kind: "reinforcement",
+    requires: { allOf: [["ten_god_qi_sha"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["ten_god_qi_sha"],
     mbtiTypes: ["INTJ", "ENTJ", "ESTJ"],
     requiredSajuTags: ["leadership"],
@@ -596,6 +674,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_zheng_guan_j_system",
     kind: "reinforcement",
+    requires: { allOf: [["ten_god_zheng_guan"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["ten_god_zheng_guan"],
     mbtiTypes: ["INTJ", "ENTJ", "INFJ", "ENFJ", "ISTJ", "ESTJ", "ISFJ", "ESFJ"],
     requiredSajuTags: ["authority_orientation"],
@@ -610,6 +690,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_shi_shen_fp_soft_expression",
     kind: "reinforcement",
+    requires: { allOf: [["ten_god_shi_shen"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["ten_god_shi_shen"],
     mbtiTypes: ["INFP", "ENFP", "ISFP", "ESFP", "ISFJ", "ESFJ"],
     requiredSajuTags: ["public_presence"],
@@ -623,6 +705,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_shang_guan_np_critique",
     kind: "contrast",
+    requires: { allOf: [["ten_god_shang_guan"]] },
+    interactionType: "tension",
     sajuEntryIds: ["ten_god_shang_guan"],
     mbtiTypes: ["INTP", "ENTP", "INFP", "ENFP", "ISTP", "ESTP"],
     requiredSajuTags: ["direct_speech"],
@@ -637,6 +721,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_zheng_yin_nf_recovery",
     kind: "compensation",
+    requires: { allOf: [["ten_god_zheng_yin"]] },
+    interactionType: "expression",
     sajuEntryIds: ["ten_god_zheng_yin"],
     mbtiTypes: ["INFJ", "INFP", "ENFJ", "ENFP"],
     requiredSajuTags: ["emotional_depth"],
@@ -651,6 +737,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_pian_yin_n_immersion",
     kind: "topic_specialization",
+    requires: { allOf: [["ten_god_pian_yin"]] },
+    interactionType: "expression",
     sajuEntryIds: ["ten_god_pian_yin"],
     mbtiTypes: ["INTJ", "INTP", "INFJ", "INFP", "ENTP", "ENFP"],
     requiredSajuTags: ["strategic_thinking"],
@@ -665,6 +753,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_bijian_ej_self_assertion",
     kind: "reinforcement",
+    requires: { allOf: [["ten_god_bijian"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["ten_god_bijian"],
     mbtiTypes: ["ENTJ", "ENFJ", "ESTJ", "ESFJ"],
     requiredSajuTags: ["independence"],
@@ -679,6 +769,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_jie_cai_ep_competition_risk",
     kind: "compensation",
+    requires: { allOf: [["ten_god_jie_cai"]] },
+    interactionType: "expression",
     sajuEntryIds: ["ten_god_jie_cai"],
     mbtiTypes: ["ENTJ", "ENTP", "ESTP", "ENFP", "ESFP"],
     requiredSajuTags: ["competition"],
@@ -693,6 +785,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_hyeonchim_t_precision",
     kind: "reinforcement",
+    requires: { allOf: [["sinsal_hyeonchim"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["sinsal_hyeonchim"],
     mbtiTypes: ["INTJ", "INTP", "ENTJ", "ENTP", "ISTJ", "ISTP", "ESTJ", "ESTP"],
     requiredSajuTags: ["precision_skill"],
@@ -707,6 +801,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_hongyeom_ef_charm",
     kind: "reinforcement",
+    requires: { allOf: [["sinsal_hongyeom"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["sinsal_hongyeom"],
     mbtiTypes: ["ENFJ", "ENFP", "ESFJ", "ESFP", "ENTJ"],
     requiredSajuTags: ["romantic_attraction"],
@@ -720,6 +816,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_dohwa_e_public",
     kind: "topic_specialization",
+    requires: { allOf: [["sinsal_dohwa"]] },
+    interactionType: "expression",
     sajuEntryIds: ["sinsal_dohwa"],
     mbtiTypes: ["ENTJ", "ENTP", "ENFJ", "ENFP", "ESTJ", "ESFJ", "ESTP", "ESFP"],
     requiredSajuTags: ["public_presence"],
@@ -733,6 +831,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_hwagae_inf_art_depth",
     kind: "topic_specialization",
+    requires: { allOf: [["sinsal_hwagae"]] },
+    interactionType: "expression",
     sajuEntryIds: ["sinsal_hwagae"],
     mbtiTypes: ["INFJ", "INFP", "INTJ", "INTP", "ISFP"],
     requiredSajuTags: ["loneliness"],
@@ -747,6 +847,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_yeokma_pen_change",
     kind: "reinforcement",
+    requires: { allOf: [["sinsal_yeokma"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["sinsal_yeokma"],
     mbtiTypes: ["ENTP", "ENFP", "ESTP", "ESFP", "INTP", "INFP", "ISTP", "ISFP"],
     requiredSajuTags: ["flexibility_need"],
@@ -761,6 +863,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_gwimun_nfi_sensitivity",
     kind: "contrast",
+    requires: { allOf: [["sinsal_gwimun"]] },
+    interactionType: "tension",
     sajuEntryIds: ["sinsal_gwimun"],
     mbtiTypes: ["INFJ", "INFP", "INTJ", "INTP", "ENFP"],
     requiredSajuTags: ["loneliness"],
@@ -775,6 +879,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_wonjin_relationship_distance",
     kind: "compensation",
+    requires: { allOf: [["sinsal_wonjin"]] },
+    interactionType: "expression",
     sajuEntryIds: ["sinsal_wonjin"],
     requiredSajuTags: ["relationship_distance"],
     topic: "love_relationship",
@@ -788,6 +894,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_munchang_nt_nf_writing",
     kind: "topic_specialization",
+    requires: { allOf: [["nobleman_munchang"]] },
+    interactionType: "expression",
     sajuEntryIds: ["nobleman_munchang"],
     mbtiTypes: ["INTJ", "INTP", "ENTJ", "ENTP", "INFJ", "INFP", "ENFJ", "ENFP"],
     requiredSajuTags: ["precision_skill"],
@@ -801,6 +909,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_cheoneul_fj_support",
     kind: "compensation",
+    requires: { allOf: [["nobleman_cheoneul"]] },
+    interactionType: "expression",
     sajuEntryIds: ["nobleman_cheoneul"],
     mbtiTypes: ["INFJ", "ENFJ", "ISFJ", "ESFJ", "ISTJ", "ESTJ"],
     requiredSajuTags: ["empathy_need"],
@@ -814,6 +924,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_jaego_tj_sj_storage",
     kind: "topic_specialization",
+    requires: { allOf: [["gwiin_jaego", "nobleman_jaego"]] },
+    interactionType: "expression",
     sajuEntryIds: ["gwiin_jaego", "nobleman_jaego"],
     mbtiTypes: ["INTJ", "ENTJ", "ISTJ", "ESTJ", "ISFJ", "ESFJ"],
     requiredSajuTags: ["asset_building"],
@@ -827,6 +939,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_f_metal_officer_coldness",
     kind: "contrast",
+    requires: { allOf: [["element_metal_strong", "ten_god_zheng_guan:strong", "ten_god_qi_sha:strong"]] },
+    interactionType: "tension",
     sajuEntryIds: ["element_metal_strong", "ten_god_zheng_guan", "ten_god_qi_sha"],
     mbtiTypes: ["INFJ", "INFP", "ENFJ", "ENFP", "ISFJ", "ISFP", "ESFJ", "ESFP"],
     requiredSajuTags: ["authority_orientation"],
@@ -841,6 +955,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_t_water_emotional_depth",
     kind: "contrast",
+    requires: { allOf: [["element_water:excess"], ["ten_god_zheng_yin:strong", "ten_god_pian_yin:strong"]] },
+    interactionType: "tension",
     sajuEntryIds: ["element_water", "ten_god_zheng_yin", "ten_god_pian_yin"],
     mbtiTypes: ["INTJ", "INTP", "ENTJ", "ENTP", "ISTJ", "ISTP", "ESTJ", "ESTP"],
     requiredSajuTags: ["emotional_depth"],
@@ -854,6 +970,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_p_zheng_guan_responsibility",
     kind: "contrast",
+    requires: { allOf: [["ten_god_zheng_guan:strong"]] },
+    interactionType: "tension",
     sajuEntryIds: ["ten_god_zheng_guan"],
     mbtiTypes: ["INTP", "ENTP", "INFP", "ENFP", "ISTP", "ESTP", "ISFP", "ESFP"],
     requiredSajuTags: ["responsibility_pressure"],
@@ -868,6 +986,9 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_j_yeokma_change",
     kind: "contrast",
+    requires: { allOf: [["sinsal_yeokma"]] },
+    availability: "needs_strength_evidence",
+    interactionType: "tension",
     sajuEntryIds: ["sinsal_yeokma"],
     mbtiTypes: ["INTJ", "ENTJ", "INFJ", "ENFJ", "ISTJ", "ESTJ", "ISFJ", "ESFJ"],
     requiredSajuTags: ["flexibility_need"],
@@ -882,6 +1003,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_i_dohwa_hongyeom_presence",
     kind: "contrast",
+    requires: { allOf: [["sinsal_dohwa", "sinsal_hongyeom"]] },
+    interactionType: "tension",
     sajuEntryIds: ["sinsal_dohwa", "sinsal_hongyeom"],
     mbtiTypes: ["INTJ", "INTP", "INFJ", "INFP", "ISTJ", "ISFJ", "ISTP", "ISFP"],
     requiredSajuTags: ["romantic_attraction"],
@@ -895,6 +1018,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_s_resource_munchang_planning",
     kind: "contrast",
+    requires: { allOf: [["ten_god_zheng_yin:strong"]] },
+    interactionType: "tension",
     sajuEntryIds: ["ten_god_zheng_yin", "nobleman_munchang"],
     mbtiTypes: ["ISTJ", "ISFJ", "ESTJ", "ESFJ", "ISTP", "ISFP", "ESTP", "ESFP"],
     requiredSajuTags: ["precision_skill"],
@@ -908,6 +1033,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_n_earth_excess_reality_weight",
     kind: "contrast",
+    requires: { allOf: [["element_earth_excess"]] },
+    interactionType: "tension",
     sajuEntryIds: ["element_earth_excess"],
     mbtiTypes: ["INTJ", "INTP", "ENTJ", "ENTP", "INFJ", "INFP", "ENFJ", "ENFP"],
     requiredSajuTags: ["responsibility_pressure"],
@@ -922,6 +1049,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_gwansal_honjob_relationship_pressure",
     kind: "compensation",
+    requires: { allOf: [["pattern_gwansal_honjob"]] },
+    interactionType: "expression",
     sajuEntryIds: ["pattern_gwansal_honjob"],
     requiredSajuTags: ["relationship_distance"],
     topic: "love_relationship",
@@ -935,6 +1064,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_siksang_saengjae_expression_money",
     kind: "topic_specialization",
+    requires: { allOf: [["pattern_siksang_saengjae"]] },
+    interactionType: "expression",
     sajuEntryIds: ["pattern_siksang_saengjae"],
     requiredSajuTags: ["money_orientation"],
     topic: "money_asset",
@@ -947,6 +1078,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_jaesaenggwan_role_reputation",
     kind: "topic_specialization",
+    requires: { allOf: [["pattern_jaesaenggwan"]] },
+    interactionType: "expression",
     sajuEntryIds: ["pattern_jaesaenggwan"],
     requiredSajuTags: ["authority_orientation"],
     topic: "work_career",
@@ -959,6 +1092,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_salin_growth_pressure",
     kind: "compensation",
+    requires: { allOf: [["pattern_salin_sangsaeng"]] },
+    interactionType: "expression",
     sajuEntryIds: ["pattern_salin_sangsaeng"],
     requiredSajuTags: ["growth_orientation"],
     topic: "study_growth",
@@ -971,6 +1106,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_singang_independence",
     kind: "reinforcement",
+    requires: { allOf: [["pattern_singang"]] },
+    interactionType: "expression",
     sajuEntryIds: ["pattern_singang"],
     requiredSajuTags: ["independence"],
     topic: "personality",
@@ -983,6 +1120,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_sinyak_support_need",
     kind: "compensation",
+    requires: { allOf: [["pattern_sinyak"]] },
+    interactionType: "expression",
     sajuEntryIds: ["pattern_sinyak"],
     requiredSajuTags: ["empathy_need"],
     topic: "final_advice",
@@ -995,6 +1134,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_toda_maegeum_standard_pressure",
     kind: "contrast",
+    requires: { allOf: [["pattern_toda_maegeum"]] },
+    interactionType: "expression",
     sajuEntryIds: ["pattern_toda_maegeum"],
     requiredSajuTags: ["responsibility_pressure"],
     topic: "weaknesses",
@@ -1008,6 +1149,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_geumda_mokjeol_correction",
     kind: "contrast",
+    requires: { allOf: [["pattern_geumda_mokjeol"]] },
+    interactionType: "expression",
     sajuEntryIds: ["pattern_geumda_mokjeol"],
     requiredSajuTags: ["direct_speech"],
     topic: "human_relations",
@@ -1020,6 +1163,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_mokda_hwasik_output",
     kind: "topic_specialization",
+    requires: { allOf: [["pattern_mokda_hwasik"]] },
+    interactionType: "expression",
     sajuEntryIds: ["pattern_mokda_hwasik"],
     requiredSajuTags: ["public_presence"],
     topic: "strengths",
@@ -1032,6 +1177,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_suda_mokbu_overthinking",
     kind: "compensation",
+    requires: { allOf: [["pattern_suda_mokbu"]] },
+    interactionType: "expression",
     sajuEntryIds: ["pattern_suda_mokbu"],
     requiredSajuTags: ["low_rest_capacity"],
     topic: "weaknesses",
@@ -1045,6 +1192,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_goegang_tj_force",
     kind: "reinforcement",
+    requires: { allOf: [["sinsal_goegang"]] },
+    interactionType: "agreement",
     sajuEntryIds: ["sinsal_goegang"],
     mbtiTypes: ["ENTJ", "ESTJ", "INTJ"],
     requiredSajuTags: ["leadership"],
@@ -1059,6 +1208,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_yangin_competition",
     kind: "compensation",
+    requires: { allOf: [["sinsal_yangin"]] },
+    interactionType: "expression",
     sajuEntryIds: ["sinsal_yangin"],
     requiredSajuTags: ["competition"],
     topic: "weaknesses",
@@ -1072,6 +1223,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_cheonmun_n_insight",
     kind: "topic_specialization",
+    requires: { allOf: [["sinsal_cheonmun"]] },
+    interactionType: "expression",
     sajuEntryIds: ["sinsal_cheonmun"],
     mbtiTypes: ["INTJ", "INTP", "INFJ", "INFP", "ENTP", "ENFP"],
     requiredSajuTags: ["strategic_thinking"],
@@ -1085,6 +1238,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_jangseong_leadership",
     kind: "reinforcement",
+    requires: { allOf: [["sinsal_jangseong"]] },
+    interactionType: "expression",
     sajuEntryIds: ["sinsal_jangseong"],
     requiredSajuTags: ["leadership"],
     topic: "work_career",
@@ -1097,6 +1252,8 @@ export const FUSION_KNOWLEDGE_BASE: readonly FusionKnowledgeRule[] = [
   createFusionRule({
     id: "fusion_banan_status_support",
     kind: "topic_specialization",
+    requires: { allOf: [["sinsal_banan"]] },
+    interactionType: "expression",
     sajuEntryIds: ["sinsal_banan"],
     requiredSajuTags: ["authority_orientation"],
     topic: "environment_luck",

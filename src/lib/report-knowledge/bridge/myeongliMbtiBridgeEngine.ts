@@ -1,10 +1,8 @@
+import { normalizeBridgeSignals, selectMatchedBridgeHints } from "./bridgeHintSelection";
 import {
-  getMbtiMyeongliBridgeHints,
   getMbtiRelationshipPair,
   getMbtiReportUseCase,
   getMbtiSourceProfile,
-  getMbtiTraitArea,
-  type MbtiMyeongliBridgeHint,
   type MbtiReportUseCaseKey,
   type MbtiSourceTraitItem,
   type MbtiSourceType,
@@ -15,7 +13,6 @@ import type {
   BuildMyeongliMbtiBridgePacketInput,
   MbtiTraitEvidence,
   MyeongliMbtiBridgeEvidence,
-  MyeongliMbtiBridgeIntensity,
   MyeongliMbtiBridgePacket,
   MyeongliSignal,
   MyeongliSignalKind,
@@ -69,20 +66,24 @@ export function buildMyeongliMbtiBridgePacket(
   const withMbtiType = relationshipPair?.withType ?? null;
   const reportUseCases =
     getMbtiReportUseCase(sourceProfile.type, reportUseCaseKey) ?? [];
-  const bridgeHints = selectBridgeHints(
-    getMbtiMyeongliBridgeHints(sourceProfile.type) ?? [],
-    input.myeongliSignals,
-  );
-  const traits = collectTraitEvidence(sourceProfile.type, input.productContext);
-  const intensity = resolveBridgeIntensity(
-    input.myeongliSignals.length,
-    relationshipPair !== null,
-  );
+  const signals = normalizeBridgeSignals(input.myeongliSignals);
+  const matches = selectMatchedBridgeHints({
+    mbtiType: sourceProfile.type, productContext: input.productContext,
+    factIds: new Set(signals.map((signal) => signal.id!)),
+    traitAreas: BRIDGE_PRODUCT_TRAIT_AREAS[input.productContext],
+  });
+  const bridgeHints = matches.map((match) => match.hint);
+  const traits = [...new Map(matches.flatMap((match) => match.traits).map(({ area, trait }) =>
+    [`${area}:${trait.id}`, normalizeTraitEvidence(area, trait)] as const)).values()];
+  const usedIds = new Set(matches.flatMap((match) => match.interaction.myeongliEvidenceIds));
+  const matchedSignals = signals.filter((signal) => usedIds.has(signal.id!));
+  const intensity = matches.some((match) => match.interaction.intensity === "medium") ? "medium" : "low";
   const evidence: MyeongliMbtiBridgeEvidence = {
     id: createBridgeEvidenceId(sourceProfile.type, input.productContext),
     productContext: input.productContext,
     mbtiType: sourceProfile.type,
-    signalKinds: uniqueSignalKinds(input.myeongliSignals),
+    signalKinds: uniqueSignalKinds(matchedSignals),
+    interactions: matches.map((match) => match.interaction),
     mbtiEvidence: {
       titleKo: sourceProfile.titleKo,
       archetype: sourceProfile.archetype,
@@ -93,14 +94,14 @@ export function buildMyeongliMbtiBridgePacket(
       relationshipPair,
     },
     myeongliEvidence: {
-      signals: input.myeongliSignals,
+      signals: matchedSignals,
       bridgeHints,
     },
     bridgeSummary: createBridgeSummary({
       mbtiType: sourceProfile.type,
       productContext: input.productContext,
       reportUseCaseKey,
-      signalCount: input.myeongliSignals.length,
+      signalCount: matchedSignals.length,
       traitCount: traits.length,
       hasRelationshipPair: relationshipPair !== null,
     }),
@@ -115,21 +116,10 @@ export function buildMyeongliMbtiBridgePacket(
     sourceProfile,
     withMbtiType,
     relationshipPair,
-    evidences: [evidence],
-    isEmpty: false,
+    evidences: matches.length ? [evidence] : [],
+    isEmpty: matches.length === 0,
     unknownType: false,
   };
-}
-
-function collectTraitEvidence(
-  mbtiType: MbtiSourceType,
-  productContext: BridgeProductContext,
-): readonly MbtiTraitEvidence[] {
-  return BRIDGE_PRODUCT_TRAIT_AREAS[productContext].flatMap((area) =>
-    (getMbtiTraitArea(mbtiType, area) ?? []).map((trait) =>
-      normalizeTraitEvidence(area, trait),
-    ),
-  );
 }
 
 function normalizeTraitEvidence(
@@ -149,37 +139,6 @@ function normalizeTraitEvidence(
     sourceCoverage: trait.sourceCoverage ?? null,
     source: trait,
   };
-}
-
-function selectBridgeHints(
-  bridgeHints: readonly MbtiMyeongliBridgeHint[],
-  signals: readonly MyeongliSignal[],
-): readonly MbtiMyeongliBridgeHint[] {
-  if (signals.length === 0) {
-    return bridgeHints;
-  }
-
-  const signalTokens = new Set(
-    signals.flatMap((signal) => [signal.label, signal.value]).filter(isString),
-  );
-  const matchedHints = bridgeHints.filter((hint) => signalTokens.has(hint.signal));
-
-  return matchedHints.length > 0 ? matchedHints : bridgeHints;
-}
-
-function resolveBridgeIntensity(
-  signalCount: number,
-  hasRelationshipPair: boolean,
-): MyeongliMbtiBridgeIntensity {
-  if (signalCount >= 3) {
-    return "high";
-  }
-
-  if (signalCount >= 1 || hasRelationshipPair) {
-    return "medium";
-  }
-
-  return "low";
 }
 
 function uniqueSignalKinds(
@@ -212,8 +171,4 @@ function createBridgeSummary(input: {
     `${input.signalCount} myeongli signals`,
     `${input.traitCount} MBTI traits${pairNote}`,
   ].join(" · ");
-}
-
-function isString(value: string | undefined): value is string {
-  return typeof value === "string" && value.length > 0;
 }

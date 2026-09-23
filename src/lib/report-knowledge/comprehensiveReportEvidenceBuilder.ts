@@ -1,3 +1,5 @@
+import { fusionFactIds } from "./fusionFactContext";
+import type { ComputedSajuFacts } from "./sajuComputedFactsTypes";
 import type {
   EvidenceRole,
   ComprehensiveReportEvidencePacket,
@@ -73,13 +75,13 @@ function getSectionTopic(
 }
 
 function getFusionEvidenceRole(rule: FusionKnowledgeRule): EvidenceRole {
-  if (rule.kind === "reinforcement") {
+  if (rule.interactionType === "agreement" || rule.interactionType === "amplification") {
     return "fusion_reinforcement";
   }
-  if (rule.kind === "contrast") {
+  if (rule.interactionType === "tension") {
     return "fusion_contrast";
   }
-  if (rule.kind === "compensation") {
+  if (rule.interactionType === "compensation") {
     return "fusion_compensation";
   }
 
@@ -161,6 +163,7 @@ function buildFusionEvidenceItems(input: {
   return input.rules.map((rule) => ({
     role: getFusionEvidenceRole(rule),
     sourceId: rule.id,
+    ...(rule.match ? { interaction: rule.match } : {}),
     sourceLabelKo: rule.summary,
     summary: rule.interpretation,
     topic: input.topic,
@@ -175,18 +178,21 @@ function buildFusionEvidenceItems(input: {
 function getFusionRulesForSection(input: {
   readonly sectionDefinition: ComprehensiveReportSectionDefinition;
   readonly sajuEntryIds: readonly string[];
+  readonly computedFacts?: ComputedSajuFacts;
   readonly mbtiType: MbtiType;
   readonly topic: SajuKnowledgeTopic;
 }): readonly FusionKnowledgeRule[] {
   if (input.sectionDefinition.id === "saju_mbti_fusion") {
     return findFusionRules({
       sajuEntryIds: input.sajuEntryIds,
+      computedFacts: input.computedFacts,
       mbtiType: input.mbtiType,
     });
   }
 
   return findFusionRules({
     sajuEntryIds: input.sajuEntryIds,
+    computedFacts: input.computedFacts,
     mbtiType: input.mbtiType,
     topic: input.topic,
   });
@@ -228,6 +234,7 @@ function buildSectionEvidence(input: {
   readonly sajuEntries: readonly SajuKnowledgeEntry[];
   readonly mbtiEntry?: MbtiKnowledgeEntry;
   readonly sajuEntryIds: readonly string[];
+  readonly computedFacts?: ComputedSajuFacts;
   readonly sajuTags: readonly InterpretationTagId[];
   readonly mbtiTags: readonly InterpretationTagId[];
 }): ComprehensiveReportSectionEvidence {
@@ -271,6 +278,7 @@ function buildSectionEvidence(input: {
       : getFusionRulesForSection({
           sectionDefinition: input.sectionDefinition,
           sajuEntryIds: input.sajuEntryIds,
+          computedFacts: input.computedFacts,
           mbtiType: input.mbtiEntry.type,
           topic,
         });
@@ -294,6 +302,7 @@ function buildSectionEvidence(input: {
 export function buildComprehensiveReportEvidencePacket(input: {
   readonly mbtiType: MbtiType | "";
   readonly sajuEntryIds: readonly string[];
+  readonly computedFacts?: ComputedSajuFacts;
 }): ComprehensiveReportEvidencePacket {
   const sajuEntries = getSajuKnowledgeByIds(input.sajuEntryIds);
   const mbtiEntry = input.mbtiType ? getMbtiKnowledge(input.mbtiType) : undefined;
@@ -305,6 +314,7 @@ export function buildComprehensiveReportEvidencePacket(input: {
       sajuEntries,
       mbtiEntry,
       sajuEntryIds: input.sajuEntryIds,
+      computedFacts: input.computedFacts,
       sajuTags,
       mbtiTags,
     }),
@@ -317,6 +327,7 @@ export function buildComprehensiveReportEvidencePacket(input: {
 
   return {
     mbtiType: input.mbtiType,
+    bridgeFactIds: [...fusionFactIds(input.sajuEntryIds, input.computedFacts)],
     sajuEntryIds: input.sajuEntryIds,
     sections,
     globalWarnings,

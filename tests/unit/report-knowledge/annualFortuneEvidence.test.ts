@@ -236,13 +236,11 @@ describe("annualFortuneEvidence", () => {
       majorGanji: "戊辰",
       annualGanji: "丙午",
     });
-    expect(JSON.stringify(packet.bridgeEvidence)).toContain(
-      "saeun-current-major-fortune",
-    );
-    expect(JSON.stringify(packet.bridgeEvidence)).toContain(
-      "saeun-major-annual-cross",
-    );
-    expect(JSON.stringify(packet.bridgeEvidence)).toContain("saeun-month-12");
+    expect(packet.monthlyFortunes).toHaveLength(12);
+    for (const item of packet.bridgeEvidence?.primaryEvidence ?? []) {
+      const ids = new Set(item.evidence.myeongliEvidence.signals.map((signal) => signal.id));
+      expect(item.evidence.interactions?.every((interaction) => interaction.myeongliEvidenceIds.every((id) => ids.has(id)))).toBe(true);
+    }
   });
 
   it("builds context translation hints by life status", () => {
