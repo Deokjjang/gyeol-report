@@ -18,7 +18,7 @@ describe("loveMarriageChildReportTypes source contract", () => {
       "readonly name: string",
       "readonly gender?: LoveMarriageChildGender | null",
       "readonly mbtiType?: string | null",
-      "readonly relationshipStatus?: UserRelationshipStatus | null",
+      "readonly relationshipStatus?: UserRelationshipStatus | \"some\" | \"marriage_preparing\" | null",
     ]) {
       expect(source).toContain(marker);
     }

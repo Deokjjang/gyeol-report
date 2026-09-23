@@ -531,7 +531,7 @@ export async function generateLoveMarriageChildReportDraft(input: {
     parsed: parseJson(rawText),
     evidencePacket: input.evidencePacket,
   });
-  const validation = validateLoveMarriageChildReportDraft(parsed);
+  const validation = validateLoveMarriageChildReportDraft(parsed, input.evidencePacket);
 
   if (!validation.ok) {
     throw new LoveMarriageChildReportWriterFailure({

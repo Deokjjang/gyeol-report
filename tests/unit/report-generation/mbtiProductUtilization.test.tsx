@@ -101,7 +101,9 @@ describe("source MBTI knowledge: 51 customers x six paid products", () => {
       if (!source) { expect(Object.values(e.mbtiBasis).every(v=>v.length===0)).toBe(true); return; }
       for (const field of ["loveTraits","marriageTraits","communicationTraits","relationshipTraits","parentingTraits","growth"] as const) {
         expect(e.mbtiBasis[field].length).toBeGreaterThan(0);
-        expect(html).toContain(renderToStaticMarkup(createElement("span", null, e.mbtiBasis[field][0].plain)).slice(6, -7));
+        // Growth assets for work/study remain available but are not copied into relationship recovery.
+        const reading = field === "growth" ? e.relationshipReading!.recoveryTraits[0] : e.mbtiBasis[field][0];
+        if (reading) expect(html).toContain(renderToStaticMarkup(createElement("span", null, reading.plain)).slice(6, -7));
       }
     } else if (product === "saju_mbti_compatibility") {
       const e=result.evidencePacket as CompatibilityEvidencePacket;

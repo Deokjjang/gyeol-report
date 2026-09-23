@@ -4,6 +4,7 @@ import type {
   TenGod,
 } from "./annualFortuneTypes";
 import type { ProductBridgeEvidencePacket } from "./bridge/types";
+import type { LoveRelationshipSelection } from "./loveRelationshipSelection";
 import type { UserRelationshipStatus } from "./userContextTypes";
 
 export type LoveMarriageChildReportProductType = "love_marriage_child";
@@ -24,7 +25,7 @@ export interface LoveMarriageChildPersonContext {
   readonly name: string;
   readonly gender?: LoveMarriageChildGender | null;
   readonly mbtiType?: string | null;
-  readonly relationshipStatus?: UserRelationshipStatus | null;
+  readonly relationshipStatus?: UserRelationshipStatus | "some" | "marriage_preparing" | null;
 }
 
 export interface LoveMarriageChildSajuSignal {
@@ -110,6 +111,7 @@ export interface LoveMarriageChildReportEvidencePacket {
   readonly sajuBasis: LoveMarriageChildSajuBasis;
   readonly mbtiBasis: LoveMarriageChildMbtiBasis;
   readonly bridgeEvidence?: LoveMarriageChildBridgeEvidence;
+  readonly relationshipReading?: LoveRelationshipSelection;
   readonly timingHints: readonly LoveMarriageChildTimingHint[];
   readonly safetyNotes: readonly string[];
 }

@@ -28,7 +28,7 @@ import type {
 import {
   LOVE_MARRIAGE_CHILD_FORBIDDEN_EXPRESSIONS,
 } from "./loveMarriageChildReportTypes";
-import type { UserRelationshipStatus } from "./userContextTypes";
+import { selectLoveRelationshipEvidence } from "./loveRelationshipSelection";
 
 export interface LoveMarriageChildSajuEvidenceInput {
   readonly dayMaster?: HeavenlyStem;
@@ -46,7 +46,7 @@ export interface BuildLoveMarriageChildReportEvidenceInput {
   readonly name: string;
   readonly gender?: LoveMarriageChildGender | null;
   readonly mbtiType?: string | null;
-  readonly relationshipStatus?: UserRelationshipStatus | null;
+  readonly relationshipStatus?: LoveMarriageChildReportEvidencePacket["personContext"]["relationshipStatus"];
   readonly saju: LoveMarriageChildSajuEvidenceInput;
 }
 
@@ -161,7 +161,7 @@ export function buildLoveMarriageChildReportEvidence(
     "loveMarriageChild",
   ) as LoveMarriageChildBridgeEvidence;
 
-  return {
+  const packet: LoveMarriageChildReportEvidencePacket = {
     productType: "love_marriage_child",
     productVersion: "v1",
     personContext: {
@@ -193,6 +193,7 @@ export function buildLoveMarriageChildReportEvidence(
     }),
     safetyNotes: [...defaultSafetyNotes],
   };
+  return { ...packet, relationshipReading: selectLoveRelationshipEvidence(packet) };
 }
 
 function normalizeFullPillars(

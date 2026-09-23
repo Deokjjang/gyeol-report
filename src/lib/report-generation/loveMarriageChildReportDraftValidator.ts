@@ -1,3 +1,4 @@
+import type { LoveMarriageChildReportEvidencePacket } from "../report-knowledge/loveMarriageChildReportTypes";
 import {
   loveMarriageChildActionPlanLabels,
   type LoveMarriageChildReportDraft,
@@ -40,7 +41,7 @@ function asStringArray(value: unknown): readonly string[] {
 }
 
 function serialized(value: unknown): string {
-  return JSON.stringify(value);
+  return JSON.stringify(value) ?? "";
 }
 
 function hasAllActionPlanLabels(actionPlan: unknown): boolean {
@@ -102,6 +103,7 @@ function validateArraySection(input: {
 
 export function validateLoveMarriageChildReportDraft(
   value: unknown,
+  evidence?: LoveMarriageChildReportEvidencePacket,
 ): LoveMarriageChildReportDraftValidationResult {
   const errors: string[] = [];
   const warnings: string[] = [];
@@ -185,6 +187,15 @@ export function validateLoveMarriageChildReportDraft(
   }
   if (unsafeBreakupReunionPattern.test(text)) {
     errors.push("LOVE_MARRIAGE_CHILD_REPORT_UNSAFE_BREAKUP_REUNION_CLAIM");
+  }
+
+  if (evidence?.relationshipReading) {
+    const permittedTypes = new Set([evidence.personContext.mbtiType, ...evidence.relationshipReading.partnerExamples.map(p => p.exampleType)].filter(Boolean));
+    // Type examples belong only to the customer's actual pair selection; no hardcoded quartet.
+    for (const match of serialized(value.attractionPattern).matchAll(/\b[IE][NS][TF][JP]\b/gu)) {
+      if (!permittedTypes.has(match[0])) errors.push("LOVE_MARRIAGE_CHILD_UNSUPPORTED_PARTNER_TYPE");
+    }
+    if (serialized(value.attractionPattern).includes("천생연분")) errors.push("LOVE_MARRIAGE_CHILD_DETERMINISTIC_PARTNER");
   }
 
   if (errors.length > 0) {

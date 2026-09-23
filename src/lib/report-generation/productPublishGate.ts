@@ -1,3 +1,4 @@
+import type { LoveMarriageChildReportEvidencePacket } from "../report-knowledge/loveMarriageChildReportTypes";
 import type { AnnualFortuneEvidencePacket } from "../report-knowledge/annualFortuneEvidence";
 import { publicationBirthTimeContexts, publishedPillarMatches } from "./birthTimePublication";
 import { validateDayunPublication } from "./dayunPublication";
@@ -59,7 +60,7 @@ export function validateProductPublication(product: string, draft: unknown, evid
   const validators: Record<string, (value: unknown) => { ok: boolean; errors: readonly string[] }> = {
     saju_mbti_full: validateComprehensiveReportDraft,
     career_money_study: (value) => validateCareerReportDraft(value, evidence),
-    love_marriage_child: validateLoveMarriageChildReportDraft,
+    love_marriage_child: (value) => validateLoveMarriageChildReportDraft(value, evidence as LoveMarriageChildReportEvidencePacket),
     saju_mbti_compatibility: (value) => validateCompatibilityReportDraft(value, {
       evidencePacket: evidence as CompatibilityEvidencePacket,
       allowedSajuTerms: deriveAllowedCompatibilitySajuTerms(evidence as CompatibilityEvidencePacket),
