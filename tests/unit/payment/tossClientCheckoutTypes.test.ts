@@ -19,6 +19,7 @@ const requestDraft = {
   provider: "toss",
   clientKey: "test_client_key",
   requestPayment: {
+    method: "CARD",
     orderId: "provider_order_toss_client_type_test",
     orderName: "사주×MBTI 종합 리포트",
     amount: {
@@ -46,6 +47,7 @@ describe("Toss client checkout types", () => {
     const input = {
       tossCheckoutRequest: requestDraft,
       customerKey: "customer_key_type_test",
+      easyPay: "TOSSPAY",
       loadTossPayments: async () => sdk,
     } satisfies TossClientCheckoutLaunchInput;
     const result = {

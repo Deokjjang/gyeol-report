@@ -58,6 +58,7 @@
 .checkbox { display: flex; align-items: flex-start; gap: 12px; min-height: 44px; padding: 8px 0; font-size: 14px; line-height: 1.7; color: #493b32; cursor: pointer; }
 .checkbox input { flex-shrink: 0; width: 18px; height: 18px; margin-top: 4px; accent-color: #7f1d38; }
 .checkbox:has(input:disabled) { opacity: .6; cursor: not-allowed; }
+.paymentMethods { display: grid; gap: 10px; }
 .submit { display: flex; justify-content: space-between; width: 100%; min-height: 54px; padding: 15px 20px; border-radius: 3px; background: #7f1d38; color: #fffaf3; font-size: 16px; font-weight: 600; transition: background-color 180ms ease, transform 180ms ease; }
 .submit:disabled { background: #e2d9cd; color: #74695e; cursor: not-allowed; }
 .submit:not(:disabled):active { transform: scale(.99); }

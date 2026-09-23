@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId, useRef, useState } from "react";
 import { createCheckoutConsentAssertion, calculateCheckoutAge, getCheckoutAgeGateStatus, type CheckoutLegalConfirmations, type CheckoutAgeGateStatus } from "../../lib/payment/checkoutConsent";
 import styles from "./paidFunnel.module.css";
 import { getReportProduct } from "../../lib/payment/reportProductCatalog";
@@ -9,8 +9,8 @@ import { prePaymentPrivacyNoticeKo } from "../../lib/legal/privacyPolicy";
 import { prePaymentRefundNoticeKo } from "../../lib/legal/refundPolicy";
 import type { ReportProductType } from "../../lib/payment/reportProductTypes";
 import { loadTossPaymentsBrowserSdk } from "../../lib/payment/tossBrowserSdkLoader";
-import { launchTossCheckout } from "../../lib/payment/tossClientCheckoutLauncher";
-import type { TossClientCheckoutLaunchResult, TossClientSdkLoader } from "../../lib/payment/tossClientCheckoutTypes";
+import { isSupportedEasyPay, launchTossCheckout } from "../../lib/payment/tossClientCheckoutLauncher";
+import type { SupportedEasyPay, TossClientCheckoutLaunchResult, TossClientSdkLoader } from "../../lib/payment/tossClientCheckoutTypes";
 
 const DEV_TOSS_CHECKOUT_CUSTOMER_KEY = "gyeol_local_test_customer";
 const DEV_TOSS_CHECKOUT_ERROR_MESSAGE =
@@ -70,6 +70,7 @@ export type DevTossCheckoutLauncherRuntime = {
 
 type DevTossCheckoutRunOptions = {
   readonly productType?: ReportProductType;
+  readonly easyPay: SupportedEasyPay;
 };
 
 export type DevTossCheckoutLegalConfirmations = CheckoutLegalConfirmations;
@@ -175,8 +176,11 @@ export async function runDevTossCheckout(
   inputSnapshot: DevTossCheckoutInputSnapshot,
   legalConfirmations: DevTossCheckoutLegalConfirmations,
   runtime: DevTossCheckoutLauncherRuntime = defaultRuntime,
-  options: DevTossCheckoutRunOptions = {},
+  options: DevTossCheckoutRunOptions,
 ): Promise<DevTossCheckoutLauncherResult> {
+  if (!isSupportedEasyPay(options?.easyPay)) {
+    return createFailureResult();
+  }
   if (!isDevTossCheckoutInputComplete(inputSnapshot)) {
     return createFailureResult(REQUIRED_CHECKOUT_INPUT_MESSAGE_KO);
   }
@@ -240,6 +244,7 @@ export async function runDevTossCheckout(
       tossCheckoutRequest: body.tossCheckoutRequest,
       // TODO: production customerKey must be stable and non-guessable.
       customerKey: DEV_TOSS_CHECKOUT_CUSTOMER_KEY,
+      easyPay: options.easyPay,
       loadTossPayments: runtime.loadTossPayments,
     });
   } catch {
@@ -260,7 +265,6 @@ export default function DevTossCheckoutLauncher({
   inputSnapshot,
   productType = "saju_mbti_full",
   productLabelKo = "사주×MBTI 종합 리포트",
-  ctaLabelKo,
   disabled = false,
   disabledMessageKo = REQUIRED_CHECKOUT_INPUT_MESSAGE_KO,
   onEditInput,
@@ -269,6 +273,7 @@ export default function DevTossCheckoutLauncher({
   const noticeId = useId();
   const priceLabel = getReportProduct(productType)?.priceLabelKo ?? "";
   const [isLaunching, setIsLaunching] = useState(false);
+  const launchInFlight = useRef(false);
   const [legalConfirmations, setLegalConfirmations] =
     useState<DevTossCheckoutLegalConfirmations>(
       emptyDevTossCheckoutLegalConfirmations,
@@ -298,11 +303,12 @@ export default function DevTossCheckoutLauncher({
     }));
   }
 
-  async function handleLaunch() {
-    if (isLaunching || !canLaunchCheckout) {
+  async function handleLaunch(easyPay: SupportedEasyPay) {
+    if (launchInFlight.current || isLaunching || !canLaunchCheckout) {
       return;
     }
 
+    launchInFlight.current = true;
     setIsLaunching(true);
     setErrorMessage("");
     setStatusMessage("");
@@ -311,17 +317,18 @@ export default function DevTossCheckoutLauncher({
       inputSnapshot,
       legalConfirmations,
       defaultRuntime,
-      { productType },
+      { productType, easyPay },
     );
 
     if (!result.ok) {
+      launchInFlight.current = false;
       setErrorMessage(result.messageKo);
       setIsLaunching(false);
       return;
     }
 
     setStatusMessage("Toss 결제창 요청을 보냈습니다.");
-    setIsLaunching(false);
+    // Keep both methods locked while the successful redirect is pending.
   }
 
   const reviewReady = isInputComplete && !disabled;
@@ -451,16 +458,25 @@ export default function DevTossCheckoutLauncher({
                 ? REQUIRED_CONFIRMATION_MESSAGE_KO
                 : "입력 정보와 결제금액을 확인했습니다. 결제를 진행해 주세요."}
       </p>
-      <button
-        type="button"
-        disabled={isLaunching || !canLaunchCheckout}
-        aria-describedby={noticeId}
-        onClick={() => void handleLaunch()}
-        className={styles.submit}
-      >
-        {isLaunching ? "Toss 결제창 여는 중..." : (ctaLabelKo ?? `${priceLabel} 결제하기`)}
-        <span aria-hidden="true">→</span>
-      </button>
+      <div className={styles.paymentMethods} aria-label="간편결제 선택" aria-busy={isLaunching}>
+        {([
+          { easyPay: "TOSSPAY", label: "토스페이로 결제" },
+          { easyPay: "KAKAOPAY", label: "카카오페이로 결제" },
+        ] as const).map(({ easyPay, label }) => (
+          <button
+            key={easyPay}
+            type="button"
+            data-easy-pay={easyPay}
+            disabled={isLaunching || !canLaunchCheckout}
+            aria-describedby={noticeId}
+            onClick={() => void handleLaunch(easyPay)}
+            className={styles.submit}
+          >
+            {isLaunching ? "Toss 결제창 여는 중..." : label}
+            <span aria-hidden="true">→</span>
+          </button>
+        ))}
+      </div>
       {errorMessage ? <p role="alert" className={styles.error}>{errorMessage}</p> : null}
       {statusMessage ? <p role="status" className={styles.notice}>{statusMessage}</p> : null}
     </section>

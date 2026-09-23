@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { describe, expect, it, vi } from "vitest";
 
 import { launchTossCheckout } from "../../../src/lib/payment/tossClientCheckoutLauncher";
-import type { TossClientCheckoutLaunchResult } from "../../../src/lib/payment/tossClientCheckoutTypes";
+import type { TossClientCheckoutLaunchResult, TossClientPaymentWindow } from "../../../src/lib/payment/tossClientCheckoutTypes";
 import type { TossCheckoutRequestDraft } from "../../../src/lib/payment/tossCheckoutRequestTypes";
 
 const source = [
@@ -42,7 +42,7 @@ function createLaunchHarness(input?: {
   readonly requestPaymentError?: Error;
   readonly sdkLoadError?: Error;
 }) {
-  const requestPayment = vi.fn(async () => {
+  const requestPayment = vi.fn<TossClientPaymentWindow["requestPayment"]>(async () => {
     if (input?.requestPaymentError !== undefined) {
       throw input.requestPaymentError;
     }
@@ -72,10 +72,12 @@ function createLaunchInput(
 ): {
   readonly tossCheckoutRequest: TossCheckoutRequestDraft;
   readonly customerKey: string;
+  readonly easyPay: "TOSSPAY";
   readonly loadTossPayments: typeof harness.loadTossPayments;
 } {
   return {
     tossCheckoutRequest: requestDraft,
+    easyPay: "TOSSPAY",
     customerKey: "customer_key_launcher_test",
     loadTossPayments: harness.loadTossPayments,
   };
@@ -96,6 +98,31 @@ function expectError(
 }
 
 describe("Toss client checkout launcher", () => {
+  it.each(["TOSSPAY", "KAKAOPAY"] as const)("opens only %s DIRECT and preserves every prepared server field", async easyPay => {
+    const harness = createLaunchHarness();
+    const result = await launchTossCheckout({
+      ...createLaunchInput(harness), easyPay,
+      amount: 1, orderId: "ignored-client-override", successUrl: "https://ignored.example",
+      tossCheckoutRequest: {
+        ...requestDraft,
+        requestPayment: { ...requestDraft.requestPayment, card: { flowMode: "DEFAULT", easyPay: "NAVERPAY" } },
+      },
+    });
+    expect(result.ok).toBe(true);
+    expect(harness.requestPayment).toHaveBeenCalledTimes(1);
+    expect(harness.requestPayment).toHaveBeenCalledWith({
+      ...requestDraft.requestPayment, card: { flowMode: "DIRECT", easyPay },
+    });
+  });
+
+  it.each([undefined, null, "", "NAVERPAY", "SAMSUNGPAY", "APPLEPAY", "CARD", "kakaopay", {}])("rejects unsupported easyPay %j before loading any SDK", async easyPay => {
+    const harness = createLaunchHarness();
+    expectError(await launchTossCheckout({ ...createLaunchInput(harness), easyPay }), "TOSS_CLIENT_CHECKOUT_INVALID_REQUEST");
+    expect(harness.loadTossPayments).not.toHaveBeenCalled();
+    expect(harness.payment).not.toHaveBeenCalled();
+    expect(harness.requestPayment).not.toHaveBeenCalled();
+  });
+
   it("loads the Toss SDK with client key and requests redirect checkout", async () => {
     const harness = createLaunchHarness();
     const result = await launchTossCheckout(createLaunchInput(harness));
@@ -109,10 +136,7 @@ describe("Toss client checkout launcher", () => {
       customerKey: "customer_key_launcher_test",
     });
     expect(harness.requestPayment).toHaveBeenCalledWith(
-      requestDraft.requestPayment,
-    );
-    expect(JSON.stringify(harness.requestPayment.mock.calls[0]?.[0])).not.toContain(
-      "flow" + "Mode",
+      { ...requestDraft.requestPayment, card: { flowMode: "DIRECT", easyPay: "TOSSPAY" } },
     );
   });
 

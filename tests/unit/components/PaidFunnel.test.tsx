@@ -9,6 +9,9 @@ import Launcher from "../../../src/components/payment/DevTossCheckoutLauncher";
 import { getReportProduct } from "../../../src/lib/payment/reportProductCatalog";
 import { prePaymentRefundNoticeKo } from "../../../src/lib/legal/refundPolicy";
 import { MBTI_TYPES } from "../../../src/lib/report-generation/reportInputTypes";
+import { loadTossPaymentsBrowserSdk } from "../../../src/lib/payment/tossBrowserSdkLoader";
+
+vi.mock("../../../src/lib/payment/tossBrowserSdkLoader", () => ({ loadTossPaymentsBrowserSdk: vi.fn() }));
 
 // A deterministic hook harness exercises the existing event handlers without a browser or providers.
 const hooks = vi.hoisted(() => ({ slots: [] as unknown[], cursor: 0, product: "saju-mbti-full" }));
@@ -16,6 +19,11 @@ vi.mock("react", async (importOriginal) => ({
   ...await importOriginal<typeof import("react")>(),
   use: () => ({ product: hooks.product }),
   useId: () => "checkout-notice",
+  useRef: (initial: unknown) => {
+    const index = hooks.cursor++;
+    if (!(index in hooks.slots)) hooks.slots[index] = { current: initial };
+    return hooks.slots[index];
+  },
   useEffect: (effect: () => void | (() => void), deps: unknown[]) => {
     const index = hooks.cursor++;
     const previous = hooks.slots[index] as { deps: unknown[]; cleanup?: () => void } | undefined;
@@ -86,10 +94,52 @@ beforeEach(() => {
   hooks.slots = []; hooks.cursor = 0; hooks.product = "saju-mbti-full";
   vi.useFakeTimers(); vi.setSystemTime(new Date("2026-09-21T12:00:00+09:00"));
   vi.stubGlobal("fetch", vi.fn(async () => Response.json({ ok: true })));
+  vi.mocked(loadTossPaymentsBrowserSdk).mockReset();
 });
 afterEach(() => { vi.clearAllTimers(); vi.useRealTimers(); vi.unstubAllGlobals(); });
 
 describe("paid funnel contracts and progressive review", () => {
+  it.each(["TOSSPAY", "KAKAOPAY"] as const)("locks both buttons immediately and through redirect for %s", async easyPay => {
+    complete(); await settleReadiness(); agreeAll();
+    let releasePrepare!: (response: Response) => void;
+    let releaseRedirect!: () => void;
+    const requestPayment = vi.fn(() => new Promise<void>(resolve => { releaseRedirect = resolve; }));
+    vi.mocked(loadTossPaymentsBrowserSdk).mockResolvedValue({ payment: () => ({ requestPayment }) });
+    vi.mocked(fetch).mockImplementation(() => new Promise(resolve => { releasePrepare = resolve; }));
+    const buttons = elements(checkout().tree).filter(el => el.props["data-easy-pay"]);
+    expect(buttons).toHaveLength(2);
+    const click = (el: ReactElement<Props>) => (el.props.onClick as () => void)();
+    const selected = buttons.find(el => el.props["data-easy-pay"] === easyPay)!;
+    click(selected); click(selected); click(buttons.find(el => el !== selected)!);
+    expect(fetch).toHaveBeenCalledTimes(1);
+    expect(elements(checkout().tree).filter(el => el.props["data-easy-pay"]).every(el => el.props.disabled)).toBe(true);
+    releasePrepare(Response.json({ ok: true, tossCheckoutRequest: {
+      provider: "toss", clientKey: "synthetic-client", metadata: { paymentOrderId: "order_qa", productType: "saju_mbti_full" },
+      requestPayment: { method: "CARD", orderId: "provider_qa", orderName: "종합", amount: { currency: "KRW", value: 1290 }, customerName: "합성 고객", successUrl: "https://example.test/payments/toss/success", failUrl: "https://example.test/payments/toss/fail" },
+    } }));
+    await vi.advanceTimersByTimeAsync(0);
+    expect(requestPayment).toHaveBeenCalledTimes(1);
+    expect(requestPayment).toHaveBeenCalledWith(expect.objectContaining({ card: { flowMode: "DIRECT", easyPay } }));
+    releaseRedirect(); await vi.advanceTimersByTimeAsync(0);
+    click(selected); // Even an old handler cannot launch again while redirect is pending.
+    expect(fetch).toHaveBeenCalledTimes(1);
+    expect(elements(checkout().tree).filter(el => el.props["data-easy-pay"]).every(el => el.props.disabled)).toBe(true);
+  });
+
+  it("unlocks both choices after a failed prepare and permits one new selection", async () => {
+    complete(); await settleReadiness(); agreeAll();
+    vi.mocked(fetch).mockResolvedValue(Response.json({ ok: false }, { status: 503 }));
+    (paymentButton()!.props.onClick as () => void)();
+    await vi.advanceTimersByTimeAsync(0);
+    const buttons = elements(checkout().tree).filter(el => el.props["data-easy-pay"]);
+    expect(buttons.every(el => el.props.disabled === false)).toBe(true);
+    expect(JSON.stringify(checkout().tree)).toContain("결제창을 시작하지 못했습니다.");
+    (buttons[1].props.onClick as () => void)();
+    expect(fetch).toHaveBeenCalledTimes(2);
+    expect(loadTossPaymentsBrowserSdk).not.toHaveBeenCalled();
+    await vi.advanceTimersByTimeAsync(0);
+  });
+
   it.each(products)("%s offers 16 MBTI types plus unknown with the existing empty-value contract", async (slug) => {
     hooks.product = slug;
     const names = slug === "compatibility" ? ["personAMbtiType", "personBMbtiType"] : ["mbtiType"];

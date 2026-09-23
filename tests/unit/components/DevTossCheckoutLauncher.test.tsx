@@ -43,6 +43,7 @@ function createTossRequestDraft(): Record<string, unknown> {
     provider: "toss",
     clientKey: "test_client_key",
     requestPayment: {
+      method: "CARD",
       orderId: "provider_order_test_1",
       orderName: "사주×MBTI 종합 리포트",
       amount: {
@@ -195,6 +196,40 @@ afterEach(() => {
 });
 
 describe("DevTossCheckoutLauncher", () => {
+  it.each(["TOSSPAY", "KAKAOPAY"] as const)("passes %s to the real launcher without changing the prepare contract", async easyPay => {
+    const launcherModule = await importLauncherModule();
+    const { launchTossCheckout } = await import("../../../src/lib/payment/tossClientCheckoutLauncher");
+    const harness = createHarness();
+    const result = await launcherModule.runDevTossCheckout(validInputSnapshot, launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
+      { ...harness.runtime, launchTossCheckout }, { easyPay });
+    expect(result.ok).toBe(true);
+    expect(harness.fetchCalls).toHaveLength(1);
+    expect(parseRequestBody(harness.fetchCalls[0].init)).toEqual({ provider: "toss", productType: "saju_mbti_full", inputSnapshot: validInputSnapshot, consent: adultCheckoutConsent() });
+    expect(harness.requestPayment).toHaveBeenCalledExactlyOnceWith({
+      ...(createTossRequestDraft().requestPayment as object), card: { flowMode: "DIRECT", easyPay },
+    });
+  });
+
+  it("rejects an unsupported method before preparing an order", async () => {
+    const launcherModule = await importLauncherModule();
+    const harness = createHarness();
+    const result = await launcherModule.runDevTossCheckout(validInputSnapshot, launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
+      harness.runtime, { easyPay: "NAVERPAY" as never });
+    expect(result.ok).toBe(false);
+    expect(harness.fetchCalls).toHaveLength(0);
+    expect(harness.launchInputs).toHaveLength(0);
+  });
+
+  it.each(["sdkLoadError", "requestPaymentError"] as const)("keeps the customer error safe for %s", async failure => {
+    const launcherModule = await importLauncherModule();
+    const { launchTossCheckout } = await import("../../../src/lib/payment/tossClientCheckoutLauncher");
+    const harness = createHarness({ [failure]: new Error("private transport detail") });
+    const result = await launcherModule.runDevTossCheckout(validInputSnapshot, launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
+      { ...harness.runtime, launchTossCheckout }, { easyPay: "KAKAOPAY" });
+    expect(result).toEqual({ ok: false, messageKo: "결제창을 시작하지 못했습니다. 잠시 후 다시 시도해 주세요." });
+    expect(harness.requestPayment).toHaveBeenCalledTimes(failure === "sdkLoadError" ? 0 : 1);
+  });
+
   it("renders Toss widget launcher copy", async () => {
     const launcherModule = await importLauncherModule();
     const Component = launcherModule.default;
@@ -233,7 +268,8 @@ describe("DevTossCheckoutLauncher", () => {
       "리포트 생성을 위해 이름 또는 닉네임, 생년월일, 출생시간, 성별, MBTI가 처리됩니다.",
     );
     expect(html).toContain("[필수] 만 14세 이상입니다.");
-    expect(html).toContain("1,290원 결제하기");
+    expect(html).toContain("토스페이로 결제");
+    expect(html).toContain("카카오페이로 결제");
     expect(html).toContain("disabled");
   });
 
@@ -251,6 +287,7 @@ describe("DevTossCheckoutLauncher", () => {
       validInputSnapshot,
       launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
       harness.runtime,
+      { easyPay: "TOSSPAY" },
     );
 
     expect(result).toEqual({
@@ -281,6 +318,7 @@ describe("DevTossCheckoutLauncher", () => {
     }
 
     expect(launchInput.tossCheckoutRequest).toBe(tossCheckoutRequest);
+    expect(launchInput.easyPay).toBe("TOSSPAY");
     expect(launchInput.customerKey).toBe("gyeol_local_test_customer");
     expect(typeof launchInput.loadTossPayments).toBe("function");
   });
@@ -293,6 +331,7 @@ describe("DevTossCheckoutLauncher", () => {
       missingInputSnapshot,
       launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
       harness.runtime,
+      { easyPay: "TOSSPAY" },
     );
 
     expect(result.ok).toBe(false);
@@ -332,6 +371,7 @@ describe("DevTossCheckoutLauncher", () => {
       validInputSnapshot,
       launcherModule.emptyDevTossCheckoutLegalConfirmations,
       harness.runtime,
+      { easyPay: "TOSSPAY" },
     );
 
     expect(result.ok).toBe(false);
@@ -354,7 +394,7 @@ describe("DevTossCheckoutLauncher", () => {
   ])("only displays the allowlisted server consent message: %s", async (message, expected) => {
     const launcherModule = await importLauncherModule();
     const harness = createHarness({ responseOk: false, responseBody: { ok: false, error: { message } } });
-    const result = await launcherModule.runDevTossCheckout(validInputSnapshot, launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations, harness.runtime);
+    const result = await launcherModule.runDevTossCheckout(validInputSnapshot, launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations, harness.runtime, { easyPay: "TOSSPAY" });
     expect(result).toEqual({ ok: false, messageKo: expected });
     expect(harness.launchInputs).toHaveLength(0);
   });
@@ -444,6 +484,7 @@ describe("DevTossCheckoutLauncher", () => {
       validInputSnapshot,
       launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
       harness.runtime,
+      { easyPay: "TOSSPAY" },
     );
 
     expect(result.ok).toBe(false);
@@ -469,6 +510,7 @@ describe("DevTossCheckoutLauncher", () => {
       validInputSnapshot,
       launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
       harness.runtime,
+      { easyPay: "TOSSPAY" },
     );
 
     expect(result.ok).toBe(false);
@@ -508,7 +550,7 @@ describe("DevTossCheckoutLauncher", () => {
 
   it("allows retry after prepare failure without keeping stale UI state", () => {
     const retryMarkers = [
-      "if (isLaunching || !canLaunchCheckout)",
+      "if (launchInFlight.current || isLaunching || !canLaunchCheckout)",
       "setErrorMessage(\"\")",
       "setStatusMessage(\"\")",
       "setIsLaunching(false)",
@@ -529,6 +571,7 @@ describe("DevTossCheckoutLauncher", () => {
       validInputSnapshot,
       launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
       harness.runtime,
+      { easyPay: "TOSSPAY" },
     );
 
     expect(result.ok).toBe(true);

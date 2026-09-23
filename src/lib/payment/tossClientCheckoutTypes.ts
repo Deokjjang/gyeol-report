@@ -1,10 +1,16 @@
 import type { TossCheckoutRequestDraft } from "./tossCheckoutRequestTypes";
 
 export type TossClientCheckoutCustomerKey = string;
+export type SupportedEasyPay = "TOSSPAY" | "KAKAOPAY";
 
 export type TossClientPaymentWindow = {
   readonly requestPayment: (
-    paymentRequest: TossCheckoutRequestDraft["requestPayment"],
+    paymentRequest: TossCheckoutRequestDraft["requestPayment"] & {
+      readonly card?: {
+        readonly flowMode: "DIRECT";
+        readonly easyPay: SupportedEasyPay;
+      };
+    },
   ) => Promise<void> | void;
 };
 
@@ -21,6 +27,7 @@ export type TossClientSdkLoader = (
 export type TossClientCheckoutLaunchInput = {
   readonly tossCheckoutRequest: TossCheckoutRequestDraft;
   readonly customerKey: TossClientCheckoutCustomerKey;
+  readonly easyPay: SupportedEasyPay;
   readonly loadTossPayments: TossClientSdkLoader;
 };
 

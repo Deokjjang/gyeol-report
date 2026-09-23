@@ -2,6 +2,7 @@
 
 import type { TossCheckoutRequestDraft } from "./tossCheckoutRequestTypes";
 import type {
+  SupportedEasyPay,
   TossClientCheckoutErrorCode,
   TossClientCheckoutLaunchResult,
   TossClientSdk,
@@ -32,6 +33,10 @@ function isNonEmptyString(value: unknown): value is string {
 
 function isTossSdkLoader(value: unknown): value is TossClientSdkLoader {
   return typeof value === "function";
+}
+
+export function isSupportedEasyPay(value: unknown): value is SupportedEasyPay {
+  return value === "TOSSPAY" || value === "KAKAOPAY";
 }
 
 function isTossRequestPayment(
@@ -157,7 +162,7 @@ function parseTossCheckoutRequest(
 export async function launchTossCheckout(
   input: unknown,
 ): Promise<TossClientCheckoutLaunchResult> {
-  if (!isRecord(input)) {
+  if (!isRecord(input) || !isSupportedEasyPay(input.easyPay)) {
     return failure(
       "TOSS_CLIENT_CHECKOUT_INVALID_REQUEST",
       "Toss 결제 실행 요청이 올바르지 않습니다.",
@@ -200,7 +205,10 @@ export async function launchTossCheckout(
       customerKey: input.customerKey,
     });
 
-    await paymentWindow.requestPayment(parsedRequest.request.requestPayment);
+    await paymentWindow.requestPayment({
+      ...parsedRequest.request.requestPayment,
+      card: { flowMode: "DIRECT", easyPay: input.easyPay },
+    });
   } catch {
     return failure(
       "TOSS_CLIENT_CHECKOUT_REQUEST_FAILED",
