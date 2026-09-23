@@ -393,10 +393,11 @@ function getFlow(
   key: MajorFortuneDomainFlowKey,
 ): MajorFortuneDraftFlowSection {
   const flow = packet.domainFlows[key];
+  const domain = packet.decadeReading?.domains.find(item => item.key === ({careerWork: "work", moneyResource: "money", relationshipLove: "relationship"} as Partial<Record<MajorFortuneDomainFlowKey, string>>)[key]);
 
   return {
     title: flow.title,
-    summary: flow.summary,
+    summary: domain ? `${domain.body}\n${domain.timing}` : flow.summary,
     supportingSignals: flow.supportingSignals,
     frictionSignals: flow.frictionSignals,
     actionHint: flow.actionHint,
@@ -543,6 +544,7 @@ function buildCycleChapters(packet: MajorFortuneEvidencePacket) {
 }
 
 function buildPhaseTimeline(packet: MajorFortuneEvidencePacket) {
+  if (packet.decadeReading) return packet.decadeReading.phases;
   const phaseLabels = {
     early: "초반 1~3년",
     middle: "중반 4~7년",
@@ -581,19 +583,7 @@ function buildStrongYears(packet: MajorFortuneEvidencePacket) {
     pushStrategy: year.pushStrategy,
     reduceStrategy: year.reduceStrategy,
   }));
-  const fallback = packet.majorFortuneTimelineRows.slice(0, 3).map((row) => ({
-    year: row.year,
-    ganji: row.annualGanji,
-    headline: row.oneLine,
-    body: row.strategy,
-    advice: row.strategy,
-    whyStrong: `${row.majorGanji} 대운 안에서 ${row.annualGanji} 세운이 ${row.annualTenGodLabel} 흐름으로 반복 기준을 자극합니다.`,
-    likelyArea: "전환" as const,
-    pushStrategy: row.strategy,
-    reduceStrategy: "무리한 확장보다 역할, 돈, 회복 기준을 먼저 좁힙니다.",
-  }));
-
-  return [...fromEvidence, ...fallback].slice(0, Math.max(3, fromEvidence.length));
+  return fromEvidence;
 }
 
 function buildFinalAdvice() {
@@ -686,7 +676,7 @@ function buildTimelineYearDetails(
           : row.ageBasisLabel.includes("한국나이")
             ? row.ageBasisLabel
             : `${row.ageBasisLabel} · 한국나이`,
-      yearDetail: {
+      yearDetail: packet.decadeReading?.years.find(year => year.year === row.year)?.detail ?? {
         coreFlow: buildYearCoreFlow({ packet, row, yearReading }),
         realWorldScenes: buildContextualYearScene({
           packet,
@@ -749,7 +739,7 @@ function buildMajorFortuneFallbackDraft(
       ganji: current.ganji,
       displayTitle: `${current.ganji} 대운`,
       cycleIndexLabel: `${current.cycleIndex}번째 대운`,
-      currentPositionLabel: packet.cyclePosition.positionLabel,
+      currentPositionLabel: packet.decadeReading?.position ?? packet.cyclePosition.positionLabel,
       ageRangeLabel: current.ageRange,
       yearRangeLabel: current.yearRange,
       stemLabel: current.stem,
@@ -783,14 +773,14 @@ function buildMajorFortuneFallbackDraft(
       branchInteractionExplanation:
         packet.branchInteractions.map((interaction) => interaction.plain).join(" ") ||
         "원국과 대운의 지지 작용은 생활 리듬, 관계 거리, 역할 조율의 장면으로 번역합니다.",
-      transitionExplanation: packet.previousToCurrentShift.plain,
+      transitionExplanation: packet.decadeReading?.next ?? packet.previousToCurrentShift.plain,
     },
     cycleChapters: buildCycleChapters(packet),
     phaseTimeline: buildPhaseTimeline(packet),
     strongYears: buildStrongYears(packet),
     majorFortuneTimelineRows: buildTimelineYearDetails(packet),
     cycleYearTimeline: buildDraftCycleYearTimeline(packet),
-    currentCycleSummary: current.interpretation,
+    currentCycleSummary: packet.decadeReading ? [packet.decadeReading.thesis, ...packet.decadeReading.factors.map(f => f.text)].join(" ") : current.interpretation,
     tenYearTheme: `${packet.tenYearFlowSummary.headline}: ${packet.tenYearFlowSummary.summary}`,
     timelineReading:
       "대운 타임라인은 한 해의 길흉을 단정하기보다, 현재 대운 안에서 어떤 해가 시작·중반·정리 역할을 맡는지 보여 줍니다.",

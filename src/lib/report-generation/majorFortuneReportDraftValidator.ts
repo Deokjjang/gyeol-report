@@ -2474,7 +2474,7 @@ function validateArrayLengths(
   ) {
     errors.push("MAJOR_FORTUNE_PHASE_TIMELINE_ORDER_INVALID");
   }
-  if (draft.strongYears.length < 3 || draft.strongYears.length > 5) {
+  if (draft.strongYears.length > 5) {
     errors.push("MAJOR_FORTUNE_STRONG_YEARS_INVALID");
   }
   if (draft.cycleYearTimeline.length !== 10) {

@@ -84,14 +84,14 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("strongYears must use provided strongYearsWithinCycle");
     expect(text).toContain("Strong years must explain why that year is strong");
     expect(text).toContain("Strong years are TOP highlights only");
-    expect(text).toContain("특히 강하게 체감될 수 있는 해 TOP 5");
     expect(text).toContain("whyStrong must be interpretive copy");
     expect(text).toContain("not a slash-separated evidence list");
     expect(text).toContain("Strong year headlines must be unique");
-    expect(text).toContain("Example 2029 己酉 whyStrong");
-    expect(text).toContain("Example 2030 庚戌 whyStrong");
-    expect(text).toContain("Example 문장은 방향 참고용");
-    expect(text).toContain("예시 문장을 draft에 그대로 복사하거나 여러 번 반복하지 마라");
+    expect(text).toContain("decadeReading");
+    expect(text).toContain("importance reasons and evidenceIds");
+    expect(text).toContain("not fixed meanings");
+    expect(text).not.toContain("at least two natural paragraphs");
+    expect(text).not.toContain("For every year detail, include MBTI");
   });
 
   it("requires 10-year repeated themes in every main chapter", () => {
@@ -120,7 +120,6 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("userContextReading");
     expect(text).toContain("Do not use field-assembly prose");
     expect(text).toContain("현실 장면은 따로 움직이지 않습니다");
-    expect(text).toContain("Vary the MBTI angle by ten-god");
     expect(text).toContain("Do not output raw branch interaction labels alone");
     expect(text).toContain("40자 이상 같은 문장이 전체 대운 리포트에 3회 이상 나오면 실패");
     expect(text).toContain("같은 오행 support/friction caution 문장을 연도별 detail이나 섹션별 본문에 그대로 반복하지 마라");
@@ -202,9 +201,7 @@ describe("openaiMajorFortuneReportWriterPrompt", () => {
     expect(text).toContain("돈과 자원 운용");
     expect(text).toContain("생활 리듬과 관계 경계");
     expect(text).toContain("Strong year pushStrategy and reduceStrategy must be year-specific");
-    expect(text).toContain("2027 丁未 · 일·성과");
-    expect(text).toContain("2029 己酉 · 돈·현실관리");
-    expect(text).toContain("과도한 보수성, 검토만 하다 놓치는 기회");
+    expect(text).toContain("do not pad it to five");
   });
 
   it("requires plain Korean metaphors for technical terms", () => {

@@ -15,6 +15,18 @@ function kst(value: unknown): value is string {
   return typeof value === "string" && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+09:00$/.test(value) && Number.isFinite(Date.parse(value));
 }
 function ganji(value: unknown): string { return typeof value === "string" ? normalizeGanji(value) ?? "" : ""; }
+function hasTextFields(value: unknown, keys: readonly string[]): boolean {
+  return record(value) && keys.every(key => typeof value[key] === "string" && (value[key] as string).trim().length > 0);
+}
+function validDecadeReadingText(plan: Record<string, unknown>): boolean {
+  return hasTextFields(plan, ["thesis", "gains", "costs", "position", "previous", "next"]) &&
+    Array.isArray(plan.factors) && plan.factors.length >= 2 && plan.factors.length <= 4 &&
+    plan.factors.every(f => hasTextFields(f, ["evidenceId", "text"])) &&
+    Array.isArray(plan.phases) && plan.phases.length === 3 &&
+    plan.phases.every((p, i) => record(p) && p.phase === ["early", "middle", "late"][i] && hasTextFields(p, ["label", "headline", "body", "advice"])) &&
+    Array.isArray(plan.domains) && plan.domains.length === 3 &&
+    plan.domains.every((d, i) => record(d) && d.key === ["work", "money", "relationship"][i] && hasTextFields(d, ["title", "body", "timing", "action"]) && Array.isArray(d.evidenceIds) && d.evidenceIds.every(id => typeof id === "string"));
+}
 
 // Structural read gate: no calendar engine or provider calls during rendering.
 // At generation the trusted input is also supplied; writers never own this basis.
@@ -80,6 +92,27 @@ export function validateDayunPublication(product: string, draft: Record<string, 
       for (const key of ["majorFortuneTimelineRows", "cycleYearTimeline"]) {
         const rows = draft[key];
         if (!Array.isArray(rows) || rows.length !== 10 || rows.some((r, i) => !record(r) || r.year !== selected.startYear + i || (key === "majorFortuneTimelineRows" && ganji(r.majorGanji) !== ganji(selected.ganji)))) errors.push("DAYUN_TIMELINE_MISMATCH");
+      }
+      // New editorial plans are optional for older snapshots. For new reports,
+      // the writer cannot change any year fact or promote its own strong years.
+      if (evidence.decadeReading !== undefined && !record(evidence.decadeReading)) errors.push("DAYUN_DECADE_READING_INVALID");
+      if (record(evidence.decadeReading)) {
+        const plan = evidence.decadeReading;
+        if (!validDecadeReadingText(plan)) errors.push("DAYUN_DECADE_READING_INVALID");
+        const years = plan.years;
+        const rows = draft.majorFortuneTimelineRows;
+        if (plan.version !== "major-decade-v2" || !Array.isArray(years) || years.length !== 10 || !Array.isArray(rows) || years.some((y, i) => {
+          if (!record(y) || !record(rows[i]) || y.year !== selected.startYear + i || !Array.isArray(y.evidenceIds) || !Array.isArray(y.reasons) ||
+              !hasTextFields(y.detail, ["coreFlow", "realWorldScenes", "cautionPoint", "actionStandard"]) ||
+              !["important", "standard", "quiet"].includes(String(y.importance))) return true;
+          return ganji(rows[i].annualGanji) !== ganji(y.ganji) || rows[i].annualTenGodLabel !== y.tenGod ||
+            y.reasons.some(r => !record(r) || !(y.evidenceIds as unknown[]).includes(r.evidenceId)) ||
+            (Array.isArray(rows[i].badges) && rows[i].badges.includes("강함")) !== (y.importance === "important");
+        })) errors.push("DAYUN_YEAR_FACT_MISMATCH");
+        if (Array.isArray(years) && (!Array.isArray(draft.strongYears) || !same(
+          draft.strongYears.map(y => record(y) ? y.year : null).sort(),
+          years.filter(y => record(y) && y.importance === "important").map(y => y.year).sort(),
+        ))) errors.push("DAYUN_YEAR_EMPHASIS_MISMATCH");
       }
     } else {
       const current = record(evidence.currentMajorFortune) ? evidence.currentMajorFortune : {};

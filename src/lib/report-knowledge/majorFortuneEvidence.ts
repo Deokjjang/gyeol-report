@@ -1,3 +1,4 @@
+import { withMajorFortuneDecadeReading } from "./majorFortuneDecadeReading";
 import type {
   AnnualBranchInteraction,
   EarthlyBranch,
@@ -2360,7 +2361,7 @@ export function buildMajorFortuneEvidence(input: {
   });
   const bridgeEvidence = buildProductBridgeEvidence(bridgePacket, "daeun");
 
-  return {
+  const packet = withMajorFortuneDecadeReading({
     productType: "major_fortune",
     productVersion: "v1",
     personLabel: input.person.label,
@@ -2459,6 +2460,14 @@ export function buildMajorFortuneEvidence(input: {
     warnings: buildWarnings({
       labels: input.person.labels,
       cycleBasis: input.person.majorFortuneCycleBasis,
+    }),
+  });
+  return {
+    ...packet,
+    actionGuides: buildActionGuides({
+      longRangeOpportunities,
+      strongYears: packet.strongYearsWithinCycle,
+      currentAnnualCross,
     }),
   };
 }

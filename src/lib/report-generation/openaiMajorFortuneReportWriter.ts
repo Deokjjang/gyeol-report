@@ -525,7 +525,7 @@ function buildAttachedTimelineRows(
           : row.ageBasisLabel.includes("한국나이")
             ? row.ageBasisLabel
             : `${row.ageBasisLabel} · 한국나이`,
-      yearDetail: {
+      yearDetail: packet.decadeReading?.years.find(year => year.year === row.year)?.detail ?? {
         coreFlow: buildAttachedYearCoreFlow({ packet, row, yearReading }),
         realWorldScenes,
         cautionPoint: buildAttachedYearCaution(row),
@@ -568,7 +568,7 @@ function attachDeterministicEvidence(input: {
       ganji: input.evidencePacket.currentCycle.ganji,
       displayTitle: `현재 대운 ${input.evidencePacket.currentCycle.ganji}`,
       cycleIndexLabel: `${input.evidencePacket.cyclePosition.cycleIndex}번째 대운`,
-      currentPositionLabel: input.evidencePacket.cyclePosition.positionLabel,
+      currentPositionLabel: input.evidencePacket.decadeReading?.position ?? input.evidencePacket.cyclePosition.positionLabel,
       ageRangeLabel:
         input.evidencePacket.majorCycleBasis.basisType ===
         "user_supplied_major_fortune_table"
@@ -609,6 +609,7 @@ function attachDeterministicEvidence(input: {
           caution: star.caution ?? null,
         })),
     },
+    ...(input.evidencePacket.decadeReading ? { phaseTimeline: input.evidencePacket.decadeReading.phases } : {}),
     strongYears: input.evidencePacket.strongYearsWithinCycle.map((year) => ({
       year: year.year,
       ganji: year.ganji,

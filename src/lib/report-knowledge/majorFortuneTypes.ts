@@ -1,3 +1,4 @@
+import type { MajorDecadeReading } from "./majorFortuneDecadeReading";
 import type {
   EarthlyBranch,
   FiveElement,
@@ -61,6 +62,7 @@ export type MajorFortuneDomainFlowKey =
   | "studyGrowth";
 
 export interface MajorFortuneEvidencePacket {
+  readonly decadeReading?: MajorDecadeReading;
   readonly customerDayun?: CustomerDayun;
   readonly dayunSelection?: DayunSelection;
   readonly productType: "major_fortune";

@@ -652,7 +652,7 @@ function renderMbtiExpression(
   evidencePacket: MajorFortuneEvidencePacket | undefined,
 ) {
   const mbtiBasis = evidencePacket?.mbtiBasis;
-  const traits = [
+  const traits = evidencePacket?.decadeReading ? [] : [
     mbtiBasis?.decisionPattern,
     mbtiBasis?.workPattern,
     mbtiBasis?.relationshipPattern,
@@ -864,6 +864,57 @@ function renderSafetyNotes(
   );
 }
 
+function renderDecadeOverview(draft: MajorFortuneReportDraft, packet: MajorFortuneEvidencePacket) {
+  const reading = packet.decadeReading!;
+  return <>
+    <section id="report-current" tabIndex={-1} data-reading-section="" className={panelClass}>
+      <h2 className={sectionTitleClass}>이 10년의 핵심 변화</h2>
+      <div className="mt-5">{renderParagraphs([reading.thesis])}</div>
+      <h3 className="mt-6 font-semibold text-[#6f1d35]">원국에서 특히 작동하는 근거</h3>
+      {renderList(reading.factors.map(f => f.text))}
+      <div className="mt-6 grid gap-5 md:grid-cols-2">
+        <div><h3 className="font-semibold">살릴 수 있는 방향</h3>{renderParagraphs([reading.gains])}</div>
+        <div><h3 className="font-semibold">그만큼 감당할 부분</h3>{renderParagraphs([reading.costs])}</div>
+      </div>
+    </section>
+    <section id="report-annual" tabIndex={-1} data-reading-section="" className={panelClass}>
+      <h2 className={sectionTitleClass}>현재 위치와 이전 대운의 차이</h2>
+      <div className="mt-5">{renderParagraphs([reading.position, draft.dayunContext?.notice, reading.previous])}</div>
+      {draft.dayunContext?.transition ? <p className="mt-4 text-sm leading-7 text-[#5a4d42]">
+        교운 {draft.dayunContext.transition.startSolarKst
+          ? `기준: ${draft.dayunContext.transition.startSolarKst.replace("T", " ").replace("+09:00", " KST")}`
+          : `가능 범위: ${draft.dayunContext.transition.startSolarRange.earliestKst.replace("T", " ")} ~ ${draft.dayunContext.transition.startSolarRange.latestKst.replace("T", " ")}`}
+      </p> : null}
+    </section>
+    <section data-reading-section="" className={panelClass}>
+      <h2 className={sectionTitleClass}>구간마다 달라지는 질문</h2>
+      {reading.phases.map(phase => <div key={phase.phase} className="mt-6 border-t border-[#eadfce] pt-5">
+        <h3 className="font-semibold text-[#6f1d35]">{text(phase.label)} · {text(phase.headline)}</h3>
+        {renderParagraphs([phase.body, phase.advice])}
+      </div>)}
+      <p className="mt-5 text-sm leading-7 text-[#5a4d42]">아래의 ‘강함’ 표시는 사건의 확률이나 길흉 점수가 아니라, 교운 경계와 확인된 상호작용을 더 자세히 읽을 해설 우선순위입니다. 다른 해에도 생활의 변화는 있을 수 있습니다.</p>
+    </section>
+  </>;
+}
+
+function renderDecadeDomains(packet: MajorFortuneEvidencePacket) {
+  return packet.decadeReading!.domains.map(domain => <section key={domain.key} data-reading-section="" className={panelClass}>
+    <h2 className={sectionTitleClass}>{text(domain.title)}</h2>
+    <div className="mt-5">{renderParagraphs([domain.body, domain.timing, domain.action])}</div>
+  </section>);
+}
+
+function renderNextCycle(packet: MajorFortuneEvidencePacket) {
+  const next = packet.customerDayun?.cycles.find(c => c.index === packet.currentCycle.index + 1);
+  return <section data-reading-section="" className={panelClass}>
+    <h2 className={sectionTitleClass}>다음 흐름으로 가져갈 것</h2>
+    <div className="mt-5">{renderParagraphs([packet.decadeReading!.next])}</div>
+    {next ? <p className="mt-4 text-sm leading-7 text-[#5a4d42]">다음 교운 {next.startSolarKst
+      ? `기준: ${next.startSolarKst.replace("T", " ").replace("+09:00", " KST")}`
+      : `가능 범위: ${next.startSolarRange.earliestKst.replace("T", " ")} ~ ${next.startSolarRange.latestKst.replace("T", " ")}`}. 연도 구간은 표의 구분이며 1월 1일에 이미 전환됐다는 뜻은 아닙니다.</p> : null}
+  </section>;
+}
+
 export function MajorFortuneReportView({
   draft,
   evidencePacket,
@@ -876,22 +927,26 @@ export function MajorFortuneReportView({
       <div className="mx-auto flex max-w-6xl flex-col gap-8">
         {renderHero(draft, evidencePacket)}
         <ReportContents items={[
-          { id: "report-foundation", label: "원국과 행동 성향" },
           { id: "report-current", label: "현재 10년의 방향" },
-          { id: "report-annual", label: "올해와의 교차" },
+          { id: "report-annual", label: "현재 위치와 전환" },
+          { id: "report-foundation", label: "원국과 행동 성향" },
           { id: "report-timeline", label: "10년 타임라인" },
           ...(actionGuides ? [{ id: "report-actions", label: "실행 기준" }] : []),
         ]} />
+        {evidencePacket?.decadeReading ? renderDecadeOverview(draft, evidencePacket) : <>
+          {renderCurrentMajorFortune(draft, evidencePacket)}
+          {renderAnnualCross(draft, evidencePacket)}
+          {renderTenYearSummary(draft, evidencePacket)}
+        </>}
         {renderCommonFoundation(manseRyeokTable, mbtiProfileTable, evidencePacket, draft)}
-        {renderCurrentMajorFortune(draft, evidencePacket)}
-        {renderAnnualCross(draft, evidencePacket)}
-        {renderTenYearSummary(draft, evidencePacket)}
         {renderDaeunFortuneTable(draft, evidencePacket)}
+        {evidencePacket?.decadeReading ? renderDecadeDomains(evidencePacket) : null}
         {renderMbtiExpression(draft, evidencePacket)}
-        {renderStrongYears(draft)}
+        {evidencePacket?.decadeReading ? null : renderStrongYears(draft)}
         {renderMyeongliDetails(draft)}
         {renderRiskPatterns(draft, evidencePacket)}
         {actionGuides}
+        {evidencePacket?.decadeReading ? renderNextCycle(evidencePacket) : null}
         {renderSafetyNotes(draft, evidencePacket)}
       </div>
     </div>
