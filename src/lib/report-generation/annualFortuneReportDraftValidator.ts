@@ -1190,10 +1190,11 @@ function countMonthlyEvidenceMissingWarnings(
 ): number {
   return draft.monthlyFlow.filter(
     (flow) =>
+      flow.monthlyBasis !== "절입 기준 월운 · 한국 표준시" && (
       flow.monthGanji === null ||
       flow.monthlyBasis === null ||
       flow.elementFocus === null ||
-      flow.natalInteractionSummary === null,
+      flow.natalInteractionSummary === null),
   ).length;
 }
 

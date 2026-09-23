@@ -34,6 +34,8 @@ function buildPromptPacket(packet: AnnualFortuneEvidencePacket): object {
     annualFortune: packet.annualFortune,
     majorAnnualCross: packet.majorAnnualCross,
     natalAnnualRelations: packet.natalAnnualRelations,
+    monthlyCalculationVersion: packet.monthlyCalculationVersion,
+    calendarMonths: packet.calendarMonths,
     monthlyFortunes: packet.monthlyFortunes.map(({ supportSignals: _support, frictionSignals: _friction, ...month }) => {
       void _support; void _friction;
       return month;
@@ -66,6 +68,7 @@ function buildPromptPacket(packet: AnnualFortuneEvidencePacket): object {
 export function buildOpenAIAnnualFortuneReportWriterMessages(input: {
   readonly evidencePacket: AnnualFortuneEvidencePacket;
 }): OpenAIAnnualFortuneReportWriterMessages {
+  const packet = input.evidencePacket;
   const evidenceJson = JSON.stringify(buildPromptPacket(input.evidencePacket), null, 2);
 
   return {
@@ -90,7 +93,7 @@ export function buildOpenAIAnnualFortuneReportWriterMessages(input: {
         "3. currentMajorFortune: 선택 연도가 놓인 현재 10년 대운 배경",
         "4. majorAnnualCross: 대운 위에 세운이 올라오는 교차 해석",
         "5. natalAnnualRelations: 원국과 선택 연도 세운의 실제 지지 작용",
-        "6. monthlyFortunes: 12개월 월운 운영 리듬",
+        packet.calendarMonths ? "6. calendarMonths: 12개월의 절입·교운 구간별 근거" : "6. monthlyFortunes: 12개월 월운 운영 리듬",
         "7. domainFlows: 직업·돈·관계·건강관리·사회가족·공부성장 영역별 흐름",
         "8. bridgeEvidence and mbtiBasis: 명리 흐름이 행동 방식으로 드러나는 보조 evidence",
         "9. riskPatterns and actionGuides: 리스크 관리와 실행 기준",
@@ -103,9 +106,9 @@ export function buildOpenAIAnnualFortuneReportWriterMessages(input: {
       "현재 대운은 선택 연도의 원인이 아니라 10년 배경이다. 세운은 그 배경 위에 올라오는 1년짜리 자극으로 설명한다.",
       "majorAnnualCross가 있으면 대운·세운 교차를 반드시 별도 문단으로 설명한다. majorAnnualCross가 null이면 대운 정보가 부족하다고 길게 늘어놓지 말고 세운·원국 관계 중심으로 쓴다.",
       "natalAnnualRelations는 원국에 실제로 있는 지지와 선택 연도 지지가 맞물리는 근거만 사용한다. 원국에 없는 지지 관계를 만들지 않는다.",
-      "monthlyFortunes must contain 12 months and must be used as the main monthly evidence. Do not replace it with generic monthly advice.",
+      packet.calendarMonths ? "calendarMonths contains 12 calendar months with [startKst,endKstExclusive) segments. Preserve every segment, its effectiveAnnualPillar, activeDayunContext, evidenceIds and uncertainty. Never assign one representative pillar to the entire calendar month." : "monthlyFortunes must contain 12 months and must be used as the main monthly evidence. Do not replace it with generic monthly advice.",
       "월별 사실과 분기별 요약은 monthlyPublication에 제공된 값을 사용하며 다른 단락에 월별 예측을 추가하지 않는다.",
-      "각 월은 간지, 십성, 원국/월운 작용을 운영 전략으로 번역한다. 월운은 결과 예언이 아니라 달력월 기준 운영 가이드다.",
+      packet.calendarMonths ? "월별 사실은 절입 기준이며, 서로 다른 기간의 관계를 월 전체에 동시에 적용하지 않는다. 교운 불확실 구간의 conditional 근거를 확정하지 않는다." : "각 월은 간지, 십성, 원국/월운 작용을 운영 전략으로 번역한다. 월운은 결과 예언이 아니라 달력월 기준 운영 가이드다.",
       "MBTI is not the cause of the annual fortune. MBTI explains how the provided 명리 flow may show up as decision speed, stress response, communication, work rhythm, relationship rhythm, and growth behavior.",
       "Use bridgeEvidence.productKey === saeun as support only. Never treat bridgeEvidence as proof that 명리 and MBTI have the same cause.",
       "Use bridgeEvidence.primaryEvidence for mbtiExpression and domain paragraphs, supportingEvidence for color, and cautionEvidence for riskManagement.",
@@ -166,12 +169,12 @@ export function buildOpenAIAnnualFortuneReportWriterMessages(input: {
       "Required concrete event nouns: 직장, 프로젝트, 상사, 동료, 가족, 부모, 연인, 친구, 돈, 정산, 계약, 생활비, 시험, 자격증, 승진, 이직, 수면, 식사, 일정, 연락.",
       "Do not stop at 책임이 커진다. Say whether it may appear as taking over someone’s task, proving a result, managing money or settlement, changing contact frequency, handling family schedules, preparing certificate/study output, or repairing sleep/meal routine.",
       "Copy monthlyPublication.monthlyFlow, monthlyHighlights, and monthlyFlowReading exactly. These factual monthly sections are server-owned, like pillar tables; compose the other report sections normally.",
-      "monthlyFortunes.relationFacts are the only calculated month/natal interactions. classification.supportFactIds and frictionFactIds reference these facts; neutralObservations are absence observations, not supportive or friction facts.",
-      "Do not infer relation existence from explanation words. No year-month or Dayun-month interaction has been calculated. Ten-gods and element presence alone do not establish a lucky/unlucky month.",
+      packet.calendarMonths ? "Use only calendarMonths.segments.relationFacts for monthly relations. Source separates natal, effective annual and active Dayun counterparts. Conditional Dayun facts apply only to their named candidate cycle. importanceCandidates are reasons for attention, not strength or fortune scores." : "monthlyFortunes.relationFacts are the only calculated month/natal interactions. classification.supportFactIds and frictionFactIds reference these facts; neutralObservations are absence observations, not supportive or friction facts.",
+      packet.calendarMonths ? "Do not infer relation existence from explanation words. Ten-gods and element presence alone do not establish a lucky/unlucky month." : "Do not infer relation existence from explanation words. No year-month or Dayun-month interaction has been calculated. Ten-gods and element presence alone do not establish a lucky/unlucky month.",
       "Do not invent monthly ganji.",
-      "If monthlyFortuneSeeds.monthGanji.basis is calendar_month_approximation, describe monthlyFlow as 월별 운영 가이드, not exact 절기 월운.",
+      packet.calendarMonths ? "Keep monthlyFlow.monthGanji and elementFocus null: multiple period-specific pillars and elements are preserved in the supplied body, not collapsed." : "If monthlyFortuneSeeds.monthGanji.basis is calendar_month_approximation, describe monthlyFlow as 월별 운영 가이드, not exact 절기 월운.",
       "Do not write future product or development wording in user-visible text. Forbidden: 추후 고도화, 추후 개발, 정밀 월운은 추후, 고도화됩니다, 개발 예정, future task.",
-      "For monthly basis wording, use: 월별 흐름은 달력월 기준 운영 가이드입니다. 실제 체감 시점은 절기와 개인 일정에 따라 조금 달라질 수 있습니다.",
+      packet.calendarMonths ? "For monthly basis wording, use: 절입 기준 월운 · 한국 표준시. Explain periods, not certain events." : "For monthly basis wording, use: 월별 흐름은 달력월 기준 운영 가이드입니다. 실제 체감 시점은 절기와 개인 일정에 따라 조금 달라질 수 있습니다.",
       "Monthly ganji, basis, elements, ten-gods and relation summaries must remain identical to monthlyPublication; do not add monthly relation claims elsewhere.",
       "Each month should explain: 1. month ganji / element focus, 2. one concrete work/money/relationship/study/health scene, 3. one practical advice.",
       "For deokmin-2026-current style evidence, explain that 丙午 fire can fill weak fire and activate 식신 expression, output, production, content, and visibility, while fire can also generate already-heavy earth and increase work, money, responsibility, performance, and reality pressure.",

@@ -168,7 +168,11 @@ export function validateProductEvidence(product: string, draft: Row, value: unkn
         annual.year === e.selectedYear && e.targetYear === e.selectedYear && annual.ganji === expected.ganji && annual.stem === expected.stem && annual.branch === expected.branch &&
         record(e.annualGanji) && e.annualGanji.ganji === expected.ganji && record(e.majorAnnualCross) && e.majorAnnualCross.annualGanji === expected.ganji, "annualFortune");
       need(record(e.natalAnnualRelations) && rows(e.natalAnnualRelations.interactions, ["plain"], 0) && fields(e.natalAnnualRelations, ["annualBranch", "interpretation", "caution"]), "natalAnnualRelations");
-      need(rows(e.monthlyFortunes, ["label", "ganji", "stem", "branch", "stemTenGod", "branchTenGod", "interpretation", "actionHint", "caution"], 12) && e.monthlyFortunes.length === 12 &&
+      // V2's authoritative segment comparison is in the annual draft validator.
+      // Do not apply the legacy single-pillar month contract to V2 snapshots.
+      if (e.monthlyCalculationVersion !== undefined) {
+        need(e.monthlyCalculationVersion === "annual-month-jie-kst-v2" && Array.isArray(e.calendarMonths) && e.calendarMonths.length === 12, "calendarMonths");
+      } else need(rows(e.monthlyFortunes, ["label", "ganji", "stem", "branch", "stemTenGod", "branchTenGod", "interpretation", "actionHint", "caution"], 12) && e.monthlyFortunes.length === 12 &&
         e.monthlyFortunes.every((r, i) => r.month === i + 1 && expected !== null && r.ganji === getAnnualMonthGanjiInfo({ year: expected.year, month: i + 1 }).ganji &&
           r.stem + String(r.branch) === r.ganji && text(r.monthTheme) && texts(r.supportSignals) && texts(r.frictionSignals)), "monthlyFortunes");
       need(fields(e.yearlyThemeSummary, ["headline", "summary"]), "yearlyThemeSummary");

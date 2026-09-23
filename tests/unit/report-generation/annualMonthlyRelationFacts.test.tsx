@@ -3,7 +3,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
 import { AnnualFortuneReportView } from "../../../src/app/reports/[reportId]/AnnualFortuneReportView";
 import { buildAnnualMonthRelationFacts, classifyAnnualMonthFacts, explainAnnualMonthFact, type AnnualMonthRelationFact } from "../../../src/lib/report-knowledge/annualMonthRelationFacts";
-import { buildAnnualMonthlyFortunes, type AnnualFortuneEvidencePacket } from "../../../src/lib/report-knowledge/annualFortuneEvidence";
+import { buildAnnualFortuneEvidence, buildAnnualMonthlyFortunes, type AnnualFortuneEvidencePacket } from "../../../src/lib/report-knowledge/annualFortuneEvidence";
 import { getAnnualBranchInteractions, getAnnualMonthGanjiInfo } from "../../../src/lib/report-knowledge/annualFortuneYearRules";
 import type { EarthlyBranch } from "../../../src/lib/report-knowledge/annualFortuneTypes";
 import { generateAnnualFortuneProductDraft } from "../../../src/lib/report-generation/annualFortuneGenerationHandler";
@@ -34,7 +34,21 @@ async function generate(index = 0, mbti?: SinglePersonGenerationInput["person"][
   });
   expect(result.ok).toBe(true);
   if (!result.ok) throw new Error("local annual fixture failed");
-  return result;
+  // Keep the original V1 relation/read contract covered after new generation
+  // switches to V2. V2 publication/SSR has its own full customer matrix.
+  const { monthlyCalculationVersion: _version, calendarMonths: _months, ...basis } = result.evidencePacket;
+  void _version; void _months;
+  const legacy = buildAnnualFortuneEvidence({ targetYear: result.draft.targetYear,
+    currentDate: new Date("2026-09-23T00:00:00+09:00"), person: {
+      label: basis.personContext.name, birthDate: basis.personContext.birthDate,
+      gender: customers[index].gender, mbti: basis.mbtiBasis.type,
+      userContext: basis.userContext, pillars: basis.baseSaju.pillars, labels: basis.baseSaju.natalLabels,
+      majorFortuneCycles: basis.customerDayun!.cycles,
+    } });
+  const evidencePacket = { ...basis, ...legacy };
+  const validation = validateAnnualFortuneReportDraft({ ...result.draft, ...buildAnnualMonthlyPublication(evidencePacket) }, evidencePacket);
+  expect(validation.ok).toBe(true);
+  return { ...result, evidencePacket, draft: { ...validation.value!, dayunContext: result.draft.dayunContext } };
 }
 function facts(natalBranches: readonly EarthlyBranch[]) {
   return buildAnnualMonthRelationFacts({ monthGanji: getAnnualMonthGanjiInfo({ year: 2026, month: 11 }), natalBranches, missingElements: [], heavyElements: [] });
@@ -101,7 +115,7 @@ describe("annual monthly facts precede wording", () => {
   });
 });
 
-describe("annual monthly publication and regression", () => {
+describe("legacy annual monthly publication and read regression", () => {
   it("publishes and SSR renders 3 customers ×12 months with unique actual facts", async () => {
     const baselineChars = [12783, 12061, 12258];
     const totals = { support: 0, friction: 0, mixed: 0, neutral: 0 };

@@ -552,11 +552,8 @@ function buildPairPlain(input: {
   return `${branchText} ${input.type}은 ${pillarText}의 흐름을 새롭게 자극합니다.`;
 }
 
-function pairInteraction(input: {
-  readonly annualBranch: EarthlyBranch;
-  readonly natalBranch: EarthlyBranch;
-  readonly affectedPillar: AnnualPillarPosition;
-}): readonly AnnualBranchInteraction[] {
+// Scope-free pair facts. Callers attach their real natal/annual/Dayun source.
+export function getBranchPairRelations(left: EarthlyBranch, right: EarthlyBranch): readonly Pick<AnnualBranchInteraction, "type" | "branches">[] {
   const relationTables = [
     { type: "육합", pairs: branchSixHarmonyPairs },
     { type: "충", pairs: branchClashPairs },
@@ -568,11 +565,11 @@ function pairInteraction(input: {
     readonly pairs: readonly (readonly [EarthlyBranch, EarthlyBranch])[];
   }[];
 
-  return relationTables.flatMap((table) => {
+  const pairs = relationTables.flatMap((table) => {
     const pair = includesPair(
       table.pairs,
-      input.annualBranch,
-      input.natalBranch,
+      left,
+      right,
     );
 
     if (pair === undefined) {
@@ -583,15 +580,25 @@ function pairInteraction(input: {
       {
         type: table.type,
         branches: pair,
-        affectedPillars: [input.affectedPillar],
-        plain: buildPairPlain({
-          type: table.type,
-          branches: pair,
-          affectedPillars: [input.affectedPillar],
-        }),
       },
     ];
   });
+  const halves = left === right ? [] : branchTrines.flatMap(trine =>
+    trine.branches.some(b => b === left) && trine.branches.some(b => b === right)
+      ? [{ type: "반합" as const, branches: trine.branches.filter(b => b === left || b === right) }] : []);
+  return [...pairs, ...halves];
+}
+
+function pairInteraction(input: {
+  readonly annualBranch: EarthlyBranch;
+  readonly natalBranch: EarthlyBranch;
+  readonly affectedPillar: AnnualPillarPosition;
+}): readonly AnnualBranchInteraction[] {
+  // Natal half/trine grouping is still handled by trineInteractions below.
+  return getBranchPairRelations(input.annualBranch, input.natalBranch)
+    .filter(relation => relation.type !== "반합")
+    .map(relation => ({ ...relation, affectedPillars: [input.affectedPillar],
+      plain: buildPairPlain({ ...relation, affectedPillars: [input.affectedPillar] }) }));
 }
 
 function trineInteractions(input: {

@@ -4,6 +4,8 @@ import {
 import { summarizeAnnualMonthFacts } from "../report-knowledge/annualMonthRelationFacts";
 import type { EarthlyBranch, FiveElement } from "../report-knowledge/annualFortuneTypes";
 import type { AnnualFortuneReportDraft } from "./annualFortuneReportDraftTypes";
+import { ANNUAL_MONTH_CALCULATION_VERSION, buildAnnualMonthCalendar } from "../report-knowledge/annualMonthJie";
+import { buildAnnualJieMonthlyPublication } from "./annualMonthJiePublication";
 
 const elementNames: Record<FiveElement, string> = { wood: "목", fire: "화", earth: "토", metal: "금", water: "수" };
 
@@ -12,6 +14,8 @@ const elementNames: Record<FiveElement, string> = { wood: "목", fire: "화", ea
 export function buildAnnualMonthlyPublication(packet: AnnualFortuneEvidencePacket): Pick<
   AnnualFortuneReportDraft, "monthlyFlow" | "monthlyHighlights" | "monthlyFlowReading"
 > {
+  if (packet.monthlyCalculationVersion === ANNUAL_MONTH_CALCULATION_VERSION) return buildAnnualJieMonthlyPublication(packet.calendarMonths ?? []);
+  // Unversioned snapshots retain their original approximation contract.
   const monthlyFlow = packet.monthlyFortunes.map(month => ({
     month: month.month, label: month.label, headline: month.monthTheme,
     monthGanji: month.ganji, monthlyBasis: "달력월 기준 운영 가이드",
@@ -34,18 +38,28 @@ export function buildAnnualMonthlyPublication(packet: AnnualFortuneEvidencePacke
   };
 }
 
-// Rebuild only the existing inexpensive month relation rules, never the calendar
-// or Dayun engine. Compare facts AND their derived display fields, including IDs.
+// V2 checks the stored selected year's canonical calendar, never today's year.
+// Legacy reads rebuild only their original relation rules, not the V2 calendar.
+// Neither path recalculates Yun; compare the stored Dayun basis and derived IDs.
 export function annualMonthlyEvidenceMatches(packet: AnnualFortuneEvidencePacket): boolean {
   const labels = packet.baseSaju.natalLabels;
   const elements = Object.keys(elementNames) as FiveElement[];
-  const expected = buildAnnualMonthlyFortunes({
-    targetYear: packet.selectedYear, dayMaster: packet.baseSaju.dayMaster,
+  const input = {
+    dayMaster: packet.baseSaju.dayMaster,
     natalBranches: [packet.baseSaju.pillars.year, packet.baseSaju.pillars.month, packet.baseSaju.pillars.day, packet.baseSaju.pillars.hour]
       .filter((p): p is string => typeof p === "string").map(p => p[1] as EarthlyBranch),
     missingElements: elements.filter(e => labels.includes(`${elementNames[e]} 부족`)),
     heavyElements: elements.filter(e => labels.includes(`${elementNames[e]} 과다`)),
-  });
+  };
+  if (packet.monthlyCalculationVersion !== undefined) {
+    if (packet.monthlyCalculationVersion !== ANNUAL_MONTH_CALCULATION_VERSION || !packet.customerDayun ||
+        packet.monthlyFortunes.length !== 0 || packet.monthlyFortuneSeeds.length !== 0 || packet.targetYear !== packet.selectedYear) return false;
+    const expected = buildAnnualMonthCalendar({ ...input, selectedYear: packet.selectedYear, customerDayun: packet.customerDayun });
+    return expected.length === 12 && JSON.stringify(orderedJson(expected)) === JSON.stringify(orderedJson(packet.calendarMonths));
+  }
+  // A removed/unknown version must never reinterpret V2 as legacy.
+  if (packet.calendarMonths !== undefined) return false;
+  const expected = buildAnnualMonthlyFortunes({ ...input, targetYear: packet.selectedYear });
   return JSON.stringify(orderedJson(expected)) === JSON.stringify(orderedJson(packet.monthlyFortunes));
 }
 

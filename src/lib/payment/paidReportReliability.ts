@@ -1,6 +1,6 @@
 import { getAnnualPurchasePolicyDate, type AnnualCommerceAcceptance } from "./annualPurchasePolicy";
 import { generateProductReport, type GenerationStrategy } from "../report-generation/generateProductReport";
-import { isRecord, PUBLISH_GATE_VERSION, validateProductPublication } from "../report-generation/productPublishGate";
+import { isRecord, PUBLISH_GATE_VERSION, validateProductPublication, validateNewProductPublication } from "../report-generation/productPublishGate";
 import { createProductPreviewSnapshot, type ProductPreviewSnapshotDraft, type ProductPreviewProductType, type ReportProductSlug } from "../report-generation/productPreviewSnapshot";
 import type { ProductGenerationResult } from "../report-generation/productGenerationDispatcher";
 import type { ReportWriterRuntime } from "../report-generation/reportWriterRuntime";
@@ -65,7 +65,7 @@ export async function runPaidReportJob(store: ReliabilityStore, runtime: ReportW
       return finish({ success: false, stage: errors ? "validation" : "generation", code: result.externalFailure ?? (errors ? "PUBLISH_REJECTED" : "GENERATION_FAILED"), errors: errors ?? [result.error.code] });
     }
     // Do not trust a generator, including a deterministic fallback or a mock, to publish itself.
-    const gate = validateProductPublication(String(job.product_type), result.draft, result.evidencePacket);
+    const gate = validateNewProductPublication(String(job.product_type), result.draft, result.evidencePacket);
     if (!gate.ok) return finish({ success: false, stage: "validation", code: "PUBLISH_REJECTED", errors: gate.errors });
     const snapshot = createProductPreviewSnapshot({
       reportId: String(job.report_id), createdAtIso: String(job.created_at),

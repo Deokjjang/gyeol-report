@@ -3,6 +3,7 @@ import {
   summarizeAnnualMonthFacts, type AnnualMonthRelationFact, type AnnualMonthClassification,
 } from "./annualMonthRelationFacts";
 import type { CustomerDayun, DayunSelection } from "../saju/customerDayun";
+import { ANNUAL_MONTH_CALCULATION_VERSION, buildAnnualMonthCalendar, monthPillarText, type AnnualCalendarMonth } from "./annualMonthJie";
 import type {
   AnnualBranchInteraction,
   AnnualFortuneDomainFlowKey,
@@ -43,6 +44,8 @@ import {
 } from "./annualFortuneYearRules";
 
 export interface AnnualFortuneEvidencePacket {
+  readonly monthlyCalculationVersion?: typeof ANNUAL_MONTH_CALCULATION_VERSION;
+  readonly calendarMonths?: readonly AnnualCalendarMonth[];
   readonly customerDayun?: CustomerDayun;
   readonly dayunSelection?: DayunSelection;
   readonly productType: "annual_fortune";
@@ -735,6 +738,7 @@ function buildNatalAnnualRelations(input: {
   };
 }
 
+// Legacy snapshot contract only; new paid generation supplies customerDayun below.
 export function buildAnnualMonthlyFortunes(input: {
   readonly dayMaster: HeavenlyStem;
   readonly targetYear: number;
@@ -859,6 +863,7 @@ function buildActionGuides(input: {
   readonly domainFlows: AnnualFortuneEvidencePacket["domainFlows"];
   readonly annualFortune: AnnualFortuneEvidencePacket["annualFortune"];
   readonly monthlyFortunes: AnnualFortuneEvidencePacket["monthlyFortunes"];
+  readonly calendarMonths?: readonly AnnualCalendarMonth[];
 }): AnnualFortuneEvidencePacket["actionGuides"] {
   return [
     {
@@ -873,8 +878,8 @@ function buildActionGuides(input: {
     })),
     {
       title: "월별 운영 기준",
-      action: "12개월 월운은 달력월 기준 운영 가이드로 보고, 월별 행동 기준을 작게 조정하세요.",
-      timingHint: `${input.monthlyFortunes.length}개월 월운 seed를 기준으로 합니다.`,
+      action: input.calendarMonths ? "12개월 안의 절입·교운 경계를 확인하고 해당 기간에 맞는 근거를 읽으세요." : "12개월 월운은 달력월 기준 운영 가이드로 보고, 월별 행동 기준을 작게 조정하세요.",
+      timingHint: input.calendarMonths ? "한국 표준시의 기간별 월주·연주·대운을 기준으로 합니다." : `${input.monthlyFortunes.length}개월 월운 seed를 기준으로 합니다.`,
     },
   ].slice(0, 6);
 }
@@ -886,6 +891,7 @@ function buildSaeunBridgeSignals(input: {
   readonly natalAnnualRelations: AnnualFortuneEvidencePacket["natalAnnualRelations"];
   readonly domainFlows: AnnualFortuneEvidencePacket["domainFlows"];
   readonly monthlyFortunes: AnnualFortuneEvidencePacket["monthlyFortunes"];
+  readonly calendarMonths?: readonly AnnualCalendarMonth[];
 }): readonly MyeongliSignal[] {
   const elementSignals: MyeongliSignal[] = input.annualFortune.elementFocus.map(
     (element) => ({
@@ -958,7 +964,12 @@ function buildSaeunBridgeSignals(input: {
       weight: 1,
     }),
   );
-  const monthlySignals: MyeongliSignal[] = input.monthlyFortunes
+  const monthlySignals: MyeongliSignal[] = input.calendarMonths ? input.calendarMonths.flatMap(month => month.segments.map(segment => ({
+    id: segment.evidenceIds[0], kind: "fortuneCycle" as const,
+    label: `${month.month}월 ${segment.startKst}~${segment.endKstExclusive} 미만`,
+    value: monthPillarText(segment.monthPillar),
+    evidence: `${monthPillarText(segment.monthPillar)} · ${segment.stemTenGod}·${segment.branchTenGod}. 해당 기간에만 적용합니다.`, weight: 1,
+  }))) : input.monthlyFortunes
     .map((month) => ({
       id: `saeun-month-${month.month}`,
       kind: "fortuneCycle",
@@ -1278,6 +1289,8 @@ export function buildAnnualFortuneEvidence(input: {
   readonly targetYear: number;
   readonly currentDate: Date;
   readonly person: AnnualPersonInput;
+  // Omitted only by legacy diagnostics/fixtures. Production must provide this.
+  readonly customerDayun?: CustomerDayun;
 }): AnnualFortuneEvidencePacket {
   const annualGanji = getAnnualGanjiInfo(input.targetYear);
   const yearAccess = getAnnualFortuneYearAccess({
@@ -1339,7 +1352,10 @@ export function buildAnnualFortuneEvidence(input: {
     annualBranch: annualGanji.branch,
     branchInteractions,
   });
-  const monthlyFortunes = buildAnnualMonthlyFortunes({
+  const calendarMonths = input.customerDayun ? buildAnnualMonthCalendar({
+    selectedYear: input.targetYear, dayMaster, natalBranches, missingElements, heavyElements, customerDayun: input.customerDayun,
+  }) : undefined;
+  const monthlyFortunes = calendarMonths ? [] : buildAnnualMonthlyFortunes({
     dayMaster, targetYear: input.targetYear, missingElements, heavyElements, natalBranches,
   });
   const monthlyFortuneSeeds = buildMonthlyFortuneSeeds(input.targetYear, monthlyFortunes);
@@ -1363,6 +1379,7 @@ export function buildAnnualFortuneEvidence(input: {
       natalAnnualRelations,
       domainFlows,
       monthlyFortunes,
+      calendarMonths,
     }),
   });
   const bridgeEvidence = bridgePacket.isEmpty
@@ -1372,6 +1389,7 @@ export function buildAnnualFortuneEvidence(input: {
   return {
     productType: "annual_fortune",
     productVersion: "v1",
+    ...(calendarMonths ? { monthlyCalculationVersion: ANNUAL_MONTH_CALCULATION_VERSION, calendarMonths } : {}),
     selectedYear: input.targetYear,
     targetYear: input.targetYear,
     currentDate: formatDateOnly(input.currentDate),
@@ -1420,8 +1438,10 @@ export function buildAnnualFortuneEvidence(input: {
       domainFlows,
       annualFortune,
       monthlyFortunes,
+      calendarMonths,
     }),
-    safetyNotes: annualSafetyNotes,
+    safetyNotes: calendarMonths ? annualSafetyNotes.map(note => note.startsWith("월운은 현재")
+      ? "월운은 한국 표준시의 절입과 교운 경계에 따라 기간을 나누어 읽습니다. 서로 다른 기간의 작용을 한 달 전체의 길흉으로 합치지 않습니다." : note) : annualSafetyNotes,
     annualGanji,
     userPillars: input.person.pillars,
     userContext: input.person.userContext,

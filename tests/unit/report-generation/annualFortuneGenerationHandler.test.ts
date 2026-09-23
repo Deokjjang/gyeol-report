@@ -129,7 +129,9 @@ describe("annual fortune generation handler", () => {
     const validation = validateAnnualFortuneReportDraft(result.draft);
 
     expect(validation.ok).toBe(true);
-    expect(result.evidencePacket.monthlyFortunes).toHaveLength(12);
+    expect(result.evidencePacket.calendarMonths).toHaveLength(12);
+    expect(result.evidencePacket.monthlyFortunes).toEqual([]);
+    expect(result.evidencePacket.monthlyCalculationVersion).toBe("annual-month-jie-kst-v2");
     expect(result.draft.monthlyFlow).toHaveLength(12);
   });
 

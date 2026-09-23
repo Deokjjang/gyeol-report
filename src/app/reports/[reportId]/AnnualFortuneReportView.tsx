@@ -1,4 +1,6 @@
 import { explainAnnualMonthFact } from "../../../lib/report-knowledge/annualMonthRelationFacts";
+import { annualCalendarMonthTitle, describeAnnualMonthSegment, explainAnnualJieFact, monthSegmentPeriod, MONTH_JIE_BASIS } from "../../../lib/report-generation/annualMonthJiePublication";
+import { SaeunAnnualCompareTable } from "../../../components/report-tables/SaeunFortuneTable";
 import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
 import readingStyles from "../../../components/report/reportReading.module.css";
 import type { ReactNode } from "react";
@@ -354,7 +356,11 @@ function renderSaeunFortuneTable(
               .map((interaction) => explainAnnualSignal(interaction.plain))
               .filter(Boolean),
           },
-          monthlyFortunes: evidencePacket.monthlyFortunes.map((month) => ({
+          monthlyFortunes: evidencePacket.calendarMonths ? evidencePacket.calendarMonths.map(month => ({
+            month: month.month, monthLabel: `${month.month}월`,
+            oneLine: month.segments.map(s => `${monthSegmentPeriod(s)} · ${s.monthPillar.stem}${s.monthPillar.branch}`).join(" / "),
+            basis: MONTH_JIE_BASIS,
+          })) : evidencePacket.monthlyFortunes.map((month) => ({
             month: month.month,
             monthLabel: month.label,
             monthGanji: month.ganji,
@@ -369,6 +375,9 @@ function renderSaeunFortuneTable(
           })),
         });
 
+  // V2 period-specific pillars are shown in the twelve month cards below.
+  // Keep the annual/Dayun table without manufacturing a single monthly pillar.
+  if (evidencePacket?.calendarMonths) return <SaeunAnnualCompareTable selectedYear={draft.targetYear} data={tableData.daeunAnnualCompareTable} />;
   return <SaeunFortuneTable data={tableData} defaultOpen={true} />;
 }
 
@@ -542,6 +551,31 @@ function renderMonthlyFortuneReading(
   draft: AnnualFortuneReportDraft,
   evidencePacket: AnnualFortuneEvidencePacket | undefined,
 ) {
+  if (evidencePacket?.monthlyCalculationVersion === "annual-month-jie-kst-v2" && evidencePacket.calendarMonths) {
+    return (
+      <section id="report-months" tabIndex={-1} data-reading-section="" className={panelClass}>
+        <p className="text-sm font-semibold text-[#8b6d2d]">월운 12개월 흐름</p>
+        <h2 className={`${sectionTitleClass} mt-1`}>절입 전후의 월별 흐름</h2>
+        <div className="mt-5">{renderParagraphs([draft.monthlyFlowReading, MONTH_JIE_BASIS])}</div>
+        <div className="mt-6 grid min-w-0 gap-3 md:grid-cols-2">
+          {evidencePacket.calendarMonths.map(month => (
+            <article key={month.month} className="min-w-0 rounded-[8px] border border-[#eadfce] bg-[#fffdf8] p-4">
+              <h3 className="text-base font-semibold text-[#2f251f]">{annualCalendarMonthTitle(month)}</h3>
+              {month.segments.map(segment => (
+                <div key={segment.startKst} className="mt-4 border-t border-[#eadfce] pt-3 text-sm leading-7 break-words text-[#5a4d42]">
+                  <p>{describeAnnualMonthSegment(segment)}</p>
+                  <details className="mt-2">
+                    <summary className="min-h-11 cursor-pointer py-2 text-[#6d3146] focus-visible:outline-2 focus-visible:outline-offset-2">기간별 관계 근거</summary>
+                    {segment.relationFacts.length ? renderList(segment.relationFacts.map(explainAnnualJieFact)) : <p>계산된 지지 관계와 부족·과다 오행 작용이 없습니다.</p>}
+                  </details>
+                </div>
+              ))}
+            </article>
+          ))}
+        </div>
+      </section>
+    );
+  }
   const monthly = evidencePacket?.monthlyFortunes ?? [];
   const highlights =
     draft.monthlyHighlights.length > 0

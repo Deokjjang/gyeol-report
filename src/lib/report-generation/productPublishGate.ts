@@ -15,6 +15,15 @@ import { validateMajorFortuneReportDraft } from "./majorFortuneReportDraftValida
 import { validateAnnualFortuneReportDraft } from "./annualFortuneReportDraftValidator";
 
 export const PUBLISH_GATE_VERSION = "paid-report-v1";
+// New generation cannot publish a legacy month contract. Reads keep the
+// version-dispatched validator below so existing paid snapshots stay readable.
+export function validateNewProductPublication(product: string, draft: unknown, evidence: unknown, inputPayload?: unknown) {
+  const result = validateProductPublication(product, draft, evidence, inputPayload);
+  if (product === "annual_fortune" && (!isRecord(evidence) || evidence.monthlyCalculationVersion !== "annual-month-jie-kst-v2")) {
+    return { ok: false, errors: [...result.errors, "ANNUAL_MONTH_V2_REQUIRED"] };
+  }
+  return result;
+}
 export function isRecord(value: unknown): value is Record<string, unknown> {
   return value !== null && typeof value === "object" && !Array.isArray(value);
 }

@@ -2,7 +2,7 @@ import type { WriterCallBudget } from "./reportWriterCallGuard";
 import { getAnnualPurchasePolicyDate, type AnnualCommerceAcceptance } from "../payment/annualPurchasePolicy";
 import { prepareProductGenerationFromPayload, createProductGenerationDispatcherOptionsFromWriterRuntime, type ProductGenerationResult } from "./productGenerationDispatcher";
 import type { ReportWriterRuntime } from "./reportWriterRuntime";
-import { isRecord, validateProductPublication } from "./productPublishGate";
+import { isRecord, validateNewProductPublication } from "./productPublishGate";
 
 export type GenerationStrategy = "normal_writer" | "writer_regeneration" | "deterministic_fallback";
 export async function generateProductReport(payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance): Promise<ProductGenerationResult> {
@@ -26,6 +26,6 @@ export async function generateProductReport(payload: unknown, runtime: ReportWri
     if (last?.outcome === "completed") last.outcome = /JSON|PARSE|EMPTY/i.test(result.error.message) ? "malformed" : "validation";
     return { ...result, externalCalls: budget.calls, ...(last ? { externalFailure: `OPENAI_${last.outcome.toUpperCase()}` } : {}) };
   }
-  const gate = validateProductPublication(isRecord(payload) ? String(payload.productKey) : "", result.draft, result.evidencePacket, payload);
+  const gate = validateNewProductPublication(isRecord(payload) ? String(payload.productKey) : "", result.draft, result.evidencePacket, payload);
   return gate.ok ? { ...result, externalCalls: budget.calls } : { externalCalls: budget.calls, ok: false, error: { code: "INVALID_REPORT_INPUT", message: gate.errors.join("; "), validationErrors: gate.errors } };
 }

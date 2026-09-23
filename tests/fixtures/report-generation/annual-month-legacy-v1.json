@@ -1,0 +1,1625 @@
+{
+  "sourceCommit": "8dae084",
+  "monthlyFortunes": [
+    {
+      "month": 1,
+      "label": "1월",
+      "ganji": "庚寅",
+      "stem": "庚",
+      "branch": "寅",
+      "stemTenGod": "정재",
+      "branchTenGod": "정인",
+      "basis": "calendar_month_approximation",
+      "elements": [
+        "metal",
+        "wood"
+      ],
+      "relationFacts": [
+        {
+          "id": "month:2026:1:branch:육합:寅亥",
+          "source": "month_natal_branch",
+          "type": "육합",
+          "monthBranch": "寅",
+          "participants": [
+            "寅",
+            "亥"
+          ],
+          "affectedPillars": [
+            "month"
+          ]
+        },
+        {
+          "id": "month:2026:1:branch:파:寅亥",
+          "source": "month_natal_branch",
+          "type": "파",
+          "monthBranch": "寅",
+          "participants": [
+            "寅",
+            "亥"
+          ],
+          "affectedPillars": [
+            "month"
+          ]
+        },
+        {
+          "id": "month:2026:1:element:missing:wood",
+          "source": "month_natal_element",
+          "type": "missing_element_present",
+          "element": "wood",
+          "monthElements": [
+            "wood"
+          ]
+        },
+        {
+          "id": "month:2026:1:element:missing:metal",
+          "source": "month_natal_element",
+          "type": "missing_element_present",
+          "element": "metal",
+          "monthElements": [
+            "metal"
+          ]
+        },
+        {
+          "id": "month:2026:1:element:heavy:fire",
+          "source": "month_natal_element",
+          "type": "heavy_element_generated",
+          "element": "fire",
+          "monthElements": [
+            "wood"
+          ]
+        },
+        {
+          "id": "month:2026:1:element:heavy:water",
+          "source": "month_natal_element",
+          "type": "heavy_element_generated",
+          "element": "water",
+          "monthElements": [
+            "metal"
+          ]
+        }
+      ],
+      "classification": {
+        "status": "mixed",
+        "supportFactIds": [
+          "month:2026:1:branch:육합:寅亥",
+          "month:2026:1:element:missing:wood",
+          "month:2026:1:element:missing:metal"
+        ],
+        "frictionFactIds": [
+          "month:2026:1:branch:파:寅亥",
+          "month:2026:1:element:heavy:fire",
+          "month:2026:1:element:heavy:water"
+        ]
+      },
+      "neutralObservations": [],
+      "monthTheme": "1월 庚寅 · 정재과 정인",
+      "supportSignals": [
+        "월지 寅와 원국 월지의 寅亥 육합: 서로 연결되는 흐름을 약속과 협업의 접점으로 읽습니다.",
+        "월간지의 목이 원국의 부족 요소에 더해집니다.",
+        "월간지의 금이 원국의 부족 요소에 더해집니다."
+      ],
+      "frictionSignals": [
+        "월지 寅와 원국 월지의 寅亥 파: 기존 방식을 다시 맞출 지점을 절차와 역할 재확인의 관점에서 읽습니다.",
+        "월간지의 목이 원국에 이미 많은 화을 생해 더합니다.",
+        "월간지의 금이 원국에 이미 많은 수을 생해 더합니다."
+      ],
+      "interpretation": "1월 庚寅의 오행은 금·목입니다. 일간 丁 기준 월간은 정재, 월지 본기는 정인으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다.",
+      "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 1월에는 돈과 자원의 사용 기준 중 현재 일정에 해당하는 항목을 골라 확인하세요.",
+      "caution": "달력월 기준 운영 가이드이므로 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다."
+    },
+    {
+      "month": 2,
+      "label": "2월",
+      "ganji": "辛卯",
+      "stem": "辛",
+      "branch": "卯",
+      "stemTenGod": "편재",
+      "branchTenGod": "편인",
+      "basis": "calendar_month_approximation",
+      "elements": [
+        "metal",
+        "wood"
+      ],
+      "relationFacts": [
+        {
+          "id": "month:2026:2:branch:삼합:亥卯未",
+          "source": "month_natal_branch",
+          "type": "삼합",
+          "monthBranch": "卯",
+          "participants": [
+            "亥",
+            "卯",
+            "未"
+          ],
+          "affectedPillars": [
+            "month",
+            "hour"
+          ]
+        },
+        {
+          "id": "month:2026:2:branch:형:子卯",
+          "source": "month_natal_branch",
+          "type": "형",
+          "monthBranch": "卯",
+          "participants": [
+            "子",
+            "卯"
+          ],
+          "affectedPillars": [
+            "year"
+          ]
+        },
+        {
+          "id": "month:2026:2:element:missing:wood",
+          "source": "month_natal_element",
+          "type": "missing_element_present",
+          "element": "wood",
+          "monthElements": [
+            "wood"
+          ]
+        },
+        {
+          "id": "month:2026:2:element:missing:metal",
+          "source": "month_natal_element",
+          "type": "missing_element_present",
+          "element": "metal",
+          "monthElements": [
+            "metal"
+          ]
+        },
+        {
+          "id": "month:2026:2:element:heavy:fire",
+          "source": "month_natal_element",
+          "type": "heavy_element_generated",
+          "element": "fire",
+          "monthElements": [
+            "wood"
+          ]
+        },
+        {
+          "id": "month:2026:2:element:heavy:water",
+          "source": "month_natal_element",
+          "type": "heavy_element_generated",
+          "element": "water",
+          "monthElements": [
+            "metal"
+          ]
+        }
+      ],
+      "classification": {
+        "status": "mixed",
+        "supportFactIds": [
+          "month:2026:2:branch:삼합:亥卯未",
+          "month:2026:2:element:missing:wood",
+          "month:2026:2:element:missing:metal"
+        ],
+        "frictionFactIds": [
+          "month:2026:2:branch:형:子卯",
+          "month:2026:2:element:heavy:fire",
+          "month:2026:2:element:heavy:water"
+        ]
+      },
+      "neutralObservations": [],
+      "monthTheme": "2월 辛卯 · 편재과 편인",
+      "supportSignals": [
+        "월지 卯와 원국 월지·시지의 亥卯未 삼합: 세 지지가 모이는 흐름을 함께 추진할 일의 접점으로 읽습니다.",
+        "월간지의 목이 원국의 부족 요소에 더해집니다.",
+        "월간지의 금이 원국의 부족 요소에 더해집니다."
+      ],
+      "frictionSignals": [
+        "월지 卯와 원국 연지의 子卯 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다.",
+        "월간지의 목이 원국에 이미 많은 화을 생해 더합니다.",
+        "월간지의 금이 원국에 이미 많은 수을 생해 더합니다."
+      ],
+      "interpretation": "2월 辛卯의 오행은 금·목입니다. 일간 丁 기준 월간은 편재, 월지 본기는 편인으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다.",
+      "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 2월에는 돈과 자원의 사용 기준 중 현재 일정에 해당하는 항목을 골라 확인하세요.",
+      "caution": "달력월 기준 운영 가이드이므로 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다."
+    },
+    {
+      "month": 3,
+      "label": "3월",
+      "ganji": "壬辰",
+      "stem": "壬",
+      "branch": "辰",
+      "stemTenGod": "정관",
+      "branchTenGod": "상관",
+      "basis": "calendar_month_approximation",
+      "elements": [
+        "water",
+        "earth"
+      ],
+      "relationFacts": [
+        {
+          "id": "month:2026:3:branch:반합:辰子",
+          "source": "month_natal_branch",
+          "type": "반합",
+          "monthBranch": "辰",
+          "participants": [
+            "辰",
+            "子"
+          ],
+          "affectedPillars": [
+            "year"
+          ]
+        },
+        {
+          "id": "month:2026:3:branch:파:丑辰",
+          "source": "month_natal_branch",
+          "type": "파",
+          "monthBranch": "辰",
+          "participants": [
+            "丑",
+            "辰"
+          ],
+          "affectedPillars": [
+            "day"
+          ]
+        },
+        {
+          "id": "month:2026:3:element:heavy:earth",
+          "source": "month_natal_element",
+          "type": "heavy_element_present",
+          "element": "earth",
+          "monthElements": [
+            "earth"
+          ]
+        },
+        {
+          "id": "month:2026:3:element:heavy:water",
+          "source": "month_natal_element",
+          "type": "heavy_element_present",
+          "element": "water",
+          "monthElements": [
+            "water"
+          ]
+        }
+      ],
+      "classification": {
+        "status": "mixed",
+        "supportFactIds": [
+          "month:2026:3:branch:반합:辰子"
+        ],
+        "frictionFactIds": [
+          "month:2026:3:branch:파:丑辰",
+          "month:2026:3:element:heavy:earth",
+          "month:2026:3:element:heavy:water"
+        ]
+      },
+      "neutralObservations": [
+        "no_missing_element_present"
+      ],
+      "monthTheme": "3월 壬辰 · 정관과 상관",
+      "supportSignals": [
+        "월지 辰와 원국 연지의 辰子 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다."
+      ],
+      "frictionSignals": [
+        "월지 辰와 원국 일지의 丑辰 파: 기존 방식을 다시 맞출 지점을 절차와 역할 재확인의 관점에서 읽습니다.",
+        "월간지의 토이 원국에 이미 많은 토을 더합니다.",
+        "월간지의 수이 원국에 이미 많은 수을 더합니다."
+      ],
+      "interpretation": "3월 壬辰의 오행은 수·토입니다. 일간 丁 기준 월간은 정관, 월지 본기는 상관으로 읽으며 책임과 평가의 범위을 살피는 관점입니다.",
+      "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 3월에는 책임과 평가의 범위 중 현재 일정에 해당하는 항목을 골라 확인하세요.",
+      "caution": "달력월 기준 운영 가이드이므로 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다."
+    },
+    {
+      "month": 4,
+      "label": "4월",
+      "ganji": "癸巳",
+      "stem": "癸",
+      "branch": "巳",
+      "stemTenGod": "편관",
+      "branchTenGod": "겁재",
+      "basis": "calendar_month_approximation",
+      "elements": [
+        "water",
+        "fire"
+      ],
+      "relationFacts": [
+        {
+          "id": "month:2026:4:branch:반합:巳丑",
+          "source": "month_natal_branch",
+          "type": "반합",
+          "monthBranch": "巳",
+          "participants": [
+            "巳",
+            "丑"
+          ],
+          "affectedPillars": [
+            "day"
+          ]
+        },
+        {
+          "id": "month:2026:4:branch:충:巳亥",
+          "source": "month_natal_branch",
+          "type": "충",
+          "monthBranch": "巳",
+          "participants": [
+            "巳",
+            "亥"
+          ],
+          "affectedPillars": [
+            "month"
+          ]
+        },
+        {
+          "id": "month:2026:4:element:heavy:fire",
+          "source": "month_natal_element",
+          "type": "heavy_element_present",
+          "element": "fire",
+          "monthElements": [
+            "fire"
+          ]
+        },
+        {
+          "id": "month:2026:4:element:heavy:earth",
+          "source": "month_natal_element",
+          "type": "heavy_element_generated",
+          "element": "earth",
+          "monthElements": [
+            "fire"
+          ]
+        },
+        {
+          "id": "month:2026:4:element:heavy:water",
+          "source": "month_natal_element",
+          "type": "heavy_element_present",
+          "element": "water",
+          "monthElements": [
+            "water"
+          ]
+        }
+      ],
+      "classification": {
+        "status": "mixed",
+        "supportFactIds": [
+          "month:2026:4:branch:반합:巳丑"
+        ],
+        "frictionFactIds": [
+          "month:2026:4:branch:충:巳亥",
+          "month:2026:4:element:heavy:fire",
+          "month:2026:4:element:heavy:earth",
+          "month:2026:4:element:heavy:water"
+        ]
+      },
+      "neutralObservations": [
+        "no_missing_element_present"
+      ],
+      "monthTheme": "4월 癸巳 · 편관과 겁재",
+      "supportSignals": [
+        "월지 巳와 원국 일지의 巳丑 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다."
+      ],
+      "frictionSignals": [
+        "월지 巳와 원국 월지의 巳亥 충: 기존 리듬과 다른 요구를 일정과 역할 조정의 관점에서 읽습니다.",
+        "월간지의 화이 원국에 이미 많은 화을 더합니다.",
+        "월간지의 화이 원국에 이미 많은 토을 생해 더합니다.",
+        "월간지의 수이 원국에 이미 많은 수을 더합니다."
+      ],
+      "interpretation": "4월 癸巳의 오행은 수·화입니다. 일간 丁 기준 월간은 편관, 월지 본기는 겁재으로 읽으며 책임과 평가의 범위을 살피는 관점입니다.",
+      "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 4월에는 책임과 평가의 범위 중 현재 일정에 해당하는 항목을 골라 확인하세요.",
+      "caution": "달력월 기준 운영 가이드이므로 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다."
+    },
+    {
+      "month": 5,
+      "label": "5월",
+      "ganji": "甲午",
+      "stem": "甲",
+      "branch": "午",
+      "stemTenGod": "정인",
+      "branchTenGod": "비견",
+      "basis": "calendar_month_approximation",
+      "elements": [
+        "wood",
+        "fire"
+      ],
+      "relationFacts": [
+        {
+          "id": "month:2026:5:branch:충:子午",
+          "source": "month_natal_branch",
+          "type": "충",
+          "monthBranch": "午",
+          "participants": [
+            "子",
+            "午"
+          ],
+          "affectedPillars": [
+            "year"
+          ]
+        },
+        {
+          "id": "month:2026:5:branch:해:丑午",
+          "source": "month_natal_branch",
+          "type": "해",
+          "monthBranch": "午",
+          "participants": [
+            "丑",
+            "午"
+          ],
+          "affectedPillars": [
+            "day"
+          ]
+        },
+        {
+          "id": "month:2026:5:branch:육합:午未",
+          "source": "month_natal_branch",
+          "type": "육합",
+          "monthBranch": "午",
+          "participants": [
+            "午",
+            "未"
+          ],
+          "affectedPillars": [
+            "hour"
+          ]
+        },
+        {
+          "id": "month:2026:5:element:missing:wood",
+          "source": "month_natal_element",
+          "type": "missing_element_present",
+          "element": "wood",
+          "monthElements": [
+            "wood"
+          ]
+        },
+        {
+          "id": "month:2026:5:element:heavy:fire",
+          "source": "month_natal_element",
+          "type": "heavy_element_present",
+          "element": "fire",
+          "monthElements": [
+            "fire",
+            "wood"
+          ]
+        },
+        {
+          "id": "month:2026:5:element:heavy:earth",
+          "source": "month_natal_element",
+          "type": "heavy_element_generated",
+          "element": "earth",
+          "monthElements": [
+            "fire"
+          ]
+        }
+      ],
+      "classification": {
+        "status": "mixed",
+        "supportFactIds": [
+          "month:2026:5:branch:육합:午未",
+          "month:2026:5:element:missing:wood"
+        ],
+        "frictionFactIds": [
+          "month:2026:5:branch:충:子午",
+          "month:2026:5:branch:해:丑午",
+          "month:2026:5:element:heavy:fire",
+          "month:2026:5:element:heavy:earth"
+        ]
+      },
+      "neutralObservations": [],
+      "monthTheme": "5월 甲午 · 정인과 비견",
+      "supportSignals": [
+        "월지 午와 원국 시지의 午未 육합: 서로 연결되는 흐름을 약속과 협업의 접점으로 읽습니다.",
+        "월간지의 목이 원국의 부족 요소에 더해집니다."
+      ],
+      "frictionSignals": [
+        "월지 午와 원국 연지의 子午 충: 기존 리듬과 다른 요구를 일정과 역할 조정의 관점에서 읽습니다.",
+        "월지 午와 원국 일지의 丑午 해: 작은 어긋남이 쌓이는 지점을 연락과 약속의 확인 기준으로 읽습니다.",
+        "월간지의 화이 원국에 이미 많은 화을 더합니다.",
+        "월간지의 화이 원국에 이미 많은 토을 생해 더합니다."
+      ],
+      "interpretation": "5월 甲午의 오행은 목·화입니다. 일간 丁 기준 월간은 정인, 월지 본기는 비견으로 읽으며 학습과 문서 정리을 살피는 관점입니다.",
+      "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 5월에는 학습과 문서 정리 중 현재 일정에 해당하는 항목을 골라 확인하세요.",
+      "caution": "달력월 기준 운영 가이드이므로 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다."
+    },
+    {
+      "month": 6,
+      "label": "6월",
+      "ganji": "乙未",
+      "stem": "乙",
+      "branch": "未",
+      "stemTenGod": "편인",
+      "branchTenGod": "식신",
+      "basis": "calendar_month_approximation",
+      "elements": [
+        "wood",
+        "earth"
+      ],
+      "relationFacts": [
+        {
+          "id": "month:2026:6:branch:반합:未亥",
+          "source": "month_natal_branch",
+          "type": "반합",
+          "monthBranch": "未",
+          "participants": [
+            "未",
+            "亥"
+          ],
+          "affectedPillars": [
+            "month",
+            "hour"
+          ]
+        },
+        {
+          "id": "month:2026:6:branch:해:子未",
+          "source": "month_natal_branch",
+          "type": "해",
+          "monthBranch": "未",
+          "participants": [
+            "子",
+            "未"
+          ],
+          "affectedPillars": [
+            "year"
+          ]
+        },
+        {
+          "id": "month:2026:6:branch:충:丑未",
+          "source": "month_natal_branch",
+          "type": "충",
+          "monthBranch": "未",
+          "participants": [
+            "丑",
+            "未"
+          ],
+          "affectedPillars": [
+            "day"
+          ]
+        },
+        {
+          "id": "month:2026:6:branch:형:未丑",
+          "source": "month_natal_branch",
+          "type": "형",
+          "monthBranch": "未",
+          "participants": [
+            "未",
+            "丑"
+          ],
+          "affectedPillars": [
+            "day"
+          ]
+        },
+        {
+          "id": "month:2026:6:element:missing:wood",
+          "source": "month_natal_element",
+          "type": "missing_element_present",
+          "element": "wood",
+          "monthElements": [
+            "wood"
+          ]
+        },
+        {
+          "id": "month:2026:6:element:heavy:fire",
+          "source": "month_natal_element",
+          "type": "heavy_element_generated",
+          "element": "fire",
+          "monthElements": [
+            "wood"
+          ]
+        },
+        {
+          "id": "month:2026:6:element:heavy:earth",
+          "source": "month_natal_element",
+          "type": "heavy_element_present",
+          "element": "earth",
+          "monthElements": [
+            "earth"
+          ]
+        }
+      ],
+      "classification": {
+        "status": "mixed",
+        "supportFactIds": [
+          "month:2026:6:branch:반합:未亥",
+          "month:2026:6:element:missing:wood"
+        ],
+        "frictionFactIds": [
+          "month:2026:6:branch:해:子未",
+          "month:2026:6:branch:충:丑未",
+          "month:2026:6:branch:형:未丑",
+          "month:2026:6:element:heavy:fire",
+          "month:2026:6:element:heavy:earth"
+        ]
+      },
+      "neutralObservations": [],
+      "monthTheme": "6월 乙未 · 편인과 식신",
+      "supportSignals": [
+        "월지 未와 원국 월지·시지의 未亥 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다.",
+        "월간지의 목이 원국의 부족 요소에 더해집니다."
+      ],
+      "frictionSignals": [
+        "월지 未와 원국 연지의 子未 해: 작은 어긋남이 쌓이는 지점을 연락과 약속의 확인 기준으로 읽습니다.",
+        "월지 未와 원국 일지의 丑未 충: 기존 리듬과 다른 요구를 일정과 역할 조정의 관점에서 읽습니다.",
+        "월지 未와 원국 일지의 未丑 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다.",
+        "월간지의 목이 원국에 이미 많은 화을 생해 더합니다.",
+        "월간지의 토이 원국에 이미 많은 토을 더합니다."
+      ],
+      "interpretation": "6월 乙未의 오행은 목·토입니다. 일간 丁 기준 월간은 편인, 월지 본기는 식신으로 읽으며 학습과 문서 정리을 살피는 관점입니다.",
+      "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 6월에는 학습과 문서 정리 중 현재 일정에 해당하는 항목을 골라 확인하세요.",
+      "caution": "달력월 기준 운영 가이드이므로 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다."
+    },
+    {
+      "month": 7,
+      "label": "7월",
+      "ganji": "丙申",
+      "stem": "丙",
+      "branch": "申",
+      "stemTenGod": "겁재",
+      "branchTenGod": "정재",
+      "basis": "calendar_month_approximation",
+      "elements": [
+        "fire",
+        "metal"
+      ],
+      "relationFacts": [
+        {
+          "id": "month:2026:7:branch:반합:申子",
+          "source": "month_natal_branch",
+          "type": "반합",
+          "monthBranch": "申",
+          "participants": [
+            "申",
+            "子"
+          ],
+          "affectedPillars": [
+            "year"
+          ]
+        },
+        {
+          "id": "month:2026:7:branch:해:申亥",
+          "source": "month_natal_branch",
+          "type": "해",
+          "monthBranch": "申",
+          "participants": [
+            "申",
+            "亥"
+          ],
+          "affectedPillars": [
+            "month"
+          ]
+        },
+        {
+          "id": "month:2026:7:element:missing:metal",
+          "source": "month_natal_element",
+          "type": "missing_element_present",
+          "element": "metal",
+          "monthElements": [
+            "metal"
+          ]
+        },
+        {
+          "id": "month:2026:7:element:heavy:fire",
+          "source": "month_natal_element",
+          "type": "heavy_element_present",
+          "element": "fire",
+          "monthElements": [
+            "fire"
+          ]
+        },
+        {
+          "id": "month:2026:7:element:heavy:earth",
+          "source": "month_natal_element",
+          "type": "heavy_element_generated",
+          "element": "earth",
+          "monthElements": [
+            "fire"
+          ]
+        },
+        {
+          "id": "month:2026:7:element:heavy:water",
+          "source": "month_natal_element",
+          "type": "heavy_element_generated",
+          "element": "water",
+          "monthElements": [
+            "metal"
+          ]
+        }
+      ],
+      "classification": {
+        "status": "mixed",
+        "supportFactIds": [
+          "month:2026:7:branch:반합:申子",
+          "month:2026:7:element:missing:metal"
+        ],
+        "frictionFactIds": [
+          "month:2026:7:branch:해:申亥",
+          "month:2026:7:element:heavy:fire",
+          "month:2026:7:element:heavy:earth",
+          "month:2026:7:element:heavy:water"
+        ]
+      },
+      "neutralObservations": [],
+      "monthTheme": "7월 丙申 · 겁재과 정재",
+      "supportSignals": [
+        "월지 申와 원국 연지의 申子 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다.",
+        "월간지의 금이 원국의 부족 요소에 더해집니다."
+      ],
+      "frictionSignals": [
+        "월지 申와 원국 월지의 申亥 해: 작은 어긋남이 쌓이는 지점을 연락과 약속의 확인 기준으로 읽습니다.",
+        "월간지의 화이 원국에 이미 많은 화을 더합니다.",
+        "월간지의 화이 원국에 이미 많은 토을 생해 더합니다.",
+        "월간지의 금이 원국에 이미 많은 수을 생해 더합니다."
+      ],
+      "interpretation": "7월 丙申의 오행은 화·금입니다. 일간 丁 기준 월간은 겁재, 월지 본기는 정재으로 읽으며 자기 기준과 공동 역할을 살피는 관점입니다.",
+      "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 7월에는 자기 기준과 공동 역할 중 현재 일정에 해당하는 항목을 골라 확인하세요.",
+      "caution": "달력월 기준 운영 가이드이므로 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다."
+    },
+    {
+      "month": 8,
+      "label": "8월",
+      "ganji": "丁酉",
+      "stem": "丁",
+      "branch": "酉",
+      "stemTenGod": "비견",
+      "branchTenGod": "편재",
+      "basis": "calendar_month_approximation",
+      "elements": [
+        "fire",
+        "metal"
+      ],
+      "relationFacts": [
+        {
+          "id": "month:2026:8:branch:반합:酉丑",
+          "source": "month_natal_branch",
+          "type": "반합",
+          "monthBranch": "酉",
+          "participants": [
+            "酉",
+            "丑"
+          ],
+          "affectedPillars": [
+            "day"
+          ]
+        },
+        {
+          "id": "month:2026:8:branch:파:子酉",
+          "source": "month_natal_branch",
+          "type": "파",
+          "monthBranch": "酉",
+          "participants": [
+            "子",
+            "酉"
+          ],
+          "affectedPillars": [
+            "year"
+          ]
+        },
+        {
+          "id": "month:2026:8:element:missing:metal",
+          "source": "month_natal_element",
+          "type": "missing_element_present",
+          "element": "metal",
+          "monthElements": [
+            "metal"
+          ]
+        },
+        {
+          "id": "month:2026:8:element:heavy:fire",
+          "source": "month_natal_element",
+          "type": "heavy_element_present",
+          "element": "fire",
+          "monthElements": [
+            "fire"
+          ]
+        },
+        {
+          "id": "month:2026:8:element:heavy:earth",
+          "source": "month_natal_element",
+          "type": "heavy_element_generated",
+          "element": "earth",
+          "monthElements": [
+            "fire"
+          ]
+        },
+        {
+          "id": "month:2026:8:element:heavy:water",
+          "source": "month_natal_element",
+          "type": "heavy_element_generated",
+          "element": "water",
+          "monthElements": [
+            "metal"
+          ]
+        }
+      ],
+      "classification": {
+        "status": "mixed",
+        "supportFactIds": [
+          "month:2026:8:branch:반합:酉丑",
+          "month:2026:8:element:missing:metal"
+        ],
+        "frictionFactIds": [
+          "month:2026:8:branch:파:子酉",
+          "month:2026:8:element:heavy:fire",
+          "month:2026:8:element:heavy:earth",
+          "month:2026:8:element:heavy:water"
+        ]
+      },
+      "neutralObservations": [],
+      "monthTheme": "8월 丁酉 · 비견과 편재",
+      "supportSignals": [
+        "월지 酉와 원국 일지의 酉丑 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다.",
+        "월간지의 금이 원국의 부족 요소에 더해집니다."
+      ],
+      "frictionSignals": [
+        "월지 酉와 원국 연지의 子酉 파: 기존 방식을 다시 맞출 지점을 절차와 역할 재확인의 관점에서 읽습니다.",
+        "월간지의 화이 원국에 이미 많은 화을 더합니다.",
+        "월간지의 화이 원국에 이미 많은 토을 생해 더합니다.",
+        "월간지의 금이 원국에 이미 많은 수을 생해 더합니다."
+      ],
+      "interpretation": "8월 丁酉의 오행은 화·금입니다. 일간 丁 기준 월간은 비견, 월지 본기는 편재으로 읽으며 자기 기준과 공동 역할을 살피는 관점입니다.",
+      "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 8월에는 자기 기준과 공동 역할 중 현재 일정에 해당하는 항목을 골라 확인하세요.",
+      "caution": "달력월 기준 운영 가이드이므로 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다."
+    },
+    {
+      "month": 9,
+      "label": "9월",
+      "ganji": "戊戌",
+      "stem": "戊",
+      "branch": "戌",
+      "stemTenGod": "상관",
+      "branchTenGod": "상관",
+      "basis": "calendar_month_approximation",
+      "elements": [
+        "earth"
+      ],
+      "relationFacts": [
+        {
+          "id": "month:2026:9:branch:형:丑戌",
+          "source": "month_natal_branch",
+          "type": "형",
+          "monthBranch": "戌",
+          "participants": [
+            "丑",
+            "戌"
+          ],
+          "affectedPillars": [
+            "day"
+          ]
+        },
+        {
+          "id": "month:2026:9:branch:형:戌未",
+          "source": "month_natal_branch",
+          "type": "형",
+          "monthBranch": "戌",
+          "participants": [
+            "戌",
+            "未"
+          ],
+          "affectedPillars": [
+            "hour"
+          ]
+        },
+        {
+          "id": "month:2026:9:branch:파:未戌",
+          "source": "month_natal_branch",
+          "type": "파",
+          "monthBranch": "戌",
+          "participants": [
+            "未",
+            "戌"
+          ],
+          "affectedPillars": [
+            "hour"
+          ]
+        },
+        {
+          "id": "month:2026:9:element:heavy:earth",
+          "source": "month_natal_element",
+          "type": "heavy_element_present",
+          "element": "earth",
+          "monthElements": [
+            "earth"
+          ]
+        }
+      ],
+      "classification": {
+        "status": "friction",
+        "supportFactIds": [],
+        "frictionFactIds": [
+          "month:2026:9:branch:형:丑戌",
+          "month:2026:9:branch:형:戌未",
+          "month:2026:9:branch:파:未戌",
+          "month:2026:9:element:heavy:earth"
+        ]
+      },
+      "neutralObservations": [
+        "no_missing_element_present"
+      ],
+      "monthTheme": "9월 戊戌 · 상관과 상관",
+      "supportSignals": [],
+      "frictionSignals": [
+        "월지 戌와 원국 일지의 丑戌 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다.",
+        "월지 戌와 원국 시지의 戌未 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다.",
+        "월지 戌와 원국 시지의 未戌 파: 기존 방식을 다시 맞출 지점을 절차와 역할 재확인의 관점에서 읽습니다.",
+        "월간지의 토이 원국에 이미 많은 토을 더합니다."
+      ],
+      "interpretation": "9월 戊戌의 오행은 토입니다. 일간 丁 기준 월간은 상관, 월지 본기는 상관으로 읽으며 작업 결과와 표현을 살피는 관점입니다.",
+      "actionHint": "마찰 작용은 조정할 지점이며 실제 사건의 예고가 아닙니다. 9월에는 작업 결과와 표현 중 현재 일정에 해당하는 항목을 골라 확인하세요.",
+      "caution": "달력월 기준 운영 가이드이므로 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다."
+    },
+    {
+      "month": 10,
+      "label": "10월",
+      "ganji": "己亥",
+      "stem": "己",
+      "branch": "亥",
+      "stemTenGod": "식신",
+      "branchTenGod": "정관",
+      "basis": "calendar_month_approximation",
+      "elements": [
+        "earth",
+        "water"
+      ],
+      "relationFacts": [
+        {
+          "id": "month:2026:10:branch:반합:亥未",
+          "source": "month_natal_branch",
+          "type": "반합",
+          "monthBranch": "亥",
+          "participants": [
+            "亥",
+            "未"
+          ],
+          "affectedPillars": [
+            "month",
+            "hour"
+          ]
+        },
+        {
+          "id": "month:2026:10:branch:형:亥亥",
+          "source": "month_natal_branch",
+          "type": "형",
+          "monthBranch": "亥",
+          "participants": [
+            "亥",
+            "亥"
+          ],
+          "affectedPillars": [
+            "month"
+          ]
+        },
+        {
+          "id": "month:2026:10:element:heavy:earth",
+          "source": "month_natal_element",
+          "type": "heavy_element_present",
+          "element": "earth",
+          "monthElements": [
+            "earth"
+          ]
+        },
+        {
+          "id": "month:2026:10:element:heavy:water",
+          "source": "month_natal_element",
+          "type": "heavy_element_present",
+          "element": "water",
+          "monthElements": [
+            "water"
+          ]
+        }
+      ],
+      "classification": {
+        "status": "mixed",
+        "supportFactIds": [
+          "month:2026:10:branch:반합:亥未"
+        ],
+        "frictionFactIds": [
+          "month:2026:10:branch:형:亥亥",
+          "month:2026:10:element:heavy:earth",
+          "month:2026:10:element:heavy:water"
+        ]
+      },
+      "neutralObservations": [
+        "no_missing_element_present"
+      ],
+      "monthTheme": "10월 己亥 · 식신과 정관",
+      "supportSignals": [
+        "월지 亥와 원국 월지·시지의 亥未 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다."
+      ],
+      "frictionSignals": [
+        "월지 亥와 원국 월지의 亥亥 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다.",
+        "월간지의 토이 원국에 이미 많은 토을 더합니다.",
+        "월간지의 수이 원국에 이미 많은 수을 더합니다."
+      ],
+      "interpretation": "10월 己亥의 오행은 토·수입니다. 일간 丁 기준 월간은 식신, 월지 본기는 정관으로 읽으며 작업 결과와 표현을 살피는 관점입니다.",
+      "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 10월에는 작업 결과와 표현 중 현재 일정에 해당하는 항목을 골라 확인하세요.",
+      "caution": "달력월 기준 운영 가이드이므로 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다."
+    },
+    {
+      "month": 11,
+      "label": "11월",
+      "ganji": "庚子",
+      "stem": "庚",
+      "branch": "子",
+      "stemTenGod": "정재",
+      "branchTenGod": "편관",
+      "basis": "calendar_month_approximation",
+      "elements": [
+        "metal",
+        "water"
+      ],
+      "relationFacts": [
+        {
+          "id": "month:2026:11:branch:육합:子丑",
+          "source": "month_natal_branch",
+          "type": "육합",
+          "monthBranch": "子",
+          "participants": [
+            "子",
+            "丑"
+          ],
+          "affectedPillars": [
+            "day"
+          ]
+        },
+        {
+          "id": "month:2026:11:branch:해:子未",
+          "source": "month_natal_branch",
+          "type": "해",
+          "monthBranch": "子",
+          "participants": [
+            "子",
+            "未"
+          ],
+          "affectedPillars": [
+            "hour"
+          ]
+        },
+        {
+          "id": "month:2026:11:element:missing:metal",
+          "source": "month_natal_element",
+          "type": "missing_element_present",
+          "element": "metal",
+          "monthElements": [
+            "metal"
+          ]
+        },
+        {
+          "id": "month:2026:11:element:heavy:water",
+          "source": "month_natal_element",
+          "type": "heavy_element_present",
+          "element": "water",
+          "monthElements": [
+            "water",
+            "metal"
+          ]
+        }
+      ],
+      "classification": {
+        "status": "mixed",
+        "supportFactIds": [
+          "month:2026:11:branch:육합:子丑",
+          "month:2026:11:element:missing:metal"
+        ],
+        "frictionFactIds": [
+          "month:2026:11:branch:해:子未",
+          "month:2026:11:element:heavy:water"
+        ]
+      },
+      "neutralObservations": [],
+      "monthTheme": "11월 庚子 · 정재과 편관",
+      "supportSignals": [
+        "월지 子와 원국 일지의 子丑 육합: 서로 연결되는 흐름을 약속과 협업의 접점으로 읽습니다.",
+        "월간지의 금이 원국의 부족 요소에 더해집니다."
+      ],
+      "frictionSignals": [
+        "월지 子와 원국 시지의 子未 해: 작은 어긋남이 쌓이는 지점을 연락과 약속의 확인 기준으로 읽습니다.",
+        "월간지의 수이 원국에 이미 많은 수을 더합니다."
+      ],
+      "interpretation": "11월 庚子의 오행은 금·수입니다. 일간 丁 기준 월간은 정재, 월지 본기는 편관으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다.",
+      "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 11월에는 돈과 자원의 사용 기준 중 현재 일정에 해당하는 항목을 골라 확인하세요.",
+      "caution": "달력월 기준 운영 가이드이므로 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다."
+    },
+    {
+      "month": 12,
+      "label": "12월",
+      "ganji": "辛丑",
+      "stem": "辛",
+      "branch": "丑",
+      "stemTenGod": "편재",
+      "branchTenGod": "식신",
+      "basis": "calendar_month_approximation",
+      "elements": [
+        "metal",
+        "earth"
+      ],
+      "relationFacts": [
+        {
+          "id": "month:2026:12:branch:육합:子丑",
+          "source": "month_natal_branch",
+          "type": "육합",
+          "monthBranch": "丑",
+          "participants": [
+            "子",
+            "丑"
+          ],
+          "affectedPillars": [
+            "year"
+          ]
+        },
+        {
+          "id": "month:2026:12:branch:충:丑未",
+          "source": "month_natal_branch",
+          "type": "충",
+          "monthBranch": "丑",
+          "participants": [
+            "丑",
+            "未"
+          ],
+          "affectedPillars": [
+            "hour"
+          ]
+        },
+        {
+          "id": "month:2026:12:branch:형:未丑",
+          "source": "month_natal_branch",
+          "type": "형",
+          "monthBranch": "丑",
+          "participants": [
+            "未",
+            "丑"
+          ],
+          "affectedPillars": [
+            "hour"
+          ]
+        },
+        {
+          "id": "month:2026:12:element:missing:metal",
+          "source": "month_natal_element",
+          "type": "missing_element_present",
+          "element": "metal",
+          "monthElements": [
+            "metal"
+          ]
+        },
+        {
+          "id": "month:2026:12:element:heavy:earth",
+          "source": "month_natal_element",
+          "type": "heavy_element_present",
+          "element": "earth",
+          "monthElements": [
+            "earth"
+          ]
+        },
+        {
+          "id": "month:2026:12:element:heavy:water",
+          "source": "month_natal_element",
+          "type": "heavy_element_generated",
+          "element": "water",
+          "monthElements": [
+            "metal"
+          ]
+        }
+      ],
+      "classification": {
+        "status": "mixed",
+        "supportFactIds": [
+          "month:2026:12:branch:육합:子丑",
+          "month:2026:12:element:missing:metal"
+        ],
+        "frictionFactIds": [
+          "month:2026:12:branch:충:丑未",
+          "month:2026:12:branch:형:未丑",
+          "month:2026:12:element:heavy:earth",
+          "month:2026:12:element:heavy:water"
+        ]
+      },
+      "neutralObservations": [],
+      "monthTheme": "12월 辛丑 · 편재과 식신",
+      "supportSignals": [
+        "월지 丑와 원국 연지의 子丑 육합: 서로 연결되는 흐름을 약속과 협업의 접점으로 읽습니다.",
+        "월간지의 금이 원국의 부족 요소에 더해집니다."
+      ],
+      "frictionSignals": [
+        "월지 丑와 원국 시지의 丑未 충: 기존 리듬과 다른 요구를 일정과 역할 조정의 관점에서 읽습니다.",
+        "월지 丑와 원국 시지의 未丑 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다.",
+        "월간지의 토이 원국에 이미 많은 토을 더합니다.",
+        "월간지의 금이 원국에 이미 많은 수을 생해 더합니다."
+      ],
+      "interpretation": "12월 辛丑의 오행은 금·토입니다. 일간 丁 기준 월간은 편재, 월지 본기는 식신으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다.",
+      "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 12월에는 돈과 자원의 사용 기준 중 현재 일정에 해당하는 항목을 골라 확인하세요.",
+      "caution": "달력월 기준 운영 가이드이므로 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다."
+    }
+  ],
+  "monthlyFortuneSeeds": [
+    {
+      "month": 1,
+      "label": "1월",
+      "monthGanji": {
+        "year": 2026,
+        "month": 1,
+        "label": "1월",
+        "ganji": "庚寅",
+        "stem": "庚",
+        "branch": "寅",
+        "stemElement": "metal",
+        "branchElement": "wood",
+        "elementSummary": "금과 목의 기운이 함께 들어오는 달",
+        "basis": "calendar_month_approximation"
+      },
+      "elementFocus": "금·목",
+      "basis": "calendar_month_approximation",
+      "natalInteractionSummary": "월지 寅와 원국 월지의 寅亥 육합: 서로 연결되는 흐름을 약속과 협업의 접점으로 읽습니다. 월지 寅와 원국 월지의 寅亥 파: 기존 방식을 다시 맞출 지점을 절차와 역할 재확인의 관점에서 읽습니다. 월간지의 목이 원국의 부족 요소에 더해집니다. 월간지의 금이 원국의 부족 요소에 더해집니다. 월간지의 목이 원국에 이미 많은 화을 생해 더합니다. 월간지의 금이 원국에 이미 많은 수을 생해 더합니다.",
+      "plain": "1월 庚寅의 오행은 금·목입니다. 일간 丁 기준 월간은 정재, 월지 본기는 정인으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다."
+    },
+    {
+      "month": 2,
+      "label": "2월",
+      "monthGanji": {
+        "year": 2026,
+        "month": 2,
+        "label": "2월",
+        "ganji": "辛卯",
+        "stem": "辛",
+        "branch": "卯",
+        "stemElement": "metal",
+        "branchElement": "wood",
+        "elementSummary": "금과 목의 기운이 함께 들어오는 달",
+        "basis": "calendar_month_approximation"
+      },
+      "elementFocus": "금·목",
+      "basis": "calendar_month_approximation",
+      "natalInteractionSummary": "월지 卯와 원국 월지·시지의 亥卯未 삼합: 세 지지가 모이는 흐름을 함께 추진할 일의 접점으로 읽습니다. 월지 卯와 원국 연지의 子卯 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다. 월간지의 목이 원국의 부족 요소에 더해집니다. 월간지의 금이 원국의 부족 요소에 더해집니다. 월간지의 목이 원국에 이미 많은 화을 생해 더합니다. 월간지의 금이 원국에 이미 많은 수을 생해 더합니다.",
+      "plain": "2월 辛卯의 오행은 금·목입니다. 일간 丁 기준 월간은 편재, 월지 본기는 편인으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다."
+    },
+    {
+      "month": 3,
+      "label": "3월",
+      "monthGanji": {
+        "year": 2026,
+        "month": 3,
+        "label": "3월",
+        "ganji": "壬辰",
+        "stem": "壬",
+        "branch": "辰",
+        "stemElement": "water",
+        "branchElement": "earth",
+        "elementSummary": "수와 토의 기운이 함께 들어오는 달",
+        "basis": "calendar_month_approximation"
+      },
+      "elementFocus": "수·토",
+      "basis": "calendar_month_approximation",
+      "natalInteractionSummary": "월지 辰와 원국 연지의 辰子 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다. 월지 辰와 원국 일지의 丑辰 파: 기존 방식을 다시 맞출 지점을 절차와 역할 재확인의 관점에서 읽습니다. 월간지의 토이 원국에 이미 많은 토을 더합니다. 월간지의 수이 원국에 이미 많은 수을 더합니다.",
+      "plain": "3월 壬辰의 오행은 수·토입니다. 일간 丁 기준 월간은 정관, 월지 본기는 상관으로 읽으며 책임과 평가의 범위을 살피는 관점입니다."
+    },
+    {
+      "month": 4,
+      "label": "4월",
+      "monthGanji": {
+        "year": 2026,
+        "month": 4,
+        "label": "4월",
+        "ganji": "癸巳",
+        "stem": "癸",
+        "branch": "巳",
+        "stemElement": "water",
+        "branchElement": "fire",
+        "elementSummary": "수와 화의 기운이 함께 들어오는 달",
+        "basis": "calendar_month_approximation"
+      },
+      "elementFocus": "수·화",
+      "basis": "calendar_month_approximation",
+      "natalInteractionSummary": "월지 巳와 원국 일지의 巳丑 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다. 월지 巳와 원국 월지의 巳亥 충: 기존 리듬과 다른 요구를 일정과 역할 조정의 관점에서 읽습니다. 월간지의 화이 원국에 이미 많은 화을 더합니다. 월간지의 화이 원국에 이미 많은 토을 생해 더합니다. 월간지의 수이 원국에 이미 많은 수을 더합니다.",
+      "plain": "4월 癸巳의 오행은 수·화입니다. 일간 丁 기준 월간은 편관, 월지 본기는 겁재으로 읽으며 책임과 평가의 범위을 살피는 관점입니다."
+    },
+    {
+      "month": 5,
+      "label": "5월",
+      "monthGanji": {
+        "year": 2026,
+        "month": 5,
+        "label": "5월",
+        "ganji": "甲午",
+        "stem": "甲",
+        "branch": "午",
+        "stemElement": "wood",
+        "branchElement": "fire",
+        "elementSummary": "목과 화의 기운이 함께 들어오는 달",
+        "basis": "calendar_month_approximation"
+      },
+      "elementFocus": "목·화",
+      "basis": "calendar_month_approximation",
+      "natalInteractionSummary": "월지 午와 원국 연지의 子午 충: 기존 리듬과 다른 요구를 일정과 역할 조정의 관점에서 읽습니다. 월지 午와 원국 일지의 丑午 해: 작은 어긋남이 쌓이는 지점을 연락과 약속의 확인 기준으로 읽습니다. 월지 午와 원국 시지의 午未 육합: 서로 연결되는 흐름을 약속과 협업의 접점으로 읽습니다. 월간지의 목이 원국의 부족 요소에 더해집니다. 월간지의 화이 원국에 이미 많은 화을 더합니다. 월간지의 화이 원국에 이미 많은 토을 생해 더합니다.",
+      "plain": "5월 甲午의 오행은 목·화입니다. 일간 丁 기준 월간은 정인, 월지 본기는 비견으로 읽으며 학습과 문서 정리을 살피는 관점입니다."
+    },
+    {
+      "month": 6,
+      "label": "6월",
+      "monthGanji": {
+        "year": 2026,
+        "month": 6,
+        "label": "6월",
+        "ganji": "乙未",
+        "stem": "乙",
+        "branch": "未",
+        "stemElement": "wood",
+        "branchElement": "earth",
+        "elementSummary": "목과 토의 기운이 함께 들어오는 달",
+        "basis": "calendar_month_approximation"
+      },
+      "elementFocus": "목·토",
+      "basis": "calendar_month_approximation",
+      "natalInteractionSummary": "월지 未와 원국 월지·시지의 未亥 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다. 월지 未와 원국 연지의 子未 해: 작은 어긋남이 쌓이는 지점을 연락과 약속의 확인 기준으로 읽습니다. 월지 未와 원국 일지의 丑未 충: 기존 리듬과 다른 요구를 일정과 역할 조정의 관점에서 읽습니다. 월지 未와 원국 일지의 未丑 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다. 월간지의 목이 원국의 부족 요소에 더해집니다. 월간지의 목이 원국에 이미 많은 화을 생해 더합니다. 월간지의 토이 원국에 이미 많은 토을 더합니다.",
+      "plain": "6월 乙未의 오행은 목·토입니다. 일간 丁 기준 월간은 편인, 월지 본기는 식신으로 읽으며 학습과 문서 정리을 살피는 관점입니다."
+    },
+    {
+      "month": 7,
+      "label": "7월",
+      "monthGanji": {
+        "year": 2026,
+        "month": 7,
+        "label": "7월",
+        "ganji": "丙申",
+        "stem": "丙",
+        "branch": "申",
+        "stemElement": "fire",
+        "branchElement": "metal",
+        "elementSummary": "화와 금의 기운이 함께 들어오는 달",
+        "basis": "calendar_month_approximation"
+      },
+      "elementFocus": "화·금",
+      "basis": "calendar_month_approximation",
+      "natalInteractionSummary": "월지 申와 원국 연지의 申子 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다. 월지 申와 원국 월지의 申亥 해: 작은 어긋남이 쌓이는 지점을 연락과 약속의 확인 기준으로 읽습니다. 월간지의 금이 원국의 부족 요소에 더해집니다. 월간지의 화이 원국에 이미 많은 화을 더합니다. 월간지의 화이 원국에 이미 많은 토을 생해 더합니다. 월간지의 금이 원국에 이미 많은 수을 생해 더합니다.",
+      "plain": "7월 丙申의 오행은 화·금입니다. 일간 丁 기준 월간은 겁재, 월지 본기는 정재으로 읽으며 자기 기준과 공동 역할을 살피는 관점입니다."
+    },
+    {
+      "month": 8,
+      "label": "8월",
+      "monthGanji": {
+        "year": 2026,
+        "month": 8,
+        "label": "8월",
+        "ganji": "丁酉",
+        "stem": "丁",
+        "branch": "酉",
+        "stemElement": "fire",
+        "branchElement": "metal",
+        "elementSummary": "화와 금의 기운이 함께 들어오는 달",
+        "basis": "calendar_month_approximation"
+      },
+      "elementFocus": "화·금",
+      "basis": "calendar_month_approximation",
+      "natalInteractionSummary": "월지 酉와 원국 일지의 酉丑 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다. 월지 酉와 원국 연지의 子酉 파: 기존 방식을 다시 맞출 지점을 절차와 역할 재확인의 관점에서 읽습니다. 월간지의 금이 원국의 부족 요소에 더해집니다. 월간지의 화이 원국에 이미 많은 화을 더합니다. 월간지의 화이 원국에 이미 많은 토을 생해 더합니다. 월간지의 금이 원국에 이미 많은 수을 생해 더합니다.",
+      "plain": "8월 丁酉의 오행은 화·금입니다. 일간 丁 기준 월간은 비견, 월지 본기는 편재으로 읽으며 자기 기준과 공동 역할을 살피는 관점입니다."
+    },
+    {
+      "month": 9,
+      "label": "9월",
+      "monthGanji": {
+        "year": 2026,
+        "month": 9,
+        "label": "9월",
+        "ganji": "戊戌",
+        "stem": "戊",
+        "branch": "戌",
+        "stemElement": "earth",
+        "branchElement": "earth",
+        "elementSummary": "토의 기운이 강하게 들어오는 달",
+        "basis": "calendar_month_approximation"
+      },
+      "elementFocus": "토",
+      "basis": "calendar_month_approximation",
+      "natalInteractionSummary": "월지 戌와 원국 일지의 丑戌 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다. 월지 戌와 원국 시지의 戌未 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다. 월지 戌와 원국 시지의 未戌 파: 기존 방식을 다시 맞출 지점을 절차와 역할 재확인의 관점에서 읽습니다. 월간지의 토이 원국에 이미 많은 토을 더합니다.",
+      "plain": "9월 戊戌의 오행은 토입니다. 일간 丁 기준 월간은 상관, 월지 본기는 상관으로 읽으며 작업 결과와 표현을 살피는 관점입니다."
+    },
+    {
+      "month": 10,
+      "label": "10월",
+      "monthGanji": {
+        "year": 2026,
+        "month": 10,
+        "label": "10월",
+        "ganji": "己亥",
+        "stem": "己",
+        "branch": "亥",
+        "stemElement": "earth",
+        "branchElement": "water",
+        "elementSummary": "토와 수의 기운이 함께 들어오는 달",
+        "basis": "calendar_month_approximation"
+      },
+      "elementFocus": "토·수",
+      "basis": "calendar_month_approximation",
+      "natalInteractionSummary": "월지 亥와 원국 월지·시지의 亥未 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다. 월지 亥와 원국 월지의 亥亥 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다. 월간지의 토이 원국에 이미 많은 토을 더합니다. 월간지의 수이 원국에 이미 많은 수을 더합니다.",
+      "plain": "10월 己亥의 오행은 토·수입니다. 일간 丁 기준 월간은 식신, 월지 본기는 정관으로 읽으며 작업 결과와 표현을 살피는 관점입니다."
+    },
+    {
+      "month": 11,
+      "label": "11월",
+      "monthGanji": {
+        "year": 2026,
+        "month": 11,
+        "label": "11월",
+        "ganji": "庚子",
+        "stem": "庚",
+        "branch": "子",
+        "stemElement": "metal",
+        "branchElement": "water",
+        "elementSummary": "금과 수의 기운이 함께 들어오는 달",
+        "basis": "calendar_month_approximation"
+      },
+      "elementFocus": "금·수",
+      "basis": "calendar_month_approximation",
+      "natalInteractionSummary": "월지 子와 원국 일지의 子丑 육합: 서로 연결되는 흐름을 약속과 협업의 접점으로 읽습니다. 월지 子와 원국 시지의 子未 해: 작은 어긋남이 쌓이는 지점을 연락과 약속의 확인 기준으로 읽습니다. 월간지의 금이 원국의 부족 요소에 더해집니다. 월간지의 수이 원국에 이미 많은 수을 더합니다.",
+      "plain": "11월 庚子의 오행은 금·수입니다. 일간 丁 기준 월간은 정재, 월지 본기는 편관으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다."
+    },
+    {
+      "month": 12,
+      "label": "12월",
+      "monthGanji": {
+        "year": 2026,
+        "month": 12,
+        "label": "12월",
+        "ganji": "辛丑",
+        "stem": "辛",
+        "branch": "丑",
+        "stemElement": "metal",
+        "branchElement": "earth",
+        "elementSummary": "금과 토의 기운이 함께 들어오는 달",
+        "basis": "calendar_month_approximation"
+      },
+      "elementFocus": "금·토",
+      "basis": "calendar_month_approximation",
+      "natalInteractionSummary": "월지 丑와 원국 연지의 子丑 육합: 서로 연결되는 흐름을 약속과 협업의 접점으로 읽습니다. 월지 丑와 원국 시지의 丑未 충: 기존 리듬과 다른 요구를 일정과 역할 조정의 관점에서 읽습니다. 월지 丑와 원국 시지의 未丑 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다. 월간지의 금이 원국의 부족 요소에 더해집니다. 월간지의 토이 원국에 이미 많은 토을 더합니다. 월간지의 금이 원국에 이미 많은 수을 생해 더합니다.",
+      "plain": "12월 辛丑의 오행은 금·토입니다. 일간 丁 기준 월간은 편재, 월지 본기는 식신으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다."
+    }
+  ],
+  "publication": {
+    "monthlyFlow": [
+      {
+        "month": 1,
+        "label": "1월",
+        "headline": "1월 庚寅 · 정재과 정인",
+        "monthGanji": "庚寅",
+        "monthlyBasis": "달력월 기준 운영 가이드",
+        "elementFocus": "금·목",
+        "natalInteractionSummary": "월지 寅와 원국 월지의 寅亥 육합: 서로 연결되는 흐름을 약속과 협업의 접점으로 읽습니다. 월지 寅와 원국 월지의 寅亥 파: 기존 방식을 다시 맞출 지점을 절차와 역할 재확인의 관점에서 읽습니다. 월간지의 목이 원국의 부족 요소에 더해집니다. 월간지의 금이 원국의 부족 요소에 더해집니다. 월간지의 목이 원국에 이미 많은 화을 생해 더합니다. 월간지의 금이 원국에 이미 많은 수을 생해 더합니다.",
+        "body": "1월 庚寅의 오행은 금·목입니다. 일간 丁 기준 월간은 정재, 월지 본기는 정인으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다.",
+        "advice": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 1월에는 돈과 자원의 사용 기준 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      },
+      {
+        "month": 2,
+        "label": "2월",
+        "headline": "2월 辛卯 · 편재과 편인",
+        "monthGanji": "辛卯",
+        "monthlyBasis": "달력월 기준 운영 가이드",
+        "elementFocus": "금·목",
+        "natalInteractionSummary": "월지 卯와 원국 월지·시지의 亥卯未 삼합: 세 지지가 모이는 흐름을 함께 추진할 일의 접점으로 읽습니다. 월지 卯와 원국 연지의 子卯 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다. 월간지의 목이 원국의 부족 요소에 더해집니다. 월간지의 금이 원국의 부족 요소에 더해집니다. 월간지의 목이 원국에 이미 많은 화을 생해 더합니다. 월간지의 금이 원국에 이미 많은 수을 생해 더합니다.",
+        "body": "2월 辛卯의 오행은 금·목입니다. 일간 丁 기준 월간은 편재, 월지 본기는 편인으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다.",
+        "advice": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 2월에는 돈과 자원의 사용 기준 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      },
+      {
+        "month": 3,
+        "label": "3월",
+        "headline": "3월 壬辰 · 정관과 상관",
+        "monthGanji": "壬辰",
+        "monthlyBasis": "달력월 기준 운영 가이드",
+        "elementFocus": "수·토",
+        "natalInteractionSummary": "월지 辰와 원국 연지의 辰子 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다. 월지 辰와 원국 일지의 丑辰 파: 기존 방식을 다시 맞출 지점을 절차와 역할 재확인의 관점에서 읽습니다. 월간지의 토이 원국에 이미 많은 토을 더합니다. 월간지의 수이 원국에 이미 많은 수을 더합니다.",
+        "body": "3월 壬辰의 오행은 수·토입니다. 일간 丁 기준 월간은 정관, 월지 본기는 상관으로 읽으며 책임과 평가의 범위을 살피는 관점입니다.",
+        "advice": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 3월에는 책임과 평가의 범위 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      },
+      {
+        "month": 4,
+        "label": "4월",
+        "headline": "4월 癸巳 · 편관과 겁재",
+        "monthGanji": "癸巳",
+        "monthlyBasis": "달력월 기준 운영 가이드",
+        "elementFocus": "수·화",
+        "natalInteractionSummary": "월지 巳와 원국 일지의 巳丑 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다. 월지 巳와 원국 월지의 巳亥 충: 기존 리듬과 다른 요구를 일정과 역할 조정의 관점에서 읽습니다. 월간지의 화이 원국에 이미 많은 화을 더합니다. 월간지의 화이 원국에 이미 많은 토을 생해 더합니다. 월간지의 수이 원국에 이미 많은 수을 더합니다.",
+        "body": "4월 癸巳의 오행은 수·화입니다. 일간 丁 기준 월간은 편관, 월지 본기는 겁재으로 읽으며 책임과 평가의 범위을 살피는 관점입니다.",
+        "advice": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 4월에는 책임과 평가의 범위 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      },
+      {
+        "month": 5,
+        "label": "5월",
+        "headline": "5월 甲午 · 정인과 비견",
+        "monthGanji": "甲午",
+        "monthlyBasis": "달력월 기준 운영 가이드",
+        "elementFocus": "목·화",
+        "natalInteractionSummary": "월지 午와 원국 연지의 子午 충: 기존 리듬과 다른 요구를 일정과 역할 조정의 관점에서 읽습니다. 월지 午와 원국 일지의 丑午 해: 작은 어긋남이 쌓이는 지점을 연락과 약속의 확인 기준으로 읽습니다. 월지 午와 원국 시지의 午未 육합: 서로 연결되는 흐름을 약속과 협업의 접점으로 읽습니다. 월간지의 목이 원국의 부족 요소에 더해집니다. 월간지의 화이 원국에 이미 많은 화을 더합니다. 월간지의 화이 원국에 이미 많은 토을 생해 더합니다.",
+        "body": "5월 甲午의 오행은 목·화입니다. 일간 丁 기준 월간은 정인, 월지 본기는 비견으로 읽으며 학습과 문서 정리을 살피는 관점입니다.",
+        "advice": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 5월에는 학습과 문서 정리 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      },
+      {
+        "month": 6,
+        "label": "6월",
+        "headline": "6월 乙未 · 편인과 식신",
+        "monthGanji": "乙未",
+        "monthlyBasis": "달력월 기준 운영 가이드",
+        "elementFocus": "목·토",
+        "natalInteractionSummary": "월지 未와 원국 월지·시지의 未亥 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다. 월지 未와 원국 연지의 子未 해: 작은 어긋남이 쌓이는 지점을 연락과 약속의 확인 기준으로 읽습니다. 월지 未와 원국 일지의 丑未 충: 기존 리듬과 다른 요구를 일정과 역할 조정의 관점에서 읽습니다. 월지 未와 원국 일지의 未丑 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다. 월간지의 목이 원국의 부족 요소에 더해집니다. 월간지의 목이 원국에 이미 많은 화을 생해 더합니다. 월간지의 토이 원국에 이미 많은 토을 더합니다.",
+        "body": "6월 乙未의 오행은 목·토입니다. 일간 丁 기준 월간은 편인, 월지 본기는 식신으로 읽으며 학습과 문서 정리을 살피는 관점입니다.",
+        "advice": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 6월에는 학습과 문서 정리 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      },
+      {
+        "month": 7,
+        "label": "7월",
+        "headline": "7월 丙申 · 겁재과 정재",
+        "monthGanji": "丙申",
+        "monthlyBasis": "달력월 기준 운영 가이드",
+        "elementFocus": "화·금",
+        "natalInteractionSummary": "월지 申와 원국 연지의 申子 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다. 월지 申와 원국 월지의 申亥 해: 작은 어긋남이 쌓이는 지점을 연락과 약속의 확인 기준으로 읽습니다. 월간지의 금이 원국의 부족 요소에 더해집니다. 월간지의 화이 원국에 이미 많은 화을 더합니다. 월간지의 화이 원국에 이미 많은 토을 생해 더합니다. 월간지의 금이 원국에 이미 많은 수을 생해 더합니다.",
+        "body": "7월 丙申의 오행은 화·금입니다. 일간 丁 기준 월간은 겁재, 월지 본기는 정재으로 읽으며 자기 기준과 공동 역할을 살피는 관점입니다.",
+        "advice": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 7월에는 자기 기준과 공동 역할 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      },
+      {
+        "month": 8,
+        "label": "8월",
+        "headline": "8월 丁酉 · 비견과 편재",
+        "monthGanji": "丁酉",
+        "monthlyBasis": "달력월 기준 운영 가이드",
+        "elementFocus": "화·금",
+        "natalInteractionSummary": "월지 酉와 원국 일지의 酉丑 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다. 월지 酉와 원국 연지의 子酉 파: 기존 방식을 다시 맞출 지점을 절차와 역할 재확인의 관점에서 읽습니다. 월간지의 금이 원국의 부족 요소에 더해집니다. 월간지의 화이 원국에 이미 많은 화을 더합니다. 월간지의 화이 원국에 이미 많은 토을 생해 더합니다. 월간지의 금이 원국에 이미 많은 수을 생해 더합니다.",
+        "body": "8월 丁酉의 오행은 화·금입니다. 일간 丁 기준 월간은 비견, 월지 본기는 편재으로 읽으며 자기 기준과 공동 역할을 살피는 관점입니다.",
+        "advice": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 8월에는 자기 기준과 공동 역할 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      },
+      {
+        "month": 9,
+        "label": "9월",
+        "headline": "9월 戊戌 · 상관과 상관",
+        "monthGanji": "戊戌",
+        "monthlyBasis": "달력월 기준 운영 가이드",
+        "elementFocus": "토",
+        "natalInteractionSummary": "월지 戌와 원국 일지의 丑戌 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다. 월지 戌와 원국 시지의 戌未 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다. 월지 戌와 원국 시지의 未戌 파: 기존 방식을 다시 맞출 지점을 절차와 역할 재확인의 관점에서 읽습니다. 월간지의 토이 원국에 이미 많은 토을 더합니다.",
+        "body": "9월 戊戌의 오행은 토입니다. 일간 丁 기준 월간은 상관, 월지 본기는 상관으로 읽으며 작업 결과와 표현을 살피는 관점입니다.",
+        "advice": "마찰 작용은 조정할 지점이며 실제 사건의 예고가 아닙니다. 9월에는 작업 결과와 표현 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      },
+      {
+        "month": 10,
+        "label": "10월",
+        "headline": "10월 己亥 · 식신과 정관",
+        "monthGanji": "己亥",
+        "monthlyBasis": "달력월 기준 운영 가이드",
+        "elementFocus": "토·수",
+        "natalInteractionSummary": "월지 亥와 원국 월지·시지의 亥未 반합: 일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다. 월지 亥와 원국 월지의 亥亥 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다. 월간지의 토이 원국에 이미 많은 토을 더합니다. 월간지의 수이 원국에 이미 많은 수을 더합니다.",
+        "body": "10월 己亥의 오행은 토·수입니다. 일간 丁 기준 월간은 식신, 월지 본기는 정관으로 읽으며 작업 결과와 표현을 살피는 관점입니다.",
+        "advice": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 10월에는 작업 결과와 표현 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      },
+      {
+        "month": 11,
+        "label": "11월",
+        "headline": "11월 庚子 · 정재과 편관",
+        "monthGanji": "庚子",
+        "monthlyBasis": "달력월 기준 운영 가이드",
+        "elementFocus": "금·수",
+        "natalInteractionSummary": "월지 子와 원국 일지의 子丑 육합: 서로 연결되는 흐름을 약속과 협업의 접점으로 읽습니다. 월지 子와 원국 시지의 子未 해: 작은 어긋남이 쌓이는 지점을 연락과 약속의 확인 기준으로 읽습니다. 월간지의 금이 원국의 부족 요소에 더해집니다. 월간지의 수이 원국에 이미 많은 수을 더합니다.",
+        "body": "11월 庚子의 오행은 금·수입니다. 일간 丁 기준 월간은 정재, 월지 본기는 편관으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다.",
+        "advice": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 11월에는 돈과 자원의 사용 기준 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      },
+      {
+        "month": 12,
+        "label": "12월",
+        "headline": "12월 辛丑 · 편재과 식신",
+        "monthGanji": "辛丑",
+        "monthlyBasis": "달력월 기준 운영 가이드",
+        "elementFocus": "금·토",
+        "natalInteractionSummary": "월지 丑와 원국 연지의 子丑 육합: 서로 연결되는 흐름을 약속과 협업의 접점으로 읽습니다. 월지 丑와 원국 시지의 丑未 충: 기존 리듬과 다른 요구를 일정과 역할 조정의 관점에서 읽습니다. 월지 丑와 원국 시지의 未丑 형: 누적되는 부담을 책임 범위와 반복 업무의 관점에서 읽습니다. 월간지의 금이 원국의 부족 요소에 더해집니다. 월간지의 토이 원국에 이미 많은 토을 더합니다. 월간지의 금이 원국에 이미 많은 수을 생해 더합니다.",
+        "body": "12월 辛丑의 오행은 금·토입니다. 일간 丁 기준 월간은 편재, 월지 본기는 식신으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다.",
+        "advice": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 12월에는 돈과 자원의 사용 기준 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      }
+    ],
+    "monthlyHighlights": [
+      {
+        "monthLabel": "1~3월",
+        "headline": "1~3월 · 월간지와 생활 관점",
+        "body": "1월 庚寅의 오행은 금·목입니다. 일간 丁 기준 월간은 정재, 월지 본기는 정인으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다. 2월 辛卯의 오행은 금·목입니다. 일간 丁 기준 월간은 편재, 월지 본기는 편인으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다. 3월 壬辰의 오행은 수·토입니다. 일간 丁 기준 월간은 정관, 월지 본기는 상관으로 읽으며 책임과 평가의 범위을 살피는 관점입니다.",
+        "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 1월에는 돈과 자원의 사용 기준 중 현재 일정에 해당하는 항목을 골라 확인하세요. 연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 2월에는 돈과 자원의 사용 기준 중 현재 일정에 해당하는 항목을 골라 확인하세요. 연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 3월에는 책임과 평가의 범위 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      },
+      {
+        "monthLabel": "4~6월",
+        "headline": "4~6월 · 월간지와 생활 관점",
+        "body": "4월 癸巳의 오행은 수·화입니다. 일간 丁 기준 월간은 편관, 월지 본기는 겁재으로 읽으며 책임과 평가의 범위을 살피는 관점입니다. 5월 甲午의 오행은 목·화입니다. 일간 丁 기준 월간은 정인, 월지 본기는 비견으로 읽으며 학습과 문서 정리을 살피는 관점입니다. 6월 乙未의 오행은 목·토입니다. 일간 丁 기준 월간은 편인, 월지 본기는 식신으로 읽으며 학습과 문서 정리을 살피는 관점입니다.",
+        "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 4월에는 책임과 평가의 범위 중 현재 일정에 해당하는 항목을 골라 확인하세요. 연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 5월에는 학습과 문서 정리 중 현재 일정에 해당하는 항목을 골라 확인하세요. 연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 6월에는 학습과 문서 정리 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      },
+      {
+        "monthLabel": "7~9월",
+        "headline": "7~9월 · 월간지와 생활 관점",
+        "body": "7월 丙申의 오행은 화·금입니다. 일간 丁 기준 월간은 겁재, 월지 본기는 정재으로 읽으며 자기 기준과 공동 역할을 살피는 관점입니다. 8월 丁酉의 오행은 화·금입니다. 일간 丁 기준 월간은 비견, 월지 본기는 편재으로 읽으며 자기 기준과 공동 역할을 살피는 관점입니다. 9월 戊戌의 오행은 토입니다. 일간 丁 기준 월간은 상관, 월지 본기는 상관으로 읽으며 작업 결과와 표현을 살피는 관점입니다.",
+        "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 7월에는 자기 기준과 공동 역할 중 현재 일정에 해당하는 항목을 골라 확인하세요. 연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 8월에는 자기 기준과 공동 역할 중 현재 일정에 해당하는 항목을 골라 확인하세요. 마찰 작용은 조정할 지점이며 실제 사건의 예고가 아닙니다. 9월에는 작업 결과와 표현 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      },
+      {
+        "monthLabel": "10~12월",
+        "headline": "10~12월 · 월간지와 생활 관점",
+        "body": "10월 己亥의 오행은 토·수입니다. 일간 丁 기준 월간은 식신, 월지 본기는 정관으로 읽으며 작업 결과와 표현을 살피는 관점입니다. 11월 庚子의 오행은 금·수입니다. 일간 丁 기준 월간은 정재, 월지 본기는 편관으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다. 12월 辛丑의 오행은 금·토입니다. 일간 丁 기준 월간은 편재, 월지 본기는 식신으로 읽으며 돈과 자원의 사용 기준을 살피는 관점입니다.",
+        "actionHint": "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 10월에는 작업 결과와 표현 중 현재 일정에 해당하는 항목을 골라 확인하세요. 연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 11월에는 돈과 자원의 사용 기준 중 현재 일정에 해당하는 항목을 골라 확인하세요. 연결되는 접점과 조정이 필요한 작용을 함께 읽습니다. 12월에는 돈과 자원의 사용 기준 중 현재 일정에 해당하는 항목을 골라 확인하세요."
+      }
+    ],
+    "monthlyFlowReading": "월별 간지와 십성은 12개월을 읽는 기본 관점입니다. 원국과의 연결·보완 작용과 마찰 작용은 서로 다른 근거로 나누어 봅니다. 같은 달에 함께 나타나더라도 좋은 달이나 나쁜 달로 단정하지 않습니다. 오행의 유입이나 십성만으로 한 달 전체의 유리함을 결정하지 않습니다."
+  }
+}

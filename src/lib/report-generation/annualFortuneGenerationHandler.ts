@@ -2,7 +2,7 @@ import { formatProductBridgeScenes } from "../report-knowledge/bridge/interactio
 import { buildAnnualMonthlyPublication } from "./annualMonthlyPublication";
 import { withReportInputEvidence } from "./reportInputEvidence";
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
-import { calculateCustomerDayun, selectCustomerDayun } from "../saju/customerDayun";
+import { calculateCustomerDayun, selectCustomerDayun, type CustomerDayun } from "../saju/customerDayun";
 import {
   buildAnnualFortuneEvidence,
   type AnnualFortuneEvidencePacket,
@@ -118,7 +118,7 @@ export async function generateAnnualFortuneProductDraft(
   let evidencePacket: AnnualFortuneEvidencePacket;
   try {
     evidencePacket = {
-      ...buildAnnualFortuneEvidenceFromGenerationInput(input, policyDate, calculated.value.cycles),
+      ...buildAnnualFortuneEvidenceFromGenerationInput(input, policyDate, calculated.value),
       customerDayun: calculated.value,
       dayunSelection: selection.value,
     };
@@ -172,7 +172,7 @@ export async function generateAnnualFortuneProductDraft(
 function buildAnnualFortuneEvidenceFromGenerationInput(
   input: SinglePersonGenerationInput,
   policyDate: Date,
-  cycles: NonNullable<AnnualPersonInput["majorFortuneCycles"]>,
+  customerDayun: CustomerDayun,
 ): AnnualFortuneEvidencePacket {
   const selectedYear = getSelectedYear(input, policyDate);
   const saju = calculateAnnualFortuneSaju(input.person);
@@ -182,7 +182,7 @@ function buildAnnualFortuneEvidenceFromGenerationInput(
     gender: toAnnualFortuneGender(input.person.gender),
     mbti: input.person.mbtiType === "" ? null : input.person.mbtiType,
     userContext: toAnnualFortuneUserContext(input),
-    majorFortuneCycles: cycles,
+    majorFortuneCycles: customerDayun.cycles,
     pillars: toAnnualFortunePillars(saju),
     labels: deriveAnnualFortuneLabels(saju, input),
   };
@@ -191,6 +191,7 @@ function buildAnnualFortuneEvidenceFromGenerationInput(
     targetYear: selectedYear,
     currentDate: policyDate,
     person,
+    customerDayun,
   }), { person: saju.birthTimeContext });
 }
 

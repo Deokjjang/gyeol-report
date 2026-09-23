@@ -109,7 +109,7 @@ const deletions: Record<string, string[]> = {
   career_money_study: ["userPillars", "manseRyeokPillars", "myeongliCareerBasis", "mbtiCareerBasis", "recommendedJobs", "investmentProfile"],
   love_marriage_child: ["sajuBasis.fullPillars", "sajuBasis.spousePalaceSignal", "sajuBasis.loveTenGodSignals", "mbtiBasis", "mbtiBasis.loveTraits"],
   major_fortune: ["customerDayun.cycles", "dayunSelection", "currentCycle", "majorFortuneTimeline", "majorFortuneTimelineRows", "domainFlows"],
-  annual_fortune: ["annualFortune", "monthlyFortunes", "monthlyFortunes.0.supportSignals", "monthlyFortunes.0.frictionSignals", "natalAnnualRelations", "natalAnnualRelations.interactions", "baseSaju", "dayunSelection", "yearlyThemeSummary"],
+  annual_fortune: ["annualFortune", "monthlyFortunes", "calendarMonths.0.segments.0.relationFacts", "calendarMonths.0.segments.0.evidenceIds", "natalAnnualRelations", "natalAnnualRelations.interactions", "baseSaju", "dayunSelection", "yearlyThemeSummary"],
   saju_mbti_compatibility: ["birthTimeContexts", "inputBasis", "participants"],
 };
 describe("publish rejects evidence mutations before rendering", () => {
@@ -146,7 +146,7 @@ describe("publish rejects evidence mutations before rendering", () => {
     ["major_fortune", "baseSaju.pillars.day"],
     ["annual_fortune", "userPillars.day"],
     ["annual_fortune", "annualFortune.ganji"],
-    ["annual_fortune", "monthlyFortunes.0.ganji"],
+    ["annual_fortune", "calendarMonths.0.segments.0.monthPillar.stem"],
   ])("%s rejects conflicting %s", async (product, path) => {
     const r = await fallback(payload(product)); change(r.evidencePacket as Mutable, path, "癸亥");
     expect(validateProductPublication(product, r.draft, r.evidencePacket).ok).toBe(false);
