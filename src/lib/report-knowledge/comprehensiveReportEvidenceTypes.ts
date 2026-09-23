@@ -120,6 +120,7 @@ export type ComprehensiveMbtiBasisBridgeHint = {
 
 export type ComprehensiveMbtiBasisSelectedTraitSeed = {
   readonly id: string;
+  readonly sourceEvidenceId?: string;
   readonly context: MbtiKnowledgeContext;
   readonly label: string;
   readonly description: string;

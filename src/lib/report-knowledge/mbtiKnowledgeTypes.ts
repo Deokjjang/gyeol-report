@@ -44,6 +44,7 @@ export type MbtiKnowledgeContext =
 
 export type MbtiTraitSeed = {
   readonly id: string;
+  readonly sourceEvidenceId?: string;
   readonly type: MbtiTypeCode;
   readonly context: MbtiKnowledgeContext;
   readonly label: string;

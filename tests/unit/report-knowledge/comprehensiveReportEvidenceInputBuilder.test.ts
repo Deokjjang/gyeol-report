@@ -344,9 +344,9 @@ describe("comprehensive report evidence input builder", () => {
     expect(result.packet.selectedMbtiKnowledge?.selectedTraits.length).toBeGreaterThan(
       0,
     );
-    expect(result.packet.selectedMbtiKnowledge?.selectedScenes.join("\n")).toContain(
-      "담당자",
-    );
+    expect(result.packet.selectedMbtiKnowledge?.selectedTraits).toEqual(expect.arrayContaining([
+      expect.objectContaining({ sourceEvidenceId: "mbti:ENTJ:traits:career:large_team_manager" }),
+    ]));
     expect(result.packet.sajuMbtiBridgeEvidence).toEqual(
       expect.arrayContaining([
         expect.objectContaining({

@@ -1,3 +1,4 @@
+import { getMbtiRelationshipPair } from "../../../src/lib/report-knowledge/mbti/sourceRuntimeAdapter";
 import { describe, expect, it } from "vitest";
 
 import { buildCompatibilityMbtiBridge } from "../../../src/lib/report-knowledge/compatibilityMbtiBridge";
@@ -12,7 +13,8 @@ describe("REPORT-18A compatibility MBTI bridge", () => {
     });
 
     expect(bridge.pairLabel).toBe("ENTJ + INTP");
-    expect(bridge.frictionRisks.join("\n")).toContain("조건과 원리 검증");
+    expect(bridge.frictionRisks).toContain(getMbtiRelationshipPair("ENTJ", "INTP")!.friction[0]);
+    expect(bridge.frictionRisks).toContain(getMbtiRelationshipPair("INTP", "ENTJ")!.friction[0]);
     expect(bridge.communicationNotes.join("\n")).toContain("ENTJ");
     expect(bridge.communicationNotes.join("\n")).toContain("INTP");
   });

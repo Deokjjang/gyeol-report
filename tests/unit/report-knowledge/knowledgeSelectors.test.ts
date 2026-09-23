@@ -1,3 +1,4 @@
+import { getMbtiSourceProfile } from "../../../src/lib/report-knowledge/mbti/sourceRuntimeAdapter";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -164,11 +165,11 @@ describe("knowledge selectors", () => {
 
     expect(Object.keys(work).slice(1, 3)).toEqual(["sajuEvidence", "mbtiEvidence"]);
     expect(work.mbtiTopicEvidence?.summary).toContain("ENTJ");
-    expect(work.mbtiTopicEvidence?.summary).toContain("work_career");
+    expect(work.mbtiTopicEvidence?.summary).toContain(getMbtiSourceProfile("ENTJ")!.traits!.career![0].plainKo);
     expect(work.mbtiEvidence.workStyleKo?.join(" ")).toContain("성과");
     expect(money.mbtiEvidence.moneyStyleKo?.join(" ")).toContain("성과");
-    expect(love.mbtiEvidence.loveStyleKo?.join(" ")).toContain("일터");
-    expect(love.mbtiTopicEvidence?.bridgeHints.join(" ")).toContain("재성 강세");
+    expect(love.mbtiEvidence.loveStyleKo?.join(" ")).toContain(getMbtiSourceProfile("ENTJ")!.traits!.love![0].plainKo);
+    expect(love.mbtiTopicEvidence?.bridgeHints).toEqual([]);
     expect(weaknesses.mbtiEvidence.riskTags).toEqual(
       expect.arrayContaining(["emotional_dryness", "direct_speech"]),
     );
@@ -187,10 +188,11 @@ describe("knowledge selectors", () => {
       matchedTags: ["emotional_depth", "relationship_sensitivity"],
     });
 
-    expect(istjMoney.bridgeHints.join(" ")).toContain("정관과 정재");
+    expect(istjMoney.summary).toContain(getMbtiSourceProfile("ISTJ")!.traits!.money![0].plainKo);
+    expect(istjMoney.bridgeHints).toEqual([]);
     expect(istjMoney.score).toBeGreaterThan(0.8);
-    expect(infpLove.bridgeHints.join(" ")).toContain("수 기운");
-    expect(infpLove.bridgeHints.join(" ")).toContain("화 부족");
+    expect(infpLove.summary).toContain(getMbtiSourceProfile("INFP")!.traits!.love![0].plainKo);
+    expect(infpLove.bridgeHints).toEqual([]);
     expect(infpLove.score).toBeGreaterThan(0.9);
   });
 

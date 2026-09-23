@@ -1,3 +1,4 @@
+import { getMbtiSourceProfile, type MbtiTraitArea } from "../../../src/lib/report-knowledge/mbti/sourceRuntimeAdapter";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -38,30 +39,19 @@ describe("REPORT-17 MBTI type knowledge base", () => {
     }
   });
 
-  it("keeps INTP behavior concrete and non-generic", () => {
-    const text = collectScenes("INTP");
-
-    expect(text).toContain("원리상 어디가 안 맞는지");
-    expect(text).toContain("혼자 자료를 찾아보고");
-    expect(text).toContain("조건과 예외");
-    expect(text).toContain("감정");
-  });
-
-  it("keeps ENTJ behavior concrete and distinct from INTP", () => {
-    const text = collectScenes("ENTJ");
-
-    expect(text).toContain("담당자, 기준, 마감선");
-    expect(text).toContain("수익 모델");
-    expect(text).toContain("위임 기준");
-    expect(text).not.toContain("원리상 어디가 안 맞는지");
-  });
-
-  it("includes required style markers for INFP and ESTP", () => {
-    expect(JSON.stringify(MBTI_TYPE_KNOWLEDGE_BY_TYPE.get("INFP"))).toContain(
-      "마음이 납득",
-    );
-    expect(JSON.stringify(MBTI_TYPE_KNOWLEDGE_BY_TYPE.get("ESTP"))).toContain(
-      "직접 부딪혀",
-    );
+  it.each(MBTI_TYPES)("%s uses source traits rather than letter-based generic copy", type => {
+    const source = getMbtiSourceProfile(type)!;
+    const entry = MBTI_TYPE_KNOWLEDGE_BY_TYPE.get(type)!;
+    expect(entry.corePattern).toBe(source.summary?.identity ?? source.oneLine);
+    for (const seed of entry.traitSeeds) {
+      const [, owner, , area, id] = seed.sourceEvidenceId!.split(":");
+      expect(owner).toBe(type);
+      const trait = source.traits?.[area as MbtiTraitArea]?.find(t => t.id === id);
+      expect(trait).toBeDefined();
+      expect(seed.description).toBe(trait!.plainKo);
+      expect(seed.sceneSeeds).toEqual([trait!.strongLine ?? trait!.plainKo]);
+      expect(seed.risks).toEqual(trait!.risk ? [trait!.risk] : []);
+    }
+    expect(collectScenes(type)).not.toMatch(/core_identity 상황|번역이 밖으로 너무 늦거나/);
   });
 });

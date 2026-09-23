@@ -621,6 +621,7 @@ function buildComprehensiveMbtiBasis(input: {
     selectedTraitSeeds:
       input.selectedMbtiKnowledge?.selectedTraits.map((trait) => ({
         id: trait.id,
+        sourceEvidenceId: trait.sourceEvidenceId,
         context: trait.context,
         label: trait.label,
         description: trait.description,

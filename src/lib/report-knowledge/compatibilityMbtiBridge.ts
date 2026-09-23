@@ -1,3 +1,4 @@
+import { getMbtiRelationshipPair } from "./mbti/sourceRuntimeAdapter";
 import type {
   CompatibilityEvidenceItem,
   CompatibilityPersonInput,
@@ -79,10 +80,6 @@ function evidenceItem(input: {
   };
 }
 
-function includesTag(traits: readonly MbtiTraitSeed[], tag: string): boolean {
-  return traits.some((trait) => trait.tags.includes(tag));
-}
-
 export function buildCompatibilityMbtiBridge(
   input: BuildCompatibilityMbtiBridgeInput,
 ): CompatibilityMbtiBridgeResult {
@@ -136,67 +133,30 @@ export function buildCompatibilityMbtiBridge(
     };
   }
 
-  if (
-    (personAMbti === "ENTJ" && personBMbti === "INTP") ||
-    (personAMbti === "INTP" && personBMbti === "ENTJ")
-  ) {
-    complementaryTraits.push("빠른 구조화와 깊은 원리 검토가 서로 보완될 수 있습니다.");
-    frictionRisks.push(
-      "한쪽은 결론과 실행을 빨리 보고, 다른 한쪽은 조건과 원리 검증이 끝나야 움직이므로 대화 속도 차이가 생길 수 있습니다.",
-    );
-    communicationNotes.push(
-      "ENTJ 쪽은 역할과 기준을 빨리 잡고 싶고, INTP 쪽은 원리와 예외가 납득되어야 말이 편해집니다.",
-    );
-    conflictRecoveryNotes.push(
-      "갈등이 생기면 결론을 밀기보다 조건을 정리할 시간과 다시 말할 시간을 분리해야 회복이 빨라집니다.",
-    );
-    evidenceItems.push(
-      evidenceItem({
-        title: "속도와 분석의 차이",
-        summary:
-          "ENTJ의 빠른 실행 감각과 INTP의 원리 검토 감각은 잘 쓰면 보완이지만, 대화 속도 규칙이 없으면 답답함이 커질 수 있습니다.",
-        traits: [...personATraits, ...personBTraits],
-        sceneSeeds: [
-          "한 사람은 바로 정리하려 하고, 다른 사람은 조건과 예외를 더 확인한 뒤 움직이려는 장면",
-        ],
-        practicalSwitches: ["중요한 결정은 바로 결론, 하루 뒤 재검토처럼 두 단계로 나누세요."],
-        scoreImpact: 2,
-      }),
-    );
-  }
-
-  if (includesTag(personATraits, "emotional_temperature") || includesTag(personBTraits, "emotional_temperature")) {
-    frictionRisks.push("감정 표현 속도와 해결책 제안 타이밍이 다르면 위로가 평가처럼 들릴 수 있습니다.");
-  }
-  if (includesTag(personATraits, "relationship_boundary") || includesTag(personBTraits, "relationship_boundary")) {
-    sharedTraits.push("관계에서도 각자의 경계와 혼자 정리할 시간을 존중해야 안정됩니다.");
-  }
-
-  if (evidenceItems.length === 0) {
-    evidenceItems.push(
-      evidenceItem({
-        title: "입력 MBTI의 대화 리듬",
-        summary:
-          "두 사람의 MBTI는 공식 진단이 아니라 대화 속도와 갈등 회복 방식을 보는 보조 언어로만 사용합니다.",
-        traits: [...personATraits.slice(0, 2), ...personBTraits.slice(0, 2)],
-        sceneSeeds: [
-          personATraits[0]?.sceneSeeds[0],
-          personBTraits[0]?.sceneSeeds[0],
-        ].filter((scene): scene is string => scene !== undefined),
-        practicalSwitches: [
-          personATraits[0]?.practicalSwitches[0],
-          personBTraits[0]?.practicalSwitches[0],
-        ].filter((item): item is string => item !== undefined),
-        scoreImpact: 1,
-      }),
-    );
+  // Two views share the existing one-point evidence budget; source prose does not quantify pair quality.
+  // Preserve both source-type viewpoints. A notablePairs paragraph may describe
+  // either person: keep its type names rather than relabeling it as an A/B trait.
+  for (const [sourceType, targetType, traits] of [
+    [personAMbti, personBMbti, personATraits], [personBMbti, personAMbti, personBTraits],
+  ] as const) {
+    const pair = getMbtiRelationshipPair(sourceType, targetType);
+    if (!pair) continue;
+    const summary = pair.reportLine ?? pair.sharedGround[0] ?? "";
+    sharedTraits.push(...pair.sharedGround.slice(0, 1));
+    complementaryTraits.push(...pair.positiveInfluence.slice(0, 1));
+    frictionRisks.push(...pair.friction.slice(0, 1));
+    communicationNotes.push(`${sourceType}에서 ${targetType}를 바라보는 관계 자료: ${summary}`);
+    conflictRecoveryNotes.push(...pair.repairStrategy.slice(0, 1));
+    evidenceItems.push(evidenceItem({ title: `${sourceType} → ${targetType} 관계 관점`,
+      summary, traits, sceneSeeds: pair.friction.slice(0, 1),
+      practicalSwitches: pair.repairStrategy.slice(0, 2), scoreImpact: 0.5 }));
   }
 
   return {
     pairLabel: `${personAMbti} + ${personBMbti}`,
-    sharedTraits,
-    complementaryTraits,
-    frictionRisks,
+    sharedTraits: [...new Set(sharedTraits)].sort(),
+    complementaryTraits: [...new Set(complementaryTraits)].sort(),
+    frictionRisks: [...new Set(frictionRisks)].sort(),
     communicationNotes,
     conflictRecoveryNotes,
     evidenceItems,

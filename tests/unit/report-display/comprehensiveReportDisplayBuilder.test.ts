@@ -1,3 +1,4 @@
+import { getMbtiSourceProfile } from "../../../src/lib/report-knowledge/mbti/sourceRuntimeAdapter";
 import { describe, expect, it } from "vitest";
 
 import { buildComprehensiveReportDisplayData } from "../../../src/lib/report-display/comprehensiveReportDisplayBuilder";
@@ -69,7 +70,7 @@ describe("comprehensive report display builder", () => {
     expect(displayData.sajuCard.gwiin).toEqual(["재고귀인"]);
     expect(displayData.mbtiCard.type).toBe("ENTJ");
     expect(displayData.mbtiCard.functionStack).toEqual(["Te", "Ni", "Se", "Fi"]);
-    expect(displayData.mbtiCard.coreTraits.join(" ")).toContain("성과");
+    expect(displayData.mbtiCard.coreTraits.join(" ")).toContain(getMbtiSourceProfile("ENTJ")!.oneLine);
     expect(displayData.mbtiCard.reportUsage.join(" ")).toContain("사주");
   });
 });

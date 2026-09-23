@@ -809,7 +809,11 @@ function getLongformMbtiLine(readingId: ComprehensiveReportV2LongformReadingId, 
     workMoneyStudyReading: "career", loveRelationshipReading: "love", peopleFamilyEnvironmentReading: "relationships", riskGrowthReading: "risks", finalMessage: "growth",
   };
   if (!source) return `${longformTitleById[readingId]}에는 MBTI 미입력을 반영하여 확인된 명리 근거와 생활 경험을 중심으로 살펴봅니다.`;
-  const traits = source.traits?.[areaByReading[readingId]] ?? [];
+  const functionTraits = readingId === "mbtiReading"
+    ? (source.traits?.thinkingStyle ?? []).filter(t => Object.values(source.functionStack ?? {}).some(code =>
+      [t.id, t.label, t.plainKo].some(text => text && new RegExp(`(?:^|[^a-z])${code}(?=$|[^a-z])`, "iu").test(text))))
+    : [];
+  const traits = functionTraits.length ? functionTraits : source.traits?.[areaByReading[readingId]] ?? [];
   const lines = traits.slice(0, 2).flatMap(t => [t.plainKo, t.strongLine, t.positiveUse, t.risk]).filter((v): v is string => typeof v === "string" && v.length > 0);
   const description = (lines.length ? [...new Set(lines)].join(" ") : source.oneLine).replace(/진단/gu, "점검").replace(/문서/gu, "업무 기록").replace(/보장/gu, "확보").replace(/물리치료/gu, "재활 지원").replace(/치료 보조/gu, "돌봄 지원").replace(/스포트라이트/gu, "무대의 관심");
   return `${longformTitleById[readingId]}에서 입력한 MBTI ${source.type}의 성향을 함께 봅니다. ${description}`;

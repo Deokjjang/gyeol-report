@@ -22,11 +22,7 @@ import {
   type MyeongliSignal,
   type ProductBridgeEvidencePacket,
 } from "./bridge";
-import {
-  getMbtiReportUseCase,
-  getMbtiSourceProfile,
-  type MbtiSourceTraitItem,
-} from "./mbti";
+import { getMbtiFortuneBasis } from "./mbti";
 import type { MajorFortuneCycle } from "./majorFortuneTypes";
 import { getMajorFortuneCycleForYear } from "./majorFortuneRules";
 import type {
@@ -570,84 +566,8 @@ function getBranchTenGod(
   return getTenGodForStemPair(dayMaster, mainHiddenStem);
 }
 
-function traitToPlainText(trait: MbtiSourceTraitItem): string | null {
-  return (
-    trait.plainKo ??
-    trait.strongLine ??
-    trait.positiveUse ??
-    trait.risk ??
-    trait.label ??
-    null
-  );
-}
-
-function buildMbtiBasis(
-  mbtiType: string | null | undefined,
-): AnnualFortuneEvidencePacket["mbtiBasis"] {
-  const profile = getMbtiSourceProfile(mbtiType);
-
-  if (profile === null) {
-    return {
-      type: null,
-      titleKo: null,
-      archetype: null,
-      summary:
-        "MBTI 입력이 없거나 확인되지 않아 세운 흐름의 행동 발현은 일반적인 생활 장면 중심으로 해석합니다.",
-      coreTraits: [],
-      stressPattern: "입력된 MBTI 기준 스트레스 패턴 없음",
-      decisionPattern: "입력된 MBTI 기준 의사결정 패턴 없음",
-      workPattern: "입력된 MBTI 기준 일 처리 패턴 없음",
-      relationshipPattern: "입력된 MBTI 기준 관계 반응 패턴 없음",
-      growthPattern: "입력된 MBTI 기준 성장 패턴 없음",
-      reportUseCase: "saeunReport",
-      reportUseCases: [],
-    };
-  }
-
-  const reportUseCases = getMbtiReportUseCase(profile.type, "saeunReport") ?? [];
-  const traits = [
-    ...(profile.traits?.identity ?? []),
-    ...(profile.traits?.career ?? []),
-    ...(profile.traits?.relationships ?? []),
-    ...(profile.traits?.growth ?? []),
-    ...(profile.traits?.risks ?? []),
-  ]
-    .map(traitToPlainText)
-    .filter((value): value is string => value !== null && value.trim().length > 0);
-
-  return {
-    type: profile.type,
-    titleKo: profile.titleKo,
-    archetype: profile.archetype,
-    summary: profile.oneLine,
-    coreTraits: unique([...reportUseCases, ...traits]).slice(0, 6),
-    stressPattern:
-      profile.traits?.risks?.map(traitToPlainText).find(
-        (value): value is string => value !== null,
-      ) ?? "압박이 커질수록 익숙한 판단 습관이 강해질 수 있습니다.",
-    decisionPattern:
-      profile.traits?.thinkingStyle?.map(traitToPlainText).find(
-        (value): value is string => value !== null,
-      ) ?? "선택 연도의 흐름을 판단과 실행 방식으로 드러냅니다.",
-    workPattern:
-      [
-        ...(profile.traits?.workplace ?? []),
-        ...(profile.traits?.career ?? []),
-      ]
-        .map(traitToPlainText)
-        .find((value): value is string => value !== null) ??
-      "선택 연도의 흐름을 일 처리 속도와 역할 조율 방식으로 드러냅니다.",
-    relationshipPattern:
-      profile.traits?.relationships?.map(traitToPlainText).find(
-        (value): value is string => value !== null,
-      ) ?? "관계에서는 거리, 속도, 표현 방식으로 세운의 압박이 드러납니다.",
-    growthPattern:
-      profile.traits?.growth?.map(traitToPlainText).find(
-        (value): value is string => value !== null,
-      ) ?? "해당 연도의 반복 신호를 학습과 조율 기준으로 바꾸는 것이 중요합니다.",
-    reportUseCase: "saeunReport",
-    reportUseCases,
-  };
+function buildMbtiBasis(mbtiType: string | null | undefined) {
+  return getMbtiFortuneBasis(mbtiType, "saeunReport");
 }
 
 function getYearAccessStatus(

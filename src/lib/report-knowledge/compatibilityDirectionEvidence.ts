@@ -1,7 +1,7 @@
 import { buildBridgeInteractionScenes } from "./bridge/interactionScenes";
 import { fusionFactIds } from "./fusionFactContext";
 import { createHash } from "node:crypto";
-import { getMbtiRelationshipPair, getMbtiSourceProfile, type MbtiTraitArea } from "./mbti/sourceRuntimeAdapter";
+import { getMbtiRelationshipPair, getMbtiSourceProfile, getMbtiProductTraits, type MbtiTraitArea } from "./mbti/sourceRuntimeAdapter";
 import { getCrossTenGodRelation, getDayMasterElementRelation } from "./compatibilityRelationRules";
 import { requireSajuFeatureEntry } from "./sajuFeatureTaxonomy";
 import type { CompatibilityCanonicalRelationshipType, CompatibilityInput, CompatibilityPersonChartSummary, CompatibilityPersonInput } from "./compatibilityTypes";
@@ -13,12 +13,11 @@ function personProfile(person: CompatibilityPersonInput, chart: CompatibilityPer
     person.calendarType, person.timezone, person.gender ?? null,
   ])).digest("hex").slice(0, 24);
   const source = getMbtiSourceProfile(chart.mbti);
-  const areas = ["communication", "relationships", "thinkingStyle", "love", "marriage", "workplace", "money", "growth"] as const;
-  const traits = areas.flatMap((area) => (source?.traits?.[area] ?? []).slice(0, 1).map((trait) => ({
+  const traits = getMbtiProductTraits(chart.mbti, "compatibilityReport", 1).map(({ area, trait }) => ({
     evidenceId: `${personId}:mbti:${source!.type}:${area}:${trait.id ?? "primary"}`,
     area, label: trait.label ?? "", reading: trait.plainKo ?? "",
     positive: trait.positiveUse ?? "", risk: trait.risk ?? "",
-  }))).filter((trait) => trait.reading.length > 0);
+  })).filter((trait) => trait.reading.length > 0);
   const natal = chart.featureIds.map(requireSajuFeatureEntry)
     .filter((entry) => entry.topics.some((topic) => ["relationship", "love", "personality", "family"].includes(topic)))
     .map((entry) => ({ evidenceId: `${personId}:saju:${entry.id}`, featureId: entry.id,

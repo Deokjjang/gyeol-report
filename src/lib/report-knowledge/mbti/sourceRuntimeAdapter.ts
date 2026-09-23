@@ -40,6 +40,43 @@ export const MBTI_TRAIT_AREAS = [
 
 export type MbtiTraitArea = (typeof MBTI_TRAIT_AREAS)[number];
 
+// Selection routes existing knowledge; matchingMyeongliSignals are not themselves
+// proof of a natal fact. Bridge keeps its separate validated fact conditions.
+export const MBTI_PRODUCT_TRAIT_AREAS = {
+  generalReport: MBTI_TRAIT_AREAS,
+  careerReport: ["career", "workplace", "money", "investment", "study"],
+  loveMarriageChildReport: ["love", "marriage", "parenting", "child", "relationships", "communication", "risks", "growth"],
+  compatibilityReport: ["communication", "relationships", "thinkingStyle", "love", "marriage", "workplace", "money", "growth"],
+  daeunReport: ["thinkingStyle", "career", "workplace", "money", "study", "relationships", "risks", "growth"],
+  saeunReport: ["thinkingStyle", "career", "workplace", "money", "study", "relationships", "risks", "growth"],
+} as const satisfies Record<MbtiReportUseCaseKey, readonly MbtiTraitArea[]>;
+
+export function getMbtiProductTraits(type: string | null | undefined, product: MbtiReportUseCaseKey, limitPerArea?: number) {
+  const profile = getMbtiSourceProfile(type);
+  return MBTI_PRODUCT_TRAIT_AREAS[product].flatMap(area =>
+    (profile?.traits?.[area] ?? []).slice(0, limitPerArea).map(trait => ({
+      area, trait, evidenceId: `mbti:${profile!.type}:traits:${area}:${trait.id}`,
+    })));
+}
+
+/** Small behavioral basis shared by the two fortune products, not a second personality report. */
+export function getMbtiFortuneBasis<P extends "daeunReport" | "saeunReport">(type: string | null | undefined, product: P) {
+  const profile = getMbtiSourceProfile(type);
+  const selected = getMbtiProductTraits(type, product, 1);
+  const reading = (area: MbtiTraitArea) => selected.find(t => t.area === area)?.trait.plainKo;
+  return {
+    type: profile?.type ?? null, titleKo: profile?.titleKo ?? null, archetype: profile?.archetype ?? null,
+    summary: profile?.oneLine ?? "MBTI가 입력되지 않아 명리 흐름과 실제 생활 경험을 중심으로 읽습니다.",
+    coreTraits: [reading("career"), reading("money"), reading("study")].filter((s): s is string => Boolean(s)),
+    stressPattern: reading("risks") ?? "입력된 MBTI 기준 스트레스 패턴 없음",
+    decisionPattern: reading("thinkingStyle") ?? "입력된 MBTI 기준 의사결정 패턴 없음",
+    workPattern: reading("workplace") ?? "입력된 MBTI 기준 일 처리 패턴 없음",
+    relationshipPattern: reading("relationships") ?? "입력된 MBTI 기준 관계 반응 패턴 없음",
+    growthPattern: reading("growth") ?? "입력된 MBTI 기준 성장 패턴 없음",
+    reportUseCase: product, reportUseCases: getMbtiReportUseCase(type, product) ?? [],
+  };
+}
+
 export type MbtiSourceTraitItem = {
   readonly id?: string;
   readonly label?: string;

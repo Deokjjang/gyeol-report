@@ -1,4 +1,4 @@
-import { getMbtiSourceProfile, type MbtiSourceTraitItem } from "./mbti/sourceRuntimeAdapter";
+import { getMbtiSourceProfile, getMbtiProductTraits, type MbtiSourceTraitItem } from "./mbti/sourceRuntimeAdapter";
 import type { CareerReportEvidencePacket } from "./careerReportTypes";
 
 // A negative label is not evidence for its positive counterpart (무인성 ≠ 인성).
@@ -11,7 +11,7 @@ export function careerSignalMatches(labels: readonly string[], target: string): 
 export function selectCareerMbti(type: string | null | undefined, labels: readonly string[]) {
   const profile = getMbtiSourceProfile(type);
   function traits(area: "career" | "workplace" | "money" | "investment" | "study") {
-    return [...(profile?.traits?.[area] ?? [])].sort((a, b) =>
+    return getMbtiProductTraits(type, "careerReport").filter(t => t.area === area).map(t => t.trait).sort((a, b) =>
       matches(b).length - matches(a).length).slice(0, 3);
   }
   function matches(item: MbtiSourceTraitItem) {

@@ -77,13 +77,6 @@ function hasDeepLayer(
   return input.deepSajuBridge?.notes.some((note) => note.layer === layer) ?? false;
 }
 
-function mbtiSpeedMismatchPenalty(input: ScoreCompatibilityInput): number {
-  return input.mbtiBridge.pairLabel === "ENTJ + INTP" ||
-    input.mbtiBridge.pairLabel === "INTP + ENTJ"
-    ? -5
-    : 0;
-}
-
 function unknownTimePenalty(input: ScoreCompatibilityInput): number {
   const unknownCount = [
     input.birthTimeConfidence.personA,
@@ -114,8 +107,7 @@ export function scoreCompatibility(
     communication: clampScore(
       65 +
         sumImpacts(input, ["communication", "relationship_scenes"]) +
-        sumDeepImpacts(input, ["cross_ten_god"]) +
-        mbtiSpeedMismatchPenalty(input),
+        sumDeepImpacts(input, ["cross_ten_god"]),
     ),
     lifestyleRhythm: clampScore(
       65 +

@@ -10,7 +10,7 @@ import {
 } from "./bridge";
 import {
   getMbtiReportUseCase,
-  getMbtiTraitArea,
+  getMbtiProductTraits,
   type MbtiSourceTraitItem,
 } from "./mbti";
 import type {
@@ -567,7 +567,7 @@ function getMbtiTraits(
     | "risks"
     | "growth",
 ): readonly LoveMarriageChildMbtiTraitEvidence[] {
-  return (getMbtiTraitArea(mbtiType, area) ?? []).flatMap((trait) => {
+  return getMbtiProductTraits(mbtiType, "loveMarriageChildReport").filter(item => item.area === area).flatMap(({ trait }) => {
     const normalized = normalizeMbtiTrait(trait);
 
     return normalized === null ? [] : [normalized];

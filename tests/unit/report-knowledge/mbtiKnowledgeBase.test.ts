@@ -1,3 +1,4 @@
+import { getMbtiSourceProfile } from "../../../src/lib/report-knowledge/mbti/sourceRuntimeAdapter";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -74,8 +75,7 @@ describe("mbti knowledge base", () => {
     );
     expect(entj?.sajuBridge?.likelySajuResonance?.join(" ")).toContain("재성 강세");
     expect(entj?.sajuBridge?.likelySajuResonance?.join(" ")).toContain("현침살");
-    expect(entj?.loveStyleKo?.join(" ")).toContain("성장");
-    expect(entj?.loveStyleKo?.join(" ")).toContain("일터");
+    expect(entj?.loveStyleKo).toEqual(getMbtiSourceProfile("ENTJ")!.traits!.love!.slice(0, 3).map(t => t.plainKo));
   });
 
   it("keeps ISTJ stability and responsibility style", () => {
@@ -93,13 +93,13 @@ describe("mbti knowledge base", () => {
     );
     expect(JSON.stringify(istj)).toContain("신뢰");
     expect(JSON.stringify(istj)).toContain("규칙");
-    expect(JSON.stringify(istj)).toContain("안정 자산");
+    expect(istj?.moneyStyleKo).toEqual(getMbtiSourceProfile("ISTJ")!.traits!.money!.slice(0, 3).map(t => t.plainKo));
   });
 
   it("keeps INFP emotion value internal style", () => {
     const infp = MBTI_KNOWLEDGE_BY_TYPE.get("INFP");
 
-    expect(infp?.summary).toContain("감정");
+    expect(infp?.summary).toBe(getMbtiSourceProfile("INFP")!.summary!.identity);
     expect(infp?.summary).toContain("가치");
     expect(infp?.summary).toContain("내면");
     expect(infp?.traitTags).toEqual(
@@ -112,7 +112,7 @@ describe("mbti knowledge base", () => {
       ]),
     );
     expect(infp?.riskTags).toContain("expression_weakness");
-    expect(JSON.stringify(infp)).toContain("감성형");
+    expect(infp?.labelKo).toBe(getMbtiSourceProfile("INFP")!.titleKo);
   });
 
   it("keeps ENFP and INTJ meaningful for expression possibility strategy and independence", () => {

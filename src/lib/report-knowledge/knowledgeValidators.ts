@@ -1,3 +1,4 @@
+import { getMbtiSourceProfile } from "./mbti/sourceRuntimeAdapter";
 import {
   INTERPRETATION_TAG_IDS,
   type InterpretationTagId,
@@ -656,8 +657,6 @@ function validateKeyMbtiSemantics(
   entriesByType: ReadonlyMap<MbtiType, MbtiKnowledgeEntry>,
 ): void {
   const entj = entriesByType.get("ENTJ");
-  const istj = entriesByType.get("ISTJ");
-  const infp = entriesByType.get("INFP");
 
   if (entj !== undefined) {
     const entjTags = new Set([...entj.traitTags, ...entj.riskTags, ...entj.sajuBridgeTags]);
@@ -668,22 +667,15 @@ function validateKeyMbtiSemantics(
       }
     }
   }
-  if (istj !== undefined) {
-    const text = collectStrings(istj).join(" ");
-
-    for (const marker of ["신뢰", "책임", "안정", "규칙"]) {
-      if (!text.includes(marker)) {
-        errors.push(`ISTJ missing semantic marker: ${marker}`);
-      }
+  for (const [type, entry] of entriesByType) {
+    const source = getMbtiSourceProfile(type);
+    if (!source) continue;
+    if (entry.summary !== (source.summary?.identity ?? source.oneLine)) {
+      errors.push(`mbti ${type} identity differs from source.`);
     }
-  }
-  if (infp !== undefined) {
-    const text = collectStrings(infp).join(" ");
-
-    for (const marker of ["가치", "내면", "상처", "감성형"]) {
-      if (!text.includes(marker)) {
-        errors.push(`INFP missing semantic marker: ${marker}`);
-      }
+    const stack = ["dominant", "auxiliary", "tertiary", "inferior"].map(role => source.functionStack?.[role]);
+    if (JSON.stringify(entry.functionStack) !== JSON.stringify(stack)) {
+      errors.push(`mbti ${type} function stack differs from source.`);
     }
   }
 }

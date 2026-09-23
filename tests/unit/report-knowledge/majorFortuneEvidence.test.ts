@@ -1,3 +1,4 @@
+import { getMbtiSourceProfile } from "../../../src/lib/report-knowledge/mbti/sourceRuntimeAdapter";
 import { describe, expect, it } from "vitest";
 
 import { getTenGodForStemPair } from "../../../src/lib/report-knowledge/annualFortuneYearRules";
@@ -88,7 +89,7 @@ describe("majorFortuneEvidence", () => {
     expect(evidence.mbtiBasis.workPattern.length).toBeGreaterThan(0);
     expect(evidence.mbtiBasis.relationshipPattern.length).toBeGreaterThan(0);
     expect(evidence.mbtiBasis.growthPattern.length).toBeGreaterThan(0);
-    expect(evidence.mbtiBasis.reportUseCases.join("\n")).toContain("10년 흐름");
+    expect(evidence.mbtiBasis.reportUseCases).toEqual(getMbtiSourceProfile("ENTJ")!.reportUseCases!.daeunReport);
     expect(evidence.bridgeEvidence?.productKey).toBe("daeun");
     expect(evidence.bridgeEvidence?.forbiddenAngles.join("\n")).toContain(
       "10년 결과 보장",
