@@ -183,6 +183,67 @@ function buildPromptEvidencePacket(input: {
   };
 }
 
+// Writer-only transport view. Canonical evidence, fallback and snapshots are
+// unchanged. Keep every selected fact and section assignment; pool ONLY records
+// with identical complete contents, never merely matching evidence IDs.
+export function buildComprehensiveWriterEvidence(input: {
+  readonly evidencePacket: ComprehensiveReportEvidencePacket;
+  readonly allowedSajuTerms?: readonly string[];
+}) {
+  const packet = buildPromptEvidencePacket({ packet: input.evidencePacket,
+    allowedSajuTerms: input.allowedSajuTerms ?? deriveAllowedSajuTermsFromEvidencePacket(input.evidencePacket) });
+  return {
+    ...packet,
+    ...(packet.narrativePlan ? { sectionSelectedEvidence: packet.narrativePlan.sections.map(section => ({
+      ...section,
+      features: packet.sajuFeatureDictionary?.filter(f => section.featureIds.includes(f.id)),
+      mbtiTraits: packet.mbtiBasis?.traitAreas.flatMap(({ area, traits }) => traits.filter(t => section.mbtiTraitIds.includes(`mbti:${packet.mbtiType}:traits:${area}:${t.id}`))),
+      interactions: packet.sajuMbtiBridgeEvidence?.filter(s => section.interactionIds.includes(s.interaction?.interactionId ?? "")),
+    })) } : {}),
+  };
+}
+
+type PromptJson = null | boolean | number | string | PromptJson[] | { [key: string]: PromptJson };
+function serializeWriterEvidence(evidence: object): string {
+  const root = JSON.parse(JSON.stringify(evidence)) as { [key: string]: PromptJson };
+  const record = (v: PromptJson): v is { [key: string]: PromptJson } => v !== null && typeof v === "object" && !Array.isArray(v);
+  const signature = (v: PromptJson): string => Array.isArray(v) ? `[${v.map(signature).join(",")}]`
+    : record(v) ? `{${Object.keys(v).sort().map(k => `${JSON.stringify(k)}:${signature(v[k])}`).join(",")}}` : JSON.stringify(v);
+  const identified = (v: { [key: string]: PromptJson }) => typeof v.id === "string" || typeof v.sourceId === "string";
+  const counts = new Map<string, number>();
+  const count = (v: PromptJson) => {
+    if (Array.isArray(v)) v.forEach(count);
+    else if (record(v)) {
+      if (identified(v)) { const key = signature(v); if (key.length >= 300) counts.set(key, (counts.get(key) ?? 0) + 1); }
+      Object.values(v).forEach(count);
+    }
+  };
+  count(root);
+  const catalog: { [key: string]: PromptJson } = {};
+  const references = new Map<string, string>();
+  const pack = (v: PromptJson): PromptJson => {
+    if (Array.isArray(v)) return v.map(pack);
+    if (!record(v)) return v;
+    const key = identified(v) ? signature(v) : "";
+    if ((counts.get(key) ?? 0) > 1) {
+      let ref = references.get(key);
+      if (ref === undefined) {
+        ref = `record_${references.size + 1}`;
+        references.set(key, ref);
+        catalog[ref] = Object.fromEntries(Object.entries(v).map(([k, item]) => [k, pack(item)]));
+      }
+      return { evidenceRef: ref, ...(typeof v.id === "string" ? { id: v.id } : {}), ...(typeof v.sourceId === "string" ? { sourceId: v.sourceId } : {}) };
+    }
+    return Object.fromEntries(Object.entries(v).map(([k, item]) => [k, pack(item)]));
+  };
+  const packed = pack(root) as { [key: string]: PromptJson };
+  // One root field per line; retain readable separators without deep indentation.
+  // JSON.stringify handles strings, so punctuation inside prose is never edited.
+  const compact = (v: PromptJson): string => Array.isArray(v) ? `[${v.map(compact).join(", ")}]`
+    : record(v) ? `{${Object.entries(v).map(([k, item]) => `${JSON.stringify(k)}: ${compact(item)}`).join(", ")}}` : JSON.stringify(v);
+  return `{\n${Object.entries({ writerEvidenceCatalog: catalog, ...packed }).map(([k, v]) => `  ${JSON.stringify(k)}: ${compact(v)}`).join(",\n")}\n}`;
+}
+
 export function buildOpenAIComprehensiveReportWriterMessages(input: {
   readonly userDisplayName?: string;
   readonly mbtiType: string;
@@ -199,25 +260,13 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
   const forbiddenSajuTermLines = formatSajuTermLines(
     createForbiddenSajuTerms({ allowedSajuTerms }),
   );
-  const promptPacket = buildPromptEvidencePacket({ packet: input.evidencePacket, allowedSajuTerms });
-  const evidenceJson = JSON.stringify(
-    {
-      ...promptPacket,
-      ...(promptPacket.narrativePlan ? { sectionSelectedEvidence: promptPacket.narrativePlan.sections.map(section=>({
-        ...section,
-        features: promptPacket.sajuFeatureDictionary?.filter(f=>section.featureIds.includes(f.id)),
-        mbtiTraits: promptPacket.mbtiBasis?.traitAreas.flatMap(({area,traits})=>traits.filter(t=>section.mbtiTraitIds.includes(`mbti:${promptPacket.mbtiType}:traits:${area}:${t.id}`))),
-        interactions: promptPacket.sajuMbtiBridgeEvidence?.filter(s=>section.interactionIds.includes(s.interaction?.interactionId??"")),
-      })) } : {}),
-    },
-    null,
-    2,
-  );
+  const evidenceJson = serializeWriterEvidence(buildComprehensiveWriterEvidence({ evidencePacket: input.evidencePacket, allowedSajuTerms }));
 
-  return {
+  const messages = {
     system: [
       "You are writing a Korean Saju-first paid report.",
       "Use only provided evidence.",
+      "근거 JSON의 evidenceRef는 writerEvidenceCatalog에서 같은 키의 완전한 근거 객체를 읽으라는 참조다. 각 참조를 해당 section/topic/선택 위치에서 원문처럼 사용하고, 원래 id/sourceId와 모든 조건·주의·장면을 보존한다. record_N은 전송용 키이지 새 evidence ID가 아니며 본문에 노출하지 않는다. 같은 ID라도 내용이 다르면 별도 근거이므로 합치지 않는다. 데이터 중복 감소는 출력 분량이나 섹션별 근거 범위를 줄이라는 뜻이 아니다.",
       "narrativePlan이 있으면 themes의 실제 교차 근거를 먼저 해석하고, sections에 배정된 근거를 그 질문에 맞게 사용한다. 같은 interaction의 scene은 지정된 한 장에서만 쓴다. 연결 근거가 없거나 MBTI 미입력이면 명리만으로 읽고 상호작용을 만들지 않는다.",
       "Do not invent Saju facts.",
       "Do not mention Saju entries not present in the evidence packet.",
@@ -568,6 +617,17 @@ export function buildOpenAIComprehensiveReportWriterMessages(input: {
       evidenceJson,
     ].join("\n"),
   };
+  // Remove only verbatim complete repeated instructions, keeping the occurrence
+  // in the highest-priority role. Distinct requirements/examples remain intact.
+  const seen = new Set<string>();
+  const uniqueInstructions = (text: string) => text.split("\n").filter(line => {
+    if (line.length < 50) return true;
+    if (seen.has(line)) return false;
+    seen.add(line); return true;
+  }).join("\n");
+  const userInstructions = messages.user.slice(0, -evidenceJson.length);
+  return { system: uniqueInstructions(messages.system), developer: uniqueInstructions(messages.developer),
+    user: uniqueInstructions(userInstructions) + evidenceJson };
 }
 
 export function buildOpenAIComprehensiveReportRepairMessages(input: {
