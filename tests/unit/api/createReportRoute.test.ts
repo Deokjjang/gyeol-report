@@ -75,6 +75,25 @@ type ProductApiErrorBody = {
     | "REPORT_PERSISTENCE_RUNTIME_FAILED"
     | "REPORT_PERSISTENCE_CREATE_FAILED";
   message: string;
+  diagnostic?: SafeLocalReportDiagnostic;
+};
+
+type SafeLocalReportDiagnostic = {
+  stage: string;
+  category: string;
+  code: string;
+  issues: readonly string[];
+  providerOutcome: string | null;
+  providerStatus: number | null;
+  externalCallCount: number;
+  model: string | null;
+  inputTokens: number | null;
+  outputTokens: number | null;
+  totalTokens: number | null;
+  providerDurationMs: number;
+  durationMs: number;
+  retryAttempted: boolean;
+  fallbackUsed: boolean;
 };
 
 type ProductApiSuccessBody = {
@@ -97,6 +116,7 @@ type ProductApiSuccessBody = {
       isUnlocked: boolean;
     };
   };
+  diagnostic?: SafeLocalReportDiagnostic;
 };
 
 type ApiResponseBody =
@@ -339,6 +359,19 @@ describe("create report route", () => {
         mode: "preview",
         isPaid: false,
         isUnlocked: false,
+      });
+      expect(body.diagnostic).toMatchObject({
+        stage: "completed",
+        category: "SUCCESS",
+        code: "OK",
+        issues: [],
+        externalCallCount: 0,
+        model: null,
+        inputTokens: null,
+        outputTokens: null,
+        totalTokens: null,
+        retryAttempted: false,
+        fallbackUsed: true,
       });
       expect(body).not.toHaveProperty("report");
     }
@@ -791,7 +824,9 @@ describe("public direct report generation production boundary", () => {
     const response = await POST(input);
     expect(response.status).toBe(404);
     expect(response.headers.get("cache-control")).toBe("no-store");
-    expect(await response.json()).toEqual({ ok: false, message: "요청을 처리할 수 없습니다." });
+    const body = await response.json();
+    expect(body).toEqual({ ok: false, message: "요청을 처리할 수 없습니다." });
+    expect(body).not.toHaveProperty("diagnostic");
     expect(parse).not.toHaveBeenCalled();
     expectNoGeneration();
   }
@@ -861,5 +896,61 @@ describe("public direct report generation production boundary", () => {
         payload(), expect.objectContaining({ enabled: true }), "normal_writer",
       );
       expect(fetch).not.toHaveBeenCalled();
+    });
+
+    it("returns only allowlisted local diagnostics for a writer validation failure", async () => {
+      vi.stubEnv("NODE_ENV", "development");
+      vi.mocked(generator.generateProductReport).mockResolvedValueOnce({
+        ok: false,
+        error: {
+          code: "INVALID_REPORT_INPUT",
+          message: [
+            "COMPREHENSIVE_V2_GENERATION_FAILED: OPENAI_REPORT_WRITER_INVALID_JSON",
+            "stage: draft_validation",
+            "validation errors:",
+            "- LONGFORM_REQUIRED: workMoneyStudyReading",
+            "- opening.body contains private generated copy",
+          ].join("\n"),
+        },
+        externalFailure: "OPENAI_MALFORMED",
+        externalCalls: [{
+          sequence: 1,
+          model: "gpt-5.4-mini",
+          inputTokens: 1234,
+          outputTokens: 5678,
+          totalTokens: 6912,
+          durationMs: 74_000,
+          outcome: "malformed",
+        }],
+      });
+
+      const response = await POST(request());
+      expect(response.status).toBe(400);
+      const body = await response.json();
+
+      expect(body.diagnostic).toMatchObject({
+        stage: "draft_validation",
+        category: "OPENAI_MALFORMED",
+        code: "OPENAI_REPORT_WRITER_INVALID_JSON",
+        issues: ["LONGFORM_REQUIRED:workMoneyStudyReading", "FIELD:opening.body"],
+        providerOutcome: "malformed",
+        providerStatus: null,
+        externalCallCount: 1,
+        model: "gpt-5.4-mini",
+        inputTokens: 1234,
+        outputTokens: 5678,
+        totalTokens: 6912,
+        providerDurationMs: 74_000,
+        retryAttempted: false,
+        fallbackUsed: false,
+      });
+      expect(body.diagnostic.durationMs).toEqual(expect.any(Number));
+
+      const serialized = JSON.stringify(body);
+      expect(serialized).not.toContain("private generated copy");
+      expect(serialized).not.toContain("1996-12-06");
+      expect(serialized).not.toContain("보안 테스트");
+      expect(serialized).not.toContain("Authorization");
+      expect(serialized).not.toContain("mock-key");
     });
 });

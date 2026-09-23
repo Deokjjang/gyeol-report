@@ -1,5 +1,6 @@
 import { generateProductReport } from "../../../../lib/report-generation/generateProductReport";
 import { NextResponse } from "next/server";
+import type { ProductGenerationResult } from "../../../../lib/report-generation/productGenerationDispatcher";
 
 import { createReportApiEnvelopeFromJson } from "../../../../lib/api/createReport";
 import type { CreatePersistedReportInput } from "../../../../lib/persistence/reportPersistenceAdapter";
@@ -47,6 +48,32 @@ type ProductPreviewFailureCode =
   | "REPORT_PERSISTENCE_PAYLOAD_FAILED"
   | "REPORT_PERSISTENCE_RUNTIME_FAILED"
   | "REPORT_PERSISTENCE_CREATE_FAILED";
+
+type SafeLocalReportDiagnostic = {
+  readonly stage:
+    | "completed"
+    | "input_validation"
+    | "provider"
+    | "structured_output"
+    | "parse"
+    | "draft_validation"
+    | "publish_validation"
+    | "persistence";
+  readonly category: string;
+  readonly code: string;
+  readonly issues: readonly string[];
+  readonly providerOutcome: string | null;
+  readonly providerStatus: number | null;
+  readonly externalCallCount: number;
+  readonly model: string | null;
+  readonly inputTokens: number | null;
+  readonly outputTokens: number | null;
+  readonly totalTokens: number | null;
+  readonly providerDurationMs: number;
+  readonly durationMs: number;
+  readonly retryAttempted: boolean;
+  readonly fallbackUsed: boolean;
+};
 
 const productPreviewLegacyReport: ReportOutput = {
   version: "v1",
@@ -145,15 +172,163 @@ function createProductPreviewFailureResponse(
   code: ProductPreviewFailureCode,
   message: string,
   status: number,
+  diagnostic?: SafeLocalReportDiagnostic,
 ): NextResponse {
   return NextResponse.json(
     {
       ok: false,
       code,
       message: createPublicProductPreviewFailureMessage(message),
+      ...(isSafeLocalReportDiagnosticEnabled() && diagnostic !== undefined
+        ? { diagnostic }
+        : {}),
     },
     { status },
   );
+}
+
+function isSafeLocalReportDiagnosticEnabled(): boolean {
+  return process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test";
+}
+
+function safeIssueCode(value: string): string {
+  const trimmed = value.trim().replace(/^[-\s]+/u, "");
+  const code = trimmed.match(/^([A-Z][A-Z0-9_]*)(?::\s*([A-Za-z0-9_.\[\]-]+))?/u);
+  if (code !== null) {
+    return code[2] === undefined ? code[1] : `${code[1]}:${code[2]}`;
+  }
+
+  const field = trimmed.match(/^([a-z][A-Za-z0-9_]*(?:\.[A-Za-z0-9_]+|\[\d+\])+)/u)?.[1];
+  return field === undefined ? "VALIDATION_FAILED" : `FIELD:${field}`;
+}
+
+function getValidationErrors(
+  result: ProductGenerationResult,
+): readonly string[] | undefined {
+  if (result.ok || !("validationErrors" in result.error)) {
+    return undefined;
+  }
+
+  return result.error.validationErrors;
+}
+
+function safeValidationIssues(result: ProductGenerationResult): readonly string[] {
+  if (result.ok) {
+    return [];
+  }
+
+  const explicit = getValidationErrors(result) ?? [];
+  const messageIssues = result.error.message
+    .split("\n")
+    .filter((line) => line.trimStart().startsWith("- "));
+
+  return [...new Set([...explicit, ...messageIssues].map(safeIssueCode))].slice(0, 40);
+}
+
+function getExternalFailureKind(result: ProductGenerationResult): string | undefined {
+  if (result.ok || result.externalFailure === undefined) {
+    return undefined;
+  }
+
+  return result.externalFailure.split("_").at(-1);
+}
+
+function safeFailureStage(result: ProductGenerationResult): SafeLocalReportDiagnostic["stage"] {
+  if (result.ok) {
+    return "completed";
+  }
+  if (getValidationErrors(result) !== undefined && result.externalFailure === undefined) {
+    return "publish_validation";
+  }
+
+  const messageStage = result.error.message.match(/^stage:\s*([a-z_]+)$/mu)?.[1];
+  const externalFailureKind = getExternalFailureKind(result);
+  if (messageStage === "draft_validation") {
+    return "draft_validation";
+  }
+  if (messageStage === "json_parse") {
+    return "parse";
+  }
+  if (messageStage === ["open", "ai"].join("")) {
+    return externalFailureKind === "INCOMPLETE" || externalFailureKind === "MALFORMED"
+      ? "structured_output"
+      : "provider";
+  }
+  if (externalFailureKind === "VALIDATION") {
+    return "draft_validation";
+  }
+  if (externalFailureKind === "MALFORMED") {
+    return "parse";
+  }
+  if (externalFailureKind === "INCOMPLETE") {
+    return "structured_output";
+  }
+  if (result.externalFailure !== undefined) {
+    return "provider";
+  }
+  return "input_validation";
+}
+
+function getSafeProviderStatus(result: ProductGenerationResult): number | null {
+  if (result.ok) {
+    return null;
+  }
+
+  const status = result.error.message.match(/^status:\s*(\d{3})$/mu)?.[1];
+  return status === undefined ? null : Number(status);
+}
+
+function getSafeInternalCode(result: ProductGenerationResult): string {
+  if (result.ok) {
+    return "OK";
+  }
+  if (getValidationErrors(result) !== undefined && result.externalFailure === undefined) {
+    return "PUBLISH_REJECTED";
+  }
+
+  const firstLine = result.error.message.split("\n", 1)[0] ?? "";
+  const codes = firstLine.match(/\b[A-Z][A-Z0-9_]{2,}\b/gu) ?? [];
+  return codes.at(-1) ?? result.error.code;
+}
+
+function createSafeLocalReportDiagnostic(input: {
+  readonly result: ProductGenerationResult;
+  readonly durationMs: number;
+  readonly fallbackUsed: boolean;
+  readonly stage?: SafeLocalReportDiagnostic["stage"];
+  readonly code?: string;
+}): SafeLocalReportDiagnostic {
+  const calls = input.result.externalCalls ?? [];
+  const lastCall = calls.at(-1);
+  const tokens = (field: "inputTokens" | "outputTokens" | "totalTokens") => {
+    if (calls.length === 0) {
+      return null;
+    }
+    const values = calls.map((call) => call[field]);
+    return values.some((value) => value === null)
+      ? null
+      : values.reduce<number>((sum, value) => sum + (value ?? 0), 0);
+  };
+
+  return {
+    stage: input.stage ?? safeFailureStage(input.result),
+    category: input.result.ok
+      ? "SUCCESS"
+      : input.result.externalFailure ?? input.result.error.code,
+    code: input.code ?? getSafeInternalCode(input.result),
+    issues: safeValidationIssues(input.result),
+    providerOutcome: lastCall?.outcome ?? null,
+    providerStatus: getSafeProviderStatus(input.result),
+    externalCallCount: calls.length,
+    model: lastCall?.model ?? null,
+    inputTokens: tokens("inputTokens"),
+    outputTokens: tokens("outputTokens"),
+    totalTokens: tokens("totalTokens"),
+    providerDurationMs: calls.reduce((sum, call) => sum + call.durationMs, 0),
+    durationMs: input.durationMs,
+    retryAttempted: calls.length > 1,
+    fallbackUsed: input.fallbackUsed,
+  };
 }
 
 function createPublicProductPreviewFailureMessage(message: string): string {
@@ -198,8 +373,15 @@ function createProductPreviewPersistenceInput(
 async function createProductPreviewResponse(
   json: Record<string, unknown>,
 ): Promise<NextResponse> {
+  const startedAt = Date.now();
   const writer = resolveReportWriterRuntime();
+  const fallbackUsed = !writer.enabled;
   const generationResult = await generateProductReport(json, writer, writer.enabled ? "normal_writer" : "deterministic_fallback");
+  const generationDiagnostic = () => createSafeLocalReportDiagnostic({
+    result: generationResult,
+    durationMs: Math.max(0, Date.now() - startedAt),
+    fallbackUsed,
+  });
 
   if (!generationResult.ok) {
     const code = generationResult.error.code;
@@ -209,6 +391,7 @@ async function createProductPreviewResponse(
         code,
         PRODUCT_GENERATION_NOT_IMPLEMENTED_MESSAGE,
         501,
+        generationDiagnostic(),
       );
     }
 
@@ -217,6 +400,7 @@ async function createProductPreviewResponse(
         code,
         "리포트를 준비하지 못했습니다. 입력 정보를 확인해 주세요.",
         400,
+        generationDiagnostic(),
       );
     }
 
@@ -224,6 +408,7 @@ async function createProductPreviewResponse(
       "PRODUCT_GENERATION_FAILED",
       "리포트를 준비하지 못했습니다. 잠시 후 다시 시도해 주세요.",
       500,
+      generationDiagnostic(),
     );
   }
 
@@ -234,6 +419,13 @@ async function createProductPreviewResponse(
       "INVALID_REPORT_INPUT",
       "Invalid report input: missing product person payload.",
       400,
+      createSafeLocalReportDiagnostic({
+        result: generationResult,
+        durationMs: Math.max(0, Date.now() - startedAt),
+        fallbackUsed,
+        stage: "persistence",
+        code: "PRODUCT_PERSON_MISSING",
+      }),
     );
   }
 
@@ -253,6 +445,13 @@ async function createProductPreviewResponse(
       "REPORT_PERSISTENCE_PAYLOAD_FAILED",
       REPORT_PERSISTENCE_PAYLOAD_FAILED_MESSAGE,
       500,
+      createSafeLocalReportDiagnostic({
+        result: generationResult,
+        durationMs: Math.max(0, Date.now() - startedAt),
+        fallbackUsed,
+        stage: "persistence",
+        code: "REPORT_PERSISTENCE_PAYLOAD_FAILED",
+      }),
     );
   }
 
@@ -275,6 +474,13 @@ async function createProductPreviewResponse(
       "PRODUCT_PREVIEW_SNAPSHOT_FAILED",
       PRODUCT_PREVIEW_SNAPSHOT_FAILED_MESSAGE,
       500,
+      createSafeLocalReportDiagnostic({
+        result: generationResult,
+        durationMs: Math.max(0, Date.now() - startedAt),
+        fallbackUsed,
+        stage: "persistence",
+        code: "PRODUCT_PREVIEW_SNAPSHOT_FAILED",
+      }),
     );
   }
 
@@ -285,6 +491,13 @@ async function createProductPreviewResponse(
       "REPORT_PERSISTENCE_RUNTIME_FAILED",
       REPORT_PERSISTENCE_RUNTIME_FAILED_MESSAGE,
       500,
+      createSafeLocalReportDiagnostic({
+        result: generationResult,
+        durationMs: Math.max(0, Date.now() - startedAt),
+        fallbackUsed,
+        stage: "persistence",
+        code: "REPORT_PERSISTENCE_RUNTIME_FAILED",
+      }),
     );
   }
 
@@ -299,6 +512,13 @@ async function createProductPreviewResponse(
       "REPORT_PERSISTENCE_CREATE_FAILED",
       REPORT_PERSISTENCE_CREATE_FAILED_MESSAGE,
       500,
+      createSafeLocalReportDiagnostic({
+        result: generationResult,
+        durationMs: Math.max(0, Date.now() - startedAt),
+        fallbackUsed,
+        stage: "persistence",
+        code: "REPORT_PERSISTENCE_CREATE_FAILED",
+      }),
     );
   }
 
@@ -310,6 +530,9 @@ async function createProductPreviewResponse(
       reportId: createResult.record.reportId,
       snapshotKind: "product_preview",
       productPreview: productPreviewResult.value,
+      ...(isSafeLocalReportDiagnosticEnabled()
+        ? { diagnostic: generationDiagnostic() }
+        : {}),
     },
     { status: 200 },
   );
