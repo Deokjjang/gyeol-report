@@ -33,8 +33,6 @@ export default function BusinessFooter() {
             <a key={link.href} href={link.href}>{link.labelKo}</a>
           ))}
         </nav>
-        {/* Display date only; legal policy and checkout consent versions are separate. */}
-        <p className={styles.footerNote}>시행일 2026년 9월 24일</p>
       </div>
     </footer>
   );

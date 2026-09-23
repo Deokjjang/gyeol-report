@@ -6,7 +6,7 @@ export type TermsPolicySection = {
   readonly bodyKo: readonly string[];
 };
 
-export const termsPolicyEffectiveDateKo = "2026년 6월 14일";
+export const termsPolicyEffectiveDateKo = "2026년 9월 24일";
 
 export const termsPolicyDescriptionKo =
   "결리포트 유료 디지털 리포트 서비스의 이용 기준입니다.";
