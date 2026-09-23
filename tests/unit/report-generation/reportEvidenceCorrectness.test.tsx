@@ -173,9 +173,14 @@ describe("mock writer failures retain the same canonical fallback", () => {
       return Response.json({ output_text: failure === "malformed" ? "{broken" : failure === "empty" ? "" : "{}" });
     });
     const runtime = { enabled: true as const, config: { enabled: true as const, apiKey: "mock-only", model: "mock", fetchImpl: transport } };
-    for (const strategy of ["normal_writer", "writer_regeneration"] as const) expect((await generateProductReport(p, runtime, strategy)).ok).toBe(false);
+    for (const strategy of ["normal_writer", "writer_regeneration"] as const) {
+      const result = await generateProductReport(p, runtime, strategy);
+      expect(result.ok).toBe(true);
+      expect(result.delivery).toMatchObject({ fallbackUsed: true, publish: "pass" });
+      if (result.ok) expect(result.evidencePacket).toEqual(baseline.evidencePacket);
+    }
     const calls = transport.mock.calls.length;
-    expect(calls).toBeGreaterThanOrEqual(2);
+    expect(calls).toBe(1);
     const repaired = await generateProductReport(p, runtime, "deterministic_fallback");
     expect(repaired.ok, JSON.stringify(repaired)).toBe(true); if (!repaired.ok) return;
     expect(transport).toHaveBeenCalledTimes(calls);

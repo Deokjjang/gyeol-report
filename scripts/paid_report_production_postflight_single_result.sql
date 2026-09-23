@@ -458,7 +458,6 @@ rpc_checks(check_name,pass,detail) as (
         and position('admin_retry' in prosrc)>0
         and position('skip locked' in lower(prosrc))>0
         and position('normal_writer' in prosrc)>0
-        and position('writer_regeneration' in prosrc)>0
         and position('deterministic_fallback' in prosrc)>0
         and position('90 days' in prosrc)>0
       from rpc_catalog

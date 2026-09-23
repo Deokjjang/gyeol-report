@@ -1,4 +1,5 @@
 import type { WriterCallAudit } from "./reportWriterCallGuard";
+import type { DeliveryAudit } from "./paidWriterRescue";
 import type { BirthTimeCalculationContext } from "../saju/birthTimePrecisionTypes";
 import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
 import {
@@ -69,7 +70,7 @@ export type ProductGenerationInvalidInputResult = {
 export type ProductGenerationResult = (
   | ProductGenerationSuccessResult
   | ProductGenerationNotImplementedResult
-  | ProductGenerationInvalidInputResult) & { readonly externalCalls?: readonly WriterCallAudit[]; readonly externalFailure?: string };
+  | ProductGenerationInvalidInputResult) & { readonly externalCalls?: readonly WriterCallAudit[]; readonly externalFailure?: string; readonly delivery?: DeliveryAudit };
 
 export type ProductGenerationHandler = (
   input: ReportGenerationInput,

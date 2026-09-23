@@ -68,16 +68,15 @@ describe("paid report reliability — actual SQL, mock providers", () => {
       expect(permission.rows[0].allowed).toBe(role === "service_role");
     }
   });
-  it("100 repeated worker executions cannot exceed two paid writer HTTP calls", async () => {
+  it("100 repeated worker executions cannot exceed one paid writer HTTP call", async () => {
     await paid();
     const transport = vi.fn<typeof fetch>(async () => Response.json({ output_text: "{malformed", usage: { input_tokens: 22, output_tokens: 1, total_tokens: 23 } }));
     const writerRuntime = { enabled: true as const, config: { enabled: true as const, apiKey: "mock-only", model: "mock", fetchImpl: transport } };
     for (let i=0; i<100; i++) { await due(); await runPaidReportJob(store, writerRuntime); }
-    expect(transport).toHaveBeenCalledTimes(2);
+    expect(transport).toHaveBeenCalledTimes(1);
     const attempts = await rows("report_generation_attempts");
-    expect(attempts).toHaveLength(3);
-    expect(attempts[0]).toMatchObject({ error_code: "OPENAI_MALFORMED", external_calls: [{ inputTokens: 22, outputTokens: 1, totalTokens: 23, outcome: "malformed" }] });
-    expect(attempts[2].external_calls).toEqual([]);
+    expect(attempts).toHaveLength(1);
+    expect(attempts[0]).toMatchObject({ external_calls: [{ inputTokens: 22, outputTokens: 1, totalTokens: 23, outcome: "malformed" }] });
     expect((await rows("payment_orders"))[0].status).toBe("paid");
   });
 
@@ -95,26 +94,19 @@ describe("paid report reliability — actual SQL, mock providers", () => {
     expect(await readPublishedReport(store, id)).toMatchObject({ status: "COMPLETED" });
     expect((await rows("payment_orders")).find(o => o.payment_order_id==='recover-other')).toMatchObject({ status: "ready", recovery_attempt_count: 1 });
   });
-  it.each(["timeout", "malformed", "empty", "invalid"])("writer %s → two durable retries → canonical fallback publication", async failure => {
+  it.each(["timeout", "malformed", "empty", "invalid"])("writer %s → same-attempt canonical fallback publication", async failure => {
     const id = await paid();
     const transport = vi.fn<typeof fetch>(async () => {
       if (failure === "timeout") throw new DOMException("mock timeout", "AbortError");
       return Response.json({ output_text: failure === "malformed" ? "{broken" : failure === "empty" ? "" : "{}" });
     });
     const writerRuntime = { enabled: true as const, config: { enabled: true as const, apiKey: "mock-only", model: "mock", fetchImpl: transport } };
-    for (let i = 0; i < 2; i++) {
-      await due();
-      expect(await runPaidReportJob(store, writerRuntime)).toMatchObject({ status: "RETRYING" });
-      expect((await readPublishedReport(store, id)).snapshot).toBeNull();
-    }
-    const calls = transport.mock.calls.length;
-    await due();
     expect(await runPaidReportJob(store, writerRuntime)).toMatchObject({ status: "COMPLETED" });
-    expect(transport).toHaveBeenCalledTimes(calls);
+    expect(transport).toHaveBeenCalledTimes(1);
     const result = await readPublishedReport(store, id);
     expect(result.snapshot).toMatchObject({ evidencePacket: valid.evidencePacket });
     expect((await rows("payment_orders"))[0].status).toBe("paid");
-    expect(await rows("report_generation_attempts")).toHaveLength(3);
+    expect(await rows("report_generation_attempts")).toHaveLength(1);
   });
   it("1 paid → generation success → COMPLETED", async () => {
     const id = await paid();
@@ -127,7 +119,7 @@ describe("paid report reliability — actual SQL, mock providers", () => {
     expect(await runPaidReportJob(store, runtime, generate)).toMatchObject({ status: "RETRYING" });
     await due();
     expect(await runPaidReportJob(store, runtime, generate)).toMatchObject({ status: "COMPLETED" });
-    expect(generate.mock.calls.map((c) => c[2])).toEqual(["normal_writer", "writer_regeneration"]);
+    expect(generate.mock.calls.map((c) => c[2])).toEqual(["normal_writer", "deterministic_fallback"]);
   });
   it("3 invalid writer draft → reject → retry", async () => {
     const id = await paid();
@@ -149,7 +141,7 @@ describe("paid report reliability — actual SQL, mock providers", () => {
     const profile = (invalid.draft as { profileTable: Record<string, unknown> }).profileTable;
     delete profile.fourPillarGrid;
     expect(await runPaidReportJob(store, runtime, async () => invalid)).toMatchObject({ status: "RETRYING" });
-    expect((await rows("report_generation_attempts"))[0].validation_errors).toContain("PILLAR_REQUIRED:hour");
+    expect((await rows("report_generation_attempts"))[0].validation_errors).toContain("PILLAR_REQUIRED");
   });
   it("6 all three attempts including fallback fail → PAID + input retained + attention", async () => {
     const id = await paid();
@@ -158,7 +150,7 @@ describe("paid report reliability — actual SQL, mock providers", () => {
     expect((await rows("payment_orders"))[0].status).toBe("paid");
     expect(await rows("report_input_snapshots")).toHaveLength(1);
     expect(await readPublishedReport(store, id)).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
-    expect(generate.mock.calls.map((c: unknown[]) => c[2])).toEqual(["normal_writer", "writer_regeneration", "deterministic_fallback"]);
+    expect(generate.mock.calls.map((c: unknown[]) => c[2])).toEqual(["normal_writer", "deterministic_fallback", "deterministic_fallback"]);
     expect(await rows("report_generation_attempts")).toHaveLength(3);
     expect(await store.call("admin_retry", { reportId: id })).toMatchObject({ ok: true });
     expect(await runPaidReportJob(store, runtime, async () => valid)).toMatchObject({ status: "COMPLETED" });
@@ -318,14 +310,16 @@ describe("paid report reliability — actual SQL, mock providers", () => {
     await paid();
     expect(await runPaidReportJob(store, writer)).toMatchObject({ status: "COMPLETED" });
   });
-  it("a schema-era writer result lacking longform is rejected without silent fallback", async () => {
+  it("a schema-era writer result lacking longform is discarded and a complete fallback is delivered", async () => {
     const narrative = JSON.parse(JSON.stringify(valid.draft)
       .replaceAll("토 과다", "현실 감각").replaceAll("수 부족", "회복 통로").replaceAll("화 부족", "표현 통로").replaceAll("현침살", "날카로운 판단")) as Record<string, unknown>;
     for (const key of ["profileTable", "productVersion", "longformReadings", "sajuFeatureSpotlight", "sajuSignatureScenes", "reportDifferentiationModules", "sajuSymbolicNickname", "sajuFeatureChapter"]) delete narrative[key];
     const fetchMock = vi.fn(async () => Response.json({ output_text: JSON.stringify(narrative) }));
     vi.stubGlobal("fetch", fetchMock);
     const result = await generateProductReport(payload, { enabled: true, config: { enabled: true, apiKey: "mock-only", model: "mock-writer" } }, "normal_writer");
-    expect(result.ok).toBe(false);
+    expect(result.ok).toBe(true);
+    expect(result.delivery).toMatchObject({ fallbackUsed: true, publish: "pass" });
+    if (result.ok) expect(result.draft).toEqual(valid.draft);
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 

@@ -8,7 +8,6 @@ import type { ComprehensiveReportEvidencePacket } from "../../../src/lib/report-
 import { ComprehensiveReportV2View } from "../../../src/app/reports/[reportId]/ComprehensiveReportV2View";
 import { buildOpenAIComprehensiveReportWriterMessages } from "../../../src/lib/report-generation/openaiReportWriterPrompt";
 import { comprehensiveFeaturePerspectives } from "../../../src/lib/report-generation/comprehensiveFeaturePerspectives";
-import * as writer from "../../../src/lib/report-generation/openaiComprehensiveReportWriter";
 const customers = [
     { name: "가람", birthDate: "1996-12-06", birthTime: "14:15", gender: "MALE", mbtiType: "INTP", beforeChars: 17223 },
     { name: "나래", birthDate: "1980-03-09", birthTime: "13:30", gender: "FEMALE", mbtiType: "ENTP", beforeChars: 16060 },
@@ -130,11 +129,13 @@ describe("comprehensive personal narrative", () => {
             productVersion: string;
         };
         expect(productVersion).toBe("v2");
-        const spy = vi.spyOn(writer, "generateComprehensiveReportDraft").mockResolvedValue({ draft, rawText: "", warnings: [] });
-        const result = await generateProductReport(payload(), { enabled: true, config: { enabled: true, apiKey: "mock-only", model: "mock" } }, "normal_writer");
+        const spy = vi.fn<typeof fetch>(async () => Response.json({ output_text: JSON.stringify(draft) }));
+        const result = await generateProductReport(payload(), { enabled: true, config: { enabled: true, apiKey: "mock-only", model: "mock", fetchImpl: spy } }, "normal_writer");
         expect(result.ok, result.ok ? "" : result.error.message).toBe(true);
         expect(spy).toHaveBeenCalledOnce();
-        expect(spy.mock.calls[0][0].evidencePacket.narrativePlan).toEqual(r.evidence.narrativePlan);
+        const request = JSON.parse(String(spy.mock.calls[0][1]?.body));
+        expect(JSON.stringify(request.input)).toContain("sectionSelectedEvidence");
+        expect(result.delivery).toMatchObject({ writerValidation: "pass", fallbackUsed: false });
         if (result.ok)
             expect((result.draft as ComprehensiveReportV2Draft).longformReadings).toEqual(r.draft.longformReadings);
         const prompt = buildOpenAIComprehensiveReportWriterMessages({ mbtiType: "INTP", evidencePacket: r.evidence });

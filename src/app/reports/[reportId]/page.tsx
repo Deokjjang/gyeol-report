@@ -116,7 +116,8 @@ function createResultClient() {
 }
 
 async function loadPageState(reportId: string): Promise<PageState> {
-  if (process.env.NODE_ENV !== "test") {
+  const localPreview = process.env.NODE_ENV !== "production" && process.env.REPORT_PERSISTENCE_MODE === "preview_memory";
+  if (process.env.NODE_ENV !== "test" && !localPreview) {
     const durable = await readPublishedReport(createPaidReportReliabilityStore(), reportId);
     if (durable.ok) {
       if (durable.status === "EXPIRED") return { kind: "expired" };
@@ -130,6 +131,8 @@ async function loadPageState(reportId: string): Promise<PageState> {
   if (previewResult !== null) {
     return previewResult;
   }
+
+  if (localPreview) return { kind: "unavailable" };
 
   const result = await getPaidReportResult({
     reportId,

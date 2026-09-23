@@ -377,7 +377,7 @@ function sanitizeParsedNarrativeDraft(parsed: unknown): {
   };
 }
 
-function withComprehensiveWriterValidationContract(
+export function withComprehensiveWriterValidationContract(
   messages: OpenAIReportWriterMessages,
 ): OpenAIReportWriterMessages {
   return {

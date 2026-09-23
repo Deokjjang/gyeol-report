@@ -1,4 +1,4 @@
-import { guardedReportFetch, type WriterCallBudget } from "./reportWriterCallGuard";
+import { guardedReportFetch, type WriterCallBudget, type WriterProduct } from "./reportWriterCallGuard";
 export type OpenAIReportWriterClientConfig = {
   readonly apiKey: string;
   readonly model: string;
@@ -294,6 +294,7 @@ function buildOpenAIReportWriterPayload(input: {
   readonly model: string;
   readonly messages: OpenAIReportWriterMessagesForClient;
   readonly jsonSchema: object;
+  readonly responseFormatName?: string;
 }): object {
   return {
     model: input.model,
@@ -314,7 +315,7 @@ function buildOpenAIReportWriterPayload(input: {
     text: {
       format: {
         type: "json_schema",
-        name: "comprehensive_report_draft",
+        name: input.responseFormatName ?? "comprehensive_report_draft",
         schema: input.jsonSchema,
         strict: true,
       },
@@ -324,7 +325,8 @@ function buildOpenAIReportWriterPayload(input: {
 }
 
 export async function callOpenAIReportWriter(input: {
-  readonly product?: "comprehensive" | "compatibility";
+  readonly product?: WriterProduct;
+  readonly responseFormatName?: string;
   readonly config: OpenAIReportWriterClientConfig;
   readonly messages: OpenAIReportWriterMessagesForClient;
   readonly jsonSchema: object;
@@ -352,6 +354,7 @@ export async function callOpenAIReportWriter(input: {
         model,
         messages: input.messages,
         jsonSchema: input.jsonSchema,
+        responseFormatName: input.responseFormatName,
       }),
     ),
   });

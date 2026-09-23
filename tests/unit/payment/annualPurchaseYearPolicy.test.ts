@@ -108,7 +108,7 @@ describe("annual purchase policy — real prepare / SQL / worker, no providers",
     expect(await inputSnapshot()).toEqual(original);
   });
 
-  it("normal writer retry in 2027 receives the accepted 2026 policy through the real dispatcher", async () => {
+  it("writer outage in 2027 immediately delivers fallback using the accepted 2026 policy", async () => {
     const { reportId } = await purchase();
     const fixture = await generateProductReport(payloadFor("2021"), runtime, "deterministic_fallback");
     expect(fixture.ok).toBe(true);
@@ -118,10 +118,10 @@ describe("annual purchase policy — real prepare / SQL / worker, no providers",
       .mockRejectedValueOnce(new Error("mock outage"))
       .mockResolvedValueOnce(Response.json({ output_text: JSON.stringify(fixture.draft) }));
     const writer = { enabled: true as const, config: { enabled: true as const, apiKey: "mock", model: "mock", fetchImpl: transport } };
-    expect(await runPaidReportJob(store, writer)).toMatchObject({ status: "RETRYING" });
-    await due();
     expect(await runPaidReportJob(store, writer)).toMatchObject({ status: "COMPLETED" });
-    expect(transport).toHaveBeenCalledTimes(2);
+    await due();
+    expect(await runPaidReportJob(store, writer)).toMatchObject({ ok: true, job: null });
+    expect(transport).toHaveBeenCalledTimes(1);
     await expectCompleted(reportId);
   });
 
@@ -151,10 +151,10 @@ describe("annual purchase policy — real prepare / SQL / worker, no providers",
   it("automatic retries and real deterministic fallback preserve accepted policy", async () => {
     const { reportId } = await purchase();
     vi.setSystemTime(afterRollover);
-    // Disabled writer fails the first two attempts; third uses the actual fallback.
+    // Infrastructure interruption retains the original accepted purchase context.
     for (let attempt = 0; attempt < 2; attempt++) {
       await due();
-      expect(await runPaidReportJob(store, runtime)).toMatchObject({ status: "RETRYING" });
+      expect(await runPaidReportJob(store, runtime, async () => { throw new Error("local infrastructure interruption"); })).toMatchObject({ status: "RETRYING" });
     }
     await due();
     expect(await runPaidReportJob(store, runtime)).toMatchObject({ status: "COMPLETED" });

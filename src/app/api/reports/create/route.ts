@@ -327,7 +327,7 @@ function createSafeLocalReportDiagnostic(input: {
     providerDurationMs: calls.reduce((sum, call) => sum + call.durationMs, 0),
     durationMs: input.durationMs,
     retryAttempted: calls.length > 1,
-    fallbackUsed: input.fallbackUsed,
+    fallbackUsed: input.result.delivery?.fallbackUsed ?? input.fallbackUsed,
   };
 }
 

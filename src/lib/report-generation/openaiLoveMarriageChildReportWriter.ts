@@ -126,7 +126,7 @@ const breakupReunionPatternSchema = {
   },
 } as const;
 
-const loveMarriageChildReportDraftJsonSchema = {
+export const loveMarriageChildReportDraftJsonSchema = {
   type: "object",
   additionalProperties: false,
   required: [

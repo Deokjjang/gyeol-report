@@ -5,7 +5,6 @@ import { confirmTossPayment, TOSS_CONFIRM_TIMEOUT_MS } from "../../../src/lib/pa
 import { confirmPaidReport, runPaidReportJob } from "../../../src/lib/payment/paidReportReliability";
 import { recoverPendingPayment, PAYMENT_RECOVERY_TIMEOUT_MS } from "../../../src/lib/payment/paymentConfirmRecovery";
 import type { ReliabilityStore } from "../../../src/lib/payment/paidReportReliabilityStore";
-import { createCompletedReportFixtures } from "../../fixtures/completed-report/snapshots";
 
 const person = { name: "김도윤", birthDate: "1996-12-06", birthTime: "09:30", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ" };
 const products = [
@@ -31,7 +30,7 @@ describe("actual writer transport boundaries — no providers", () => {
     const transport = vi.fn<typeof fetch>(() => new Promise(() => {}));
     const running = generateProductReport(payload(key, slug), runtime(transport), "normal_writer");
     await vi.advanceTimersByTimeAsync(REPORT_WRITER_TIMEOUT_MS);
-    expect(await running).toMatchObject({ ok: false, externalFailure: "OPENAI_TIMEOUT", externalCalls: [{ outcome: "timeout", durationMs: 120000, inputTokens: null }] });
+    expect(await running).toMatchObject({ ok: true, delivery: { fallbackUsed: true, failureCode: "OPENAI_TIMEOUT" }, externalCalls: [{ outcome: "timeout", durationMs: 120000, inputTokens: null }] });
     expect(transport).toHaveBeenCalledTimes(1);
     expect(transport.mock.calls[0][1]?.signal?.aborted).toBe(true);
     expect(JSON.parse(String(transport.mock.calls[0][1]?.body)).max_output_tokens).toBe(REPORT_OUTPUT_TOKENS[product]);
@@ -40,32 +39,32 @@ describe("actual writer transport boundaries — no providers", () => {
   it.each(products)("%s has a bounded automatic run and a network-free fallback", async (key, slug) => {
     const transport = vi.fn<typeof fetch>(async () => Response.json({ output_text: "{}" }));
     const input = payload(key, slug);
-    for (const strategy of ["normal_writer", "writer_regeneration"] as const) expect((await generateProductReport(input, runtime(transport), strategy)).ok).toBe(false);
-    expect(transport).toHaveBeenCalledTimes(key === "saju_mbti_compatibility" ? 4 : 2);
+    for (const strategy of ["normal_writer", "writer_regeneration"] as const) expect((await generateProductReport(input, runtime(transport), strategy)).ok).toBe(true);
+    expect(transport).toHaveBeenCalledTimes(1);
     const before = transport.mock.calls.length;
     expect((await generateProductReport(input, runtime(transport), "deterministic_fallback")).ok).toBe(true);
     expect(transport).toHaveBeenCalledTimes(before);
   });
 
-  it("bounds compatibility repair, captures both calls and stays below 300 seconds", async () => {
+  it("compatibility invalid output falls back immediately without waiting for a repair", async () => {
     const transport = vi.fn<typeof fetch>().mockResolvedValueOnce(Response.json({ output_text: "{}", usage: { input_tokens: 10, output_tokens: 2, total_tokens: 12 } })).mockImplementation(() => new Promise(() => {}));
     const running = generateProductReport(payload("saju_mbti_compatibility", "compatibility"), runtime(transport), "normal_writer");
     await vi.advanceTimersByTimeAsync(REPORT_WRITER_TIMEOUT_MS);
-    expect(await running).toMatchObject({ ok: false, externalFailure: "OPENAI_TIMEOUT", externalCalls: [{ inputTokens: 10, outputTokens: 2, totalTokens: 12 }, { outcome: "timeout" }] });
-    expect(transport).toHaveBeenCalledTimes(2);
+    expect(await running).toMatchObject({ ok: true, delivery: { fallbackUsed: true, failureCode: "WRITER_VALIDATION_FAILED" }, externalCalls: [{ inputTokens: 10, outputTokens: 2, totalTokens: 12, outcome: "validation" }] });
+    expect(transport).toHaveBeenCalledTimes(1);
     expect(REPORT_WRITER_TIMEOUT_MS * 2).toBeLessThan(300000);
     for (const call of transport.mock.calls) expect(JSON.parse(String(call[1]?.body)).max_output_tokens).toBe(REPORT_OUTPUT_TOKENS.compatibility);
   });
 
-  it("worker records a real transport deadline before returning to the existing retry state", async () => {
+  it("worker records timeout and completes with validated fallback in the same attempt", async () => {
     const transport = vi.fn<typeof fetch>(() => new Promise(() => {}));
     const call = vi.fn<ReliabilityStore["call"]>(async action => action === "claim_job"
-      ? { ok: true, job: { job_id: "job", lease_token: "lease", attempt_count: 1, product_type: "career_money_study", payload: payload("career_money_study", "career-money-study") } }
-      : { ok: true, status: "RETRYING" });
+      ? { ok: true, job: { job_id: "job", report_id: "report_timeout", created_at: "2026-09-22T00:00:00Z", lease_token: "lease", attempt_count: 1, product_type: "career_money_study", payload: payload("career_money_study", "career-money-study") } }
+      : { ok: true, status: "COMPLETED" });
     const running = runPaidReportJob({ call }, runtime(transport));
     await vi.advanceTimersByTimeAsync(REPORT_WRITER_TIMEOUT_MS);
-    expect(await running).toMatchObject({ status: "RETRYING" });
-    expect(call).toHaveBeenLastCalledWith("finish_job", expect.objectContaining({ success: false, code: "OPENAI_TIMEOUT", externalCalls: [expect.objectContaining({ outcome: "timeout", durationMs: 120000 })] }));
+    expect(await running).toMatchObject({ status: "COMPLETED" });
+    expect(call).toHaveBeenLastCalledWith("finish_job", expect.objectContaining({ success: true, delivery: expect.objectContaining({ fallbackUsed: true, failureCode: "OPENAI_TIMEOUT" }), externalCalls: [expect.objectContaining({ outcome: "timeout", durationMs: 120000 })] }));
     expect(call).toHaveBeenCalledTimes(2);
   });
 
@@ -99,7 +98,7 @@ describe("actual writer transport boundaries — no providers", () => {
   ] as const)("HTTP %s has a safe internal classification", async (status, body, outcome) => {
     const transport = vi.fn<typeof fetch>(async () => Response.json(body, { status }));
     const result = await generateProductReport(payload("career_money_study", "career-money-study"), runtime(transport), "normal_writer");
-    expect(result).toMatchObject({ ok: false, externalFailure: `OPENAI_${outcome.toUpperCase()}`, externalCalls: [{ outcome }] });
+    expect(result).toMatchObject({ ok: true, delivery: { failureCode: `OPENAI_${outcome.toUpperCase()}`, fallbackUsed: true }, externalCalls: [{ outcome }] });
     expect(JSON.stringify(result.externalCalls)).not.toContain("PRIVATE");
     expect(transport).toHaveBeenCalledTimes(1);
   });
@@ -110,13 +109,14 @@ describe("actual writer transport boundaries — no providers", () => {
   ])("rejects incomplete even when the output JSON parses", async metadata => {
     const transport = vi.fn<typeof fetch>(async () => Response.json({ output_text: "{}", ...metadata }));
     const result = await generateProductReport(payload("career_money_study", "career-money-study"), runtime(transport), "normal_writer");
-    expect(result).toMatchObject({ ok: false, externalFailure: "OPENAI_INCOMPLETE" });
+    expect(result).toMatchObject({ ok: true, delivery: { failureCode: "OPENAI_INCOMPLETE", fallbackUsed: true } });
   });
 
   it("preserves valid long drafts and usage with no content shortening", async () => {
-    const fixtures = await createCompletedReportFixtures();
     for (const [key, slug] of products.filter(([key]) => key !== "saju_mbti_full")) {
-      const draft = fixtures[slug === "compatibility" ? "compatibility-love" : slug].draft;
+      const prepared = await generateProductReport(payload(key, slug), { enabled: false, reason: "flag_disabled" }, "deterministic_fallback");
+      if (!prepared.ok) throw new Error("INVALID_FIXTURE");
+      const draft = prepared.draft;
       const transport = vi.fn<typeof fetch>(async () => Response.json({ status: "completed", output_text: JSON.stringify(draft), usage: { input_tokens: 10000, output_tokens: 12000, total_tokens: 22000 } }));
       const result = await generateProductReport(payload(key, slug), runtime(transport), "normal_writer");
       expect(result, key).toMatchObject({ ok: true, externalCalls: [{ model: "mock-model", inputTokens: 10000, outputTokens: 12000, totalTokens: 22000, outcome: "completed" }] });
@@ -136,7 +136,7 @@ describe("actual writer transport boundaries — no providers", () => {
   it("missing configuration makes no calls", async () => {
     const transport = vi.fn<typeof fetch>();
     const result = await generateProductReport(payload("career_money_study", "career-money-study"), { enabled: false, reason: "missing_api_key" }, "normal_writer");
-    expect(result).toMatchObject({ ok: false, externalFailure: "OPENAI_CONFIG", externalCalls: [] });
+    expect(result).toMatchObject({ ok: true, delivery: { fallbackUsed: true, failureCode: "OPENAI_CONFIG" }, externalCalls: [] });
     expect(transport).not.toHaveBeenCalled();
   });
 });

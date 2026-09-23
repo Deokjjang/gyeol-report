@@ -155,7 +155,7 @@ describe("publication-based paid access and retention — real SQL", () => {
   });
 
   it("unpublished input retention exhaustion is attention, never an invented access expiry", async () => {
-    await runPaidReportJob(store, runtime);
+    await runPaidReportJob(store, runtime, async () => { throw new Error("local infrastructure interruption"); });
     await db.exec("update report_input_snapshots set expires_at=now()-interval '1 second'; update report_generation_attempts set validation_errors='[\"private diagnostic\"]'");
     await store.call("expire");
     expect(await report()).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", expires_at: null, published_at: null });
