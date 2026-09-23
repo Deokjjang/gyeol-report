@@ -40,7 +40,7 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain("표와 요약은 짧게 쓴다. 본문은 장면, 이유, 비용, 조율 조건을 길고 구체적으로 풀어 쓴다.");
     expect(promptText).toContain("본문은 짧은 템플릿 나열이 아니라 유료 리포트처럼 읽히는 문단 중심으로 쓴다.");
     expect(promptText).toContain("MBTI source DB와 mbtiCompatibility의 성향 근거는 원문을 복붙하지 말고");
-    expect(promptText).toContain("reportLine, lovePattern, marriagePattern, sharedGround, friction, repairStrategy");
+    expect(promptText).toContain("lovePattern은 love, marriagePattern은 marriage에서만 사용한다");
     expect(promptText).toContain("ENTJ×INTP처럼 pair data가 있는 조합");
     expect(promptText).toContain("명리 근거는 표에 보이는 일간, 일지, 오행, 십성, 합충형파해, 신살/귀인을 관계 장면으로 번역하라.");
     expect(promptText).toContain("elementComplementSignals, sharedWeakElementSignals, overloadedElementSignals");
@@ -120,10 +120,10 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
       "천을귀인, 재고귀인, 원진살, MBTI 속도 차이만 반복하지 마라",
     );
     expect(promptText).toContain(
-      "attraction: day master relation + cross ten-god + branch trine.",
+      "attraction: categoryReading의 첫 질문과 실제 존재하는 day master relation / cross ten-god 근거.",
     );
     expect(promptText).toContain(
-      "money_lifestyle: combined earth + 재고귀인.",
+      "money_lifestyle: categoryReading의 자원·책임·생활 질문. 특정 오행이나 귀인이 있다는 전제를 두지 마라.",
     );
     expect(promptText).toContain("명리학 용어를 쓸 때는 반드시");
     expect(promptText).toContain("계산값만 말하지 마라");

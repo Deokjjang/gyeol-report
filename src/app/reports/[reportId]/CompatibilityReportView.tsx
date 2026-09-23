@@ -423,14 +423,10 @@ function buildCompatibilityConnectionSummary(
       `${draft.chartComparison.personA.dayPillar}와 ${draft.chartComparison.personB.dayPillar}의 생활 리듬 차이를 함께 봅니다.`,
       draft.relationshipType,
     ),
-    elementBalance: formatNullableCompatibilityText(
-      analysis.roleMoneyLifeRhythm,
-      draft.relationshipType,
-    ),
-    tenGodRelation: formatNullableCompatibilityText(
-      analysis.categoryReading,
-      draft.relationshipType,
-    ),
+    // These longform sections are not structured element/ten-god summaries.
+    // Render them once below, rather than duplicating them under misleading table labels.
+    elementBalance: null,
+    tenGodRelation: null,
     interactionLabels: formatCompatibilityList(
       draft.keyCompatibilityPoints.attractionPoints.slice(0, 2),
       draft.relationshipType,

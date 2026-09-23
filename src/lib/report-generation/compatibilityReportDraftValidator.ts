@@ -1,3 +1,4 @@
+import { hasValidCompatibilityCategorySources } from "../report-knowledge/compatibilityCategoryReading";
 import { getCrossTenGodRelation, getDayMasterElementRelation } from "../report-knowledge/compatibilityRelationRules";
 import type { CompatibilityEvidencePacket } from "../report-knowledge/compatibilityEvidenceBuilder";
 import type { CompatibilityReportDraft } from "./compatibilityReportDraftTypes";
@@ -869,7 +870,13 @@ export function validateCompatibilityReportDraft(
 
   const sanitizedDraft = sanitizeCompatibilityDraft(draft);
 
-  if (options.evidencePacket) validateDirectionAttribution(sanitizedDraft, options.evidencePacket, errors);
+  if (options.evidencePacket) {
+    validateDirectionAttribution(sanitizedDraft, options.evidencePacket, errors);
+    // Optional for existing snapshots; new evidence retains a reproducible category/subject/source selection.
+    if (errors.length === 0 && !hasValidCompatibilityCategorySources(options.evidencePacket)) {
+      errors.push("COMPATIBILITY_CATEGORY_EVIDENCE_MISMATCH");
+    }
+  }
   validateCanonicalRelationshipType(sanitizedDraft.relationshipType, errors);
   if (!isScore(sanitizedDraft.scoreSummary.totalScore)) {
     errors.push("COMPATIBILITY_SCORE_MISSING");

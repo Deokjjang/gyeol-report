@@ -1,3 +1,4 @@
+import { buildCompatibilityCategoryReading } from "../report-knowledge/compatibilityCategoryReading";
 import { birthTimePromptContext } from "./birthTimePublication";
 import type { CompatibilityEvidencePacket } from "../report-knowledge/compatibilityEvidenceBuilder";
 
@@ -66,6 +67,7 @@ function collectUnsupportedCompatibilityTerms(
 }
 
 function buildPromptPacket(packet: CompatibilityEvidencePacket): object {
+  const categoryReading = packet.categoryReading ?? buildCompatibilityCategoryReading(packet);
   return {
     ...birthTimePromptContext(packet),
     input: packet.input,
@@ -77,6 +79,10 @@ function buildPromptPacket(packet: CompatibilityEvidencePacket): object {
     mbtiCompatibility: packet.mbtiCompatibility,
     bridgeCompatibility: packet.bridgeCompatibility,
     categoryLens: packet.categoryLens,
+    categoryReading: {
+      ...categoryReading,
+      scenes: categoryReading.scenes.map(({ id, title, sources, scene, action, caution }) => ({ id, title, sources, scene, action, caution })),
+    },
     directFindings: packet.directFindings,
     strengths: packet.strengths,
     frictionPoints: packet.frictionPoints,
@@ -137,7 +143,10 @@ export function buildOpenAICompatibilityReportWriterMessages(input: {
       "본문은 짧은 템플릿 나열이 아니라 유료 리포트처럼 읽히는 문단 중심으로 쓴다.",
       "각 핵심 본문 섹션은 가능하면 2문단 이상으로 쓰고, 같은 문장 구조를 반복하지 마라.",
       "MBTI source DB와 mbtiCompatibility의 성향 근거는 원문을 복붙하지 말고, 두 사람의 실제 대화 장면과 반응 방식으로 재작성하라.",
-      "mbtiCompatibility.source가 notablePairs이면 reportLine, lovePattern, marriagePattern, sharedGround, friction, repairStrategy를 반드시 본문 재료로 써라.",
+      "notablePairs의 sharedGround, friction, positiveInfluence, repairStrategy는 양방향 출처를 구분한다. lovePattern은 love, marriagePattern은 marriage에서만 사용한다. 다른 category에 연애 전용 근거를 복사하지 마라.",
+      "categoryReading.scenes는 현재 category의 8개 구매 질문과 선별된 실제 근거다. 해당 질문과 sources의 subjectPerson/targetPerson/field를 유지하며 설명하라. 장면은 조건부 적용이며 새로 계산된 명리 사실이 아니다.",
+      "openingSummary는 가장 잘 맞는 부분, 가장 부딪히는 부분, 유지하는 핵심 조건을 먼저 보여 준다. 초반 결론도 입력된 두 사람의 근거에 연결한다.",
+      "같은 근거 원문을 여러 질문에 반복하지 말고 categoryReading의 서로 다른 scene/action/caution을 중심으로 전개한다. 어려운 면을 지우거나 정보량을 줄여서 repair하지 마라.",
       "ENTJ×INTP처럼 pair data가 있는 조합은 유형명만 쓰고 끝내지 말고, 결론 속도, 전제 검토, 실행 압박, 사고 시간 같은 구체 장면으로 풀어라.",
       "명리 근거는 표에 보이는 일간, 일지, 오행, 십성, 합충형파해, 신살/귀인을 관계 장면으로 번역하라.",
       "sajuCompatibility의 elementComplementSignals, sharedWeakElementSignals, overloadedElementSignals를 사용해 서로 채워 주는 지점, 둘 다 약한 지점, 같이 있으면 과해지는 지점을 구분하라.",
@@ -243,12 +252,12 @@ export function buildOpenAICompatibilityReportWriterMessages(input: {
       "category별 금지: friendship은 관계 단절 확정 금지.",
       "chapter guide:",
       "overview: combined element climate + score.",
-      "attraction: day master relation + cross ten-god + branch trine.",
-      "strengths: element complement + good fortune.",
-      "frictions: branch clash/harm + 원진살.",
+      "attraction: categoryReading의 첫 질문과 실제 존재하는 day master relation / cross ten-god 근거.",
+      "strengths: categoryReading의 보완 질문. 계산된 보완 근거가 있을 때만 사용.",
+      "frictions: categoryReading의 마찰 질문. 실제 notes에 없는 충/해/신살을 만들지 마라.",
       "communication: cross ten-god + MBTI.",
       "relationship_scenes: day branch/month rhythm + MBTI.",
-      "money_lifestyle: combined earth + 재고귀인.",
+      "money_lifestyle: categoryReading의 자원·책임·생활 질문. 특정 오행이나 귀인이 있다는 전제를 두지 마라.",
       "conflict_recovery: branch harm/clash + recovery style.",
       "long_term_rules: element complement + branch relation + relationship type.",
       "final_message: 마지막 메시지. finalAdvice는 별도 '오늘부터 할 일' 목록으로 이어지게 써라.",
@@ -322,7 +331,7 @@ export function buildOpenAICompatibilityReportRepairMessages(input: {
             ),
           ].join("\n"),
       "Repair only the invalid compatibility draft.",
-      "missing direct-hit scenes가 있으면 해당 chapter에 실제 연애/썸/친구/생활 장면을 넣어라.",
+      "missing direct-hit scenes가 있으면 categoryReading.scenes에서 해당 구매 질문의 장면을 사용하라. 다른 category의 장면이나 임의 성격 역할로 대체하지 마라.",
       "unsafe copy가 있으면 확정/운명/공포 표현을 제거하라.",
       "missing final advice가 있으면 오늘부터 할 수 있는 관계 규칙을 3개 이상 넣어라.",
       "candidate MBTI recommendation이 있으면 입력된 두 MBTI 외 유형을 모두 제거하라.",

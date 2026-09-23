@@ -1,3 +1,4 @@
+import { buildCompatibilityCategoryReading, type CompatibilityCategoryReading } from "./compatibilityCategoryReading";
 import { buildCompatibilityDirectionEvidence, describeCompatibilityPerson, type CompatibilityDirectionEvidence } from "./compatibilityDirectionEvidence";
 import { buildCompatibilityMbtiBridge } from "./compatibilityMbtiBridge";
 import type { CompatibilityMbtiBridgeResult } from "./compatibilityMbtiBridge";
@@ -64,6 +65,7 @@ export type CompatibilityEvidencePacket = {
   readonly mbtiCompatibility: CompatibilityMbtiCompatibility;
   readonly bridgeCompatibility: CompatibilityBridgeCompatibility;
   readonly categoryLens: CompatibilityCategoryLens;
+  readonly categoryReading?: CompatibilityCategoryReading;
   readonly directionEvidence: CompatibilityDirectionEvidence;
   readonly directFindings: readonly CompatibilityDirectFinding[];
   readonly strengths: readonly string[];
@@ -787,7 +789,7 @@ export function buildCompatibilityEvidencePacket(
     bridgeCompatibility,
   });
 
-  return {
+  const packet: CompatibilityEvidencePacket = {
     productType: normalizedInput.productType,
     relationshipType: relationCategory,
     participants,
@@ -821,6 +823,7 @@ export function buildCompatibilityEvidencePacket(
       personB: personBChartSummary,
     }),
   };
+  return { ...packet, categoryReading: buildCompatibilityCategoryReading(packet) };
 }
 
 export function buildCompatibilityEvidencePacketFromFixture(

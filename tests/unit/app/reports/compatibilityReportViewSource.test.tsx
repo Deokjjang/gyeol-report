@@ -132,8 +132,10 @@ describe("CompatibilityReportView", () => {
     expect(html).toContain("명리 연결");
     expect(html).toContain("MBTI 연결");
     expect(html).toContain("일간·일지");
-    expect(html).toContain("오행 균형");
-    expect(html).toContain("십성 관계");
+    expect(html).not.toContain("오행 균형");
+    expect(html).not.toContain("십성 관계");
+    expect(html.split(createDraft().relationshipAnalysis.roleMoneyLifeRhythm)).toHaveLength(2);
+    expect(html.split(createDraft().relationshipAnalysis.categoryReading)).toHaveLength(2);
     expect(html).toContain("첫 인상과 끌림");
     expect(html).toContain("오래 가는 힘");
     expect(html).toContain("자주 부딪히는 지점");
