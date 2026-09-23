@@ -77,7 +77,12 @@ export default function ProductTile({ product, presentation }: ProductTileProps)
             <h3>{product.nameKo.replace(/ 리포트$/u, "")}</h3>
             <p className={styles.description}>{editorialDescriptions[product.visualKey] ?? product.summaryKo}</p>
             <div className={styles.purchase}>
-              <p className={styles.price}>{product.priceLabelKo}</p>
+              <div className="flex min-w-0 flex-col gap-0.5">
+                <span className="text-[10px] font-semibold tracking-[0.08em] text-[#7f1d38]">
+                  오픈 기념가
+                </span>
+                <p className={styles.price}>{product.priceLabelKo}</p>
+              </div>
               <Link href={product.href} className={styles.cta} aria-label={`${product.nameKo} 시작하기`}>
                 시작하기 <span aria-hidden="true">↗</span>
               </Link>

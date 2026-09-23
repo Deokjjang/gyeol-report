@@ -29,8 +29,16 @@ export default function Home() {
               </p>
             </div>
             <div className={styles.action}>
+              <div className="mb-3 inline-flex max-w-full flex-col gap-1 border-y border-[#d8c8bb] py-2">
+                <span className="text-[10px] font-semibold tracking-[0.22em] text-[#7f1d38]">
+                  OPENING PRICE
+                </span>
+                <span className="text-[13px] font-medium text-[#493b32]">
+                  오픈 기념 · 모든 리포트 1,290원
+                </span>
+              </div>
               <p className={styles.meta}>
-                <strong>1,290원</strong> · 결제 후 자동 생성 · 90일 열람
+                결제 후 자동 생성 · 90일 열람
               </p>
               <Link
                 href="/report/new?product=saju-mbti-full"
@@ -50,7 +58,7 @@ export default function Home() {
             <ProductGrid products={GYEOL_HOME_PRODUCT_GRID} presentation="editorial" />
           </HomeReveal>
           <aside className={styles.notice} aria-label="공통 상품 안내">
-            <p className={styles.noticeTitle}>모든 리포트 1,290원</p>
+            <p className={styles.noticeTitle}>오픈 기념 · 모든 리포트 1,290원</p>
             <p>결제 완료 후 즉시 생성, 최대 24시간 이내 제공 · 생성일로부터 90일 온라인 열람</p>
             <p className={styles.noticeNote}>자동 생성 디지털 리포트 · 상담이 아닌 참고용 리포트</p>
           </aside>
