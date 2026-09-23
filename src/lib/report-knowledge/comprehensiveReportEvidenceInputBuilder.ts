@@ -1,3 +1,4 @@
+import { sceneCoversInteraction } from "./bridge/interactionScenes";
 import { fusionFactIds } from "./fusionFactContext";
 import { selectMatchedBridgeHints } from "./bridge/bridgeHintSelection";
 import { buildComprehensiveReportEvidencePacket } from "./comprehensiveReportEvidenceBuilder";
@@ -743,9 +744,9 @@ function buildInterpretedBridgeEvidence(input: {
 
       return dictionaryEntry === undefined ? [] : [dictionaryEntry.rawLabel];
     });
-    const traitTopic: MbtiKnowledgeContext = trait?.context ?? "core_identity";
+    const traitTopic: MbtiKnowledgeContext = bridge.traitTopic ?? trait?.context ?? "core_identity";
     const fatiguePoint =
-      trait?.risks[0] ??
+      bridge.fatiguePoint ?? trait?.risks[0] ??
       "명리 신호와 행동 성향이 과열되면 속도, 말투, 책임 범위에서 피로가 커질 수 있습니다.";
 
     return {
@@ -756,7 +757,7 @@ function buildInterpretedBridgeEvidence(input: {
       mbtiTraitTopic: traitTopic,
       myeongliSignalIds: bridge.relatedSajuFeatureIds,
       myeongliSignalLabels: relatedSignals,
-      interpretation: `${uniqueStrings(relatedSignals).join(" · ")} 신호는 ${
+      interpretation: bridge.strength ? `${bridge.sentenceSeed} ${bridge.strength}` : `${uniqueStrings(relatedSignals).join(" · ")} 신호는 ${
         trait?.label ?? "선택된 MBTI trait"
       } 성향과 만나 ${bridge.sentenceSeed}`,
       fatiguePoint,
@@ -819,6 +820,7 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
     selectedMbtiKnowledge,
     selectedSajuFeatureEvidence,
     computedFeatureIds: mappedFeatures.featureIds,
+    computedFactIds: [...fusionFactIds(mappedSaju.sajuEntryIds, input.sajuFacts)],
     productType: "comprehensive",
     limit: 8,
   });
@@ -841,6 +843,8 @@ export function buildComprehensiveReportEvidencePacketFromComputedFacts(input: {
   return {
     packet: {
       ...packet,
+      sections: packet.sections.map(section => ({ ...section, fusion: section.fusion.filter(item =>
+        !item.interaction || !sajuMbtiBridgeEvidence.some(scene => scene.interaction && sceneCoversInteraction(scene.interaction, item.interaction!))) })),
       bridgeFactIds: uniqueStrings([...(packet.bridgeFactIds ?? []), ...mappedFeatures.featureIds]),
       productKey: "saju_mbti_full",
       productSlug: "saju-mbti-full",

@@ -146,6 +146,11 @@ function resolveEvidencePurposes(
     }
   }
 
+  const scenePurposes: Record<string, ProductBridgeEvidencePurpose> = { identity: "identity", career: "career", money: "money", study: "study", love: "love", marriage: "marriage", family: "parenting", conflict: "relationship", recovery: "growth" };
+  for (const scene of evidence.scenes ?? []) for (const context of scene.contexts) {
+    if (scenePurposes[context]) purposes.add(scenePurposes[context]);
+  }
+
   if (evidence.mbtiEvidence.relationshipPair !== null) {
     purposes.add("relationship");
   }

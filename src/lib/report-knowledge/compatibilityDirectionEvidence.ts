@@ -1,3 +1,5 @@
+import { buildBridgeInteractionScenes } from "./bridge/interactionScenes";
+import { fusionFactIds } from "./fusionFactContext";
 import { createHash } from "node:crypto";
 import { getMbtiRelationshipPair, getMbtiSourceProfile, type MbtiTraitArea } from "./mbti/sourceRuntimeAdapter";
 import { getCrossTenGodRelation, getDayMasterElementRelation } from "./compatibilityRelationRules";
@@ -25,12 +27,25 @@ function personProfile(person: CompatibilityPersonInput, chart: CompatibilityPer
   return { personId, name: person.displayName, mbti: chart.mbti ?? null,
     dayMaster: chart.dayMaster, dayPillar: chart.dayPillar, pillars: chart.pillars,
     elementCounts: chart.sajuFacts.fiveElementCounts, natal, traits,
+    bridgeScenes: buildBridgeInteractionScenes({ mbtiType: chart.mbti, factIds: fusionFactIds([], chart.sajuFacts), productContext: "compatibility" }),
     preferenceAxes: source?.preferenceAxes ?? null, functionStack: source?.functionStack ?? null,
     reportUseCases: source?.reportUseCases?.compatibilityReport ?? null };
 }
 export type CompatibilityPersonProfile = ReturnType<typeof personProfile>;
 
-function direction(subject: CompatibilityPersonProfile, target: CompatibilityPersonProfile) {
+function pairScenes(profile: CompatibilityPersonProfile, category: CompatibilityCanonicalRelationshipType) {
+  const contexts: Record<CompatibilityCanonicalRelationshipType, readonly string[]> = {
+    love: ["love", "conflict"], marriage: ["love", "marriage", "family", "conflict"], parentChild: ["family", "conflict"],
+    coworker: ["career", "conflict"], managerReport: ["career", "conflict"], businessPartner: ["career", "money", "conflict"], friendship: ["conflict", "recovery"],
+  };
+  return profile.bridgeScenes.filter(scene =>
+    (category === "love" || category === "marriage" || !scene.contexts.some(c => c === "love" || c === "marriage")) &&
+    (category === "parentChild" || category === "marriage" || !scene.contexts.includes("family")) &&
+    scene.contexts.some(c => contexts[category].includes(c)));
+}
+function direction(subject: CompatibilityPersonProfile, target: CompatibilityPersonProfile, category: CompatibilityCanonicalRelationshipType) {
+  const subjectScenes = pairScenes(subject, category);
+  const targetScenes = pairScenes(target, category);
   const pair = getMbtiRelationshipPair(subject.mbti, target.mbti);
   // "Influence from subject to target" uses TARGET as the ten-god viewer.
   const receivedTenGod = getCrossTenGodRelation({ viewerDayStem: target.dayMaster, targetDayStem: subject.dayMaster }) ?? null;
@@ -45,12 +60,17 @@ function direction(subject: CompatibilityPersonProfile, target: CompatibilityPer
     targetTrait?.evidenceId ?? target.natal[0]?.evidenceId].filter((id): id is string => Boolean(id));
   const relationId = `${subject.personId}:to:${target.personId}`;
   return {
+    bridgeContext: {
+      subjectPerson: subject.personId, targetPerson: target.personId,
+      subjectScenes: subjectScenes.map(scene => scene.interactionId), targetScenes: targetScenes.map(scene => scene.interactionId),
+      pairEvidenceId: pair ? `${relationId}:mbti-pair` : null,
+    },
     subjectPerson: subject.personId, targetPerson: target.personId, claimType: "fatigue" as const,
     evidenceIds, relationId, element, receivedTenGod,
     // A notablePairs entry is a SOURCE-TYPE viewpoint, not a list of claims all about its owner.
     // Keep type names and both viewpoints; never reinterpret "one side" as the source slot.
     mbtiPair: pair === null ? null : { sourceType: subject.mbti, targetType: target.mbti, evidenceId: `${relationId}:mbti-pair`, ...pair },
-    fatigue: `${subject.name}님의 ${sourceBasis}에서 살펴볼 주의점은 “${sourceRisk ?? "자기 기준을 상대도 당연히 알 것이라 여기지 않는 것"}”입니다. ${target.name}님의 ${targetBasis}는 “${targetNeed ?? "자기 기준을 존중받을 때 관계를 조율하는 것"}”을 참고할 수 있습니다. 이 두 조건이 부딪히는 대화에서는 ${subject.name}님의 의도와 ${target.name}님이 받은 부담을 따로 확인해야 합니다. 성향 설명을 실제 행동의 단정으로 삼지는 않습니다.`,
+    fatigue: `${subject.name}님의 ${sourceBasis}에서 살펴볼 주의점은 “${sourceRisk ?? "자기 기준을 상대도 당연히 알 것이라 여기지 않는 것"}”입니다. ${target.name}님의 ${targetBasis}는 “${targetNeed ?? "자기 기준을 존중받을 때 관계를 조율하는 것"}”을 참고할 수 있습니다. 이 두 조건이 부딪히는 대화에서는 ${subject.name}님의 의도와 ${target.name}님이 받은 부담을 따로 확인해야 합니다. 성향 설명을 실제 행동의 단정으로 삼지는 않습니다.${subjectScenes[0] ? ` ${subject.name}님 쪽에서 함께 확인할 장면: ${subjectScenes[0].scene} ${subjectScenes[0].practice}` : ""}`,
   };
 }
 
@@ -59,7 +79,7 @@ export function buildCompatibilityDirectionEvidence(input: CompatibilityInput, a
   const personB = personProfile(input.personB, b);
   return {
     persons: { personA, personB },
-    aToB: direction(personA, personB), bToA: direction(personB, personA),
+    aToB: direction(personA, personB, category), bToA: direction(personB, personA, category),
     categoryRole: {
       category,
       kind: category === "parentChild" || category === "managerReport" ? "role-asymmetric" as const : "symmetric" as const,

@@ -39,6 +39,21 @@ describe("Fusion Bridge product boundaries", () => {
         return;
       }
       const source = getMbtiSourceProfile(mbtiType)!;
+      const generatedScenes = e.sajuMbtiBridgeEvidence ?? [];
+      expect(new Set(generatedScenes.map(s => s.interaction?.interactionId)).size).toBe(generatedScenes.length);
+      for (const scene of generatedScenes.filter(s => s.interaction?.interactionId.startsWith("bridge-v2:"))) {
+        expect(scene.interaction?.myeongliEvidenceIds.every(id => e.bridgeFactIds?.includes(id))).toBe(true);
+        expect(scene.mbti).toBe(mbtiType);
+        expect(scene.bridgeNeed).toBe("contextual_action");
+        expect(scene.traitTopic).toBeDefined();
+        for (const ref of scene.interaction!.mbtiEvidenceIds) {
+          const [, type, , area, id] = ref.split(":");
+          expect(type).toBe(mbtiType);
+          expect(Object.entries(source.traits ?? {}).some(([a, ts]) => a === area && ts?.some(t => t.id === id))).toBe(true);
+        }
+        expect(JSON.stringify(result.draft)).toContain(scene.sceneSeed);
+        expect(scene.sentenceSeed + scene.sceneSeed + scene.practicalSwitch).not.toMatch(/fallback|writer|validator|placeholder|internal|mock/iu);
+      }
       const validTraitIds = new Set(Object.entries(source.traits ?? {}).flatMap(([area, ts]) => (ts ?? []).map((t) => `mbti:${mbtiType}:traits:${area}:${t.id}`)));
       const k = getMbtiKnowledge(mbtiType);
       const validTagIds = new Set([...k.traitTags, ...k.riskTags, ...k.sajuBridgeTags, ...k.relationshipPreferences.attracts, ...k.relationshipPreferences.needs, ...k.relationshipPreferences.risks].map((tag) => `mbti:${mbtiType}:tag:${tag}`));

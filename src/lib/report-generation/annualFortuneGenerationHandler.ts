@@ -1,3 +1,4 @@
+import { formatProductBridgeScenes } from "../report-knowledge/bridge/interactionScenes";
 import { buildAnnualMonthlyPublication } from "./annualMonthlyPublication";
 import { withReportInputEvidence } from "./reportInputEvidence";
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
@@ -602,10 +603,10 @@ function buildAnnualFortuneFallbackDraft(
     moneyResourceFlow: buildDraftFlowSection(packet, "moneyResource"),
     relationshipFlow: buildDraftFlowSection(packet, "relationshipLove"),
     healthRoutineFlow: buildDraftFlowSection(packet, "healthRoutine"),
-    mbtiExpression:
+    mbtiExpression: formatProductBridgeScenes(packet.bridgeEvidence) || (
       packet.mbtiBasis.type === null
         ? "MBTI가 입력되지 않아도 세운의 큰 구조는 원국, 선택 연도 간지, 월운 기준으로 읽습니다. 행동 방식은 실제 생활 기록으로 보완해 보는 편이 좋습니다."
-        : `${packet.mbtiBasis.type} 성향은 ${packet.mbtiBasis.decisionPattern} ${packet.mbtiBasis.workPattern} 올해 흐름의 원인이 아니라, 세운이 선택과 말투, 일 처리 속도로 드러나는 방식입니다.`,
+        : `${packet.mbtiBasis.type} 성향은 ${packet.mbtiBasis.decisionPattern} ${packet.mbtiBasis.workPattern} 올해 흐름의 원인이 아니라, 세운이 선택과 말투, 일 처리 속도로 드러나는 방식입니다.`),
     riskManagement: safeList(
       packet.riskPatterns.map(
         (risk) => `${risk.title}: ${risk.summary} ${risk.prevention}`,

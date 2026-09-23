@@ -738,13 +738,15 @@ function buildLocalLongformReading(input: {
     peopleFamilyEnvironmentReading: "people_family_environment", riskGrowthReading: "risk_and_growth", finalMessage: "final_message",
   };
   const linkedScene = chapterByReading[input.readingId];
-  const body = buildLongformBody({
+  const bridgeScenes = (input.evidencePacket.sajuMbtiBridgeEvidence ?? []).filter(scene => scene.chapterId === linkedScene);
+  const sceneReading = bridgeScenes.map(scene => [scene.sentenceSeed, scene.sceneSeed, scene.strength, scene.fatiguePoint, scene.practicalSwitch].filter(Boolean).join(" ")).join("\n\n");
+  const body = (input.readingId === "sajuMbtiBridgeReading" && sceneReading ? sceneReading : buildLongformBody({
     titleKo,
     readingId: input.readingId,
     mbtiType: input.mbtiType,
     primaryTerms: input.primaryTerms,
     profileTable: input.profileTable,
-  }) + "\n\n" + featureReading(input.evidencePacket, COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS.indexOf(input.readingId)) + (linkedScene ? "\n\n" + buildHitReadingLines(linkedScene).join(" ") : "");
+  })) + (sceneReading && input.readingId !== "sajuMbtiBridgeReading" ? "\n\n" + sceneReading : "") + "\n\n" + featureReading(input.evidencePacket, COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS.indexOf(input.readingId)) + (linkedScene ? "\n\n" + buildHitReadingLines(linkedScene).join(" ") : "");
 
   return {
     readingId: input.readingId,

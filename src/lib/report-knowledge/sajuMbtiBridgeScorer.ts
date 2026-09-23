@@ -1,3 +1,4 @@
+import { buildBridgeInteractionScenes } from "./bridge/interactionScenes";
 import { requireMbtiTypeKnowledge } from "./mbtiTypeKnowledgeBase";
 import type { BridgeInteractionTrace } from "./bridge/factConditions";
 import type {
@@ -17,10 +18,14 @@ export type SajuMbtiBridgeNeed =
   | "money_structure"
   | "relationship_boundary"
   | "analysis_to_action"
-  | "execution_to_reflection";
+  | "execution_to_reflection"
+  | "contextual_action";
 
 export type SajuMbtiBridgeEvidence = {
   readonly interaction?: BridgeInteractionTrace;
+  readonly strength?: string;
+  readonly fatiguePoint?: string;
+  readonly traitTopic?: MbtiKnowledgeContext;
   readonly chapterId:
     | "opening"
     | "saju_identity"
@@ -60,6 +65,7 @@ export type ScoreSajuMbtiBridgeInput = {
   readonly selectedMbtiKnowledge?: SelectedMbtiKnowledge;
   readonly selectedSajuFeatureEvidence?: readonly SelectedSajuFeatureEvidence[];
   readonly computedFeatureIds?: readonly string[];
+  readonly computedFactIds?: readonly string[];
   readonly productType: MbtiProductType;
   readonly limit?: number;
 };
@@ -131,7 +137,7 @@ const bridgeRules: readonly BridgeRule[] = [
     sceneSeed:
       "사람들이 설명을 이어 갈 때 이미 다음 행동과 우선순위가 정리되는 장면이 생길 수 있습니다.",
     practicalSwitch:
-      "결론을 말하기 전, 제가 이해한 핵심은 이것이라고 시작하세요.",
+      "지적할 자료와 요청할 다음 행동을 분리해서 말하고, 상대가 설명을 마칠 시간을 남겨 두세요.",
     baseScore: 94,
   },
   {
@@ -265,6 +271,28 @@ export function scoreSajuMbtiBridgeEvidence(
     });
   }
 
+  if (input.computedFactIds) {
+    const scenes = buildBridgeInteractionScenes({ mbtiType: input.selectedMbtiKnowledge.mbti,
+      factIds: new Set(input.computedFactIds), productContext: "general" });
+    for (const scene of scenes) {
+      const context = scene.contexts[0];
+      const chapterId: SajuMbtiBridgeEvidence["chapterId"] = context === "identity" ? "personality_pattern"
+        : ["career", "money", "study"].includes(context) ? "work_money_study"
+        : ["love", "marriage"].includes(context) ? "love_relationships"
+        : context === "family" ? "people_family_environment" : "risk_and_growth";
+      const { interactionId, ruleId, interactionType, myeongliEvidenceIds, mbtiEvidenceIds, contexts, confidence, intensity } = scene;
+      const sourceTopics: Readonly<Record<string, MbtiKnowledgeContext>> = {
+        identity: "core_identity", thinkingStyle: "decision", career: "work", workplace: "work", money: "money", investment: "money",
+        study: "study", love: "love", marriage: "family", parenting: "family", child: "family", relationships: "friendship",
+        communication: "communication", strengths: "core_identity", risks: "stress", growth: "growth",
+      };
+      evidence.push({ traitTopic: sourceTopics[scene.mbtiBasis[0].area], interaction: { interactionId, ruleId, interactionType, myeongliEvidenceIds, mbtiEvidenceIds, contexts, confidence, intensity },
+        chapterId, mbti: scene.mbtiType, traitId: scene.mbtiEvidenceIds[0], relatedSajuFeatureIds: scene.myeongliEvidenceIds,
+        bridgeNeed: "contextual_action", sentenceSeed: scene.meaning, sceneSeed: scene.scene,
+        practicalSwitch: scene.practice, strength: scene.strength, fatiguePoint: scene.risk,
+        score: context === "identity" ? 95 : 87 });
+    }
+  }
   return evidence
     .sort((left, right) => right.score - left.score)
     .slice(0, input.limit ?? 8);

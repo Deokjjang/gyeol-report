@@ -1,3 +1,4 @@
+import { formatProductBridgeScenes } from "../report-knowledge/bridge/interactionScenes";
 import { withReportInputEvidence } from "./reportInputEvidence";
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import { calculateSaju } from "../saju/calculateSaju";
@@ -356,9 +357,10 @@ function buildLoveMarriageChildFallbackDraft(input: {
   const tenGodLine = formatTenGodLine(input.evidencePacket);
   const mbtiType = input.evidencePacket.personContext.mbtiType;
   const relationshipTraits = input.evidencePacket.mbtiBasis.relationshipTraits;
-  const mbtiReading = mbtiType
+  const bridgeReading = formatProductBridgeScenes(input.evidencePacket.bridgeEvidence);
+  const mbtiReading = bridgeReading || (mbtiType
     ? `${mbtiType}의 관계 성향을 함께 살펴봅니다. ${relationshipTraits.slice(0, 2).map(trait => [trait.plain, trait.risk, trait.growth].filter(Boolean).join(" ")).join(" ")}`
-    : "MBTI가 입력되지 않아 유형별 판단이나 표현 방식을 추정하지 않습니다. 실제 관계에서 편안했던 대화와 어려웠던 장면을 구분하며 명리 풀이와 비교해 보세요.";
+    : "MBTI가 입력되지 않아 유형별 판단이나 표현 방식을 추정하지 않습니다. 실제 관계에서 편안했던 대화와 어려웠던 장면을 구분하며 명리 풀이와 비교해 보세요.");
 
   return {
     version: "v1",

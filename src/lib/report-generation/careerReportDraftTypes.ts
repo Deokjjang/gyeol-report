@@ -1,3 +1,4 @@
+import { formatProductBridgeScenes } from "../report-knowledge/bridge/interactionScenes";
 import type { CareerReportEvidencePacket } from "../report-knowledge/careerReportTypes";
 import {
   USER_LIFE_STATUS_LABELS,
@@ -656,7 +657,7 @@ export function buildCareerReportScreenQaFallbackDraft(
     myeongliMbtiSummary: {
       myeongliCore: evidence.myeongliCareerBasis.dayMasterPlain,
       mbtiCore: evidence.mbtiCareerBasis.workStylePlain,
-      combinedReading: evidence.combinedCareerProfile.plain,
+      combinedReading: formatProductBridgeScenes(evidence.bridgeEvidence) || evidence.combinedCareerProfile.plain,
       alignment: evidence.mbtiType === null ? "unknown" : "mixed",
       tensionNote: evidence.workRiskWarnings[0]?.plain ?? null,
     },

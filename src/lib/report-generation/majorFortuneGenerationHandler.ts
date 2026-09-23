@@ -1,3 +1,4 @@
+import { formatProductBridgeScenes } from "../report-knowledge/bridge/interactionScenes";
 import { withReportInputEvidence } from "./reportInputEvidence";
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import { calculateCustomerDayun, selectCustomerDayun } from "../saju/customerDayun";
@@ -799,10 +800,10 @@ function buildMajorFortuneFallbackDraft(
     moneyResourceFlow: getFlow(packet, "moneyResource"),
     relationshipFlow: getFlow(packet, "relationshipLove"),
     healthRoutineFlow: getFlow(packet, "healthRoutine"),
-    mbtiExpression:
+    mbtiExpression: formatProductBridgeScenes(packet.bridgeEvidence) || (
       packet.mbtiBasis.type === null
         ? "MBTI가 입력되지 않아도 대운의 큰 방향은 원국과 대운표 기준으로 읽습니다. 다만 행동 방식은 실제 생활 기록을 통해 보완해 보는 편이 좋습니다."
-        : `${packet.mbtiBasis.type} 성향은 ${packet.mbtiBasis.decisionPattern} ${packet.mbtiBasis.workPattern} 대운의 압박은 원인이 아니라, 이 성향이 판단 속도와 실행 방식으로 드러나는 배경입니다.`,
+        : `${packet.mbtiBasis.type} 성향은 ${packet.mbtiBasis.decisionPattern} ${packet.mbtiBasis.workPattern} 대운의 압박은 원인이 아니라, 이 성향이 판단 속도와 실행 방식으로 드러나는 배경입니다.`),
     riskManagement,
     actionPlan,
     finalAdvice: buildFinalAdvice(),

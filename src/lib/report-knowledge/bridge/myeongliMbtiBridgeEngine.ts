@@ -1,3 +1,4 @@
+import { buildBridgeInteractionScenes, sceneCoversInteraction } from "./interactionScenes";
 import { normalizeBridgeSignals, selectMatchedBridgeHints } from "./bridgeHintSelection";
 import {
   getMbtiRelationshipPair,
@@ -67,15 +68,18 @@ export function buildMyeongliMbtiBridgePacket(
   const reportUseCases =
     getMbtiReportUseCase(sourceProfile.type, reportUseCaseKey) ?? [];
   const signals = normalizeBridgeSignals(input.myeongliSignals);
+  const factIds = new Set(signals.map(signal => signal.id!));
+  const scenes = buildBridgeInteractionScenes({ mbtiType: sourceProfile.type, factIds, productContext: input.productContext });
   const matches = selectMatchedBridgeHints({
     mbtiType: sourceProfile.type, productContext: input.productContext,
-    factIds: new Set(signals.map((signal) => signal.id!)),
+    factIds,
     traitAreas: BRIDGE_PRODUCT_TRAIT_AREAS[input.productContext],
   });
-  const bridgeHints = matches.map((match) => match.hint);
+  const distinctMatches = matches.filter(match => !scenes.some(scene => sceneCoversInteraction(scene, match.interaction)));
+  const bridgeHints = distinctMatches.map((match) => match.hint);
   const traits = [...new Map(matches.flatMap((match) => match.traits).map(({ area, trait }) =>
     [`${area}:${trait.id}`, normalizeTraitEvidence(area, trait)] as const)).values()];
-  const usedIds = new Set(matches.flatMap((match) => match.interaction.myeongliEvidenceIds));
+  const usedIds = new Set([...matches.flatMap((match) => match.interaction.myeongliEvidenceIds), ...scenes.flatMap(scene => scene.myeongliEvidenceIds)]);
   const matchedSignals = signals.filter((signal) => usedIds.has(signal.id!));
   const intensity = matches.some((match) => match.interaction.intensity === "medium") ? "medium" : "low";
   const evidence: MyeongliMbtiBridgeEvidence = {
@@ -83,7 +87,8 @@ export function buildMyeongliMbtiBridgePacket(
     productContext: input.productContext,
     mbtiType: sourceProfile.type,
     signalKinds: uniqueSignalKinds(matchedSignals),
-    interactions: matches.map((match) => match.interaction),
+    interactions: [...distinctMatches.map((match) => match.interaction), ...scenes.map(({ interactionId, ruleId, interactionType, myeongliEvidenceIds, mbtiEvidenceIds, contexts, confidence, intensity }) => ({ interactionId, ruleId, interactionType, myeongliEvidenceIds, mbtiEvidenceIds, contexts, confidence, intensity }))],
+    scenes, factIds: [...factIds],
     mbtiEvidence: {
       titleKo: sourceProfile.titleKo,
       archetype: sourceProfile.archetype,
@@ -116,8 +121,8 @@ export function buildMyeongliMbtiBridgePacket(
     sourceProfile,
     withMbtiType,
     relationshipPair,
-    evidences: matches.length ? [evidence] : [],
-    isEmpty: matches.length === 0,
+    evidences: matches.length || scenes.length ? [evidence] : [],
+    isEmpty: matches.length === 0 && scenes.length === 0,
     unknownType: false,
   };
 }

@@ -48,6 +48,15 @@ describe("compatibility person, direction and unassigned domain roles", () => {
         if (!types[1]) expect(f.persons.personB.traits).toEqual([]);
         expect(f.persons.personB).toEqual(r.persons.personA);
         expect(f.aToB).toEqual(r.bToA);
+        for (const direction of [f.aToB, f.bToA]) {
+          const owner = direction.subjectPerson === f.persons.personA.personId ? f.persons.personA : f.persons.personB;
+          expect(direction.bridgeContext.subjectPerson).toBe(owner.personId);
+          for (const id of direction.bridgeContext.subjectScenes) {
+            const scene = owner.bridgeScenes.find(scene => scene.interactionId === id)!;
+            expect(scene).toBeDefined();
+            if (category !== "love" && category !== "marriage") expect(scene.contexts.some(c => c === "love" || c === "marriage")).toBe(false);
+          }
+        }
         expect(f.bToA).toEqual(r.aToB);
         expect(symmetricBranchFacts(forward.evidencePacket)).toEqual(symmetricBranchFacts(reverse.evidencePacket));
         expect(forward.evidencePacket.mbtiCompatibility.sharedGround).toEqual(reverse.evidencePacket.mbtiCompatibility.sharedGround);
