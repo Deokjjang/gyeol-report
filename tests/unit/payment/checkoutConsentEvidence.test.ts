@@ -37,6 +37,10 @@ let db: PGlite;
 let store: ReliabilityStore;
 let create: ReturnType<typeof vi.fn>;
 const patch = readFileSync("scripts/paid_checkout_consent_evidence_patch.sql", "utf8");
+const finalPostflight = readFileSync(
+  "scripts/paid_report_production_postflight_single_result.sql",
+  "utf8",
+);
 beforeAll(async () => {
   db = new PGlite();
   await db.exec("create role anon; create role authenticated; create role service_role;");
@@ -61,6 +65,7 @@ beforeEach(async () => {
   vi.stubEnv("REPORT_ADMIN_SECRET", "mock-admin");
   vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_toss_client_key");
   vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_toss_secret_key");
+  vi.stubEnv("TOSS_CONFIRM_API_ENABLED", "1");
   vi.useFakeTimers({ toFake: ["Date"] });
   vi.setSystemTime(acceptedAt);
 });
@@ -76,6 +81,30 @@ async function assertRejected(body: unknown) {
 }
 
 describe("public prepare consent boundary with real durable SQL and mock providers", () => {
+  it("rejects production Toss checkout before durable writes when confirm is disabled", async () => {
+    vi.stubEnv("TOSS_CONFIRM_API_ENABLED", "0");
+
+    const result = await prepare(requestBody());
+
+    expect(result).toEqual({
+      status: 503,
+      body: {
+        ok: false,
+        error: {
+          code: "PAYMENT_CHECKOUT_UNAVAILABLE",
+          message: "현재 결제를 준비 중입니다. 잠시 후 다시 확인해 주세요.",
+        },
+      },
+    });
+    expect(mocks.runtime).not.toHaveBeenCalled();
+    expect(create).not.toHaveBeenCalled();
+    expect(await orders()).toEqual([]);
+    expect((await db.query("select * from report_input_snapshots")).rows).toEqual([]);
+    expect(JSON.stringify(result.body)).not.toMatch(
+      /TOSS_CONFIRM_API_ENABLED|tossCheckoutRequest|clientKey|secret/i,
+    );
+  });
+
   it.each(products)("%s accepts existing assertions without changing price or URLs", async (key, slug) => {
     const body = { ...requestBody(), productType: key, inputSnapshot: { reportInputPayload: reportInput(key, slug) } };
     const result = await prepare(body);
@@ -233,5 +262,18 @@ describe("public prepare consent boundary with real durable SQL and mock provide
     await db.exec("update report_input_snapshots set expires_at=now()-interval '1 second'");
     expect(await store.call("find_order", { paymentOrderId: "legacy" })).toMatchObject({ ok: true, order: { input_snapshot: {} } });
     expect(JSON.stringify(await store.call("find_order", { paymentOrderId: "legacy" }))).not.toContain("legacy-private");
+  });
+
+  it("the cumulative SQL chain passes the final production postflight", async () => {
+    const result = await db.query<{
+      check_name: string;
+      pass: boolean;
+      detail: string;
+    }>(finalPostflight);
+
+    expect(result.rows.filter(row => !row.pass)).toEqual([]);
+    expect(
+      result.rows.find(row => row.check_name === "production reliability reconciliation"),
+    ).toMatchObject({ pass: true, detail: "failed=0; total=155" });
   });
 });

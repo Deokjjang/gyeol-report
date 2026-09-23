@@ -79,7 +79,7 @@ expected_reliability_columns(table_name,column_name,udt_name,is_nullable) as (
     ('paid_report_snapshots','snapshot_json','jsonb','YES'),
     ('paid_report_snapshots','gate_version','text','YES'),
     ('paid_report_snapshots','created_at','timestamptz','NO'),
-    ('paid_report_snapshots','expires_at','timestamptz','NO'),
+    ('paid_report_snapshots','expires_at','timestamptz','YES'),
     ('paid_report_snapshots','published_at','timestamptz','YES'),
     ('report_generation_jobs','job_id','uuid','NO'),
     ('report_generation_jobs','order_id','text','NO'),
@@ -341,12 +341,25 @@ expiry_checks(check_name,pass,detail) as (
         and column_name='expires_at' and is_nullable='NO'
         and column_default like '%90 days%'
     ),'non-null expires_at default must contain 90 days'),
-    ('paid_report_snapshots expires_at +90 days',exists(
+    ('paid_report_snapshots publication-based 90-day expiry',exists(
       select 1 from information_schema.columns
       where table_schema='public' and table_name='paid_report_snapshots'
-        and column_name='expires_at' and is_nullable='NO'
-        and column_default like '%90 days%'
-    ),'non-null expires_at default must contain 90 days'),
+        and column_name='expires_at' and is_nullable='YES'
+        and column_default is null
+    ) and exists(
+      select 1 from pg_constraint
+      where conrelid=to_regclass('public.paid_report_snapshots')
+        and conname='paid_report_snapshots_access_expiry_check'
+        and convalidated
+    ) and coalesce((
+      select position('coalesce(r.published_at,clock_timestamp())' in prosrc)>0
+        and position('2160 hours' in prosrc)>0
+        and position('if r.published_at is null then' in prosrc)>0
+      from pg_proc p
+      join pg_namespace n on n.oid=p.pronamespace
+      where n.nspname='public'
+        and p.oid=to_regprocedure('public.paid_report_reliability(text,jsonb)')
+    ),false),'unpublished expiry is null; first DB publication starts 2160 hours and repeat completion preserves it'),
     ('expiry indexes',
       to_regclass('public.report_input_snapshots_expires_at_idx') is not null
       and to_regclass('public.paid_report_snapshots_expires_at_idx') is not null,

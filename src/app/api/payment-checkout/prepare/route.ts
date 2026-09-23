@@ -31,6 +31,7 @@ type CheckoutPrepareRouteErrorCode =
 
 const tossClientKeyEnv = "NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY";
 const tossSecretKeyEnv = "TOSS_PAYMENTS_SECRET_KEY";
+const tossConfirmApiEnabledEnv = "TOSS_CONFIRM_API_ENABLED";
 const tossAllowLocalhostRedirectsEnv = "TOSS_ALLOW_LOCALHOST_REDIRECTS";
 const defaultProductType = "saju_mbti_full";
 const invalidRequestMessage = "결제 요청 정보가 올바르지 않습니다.";
@@ -77,6 +78,20 @@ function isClientInputError(code: string): boolean {
     code === "PAYMENT_ORDER_INVALID_PROVIDER" ||
     code === "PAYMENT_ORDER_INVALID_INPUT"
   );
+}
+
+function isProductionCheckoutAvailable(provider?: unknown): boolean {
+  if (process.env.NODE_ENV !== "production") return true;
+
+  const infrastructureReady =
+    process.env.PAID_REPORT_RELIABILITY_ENABLED === "1" &&
+    isNonEmptyString(process.env.SUPABASE_SERVICE_ROLE_KEY) &&
+    isNonEmptyString(process.env.CRON_SECRET) &&
+    isNonEmptyString(process.env.REPORT_ADMIN_SECRET);
+  const providerReady =
+    provider !== "toss" || process.env[tossConfirmApiEnabledEnv] === "1";
+
+  return infrastructureReady && providerReady;
 }
 
 function createProviderOrderId(): string {
@@ -298,8 +313,7 @@ function createOptionalTossCheckoutRequest(
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
-  if (process.env.NODE_ENV === "production" && (process.env.PAID_REPORT_RELIABILITY_ENABLED !== "1" ||
-    !process.env.SUPABASE_SERVICE_ROLE_KEY || !process.env.CRON_SECRET || !process.env.REPORT_ADMIN_SECRET)) {
+  if (!isProductionCheckoutAvailable()) {
     return createErrorResponse("PAYMENT_CHECKOUT_UNAVAILABLE", "현재 결제를 준비 중입니다. 잠시 후 다시 확인해 주세요.", 503);
   }
   let json: unknown;
@@ -327,6 +341,14 @@ export async function POST(request: Request): Promise<NextResponse> {
       "PAYMENT_CHECKOUT_INVALID_REQUEST",
       invalidRequestMessage,
       400,
+    );
+  }
+
+  if (!isProductionCheckoutAvailable(json.provider)) {
+    return createErrorResponse(
+      "PAYMENT_CHECKOUT_UNAVAILABLE",
+      "현재 결제를 준비 중입니다. 잠시 후 다시 확인해 주세요.",
+      503,
     );
   }
 

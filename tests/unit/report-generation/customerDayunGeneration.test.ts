@@ -37,6 +37,7 @@ describe("customer Dayun production boundaries", () => {
     for (const key of ["SUPABASE_SERVICE_ROLE_KEY", "CRON_SECRET", "REPORT_ADMIN_SECRET"]) vi.stubEnv(key, "mock-only");
     vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_toss_client_key");
     vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_toss_secret_key");
+    vi.stubEnv("TOSS_CONFIRM_API_ENABLED", "1");
     for (const changes of [{ gender: "" }, { gender: "invalid" }, { gender: undefined }, { birthTime: "", birthTimeUnknown: true }, {}]) {
       storage.create.mockClear();
       const p = payload(product, changes);

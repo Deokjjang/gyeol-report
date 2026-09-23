@@ -24,6 +24,7 @@ beforeEach(() => {
   vi.stubEnv("REPORT_ADMIN_SECRET", "mock-admin");
   vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_toss_client_key");
   vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_toss_secret_key");
+  vi.stubEnv("TOSS_CONFIRM_API_ENABLED", "1");
 });
 afterEach(() => vi.unstubAllEnvs());
 describe("production input rejection before durable checkout writes", () => {
