@@ -26,6 +26,7 @@ import {
   buildOpenAIComprehensiveReportRepairMessages,
   buildOpenAIComprehensiveReportWriterMessages,
   deriveAllowedSajuTermsFromEvidencePacket,
+  type OpenAIReportWriterMessages,
 } from "./openaiReportWriterPrompt";
 
 export type SafeReportGenerationStage =
@@ -333,7 +334,33 @@ function sanitizeParsedNarrativeDraft(parsed: unknown): {
   }
 
   const result = sanitizeComprehensiveReportNarrativeDraft(parsed);
-  const particleResult = sanitizeKoreanParticleRegressions(result.draft);
+  const sanitizedTerms = new Set(result.sanitizedTerms);
+  const longformReadings = result.draft.longformReadings?.map((reading) => {
+    const readingResult = sanitizeComprehensiveReportNarrativeDraft({
+      ...result.draft,
+      openingTitle: reading.titleKo,
+      openingSummary: reading.body,
+      coreLine: "",
+      chapters: [],
+      longformReadings: [],
+      finalAdvice: "",
+      safetyNotes: [],
+    });
+
+    for (const term of readingResult.sanitizedTerms) {
+      sanitizedTerms.add(term);
+    }
+
+    return {
+      ...reading,
+      titleKo: readingResult.draft.openingTitle,
+      body: readingResult.draft.openingSummary,
+    };
+  });
+  const sanitizedDraft = longformReadings === undefined
+    ? result.draft
+    : { ...result.draft, longformReadings };
+  const particleResult = sanitizeKoreanParticleRegressions(sanitizedDraft);
   const repetitionResult = removeExcessiveLongSentenceRepetition(
     particleResult.value,
   );
@@ -341,12 +368,28 @@ function sanitizeParsedNarrativeDraft(parsed: unknown): {
   return {
     parsed: repetitionResult.value,
     sanitized:
-      result.sanitized || particleResult.sanitized || repetitionResult.sanitized,
+      sanitizedTerms.size > 0 || particleResult.sanitized || repetitionResult.sanitized,
     sanitizedTerms: [
-      ...result.sanitizedTerms,
+      ...sanitizedTerms,
       ...(particleResult.sanitized ? ["korean-particle-regression"] : []),
       ...(repetitionResult.sanitized ? ["long-sentence-repetition"] : []),
     ],
+  };
+}
+
+function withComprehensiveWriterValidationContract(
+  messages: OpenAIReportWriterMessages,
+): OpenAIReportWriterMessages {
+  return {
+    ...messages,
+    developer: [
+      messages.developer,
+      "최종 검증 계약:",
+      "opening, chapters, longformReadings, finalAdvice, safetyNotes의 모든 사용자 문장에서 질환명 추정, 진단, 치료, 예방 효과, 신체 증상 확정, 의학적 인과를 쓰지 마라.",
+      "피로와 회복은 생활 리듬, 휴식, 수면, 일정 과밀, 과부하 관리 수준으로만 표현하라.",
+      "love_relationships에는 선택된 관계 evidence에 맞춘 구체 장면을 반드시 넣고, 카톡·메시지·상대·연인·업무·일정 중 서로 다른 생활 표지 2개 이상을 실제 행동과 함께 사용하라.",
+      "연락이나 약속이라는 추상 명사만 쓰지 말고, 누가 어떤 말을 하고 어떻게 반응하는지 한 장면으로 보여라.",
+    ].join("\n"),
   };
 }
 
@@ -933,6 +976,15 @@ const directHitEvidenceMarkersByChapter = {
   ],
 } as const satisfies Record<DirectHitRescueChapterId, readonly string[]>;
 
+const loveEverydaySceneMarkers = [
+  "카톡",
+  "메시지",
+  "연인",
+  "상대",
+  "업무",
+  "일정",
+] as const;
+
 const directHitRescueFeatureIdsByChapter = {
   saju_identity: [
     "day_pillar_gapsin",
@@ -980,6 +1032,10 @@ const directHitRescueFeatureIdsByChapter = {
 
 function hasAnyMarker(text: string, markers: readonly string[]): boolean {
   return markers.some((marker) => text.includes(marker));
+}
+
+function countDistinctMarkers(text: string, markers: readonly string[]): number {
+  return markers.filter((marker) => text.includes(marker)).length;
 }
 
 function isV2DraftWithDeterministicFields(
@@ -1041,6 +1097,13 @@ function hasChapterDirectHitScene(chapter: ComprehensiveReportV2Chapter): boolea
   }
 
   const text = getChapterDirectHitText(chapter);
+
+  if (
+    chapter.chapterId === "love_relationships" &&
+    countDistinctMarkers(getChapterRescueSearchText(chapter), loveEverydaySceneMarkers) < 2
+  ) {
+    return false;
+  }
 
   return (
     hasAnyMarker(text, directHitSceneMarkersByChapter[chapter.chapterId]) &&
@@ -1898,12 +1961,14 @@ export async function generateComprehensiveReportDraft(input: {
   readonly warnings: readonly string[];
 }> {
   const allowedSajuTerms = deriveAllowedSajuTermsFromEvidencePacket(input.evidencePacket);
-  const messages = buildOpenAIComprehensiveReportWriterMessages({
-    userDisplayName: input.userDisplayName,
-    mbtiType: input.mbtiType,
-    evidencePacket: input.evidencePacket,
-    allowedSajuTerms,
-  });
+  const messages = withComprehensiveWriterValidationContract(
+    buildOpenAIComprehensiveReportWriterMessages({
+      userDisplayName: input.userDisplayName,
+      mbtiType: input.mbtiType,
+      evidencePacket: input.evidencePacket,
+      allowedSajuTerms,
+    }),
+  );
   let result: Awaited<ReturnType<typeof callOpenAIReportWriter>>;
 
   try {
@@ -1961,19 +2026,21 @@ export async function generateComprehensiveReportDraft(input: {
   if (!validation.ok || validation.value === undefined) {
     if (input.config.allowRepair === false || !areAllDraftValidationErrorsRepairable(validation.errors)) {
       throw new SafeReportGenerationFailure({
-        code: "OPENAI_REPORT_WRITER_INVALID_JSON",
+        code: "OPENAI_REPORT_WRITER_DRAFT_INVALID",
         stage: "draft_validation",
         validationErrors: validation.errors,
       });
     }
 
-    const repairMessages = buildOpenAIComprehensiveReportRepairMessages({
-      userDisplayName: input.userDisplayName,
-      mbtiType: input.mbtiType,
-      allowedSajuTerms,
-      draftJson: JSON.stringify(sanitizedInitial.parsed, null, 2),
-      validationErrors: validation.errors,
-    });
+    const repairMessages = withComprehensiveWriterValidationContract(
+      buildOpenAIComprehensiveReportRepairMessages({
+        userDisplayName: input.userDisplayName,
+        mbtiType: input.mbtiType,
+        allowedSajuTerms,
+        draftJson: JSON.stringify(sanitizedInitial.parsed, null, 2),
+        validationErrors: validation.errors,
+      }),
+    );
     let repairResult: Awaited<ReturnType<typeof callOpenAIReportWriter>>;
 
     try {
@@ -2065,7 +2132,7 @@ export async function generateComprehensiveReportDraft(input: {
       }
 
       throw new SafeReportGenerationFailure({
-        code: "OPENAI_REPORT_WRITER_INVALID_JSON",
+        code: "OPENAI_REPORT_WRITER_DRAFT_INVALID",
         stage: "draft_validation",
         validationErrors: repairValidation.errors,
         repairAttempted: true,

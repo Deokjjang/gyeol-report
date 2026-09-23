@@ -10,7 +10,10 @@ import type {
   ComprehensiveReportV2ChapterId,
   ComprehensiveReportV2NarrativeDraft,
 } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
-import { isComprehensiveReportV2Draft } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
+import {
+  COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS,
+  isComprehensiveReportV2Draft,
+} from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
 import { buildComprehensiveReportEvidencePacketFromComputedFacts } from "../../../src/lib/report-knowledge/comprehensiveReportEvidenceInputBuilder";
 import type { ComputedSajuFacts } from "../../../src/lib/report-knowledge/sajuComputedFactsTypes";
 
@@ -149,6 +152,23 @@ function createValidDraft(): ComprehensiveReportV2NarrativeDraft {
       "성과를 밀어붙이는 힘은 살리되, 휴식과 감정 표현은 의식적으로 보완해 주세요.",
     safetyNotes: ["자기이해용 참고 콘텐츠입니다."],
   };
+}
+
+function createValidLongformReadings() {
+  const chapters = createValidDraft().chapters;
+
+  return COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS.map((readingId, index) => {
+    const chapter = chapters[index % chapters.length];
+
+    return {
+      readingId,
+      titleKo: `${chapter.titleKo} 상세 해석 ${index + 1}`,
+      body: `${index + 1}번째 상세 해석에서는 ${chapter.body.replaceAll(".", ",")} ${readingId}의 질문에 맞춰 갑목의 방향성과 갑신일주의 압박 속 기준, 입력한 ENTJ의 행동 언어를 서로 다른 생활 장면으로 이어서 읽습니다.`,
+      linkedChapterIds: [chapter.chapterId],
+      sajuTermsUsed: ["갑목", "갑신일주"],
+      mbtiTermsUsed: ["ENTJ"] as const,
+    };
+  });
 }
 
 function createPacket() {
@@ -416,6 +436,12 @@ describe("OpenAI comprehensive report writer", () => {
     expect(JSON.stringify(calls[0].body)).toContain("symbolicImage");
     expect(JSON.stringify(calls[0].body)).toContain("positiveReading");
     expect(JSON.stringify(calls[0].body)).toContain("practicalUse");
+    expect(JSON.stringify(calls[0].body)).toContain(
+      "모든 사용자 문장에서 질환명 추정, 진단, 치료, 예방 효과, 신체 증상 확정, 의학적 인과를 쓰지 마라",
+    );
+    expect(JSON.stringify(calls[0].body)).toContain(
+      "카톡·메시지·상대·연인·업무·일정 중 서로 다른 생활 표지 2개 이상",
+    );
     expect(responseFormatSchema).not.toContain("profileTable");
     expect(responseFormatSchema).not.toContain("sajuFeatureSpotlight");
     expect(responseFormatSchema).not.toContain("sajuSignatureScenes");
@@ -714,10 +740,119 @@ describe("OpenAI comprehensive report writer", () => {
       }),
     );
 
-    expect(error.code).toBe("OPENAI_REPORT_WRITER_INVALID_JSON");
+    expect(error.code).toBe("OPENAI_REPORT_WRITER_DRAFT_INVALID");
     expect(error.stage).toBe("draft_validation");
     expect(error.validationErrors?.join("\n")).toContain(
       "FORBIDDEN_PROPHECY_PHRASE",
+    );
+  });
+
+  it("sanitizes medical wording in longform while preserving fatigue and rest guidance", async () => {
+    const draft = {
+      ...createValidDraft(),
+      longformReadings: createValidLongformReadings().map((reading, index) =>
+        index === 0
+          ? {
+              ...reading,
+              body: `${reading.body} 치료 효과를 단정하지 말고, 피로 신호가 쌓이면 휴식과 수면 시간을 먼저 확보하는 생활 기준으로 읽습니다.`,
+            }
+          : reading,
+      ),
+    };
+
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "ENTJ",
+      evidencePacket: createPacket(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        allowRepair: false,
+        fetchImpl: async () =>
+          createJsonResponse({ output_text: JSON.stringify(draft) }),
+      },
+    });
+    const serialized = JSON.stringify(result.draft);
+
+    expect(serialized).not.toContain("치료");
+    expect(serialized).toContain("피로 신호");
+    expect(serialized).toContain("휴식과 수면 시간");
+    expect(result.warnings).toContain("copy sanitizer: applied");
+  });
+
+  it("adds an evidence-backed relationship scene when abstract contact wording is insufficient", async () => {
+    const baseDraft = createValidDraft();
+    const draft = {
+      ...baseDraft,
+      chapters: baseDraft.chapters.map((chapter) =>
+        chapter.chapterId === "love_relationships"
+          ? {
+              ...chapter,
+              hitReadingLines: [
+                "연락과 약속을 정리하는 속도가 관계의 체감 차이로 이어질 수 있습니다.",
+              ],
+              body: `${createGenericCoreChapterBody("love_relationships")} 연락과 약속을 정리하는 습관은 입력한 MBTI의 해결 중심 언어와 이어질 수 있습니다.`,
+            }
+          : chapter,
+      ),
+    };
+
+    const result = await generateComprehensiveReportDraft({
+      mbtiType: "ENTJ",
+      evidencePacket: createPacket(),
+      config: {
+        apiKey: "test_key",
+        model: "test_model",
+        enabled: true,
+        allowRepair: false,
+        fetchImpl: async () =>
+          createJsonResponse({ output_text: JSON.stringify(draft) }),
+      },
+    });
+    const loveChapter = isComprehensiveReportV2Draft(result.draft)
+      ? result.draft.chapters.find((chapter) => chapter.chapterId === "love_relationships")
+      : undefined;
+
+    expect(loveChapter?.body).toContain("업무 보고처럼");
+    expect(loveChapter?.body).toContain("상대");
+  });
+
+  it("classifies a relationship scene omission as semantic draft validation", async () => {
+    const baseDraft = createValidDraft();
+    const draft = {
+      ...baseDraft,
+      chapters: baseDraft.chapters.map((chapter) =>
+        chapter.chapterId === "love_relationships"
+          ? {
+              ...chapter,
+              hitReadingLines: [
+                "연락과 약속을 정리하는 속도가 관계의 체감 차이로 이어질 수 있습니다.",
+              ],
+              body: `${createGenericCoreChapterBodyWithoutFeatureEvidence("love_relationships")} 연락과 약속을 정리하는 습관은 입력한 MBTI의 해결 중심 언어와 이어질 수 있습니다.`,
+            }
+          : chapter,
+      ),
+    };
+
+    const error = await expectSafeGenerationFailure(
+      generateComprehensiveReportDraft({
+        mbtiType: "ENTJ",
+        evidencePacket: createPacketWithoutCoreDirectHitEvidence(),
+        config: {
+          apiKey: "test_key",
+          model: "test_model",
+          enabled: true,
+          allowRepair: false,
+          fetchImpl: async () =>
+            createJsonResponse({ output_text: JSON.stringify(draft) }),
+        },
+      }),
+    );
+
+    expect(error.code).toBe("OPENAI_REPORT_WRITER_DRAFT_INVALID");
+    expect(error.stage).toBe("draft_validation");
+    expect(error.validationErrors).toContain(
+      "EVERYDAY_SCENE_MISSING: love_relationships",
     );
   });
 
