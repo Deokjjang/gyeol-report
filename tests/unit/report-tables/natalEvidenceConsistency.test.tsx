@@ -80,6 +80,16 @@ describe("canonical natal evidence across the six paid products", () => {
     expect(n.pillars.every(p => (p.twelveLifeStage?.length ?? 0) > 0)).toBe(true);
   });
 
+  it("renders each canonical natal relation once without losing its participants", async () => {
+    const careerPerson = { ...person, name: "현우", birthDate: "1989-09-07", birthTime: "07:24", gender: "MALE", mbtiType: "INFP" };
+    const r = await generate("career_money_study", careerPerson);
+    const n = getCanonicalNatalTable(r.evidencePacket)!;
+    const relation = n.relations.find(item => item.label === "연주·월주 지지육합 巳申");
+    expect(relation).toMatchObject({ positions: ["year", "month"], participants: ["巳", "申"] });
+    expect(n.pillars.flatMap(pillar => pillar.interactions ?? []).filter(label => label === relation?.label)).toHaveLength(1);
+    expect(html("career_money_study", r).match(/연주·월주 지지육합 巳申/g)).toHaveLength(1);
+  });
+
   it("all four presenter adapters prefer the canonical snapshot over incomplete legacy display arrays", () => {
     const expected = getCanonicalNatalTable(prepared.get("saju_mbti_full")!.evidencePacket);
     const adapters = [

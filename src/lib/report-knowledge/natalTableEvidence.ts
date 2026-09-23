@@ -112,7 +112,9 @@ export function buildCanonicalNatalTable(context: BirthTimeCalculationContext): 
       twelveSinsal: unique(detected.filter(d => d.category === "TWELVE_SHINSAL").map(d => d.labelKo)),
       sinsal: unique(detected.filter(d => d.category !== "TWELVE_SHINSAL" && d.category !== "NOBLE_HELP").map(d => d.labelKo)),
       gwiin: unique(detected.filter(d => d.category === "NOBLE_HELP").map(d => d.labelKo)),
-      interactions: relations.filter(r => r.positions.includes(p.columnId)).map(r => r.label),
+      // The relation label already names every participating pillar. Place it
+      // once in the grid while retaining all positions in canonical relations.
+      interactions: relations.filter(r => r.positions[0] === p.columnId).map(r => r.label),
     };
   });
   return { version: NATAL_TABLE_VERSION, calendarVersion: context.calendarVersion, precision: context.birthTimePrecision, pillars: grid, features, relations };
