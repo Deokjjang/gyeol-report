@@ -1,5 +1,6 @@
 import { formatProductBridgeScenes } from "../report-knowledge/bridge/interactionScenes";
-import { buildAnnualMonthlyPublication } from "./annualMonthlyPublication";
+import { buildAnnualMonthlyPublication, buildAnnualReadingPublication } from "./annualMonthlyPublication";
+import { buildAnnualFortuneReading } from "../report-knowledge/annualFortuneReading";
 import { withReportInputEvidence } from "./reportInputEvidence";
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import { calculateCustomerDayun, selectCustomerDayun, type CustomerDayun } from "../saju/customerDayun";
@@ -122,6 +123,7 @@ export async function generateAnnualFortuneProductDraft(
       customerDayun: calculated.value,
       dayunSelection: selection.value,
     };
+    evidencePacket = { ...evidencePacket, annualReading: buildAnnualFortuneReading(evidencePacket) };
   } catch (error) {
     return annualFortuneFailure({
       code: "ANNUAL_FORTUNE_GENERATION_FAILED",
@@ -163,7 +165,8 @@ export async function generateAnnualFortuneProductDraft(
     draft: {
       ...validation.value,
       dayunContext: selection.value,
-      majorAnnualCrossReading: [validation.value.majorAnnualCrossReading, selection.value.notice].filter(Boolean).join(" "),
+      majorAnnualCrossReading: validation.value.majorAnnualCrossReading.includes(selection.value.notice ?? "")
+        ? validation.value.majorAnnualCrossReading : [validation.value.majorAnnualCrossReading, selection.value.notice].filter(Boolean).join(" "),
     },
     evidencePacket: withReportInputEvidence(evidencePacket, input),
   };
@@ -656,6 +659,7 @@ function buildAnnualFortuneFallbackDraft(
     monthlyFlow: buildMonthlyFlow(packet),
     finalAdvice,
     safetyNotes,
+    ...buildAnnualReadingPublication(packet),
   };
 }
 

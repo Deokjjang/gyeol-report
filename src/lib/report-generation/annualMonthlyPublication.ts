@@ -5,7 +5,8 @@ import { summarizeAnnualMonthFacts } from "../report-knowledge/annualMonthRelati
 import type { EarthlyBranch, FiveElement } from "../report-knowledge/annualFortuneTypes";
 import type { AnnualFortuneReportDraft } from "./annualFortuneReportDraftTypes";
 import { ANNUAL_MONTH_CALCULATION_VERSION, buildAnnualMonthCalendar } from "../report-knowledge/annualMonthJie";
-import { buildAnnualJieMonthlyPublication } from "./annualMonthJiePublication";
+import { buildAnnualJieMonthlyPublication, monthSegmentPeriod } from "./annualMonthJiePublication";
+import { buildAnnualFortuneReading } from "../report-knowledge/annualFortuneReading";
 
 const elementNames: Record<FiveElement, string> = { wood: "목", fire: "화", earth: "토", metal: "금", water: "수" };
 
@@ -14,7 +15,19 @@ const elementNames: Record<FiveElement, string> = { wood: "목", fire: "화", ea
 export function buildAnnualMonthlyPublication(packet: AnnualFortuneEvidencePacket): Pick<
   AnnualFortuneReportDraft, "monthlyFlow" | "monthlyHighlights" | "monthlyFlowReading"
 > {
-  if (packet.monthlyCalculationVersion === ANNUAL_MONTH_CALCULATION_VERSION) return buildAnnualJieMonthlyPublication(packet.calendarMonths ?? []);
+  if (packet.monthlyCalculationVersion === ANNUAL_MONTH_CALCULATION_VERSION) {
+    const base = buildAnnualJieMonthlyPublication(packet.calendarMonths ?? []);
+    if (!packet.annualReading) return base;
+    const reading = packet.annualReading;
+    return { ...base,
+      monthlyFlow: base.monthlyFlow.map((row, i) => ({ ...row, headline: reading.months[i].title,
+        body: reading.months[i].segments.map((s, j) => `${monthSegmentPeriod(packet.calendarMonths![i].segments[j])}: ${[s.core,s.balance,...s.scenes].join(" ")}`).join("\n\n"),
+        advice: reading.months[i].segments.map((s,j)=>`${monthSegmentPeriod(packet.calendarMonths![i].segments[j])}: ${s.action}`).join("\n"),
+      })),
+      monthlyHighlights: reading.months.filter(m=>m.tier!=="basic").map(m=>({monthLabel:`${m.month}월`,headline:m.title,
+        body:m.reasons.map(r=>r.text).join(" "),actionHint:"해당 월의 기간별 해석에서 실행 기준을 확인할 수 있습니다."})),
+    };
+  }
   // Unversioned snapshots retain their original approximation contract.
   const monthlyFlow = packet.monthlyFortunes.map(month => ({
     month: month.month, label: month.label, headline: month.monthTheme,
@@ -36,6 +49,25 @@ export function buildAnnualMonthlyPublication(packet: AnnualFortuneEvidencePacke
     monthlyFlow, monthlyHighlights,
     monthlyFlowReading: "월별 간지와 십성은 12개월을 읽는 기본 관점입니다. 원국과의 연결·보완 작용과 마찰 작용은 서로 다른 근거로 나누어 봅니다. 같은 달에 함께 나타나더라도 좋은 달이나 나쁜 달로 단정하지 않습니다. 오행의 유입이나 십성만으로 한 달 전체의 유리함을 결정하지 않습니다.",
   };
+}
+
+export function buildAnnualReadingPublication(packet: AnnualFortuneEvidencePacket): Partial<AnnualFortuneReportDraft> {
+  const r = packet.annualReading;
+  if (!r) return {};
+  const flow = (index: number) => ({ title:r.domains[index].title, summary:r.domains[index].body,
+    supportingSignals:r.domains[index].scenes,frictionSignals:[r.costs],actionHint:r.domains[index].action });
+  return { headline:r.headline, coreLine:r.headline,
+    selectedYearSummary:[r.gains,r.costs].join(" "),
+    majorAnnualCrossReading:[...r.crossPeriods.map(p=>`${p.startKst}~${p.endKstExclusive} 미만: ${p.text}`),packet.dayunSelection?.notice].filter(Boolean).join(" "),
+    careerWorkFlow:flow(0),moneyResourceFlow:flow(1),relationshipFlow:flow(2),
+    actionPlan:r.actions,
+  };
+}
+
+export function annualReadingMatches(packet: AnnualFortuneEvidencePacket): boolean {
+  if (packet.annualReading === undefined) return true;
+  return packet.monthlyCalculationVersion === ANNUAL_MONTH_CALCULATION_VERSION &&
+    JSON.stringify(orderedJson(packet.annualReading)) === JSON.stringify(orderedJson(buildAnnualFortuneReading(packet)));
 }
 
 // V2 checks the stored selected year's canonical calendar, never today's year.

@@ -36,8 +36,8 @@ async function generate(index = 0, mbti?: SinglePersonGenerationInput["person"][
   if (!result.ok) throw new Error("local annual fixture failed");
   // Keep the original V1 relation/read contract covered after new generation
   // switches to V2. V2 publication/SSR has its own full customer matrix.
-  const { monthlyCalculationVersion: _version, calendarMonths: _months, ...basis } = result.evidencePacket;
-  void _version; void _months;
+  const { monthlyCalculationVersion: _version, calendarMonths: _months, annualReading: _reading, ...basis } = result.evidencePacket;
+  void _version; void _months; void _reading;
   const legacy = buildAnnualFortuneEvidence({ targetYear: result.draft.targetYear,
     currentDate: new Date("2026-09-23T00:00:00+09:00"), person: {
       label: basis.personContext.name, birthDate: basis.personContext.birthDate,

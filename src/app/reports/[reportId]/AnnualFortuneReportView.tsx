@@ -1,4 +1,5 @@
 import { explainAnnualMonthFact } from "../../../lib/report-knowledge/annualMonthRelationFacts";
+import { annualRelationLabel } from "../../../lib/report-knowledge/annualFortuneReading";
 import { annualCalendarMonthTitle, describeAnnualMonthSegment, explainAnnualJieFact, monthSegmentPeriod, MONTH_JIE_BASIS } from "../../../lib/report-generation/annualMonthJiePublication";
 import { SaeunAnnualCompareTable } from "../../../components/report-tables/SaeunFortuneTable";
 import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
@@ -717,6 +718,9 @@ export function AnnualFortuneReportView({
   manseRyeokTable,
   mbtiProfileTable,
 }: AnnualFortuneReportViewProps) {
+  if (evidencePacket?.annualReading && evidencePacket.calendarMonths) {
+    return renderAnnualReadingV2(draft, evidencePacket, manseRyeokTable, mbtiProfileTable);
+  }
   const userContextSummary = draft.userContextSummary ?? {
     lifeStatusLabel: "기타",
     fieldLabel: null,
@@ -849,4 +853,88 @@ export function AnnualFortuneReportView({
       </section>
     </article>
   );
+}
+
+function renderAnnualReadingV2(draft: AnnualFortuneReportDraft, packet: AnnualFortuneEvidencePacket, manseRyeokTable?: ReactNode, mbtiProfileTable?: ReactNode) {
+  const r = packet.annualReading!;
+  const tierLabels = { transition: "전환월", focus: "집중월", basic: "기본월" };
+  return <article className="w-full min-w-0 max-w-full space-y-8 overflow-x-hidden break-words [overflow-wrap:anywhere] rounded-[8px] border border-[#d8c8b5] bg-[#f8f0e6] p-5 text-[#2b211b] sm:p-6">
+    <ReportCover product={`${draft.targetYear}년 세운 리포트`} title={draft.openingTitle} summary={draft.openingSummary} core={r.headline}>
+      <p>{draft.personLabel} · {packet.baseSaju.dayMaster} 일간 · {packet.annualFortune.ganji} 세운</p>
+    </ReportCover>
+    <ReportContents items={[
+      {id:"report-year",label:"이 해의 핵심"},{id:"report-cross",label:"대운과 세운"},
+      {id:"report-readings",label:"일·돈·관계·성장"},{id:"report-important",label:"먼저 읽을 달"},
+      {id:"report-months",label:"12개월 흐름"},{id:"report-foundation",label:"원국과 행동 성향"},{id:"report-conclusion",label:"올해 행동 기준"},
+    ]} />
+    <section id="report-year" tabIndex={-1} data-reading-section="" className={panelClass}>
+      <h2 className={sectionTitleClass}>이 해에 강해지는 것과 감당할 것</h2>
+      <div className="mt-5 grid gap-4 md:grid-cols-2">
+        <div><h3 className="font-semibold text-[#6f1d35]">살릴 흐름</h3>{renderParagraphs([r.gains])}</div>
+        <div><h3 className="font-semibold text-[#6f1d35]">피로가 붙는 지점</h3>{renderParagraphs([r.costs])}</div>
+      </div>
+      <h3 className="mt-5 font-semibold">이 해를 읽는 핵심 근거</h3>{renderList(r.factors.map(f=>f.text))}
+    </section>
+    <section id="report-cross" tabIndex={-1} data-reading-section="" className={panelClass}>
+      <h2 className={sectionTitleClass}>10년 흐름에서 이 해가 바꾸는 질문</h2>
+      {r.crossPeriods.map(p=><div key={p.startKst} className="mt-5 border-t border-[#eadfce] pt-4">
+        <h3 className="text-base font-semibold">{p.startKst.slice(0,19).replace("T"," ")} ~ {p.endKstExclusive.slice(0,19).replace("T"," ")} 미만 KST</h3>
+        {renderParagraphs([p.text])}
+      </div>)}
+      {packet.dayunSelection?.notice ? renderParagraphs([packet.dayunSelection.notice]) : null}
+      <div className="mt-5">{renderSaeunFortuneTable(draft,packet)}</div>
+    </section>
+    <section id="report-readings" tabIndex={-1} data-reading-section="" className="space-y-5" aria-label="세운 리포트 본문">
+      <h2 className={sectionTitleClass}>생활에서 달라지는 네 가지 질문</h2>
+      {r.domains.map(d=><section key={d.key} className={panelClass}>
+        <h3 className="text-lg font-semibold text-[#6f1d35]">{d.title}</h3>
+        {renderParagraphs([d.body,...d.scenes])}
+        <p className="mt-4 font-medium leading-8">실행 기준 · {d.action}</p>
+      </section>)}
+      {r.bridge.length ? <section className={panelClass}>
+        <h3 className="text-lg font-semibold text-[#6f1d35]">이 흐름이 나의 행동 방식과 만날 때</h3>
+        <p className="mt-3 text-sm leading-7">성격이 운을 만드는 것은 아닙니다. 확인된 명리 신호와 입력한 행동 성향이 만나는 장면만 살펴봅니다.</p>
+        {r.bridge.map(b=><div key={b.interactionId} className="mt-5">{renderParagraphs([b.meaning,b.scene,b.strength,b.risk,b.practice])}</div>)}
+      </section> : null}
+    </section>
+    <section id="report-important" tabIndex={-1} data-reading-section="" className={panelClass}>
+      <h2 className={sectionTitleClass}>먼저 읽을 중요한 달</h2>
+      <p className="mt-3 text-sm leading-7">전환월과 집중월은 더 자세히 읽을 근거가 있는 달입니다. 길흉 순위가 아니며, 기본월에도 기간별 변화가 있습니다.</p>
+      {r.months.filter(m=>m.tier!=="basic").map(m=><div key={m.month} className="mt-5 border-t border-[#eadfce] pt-4">
+        <h3 className="font-semibold"><a className="min-h-11 inline-flex items-center text-[#6f1d35] underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2" href={`#annual-month-${m.month}`}>{tierLabels[m.tier]} · {m.title}</a></h3>
+        {renderList(m.reasons.map(reason=>reason.text))}
+      </div>)}
+    </section>
+    <section id="report-months" tabIndex={-1} data-reading-section="" className="space-y-5">
+      <h2 className={sectionTitleClass}>12개월, 기간마다 달라지는 실행 기준</h2>
+      {renderParagraphs([draft.monthlyFlowReading,MONTH_JIE_BASIS])}
+      <div className="grid min-w-0 gap-4 md:grid-cols-2">
+        {r.months.map((m,i)=><article id={`annual-month-${m.month}`} tabIndex={-1} key={m.month} className={panelClass}>
+          <p className="text-sm font-semibold text-[#8b6d2d]">{tierLabels[m.tier]}</p>
+          <h3 className="mt-1 text-lg font-semibold">{m.title}</h3>
+          <p className="mt-2 text-sm leading-7">{annualCalendarMonthTitle(packet.calendarMonths![i])}</p>
+          {m.segments.map((s,j)=>{
+            const fact=packet.calendarMonths![i].segments[j];
+            return <div key={s.startKst} className="mt-5 border-t border-[#eadfce] pt-4">
+              <h4 className="text-sm font-semibold text-[#6f1d35]">{monthSegmentPeriod(fact)} · {fact.monthPillar.stem}{fact.monthPillar.branch}</h4>
+              {renderParagraphs([s.core,s.balance,...s.scenes])}
+              <p className="mt-3 text-sm font-medium leading-7">{s.action}</p>
+              <details className="mt-3 text-sm leading-7">
+                <summary className="min-h-11 cursor-pointer py-2 text-[#6d3146] focus-visible:outline-2 focus-visible:outline-offset-2">기간별 관계 근거</summary>
+                <p>{describeAnnualMonthSegment(fact)}</p>
+                {fact.relationFacts.length ? renderList(fact.relationFacts.map(annualRelationLabel)) : <p>계산된 관계·오행 작용 없음</p>}
+              </details>
+            </div>;
+          })}
+        </article>)}
+      </div>
+    </section>
+    {renderCommonFoundation(manseRyeokTable,mbtiProfileTable,packet,draft)}
+    <section id="report-conclusion" tabIndex={-1} data-reading-section="" className={panelClass}>
+      <h2 className={sectionTitleClass}>올해 행동 기준</h2>
+      {renderList(r.actions)}
+      <p className="mt-4 text-sm leading-7">실제 경험을 기록해 기준이 맞는지 확인하고, 계획이 바뀌면 해당 날짜의 구간부터 다시 읽어 보세요.</p>
+    </section>
+    <section className={panelClass}><h2 className={sectionTitleClass}>리포트를 읽는 기준</h2>{renderList(packet.safetyNotes)}</section>
+  </article>;
 }

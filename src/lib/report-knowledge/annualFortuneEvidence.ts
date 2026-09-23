@@ -3,6 +3,7 @@ import {
   summarizeAnnualMonthFacts, type AnnualMonthRelationFact, type AnnualMonthClassification,
 } from "./annualMonthRelationFacts";
 import type { CustomerDayun, DayunSelection } from "../saju/customerDayun";
+import type { AnnualFortuneReading } from "./annualFortuneReading";
 import { ANNUAL_MONTH_CALCULATION_VERSION, buildAnnualMonthCalendar, monthPillarText, type AnnualCalendarMonth } from "./annualMonthJie";
 import type {
   AnnualBranchInteraction,
@@ -44,6 +45,7 @@ import {
 } from "./annualFortuneYearRules";
 
 export interface AnnualFortuneEvidencePacket {
+  readonly annualReading?: AnnualFortuneReading;
   readonly monthlyCalculationVersion?: typeof ANNUAL_MONTH_CALCULATION_VERSION;
   readonly calendarMonths?: readonly AnnualCalendarMonth[];
   readonly customerDayun?: CustomerDayun;

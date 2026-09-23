@@ -1,4 +1,4 @@
-import { annualMonthlyEvidenceMatches, buildAnnualMonthlyPublication } from "./annualMonthlyPublication";
+import { annualMonthlyEvidenceMatches, annualReadingMatches, buildAnnualMonthlyPublication, buildAnnualReadingPublication } from "./annualMonthlyPublication";
 import {
   isAnnualFortuneReportMode,
   type AnnualFortuneReportDraft,
@@ -1593,7 +1593,15 @@ export function validateAnnualFortuneReportDraft(
         errors.push("ANNUAL_MONTH_SELECTED_YEAR_MISMATCH");
       }
       if (!annualMonthlyEvidenceMatches(evidencePacket)) errors.push("ANNUAL_MONTH_FACTS_MISMATCH");
+      if (!annualReadingMatches(evidencePacket)) errors.push("ANNUAL_READING_EVIDENCE_MISMATCH");
       const expected = buildAnnualMonthlyPublication(evidencePacket);
+      if (evidencePacket.annualReading) {
+        const fields = buildAnnualReadingPublication(evidencePacket);
+        const expectedReading = sanitizeDraft({ ...draft, ...fields });
+        for (const key of Object.keys(fields) as (keyof AnnualFortuneReportDraft)[]) {
+          if (JSON.stringify(sanitizedDraft[key]) !== JSON.stringify(expectedReading[key])) errors.push(`ANNUAL_READING_PUBLICATION_MISMATCH:${key}`);
+        }
+      }
       // Compare the same sanitized form used by the renderer. No inference from
       // positive/negative wording: all monthly fact copy is an evidence anchor.
       const canonical = sanitizeDraft({ ...draft, ...expected });

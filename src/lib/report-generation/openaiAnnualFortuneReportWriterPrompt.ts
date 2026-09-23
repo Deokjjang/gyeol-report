@@ -1,4 +1,4 @@
-import { buildAnnualMonthlyPublication } from "./annualMonthlyPublication";
+import { buildAnnualMonthlyPublication, buildAnnualReadingPublication } from "./annualMonthlyPublication";
 import { birthTimePromptContext } from "./birthTimePublication";
 import type { AnnualFortuneEvidencePacket } from "../report-knowledge/annualFortuneEvidence";
 
@@ -36,6 +36,8 @@ function buildPromptPacket(packet: AnnualFortuneEvidencePacket): object {
     natalAnnualRelations: packet.natalAnnualRelations,
     monthlyCalculationVersion: packet.monthlyCalculationVersion,
     calendarMonths: packet.calendarMonths,
+    annualReading: packet.annualReading,
+    annualReadingPublication: buildAnnualReadingPublication(packet),
     monthlyFortunes: packet.monthlyFortunes.map(({ supportSignals: _support, frictionSignals: _friction, ...month }) => {
       void _support; void _friction;
       return month;
@@ -169,6 +171,7 @@ export function buildOpenAIAnnualFortuneReportWriterMessages(input: {
       "Required concrete event nouns: 직장, 프로젝트, 상사, 동료, 가족, 부모, 연인, 친구, 돈, 정산, 계약, 생활비, 시험, 자격증, 승진, 이직, 수면, 식사, 일정, 연락.",
       "Do not stop at 책임이 커진다. Say whether it may appear as taking over someone’s task, proving a result, managing money or settlement, changing contact frequency, handling family schedules, preparing certificate/study output, or repairing sleep/meal routine.",
       "Copy monthlyPublication.monthlyFlow, monthlyHighlights, and monthlyFlowReading exactly. These factual monthly sections are server-owned, like pillar tables; compose the other report sections normally.",
+      "If annualReading is present, also copy the fields in annualReadingPublication exactly. Its transition/focus/basic tiers measure explanation needs, never luck. Preserve reasons, segment scope, conditional Dayun and Bridge evidence IDs; do not assign new important months or repeat MBTI explanations monthly.",
       packet.calendarMonths ? "Use only calendarMonths.segments.relationFacts for monthly relations. Source separates natal, effective annual and active Dayun counterparts. Conditional Dayun facts apply only to their named candidate cycle. importanceCandidates are reasons for attention, not strength or fortune scores." : "monthlyFortunes.relationFacts are the only calculated month/natal interactions. classification.supportFactIds and frictionFactIds reference these facts; neutralObservations are absence observations, not supportive or friction facts.",
       packet.calendarMonths ? "Do not infer relation existence from explanation words. Ten-gods and element presence alone do not establish a lucky/unlucky month." : "Do not infer relation existence from explanation words. No year-month or Dayun-month interaction has been calculated. Ten-gods and element presence alone do not establish a lucky/unlucky month.",
       "Do not invent monthly ganji.",

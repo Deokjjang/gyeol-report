@@ -247,7 +247,7 @@ describe("V2 tamper gate, writer and immutable legacy read", () => {
   it("reads frozen V1 without backfill/quarantine, but cannot newly publish it", async () => {
     const r = await generate();
     const v2Calculation = vi.spyOn(monthlyEngine, "buildAnnualMonthCalendar");
-    const { monthlyCalculationVersion: _v, calendarMonths: _m, ...base } = r.evidencePacket; void _v; void _m;
+    const { monthlyCalculationVersion: _v, calendarMonths: _m, annualReading: _reading, ...base } = r.evidencePacket; void _v; void _m; void _reading;
     const evidence = { ...base, monthlyFortunes: legacy.monthlyFortunes, monthlyFortuneSeeds: legacy.monthlyFortuneSeeds } as AnnualFortuneEvidencePacket;
     const validated = validateAnnualFortuneReportDraft({ ...r.draft, ...legacy.publication }, evidence);
     expect(validated.ok).toBe(true);
