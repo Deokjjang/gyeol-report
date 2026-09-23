@@ -380,6 +380,7 @@ function validateAttachedDraft(input: {
   return assertValidCompatibilityReportDraft(sanitized.value, {
     allowedSajuTerms,
     allowedMbtiTerms,
+    evidencePacket: input.evidencePacket,
   });
 }
 
@@ -436,6 +437,7 @@ export async function generateCompatibilityReportDraft(input: {
   const firstValidation = validateCompatibilityReportDraft(firstSanitized.value, {
     allowedSajuTerms,
     allowedMbtiTerms,
+    evidencePacket: input.evidencePacket,
   });
 
   if (firstValidation.ok && firstValidation.value !== undefined) {

@@ -179,11 +179,11 @@ describe("REPORT-18A compatibility evidence builder", () => {
       new Set(["strength", "friction", "risk", "repair"]),
     );
     expect(packet.directFindings.map((finding) => finding.title).join("\n")).toContain(
-      "A가 B에게 주는 압박",
+      "두 사람이 부담을 주고받는 방향",
     );
     expect(
       packet.directFindings.map((finding) => finding.interpretation).join("\n"),
-    ).toContain("결론과 실행");
+    ).toContain("실제 행동과 대조");
     expect(
       packet.directFindings.flatMap((finding) => finding.evidence).join("\n"),
     ).not.toContain("丑未 충");

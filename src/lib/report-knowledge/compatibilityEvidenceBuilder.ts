@@ -1,3 +1,4 @@
+import { buildCompatibilityDirectionEvidence, describeCompatibilityPerson, type CompatibilityDirectionEvidence } from "./compatibilityDirectionEvidence";
 import { buildCompatibilityMbtiBridge } from "./compatibilityMbtiBridge";
 import type { CompatibilityMbtiBridgeResult } from "./compatibilityMbtiBridge";
 import { buildCompatibilitySajuBridge } from "./compatibilitySajuBridge";
@@ -31,7 +32,6 @@ import {
 } from "./compatibilityTypes";
 import {
   getMbtiRelationshipPair,
-  type MbtiRelationshipPair,
 } from "./mbti/sourceRuntimeAdapter";
 import { isMbtiTypeCode } from "./mbtiTypeKnowledgeBase";
 import {
@@ -64,6 +64,7 @@ export type CompatibilityEvidencePacket = {
   readonly mbtiCompatibility: CompatibilityMbtiCompatibility;
   readonly bridgeCompatibility: CompatibilityBridgeCompatibility;
   readonly categoryLens: CompatibilityCategoryLens;
+  readonly directionEvidence: CompatibilityDirectionEvidence;
   readonly directFindings: readonly CompatibilityDirectFinding[];
   readonly strengths: readonly string[];
   readonly frictionPoints: readonly string[];
@@ -428,38 +429,33 @@ function buildCompatibilityElementSignals(input: {
   };
 }
 
-function findMbtiRelationshipPair(
-  aType: string | null | undefined,
-  bType: string | null | undefined,
-): MbtiRelationshipPair | null {
-  return (
-    getMbtiRelationshipPair(aType, bType) ??
-    getMbtiRelationshipPair(bType, aType)
-  );
-}
-
 function buildMbtiCompatibility(input: {
   readonly personA: CompatibilityPersonChartSummary;
   readonly personB: CompatibilityPersonChartSummary;
   readonly mbtiBridge: CompatibilityMbtiBridgeResult;
 }): CompatibilityMbtiCompatibility {
-  const pair = findMbtiRelationshipPair(input.personA.mbti, input.personB.mbti);
+  const pairs = [
+    { type: input.personA.mbti, pair: getMbtiRelationshipPair(input.personA.mbti, input.personB.mbti) },
+    { type: input.personB.mbti, pair: getMbtiRelationshipPair(input.personB.mbti, input.personA.mbti) },
+  ].sort((a, b) => (a.type ?? "").localeCompare(b.type ?? ""))
+    .flatMap(({ pair }) => pair === null ? [] : [pair]);
+  const pair = pairs[0];
   const hasA = input.personA.mbti !== undefined;
   const hasB = input.personB.mbti !== undefined;
 
-  if (pair !== null) {
+  if (pair !== undefined) {
     return {
       aType: input.personA.mbti ?? null,
       bType: input.personB.mbti ?? null,
-      sharedGround: pair.sharedGround,
-      friction: pair.friction,
-      positiveInfluence: pair.positiveInfluence,
+      sharedGround: unique(pairs.flatMap((entry) => entry.sharedGround)),
+      friction: unique(pairs.flatMap((entry) => entry.friction)),
+      positiveInfluence: unique(pairs.flatMap((entry) => entry.positiveInfluence)),
       communicationPattern: input.mbtiBridge.communicationNotes,
-      repairStrategy: pair.repairStrategy,
+      repairStrategy: unique(pairs.flatMap((entry) => entry.repairStrategy)),
       pairLabel: input.mbtiBridge.pairLabel,
-      reportLine: pair.reportLine,
-      lovePattern: pair.lovePattern,
-      marriagePattern: pair.marriagePattern,
+      reportLine: unique(pairs.map((entry) => entry.reportLine)).join(" ") || null,
+      lovePattern: unique(pairs.map((entry) => entry.lovePattern)).join(" ") || null,
+      marriagePattern: unique(pairs.map((entry) => entry.marriagePattern)).join(" ") || null,
       source: "notablePairs",
     };
   }
@@ -609,6 +605,7 @@ function buildDirectFindings(input: {
   readonly personA: CompatibilityPersonChartSummary;
   readonly personB: CompatibilityPersonChartSummary;
   readonly score: CompatibilityScoreResult;
+  readonly directionEvidence: CompatibilityDirectionEvidence;
   readonly sajuCompatibility: CompatibilitySajuCompatibility;
   readonly mbtiCompatibility: CompatibilityMbtiCompatibility;
   readonly bridgeCompatibility: CompatibilityBridgeCompatibility;
@@ -627,59 +624,56 @@ function buildDirectFindings(input: {
   ]);
   const pairLine = input.mbtiCompatibility.reportLine;
   const lovePattern = input.mbtiCompatibility.lovePattern;
-  const marriagePattern = input.mbtiCompatibility.marriagePattern;
+  const marriagePattern = input.directionEvidence.categoryRole.category === "marriage" ? input.mbtiCompatibility.marriagePattern : null;
   const elementPressure = firstNonEmpty([
     ...input.sajuCompatibility.overloadedElementSignals,
     ...input.sajuCompatibility.sharedWeakElementSignals,
     ...input.sajuCompatibility.elementComplementSignals,
     ...input.sajuCompatibility.elementBalance,
   ]);
-  const aType = input.mbtiCompatibility.aType ?? "A";
-  const bType = input.mbtiCompatibility.bType ?? "B";
-  const aName = input.personA.displayName;
-  const bName = input.personB.displayName;
+  const { personA, personB } = input.directionEvidence.persons;
 
   return [
     {
       type: "strength",
       intensity: input.score.totalScore >= 75 ? "high" : "medium",
-      title: "끌림의 이유는 실행력과 사고력의 맞물림입니다.",
+      title: "서로에게 힘이 되는 실제 접점을 살펴봅니다.",
       evidence: unique([pairLine, lovePattern, ...strengthEvidence]),
       interpretation:
         pairLine ??
-        `${aType}와 ${bType}는 서로의 빈칸을 자극할 수 있습니다. 좋게 쓰이면 한쪽의 실행감과 다른 한쪽의 검토력이 만나 관계가 더 입체적으로 움직입니다.`,
+        `${describeCompatibilityPerson(personA, "relationships")} ${describeCompatibilityPerson(personB, "relationships")}`,
       safeWording:
         "강점은 관계의 결론이 아니라 둘이 어떻게 쓰느냐에 따라 살아나는 재료입니다.",
     },
     {
       type: "friction",
       intensity: frictionEvidence.length >= 2 ? "high" : "medium",
-      title: "피곤해지는 이유는 속도와 확정 타이밍이 다르기 때문입니다.",
+      title: "각자의 표현이 상대에게 어떻게 닿는지 확인합니다.",
       evidence: unique([lovePattern, ...frictionEvidence]),
-      interpretation: `${aName}님은 문제를 보면 빠르게 결론과 실행을 잡으려 하고, ${bName}님은 전제와 논리가 납득되어야 움직이기 쉽습니다. 한쪽은 해결이라고 생각하지만 다른 쪽은 생각할 시간을 빼앗긴다고 느낄 수 있습니다.`,
+      interpretation: `${frictionEvidence.join(" ")} 이 차이를 실제 행동과 대조하고, 상대의 의도를 먼저 단정하지 않습니다.`,
       safeWording:
         "마찰은 관계 판정이 아니라 조율해야 할 반복 패턴으로만 봅니다.",
     },
     {
       type: "risk",
       intensity: input.bridgeCompatibility.cautionSignals.length >= 2 ? "high" : "medium",
-      title: "A가 B에게 주는 압박과 B가 A에게 주는 답답함이 다릅니다.",
+      title: "두 사람이 부담을 주고받는 방향은 따로 읽습니다.",
       evidence: unique([
         elementPressure,
         marriagePattern,
         ...input.bridgeCompatibility.cautionSignals,
       ]),
-      interpretation: `${aName}님은 기준을 세우는 방식으로 관계를 안정시키려 하지만, ${bName}님에게는 그 기준이 압박처럼 들어갈 수 있습니다. 반대로 ${bName}님의 숙고와 거리 조절은 ${aName}님에게 회피나 비협조처럼 보이기 쉽습니다.`,
+      interpretation: `${elementPressure ?? input.sajuCompatibility.dayMasterRelation} ${marriagePattern ?? input.sajuCompatibility.tenGodRelation} 관계 역할과 개인의 성향을 같은 뜻으로 보지 않아야 합니다.`,
       safeWording:
         "위험 신호는 미래 예언이 아니라 미리 관리할 조건입니다.",
     },
     {
       type: "repair",
       intensity: repairEvidence.length >= 2 ? "high" : "medium",
-      title: "오래 가려면 결론 시간과 검토 시간을 따로 둬야 합니다.",
+      title: "실제 마찰의 원인에 맞게 회복 방법을 고릅니다.",
       evidence: repairEvidence,
       interpretation:
-        "이 조합은 누가 맞고 틀린지보다 순서가 중요합니다. 감정 확인, 사실 검토, 실행 결정을 한 번에 처리하지 말고 따로 놓아야 서로의 장점이 피로로 바뀌는 속도를 늦출 수 있습니다.",
+        `${repairEvidence.join(" ")} 동의한 기준도 실제로 부담이 줄었는지 다시 확인해야 합니다.`,
       safeWording:
         "유지 전략은 보장이 아니라 갈등 비용을 낮추는 실행 기준입니다.",
     },
@@ -782,7 +776,9 @@ export function buildCompatibilityEvidencePacket(
     mbtiCompatibility,
   });
   const categoryLens = buildCategoryLens(relationCategory);
+  const directionEvidence = buildCompatibilityDirectionEvidence(normalizedInput, personAChartSummary, personBChartSummary, relationCategory);
   const directFindings = buildDirectFindings({
+    directionEvidence,
     personA: personAChartSummary,
     personB: personBChartSummary,
     score,
@@ -799,6 +795,7 @@ export function buildCompatibilityEvidencePacket(
     mbtiCompatibility,
     bridgeCompatibility,
     categoryLens,
+    directionEvidence,
     directFindings,
     strengths: directFindings
       .filter((finding) => finding.type === "strength")

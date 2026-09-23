@@ -186,25 +186,25 @@ export function buildCompatibilitySajuBridge(
   }
 
   if (
-    hasAnyFeature(input.personA, ["수 부족", "화 부족"]) ||
-    hasAnyFeature(input.personB, ["화 과다", "수 과다"])
+    [input.personA, input.personB].some((person) =>
+      hasAnyFeature(person, ["수 부족", "화 부족", "화 과다", "수 과다"]))
   ) {
     complementaryElementNotes.push(
-      "표현 온도와 감정 완충 속도가 서로 다르게 작동할 수 있습니다.",
+      "각자의 화·수 분포에서 표현 온도와 감정 완충의 조건을 따로 확인합니다.",
     );
     evidenceItems.push(
       item({
         section: "communication",
         title: "표현 온도와 완충 속도",
         summary:
-          "한쪽은 빨리 정리하려 하고 다른 한쪽은 안에서 더 오래 검토할 수 있어 대화 속도 규칙이 필요합니다.",
+          "화·수의 부족 또는 과다 신호가 있는 사람은 표현과 감정 완충이 어떻게 드러나는지 살펴봅니다. 이 신호만으로 누가 빠르고 신중한지는 정하지 않습니다.",
         personAFeatureIds: input.personA.featureIds.filter((featureId) =>
-          ["element_water_missing", "element_fire_missing"].includes(featureId),
+          ["element_water_missing", "element_fire_missing", "element_fire_excess", "element_water_excess"].includes(featureId),
         ),
         personBFeatureIds: input.personB.featureIds.filter((featureId) =>
-          ["element_fire_excess", "element_water_excess"].includes(featureId),
+          ["element_water_missing", "element_fire_missing", "element_fire_excess", "element_water_excess"].includes(featureId),
         ),
-        sceneSeeds: ["한 사람은 바로 정리하고 싶고, 다른 사람은 생각을 더 굴린 뒤 말하고 싶은 장면"],
+        sceneSeeds: ["대화 뒤 남은 감정과 아직 전달하지 못한 생각을 각자 확인하는 장면"],
         practicalSwitches: ["중요한 대화는 바로 결론을 내기보다 생각 시간과 다시 말할 시간을 정하세요."],
         scoreImpact: -3,
       }),

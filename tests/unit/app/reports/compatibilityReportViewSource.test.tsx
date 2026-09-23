@@ -199,8 +199,8 @@ describe("CompatibilityReportView", () => {
 
     expect(html).toContain("A가 B에게 주는 피로");
     expect(html).toContain("B가 A에게 주는 피로");
-    expect(html).toContain("덕민님은 소담님의 반응 속도");
-    expect(html).toContain("소담님은 덕민님의 결론 속도");
+    expect(html).toContain("덕민님이 소담님에게 주는 부담을 구분할 정보가");
+    expect(html).toContain("소담님이 덕민님에게 주는 부담을 구분할 정보가");
   });
 
   it("does not add forbidden fixed-outcome copy", () => {

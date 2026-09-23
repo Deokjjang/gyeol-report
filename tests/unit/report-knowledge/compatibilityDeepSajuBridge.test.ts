@@ -71,7 +71,7 @@ describe("REPORT-18F compatibility deep Saju bridge", () => {
     expect(dayMaster?.plainKoreanSummary).toContain("표현과 온도를 살리는 관계");
     expect(crossTenGod?.principleExplanation).toContain("상관은 표현");
     expect(crossTenGod?.principleExplanation).toContain("정인은 의미");
-    expect(crossTenGod?.everydayScene).toContain("말의 속도 차이");
+    expect(crossTenGod?.everydayScene).toContain("기대하는 역할이 다른지");
     expect(crossTenGod?.actionRule).toContain("바로 평가하지 말고");
   });
 

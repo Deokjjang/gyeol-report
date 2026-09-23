@@ -503,8 +503,8 @@ function getCompatibilityRelationshipAnalysis(
       draft.keyCompatibilityPoints.relationshipRules.join("\n"),
     frictionPoints: draft.keyCompatibilityPoints.frictionPoints,
     categoryReading: `${formatCompatibilityRelationshipType(draft.relationshipType)} 관계에서는 ${getRelationshipFocus(draft.relationshipType)}가 핵심입니다.`,
-    aToBFatigue: `${draft.personALabel}님은 ${draft.personBLabel}님의 반응 속도나 확인 방식이 길어질 때 피로를 느낄 수 있습니다.`,
-    bToAFatigue: `${draft.personBLabel}님은 ${draft.personALabel}님의 결론 속도나 기준 제시가 빠를 때 피로를 느낄 수 있습니다.`,
+    aToBFatigue: `${draft.personALabel}님이 ${draft.personBLabel}님에게 주는 부담을 구분할 정보가 이 리포트에 없습니다. 상대의 반응 속도나 성격을 임의로 판단하지 않습니다.`,
+    bToAFatigue: `${draft.personBLabel}님이 ${draft.personALabel}님에게 주는 부담을 구분할 정보가 이 리포트에 없습니다. 실제로 불편했던 행동과 상황을 함께 확인해 주세요.`,
     communicationRecovery:
       findChapterText(draft, "conflict_recovery") ??
       findChapterText(draft, "communication") ??

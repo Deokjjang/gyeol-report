@@ -55,10 +55,8 @@ function createValidCompatibilityDraft(): CompatibilityReportDraft {
       ],
       categoryReading:
         "연애 관계에서는 끌림보다 대화 속도와 감정 확인 방식이 체감 궁합을 좌우합니다.",
-      aToBFatigue:
-        "덕민님은 소담님의 검토가 길어질수록 결정이 미뤄진다고 느낄 수 있습니다.",
-      bToAFatigue:
-        "소담님은 덕민님의 결론 속도가 빠를수록 감정과 전제를 건너뛴다고 느낄 수 있습니다.",
+      aToBFatigue: packet.directionEvidence.aToB.fatigue,
+      bToAFatigue: packet.directionEvidence.bToA.fatigue,
       communicationRecovery:
         "싸운 뒤 바로 결론을 내기보다 감정 확인과 실행 결정을 분리해야 회복이 빠릅니다.",
       roleMoneyLifeRhythm:
@@ -186,6 +184,9 @@ describe("openaiCompatibilityReportWriter", () => {
       relationshipType: "love",
       personALabel: "Partner A",
       personBLabel: "Partner B",
+      relationshipAnalysis: { ...createValidCompatibilityDraft().relationshipAnalysis,
+        aToBFatigue: packet.directionEvidence.aToB.fatigue,
+        bToAFatigue: packet.directionEvidence.bToA.fatigue },
       openingTitle:
         "연애 데이트 애인 설렘 호감 끌림 고마움과 자기 의견 즐거움보다 의무",
       openingSummary:
@@ -357,9 +358,9 @@ describe("openaiCompatibilityReportWriter", () => {
     );
     const noteText = JSON.stringify(note);
 
-    expect(note?.everydayScene).toContain("이슈를 바로 정리하지 못할 때");
-    expect(note?.everydayScene).toContain("현장 피드백");
-    expect(note?.everydayScene).toContain("기준과 선택지");
+    expect(note?.everydayScene).toContain("일을 나눌 때");
+    expect(note?.everydayScene).toContain("어느 부분에서 상대의 도움");
+    expect(note?.positiveExpression).toContain("흐름은");
     expect(noteText).not.toContain("감정을 말로 바로 풀지 못할 때");
     expect(noteText).not.toContain("온도를 올려 대화를 열고");
     expect(noteText).not.toContain("상대가 내 빈칸을 대신 책임지는");
@@ -394,6 +395,9 @@ describe("openaiCompatibilityReportWriter", () => {
       relationshipType: "business_work_partner",
       personALabel: "Partner A",
       personBLabel: "Partner B",
+      relationshipAnalysis: { ...createValidCompatibilityDraft().relationshipAnalysis,
+        aToBFatigue: packet.directionEvidence.aToB.fatigue,
+        bToAFatigue: packet.directionEvidence.bToA.fatigue },
       openingSummary:
         "파트너십가 빨리 관리표처럼 느껴지고 관리 부담가 먼저 보일 수 있습니다.",
       finalAdvice: ["의사결정: Partner A을 먼저 확인하세요."],

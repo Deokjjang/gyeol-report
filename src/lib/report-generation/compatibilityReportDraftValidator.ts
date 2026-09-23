@@ -1,3 +1,5 @@
+import { getCrossTenGodRelation, getDayMasterElementRelation } from "../report-knowledge/compatibilityRelationRules";
+import type { CompatibilityEvidencePacket } from "../report-knowledge/compatibilityEvidenceBuilder";
 import type { CompatibilityReportDraft } from "./compatibilityReportDraftTypes";
 import { COMPATIBILITY_REPORT_CHAPTER_IDS } from "./compatibilityReportDraftTypes";
 import {
@@ -14,6 +16,7 @@ export type CompatibilityReportDraftValidationResult = {
 };
 
 export type CompatibilityReportDraftValidationOptions = {
+  readonly evidencePacket?: CompatibilityEvidencePacket;
   readonly allowedSajuTerms?: readonly string[];
   readonly allowedMbtiTerms?: readonly string[];
 };
@@ -807,6 +810,48 @@ export function normalizeCompatibilityFinalAdviceItemForValidation(item: string)
   return label === undefined ? { body } : { label, body };
 }
 
+function validateDirectionAttribution(draft: CompatibilityReportDraft, packet: CompatibilityEvidencePacket, errors: string[]): void {
+  const context = packet.directionEvidence;
+  if (!context?.persons?.personA || !context.persons.personB || !context.aToB || !context.bToA || !context.categoryRole) {
+    errors.push("COMPATIBILITY_DIRECTION_EVIDENCE_REQUIRED");
+    return;
+  }
+  const { personA, personB } = context.persons;
+  const role = context.categoryRole;
+  if (role.category !== packet.relationshipType || normalizeCompatibilityRelationCategory(draft.relationshipType) !== packet.relationshipType ||
+      role.kind !== (["parentChild", "managerReport"].includes(packet.relationshipType) ? "role-asymmetric" : "symmetric") ||
+      role.assignments?.personA !== null || role.assignments?.personB !== null) errors.push("COMPATIBILITY_ROLE_MISMATCH");
+  for (const [profile, chart, label] of [
+    [personA, draft.chartComparison.personA, draft.personALabel],
+    [personB, draft.chartComparison.personB, draft.personBLabel],
+  ] as const) {
+    if (profile.name !== label || profile.name !== chart.displayName || profile.mbti !== (chart.mbti ?? null) ||
+        profile.dayMaster !== chart.dayMaster || profile.dayPillar !== chart.dayPillar) errors.push("COMPATIBILITY_PERSON_MISMATCH");
+  }
+  for (const [claim, subject, target, text] of [
+    [context.aToB, personA, personB, draft.relationshipAnalysis.aToBFatigue],
+    [context.bToA, personB, personA, draft.relationshipAnalysis.bToAFatigue],
+  ] as const) {
+    const subjectIds = new Set([...subject.traits, ...subject.natal].map((item) => item.evidenceId));
+    const targetIds = new Set([...target.traits, ...target.natal].map((item) => item.evidenceId));
+    const received = getCrossTenGodRelation({ viewerDayStem: target.dayMaster, targetDayStem: subject.dayMaster }) ?? null;
+    const element = getDayMasterElementRelation(subject.dayMaster, target.dayMaster) ?? null;
+    if (claim.subjectPerson !== subject.personId || claim.targetPerson !== target.personId || claim.claimType !== "fatigue" ||
+        claim.relationId !== `${subject.personId}:to:${target.personId}` ||
+        !Array.isArray(claim.evidenceIds) || claim.evidenceIds.length < 2 || claim.evidenceIds.some((id) => !subjectIds.has(id) && !targetIds.has(id)) ||
+        !claim.evidenceIds.some((id) => subjectIds.has(id)) || !claim.evidenceIds.some((id) => targetIds.has(id)) ||
+        claim.receivedTenGod?.tenGod !== received?.tenGod || claim.receivedTenGod?.viewerDayStem !== received?.viewerDayStem ||
+        claim.receivedTenGod?.targetDayStem !== received?.targetDayStem ||
+        claim.element?.relation !== element?.relation || claim.element?.sourceStem !== element?.sourceStem || claim.element?.targetStem !== element?.targetStem ||
+        (claim.mbtiPair !== null && (claim.mbtiPair.sourceType !== subject.mbti || claim.mbtiPair.targetType !== target.mbti))) {
+      errors.push("COMPATIBILITY_DIRECTION_MISMATCH");
+    }
+    // These two factual anchor paragraphs are supplied by the server. Free-form chapters remain writer-owned.
+    const normalize = (value: string) => sanitizeCompatibilityVisibleText(value, draft.relationshipType).replace(/\s+/gu, " ").trim();
+    if (typeof claim.fatigue !== "string" || normalize(text) !== normalize(claim.fatigue)) errors.push("COMPATIBILITY_DIRECTION_TEXT_MISMATCH");
+  }
+}
+
 export function validateCompatibilityReportDraft(
   draft: unknown,
   options: CompatibilityReportDraftValidationOptions = {},
@@ -824,6 +869,7 @@ export function validateCompatibilityReportDraft(
 
   const sanitizedDraft = sanitizeCompatibilityDraft(draft);
 
+  if (options.evidencePacket) validateDirectionAttribution(sanitizedDraft, options.evidencePacket, errors);
   validateCanonicalRelationshipType(sanitizedDraft.relationshipType, errors);
   if (!isScore(sanitizedDraft.scoreSummary.totalScore)) {
     errors.push("COMPATIBILITY_SCORE_MISSING");

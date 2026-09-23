@@ -60,6 +60,7 @@ export function validateProductPublication(product: string, draft: unknown, evid
     career_money_study: (value) => validateCareerReportDraft(value, evidence),
     love_marriage_child: validateLoveMarriageChildReportDraft,
     saju_mbti_compatibility: (value) => validateCompatibilityReportDraft(value, {
+      evidencePacket: evidence as CompatibilityEvidencePacket,
       allowedSajuTerms: deriveAllowedCompatibilitySajuTerms(evidence as CompatibilityEvidencePacket),
       allowedMbtiTerms: deriveAllowedCompatibilityMbtiTerms(evidence as CompatibilityEvidencePacket),
     }),

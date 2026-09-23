@@ -1,3 +1,4 @@
+import { describeCompatibilityPerson, compatibilityCategoryScenes } from "../report-knowledge/compatibilityDirectionEvidence";
 import { withReportInputEvidence } from "./reportInputEvidence";
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import { calculateSaju } from "../saju/calculateSaju";
@@ -195,6 +196,7 @@ export async function generateCompatibilityProductDraft(
   }
 
   const validation = validateCompatibilityReportDraft(draftResult.draft, {
+    evidencePacket,
     allowedSajuTerms: deriveAllowedCompatibilitySajuTerms(evidencePacket),
     allowedMbtiTerms: deriveAllowedCompatibilityMbtiTerms(evidencePacket),
   });
@@ -434,6 +436,12 @@ function buildCompatibilityFallbackDraft(
   const repairFinding = packet.directFindings.find(
     (finding) => finding.type === "repair",
   );
+  const { personA, personB } = packet.directionEvidence.persons;
+  const scene = compatibilityCategoryScenes[relationshipType];
+  const pairReadings = [packet.directionEvidence.aToB, packet.directionEvidence.bToA]
+    .filter((direction) => direction.mbtiPair !== null);
+  const pairSupport = pairReadings.map((direction) => direction.mbtiPair!.positiveInfluence[0]).filter(Boolean);
+  const natalInteraction = packet.deepSajuBridge?.notes.find((note) => note.layer === "cross_ten_god");
   const analysis = {
     connectionSummary: [
       firstNonEmpty(
@@ -449,8 +457,14 @@ function buildCompatibilityFallbackDraft(
         "명리 흐름은 관계의 반복 패턴과 조율 지점을 보여 주고, MBTI는 대화 속도와 반응 방식을 보조로 보여 줍니다.",
       ),
     ].join("\n\n"),
-    firstImpression: `${aName}님과 ${bName}님은 처음에는 서로의 처리 방식이 선명하게 보여 접점이 생깁니다. 한쪽은 방향을 먼저 정리하고, 다른 한쪽은 왜 그런 결론이 나오는지 확인하려 합니다.\n\n가까워질수록 같은 차이가 피로가 됩니다. 빠른 정리는 추진력이 되지만 상대에게는 압박으로 들어갈 수 있고, 긴 확인은 신중함이지만 상대에게는 지연처럼 느껴질 수 있습니다.`,
-    stayingPower: `${relationshipLabel} 관계에서 오래 가는 힘은 차이를 없애는 데 있지 않습니다. 각자의 속도와 확인 방식을 역할로 나눌 때 장점이 살아납니다.\n\n중요한 결정은 감정 확인, 사실 정리, 실행 합의 순서로 나누는 편이 좋습니다. 그래야 빠른 쪽은 방치되지 않고, 신중한 쪽은 밀린다고 느끼지 않습니다.`,
+    firstImpression: `${describeCompatibilityPerson(personA, "relationships", 0)}
+
+${describeCompatibilityPerson(personB, "relationships", 0)}
+
+${scene.scene}에서 친근하게 느낀 부분과 조심하고 싶은 부분을 각자의 말로 확인해 보세요. 비슷한 MBTI라도 개인 원국과 실제 경험이 다르면 같은 방식으로 가까워진다고 볼 수 없습니다.`,
+    stayingPower: `${pairSupport.join(" ") || packet.sajuCompatibility.dayMasterRelation}
+
+${natalInteraction?.positiveExpression ?? packet.sajuCompatibility.tenGodRelation} 잘 맞는다는 느낌만으로 역할을 고정하지 말고, 지금 도움이 되는 행동이 무엇인지 서로 확인하세요. 한 사람이 늘 결정하거나 늘 받아주는 관계가 되어야 한다는 뜻은 아닙니다.`,
     frictionPoints: takeNonEmpty(
       [
         frictionFinding?.interpretation,
@@ -463,11 +477,21 @@ function buildCompatibilityFallbackDraft(
       ],
       4,
     ),
-    categoryReading: `${relationshipLabel}에서는 ${relationshipFocus}을 중심으로 읽어야 합니다. 이 조합은 장점만 보면 보완처럼 보이지만, 실제로는 기준을 누가 잡고 누가 확인하는지에 따라 체감이 크게 갈립니다.\n\n명리는 생활 기준과 반복 마찰을, MBTI는 대화 방식과 반응 속도를 보여 줍니다. 두 근거를 같은 원인으로 단정하지 않고, 관계 장면에서 겹치는 부분만 조율 포인트로 봅니다.`,
-    aToBFatigue: `${aName}님은 해결을 위해 속도를 내지만, ${bName}님에게는 충분히 생각할 시간을 줄이는 압박으로 느껴질 수 있습니다. 특히 결론을 먼저 요구하면 ${bName}님은 대화가 아니라 평가처럼 받아들일 수 있습니다.`,
-    bToAFatigue: `${bName}님은 신중하게 확인하려 하지만, ${aName}님에게는 결정을 미루는 답답함으로 보일 수 있습니다. 반응이 늦어질수록 ${aName}님은 관계의 방향이 흐려진다고 느끼기 쉽습니다.`,
-    communicationRecovery: `${relationshipLabel} 관계의 회복은 좋은 말보다 순서가 중요합니다. 먼저 감정을 확인하고, 다음에 사실을 맞추고, 마지막에 다음 행동을 정해야 합니다.\n\n바로 해결책으로 들어가면 빠른 쪽은 시원하지만 느린 쪽은 밀립니다. 계속 생각만 이어가면 신중한 쪽은 안전하지만 빠른 쪽은 방치된다고 느낍니다.`,
-    roleMoneyLifeRhythm: `${relationshipLabel}에서도 역할, 일정, 돈, 생활 리듬은 감으로 넘기지 않는 편이 좋습니다. 기준이 흐려지면 좋은 보완도 관리 부담으로 바뀝니다.\n\n각자 맡을 일과 다시 이야기할 시점을 짧게 정해 두면 감정 싸움보다 운영 문제로 다룰 수 있습니다.`,
+    categoryReading: `${relationshipLabel}에서는 ${relationshipFocus}을 중심으로 읽습니다. ${scene.scene}이 두 사람의 차이를 구체적으로 살펴볼 수 있는 자리입니다.
+
+${scene.rule} 명리의 관계 작용과 MBTI의 행동 설명은 서로 다른 근거이므로 어느 하나만으로 상대의 의도를 단정하지 않습니다.`,
+    aToBFatigue: packet.directionEvidence.aToB.fatigue,
+    bToAFatigue: packet.directionEvidence.bToA.fatigue,
+    communicationRecovery: `${describeCompatibilityPerson(personA, "communication", 1)}
+
+${describeCompatibilityPerson(personB, "communication", 1)}
+
+${packet.mbtiCompatibility.repairStrategy.slice(0, 2).join(" ") || packet.categoryLens.repairFocus} 실제로 어떤 말이 부담이었는지 한 장면씩 확인하고, 다음 대화에서 바꿀 행동을 서로 정하세요.`,
+    roleMoneyLifeRhythm: `${describeCompatibilityPerson(personA, relationshipType === "coworker" || relationshipType === "managerReport" ? "workplace" : "money", 2)}
+
+${describeCompatibilityPerson(personB, relationshipType === "coworker" || relationshipType === "managerReport" ? "workplace" : "money", 2)}
+
+${scene.rule}`,
     categorySpecificAdvice: takeNonEmpty(
       [
         packet.categoryLens.repairFocus,
@@ -517,9 +541,9 @@ function buildCompatibilityFallbackDraft(
     personALabel: aName,
     personBLabel: bName,
     openingTitle: `${aName}님과 ${bName}님의 ${relationshipLabel} 궁합`,
-    openingSummary: `${relationshipLabel} 관계에서 두 사람은 장점과 피로가 함께 드러납니다. 끌림은 있지만 속도, 기준, 확인 방식을 맞추지 않으면 사소한 대화도 빨리 지칠 수 있습니다.`,
+    openingSummary: `${relationshipLabel} 관계에서 ${aName}님의 ${personA.dayPillar}와 ${bName}님의 ${personB.dayPillar}가 만나는 작용, 각자가 밝힌 MBTI 성향을 구분해 읽습니다. 서로에게 편한 점과 부담이 되는 행동을 실제 장면에 대입해 보세요.`,
     coreLine:
-      "좋게 보면 보완이고, 현실적으로 보면 속도와 확정 타이밍을 조율해야 하는 조합입니다.",
+      packet.mbtiCompatibility.reportLine ?? packet.sajuCompatibility.dayMasterRelation ?? "두 사람의 실제 관계 장면을 각자의 근거와 함께 살펴봅니다.",
     scoreSummary: {
       totalScore: packet.score.totalScore,
       scoreLabel: packet.score.scoreLabel,
@@ -552,7 +576,7 @@ function buildCompatibilityFallbackDraft(
       relationshipRules: analysis.repairStrategy,
     },
     relationshipAnalysis: analysis,
-    chapters: buildFallbackChapters(analysis),
+    chapters: buildFallbackChapters(analysis, packet),
     finalAdvice: [
       "대화 규칙: 결론을 내는 시간과 확인하는 시간을 분리하세요.",
       "생활 기준: 역할과 일정을 감으로 넘기지 말고 짧은 기준으로 남기세요.",
@@ -564,6 +588,7 @@ function buildCompatibilityFallbackDraft(
 
 function buildFallbackChapters(
   analysis: CompatibilityReportDraft["relationshipAnalysis"],
+  packet: CompatibilityEvidencePacket,
 ): CompatibilityReportDraft["chapters"] {
   const chapterById: Record<
     Exclude<CompatibilityReportChapterId, "final_message">,
@@ -579,28 +604,28 @@ function buildFallbackChapters(
       title: "두 사람 연결 요약",
       headline: "끌림과 피로가 같은 차이에서 나옵니다.",
       body: analysis.connectionSummary,
-      directHitScene: "한쪽은 결론을 보고, 다른 한쪽은 전제를 더 확인합니다.",
+      directHitScene: "같은 일을 이야기해도 각자가 중요하게 여긴 조건은 다를 수 있습니다.",
       practicalAdvice: "중요한 대화는 감정, 사실, 실행 순서로 나누세요.",
     },
     attraction: {
       title: "첫 인상과 끌림",
       headline: "서로 다른 처리 방식이 처음에는 자극이 됩니다.",
       body: analysis.firstImpression,
-      directHitScene: "빠른 정리와 깊은 확인이 서로에게 새롭게 보입니다.",
+      directHitScene: "관심을 표현한 행동과 상대가 편안하게 느낀 행동이 같은지 확인합니다.",
       practicalAdvice: "끌림이 생겨도 결정 속도는 따로 맞추세요.",
     },
     strengths: {
       title: "오래 가는 힘",
       headline: "차이를 역할로 나누면 보완이 살아납니다.",
       body: analysis.stayingPower,
-      directHitScene: "한 사람은 방향을 잡고, 다른 사람은 놓친 조건을 확인합니다.",
+      directHitScene: "서로 도움이 된 일을 구체적으로 말하고 그 역할을 계속 맡고 싶은지도 확인합니다.",
       practicalAdvice: "서로의 방식이 필요한 장면을 먼저 정하세요.",
     },
     frictions: {
       title: "자주 부딪히는 지점",
-      headline: "속도와 확인 방식이 먼저 부딪힙니다.",
+      headline: "각자의 근거에서 드러난 마찰을 구분합니다.",
       body: analysis.frictionPoints.join("\n\n"),
-      directHitScene: "같은 대화를 해도 한쪽은 결론을, 다른 한쪽은 확인을 원합니다.",
+      directHitScene: "같은 표현을 듣고도 무엇이 불편했는지는 서로 다를 수 있습니다.",
       practicalAdvice: "결론을 낼 대화와 검토할 대화를 분리하세요.",
     },
     communication: {
@@ -611,10 +636,10 @@ function buildFallbackChapters(
       practicalAdvice: "감정 확인 뒤 사실을 맞추고 다음 행동을 정하세요.",
     },
     relationship_scenes: {
-      title: "A/B 피로 지점",
-      headline: "A가 주는 피로와 B가 주는 피로가 다릅니다.",
+      title: "서로에게 주는 피로",
+      headline: `${packet.personAChartSummary.displayName}님과 ${packet.personBChartSummary.displayName}님의 부담을 구분합니다.`,
       body: `${analysis.aToBFatigue}\n\n${analysis.bToAFatigue}`,
-      directHitScene: "한쪽은 기다림이 답답하고, 다른 한쪽은 빠른 결론이 부담스럽습니다.",
+      directHitScene: "의도한 도움이 부담으로 들렸다면 어느 행동에서 그렇게 느꼈는지 따로 확인합니다.",
       practicalAdvice: "답답함과 부담을 같은 말로 묶지 말고 따로 말하세요.",
     },
     money_lifestyle: {
@@ -635,7 +660,7 @@ function buildFallbackChapters(
       title: "리스크 관리",
       headline: "좋은 차이도 관리 기준이 없으면 지칩니다.",
       body: analysis.riskManagement.join("\n\n"),
-      directHitScene: "장점으로 보였던 차이가 가까워질수록 압박이나 지연으로 느껴집니다.",
+      directHitScene: "도움이 되던 방식도 상황이 달라지면 부담이 될 수 있으므로 합의한 기준을 다시 확인합니다.",
       practicalAdvice: "반복되는 한 가지 기준부터 조정하세요.",
     },
   };

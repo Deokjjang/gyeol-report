@@ -48,7 +48,7 @@ describe("openaiCompatibilityReportWriterPrompt", () => {
     expect(promptText).toContain("대화 흐름, 성장 압박, 생활 운영 충돌, 누적 피로");
     expect(promptText).toContain("리스크 관리는 raw signal 목록이 아니라 해석 제목, 설명, 관리 방법");
     expect(promptText).toContain("A가 B에게 주는 피로와 B가 A에게 주는 피로를 분리");
-    expect(promptText).toContain("A가 해결이라고 생각하는 말이 B에게 압박으로 들리는 장면");
+    expect(promptText).toContain("A/B는 입력 슬롯이다.");
     expect(promptText).toContain("서로의 장점이 어떻게 상대를 살릴 수 있는지와, 같은 장점이 어떻게 상대를 지치게 만들 수 있는지");
     expect(promptText).toContain("명리는 관계 구조, 반복 패턴");
     expect(promptText).toContain("MBTI는 대화 방식, 반응 속도");

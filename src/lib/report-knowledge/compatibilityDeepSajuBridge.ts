@@ -393,7 +393,17 @@ function buildDayMasterEverydayScene(input: {
     return `${formatSubject(input.personAName)} 현실 기준과 생활 규칙을 세우면, ${input.personBName}의 넓은 생각과 감정 흐름이 정리되는 장면입니다.`;
   }
 
-  return `${formatSubject(input.personAName)} 자기 방식으로 방향을 잡으면 ${formatSubject(input.personBName)} 그 기준을 받아 실행이나 반응으로 구체화하는 장면입니다.`;
+  if (input.elementRelation === "generated_by") {
+    return buildDayMasterEverydayScene({ ...input, personAName: input.personBName, personBName: input.personAName,
+      sourceElement: input.targetElement, targetElement: input.sourceElement, elementRelation: "generates" });
+  }
+  if (input.elementRelation === "controlled_by") {
+    return buildDayMasterEverydayScene({ ...input, personAName: input.personBName, personBName: input.personAName,
+      sourceElement: input.targetElement, targetElement: input.sourceElement, elementRelation: "controls" });
+  }
+  return input.elementRelation === "generates"
+    ? `${input.personAName}의 지원이 ${input.personBName}에게 도움이 되는지, 받는 쪽이 원하는 방식인지 확인하는 장면입니다.`
+    : `${input.personAName}의 기준과 ${input.personBName}의 선택이 맞서는 장면에서 조율 범위를 확인합니다. 주도권이나 성격이 고정된다는 뜻은 아닙니다.`;
 }
 
 function buildDayMasterActionRule(
@@ -449,7 +459,7 @@ function buildCrossTenGodInterpretation(input: {
       input.relationshipType,
     ),
     everydayScene: adaptDeepText(
-      `${input.personAName}이 먼저 자기 방식으로 반응하면 ${input.personBName}은 그것을 ${input.personBSeesPersonA}의 기준으로 받아들이고, 이 과정에서 말의 속도 차이와 해석 차이가 생기는 장면입니다.`,
+      `${input.personAName}은 ${input.personBName}을 ${input.personASeesPersonB}의 관점에서, ${input.personBName}은 ${input.personAName}을 ${input.personBSeesPersonA}의 관점에서 읽습니다. 같은 행동을 주고받아도 기대하는 역할이 다른지 확인하는 장면입니다.`,
       input.relationshipType,
     ),
     actionRule: "표현이 먼저 나온 뒤에는 바로 평가하지 말고, 상대가 어떤 기준으로 받아들였는지 확인하는 순서가 필요합니다.",
@@ -562,6 +572,10 @@ function buildElementComplementNote(
     return undefined;
   }
 
+  const complementReadings = [
+    ...personAComplemented.map((element) => `${input.personB.displayName}의 ${elementKo[element]} 흐름은 ${input.personA.displayName}에게 없는 ${elementKo[element]}를 관계에서 접할 기회가 됩니다`),
+    ...personBComplemented.map((element) => `${input.personA.displayName}의 ${elementKo[element]} 흐름은 ${input.personB.displayName}에게 없는 ${elementKo[element]}를 관계에서 접할 기회가 됩니다`),
+  ];
   const personAWeakElements = input.personA.sajuFacts.missingElements;
   const personBWeakElements = input.personB.sajuFacts.missingElements;
   const personAFlowText = formatWeakElementFlow(personAWeakElements);
@@ -597,15 +611,11 @@ function buildElementComplementNote(
     principleExplanation:
       "오행 보완은 한 사람에게 약한 기운을 다른 사람이 어느 정도 자극하거나 보태는 구조입니다. 부족한 오행은 자동으로 잘 켜지지 않는다는 뜻에 가깝습니다.",
     relationshipTranslation: `${formatWeakElementClause(input.personA.displayName, personAWeakElements)}. ${formatWeakElementClause(input.personB.displayName, personBWeakElements)}. 서로의 강한 영역이 그 부분을 일부 보완할 수 있습니다.`,
-    positiveExpression: isBusiness
-      ? `좋게 쓰이면 ${input.personA.displayName}은 기준과 선택지를 정리하고, ${input.personB.displayName}은 현장 피드백과 실행력으로 협업이 입체적으로 굴러갑니다.`
-      : `좋게 쓰이면 ${input.personA.displayName}은 방향과 구조를 잡고, ${input.personB.displayName}은 온도와 반응을 살려 관계가 입체적으로 굴러갑니다.`,
+    positiveExpression: `${complementReadings.join(". ")}. 상대의 행동이 도움이 되는지는 실제 경험으로 확인해야 합니다.`,
     riskExpression: isBusiness
       ? "나쁘게 쓰이면 상대 역할에 내 책임까지 넘기게 되어 관리 부담이 커집니다."
       : "나쁘게 쓰이면 상대가 내 부족한 부분을 알아서 채워 주길 기대하게 되어 부담이 커집니다.",
-    everydayScene: isBusiness
-      ? `${input.personA.displayName}가 이슈를 바로 정리하지 못할 때 ${input.personB.displayName}가 현장 피드백으로 논의를 열고, ${input.personB.displayName}가 방향을 망설일 때 ${input.personA.displayName}가 기준과 선택지를 정리해 주는 장면입니다.`
-      : `${input.personA.displayName}이 감정을 말로 바로 풀지 못할 때 ${input.personB.displayName}이 온도를 올려 대화를 열고, ${input.personB.displayName}이 방향을 망설일 때 ${input.personA.displayName}이 선택지를 정리해 주는 장면입니다.`,
+    everydayScene: `${personASummary}. ${personBSummary}. ${isBusiness ? "일을 나눌 때" : "함께 계획을 정할 때"} 어느 부분에서 상대의 도움을 받고 싶은지 각각 말하고, 부족한 부분의 책임까지 넘기지 않는 장면입니다.`,
     actionRule: isBusiness
       ? "상대 역할에 내 책임까지 넘기는 구조로 만들지 말고, 서로의 강한 영역을 업무 역할로 나눠야 합니다."
       : "상대가 내 빈칸을 대신 책임지는 구조로 만들지 말고, 서로의 강한 영역을 역할로 나눠야 합니다.",
@@ -706,7 +716,8 @@ function buildDayMasterRelationNote(
     relationLabel: relation.relationLabel,
     emotionalMeaning: interpretation.emotionalMeaning,
     practicalMeaning: interpretation.practicalMeaning,
-    scoreImpact: relation.relation === "generates" ? 3 : 1,
+    // A supportive edge is the same pair fact viewed from either end.
+    scoreImpact: relation.relation === "generates" || relation.relation === "generated_by" ? 3 : 1,
     principleExplanation: interpretation.principleExplanation,
     relationshipTranslation: interpretation.relationshipTranslation,
     positiveExpression: interpretation.positiveExpression,
