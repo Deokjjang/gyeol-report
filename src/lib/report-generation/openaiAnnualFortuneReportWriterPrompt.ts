@@ -1,3 +1,4 @@
+import { buildAnnualMonthlyPublication } from "./annualMonthlyPublication";
 import { birthTimePromptContext } from "./birthTimePublication";
 import type { AnnualFortuneEvidencePacket } from "../report-knowledge/annualFortuneEvidence";
 
@@ -33,7 +34,11 @@ function buildPromptPacket(packet: AnnualFortuneEvidencePacket): object {
     annualFortune: packet.annualFortune,
     majorAnnualCross: packet.majorAnnualCross,
     natalAnnualRelations: packet.natalAnnualRelations,
-    monthlyFortunes: packet.monthlyFortunes,
+    monthlyFortunes: packet.monthlyFortunes.map(({ supportSignals: _support, frictionSignals: _friction, ...month }) => {
+      void _support; void _friction;
+      return month;
+    }),
+    monthlyPublication: buildAnnualMonthlyPublication(packet),
     yearlyThemeSummary: packet.yearlyThemeSummary,
     domainFlows: packet.domainFlows,
     riskPatterns: packet.riskPatterns,
@@ -50,7 +55,10 @@ function buildPromptPacket(packet: AnnualFortuneEvidencePacket): object {
     lifeAreaSignals: packet.lifeAreaSignals,
     difficultySignals: packet.difficultySignals,
     opportunitySignals: packet.opportunitySignals,
-    monthlyFortuneSeeds: packet.monthlyFortuneSeeds,
+    monthlyFortuneSeeds: packet.monthlyFortuneSeeds.map(seed => ({
+      month: seed.month, monthGanji: seed.monthGanji, basis: seed.basis,
+      relationFactIds: packet.monthlyFortunes[seed.month - 1].relationFacts.map(fact => fact.id),
+    })),
     warnings: packet.warnings,
   };
 }
@@ -96,7 +104,7 @@ export function buildOpenAIAnnualFortuneReportWriterMessages(input: {
       "majorAnnualCross가 있으면 대운·세운 교차를 반드시 별도 문단으로 설명한다. majorAnnualCross가 null이면 대운 정보가 부족하다고 길게 늘어놓지 말고 세운·원국 관계 중심으로 쓴다.",
       "natalAnnualRelations는 원국에 실제로 있는 지지와 선택 연도 지지가 맞물리는 근거만 사용한다. 원국에 없는 지지 관계를 만들지 않는다.",
       "monthlyFortunes must contain 12 months and must be used as the main monthly evidence. Do not replace it with generic monthly advice.",
-      "월운은 12개월을 단순 한 줄 나열하지 말고 상반기/하반기 흐름 또는 핵심 월별 장면으로 묶어 읽게 한다.",
+      "월별 사실과 분기별 요약은 monthlyPublication에 제공된 값을 사용하며 다른 단락에 월별 예측을 추가하지 않는다.",
       "각 월은 간지, 십성, 원국/월운 작용을 운영 전략으로 번역한다. 월운은 결과 예언이 아니라 달력월 기준 운영 가이드다.",
       "MBTI is not the cause of the annual fortune. MBTI explains how the provided 명리 flow may show up as decision speed, stress response, communication, work rhythm, relationship rhythm, and growth behavior.",
       "Use bridgeEvidence.productKey === saeun as support only. Never treat bridgeEvidence as proof that 명리 and MBTI have the same cause.",
@@ -157,12 +165,14 @@ export function buildOpenAIAnnualFortuneReportWriterMessages(input: {
       "Required domain-specific sections or flow cards: 일·성과, 돈·현실, 인간관계, 연애·가족, 학업·자격증, 몸·생활 리듬.",
       "Required concrete event nouns: 직장, 프로젝트, 상사, 동료, 가족, 부모, 연인, 친구, 돈, 정산, 계약, 생활비, 시험, 자격증, 승진, 이직, 수면, 식사, 일정, 연락.",
       "Do not stop at 책임이 커진다. Say whether it may appear as taking over someone’s task, proving a result, managing money or settlement, changing contact frequency, handling family schedules, preparing certificate/study output, or repairing sleep/meal routine.",
-      "monthlyFlow must use provided monthlyFortuneSeeds.",
+      "Copy monthlyPublication.monthlyFlow, monthlyHighlights, and monthlyFlowReading exactly. These factual monthly sections are server-owned, like pillar tables; compose the other report sections normally.",
+      "monthlyFortunes.relationFacts are the only calculated month/natal interactions. classification.supportFactIds and frictionFactIds reference these facts; neutralObservations are absence observations, not supportive or friction facts.",
+      "Do not infer relation existence from explanation words. No year-month or Dayun-month interaction has been calculated. Ten-gods and element presence alone do not establish a lucky/unlucky month.",
       "Do not invent monthly ganji.",
       "If monthlyFortuneSeeds.monthGanji.basis is calendar_month_approximation, describe monthlyFlow as 월별 운영 가이드, not exact 절기 월운.",
       "Do not write future product or development wording in user-visible text. Forbidden: 추후 고도화, 추후 개발, 정밀 월운은 추후, 고도화됩니다, 개발 예정, future task.",
       "For monthly basis wording, use: 월별 흐름은 달력월 기준 운영 가이드입니다. 실제 체감 시점은 절기와 개인 일정에 따라 조금 달라질 수 있습니다.",
-      "Each monthlyFlow item must use monthlyFortuneSeeds.monthGanji.ganji, basis, elementFocus, and natalInteractionSummary when provided.",
+      "Monthly ganji, basis, elements, ten-gods and relation summaries must remain identical to monthlyPublication; do not add monthly relation claims elsewhere.",
       "Each month should explain: 1. month ganji / element focus, 2. one concrete work/money/relationship/study/health scene, 3. one practical advice.",
       "For deokmin-2026-current style evidence, explain that 丙午 fire can fill weak fire and activate 식신 expression, output, production, content, and visibility, while fire can also generate already-heavy earth and increase work, money, responsibility, performance, and reality pressure.",
       "Bad chapter example:",

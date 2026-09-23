@@ -1,3 +1,5 @@
+import { assertValidAnnualFortuneReportDraft } from "../../../src/lib/report-generation/annualFortuneReportDraftValidator";
+import { buildAnnualMonthlyPublication } from "../../../src/lib/report-generation/annualMonthlyPublication";
 import { describe, expect, it } from "vitest";
 
 import { buildAnnualFortuneEvidence } from "../../../src/lib/report-knowledge/annualFortuneEvidence";
@@ -32,7 +34,7 @@ function buildPacket() {
 }
 
 function createValidDraft(): AnnualFortuneReportDraft {
-  return {
+  return assertValidAnnualFortuneReportDraft({
     version: "v1",
     productType: "annual_fortune",
     productVersion: "v1",
@@ -96,17 +98,7 @@ function createValidDraft(): AnnualFortuneReportDraft {
         "책임이 몰리면 역할과 마감 기준을 문장으로 남기세요.",
       ],
     })),
-    monthlyFlow: Array.from({ length: 12 }, (_, index) => ({
-      month: index + 1,
-      label: `${index + 1}월`,
-      headline: "흐름을 확인하는 달입니다.",
-      monthGanji: "甲子",
-      monthlyBasis: "달력월 기준 운영 가이드",
-      elementFocus: "화",
-      natalInteractionSummary: "화 부족 보완 / 토 과다 자극 / 뚜렷한 지지 충·합·해는 약함",
-      body: "일과 생활의 리듬을 같이 확인해야 합니다.",
-      advice: "무리한 확정보다 기준 정리를 먼저 하세요.",
-    })),
+    ...buildAnnualMonthlyPublication(buildPacket()),
     finalAdvice: [
       "일정과 책임을 한 문장으로 정리하세요.",
       "돈과 기록은 미루지 말고 같은 날 확인하세요.",
@@ -117,7 +109,7 @@ function createValidDraft(): AnnualFortuneReportDraft {
       "이 리포트는 결과를 단정하지 않습니다.",
       "입력되지 않았거나 확실하지 않은 정보는 제한적으로만 반영했습니다.",
     ],
-  };
+  });
 }
 
 function openAIResponse(rawText: string): Response {

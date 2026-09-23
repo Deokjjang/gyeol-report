@@ -1,3 +1,4 @@
+import { annualMonthlyEvidenceMatches, buildAnnualMonthlyPublication } from "./annualMonthlyPublication";
 import {
   isAnnualFortuneReportMode,
   type AnnualFortuneReportDraft,
@@ -1569,6 +1570,7 @@ function validateCurrentYearCoreTone(
 
 export function validateAnnualFortuneReportDraft(
   draft: unknown,
+  evidencePacket?: AnnualFortuneEvidencePacket,
 ): AnnualFortuneReportDraftValidationResult {
   const errors: string[] = [];
   const warnings: string[] = [];
@@ -1584,6 +1586,25 @@ export function validateAnnualFortuneReportDraft(
   const sanitizedDraft = sanitizeDraft(draft);
   validateArrayLengths(sanitizedDraft, errors);
   validateLaunchSections(sanitizedDraft, errors);
+  if (evidencePacket !== undefined) {
+    try {
+      if (draft.targetYear !== evidencePacket.selectedYear || draft.targetYear !== evidencePacket.targetYear) {
+        errors.push("ANNUAL_MONTH_SELECTED_YEAR_MISMATCH");
+      }
+      if (!annualMonthlyEvidenceMatches(evidencePacket)) errors.push("ANNUAL_MONTH_FACTS_MISMATCH");
+      const expected = buildAnnualMonthlyPublication(evidencePacket);
+      // Compare the same sanitized form used by the renderer. No inference from
+      // positive/negative wording: all monthly fact copy is an evidence anchor.
+      const canonical = sanitizeDraft({ ...draft, ...expected });
+      for (const key of ["monthlyFlow", "monthlyHighlights", "monthlyFlowReading"] as const) {
+        if (JSON.stringify(sanitizedDraft[key]) !== JSON.stringify(canonical[key])) {
+          errors.push(`ANNUAL_MONTH_PUBLICATION_MISMATCH:${key}`);
+        }
+      }
+    } catch {
+      errors.push("ANNUAL_MONTH_EVIDENCE_INVALID");
+    }
+  }
 
   const visibleText = collectVisibleStrings(sanitizedDraft).join("\n");
   validateModeTone(sanitizedDraft, visibleText, errors);

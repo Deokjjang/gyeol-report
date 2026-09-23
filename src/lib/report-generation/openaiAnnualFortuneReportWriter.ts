@@ -310,7 +310,6 @@ function attachDeterministicEvidence(input: {
     version: "v1",
     productType: "annual_fortune",
     productVersion: "v1",
-    targetYear: input.evidencePacket.targetYear,
     mode,
     yearSummary: {
       ...((input.parsed as { readonly yearSummary?: object }).yearSummary ?? {}),
@@ -423,7 +422,7 @@ export async function generateAnnualFortuneReportDraft(input: {
     parsed: parseJson(rawText),
     evidencePacket: input.evidencePacket,
   });
-  const validation = validateAnnualFortuneReportDraft(parsed);
+  const validation = validateAnnualFortuneReportDraft(parsed, input.evidencePacket);
 
   if (!validation.ok) {
     throw new AnnualFortuneReportWriterFailure({

@@ -1,3 +1,4 @@
+import type { AnnualFortuneEvidencePacket } from "../report-knowledge/annualFortuneEvidence";
 import { publicationBirthTimeContexts, publishedPillarMatches } from "./birthTimePublication";
 import { validateDayunPublication } from "./dayunPublication";
 import { validateProductEvidence } from "./productEvidenceValidation";
@@ -65,7 +66,7 @@ export function validateProductPublication(product: string, draft: unknown, evid
       allowedMbtiTerms: deriveAllowedCompatibilityMbtiTerms(evidence as CompatibilityEvidencePacket),
     }),
     major_fortune: validateMajorFortuneReportDraft,
-    annual_fortune: validateAnnualFortuneReportDraft,
+    annual_fortune: (value) => validateAnnualFortuneReportDraft(value, evidence as AnnualFortuneEvidencePacket),
   };
   let validation: { ok: boolean; errors: readonly string[] } | undefined;
   try { validation = validators[product]?.(product === "saju_mbti_full" ? candidate : draft); }

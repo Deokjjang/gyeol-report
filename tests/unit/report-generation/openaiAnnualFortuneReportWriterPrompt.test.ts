@@ -96,11 +96,11 @@ describe("openaiAnnualFortuneReportWriterPrompt", () => {
     const prompt = buildMessagesText();
 
     expect(prompt).toContain("monthlyFortuneSeeds");
-    expect(prompt).toContain("monthlyFlow must use provided monthlyFortuneSeeds");
+    expect(prompt).toContain("Copy monthlyPublication.monthlyFlow, monthlyHighlights, and monthlyFlowReading exactly");
     expect(prompt).toContain("Do not invent monthly ganji");
     expect(prompt).toContain("calendar_month_approximation");
     expect(prompt).toContain("월별 운영 가이드");
-    expect(prompt).toContain("monthGanji.ganji");
+    expect(prompt).toContain("relationFactIds");
     expect(prompt).toContain("natalInteractionSummary");
     expect(prompt).toContain("one concrete work/money/relationship/study/health scene");
     expect(prompt).toContain("flowIndex");
@@ -141,7 +141,7 @@ describe("openaiAnnualFortuneReportWriterPrompt", () => {
     expect(prompt).toContain("현재 대운은 그 해가 놓인 10년 배경");
     expect(prompt).toContain("majorAnnualCross가 있으면 대운·세운 교차");
     expect(prompt).toContain("monthlyFortunes must contain 12 months");
-    expect(prompt).toContain("상반기/하반기 흐름 또는 핵심 월별 장면");
+    expect(prompt).toContain("월별 사실과 분기별 요약은 monthlyPublication");
     expect(prompt).toContain("MBTI is not the cause of the annual fortune");
     expect(prompt).toContain("Use bridgeEvidence.productKey === saeun");
     expect(prompt).toContain("과거 5년과 올해는 기본 조회 가능");

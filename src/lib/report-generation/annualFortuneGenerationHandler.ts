@@ -1,3 +1,4 @@
+import { buildAnnualMonthlyPublication } from "./annualMonthlyPublication";
 import { withReportInputEvidence } from "./reportInputEvidence";
 import { withBirthTimeEvidence } from "../saju/birthTimePrecisionTypes";
 import { calculateCustomerDayun, selectCustomerDayun } from "../saju/customerDayun";
@@ -27,7 +28,6 @@ import {
   type AnnualFortuneReportMode,
 } from "./annualFortuneReportDraftTypes";
 import {
-  getAnnualMonthlyCardBasisLabel,
   validateAnnualFortuneReportDraft,
 } from "./annualFortuneReportDraftValidator";
 import {
@@ -66,8 +66,6 @@ export type AnnualFortuneGenerationHandlerOptions = {
     readonly config?: AnnualFortuneReportWriterConfig;
   };
 };
-
-const annualFortuneMonthlyBasisFallback = "달력월 기준 운영 가이드";
 
 const tenGodKoByHanja = {
   比肩: "비견",
@@ -149,7 +147,7 @@ export async function generateAnnualFortuneProductDraft(
     });
   }
 
-  const validation = validateAnnualFortuneReportDraft(draftResult.draft);
+  const validation = validateAnnualFortuneReportDraft(draftResult.draft, evidencePacket);
 
   if (!validation.ok || validation.value === undefined) {
     return annualFortuneFailure({
@@ -413,12 +411,6 @@ function safeList(
   return result;
 }
 
-function formatMonthlyBasis(value: string | null | undefined): string {
-  return getAnnualMonthlyCardBasisLabel(
-    value ?? annualFortuneMonthlyBasisFallback,
-  );
-}
-
 function buildDraftFlowSection(
   packet: AnnualFortuneEvidencePacket,
   key: keyof AnnualFortuneEvidencePacket["domainFlows"],
@@ -437,31 +429,7 @@ function buildDraftFlowSection(
 function buildMonthlyHighlights(
   packet: AnnualFortuneEvidencePacket,
 ): AnnualFortuneReportDraft["monthlyHighlights"] {
-  const groups = [
-    { label: "1~3월", months: packet.monthlyFortunes.slice(0, 3) },
-    { label: "4~6월", months: packet.monthlyFortunes.slice(3, 6) },
-    { label: "7~9월", months: packet.monthlyFortunes.slice(6, 9) },
-    { label: "10~12월", months: packet.monthlyFortunes.slice(9, 12) },
-  ];
-
-  return groups.map((group) => {
-    const themes = group.months.map((month) => month.monthTheme).join(" ");
-    const cautions = group.months
-      .map((month) => month.caution)
-      .filter((value) => value.trim().length > 0)
-      .slice(0, 2)
-      .join(" ");
-    const actionHint =
-      group.months[0]?.actionHint ??
-      "월별 운영 기준을 작게 나누어 확인하세요.";
-
-    return {
-      monthLabel: group.label,
-      headline: `${group.label} 운영 흐름`,
-      body: `${themes} 이 구간은 한 달씩 끊어 보기보다 일, 돈, 관계, 회복 리듬이 어디에서 먼저 움직이는지 묶어서 읽는 편이 좋습니다. ${cautions}`,
-      actionHint,
-    };
-  });
+  return buildAnnualMonthlyPublication(packet).monthlyHighlights;
 }
 
 function buildFlowCards(
@@ -560,18 +528,7 @@ function buildChapters(
 function buildMonthlyFlow(
   packet: AnnualFortuneEvidencePacket,
 ): AnnualFortuneReportDraft["monthlyFlow"] {
-  return packet.monthlyFortunes.map((month) => ({
-    month: month.month,
-    label: month.label,
-    headline: month.monthTheme,
-    monthGanji: month.ganji,
-    monthlyBasis: formatMonthlyBasis(null),
-    elementFocus: month.stemTenGod,
-    natalInteractionSummary:
-      [...month.supportSignals, ...month.frictionSignals].join(" / ") || null,
-    body: `${month.interpretation} ${month.caution}`,
-    advice: month.actionHint,
-  }));
+  return buildAnnualMonthlyPublication(packet).monthlyFlow;
 }
 
 function buildAnnualFortuneFallbackDraft(
@@ -590,8 +547,7 @@ function buildAnnualFortuneFallbackDraft(
       ? "현재 대운 정보가 입력되지 않은 결과에서는 선택 연도 세운과 원국의 작용을 먼저 읽고, 10년 배경은 연결된 결과에서 보완합니다."
       : `${packet.majorAnnualCross.majorGanji} 대운은 10년 배경이고 ${packet.majorAnnualCross.annualGanji} 세운은 그 위에 올라오는 1년 자극입니다. ${packet.majorAnnualCross.interpretation} ${packet.majorAnnualCross.caution}`;
   const natalAnnualReading = `${packet.natalAnnualRelations.interpretation} ${packet.natalAnnualRelations.caution}`;
-  const monthlyFlowReading =
-    "12개월 월운은 한 달씩 끊어진 예언이 아니라 선택 연도 안에서 운영 리듬을 나누어 보는 기준입니다. 상반기에는 일과 돈의 기준을 먼저 잡고, 하반기에는 관계와 회복 리듬까지 함께 조정하는 식으로 읽는 편이 안전합니다.";
+  const monthlyFlowReading = buildAnnualMonthlyPublication(packet).monthlyFlowReading;
   const finalAdvice = [
     packet.domainFlows.careerWork.actionHint,
     packet.domainFlows.moneyResource.actionHint,

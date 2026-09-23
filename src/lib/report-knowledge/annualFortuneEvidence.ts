@@ -1,3 +1,7 @@
+import {
+  buildAnnualMonthRelationFacts, classifyAnnualMonthFacts, explainAnnualMonthFact,
+  summarizeAnnualMonthFacts, type AnnualMonthRelationFact, type AnnualMonthClassification,
+} from "./annualMonthRelationFacts";
 import type { CustomerDayun, DayunSelection } from "../saju/customerDayun";
 import type {
   AnnualBranchInteraction,
@@ -136,6 +140,11 @@ export interface AnnualFortuneEvidencePacket {
     readonly caution: string;
   };
   readonly monthlyFortunes: readonly {
+    readonly basis: AnnualMonthGanjiInfo["basis"];
+    readonly elements: readonly FiveElement[];
+    readonly relationFacts: readonly AnnualMonthRelationFact[];
+    readonly classification: AnnualMonthClassification;
+    readonly neutralObservations: readonly ("no_natal_branch_relation" | "no_missing_element_present" | "no_heavy_element_pressure")[];
     readonly month: number;
     readonly label: string;
     readonly ganji: string;
@@ -806,33 +815,39 @@ function buildNatalAnnualRelations(input: {
   };
 }
 
-function buildMonthlyFortunes(input: {
+export function buildAnnualMonthlyFortunes(input: {
   readonly dayMaster: HeavenlyStem;
-  readonly seeds: AnnualFortuneEvidencePacket["monthlyFortuneSeeds"];
+  readonly targetYear: number;
+  readonly missingElements: readonly FiveElement[];
+  readonly heavyElements: readonly FiveElement[];
+  readonly natalBranches: readonly EarthlyBranch[];
 }): AnnualFortuneEvidencePacket["monthlyFortunes"] {
-  return input.seeds.map((seed) => {
-    const stemTenGod = getTenGodForStemPair(input.dayMaster, seed.monthGanji.stem);
-    const branchTenGod = getBranchTenGod(input.dayMaster, seed.monthGanji.branch);
-    const hasFriction = /충|해|형|파/u.test(seed.natalInteractionSummary);
-    const hasSupport = /보완|합|반합|삼합|육합/u.test(seed.natalInteractionSummary);
-
+  return Array.from({ length: 12 }, (_, index) => {
+    const monthGanji = getAnnualMonthGanjiInfo({ year: input.targetYear, month: index + 1 });
+    const stemTenGod = getTenGodForStemPair(input.dayMaster, monthGanji.stem);
+    const branchTenGod = getBranchTenGod(input.dayMaster, monthGanji.branch);
+    const relationFacts = buildAnnualMonthRelationFacts({ ...input, monthGanji });
+    const classification = classifyAnnualMonthFacts(relationFacts);
+    const elements = unique([monthGanji.stemElement, monthGanji.branchElement]);
+    const neutralObservations: AnnualFortuneEvidencePacket["monthlyFortunes"][number]["neutralObservations"][number][] = [];
+    if (!relationFacts.some(f => f.source === "month_natal_branch")) neutralObservations.push("no_natal_branch_relation");
+    if (!relationFacts.some(f => f.type === "missing_element_present")) neutralObservations.push("no_missing_element_present");
+    if (!relationFacts.some(f => f.source === "month_natal_element" && f.type !== "missing_element_present")) neutralObservations.push("no_heavy_element_pressure");
+    const topic = stemTenGod === "식신" || stemTenGod === "상관" ? "작업 결과와 표현"
+      : stemTenGod === "정재" || stemTenGod === "편재" ? "돈과 자원의 사용 기준"
+      : stemTenGod === "정관" || stemTenGod === "편관" ? "책임과 평가의 범위"
+      : stemTenGod === "정인" || stemTenGod === "편인" ? "학습과 문서 정리" : "자기 기준과 공동 역할";
     return {
-      month: seed.month,
-      label: seed.label,
-      ganji: seed.monthGanji.ganji,
-      stem: seed.monthGanji.stem,
-      branch: seed.monthGanji.branch,
-      stemTenGod,
-      branchTenGod,
-      monthTheme: `${seed.label} ${seed.monthGanji.ganji} ${stemTenGod} 흐름`,
-      supportSignals: hasSupport ? [seed.natalInteractionSummary] : [],
-      frictionSignals: hasFriction ? [seed.natalInteractionSummary] : [],
-      actionHint: `${seed.label}은 달력월 기준으로 ${seed.elementFocus} 흐름을 생활 운영에 적용합니다.`,
-      caution:
-        seed.monthGanji.basis === "calendar_month_approximation"
-          ? "달력월 기준 운영 가이드이므로 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다."
-          : "절기 기준 월운도 결과를 확정하지 않고 운영 기준으로만 사용합니다.",
-      interpretation: seed.plain,
+      month: index + 1, label: monthGanji.label, ganji: monthGanji.ganji,
+      stem: monthGanji.stem, branch: monthGanji.branch, stemTenGod, branchTenGod,
+      basis: monthGanji.basis, elements, relationFacts, classification, neutralObservations,
+      monthTheme: `${monthGanji.label} ${monthGanji.ganji} · ${stemTenGod}과 ${branchTenGod}`,
+      // Compatibility display fields only; authoritative classification uses fact IDs.
+      supportSignals: relationFacts.filter(f => classification.supportFactIds.includes(f.id)).map(explainAnnualMonthFact),
+      frictionSignals: relationFacts.filter(f => classification.frictionFactIds.includes(f.id)).map(explainAnnualMonthFact),
+      interpretation: `${monthGanji.label} ${monthGanji.ganji}의 오행은 ${elements.map(e => elementKo[e]).join("·")}입니다. 일간 ${input.dayMaster} 기준 월간은 ${stemTenGod}, 월지 본기는 ${branchTenGod}으로 읽으며 ${topic}을 살피는 관점입니다.`,
+      actionHint: `${classification.status === "mixed" ? "연결되는 접점과 조정이 필요한 작용을 함께 읽습니다." : classification.status === "supportive" ? "연결·보완 요소는 활용할 접점이며 결과를 보장하지 않습니다." : classification.status === "friction" ? "마찰 작용은 조정할 지점이며 실제 사건의 예고가 아닙니다." : "관계의 부재를 호재나 악재로 바꾸지 않고 월간지와 십성을 중심으로 읽습니다."} ${monthGanji.label}에는 ${topic} 중 현재 일정에 해당하는 항목을 골라 확인하세요.`,
+      caution: "달력월 기준 운영 가이드이므로 절기와 개인 일정에 따라 체감 시점은 달라질 수 있습니다.",
     };
   });
 }
@@ -1067,77 +1082,18 @@ function buildSaeunBridgeSignals(input: {
   ];
 }
 
-function buildMonthlyNatalInteractionSummary(input: {
-  readonly monthGanji: AnnualMonthGanjiInfo;
-  readonly missingElements: readonly FiveElement[];
-  readonly heavyElements: readonly FiveElement[];
-  readonly natalBranches: readonly EarthlyBranch[];
-}): string {
-  const monthElements = unique([
-    input.monthGanji.stemElement,
-    input.monthGanji.branchElement,
-  ]);
-  const fillsMissing = monthElements.filter((element) =>
-    input.missingElements.includes(element),
-  );
-  const overloadsHeavy = unique([
-    ...monthElements.filter((element) => input.heavyElements.includes(element)),
-    ...monthElements
-      .map((element) => getGeneratedElement(element))
-      .filter((element) => input.heavyElements.includes(element)),
-  ]);
-  const interactions = getAnnualBranchInteractions({
-    annualBranch: input.monthGanji.branch,
-    natalBranches: input.natalBranches,
-  });
-
-  return [
-    fillsMissing.length > 0
-      ? `${formatElementList(fillsMissing)} 부족 보완`
-      : "부족 오행 직접 보완 약함",
-    overloadsHeavy.length > 0
-      ? `${formatElementList(overloadsHeavy)} 과다 자극`
-      : "과다 오행 자극 약함",
-    interactions.length > 0
-      ? `지지 ${interactions
-          .slice(0, 2)
-          .map((interaction) => `${interaction.branches.join("")} ${interaction.type}`)
-          .join(", ")}`
-      : "뚜렷한 지지 충·합·해는 약함",
-  ].join(" / ");
-}
-
-function buildMonthlyFortuneSeeds(input: {
-  readonly targetYear: number;
-  readonly missingElements: readonly FiveElement[];
-  readonly heavyElements: readonly FiveElement[];
-  readonly natalBranches: readonly EarthlyBranch[];
-}
+function buildMonthlyFortuneSeeds(
+  targetYear: number,
+  months: AnnualFortuneEvidencePacket["monthlyFortunes"],
 ): AnnualFortuneEvidencePacket["monthlyFortuneSeeds"] {
-  return Array.from({ length: 12 }, (_, index) => {
-    const month = index + 1;
-    const monthGanji = getAnnualMonthGanjiInfo({
-      year: input.targetYear,
-      month,
-    });
-    const elementFocus = `${elementKo[monthGanji.stemElement]}·${elementKo[monthGanji.branchElement]}`;
-    const natalInteractionSummary = buildMonthlyNatalInteractionSummary({
-      monthGanji,
-      missingElements: input.missingElements,
-      heavyElements: input.heavyElements,
-      natalBranches: input.natalBranches,
-    });
-
-    return {
-      month,
-      label: monthGanji.label,
-      monthGanji,
-      elementFocus,
-      basis: monthGanji.basis,
-      natalInteractionSummary,
-      plain: `${monthGanji.label}은 ${monthGanji.ganji} 흐름을 달력월 기준으로 근사해 보는 월별 운영 가이드입니다. ${monthGanji.elementSummary}`,
-    };
-  });
+  return months.map(month => ({
+    month: month.month, label: month.label,
+    monthGanji: getAnnualMonthGanjiInfo({ year: targetYear, month: month.month }),
+    elementFocus: month.elements.map(e => elementKo[e]).join("·"),
+    basis: month.basis,
+    natalInteractionSummary: summarizeAnnualMonthFacts(month.relationFacts),
+    plain: month.interpretation,
+  }));
 }
 
 function buildElementEffect(input: {
@@ -1463,16 +1419,10 @@ export function buildAnnualFortuneEvidence(input: {
     annualBranch: annualGanji.branch,
     branchInteractions,
   });
-  const monthlyFortuneSeeds = buildMonthlyFortuneSeeds({
-    targetYear: input.targetYear,
-    missingElements,
-    heavyElements,
-    natalBranches,
+  const monthlyFortunes = buildAnnualMonthlyFortunes({
+    dayMaster, targetYear: input.targetYear, missingElements, heavyElements, natalBranches,
   });
-  const monthlyFortunes = buildMonthlyFortunes({
-    dayMaster,
-    seeds: monthlyFortuneSeeds,
-  });
+  const monthlyFortuneSeeds = buildMonthlyFortuneSeeds(input.targetYear, monthlyFortunes);
   const domainFlows = buildDomainFlows({
     annualFortune,
     lifeAreaSignals,

@@ -1,3 +1,4 @@
+import { explainAnnualMonthFact } from "../../../lib/report-knowledge/annualMonthRelationFacts";
 import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
 import readingStyles from "../../../components/report/reportReading.module.css";
 import type { ReactNode } from "react";
@@ -317,15 +318,12 @@ function renderSaeunFortuneTable(
             monthLabel: text(flow.label),
             monthGanji: flow.monthGanji === null ? undefined : text(flow.monthGanji),
             oneLine: text(flow.headline),
-            caution:
-              flow.natalInteractionSummary === null
-                ? null
-                : explainAnnualSignal(flow.natalInteractionSummary),
+            caution: text(flow.advice),
             basis: getMonthlyBasisDisplayLabel(flow.monthlyBasis),
             interactions:
               flow.natalInteractionSummary === null
                 ? []
-                : [explainAnnualSignal(flow.natalInteractionSummary)],
+                : [text(flow.natalInteractionSummary)],
           })),
         })
       : buildSaeunFortuneTableData({
@@ -367,9 +365,7 @@ function renderSaeunFortuneTable(
             oneLine: month.monthTheme,
             caution: month.caution,
             basis: "달력월 기준 운영 가이드",
-            interactions: [...month.supportSignals, ...month.frictionSignals].map(
-              explainAnnualSignal,
-            ),
+            interactions: month.relationFacts.map(explainAnnualMonthFact),
           })),
         });
 
