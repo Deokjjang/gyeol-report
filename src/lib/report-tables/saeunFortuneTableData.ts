@@ -1,3 +1,4 @@
+import { buildCanonicalManseRyeokTableData } from "./manseRyeokTableData";
 import {
   getTenGodForStemPair as getStemTenGodForPair,
 } from "../report-knowledge/annualFortuneYearRules";
@@ -138,7 +139,7 @@ export function buildAnnualFortuneReportCommonTablesData(
 export function buildAnnualFortuneReportManseRyeokTableData(
   evidence: AnnualFortuneEvidencePacket,
 ): ManseRyeokCommonTableData {
-  return buildManseRyeokCommonTableData({
+  return buildCanonicalManseRyeokTableData(evidence, evidence.personContext.name) ?? buildManseRyeokCommonTableData({
     displayName: evidence.personContext.name,
     fourPillarGrid: buildAnnualFortuneFourPillarGrid(evidence),
   });

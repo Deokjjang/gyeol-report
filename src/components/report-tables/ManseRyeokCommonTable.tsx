@@ -93,6 +93,9 @@ export default function ManseRyeokCommonTable({
             </div>
           </div>
 
+          {data.natalEvidence ? <p className="px-3 py-3 text-xs leading-5 text-[#7a6f63]">
+            {data.natalEvidence.precision === "exact" ? "입력한 정확한 출생시각의 원국입니다." : data.natalEvidence.precision === "approximate" ? "선택한 시간대 전체에서 확정되는 원국입니다." : "출생시간 미상 · 확정된 연·월·일주만 표시합니다. 시주에 따라 달라질 수 있는 표식은 포함하지 않습니다."}
+          </p> : null}
           <FiveElementDistribution data={data.fiveElementDistribution} />
 
           {visibleDetailRows.map((row) => (
@@ -112,6 +115,16 @@ export default function ManseRyeokCommonTable({
               </div>
             </div>
           ))}
+          {data.natalEvidence ? <details className="px-4 py-3 text-sm text-[#5d544d]">
+            <summary className="min-h-11 cursor-pointer py-3 font-bold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7f1d38]">전체 원국 표식과 해석 근거</summary>
+            <p className="mb-3 text-xs leading-5 text-[#7a6f63]">기둥별 표식과 원국 전체에서 파생된 근거를 함께 확인할 수 있습니다. 십이신살은 연지·일지 기준을 구분하며, 대운·세운의 표식은 이 목록에 섞지 않습니다.</p>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {data.natalEvidence.features.filter(feature => ["sinsal", "gwiin", "twelve_sinsal"].includes(feature.category)).map(feature => <li key={feature.id} className="min-w-0 border-t border-[#eadfce] pt-3 [overflow-wrap:anywhere]">
+                <p className="font-bold">{feature.label}</p>
+                <p className="mt-1 text-xs leading-5">{feature.basis}{feature.positions.length ? ` · ${feature.positions.map(position => data.columns.find(c => c.key === position)?.label).filter(Boolean).join("·")}` : " · 기둥 한 곳에 배정하지 않음"}</p>
+              </li>)}
+            </ul>
+          </details> : null}
         </div>
       ) : null}
     </section>

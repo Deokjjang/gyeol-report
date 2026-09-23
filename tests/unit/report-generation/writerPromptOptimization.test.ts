@@ -117,8 +117,9 @@ it("all 392 baseline instruction meanings and the output schema remain intact", 
   expect(lines).toHaveLength(392);
   expect(hash(lines)).toBe("112f6e75a080fd2567652d986ce66ed032e8c33afea1c608c8b331ba6674660f");
   expect(hash(request.jsonSchema)).toBe("16f23f4b24e0cf12f1a5b1cb766ad392b354399c4614d791a9f23fd113a6fb1d");
-  // Entire uncompressed evidence captured independently at the same baseline.
-  expect(hash(readEvidence(user).expanded)).toBe("e6673de8ccb82587a481965a13d8a29da42ac75126e27af62413e5f2d14d797b");
+  // Updated only for canonical natal hidden-stem correction (MAIN/SUB/MINOR).
+  // Instruction/schema and all five other product request hashes remain unchanged.
+  expect(hash(readEvidence(user).expanded)).toBe("ff35bf1ecf58f43c503e36c636b053c401696553ed93a610a209f771683a7f70");
 });
 
 const otherRequestHashes = {

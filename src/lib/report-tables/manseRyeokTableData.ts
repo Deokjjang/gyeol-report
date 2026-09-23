@@ -1,3 +1,4 @@
+import { getCanonicalNatalTable, type NatalPersonRole } from "../report-knowledge/natalTableEvidence";
 import {
   getBranchDisplay,
   getStemDisplay,
@@ -217,7 +218,7 @@ function buildFiveElementDistribution(
   }
 
   return {
-    basisLabel: "천간·지지 8글자 기준",
+    basisLabel: `천간·지지 ${Object.values(counts).reduce((sum, n) => sum + n, 0)}글자 기준`,
     items: FIVE_ELEMENT_ORDER.map((element) => ({
       element,
       label: FIVE_ELEMENT_LABEL_BY_ELEMENT[element],
@@ -291,4 +292,14 @@ function getDetailValues(
     case "interactions":
       return pillar.interactions ?? [];
   }
+}
+
+// Snapshot-only reader. No calendar or feature recomputation during rendering.
+export function buildCanonicalManseRyeokTableData(evidence: unknown, displayName?: string, role: NatalPersonRole = "person"): ManseRyeokCommonTableData | undefined {
+  const natal = getCanonicalNatalTable(evidence, role);
+  if (!natal) return;
+  const data = buildManseRyeokCommonTableData({ displayName, fourPillarGrid: natal.pillars });
+  return { ...data, natalEvidence: natal, detailRows: data.detailRows.map(row => ({ ...row,
+    label: row.key === "twelveSinsal" ? "십이신살 · 연지 기준" : row.key === "interactions" ? "계산된 원국 합·충" : row.label,
+  })) };
 }

@@ -1,3 +1,4 @@
+import { buildCanonicalManseRyeokTableData } from "./manseRyeokTableData";
 import {
   getMbtiSourceProfile,
   type MbtiSourceProfile,
@@ -50,7 +51,7 @@ export function buildLoveMarriageChildReportCommonTablesData(
 export function buildLoveMarriageChildReportManseRyeokTableData(
   evidence: LoveMarriageChildReportEvidencePacket,
 ): ManseRyeokCommonTableData {
-  return buildManseRyeokCommonTableData({
+  return buildCanonicalManseRyeokTableData(evidence, evidence.personContext.name) ?? buildManseRyeokCommonTableData({
     displayName: evidence.personContext.name,
     fourPillarGrid: buildLoveMarriageChildFourPillarGrid(evidence),
   });

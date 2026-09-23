@@ -1,3 +1,5 @@
+import { HIDDEN_STEMS } from "../saju/constants";
+import type { EarthlyBranch } from "../saju/types";
 import {
   amrokBranchesByStem,
   baekhoDayPillars,
@@ -133,20 +135,13 @@ const normalizedBranchToKo = {
   해: "해",
 } as const satisfies Record<NormalizedBranch, string>;
 
-const hiddenStemsByBranch = {
-  자: ["癸"],
-  축: ["癸", "辛", "己"],
-  인: ["戊", "丙", "甲"],
-  묘: ["甲", "乙"],
-  진: ["乙", "癸", "戊"],
-  사: ["戊", "庚", "丙"],
-  오: ["丙", "己", "丁"],
-  미: ["丁", "乙", "己"],
-  신: ["戊", "壬", "庚"],
-  유: ["庚", "辛"],
-  술: ["辛", "丁", "戊"],
-  해: ["戊", "甲", "壬"],
-} as const satisfies Record<NormalizedBranch, readonly string[]>;
+// Display and narrative dictionaries use the same MAIN/SUB/MINOR stems as
+// canonical natal calculation, rather than a second seasonal-stem dictionary.
+const hiddenStemsByBranch = Object.fromEntries(
+  Object.entries(normalizedBranchToHanja).map(([branch, hanja]) => [branch,
+    HIDDEN_STEMS[hanja as EarthlyBranch].map(item => item.stem),
+  ]),
+) as unknown as Record<NormalizedBranch, readonly string[]>;
 
 const twelveLifeStageByStem = {
   갑: {
@@ -470,7 +465,7 @@ function getMainHiddenStem(branch: NormalizedBranch | undefined): NormalizedStem
     return undefined;
   }
 
-  return getNormalizedStemFromHanja(hiddenStemsByBranch[branch].at(-1));
+  return getNormalizedStemFromHanja(hiddenStemsByBranch[branch][0]);
 }
 
 function getTenGodLabel(

@@ -215,7 +215,7 @@ describe("comprehensive report profile table builder", () => {
     expect(dayColumn?.tenGod).toEqual(
       expect.arrayContaining(["천간 비견", "지지 식신"]),
     );
-    expect(dayColumn?.hiddenStems).toEqual(["癸", "辛", "己"]);
+    expect(dayColumn?.hiddenStems).toEqual(["己", "癸", "辛"]); // canonical MAIN/SUB/MINOR order
     expect(dayColumn?.twelveLifeStage).toBeDefined();
     expect(dayColumn?.twelveLifeStage).not.toEqual(["-"]);
     expect(dayColumn?.twelveSinsal).toEqual(expect.arrayContaining(["화개살"]));

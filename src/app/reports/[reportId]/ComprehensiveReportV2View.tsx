@@ -1,3 +1,4 @@
+import { buildCanonicalManseRyeokTableData } from "../../../lib/report-tables/manseRyeokTableData";
 import { publicationBirthTimeContexts } from "../../../lib/report-generation/birthTimePublication";
 import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
 import readingStyles from "../../../components/report/reportReading.module.css";
@@ -71,7 +72,7 @@ export function ComprehensiveReportV2View({
     return <p>리포트를 준비하고 있습니다. 잠시 후 다시 확인해 주세요.</p>;
   }
   const birthTimeContext = publicationBirthTimeContexts(evidencePacket)?.person;
-  const manseRyeokTableData = buildManseRyeokTableData({
+  const manseRyeokTableData = buildCanonicalManseRyeokTableData(evidencePacket, displayName) ?? buildManseRyeokTableData({
     allowUnknownHour: birthTimeContext?.birthTimePrecision === "unknown",
     profile: draft.profileTable,
     displayName,

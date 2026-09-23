@@ -1,3 +1,4 @@
+import { buildProductNatalTables } from "../report-knowledge/natalTableEvidence";
 import type { WriterCallAudit } from "./reportWriterCallGuard";
 import type { DeliveryAudit } from "./paidWriterRescue";
 import type { BirthTimeCalculationContext } from "../saju/birthTimePrecisionTypes";
@@ -148,6 +149,7 @@ export function dispatchProductGenerationInput(
         evidencePacket: {
           ...result.evidencePacket,
           calendarCalculationVersion: SAJU_CALENDAR_VERSION,
+          natalTableEvidence: buildProductNatalTables(result.evidencePacket),
         },
       };
     });

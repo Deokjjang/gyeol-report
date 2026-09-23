@@ -46,13 +46,13 @@ describe("saju pillar feature placement", () => {
     ]);
   });
 
-  it("builds hidden-stem and twelve-life-stage rows for the external parity fixture", () => {
+  it("uses canonical engine hidden stems and keeps twelve-life-stage parity", () => {
     const columns = buildSajuPillarGridColumns(externalPillars);
 
-    expect(getColumn(columns, "hour").hiddenStems).toEqual(["乙", "癸", "戊"]);
-    expect(getColumn(columns, "day").hiddenStems).toEqual(["戊", "壬", "庚"]);
-    expect(getColumn(columns, "month").hiddenStems).toEqual(["丁", "乙", "己"]);
-    expect(getColumn(columns, "year").hiddenStems).toEqual(["甲", "乙"]);
+    expect(getColumn(columns, "hour").hiddenStems).toEqual(["戊", "乙", "癸"]);
+    expect(getColumn(columns, "day").hiddenStems).toEqual(["庚", "壬", "戊"]);
+    expect(getColumn(columns, "month").hiddenStems).toEqual(["己", "丁", "乙"]);
+    expect(getColumn(columns, "year").hiddenStems).toEqual(["乙"]);
     expect(getColumn(columns, "hour").twelveLifeStage).toEqual(["쇠"]);
     expect(getColumn(columns, "day").twelveLifeStage).toEqual(["절"]);
     expect(getColumn(columns, "month").twelveLifeStage).toEqual(["묘"]);

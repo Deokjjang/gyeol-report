@@ -1,3 +1,4 @@
+import { validateNatalTableEvidence, validateNatalFeatureProvenance } from "../report-knowledge/natalTableEvidence";
 import type { LoveMarriageChildReportEvidencePacket } from "../report-knowledge/loveMarriageChildReportTypes";
 import type { AnnualFortuneEvidencePacket } from "../report-knowledge/annualFortuneEvidence";
 import { publicationBirthTimeContexts, publishedPillarMatches } from "./birthTimePublication";
@@ -44,6 +45,9 @@ export function validateProductPublication(product: string, draft: unknown, evid
   if (isRecord(evidence) && evidence.birthTimeContexts !== undefined && !birthContexts) errors.push("BIRTH_TIME_CONTEXT_INVALID");
   if (!isRecord(draft)) return { ok: false, errors: ["DRAFT_REQUIRED"] };
   errors.push(...validateProductEvidence(product, draft, evidence, inputPayload));
+  const natalErrors = validateNatalTableEvidence(evidence);
+  errors.push(...natalErrors);
+  if (natalErrors.length === 0) errors.push(...validateNatalFeatureProvenance(product, draft, evidence));
   if (product === "major_fortune" || product === "annual_fortune") errors.push(...validateDayunPublication(product, draft, evidence, inputPayload));
   if (draft.productType !== product) errors.push("PRODUCT_MISMATCH");
   if (!isRecord(evidence) || Object.keys(evidence).length < 3) errors.push("EVIDENCE_REQUIRED");

@@ -165,9 +165,12 @@ function buildPromptEvidencePacket(input: {
   readonly allowedSajuTerms: readonly string[];
 }): ComprehensiveReportEvidencePacket {
   const allowedTerms = normalizeAllowedSajuTerms(input.allowedSajuTerms);
+  // Display-only canonical table is stored for readers, not duplicated into writer input.
+  const { natalTableEvidence: _table, ...packet } = input.packet as ComprehensiveReportEvidencePacket & { natalTableEvidence?: unknown };
+  void _table;
 
   return {
-    ...input.packet,
+    ...packet,
     ...birthTimePromptContext(input.packet),
     sections: input.packet.sections.map((section) => ({
       ...section,

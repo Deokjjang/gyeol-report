@@ -1,5 +1,7 @@
 "use client";
 
+import ManseRyeokCommonTable from "./ManseRyeokCommonTable";
+
 import { useId, useState } from "react";
 
 import type {
@@ -97,7 +99,7 @@ function PersonTableBlock({
   return (
     <section className="space-y-3 bg-[#fffaf3] px-3 py-4 sm:px-4">
       <PersonSummary person={person} />
-      <CompatibilityManseCompactPanel data={person.manseRyeok} />
+      {person.manseRyeok.natalEvidence ? <ManseRyeokCommonTable data={person.manseRyeok} /> : <CompatibilityManseCompactPanel data={person.manseRyeok} />}
       {person.mbti === null ? (
         <EmptySubTable title={`${person.label} MBTI표`} />
       ) : (

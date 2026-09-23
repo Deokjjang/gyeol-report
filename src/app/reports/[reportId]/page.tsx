@@ -670,6 +670,7 @@ function renderProductPreviewCompatibilityState(
   return (
     <CompatibilityReportView
       draft={productPreview.draft}
+      evidencePacket={productPreview.evidencePacket}
       reportId={productPreview.reportId}
     />
   );

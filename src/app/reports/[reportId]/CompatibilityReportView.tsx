@@ -1,3 +1,4 @@
+import { buildCanonicalManseRyeokTableData } from "../../../lib/report-tables/manseRyeokTableData";
 import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
 import type { ReactNode } from "react";
 
@@ -35,6 +36,7 @@ import { CompatibilityTable } from "../../../components/report-tables";
  */
 
 type CompatibilityReportViewProps = {
+  readonly evidencePacket?: unknown;
   readonly draft: CompatibilityReportDraft;
   readonly reportId?: string;
 };
@@ -232,6 +234,7 @@ function getFirstContactSectionTitle(
 
 function buildCompatibilityTopTableData(
   draft: CompatibilityReportDraft,
+  evidencePacket?: unknown,
 ): CompatibilityTableData {
   return buildCompatibilityTableData({
     title: `${draft.personALabel}님 × ${draft.personBLabel}님 궁합 기초표`,
@@ -240,11 +243,13 @@ function buildCompatibilityTopTableData(
       label: "A",
       displayLabel: draft.personALabel,
       chart: draft.chartComparison.personA,
+      canonicalTable: buildCanonicalManseRyeokTableData(evidencePacket, draft.personALabel, "personA"),
     }),
     personB: buildCompatibilityPersonTableInput({
       label: "B",
       displayLabel: draft.personBLabel,
       chart: draft.chartComparison.personB,
+      canonicalTable: buildCanonicalManseRyeokTableData(evidencePacket, draft.personBLabel, "personB"),
     }),
     connectionSummary: buildCompatibilityConnectionSummary(draft),
   });
@@ -257,6 +262,7 @@ function mapCompatibilityTableRelationCategory(
 }
 
 function buildCompatibilityPersonTableInput(input: {
+  readonly canonicalTable?: ReturnType<typeof buildCanonicalManseRyeokTableData>;
   readonly label: string;
   readonly displayLabel: string;
   readonly chart: CompatibilityReportDraft["chartComparison"]["personA"];
@@ -266,7 +272,7 @@ function buildCompatibilityPersonTableInput(input: {
   return {
     label: input.label,
     displayName: input.chart.displayName || input.displayLabel,
-    manseRyeok: buildManseRyeokCommonTableData({
+    manseRyeok: input.canonicalTable ?? buildManseRyeokCommonTableData({
       title: `${input.displayLabel}님의 기초 만세력`,
       fourPillarGrid: buildCompatibilityFourPillarGrid(input.chart),
     }),
@@ -728,9 +734,10 @@ function ConnectionSummarySection({
 
 export function CompatibilityReportView({
   draft,
+  evidencePacket,
 }: CompatibilityReportViewProps) {
   const analysis = getCompatibilityRelationshipAnalysis(draft);
-  const compatibilityTableData = buildCompatibilityTopTableData(draft);
+  const compatibilityTableData = buildCompatibilityTopTableData(draft, evidencePacket);
   const relationshipLabel = formatCompatibilityRelationshipType(
     draft.relationshipType,
   );

@@ -1,3 +1,5 @@
+import type { CanonicalNatalTableEvidence } from "../report-knowledge/natalTableEvidence";
+
 export type ReportTableFiveElement =
   | "wood"
   | "fire"
@@ -93,11 +95,12 @@ export type ManseRyeokFiveElementDistributionItem = {
 };
 
 export type ManseRyeokFiveElementDistribution = {
-  readonly basisLabel: "천간·지지 8글자 기준";
+  readonly basisLabel: string;
   readonly items: readonly ManseRyeokFiveElementDistributionItem[];
 };
 
 export type ManseRyeokCommonTableData = {
+  readonly natalEvidence?: CanonicalNatalTableEvidence;
   readonly title: string;
   readonly columns: readonly ManseRyeokColumn[];
   readonly stemRow: Record<ManseRyeokPillarKey, ManseRyeokStemBranchCell | null>;
