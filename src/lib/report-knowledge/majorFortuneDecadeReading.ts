@@ -1,6 +1,8 @@
 import { getAnnualBranchInteractions, getAnnualGanjiInfo, getTenGodForStemPair } from "./annualFortuneYearRules";
 import type { AnnualBranchInteraction, EarthlyBranch, FiveElement, TenGod } from "./annualFortuneTypes";
 import type { MajorFortuneEvidencePacket } from "./majorFortuneTypes";
+import { contextualTenGodReading } from "./reportContextScenes";
+import { withKoreanParticle } from "./koreanCopyUtils";
 
 const elements: Record<FiveElement, string> = { wood: "목", fire: "화", earth: "토", metal: "금", water: "수" };
 const positions = ["year", "month", "day", "hour"] as const;
@@ -60,7 +62,7 @@ const angles: Record<TenGod, { focus: string; work: string; money: string; relat
 function relationText(relation: AnnualBranchInteraction, scope: "cycle" | "natal"): string {
   const where = scope === "cycle" ? "대운 지지" : (relation.affectedPillars ?? []).map(p => positionNames[p]).join("·");
   const meaning = relation.type === "충" ? "기존 배치와 새 요구의 조정" : relation.type === "형" ? "되풀이되는 제약과 부담의 점검" : relation.type === "해" ? "겉으로 드러나지 않은 불편의 확인" : relation.type === "파" ? "유지하던 방식의 세부 수정" : "연결되는 역할과 약속의 범위 확인";
-  return `${where}와 ${relation.branches.join("·")} ${relation.type}: ${meaning}`;
+  return `${withKoreanParticle(where, "with")} ${relation.branches.join("·")} ${relation.type}: ${meaning}`;
 }
 function strongest(reasons: readonly MajorDecadeReason[]): MajorDecadeReason | undefined {
   return [...reasons].sort((a, b) => b.priority - a.priority || a.evidenceId.localeCompare(b.evidenceId))[0];
@@ -96,7 +98,7 @@ export function buildMajorFortuneDecadeReading(packet: MajorFortuneEvidencePacke
       if (packet.natalLabels.includes(`${ko} 부족`)) reasons.push({ evidenceId: `${id}:element:${element}:missing`, kind: "element", priority: 2, text: `원국의 ${ko} 부족 조건에 ${ko} 기운이 들어옵니다. 보완 가능성을 보되 생활의 결과까지 보장하는 근거로 쓰지는 않습니다.` });
       if (packet.natalLabels.includes(`${ko} 과다`)) reasons.push({ evidenceId: `${id}:element:${element}:heavy`, kind: "element", priority: 2, text: `원국에서 강한 ${ko} 기운과 세운의 ${ko} 기운이 겹쳐, 이미 많이 쓰는 방식을 더 밀기보다 과부하를 점검합니다.` });
     }
-    if (tenGod === packet.majorTenGod.stemTenGod) reasons.push({ evidenceId: `${id}:ten-god`, kind: "ten-god", priority: 1, text: `${tenGod}이 대운과 세운에 겹쳐 장기 과제를 같은 관점에서 다시 다룹니다.` });
+    if (tenGod === packet.majorTenGod.stemTenGod) reasons.push({ evidenceId: `${id}:ten-god`, kind: "ten-god", priority: 1, text: `${withKoreanParticle(tenGod, "subject")} 대운과 세운에 겹쳐 장기 과제를 같은 관점에서 다시 다룹니다.` });
     return { year, ganji: info.ganji, tenGod, stemElement: info.stemElement, branchElement: info.branchElement, cycleRelations, natalRelations, reasons, evidenceIds: [...new Set([id, `${id}:ten-god`, ...reasons.map(r => r.evidenceId)])] };
   });
   const emphasized = new Set([...candidates].filter(y => (strongest(y.reasons)?.priority ?? 0) >= 3).sort((a, b) => (strongest(b.reasons)?.priority ?? 0) - (strongest(a.reasons)?.priority ?? 0) || a.year - b.year).slice(0, 4).map(y => y.year));
@@ -104,15 +106,18 @@ export function buildMajorFortuneDecadeReading(packet: MajorFortuneEvidencePacke
     const angle = angles[y.tenGod];
     const reason = strongest(y.reasons);
     const importance = emphasized.has(y.year) ? "important" : y.reasons.some(r => r.priority >= 2) ? "standard" : "quiet";
+    // Use context only to illustrate fact-selected important years. It does not
+    // establish which job was held then, and does not change when the clock moves.
+    const illustrateContext = importance === "important";
     const relation = y.cycleRelations[0];
     const natal = [...y.natalRelations].sort((a, b) => Number(b.type === "충" || b.type === "형") - Number(a.type === "충" || a.type === "형"))[0];
     const cycleContrast = y.tenGod === packet.majorTenGod.stemTenGod ? `대운과 같은 ${y.tenGod} 관점이 겹칩니다.` : `${packet.majorTenGod.stemTenGod} 대운의 장기 배경에 ${y.tenGod}의 연간 질문이 더해집니다.`;
     const coreFlow = `${y.year}년 ${y.ganji} · ${y.tenGod} · ${elements[y.stemElement]}·${elements[y.branchElement]}: ${angle.focus}. ${cycleContrast}${relation && (importance !== "important" || reason?.text !== relationText(relation, "cycle")) ? ` 대운과의 ${relation.branches.join("·")} ${relation.type}은 ${relationText(relation, "cycle").split(": ")[1]}을 함께 살피게 합니다.` : ""}`;
     return { ...y, importance, focus: angle.focus, detail: {
       coreFlow: importance === "important" ? `${coreFlow} 집중해서 읽을 근거: ${reason?.text.replace(/[.。]$/u, "")}.` : coreFlow,
-      realWorldScenes: importance === "important" ? `일에서는 ${angle.work}\n돈에서는 ${angle.money}\n관계에서는 ${angle.relationship}` : angle.work,
+      realWorldScenes: `${illustrateContext ? contextualTenGodReading(packet.userContext, y.tenGod, "scene") + "\n" : ""}${importance === "important" ? `일에서는 ${angle.work}\n돈에서는 ${angle.money}\n관계에서는 ${angle.relationship}` : angle.work}`,
       cautionPoint: importance === "important" ? `${natal && reason?.text !== relationText(natal, "natal") ? relationText(natal, "natal") + ". " : ""}${angle.risk} ${y.reasons.find(r => r.kind === "element")?.text ?? ""}`.trim() : natal ? `${relationText(natal, "natal")}.` : angle.risk,
-      actionStandard: angle.action,
+      actionStandard: illustrateContext ? contextualTenGodReading(packet.userContext, y.tenGod, "action") : angle.action,
     } };
   });
   const current = years.find(y => y.year === packet.currentYear)!;
@@ -122,7 +127,7 @@ export function buildMajorFortuneDecadeReading(packet: MajorFortuneEvidencePacke
     const group = years.slice(i === 0 ? 0 : i === 1 ? 3 : 7, i === 0 ? 3 : i === 1 ? 7 : 10);
     const lead = [...group].sort((a,b) => (strongest(b.reasons)?.priority ?? 0) - (strongest(a.reasons)?.priority ?? 0) || a.year-b.year)[0];
     const other = group.find(y => y.tenGod !== lead.tenGod && y.year !== lead.year)!;
-    return { phase, label: `${["전반", "중반", "후반"][i]} · ${group[0].year}~${group.at(-1)!.year}년`, headline: `${lead.year}년 ${lead.tenGod}의 ${lead.focus}`, body: `${lead.ganji} 세운을 이 구간의 기준점으로 읽습니다. ${strongest(lead.reasons)?.text ?? "확인된 강한 경계 신호 없이 연간 역할의 변화를 살피는 구간입니다."} 같은 구간의 ${other.year}년은 ${other.ganji}·${other.tenGod}으로, ${other.focus}라는 다른 질문을 던집니다. 따라서 이 구간 전체를 한 가지 사건이나 호불호로 묶지 않습니다.`, advice: `${lead.year}년에는 ${angles[lead.tenGod].action} ${other.year}년에는 ${angles[other.tenGod].action}` };
+    return { phase, label: `${["전반", "중반", "후반"][i]} · ${group[0].year}~${group.at(-1)!.year}년`, headline: `${lead.year}년 ${lead.tenGod}의 ${lead.focus}`, body: `${lead.ganji} 세운을 이 구간의 기준점으로 읽습니다. ${strongest(lead.reasons)?.text ?? "확인된 강한 경계 신호 없이 연간 역할의 변화를 살피는 구간입니다."} 같은 구간의 ${other.year}년은 ${other.ganji}·${other.tenGod}으로, ${withKoreanParticle(other.focus, "called")} 다른 질문을 던집니다. 따라서 이 구간 전체를 한 가지 사건이나 호불호로 묶지 않습니다.`, advice: `${lead.year}년에는 ${angles[lead.tenGod].action} ${other.year}년에는 ${angles[other.tenGod].action}` };
   });
   const yearsFor = (gods: readonly TenGod[]) => years.filter(y => gods.includes(y.tenGod)).map(y => `${y.year}년 ${y.ganji}·${y.tenGod}`).join(", ");
   const domainContrasts = {
@@ -143,7 +148,7 @@ export function buildMajorFortuneDecadeReading(packet: MajorFortuneEvidencePacke
     domains: (["work","money","relationship"] as const).map((key,i)=>{
       const relevant = years.filter(y => key === "money" ? /재|식신|상관|겁재/.test(y.tenGod) : key === "relationship" ? y.natalRelations.some(r=>r.affectedPillars?.includes("day")) || /비견|겁재/.test(y.tenGod) : /관|식신|상관|인/.test(y.tenGod));
       const selected = [...relevant].sort((a,b)=>Number(b.importance==="important")-Number(a.importance==="important") || a.year-b.year).slice(0,2);
-      return { key, title: ["이 10년의 일과 역할","돈의 흐름과 감당할 범위","관계에서 달라지는 요구"][i], body: `${domainContrasts[key]}\n${cycle.ganji} 대운의 ${packet.majorTenGod.stemTenGod}을 이 영역에 적용하면, ${main[key]} ${key === "work" ? "직업명을 단정하기보다 지금 맡은 일에서 이 방식이 도움이 되는 조건과 과해지는 조건을 구분합니다." : key === "money" ? "수입 규모나 투자 수익을 예측하는 것이 아니라, 이 10년 동안 어떤 기준으로 벌고 쓰고 책임질지를 읽는 대목입니다." : "관계의 확대나 결혼·이별을 확정하지 않고, 실제로 어떤 기대가 쌓이고 조율이 필요한지 확인하는 관점입니다."}`, timing: selected.map(y=>`${y.year}년 ${y.ganji}·${y.tenGod}: ${angles[y.tenGod][key]}${key === "relationship" && y.natalRelations.some(r=>r.affectedPillars?.includes("day")) ? ` ${relationText(y.natalRelations.find(r=>r.affectedPillars?.includes("day"))!,"natal")}.` : ""}`).join("\n"), action: key === "work" ? main.action : key === "money" ? "새로운 수입의 기대, 이미 확정한 지출, 손실을 멈출 기준을 별도로 기록하고 연도별 요구가 바뀔 때 다시 비교합니다." : "상대의 의도와 실제로 합의한 부담을 구분하고, 시간을 내는 방식과 부탁을 거절할 조건을 함께 확인합니다.", evidenceIds:[`${prefix}:ten-god`, ...years.map(y=>y.evidenceIds[0]), ...selected.flatMap(y=>y.evidenceIds)] };
+      return { key, title: ["이 10년의 일과 역할","돈의 흐름과 감당할 범위","관계에서 달라지는 요구"][i], body: `${domainContrasts[key]}\n${cycle.ganji} 대운의 ${withKoreanParticle(packet.majorTenGod.stemTenGod, "object")} 이 영역에 적용하면, ${main[key]} ${key === "work" ? "직업명을 단정하기보다 지금 맡은 일에서 이 방식이 도움이 되는 조건과 과해지는 조건을 구분합니다." : key === "money" ? "수입 규모나 투자 수익을 예측하는 것이 아니라, 이 10년 동안 어떤 기준으로 벌고 쓰고 책임질지를 읽는 대목입니다." : "관계의 확대나 결혼·이별을 확정하지 않고, 실제로 어떤 기대가 쌓이고 조율이 필요한지 확인하는 관점입니다."}`, timing: selected.map(y=>`${y.year}년 ${y.ganji}·${y.tenGod}: ${angles[y.tenGod][key]}${key === "relationship" && y.natalRelations.some(r=>r.affectedPillars?.includes("day")) ? ` ${relationText(y.natalRelations.find(r=>r.affectedPillars?.includes("day"))!,"natal")}.` : ""}`).join("\n"), action: key === "work" ? main.action : key === "money" ? "새로운 수입의 기대, 이미 확정한 지출, 손실을 멈출 기준을 별도로 기록하고 연도별 요구가 바뀔 때 다시 비교합니다." : "상대의 의도와 실제로 합의한 부담을 구분하고, 시간을 내는 방식과 부탁을 거절할 조건을 함께 확인합니다.", evidenceIds:[`${prefix}:ten-god`, ...years.map(y=>y.evidenceIds[0]), ...selected.flatMap(y=>y.evidenceIds)] };
     }),
   };
 }
@@ -159,15 +164,15 @@ export function withMajorFortuneDecadeReading(packet: MajorFortuneEvidencePacket
     previousToCurrentShift: { ...packet.previousToCurrentShift, plain: reading.previous },
     strongYearsWithinCycle: strong.map(y => ({
       year: y.year, ganji: y.ganji, reason: strongest(y.reasons)!.text,
-      area: y.focus, action: y.detail.actionStandard, headline: y.focus,
+      area: y.focus, action: angles[y.tenGod].action, headline: y.focus,
       whyStrong: y.reasons.filter(r => r.priority >= 3).map(r => r.text).join(" "),
       likelyArea: /재/.test(y.tenGod) ? "돈·현실관리" : /인/.test(y.tenGod) ? "학업·자격증" : /비견|겁재/.test(y.tenGod) ? "관계" : "일·성과",
-      pushStrategy: y.detail.actionStandard,
+      pushStrategy: angles[y.tenGod].action,
       reduceStrategy: `${y.ganji}년에는 ${y.focus}에서 맡을 범위를 넓히기 전에 한도를 확인합니다.`,
     })),
     majorFortuneTimelineRows: packet.majorFortuneTimelineRows.map(row => {
       const y = rowFor(row.year);
-      return { ...row, badges: [...row.badges.filter(b => b !== "강함"), ...(y.importance === "important" ? ["강함" as const] : [])], keyInteractionLabel: [...y.cycleRelations.map(r=>relationText(r,"cycle")),...y.natalRelations.map(r=>relationText(r,"natal"))].join(" / ") || "별도 지지 합충 신호 없음", oneLine: `${y.tenGod} · ${y.focus}${y.cycleRelations.length ? ` / ${y.cycleRelations.map(r => r.branches.join("")+" "+r.type).join("·")}` : y.natalRelations.length ? ` / ${relationText(y.natalRelations[0], "natal")}` : ""}`, strategy: y.detail.actionStandard };
+      return { ...row, badges: [...row.badges.filter(b => b !== "강함"), ...(y.importance === "important" ? ["강함" as const] : [])], keyInteractionLabel: [...y.cycleRelations.map(r=>relationText(r,"cycle")),...y.natalRelations.map(r=>relationText(r,"natal"))].join(" / ") || "별도 지지 합충 신호 없음", oneLine: `${y.tenGod} · ${y.focus}${y.cycleRelations.length ? ` / ${y.cycleRelations.map(r => r.branches.join("")+" "+r.type).join("·")}` : y.natalRelations.length ? ` / ${relationText(y.natalRelations[0], "natal")}` : ""}`, strategy: angles[y.tenGod].action };
     }),
     cycleYearTimeline: packet.cycleYearTimeline.map(row => {
       const y = rowFor(row.year);

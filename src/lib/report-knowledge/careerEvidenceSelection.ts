@@ -1,5 +1,7 @@
 import { getMbtiSourceProfile, getMbtiProductTraits, type MbtiSourceTraitItem } from "./mbti/sourceRuntimeAdapter";
 import type { CareerReportEvidencePacket } from "./careerReportTypes";
+import { selectReportActivity } from "./reportContextScenes";
+import type { UserContextProfile } from "./userContextTypes";
 
 // A negative label is not evidence for its positive counterpart (무인성 ≠ 인성).
 export function careerSignalMatches(labels: readonly string[], target: string): boolean {
@@ -63,7 +65,7 @@ function records(value: unknown): Record<string, unknown>[] {
     v !== null && typeof v === "object" && !Array.isArray(v)) : [];
 }
 
-export function selectCareerJobs(labels: readonly string[], mbti: CareerMbtiSelection, roles: CareerRoleSelection): CareerReportEvidencePacket["recommendedJobs"] {
+export function selectCareerJobs(labels: readonly string[], mbti: CareerMbtiSelection, roles: CareerRoleSelection, context?: UserContextProfile): CareerReportEvidencePacket["recommendedJobs"] {
   const mbtiJobs = records(mbti.profile?.recommendedJobs).flatMap((job, index) => {
     if (typeof job.job !== "string" || typeof job.reason !== "string") return [];
     const supported = (Array.isArray(job.matchingMyeongliSignals) ? job.matchingMyeongliSignals : [])
@@ -84,10 +86,16 @@ export function selectCareerJobs(labels: readonly string[], mbti: CareerMbtiSele
   const comparisons = roleRules.flatMap((r) => r.jobs).map((title) => ({ title, fit: "medium" as const,
     reason: "개인 근거만으로 이 직무의 적합도를 높게 판단할 수 없습니다. 담당 업무와 자격 요건을 비교하는 탐색용 예시입니다.",
     caution: "직업명보다 실제 업무, 권한, 근무 조건을 확인하세요.", evidenceIds: ["comparison-only"] }));
-  const sorted = [...mbtiJobs.filter((j) => j.fit === "high"), ...roleJobs, ...mbtiJobs.filter((j) => j.fit !== "high"), ...comparisons];
+  const activity = context ? selectReportActivity(context) : null;
+  const adjacent = activity ? roleJobs.filter(j => activity.jobs.includes(j.title)).map(j => ({ ...j,
+    reason: `${activity.label} 맥락에서 인접하게 비교할 역할입니다. ${j.reason}`,
+    evidenceIds: [...j.evidenceIds, `context:${activity.id}`],
+  })) : [];
+  const otherPossibilities = mbtiJobs.map(j => adjacent.length ? { ...j, reason: `다른 가능성으로 살펴볼 ${j.reason}` } : j);
+  const sorted = [...roleJobs, ...comparisons];
   const seen = new Set<string>();
   // Keep both source layers visible, even when there are many natal role examples.
-  const preferred = [...mbtiJobs.filter((j) => j.fit === "high").slice(0, 3), ...mbtiJobs.filter((j) => j.fit !== "high").slice(0, 1), ...roleJobs, ...sorted];
+  const preferred = [...adjacent.slice(0, 6), ...otherPossibilities.filter(j => j.fit === "high").slice(0, 3), ...otherPossibilities.filter(j => j.fit !== "high").slice(0, 1), ...roleJobs, ...sorted];
   return preferred.filter((j) => !seen.has(j.title) && !!seen.add(j.title)).slice(0, 10);
 }
 

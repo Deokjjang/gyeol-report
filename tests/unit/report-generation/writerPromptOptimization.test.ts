@@ -118,18 +118,19 @@ it("all 392 baseline instruction meanings and the output schema remain intact", 
   expect(hash(lines)).toBe("112f6e75a080fd2567652d986ce66ed032e8c33afea1c608c8b331ba6674660f");
   expect(hash(request.jsonSchema)).toBe("16f23f4b24e0cf12f1a5b1cb766ad392b354399c4614d791a9f23fd113a6fb1d");
   // Updated only for canonical natal hidden-stem correction (MAIN/SUB/MINOR).
-  // Instruction/schema and all five other product request hashes remain unchanged.
+  // Instruction/schema remain unchanged; product evidence fixtures below track
+  // the current context/grammar refinements separately from transport packing.
   expect(hash(readEvidence(user).expanded)).toBe("ff35bf1ecf58f43c503e36c636b053c401696553ed93a610a209f771683a7f70");
 });
 
 const otherRequestHashes = {
-  career_money_study: "0ec92d4d83cb5d6b8c576f050a1f392378463ab79fea768003b8109c5f1d9a5e",
+  career_money_study: "5cf0de17d1b9d627b8a8303191fcea2a96e92c1308a9ed74589063a9413fd9d3",
   love_marriage_child: "151ccbb50f9fdc2e8bd1e8e11f14814b15ca96cf1b701e7ae4173ae995091ceb",
-  saju_mbti_compatibility: "2d89ae251508a6098be0a91318ce2dcbb684ce35b5e9525813bf6595e5d2baea",
-  major_fortune: "f29ad84ca2857c14e864f43c1fea61608df18d7eddf84755d8a71849ddd1c620",
-  annual_fortune: "0ca4ede056c91efd2c50ffc9ecd6da534b3d33d5b9aaac34d11d664fcfe50716",
+  saju_mbti_compatibility: "7232d1dbedb198730bca469869145527e71171de7a76a27ce697a4872b73fe5f",
+  major_fortune: "3b72e0f4574b10691139e09feb1b33d43660b1b8885a519728021f9cc36ddb93",
+  annual_fortune: "013ee2e5278b3d722061eaa5c7afe1e467375c47ba81972c315a628f8a37e3ed",
 };
-it.each(Object.entries(otherRequestHashes))("%s prompt and schema unchanged from pre-optimization fixture", async (key, digest) => {
+it.each(Object.entries(otherRequestHashes))("%s current deterministic evidence keeps the reviewed writer request", async (key, digest) => {
   const result = await generateProductReport(payload(key), disabled, "deterministic_fallback");
   expect(result.ok).toBe(true); if (!result.ok) return;
   expect(hash(buildPaidWriterRequest(result, person.name))).toBe(digest);

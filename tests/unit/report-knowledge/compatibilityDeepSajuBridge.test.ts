@@ -244,8 +244,9 @@ describe("REPORT-18F compatibility deep Saju bridge", () => {
     expect(trine?.principleExplanation).toContain("수는 감정");
     expect(trine?.principleExplanation).toContain("목은 성장");
     expect(trine?.riskExpression).not.toContain("무조건 좋");
-    expect(clash?.principleExplanation).toContain("충은 정면");
-    expect(harm?.principleExplanation).toContain("해는 겉으로 크게");
+    expect(clash?.principleExplanation).toContain(clash?.relationLabel);
+    expect(harm?.principleExplanation).toContain(harm?.relationLabel);
+    expect(harm?.principleExplanation).not.toContain("申亥와 子未처럼");
     expect(pressureText).toContain("작은 생활 차이");
     expect(pressureText).toContain("상황 단위로 말");
     expect(pressureText).not.toContain("나쁜 궁합");

@@ -120,7 +120,7 @@ export function buildCompatibilityCategoryReading(packet: CompatibilityEvidenceP
       const lines = (typeof raw === "string" ? [raw] : raw ?? []).filter(line => romantic || !romanceOnly.test(line));
       if (pair && lines.length) sources.push({ id: `${pair.evidenceId}:${question.pairField}`, kind: "mbti-pair",
         subjectPerson: direction.subjectPerson, targetPerson: direction.targetPerson, field: question.pairField,
-        text: `${pair.sourceType}에서 ${pair.targetType}를 보는 설명: ${lines.slice(0, 2).join(" ")}` });
+        text: `${pair.sourceType}에서 ${pair.targetType}를 보는 설명: ${lines.slice(0, 2).join(" ").replace(/무조건 (?=[^.]*보지 않)/gu, "맥락을 살피지 않고 ")}` });
     }
     for (const profile of [persons.personA, persons.personB]) {
       const trait = profile.traits.find(item => item.area === question.area);

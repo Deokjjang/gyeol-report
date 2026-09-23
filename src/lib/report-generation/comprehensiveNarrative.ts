@@ -1,4 +1,5 @@
 import { comprehensiveFeaturePerspectives } from "./comprehensiveFeaturePerspectives";
+import { correctKoreanParticleSlots } from "../report-knowledge/koreanCopyUtils";
 import type { ComprehensiveReportEvidencePacket, ComprehensiveSajuFeatureDictionaryEntry as Feature } from "../report-knowledge/comprehensiveReportEvidenceTypes";
 import { getMbtiSourceProfile, type MbtiTraitArea, type MbtiSourceTraitItem } from "../report-knowledge/mbti/sourceRuntimeAdapter";
 import { SAJU_KNOWLEDGE_BY_ID } from "../report-knowledge/sajuKnowledgeBase";
@@ -61,11 +62,7 @@ const topics: Partial<Record<ReadingId, readonly string[]>> = {
 const interactionLabel = { agreement: "같은 방향으로 모이는 힘", tension: "서로 다른 요구 사이의 긴장", expression: "속마음이 밖으로 표현되는 방식", compensation: "막힌 흐름을 여는 보완점", amplification: "강점이 커지는 만큼 커지는 부담", "context-switch": "장소에 따라 달라지는 나" };
 export function correctSourceParticles(text: string): string {
     // Repair the fixed particle slots in inherited day-pillar copy, without changing its claims.
-    return text.replace(/([가-힣]+)(이 과해지면|이 업무나|을 결과물로|을 루틴으로)/gu, (_, word: string, tail: string) => {
-        const hasFinal = (word.charCodeAt(word.length - 1) - 0xac00) % 28 !== 0;
-        const particle = tail.startsWith("이") ? (hasFinal ? "이" : "가") : (hasFinal ? "을" : "를");
-        return word + particle + tail.slice(1);
-    });
+    return correctKoreanParticleSlots(text);
 }
 const clean = (text: string) => correctSourceParticles(text).replace(/강점을 오래 쓰려면 쉬는 장치와 표현 조절이 필요합니다\.?/gu, "").replace(/무조건/gu, "조건을 살피지 않고").replace(/진단/gu, "점검").replace(/(?<!전)문서/gu, "업무 기록").replace(/보장/gu, "확보").replace(/물리치료/gu, "재활 지원").replace(/치료 보조/gu, "돌봄 지원").replace(/스포트라이트/gu, "무대의 관심");
 const join = (values: readonly (string | undefined)[], separator = " ") => [...new Set(values.filter((v): v is string => !!v?.trim()).map(v => clean(v.trim()).replace(/ {2,}/g, " ").trim()))].join(separator);
@@ -150,7 +147,11 @@ function selectedTraits(packet: ComprehensiveReportEvidencePacket, section: Comp
     ][]).flatMap(([area, traits]) => traits.filter(t => section.mbtiTraitIds.includes(traitId(source!.type, area, t))).map(trait => ({ area, trait })));
 }
 function paragraph(f: Feature): string {
-    return join([`「${f.rawLabel}」 — ${f.plainMeaning.replace(/구조$/u, "구조입니다.")}`, f.rawLabel.includes("양인") ? "양인살은 자기 힘을 밀어붙이는 추진력과 승부 감각을 함께 읽는 표식입니다." : undefined, f.strength, f.howItShowsInYou === "십성의 성향이 일과 관계에서 드러나는 장면" ? undefined : `생활에서 떠올려 볼 장면은 ‘${f.howItShowsInYou}’입니다.`, f.fatiguePoint, f.practicalUse, comprehensiveFeaturePerspectives[f.sourceFeatureId ?? ""]]);
+    return join([f.plainMeaning.replace(/구조$/u, "구조입니다."), f.strength,
+        f.howItShowsInYou === "십성의 성향이 일과 관계에서 드러나는 장면" ? undefined : `생활에서 떠올려 볼 장면은 ‘${f.howItShowsInYou}’입니다.`,
+        f.fatiguePoint, f.practicalUse, comprehensiveFeaturePerspectives[f.sourceFeatureId ?? ""],
+        `이 관찰의 명리 근거는 「${f.rawLabel}」입니다.`,
+        f.rawLabel.includes("양인") ? "양인살은 자기 힘을 밀어붙이는 추진력과 승부 감각을 함께 읽는 표식입니다." : undefined]);
 }
 export function comprehensiveNarrativeSection(packet: ComprehensiveReportEvidencePacket, readingId: ReadingId) {
     const plan = packet.narrativePlan ?? buildComprehensiveNarrativePlan(packet);

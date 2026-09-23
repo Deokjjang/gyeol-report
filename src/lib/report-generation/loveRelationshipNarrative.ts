@@ -1,6 +1,7 @@
 import type { LoveMarriageChildReportEvidencePacket as Packet, LoveMarriageChildMbtiTraitEvidence as Trait } from "../report-knowledge/loveMarriageChildReportTypes";
 import { selectLoveRelationshipEvidence } from "../report-knowledge/loveRelationshipSelection";
 import { formatBridgeScene } from "../report-knowledge/bridge/interactionScenes";
+import { correctKoreanParticleSlots } from "../report-knowledge/koreanCopyUtils";
 import type { LoveMarriageChildReportDraft, LoveMarriageChildTextSection } from "./loveMarriageChildReportDraftTypes";
 import type { SinglePersonGenerationInput } from "./reportInputAdapter";
 
@@ -73,7 +74,7 @@ const perspectives = {
   },
 } as const;
 
-const paragraphs = (values: readonly (string | undefined)[]) => values.filter(Boolean).join("\n\n");
+const paragraphs = (values: readonly (string | undefined)[]) => correctKoreanParticleSlots(values.filter(Boolean).join("\n\n"));
 const section = (headline: string, body: string, keyPoints: readonly string[], caution: string | null = null): LoveMarriageChildTextSection => ({ headline, body, keyPoints, caution });
 
 export function buildLoveRelationshipNarrative(packet: Packet, context?: SinglePersonGenerationInput["userContext"]): LoveMarriageChildReportDraft {
@@ -106,7 +107,10 @@ export function buildLoveRelationshipNarrative(packet: Packet, context?: SingleP
   const partnerCriteria = readings.slice(0, 2);
   const partnerExamples = selected.partnerExamples.map(p => {
     const tier = { comfort: "편안함을 비교할 예시", attraction: "끌림을 비교할 예시", adjustment: "조율 비용을 살필 예시" }[p.tier];
-    return `${tier} — ${p.sourceType}와 ${p.exampleType}. ${p.tier === "comfort" ? p.pair.sharedGround[0] ?? p.pair.lovePattern : p.tier === "attraction" ? p.pair.positiveInfluence[0] ?? p.pair.lovePattern : p.pair.friction[0]}\n${p.pair.lovePattern} 장기 생활에서는: ${p.pair.marriagePattern} 내 원국의 ${p.sajuCriterion} 이 기준과 상대의 실제 행동이 만나는지 확인하세요. 조율 방법으로는 ${p.pair.repairStrategy[0]}`;
+    const question = p.tier === "comfort" ? "익숙한 방식이 다른 날에도 편안함을 유지할 수 있는지, 약속을 바꿀 때의 대화를 살펴보세요."
+      : p.tier === "attraction" ? "처음 매력적으로 느낀 행동이 반복되는 생활에서도 서로 원하는 방식인지 비교해 보세요."
+      : "다른 의견을 말했을 때 상대가 조율할 여지를 주는지, 내 기준도 바꿀 수 있는지 확인해 보세요.";
+    return `${tier} — ${p.sourceType}와 ${p.exampleType}. ${p.tier === "comfort" ? p.pair.sharedGround[0] ?? p.pair.lovePattern : p.tier === "attraction" ? p.pair.positiveInfluence[0] ?? p.pair.lovePattern : p.pair.friction[0]}\n${p.pair.lovePattern} 장기 생활에서는: ${p.pair.marriagePattern} ${question} 조율 방법으로는 ${p.pair.repairStrategy[0]}`;
   });
   const affection = paragraphs([
     selected.scene, ...read("love"), trait(m.loveTraits), trait(m.loveTraits, 1),
@@ -117,6 +121,7 @@ export function buildLoveRelationshipNarrative(packet: Packet, context?: SingleP
     solo ? "끌림은 다음 만남을 궁금하게 만드는 힘이고, 편안함은 다르게 반응해도 관계를 설명할 수 있는 여유입니다. 둘을 같은 조건으로 고르지 마세요." : "아래 기준은 현재 상대를 분석한 결과가 아닙니다. 내가 관계에서 기대하는 행동을 확인하고, 실제 상대와는 대화로 차이를 확인하는 기준입니다.",
     ...partnerCriteria.map(r => `${r.labels}의 ${r.name}으로 보면, 처음 끌릴 수 있는 특징은 ${r.attraction}입니다. 오래 편한지는 ${r.comfort}인지에 달려 있습니다. 반면 ${r.cost}에서는 설렘과 별개로 조율할 일이 늘어납니다.`),
     trait(m.relationshipTraits), trait(m.relationshipTraits, 1),
+    ...[...new Set(selected.partnerExamples.map(p => p.sajuCriterion))].map(basis => `아래 유형 예시와 비교할 내 원국의 기준은 ${basis}입니다. 이 기준이 실제 상대의 행동과 만나는지는 별도로 확인합니다.`),
     ...partnerExamples,
     solo && type ? "유형 예시는 내 유형의 관계 자료에 있는 사례이며 정답이나 순위가 아닙니다. 상대의 실제 원국은 알 수 없으므로 위 명리 기준을 상대의 성격으로 옮기지 않습니다. 특정 두 사람의 비교는 궁합 리포트에서 다룹니다." : undefined,
     solo && !type ? "유형 예시는 제시하지 않습니다. 약속이 바뀐 날, 거절을 전한 날, 조용히 쉬고 싶은 날에 위 행동 기준이 지켜지는지 보는 것이 더 구체적인 선택 자료가 됩니다." : undefined,

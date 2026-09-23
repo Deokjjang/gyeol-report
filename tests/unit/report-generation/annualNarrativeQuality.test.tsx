@@ -51,7 +51,7 @@ describe("annual narrative V2 evidence and density",()=>{
       const ids=new Set(calculated.segments.flatMap(s=>s.evidenceIds));
       expect(m.reasons.every(r=>r.evidenceIds.length>0&&r.evidenceIds.every(id=>ids.has(id)))).toBe(true);
       if(m.tier!=="basic") expect(m.reasons.length).toBeGreaterThan(0);
-      else expect(m.segments.every(s=>s.scenes.length===0)).toBe(true);
+      else expect(m.segments.every(s=>s.scenes.length<=1)).toBe(true); // At most one grounded current-context scene; no focus-month expansion.
       if(m.tier==="focus") expect(m.segments.some(s=>s.scenes.length>=2)).toBe(true);
       m.segments.forEach((s,j)=>{
         const fact=calculated.segments[j];
@@ -91,7 +91,8 @@ describe("annual narrative V2 evidence and density",()=>{
     const r=await generate(),m=r.evidencePacket.annualReading!.months;
     expect(m[4].segments[1].balance).toContain("상쇄된 것으로 보지 않습니다");
     expect(m[2].segments[0].core).toContain("앞선 2월 절입 이후");
-    expect(m[2].segments[0].scenes).toEqual([]);
+    expect(m[2].segments[0].scenes).toHaveLength(1);
+    expect(m[2].segments[0].scenes).not.toEqual(m[1].segments.at(-1)!.scenes);
     expect(m[2].segments[0].action).not.toEqual(m[1].segments.at(-1)!.action);
     expect(m[0].segments[0].core).toContain("연간 편인"); // 乙巳 before 2026 LiChun, 丁 day master
     expect(m[1].segments[1].core).toContain("연간 겁재"); // 丙午 from the exact boundary

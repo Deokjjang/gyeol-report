@@ -4,6 +4,8 @@ import type { TenGod } from "./annualFortuneTypes";
 import { productBridgeScenes, type BridgeInteractionScene } from "./bridge/interactionScenes";
 import { getTenGodForStemPair } from "./annualFortuneYearRules";
 import type { HeavenlyStem } from "./annualFortuneTypes";
+import { withKoreanParticle as particle } from "./koreanCopyUtils";
+import { contextualTenGodReading } from "./reportContextScenes";
 
 type Domain = "work" | "money" | "relationship" | "growth";
 type Group = "peer" | "output" | "resource" | "responsibility" | "learning";
@@ -26,13 +28,6 @@ export type AnnualFortuneReading = {
   months: readonly AnnualReadingMonth[];
   actions: readonly string[];
 };
-
-function particle(value: string, kind: "object" | "subject" | "with" | "to" | "topic"): string {
-  const last = value.replace(/[)\s]+$/u, "").slice(-1).charCodeAt(0);
-  const final = last >= 0xac00 && last <= 0xd7a3 ? (last - 0xac00) % 28 : 0;
-  const pair = kind === "object" ? ["을", "를"] : kind === "subject" ? ["이", "가"] : kind === "with" ? ["과", "와"] : kind === "topic" ? ["은", "는"] : ["으로", "로"];
-  return value + pair[final && !(kind === "to" && final === 8) ? 0 : 1];
-}
 
 const group: Record<TenGod, Group> = { 비견: "peer", 겁재: "peer", 식신: "output", 상관: "output", 정재: "resource", 편재: "resource", 정관: "responsibility", 편관: "responsibility", 정인: "learning", 편인: "learning" };
 // Interpretation questions, not new astronomical facts or strength claims.
@@ -100,10 +95,10 @@ const relationActions = {
 };
 export function annualRelationLabel(f: AnnualJieRelationFact): string {
   if (f.source === "month_natal_element") return f.type === "missing_element_present"
-    ? `원국에서 부족한 ${elements[f.element]}의 유입` : `원국에 많은 ${elements[f.element]}을 더하는 작용`;
+    ? `원국에서 부족한 ${elements[f.element]}의 유입` : `원국에 많은 ${particle(elements[f.element], "object")} 더하는 작용`;
   const where = f.source === "month_natal_branch" ? `원국 ${f.affectedPillars.map(p => pillarNames[p]).join("·")}`
     : `${f.counterpart.pillar} ${f.source === "month_annual_branch" ? "세운" : "대운"}`;
-  return `${where}와 ${f.participants.join("·")} ${f.type}${f.certainty === "conditional" ? "(해당 대운일 경우)" : ""}`;
+  return `${particle(where, "with")} ${f.participants.join("·")} ${f.type}${f.certainty === "conditional" ? "(해당 대운일 경우)" : ""}`;
 }
 function isSupport(f: AnnualJieRelationFact) { return ["육합", "삼합", "반합", "missing_element_present"].includes(f.type); }
 function keyFact(s: AnnualMonthSegment): AnnualJieRelationFact | undefined {
@@ -184,11 +179,26 @@ export function buildAnnualFortuneReading(p: AnnualFortuneEvidencePacket): Annua
   // At most three non-transition focus months: an editorial explanation budget,
   // not a claim that other months are inactive. Ties are chronological.
   const focus = new Set(candidates.filter(c => c.priority > 0 && c.priority < 4).sort((a, b) => b.priority - a.priority || a.month.month - b.month.month).slice(0, 3).map(c => c.month.month));
+  const usedContextScenes = new Set<string>();
   const readings = candidates.map(({ month: m, priority, reasons }): AnnualReadingMonth => {
     const tier = priority === 4 ? "transition" : focus.has(m.month) ? "focus" : "basic";
     const latter = m.segments.at(-1)!;
     return { month: m.month, tier, title: `${m.month}월 · ${role[latter.stemTenGod].focus}`, reasons: tier === "basic" ? [] : reasons,
-      segments: m.segments.map((s, i) => segmentReading(s, getTenGodForStemPair(p.dayMaster, s.effectiveAnnualPillar.stem), tier, i ? m.segments[i - 1] : months[m.month - 2]?.segments.at(-1), m.segments[i + 1], m.month)) };
+      segments: m.segments.map((s, i) => {
+        const previous = i ? m.segments[i - 1] : months[m.month - 2]?.segments.at(-1);
+        const reading = segmentReading(s, getTenGodForStemPair(p.dayMaster, s.effectiveAnnualPillar.stem), tier, previous, m.segments[i + 1], m.month);
+        const ongoing = previous && ganji(previous) === ganji(s);
+        const contextScene = contextualTenGodReading(p.userContext, s.stemTenGod, ongoing ? "transition" : "scene");
+        const fresh = !usedContextScenes.has(contextScene);
+        usedContextScenes.add(contextScene);
+        const changedBackground = ongoing && JSON.stringify(previous.activeDayunContext) !== JSON.stringify(s.activeDayunContext);
+        const easy = changedBackground ? "같은 생활 과제라도 적용되는 장기 배경을 나눠 봅니다." : ongoing
+          ? `${particle(role[s.stemTenGod].focus, "object")} 이어가면서 ${particle(role[s.branchTenGod].focus, "object")} 지킬 수 있었는지 실제 경험을 돌아봅니다.`
+          : group[s.stemTenGod] === group[s.branchTenGod] ? `${particle(role[s.stemTenGod].focus, "object")} 생각하는 것과 실제로 유지하는 것의 차이를 봅니다.`
+          : `${particle(role[s.stemTenGod].focus, "object")} 다룰 때 ${particle(role[s.branchTenGod].focus, "object")} 유지할 수 있는지 함께 봅니다.`;
+        return { ...reading, core: `${easy} ${reading.core}`,
+          scenes: [...(fresh ? [contextScene] : []), ...reading.scenes] };
+      }) };
   });
   const bridge = p.mbtiBasis.type ? productBridgeScenes(p.bridgeEvidence).filter(s => s.mbtiType === p.mbtiBasis.type && s.factScope === "fortune-flow").slice(0, 2) : [];
   const prefix = `annual:${p.selectedYear}`;
@@ -224,7 +234,7 @@ export function buildAnnualFortuneReading(p: AnnualFortuneEvidencePacket): Annua
         : key === "relationship" ? `${a.stemTenGod}에서 살필 ${ar.cost}이 가까운 사람에게 어떻게 전달되는지 확인합니다. 친밀함의 정도보다 설명하는 방식과 상대에게 남겨 둔 선택권을 보면 조정할 행동이 구체적으로 보입니다.`
         : `${a.branchTenGod}의 기반 위에서 배움을 유지하려면 결과를 확인할 단위를 정하는 편이 좋습니다. 공부량을 늘리기 전에 배운 것을 쓰는 장면과 쉬는 시간을 함께 정해 준비가 생활 전체를 차지하지 않도록 합니다.`,
         ...(timing ? [`${domainNames[key]}에서 ${particle(role[tg].focus, "object")} 구체적으로 점검할 시점은 ${timing.month}월의 해당 십성 구간과 함께 살펴봅니다. 해당 월 전체가 같다는 뜻은 아니므로 기간별 기준을 사용합니다.`] : [])],
-      action: layer.action,evidenceIds:[`${prefix}:ten_gods`, ...(timing ? timing.segments.flatMap(s=>s.evidenceIds.filter(id=>id.endsWith(":ten_gods"))) : [])] };
+      action: key === "work" || key === "growth" ? contextualTenGodReading(p.userContext, tg, "action") : layer.action,evidenceIds:[`${prefix}:ten_gods`, ...(timing ? timing.segments.flatMap(s=>s.evidenceIds.filter(id=>id.endsWith(":ten_gods"))) : [])] };
   });
   return { version:"annual-reading-v2",selectedYear:p.selectedYear,
     headline:`${p.selectedYear}년 ${a.ganji}: ${particle(ar.focus, "object")} ${particle(base.focus, "to")} 이어갈 해`,

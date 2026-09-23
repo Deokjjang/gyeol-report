@@ -840,8 +840,8 @@ function buildBranchPressureNote(input: {
     scoreImpact: -3,
     principleExplanation:
       input.layer === "branch_clash"
-        ? "충은 정면으로 부딪히는 결입니다. 丑未는 둘 다 토의 성격이 있지만 방향이 다른 흙이 부딪히는 그림이라, 서로 안정감을 원해도 안정감을 만드는 방식이 다를 수 있습니다."
-        : "해는 겉으로 크게 부딪히기보다 미묘한 피로가 쌓이는 결입니다. 申亥와 子未처럼 작게 어긋나는 결은 처음엔 별일 아닌 차이처럼 보여도 말하지 않고 넘기면 나중에 피로로 쌓일 수 있습니다.",
+        ? `${relationLabels(input.relations)}에서 확인된 충은 서로 다른 요구를 조정하는 근거입니다. 같은 목표를 원해도 접근 방식과 바꿀 수 있는 조건이 다를 수 있으므로, 실제로 어느 약속이나 일정에서 차이가 드러나는지 구분해 봅니다.`
+        : `${relationLabels(input.relations)}에서 확인된 해는 드러내지 않은 불편을 살피는 근거입니다. 처음에는 작은 차이처럼 보이더라도 말하지 않고 넘기는 일이 반복되는지 확인하되, 이 관계만으로 갈등이 생긴다고 단정하지 않습니다.`,
     relationshipTranslation:
       "두 사람은 큰 감정 싸움보다 생활 방식, 반응 속도, 일정/연락/휴식 기준에서 작게 삐걱거릴 수 있습니다.",
     positiveExpression:

@@ -1,4 +1,5 @@
 import { careerSignalMatches, selectCareerMbti, selectCareerRoles, selectCareerJobs, selectCareerAvoid, traitText, type CareerMbtiSelection } from "./careerEvidenceSelection";
+import { contextualTenGodReading, selectReportActivity } from "./reportContextScenes";
 import type {
   EarthlyBranch,
   FiveElement,
@@ -1243,7 +1244,9 @@ export function buildCareerReportEvidence(
     lifeStatus: input.person.userContext.lifeStatus,
     labels: input.person.labels,
   });
-  const recommendedJobs = selectCareerJobs(input.person.labels, mbti, roles);
+  const activity = selectReportActivity(input.person.userContext);
+  const contextGod = myeongliCareerBasis.tenGodFocus[0];
+  const recommendedJobs = selectCareerJobs(input.person.labels, mbti, roles, input.person.userContext);
   const careerPaths = buildCareerPaths({
     labels: input.person.labels,
     fieldLabel: input.person.userContext.fieldLabel,
@@ -1255,11 +1258,13 @@ export function buildCareerReportEvidence(
     avoid: [...strategy.avoid, ...traitText(mbti.money.slice(index, index + 1), "risk")],
   }));
   const investmentProfile = buildInvestmentProfile(input.person.labels, mbti);
-  const studyCertificateStrategy = buildStudyCertificateStrategy({
+  const studyBase = buildStudyCertificateStrategy({
     mbti,
     labels: input.person.labels,
     fieldLabel: input.person.userContext.fieldLabel,
   });
+  const studyCertificateStrategy = { ...studyBase, recommendedFields: activity.id === "general" ? studyBase.recommendedFields
+    : [...activity.fields, ...studyBase.recommendedFields.filter(f => f !== input.person.userContext.fieldLabel)] };
   const workRiskWarnings = [...selectCareerAvoid(mbti), ...buildWorkRiskWarnings(input.person.labels)];
   const opportunitySignals = [
     ...buildOpportunitySignals(input.person.labels),
@@ -1310,7 +1315,8 @@ export function buildCareerReportEvidence(
     mbtiType: normalizeMbtiType(input.person.mbti),
     myeongliCareerBasis,
     mbtiCareerBasis,
-    combinedCareerProfile,
+    combinedCareerProfile: { ...combinedCareerProfile, plain: combinedCareerProfile.plain + (contextGod
+      ? ` ${contextualTenGodReading(input.person.userContext, contextGod, "scene")}` : "") },
     recommendedJobs,
     careerPaths,
     moneyStrategies,

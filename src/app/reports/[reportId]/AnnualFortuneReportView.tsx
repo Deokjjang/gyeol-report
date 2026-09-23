@@ -863,9 +863,9 @@ function renderAnnualReadingV2(draft: AnnualFortuneReportDraft, packet: AnnualFo
       <p>{draft.personLabel} · {packet.baseSaju.dayMaster} 일간 · {packet.annualFortune.ganji} 세운</p>
     </ReportCover>
     <ReportContents items={[
-      {id:"report-year",label:"이 해의 핵심"},{id:"report-cross",label:"대운과 세운"},
+      {id:"report-year",label:"이 해의 핵심"},{id:"report-foundation",label:"원국과 행동 성향"},{id:"report-cross",label:"대운과 세운"},
       {id:"report-readings",label:"일·돈·관계·성장"},{id:"report-important",label:"먼저 읽을 달"},
-      {id:"report-months",label:"12개월 흐름"},{id:"report-foundation",label:"원국과 행동 성향"},{id:"report-conclusion",label:"올해 행동 기준"},
+      {id:"report-months",label:"12개월 흐름"},{id:"report-conclusion",label:"올해 행동 기준"},
     ]} />
     <section id="report-year" tabIndex={-1} data-reading-section="" className={panelClass}>
       <h2 className={sectionTitleClass}>이 해에 강해지는 것과 감당할 것</h2>
@@ -875,6 +875,7 @@ function renderAnnualReadingV2(draft: AnnualFortuneReportDraft, packet: AnnualFo
       </div>
       <h3 className="mt-5 font-semibold">이 해를 읽는 핵심 근거</h3>{renderList(r.factors.map(f=>f.text))}
     </section>
+    {renderCommonFoundation(manseRyeokTable,mbtiProfileTable,packet,draft)}
     <section id="report-cross" tabIndex={-1} data-reading-section="" className={panelClass}>
       <h2 className={sectionTitleClass}>10년 흐름에서 이 해가 바꾸는 질문</h2>
       {r.crossPeriods.map(p=><div key={p.startKst} className="mt-5 border-t border-[#eadfce] pt-4">
@@ -917,10 +918,11 @@ function renderAnnualReadingV2(draft: AnnualFortuneReportDraft, packet: AnnualFo
             const fact=packet.calendarMonths![i].segments[j];
             return <div key={s.startKst} className="mt-5 border-t border-[#eadfce] pt-4">
               <h4 className="text-sm font-semibold text-[#6f1d35]">{monthSegmentPeriod(fact)} · {fact.monthPillar.stem}{fact.monthPillar.branch}</h4>
-              {renderParagraphs([s.core,s.balance,...s.scenes])}
+              {renderParagraphs([s.core,...s.scenes])}
               <p className="mt-3 text-sm font-medium leading-7">{s.action}</p>
               <details className="mt-3 text-sm leading-7">
                 <summary className="min-h-11 cursor-pointer py-2 text-[#6d3146] focus-visible:outline-2 focus-visible:outline-offset-2">기간별 관계 근거</summary>
+                {renderParagraphs([s.balance])}
                 <p>{describeAnnualMonthSegment(fact)}</p>
                 {fact.relationFacts.length ? renderList(fact.relationFacts.map(annualRelationLabel)) : <p>계산된 관계·오행 작용 없음</p>}
               </details>
@@ -929,7 +931,6 @@ function renderAnnualReadingV2(draft: AnnualFortuneReportDraft, packet: AnnualFo
         </article>)}
       </div>
     </section>
-    {renderCommonFoundation(manseRyeokTable,mbtiProfileTable,packet,draft)}
     <section id="report-conclusion" tabIndex={-1} data-reading-section="" className={panelClass}>
       <h2 className={sectionTitleClass}>올해 행동 기준</h2>
       {renderList(r.actions)}

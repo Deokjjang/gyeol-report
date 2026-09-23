@@ -291,40 +291,16 @@ function pickFunctionStack(
 function buildAnnualFortuneMbtiTraits(
   source: MbtiSourceProfile,
 ): Readonly<Record<string, readonly MbtiSourceTraitItem[]>> {
-  const reportUseCases = (source.reportUseCases?.saeunReport ?? []).slice(0, 5);
-
-  if (reportUseCases.length === 0) {
-    return {};
-  }
-
+  // Array position in reportUseCases has no semantic field contract.
   return {
-    "세운 활용": reportUseCases.map((line, index) => ({
-      id: `saeun_report_use_case_${index + 1}`,
-      label: getAnnualFortuneReportUseCaseLabel(index),
-      plainKo: sanitizeAnnualFortuneReportUseCaseLine(line),
-      productDomains: [],
-    })),
+    "세운 활용": ([
+      ["career", "일과 실행"], ["money", "돈과 자원"],
+      ["relationships", "관계 리듬"], ["study", "성장 방식"],
+    ] as const).flatMap(([area, label]) => {
+      const trait = source.traits?.[area]?.find(t => t.plainKo);
+      return trait ? [{ ...trait, label: `${label} · ${trait.label ?? "행동 성향"}` }] : [];
+    }),
   };
-}
-
-function getAnnualFortuneReportUseCaseLabel(index: number): string {
-  return [
-    "연간 흐름",
-    "일과 실행",
-    "돈과 자원",
-    "관계 리듬",
-    "성장 방식",
-  ][index] ?? "활용 포인트";
-}
-
-function sanitizeAnnualFortuneReportUseCaseLine(line: string): string {
-  return line
-    .replaceAll("saeun 섹션", "세운 해석")
-    .replaceAll("saeun 리포트", "세운 리포트")
-    .replaceAll("career 섹션", "직업 흐름")
-    .replaceAll("money 섹션", "돈 흐름")
-    .replaceAll("relationship 섹션", "관계 흐름")
-    .replaceAll("source", "근거");
 }
 
 function getStringArrayProperty(

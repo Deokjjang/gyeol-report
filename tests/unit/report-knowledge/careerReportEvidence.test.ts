@@ -36,9 +36,9 @@ describe("careerReportEvidence", () => {
       twelveLifeStage: ["절"],
     });
     expect(evidence.investmentProfile.disclaimer).toContain("금융 자문이 아닙니다");
-    expect(evidence.recommendedJobs[0]).toMatchObject({
-      fit: "high",
-    });
+    expect(evidence.recommendedJobs[0]?.evidenceIds).toContain("context:project_creation");
+    expect(evidence.recommendedJobs[0]?.evidenceIds?.some(id => id.startsWith("natal:"))).toBe(true);
+    expect(evidence.recommendedJobs.some(job => job.fit === "high")).toBe(true);
     expect(evidence.bridgeEvidence.productKey).toBe("careerMoneyStudy");
     expect(evidence.bridgeEvidence.primaryEvidence.length).toBeGreaterThan(0);
     expect(evidence.bridgeEvidence.primaryEvidence[0]?.purposes).toEqual(

@@ -1,4 +1,6 @@
 import { formatProductBridgeScenes } from "../report-knowledge/bridge/interactionScenes";
+import { withKoreanParticle } from "../report-knowledge/koreanCopyUtils";
+import { contextualTenGodReading, selectReportActivity } from "../report-knowledge/reportContextScenes";
 import type { CareerReportEvidencePacket } from "../report-knowledge/careerReportTypes";
 import {
   USER_LIFE_STATUS_LABELS,
@@ -603,13 +605,15 @@ export function buildCareerReportScreenQaFallbackDraft(
 ): CareerReportDraft {
   const fieldLabel = evidence.userContext.fieldLabel ?? null;
   const relationshipStatus = evidence.userContext.relationshipStatus ?? "unknown";
-  const moneyPush = evidence.moneyStrategies.flatMap((strategy) => strategy.push);
+  const activity = selectReportActivity(evidence.userContext);
+  const contextGod = evidence.myeongliCareerBasis.tenGodFocus[0];
+  const contextCopy = (intent: Parameters<typeof contextualTenGodReading>[2]) => contextGod ? contextualTenGodReading(evidence.userContext, contextGod, intent) : "실제 맡는 업무의 범위와 평가 조건을 확인하세요.";
   const moneyAvoid = evidence.moneyStrategies.flatMap((strategy) => strategy.avoid);
   const riskWarnings = takeRecordsWithFallback(
     evidence.workRiskWarnings.map((warning) => ({
       title: warning.title,
-      body: warning.plain,
-      prevention: "역할, 돈, 일정 기준을 문서로 고정하고 회복 루틴을 일정에 넣습니다.",
+      body: `‘${warning.title}’이 실제로 반복된다면, 피로가 큰 환경에서 설명한 조건과 최근 ${activity.collaboration} 상황을 대조하세요.`,
+      prevention: `‘${warning.title}’의 부담을 줄이기 위해 바꿔 볼 조건 하나와, 바꾼 뒤 확인할 결과를 짝지어 기록합니다.`,
     })),
     [
       {
@@ -644,22 +648,21 @@ export function buildCareerReportScreenQaFallbackDraft(
           ? null
           : USER_RELATIONSHIP_STATUS_LABELS[relationshipStatus],
       contextNote:
-        `현재 직업과 관심 분야는 계산 기준이 아니라 적합도를 비교하는 현실 맥락으로만 사용합니다. ${fieldLabel ? `${fieldLabel}라는 직업명만으로 세부 업무를 확정하지 않습니다. 실제 업무가 ${evidence.recommendedJobs[0]?.environment ?? "추천 환경"}에 가까운지, ${evidence.recommendedJobs[0]?.role ?? "추천 역할"}을 맡고 있는지 비교하세요.` : "현재 업무를 입력하지 않아 직업을 추정하지 않습니다."}`,
+        `현재 직업과 관심 분야는 계산 기준이 아니라 적합도를 비교하는 현실 맥락으로만 사용합니다. ${fieldLabel ? `${withKoreanParticle(fieldLabel, "called")} 직업명만으로 세부 업무를 확정하지 않습니다. 실제 업무가 ${evidence.recommendedJobs[0]?.environment ?? "추천 환경"}에 가까운지, ${evidence.recommendedJobs[0]?.role ?? "추천 역할"}을 맡고 있는지 비교하세요.` : "현재 업무를 입력하지 않아 직업을 추정하지 않습니다."}`,
     },
     careerIdentity: {
       headline: evidence.combinedCareerProfile.headline,
       archetypeLabel: evidence.combinedCareerProfile.workStyleArchetypes[0] ?? "career_profile",
       body: evidence.combinedCareerProfile.plain,
       strongestFit: evidence.myeongliCareerBasis.careerPlain,
-      biggestRisk:
-        evidence.workRiskWarnings[0]?.plain ?? evidence.mbtiCareerBasis.riskPlain,
+      biggestRisk: contextCopy("warning"),
     },
     myeongliMbtiSummary: {
       myeongliCore: evidence.myeongliCareerBasis.dayMasterPlain,
       mbtiCore: evidence.mbtiCareerBasis.workStylePlain,
       combinedReading: formatProductBridgeScenes(evidence.bridgeEvidence) || evidence.combinedCareerProfile.plain,
       alignment: evidence.mbtiType === null ? "unknown" : "mixed",
-      tensionNote: evidence.workRiskWarnings[0]?.plain ?? null,
+      tensionNote: evidence.mbtiType ? `${evidence.mbtiCareerBasis.riskPlain} ${contextCopy("action")}` : null,
     },
     recommendedJobs: buildFallbackRecommendedJobs(evidence),
     unsuitableJobs: buildFallbackUnsuitableJobs(evidence),
@@ -668,7 +671,7 @@ export function buildCareerReportScreenQaFallbackDraft(
       headline: evidence.moneyStrategies[0]?.label ?? "현금흐름과 정산 기준을 먼저 잡습니다",
       body: `${evidence.myeongliCareerBasis.moneyPlain} ${evidence.mbtiCareerBasis.moneyBehaviorPlain}`,
       bestIncomeChannels: takeWithFallback(
-        moneyPush,
+        evidence.userContext.lifeStatus === "student" ? ["조건을 확인한 근로·인턴 보상", "범위가 정해진 과제형 업무", "기술을 적용한 작은 유료 제작"] : ["역할과 평가 기준에 맞는 본업 보상", "범위를 정한 프로젝트 대가", "실제 지급 조건을 확인한 성과 보상"],
         ["월급", "프로젝트 수입", "성과급", "포트폴리오 기반 부수입"],
         3,
         8,
@@ -680,7 +683,7 @@ export function buildCareerReportScreenQaFallbackDraft(
         8,
       ),
       sideIncomeIdeas: takeWithFallback(
-        evidence.careerPaths.flatMap((path) => path.examples),
+        activity.id === "general" ? evidence.careerPaths.flatMap((path) => path.examples) : [`${activity.output}의 구성·검토 지원`, `${activity.review}의 정리 도구 제작`, "본업과 이해충돌·겸업 조건을 확인한 작은 외부 과제"],
         ["기획 외주", "운영 개선", "템플릿 판매", "실무 콘텐츠"],
         3,
         8,
@@ -724,9 +727,9 @@ export function buildCareerReportScreenQaFallbackDraft(
         8,
       ),
       portfolioStrategy: [
-        "문제 정의",
-        "실행 과정",
-        "숫자 결과",
+        `${activity.review}: 무엇을 확인하려 했는지`,
+        `${activity.output}: 직접 바꾼 부분과 검토 결과`,
+        "측정한 변화와 아직 확인하지 못한 효과 구분",
         fieldLabel ?? "현재 관심 분야",
       ],
       avoidStudyPatterns: takeWithFallback(
