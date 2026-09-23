@@ -53,131 +53,113 @@ function HalfYearVisual() {
   );
 }
 
+// Layered paper, solid silhouettes and fine engraved lines form one editorial set.
 function ComprehensiveVisual() {
   return (
-    <g className={styles.ink}>
-      {/* CORE: nested contours gather around a single, off-centre axis. */}
-      <path className={styles.guide} d="M64 92H296 M180 22V158" />
-      <g data-visual-motion="orbit">
-        <path d="M82 99C82 53 133 30 180 30C228 30 276 51 278 84C282 125 223 150 180 150C137 150 82 135 82 99Z" />
-        <path d="M96 98C96 61 138 39 180 39C221 39 263 55 264 85C267 119 219 141 180 141C143 141 96 128 96 98Z" />
-        <path className={styles.wine} d="M111 96C111 67 146 49 180 49C214 49 249 61 250 86C252 113 212 131 180 131C150 131 111 121 111 96Z" />
-        <path d="M128 94C128 72 154 60 180 60C206 60 232 67 233 87C235 108 204 120 180 120C157 120 128 113 128 94Z" />
-        <path d="M146 93C146 78 164 71 180 71C198 71 215 77 215 88C216 101 196 109 180 109C164 109 146 105 146 93Z" />
-      </g>
-      <path className={styles.gold} d="M109 132C145 132 164 107 180 90C198 69 218 47 252 47" />
-      <circle className={styles.nodeWine} cx="180" cy="90" r="4" data-visual-motion="node" />
-      <circle className={styles.nodeGold} cx="252" cy="47" r="2.5" />
+    <g className={styles.ink} data-illustration="person-and-maps">
+      <ellipse cx="185" cy="152" rx="109" ry="10" fill="#e9dfd0" stroke="none" />
+      <path d="M76 53L210 24L287 112L148 147Z" fill="#e7d9bd" stroke="#a38247" />
+      <path d="M84 40L224 38L271 131L126 133Z" fill="#fffaf1" />
+      <path className={styles.guide} d="M100 69L237 65M109 100L251 96M128 40L163 133M185 39L220 132" />
+      <path className={styles.gold} d="M104 112C144 114 132 74 172 74S226 54 248 85M120 121C151 127 170 93 210 104" />
+      <path d="M145 33H221V143H145Z" fill="#f3e9dc" stroke="#7f1d38" strokeWidth="2" />
+      <path className={styles.guide} d="M154 42H212V134H154Z" />
+      <circle cx="183" cy="68" r="16" fill="#7f1d38" stroke="none" />
+      <path d="M156 120V109C156 87 210 87 210 109V120Z" fill="#7f1d38" stroke="none" />
+      <path d="M167 98Q183 111 199 98M183 111V125" stroke="#e7d9bd" />
+      <path className={styles.gold} d="M133 27V45M124 36H142M229 128H245M237 120V136" />
+      <circle className={styles.nodeGold} cx="110" cy="80" r="4" />
     </g>
   );
 }
 
 function CareerMoneyStudyVisual() {
   return (
-    <g className={styles.ink}>
-      {/* ASCENT: separate strands turn into one direction, without chart axes. */}
-      <path className={styles.guide} d="M94 150C164 151 219 129 270 80" />
-      <g data-visual-motion="orbit">
-        <path d="M78 138C152 142 123 71 183 57C213 50 233 56 268 31" />
-        <path d="M94 145C168 144 139 83 193 66C224 56 239 61 275 40" />
-        <path className={styles.wine} d="M111 149C186 144 155 92 204 76C233 66 249 65 283 49" />
-        <path d="M132 149C198 139 178 99 217 85C243 77 258 73 290 60" />
-        <path className={styles.gold} d="M78 89C108 83 143 89 158 112C174 138 205 142 236 120" />
+    <g className={styles.ink} data-illustration="work-and-learning-path">
+      <path d="M55 150H305" className={styles.guide} />
+      <path d="M63 144V122H124V96H189V67H256V39H292V144Z" fill="#e7d9bd" stroke="none" />
+      <path d="M63 122H124V96H189V67H256V39H292" stroke="#a38247" strokeWidth="2" />
+      <g transform="rotate(-8 102 99)">
+        <path d="M61 68Q83 62 102 72Q124 64 143 71V117Q123 110 102 120Q83 110 61 117Z" fill="#fffaf1" />
+        <path d="M102 72V120M71 81L92 83M71 92L92 94M112 83L132 80M112 94L132 91" className={styles.gold} />
       </g>
-      <circle className={styles.nodeGold} cx="158" cy="112" r="3" />
-      <circle className={styles.nodeWine} cx="204" cy="76" r="3" />
-      <circle className={styles.nodeWine} cx="283" cy="49" r="4" data-visual-motion="node" />
+      <path d="M158 42H204L222 60V105H158Z" fill="#fffaf1" stroke="#7f1d38" strokeWidth="1.8" />
+      <path d="M204 42V60H222M170 71H206M170 82H197M170 93H200" className={styles.wine} />
+      <path d="M236 95L265 36L272 40L243 99L235 105Z" fill="#a38247" />
+      <path d="M265 36L268 30L275 34L272 40M235 105L239 96" />
+      <circle cx="276" cy="118" r="19" fill="#7f1d38" stroke="none" />
+      <path d="M269 136L264 152L276 146L286 151L283 136" fill="#7f1d38" stroke="none" />
+      <circle cx="276" cy="118" r="12" stroke="#e7d9bd" />
     </g>
   );
 }
 
 function LoveMarriageChildVisual() {
   return (
-    <g className={styles.ink}>
-      {/* BOND: two open strands become a continuous, woven middle. */}
-      <g className={styles.wine} data-visual-motion="orbit">
-        <path d="M65 55C121 27 128 133 180 133C230 133 238 65 295 89" />
-        <path d="M65 65C119 38 132 143 180 143C235 143 242 75 295 99" />
-        <path d="M65 75C116 49 136 153 180 153C240 153 246 85 295 109" />
-      </g>
-      <g className={styles.gold}>
-        <path d="M65 109C121 137 128 31 180 31C230 31 238 99 295 75" />
-        <path d="M65 119C125 147 132 41 180 41C227 41 234 109 295 85" />
-        <path d="M65 129C128 157 136 51 180 51C224 51 230 119 295 95" />
-      </g>
-      <circle className={styles.nodeWine} cx="180" cy="143" r="3" />
-      <circle className={styles.nodeGold} cx="180" cy="41" r="3" data-visual-motion="node" />
-    </g>
-  );
-}
-
-function DaewoonVisual() {
-  return (
-    <g className={styles.ink}>
-      {/* ERA: broad phases on a shared time contour. */}
-      <TimeContours />
-      <g className={styles.wine} data-visual-motion="orbit">
-        <path d={timeContourPaths[0]} pathLength="100" strokeDasharray="27 9" />
-      </g>
-      <path className={styles.gold} d="M74 140C134 165 231 160 286 139" />
-      <circle className={styles.nodeWine} cx="136" cy="49" r="3" />
-      <circle className={styles.nodeGold} cx="247" cy="64" r="3" data-visual-motion="node" />
-      <circle className={styles.nodeWine} cx="296" cy="119" r="3" />
-    </g>
-  );
-}
-
-function SaewoonVisual() {
-  return (
-    <g className={styles.ink}>
-      {/* YEAR: one interval is brought into focus on the same time contour. */}
-      <TimeContours />
-      <path className={styles.guide} d="M210 25V153" />
-      <g className={styles.wine} data-visual-motion="orbit">
-        {timeContourPaths.map((d) => (
-          <path key={d} d={d} pathLength="100" strokeDasharray="22 78" strokeDashoffset="-48" />
-        ))}
-      </g>
-      <g data-visual-motion="node">
-        <circle className={styles.gold} cx="210" cy="58" r="15" />
-        <circle className={styles.nodeWine} cx="210" cy="58" r="4" />
-      </g>
-      <path className={styles.gold} d="M184 137H236 M184 132V142 M236 132V142" />
+    <g className={styles.ink} data-illustration="person-relationship-home">
+      <path d="M54 143H304" className={styles.guide} />
+      <path d="M73 112C120 156 153 52 218 86" className={styles.gold} />
+      <path d="M213 83L259 44L305 83V139H213Z" fill="#e7d9bd" stroke="none" />
+      <path d="M203 85L259 37L314 85" stroke="#a38247" strokeWidth="2.5" />
+      <path d="M225 139V91H293V139M249 139V112Q259 98 269 112V139" stroke="#a38247" />
+      <path d="M56 134V82Q56 46 87 46Q118 46 118 82V134Z" fill="#fffaf1" />
+      <circle cx="87" cy="84" r="12" fill="#7f1d38" stroke="none" />
+      <path d="M66 127V116C66 96 108 96 108 116V127Z" fill="#7f1d38" stroke="none" />
+      <circle cx="159" cy="71" r="11" fill="#7f1d38" stroke="none" />
+      <circle cx="187" cy="77" r="10" fill="#a38247" stroke="none" />
+      <path d="M143 115V99C143 82 172 82 175 99L181 120M175 117V104C175 90 204 90 204 108V128" stroke="#7f1d38" strokeWidth="5" />
+      <path d="M224 49Q216 30 229 25Q244 35 233 49M231 49L236 67" className={styles.gold} />
     </g>
   );
 }
 
 function CompatibilityVisual() {
   return (
-    <g className={styles.ink}>
-      {/* RESONANCE: independent fields generate a third structure between them. */}
-      <g className={styles.wine}>
-        <ellipse cx="147" cy="90" rx="66" ry="53" transform="rotate(-28 147 90)" />
-        <ellipse cx="147" cy="90" rx="55" ry="43" transform="rotate(-28 147 90)" />
-        <ellipse cx="147" cy="90" rx="44" ry="33" transform="rotate(-28 147 90)" />
-      </g>
-      <g className={styles.gold} data-visual-motion="orbit">
-        <ellipse cx="213" cy="90" rx="66" ry="53" transform="rotate(28 213 90)" />
-        <ellipse cx="213" cy="90" rx="55" ry="43" transform="rotate(28 213 90)" />
-        <ellipse cx="213" cy="90" rx="44" ry="33" transform="rotate(28 213 90)" />
-      </g>
-      <path className={styles.intersection} d="M180 51C164 64 157 78 157 90C157 106 167 120 180 129C193 120 203 106 203 90C203 78 196 64 180 51Z" />
-      <circle className={styles.nodeWine} cx="180" cy="90" r="3" data-visual-motion="node" />
+    <g className={styles.ink} data-illustration="two-structures-meeting">
+      <path d="M66 37H173L203 135H96Z" fill="#efe1d7" stroke="#7f1d38" strokeWidth="2" />
+      <path d="M187 43L282 30L297 129L202 146Z" fill="#e7d9bd" stroke="#a38247" strokeWidth="2" />
+      <path d="M84 59H179M90 83H186M97 107H194M108 37L138 135M144 37L174 135" stroke="#7f1d38" strokeOpacity=".45" />
+      <path d="M199 62Q239 92 287 56M202 83Q243 114 290 77M205 105Q250 135 293 101M229 38Q210 86 243 140M263 34Q243 82 276 134" stroke="#a38247" />
+      <path d="M173 52Q154 87 173 120Q203 129 221 107Q229 76 203 58Z" fill="#fffaf1" stroke="#493b32" strokeWidth="2" />
+      <path d="M167 79Q193 59 217 88M166 97Q191 119 219 99M181 62Q202 89 183 121" className={styles.wine} />
+      <circle cx="112" cy="149" r="10" fill="#7f1d38" stroke="none" />
+      <circle cx="265" cy="153" r="10" fill="#a38247" stroke="none" />
+      <path d="M125 150H160M217 152H251" className={styles.guide} />
     </g>
   );
 }
 
-// The same three long contours make the two time scales visibly related.
-const timeContourPaths = [
-  "M64 131C126 16 210 3 296 119",
-  "M64 144C126 29 210 16 296 132",
-  "M74 153C134 48 210 34 286 131",
-] as const;
-
-function TimeContours() {
+function DaewoonVisual() {
   return (
-    <g className={styles.timeContours}>
-      {timeContourPaths.map((d) => <path key={d} d={d} />)}
+    <g className={styles.ink} data-illustration="decade-chapters">
+      <path d="M48 139V59L130 35L214 58L312 30V123L214 149L130 127Z" fill="#fffaf1" />
+      <path d="M48 98L89 62L130 79L168 61L214 111L262 62L312 83V123L214 149L130 127L48 139Z" fill="#e7d9bd" stroke="none" />
+      <path d="M48 119C91 131 97 89 130 98S180 142 214 123S267 62 312 69" stroke="#7f1d38" strokeWidth="4" />
+      <path d="M130 35V127M214 58V149" className={styles.gold} />
+      <path d="M48 156H312M48 151V162M130 151V162M214 151V162M312 151V162" className={styles.wine} />
+      <path d="M56 154V158M64 154V158M72 154V158M80 154V158M88 154V158M96 154V158M104 154V158M112 154V158M120 154V158M138 154V158M146 154V158M154 154V158M162 154V158M170 154V158M178 154V158M186 154V158M194 154V158M202 154V158M224 154V158M234 154V158M244 154V158M254 154V158M264 154V158M274 154V158M284 154V158M294 154V158M304 154V158" className={styles.guide} />
+      <circle cx="130" cy="98" r="5" className={styles.nodeWine} />
+      <circle cx="214" cy="123" r="5" className={styles.nodeGold} />
+      <circle cx="276" cy="50" r="10" fill="#a38247" stroke="none" />
+    </g>
+  );
+}
+
+function SaewoonVisual() {
+  return (
+    <g className={styles.ink} data-illustration="four-seasons-twelve-months">
+      <path d="M62 31H298V145H62Z" fill="#fffaf1" />
+      <path d="M62 31H121V145H62ZM180 31H239V145H180Z" fill="#e7d9bd" fillOpacity=".55" stroke="none" />
+      <path d="M121 31V145M180 31V145M239 31V145M62 98H298" className={styles.guide} />
+      <path d="M92 81V52Q74 43 76 62Q78 70 92 70M92 63Q108 43 109 56Q111 69 92 73" className={styles.wine} />
+      <circle cx="151" cy="61" r="12" fill="#a38247" stroke="none" />
+      <path d="M151 40V35M151 82V87M130 61H126M172 61H176M136 46L132 42M166 76L170 80M166 46L170 42M136 76L132 80" className={styles.gold} />
+      <path d="M199 79C189 55 217 46 225 43C228 65 218 85 199 79ZM199 79L218 53" fill="#7f1d38" stroke="#fffaf1" />
+      <path d="M269 43V81M252 52L286 72M252 72L286 52M263 46L269 51L275 46M263 78L269 73L275 78" className={styles.gold} />
+      {Array.from({ length: 12 }, (_, i) => (
+        <rect key={i} x={69 + i * 19} y="111" width="12" height="21" rx="1" fill={i === 2 || i === 7 ? "#7f1d38" : "#d7c5a5"} stroke="none" />
+      ))}
+      <path d="M75 155C109 145 129 166 161 151S217 145 246 154S277 160 288 150" className={styles.wine} />
     </g>
   );
 }

@@ -4,6 +4,7 @@ import type { ProductGenerationSuccessResult } from "../../../src/lib/report-gen
 import { validateNewProductPublication } from "../../../src/lib/report-generation/productPublishGate";
 import { buildPaidWriterRequest } from "../../../src/lib/report-generation/paidWriterRequest";
 import { settlePaidWriterDraft } from "../../../src/lib/report-generation/paidWriterRescue";
+import { resolveReportWriterRuntime } from "../../../src/lib/report-generation/reportWriterRuntime";
 
 const person = { name: "김도윤", birthDate: "1996-12-06", birthTime: "14:15", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ" };
 const products = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility", "major_fortune", "annual_fortune"] as const;
@@ -73,9 +74,21 @@ describe.each(products)("one paid writer opportunity: %s", key => {
     expect(JSON.stringify(result.delivery)).not.toContain("PRIVATE");
   });
   it("writer disabled still delivers", async () => {
-    const result = await generateProductReport(payload(key), disabled, "normal_writer");
+    const result = await generateProductReport(payload(key), resolveReportWriterRuntime({}), "normal_writer");
     expect(result).toMatchObject({ ok: true, externalCalls: [], delivery: { fallbackUsed: true, publish: "pass" } });
   });
+});
+
+it("unknown MBTI publishes a deterministic comprehensive report without inferring a type", async () => {
+  const p = { ...payload("saju_mbti_full"), person: { ...person, mbtiType: "" } };
+  const result = await generateProductReport(p, resolveReportWriterRuntime({}), "normal_writer");
+  expect(result).toMatchObject({ ok: true, externalCalls: [], delivery: { fallbackUsed: true, publish: "pass" } });
+  if (result.ok) {
+    const packet = result.evidencePacket as unknown as Record<string, unknown>;
+    expect(packet.mbtiBasis).toBeUndefined();
+    expect(validateNewProductPublication("saju_mbti_full", result.draft, result.evidencePacket, p).ok).toBe(true);
+    expect(JSON.stringify(result.draft)).not.toMatch(/INTJ|INTP|ENTJ|ENTP|INFJ|INFP|ENFJ|ENFP|ISTJ|ISFJ|ESTJ|ESFJ|ISTP|ISFP|ESTP|ESFP/);
+  }
 });
 
 it("missing relationship scene is rescued from the same complete canonical chapter", async () => {

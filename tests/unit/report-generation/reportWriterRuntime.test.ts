@@ -27,10 +27,10 @@ describe("report writer runtime", () => {
     });
   });
 
-  it("keeps writer disabled when the env flag is not explicitly enabled", () => {
+  it.each([undefined, "", "0", "true", "false", "yes", "01", " 1 "])("keeps writer disabled for non-explicit flag %s", (flag) => {
     expect(
       resolve({
-        OPENAI_REPORT_WRITER_ENABLED: "true",
+        OPENAI_REPORT_WRITER_ENABLED: flag,
         OPENAI_API_KEY: "test-key",
         OPENAI_REPORT_MODEL: "test-model",
       }),

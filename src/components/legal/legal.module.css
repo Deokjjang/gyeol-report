@@ -41,6 +41,7 @@
 .footer { background: #f4efe7; border-top: 1px solid #e4dcd1; color: #71665e; padding: 30px 24px 22px; font-size: 13px; line-height: 1.85; overflow-wrap: anywhere; word-break: keep-all; }
 .footerInner { max-width: 1152px; margin: 0 auto; }
 .footerBrand { color: #493b32; font-size: 15px; font-weight: 600; margin-bottom: 12px; }
+.footerNote { font-size: 12px; line-height: 1.8; margin-top: 4px; }
 .identity { display: flex; flex-wrap: wrap; gap: 0 12px; }
 .address { margin-top: 8px; font-style: normal; }
 .footer a { color: #57483d; text-underline-offset: 4px; }

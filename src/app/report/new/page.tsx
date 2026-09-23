@@ -17,6 +17,7 @@ import {
   getAnnualFortuneCurrentYear,
 } from "../../../lib/report-knowledge/annualFortuneYearRules";
 import type { ReportProductType } from "../../../lib/payment/reportProductTypes";
+import { MBTI_TYPES } from "../../../lib/report-generation/reportInputTypes";
 import type {
   CompatibilityRelationshipType,
   CompatibilityReportInputPayload,
@@ -192,24 +193,8 @@ const SAJU_MBTI_FULL_SELECTED_REPORT_PRODUCT = {
   priceKo: "1,290원",
 } as const satisfies SelectedReportProduct;
 
-const mbtiTypes = [
-  "INTJ",
-  "INTP",
-  "ENTJ",
-  "ENTP",
-  "INFJ",
-  "INFP",
-  "ENFJ",
-  "ENFP",
-  "ISTJ",
-  "ISFJ",
-  "ESTJ",
-  "ESFJ",
-  "ISTP",
-  "ISFP",
-  "ESTP",
-  "ESFP",
-] as const;
+const mbtiTypes = MBTI_TYPES.filter((type) => type !== "");
+const mbtiHelpKo = "MBTI를 알면 사주와 행동 성향을 함께 해석하고, 모르면 명리 중심으로 생성합니다.";
 
 type ReportInputStep = 0 | 1 | 2 | 3;
 type BirthTimeMode = "exact" | "branch" | "unknown";
@@ -642,7 +627,7 @@ function getPersonReviewRows(input: CompatibilityPersonInputState) {
     { labelKo: "생년월일", valueKo: input.birthDate },
     { labelKo: "출생시간", valueKo: formatAnnualBirthTimeSummary(input) },
     { labelKo: "성별", valueKo: formatGenderLabel(input.gender) },
-    { labelKo: "MBTI", valueKo: input.mbtiType || "선택 안 함" },
+    { labelKo: "MBTI", valueKo: input.mbtiType || "모름 · 명리 중심" },
   ];
 }
 
@@ -926,19 +911,21 @@ function renderCompatibilityPersonInputSection(input: {
           <select
             id={`${prefix}MbtiType`}
             name={`${prefix}MbtiType`}
+            aria-describedby={`${prefix}MbtiHelp`}
             value={value.mbtiType}
             onChange={(event) =>
               onChange({ ...value, mbtiType: event.target.value })
             }
             className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
           >
-            <option value="">선택</option>
+            <option value="">모름</option>
             {mbtiTypes.map((type) => (
               <option key={type} value={type}>
                 {type}
               </option>
             ))}
           </select>
+          <p id={`${prefix}MbtiHelp`} className={styles.hint}>{mbtiHelpKo}</p>
         </div>
       </div>
     </section>
@@ -1047,19 +1034,21 @@ function renderSingleProductCommonInputSection(input: {
           <select
             id={`${prefix}MbtiType`}
             name="mbtiType"
+            aria-describedby={`${prefix}MbtiHelp`}
             value={value.mbtiType}
             onChange={(event) =>
               onChange({ ...value, mbtiType: event.target.value })
             }
             className="w-full min-w-0 rounded-lg border border-[#ded2c2] bg-white px-4 py-3 text-[#2b211b] outline-none focus:border-[#6f1d35]"
           >
-            <option value="">선택</option>
+            <option value="">모름</option>
             {mbtiTypes.map((type) => (
               <option key={type} value={type}>
                 {type}
               </option>
             ))}
           </select>
+          <p id={`${prefix}MbtiHelp`} className={styles.hint}>{mbtiHelpKo}</p>
         </div>
 
         <fieldset className={styles.context}>

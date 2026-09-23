@@ -23,6 +23,9 @@ export default function BusinessFooter() {
                 {GYEOL_BUSINESS_INFO.supportContactEmail}
               </a>
             </div>
+            <p className={styles.footerNote}>
+              전화 상담은 제공하지 않습니다. 문의는 {GYEOL_BUSINESS_INFO.supportContactEmail}로 보내주세요.
+            </p>
           </address>
         </section>
         <nav aria-label="정책 링크" className={styles.footerNav}>
@@ -30,6 +33,8 @@ export default function BusinessFooter() {
             <a key={link.href} href={link.href}>{link.labelKo}</a>
           ))}
         </nav>
+        {/* Display date only; legal policy and checkout consent versions are separate. */}
+        <p className={styles.footerNote}>시행일 2026년 9월 24일</p>
       </div>
     </footer>
   );

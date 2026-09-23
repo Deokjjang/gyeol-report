@@ -20,6 +20,8 @@ describe("BusinessFooter", () => {
       "고객센터",
       "050-6664-8562",
       "support@dvem.ai",
+      "전화 상담은 제공하지 않습니다. 문의는 support@dvem.ai로 보내주세요.",
+      "시행일 2026년 9월 24일",
     ];
 
     for (const text of expectedText) {

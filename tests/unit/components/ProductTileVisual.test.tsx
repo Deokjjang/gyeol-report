@@ -42,15 +42,18 @@ describe("product visual collection", () => {
     expect(html.match(/<(path|ellipse|circle)\b/g)?.length).toBeLessThan(20);
   });
 
-  it("keeps six distinct silhouettes with shared time contours for major and annual", () => {
+  it("keeps six distinct editorial scenes and twelve months separate from decade chapters", () => {
     const drawings = expectedMapping.map(([, variant]) =>
       renderToStaticMarkup(<ProductTileVisual variant={variant} />).replace(/data-product-visual="[^"]+"/, ""),
     );
     expect(new Set(drawings).size).toBe(6);
-    const paths = (html: string) => [...html.matchAll(/ d="([^"]+)"/g)].map((match) => match[1]);
-    const majorPaths = paths(drawings[4]);
-    const annualPaths = paths(drawings[5]);
-    expect(majorPaths.filter((d) => annualPaths.includes(d))).toHaveLength(4);
+    expect(drawings[0]).toContain('data-illustration="person-and-maps"');
+    expect(drawings[1]).toContain('data-illustration="work-and-learning-path"');
+    expect(drawings[2]).toContain('data-illustration="person-relationship-home"');
+    expect(drawings[3]).toContain('data-illustration="two-structures-meeting"');
+    expect(drawings[4]).toContain('data-illustration="decade-chapters"');
+    expect(drawings[5]).toContain('data-illustration="four-seasons-twelve-months"');
+    expect(drawings[5].match(/<rect\b/g)).toHaveLength(12);
   });
 
   it("limits illustration motion to pointer hover or keyboard focus and respects reduced motion", () => {

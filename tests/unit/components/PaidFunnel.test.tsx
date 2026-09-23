@@ -8,6 +8,7 @@ import NewReportPage, {
 import Launcher from "../../../src/components/payment/DevTossCheckoutLauncher";
 import { getReportProduct } from "../../../src/lib/payment/reportProductCatalog";
 import { prePaymentRefundNoticeKo } from "../../../src/lib/legal/refundPolicy";
+import { MBTI_TYPES } from "../../../src/lib/report-generation/reportInputTypes";
 
 // A deterministic hook harness exercises the existing event handlers without a browser or providers.
 const hooks = vi.hoisted(() => ({ slots: [] as unknown[], cursor: 0, product: "saju-mbti-full" }));
@@ -89,6 +90,26 @@ beforeEach(() => {
 afterEach(() => { vi.clearAllTimers(); vi.useRealTimers(); vi.unstubAllGlobals(); });
 
 describe("paid funnel contracts and progressive review", () => {
+  it.each(products)("%s offers 16 MBTI types plus unknown with the existing empty-value contract", async (slug) => {
+    hooks.product = slug;
+    const names = slug === "compatibility" ? ["personAMbtiType", "personBMbtiType"] : ["mbtiType"];
+    for (const name of names) {
+      const select = input(name);
+      const options = elements(select.props.children).filter(el => el.type === "option");
+      expect(options).toHaveLength(17);
+      expect(new Set(options.map(el => el.props.value)).size).toBe(17);
+      expect(options.map(el => el.props.value)).toEqual(["", ...MBTI_TYPES.filter(type => type !== "")]);
+      expect(options[0].props.children).toBe("모름");
+      expect(select.props.value).toBe("");
+      expect(select.props["aria-describedby"]).toBeDefined();
+      change(name, "ISFJ"); expect(input(name).props.value).toBe("ISFJ");
+      change(name, ""); expect(input(name).props.value).toBe("");
+    }
+    expect(JSON.stringify(page())).toContain("모르면 명리 중심으로 생성합니다.");
+    complete(); await settleReadiness();
+    expect(JSON.stringify(checkout().tree)).toContain("최종 확인");
+    expect(JSON.stringify(checkout().entry.props)).not.toContain('"mbtiType":"ISFJ"');
+  });
   it.each(products)("%s preserves product, catalog price, required fields and five separate consents", async (slug, type) => {
     hooks.product = slug;
     expect(getReportProduct(type)?.amount).toBe(1290);
