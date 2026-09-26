@@ -4,7 +4,10 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 
 import { CompatibilityReportView } from "../../../../src/app/reports/[reportId]/CompatibilityReportView";
+import { generateCompatibilityProductDraft } from "../../../../src/lib/report-generation/compatibilityGenerationHandler";
 import type { CompatibilityReportDraft } from "../../../../src/lib/report-generation/compatibilityReportDraftTypes";
+import { validateProductPublication } from "../../../../src/lib/report-generation/productPublishGate";
+import type { CompatibilityGenerationInput } from "../../../../src/lib/report-generation/reportInputAdapter";
 import type { CompatibilityPersonChartSummary } from "../../../../src/lib/report-knowledge/compatibilityTypes";
 
 const viewSource = readFileSync(
@@ -115,6 +118,35 @@ function createDraft(): CompatibilityReportDraft {
   };
 }
 
+const compatibilityFixturePeople = [
+  { name: "가람", birthDate: "1999-07-31", birthTime: "07:30", gender: "MALE", mbtiType: "ENTJ" },
+  { name: "나래", birthDate: "1996-12-06", birthTime: "14:15", gender: "FEMALE", mbtiType: "INTP" },
+  { name: "다온", birthDate: "1980-05-18", birthTime: "10:15", gender: "MALE", mbtiType: "ISFJ" },
+  { name: "서우", birthDate: "2001-03-02", birthTime: "16:20", gender: "FEMALE", mbtiType: "ENFP" },
+  { name: "한결", birthDate: "1990-01-10", birthTime: "09:20", gender: "MALE", mbtiType: "" },
+  { name: "윤슬", birthDate: "1987-08-20", birthTime: "11:10", gender: "FEMALE", mbtiType: "ESTP" },
+] as const;
+
+const compatibilityRegressionFixtures = [
+  { name: "love-entj-intp", relationshipType: "love", personA: 0, personB: 1 },
+  { name: "marriage-isfj-enfp", relationshipType: "marriage", personA: 2, personB: 3 },
+  { name: "parent-child-mbti-missing", relationshipType: "parentChild", personA: 4, personB: 3 },
+  { name: "business-partner-estp-entj", relationshipType: "businessPartner", personA: 5, personB: 0 },
+  { name: "friendship-intp-isfj", relationshipType: "friendship", personA: 1, personB: 2 },
+] as const;
+
+function compatibilityGenerationPerson(
+  index: number,
+): CompatibilityGenerationInput["personA"] {
+  return {
+    ...compatibilityFixturePeople[index],
+    birthTimeUnknown: false,
+    approximateBirthTimeSlot: "",
+    calendarType: "solar",
+    timezone: "Asia/Seoul",
+  };
+}
+
 describe("CompatibilityReportView", () => {
   it("renders launch relationshipAnalysis sections and the shared table block", () => {
     const html = renderToStaticMarkup(
@@ -152,6 +184,80 @@ describe("CompatibilityReportView", () => {
     expect(html).not.toContain("relationshipAnalysis");
     expect(html).not.toContain("directFindings");
     expect(html).not.toContain("draft");
+  });
+
+  it.each(compatibilityRegressionFixtures)(
+    "$name generates, publishes, and SSR renders without a numeric or ranked compatibility score",
+    async (fixture) => {
+      const input: CompatibilityGenerationInput = {
+        kind: "compatibility",
+        productKey: "saju_mbti_compatibility",
+        productSlug: "compatibility",
+        relationshipType: fixture.relationshipType,
+        personA: compatibilityGenerationPerson(fixture.personA),
+        personB: compatibilityGenerationPerson(fixture.personB),
+        productOptions: {},
+      };
+      const result = await generateCompatibilityProductDraft(input);
+
+      expect(result.ok, JSON.stringify(result)).toBe(true);
+      if (!result.ok) {
+        throw new Error(result.error.message);
+      }
+
+      expect(
+        validateProductPublication(
+          "saju_mbti_compatibility",
+          result.draft,
+          result.evidencePacket,
+        ),
+      ).toEqual({ ok: true, errors: [] });
+
+      const html = renderToStaticMarkup(
+        <CompatibilityReportView
+          draft={result.draft}
+          evidencePacket={result.evidencePacket}
+          reportId={`compatibility-${fixture.name}`}
+        />,
+      );
+      const text = html.replace(/<[^>]+>/gu, " ").replace(/\s+/gu, " ");
+
+      expect(text).not.toMatch(/(?<!\d)(?:100|[1-9]?\d)\s*점/gu);
+      expect(text).not.toMatch(/[SABCDF][+-]?\s*등급/giu);
+      expect(text).not.toMatch(/[★☆]/gu);
+      expect(text).not.toContain("관계 온도");
+      expect(text).toContain("궁합 한눈에 보기");
+      expect(text).toContain("맞는 부분과 조정할 부분이 함께 있는 궁합");
+      expect(text).toContain("가장 잘 맞는 부분");
+      expect(text).toContain("가장 부딪히는 부분");
+      expect(text).toContain("유지하는 핵심 조건");
+      expect(text).toContain("A가 B에게 주는 피로");
+      expect(text).toContain("B가 A에게 주는 피로");
+      expect(text).toContain("관계 카테고리별 해석");
+    },
+  );
+
+  it("keeps legacy score fields readable but never uses them in customer copy", () => {
+    const legacyDraft = {
+      ...createDraft(),
+      coreLine: "67점은 파트너십의 성공을 단정하지 않습니다.",
+      scoreSummary: {
+        ...createDraft().scoreSummary,
+        totalScore: 67,
+        scoreLabel: "S등급",
+        scoreCaution: "67점 · ★★★★★",
+      },
+    };
+    const html = renderToStaticMarkup(
+      <CompatibilityReportView draft={legacyDraft} />,
+    );
+
+    expect(html).not.toContain("67점");
+    expect(html).not.toContain("S등급");
+    expect(html).not.toContain("★★★★★");
+    expect(html).not.toContain("관계 온도");
+    expect(html).toContain("궁합 한눈에 보기");
+    expect(html).toContain("파트너십의 성공을 단정하지 않습니다.");
   });
 
   it("translates raw saju relation labels before rendering user-facing text", () => {

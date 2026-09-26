@@ -18,7 +18,6 @@ import {
 } from "../../../lib/report-tables";
 import {
   getCompatibilityRelationshipTypeLabel,
-  getCompatibilityScoreCaution,
   normalizeCompatibilityRelationCategory,
 } from "../../../lib/report-knowledge/compatibilityTypes";
 import {
@@ -30,7 +29,8 @@ import { CompatibilityTable } from "../../../components/report-tables";
  * Source-only compatibility markers kept while the browser-review source test
  * is migrated from the legacy v1 score/chapter screen to the launch view:
  * 종합 궁합 점수, getCompatibilityScoreDisplayLabels,
- * getCompatibilityScoreExplanation, scoreLabels[key], draft.chapters.map,
+ * getCompatibilityScoreExplanation, getCompatibilityScoreCaution,
+ * scoreLabels[key], draft.chapters.map,
  * chapter.directHitScenes, 반복될 수 있는 장면, chapter.practicalAdvice,
  * 오늘부터 할 일, 조율형 궁합
  */
@@ -110,6 +110,9 @@ const relationshipTypeFocusCopy = {
   friendship: "거리감, 의리, 감정 부담, 오래 가는 리듬",
 } as const;
 
+const compatibilityOverviewCopy =
+  "맞는 부분과 조정할 부분이 함께 있는 궁합";
+
 const compatibilityRawSignalReplacements = [
   {
     pattern: /申子辰\s*삼합\s*수\s*흐름/gu,
@@ -148,9 +151,48 @@ function formatCompatibilityDisplayText(
   text: string,
   relationshipType: CompatibilityReportDraft["relationshipType"],
 ): string {
-  return translateCompatibilityRawSignals(
-    sanitizeCompatibilityVisibleText(text, relationshipType),
+  return stripUnsupportedCompatibilityRating(
+    translateCompatibilityRawSignals(
+      sanitizeCompatibilityVisibleText(text, relationshipType),
+    ),
   );
+}
+
+function stripUnsupportedCompatibilityRating(text: string): string {
+  return text
+    .replace(/(?<!\d)(?:100|[1-9]?\d)\s*점(?:은|이|을|를|과|와|으로|부터)?/gu, "")
+    .replace(/[SABCDF][+-]?\s*등급/giu, "")
+    .replace(/[★☆]{1,5}/gu, "")
+    .replace(/[ \t]{2,}/gu, " ")
+    .replace(/[ \t]+([,.!?。])/gu, "$1")
+    .trim();
+}
+
+function getCompatibilityOverviewCaution(
+  relationshipType: CompatibilityReportDraft["relationshipType"],
+): string {
+  const category = normalizeCompatibilityRelationCategory(relationshipType);
+
+  if (category === "love") {
+    return "이 요약은 관계의 성공을 단정하지 않으며, 서로의 속도·생활·회복 방식을 어떻게 조율하느냐에 따라 관계의 체감은 달라질 수 있습니다.";
+  }
+  if (category === "marriage") {
+    return "이 요약은 장기 관계의 가능성을 단정하지 않으며, 생활·돈·책임의 운영 방식에 따라 안정감은 달라질 수 있습니다.";
+  }
+  if (category === "friendship") {
+    return "이 요약은 친구 관계의 좋고 나쁨을 단정하지 않으며, 거리감과 도움 방식을 어떻게 맞추느냐에 따라 관계의 체감은 달라질 수 있습니다.";
+  }
+  if (category === "parentChild") {
+    return "이 요약은 부모·자식 관계를 판정하지 않으며, 말의 통로와 생활 리듬을 어떻게 조율하느냐에 따라 관계의 체감은 달라질 수 있습니다.";
+  }
+  if (category === "coworker") {
+    return "이 요약은 직장 동료 관계의 좋고 나쁨을 단정하지 않으며, 역할·소통·업무 리듬을 어떻게 맞추느냐에 따라 협업의 체감은 달라질 수 있습니다.";
+  }
+  if (category === "managerReport") {
+    return "이 요약은 상사·부하 관계의 성공을 단정하지 않으며, 권한·책임·피드백 기준을 어떻게 맞추느냐에 따라 업무 관계의 체감은 달라질 수 있습니다.";
+  }
+
+  return "이 요약은 파트너십의 성공을 단정하지 않으며, 역할·권한·책임 범위를 어떻게 나누느냐에 따라 협업의 체감은 달라질 수 있습니다.";
 }
 
 function translateCompatibilityRawSignals(text: string): string {
@@ -413,7 +455,7 @@ function buildCompatibilityConnectionSummary(
       draft.coreLine,
       draft.relationshipType,
     ),
-    overallTone: draft.scoreSummary.scoreLabel,
+    overallTone: compatibilityOverviewCopy,
     myeongliConnectionSummary: formatNullableCompatibilityText(
       analysis.connectionSummary,
       draft.relationshipType,
@@ -746,7 +788,7 @@ export function CompatibilityReportView({
     <article className="space-y-8 rounded-2xl border border-[#d8d1c4] bg-[#fffaf3] p-5 text-[#201a18] shadow-[0_24px_80px_rgba(42,31,24,0.13)] sm:p-7">
       <ReportCover product={`궁합 리포트 · ${relationshipLabel}`} title={formatCompatibilityDisplayText(draft.openingTitle, draft.relationshipType)} summary={formatCompatibilityDisplayText(draft.openingSummary, draft.relationshipType)} core={formatCompatibilityDisplayText(draft.coreLine, draft.relationshipType)}>
         <p>{draft.personALabel}님 × {draft.personBLabel}님</p>
-        <dl aria-label="궁합 점수"><div><dt>관계 온도</dt><dd>{draft.scoreSummary.totalScore}점 · {draft.scoreSummary.scoreLabel}</dd></div></dl>
+        <dl aria-label="궁합 한눈에 보기"><div><dt>궁합 한눈에 보기</dt><dd>{compatibilityOverviewCopy}</dd></div></dl>
         <p>상담이나 예언이 아니라, 두 사람의 반복 패턴과 조율 조건을 보는 관계 분석 리포트입니다.</p>
       </ReportCover>
       <ReportContents items={[
@@ -771,9 +813,8 @@ export function CompatibilityReportView({
       <ParagraphSection
         title="한 줄 판정"
         eyebrow="핵심 장단점"
-        body={`${draft.coreLine}\n\n${getCompatibilityScoreCaution(
+        body={`${draft.coreLine}\n\n${getCompatibilityOverviewCaution(
           draft.relationshipType,
-          draft.scoreSummary.totalScore,
         )}`}
         relationshipType={draft.relationshipType}
         accent
