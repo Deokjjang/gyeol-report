@@ -7,14 +7,15 @@ import type { CompatibilityEvidencePacket } from "../report-knowledge/compatibil
 import { getDayMasterElementRelation } from "../report-knowledge/compatibilityRelationRules";
 import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
 import { compatibilityEditorialEvidence, PAIR_SLOTS, type PairCalculations } from "../interpretation-v3/compatibilityEditorialEvidence";
-import { buildCompatibilityV3, isCompatibilityV3Draft, compatibilityV3CustomerText } from "../interpretation-v3/compatibilityEditorial";
+import { buildCompatibilityV3, isCompatibilityV3Draft, compatibilityV3CustomerText, COMPATIBILITY_V3_VERSION, COMPATIBILITY_V3_POLISHED_VERSION, type CompatibilityV3Draft } from "../interpretation-v3/compatibilityEditorial";
+import { buildCompatibilityV3Polished } from "../interpretation-v3/compatibilityPolished";
 import { validateEvidence } from "../interpretation-v3/evidence";
 import { validateV3Copy } from "../interpretation-v3/engine";
 
 const record = (v: unknown): v is Record<string, unknown> => !!v && typeof v === "object" && !Array.isArray(v);
 const stable = (v: unknown): string => Array.isArray(v) ? `[${v.map(stable).join(",")}]` : record(v) ? `{${Object.keys(v).filter(k => v[k] !== undefined).sort().map(k => `${JSON.stringify(k)}:${stable(v[k])}`).join(",")}}` : JSON.stringify(v);
 
-export function createCompatibilityV3(payload: unknown) {
+export function createCompatibilityV3(payload: unknown, version: CompatibilityV3Draft["version"] = COMPATIBILITY_V3_POLISHED_VERSION) {
   const result = normalizeReportInputPayload(payload);
   if (!result.ok || result.value.kind !== "compatibility" || result.value.compatibilityRoleVersion !== COMPATIBILITY_ROLE_VERSION) return null;
   const input = result.value;
@@ -22,7 +23,7 @@ export function createCompatibilityV3(payload: unknown) {
   const base = buildCompatibilityEvidenceFromGenerationInput(input);
   const packet = { ...withReportInputEvidence(base, input), calendarCalculationVersion: SAJU_CALENDAR_VERSION, natalTableEvidence: buildProductNatalTables(base) };
   const editorial = compatibilityEditorialEvidence(packet, calculations);
-  return { draft: buildCompatibilityV3(editorial, input.relationshipType), evidencePacket: { ...packet, compatibilityV3: { version: "compatibility-evidence-v3.1", calculations, editorial } } };
+  return { draft: (version === COMPATIBILITY_V3_VERSION ? buildCompatibilityV3 : buildCompatibilityV3Polished)(editorial, input.relationshipType), evidencePacket: { ...packet, compatibilityV3: { version: "compatibility-evidence-v3.1", calculations, editorial } } };
 }
 
 /** Replay only stored canonical tables/calculation with the versioned composer.
@@ -48,7 +49,7 @@ export function validateCompatibilityV3(draft: unknown, packet: unknown, payload
     const editorial = compatibilityEditorialEvidence(packet as unknown as CompatibilityEvidencePacket, calculations);
     const errors = [...validateEvidence(editorial.facts)];
     if (stable(editorial) !== stable(v3.editorial)) errors.push("COMPATIBILITY_V3_EVIDENCE_MISMATCH");
-    const expected = buildCompatibilityV3(editorial, basis.relationshipType as CompatibilityRelationshipType);
+    const expected = (draft.version === COMPATIBILITY_V3_VERSION ? buildCompatibilityV3 : buildCompatibilityV3Polished)(editorial, basis.relationshipType as CompatibilityRelationshipType);
     if (stable(expected) !== stable(draft)) errors.push("COMPATIBILITY_V3_CONTENT_MISMATCH");
     const qa = draft.editorialAudit;
     if (!qa || qa.errors.length || qa.rejected.length || qa.warnings.length || qa.audit.mix.character < 0.75 || qa.audit.mix.advice > 0.25 || draft.chapters.length !== 7) errors.push("COMPATIBILITY_V3_EDITORIAL_INCOMPLETE");

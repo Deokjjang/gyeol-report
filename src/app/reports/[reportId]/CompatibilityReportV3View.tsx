@@ -3,7 +3,8 @@ import { buildCanonicalManseRyeokTableData } from "../../../lib/report-tables/ma
 import { buildMbtiCommonProfileTableData, getMbtiSourceByType } from "../../../lib/report-tables";
 import ManseRyeokCommonTable from "../../../components/report-tables/ManseRyeokCommonTable";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
-import type { CompatibilityV3Draft } from "../../../lib/interpretation-v3/compatibilityEditorial";
+import { COMPATIBILITY_V3_POLISHED_VERSION, type CompatibilityV3Draft } from "../../../lib/interpretation-v3/compatibilityEditorial";
+import { compactCompatibilityLabels } from "../../../lib/interpretation-v3/compatibilityPolished";
 import { CATEGORY_LABELS } from "../../../lib/interpretation-v3/compatibilityEditorialCopy";
 import { PAIR_SLOTS, type PairCalculations } from "../../../lib/interpretation-v3/compatibilityEditorialEvidence";
 import { factLabel } from "../../../lib/interpretation-v3/comprehensiveStoryEvidence";
@@ -26,10 +27,20 @@ export function CompatibilityReportV3View({ draft, evidencePacket }: { draft: Co
   if (!validateProductPublication("saju_mbti_compatibility", draft, evidencePacket).ok) return <p>리포트를 준비하고 있습니다. 잠시 후 다시 확인해 주세요.</p>;
   const { calculations, editorial: { facts } } = (evidencePacket as { compatibilityV3: { calculations: PairCalculations; editorial: { facts: Evidence[] } } }).compatibilityV3;
   const usage = { opening: [], sections: draft.chapters.map(c => ({ blocks: c.scenes })) };
+  // Reset public label repetition per chapter; all stored evidence stays intact.
+  const publicLabels = new Map<string, readonly string[]>();
+  if (draft.version === COMPATIBILITY_V3_POLISHED_VERSION) for (const chapter of draft.chapters) {
+    const shown = new Set<string>();
+    for (const scene of chapter.scenes) {
+      const labels = compactCompatibilityLabels(scene, facts, draft.people).filter(label => !shown.has(label));
+      labels.forEach(label => shown.add(label));
+      publicLabels.set(scene.id, labels);
+    }
+  }
   const reading = (chapter: CompatibilityV3Draft["chapters"][number]) => <section id={`pair-${chapter.id}`} tabIndex={-1} key={chapter.id} data-reading-section className="space-y-8">
     <h2 className="text-2xl font-semibold">{chapter.title}</h2>
     <div className="space-y-10">{chapter.scenes.map((scene, i) => {
-      const labels = [...new Set(facts.filter(f => scene.evidenceRefs.includes(f.id)).map(f => {
+      const labels = publicLabels.get(scene.id) ?? [...new Set(facts.filter(f => scene.evidenceRefs.includes(f.id)).map(f => {
         const label = f.featureId.startsWith("pair:") && f.value && typeof f.value === "object" && "label" in f.value ? String(f.value.label) : factLabel(f);
         return `${f.subject === "personB" ? draft.people.personB.name : draft.people.personA.name} · ${label}`;
       }))];

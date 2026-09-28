@@ -5,9 +5,10 @@ import { compatibilityRoleLabels, COMPATIBILITY_ROLE_VERSION, type Compatibility
 import type { Evidence } from "./types";
 
 export const COMPATIBILITY_V3_VERSION = "compatibility_v3.0-editorial.1";
+export const COMPATIBILITY_V3_POLISHED_VERSION = "compatibility_v3.0-editorial.2";
 type PairEvidence = ReturnType<typeof compatibilityEditorialEvidence>;
 export type CompatibilityV3Draft = {
-  readonly productType: "saju_mbti_compatibility"; readonly productVersion: "v3"; readonly version: typeof COMPATIBILITY_V3_VERSION;
+  readonly productType: "saju_mbti_compatibility"; readonly productVersion: "v3"; readonly version: typeof COMPATIBILITY_V3_VERSION | typeof COMPATIBILITY_V3_POLISHED_VERSION;
   readonly compatibilityRoleVersion: typeof COMPATIBILITY_ROLE_VERSION;
   readonly relationshipType: CompatibilityRelationshipType; readonly title: string;
   readonly people: Readonly<Record<PairSlot, { readonly name: string; readonly mbti: string; readonly role: string }>>;
@@ -15,7 +16,7 @@ export type CompatibilityV3Draft = {
   readonly editorialAudit: Omit<ReturnType<typeof composeEditorial>, "scenes">;
 };
 export function isCompatibilityV3Draft(value: unknown): value is CompatibilityV3Draft {
-  return !!value && typeof value === "object" && "version" in value && value.version === COMPATIBILITY_V3_VERSION && "productType" in value && value.productType === "saju_mbti_compatibility" && "productVersion" in value && value.productVersion === "v3";
+  return !!value && typeof value === "object" && "version" in value && (value.version === COMPATIBILITY_V3_VERSION || value.version === COMPATIBILITY_V3_POLISHED_VERSION) && "productType" in value && value.productType === "saju_mbti_compatibility" && "productVersion" in value && value.productVersion === "v3";
 }
 export function compatibilityV3CustomerText(draft: CompatibilityV3Draft) {
   return [draft.title, ...PAIR_SLOTS.map(s => `${draft.people[s].role} · ${draft.people[s].name} · ${draft.people[s].mbti || "모름"}`), `관계 유형 · ${CATEGORY_LABELS[draft.relationshipType]}`,

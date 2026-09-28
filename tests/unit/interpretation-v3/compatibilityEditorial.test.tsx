@@ -2,16 +2,19 @@ import { writeFileSync, readFileSync } from "node:fs";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
-import { createCompatibilityV3, validateCompatibilityV3 } from "../../../src/lib/report-generation/compatibilityV3Generation";
+import { createCompatibilityV3 as createVersionedCompatibility, validateCompatibilityV3 } from "../../../src/lib/report-generation/compatibilityV3Generation";
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
 import { normalizeReportInputPayload } from "../../../src/lib/report-generation/reportInputAdapter";
 import { createProductPreviewSnapshot, isProductPreviewSnapshot } from "../../../src/lib/report-generation/productPreviewSnapshot";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
 import { compatibilityRoleLabels, COMPATIBILITY_ROLE_VERSION, COMPATIBILITY_RELATIONSHIP_TYPES, MBTI_TYPES } from "../../../src/lib/report-generation/reportInputTypes";
-import { compatibilityV3CustomerText, buildCompatibilityV3 } from "../../../src/lib/interpretation-v3/compatibilityEditorial";
+import { compatibilityV3CustomerText, buildCompatibilityV3, COMPATIBILITY_V3_VERSION } from "../../../src/lib/interpretation-v3/compatibilityEditorial";
 import { CompatibilityReportV3View } from "../../../src/app/reports/[reportId]/CompatibilityReportV3View";
 import { PAIR_SLOTS } from "../../../src/lib/interpretation-v3/compatibilityEditorialEvidence";
 import { COMPATIBILITY_V3_FIXTURES, compatibilityFixture } from "./compatibilityFixtures";
+
+// These are the frozen E1 snapshot contracts, not the latest composer.
+const createCompatibilityV3 = (payload: unknown) => createVersionedCompatibility(payload, COMPATIBILITY_V3_VERSION);
 
 const forbidden = /\d+\s*(?:점|\/\s*100|%)|[★☆⭐]|(?:궁합|관계)\s*(?:점수|등급|랭킹)|[SABCDF]\s*등급|원국 근거|이번 리포트|읽었습니다|실제 관계를 보장|A가 부모라면|B가 부모라면|A가 상사라면|B가 상사라면/;
 const internals = /canonical-|SajuCalcResult:|evidenceRefs|sourceRefs|featureId|lineage|ten_god_|gwiin_|sinsal_|pair:received|compatibility-fixed-ab/;
