@@ -184,7 +184,7 @@ export function StoryTables({ facts, calculation, manse, mbti, draft }: { readon
   const elements = [["WOOD", "목"], ["FIRE", "화"], ["EARTH", "토"], ["METAL", "금"], ["WATER", "수"]] as const;
   const rows = publicSignalRows(facts, calculation, draft);
   return <section aria-label="계산된 원국과 성향" className="space-y-5 border-b border-[#eadfce] px-4 py-6 sm:px-6" data-story-tables>
-    {manse ? <ManseRyeokCommonTable data={{ ...manse, natalEvidence: undefined }} defaultOpen={false} elementDistribution={<section aria-label="오행 분포" className="space-y-3 px-3 py-4" data-story-elements>
+    {manse ? <ManseRyeokCommonTable data={{ ...manse, natalEvidence: undefined }} defaultOpen={false} elementDistribution={<section key="story-element-distribution" aria-label="오행 분포" className="space-y-3 px-3 py-4" data-story-elements>
       <h3 className="text-sm font-semibold">오행 분포</h3>
       <p className="text-xs text-[#756658]">원국 8글자</p>
       <div className="grid grid-cols-5 gap-1.5">{elements.map(([id, label], i) => <div key={id} className={`min-w-0 rounded-lg border px-1 py-2 text-center ${colors[i]}`}><p className="text-xs">{label}</p><p className="text-xl font-bold">{calculation.elements.visible[id]}</p></div>)}</div>

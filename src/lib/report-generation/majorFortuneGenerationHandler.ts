@@ -213,7 +213,7 @@ function buildMajorFortuneEvidenceFromGenerationInput(
   }), { person: saju.birthTimeContext });
 }
 
-function calculateMajorFortuneSaju(
+export function calculateMajorFortuneSaju(
   person: SinglePersonGenerationInput["person"],
 ): SajuCalcResult {
   const birthTime = person.birthTime.trim();
