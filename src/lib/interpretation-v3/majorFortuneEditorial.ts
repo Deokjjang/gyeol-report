@@ -1,6 +1,7 @@
 import type { MajorFortuneReportDraft } from "../report-generation/majorFortuneReportDraftTypes";
 import type { MajorDecadeYear } from "../report-knowledge/majorFortuneDecadeReading";
 import type { MajorFortuneEvidencePacket } from "../report-knowledge/majorFortuneTypes";
+import { withKoreanParticle } from "../report-knowledge/koreanCopyUtils";
 import { USER_LIFE_STATUS_LABELS, USER_RELATIONSHIP_STATUS_LABELS } from "../report-knowledge/userContextTypes";
 
 export const MAJOR_FORTUNE_V3_VERSION = "major_fortune_v3.0-editorial.1";
@@ -153,7 +154,7 @@ function buildYear(packet: MajorFortuneEvidencePacket, year: MajorDecadeYear, in
       ? `${packet.currentYear}년은 계산된 대운의 ${packet.cyclePosition.yearIndexInCycle}년차입니다. 지금 체감이 큰 이유를 10년 전체의 결론으로 확대하기보다, 이미 지나온 해에서 남은 것과 앞으로 바꿀 것을 나누어 볼 때 현재 위치가 선명해집니다.`
       : year.importance === "important" ? `이 해는 10년 안에서 굵게 읽히는 해입니다. ${year.reasons[0]?.text ?? "대운과 원국의 관계 신호가 함께 움직입니다."}` : `크게 튀는 사건을 정해 두는 해가 아니라, ${year.focus}이 생활의 어느 장면에서 반복되는지 알아보는 해입니다.`,
     `${voice.money} ${voice.caution}.`,
-    ...(current ? [`현재 ${packet.userContext.fieldLabel?.trim() || USER_LIFE_STATUS_LABELS[packet.userContext.lifeStatus]}의 현실에서는 ${voice.gift}이 어떤 결과와 역할로 남는지가 중요합니다. ${mbtiBehavior ? `${mbtiBehavior}이` : "MBTI를 입력하지 않았으므로 특정 유형의 행동을 덧붙이지 않고"} 지금의 선택 방식에 섞여 나타납니다.`] : []),
+    ...(current ? [`현재 ${packet.userContext.fieldLabel?.trim() || USER_LIFE_STATUS_LABELS[packet.userContext.lifeStatus]}의 현실에서는 ${voice.gift}이 어떤 결과와 역할로 남는지가 중요합니다. ${mbtiBehavior ? withKoreanParticle(mbtiBehavior, "subject") : "MBTI를 입력하지 않았으므로 특정 유형의 행동을 덧붙이지 않고"} 지금의 선택 방식에 섞여 나타납니다.`] : []),
   ];
   return { year: year.year, ageLabel: row?.ageLabel ?? null, ganji: year.ganji, tenGod: year.tenGod, phase, importance: year.importance,
     isCurrentYear: current, title: yearTitle(year, current, index), paragraphs, evidence: compactEvidence(year) };

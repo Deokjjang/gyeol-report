@@ -55,6 +55,7 @@ describe("major fortune V3 editorial", () => {
     const infp = await createMajorFortuneV3(payload("employee", "서비스 기획자", "single", "INFP"));
     const unknown = await createMajorFortuneV3(payload("employee", "서비스 기획자", "single", ""));
     expect(majorFortuneV3CustomerText(entj!.draft)).toContain("ENTJ의 속도");
+    expect(majorFortuneV3CustomerText(entj!.draft)).toContain("ENTJ의 속도가 지금의 선택 방식");
     expect(majorFortuneV3CustomerText(infp!.draft)).toContain("INFP의 진심");
     expect(majorFortuneV3CustomerText(unknown!.draft)).toContain("특정 유형의 성격을 추정하지 않았습니다");
     expect(unknown!.draft.inputSummary).toContainEqual({ label: "MBTI", value: "모름" });
