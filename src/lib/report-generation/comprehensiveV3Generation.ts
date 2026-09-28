@@ -3,7 +3,9 @@ import { buildProductNatalTables, getCanonicalNatalTable } from "../report-knowl
 import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
 import { adaptCalculation, adaptMbti, adaptNatalTable, mergeEvidence, validateEvidence } from "../interpretation-v3/evidence";
 import { normalizeContext } from "../interpretation-v3/context";
-import { buildComprehensiveV3, buildComprehensiveV3Legacy, COMPREHENSIVE_V3_VERSION, comprehensiveV3CustomerText, isComprehensiveV3Draft, type ComprehensiveV3Draft } from "../interpretation-v3/comprehensive";
+import { buildComprehensiveV3, buildComprehensiveV31, buildComprehensiveV3Legacy, COMPREHENSIVE_V3_VERSION, comprehensiveV3CustomerText, isComprehensiveV3Draft, type ComprehensiveV3Draft } from "../interpretation-v3/comprehensive";
+import { ENRICHED_COMPREHENSIVE_VERSION } from "../interpretation-v3/comprehensiveComposition";
+import { STORY_COMPREHENSIVE_VERSION, validateStoryCopy, storyFeatureRows } from "../interpretation-v3/comprehensiveStorytelling";
 import { validateV3Copy } from "../interpretation-v3/engine";
 import { buildComprehensiveV2EvidenceFromGenerationInput } from "./comprehensiveV2GenerationHandler";
 import { buildComprehensiveReportV2ProfileTable } from "./comprehensiveReportProfileTableBuilder";
@@ -45,7 +47,7 @@ export function createComprehensiveV3(payload: unknown) {
   const packet = { ...withReportInputEvidence(generated.packet, input), calendarCalculationVersion: SAJU_CALENDAR_VERSION, natalTableEvidence: buildProductNatalTables(generated.packet) };
   const facts = v3Facts(packet, calculation, p.mbtiType);
   const context = normalizeContext({ lifeStatus: input.userContext.jobStatus, fieldLabel: input.userContext.detailJob, relationshipStatus: input.userContext.relationshipStatus });
-  const draft = buildComprehensiveV3({ name: p.name, facts, context, relationshipStatus: input.userContext.relationshipStatus,
+  const draft = buildComprehensiveV3({ name: p.name, facts, context, calculation, relationshipStatus: input.userContext.relationshipStatus,
     profileTable: buildComprehensiveReportV2ProfileTable({ evidencePacket: generated.packet, mbtiType: p.mbtiType || "미입력", sajuFacts: generated.facts }) });
   return { draft, evidencePacket: { ...packet, comprehensiveV3: { version: "comprehensive-evidence-v3.1", calculation, facts } } };
 }
@@ -67,11 +69,12 @@ export function validateComprehensiveV3(draft: unknown, packet: unknown): readon
     const facts = v3Facts(packet, calc, String(basis.person.mbtiType ?? ""), !legacy);
     const errors = [...validateEvidence(facts)];
     if (stable(facts) !== stable(v3.facts)) errors.push("V3_FACTS_MISMATCH");
-    const expected = (legacy ? buildComprehensiveV3Legacy : buildComprehensiveV3)({ name: String(basis.person.name), facts,
+    const expected = (legacy ? buildComprehensiveV3Legacy : draft.version === ENRICHED_COMPREHENSIVE_VERSION ? buildComprehensiveV31 : buildComprehensiveV3)({ name: String(basis.person.name), facts, calculation: calc,
       context: normalizeContext({ lifeStatus: String(basis.userContext.jobStatus), fieldLabel: String(basis.userContext.detailJob), relationshipStatus: String(basis.userContext.relationshipStatus) }),
       relationshipStatus: String(basis.userContext.relationshipStatus), profileTable: draft.profileTable });
     if (stable(expected) !== stable(draft)) errors.push("V3_CONTENT_MISMATCH");
     errors.push(...validateV3Copy(comprehensiveV3CustomerText(draft)));
+    if (draft.version === STORY_COMPREHENSIVE_VERSION) errors.push(...validateStoryCopy(comprehensiveV3CustomerText(draft)), ...validateStoryCopy(storyFeatureRows(facts, calc).map(r => `${r.meaning} ${r.power}`).join(" ")));
     if (!draft.opening.length || !draft.sections.length || draft.patterns.length < 3) errors.push("V3_CONTENT_INCOMPLETE");
     return errors;
   } catch { return ["V3_EVIDENCE_INVALID"]; }

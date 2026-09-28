@@ -1,6 +1,8 @@
 # V3 Phase 0–1 공통 해석 코어
 
-최신 종합 V3.1의 서사/통합표, V2·V3·V3.1 비교, 6개 fixture 검증과 고객 텍스트는 [COMPREHENSIVE_PHASE_2B.md](COMPREHENSIVE_PHASE_2B.md)를 보세요.
+최신 종합 V3.2의 읽기 다양성/근거 강도 선별, 상단 UI, 6개 fixture 비교와 전체 고객 텍스트는 [COMPREHENSIVE_PHASE_2C.md](COMPREHENSIVE_PHASE_2C.md)를 보세요.
+
+종합 V3.1의 서사/통합표, V2·V3·V3.1 비교 기록은 [COMPREHENSIVE_PHASE_2B.md](COMPREHENSIVE_PHASE_2B.md)에 보존했습니다.
 
 Phase 2 종합의 명시적 버전 연결, 고객 검토 URL/텍스트, 비교·검증 결과는 [COMPREHENSIVE_PHASE_2.md](COMPREHENSIVE_PHASE_2.md)를 보세요. 아래 내용은 Phase 0–1 기준 기록입니다.
 

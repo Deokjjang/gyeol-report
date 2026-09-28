@@ -10,6 +10,8 @@ import { COMPREHENSIVE_ATOMIC_COPY, OPENING_CONTEXT } from "./comprehensiveCopy"
 import { correctKoreanParticleSlots } from "../report-knowledge/koreanCopyUtils";
 import type { Domain, Evidence } from "./types";
 import { composeComprehensiveV31, ENRICHED_COMPREHENSIVE_VERSION } from "./comprehensiveComposition";
+import { composeComprehensiveV32, STORY_COMPREHENSIVE_VERSION, type WritingMode } from "./comprehensiveStorytelling";
+import type { SajuCalcResult } from "../saju/types";
 
 export const COMPREHENSIVE_V3_VERSION = "comprehensive_v3.1" as const;
 export type ComprehensiveV3Block = {
@@ -30,12 +32,16 @@ export type ComprehensiveV3Block = {
   readonly compoundId?: string;
   readonly compoundIds?: readonly string[];
   readonly positiveFeatureIds?: readonly string[];
+  readonly writingMode?: WritingMode;
+  readonly discoveryKey?: string;
+  readonly adviceKeys?: readonly string[];
+  readonly prominence?: "hero" | "supporting";
 };
 export type ComprehensiveV3Section = { readonly id: string; readonly title: string; readonly blocks: readonly ComprehensiveV3Block[] };
 export type ComprehensiveV3Draft = {
   readonly productType: "saju_mbti_full";
   readonly productVersion: "v3";
-  readonly version: typeof COMPREHENSIVE_V3_VERSION | typeof ENRICHED_COMPREHENSIVE_VERSION;
+  readonly version: typeof COMPREHENSIVE_V3_VERSION | typeof ENRICHED_COMPREHENSIVE_VERSION | typeof STORY_COMPREHENSIVE_VERSION;
   readonly personLabel: string;
   readonly title: string;
   readonly profileTable: ComprehensiveReportV2ProfileTable;
@@ -49,7 +55,7 @@ export type ComprehensiveV3Draft = {
 export function isComprehensiveV3Draft(value: unknown): value is ComprehensiveV3Draft {
   if (!value || typeof value !== "object") return false;
   const v = value as Partial<ComprehensiveV3Draft>;
-  return v.productType === "saju_mbti_full" && v.productVersion === "v3" && [COMPREHENSIVE_V3_VERSION, ENRICHED_COMPREHENSIVE_VERSION].includes(v.version!) &&
+  return v.productType === "saju_mbti_full" && v.productVersion === "v3" && [COMPREHENSIVE_V3_VERSION, ENRICHED_COMPREHENSIVE_VERSION, STORY_COMPREHENSIVE_VERSION].includes(v.version!) &&
     Array.isArray(v.opening) && Array.isArray(v.sections) && Array.isArray(v.patterns) && typeof v.direction === "string";
 }
 const unique = <T,>(values: readonly T[]) => [...new Set(values)];
@@ -113,11 +119,14 @@ export function comprehensiveCandidates(facts: readonly Evidence[], enriched = f
   });
 }
 
-export type ComprehensiveV3Input = { name: string; facts: readonly Evidence[]; context: UserContextProfile; relationshipStatus: string; profileTable: ComprehensiveReportV2ProfileTable };
+export type ComprehensiveV3Input = { name: string; facts: readonly Evidence[]; context: UserContextProfile; relationshipStatus: string; profileTable: ComprehensiveReportV2ProfileTable; calculation?: SajuCalcResult };
 export function buildComprehensiveV3(input: ComprehensiveV3Input): ComprehensiveV3Draft {
   // Existing uncertain-time treatment is retained. No stronger new assertions
   // are made from conditional evidence just to fill the richer presentation.
   if (!input.facts.some(f => f.scope === "natal" && f.certainty === "confirmed")) return buildComprehensiveV3Legacy(input);
+  return input.calculation ? composeComprehensiveV32(input, comprehensiveCandidates(input.facts, true)) : buildComprehensiveV31(input);
+}
+export function buildComprehensiveV31(input: ComprehensiveV3Input): ComprehensiveV3Draft {
   return composeComprehensiveV31(input, comprehensiveCandidates(input.facts, true));
 }
 /** Frozen Phase 2 composition for already-stored snapshots. */

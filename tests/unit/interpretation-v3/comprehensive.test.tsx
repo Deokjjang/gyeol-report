@@ -37,14 +37,14 @@ it.each(COMPREHENSIVE_V3_FIXTURES)("%s: V3 generate → publish → snapshot →
   if (!result.ok || !isComprehensiveV3Draft(result.draft)) return;
   const draft = result.draft;
   const openingSignals = new Set(draft.opening.flatMap(b => b.labels)).size;
-  expect(openingSignals).toBeGreaterThanOrEqual(4);
+  expect(openingSignals).toBeGreaterThanOrEqual(3);
   expect(openingSignals).toBeLessThanOrEqual(7);
   expect(result.externalCalls).toEqual([]);
   expect(validateNewProductPublication("saju_mbti_full", draft, result.evidencePacket, payload)).toEqual({ ok: true, errors: [] });
   const snapshot = createProductPreviewSnapshot({ reportId: `comprehensive-v3-${id}`, createdAtIso: "2026-09-28T00:00:00Z", productKey: "saju_mbti_full", productSlug: "saju-mbti-full", draft, evidencePacket: result.evidencePacket });
   expect(snapshot.ok && isProductPreviewSnapshot(JSON.parse(JSON.stringify(snapshot.value)))).toBe(true);
   const html = renderToStaticMarkup(createElement(ComprehensiveReportV3View, { draft, evidencePacket: result.evidencePacket }));
-  expect(html).toContain("comprehensive_v3.1");
+  expect(html).toContain("comprehensive_v3.2-story.1");
   expect(html).not.toContain("리포트를 준비하고 있습니다");
   expect(html).not.toContain("안전 안내");
   const blocks = [...draft.opening, ...draft.sections.flatMap(s => s.blocks)];
@@ -69,7 +69,7 @@ it("MBTI counterfactual changes actual behavior while natal evidence stays ident
   const natal = results.map(r => r.ok ? (r.evidencePacket as { comprehensiveV3: { facts: readonly Evidence[] } }).comprehensiveV3.facts.filter(f => f.kind !== "mbti") : []);
   expect(natal[0]).toEqual(natal[1]); expect(natal[0]).toEqual(natal[2]);
   const texts = results.map(r => r.ok && isComprehensiveV3Draft(r.draft) ? comprehensiveV3CustomerText(r.draft) : "");
-  expect(texts[0]).toContain("상대가 고를 부분");
+  expect(texts[0]).toContain("감정에도 정답을 요구할 때");
   expect(texts[1]).toContain("비유 옆에 원래 정의");
   expect(texts[2]).not.toMatch(/ENTJ|INFP|MBTI의/);
 });

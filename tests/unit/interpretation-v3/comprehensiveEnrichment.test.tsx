@@ -5,7 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, it, expect } from "vitest";
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
-import { buildComprehensiveV3Legacy, comprehensiveV3CustomerText, isComprehensiveV3Draft, type ComprehensiveV3Draft } from "../../../src/lib/interpretation-v3/comprehensive";
+import { buildComprehensiveV31, buildComprehensiveV3Legacy, comprehensiveV3CustomerText, isComprehensiveV3Draft, type ComprehensiveV3Draft } from "../../../src/lib/interpretation-v3/comprehensive";
 import { composeComprehensiveV31, comprehensiveSelectionTrace, ENRICHED_COMPREHENSIVE_VERSION } from "../../../src/lib/interpretation-v3/comprehensiveComposition";
 import { comprehensiveCandidates } from "../../../src/lib/interpretation-v3/comprehensive";
 import { COMPREHENSIVE_V3_FIXTURES, comprehensiveFixture } from "./comprehensiveFixtures";
@@ -19,7 +19,15 @@ import type { Evidence } from "../../../src/lib/interpretation-v3/types";
 import type { SajuCalcResult } from "../../../src/lib/saju/types";
 
 const runtime = { enabled: false, reason: "flag_disabled" } as const;
-const generate = (payload: unknown) => generateProductReport(payload, runtime, "deterministic_fallback", undefined, { comprehensiveVersion: "v3" });
+// Freeze this suite on the stored V3.1 contract; V3.2 has its own product suite.
+const generate = async (payload: unknown) => {
+  const result = await generateProductReport(payload, runtime, "deterministic_fallback", undefined, { comprehensiveVersion: "v3" });
+  if (!result.ok || !isComprehensiveV3Draft(result.draft)) return result;
+  const p = payload as ReturnType<typeof comprehensiveFixture>["payload"];
+  return { ...result, draft: buildComprehensiveV31({ name: p.person.name, facts: (result.evidencePacket as Packet).comprehensiveV3.facts,
+    context: normalizeContext({ lifeStatus: p.userContext.jobStatus, fieldLabel: p.userContext.detailJob, relationshipStatus: p.userContext.relationshipStatus }),
+    relationshipStatus: p.userContext.relationshipStatus, profileTable: result.draft.profileTable }) };
+};
 type Packet = { comprehensiveV3: { calculation: SajuCalcResult; facts: Evidence[] } };
 const hash = (v: unknown) => createHash("sha256").update(JSON.stringify(v)).digest("hex");
 // Captured from 2e13ed9 before editing: a byte-for-byte guard for stored V3 drafts.
