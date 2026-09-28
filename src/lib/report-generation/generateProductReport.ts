@@ -1,6 +1,7 @@
 import type { WriterCallBudget } from "./reportWriterCallGuard";
 import { createComprehensiveV3 } from "./comprehensiveV3Generation";
 import { createCareerV3 } from "./careerV3Generation";
+import { createLoveV3 } from "./loveV3Generation";
 import { getAnnualPurchasePolicyDate, type AnnualCommerceAcceptance } from "../payment/annualPurchasePolicy";
 import { prepareProductGenerationFromPayload, type ProductGenerationResult } from "./productGenerationDispatcher";
 import type { ReportWriterRuntime } from "./reportWriterRuntime";
@@ -11,7 +12,7 @@ import { deliveryIssueCodes, settlePaidWriterDraft, type DeliveryAudit } from ".
 
 // writer_regeneration is retained for old callers, but no longer buys another call.
 export type GenerationStrategy = "normal_writer" | "writer_regeneration" | "deterministic_fallback";
-export async function generateProductReport(payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance, options: { readonly comprehensiveVersion?: "v2" | "v3"; readonly careerVersion?: "v3" } = {}): Promise<ProductGenerationResult> {
+export async function generateProductReport(payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance, options: { readonly comprehensiveVersion?: "v2" | "v3"; readonly careerVersion?: "v3"; readonly loveVersion?: "v3" } = {}): Promise<ProductGenerationResult> {
   const audit: DeliveryAudit = { version: "paid-one-call-v1", preflight: "fail", writerValidation: "not_run", rescueKinds: [], fallbackUsed: false, publish: "fail", failureCode: null, issues: [] };
   const budget: WriterCallBudget = { limit: strategy === "normal_writer" ? 1 : 0, calls: [] };
   const fail = (code: string, issues: readonly string[] = []): ProductGenerationResult => {
@@ -21,6 +22,18 @@ export async function generateProductReport(payload: unknown, runtime: ReportWri
   const purchaseDate = annualAcceptance === undefined ? undefined : getAnnualPurchasePolicyDate(annualAcceptance, payload);
   if (purchaseDate === null) return fail("ANNUAL_PURCHASE_CONTEXT_INVALID");
   const product = isRecord(payload) ? String(payload.productKey) : "";
+  if (product === "love_marriage_child" && options.loveVersion === "v3") {
+    try {
+      const v3 = createLoveV3(payload);
+      const generated = v3 ? { ok: true as const, kind: "loveMarriageChild" as const, ...v3 }
+        : await prepareProductGenerationFromPayload(payload, { automaticFallback: false });
+      if (!generated.ok) return fail("LOVE_V3_PREPARATION_FAILED");
+      const check = validateNewProductPublication(product, generated.draft, generated.evidencePacket, payload);
+      if (!check.ok) return fail("LOVE_V3_PUBLICATION_FAILED", check.errors);
+      audit.preflight = "pass"; audit.publish = "pass";
+      return { ...generated, externalCalls: [], delivery: audit };
+    } catch { return fail("LOVE_V3_PREPARATION_FAILED"); }
+  }
   if (product === "career_money_study" && options.careerVersion === "v3") {
     try {
       const v3 = createCareerV3(payload);

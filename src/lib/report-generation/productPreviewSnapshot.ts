@@ -2,6 +2,7 @@ import type { BirthTimeContexts, BirthTimePrecision } from "../saju/birthTimePre
 import type { AnnualFortuneReportDraft } from "./annualFortuneReportDraftTypes";
 import type { CareerReportDraft } from "./careerReportDraftTypes";
 import type { CareerV3Draft } from "../interpretation-v3/careerEditorial";
+import type { LoveV3Draft } from "../interpretation-v3/loveEditorial";
 import type { ComprehensiveReportV2Draft } from "./comprehensiveReportDraftTypes";
 import type { ComprehensiveV3Draft } from "./comprehensiveV3Generation";
 import type { CompatibilityReportDraft } from "./compatibilityReportDraftTypes";
@@ -33,6 +34,7 @@ export type ProductPreviewSnapshotDraft =
   | CareerReportDraft
   | CareerV3Draft
   | LoveMarriageChildReportDraft
+  | LoveV3Draft
   | CompatibilityReportDraft
   | MajorFortuneReportDraft
   | AnnualFortuneReportDraft

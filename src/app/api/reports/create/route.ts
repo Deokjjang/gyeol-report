@@ -380,6 +380,8 @@ async function createProductPreviewResponse(
     ? await generateProductReport(json, writer, "deterministic_fallback", undefined, { comprehensiveVersion: "v3" })
     : json.productKey === "career_money_study" && getRecordField(json, "productOptions")?.contentVersion === "v3"
     ? await generateProductReport(json, writer, "deterministic_fallback", undefined, { careerVersion: "v3" })
+    : json.productKey === "love_marriage_child" && getRecordField(json, "productOptions")?.contentVersion === "v3"
+    ? await generateProductReport(json, writer, "deterministic_fallback", undefined, { loveVersion: "v3" })
     : await generateProductReport(json, writer, writer.enabled ? "normal_writer" : "deterministic_fallback");
   const generationDiagnostic = () => createSafeLocalReportDiagnostic({
     result: generationResult,

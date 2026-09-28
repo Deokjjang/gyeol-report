@@ -1,6 +1,7 @@
 import { validateNatalTableEvidence, validateNatalFeatureProvenance } from "../report-knowledge/natalTableEvidence";
 import { validateComprehensiveV3 } from "./comprehensiveV3Generation";
 import { validateCareerV3 } from "./careerV3Generation";
+import { validateLoveV3 } from "./loveV3Generation";
 import type { LoveMarriageChildReportEvidencePacket } from "../report-knowledge/loveMarriageChildReportTypes";
 import type { AnnualFortuneEvidencePacket } from "../report-knowledge/annualFortuneEvidence";
 import { publicationBirthTimeContexts, publishedPillarMatches } from "./birthTimePublication";
@@ -80,6 +81,10 @@ export function validateProductPublication(product: string, draft: unknown, evid
     return { ok: errors.length === 0, errors };
   }
   void _version;
+  if (product === "love_marriage_child" && draft.productVersion === "v3") {
+    errors.push(...validateLoveV3(draft, evidence));
+    return { ok: errors.length === 0, errors };
+  }
   const validators: Record<string, (value: unknown) => { ok: boolean; errors: readonly string[] }> = {
     saju_mbti_full: validateComprehensiveReportDraft,
     career_money_study: (value) => validateCareerReportDraft(value, evidence),

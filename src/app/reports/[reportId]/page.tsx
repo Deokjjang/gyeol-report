@@ -68,6 +68,8 @@ import { getSajuBranchSymbolEntry } from "../../../lib/report-knowledge/sajuBran
 import { AnnualFortuneReportView } from "./AnnualFortuneReportView";
 import { CareerReportView } from "./CareerReportView";
 import { CareerReportV3View } from "./CareerReportV3View";
+import { LoveReportV3View } from "./LoveReportV3View";
+import { isLoveV3Draft } from "../../../lib/interpretation-v3/loveEditorial";
 import { isCareerV3Draft } from "../../../lib/interpretation-v3/careerEditorial";
 import { ComprehensiveReportV2View } from "./ComprehensiveReportV2View";
 import { ComprehensiveReportV3View } from "./ComprehensiveReportV3View";
@@ -217,7 +219,7 @@ async function loadProductPreviewPageState(
   }
 
   if (productPreview.productType === "love_marriage_child") {
-    if (!isLoveMarriageChildReportDraft(productPreview.draft)) {
+    if (!isLoveMarriageChildReportDraft(productPreview.draft) && !isLoveV3Draft(productPreview.draft)) {
       return { kind: "invalidSnapshot" };
     }
 
@@ -683,6 +685,7 @@ function renderProductPreviewCompatibilityState(
 function renderProductPreviewLoveMarriageChildState(
   productPreview: ProductPreviewSnapshot,
 ) {
+  if (isLoveV3Draft(productPreview.draft)) return <LoveReportV3View draft={productPreview.draft} evidencePacket={productPreview.evidencePacket} />;
   if (!isLoveMarriageChildReportDraft(productPreview.draft)) {
     return renderInvalidSnapshotState();
   }

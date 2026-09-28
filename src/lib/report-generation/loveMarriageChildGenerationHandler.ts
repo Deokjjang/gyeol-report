@@ -139,7 +139,7 @@ export async function generateLoveMarriageChildProductDraft(
   };
 }
 
-function buildLoveMarriageChildEvidenceFromGenerationInput(
+export function buildLoveMarriageChildEvidenceFromGenerationInput(
   input: SinglePersonGenerationInput,
 ): LoveMarriageChildReportEvidencePacket {
   const saju = calculateLoveMarriageChildSaju(input.person);
@@ -156,7 +156,7 @@ function buildLoveMarriageChildEvidenceFromGenerationInput(
   return withBirthTimeEvidence(buildLoveMarriageChildReportEvidence(evidenceInput), { person: saju.birthTimeContext });
 }
 
-function calculateLoveMarriageChildSaju(
+export function calculateLoveMarriageChildSaju(
   person: SinglePersonGenerationInput["person"],
 ): SajuCalcResult {
   const birthTime = person.birthTime.trim();
