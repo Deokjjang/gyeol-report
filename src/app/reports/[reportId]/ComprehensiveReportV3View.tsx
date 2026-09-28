@@ -11,6 +11,7 @@ import { featureRows } from "../../../lib/interpretation-v3/comprehensiveEditori
 import { ENRICHED_COMPREHENSIVE_VERSION } from "../../../lib/interpretation-v3/comprehensiveComposition";
 import { STORY_COMPREHENSIVE_VERSION } from "../../../lib/interpretation-v3/comprehensiveStorytelling";
 import { FINAL_COMPREHENSIVE_VERSION } from "../../../lib/interpretation-v3/comprehensiveExperience";
+import { DEPTH_COMPREHENSIVE_VERSION } from "../../../lib/interpretation-v3/comprehensiveDepth";
 import { publicSignalRows, type PublicSignalRow } from "../../../lib/interpretation-v3/comprehensivePublicSignals";
 import type { ManseRyeokCommonTableData, MbtiCommonProfileTableData } from "../../../lib/report-tables/types";
 
@@ -18,6 +19,19 @@ function EvidenceLine({ labels }: { readonly labels: readonly string[] }) {
   return <p className="mt-3 text-xs tracking-wide text-[#846829]" data-evidence-line>{labels.join(" · ")}</p>;
 }
 function Reading({ block, opening = false }: { readonly block: ComprehensiveV3Block; readonly opening?: boolean }) {
+  if (block.editorialForm) {
+    const quote = block.editorialForm === "quote", punch = block.editorialForm === "punchline", compact = block.editorialForm === "tip";
+    const body = <>
+      <h3 className={punch || quote ? "font-serif text-xl leading-relaxed text-[#6f1d35] sm:text-2xl" : "text-lg font-semibold text-[#6f1d35]"}>{block.headline}</h3>
+      <div className={block.editorialForm === "observations" ? "grid min-w-0 gap-x-7 gap-y-4 sm:grid-cols-2" : "space-y-5"}>
+        {block.paragraphs?.map((p, i) => <p key={i} className={block.editorialRoles?.[i] === "explanation" ? "text-sm leading-7 text-[#756658] sm:col-span-2" : ""}>{p}</p>)}
+      </div>
+      {block.action ? <p className="text-[0.95rem] leading-8 text-[#665448]">{block.action}</p> : null}
+    </>;
+    const classes = `space-y-4 ${quote ? "border-l-2 border-[#cbb589] pl-5" : compact ? "rounded-sm bg-[#f6f0e6] px-4 py-5" : ""}`;
+    return quote ? <blockquote className={classes} data-editorial-form={block.editorialForm} data-writing-mode={block.writingMode}>{body}</blockquote>
+      : <div className={classes} data-editorial-form={block.editorialForm} data-writing-mode={block.writingMode}>{body}</div>;
+  }
   if (block.writingMode) return <div className={`space-y-4 ${block.writingMode === "criterion" ? "border-l-2 border-[#cbb589] pl-4" : ""}`} data-writing-mode={block.writingMode}>
     {block.headline ? <h3 className={block.writingMode === "question" ? "font-serif text-xl leading-relaxed text-[#6f1d35]" : "text-lg font-semibold text-[#6f1d35]"}>{block.headline}</h3> : null}
     {block.paragraphs?.map((p, i) => <p key={i} className={block.writingMode === "image" && i === 0 ? "font-serif text-[#665035]" : ""}>{p}</p>)}
@@ -49,7 +63,8 @@ export function ComprehensiveReportV3View({ draft, evidencePacket }: { readonly 
   const mbti = source ? buildMbtiCommonProfileTableData(source) : undefined;
   const items = [{ id: "v3-core", label: "핵심 결" }, ...draft.sections.map(s => ({ id: `v3-${s.id}`, label: s.title })),
     { id: "v3-patterns", label: "나를 망치기 쉬운 패턴" }, { id: "v3-direction", label: "앞으로 이렇게 살아가세요" }, { id: "v3-evidence", label: "전문 근거 펼쳐보기" }];
-  if (draft.version === ENRICHED_COMPREHENSIVE_VERSION || draft.version === STORY_COMPREHENSIVE_VERSION || draft.version === FINAL_COMPREHENSIVE_VERSION) {
+  if (draft.version === ENRICHED_COMPREHENSIVE_VERSION || draft.version === STORY_COMPREHENSIVE_VERSION || draft.version === FINAL_COMPREHENSIVE_VERSION || draft.version === DEPTH_COMPREHENSIVE_VERSION) {
+    const depth = draft.version === DEPTH_COMPREHENSIVE_VERSION;
     const story = draft.version !== ENRICHED_COMPREHENSIVE_VERSION;
     const facts = (evidencePacket as { comprehensiveV3: { facts: readonly Evidence[] } }).comprehensiveV3.facts;
     const rows = featureRows(facts);
@@ -103,20 +118,22 @@ export function ComprehensiveReportV3View({ draft, evidencePacket }: { readonly 
       <div className="mx-auto max-w-[44rem] break-keep px-4 [overflow-wrap:anywhere] sm:px-6">
         <section id="v3-core" tabIndex={-1} data-reading-section className="space-y-6">
           <h2 className="text-2xl font-semibold">핵심 결</h2>
-          {draft.opening.flatMap(b => b.paragraphs ?? []).map((p, i) => <p key={i} className={i === 0 ? "text-lg font-medium text-[#6f1d35]" : ""}>{p}</p>)}
-          <EvidenceLine labels={[...new Set(draft.opening.flatMap(b => b.labels))]} />
+          {depth ? draft.opening.map((b, i) => <Reading key={i} block={b} opening />) : <>
+            {draft.opening.flatMap(b => b.paragraphs ?? []).map((p, i) => <p key={i} className={i === 0 ? "text-lg font-medium text-[#6f1d35]" : ""}>{p}</p>)}
+            <EvidenceLine labels={[...new Set(draft.opening.flatMap(b => b.labels))]} />
+          </>}
         </section>
         {draft.sections.map(section => <section id={`v3-${section.id}`} tabIndex={-1} key={section.id} data-reading-section className="space-y-8">
           <h2 className="text-2xl font-semibold">{section.title}</h2>
-          <div className="divide-y divide-[#eadfce]">{section.blocks.map((b, i) => <div key={i} className="py-6 first:pt-0 last:pb-0"><Reading block={b} /></div>)}</div>
+          <div className={depth ? "space-y-10" : "divide-y divide-[#eadfce]"}>{section.blocks.map((b, i) => <div key={i} className={depth ? "min-w-0" : "py-6 first:pt-0 last:pb-0"}><Reading block={b} /></div>)}</div>
         </section>)}
         <section id="v3-patterns" tabIndex={-1} data-reading-section className="space-y-7">
           <h2 className="text-2xl font-semibold">나를 망치기 쉬운 패턴</h2>
-          {draft.patterns.map(p => <div key={p.risk} className="space-y-3 border-l-2 border-[#cbb589] pl-4"><p className="text-sm text-[#846829]">잘 쓰면 · {p.strength}</p><h3 className="text-lg font-semibold">{p.risk}</h3><p>{p.why}</p><p className="font-medium">{p.repair}</p><EvidenceLine labels={p.labels} /></div>)}
+          {draft.patterns.map(p => <div key={p.risk} className="space-y-3 border-l-2 border-[#cbb589] pl-4">{!depth ? <p className="text-sm text-[#846829]">잘 쓰면 · {p.strength}</p> : null}<h3 className="text-lg font-semibold">{p.risk}</h3>{(p.why ?? "").split("\n\n").map((text, i) => <p key={i}>{text}</p>)}<p className="font-medium">{p.repair}</p>{!depth ? <EvidenceLine labels={p.labels} /> : null}</div>)}
         </section>
         <section id="v3-direction" tabIndex={-1} data-reading-section className="space-y-6">
           <h2 className="text-2xl font-semibold">앞으로 이렇게 살아가세요</h2>
-          {draft.direction.split("\n\n").map((p, i) => <p key={i} className={i === 0 ? "font-medium text-[#6f1d35]" : ""}>{p}</p>)}
+          {draft.direction.split("\n\n").map((p, i, ps) => <p key={i} className={depth && i === ps.length - 1 ? "border-t border-[#cbb589] pt-6 font-serif text-xl font-semibold leading-relaxed text-[#6f1d35] sm:text-2xl" : i === 0 ? "font-medium text-[#6f1d35]" : ""}>{p}</p>)}
         </section>
       </div>
     </article>;

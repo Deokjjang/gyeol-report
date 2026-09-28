@@ -38,6 +38,7 @@ type EditorialInput = {
   readonly substantialEvidenceRefs: readonly string[];
   readonly scenes: readonly EditorialScene[];
   readonly targetMix?: EditorialMix;
+  readonly maxConsecutiveTone?: 1 | 2;
 };
 type EditorialIssue = { readonly id: string; readonly reason: string };
 const roles: readonly EditorialRole[] = ["character", "explanation", "advice"];
@@ -101,14 +102,38 @@ export function composeEditorial(input: EditorialInput) {
     candidates.push(scene);
   }
   const scenes: EditorialScene[] = [];
-  const repeats = (s: EditorialScene, key: "tone" | "form") => scenes.length >= 2 && scenes.at(-1)![key] === s[key] && scenes.at(-2)![key] === s[key];
+  const repeats = (s: EditorialScene, key: "tone" | "form") => {
+    const limit = key === "tone" ? input.maxConsecutiveTone ?? 2 : 2;
+    return scenes.length >= limit && scenes.slice(-limit).every(previous => previous[key] === s[key]);
+  };
   // Keep chapters/TOC fixed. Only reorder complete scenes within a chapter.
   // If material is too uniform, expose the QA debt rather than drop content,
   // randomly relabel its tone, merge paragraphs or fabricate a filler block.
   for (const chapter of input.chapters) {
     const remaining = candidates.filter(s => s.chapter === chapter);
     while (remaining.length) {
-      const varied = remaining.findIndex(s => !repeats(s, "tone") && !repeats(s, "form"));
+      // Strict alternation must also leave a viable form sequence. A greedy
+      // first choice can strand an otherwise valid authored chapter at its tail.
+      // Search only within that chapter; never relabel or invent a scene.
+      const viableTail = (candidate: EditorialScene) => {
+        if (input.maxConsecutiveTone !== 1) return true;
+        const tail = remaining.filter(s => s !== candidate), counts = new Map<EditorialTone, number>();
+        tail.forEach(s => counts.set(s.tone, (counts.get(s.tone) ?? 0) + 1));
+        if (![...counts].every(([tone, count]) => count <= Math.ceil((tail.length - (tone === candidate.tone ? 1 : 0)) / 2))) return false;
+        const failed = new Set<string>();
+        const fits = (pool: readonly EditorialScene[], tone: EditorialTone, forms: readonly EditorialForm[]): boolean => {
+          if (!pool.length) return true;
+          const key = JSON.stringify([pool.map(s => s.id), tone, forms]);
+          if (failed.has(key)) return false;
+          const found = pool.some(s => s.tone !== tone && !(forms.length === 2 && forms.every(f => f === s.form)) &&
+            fits(pool.filter(next => next !== s), s.tone, [...forms, s.form].slice(-2)));
+          if (!found) failed.add(key);
+          return found;
+        };
+        return fits(tail, candidate.tone, [...scenes.slice(-1).map(s => s.form), candidate.form]);
+      };
+      let varied = remaining.findIndex(s => !repeats(s, "tone") && !repeats(s, "form") && viableTail(s));
+      if (varied < 0) varied = remaining.findIndex(s => !repeats(s, "tone") && !repeats(s, "form"));
       const [scene] = remaining.splice(varied < 0 ? 0 : varied, 1);
       for (const key of ["tone", "form"] as const) if (repeats(scene, key)) warnings.push({ id: scene.id, reason: `repeated-${key}` });
       scenes.push(scene);

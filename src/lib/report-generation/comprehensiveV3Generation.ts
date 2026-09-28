@@ -3,8 +3,9 @@ import { buildProductNatalTables, getCanonicalNatalTable } from "../report-knowl
 import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
 import { adaptCalculation, adaptMbti, adaptNatalTable, mergeEvidence, validateEvidence } from "../interpretation-v3/evidence";
 import { normalizeContext } from "../interpretation-v3/context";
-import { buildComprehensiveV3, buildComprehensiveV31, buildComprehensiveV32, buildComprehensiveV3Legacy, COMPREHENSIVE_V3_VERSION, comprehensiveV3CustomerText, isComprehensiveV3Draft, type ComprehensiveV3Draft } from "../interpretation-v3/comprehensive";
+import { buildComprehensiveV3, buildComprehensiveFinal, buildComprehensiveV31, buildComprehensiveV32, buildComprehensiveV3Legacy, COMPREHENSIVE_V3_VERSION, comprehensiveV3CustomerText, isComprehensiveV3Draft, type ComprehensiveV3Draft } from "../interpretation-v3/comprehensive";
 import { FINAL_COMPREHENSIVE_VERSION } from "../interpretation-v3/comprehensiveExperience";
+import { DEPTH_COMPREHENSIVE_VERSION } from "../interpretation-v3/comprehensiveDepth";
 import { publicSignalRows } from "../interpretation-v3/comprehensivePublicSignals";
 import { ENRICHED_COMPREHENSIVE_VERSION } from "../interpretation-v3/comprehensiveComposition";
 import { STORY_COMPREHENSIVE_VERSION, validateStoryCopy, storyFeatureRows } from "../interpretation-v3/comprehensiveStorytelling";
@@ -71,13 +72,17 @@ export function validateComprehensiveV3(draft: unknown, packet: unknown): readon
     const facts = v3Facts(packet, calc, String(basis.person.mbtiType ?? ""), !legacy);
     const errors = [...validateEvidence(facts)];
     if (stable(facts) !== stable(v3.facts)) errors.push("V3_FACTS_MISMATCH");
-    const expected = (legacy ? buildComprehensiveV3Legacy : draft.version === ENRICHED_COMPREHENSIVE_VERSION ? buildComprehensiveV31 : draft.version === STORY_COMPREHENSIVE_VERSION ? buildComprehensiveV32 : buildComprehensiveV3)({ name: String(basis.person.name), facts, calculation: calc,
+    const expected = (legacy ? buildComprehensiveV3Legacy : draft.version === ENRICHED_COMPREHENSIVE_VERSION ? buildComprehensiveV31 : draft.version === STORY_COMPREHENSIVE_VERSION ? buildComprehensiveV32 : draft.version === FINAL_COMPREHENSIVE_VERSION ? buildComprehensiveFinal : buildComprehensiveV3)({ name: String(basis.person.name), facts, calculation: calc,
       context: normalizeContext({ lifeStatus: String(basis.userContext.jobStatus), fieldLabel: String(basis.userContext.detailJob), relationshipStatus: String(basis.userContext.relationshipStatus) }),
       relationshipStatus: String(basis.userContext.relationshipStatus), profileTable: draft.profileTable });
     if (stable(expected) !== stable(draft)) errors.push("V3_CONTENT_MISMATCH");
     errors.push(...validateV3Copy(comprehensiveV3CustomerText(draft)));
     if (draft.version === STORY_COMPREHENSIVE_VERSION) errors.push(...validateStoryCopy(comprehensiveV3CustomerText(draft)), ...validateStoryCopy(storyFeatureRows(facts, calc).map(r => `${r.meaning} ${r.power}`).join(" ")));
     if (draft.version === FINAL_COMPREHENSIVE_VERSION) errors.push(...validateStoryCopy(comprehensiveV3CustomerText(draft)), ...validateStoryCopy(publicSignalRows(facts, calc, draft).map(r => `${r.meaning} ${r.power}`).join(" ")));
+    if (draft.version === DEPTH_COMPREHENSIVE_VERSION) {
+      errors.push(...validateStoryCopy(comprehensiveV3CustomerText(draft)));
+      if (!draft.editorialAudit || draft.editorialAudit.errors.length || draft.editorialAudit.rejected.length || draft.editorialAudit.warnings.length) errors.push("V3_EDITORIAL_INCOMPLETE");
+    }
     if (!draft.opening.length || !draft.sections.length || draft.patterns.length < 3) errors.push("V3_CONTENT_INCOMPLETE");
     return errors;
   } catch { return ["V3_EVIDENCE_INVALID"]; }

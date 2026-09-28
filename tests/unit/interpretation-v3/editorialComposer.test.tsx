@@ -84,6 +84,25 @@ describe("common editorial assembly (not connected to saved report composers)", 
     expect(r.warnings).toEqual(["c", "d"].flatMap(id => [{ id, reason: "repeated-tone" }, { id, reason: "repeated-form" }]));
   });
 
+  it("strict alternation saves a contrasting tone for the tail without changing default behavior", () => {
+    const source = [scene("first", { tone: "affection", form: "quote" }), scene("second", { order: 1 }), scene("third", { order: 2 })];
+    expect(run(source).scenes).toEqual(source);
+    const strict = run(source, { maxConsecutiveTone: 1 });
+    expect(strict.scenes.map(s => s.id)).toEqual(["second", "first", "third"]);
+    expect(strict.warnings).toEqual([]);
+    const impossible = run(source.slice(1), { maxConsecutiveTone: 1 });
+    expect(impossible.scenes).toEqual(source.slice(1));
+    expect(impossible.warnings).toEqual([{ id: "third", reason: "repeated-tone" }]);
+  });
+
+  it("strict alternation also avoids stranding three identical forms", () => {
+    const source = [scene("a", { form: "observations" }), scene("b", { order: 1, tone: "praise", form: "observations" }),
+      scene("c", { order: 2, form: "observations" }), scene("d", { order: 3, tone: "praise", form: "quote" })];
+    const r = run(source, { maxConsecutiveTone: 1 });
+    expect(r.scenes.map(s => s.id)).toEqual(["a", "d", "c", "b"]); expect(r.warnings).toEqual([]);
+    for (const s of r.scenes) expect(s).toBe(source.find(x => x.id === s.id));
+  });
+
   it("does not truncate long 3–5 paragraph passages or fill a missing chapter", () => {
     const parts = Array.from({ length: 5 }, (_, i) => ({ role: "character" as const, text: `${i + 1}번째 관찰입니다. ${"긴 원문을 그대로 유지합니다 ".repeat(100)}${i}` }));
     const r = run([scene("long", { parts })], { chapters: ["self", "empty"] });

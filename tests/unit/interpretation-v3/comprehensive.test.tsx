@@ -4,6 +4,7 @@ import { afterEach, expect, it, vi } from "vitest";
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
 import { validateNewProductPublication, validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
 import { comprehensiveCoverage, comprehensiveV3CustomerText, isComprehensiveV3Draft } from "../../../src/lib/interpretation-v3/comprehensive";
+import { DEPTH_COMPREHENSIVE_VERSION } from "../../../src/lib/interpretation-v3/comprehensiveDepth";
 import { ComprehensiveReportV3View } from "../../../src/app/reports/[reportId]/ComprehensiveReportV3View";
 import { ComprehensiveReportV2View } from "../../../src/app/reports/[reportId]/ComprehensiveReportV2View";
 import type { ComprehensiveReportV2Draft } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
@@ -36,7 +37,7 @@ it.each(COMPREHENSIVE_V3_FIXTURES)("%s: V3 generate → publish → snapshot →
   expect(result.ok, JSON.stringify(result)).toBe(true);
   if (!result.ok || !isComprehensiveV3Draft(result.draft)) return;
   const draft = result.draft;
-  const openingSignals = new Set(draft.opening.flatMap(b => b.labels)).size;
+  const openingSignals = new Set(draft.opening.flatMap(b => b.evidenceRefs)).size;
   expect(openingSignals).toBeGreaterThanOrEqual(3);
   expect(openingSignals).toBeLessThanOrEqual(7);
   expect(result.externalCalls).toEqual([]);
@@ -44,13 +45,16 @@ it.each(COMPREHENSIVE_V3_FIXTURES)("%s: V3 generate → publish → snapshot →
   const snapshot = createProductPreviewSnapshot({ reportId: `comprehensive-v3-${id}`, createdAtIso: "2026-09-28T00:00:00Z", productKey: "saju_mbti_full", productSlug: "saju-mbti-full", draft, evidencePacket: result.evidencePacket });
   expect(snapshot.ok && isProductPreviewSnapshot(JSON.parse(JSON.stringify(snapshot.value)))).toBe(true);
   const html = renderToStaticMarkup(createElement(ComprehensiveReportV3View, { draft, evidencePacket: result.evidencePacket }));
-  expect(html).toContain("comprehensive_v3.2-final.1");
+  expect(html).toContain(DEPTH_COMPREHENSIVE_VERSION);
   expect(html).not.toContain("리포트를 준비하고 있습니다");
   expect(html).not.toContain("안전 안내");
   const blocks = [...draft.opening, ...draft.sections.flatMap(s => s.blocks)];
   const packet = result.evidencePacket as { comprehensiveV3: { facts: readonly Evidence[] } };
   const facts = packet.comprehensiveV3.facts;
-  for (const b of blocks) { expect(b.evidenceRefs.length, b.id).toBeGreaterThan(0); expect(b.evidenceRefs.every(id => facts.some(f => f.id === id)), b.id).toBe(true); }
+  for (const b of blocks) {
+    if (!b.evidenceRefs.length) { expect(b.kind).toBe("lifestyle"); expect(b.headline).toMatch(/ · 균형$/); }
+    else expect(b.evidenceRefs.every(id => facts.some(f => f.id === id)), b.id).toBe(true);
+  }
   expect(blocks.filter(b => b.kind === "compound").length).toBeGreaterThan(0);
   if (payload.person.mbtiType) expect(blocks.filter(b => b.kind === "fusion").length).toBeGreaterThan(0);
   else { expect(facts.some(f => f.kind === "mbti")).toBe(false); expect(html).not.toMatch(/ENTJ|INFP|ISTP|ENFJ/); }
@@ -69,19 +73,19 @@ it("MBTI counterfactual changes actual behavior while natal evidence stays ident
   const natal = results.map(r => r.ok ? (r.evidencePacket as { comprehensiveV3: { facts: readonly Evidence[] } }).comprehensiveV3.facts.filter(f => f.kind !== "mbti") : []);
   expect(natal[0]).toEqual(natal[1]); expect(natal[0]).toEqual(natal[2]);
   const texts = results.map(r => r.ok && isComprehensiveV3Draft(r.draft) ? comprehensiveV3CustomerText(r.draft) : "");
-  expect(texts[0]).toContain("감정에도 정답을 요구할 때");
-  expect(texts[1]).toContain("비유 옆에 원래 정의");
+  expect(texts[0]).toContain("이야기가 끝나기 전에 머릿속에서는 이미 순서가 정리됩니다");
+  expect(texts[1]).toContain("내 마음까지 동의했는지 살피는 시간");
   expect(texts[2]).not.toMatch(/ENTJ|INFP|MBTI의/);
 });
-it("career and detailed job change work/money/study directives, never natal facts", async () => {
+it("career and detailed job change lived work/money/study context, never natal facts", async () => {
   const { payload } = comprehensiveFixture(COMPREHENSIVE_V3_FIXTURES[0]);
   const contexts = [["employee", "소프트웨어 개발"], ["business_owner", "제조 품질"], ["student", "디자인"]];
   const results = await Promise.all(contexts.map(([jobStatus, detailJob]) => generate({ ...payload, userContext: { ...payload.userContext, jobStatus, detailJob } })));
   const facts = results.map(r => r.ok ? (r.evidencePacket as { comprehensiveV3: { facts: readonly Evidence[] } }).comprehensiveV3.facts : []);
   expect(facts[0]).toEqual(facts[1]); expect(facts[0]).toEqual(facts[2]);
   for (const domain of ["career", "money", "study"]) {
-    const actions = results.map(r => r.ok && isComprehensiveV3Draft(r.draft) ? r.draft.sections.find(s => s.id === domain)?.blocks.find(b => b.kind === "context")?.action : undefined);
-    expect(actions.every(Boolean)).toBe(true); expect(new Set(actions).size).toBe(3);
+    const scenes = results.map(r => r.ok && isComprehensiveV3Draft(r.draft) ? r.draft.sections.find(s => s.id === domain)?.blocks.find(b => b.id === `context:${domain}`)?.paragraphs?.join(" ") : undefined);
+    expect(scenes.every(Boolean)).toBe(true); expect(new Set(scenes).size).toBe(3);
   }
   const texts = results.map(r => r.ok && isComprehensiveV3Draft(r.draft) ? comprehensiveV3CustomerText(r.draft) : "");
   expect(texts[0]).toContain("소프트웨어 분야"); expect(texts[1]).toContain("제조·품질 분야"); expect(texts[2]).toContain("조별활동");

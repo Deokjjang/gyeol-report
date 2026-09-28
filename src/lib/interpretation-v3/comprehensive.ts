@@ -13,6 +13,8 @@ import { composeComprehensiveV31, ENRICHED_COMPREHENSIVE_VERSION } from "./compr
 import { composeComprehensiveV32, STORY_COMPREHENSIVE_VERSION, type WritingMode } from "./comprehensiveStorytelling";
 import type { SajuCalcResult } from "../saju/types";
 import { composeComprehensiveFinal, FINAL_COMPREHENSIVE_VERSION, type FinalArchetype, type RelatableExample } from "./comprehensiveExperience";
+import { composeComprehensiveDepth, DEPTH_COMPREHENSIVE_VERSION } from "./comprehensiveDepth";
+import type { EditorialForm, EditorialRole } from "./editorialComposer";
 
 export const COMPREHENSIVE_V3_VERSION = "comprehensive_v3.1" as const;
 export type ComprehensiveV3Block = {
@@ -38,12 +40,14 @@ export type ComprehensiveV3Block = {
   readonly adviceKeys?: readonly string[];
   readonly prominence?: "hero" | "supporting";
   readonly relatable?: RelatableExample;
+  readonly editorialForm?: EditorialForm;
+  readonly editorialRoles?: readonly EditorialRole[];
 };
 export type ComprehensiveV3Section = { readonly id: string; readonly title: string; readonly blocks: readonly ComprehensiveV3Block[] };
 export type ComprehensiveV3Draft = {
   readonly productType: "saju_mbti_full";
   readonly productVersion: "v3";
-  readonly version: typeof COMPREHENSIVE_V3_VERSION | typeof ENRICHED_COMPREHENSIVE_VERSION | typeof STORY_COMPREHENSIVE_VERSION | typeof FINAL_COMPREHENSIVE_VERSION;
+  readonly version: typeof COMPREHENSIVE_V3_VERSION | typeof ENRICHED_COMPREHENSIVE_VERSION | typeof STORY_COMPREHENSIVE_VERSION | typeof FINAL_COMPREHENSIVE_VERSION | typeof DEPTH_COMPREHENSIVE_VERSION;
   readonly personLabel: string;
   readonly title: string;
   readonly profileTable: ComprehensiveReportV2ProfileTable;
@@ -54,11 +58,12 @@ export type ComprehensiveV3Draft = {
   readonly direction: string;
   readonly directionEvidenceRefs: readonly string[];
   readonly directionArchetype?: FinalArchetype;
+  readonly editorialAudit?: { readonly chars: Readonly<Record<EditorialRole, number>>; readonly mix: Readonly<Record<EditorialRole, number>>; readonly rejected: readonly string[]; readonly warnings: readonly string[]; readonly errors: readonly string[]; readonly mixWarnings: readonly EditorialRole[] };
 };
 export function isComprehensiveV3Draft(value: unknown): value is ComprehensiveV3Draft {
   if (!value || typeof value !== "object") return false;
   const v = value as Partial<ComprehensiveV3Draft>;
-  return v.productType === "saju_mbti_full" && v.productVersion === "v3" && [COMPREHENSIVE_V3_VERSION, ENRICHED_COMPREHENSIVE_VERSION, STORY_COMPREHENSIVE_VERSION, FINAL_COMPREHENSIVE_VERSION].includes(v.version!) &&
+  return v.productType === "saju_mbti_full" && v.productVersion === "v3" && [COMPREHENSIVE_V3_VERSION, ENRICHED_COMPREHENSIVE_VERSION, STORY_COMPREHENSIVE_VERSION, FINAL_COMPREHENSIVE_VERSION, DEPTH_COMPREHENSIVE_VERSION].includes(v.version!) &&
     Array.isArray(v.opening) && Array.isArray(v.sections) && Array.isArray(v.patterns) && typeof v.direction === "string";
 }
 const unique = <T,>(values: readonly T[]) => [...new Set(values)];
@@ -124,6 +129,11 @@ export function comprehensiveCandidates(facts: readonly Evidence[], enriched = f
 
 export type ComprehensiveV3Input = { name: string; facts: readonly Evidence[]; context: UserContextProfile; relationshipStatus: string; profileTable: ComprehensiveReportV2ProfileTable; calculation?: SajuCalcResult };
 export function buildComprehensiveV3(input: ComprehensiveV3Input): ComprehensiveV3Draft {
+  if (!input.facts.some(f => f.scope === "natal" && f.certainty === "confirmed")) return buildComprehensiveV3Legacy(input);
+  return input.calculation ? composeComprehensiveDepth(input, comprehensiveCandidates(input.facts, true)) : buildComprehensiveV31(input);
+}
+/** Frozen v3.2-final.1 reconstruction for already-saved reports. */
+export function buildComprehensiveFinal(input: ComprehensiveV3Input): ComprehensiveV3Draft {
   // Existing uncertain-time treatment is retained. No stronger new assertions
   // are made from conditional evidence just to fill the richer presentation.
   if (!input.facts.some(f => f.scope === "natal" && f.certainty === "confirmed")) return buildComprehensiveV3Legacy(input);

@@ -5,7 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, expect, it } from "vitest";
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
-import { buildComprehensiveV32, comprehensiveV3CustomerText, isComprehensiveV3Draft, type ComprehensiveV3Draft } from "../../../src/lib/interpretation-v3/comprehensive";
+import { buildComprehensiveFinal, buildComprehensiveV32, comprehensiveV3CustomerText, isComprehensiveV3Draft, type ComprehensiveV3Draft } from "../../../src/lib/interpretation-v3/comprehensive";
 import { FINAL_COMPREHENSIVE_VERSION } from "../../../src/lib/interpretation-v3/comprehensiveExperience";
 import { REALITY_VOICES, ALTERNATE_REALITY_VOICES, LOVE_VOICES, PRECISION_VOICES } from "../../../src/lib/interpretation-v3/comprehensiveExperienceCopy";
 import { publicSignalRows } from "../../../src/lib/interpretation-v3/comprehensivePublicSignals";
@@ -18,7 +18,15 @@ import type { Evidence } from "../../../src/lib/interpretation-v3/types";
 import type { SajuCalcResult } from "../../../src/lib/saju/types";
 
 const runtime = { enabled: false, reason: "flag_disabled" } as const;
-const generate = (payload: unknown) => generateProductReport(payload, runtime, "deterministic_fallback", undefined, { comprehensiveVersion: "v3" });
+// Frozen V3.2-final contract; comprehensiveDepth tests the current product path.
+const generate = async (payload: unknown) => {
+  const result = await generateProductReport(payload, runtime, "deterministic_fallback", undefined, { comprehensiveVersion: "v3" });
+  if (!result.ok || !isComprehensiveV3Draft(result.draft)) return result;
+  const p = payload as ReturnType<typeof comprehensiveFixture>["payload"], packet = result.evidencePacket as Packet;
+  return { ...result, draft: buildComprehensiveFinal({ name: p.person.name, facts: packet.comprehensiveV3.facts, calculation: packet.comprehensiveV3.calculation,
+    context: normalizeContext({ lifeStatus: p.userContext.jobStatus, fieldLabel: p.userContext.detailJob, relationshipStatus: p.userContext.relationshipStatus }),
+    relationshipStatus: p.userContext.relationshipStatus, profileTable: result.draft.profileTable }) };
+};
 const blocks = (d: ComprehensiveV3Draft) => [...d.opening, ...d.sections.flatMap(s => s.blocks)];
 const sha = (x: unknown) => createHash("sha256").update(JSON.stringify(x)).digest("hex");
 type Packet = { comprehensiveV3: { facts: Evidence[]; calculation: SajuCalcResult } };
