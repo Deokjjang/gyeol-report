@@ -378,6 +378,8 @@ async function createProductPreviewResponse(
   const fallbackUsed = !writer.enabled;
   const generationResult = json.productKey === "saju_mbti_full" && getRecordField(json, "productOptions")?.contentVersion === "v3"
     ? await generateProductReport(json, writer, "deterministic_fallback", undefined, { comprehensiveVersion: "v3" })
+    : json.productKey === "career_money_study" && getRecordField(json, "productOptions")?.contentVersion === "v3"
+    ? await generateProductReport(json, writer, "deterministic_fallback", undefined, { careerVersion: "v3" })
     : await generateProductReport(json, writer, writer.enabled ? "normal_writer" : "deterministic_fallback");
   const generationDiagnostic = () => createSafeLocalReportDiagnostic({
     result: generationResult,

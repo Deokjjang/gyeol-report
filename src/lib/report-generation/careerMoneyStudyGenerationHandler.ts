@@ -151,7 +151,7 @@ export async function generateCareerMoneyStudyProductDraft(
   };
 }
 
-function buildCareerEvidenceFromGenerationInput(
+export function buildCareerEvidenceFromGenerationInput(
   input: SinglePersonGenerationInput,
   referenceDate?: Date,
 ): CareerReportEvidencePacket {
@@ -177,7 +177,7 @@ function buildCareerEvidenceFromGenerationInput(
   }), { person: saju.birthTimeContext });
 }
 
-function calculateCareerSaju(
+export function calculateCareerSaju(
   person: SinglePersonGenerationInput["person"],
 ): SajuCalcResult {
   const birthTime = person.birthTime.trim();

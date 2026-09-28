@@ -1,4 +1,3 @@
-import type { ComprehensiveV3Draft } from "./comprehensive";
 import type { Evidence } from "./types";
 import type { SajuCalcResult } from "../saju/types";
 import { storyFeatureRows, storySupport, unique } from "./comprehensiveStoryEvidence";
@@ -23,9 +22,10 @@ const COPY: Readonly<Record<string, readonly [string, string]>> = {
 const BASIS = ["연지 기준 십이신살", "일지 기준 십이신살", "연지 기준 표식", "일간 기준 표식", "일지 기준 도화", "일간 기준 귀인", "일간 기준", "일지 기준", "연지 기준"];
 const POSITIONS: Readonly<Record<string, string>> = { year: "연주", month: "월주", day: "일주", hour: "시주" };
 export type PublicSignalRow = { readonly label: string; readonly meaning: string; readonly power: string; readonly basis: readonly string[] };
+export type PublicSignalUsage = { readonly opening: readonly { readonly evidenceRefs: readonly string[] }[]; readonly sections: readonly { readonly blocks: readonly { readonly evidenceRefs: readonly string[] }[] }[] };
 /** Allowlisted human display DTO: raw IDs/provenance never cross into JSX,
  * attributes, React keys or a client component's serialized props. */
-export function publicSignalRows(facts: readonly Evidence[], calculation: SajuCalcResult, draft: ComprehensiveV3Draft): readonly PublicSignalRow[] {
+export function publicSignalRows(facts: readonly Evidence[], calculation: SajuCalcResult, draft: PublicSignalUsage): readonly PublicSignalRow[] {
   const used = new Set([...draft.opening, ...draft.sections.flatMap(s => s.blocks)].flatMap(b => b.evidenceRefs));
   return storyFeatureRows(facts, calculation).map((row, index) => {
     const fs = facts.filter(f => row.evidenceRefs.includes(f.id)), support = storySupport(row.featureId, facts, calculation);

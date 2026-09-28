@@ -67,6 +67,8 @@ import type {
 import { getSajuBranchSymbolEntry } from "../../../lib/report-knowledge/sajuBranchSymbolKnowledge";
 import { AnnualFortuneReportView } from "./AnnualFortuneReportView";
 import { CareerReportView } from "./CareerReportView";
+import { CareerReportV3View } from "./CareerReportV3View";
+import { isCareerV3Draft } from "../../../lib/interpretation-v3/careerEditorial";
 import { ComprehensiveReportV2View } from "./ComprehensiveReportV2View";
 import { ComprehensiveReportV3View } from "./ComprehensiveReportV3View";
 import { isComprehensiveV3Draft } from "../../../lib/interpretation-v3/comprehensive";
@@ -193,7 +195,7 @@ async function loadProductPreviewPageState(
   }
 
   if (productPreview.productType === "career_money_study") {
-    if (!isCareerReportDraft(productPreview.draft)) {
+    if (!isCareerReportDraft(productPreview.draft) && !isCareerV3Draft(productPreview.draft)) {
       return { kind: "invalidSnapshot" };
     }
 
@@ -725,6 +727,7 @@ function renderProductPreviewReentryCta(productSlug: string) {
 function renderProductPreviewCareerMoneyStudyState(
   productPreview: ProductPreviewSnapshot,
 ) {
+  if (isCareerV3Draft(productPreview.draft)) return <CareerReportV3View draft={productPreview.draft} evidencePacket={productPreview.evidencePacket} />;
   if (!isCareerReportDraft(productPreview.draft)) {
     return renderInvalidSnapshotState();
   }

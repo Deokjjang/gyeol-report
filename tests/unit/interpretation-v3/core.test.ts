@@ -213,8 +213,8 @@ describe("V3 isolated common core", () => {
     expect(text.indexOf(d.directive)).toBeLessThan(text.indexOf(d.rationale));
     expect(text.indexOf(d.rationale)).toBeLessThan(text.indexOf(d.professionalEvidence[0]));
   });
-  it("connects only the comprehensive boundary and has zero provider/network clients in V3", () => {
-    const allowed = ["src/lib/report-generation/comprehensiveV3Generation.ts", "src/app/reports/[reportId]/ComprehensiveReportV3View.tsx", "src/app/reports/[reportId]/page.tsx"];
+  it("connects only comprehensive/Career version boundaries and has zero provider/network clients in V3", () => {
+    const allowed = ["src/lib/report-generation/comprehensiveV3Generation.ts", "src/app/reports/[reportId]/ComprehensiveReportV3View.tsx", "src/app/reports/[reportId]/page.tsx", "src/lib/report-generation/careerV3Generation.ts", "src/app/reports/[reportId]/CareerReportV3View.tsx", "src/lib/report-generation/productPreviewSnapshot.ts"];
     const files = (dir: string): string[] => readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? files(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []);
     for (const file of files("src")) {
       const source = readFileSync(file, "utf8");

@@ -12,7 +12,7 @@ import { ENRICHED_COMPREHENSIVE_VERSION } from "../../../lib/interpretation-v3/c
 import { STORY_COMPREHENSIVE_VERSION } from "../../../lib/interpretation-v3/comprehensiveStorytelling";
 import { FINAL_COMPREHENSIVE_VERSION } from "../../../lib/interpretation-v3/comprehensiveExperience";
 import { DEPTH_COMPREHENSIVE_VERSION } from "../../../lib/interpretation-v3/comprehensiveDepth";
-import { publicSignalRows, type PublicSignalRow } from "../../../lib/interpretation-v3/comprehensivePublicSignals";
+import { publicSignalRows, type PublicSignalRow, type PublicSignalUsage } from "../../../lib/interpretation-v3/comprehensivePublicSignals";
 import type { ManseRyeokCommonTableData, MbtiCommonProfileTableData } from "../../../lib/report-tables/types";
 
 function EvidenceLine({ labels }: { readonly labels: readonly string[] }) {
@@ -179,7 +179,7 @@ export function ComprehensiveReportV3View({ draft, evidencePacket }: { readonly 
   </article>;
 }
 
-function StoryTables({ facts, calculation, manse, mbti, draft }: { readonly facts: readonly Evidence[]; readonly calculation: SajuCalcResult; readonly manse?: ManseRyeokCommonTableData | null; readonly mbti?: MbtiCommonProfileTableData | null; readonly draft: ComprehensiveV3Draft }) {
+export function StoryTables({ facts, calculation, manse, mbti, draft }: { readonly facts: readonly Evidence[]; readonly calculation: SajuCalcResult; readonly manse?: ManseRyeokCommonTableData | null; readonly mbti?: MbtiCommonProfileTableData | null; readonly draft: PublicSignalUsage }) {
   const colors = ["bg-emerald-50 border-emerald-200", "bg-rose-50 border-rose-200", "bg-amber-50 border-amber-200", "bg-stone-100 border-stone-200", "bg-sky-50 border-sky-200"];
   const elements = [["WOOD", "목"], ["FIRE", "화"], ["EARTH", "토"], ["METAL", "금"], ["WATER", "수"]] as const;
   const rows = publicSignalRows(facts, calculation, draft);
