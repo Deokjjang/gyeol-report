@@ -3,6 +3,7 @@ import { createComprehensiveV3 } from "./comprehensiveV3Generation";
 import { createCareerV3 } from "./careerV3Generation";
 import { createLoveV3 } from "./loveV3Generation";
 import { createCompatibilityV3 } from "./compatibilityV3Generation";
+import { createMajorFortuneV3 } from "./majorFortuneV3Generation";
 import { getAnnualPurchasePolicyDate, type AnnualCommerceAcceptance } from "../payment/annualPurchasePolicy";
 import { prepareProductGenerationFromPayload, type ProductGenerationResult } from "./productGenerationDispatcher";
 import type { ReportWriterRuntime } from "./reportWriterRuntime";
@@ -13,7 +14,7 @@ import { deliveryIssueCodes, settlePaidWriterDraft, type DeliveryAudit } from ".
 
 // writer_regeneration is retained for old callers, but no longer buys another call.
 export type GenerationStrategy = "normal_writer" | "writer_regeneration" | "deterministic_fallback";
-export async function generateProductReport(payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance, options: { readonly comprehensiveVersion?: "v2" | "v3"; readonly careerVersion?: "v3"; readonly loveVersion?: "v3" } = {}): Promise<ProductGenerationResult> {
+export async function generateProductReport(payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance, options: { readonly comprehensiveVersion?: "v2" | "v3"; readonly careerVersion?: "v3"; readonly loveVersion?: "v3"; readonly majorFortuneVersion?: "v3" } = {}): Promise<ProductGenerationResult> {
   const audit: DeliveryAudit = { version: "paid-one-call-v1", preflight: "fail", writerValidation: "not_run", rescueKinds: [], fallbackUsed: false, publish: "fail", failureCode: null, issues: [] };
   const budget: WriterCallBudget = { limit: strategy === "normal_writer" ? 1 : 0, calls: [] };
   const fail = (code: string, issues: readonly string[] = []): ProductGenerationResult => {
@@ -46,6 +47,16 @@ export async function generateProductReport(payload: unknown, runtime: ReportWri
       audit.preflight = "pass"; audit.publish = "pass";
       return { ...generated, externalCalls: [], delivery: audit };
     } catch { return fail("LOVE_V3_PREPARATION_FAILED"); }
+  }
+  if (product === "major_fortune" && options.majorFortuneVersion === "v3") {
+    try {
+      const v3 = await createMajorFortuneV3(payload);
+      if (!v3) return fail("MAJOR_FORTUNE_V3_PREPARATION_FAILED");
+      const check = validateNewProductPublication(product, v3.draft, v3.evidencePacket, payload);
+      if (!check.ok) return fail("MAJOR_FORTUNE_V3_PUBLICATION_FAILED", check.errors);
+      audit.preflight = "pass"; audit.publish = "pass";
+      return { ok: true, kind: "majorFortune", ...v3, externalCalls: [], delivery: audit };
+    } catch { return fail("MAJOR_FORTUNE_V3_PREPARATION_FAILED"); }
   }
   if (product === "career_money_study" && options.careerVersion === "v3") {
     try {

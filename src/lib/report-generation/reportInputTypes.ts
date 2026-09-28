@@ -149,6 +149,8 @@ export type SinglePersonReportInputPayload = {
   };
   readonly productOptions: Record<string, never> | {
     readonly selectedYear: string;
+  } | {
+    readonly contentVersion: "v3";
   };
 };
 

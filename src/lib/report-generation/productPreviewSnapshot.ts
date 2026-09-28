@@ -9,6 +9,7 @@ import type { ComprehensiveV3Draft } from "./comprehensiveV3Generation";
 import type { CompatibilityReportDraft } from "./compatibilityReportDraftTypes";
 import type { LoveMarriageChildReportDraft } from "./loveMarriageChildReportDraftTypes";
 import type { MajorFortuneReportDraft } from "./majorFortuneReportDraftTypes";
+import type { MajorFortuneV3Draft } from "../interpretation-v3/majorFortuneEditorial";
 import type {
   ReportProductKey,
   ReportProductSlug,
@@ -39,6 +40,7 @@ export type ProductPreviewSnapshotDraft =
   | CompatibilityReportDraft
   | CompatibilityV3Draft
   | MajorFortuneReportDraft
+  | MajorFortuneV3Draft
   | AnnualFortuneReportDraft
   | ComprehensiveV3Draft
   | ComprehensiveV2ProductPreviewDraft;

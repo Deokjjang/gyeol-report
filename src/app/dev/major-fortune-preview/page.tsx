@@ -24,6 +24,9 @@ import {
   USER_RELATIONSHIP_STATUS_LABELS,
 } from "../../../lib/report-knowledge/userContextTypes";
 import { MajorFortuneReportView } from "../../reports/[reportId]/MajorFortuneReportView";
+import { MajorFortuneReportV3View } from "../../reports/[reportId]/MajorFortuneReportV3View";
+import { createMajorFortuneV3 } from "../../../lib/report-generation/majorFortuneV3Generation";
+import { GAON_MAJOR_FORTUNE_V3_PAYLOAD } from "../../../lib/interpretation-v3/majorFortuneFixtures";
 
 export const dynamic = "force-dynamic";
 
@@ -658,6 +661,12 @@ export default async function MajorFortunePreviewPage({
   const resolvedSearchParams = await searchParams;
   const fixtureId = getFixtureId(resolvedSearchParams);
   const snapshotMode = getSnapshotMode(resolvedSearchParams);
+
+  if (fixtureId === "gaon-v3" && snapshotMode === "latest") {
+    const result = await createMajorFortuneV3(GAON_MAJOR_FORTUNE_V3_PAYLOAD);
+    if (result === null) notFound();
+    return <PreviewShell devStatus="deterministic V3 fixture · gaon-v3"><MajorFortuneReportV3View draft={result.draft} evidencePacket={result.evidencePacket} /></PreviewShell>;
+  }
 
   let fixture;
 

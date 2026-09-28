@@ -79,6 +79,8 @@ import { isComprehensiveV3Draft } from "../../../lib/interpretation-v3/comprehen
 import { CompatibilityReportView } from "./CompatibilityReportView";
 import { LoveMarriageChildReportView } from "./LoveMarriageChildReportView";
 import { MajorFortuneReportView } from "./MajorFortuneReportView";
+import { MajorFortuneReportV3View } from "./MajorFortuneReportV3View";
+import { isMajorFortuneV3Draft, type MajorFortuneV3Draft } from "../../../lib/interpretation-v3/majorFortuneEditorial";
 
 export const dynamic = "force-dynamic";
 
@@ -232,7 +234,7 @@ async function loadProductPreviewPageState(
   }
 
   if (productPreview.productType === "major_fortune") {
-    if (!isMajorFortuneReportDraft(productPreview.draft)) {
+    if (!isMajorFortuneReportDraft(productPreview.draft) && !isMajorFortuneV3Draft(productPreview.draft)) {
       return { kind: "invalidSnapshot" };
     }
 
@@ -567,7 +569,7 @@ function isCareerReportDraft(
   );
 }
 
-type MajorFortuneReportDraftWithEvidence = MajorFortuneReportDraft & {
+type MajorFortuneReportDraftWithEvidence = (MajorFortuneReportDraft | MajorFortuneV3Draft) & {
   readonly evidencePacket?: MajorFortuneEvidencePacket;
 };
 
@@ -583,9 +585,8 @@ function isMajorFortuneReportDraft(
   }
 
   return (
-    value.version === "v1" &&
     value.productType === "major_fortune" &&
-    value.productVersion === "v1" &&
+    ((value.version === "v1" && value.productVersion === "v1") || isMajorFortuneV3Draft(value)) &&
     typeof value.personLabel === "string" &&
     typeof value.openingTitle === "string" &&
     typeof value.openingSummary === "string" &&
@@ -778,6 +779,10 @@ function getLoveMarriageChildPreviewEvidencePacket(
 function renderProductPreviewMajorFortuneState(
   productPreview: ProductPreviewSnapshot,
 ) {
+  if (isMajorFortuneV3Draft(productPreview.draft)) {
+    const evidencePacket = getMajorFortunePreviewEvidencePacket(productPreview);
+    return evidencePacket ? <MajorFortuneReportV3View draft={productPreview.draft} evidencePacket={evidencePacket} /> : renderInvalidSnapshotState();
+  }
   if (!isMajorFortuneReportDraft(productPreview.draft)) {
     return renderInvalidSnapshotState();
   }
@@ -886,11 +891,15 @@ function renderGeneratedMajorFortuneState(
   result: PaidReportResult,
   draft: MajorFortuneReportDraftWithEvidence,
 ) {
+  const evidencePacket = getMajorFortuneEvidencePacket(draft);
+  if (isMajorFortuneV3Draft(draft)) {
+    return evidencePacket ? <MajorFortuneReportV3View draft={draft} evidencePacket={evidencePacket} /> : renderInvalidSnapshotState();
+  }
   return (
     <MajorFortuneReportView
       draft={draft}
       reportId={result.reportId}
-      evidencePacket={getMajorFortuneEvidencePacket(draft)}
+      evidencePacket={evidencePacket}
     />
   );
 }

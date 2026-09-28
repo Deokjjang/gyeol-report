@@ -453,6 +453,10 @@ function createSingleProductOptions(
     };
   }
 
+  if (productKey === MAJOR_FORTUNE_PRODUCT_KEY) {
+    return { contentVersion: "v3" };
+  }
+
   return {};
 }
 
