@@ -1,6 +1,8 @@
 # V3 Phase 0–1 공통 해석 코어
 
-최신 종합 V3.2의 읽기 다양성/근거 강도 선별, 상단 UI, 6개 fixture 비교와 전체 고객 텍스트는 [COMPREHENSIVE_PHASE_2C.md](COMPREHENSIVE_PHASE_2C.md)를 보세요.
+최신 종합 V3.2 Final의 현실 공감·MBTI 실제 발현·96조합 다양성 검사·고객용 주요 기운 정리 및 전체 고객 텍스트는 [COMPREHENSIVE_PHASE_2D.md](COMPREHENSIVE_PHASE_2D.md)를 보세요.
+
+V3.2의 읽기 다양성/근거 강도 선별, 상단 UI와 이전 6개 fixture 비교는 [COMPREHENSIVE_PHASE_2C.md](COMPREHENSIVE_PHASE_2C.md)에 보존했습니다.
 
 종합 V3.1의 서사/통합표, V2·V3·V3.1 비교 기록은 [COMPREHENSIVE_PHASE_2B.md](COMPREHENSIVE_PHASE_2B.md)에 보존했습니다.
 

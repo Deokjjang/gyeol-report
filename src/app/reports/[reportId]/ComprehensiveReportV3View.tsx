@@ -9,14 +9,16 @@ import type { SajuCalcResult } from "../../../lib/saju/types";
 import type { Evidence } from "../../../lib/interpretation-v3/types";
 import { featureRows } from "../../../lib/interpretation-v3/comprehensiveEditorial";
 import { ENRICHED_COMPREHENSIVE_VERSION } from "../../../lib/interpretation-v3/comprehensiveComposition";
-import { STORY_COMPREHENSIVE_VERSION, storyFeatureRows } from "../../../lib/interpretation-v3/comprehensiveStorytelling";
+import { STORY_COMPREHENSIVE_VERSION } from "../../../lib/interpretation-v3/comprehensiveStorytelling";
+import { FINAL_COMPREHENSIVE_VERSION } from "../../../lib/interpretation-v3/comprehensiveExperience";
+import { publicSignalRows, type PublicSignalRow } from "../../../lib/interpretation-v3/comprehensivePublicSignals";
 import type { ManseRyeokCommonTableData, MbtiCommonProfileTableData } from "../../../lib/report-tables/types";
 
 function EvidenceLine({ labels }: { readonly labels: readonly string[] }) {
   return <p className="mt-3 text-xs tracking-wide text-[#846829]" data-evidence-line>{labels.join(" · ")}</p>;
 }
 function Reading({ block, opening = false }: { readonly block: ComprehensiveV3Block; readonly opening?: boolean }) {
-  if (block.writingMode) return <div className={`space-y-4 ${block.writingMode === "criterion" ? "border-l-2 border-[#cbb589] pl-4" : ""}`} data-writing-mode={block.writingMode} data-discovery={block.discoveryKey} data-prominence={block.prominence}>
+  if (block.writingMode) return <div className={`space-y-4 ${block.writingMode === "criterion" ? "border-l-2 border-[#cbb589] pl-4" : ""}`} data-writing-mode={block.writingMode}>
     {block.headline ? <h3 className={block.writingMode === "question" ? "font-serif text-xl leading-relaxed text-[#6f1d35]" : "text-lg font-semibold text-[#6f1d35]"}>{block.headline}</h3> : null}
     {block.paragraphs?.map((p, i) => <p key={i} className={block.writingMode === "image" && i === 0 ? "font-serif text-[#665035]" : ""}>{p}</p>)}
     {block.action ? <p className={block.writingMode === "closing" || block.writingMode === "criterion" ? "font-medium" : ""}>{block.action}</p> : null}
@@ -47,8 +49,8 @@ export function ComprehensiveReportV3View({ draft, evidencePacket }: { readonly 
   const mbti = source ? buildMbtiCommonProfileTableData(source) : undefined;
   const items = [{ id: "v3-core", label: "핵심 결" }, ...draft.sections.map(s => ({ id: `v3-${s.id}`, label: s.title })),
     { id: "v3-patterns", label: "나를 망치기 쉬운 패턴" }, { id: "v3-direction", label: "앞으로 이렇게 살아가세요" }, { id: "v3-evidence", label: "전문 근거 펼쳐보기" }];
-  if (draft.version === ENRICHED_COMPREHENSIVE_VERSION || draft.version === STORY_COMPREHENSIVE_VERSION) {
-    const story = draft.version === STORY_COMPREHENSIVE_VERSION;
+  if (draft.version === ENRICHED_COMPREHENSIVE_VERSION || draft.version === STORY_COMPREHENSIVE_VERSION || draft.version === FINAL_COMPREHENSIVE_VERSION) {
+    const story = draft.version !== ENRICHED_COMPREHENSIVE_VERSION;
     const facts = (evidencePacket as { comprehensiveV3: { facts: readonly Evidence[] } }).comprehensiveV3.facts;
     const rows = featureRows(facts);
     const elements = [
@@ -60,7 +62,7 @@ export function ComprehensiveReportV3View({ draft, evidencePacket }: { readonly 
     ] as const;
     return <article className="min-w-0 overflow-hidden rounded-[8px] border border-[#ded2c2] bg-[#fffdf8] text-[#2b211b]" data-report-version={draft.version}>
       <ReportCover product="사주×MBTI 종합 리포트" title={draft.title} summary="나를 관통하는 성격과 이미 가진 좋은 패, 앞으로의 선택을 읽습니다." />
-      {story ? <><ReportContents items={items.filter(i => i.id !== "v3-evidence")} /><StoryTables facts={facts} calculation={calculation} manse={manse} mbti={mbti} /></> : <>
+      {story ? <><ReportContents items={items.filter(i => i.id !== "v3-evidence")} /><StoryTables facts={facts} calculation={calculation} manse={manse} mbti={mbti} draft={draft} /></> : <>
       <section aria-label="계산된 원국과 성향" className="space-y-5 border-b border-[#eadfce] px-4 py-6 sm:px-6">
         {manse ? <ManseRyeokCommonTable data={{ ...manse, natalEvidence: undefined }} defaultOpen={false} /> : null}
         <section aria-label="오행 분포" data-v31-elements className="space-y-3">
@@ -106,7 +108,7 @@ export function ComprehensiveReportV3View({ draft, evidencePacket }: { readonly 
         </section>
         {draft.sections.map(section => <section id={`v3-${section.id}`} tabIndex={-1} key={section.id} data-reading-section className="space-y-8">
           <h2 className="text-2xl font-semibold">{section.title}</h2>
-          <div className="divide-y divide-[#eadfce]">{section.blocks.map(b => <div key={b.id} className="py-6 first:pt-0 last:pb-0"><Reading block={b} /></div>)}</div>
+          <div className="divide-y divide-[#eadfce]">{section.blocks.map((b, i) => <div key={i} className="py-6 first:pt-0 last:pb-0"><Reading block={b} /></div>)}</div>
         </section>)}
         <section id="v3-patterns" tabIndex={-1} data-reading-section className="space-y-7">
           <h2 className="text-2xl font-semibold">나를 망치기 쉬운 패턴</h2>
@@ -160,10 +162,10 @@ export function ComprehensiveReportV3View({ draft, evidencePacket }: { readonly 
   </article>;
 }
 
-function StoryTables({ facts, calculation, manse, mbti }: { readonly facts: readonly Evidence[]; readonly calculation: SajuCalcResult; readonly manse?: ManseRyeokCommonTableData | null; readonly mbti?: MbtiCommonProfileTableData | null }) {
+function StoryTables({ facts, calculation, manse, mbti, draft }: { readonly facts: readonly Evidence[]; readonly calculation: SajuCalcResult; readonly manse?: ManseRyeokCommonTableData | null; readonly mbti?: MbtiCommonProfileTableData | null; readonly draft: ComprehensiveV3Draft }) {
   const colors = ["bg-emerald-50 border-emerald-200", "bg-rose-50 border-rose-200", "bg-amber-50 border-amber-200", "bg-stone-100 border-stone-200", "bg-sky-50 border-sky-200"];
   const elements = [["WOOD", "목"], ["FIRE", "화"], ["EARTH", "토"], ["METAL", "금"], ["WATER", "수"]] as const;
-  const rows = storyFeatureRows(facts, calculation);
+  const rows = publicSignalRows(facts, calculation, draft);
   return <section aria-label="계산된 원국과 성향" className="space-y-5 border-b border-[#eadfce] px-4 py-6 sm:px-6" data-story-tables>
     {manse ? <ManseRyeokCommonTable data={{ ...manse, natalEvidence: undefined }} defaultOpen={false} elementDistribution={<section aria-label="오행 분포" className="space-y-3 px-3 py-4" data-story-elements>
       <h3 className="text-sm font-semibold">오행 분포</h3>
@@ -173,19 +175,25 @@ function StoryTables({ facts, calculation, manse, mbti }: { readonly facts: read
       <div className="grid grid-cols-5 gap-1.5">{elements.map(([id, label], i) => <div key={id} className={`min-w-0 rounded-lg border px-1 py-2 text-center ${colors[i]}`}><p className="text-xs">{label}</p><p className="text-lg font-semibold">{Number(calculation.elements.weighted[id].toFixed(1))}</p></div>)}</div>
       <p className="text-xs leading-6 text-[#756658]">위는 원국 8글자, 아래는 지장간을 포함한 해석용 가중 분포입니다.</p>
     </section>} /> : null}
-    <details className="min-w-0 rounded-lg border border-[#ded2c2]" data-story-signals>
-      <summary className="min-h-11 cursor-pointer px-4 py-3 font-semibold focus-visible:outline-2 focus-visible:outline-[#7f1d38]">내 명리에 있는 주요 기운</summary>
-      <div className="px-3 pb-4 sm:px-4">
-        <table className="w-full table-fixed border-collapse text-left text-xs leading-6 sm:text-sm [overflow-wrap:anywhere]">
-          <caption className="pb-3 text-left text-xs text-[#756658]">확인된 기운을 모았습니다. 위치와 계산 출처는 각 행에서 펼쳐볼 수 있어요.</caption>
-          <thead><tr className="border-y border-[#ded2c2] text-[#6f1d35]"><th scope="col" className="w-[24%] py-2 pr-2">기운</th><th scope="col" className="w-[36%] py-2 pr-2">쉽게 말하면</th><th scope="col" className="py-2">나에게 쓰이는 힘</th></tr></thead>
-          <tbody>{rows.map(row => <tr key={row.featureId} className="border-b border-[#eadfce] align-top" data-feature-id={row.featureId}>
-            <th scope="row" className="py-3 pr-2 font-semibold">{row.label}<details className="mt-1 text-xs font-normal" data-signal-detail><summary className="min-h-11 cursor-pointer py-2 text-[#846829] focus-visible:outline-2 focus-visible:outline-[#7f1d38]">위치·출처</summary><div className="space-y-3 text-[#756658]">{row.details.map((d, i) => <div key={i}><p>{d.basis.replace("원국 전체의 파생 근거", "원국 조합 기준")}</p>{d.positions.length ? <p>{d.positions.map(p => ({ year: "연주", month: "월주", day: "일주", hour: "시주" })[p as "year"]).join(" · ")}</p> : null}{d.weight !== undefined ? <p>가중 {Number(d.weight.toFixed(1))} · 천간 {d.surface}곳 · 지장간 본기 {d.hiddenMain}곳</p> : null}<p className="font-mono text-[10px] leading-5 [overflow-wrap:anywhere]">{d.sourceRefs.join(" · ")}</p></div>)}</div></details></th>
-            <td className="py-3 pr-2">{row.meaning}</td><td className="py-3">{row.power}</td>
-          </tr>)}</tbody>
-        </table>
-      </div>
-    </details>
+    <section className="min-w-0 rounded-lg border border-[#ded2c2] p-3 sm:p-4" data-story-signals aria-label="내 명리에 있는 주요 기운">
+      <h2 className="mb-3 font-semibold">내 명리에 있는 주요 기운</h2>
+      <PublicSignalTable rows={rows.slice(0, 10)} caption="내 해석에서 중요한 기운부터 읽어보세요. 각 행에서 계산 기준을 확인합니다." />
+      {rows.length > 10 ? <details className="mt-3 border-t border-[#ded2c2] pt-1" data-all-signals>
+        <summary className="min-h-11 cursor-pointer py-3 text-sm font-semibold text-[#6f1d35] focus-visible:outline-2 focus-visible:outline-[#7f1d38]">전체 기운 보기 · 나머지 {rows.length - 10}개</summary>
+        <PublicSignalTable rows={rows.slice(10)} caption="앞에서 본 기운 외에 원국에서 확인된 기운입니다." />
+      </details> : null}
+    </section>
     {mbti ? <MbtiCommonProfileTable data={mbti} defaultOpen={false} variant="compact" /> : <p className="text-sm text-[#756658]">MBTI 미입력 · 명리 근거만으로 구성했습니다.</p>}
   </section>;
+}
+
+function PublicSignalTable({ rows, caption }: { readonly rows: readonly PublicSignalRow[]; readonly caption: string }) {
+  return <table className="w-full table-fixed border-collapse text-left text-xs leading-6 sm:text-sm [overflow-wrap:anywhere]">
+    <caption className="pb-3 text-left text-xs text-[#756658]">{caption}</caption>
+    <thead><tr className="border-y border-[#ded2c2] text-[#6f1d35]"><th scope="col" className="w-[24%] py-2 pr-2">기운</th><th scope="col" className="w-[36%] py-2 pr-2">쉽게 말하면</th><th scope="col" className="py-2">나에게 쓰이는 힘</th></tr></thead>
+    <tbody>{rows.map((row, i) => <tr key={i} className="border-b border-[#eadfce] align-top">
+      <th scope="row" className="py-3 pr-2 font-semibold">{row.label}<details className="mt-1 text-xs font-normal" data-signal-detail><summary className="min-h-11 cursor-pointer py-2 text-[#846829] focus-visible:outline-2 focus-visible:outline-[#7f1d38]">계산 기준</summary><div className="space-y-2 text-[#756658]">{row.basis.map((basis, j) => <p key={j}>{basis}</p>)}</div></details></th>
+      <td className="py-3 pr-2">{row.meaning}</td><td className="py-3">{row.power}</td>
+    </tr>)}</tbody>
+  </table>;
 }

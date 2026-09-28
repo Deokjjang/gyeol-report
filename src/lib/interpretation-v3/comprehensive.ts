@@ -12,6 +12,7 @@ import type { Domain, Evidence } from "./types";
 import { composeComprehensiveV31, ENRICHED_COMPREHENSIVE_VERSION } from "./comprehensiveComposition";
 import { composeComprehensiveV32, STORY_COMPREHENSIVE_VERSION, type WritingMode } from "./comprehensiveStorytelling";
 import type { SajuCalcResult } from "../saju/types";
+import { composeComprehensiveFinal, FINAL_COMPREHENSIVE_VERSION, type FinalArchetype, type RelatableExample } from "./comprehensiveExperience";
 
 export const COMPREHENSIVE_V3_VERSION = "comprehensive_v3.1" as const;
 export type ComprehensiveV3Block = {
@@ -36,12 +37,13 @@ export type ComprehensiveV3Block = {
   readonly discoveryKey?: string;
   readonly adviceKeys?: readonly string[];
   readonly prominence?: "hero" | "supporting";
+  readonly relatable?: RelatableExample;
 };
 export type ComprehensiveV3Section = { readonly id: string; readonly title: string; readonly blocks: readonly ComprehensiveV3Block[] };
 export type ComprehensiveV3Draft = {
   readonly productType: "saju_mbti_full";
   readonly productVersion: "v3";
-  readonly version: typeof COMPREHENSIVE_V3_VERSION | typeof ENRICHED_COMPREHENSIVE_VERSION | typeof STORY_COMPREHENSIVE_VERSION;
+  readonly version: typeof COMPREHENSIVE_V3_VERSION | typeof ENRICHED_COMPREHENSIVE_VERSION | typeof STORY_COMPREHENSIVE_VERSION | typeof FINAL_COMPREHENSIVE_VERSION;
   readonly personLabel: string;
   readonly title: string;
   readonly profileTable: ComprehensiveReportV2ProfileTable;
@@ -51,11 +53,12 @@ export type ComprehensiveV3Draft = {
   readonly patterns: readonly { readonly strength?: string; readonly why?: string; readonly risk: string; readonly repair: string; readonly labels: readonly string[]; readonly evidenceRefs: readonly string[] }[];
   readonly direction: string;
   readonly directionEvidenceRefs: readonly string[];
+  readonly directionArchetype?: FinalArchetype;
 };
 export function isComprehensiveV3Draft(value: unknown): value is ComprehensiveV3Draft {
   if (!value || typeof value !== "object") return false;
   const v = value as Partial<ComprehensiveV3Draft>;
-  return v.productType === "saju_mbti_full" && v.productVersion === "v3" && [COMPREHENSIVE_V3_VERSION, ENRICHED_COMPREHENSIVE_VERSION, STORY_COMPREHENSIVE_VERSION].includes(v.version!) &&
+  return v.productType === "saju_mbti_full" && v.productVersion === "v3" && [COMPREHENSIVE_V3_VERSION, ENRICHED_COMPREHENSIVE_VERSION, STORY_COMPREHENSIVE_VERSION, FINAL_COMPREHENSIVE_VERSION].includes(v.version!) &&
     Array.isArray(v.opening) && Array.isArray(v.sections) && Array.isArray(v.patterns) && typeof v.direction === "string";
 }
 const unique = <T,>(values: readonly T[]) => [...new Set(values)];
@@ -124,7 +127,10 @@ export function buildComprehensiveV3(input: ComprehensiveV3Input): Comprehensive
   // Existing uncertain-time treatment is retained. No stronger new assertions
   // are made from conditional evidence just to fill the richer presentation.
   if (!input.facts.some(f => f.scope === "natal" && f.certainty === "confirmed")) return buildComprehensiveV3Legacy(input);
-  return input.calculation ? composeComprehensiveV32(input, comprehensiveCandidates(input.facts, true)) : buildComprehensiveV31(input);
+  return input.calculation ? composeComprehensiveFinal(input, comprehensiveCandidates(input.facts, true)) : buildComprehensiveV31(input);
+}
+export function buildComprehensiveV32(input: ComprehensiveV3Input): ComprehensiveV3Draft {
+  return composeComprehensiveV32(input, comprehensiveCandidates(input.facts, true));
 }
 export function buildComprehensiveV31(input: ComprehensiveV3Input): ComprehensiveV3Draft {
   return composeComprehensiveV31(input, comprehensiveCandidates(input.facts, true));

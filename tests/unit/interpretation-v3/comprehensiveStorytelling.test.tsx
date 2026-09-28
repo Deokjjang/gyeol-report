@@ -5,7 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it, afterEach } from "vitest";
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
-import { buildComprehensiveV31, comprehensiveCandidates, comprehensiveV3CustomerText, isComprehensiveV3Draft } from "../../../src/lib/interpretation-v3/comprehensive";
+import { buildComprehensiveV31, buildComprehensiveV32, comprehensiveCandidates, comprehensiveV3CustomerText, isComprehensiveV3Draft } from "../../../src/lib/interpretation-v3/comprehensive";
 import { STORY_COMPREHENSIVE_VERSION, storyFeatureRows, validateStoryCopy, storySelectionTrace } from "../../../src/lib/interpretation-v3/comprehensiveStorytelling";
 import { compoundProminence, storySupport } from "../../../src/lib/interpretation-v3/comprehensiveStoryEvidence";
 import { normalizeContext } from "../../../src/lib/interpretation-v3/context";
@@ -17,7 +17,15 @@ import type { SajuCalcResult } from "../../../src/lib/saju/types";
 import type { ComprehensiveV3Draft, ComprehensiveV3Input } from "../../../src/lib/interpretation-v3/comprehensive";
 
 const runtime = { enabled: false, reason: "flag_disabled" } as const;
-const generate = (payload: unknown) => generateProductReport(payload, runtime, "deterministic_fallback", undefined, { comprehensiveVersion: "v3" });
+// Frozen V3.2 story contract. Phase 2D has a separate current-version suite.
+const generate = async (payload: unknown) => {
+  const result = await generateProductReport(payload, runtime, "deterministic_fallback", undefined, { comprehensiveVersion: "v3" });
+  if (!result.ok || !isComprehensiveV3Draft(result.draft)) return result;
+  const p = payload as ReturnType<typeof comprehensiveFixture>["payload"], packet = result.evidencePacket as Packet;
+  return { ...result, draft: buildComprehensiveV32({ name: p.person.name, facts: packet.comprehensiveV3.facts, calculation: packet.comprehensiveV3.calculation,
+    context: normalizeContext({ lifeStatus: p.userContext.jobStatus, fieldLabel: p.userContext.detailJob, relationshipStatus: p.userContext.relationshipStatus }),
+    relationshipStatus: p.userContext.relationshipStatus, profileTable: result.draft.profileTable }) };
+};
 type Packet = { comprehensiveV3: { facts: Evidence[]; calculation: SajuCalcResult } };
 const hashes = ["d4238ca8da718d5cbef2aba78c7572e48f2d9d08c1914b28f0b2f81f9a0ffd51", "620fea0225216fce6ccb242a93cc6cac9b1f656c65c5e555fc855adc01f00ce2", "d791f44291eab6125e09114db0d9327b43bc9ec65baf7482c5b3e694243c2cc9", "9c15ab6f86bc7d503b4e1d63bb5701d6538026d6a5f6ec6af7aaaea9432ea4ad", "34841df442eef474b969a8e773ea2e249993497cddd79d7a03e6a8b4c6d317dc", "6036aa009f920a32acbea48a2dbe1a710e82ada78862d08e8e37e98392f1fa90"];
 const sha = (x: unknown) => createHash("sha256").update(JSON.stringify(x)).digest("hex");

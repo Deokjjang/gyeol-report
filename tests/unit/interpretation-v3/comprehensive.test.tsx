@@ -44,7 +44,7 @@ it.each(COMPREHENSIVE_V3_FIXTURES)("%s: V3 generate → publish → snapshot →
   const snapshot = createProductPreviewSnapshot({ reportId: `comprehensive-v3-${id}`, createdAtIso: "2026-09-28T00:00:00Z", productKey: "saju_mbti_full", productSlug: "saju-mbti-full", draft, evidencePacket: result.evidencePacket });
   expect(snapshot.ok && isProductPreviewSnapshot(JSON.parse(JSON.stringify(snapshot.value)))).toBe(true);
   const html = renderToStaticMarkup(createElement(ComprehensiveReportV3View, { draft, evidencePacket: result.evidencePacket }));
-  expect(html).toContain("comprehensive_v3.2-story.1");
+  expect(html).toContain("comprehensive_v3.2-final.1");
   expect(html).not.toContain("리포트를 준비하고 있습니다");
   expect(html).not.toContain("안전 안내");
   const blocks = [...draft.opening, ...draft.sections.flatMap(s => s.blocks)];
@@ -84,7 +84,7 @@ it("career and detailed job change work/money/study directives, never natal fact
     expect(actions.every(Boolean)).toBe(true); expect(new Set(actions).size).toBe(3);
   }
   const texts = results.map(r => r.ok && isComprehensiveV3Draft(r.draft) ? comprehensiveV3CustomerText(r.draft) : "");
-  expect(texts[0]).toContain("유지보수"); expect(texts[1]).toContain("재작업"); expect(texts[2]).toContain("두 가지 표현");
+  expect(texts[0]).toContain("소프트웨어 분야"); expect(texts[1]).toContain("제조·품질 분야"); expect(texts[2]).toContain("조별활동");
 });
 it("relationship status selects a different concrete agreement", async () => {
   const { payload } = comprehensiveFixture(COMPREHENSIVE_V3_FIXTURES[0]);
