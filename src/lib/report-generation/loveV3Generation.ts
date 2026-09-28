@@ -5,7 +5,8 @@ import { withReportInputEvidence } from "./reportInputEvidence";
 import { buildProductNatalTables, getCanonicalNatalTable } from "../report-knowledge/natalTableEvidence";
 import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
 import { adaptCalculation, adaptMbti, adaptNatalTable, mergeEvidence, validateEvidence } from "../interpretation-v3/evidence";
-import { buildLoveV3, isLoveV3Draft, loveV3CustomerText } from "../interpretation-v3/loveEditorial";
+import { buildLoveV3, isLoveV3Draft, loveV3CustomerText, LOVE_V3_VERSION, LOVE_V3_POLISH_VERSION, type LoveV3Draft } from "../interpretation-v3/loveEditorial";
+import { buildLoveV3Polished } from "../interpretation-v3/loveEditorialPolish";
 import { validateV3Copy } from "../interpretation-v3/engine";
 import type { SajuCalcResult } from "../saju/types";
 
@@ -16,7 +17,7 @@ function loveFacts(packet: unknown, calc: SajuCalcResult, mbti: string) {
   if (!table || table.precision !== "exact") return [];
   return mergeEvidence(adaptNatalTable(table).filter(f => f.kind !== "element"), adaptCalculation(calc), adaptMbti(mbti));
 }
-export function createLoveV3(payload: unknown) {
+export function createLoveV3(payload: unknown, version: LoveV3Draft["version"] = LOVE_V3_POLISH_VERSION) {
   const normalized = normalizeReportInputPayload(payload);
   if (!normalized.ok || normalized.value.kind !== "loveMarriageChild") return null;
   const input = normalized.value, calculation = calculateLoveMarriageChildSaju(input.person);
@@ -26,7 +27,7 @@ export function createLoveV3(payload: unknown) {
   const base = buildLoveMarriageChildEvidenceFromGenerationInput(input);
   const packet = { ...withReportInputEvidence(base, input), calendarCalculationVersion: SAJU_CALENDAR_VERSION, natalTableEvidence: buildProductNatalTables(base) };
   const facts = loveFacts(packet, calculation, input.person.mbtiType);
-  const draft = buildLoveV3({ name: input.person.name, mbti: input.person.mbtiType, relationshipStatus: input.userContext.relationshipStatus, familyFocus: input.userContext.focusAreas.includes("가족"), facts, calculation });
+  const draft = (version === LOVE_V3_VERSION ? buildLoveV3 : buildLoveV3Polished)({ name: input.person.name, mbti: input.person.mbtiType, relationshipStatus: input.userContext.relationshipStatus, familyFocus: input.userContext.focusAreas.includes("가족"), facts, calculation });
   return { draft, evidencePacket: { ...packet, loveV3: { version: "love-evidence-v3.1", calculation, facts } } };
 }
 
@@ -42,7 +43,7 @@ export function validateLoveV3(draft: unknown, packet: unknown): readonly string
     if (!table || table.precision !== "exact" || table.pillars.some(p => { const actual = calculation.pillars[p.columnId]; return !actual || actual.stem + actual.branch !== p.pillar; })) return ["LOVE_V3_CALCULATION_MISMATCH"];
     const facts = loveFacts(packet, calculation, String(basis.person.mbtiType ?? "")), errors = [...validateEvidence(facts)];
     if (stable(facts) !== stable(v3.facts)) errors.push("LOVE_V3_FACTS_MISMATCH");
-    const expected = buildLoveV3({ name: String(basis.person.name), mbti: String(basis.person.mbtiType ?? ""), relationshipStatus: basis.userContext.relationshipStatus as RelationshipStatus, familyFocus: basis.userContext.focusAreas.includes("가족"), facts, calculation });
+    const expected = (draft.version === LOVE_V3_VERSION ? buildLoveV3 : buildLoveV3Polished)({ name: String(basis.person.name), mbti: String(basis.person.mbtiType ?? ""), relationshipStatus: basis.userContext.relationshipStatus as RelationshipStatus, familyFocus: basis.userContext.focusAreas.includes("가족"), facts, calculation });
     if (stable(expected) !== stable(draft)) errors.push("LOVE_V3_CONTENT_MISMATCH");
     const qa = draft.editorialAudit;
     if (!qa || qa.errors.length || qa.rejected.length || qa.warnings.length || qa.audit.mix.character < 0.6 || qa.audit.mix.advice > 0.2 || draft.chapters.length !== 9) errors.push("LOVE_V3_EDITORIAL_INCOMPLETE");

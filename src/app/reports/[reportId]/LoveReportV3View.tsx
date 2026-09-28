@@ -3,12 +3,20 @@ import { buildCanonicalManseRyeokTableData } from "../../../lib/report-tables/ma
 import { buildMbtiCommonProfileTableData, getMbtiSourceByType } from "../../../lib/report-tables";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
 import { LOVE_STATUS_LABELS } from "../../../lib/interpretation-v3/loveEditorialContext";
-import type { LoveV3Draft } from "../../../lib/interpretation-v3/loveEditorial";
+import { LOVE_V3_POLISH_VERSION, type LoveV3Draft } from "../../../lib/interpretation-v3/loveEditorial";
 import { factLabel } from "../../../lib/interpretation-v3/comprehensiveStoryEvidence";
 import type { EditorialScene } from "../../../lib/interpretation-v3/editorialComposer";
 import type { Evidence } from "../../../lib/interpretation-v3/types";
 import type { SajuCalcResult } from "../../../lib/saju/types";
 import { StoryTables } from "./ComprehensiveReportV3View";
+
+function loveEvidenceLabel(fact: Evidence): string {
+  if (fact.kind === "relation" && fact.value && typeof fact.value === "object" && "participants" in fact.value && Array.isArray(fact.value.participants)) {
+    const kind = fact.featureId.includes("BRANCH_COMBINATION") ? "육합" : fact.featureId.includes("STEM_COMBINATION") ? "천간합" : fact.featureId.includes("CLASH") ? "충" : "";
+    if (kind && fact.value.participants.every(p => typeof p === "string")) return `${fact.value.participants.join("")} ${kind}`;
+  }
+  return factLabel(fact);
+}
 
 function LoveReading({ scene, final, labels }: { readonly scene: EditorialScene; readonly final: boolean; readonly labels: readonly string[] }) {
   const quote = scene.form === "quote", punch = scene.form === "punchline", tip = scene.form === "tip";
@@ -45,7 +53,7 @@ export function LoveReportV3View({ draft, evidencePacket }: { readonly draft: Lo
       {draft.chapters.map((chapter, i) => {
         const contents = <div className="space-y-10">{chapter.scenes.map((scene, j) => {
           // Display labels only. Internal references stay on this server boundary.
-          const labels = [...new Set(facts.filter(f => scene.evidenceRefs.includes(f.id)).map(factLabel))];
+          const labels = [...new Set(facts.filter(f => scene.evidenceRefs.includes(f.id)).map(draft.version === LOVE_V3_POLISH_VERSION ? loveEvidenceLabel : factLabel))];
           return <LoveReading key={j} scene={scene} final={chapter.id === "direction"} labels={labels} />;
         })}</div>;
         return <section id={`love-${chapter.id}`} tabIndex={-1} key={i} data-reading-section className="space-y-8">

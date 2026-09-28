@@ -9,16 +9,17 @@ import { LOVE_SITUATIONS, LOVE_VOICES, LOVE_PARENT_VOICES } from "./loveEditoria
 import type { Evidence, Domain } from "./types";
 
 export const LOVE_V3_VERSION = "love_v3.0-editorial.1";
+export const LOVE_V3_POLISH_VERSION = "love_v3.0-editorial.2";
 export type LoveV3Input = { name: string; mbti: string; relationshipStatus: RelationshipStatus; familyFocus: boolean; facts: readonly Evidence[]; calculation: SajuCalcResult };
 export type LoveV3Draft = {
-  readonly productType: "love_marriage_child"; readonly productVersion: "v3"; readonly version: typeof LOVE_V3_VERSION;
+  readonly productType: "love_marriage_child"; readonly productVersion: "v3"; readonly version: typeof LOVE_V3_VERSION | typeof LOVE_V3_POLISH_VERSION;
   readonly personLabel: string; readonly title: string; readonly mbti: string; readonly archetype: string;
   readonly relationshipStatus: RelationshipStatus; readonly familyFocus: boolean;
   readonly chapters: readonly { readonly id: string; readonly title: string; readonly collapsed: boolean; readonly scenes: readonly EditorialScene[] }[];
   readonly editorialAudit: Omit<ReturnType<typeof composeEditorial>, "scenes">;
 };
 export function isLoveV3Draft(value: unknown): value is LoveV3Draft {
-  return !!value && typeof value === "object" && "version" in value && value.version === LOVE_V3_VERSION && "productType" in value && value.productType === "love_marriage_child" && "productVersion" in value && value.productVersion === "v3";
+  return !!value && typeof value === "object" && "version" in value && (value.version === LOVE_V3_VERSION || value.version === LOVE_V3_POLISH_VERSION) && "productType" in value && value.productType === "love_marriage_child" && "productVersion" in value && value.productVersion === "v3";
 }
 export function loveV3CustomerText(draft: LoveV3Draft) {
   return [draft.title, ...draft.chapters.flatMap(c => [c.title, ...c.scenes.flatMap(s => [s.headline, ...s.parts.map(p => p.text)])])].join("\n\n");

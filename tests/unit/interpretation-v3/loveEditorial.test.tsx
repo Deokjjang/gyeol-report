@@ -6,14 +6,14 @@ import { afterEach, expect, it, vi } from "vitest";
 import { POST } from "../../../src/app/api/reports/create/route";
 import ReportResultPage from "../../../src/app/reports/[reportId]/page";
 import { LoveReportV3View } from "../../../src/app/reports/[reportId]/LoveReportV3View";
-import { createLoveV3, validateLoveV3 } from "../../../src/lib/report-generation/loveV3Generation";
+import { createLoveV3 as createCurrentLoveV3, validateLoveV3 } from "../../../src/lib/report-generation/loveV3Generation";
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
 import { normalizeReportInputPayload } from "../../../src/lib/report-generation/reportInputAdapter";
 import { RELATIONSHIP_STATUSES } from "../../../src/lib/report-generation/reportInputTypes";
 import { calculateLoveMarriageChildSaju } from "../../../src/lib/report-generation/loveMarriageChildGenerationHandler";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
 import { createProductPreviewSnapshot, isProductPreviewSnapshot, type ProductPreviewSnapshotDraft } from "../../../src/lib/report-generation/productPreviewSnapshot";
-import { buildLoveV3, isLoveV3Draft, LOVE_V3_VERSION, loveV3CustomerText } from "../../../src/lib/interpretation-v3/loveEditorial";
+import { buildLoveV3, isLoveV3Draft, LOVE_V3_VERSION, LOVE_V3_POLISH_VERSION, loveV3CustomerText } from "../../../src/lib/interpretation-v3/loveEditorial";
 import { LOVE_VOICES, LOVE_STATUS_LABELS } from "../../../src/lib/interpretation-v3/loveEditorialContext";
 import { storySupport } from "../../../src/lib/interpretation-v3/comprehensiveStoryEvidence";
 import { LOVE_V3_FIXTURES, loveFixture } from "./loveFixtures";
@@ -21,6 +21,8 @@ import { LOVE_V3_FIXTURES, loveFixture } from "./loveFixtures";
 const internals = /canonical-|SajuCalcResult:|evidenceRefs|sourceRefs|featureId|ten_god_|day_pillar_|gwiin_|sinsal_|mbti:[A-Z]{4}:|loveEditorial:|love:portrait|relationshipStatus/;
 const meta = /이번 리포트에서는|원국 근거를|읽었습니다|읽는 대목|예측하는 숫자|잘 쓰면 ·|(?:정관|겁재|식신|비견)은 .*입니다/;
 const hash = (v: unknown) => createHash("sha256").update(JSON.stringify(v)).digest("hex");
+// Pin Phase D's existing publication/SSR contract while new generation uses D2.
+const createLoveV3 = (payload: unknown) => createCurrentLoveV3(payload, LOVE_V3_VERSION);
 afterEach(() => { expect(fetch).not.toHaveBeenCalled(); vi.unstubAllEnvs(); });
 
 it.each(LOVE_V3_FIXTURES)("%s canonical facts → publication → snapshot → SSR", (...row) => {
@@ -110,7 +112,7 @@ it.each(LOVE_V3_FIXTURES)("%s local create → memory → full SSR with no provi
   const response = await POST(new Request("http://localhost/api/reports/create", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) }));
   const body = await response.json(); expect(response.status, JSON.stringify(body.diagnostic)).toBe(200); expect(body.diagnostic.externalCallCount).toBe(0);
   const html = renderToStaticMarkup(await ReportResultPage({ params: Promise.resolve({ reportId: body.reportId }) }));
-  expect(html).toContain(LOVE_V3_VERSION); expect(html).not.toMatch(internals);
+  expect(html).toContain(LOVE_V3_POLISH_VERSION); expect(html).not.toMatch(internals);
 });
 
 it("explicit V3 bypasses enabled writers; original Love snapshot and full SSR remain readable", async () => {
