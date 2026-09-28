@@ -3,6 +3,7 @@ import { resolveBirthTimeCalculation } from "../saju/birthTimePrecision";
 import { calculateCustomerDayun, selectCustomerDayun } from "../saju/customerDayun";
 import {
   COMPATIBILITY_RELATIONSHIP_TYPES,
+  COMPATIBILITY_ROLE_VERSION,
   FOCUS_AREAS,
   GENDER_VALUES,
   JOB_STATUSES,
@@ -50,7 +51,8 @@ export type ReportInputAdapterErrorCode =
   | "INVALID_USER_CONTEXT"
   | "SELECTED_YEAR_REQUIRED"
   | "SELECTED_YEAR_INVALID"
-  | "RELATIONSHIP_TYPE_REQUIRED";
+  | "RELATIONSHIP_TYPE_REQUIRED"
+  | "INVALID_COMPATIBILITY_ROLE_VERSION";
 
 export type ReportInputAdapterResult<T> =
   | {
@@ -99,6 +101,7 @@ export type CompatibilityGenerationInput = {
   readonly productKey: "saju_mbti_compatibility";
   readonly productSlug: "compatibility";
   readonly relationshipType: CompatibilityRelationshipType;
+  readonly compatibilityRoleVersion?: typeof COMPATIBILITY_ROLE_VERSION;
   readonly personA: GenerationPersonInput;
   readonly personB: GenerationPersonInput;
   readonly productOptions: Record<string, never>;
@@ -232,6 +235,10 @@ export function toCompatibilityGenerationInput(
     return { ok: false, error: "RELATIONSHIP_TYPE_REQUIRED" };
   }
 
+  if (payload.compatibilityRoleVersion !== undefined && payload.compatibilityRoleVersion !== COMPATIBILITY_ROLE_VERSION) {
+    return { ok: false, error: "INVALID_COMPATIBILITY_ROLE_VERSION" };
+  }
+
   const personAResult = normalizePerson(payload.personA);
   if (!personAResult.ok) {
     return personAResult;
@@ -249,6 +256,7 @@ export function toCompatibilityGenerationInput(
       productKey: "saju_mbti_compatibility",
       productSlug: "compatibility",
       relationshipType: payload.relationshipType,
+      ...(payload.compatibilityRoleVersion === COMPATIBILITY_ROLE_VERSION ? { compatibilityRoleVersion: COMPATIBILITY_ROLE_VERSION } : {}),
       personA: personAResult.value,
       personB: personBResult.value,
       productOptions: {},

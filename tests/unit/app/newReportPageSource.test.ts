@@ -503,8 +503,8 @@ describe("new report page source", () => {
       "compatibilityPersonB",
       "compatibilityRelationshipType",
       "isCompatibilityPersonRequiredInputComplete",
-      "A 사람 입력",
-      "B 사람 입력",
+      "compatibilityRoleLabels(compatibilityRelationshipType).personA",
+      "compatibilityRoleLabels(compatibilityRelationshipType).personB",
       "첫 번째 사람의 기본 정보를 입력합니다.",
       "두 번째 사람의 기본 정보를 입력합니다.",
       "이름",
@@ -546,8 +546,8 @@ describe("new report page source", () => {
 
   it("renders compatibility checkout controls without report create calls", () => {
     const requiredMarkers = [
-      "A 사람",
-      "B 사람",
+      "compatibilityRoleVersion: COMPATIBILITY_ROLE_VERSION",
+      "input.nameLabelKo",
       "관계 카테고리",
       "isCompatibilityInputReady",
       "compatibilityCtaLabel",

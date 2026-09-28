@@ -70,6 +70,8 @@ import { CareerReportView } from "./CareerReportView";
 import { CareerReportV3View } from "./CareerReportV3View";
 import { LoveReportV3View } from "./LoveReportV3View";
 import { isLoveV3Draft } from "../../../lib/interpretation-v3/loveEditorial";
+import { isCompatibilityV3Draft } from "../../../lib/interpretation-v3/compatibilityEditorial";
+import { CompatibilityReportV3View } from "./CompatibilityReportV3View";
 import { isCareerV3Draft } from "../../../lib/interpretation-v3/careerEditorial";
 import { ComprehensiveReportV2View } from "./ComprehensiveReportV2View";
 import { ComprehensiveReportV3View } from "./ComprehensiveReportV3View";
@@ -208,7 +210,7 @@ async function loadProductPreviewPageState(
   }
 
   if (productPreview.productType === "saju_mbti_compatibility") {
-    if (!isCompatibilityReportDraft(productPreview.draft)) {
+    if (!isCompatibilityReportDraft(productPreview.draft) && !isCompatibilityV3Draft(productPreview.draft)) {
       return { kind: "invalidSnapshot" };
     }
 
@@ -669,6 +671,7 @@ function renderGeneratedCompatibilityState(
 function renderProductPreviewCompatibilityState(
   productPreview: ProductPreviewSnapshot,
 ) {
+  if (isCompatibilityV3Draft(productPreview.draft)) return <CompatibilityReportV3View draft={productPreview.draft} evidencePacket={productPreview.evidencePacket} />;
   if (!isCompatibilityReportDraft(productPreview.draft)) {
     return renderInvalidSnapshotState();
   }

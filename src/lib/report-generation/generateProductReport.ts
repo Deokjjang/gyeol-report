@@ -2,6 +2,7 @@ import type { WriterCallBudget } from "./reportWriterCallGuard";
 import { createComprehensiveV3 } from "./comprehensiveV3Generation";
 import { createCareerV3 } from "./careerV3Generation";
 import { createLoveV3 } from "./loveV3Generation";
+import { createCompatibilityV3 } from "./compatibilityV3Generation";
 import { getAnnualPurchasePolicyDate, type AnnualCommerceAcceptance } from "../payment/annualPurchasePolicy";
 import { prepareProductGenerationFromPayload, type ProductGenerationResult } from "./productGenerationDispatcher";
 import type { ReportWriterRuntime } from "./reportWriterRuntime";
@@ -22,6 +23,18 @@ export async function generateProductReport(payload: unknown, runtime: ReportWri
   const purchaseDate = annualAcceptance === undefined ? undefined : getAnnualPurchasePolicyDate(annualAcceptance, payload);
   if (purchaseDate === null) return fail("ANNUAL_PURCHASE_CONTEXT_INVALID");
   const product = isRecord(payload) ? String(payload.productKey) : "";
+  // Only newly versioned inputs fix A/B roles. Old inputs keep their frozen
+  // contract. A bad/new role version fails closed, never enters a writer.
+  if (product === "saju_mbti_compatibility" && isRecord(payload) && payload.compatibilityRoleVersion !== undefined) {
+    try {
+      const v3 = createCompatibilityV3(payload);
+      if (!v3) return fail("COMPATIBILITY_V3_PREPARATION_FAILED");
+      const check = validateNewProductPublication(product, v3.draft, v3.evidencePacket, payload);
+      if (!check.ok) return fail("COMPATIBILITY_V3_PUBLICATION_FAILED", check.errors);
+      audit.preflight = "pass"; audit.publish = "pass";
+      return { ok: true, kind: "compatibility", ...v3, externalCalls: [], delivery: audit };
+    } catch { return fail("COMPATIBILITY_V3_PREPARATION_FAILED"); }
+  }
   if (product === "love_marriage_child" && options.loveVersion === "v3") {
     try {
       const v3 = createLoveV3(payload);

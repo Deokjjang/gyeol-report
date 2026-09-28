@@ -17,7 +17,7 @@ import {
   getAnnualFortuneCurrentYear,
 } from "../../../lib/report-knowledge/annualFortuneYearRules";
 import type { ReportProductType } from "../../../lib/payment/reportProductTypes";
-import { MBTI_TYPES } from "../../../lib/report-generation/reportInputTypes";
+import { MBTI_TYPES, COMPATIBILITY_ROLE_VERSION, compatibilityRoleLabels } from "../../../lib/report-generation/reportInputTypes";
 import type {
   CompatibilityRelationshipType,
   CompatibilityReportInputPayload,
@@ -483,6 +483,7 @@ function buildCompatibilityReportInputPayload(input: {
     productKey: COMPATIBILITY_PRODUCT_KEY,
     productSlug: COMPATIBILITY_PRODUCT_SLUG,
     relationshipType: input.relationshipType,
+    compatibilityRoleVersion: COMPATIBILITY_ROLE_VERSION,
     personA: createReportPersonInputPayload(input.personA),
     personB: createReportPersonInputPayload(input.personB),
   };
@@ -808,6 +809,7 @@ function renderPaidFunnelBirthTimeFields({
 function renderCompatibilityPersonInputSection(input: {
   readonly prefix: "personA" | "personB";
   readonly titleKo: string;
+  readonly nameLabelKo: string;
   readonly descriptionKo: string;
   readonly value: CompatibilityPersonInputState;
   readonly onChange: (value: CompatibilityPersonInputState) => void;
@@ -827,7 +829,7 @@ function renderCompatibilityPersonInputSection(input: {
             htmlFor={`${prefix}Name`}
             className="block text-sm font-medium text-[#3f3129]"
           >
-            이름 · 필수
+            {input.nameLabelKo} · 필수
           </label>
           <input
             id={`${prefix}Name`}
@@ -2274,15 +2276,17 @@ export default function NewReportPage({
             <div className="grid gap-9">
               {renderCompatibilityPersonInputSection({
                 prefix: "personA",
-                titleKo: "A 사람 입력",
-                descriptionKo: "첫 번째 사람의 기본 정보를 입력합니다.",
+                titleKo: `${compatibilityRoleLabels(compatibilityRelationshipType).personA} 입력`,
+                nameLabelKo: `${compatibilityRoleLabels(compatibilityRelationshipType).personA} 이름`,
+                descriptionKo: "관계에 맞는 첫 번째 사람의 기본 정보를 입력합니다.",
                 value: compatibilityPersonA,
                 onChange: setCompatibilityPersonA,
               })}
               {renderCompatibilityPersonInputSection({
                 prefix: "personB",
-                titleKo: "B 사람 입력",
-                descriptionKo: "두 번째 사람의 기본 정보를 입력합니다.",
+                titleKo: `${compatibilityRoleLabels(compatibilityRelationshipType).personB} 입력`,
+                nameLabelKo: `${compatibilityRoleLabels(compatibilityRelationshipType).personB} 이름`,
+                descriptionKo: "관계에 맞는 두 번째 사람의 기본 정보를 입력합니다.",
                 value: compatibilityPersonB,
                 onChange: setCompatibilityPersonB,
               })}
@@ -2296,6 +2300,9 @@ export default function NewReportPage({
                 <p className="text-sm leading-6 text-[#6b5a4d]">
                   같은 두 사람이라도 관계 맥락에 따라 해석 초점이 달라집니다.
                 </p>
+                {compatibilityRelationshipType === "parentChild" || compatibilityRelationshipType === "managerReport" ? <p role="status" className="text-sm font-medium text-[#6f1d35]">
+                  첫 번째 입력은 {compatibilityRoleLabels(compatibilityRelationshipType).personA}, 두 번째 입력은 {compatibilityRoleLabels(compatibilityRelationshipType).personB}입니다. 위의 이름과 입력 순서를 확인해 주세요.
+                </p> : null}
               </div>
               <div className="grid gap-4">
                 <div className="space-y-2">
@@ -2333,8 +2340,8 @@ export default function NewReportPage({
               productLabelKo={selectedProduct.nameKo}
               ctaLabelKo={compatibilityCtaLabel}
               reviewGroups={[
-                { titleKo: "사람 A", rows: getPersonReviewRows(compatibilityPersonA) },
-                { titleKo: "사람 B", rows: getPersonReviewRows(compatibilityPersonB) },
+                { titleKo: compatibilityRoleLabels(compatibilityRelationshipType).personA, rows: getPersonReviewRows(compatibilityPersonA) },
+                { titleKo: compatibilityRoleLabels(compatibilityRelationshipType).personB, rows: getPersonReviewRows(compatibilityPersonB) },
                 { titleKo: "관계", rows: [{ labelKo: "관계 카테고리", valueKo: compatibilityRelationshipOptions.find((option) => option.value === compatibilityRelationshipType)?.labelKo ?? "" }] },
               ]}
               onEditInput={() => document.getElementById("personAName")?.focus()}

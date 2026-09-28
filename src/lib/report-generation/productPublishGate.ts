@@ -2,6 +2,7 @@ import { validateNatalTableEvidence, validateNatalFeatureProvenance } from "../r
 import { validateComprehensiveV3 } from "./comprehensiveV3Generation";
 import { validateCareerV3 } from "./careerV3Generation";
 import { validateLoveV3 } from "./loveV3Generation";
+import { validateCompatibilityV3 } from "./compatibilityV3Generation";
 import type { LoveMarriageChildReportEvidencePacket } from "../report-knowledge/loveMarriageChildReportTypes";
 import type { AnnualFortuneEvidencePacket } from "../report-knowledge/annualFortuneEvidence";
 import { publicationBirthTimeContexts, publishedPillarMatches } from "./birthTimePublication";
@@ -81,6 +82,10 @@ export function validateProductPublication(product: string, draft: unknown, evid
     return { ok: errors.length === 0, errors };
   }
   void _version;
+  if (product === "saju_mbti_compatibility" && draft.productVersion === "v3") {
+    errors.push(...validateCompatibilityV3(draft, evidence, inputPayload));
+    return { ok: errors.length === 0, errors };
+  }
   if (product === "love_marriage_child" && draft.productVersion === "v3") {
     errors.push(...validateLoveV3(draft, evidence));
     return { ok: errors.length === 0, errors };

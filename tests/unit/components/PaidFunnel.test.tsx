@@ -8,7 +8,7 @@ import NewReportPage, {
 import Launcher from "../../../src/components/payment/DevTossCheckoutLauncher";
 import { getReportProduct } from "../../../src/lib/payment/reportProductCatalog";
 import { prePaymentRefundNoticeKo } from "../../../src/lib/legal/refundPolicy";
-import { MBTI_TYPES } from "../../../src/lib/report-generation/reportInputTypes";
+import { MBTI_TYPES, COMPATIBILITY_ROLE_VERSION } from "../../../src/lib/report-generation/reportInputTypes";
 import { loadTossPaymentsBrowserSdk } from "../../../src/lib/payment/tossBrowserSdkLoader";
 
 vi.mock("../../../src/lib/payment/tossBrowserSdkLoader", () => ({ loadTossPaymentsBrowserSdk: vi.fn() }));
@@ -240,7 +240,19 @@ describe("paid funnel contracts and progressive review", () => {
     expect(choices.map((el) => el.props.value)).toEqual(["love", "marriage", "parentChild", "coworker", "managerReport", "businessPartner", "friendship"]);
     change("relationshipType", "businessPartner");
     const review = JSON.stringify(checkout().entry.props.reviewGroups);
-    for (const text of ["사람 A", "사람 B", "사람 하나", "사람 둘", "2000-02-03", "사업·협업"]) expect(review).toContain(text);
+    for (const text of ['"titleKo":"A"', '"titleKo":"B"', "사람 하나", "사람 둘", "2000-02-03", "사업·협업"]) expect(review).toContain(text);
+  });
+
+  it.each([["parentChild", "부모", "자녀"], ["managerReport", "상사", "부하·팀원"]])("fixes %s input roles without swapping raw values", (category, a, b) => {
+    hooks.product = "compatibility"; complete(); change("relationshipType", category);
+    const labels = elements(page()).filter(el => el.type === "label");
+    expect(labels.find(el => el.props.htmlFor === "personAName")?.props.children).toContain(`${a} 이름`);
+    expect(labels.find(el => el.props.htmlFor === "personBName")?.props.children).toContain(`${b} 이름`);
+    const entry = checkout().entry;
+    expect(entry.props.inputSnapshot).toMatchObject({ reportInputPayload: { compatibilityRoleVersion: COMPATIBILITY_ROLE_VERSION, relationshipType: category,
+      personA: { name: "사람 하나", birthDate: "1999-07-31" }, personB: { name: "사람 둘", birthDate: "2000-02-03" } } });
+    expect(entry.props.reviewGroups).toMatchObject([{ titleKo: a }, { titleKo: b }, { titleKo: "관계" }]);
+    expect(loadTossPaymentsBrowserSdk).not.toHaveBeenCalled();
   });
 
   it("keeps annual year and optional context in the original payload", async () => {

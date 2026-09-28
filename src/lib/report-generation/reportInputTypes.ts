@@ -118,6 +118,14 @@ export const COMPATIBILITY_RELATIONSHIP_TYPES = [
 export type CompatibilityRelationshipType =
   (typeof COMPATIBILITY_RELATIONSHIP_TYPES)[number];
 
+// Absent on legacy inputs: their A/B order never implied a family/work role.
+export const COMPATIBILITY_ROLE_VERSION = "compatibility-fixed-ab-v1";
+export function compatibilityRoleLabels(category: CompatibilityRelationshipType) {
+  return category === "parentChild" ? { personA: "부모", personB: "자녀" }
+    : category === "managerReport" ? { personA: "상사", personB: "부하·팀원" }
+      : { personA: "A", personB: "B" };
+}
+
 export type ReportPersonInputPayload = {
   readonly birthTimePrecision?: BirthTimePrecision;
   readonly name: string;
@@ -148,6 +156,7 @@ export type CompatibilityReportInputPayload = {
   readonly productKey: "saju_mbti_compatibility";
   readonly productSlug: "compatibility";
   readonly relationshipType: CompatibilityRelationshipType;
+  readonly compatibilityRoleVersion?: typeof COMPATIBILITY_ROLE_VERSION;
   readonly personA: ReportPersonInputPayload;
   readonly personB: ReportPersonInputPayload;
 };

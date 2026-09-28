@@ -3,6 +3,7 @@ import type { AnnualFortuneReportDraft } from "./annualFortuneReportDraftTypes";
 import type { CareerReportDraft } from "./careerReportDraftTypes";
 import type { CareerV3Draft } from "../interpretation-v3/careerEditorial";
 import type { LoveV3Draft } from "../interpretation-v3/loveEditorial";
+import type { CompatibilityV3Draft } from "../interpretation-v3/compatibilityEditorial";
 import type { ComprehensiveReportV2Draft } from "./comprehensiveReportDraftTypes";
 import type { ComprehensiveV3Draft } from "./comprehensiveV3Generation";
 import type { CompatibilityReportDraft } from "./compatibilityReportDraftTypes";
@@ -36,6 +37,7 @@ export type ProductPreviewSnapshotDraft =
   | LoveMarriageChildReportDraft
   | LoveV3Draft
   | CompatibilityReportDraft
+  | CompatibilityV3Draft
   | MajorFortuneReportDraft
   | AnnualFortuneReportDraft
   | ComprehensiveV3Draft

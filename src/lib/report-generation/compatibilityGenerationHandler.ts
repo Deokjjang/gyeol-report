@@ -213,7 +213,7 @@ export async function generateCompatibilityProductDraft(
   };
 }
 
-function buildCompatibilityEvidenceFromGenerationInput(
+export function buildCompatibilityEvidenceFromGenerationInput(
   input: CompatibilityGenerationInput,
 ): CompatibilityEvidencePacket {
   const personAInput = toCompatibilityPersonInput("personA", input.personA);
@@ -259,7 +259,7 @@ function toCompatibilityPersonInput(
   };
 }
 
-function calculateCompatibilitySaju(
+export function calculateCompatibilitySaju(
   person: CompatibilityGenerationInput["personA"],
 ): SajuCalcResult {
   const birthTime = person.birthTime.trim();
