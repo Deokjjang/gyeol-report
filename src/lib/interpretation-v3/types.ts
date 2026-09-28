@@ -1,4 +1,4 @@
-/** Phase 0–1 only. No production caller, persistence contract or calculation. */
+/** Shared interpretation types; only explicit comprehensive V3 consumes them. */
 export const PRODUCTS = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility", "major_fortune", "annual_fortune"] as const;
 export type Product = typeof PRODUCTS[number];
 export const DOMAINS = ["identity", "career", "business", "money", "relationship", "love", "study", "leadership", "lifestyle"] as const;

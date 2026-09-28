@@ -36,7 +36,7 @@ it.each(PRODUCTS)("%s: unchanged V2 generate → publish → SSR, V3 consumption
   const payload = { productKey: product, productSlug: product === "saju_mbti_compatibility" ? "compatibility" : product.replaceAll("_", "-"),
     ...(product === "saju_mbti_compatibility" ? { personA: p, personB: q, relationshipType: "businessPartner" } : { person: p }),
     userContext: { relationshipStatus: "single", jobStatus: "employee", detailJob: "B2B 소프트웨어 영업기획", focusAreas: [] }, productOptions: product === "annual_fortune" ? { selectedYear: "2026" } : {} };
-  const result = await generateProductReport(payload, { enabled: false, reason: "flag_disabled" }, "deterministic_fallback");
+  const result = await generateProductReport(payload, { enabled: false, reason: "flag_disabled" }, "deterministic_fallback", undefined, { comprehensiveVersion: "v2" });
   expect(result.ok).toBe(true);
   if (!result.ok) return;
   expect(result.externalCalls).toEqual([]);
@@ -73,4 +73,9 @@ it.each(PRODUCTS)("%s: unchanged V2 generate → publish → SSR, V3 consumption
   if (product === "major_fortune") expect(validateEvidence(adaptMajorFortune(result.evidencePacket as MajorFortuneEvidencePacket))).toEqual([]);
   expect(hash([result.draft, result.evidencePacket, html])).toBe(before);
   expect(before, product).toBe(GOLDEN[product]);
+  if (product !== "saju_mbti_full") {
+    const requestedV3 = await generateProductReport(payload, { enabled: false, reason: "flag_disabled" }, "deterministic_fallback", undefined, { comprehensiveVersion: "v3" });
+    expect(requestedV3.ok).toBe(true);
+    if (requestedV3.ok) expect(hash([requestedV3.draft, requestedV3.evidencePacket])).toBe(hash([result.draft, result.evidencePacket]));
+  }
 });

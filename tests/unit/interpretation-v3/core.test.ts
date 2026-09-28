@@ -213,11 +213,12 @@ describe("V3 isolated common core", () => {
     expect(text.indexOf(d.directive)).toBeLessThan(text.indexOf(d.rationale));
     expect(text.indexOf(d.rationale)).toBeLessThan(text.indexOf(d.professionalEvidence[0]));
   });
-  it("has zero imports into production and zero provider/network clients in V3", () => {
+  it("connects only the comprehensive boundary and has zero provider/network clients in V3", () => {
+    const allowed = ["src/lib/report-generation/comprehensiveV3Generation.ts", "src/app/reports/[reportId]/ComprehensiveReportV3View.tsx", "src/app/reports/[reportId]/page.tsx"];
     const files = (dir: string): string[] => readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? files(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []);
     for (const file of files("src")) {
       const source = readFileSync(file, "utf8");
-      if (!file.includes("interpretation-v3/")) expect(source, file).not.toMatch(/(?:from|import\s*\().*["'][^"']*interpretation-v3/);
+      if (!file.includes("interpretation-v3/")) { if (!allowed.includes(file)) expect(source, file).not.toMatch(/(?:from|import\s*\().*["'][^"']*interpretation-v3/); }
       else expect(source, file).not.toMatch(/\bfetch\s*\(|\bnew\s+OpenAI|from ["'](?:openai|@supabase)|process\.env/);
     }
     expect(fetch).not.toHaveBeenCalled();

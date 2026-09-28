@@ -1,5 +1,7 @@
 # V3 Phase 0–1 공통 해석 코어
 
+Phase 2 종합의 명시적 버전 연결, 고객 검토 URL/텍스트, 비교·검증 결과는 [COMPREHENSIVE_PHASE_2.md](COMPREHENSIVE_PHASE_2.md)를 보세요. 아래 내용은 Phase 0–1 기준 기록입니다.
+
 기준 master: `edacb1b613af6cc76df4b30554cba2914a649e7c`. 작업 브랜치: `v3/rebuild`.
 실행 코드는 `src/lib/interpretation-v3/`에만 추가했다. 현행 생성기·계산기·렌더러의 import/출력/계약을 변경하지 않았다. 결제·Toss·Supabase·법무·배포 설정 변경과 실제 OpenAI 호출은 없다.
 

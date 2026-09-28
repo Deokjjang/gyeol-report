@@ -1,4 +1,5 @@
 import type { WriterCallBudget } from "./reportWriterCallGuard";
+import { createComprehensiveV3 } from "./comprehensiveV3Generation";
 import { getAnnualPurchasePolicyDate, type AnnualCommerceAcceptance } from "../payment/annualPurchasePolicy";
 import { prepareProductGenerationFromPayload, type ProductGenerationResult } from "./productGenerationDispatcher";
 import type { ReportWriterRuntime } from "./reportWriterRuntime";
@@ -9,7 +10,7 @@ import { deliveryIssueCodes, settlePaidWriterDraft, type DeliveryAudit } from ".
 
 // writer_regeneration is retained for old callers, but no longer buys another call.
 export type GenerationStrategy = "normal_writer" | "writer_regeneration" | "deterministic_fallback";
-export async function generateProductReport(payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance): Promise<ProductGenerationResult> {
+export async function generateProductReport(payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance, options: { readonly comprehensiveVersion?: "v2" | "v3" } = {}): Promise<ProductGenerationResult> {
   const audit: DeliveryAudit = { version: "paid-one-call-v1", preflight: "fail", writerValidation: "not_run", rescueKinds: [], fallbackUsed: false, publish: "fail", failureCode: null, issues: [] };
   const budget: WriterCallBudget = { limit: strategy === "normal_writer" ? 1 : 0, calls: [] };
   const fail = (code: string, issues: readonly string[] = []): ProductGenerationResult => {
@@ -19,6 +20,18 @@ export async function generateProductReport(payload: unknown, runtime: ReportWri
   const purchaseDate = annualAcceptance === undefined ? undefined : getAnnualPurchasePolicyDate(annualAcceptance, payload);
   if (purchaseDate === null) return fail("ANNUAL_PURCHASE_CONTEXT_INVALID");
   const product = isRecord(payload) ? String(payload.productKey) : "";
+  // Explicit content-version boundary: paid/writer callers retain their current
+  // contract. V3 reuses canonical calculation/evidence, not the V2 body builder.
+  if (product === "saju_mbti_full" && options.comprehensiveVersion === "v3") {
+    try {
+      const v3 = createComprehensiveV3(payload);
+      if (!v3) return fail("V3_PREPARATION_FAILED");
+      const check = validateNewProductPublication(product, v3.draft, v3.evidencePacket, payload);
+      if (!check.ok) return fail("V3_PUBLICATION_FAILED", check.errors);
+      audit.preflight = "pass"; audit.publish = "pass";
+      return { ok: true, kind: "comprehensiveV2", ...v3, externalCalls: [], delivery: audit };
+    } catch { return fail("V3_PREPARATION_FAILED"); }
+  }
   let prepared: ProductGenerationResult;
   try {
     // Normalization, calculation, product evidence + complete fallback, before HTTP.

@@ -1,4 +1,5 @@
 import { validateNatalTableEvidence, validateNatalFeatureProvenance } from "../report-knowledge/natalTableEvidence";
+import { validateComprehensiveV3 } from "./comprehensiveV3Generation";
 import type { LoveMarriageChildReportEvidencePacket } from "../report-knowledge/loveMarriageChildReportTypes";
 import type { AnnualFortuneEvidencePacket } from "../report-knowledge/annualFortuneEvidence";
 import { publicationBirthTimeContexts, publishedPillarMatches } from "./birthTimePublication";
@@ -52,6 +53,10 @@ export function validateProductPublication(product: string, draft: unknown, evid
   if (draft.productType !== product) errors.push("PRODUCT_MISMATCH");
   if (!isRecord(evidence) || Object.keys(evidence).length < 3) errors.push("EVIDENCE_REQUIRED");
   else if (evidence.productType !== product) errors.push("EVIDENCE_PRODUCT_MISMATCH");
+  if (product === "saju_mbti_full" && draft.productVersion === "v3") {
+    errors.push(...validateComprehensiveV3(draft, evidence));
+    return { ok: errors.length === 0, errors };
+  }
   if (birthContexts && isRecord(evidence) && product !== "saju_mbti_full") {
     for (const [role, context] of Object.entries(birthContexts)) {
       let pillars: Record<string, unknown> = {};

@@ -68,6 +68,8 @@ import { getSajuBranchSymbolEntry } from "../../../lib/report-knowledge/sajuBran
 import { AnnualFortuneReportView } from "./AnnualFortuneReportView";
 import { CareerReportView } from "./CareerReportView";
 import { ComprehensiveReportV2View } from "./ComprehensiveReportV2View";
+import { ComprehensiveReportV3View } from "./ComprehensiveReportV3View";
+import { isComprehensiveV3Draft } from "../../../lib/interpretation-v3/comprehensive";
 import { CompatibilityReportView } from "./CompatibilityReportView";
 import { LoveMarriageChildReportView } from "./LoveMarriageChildReportView";
 import { MajorFortuneReportView } from "./MajorFortuneReportView";
@@ -246,7 +248,7 @@ async function loadProductPreviewPageState(
   }
 
   if (productPreview.productType === "saju_mbti_full") {
-    if (!isComprehensiveV2ProductPreviewDraft(productPreview.draft)) {
+    if (!isComprehensiveV2ProductPreviewDraft(productPreview.draft) && !isComprehensiveV3Draft(productPreview.draft)) {
       return { kind: "invalidSnapshot" };
     }
 
@@ -825,6 +827,9 @@ function getAnnualFortunePreviewEvidencePacket(
 function renderProductPreviewComprehensiveV2State(
   productPreview: ProductPreviewSnapshot,
 ) {
+  if (isComprehensiveV3Draft(productPreview.draft)) {
+    return <ComprehensiveReportV3View draft={productPreview.draft} evidencePacket={productPreview.evidencePacket} />;
+  }
   if (!isComprehensiveV2ProductPreviewDraft(productPreview.draft)) {
     return renderInvalidSnapshotState();
   }

@@ -265,11 +265,12 @@ export async function generateComprehensiveV2ProductDraft(
   };
 }
 
-function buildComprehensiveV2EvidenceFromGenerationInput(
+export function buildComprehensiveV2EvidenceFromGenerationInput(
   input: SinglePersonGenerationInput,
 ): {
   readonly packet: ComprehensiveReportEvidencePacket;
   readonly facts: ComputedSajuFacts;
+  readonly calculation: SajuCalcResult;
 } {
   const saju = calculateComprehensiveSaju(input.person);
   const facts = toComputedSajuFacts(saju);
@@ -279,7 +280,7 @@ function buildComprehensiveV2EvidenceFromGenerationInput(
     sajuFacts: facts,
   });
 
-  return { packet: withBirthTimeEvidence(packet, { person: saju.birthTimeContext }), facts };
+  return { packet: withBirthTimeEvidence(packet, { person: saju.birthTimeContext }), facts, calculation: saju };
 }
 
 async function generateWriterDraft(input: {
