@@ -128,7 +128,7 @@ it("keeps V2 snapshot publication and renderer available for the same input", as
   const blocks = [...v3.draft.opening, ...v3.draft.sections.flatMap(s => s.blocks)];
   const v3facts = (v3.evidencePacket as { comprehensiveV3: { facts: readonly Evidence[] } }).comprehensiveV3.facts;
   const used = new Set(blocks.filter(b => b.action).flatMap(b => b.evidenceRefs));
-  process.stdout.write(JSON.stringify({ comparison: {
+  process.stdout.write(JSON.stringify({ legacyShapeComparison: {
     v2: { compound: packet.narrativePlan!.themes.filter(t => new Set(t.sajuEvidenceIds).size >= 2).length,
       fusion: new Set(packet.narrativePlan!.sections.flatMap(s => s.interactionIds)).size,
       context: 0, positive: good.filter(f => v2.sajuFeatureChapter?.items.some(i => f.aliases.includes(i.rawLabel) && i.practicalUse)).length },

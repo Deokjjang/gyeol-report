@@ -19,10 +19,10 @@ const JOB_APPLICATIONS: Record<string, readonly [string, string, string]> = {
   sales_operations: ["제안 뒤에는 상대의 결정 조건과 다음 연락 날짜를 남기세요.", "계약 규모와 실제 회수 일정을 따로 관리하세요. 관심 표현을 확정 매출에 넣지 마세요.", "성사된 제안과 멈춘 제안의 질문을 비교해 다음 대화에 적용하세요."],
   quality_operations: ["오류를 찾은 사람과 수정 책임자를 구분해 검수 결과를 전달하세요.", "예방 점검에 쓴 자원과 재작업에 쓴 자원을 나눠 보세요.", "반복 불량을 조건별 사례로 묶어 다음 검수의 기준으로 만드세요."],
 };
-export function comprehensiveContextDirections(context: UserContextProfile) {
+export function comprehensiveContextDirections(context: UserContextProfile, enriched = false) {
   const job = interpretCareerContext(context.fieldLabel ?? "");
   const detail = JOB_APPLICATIONS[job.roleFamily] ?? JOB_APPLICATIONS[job.industry];
-  return DIRECTIONS[context.lifeStatus].map((text, i) => [text, detail?.[i]].filter(Boolean).join(" ")) as [string, string, string];
+  return DIRECTIONS[context.lifeStatus].map((text, i) => [...new Set([text, detail?.[i], ...(enriched ? [JOB_APPLICATIONS[job.industry]?.[i]] : [])])].filter(Boolean).join(" ")) as [string, string, string];
 }
 export const RELATIONSHIP_DIRECTIONS: Record<string, string> = {
   single: "새로 만난 사람에게 관심을 표현할 때 내가 편한 연락 속도도 함께 알려 주세요. 좋은 분위기와 실제 약속은 나눠 확인하세요.",

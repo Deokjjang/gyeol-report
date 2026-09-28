@@ -1,5 +1,7 @@
 # V3 Phase 0–1 공통 해석 코어
 
+최신 종합 V3.1의 서사/통합표, V2·V3·V3.1 비교, 6개 fixture 검증과 고객 텍스트는 [COMPREHENSIVE_PHASE_2B.md](COMPREHENSIVE_PHASE_2B.md)를 보세요.
+
 Phase 2 종합의 명시적 버전 연결, 고객 검토 URL/텍스트, 비교·검증 결과는 [COMPREHENSIVE_PHASE_2.md](COMPREHENSIVE_PHASE_2.md)를 보세요. 아래 내용은 Phase 0–1 기준 기록입니다.
 
 기준 master: `edacb1b613af6cc76df4b30554cba2914a649e7c`. 작업 브랜치: `v3/rebuild`.

@@ -6,11 +6,21 @@ import { getCanonicalNatalTable } from "../../../lib/report-knowledge/natalTable
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
 import type { ComprehensiveV3Block, ComprehensiveV3Draft } from "../../../lib/interpretation-v3/comprehensive";
 import type { SajuCalcResult } from "../../../lib/saju/types";
+import type { Evidence } from "../../../lib/interpretation-v3/types";
+import { featureRows } from "../../../lib/interpretation-v3/comprehensiveEditorial";
+import { ENRICHED_COMPREHENSIVE_VERSION } from "../../../lib/interpretation-v3/comprehensiveComposition";
 
 function EvidenceLine({ labels }: { readonly labels: readonly string[] }) {
   return <p className="mt-3 text-xs tracking-wide text-[#846829]" data-evidence-line>{labels.join(" · ")}</p>;
 }
 function Reading({ block, opening = false }: { readonly block: ComprehensiveV3Block; readonly opening?: boolean }) {
+  if (block.paragraphs) return <div className={block.kind === "context" ? "space-y-3 border-l-2 border-[#cbb589] pl-4" : "space-y-4"} data-v3-kind={block.kind} data-v3-format={block.format}>
+    {block.headline ? <h3 className="text-lg font-semibold text-[#6f1d35]">{block.headline}</h3> : null}
+    {block.paragraphs.map((p, i) => <p key={i} className={block.format === "gift" && i === 0 ? "font-medium text-[#846829]" : ""}>{p}</p>)}
+    {block.action ? <p className={block.format === "strategy" ? "font-medium" : ""}>{block.action}</p> : null}
+    {block.ideas ? <ul className="list-disc space-y-3 pl-5 marker:text-[#846829]">{block.ideas.map(idea => <li key={idea}>{idea}</li>)}</ul> : null}
+    <EvidenceLine labels={block.labels} />
+  </div>;
   return <div className="space-y-3" data-v3-kind={block.kind}>
     {block.headline ? opening ? <p className="font-semibold text-[#6f1d35]">{block.headline}</p> : <h3 className="text-lg font-semibold text-[#6f1d35]">{block.headline}</h3> : null}
     {block.reading ? <p>{block.reading}</p> : null}
@@ -28,6 +38,75 @@ export function ComprehensiveReportV3View({ draft, evidencePacket }: { readonly 
   const mbti = source ? buildMbtiCommonProfileTableData(source) : undefined;
   const items = [{ id: "v3-core", label: "핵심 결" }, ...draft.sections.map(s => ({ id: `v3-${s.id}`, label: s.title })),
     { id: "v3-patterns", label: "나를 망치기 쉬운 패턴" }, { id: "v3-direction", label: "앞으로 이렇게 살아가세요" }, { id: "v3-evidence", label: "전문 근거 펼쳐보기" }];
+  if (draft.version === ENRICHED_COMPREHENSIVE_VERSION) {
+    const facts = (evidencePacket as { comprehensiveV3: { facts: readonly Evidence[] } }).comprehensiveV3.facts;
+    const rows = featureRows(facts);
+    const elements = [
+      ["WOOD", "목", "나무", "bg-emerald-50 border-emerald-200 text-emerald-950"],
+      ["FIRE", "화", "불", "bg-rose-50 border-rose-200 text-rose-950"],
+      ["EARTH", "토", "흙", "bg-amber-50 border-amber-200 text-amber-950"],
+      ["METAL", "금", "쇠", "bg-stone-100 border-stone-200 text-stone-900"],
+      ["WATER", "수", "물", "bg-sky-50 border-sky-200 text-sky-950"],
+    ] as const;
+    return <article className="min-w-0 overflow-hidden rounded-[8px] border border-[#ded2c2] bg-[#fffdf8] text-[#2b211b]" data-report-version={draft.version}>
+      <ReportCover product="사주×MBTI 종합 리포트" title={draft.title} summary="나를 관통하는 성격과 이미 가진 좋은 패, 앞으로의 선택을 읽습니다." />
+      <section aria-label="계산된 원국과 성향" className="space-y-5 border-b border-[#eadfce] px-4 py-6 sm:px-6">
+        {manse ? <ManseRyeokCommonTable data={{ ...manse, natalEvidence: undefined }} defaultOpen={false} /> : null}
+        <section aria-label="오행 분포" data-v31-elements className="space-y-3">
+          <h2 className="text-lg font-semibold">오행 분포</h2>
+          <div className="grid min-w-0 grid-cols-5 gap-1.5 sm:gap-3">
+            {elements.map(([id, name, meaning, colors]) => <div key={id} className={`min-w-0 rounded-lg border px-1 py-3 text-center ${colors}`}>
+              <p className="text-sm font-bold">{name}</p><p className="mt-1 text-2xl font-semibold">{calculation.elements.visible[id]}</p>
+              <p className="mt-1 text-xs">{meaning}</p>
+            </div>)}
+          </div>
+          <p className="text-xs leading-6 text-[#756658]">위 숫자는 천간·지지 겉글자의 개수입니다. 생활 보완은 지장간을 포함한 아래 가중 분포와 기존 계산의 강약 판정을 사용합니다.</p>
+          <p className="text-sm text-[#5d544d]">지장간 포함: {elements.map(([id, name]) => `${name} ${Number(calculation.elements.weighted[id].toFixed(1))}`).join(" · ")}</p>
+        </section>
+        {mbti ? <MbtiCommonProfileTable data={mbti} defaultOpen={false} variant="compact" /> : <p className="text-sm text-[#756658]">MBTI 미입력 · 명리 근거만으로 구성했습니다.</p>}
+        <details id="v3-evidence" className="min-w-0 rounded-lg border border-[#ded2c2]" data-v31-integrated>
+          <summary className="min-h-11 cursor-pointer px-4 py-3 font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7f1d38]">내 명리에 있는 주요 기운</summary>
+          <div className="space-y-4 px-3 pb-4 sm:px-4">
+            <table className="w-full table-fixed border-collapse text-left text-xs leading-6 sm:text-sm [overflow-wrap:anywhere]">
+              <caption className="pb-3 text-left text-xs text-[#756658]">실제 원국에서 확인된 기운입니다. 같은 기운의 여러 계산 위치는 한 행으로 모았습니다.</caption>
+              <thead><tr className="border-y border-[#ded2c2] text-[#6f1d35]"><th scope="col" className="w-[22%] py-2 pr-2">기운</th><th scope="col" className="w-[39%] py-2 pr-2">쉽게 말하면</th><th scope="col" className="py-2">나에게 쓰이는 힘</th></tr></thead>
+              <tbody>{rows.map(row => <tr key={row.featureId} className="border-b border-[#eadfce] align-top"><th scope="row" className="py-3 pr-2 font-semibold">{row.label}</th><td className="py-3 pr-2">{row.meaning}</td><td className="py-3">{row.power}</td></tr>)}</tbody>
+            </table>
+            <details className="border-t border-[#ded2c2] pt-2" data-v31-calculation-basis>
+              <summary className="min-h-11 cursor-pointer py-3 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7f1d38]">계산 기준 자세히 보기</summary>
+              <p className="mb-4 text-xs leading-6 text-[#756658]">입력한 정확한 출생시각의 원국입니다. 기둥 위치와 연지·일지 기준을 구분하며 대운·세운 표식은 섞지 않습니다.</p>
+              <p className="mb-4 text-sm">십성 분포: {Object.entries(calculation.tenGods.distribution).map(([god, n]) => `${god} ${Number(n.toFixed(1))}`).join(" · ")}</p>
+              <dl className="space-y-4 text-sm leading-6 [overflow-wrap:anywhere]">
+                {natal?.features.map(f => <div key={f.id}><dt className="font-semibold">{f.label}</dt><dd className="text-[#756658]">{f.basis}{f.positions.length ? ` · ${f.positions.map(p => ({ year: "연주", month: "월주", day: "일주", hour: "시주" })[p]).join("·")}` : " · 원국 전체 근거"}</dd></div>)}
+                {natal?.relations.map(r => <div key={r.id}><dt className="font-semibold">{r.label}</dt><dd>{r.participants.join(" · ")}</dd></div>)}
+                {calculation.structureAnalysis.patterns.map(p => <div key={p.code}><dt className="font-semibold">{p.labelKo}</dt><dd>{p.evidence.map(e => `${e.keyKo} ${e.valueKo}`).join(" · ")}</dd></div>)}
+              </dl>
+            </details>
+          </div>
+        </details>
+      </section>
+      <ReportContents items={items.filter(i => i.id !== "v3-evidence")} />
+      <div className="mx-auto max-w-[44rem] break-keep px-4 [overflow-wrap:anywhere] sm:px-6">
+        <section id="v3-core" tabIndex={-1} data-reading-section className="space-y-6">
+          <h2 className="text-2xl font-semibold">핵심 결</h2>
+          {draft.opening.flatMap(b => b.paragraphs ?? []).map((p, i) => <p key={i} className={i === 0 ? "text-lg font-medium text-[#6f1d35]" : ""}>{p}</p>)}
+          <EvidenceLine labels={[...new Set(draft.opening.flatMap(b => b.labels))]} />
+        </section>
+        {draft.sections.map(section => <section id={`v3-${section.id}`} tabIndex={-1} key={section.id} data-reading-section className="space-y-8">
+          <h2 className="text-2xl font-semibold">{section.title}</h2>
+          <div className="divide-y divide-[#eadfce]">{section.blocks.map(b => <div key={b.id} className="py-6 first:pt-0 last:pb-0"><Reading block={b} /></div>)}</div>
+        </section>)}
+        <section id="v3-patterns" tabIndex={-1} data-reading-section className="space-y-7">
+          <h2 className="text-2xl font-semibold">나를 망치기 쉬운 패턴</h2>
+          {draft.patterns.map(p => <div key={p.risk} className="space-y-3 border-l-2 border-[#cbb589] pl-4"><p className="text-sm text-[#846829]">잘 쓰면 · {p.strength}</p><h3 className="text-lg font-semibold">{p.risk}</h3><p>{p.why}</p><p className="font-medium">{p.repair}</p><EvidenceLine labels={p.labels} /></div>)}
+        </section>
+        <section id="v3-direction" tabIndex={-1} data-reading-section className="space-y-6">
+          <h2 className="text-2xl font-semibold">앞으로 이렇게 살아가세요</h2>
+          {draft.direction.split("\n\n").map((p, i) => <p key={i} className={i === 0 ? "font-medium text-[#6f1d35]" : ""}>{p}</p>)}
+        </section>
+      </div>
+    </article>;
+  }
   return <article className="min-w-0 overflow-hidden rounded-[8px] border border-[#ded2c2] bg-[#fffdf8] text-[#2b211b]" data-report-version={draft.version}>
     <ReportCover product="사주×MBTI 종합 리포트" title={draft.title} summary="이미 가진 좋은 힘을 알아보고, 일과 관계에서 쓰는 나만의 방향." />
     <ReportContents items={items} />

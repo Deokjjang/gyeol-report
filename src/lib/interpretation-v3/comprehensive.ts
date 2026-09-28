@@ -9,6 +9,7 @@ import { comprehensiveContextDirections, RELATIONSHIP_DIRECTIONS } from "./compr
 import { COMPREHENSIVE_ATOMIC_COPY, OPENING_CONTEXT } from "./comprehensiveCopy";
 import { correctKoreanParticleSlots } from "../report-knowledge/koreanCopyUtils";
 import type { Domain, Evidence } from "./types";
+import { composeComprehensiveV31, ENRICHED_COMPREHENSIVE_VERSION } from "./comprehensiveComposition";
 
 export const COMPREHENSIVE_V3_VERSION = "comprehensive_v3.1" as const;
 export type ComprehensiveV3Block = {
@@ -23,26 +24,32 @@ export type ComprehensiveV3Block = {
   readonly sourceRefs: readonly string[];
   readonly labels: readonly string[];
   readonly domains: readonly Domain[];
+  readonly format?: "prose" | "gift" | "strategy" | "relationship" | "balance";
+  readonly paragraphs?: readonly string[];
+  readonly ideas?: readonly string[];
+  readonly compoundId?: string;
+  readonly compoundIds?: readonly string[];
+  readonly positiveFeatureIds?: readonly string[];
 };
 export type ComprehensiveV3Section = { readonly id: string; readonly title: string; readonly blocks: readonly ComprehensiveV3Block[] };
 export type ComprehensiveV3Draft = {
   readonly productType: "saju_mbti_full";
   readonly productVersion: "v3";
-  readonly version: typeof COMPREHENSIVE_V3_VERSION;
+  readonly version: typeof COMPREHENSIVE_V3_VERSION | typeof ENRICHED_COMPREHENSIVE_VERSION;
   readonly personLabel: string;
   readonly title: string;
   readonly profileTable: ComprehensiveReportV2ProfileTable;
   readonly opening: readonly ComprehensiveV3Block[];
   readonly openingContext: string;
   readonly sections: readonly ComprehensiveV3Section[];
-  readonly patterns: readonly { readonly risk: string; readonly repair: string; readonly labels: readonly string[]; readonly evidenceRefs: readonly string[] }[];
+  readonly patterns: readonly { readonly strength?: string; readonly why?: string; readonly risk: string; readonly repair: string; readonly labels: readonly string[]; readonly evidenceRefs: readonly string[] }[];
   readonly direction: string;
   readonly directionEvidenceRefs: readonly string[];
 };
 export function isComprehensiveV3Draft(value: unknown): value is ComprehensiveV3Draft {
   if (!value || typeof value !== "object") return false;
   const v = value as Partial<ComprehensiveV3Draft>;
-  return v.productType === "saju_mbti_full" && v.productVersion === "v3" && v.version === COMPREHENSIVE_V3_VERSION &&
+  return v.productType === "saju_mbti_full" && v.productVersion === "v3" && [COMPREHENSIVE_V3_VERSION, ENRICHED_COMPREHENSIVE_VERSION].includes(v.version!) &&
     Array.isArray(v.opening) && Array.isArray(v.sections) && Array.isArray(v.patterns) && typeof v.direction === "string";
 }
 const unique = <T,>(values: readonly T[]) => [...new Set(values)];
@@ -57,12 +64,12 @@ function block(input: Omit<ComprehensiveV3Block, "evidenceRefs" | "labels" | "so
 }
 /** The whole material registry is eligible; weak/unsafe realizations remain in
  * the professional layer. No favorite-feature allowlist or invented detection. */
-export function comprehensiveCandidates(facts: readonly Evidence[]): readonly ComprehensiveV3Block[] {
+export function comprehensiveCandidates(facts: readonly Evidence[], enriched = false): readonly ComprehensiveV3Block[] {
   const ranked = rankEvidence(facts, "saju_mbti_full");
   const rank = new Map(ranked.map((e, i) => [e.id, i]));
   const candidates: ComprehensiveV3Block[] = [];
   for (const { rule, evidence } of matchCompounds(facts, "person")) {
-    const domain = rule.domains[0];
+    const domain = enriched ? rule.domains.find(d => evidence.some(e => e.domains.includes(d))) ?? rule.domains[0] : rule.domains[0];
     if (evidence.some(e => e.certainty !== "confirmed") || ["question", "suppressed"].includes(claimStrength(evidence, domain, rule.kind === "tension"))) continue;
     const atoms = evidence.map(e => ATOMIC_BY_ID.get(e.featureId)).filter(a => a !== undefined);
     candidates.push(block({ id: rule.id, kind: "compound", headline: rule.judgment,
@@ -106,7 +113,15 @@ export function comprehensiveCandidates(facts: readonly Evidence[]): readonly Co
   });
 }
 
-export function buildComprehensiveV3(input: { name: string; facts: readonly Evidence[]; context: UserContextProfile; relationshipStatus: string; profileTable: ComprehensiveReportV2ProfileTable }): ComprehensiveV3Draft {
+export type ComprehensiveV3Input = { name: string; facts: readonly Evidence[]; context: UserContextProfile; relationshipStatus: string; profileTable: ComprehensiveReportV2ProfileTable };
+export function buildComprehensiveV3(input: ComprehensiveV3Input): ComprehensiveV3Draft {
+  // Existing uncertain-time treatment is retained. No stronger new assertions
+  // are made from conditional evidence just to fill the richer presentation.
+  if (!input.facts.some(f => f.scope === "natal" && f.certainty === "confirmed")) return buildComprehensiveV3Legacy(input);
+  return composeComprehensiveV31(input, comprehensiveCandidates(input.facts, true));
+}
+/** Frozen Phase 2 composition for already-stored snapshots. */
+export function buildComprehensiveV3Legacy(input: ComprehensiveV3Input): ComprehensiveV3Draft {
   const { facts, context } = input;
   const candidates = comprehensiveCandidates(facts);
   const used = new Set<string>(), sentences = new Set<string>();
@@ -168,8 +183,8 @@ export function buildComprehensiveV3(input: { name: string; facts: readonly Evid
     sections, patterns, direction: main ? `앞으로 제안을 받을 때는 ‘${main.labels.join(" · ")}’의 힘을 쓸 자리가 있는지 먼저 보세요. 잘할 수 있다는 이유만으로 수락하지 말고, 내 판단으로 완성할 범위가 있는 일을 선택하세요.` : "지금 맡을 일의 범위와 끝낼 기준을 먼저 정하세요.", directionEvidenceRefs: main?.evidenceRefs ?? [] };
 }
 export function comprehensiveV3CustomerText(draft: ComprehensiveV3Draft): string {
-  const text = (b: ComprehensiveV3Block) => [b.headline, b.reading, b.action, b.why, b.labels.join(" · ")].filter(Boolean).join("\n");
-  return [draft.title, "핵심 결", ...draft.opening.map(text), draft.openingContext, ...draft.sections.flatMap(s => [s.title, ...s.blocks.map(text)]), "나를 망치기 쉬운 패턴", ...draft.patterns.flatMap(p => [p.risk, p.repair, p.labels.join(" · ")]), "앞으로 이렇게 살아가세요", draft.direction].join("\n\n");
+  const text = (b: ComprehensiveV3Block) => [b.headline, ...(b.paragraphs ?? []), b.reading, b.action, ...(b.ideas ?? []), b.why, b.labels.join(" · ")].filter(Boolean).join("\n");
+  return [draft.title, "핵심 결", ...draft.opening.map(text), draft.openingContext, ...draft.sections.flatMap(s => [s.title, ...s.blocks.map(text)]), "나를 망치기 쉬운 패턴", ...draft.patterns.flatMap(p => [p.strength, p.risk, p.why, p.repair, p.labels.join(" · ")].filter(Boolean)), "앞으로 이렇게 살아가세요", draft.direction].join("\n\n");
 }
 export function comprehensiveCoverage(facts: readonly Evidence[], draft: ComprehensiveV3Draft) {
   const used = new Set([...draft.opening, ...draft.sections.flatMap(s => s.blocks)].flatMap(b => b.evidenceRefs));
