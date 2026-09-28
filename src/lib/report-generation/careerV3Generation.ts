@@ -4,7 +4,8 @@ import { withReportInputEvidence } from "./reportInputEvidence";
 import { buildProductNatalTables, getCanonicalNatalTable } from "../report-knowledge/natalTableEvidence";
 import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
 import { adaptCalculation, adaptMbti, adaptNatalTable, mergeEvidence, validateEvidence } from "../interpretation-v3/evidence";
-import { buildCareerV3, careerV3CustomerText, isCareerV3Draft } from "../interpretation-v3/careerEditorial";
+import { buildCareerV3, CAREER_V3_POLISH_VERSION, careerV3CustomerText, isCareerV3Draft } from "../interpretation-v3/careerEditorial";
+import { buildCareerV3Polished } from "../interpretation-v3/careerEditorialPolish";
 import { normalizeContext } from "../interpretation-v3/context";
 import { validateV3Copy } from "../interpretation-v3/engine";
 import type { SajuCalcResult } from "../saju/types";
@@ -26,7 +27,7 @@ export function createCareerV3(payload: unknown) {
   const base = buildCareerEvidenceFromGenerationInput(input);
   const packet = { ...withReportInputEvidence(base, input), calendarCalculationVersion: SAJU_CALENDAR_VERSION, natalTableEvidence: buildProductNatalTables(base) };
   const facts = careerFacts(packet, calculation, input.person.mbtiType);
-  const draft = buildCareerV3({ name: input.person.name, mbti: input.person.mbtiType, facts, calculation,
+  const draft = buildCareerV3Polished({ name: input.person.name, mbti: input.person.mbtiType, facts, calculation,
     context: normalizeContext({ lifeStatus: input.userContext.jobStatus, fieldLabel: input.userContext.detailJob, relationshipStatus: input.userContext.relationshipStatus }) });
   return { draft, evidencePacket: { ...packet, careerV3: { version: "career-evidence-v3.1", calculation, facts } } };
 }
@@ -42,7 +43,8 @@ export function validateCareerV3(draft: unknown, packet: unknown): readonly stri
     if (!table || table.precision !== "exact" || table.pillars.some(p => { const actual = calc.pillars[p.columnId]; return !actual || actual.stem + actual.branch !== p.pillar; })) return ["CAREER_V3_CALCULATION_MISMATCH"];
     const facts = careerFacts(packet, calc, String(basis.person.mbtiType ?? "")), errors = [...validateEvidence(facts)];
     if (stable(facts) !== stable(v3.facts)) errors.push("CAREER_V3_FACTS_MISMATCH");
-    const expected = buildCareerV3({ name: String(basis.person.name), mbti: String(basis.person.mbtiType ?? ""), facts, calculation: calc,
+    const builder = draft.version === CAREER_V3_POLISH_VERSION ? buildCareerV3Polished : buildCareerV3;
+    const expected = builder({ name: String(basis.person.name), mbti: String(basis.person.mbtiType ?? ""), facts, calculation: calc,
       context: normalizeContext({ lifeStatus: String(basis.userContext.jobStatus), fieldLabel: String(basis.userContext.detailJob), relationshipStatus: String(basis.userContext.relationshipStatus) }) });
     if (stable(expected) !== stable(draft)) errors.push("CAREER_V3_CONTENT_MISMATCH");
     const qa = draft.editorialAudit;

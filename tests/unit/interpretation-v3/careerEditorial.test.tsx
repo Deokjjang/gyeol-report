@@ -43,7 +43,7 @@ it.each(CAREER_V3_FIXTURES)("%s Career generate/publish/SSR, strong evidence and
   expect(text).not.toMatch(internals);
   expect(text).toMatch(/좋은 패|좋은 기운/);
   const html = renderToStaticMarkup(createElement(CareerReportV3View, { draft, evidencePacket }));
-  expect(html).toContain("career_v3.0-editorial.1"); expect(html).not.toContain("리포트를 준비하고 있습니다"); expect(html).not.toMatch(internals);
+  expect(html).toContain("career_v3.0-editorial.2"); expect(html).not.toContain("리포트를 준비하고 있습니다"); expect(html).not.toMatch(internals);
   expect(html.indexOf("리포트 목차")).toBeLessThan(html.indexOf("계산된 원국과 성향"));
   expect(html.indexOf("data-story-signals")).toBeLessThan(html.indexOf('id="career-portrait"'));
   expect(html).toContain("data-all-signals");
@@ -80,7 +80,7 @@ it("local create → memory snapshot → full result page reads V3 with no provi
   expect(response.status, JSON.stringify(body.diagnostic)).toBe(200);
   expect(body.diagnostic.externalCallCount).toBe(0);
   const html = renderToStaticMarkup(await ReportResultPage({ params: Promise.resolve({ reportId: body.reportId }) }));
-  expect(html).toContain("career_v3.0-editorial.1"); expect(html).not.toContain("리포트를 불러오지 못했습니다"); expect(html).not.toMatch(internals);
+  expect(html).toContain("career_v3.0-editorial.2"); expect(html).not.toContain("리포트를 불러오지 못했습니다"); expect(html).not.toMatch(internals);
 });
 
 it.each(["unknown", "approximate"])("%s birth time never becomes an exact V3 hero", async precision => {

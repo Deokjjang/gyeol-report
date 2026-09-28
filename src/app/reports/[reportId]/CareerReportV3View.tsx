@@ -8,6 +8,15 @@ import type { Evidence } from "../../../lib/interpretation-v3/types";
 import type { SajuCalcResult } from "../../../lib/saju/types";
 import { StoryTables } from "./ComprehensiveReportV3View";
 
+// Input labels, not Career Context Interpreter output. No taxonomy is passed
+// to the browser or presented as something the customer entered.
+const inputStatusLabels: Readonly<Record<string, string>> = {
+  employee: "직장인", business_owner: "사업자·자영업", self_employed: "자영업",
+  freelancer: "프리랜서", student: "학생", exam_certificate: "시험·자격 준비",
+  job_seeker: "취업 준비", unemployed: "쉬는 중", resting: "쉬는 중",
+  homemaker: "전업주부", other: "기타",
+};
+
 function CareerReading({ scene, final }: { readonly scene: EditorialScene; readonly final: boolean }) {
   const quote = scene.form === "quote", punch = scene.form === "punchline", tip = scene.form === "tip";
   const body = <>
@@ -28,8 +37,22 @@ export function CareerReportV3View({ draft, evidencePacket }: { readonly draft: 
   // Only allowlisted display values reach client components; the internal
   // evidence graph stays on the server, including React keys/attributes.
   const usage = { opening: [], sections: draft.chapters.map(c => ({ blocks: c.scenes })) };
+  const basis = (evidencePacket as { inputBasis: { person: { mbtiType?: string }; userContext: { jobStatus?: string; detailJob?: string } } }).inputBasis;
+  const inputRows = [
+    ["현재 상태", inputStatusLabels[basis.userContext.jobStatus ?? ""] ?? "미입력"],
+    [basis.userContext.jobStatus === "student" ? "관심 분야" : basis.userContext.jobStatus === "job_seeker" ? "희망 분야" : "현재 직업", basis.userContext.detailJob || "미입력"],
+    ["MBTI", basis.person.mbtiType || "모름"],
+  ];
   return <article className="min-w-0 overflow-hidden rounded-[8px] border border-[#ded2c2] bg-[#fffdf8] text-[#2b211b]" data-report-version={draft.version}>
     <ReportCover product="직업·돈·학업 리포트" title={draft.title} summary="일할 때의 나, 이미 가진 좋은 패, 돈과 실력을 키워갈 방향을 읽습니다." />
+    <section aria-label={`${draft.personLabel}님의 입력 정보`} data-career-input className="mx-4 mb-7 rounded-sm border border-[#ded2c2] bg-[#f8f3eb] px-4 py-4 sm:mx-6">
+      <h2 className="mb-3 text-sm font-semibold text-[#6f1d35]">{draft.personLabel}님의 입력 정보</h2>
+      <dl className="grid min-w-0 gap-x-6 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
+        {inputRows.map(([label, value]) => <div key={label} className="flex min-w-0 items-baseline gap-2">
+          <dt className="shrink-0 text-[#756658]">{label}</dt><dd className="min-w-0 break-words [overflow-wrap:anywhere]"><span aria-hidden="true">· </span>{value}</dd>
+        </div>)}
+      </dl>
+    </section>
     <ReportContents items={draft.chapters.map(c => ({ id: `career-${c.id}`, label: c.title }))} />
     <StoryTables facts={facts} calculation={calculation} manse={manse} mbti={mbti} draft={usage} />
     <div className="mx-auto max-w-[44rem] break-keep px-4 [overflow-wrap:anywhere] sm:px-6">

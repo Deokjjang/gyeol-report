@@ -9,16 +9,17 @@ import { careerWorkArena, interpretCareerContextV3, type WorkArena } from "./car
 import type { Domain, Evidence } from "./types";
 
 export const CAREER_V3_VERSION = "career_v3.0-editorial.1";
+export const CAREER_V3_POLISH_VERSION = "career_v3.0-editorial.2";
 export type CareerV3Input = { name: string; mbti: string; facts: readonly Evidence[]; calculation: SajuCalcResult; context: UserContextProfile };
 export type CareerV3Chapter = { readonly id: string; readonly title: string; readonly collapsed: boolean; readonly scenes: readonly EditorialScene[] };
 export type CareerV3Draft = {
-  readonly productType: "career_money_study"; readonly productVersion: "v3"; readonly version: typeof CAREER_V3_VERSION;
+  readonly productType: "career_money_study"; readonly productVersion: "v3"; readonly version: typeof CAREER_V3_VERSION | typeof CAREER_V3_POLISH_VERSION;
   readonly personLabel: string; readonly title: string; readonly mbti: string; readonly archetype: string;
   readonly chapters: readonly CareerV3Chapter[];
   readonly editorialAudit: Omit<ReturnType<typeof composeEditorial>, "scenes">;
 };
 export function isCareerV3Draft(value: unknown): value is CareerV3Draft {
-  return !!value && typeof value === "object" && "version" in value && value.version === CAREER_V3_VERSION && "productType" in value && value.productType === "career_money_study" && "productVersion" in value && value.productVersion === "v3";
+  return !!value && typeof value === "object" && "version" in value && (value.version === CAREER_V3_VERSION || value.version === CAREER_V3_POLISH_VERSION) && "productType" in value && value.productType === "career_money_study" && "productVersion" in value && value.productVersion === "v3";
 }
 export function careerV3CustomerText(draft: CareerV3Draft): string {
   return [draft.title, ...draft.chapters.flatMap(c => [c.title, ...c.scenes.flatMap(s => [s.headline, ...s.parts.map(p => p.text)])])].join("\n\n");
