@@ -3,7 +3,7 @@ import { hasNarrativeEdition, hasDetailNarrative } from "../../../lib/interpreta
 import narrativeStyles from "../../../components/report/v3Narrative.module.css";
 import { V3NarrativeIdentity } from "../../../components/report/V3NarrativeIdentity";
 import { ManseRyeokCommonTable, MbtiCommonProfileTable } from "../../../components/report-tables";
-import { buildCanonicalManseRyeokTableData } from "../../../lib/report-tables/manseRyeokTableData";
+import { buildCanonicalManseRyeokTableData, withConsistentNatalMarkers } from "../../../lib/report-tables/manseRyeokTableData";
 import { buildMbtiCommonProfileTableData, getMbtiSourceByType } from "../../../lib/report-tables";
 import { getCanonicalNatalTable } from "../../../lib/report-knowledge/natalTableEvidence";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
@@ -188,7 +188,7 @@ export function StoryTables({ facts, calculation, manse, mbti, draft, compactMbt
   const sourceRows = publicSignalRows(facts, calculation, draft);
   const rows = detailMbti ? groupPublicRelations(sourceRows) : sourceRows;
   return <section aria-label="계산된 원국과 성향" className="space-y-5 border-b border-[#eadfce] px-4 py-6 sm:px-6" data-story-tables>
-    {manse ? <ManseRyeokCommonTable data={{ ...manse, natalEvidence: undefined }} defaultOpen={false} elementDistribution={<section key="story-element-distribution" aria-label="오행 분포" className="space-y-3 px-3 py-4" data-story-elements>
+    {manse ? <ManseRyeokCommonTable data={{ ...(detailMbti ? withConsistentNatalMarkers(manse) : manse), natalEvidence: undefined }} defaultOpen={false} elementDistribution={<section key="story-element-distribution" aria-label="오행 분포" className="space-y-3 px-3 py-4" data-story-elements>
       <h3 className="text-sm font-semibold">오행 분포</h3>
       <p className="text-xs text-[#756658]">원국 8글자</p>
       <div className="grid grid-cols-5 gap-1.5">{elements.map(([id, label], i) => <div key={id} className={`min-w-0 rounded-lg border px-1 py-2 text-center ${colors[i]}`}><p className="text-xs">{label}</p><p className="text-xl font-bold">{calculation.elements.visible[id]}</p></div>)}</div>

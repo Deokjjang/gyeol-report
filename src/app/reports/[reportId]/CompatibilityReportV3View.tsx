@@ -2,7 +2,7 @@ import { ReportCover, ReportContents } from "../../../components/report/ReportRe
 import { hasNarrativeEdition, hasDetailNarrative } from "../../../lib/interpretation-v3/narrativeEdition";
 import narrativeStyles from "../../../components/report/v3Narrative.module.css";
 import { V3NarrativeIdentity } from "../../../components/report/V3NarrativeIdentity";
-import { buildCanonicalManseRyeokTableData } from "../../../lib/report-tables/manseRyeokTableData";
+import { buildCanonicalManseRyeokTableData, withConsistentNatalMarkers } from "../../../lib/report-tables/manseRyeokTableData";
 import { buildMbtiCommonProfileTableData, getMbtiSourceByType } from "../../../lib/report-tables";
 import ManseRyeokCommonTable from "../../../components/report-tables/ManseRyeokCommonTable";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
@@ -55,7 +55,12 @@ export function CompatibilityReportV3View({ draft, evidencePacket }: { draft: Co
     <section aria-label="두 사람의 입력 정보" data-compatibility-input className="mx-4 mb-7 rounded-sm border border-[#ded2c2] bg-[#f8f3eb] px-4 py-4 sm:mx-6">
       <h2 className="mb-3 text-sm font-semibold text-[#6f1d35]">두 사람의 입력 정보</h2>
       <dl className="grid min-w-0 gap-x-6 gap-y-3 text-sm sm:grid-cols-2">
-        {PAIR_SLOTS.map(slot => <div key={slot} className="min-w-0"><dt className="text-[#756658]">{draft.people[slot].role} 이름 / MBTI</dt><dd className="break-words [overflow-wrap:anywhere]">{draft.people[slot].name} · {draft.people[slot].mbti || "모름"}</dd></div>)}
+        {PAIR_SLOTS.map(slot => {
+          const input = calculations[slot].input;
+          const precision = input.birthTimePrecision ?? (input.birthTimeUnknown ? "unknown" : "exact");
+          return <div key={slot} className="min-w-0"><dt className="text-[#756658]">{draft.people[slot].role} 이름 / MBTI</dt><dd className="break-words [overflow-wrap:anywhere]">{draft.people[slot].name} · {draft.people[slot].mbti || "모름"}</dd>
+            <dt className="mt-2 text-xs text-[#756658]">생년월일 · 출생시간</dt><dd className="mt-1 text-xs leading-6">{input.birthDate} ({input.calendarType === "LUNAR" ? "음력" : "양력"}{input.isLeapMonth ? " · 윤달" : ""}) · {precision === "unknown" ? "시간 모름" : precision === "approximate" ? "대략적인 시간대" : "시간 정확"}</dd></div>;
+        })}
         <div><dt className="text-[#756658]">관계 유형</dt><dd>{CATEGORY_LABELS[draft.relationshipType]}</dd></div>
       </dl>
     </section>
@@ -68,7 +73,7 @@ export function CompatibilityReportV3View({ draft, evidencePacket }: { draft: Co
       return <section key={slot} aria-label={`${person.name}님의 원국과 성향`}>
         <h2 className="px-4 pt-6 text-xl font-semibold sm:px-6">{person.role} · {person.name}님의 원국과 성향</h2>
         {manse?.natalEvidence?.precision === "exact" ? <StoryTables facts={facts.filter(f => f.subject === slot && !f.featureId.startsWith("pair:"))} calculation={calculations[slot]} manse={manse} mbti={mbti} draft={usage} compactMbti={hasNarrativeEdition(draft)} detailMbti={hasDetailNarrative(draft)} />
-          : <div className="px-4 py-6 sm:px-6">{manse ? <ManseRyeokCommonTable data={{ ...manse, natalEvidence: undefined }} defaultOpen={false} /> : null}{hasNarrativeEdition(draft) ? <V3NarrativeIdentity data={mbti} detailed={hasDetailNarrative(draft)} /> : <p className="mt-3 text-sm text-[#756658]">출생시간 범위에서 확인된 원국만 표시합니다. MBTI · {person.mbti || "모름"}</p>}</div>}
+          : <div className="px-4 py-6 sm:px-6">{manse ? <ManseRyeokCommonTable data={{ ...(hasDetailNarrative(draft) ? withConsistentNatalMarkers(manse) : manse), natalEvidence: undefined }} defaultOpen={false} /> : null}{hasNarrativeEdition(draft) ? <V3NarrativeIdentity data={mbti} detailed={hasDetailNarrative(draft)} /> : <p className="mt-3 text-sm text-[#756658]">출생시간 범위에서 확인된 원국만 표시합니다. MBTI · {person.mbti || "모름"}</p>}</div>}
       </section>;
     })}
     <div className="mx-auto max-w-[44rem] break-keep px-4 [overflow-wrap:anywhere] sm:px-6">{draft.chapters.slice(1).map(reading)}</div>

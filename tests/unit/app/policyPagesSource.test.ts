@@ -55,7 +55,7 @@ describe("policy page sources", () => {
       "리포트 생성 전에는 결제일로부터 7일 이내 취소 및 환불을 요청할 수 있습니다",
       "회사의 고의 또는 중대한 과실",
       'termsPolicyEffectiveDateKo = "2026년 6월 14일"',
-      "support@dvem.ai",
+      "support@gyeolreport.com",
       "홈으로 돌아가기",
       'href="/"',
     ];
@@ -107,7 +107,7 @@ describe("policy page sources", () => {
       "법정대리인 동의가 필요하며",
       "본 서비스는 건강정보, 질병정보, 정신질환 정보",
       "050-6664-8562",
-      "support@dvem.ai",
+      "support@gyeolreport.com",
       "홈으로 돌아가기",
       'href="/"',
     ];
@@ -158,7 +158,7 @@ describe("policy page sources", () => {
       "미제공, 중복결제, 시스템 오류, 회사 귀책 오류가 확인되는 경우 환불 또는 재제공을 진행합니다",
       "환불 또는 재생성 요청 시 결제일시, 결제금액, 입력한 이름 또는 닉네임, 오류 내용을 함께 보내주세요",
       "050-6664-8562",
-      "support@dvem.ai",
+      "support@gyeolreport.com",
       "홈으로 돌아가기",
       'href="/"',
     ];

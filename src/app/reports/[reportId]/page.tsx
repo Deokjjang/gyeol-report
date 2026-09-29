@@ -1568,5 +1568,12 @@ export default async function ReportResultPage({
     return renderProductPreviewState(state.productPreview);
   }
 
-  return renderGeneratedState(state.result);
+  const content = renderGeneratedState(state.result);
+  if (!state.result.draft) return content;
+  const draft: unknown = state.result.draft;
+  const productSlug = isCompatibilityReportDraft(draft) ? "compatibility"
+    : isLoveMarriageChildReportDraft(draft) ? "love-marriage-child"
+      : isMajorFortuneReportDraft(draft) ? "major-fortune"
+        : isAnnualFortuneReportDraft(draft) ? "annual-fortune" : "saju-mbti-full";
+  return <>{content}<div className="mx-auto w-full max-w-5xl px-4 pb-10"><ReportReentry productSlug={productSlug} /></div></>;
 }

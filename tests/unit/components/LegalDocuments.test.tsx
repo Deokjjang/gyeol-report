@@ -90,7 +90,7 @@ describe("legal document rendering", () => {
     for (const Page of [Business, Privacy, Refund, Footer]) {
       const html = renderToStaticMarkup(<Page />);
       expect(html).toContain('href="tel:050-6664-8562"');
-      expect(html).toContain('href="mailto:support@dvem.ai"');
+      expect(html).toContain('href="mailto:support@gyeolreport.com"');
     }
     for (const Page of [Business, Footer]) {
       const html = renderToStaticMarkup(<Page />);

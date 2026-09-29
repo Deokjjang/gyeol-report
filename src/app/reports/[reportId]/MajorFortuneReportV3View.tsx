@@ -36,7 +36,7 @@ function Section({ section }: { readonly section: MajorFortuneV3Section }) {
 
 export function MajorFortuneReportV3View({ draft, evidencePacket }: { readonly draft: MajorFortuneV3Draft; readonly evidencePacket: MajorFortuneEvidencePacket }) {
   const deep = isDeepMajorFortuneV3Draft(draft), extension = (evidencePacket as MajorFortuneEvidencePacket & { majorFortuneV3?: { facts: readonly Evidence[]; calculation: SajuCalcResult } }).majorFortuneV3;
-  if ((draft.version === "major_fortune_v3.0-editorial.3" || draft.version === "major_fortune_v3.0-editorial.4") && draft.horizon && extension) return <MajorFortuneHorizonView draft={draft} horizon={draft.horizon} evidencePacket={evidencePacket} facts={extension.facts} calculation={extension.calculation} />;
+  if (["major_fortune_v3.0-editorial.3", "major_fortune_v3.0-editorial.4", "major_fortune_v3.0-editorial.5"].includes(draft.version) && draft.horizon && extension) return <MajorFortuneHorizonView draft={draft} horizon={draft.horizon} evidencePacket={evidencePacket} facts={extension.facts} calculation={extension.calculation} />;
   const source = getMbtiSourceByType(evidencePacket.mbtiBasis.type), commonMbti = source ? buildMbtiCommonProfileTableData(source) : undefined;
   const legacyMbti = buildMajorFortuneReportMbtiProfileTableData(evidencePacket), manse = buildCanonicalManseRyeokTableData(evidencePacket, draft.personLabel);
   const usage = { opening: [], sections: [] };

@@ -47,7 +47,7 @@ describe("product pages source", () => {
       "성별",
       "MBTI",
       "050-6664-8562",
-      "support@dvem.ai",
+      "support@gyeolreport.com",
     ];
 
     for (const marker of requiredMarkers) {

@@ -303,3 +303,18 @@ export function buildCanonicalManseRyeokTableData(evidence: unknown, displayName
     label: row.key === "twelveSinsal" ? "십이신살 · 연지 기준" : row.key === "interactions" ? "계산된 원국 합·충" : row.label,
   })) };
 }
+
+/** V3 display projection only. No new detections or invented pillar positions. */
+export function withConsistentNatalMarkers(data: ManseRyeokCommonTableData): ManseRyeokCommonTableData {
+  const natal = data.natalEvidence;
+  if (!natal) return data;
+  return { ...data, detailRows: data.detailRows.map(row => {
+    if (row.key !== "twelveSinsal" && row.key !== "sinsalAndGwiin") return row;
+    const categories = row.key === "twelveSinsal" ? ["twelve_sinsal"] : ["sinsal", "gwiin"];
+    const values = (position: ManseRyeokPillarKey) => [...new Set(natal.features
+      .filter(f => categories.includes(f.category) && f.positions.includes(position))
+      .map(f => `${f.label}${f.basis.includes("일지 기준 십이신살") ? " (일지 기준)" : f.basis.includes("연지 기준 십이신살") ? " (연지 기준)" : ""}`))];
+    return { ...row, label: row.key === "twelveSinsal" ? "십이신살 · 기준별" : row.label,
+      cells: { hour: values("hour"), day: values("day"), month: values("month"), year: values("year") } };
+  }) };
+}

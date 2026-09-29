@@ -14,7 +14,8 @@ it.each(MBTI_TYPES.filter(Boolean))("%s retains all detailed areas; only usage n
   const data = buildMbtiCommonProfileTableData(getMbtiSourceByType(mbti)!);
   const old = renderToStaticMarkup(createElement(MbtiCommonProfileTable, { data }));
   const current = renderToStaticMarkup(createElement(MbtiCommonProfileTable, { data, showUsageNotes: false }));
-  for (const label of ["핵심 요약", "정체성", "강점", "주의점", "가까운 키워드", "먼 키워드", "선호 지표 비교", "기능 서열"]) expect(current).toContain(label);
+  for (const label of ["핵심 요약", "정체성", "강점", "주의점", "성장 전략", "가까운 키워드", "먼 키워드", "선호 지표 비교", "기능 서열"]) expect(current).toContain(label);
+  for (const keyword of [...data.closeKeywords, ...data.farKeywords]) expect(current).toContain(keyword);
   expect(current).not.toContain("리포트 활용 포인트"); expect(old).toContain("리포트 활용 포인트");
   for (const row of data.functionRows) expect(current).toContain(row.code);
   expect(data.reportUsageNotes.length).toBeGreaterThan(0);

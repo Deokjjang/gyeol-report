@@ -92,7 +92,7 @@ describe("post-payment canonical route, mock transport only", () => {
     expect(attention).toContain("확인이 필요합니다");
     expect(attention).not.toContain("준비는 계속됩니다");
     expect(attention).toContain('href="tel:050-6664-8562"');
-    expect(attention).toContain('href="mailto:support@dvem.ai"');
+    expect(attention).toContain('href="mailto:support@gyeolreport.com"');
     expect(attention).toContain("추가 결제는 필요하지 않습니다");
   });
 

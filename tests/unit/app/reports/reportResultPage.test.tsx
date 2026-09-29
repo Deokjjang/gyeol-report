@@ -1310,6 +1310,7 @@ describe("report result page", () => {
 
     const html = await renderPage("report_result_page_test");
     const firstCall = mockGetPaidReportResult.mock.calls[0]?.[0];
+    expect(html.match(/리포트 공유하기/g)).toHaveLength(1);
 
     expect(firstCall?.reportId).toBe("report_result_page_test");
     expect(typeof firstCall?.client).toBe("object");
@@ -1550,6 +1551,8 @@ describe("report result page", () => {
     });
 
     const html = await renderPage("major_fortune_result_test");
+    expect(html.match(/리포트 공유하기/g)).toHaveLength(1);
+    expect(html).toContain("/report/new?product=major-fortune");
 
     expect(html).toContain("대운 리포트");
     expect(html).toContain("덕민님의 戊辰 대운 리포트");
@@ -1578,6 +1581,8 @@ describe("report result page", () => {
     });
 
     const html = await renderPage("annual_fortune_result_test");
+    expect(html.match(/리포트 공유하기/g)).toHaveLength(1);
+    expect(html).toContain("/report/new?product=annual-fortune");
 
     expect(html).toContain("세운 리포트");
     expect(html).toContain("덕민님의 2026년 세운 리포트");

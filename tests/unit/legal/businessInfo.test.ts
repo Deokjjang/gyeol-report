@@ -12,13 +12,13 @@ describe("Gyeol business info", () => {
       postalCode: "22009",
       businessAddressKo:
         "인천광역시 연수구 인천타워대로 185, 10층 1001호 V206",
-      officialContactEmail: "support@dvem.ai",
-      supportContactEmail: "support@dvem.ai",
+      officialContactEmail: "support@gyeolreport.com",
+      supportContactEmail: "support@gyeolreport.com",
       domain: "https://www.gyeolreport.com",
       mailOrderSalesRegistrationNumber: "2026-인천연수구-2118",
       customerServicePhone: "050-6664-8562",
       privacyOfficerName: "장덕민",
-      privacyOfficerEmail: "support@dvem.ai",
+      privacyOfficerEmail: "support@gyeolreport.com",
       hostingProvider: "Vercel Inc.",
     });
     expect("taxTypeKo" in GYEOL_BUSINESS_INFO).toBe(false);

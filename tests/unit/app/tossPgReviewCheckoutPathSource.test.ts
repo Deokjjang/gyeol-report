@@ -117,7 +117,7 @@ describe("Toss PG review checkout path source", () => {
       "2026-인천연수구-2118",
       "고객센터",
       "050-6664-8562",
-      "support@dvem.ai",
+      "support@gyeolreport.com",
       "/terms",
       "/privacy",
       "/refund",

@@ -46,6 +46,7 @@
 .address { margin-top: 8px; font-style: normal; }
 .footer a { color: #57483d; text-underline-offset: 4px; }
 .footer a:hover { color: #7f1d38; text-decoration: underline; }
+.footer a.footerChat, .footer a.footerChat:hover { color: #fff; }
 .footer a:focus-visible { outline: 2px solid #7f1d38; outline-offset: 4px; }
 .footerNav { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 10px; border-top: 1px solid #e4dcd1; padding-top: 8px; }
 .footerNav a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 500; }

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { ReportReentry } from "../../../components/report/ReportReadingFrame";
 import type { ReactNode } from "react";
 
 import {
@@ -665,7 +666,7 @@ export default async function MajorFortunePreviewPage({
   if (fixtureId === "gaon-v3" && snapshotMode === "latest") {
     const result = await createMajorFortuneV3(GAON_MAJOR_FORTUNE_V3_PAYLOAD);
     if (result === null) notFound();
-    return <PreviewShell devStatus="deterministic V3 fixture · gaon-v3"><MajorFortuneReportV3View draft={result.draft} evidencePacket={result.evidencePacket} /></PreviewShell>;
+    return <PreviewShell devStatus="deterministic V3 fixture · gaon-v3"><MajorFortuneReportV3View draft={result.draft} evidencePacket={result.evidencePacket} /><ReportReentry productSlug="major-fortune" /></PreviewShell>;
   }
 
   let fixture;

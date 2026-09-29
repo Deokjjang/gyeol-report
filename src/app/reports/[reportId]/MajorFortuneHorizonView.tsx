@@ -20,7 +20,7 @@ function Chips({ items }: { items: readonly string[] }) {
 export function MajorFortuneHorizonView({ draft, horizon, evidencePacket, facts, calculation }: {
   draft: MajorFortuneV3Draft; horizon: MajorHorizon; evidencePacket: MajorFortuneEvidencePacket; facts: readonly Evidence[]; calculation: SajuCalcResult;
 }) {
-  const outlook = draft.version === "major_fortune_v3.0-editorial.4", futureCount = outlook ? 10 : 6;
+  const outlook = draft.version === "major_fortune_v3.0-editorial.4" || draft.version === "major_fortune_v3.0-editorial.5", futureCount = outlook ? 10 : 6;
   const age = (year: number) => outlook ? draft.editorialYears.find(y => y.year === year)?.ageLabel : undefined;
   const source = getMbtiSourceByType(evidencePacket.mbtiBasis.type), mbti = source ? buildMbtiCommonProfileTableData(source) : undefined;
   const manse = buildCanonicalManseRyeokTableData(evidencePacket, draft.personLabel);

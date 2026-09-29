@@ -15,6 +15,8 @@ export type GyeolBusinessInfo = {
   readonly hostingProvider: string;
 };
 
+const SUPPORT_EMAIL = "support@gyeolreport.com";
+
 export const GYEOL_BUSINESS_INFO = {
   serviceNameKo: "결리포트",
   businessName: "DVEM",
@@ -23,12 +25,12 @@ export const GYEOL_BUSINESS_INFO = {
   postalCode: "22009",
   businessAddressKo:
     "인천광역시 연수구 인천타워대로 185, 10층 1001호 V206",
-  officialContactEmail: "support@dvem.ai",
-  supportContactEmail: "support@dvem.ai",
+  officialContactEmail: SUPPORT_EMAIL,
+  supportContactEmail: SUPPORT_EMAIL,
   domain: "https://www.gyeolreport.com",
   mailOrderSalesRegistrationNumber: "2026-인천연수구-2118",
   customerServicePhone: "050-6664-8562",
   privacyOfficerName: "장덕민",
-  privacyOfficerEmail: "support@dvem.ai",
+  privacyOfficerEmail: SUPPORT_EMAIL,
   hostingProvider: "Vercel Inc.",
 } as const satisfies GyeolBusinessInfo;

@@ -1,7 +1,10 @@
 import { renderToStaticMarkup } from "react-dom/server";
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import BusinessFooter from "../../../src/components/legal/BusinessFooter";
+const route = vi.hoisted(() => ({ pathname: "/" }));
+vi.mock("next/navigation", () => ({ usePathname: () => route.pathname }));
+beforeEach(() => { route.pathname = "/"; });
 
 describe("BusinessFooter", () => {
   it("renders compact required business information", () => {
@@ -19,8 +22,9 @@ describe("BusinessFooter", () => {
       "인천광역시 연수구 인천타워대로 185, 10층 1001호 V206",
       "고객센터",
       "050-6664-8562",
-      "support@dvem.ai",
-      "전화 상담은 제공하지 않습니다. 문의는 support@dvem.ai로 보내주세요.",
+      "support@gyeolreport.com",
+      "전화 상담은 제공하지 않습니다.",
+      "고객 문의는 카카오톡 채널 채팅으로 받고 있습니다.",
     ];
 
     for (const text of expectedText) {
@@ -58,5 +62,23 @@ describe("BusinessFooter", () => {
     for (const value of expectedLinks) {
       expect(html).toContain(value);
     }
+  });
+
+  it.each(["/reports/example", "/reports/example/", "/r/share-token"])("hides footer at paid reading route %s during SSR", pathname => {
+    route.pathname = pathname;
+    expect(renderToStaticMarkup(<BusinessFooter />)).toBe("");
+  });
+  it.each(["/", "/products/major-fortune", "/checkout", "/payment/success", "/terms", "/privacy", "/reports"])("retains footer on general route %s", pathname => {
+    route.pathname = pathname;
+    expect(renderToStaticMarkup(<BusinessFooter />)).toContain("<footer");
+  });
+  it("uses secure plain external links and makes Kakao chat the primary contact", () => {
+    const html = renderToStaticMarkup(<BusinessFooter />);
+    for (const href of ["https://www.instagram.com/gyeolreport/", "http://pf.kakao.com/_sbHaX/chat", "http://pf.kakao.com/_sbHaX"]) {
+      expect(html).toContain(`href="${href}" target="_blank" rel="noopener noreferrer"`);
+    }
+    expect(html.match(/href="http:\/\/pf.kakao.com\/_sbHaX\/chat"/g)).toHaveLength(2);
+    expect(html).toContain("채팅하기"); expect(html).not.toContain("support@dvem.ai");
+    expect(html).not.toContain("<script");
   });
 });

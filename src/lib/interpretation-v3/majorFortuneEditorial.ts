@@ -15,7 +15,7 @@ export type MajorFortuneV3Section = { readonly id: string; readonly title: strin
 export type MajorFortuneV3Year = { readonly year: number; readonly ageLabel: string | null; readonly ganji: string; readonly tenGod: string; readonly phase: "early" | "middle" | "late"; readonly importance: "important" | "standard" | "quiet"; readonly isCurrentYear: boolean; readonly timePosition?: "past" | "current" | "future"; readonly title: string; readonly paragraphs: readonly string[]; readonly evidence: readonly string[] };
 export type MajorFortuneV3Signal = { readonly tone: "growth" | "fortune" | "caution" | "transition" | "preview"; readonly title: string; readonly body: string; readonly evidence: readonly string[] };
 export type MajorFortuneV3Draft = Omit<MajorFortuneReportDraft, "version" | "productVersion"> & {
-  readonly version: typeof MAJOR_FORTUNE_V3_VERSION | typeof LEGACY_MAJOR_FORTUNE_V3_VERSION | "major_fortune_v3.0-editorial.3" | "major_fortune_v3.0-editorial.4"; readonly productVersion: "v3";
+  readonly version: typeof MAJOR_FORTUNE_V3_VERSION | typeof LEGACY_MAJOR_FORTUNE_V3_VERSION | "major_fortune_v3.0-editorial.3" | "major_fortune_v3.0-editorial.4" | "major_fortune_v3.0-editorial.5"; readonly productVersion: "v3";
   readonly horizon?: MajorHorizon; readonly narrativeEdition?: "mbti-library-1" | "mbti-library-2"; readonly narrativeAudit?: readonly NarrativeAudit[]; readonly rhythmWarnings?: readonly string[];
   readonly title: string; readonly inputSummary: readonly { readonly label: string; readonly value: string }[]; readonly chapterTitle: string; readonly opening: readonly string[];
   readonly fortuneSignals?: readonly MajorFortuneV3Signal[]; readonly editorialSections: readonly MajorFortuneV3Section[]; readonly editorialYears: readonly MajorFortuneV3Year[]; readonly nextChapter: readonly string[]; readonly finale: readonly string[];
@@ -23,7 +23,7 @@ export type MajorFortuneV3Draft = Omit<MajorFortuneReportDraft, "version" | "pro
 };
 
 export function isMajorFortuneV3Draft(value: unknown): value is MajorFortuneV3Draft {
-  return !!value && typeof value === "object" && "version" in value && (value.version === MAJOR_FORTUNE_V3_VERSION || value.version === LEGACY_MAJOR_FORTUNE_V3_VERSION || value.version === "major_fortune_v3.0-editorial.3" || value.version === "major_fortune_v3.0-editorial.4") && "productType" in value && value.productType === "major_fortune" && "productVersion" in value && value.productVersion === "v3";
+  return !!value && typeof value === "object" && "version" in value && (value.version === MAJOR_FORTUNE_V3_VERSION || value.version === LEGACY_MAJOR_FORTUNE_V3_VERSION || value.version === "major_fortune_v3.0-editorial.3" || value.version === "major_fortune_v3.0-editorial.4" || value.version === "major_fortune_v3.0-editorial.5") && "productType" in value && value.productType === "major_fortune" && "productVersion" in value && value.productVersion === "v3";
 }
 export function isDeepMajorFortuneV3Draft(value: MajorFortuneV3Draft): boolean { return value.version === MAJOR_FORTUNE_V3_VERSION; }
 
@@ -176,6 +176,6 @@ export function majorFortuneV3CustomerText(draft: MajorFortuneV3Draft): string {
   if (draft.horizon) return [draft.title, ...draft.inputSummary.map(r => `${r.label} · ${r.value}`), `${draft.horizon.from}~${draft.horizon.through}년`,
     ...draft.horizon.transitions.flatMap(t => [t.title, t.dateLabel, `${t.before.ganji} · ${t.before.tenGod} · ${t.before.elements.join("·")} → ${t.after.ganji} · ${t.after.tenGod} · ${t.after.elements.join("·")}`, ...t.paragraphs]),
     ...draft.opening, ...(draft.fortuneSignals ?? []).flatMap(s => [s.title, s.body]), ...draft.editorialSections.flatMap(s => [s.title, ...s.paragraphs]),
-    ...draft.editorialYears.flatMap(y => [`${y.year}년${draft.version === "major_fortune_v3.0-editorial.4" ? ` · ${y.ageLabel}` : ""} ${y.ganji} · ${y.tenGod}`, y.title, ...y.paragraphs]), ...draft.finale].join("\n\n");
+    ...draft.editorialYears.flatMap(y => [`${y.year}년${["major_fortune_v3.0-editorial.4", "major_fortune_v3.0-editorial.5"].includes(draft.version) ? ` · ${y.ageLabel}` : ""} ${y.ganji} · ${y.tenGod}`, y.title, ...y.paragraphs]), ...draft.finale].join("\n\n");
   return [draft.title, draft.chapterTitle, ...draft.opening, ...(draft.fortuneSignals ?? []).flatMap(signal => [signal.title, signal.body]), ...draft.editorialSections.flatMap(section => [section.title, ...section.paragraphs]), ...draft.editorialYears.flatMap(year => [year.title, ...year.paragraphs]), ...draft.nextChapter, ...draft.finale].join("\n\n");
 }

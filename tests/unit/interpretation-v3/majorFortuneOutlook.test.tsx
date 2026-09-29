@@ -3,7 +3,7 @@ import { writeFileSync } from "node:fs";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it } from "vitest";
-import { createMajorFortuneV3, validateMajorFortuneV3 } from "../../../src/lib/report-generation/majorFortuneV3Generation";
+import { createMajorFortuneV3 as generateMajor, validateMajorFortuneV3 } from "../../../src/lib/report-generation/majorFortuneV3Generation";
 import { validateNewProductPublication } from "../../../src/lib/report-generation/productPublishGate";
 import { createProductPreviewSnapshot, isProductPreviewSnapshot } from "../../../src/lib/report-generation/productPreviewSnapshot";
 import { GAON_MAJOR_FORTUNE_V3_PAYLOAD as payload } from "../../../src/lib/interpretation-v3/majorFortuneFixtures";
@@ -14,6 +14,7 @@ import { MBTI_TYPES } from "../../../src/lib/report-generation/reportInputTypes"
 import { careerFixture, CAREER_V3_FIXTURES } from "./careerFixtures";
 
 const now = () => new Date("2026-09-29T03:00:00Z");
+const createMajorFortuneV3 = (payload: unknown, options: Parameters<typeof generateMajor>[1] = {}) => generateMajor(payload, { edition: "legacy-outlook", ...options });
 const hash = (v: unknown) => createHash("sha256").update(JSON.stringify(v)).digest("hex");
 const leaks = /canonical-|sourceRefs|evidenceRefs|customerDayun:|mbti:[A-Z]{4}:|career_shift|money_responsibility|metal|water|undefined|겁재은|정재은|결과이|것으로으로|가능성이 있습니다/;
 
