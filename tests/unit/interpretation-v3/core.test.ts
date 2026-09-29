@@ -215,6 +215,7 @@ describe("V3 isolated common core", () => {
   });
   it("connects explicit V3 version boundaries and has zero provider/network clients in V3", () => {
     const allowed = ["src/lib/report-generation/comprehensiveV3Generation.ts", "src/app/reports/[reportId]/ComprehensiveReportV3View.tsx", "src/app/reports/[reportId]/page.tsx", "src/lib/report-generation/careerV3Generation.ts", "src/app/reports/[reportId]/CareerReportV3View.tsx", "src/lib/report-generation/loveV3Generation.ts", "src/app/reports/[reportId]/LoveReportV3View.tsx", "src/lib/report-generation/productPreviewSnapshot.ts", "src/lib/report-generation/compatibilityV3Generation.ts", "src/app/reports/[reportId]/CompatibilityReportV3View.tsx", "src/lib/report-generation/majorFortuneV3Generation.ts", "src/app/reports/[reportId]/MajorFortuneReportV3View.tsx", "src/app/dev/major-fortune-preview/page.tsx", "src/app/dev/major-fortune-preview/export/route.ts"];
+    allowed.push("src/app/reports/[reportId]/MajorFortuneHorizonView.tsx");
     const files = (dir: string): string[] => readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? files(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []);
     for (const file of files("src")) {
       const source = readFileSync(file, "utf8");

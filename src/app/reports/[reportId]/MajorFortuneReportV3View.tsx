@@ -7,6 +7,7 @@ import type { SajuCalcResult } from "../../../lib/saju/types";
 import { buildCanonicalManseRyeokTableData } from "../../../lib/report-tables/manseRyeokTableData";
 import { buildMajorFortuneReportManseRyeokTableData, buildMajorFortuneReportMbtiProfileTableData, buildMbtiCommonProfileTableData, getMbtiSourceByType } from "../../../lib/report-tables";
 import { StoryTables } from "./ComprehensiveReportV3View";
+import { MajorFortuneHorizonView } from "./MajorFortuneHorizonView";
 
 const sectionClass = "space-y-5 border-t border-[#e5dacb] py-10 first:border-t-0";
 
@@ -35,6 +36,7 @@ function Section({ section }: { readonly section: MajorFortuneV3Section }) {
 
 export function MajorFortuneReportV3View({ draft, evidencePacket }: { readonly draft: MajorFortuneV3Draft; readonly evidencePacket: MajorFortuneEvidencePacket }) {
   const deep = isDeepMajorFortuneV3Draft(draft), extension = (evidencePacket as MajorFortuneEvidencePacket & { majorFortuneV3?: { facts: readonly Evidence[]; calculation: SajuCalcResult } }).majorFortuneV3;
+  if (draft.version === "major_fortune_v3.0-editorial.3" && draft.horizon && extension) return <MajorFortuneHorizonView draft={draft} horizon={draft.horizon} evidencePacket={evidencePacket} facts={extension.facts} calculation={extension.calculation} />;
   const source = getMbtiSourceByType(evidencePacket.mbtiBasis.type), commonMbti = source ? buildMbtiCommonProfileTableData(source) : undefined;
   const legacyMbti = buildMajorFortuneReportMbtiProfileTableData(evidencePacket), manse = buildCanonicalManseRyeokTableData(evidencePacket, draft.personLabel);
   const usage = { opening: [], sections: [] };

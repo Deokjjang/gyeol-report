@@ -5,7 +5,7 @@ import { describe, expect, it } from "vitest";
 import { MajorFortuneReportV3View } from "../../../src/app/reports/[reportId]/MajorFortuneReportV3View";
 import { LEGACY_MAJOR_FORTUNE_V3_VERSION, majorFortuneV3CustomerText } from "../../../src/lib/interpretation-v3/majorFortuneEditorial";
 import type { MajorFortuneEvidencePacket } from "../../../src/lib/report-knowledge/majorFortuneTypes";
-import { createMajorFortuneV3, validateMajorFortuneV3 } from "../../../src/lib/report-generation/majorFortuneV3Generation";
+import { createMajorFortuneV3 as createMajorFortuneEdition, validateMajorFortuneV3 } from "../../../src/lib/report-generation/majorFortuneV3Generation";
 import { validateNewProductPublication } from "../../../src/lib/report-generation/productPublishGate";
 import { buildCanonicalManseRyeokTableData } from "../../../src/lib/report-tables/manseRyeokTableData";
 
@@ -14,6 +14,8 @@ const contexts = [
   ["business_owner", "동네 베이커리 운영", "ESTJ"], ["freelancer", "브랜드 디자이너", "INFP"], ["student", "컴퓨터공학", "ENFP"],
   ["job_seeker", "콘텐츠 마케팅", "INFJ"], ["employee", "공인회계사", "ISTJ"], ["employee", "호텔 고객 서비스", "ESFJ"], ["other", "가족 돌봄과 창작", ""],
 ] as const;
+// Frozen F2 replay coverage. The current rolling edition has its own suite.
+const createMajorFortuneV3 = (input: unknown) => createMajorFortuneEdition(input, { edition: "legacy-depth" });
 
 function payload(jobStatus = "employee", detailJob = "B2B SaaS 영업기획", relationshipStatus = "single", mbtiType = "ENTJ") {
   return { productKey: "major_fortune", productSlug: "major-fortune", person: { name: "가온", birthDate: "1992-08-21", birthTime: "09:30", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType }, userContext: { relationshipStatus, jobStatus, detailJob, focusAreas: [] }, productOptions: { contentVersion: "v3" } };
