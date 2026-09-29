@@ -26,6 +26,7 @@ for (const { id, payload } of COMPATIBILITY_V3_FIXTURES) it(`E2 ${id}: publish /
     if (snapshot.ok) expect(isProductPreviewSnapshot(JSON.parse(JSON.stringify(snapshot.value)))).toBe(true);
     const html = renderToStaticMarkup(createElement(CompatibilityReportV3View, result));
     expect(html).toContain(result.draft.version); expect(html).not.toMatch(internals);
+    expect(html).not.toMatch(/계산 기준|근거 더 보기|전문 근거|천간·지장간의 십성|원국 전체의 파생 근거/u);
     expect(compatibilityV3CustomerText(result.draft)).not.toMatch(forbidden);
     expect(result.draft.chapters).toHaveLength(7);
   }
@@ -125,7 +126,7 @@ it("compacts public chips without extra relations, unknown types or hidden inter
   const opening = compactCompatibilityLabels(r.draft.chapters[0].scenes[0], e.facts, r.draft.people);
   expect(opening).toEqual(["ENTJ × INFJ", "편관↔편재"]);
   const connection = r.draft.chapters.find(c => c.id === "assets")!.scenes.find(s => s.angle === "connection")!;
-  expect(compactCompatibilityLabels(connection, e.facts, r.draft.people)).toEqual(expect.arrayContaining(["酉丑 반합"]));
+  expect(compactCompatibilityLabels(connection, e.facts, r.draft.people)).toEqual(expect.arrayContaining(["반합"]));
   const p = compatibilityFixture();
   for (const personA of [{ ...p.personA, birthTime: "", birthTimeUnknown: true, mbtiType: "" }, { ...p.personA, name: p.personB.name }]) {
     const result = createCompatibilityV3({ ...p, personA })!;

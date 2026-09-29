@@ -23,21 +23,44 @@ const BASIS = ["연지 기준 십이신살", "일지 기준 십이신살", "연�
 const POSITIONS: Readonly<Record<string, string>> = { year: "연주", month: "월주", day: "일주", hour: "시주" };
 export type PublicSignalRow = { readonly label: string; readonly meaning: string; readonly power: string; readonly basis: readonly string[] };
 export type PublicSignalUsage = { readonly opening: readonly { readonly evidenceRefs: readonly string[] }[]; readonly sections: readonly { readonly blocks: readonly { readonly evidenceRefs: readonly string[] }[] }[] };
+
+const PUBLIC_LABEL_ALIASES: Readonly<Record<string, string>> = {
+  도화: "도화살", 홍염: "홍염살", 장성: "장성살", 반안: "반안살",
+  역마: "역마살", 화개: "화개살", 현침: "현침살", 년살: "도화살", 연살: "도화살",
+};
+const PUBLIC_RELATION = /(?:^|[·\s])(?:[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]+[·\s]*)?(육합|삼합|반합|방합|충|형|파|해|원진)(?:\s*\([^)]*\))?$/u;
+
+/** Customer chips keep familiar myeongli names while hiding positional pairs. */
+export function customerEvidenceLabels(labels: readonly string[]): readonly string[] {
+  return unique(labels.flatMap(label => {
+    const value = label.trim();
+    if (!value) return [];
+    const relation = value.match(PUBLIC_RELATION)?.[1];
+    if (relation) return [relation];
+    if (/(?:sourceRefs?|provenance|canonical|backend|debug|v\d+:|원국\s*(?:연지|월지|일지|시지)|대운과|세운과)/iu.test(value)) return [];
+    return [PUBLIC_LABEL_ALIASES[value] ?? value];
+  }));
+}
 /** Presentation only: retain every positional basis and all original evidence. */
 export function groupPublicRelations(rows: readonly PublicSignalRow[]): readonly PublicSignalRow[] {
   const seen = new Set<string>();
   const relation = (label: string) => {
     const positional = label.match(/(?:^|\s)(지지육합|지지삼합|지지반합|지지방합|지지충|지지형|지지파|지지해|천간합|천간충)\s+([甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]+)$/u);
     const compact = label.match(/^([甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]+)\s+(육합|삼합|반합|방합|충|형|파|해|천간합|천간충)$/u);
-    const type = positional?.[1].replace(/^지지/u, "") ?? compact?.[2], letters = positional?.[2] ?? compact?.[1];
-    return type && letters ? { key: `${[...letters].sort().join("")}:${type}`, label: `${letters} ${type}` } : null;
+    const plain = label.match(/^(육합|삼합|반합|방합|충|형|파|해|원진|천간합|천간충)$/u);
+    const type = positional?.[1].replace(/^지지/u, "") ?? compact?.[2] ?? plain?.[1];
+    return type ? { key: type, label: type } : null;
   };
   return rows.flatMap(row => {
-    const current = relation(row.label); if (!current) return [row];
-    if (seen.has(current.key)) return [];
-    seen.add(current.key);
-    const matches = rows.filter(r => relation(r.label)?.key === current.key), basis = unique(matches.flatMap(r => r.basis));
-    return [{ ...row, label: basis.length > 1 ? `${current.label} · 원국 ${basis.length}곳` : current.label, basis }];
+    const normalized = customerEvidenceLabels([row.label])[0] ?? row.label;
+    const current = relation(normalized), key = current?.key ?? normalized;
+    if (seen.has(key)) return [];
+    seen.add(key);
+    const matches = rows.filter(candidate => {
+      const label = customerEvidenceLabels([candidate.label])[0] ?? candidate.label;
+      return (relation(label)?.key ?? label) === key;
+    });
+    return [{ ...row, label: current?.label ?? normalized, basis: unique(matches.flatMap(match => match.basis)) }];
   });
 }
 /** Allowlisted human display DTO: raw IDs/provenance never cross into JSX,
@@ -49,7 +72,7 @@ export function publicSignalRows(facts: readonly Evidence[], calculation: SajuCa
     return { row, index, day: fs.some(f => f.kind === "day_pillar"), used: fs.some(f => used.has(f.id)), support };
   }).toSorted((a, b) => Number(b.day) - Number(a.day) || Number(b.support.substantial) - Number(a.support.substantial) || Number(b.used) - Number(a.used) ||
     (b.support.weight ?? 0) - (a.support.weight ?? 0) || b.support.positions.length - a.support.positions.length || a.index - b.index)
-    .map(({ row }) => ({ label: row.label, meaning: COPY[row.featureId]?.[0] ?? row.meaning,
+    .map(({ row }) => ({ label: customerEvidenceLabels([row.label])[0] ?? row.label, meaning: COPY[row.featureId]?.[0] ?? row.meaning,
       power: COPY[row.featureId]?.[1] ?? (row.power === "확인된 위치와 함께 읽는 성향의 단서" ? SAJU_DAY_PILLAR_BY_ID.get(row.featureId)?.coreKeywords.join(" · ") ?? row.power : row.power),
       basis: unique(row.details.map(d => {
         const basis = BASIS.find(s => d.basis.includes(s)) ?? (d.weight !== undefined ? "천간·지장간의 십성" : row.featureId.startsWith("structure:") ? "원국 기운의 분포" : row.featureId.includes("CLASH") || row.featureId.includes("COMBINATION") ? "원국 글자의 합·충" : row.featureId.startsWith("day_pillar_") ? "일간과 일지" : "원국 표식의 배치");

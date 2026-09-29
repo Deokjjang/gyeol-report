@@ -13,6 +13,7 @@ import { PAIR_SLOTS, type PairCalculations } from "../../../lib/interpretation-v
 import { factLabel } from "../../../lib/interpretation-v3/comprehensiveStoryEvidence";
 import type { EditorialScene } from "../../../lib/interpretation-v3/editorialComposer";
 import type { Evidence } from "../../../lib/interpretation-v3/types";
+import { customerEvidenceLabels } from "../../../lib/interpretation-v3/comprehensivePublicSignals";
 import { StoryTables } from "./ComprehensiveReportV3View";
 
 function PairReading({ scene, final, labels }: { scene: EditorialScene; final: boolean; labels: readonly string[] }) {
@@ -43,10 +44,11 @@ export function CompatibilityReportV3View({ draft, evidencePacket }: { draft: Co
   const reading = (chapter: CompatibilityV3Draft["chapters"][number]) => <section id={`pair-${chapter.id}`} tabIndex={-1} key={chapter.id} data-reading-section className="space-y-8">
     <h2 className="text-2xl font-semibold">{chapter.title}</h2>
     <div className="space-y-10">{chapter.scenes.map((scene, i) => {
-      const labels = publicLabels.get(scene.id) ?? [...new Set(facts.filter(f => scene.evidenceRefs.includes(f.id)).map(f => {
+      const labels = publicLabels.get(scene.id) ?? customerEvidenceLabels(facts.filter(f => scene.evidenceRefs.includes(f.id)).map(f => {
         const label = f.featureId.startsWith("pair:") && f.value && typeof f.value === "object" && "label" in f.value ? String(f.value.label) : factLabel(f);
-        return `${f.subject === "personB" ? draft.people.personB.name : draft.people.personA.name} · ${label}`;
-      }))];
+        const publicLabel = customerEvidenceLabels([label])[0];
+        return publicLabel ? `${f.subject === "personB" ? draft.people.personB.name : draft.people.personA.name} · ${publicLabel}` : "";
+      }));
       return <PairReading key={i} scene={scene} final={chapter.id === "ending"} labels={labels} />;
     })}</div>
   </section>;

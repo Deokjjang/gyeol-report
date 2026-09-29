@@ -67,7 +67,9 @@ it("Gaon redistributes actual heroes and preserves distinct, unadvised manifesta
   for (const [angle, feature] of [["first-attraction", "ten_god_zheng_guan"], ["affection-method", "ten_god_shi_shen"], ["affection-method", "day_pillar_jeongchuk"], ["overuse", "ten_god_zheng_guan"], ["solitude-depth", "twelve_sinsal_hwagae"]]) expect(scenes.find(s => s.angle === angle)!.evidenceRefs).toContain(r.evidencePacket.loveV3.facts.find(f => f.featureId === feature)!.id);
   const text = loveV3CustomerText(r.draft);
   for (const phrase of ["유니폼", "친구는", "자막", "생활지도", "솔루션 센터", "달력", "작품 완성도", "사람복", "쉽게 꺼지지 않는 애정", "같은 편인 사람 앞에서는, 매번 이길 필요가 없습니다."]) expect(text).toContain(phrase);
-  const html = renderToStaticMarkup(createElement(LoveReportV3View, r)); expect(html).toContain("子丑 육합"); expect(html).toContain("巳亥 충");
+  const html = renderToStaticMarkup(createElement(LoveReportV3View, r)); expect(html).toContain("육합"); expect(html).toContain("충");
+  expect(html).not.toMatch(/[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]{2,4}\s+(?:육합|삼합|반합|충|형|파|해|원진)/u);
+  expect(html).not.toMatch(/계산 기준|근거 더 보기|전문 근거|천간·지장간의 십성|원국 전체의 파생 근거/u);
   expect(new Set(scenes.filter(s => s.parts.every(p => p.role === "character")).map(s => s.chapter)).size).toBe(9);
 });
 

@@ -6,6 +6,7 @@ import { composeEditorial, type EditorialScene } from "./editorialComposer";
 import type { CompatibilityRelationshipType as Category } from "../report-generation/reportInputTypes";
 import type { Evidence } from "./types";
 import { factLabel } from "./comprehensiveStoryEvidence";
+import { customerEvidenceLabels } from "./comprehensivePublicSignals";
 
 type PairEvidence = ReturnType<typeof compatibilityEditorialEvidence>;
 
@@ -160,7 +161,7 @@ export function compactCompatibilityLabels(scene: EditorialScene, facts: readonl
     if (!f.featureId.startsWith("pair:")) { labels.push(factLabel(f)); continue; }
     const detail = (f.value as { detail?: { kind?: string; refs?: readonly { branch: string }[] } } | undefined)?.detail;
     const kind = detail?.kind && ({ six_harmony: "육합", three_harmony: "삼합", half_harmony: "반합", clash: "충", harm: "해" } as Record<string, string>)[detail.kind];
-    if (kind && detail?.refs) labels.push(`${[...new Set(detail.refs.map(r => r.branch))].join("")} ${kind}`);
+    if (kind && detail?.refs) labels.push(kind);
   }
-  return [...new Set(labels)];
+  return [...customerEvidenceLabels(labels)];
 }

@@ -45,7 +45,13 @@ describe("Annual V3 generation, publication and reading", () => {
     expect(draft.inputSummary).toContainEqual({ label: input.userContext.jobStatus === "student" ? "관심 분야" : "현재 직업", value: input.userContext.detailJob });
     const html = renderToStaticMarkup(createElement(AnnualFortuneReportV3View, { ...result, now }));
     expect(html).toContain("data-story-tables"); expect(html).toContain("data-story-signals");
-    expect(html.match(/data-current-jie="true"/g)).toHaveLength(1);
+    expect(html.match(/data-current-month="true"/g)).toHaveLength(1);
+    expect(html.match(/data-month-story/g)).toHaveLength(12);
+    expect(html.match(/id="annual-month-9"/g)).toHaveLength(1);
+    expect(evidencePacket.calendarMonths?.find(month => month.month === 9)?.segments.length).toBeGreaterThanOrEqual(2);
+    expect(copy(html)).toContain("9월 · 지금"); expect(copy(html)).toMatch(/월초|이번 달 초/u);
+    expect(html).not.toMatch(/계산 기준|근거 더 보기|관계·절입 기준|같은 달의 다른 구간|\d{2}:\d{2}:\d{2}/u);
+    expect(html).not.toMatch(/[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]{2,4}\s+(?:육합|삼합|반합|충|형|파|해|원진)/u);
     expect(copy(html)).not.toMatch(/리포트 활용 포인트|evidenceId|sourceRefs|unsupported|backend|debug|metal|water|\d+\s*점|[SABC][+-]?\s*등급|겁재은|정재은|결과이(?:\s|[,.])/iu);
     expect(html).not.toMatch(/sourceRefs|narrativeAudit|natal\.day|month-v2:|NO_VERIFIED|SHINSAL_RULES/);
     if (id === "gaon") {

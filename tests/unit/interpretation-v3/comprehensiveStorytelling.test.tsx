@@ -84,7 +84,7 @@ it.each(COMPREHENSIVE_V3_FIXTURES)("%s V3.2 generation, source/style/variety, ol
   const html = renderToStaticMarkup(createElement(ComprehensiveReportV3View, { draft, evidencePacket: r.evidencePacket }));
   expect(html.indexOf("리포트 목차")).toBeLessThan(html.indexOf("계산된 원국과 성향"));
   expect(html.indexOf("내 명리에 있는 주요 기운")).toBeLessThan(html.indexOf("대담한 통솔자") < 0 ? Infinity : html.indexOf("대담한 통솔자"));
-  expect(html).not.toContain("계산 기준 자세히 보기"); expect(html).not.toContain("data-v31-elements"); expect(html).not.toContain("data-story-elements"); // inside collapsed Manse client slot
+  expect(html).not.toMatch(/계산 기준|근거 더 보기|전문 근거|천간·지장간의 십성|원국 전체의 파생 근거/u); expect(html).not.toContain("data-v31-elements"); expect(html).not.toContain("data-story-elements"); // inside collapsed Manse client slot
   expect(html.match(/aria-expanded="false"/g)).toHaveLength(payload.person.mbtiType ? 2 : 1);
   const trace = storySelectionTrace(input, comprehensiveCandidates(facts, true), draft);
   expect(trace.filter(t => t.prominence === "supporting" && t.sections.length)).toEqual([]);

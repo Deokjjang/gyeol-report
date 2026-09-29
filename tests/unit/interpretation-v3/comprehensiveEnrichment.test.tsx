@@ -96,11 +96,11 @@ it.each(COMPREHENSIVE_V3_FIXTURES)("%s enriched: sources, prose, density, SSR an
   const html = renderToStaticMarkup(createElement(ComprehensiveReportV3View, { draft, evidencePacket: packet }));
   expect(html).not.toContain("리포트를 준비하고 있습니다");
   expect(html.match(/aria-expanded="false"/g)).toHaveLength(payload.person.mbtiType ? 2 : 1);
-  expect(html.indexOf("data-v31-elements")).toBeLessThan(html.indexOf('id="v3-core"'));
+  expect(html.indexOf("data-story-tables")).toBeLessThan(html.indexOf('id="v3-core"'));
   expect(html).not.toContain("전체 원국 표식과 해석 근거");
   expect(html).not.toContain("오행 · 전체 원국 표식 · 합충형파해");
-  expect(html.match(/data-v31-integrated/g)).toHaveLength(1);
-  expect(html).toContain("계산 기준 자세히 보기");
+  expect(html).not.toContain("data-v31-integrated");
+  expect(html).not.toMatch(/계산 기준|근거 더 보기|전문 근거|천간·지장간의 십성/u);
   expect(html).not.toMatch(/<details[^>]*\sopen(?:[=>\s])/);
   if (process.env.V31_REVIEW_OUTPUT === "1") {
     writeFileSync("/tmp/gyeol-v31-after-" + id + ".json", JSON.stringify(result));

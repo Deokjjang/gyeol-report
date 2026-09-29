@@ -8,13 +8,15 @@ import type { MajorFortuneEvidencePacket } from "../../../lib/report-knowledge/m
 import { buildCanonicalManseRyeokTableData } from "../../../lib/report-tables/manseRyeokTableData";
 import { buildMbtiCommonProfileTableData, getMbtiSourceByType } from "../../../lib/report-tables";
 import { StoryTables } from "./ComprehensiveReportV3View";
+import { customerEvidenceLabels } from "../../../lib/interpretation-v3/comprehensivePublicSignals";
 
 const prose = "break-keep text-[15px] leading-8 text-[#443931] [overflow-wrap:anywhere] sm:text-base";
 function Cycle({ cycle, label }: { cycle: HorizonCycle; label: string }) {
   return <div className="min-w-0 space-y-2"><p className="text-xs text-[#756658]">{label}</p><p className="text-2xl font-semibold text-[#6f1d35]">{cycle.ganji}</p><p className="text-sm text-[#756658]">{cycle.tenGod} · {cycle.elements.join("·")}</p><p className="break-keep text-base font-medium [overflow-wrap:anywhere]">{cycle.theme}</p></div>;
 }
 function Chips({ items }: { items: readonly string[] }) {
-  return <p aria-label="해석 근거" className="mt-4 flex flex-wrap gap-2 text-xs text-[#756658]">{items.map(item => <span key={item} className="rounded-full border border-[#ded2c2] px-2 py-1">{item}</span>)}</p>;
+  const labels = customerEvidenceLabels(items).slice(0, 3);
+  return labels.length ? <p aria-label="해석 근거" className="mt-4 flex flex-wrap gap-2 text-xs text-[#756658]">{labels.map(item => <span key={item} className="rounded-full border border-[#ded2c2] px-2 py-1">{item}</span>)}</p> : null;
 }
 
 export function MajorFortuneHorizonView({ draft, horizon, evidencePacket, facts, calculation }: {

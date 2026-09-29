@@ -6,7 +6,7 @@ import { buildMbtiCommonProfileTableData, getMbtiSourceByType } from "../../../s
 import { createCareerV3, validateCareerV3 } from "../../../src/lib/report-generation/careerV3Generation";
 import { CareerReportV3View } from "../../../src/app/reports/[reportId]/CareerReportV3View";
 import { careerFixture, CAREER_V3_FIXTURES } from "./careerFixtures";
-import { groupPublicRelations, publicSignalRows } from "../../../src/lib/interpretation-v3/comprehensivePublicSignals";
+import { customerEvidenceLabels, groupPublicRelations, publicSignalRows } from "../../../src/lib/interpretation-v3/comprehensivePublicSignals";
 import { MBTI_TYPES } from "../../../src/lib/report-generation/reportInputTypes";
 import EditorialPreview from "../../../src/app/dev/v3-editorial-preview/page";
 
@@ -39,12 +39,24 @@ it.each(["comprehensive", "career", "love", "compatibility"])("%s preview restor
 it("groups positional relation rows in the display only, retaining every basis", () => {
   const rows = ["연주·일주", "연주·시주", "월주·일주", "월주·시주"].map(position => ({ label: "巳申 육합", meaning: "연결", power: "협력", basis: [position] }));
   const original = JSON.stringify(rows), grouped = groupPublicRelations(rows);
-  expect(grouped).toHaveLength(1); expect(grouped[0].label).toBe("巳申 육합 · 원국 4곳");
+  expect(grouped).toHaveLength(1); expect(grouped[0].label).toBe("육합");
   expect(grouped[0].basis).toEqual(rows.flatMap(r => r.basis)); expect(JSON.stringify(rows)).toBe(original);
   const { payload } = careerFixture(CAREER_V3_FIXTURES[0]), r = createCareerV3({ ...payload, person: { ...payload.person, birthDate: "1992-08-21", birthTime: "09:30" } })!;
   const { facts, calculation } = r.evidencePacket.careerV3, before = JSON.stringify(facts);
   const real = publicSignalRows(facts, calculation, { opening: [], sections: [] });
   expect([...new Set(groupPublicRelations(real).flatMap(r => r.basis))].sort()).toEqual([...new Set(real.flatMap(r => r.basis))].sort());
-  expect(groupPublicRelations(real).find(r => r.label === "巳申 육합 · 원국 4곳")?.basis).toHaveLength(4);
+  expect(groupPublicRelations(real).find(r => r.label === "육합")?.basis).toHaveLength(4);
   expect(JSON.stringify(facts)).toBe(before);
+});
+
+it("normalizes duplicate public names and relation pairs without changing internal evidence", () => {
+  expect(customerEvidenceLabels(["화개", "화개살", "년살", "도화살", "원국 연지·월지와 寅·申 충", "辛亥 대운과 寅·亥 육합", "卯申 원진", "v2:monthly:debug"])).toEqual(["화개살", "도화살", "충", "육합", "원진"]);
+  const rows = groupPublicRelations([
+    { label: "화개", meaning: "깊이", power: "몰입", basis: ["연지"] },
+    { label: "화개살", meaning: "깊이", power: "몰입", basis: ["일지"] },
+    { label: "년살", meaning: "시선", power: "매력", basis: ["연지"] },
+    { label: "도화살", meaning: "시선", power: "매력", basis: ["일지"] },
+  ]);
+  expect(rows.map(row => row.label)).toEqual(["화개살", "도화살"]);
+  expect(rows.map(row => row.basis)).toEqual([["연지", "일지"], ["연지", "일지"]]);
 });

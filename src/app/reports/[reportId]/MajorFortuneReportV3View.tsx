@@ -8,11 +8,13 @@ import { buildCanonicalManseRyeokTableData } from "../../../lib/report-tables/ma
 import { buildMajorFortuneReportManseRyeokTableData, buildMajorFortuneReportMbtiProfileTableData, buildMbtiCommonProfileTableData, getMbtiSourceByType } from "../../../lib/report-tables";
 import { StoryTables } from "./ComprehensiveReportV3View";
 import { MajorFortuneHorizonView } from "./MajorFortuneHorizonView";
+import { customerEvidenceLabels } from "../../../lib/interpretation-v3/comprehensivePublicSignals";
 
 const sectionClass = "space-y-5 border-t border-[#e5dacb] py-10 first:border-t-0";
 
 function EvidenceChips({ labels }: { readonly labels: readonly string[] }) {
-  return <div className="flex flex-wrap gap-1.5 pt-1" aria-label="해석 근거">{labels.map(label => <span key={label} className="rounded-full border border-[#ded2c2] bg-[#fffaf1] px-2.5 py-1 text-[11px] text-[#756658]">{label}</span>)}</div>;
+  const publicLabels = customerEvidenceLabels(labels).slice(0, 3);
+  return publicLabels.length ? <div className="flex flex-wrap gap-1.5 pt-1" aria-label="해석 근거">{publicLabels.map(label => <span key={label} className="rounded-full border border-[#ded2c2] bg-[#fffaf1] px-2.5 py-1 text-[11px] text-[#756658]">{label}</span>)}</div> : null;
 }
 
 function Section({ section }: { readonly section: MajorFortuneV3Section }) {

@@ -55,6 +55,7 @@ it("Gaon retains all 14 ages and exact 2028 boundary with varied relation scenes
   for (const y of result.draft.editorialYears) expect(html).toContain(`${y.year}년 · ${y.ageLabel}`);
   expect(result.draft.horizon!.transitions[0].startSolarKst).toContain("2028-06-04");
   expect(html).not.toMatch(/sourceRefs|evidenceRefs|mbti:[A-Z]{4}:|보완과 연결/);
+  expect(html).not.toMatch(/계산 기준|근거 더 보기|전문 근거|천간·지장간의 십성|원국 전체의 파생 근거/u);
   if (process.env.F5_REVIEW_OUTPUT === "1") writeFileSync("/tmp/gyeol-major-f5-gaon.txt", majorFortuneV3CustomerText(result.draft));
 });
 
