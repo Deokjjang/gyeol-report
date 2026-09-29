@@ -46,6 +46,11 @@ it.each(products)("%s generate → publish → saved paid route → exactly one 
   expect(html).not.toContain("<footer");
   expect(html.indexOf('aria-label="공유와 다음 리포트"')).toBeGreaterThan(html.lastIndexOf("</article>"));
   expect(html).toContain(`/report/new?product=${productSlug}`);
-  if (productKey !== "annual_fortune") expect(html).toContain("data-mbti-detail");
+  expect(html).toContain("data-mbti-detail");
+  if (productKey === "annual_fortune") {
+    expect(html).toContain('data-report-version="annual_fortune_v3.0-editorial.1"');
+    expect(html.match(/data-month-position=/g)).toHaveLength(12);
+    expect(html).not.toMatch(/sourceRefs|narrativeAudit|month-v2:/);
+  }
   expect(getPaidReportResult).not.toHaveBeenCalled(); expect(fetch).not.toHaveBeenCalled();
 });

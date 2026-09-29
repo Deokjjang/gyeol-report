@@ -384,6 +384,8 @@ async function createProductPreviewResponse(
     ? await generateProductReport(json, writer, "deterministic_fallback", undefined, { loveVersion: "v3" })
     : json.productKey === "major_fortune" && getRecordField(json, "productOptions")?.contentVersion === "v3"
     ? await generateProductReport(json, writer, "deterministic_fallback", undefined, { majorFortuneVersion: "v3" })
+    : json.productKey === "annual_fortune" && getRecordField(json, "productOptions")?.contentVersion === "v3"
+    ? await generateProductReport(json, writer, "deterministic_fallback", undefined, { annualVersion: "v3" })
     : await generateProductReport(json, writer, writer.enabled ? "normal_writer" : "deterministic_fallback");
   const generationDiagnostic = () => createSafeLocalReportDiagnostic({
     result: generationResult,

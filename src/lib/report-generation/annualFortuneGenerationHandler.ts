@@ -218,7 +218,7 @@ function getSelectedYear(
   return selectedYear;
 }
 
-function calculateAnnualFortuneSaju(
+export function calculateAnnualFortuneSaju(
   person: SinglePersonGenerationInput["person"],
 ): SajuCalcResult {
   const birthTime = person.birthTime.trim();

@@ -66,6 +66,9 @@ import type {
 } from "../../../lib/report-knowledge/majorFortuneTypes";
 import { getSajuBranchSymbolEntry } from "../../../lib/report-knowledge/sajuBranchSymbolKnowledge";
 import { AnnualFortuneReportView } from "./AnnualFortuneReportView";
+import { AnnualFortuneReportV3View } from "./AnnualFortuneReportV3View";
+import { isAnnualV3Draft, type AnnualV3Draft } from "../../../lib/interpretation-v3/annualEditorial";
+import type { AnnualV3Evidence } from "../../../lib/report-generation/annualV3Generation";
 import { CareerReportView } from "./CareerReportView";
 import { CareerReportV3View } from "./CareerReportV3View";
 import { LoveReportV3View } from "./LoveReportV3View";
@@ -615,15 +618,15 @@ function getMajorFortuneEvidencePacket(
 
 function isAnnualFortuneReportDraft(
   value: unknown,
-): value is AnnualFortuneReportDraft {
+): value is AnnualFortuneReportDraft | AnnualV3Draft {
   if (!isRecord(value)) {
     return false;
   }
 
   return (
-    value.version === "v1" &&
+    (value.version === "v1" || isAnnualV3Draft(value)) &&
     value.productType === "annual_fortune" &&
-    value.productVersion === "v1" &&
+    (value.productVersion === "v1" || isAnnualV3Draft(value)) &&
     typeof value.personLabel === "string" &&
     typeof value.openingTitle === "string" &&
     typeof value.openingSummary === "string" &&
@@ -812,6 +815,10 @@ function getMajorFortunePreviewEvidencePacket(
 function renderProductPreviewAnnualFortuneState(
   productPreview: ProductPreviewSnapshot,
 ) {
+  if (isAnnualV3Draft(productPreview.draft)) {
+    const packet = getAnnualFortunePreviewEvidencePacket(productPreview) as AnnualV3Evidence | undefined;
+    return packet?.annualV3 ? <AnnualFortuneReportV3View draft={productPreview.draft} evidencePacket={packet} /> : renderInvalidSnapshotState();
+  }
   if (!isAnnualFortuneReportDraft(productPreview.draft)) {
     return renderInvalidSnapshotState();
   }
@@ -906,8 +913,12 @@ function renderGeneratedMajorFortuneState(
 
 function renderGeneratedAnnualFortuneState(
   result: PaidReportResult,
-  draft: AnnualFortuneReportDraft,
+  draft: AnnualFortuneReportDraft | AnnualV3Draft,
 ) {
+  if (isAnnualV3Draft(draft)) {
+    const packet = (draft as AnnualV3Draft & { evidencePacket?: AnnualV3Evidence }).evidencePacket;
+    return packet?.annualV3 ? <AnnualFortuneReportV3View draft={draft} evidencePacket={packet} /> : renderInvalidSnapshotState();
+  }
   return (
     <AnnualFortuneReportView
       draft={draft}

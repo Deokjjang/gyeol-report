@@ -4,6 +4,7 @@ import { createCareerV3 } from "./careerV3Generation";
 import { createLoveV3 } from "./loveV3Generation";
 import { createCompatibilityV3 } from "./compatibilityV3Generation";
 import { createMajorFortuneV3 } from "./majorFortuneV3Generation";
+import { createAnnualV3 } from "./annualV3Generation";
 import { getAnnualPurchasePolicyDate, type AnnualCommerceAcceptance } from "../payment/annualPurchasePolicy";
 import { prepareProductGenerationFromPayload, type ProductGenerationResult } from "./productGenerationDispatcher";
 import type { ReportWriterRuntime } from "./reportWriterRuntime";
@@ -14,7 +15,7 @@ import { deliveryIssueCodes, settlePaidWriterDraft, type DeliveryAudit } from ".
 
 // writer_regeneration is retained for old callers, but no longer buys another call.
 export type GenerationStrategy = "normal_writer" | "writer_regeneration" | "deterministic_fallback";
-export async function generateProductReport(payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance, options: { readonly comprehensiveVersion?: "v2" | "v3"; readonly careerVersion?: "v3"; readonly loveVersion?: "v3"; readonly majorFortuneVersion?: "v3" } = {}): Promise<ProductGenerationResult> {
+export async function generateProductReport(payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance, options: { readonly comprehensiveVersion?: "v2" | "v3"; readonly careerVersion?: "v3"; readonly loveVersion?: "v3"; readonly majorFortuneVersion?: "v3"; readonly annualVersion?: "v3" } = {}): Promise<ProductGenerationResult> {
   const audit: DeliveryAudit = { version: "paid-one-call-v1", preflight: "fail", writerValidation: "not_run", rescueKinds: [], fallbackUsed: false, publish: "fail", failureCode: null, issues: [] };
   const budget: WriterCallBudget = { limit: strategy === "normal_writer" ? 1 : 0, calls: [] };
   const fail = (code: string, issues: readonly string[] = []): ProductGenerationResult => {
@@ -24,6 +25,17 @@ export async function generateProductReport(payload: unknown, runtime: ReportWri
   const purchaseDate = annualAcceptance === undefined ? undefined : getAnnualPurchasePolicyDate(annualAcceptance, payload);
   if (purchaseDate === null) return fail("ANNUAL_PURCHASE_CONTEXT_INVALID");
   const product = isRecord(payload) ? String(payload.productKey) : "";
+  const annualV3Requested = options.annualVersion === "v3" || (isRecord(payload) && isRecord(payload.productOptions) && payload.productOptions.contentVersion === "v3");
+  if (product === "annual_fortune" && annualV3Requested) {
+    try {
+      const v3 = await createAnnualV3(payload, { ...(purchaseDate ? { policyDate: purchaseDate } : {}) });
+      if (!v3) return fail("ANNUAL_V3_PREPARATION_FAILED");
+      const check = validateNewProductPublication(product, v3.draft, v3.evidencePacket, payload);
+      if (!check.ok) return fail("ANNUAL_V3_PUBLICATION_FAILED", check.errors);
+      audit.preflight = "pass"; audit.publish = "pass";
+      return { ok: true, kind: "annualFortune", ...v3, externalCalls: [], delivery: audit };
+    } catch { return fail("ANNUAL_V3_PREPARATION_FAILED"); }
+  }
   // Only newly versioned inputs fix A/B roles. Old inputs keep their frozen
   // contract. A bad/new role version fails closed, never enters a writer.
   if (product === "saju_mbti_compatibility" && isRecord(payload) && payload.compatibilityRoleVersion !== undefined) {

@@ -450,6 +450,7 @@ function createSingleProductOptions(
   if (productKey === ANNUAL_FORTUNE_PRODUCT_KEY) {
     return {
       selectedYear: input.selectedYear.trim(),
+      contentVersion: "v3",
     };
   }
 

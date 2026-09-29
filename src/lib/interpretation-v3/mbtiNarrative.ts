@@ -22,6 +22,7 @@ export type TraitRequest = {
   product: Product; domain: Domain; section: string; mbti: string;
   selectedSignals: readonly Evidence[]; context?: { lifeStatus?: string; relationshipStatus?: string; category?: string };
   used?: ReadonlySet<string>;
+  fullLibrary?: boolean;
 };
 export type NarrativeTrait = {
   id: string; evidenceId: string; sourceRefs: readonly string[]; area: MbtiTraitArea;
@@ -45,7 +46,7 @@ export function selectNarrativeTraits(request: TraitRequest): readonly Narrative
     areas = category === "love" || category === "marriage" ? ["love", "communication", "relationships"]
       : category === "businessPartner" || category === "managerReport" || category === "coworker" ? ["workplace", "communication", "thinkingStyle"] : ["relationships", "communication"];
   }
-  return getMbtiProductTraits(request.mbti, productLibrary[request.product]).flatMap(({ area, trait, evidenceId }) => {
+  return getMbtiProductTraits(request.mbti, request.fullLibrary ? "generalReport" : productLibrary[request.product]).flatMap(({ area, trait, evidenceId }) => {
     if (!areas.includes(area) || !trait.id || !trait.strongLine || request.used?.has(evidenceId) || validateStoryCopy(trait.strongLine).length) return [];
     // Source-only analytical notation and extreme claims are not customer copy.
     if (/입력값|알고리즘|엔진|무자비|찢고|독재|반드시|무조건|\b(?:Te|Ti|Fe|Fi|Ne|Ni|Se|Si)\b/.test(trait.strongLine)) return [];
