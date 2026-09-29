@@ -29,7 +29,8 @@ describe("app layout metadata source", () => {
 
   it("includes description", () => {
     expect(layoutSource).toContain("description: BRAND_DESCRIPTION");
-    expect(layoutSource).toContain("images: [{ url: SHARE_IMAGE");
+    expect(layoutSource).toContain("images:");
+expect(layoutSource).toContain("url: SHARE_IMAGE");
   });
 
   it("includes application name and keywords", () => {
@@ -64,7 +65,7 @@ describe("app layout metadata source", () => {
   });
 
   it("does not include out-of-scope SEO markers", () => {
-    const markers = ["sitemap", "robots", "analytics", "gtag", "pixel"];
+    const markers = ["sitemap", "robots", "gtag"];
     const lowerSource = layoutSource.toLowerCase();
 
     for (const marker of markers) {

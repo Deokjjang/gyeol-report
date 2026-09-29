@@ -95,7 +95,7 @@ describe("Toss payment success page", () => {
       "confirmPaidReport",
       "createPaidReportReliabilityStore",
       "requiredPaymentAmount = 1290",
-      "redirect(`/reports/${finalState.redirectReportId}`)",
+      "redirect(`/reports/${finalState.redirectReportId}?purchase=1`)",
       paidGenerationFailureMessageSourceMarker(),
     ];
     const blockedMarkers = [
