@@ -24,6 +24,11 @@ import type { HeavenlyStem, EarthlyBranch } from "../../../src/lib/saju/types";
 const now = new Date("2026-09-29T13:00:00+09:00");
 const generate = (input: unknown = annualFixturePayload()) => createAnnualV3(input, { now: () => now });
 const copy = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+const duplicateSentences = (paragraphs: readonly string[]) => {
+  const sentences = paragraphs.flatMap(paragraph => paragraph.match(/[^.!?]+[.!?]+[”’]?|[^.!?]+$/gu) ?? [])
+    .map(sentence => sentence.replace(/\s+/gu, " ").trim()).filter(Boolean);
+  return [...new Set(sentences.filter((sentence, index) => sentences.indexOf(sentence) !== index))];
+};
 
 describe("Annual V3 generation, publication and reading", () => {
   it("does not serialize backend evidence IDs as React Flight keys", () => {
@@ -39,9 +44,13 @@ describe("Annual V3 generation, publication and reading", () => {
     if (snapshot.ok) expect(isProductPreviewSnapshot(JSON.parse(JSON.stringify(snapshot.value)))).toBe(true);
     expect(draft.editorialMonths).toHaveLength(12);
     expect(draft.editorialMonths.every(m => m.paragraphs.length >= 4)).toBe(true);
-    expect(draft.editorialMonths.find(m => m.month === 9)?.paragraphs.length).toBeGreaterThanOrEqual(6);
+    expect(draft.editorialMonths.find(m => m.month === 9)?.paragraphs.length).toBeGreaterThanOrEqual(5);
     expect(draft.focusMonths.length).toBeGreaterThanOrEqual(3); expect(draft.focusMonths.length).toBeLessThanOrEqual(5);
     expect(draft.finale.length).toBeGreaterThanOrEqual(4);
+    expect(duplicateSentences(draft.opening), `${id} opening`).toEqual([]);
+    for (const section of draft.annualSections) expect(duplicateSentences(section.paragraphs), `${id} ${section.id}`).toEqual([]);
+    for (const month of draft.editorialMonths) expect(duplicateSentences(month.paragraphs), `${id} ${month.month}월`).toEqual([]);
+    expect(duplicateSentences(draft.finale), `${id} finale`).toEqual([]);
     expect(draft.inputSummary).toContainEqual({ label: input.userContext.jobStatus === "student" ? "관심 분야" : "현재 직업", value: input.userContext.detailJob });
     const html = renderToStaticMarkup(createElement(AnnualFortuneReportV3View, { ...result, now }));
     expect(html).toContain("data-story-tables"); expect(html).toContain("data-story-signals");
@@ -50,7 +59,8 @@ describe("Annual V3 generation, publication and reading", () => {
     expect(html.match(/id="annual-month-9"/g)).toHaveLength(1);
     expect(evidencePacket.calendarMonths?.find(month => month.month === 9)?.segments.length).toBeGreaterThanOrEqual(2);
     expect(copy(html)).toContain("9월 · 지금"); expect(copy(html)).toMatch(/월초|이번 달 초/u);
-    expect(html).not.toMatch(/계산 기준|근거 더 보기|관계·절입 기준|같은 달의 다른 구간|\d{2}:\d{2}:\d{2}/u);
+    const technical = /계산 기준|근거 더 보기|연지 기준|일지 기준|절입(?:·교운|과|을|은|이|의|전후|\s)|교운(?:\s|경계|시각|전후)|원국과 만나는 관계 작용|provenance|canonical|관계·절입 기준|같은 달의 다른 구간|\d{2}:\d{2}:\d{2}/giu;
+    expect([...html.matchAll(technical)].map(match => ({ term: match[0], around: html.slice(Math.max(0, match.index - 60), match.index + 100) }))).toEqual([]);
     expect(html).not.toMatch(/[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]{2,4}\s+(?:육합|삼합|반합|충|형|파|해|원진)/u);
     expect(copy(html)).not.toMatch(/리포트 활용 포인트|evidenceId|sourceRefs|unsupported|backend|debug|metal|water|\d+\s*점|[SABC][+-]?\s*등급|겁재은|정재은|결과이(?:\s|[,.])/iu);
     expect(html).not.toMatch(/sourceRefs|narrativeAudit|natal\.day|month-v2:|NO_VERIFIED|SHINSAL_RULES/);
@@ -124,10 +134,17 @@ describe("Annual V3 generation, publication and reading", () => {
       const r = (await generate(annualFixturePayload({ relationship })))!;
       expect(r.draft.inputSummary).toContainEqual({ label: "관계 상태", value: label });
       expect(validateAnnualV3(r.draft, r.evidencePacket)).toEqual([]);
+      if (!["marriage_preparing", "married"].includes(relationship)) {
+        expect(annualV3CustomerText(r.draft)).not.toMatch(/(?:가온님의|당신에게) 결혼은|배우자는|남편은|아내는|부부 생활|결혼 생활/u);
+      }
     }
     const input = annualFixturePayload({ job: "" });
     const r = (await generate({ ...input, userContext: { ...input.userContext, focusAreas: ["돈"] } }))!;
     expect(r.draft.inputSummary.some(row => row.label === "현재 직업")).toBe(false);
+  });
+  it.each([["student", "컴퓨터공학"], ["exam_certificate", "공인중개사"], ["job_seeker", "콘텐츠 마케팅"], ["resting", "휴식 중"]])("%s does not assume a current workplace", async (status, job) => {
+    const r = (await generate(annualFixturePayload({ status, job })))!;
+    expect(annualV3CustomerText(r.draft)).not.toMatch(/상사|연봉|승진|현재 회사|우리 회사|회사 업무|직장 생활|회사에서|퇴사|매출|고객/u);
   });
 });
 

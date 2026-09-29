@@ -55,7 +55,7 @@ it("Gaon retains all 14 ages and exact 2028 boundary with varied relation scenes
   for (const y of result.draft.editorialYears) expect(html).toContain(`${y.year}년 · ${y.ageLabel}`);
   expect(result.draft.horizon!.transitions[0].startSolarKst).toContain("2028-06-04");
   expect(html).not.toMatch(/sourceRefs|evidenceRefs|mbti:[A-Z]{4}:|보완과 연결/);
-  expect(html).not.toMatch(/계산 기준|근거 더 보기|전문 근거|천간·지장간의 십성|원국 전체의 파생 근거/u);
+  expect(html).not.toMatch(/계산 기준|근거 더 보기|연지 기준|일지 기준|절입(?:·교운|과|을|은|이|의|전후|\s)|교운(?:\s|경계|시각|전후)|provenance|canonical|전문 근거|천간·지장간의 십성|원국 전체의 파생 근거/iu);
   if (process.env.F5_REVIEW_OUTPUT === "1") writeFileSync("/tmp/gyeol-major-f5-gaon.txt", majorFortuneV3CustomerText(result.draft));
 });
 
@@ -84,6 +84,9 @@ it("five V3 products project identical confirmed natal marker positions without 
   for (const [packet, calculation, role] of cases) {
     const original = JSON.stringify(packet), data = buildCanonicalManseRyeokTableData(packet, "가온", role)!;
     const projected = withConsistentNatalMarkers(data), natal = data.natalEvidence!;
+    const twelveSinsal = projected.detailRows.find(row => row.key === "twelveSinsal")!;
+    expect(twelveSinsal.label).toBe("십이신살");
+    expect(Object.values(twelveSinsal.cells).flat().join(" ")).not.toMatch(/연지 기준|일지 기준/u);
     outputs.push(JSON.stringify(projected.detailRows));
     const signals = publicSignalRows(adaptNatalTable(natal, role), calculation, { opening: [], sections: [] });
     for (const feature of natal.features.filter(f => ["sinsal", "gwiin", "twelve_sinsal"].includes(f.category))) {
