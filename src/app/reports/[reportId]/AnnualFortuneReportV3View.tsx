@@ -1,4 +1,5 @@
 import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
+import { hasContentRevision } from "../../../lib/interpretation-v3/contentRevision";
 import { buildAnnualV3, annualTime, type AnnualV3Draft, type AnnualBlock } from "../../../lib/interpretation-v3/annualEditorial";
 import type { AnnualV3Evidence } from "../../../lib/report-generation/annualV3Generation";
 import type { AnnualFortuneReportDraft } from "../../../lib/report-generation/annualFortuneReportDraftTypes";
@@ -31,7 +32,7 @@ function representativeSegment(month: AnnualCalendarMonth, evaluatedAtKst: strin
     ?? month.segments.find(s => s.boundaryReason.some(reason => reason.startsWith("jie:")))
     ?? month.segments[0];
 }
-function monthTransitionNote(month: AnnualCalendarMonth, evaluatedAtKst: string) {
+function monthTransitionNote(month: AnnualCalendarMonth, evaluatedAtKst: string, robust = false) {
   const changed = month.segments.find((segment, index) => index > 0 && segment.boundaryReason.some(reason => reason.startsWith("jie:")));
   const before = changed ? month.segments[month.segments.indexOf(changed) - 1] : undefined;
   if (!changed || !before || (changed.stemTenGod === before.stemTenGod && changed.branchTenGod === before.branchTenGod)) return null;
@@ -39,6 +40,7 @@ function monthTransitionNote(month: AnnualCalendarMonth, evaluatedAtKst: string)
   const focus = annualThemes[changed.stemTenGod].focus;
   const position = annualTime(month.startKst, month.endKstExclusive, evaluatedAtKst);
   const active = month.segments.find(s => annualTime(s.startKst, s.endKstExclusive, evaluatedAtKst) === "current");
+  if (robust) return `${month.month}월 ${day}일 흐름 전환 · ${focus}에 ${position === "past" ? "무게가 옮겨갔습니다" : active === before || position === "future" ? "무게가 옮겨갑니다" : "무게가 실리고 있습니다"}.`;
   if (position === "current" && active === before) return `이번 달 초에는 지난 흐름이 조금 이어지고 있어요. ${day}일 전후부터 ${focus} 쪽으로 분위기가 바뀝니다.`;
   if (position === "past") return `월초에는 지난 흐름이 조금 이어졌고, ${day}일 전후부터 ${focus} 쪽으로 분위기가 바뀌었습니다.`;
   return `월초에는 지난 흐름이 조금 이어지다가, ${day}일 전후부터 ${focus} 쪽으로 분위기가 바뀝니다.`;
@@ -54,7 +56,8 @@ export function AnnualFortuneReportV3View({ draft: saved, evidencePacket: packet
   const extension = packet.annualV3;
   // Keep stored facts frozen; only temporal realization uses the server clock.
   // No browser-local date and no recalculation of pillars/Jie on a read route.
-  const draft = buildAnnualV3({ ...saved, version: "v1", productVersion: "v1" } as AnnualFortuneReportDraft, packet, extension.monthly, extension.facts, now);
+  const robust = hasContentRevision(saved);
+  const draft = buildAnnualV3({ ...saved, version: "v1", productVersion: "v1" } as AnnualFortuneReportDraft, packet, extension.monthly, extension.facts, now, robust);
   const current = packet.calendarMonths?.flatMap(m => m.segments).find(s => annualTime(s.startKst, s.endKstExclusive, draft.evaluatedAtKst) === "current");
   const source = getMbtiSourceByType(packet.mbtiBasis.type), mbti = source ? buildMbtiCommonProfileTableData(source) : undefined;
   const manse = buildCanonicalManseRyeokTableData(packet, draft.personLabel);
@@ -87,9 +90,9 @@ export function AnnualFortuneReportV3View({ draft: saved, evidencePacket: packet
     <div className="mx-auto max-w-[46rem] px-4 sm:px-6"><section data-annual-opening className="py-10"><h2 className="mb-7 font-sans text-3xl font-semibold leading-snug text-[#6f1d35]">{draft.hook}</h2><Prose paragraphs={draft.opening} /></section>
       {draft.annualSections.map(block => <Block key={block.id} block={block} />)}
       <section aria-label="눈여겨볼 달" className="border-y border-[#cbb589] py-7"><h2 className="font-sans text-xl font-semibold text-[#6f1d35]">이 장면은 한 번 더 기억해두세요</h2><ul className="mt-5 space-y-4">{draft.focusMonths.map(m => <li key={m.month}><a className="font-medium text-[#6f1d35]" href={`#annual-month-${m.month}`}>{m.month}월 · {m.title}</a><p className="mt-1 text-xs leading-6 text-[#756658]">{m.reason}</p></li>)}</ul></section>
-      <section id="annual-months" className="py-10"><h2 className="mb-6 font-sans text-3xl font-semibold text-[#6f1d35]">열두 달의 이야기</h2><div className="space-y-4">{draft.editorialMonths.map(month => { const calendarMonth = packet.calendarMonths!.find(m => m.month === month.month)!; const focus = calendarMonth.segments.find(s => s.startKst === month.focusStartKst)!; const ext = extension.monthly.months.find(m => m.month === month.month)!.segments.find(s => s.startKst === focus.startKst)!; const transition = monthTransitionNote(calendarMonth, draft.evaluatedAtKst); return <details id={`annual-month-${month.month}`} key={month.month} open={month.timePosition === "current"} data-month-position={month.timePosition} data-month-story className={`scroll-mt-5 rounded-sm border p-5 ${month.timePosition === "current" ? "border-[#6f1d35] bg-[#fbf5eb]" : "border-[#ded2c2]"}`}>
+      <section id="annual-months" className="py-10"><h2 className="mb-6 font-sans text-3xl font-semibold text-[#6f1d35]">열두 달의 이야기</h2><div className="space-y-4">{draft.editorialMonths.map(month => { const calendarMonth = packet.calendarMonths!.find(m => m.month === month.month)!; const focus = calendarMonth.segments.find(s => s.startKst === month.focusStartKst)!; const ext = extension.monthly.months.find(m => m.month === month.month)!.segments.find(s => s.startKst === focus.startKst)!; const transition = monthTransitionNote(calendarMonth, draft.evaluatedAtKst, robust); return <details id={`annual-month-${month.month}`} key={month.month} open={month.timePosition === "current"} data-month-position={month.timePosition} data-month-story className={`scroll-mt-5 rounded-sm border p-5 ${month.timePosition === "current" ? "border-[#6f1d35] bg-[#fbf5eb]" : "border-[#ded2c2]"}`}>
         <summary className="cursor-pointer"><span className="text-xs font-semibold text-[#9f7a2d]">{month.month}월 · {timeLabel[month.timePosition]}</span><h3 className="mt-2 font-sans text-xl font-semibold leading-relaxed text-[#6f1d35]">{month.title}</h3></summary>
-        <div className="mt-6 border-t border-[#e5dacb] pt-5">{transition ? <p className="mb-5 rounded-sm bg-[#f8f3eb] px-4 py-3 text-sm leading-7 text-[#665448]">{transition}</p> : null}<Prose paragraphs={month.paragraphs} /><Chips labels={segmentLabels(focus, ext)} /></div>
+        <div className="mt-6 border-t border-[#e5dacb] pt-5">{!robust && transition ? <p className="mb-5 rounded-sm bg-[#f8f3eb] px-4 py-3 text-sm leading-7 text-[#665448]">{transition}</p> : null}<Prose paragraphs={month.paragraphs} />{robust && transition ? <p className="mt-5 text-xs leading-6 text-[#756658]">{transition}</p> : null}<Chips labels={segmentLabels(focus, ext)} /></div>
       </details>; })}</div></section>
       <section id="annual-finale" className="mb-10 rounded-sm border border-[#cbb589] bg-[#f8f0e5] p-6" data-annual-finale><h2 className="mb-7 font-sans text-2xl font-semibold text-[#6f1d35]">올해를 잘 쓰는 핵심</h2><Prose paragraphs={draft.finale.slice(0, -1)} /><p className="mt-7 border-t border-[#cbb589] pt-6 font-sans text-xl font-semibold leading-9 text-[#6f1d35]">{draft.finale.at(-1)}</p></section>
     </div>

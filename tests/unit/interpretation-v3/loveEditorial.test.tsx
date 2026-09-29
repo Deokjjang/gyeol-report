@@ -132,12 +132,12 @@ it("explicit V3 bypasses enabled writers; original Love snapshot and full SSR re
   expect(html).not.toContain(LOVE_V3_VERSION); expect(html).not.toContain("리포트를 불러오지 못했습니다");
 });
 
-it.each(["unknown", "approximate"])("%s time retains conservative legacy handling without a writer", async precision => {
+it.each(["unknown", "approximate"])("%s time uses confirmed evidence in V3 without a writer", async precision => {
   const { payload } = loveFixture(LOVE_V3_FIXTURES[0]);
   const person = { ...payload.person, birthTime: "", birthTimeUnknown: precision === "unknown", birthTimePrecision: precision, approximateBirthTimeSlot: precision === "approximate" ? "SASI" : "" };
   const result = await generateProductReport({ ...payload, person }, { enabled: true, config: { enabled: true, apiKey: "test-no-call", model: "test" } }, "normal_writer", undefined, { loveVersion: "v3" });
   expect(result.ok).toBe(true); expect(result.externalCalls).toEqual([]);
-  if (result.ok) { expect(isLoveV3Draft(result.draft)).toBe(false); expect(validateProductPublication("love_marriage_child", result.draft, result.evidencePacket).errors).toEqual([]); }
+  if (result.ok) { expect(isLoveV3Draft(result.draft)).toBe(true); expect(validateProductPublication("love_marriage_child", result.draft, result.evidencePacket).errors).toEqual([]); }
 });
 
 it("rejects edited facts/body/version and never promotes weak charm", () => {

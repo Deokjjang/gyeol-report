@@ -80,5 +80,5 @@ try {
     }
   }
   writeFileSync(dir + "/browser-results.json", JSON.stringify(results, null, 2));
-  console.log("PASS: " + results.length + " full-delivery browser checks, 12 fixtures, 3 widths, direct/shared.");
+  console.log("PASS: " + results.length + " full-delivery browser checks, " + Object.keys(manifests).length + " fixtures, 3 widths, direct/shared.");
 } finally { run(["close"]); }

@@ -49,9 +49,14 @@ it.each(COMPREHENSIVE_V3_FIXTURES)("%s editorial depth, exact old snapshot, publ
   expect(draft.version).toBe(DEPTH_COMPREHENSIVE_VERSION);
   expect(qa?.rejected).toEqual([]); expect(qa?.warnings).toEqual([]); expect(qa?.errors).toEqual([]);
   for (const role of ["character", "explanation", "advice"] as const) {
-    expect(qa!.mix[role], `${id}/${role}`).toBeGreaterThanOrEqual(COMPREHENSIVE_EDITORIAL_MIX[role][0]);
-    expect(qa!.mix[role], `${id}/${role}`).toBeLessThanOrEqual(COMPREHENSIVE_EDITORIAL_MIX[role][1]);
+    // The saved Phase B edition retains its original mix. The robustness
+    // revision removes analyst tails rather than padding to a definition quota.
+    expect(assembly.draft.editorialAudit!.mix[role], `${id}/legacy/${role}`).toBeGreaterThanOrEqual(COMPREHENSIVE_EDITORIAL_MIX[role][0]);
+    expect(assembly.draft.editorialAudit!.mix[role], `${id}/legacy/${role}`).toBeLessThanOrEqual(COMPREHENSIVE_EDITORIAL_MIX[role][1]);
   }
+  expect(qa!.mix.character).toBeGreaterThanOrEqual(0.65);
+  expect(qa!.mix.advice).toBeLessThanOrEqual(0.15);
+  expect(text).not.toMatch(/적용한 지침입니다|중심으로 읽었지만|쓰임을 함께 보았습니다/);
   const publication = validateProductPublication("saju_mbti_full", JSON.parse(JSON.stringify(draft)), result.evidencePacket);
   expect(publication.errors).toEqual([]);
   const snapshot = createProductPreviewSnapshot({ reportId: `depth-${id}`, createdAtIso: "2026-09-28T00:00:00Z", productKey: "saju_mbti_full", productSlug: "saju-mbti-full", draft, evidencePacket: result.evidencePacket });

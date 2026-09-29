@@ -4,6 +4,9 @@ import { ALTERNATE_REALITY_VOICES, GOD_PORTRAITS, GOOD_FORTUNE, LOVE_VOICES, PRE
 import { compoundProminence, factLabel, storySupport, unique } from "./comprehensiveStoryEvidence";
 import { signalImage } from "./comprehensiveEditorial";
 import { interpretCareerContext } from "./context";
+import { interpretCareerContextV3 } from "./careerContextV3";
+import { careerEditorialScenes } from "./careerEditorialScenes";
+import { customerEvidenceLabels } from "./comprehensivePublicSignals";
 import { composeEditorial, COMPREHENSIVE_EDITORIAL_MIX, type EditorialForm, type EditorialRole, type EditorialScene, type EditorialTone } from "./editorialComposer";
 import { DEPTH_PORTRAITS, DEPTH_PRIVATE, type DomainPortrait } from "./comprehensiveDepthPortraits";
 import { DEPTH_ATTRACTION, DEPTH_CONTEXT, DEPTH_ELEMENT_IMAGES, DEPTH_GIFTS, DEPTH_GIFT_MOMENTS, DEPTH_TIPS, PRECISION_MANIFESTATIONS } from "./comprehensiveDepthScenes";
@@ -45,7 +48,8 @@ export function assembleComprehensiveDepth(input: ComprehensiveV3Input, candidat
     const anchors = fs.filter(strong);
     const domain = anchors.some(f => f.domains.includes(preferred)) ? preferred : anchors.flatMap(f => f.domains)[0] ?? preferred;
     fs.forEach(f => selected.add(f.id));
-    raw.push({ id, chapter, order: raw.length, angle: id, subject: "person", tone, form, headline, parts, domain,
+    const visibleParts = input.robust ? parts.filter(p => !(p.role === "explanation" && parts.length > 1 && (id.startsWith("gift-life:") || id.startsWith("portrait-") || /지침입니다|읽었|읽는 장면|함께 읽|함께 보았|처음의 인상|첫인상을 만든|습관이 (?:만났|더해졌)|과사용한 모습/.test(p.text)))).map(p => ({ ...p, text: p.text.replace(/([가-힣]+(?:·[가-힣]+)+)의/gu, (_, labels: string) => customerEvidenceLabels(labels.split("·")).join("·") + "의") })) : parts;
+    raw.push({ id, chapter, order: raw.length, angle: id, subject: "person", tone, form, headline, parts: visibleParts, domain,
       evidenceRefs: unique(fs.map(f => f.id)), sourceRefs: unique([...fs.flatMap(f => f.sourceRefs), `comprehensiveDepth:${id}`]) });
     extra.set(id, meta);
   };
@@ -128,6 +132,16 @@ export function assembleComprehensiveDepth(input: ComprehensiveV3Input, candidat
   const jobLine = !active ? "" : job.industry === "software" ? "소프트웨어 분야에서는 생각을 실제 쓰는 사람의 경험으로 옮기는 장면에서 이 결이 드러납니다." : job.industry === "manufacturing" ? "제조·품질 분야에서는 작은 차이가 실제 결과를 바꾸는 순간에 내 일하는 방식도 더 분명하게 보입니다." : job.roleFamily === "project_creation" ? "디자인·기획 분야에서는 내 취향과 상대에게 전달되는 뜻 사이에서 이런 성향이 구체적으로 드러납니다." : job.roleFamily === "sales_operations" ? "영업 분야에서는 처음의 반응과 오래 이어갈 신뢰 사이에서 내가 중요하게 여기는 기준이 드러납니다." : "";
   const context = DEPTH_CONTEXT[input.context.lifeStatus];
   add("career", "context:career", "reversal", "quote", "지금 하는 일에 비춰보면 조금 더 선명합니다", [char(`${context[0]}${jobLine ? ` ${jobLine}` : ""}`)], [main], "career", { kind: "context" });
+  if (input.robust && active) {
+    const work = interpretCareerContextV3(input.context.fieldLabel ?? "", true, input.context.lifeStatus);
+    const scenes = careerEditorialScenes(input.context, work);
+    const own = raw.find(s => s.id === "context:career")!;
+    const design = work.function === "design";
+    raw[raw.indexOf(own)] = { ...own, parts: [...own.parts,
+      char(design ? "시안을 보여주고 받은 ‘조금 더 우리답게’라는 피드백 앞에서, 예쁜 것과 그 브랜드의 말투가 맞는 것은 다르다는 걸 다시 느낍니다. 취향을 보여주는 포트폴리오와 상대의 뜻을 받아 완성한 작업물 사이에서 내 이름의 무게도 생깁니다." : `${scenes.conversation}. 같은 능력도 누구에게 무엇을 설명해야 하는지에 따라 다른 표정을 갖습니다.`),
+      char(design ? "클라이언트가 바꿔달라는 범위와 내가 더 손보고 싶은 부분은 꼭 일치하지 않죠. 수정이 길어질 때는 실력에 대한 불안보다 이번 작업에서 정말 전달하려던 인상이 무엇이었는지가 더 좋은 기준이 됩니다." : `${scenes.craft}. 처음에는 수고로만 느꼈던 선택이 시간이 지나면 다른 사람에게 건넬 수 있는 자기 방식이 됩니다.`),
+    ] };
+  }
 
   passage("money", "money-character", DEPTH_PORTRAITS[money.featureId].money, money, "money", "blunt", "observations");
   otherSide("money", money, "money", "recognition", "prose");
@@ -196,7 +210,9 @@ export function assembleComprehensiveDepth(input: ComprehensiveV3Input, candidat
   const chars: Record<EditorialRole, number> = { character: 0, explanation: 0, advice: 0 };
   parts.forEach(p => { chars[p.role] += [...p.text.trim()].length; });
   const total = Object.values(chars).reduce((n, x) => n + x, 0), mix = { character: chars.character / total, explanation: chars.explanation / total, advice: chars.advice / total };
-  const mixWarnings = (Object.keys(mix) as EditorialRole[]).filter(role => mix[role] < COMPREHENSIVE_EDITORIAL_MIX[role][0] || mix[role] > COMPREHENSIVE_EDITORIAL_MIX[role][1]);
+  const mixWarnings = input.robust
+    ? (Object.keys(mix) as EditorialRole[]).filter(role => role === "character" ? mix[role] < 0.65 : role === "advice" ? mix[role] > 0.15 : mix[role] > 0.25)
+    : (Object.keys(mix) as EditorialRole[]).filter(role => mix[role] < COMPREHENSIVE_EDITORIAL_MIX[role][0] || mix[role] > COMPREHENSIVE_EDITORIAL_MIX[role][1]);
   const patterns = blocks("patterns").map(b => ({ risk: b.headline, why: b.paragraphs?.join("\n\n"), repair: b.action, labels: b.labels, evidenceRefs: b.evidenceRefs }));
   const direction = composition.scenes.filter(s => s.chapter === "direction");
   const draft: ComprehensiveV3Draft = { ...base, version: DEPTH_COMPREHENSIVE_VERSION, opening: blocks("core"), openingContext: "",
@@ -217,7 +233,7 @@ function depthElements(input: ComprehensiveV3Input): Block[] {
     const neutral = state === "BALANCED";
     const condition = state === "STRONG" ? "강함" : state === "MISSING" ? "없음" : state === "WEAK" ? "약함" : "균형";
     const subject = `${label}${code === "WOOD" || code === "METAL" ? "은" : "는"}`;
-    const paragraphs = neutral ? [`${subject} 현재 균형권입니다. 따로 채우거나 줄이기보다 지금 리듬을 유지하세요.`] : [state === "STRONG" ? high : low, `${subject} ${image}의 이미지입니다. 원국의 ${condition} 상태를 생활 속 리듬에 비춰 읽은 모습입니다.`];
+    const paragraphs = neutral ? [input.robust ? `${subject} 현재 균형권이므로 따로 채우거나 줄이지 않아도 됩니다.` : `${subject} 현재 균형권입니다. 따로 채우거나 줄이기보다 지금 리듬을 유지하세요.`] : [state === "STRONG" ? high : low, `${subject} ${image}의 이미지입니다. 원국의 ${condition} 상태를 생활 속 리듬에 비춰 읽은 모습입니다.`];
     return { id: `depth-element:${code}`, kind: "lifestyle", headline: `${label} · ${condition}`, paragraphs, action: "", reading: "", why: "", caution: "", labels: [], domains: ["lifestyle"],
       evidenceRefs: f ? [f.id] : [], sourceRefs: [`${calc.calculationVersion}:elements.labels`, `${calc.calculationVersion}:elements.weighted`],
       editorialForm: neutral ? "tip" : "observations", editorialRoles: neutral ? ["advice"] : ["character", "explanation"], prominence: "supporting" };

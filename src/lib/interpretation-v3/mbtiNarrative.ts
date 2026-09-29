@@ -93,7 +93,7 @@ export function narrativeRhythm(paragraphs: readonly string[]): readonly string[
 
 type NarrativeDraft = ComprehensiveV3Draft | CareerV3Draft | LoveV3Draft | CompatibilityV3Draft;
 export type NarrativeAudit = { section: string; subject: Evidence["subject"]; traitId: string; evidenceRefs: readonly string[]; sourceRefs: readonly string[]; kind: NarrativeTrait["kind"] };
-export function integrateMbtiNarrative<T extends NarrativeDraft>(draft: T, facts: readonly Evidence[], context: TraitRequest["context"] = {}, detailEdition = false): T & { narrativeEdition: typeof NARRATIVE_EDITION | typeof DETAIL_NARRATIVE_EDITION; narrativeAudit: readonly NarrativeAudit[]; rhythmWarnings: readonly string[] } {
+export function integrateMbtiNarrative<T extends NarrativeDraft>(draft: T, facts: readonly Evidence[], context: TraitRequest["context"] = {}, detailEdition = false, robust = false): T & { narrativeEdition: typeof NARRATIVE_EDITION | typeof DETAIL_NARRATIVE_EDITION; narrativeAudit: readonly NarrativeAudit[]; rhythmWarnings: readonly string[] } {
   const used = new Set<string>(), domains = new Set<string>(), audit: NarrativeAudit[] = [], copy: string[] = [];
   const names: Partial<Record<Evidence["subject"], string>> = draft.productType === "saju_mbti_compatibility"
     ? { personA: draft.people.personA.name, personB: draft.people.personB.name } : { person: draft.personLabel };
@@ -101,14 +101,18 @@ export function integrateMbtiNarrative<T extends NarrativeDraft>(draft: T, facts
     const mbti = facts.find(f => f.subject === subject && f.kind === "mbti" && f.featureId.startsWith("mbti:"))?.featureId.split(":")[1] ?? "";
     const domainKey = `${subject}:${domain}:${/parent|marriage/.test(section) ? section : ""}`;
     const trait = allow && audit.length < 8 && !domains.has(domainKey) ? selectNarrativeTraits({ product: draft.productType, domain, section, mbti, used,
-      selectedSignals: facts.filter(f => f.subject === subject && refs.includes(f.id)), context })[0] : undefined;
+      selectedSignals: facts.filter(f => f.subject === subject && refs.includes(f.id)), context }).find(t => !robust || !/하세요|보세요|구조가 필요|전략이 필요|쪽이 맞습니다/.test(t.text)) : undefined;
     const next = [...paragraphs];
     if (trait) {
       // Keep the library sentence intact; replace the type's grammatical subject
       // with the actual person, including directed two-person reports.
-      const text = subject === "person" ? trait.text : trait.text.replaceAll(`${mbti}에게`, `${names[subject]}님에게`).replaceAll(`${mbti}는`, `${names[subject]}님은`).replaceAll(`${mbti}의`, `${names[subject]}님의`).replaceAll(`${mbti}가`, `${names[subject]}님이`);
+      let text = subject === "person" ? trait.text : trait.text.replaceAll(`${mbti}에게`, `${names[subject]}님에게`).replaceAll(`${mbti}는`, `${names[subject]}님은`).replaceAll(`${mbti}의`, `${names[subject]}님의`).replaceAll(`${mbti}가`, `${names[subject]}님이`);
+      if (robust && subject === "person") text = text.replaceAll(`${mbti}에게`, "당신에게").replaceAll(`${mbti}는`, "당신은").replaceAll(`${mbti}의`, "당신의").replaceAll(`${mbti}가`, "당신이");
+      if (robust && subject !== "person") text = text.replaceAll("당신", `${names[subject]}님`);
       const existing = mbti ? next.findIndex(p => p.includes(mbti) && p.length < 240) : -1;
-      if (existing >= 0) next[existing] = text; else next.push(text);
+      if (existing >= 0) next[existing] = text;
+      else if (robust && next.length) next[next.length - 1] += ` ${text}`;
+      else next.push(text);
       used.add(trait.evidenceId); domains.add(domainKey);
       const fact = facts.find(f => f.subject === subject && f.featureId === trait.evidenceId);
       audit.push({ section, subject, traitId: trait.evidenceId, evidenceRefs: [...trait.matchedEvidence, ...(fact ? [fact.id] : [])], sourceRefs: trait.sourceRefs, kind: trait.kind });

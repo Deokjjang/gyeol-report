@@ -60,7 +60,7 @@ it.each(CAREER_V3_FIXTURES)("%s C2 preserves C snapshots and polishes input/body
   expect(panel).not.toContain(payload.person.birthDate);
   expect(html).not.toMatch(/roleFamily|sales_operations|regulated_analysis|customer_service|care_operations|field_operations|analysisIntensity|careerEditorial:|careerContextV3:/);
   expect(html).not.toMatch(/계산 기준|근거 더 보기|전문 근거|천간·지장간의 십성|원국 전체의 파생 근거/u);
-  const settings = careerEditorialScenes(context, interpretCareerContextV3(context.fieldLabel ?? ""));
+  const settings = careerEditorialScenes(context, interpretCareerContextV3(context.fieldLabel ?? "", true, context.lifeStatus));
   expect(Object.values(settings).filter(scene => text.includes(scene)).length).toBeGreaterThanOrEqual(5);
   if (payload.userContext.detailJob) expect(count(text, payload.userContext.detailJob)).toBeLessThanOrEqual(3);
   if (process.env.CAREER_C2_REVIEW_OUTPUT === "1") {

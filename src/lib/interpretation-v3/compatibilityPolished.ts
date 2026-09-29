@@ -12,7 +12,7 @@ type PairEvidence = ReturnType<typeof compatibilityEditorialEvidence>;
 
 /** Display-only E2 pass. E1 remains frozen for stored snapshot replay. The
  * selected facts, directional subjects and provenance are never replaced. */
-export function buildCompatibilityV3Polished(e: PairEvidence, category: Category): CompatibilityV3Draft {
+export function buildCompatibilityV3Polished(e: PairEvidence, category: Category, robust = false): CompatibilityV3Draft {
   const original = buildCompatibilityV3(e, category), { direction } = e;
   const asymmetric = category === "parentChild" || category === "managerReport";
   const first: PairSlot = asymmetric || direction.persons.personA.personId <= direction.persons.personB.personId ? "personA" : "personB";
@@ -33,6 +33,15 @@ export function buildCompatibilityV3Polished(e: PairEvidence, category: Category
   const contrast = !!v1 && !!v2 && [v1, v2].some(v => v.style === "direct") && [v1, v2].some(v => v.style === "warm" || v.style === "expressive");
   const quiet = [v1, v2].some(v => v?.style === "quiet") && ![v1, v2].some(v => v?.style === "expressive");
   const copy = polishedCategoryCopy(category, { a, b, equal, pressure, contrast, quiet, gift: root.gift, reverseGift: reverse.gift });
+  if (robust) copy.ending = [...copy.ending.slice(0, -1), {
+    love: `이 사랑에는 ${root.need}만큼 ${reverse.need}도 필요하므로, 둘이 가까워지는 길은 한쪽의 방식만으로 완성되지 않습니다.`,
+    marriage: `한집에서 ${root.need}과 ${reverse.need}은 서로 다른 날에 필요하므로, 둘의 생활은 누가 더 옳은지보다 그날 필요한 몫을 알아보는 쪽에서 편안해집니다.`,
+    friendship: `오랜만에 만나도 ${root.need}에서 ${reverse.need}까지 이야기가 이어진다면, 떨어져 있던 시간도 이 우정의 빈칸만은 아닙니다.`,
+    businessPartner: `함께 키울 사업에는 ${root.need}과 ${reverse.need}이라는 서로 다른 몫이 있으므로, 같은 꿈 아래에서도 판단과 돈의 책임이 각자 보이는 파트너십이 오래 갑니다.`,
+    coworker: `팀에서는 ${root.need}과 ${reverse.need}이 서로의 결과를 이어줄 때, 혼자 잘 끝낸 일을 넘어 다음 사람도 잘 시작하게 하는 둘의 실력이 보입니다.`,
+    parentChild: `부모의 보호가 ${root.need}에 머물지 않고 자녀의 ${reverse.need}까지 품을 때, 가족은 돌아올 곳이면서 나아갈 힘이 됩니다.`,
+    managerReport: `상사의 ${root.need}과 팀원의 ${reverse.need}이 만나는 자리에서, 확인할 기준은 분명하고 스스로 판단할 자리는 넓은 팀의 신뢰가 구체화됩니다.`,
+  }[category]];
   const harmony = e.relations.find(r => ["six_harmony", "three_harmony", "half_harmony"].includes(r.kind));
   const rewrite = (scene: EditorialScene, headline: string, paragraphs: readonly string[]): EditorialScene => ({
     ...scene, headline, parts: paragraphs.map(text => ({ role: "character", text })),

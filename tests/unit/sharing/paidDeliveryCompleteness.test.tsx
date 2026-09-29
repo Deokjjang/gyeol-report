@@ -13,6 +13,7 @@ import { createAnnualCommerceAcceptance } from "../../../src/lib/payment/annualP
 import { GAON_MAJOR_FORTUNE_V3_PAYLOAD as base } from "../../../src/lib/interpretation-v3/majorFortuneFixtures";
 import { COMPATIBILITY_ROLE_VERSION } from "../../../src/lib/report-generation/reportInputTypes";
 import { completenessManifest, assertDeliveredHtml } from "../../fixtures/report-sharing/completeness";
+import { ROBUSTNESS_FIXTURES } from "../interpretation-v3/robustnessFixtures";
 
 const local = vi.hoisted(() => ({ rpc: vi.fn(), select: vi.fn(), insert: vi.fn() }));
 vi.mock("../../../src/lib/payment/paidReportReliabilityStore", () => ({ createPaidReportReliabilityStore: () => ({ call: local.rpc }) }));
@@ -34,7 +35,8 @@ const products = [
   ["love_marriage_child", "love-marriage-child"], ["saju_mbti_compatibility", "compatibility"],
   ["major_fortune", "major-fortune"], ["annual_fortune", "annual-fortune"],
 ] as const;
-const cases = [false, true].flatMap(stress => products.map(([product, slug]) => ({ product, slug, stress, key: slug + (stress ? "-stress" : "") })));
+const cases = [false, true].flatMap(stress => products.map(([product, slug]) => ({ product, slug, stress, key: slug + (stress ? "-stress" : ""), robustness: false })))
+  .concat(products.map(([product, slug]) => ({ product, slug, stress: false, key: slug + "-robust", robustness: true })));
 const snapshots: Record<string, ProductPreviewSnapshot> = {};
 const manifests: Record<string, ReturnType<typeof completenessManifest>> = {};
 let db: PGlite;
@@ -71,7 +73,7 @@ beforeAll(async () => {
   });
   for (const c of cases) {
     const person = { ...base.person, ...(c.stress ? { birthDate: "1996-12-06", mbtiType: "ENFP" } : {}) };
-    const input = { ...base, person, productKey: c.product, productSlug: c.slug,
+    const input = c.robustness ? { ...Object.values(ROBUSTNESS_FIXTURES).find(f => f.productKey === c.product)!, productOptions: formOptions(c.product, { selectedYear: "2026" }) } : { ...base, person, productKey: c.product, productSlug: c.slug,
       userContext: { ...base.userContext, ...(c.stress ? { detailJob: "B2B SaaS 영업기획 · 고객 미팅과 제품팀 조율, 제안 협상, 파이프라인 분석, 평가와 보상, 신규 시장 확장을 함께 담당", relationshipStatus: "married", focusAreas: ["가족"] } : {}) },
       productOptions: formOptions(c.product, { selectedYear: String(new Date().getFullYear()) }),
       ...(c.product === "saju_mbti_compatibility" ? { compatibilityRoleVersion: COMPATIBILITY_ROLE_VERSION, relationshipType: c.stress ? "businessPartner" : "love", personA: person,

@@ -13,6 +13,7 @@ import { buildMajorFortuneHorizon, MAJOR_HORIZON_VERSION } from "../interpretati
 
 import { buildMajorFortuneOutlook, MAJOR_OUTLOOK_VERSION } from "../interpretation-v3/majorFortuneOutlook";
 import { buildMajorFortuneFinal, MAJOR_FINAL_VERSION } from "../interpretation-v3/majorFortuneFinalPolish";
+import { hasContentRevision, withContentRevision } from "../interpretation-v3/contentRevision";
 
 const record = (value: unknown): value is Record<string, unknown> => !!value && typeof value === "object" && !Array.isArray(value);
 const stable = (value: unknown): string => Array.isArray(value) ? `[${value.map(stable).join(",")}]` : record(value) ? `{${Object.keys(value).filter(key => value[key] !== undefined).sort().map(key => `${JSON.stringify(key)}:${stable(value[key])}`).join(",")}}` : JSON.stringify(value);
@@ -24,7 +25,7 @@ function majorFortuneFacts(packet: unknown, calculation: SajuCalcResult, mbti: s
   return mergeEvidence(adaptNatalTable(table).filter(fact => fact.kind !== "element"), adaptCalculation(calculation), adaptMbti(mbti));
 }
 
-export async function createMajorFortuneV3(payload: unknown, options: { now?: () => Date; edition?: "legacy-depth" | "legacy-horizon" | "legacy-outlook" } = {}) {
+export async function createMajorFortuneV3(payload: unknown, options: { now?: () => Date; edition?: "legacy-depth" | "legacy-horizon" | "legacy-outlook" | "legacy-final" } = {}) {
   const normalized = normalizeReportInputPayload(payload);
   if (!normalized.ok || normalized.value.kind !== "majorFortune") return null;
   const generated = await generateMajorFortuneProductDraft(normalized.value, { now: options.now, writer: { enabled: false } });
@@ -34,9 +35,9 @@ export async function createMajorFortuneV3(payload: unknown, options: { now?: ()
   const packet = { ...basePacket, calendarCalculationVersion: SAJU_CALENDAR_VERSION, natalTableEvidence: buildProductNatalTables(basePacket) };
   if (packet.decadeReading?.version !== "major-decade-v2" || packet.decadeReading.years.length !== 10) return null;
   const facts = majorFortuneFacts(packet, calculation, normalized.value.person.mbtiType);
-  const draft = options.edition === "legacy-depth" ? buildMajorFortuneV3(generated.draft, packet) : options.edition === "legacy-horizon" ? buildMajorFortuneHorizon(generated.draft, packet, facts, calculation) : (options.edition === "legacy-outlook" ? buildMajorFortuneOutlook : buildMajorFortuneFinal)(generated.draft, packet, facts, calculation);
+  const draft = options.edition === "legacy-depth" ? buildMajorFortuneV3(generated.draft, packet) : options.edition === "legacy-horizon" ? buildMajorFortuneHorizon(generated.draft, packet, facts, calculation) : (options.edition === "legacy-outlook" ? buildMajorFortuneOutlook : buildMajorFortuneFinal)(generated.draft, packet, facts, calculation, !options.edition);
   if (!draft) return null;
-  return { draft, evidencePacket: { ...packet, majorFortuneV3: { version: "major-fortune-evidence-v3.2", calculation, facts } } };
+  return { draft: options.edition ? draft : withContentRevision(draft), evidencePacket: { ...packet, majorFortuneV3: { version: "major-fortune-evidence-v3.2", calculation, facts } } };
 }
 
 export function validateMajorFortuneV3(draft: unknown, evidence: unknown): readonly string[] {
@@ -57,7 +58,7 @@ export function validateMajorFortuneV3(draft: unknown, evidence: unknown): reado
     const facts = majorFortuneFacts(evidence, calculation, String(basis?.mbtiType ?? ""));
     errors.push(...validateEvidence(facts));
     if (stable(facts) !== stable(extension.facts)) errors.push("MAJOR_FORTUNE_V3_FACTS_MISMATCH");
-    const expected = (draft.version === MAJOR_FINAL_VERSION ? buildMajorFortuneFinal : draft.version === MAJOR_OUTLOOK_VERSION ? buildMajorFortuneOutlook : buildMajorFortuneHorizon)(legacy.value, packet, facts, calculation);
+    const expected = draft.version === MAJOR_FINAL_VERSION ? buildMajorFortuneFinal(legacy.value, packet, facts, calculation, hasContentRevision(draft)) : (draft.version === MAJOR_OUTLOOK_VERSION ? buildMajorFortuneOutlook : buildMajorFortuneHorizon)(legacy.value, packet, facts, calculation);
     const projection = (d: typeof draft) => ({ ...editorialProjection(d), horizon: d.horizon, narrativeEdition: d.narrativeEdition, narrativeAudit: d.narrativeAudit, rhythmWarnings: d.rhythmWarnings });
     if (!expected || stable(projection(expected)) !== stable(projection(draft))) errors.push("MAJOR_FORTUNE_V3_CONTENT_MISMATCH");
     if (!draft.horizon || draft.horizon.currentYear !== packet.currentYear || draft.editorialYears.length !== (draft.version === MAJOR_HORIZON_VERSION ? 10 : 14) || draft.editorialYears.some((y, i) => y.year !== packet.currentYear - 3 + i)) errors.push("MAJOR_FORTUNE_V3_HORIZON_INVALID");

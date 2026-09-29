@@ -1,4 +1,5 @@
 import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
+import { hasContentRevision } from "../../../lib/interpretation-v3/contentRevision";
 import { hasNarrativeEdition, hasDetailNarrative } from "../../../lib/interpretation-v3/narrativeEdition";
 import narrativeStyles from "../../../components/report/v3Narrative.module.css";
 import { V3NarrativeIdentity } from "../../../components/report/V3NarrativeIdentity";
@@ -31,10 +32,11 @@ export function CompatibilityReportV3View({ draft, evidencePacket }: { draft: Co
   if (!validateProductPublication("saju_mbti_compatibility", draft, evidencePacket).ok) return <p>리포트를 준비하고 있습니다. 잠시 후 다시 확인해 주세요.</p>;
   const { calculations, editorial: { facts } } = (evidencePacket as { compatibilityV3: { calculations: PairCalculations; editorial: { facts: Evidence[] } } }).compatibilityV3;
   const usage = { opening: [], sections: draft.chapters.map(c => ({ blocks: c.scenes })) };
-  // Reset public label repetition per chapter; all stored evidence stays intact.
+  // Latest reports deduplicate across chapters; stored provenance stays intact.
   const publicLabels = new Map<string, readonly string[]>();
+  const reportLabels = new Set<string>();
   if (draft.version === COMPATIBILITY_V3_POLISHED_VERSION) for (const chapter of draft.chapters) {
-    const shown = new Set<string>();
+    const shown = hasContentRevision(draft) ? reportLabels : new Set<string>();
     for (const scene of chapter.scenes) {
       const labels = compactCompatibilityLabels(scene, facts, draft.people).filter(label => !shown.has(label));
       labels.forEach(label => shown.add(label));

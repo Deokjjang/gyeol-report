@@ -10,7 +10,7 @@ import type { Domain, Evidence } from "./types";
 
 export const CAREER_V3_VERSION = "career_v3.0-editorial.1";
 export const CAREER_V3_POLISH_VERSION = "career_v3.0-editorial.2";
-export type CareerV3Input = { name: string; mbti: string; facts: readonly Evidence[]; calculation: SajuCalcResult; context: UserContextProfile };
+export type CareerV3Input = { name: string; mbti: string; facts: readonly Evidence[]; calculation: SajuCalcResult; context: UserContextProfile; robust?: boolean };
 export type CareerV3Chapter = { readonly id: string; readonly title: string; readonly collapsed: boolean; readonly scenes: readonly EditorialScene[] };
 export type CareerV3Draft = {
   readonly productType: "career_money_study"; readonly productVersion: "v3"; readonly version: typeof CAREER_V3_VERSION | typeof CAREER_V3_POLISH_VERSION;
@@ -100,7 +100,7 @@ export function buildCareerV3(input: CareerV3Input): CareerV3Draft {
   const emptyAudit = composeEditorial({ product: "career_money_study", facts, scenes: [], chapters: [], selectedEvidenceRefs: [], substantialEvidenceRefs: [] });
   if (!main) return { version: CAREER_V3_VERSION, productVersion: "v3", productType: "career_money_study", personLabel: input.name, mbti: input.mbti, title: `${input.name}님의 일·돈·배움의 결`, archetype: "", chapters: [], editorialAudit: { ...emptyAudit, errors: ["CAREER_SUBSTANTIAL_BASIS_REQUIRED"] } };
   const portrait = CAREER_PORTRAITS[main.featureId.slice(8)];
-  const work = interpretCareerContextV3(context.fieldLabel ?? ""), a = careerWorkArena(context, work), status = statusCopy(input, a);
+  const work = interpretCareerContextV3(context.fieldLabel ?? "", input.robust, context.lifeStatus), a = careerWorkArena(context, work), status = statusCopy(input, a);
   const student = ["student", "exam_certificate"].includes(context.lifeStatus), seeker = ["job_seeker", "resting"].includes(context.lifeStatus), business = context.lifeStatus === "business_owner";
   const employed = context.lifeStatus === "employee";
   const voice = CAREER_VOICES[input.mbti], trait = voice && facts.find(f => f.featureId === `mbti:${input.mbti}:traits:${voice.trait}`);

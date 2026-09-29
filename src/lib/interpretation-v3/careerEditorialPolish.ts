@@ -120,7 +120,7 @@ function statusNarrative(input: CareerV3Input) {
 export function buildCareerV3Polished(input: CareerV3Input): CareerV3Draft {
   const baseline = buildCareerV3(input);
   if (!baseline.chapters.length) return { ...baseline, version: CAREER_V3_POLISH_VERSION };
-  const { facts, context } = input, work = interpretCareerContextV3(context.fieldLabel ?? "");
+  const { facts, context } = input, work = interpretCareerContextV3(context.fieldLabel ?? "", input.robust, context.lifeStatus);
   const settings = careerEditorialScenes(context, work), status = statusNarrative(input);
   const original = baseline.chapters.flatMap(c => c.scenes);
   const find = (angle: string) => original.find(s => s.angle === angle)!;
@@ -149,7 +149,7 @@ export function buildCareerV3Polished(input: CareerV3Input): CareerV3Draft {
       case "talent": return change("칭찬보다 ‘다음에도 네가 해줘’가 더 크게 들립니다", character(portrait.talent, `${settings.recognition}이 있습니다. 뭉뚱그린 칭찬보다 내가 힘을 쓴 바로 그 부분을 알아봤다는 기분이 큽니다.`));
       case "compound": return change(s.headline, s.parts.filter(p => p.role === "character"));
       case "environment": return change("바쁜 건 참겠는데, 이 방식은 좀 어렵습니다", character(`${settings.pressure}, 마음이 먼저 빡빡해집니다. ${portrait.mismatch}이라는 느낌까지 겹치면 일의 양보다 그 조건이 더 피곤합니다.`, ...(voice ? [voice.pressure] : [])));
-      case "boundary": return change(student || seeker ? "잘하려는 마음도 잠깐 쉬어야 합니다" : "강점까지 퇴근 못 하게 둘 필요는 없습니다", parts(["advice", `되풀이되는 소모가 있다면 ${portrait.mismatch}의 어떤 조건이 지금 상황에도 있는지 하나만 짚어보세요. 사람 전체보다 바꿀 수 있는 조건이 먼저 보이면 됩니다.`]));
+      case "boundary": return change(student || seeker ? "잘하려는 마음도 잠깐 쉬어야 합니다" : "강점까지 퇴근 못 하게 둘 필요는 없습니다", parts(["advice", input.robust ? "되풀이되는 소모가 있다면 의욕이 꺾였던 순간에 어떤 부탁이나 기준이 바뀌었는지 하나만 짚어보세요. 사람 전체보다 바꿀 수 있는 조건이 먼저 보이면 됩니다." : `되풀이되는 소모가 있다면 ${portrait.mismatch}의 어떤 조건이 지금 상황에도 있는지 하나만 짚어보세요. 사람 전체보다 바꿀 수 있는 조건이 먼저 보이면 됩니다.`]));
       case "current-role": return change(student || seeker ? "해보기 전에는 몰랐던 내 취향" : "지금 하는 일에 이미 남아 있는 내 판단", character(`${settings.entry}입니다. ${status.current}`, portrait.growth));
       case "work-structure": return change(student ? "완성했는데 다시 해보고 싶은 것이 있습니다" : seeker ? "지원서 한 줄보다 작은 결과가 더 많은 말을 합니다" : "결과 뒤에 숨어 있던 실력", character(`${settings.craft}에도 내 선택이 남습니다.`, work.analysisIntensity === "high" && !student && !seeker ? "마지막 숫자가 맞는 것과 왜 그 숫자가 나왔는지 아는 것은 다릅니다. 겉으로 같은 결과라도 다음에 조건이 바뀌면 누가 과정을 이해했는지가 드러납니다." : `당신에게 ${portrait.environment}이 중요한 이유도 여기에 있습니다. 결과가 나오는 과정에서 무엇을 직접 고르고 싶은지에 일의 만족이 달려 있습니다.`));
       case "colleague": return change("편한 사람이어도 아무렇게나 해도 되는 사람은 아닙니다", character(portrait.people, status.people));

@@ -10,6 +10,7 @@ import { calculateAnnualFortuneSaju, generateAnnualFortuneProductDraft } from ".
 import { normalizeReportInputPayload } from "./reportInputAdapter";
 import { validateAnnualFortuneReportDraft } from "./annualFortuneReportDraftValidator";
 import type { AnnualFortuneReportDraft } from "./annualFortuneReportDraftTypes";
+import { hasContentRevision, withContentRevision } from "../interpretation-v3/contentRevision";
 
 export type AnnualV3Evidence = AnnualFortuneEvidencePacket & { annualV3: { version: "annual-evidence-v3.1"; calculation: SajuCalcResult; facts: readonly Evidence[]; monthly: AnnualMonthExtendedEvidence; evaluatedAtKst: string } };
 const record = (v: unknown): v is Record<string, unknown> => !!v && typeof v === "object" && !Array.isArray(v);
@@ -31,7 +32,7 @@ export async function createAnnualV3(payload: unknown, options: { now?: () => Da
   const packet = { ...base, calendarCalculationVersion: SAJU_CALENDAR_VERSION, natalTableEvidence: buildProductNatalTables(base) };
   if (packet.monthlyCalculationVersion !== "annual-month-jie-kst-v2" || packet.calendarMonths?.length !== 12) return null;
   const facts = annualFacts(packet, calculation, input.value.person.mbtiType), monthly = extendAnnualMonthEvidence(packet);
-  const draft = buildAnnualV3(generated.draft, packet, monthly, facts, now);
+  const draft = withContentRevision(buildAnnualV3(generated.draft, packet, monthly, facts, now, true));
   return { draft, evidencePacket: { ...packet, annualV3: { version: "annual-evidence-v3.1" as const, calculation, facts, monthly, evaluatedAtKst: draft.evaluatedAtKst } } };
 }
 export function validateAnnualV3(draft: unknown, evidence: unknown): readonly string[] {
@@ -49,7 +50,7 @@ export function validateAnnualV3(draft: unknown, evidence: unknown): readonly st
   if (stable(facts) !== stable(extension.facts)) errors.push("ANNUAL_V3_FACTS_MISMATCH");
   const monthly = extendAnnualMonthEvidence(packet);
   if (stable(monthly) !== stable(extension.monthly)) errors.push("ANNUAL_V3_MONTH_EVIDENCE_MISMATCH");
-  const expected = buildAnnualV3(legacy.value as AnnualFortuneReportDraft, packet, monthly, facts, new Date(extension.evaluatedAtKst));
+  const expected = buildAnnualV3(legacy.value as AnnualFortuneReportDraft, packet, monthly, facts, new Date(extension.evaluatedAtKst), hasContentRevision(draft));
   if (stable(projection(draft)) !== stable(projection(expected))) errors.push("ANNUAL_V3_CONTENT_MISMATCH");
   if (draft.editorialMonths.length !== 12 || draft.editorialMonths.some(m => m.paragraphs.length < 4) || draft.finale.length < 4) errors.push("ANNUAL_V3_EDITORIAL_INCOMPLETE");
   if (/evidenceId|sourceRefs|unsupported|backend|debug|metal|water|\d+\s*점|[SABC][+-]?\s*등급|겁재은|정재은|결과이(?:\s|[,.])/iu.test(annualV3CustomerText(draft))) errors.push("ANNUAL_V3_VISIBLE_COPY_INVALID");

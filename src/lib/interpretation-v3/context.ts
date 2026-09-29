@@ -1,6 +1,9 @@
 import type { UserContextProfile, UserLifeStatus, UserRelationshipStatus } from "../report-knowledge/userContextTypes";
 
 export type CareerContext = {
+  readonly function?: string;
+  readonly seniority?: string;
+  readonly workMode?: string;
   readonly industry: string;
   readonly roleFamily: string;
   readonly customerFacing: boolean | null;

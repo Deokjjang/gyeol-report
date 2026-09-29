@@ -54,9 +54,8 @@ export async function generateProductReport(payload: unknown, runtime: ReportWri
   if (product === "love_marriage_child" && (options.loveVersion === "v3" || inputV3Requested)) {
     try {
       const v3 = createLoveV3(payload);
-      const generated = v3 ? { ok: true as const, kind: "loveMarriageChild" as const, ...v3 }
-        : await prepareProductGenerationFromPayload(payload, { automaticFallback: false });
-      if (!generated.ok) return fail("LOVE_V3_PREPARATION_FAILED");
+      if (!v3) return fail("LOVE_V3_PREPARATION_FAILED");
+      const generated = { ok: true as const, kind: "loveMarriageChild" as const, ...v3 };
       const check = validateNewProductPublication(product, generated.draft, generated.evidencePacket, payload);
       if (!check.ok) return fail("LOVE_V3_PUBLICATION_FAILED", check.errors);
       audit.preflight = "pass"; audit.publish = "pass";

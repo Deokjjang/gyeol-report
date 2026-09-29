@@ -13,6 +13,8 @@ import { interpretCareerContextV3 } from "./careerContextV3";
 import { selectNarrativeTraits, narrativeRhythm, type NarrativeAudit } from "./mbtiNarrative";
 import { annualThemes, monthlyGifts, annualRelationScenes, annualWorkTurns, type AnnualTime } from "./annualEditorialCopy";
 import type { Domain, Evidence } from "./types";
+import { monthlyLivedMoment, monthlyContextMoment, monthlyRelationshipMoment } from "./annualRobustScenes";
+import { sentenceSelection } from "./contentRevision";
 
 export const ANNUAL_V3_VERSION = "annual_fortune_v3.0-editorial.1" as const;
 export type AnnualBlock = { id: string; title: string; domain: Domain; form: "prose" | "scene" | "gift" | "punch"; paragraphs: readonly string[]; labels: readonly string[]; evidenceRefs: readonly string[] };
@@ -98,14 +100,21 @@ function relationScene(s: AnnualMonthSegment, extra: ExtendedMonthSegment, domai
   return copy ? { text: copy[["career", "business", "leadership", "money"].includes(domain) ? 0 : 1], refs: [f.id] } : null;
 }
 
-export function buildAnnualV3(base: AnnualFortuneReportDraft, packet: AnnualFortuneEvidencePacket, extra: AnnualMonthExtendedEvidence, facts: readonly Evidence[], now: Date): AnnualV3Draft {
+export function buildAnnualV3(base: AnnualFortuneReportDraft, packet: AnnualFortuneEvidencePacket, extra: AnnualMonthExtendedEvidence, facts: readonly Evidence[], now: Date, robust = false): AnnualV3Draft {
   const evaluatedAtKst = formatDayunKst(now.getTime()), year = packet.selectedYear;
   const yearTime = annualTime(`${year}-01-01T00:00:00+09:00`, `${year + 1}-01-01T00:00:00+09:00`, evaluatedAtKst);
   const context = packet.userContext, god = packet.annualFortune.stemTenGod, root = annualThemes[god], baseTheme = annualThemes[packet.annualFortune.branchTenGod];
-  const work = careerEditorialScenes(context, interpretCareerContextV3(context.fieldLabel ?? ""));
+  const work = careerEditorialScenes(context, interpretCareerContextV3(context.fieldLabel ?? "", robust, context.lifeStatus));
   const usedTraits = new Set<string>(), narrativeAudit: NarrativeAudit[] = [];
   const raw = (packet as AnnualFortuneEvidencePacket & { inputBasis?: { userContext?: { relationshipStatus?: string; jobStatus?: string; detailJob?: string } } }).inputBasis?.userContext;
   const relationship = raw?.relationshipStatus ?? context.relationshipStatus ?? "unknown";
+  const themeGift = (selectedGod: TenGod) => {
+    if (robust && ["job_seeker", "student", "exam_certificate", "resting"].includes(context.lifeStatus)) {
+      if (selectedGod === "편재") return "사람과 기회를 연결하는 자원 감각이 좋은 패입니다. 익숙한 경험을 다른 분야에 붙여볼 길이 보입니다. 당장의 큰 수입보다 어디에서 내 경험이 쓸모를 얻는지 알아보는 눈이 넓어지는 흐름이에요.";
+      if (selectedGod === "정재") return "축적과 관리가 좋은 패입니다. 준비하면서 쓴 돈과 시간을 다시 돌아보면 다음에도 꺼내 쓸 자료와 기술이 남습니다. 크게 한 번 움직이는 것보다 작은 경험을 흩어지지 않게 쌓는 힘이 든든해지는 흐름이에요.";
+    }
+    return annualThemes[selectedGod].gift;
+  };
   function fuse(domain: Domain, section: string, selectedGod: TenGod, period: string, lead: string, time: AnnualTime) {
     const signalId = packet.calendarMonths?.flatMap(m => m.segments).find(s => s.startKst === period)?.evidenceIds.find(id => id.endsWith(":ten_gods")) ?? `${period}:ten_gods`;
     const signal = periodFact(selectedGod, period, domain, signalId);
@@ -134,7 +143,7 @@ export function buildAnnualV3(base: AnnualFortuneReportDraft, packet: AnnualFort
   const cycleTheme = cycle ? annualThemes[getTenGodForStemPair(packet.dayMaster, cycle.ganji[0] as HeavenlyStem)] : null;
   const cross = active?.activeDayunContext.status === "transition_uncertain" ? `오래 익힌 역할과 새로 맡고 싶은 역할 사이에서 ${particle(root.focus, "subject")} 선명해집니다. 넘어가는 시점에 따라 힘을 쓰는 배경은 달라져도, 이 해에 무엇을 내 것으로 남길지는 공통된 질문입니다.` : cycleTheme ? `${particle(cycleTheme.focus, "subject")} 길게 이어지는 배경에서, ${year}년에는 ${particle(root.focus, "subject")} 더 눈앞의 일이 됩니다. 큰 방향이 바뀌지 않아도 무엇을 해냈을 때 만족하는지는 달라질 수 있어요.` : `지금 가진 성향을 ${root.focus}에 써보는 한 해입니다. 밖에서 좋은 평가를 받는 일과 내가 오래 하고 싶은 일이 어디서 겹치는지가 선명해집니다.`;
   const opening = narrativeRhythm([
-    root[yearTime], timeCopy(root.gift, yearTime), timeCopy(cross, yearTime),
+    root[yearTime], timeCopy(themeGift(god), yearTime), timeCopy(cross, yearTime),
     fuse("identity", "opening", god, `annual:${year}`, `${work.entry}. 이 장면에서 ${particle(root.focus, "called")} 올해의 관심이 실제 선택으로 드러납니다.`, yearTime),
     timeCopy(`${loveScenes[0]} ${root.overuse}`, yearTime),
   ]);
@@ -142,10 +151,12 @@ export function buildAnnualV3(base: AnnualFortuneReportDraft, packet: AnnualFort
     { id: "work", title: context.lifeStatus === "student" ? "배운 것보다, 직접 해본 이야기가 남습니다" : context.lifeStatus === "job_seeker" ? "멋진 직무명 아래에서 내가 할 하루를 봅니다" : context.lifeStatus === "business_owner" ? "매출이 커져도 내 하루는 늘어나지 않습니다" : context.lifeStatus === "freelancer" ? "다음에도 내 이름을 찾는 의뢰가 자산입니다" : "빨리 끝내서 쉬워 보였던 일의 진짜 값", domain: "career", form: "scene", paragraphs: [
       `${work.recognition}. 잘해온 일의 가치는 그 일을 처음 맡은 사람에게 설명할 때 더 선명해집니다. 쉽게 끝낸 결과만 보던 주변에도 내가 어떤 판단을 했는지 보이는 순간이에요.`,
       fuse("career", "work", god, `annual:${year}`, `${work.pressure}. ${particle(root.focus, "subject")} 중요해지는 흐름에서는 무엇을 더 할지 못지않게 어떤 일을 내 이름으로 남길지 보게 됩니다.`, yearTime),
-      `${work.next}. 지금의 직업에서 좋아하는 부분과 다음 역할에서 늘리고 싶은 부분이 같을 필요는 없어요. 잘한다는 이유로 계속 맡을지, 잘하는 방식을 다른 문제에 쓸지가 갈리는 대목입니다.`,
+      robust && ["job_seeker", "resting", "student", "exam_certificate"].includes(context.lifeStatus)
+        ? `${work.next}. 준비하면서 재미를 느낀 문제와 실제 역할에서 매일 맡을 문제를 비교해볼 수 있어요. 경험이 적다는 말보다 직접 해보고 선택한 이유가 내 방향을 더 또렷하게 보여줍니다.`
+        : `${work.next}. 지금의 직업에서 좋아하는 부분과 다음 역할에서 늘리고 싶은 부분이 같을 필요는 없어요. 잘한다는 이유로 계속 맡을지, 잘하는 방식을 다른 문제에 쓸지가 갈리는 대목입니다.`,
     ], labels: [packet.annualFortune.ganji, god], evidenceRefs: annualRefs },
     { id: "money", title: /재/.test(packet.annualFortune.branchTenGod) ? "돈의 좋은 흐름, 내 생활에 남는 모양으로" : "돈보다 먼저 싸게 쓰고 있는 것은 내 시간일까요", domain: "money", form: "prose", paragraphs: [
-      /재/.test(packet.annualFortune.branchTenGod) ? baseTheme.gift : "돈이 들어오는 순간만 보면 괜찮은데 끝나고 남은 시간이 너무 적을 수 있어요. 작은 부탁에 쓰는 시간, 남과 비교한 뒤 달라진 소비에도 나만의 가치 기준이 드러납니다. 큰 수익을 가정하기보다 실제로 남은 몫을 보는 쪽이 이 해의 자원 감각과 맞닿아 있습니다.",
+      /재/.test(packet.annualFortune.branchTenGod) ? themeGift(packet.annualFortune.branchTenGod) : "돈이 들어오는 순간만 보면 괜찮은데 끝나고 남은 시간이 너무 적을 수 있어요. 작은 부탁에 쓰는 시간, 남과 비교한 뒤 달라진 소비에도 나만의 가치 기준이 드러납니다. 큰 수익을 가정하기보다 실제로 남은 몫을 보는 쪽이 이 해의 자원 감각과 맞닿아 있습니다.",
       fuse("money", "money", packet.annualFortune.branchTenGod, `annual:${year}`, `${particle(baseTheme.focus, "called")} 현실 감각이 돈을 고르는 취향에도 스며듭니다. 같은 가격이라도 시간을 돌려주는 지출인지, 불안을 잠깐 덮는 지출인지에 따라 만족이 달라져요.`, yearTime),
     ], labels: [packet.annualFortune.branchTenGod], evidenceRefs: annualRefs },
     { id: "people", title: "친구는 많아도, 이 고민을 말할 사람은 따로 있습니다", domain: "relationship", form: "punch", paragraphs: [
@@ -166,6 +177,7 @@ export function buildAnnualV3(base: AnnualFortuneReportDraft, packet: AnnualFort
   const annualSections = domainBlocks.sort((a, b) => Number(b.domain === root.domain || b.domain === baseTheme.domain) - Number(a.domain === root.domain || a.domain === baseTheme.domain)).map(b => ({ ...b, paragraphs: uniqueSectionParagraphs(narrativeRhythm(b.paragraphs.map(p => timeCopy(p, yearTime)))) }));
 
   const seenHeroes = new Set<string>();
+  const seenMonthGods = new Set<TenGod>();
   const editorialMonths = calendar.map((month): AnnualV3Month => {
     const extensions = extra.months.find(m => m.month === month.month)!;
     // A civil month has two (occasionally more) periods. Never assign its
@@ -179,12 +191,22 @@ export function buildAnnualV3(base: AnnualFortuneReportDraft, packet: AnnualFort
     const hero = gift ? monthlyGifts[gift.code] : null, domain = hero?.domain ?? theme.domain;
     const relation = relationScene(focus, ext, domain);
     const scenes = [work.entry, work.conversation, work.craft, work.recognition, work.outside, work.handoff, work.pressure, work.learning, work.next];
-    const scene = domain === "love" || domain === "relationship" ? loveScenes[(month.month - 1) % loveScenes.length]
+    const scene = domain === "love" || domain === "relationship" ? robust ? monthlyRelationshipMoment(focus.stemTenGod, relationship) : loveScenes[(month.month - 1) % loveScenes.length]
       : `${scenes[(month.month - 1) % scenes.length]}. ${annualWorkTurns[focus.branchTenGod]}`;
     const segmentTime = annualTime(focus.startKst, focus.endKstExclusive, evaluatedAtKst);
-    const main = [theme[segmentTime], hero ? timeCopy(hero.text, segmentTime) : timeCopy(theme.gift, segmentTime),
+    const main = [theme[segmentTime], hero ? timeCopy(hero.text, segmentTime) : timeCopy(themeGift(focus.stemTenGod), segmentTime),
       fuse(domain, `month-${month.month}`, focus.stemTenGod, focus.startKst, scene, segmentTime),
       relation ? timeCopy(relation.text, segmentTime) : timeCopy(theme.overuse, segmentTime)];
+    if (robust) {
+      const again = seenMonthGods.has(focus.stemTenGod);
+      seenMonthGods.add(focus.stemTenGod);
+      const lived = timeCopy(monthlyLivedMoment(focus.stemTenGod, again), segmentTime);
+      const contextScene = timeCopy(monthlyContextMoment(context, relationship, focus.stemTenGod, focus.branchTenGod, theme.focus, again), segmentTime);
+      // Observations, work scenes and gifts take turns opening a month. Keep
+      // the selected god, period and provenance; do not re-score months.
+      main.splice(again ? 0 : 2, 0, lived);
+      main.push(contextScene);
+    }
     if (hero) [main[0], main[1]] = [main[1], main[0]];
     else if (relation && focus.relationFacts.some(f => f.certainty === "confirmed" && ["충", "형"].includes(f.type))) main.unshift(main.pop()!);
     if (time === "current") {
@@ -196,7 +218,7 @@ export function buildAnnualV3(base: AnnualFortuneReportDraft, packet: AnnualFort
       const x = extensions.segments.find(e => e.startKst === s.startKst)!, t = annualTime(s.startKst, s.endKstExclusive, evaluatedAtKst), th = annualThemes[s.stemTenGod];
       const r = relationScene(s, x, th.domain);
       const carried = month.month > 1 && s === month.segments[0] && x.ganji === extra.months[month.month - 2].segments.at(-1)?.ganji;
-      const continuation = `${month.month - 1}월 말부터 이어지는 ${th.focus}. ${s.activeDayunContext.status === "transition_uncertain" ? "같은 달의 흐름 안에서도 오래 이어온 배경이 달라지는 때를 지나고 있습니다." : "달력은 새 달이 되어도 흐름이 바뀌기 전까지는 앞서 다루던 주제가 이어집니다."} ${t === "past" ? "이때 마무리하지 못했던 일과 다음 구간에서 새로 시작한 일을 나눠 떠올려볼 수 있어요." : "새 계획을 늘리기 전에 진행 중인 약속이 어디까지 왔는지 보이는 짧은 연결 구간이에요."}`;
+      const continuation = robust ? `${month.month}월 ${Number(s.startKst.slice(8, 10))}일부터 ${Number(s.endKstExclusive.slice(5, 7))}월 ${Number(s.endKstExclusive.slice(8, 10))}일 흐름 전환 전까지는 앞선 달의 ‘${th.focus}’ 흐름이 ${t === "past" ? "이어졌습니다" : "이어집니다"}.` : `${month.month - 1}월 말부터 이어지는 ${th.focus}. ${s.activeDayunContext.status === "transition_uncertain" ? "같은 달의 흐름 안에서도 오래 이어온 배경이 달라지는 때를 지나고 있습니다." : "달력은 새 달이 되어도 흐름이 바뀌기 전까지는 앞서 다루던 주제가 이어집니다."} ${t === "past" ? "이때 마무리하지 못했던 일과 다음 구간에서 새로 시작한 일을 나눠 떠올려볼 수 있어요." : "새 계획을 늘리기 전에 진행 중인 약속이 어디까지 왔는지 보이는 짧은 연결 구간이에요."}`;
       return { startKst: s.startKst, endKstExclusive: s.endKstExclusive, ganji: x.ganji,
         paragraphs: narrativeRhythm(carried ? [continuation] : [th[t], ...(r ? [timeCopy(r.text, t)] : [])]), labels: labelSegment(s, x), evidenceRefs: [...s.evidenceIds, ...x.features.map(f => f.id)] };
     });
@@ -219,10 +241,13 @@ export function buildAnnualV3(base: AnnualFortuneReportDraft, packet: AnnualFort
     fuse("lifestyle", "finale", god, `annual:${year}`, "배움과 생활은 성과의 뒤에 남는 부록이 아닙니다. 오래 쓰고 싶은 실력과 오래 지키고 싶은 하루를 같이 고를 때, 바빴다는 기억 말고 나에게 남은 변화가 생깁니다.", yearTime),
     root.punch,
   ]);
+  const select = sentenceSelection();
+  const distinct = (paragraphs: readonly string[]) => robust ? paragraphs.map(select).filter(Boolean) : paragraphs;
   return { ...base, version: ANNUAL_V3_VERSION, productVersion: "v3", evaluatedAtKst,
     title: `${packet.personContext.name}님의 ${year}년, 한 해의 결`, hook: root.title, spoiler: `${root.focus} · ${baseTheme.focus}`,
     inputSummary: [{ label: "선택 연도", value: `${year}년` }, { label: "현재 상태", value: raw?.jobStatus === "" ? "미선택" : USER_LIFE_STATUS_LABELS[context.lifeStatus] }, ...(raw?.detailJob ? [{ label: context.lifeStatus === "student" ? "관심 분야" : "현재 직업", value: raw.detailJob }] : !raw && context.fieldLabel ? [{ label: context.lifeStatus === "student" ? "관심 분야" : "현재 직업", value: context.fieldLabel }] : []), { label: "관계 상태", value: relationshipLabels[relationship] ?? USER_RELATIONSHIP_STATUS_LABELS.unknown }, { label: "MBTI", value: packet.mbtiBasis.type || "모름" }],
-    opening: uniqueSectionParagraphs(opening), annualSections, editorialMonths, focusMonths, finale: uniqueSectionParagraphs(finale), narrativeAudit };
+    opening: distinct(uniqueSectionParagraphs(opening)), annualSections: annualSections.map(s => ({ ...s, paragraphs: distinct(s.paragraphs) })),
+    editorialMonths: editorialMonths.map(m => ({ ...m, paragraphs: distinct(m.paragraphs), segments: m.segments.map(s => ({ ...s, paragraphs: distinct(s.paragraphs) })) })), focusMonths, finale: distinct(uniqueSectionParagraphs(finale)), narrativeAudit };
 }
 
 export function annualV3CustomerText(draft: AnnualV3Draft): string {

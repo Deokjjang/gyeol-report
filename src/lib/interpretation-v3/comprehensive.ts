@@ -127,7 +127,7 @@ export function comprehensiveCandidates(facts: readonly Evidence[], enriched = f
   });
 }
 
-export type ComprehensiveV3Input = { name: string; facts: readonly Evidence[]; context: UserContextProfile; relationshipStatus: string; profileTable: ComprehensiveReportV2ProfileTable; calculation?: SajuCalcResult };
+export type ComprehensiveV3Input = { name: string; facts: readonly Evidence[]; context: UserContextProfile; relationshipStatus: string; profileTable: ComprehensiveReportV2ProfileTable; calculation?: SajuCalcResult; robust?: boolean };
 export function buildComprehensiveV3(input: ComprehensiveV3Input): ComprehensiveV3Draft {
   if (!input.facts.some(f => f.scope === "natal" && f.certainty === "confirmed")) return buildComprehensiveV3Legacy(input);
   return input.calculation ? composeComprehensiveDepth(input, comprehensiveCandidates(input.facts, true)) : buildComprehensiveV31(input);

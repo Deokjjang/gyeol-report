@@ -113,7 +113,7 @@ function elementChange(packet: MajorFortuneEvidencePacket, cycle: MajorFortuneCy
 
 /** Reuses canonical cycle/year calculators. This is a view window and prose
  * composition, not a new calendar, luck score or persistence contract. */
-export function buildMajorFortuneHorizon(base: MajorFortuneReportDraft, packet: MajorFortuneEvidencePacket, facts: readonly Evidence[], calculation: SajuCalcResult, futureYears: 6 | 10 = 6): MajorFortuneV3Draft | null {
+export function buildMajorFortuneHorizon(base: MajorFortuneReportDraft, packet: MajorFortuneEvidencePacket, facts: readonly Evidence[], calculation: SajuCalcResult, futureYears: 6 | 10 = 6, robust = false): MajorFortuneV3Draft | null {
   const cycles = packet.customerDayun?.cycles;
   if (!cycles?.length) return null;
   const from = packet.currentYear - 3, through = packet.currentYear + futureYears;
@@ -122,7 +122,7 @@ export function buildMajorFortuneHorizon(base: MajorFortuneReportDraft, packet: 
   const frozen = buildMajorFortuneV3(base, packet);
   const selected = cycleFor(packet.currentYear)!;
   const active = cycles.find(c => c.index === packet.dayunSelection?.activeCycleAtEvaluation) ?? null;
-  const nowCycle = active ?? selected, now = cycleView(packet, nowCycle), work = interpretCareerContextV3(packet.userContext.fieldLabel ?? "");
+  const nowCycle = active ?? selected, now = cycleView(packet, nowCycle), work = interpretCareerContextV3(packet.userContext.fieldLabel ?? "", robust, packet.userContext.lifeStatus);
   const scenes = careerEditorialScenes(packet.userContext, work), used = new Set<string>(), audit: NarrativeAudit[] = [];
   const trait = (domain: Domain, section: string, signals: readonly Evidence[]) => {
     const found = selectNarrativeTraits({ product: "major_fortune", domain, section, mbti: packet.mbtiBasis.type ?? "", selectedSignals: signals,

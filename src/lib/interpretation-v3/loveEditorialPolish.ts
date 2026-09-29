@@ -6,6 +6,8 @@ import { LOVE_MOMENTS, LOVE_D2_STATE } from "./loveEditorialPolishCopy";
 import { LOVE_VOICES } from "./loveEditorialContext";
 import { withKoreanParticle } from "../report-knowledge/koreanCopyUtils";
 import type { Evidence } from "./types";
+import { careerEditorialScenes } from "./careerEditorialScenes";
+import { interpretCareerContextV3 } from "./careerContextV3";
 
 /** D's calculation, qualified facts and optional sections remain unchanged.
  * D2 has its own deterministic copy replay; published D snapshots stay frozen. */
@@ -95,6 +97,11 @@ export function buildLoveV3Polished(input: LoveV3Input): LoveV3Draft {
     }
     // Shared-life's second manifestation belongs to the selected overuse fact.
     if (s.angle === "shared-life" && home.id !== friction.id) anchors = [...anchors, friction];
+    if (input.robust && input.context?.fieldLabel && s.angle === "affection-method") {
+      const work = interpretCareerContextV3(input.context.fieldLabel, true, input.context.lifeStatus);
+      const scene = careerEditorialScenes(input.context, work);
+      next = { ...next, parts: [...next.parts, character(`${input.context.fieldLabel}의 하루를 떠올려보면 ${scene.pressure}가 있습니다. 바깥에서 여러 사람의 요청을 들은 날에는 좋아하는 사람 앞에서도 잠깐 말이 줄 수 있죠. 마음을 덜 쓴 것이 아니라, 내 이야기를 고를 여유가 돌아오는 중일 수 있습니다.`)], sourceRefs: [...next.sourceRefs, "userContext:detailJob"] };
+    }
     return [reanchor(next, anchors)];
   });
   const { scenes: composed, ...editorialAudit } = composeEditorial({ product: "love_marriage_child", facts, scenes, chapters: original.chapters.map(c => c.id), selectedEvidenceRefs: [...new Set(scenes.flatMap(s => s.evidenceRefs))], substantialEvidenceRefs: substantial.map(f => f.id) });

@@ -1,5 +1,6 @@
 import { CAREER_RULES, interpretCareerContext, type CareerContext } from "./context";
 import type { UserContextProfile } from "../report-knowledge/userContextTypes";
+import { careerEditorialScenes } from "./careerEditorialScenes";
 
 // V3-only taxonomy extension. The default interpreter (and frozen Phase B)
 // deliberately keep their original output. These describe work, NOT ability.
@@ -15,7 +16,7 @@ const rules: typeof CAREER_RULES = [
   { id: "production", pattern: /생산관리|현장|물류|공정|설비/, fields: { roleFamily: "field_operations", operationsIntensity: "high", physicalIntensity: "high", keyWorkModes: ["작업 순서 조정", "이상 확인"], outputTypes: ["작업 기록", "인수인계"], successMetrics: ["안전", "납기", "재작업 감소"], stakeholders: ["현장 작업자", "다음 공정"] } },
 ];
 const arrayKeys = ["keyWorkModes", "outputTypes", "successMetrics", "stakeholders"] as const;
-export function interpretCareerContextV3(text: string): CareerContext {
+export function interpretCareerContextV3(text: string, robust = false, status = ""): CareerContext {
   let result = interpretCareerContext("");
   // Merge list-valued descriptors rather than letting 영업 overwrite 기획/IT.
   for (const rule of [...CAREER_RULES, ...rules]) if (rule.pattern.test(text)) {
@@ -23,7 +24,28 @@ export function interpretCareerContextV3(text: string): CareerContext {
     result = { ...result, ...rule.fields };
     for (const key of arrayKeys) result = { ...result, [key]: [...new Set([...before[key], ...(rule.fields[key] ?? [])])] };
   }
-  return result;
+  if (!robust) return result; // Frozen snapshot replay.
+  const industry = /제조|공정|생산/.test(text) ? "manufacturing" : /교육|강사|교사|튜터|학원/.test(text) ? "education" : /병원|의료|간호/.test(text) ? "healthcare" : result.industry;
+  const seniority = /대표|사업주|사장/.test(text) || status === "business_owner" ? "owner" : /과장|팀장|부장|관리자/.test(text) ? "manager" : "unspecified";
+  const functionName = /재무|회계|원가|예산|경영기획|FP&A/i.test(text) ? "finance_planning"
+    : /강사|교사|튜터|강의|교수/.test(text) ? "teaching"
+    : /행정|총무|사무/.test(text) ? "administration"
+    : /간호|치료|의사/.test(text) ? "care_operations"
+    : /생산관리|품질|공정|현장|물류|설비/.test(text) ? "field_operations"
+    : /디자인|디자이너|일러스트/.test(text) ? "design"
+    : ["engineering", "sales_operations", "customer_service"].includes(result.roleFamily) ? result.roleFamily
+    : seniority === "owner" ? "business_operations" : ["teaching", "care_operations"].includes(result.roleFamily) ? "unknown" : result.roleFamily;
+  const descriptors: Partial<CareerContext> = functionName === "finance_planning" ? {
+    analysisIntensity: "high", creativeIntensity: "unknown", physicalIntensity: "low", operationsIntensity: "medium",
+    keyWorkModes: ["예산 편성", "실적과 계획 비교", "투자안 검토"], outputTypes: ["손익 전망", "경영진 보고"], successMetrics: ["예측 정확도", "비용 구조 개선"], stakeholders: ["부서 담당자", "경영진"],
+  } : functionName === "business_operations" ? {
+    operationsIntensity: "high", salesIntensity: "high", keyWorkModes: ["상품 설계", "고객 획득", "운영 조율"], outputTypes: ["상품", "사업계획"], successMetrics: ["현금흐름", "재구매", "수익성"], stakeholders: ["고객", "팀", "파트너"],
+  } : functionName === "administration" ? {
+    physicalIntensity: "low", keyWorkModes: ["일정 조율", "서류 확인"], outputTypes: ["처리 기록", "안내 자료"], successMetrics: ["정확한 안내", "누락 예방"], stakeholders: ["이용자", "담당 부서"],
+  } : {};
+  // Industry supplies a setting, not evidence of a person's day-to-day function.
+  return { ...result, ...descriptors, industry, function: functionName, roleFamily: functionName, seniority,
+    workMode: status === "freelancer" ? "independent" : seniority === "owner" ? "owner" : status || "unspecified" };
 }
 
 export type WorkArena = {
@@ -44,5 +66,9 @@ export function careerWorkArena(context: UserContextProfile, work: CareerContext
   else if (work.creativeIntensity === "high") Object.assign(base, { start: "초안을 보여줬는데 좋다는 말보다 미묘한 망설임이 걸릴 때", pinch: "거의 끝난 작업에 취향이 다른 수정 요청이 이어질 때", praise: "내 의도를 정확히 이해해 결과로 보여줬다는 반응", growth: "제작의 깊이와 기획·디렉팅 범위를 어떻게 나눌지", learning: "초안과 최종 작업물 사이에 달라진 선택", next: "시안의 의도와 수정 범위를 대화할 수 있는 작업 환경" });
   if (context.lifeStatus === "student" || context.lifeStatus === "exam_certificate") return { ...base, label: context.fieldLabel || "지금 배우는 분야", stage: "수업·공부·작은 실습", output: "과제·작은 포트폴리오", people: "친구·선생님", measure: "설명할 수 있는 이해와 직접 만든 결과", start: "읽을 때는 알았는데 혼자 문제를 풀면 막힐 때", pinch: "시험이 가까워졌는데 재미있는 부분만 오래 보고 있을 때", praise: "네 설명을 듣고 이해됐다는 친구의 말", growth: "점수로 확인한 실력과 직접 해보며 생긴 취향을 구분하는 일", learning: "틀린 문제의 전제와 직접 해본 과제", next: "수업 밖에서 실제 결과를 만들어 볼 첫 경험" };
   if (["job_seeker", "resting"].includes(context.lifeStatus)) return { ...base, label: context.fieldLabel || "다음에 맡고 싶은 역할", stage: "지원 준비·작은 직무 경험", output: "지원 사례·작업 샘플", people: "현직자·함께 준비하는 사람", measure: "내 강점을 설명하는 구체적 사례", start: "채용 공고를 보다가 내가 실제로 할 하루가 궁금해질 때", pinch: "공고의 멋진 이름과 실제 업무 설명이 다를 때", praise: "왜 그렇게 했는지까지 설명할 수 있는 지원자라는 인상", growth: "준비의 양보다 맡아 본 문제의 깊이를 늘리는 일", learning: "관심 직무의 작은 문제를 직접 풀어본 경험", next: "처음부터 완벽한 경력보다 배울 담당자와 실제 업무가 보이는 곳" };
+  if (work.function) {
+    const scenes = careerEditorialScenes(context, work);
+    return { ...base, start: scenes.entry, pinch: scenes.pressure, praise: scenes.recognition, growth: scenes.handoff, learning: scenes.learning, next: scenes.next };
+  }
   return base;
 }

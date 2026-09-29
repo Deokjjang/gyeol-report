@@ -7,10 +7,11 @@ import { matchCompounds } from "./compounds";
 import { LOVE_PORTRAITS } from "./lovePortraits";
 import { LOVE_SITUATIONS, LOVE_VOICES, LOVE_PARENT_VOICES } from "./loveEditorialContext";
 import type { Evidence, Domain } from "./types";
+import type { UserContextProfile } from "../report-knowledge/userContextTypes";
 
 export const LOVE_V3_VERSION = "love_v3.0-editorial.1";
 export const LOVE_V3_POLISH_VERSION = "love_v3.0-editorial.2";
-export type LoveV3Input = { name: string; mbti: string; relationshipStatus: RelationshipStatus; familyFocus: boolean; facts: readonly Evidence[]; calculation: SajuCalcResult };
+export type LoveV3Input = { name: string; mbti: string; relationshipStatus: RelationshipStatus; familyFocus: boolean; facts: readonly Evidence[]; calculation: SajuCalcResult; robust?: boolean; context?: UserContextProfile };
 export type LoveV3Draft = {
   readonly productType: "love_marriage_child"; readonly productVersion: "v3"; readonly version: typeof LOVE_V3_VERSION | typeof LOVE_V3_POLISH_VERSION;
   readonly personLabel: string; readonly title: string; readonly mbti: string; readonly archetype: string;

@@ -49,6 +49,7 @@ export function LoveReportV3View({ draft, evidencePacket }: { readonly draft: Lo
       <dl className="grid min-w-0 gap-x-6 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">{inputRows.map(([label, value]) => <div key={label} className="flex min-w-0 items-baseline gap-2">
         <dt className="shrink-0 text-[#756658]">{label}</dt><dd className="min-w-0 break-words [overflow-wrap:anywhere]"><span aria-hidden="true">· </span>{value}</dd>
       </div>)}</dl>
+      {calculation.birthTimeContext?.birthTimePrecision === "unknown" ? <p className="mt-3 text-xs leading-6 text-[#756658]">출생시간을 모르므로 일부 시주 기반 해석은 제외됩니다.</p> : calculation.birthTimeContext?.birthTimePrecision === "approximate" ? <p className="mt-3 text-xs leading-6 text-[#756658]">알려주신 시간대에서 공통으로 확인되는 내용을 중심으로 읽습니다.</p> : null}
     </section>
     <ReportContents items={draft.chapters.map(c => ({ id: `love-${c.id}`, label: c.title }))} />
     <StoryTables facts={facts} calculation={calculation} manse={manse} mbti={mbti} draft={usage} compactMbti={hasNarrativeEdition(draft)} detailMbti={hasDetailNarrative(draft)} />

@@ -30,6 +30,39 @@ export function careerEditorialScenes(context: UserContextProfile, work: CareerC
     outside: "직무 모임에서 내 경험이 예상 밖의 역할에도 쓰인다는 걸 알게 되는 자리",
     next: "첫 선택을 앞두고 회사 이름보다 배울 담당자와 맡을 문제를 비교하는 순간",
   };
+  if (work.function === "finance_planning") return {
+    entry: "예산 편성에서 각 부서의 희망과 실제 쓸 수 있는 돈을 나란히 놓는 순간",
+    conversation: "경영진 보고에서 손익이 달라진 이유를 숫자와 사업의 말로 함께 설명하는 자리",
+    pressure: "실적과 계획의 차이가 커지는데 다음 분기 전망까지 다시 제출해야 할 때",
+    recognition: "투자안의 가정을 짚은 질문 덕분에 큰 비용을 다시 검토하게 된 순간",
+    craft: "원가와 비용 구조를 뜯어보며 합계 뒤에 가려진 움직임을 찾는 시간",
+    handoff: "부서마다 다른 숫자 기준을 맞춰 같은 사업계획을 보게 하는 자리",
+    learning: "지난 예측과 실제 손익을 비교하며 놓친 변수를 알아가는 경험",
+    outside: "다른 회사의 재무 담당자와 예산 운영 방식이 갈린 이유를 나누는 자리",
+    next: "평가와 보상을 앞두고 정확한 보고를 넘어 어떤 판단에 기여했는지 돌아보는 순간",
+  };
+  if (work.function === "business_operations") return {
+    entry: "고객이 처음 사는 이유와 다시 찾아오는 이유가 다르다는 걸 알아차리는 순간",
+    conversation: "새 상품을 두고 고객의 기대와 팀이 감당할 범위를 함께 맞추는 대화",
+    pressure: "매출은 늘었는데 광고비와 운영비를 빼면 현금흐름이 빠듯해질 때",
+    recognition: "대표가 자리를 비워도 고객 경험이 흔들리지 않았다는 소식을 듣는 순간",
+    craft: "가격과 상품 구성을 바꿔 재구매까지 이어지는 차이를 살피는 시간",
+    handoff: "팀에 업무만 넘기지 않고 고객에게 지킬 약속의 기준까지 전하는 자리",
+    learning: "떠난 고객의 이유에서 다음 상품과 운영의 빈칸을 발견하는 경험",
+    outside: "새 파트너와 서로의 고객에게 어떤 가치를 더할지 이야기하는 자리",
+    next: "확장 제안 앞에서 브랜드의 방향과 감당할 비용을 함께 따져보는 순간",
+  };
+  if (work.function === "administration") return {
+    entry: "접수한 서류와 실제 요청이 달라 담당 부서에 다시 확인하는 순간",
+    conversation: "기다리는 이용자에게 처리 순서와 필요한 서류를 설명하는 자리",
+    pressure: "전화 문의와 일정 변경이 겹쳐 방금 하던 확인을 놓치기 쉬울 때",
+    recognition: "미리 확인한 항목 덕분에 두 번 방문할 일을 줄였다는 말을 듣는 순간",
+    craft: "안내 문구와 실제 절차를 맞춰 같은 질문이 반복되는 이유를 찾는 시간",
+    handoff: "다음 담당자에게 처리된 것과 아직 확인할 것을 나눠 전하는 자리",
+    learning: "헷갈렸던 처리 사례를 다시 보며 기준을 익히는 경험",
+    outside: "다른 부서와 협의하며 전체 이용 흐름을 새로 이해하는 자리",
+    next: "정확한 실무에서 일정과 사람 사이를 조율하는 역할까지 생각하는 순간",
+  };
   let scenes: CareerWorkScenes = {
     entry: "맡은 일을 시작하기 전에 무엇부터 확인할지 고르는 순간",
     conversation: "서로 다른 기대를 한 가지 결과로 맞춰가는 대화",
@@ -52,7 +85,7 @@ export function careerEditorialScenes(context: UserContextProfile, work: CareerC
     outside: "기술 모임에서 다른 팀이 기술 부채를 다루는 방법을 듣는 자리",
     next: "이직 공고에서 전문가의 깊이와 기술 관리 역할 사이를 비교하는 순간",
   };
-  else if (work.industry === "healthcare") scenes = {
+  else if (work.function ? work.function === "care_operations" : work.industry === "healthcare") scenes = {
     entry: "인계가 끝났는데 환자의 작은 변화가 마음에 남는 순간",
     conversation: "보호자가 걱정하는 것과 의료진이 확인할 내용을 연결하는 대화",
     pressure: "처치 일정과 보호자의 질문이 동시에 몰릴 때",
@@ -63,7 +96,7 @@ export function careerEditorialScenes(context: UserContextProfile, work: CareerC
     outside: "다른 부서의 교육에서 환자를 보는 새로운 관점을 만나는 자리",
     next: "숙련을 더 깊게 할지 교육·조정 역할을 넓힐지 생각하는 순간",
   };
-  else if (work.industry === "education") scenes = {
+  else if (work.function ? work.function === "teaching" : work.industry === "education") scenes = {
     entry: "설명을 끝냈는데 아직 멈춰 있는 학생의 표정을 보는 순간",
     conversation: "수업에서 같은 질문을 서로 다른 말로 다시 받아보는 자리",
     pressure: "개별 질문이 이어져 다음 수업 준비 시간이 밀릴 때",
@@ -85,7 +118,7 @@ export function careerEditorialScenes(context: UserContextProfile, work: CareerC
     outside: "다른 기관의 실무자와 해석이 갈린 사례를 나누는 자리",
     next: "검토의 깊이와 고객 설명 중 다음 전문성을 고르는 순간",
   };
-  else if (work.roleFamily === "field_operations" || work.operationsIntensity === "high" && work.industry === "manufacturing") scenes = {
+  else if (work.roleFamily === "field_operations" || !work.function && work.operationsIntensity === "high" && work.industry === "manufacturing") scenes = {
     entry: "앞 공정의 작은 지연이 뒤 일정에 번지는 걸 보는 순간",
     conversation: "현장 작업자와 일정 담당자가 서로 다른 우선순위를 말하는 자리",
     pressure: "납기 때문에 안전 확인을 생략하자는 말이 나올 때",

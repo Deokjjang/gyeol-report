@@ -5,6 +5,9 @@ import type { SajuCalcResult } from "../saju/types";
 import type { Evidence } from "./types";
 import { buildMajorFortuneOutlook } from "./majorFortuneOutlook";
 import { endingWarnings } from "./mbtiNarrative";
+import { sentenceSelection } from "./contentRevision";
+import { careerEditorialScenes } from "./careerEditorialScenes";
+import { interpretCareerContextV3 } from "./careerContextV3";
 
 export const MAJOR_FINAL_VERSION = "major_fortune_v3.0-editorial.5" as const;
 
@@ -76,8 +79,8 @@ const scenes: Record<TenGod, { harmony: string; pressure: string; gift: string }
 };
 
 /** F4 replay remains frozen; F5 translates only already-selected relation prose. */
-export function buildMajorFortuneFinal(base: MajorFortuneReportDraft, packet: MajorFortuneEvidencePacket, facts: readonly Evidence[], calculation: SajuCalcResult) {
-  const previous = buildMajorFortuneOutlook(base, packet, facts, calculation);
+export function buildMajorFortuneFinal(base: MajorFortuneReportDraft, packet: MajorFortuneEvidencePacket, facts: readonly Evidence[], calculation: SajuCalcResult, robust = false) {
+  const previous = buildMajorFortuneOutlook(base, packet, facts, calculation, robust);
   if (!previous) return null;
   const editorialYears = previous.editorialYears.map(year => {
     if (year.timePosition === "past") return year;
@@ -94,6 +97,30 @@ export function buildMajorFortuneFinal(base: MajorFortuneReportDraft, packet: Ma
       return paragraph;
     }) };
   });
+  if (robust) {
+    const work = careerEditorialScenes(packet.userContext, interpretCareerContextV3(packet.userContext.fieldLabel ?? "", true, packet.userContext.lifeStatus));
+    const mature: Record<TenGod, string> = {
+      비견: "예전에는 혼자 결정했다는 사실이 중요했다면, 이제는 내 기준을 지키면서도 다른 방식을 받아들일 수 있는지가 차이를 만듭니다. 선택을 바꾸는 일이 곧 나를 잃는 것은 아니라는 여유가 독립의 다음 모습입니다.",
+      겁재: "처음에는 함께 뛰는 사람의 실력이 자극이었다면, 시간이 지난 뒤에는 서로의 수고를 어떻게 알아보는지가 더 중요해집니다. 앞서려는 마음을 버리기보다 함께 갈 사람에게도 자기 몫의 무대를 남기는 경쟁입니다.",
+      식신: "내 손으로 잘 만들던 것에서 다른 사람도 편히 쓸 수 있는 방식으로 관심이 넓어집니다. 매번 새 결과를 증명하는 재미에, 이미 만든 것이 오래 쓰이는 기쁨이 더해지는 장면입니다.",
+      상관: "예전에는 문제를 발견하면 바로 말하고 싶었다면, 이제는 무엇을 바꿨을 때 실제 생활이 나아지는지까지 보게 됩니다. 반짝이는 한마디에서 함께 시도할 수 있는 제안으로 표현의 힘이 자랍니다.",
+      정재: "오래 지켜온 방식 중에는 안정의 이유가 된 것도, 이제는 손이 너무 많이 가는 것도 있을 수 있습니다. 축적의 다음 단계는 전부 붙잡는 일이 아니라 앞으로도 나를 받쳐줄 것을 구분하는 일입니다.",
+      편재: "많은 가능성을 만났던 경험이 이제는 제안을 거르는 눈으로 남습니다. 새롭다는 이유만으로 흥미로웠던 때와 달리, 내가 가진 것과 상대의 필요가 어디서 만나는지 더 구체적으로 묻게 됩니다.",
+      편관: "예전에는 급한 상황을 내가 정리하는 것으로 존재감을 보였다면, 이제는 급해지기 전에 누가 무엇을 결정할지 나누는 힘이 중요해집니다. 가장 바쁜 사람이 아니라 다른 사람도 판단할 수 있게 만드는 사람으로 역할이 달라지는 장면입니다.",
+      정관: "반듯한 결과로 얻은 신뢰를 다음 사람에게도 건넬 수 있는지 보게 됩니다. 내가 지켜온 기준을 그대로 요구하기보다 그 기준이 왜 필요한지 설명할 때, 직함 밖에도 남는 영향력이 생깁니다.",
+      편인: "한때 혼자만 재미있어하던 질문 중 어떤 것이 실제 문제를 보는 눈이 됐는지 구별할 수 있습니다. 관심이 많다는 사실보다 서로 다른 경험 사이에 나만의 지도를 갖게 됐다는 점이 달라집니다.",
+      정인: "도움을 받으며 익힌 것이 누군가의 첫 시도를 편하게 해주는 기반으로 바뀝니다. 모든 답을 알려주는 사람보다 상대가 자기 답을 찾을 때 곁에서 맥락을 짚어주는 사람으로 배움의 쓰임이 깊어집니다.",
+    };
+    const select = sentenceSelection();
+    const distinct = (ps: readonly string[]) => ps.map(select).filter(Boolean);
+    const opening = distinct(previous.opening);
+    const horizon = { ...previous.horizon!, transitions: previous.horizon!.transitions.map(t => ({ ...t, paragraphs: distinct(t.paragraphs) })) };
+    const editorialSections = previous.editorialSections.map(s => ({ ...s, paragraphs: distinct(s.paragraphs) }));
+    const years = editorialYears.map(y => ({ ...y, paragraphs: distinct([...y.paragraphs, ...(y.year === packet.currentYear + 10 ? [mature[y.tenGod as TenGod], `${work.handoff}. 오랫동안 직접 해온 방식이 다른 사람의 판단에도 쓰일 때, 다음 시간을 전부 내 손으로 채우지 않아도 된다는 여유가 남습니다.`] : [])]) }));
+    const finale = distinct(previous.finale);
+    return { ...previous, version: MAJOR_FINAL_VERSION, opening, horizon, editorialSections, editorialYears: years, finale,
+      rhythmWarnings: endingWarnings([...opening, ...horizon.transitions.flatMap(t => t.paragraphs), ...editorialSections.flatMap(s => s.paragraphs), ...years.flatMap(y => y.paragraphs), ...finale]) };
+  }
   return { ...previous, version: MAJOR_FINAL_VERSION, editorialYears,
     rhythmWarnings: endingWarnings([...previous.opening, ...previous.horizon!.transitions.flatMap(t => t.paragraphs), ...previous.editorialSections.flatMap(s => s.paragraphs), ...editorialYears.flatMap(y => y.paragraphs), ...previous.finale]) };
 }

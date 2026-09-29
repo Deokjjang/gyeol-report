@@ -23,7 +23,7 @@ import type { SajuCalcResult } from "../../../src/lib/saju/types";
 const now = () => new Date("2026-09-29T03:00:00Z");
 it.each(CAREER_V3_FIXTURES)("F5 %s preserves F4 density, all calculations, traits and snapshots", async (...fixture) => {
   const input = { ...careerFixture(fixture).payload, productKey: "major_fortune", productSlug: "major-fortune" };
-  const current = (await createMajorFortuneV3(input, { now }))!;
+  const current = (await createMajorFortuneV3(input, { now, edition: "legacy-final" }))!;
   const old = (await createMajorFortuneV3(input, { now, edition: "legacy-outlook" }))!;
   expect(current.draft.version).toBe("major_fortune_v3.0-editorial.5");
   expect(current.evidencePacket).toEqual(old.evidencePacket);

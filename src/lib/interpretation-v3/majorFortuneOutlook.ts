@@ -39,12 +39,12 @@ const lives: Record<TenGod, { opening: string; work: string; money: string; peop
 };
 
 /** F4 only. The F3 composer remains the exact replay path for saved editions. */
-export function buildMajorFortuneOutlook(base: MajorFortuneReportDraft, packet: MajorFortuneEvidencePacket, facts: readonly Evidence[], calculation: SajuCalcResult): MajorFortuneV3Draft | null {
-  const f3 = buildMajorFortuneHorizon(base, packet, facts, calculation, 10);
+export function buildMajorFortuneOutlook(base: MajorFortuneReportDraft, packet: MajorFortuneEvidencePacket, facts: readonly Evidence[], calculation: SajuCalcResult, robust = false): MajorFortuneV3Draft | null {
+  const f3 = buildMajorFortuneHorizon(base, packet, facts, calculation, 10, robust);
   if (!f3?.horizon) return null;
   const horizon = f3.horizon, oldAudit = f3.narrativeAudit ?? [], used = new Set<string>(), audit: NarrativeAudit[] = [];
   const now = horizon.activeCycle ?? horizon.rows.find(r => r.year === packet.currentYear)!.cycle;
-  const scenes = careerEditorialScenes(packet.userContext, interpretCareerContextV3(packet.userContext.fieldLabel ?? ""));
+  const scenes = careerEditorialScenes(packet.userContext, interpretCareerContextV3(packet.userContext.fieldLabel ?? "", robust, packet.userContext.lifeStatus));
   const fuse = (god: TenGod, section: string) => {
     const year = section.startsWith("year-") ? f3.editorialYears.find(y => y.year === Number(section.slice(5))) : undefined;
     const cycle = year ? horizon.rows.find(r => r.year === year.year)!.cycle : section.startsWith("transition-") ? horizon.transitions.find(t => t.year === Number(section.slice(11)))!.after : section === "finale" ? horizon.rows.at(-1)!.cycle : now;
