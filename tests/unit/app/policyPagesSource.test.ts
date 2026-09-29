@@ -54,7 +54,7 @@ describe("policy page sources", () => {
       "의료·법률·투자 자문을 제공하지 않습니다",
       "리포트 생성 전에는 결제일로부터 7일 이내 취소 및 환불을 요청할 수 있습니다",
       "회사의 고의 또는 중대한 과실",
-      'termsPolicyEffectiveDateKo = "2026년 6월 14일"',
+      'termsPolicyEffectiveDateKo = "2026년 9월 24일"',
       "support@gyeolreport.com",
       "홈으로 돌아가기",
       'href="/"',

@@ -119,7 +119,7 @@ it("explicit V3 bypasses enabled writers; original Love snapshot and full SSR re
   const { payload } = loveFixture(LOVE_V3_FIXTURES[0]);
   const result = await generateProductReport(payload, { enabled: true, config: { enabled: true, apiKey: "test-no-call", model: "test" } }, "normal_writer", undefined, { loveVersion: "v3" });
   expect(result.ok).toBe(true); expect(result.externalCalls).toEqual([]); if (result.ok) expect(isLoveV3Draft(result.draft)).toBe(true);
-  const legacy = await generateProductReport(payload, { enabled: false, reason: "flag_disabled" }, "deterministic_fallback"); expect(legacy.ok).toBe(true);
+  const legacy = await generateProductReport({ ...payload, productOptions: {} }, { enabled: false, reason: "flag_disabled" }, "deterministic_fallback"); expect(legacy.ok).toBe(true);
   if (legacy.ok) {
     expect(isLoveV3Draft(legacy.draft)).toBe(false); expect(validateProductPublication("love_marriage_child", legacy.draft, legacy.evidencePacket).errors).toEqual([]);
     const snapshot = createProductPreviewSnapshot({ reportId: "love-old", createdAtIso: "2026-09-28T00:00:00Z", productKey: "love_marriage_child", productSlug: "love-marriage-child", draft: legacy.draft as ProductPreviewSnapshotDraft, evidencePacket: legacy.evidencePacket });

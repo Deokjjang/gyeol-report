@@ -454,7 +454,12 @@ function createSingleProductOptions(
     };
   }
 
-  if (productKey === MAJOR_FORTUNE_PRODUCT_KEY) {
+  if (
+    productKey === MAJOR_FORTUNE_PRODUCT_KEY ||
+    productKey === SAJU_MBTI_FULL_PRODUCT_KEY ||
+    productKey === CAREER_MONEY_STUDY_PRODUCT_KEY ||
+    productKey === LOVE_MARRIAGE_CHILD_PRODUCT_KEY
+  ) {
     return { contentVersion: "v3" };
   }
 

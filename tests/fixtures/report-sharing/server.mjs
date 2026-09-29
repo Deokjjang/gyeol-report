@@ -1,11 +1,12 @@
 // Local-only Supabase HTTP fixture for the real Next.js sharing routes.
 // Generate synthetic snapshots with SHARE_QA_DIR and reportSharing.test.tsx first.
 import { createServer } from "node:http";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 const fixtureDir = process.env.SHARE_QA_DIR;
 if (!fixtureDir) throw new Error("SHARE_QA_DIR is required");
 const snapshots = Object.values(JSON.parse(readFileSync(fixtureDir + "/snapshots.json", "utf8")));
-const links = new Map(snapshots.map((snapshot, i) => [snapshot.reportId, {
+const issued = existsSync(fixtureDir + "/links.json") ? JSON.parse(readFileSync(fixtureDir + "/links.json", "utf8")) : null;
+const links = issued ? new Map(issued.map(row => [row.report_id, row])) : new Map(snapshots.map((snapshot, i) => [snapshot.reportId, {
   report_id: snapshot.reportId, token: "gr_" + String.fromCharCode(97 + i).repeat(32), revoked_at: null,
 }]));
 const server = createServer(async (req, res) => {
