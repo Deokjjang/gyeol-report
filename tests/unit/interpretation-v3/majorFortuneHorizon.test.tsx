@@ -2,7 +2,7 @@ import { writeFileSync } from "node:fs";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it } from "vitest";
-import { createMajorFortuneV3, validateMajorFortuneV3 } from "../../../src/lib/report-generation/majorFortuneV3Generation";
+import { createMajorFortuneV3 as createMajorEdition, validateMajorFortuneV3 } from "../../../src/lib/report-generation/majorFortuneV3Generation";
 import { validateNewProductPublication } from "../../../src/lib/report-generation/productPublishGate";
 import { createProductPreviewSnapshot, isProductPreviewSnapshot } from "../../../src/lib/report-generation/productPreviewSnapshot";
 import { getAnnualGanjiInfo, getTenGodForStemPair } from "../../../src/lib/report-knowledge/annualFortuneYearRules";
@@ -12,6 +12,7 @@ import { MajorFortuneReportV3View } from "../../../src/app/reports/[reportId]/Ma
 import { careerFixture, CAREER_V3_FIXTURES } from "./careerFixtures";
 
 const now = () => new Date("2026-09-29T03:00:00Z");
+const createMajorFortuneV3 = (input: unknown, options: { now?: () => Date } = {}) => createMajorEdition(input, { ...options, edition: "legacy-horizon" });
 const internals = /evidenceId|sourceRefs|canonical-|career_shift|money_responsibility|previous_to_current|metal|water|narrativeAudit|\d+\s*점|[SABC][+\-]?\s*등급|겁재은|정재은|결과이/;
 
 it("2026 means 2023–2032, with the actual 2028 transition and full common manse", async () => {

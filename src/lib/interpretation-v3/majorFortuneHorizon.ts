@@ -113,10 +113,10 @@ function elementChange(packet: MajorFortuneEvidencePacket, cycle: MajorFortuneCy
 
 /** Reuses canonical cycle/year calculators. This is a view window and prose
  * composition, not a new calendar, luck score or persistence contract. */
-export function buildMajorFortuneHorizon(base: MajorFortuneReportDraft, packet: MajorFortuneEvidencePacket, facts: readonly Evidence[], calculation: SajuCalcResult): MajorFortuneV3Draft | null {
+export function buildMajorFortuneHorizon(base: MajorFortuneReportDraft, packet: MajorFortuneEvidencePacket, facts: readonly Evidence[], calculation: SajuCalcResult, futureYears: 6 | 10 = 6): MajorFortuneV3Draft | null {
   const cycles = packet.customerDayun?.cycles;
   if (!cycles?.length) return null;
-  const from = packet.currentYear - 3, through = packet.currentYear + 6;
+  const from = packet.currentYear - 3, through = packet.currentYear + futureYears;
   const cycleFor = (year: number) => cycles.find(c => c.startYear <= year && year <= c.endYear);
   if (!cycleFor(from) || !cycleFor(through)) return null;
   const frozen = buildMajorFortuneV3(base, packet);
@@ -146,7 +146,7 @@ export function buildMajorFortuneHorizon(base: MajorFortuneReportDraft, packet: 
         themes[b.tenGod].overuse,
       ]) }];
   });
-  const rows = Array.from({ length: 10 }, (_, i) => {
+  const rows = Array.from({ length: futureYears + 4 }, (_, i) => {
     const year = from + i, cycle = cycleFor(year)!;
     const previous = year === cycle.startYear ? cycles.find(c => c.index === cycle.index - 1) : undefined;
     return { year, cycle: cycleView(packet, cycle), beforeCycle: previous ? cycleView(packet, previous) : null, transitionDate: previous ? boundaryLabel(cycle) : null };
@@ -237,5 +237,5 @@ export function buildMajorFortuneHorizon(base: MajorFortuneReportDraft, packet: 
   const copy = [...opening, ...sections.flatMap(s => s.paragraphs), ...editorialYears.flatMap(y => y.paragraphs), ...finale];
   return { ...frozen, version: MAJOR_HORIZON_VERSION, title: `${packet.personLabel}님, 지금부터 달라지는 삶의 흐름`, chapterTitle: `${packet.currentYear}년의 나에서 ${through}년의 나로`,
     horizon, narrativeEdition: NARRATIVE_EDITION, narrativeAudit: audit, rhythmWarnings: endingWarnings(copy), opening, fortuneSignals, editorialSections: sections, editorialYears, nextChapter: [], finale,
-    editorialAudit: { yearCount: 10, currentYear: packet.currentYear, importantYears: editorialYears.filter(y => y.importance === "important").map(y => y.year), sourceVersion: "major-decade-v2" } };
+    editorialAudit: { yearCount: futureYears === 10 ? 14 : 10, currentYear: packet.currentYear, importantYears: editorialYears.filter(y => y.importance === "important").map(y => y.year), sourceVersion: "major-decade-v2" } };
 }
