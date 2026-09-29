@@ -8,6 +8,8 @@ import { validateProductPublication } from "../../../lib/report-generation/produ
 import { ReportGenerationStatus } from "../../../components/report/ReportGenerationStatus";
 import { ReportStatusView } from "../../../components/report/ReportStatusView";
 import type { ReactNode } from "react";
+import MetaPurchaseTracker from "../../../components/analytics/MetaPurchaseTracker";
+import { getReportProduct } from "../../../lib/payment/reportProductCatalog";
 
 import GyeolBrandHeader from "../../../components/brand/GyeolBrandHeader";
 import {
@@ -1579,13 +1581,43 @@ export default async function ReportResultPage({
   }
 
   if (state.kind === "productPreview") {
-    const reportId = routeParams.reportId ?? "";
-    const url = state.productPreview.access.mode === "paid" ? await existingReportShareUrl(reportId) : null;
-    return <ReportShareProvider key={reportId} reportId={state.productPreview.access.mode === "paid" ? reportId : undefined}
-      share={url ? { ...describeReportShare(state.productPreview), url } : undefined}>
-      {renderProductPreviewState(state.productPreview)}
-    </ReportShareProvider>;
-  }
+  const reportId = routeParams.reportId ?? "";
+  const isPaid = state.productPreview.access.mode === "paid";
+
+  const url = isPaid
+    ? await existingReportShareUrl(reportId)
+    : null;
+
+  const product = isPaid
+    ? getReportProduct(state.productPreview.productType)
+    : null;
+
+  return (
+    <>
+      {product ? (
+        <MetaPurchaseTracker
+          reportId={reportId}
+          productType={product.productType}
+          productName={product.labelKo}
+          value={product.amount}
+          currency={product.currency}
+        />
+      ) : null}
+
+      <ReportShareProvider
+        key={reportId}
+        reportId={isPaid ? reportId : undefined}
+        share={
+          url
+            ? { ...describeReportShare(state.productPreview), url }
+            : undefined
+        }
+      >
+        {renderProductPreviewState(state.productPreview)}
+      </ReportShareProvider>
+    </>
+  );
+}
 
   const content = renderGeneratedState(state.result);
   if (!state.result.draft) return content;

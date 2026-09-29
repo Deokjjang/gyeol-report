@@ -143,7 +143,7 @@ export default async function TossPaymentSuccessPage({
       : initialState;
 
   if (typeof finalState === "object") {
-    redirect(`/reports/${finalState.redirectReportId}`);
+    redirect(`/reports/${finalState.redirectReportId}?purchase=1`);
   }
 
   const initialCopy = createInitialCopy(finalState);
