@@ -1,7 +1,7 @@
 "use client";
 
 import { BIRTH_TIME_SLOT_DEFINITIONS, normalizeBirthTimePrecision } from "../../../lib/saju/birthTimePrecisionTypes";
-import { use, useEffect, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 
 import PaidFunnelHeader from "../../../components/payment/PaidFunnelHeader";
@@ -1156,6 +1156,35 @@ export default function NewReportPage({
     resolvedSearchParams.product,
   );
   const isSelectedProductPurchasable = selectedProduct.isPurchasable;
+
+  const trackedViewContentKey = useRef<string | null>(null);
+
+useEffect(() => {
+  if (!selectedProduct.isPurchasable || !window.fbq) {
+    return;
+  }
+
+  const trackingKey = selectedProduct.productKey;
+
+  if (trackedViewContentKey.current === trackingKey) {
+    return;
+  }
+
+  trackedViewContentKey.current = trackingKey;
+
+  window.fbq("track", "ViewContent", {
+    content_ids: [selectedProduct.productKey],
+    content_name: selectedProduct.nameKo,
+    content_type: "product",
+    value: 1290,
+    currency: "KRW",
+  });
+}, [
+  selectedProduct.isPurchasable,
+  selectedProduct.nameKo,
+  selectedProduct.productKey,
+]);
+
   const [currentStep, setCurrentStep] = useState<ReportInputStep>(0);
   const [displayName, setDisplayName] = useState("");
   const [birthDate, setBirthDate] = useState("");
