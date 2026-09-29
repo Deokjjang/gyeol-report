@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import MetaPixel from "../components/analytics/MetaPixel";
 import BusinessFooter from "../components/legal/BusinessFooter";
-import { BRAND_DESCRIPTION, SHARE_IMAGE } from "../lib/sharing/reportShareMetadata";
+import {
+  BRAND_DESCRIPTION,
+  SHARE_IMAGE,
+} from "../lib/sharing/reportShareMetadata";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -33,7 +37,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "결리포트",
     description: BRAND_DESCRIPTION,
-    images: [{ url: SHARE_IMAGE, width: 1536, height: 1024, alt: "GYEOL REPORT" }],
+    images: [
+      {
+        url: SHARE_IMAGE,
+        width: 1536,
+        height: 1024,
+        alt: "GYEOL REPORT",
+      },
+    ],
     url: "https://gyeolreport.com",
     siteName: "결리포트",
     locale: "ko_KR",
@@ -60,6 +71,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         {children}
         <BusinessFooter />
+        <MetaPixel />
       </body>
     </html>
   );
