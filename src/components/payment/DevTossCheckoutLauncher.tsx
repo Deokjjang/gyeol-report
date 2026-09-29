@@ -315,7 +315,12 @@ setIsLaunching(true);
 setErrorMessage("");
 setStatusMessage("");
 
-if (!trackedInitiateCheckout.current && window.fbq && product) {
+if (
+  !trackedInitiateCheckout.current &&
+  typeof window !== "undefined" &&
+  typeof window.fbq === "function" &&
+  product
+) {
   trackedInitiateCheckout.current = true;
 
   window.fbq("track", "InitiateCheckout", {

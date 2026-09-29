@@ -157,7 +157,7 @@ describe("post-payment canonical route, mock transport only", () => {
     mocks.call.mockResolvedValue({ ok: true, reportId });
     mocks.redirect.mockImplementation(() => { throw new Error("TEST_REDIRECT"); });
     await expect(TossPaymentSuccessPage({ searchParams: Promise.resolve({ paymentKey: "mock-key", orderId: "mock-order", amount: "1290" }) })).rejects.toThrow("TEST_REDIRECT");
-    expect(mocks.redirect).toHaveBeenCalledWith(`/reports/${reportId}`);
+    expect(mocks.redirect).toHaveBeenCalledWith(`/reports/${reportId}?purchase=1`);
     expect(mocks.confirm).not.toHaveBeenCalled();
   });
 

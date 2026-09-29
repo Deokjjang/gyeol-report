@@ -1160,9 +1160,13 @@ export default function NewReportPage({
   const trackedViewContentKey = useRef<string | null>(null);
 
 useEffect(() => {
-  if (!selectedProduct.isPurchasable || !window.fbq) {
-    return;
-  }
+  if (
+  !selectedProduct.isPurchasable ||
+  typeof window === "undefined" ||
+  typeof window.fbq !== "function"
+) {
+  return;
+}
 
   const trackingKey = selectedProduct.productKey;
 

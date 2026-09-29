@@ -15,7 +15,7 @@ describe("Toss payment success page source", () => {
       "confirmTossPayment",
       "confirmPaidReport",
       "createPaidReportReliabilityStore",
-      "redirect(`/reports/${finalState.redirectReportId}`)",
+      "redirect(`/reports/${finalState.redirectReportId}?purchase=1`)",
       "결제 상태를 확인해 주세요.",
       "결제 상태 확인이 더 필요합니다.",
       "결제 정보가 부족합니다.",
