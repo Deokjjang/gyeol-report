@@ -9,6 +9,11 @@ import { createReportPersistenceRuntimeFromEnv } from "../../../lib/persistence/
 import type { SupabasePaidReportLookupRow } from "../../../lib/persistence/supabaseReportPersistenceClient";
 import { createSupabaseReportPersistenceSdkClient } from "../../../lib/persistence/supabaseReportPersistenceSdkClient";
 import type { ReportBlock, ReportOutput, ReportSection } from "../../../lib/report/types";
+import ReportResultPage from "../../reports/[reportId]/page";
+import { ReportShareProvider } from "../../../components/report/ReportShareProvider";
+import { loadSharedReport } from "../../../lib/sharing/reportShareStore";
+import { reportShareMetadata, SHARE_TOKEN_PATTERN } from "../../../lib/sharing/reportShareMetadata";
+import { ReportStatusView } from "../../../components/report/ReportStatusView";
 
 export const dynamic = "force-dynamic";
 
@@ -17,6 +22,12 @@ type PaidShareReportPageProps = {
     readonly token?: string;
   }>;
 };
+
+export async function generateMetadata({ params }: PaidShareReportPageProps) {
+  const { token = "" } = await params;
+  const shared = await loadSharedReport(token);
+  return reportShareMetadata(shared?.share);
+}
 
 function mapLookupRowToRecord(
   row: SupabasePaidReportLookupRow,
@@ -102,23 +113,8 @@ function renderBlockTitle(block: ReportBlock) {
 }
 
 function renderUnavailableState() {
-  return (
-    <main className="min-h-screen bg-neutral-950 px-5 py-10 text-neutral-50 sm:px-8 lg:px-10">
-      <section className="mx-auto flex min-h-[70vh] max-w-3xl flex-col justify-center gap-5">
-        <p className="text-sm font-medium text-neutral-500">
-          Gyeol Report / 결리포트
-        </p>
-        <div className="space-y-4 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
-          <h1 className="text-3xl font-bold tracking-tight text-neutral-50">
-            리포트를 열 수 없습니다
-          </h1>
-          <p className="text-base leading-7 text-neutral-400">
-            링크가 잘못되었거나, 더 이상 사용할 수 없는 리포트입니다.
-          </p>
-        </div>
-      </section>
-    </main>
-  );
+  return <ReportStatusView state="expired" title="리포트를 열 수 없습니다"
+    message="링크가 잘못되었거나, 더 이상 사용할 수 없는 리포트입니다." />;
 }
 
 function renderReportBlock(block: ReportBlock, index: number) {
@@ -342,6 +338,13 @@ export default async function PaidShareReportPage({
 }: PaidShareReportPageProps) {
   const routeParams = await params;
   const token = routeParams.token ?? "";
+  if (SHARE_TOKEN_PATTERN.test(token)) {
+    const shared = await loadSharedReport(token);
+    if (!shared) return renderUnavailableState();
+    return <ReportShareProvider key={token} shared share={shared.share}>
+      {await ReportResultPage({ params: Promise.resolve({ reportId: shared.snapshot.reportId }) })}
+    </ReportShareProvider>;
+  }
   const view = await loadPaidReportView(token);
 
   return view === null ? renderUnavailableState() : renderPaidReport(view);

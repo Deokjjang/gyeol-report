@@ -46,6 +46,16 @@
 .actions a:hover { text-decoration: underline; text-underline-offset: 5px; }
 .actions :is(button, a):focus-visible { outline: 2px solid #812039; outline-offset: 4px; }
 .shareStatus { color: #6f1d35; font-size: 14px; margin-top: 12px; }
+.shareButtons { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; max-width: 600px; }
+.shareButtons button { display: flex; justify-content: center; align-items: center; gap: 8px; min-height: 52px; padding: 12px 8px; border: 1px solid #d6c5b1; border-radius: 8px; background: #fffdf8; color: #6f1d35; font-size: 14px; font-weight: 600; cursor: pointer; }
+.shareButtons button:first-child { background: #f9efca; border-color: #e7dcae; color: #382b18; }
+.shareButtons button:hover { border-color: #94644f; background: #f5e9db; }
+.shareButtons button:disabled { opacity: .55; cursor: wait; }
+.shareButtons button:focus-visible { outline: 2px solid #812039; outline-offset: 4px; }
+.shareHint { font-size: 12px; line-height: 1.7; color: #796955; margin-top: 12px; }
+.shareLink { width: 100%; max-width: 600px; border: 1px solid #d6c5b1; border-radius: 4px; padding: 12px; font-size: 13px; margin-top: 12px; color: #463528; }
+.reentryLinks { margin-top: 26px; padding-top: 20px; border-top: 1px solid #e6daca; }
+.reentryLinks a:first-child { gap: 12px; }
 @media (min-width: 768px) {
   .page { padding: 36px 40px 0; }
   .cover { padding-block: 60px 42px; }

@@ -1,4 +1,7 @@
 import { ReportReadingFrame, ReportReentry } from "../../../components/report/ReportReadingFrame";
+import { ReportShareProvider } from "../../../components/report/ReportShareProvider";
+import { describeReportShare } from "../../../lib/sharing/reportShareMetadata";
+import { existingReportShareUrl } from "../../../lib/sharing/reportShareStore";
 import { readPublishedReport } from "../../../lib/payment/paidReportReliability";
 import { createPaidReportReliabilityStore } from "../../../lib/payment/paidReportReliabilityStore";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
@@ -1576,7 +1579,12 @@ export default async function ReportResultPage({
   }
 
   if (state.kind === "productPreview") {
-    return renderProductPreviewState(state.productPreview);
+    const reportId = routeParams.reportId ?? "";
+    const url = state.productPreview.access.mode === "paid" ? await existingReportShareUrl(reportId) : null;
+    return <ReportShareProvider key={reportId} reportId={state.productPreview.access.mode === "paid" ? reportId : undefined}
+      share={url ? { ...describeReportShare(state.productPreview), url } : undefined}>
+      {renderProductPreviewState(state.productPreview)}
+    </ReportShareProvider>;
   }
 
   const content = renderGeneratedState(state.result);

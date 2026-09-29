@@ -28,9 +28,8 @@ describe("app layout metadata source", () => {
   });
 
   it("includes description", () => {
-    expect(layoutSource).toContain(
-      "사주 구조와 MBTI 자기인식을 함께 살펴보는 자기이해 리포트.",
-    );
+    expect(layoutSource).toContain("description: BRAND_DESCRIPTION");
+    expect(layoutSource).toContain("images: [{ url: SHARE_IMAGE");
   });
 
   it("includes application name and keywords", () => {
