@@ -271,7 +271,9 @@ export default function DevTossCheckoutLauncher({
   reviewGroups,
 }: DevTossCheckoutLauncherProps) {
   const noticeId = useId();
-  const priceLabel = getReportProduct(productType)?.priceLabelKo ?? "";
+  const product = getReportProduct(productType);
+const priceLabel = product?.priceLabelKo ?? "";
+const trackedInitiateCheckout = useRef(false);
   const [isLaunching, setIsLaunching] = useState(false);
   const launchInFlight = useRef(false);
   const [legalConfirmations, setLegalConfirmations] =
@@ -309,11 +311,24 @@ export default function DevTossCheckoutLauncher({
     }
 
     launchInFlight.current = true;
-    setIsLaunching(true);
-    setErrorMessage("");
-    setStatusMessage("");
+setIsLaunching(true);
+setErrorMessage("");
+setStatusMessage("");
 
-    const result = await runDevTossCheckout(
+if (!trackedInitiateCheckout.current && window.fbq && product) {
+  trackedInitiateCheckout.current = true;
+
+  window.fbq("track", "InitiateCheckout", {
+    content_ids: [product.productType],
+    content_name: product.labelKo,
+    content_type: "product",
+    value: product.amount,
+    currency: product.currency,
+    num_items: 1,
+  });
+}
+
+const result = await runDevTossCheckout(
       inputSnapshot,
       legalConfirmations,
       defaultRuntime,
