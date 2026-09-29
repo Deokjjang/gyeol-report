@@ -45,7 +45,36 @@
 .actions button:hover { background: #f5e9db; }
 .actions a:hover { text-decoration: underline; text-underline-offset: 5px; }
 .actions :is(button, a):focus-visible { outline: 2px solid #812039; outline-offset: 4px; }
-.shareStatus { color: #6f1d35; font-size: 14px; margin-top: 12px; }
+.sharePanel { max-width: 620px; padding: 30px 28px 24px; display: grid; grid-template-columns: 1fr 1fr; grid-template-areas: "intro intro" "kakao kakao" "native copy" "hint hint" "status status" "link link"; column-gap: 1px; border: 1px solid #e1d3c1; border-radius: 16px; background: linear-gradient(145deg, #fffdf8 0%, #fbf4e9 100%); box-shadow: 0 16px 44px rgba(91, 58, 43, .07); }
+.shareIntro { grid-area: intro; text-align: center; }
+.shareEyebrow, .reentryEyebrow { margin: 0 0 10px; color: #9a783a; font-size: 10px; font-weight: 700; letter-spacing: .18em; }
+.shareIntro h2 { margin: 0; color: #3f2d25; font-size: 21px; font-weight: 650; letter-spacing: -.025em; }
+.shareIntro > p:last-child { margin: 9px 0 0; color: #766253; font-size: 14px; line-height: 1.7; word-break: keep-all; }
+.kakaoShareButton { grid-area: kakao; width: 100%; min-height: 54px; margin-top: 24px; display: flex; align-items: center; justify-content: center; gap: 11px; border: 1px solid #6f1d35; border-radius: 10px; background: #6f1d35; color: #fffaf2; font-size: 15px; font-weight: 650; letter-spacing: -.01em; cursor: pointer; box-shadow: 0 8px 20px rgba(111, 29, 53, .14); transition: background-color 180ms, border-color 180ms, transform 180ms, box-shadow 180ms; }
+.kakaoShareButton:hover { border-color: #5d172c; background: #5d172c; box-shadow: 0 10px 24px rgba(111, 29, 53, .19); transform: translateY(-1px); }
+.kakaoIcon { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; border-radius: 9px; background: #fee500; }
+.kakaoIcon svg { width: 19px; height: 19px; fill: #312719; }
+.nativeShareButton, .copyShareButton { min-height: 44px; margin-top: 8px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; background: transparent; color: #6f1d35; font-size: 13px; font-weight: 600; cursor: pointer; transition: color 180ms, background-color 180ms; }
+.nativeShareButton { grid-area: native; position: relative; }
+.nativeShareButton::after { content: ""; width: 1px; height: 18px; position: absolute; right: 0; background: #ddcdb9; }
+.copyShareButton { grid-area: copy; }
+.nativeShareButton:hover, .copyShareButton:hover { border-radius: 8px; background: rgba(111, 29, 53, .055); color: #551329; }
+.actionIcon { width: 18px; height: 18px; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.sharePanel button:disabled { opacity: .55; cursor: wait; transform: none; box-shadow: none; }
+.sharePanel button:focus-visible { outline: 2px solid #812039; outline-offset: 3px; }
+.shareHint { grid-area: hint; margin: 15px 0 0; padding-top: 15px; border-top: 1px solid #e7dac9; color: #7d6d60; font-size: 11px; line-height: 1.7; text-align: center; word-break: keep-all; }
+.shareStatus { grid-area: status; margin: 12px 0 0; color: #6f1d35; font-size: 13px; line-height: 1.6; text-align: center; }
+.shareLink { grid-area: link; width: 100%; border: 1px solid #d6c5b1; border-radius: 8px; padding: 12px; margin-top: 12px; background: #fffdf8; color: #463528; font-size: 13px; }
+.reentryCard { max-width: 620px; margin-top: 34px; padding: 27px 28px; display: flex; align-items: center; justify-content: space-between; gap: 28px; border-top: 1px solid #bda36c; border-bottom: 1px solid #dfd0bb; background: rgba(255, 253, 248, .52); }
+.reentryCard h2 { margin: 0; color: #3f2d25; font-size: 18px; font-weight: 650; letter-spacing: -.02em; }
+.reentryCard div > p:last-child { max-width: 28em; margin: 8px 0 0; color: #796955; font-size: 13px; line-height: 1.7; word-break: keep-all; }
+.reentryActions { flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.reentryPrimary { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; border: 1px solid #8a6048; border-radius: 8px; color: #6f1d35; font-size: 13px; font-weight: 650; transition: background-color 180ms, border-color 180ms; }
+.reentryPrimary:hover { border-color: #6f1d35; background: #f5e9db; }
+.reentrySecondary { color: #7a685b; font-size: 12px; text-decoration: underline; text-decoration-color: #c8b59c; text-underline-offset: 4px; }
+.reentrySecondary:hover { color: #6f1d35; }
+.arrowIcon { width: 17px; height: 17px; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.reentryCard a:focus-visible { outline: 2px solid #812039; outline-offset: 4px; }
 @media (min-width: 768px) {
   .page { padding: 36px 40px 0; }
   .cover { padding-block: 60px 42px; }
@@ -56,6 +85,14 @@
   .date { font-size: 11px; }
   .actions { align-items: stretch; flex-direction: column; gap: 4px; }
   .contents summary span { font-size: 12px; }
+  .sharePanel { padding: 27px 20px 21px; border-radius: 14px; }
+  .shareIntro h2 { font-size: 20px; }
+  .kakaoShareButton { min-height: 56px; }
+  .shareHint { padding-inline: 4px; }
+  .reentryCard { margin-top: 30px; padding: 25px 20px 24px; flex-direction: column; align-items: stretch; gap: 20px; }
+  .reentryActions { align-items: stretch; }
+  .reentryPrimary { min-height: 48px; }
+  .reentrySecondary { min-height: 36px; display: inline-flex; align-items: center; justify-content: center; }
 }
 @media (prefers-reduced-motion: reduce) {
   .reading *, .actions * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }

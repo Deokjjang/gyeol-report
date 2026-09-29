@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import BusinessFooter from "../components/legal/BusinessFooter";
+import { BRAND_DESCRIPTION, SHARE_IMAGE } from "../lib/sharing/reportShareMetadata";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,8 +20,7 @@ export const metadata: Metadata = {
     default: "결리포트",
     template: "%s | 결리포트",
   },
-  description:
-    "사주 구조와 MBTI 자기인식을 함께 살펴보는 자기이해 리포트.",
+  description: BRAND_DESCRIPTION,
   applicationName: "결리포트",
   keywords: [
     "결리포트",
@@ -32,18 +32,18 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "결리포트",
-    description:
-      "사주 구조와 MBTI 자기인식을 함께 살펴보는 자기이해 리포트.",
+    description: BRAND_DESCRIPTION,
+    images: [{ url: SHARE_IMAGE, width: 1536, height: 1024, alt: "GYEOL REPORT" }],
     url: "https://gyeolreport.com",
     siteName: "결리포트",
     locale: "ko_KR",
     type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "결리포트",
-    description:
-      "사주 구조와 MBTI 자기인식을 함께 살펴보는 자기이해 리포트.",
+    description: BRAND_DESCRIPTION,
+    images: [SHARE_IMAGE],
   },
 };
 

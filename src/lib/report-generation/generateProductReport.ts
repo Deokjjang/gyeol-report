@@ -25,7 +25,10 @@ export async function generateProductReport(payload: unknown, runtime: ReportWri
   const purchaseDate = annualAcceptance === undefined ? undefined : getAnnualPurchasePolicyDate(annualAcceptance, payload);
   if (purchaseDate === null) return fail("ANNUAL_PURCHASE_CONTEXT_INVALID");
   const product = isRecord(payload) ? String(payload.productKey) : "";
-  const annualV3Requested = options.annualVersion === "v3" || (isRecord(payload) && isRecord(payload.productOptions) && payload.productOptions.contentVersion === "v3");
+  // Persisted, explicitly versioned input must select the same content in the
+  // paid worker as in preview. Unversioned inputs keep their legacy contract.
+  const inputV3Requested = isRecord(payload) && isRecord(payload.productOptions) && payload.productOptions.contentVersion === "v3";
+  const annualV3Requested = options.annualVersion === "v3" || inputV3Requested;
   if (product === "annual_fortune" && annualV3Requested) {
     try {
       const v3 = await createAnnualV3(payload, { ...(purchaseDate ? { policyDate: purchaseDate } : {}) });
@@ -48,7 +51,7 @@ export async function generateProductReport(payload: unknown, runtime: ReportWri
       return { ok: true, kind: "compatibility", ...v3, externalCalls: [], delivery: audit };
     } catch { return fail("COMPATIBILITY_V3_PREPARATION_FAILED"); }
   }
-  if (product === "love_marriage_child" && options.loveVersion === "v3") {
+  if (product === "love_marriage_child" && (options.loveVersion === "v3" || inputV3Requested)) {
     try {
       const v3 = createLoveV3(payload);
       const generated = v3 ? { ok: true as const, kind: "loveMarriageChild" as const, ...v3 }
@@ -60,7 +63,7 @@ export async function generateProductReport(payload: unknown, runtime: ReportWri
       return { ...generated, externalCalls: [], delivery: audit };
     } catch { return fail("LOVE_V3_PREPARATION_FAILED"); }
   }
-  if (product === "major_fortune" && options.majorFortuneVersion === "v3") {
+  if (product === "major_fortune" && (options.majorFortuneVersion === "v3" || inputV3Requested)) {
     try {
       const v3 = await createMajorFortuneV3(payload);
       if (!v3) return fail("MAJOR_FORTUNE_V3_PREPARATION_FAILED");
@@ -70,7 +73,7 @@ export async function generateProductReport(payload: unknown, runtime: ReportWri
       return { ok: true, kind: "majorFortune", ...v3, externalCalls: [], delivery: audit };
     } catch { return fail("MAJOR_FORTUNE_V3_PREPARATION_FAILED"); }
   }
-  if (product === "career_money_study" && options.careerVersion === "v3") {
+  if (product === "career_money_study" && (options.careerVersion === "v3" || inputV3Requested)) {
     try {
       const v3 = createCareerV3(payload);
       // Invalid/non-exact inputs remain on the validated deterministic legacy
@@ -84,9 +87,8 @@ export async function generateProductReport(payload: unknown, runtime: ReportWri
       return { ...generated, externalCalls: [], delivery: audit };
     } catch { return fail("CAREER_V3_PREPARATION_FAILED"); }
   }
-  // Explicit content-version boundary: paid/writer callers retain their current
-  // contract. V3 reuses canonical calculation/evidence, not the V2 body builder.
-  if (product === "saju_mbti_full" && options.comprehensiveVersion === "v3") {
+  // An explicit legacy option still wins over input metadata.
+  if (product === "saju_mbti_full" && (options.comprehensiveVersion === "v3" || (options.comprehensiveVersion === undefined && inputV3Requested))) {
     try {
       const v3 = createComprehensiveV3(payload);
       if (!v3) return fail("V3_PREPARATION_FAILED");

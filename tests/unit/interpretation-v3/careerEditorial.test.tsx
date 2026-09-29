@@ -156,7 +156,7 @@ it("explicit Career V3 bypasses even an enabled writer, legacy remains readable"
   const result = await generateProductReport(payload, { enabled: true, config: { enabled: true, apiKey: "test-no-call", model: "test" } }, "normal_writer", undefined, { careerVersion: "v3" });
   expect(result.ok, JSON.stringify(result)).toBe(true);
   if (result.ok) { expect(isCareerV3Draft(result.draft)).toBe(true); expect(result.externalCalls).toEqual([]); }
-  const legacy = await generateProductReport(payload, { enabled: false, reason: "flag_disabled" }, "deterministic_fallback");
+  const legacy = await generateProductReport({ ...payload, productOptions: {} }, { enabled: false, reason: "flag_disabled" }, "deterministic_fallback");
   expect(legacy.ok).toBe(true);
   if (legacy.ok) { expect(isCareerV3Draft(legacy.draft)).toBe(false); expect(validateProductPublication("career_money_study", legacy.draft, legacy.evidencePacket).errors).toEqual([]); }
 });

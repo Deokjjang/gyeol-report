@@ -14,7 +14,8 @@ const shareActionsSource = readFileSync(
   join(process.cwd(), "src/components/report/ReportShareActions.tsx"),
   "utf8",
 );
-const source = `${pageSource}\n${compatibilityViewSource}\n${shareActionsSource}`;
+const shareBrowserSource = readFileSync(join(process.cwd(), "src/lib/sharing/shareBrowser.ts"), "utf8");
+const source = `${pageSource}\n${compatibilityViewSource}\n${shareActionsSource}\n${shareBrowserSource}`;
 
 describe("report result page source", () => {
   it("renders generated report draft sections and safe fallback states", () => {

@@ -48,15 +48,9 @@ describe("compatibility preview page source", () => {
   it("renders the compatibility report sections needed for browser review", () => {
     const requiredMarkers = [
       "사주×MBTI 궁합 리포트",
-      "종합 궁합 점수",
-      "draft.scoreSummary.scoreLabel",
-      "getCompatibilityScoreCaution(",
+      "궁합 한눈에 보기",
       "getCompatibilityRelationshipTypeLabel",
       "sanitizeCompatibilityVisibleText",
-      "getCompatibilityScoreCaution",
-      "getCompatibilityScoreDisplayLabels",
-      "getCompatibilityScoreExplanation",
-      "scoreLabels[key]",
       "CompatibilityTable",
       "buildCompatibilityTableData",
       "draft.chapters.map",
@@ -74,6 +68,8 @@ describe("compatibility preview page source", () => {
     expect(combinedSource).not.toContain("사주×MBTI 궁합 리포트 v1.0");
     expect(viewSource).not.toContain("두 사람 만세력 비교");
     expect(viewSource).not.toContain("renderCompatibilityChartCard");
+    expect(viewSource).not.toContain("draft.scoreSummary.scoreLabel");
+    expect(viewSource).not.toContain("getCompatibilityScoreExplanation(");
   });
 
   it("does not expose secrets or candidate recommendation copy", () => {
