@@ -18,7 +18,7 @@ const hash = (value: unknown) => createHash("sha256").update(JSON.stringify(valu
 const internals = /canonical-|SajuCalcResult:|evidenceRefs|sourceRefs|featureId|ten_god_|day_pillar_|gwiin_|sinsal_|mbti:[A-Z]{4}:|loveEditorial(?:Polish)?:/;
 const meta = /원국 안|원국 근거|이번 리포트|읽었습니다|읽습니다|읽는 대목|예측하는 숫자|실제 상대와의 궁합|자녀를 가질지 여부|(?:겁재|식신|화개|정관|편관|편인|정인|비견|상관|정재|편재)(?:의 힘)?(?:은|는) /;
 const originals: Readonly<Record<string, string>> = {
-  A: "133821ba44e09af82ed15f2f1c50bf8d6b87344b19a74ee278041af72dd0cca3", B: "e9c2673853da28e9d2e2ffd1311c1372d741b8a1fc8123feed59221f0119a074", C: "eef6a8b49f303076619445a81a5d6f5416ee51b3d9e8093840057240ce41bfda", D: "dc285bb1881256846eb158a401ea700e49f1c60e4f3902f2ba4b528a4e1b345b", E: "00eab56df695d56f0514e48f32a8b9856d1f4614a6cdfffe1e861661a8ddd842", F: "f6dddf17dac50738c2288fb3fbcb99b0a630e0406da601be17d525ba89e99444", G: "299bdbfcd053cab5565cb7ff6fb0021a38befa8d879e38bda8f772eb0065289d", H: "25e283803bb6a1f6b209d7be48e55f0739590e3146065edffd86038df05e9bb3", I: "de492659fb6bb59cf7e05eea4553c517c362c890c86a610dc839a0dab89d3d2c", J: "9749681b30a4832da05c4f1a65039f36ed1779c34da7c8d6c408103055e56d5d", K: "dcd5f0fa0a2c30aff9e187f85b350f53e97f4d897d02deb30a7e8630b4a2da6a", L: "0d0161843c8e762f123c557f3836e9d9286b6ed56ed1df2fd9bded5f35354ad2",
+  A: "133821ba44e09af82ed15f2f1c50bf8d6b87344b19a74ee278041af72dd0cca3", B: "e9c2673853da28e9d2e2ffd1311c1372d741b8a1fc8123feed59221f0119a074", C: "eef6a8b49f303076619445a81a5d6f5416ee51b3d9e8093840057240ce41bfda", D: "dc285bb1881256846eb158a401ea700e49f1c60e4f3902f2ba4b528a4e1b345b", E: "00eab56df695d56f0514e48f32a8b9856d1f4614a6cdfffe1e861661a8ddd842", F: "f6dddf17dac50738c2288fb3fbcb99b0a630e0406da601be17d525ba89e99444", G: "299bdbfcd053cab5565cb7ff6fb0021a38befa8d879e38bda8f772eb0065289d", H: "315d810c4cc418b40df4234883d9d89883cd2a5a4c41975c5a534d3352bac935", I: "de492659fb6bb59cf7e05eea4553c517c362c890c86a610dc839a0dab89d3d2c", J: "9749681b30a4832da05c4f1a65039f36ed1779c34da7c8d6c408103055e56d5d", K: "dcd5f0fa0a2c30aff9e187f85b350f53e97f4d897d02deb30a7e8630b4a2da6a", L: "0d0161843c8e762f123c557f3836e9d9286b6ed56ed1df2fd9bded5f35354ad2",
 };
 afterEach(() => expect(fetch).not.toHaveBeenCalled());
 
@@ -69,7 +69,7 @@ it("Gaon redistributes actual heroes and preserves distinct, unadvised manifesta
   for (const phrase of ["유니폼", "친구는", "자막", "생활지도", "솔루션 센터", "달력", "작품 완성도", "사람복", "쉽게 꺼지지 않는 애정", "같은 편인 사람 앞에서는, 매번 이길 필요가 없습니다."]) expect(text).toContain(phrase);
   const html = renderToStaticMarkup(createElement(LoveReportV3View, r)); expect(html).toContain("육합"); expect(html).toContain("충");
   expect(html).not.toMatch(/[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]{2,4}\s+(?:육합|삼합|반합|충|형|파|해|원진)/u);
-  expect(html).not.toMatch(/계산 기준|근거 더 보기|전문 근거|천간·지장간의 십성|원국 전체의 파생 근거/u);
+  expect(html).not.toMatch(/계산 기준|근거 더 보기|연지 기준|일지 기준|절입(?:·교운|과|을|은|이|의|전후|\s)|교운(?:\s|경계|시각|전후)|provenance|canonical|전문 근거|천간·지장간의 십성|원국 전체의 파생 근거/iu);
   expect(new Set(scenes.filter(s => s.parts.every(p => p.role === "character")).map(s => s.chapter)).size).toBe(9);
 });
 

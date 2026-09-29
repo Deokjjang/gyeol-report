@@ -313,8 +313,8 @@ export function withConsistentNatalMarkers(data: ManseRyeokCommonTableData): Man
     const categories = row.key === "twelveSinsal" ? ["twelve_sinsal"] : ["sinsal", "gwiin"];
     const values = (position: ManseRyeokPillarKey) => [...new Set(natal.features
       .filter(f => categories.includes(f.category) && f.positions.includes(position))
-      .map(f => `${f.label}${f.basis.includes("일지 기준 십이신살") ? " (일지 기준)" : f.basis.includes("연지 기준 십이신살") ? " (연지 기준)" : ""}`))];
-    return { ...row, label: row.key === "twelveSinsal" ? "십이신살 · 기준별" : row.label,
+      .map(f => f.label))];
+    return { ...row, label: row.key === "twelveSinsal" ? "십이신살" : row.label,
       cells: { hour: values("hour"), day: values("day"), month: values("month"), year: values("year") } };
   }) };
 }

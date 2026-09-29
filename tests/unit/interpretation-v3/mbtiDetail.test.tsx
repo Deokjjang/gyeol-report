@@ -34,6 +34,7 @@ it("F3 saved narrative still validates and renders compact; new narrative has th
 it.each(["comprehensive", "career", "love", "compatibility"])("%s preview restores the detail control without provider calls", async product => {
   const html = renderToStaticMarkup(await EditorialPreview({ searchParams: Promise.resolve({ product }) }));
   expect(html).toContain("data-mbti-detail"); expect(html).not.toContain("리포트 활용 포인트"); expect(fetch).not.toHaveBeenCalled();
+  expect(html).not.toMatch(/계산 기준|근거 더 보기|연지 기준|일지 기준|절입(?:·교운|과|을|은|이|의|전후|\s)|교운(?:\s|경계|시각|전후)|원국과 만나는 관계 작용|provenance|canonical|천간·지장간의 십성|원국 전체의 파생 근거/iu);
 });
 
 it("groups positional relation rows in the display only, retaining every basis", () => {

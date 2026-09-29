@@ -1,8 +1,8 @@
 import type { AnnualFortuneReportDraft } from "../report-generation/annualFortuneReportDraftTypes";
 import type { AnnualFortuneEvidencePacket } from "../report-knowledge/annualFortuneEvidence";
-import type { AnnualMonthSegment } from "../report-knowledge/annualMonthJie";
+import type { AnnualCalendarMonth, AnnualMonthSegment } from "../report-knowledge/annualMonthJie";
 import type { AnnualMonthExtendedEvidence, ExtendedMonthSegment } from "../report-knowledge/annualMonthExtendedEvidence";
-import { annualRelationLabel } from "../report-knowledge/annualFortuneReading";
+import { annualRelationLabel, type AnnualReadingMonth } from "../report-knowledge/annualFortuneReading";
 import { withKoreanParticle as particle } from "../report-knowledge/koreanCopyUtils";
 import { getTenGodForStemPair } from "../report-knowledge/annualFortuneYearRules";
 import type { HeavenlyStem, TenGod } from "../report-knowledge/annualFortuneTypes";
@@ -42,6 +42,51 @@ const timeCopy = (text: string, time: AnnualTime) => time === "past" ? retrospec
 const godFeature: Record<TenGod, string> = { 비견: "bijian", 겁재: "jie_cai", 식신: "shi_shen", 상관: "shang_guan", 정재: "zheng_cai", 편재: "pian_cai", 정관: "zheng_guan", 편관: "qi_sha", 정인: "zheng_yin", 편인: "pian_yin" };
 const periodFact = (god: TenGod, period: string, domain: Domain, id: string): Evidence => ({ id, featureId: `ten_god_${godFeature[god]}`, kind: "ten_god", subject: "person", scope: period.startsWith("annual:") ? "annual" : "monthly", period, value: god, sourceRefs: [period.startsWith("annual:") ? "src/lib/report-knowledge/annualFortuneYearRules.ts:getTenGodForStemPair" : "src/lib/report-knowledge/annualMonthJie.ts:buildAnnualMonthCalendar", id], lineage: [id], certainty: "confirmed", salience: "direct", domains: [domain] });
 const labelSegment = (s: AnnualMonthSegment, extra: ExtendedMonthSegment) => [...new Set([`${s.monthPillar.stem}${s.monthPillar.branch} · ${s.stemTenGod}·${s.branchTenGod}`, ...extra.features.filter(f => f.kind !== "lifeStage").map(f => f.label), ...s.relationFacts.filter(f => f.source !== "month_natal_element").map(annualRelationLabel)])];
+const sentenceParts = (text: string) => text.match(/[^.!?]+[.!?]+[”’]?|[^.!?]+$/gu) ?? [];
+
+function uniqueSectionParagraphs(paragraphs: readonly string[]): readonly string[] {
+  const seen = new Set<string>();
+  return paragraphs.flatMap(paragraph => {
+    const sentences = sentenceParts(paragraph).filter(sentence => {
+      const key = sentence.replace(/\s+/gu, " ").trim();
+      if (!key || seen.has(key)) return false;
+      seen.add(key); return true;
+    });
+    const text = sentences.join("").trim();
+    return text ? [text] : [];
+  });
+}
+
+function annualTraitMatchesContext(text: string, relationship: string, lifeStatus: string, domain: Domain): boolean {
+  const marriagePremise = /결혼|배우자|남편|아내|부부|신혼|결혼 생활|같이 사는/u;
+  const partnerPremise = /연인|애인/u;
+  if (!["marriage_preparing", "married"].includes(relationship) && marriagePremise.test(text)) return false;
+  if (["", "unknown", "single"].includes(relationship) && partnerPremise.test(text)) return false;
+  const noCurrentWorkplace = ["student", "exam_certificate", "job_seeker", "resting"].includes(lifeStatus);
+  if (noCurrentWorkplace && ["career", "business", "leadership", "money"].includes(domain) && /상사|연봉|승진|현재 회사|우리 회사|회사 업무|직장 생활|회사에서|퇴사|이직|매출|고객/u.test(text)) return false;
+  return true;
+}
+
+const relationFocusReason: Readonly<Record<string, string>> = {
+  충: "익숙한 방식과 새로운 요구가 부딪히는 장면을 눈여겨볼 달",
+  형: "같은 부담이 반복되지 않도록 생활의 기준을 다시 세워볼 달",
+  파: "유지할 것과 바꿀 것을 나눠 작은 조정을 시작해볼 달",
+  해: "말의 빈칸을 추측하지 않고 실제 마음과 약속을 확인해볼 달",
+  원진: "작은 말이나 감정이 오래 남는 이유를 천천히 살펴볼 달",
+  육합: "따로 움직이던 사람이나 일이 한 방향으로 이어지는 장면을 눈여겨볼 달",
+  삼합: "여러 사람과 역할이 같은 목표로 모이는 장면을 눈여겨볼 달",
+  반합: "잘 맞는 부분과 아직 조율할 조건을 함께 확인해볼 달",
+};
+
+function customerFocusReason(month: AnnualCalendarMonth, reading: AnnualReadingMonth | undefined, form: AnnualBlock["form"]): string {
+  if (reading?.tier === "transition") return "월초와 그 이후의 분위기가 달라, 흐름의 전환을 눈여겨볼 달";
+  if (reading?.tier === "focus") {
+    const evidenceIds = new Set(reading.reasons.flatMap(reason => reason.evidenceIds));
+    const relation = month.segments.flatMap(segment => segment.relationFacts).find(fact => evidenceIds.has(fact.id));
+    return relationFocusReason[relation?.type ?? ""] ?? "익숙한 생활에 새로운 요구가 들어오는 장면을 눈여겨볼 달";
+  }
+  return form === "gift" ? "내가 가진 좋은 힘이 자연스럽게 드러나는 장면을 눈여겨볼 달" : "이달의 흐름이 생활에서 어떻게 나타나는지 돌아볼 달";
+}
 
 function relationScene(s: AnnualMonthSegment, extra: ExtendedMonthSegment, domain: Domain): { text: string; refs: string[] } | null {
   const wonjin = extra.features.find(f => f.code === "wonjin");
@@ -59,19 +104,21 @@ export function buildAnnualV3(base: AnnualFortuneReportDraft, packet: AnnualFort
   const context = packet.userContext, god = packet.annualFortune.stemTenGod, root = annualThemes[god], baseTheme = annualThemes[packet.annualFortune.branchTenGod];
   const work = careerEditorialScenes(context, interpretCareerContextV3(context.fieldLabel ?? ""));
   const usedTraits = new Set<string>(), narrativeAudit: NarrativeAudit[] = [];
+  const raw = (packet as AnnualFortuneEvidencePacket & { inputBasis?: { userContext?: { relationshipStatus?: string; jobStatus?: string; detailJob?: string } } }).inputBasis?.userContext;
+  const relationship = raw?.relationshipStatus ?? context.relationshipStatus ?? "unknown";
   function fuse(domain: Domain, section: string, selectedGod: TenGod, period: string, lead: string, time: AnnualTime) {
     const signalId = packet.calendarMonths?.flatMap(m => m.segments).find(s => s.startKst === period)?.evidenceIds.find(id => id.endsWith(":ten_gods")) ?? `${period}:ten_gods`;
     const signal = periodFact(selectedGod, period, domain, signalId);
-    const trait = selectNarrativeTraits({ product: "annual_fortune", fullLibrary: true, domain, section, mbti: packet.mbtiBasis.type ?? "", selectedSignals: [signal, ...facts.filter(f => f.certainty === "confirmed" && f.salience !== "supporting")], context: { ...context, relationshipStatus: context.relationshipStatus ?? undefined }, used: usedTraits })[0];
+    const trait = selectNarrativeTraits({ product: "annual_fortune", fullLibrary: true, domain, section, mbti: packet.mbtiBasis.type ?? "", selectedSignals: [signal, ...facts.filter(f => f.certainty === "confirmed" && f.salience !== "supporting")], context: { ...context, relationshipStatus: context.relationshipStatus ?? undefined }, used: usedTraits })
+      .find(candidate => annualTraitMatchesContext(candidate.text, relationship, context.lifeStatus, domain));
     if (!trait) return timeCopy(lead, time);
     usedTraits.add(trait.evidenceId);
     narrativeAudit.push({ section, subject: "person", traitId: trait.evidenceId, evidenceRefs: [signal.id, ...trait.matchedEvidence], sourceRefs: trait.sourceRefs, kind: trait.kind });
     const mbti = packet.mbtiBasis.type ?? "", name = packet.personContext.name;
-    const behavior = trait.text.replaceAll(`${mbti}에게`, `${name}님에게`).replaceAll(`${mbti}는`, `${name}님은`).replaceAll(`${mbti}가`, `${name}님이`).replaceAll(`${mbti}의`, `${name}님의`);
+    const behavior = trait.text.replaceAll(`${mbti}에게`, `${name}님에게`).replaceAll(`${mbti}는`, `${name}님은`).replaceAll(`${mbti}가`, `${name}님이`).replaceAll(`${mbti}의`, `${name}님의`)
+      .replaceAll("당신에게", `${name}님에게`).replaceAll("당신은", `${name}님은`).replaceAll("당신이", `${name}님이`).replaceAll("당신의", `${name}님의`);
     return timeCopy(`${lead} ${behavior}`, time);
   }
-  const raw = (packet as AnnualFortuneEvidencePacket & { inputBasis?: { userContext?: { relationshipStatus?: string; jobStatus?: string; detailJob?: string } } }).inputBasis?.userContext;
-  const relationship = raw?.relationshipStatus ?? context.relationshipStatus ?? "unknown";
   const relationshipLabels: Record<string, string> = { "": "미선택", unknown: "미선택", single: "솔로", some: "썸", dating: "연애", marriage_preparing: "결혼 준비", married: "기혼" };
   const loveScenes = relationship === "single" ? ["바쁜 날에도 어떤 사람의 메시지는 미루지 않는 자신을 발견할 수 있어요. 괜찮은 조건보다 대화 뒤 내 기분이 어땠는지가 관심을 가르는 쪽입니다.", "새 모임에서 눈이 가는 사람과 한 번 더 만나고 싶은 사람은 다를 수 있죠. 처음의 분위기와 두 번째 대화의 편안함을 따로 느끼는 재미가 있습니다.", "일과 생활이 꽉 차면 관심이 없어 보일 만큼 답장이 짧아지기도 해요. 마음이 움직일 자리와 일정에 남은 자리가 꼭 같은 것은 아닙니다."]
     : relationship === "some" ? ["친구에게는 아직 모른다고 말하면서 그 사람의 답장 시간은 기억하고 있을 수 있어요. 관심을 확인하고 싶은 마음과 먼저 티 내기는 싫은 마음이 한 화면 안에 같이 있습니다.", "다음 약속을 누가 먼저 꺼내는지보다 어떤 이야기에 대화가 길어지는지가 마음의 움직임을 보여줍니다. 조건이 맞아서가 아니라 같이 있을 때 평소와 다른 내가 나와서 궁금해지는 쪽이에요.", "짧은 답장을 해석하다 보면 아직 묻지도 않은 질문에 혼자 대답하고 있을 때가 있죠. 가까워지는 속도는 확인한 약속을 따라가도 늦지 않습니다."]
@@ -116,7 +163,7 @@ export function buildAnnualV3(base: AnnualFortuneReportDraft, packet: AnnualFort
   const natalRelation = packet.natalAnnualRelations.interactions.find(r => r.affectedPillars?.some(p => p === "day" || p === "month")) ?? packet.natalAnnualRelations.interactions[0];
   if (natalRelation && annualRelationScenes[natalRelation.type]) domainBlocks.unshift({ id: "year-relation", title: ["충", "형", "파", "해"].includes(natalRelation.type) ? "익숙한 방식이 흔들릴 때, 내 기준도 보입니다" : "따로 잘하던 것들이 한 방향으로 이어집니다", domain: root.domain, form: "scene",
     paragraphs: [annualRelationScenes[natalRelation.type][0], `${annualThemes[packet.annualFortune.branchTenGod].current} ${root.overuse}`], labels: [`${natalRelation.branches.join("")} ${natalRelation.type}`], evidenceRefs: [`annual:${year}:natal:${natalRelation.type}:${natalRelation.branches.join("")}`] });
-  const annualSections = domainBlocks.sort((a, b) => Number(b.domain === root.domain || b.domain === baseTheme.domain) - Number(a.domain === root.domain || a.domain === baseTheme.domain)).map(b => ({ ...b, paragraphs: narrativeRhythm(b.paragraphs.map(p => timeCopy(p, yearTime))) }));
+  const annualSections = domainBlocks.sort((a, b) => Number(b.domain === root.domain || b.domain === baseTheme.domain) - Number(a.domain === root.domain || a.domain === baseTheme.domain)).map(b => ({ ...b, paragraphs: uniqueSectionParagraphs(narrativeRhythm(b.paragraphs.map(p => timeCopy(p, yearTime)))) }));
 
   const seenHeroes = new Set<string>();
   const editorialMonths = calendar.map((month): AnnualV3Month => {
@@ -142,20 +189,20 @@ export function buildAnnualV3(base: AnnualFortuneReportDraft, packet: AnnualFort
     else if (relation && focus.relationFacts.some(f => f.certainty === "confirmed" && ["충", "형"].includes(f.type))) main.unshift(main.pop()!);
     if (time === "current") {
       const next = calendar.flatMap(m => m.segments).find(s => Date.parse(s.startKst) >= Date.parse(focus.endKstExclusive) && s.boundaryReason.some(b => b.startsWith("jie:")));
-      main.push(timeCopy(loveScenes[2], time));
-      main.push(next ? `지금의 ${particle(theme.focus, "object")} 지나면 다음 절입에서는 ${particle(annualThemes[next.stemTenGod].focus, "subject")} 눈에 들어옵니다. 오늘 남길 만한 것은 성급한 새 계획보다 이미 해본 선택의 기록입니다. ${work.next}에 그 기록이 내 기준을 더 또렷하게 해줄 수 있어요.` : `한 해의 마지막에는 ${theme.focus} 중 무엇을 내 생활에 남길지가 중요합니다. 잘해낸 일을 전부 계속할 필요는 없어요. 다시 하고 싶은 방식과 충분히 해본 역할을 나눠보세요.`);
+      if (!main.some(paragraph => paragraph.includes(loveScenes[2]))) main.push(timeCopy(loveScenes[2], time));
+      main.push(next ? `지금의 ${particle(theme.focus, "object")} 지나면 다음 흐름에서는 ${particle(annualThemes[next.stemTenGod].focus, "subject")} 눈에 들어옵니다. 오늘 남길 만한 것은 성급한 새 계획보다 이미 해본 선택의 기록입니다. ${work.next}에 그 기록이 내 기준을 더 또렷하게 해줄 수 있어요.` : `한 해의 마지막에는 ${theme.focus} 중 무엇을 내 생활에 남길지가 중요합니다. 잘해낸 일을 전부 계속할 필요는 없어요. 다시 하고 싶은 방식과 충분히 해본 역할을 나눠보세요.`);
     }
     const otherSegments = month.segments.filter(s => s !== focus).map(s => {
       const x = extensions.segments.find(e => e.startKst === s.startKst)!, t = annualTime(s.startKst, s.endKstExclusive, evaluatedAtKst), th = annualThemes[s.stemTenGod];
       const r = relationScene(s, x, th.domain);
       const carried = month.month > 1 && s === month.segments[0] && x.ganji === extra.months[month.month - 2].segments.at(-1)?.ganji;
-      const continuation = `${month.month - 1}월 말부터 이어지는 ${th.focus}. ${s.activeDayunContext.status === "transition_uncertain" ? "같은 월운 안에서도 오래 이어온 배경이 바뀌는 범위를 지나고 있습니다." : "달력은 새 달이 되어도 절입 전까지는 앞서 다루던 주제가 이어집니다."} ${t === "past" ? "이때 마무리하지 못했던 일과 다음 구간에서 새로 시작한 일을 나눠 떠올려볼 수 있어요." : "새 계획을 늘리기 전에 진행 중인 약속이 어디까지 왔는지 보이는 짧은 연결 구간이에요."}`;
+      const continuation = `${month.month - 1}월 말부터 이어지는 ${th.focus}. ${s.activeDayunContext.status === "transition_uncertain" ? "같은 달의 흐름 안에서도 오래 이어온 배경이 달라지는 때를 지나고 있습니다." : "달력은 새 달이 되어도 흐름이 바뀌기 전까지는 앞서 다루던 주제가 이어집니다."} ${t === "past" ? "이때 마무리하지 못했던 일과 다음 구간에서 새로 시작한 일을 나눠 떠올려볼 수 있어요." : "새 계획을 늘리기 전에 진행 중인 약속이 어디까지 왔는지 보이는 짧은 연결 구간이에요."}`;
       return { startKst: s.startKst, endKstExclusive: s.endKstExclusive, ganji: x.ganji,
         paragraphs: narrativeRhythm(carried ? [continuation] : [th[t], ...(r ? [timeCopy(r.text, t)] : [])]), labels: labelSegment(s, x), evidenceRefs: [...s.evidenceIds, ...x.features.map(f => f.id)] };
     });
     return { id: `month-${month.month}`, month: month.month, title: hero?.title ?? theme.title, domain,
       form: gift ? "gift" : relation ? "scene" : "prose", timePosition: time, focusStartKst: focus.startKst, focusEndKstExclusive: focus.endKstExclusive,
-      paragraphs: narrativeRhythm(main), labels: labelSegment(focus, ext), evidenceRefs: [...focus.evidenceIds, ...ext.features.map(f => f.id)], segments: otherSegments };
+      paragraphs: uniqueSectionParagraphs(narrativeRhythm(main)), labels: labelSegment(focus, ext), evidenceRefs: [...focus.evidenceIds, ...ext.features.map(f => f.id)], segments: otherSegments };
   });
   // Reuse the existing significance tiers; add supported good-gift candidates
   // only to fill the 3–5 editorial slots, never a customer-visible score.
@@ -163,7 +210,7 @@ export function buildAnnualV3(base: AnnualFortuneReportDraft, packet: AnnualFort
   const orderedMonths = [...important.map(m => m.month), ...editorialMonths.filter(m => m.form === "gift").map(m => m.month), ...editorialMonths.map(m => m.month)];
   const focusMonths = [...new Set(orderedMonths)].slice(0, 5).map(number => {
     const m = editorialMonths.find(m => m.month === number)!, reading = important.find(r => r.month === number);
-    return { month: number, title: m.title, reason: reading?.tier === "transition" ? "절입·교운 전후의 배경이 달라지는 달" : reading?.tier === "focus" ? "원국과 만나는 관계 작용을 자세히 볼 달" : m.form === "gift" ? "확인된 좋은 패를 눈여겨볼 달" : "월운의 주제가 생활에서 어떻게 나타나는지 볼 달", evidenceRefs: reading?.reasons.flatMap(r => r.evidenceIds) ?? m.evidenceRefs };
+    return { month: number, title: m.title, reason: customerFocusReason(calendar.find(month => month.month === number)!, reading, m.form), evidenceRefs: reading?.reasons.flatMap(r => r.evidenceIds) ?? m.evidenceRefs };
   });
   const finale = narrativeRhythm([
     timeCopy(`${packet.personContext.name}님의 ${year}년에는 ${particle(root.focus, "called")} 중심이 있습니다. 해낸 일의 개수보다 어떤 순간에 자기 존재감이 살아났는지가 더 오래 남아요. 처음에는 어려웠는데 이제는 이유를 설명할 수 있는 선택, 그 변화가 다음 해의 내가 가진 기반입니다.`, yearTime),
@@ -175,7 +222,7 @@ export function buildAnnualV3(base: AnnualFortuneReportDraft, packet: AnnualFort
   return { ...base, version: ANNUAL_V3_VERSION, productVersion: "v3", evaluatedAtKst,
     title: `${packet.personContext.name}님의 ${year}년, 한 해의 결`, hook: root.title, spoiler: `${root.focus} · ${baseTheme.focus}`,
     inputSummary: [{ label: "선택 연도", value: `${year}년` }, { label: "현재 상태", value: raw?.jobStatus === "" ? "미선택" : USER_LIFE_STATUS_LABELS[context.lifeStatus] }, ...(raw?.detailJob ? [{ label: context.lifeStatus === "student" ? "관심 분야" : "현재 직업", value: raw.detailJob }] : !raw && context.fieldLabel ? [{ label: context.lifeStatus === "student" ? "관심 분야" : "현재 직업", value: context.fieldLabel }] : []), { label: "관계 상태", value: relationshipLabels[relationship] ?? USER_RELATIONSHIP_STATUS_LABELS.unknown }, { label: "MBTI", value: packet.mbtiBasis.type || "모름" }],
-    opening, annualSections, editorialMonths, focusMonths, finale, narrativeAudit };
+    opening: uniqueSectionParagraphs(opening), annualSections, editorialMonths, focusMonths, finale: uniqueSectionParagraphs(finale), narrativeAudit };
 }
 
 export function annualV3CustomerText(draft: AnnualV3Draft): string {
