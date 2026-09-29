@@ -1,5 +1,5 @@
 import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
-import { hasNarrativeEdition } from "../../../lib/interpretation-v3/narrativeEdition";
+import { hasNarrativeEdition, hasDetailNarrative } from "../../../lib/interpretation-v3/narrativeEdition";
 import narrativeStyles from "../../../components/report/v3Narrative.module.css";
 import { V3NarrativeIdentity } from "../../../components/report/V3NarrativeIdentity";
 import { buildCanonicalManseRyeokTableData } from "../../../lib/report-tables/manseRyeokTableData";
@@ -67,8 +67,8 @@ export function CompatibilityReportV3View({ draft, evidencePacket }: { draft: Co
       // Only the public table crosses client boundaries, never role IDs/facts.
       return <section key={slot} aria-label={`${person.name}님의 원국과 성향`}>
         <h2 className="px-4 pt-6 text-xl font-semibold sm:px-6">{person.role} · {person.name}님의 원국과 성향</h2>
-        {manse?.natalEvidence?.precision === "exact" ? <StoryTables facts={facts.filter(f => f.subject === slot && !f.featureId.startsWith("pair:"))} calculation={calculations[slot]} manse={manse} mbti={mbti} draft={usage} compactMbti={hasNarrativeEdition(draft)} />
-          : <div className="px-4 py-6 sm:px-6">{manse ? <ManseRyeokCommonTable data={{ ...manse, natalEvidence: undefined }} defaultOpen={false} /> : null}{hasNarrativeEdition(draft) ? <V3NarrativeIdentity data={mbti} /> : <p className="mt-3 text-sm text-[#756658]">출생시간 범위에서 확인된 원국만 표시합니다. MBTI · {person.mbti || "모름"}</p>}</div>}
+        {manse?.natalEvidence?.precision === "exact" ? <StoryTables facts={facts.filter(f => f.subject === slot && !f.featureId.startsWith("pair:"))} calculation={calculations[slot]} manse={manse} mbti={mbti} draft={usage} compactMbti={hasNarrativeEdition(draft)} detailMbti={hasDetailNarrative(draft)} />
+          : <div className="px-4 py-6 sm:px-6">{manse ? <ManseRyeokCommonTable data={{ ...manse, natalEvidence: undefined }} defaultOpen={false} /> : null}{hasNarrativeEdition(draft) ? <V3NarrativeIdentity data={mbti} detailed={hasDetailNarrative(draft)} /> : <p className="mt-3 text-sm text-[#756658]">출생시간 범위에서 확인된 원국만 표시합니다. MBTI · {person.mbti || "모름"}</p>}</div>}
       </section>;
     })}
     <div className="mx-auto max-w-[44rem] break-keep px-4 [overflow-wrap:anywhere] sm:px-6">{draft.chapters.slice(1).map(reading)}</div>

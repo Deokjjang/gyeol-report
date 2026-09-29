@@ -13,6 +13,7 @@ type MbtiCommonProfileTableProps = {
   readonly defaultOpen?: boolean;
   readonly className?: string;
   readonly variant?: "full" | "compact";
+  readonly showUsageNotes?: boolean;
 };
 
 export default function MbtiCommonProfileTable({
@@ -20,6 +21,7 @@ export default function MbtiCommonProfileTable({
   defaultOpen = true,
   className,
   variant = "full",
+  showUsageNotes = true,
 }: MbtiCommonProfileTableProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [isDetailOpen, setIsDetailOpen] = useState(false);
@@ -56,9 +58,10 @@ export default function MbtiCommonProfileTable({
               detailContentId={detailContentId}
               isDetailOpen={isDetailOpen}
               onToggleDetail={() => setIsDetailOpen((current) => !current)}
+              showUsageNotes={showUsageNotes}
             />
           ) : (
-            <FullProfile data={data} />
+            <FullProfile data={data} showUsageNotes={showUsageNotes} />
           )}
         </div>
       ) : null}
@@ -68,8 +71,10 @@ export default function MbtiCommonProfileTable({
 
 function FullProfile({
   data,
+  showUsageNotes,
 }: {
   readonly data: MbtiCommonProfileTableData;
+  readonly showUsageNotes: boolean;
 }) {
   return (
     <>
@@ -87,7 +92,7 @@ function FullProfile({
         keywords={data.farKeywords}
         chipClassName="border-[#d8d1c4] bg-[#f8f4ed] text-[#6f675d]"
       />
-      <ReportUsageNotes notes={data.reportUsageNotes} />
+      {showUsageNotes ? <ReportUsageNotes notes={data.reportUsageNotes} /> : null}
     </>
   );
 }
@@ -97,11 +102,13 @@ function CompactProfile({
   detailContentId,
   isDetailOpen,
   onToggleDetail,
+  showUsageNotes,
 }: {
   readonly data: MbtiCommonProfileTableData;
   readonly detailContentId: string;
   readonly isDetailOpen: boolean;
   readonly onToggleDetail: () => void;
+  readonly showUsageNotes: boolean;
 }) {
   return (
     <>
@@ -136,7 +143,7 @@ function CompactProfile({
         <div id={detailContentId} className="divide-y divide-[#eadfce]">
           <PreferenceAxesComparison data={data} />
           <FunctionStackTable data={data} />
-          <ReportUsageNotes notes={data.reportUsageNotes} />
+          {showUsageNotes ? <ReportUsageNotes notes={data.reportUsageNotes} /> : null}
         </div>
       ) : null}
     </>

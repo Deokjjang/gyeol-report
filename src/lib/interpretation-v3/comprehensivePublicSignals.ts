@@ -23,6 +23,23 @@ const BASIS = ["연지 기준 십이신살", "일지 기준 십이신살", "연�
 const POSITIONS: Readonly<Record<string, string>> = { year: "연주", month: "월주", day: "일주", hour: "시주" };
 export type PublicSignalRow = { readonly label: string; readonly meaning: string; readonly power: string; readonly basis: readonly string[] };
 export type PublicSignalUsage = { readonly opening: readonly { readonly evidenceRefs: readonly string[] }[]; readonly sections: readonly { readonly blocks: readonly { readonly evidenceRefs: readonly string[] }[] }[] };
+/** Presentation only: retain every positional basis and all original evidence. */
+export function groupPublicRelations(rows: readonly PublicSignalRow[]): readonly PublicSignalRow[] {
+  const seen = new Set<string>();
+  const relation = (label: string) => {
+    const positional = label.match(/(?:^|\s)(지지육합|지지삼합|지지반합|지지방합|지지충|지지형|지지파|지지해|천간합|천간충)\s+([甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]+)$/u);
+    const compact = label.match(/^([甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]+)\s+(육합|삼합|반합|방합|충|형|파|해|천간합|천간충)$/u);
+    const type = positional?.[1].replace(/^지지/u, "") ?? compact?.[2], letters = positional?.[2] ?? compact?.[1];
+    return type && letters ? { key: `${[...letters].sort().join("")}:${type}`, label: `${letters} ${type}` } : null;
+  };
+  return rows.flatMap(row => {
+    const current = relation(row.label); if (!current) return [row];
+    if (seen.has(current.key)) return [];
+    seen.add(current.key);
+    const matches = rows.filter(r => relation(r.label)?.key === current.key), basis = unique(matches.flatMap(r => r.basis));
+    return [{ ...row, label: basis.length > 1 ? `${current.label} · 원국 ${basis.length}곳` : current.label, basis }];
+  });
+}
 /** Allowlisted human display DTO: raw IDs/provenance never cross into JSX,
  * attributes, React keys or a client component's serialized props. */
 export function publicSignalRows(facts: readonly Evidence[], calculation: SajuCalcResult, draft: PublicSignalUsage): readonly PublicSignalRow[] {

@@ -6,7 +6,7 @@ import type { LoveV3Draft } from "./loveEditorial";
 import type { CompatibilityV3Draft } from "./compatibilityEditorial";
 import type { EditorialScene } from "./editorialComposer";
 import type { Domain, Evidence, Product } from "./types";
-import { NARRATIVE_EDITION } from "./narrativeEdition";
+import { NARRATIVE_EDITION, DETAIL_NARRATIVE_EDITION } from "./narrativeEdition";
 import { validateStoryCopy } from "./comprehensiveStorytelling";
 
 const productLibrary: Record<Product, MbtiReportUseCaseKey> = {
@@ -92,7 +92,7 @@ export function narrativeRhythm(paragraphs: readonly string[]): readonly string[
 
 type NarrativeDraft = ComprehensiveV3Draft | CareerV3Draft | LoveV3Draft | CompatibilityV3Draft;
 export type NarrativeAudit = { section: string; subject: Evidence["subject"]; traitId: string; evidenceRefs: readonly string[]; sourceRefs: readonly string[]; kind: NarrativeTrait["kind"] };
-export function integrateMbtiNarrative<T extends NarrativeDraft>(draft: T, facts: readonly Evidence[], context: TraitRequest["context"] = {}): T & { narrativeEdition: typeof NARRATIVE_EDITION; narrativeAudit: readonly NarrativeAudit[]; rhythmWarnings: readonly string[] } {
+export function integrateMbtiNarrative<T extends NarrativeDraft>(draft: T, facts: readonly Evidence[], context: TraitRequest["context"] = {}, detailEdition = false): T & { narrativeEdition: typeof NARRATIVE_EDITION | typeof DETAIL_NARRATIVE_EDITION; narrativeAudit: readonly NarrativeAudit[]; rhythmWarnings: readonly string[] } {
   const used = new Set<string>(), domains = new Set<string>(), audit: NarrativeAudit[] = [], copy: string[] = [];
   const names: Partial<Record<Evidence["subject"], string>> = draft.productType === "saju_mbti_compatibility"
     ? { personA: draft.people.personA.name, personB: draft.people.personB.name } : { person: draft.personLabel };
@@ -131,5 +131,5 @@ export function integrateMbtiNarrative<T extends NarrativeDraft>(draft: T, facts
   const enriched = draft.productType === "saju_mbti_full" ? { ...draft, opening: draft.opening.map(b => block(b, "opening")),
     sections: draft.sections.map(s => ({ ...s, blocks: s.blocks.map(b => block(b, s.id)) })), direction: narrativeRhythm(draft.direction.split("\n\n")).join("\n\n") }
     : { ...draft, chapters: draft.chapters.map(c => ({ ...c, scenes: c.scenes.map(scene) })) };
-  return { ...enriched, narrativeEdition: NARRATIVE_EDITION, narrativeAudit: audit, rhythmWarnings: endingWarnings(copy) } as T & { narrativeEdition: typeof NARRATIVE_EDITION; narrativeAudit: readonly NarrativeAudit[]; rhythmWarnings: readonly string[] };
+  return { ...enriched, narrativeEdition: detailEdition ? DETAIL_NARRATIVE_EDITION : NARRATIVE_EDITION, narrativeAudit: audit, rhythmWarnings: endingWarnings(copy) } as T & { narrativeEdition: typeof NARRATIVE_EDITION | typeof DETAIL_NARRATIVE_EDITION; narrativeAudit: readonly NarrativeAudit[]; rhythmWarnings: readonly string[] };
 }

@@ -12,7 +12,7 @@ import { buildCompatibilityV3Polished } from "../interpretation-v3/compatibility
 import { validateEvidence } from "../interpretation-v3/evidence";
 import { validateV3Copy } from "../interpretation-v3/engine";
 import { integrateMbtiNarrative } from "../interpretation-v3/mbtiNarrative";
-import { hasNarrativeEdition } from "../interpretation-v3/narrativeEdition";
+import { hasNarrativeEdition, hasDetailNarrative } from "../interpretation-v3/narrativeEdition";
 
 const record = (v: unknown): v is Record<string, unknown> => !!v && typeof v === "object" && !Array.isArray(v);
 const stable = (v: unknown): string => Array.isArray(v) ? `[${v.map(stable).join(",")}]` : record(v) ? `{${Object.keys(v).filter(k => v[k] !== undefined).sort().map(k => `${JSON.stringify(k)}:${stable(v[k])}`).join(",")}}` : JSON.stringify(v);
@@ -26,7 +26,7 @@ export function createCompatibilityV3(payload: unknown, version: CompatibilityV3
   const packet = { ...withReportInputEvidence(base, input), calendarCalculationVersion: SAJU_CALENDAR_VERSION, natalTableEvidence: buildProductNatalTables(base) };
   const editorial = compatibilityEditorialEvidence(packet, calculations);
   const draft = (version === COMPATIBILITY_V3_VERSION ? buildCompatibilityV3 : buildCompatibilityV3Polished)(editorial, input.relationshipType);
-  return { draft: version === COMPATIBILITY_V3_POLISHED_VERSION ? integrateMbtiNarrative(draft, editorial.facts, { category: input.relationshipType }) : draft, evidencePacket: { ...packet, compatibilityV3: { version: "compatibility-evidence-v3.1", calculations, editorial } } };
+  return { draft: version === COMPATIBILITY_V3_POLISHED_VERSION ? integrateMbtiNarrative(draft, editorial.facts, { category: input.relationshipType }, true) : draft, evidencePacket: { ...packet, compatibilityV3: { version: "compatibility-evidence-v3.1", calculations, editorial } } };
 }
 
 /** Replay only stored canonical tables/calculation with the versioned composer.
@@ -53,7 +53,7 @@ export function validateCompatibilityV3(draft: unknown, packet: unknown, payload
     const errors = [...validateEvidence(editorial.facts)];
     if (stable(editorial) !== stable(v3.editorial)) errors.push("COMPATIBILITY_V3_EVIDENCE_MISMATCH");
     const expected = (draft.version === COMPATIBILITY_V3_VERSION ? buildCompatibilityV3 : buildCompatibilityV3Polished)(editorial, basis.relationshipType as CompatibilityRelationshipType);
-    if (stable(hasNarrativeEdition(draft) ? integrateMbtiNarrative(expected, editorial.facts, { category: String(basis.relationshipType) }) : expected) !== stable(draft)) errors.push("COMPATIBILITY_V3_CONTENT_MISMATCH");
+    if (stable(hasNarrativeEdition(draft) ? integrateMbtiNarrative(expected, editorial.facts, { category: String(basis.relationshipType) }, hasDetailNarrative(draft)) : expected) !== stable(draft)) errors.push("COMPATIBILITY_V3_CONTENT_MISMATCH");
     const qa = draft.editorialAudit;
     if (!qa || qa.errors.length || qa.rejected.length || qa.warnings.length || qa.audit.mix.character < 0.75 || qa.audit.mix.advice > 0.25 || draft.chapters.length !== 7) errors.push("COMPATIBILITY_V3_EDITORIAL_INCOMPLETE");
     errors.push(...validateV3Copy(compatibilityV3CustomerText(draft)));

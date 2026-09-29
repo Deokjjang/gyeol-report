@@ -10,7 +10,7 @@ import { normalizeContext } from "../interpretation-v3/context";
 import { validateV3Copy } from "../interpretation-v3/engine";
 import type { SajuCalcResult } from "../saju/types";
 import { integrateMbtiNarrative } from "../interpretation-v3/mbtiNarrative";
-import { hasNarrativeEdition } from "../interpretation-v3/narrativeEdition";
+import { hasNarrativeEdition, hasDetailNarrative } from "../interpretation-v3/narrativeEdition";
 
 const record = (v: unknown): v is Record<string, unknown> => !!v && typeof v === "object" && !Array.isArray(v);
 const stable = (v: unknown): string => Array.isArray(v) ? `[${v.map(stable).join(",")}]` : record(v) ? `{${Object.keys(v).filter(k => v[k] !== undefined).sort().map(k => `${JSON.stringify(k)}:${stable(v[k])}`).join(",")}}` : JSON.stringify(v);
@@ -31,7 +31,7 @@ export function createCareerV3(payload: unknown) {
   const facts = careerFacts(packet, calculation, input.person.mbtiType);
   const draft = buildCareerV3Polished({ name: input.person.name, mbti: input.person.mbtiType, facts, calculation,
     context: normalizeContext({ lifeStatus: input.userContext.jobStatus, fieldLabel: input.userContext.detailJob, relationshipStatus: input.userContext.relationshipStatus }) });
-  return { draft: integrateMbtiNarrative(draft, facts, { lifeStatus: input.userContext.jobStatus }), evidencePacket: { ...packet, careerV3: { version: "career-evidence-v3.1", calculation, facts } } };
+  return { draft: integrateMbtiNarrative(draft, facts, { lifeStatus: input.userContext.jobStatus }, true), evidencePacket: { ...packet, careerV3: { version: "career-evidence-v3.1", calculation, facts } } };
 }
 
 /** Read-only, version-specific snapshot validation. Legacy drafts never enter
@@ -48,7 +48,7 @@ export function validateCareerV3(draft: unknown, packet: unknown): readonly stri
     const builder = draft.version === CAREER_V3_POLISH_VERSION ? buildCareerV3Polished : buildCareerV3;
     const expected = builder({ name: String(basis.person.name), mbti: String(basis.person.mbtiType ?? ""), facts, calculation: calc,
       context: normalizeContext({ lifeStatus: String(basis.userContext.jobStatus), fieldLabel: String(basis.userContext.detailJob), relationshipStatus: String(basis.userContext.relationshipStatus) }) });
-    if (stable(hasNarrativeEdition(draft) ? integrateMbtiNarrative(expected, facts, { lifeStatus: String(basis.userContext.jobStatus) }) : expected) !== stable(draft)) errors.push("CAREER_V3_CONTENT_MISMATCH");
+    if (stable(hasNarrativeEdition(draft) ? integrateMbtiNarrative(expected, facts, { lifeStatus: String(basis.userContext.jobStatus) }, hasDetailNarrative(draft)) : expected) !== stable(draft)) errors.push("CAREER_V3_CONTENT_MISMATCH");
     const qa = draft.editorialAudit;
     if (!qa || qa.errors.length || qa.rejected.length || qa.warnings.length || qa.audit.mix.character <= 0.5 || qa.audit.mix.advice > 0.35 || draft.chapters.length < 10) errors.push("CAREER_V3_EDITORIAL_INCOMPLETE");
     errors.push(...validateV3Copy(careerV3CustomerText(draft)));

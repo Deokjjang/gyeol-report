@@ -1,5 +1,5 @@
 import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
-import { hasNarrativeEdition } from "../../../lib/interpretation-v3/narrativeEdition";
+import { hasNarrativeEdition, hasDetailNarrative } from "../../../lib/interpretation-v3/narrativeEdition";
 import narrativeStyles from "../../../components/report/v3Narrative.module.css";
 import { buildCanonicalManseRyeokTableData } from "../../../lib/report-tables/manseRyeokTableData";
 import { buildMbtiCommonProfileTableData, getMbtiSourceByType } from "../../../lib/report-tables";
@@ -56,7 +56,7 @@ export function CareerReportV3View({ draft, evidencePacket }: { readonly draft: 
       </dl>
     </section>
     <ReportContents items={draft.chapters.map(c => ({ id: `career-${c.id}`, label: c.title }))} />
-    <StoryTables facts={facts} calculation={calculation} manse={manse} mbti={mbti} draft={usage} compactMbti={hasNarrativeEdition(draft)} />
+    <StoryTables facts={facts} calculation={calculation} manse={manse} mbti={mbti} draft={usage} compactMbti={hasNarrativeEdition(draft)} detailMbti={hasDetailNarrative(draft)} />
     <div className="mx-auto max-w-[44rem] break-keep px-4 [overflow-wrap:anywhere] sm:px-6">
       {draft.chapters.map((chapter, i) => {
         const contents = <div className="space-y-10">{chapter.scenes.map((scene, j) => <CareerReading key={j} scene={scene} final={chapter.id === "direction"} />)}</div>;
