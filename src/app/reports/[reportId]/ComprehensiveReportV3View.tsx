@@ -1,4 +1,7 @@
 import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
+import { hasNarrativeEdition } from "../../../lib/interpretation-v3/narrativeEdition";
+import narrativeStyles from "../../../components/report/v3Narrative.module.css";
+import { V3NarrativeIdentity } from "../../../components/report/V3NarrativeIdentity";
 import { ManseRyeokCommonTable, MbtiCommonProfileTable } from "../../../components/report-tables";
 import { buildCanonicalManseRyeokTableData } from "../../../lib/report-tables/manseRyeokTableData";
 import { buildMbtiCommonProfileTableData, getMbtiSourceByType } from "../../../lib/report-tables";
@@ -75,9 +78,9 @@ export function ComprehensiveReportV3View({ draft, evidencePacket }: { readonly 
       ["METAL", "금", "쇠", "bg-stone-100 border-stone-200 text-stone-900"],
       ["WATER", "수", "물", "bg-sky-50 border-sky-200 text-sky-950"],
     ] as const;
-    return <article className="min-w-0 overflow-hidden rounded-[8px] border border-[#ded2c2] bg-[#fffdf8] text-[#2b211b]" data-report-version={draft.version}>
+    return <article className={`min-w-0 overflow-hidden rounded-[8px] border border-[#ded2c2] bg-[#fffdf8] text-[#2b211b] ${hasNarrativeEdition(draft) ? narrativeStyles.edition : ""}`} data-report-version={draft.version}>
       <ReportCover product="사주×MBTI 종합 리포트" title={draft.title} summary="나를 관통하는 성격과 이미 가진 좋은 패, 앞으로의 선택을 읽습니다." />
-      {story ? <><ReportContents items={items.filter(i => i.id !== "v3-evidence")} /><StoryTables facts={facts} calculation={calculation} manse={manse} mbti={mbti} draft={draft} /></> : <>
+      {story ? <><ReportContents items={items.filter(i => i.id !== "v3-evidence")} /><StoryTables facts={facts} calculation={calculation} manse={manse} mbti={mbti} draft={draft} compactMbti={hasNarrativeEdition(draft)} /></> : <>
       <section aria-label="계산된 원국과 성향" className="space-y-5 border-b border-[#eadfce] px-4 py-6 sm:px-6">
         {manse ? <ManseRyeokCommonTable data={{ ...manse, natalEvidence: undefined }} defaultOpen={false} /> : null}
         <section aria-label="오행 분포" data-v31-elements className="space-y-3">
@@ -91,7 +94,7 @@ export function ComprehensiveReportV3View({ draft, evidencePacket }: { readonly 
           <p className="text-xs leading-6 text-[#756658]">위 숫자는 천간·지지 겉글자의 개수입니다. 생활 보완은 지장간을 포함한 아래 가중 분포와 기존 계산의 강약 판정을 사용합니다.</p>
           <p className="text-sm text-[#5d544d]">지장간 포함: {elements.map(([id, name]) => `${name} ${Number(calculation.elements.weighted[id].toFixed(1))}`).join(" · ")}</p>
         </section>
-        {mbti ? <MbtiCommonProfileTable data={mbti} defaultOpen={false} variant="compact" /> : <p className="text-sm text-[#756658]">MBTI 미입력 · 명리 근거만으로 구성했습니다.</p>}
+        {hasNarrativeEdition(draft) ? <V3NarrativeIdentity data={mbti} /> : mbti ? <MbtiCommonProfileTable data={mbti} defaultOpen={false} variant="compact" /> : <p className="text-sm text-[#756658]">MBTI 미입력 · 명리 근거만으로 구성했습니다.</p>}
         <details id="v3-evidence" className="min-w-0 rounded-lg border border-[#ded2c2]" data-v31-integrated>
           <summary className="min-h-11 cursor-pointer px-4 py-3 font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7f1d38]">내 명리에 있는 주요 기운</summary>
           <div className="space-y-4 px-3 pb-4 sm:px-4">
@@ -138,7 +141,7 @@ export function ComprehensiveReportV3View({ draft, evidencePacket }: { readonly 
       </div>
     </article>;
   }
-  return <article className="min-w-0 overflow-hidden rounded-[8px] border border-[#ded2c2] bg-[#fffdf8] text-[#2b211b]" data-report-version={draft.version}>
+  return <article className={`min-w-0 overflow-hidden rounded-[8px] border border-[#ded2c2] bg-[#fffdf8] text-[#2b211b] ${hasNarrativeEdition(draft) ? narrativeStyles.edition : ""}`} data-report-version={draft.version}>
     <ReportCover product="사주×MBTI 종합 리포트" title={draft.title} summary="이미 가진 좋은 힘을 알아보고, 일과 관계에서 쓰는 나만의 방향." />
     <ReportContents items={items} />
     <div className="mx-auto max-w-[44rem] break-keep px-4 [overflow-wrap:anywhere] sm:px-6">
@@ -174,12 +177,12 @@ export function ComprehensiveReportV3View({ draft, evidencePacket }: { readonly 
           {calculation.structureAnalysis.patterns.map(p => <div key={p.code} className="text-sm"><dt className="font-semibold">{p.labelKo}</dt><dd>{p.evidence.map(e => `${e.keyKo} ${e.valueKo}`).join(" · ")}</dd></div>)}
         </dl>
       </details>
-      {mbti ? <MbtiCommonProfileTable data={mbti} defaultOpen={false} /> : <p className="text-sm text-[#756658]">MBTI 미입력 · 명리 근거만으로 구성했습니다.</p>}
+      {hasNarrativeEdition(draft) ? <V3NarrativeIdentity data={mbti} /> : mbti ? <MbtiCommonProfileTable data={mbti} defaultOpen={false} /> : <p className="text-sm text-[#756658]">MBTI 미입력 · 명리 근거만으로 구성했습니다.</p>}
     </section>
   </article>;
 }
 
-export function StoryTables({ facts, calculation, manse, mbti, draft }: { readonly facts: readonly Evidence[]; readonly calculation: SajuCalcResult; readonly manse?: ManseRyeokCommonTableData | null; readonly mbti?: MbtiCommonProfileTableData | null; readonly draft: PublicSignalUsage }) {
+export function StoryTables({ facts, calculation, manse, mbti, draft, compactMbti = false }: { readonly facts: readonly Evidence[]; readonly calculation: SajuCalcResult; readonly manse?: ManseRyeokCommonTableData | null; readonly mbti?: MbtiCommonProfileTableData | null; readonly draft: PublicSignalUsage; readonly compactMbti?: boolean }) {
   const colors = ["bg-emerald-50 border-emerald-200", "bg-rose-50 border-rose-200", "bg-amber-50 border-amber-200", "bg-stone-100 border-stone-200", "bg-sky-50 border-sky-200"];
   const elements = [["WOOD", "목"], ["FIRE", "화"], ["EARTH", "토"], ["METAL", "금"], ["WATER", "수"]] as const;
   const rows = publicSignalRows(facts, calculation, draft);
@@ -200,7 +203,7 @@ export function StoryTables({ facts, calculation, manse, mbti, draft }: { readon
         <PublicSignalTable rows={rows.slice(10)} caption="앞에서 본 기운 외에 원국에서 확인된 기운입니다." />
       </details> : null}
     </section>
-    {mbti ? <MbtiCommonProfileTable data={mbti} defaultOpen={false} variant="compact" /> : <p className="text-sm text-[#756658]">MBTI 미입력 · 명리 근거만으로 구성했습니다.</p>}
+    {compactMbti ? <V3NarrativeIdentity data={mbti} /> : mbti ? <MbtiCommonProfileTable data={mbti} defaultOpen={false} variant="compact" /> : <p className="text-sm text-[#756658]">MBTI 미입력 · 명리 근거만으로 구성했습니다.</p>}
   </section>;
 }
 

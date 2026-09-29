@@ -1,4 +1,6 @@
 import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
+import { hasNarrativeEdition } from "../../../lib/interpretation-v3/narrativeEdition";
+import narrativeStyles from "../../../components/report/v3Narrative.module.css";
 import { buildCanonicalManseRyeokTableData } from "../../../lib/report-tables/manseRyeokTableData";
 import { buildMbtiCommonProfileTableData, getMbtiSourceByType } from "../../../lib/report-tables";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
@@ -39,7 +41,7 @@ export function LoveReportV3View({ draft, evidencePacket }: { readonly draft: Lo
   const usage = { opening: [], sections: draft.chapters.map(c => ({ blocks: c.scenes })) };
   // Validation binds these values to raw inputBasis, never inferred taxonomy.
   const inputRows = [["관계 상태", LOVE_STATUS_LABELS[draft.relationshipStatus]], ["MBTI", draft.mbti || "모름"], ...(draft.familyFocus ? [["관심 분야", "가족"]] : [])];
-  return <article className="min-w-0 overflow-hidden rounded-[8px] border border-[#ded2c2] bg-[#fffdf8] text-[#2b211b]" data-report-version={draft.version}>
+  return <article className={`min-w-0 overflow-hidden rounded-[8px] border border-[#ded2c2] bg-[#fffdf8] text-[#2b211b] ${hasNarrativeEdition(draft) ? narrativeStyles.edition : ""}`} data-report-version={draft.version}>
     <ReportCover product="연애·결혼·자녀 리포트" title={draft.title} summary="좋아할 때 달라지는 나, 이미 가진 매력, 가까운 생활에 남는 사랑을 읽습니다." />
     <section aria-label={`${draft.personLabel}님의 입력 정보`} data-love-input className="mx-4 mb-7 rounded-sm border border-[#ded2c2] bg-[#f8f3eb] px-4 py-4 sm:mx-6">
       <h2 className="mb-3 text-sm font-semibold text-[#6f1d35]">{draft.personLabel}님의 입력 정보</h2>
@@ -48,7 +50,7 @@ export function LoveReportV3View({ draft, evidencePacket }: { readonly draft: Lo
       </div>)}</dl>
     </section>
     <ReportContents items={draft.chapters.map(c => ({ id: `love-${c.id}`, label: c.title }))} />
-    <StoryTables facts={facts} calculation={calculation} manse={manse} mbti={mbti} draft={usage} />
+    <StoryTables facts={facts} calculation={calculation} manse={manse} mbti={mbti} draft={usage} compactMbti={hasNarrativeEdition(draft)} />
     <div className="mx-auto max-w-[44rem] break-keep px-4 [overflow-wrap:anywhere] sm:px-6">
       {draft.chapters.map((chapter, i) => {
         const contents = <div className="space-y-10">{chapter.scenes.map((scene, j) => {

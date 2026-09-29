@@ -15,6 +15,8 @@ import { buildComprehensiveReportV2ProfileTable } from "./comprehensiveReportPro
 import { withReportInputEvidence } from "./reportInputEvidence";
 import { normalizeReportInputPayload } from "./reportInputAdapter";
 import type { Evidence } from "../interpretation-v3/types";
+import { integrateMbtiNarrative } from "../interpretation-v3/mbtiNarrative";
+import { hasNarrativeEdition } from "../interpretation-v3/narrativeEdition";
 
 const record = (v: unknown): v is Record<string, unknown> => !!v && typeof v === "object" && !Array.isArray(v);
 const stable = (value: unknown): string => Array.isArray(value) ? `[${value.map(stable).join(",")}]`
@@ -52,7 +54,7 @@ export function createComprehensiveV3(payload: unknown) {
   const context = normalizeContext({ lifeStatus: input.userContext.jobStatus, fieldLabel: input.userContext.detailJob, relationshipStatus: input.userContext.relationshipStatus });
   const draft = buildComprehensiveV3({ name: p.name, facts, context, calculation, relationshipStatus: input.userContext.relationshipStatus,
     profileTable: buildComprehensiveReportV2ProfileTable({ evidencePacket: generated.packet, mbtiType: p.mbtiType || "미입력", sajuFacts: generated.facts }) });
-  return { draft, evidencePacket: { ...packet, comprehensiveV3: { version: "comprehensive-evidence-v3.1", calculation, facts } } };
+  return { draft: integrateMbtiNarrative(draft, facts, { lifeStatus: input.userContext.jobStatus, relationshipStatus: input.userContext.relationshipStatus }), evidencePacket: { ...packet, comprehensiveV3: { version: "comprehensive-evidence-v3.1", calculation, facts } } };
 }
 
 /** Versioned snapshot validation, with no migration, provider or write. Rebuild
@@ -75,7 +77,8 @@ export function validateComprehensiveV3(draft: unknown, packet: unknown): readon
     const expected = (legacy ? buildComprehensiveV3Legacy : draft.version === ENRICHED_COMPREHENSIVE_VERSION ? buildComprehensiveV31 : draft.version === STORY_COMPREHENSIVE_VERSION ? buildComprehensiveV32 : draft.version === FINAL_COMPREHENSIVE_VERSION ? buildComprehensiveFinal : buildComprehensiveV3)({ name: String(basis.person.name), facts, calculation: calc,
       context: normalizeContext({ lifeStatus: String(basis.userContext.jobStatus), fieldLabel: String(basis.userContext.detailJob), relationshipStatus: String(basis.userContext.relationshipStatus) }),
       relationshipStatus: String(basis.userContext.relationshipStatus), profileTable: draft.profileTable });
-    if (stable(expected) !== stable(draft)) errors.push("V3_CONTENT_MISMATCH");
+    const current = hasNarrativeEdition(draft) ? integrateMbtiNarrative(expected, facts, { lifeStatus: String(basis.userContext.jobStatus), relationshipStatus: String(basis.userContext.relationshipStatus) }) : expected;
+    if (stable(current) !== stable(draft)) errors.push("V3_CONTENT_MISMATCH");
     errors.push(...validateV3Copy(comprehensiveV3CustomerText(draft)));
     if (draft.version === STORY_COMPREHENSIVE_VERSION) errors.push(...validateStoryCopy(comprehensiveV3CustomerText(draft)), ...validateStoryCopy(storyFeatureRows(facts, calc).map(r => `${r.meaning} ${r.power}`).join(" ")));
     if (draft.version === FINAL_COMPREHENSIVE_VERSION) errors.push(...validateStoryCopy(comprehensiveV3CustomerText(draft)), ...validateStoryCopy(publicSignalRows(facts, calc, draft).map(r => `${r.meaning} ${r.power}`).join(" ")));

@@ -9,7 +9,8 @@ import { createCareerV3, validateCareerV3 } from "../../../src/lib/report-genera
 import { careerV3CustomerText, isCareerV3Draft } from "../../../src/lib/interpretation-v3/careerEditorial";
 import { CAREER_VOICES } from "../../../src/lib/interpretation-v3/careerPortraits";
 import { interpretCareerContextV3 } from "../../../src/lib/interpretation-v3/careerContextV3";
-import { interpretCareerContext } from "../../../src/lib/interpretation-v3/context";
+import { interpretCareerContext, normalizeContext } from "../../../src/lib/interpretation-v3/context";
+import { buildComprehensiveV3 } from "../../../src/lib/interpretation-v3/comprehensive";
 import { storySupport } from "../../../src/lib/interpretation-v3/comprehensiveStoryEvidence";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
@@ -94,7 +95,14 @@ it.each(["unknown", "approximate"])("%s birth time never becomes an exact V3 her
 
 it("preserves all six committed Phase B customer drafts byte for byte", () => {
   const hashes = ["4d074fb7274be44b6ccdeb9128f276cb84b93c0a1e55163de589440625caf4d0", "0ff909df2e6b492d752149fbe65bccc736e94d4cc031ca4a6d51ad700fd8b0a6", "167a58cbcadf93f9d4f27f596211ba572949358e9aecc938ffe77fdfed0535ec", "1df9a25ab80f8d08389744d34398fc1f9a27b102a2067772489f7a33819d565b", "a6cde3108f368e9c39ca2cb5ecce5d7f097492898636b2c4fba8f2182871c62a", "47507839f8e860edde0115c57e72b0f6f235e8ede9d8f8ae75f8f4f16e12b396"];
-  COMPREHENSIVE_V3_FIXTURES.forEach((row, i) => expect(hash(createComprehensiveV3(comprehensiveFixture(row).payload)!.draft)).toBe(hashes[i]));
+  COMPREHENSIVE_V3_FIXTURES.forEach((row, i) => {
+    const { payload } = comprehensiveFixture(row), result = createComprehensiveV3(payload)!;
+    const { facts, calculation } = result.evidencePacket.comprehensiveV3;
+    const old = buildComprehensiveV3({ name: payload.person.name, facts, calculation, profileTable: result.draft.profileTable,
+      context: normalizeContext({ lifeStatus: payload.userContext.jobStatus, fieldLabel: payload.userContext.detailJob, relationshipStatus: payload.userContext.relationshipStatus }), relationshipStatus: payload.userContext.relationshipStatus });
+    expect(hash(old)).toBe(hashes[i]);
+    expect(validateProductPublication("saju_mbti_full", old, result.evidencePacket).ok).toBe(true);
+  });
 });
 
 it("developer, care, student and business scenes differ beyond job-name substitution", () => {

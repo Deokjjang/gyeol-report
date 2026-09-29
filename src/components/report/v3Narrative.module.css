@@ -1,0 +1,15 @@
+.edition h1,
+.edition h2,
+.edition h3,
+.edition :global(.font-serif) {
+  font-family: var(--font-geist-sans), Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.edition h1 {
+  font-size: clamp(1.65rem, 4.5vw, 2.6rem);
+  line-height: 1.35;
+  letter-spacing: -.035em;
+}
+.edition h2:not(:global([data-story-tables]) *) { font-size: clamp(1.3rem, 3.5vw, 1.85rem); line-height: 1.45; }
+.edition h3:not(:global([data-story-tables]) *) { font-size: clamp(1.05rem, 2.8vw, 1.4rem); line-height: 1.55; }

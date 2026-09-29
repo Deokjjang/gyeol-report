@@ -1,4 +1,7 @@
 import { ReportCover, ReportContents } from "../../../components/report/ReportReadingFrame";
+import { hasNarrativeEdition } from "../../../lib/interpretation-v3/narrativeEdition";
+import narrativeStyles from "../../../components/report/v3Narrative.module.css";
+import { V3NarrativeIdentity } from "../../../components/report/V3NarrativeIdentity";
 import { buildCanonicalManseRyeokTableData } from "../../../lib/report-tables/manseRyeokTableData";
 import { buildMbtiCommonProfileTableData, getMbtiSourceByType } from "../../../lib/report-tables";
 import ManseRyeokCommonTable from "../../../components/report-tables/ManseRyeokCommonTable";
@@ -47,7 +50,7 @@ export function CompatibilityReportV3View({ draft, evidencePacket }: { draft: Co
       return <PairReading key={i} scene={scene} final={chapter.id === "ending"} labels={labels} />;
     })}</div>
   </section>;
-  return <article className="min-w-0 overflow-hidden rounded-[8px] border border-[#ded2c2] bg-[#fffdf8] text-[#2b211b]" data-report-version={draft.version}>
+  return <article className={`min-w-0 overflow-hidden rounded-[8px] border border-[#ded2c2] bg-[#fffdf8] text-[#2b211b] ${hasNarrativeEdition(draft) ? narrativeStyles.edition : ""}`} data-report-version={draft.version}>
     <ReportCover product={`${CATEGORY_LABELS[draft.relationshipType]} 궁합 리포트`} title={draft.title} summary="함께 있을 때 달라지는 반응, 둘 사이의 좋은 힘과 웃기게 엇갈리는 순간을 읽습니다." />
     <section aria-label="두 사람의 입력 정보" data-compatibility-input className="mx-4 mb-7 rounded-sm border border-[#ded2c2] bg-[#f8f3eb] px-4 py-4 sm:mx-6">
       <h2 className="mb-3 text-sm font-semibold text-[#6f1d35]">두 사람의 입력 정보</h2>
@@ -64,8 +67,8 @@ export function CompatibilityReportV3View({ draft, evidencePacket }: { draft: Co
       // Only the public table crosses client boundaries, never role IDs/facts.
       return <section key={slot} aria-label={`${person.name}님의 원국과 성향`}>
         <h2 className="px-4 pt-6 text-xl font-semibold sm:px-6">{person.role} · {person.name}님의 원국과 성향</h2>
-        {manse?.natalEvidence?.precision === "exact" ? <StoryTables facts={facts.filter(f => f.subject === slot && !f.featureId.startsWith("pair:"))} calculation={calculations[slot]} manse={manse} mbti={mbti} draft={usage} />
-          : <div className="px-4 py-6 sm:px-6">{manse ? <ManseRyeokCommonTable data={{ ...manse, natalEvidence: undefined }} defaultOpen={false} /> : null}<p className="mt-3 text-sm text-[#756658]">출생시간 범위에서 확인된 원국만 표시합니다. MBTI · {person.mbti || "모름"}</p></div>}
+        {manse?.natalEvidence?.precision === "exact" ? <StoryTables facts={facts.filter(f => f.subject === slot && !f.featureId.startsWith("pair:"))} calculation={calculations[slot]} manse={manse} mbti={mbti} draft={usage} compactMbti={hasNarrativeEdition(draft)} />
+          : <div className="px-4 py-6 sm:px-6">{manse ? <ManseRyeokCommonTable data={{ ...manse, natalEvidence: undefined }} defaultOpen={false} /> : null}{hasNarrativeEdition(draft) ? <V3NarrativeIdentity data={mbti} /> : <p className="mt-3 text-sm text-[#756658]">출생시간 범위에서 확인된 원국만 표시합니다. MBTI · {person.mbti || "모름"}</p>}</div>}
       </section>;
     })}
     <div className="mx-auto max-w-[44rem] break-keep px-4 [overflow-wrap:anywhere] sm:px-6">{draft.chapters.slice(1).map(reading)}</div>
