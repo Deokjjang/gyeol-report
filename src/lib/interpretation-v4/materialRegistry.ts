@@ -3,6 +3,8 @@ import { SAJU_KNOWLEDGE_BASE } from "../report-knowledge/sajuKnowledgeBase";
 import { canonicalFeatureId } from "../interpretation-v3/evidence";
 import type { Domain, Material, SemanticTag } from "./types";
 import { STRUCTURE_REGISTRY } from "./structureMaterials";
+import { getMaterialDepth, MATERIAL_DEPTH } from "./materialDepth";
+import { SHINSAL_METADATA } from "../saju/shinsalConstants";
 
 // Normalize vocabulary, not calculation. Preserve original refs on observations.
 const aliases: Readonly<Record<string, string>> = {
@@ -67,7 +69,20 @@ export function buildMaterialRegistry(): readonly Material[] {
       sourceRefs: [f && `sajuFeatureTaxonomy:${f.id}`, ...knowledge.map(k => `sajuKnowledgeBase:${k.id}`), meaning && `v4:semantic-meaning:${feature}`].filter((r): r is string => Boolean(r)),
     };
   });
-  return [...legacy, ...STRUCTURE_REGISTRY];
+  const existing = [...legacy, ...STRUCTURE_REGISTRY];
+  // Native-only markers did not always have a KB row. Add prose, never new
+  // semantic tags/Fusion rules. Elements stay symbolic-only in materialPacket.
+  const additions: Material[] = MATERIAL_DEPTH.filter(d => !existing.some(m => m.feature === d.feature)).map(d => ({
+    feature: d.feature,
+    label: Object.values(SHINSAL_METADATA).find(m => canonicalV4Feature(`shinsal:${m.code}`) === d.feature)?.labelKo ?? d.feature,
+    semanticTags: [], positiveMeaning: d.seeds.find(s => s.role === "strength")!.text,
+    shadowMeaning: d.seeds.find(s => s.role === "shadow")!.text, imagery: d.imagery,
+    domains: [...new Set(d.seeds.flatMap(s => s.domains))], evidenceStrength: "none", sourceRefs: d.sourceRefs,
+  }));
+  return [...existing, ...additions].map(m => {
+    const depth = getMaterialDepth(m.feature);
+    return depth ? { ...m, depth } : m;
+  });
 }
 export const MATERIAL_REGISTRY = buildMaterialRegistry();
 export const MATERIAL_BY_FEATURE: ReadonlyMap<string, Material> = new Map(MATERIAL_REGISTRY.map(m => [m.feature, m]));

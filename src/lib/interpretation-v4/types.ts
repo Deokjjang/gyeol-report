@@ -1,6 +1,7 @@
 import type { Evidence } from "../interpretation-v3/types";
 import type { MbtiSourceType, MbtiTraitArea } from "../report-knowledge/mbti/sourceRuntimeAdapter";
 import type { StructureCandidate } from "./structureTypes";
+import type { MaterialDepth } from "./materialDepthTypes";
 
 export const V4_DOMAINS = ["identity", "strengths", "weaknesses", "work", "money", "study", "love", "marriage", "relationships", "success/fortune"] as const;
 export type Domain = (typeof V4_DOMAINS)[number];
@@ -36,6 +37,8 @@ export type Material = {
   /** Unbound registry entries have none; only evaluated observations supply strength. */
   readonly evidenceStrength: Strength;
   readonly sourceRefs: readonly string[];
+  /** Optional V4-only authored variants. Eligibility still belongs to evidencePolicy. */
+  readonly depth?: MaterialDepth;
 };
 export type MbtiEvidence = {
   readonly type: MbtiSourceType;
