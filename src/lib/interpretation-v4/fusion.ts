@@ -3,7 +3,9 @@ import { BRIDGE_SCENE_RULES } from "../report-knowledge/bridge/interactionSceneR
 import type { SajuCalcResult } from "../saju/types";
 import { buildV4Evidence, evaluateEvidence } from "./evidencePolicy";
 import { canonicalV4Feature, MATERIAL_BY_FEATURE } from "./materialRegistry";
-import { FORTUNE_RULES, FUSION_RULES, semanticConnection } from "./fusionRules";
+import { FORTUNE_RULES, STRUCTURE_FORTUNE_RULES, FUSION_RULES, semanticConnection } from "./fusionRules";
+import { buildMyeongliStructure } from "./structureEvidence";
+import { STRUCTURE_MATERIALS } from "./structureMaterials";
 import { V4_DOMAINS, type Domain, type EvidenceDecision, type FortuneComposite, type FusionInterpretation, type MbtiEvidence, type Observation, type Suppression } from "./types";
 
 const unique = (xs: readonly string[]) => [...new Set(xs)].sort();
@@ -86,7 +88,7 @@ export function interpretFusion(input: {
     } else fusions.push(c);
   }
   const fortuneComposites: FortuneComposite[] = [];
-  if (domains.includes("success/fortune") || domains.includes("money")) for (const r of FORTUNE_RULES) {
+  if (domains.includes("success/fortune") || domains.includes("money")) for (const r of [...FORTUNE_RULES, ...STRUCTURE_FORTUNE_RULES]) {
     const supportingEvidence = independentSupport(r.allOf, eligible.filter(d => d.strength === "strong"));
     if (!supportingEvidence) { suppressed.push({ id: r.id, reasons: ["MISSING_DISTINCT_STRONG_FORTUNE_SUPPORT"] }); continue; }
     fortuneComposites.push({ ruleId: r.id, theme: r.theme, supportingEvidence, strength: "strong", directCopySeed: r.seed,
@@ -101,7 +103,7 @@ export function interpretFusion(input: {
     if (legacyBridgeCount < 2) auditWarnings.push("THIN_LEGACY_FUSION");
   }
   return {
-    version: "v4-fusion-core-1" as const,
+    version: "v4-fusion-core-2" as const,
     subject, mbti: profile?.type ?? null, decisions, fusions, fortuneComposites,
     myeongli: eligible.flatMap(d => {
       const m = MATERIAL_BY_FEATURE.get(d.evidence.feature);
@@ -118,7 +120,13 @@ export function interpretFusion(input: {
 
 /** Offline integration entry; never invoked by current report dispatch/routes. */
 export function buildFusionCore(input: { readonly calculation: SajuCalcResult; readonly mbti?: string | null; readonly subject?: Observation["subject"]; readonly domains?: readonly Domain[] }) {
-  return interpretFusion({ ...input, observations: buildV4Evidence(input.calculation, input.subject) });
+  const structureLayer = buildMyeongliStructure(input.calculation);
+  const result = interpretFusion({ ...input, observations: buildV4Evidence(input.calculation, input.subject) });
+  return { ...result, structureLayer, structureMaterials: structureLayer.candidates.map(candidate => ({ candidate,
+    material: STRUCTURE_MATERIALS[candidate.id], heroEligible: candidate.confidence === "strong",
+    fusionRefs: result.fusions.filter(f => f.myeongliEvidence.some(d => d.evidence.structure?.id === candidate.id)).map(f => f.ruleId),
+    fortuneRefs: result.fortuneComposites.filter(f => f.supportingEvidence.some(d => d.evidence.structure?.id === candidate.id)).map(f => f.ruleId),
+  })) };
 }
 
 export { canonicalV4Feature };

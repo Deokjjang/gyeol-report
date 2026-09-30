@@ -2,6 +2,7 @@ import { SAJU_FEATURE_TAXONOMY } from "../report-knowledge/sajuFeatureTaxonomy";
 import { SAJU_KNOWLEDGE_BASE } from "../report-knowledge/sajuKnowledgeBase";
 import { canonicalFeatureId } from "../interpretation-v3/evidence";
 import type { Domain, Material, SemanticTag } from "./types";
+import { STRUCTURE_REGISTRY } from "./structureMaterials";
 
 // Normalize vocabulary, not calculation. Preserve original refs on observations.
 const aliases: Readonly<Record<string, string>> = {
@@ -52,7 +53,7 @@ const topicDomains: Readonly<Record<string, Domain>> = { identity: "identity", p
 
 export function buildMaterialRegistry(): readonly Material[] {
   const ids = [...new Set([...SAJU_FEATURE_TAXONOMY.map(f => canonicalV4Feature(f.id)), ...SAJU_KNOWLEDGE_BASE.map(f => canonicalV4Feature(f.id)), "distribution:output-low"])].sort();
-  return ids.map(feature => {
+  const legacy: Material[] = ids.map(feature => {
     const f = SAJU_FEATURE_TAXONOMY.find(f => f.id === feature);
     const knowledge = SAJU_KNOWLEDGE_BASE.filter(k => canonicalV4Feature(k.id) === feature);
     const k = knowledge.find(k => k.id === feature) ?? knowledge[0];
@@ -66,6 +67,7 @@ export function buildMaterialRegistry(): readonly Material[] {
       sourceRefs: [f && `sajuFeatureTaxonomy:${f.id}`, ...knowledge.map(k => `sajuKnowledgeBase:${k.id}`), meaning && `v4:semantic-meaning:${feature}`].filter((r): r is string => Boolean(r)),
     };
   });
+  return [...legacy, ...STRUCTURE_REGISTRY];
 }
 export const MATERIAL_REGISTRY = buildMaterialRegistry();
 export const MATERIAL_BY_FEATURE: ReadonlyMap<string, Material> = new Map(MATERIAL_REGISTRY.map(m => [m.feature, m]));

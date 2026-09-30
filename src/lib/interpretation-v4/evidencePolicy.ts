@@ -7,6 +7,9 @@ import { GOD_CODES, storySupport } from "../interpretation-v3/comprehensiveStory
 import type { SajuCalcResult } from "../saju/types";
 import { canonicalV4Feature, MATERIAL_BY_FEATURE } from "./materialRegistry";
 import type { EvidenceDecision, EvidenceStatus, Observation } from "./types";
+import { buildMyeongliStructure } from "./structureEvidence";
+import { STRUCTURE_IDS } from "./structureRules";
+import { STRUCTURE_VERSION } from "./structureTypes";
 
 const native = new Set(SHINSAL_RULES.map(r => canonicalV4Feature(`shinsal:${r.code}`)));
 const derived = new Set(EXTRACTOR_DIRECT_IDS.map(canonicalV4Feature));
@@ -21,6 +24,17 @@ export function evaluateEvidence(raw: Observation): EvidenceDecision {
   if (evidence.feature === "twelve_sinsal_mangsin" || evidence.sourceRefs.some(r => /(?:MANGSINSAL|twelve_sinsal_mangsin)/.test(r)))
     return reject("ambiguous/conflicted", "MANGSIN_CANONICAL_RULE_CONFLICT");
   if (dbOnly.has(evidence.feature)) return reject("db-only", "NO_CANONICAL_PRODUCER");
+  if (evidence.feature.startsWith("v4_structure:")) {
+    const s = evidence.structure;
+    if (!s || !STRUCTURE_IDS.includes(s.id) || evidence.feature !== `v4_structure:${s.id}` || s.version !== STRUCTURE_VERSION ||
+      evidence.method !== "v4-structure" || !s.provenance.includes(`v4:structure-rule:${s.id}`) || !evidence.sourceRefs.includes(STRUCTURE_VERSION))
+      return reject("unsupported", "UNVERIFIED_V4_STRUCTURE");
+    if (s.confidence !== "strong" || !evidence.completeChart || evidence.certainty !== "confirmed")
+      return reject("ambiguous/conflicted", "STRUCTURE_NOT_HERO_CONFIDENCE");
+    if (evidence.scope !== "natal" || evidence.period || !evidence.substantial || s.supportingEvidence.length < 2 || !s.lineage.length || !evidence.lineage.length)
+      return reject("unsupported", "STRUCTURE_PROOF_OR_SCOPE_MISSING");
+    return { evidence, status: "derived-but-supported", strength: "strong", usable: true, reasons: [] };
+  }
   if (/^(?:structure[:_]|pattern_|special_pattern)/.test(evidence.feature))
     return reject("unsupported", "CLASSICAL_STRUCTURE_NOT_VERIFIED");
   const isGod = Object.keys(GOD_CODES).some(code => evidence.feature === `ten_god_${code}`);
@@ -47,8 +61,8 @@ export function evaluateEvidence(raw: Observation): EvidenceDecision {
   return { evidence, status, strength, usable: strength !== "weak", reasons: strength === "weak" ? ["MINOR_EVIDENCE_NOT_A_HERO"] : [] };
 }
 
-/** Read the current V3 calculation and canonical lookup layer. No new calendar,
- * strength engine, artificial pillars, or legacy missing/excessive adapter. */
+/** Read current canonical evidence unchanged, plus the isolated V4 structure
+ * layer. Never accept a precomputed structure packet from another chart. */
 export function buildV4Evidence(calc: SajuCalcResult, subject: Observation["subject"] = "person"): readonly Observation[] {
   const context = calc.birthTimeContext;
   const contextMatches = context?.calendarVersion === calc.calculationVersion && context?.birthDate === calc.input.birthDate && calc.calculationVersion === SAJU_CALENDAR_VERSION &&
@@ -86,6 +100,12 @@ export function buildV4Evidence(calc: SajuCalcResult, subject: Observation["subj
   }
   for (const p of calc.structureAnalysis.patterns) result.push(wrap(`structure:${p.code}`, {
     method: "supplied", sourceRefs: [`SajuCalcResult:structureAnalysis:${p.code}`],
+  }));
+  for (const s of buildMyeongliStructure(calc).candidates) result.push(wrap(`v4_structure:${s.id}`, {
+    method: "v4-structure", substantial: s.confidence === "strong", structure: s,
+    sourceRefs: s.provenance,
+    lineage: unique([...s.lineage.map(ref => `${subject}:${ref}`), ...s.supportingEvidence.flatMap(a =>
+      Object.entries(GOD_CODES).filter(([, god]) => god === a.god).map(([code]) => `${subject}:natal:ten_god_${code}`))]),
   }));
   // Duplicate aliases retain all provenance, never multiply support.
   const merged = new Map<string, Observation>();

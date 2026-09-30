@@ -1,5 +1,6 @@
 import type { Evidence } from "../interpretation-v3/types";
 import type { MbtiSourceType, MbtiTraitArea } from "../report-knowledge/mbti/sourceRuntimeAdapter";
+import type { StructureCandidate } from "./structureTypes";
 
 export const V4_DOMAINS = ["identity", "strengths", "weaknesses", "work", "money", "study", "love", "marriage", "relationships", "success/fortune"] as const;
 export type Domain = (typeof V4_DOMAINS)[number];
@@ -11,10 +12,11 @@ export type Confidence = "supported" | "derived";
 export type SemanticTag = "precision" | "decisive-correction" | "leadership" | "status" | "wealth" | "accumulation" | "help" | "first-attraction" | "intimate-attraction" | "mobility" | "solitude" | "inquiry" | "expression" | "expression-gap" | "autonomy" | "consistency" | "learning" | "sociability" | "reserved-affection" | "experimentation" | "experience-spending" | "practical-learning";
 export type Observation = Pick<Evidence, "id" | "subject" | "scope" | "period" | "certainty" | "sourceRefs" | "lineage"> & {
   readonly feature: string;
-  readonly method: "canonical-calculation" | "canonical-marker" | "supported-derivation" | "weighted-output-gap" | "supplied";
+  readonly method: "canonical-calculation" | "canonical-marker" | "supported-derivation" | "weighted-output-gap" | "v4-structure" | "supplied";
   readonly substantial: boolean;
   readonly completeChart: boolean;
   readonly weight?: number;
+  readonly structure?: StructureCandidate;
 };
 export type EvidenceDecision = {
   readonly evidence: Observation;

@@ -17,6 +17,14 @@ export function semanticConnection(kind: FusionKind, from: SemanticTag, to: Sema
 // Each row references an existing trait, not a type-letter stereotype. New short
 // seeds normalize the interaction; no V3 report prose or MBTI DB is rewritten.
 export const FUSION_RULES: readonly FusionRule[] = [
+  rule("entj-wealth-pressure-structure", "ENTJ", "overlap", ["v4_structure:wealthHeavyWeakDaymaster"], "wealth", ["money", "high_earning_orientation", "wealth"], ["money", "work"], "결과를 크게 바라보는 마음",
+    "작게 해놓고 만족하기보다 제대로 남기고 싶습니다. 다만 하고 싶은 일의 크기만큼 혼자 맡는 일도 커지면, 쉬는 날까지 다음 일을 생각하게 됩니다."),
+  rule("entj-made-value-structure", "ENTJ", "overlap", ["v4_structure:outputCreatesWealth"], "wealth", ["money", "high_earning_orientation", "wealth"], ["work", "money"], "솜씨를 실제 값으로 바꾸는 힘",
+    "잘 만들었다는 칭찬 다음에는 누가 이걸 원하는지가 궁금합니다. 생각을 결과로 만들고, 그 결과에 맞는 값을 받고 싶은 사람입니다."),
+  rule("intp-pressure-learning-structure", "INTP", "overlap", ["v4_structure:killingResourceFlow"], "inquiry", ["thinkingStyle", "why_question_loop", "inquiry"], ["study", "work"], "어려운 문제에서 자라는 전문성",
+    "막히는 일이 생기면 왜 그런지 끝까지 파고듭니다. 처음에는 버거웠던 문제가 어느새 남들이 물으러 오는 내 전문 분야가 되기도 합니다."),
+  rule("entp-question-authority-structure", "ENTP", "overlap", ["v4_structure:hurtingOfficerMeetsOfficer"], "precision", ["thinkingStyle", "flaw_detection", "precision"], ["work", "relationships"], "권위보다 먼저 보이는 빈틈",
+    "누가 말했는지보다 말이 맞는지가 먼저입니다. 다들 조용히 넘어가는 순간에도 질문 하나가 남아서, 결국 내가 꺼내는 편입니다."),
   rule("entj-wealth", "ENTJ", "overlap", ["ten_god_pian_cai", "ten_god_zheng_cai"], "wealth", ["money", "high_earning_orientation", "wealth"], ["money", "success/fortune"], "결과를 돈으로 남기려는 마음",
     "잘했다는 말도 좋지만, 그래서 내 몫이 얼마나 커졌는지가 궁금합니다. 돈 이야기를 피하기보다 실력에 맞는 값을 받고 싶은 사람입니다."),
   rule("entj-pressure", "ENTJ", "overlap", ["ten_god_qi_sha"], "leadership", ["identity", "commanding_goal_builder", "leadership"], ["work", "strengths", "identity"], "급할수록 앞에 서는 사람",
@@ -109,4 +117,12 @@ export const FORTUNE_RULES: readonly FortuneRule[] = [
   { id: "learning-depth", theme: "learning", allOf: [["ten_god_zheng_yin"], ["gwiin_munchang", "gwiin_hakdang"]], seed: "배운 것이 흩어지지 않고 내 실력으로 쌓이는 힘이 있습니다." },
   { id: "show-your-thought", theme: "expression", allOf: [["ten_god_shi_shen", "ten_god_shang_guan"], ["gwiin_munchang"]], seed: "이해한 것을 내 말과 작품으로 보여주는 좋은 힘이 있습니다." },
   { id: "outside-opportunity", theme: "mobility/opportunity", allOf: [["twelve_sinsal_yeokma"], ["ten_god_pian_cai"]], seed: "바깥에서 만나는 사람과 새로운 장소가 기회의 문이 되는 좋은 패입니다." },
+];
+
+/** Separate Phase 2 rules so Phase 1's atomic contract stays testable unchanged. */
+export const STRUCTURE_FORTUNE_RULES: readonly FortuneRule[] = [
+  { id: "ambition-with-place", theme: "status/honor", allOf: [["v4_structure:wealthHeavyWeakDaymaster"], ["twelve_sinsal_jangseong"], ["twelve_sinsal_banan"]],
+    seed: "현실 성과를 향한 욕심에 앞에 서고 인정받는 힘이 함께 있습니다. 사람과 시간을 잘 나눠 쓰면 혼자보다 큰 판을 키워갈 여지가 있습니다." },
+  { id: "created-value-accumulates", theme: "accumulation", allOf: [["v4_structure:outputCreatesWealth"], ["gwiin_jaego"]],
+    seed: "솜씨를 결과로 바꾸는 힘에 쌓아가는 복이 더해집니다. 만든 것이 돈과 기술, 고객으로 남을 좋은 바탕이 있습니다." },
 ];
