@@ -1,12 +1,15 @@
 import type { ComprehensiveNarrative, EditorialIssue } from "./narrativeTypes";
 
+/** Shared read-only text shape; does not add a renderer or change V3/V4 output. */
+type ReadableNarrative = Omit<ComprehensiveNarrative, "version">;
+
 export const sentences = (text: string) => text.match(/[^.!?。]+[.!?。]+|[^.!?。]+$/g)?.map(s => s.trim()).filter(Boolean) ?? [];
 export const sentenceKey = (text: string) => text.replace(/[\s\p{P}\p{S}]/gu, "");
-export function narrativeText(report: ComprehensiveNarrative): string {
+export function narrativeText(report: ReadableNarrative): string {
   return [report.headline, ...report.opening.map(b => b.text), ...report.sections.flatMap(s => [s.title, ...s.blocks.map(b => b.text)]), report.finalLine].join("\n\n");
 }
 /** Report-only QA: never delete a conflicting sentence silently to earn PASS. */
-export function reviewNarrative(report: ComprehensiveNarrative): readonly EditorialIssue[] {
+export function reviewNarrative(report: ReadableNarrative): readonly EditorialIssue[] {
   const issues: EditorialIssue[] = [], seen = new Map<string, string>(), sceneIds = new Set<string>();
   const blocks = [...report.opening, ...report.sections.flatMap(s => s.blocks)];
   const families = new Map<string, string>(), themes = new Map<string, number>();
@@ -58,7 +61,7 @@ export function reviewNarrative(report: ComprehensiveNarrative): readonly Editor
 }
 
 /** Cohort QA is read-only and separate from generation. No names/punctuation exemption. */
-export function reviewNarrativeCohort(reports: readonly { id: string; narrative: ComprehensiveNarrative }[]) {
+export function reviewNarrativeCohort(reports: readonly { id: string; narrative: ReadableNarrative }[]) {
   const exact = new Map<string, string>(), spans = new Map<string, string>();
   const headlines = new Set<string>(), endings = new Set<string>();
   const issues: EditorialIssue[] = [];
