@@ -220,6 +220,8 @@ describe("V3 isolated common core", () => {
     // Phase 1 only reads existing evidence/types/support helpers. The V4
     // isolation test separately forbids any route/generator from consuming V4.
     allowed.push("src/lib/interpretation-v4/types.ts", "src/lib/interpretation-v4/evidencePolicy.ts", "src/lib/interpretation-v4/materialRegistry.ts");
+    // Phase4A reads the existing job interpreter; V3 callers remain unchanged.
+    allowed.push("src/lib/interpretation-v4/narrativeContext.ts");
     const files = (dir: string): string[] => readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? files(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []);
     for (const file of files("src")) {
       const source = readFileSync(file, "utf8");
