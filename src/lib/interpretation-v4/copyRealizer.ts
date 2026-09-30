@@ -2,6 +2,7 @@ import type { MaterialSeed, SeedRole } from "./materialDepthTypes";
 import type { BoundMaterial } from "./materialPacket";
 import type { NarrativeBlock, NarrativeMode, NarrativeProof, NarrativeState, NarrativeTone } from "./narrativeTypes";
 import type { FusionInterpretation } from "./types";
+import { realizeEditorialVariant } from "./narrativeVariation";
 
 export const uniqueRefs = (values: readonly string[]) => [...new Set(values)].sort();
 export const cleanCopy = (text: string) => text.replace(/\s+/g, " ").trim();
@@ -27,11 +28,14 @@ export function takeSeeds(state: NarrativeState, material: BoundMaterial, roles:
 export function paragraph(id: string, text: string, sources: NarrativeProof, tone: NarrativeTone = "observation", scene?: string, mode: NarrativeMode = "prose"): NarrativeBlock {
   return { id, text: cleanCopy(text), mode, tone, ...(scene ? { scene } : {}), proof: sources };
 }
+export function editorialParagraph(state: NarrativeState, ...args: Parameters<typeof paragraph>): NarrativeBlock {
+  return realizeEditorialVariant(state, paragraph(...args));
+}
 export function materialParagraph(state: NarrativeState, id: string, material: BoundMaterial, roles: readonly SeedRole[], options: {
   readonly before?: string; readonly after?: string; readonly tone?: NarrativeTone; readonly scene?: string; readonly mode?: NarrativeMode;
 } = {}): NarrativeBlock | undefined {
   const seeds = takeSeeds(state, material, roles);
   if (!seeds.length) return;
-  return paragraph(id, [options.before, ...seeds.map(s => s.text), options.after].filter(Boolean).join(" "),
+  return editorialParagraph(state, id, [options.before, ...seeds.map(s => s.text), options.after].filter(Boolean).join(" "),
     proof([material], seeds, [], [`v4:narrative:${id}`]), options.tone, options.scene, options.mode);
 }

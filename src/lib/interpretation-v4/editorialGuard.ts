@@ -9,6 +9,17 @@ export function narrativeText(report: ComprehensiveNarrative): string {
 export function reviewNarrative(report: ComprehensiveNarrative): readonly EditorialIssue[] {
   const issues: EditorialIssue[] = [], seen = new Map<string, string>(), sceneIds = new Set<string>();
   const blocks = [...report.opening, ...report.sections.flatMap(s => s.blocks)];
+  const families = new Map<string, string>(), themes = new Map<string, number>();
+  for (const block of blocks) {
+    const family = block.editorial?.sceneFamily, theme = block.editorial?.theme;
+    if (family && families.has(family)) issues.push({ severity: "Minor", code: "SAME_SCENE_FAMILY", location: `${families.get(family)} / ${block.id}` });
+    if (family) families.set(family, block.id);
+    if (theme) themes.set(theme, (themes.get(theme) ?? 0) + 1);
+  }
+  for (const [theme, count] of themes) if (count > 2) issues.push({ severity: "Minor", code: "NEAR_SEMANTIC_REPETITION", location: theme });
+  const positiveSection = report.sections.find(s => s.id === "fortune");
+  if (positiveSection && positiveSection.blocks.flatMap(b => sentences(b.text)).length < 3)
+    issues.push({ severity: "Minor", code: "WEAK_POSITIVE_SECTION", location: "fortune" });
   const text = narrativeText(report);
   for (const b of [...blocks, { id: "final", text: report.finalLine, scene: undefined }]) {
     for (const sentence of sentences(b.text)) {
@@ -41,6 +52,38 @@ export function reviewNarrative(report: ComprehensiveNarrative): readonly Editor
       const phrase = normalized.slice(i, i + 36), previous = phrases.get(phrase);
       if (previous && previous !== b.id) { issues.push({ severity: "Major", code: "REPEATED_LONG_PHRASE", location: `${previous} / ${b.id}` }); break; }
       phrases.set(phrase, b.id);
+    }
+  }
+  return issues;
+}
+
+/** Cohort QA is read-only and separate from generation. No names/punctuation exemption. */
+export function reviewNarrativeCohort(reports: readonly { id: string; narrative: ComprehensiveNarrative }[]) {
+  const exact = new Map<string, string>(), spans = new Map<string, string>();
+  const headlines = new Set<string>(), endings = new Set<string>();
+  const issues: EditorialIssue[] = [];
+  for (const { id, narrative } of reports) {
+    for (const [text, seen, code] of [[narrative.headline, headlines, "COHORT_HEADLINE"], [narrative.finalLine, endings, "COHORT_FINAL_LINE"]] as const) {
+      const key = sentenceKey(text);
+      if (seen.has(key)) issues.push({ severity: "Major", code, location: id });
+      seen.add(key);
+    }
+    const blocks = [...narrative.opening, ...narrative.sections.flatMap(s => s.blocks), { id: "final", text: narrative.finalLine }];
+    for (const block of blocks) {
+      const location = `${id}/${block.id}`;
+      for (const sentence of sentences(block.text)) {
+        const key = sentenceKey(sentence), prior = exact.get(key);
+        if (prior && !prior.startsWith(`${id}/`)) issues.push({ severity: "Major", code: "COHORT_EXACT_SENTENCE", location: `${prior} / ${location}` });
+        else exact.set(key, location);
+      }
+      const words = block.text.split(/\s+/).map(sentenceKey).filter(Boolean);
+      for (let i = 0; i <= words.length - 12; i++) {
+        const key = words.slice(i, i + 12).join(" "), prior = spans.get(key);
+        if (prior && !prior.startsWith(`${id}/`)) {
+          issues.push({ severity: "Minor", code: "COHORT_LONG_SPAN", location: `${prior} / ${location}` }); break;
+        }
+        spans.set(key, location);
+      }
     }
   }
   return issues;

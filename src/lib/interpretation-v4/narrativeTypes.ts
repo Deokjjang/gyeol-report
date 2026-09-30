@@ -23,6 +23,8 @@ export type NarrativeBlock = {
   readonly mode: NarrativeMode;
   readonly tone: NarrativeTone;
   readonly scene?: string;
+  /** Authored manifestation, not an inferred event or customer-visible evidence. */
+  readonly editorial?: { readonly variant: string; readonly sceneFamily?: string; readonly theme?: string };
   readonly proof: NarrativeProof;
 };
 export type NarrativeSection = {

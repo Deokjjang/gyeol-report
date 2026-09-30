@@ -2,8 +2,9 @@ import type { BoundMaterial } from "./materialPacket";
 import type { SeedRole } from "./materialDepthTypes";
 import type { Domain } from "./types";
 import type { NarrativeBlock, NarrativeSection, NarrativeState } from "./narrativeTypes";
-import { paragraph, proof, takeSeeds } from "./copyRealizer";
+import { editorialParagraph, proof, takeSeeds } from "./copyRealizer";
 import { DOMAIN_STORIES } from "./narrativeStories";
+import { expressionLens } from "./narrativeVariation";
 
 const preferences: Readonly<Partial<Record<Domain, readonly string[]>>> = {
   strengths: ["gwiin_munchang", "twelve_sinsal_jangseong", "sinsal_hyeonchim", "gwiin_jaego", "sinsal_yangin", "gwiin_hakdang"],
@@ -39,10 +40,22 @@ export function domainParagraph(state: NarrativeState, material: BoundMaterial, 
   // A domain continuation is used once; role reservation still keeps seed reuse explicit.
   const seeds = takeSeeds(state, material, [role]);
   if (!seeds.length && !story) return;
-  return paragraph(id, story?.[1] ?? seeds.map(s => s.text).join(" "),
+  return editorialParagraph(state, id, story?.[1] ?? seeds.map(s => s.text).join(" "),
     proof([material], seeds, [], [`v4:narrative-story:${material.feature}:${domain}`]), "positive");
 }
 
-export function domainTitle(material: BoundMaterial, domain: Domain, fallback: string): string {
+export function domainTitle(material: BoundMaterial, domain: Domain, fallback: string, state?: NarrativeState): string {
+  const lens = state ? expressionLens(state) : "natal";
+  const titles: Readonly<Record<string, string>> = {
+    "ten_god_pian_yin:study:inquiry": "아무 점수도 안 주는 퍼즐에 진심입니다",
+    "ten_god_pian_yin:study:natal": "쓸모를 묻기 전에 재미부터 생깁니다",
+    "sinsal_gwimun:study:connect": "같은 작품에서 나만 오래 본 장면",
+    "sinsal_gwimun:study:meaning": "그 사람은 왜 그 선택을 했을까요",
+    "sinsal_gwimun:study:privacy": "두 문장 사이에 안 쓰인 이야기가 궁금합니다",
+    "ten_god_zheng_yin:study:care": "어제보다 편해진 오늘이 실력을 보여줍니다",
+    "ten_god_zheng_yin:study:practice": "몸으로 알던 것에 이유가 붙는 순간",
+    "sinsal_hyeonchim:love:practice": "관심 없다면서 좋아한 장소는 기억합니다",
+  };
+  if (state && titles[`${material.feature}:${domain}:${lens}`]) return titles[`${material.feature}:${domain}:${lens}`];
   return DOMAIN_STORIES[material.feature]?.[domain]?.[0] ?? fallback;
 }

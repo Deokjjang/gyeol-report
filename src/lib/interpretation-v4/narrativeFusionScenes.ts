@@ -1,4 +1,5 @@
 import type { FusionInterpretation } from "./types";
+import type { ExpressionLens } from "./narrativeVariation";
 
 /** Different manifestations of the same reviewed pair, not an MBTI-only appendix. */
 const actions: readonly [readonly string[], string][] = [
@@ -12,7 +13,7 @@ const actions: readonly [readonly string[], string][] = [
   [["enfj-help", "esfj-help"], "누가 막혀 있는지 눈치챘다면 그 사람이 물어볼 수 있게 먼저 말을 건넵니다. 도움을 받았다는 사실보다 혼자가 아니라는 느낌을 남기는 편입니다. 당신의 사람복은 사람을 알아보는 눈과 실제로 다가가는 행동이 만나는 모습입니다."],
   [["istp-study", "estp-study"], "직접 한 번 해보면 길게 들은 설명보다 빨리 감이 옵니다. 잘 안 되는 지점을 눈앞에서 고치면서 내 방법을 만듭니다. 깊이 알아야 한다는 마음과 일단 시험해보려는 행동이 번갈아 배움을 밀어줍니다."],
 ];
-export function fusionScene(fusions: readonly FusionInterpretation[]) {
+export function fusionScene(fusions: readonly FusionInterpretation[], lens?: ExpressionLens) {
   for (const [ids, text] of actions) {
     const fusion = fusions.find(f => ids.includes(f.ruleId));
     if (fusion) {
@@ -20,7 +21,11 @@ export function fusionScene(fusions: readonly FusionInterpretation[]) {
         ["enfp-connection", "enfp-expression", "enfj-expression", "esfp-expression"].includes(fusion.ruleId) || ["expression", "sociability"].includes(fusion.mbtiEvidence.semanticTag) ? "conversation" :
         ["inquiry", "learning", "practical-learning"].includes(fusion.mbtiEvidence.semanticTag) ? "learning" :
         fusion.mbtiEvidence.semanticTag === "help" ? "handoff" : "pressure";
-      return { fusion, text, scene };
+      const continuation = lens === "capacity" && fusion.ruleId === "entj-pressure" ? "들어온 일을 전부 살리고 싶어서 먼저 가능한 방법부터 셉니다. 본인은 길을 찾아낸 건데 어느새 직접 할 일까지 늘어 있기도 합니다. 판단하는 힘을 어디에 쓸지 고르는 것이 다음 크기를 가르는 순간입니다." :
+        lens === "practice" && fusion.ruleId === "estp-needle" ? "눈앞에서 바뀌는 반응을 보며 바로 다음 시도를 고릅니다. 오래 말한 계획보다 방금 달라진 한 가지가 더 잘 이해됩니다. 직접 확인한 차이를 다시 써볼 수 있을 때 감각이 자신감으로 남습니다." :
+        lens === "inquiry" && ["intp-inquiry", "intj-inquiry", "intp-pressure-learning-structure"].includes(fusion.ruleId) ? "짧게 끝낼 수 있는 답이어도 왜 맞는지 모르겠으면 다시 확인합니다. 알아낸 이유를 다른 경우에 가져가 쓸 수 있어야 진짜 해결한 느낌이 듭니다. 남보다 오래 걸린 첫 질문이 다음에는 돌아가지 않을 길을 알려줍니다." :
+        lens === "privacy" && fusion.ruleId === "infj-depth" ? "바로 취향을 단정하기보다 어떤 필요가 그 말을 만들었는지 살핍니다. 조용히 듣고 돌아본 뒤에야 내가 건넬 수 있는 답이 분명해집니다. 빨리 설득하는 말보다 상대에게 오래 맞을 이유를 고르는 쪽입니다." : text;
+      return { fusion, text: continuation, scene };
     }
   }
 }

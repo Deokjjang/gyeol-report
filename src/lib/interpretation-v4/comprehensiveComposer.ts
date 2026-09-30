@@ -1,17 +1,19 @@
 import { JOB_STATUSES, RELATIONSHIP_STATUSES } from "../report-generation/reportInputTypes";
 import { buildMyeongliMaterialPacket } from "./materialPacket";
 import { depthFeature } from "./materialDepth";
-import { materialParagraph, paragraph, proof, takeSeeds, uniqueRefs } from "./copyRealizer";
+import { materialParagraph, paragraph as baseParagraph, editorialParagraph, particle, proof, takeSeeds, uniqueRefs } from "./copyRealizer";
 import { selectSignature } from "./narrativeSignatures";
 import { domainParagraph, domainTitle, present, section, selectMaterial } from "./narrativeComposer";
 import { FORTUNE_STORIES } from "./narrativeStories";
 import { fusionScene } from "./narrativeFusionScenes";
-import { LOVE_STATE_COPY, narrativeContext } from "./narrativeContext";
+import { loveManifestation, narrativeContext } from "./narrativeContext";
 import { natalTexture } from "./narrativeNatalTexture";
 import { MASTER_DIRECTIONS, PORTRAITS, STRUCTURE_STORIES } from "./narrativePortraits";
 import { reviewNarrative } from "./editorialGuard";
 import type { NarrativeBlock, NarrativeInput, NarrativeSection, NarrativeState, ComprehensiveNarrative } from "./narrativeTypes";
 import type { FortuneComposite } from "./types";
+import { expressionFusions, expressionLens, realizeEditorialVariant } from "./narrativeVariation";
+import { atomicFortunes } from "./narrativeAtomicFortune";
 
 const known = (value: unknown, allowed: readonly string[]) => typeof value === "string" && allowed.includes(value);
 const fortuneProof = (fortune: FortuneComposite) => ({ features: uniqueRefs(fortune.supportingEvidence.map(d => depthFeature(d.evidence.feature))),
@@ -39,10 +41,11 @@ export function composeComprehensiveNarrative(input: NarrativeInput) {
   const pillar = packet.selected.find(m => m.material.category === "dayPillar"), master = packet.selected.find(m => m.material.category === "dayMaster");
   if (!pillar || !master) return { ok: false as const, errors: ["UNVERIFIED_NATAL_PROFILE"] };
   const state: NarrativeState = { input, packet, pillar, master, usedSeeds: new Set(), featureUses: new Map() };
+  const paragraph = (...args: Parameters<typeof baseParagraph>) => editorialParagraph(state, ...args);
   // Reserve the distinct day-pillar ending before using material elsewhere.
   const ending = takeSeeds(state, pillar, ["ending"]);
   const masterEnding = takeSeeds(state, master, ["ending"]);
-  const signature = selectSignature(state), context = narrativeContext(input), love = LOVE_STATE_COPY[input.context.relationshipStatus];
+  const signature = selectSignature(state), context = narrativeContext(input), love = loveManifestation(input.context.relationshipStatus, expressionLens(state));
   const portrait = PORTRAITS[master.feature];
   const direction = MASTER_DIRECTIONS[master.feature];
   const coreProof = signature.fusions.length ? proof([], [], signature.fusions, [`v4:signature:${signature.id}`]) :
@@ -83,12 +86,12 @@ export function composeComprehensiveNarrative(input: NarrativeInput) {
   }
 
   const work = selectMaterial(state, "work", ["work"], [structure?.feature ?? ""]) ?? master;
-  const action = fusionScene(packet.fusions);
+  const action = fusionScene(packet.fusions, expressionLens(state));
   const workBlocks: (NarrativeBlock | undefined)[] = [domainParagraph(state, work, "work", "work", "work-character")];
   if (action) workBlocks.push(paragraph("work-fused-scene", `${context.setting}, ${context.scenes[action.scene]}에 그 모습이 잘 드러납니다. ${action.text}`,
-    proof([], [], [action.fusion], ["input:jobStatus", "input:detailJob", "careerContextV3:normalized-dimensions", `careerEditorialScenes:${action.scene}`]), "positive", `job-${action.scene}`));
+    proof([], [], [action.fusion, ...expressionFusions(state)], ["input:jobStatus", "input:detailJob", "careerContextV3:normalized-dimensions", `careerEditorialScenes:${action.scene}`, `v4:work-context:${context.workFunction}`]), "positive", `job-${action.scene}`));
   else workBlocks.push(materialParagraph(state, "work-personal", pillar, ["work", "strength"], {
-    before: `${context.setting}, ${context.scenes.entry}을 떠올려보면 좋습니다.`, tone: "positive", scene: "job-entry" }));
+    before: `${context.setting}, ${particle(context.scenes.entry, "을", "를")} 떠올려보면 좋습니다.`, tone: "positive", scene: "job-entry" }));
   const workOther = selectMaterial(state, "work", ["work"], [work.feature, structure?.feature ?? ""]);
   if (workOther) workBlocks.push(domainParagraph(state, workOther, "work", "work", "work-other-face"));
   sections.push(section("work", domainTitle(work, "work", "잘하는 장면에서는 표정부터 달라집니다"), "work", workBlocks));
@@ -102,7 +105,7 @@ export function composeComprehensiveNarrative(input: NarrativeInput) {
   ]));
 
   const relations = selectMaterial(state, "relationships", ["relationships"]) ?? master;
-  const natal = natalTexture(input);
+  const natal = natalTexture(input).map(b => realizeEditorialVariant(state, b));
   sections.push(section("relationships", domainTitle(relations, "relationships", "사람들 사이에서 남기는 내 자리"), "relationships", [
     domainParagraph(state, relations, "relationships", "relationships", "people-character"),
     materialParagraph(state, "people-reversal", master, ["relationships"], { tone: "positive" }),
@@ -112,11 +115,11 @@ export function composeComprehensiveNarrative(input: NarrativeInput) {
   const lover = selectMaterial(state, "love", ["love", "relationships"]) ?? master;
   const loverRole = lover.material.seeds.some(s => s.role === "love") ? "love" : "relationships";
   const loveOther = selectMaterial(state, "love", ["love"], [lover.feature]);
-  sections.push(section("love", domainTitle(lover, "love", love.title), "love", [
-    paragraph("love-state", love.entry, proof([], [], [], ["input:relationshipStatus"]), "observation"),
+  sections.push(section("love", domainTitle(lover, "love", love.title, state), "love", [
+    paragraph("love-state", love.entry, proof([], [], expressionFusions(state), ["input:relationshipStatus"]), "observation"),
     domainParagraph(state, lover, "love", loverRole, "love-character"),
     loveOther ? domainParagraph(state, loveOther, "love", "love", "love-other-face") : undefined,
-    portrait ? paragraph("love-near-you", `${love.scene}을 떠올려보세요. ${portrait.affection}`,
+    portrait ? paragraph("love-near-you", `${particle(love.scene, "을", "를")} 떠올려보세요. ${portrait.affection}`,
       proof([master], [], [], ["input:relationshipStatus", `v4:portrait:${master.feature}:affection`]), "positive", "love-state-scene") : undefined,
     materialParagraph(state, "love-pillar", pillar, ["love"], { after: love.ending, tone: "positive" }),
   ]));
@@ -134,7 +137,7 @@ export function composeComprehensiveNarrative(input: NarrativeInput) {
 
   const study = selectMaterial(state, "study", ["study"]) ?? master;
   const privateMaterial = packet.selected.find(m => m.feature === "twelve_sinsal_hwagae") ?? study;
-  sections.push(section("private", domainTitle(study, "study", "혼자 있을 때 더 깊어지는 관심"), "study", [
+  sections.push(section("private", domainTitle(study, "study", "혼자 있을 때 더 깊어지는 관심", state), "study", [
     domainParagraph(state, study, "study", "study", "private-thinking"),
     materialParagraph(state, "private-world", privateMaterial, ["inside", "scene"], { scene: "private-interest", tone: "observation" }),
     portrait ? paragraph("private-portrait", portrait.private, proof([master], [], [], [`v4:portrait:${master.feature}:private`]), "observation", "alone-at-home") : undefined,
@@ -148,13 +151,20 @@ export function composeComprehensiveNarrative(input: NarrativeInput) {
     fortuneBlocks.push(paragraph(`fortune-${f.ruleId}-life`, second, fortuneProof(f), "positive"));
   }
   if (!fortuneBlocks.length) {
+    for (const gift of atomicFortunes(state)) {
+      const seeds = takeSeeds(state, gift.material, ["fortune"]);
+      fortuneBlocks.push(paragraph(`fortune-atomic-${gift.material.feature}`, gift.text,
+        proof([gift.material], seeds, expressionFusions(state), [`v4:atomic-fortune:${gift.material.feature}`]), "positive"));
+    }
+  }
+  if (!fortuneBlocks.length) {
     const owned = selectMaterial(state, "success/fortune", ["fortune"]) ?? master;
     fortuneBlocks.push(...present([
       materialParagraph(state, "fortune-owned", owned, ["fortune", "strength", "ending"], { tone: "positive" }),
       materialParagraph(state, "fortune-master", master, ["fortune", "ending"], { tone: "positive" }),
     ]));
   }
-  if (fortuneBlocks.length) sections.push(section("fortune", gifts[0] ? FORTUNE_STORIES[gifts[0].ruleId][0] : "이미 내 안에 있는 좋은 것을 작게 볼 필요는 없습니다", "success/fortune", fortuneBlocks));
+  if (fortuneBlocks.length) sections.push(section("fortune", gifts[0] ? FORTUNE_STORIES[gifts[0].ruleId][0] : atomicFortunes(state)[0]?.title ?? "이미 내 안에 있는 좋은 것을 작게 볼 필요는 없습니다", "success/fortune", fortuneBlocks));
 
   const low = packet.symbolicElements.find(e => e.state === "low"), high = packet.symbolicElements.find(e => e.state === "high");
   if (low || high) {

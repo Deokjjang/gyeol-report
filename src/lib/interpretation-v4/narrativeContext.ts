@@ -3,6 +3,10 @@ import { careerEditorialScenes } from "../interpretation-v3/careerEditorialScene
 import type { UserLifeStatus } from "../report-knowledge/userContextTypes";
 import type { NarrativeInput } from "./narrativeTypes";
 import { particle } from "./copyRealizer";
+import { workManifestation } from "./narrativeWorkContext";
+import type { ExpressionLens } from "./narrativeVariation";
+
+export type NarrativeCareerContext = ReturnType<typeof interpretCareerContextV3>;
 
 /** Read-only setting adapter. A job never establishes a natal trait. */
 export function narrativeContext(input: NarrativeInput) {
@@ -12,12 +16,13 @@ export function narrativeContext(input: NarrativeInput) {
     status === "unemployed" ? "resting" : ["student", "job_seeker", "employee", "freelancer", "business_owner"].includes(status) ? status as UserLifeStatus : "other";
   const career = interpretCareerContextV3(raw, true, life);
   const scenes = careerEditorialScenes({ lifeStatus: life, fieldLabel: raw }, career);
+  const work = workManifestation(input, career);
   const setting = status === "student" ? (raw ? `${raw} 분야를 배우는 지금` : "지금 배우고 경험하는 과정") :
     status === "job_seeker" ? (raw ? `${raw} 쪽을 준비하는 지금` : "다음 일을 준비하는 지금") :
     status === "unemployed" ? "쉬며 생활을 다시 고르는 지금" : status === "homemaker" ? "생활의 크고 작은 일을 챙기는 지금" :
     raw ? `현재 ${particle(raw, "이라는", "라는")} 일에서도` : "지금 맡은 일을 해나가는 과정에서도";
   const quiet = status === "unemployed" || status === "homemaker" || status === "" || status === "other";
-  return { raw, status, career, setting,
+  const base = { raw, status, career, setting,
     scenes: quiet ? { ...scenes, entry: "하루에 할 일이 겹쳐 무엇부터 끝낼지 고르는 순간", pressure: "예정에 없던 부탁이 들어와 내 시간이 밀리는 날",
       recognition: "내가 챙긴 덕분에 하루가 편해졌다는 말을 듣는 순간", learning: "관심 있던 취미를 직접 배워보는 시간", next: "다음 달에는 어떤 시간을 더 남기고 싶은지 생각하는 순간" } : scenes,
     money: status === "student" ? "수업료와 교재비, 친구들과 놀 돈이 같은 지갑에서 나갑니다. 지금은 가진 돈의 크기만큼 무엇을 배우고 경험하는 데 쓰고 싶은지도 중요합니다." :
@@ -34,6 +39,9 @@ export function narrativeContext(input: NarrativeInput) {
       status === "employee" ? "앞으로 맡을 역할은 지금 하는 일을 더 많이 하는 것만은 아닙니다. 무엇을 판단할 때 나를 찾는지 분명해질수록 내 이름이 필요한 자리도 달라집니다." :
       "생활을 새로 고르는 시간에도 지금까지 해온 것이 사라지지는 않습니다. 편하게 잘했던 일과 다시 해보고 싶은 일을 알아보는 데서 다음 방향이 시작됩니다.",
   };
+  const { money, direction, ...sceneChanges } = work.context ?? {};
+  return { ...base, workFunction: work.functionName, workMode: work.mode,
+    scenes: { ...base.scenes, ...sceneChanges }, money: money ?? base.money, direction: direction ?? base.direction };
 }
 
 export const LOVE_STATE_COPY = {
@@ -44,3 +52,16 @@ export const LOVE_STATE_COPY = {
   marriage_preparing: { title: "결혼 준비를 하며 서로의 생활이 보입니다", entry: "결혼을 준비하면 마음만 묻던 대화에 돈과 일정과 가족 이야기가 들어옵니다. 무엇을 먼저 결정하고 무엇은 천천히 합의하고 싶은지에서 두 사람의 생활 취향이 보입니다.", scene: "집과 예산을 이야기하다 꼭 지키고 싶은 한 가지가 달라지는 순간", ending: "모든 선택을 같게 만드는 것이 준비의 끝은 아닙니다. 다른 취향을 가진 채로도 같이 결정할 수 있다는 경험이 든든함을 만듭니다." },
   married: { title: "한집에 살 때 드러나는 진짜 마음 씀씀이", entry: "기혼의 관계에서는 큰 고백보다 매일의 작은 배분에 마음이 보입니다. 누가 쉬고 누가 챙겼는지, 부탁을 어떻게 받아들였는지에 오늘의 분위기가 달라집니다.", scene: "집안일을 마친 뒤 서로 남은 저녁 시간을 어떻게 쓸지 이야기하는 장면", ending: "한집에 있다는 이유로 마음까지 자동으로 같은 속도가 되지는 않습니다. 함께 쉬는 방식과 각자 숨 돌리는 방식이 모두 남을 때 일상도 더 편해집니다." },
 } as const;
+
+export function loveManifestation(status: NarrativeInput["context"]["relationshipStatus"], lens: ExpressionLens) {
+  const base = LOVE_STATE_COPY[status];
+  const variants: Partial<Record<string, { entry: string; scene: string; ending: string }>> = {
+    "dating:notice": { entry: "연애 중인 지금은 함께 있을 때의 작은 편안함이 더 잘 보입니다. 처음 좋아했던 이유만큼 오래 만날수록 서로 덜 힘들게 해주는 방식이 중요해집니다.", scene: "데이트 장소를 고르다 상대가 피곤해 보였던 날을 생각하는 순간", ending: "함께한 시간이 쌓일수록 말하지 않아도 알아주는 것과 직접 듣고 싶은 말이 각각 생깁니다." },
+    "single:inquiry": { entry: "지금 솔로라면 누군가를 만나야 한다는 조급함보다 대화가 어떻게 이어지는지에 눈이 갑니다. 서로 궁금해하는 것이 생기는 만남은 조건만 괜찮은 만남과 다른 재미를 줍니다.", scene: "새로 만난 사람의 관심사를 듣다 내가 몰랐던 질문이 생긴 저녁", ending: "만남이 드문 때에도 무엇이 나를 궁금하게 만드는지 알아가는 시간은 남습니다. 혼자 즐기는 세계가 있는 사람은 같이 나눌 이야기도 갖고 있습니다." },
+    "single:practice": { entry: "솔로인 지금도 함께 뭘 해보고 싶은 사람인지는 꽤 분명합니다. 막연히 괜찮아 보이는 인상보다 실제로 웃고 움직였을 때의 호흡에 마음이 갑니다.", scene: "처음 함께 간 곳에서 작은 계획이 달라져 즉석에서 다른 것을 고르는 순간", ending: "나를 잘 보이게 만드는 만남보다 평소보다 더 재미있게 움직이게 하는 만남이 기억에 남습니다." },
+    "married:care": { entry: "기혼의 하루에는 사랑이라는 말 밖에도 챙길 것이 많습니다. 서로 어떤 수고를 했는지 알아주는 태도가 오래 함께한 사이의 온도를 바꿉니다.", scene: "평소 내가 하던 일을 상대가 먼저 해두어 잠깐 앉을 시간이 생긴 저녁", ending: "돌보는 마음이 한 사람의 당연한 역할로 굳지 않을 때 다정함도 덜 지칩니다. 서로 고맙다고 알아주는 작은 순간이 일상의 여유를 만듭니다." },
+    "married:steady": { entry: "기혼의 관계에서는 익숙한 약속을 실제로 지키는 하루가 애정을 보여줍니다. 큰 이벤트가 없던 주에도 서로 덜 걱정하게 해준 행동은 남아 있습니다.", scene: "주말 일정을 정하다 같이 할 일과 각자 쉬고 싶은 시간을 고르는 자리", ending: "매번 새로 설레지 않아도 나를 믿고 쉬는 사람이 곁에 있다는 만족이 있습니다. 오래 지킨 마음을 서로 알아볼 때 함께 사는 힘도 커집니다." },
+    "some:challenge": { entry: "썸이 시작되면 장난처럼 꺼낸 말에도 반응이 궁금해집니다. 평소에는 대화 자체가 즐거웠는데 이제는 다음에 또 만날 이유까지 슬쩍 찾습니다.", scene: "같이 해보자는 농담을 보냈다가 답장을 기다리며 다시 읽는 순간", ending: "대화를 잘 이끌었다는 뿌듯함과 서로 더 알고 싶다는 마음은 조금 다릅니다. 내가 재미있게 말할 때뿐 아니라 가만히 들어도 좋은 순간을 알아보게 됩니다." },
+  };
+  return { ...base, ...variants[`${status}:${lens}`] };
+}
