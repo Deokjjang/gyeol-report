@@ -1,4 +1,5 @@
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { isVerifiedBookConsumer } from "./bookBoundary";
 import { renderToString } from "react-dom/server";
 import { PGlite } from "@electric-sql/pglite";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
@@ -254,6 +255,7 @@ describe("roles, precision and customer/default boundaries", () => {
     for (const f of readdirSync("src", { recursive: true }).filter((f): f is string => typeof f === "string" && /\.tsx?$/.test(f))) {
       if (allowed.has(f)) continue;
       const source = readFileSync(`src/${f}`, "utf8");
+      if (isVerifiedBookConsumer(`src/${f}`, source)) continue;
       expect(source, f).not.toMatch(/(?:from\s*|import\s*\()["'][^"']*(?:runtimeShadow|runtimeProjection|V4ShadowReportView)["']/);
     }
     for (const f of ["runtimeShadow.ts", "runtimeProjection.ts"]) {

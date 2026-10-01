@@ -1,4 +1,5 @@
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { isVerifiedBookConsumer } from "./bookBoundary";
 import { describe, expect, it } from "vitest";
 import { composeComprehensiveNarrative } from "../../../src/lib/interpretation-v4/comprehensiveComposer";
 import { narrativeText, reviewNarrative } from "../../../src/lib/interpretation-v4/editorialGuard";
@@ -197,8 +198,10 @@ describe("evidence, counterfactuals and unchanged boundaries", () => {
     expect(source).not.toMatch(/fetch\(|Math\.random|Date\.now|new Date|process\.env|openai|supabase|toss|from ["']react|["']use (?:client|server)["']/i);
     expect(source).not.toMatch(/1990-07-18|서진|서윤|1994-11-18/);
     const walk = (dir: string): string[] => readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(`${dir}/${e.name}`) : /\.[tj]sx?$/.test(e.name) ? [`${dir}/${e.name}`] : []);
-    for (const file of [...walk("src/app"), ...walk("src/lib/report-generation")])
-      expect(readFileSync(file, "utf8"), file).not.toMatch(/interpretation-v4/);
+    for (const file of [...walk("src/app"), ...walk("src/lib/report-generation")]) {
+      const source = readFileSync(file, "utf8");
+      if (!isVerifiedBookConsumer(file, source)) expect(source, file).not.toMatch(/interpretation-v4/);
+    }
   });
   it("the guard reports duplicate, technical and unsupported prose instead of silently deleting it", () => {
     const r = results[0].result; if (!r.ok) return;

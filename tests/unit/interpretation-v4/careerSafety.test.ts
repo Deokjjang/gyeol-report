@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { isVerifiedBookConsumer } from "./bookBoundary";
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -73,11 +74,12 @@ describe("Career gates and isolation", () => {
       expect(r.narrative.sections.find(s => s.id === "fortune")).not.toEqual(original.narrative.sections.find(s => s.id === "fortune"));
     }
   });
-  it("composers stay out of public UI/runtime; only shadow DTO types may cross", () => {
+  it("composers stay out of public UI/runtime; only explicit dev consumers may cross", () => {
     const walk = (dir: string): string[] => readdirSync(dir, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? walk(join(dir, entry.name)) : /\.[jt]sx?$/.test(entry.name) ? [join(dir, entry.name)] : []);
     for (const dir of ["src/app", "src/components", "src/lib/report-generation", "src/lib/interpretation-v3", "src/lib/sharing"]) {
       for (const file of walk(dir)) {
         const source = readFileSync(file, "utf8");
+        if (isVerifiedBookConsumer(file, source)) continue;
         if (file === "src/components/report/V4ShadowReportView.tsx") {
           expect(source.match(/^import .*interpretation-v4.*$/gm)).toEqual(['import type { V4ShadowView } from "../../lib/interpretation-v4/runtimeTypes";']);
         } else expect(source, file).not.toMatch(/interpretation-v4\//);

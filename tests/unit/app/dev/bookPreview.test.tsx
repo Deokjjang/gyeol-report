@@ -1,43 +1,51 @@
 import { readFileSync, readdirSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
+vi.mock("server-only", () => ({}));
 vi.mock("next/navigation", () => ({ notFound: () => { throw new Error("404"); } }));
 import Page, { metadata } from "../../../../src/app/dev/book-preview/page";
 import Preview from "../../../../src/app/dev/book-preview/BookPreview";
-import { Cover, PersonFields, Receipt, Publishing, ReaderContent, PreviewFooter, ELEMENT_LABELS } from "../../../../src/app/dev/book-preview/BookPages";
-import { BOOKS, CONSENTS, CONSENT_SHORT_LABELS, INITIAL_PERSON, NOTES, PUBLISHING_STATES, coverOffset, wrapBook, inputPageCount, readerPages, readerTitle, requiredConsents, roleNames, toggleAll } from "../../../../src/app/dev/book-preview/model";
+import { Cover, PersonFields, Receipt, Publishing, PreviewFooter, ELEMENT_LABELS } from "../../../../src/app/dev/book-preview/BookPages";
+import { BookReader } from "../../../../src/app/dev/book-preview/BookReader";
+import { loadBookLibrary } from "../../../../src/app/dev/book-preview/runtimeBooks";
+import type { BookLibrary, BookPage } from "../../../../src/app/dev/book-preview/bookTypes";
+import { BOOKS, CONSENTS, CONSENT_SHORT_LABELS, INITIAL_PERSON, PUBLISHING_STATES, coverOffset, wrapBook, inputPageCount, readerTitle, requiredConsents, roleNames, toggleAll } from "../../../../src/app/dev/book-preview/model";
 import { LegalAccordion, LegalDocument, BUSINESS_ROWS } from "../../../../src/app/dev/book-preview/BookLegal";
 import Terms from "../../../../src/app/terms/page";
 import Privacy from "../../../../src/app/privacy/page";
 import Refund from "../../../../src/app/refund/page";
 import Business from "../../../../src/app/business/page";
-import fixture from "../../../../src/app/dev/book-preview/fixture.json";
 const base = "src/app/dev/book-preview/";
 const source = (name: string) => readFileSync(base + name, "utf8");
 const noop = () => {};
+let library: BookLibrary;
+beforeAll(async () => { library = (await loadBookLibrary())!; expect(library).not.toBeNull(); }, 60000);
+const reader = (kind: BookPage["kind"]) => renderToStaticMarkup(<BookReader data={library.books[0]} page={library.books[0].pages.find(p => p.kind === kind)!} onNote={noop} onShare={noop} onPage={noop} />);
 afterEach(() => vi.unstubAllEnvs());
 
 describe("book preview: development-only presentation", () => {
   it.each(["production", "test", ""])("fails closed outside development: %s", async env => {
     vi.stubEnv("NODE_ENV", env);
-    await expect(Page()).rejects.toThrow("404");
+    await expect(Page({})).rejects.toThrow("404");
   });
   it("development entry renders the prototype, with noindex/nofollow", async () => {
     vi.stubEnv("NODE_ENV", "development");
-    const result = await Page();
+    const result = await Page({});
     expect(result.type).toBe(Preview);
     expect(metadata.robots).toEqual({ index: false, follow: false });
     expect(source("page.tsx").indexOf("notFound();")).toBeLessThan(source("page.tsx").indexOf('await import("./BookPreview")'));
   });
-  it("has no runtime, auth, payment, persistence, sharing or tracking integration", () => {
+  it("runtime is server-only; no public auth/payment/persistence/share activation", () => {
     for (const file of readdirSync(base).filter(n => /\.(tsx?|css)$/.test(n))) {
-      expect(source(file), file).not.toMatch(/fetch\(|localStorage|sessionStorage|navigator\.(?:share|clipboard)|\/api\/|runtimeShadow|runtimeProjection|generateProductReport|supabase|TossPayments|Kakao\.Share|fbq\(/);
+      expect(source(file), file).not.toMatch(/fetch\(|localStorage|sessionStorage|navigator\.(?:share|clipboard)|\/api\/|generateProductReport|supabase|TossPayments|Kakao\.Share|fbq\(/);
+      if (["runtimeBooks.ts", "bookProjection.ts"].includes(file)) expect(source(file)).toContain('import "server-only"');
+      else expect(source(file)).not.toMatch(/runtimeShadow|runtimeProjection/);
     }
     expect(readFileSync("src/app/page.tsx", "utf8")).not.toContain("book-preview");
     expect(readFileSync("src/app/layout.tsx", "utf8")).not.toContain("book-preview");
   });
   it("home first surface only has wordmark, login and covers/rotation controls", () => {
-    const html = renderToStaticMarkup(<Preview />).split("<footer")[0];
+    const html = renderToStaticMarkup(<Preview library={library} />).split("<footer")[0];
     expect(html).toContain("여섯 권의 책 고르기");
     expect(html).not.toMatch(/1,290|사주 ×|종합 리포트|리뷰|누적|통계/);
   });
@@ -104,31 +112,28 @@ describe("book preview: development-only presentation", () => {
       expect(html).not.toMatch(/progressbar|\d+%|리포트 생성 중/);
     }
   });
-  it("reader contains all frozen chapters in order and final back cover", () => {
-    const pages = readerPages(fixture.chapters.length);
-    expect(pages.slice(0, 3)).toEqual(["opening", "manse", "mbti"]);
-    expect(pages.slice(-2)).toEqual(["glossary", "back"]);
+  it("reader contains actual pages in order and final back cover", () => {
+    const data = library.books[0], pages = data.pages;
+    expect(pages.slice(0, 4).map(p => p.kind)).toEqual(["cover", "input", "manse", "mbti"]);
+    expect(pages.slice(-2).map(p => p.kind)).toEqual(["appendix", "back"]);
     pages.forEach(page => {
-      const html = renderToStaticMarkup(<ReaderContent page={page} onNote={noop} onShare={noop} />);
+      const html = renderToStaticMarkup(<BookReader data={data} page={page} onNote={noop} onShare={noop} onPage={noop} />);
       expect(html).not.toMatch(/<details|<footer|sourceRefs|confidence|seedIds|natalEvidence|fusionIds/);
-      if (page.startsWith("chapter-")) {
-        const c = fixture.chapters[Number(page.split("-")[1])];
-        c.paragraphs.forEach(p => expect(html).toContain(renderToStaticMarkup(<span>{p}</span>).slice(6, -7)));
-      }
+      if (page.kind === "narrative") page.paragraphs.forEach(p => expect(html).toContain(renderToStaticMarkup(<span>{p.text}</span>).slice(6, -7)));
     });
   });
-  it("sample notes use existing material and actual fixture markers", () => {
-    const material = readFileSync("src/lib/interpretation-v4/markerMaterials.ts", "utf8");
-    const markers = JSON.stringify(fixture.tables.manse.detailRows);
-    NOTES.forEach(n => { expect(material).toContain(n.text); expect(material).toContain(n.image); expect(markers).toContain(n.name); });
+  it("chapter notes exist at the bottom, not only in a dialog", () => {
+    const html = reader("narrative");
+    expect(html).toContain('aria-label="이 장의 각주"');
+    expect(html.indexOf('aria-label="이 장의 각주"')).toBeGreaterThan(html.indexOf("data-narrative-paragraph"));
   });
   it("complete MBTI keywords/function stack and natal detail rows remain available", () => {
-    const html = renderToStaticMarkup(<ReaderContent page="mbti" onNote={noop} onShare={noop} />);
-    fixture.tables.mbti.closeKeywords.concat(fixture.tables.mbti.farKeywords).forEach(k => expect(html).toContain(k));
-    fixture.tables.mbti.functionRows.forEach(r => expect(html).toContain(r.description));
+    const html = reader("mbti"), tables = library.books[0].people[0].table;
+    tables.mbti!.closeKeywords.concat(tables.mbti!.farKeywords).forEach(k => expect(html).toContain(k));
+    tables.mbti!.functionRows.forEach(r => expect(html).toContain(r.description));
     expect(html).not.toContain("리포트 활용");
-    const natal = renderToStaticMarkup(<ReaderContent page="manse" onNote={noop} onShare={noop} />);
-    fixture.tables.manse.detailRows.forEach(r => expect(natal).toContain(r.label));
+    const natal = reader("manse");
+    tables.manse.detailRows.forEach(r => expect(natal).toContain(r.label));
   });
   it("footer reuses legal values and chat URL; existing paid route rule untouched", () => {
     const html = renderToStaticMarkup(<PreviewFooter />);
@@ -141,20 +146,21 @@ describe("book preview: development-only presentation", () => {
     expect(readFileSync("src/components/legal/BusinessFooter.tsx", "utf8")).toContain("(?:reports|r)");
   });
   it("natal cells preserve every detail, yin/yang and semantic color independently from cover", () => {
-    const html = renderToStaticMarkup(<ReaderContent page="manse" onNote={noop} onShare={noop} />);
-    for (const row of [fixture.tables.manse.stemRow, fixture.tables.manse.branchRow]) {
+    const html = reader("manse"), tables = library.books[0].people[0].table;
+    for (const row of [tables.manse.stemRow, tables.manse.branchRow]) {
       for (const cell of Object.values(row)) {
+        if (!cell) continue;
         expect(html).toContain(`data-element="${cell.colorToken}">${cell.hanja}`);
         expect(html).toContain(cell.tenGod);
       }
     }
-    fixture.tables.manse.detailRows.forEach(row => Object.values(row.cells).flat().forEach(value => expect(html).toContain(value)));
+    tables.manse.detailRows.forEach(row => Object.values(row.cells).flat().forEach(value => expect(html).toContain(value)));
     Object.keys(ELEMENT_LABELS).forEach(token => expect(source("book.module.css")).toContain(`[data-element="${token}"]`));
     expect(html).toContain("지장간 포함 가중"); expect(html).not.toContain("2.9000000000000004");
   });
   it("all MBTI axes, alternatives, summaries and function metadata are retained", () => {
-    const html = renderToStaticMarkup(<ReaderContent page="mbti" onNote={noop} onShare={noop} />);
-    const m = fixture.tables.mbti;
+    const html = reader("mbti");
+    const m = library.books[0].people[0].table.mbti!;
     expect(html).toContain(m.archetype); expect(html).toContain(m.oneLine);
     expect(html.match(/data-selected="true"/g)).toHaveLength(4);
     expect(html.match(/data-selected="false"/g)).toHaveLength(4);
@@ -163,7 +169,7 @@ describe("book preview: development-only presentation", () => {
     m.coreSummary.forEach(r => expect(html).toContain(r.text));
   });
   it("back cover has exactly three icon actions, without SDK/runtime or second CTA", () => {
-    const html = renderToStaticMarkup(<ReaderContent page="back" onNote={noop} onShare={noop} />);
+    const html = reader("back");
     expect(html.match(/<button\b/g)).toHaveLength(3);
     expect(html.match(/<svg\b/g)).toHaveLength(3);
     for (const label of ["카카오톡", "공유", "링크 복사"]) expect(html).toContain(label);
@@ -173,7 +179,7 @@ describe("book preview: development-only presentation", () => {
     BOOKS.forEach(b => expect(readerTitle(b, "2027")).toBe(b.id === "annual" ? "나의 2027" : b.title.replace("\n", " ")));
     expect(readerTitle(BOOKS[5], "<script>")).toBe("나의 2026");
     const nav = source("BookPreview.tsx").split('aria-label="책 읽기 위치"')[1].split("{turn ?")[0];
-    expect(nav).not.toContain("GYEOL REPORT"); expect(nav).toContain("readerTitle(book, year)");
+    expect(nav).not.toContain("GYEOL REPORT"); expect(nav).toContain("data.title");
   });
   it("legal accordion defaults closed and contains all four documents", () => {
     const html = renderToStaticMarkup(<LegalAccordion />);
@@ -193,9 +199,13 @@ describe("book preview: development-only presentation", () => {
     }
   });
   it("reduced motion removes auto/3D; keyboard and explicit controls supplement gestures", () => {
-    expect(source("BookPreview.tsx")).toContain("paused || hovered || focused || reduced");
+    expect(source("BookPreview.tsx")).toContain('stage === "home" && !hovered && !reduced && visible');
+    expect(renderToStaticMarkup(<Preview library={library} />)).not.toMatch(/자동 회전|재생|일시정지/);
     expect(source("book.module.css")).toContain("@media (prefers-reduced-motion: reduce)");
     expect(source("book.module.css")).toContain("animation: none !important; transition: none !important;");
+    expect(source("book.module.css")).toContain(".coverflow { pointer-events: none; }");
+    expect(source("book.module.css")).toContain(".bookSlot { pointer-events: auto; }");
+    expect(source("book.module.css")).toContain(".bookShell { overflow: clip; }");
     expect(source("BookPreview.tsx")).toContain('aria-label="다음 페이지"');
     expect(source("BookPreview.tsx")).toContain('closeLabel="각주 닫기"');
     expect(source("book.module.css")).not.toContain("gradient");

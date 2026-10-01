@@ -222,6 +222,8 @@ describe("V3 isolated common core", () => {
     allowed.push("src/lib/interpretation-v4/types.ts", "src/lib/interpretation-v4/evidencePolicy.ts", "src/lib/interpretation-v4/materialRegistry.ts");
     // Phase4A reads the existing job interpreter; V3 callers remain unchanged.
     allowed.push("src/lib/interpretation-v4/narrativeContext.ts");
+    // Phase8C server-only adapter reuses existing customer relation meanings.
+    allowed.push("src/app/dev/book-preview/bookProjection.ts");
     const files = (dir: string): string[] => readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? files(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []);
     for (const file of files("src")) {
       const source = readFileSync(file, "utf8");

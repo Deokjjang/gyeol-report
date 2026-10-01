@@ -1,4 +1,5 @@
 import { readFileSync, readdirSync } from "node:fs";
+import { isVerifiedBookConsumer } from "./bookBoundary";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { calculateSaju } from "../../../src/lib/saju/calculateSaju";
@@ -238,7 +239,10 @@ describe("V4 sources, coverage and actual calculation integration", () => {
   it("has no runtime consumer in V3 generation, public routes or paid delivery", () => {
     const files = (root: string): string[] => readdirSync(root, { withFileTypes: true }).flatMap(f => f.isDirectory() ? files(join(root, f.name)) : [join(root, f.name)]);
     for (const root of ["src/app", "src/lib/report-generation", "src/lib/interpretation-v3"]) {
-      for (const path of files(root).filter(p => /\.tsx?$/.test(p))) expect(readFileSync(path, "utf8"), path).not.toMatch(/(?:from\s*|import\s*\()\s*["'][^"']*interpretation-v4/);
+      for (const path of files(root).filter(p => /\.tsx?$/.test(p))) {
+        const source = readFileSync(path, "utf8");
+        if (!isVerifiedBookConsumer(path, source)) expect(source, path).not.toMatch(/(?:from\s*|import\s*\()\s*["'][^"']*interpretation-v4/);
+      }
     }
     for (const path of files("src/lib/interpretation-v4")) expect(readFileSync(path, "utf8"), path).not.toMatch(/\bfetch\s*\(|\bnew\s+OpenAI|from ["'](?:openai|@supabase)|process\.env/);
   });

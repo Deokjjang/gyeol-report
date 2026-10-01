@@ -2,15 +2,15 @@ import { useEffect, useRef, useState, Fragment, type CSSProperties } from "react
 import type { ReportTableElementColorToken } from "../../../lib/report-tables/types";
 import { prePaymentRefundNoticeKo } from "../../../lib/legal/refundPolicy";
 import { prePaymentPrivacyNoticeKo } from "../../../lib/legal/privacyPolicy";
-import fixture from "./fixture.json";
-import { CONSENT_SHORT_LABELS, MBTI, NOTES, requiredConsents, toggleAll, type Book, type Person, type PublishingState } from "./model";
+import type { V4CustomerTables } from "../../../lib/interpretation-v4/runtimeTypes";
+import { CONSENT_SHORT_LABELS, MBTI, requiredConsents, toggleAll, type Book, type Person, type PublishingState } from "./model";
 import { BusinessDetails, DetailSheet, LegalAccordion, SUPPORT_COPY } from "./BookLegal";
 import s from "./book.module.css";
 
-export function Cover({ book, name, back = false }: { book: Book; name?: string; back?: boolean }) {
+export function Cover({ book, name, title, back = false }: { book: Book; name?: string; title?: string; back?: boolean }) {
   return <div className={`${s.cover} ${back ? s.backCover : ""}`} style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties}>
     <div className={s.coverTop}><span>GYEOL<br />REPORT</span><span>ISSUE<br />{book.issue}</span></div>
-    <div className={s.coverTitle}>{book.title}</div>
+    <div className={s.coverTitle}>{title ?? book.title}</div>
     <div className={s.coverBottom}><span>PERSONAL<br />EDITION</span><span>{name ? `${name}의 책` : "한 사람, 한 권."}</span></div>
     <span className={s.spine} aria-hidden="true" />
   </div>;
@@ -31,7 +31,7 @@ export function MbtiField({ value, onChange, id = "mbti" }: { value: string; onC
   return <label htmlFor={id}>MBTI<select id={id} value={value} onChange={e => onChange(e.target.value)}>{MBTI.map(m => <option key={m}>{m}</option>)}<option value="">모름</option></select></label>;
 }
 
-export function Receipt({ book, person, member, setMember, consents, setConsents }: { book: Book; person: Person; member: boolean; setMember: (v: boolean) => void; consents: Record<string, boolean>; setConsents: (v: Record<string, boolean>) => void }) {
+export function Receipt({ book, person, title, member, setMember, consents, setConsents }: { book: Book; person: Person; title?: string; member: boolean; setMember: (v: boolean) => void; consents: Record<string, boolean>; setConsents: (v: Record<string, boolean>) => void }) {
   const { items, allowed } = requiredConsents(member, person.birth);
   const all = items.every(c => consents[c.id]);
   const some = items.some(c => consents[c.id]);
@@ -43,7 +43,7 @@ export function Receipt({ book, person, member, setMember, consents, setConsents
     <div className={s.modeSwitch} role="group" aria-label="영수증 체험 상태">{[false, true].map(m => <button type="button" key={String(m)} aria-pressed={member === m} onClick={() => setMember(m)}>{m ? "회원" : "비회원"}</button>)}</div>
     <div className={s.receipt}>
       <p className={s.micro}>GYEOL REPORT</p><h1>발행 주문서</h1><p className={s.micro}>PUBLISHING ORDER — PREVIEW</p>
-      <dl>{[["TITLE", book.title.replace("\n", " ")], ["ISSUED TO", person.name], ["BIRTH", `${person.birth.replaceAll("-", ".")} / ${person.precision === "unknown" ? "시간 모름" : person.time + (person.precision === "approximate" ? "경" : "")}`], ["MBTI", person.mbti || "모름"], ["PRICE", "₩1,290"]].map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
+      <dl>{[["TITLE", title ?? book.title.replace("\n", " ")], ["ISSUED TO", person.name], ["BIRTH", `${person.birth.replaceAll("-", ".")} / ${person.precision === "unknown" ? "시간 모름" : person.time + (person.precision === "approximate" ? "경" : "")}`], ["MBTI", person.mbti || "모름"], ["PRICE", "₩1,290"]].map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
       <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />결제 완료 후 즉시 생성, 최대 24시간 이내 제공<br />생성일로부터 90일 · 결제 후 온라인 열람</p>
       {member ? <p className={s.receiptNote}>회원 미리보기 · 가입 약관 동의 가정, 실제 적용 전 검토 필요.</p> : null}
       <fieldset className={s.consents}><legend className={s.srOnly}>약관 및 개인정보 동의</legend>
@@ -71,40 +71,30 @@ export function Publishing({ book, name, state }: { book: Book; name: string; st
     </div>
     <h1 aria-live="polite">{name}님의 책을<br />출판하고 있습니다.</h1>
     <p className={s.micro}>A PERSONAL EDITION, IN THE MAKING.</p>
-    <p className={s.hint}>출판 과정 미리보기 · 실제 생성 아님</p>
+    <p className={s.hint}>출판 과정 미리보기 · 결제·저장 없음</p>
   </div>;
 }
 
-export function ReaderContent({ page, onNote, onShare }: { page: string; onNote: (n: number) => void; onShare: (n: string) => void }) {
-  if (page === "opening") return <><p className={s.eyebrow}>PROLOGUE / 서진이라는 사람</p><h1>{fixture.headline}</h1><div className={s.prose}>{fixture.opening.map((p, i) => <p key={i}>{p}{i === 0 ? <sup><button onClick={() => onNote(0)} aria-label="각주 1 현침살">1</button></sup> : null}</p>)}</div></>;
-  if (page === "manse") return <><p className={s.eyebrow}>THE ORIGINAL / 1990.07.18 05:30</p><h1 className={s.dataTitle}>나의 만세력</h1><p className={s.hint}>서진의 고정 샘플 · 입력값을 바꿔도 재계산하지 않습니다.</p><NatalTable /></>;
-  if (page === "mbti") return <MbtiPage />;
-  if (page === "glossary") return <><p className={s.eyebrow}>INDEX OF THIS EDITION</p><h1>이 책에<br />사용된 기운</h1><ol className={s.glossary}>{NOTES.map((n, i) => <li key={n.name}><span className={s.micro}>0{i + 1}</span><div><h2>{n.name}</h2><p>{n.image}</p><p>{n.text}</p></div></li>)}</ol></>;
-  if (page === "back") return <div className={s.backContent}><span className={s.micro}>PERSONAL EDITION / FIN</span><h1>한 권을 덮고,<br />나를 조금 더<br />좋아하게 되기를.</h1><p>{fixture.finalLine}</p><section className={s.sharePreview} aria-label="이 책 공유하기 미리보기"><h2>이 책 공유하기</h2><div>{["카카오톡", "공유", "링크 복사"].map((label, i) => <button type="button" key={label} onClick={() => onShare(`${label} 미리보기입니다. 실제 공유나 복사는 실행하지 않습니다.`)}><ShareIcon kind={i} /><span>{label}</span></button>)}</div></section><span className={s.micro}>END OF BOOK</span></div>;
-  const index = Number(page.split("-")[1]);
-  const chapter = fixture.chapters[index];
-  return <><p className={s.eyebrow}>CHAPTER {String(index + 1).padStart(2, "0")}</p><h1>{chapter.title}</h1><div className={s.prose}>{chapter.paragraphs.map((p, i) => <p key={i}>{p}</p>)}{index === 6 ? <p>{NOTES[2].text}<sup><button onClick={() => onNote(2)} aria-label="각주 3 홍염살">3</button></sup></p> : null}{index === 5 ? <p>{NOTES[1].text}<sup><button onClick={() => onNote(1)} aria-label="각주 2 도화살">2</button></sup></p> : null}</div></>;
-}
 
 // Semantic tokens from the canonical table contract, independent of cover color.
 export const ELEMENT_LABELS = { "wood-green": "목 木", "fire-red": "화 火", "earth-soil": "토 土", "metal-gold": "금 金", "water-sky": "수 水" } satisfies Record<ReportTableElementColorToken, string>;
 // Verbatim SVG geometry from ReportShareActions; no production actions/SDK imported.
-function ShareIcon({ kind }: { kind: number }) {
+export function ShareIcon({ kind }: { kind: number }) {
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" focusable="false">
     {kind === 0 ? <path fill="currentColor" stroke="none" d="M12 4C6.8 4 2.6 7.28 2.6 11.32c0 2.6 1.74 4.88 4.36 6.18l-.9 3.3c-.08.3.26.54.52.36l3.92-2.6c.5.06 1 .1 1.5.1 5.2 0 9.4-3.28 9.4-7.34S17.2 4 12 4Z" /> : kind === 1 ? <><circle cx="18" cy="5" r="2.5" /><circle cx="6" cy="12" r="2.5" /><circle cx="18" cy="19" r="2.5" /><path d="m8.2 10.8 7.6-4.5M8.2 13.2l7.6 4.5" /></> : <><rect x="8" y="8" width="10" height="10" rx="2" /><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" /></>}
   </svg>;
 }
-function NatalTable() {
-  const t = fixture.tables.manse;
+export function NatalTable({ data }: { data: V4CustomerTables[number] }) {
+  const t = data.manse;
   const keys = t.columns.map(c => c.key as keyof typeof t.stemRow);
-  return <div className={s.tables}><table><caption>서진의 만세력</caption><thead><tr><th scope="col">구분</th>{t.columns.map(c => <th scope="col" key={c.key}>{c.label}</th>)}</tr></thead><tbody>
-    {[["천간", t.stemRow], ["지지", t.branchRow]].map(([label, row]) => <Fragment key={String(label)}><tr><th scope="row">{String(label)}</th>{keys.map(key => { const cell = (row as typeof t.stemRow)[key]; return <td key={key}><strong data-element={cell.colorToken}>{cell.hanja}</strong><span>{cell.ko} · {ELEMENT_LABELS[cell.colorToken as ReportTableElementColorToken]} · {cell.yinYang === "yin" ? "음" : "양"}</span></td>; })}</tr><tr><th scope="row">십성</th>{keys.map(key => <td key={key}>{(row as typeof t.stemRow)[key].tenGod}</td>)}</tr></Fragment>)}
+  return <div className={s.tables}><table><caption>{data.name}의 만세력</caption><thead><tr><th scope="col">구분</th>{t.columns.map(c => <th scope="col" key={c.key}>{c.label}</th>)}</tr></thead><tbody>
+    {[["천간", t.stemRow], ["지지", t.branchRow]].map(([label, row]) => <Fragment key={String(label)}><tr><th scope="row">{String(label)}</th>{keys.map(key => { const cell = (row as typeof t.stemRow)[key]; return <td key={key}>{cell ? <><strong data-element={cell.colorToken}>{cell.hanja}</strong><span>{cell.ko} · {ELEMENT_LABELS[cell.colorToken]} · {cell.yinYang === "yin" ? "음" : "양"}</span></> : <span>미확인</span>}</td>; })}</tr><tr><th scope="row">십성</th>{keys.map(key => <td key={key}>{(row as typeof t.stemRow)[key]?.tenGod ?? "—"}</td>)}</tr></Fragment>)}
     {t.detailRows.map(row => <tr key={row.key}><th scope="row">{row.key === "interactions" ? <abbr title={row.label}>합·충</abbr> : row.label}</th>{keys.map(key => <td key={key}>{row.cells[key].length ? row.cells[key].map((text, i) => <span key={i}>{text}</span>) : "—"}</td>)}</tr>)}
-    </tbody></table><h2>오행의 구성</h2><p className={s.hint}>{t.fiveElementDistribution.basisLabel} / 지장간 포함 가중</p><div className={s.elements}>{fixture.tables.elements.map((e, i) => <div key={e.label}><b data-element={t.fiveElementDistribution.items[i].colorToken}>{ELEMENT_LABELS[t.fiveElementDistribution.items[i].colorToken as ReportTableElementColorToken]}</b><span>{e.visible} / {Number(e.weighted.toFixed(2))}</span></div>)}</div></div>;
+    </tbody></table><h2>오행의 구성</h2><p className={s.hint}>{t.fiveElementDistribution.basisLabel} / 지장간 포함 가중</p><div className={s.elements}>{data.elements.map((e, i) => <div key={e.label}><b data-element={t.fiveElementDistribution.items[i].colorToken}>{ELEMENT_LABELS[t.fiveElementDistribution.items[i].colorToken]}</b><span>{e.visible} / {Number(e.weighted.toFixed(2))}</span></div>)}</div></div>;
 }
-function MbtiPage() {
-  const m = fixture.tables.mbti;
-  return <><p className={s.eyebrow}>WAYS OF BEING / 나의 MBTI</p><h1 className={s.mbtiTitle}>{m.type}<span>{m.titleKo}</span></h1><p className={s.archetype}>{m.archetype}</p><p className={s.profileLead}>{m.oneLine}</p><div className={s.profile}>
+export function MbtiPage({ data: m, name }: { data: V4CustomerTables[number]["mbti"]; name: string }) {
+  if (!m) return <><p className={s.eyebrow}>{name}의 MBTI</p><h1>MBTI 모름</h1><p className={s.profileLead}>입력하지 않은 유형은 추정하지 않습니다. 이 책은 확인된 명리 데이터를 기준으로 읽을 수 있습니다.</p></>;
+  return <><p className={s.eyebrow}>WAYS OF BEING / {name}의 MBTI</p><h1 className={s.mbtiTitle}>{m.type}<span>{m.titleKo}</span></h1><p className={s.archetype}>{m.archetype}</p><p className={s.profileLead}>{m.oneLine}</p><div className={s.profile}>
     <h2>선호지표</h2><div className={s.axes}>{m.preferenceRows.map(r => <section key={r.axisKey} aria-label={r.label}><h3>{r.label}</h3><div>{[r.left, r.right].map(v => <div key={v.code} data-selected={v.selected}><b>{v.code}</b><span><strong>{v.nameKo}{v.selected ? " ✓" : ""}</strong><small>{v.nameEn}</small><span>{v.description}</span></span></div>)}</div></section>)}</div>
     <h2>기능서열</h2><table className={s.functions}><caption className={s.srOnly}>기능서열</caption><colgroup><col style={{ width: 56 }} /><col style={{ width: 38 }} /><col /></colgroup><thead className={s.srOnly}><tr><th scope="col">순서</th><th scope="col">기능</th><th scope="col">설명</th></tr></thead><tbody>{m.functionRows.map(r => <tr key={r.code}><th scope="row">{r.label}</th><td>{r.code}</td><td><strong>{r.nameKo}</strong><small>{r.attitude} · {r.domain}</small><p>{r.description}</p></td></tr>)}</tbody></table>
     <h2>핵심 요약</h2><dl className={s.coreSummary}>{m.coreSummary.map(r => <div key={r.key}><dt>{r.label}</dt><dd>{r.text}</dd></div>)}</dl>
