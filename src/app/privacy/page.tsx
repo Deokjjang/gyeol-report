@@ -1,3 +1,5 @@
+import { bookExperiencePublicEnabled } from "../../lib/book/publicGate";
+import { BookLegalRoute } from "../../components/book/BookRoutes";
 import LegalPageLayout from "../../components/legal/LegalPageLayout";
 import styles from "../../components/legal/legal.module.css";
 import type { ReactNode } from "react";
@@ -20,6 +22,7 @@ import {
 } from "../../lib/legal/privacyPolicy";
 
 export default function PrivacyPage() {
+  if (bookExperiencePublicEnabled()) return <BookLegalRoute index={1} />;
   return (
     <LegalPageLayout titleKo="개인정보처리방침" descriptionKo={privacyPolicyProcessingScopeKo} currentPath="/privacy">
       <PolicySection titleKo="수집하는 개인정보 항목">

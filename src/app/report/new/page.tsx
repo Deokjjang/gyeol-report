@@ -1,5 +1,7 @@
 "use client";
 
+import { buildSinglePersonReportInputPayload, buildCompatibilityReportInputPayload, createCheckoutInputSnapshot, createReportPersonInputPayload } from "../../../lib/report-generation/reportInputPresentation";
+
 import { BIRTH_TIME_SLOT_DEFINITIONS, normalizeBirthTimePrecision } from "../../../lib/saju/birthTimePrecisionTypes";
 import { use, useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
@@ -8,7 +10,6 @@ import PaidFunnelHeader from "../../../components/payment/PaidFunnelHeader";
 import styles from "../../../components/payment/paidFunnel.module.css";
 import { getReportProduct } from "../../../lib/payment/reportProductCatalog";
 import TossPaymentWidgetLauncher, {
-  type TossPaymentWidgetInputSnapshot,
   isTossPaymentWidgetInputComplete,
 } from "../../../components/payment/TossPaymentWidgetLauncher";
 import { GYEOL_PRODUCTS } from "../../../lib/product/gyeolProducts";
@@ -17,16 +18,10 @@ import {
   getAnnualFortuneCurrentYear,
 } from "../../../lib/report-knowledge/annualFortuneYearRules";
 import type { ReportProductType } from "../../../lib/payment/reportProductTypes";
-import { MBTI_TYPES, COMPATIBILITY_ROLE_VERSION, compatibilityRoleLabels } from "../../../lib/report-generation/reportInputTypes";
+import { MBTI_TYPES, compatibilityRoleLabels } from "../../../lib/report-generation/reportInputTypes";
 import type {
   CompatibilityRelationshipType,
-  CompatibilityReportInputPayload,
-  FocusArea,
-  JobStatus,
-  RelationshipStatus,
   ReportInputPayload,
-  ReportPersonInputPayload,
-  SinglePersonReportInputPayload,
 } from "../../../lib/report-generation/reportInputTypes";
 
 const ACTIVE_REPORT_PRODUCT = GYEOL_PRODUCTS[0];
@@ -301,17 +296,6 @@ const annualDetailedJobOptions = [
   "기타 직접 입력",
 ] as const;
 
-const annualFocusAreaOptions = [
-  "직업",
-  "돈",
-  "연애",
-  "관계",
-  "건강관리",
-  "공부",
-  "가족",
-  "생활 리듬",
-] as const satisfies readonly FocusArea[];
-
 export const getAsiaSeoulCurrentYear = getAnnualFortuneCurrentYear;
 
 export function getAnnualFortuneYearOptions(
@@ -422,81 +406,6 @@ function formatAnnualJobStatus(value: string): string {
     annualJobStatusOptions.find((option) => option.value === value)?.labelKo ??
     "미입력"
   );
-}
-
-function isFocusArea(value: string): value is FocusArea {
-  return annualFocusAreaOptions.includes(value as FocusArea);
-}
-
-function createReportPersonInputPayload(
-  input: CompatibilityPersonInputState | AnnualFortuneInputState,
-): ReportPersonInputPayload {
-  return {
-    name: input.name.trim(),
-    birthDate: input.birthDate.trim(),
-    birthTimePrecision: input.paidBirthTimeMode,
-    birthTime: input.birthTimeUnknown ? "" : input.birthTime.trim(),
-    birthTimeUnknown: input.birthTimeUnknown,
-    approximateBirthTimeSlot: input.birthTimeUnknown ? "" : input.timeBranch,
-    gender: input.gender as ReportPersonInputPayload["gender"],
-    mbtiType: input.mbtiType as ReportPersonInputPayload["mbtiType"],
-  };
-}
-
-function createSingleProductOptions(
-  productKey: string,
-  input: AnnualFortuneInputState,
-): SinglePersonReportInputPayload["productOptions"] {
-  if (productKey === ANNUAL_FORTUNE_PRODUCT_KEY) {
-    return {
-      selectedYear: input.selectedYear.trim(),
-      contentVersion: "v3",
-    };
-  }
-
-  if (
-    productKey === MAJOR_FORTUNE_PRODUCT_KEY ||
-    productKey === SAJU_MBTI_FULL_PRODUCT_KEY ||
-    productKey === CAREER_MONEY_STUDY_PRODUCT_KEY ||
-    productKey === LOVE_MARRIAGE_CHILD_PRODUCT_KEY
-  ) {
-    return { contentVersion: "v3" };
-  }
-
-  return {};
-}
-
-function buildSinglePersonReportInputPayload(
-  product: SelectedReportProduct,
-  input: AnnualFortuneInputState,
-): SinglePersonReportInputPayload {
-  return {
-    productKey: product.productKey as SinglePersonReportInputPayload["productKey"],
-    productSlug: product.slug as SinglePersonReportInputPayload["productSlug"],
-    person: createReportPersonInputPayload(input),
-    userContext: {
-      relationshipStatus: input.relationshipStatus as RelationshipStatus,
-      jobStatus: input.jobStatus as JobStatus,
-      detailJob: input.detailedJob.trim(),
-      focusAreas: input.focusAreas.filter(isFocusArea),
-    },
-    productOptions: createSingleProductOptions(product.productKey, input),
-  };
-}
-
-function buildCompatibilityReportInputPayload(input: {
-  readonly relationshipType: CompatibilityRelationshipTypeSelection;
-  readonly personA: CompatibilityPersonInputState;
-  readonly personB: CompatibilityPersonInputState;
-}): CompatibilityReportInputPayload {
-  return {
-    productKey: COMPATIBILITY_PRODUCT_KEY,
-    productSlug: COMPATIBILITY_PRODUCT_SLUG,
-    relationshipType: input.relationshipType,
-    compatibilityRoleVersion: COMPATIBILITY_ROLE_VERSION,
-    personA: createReportPersonInputPayload(input.personA),
-    personB: createReportPersonInputPayload(input.personB),
-  };
 }
 
 function buildReportInputPayload(input: {
@@ -662,31 +571,6 @@ function formatBirthTimeSummary(
   return exactTime ? `정확한 시간 · ${exactTime}` : "정확한 시간 · 미입력";
 }
 
-function createCheckoutInputSnapshot(input: {
-  readonly displayName: string;
-  readonly birthDate: string;
-  readonly birthTime: string | undefined;
-  readonly birthTimeUnknown: boolean;
-  readonly gender: string;
-  readonly mbtiType: string;
-  readonly reportInputPayload?: ReportInputPayload;
-}): TossPaymentWidgetInputSnapshot {
-  const trimmedDisplayName = input.displayName.trim();
-
-  return {
-    mbti: input.mbtiType,
-    gender: input.gender,
-    timezone: "Asia/Seoul",
-    birthDate: input.birthDate,
-    birthTime: input.birthTime ?? "",
-    calendarType: "SOLAR",
-    birthTimeUnknown: input.birthTimeUnknown,
-    ...(trimmedDisplayName ? { displayName: trimmedDisplayName } : {}),
-    ...(input.reportInputPayload === undefined
-      ? {}
-      : { reportInputPayload: input.reportInputPayload }),
-  };
-}
 
 type PaidFunnelBirthTimeMode = "exact" | "approximate" | "unknown";
 

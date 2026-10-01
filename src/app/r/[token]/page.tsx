@@ -339,7 +339,9 @@ export default async function PaidShareReportPage({
   const routeParams = await params;
   const token = routeParams.token ?? "";
   if (SHARE_TOKEN_PATTERN.test(token)) {
-    const shared = await loadSharedReport(token);
+    const { bookExperiencePublicEnabled } = await import("../../../lib/book/publicGate");
+    const validator = bookExperiencePublicEnabled() ? (await import("../../../lib/book/storedReport")).validateBookPublication : undefined;
+    const shared = await loadSharedReport(token, validator);
     if (!shared) return renderUnavailableState();
     return <ReportShareProvider key={token} shared share={shared.share}>
       {await ReportResultPage({ params: Promise.resolve({ reportId: shared.snapshot.reportId }) })}

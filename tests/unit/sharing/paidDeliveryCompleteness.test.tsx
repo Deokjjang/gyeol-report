@@ -1,6 +1,5 @@
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
-import { runInNewContext } from "node:vm";
-import { transpileModule } from "typescript";
+import { createSingleProductOptions as formOptions } from "../../../src/lib/report-generation/reportInputPresentation";
 import { renderToStaticMarkup } from "react-dom/server";
 import { PGlite } from "@electric-sql/pglite";
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
@@ -43,12 +42,7 @@ let db: PGlite;
 let store: ReliabilityStore;
 const runtime = { enabled: false as const, reason: "flag_disabled" as const };
 
-// Execute the existing pure form helper, rather than inventing version metadata
-// in fixtures. No production export/refactor is needed solely for this test.
-const formSource = readFileSync("src/app/report/new/page.tsx", "utf8");
-const formHelper = formSource.slice(formSource.indexOf("function createSingleProductOptions("), formSource.indexOf("function buildSinglePersonReportInputPayload("));
-const formConstants = formSource.match(/const [A-Z_]+_PRODUCT_KEY = "[^"]+";/g)!.join("\n");
-const formOptions = runInNewContext(transpileModule(formConstants + "\n" + formHelper, {}).outputText + "\ncreateSingleProductOptions") as (product: string, input: { selectedYear: string }) => Record<string, string>;
+// The real production form helper is now shared with the Book presentation.
 
 beforeAll(async () => {
   vi.stubGlobal("fetch", vi.fn(async () => { throw new Error("RELEASE_GATE_NETWORK_FORBIDDEN"); }));
@@ -85,7 +79,7 @@ beforeAll(async () => {
     expect(generated.externalCalls).toEqual([]);
     const payment = { orderId: "release-" + c.key, paymentKey: "local-only-" + c.key, amount: 1290 };
     expect(await store.call("create_order", { paymentOrderId: "po-" + c.key, providerOrderId: payment.orderId, productType: c.product, provider: "toss", amount: 1290,
-      inputSnapshot: { reportInputPayload: input, ...(c.product === "annual_fortune" ? { annualCommerceAcceptance: createAnnualCommerceAcceptance(Number(input.productOptions.selectedYear), new Date()) } : {}) } })).toMatchObject({ ok: true });
+      inputSnapshot: { reportInputPayload: input, ...(c.product === "annual_fortune" && "selectedYear" in input.productOptions ? { annualCommerceAcceptance: createAnnualCommerceAcceptance(Number(input.productOptions.selectedYear), new Date()) } : {}) } })).toMatchObject({ ok: true });
     const paid = await confirmPaidReport(payment, store, async () => ({ ok: true, confirm: { provider: "toss", paymentKeyReceived: true, orderId: payment.orderId, amount: 1290, status: "DONE" } }));
     expect(paid.ok).toBe(true);
     expect(await runPaidReportJob(store, runtime)).toMatchObject({ status: "COMPLETED" });

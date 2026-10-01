@@ -6,7 +6,7 @@ import s from "./book.module.css";
 export function BookInputSummary({ data }: { data: BookData }) {
   return <><div className={s.personSpread} data-pair={data.people.length === 2}>{data.people.map(p => <section key={p.role}><p className={s.micro}>{p.role}</p><h2>{p.name}</h2><dl className={s.coreSummary}>
     <div><dt>생년월일</dt><dd>{p.birth}</dd></div><div><dt>출생시간</dt><dd>{p.timeLabel}</dd></div><div><dt>MBTI</dt><dd>{p.mbti || "모름"}</dd></div>
-    <div><dt>성별</dt><dd>{p.gender === "FEMALE" ? "여성" : "남성"}</dd></div>
+    <div><dt>성별</dt><dd>{p.gender === "FEMALE" ? "여성" : p.gender === "MALE" ? "남성" : "미선택"}</dd></div>
   </dl></section>)}</div><dl className={s.coreSummary}>{data.context.filter(c => c.value).map(c => <div key={c.label}><dt>{c.label}</dt><dd>{c.value}</dd></div>)}</dl></>;
 }
 

@@ -1,3 +1,5 @@
+import { bookExperiencePublicEnabled } from "../lib/book/publicGate";
+import { BookHomeRoute } from "../components/book/BookRoutes";
 import Link from "next/link";
 
 import GyeolBrandHeader from "../components/brand/GyeolBrandHeader";
@@ -7,6 +9,7 @@ import { GYEOL_HOME_PRODUCT_GRID } from "../lib/product/gyeolProducts";
 import styles from "./home.module.css";
 
 export default function Home() {
+  if (bookExperiencePublicEnabled()) return <BookHomeRoute />;
   return (
     <main className={styles.home}>
       <div className={styles.container}>

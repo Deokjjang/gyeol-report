@@ -63,13 +63,13 @@ export function LegalDocument({ index, onNavigate }: { index: number; onNavigate
   return <div className={s.legalDocument}><p>결리포트를 운영하는 사업자 정보와 고객 문의 채널입니다.</p><BusinessDetails /></div>;
 }
 
-export function LegalAccordion() {
+export function LegalAccordion({ publicPresentation = false }: { publicPresentation?: boolean }) {
   const [open, setOpen] = useState<number | null>(null);
   const entries = useRef<Array<HTMLDetailsElement | null>>([]);
   useEffect(() => { if (open !== null) entries.current[open]?.scrollIntoView({ block: "start" }); }, [open]);
   return <div className={s.legalAccordion} aria-label="정책 문서 미리보기">
     <p className={s.supportPresentation}>{SUPPORT_COPY} <a href="http://pf.kakao.com/_sbHaX/chat" target="_blank" rel="noopener noreferrer">카카오톡 문의 ↗</a></p>
-    <p className={s.hint}>문의 경로 디자인 미리보기 · 아래 법적 문서는 현재 원문입니다.</p>
+    {!publicPresentation ? <p className={s.hint}>문의 경로 디자인 미리보기 · 아래 법적 문서는 현재 원문입니다.</p> : null}
     {LEGAL_TITLES.map((title, i) => <details key={title} ref={node => { entries.current[i] = node; }} open={open === i} onToggle={e => { const expanded = e.currentTarget.open; setOpen(current => expanded ? i : current === i ? null : current); }}>
       <summary>{title}<span aria-hidden="true">+</span></summary><LegalDocument index={i} onNavigate={index => { setOpen(index); }} />
     </details>)}

@@ -1,3 +1,5 @@
+import { bookExperiencePublicEnabled } from "../../lib/book/publicGate";
+import { BookLegalRoute } from "../../components/book/BookRoutes";
 import LegalPageLayout from "../../components/legal/LegalPageLayout";
 import { GYEOL_BUSINESS_INFO } from "../../lib/legal/businessInfo";
 
@@ -18,6 +20,7 @@ const businessInfoRows = [
 ] as const;
 
 export default function BusinessPage() {
+  if (bookExperiencePublicEnabled()) return <BookLegalRoute index={3} />;
   return (
     <LegalPageLayout
       currentPath="/business"

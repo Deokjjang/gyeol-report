@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { bookExperiencePublicEnabled } from "../lib/book/publicGate";
+import { BookFooterRoute } from "../components/book/BookRoutes";
 import { Geist, Geist_Mono } from "next/font/google";
 import MetaPixel from "../components/analytics/MetaPixel";
 import BusinessFooter from "../components/legal/BusinessFooter";
@@ -70,7 +72,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         {children}
-        <BusinessFooter />
+        {bookExperiencePublicEnabled() ? <BookFooterRoute /> : <BusinessFooter />}
         <MetaPixel />
       </body>
     </html>

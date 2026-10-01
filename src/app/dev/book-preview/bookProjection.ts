@@ -13,7 +13,6 @@ import { BIRTH_TIME_SLOT_DEFINITIONS } from "../../../lib/saju/birthTimePrecisio
 import { BOOKS, JOBS, RELATIONSHIPS, CATEGORIES, readerTitle } from "./model";
 import type { BookData, BookFeature, BookNote, BookPage, BookPerson } from "./bookTypes";
 
-const PRODUCT_BOOK = { saju_mbti_full: "full", career_money_study: "career", love_marriage_child: "love", saju_mbti_compatibility: "compatibility", major_fortune: "major", annual_fortune: "annual" } as const;
 const timeLabel = { past: "돌아보기", current: "지금", future: "앞으로" };
 const featureKey = (id: string) => depthFeature(canonicalV4Feature(id));
 const unique = <T,>(values: readonly T[]) => [...new Set(values)];
@@ -68,7 +67,7 @@ function personView(p: GenerationPersonInput, role: string, table: BookPerson["t
 export function projectBook(e: V4RuntimeEvidence): BookData | null {
   const c = e.composition, view = projectV4Composition(c);
   if (!validateV4Publication(c.product, view, e).ok) return null;
-  const bookId = PRODUCT_BOOK[c.product], book = BOOKS.find(b => b.id === bookId)!;
+  const book = BOOKS.find(b => b.productKey === c.product)!, bookId = book.id;
   const title = readerTitle(book, String(view.annual?.selectedYear ?? "2026"));
   const tables = projectV4Tables(e);
   // The canonical table is unchanged. V4's disputed marker is presentation-held.

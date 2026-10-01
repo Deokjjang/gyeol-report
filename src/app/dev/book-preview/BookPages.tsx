@@ -63,7 +63,7 @@ export function Receipt({ book, person, title, member, setMember, consents, setC
   </>;
 }
 
-export function Publishing({ book, name, state }: { book: Book; name: string; state: PublishingState }) {
+export function Publishing({ book, name, state, notice = "출판 과정 미리보기 · 결제·저장 없음" }: { book: Book; name: string; state: PublishingState; notice?: string }) {
   return <div className={s.publishing} data-publishing={state}>
     <div className={s.press} style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties} aria-hidden="true">
       {[0, 1, 2, 3].map(i => <div key={i} className={s.sheet} style={{ "--sheet": i } as CSSProperties}><i /><i /><i /><i /></div>)}
@@ -71,7 +71,7 @@ export function Publishing({ book, name, state }: { book: Book; name: string; st
     </div>
     <h1 aria-live="polite">{name}님의 책을<br />출판하고 있습니다.</h1>
     <p className={s.micro}>A PERSONAL EDITION, IN THE MAKING.</p>
-    <p className={s.hint}>출판 과정 미리보기 · 결제·저장 없음</p>
+    <p className={s.hint}>{notice}</p>
   </div>;
 }
 
@@ -102,7 +102,7 @@ export function MbtiPage({ data: m, name }: { data: V4CustomerTables[number]["mb
   </div></>;
 }
 
-export function PreviewFooter() {
+export function PreviewFooter({ publicPresentation = false }: { publicPresentation?: boolean }) {
   const [legal, setLegal] = useState(false);
   return <footer className={s.siteFooter}><div className={s.footerTop}><span className={s.micro}>GYEOL REPORT<br />PERSONAL PUBLISHING</span><nav aria-label="소셜과 고객 문의">
     <a href="https://www.instagram.com/gyeolreport/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="18" cy="6" r="1" /></svg></a>
@@ -111,6 +111,6 @@ export function PreviewFooter() {
     </nav></div><p>{SUPPORT_COPY}</p><p>전화 상담은 제공하지 않습니다.</p>
     <details data-business><summary>사업자 정보 <span aria-hidden="true">+</span></summary><BusinessDetails /></details>
     <nav className={s.legalLinks} aria-label="정책 링크"><button type="button" onClick={() => setLegal(true)}>이용약관 · 개인정보처리방침 · 환불정책 ›</button></nav><p className={s.micro}>© GYEOL REPORT</p>
-    {legal ? <DetailSheet title="이용약관과 정책" onClose={() => setLegal(false)}><LegalAccordion /></DetailSheet> : null}
+    {legal ? <DetailSheet title="이용약관과 정책" onClose={() => setLegal(false)}><LegalAccordion publicPresentation={publicPresentation} /></DetailSheet> : null}
   </footer>;
 }

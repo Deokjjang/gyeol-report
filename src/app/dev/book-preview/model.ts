@@ -1,16 +1,5 @@
-// Local presentation state only. No generation, authentication or purchase API.
-export const BOOKS = [
-  { id: "full", title: "나라는\n사람", color: "#F5D43B", ink: "#111111", issue: "01" },
-  { id: "career", title: "내가\n잘되는 방식", color: "#176346", ink: "#FFFFFF", issue: "02" },
-  { id: "love", title: "내 사랑\n이야기", color: "#EC643B", ink: "#111111", issue: "03" },
-  { id: "compatibility", title: "우리라는\n사이", color: "#6942A6", ink: "#FFFFFF", issue: "04" },
-  { id: "major", title: "앞으로의\n나", color: "#203754", ink: "#FFFFFF", issue: "05" },
-  { id: "annual", title: "나의\n2026", color: "#CED1D4", ink: "#111111", issue: "06" },
-] as const;
-export type Book = typeof BOOKS[number];
-export function readerTitle(book: Book, year: string) {
-  return book.id === "annual" ? `나의 ${/^\d{4}$/.test(year) ? year : "2026"}` : book.title.replace("\n", " ");
-}
+import { BOOKS, type Book } from "../../../lib/book/product";
+export { BOOKS, readerTitle, type Book } from "../../../lib/book/product";
 export const PUBLISHING_STATES = ["preparing", "composing", "binding", "covering", "complete"] as const;
 export type PublishingState = typeof PUBLISHING_STATES[number];
 export const MBTI = ["ENTJ", "ENTP", "ENFJ", "ENFP", "ESTJ", "ESTP", "ESFJ", "ESFP", "INTJ", "INTP", "INFJ", "INFP", "ISTJ", "ISTP", "ISFJ", "ISFP"];

@@ -3,6 +3,7 @@ import { ReportShareProvider } from "../../../components/report/ReportShareProvi
 import { describeReportShare } from "../../../lib/sharing/reportShareMetadata";
 import { existingReportShareUrl } from "../../../lib/sharing/reportShareStore";
 import { readPublishedReport } from "../../../lib/payment/paidReportReliability";
+import { bookExperiencePublicEnabled } from "../../../lib/book/publicGate";
 import { createPaidReportReliabilityStore } from "../../../lib/payment/paidReportReliabilityStore";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
 import { ReportGenerationStatus } from "../../../components/report/ReportGenerationStatus";
@@ -136,7 +137,8 @@ function createResultClient() {
 async function loadPageState(reportId: string): Promise<PageState> {
   const localPreview = process.env.NODE_ENV !== "production" && process.env.REPORT_PERSISTENCE_MODE === "preview_memory";
   if (process.env.NODE_ENV !== "test" && !localPreview) {
-    const durable = await readPublishedReport(createPaidReportReliabilityStore(), reportId);
+    const validator = bookExperiencePublicEnabled() ? (await import("../../../lib/book/storedReport")).validateBookPublication : undefined;
+    const durable = await readPublishedReport(createPaidReportReliabilityStore(), reportId, validator);
     if (durable.ok) {
       if (durable.status === "EXPIRED") return { kind: "expired" };
       if (durable.status === "COMPLETED" && durable.snapshot) return { kind: "productPreview", productPreview: durable.snapshot as ProductPreviewSnapshot };
@@ -204,6 +206,10 @@ async function loadProductPreviewPageState(
   }
 
   const productPreview = record.productPreview;
+  if (bookExperiencePublicEnabled() && productPreview.productVersion === "v4") {
+    const { storedBook } = await import("../../../lib/book/storedReport");
+    return storedBook(productPreview) ? { kind: "productPreview", productPreview } : { kind: "invalidSnapshot" };
+  }
   if (record.accessMode === "paid" && !validateProductPublication(productPreview.productType, productPreview.draft, productPreview.evidencePacket).ok) {
     return { kind: "invalidSnapshot" };
   }
@@ -1613,7 +1619,9 @@ export default async function ReportResultPage({
             : undefined
         }
       >
-        {renderProductPreviewState(state.productPreview)}
+        {bookExperiencePublicEnabled() && state.productPreview.productVersion === "v4"
+          ? (await import("../../../lib/book/storedReport")).StoredBookReport({ snapshot: state.productPreview, shareUrl: url })
+          : renderProductPreviewState(state.productPreview)}
       </ReportShareProvider>
     </>
   );

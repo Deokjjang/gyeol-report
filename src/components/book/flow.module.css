@@ -1,0 +1,10 @@
+.flow label { display:flex; flex-direction:column; gap:8px; font-size:13px; }
+.flow input:not([type=checkbox]):not([type=radio]), .flow select { min-width:0; width:100%; border:0; border-bottom:1px solid #aaa; border-radius:0; background:white; padding:10px 0; font:inherit; font-size:16px; }
+.flow label:has(input[type=checkbox]), .flow label:has(input[type=radio]) { flex-direction:row; align-items:center; }
+.flow fieldset { min-width:0; margin:20px 0; }
+.flow legend { font-size:13px; padding-bottom:8px; }
+.error { display:block; color:#b12822; font-size:13px; line-height:1.6; margin-top:8px; }
+.next { margin:30px 0 10px; padding:12px 0; border-bottom:1px solid; font-size:14px; }
+.status { text-align:center; font-size:12px; padding:0 24px 24px; }
+.legalPage { max-width:800px; padding:24px 24px 60px; margin:0 auto; }
+.legalPage h1 { font-size:28px; font-weight:600; letter-spacing:-.04em; margin-bottom:18px; }

@@ -50,7 +50,7 @@ describe("book preview: development-only presentation", () => {
     expect(html).not.toMatch(/1,290|사주 ×|종합 리포트|리뷰|누적|통계/);
   });
   it("six covers have unique agreed titles and solid WCAG AA colors", () => {
-    expect(BOOKS.map(b => b.title.replace("\n", " "))).toEqual(["나라는 사람", "내가 잘되는 방식", "내 사랑 이야기", "우리라는 사이", "앞으로의 나", "나의 2026"]);
+    expect(BOOKS.map(b => b.title.replace("\n", " "))).toEqual(["나라는 사람", "내가 잘되는 방식", "내 사랑 이야기", "우리라는 사이", "앞으로의 나", "나의 한 해"]);
     const luminance = (hex: string) => {
       const rgb = hex.slice(1).match(/../g)!.map(n => parseInt(n, 16) / 255).map(n => n <= .04045 ? n / 12.92 : ((n + .055) / 1.055) ** 2.4);
       return rgb[0] * .2126 + rgb[1] * .7152 + rgb[2] * .0722;
@@ -177,7 +177,7 @@ describe("book preview: development-only presentation", () => {
   });
   it("navigation names the current book, including selected Annual year with safe fallback", () => {
     BOOKS.forEach(b => expect(readerTitle(b, "2027")).toBe(b.id === "annual" ? "나의 2027" : b.title.replace("\n", " ")));
-    expect(readerTitle(BOOKS[5], "<script>")).toBe("나의 2026");
+    expect(readerTitle(BOOKS[5], "<script>")).toBe("나의 한 해");
     const nav = source("BookPreview.tsx").split('aria-label="책 읽기 위치"')[1].split("{turn ?")[0];
     expect(nav).not.toContain("GYEOL REPORT"); expect(nav).toContain("data.title");
   });

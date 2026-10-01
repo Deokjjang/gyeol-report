@@ -3,7 +3,8 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 const pagePath = join(process.cwd(), "src/app/report/new/page.tsx");
-const pageSource = readFileSync(pagePath, "utf8");
+const sharedSource = readFileSync("src/lib/report-generation/reportInputPresentation.ts", "utf8");
+const pageSource = readFileSync(pagePath, "utf8") + sharedSource;
 const singlePersonPreviewBranchSource = pageSource.slice(
   pageSource.indexOf("if (isSinglePersonPreviewProduct(selectedProduct.productKey))"),
   pageSource.indexOf("if (selectedProduct.productKey === MAJOR_FORTUNE_PRODUCT_KEY)"),
@@ -339,7 +340,7 @@ describe("new report page source", () => {
       "annualRelationshipStatusOptions",
       "annualJobStatusOptions",
       "annualDetailedJobOptions",
-      "annualFocusAreaOptions",
+      "FOCUS_AREAS",
       "공통 입력값",
       "모든 단독 인물 리포트가 공유하는 기본 정보입니다.",
       'name="name"',
@@ -422,7 +423,7 @@ describe("new report page source", () => {
       "annualRelationshipStatusOptions",
       "annualJobStatusOptions",
       "annualDetailedJobOptions",
-      "annualFocusAreaOptions",
+      "FOCUS_AREAS",
       "공통 입력값",
       "모든 단독 인물 리포트가 공유하는 기본 정보입니다.",
       'name="name"',
@@ -625,7 +626,7 @@ describe("new report page source", () => {
   it("passes actual form state into the Toss checkout launcher", () => {
     const requiredMarkers = [
       "createCheckoutInputSnapshot",
-      "TossPaymentWidgetInputSnapshot",
+      "DevTossCheckoutInputSnapshot",
       "checkoutInputSnapshot",
       "isTossPaymentWidgetInputComplete(checkoutInputSnapshot)",
       "mbti: input.mbtiType",
@@ -805,7 +806,7 @@ describe("new report page source", () => {
   });
 
   it("is deterministic when read repeatedly", () => {
-    const again = readFileSync(pagePath, "utf8");
+    const again = readFileSync(pagePath, "utf8") + sharedSource;
 
     expect(again).toBe(pageSource);
   });

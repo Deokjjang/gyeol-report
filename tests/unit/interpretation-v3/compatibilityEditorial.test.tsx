@@ -30,7 +30,7 @@ describe("new compatibility role contract", () => {
     const old = normalizeReportInputPayload(legacy); expect(old.ok && old.value).not.toHaveProperty("compatibilityRoleVersion");
     expect(createCompatibilityV3(legacy)).toBeNull();
     for (const value of [null, "", "reverse", 1, {}]) expect(normalizeReportInputPayload({ ...legacy, compatibilityRoleVersion: value })).toMatchObject({ ok: false, error: "INVALID_COMPATIBILITY_ROLE_VERSION" });
-    const form = readFileSync("src/app/report/new/page.tsx", "utf8");
+    const form = readFileSync("src/app/report/new/page.tsx", "utf8") + readFileSync("src/lib/report-generation/reportInputPresentation.ts", "utf8");
     expect(form).toContain("compatibilityRoleVersion: COMPATIBILITY_ROLE_VERSION");
     expect(form).toContain("nameLabelKo: `${compatibilityRoleLabels(compatibilityRelationshipType).personA} 이름`");
     expect(form).toContain("nameLabelKo: `${compatibilityRoleLabels(compatibilityRelationshipType).personB} 이름`");

@@ -1,3 +1,5 @@
+import { bookExperiencePublicEnabled } from "../../lib/book/publicGate";
+import { BookLegalRoute } from "../../components/book/BookRoutes";
 import LegalPageLayout from "../../components/legal/LegalPageLayout";
 import styles from "../../components/legal/legal.module.css";
 import { GYEOL_BUSINESS_INFO } from "../../lib/legal/businessInfo";
@@ -18,6 +20,7 @@ const individualRows = refundPolicyStateRows.filter((row) =>
 );
 
 export default function RefundPage() {
+  if (bookExperiencePublicEnabled()) return <BookLegalRoute index={2} />;
   return (
     <LegalPageLayout titleKo="환불정책" descriptionKo="디지털 리포트의 취소, 환불 및 재제공 기준입니다." currentPath="/refund">
       <section>

@@ -1,3 +1,5 @@
+import { bookExperiencePublicEnabled } from "../../lib/book/publicGate";
+import { BookLegalRoute } from "../../components/book/BookRoutes";
 import LegalPageLayout from "../../components/legal/LegalPageLayout";
 import { termsPolicyDescriptionKo, termsPolicySections } from "../../lib/legal/termsPolicy";
 
@@ -8,6 +10,7 @@ const detailLinks: Record<string, { href: string; label: string }> = {
 };
 
 export default function TermsPage() {
+  if (bookExperiencePublicEnabled()) return <BookLegalRoute index={0} />;
   return (
     <LegalPageLayout titleKo="이용약관" descriptionKo={termsPolicyDescriptionKo} currentPath="/terms">
       {termsPolicySections.map((section) => (
