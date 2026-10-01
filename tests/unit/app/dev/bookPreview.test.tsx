@@ -4,8 +4,13 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 vi.mock("next/navigation", () => ({ notFound: () => { throw new Error("404"); } }));
 import Page, { metadata } from "../../../../src/app/dev/book-preview/page";
 import Preview from "../../../../src/app/dev/book-preview/BookPreview";
-import { Cover, PersonFields, Receipt, Publishing, ReaderContent, PreviewFooter } from "../../../../src/app/dev/book-preview/BookPages";
-import { BOOKS, CONSENTS, INITIAL_PERSON, NOTES, PUBLISHING_STATES, coverOffset, wrapBook, inputPageCount, readerPages, requiredConsents, roleNames, toggleAll } from "../../../../src/app/dev/book-preview/model";
+import { Cover, PersonFields, Receipt, Publishing, ReaderContent, PreviewFooter, ELEMENT_LABELS } from "../../../../src/app/dev/book-preview/BookPages";
+import { BOOKS, CONSENTS, CONSENT_SHORT_LABELS, INITIAL_PERSON, NOTES, PUBLISHING_STATES, coverOffset, wrapBook, inputPageCount, readerPages, readerTitle, requiredConsents, roleNames, toggleAll } from "../../../../src/app/dev/book-preview/model";
+import { LegalAccordion, LegalDocument, BUSINESS_ROWS } from "../../../../src/app/dev/book-preview/BookLegal";
+import Terms from "../../../../src/app/terms/page";
+import Privacy from "../../../../src/app/privacy/page";
+import Refund from "../../../../src/app/refund/page";
+import Business from "../../../../src/app/business/page";
 import fixture from "../../../../src/app/dev/book-preview/fixture.json";
 const base = "src/app/dev/book-preview/";
 const source = (name: string) => readFileSync(base + name, "utf8");
@@ -71,8 +76,11 @@ describe("book preview: development-only presentation", () => {
   it("guest/member receipt retains purchase disclosures and does not invent optional consent", () => {
     for (const member of [false, true]) {
       const html = renderToStaticMarkup(<Receipt book={BOOKS[0]} person={INITIAL_PERSON} member={member} setMember={noop} consents={{}} setConsents={noop} />);
-      expect(html).toContain("₩1,290"); expect(html).toContain("환불이 제한될 수");
-      expect(html.includes(CONSENTS[3].label)).toBe(!member);
+      expect(html).toContain("₩1,290"); expect(html).toContain("환불·청약철회 제한 확인");
+      expect(html.includes(CONSENT_SHORT_LABELS.policyAgreement)).toBe(!member);
+      expect(html).not.toMatch(/<dialog|<details|마케팅/);
+      expect(html).not.toContain(CONSENTS[0].label);
+      expect(html).toContain("구매 전 안내 보기");
       expect(html).toContain("결제·저장되지 않습니다");
     }
     const production = readFileSync("src/components/payment/DevTossCheckoutLauncher.tsx", "utf8");
@@ -127,15 +135,69 @@ describe("book preview: development-only presentation", () => {
     expect(html).toContain("고객 문의는 카카오톡 채널 채팅으로 받고 있습니다.");
     expect(html).toContain('href="http://pf.kakao.com/_sbHaX/chat"');
     expect(html).toContain("support@gyeolreport.com"); expect(html).toContain("050-6664-8562");
-    expect(html).toContain("사업자 정보 보기"); expect(html).not.toContain("채팅하기");
+    expect(html).toContain("사업자 정보"); expect(html).not.toContain("채팅하기");
+    expect(html).not.toMatch(/<details[^>]*open|href="(?:tel:|mailto:)/);
+    BUSINESS_ROWS.forEach(([, value]) => expect(html).toContain(value));
     expect(readFileSync("src/components/legal/BusinessFooter.tsx", "utf8")).toContain("(?:reports|r)");
+  });
+  it("natal cells preserve every detail, yin/yang and semantic color independently from cover", () => {
+    const html = renderToStaticMarkup(<ReaderContent page="manse" onNote={noop} onShare={noop} />);
+    for (const row of [fixture.tables.manse.stemRow, fixture.tables.manse.branchRow]) {
+      for (const cell of Object.values(row)) {
+        expect(html).toContain(`data-element="${cell.colorToken}">${cell.hanja}`);
+        expect(html).toContain(cell.tenGod);
+      }
+    }
+    fixture.tables.manse.detailRows.forEach(row => Object.values(row.cells).flat().forEach(value => expect(html).toContain(value)));
+    Object.keys(ELEMENT_LABELS).forEach(token => expect(source("book.module.css")).toContain(`[data-element="${token}"]`));
+    expect(html).toContain("지장간 포함 가중"); expect(html).not.toContain("2.9000000000000004");
+  });
+  it("all MBTI axes, alternatives, summaries and function metadata are retained", () => {
+    const html = renderToStaticMarkup(<ReaderContent page="mbti" onNote={noop} onShare={noop} />);
+    const m = fixture.tables.mbti;
+    expect(html).toContain(m.archetype); expect(html).toContain(m.oneLine);
+    expect(html.match(/data-selected="true"/g)).toHaveLength(4);
+    expect(html.match(/data-selected="false"/g)).toHaveLength(4);
+    m.preferenceRows.forEach(r => [r.left, r.right].forEach(v => { expect(html).toContain(v.nameEn); expect(html).toContain(v.description); }));
+    m.functionRows.forEach(r => { expect(html).toContain(r.attitude + " · " + r.domain); expect(html).toContain(r.nameKo); });
+    m.coreSummary.forEach(r => expect(html).toContain(r.text));
+  });
+  it("back cover has exactly three icon actions, without SDK/runtime or second CTA", () => {
+    const html = renderToStaticMarkup(<ReaderContent page="back" onNote={noop} onShare={noop} />);
+    expect(html.match(/<button\b/g)).toHaveLength(3);
+    expect(html.match(/<svg\b/g)).toHaveLength(3);
+    for (const label of ["카카오톡", "공유", "링크 복사"]) expect(html).toContain(label);
+    expect(html).not.toMatch(/SHARE YOUR|DISCOVER|내 리포트/);
+  });
+  it("navigation names the current book, including selected Annual year with safe fallback", () => {
+    BOOKS.forEach(b => expect(readerTitle(b, "2027")).toBe(b.id === "annual" ? "나의 2027" : b.title.replace("\n", " ")));
+    expect(readerTitle(BOOKS[5], "<script>")).toBe("나의 2026");
+    const nav = source("BookPreview.tsx").split('aria-label="책 읽기 위치"')[1].split("{turn ?")[0];
+    expect(nav).not.toContain("GYEOL REPORT"); expect(nav).toContain("readerTitle(book, year)");
+  });
+  it("legal accordion defaults closed and contains all four documents", () => {
+    const html = renderToStaticMarkup(<LegalAccordion />);
+    expect(html.match(/<details\b/g)).toHaveLength(4);
+    expect(html).not.toMatch(/<details[^>]*open/);
+    expect(html).toContain('target="_blank" rel="noopener noreferrer"');
+  });
+  it.each([[0, Terms], [1, Privacy], [2, Refund], [3, Business]] as const)("document %s preserves all existing policy paragraphs/table values", (index, PublicPage) => {
+    const normalize = (html: string) => html.replace(/<[^>]*>/g, "").replace(/\s+/g, "");
+    const old = renderToStaticMarkup(<PublicPage />).split('<nav')[0];
+    const content = normalize(renderToStaticMarkup(<LegalDocument index={index} />));
+    for (const match of old.matchAll(/<(?:p|li|td|th|dt|dd|h2|caption)\b[^>]*>([\s\S]*?)<\/(?:p|li|td|th|dt|dd|h2|caption)>/g)) {
+      // Only the service-brand header precedes the actual document.
+      const value = normalize(match[1]);
+      if (["결리포트", "GyeolReport", "결리포트정책"].includes(value)) continue;
+      expect(content, value).toContain(value);
+    }
   });
   it("reduced motion removes auto/3D; keyboard and explicit controls supplement gestures", () => {
     expect(source("BookPreview.tsx")).toContain("paused || hovered || focused || reduced");
     expect(source("book.module.css")).toContain("@media (prefers-reduced-motion: reduce)");
     expect(source("book.module.css")).toContain("animation: none !important; transition: none !important;");
     expect(source("BookPreview.tsx")).toContain('aria-label="다음 페이지"');
-    expect(source("BookPreview.tsx")).toContain('aria-label="각주 닫기"');
+    expect(source("BookPreview.tsx")).toContain('closeLabel="각주 닫기"');
     expect(source("book.module.css")).not.toContain("gradient");
   });
 });

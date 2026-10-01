@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState, type CSSProperties, type PointerEvent, type KeyboardEvent } from "react";
 import { Cover, PersonFields, MbtiField, Receipt, Publishing, ReaderContent, PreviewFooter } from "./BookPages";
-import { BOOKS, PUBLISHING_STATES, INITIAL_PERSON, JOBS, RELATIONSHIPS, CATEGORIES, NOTES, coverOffset, wrapBook, inputPageCount, readerPages, requiredConsents, roleNames, type Person } from "./model";
+import { DetailSheet } from "./BookLegal";
+import { BOOKS, PUBLISHING_STATES, INITIAL_PERSON, JOBS, RELATIONSHIPS, CATEGORIES, NOTES, coverOffset, wrapBook, inputPageCount, readerPages, readerTitle, requiredConsents, roleNames, type Person } from "./model";
 import fixture from "./fixture.json";
 import s from "./book.module.css";
 
@@ -34,7 +35,6 @@ export default function BookPreview() {
   const [message, setMessage] = useState("");
   const form = useRef<HTMLFormElement>(null);
   const scroller = useRef<HTMLDivElement>(null);
-  const noteDialog = useRef<HTMLDialogElement>(null);
   const gesture = useRef<{ x: number; y: number } | null>(null);
   const wheelTime = useRef(0);
   const dragged = useRef(false);
@@ -69,10 +69,6 @@ export default function BookPreview() {
     scroller.current?.scrollTo({ top: 0 });
     if (stage === "input" || stage === "reader" || stage === "receipt") scroller.current?.focus({ preventScroll: true });
   }, [stage, inputPage, page]);
-  useEffect(() => {
-    if (note !== null) noteDialog.current?.showModal();
-    else noteDialog.current?.close();
-  }, [note]);
 
   const select = (index: number) => { setPaused(true); setCurrent(wrapBook(index)); };
   const animateTurn = (direction: number, action: () => void) => {
@@ -93,6 +89,7 @@ export default function BookPreview() {
     else if (stage === "reader" && page > 0) animateTurn(-1, () => setPage(p => p - 1));
   };
   const keyboard = (event: KeyboardEvent) => {
+    if (event.target instanceof Element && event.target.closest("dialog")) return;
     if (event.target instanceof Element && event.target.closest("input,select,textarea")) return;
     if (event.key === "ArrowRight") { event.preventDefault(); next(); }
     if (event.key === "ArrowLeft") { event.preventDefault(); previous(); }
@@ -115,6 +112,15 @@ export default function BookPreview() {
     setPublication(0); setStage("publishing");
   };
   const closeBook = () => { setStage("home"); setMessage(""); setPaused(true); };
+  const openNote = (index: number) => {
+    // Native modal restoration must not auto-scroll an inline superscript in
+    // the perspective reader. Return to the stable reading region instead.
+    scroller.current?.focus({ preventScroll: true });
+    setNote(index);
+  };
+  const closeNote = () => {
+    setNote(null);
+  };
 
   return <main lang="ko" className={s.root} data-book-preview data-stage={stage} data-reduced-motion={reduced} style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties} onKeyDown={keyboard}>
     <header className={s.header}><button className={s.wordmark} aria-label="결리포트 책장으로" onClick={closeBook}><b>결리포트</b><span>GYEOL REPORT</span></button>
@@ -146,16 +152,14 @@ export default function BookPreview() {
           <button type="submit" className={s.srOnly}>입력 다음 페이지</button>
         </form> : null}
         {stage === "receipt" ? <Receipt book={book} person={person} member={member} setMember={setMember} consents={consents} setConsents={setConsents} /> : null}
-        {stage === "reader" ? <ReaderContent page={pages[page]} onNote={setNote} onShare={setMessage} /> : null}
+        {stage === "reader" ? <ReaderContent page={pages[page]} onNote={openNote} onShare={setMessage} /> : null}
       </div>
-      <div className={s.pageNav}><button onClick={previous} disabled={stage === "reader" && page === 0} aria-label="이전 페이지">←</button><span className={s.micro}>GYEOL REPORT<span>{String(stage === "reader" ? page + 1 : inputPage + 1).padStart(2, "0")} / {String(stage === "reader" ? pages.length : inputPageCount(book.id)).padStart(2, "0")}</span></span>
+      <div className={s.pageNav} aria-label="책 읽기 위치"><button onClick={previous} disabled={stage === "reader" && page === 0} aria-label="이전 페이지">←</button><span><strong>{readerTitle(book, year)}</strong><span>{String(stage === "reader" ? page + 1 : inputPage + 1).padStart(2, "0")} / {String(stage === "reader" ? pages.length : inputPageCount(book.id)).padStart(2, "0")}</span></span>
         {stage === "receipt" ? <button className={s.orderButton} onClick={publish} disabled={!requiredConsents(member, person.birth).allowed || !requiredConsents(member, person.birth).items.every(c => consents[c.id])}>발행 체험 →</button> : stage === "reader" && page === pages.length - 1 ? <button onClick={closeBook}>책장 ↗</button> : <button onClick={next} aria-label="다음 페이지">→</button>}
       </div>
       {turn ? <div className={s.turnLeaf} data-direction={turn.direction} aria-hidden="true"><span>{turn.label}</span><div className={s.turnLines}><i /><i /><i /><i /></div></div> : null}
     </section> : null}
-    <dialog className={s.noteDialog} ref={noteDialog} onCancel={() => setNote(null)} onClose={() => setNote(null)} onClick={e => { if (e.target === e.currentTarget) setNote(null); }} aria-labelledby="note-title">
-      {note !== null ? <div><div className={s.noteTop}><span className={s.micro}>FOOTNOTE / 0{note + 1}</span><button onClick={() => setNote(null)} aria-label="각주 닫기">×</button></div><h2 id="note-title">{NOTES[note].name}</h2><p>{NOTES[note].image}</p><p>{NOTES[note].text}</p></div> : null}
-    </dialog>
+    {note !== null ? <DetailSheet title={NOTES[note].name} onClose={closeNote} closeLabel="각주 닫기"><div className={s.noteCopy}><p className={s.micro}>FOOTNOTE / 0{note + 1}</p><p>{NOTES[note].image}</p><p>{NOTES[note].text}</p></div></DetailSheet> : null}
     {message ? <div className={s.toast} role="status"><span>{message}</span><button onClick={() => setMessage("")} aria-label="안내 닫기">×</button></div> : null}
   </main>;
 }

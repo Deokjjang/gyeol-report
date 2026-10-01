@@ -8,6 +8,9 @@ export const BOOKS = [
   { id: "annual", title: "나의\n2026", color: "#CED1D4", ink: "#111111", issue: "06" },
 ] as const;
 export type Book = typeof BOOKS[number];
+export function readerTitle(book: Book, year: string) {
+  return book.id === "annual" ? `나의 ${/^\d{4}$/.test(year) ? year : "2026"}` : book.title.replace("\n", " ");
+}
 export const PUBLISHING_STATES = ["preparing", "composing", "binding", "covering", "complete"] as const;
 export type PublishingState = typeof PUBLISHING_STATES[number];
 export const MBTI = ["ENTJ", "ENTP", "ENFJ", "ENFP", "ESTJ", "ESTP", "ESFJ", "ESFP", "INTJ", "INTP", "INFJ", "INFP", "ISTJ", "ISTP", "ISFJ", "ISFP"];
@@ -29,6 +32,11 @@ export const CONSENTS = [
   { id: "age14OrOlder", label: "[필수] 만 14세 이상입니다." },
   { id: "minorLegalRepresentative", label: "[필수] 미성년자는 법정대리인 동의가 필요하며, 동의가 없는 경우 본인 또는 법정대리인이 계약을 취소할 수 있음을 확인했습니다." },
 ] as const;
+export const CONSENT_SHORT_LABELS = {
+  inputAccuracy: "입력 정보 확인", digitalReportStart: "디지털 리포트 생성 시작",
+  refundRestriction: "환불·청약철회 제한 확인", policyAgreement: "이용약관·개인정보·환불정책 동의",
+  age14OrOlder: "만 14세 이상", minorLegalRepresentative: "미성년자 법정대리인 동의",
+} as const;
 export function requiredConsents(member: boolean, birth: string) {
   // Fixed preview date; this is not a replacement checkout age policy.
   const date = new Date(birth + "T00:00:00Z");
