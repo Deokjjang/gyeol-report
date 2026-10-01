@@ -1,7 +1,7 @@
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { renderToString } from "react-dom/server";
 import { PGlite } from "@electric-sql/pglite";
-import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 const local = vi.hoisted(() => ({ rpc: vi.fn(), select: vi.fn(), insert: vi.fn() }));
 vi.mock("../../../src/lib/payment/paidReportReliabilityStore", () => ({ createPaidReportReliabilityStore: () => ({ call: local.rpc }) }));
@@ -81,6 +81,7 @@ beforeEach(() => {
   vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "local-fixture-only");
 });
 afterAll(async () => { vi.unstubAllEnvs(); await db?.close(); });
+afterEach(() => vi.useRealTimers());
 
 describe("V4 shadow: actual durable worker + SQL JSONB + server projection + share", () => {
   it.each(RUNTIME_FIXTURES)("$id generation, full snapshot read and direct/share SSR parity", async f => {
@@ -225,6 +226,8 @@ describe("roles, precision and customer/default boundaries", () => {
     expect(packets.get("love")!.evidencePacket.calculations.person.pillars.hour).toBeUndefined();
   });
   it.each(RUNTIME_FIXTURES)("$id public/default cannot select V4 from arbitrary client fields", async f => {
+    // Compare payloads at one instant; Annual records evaluatedAt to the second.
+    vi.useFakeTimers({ toFake: ["Date"] }); vi.setSystemTime(new Date(SHADOW_CLOCK.evaluatedAt));
     const base = await generateProductReport(f.payload, disabled, "normal_writer");
     expect(base.ok).toBe(true); if (!base.ok) return;
     expect((base.draft as { productVersion: string }).productVersion).toBe("v3");
