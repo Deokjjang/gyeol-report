@@ -30,7 +30,8 @@ export async function confirmPaidReport(input: TossConfirmRequest, store: Reliab
 }
 
 export type ProductGenerator = (payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance) => Promise<ProductGenerationResult>;
-export async function runPaidReportJob(store: ReliabilityStore, runtime: ReportWriterRuntime, generate: ProductGenerator = generateProductReport) {
+// Internal dependency only; HTTP handlers never accept or forward a validator.
+export async function runPaidReportJob(store: ReliabilityStore, runtime: ReportWriterRuntime, generate: ProductGenerator = generateProductReport, validatePublication = validateNewProductPublication) {
   const claimed = await store.call("claim_job", { model: runtime.enabled ? runtime.config.model : "deterministic" });
   if (!claimed.ok || !isRecord(claimed.job)) return claimed;
   const job = claimed.job;
@@ -71,7 +72,7 @@ export async function runPaidReportJob(store: ReliabilityStore, runtime: ReportW
       return finish({ success: false, stage: errors ? "validation" : "generation", code: delivery?.failureCode ?? result.externalFailure ?? (errors ? "PUBLISH_REJECTED" : "GENERATION_FAILED"), errors: errors ?? [result.error.code] });
     }
     // Do not trust a generator, including a deterministic fallback or a mock, to publish itself.
-    const gate = validateNewProductPublication(String(job.product_type), result.draft, result.evidencePacket);
+    const gate = validatePublication(String(job.product_type), result.draft, result.evidencePacket);
     if (!gate.ok) return finish({ success: false, stage: "validation", code: "PUBLISH_REJECTED", errors: gate.errors });
     const snapshot = createProductPreviewSnapshot({
       reportId: String(job.report_id), createdAtIso: String(job.created_at),
@@ -86,11 +87,11 @@ export async function runPaidReportJob(store: ReliabilityStore, runtime: ReportW
   }
 }
 
-export async function readPublishedReport(store: ReliabilityStore, reportId: string) {
+export async function readPublishedReport(store: ReliabilityStore, reportId: string, validatePublication = validateProductPublication) {
   const result = await store.call("read_report", { reportId });
   if (!result.ok || result.status !== "COMPLETED") return { ...result, snapshot: null };
   const snapshot = result.snapshot;
-  if (!isRecord(snapshot) || snapshot.reportId !== reportId || !validateProductPublication(String(snapshot.productType), snapshot.draft, snapshot.evidencePacket).ok) {
+  if (!isRecord(snapshot) || snapshot.reportId !== reportId || !validatePublication(String(snapshot.productType), snapshot.draft, snapshot.evidencePacket).ok) {
     // Compare the observed value under DB locks so a delayed read cannot
     // quarantine a replacement published by an admin recovery run.
     await store.call("quarantine", { reportId, expectedSnapshot: snapshot ?? null });

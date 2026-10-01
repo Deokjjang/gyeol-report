@@ -100,6 +100,15 @@ describe("production paid report runtime boundaries", () => {
     expect(mocks.runJob).toHaveBeenCalledTimes(1);
   });
 
+  it("V4 query/cookie hints cannot replace the default generation or publication contract", async () => {
+    mocks.storeCall.mockResolvedValue({ ok: true });
+    const request = new Request("http://localhost/api/internal/report-jobs?reportVersion=v4&mode=shadow", {
+      headers: { authorization: "Bearer mock-cron-secret", cookie: "reportVersion=v4; contentVersion=v4", "x-report-version": "v4" },
+    });
+    expect((await runWorker(request)).status).toBe(200);
+    expect(mocks.runJob.mock.calls[0]).toEqual([{ call: mocks.storeCall }, { enabled: false, reason: "flag_disabled" }]);
+  });
+
   it("protects attention listing and admin retry with REPORT_ADMIN_SECRET", async () => {
     const unauthorized = await retryReport(
       authorizedRequest("/api/internal/report-retry", "wrong", "POST", {

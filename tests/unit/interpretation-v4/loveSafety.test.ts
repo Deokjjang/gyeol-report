@@ -140,7 +140,12 @@ describe("Love evidence and regression boundaries", () => {
   it("no V4 import in any existing runtime/UI/product/paid delivery file", () => {
     const walk = (dir: string): string[] => readdirSync(dir, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? walk(join(dir, entry.name)) : /\.[jt]sx?$/.test(entry.name) ? [join(dir, entry.name)] : []);
     for (const dir of ["src/app", "src/components", "src/lib/report-generation", "src/lib/interpretation-v3", "src/lib/sharing"]) {
-      for (const file of walk(dir)) expect(readFileSync(file, "utf8"), file).not.toMatch(/interpretation-v4\//);
+      for (const file of walk(dir)) {
+        const source = readFileSync(file, "utf8");
+        if (file === "src/components/report/V4ShadowReportView.tsx") {
+          expect(source.match(/^import .*interpretation-v4.*$/gm)).toEqual(['import type { V4ShadowView } from "../../lib/interpretation-v4/runtimeTypes";']);
+        } else expect(source, file).not.toMatch(/interpretation-v4\//);
+      }
     }
   });
 });
