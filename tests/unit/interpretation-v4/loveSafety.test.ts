@@ -16,12 +16,13 @@ import { loveInputs } from "./loveFixtures";
 import { careerInputs } from "./careerFixtures";
 import { NARRATIVE_FIXTURES, fixtureInput } from "./narrativeFixtures";
 
-// Captured from the Phase 5A packets at ebbc2f7 before adding Love code.
+// Phase 5A baseline plus reviewed Phase 7A prose; before/after and immutable
+// evidence/proof hashes are recorded in finalEditorialBaseline.json.
 const CAREER_HASHES = [
   "dacbdcbeb42b15b65ff6c25a348f6721a5d6164e959b57b7bea86a1b7b3e6760", "8201af77e7dc274593d739e7dfd454f5b16aaa7eae164e0ddcad42a6fd8883dc",
-  "31152e39362b63ffbeef6b5dc6ffd213a9e0a3362b5ea01adbc0cf048cf1d16a", "b0a389f3f0d5679f349d7319cdc9f9bd6e63a38eceec1c5731fdc9f51c43e82b",
+  "31152e39362b63ffbeef6b5dc6ffd213a9e0a3362b5ea01adbc0cf048cf1d16a", "509fe3c8b4a173e89e16d2592fe15e90ba67a7235a2ba3922d4ce0fb2085f884",
   "735309a7e92cea1eee3d7dc7ad6e6e89968ee000b27052575c0fe4d4e38e1f85", "443e99d5216d242f426faa379c4440ac75b3a9debb51622ac36de3ffa96707dc",
-  "1bf9141a96e9ac35dd6c751d585aa32708540a83663afe9c214bfdeac0e2a5be", "dc68e33b76f7cb6c5dbfed65dc9e534f1afcedbe6511a045e5a4261935a693c8",
+  "e4fab97f6ef08b6341fdffd9d77a7265a2a77203aacb9a6cc7359ee8d9c4a7c6", "dc68e33b76f7cb6c5dbfed65dc9e534f1afcedbe6511a045e5a4261935a693c8",
 ];
 const inputs = loveInputs();
 const stateFor = (input: NarrativeInput): NarrativeState => {
@@ -32,7 +33,7 @@ const stateFor = (input: NarrativeInput): NarrativeState => {
 };
 
 describe("Love evidence and regression boundaries", () => {
-  it.each(careerInputs().map((v, i) => ({ ...v, hash: CAREER_HASHES[i] })))("$fixture.id: Career Phase 5A full packet hash unchanged", ({ input, hash }) => {
+  it.each(careerInputs().map((v, i) => ({ ...v, hash: CAREER_HASHES[i] })))("$fixture.id: reviewed Career narrative hash unchanged", ({ input, hash }) => {
     const r = composeCareerNarrative(input); expect(r.ok).toBe(true); if (!r.ok) return;
     expect(createHash("sha256").update(JSON.stringify(r.narrative)).digest("hex")).toBe(hash);
   });

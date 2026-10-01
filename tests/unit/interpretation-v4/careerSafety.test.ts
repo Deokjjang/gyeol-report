@@ -15,18 +15,19 @@ import type { NarrativeInput, NarrativeState } from "../../../src/lib/interpreta
 import { fixtureInput, NARRATIVE_FIXTURES } from "./narrativeFixtures";
 import { careerInputs } from "./careerFixtures";
 
-// Captured from Phase 4B review packets before adding any Career code.
+// Phase 4B baseline, with explicitly reviewed Phase 7A prose corrections.
+// Original hashes and unchanged evidence/proof hashes: finalEditorialBaseline.json.
 const PHASE4B_HASHES = [
   "8b0e5cde9809fc4cae3873a5b54611b56c5f291894d9b88cfefc210d50af4788", "719ccb62e6bb699393665fb08636e48c53de8b8ad1a0144f4f4c1e1de3e1e92d",
   "4cc1f08797688927d9c3e5b9d22342fb639cb9ca9d0f5e9d8ae700da5b5bb13e", "35f22010e2a8d19c46c61692cc3e96aa570642d6f94d55ebfdfb07f2882b2278",
   "e63d23a99fd58b7eac738f8a94bd7e7f8aabcaa21117029fff453388dce2b78f", "12bd23cd12deb9b11e121f265ea29eccc96fe88797436bbc881fe783d8d2477b",
-  "ebf2d0d35c805e96e4399feb9dc8aed2685145a872a6d7a962cc815d01a23843", "0f5f0e9a9b240eb6d7f49a1864b349b3c26bff0332e1692182511acc43b5d53c",
+  "e73c1a512c981788a011351f35624389fa5e56edf8e5a71fbca6d13dbbaae03c", "0f5f0e9a9b240eb6d7f49a1864b349b3c26bff0332e1692182511acc43b5d53c",
   "7bf7c01e6475c8b0865b845245619ab495f99d9cee7d8a786e39a1e00cacc4ba", "e552621a35803761f48499fb94c8fefb14f0f631a71f103a7e605feffdb4f34e",
   "ff51b237aa4e81c6f0e7ecbdcfb168dbf7e04f98b4329028d4e07a638ea480b1", "d020318a60eab800c7e5e19390bc5c8de680db69b3f53bf8a88115083fb5d9bb",
 ];
 const inputs = careerInputs();
 describe("Career gates and isolation", () => {
-  it.each(NARRATIVE_FIXTURES.map((f, i) => ({ f, hash: PHASE4B_HASHES[i] })))("$f.id: Comprehensive Phase 4B is byte-for-byte unchanged", ({ f, hash }) => {
+  it.each(NARRATIVE_FIXTURES.map((f, i) => ({ f, hash: PHASE4B_HASHES[i] })))("$f.id: reviewed Comprehensive narrative remains byte-for-byte stable", ({ f, hash }) => {
     const r = composeComprehensiveNarrative(fixtureInput(f)); expect(r.ok).toBe(true); if (!r.ok) return;
     expect(createHash("sha256").update(JSON.stringify(r.narrative)).digest("hex")).toBe(hash);
   });

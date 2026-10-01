@@ -14,9 +14,9 @@ import { narrativeText } from "../../../src/lib/interpretation-v4/editorialGuard
 import { MAJOR_NARRATIVE_FIXTURES, MAJOR_EVALUATED_AT } from "./majorFixtures";
 import { ANNUAL_NARRATIVE_FIXTURES as fixtures, ANNUAL_CLOCK } from "./annualFixtures";
 
-// Frozen at 00bdf25 before Phase6B edits; other suites freeze the four earlier
-// V4 products. No update-to-current snapshot operation is used.
-const MAJOR_HASHES = ["e78fabb2290bd6f4afb4b7c63d5d0097d20232f85f38a13289e58a8620c3d5d1", "48e4bf7a34d9d7ea88a151b49352bf02488a143a1927bddc6fc024a6d097154d", "e9e6ce6521fc62298fa9354b06732d883e62b9b6cdf1b1bb02dd3c1246a71bf7", "4f94d29b238ae259320b90a99f6d092e9383c4b1aef19096d56b9e1c98223dfb", "3bcb7e2f56b460cb0f2158cdd7149e3e41b569c617fc11ad3f49634ecb64ebe9", "df94dd3dd66898c6c1d1e5856253a8e66cbf5d57aabc197b3be23266b83d5145"];
+// Reviewed Phase 7A Major prose. Original Phase 6A hashes and immutable
+// evidence/proof hashes remain in finalEditorialBaseline.json.
+const MAJOR_HASHES = ["978b0e74336033831c4da4615d5278f707e80a22d0dc174413f012a1fe3de675", "06b59c2857f2d72da7c825b7cf1e937ff0d6777a363311bd4c39f7c723b43cb7", "16edccb1762b95ffe716a90b32183381e0b75ab585c04e4c699b37fb0444ea79", "23a7b280452715e4bc84a2ecb80b0b5a13754595bbb14d819d18fdcd239ac47c", "b81c5be3a597756b6cfec94ae45868d2a3170659ca9c85158995b8c3eba1be58", "c1a03e7511fd6b7a5f72d4a8ff772d23a3c128f6b7ee6e21fcf96f6f3d87fd76"];
 const must = async (payload: unknown, clock = ANNUAL_CLOCK) => { const r = await composeAnnualFortuneNarrative(payload, clock); expect(r.ok, JSON.stringify(r.ok ? "ok" : r.errors)).toBe(true); if (!r.ok) return null!; return r; };
 describe("Annual V4 canonical evidence, clock and regression boundaries", () => {
   it.each(MAJOR_NARRATIVE_FIXTURES.map((f, i) => ({ ...f, hash: MAJOR_HASHES[i] })))("$id: V4 Major byte hash unchanged", async ({ payload, hash }) => {

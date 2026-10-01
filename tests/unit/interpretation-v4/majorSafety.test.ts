@@ -11,9 +11,9 @@ import { MBTI_TYPES } from "../../../src/lib/report-generation/reportInputTypes"
 import { MAJOR_NARRATIVE_FIXTURES as fixtures, MAJOR_EVALUATED_AT as at } from "./majorFixtures";
 import { COMPATIBILITY_NARRATIVE_FIXTURES as pairs } from "./compatibilityFixtures";
 
-// Captured at Phase5C 630736b, before any Phase6A composer edits. Existing tests
-// independently freeze Comprehensive(12), Career(8), and Love(8) byte hashes.
-const PAIR_HASHES = ["dbc1e018a166cd531a076b34c76bfad7060d9926730480e2a8a5ee199384a56f", "b2c24b77f456b60241e33695e5700d1927f8e30bb0bb047500966cc263c9ca6a", "9a886bb3b87ea9d7f442797dd07f55e95fe5124dae4b36a0aa28c82d2469ba1b", "1fa7df4079df6fcd0721ee8fc13c1008336367f727af53f4b7ccd3d70b03704a", "0d8dbec6da5de06a16a4b4c8d3c237af9d0548199590b167cb9834ede49320c6", "995cd3bd3b44deeb85de1f620c7f8a624aee89b33b6f6efd7cf4083e682229c8", "ddb14809c134bede598bb4a4d2e5e71858b151a6c0faa4b16c912d4cda460bfa", "f53243ce585deeca4f6197714fd1000ee80c8046a18f8e9c2beead43a8959c5e"];
+// Reviewed Phase 7A pair prose. Original Phase 5C and immutable evidence/proof
+// hashes are preserved in finalEditorialBaseline.json, alongside the other products.
+const PAIR_HASHES = ["dbc1e018a166cd531a076b34c76bfad7060d9926730480e2a8a5ee199384a56f", "b2c24b77f456b60241e33695e5700d1927f8e30bb0bb047500966cc263c9ca6a", "9a886bb3b87ea9d7f442797dd07f55e95fe5124dae4b36a0aa28c82d2469ba1b", "1fa7df4079df6fcd0721ee8fc13c1008336367f727af53f4b7ccd3d70b03704a", "0d8dbec6da5de06a16a4b4c8d3c237af9d0548199590b167cb9834ede49320c6", "cb2eae82958c90dae3e707dde478c5c592b8807fec3f5755dfe0739e038d1898", "ddb14809c134bede598bb4a4d2e5e71858b151a6c0faa4b16c912d4cda460bfa", "9ef37eb6d67a151d51682f2e37edb052f0350ecc6400b6460f206314bf9ac312"];
 const must = async (payload: unknown, time = at) => { const r = await composeMajorFortuneNarrative(payload, time); expect(r.ok).toBe(true); if (!r.ok) return null!; return r; };
 describe("Major canonical calculation, isolation and evidence", () => {
   it.each(pairs.map((f, i) => ({ ...f, hash: PAIR_HASHES[i] })))("$id: Compatibility V4 hash unchanged", ({ payload, hash }) => {

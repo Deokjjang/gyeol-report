@@ -2,6 +2,7 @@ import type { TenGod } from "../report-knowledge/annualFortuneTypes";
 import type { MajorContext } from "./majorContext";
 import { particle as p } from "./copyRealizer";
 import { majorSceneDetail } from "./majorSceneDetails";
+import { MAJOR_FUTURE_LEARNING_SCENES } from "./majorFutureScenes";
 
 const gods: readonly TenGod[] = ["비견", "겁재", "식신", "상관", "편재", "정재", "편관", "정관", "편인", "정인"];
 const topics: Record<MajorContext["mode"] | "finance", readonly (readonly [string, string])[]> = {
@@ -16,9 +17,10 @@ const topics: Record<MajorContext["mode"] | "finance", readonly (readonly [strin
 
 /** Twenty authored story shapes (first/mature), selected by actual annual god.
  * Context is a concrete object of the interpretation, not a substituted name. */
-export function majorAnnualStory(god: TenGod, c: MajorContext, mature: boolean, past: boolean, current: boolean) {
-  const o = topics[c.fn === "finance_planning" && c.mode === "employee" ? "finance" : c.mode][gods.indexOf(god)][mature ? 1 : 0];
-  const s = c.scenes[god][mature ? 1 : 0];
+export function majorAnnualStory(god: TenGod, c: MajorContext, mature: boolean, past: boolean, current: boolean, distant = false) {
+  const futureLife = c.mode === "student" && distant ? MAJOR_FUTURE_LEARNING_SCENES[god] : undefined;
+  const o = futureLife?.topic ?? topics[c.fn === "finance_planning" && c.mode === "employee" ? "finance" : c.mode][gods.indexOf(god)][mature ? 1 : 0];
+  const s = futureLife?.setting ?? c.scenes[god][mature ? 1 : 0];
   const ot = p(o, "은", "는"), oo = p(o, "을", "를"), oi = p(o, "이", "가"), ow = p(o, "과", "와");
   const time = past ? "그 무렵" : current ? "요즘" : "이 시기에는";
   const memories: Record<TenGod, string> = {
@@ -58,7 +60,7 @@ export function majorAnnualStory(god: TenGod, c: MajorContext, mature: boolean, 
     편인: [`${p(s, "이", "가")} 뜻밖에 재미있어질 만합니다.`, `${p(s, "처럼", "처럼")} 다른 경험을 이어보는 모습이 어울립니다.`],
     정인: [`${p(s, "처럼", "처럼")} 설명 하나가 길을 열어주기도 합니다.`, `${p(s, "에서는", "에서는")} 받은 도움을 다시 나눌 여지도 보여요.`],
   };
-  const scene = `${past ? `지금의 ${p(s, "을", "를")} 예로 삼아 그 무렵을 돌아볼 수 있습니다.` : sceneLeads[god][mature ? 1 : 0]} ${majorSceneDetail(c, god, mature)}`;
+  const scene = `${past ? `지금의 ${p(s, "을", "를")} 예로 삼아 그 무렵을 돌아볼 수 있습니다.` : sceneLeads[god][mature ? 1 : 0]} ${futureLife?.detail ?? majorSceneDetail(c, god, mature)}`;
   const gifts: Record<TenGod, string> = {
     비견: `스스로 ${oo} 고른 경험이 자신감을 만듭니다. 남과 달라도 ${oo} 계속 지켜볼 독립심이 좋은 힘이에요.`,
     겁재: `${oo} 통해 서로의 실력을 합칠 수 있습니다. 혼자 못 할 일을 ${ow} 연결해볼 때, 함께 커지는 좋은 힘이 살아나요.`,
@@ -96,7 +98,7 @@ export function majorAnnualStory(god: TenGod, c: MajorContext, mature: boolean, 
     정인: `${oo} 알려준 사람을 떠올리면 배운 내용 옆에 그때의 다정함도 남습니다. ${p(c.noun, "을", "를")} 어려워하는 누군가에게 나도 그런 사람이 될 수 있겠다는 마음이 생길 만해요.`,
   };
   const reflection = reflections[god];
-  return { topic: o, portrait: past ? memories[god] : portraits[god][mature ? 1 : 0], scene,
+  return { topic: o, setting: s, portrait: past ? memories[god] : portraits[god][mature ? 1 : 0], scene,
     gift: past ? `${p(o, "에서", "에서")} 얻을 수 있었던 좋은 면을 되짚어보면 좋습니다. ${gifts[god]}` : gifts[god],
     shadow: past ? `그때 아쉬웠던 ${oo} 되짚어볼 수도 있습니다. ${shadows[god]}` : shadows[god], reflection };
 }

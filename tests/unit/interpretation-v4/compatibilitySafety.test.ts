@@ -11,9 +11,10 @@ import { getCrossTenGodRelation } from "../../../src/lib/report-knowledge/compat
 import { COMPATIBILITY_NARRATIVE_FIXTURES as fixtures } from "./compatibilityFixtures";
 import { loveInputs } from "./loveFixtures";
 
-// Phase5B byte hashes captured before any Phase5C edit. Comprehensive/Career
+// Reviewed Phase 7A prose; original Phase 5B and immutable evidence/proof hashes
+// remain in finalEditorialBaseline.json. Comprehensive/Career
 // hashes remain independently frozen in careerSafety/loveSafety respectively.
-const LOVE_HASHES = ["c72f89eac03d5665fa2522b6187ab08dd3e4bd164dccdc6abf4e6aad841a868c", "01700ccc4db01de4979794fcf8865b3450559daf4d3e3f1abd0d5a6f15b84c2b", "486e85f8b6c704265f9d53da200caf77ec433b91d3d8f79298a7ad3765e94c6e", "1d6ea88a25f38ef5aeb0cedafe03972ac1db06b56bb4a8c4911a81088eb6c46a", "483b57e209f28196188c15ff1f0178fd512ee5eae667d93893958770cbad385a", "48c0aa5ee681fb0a4558364f98965827abe87a25587af141a9816a340015021e", "ec30c948292eb0d32c3854fa85bebd2540b333332f7ef4b96798f95ec594ffeb", "49021b1b828e0c794d6090db9d9efb674d48b59f5af58d572c6efe88a4ebfcdf"];
+const LOVE_HASHES = ["c72f89eac03d5665fa2522b6187ab08dd3e4bd164dccdc6abf4e6aad841a868c", "01700ccc4db01de4979794fcf8865b3450559daf4d3e3f1abd0d5a6f15b84c2b", "486e85f8b6c704265f9d53da200caf77ec433b91d3d8f79298a7ad3765e94c6e", "ef91f8f41421530a2182bc76a7ca4590ece6daa4061b93ecb4fe3a573c0c8d97", "483b57e209f28196188c15ff1f0178fd512ee5eae667d93893958770cbad385a", "48c0aa5ee681fb0a4558364f98965827abe87a25587af141a9816a340015021e", "ec30c948292eb0d32c3854fa85bebd2540b333332f7ef4b96798f95ec594ffeb", "778e7856393364c018a08b658a479fc5be24495d0e0facab10ad9d325df4c37f"];
 const must = (payload: unknown) => { const r = composeCompatibilityNarrative(payload); expect(r.ok).toBe(true); if (!r.ok) return null!; return r; };
 
 describe("Compatibility isolation, evidence and directionality", () => {

@@ -53,7 +53,7 @@ export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt
     gwiin_amrok: `${particle(c.noun, "의", "의")} 겉모습보다 조용히 남는 실속을 알아볼 힘입니다. ${particle(c.craft, "을", "를")} 오래 써온 곳에서 이미 내 편인 도움도 발견할 만해요.`,
   };
   if (natalGift.length) sections.push(section("natal-gifts", "시기가 달라져도 가져갈 수 있는 원래의 좋은 패", natalGift.map((v, index) => paragraph(`natal-gift-${index}`,
-    `원래 가진 ${particle(gifts[v.feature], "을", "를")} ${particle(c.noun, "에도", "에도")} 가져갈 만합니다. ${giftScene[v.feature] ?? `${particle(c.craft, "을", "를")} 혼자 쓰는 데서 사람과 나누는 쪽으로 넓혀볼 좋은 바탕이에요. ${particle(c.scenes[now.tenGod][1], "에서도", "에서도")} 이 장점을 기억하면 이미 가진 것을 알아보는 눈이 달라집니다.`}`, proof([v])))));
+    `지금 ${particle(c.noun, "을", "를")} 다루는 힘 옆에는 ${gifts[v.feature]}도 있습니다. ${giftScene[v.feature] ?? `${particle(c.craft, "을", "를")} 혼자 쓰는 데서 사람과 나누는 쪽으로 넓혀볼 좋은 바탕이에요. ${particle(c.scenes[now.tenGod][1], "에서도", "에서도")} 이 장점을 기억하면 이미 가진 것을 알아보는 눈이 달라집니다.`}`, proof([v])))));
   const structure = e.materials.selected.find(v => v.material.category === "structure");
   if (structure) {
     const seed = structure.material.seeds.find(s => s.role === "strength");

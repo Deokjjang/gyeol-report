@@ -4,7 +4,7 @@ import { withKoreanParticle } from "../report-knowledge/koreanCopyUtils";
 import type { AnnualEvidence, AnnualMonthEvidence } from "./annualEvidence";
 import type { MajorContext } from "./majorContext";
 import type { NarrativeBlock } from "./narrativeTypes";
-import { majorSceneDetail } from "./majorSceneDetails";
+import { annualSceneDetail } from "./annualSceneDetails";
 import { MAJOR_MEANINGS } from "./majorMaterials";
 import { ANNUAL_MONTH_STORIES, ANNUAL_TRANSIT_STORIES } from "./annualStories";
 import { paragraph, proof, particle } from "./copyRealizer";
@@ -23,7 +23,7 @@ export function annualBehavior(e: AnnualEvidence, m: AnnualMonthEvidence, god: T
   if (!fusion) return null;
   state.fusions.add(fusion.ruleId);
   const person = fusion.ruleId.startsWith("enfp-") && fusion.mbtiEvidence.semanticTag === "inquiry"
-    ? "다른 사람에게는 멀리 떨어진 이야기여도 내 머릿속에서는 이미 이어집니다. 새로 들은 경험을 내 관심사에 대입해보는 버릇이 배움의 재미를 키워줄 만해요."
+    ? "다른 사람에게는 멀리 떨어진 이야기여도 내 머릿속에서는 이미 이어집니다. 누군가 취미 이야기를 꺼냈는데 지금 붙들던 고민의 다른 모양이 보이는 식입니다. 혼자 모은 생각을 말로 꺼내는 동안 상대의 반응이 다음 질문을 만들어줍니다. 배움이 강조되는 이 달에는 정답을 하나 더 외우는 것보다 이런 대화가 낯선 관심을 내 솜씨로 옮길 통로가 됩니다."
     : fusion.ruleId === "infj-depth" ? "이야기를 많이 듣기보다 마음에 걸린 한마디를 오래 되짚는 편입니다. 조용히 생각할 틈이 있으면 남이 지나친 뜻을 찾아내는 장점이 더 잘 살아납니다."
     : fusion.ruleId === "intp-pressure-learning-structure" ? "어려운 문제가 오면 곧장 답하기보다 먼저 원리를 찾는 편입니다. 부담을 배워야 할 질문으로 바꾸는 힘이 있어요. 배움에 힘이 실릴 때에는 그동안 피하던 복잡한 주제도 내 방식으로 풀어볼 만합니다."
     : fusion.ruleId.startsWith("intp-") && fusion.mbtiEvidence.semanticTag === "inquiry" ? "설명을 듣고도 왜 그런지 납득해야 손이 움직이는 사람입니다. 혼자 찾아보던 질문을 실제 문제와 이어볼 때 남의 답과 다른 전문성이 남을 만해요."
@@ -82,7 +82,7 @@ export function annualMonthNarrative(e: AnnualEvidence, m: AnnualMonthEvidence, 
   const setting = c.scenes[god][variant];
   const settingLead = m.time === "past" ? `${particle(setting, "에", "에")} 비춰 읽어볼 만합니다.`
     : `${particle(setting, "을", "를")} 생각하면 이 흐름이 더 가까워집니다.`;
-  const scene = { ...paragraph(`month-${m.month}-scene`, `${settingLead} ${majorSceneDetail(c, god, Boolean(variant))}`,
+  const scene = { ...paragraph(`month-${m.month}-scene`, `${settingLead} ${annualSceneDetail(c, god, variant)}`,
     proof([], [], [], [...m.sourceRefs, ...c.provenance]), "positive", `annual:${c.mode}:${story.scene}`),
     editorial: { variant: `${god}:${variant}`, sceneFamily: `${c.mode}:${story.scene}` } };
   const use = paragraph(`month-${m.month}-use`, story.use, source, "positive");
