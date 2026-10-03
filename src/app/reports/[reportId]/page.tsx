@@ -4,6 +4,7 @@ import { describeReportShare } from "../../../lib/sharing/reportShareMetadata";
 import { existingReportShareUrl } from "../../../lib/sharing/reportShareStore";
 import { readPublishedReport } from "../../../lib/payment/paidReportReliability";
 import { bookExperiencePublicEnabled } from "../../../lib/book/publicGate";
+import { accountPublicEnabled } from "../../../lib/account/gate";
 import { createPaidReportReliabilityStore } from "../../../lib/payment/paidReportReliabilityStore";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
 import { ReportGenerationStatus } from "../../../components/report/ReportGenerationStatus";
@@ -1597,6 +1598,7 @@ export default async function ReportResultPage({
   const product = isPaid
     ? getReportProduct(state.productPreview.productType)
     : null;
+  const SaveLibrary = isPaid && accountPublicEnabled() ? (await import("../../../components/account/SaveToLibrary")).SaveToLibrary : null;
 
   return (
     <>
@@ -1620,9 +1622,10 @@ export default async function ReportResultPage({
         }
       >
         {bookExperiencePublicEnabled() && state.productPreview.productVersion === "v4"
-          ? (await import("../../../lib/book/storedReport")).StoredBookReport({ snapshot: state.productPreview, shareUrl: url })
+          ? (await import("../../../lib/book/storedReport")).StoredBookReport({ snapshot: state.productPreview, shareUrl: url, saveToLibrary: isPaid && accountPublicEnabled() ? { reportId } : undefined })
           : renderProductPreviewState(state.productPreview)}
       </ReportShareProvider>
+      {SaveLibrary && !(bookExperiencePublicEnabled() && state.productPreview.productVersion === "v4") ? <SaveLibrary reportId={reportId} /> : null}
     </>
   );
 }

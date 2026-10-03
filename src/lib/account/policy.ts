@@ -24,6 +24,8 @@ export function safeAccountNext(value: unknown, local = false): string {
   const fallback = local ? "/dev/account" : "/account";
   if (typeof value !== "string") return fallback;
   const allowed = local ? ["/dev/account", "/dev/book-flow", "/dev/book-flow/input"] : ["/account", "/", "/report/new"];
+  const report = local ? /^\/dev\/book-flow\/report\/book-local-[a-f0-9-]{36}$/i : /^\/reports\/report_[a-z0-9_-]{13,80}$/i;
+  if (report.test(value)) return value;
   return allowed.includes(value) ? value : fallback;
 }
 export function safeDisplayName(value: unknown): string {

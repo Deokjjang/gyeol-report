@@ -119,6 +119,12 @@ function addDaysIso(baseIso: string, days: number): string {
   return new Date(safeTime + days * 24 * 60 * 60 * 1000).toISOString();
 }
 
+// Existing publication retention arithmetic, also used by local paid-flow QA.
+// Durable production reads still use paid_report_snapshots.expires_at, never this helper.
+export function publishedReportExpiresAt(publishedAt: string): string {
+  return addDaysIso(publishedAt, 90);
+}
+
 function createProductPreviewPersistenceRecord(input: {
   readonly baseRecord: PersistedReportRecord;
   readonly order: PaymentOrderRecord;
@@ -228,7 +234,7 @@ export async function fulfillPaidProductReport(
   }
 
   const createdAt = input.nowIso ?? payloadResult.input.record.createdAt;
-  const expiresAt = addDaysIso(createdAt, 90);
+  const expiresAt = publishedReportExpiresAt(createdAt);
   const productPreviewResult = createProductPreviewSnapshot({
     reportId: payloadResult.input.record.reportId,
     createdAtIso: createdAt,

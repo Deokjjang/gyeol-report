@@ -13,6 +13,7 @@ export type AccountPort = {
   finish(response: NextResponse): NextResponse;
 };
 const COOKIE = "gyeol-auth-flow";
+const RETURN_COOKIE = "gyeol-account-return";
 const noStore = { "Cache-Control": "private, no-store, max-age=0", "Vary": "Cookie" };
 
 export async function handleAccount(request: NextRequest, action: string, port: AccountPort, local = false): Promise<NextResponse> {
@@ -44,7 +45,10 @@ export async function handleAccount(request: NextRequest, action: string, port: 
       const snapshot = await port.read(user);
       if (!snapshot) return clear(failure());
       const session = accountSession(user, snapshot);
-      return clear(redirect(session.status === "member" ? safeAccountNext(flow?.next, local) : home));
+      const next = safeAccountNext(flow?.next, local);
+      const response = clear(redirect(session.status === "member" ? next : home));
+      response.cookies.set(RETURN_COOKIE, session.status === "member" ? "" : next, { ...cookieOptions, maxAge: session.status === "member" ? 0 : 600 });
+      return response;
     }
     if (action === "session") {
       const user = await port.currentUser();
@@ -56,6 +60,7 @@ export async function handleAccount(request: NextRequest, action: string, port: 
       const ok = await port.logout();
       const response = json(ok ? { ok: true } : { error: "로그아웃을 완료하지 못했습니다. 다시 시도해 주세요." }, ok ? 200 : 503);
       response.cookies.set(COOKIE, "", { ...cookieOptions, maxAge: 0 });
+      response.cookies.set(RETURN_COOKIE, "", { ...cookieOptions, maxAge: 0 });
       return response;
     }
     if (Number(request.headers.get("content-length") ?? 0) > 4096) return json({}, 413);
@@ -82,7 +87,10 @@ export async function handleAccount(request: NextRequest, action: string, port: 
     const snapshot = await port.read(user);
     if (!snapshot) return json({ error: "동의를 저장하지 못했습니다. 다시 시도해 주세요." }, 503);
     const ok = await port.consent(user, body.requestId, snapshot.profile ? "reconsent" : "first_login");
-    return json(ok ? { ok: true } : { error: "동의를 저장하지 못했습니다. 다시 시도해 주세요." }, ok ? 200 : 503);
+    const next = request.cookies.get(RETURN_COOKIE)?.value;
+    const response = json(ok ? { ok: true, ...(next ? { next: safeAccountNext(next, local) } : {}) } : { error: "동의를 저장하지 못했습니다. 다시 시도해 주세요." }, ok ? 200 : 503);
+    if (ok) response.cookies.set(RETURN_COOKIE, "", { ...cookieOptions, maxAge: 0 });
+    return response;
   } catch {
     // No provider text, codes, tokens, email, or DB diagnostics in public responses.
     if (action === "callback") { const response = failure(); response.cookies.set(COOKIE, "", { ...cookieOptions, maxAge: 0 }); return response; }

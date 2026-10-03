@@ -10,6 +10,8 @@ import { createProductPreviewSnapshot, type ProductPreviewSnapshotDraft } from "
 import { generateV4ShadowReport } from "../interpretation-v4/runtimeShadow";
 import { validateBookPublication } from "./storedReport";
 import { isRecord } from "../report-generation/productPublishGate";
+import { publishLocalLibrary } from "../library/localReview";
+import { publishedReportExpiresAt } from "../payment/paidProductReportFulfillment";
 
 type LocalOrder = { expires: number; payload: unknown; createdAt: string; snapshot?: unknown; pending?: Promise<unknown> };
 // Explicit local mock store for the SAME read/validation boundary, not another
@@ -54,8 +56,10 @@ export async function publishLocalBook(id: string) {
     const payload = row.payload as { productKey: Parameters<typeof createProductPreviewSnapshot>[0]["productKey"]; productSlug: Parameters<typeof createProductPreviewSnapshot>[0]["productSlug"] };
     const snapshot = createProductPreviewSnapshot({ reportId: id, createdAtIso: row.createdAt, productKey: payload.productKey, productSlug: payload.productSlug, draft: generated.draft as ProductPreviewSnapshotDraft, evidencePacket: generated.evidencePacket });
     if (!snapshot.ok) return failure("저장할 책을 확인하지 못했습니다.");
-    row.snapshot = JSON.parse(JSON.stringify({ ...snapshot.value, access: { mode: "paid", isPaid: true, isUnlocked: true } }));
+    const publishedAt = new Date().toISOString();
+    row.snapshot = JSON.parse(JSON.stringify({ ...snapshot.value, createdAtIso: publishedAt, access: { mode: "paid", isPaid: true, isUnlocked: true } }));
     const read = await readLocalBook(id);
+    if (read && isRecord(read)) publishLocalLibrary({ reportId: id, productType: String(read.productType), reportVersion: String(read.productVersion), publishedAt: String(read.createdAtIso), expiresAt: publishedReportExpiresAt(String(read.createdAtIso)), displayName: "", selectedYear: null, status: "available" });
     return read ? { ok: true as const, reportUrl: `/dev/book-flow/report/${id}` } : failure("책의 완전성을 확인하지 못했습니다.");
   })();
   return row.pending;

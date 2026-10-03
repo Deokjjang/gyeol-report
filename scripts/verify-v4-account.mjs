@@ -34,7 +34,8 @@ try {
   allConsent(); cli("find", "label", "[필수] 개인정보처리방침 동의", "click");
   check("individual uncheck makes all indeterminate", ev("document.querySelector('fieldset input').indeterminate"));
   allConsent(); click("동의하고 계속하기 →"); cli("wait", "--text", "반갑습니다.");
-  check("account has no library implementation", ev("document.body.innerText.includes('계정 기반만 검수')")); sizes("account");
+  cli("wait", "--text", "아직 꽂힌 책이 없습니다.");
+  check("account library empty state", ev("document.body.innerText.includes('아직 꽂힌 책이 없습니다.')")); sizes("account");
   cli("reload"); cli("wait", "--load", "networkidle"); check("reload retains member", ev("document.body.innerText.includes('반갑습니다')"));
   open("/dev/book-flow"); cli("wait", "--text", "내 서재"); shot("390-member-header");
   // Reuse actual 9A canonical input; no invented report or payment text.

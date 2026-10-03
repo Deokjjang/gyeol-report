@@ -3,7 +3,8 @@ import { createAnnualCommerceAcceptance } from "../../../../lib/payment/annualPu
 import { normalizeReportInputPayload } from "../../../../lib/report-generation/reportInputAdapter";
 import { randomUUID } from "node:crypto";
 
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { accountPublicEnabled } from "../../../../lib/account/gate";
 
 import type { PaymentCheckoutSessionDraft } from "../../../../lib/payment/paymentCheckoutSessionTypes";
 import { preparePaymentCheckoutSession } from "../../../../lib/payment/paymentCheckoutSessionBoundary";
@@ -313,6 +314,7 @@ function createOptionalTossCheckoutRequest(
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
+  if (accountPublicEnabled() && request.headers.get("origin") !== "https://gyeolreport.com") return new NextResponse(null, { status: 403 });
   if (!isProductionCheckoutAvailable()) {
     return createErrorResponse("PAYMENT_CHECKOUT_UNAVAILABLE", "현재 결제를 준비 중입니다. 잠시 후 다시 확인해 주세요.", 503);
   }
@@ -439,7 +441,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     return tossCheckoutRequestResult.response;
   }
 
-  return NextResponse.json(
+  const response = NextResponse.json(
     createSuccessBody(
       readyOrder,
       checkoutResult.session,
@@ -450,4 +452,17 @@ export async function POST(request: Request): Promise<NextResponse> {
       headers: jsonResponseHeaders,
     },
   );
+  // Default OFF. No auth/ownership DB calls or checkout behavior changes until
+  // separately approved activation + reviewed migration prerequisites.
+  if (accountPublicEnabled()) {
+    try {
+      const { createAccountPort } = await import("../../../../lib/account/supabase");
+      const { createLibraryPort } = await import("../../../../lib/library/supabase");
+      const { bindCheckout } = await import("../../../../lib/library/server");
+      const req = new NextRequest(request.url, { headers: request.headers }), auth = createAccountPort(req);
+      const bound = auth ? await bindCheckout(req, response, readyOrder.paymentOrderId, inputSnapshot.reportInputPayload, auth, createLibraryPort()) : null;
+      return bound ?? createErrorResponse("PAYMENT_CHECKOUT_UNAVAILABLE", createFailedMessage, 503);
+    } catch { return createErrorResponse("PAYMENT_CHECKOUT_UNAVAILABLE", createFailedMessage, 503); }
+  }
+  return response;
 }

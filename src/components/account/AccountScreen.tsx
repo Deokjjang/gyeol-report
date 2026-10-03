@@ -5,8 +5,9 @@ import { ACCOUNT_POLICY_VERSIONS, type AccountProvider } from "../../lib/account
 import { DetailSheet, LegalDocument, LEGAL_TITLES } from "../../app/dev/book-preview/BookLegal";
 import { announceAccountChange, useAccountSession } from "./AccountSession";
 import s from "./account.module.css";
+import { Library } from "./Library";
 
-export function AccountScreen({ local = false, loginError = false }: { local?: boolean; loginError?: boolean }) {
+export function AccountScreen({ local = false, loginError = false, next }: { local?: boolean; loginError?: boolean; next?: string }) {
   const { session, loaded, error, refresh, base } = useAccountSession(local);
   const [checked, setChecked] = useState({ terms: false, privacy: false }), [detail, setDetail] = useState<number | null>(null), [message, setMessage] = useState(loginError ? "로그인을 완료하지 못했습니다. 다시 시도하거나 로그인 없이 계속할 수 있습니다." : ""), [busy, setBusy] = useState(false);
   const all = checked.terms && checked.privacy, some = checked.terms || checked.privacy, allRef = useRef<HTMLInputElement>(null), lock = useRef(false), requestId = useRef("");
@@ -22,16 +23,17 @@ export function AccountScreen({ local = false, loginError = false }: { local?: b
     lock.current = true; setBusy(true); setMessage("");
     try {
       if (!requestId.current) requestId.current = crypto.randomUUID();
-      const body = action === "start" ? { provider } : action === "consent" ? { requestId: requestId.current, ...checked, versions: ACCOUNT_POLICY_VERSIONS } : {};
+      const body = action === "start" ? { provider, ...(next ? { next } : {}) } : action === "consent" ? { requestId: requestId.current, ...checked, versions: ACCOUNT_POLICY_VERSIONS } : {};
       const { response, data } = await post(action, body);
       if (!response.ok) { setMessage(data.error ?? "다시 시도해 주세요."); return; }
       if (action === "start" && typeof data.url === "string") { window.location.assign(data.url); return; }
+      if (action === "consent" && typeof data.next === "string") { window.location.assign(data.next); return; }
       requestId.current = ""; setChecked({ terms: false, privacy: false }); announceAccountChange(); await refresh();
     } catch { setMessage("요청을 완료하지 못했습니다. 다시 시도하거나 로그인 없이 계속해 주세요."); }
     finally { lock.current = false; setBusy(false); }
   }
   return <main className={s.root}><header className={s.header}><Link href={guest}>결리포트</Link><Link href={local ? "/dev/account" : session.status === "member" ? "/account" : "/login"}>{session.status === "member" ? "내 서재" : "로그인"}</Link></header>
-    <section className={s.sheet} aria-busy={busy || !loaded}>
+    <section className={`${s.sheet} ${session.status === "member" ? s.librarySheet : ""}`} aria-busy={busy || !loaded}>
       {local ? <p className={s.note}>로컬 인증 검수 · 실제 소셜 로그인 아님</p> : null}
       {!loaded ? <p role="status">로그인 상태 확인 중</p> : session.status === "guest" ? <>
         <p className={s.eyebrow}>GYEOL REPORT</p><h1>내 이야기를 이어서</h1><p>카카오 또는 Google 계정으로 로그인하세요.</p>
@@ -45,11 +47,12 @@ export function AccountScreen({ local = false, loginError = false }: { local?: b
         <button className={s.small} disabled={busy} onClick={() => run("logout")}>로그아웃</button>
       </> : <>
         <p className={s.eyebrow}>ACCOUNT</p><h1>내 서재</h1><p>{session.displayName}님, 반갑습니다.</p>
-        {local ? <p className={s.note}>계정 기반만 검수합니다. 책 보관 기능은 아직 연결하지 않았습니다.</p> : null}
-        <Link className={s.primary} href={guest}>책 고르기 →</Link><button className={s.small} disabled={busy} onClick={() => run("logout")}>로그아웃</button>
+        <Library local={local} />
+        <details className={s.accountInfo}><summary>계정 정보</summary><p>{session.displayName}</p></details>
+        <button className={s.small} disabled={busy} onClick={() => run("logout")}>로그아웃</button>
       </>}
       {message || error ? <p className={s.error} role="alert">{message || "로그인 상태를 확인하지 못했습니다. 다시 시도해 주세요."}</p> : null}
-      <Link className={s.guest} href={guest}>로그인 없이도 책을 만들 수 있습니다. →</Link>
+      {session.status !== "member" ? <Link className={s.guest} href={guest}>로그인 없이도 책을 만들 수 있습니다. →</Link> : null}
     </section>
     {detail !== null ? <DetailSheet title={LEGAL_TITLES[detail]} onClose={() => setDetail(null)}><LegalDocument index={detail} onNavigate={setDetail} /></DetailSheet> : null}
   </main>;

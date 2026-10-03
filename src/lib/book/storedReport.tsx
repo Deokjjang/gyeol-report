@@ -19,7 +19,7 @@ export function storedBook(snapshot: unknown, shareUrl?: string | null) {
   const share = projectBookShare({ productType: snapshot.productType, names: data.names, selectedYear: data.title.match(/\d{4}/)?.[0], reportId: snapshot.reportId, shareUrl });
   return share ? { data, share } : null;
 }
-export function StoredBookReport({ snapshot, shareUrl, home }: { snapshot: unknown; shareUrl?: string | null; home?: string }) {
+export function StoredBookReport({ snapshot, shareUrl, home, saveToLibrary }: { snapshot: unknown; shareUrl?: string | null; home?: string; saveToLibrary?: { reportId: string; local?: boolean } }) {
   const result = storedBook(snapshot, shareUrl);
-  return result ? <BookReadingPresentation {...result} home={home} /> : <p role="alert">저장된 책 정보를 확인할 수 없습니다.</p>;
+  return result ? <BookReadingPresentation {...result} home={home} saveToLibrary={saveToLibrary} /> : <p role="alert">저장된 책 정보를 확인할 수 없습니다.</p>;
 }

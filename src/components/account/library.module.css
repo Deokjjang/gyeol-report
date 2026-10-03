@@ -1,0 +1,14 @@
+.shelf{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px;margin:28px 0 40px;padding:0}
+.shelf li{min-width:0}.shelf a{display:block;text-decoration:none;color:inherit}
+.cover{aspect-ratio:3/4;padding:14px 12px;display:flex;flex-direction:column;border-left:3px solid #0002;box-shadow:3px 4px 0 #0001;overflow-wrap:anywhere}
+.cover small{font-size:10px;letter-spacing:.4px}
+.cover strong{font-size:clamp(20px,3.8vw,28px);line-height:1.2;letter-spacing:-1px;margin-top:24px;font-weight:800;word-break:keep-all}
+.cover span{font-size:11px;margin:16px 0;line-height:1.5}.cover small:last-child{margin-top:auto;font-size:10px}
+.metadata{display:grid;gap:2px;margin-top:12px;line-height:1.7;font-size:10px;color:#555;overflow-wrap:anywhere}.metadata b{font-size:13px;color:#111}
+.shelf [data-availability=expired] .cover,.shelf [data-availability=unavailable] .cover{filter:grayscale(1);opacity:.55}
+.empty{padding:35px 0 60px;font-size:14px}.empty a{font-size:13px;border-bottom:1px solid #111;padding-bottom:4px}
+.save{margin:14px 0 0;padding:0;font-size:13px;line-height:1.6;color:inherit}
+.save a,.save button{color:inherit;border:0;border-bottom:1px solid currentColor;padding:6px 0;background:none;font:inherit;cursor:pointer;text-decoration:none}
+.save small{display:block;font-size:10px;margin-top:8px;opacity:.8}.save button:disabled{opacity:.5;cursor:default}
+.save :focus-visible,.shelf :focus-visible,.empty :focus-visible{outline:2px solid currentColor;outline-offset:5px}
+@media(min-width:768px){.shelf{grid-template-columns:repeat(3,minmax(0,1fr));gap:36px}.cover{padding:18px}.cover strong{font-size:29px}}

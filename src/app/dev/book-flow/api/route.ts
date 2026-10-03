@@ -26,5 +26,15 @@ export async function POST(request: Request) {
   const result = body.operation === "validate" ? review.validateLocalBookInput(body.payload)
     : body.operation === "prepare" ? review.prepareLocalBook(body.request)
       : body.operation === "publish" && typeof body.orderId === "string" ? await review.publishLocalBook(body.orderId) : { ok: false, error: "검수 요청을 확인해 주세요." };
-  return NextResponse.json(result, { headers: { "Cache-Control": "no-store" } });
+  const response = NextResponse.json(result, { headers: { "Cache-Control": "no-store" } });
+  if (body.operation === "prepare" && result.ok && "orderId" in result) {
+    const { createLocalAccountPort } = await import("../../../../lib/account/localReview");
+    const { bindCheckout } = await import("../../../../lib/library/server");
+    const { createLocalLibraryPort } = await import("../../../../lib/library/localReview");
+    const req = new NextRequest(request.url, { headers: request.headers }), auth = createLocalAccountPort(req);
+    const payload = (body.request as { inputSnapshot?: { reportInputPayload?: unknown } })?.inputSnapshot?.reportInputPayload;
+    const bound = auth ? await bindCheckout(req, response, String(result.orderId), payload, auth, createLocalLibraryPort(), true) : null;
+    return bound ?? NextResponse.json({ ok: false, error: "모의 주문을 준비하지 못했습니다." }, { status: 503 });
+  }
+  return response;
 }
