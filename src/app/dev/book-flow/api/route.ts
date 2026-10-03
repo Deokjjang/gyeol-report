@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   const url = new URL(request.url);
@@ -14,6 +14,14 @@ export async function POST(request: Request) {
   let body: Record<string, unknown>;
   try { body = JSON.parse(raw); } catch { return NextResponse.json({ ok: false, error: "입력을 확인해 주세요." }, { status: 400 }); }
   if (!body || typeof body !== "object") return new Response(null, { status: 400 });
+  if (body.operation === "prepare" && body.memberGeneralConsent === true) {
+    const { createLocalAccountPort } = await import("../../../../lib/account/localReview");
+    const { accountSession } = await import("../../../../lib/account/policy");
+    const port = createLocalAccountPort(new NextRequest(request.url, { headers: request.headers }));
+    const user = await port?.currentUser();
+    const snapshot = user && port ? await port.read(user) : null;
+    if (!user || !snapshot || accountSession(user, snapshot).status !== "member") return NextResponse.json({ ok: false, error: "현재 약관 동의를 다시 확인해 주세요." }, { status: 401 });
+  }
   const review = await import("../../../../lib/book/localReview");
   const result = body.operation === "validate" ? review.validateLocalBookInput(body.payload)
     : body.operation === "prepare" ? review.prepareLocalBook(body.request)

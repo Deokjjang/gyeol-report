@@ -12,8 +12,17 @@ import { bookCheckoutSnapshot } from "../../lib/book/form";
 import { bookForProduct, readerTitle } from "../../lib/book/product";
 import { BIRTH_TIME_SLOT_DEFINITIONS } from "../../lib/saju/birthTimePrecisionTypes";
 import s from "../../app/dev/book-preview/book.module.css";
+import { useAccountSession } from "../account/AccountSession";
+import { purchasePolicyLabel, type AccountSession } from "../../lib/account/policy";
 
-export function BookCheckout({ payload, now, internal, onPublishing, onError }: { payload: ReportInputPayload; now: string; internal: boolean; onPublishing: () => void; onError: (message: string) => void }) {
+type CheckoutProps = { payload: ReportInputPayload; now: string; internal: boolean; onPublishing: () => void; onError: (message: string) => void };
+export function BookCheckout(props: CheckoutProps) {
+  const { session } = useAccountSession(true, props.internal);
+  // A status change remounts the receipt; prior consent is never silently carried over.
+  return <BookCheckoutReceipt key={session.status} {...props} session={session} />;
+}
+function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, session }: CheckoutProps & { session: AccountSession }) {
+  const label = (id: keyof CheckoutLegalConfirmations) => id === "policyAgreement" && session.status === "member" ? purchasePolicyLabel(session) : CONSENT_SHORT_LABELS[id];
   const [consents, setConsents] = useState<CheckoutLegalConfirmations>(emptyDevTossCheckoutLegalConfirmations), [detail, setDetail] = useState<string | null>(null), [busy, setBusy] = useState(false);
   const lock = useRef(false), allRef = useRef<HTMLInputElement>(null);
   const snapshot = bookCheckoutSnapshot(payload), book = bookForProduct(payload.productKey)!, product = getReportProduct(payload.productKey)!;
@@ -31,7 +40,7 @@ export function BookCheckout({ payload, now, internal, onPublishing, onError }: 
     const result = await runDevTossCheckout(snapshot, consents, {
       fetch: async (path, init) => {
         if (path !== "/api/payment-checkout/prepare") return { ok: false, json: async () => ({}) };
-        const response = await fetch("/dev/book-flow/api", { ...init, body: JSON.stringify({ operation: "prepare", request: JSON.parse(String(init.body)) }) });
+        const response = await fetch("/dev/book-flow/api", { ...init, body: JSON.stringify({ operation: "prepare", request: JSON.parse(String(init.body)), memberGeneralConsent: session.status === "member" }) });
         const body = await response.json(); orderId = body.orderId ?? "";
         return { ok: response.ok, json: async () => body };
       },
@@ -52,10 +61,10 @@ export function BookCheckout({ payload, now, internal, onPublishing, onError }: 
     <dl>{(payload.productKey === "saju_mbti_compatibility" ? [payload.personA, payload.personB] : [payload.person]).map((p, i) => <div key={i}><dt>{p.name}</dt><dd>{p.birthDate} · {p.birthTimeUnknown ? "시간 모름" : p.birthTime || `대략 · ${BIRTH_TIME_SLOT_DEFINITIONS.find(s => s.value === p.approximateBirthTimeSlot)?.labelKo ?? "미확인"}`} · {p.mbtiType || "MBTI 모름"}</dd></div>)}</dl>
     <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />결제 완료 후 즉시 생성, 최대 24시간 이내 제공<br />생성일로부터 90일 · 결제 후 온라인 열람</p>
     <fieldset className={s.consents}><legend className={s.srOnly}>구매 동의</legend><label className={s.allConsent}><input ref={allRef} type="checkbox" checked={all} disabled={!allowed || busy} onChange={e => setConsents({ ...consents, ...Object.fromEntries(items.map(c => [c.id, e.target.checked])) })} />전체 동의</label>
-      {items.map(c => <div className={s.consentRow} key={c.id}><label><input type="checkbox" checked={consents[c.id]} disabled={!allowed || busy} onChange={e => setConsents({ ...consents, [c.id]: e.target.checked })} />[필수] {CONSENT_SHORT_LABELS[c.id]}</label><button type="button" onClick={() => setDetail(c.id)} aria-label={`${CONSENT_SHORT_LABELS[c.id]} 상세 보기`}>보기 ›</button></div>)}
+      {items.map(c => <div className={s.consentRow} key={c.id}><label><input type="checkbox" checked={consents[c.id]} disabled={!allowed || busy} onChange={e => setConsents({ ...consents, [c.id]: e.target.checked })} />[필수] {label(c.id)}</label><button type="button" onClick={() => setDetail(c.id)} aria-label={`${label(c.id)} 상세 보기`}>보기 ›</button></div>)}
     </fieldset>
     {!allowed ? <p role="alert">만 14세 이상만 이용할 수 있습니다.</p> : null}
     <button type="button" className={s.orderButton} disabled={!ready || busy || !internal} onClick={submit}>{internal ? "모의 결제 · 책 발행" : "결제 연결 준비 중"} →</button>
-    {detail ? <DetailSheet title={selected ? CONSENT_SHORT_LABELS[selected.id] : "구매 안내"} onClose={() => setDetail(null)}>{selected ? <p>{selected.label}</p> : null}<p>{prePaymentRefundNoticeKo}</p><p>{prePaymentPrivacyNoticeKo}</p>{LEGAL_TITLES.map((title, i) => <details key={title} open={detail === `policy-${i}`}><summary>{title} +</summary><LegalDocument index={i} onNavigate={n => setDetail(`policy-${n}`)} /></details>)}</DetailSheet> : null}
+    {detail ? <DetailSheet title={selected ? label(selected.id) : "구매 안내"} onClose={() => setDetail(null)}>{selected ? <p>{selected.id === "policyAgreement" && session.status === "member" ? "환불정책을 확인하고 동의합니다." : selected.label}</p> : null}<p>{prePaymentRefundNoticeKo}</p><p>{prePaymentPrivacyNoticeKo}</p>{LEGAL_TITLES.map((title, i) => <details key={title} open={detail === `policy-${i}`}><summary>{title} +</summary><LegalDocument index={i} onNavigate={n => setDetail(`policy-${n}`)} /></details>)}</DetailSheet> : null}
   </div>;
 }
