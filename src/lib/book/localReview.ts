@@ -5,7 +5,8 @@ import { createCheckoutConsentEvidence } from "../payment/checkoutConsent";
 import { getReportProduct } from "../payment/reportProductCatalog";
 import { prepareTossCheckoutRequest } from "../payment/tossCheckoutRequestAdapter";
 import { preparePaymentCheckoutSession } from "../payment/paymentCheckoutSessionBoundary";
-import { readPublishedReport } from "../payment/paidReportReliability";
+import { readPublishedReport, runPaidReportJob } from "../payment/paidReportReliability";
+import type { ReliabilityStore } from "../payment/paidReportReliabilityStore";
 import { createProductPreviewSnapshot, type ProductPreviewSnapshotDraft } from "../report-generation/productPreviewSnapshot";
 import { generateV4ShadowReport } from "../interpretation-v4/runtimeShadow";
 import { validateBookPublication } from "./storedReport";
@@ -72,4 +73,10 @@ export async function readLocalBook(id: string) {
     ? { ok: true, status: "COMPLETED", snapshot: JSON.parse(JSON.stringify(row.snapshot)) }
     : { ok: false, code: "LOCAL_REVIEW_ONLY" } }, id, validateBookPublication);
   return read.ok && read.status === "COMPLETED" ? read.snapshot : null;
+}
+// Same paid worker + same V4 generator/validator; a coupon changes no content.
+export async function runLocalBookJob(store: ReliabilityStore) {
+  if (!allowed()) return failure("NOT_FOUND");
+  return runPaidReportJob(store,{enabled:false,reason:"flag_disabled"},async payload=>
+    generateV4ShadowReport(payload,{evaluatedAt:new Date().toISOString(),policyDate:new Date().toISOString()}),validateBookPublication);
 }

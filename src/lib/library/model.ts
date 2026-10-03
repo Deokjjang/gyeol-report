@@ -5,7 +5,8 @@ export type LibraryRow = { reportId: string; productType: string; displayName: s
 export type LibraryItem = LibraryRow & { title: string; coverColor: string; ink: string; accessURL: string | null };
 export type ClaimState = "owned" | "claimable" | "unavailable";
 export function validLibraryReportId(value: unknown, local = false): value is string {
-  return typeof value === "string" && (local ? /^book-local-[a-f0-9-]{36}$/i : /^report_[a-z0-9_-]{13,80}$/i).test(value);
+  // Local review includes both preview IDs and real paid-worker IDs from coupon SQL.
+  return typeof value === "string" && (/^report_[a-z0-9_-]{13,80}$/i.test(value) || (local && /^book-local-[a-f0-9-]{36}$/i.test(value)));
 }
 export function libraryItem(row: LibraryRow, local = false, now = Date.now()): LibraryItem | null {
   const book = bookForProduct(row.productType);

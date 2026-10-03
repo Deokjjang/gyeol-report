@@ -26,6 +26,9 @@ type TossConfirmFetch = (
 ) => Promise<TossConfirmFetchResponse>;
 
 type ConfirmTossPaymentInput = TossConfirmRequest & {
+  // Internal order snapshot authority, never forwarded from a request body.
+  // Existing callers retain the exact 1,290-won contract.
+  readonly expectedAmount?: number;
   readonly secretKey: string;
   readonly fetchImpl?: TossConfirmFetch;
   readonly signal?: AbortSignal;
@@ -152,7 +155,7 @@ function mapTossConfirmResponse(
 
   if (
     totalAmount !== undefined &&
-    totalAmount !== TOSS_CONFIRM_REQUIRED_AMOUNT
+    totalAmount !== request.amount
   ) {
     return failure(
       "TOSS_CONFIRM_AMOUNT_MISMATCH",
@@ -160,7 +163,7 @@ function mapTossConfirmResponse(
     );
   }
 
-  if (amount !== undefined && amount !== TOSS_CONFIRM_REQUIRED_AMOUNT) {
+  if (amount !== undefined && amount !== request.amount) {
     return failure(
       "TOSS_CONFIRM_AMOUNT_MISMATCH",
       "Toss confirm amount does not match the order amount.",
@@ -188,7 +191,7 @@ function mapTossConfirmResponse(
     provider: "toss",
     paymentKeyReceived: true,
     orderId: request.orderId,
-    amount: TOSS_CONFIRM_REQUIRED_AMOUNT,
+    amount: request.amount,
     status,
     ...(method === undefined ? {} : { method }),
     ...(approvedAt === undefined ? {} : { approvedAt }),
@@ -218,7 +221,8 @@ export async function confirmTossPayment(
     );
   }
 
-  if (input.amount !== TOSS_CONFIRM_REQUIRED_AMOUNT) {
+  const expectedAmount = input.expectedAmount ?? TOSS_CONFIRM_REQUIRED_AMOUNT;
+  if (!Number.isSafeInteger(expectedAmount) || expectedAmount < 100 || input.amount !== expectedAmount) {
     return failure(
       "TOSS_CONFIRM_AMOUNT_MISMATCH",
       "Toss confirm amount does not match the order amount.",
@@ -243,7 +247,7 @@ export async function confirmTossPayment(
         body: JSON.stringify({
           paymentKey: input.paymentKey,
           orderId: input.orderId,
-          amount: TOSS_CONFIRM_REQUIRED_AMOUNT,
+          amount: expectedAmount,
         }),
       });
       return { response, body: await readJsonSafely(response) };
@@ -262,6 +266,10 @@ export async function confirmTossPayment(
       "TOSS_CONFIRM_PROVIDER_ERROR",
       parseProviderError(body, input.secretKey, input.paymentKey),
     );
+  }
+
+  if (input.expectedAmount !== undefined && (!isRecord(body) || (body.totalAmount ?? body.amount) !== expectedAmount)) {
+    return failure("TOSS_CONFIRM_AMOUNT_MISMATCH", "Toss confirm amount does not match the verified order amount.");
   }
 
   return mapTossConfirmResponse(body, input);

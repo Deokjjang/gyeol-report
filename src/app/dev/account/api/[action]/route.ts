@@ -7,6 +7,12 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
   const port = createLocalAccountPort(request);
   if (!port) return new NextResponse(null, { status: 404 });
   const action = (await context.params).action;
+  if (action.startsWith("coupon-")) {
+    const { localCouponStore } = await import("../../../../../lib/coupons/localDatabase");
+    const { handleLocalCoupons } = await import("../../../../../lib/coupons/handler");
+    const store = await localCouponStore();
+    return store ? handleLocalCoupons(request,action.slice(7),port,store) : new NextResponse(null,{status:404});
+  }
   if (action.startsWith("ticket-")) {
     const { localTicketStore, grantTestReportTickets, failNextLocalTicketPublish } = await import("../../../../../lib/tickets/localDatabase");
     const store = await localTicketStore();
@@ -30,11 +36,15 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
   if (action.startsWith("library-")) {
     const { handleLibrary } = await import("../../../../../lib/library/server");
     const { createLocalLibraryPort } = await import("../../../../../lib/library/localReview");
-    const library = createLocalLibraryPort();
+    const { withLocalCouponLibrary } = await import("../../../../../lib/coupons/localDatabase");
+    const library = withLocalCouponLibrary(createLocalLibraryPort());
     const { localTicketStore } = await import("../../../../../lib/tickets/localDatabase");
     return handleLibrary(request, action.slice(8), port, { ...library, async list(user) {
       const paid = await library.list(user), tickets = await (await localTicketStore())?.call("library", user);
-      return paid && tickets?.ok && Array.isArray(tickets.items) ? [...paid, ...tickets.items] : null;
+      const { listLocalCouponBooks } = await import("../../../../../lib/coupons/localDatabase");
+      const { localTicketUserId } = await import("../../../../../lib/tickets/localDatabase");
+      const coupons = await listLocalCouponBooks(localTicketUserId(user));
+      return paid && tickets?.ok && Array.isArray(tickets.items) ? [...paid, ...tickets.items, ...coupons] : null;
     } }, true);
   }
   const { handleAccount } = await import("../../../../../lib/account/handler");

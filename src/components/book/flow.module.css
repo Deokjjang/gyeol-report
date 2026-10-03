@@ -8,3 +8,12 @@
 .status { text-align:center; font-size:12px; padding:0 24px 24px; }
 .legalPage { max-width:800px; padding:24px 24px 60px; margin:0 auto; }
 .legalPage h1 { font-size:28px; font-weight:600; letter-spacing:-.04em; margin-bottom:18px; }
+.coupon { border:0; border-top:1px solid #222; margin:18px 0; padding:12px 0 0; font-size:12px; min-width:0; }
+.coupon legend { font-size:12px; padding:0 8px 0 0; }
+.coupon>div { display:flex; gap:8px; align-items:flex-end; }
+.coupon label { display:flex; gap:6px; align-items:center; }
+.coupon .couponCode { flex:1; min-width:0; display:flex; flex-direction:column; align-items:flex-start; }
+.coupon input,.coupon select { width:100%; min-width:0; border:0; border-bottom:1px solid #888; background:transparent; padding:8px 0; font:inherit; color:inherit; }
+.coupon button { border:0; border-bottom:1px solid #888; background:transparent; color:inherit; font:inherit; padding:8px 4px; cursor:pointer; white-space:nowrap; }
+.coupon p { min-height:16px; margin:7px 0 0; font-size:11px; }
+.coupon:disabled { opacity:.55; }

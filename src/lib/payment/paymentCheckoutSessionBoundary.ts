@@ -102,6 +102,8 @@ function createKakaoPayPayload(input: {
 
 export function preparePaymentCheckoutSession(
   input: PreparePaymentCheckoutSessionInput,
+  // Separate server-only order snapshot argument, never an input request field.
+  verifiedOrderAmount?: number,
 ): PaymentCheckoutSessionResult {
   if (!isNonEmptyString(input.paymentOrderId)) {
     return failure(
@@ -149,7 +151,8 @@ export function preparePaymentCheckoutSession(
     );
   }
 
-  if (input.amount !== product.amount) {
+  const payableAmount = verifiedOrderAmount ?? product.amount;
+  if (!Number.isSafeInteger(payableAmount) || payableAmount < 100 || payableAmount > product.amount || input.amount !== payableAmount) {
     return failure(
       "PAYMENT_CHECKOUT_AMOUNT_MISMATCH",
       "결제 금액이 상품 정보와 일치하지 않습니다.",
@@ -166,7 +169,7 @@ export function preparePaymentCheckoutSession(
   const payloadInput = {
     providerOrderId: input.providerOrderId,
     productLabelKo: product.labelKo,
-    amount: product.amount,
+    amount: payableAmount,
     currency: product.currency,
   };
 
@@ -178,7 +181,7 @@ export function preparePaymentCheckoutSession(
       productType: product.productType as ReportProductType,
       productLabelKo: product.labelKo,
       provider,
-      amount: product.amount,
+      amount: payableAmount,
       currency: product.currency,
       status: "prepared",
       checkoutMode: "provider_redirect_pending",

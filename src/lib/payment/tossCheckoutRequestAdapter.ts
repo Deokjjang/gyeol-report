@@ -59,7 +59,7 @@ function isNonEmptyString(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0;
 }
 
-function isPreparedTossSession(value: unknown): value is TossCheckoutSession {
+function isPreparedTossSession(value: unknown, verifiedOrderAmount?: number): value is TossCheckoutSession {
   if (!isRecord(value)) {
     return false;
   }
@@ -78,7 +78,8 @@ function isPreparedTossSession(value: unknown): value is TossCheckoutSession {
     !isNonEmptyString(value.productLabelKo) ||
     value.status !== "prepared" ||
     value.checkoutMode !== "provider_redirect_pending" ||
-    value.amount !== product.amount ||
+    value.amount !== (verifiedOrderAmount ?? product.amount) ||
+    !Number.isSafeInteger(value.amount) || Number(value.amount) < 100 || Number(value.amount) > product.amount ||
     value.currency !== product.currency
   ) {
     return false;
@@ -121,6 +122,8 @@ function isValidRedirectUrl(
 
 export function prepareTossCheckoutRequest(
   input: PrepareTossCheckoutRequestInput,
+  // Only a server-verified persisted amount. Default remains catalog pricing.
+  verifiedOrderAmount?: number,
 ): TossCheckoutRequestResult {
   if (isRecord(input.checkoutSession) && input.checkoutSession.provider !== "toss") {
     return failure(
@@ -129,7 +132,7 @@ export function prepareTossCheckoutRequest(
     );
   }
 
-  if (!isPreparedTossSession(input.checkoutSession)) {
+  if (!isPreparedTossSession(input.checkoutSession, verifiedOrderAmount)) {
     return failure(
       "TOSS_CHECKOUT_INVALID_SESSION",
       "Toss 결제 요청 세션이 올바르지 않습니다.",
