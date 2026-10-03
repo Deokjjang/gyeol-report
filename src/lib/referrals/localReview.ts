@@ -35,7 +35,7 @@ export async function localReferralStore(): Promise<ReferralStore | null> {
   const sql = sqlReferralStore(db);
   return { call: (action, user, data) => sql.call(action, user ? localTicketUserId(user) : null, data) };
 }
-export async function localReferralAccount(request: NextRequest, auth: AccountPort): Promise<AccountPort> {
+export async function localReferralAccount(request: NextRequest, auth: AccountPort, attribution = true): Promise<AccountPort> {
   const db = await localReferralDatabase(), store = await localReferralStore();
   if (!db || !store) return auth;
   const syncIdentity = async (user: AccountIdentity) => {
@@ -52,5 +52,5 @@ export async function localReferralAccount(request: NextRequest, auth: AccountPo
         JSON.stringify(Object.entries(ACCOUNT_POLICY_VERSIONS).map(([consent_type,document_version]) => ({consent_type,document_version,is_agreed:true,required:true})))])).rows[0].ok;
     },
   };
-  return withReferralAccount(request, mirrored, store, true);
+  return attribution ? withReferralAccount(request, mirrored, store, true) : mirrored;
 }

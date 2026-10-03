@@ -11,12 +11,23 @@ import type { ReliabilityStore } from "../payment/paidReportReliabilityStore";
 // Storage injection for local SQL verification; token generation and validation stay here.
 export type ShareStorePort = {
   read: ReliabilityStore["call"];
+  owned?(reportId: string, user: string): Promise<boolean>;
   find(key: "report_id" | "token", value: string): Promise<{ report_id: string; token: string; revoked_at: string | null } | null>;
   insert(reportId: string, token: string): Promise<boolean>;
 };
-function sharePort(): ShareStorePort {
+export function sharePort(): ShareStorePort {
   return {
-    read: (action, data) => createPaidReportReliabilityStore().call(action, data),
+    async read(action, data) {
+      const result=await createPaidReportReliabilityStore().call(action,data);
+      if(result.ok||action!=="read_report"||!(await import("../book/publicGate")).bookExperiencePublicEnabled())return result;
+      const db=client();if(!db)return result;
+      const r=await db.rpc("book_share_publication",{p_report:data?.reportId,p_user:null});return !r.error&&r.data?.ok?r.data:result;
+    },
+    async owned(reportId,user){
+      if(!(await import("../book/publicGate")).bookExperiencePublicEnabled())return false;
+      const db=client();if(!db)return false;
+      const r=await db.rpc("book_share_publication",{p_report:reportId,p_user:user});return !r.error&&r.data?.ok===true;
+    },
     async find(key, value) {
       const db = client(); if (!db) return null;
       const { data, error } = await withDeadline(async signal => await db.from("report_share_links")
@@ -41,7 +52,8 @@ function client() {
 }
 
 export function validShareReportId(value: unknown): value is string {
-  return typeof value === "string" && /^report_[a-z0-9_-]{13,80}$/i.test(value);
+  return typeof value === "string" && (/^report_[a-z0-9_-]{13,80}$/i.test(value) ||
+    (["development","test"].includes(process.env.NODE_ENV)&&/^book-local-[a-f0-9-]{36}$/.test(value)));
 }
 
 export async function loadShareablePublication(reportId: string, validatePublication = validateProductPublication, port = sharePort()) {

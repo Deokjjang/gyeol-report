@@ -1,7 +1,7 @@
 import "server-only";
 import { readFile } from "node:fs/promises";
 import type { PGlite } from "@electric-sql/pglite";
-import { createTicketTestDatabase,localTicketUserId } from "../tickets/localDatabase";
+import { createTicketTestDatabase,localTicketDatabase,localTicketUserId } from "../tickets/localDatabase";
 import { confirmTossPayment } from "../payment/tossConfirmClient";
 import { readPublishedReport } from "../payment/paidReportReliability";
 import { validateBookPublication } from "../book/storedReport";
@@ -34,7 +34,8 @@ export async function seedCouponFixtures(db:PGlite) {
 const state=globalThis as typeof globalThis & {__couponSqlReview?:Promise<PGlite>};
 export async function localCouponDatabase() {
   if(!["test","development"].includes(process.env.NODE_ENV)) return null;
-  return state.__couponSqlReview??=createCouponTestDatabase();
+  return state.__couponSqlReview??=(async()=>{const db=(await localTicketDatabase())!;
+    await db.exec(await readFile("supabase/migrations/20261003123157_v4_coupon_foundation.sql","utf8"));return db;})();
 }
 export async function localCouponStore():Promise<CouponStore|null> {
   const db=await localCouponDatabase(); if(!db)return null;

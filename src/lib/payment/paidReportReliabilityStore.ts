@@ -35,6 +35,9 @@ export function createPaidReportReliabilityStore(env = process.env): Reliability
               const { reconcileReferrals } = await import("../referrals/service");
               const { createReferralStore } = await import("../referrals/supabase");
               await reconcileReferrals(createReferralStore());
+              const { reconcileCampaigns } = await import("../growth/service");
+              const { createCampaignStore } = await import("../growth/supabase");
+              await reconcileCampaigns(createCampaignStore());
             }
           } catch { /* Retry from durable publications on the next account visit. */ }
         }

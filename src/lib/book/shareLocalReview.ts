@@ -26,8 +26,13 @@ export async function localBookShareDatabase() {
   })();
 }
 export function sqlBookSharePort(db: PGlite): ShareStorePort {
+  const available=async()=>(await db.query<{present:boolean}>("select to_regprocedure('public.book_share_publication(text,uuid)') is not null as present")).rows[0].present;
   return {
-    async read(action, data = {}) { return (await db.query<{ result: ReliabilityResult }>("select paid_report_reliability($1,$2::jsonb) result", [action, JSON.stringify(data)])).rows[0].result; },
+    async read(action, data = {}) {
+      const result=(await db.query<{ result: ReliabilityResult }>("select paid_report_reliability($1,$2::jsonb) result", [action, JSON.stringify(data)])).rows[0].result;
+      return !result.ok&&action==="read_report"&&await available()?(await db.query<{result:ReliabilityResult}>("select book_share_publication($1,null) result",[data.reportId])).rows[0].result:result;
+    },
+    async owned(reportId,user){return await available()&&(await db.query<{result:ReliabilityResult}>("select book_share_publication($1,$2) result",[reportId,localTicketUserId(user)])).rows[0].result.ok;},
     async find(key, value) {
       const query = key === "token" ? "select report_id,token,revoked_at from report_share_links where token=$1" : "select report_id,token,revoked_at from report_share_links where report_id=$1";
       return (await db.query<{ report_id: string; token: string; revoked_at: string | null }>(query, [value])).rows[0] ?? null;
@@ -50,7 +55,7 @@ export function sqlBookShareLibrary(db: PGlite): LibraryPort {
 }
 export async function readOwnedLocalShareBook(request: NextRequest, reportId: string) {
   const db = await localBookShareDatabase(), auth = createLocalAccountPort(request);
-  if (!db || !auth || !await mayShareBook(request, reportId, auth, sqlBookShareLibrary(db), true)) return null;
+  if (!db || !auth || !await mayShareBook(request, reportId, auth, sqlBookShareLibrary(db), true, sqlBookSharePort(db))) return null;
   return (await loadShareablePublication(reportId, validateBookPublication, sqlBookSharePort(db)))?.snapshot ?? null;
 }
 // Explicit developer fixture only. Normal ready → bound purchase → mock confirm → paid worker.
