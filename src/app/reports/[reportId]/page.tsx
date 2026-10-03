@@ -1622,7 +1622,7 @@ export default async function ReportResultPage({
         }
       >
         {bookExperiencePublicEnabled() && state.productPreview.productVersion === "v4"
-          ? (await import("../../../lib/book/storedReport")).StoredBookReport({ snapshot: state.productPreview, shareUrl: url, saveToLibrary: isPaid && accountPublicEnabled() ? { reportId } : undefined })
+          ? (await import("../../../lib/book/storedReport")).StoredBookReport({ snapshot: state.productPreview, shareUrl: url, shareOwner: isPaid ? { reportId } : undefined, saveToLibrary: isPaid && accountPublicEnabled() ? { reportId } : undefined })
           : renderProductPreviewState(state.productPreview)}
       </ReportShareProvider>
       {SaveLibrary && !(bookExperiencePublicEnabled() && state.productPreview.productVersion === "v4") ? <SaveLibrary reportId={reportId} /> : null}

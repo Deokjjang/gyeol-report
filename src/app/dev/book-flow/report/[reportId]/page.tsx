@@ -8,6 +8,12 @@ export default async function LocalBookReport({ params }: { params: Promise<{ re
   if (!snapshot) {
     const { headers } = await import("next/headers");
     const { NextRequest } = await import("next/server");
+    const { readOwnedLocalShareBook } = await import("../../../../../lib/book/shareLocalReview");
+    snapshot = await readOwnedLocalShareBook(new NextRequest("http://127.0.0.1/dev/book-flow", { headers: await headers() }), reportId);
+  }
+  if (!snapshot) {
+    const { headers } = await import("next/headers");
+    const { NextRequest } = await import("next/server");
     const { createLocalAccountPort } = await import("../../../../../lib/account/localReview");
     const { localTicketStore } = await import("../../../../../lib/tickets/localDatabase");
     const { readPublishedReport } = await import("../../../../../lib/payment/paidReportReliability");
@@ -29,5 +35,5 @@ export default async function LocalBookReport({ params }: { params: Promise<{ re
   }
   if (!snapshot) return <p>로컬 검수 책을 찾을 수 없습니다. 서버를 다시 시작하면 검수 데이터가 사라집니다.</p>;
   const { StoredBookReport } = await import("../../../../../lib/book/storedReport");
-  return <StoredBookReport snapshot={snapshot} home="/dev/book-flow" saveToLibrary={{ reportId, local: true }} />;
+  return <StoredBookReport snapshot={snapshot} home="/dev/book-flow" saveToLibrary={{ reportId, local: true }} shareOwner={{ reportId, local: true }} />;
 }

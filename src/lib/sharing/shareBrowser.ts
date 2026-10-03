@@ -6,13 +6,13 @@ export type KakaoSdk = {
   Share: { sendDefault(card: ReturnType<typeof kakaoShareCard>): void };
 };
 
-export function kakaoShareCard(data: ReportShareData) {
+export function kakaoShareCard(data: ReportShareData, presentation = { imageUrl: SHARE_IMAGE, width: 1536, height: 1024, button: "리포트 보기" }) {
   const link = { mobileWebUrl: data.url, webUrl: data.url };
   return {
     objectType: "feed" as const,
-    content: { title: data.title, description: data.description, imageUrl: SHARE_IMAGE,
-      imageWidth: 1536, imageHeight: 1024, link },
-    buttons: [{ title: "리포트 보기", link }],
+    content: { title: data.title, description: data.description, imageUrl: presentation.imageUrl,
+      imageWidth: presentation.width, imageHeight: presentation.height, link },
+    buttons: [{ title: presentation.button, link }],
   };
 }
 

@@ -25,6 +25,11 @@ type PaidShareReportPageProps = {
 
 export async function generateMetadata({ params }: PaidShareReportPageProps) {
   const { token = "" } = await params;
+  const { bookExperiencePublicEnabled } = await import("../../../lib/book/publicGate");
+  if (bookExperiencePublicEnabled()) {
+    const book = await (await import("../../../lib/book/shareServer")).loadBookShare(token);
+    if (book) return (await import("../../../lib/book/shareModel")).bookShareMetadata(book.model);
+  }
   const shared = await loadSharedReport(token);
   return reportShareMetadata(shared?.share);
 }
@@ -343,6 +348,11 @@ export default async function PaidShareReportPage({
     const validator = bookExperiencePublicEnabled() ? (await import("../../../lib/book/storedReport")).validateBookPublication : undefined;
     const shared = await loadSharedReport(token, validator);
     if (!shared) return renderUnavailableState();
+    if (bookExperiencePublicEnabled() && shared.snapshot.productVersion === "v4") {
+      const book = await (await import("../../../lib/book/shareServer")).loadBookShare(token);
+      const { SharedBookEntry } = await import("../../../components/book/SharedBookEntry");
+      return book ? <SharedBookEntry model={book.model} /> : renderUnavailableState();
+    }
     return <ReportShareProvider key={token} shared share={shared.share}>
       {await ReportResultPage({ params: Promise.resolve({ reportId: shared.snapshot.reportId }) })}
     </ReportShareProvider>;

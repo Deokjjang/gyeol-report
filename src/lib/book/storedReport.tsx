@@ -16,10 +16,10 @@ export function storedBook(snapshot: unknown, shareUrl?: string | null) {
   if (!isProductPreviewSnapshot(snapshot) || snapshot.productVersion !== "v4" || !projectV4Snapshot(snapshot)) return null;
   const data = projectBook(snapshot.evidencePacket as V4RuntimeEvidence);
   if (!data) return null;
-  const share = projectBookShare({ productType: snapshot.productType, names: data.names, selectedYear: data.title.match(/\d{4}/)?.[0], reportId: snapshot.reportId, shareUrl });
+  const share = projectBookShare({ productType: snapshot.productType, names: data.people[0].name, selectedYear: data.title.match(/\d{4}/)?.[0], shareUrl });
   return share ? { data, share } : null;
 }
-export function StoredBookReport({ snapshot, shareUrl, home, saveToLibrary }: { snapshot: unknown; shareUrl?: string | null; home?: string; saveToLibrary?: { reportId: string; local?: boolean } }) {
+export function StoredBookReport({ snapshot, shareUrl, home, saveToLibrary, shareOwner }: { snapshot: unknown; shareUrl?: string | null; home?: string; saveToLibrary?: { reportId: string; local?: boolean }; shareOwner?: { reportId: string; local?: boolean } }) {
   const result = storedBook(snapshot, shareUrl);
-  return result ? <BookReadingPresentation {...result} home={home} saveToLibrary={saveToLibrary} /> : <p role="alert">저장된 책 정보를 확인할 수 없습니다.</p>;
+  return result ? <BookReadingPresentation {...result} home={home} saveToLibrary={saveToLibrary} shareOwner={shareOwner} /> : <p role="alert">저장된 책 정보를 확인할 수 없습니다.</p>;
 }

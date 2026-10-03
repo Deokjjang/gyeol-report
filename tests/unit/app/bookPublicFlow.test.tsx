@@ -145,9 +145,11 @@ describe("presentation contracts", () => {
     expect(src("src/lib/book/storedReport.tsx")).not.toMatch(/generateV4|runtimeShadow|compose/);
   });
   it("share model uses registry, existing URL/token and no SDK", () => {
-    const share = projectBookShare({ productType: "annual_fortune", selectedYear: "2027", names: "하린", reportId: "id", shareUrl: "https://gyeolreport.com/r/test_token" })!;
-    expect(share).toMatchObject({ title: "나의 2027", displayTitle: "하린님의 나의 2027", coverColor: BOOKS[5].color, issue: "06", token: "test_token", reportUrl: "/reports/id" });
-    expect(projectBookShare({ productType: "annual_fortune", names: "하린", reportId: "id", shareUrl: "https://evil.example/r/x" })?.shareUrl).toBeNull();
+    const token = `gr_${"x".repeat(32)}`;
+    const share = projectBookShare({ productType: "annual_fortune", selectedYear: "2027", names: "하린", shareUrl: `https://gyeolreport.com/r/${token}` })!;
+    expect(share).toMatchObject({ bookTitle: "나의 2027", displayTitle: "하린의 2027", coverColor: BOOKS[5].color, issueNumber: "06", shareToken: token, isShareable: false });
+    expect(share).not.toHaveProperty("reportUrl");
+    expect(projectBookShare({ productType: "annual_fortune", names: "하린", shareUrl: "https://evil.example/r/x" })?.shareUrl).toBeNull();
     expect(readerTitle(BOOKS[5], "<script>")).toBe("나의 한 해");
   });
   it("footer contact values preserved, primary support is Kakao, business collapsed", () => {
