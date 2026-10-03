@@ -8,6 +8,7 @@ export type BookShareModel = {
   bookTitle: string; issueNumber: string; coverColor: string;
   displayName: string; displayTitle: string; reportVersion: "v4";
   publishedAt: string | null; expiresAt: string | null; isShareable: boolean;
+  referral?: { token: string; url: string; mayJoin: boolean };
 };
 // Allowlisted presentation only. Never contains a private report URL or input packet.
 export function projectBookShare(input: { productType: string; names: string; selectedYear?: string; shareUrl?: string | null; publishedAt?: string; expiresAt?: string }): BookShareModel | null {
@@ -30,7 +31,7 @@ export function projectBookShare(input: { productType: string; names: string; se
 }
 export const bookOgUrl = (model: BookShareModel) => model.shareUrl ? `${model.shareUrl}/book-og` : null;
 export function bookNativeData(model: BookShareModel) {
-  return { title: model.displayTitle, description: "한 권 펼쳐보세요.", url: model.shareUrl ?? "", productSlug: bookForProduct(model.productType)!.slug };
+  return { title: model.displayTitle, description: "한 권 펼쳐보세요.", url: model.referral?.url ?? model.shareUrl ?? "", productSlug: bookForProduct(model.productType)!.slug };
 }
 export function bookKakaoCard(model: BookShareModel) {
   return kakaoShareCard({ ...bookNativeData(model), title: model.displayName ? `${model.displayName}님의 책이 도착했습니다.` : "한 권의 책이 도착했습니다." },

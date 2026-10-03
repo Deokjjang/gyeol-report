@@ -18,6 +18,7 @@ import { ReportStatusView } from "../../../components/report/ReportStatusView";
 export const dynamic = "force-dynamic";
 
 type PaidShareReportPageProps = {
+  readonly searchParams?: Promise<{ ref?: string }>;
   readonly params: Promise<{
     readonly token?: string;
   }>;
@@ -340,6 +341,7 @@ function renderPaidReport(view: PaidReportSafeView) {
 
 export default async function PaidShareReportPage({
   params,
+  searchParams,
 }: PaidShareReportPageProps) {
   const routeParams = await params;
   const token = routeParams.token ?? "";
@@ -351,7 +353,18 @@ export default async function PaidShareReportPage({
     if (bookExperiencePublicEnabled() && shared.snapshot.productVersion === "v4") {
       const book = await (await import("../../../lib/book/shareServer")).loadBookShare(token);
       const { SharedBookEntry } = await import("../../../components/book/SharedBookEntry");
-      return book ? <SharedBookEntry model={book.model} /> : renderUnavailableState();
+      if (!book) return renderUnavailableState();
+      const ref = (await searchParams)?.ref;
+      if (ref && (await import("../../../lib/account/gate")).accountPublicEnabled()) {
+        const { headers } = await import("next/headers");
+        const { NextRequest } = await import("next/server");
+        const { createAccountPort } = await import("../../../lib/account/supabase");
+        const { createReferralStore } = await import("../../../lib/referrals/supabase");
+        const { referralPresentation } = await import("../../../lib/referrals/service");
+        const auth = createAccountPort(new NextRequest("https://gyeolreport.com/r",{headers:await headers()}));
+        if (auth) return <SharedBookEntry model={await referralPresentation(book.model,ref,auth,createReferralStore())} />;
+      }
+      return <SharedBookEntry model={book.model} />;
     }
     return <ReportShareProvider key={token} shared share={shared.share}>
       {await ReportResultPage({ params: Promise.resolve({ reportId: shared.snapshot.reportId }) })}

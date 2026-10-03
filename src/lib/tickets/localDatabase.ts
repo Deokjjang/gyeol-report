@@ -40,6 +40,11 @@ export async function localTicketStore(): Promise<TicketStore | null> {
     });
   } };
 }
+// Shared local SQL instance: referral grants must appear in the EXISTING ticket ledger.
+export async function localTicketDatabase() {
+  if (!["development", "test"].includes(process.env.NODE_ENV)) return null;
+  return state.__ticketSqlReview ??= createTicketTestDatabase();
+}
 // Explicit fixture helper only. Never runs on login, signup or library visits.
 export async function grantTestReportTickets(store: TicketStore, user: string, scenario: "one" | "several") {
   return store.call("grant", user, { quantity: scenario === "one" ? 1 : 6, sourceType: "manual", sourceRef: `local-review-${user}-${scenario}`, key: `local-review-${scenario}`, reason: "LOCAL_TEST_ONLY" });

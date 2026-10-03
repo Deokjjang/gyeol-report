@@ -4,8 +4,11 @@ import { localAccountAllowed } from "../../../../../lib/account/gate";
 async function handle(request: NextRequest, context: { params: Promise<{ action: string }> }) {
   if (!localAccountAllowed(request)) return new NextResponse(null, { status: 404 });
   const { createLocalAccountPort } = await import("../../../../../lib/account/localReview");
-  const port = createLocalAccountPort(request);
-  if (!port) return new NextResponse(null, { status: 404 });
+  const original = createLocalAccountPort(request);
+  if (!original) return new NextResponse(null, { status: 404 });
+  const { localReferralAccount, localReferralStore } = await import("../../../../../lib/referrals/localReview");
+  const { withReferralTickets, reconcileReferrals } = await import("../../../../../lib/referrals/service");
+  const port = await localReferralAccount(request, original), referrals = await localReferralStore();
   const action = (await context.params).action;
   if (action.startsWith("coupon-")) {
     const { localCouponStore } = await import("../../../../../lib/coupons/localDatabase");
@@ -31,7 +34,7 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
       return NextResponse.json({ ok: result.ok }, { headers: { "Cache-Control": "private, no-store" } });
     }
     const { handleTickets } = await import("../../../../../lib/tickets/handler");
-    return handleTickets(request, action.slice(7), port, store);
+    return handleTickets(request, action.slice(7), port, referrals ? withReferralTickets(store,referrals) : store);
   }
   if (action.startsWith("library-")) {
     const { handleLibrary } = await import("../../../../../lib/library/server");
@@ -40,11 +43,15 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
     const library = withLocalCouponLibrary(createLocalLibraryPort());
     const { localTicketStore } = await import("../../../../../lib/tickets/localDatabase");
     return handleLibrary(request, action.slice(8), port, { ...library, async list(user) {
+      if (referrals) await reconcileReferrals(referrals,user);
       const paid = await library.list(user), tickets = await (await localTicketStore())?.call("library", user);
       const { listLocalCouponBooks } = await import("../../../../../lib/coupons/localDatabase");
       const { localTicketUserId } = await import("../../../../../lib/tickets/localDatabase");
       const coupons = await listLocalCouponBooks(localTicketUserId(user));
-      return paid && tickets?.ok && Array.isArray(tickets.items) ? [...paid, ...tickets.items, ...coupons] : null;
+      const { localBookShareDatabase } = await import("../../../../../lib/book/shareLocalReview");
+      const db = await localBookShareDatabase();
+      const shared = db ? (await db.query<{items: import("../../../../../lib/library/model").LibraryRow[]}>("select list_account_reports($1) items",[localTicketUserId(user)])).rows[0].items : [];
+      return paid && tickets?.ok && Array.isArray(tickets.items) ? [...paid, ...tickets.items, ...coupons, ...shared] : null;
     } }, true);
   }
   const { handleAccount } = await import("../../../../../lib/account/handler");

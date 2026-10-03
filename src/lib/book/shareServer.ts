@@ -7,6 +7,7 @@ import { issuePublishedReportShare, loadSharedReport, validShareReportId, type S
 import type { ReportGenerationInput } from "../report-generation/reportInputAdapter";
 import { validateBookPublication, storedBook } from "./storedReport";
 import { projectBookShare } from "./shareModel";
+import type { ReferralStore } from "../referrals/service";
 
 export const BOOK_SHARE_HEADERS = { "Cache-Control": "private, no-store, max-age=0", "Referrer-Policy": "no-referrer", "X-Robots-Tag": "noindex, nofollow, noarchive", "Vary": "Cookie" };
 export async function loadBookShare(token: string, port?: ShareStorePort) {
@@ -38,7 +39,7 @@ export async function mayShareBook(request: NextRequest, reportId: string, auth:
   const state = await library.claim(reportId, member?.id ?? null, hash, false);
   return state === "owned" || state === "claimable";
 }
-export async function prepareBookShare(request: NextRequest, auth: AccountPort, library: LibraryPort, port?: ShareStorePort, local = false) {
+export async function prepareBookShare(request: NextRequest, auth: AccountPort, library: LibraryPort, port?: ShareStorePort, local = false, referrals?: ReferralStore) {
   const json = (body: object, status: number) => auth.finish(NextResponse.json(body, { status, headers: BOOK_SHARE_HEADERS }));
   const url = new URL(request.url); if (local && request.headers.get("host")) url.host = request.headers.get("host")!;
   if (request.method !== "POST") return json({}, 405);
@@ -54,6 +55,7 @@ export async function prepareBookShare(request: NextRequest, auth: AccountPort, 
     if (!result.ok) return json({}, 404);
     const token = new URL(result.data.url).pathname.slice(3), shared = await loadBookShare(token, port);
     if (!shared || !await mayShareBook(request, body.reportId, auth, library, local)) return json({}, 403);
-    return json({ model: shared.model }, 200);
+    const model = referrals ? await (await import("../referrals/service")).attachReferral(shared.model, body.reportId, shared.snapshot, auth, referrals) : shared.model;
+    return json({ model }, 200);
   } catch { return json({ error: "공유 링크를 준비하지 못했습니다. 다시 시도해 주세요." }, 503); }
 }

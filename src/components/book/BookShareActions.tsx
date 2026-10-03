@@ -17,8 +17,9 @@ export function BookShareActions({ owner, model, local = false }: { owner?: { re
     try { if (!local && kakaoKey && window.Kakao && !window.Kakao.isInitialized()) window.Kakao.init(kakaoKey); } catch { /* Copy fallback. */ }
   }
   async function copy(value: BookShareModel) {
-    if (await copyShareLink(value.shareUrl!)) { setMessage("복사됨"); bookShareEvent("report_share_copy", value.productType, local); }
-    else { setManual(value.shareUrl!); setMessage("링크를 선택해서 복사해 주세요."); }
+    const url = value.referral?.url ?? value.shareUrl!;
+    if (await copyShareLink(url)) { setMessage("복사됨"); bookShareEvent("report_share_copy", value.productType, local); }
+    else { setManual(url); setMessage("링크를 선택해서 복사해 주세요."); }
   }
   async function share(mode: "kakao" | "native" | "copy") {
     if (pending.current) return;
@@ -56,8 +57,9 @@ export function BookShareActions({ owner, model, local = false }: { owner?: { re
     {!local && kakaoKey ? <Script id="gyeol-kakao-sdk" src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.3/kakao.min.js" integrity="sha384-oroumrnFVE0xtgqyDZJARgERibXg2C28380uaUZz2kHDS5CR7tu20eGiOU6GkTpy" crossOrigin="anonymous" strategy="afterInteractive" onReady={initKakao} /> : null}
     <h2>이 책 공유하기</h2><div className={s.buttons}>{(["kakao", "native", "copy"] as const).map((mode, i) => <button key={mode} type="button" disabled={busy} aria-label={["카카오톡으로 책 공유", "시스템 공유", "공유 링크 복사"][i]} onClick={() => void share(mode)}><ShareIcon kind={i} /><span>{["카카오톡", "공유", "링크 복사"][i]}</span></button>)}</div>
     <p className={s.notice}>링크를 받은 사람은 책 전체를 읽을 수 있습니다.</p>
+    {owner && ready?.referral ? <p className={s.notice}>친구는 처음 가입·동의하면 1장, 나는 친구가 첫 책을 완성하면 1장을 받습니다.</p> : null}
     <p className={s.status} role="status">{message}</p>
     {manual ? <input aria-label="복사할 공유 링크" readOnly value={manual} onFocus={e => e.target.select()} /> : null}
-    {local && owner && ready?.shareToken ? <a className={s.review} href={`/dev/book-flow/r/${ready.shareToken}`}>로컬 공유 화면 검수 ↗</a> : null}
+    {local && owner && ready?.shareToken ? <a className={s.review} href={`/dev/book-flow/r/${ready.shareToken}${ready.referral ? `?ref=${ready.referral.token}` : ""}`}>로컬 공유 화면 검수 ↗</a> : null}
   </section>;
 }

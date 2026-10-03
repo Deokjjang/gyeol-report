@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { randomUUID } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import type { PGlite } from "@electric-sql/pglite";
-import { createTicketTestDatabase, localTicketUserId } from "../tickets/localDatabase";
+import { localTicketDatabase, localTicketUserId } from "../tickets/localDatabase";
 import type { ReliabilityResult } from "../payment/paidReportReliabilityStore";
 import { confirmPaidReport } from "../payment/paidReportReliability";
 import { runLocalBookJob, validateLocalBookInput } from "./localReview";
@@ -20,7 +20,7 @@ const state = globalThis as typeof globalThis & { __bookShareReview?: Promise<PG
 export async function localBookShareDatabase() {
   if (!["test", "development"].includes(process.env.NODE_ENV)) return null;
   return state.__bookShareReview ??= (async () => {
-    const db = await createTicketTestDatabase();
+    const db = (await localTicketDatabase())!;
     await db.exec(await readFile("supabase/migrations/20260929113608_report_share_links.sql", "utf8"));
     return db;
   })();
@@ -67,7 +67,10 @@ export async function createLocalShareFixture(request: NextRequest, payload: unk
   if (!bound) return NextResponse.json({ error: "LOCAL_BIND_FAILED" }, { status: 503 });
   const paid = await confirmPaidReport({ orderId: id, paymentKey: `LOCAL_ONLY_${id}`, amount: 1290 }, { call: port.read }, async () => ({ ok: true, confirm: { provider: "toss", paymentKeyReceived: true, orderId: id, amount: 1290, status: "DONE" } }));
   if (!paid.ok || typeof paid.reportId !== "string") return NextResponse.json({ error: "LOCAL_CONFIRM_FAILED" }, { status: 503 });
-  await runLocalBookJob({ call: port.read });
+  const { localReferralStore } = await import("../referrals/localReview");
+  const { withReferralPublication } = await import("../referrals/service");
+  const referrals = await localReferralStore();
+  await runLocalBookJob(referrals ? withReferralPublication({ call: port.read }, referrals) : { call: port.read });
   const published = await loadShareablePublication(paid.reportId, validateBookPublication, port);
   if (!published) return NextResponse.json({ error: "LOCAL_PUBLICATION_FAILED" }, { status: 503 });
   const result = NextResponse.json({ reportId: paid.reportId, reportUrl: `/dev/book-flow/report/${paid.reportId}` }, { headers: BOOK_SHARE_HEADERS });

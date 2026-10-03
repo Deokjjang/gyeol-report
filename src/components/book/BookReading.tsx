@@ -10,6 +10,7 @@ import { SaveToLibrary } from "../account/SaveToLibrary";
 import { BookShareActions } from "./BookShareActions";
 import { bookShareEvent } from "../../lib/book/shareEvents";
 import shareStyle from "./bookShare.module.css";
+import { ReferralBookCta } from "./ReferralBookCta";
 
 export function BookReading({ data, share, home = "/", saveToLibrary, shareOwner, shared = false, local = false }: { data: BookData; share: BookShareModel; home?: string; saveToLibrary?: { reportId: string; local?: boolean }; shareOwner?: { reportId: string; local?: boolean }; shared?: boolean; local?: boolean }) {
   const [page, setPage] = useState(0), [note, setNote] = useState<BookNote | null>(null), [message, setMessage] = useState("");
@@ -30,7 +31,7 @@ export function BookReading({ data, share, home = "/", saveToLibrary, shareOwner
       <div className={s.pageScroll} ref={scroll} tabIndex={-1} role="region" aria-label="책 내용" data-page={data.pages[page].kind} data-page-number={page + 1}>
         <BookReader data={data} page={data.pages[page]} onNote={setNote} onPage={turn} onShare={() => setMessage(`${share.displayTitle} · 공유 연결 준비 중입니다. 실제 공유는 실행하지 않습니다.`)}
           shareActions={shared || shareOwner ? <BookShareActions owner={shared ? undefined : shareOwner} model={shared ? share : undefined} local={local || shareOwner?.local} /> : undefined}
-          backAction={shared ? <a className={shareStyle.cta} href={home} onClick={() => bookShareEvent("shared_cta_clicked", share.productType, local)}>나도 내 책 만들기 ↗</a>
+          backAction={shared && share.referral ? <ReferralBookCta share={share} local={local} home={home} /> : shared ? <a className={shareStyle.cta} href={home} onClick={() => bookShareEvent("shared_cta_clicked", share.productType, local)}>나도 내 책 만들기 ↗</a>
             : data.pages[page].kind === "back" && saveToLibrary ? <SaveToLibrary {...saveToLibrary} /> : undefined} />
       </div>
       <nav className={s.pageNav} aria-label="책 읽기 위치"><button aria-label="이전 페이지" disabled={!page} onClick={() => turn(page - 1)}>←</button><span><strong>{data.title}</strong><span>{String(page + 1).padStart(2, "0")} / {data.pages.length}</span></span><button aria-label="다음 페이지" disabled={page === data.pages.length - 1} onClick={() => turn(page + 1)}>→</button></nav>

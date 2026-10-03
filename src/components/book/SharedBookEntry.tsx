@@ -18,7 +18,7 @@ export function SharedBookEntry({ model, local = false }: { model: BookShareMode
     try {
       const response = await fetch(`${local ? "/dev/book-flow" : ""}/r/${model.shareToken}/book-data`, { cache: "no-store", credentials: "omit" });
       if (!response.ok) { setError("이 책을 열 수 없습니다. 공유 기간이 지났거나 공유가 해제되었을 수 있습니다."); return; }
-      const result = await response.json(); setOpened(result); bookShareEvent("shared_report_opened", model.productType, local);
+      const result = await response.json(); setOpened({ ...result, share: { ...result.share, ...(model.referral ? { referral: model.referral } : {}) } }); bookShareEvent("shared_report_opened", model.productType, local);
     } catch { setError("책을 불러오지 못했습니다. 다시 펼쳐 주세요."); }
     finally { pending.current = false; setBusy(false); }
   }

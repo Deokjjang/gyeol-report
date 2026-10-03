@@ -17,7 +17,7 @@ export async function handleTickets(request: NextRequest, action: string, auth: 
     if (!user || !snapshot || accountSession(user, snapshot).status !== "member") return json({}, 401);
     if (action !== "redeem") {
       const result = await store.call(action, user.id);
-      return result.ok ? json({ quantity: result.quantity, ...(action === "history" ? { history: result.history } : {}) }) : json({}, 503);
+      return result.ok ? json({ quantity: result.quantity, ...(result.referralNotice ? { referralNotice: result.referralNotice } : {}), ...(action === "history" ? { history: result.history } : {}) }) : json({}, 503);
     }
     const raw = await request.text(); if (raw.length > 16384) return json({}, 413);
     let b: unknown; try { b = JSON.parse(raw); } catch { return json({}, 400); }

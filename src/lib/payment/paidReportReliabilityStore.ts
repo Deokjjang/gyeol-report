@@ -24,8 +24,21 @@ export function createPaidReportReliabilityStore(env = process.env): Reliability
         const result = await withDeadline(async signal =>
           await client.rpc("paid_report_reliability", { p_action: action, p_data: data }).abortSignal(signal),
         RELIABILITY_RPC_TIMEOUT_MS);
-        return !result.error && isRecord(result.data) && typeof result.data.ok === "boolean"
+        const response = !result.error && isRecord(result.data) && typeof result.data.ok === "boolean"
           ? result.data as ReliabilityResult : { ok: false, code: "DURABLE_STORAGE_FAILED" };
+        // Post-commit observer only. Never changes the payment/publish result.
+        if (response.ok && action === "finish_job" && data.success === true) {
+          try {
+            const { bookExperiencePublicEnabled } = await import("../book/publicGate");
+            const { accountPublicEnabled } = await import("../account/gate");
+            if (bookExperiencePublicEnabled() && accountPublicEnabled()) {
+              const { reconcileReferrals } = await import("../referrals/service");
+              const { createReferralStore } = await import("../referrals/supabase");
+              await reconcileReferrals(createReferralStore());
+            }
+          } catch { /* Retry from durable publications on the next account visit. */ }
+        }
+        return response;
       } catch {
         return { ok: false, code: "DURABLE_STORAGE_FAILED" };
       }

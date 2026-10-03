@@ -5,9 +5,9 @@ import type { AccountPort } from "./handler";
 import { ACCOUNT_POLICY_VERSIONS, type AccountIdentity, type AccountSnapshot } from "./policy";
 
 // Dev-only opaque sessions. These never reach or impersonate Supabase users.
-type State = { sessions: Map<string, { user: AccountIdentity; expires: number }>; codes: Map<string, { user: AccountIdentity; expires: number }>; accounts: Map<string, AccountSnapshot>; requests: Set<string> };
+type State = { sessions: Map<string, { user: AccountIdentity; expires: number }>; codes: Map<string, { user: AccountIdentity; expires: number }>; accounts: Map<string, AccountSnapshot>; requests: Set<string>; created?: Map<string, string> };
 const root = globalThis as typeof globalThis & { __gyeolAccountReview?: State };
-function state() { return root.__gyeolAccountReview ??= { sessions: new Map(), codes: new Map(), accounts: new Map(), requests: new Set() }; }
+function state(): State { return root.__gyeolAccountReview ??= { sessions: new Map(), codes: new Map(), accounts: new Map(), requests: new Set() }; }
 const COOKIE = "gyeol-local-account";
 export function createLocalAccountPort(request: NextRequest): AccountPort | null {
   if (process.env.NODE_ENV !== "development" && process.env.NODE_ENV !== "test") return null;
@@ -30,6 +30,9 @@ export function createLocalAccountPort(request: NextRequest): AccountPort | null
     async exchange(code) {
       const pending = db.codes.get(code); db.codes.delete(code);
       if (!pending || pending.expires <= Date.now() || db.sessions.size >= 128) return false;
+      db.created ??= new Map();
+      if (!db.created.has(pending.user.id)) db.created.set(pending.user.id, new Date().toISOString());
+      pending.user.createdAt = db.created.get(pending.user.id);
       if (token) db.sessions.delete(token);
       token = randomBytes(32).toString("hex"); changed = true;
       db.sessions.set(token, { user: pending.user, expires: now + 3_600_000 }); return true;

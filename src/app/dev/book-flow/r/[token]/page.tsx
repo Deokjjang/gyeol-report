@@ -16,7 +16,13 @@ export async function generateMetadata({ params }: { params: Promise<{ token: st
   const shared = await load((await params).token);
   return shared ? bookShareMetadata(shared.model) : reportShareMetadata();
 }
-export default async function LocalSharedBook({ params }: { params: Promise<{ token: string }> }) {
+export default async function LocalSharedBook({ params, searchParams }: { params: Promise<{ token: string }>; searchParams?: Promise<{ref?: string}> }) {
   const shared = await load((await params).token); if (!shared) notFound();
-  return <SharedBookEntry model={shared.model} local />;
+  const { localReferralStore } = await import("../../../../../lib/referrals/localReview");
+  const { referralPresentation } = await import("../../../../../lib/referrals/service");
+  const { createLocalAccountPort } = await import("../../../../../lib/account/localReview");
+  const { NextRequest } = await import("next/server");
+  const auth = createLocalAccountPort(new NextRequest("http://127.0.0.1/dev/book-flow",{headers:await headers()})), store = await localReferralStore();
+  const model = auth && store ? await referralPresentation(shared.model,(await searchParams)?.ref,auth,store) : shared.model;
+  return <SharedBookEntry model={model} local />;
 }

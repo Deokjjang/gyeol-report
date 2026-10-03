@@ -5,6 +5,7 @@ export async function POST(request: NextRequest) {
   const { createLocalAccountPort } = await import("../../../../lib/account/localReview");
   const { localBookShareDatabase, sqlBookShareLibrary, sqlBookSharePort } = await import("../../../../lib/book/shareLocalReview");
   const { prepareBookShare } = await import("../../../../lib/book/shareServer");
+  const { localReferralStore } = await import("../../../../lib/referrals/localReview");
   const db = await localBookShareDatabase(), auth = createLocalAccountPort(request);
-  return db && auth ? prepareBookShare(request, auth, sqlBookShareLibrary(db), sqlBookSharePort(db), true) : new Response(null, { status: 404 });
+  return db && auth ? prepareBookShare(request, auth, sqlBookShareLibrary(db), sqlBookSharePort(db), true, (await localReferralStore()) ?? undefined) : new Response(null, { status: 404 });
 }
