@@ -1,9 +1,10 @@
 "use client";
+import { interaction } from "../../../lib/analytics/client";
 
 import { buildSinglePersonReportInputPayload, buildCompatibilityReportInputPayload, createCheckoutInputSnapshot, createReportPersonInputPayload } from "../../../lib/report-generation/reportInputPresentation";
 
 import { BIRTH_TIME_SLOT_DEFINITIONS, normalizeBirthTimePrecision } from "../../../lib/saju/birthTimePrecisionTypes";
-import { use, useEffect, useRef, useState } from "react";
+import { use, useEffect, useState } from "react";
 import type { FormEvent } from "react";
 
 import PaidFunnelHeader from "../../../components/payment/PaidFunnelHeader";
@@ -1041,37 +1042,7 @@ export default function NewReportPage({
   );
   const isSelectedProductPurchasable = selectedProduct.isPurchasable;
 
-  const trackedViewContentKey = useRef<string | null>(null);
-
-useEffect(() => {
-  if (
-  !selectedProduct.isPurchasable ||
-  typeof window === "undefined" ||
-  typeof window.fbq !== "function"
-) {
-  return;
-}
-
-  const trackingKey = selectedProduct.productKey;
-
-  if (trackedViewContentKey.current === trackingKey) {
-    return;
-  }
-
-  trackedViewContentKey.current = trackingKey;
-
-  window.fbq("track", "ViewContent", {
-    content_ids: [selectedProduct.productKey],
-    content_name: selectedProduct.nameKo,
-    content_type: "product",
-    value: 1290,
-    currency: "KRW",
-  });
-}, [
-  selectedProduct.isPurchasable,
-  selectedProduct.nameKo,
-  selectedProduct.productKey,
-]);
+  useEffect(() => { if (selectedProduct.isPurchasable) interaction("book_viewed", selectedProduct.productKey); }, [selectedProduct.isPurchasable, selectedProduct.productKey]);
 
   const [currentStep, setCurrentStep] = useState<ReportInputStep>(0);
   const [displayName, setDisplayName] = useState("");

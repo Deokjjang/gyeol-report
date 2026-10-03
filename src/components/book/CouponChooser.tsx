@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { CouponQuote, CouponSelection } from "../../lib/coupons/service";
 import s from "./flow.module.css";
+import { interaction } from "../../lib/analytics/client";
 export type CouponChoice={selection?:CouponSelection;quote:CouponQuote|null};
 export function CouponChooser({productType,disabled,ticketSelected,member,onChange}:{productType:string;disabled:boolean;ticketSelected:boolean;member:boolean;onChange:(value:CouponChoice)=>void}) {
   const [code,setCode]=useState(""),[message,setMessage]=useState(""),[loading,setLoading]=useState(false);
@@ -21,7 +22,7 @@ export function CouponChooser({productType,disabled,ticketSelected,member,onChan
       const r=await fetch("/dev/account/api/coupon-quote",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({productType,...(selection?{selection}:{})})});
       const b=await r.json();if(!lifecycle.active||id!==lifecycle.seq)return;
       if(!r.ok||!b.ok){setMessage(b.error??"쿠폰을 확인해 주세요.");onChange({quote:null});}
-      else{onChange({selection,quote:b});setMessage(selection?`${b.coupon.name} · 적용됨`:"쿠폰을 적용하지 않습니다.");}
+      else{if(selection)interaction("coupon_applied",productType);onChange({selection,quote:b});setMessage(selection?`${b.coupon.name} · 적용됨`:"쿠폰을 적용하지 않습니다.");}
     }catch{if(lifecycle.active&&id===lifecycle.seq)setMessage("쿠폰을 확인하지 못했습니다. 다시 시도해 주세요.");}
     finally{if(lifecycle.active&&id===lifecycle.seq)setLoading(false);}
   }

@@ -1,6 +1,7 @@
 "use client";
+import { interaction } from "../../lib/analytics/client";
 
-import { useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { createCheckoutConsentAssertion, calculateCheckoutAge, getCheckoutAgeGateStatus, type CheckoutLegalConfirmations, type CheckoutAgeGateStatus } from "../../lib/payment/checkoutConsent";
 import styles from "./paidFunnel.module.css";
 import { getReportProduct } from "../../lib/payment/reportProductCatalog";
@@ -273,7 +274,7 @@ export default function DevTossCheckoutLauncher({
   const noticeId = useId();
   const product = getReportProduct(productType);
 const priceLabel = product?.priceLabelKo ?? "";
-const trackedInitiateCheckout = useRef(false);
+useEffect(() => { if (!disabled && isDevTossCheckoutInputComplete(inputSnapshot)) interaction("checkout_started", productType); }, [disabled, inputSnapshot, productType]);
   const [isLaunching, setIsLaunching] = useState(false);
   const launchInFlight = useRef(false);
   const [legalConfirmations, setLegalConfirmations] =
@@ -314,24 +315,6 @@ const trackedInitiateCheckout = useRef(false);
 setIsLaunching(true);
 setErrorMessage("");
 setStatusMessage("");
-
-if (
-  !trackedInitiateCheckout.current &&
-  typeof window !== "undefined" &&
-  typeof window.fbq === "function" &&
-  product
-) {
-  trackedInitiateCheckout.current = true;
-
-  window.fbq("track", "InitiateCheckout", {
-    content_ids: [product.productType],
-    content_name: product.labelKo,
-    content_type: "product",
-    value: product.amount,
-    currency: product.currency,
-    num_items: 1,
-  });
-}
 
 const result = await runDevTossCheckout(
       inputSnapshot,

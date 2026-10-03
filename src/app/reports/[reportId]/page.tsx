@@ -1565,7 +1565,7 @@ export default async function ReportResultPage({
   const routeParams = await params;
   const state = await loadPageState(routeParams.reportId ?? "");
 
-  if (state.kind === "processing") return <ReportGenerationStatus attention={state.attention} delayed={state.delayed} />;
+  if (state.kind === "processing") return <><MetaPurchaseTracker reportId={routeParams.reportId ?? ""} /><ReportGenerationStatus attention={state.attention} delayed={state.delayed} /></>;
 
   if (state.kind === "invalid") {
     return renderInvalidState();
@@ -1605,10 +1605,6 @@ export default async function ReportResultPage({
       {product ? (
         <MetaPurchaseTracker
           reportId={reportId}
-          productType={product.productType}
-          productName={product.labelKo}
-          value={product.amount}
-          currency={product.currency}
         />
       ) : null}
 

@@ -2,7 +2,7 @@
 import {execFileSync} from "node:child_process";
 import {readFileSync,writeFileSync,mkdirSync} from "node:fs";
 import assert from "node:assert/strict";
-const bin=process.env.BOOK_BROWSER_BIN||"agent-browser",origin="http://127.0.0.1:3192",mode=process.argv[2]||"ticket",out=`/tmp/gyeol-v4-12a/${mode}`,checks=[];
+const bin=process.env.BOOK_BROWSER_BIN||"agent-browser",origin="http://127.0.0.1:3192",mode=process.argv[2]||"ticket",out=`/tmp/gyeol-v4-12b/${mode}`,checks=[];
 const fixtures=JSON.parse(readFileSync("/tmp/gyeol-v4-12a/fixtures.json","utf8"));mkdirSync(out,{recursive:true});
 const sessions={B:`campaign-B-${process.pid}`,C:`campaign-C-${process.pid}`};let who="B";
 const cli=(...args)=>{const r=JSON.parse(execFileSync(bin,["--session",sessions[who],"--json",...args],{encoding:"utf8",timeout:60000}));assert.ok(r.success,JSON.stringify(r));return r.data;};
@@ -25,11 +25,17 @@ function createTicket(index){receipt(index);cli("wait","input[name=method]");cli
 try{
   for(const id of ["B","C"]){who=id;cli("--allowed-domains","127.0.0.1","open",origin+"/dev/account");cli("set","viewport","390","844");cli("set","media","light","reduced-motion");cli("wait","--text","카카오로 계속하기");}
   who="B";check("explicit campaign definitions only",post("/dev/campaign/setup",{}).body.ok);
-  open("/dev/campaign/book-ended");check("ended no acquisition CTA",!ev("[...document.querySelectorAll('button')].some(e=>e.textContent.includes('내 책 만들기'))"));sizes("ended");
+  check("explicit measurement countdown only",ev("fetch('/dev/measurement/setup',{method:'POST',body:'countdown'}).then(r=>r.ok)"));
+  for (const [slug,state] of [["book-future","SCHEDULED"],["book-paused","PAUSED"],["book-none","ACTIVE_ELIGIBLE"]]) { open(`/dev/campaign/${slug}`); check(`${state} accurate`,ev(`document.querySelector('[data-campaign-state]').dataset.campaignState===${JSON.stringify(state)}`)); sizes(state.toLowerCase()); }
+  open("/dev/campaign/book-ended");check("ended retains normal product CTA",ev("document.querySelector('[data-campaign-state]').dataset.campaignState==='ENDED'"));sizes("ended");
   open(`/dev/campaign/book-${mode}?utm_source=instagram&utm_medium=cpc&utm_campaign=book-launch&reward=100`);cli("wait","[data-campaign-landing]");check("server benefit truth",ev(`document.body.innerText.includes(${JSON.stringify(mode==="ticket"?"이용권 1장":"300원 할인 쿠폰")})`));sizes("landing");
+  check("real deadline countdown",ev("!!document.querySelector('[data-countdown]')"));
+  const deadline=ev("document.querySelector('[data-countdown] time').dateTime");cli("reload");cli("wait","--load","networkidle");check("refresh never extends deadline",ev("document.querySelector('[data-countdown] time').dateTime")===deadline);
   click("내 책 만들기 →");cli("wait","--text","카카오로 계속하기");shot("390-login");login("kakao");
   cli("wait","--text",mode==="ticket"?"캠페인 참여로":"캠페인 쿠폰을 받았습니다.");check("benefit notice after consent",true);sizes("benefit");
-  check("exact ticket quantity",summary().quantity===(mode==="ticket"?1:0));let report;
+  check("exact ticket quantity",summary().quantity===(mode==="ticket"?1:0));
+  open(`/dev/campaign/book-${mode}`);check("already granted state",ev("document.querySelector('[data-campaign-state]').dataset.campaignState==='BENEFIT_ALREADY_GRANTED'"));sizes("already-granted");
+  let report;
   if(mode==="coupon"){
     receipt(0);cli("wait","select[aria-label=\"보유 쿠폰\"]");const grant=ev("document.querySelector('select[aria-label=\"보유 쿠폰\"] option:nth-child(2)').value");cli("snapshot","-i");cli("select","select[aria-label=\"보유 쿠폰\"]",grant);cli("wait","--text","검수용 300원 할인 · 적용됨");
     check("existing quote 1290 minus 300",ev("document.querySelector('[aria-label=\"쿠폰 적용 금액\"]').innerText.includes('₩990')"));sizes("coupon-receipt");cli("find","label","전체 동의","check");click("모의 결제 · 책 발행 →");cli("wait","[data-book-report]");report=ev("location.pathname");sizes("coupon-book");
@@ -42,6 +48,29 @@ try{
     createTicket(1);who="B";open("/dev/account");cli("wait","--text","친구가 첫 책을 완성해 이용권 1장이 추가되었습니다.");check("campaign member gets inviter reward after C publication",summary().quantity===1);check("repeat recovery no extra reward",summary().quantity===1);sizes("loop-complete");
   }
   who="B";open("/dev/campaign/book-other");check("existing account no signup benefit",ev("document.body.innerText.includes('기존 회원에게 지급되지 않습니다.')"));sizes("existing-member");check("existing page cannot add benefit",summary().quantity===(mode==="ticket"?1:0));
+  who="B";
+  const log=ev("JSON.parse(sessionStorage.getItem('gyeol:measurement')||'[]')");
+  check("PageView captured",log.some(e=>e.event==="PageView"));
+  for(const event of ["campaign_landing_opened","campaign_cta_clicked","signup_started","account_created","required_consent_completed","campaign_attributed","campaign_benefit_granted","book_viewed","input_started","input_completed","checkout_started","publishing_started","report_published","report_opened"])
+    check(`canonical ${event}`,log.some(e=>e.event===event));
+  check("receipt InitiateCheckout one",log.filter(e=>e.event==="InitiateCheckout").length===1);
+  check("Purchase only paid",log.filter(e=>e.event==="Purchase").length===(mode==="coupon"?1:0));
+  if(mode==="coupon")check("Purchase final paid 990 KRW",log.find(e=>e.event==="Purchase").params.value===990);
+  open(report);cli("wait","[data-book-report]");cli("reload");cli("wait","[data-book-report]");cli("back");cli("wait","--load","networkidle");
+  const more=ev("JSON.parse(sessionStorage.getItem('gyeol:measurement')||'[]')");
+  check("refresh/back Purchase unchanged",more.filter(e=>e.event==="Purchase").length===(mode==="coupon"?1:0));
+  if(mode==="coupon") {
+    cli("tab","new",origin+report);cli("wait","[data-book-report]");cli("wait","--load","networkidle");
+    check("second tab no new Purchase",ev("JSON.parse(sessionStorage.getItem('gyeol:measurement')||'[]').filter(e=>e.event==='Purchase').length")===0);
+    const repeated=post("/dev/measurement",{reportId:report.split('/').at(-1)});
+    check("second tab server claim duplicate",repeated.body.duplicate===true);
+    // Keep both tabs until session cleanup; they share the authoritative order claim.
+  }
+  const aggregate=ev("fetch('/dev/measurement?aggregate=1').then(r=>r.json())");
+  check("valid report aggregate",aggregate.counts.report_published===(mode==="coupon"?1:2));
+  check("logical paid count",aggregate.counts.payment_succeeded===(mode==="coupon"?1:0));
+  if(mode==="ticket"){check("referral downstream qualified",aggregate.downstream.some(e=>e.event==="referral_qualified"&&e.campaign==="book-ticket"));check("C is not direct campaign attribution",aggregate.campaigns["book-ticket"].campaign_attributed===1&&aggregate.counts.campaign_attributed===1);}
+  writeFileSync(`${out}/events.json`,JSON.stringify({captured:more,aggregate},null,2));
   for(const id of ["B","C"]){who=id;check(`${id} console`,!cli("console").messages.some(m=>m.type==="error"));check(`${id} local-only resources`,ev("performance.getEntriesByType('resource').every(r=>new URL(r.name).origin===location.origin)"));}
   writeFileSync(`${out}/browser-results.json`,JSON.stringify({checks,report,result:"PASS"},null,2));process.stdout.write(`${checks.length} checks PASS\n`);
 }catch(error){shot("failure");writeFileSync(`${out}/failure-dom.json`,JSON.stringify(cli("snapshot","-i"),null,2));throw error;}finally{for(const id of ["B","C"]){who=id;cli("close");}}

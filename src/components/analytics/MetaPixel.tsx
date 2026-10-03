@@ -2,7 +2,8 @@
 
 import Script from "next/script";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+import { flushMeta, pageView, syncLocalFacts } from "../../lib/analytics/client";
 
 declare global {
   interface Window {
@@ -20,32 +21,12 @@ const PIXEL_ID =
 
 export default function MetaPixel() {
   const pathname = usePathname();
-  const firstRender = useRef(true);
-  const previousPath = useRef(pathname);
-
   useEffect(() => {
-    if (!PIXEL_ID) {
-      return;
-    }
-
-    // 최초 PageView는 아래 Meta Pixel 기본 코드가 전송하므로
-    // 여기서는 중복 전송하지 않는다.
-    if (firstRender.current) {
-      firstRender.current = false;
-      previousPath.current = pathname;
-      return;
-    }
-
-    // Next.js App Router에서 실제 경로가 바뀐 경우만 PageView 전송
-    if (!pathname || pathname === previousPath.current) {
-      return;
-    }
-
-    previousPath.current = pathname;
-    window.fbq?.("track", "PageView");
+    if (pathname) pageView(pathname);
+    void syncLocalFacts();
   }, [pathname]);
 
-  if (!PIXEL_ID) {
+  if (!PIXEL_ID || process.env.NODE_ENV !== "production") {
     return null;
   }
 
@@ -54,6 +35,7 @@ export default function MetaPixel() {
       <Script
         id="meta-pixel"
         strategy="afterInteractive"
+        onReady={flushMeta}
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)
@@ -82,7 +64,6 @@ export default function MetaPixel() {
             );
 
             fbq('init', '${PIXEL_ID}');
-            fbq('track', 'PageView');
           `,
         }}
       />

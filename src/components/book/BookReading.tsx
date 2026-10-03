@@ -11,8 +11,10 @@ import { BookShareActions } from "./BookShareActions";
 import { bookShareEvent } from "../../lib/book/shareEvents";
 import shareStyle from "./bookShare.module.css";
 import { ReferralBookCta } from "./ReferralBookCta";
+import { interaction } from "../../lib/analytics/client";
 
 export function BookReading({ data, share, home = "/", saveToLibrary, shareOwner, shared = false, local = false }: { data: BookData; share: BookShareModel; home?: string; saveToLibrary?: { reportId: string; local?: boolean }; shareOwner?: { reportId: string; local?: boolean }; shared?: boolean; local?: boolean }) {
+  useEffect(() => { interaction(shared && share.referral ? "referral_landing_opened" : "report_opened", share.productType); }, [shared, share.referral, share.productType]);
   const [page, setPage] = useState(0), [note, setNote] = useState<BookNote | null>(null), [message, setMessage] = useState("");
   const scroll = useRef<HTMLDivElement>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null), gesture = useRef<{ x: number; y: number } | null>(null);

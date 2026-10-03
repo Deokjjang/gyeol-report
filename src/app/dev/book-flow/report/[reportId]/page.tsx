@@ -35,5 +35,6 @@ export default async function LocalBookReport({ params }: { params: Promise<{ re
   }
   if (!snapshot) return <p>로컬 검수 책을 찾을 수 없습니다. 서버를 다시 시작하면 검수 데이터가 사라집니다.</p>;
   const { StoredBookReport } = await import("../../../../../lib/book/storedReport");
-  return <StoredBookReport snapshot={snapshot} home="/dev/book-flow" saveToLibrary={{ reportId, local: true }} shareOwner={{ reportId, local: true }} />;
+  const { default: MetaPurchaseTracker } = await import("../../../../../components/analytics/MetaPurchaseTracker");
+  return <><MetaPurchaseTracker reportId={reportId} local /><StoredBookReport snapshot={snapshot} home="/dev/book-flow" saveToLibrary={{ reportId, local: true }} shareOwner={{ reportId, local: true }} /></>;
 }

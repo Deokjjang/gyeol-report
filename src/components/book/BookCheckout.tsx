@@ -15,6 +15,7 @@ import s from "../../app/dev/book-preview/book.module.css";
 import { useAccountSession } from "../account/AccountSession";
 import { purchasePolicyLabel, type AccountSession } from "../../lib/account/policy";
 import { CouponChooser, type CouponChoice } from "./CouponChooser";
+import { interaction, syncLocalFacts } from "../../lib/analytics/client";
 
 type CheckoutProps = { payload: ReportInputPayload; now: string; internal: boolean; onPublishing: () => void; onError: (message: string) => void };
 export function BookCheckout(props: CheckoutProps) {
@@ -23,6 +24,7 @@ export function BookCheckout(props: CheckoutProps) {
   return <BookCheckoutReceipt key={session.status} {...props} session={session} />;
 }
 function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, session }: CheckoutProps & { session: AccountSession }) {
+  useEffect(() => { interaction("checkout_started", payload.productKey); }, [payload.productKey]);
   const label = (id: keyof CheckoutLegalConfirmations) => id === "policyAgreement" && session.status === "member" ? purchasePolicyLabel(session) : CONSENT_SHORT_LABELS[id];
   const [consents, setConsents] = useState<CheckoutLegalConfirmations>(emptyDevTossCheckoutLegalConfirmations), [detail, setDetail] = useState<string | null>(null), [busy, setBusy] = useState(false);
   const lock = useRef(false), allRef = useRef<HTMLInputElement>(null);
@@ -75,6 +77,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
         onPublishing();
         const r=await fetch("/dev/account/api/coupon-complete",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({orderId})});
         const b=await r.json();
+        await syncLocalFacts();
         if(r.ok&&b.ok&&typeof b.reportUrl==="string"&&b.reportUrl.startsWith("/dev/book-flow/report/")){window.location.assign(b.reportUrl);return;}
         onError(b.error??"모의 결제·발행 결과를 다시 확인해 주세요.");
       }catch{onError("결제 결과를 확인하지 못했습니다. 같은 요청으로 다시 확인해 주세요.");}
@@ -107,7 +110,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
     {method==="payment"&&coupon.selection&&coupon.quote?<dl aria-label="쿠폰 적용 금액"><div><dt>상품 금액</dt><dd>₩{coupon.quote.originalAmount.toLocaleString("ko-KR")}</dd></div><div><dt>쿠폰 할인</dt><dd>−₩{coupon.quote.discountAmount.toLocaleString("ko-KR")}</dd></div><div><dt>결제 금액</dt><dd>₩{coupon.quote.finalAmount.toLocaleString("ko-KR")}</dd></div></dl>:null}
     <dl>{(payload.productKey === "saju_mbti_compatibility" ? [payload.personA, payload.personB] : [payload.person]).map((p, i) => <div key={i}><dt>{p.name}</dt><dd>{p.birthDate} · {p.birthTimeUnknown ? "시간 모름" : p.birthTime || `대략 · ${BIRTH_TIME_SLOT_DEFINITIONS.find(s => s.value === p.approximateBirthTimeSlot)?.labelKo ?? "미확인"}`} · {p.mbtiType || "MBTI 모름"}</dd></div>)}</dl>
     <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />{method === "ticket" ? "이용권 사용 후 즉시 생성" : "결제 완료 후 즉시 생성, 최대 24시간 이내 제공"}<br />생성일로부터 90일 · {method === "ticket" ? "온라인 열람" : "결제 후 온라인 열람"}</p>
-    {internal && session.status === "member" && tickets !== null && tickets > 0 ? <fieldset className={s.consents}><legend>발행 방법</legend><label><input type="radio" name="method" checked={method === "payment"} disabled={busy||couponOrder!==null} onChange={() => setMethod("payment")} /> {product.amount.toLocaleString("ko-KR")}원 결제</label><label><input type="radio" name="method" checked={method === "ticket"} disabled={busy||couponOrder!==null} onChange={() => setMethod("ticket")} /> 리포트 이용권 1장 사용 · 남은 이용권 {tickets}장</label>{method === "ticket" ? <p>리포트 이용권 1장을 사용합니다.</p> : null}</fieldset> : null}
+    {internal && session.status === "member" && tickets !== null && tickets > 0 ? <fieldset className={s.consents}><legend>발행 방법</legend><label><input type="radio" name="method" checked={method === "payment"} disabled={busy||couponOrder!==null} onChange={() => setMethod("payment")} /> {product.amount.toLocaleString("ko-KR")}원 결제</label><label><input type="radio" name="method" checked={method === "ticket"} disabled={busy||couponOrder!==null} onChange={() => { setMethod("ticket"); interaction("ticket_selected", payload.productKey); }} /> 리포트 이용권 1장 사용 · 남은 이용권 {tickets}장</label>{method === "ticket" ? <p>리포트 이용권 1장을 사용합니다.</p> : null}</fieldset> : null}
     {internal?<CouponChooser productType={payload.productKey} disabled={busy||method==="ticket"||couponOrder!==null} ticketSelected={method==="ticket"} member={session.status==="member"} onChange={setCoupon} />:null}
     <fieldset className={s.consents}><legend className={s.srOnly}>구매 동의</legend><label className={s.allConsent}><input ref={allRef} type="checkbox" checked={all} disabled={!allowed || busy} onChange={e => setConsents({ ...consents, ...Object.fromEntries(items.map(c => [c.id, e.target.checked])) })} />전체 동의</label>
       {items.map(c => <div className={s.consentRow} key={c.id}><label><input type="checkbox" checked={consents[c.id]} disabled={!allowed || busy} onChange={e => setConsents({ ...consents, [c.id]: e.target.checked })} />[필수] {label(c.id)}</label><button type="button" onClick={() => setDetail(c.id)} aria-label={`${label(c.id)} 상세 보기`}>보기 ›</button></div>)}

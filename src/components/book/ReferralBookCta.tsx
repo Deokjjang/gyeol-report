@@ -2,12 +2,14 @@
 import { useRef, useState } from "react";
 import type { BookShareModel } from "../../lib/book/shareModel";
 import s from "./bookShare.module.css";
+import { interaction } from "../../lib/analytics/client";
 export function ReferralBookCta({ share, local, home }: { share: BookShareModel; local: boolean; home: string }) {
   const [busy, setBusy] = useState(false), [error, setError] = useState("");
   const lock = useRef(false);
   async function begin() {
     if (lock.current) return;
     lock.current = true; setBusy(true); setError("");
+    interaction("referral_cta_clicked", share.productType);
     try {
       const response = await fetch(local ? "/dev/book-flow/referral" : "/api/book-referral", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ shareToken: share.shareToken, ref: share.referral?.token }) });
       if (!response.ok) { setError("초대 정보를 확인하지 못했습니다. 다시 시도해 주세요."); return; }

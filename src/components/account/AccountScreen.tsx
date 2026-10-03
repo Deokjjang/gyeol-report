@@ -6,6 +6,7 @@ import { DetailSheet, LegalDocument, LEGAL_TITLES } from "../../app/dev/book-pre
 import { announceAccountChange, useAccountSession } from "./AccountSession";
 import s from "./account.module.css";
 import { Library } from "./Library";
+import { interaction } from "../../lib/analytics/client";
 
 export function AccountScreen({ local = false, loginError = false, next }: { local?: boolean; loginError?: boolean; next?: string }) {
   const { session, loaded, error, refresh, base } = useAccountSession(local);
@@ -21,6 +22,7 @@ export function AccountScreen({ local = false, loginError = false, next }: { loc
   async function run(action: "start" | "consent" | "logout", provider?: AccountProvider) {
     if (lock.current) return;
     lock.current = true; setBusy(true); setMessage("");
+    if (action === "start") interaction("signup_started");
     try {
       if (!requestId.current) requestId.current = crypto.randomUUID();
       const body = action === "start" ? { provider, ...(next ? { next } : {}) } : action === "consent" ? { requestId: requestId.current, ...checked, versions: ACCOUNT_POLICY_VERSIONS } : {};

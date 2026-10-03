@@ -12,6 +12,7 @@ import { Publishing } from "../../app/dev/book-preview/BookPages";
 import { BookCheckout } from "./BookCheckout";
 import s from "../../app/dev/book-preview/book.module.css";
 import f from "./flow.module.css";
+import { interaction } from "../../lib/analytics/client";
 
 function Fields({ person, change, prefix, role, errors, now, requiredGender }: { person: PersonInputState; change: (value: PersonInputState) => void; prefix: string; role: string; errors: Record<string, string>; now: string; requiredGender: boolean }) {
   const error = (key: string) => errors[`${prefix}.${key}`] ? <small id={`${prefix}-${key}-error`} role="alert" className={f.error}>{errors[`${prefix}.${key}`]}</small> : null;
@@ -36,6 +37,7 @@ export function BookInput({ internal, now, initial }: { internal: boolean; now: 
   return <BookForm key={book.id} book={book} internal={internal} now={now} initial={initial} />;
 }
 function BookForm({ book, internal, now, initial }: { book: typeof BOOKS[number]; internal: boolean; now: string; initial?: BookFormState }) {
+  useEffect(() => { interaction("book_viewed", book.productKey); }, [book.productKey]);
   const policy = getAnnualFortuneCommerceYearPolicy(new Date(now)), key = `gyeol-book-input-v1:${book.productKey}`;
   const [state, setState] = useState(initial ?? emptyBookForm(policy.currentYear)), [step, setStep] = useState(0), [ready, setReady] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({}), [message, setMessage] = useState(""), [checking, setChecking] = useState(false), [publishing, setPublishing] = useState(false), [decoration, setDecoration] = useState(0);
@@ -61,9 +63,10 @@ function BookForm({ book, internal, now, initial }: { book: typeof BOOKS[number]
   useEffect(() => { if (ready) { try { sessionStorage.setItem(key, JSON.stringify({ version: 1, state })); } catch { /* optional local draft */ } } }, [state, ready, key]);
   useEffect(() => { scroll.current?.scrollTo({ top: 0 }); scroll.current?.focus({ preventScroll: true }); }, [step]);
   useEffect(() => { if (!publishing) return; const timer = setInterval(() => setDecoration(n => Math.min(3, n + 1)), 1000); return () => clearInterval(timer); }, [publishing]);
-  const update = (next: BookFormState) => { validationId.current++; setState(next); setErrors({}); setMessage(""); };
+  const update = (next: BookFormState) => { interaction("input_started", book.productKey); validationId.current++; setState(next); setErrors({}); setMessage(""); };
   const next = async () => {
     if (checking) return;
+    interaction("input_started", book.productKey);
     const found: Record<string, string> = {};
     for (const [slot, person] of pair ? [["a", state.person], ["b", state.personB]] as const : [["a", state.person]] as const) for (const [field, text] of Object.entries(personErrors(person, now, requiredGender))) found[`${slot}.${field}`] = text;
     if (Object.keys(found).length) { setStep(0); setErrors(found); setTimeout(() => document.getElementById(Object.keys(found)[0].replace(".", "-"))?.focus(), 0); return; }
@@ -80,6 +83,7 @@ function BookForm({ book, internal, now, initial }: { book: typeof BOOKS[number]
       finally { setChecking(false); }
     }
     const nextStep = Math.min(total, step + 1);
+    if (nextStep === total) interaction("input_completed", book.productKey);
     reachedStep.current = Math.max(reachedStep.current, nextStep);
     setStep(nextStep); window.history.pushState({ ...window.history.state, bookInputProduct: book.id, bookInputPage: nextStep }, "", `#page-${nextStep + 1}`);
   };
