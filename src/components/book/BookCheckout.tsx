@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { getReportProduct } from "../../lib/payment/reportProductCatalog";
-import { getCheckoutAgeGateStatus, type CheckoutLegalConfirmations } from "../../lib/payment/checkoutConsent";
+import { createCheckoutConsentAssertion, getCheckoutAgeGateStatus, type CheckoutLegalConfirmations } from "../../lib/payment/checkoutConsent";
 import { emptyDevTossCheckoutLegalConfirmations, isDevTossCheckoutLegalConfirmationComplete, runDevTossCheckout } from "../payment/DevTossCheckoutLauncher";
 import { CONSENTS, CONSENT_SHORT_LABELS } from "../../app/dev/book-preview/model";
 import { DetailSheet, LegalDocument, LEGAL_TITLES } from "../../app/dev/book-preview/BookLegal";
@@ -25,6 +25,14 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
   const label = (id: keyof CheckoutLegalConfirmations) => id === "policyAgreement" && session.status === "member" ? purchasePolicyLabel(session) : CONSENT_SHORT_LABELS[id];
   const [consents, setConsents] = useState<CheckoutLegalConfirmations>(emptyDevTossCheckoutLegalConfirmations), [detail, setDetail] = useState<string | null>(null), [busy, setBusy] = useState(false);
   const lock = useRef(false), allRef = useRef<HTMLInputElement>(null);
+  const ticketRequest = useRef<string | null>(null);
+  const [tickets, setTickets] = useState<number | null>(null), [method, setMethod] = useState<"payment" | "ticket">("payment");
+  useEffect(() => {
+    if (!internal || session.status !== "member") return;
+    const abort = new AbortController();
+    void fetch("/dev/account/api/ticket-summary", { cache: "no-store", signal: abort.signal }).then(async r => { const b = await r.json(); if (!abort.signal.aborted && r.ok) setTickets(b.quantity); }).catch(() => {});
+    return () => abort.abort();
+  }, [internal, session.status]);
   const snapshot = bookCheckoutSnapshot(payload), book = bookForProduct(payload.productKey)!, product = getReportProduct(payload.productKey)!;
   const age = getCheckoutAgeGateStatus(snapshot.birthDate, new Date(now)), allowed = age === "adult" || age === "minor";
   const items = CONSENTS.filter(c => c.id !== "minorLegalRepresentative" || age === "minor"), all = items.every(c => consents[c.id]), some = items.some(c => consents[c.id]);
@@ -34,6 +42,17 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
   const submit = async () => {
     if (!internal || lock.current || !ready) return;
     lock.current = true; setBusy(true); onError("");
+    if (method === "ticket") {
+      ticketRequest.current ??= crypto.randomUUID();
+      try {
+        const response = await fetch("/dev/account/api/ticket-redeem", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ requestId: ticketRequest.current, payload, consent: createCheckoutConsentAssertion(consents) }) });
+        const b = await response.json();
+        if (response.ok && b.ok && typeof b.reportUrl === "string" && b.reportUrl.startsWith("/dev/book-flow/report/")) { window.location.assign(b.reportUrl); return; }
+        onError(b.error ?? "이용권 상태를 다시 확인해 주세요.");
+        if (b.state === "REVERSED") ticketRequest.current = null;
+      } catch { onError("발행 결과를 확인하지 못했습니다. 같은 요청으로 다시 확인해 주세요."); }
+      lock.current = false; setBusy(false); return;
+    }
     let orderId = "";
     // Mandatory local mock runtime. Never omit this third argument and never
     // call the provider/prepare endpoint from this integration phase.
@@ -57,14 +76,15 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
     if (!result.ok) { onError("입력 또는 모의 발행 결과를 확인해 주세요. 실제 결제는 실행하지 않았습니다."); lock.current = false; setBusy(false); }
   };
   return <div className={s.receipt} data-book-checkout><p className={s.micro}>GYEOL REPORT</p><h1>발행 주문서</h1><p className={s.micro}>PUBLISHING ORDER</p>
-    <dl>{[["TITLE", readerTitle(book, payload.productKey !== "saju_mbti_compatibility" && "selectedYear" in payload.productOptions ? payload.productOptions.selectedYear : "")], ["ISSUED TO", snapshot.displayName ?? ""], ["PRICE", `${product.amount.toLocaleString("ko-KR")}원`]].map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
+    <dl>{[["TITLE", readerTitle(book, payload.productKey !== "saju_mbti_compatibility" && "selectedYear" in payload.productOptions ? payload.productOptions.selectedYear : "")], ["ISSUED TO", snapshot.displayName ?? ""], ["PRICE", method === "ticket" ? "리포트 이용권 1장" : `${product.amount.toLocaleString("ko-KR")}원`]].map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
     <dl>{(payload.productKey === "saju_mbti_compatibility" ? [payload.personA, payload.personB] : [payload.person]).map((p, i) => <div key={i}><dt>{p.name}</dt><dd>{p.birthDate} · {p.birthTimeUnknown ? "시간 모름" : p.birthTime || `대략 · ${BIRTH_TIME_SLOT_DEFINITIONS.find(s => s.value === p.approximateBirthTimeSlot)?.labelKo ?? "미확인"}`} · {p.mbtiType || "MBTI 모름"}</dd></div>)}</dl>
-    <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />결제 완료 후 즉시 생성, 최대 24시간 이내 제공<br />생성일로부터 90일 · 결제 후 온라인 열람</p>
+    <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />{method === "ticket" ? "이용권 사용 후 즉시 생성" : "결제 완료 후 즉시 생성, 최대 24시간 이내 제공"}<br />생성일로부터 90일 · {method === "ticket" ? "온라인 열람" : "결제 후 온라인 열람"}</p>
+    {internal && session.status === "member" && tickets !== null && tickets > 0 ? <fieldset className={s.consents}><legend>발행 방법</legend><label><input type="radio" name="method" checked={method === "payment"} disabled={busy} onChange={() => setMethod("payment")} /> {product.amount.toLocaleString("ko-KR")}원 결제</label><label><input type="radio" name="method" checked={method === "ticket"} disabled={busy} onChange={() => setMethod("ticket")} /> 리포트 이용권 1장 사용 · 남은 이용권 {tickets}장</label>{method === "ticket" ? <p>리포트 이용권 1장을 사용합니다.</p> : null}</fieldset> : null}
     <fieldset className={s.consents}><legend className={s.srOnly}>구매 동의</legend><label className={s.allConsent}><input ref={allRef} type="checkbox" checked={all} disabled={!allowed || busy} onChange={e => setConsents({ ...consents, ...Object.fromEntries(items.map(c => [c.id, e.target.checked])) })} />전체 동의</label>
       {items.map(c => <div className={s.consentRow} key={c.id}><label><input type="checkbox" checked={consents[c.id]} disabled={!allowed || busy} onChange={e => setConsents({ ...consents, [c.id]: e.target.checked })} />[필수] {label(c.id)}</label><button type="button" onClick={() => setDetail(c.id)} aria-label={`${label(c.id)} 상세 보기`}>보기 ›</button></div>)}
     </fieldset>
     {!allowed ? <p role="alert">만 14세 이상만 이용할 수 있습니다.</p> : null}
-    <button type="button" className={s.orderButton} disabled={!ready || busy || !internal} onClick={submit}>{internal ? "모의 결제 · 책 발행" : "결제 연결 준비 중"} →</button>
+    <button type="button" className={s.orderButton} disabled={!ready || busy || !internal} onClick={submit}>{busy && method === "ticket" ? "이용권으로 책을 만드는 중" : internal ? method === "ticket" ? "리포트 이용권 1장 사용" : "모의 결제 · 책 발행" : "결제 연결 준비 중"} →</button>
     {detail ? <DetailSheet title={selected ? label(selected.id) : "구매 안내"} onClose={() => setDetail(null)}>{selected ? <p>{selected.id === "policyAgreement" && session.status === "member" ? "환불정책을 확인하고 동의합니다." : selected.label}</p> : null}<p>{prePaymentRefundNoticeKo}</p><p>{prePaymentPrivacyNoticeKo}</p>{LEGAL_TITLES.map((title, i) => <details key={title} open={detail === `policy-${i}`}><summary>{title} +</summary><LegalDocument index={i} onNavigate={n => setDetail(`policy-${n}`)} /></details>)}</DetailSheet> : null}
   </div>;
 }

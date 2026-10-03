@@ -7,6 +7,11 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
   const port = createAccountPort(request);
   if (!port) return NextResponse.json({ error: "로그인 준비 중입니다. 로그인 없이 계속할 수 있습니다." }, { status: 503, headers: { "Cache-Control": "no-store" } });
   const action = (await context.params).action;
+  if (action === "ticket-summary" || action === "ticket-history") {
+    const { handleTickets } = await import("../../../lib/tickets/handler");
+    const { createTicketStore } = await import("../../../lib/tickets/supabase");
+    return handleTickets(request, action.slice(7), port, createTicketStore());
+  }
   if (action.startsWith("library-")) {
     const { handleLibrary } = await import("../../../lib/library/server");
     const { createLibraryPort } = await import("../../../lib/library/supabase");

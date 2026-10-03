@@ -23,7 +23,8 @@ export function createLibraryPort(): LibraryPort {
     async list(user) {
       // SQL selects metadata only; never selects snapshot_json / input payloads.
       const { data, error } = await db.rpc("list_account_reports", { p_user: user });
-      return !error && Array.isArray(data) ? data as LibraryRow[] : null;
+      const tickets = await db.rpc("report_tickets", { p_action: "library", p_user: user, p_data: {} });
+      return !error && Array.isArray(data) && !tickets.error && tickets.data?.ok && Array.isArray(tickets.data.items) ? [...data, ...tickets.data.items] as LibraryRow[] : null;
     },
   };
 }

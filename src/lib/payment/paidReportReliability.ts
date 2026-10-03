@@ -30,6 +30,31 @@ export async function confirmPaidReport(input: TossConfirmRequest, store: Reliab
 }
 
 export type ProductGenerator = (payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance) => Promise<ProductGenerationResult>;
+// Shared fulfillment body. The caller verifies the origin (paid order or ticket)
+// before entry; neither a client nor an entitlement chooses a weaker validator.
+export async function generateReportSnapshot(job: { payload: unknown; product_type: string; report_id: string; created_at: string }, runtime: ReportWriterRuntime,
+  strategy: GenerationStrategy, generate: ProductGenerator, validatePublication = validateNewProductPublication, annualAcceptance?: AnnualCommerceAcceptance) {
+  const result = annualAcceptance === undefined ? await generate(job.payload, runtime, strategy) : await generate(job.payload, runtime, strategy, annualAcceptance);
+  if (!result.ok) {
+    const errors = "validationErrors" in result.error ? result.error.validationErrors : undefined;
+    return { success: false as const, result, stage: errors ? "validation" : "generation", code: result.delivery?.failureCode ?? result.externalFailure ?? (errors ? "PUBLISH_REJECTED" : "GENERATION_FAILED"), errors: errors ?? [result.error.code] };
+  }
+  try {
+    const gate = validatePublication(job.product_type, result.draft, result.evidencePacket);
+    if (!gate.ok) return { success: false as const, result, stage: "validation", code: "PUBLISH_REJECTED", errors: gate.errors };
+    const snapshot = createProductPreviewSnapshot({ reportId: job.report_id, createdAtIso: job.created_at,
+      productKey: job.product_type as ProductPreviewProductType, productSlug: (isRecord(job.payload) ? job.payload.productSlug : "") as ReportProductSlug,
+      draft: result.draft as ProductPreviewSnapshotDraft, evidencePacket: result.evidencePacket });
+    if (!snapshot.ok) return { success: false as const, result, stage: "snapshot", code: snapshot.error };
+    // Legacy full-access serialization, not a payment receipt. Origin lives in the
+    // durable fulfillment record, never in a fabricated Toss payment/order.
+    return { success: true as const, result, snapshot: { ...snapshot.value, access: { mode: "paid" as const, isPaid: true, isUnlocked: true } }, gateVersion: PUBLISH_GATE_VERSION };
+  } catch {
+    // Preserve the paid worker's already-recorded call/delivery audit even if a
+    // validator unexpectedly throws after generation has returned.
+    return { success: false as const, result, stage: "generation", code: "GENERATION_EXCEPTION" };
+  }
+}
 // Internal dependency only; HTTP handlers never accept or forward a validator.
 export async function runPaidReportJob(store: ReliabilityStore, runtime: ReportWriterRuntime, generate: ProductGenerator = generateProductReport, validatePublication = validateNewProductPublication) {
   const claimed = await store.call("claim_job", { model: runtime.enabled ? runtime.config.model : "deterministic" });
@@ -62,26 +87,11 @@ export async function runPaidReportJob(store: ReliabilityStore, runtime: ReportW
       }
       annualAcceptance = context as AnnualCommerceAcceptance;
     }
-    const result = annualAcceptance === undefined
-      ? await generate(job.payload, runtime, strategy)
-      : await generate(job.payload, runtime, strategy, annualAcceptance);
+    const outcome = await generateReportSnapshot({ payload: job.payload, product_type: String(job.product_type), report_id: String(job.report_id), created_at: String(job.created_at) }, runtime, strategy, generate, validatePublication, annualAcceptance);
+    const { result, ...publication } = outcome;
     externalCalls = result.externalCalls ?? [];
     delivery = result.delivery;
-    if (!result.ok) {
-      const errors = "validationErrors" in result.error ? result.error.validationErrors : undefined;
-      return finish({ success: false, stage: errors ? "validation" : "generation", code: delivery?.failureCode ?? result.externalFailure ?? (errors ? "PUBLISH_REJECTED" : "GENERATION_FAILED"), errors: errors ?? [result.error.code] });
-    }
-    // Do not trust a generator, including a deterministic fallback or a mock, to publish itself.
-    const gate = validatePublication(String(job.product_type), result.draft, result.evidencePacket);
-    if (!gate.ok) return finish({ success: false, stage: "validation", code: "PUBLISH_REJECTED", errors: gate.errors });
-    const snapshot = createProductPreviewSnapshot({
-      reportId: String(job.report_id), createdAtIso: String(job.created_at),
-      productKey: job.product_type as ProductPreviewProductType,
-      productSlug: (isRecord(job.payload) ? job.payload.productSlug : "") as ReportProductSlug,
-      draft: result.draft as ProductPreviewSnapshotDraft, evidencePacket: result.evidencePacket,
-    });
-    if (!snapshot.ok) return finish({ success: false, stage: "snapshot", code: snapshot.error });
-    return finish({ success: true, snapshot: { ...snapshot.value, access: { mode: "paid", isPaid: true, isUnlocked: true } }, gateVersion: PUBLISH_GATE_VERSION });
+    return finish(publication);
   } catch {
     return finish({ success: false, stage: "generation", code: "GENERATION_EXCEPTION" });
   }

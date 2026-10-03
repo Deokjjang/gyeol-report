@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { libraryDate, type LibraryItem } from "../../lib/library/model";
 import s from "./library.module.css";
+import { TicketSummary } from "./TicketSummary";
 
 export function LibraryShelf({ items, local = false }: { items: LibraryItem[]; local?: boolean }) {
   return items.length ? <ul className={s.shelf} aria-label="내 책 목록">{items.map(item => {
@@ -30,5 +31,5 @@ export function Library({ local = false }: { local?: boolean }) {
     if (channel) channel.onmessage = invalidate;
     return () => { current?.abort(); window.removeEventListener("focus", invalidate); document.removeEventListener("visibilitychange", visible); channel?.close(); };
   }, [endpoint]);
-  return error ? <p role="alert">서재를 확인하지 못했습니다. 새로고침해 주세요.</p> : items ? <LibraryShelf items={items} local={local} /> : <p role="status">책을 불러오는 중</p>;
+  return <><TicketSummary local={local} />{error ? <p role="alert">서재를 확인하지 못했습니다. 새로고침해 주세요.</p> : items ? <LibraryShelf items={items} local={local} /> : <p role="status">책을 불러오는 중</p>}</>;
 }
