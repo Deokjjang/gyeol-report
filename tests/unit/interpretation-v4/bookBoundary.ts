@@ -4,6 +4,13 @@ import { expect } from "vitest";
  * and development mock publisher; never a blanket route exception. Client
  * consumers get types only. Book tests enforce production OFF / dev 404. */
 export function isVerifiedBookConsumer(file: string, source: string): boolean {
+  if (file === "src/app/dev/content-review/generate.ts") {
+    expect(source).toMatch(/^import "server-only";/);
+    expect(source).toContain('if (!["development", "test"].includes(process.env.NODE_ENV)) return');
+    expect(source).toContain("validateV4Publication(");
+    expect(source).not.toMatch(/createPaidReportReliabilityStore|createClient|fetch\(|SUPABASE_|OPENAI_|TOSS_/);
+    return true;
+  }
   if (file === "src/lib/tickets/service.ts") {
     expect(source).toMatch(/^import "server-only";/);
     expect(source).toContain('if (!["test", "development"].includes(process.env.NODE_ENV)) return ticketFailure("NOT_FOUND")');

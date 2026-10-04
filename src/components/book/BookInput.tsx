@@ -14,7 +14,7 @@ import s from "../../app/dev/book-preview/book.module.css";
 import f from "./flow.module.css";
 import { interaction } from "../../lib/analytics/client";
 
-function Fields({ person, change, prefix, role, errors, now, requiredGender }: { person: PersonInputState; change: (value: PersonInputState) => void; prefix: string; role: string; errors: Record<string, string>; now: string; requiredGender: boolean }) {
+export function Fields({ person, change, prefix, role, errors, now, requiredGender }: { person: PersonInputState; change: (value: PersonInputState) => void; prefix: string; role: string; errors: Record<string, string>; now: string; requiredGender: boolean }) {
   const error = (key: string) => errors[`${prefix}.${key}`] ? <small id={`${prefix}-${key}-error`} role="alert" className={f.error}>{errors[`${prefix}.${key}`]}</small> : null;
   const a11y = (key: string) => ({ "aria-invalid": Boolean(errors[`${prefix}.${key}`]), "aria-describedby": errors[`${prefix}.${key}`] ? `${prefix}-${key}-error` : undefined });
   return <fieldset className={s.fields}><legend>{role}</legend>
@@ -26,7 +26,7 @@ function Fields({ person, change, prefix, role, errors, now, requiredGender }: {
   </fieldset>;
 }
 
-function MbtiInput({ person, change, role }: { person: PersonInputState; change: (p: PersonInputState) => void; role: string }) {
+export function MbtiInput({ person, change, role }: { person: PersonInputState; change: (p: PersonInputState) => void; role: string }) {
   return <label>{role} MBTI<select value={person.mbtiType} onChange={e => change({ ...person, mbtiType: e.target.value })}>{MBTI_TYPES.map(v => <option key={v} value={v}>{v || "모름"}</option>)}</select></label>;
 }
 

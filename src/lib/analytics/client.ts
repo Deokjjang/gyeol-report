@@ -5,6 +5,9 @@ declare global { interface Window { fbq?: (...args: unknown[]) => void; _fbq?: u
 const delivered = new Set<string>();
 const pending = new Map<string, MetaEvent>();
 let retry: ReturnType<typeof setTimeout> | undefined;
+// Suppression only: cannot enable a product/auth gate or production transport.
+export const manualReviewSilent = () => process.env.NODE_ENV !== "production" && typeof window !== "undefined" &&
+  (/^\/dev\/content-review(?:\/|$)/.test(window.location.pathname ?? "") || process.env.NEXT_PUBLIC_LOCAL_REVIEW_SILENT === "1");
 export const localMeasurement = () => process.env.NODE_ENV !== "production" && typeof window !== "undefined" && /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
 export const publicMetaAllowed = () => process.env.NODE_ENV === "production" && typeof window !== "undefined" && window.location.hostname === "gyeolreport.com";
 
@@ -17,6 +20,7 @@ function capture(channel: "internal" | "meta", event: FunnelEvent | MetaEvent) {
   }
 }
 export function sendMeta(event: MetaEvent, key: string) {
+  if (manualReviewSilent()) return;
   if (typeof window === "undefined" || delivered.has(key)) return;
   if (localMeasurement()) { delivered.add(key); capture("meta", event); return; }
   if (!publicMetaAllowed()) return;
@@ -38,6 +42,7 @@ export function flushMeta() { for (const [key, event] of pending) sendMeta(event
 let lastPage: string | undefined;
 let pageSequence = 0;
 export function pageView(path: string) {
+  if (manualReviewSilent()) return;
   if (!path || path === lastPage) return;
   lastPage = path;
   sendMeta({ event: "PageView", params: {} }, `page:${++pageSequence}`);
@@ -53,6 +58,7 @@ export function journeyId() {
 }
 let fallbackJourney: string | undefined;
 export function interaction(event: Interaction, productType?: string, campaign?: string) {
+  if (manualReviewSilent()) return;
   if (typeof window === "undefined") return;
   const eventId = `${journeyId()}:${event}${productType ? `:${productType}` : ""}`;
   const key = `gyeol:event:${eventId}:${campaign ?? ""}`;
@@ -68,6 +74,7 @@ export function interaction(event: Interaction, productType?: string, campaign?:
 // Business truth comes only from the authenticated server projection. Repeated
 // polling/refresh is keyed by the source entity, never by a callback invocation.
 export async function syncLocalFacts() {
+  if (manualReviewSilent()) return;
   if (!localMeasurement()) return;
   try {
     const r = await fetch("/dev/measurement", { cache: "no-store" });
@@ -82,6 +89,7 @@ export async function syncLocalFacts() {
   } catch { /* Analytics failure never changes checkout/publication. */ }
 }
 export async function dispatchPurchase(reportId: string, local = false) {
+  if (manualReviewSilent()) return;
   if (!(local ? localMeasurement() : publicMetaAllowed() && typeof window.fbq === "function")) return;
   try {
     // Claim only when the transport is ready. The SQL unique order wins across tabs.
