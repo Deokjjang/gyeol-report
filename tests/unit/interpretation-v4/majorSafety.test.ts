@@ -1,3 +1,4 @@
+import contentBaseline from "./contentRebuildBaseline.json";
 import { createHash } from "node:crypto";
 import { describe, it, expect, vi } from "vitest";
 import { composeMajorFortuneNarrative } from "../../../src/lib/interpretation-v4/majorComposer";
@@ -13,7 +14,7 @@ import { COMPATIBILITY_NARRATIVE_FIXTURES as pairs } from "./compatibilityFixtur
 
 // Reviewed Phase 7A pair prose. Original Phase 5C and immutable evidence/proof
 // hashes are preserved in finalEditorialBaseline.json, alongside the other products.
-const PAIR_HASHES = ["dbc1e018a166cd531a076b34c76bfad7060d9926730480e2a8a5ee199384a56f", "b2c24b77f456b60241e33695e5700d1927f8e30bb0bb047500966cc263c9ca6a", "9a886bb3b87ea9d7f442797dd07f55e95fe5124dae4b36a0aa28c82d2469ba1b", "1fa7df4079df6fcd0721ee8fc13c1008336367f727af53f4b7ccd3d70b03704a", "0d8dbec6da5de06a16a4b4c8d3c237af9d0548199590b167cb9834ede49320c6", "cb2eae82958c90dae3e707dde478c5c592b8807fec3f5755dfe0739e038d1898", "ddb14809c134bede598bb4a4d2e5e71858b151a6c0faa4b16c912d4cda460bfa", "9ef37eb6d67a151d51682f2e37edb052f0350ecc6400b6460f206314bf9ac312"];
+const PAIR_HASHES = Object.entries(contentBaseline.rows).filter(([id]) => id.startsWith("compatibility-")).sort(([a], [b]) => a.localeCompare(b)).map(([, row]) => row.after);
 const must = async (payload: unknown, time = at) => { const r = await composeMajorFortuneNarrative(payload, time); expect(r.ok).toBe(true); if (!r.ok) return null!; return r; };
 describe("Major canonical calculation, isolation and evidence", () => {
   it.each(pairs.map((f, i) => ({ ...f, hash: PAIR_HASHES[i] })))("$id: Compatibility V4 hash unchanged", ({ payload, hash }) => {
@@ -94,7 +95,11 @@ describe("Major canonical calculation, isolation and evidence", () => {
         for (const f of b.proof.features) expect(selected.has(f)).toBe(true);
         expect(b.proof.features.join(" ")).not.toMatch(/mangsin|mungok|bokseong|cheoneuiseong/);
       }
-      expect(r.years.flatMap(y => y.blocks.flatMap(b => b.proof.features))).toEqual([]);
+      for (const b of r.years.flatMap(y => y.blocks).filter(b => b.proof.features.length)) {
+        expect(b.id).toMatch(/-why$/);
+        expect(b.text).toContain("원래 가진");
+        expect(b.proof.sourceRefs.some(ref => ref.startsWith("content-period:"))).toBe(true);
+      }
       expect(narrativeText(r.narrative)).not.toMatch(/career_shift|previous_to_current|metal|water|\d+점|연결으로|겁재은|결과이|정재은|undefined|NaN/);
     }
   });

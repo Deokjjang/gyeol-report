@@ -10,6 +10,7 @@ import { loveBalance } from "./loveBalance";
 import { loveFusionTurn } from "./loveFusionScenes";
 import { natalLove } from "./loveFallback";
 import { loveNatalScenes } from "./loveNatalScenes";
+import { composeEvidenceChapters } from "./contentSynthesis";
 import type { NarrativeInput, NarrativeState, NarrativeSection, NarrativeBlock, NarrativeProof } from "./narrativeTypes";
 import type { LoveNarrative } from "./loveNarrativeTypes";
 
@@ -64,7 +65,7 @@ export function composeLoveNarrative(input: NarrativeInput) {
     sections.push(section("direction", "내 좋은 면을 편하게 꺼낼 수 있는 관계", "strengths", [b("love-direction", `${context.ending} ${seed.text} 서로를 알아가는 시간 안에서 이 힘을 부담 없이 쓸 수 있다면, 사랑은 나를 줄이는 일이 아니라 좋은 면을 더 알아가는 경험이 됩니다.`, combine(proof([pillar], [seed]), context.proof))]));
     finalLine = natal.final.text; finalProof = proof([pillar], [natal.final]);
   }
-  const fortune = loveFortune(state, voice?.id ?? "natal");
+  const fortune = loveFortune(state, voice?.id ?? "natal", [...opening, ...sections.flatMap(s => s.blocks)].map(b => b.text));
   sections.push(section("fortune", "이미 가지고 있는, 사랑에서 빛나는 좋은 패", "success/fortune", fortune));
   const balance = loveBalance(state, voice?.id ?? "natal");
   if (balance) sections.push(section("balance", "나와 달라서 오히려 편한 사람의 이미지", "relationships", [balance.block]));
@@ -81,6 +82,7 @@ export function composeLoveNarrative(input: NarrativeInput) {
     reportUseCases: voice ? profile.reportUseCases?.loveMarriageChildReport ?? [] : [],
     // Internal only; translates relationship qualities, never names a destined partner type.
     pairHint: voice ? profile.relationshipHints?.notablePairs?.[0] ?? null : null } : null;
-  return { ok: true as const, narrative, materials: packet, selection: { voice: voice?.id ?? "natal", fusionRule: voice?.fusion.ruleId ?? null, symbolicPartner: balance?.low.element ?? null },
-    mbtiBasis, editorial: reviewNarrative(narrative) };
+  const composed = composeEvidenceChapters(input, packet, narrative, "love");
+  return { ok: true as const, ...composed, materials: packet, selection: { voice: voice?.id ?? "natal", fusionRule: voice?.fusion.ruleId ?? null, symbolicPartner: balance?.low.element ?? null },
+    mbtiBasis, editorial: reviewNarrative(composed.narrative) };
 }

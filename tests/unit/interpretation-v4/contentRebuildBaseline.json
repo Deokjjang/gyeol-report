@@ -1,0 +1,269 @@
+{
+  "revision": "v4-content-synthesis-13a-1",
+  "rows": {
+    "comprehensive-01-seojin": {
+      "after": "02e2d57a015875417cd8b3b2cd00990fd2cfc2c29569af136417844341a6a0ad",
+      "invariant": "1ae424ccdbd40f8cbdae0e91b0a5dd1403e149d2957378fd9792d15288720fa9"
+    },
+    "comprehensive-02-seoyun": {
+      "after": "73c1908927a7ad3084bc8693cc9b514711c9b9c9e1fe65b1dac2985e8d6ff778",
+      "invariant": "1e410c86e102b114a3b9e6f20b8404e8973a581773e8c922d119c7a1b8619b99"
+    },
+    "comprehensive-03-jia": {
+      "after": "0c765ba28c040f8531a07d6b17aad0bd2bdb7e6c615071b6b8e64c5610401749",
+      "invariant": "db5517724514baae681e781372444b12fa4dcfb763b1dc8eb901dc7768b813b1"
+    },
+    "comprehensive-04-daeun": {
+      "after": "8c6bb76115890722024c17563ad43dd118400c47d13d4497bac97b43a89975d6",
+      "invariant": "58fe658f07dc3e84a6c1340d91425ee032294ba52d6b7e647535dc7b0d393112"
+    },
+    "comprehensive-05-sua": {
+      "after": "459b994e778c02e76eacd58687ec636b03da983c38dd36850dd756ddae8df3d6",
+      "invariant": "5aa093a841064e166d45ddc09fcb1dc62b8b5399c81d6bdb782a293e937e618c"
+    },
+    "comprehensive-06-yerin": {
+      "after": "5d02a0a8b95dff006afc2fa5bc929efe5daaa32fe391da2cefb19d96b5d4b143",
+      "invariant": "d26a691c956f945af4ba22d125afb67c192ae6c72090df4509ac12fecc922d44"
+    },
+    "comprehensive-07-nayeong": {
+      "after": "e51d90019ece743af1ea480a1bf4bae7131d3d04834f0d5b1aee529c9b5bfc04",
+      "invariant": "abb21831936edcab9c0d2579461469c50e0566b4fabbc28dadc56667a38c2d1f"
+    },
+    "comprehensive-08-yujin": {
+      "after": "6ac4614ce583c42d6e78e920b93a8a000d3860bf0f9e0ed351d994a027a4d8d6",
+      "invariant": "cdd82f8d501dce8435e9448fd1cea7c2d837a6ee40be00c839490db597d89df0"
+    },
+    "comprehensive-09-harin": {
+      "after": "016650b4f4334d36d017e0508830839338918ebb6ac044a1534331ff1b45b571",
+      "invariant": "606367188d9cba642997d8476eeab8ab0b0b6fdd3fb6562cf70b7d46eb4adfba"
+    },
+    "comprehensive-10-minjae": {
+      "after": "1b19f61c7b15a14624900fcc64f86dc1f84ddccfebc1e7f1843e70b617686fcd",
+      "invariant": "81f07c57f89dc776952fc740e57471a43a91015b278907b62977df20b385f4ab"
+    },
+    "comprehensive-11-doyun": {
+      "after": "1953b3f66baf20b9b6316c94acd0bb3b303c6bd74a3445fde9e8d0c3e45c85ca",
+      "invariant": "06cd4a6538fdf9853c50b6b0f0a460f3e9d66dee822c6ca12fa557d9df490729"
+    },
+    "comprehensive-12-junseo": {
+      "after": "1b8b4bf3c3092f85f52857924dd0f018cd80b948066cf058cf72a90125a3804c",
+      "invariant": "bd8910d57a7d3b0a14875112bbc4a4dd506cda72a32b85929feeb4bca2e79774"
+    },
+    "career-01-minjae": {
+      "after": "855025725bb989d09d11be92a564933e1984d15c26ccadd71648d11733e120d0",
+      "invariant": "ee7191fca9ed1164c178b4f0093140b01f2533ea8879a11b829fee8e62f96b80"
+    },
+    "career-02-doyun": {
+      "after": "1fbfe50f27f0bf891e43d2d784c9ca1a3103cc378c87dc9ac09a223467cadf4e",
+      "invariant": "fd0acd178af5e53620b273e94be0135a331d518a0dc2729a9c957f0ff74471c4"
+    },
+    "career-03-seoyun": {
+      "after": "fcbca496045dfbb3878612d5542ab4edc4e5d46ac779cb16daf70f789c877fba",
+      "invariant": "f25b1eac395f0c5b3aa521a2496e65f711dc523ac6d11d945dab24fd8f303085"
+    },
+    "career-04-yujin": {
+      "after": "a4b0186962eb4f063d4c4b075986432d9a883acd05761fa77bffcb35dbdb5e0d",
+      "invariant": "4496bd94e1e39ce43b634edc3c6e068f4e48eca78c766234ceb5ce60f50adcd2"
+    },
+    "career-05-harin": {
+      "after": "44ae2d73c35427e80d7642e30c10e8a95fb246bb455c61d6589957183adba499",
+      "invariant": "80331a781fdff90ed63fa8f1a0cd7745d0f050609308e2007cb745a6ee4cd77b"
+    },
+    "career-06-chaewon": {
+      "after": "2785a6ddc3c46e8c98275f201fdda659524255258327d4a27b6c4660b51b0f20",
+      "invariant": "40fa0721e2aa8e83ad4307591322d8a8a7cac134ffffe8d410ebb8cce1e3ec83"
+    },
+    "career-07-nayeong": {
+      "after": "7ca9e033e59f572b42fd3ffed7fa1ce23164969186321120aa70c79c8f2f26d1",
+      "invariant": "f5fd42699634d7b13e8a9566205f5e063c1d35db25a24fc184f730d7e8153dcd"
+    },
+    "career-08-seojin": {
+      "after": "5639aee21f5f29e63c635081e77c677e6b03efc2bea3ffeb6b594dfa90cd2161",
+      "invariant": "e1986eab436dc479e626ab768682a6d4218ec1332493a61f52c5b254a9148817"
+    },
+    "love-01-jia": {
+      "after": "0abf3e3ae06cd524a67203007efe4596cbbea3f9cc9742d2ca1c845cb4e7b178",
+      "invariant": "37c7a0265bbac7bdaffb34329bcf41c0661a9f827500eeb7ea204c919f9428ec"
+    },
+    "love-02-seojin": {
+      "after": "53e77fd4583957ab86b3707fa11d790ab80c5e0229365d5a35718ca3a3da2682",
+      "invariant": "dfa51b805f96bb3370566f93df2ec78481e8deb86dccd53086ff0b7a38e618ed"
+    },
+    "love-03-seoyun": {
+      "after": "0e489375ce1a0ffea485e5402bbb50474430666822514da92e2ba16ce1cd732c",
+      "invariant": "012454a46c5257e85d46de15acee54be4fd65195ab50cd3c4b7628ae4753510b"
+    },
+    "love-04-doyun": {
+      "after": "5606bed63686cf7fd7dc398c3595d6051635f88331fdd7e0f166ce5632ba1a02",
+      "invariant": "3ce175961bccca0c97cde6164ef821c39c1255f687672edc24b999eafd07d2a4"
+    },
+    "love-05-minjae": {
+      "after": "8a1717374b9d0a51e48a3239d860b783382f8273668e639e160c2af1d6df7f72",
+      "invariant": "2802e8175608e81a51609f2d11b5cd82df925c5d65676e49fde777a161f69cd6"
+    },
+    "love-06-nayeong": {
+      "after": "9dd77201865e1c11f4bc14d9bd621f755520f9ecc17e53d69cd937db3633ff74",
+      "invariant": "fdea97b64aeb28c0d30b50dd68b60776ab30c72274c08318ecf1679bebfae677"
+    },
+    "love-07-harin": {
+      "after": "33957d93c6cd1f389b7622b7d0f5a0c493f10a790d3dc35f6afd2492dc53134c",
+      "invariant": "5d49674d150d2e05c5e7d3b5aa43d8e97592502fb8fbdffb6ba13988c84631ee"
+    },
+    "love-08-yerin": {
+      "after": "e083f2026d5db8a31eff0030cd3d096660fe28a795bf6c14e33e0577f059b4d0",
+      "invariant": "10e30fdc90bfdea4a66417475c78945fa24583b6cdfa6353a4e53f7467f6aa1d"
+    },
+    "compatibility-01-love": {
+      "after": "9eca254e54f8765f6f6efac684e4b2e3eeeb4516eb3b4356f6566f9cfb0e1b2a",
+      "invariant": "0c18b1ff9e789664de89ad92f4f755009ac110c3f01b9a61784b6e9540015383"
+    },
+    "compatibility-02-marriage": {
+      "after": "b3939b392602d295087e8e85ca9fc041d1ab61c59ea393c79fc52286e54227b0",
+      "invariant": "16e0b0b9078465b13ea38bf25b0536f35f4cc8ad21fb9c82c8518c17c069941c"
+    },
+    "compatibility-03-parent": {
+      "after": "170ab398a09e8de70ab3baad3d3e6505a1124044d7f329ab78e1bbc730f2ab87",
+      "invariant": "258472f37f2fac3bca1b3fb9b2d1335c834ccdcc06737bc6955ecba191aaae36"
+    },
+    "compatibility-04-coworker": {
+      "after": "2c366a5d8f5fd67fcd0ca28fd095a267681ea4f0ff9d0727b143278d6cffdbfb",
+      "invariant": "afd312b7cea56642dd9308b194d264ed302ef0160b0a5d9c939d96a1e4b5b4dd"
+    },
+    "compatibility-05-manager": {
+      "after": "f5d9cfe7f7ed941d03245f15625618a9ee1eb6e798958ad21fc1623c173be25b",
+      "invariant": "47ea1dbcb253862dd8b61184c12f043943c26b17bb6f7c594b449a3fd2f06ae7"
+    },
+    "compatibility-06-business": {
+      "after": "0860d480b07b5fa9fc4916afe854e2478310eede0118b45f37463b651cc3bc02",
+      "invariant": "bf98f6bfa27f8964293bd9cda7607e1a381b9ad1a451fce42c168193a152542d"
+    },
+    "compatibility-07-friend": {
+      "after": "8dcf8498deaa5262e446f2a00e2b7a8a601fa16d59def7b041eec363d57c599b",
+      "invariant": "21cf74a2dd8cc39e8ce1cdf663aa9201e79c9e0f6a890ab25d545a06f4352213"
+    },
+    "compatibility-08-love": {
+      "after": "847fd32a489ba4428651f9da9e71069bf121d92411478283500ed8483d38e15b",
+      "invariant": "e468ec05629ac3357106e0552a8053f794f48d2f59dd2e9c5119908257d6fa95"
+    },
+    "major-01-business": {
+      "after": "0ad2d2b99adbc2d79dad83a3518f1cce60005709946cdb45a726ec40051c5f0d",
+      "invariant": "6c92f7763355e1b86e50ddc03c6193b76f02a8f0f19dbd9312d283d9dc2f450d"
+    },
+    "major-02-employee": {
+      "after": "c35d0f1730753780204838d41b0d68aec36d0fe2249d54e1a7577d16a38c35fc",
+      "invariant": "daa0c04ddd53f28b85175add2d1d90f8683fd136df3375d7f4a12e511b863f38"
+    },
+    "major-03-freelance": {
+      "after": "01a6a226535567ef66983d36a86d0e9738fa2c0a46eac1748081acac6854ab5f",
+      "invariant": "7cc3f083818c9a9cb0bc9ab9b0f453986fc383dbf63874d6d037965cecac1bb8"
+    },
+    "major-04-student": {
+      "after": "c4958b98121aca434c349a960c917ca31304dbb3ef1ebac9da25a4536fb7da12",
+      "invariant": "7004503b5c349a2c85cc43eb4264e2b3ea92cbb95f74af4740ff54e37c12310f"
+    },
+    "major-05-unknown": {
+      "after": "c32514c75477eeca98f8c9c22fa52861c5166a61787ba494e99a31432cb161a9",
+      "invariant": "adda7409f22373abfd1c05a073e3a6928eadbf3b9a9177c5a75d3058169140e2"
+    },
+    "major-06-transition": {
+      "after": "5db732afae393d84ba6be92e81c6e4e44252aa8e5fb15af495af76f752da3985",
+      "invariant": "dd46170439d5d2ffc5422b4fac379010453476a8f6a25f90e18be053fad92927"
+    },
+    "annual-01-business": {
+      "after": "88afbce2db241557f883f61cd110f3b42fce8797c46d23179705d27e30085e90",
+      "invariant": "dad9500327e6510eb1e20473a601b1c4ed148a8ba1e62b46af9bb14b970ad088"
+    },
+    "annual-02-employee": {
+      "after": "73346420fa213c180d1c39175a8b743931f05cb6ad24eec6cf490c63ae353c3b",
+      "invariant": "ba9b3fcfbb0fbbfa6334140aa43e3a04079ca074c0d8de08a22c566fa7bc2759"
+    },
+    "annual-03-freelance": {
+      "after": "6f98c319378236933218d6f239b16d4b1e0091c67b4aca31f6e2079e10c1bb49",
+      "invariant": "2062f4dca0ed64c63382d6c2ecb0fcbc141d44323cf3156128c8fa3d3deee124"
+    },
+    "annual-04-student": {
+      "after": "3fb2cc39eff5bf01128abab52a84583c2b291f8f12fd93e8ebf8a851434e543f",
+      "invariant": "a852cda086b8173f2e16b3bac2d0e6063f3a676a64b58af810f28096eab48439"
+    },
+    "annual-05-unknown": {
+      "after": "dac999f3ec427004304a9e460cc80391c29a6fc98a671bc4ece46feb2a712242",
+      "invariant": "9c27d30ffa4c70c57f1d93b4b2fb4b5378108e9fb72967ecdef11d0ff34f8c1e"
+    },
+    "annual-06-transition": {
+      "after": "13578154c2531ac17e5bc175e5e5daafeab34dd02c62d3adffb857bcfdd680af",
+      "invariant": "3c1186056598374918d3403c9db9bbe08fc2d145f13937ad7de6f165a8da7b36"
+    },
+    "golden-ENTJ-comprehensive": {
+      "after": "02e2d57a015875417cd8b3b2cd00990fd2cfc2c29569af136417844341a6a0ad",
+      "invariant": "1ae424ccdbd40f8cbdae0e91b0a5dd1403e149d2957378fd9792d15288720fa9"
+    },
+    "golden-ENTJ-career": {
+      "after": "5639aee21f5f29e63c635081e77c677e6b03efc2bea3ffeb6b594dfa90cd2161",
+      "invariant": "e1986eab436dc479e626ab768682a6d4218ec1332493a61f52c5b254a9148817"
+    },
+    "golden-ENTJ-love": {
+      "after": "fd06800f1a1405fd2d70be9990fb8668798e121471a13993b40addf27085922b",
+      "invariant": "6419de47b4a466c308e13bd993cff08d626e54661adb86e15f458766c48d3f32"
+    },
+    "golden-ENTJ-major": {
+      "after": "c35d0f1730753780204838d41b0d68aec36d0fe2249d54e1a7577d16a38c35fc",
+      "invariant": "daa0c04ddd53f28b85175add2d1d90f8683fd136df3375d7f4a12e511b863f38"
+    },
+    "golden-ENTJ-annual": {
+      "after": "73346420fa213c180d1c39175a8b743931f05cb6ad24eec6cf490c63ae353c3b",
+      "invariant": "ba9b3fcfbb0fbbfa6334140aa43e3a04079ca074c0d8de08a22c566fa7bc2759"
+    },
+    "golden-ENTJ-compatibility": {
+      "after": "60d14b6e069eb77b4d9386c8fa2219fced0025b6a0b0f66d20dbde6b75a730e3",
+      "invariant": "b39bac352dadc00aefef7257862e9faf53ec277bbc2c8e4349bb455036d55c4d"
+    },
+    "golden-INTP-comprehensive": {
+      "after": "e51d90019ece743af1ea480a1bf4bae7131d3d04834f0d5b1aee529c9b5bfc04",
+      "invariant": "abb21831936edcab9c0d2579461469c50e0566b4fabbc28dadc56667a38c2d1f"
+    },
+    "golden-INTP-career": {
+      "after": "7051b271ce96c2c73493ecf115da0dc3efb44d1d9a0457a16fd2d28c315bbba6",
+      "invariant": "de5d1ddb662420c9e2cefa6c5c23cf21f188fb286f0e60dc950ffa50da5133b6"
+    },
+    "golden-INTP-love": {
+      "after": "9dd77201865e1c11f4bc14d9bd621f755520f9ecc17e53d69cd937db3633ff74",
+      "invariant": "fdea97b64aeb28c0d30b50dd68b60776ab30c72274c08318ecf1679bebfae677"
+    },
+    "golden-INTP-major": {
+      "after": "a6134db57bb56f0834391a5c5a0473ee17f161a0ff165f7b8b3fb4254820c2ce",
+      "invariant": "e1118e68a3305d4cd9fa26239adf51e2b3c549bc90ab5af9a083971dbc8c6592"
+    },
+    "golden-INTP-annual": {
+      "after": "0f13547d6e7cb5b4f0d578352970ddd4372746205ae775aaa9687d490fa952c0",
+      "invariant": "79454330f835602be07cf292d93d2f46309c2b45a19a45e4622395b6d1dabb42"
+    },
+    "golden-INTP-compatibility": {
+      "after": "f27ddf529ff76d36c28f11f5d7a0284b09af4569f377ef87e9a2f17da1aa9269",
+      "invariant": "e3b6d38290e3aa22c8e74a251ce013746a52872bd52aa93d67e8ac52933e4933"
+    },
+    "golden-ENFP-comprehensive": {
+      "after": "73c1908927a7ad3084bc8693cc9b514711c9b9c9e1fe65b1dac2985e8d6ff778",
+      "invariant": "1e410c86e102b114a3b9e6f20b8404e8973a581773e8c922d119c7a1b8619b99"
+    },
+    "golden-ENFP-career": {
+      "after": "fcbca496045dfbb3878612d5542ab4edc4e5d46ac779cb16daf70f789c877fba",
+      "invariant": "f25b1eac395f0c5b3aa521a2496e65f711dc523ac6d11d945dab24fd8f303085"
+    },
+    "golden-ENFP-love": {
+      "after": "259f0f76f5c873bf8cd83d9eeb9e0435ce855e3c46d94d8481f0e9d8de0b4589",
+      "invariant": "82a400a3c1585b0f904e6ba2ed64f09683c48a25689f63bf3c9046bcf4e27a72"
+    },
+    "golden-ENFP-major": {
+      "after": "01a6a226535567ef66983d36a86d0e9738fa2c0a46eac1748081acac6854ab5f",
+      "invariant": "7cc3f083818c9a9cb0bc9ab9b0f453986fc383dbf63874d6d037965cecac1bb8"
+    },
+    "golden-ENFP-annual": {
+      "after": "7bff81085e3aacb3b56cc3bc250a4817574c2977da345fc51bf6ceca724c533a",
+      "invariant": "749d10404543a690a392dcc5b330ea2d597aaedc0cbd461ca8efa0a2223b2ac7"
+    },
+    "golden-ENFP-compatibility": {
+      "after": "1e3d0220811b698fc2198d1751440e127eb53fb1936c17b956e9e08c75a7fc6d",
+      "invariant": "6c2b78fd968e2bf5cf5532f6e9b93d7a9aa788cbe69ff39153ba0cb4ba271c51"
+    }
+  }
+}

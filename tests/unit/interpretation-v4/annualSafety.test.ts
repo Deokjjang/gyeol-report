@@ -1,3 +1,4 @@
+import contentBaseline from "./contentRebuildBaseline.json";
 import { createHash } from "node:crypto";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { describe, it, expect, vi } from "vitest";
@@ -16,7 +17,7 @@ import { ANNUAL_NARRATIVE_FIXTURES as fixtures, ANNUAL_CLOCK } from "./annualFix
 
 // Reviewed Phase 7A Major prose. Original Phase 6A hashes and immutable
 // evidence/proof hashes remain in finalEditorialBaseline.json.
-const MAJOR_HASHES = ["978b0e74336033831c4da4615d5278f707e80a22d0dc174413f012a1fe3de675", "06b59c2857f2d72da7c825b7cf1e937ff0d6777a363311bd4c39f7c723b43cb7", "16edccb1762b95ffe716a90b32183381e0b75ab585c04e4c699b37fb0444ea79", "23a7b280452715e4bc84a2ecb80b0b5a13754595bbb14d819d18fdcd239ac47c", "b81c5be3a597756b6cfec94ae45868d2a3170659ca9c85158995b8c3eba1be58", "c1a03e7511fd6b7a5f72d4a8ff772d23a3c128f6b7ee6e21fcf96f6f3d87fd76"];
+const MAJOR_HASHES = Object.entries(contentBaseline.rows).filter(([id]) => id.startsWith("major-")).sort(([a], [b]) => a.localeCompare(b)).map(([, row]) => row.after);
 const must = async (payload: unknown, clock = ANNUAL_CLOCK) => { const r = await composeAnnualFortuneNarrative(payload, clock); expect(r.ok, JSON.stringify(r.ok ? "ok" : r.errors)).toBe(true); if (!r.ok) return null!; return r; };
 describe("Annual V4 canonical evidence, clock and regression boundaries", () => {
   it.each(MAJOR_NARRATIVE_FIXTURES.map((f, i) => ({ ...f, hash: MAJOR_HASHES[i] })))("$id: V4 Major byte hash unchanged", async ({ payload, hash }) => {
@@ -79,7 +80,7 @@ describe("Annual V4 canonical evidence, clock and regression boundaries", () => 
     for (const f of fixtures) {
       const r = await must(f.payload, f.clock), y = Number(f.payload.productOptions.selectedYear);
       expect(r.months.map(m => m.time)).toEqual(Array.from({ length: 12 }, (_, i) => y < 2026 || (y === 2026 && i < 9) ? "past" : y === 2026 && i === 9 ? "current" : "future"));
-      if (y < 2026) expect(r.narrative.opening[1].text).toContain("과거에도 같았다고 정해두지는 않습니다");
+      if (y < 2026) expect(r.narrative.opening[1].text).toMatch(/과거에도 같았다고 정해두지는 않(?:습니다|아요)/);
     }
     expect((await annualNarrativeEvidence(fixtures[2].payload, ANNUAL_CLOCK)).ok).toBe(false);
     expect(normalizeReportInputPayload(fixtures[2].payload, { now: () => new Date(ANNUAL_CLOCK.currentDate) }).ok).toBe(false);
@@ -107,7 +108,11 @@ describe("Annual V4 canonical evidence, clock and regression boundaries", () => 
         }
       }
       for (const m of r.months) for (const b of m.blocks) {
-        if (!b.proof.fusionIds.length) expect(b.proof.features).toEqual([]);
+        if (!b.proof.fusionIds.length && b.proof.features.length) {
+          expect(b.id).toMatch(/-why$/);
+          expect(b.text).toContain("원래 가진");
+          expect(b.proof.features.every(f => r.materials.selected.some(m => m.feature === f))).toBe(true);
+        }
       }
     }
     expect(held).toBeGreaterThan(0);

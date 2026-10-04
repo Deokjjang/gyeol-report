@@ -3,6 +3,8 @@ import { projectV4Composition, projectV4Tables, validateV4Publication, type V4Ru
 import { buildV4Evidence, evaluateEvidence } from "../../../lib/interpretation-v4/evidencePolicy";
 import { canonicalV4Feature, MATERIAL_BY_FEATURE } from "../../../lib/interpretation-v4/materialRegistry";
 import { depthFeature } from "../../../lib/interpretation-v4/materialDepth";
+import { shortDefinition } from "../../../lib/interpretation-v4/contentWhy";
+import { projectYinYang } from "../../../lib/interpretation-v4/contentEvidence";
 import { adaptCalculation } from "../../../lib/interpretation-v3/evidence";
 import { storyFeatureRows } from "../../../lib/interpretation-v3/comprehensiveStoryEvidence";
 import { MAJOR_MEANINGS } from "../../../lib/interpretation-v4/majorMaterials";
@@ -39,12 +41,13 @@ export function bookFeatureInventory(e: V4RuntimeEvidence, slot: "person" | "per
     const positions = unique(e.natalTableEvidence[slot].features.filter(f => featureKey(f.id) === key).flatMap(f => f.positions));
     const labels: Record<string, string> = { year: "연주", month: "월주", day: "일주", hour: "시주" };
     entries.push({ key, strong, display: { name: material.label, person: name,
-      meaning: material.imagery || material.positiveMeaning,
+      group: key.startsWith("ten_god_") ? "십성" : key.startsWith("v4_structure:") ? "주요 구조" : /day_|dayMaster/.test(key) ? "일간·일주" : "신살·귀인",
+      meaning: bound ? shortDefinition(bound) : material.imagery || material.positiveMeaning,
       manifestation: strong ? seed?.text ?? material.positiveMeaning : `${positions.map(p => labels[p]).filter(Boolean).join(" · ") || "천간·지장간"}에서 확인된 기운입니다. 중심 성향으로 확대하지 않습니다.` } });
   }
   for (const element of packet.symbolicElements) {
     const label = { WOOD: "목 木", FIRE: "화 火", EARTH: "토 土", METAL: "금 金", WATER: "수 水" }[element.element];
-    entries.push({ key: element.material.feature, strong: false, display: { name: `${label} · ${{ high: "강함", low: "약함", balanced: "균형" }[element.state]}`, person: name,
+    entries.push({ key: element.material.feature, strong: false, display: { name: `${label} · ${{ high: "강함", low: "약함", balanced: "균형" }[element.state]}`, person: name, group: "오행·음양",
       meaning: element.material.imagery, manifestation: element.material.seeds.find(s => s.role === "character")!.text } });
   }
   // Reuse existing V3 relation meanings, with the full canonical placements.
@@ -52,7 +55,15 @@ export function bookFeatureInventory(e: V4RuntimeEvidence, slot: "person" | "per
   for (const r of e.natalTableEvidence[slot].relations) {
     const copy = relations.find(f => f.label === r.label);
     if (!copy) continue;
-    entries.push({ key: r.id, strong: true, display: { name: r.label, person: name, meaning: copy.meaning, manifestation: copy.power } });
+    if (!entries.some(v => v.display.name === r.label)) entries.push({ key: r.id, strong: true, display: { name: r.label, person: name, group: "합·충·형·파·해", meaning: copy.meaning, manifestation: copy.power } });
+  }
+  const yy = projectYinYang(calc);
+  if (yy.total) entries.push({ key: "natal:yin-yang", strong: false, display: { name: `음 ${yy.yin} · 양 ${yy.yang}`, person: name, group: "오행·음양", meaning: `${yy.complete ? "네 기둥" : "확인된 기둥"}의 천간·지지를 한 번씩 센 음양 분포.`, manifestation: "" } });
+  for (const row of e.natalTableEvidence[slot].pillars) {
+    for (const hidden of row.hiddenStems ?? []) if (!entries.some(v => v.key === `hidden:${hidden}`)) entries.push({ key: `hidden:${hidden}`, strong: false,
+      display: { name: hidden, person: name, group: "지장간", meaning: "지지 안에 함께 담긴 천간의 기운. 표의 해당 기둥에서 위치를 확인할 수 있어요.", manifestation: "" } });
+    for (const stage of row.twelveLifeStage ?? []) if (!entries.some(v => v.key === `stage:${stage}`)) entries.push({ key: `stage:${stage}`, strong: false,
+      display: { name: stage, person: name, group: "십이운성", meaning: "일간과 지지의 관계를 성장의 단계에 빗대어 보는 이름.", manifestation: "" } });
   }
   return entries;
 }
@@ -76,7 +87,8 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
   const people = e.input.kind === "compatibility" ? [personView(e.input.personA, view.compatibility!.personA.role, safeTables[0]), personView(e.input.personB, view.compatibility!.personB.role, safeTables[1])]
     : [personView(e.input.person, "주인공", safeTables[0])];
   const slots = e.input.kind === "compatibility" ? ["personA", "personB"] as const : ["person"] as const;
-  const inventory = slots.flatMap((slot, i) => bookFeatureInventory(e, slot, people[i].name));
+  const personalInventories = slots.map((slot, i) => bookFeatureInventory(e, slot, people[i].name));
+  const inventory = personalInventories.flat();
   const names = people.map(p => p.name).join(" · ");
   const input = e.input;
   const context = input.kind === "compatibility" ? [{ label: "관계", value: CATEGORIES.find(([id]) => id === input.relationshipType)?.[1] ?? "" }]
@@ -84,14 +96,20 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
       { label: "현재 직업", value: input.userContext.detailJob }, { label: "현재 관계", value: RELATIONSHIPS.find(([id]) => id === input.userContext.relationshipStatus)?.[1] ?? "미선택" },
       ...(view.annual ? [{ label: "선택 연도", value: String(view.annual.selectedYear) }] : [])];
 
+  const definedTerms = new Set<string>();
   const narrativePage = (heading: string, blocks: readonly NarrativeBlock[], extra: BookNote[] = []): BookPage => {
     const notes: BookNote[] = [];
     const paragraphs = blocks.map(block => {
       const matches = inventory.filter(entry => block.proof.features.some(f => featureKey(f) === entry.key));
-      const candidates = matches.map(entry => ({ name: entry.display.name, text: entry.display.meaning }));
+      const candidates = matches.filter(entry => !definedTerms.has(entry.display.name) && block.text.includes(entry.display.name))
+        .map(entry => ({ name: entry.display.name, text: entry.display.meaning }));
       // Period notes are selected from that section's own canonical period only.
-      const relevant = [...candidates, ...(block === blocks[0] ? extra : [])];
-      const numbers = relevant.map(n => { let index = notes.findIndex(v => v.name === n.name && v.text === n.text); if (index < 0) { index = notes.length; notes.push(n); } return index + 1; });
+      const uniqueCandidates = [...new Map([...candidates, ...(block === blocks[0] ? extra.filter(n => blocks.some(b => b.text.includes(n.name))) : [])].map(n => [n.name, n])).values()];
+      // An explanation already given in this chapter needs no identical note.
+      // Mark it defined so a later chapter does not introduce a redundant one.
+      for (const note of uniqueCandidates) if (blocks.some(b => b.text.includes(note.text))) definedTerms.add(note.name);
+      const relevant = uniqueCandidates.filter(n => !definedTerms.has(n.name)).slice(0, Math.max(0, 2 - notes.length));
+      const numbers = relevant.map(n => { definedTerms.add(n.name); notes.push(n); return notes.length; });
       return { text: block.text, notes: unique(numbers) };
     });
     return { kind: "narrative", title: heading, paragraphs, notes };
@@ -165,8 +183,15 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
       ganji: m.focus.monthPillar.stem + m.focus.monthPillar.branch, gods: `${m.focus.stemTenGod} · ${m.focus.branchTenGod}`,
       markers: unique(c.result.evidence.months.find(v => v.month === m.month)!.transit.accepted.flatMap(f => f.observations.map(o => o.label))), page: sectionPages.get(`month-${m.month}`)! }));
   }
-  const items = inventory.map(f => f.display);
-  for (let i = 0; i < items.length; i += 10) pages.push({ kind: "appendix", title: "이 책에 사용된 기운", items: items.slice(i, i + 10), from: i + 1, total: items.length });
+  const used = new Set([...c.result.narrative.opening, ...c.result.narrative.sections.flatMap(s => s.blocks)].flatMap(b => b.proof.features.map(featureKey)));
+  const ordered = (entries: Entry[]) => entries.map(f => ({ ...f.display, core: used.has(f.key) })).sort((a, b) => (a.group ?? "").localeCompare(b.group ?? "") || a.name.localeCompare(b.name));
+  // One compact appendix per person, not one page per ten definitions.
+  let from = 1;
+  for (const [i, person] of people.entries()) {
+    const personal = ordered(personalInventories[i]);
+    pages.push({ kind: "appendix", title: people.length > 1 ? `${person.name}의 모든 기운` : "내 모든 기운", items: personal, from, total: inventory.length });
+    from += personal.length;
+  }
   pages.push({ kind: "back", title: "이 책 공유하기", finalLine: view.finalLine });
   const share = describeReportShare({ productSlug: e.input.productSlug, draft: view });
   return { bookId, title, names, people, context, pages, readingDate: e.generatedAt.slice(0, 10), share: { title: `${names} · ${title}`, description: share.description } };

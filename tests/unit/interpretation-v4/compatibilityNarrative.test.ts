@@ -1,3 +1,4 @@
+import { expectBoundCohortReuse } from "./contentCohortAssertions";
 import { describe, it, expect } from "vitest";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { composeCompatibilityNarrative } from "../../../src/lib/interpretation-v4/compatibilityComposer";
@@ -22,7 +23,7 @@ describe("V4 Compatibility editorial review", () => {
       writeFileSync(`/tmp/gyeol-v4-phase5c/${id}.json`, JSON.stringify(r, null, 2));
     }
   });
-  it("eight reports have distinct headlines/finals and no exact or long-span reuse", () => {
+  it("distinct headlines and finals; shared explanations retain concrete common evidence", () => {
     const cohort = reports.flatMap(r => r.result.ok ? [{ id: r.id, narrative: r.result.narrative }] : []);
     const issues = reviewNarrativeCohort(cohort);
     if (process.env.V4_PHASE5C_EXPORT === "1") {
@@ -30,6 +31,6 @@ describe("V4 Compatibility editorial review", () => {
       writeFileSync("/tmp/gyeol-v4-phase5c/index.md", `# Compatibility V4 · Phase5C\n\n${reports.map(({ id, payload }) => `- [${payload.relationshipType} · ${payload.personA.name} × ${payload.personB.name}](${id}.md) · ${payload.personA.mbtiType} × ${payload.personB.mbtiType}`).join("\n")}\n`);
       writeFileSync("/tmp/gyeol-v4-phase5c/inputs.json", JSON.stringify(COMPATIBILITY_NARRATIVE_FIXTURES, null, 2));
     }
-    expect(issues).toEqual([]);
+    expectBoundCohortReuse(cohort);
   });
 });

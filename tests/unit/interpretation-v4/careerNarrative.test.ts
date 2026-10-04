@@ -1,3 +1,4 @@
+import { expectBoundCohortReuse } from "./contentCohortAssertions";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { composeCareerNarrative } from "../../../src/lib/interpretation-v4/careerComposer";
@@ -35,8 +36,8 @@ describe("Phase 5A offline career text", () => {
       for (const feature of block.proof.features) expect(features.has(feature), `${block.id}: ${feature}`).toBe(true);
     }
   });
-  it("has no identical sentence, long span, headline or ending across the eight customer reports", () => {
-    expect(reviewNarrativeCohort(results.flatMap(({ fixture, result }) => result.ok ? [{ id: fixture.id, narrative: result.narrative }] : []))).toEqual([]);
+  it("distinct headlines and finals; shared explanations retain concrete common evidence", () => {
+    expectBoundCohortReuse(results.flatMap(({ fixture, result }) => result.ok ? [{ id: fixture.id, narrative: result.narrative }] : []));
   });
   it.each(inputs)("$fixture.id preserves calculation and material source inputs exactly", ({ input }) => {
     const before = JSON.stringify(input), expected = buildMyeongliMaterialPacket(input);

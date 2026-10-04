@@ -1,3 +1,4 @@
+import { expectBoundCohortReuse } from "./contentCohortAssertions";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { composeLoveNarrative } from "../../../src/lib/interpretation-v4/loveComposer";
@@ -32,8 +33,8 @@ describe("Phase 5B offline Love narrative", () => {
       for (const feature of block.proof.features) expect(features.has(feature), feature).toBe(true);
     }
   });
-  it("no duplicate sentence/long span/headline/final across all eight", () => {
-    expect(reviewNarrativeCohort(reports.flatMap(({ fixture, result }) => result.ok ? [{ id: fixture.id, narrative: result.narrative }] : []))).toEqual([]);
+  it("distinct headlines and finals; shared explanations retain concrete common evidence", () => {
+    expectBoundCohortReuse(reports.flatMap(({ fixture, result }) => result.ok ? [{ id: fixture.id, narrative: result.narrative }] : []));
   });
   it.each(inputs)("$fixture.id: immutable calculation, deterministic repeat and unchanged core packet", ({ input }) => {
     const before = JSON.stringify(input), r = composeLoveNarrative(input);

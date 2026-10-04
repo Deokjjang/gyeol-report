@@ -2,23 +2,25 @@ import { MAJOR_MEANINGS } from "./majorMaterials";
 import { majorAnnualStory } from "./majorAnnualStories";
 import { majorHarmonyCopy } from "./majorHarmonyCopy";
 import { paragraph, proof, particle } from "./copyRealizer";
+import { periodExplanation } from "./contentPeriod";
 import type { MajorEvidence, MajorYearEvidence } from "./majorEvidence";
 import type { MajorContext } from "./majorContext";
 import type { NarrativeBlock } from "./narrativeTypes";
 
-export function majorYearNarrative(e: MajorEvidence, y: MajorYearEvidence, c: MajorContext) {
+export function majorYearNarrative(e: MajorEvidence, y: MajorYearEvidence, c: MajorContext, usedRoots = new Set<string>()) {
   const a = MAJOR_MEANINGS[y.annual.tenGod];
   const mature = e.years.some(previous => previous.year < y.year && previous.annual.tenGod === y.annual.tenGod);
   const relations = [...y.annual.cycleRelations, ...y.annual.natalRelations];
   const harmony = relations.find(r => ["육합", "삼합", "반합"].includes(r.type));
   const tension = relations.find(r => ["충", "형"].includes(r.type)) ?? relations.find(r => ["파", "해"].includes(r.type));
   const transition = e.horizon.transitions.find(t => t.year === y.year);
-  const sources = proof([], [], [], [...e.sourceRefs, ...y.annual.evidenceIds, ...c.provenance]);
+  const sources = proof([], [], [], [...e.sourceRefs, ...y.annual.evidenceIds, `period-ten-god:${y.annual.tenGod}`, ...c.provenance]);
   const story = majorAnnualStory(y.annual.tenGod, c, mature, y.timePosition === "past", y.timePosition === "current", y.year >= e.currentYear + 3);
   const blocks: NarrativeBlock[] = [];
   const add = (id: string, text: string, tone: NarrativeBlock["tone"] = "positive") => blocks.push(paragraph(`${y.year}-${id}`, text, sources, tone));
   add("character", story.portrait);
   add("scene", story.scene, "observation");
+  blocks.push(periodExplanation(String(y.year), `${y.year}년`, y.annual.tenGod, mature ? 1 : 0, e.materials, y.annual.evidenceIds, usedRoots));
   add("gift", story.gift);
   add(tension ? "friction" : "life", tension ? story.shadow : story.reflection, tension ? "shadow" : "observation");
   if (harmony) {

@@ -8,7 +8,7 @@ export function careerWorkNarrative(input: NarrativeInput) {
   const raw = c.raw, fn = c.workFunction === "unknown" && /개발|프로그래밍|프로그램/.test(raw) ? "engineering" : c.workFunction;
   const active = ["employee", "business_owner", "self_employed", "freelancer"].includes(status);
   const currentTitle = active && raw ? `${raw}, 지금 하는 일과 내 방식이 만나는 곳` :
-    status === "student" ? "전공 이름보다, 어떤 과제에서 눈이 살아나는지" : status === "job_seeker" ? "채용 공고 속 직함을 실제 하루로 바꿔보면" : "잠깐 멈춘 시간이 다음 선택을 더 정확하게 합니다";
+    status === "student" ? "전공 이름보다, 어떤 과제에서 눈이 살아나는지" : status === "job_seeker" ? "채용 공고 속 직함을 실제 하루로 바꿔보면" : status === "homemaker" ? "보이지 않던 돌봄의 실력에도 이름을 붙여보면" : "잠깐 멈춘 시간이 다음 선택을 더 정확하게 합니다";
   const functions: Readonly<Record<string, readonly [string, string, string]>> = {
     finance_planning: ["예산을 세우고 실적과 어긋난 이유를 찾아 다음 선택을 설명하는 일", "부서가 낸 전망을 비교했는데 같은 숫자가 서로 다른 기대를 담고 있는 순간", "돈이 어디로 나갔는지뿐 아니라 다음에 어디를 바꾸면 좋을지 설명하는 역할"],
     design: ["말로 흩어진 요구를 눈에 보이는 인상으로 만드는 일", "좋다는 반응은 받았는데 무엇을 남길지는 아직 정해지지 않은 초안 검토", "만드는 손에 방향을 함께 고르는 판단을 더하는 역할"],
@@ -54,6 +54,7 @@ export function careerWorkNarrative(input: NarrativeInput) {
   status === "freelancer" ? "의뢰가 몰린 달의 수입을 평소 수입처럼 쓰면 조용한 달이 더 불안해집니다. 작업비와 생활비, 다음 의뢰를 기다릴 시간을 나누어 생각하면 단가가 낮은 부탁을 거절할 여지도 생깁니다. 계약금과 추가 작업의 값을 미리 이야기하는 것은 좋은 관계를 지키는 일에도 가깝습니다." :
   status === "student" ? "지금 배우는 기술을 바로 큰 수입으로 증명할 필요는 없습니다. 과제나 작은 외부 경험에서 누가 내 결과를 필요로 했는지 알면 돈이 되는 역할의 윤곽이 생깁니다. 시험과 자격은 그 역할에 실제로 필요한지 확인할 때 준비할 이유가 또렷해집니다." :
   status === "job_seeker" ? "처음 제안받는 급여만 보고 역할 전체를 판단하기는 어렵습니다. 무엇을 배우고 어떤 일을 맡으며 다음 선택에서 설명할 경험이 남는지도 첫 보상의 일부입니다. 준비 비용과 생활할 기간을 함께 보면 불안해서 아무 제안이나 잡는 일을 줄일 수 있습니다." :
+  status === "homemaker" ? "생활비를 맞추는 일에는 물건값뿐 아니라 누가 시간을 쓰는지도 들어 있어요. 직접 챙겨 아낀 돈과 그만큼 미룬 내 시간을 함께 보면 집안 살림에 들인 수고도 또렷해집니다. 새 수입을 만들고 싶다면 지금의 돌봄과 나눠 맡을 부분부터 보여야, 번 돈이 그대로 나의 여유로 남기 쉬워요." :
   "수입이 잠시 쉬는 때에는 생활을 얼마나 편하게 이어갈 수 있는지가 먼저 보입니다. 다음 일을 서둘러 고르기 위한 지출과 정말 도움이 되는 준비를 구분하면 마음의 여유도 달라집니다. 쉬는 시간을 전부 새로운 성과로 채울 필요는 없습니다.";
   return { ...c, workFunction: fn, currentTitle, current, earnings, sourceRefs: ["input:jobStatus", "input:detailJob", "careerContextV3:normalized-dimensions", `v4:career-setting:${fn}`] };
 }

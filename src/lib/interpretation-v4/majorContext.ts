@@ -49,13 +49,23 @@ const resting: Scenes = {
   편인: ["쉬면서도 계속 궁금한 주제를 알아보는 독서", "해온 일과 다른 관심사가 만나는 지점을 찾는 메모"], 정인: ["천천히 배울 수 있는 수업에서 감각을 되찾는 시간", "경험 많은 사람에게 재시작의 과정을 듣는 자리"],
 };
 
+// Caring for a household is not a career break. These are settings, not
+// assumptions about children, a previous employer or an intention to return.
+const homemaker: Scenes = {
+  비견: ["가족 일정 사이에 내 시간을 먼저 남기는 아침", "도움을 주는 일과 내가 고를 일을 나누는 대화"], 겁재: ["집안일의 보이지 않는 수고를 함께 세어보는 저녁", "가까운 사람과 맡을 일을 다시 나누는 순간"],
+  식신: ["익숙한 재료로 다른 식탁을 만들어보는 날", "내가 찾은 생활 요령을 다른 사람에게 알려주는 시간"], 상관: ["그냥 해오던 집안일의 순서를 바꾸는 오후", "불편했던 생활 규칙을 솔직하게 말하는 대화"],
+  편재: ["모임에서 새로운 배움과 경험을 소개받는 자리", "늘 가던 곳 밖에서 생활의 다른 방법을 보는 외출"], 정재: ["생활비에서 오래 쓸 것과 습관처럼 사는 것을 가르는 시간", "가족 예산에도 내 즐거움의 몫을 남기는 선택"],
+  편관: ["여러 부탁이 겹칠 때 먼저 챙길 일을 고르는 순간", "혼자 다 맡아온 일을 나눠달라고 말하는 자리"], 정관: ["서로 지킬 생활 약속을 정하는 대화", "내 수고를 당연하게 넘기지 않는 가족의 분담"],
+  편인: ["조용한 시간에 오래 궁금했던 주제를 찾아보는 독서", "나에게 편한 생활 방식을 하나씩 시험하는 시간"], 정인: ["관심 있던 수업에서 새로운 설명을 만나는 날", "배운 것을 생활에 써보고 내 방식으로 남기는 기록"],
+};
+
 export function majorContext(input: NarrativeInput) {
   const c = narrativeContext(input), status = input.context.jobStatus;
-  const mode = status === "employee" ? "employee" : status === "freelancer" ? "freelance" : ["self_employed", "business_owner"].includes(status) ? "business" : status === "student" ? "student" : status === "job_seeker" ? "seeker" : "resting";
-  const scenes = { employee, freelance, business, student, seeker, resting }[mode];
+  const mode = status === "employee" ? "employee" : status === "freelancer" ? "freelance" : ["self_employed", "business_owner"].includes(status) ? "business" : status === "student" ? "student" : status === "job_seeker" ? "seeker" : status === "homemaker" ? "homemaker" : "resting";
+  const scenes = { employee, freelance, business, student, seeker, resting, homemaker }[mode];
   const fn = c.workFunction;
-  const craft = fn === "finance_planning" ? "예산과 실적을 설명하는 힘" : fn === "sales_operations" ? "고객의 요구와 실제 약속을 잇는 힘" : fn === "design" ? "흩어진 생각을 눈에 보이게 만드는 감각" : fn === "teaching" || c.career.industry === "education" ? "어려운 것을 이해하고 써보게 만드는 설명" : fn === "language_mediation" ? "낯선 뜻을 읽는 사람에게 정확히 옮기는 힘" : fn === "care_operations" ? "작은 변화를 놓치지 않고 사람을 챙기는 감각" : fn === "engineering" ? "잘 안 되는 이유를 끝까지 좁혀가는 실력" : mode === "student" ? "배운 것을 직접 해보며 익히는 감각" : mode === "resting" ? "해온 경험을 작은 시작에 다시 쓰는 힘" : "해본 것을 다음 선택에 다시 쓰는 감각";
-  const noun = mode === "business" ? "고객에게 줄 경험" : mode === "freelance" ? "다시 맡길 이유가 있는 작업" : mode === "student" ? "직접 해본 경험" : mode === "seeker" ? "지원할 역할과 첫 결과" : mode === "resting" ? "다음에 고를 생활" : fn === "finance_planning" ? "숫자 뒤의 판단" : "믿고 맡기는 일";
+  const craft = mode === "homemaker" ? "매일의 생활을 돌보고 꾸려온 솜씨" : fn === "finance_planning" ? "예산과 실적을 설명하는 힘" : fn === "sales_operations" ? "고객의 요구와 실제 약속을 잇는 힘" : fn === "design" ? "흩어진 생각을 눈에 보이게 만드는 감각" : fn === "teaching" || c.career.industry === "education" ? "어려운 것을 이해하고 써보게 만드는 설명" : fn === "language_mediation" ? "낯선 뜻을 읽는 사람에게 정확히 옮기는 힘" : fn === "care_operations" ? "작은 변화를 놓치지 않고 사람을 챙기는 감각" : fn === "engineering" ? "잘 안 되는 이유를 끝까지 좁혀가는 실력" : mode === "student" ? "배운 것을 직접 해보며 익히는 감각" : mode === "resting" ? "해온 경험을 작은 시작에 다시 쓰는 힘" : "해본 것을 다음 선택에 다시 쓰는 감각";
+  const noun = mode === "homemaker" ? "돌보는 생활과 내 시간" : mode === "business" ? "고객에게 줄 경험" : mode === "freelance" ? "다시 맡길 이유가 있는 작업" : mode === "student" ? "직접 해본 경험" : mode === "seeker" ? "지원할 역할과 첫 결과" : mode === "resting" ? "다음에 고를 생활" : fn === "finance_planning" ? "숫자 뒤의 판단" : "믿고 맡기는 일";
   const functionScenes: Partial<Record<string, Partial<Scenes>>> = {
     finance_planning: {
       비견: ["내 이름으로 예산의 근거를 설명하는 자리", "다음 역할에서 맡을 숫자의 범위를 고르는 선택"], 겁재: ["각 부서의 기여를 같은 자료로 비교하는 회의", "공동 성과를 어떻게 나눠 읽을지 정하는 자리"],

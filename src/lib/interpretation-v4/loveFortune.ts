@@ -1,5 +1,6 @@
 import { paragraph, proof } from "./copyRealizer";
 import type { NarrativeState } from "./narrativeTypes";
+import { sentences, sentenceKey } from "./editorialGuard";
 
 const DOHWA: Readonly<Record<string, string>> = {
   decisive: "도화의 좋은 패는 처음 마주쳤을 때 존재감이 남는 쪽입니다. 만남을 자신 있게 이끄는 태도와 표정이 관심의 문을 엽니다. 멀리서도 눈에 들어오는 매력이 있으니, 매 순간 상대를 설득하려고 애쓸 필요는 없습니다.",
@@ -25,7 +26,7 @@ const HELPERS: Readonly<Record<string, string>> = {
   natal: "좋은 도움과 관계를 만날 사람복이 있습니다. 혼자 견디던 일도 믿을 만한 사람과 나누면 선택의 폭이 넓어집니다. 누군가의 호의를 받을 줄 아는 것도 가까운 관계에서 쓸 수 있는 좋은 힘입니다.",
 };
 
-export function loveFortune(state: NarrativeState, voice: string) {
+export function loveFortune(state: NarrativeState, voice: string, priorText: readonly string[] = []) {
   const find = (feature: string) => state.packet.selected.find(m => m.feature === feature);
   const blocks = [];
   for (const [feature, copies] of [["sinsal_dohwa", DOHWA], ["sinsal_hongyeom", HONGYEOM]] as const) {
@@ -43,9 +44,11 @@ export function loveFortune(state: NarrativeState, voice: string) {
   // Strength in a relationship, never a promise about the future partner's status.
   if (leader && seat && voice === "decisive") blocks.push(paragraph("love-steady-presence", "장성과 반안이 함께 있어 앞에 서고 신뢰를 얻는 존재감도 좋습니다. 둘이 갑자기 계획을 바꿔야 하거나 난처한 선택을 할 때 ‘같이 있으면 어떻게든 해보겠구나’라는 인상을 줄 수 있습니다. 주도하는 힘을 상대의 선택까지 빼앗는 데만 쓰지 않으면, 든든함은 충분히 매력이 됩니다.", proof([leader, seat]), "positive", "shared-decision"));
   if (!blocks.length) {
-    const seed = state.pillar.material.seeds.find(s => s.role === "strength")!;
-    const love = state.pillar.material.seeds.find(s => s.role === "love");
-    blocks.push(paragraph("love-natal-gift", `${seed.text} ${love?.text ?? "내 마음을 존중하는 태도는 상대를 알아갈 때도 중요한 바탕입니다."} 내 장점이 자연스럽게 나오는 관계에서는 억지로 다른 사람이 될 필요가 줄어듭니다.`, proof([state.pillar], [seed, ...(love ? [love] : [])]), "positive"));
+    const used = new Set(priorText.flatMap(sentences).map(sentenceKey));
+    const candidate = state.packet.selected.flatMap(material => material.material.seeds
+      .filter(s => ["fortune", "strength"].includes(s.role) && !sentences(s.text).some(t => used.has(sentenceKey(t))))
+      .map(seed => ({ material, seed })))[0];
+    if (candidate) blocks.push(paragraph("love-natal-gift", `${candidate.seed.text} 사랑에서도 내 좋은 면이 드러날 자리가 중요해요. 애쓰는 모습을 평가하기보다 평소의 작은 정성을 알아주는 사람 곁에서는 다정함을 숨길 이유가 줄어듭니다.`, proof([candidate.material], [candidate.seed]), "positive"));
   }
   return blocks;
 }

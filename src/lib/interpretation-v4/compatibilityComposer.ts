@@ -5,6 +5,7 @@ import { compatibilityDirectionBlock, compatibilityPairBasis, compatibilityPairS
 import { compatibilityHarmony, compatibilityElementScene, compatibilityGoodCards } from "./compatibilityHarmony";
 import { paragraph, proof } from "./copyRealizer";
 import { reviewNarrative } from "./editorialGuard";
+import { composePairContent } from "./contentPair";
 import type { CompatibilityNarrative } from "./compatibilityNarrativeTypes";
 import type { NarrativeBlock, NarrativeSection } from "./narrativeTypes";
 
@@ -37,7 +38,7 @@ export function composeCompatibilityNarrative(payload: unknown) {
     section("scene", copy.sceneTitle, [block("scene", copy.scene, "observation"), ...natalLayer]),
     section("fortune", "둘 사이에서 함께 쓸 수 있는 좋은 힘", [...(relation.harmonic ? [relation.harmonic] : [block("joint-strength", copy.lasting)]), ...goodCards, ...(element ? [element.block] : [])], "success/fortune"),
     section("friction", copy.tensionTitle, [block("friction", copy.tension, "shadow"), ...(relation.friction ? [relation.friction] : [])], "weaknesses"),
-    section("repair", category === "businessPartner" ? "믿을수록 더 분명히 남길 약속" : category === "parentChild" ? "대화를 다시 시작하는 쪽은 어른이어도 됩니다" : "다시 같은 편으로 돌아오는 대화", [block("repair", copy.repair, "direction")]),
+    section("repair", category === "businessPartner" ? "믿을수록 더 분명히 남길 약속" : category === "parentChild" ? "대화를 다시 시작하는 쪽은 부모여도 됩니다" : "다시 같은 편으로 돌아오는 대화", [block("repair", copy.repair, "direction")]),
     ...(relation.harmonic ? [section("lasting", category === "friendship" ? "자주 못 봐도 이어갈 수 있는 우리 방식" : "이 관계에서 오래 남길 것", [block("lasting", copy.lasting)])] : []),
   ];
   // Harmonic-first vs friction-first is evidence-led, not fixture ID or a score.
@@ -49,7 +50,8 @@ export function composeCompatibilityNarrative(payload: unknown) {
     compatibilityRoleVersion: evidence.roleVersion, headline: copy.headline,
     opening: [block("opening", copy.opening)], sections,
     finalLine: copy.ending, finalProof: pairProof(source, proof([], [], [], [`category:${category}`])) };
-  return { ok: true as const, narrative, evidence, persons: { personA: a, personB: b }, directions: { aToB: dAB, bToA: dBA },
+  const composed = composePairContent(narrative, evidence, a, b);
+  return { ok: true as const, ...composed, evidence, persons: { personA: a, personB: b }, directions: { aToB: dAB, bToA: dBA },
     mbtiPairBasis: compatibilityPairBasis(evidence), selection: { harmony: relation.harmony?.identity ?? null, tension: relation.tension?.identity ?? null, element: element ? { giver: element.giver, receiver: element.receiver, element: element.element } : null },
-    editorial: reviewNarrative(narrative) };
+    editorial: reviewNarrative(composed.narrative) };
 }

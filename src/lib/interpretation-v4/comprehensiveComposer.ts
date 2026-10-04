@@ -14,6 +14,7 @@ import type { NarrativeBlock, NarrativeInput, NarrativeSection, NarrativeState, 
 import type { FortuneComposite } from "./types";
 import { expressionFusions, expressionLens, realizeEditorialVariant } from "./narrativeVariation";
 import { atomicFortunes } from "./narrativeAtomicFortune";
+import { composeEvidenceChapters } from "./contentSynthesis";
 
 const known = (value: unknown, allowed: readonly string[]) => typeof value === "string" && allowed.includes(value);
 const fortuneProof = (fortune: FortuneComposite) => ({ features: uniqueRefs(fortune.supportingEvidence.map(d => depthFeature(d.evidence.feature))),
@@ -197,5 +198,6 @@ export function composeComprehensiveNarrative(input: NarrativeInput) {
     sections: sections.filter(s => s.blocks.length).sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id)),
     finalLine: ending.map(s => s.text).join(" "), finalProof: proof([pillar], ending),
   };
-  return { ok: true as const, narrative, materials: packet, editorial: reviewNarrative(narrative) };
+  const composed = composeEvidenceChapters(input, packet, narrative, "comprehensive");
+  return { ok: true as const, ...composed, materials: packet, editorial: reviewNarrative(composed.narrative) };
 }

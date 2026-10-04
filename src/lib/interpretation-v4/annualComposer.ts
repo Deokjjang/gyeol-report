@@ -7,6 +7,7 @@ import { majorContext } from "./majorContext";
 import { MAJOR_MEANINGS } from "./majorMaterials";
 import { paragraph, proof, particle } from "./copyRealizer";
 import { reviewNarrative } from "./editorialGuard";
+import { composeEvidenceChapters } from "./contentSynthesis";
 import type { NarrativeBlock, NarrativeSection } from "./narrativeTypes";
 
 const YEAR: Record<TenGod, { opening: string; gift: string; caution: string; final: string }> = {
@@ -89,9 +90,11 @@ export async function composeAnnualFortuneNarrative(payload: unknown, clock: Ann
   const narrative = { version: "v4-annual-fortune-narrative-1" as const,
     headline: `${e.input.name}님의 ${e.selectedYear}년 — ${withKoreanParticle(meaning.theme, "object")} ${c.noun}에 담는 해`,
     opening, sections, finalLine: `${e.selectedYear}년, ${year.final}.`, finalProof: source };
-  return { ok: true as const, narrative, evidence: e, months, materials: e.materials,
+  const composed = composeEvidenceChapters(e.input, e.materials, narrative, "annual");
+  const publishedMonths = months.map(m => ({ ...m, blocks: composed.narrative.sections.find(s => s.id === `month-${m.month}`)!.blocks }));
+  return { ok: true as const, ...composed, evidence: e, months: publishedMonths, materials: e.materials,
     behaviorBasis: months.flatMap(m => m.behavior ? [m.behavior] : []),
     completeness: { months: months.length, opening: true, dayunCross: crossBlocks.length, fortune: true, final: true,
       monthProvenance: months.every(m => m.provenance.length > 0), ordered: e.segments.every((s, i) => Date.parse(s.startKst) < Date.parse(s.endKstExclusive) && (!i || e.segments[i - 1].endKstExclusive === s.startKst)) },
-    editorial: reviewNarrative(narrative) };
+    editorial: reviewNarrative(composed.narrative) };
 }

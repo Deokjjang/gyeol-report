@@ -1,3 +1,4 @@
+import contentBaseline from "./contentRebuildBaseline.json";
 import { createHash } from "node:crypto";
 import { isVerifiedBookConsumer } from "./bookBoundary";
 import { mkdirSync, writeFileSync, readFileSync, readdirSync } from "node:fs";
@@ -17,14 +18,8 @@ import { loveInputs } from "./loveFixtures";
 import { careerInputs } from "./careerFixtures";
 import { NARRATIVE_FIXTURES, fixtureInput } from "./narrativeFixtures";
 
-// Phase 5A baseline plus reviewed Phase 7A prose; before/after and immutable
-// evidence/proof hashes are recorded in finalEditorialBaseline.json.
-const CAREER_HASHES = [
-  "dacbdcbeb42b15b65ff6c25a348f6721a5d6164e959b57b7bea86a1b7b3e6760", "8201af77e7dc274593d739e7dfd454f5b16aaa7eae164e0ddcad42a6fd8883dc",
-  "31152e39362b63ffbeef6b5dc6ffd213a9e0a3362b5ea01adbc0cf048cf1d16a", "509fe3c8b4a173e89e16d2592fe15e90ba67a7235a2ba3922d4ce0fb2085f884",
-  "735309a7e92cea1eee3d7dc7ad6e6e89968ee000b27052575c0fe4d4e38e1f85", "443e99d5216d242f426faa379c4440ac75b3a9debb51622ac36de3ffa96707dc",
-  "e4fab97f6ef08b6341fdffd9d77a7265a2a77203aacb9a6cc7359ee8d9c4a7c6", "dc68e33b76f7cb6c5dbfed65dc9e534f1afcedbe6511a045e5a4261935a693c8",
-];
+// Phase13A text/proof baseline; historical Phase7A baseline is retained.
+const CAREER_HASHES = Object.entries(contentBaseline.rows).filter(([id]) => id.startsWith("career-")).sort(([a], [b]) => a.localeCompare(b)).map(([, row]) => row.after);
 const inputs = loveInputs();
 const stateFor = (input: NarrativeInput): NarrativeState => {
   const result = composeLoveNarrative(input); expect(result.ok).toBe(true);
@@ -88,7 +83,7 @@ describe("Love evidence and regression boundaries", () => {
         // but may appear only in the existing supporting complement proof.
         if (held.feature === "distribution:output-low") {
           for (const block of [...r.narrative.opening, ...r.narrative.sections.flatMap(s => s.blocks)].filter(b => b.proof.features.includes(held.feature))) {
-            expect(block.id).toBe("love-fusion-turn");
+            expect(block.proof.fusionIds.length).toBeGreaterThan(0);
             expect(r.materials.fusions.filter(f => block.proof.fusionIds.includes(f.ruleId)).every(f => f.kind === "complement" && f.strength === "supporting")).toBe(true);
           }
         } else expect(proofs).not.toContain(held.feature);

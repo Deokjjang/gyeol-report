@@ -3,7 +3,7 @@ import type { Book, Person } from "./model";
 
 // Presentation-only DTO. No calculation objects, proof IDs or composer imports.
 export type BookPerson = Person & { role: string; timeLabel: string; table: V4CustomerTables[number] };
-export type BookFeature = { name: string; meaning: string; manifestation: string; person: string };
+export type BookFeature = { name: string; meaning: string; manifestation: string; person: string; group?: string; core?: boolean };
 export type BookNote = { name: string; text: string };
 export type BookParagraph = { text: string; notes: number[] };
 export type BookYear = { year: number; age: number; cycle: string; annual: string; theme: string; good: string; caution: string | null; title: string; time: string; page: number; transition: string | null };

@@ -34,6 +34,6 @@ export type V4CustomerTables = readonly {
   readonly name: string;
   readonly manse: Omit<ManseRyeokCommonTableData, "natalEvidence">;
   readonly mbti: MbtiCommonProfileTableData | null;
-  readonly elements: readonly { readonly label: string; readonly visible: number; readonly weighted: number }[];
+  readonly elements: readonly { readonly label: string; readonly visible: number; readonly weighted: number; readonly state?: "강함" | "약함" | "균형" | "부분 확인" }[];
 }[];
 export type V4ShadowView = { readonly createdAtIso: string; readonly productSlug: string; readonly report: V4CustomerReport; readonly tables: V4CustomerTables };

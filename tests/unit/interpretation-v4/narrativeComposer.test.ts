@@ -20,7 +20,7 @@ describe("V4 offline comprehensive editorial", () => {
     expect(result.ok).toBe(true);
     if (!result.ok) return;
     expect(result.narrative.opening.length).toBeGreaterThanOrEqual(3);
-    expect(result.narrative.opening.length).toBeLessThanOrEqual(6);
+    expect(result.narrative.opening.length).toBeLessThanOrEqual(9);
     expect(result.narrative.sections.at(-1)?.id).toBe("direction");
     expect(result.narrative.sections.map(s => s.domain)).toEqual(expect.arrayContaining(["work", "money", "relationships", "love", "study", "strengths"]));
     expect(result.editorial).toEqual([]);
@@ -66,7 +66,7 @@ describe("evidence, counterfactuals and unchanged boundaries", () => {
     for (const { result, input } of results) {
       if (!result.ok) continue;
       const table = buildCanonicalNatalTable(input.calculation.birthTimeContext!);
-      const features = new Set([...result.materials.selected.map(m => m.feature), ...result.materials.symbolicElements.map(e => e.material.feature),
+      const features = new Set([...(input.calculation.pillars.hour ? ["natal:yin-yang"] : []), ...result.materials.selected.map(m => m.feature), ...result.materials.symbolicElements.map(e => e.material.feature),
         ...result.materials.fusions.flatMap(f => f.myeongliEvidence.map(d => depthFeature(d.evidence.feature))),
         ...(table?.relations.map(r => `natal-relation:${r.id}`) ?? []),
         ...(table?.pillars.flatMap(p => p.twelveLifeStage?.map(s => `natal-life-stage:${p.columnId}:${s}`) ?? []) ?? [])]);

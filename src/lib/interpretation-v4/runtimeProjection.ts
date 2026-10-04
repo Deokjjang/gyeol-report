@@ -161,7 +161,9 @@ export function projectV4Tables(e: V4RuntimeEvidence): V4CustomerTables {
       fiveElementDistribution: data.fiveElementDistribution, detailRows: data.detailRows },
       mbti: profile ? publicMbti(profile) : null,
       elements: ([["WOOD", "목"], ["FIRE", "화"], ["EARTH", "토"], ["METAL", "금"], ["WATER", "수"]] as const).map(([element, label]) =>
-        ({ label, visible: e.calculations[slot].elements.visible[element], weighted: e.calculations[slot].elements.weighted[element] })) };
+        ({ label, visible: e.calculations[slot].elements.visible[element], weighted: e.calculations[slot].elements.weighted[element],
+          state: !e.calculations[slot].pillars.hour ? "부분 확인" as const : e.calculations[slot].elements.labels.includes(`${element}_STRONG`) ? "강함" as const :
+            e.calculations[slot].elements.labels.some(v => v === `${element}_WEAK` || v === `${element}_MISSING`) ? "약함" as const : "균형" as const })) };
   });
 }
 

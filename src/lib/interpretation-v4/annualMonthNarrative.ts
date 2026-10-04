@@ -9,8 +9,9 @@ import { MAJOR_MEANINGS } from "./majorMaterials";
 import { ANNUAL_MONTH_STORIES, ANNUAL_TRANSIT_STORIES } from "./annualStories";
 import { paragraph, proof, particle } from "./copyRealizer";
 import { annualGiftTitle, annualMonthLead } from "./annualRealization";
+import { periodExplanation } from "./contentPeriod";
 
-export type AnnualEditorialState = { godUses: Map<TenGod, number>; features: Set<string>; relations: Set<string>; fusions: Set<string> };
+export type AnnualEditorialState = { godUses: Map<TenGod, number>; features: Set<string>; relations: Set<string>; fusions: Set<string>; natalRoots?: Set<string> };
 const tags: Record<TenGod, readonly string[]> = {
   비견: ["autonomy", "solitude"], 겁재: ["sociability", "help", "leadership"], 식신: ["expression", "practical-learning", "experimentation"],
   상관: ["precision", "decisive-correction", "expression", "experimentation"], 편재: ["wealth", "mobility", "experience-spending"], 정재: ["wealth", "consistency", "accumulation"],
@@ -33,7 +34,7 @@ export function annualBehavior(e: AnnualEvidence, m: AnnualMonthEvidence, god: T
     : fusion.ruleId === "estp-study" ? "충분히 알아야 안심되는 마음과 일단 해보고 싶은 마음이 함께 있습니다. 직접 부딪힌 뒤 설명을 다시 보면 아까는 지루하던 내용도 달라지죠. 배움이 강조되는 달에는 경험과 복습을 오가는 방식이 특히 잘 어울립니다."
     : fusion.ruleId === "estp-needle" ? "길게 설명을 듣는 동안에도 지금 달라진 반응을 먼저 봅니다. 빠르게 판단할 장면에서는 그 눈이 장점이 되지만, 눈앞의 답을 곧바로 전체의 답으로 삼지는 않을 때 더 정확해집니다."
     : fusion.insightSeed;
-  return { fusion, block: paragraph(`month-${m.month}-behavior`, person,
+  return { fusion, block: paragraph(`month-${m.month}-behavior`, `${m.month}월의 ${particle(god, "을", "를")} ${fusion.mbtiEvidence.type}의 행동에 비춰볼까요? ${person}`,
     proof([], [], [fusion], [...m.sourceRefs, `v4:annual:behavior:${god}`]), "positive") };
 }
 
@@ -93,6 +94,8 @@ export function annualMonthNarrative(e: AnnualEvidence, m: AnnualMonthEvidence, 
   else if (giftBlock && ["helpers", "kindness", "mediation"].includes(gift!.theme)) blocks.push(giftBlock, scene, use);
   else if (giftBlock && (god === "비견" || god === "겁재")) blocks.push(scene, giftBlock, use);
   else blocks.push(scene, use, ...(giftBlock ? [giftBlock] : []));
+  state.natalRoots ??= new Set();
+  blocks.splice(2, 0, periodExplanation(`month-${m.month}`, `${m.month}월`, god, occurrence, e.materials, m.sourceRefs, state.natalRoots));
   const relation = m.focus.relationFacts.find(f => f.source === "month_natal_branch" && f.certainty === "confirmed" && f.affectedPillars.includes("day") && !state.relations.has(f.type));
   const wonjin = m.transit.accepted.find(f => f.feature === "wonjin" && f.observations.some(o => o.basis.anchor === "natal.day.branch"));
   const relationKey = relation?.type ?? (wonjin ? "원진" : undefined);

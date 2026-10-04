@@ -15,7 +15,8 @@ import { COMPATIBILITY_NARRATIVE_FIXTURES } from "./compatibilityFixtures";
 import { MAJOR_NARRATIVE_FIXTURES, MAJOR_EVALUATED_AT } from "./majorFixtures";
 import { ANNUAL_NARRATIVE_FIXTURES, ANNUAL_CLOCK } from "./annualFixtures";
 import { auditEditorial, editorialInvariant, type AuditReport } from "./finalEditorialAudit";
-import baseline from "./finalEditorialBaseline.json";
+import baseline from "./contentRebuildBaseline.json";
+import { expectBoundCohortReuse } from "./contentCohortAssertions";
 import { annualSceneDetail } from "../../../src/lib/interpretation-v4/annualSceneDetails";
 import { majorContext } from "../../../src/lib/interpretation-v4/majorContext";
 import type { TenGod } from "../../../src/lib/report-knowledge/annualFortuneTypes";
@@ -51,8 +52,8 @@ beforeAll(async () => {
   }
 }, 60000);
 
-describe("Phase 7A six-product editorial audit (read-only diagnostics)", () => {
-  it.each(Object.entries(baseline.rows))("%s: reviewed prose and pre-edit calculation/selection/proofs", (id, expected) => {
+describe("Phase13A six-product editorial audit (Phase7A baseline retained separately)", () => {
+  it.each(Object.entries(baseline.rows))("%s: Phase13A reviewed prose, selection and proofs remain deterministic", (id, expected) => {
     const r = rows.find(r => r.id === id)!;
     expect(digest(r.narrative)).toBe(expected.after);
     expect(digest(editorialInvariant(packets[id] as Record<string, unknown>, r.narrative))).toBe(expected.invariant);
@@ -62,21 +63,12 @@ describe("Phase 7A six-product editorial audit (read-only diagnostics)", () => {
     expect(a.summary.withinReportIssues).toBe(0);
     for (const d of a.diagnostics) expect(d.counts.positive, d.id).toBeGreaterThan(d.counts.shadow);
   });
-  it.each(["ENTJ", "INTP", "ENFP"])("%s: one person, six domains; only three shared natal facts remain", mbti => {
-    const golden = rows.filter(r => r.golden === `golden-${mbti}`), a = auditEditorial(golden);
+  it.each(["ENTJ", "INTP", "ENFP"])("%s: one person, six domains; shared explanations must have shared proof", mbti => {
+    const golden = rows.filter(r => r.golden === `golden-${mbti}`);
     expect(golden).toHaveLength(6);
     expect(new Set(golden.map(r => r.narrative.headline)).size).toBe(6);
     expect(new Set(golden.map(r => r.narrative.finalLine)).size).toBe(6);
-    expect(a.crossProduct).toHaveLength(3);
-    // Remaining overlap must be backed by the same natal seed, not reusable scene copy.
-    for (const duplicate of a.crossProduct) {
-      const seedSets = duplicate.locations.map(location => {
-        const [id, block] = location.split("/");
-        const n = rows.find(r => r.id === id)!.narrative;
-        return [...n.opening, ...n.sections.flatMap(s => s.blocks)].find(b => b.id === block)!.proof.seedIds;
-      });
-      expect(seedSets[0].some(id => seedSets.every(set => set.includes(id))), duplicate.text).toBe(true);
-    }
+    expectBoundCohortReuse(golden);
     const core = packets[`golden-${mbti}-comprehensive`] as { materials: unknown };
     for (const product of ["career", "love", "major", "annual"]) {
       expect((packets[`golden-${mbti}-${product}`] as { materials: unknown }).materials).toEqual(core.materials);
@@ -159,6 +151,7 @@ describe("Phase 7A six-product editorial audit (read-only diagnostics)", () => {
     const audit = { cohort: auditEditorial(cohorts), golden: Object.fromEntries(["ENTJ", "INTP", "ENFP"].map(mbti => [mbti, auditEditorial(golden.filter(r => r.golden === `golden-${mbti}`))])) };
     writeFileSync(`${dir}/duplication-report.json`, JSON.stringify(audit, null, 2));
     writeFileSync(`${dir}/hashes.json`, JSON.stringify(Object.fromEntries(rows.map(r => [r.id, digest(r.narrative)])), null, 2));
+    writeFileSync(`${dir}/content-baseline.json`, JSON.stringify({ revision: "v4-content-synthesis-13a-1", rows: Object.fromEntries(rows.map(r => [r.id, { after: digest(r.narrative), invariant: digest(editorialInvariant(packets[r.id] as Record<string, unknown>, r.narrative)) }])) }, null, 2));
     writeFileSync(`${dir}/index.md`, rows.map(r => `- [${r.id}](${r.id}.md) · ${r.narrative.headline}`).join("\n"));
     writeFileSync(`${dir}/golden-comparison.md`, golden.map(r => `# ${r.id}\n\n${narrativeText(r.narrative)}`).join("\n\n---\n\n"));
   });

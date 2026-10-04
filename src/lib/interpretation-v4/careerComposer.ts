@@ -9,6 +9,7 @@ import { careerStudy } from "./careerStudy";
 import { careerFortune } from "./careerFortune";
 import { careerBalance } from "./careerBalance";
 import { careerNatalMoney } from "./careerNatalMoney";
+import { composeEvidenceChapters } from "./contentSynthesis";
 import type { NarrativeInput, NarrativeState, NarrativeSection, NarrativeProof, NarrativeBlock } from "./narrativeTypes";
 import type { CareerNarrative } from "./careerNarrativeTypes";
 
@@ -92,5 +93,6 @@ export function composeCareerNarrative(input: NarrativeInput) {
   const narrative: CareerNarrative = { version: "v4-career-narrative-1", headline: voice.headline, opening,
     sections: sections.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id)), recommendations: routes.recommendations, avoidEnvironments: routes.avoid,
     finalLine: voice.final, finalProof: voice.proof };
-  return { ok: true as const, narrative, materials: packet, studyBasis: study.basis, selection: { voice: voice.id, workFunction: context.workFunction, workMode: context.workMode }, editorial: reviewNarrative(narrative) };
+  const composed = composeEvidenceChapters(input, packet, narrative, "career");
+  return { ok: true as const, ...composed, materials: packet, studyBasis: study.basis, selection: { voice: voice.id, workFunction: context.workFunction, workMode: context.workMode }, editorial: reviewNarrative(composed.narrative) };
 }

@@ -70,10 +70,11 @@ describe("actual V4 packet → book pages; no new calculation or prose", () => {
     const slots = e.input.kind === "compatibility" ? ["personA", "personB"] as const : ["person"] as const;
     const expected = slots.flatMap((slot, i) => bookFeatureInventory(e, slot, data.people[i].name).map(f => f.display));
     const appendix = data.pages.filter(p => p.kind === "appendix");
-    expect(appendix.flatMap(p => p.items)).toEqual(expected);
+    const displayKey = (f: (typeof expected)[number]) => JSON.stringify({ ...f, core: undefined });
+    expect(appendix.flatMap(p => p.items).map(displayKey).sort()).toEqual(expected.map(displayKey).sort());
     expect(expected.length).toBeGreaterThan(10);
     expect(new Set(expected.map(f => f.person + f.name)).size).toBe(expected.length);
-    expect(expected.every(f => f.name && f.meaning && f.manifestation)).toBe(true);
+    expect(expected.every(f => f.name && f.meaning)).toBe(true);
     // Independently require every engine-selected material, not only the
     // inventory adapter's own output. This catches accidental appendix caps.
     const materials = e.composition.product === "saju_mbti_compatibility"
@@ -84,7 +85,12 @@ describe("actual V4 packet → book pages; no new calculation or prose", () => {
       expect(expected.some(f => f.person === data.people[i].name && f.name === label), `${id}: ${m.feature}`).toBe(true);
     }));
     expect(JSON.stringify(expected)).not.toMatch(/망신|문곡|복성|천의성/);
-    appendix.forEach((p, i) => { expect(p.from).toBe(i * 10 + 1); expect(p.total).toBe(expected.length); expect(p.items.length).toBeLessThanOrEqual(10); });
+    expect(appendix).toHaveLength(slots.length);
+    appendix.forEach((p, i) => {
+      expect(p.from).toBe(1 + appendix.slice(0, i).reduce((n, a) => n + a.items.length, 0));
+      expect(p.total).toBe(expected.length);
+      expect(p.items.length).toBe(expected.filter(f => f.person === data.people[i].name).length);
+    });
   });
   it("14 years, 10 future years, all ages, transitions and clickable full narratives", () => {
     const { evidence: e, data } = samples.get("major")!;

@@ -123,9 +123,15 @@ describe("book preview: development-only presentation", () => {
     });
   });
   it("chapter notes exist at the bottom, not only in a dialog", () => {
-    const html = reader("narrative");
+    const data = library.books[0];
+    const page = data.pages.find(p => p.kind === "narrative" && p.notes.length > 0);
+    expect(page).toBeDefined();
+    const html = renderToStaticMarkup(<BookReader data={data} page={page!} onNote={noop} onShare={noop} onPage={noop} />);
     expect(html).toContain('aria-label="이 장의 각주"');
     expect(html.indexOf('aria-label="이 장의 각주"')).toBeGreaterThan(html.indexOf("data-narrative-paragraph"));
+    const withoutNotes = data.pages.find(p => p.kind === "narrative" && p.notes.length === 0);
+    expect(withoutNotes).toBeDefined();
+    expect(renderToStaticMarkup(<BookReader data={data} page={withoutNotes!} onNote={noop} onShare={noop} onPage={noop} />)).not.toContain('aria-label="이 장의 각주"');
   });
   it("complete MBTI keywords/function stack and natal detail rows remain available", () => {
     const html = reader("mbti"), tables = library.books[0].people[0].table;

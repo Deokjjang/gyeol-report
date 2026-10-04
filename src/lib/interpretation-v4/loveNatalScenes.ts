@@ -15,6 +15,7 @@ const SCENES: Readonly<Record<string, Scene>> = {
   "v4_structure:killingResourceFlow": { title: "둘 사이에 문제가 생겼을 때, 도망보다 이해를 고릅니다", family: "learning-under-pressure", text: "압박을 배움과 이해로 바꾸는 힘이 있습니다. 어려운 대화가 생겼을 때 바로 등을 돌리기보다 무엇이 꼬였는지 알아보고 싶은 쪽입니다. 서로 다른 생활방식을 처음 맞출 때도 이유를 알면 타협할 길이 더 잘 보입니다. 관계를 완벽한 문제풀이로 만들지만 않는다면, 한번 부딪힌 자리에서 다음에는 더 잘 알아듣는 사람이 될 힘입니다." },
   "v4_structure:officerResourceFlow": { title: "말뿐인 약속이 아니라, 기대어도 되는 태도", family: "reliability-and-care", text: "책임을 지려는 마음과 상대를 이해하려는 힘이 함께 받쳐줍니다. 지켜야 한다는 원칙만 앞세우기보다 사정을 듣고, 무엇을 도울 수 있을지 생각합니다. 어려운 부탁을 무조건 허락하는 것과 끝까지 맡을 수 있는 도움은 다르다는 감각이 중요합니다. 당신의 좋은 점은 거절을 모르는 착함보다, 믿고 나눈 일을 가볍게 잊지 않는 태도에 있습니다." },
 };
+export const natalLoveScene = (feature: string) => SCENES[feature];
 const PRIORITY: Readonly<Record<string, readonly string[]>> = {
   sensory: ["ten_god_qi_sha", "ten_god_bijian"],
   decisive: ["ten_god_zheng_cai", "ten_god_zheng_yin"],

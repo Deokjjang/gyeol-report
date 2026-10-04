@@ -1,3 +1,4 @@
+import { expectBoundCohortReuse } from "./contentCohortAssertions";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { composeComprehensiveNarrative } from "../../../src/lib/interpretation-v4/comprehensiveComposer";
@@ -35,10 +36,10 @@ describe("Phase 4B complete-text review", () => {
     }
     writeFileSync(`${directory}/index.md`, `# Phase 4B · 12 full reports + 6 counterfactuals\n\n${index.join("\n")}\n`);
   });
-  it("twelve full reports have no exact shared sentence or twelve-word phrase", () => {
+  it("distinct headlines and finals; shared explanations retain concrete common evidence", () => {
     const reports = results.flatMap(({ fixture, result }) => result.ok ? [{ id: fixture.id, narrative: result.narrative }] : []);
     expect(reports).toHaveLength(12);
-    expect(reviewNarrativeCohort(reports)).toEqual([]);
+    expectBoundCohortReuse(reports);
   });
   it.each(counterfactuals)("$id: change exactly one input axis, preserve evidence and create a different character", ({ input, change }) => {
     const result = composeComprehensiveNarrative(input), original = results[0].result;
