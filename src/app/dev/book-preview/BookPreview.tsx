@@ -8,6 +8,7 @@ import { BOOKS, PUBLISHING_STATES, coverOffset, wrapBook, requiredConsents } fro
 import { createCoverflowAuto } from "./coverflowAuto";
 import type { BookLibrary, BookNote } from "./bookTypes";
 import s from "./book.module.css";
+import { canStartReadingGesture, hasReadingSelection, readingGestureDirection } from "../../../components/book/readingGesture";
 
 type Stage = "home" | "opening-input" | "input" | "receipt" | "publishing" | "complete" | "opening-reader" | "reader";
 const isField = (target: EventTarget) => target instanceof Element && Boolean(target.closest("input,select,textarea,a,button"));
@@ -27,7 +28,7 @@ export default function BookPreview({ library, initialBook, initialRead = false 
   const [message, setMessage] = useState("");
   const auto = useRef<ReturnType<typeof createCoverflowAuto> | null>(null);
   const scroller = useRef<HTMLDivElement>(null);
-  const gesture = useRef<{ x: number; y: number } | null>(null);
+  const gesture = useRef<{ x: number; y: number; startedAt: number } | null>(null);
   const wheelTime = useRef(0);
   const dragged = useRef(false);
   const turnTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -92,11 +93,13 @@ export default function BookPreview({ library, initialBook, initialRead = false 
   const pointerStart = (e: PointerEvent) => {
     dragged.current = false;
     if (stage !== "home" && isField(e.target)) return;
-    gesture.current = { x: e.clientX, y: e.clientY };
+    if (stage === "reader" && !canStartReadingGesture(e.target as Element, hasReadingSelection(window.getSelection()))) { gesture.current = null; return; }
+    gesture.current = { x: e.clientX, y: e.clientY, startedAt: e.timeStamp };
   };
   const pointerEnd = (e: PointerEvent) => {
     const start = gesture.current; gesture.current = null;
     if (!start) return;
+    if (stage === "reader") { const direction = readingGestureDirection(start, e.clientX, e.clientY, e.timeStamp, hasReadingSelection(window.getSelection())); if (direction) { dragged.current = true; if (direction > 0) next(); else previous(); } return; }
     const x = e.clientX - start.x, y = e.clientY - start.y;
     if (Math.abs(x) > 45 && Math.abs(x) > Math.abs(y) * 1.5) { dragged.current = true; if (x < 0) next(); else previous(); }
   };

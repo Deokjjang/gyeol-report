@@ -8,7 +8,7 @@ export const pairProof = (...sources: readonly NarrativeProof[]): NarrativeProof
 
 // These interpretations translate the EXISTING target-viewer ten-god result.
 // They never infer it from MBTI, input order or a score.
-const godEffects: Record<string, string> = {
+export const godEffects: Record<string, string> = {
   비견: "자기 의견을 더 또렷하게 꺼내게 합니다", 겁재: "가만있기보다 같이 도전하고 싶은 마음을 건드립니다",
   식신: "긴장을 풀고 직접 해보는 즐거움을 끌어냅니다", 상관: "그동안 삼켰던 의견과 다른 방법을 꺼내게 합니다",
   편재: "새로운 경험과 실제로 얻을 결과를 함께 생각하게 합니다", 정재: "시간과 돈을 어디에 쓰는지 더 구체적으로 보게 합니다",

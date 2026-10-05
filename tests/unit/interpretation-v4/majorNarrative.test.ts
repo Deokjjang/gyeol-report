@@ -28,7 +28,10 @@ describe("Major V4 offline fourteen-year narrative", () => {
     expect(new Set(r.years.map(y => y.sceneFamily)).size).toBe(14);
     expect(r.transitions.length).toBe(r.evidence.horizon.transitions.length);
     expect(r.narrative.sections.at(-1)?.id).toBe("final");
-    for (const y of r.years) { expect(y.blocks.length).toBeGreaterThanOrEqual(4); expect(y.blocks.reduce((n, b) => n + b.text.length, 0)).toBeGreaterThan(350); }
+    for (const y of r.years) {
+      expect(y.blocks.length).toBeGreaterThanOrEqual(y.importance === "BACKGROUND" ? 3 : 4);
+      expect(y.blocks.reduce((n, b) => n + b.text.length, 0)).toBeGreaterThan(y.importance === "BACKGROUND" ? 200 : 350);
+    }
     expect(r.editorial).toEqual([]);
   });
   it("distinct headlines and finals; shared explanations retain concrete common evidence", () => {

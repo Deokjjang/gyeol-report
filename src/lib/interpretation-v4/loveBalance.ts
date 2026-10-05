@@ -14,5 +14,23 @@ export function loveBalance(state: NarrativeState, voice: string) {
     METAL: voice === "faithful" ? "금의 분명한 선을 닮은 사람은 기준을 강요하기보다 서로 정한 범위를 지킵니다. 가족 부탁이나 큰 지출 앞에서도 둘의 의견을 먼저 확인하는 모습입니다. 작은 일까지 내가 매번 점검하지 않아도 되는 상대라면 책임감 사이에 쉴 틈이 생깁니다." : "금의 구분하는 힘을 관계의 이미지로 옮기면, 도울 일과 쉴 시간을 명확히 말할 줄 아는 사람이 떠오릅니다. 거절을 곧 미움으로 받지 않고 내 경계도 존중하는 사람입니다. 사람 마음을 오래 살피는 당신에게는 이런 분명함이 오히려 편안한 여유가 될 수 있습니다.",
     WOOD: "목의 가지가 뻗는 모습을 닮은 사람은 새로운 경험을 재촉이 아니라 초대로 건넵니다. 다 알아본 뒤에 움직이려 할 때 작은 시도 하나를 같이 해보자는 사람입니다. 생각을 그만하라는 말 대신 궁금한 것을 밖에서도 만나게 해주는 관계가 어울릴 수 있습니다.",
   }[low.element];
-  return { low, block: paragraph("love-symbolic-partner", copy, { features: [low.material.feature], seedIds: [], fusionIds: [], sourceRefs: [...low.sourceRefs, "v4:love-symbolic-partner"] }, "direction", "partner-environment") };
+  const environments = {
+    WATER: "독서모임이나 한 가지를 깊게 배우는 자리에서는 말을 빨리 잘하는지보다 얼마나 오래 듣고 생각하는지 보기 좋습니다.",
+    FIRE: "취미를 함께 보여주거나 감상을 나누는 자리에서는 상대의 따뜻한 반응과 표현을 직접 느끼기 좋습니다.",
+    EARTH: "정기적으로 만나는 수업이나 함께 맡은 작은 일에서는 약속과 생활 리듬이 일정한지를 보기 좋습니다.",
+    METAL: "규칙과 역할이 있는 활동에서는 서로의 경계를 존중하는지, 거절을 어떻게 받아들이는지가 잘 드러납니다.",
+    WOOD: "처음 배우는 수업이나 새로운 경험을 함께 하는 자리에서는 재촉하지 않고 시도를 격려하는 사람인지 알기 좋습니다.",
+  }[low.element];
+  const avoid = {
+    WATER: "내 감정을 다 듣기도 전에 결론부터 내리거나 쉬는 시간까지 성과를 요구하는 패턴은 피곤합니다.",
+    FIRE: "마음은 알아서 알라며 아무 반응도 주지 않는 패턴은 혼자 짐작할 일만 늘립니다.",
+    EARTH: "좋을 때 약속을 크게 하고 평소에는 자꾸 바꾸는 패턴은 설렘과 별개로 지치게 합니다.",
+    METAL: "친하다는 이유로 거절을 허용하지 않는 패턴은 배려를 의무로 바꿉니다.",
+    WOOD: "새로운 시도를 전부 쓸데없다고 자르는 패턴은 함께 자라는 즐거움을 줄입니다.",
+  }[low.element];
+  const established = ["dating", "married", "marriage_preparing"].includes(state.input.context.relationshipStatus);
+  const meeting = `${established ? "지금 가까운 사람과도 " : ""}${environments} ${avoid}`;
+  const source = { features: [low.material.feature], seedIds: [], fusionIds: [], sourceRefs: [...low.sourceRefs, "v4:love-symbolic-partner"] };
+  return { low, block: paragraph("love-symbolic-partner", copy, source, "direction", "partner-environment"),
+    meeting: paragraph("love-meeting-environment", meeting, source, "observation", "comfortable-meeting-setting") };
 }

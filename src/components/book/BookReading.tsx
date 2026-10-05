@@ -10,6 +10,7 @@ import { SaveToLibrary } from "../account/SaveToLibrary";
 import { BookShareActions } from "./BookShareActions";
 import { bookShareEvent } from "../../lib/book/shareEvents";
 import shareStyle from "./bookShare.module.css";
+import { canStartReadingGesture, hasReadingSelection, readingGestureDirection, type ReadingGesture } from "./readingGesture";
 import { ReferralBookCta } from "./ReferralBookCta";
 import { interaction } from "../../lib/analytics/client";
 
@@ -17,21 +18,46 @@ export function BookReading({ data, share, home = "/", saveToLibrary, shareOwner
   useEffect(() => { interaction(shared && share.referral ? "referral_landing_opened" : "report_opened", share.productType); }, [shared, share.referral, share.productType]);
   const [page, setPage] = useState(0), [note, setNote] = useState<BookNote | null>(null), [message, setMessage] = useState("");
   const scroll = useRef<HTMLDivElement>(null);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null), gesture = useRef<{ x: number; y: number } | null>(null);
+  const [returnPoints, setReturnPoints] = useState<{ page: number; top: number }[]>([]);
+  const restoreTop = useRef(0), selectionActive = useRef(false);
+  const pendingAnchor = useRef<string | undefined>(undefined);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null), gesture = useRef<ReadingGesture | null>(null);
   const [turning, setTurning] = useState<number | null>(null);
   const book = BOOKS.find(b => b.id === data.bookId)!;
-  useEffect(() => { scroll.current?.scrollTo({ top: 0 }); scroll.current?.focus({ preventScroll: true }); }, [page]);
+  useEffect(() => {
+    scroll.current?.scrollTo({ top: restoreTop.current }); restoreTop.current = 0;
+    if (pendingAnchor.current) document.getElementById(pendingAnchor.current)?.scrollIntoView({ block: "start" });
+    pendingAnchor.current = undefined; scroll.current?.focus({ preventScroll: true });
+  }, [page]);
   useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
+  useEffect(() => {
+    const sync = () => { selectionActive.current = hasReadingSelection(window.getSelection()); if (selectionActive.current) gesture.current = null; };
+    document.addEventListener("selectionchange", sync);
+    return () => document.removeEventListener("selectionchange", sync);
+  }, []);
   const turn = (n: number) => {
     if (timer.current || n < 0 || n >= data.pages.length || n === page) return;
     setTurning(n > page ? 1 : -1); setPage(n); setNote(null);
     timer.current = setTimeout(() => { timer.current = null; setTurning(null); }, matchMedia("(prefers-reduced-motion: reduce)").matches ? 20 : 510);
   };
-  return <main className={s.root} data-book-report style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties} onKeyDown={e => { if ((e.target as Element).closest("dialog,input,select,textarea")) return; if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); turn(page + (e.key === "ArrowRight" ? 1 : -1)); } }}>
-    <header className={s.header}><a className={s.wordmark} href={home}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기 ×</a></header>
-    <section className={`${s.bookShell} ${data.pages[page].kind === "back" ? s.backShell : ""}`} onPointerDown={e => { if ((e.target as Element).closest("button,a,input,select,dialog")) return; gesture.current = { x: e.clientX, y: e.clientY }; }} onPointerCancel={() => { gesture.current = null; }} onPointerUp={e => { const p = gesture.current; gesture.current = null; if (p && Math.abs(e.clientX - p.x) > 45 && Math.abs(e.clientX - p.x) > Math.abs(e.clientY - p.y) * 1.5) turn(page + (e.clientX < p.x ? 1 : -1)); }}>
-      <div className={s.pageScroll} ref={scroll} tabIndex={-1} role="region" aria-label="책 내용" data-page={data.pages[page].kind} data-page-number={page + 1}>
-        <BookReader data={data} page={data.pages[page]} onNote={setNote} onPage={turn} onShare={() => setMessage(`${share.displayTitle} · 공유 연결 준비 중입니다. 실제 공유는 실행하지 않습니다.`)}
+  const jump = (target: number, anchor?: string) => {
+    if (timer.current || target < 0 || target >= data.pages.length) return;
+    if (target === page) { if (anchor) document.getElementById(anchor)?.scrollIntoView({ block: "start" }); return; }
+    setReturnPoints(points => data.pages[page].kind === "contents" && points.length ? points : [...points, { page, top: scroll.current?.scrollTop ?? 0 }]);
+    pendingAnchor.current = anchor;
+    turn(target);
+  };
+  const returnToReading = () => {
+    const previous = returnPoints.at(-1);
+    if (!previous || timer.current) return;
+    restoreTop.current = previous.top; setReturnPoints(points => points.slice(0, -1)); turn(previous.page);
+  };
+  const contents = data.pages.findIndex(p => p.id === "contents");
+  return <main className={s.root} data-book-report style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties} onKeyDown={e => { if ((e.target as Element).closest("dialog,input,select,textarea")) return; if (!hasReadingSelection(window.getSelection()) && (e.key === "ArrowRight" || e.key === "ArrowLeft")) { e.preventDefault(); turn(page + (e.key === "ArrowRight" ? 1 : -1)); } }}>
+    <header className={s.header}><a className={s.wordmark} href={home}><b>결리포트</b><span>GYEOL REPORT</span></a><div className={s.readingTools}>{returnPoints.length ? <button onClick={returnToReading}>읽던 곳으로 ↶</button> : null}{contents >= 0 ? <button onClick={() => jump(contents)}>목차</button> : null}<a href={home} className={s.close}>닫기 ×</a></div></header>
+    <section className={`${s.bookShell} ${data.pages[page].kind === "back" ? s.backShell : ""}`} onPointerDown={e => { gesture.current = canStartReadingGesture(e.target as Element, selectionActive.current) ? { x: e.clientX, y: e.clientY, startedAt: e.timeStamp } : null; }} onPointerCancel={() => { gesture.current = null; }} onPointerUp={e => { const direction = readingGestureDirection(gesture.current, e.clientX, e.clientY, e.timeStamp, selectionActive.current || hasReadingSelection(window.getSelection())); gesture.current = null; if (direction) turn(page + direction); }}>
+      <div className={s.pageScroll} ref={scroll} tabIndex={-1} role="region" aria-label="책 내용" data-page={data.pages[page].kind} data-page-number={page + 1} id={data.pages[page].id} data-chapter-id={data.pages[page].id}>
+        <BookReader data={data} page={data.pages[page]} onNote={setNote} onPage={jump} onShare={() => setMessage(`${share.displayTitle} · 공유 연결 준비 중입니다. 실제 공유는 실행하지 않습니다.`)}
           shareActions={shared || shareOwner ? <BookShareActions owner={shared ? undefined : shareOwner} model={shared ? share : undefined} local={local || shareOwner?.local} /> : undefined}
           backAction={shared && share.referral ? <ReferralBookCta share={share} local={local} home={home} /> : shared ? <a className={shareStyle.cta} href={home} onClick={() => bookShareEvent("shared_cta_clicked", share.productType, local)}>나도 내 책 만들기 ↗</a>
             : data.pages[page].kind === "back" && saveToLibrary ? <SaveToLibrary {...saveToLibrary} /> : undefined} />

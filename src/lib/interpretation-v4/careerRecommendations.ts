@@ -6,6 +6,15 @@ import type { CareerRecommendation } from "./careerNarrativeTypes";
 import type { selectCareerVoice } from "./careerVoices";
 import type { careerWorkNarrative } from "./careerWorkNarrative";
 import { CAREER_ROLE_SCENES, CAREER_ENVIRONMENT_COST } from "./careerRoleScenes";
+import { getMbtiSourceProfile } from "../report-knowledge/mbti/sourceRuntimeAdapter";
+import { materialLabel } from "./contentEvidence";
+import { chapterMbtiReadings } from "./contentMbti";
+
+type JobHint = { job: string; matchingTraits: string[]; matchingMyeongliSignals: string[] };
+const records = (value: unknown): Record<string, unknown>[] => Array.isArray(value) ? value.filter((v): v is Record<string, unknown> => typeof v === "object" && v !== null) : [];
+const strings = (value: unknown): string[] => Array.isArray(value) ? value.filter((v): v is string => typeof v === "string") : [];
+const canonicalLabel = (label: string) => ({ 도화: "도화살", 홍염: "홍염살", 문창: "문창귀인", 학당: "학당귀인", 역마: "역마살", 현침: "현침살" }[label] ?? label);
+const JOB_ROLE: Record<string, RegExp> = { review: /검토|검사|품질|재무|회계|법|판사/, investigate: /연구|분석|개발|과학|전략|번역/, create: /콘텐츠|디자인|작가|창작|브랜드|마케팅/, teach: /교육|교사|강사|상담|훈련/, lead: /CEO|경영|관리자|리더|책임|정치|감독/, manage: /운영|행정|관리|회계|공공|공무/, market: /영업|사업|판매|거래|창업|시장/, experience: /행사|서비스|여행|예술|공연|방송/ };
 
 type Route = { id: string; tags: readonly SemanticTag[]; roles: readonly string[]; task: string; environment: string; avoid: string; functions: readonly string[] };
 export const CAREER_ROUTES: readonly Route[] = [
@@ -20,22 +29,30 @@ export const CAREER_ROUTES: readonly Route[] = [
 ];
 
 export function careerRecommendations(state: NarrativeState, voice: ReturnType<typeof selectCareerVoice>, context: ReturnType<typeof careerWorkNarrative>) {
+  const profile = getMbtiSourceProfile(state.input.mbti);
+  const traitIds = new Set(Object.values(profile?.traits ?? {}).flatMap(area => area?.map(t => t.id).filter(Boolean) ?? []));
+  const jobs: JobHint[] = records(profile?.recommendedJobs).flatMap(h => typeof h.job === "string" && ["direct", "inferred"].includes(String(h.sourceCoverage)) && strings(h.matchingTraits).some(t => traitIds.has(t))
+    ? [{ job: h.job, matchingTraits: strings(h.matchingTraits), matchingMyeongliSignals: strings(h.matchingMyeongliSignals).map(canonicalLabel) }] : []);
   const candidates = CAREER_ROUTES.flatMap(route => {
     const materials = state.packet.selected.filter(m => MATERIAL_BY_FEATURE.get(m.feature)?.semanticTags.some(tag => route.tags.includes(tag)));
     if (!materials.length) return [];
     const fusions = state.packet.fusions.filter(f => materials.some(m => f.myeongliEvidence.some(d => d.evidence.feature === m.feature)) &&
       ["work", "study", "strengths", "identity", "money", "success/fortune"].includes(f.domain));
-    return [{ route, materials, fusions, significance: (fusions.length ? 2 : 0) + (route.functions.includes(context.workFunction) ? 3 : 0) }];
+    const matchedJobs = jobs.filter(j => JOB_ROLE[route.id].test(j.job) && materials.some(m => j.matchingMyeongliSignals.includes(materialLabel(m))));
+    return [{ route, materials, fusions, matchedJobs, significance: (fusions.length ? 3 : 0) + (matchedJobs.length ? 2 : 0) + (route.functions.includes(context.workFunction) ? 3 : 0) + Math.min(2, materials.length) }];
   }).sort((a, b) => b.significance - a.significance || a.route.id.localeCompare(b.route.id));
-  const fieldOrder = ["experience", "review", "market", "teach", "manage"];
-  if (voice.id === "field") candidates.sort((a, b) => (fieldOrder.indexOf(a.route.id) < 0 ? 99 : fieldOrder.indexOf(a.route.id)) - (fieldOrder.indexOf(b.route.id) < 0 ? 99 : fieldOrder.indexOf(b.route.id)));
-  const chosen = candidates.slice(0, candidates.filter(c => c.significance > 0).length >= 4 ? 5 : 3);
-  const recommendations: CareerRecommendation[] = chosen.map(({ route, materials, fusions }) => {
+  const chosen = candidates.slice(0, 3);
+  const usedJobs = new Set<string>();
+  const recommendations: CareerRecommendation[] = chosen.map(({ route, materials, fusions, matchedJobs }, index) => {
     const authored = CAREER_ROLE_SCENES[voice.id]?.[route.id] ?? CAREER_ROLE_SCENES.natal[route.id];
-    const routeProof = proof(materials.slice(0, 2), [], fusions.slice(0, 2), [...context.sourceRefs, ...voice.proof.sourceRefs, `v4:career-route:${route.id}`]);
+    const routeProof = proof(materials.slice(0, 2), [], fusions.slice(0, 2), [...context.sourceRefs, ...voice.proof.sourceRefs, `v4:career-route:${route.id}`,
+      ...matchedJobs.map(j => `mbti:${profile!.type}:recommendedJobs:${j.job}`)]);
+    const basis = `${materials.slice(0, 2).map(materialLabel).join("·")}에서 볼 수 있는 장점을 ${route.task}에 쓰는 방향이에요.`;
+    const examples = matchedJobs.filter(j => !usedJobs.has(j.job)).slice(0, 2); examples.forEach(j => usedJobs.add(j.job));
+    const bridge = examples.length ? ` ${profile!.type}의 직업 자료에서도 ${examples.map(j => j.job).join("·")}처럼 이 힘을 쓰는 예를 찾을 수 있습니다.` : "";
     return {
       id: route.id, roleExamples: authored?.[2] ?? route.roles,
-      reason: authored?.[0] ?? `${route.task}부터 생각해볼 만합니다. ${particle(voice.workingPhrase, "을", "를")} 쓸 자리로는 ${route.roles.join("·")} 같은 역할이 있습니다.`,
+      reason: `${index + 1}순위 · ${route.roles.join("·")} — ${authored?.[0] ?? `${route.task}에서 힘을 쓸 수 있습니다.`} ${basis}${bridge}`,
       environment: authored?.[1] ?? `${route.environment}이라면 내 방식이 실제로 도움이 되는지 작은 경험으로 확인하기 좋습니다.`,
       basis: "supported-tendency", proof: { ...routeProof, features: [...new Set([...routeProof.features, ...voice.proof.features])], fusionIds: [...new Set([...routeProof.fusionIds, ...voice.proof.fusionIds])] },
     };
@@ -47,9 +64,14 @@ export function careerRecommendations(state: NarrativeState, voice: ReturnType<t
       reason: `${work.text} 아직 해보지 않은 직무까지 이름만으로 확정하기보다는, 작은 과제를 맡아 어떤 부분이 재미있었는지 확인할 만합니다.`,
       environment: "곁에서 실제 일을 보여주고 내 결과에 구체적으로 반응해주는 사람이 있는 환경부터 살펴볼 수 있습니다.", proof: proof([state.pillar], [work], [], ["v4:career-route:sparse-evidence"]) });
   }
-  const avoid = chosen.slice(0, chosen.length > 3 ? 3 : 2).map(({ route, materials }, index) => ({
+  const avoidHints = records(profile?.avoidJobsOrEnvironments).filter(h => strings(h.riskTraits).some(t => traitIds.has(t)));
+  const avoid = chosen.slice(0, 3).map(({ route, materials }, index) => {
+    const readings = chapterMbtiReadings(state.input.mbti, materials, "work", new Set());
+    const boundTraits = new Set(readings.map(r => r.id.split(":")[1]));
+    const hint = avoidHints.find(h => strings(h.riskTraits).some(t => boundTraits.has(t)));
+    return {
     text: `${route.avoid}에서는 ${particle(CAREER_ENVIRONMENT_COST[voice.id]?.[index] ?? CAREER_ENVIRONMENT_COST.natal[index], "이", "가")} 커집니다.`,
-    proof: proof(materials.slice(0, 1), [], [], [...voice.proof.sourceRefs, `v4:career-route:${route.id}:environment`]),
-  }));
+    proof: proof(materials.slice(0, 1), [], [], [...voice.proof.sourceRefs, `v4:career-route:${route.id}:environment`, ...(hint ? [`mbti:${profile!.type}:avoidJobsOrEnvironments:${String(hint.name)}`, ...readings.map(r => r.provenance)] : [])]),
+  }; });
   return { recommendations, avoid };
 }

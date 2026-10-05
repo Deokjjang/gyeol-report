@@ -114,8 +114,8 @@ describe("book preview: development-only presentation", () => {
   });
   it("reader contains actual pages in order and final back cover", () => {
     const data = library.books[0], pages = data.pages;
-    expect(pages.slice(0, 4).map(p => p.kind)).toEqual(["cover", "input", "manse", "mbti"]);
-    expect(pages.slice(-2).map(p => p.kind)).toEqual(["appendix", "back"]);
+    expect(pages.slice(0, 5).map(p => p.kind)).toEqual(["cover", "contents", "input", "manse", "mbti"]);
+    expect(pages.slice(-3).map(p => p.kind)).toEqual(["appendix", "contents", "back"]);
     pages.forEach(page => {
       const html = renderToStaticMarkup(<BookReader data={data} page={page} onNote={noop} onShare={noop} onPage={noop} />);
       expect(html).not.toMatch(/<details|<footer|sourceRefs|confidence|seedIds|natalEvidence|fusionIds/);

@@ -5,20 +5,22 @@ import type { Book, Person } from "./model";
 export type BookPerson = Person & { role: string; timeLabel: string; table: V4CustomerTables[number] };
 export type BookFeature = { name: string; meaning: string; manifestation: string; person: string; group?: string; core?: boolean };
 export type BookNote = { name: string; text: string };
-export type BookParagraph = { text: string; notes: number[] };
-export type BookYear = { year: number; age: number; cycle: string; annual: string; theme: string; good: string; caution: string | null; title: string; time: string; page: number; transition: string | null };
-export type BookMonth = { month: number; title: string; theme: string; time: string; ganji: string; gods: string; markers: string[]; page: number };
-export type BookPage =
+export type BookParagraph = { text: string; notes: number[]; heading?: string; anchorId?: string };
+export type BookYear = { year: number; age: number; cycle: string; annual: string; theme: string; good: string; caution: string | null; title: string; time: string; page: number; transition: string | null; importance?: "HIGH" | "MEDIUM" | "BACKGROUND" };
+export type BookMonth = { month: number; title: string; theme: string; time: string; ganji: string; gods: string; markers: string[]; page: number; good?: string; caution?: string; importance?: string; boundary?: { label: string; explanation: string; segments: { start: string; end: string; ganji: string }[] } };
+export type BookPage = (
   | { kind: "cover"; title: string; names: string; headline: string }
   | { kind: "input"; title: string }
-  | { kind: "pair"; title: string; category: string; characters: { name: string; core: string; strength: string; relationship: string }[]; directions: { title: string; effect: string; page: number }[]; relations: string[] }
+  | { kind: "pair"; title: string; category: string; characters: { name: string; core: string; strength: string; relationship: string }[]; directions: { title: string; effect: string; term?: string; page: number }[]; relations: string[] }
   | { kind: "manse"; title: string; person: number }
   | { kind: "mbti"; title: string; person: number }
   | { kind: "narrative"; title: string; paragraphs: BookParagraph[]; notes: BookNote[] }
-  | { kind: "timeline"; title: string; years: BookYear[]; transitions: { date: string; before: string; after: string; page: number }[] }
-  | { kind: "months"; title: string; months: BookMonth[] }
+  | { kind: "contents"; title: string; entries: { title: string; targetId: string; page: number }[] }
+  | { kind: "score"; title: string; total: number; scores: { label: string; value: number; max: number }[]; verdict: string; notice: string; limitations: string[] }
+  | { kind: "timeline"; title: string; years: BookYear[]; transitions: { date: string; exact?: string; before: string; after: string; page: number }[] }
+  | { kind: "months"; title: string; months: BookMonth[]; map?: { label: string; months: number[] }[] }
   | { kind: "appendix"; title: string; items: BookFeature[]; from: number; total: number }
-  | { kind: "back"; title: string; finalLine: string };
+  | { kind: "back"; title: string; finalLine: string }) & { id?: string; anchors?: string[] };
 export type BookData = {
   bookId: Book["id"]; title: string; names: string; people: BookPerson[];
   context: { label: string; value: string }[]; pages: BookPage[];

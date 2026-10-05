@@ -3,10 +3,12 @@ import { majorNarrativeEvidence } from "./majorEvidence";
 import { majorContext } from "./majorContext";
 import { majorYearNarrative } from "./majorYearNarrative";
 import { majorBehavior } from "./majorBehavior";
+import { distantMajorScene } from "./majorDistantScenes";
 import { MAJOR_MEANINGS, MAJOR_ELEMENT_IMAGES, MAJOR_VOICE } from "./majorMaterials";
 import { paragraph, proof, particle } from "./copyRealizer";
 import { reviewNarrative } from "./editorialGuard";
 import { composeEvidenceChapters } from "./contentSynthesis";
+import { friendlyTransition, planMajorYears } from "./periodPlanner";
 import type { NarrativeBlock, NarrativeSection } from "./narrativeTypes";
 
 /** Offline only. Explicit instant is required; no clock, storage, UI or writer. */
@@ -32,7 +34,7 @@ export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt
   const opening = [
     b("big-flow", `${e.input.name}님이 지금 지나고 있는 ${now.ganji} 대운의 중심은 ‘${m.theme}’입니다. 예전과 같은 일을 해도 ‘${m.next}’ 쪽에 더 마음이 가는 변화예요. 지금은 특히 ${particle(m.money, "을", "를")} 가까이서 보게 되는 시기죠.`),
     b("first-gift", `이 흐름의 좋은 패는 ${m.gift}입니다. ‘${c.scenes[now.tenGod][0]}’ 같은 순간을 떠올려볼까요? ${MAJOR_VOICE[now.tenGod].opening}`),
-    b("next-boundary", future ? `${future.dateLabel}, ${future.before.ganji}에서 ${future.after.ganji}로 큰 장이 넘어갑니다. 지금의 ‘${m.theme}’에서 ‘${MAJOR_MEANINGS[future.after.tenGod].theme}’ 쪽으로 관심의 중심도 옮겨갈 전망이에요. 다음 장에도 ${particle(c.craft, "을", "를")} 함께 가져갑니다.` : `${e.horizon.through}년까지 이어지는 큰 배경은 ‘${destination.theme}’입니다. 큰 장이 같아도 ${particle(m.work, "을", "를")} 다루는 장면은 해마다 달라집니다. 뒤의 연도별 이야기에서는 ${particle(c.noun, "에", "에")} 힘을 더할 시기와 다른 경험을 보탤 시기를 나눠 읽을 수 있습니다.`),
+    b("next-boundary", future ? `${friendlyTransition(future.dateLabel)}, ${future.before.ganji}에서 ${future.after.ganji}로 큰 장이 넘어갑니다. 지금의 ‘${m.theme}’에서 ‘${MAJOR_MEANINGS[future.after.tenGod].theme}’ 쪽으로 관심의 중심도 옮겨갈 전망이에요. 다음 장에도 ${particle(c.craft, "을", "를")} 함께 가져갑니다.` : `${e.horizon.through}년까지 이어지는 큰 배경은 ‘${destination.theme}’입니다. 큰 장이 같아도 ${particle(m.work, "을", "를")} 다루는 장면은 해마다 달라집니다. 뒤의 연도별 이야기에서는 ${particle(c.noun, "에", "에")} 힘을 더할 시기와 다른 경험을 보탤 시기를 나눠 읽을 수 있습니다.`),
     paragraph("natal-strength", `${strength.text} ${natalScene?.text ?? ""}`, proof([pillar], [strength, ...(natalScene ? [natalScene] : [])])),
   ];
   const sections: NarrativeSection[] = [], behavior = majorBehavior(e, c, now.tenGod, "now");
@@ -72,20 +74,35 @@ export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt
   const nextBehavior = future ? majorBehavior(e, c, future.after.tenGod, "next") : null;
   const transitions = e.horizon.transitions.map(t => {
     const a = MAJOR_MEANINGS[t.before.tenGod], z = MAJOR_MEANINGS[t.after.tenGod], past = t.year < e.currentYear;
+    const distant = t.year >= e.currentYear + 3;
+    const beforeScene = distant ? distantMajorScene(t.before.tenGod, false).setting : c.scenes[t.before.tenGod][0];
+    const afterScene = distant ? distantMajorScene(t.after.tenGod, true).setting : c.scenes[t.after.tenGod][1];
+    const lifeArea = distant ? "앞으로 맡을 역할" : c.noun;
     const b = (id: string, text: string) => paragraph(id, text, proof([], [], [], [...e.sourceRefs, ...c.provenance,
       `dayun-cycle:${t.before.index}:${t.before.ganji}`, `dayun-cycle:${t.after.index}:${t.after.ganji}`, `transition:${t.startSolarKst ?? t.dateLabel}`, `period-ten-god:${t.before.tenGod}`, `period-ten-god:${t.after.tenGod}`]), "positive");
     const blocks = [
-      b(`transition-${t.year}-focus`, `${t.dateLabel}${past ? "을 지나며" : "을 경계로"} ${t.before.ganji}의 ${particle(a.theme, "에서", "에서")} ${t.after.ganji}의 ${withKoreanParticle(z.theme, "to")} 무게가 ${past ? "옮겨온 흐름입니다" : "옮겨갑니다"}. ${particle(c.noun, "에서도", "에서도")} ${particle(z.work, "이", "가")} 더 눈에 들어오는 경계예요.`),
-      b(`transition-${t.year}-work`, `일의 질문도 ‘${a.work}’에서 ‘${z.work}’로 달라집니다. ‘${c.scenes[t.before.tenGod][0]}’에서 얻은 경험이 출발점이에요. 돈 역시 ${particle(a.money, "을", "를")} 보는 데서 ${particle(z.money, "을", "를")} 더 중요하게 보는 변화${past ? "였는지 돌아볼 만합니다" : "를 기대할 만합니다"}. 다음 질문은 ‘${z.next}’입니다.`),
+      b(`transition-${t.year}-focus`, `${friendlyTransition(t.dateLabel)}${past ? "을 지나며" : "을 경계로"} ${t.before.ganji}의 ${particle(a.theme, "에서", "에서")} ${t.after.ganji}의 ${withKoreanParticle(z.theme, "to")} 무게가 ${past ? "옮겨온 흐름입니다" : "옮겨갑니다"}. ${particle(lifeArea, "에서도", "에서도")} ${particle(z.work, "이", "가")} 더 눈에 들어오는 경계예요.`),
+      b(`transition-${t.year}-work`, `일의 질문도 ‘${a.work}’에서 ‘${z.work}’로 달라집니다. ‘${beforeScene}’에서 얻은 경험이 출발점이에요. 돈 역시 ${particle(a.money, "을", "를")} 보는 데서 ${particle(z.money, "을", "를")} 더 중요하게 보는 변화${past ? "였는지 돌아볼 만합니다" : "를 기대할 만합니다"}. 다음 질문은 ‘${z.next}’입니다.`),
       b(`transition-${t.year}-people`, `전에는 ${particle(a.people, "과", "와")} 나누는 이야기가 중심이었다면, 새 장에서는 ${particle(z.people, "이", "가")} 더 반갑게 느껴질 수 있어요. 가까운 사이에서는 ‘${z.home}’이 새 균형점입니다. ${past ? `그때 ${particle(z.people, "에게", "에게")} 받은 자극이 지금도 남았는지 돌아볼 만해요.` : `앞으로 ${particle(z.people, "에게", "에게")} 어떤 이야기를 묻고 싶은지 생각하면 새로운 관계의 입구도 보일 겁니다.`}`),
-      b(`transition-${t.year}-life`, `생활에서는 ‘${a.life}’에서 누리던 편안함을 모두 버릴 필요가 없습니다. 그 옆에는 ‘${z.life}’도 들어갈 자리를 만드는 쪽에 가까워요. ${particle(c.scenes[t.after.tenGod][1], "을", "를")} 떠올리면 무엇을 새로 해볼지 한결 구체적이죠. ${particle(z.gift, "은", "는")} 그 변화 속에서 써볼 좋은 패입니다.`),
+      b(`transition-${t.year}-life`, `생활에서는 ‘${a.life}’에서 누리던 편안함을 모두 버릴 필요가 없습니다. 그 옆에는 ‘${z.life}’도 들어갈 자리를 만드는 쪽에 가까워요. ${particle(afterScene, "을", "를")} 떠올리면 무엇을 새로 해볼지 한결 구체적이죠. ${particle(z.gift, "은", "는")} 그 변화 속에서 써볼 좋은 패입니다.`),
       ...(future?.year === t.year && nextBehavior ? [nextBehavior.block] : []),
     ];
     return { ...t, blocks };
   });
   for (const t of transitions) sections.push(section(`transition-${t.year}`, `${t.year}년, ${t.before.ganji}에서 ${t.after.ganji}로 달라지는 것`, t.blocks));
+  if (future) {
+    const next = MAJOR_MEANINGS[future.after.tenGod];
+    const nextProof = proof([], [], [], [...e.sourceRefs, `dayun-cycle:${future.after.index}:${future.after.ganji}`, `period-ten-god:${future.after.tenGod}`]);
+    sections.push(section("next-cycle", `다음 대운, ${next.theme}을 내 것으로 만드는 장`, [
+      paragraph("next-work", `일에서는 ${next.work}에 힘을 줄 차례입니다. ${MAJOR_VOICE[future.after.tenGod].opening}`, nextProof),
+      paragraph("next-money", `돈의 중심은 ${next.money}입니다. 한 번의 성과 뒤에도 ${particle(next.gift, "을", "를")} 계속 쓸 수 있는 조건을 남기는 쪽이 좋습니다.`, nextProof),
+      paragraph("next-people", `사람에게서는 ${next.people}의 가치가 커집니다. 생활에서는 ${particle(next.home, "을", "를")} 함께 다루게 돼요. ${particle(next.life, "을", "를")} 남기는 선택까지 들어와야 바깥의 성취도 내 생활로 가져올 수 있습니다.`, nextProof),
+      paragraph("next-risk", `${particle(next.cost, "은", "는")} 경계할 부분입니다. ${next.life}도 일정에 남겨두면 다음 장을 오래 쓸 여유가 생겨요.`, nextProof, "observation"),
+    ]));
+  }
+  const yearPlan = planMajorYears(e);
   const periodRoots = new Set<string>();
-  const years = e.years.map(y => majorYearNarrative(e, y, c, periodRoots));
+  const years = e.years.map(y => majorYearNarrative(e, y, c, periodRoots, yearPlan.find(p => p.year === y.year)!.importance));
   for (const y of years) {
     const transition = e.horizon.transitions.find(t => t.year === y.year);
     sections.push(section(`year-${y.year}`, `${y.year}년 · ${y.age}세 · 세운 ${y.annual.ganji} · 대운 ${transition ? `${transition.before.ganji} → ${transition.after.ganji}` : y.cycle.ganji} · ${y.timePosition === "past" ? "돌아보기" : y.timePosition === "current" ? "지금" : "앞으로"}\n${y.title}`, y.blocks));
@@ -101,7 +118,7 @@ export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt
   const composed = composeEvidenceChapters(e.input, e.materials, narrative, "major");
   const publishedYears = years.map(y => ({ ...y, blocks: composed.narrative.sections.find(s => s.id === `year-${y.year}`)!.blocks }));
   const publishedTransitions = transitions.map(t => ({ ...t, blocks: composed.narrative.sections.find(s => s.id === `transition-${t.year}`)!.blocks }));
-  return { ok: true as const, ...composed, evidence: e, years: publishedYears, transitions: publishedTransitions, materials: e.materials,
+  return { ok: true as const, ...composed, evidence: e, yearPlan, years: publishedYears, transitions: publishedTransitions, materials: e.materials,
     behaviorBasis: [behavior?.source, nextBehavior?.source].filter(v => v !== undefined),
     completeness: { years: years.length, futureYears: years.filter(y => y.timePosition === "future").length, ages: years.every(y => Number.isInteger(y.age)), transitions: transitions.length, final: true },
     editorial: reviewNarrative(composed.narrative) };

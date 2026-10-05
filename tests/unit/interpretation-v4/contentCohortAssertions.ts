@@ -22,7 +22,7 @@ export function expectBoundCohortReuse(reports: readonly Report[]) {
     const keys = blocks.map(b => [
       ...b!.proof.features.map(f => `feature:${f}`), ...b!.proof.seedIds.map(f => `seed:${f}`),
       ...b!.proof.fusionIds.map(f => `fusion:${f}`),
-      ...b!.proof.sourceRefs.filter(f => /^(?:mbti:|content-period:|period-ten-god:|period-element:|content-direction:|content-relation:|content-role:strength:|visible-characters-unweighted)/.test(f)),
+      ...b!.proof.sourceRefs.filter(f => /^(?:mbti:|content-period:|period-ten-god:|period-element:|content-direction:|content-relation:|content-role:strength:|visible-characters-unweighted|content-assertion:|natal-element:|content-pair-loop:|content-pair-rhythm:|v4:career-route:)/.test(f)),
     ]);
     if (!keys[0].some(k => keys.every(set => set.includes(k)))) unbound.push(issue.location);
   }

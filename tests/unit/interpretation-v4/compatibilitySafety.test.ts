@@ -1,4 +1,4 @@
-import contentBaseline from "./contentRebuildBaseline.json";
+import contentBaseline from "./productNarrativeBaseline.json";
 import { createHash } from "node:crypto";
 import { describe, it, expect } from "vitest";
 import { writeFileSync, mkdirSync } from "node:fs";
@@ -61,7 +61,7 @@ describe("Compatibility isolation, evidence and directionality", () => {
     expect(reports.every(r => JSON.stringify(r.evidence.invariant) === JSON.stringify(reports[0].evidence.invariant))).toBe(true);
     if (process.env.V4_PHASE5C_EXPORT === "1") writeFileSync("/tmp/gyeol-v4-phase5c/category-counterfactual.json", JSON.stringify(reports.map(r => ({ category: r.narrative.category, opening: narrativeText(r.narrative).slice(0, 800), directions: r.directions, final: r.narrative.finalLine })), null, 2));
   });
-  it("MBTI pair source fields retain both viewpoints; no arbitrary score/grade key anywhere in V4 output", () => {
+  it("MBTI pair source fields retain both viewpoints; scores exist only in the explicit 13B index", () => {
     for (const { payload } of fixtures) {
       const r = must(payload);
       expect(r.mbtiPairBasis.length).toBeGreaterThan(0);
@@ -70,7 +70,9 @@ describe("Compatibility isolation, evidence and directionality", () => {
         for (const key of ["sharedGround", "friction", "positiveInfluence", "repairStrategy"] as const) expect(pair[key].length).toBeGreaterThan(0);
       }
       const visit = (v: unknown): void => { if (!v || typeof v !== "object") return; for (const [key, value] of Object.entries(v)) { expect(key).not.toMatch(/score|grade|rating|rank|percent/i); visit(value); } };
-      visit(r);
+      const { compatibilityIndex, ...withoutIndex } = r;
+      expect(compatibilityIndex.version).toBe("gyeol-compatibility-index-13b-1");
+      visit(withoutIndex);
       for (const p of Object.values(r.persons)) {
         if (p.fusion) expect(p.materials.fusions).toContainEqual(p.fusion);
         expect(p.core.length).toBeGreaterThan(0); expect(p.strength.length).toBeGreaterThan(0); expect(p.shadow.length).toBeGreaterThan(0);

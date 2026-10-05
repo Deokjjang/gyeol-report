@@ -1,4 +1,4 @@
-import contentBaseline from "./contentRebuildBaseline.json";
+import contentBaseline from "./productNarrativeBaseline.json";
 import { createHash } from "node:crypto";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { describe, it, expect, vi } from "vitest";

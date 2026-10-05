@@ -7,7 +7,7 @@ import { FUSION_RULES } from "./fusionRules";
 import type { SajuCalcResult } from "../saju/types";
 import type { MaterialPacket } from "./narrativeTypes";
 import type { BoundMaterial } from "./materialPacket";
-import type { Domain, FusionInterpretation } from "./types";
+import type { Domain, FusionInterpretation, SemanticTag } from "./types";
 
 /** Counts confirmed visible characters once. No hidden-stem weight, E/I
  * inference, guessed hour or change to the calendar/strength calculation. */
@@ -48,9 +48,37 @@ export type ChapterEvidencePlan = {
   fusion: FusionInterpretation | null;
   consideredFusionIds: readonly string[];
   reasons: readonly string[];
+  assertion: "STRONG" | "MEDIUM" | "WEAK";
+  theme: SemanticTag | null;
+  independentFeatures: readonly string[];
 };
-export type ContentSelectionState = { rootUses: Map<string, number>; fusionUses: Map<string, number>; seedUses: Set<string> };
-export const createContentSelection = (): ContentSelectionState => ({ rootUses: new Map(), fusionUses: new Map(), seedUses: new Set() });
+export type ContentSelectionState = { rootUses: Map<string, number>; fusionUses: Map<string, number>; seedUses: Set<string>; themeUses: Map<SemanticTag, number> };
+export const createContentSelection = (): ContentSelectionState => ({ rootUses: new Map(), fusionUses: new Map(), seedUses: new Set(), themeUses: new Map() });
+
+/** Assertion strength is editorial permission, not a new natal calculation.
+ * Aliases, the day-master/day-pillar pair and overlapping source lineage do not
+ * count twice. A material's many seed sentences are still ONE observation. */
+export function assertionPermission(roots: readonly BoundMaterial[], fusion: FusionInterpretation | null) {
+  roots = roots.filter(m => m.evidence.length && m.evidence.every(d => d.usable && d.strength === "strong"));
+  const tags = [...new Set(roots.flatMap(m => MATERIAL_BY_FEATURE.get(m.feature)?.semanticTags ?? []))];
+  const supported = tags.map(theme => {
+    const independent: BoundMaterial[] = [];
+    for (const m of roots.filter(m => MATERIAL_BY_FEATURE.get(m.feature)?.semanticTags.includes(theme))) {
+      if (independent.some(p => p.feature === m.feature ||
+        (["dayMaster", "dayPillar"].includes(p.material.category) && ["dayMaster", "dayPillar"].includes(m.material.category)) ||
+        p.lineage.some(ref => m.lineage.includes(ref)))) continue;
+      independent.push(m);
+    }
+    return { theme, independentFeatures: independent.map(m => m.feature) };
+  }).sort((a, b) => b.independentFeatures.length - a.independentFeatures.length);
+  const strongest = supported[0];
+  const clearStructure = roots.some(m => m.material.category === "structure" && strongest &&
+    MATERIAL_BY_FEATURE.get(m.feature)?.semanticTags.includes(strongest.theme) &&
+    m.evidence.some(d => d.usable && d.strength === "strong"));
+  return { assertion: (!roots.length ? "WEAK" : (strongest?.independentFeatures.length ?? 0) >= 2 || clearStructure ? "STRONG" : "MEDIUM") as ChapterEvidencePlan["assertion"],
+    theme: strongest?.theme ?? null, independentFeatures: strongest?.independentFeatures ?? [],
+    reinforcedStructure: clearStructure && fusion?.kind === "overlap" };
+}
 
 /** Editorial allocation, not a personality score. Only strong, source-verified
  * material enters roots; DB-only/ambiguous/uncertain remain in held. */
@@ -65,7 +93,8 @@ export function planChapter(pool: ContentEvidencePool, state: ContentSelectionSt
     const fusion = fusions.some(f => f.myeongliEvidence.some(d => contentFeature(d.evidence.feature) === m.feature));
     const weight = Math.min(3, Math.max(0, ...m.evidence.map(d => d.evidence.weight ?? 0)));
     const sceneSupport = preferred.includes(m.feature) ? 14 - Math.min(4, preferred.indexOf(m.feature)) : 0;
-    return (state.rootUses.get(m.feature) ?? 0) * 12 - support - weight - (fusion ? 4 : 0) - (m.material.category === "structure" ? 2 : 0) - sceneSupport;
+    const themeCost = Math.min(3, ...((MATERIAL_BY_FEATURE.get(m.feature)?.semanticTags ?? []).map(t => state.themeUses.get(t) ?? 0))) * 4;
+    return (state.rootUses.get(m.feature) ?? 0) * 12 + themeCost - support - weight - (fusion ? 4 : 0) - (m.material.category === "structure" ? 2 : 0) - sceneSupport;
   };
   // A scene already talking about 비견 must not acquire an unrelated 귀인
   // definition merely because novelty scored higher. Diversity is a report
@@ -80,6 +109,9 @@ export function planChapter(pool: ContentEvidencePool, state: ContentSelectionSt
     Number(b.kind !== "overlap") - Number(a.kind !== "overlap") || a.ruleId.localeCompare(b.ruleId))[0] ?? null;
   roots.forEach(m => state.rootUses.set(m.feature, (state.rootUses.get(m.feature) ?? 0) + 1));
   if (fusion) state.fusionUses.set(fusion.ruleId, (state.fusionUses.get(fusion.ruleId) ?? 0) + 1);
+  const permission = assertionPermission(roots, fusion);
+  if (permission.theme) state.themeUses.set(permission.theme, (state.themeUses.get(permission.theme) ?? 0) + 1);
   return { id, domain, roots, fusion, consideredFusionIds: fusions.map(f => f.ruleId),
+    ...permission,
     reasons: ["DOMAIN_APPLICABILITY", "STRONG_VERIFIED_EVIDENCE", "INDEPENDENT_SUPPORT", "REVIEWED_MBTI_RELATION", "REPORT_NOVELTY", ...(anchors.length ? ["SCENE_EVIDENCE_ALIGNMENT"] : [])] };
 }

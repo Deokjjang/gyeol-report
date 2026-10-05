@@ -62,7 +62,13 @@ describe("V4 Book share, real V4 generation and existing SQL", () => {
     expect(book.data.pages.some(p => p.kind === "appendix")).toBe(true);
     if (id === "major") { const timeline = book.data.pages.find(p => p.kind === "timeline"); expect(timeline?.kind === "timeline" && timeline.years).toHaveLength(14); expect(timeline?.kind === "timeline" && timeline.years.filter(y => y.time === "앞으로")).toHaveLength(10); }
     if (id === "annual") { const months = book.data.pages.find(p => p.kind === "months"); expect(months?.kind === "months" && months.months.map(m => m.month)).toEqual([1,2,3,4,5,6,7,8,9,10,11,12]); }
-    if (id === "compatibility") { const pair = book.data.pages.find(p => p.kind === "pair"); expect(pair?.kind === "pair" && pair.directions).toHaveLength(2); expect(book.data.people).toHaveLength(2); expect(f.model.displayName).toBe(book.data.people[0].name); expect(JSON.stringify(book)).not.toMatch(/\bscore\b|\bgrade\b|67점/); }
+    if (id === "compatibility") {
+      const pair = book.data.pages.find(p => p.kind === "pair"); expect(pair?.kind === "pair" && pair.directions).toHaveLength(2);
+      expect(book.data.people).toHaveLength(2); expect(f.model.displayName).toBe(book.data.people[0].name);
+      const index = book.data.pages.filter(p => p.kind === "score");
+      expect(index).toHaveLength(1); expect(index[0].notice).toBe("명리와 MBTI를 바탕으로 한 엔터테인먼트 해석입니다.");
+      expect(JSON.stringify(book.data.pages.filter(p => p.kind !== "score"))).not.toMatch(/\bscore\b|\bgrade\b|\d+점/);
+    }
     const entry = renderToStaticMarkup(<SharedBookEntry model={f.model} local />);
     for (const p of book.data.people) for (const value of [p.birth, p.mbti, p.timeLabel].filter(Boolean)) expect(entry).not.toContain(value);
     expect(entry).not.toContain(f.reportId); expect(entry).not.toContain("data-narrative");

@@ -15,7 +15,7 @@ import { COMPATIBILITY_NARRATIVE_FIXTURES } from "./compatibilityFixtures";
 import { MAJOR_NARRATIVE_FIXTURES, MAJOR_EVALUATED_AT } from "./majorFixtures";
 import { ANNUAL_NARRATIVE_FIXTURES, ANNUAL_CLOCK } from "./annualFixtures";
 import { auditEditorial, editorialInvariant, type AuditReport } from "./finalEditorialAudit";
-import baseline from "./contentRebuildBaseline.json";
+import baseline from "./productNarrativeBaseline.json";
 import { expectBoundCohortReuse } from "./contentCohortAssertions";
 import { annualSceneDetail } from "../../../src/lib/interpretation-v4/annualSceneDetails";
 import { majorContext } from "../../../src/lib/interpretation-v4/majorContext";
@@ -52,8 +52,8 @@ beforeAll(async () => {
   }
 }, 60000);
 
-describe("Phase13A six-product editorial audit (Phase7A baseline retained separately)", () => {
-  it.each(Object.entries(baseline.rows))("%s: Phase13A reviewed prose, selection and proofs remain deterministic", (id, expected) => {
+describe("Phase13B six-product editorial audit (Phase7A/13A baselines retained separately)", () => {
+  it.each(Object.entries(baseline.rows))("%s: Phase13B reviewed prose, selection and proofs remain deterministic", (id, expected) => {
     const r = rows.find(r => r.id === id)!;
     expect(digest(r.narrative)).toBe(expected.after);
     expect(digest(editorialInvariant(packets[id] as Record<string, unknown>, r.narrative))).toBe(expected.invariant);
@@ -115,7 +115,7 @@ describe("Phase13A six-product editorial audit (Phase7A baseline retained separa
     expect(text("annual-04-student")).toContain("실습 영상과 지금의 움직임");
     const major = packets["major-04-student"] as MajorPacket;
     const laterScenes = major.years.filter(y => y.year >= major.evidence.currentYear + 3).flatMap(y => y.blocks.filter(b => b.id.endsWith("-scene"))).map(b => b.text).join(" ");
-    expect(laterScenes).toContain("사는 곳과 하루의 순서");
+    expect(laterScenes).toContain("남의 기대와 내 뜻을 구분");
     expect(laterScenes).not.toMatch(/졸업한 뒤|입사했|승진했|지금 수업|현재 회사|당신의 배우자/);
     const finance = text("major-06-transition");
     expect(finance).not.toContain("반가운 힘으로 보태질 수");
@@ -151,7 +151,7 @@ describe("Phase13A six-product editorial audit (Phase7A baseline retained separa
     const audit = { cohort: auditEditorial(cohorts), golden: Object.fromEntries(["ENTJ", "INTP", "ENFP"].map(mbti => [mbti, auditEditorial(golden.filter(r => r.golden === `golden-${mbti}`))])) };
     writeFileSync(`${dir}/duplication-report.json`, JSON.stringify(audit, null, 2));
     writeFileSync(`${dir}/hashes.json`, JSON.stringify(Object.fromEntries(rows.map(r => [r.id, digest(r.narrative)])), null, 2));
-    writeFileSync(`${dir}/content-baseline.json`, JSON.stringify({ revision: "v4-content-synthesis-13a-1", rows: Object.fromEntries(rows.map(r => [r.id, { after: digest(r.narrative), invariant: digest(editorialInvariant(packets[r.id] as Record<string, unknown>, r.narrative)) }])) }, null, 2));
+    writeFileSync(`${dir}/content-baseline.json`, JSON.stringify({ revision: "v4-content-synthesis-13b-1", rows: Object.fromEntries(rows.map(r => [r.id, { after: digest(r.narrative), invariant: digest(editorialInvariant(packets[r.id] as Record<string, unknown>, r.narrative)) }])) }, null, 2));
     writeFileSync(`${dir}/index.md`, rows.map(r => `- [${r.id}](${r.id}.md) · ${r.narrative.headline}`).join("\n"));
     writeFileSync(`${dir}/golden-comparison.md`, golden.map(r => `# ${r.id}\n\n${narrativeText(r.narrative)}`).join("\n\n---\n\n"));
   });

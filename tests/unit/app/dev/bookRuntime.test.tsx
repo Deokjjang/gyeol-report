@@ -34,10 +34,10 @@ describe("actual V4 packet → book pages; no new calculation or prose", () => {
     const { evidence, data } = samples.get(id)!;
     const view = projectV4Composition(evidence.composition);
     const chapters = data.pages.filter(p => p.kind === "narrative");
-    expect(chapters.map(p => p.title)).toEqual([view.headline, ...view.sections.map(s => s.title)]);
+    expect(chapters.flatMap(p => [p.title, ...p.paragraphs.flatMap(b => b.heading ? [b.heading] : [])])).toEqual([view.headline, ...view.sections.map(s => s.title)]);
     expect(chapters.flatMap(p => p.paragraphs.map(p => p.text))).toEqual([...view.opening, ...view.sections.flatMap(s => s.paragraphs)]);
     expect(data.pages[0].kind).toBe("cover");
-    expect(data.pages.at(-1)).toEqual({ kind: "back", title: "이 책 공유하기", finalLine: view.finalLine });
+    expect(data.pages.at(-1)).toMatchObject({ kind: "back", title: "이 책 공유하기", finalLine: view.finalLine });
     expect(JSON.parse(JSON.stringify(data))).toStrictEqual(data);
     expect(JSON.stringify(data)).not.toMatch(/sourceRefs|seedIds|fusionIds|natalEvidence|calendarMonths:|contentDigest|v4_structure:|confidence|망신|MYOSI/);
     for (const page of data.pages) {
@@ -122,9 +122,10 @@ describe("actual V4 packet → book pages; no new calculation or prose", () => {
       expect(chapter.kind).toBe("narrative");
       if (chapter.kind === "narrative") expect(chapter.paragraphs.map(p => p.text)).toEqual(original.blocks.map(b => b.text));
     });
-    expect(JSON.stringify(data)).not.toMatch(/T\d\d:\d\d:\d\d|calendarMonths:/);
+    expect(JSON.stringify(data.pages.filter(p => p.kind === "narrative"))).not.toMatch(/T\d\d:\d\d:\d\d|calendarMonths:/);
+    expect(page.months.every(m => m.boundary?.segments.length)).toBe(true);
   });
-  it("seven categories preserve roles and both actual directional sections without scores", () => {
+  it("seven categories preserve roles and directions, with the explicit deterministic index only", () => {
     const categories = new Set<string>();
     for (const { evidence: e, data } of samples.values()) {
       if (e.input.kind !== "compatibility") continue;
@@ -135,11 +136,12 @@ describe("actual V4 packet → book pages; no new calculation or prose", () => {
       expect(view.compatibility!.aToB.paragraphs).not.toEqual(view.compatibility!.bToA.paragraphs);
       pair.directions.forEach((d, i) => {
         const page = data.pages[d.page]; expect(page.kind).toBe("narrative");
-        if (page.kind === "narrative") expect(page.paragraphs.map(p => p.text)).toEqual((i === 0 ? view.compatibility!.aToB : view.compatibility!.bToA).paragraphs);
+        if (page.kind === "narrative") expect(page.paragraphs.map(p => p.text)).toEqual(expect.arrayContaining([...(i === 0 ? view.compatibility!.aToB : view.compatibility!.bToA).paragraphs]));
       });
       if (e.input.relationshipType === "parentChild") expect(data.people.map(p => p.role)).toEqual(["부모", "자녀"]);
       if (e.input.relationshipType === "managerReport") expect(data.people.map(p => p.role)).toEqual(["상사", "부하·팀원"]);
-      expect(JSON.stringify(data)).not.toMatch(/\d+점|\d+%|[SAB]등급|궁합 점수|★/);
+      expect(JSON.stringify(data.pages.filter(p => p.kind === "narrative"))).not.toMatch(/\d+점|\d+%|[SAB]등급|궁합 점수|★/);
+      expect(data.pages.filter(p => p.kind === "score")).toHaveLength(1);
     }
     expect(categories.size).toBe(7);
   });

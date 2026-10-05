@@ -8,6 +8,9 @@ import { projectYinYang } from "../../../lib/interpretation-v4/contentEvidence";
 import { adaptCalculation } from "../../../lib/interpretation-v3/evidence";
 import { storyFeatureRows } from "../../../lib/interpretation-v3/comprehensiveStoryEvidence";
 import { MAJOR_MEANINGS } from "../../../lib/interpretation-v4/majorMaterials";
+import { friendlyTransition } from "../../../lib/interpretation-v4/periodPlanner";
+import { godEffects } from "../../../lib/interpretation-v4/compatibilityInteractions";
+import { composeBookNavigation } from "./bookNavigation";
 import { describeReportShare } from "../../../lib/sharing/reportShareMetadata";
 import type { NarrativeBlock, MaterialPacket } from "../../../lib/interpretation-v4/narrativeTypes";
 import type { GenerationPersonInput } from "../../../lib/report-generation/reportInputAdapter";
@@ -61,7 +64,7 @@ export function bookFeatureInventory(e: V4RuntimeEvidence, slot: "person" | "per
   if (yy.total) entries.push({ key: "natal:yin-yang", strong: false, display: { name: `음 ${yy.yin} · 양 ${yy.yang}`, person: name, group: "오행·음양", meaning: `${yy.complete ? "네 기둥" : "확인된 기둥"}의 천간·지지를 한 번씩 센 음양 분포.`, manifestation: "" } });
   for (const row of e.natalTableEvidence[slot].pillars) {
     for (const hidden of row.hiddenStems ?? []) if (!entries.some(v => v.key === `hidden:${hidden}`)) entries.push({ key: `hidden:${hidden}`, strong: false,
-      display: { name: hidden, person: name, group: "지장간", meaning: "지지 안에 함께 담긴 천간의 기운. 표의 해당 기둥에서 위치를 확인할 수 있어요.", manifestation: "" } });
+      display: { name: hidden, person: name, group: "지장간", meaning: [...MATERIAL_BY_FEATURE.values()].find(m => m.label === hidden.split(" ")[1])?.positiveMeaning ?? "표의 해당 기둥 안에 함께 담긴 기운.", manifestation: "" } });
     for (const stage of row.twelveLifeStage ?? []) if (!entries.some(v => v.key === `stage:${stage}`)) entries.push({ key: `stage:${stage}`, strong: false,
       display: { name: stage, person: name, group: "십이운성", meaning: "일간과 지지의 관계를 성장의 단계에 빗대어 보는 이름.", manifestation: "" } });
   }
@@ -120,6 +123,9 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
     pages.push({ kind: "pair", title: "우리라는 사이", category: context[0].value,
       characters: [c.result.persons.personA, c.result.persons.personB].map(p => ({ name: p.name, core: p.core, strength: p.strength, relationship: p.relationship })),
       directions: [], relations: unique(c.result.evidence.relations.map(r => r.labelKo)) });
+    const index = c.result.compatibilityIndex;
+    if (index) pages.push({ kind: "score", id: "compatibility-index", title: "결리포트 궁합 지수", total: index.total,
+      scores: index.scores.map(({ label, value, max }) => ({ label, value, max })), verdict: index.verdict, notice: index.notice, limitations: index.limitations });
   }
   people.forEach((p, i) => { pages.push({ kind: "manse", title: `${p.name}의 만세력`, person: i }, { kind: "mbti", title: `${p.name}의 MBTI`, person: i }); });
   const openingNotes: BookNote[] = [];
@@ -131,7 +137,7 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
     const raw = c.result.evidence.raw;
     openingNotes.push({ name: `${raw.selectedYear}년 · ${raw.annualGanji.ganji} 세운`, text: `${raw.annualFortune.stemTenGod} · ${MAJOR_MEANINGS[raw.annualFortune.stemTenGod].theme}` });
   }
-  pages.push(narrativePage(view.headline, c.result.narrative.opening, openingNotes));
+  pages.push({ ...narrativePage(view.headline, c.result.narrative.opening, openingNotes), id: "core" });
   const sectionPages = new Map<string, number>();
   // Insert the compact overview before narrative details, not instead of them.
   if (c.product === "major_fortune") pages.push({ kind: "timeline", title: "시간의 흐름", years: [], transitions: [] });
@@ -163,24 +169,26 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
       }
     }
     sectionPages.set(section.id, pages.length);
-    pages.push(narrativePage(section.title, section.blocks, extra));
+    pages.push({ ...narrativePage(section.title, section.blocks, extra), id: `chapter-${section.id}` });
   }
   if (c.product === "saju_mbti_compatibility") {
     const pair = pages.find(p => p.kind === "pair")!;
     pair.directions = (["aToB", "bToA"] as const).map((slot, i) => ({ title: view.compatibility![slot].title,
-      effect: c.result.directions[slot].receivedTenGod?.tenGodKo ?? "서로에게 주는 영향", page: sectionPages.get(i === 0 ? "direction-ab" : "direction-ba")! }));
+      effect: godEffects[c.result.directions[slot].receivedTenGod?.tenGodKo ?? ""] ?? "서로에게 주는 영향", term: c.result.directions[slot].receivedTenGod?.tenGodKo, page: sectionPages.get(i === 0 ? "direction-ab" : "direction-ba")! }));
   }
   if (c.product === "major_fortune") {
     const timeline = pages.find(p => p.kind === "timeline")! as Extract<BookPage, { kind: "timeline" }>;
     timeline.years = c.result.years.map(y => ({ year: y.year, age: y.age, cycle: y.cycle.ganji, annual: y.annual.ganji,
       theme: y.protagonist, good: y.goodTheme, caution: y.cautionTheme, title: y.title, time: timeLabel[y.timePosition], page: sectionPages.get(`year-${y.year}`)!,
-      transition: c.result.transitions.find(t => t.year === y.year)?.dateLabel ?? null }));
-    timeline.transitions = c.result.transitions.map(t => ({ date: t.dateLabel, before: t.before.ganji, after: t.after.ganji, page: sectionPages.get(`transition-${t.year}`)! }));
+      importance: y.importance, transition: c.result.transitions.find(t => t.year === y.year) ? friendlyTransition(c.result.transitions.find(t => t.year === y.year)!.dateLabel) : null }));
+    timeline.transitions = c.result.transitions.map(t => ({ date: friendlyTransition(t.dateLabel), exact: t.dateLabel, before: t.before.ganji, after: t.after.ganji, page: sectionPages.get(`transition-${t.year}`)! }));
   }
   if (c.product === "annual_fortune") {
     const overview = pages.find(p => p.kind === "months")! as Extract<BookPage, { kind: "months" }>;
+    overview.map = c.result.yearMap;
     overview.months = c.result.months.map(m => ({ month: m.month, title: m.title, theme: /[a-z]/i.test(m.strongestTheme) ? MAJOR_MEANINGS[m.god].theme : m.strongestTheme, time: timeLabel[m.time],
       ganji: m.focus.monthPillar.stem + m.focus.monthPillar.branch, gods: `${m.focus.stemTenGod} · ${m.focus.branchTenGod}`,
+      good: MAJOR_MEANINGS[m.god].gift, caution: m.action?.avoid, importance: m.plan?.importance, boundary: m.boundary,
       markers: unique(c.result.evidence.months.find(v => v.month === m.month)!.transit.accepted.flatMap(f => f.observations.map(o => o.label))), page: sectionPages.get(`month-${m.month}`)! }));
   }
   const used = new Set([...c.result.narrative.opening, ...c.result.narrative.sections.flatMap(s => s.blocks)].flatMap(b => b.proof.features.map(featureKey)));
@@ -194,5 +202,5 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
   }
   pages.push({ kind: "back", title: "이 책 공유하기", finalLine: view.finalLine });
   const share = describeReportShare({ productSlug: e.input.productSlug, draft: view });
-  return { bookId, title, names, people, context, pages, readingDate: e.generatedAt.slice(0, 10), share: { title: `${names} · ${title}`, description: share.description } };
+  return { bookId, title, names, people, context, pages: composeBookNavigation(pages), readingDate: e.generatedAt.slice(0, 10), share: { title: `${names} · ${title}`, description: share.description } };
 }

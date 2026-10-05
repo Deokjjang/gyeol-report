@@ -15,6 +15,7 @@ import type { composeLoveNarrative } from "./loveComposer";
 import type { composeCompatibilityNarrative } from "./compatibilityComposer";
 import type { composeMajorFortuneNarrative } from "./majorComposer";
 import type { composeAnnualFortuneNarrative } from "./annualComposer";
+import { buildCompatibilityIndex } from "./compatibilityIndex";
 import type { V4CustomerReport, V4CustomerSection, V4CustomerTables, V4ShadowView } from "./runtimeTypes";
 
 type Success<T> = Extract<Awaited<T>, { ok: true }>;
@@ -112,6 +113,9 @@ export function validateV4Publication(product: string, draft: unknown, evidence:
         v.directions.aToB.subjectPerson !== v.persons.personA.personId || v.directions.aToB.targetPerson !== v.persons.personB.personId ||
         v.directions.bToA.subjectPerson !== v.persons.personB.personId || v.directions.bToA.targetPerson !== v.persons.personA.personId) errors.push("V4_PAIR_DIRECTION_INVALID");
       if (/\d+\s*(?:점|%|퍼센트)|[★☆]|[SABC][+-]?\s*등급|"(?:score|rating|percent)"\s*:/i.test(JSON.stringify(expected))) errors.push("V4_PAIR_NUMERIC_FORBIDDEN");
+      // Phase13B's optional structured entertainment index is computed, never
+      // writer prose. Old sealed packets without it continue to validate.
+      if (r.compatibilityIndex && !same(r.compatibilityIndex, buildCompatibilityIndex(v))) errors.push("V4_PAIR_INDEX_INVALID");
     }
     if (c.product === "major_fortune") {
       const r = c.result, v = r.evidence;

@@ -5,6 +5,7 @@ import { buildProductNatalTables, getCanonicalNatalTable } from "../report-knowl
 import { createBranchRef, detectCrossBranchRelations } from "../report-knowledge/compatibilityRelationRules";
 import { buildCompatibilityDirectionEvidence } from "../report-knowledge/compatibilityDirectionEvidence";
 import { buildMyeongliMaterialPacket } from "./materialPacket";
+import { projectYinYang } from "./contentEvidence";
 
 /** Projection of existing canonical adapters, NOT a second compatibility engine.
  * The legacy packet stays local: no scores, old prose or role-less assignment is
@@ -41,6 +42,7 @@ export function compatibilityNarrativeEvidence(payload: unknown) {
   const person = (slot: "personA" | "personB") => ({
     personId: existing.direction.persons[slot].personId, name: input[slot].name, mbti: existing.direction.persons[slot].mbti,
     precision: calculations[slot].birthTimeContext?.birthTimePrecision ?? "unknown",
+    yinYang: projectYinYang(calculations[slot]),
     materials: buildMyeongliMaterialPacket({ calculation: calculations[slot], mbti: input[slot].mbtiType, subject: slot }),
   });
   return { ok: true as const, category: input.relationshipType, roleVersion: COMPATIBILITY_ROLE_VERSION,

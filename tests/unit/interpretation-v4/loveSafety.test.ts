@@ -1,4 +1,4 @@
-import contentBaseline from "./contentRebuildBaseline.json";
+import contentBaseline from "./productNarrativeBaseline.json";
 import { createHash } from "node:crypto";
 import { isVerifiedBookConsumer } from "./bookBoundary";
 import { mkdirSync, writeFileSync, readFileSync, readdirSync } from "node:fs";

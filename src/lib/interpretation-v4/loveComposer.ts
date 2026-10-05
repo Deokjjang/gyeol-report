@@ -68,7 +68,7 @@ export function composeLoveNarrative(input: NarrativeInput) {
   const fortune = loveFortune(state, voice?.id ?? "natal", [...opening, ...sections.flatMap(s => s.blocks)].map(b => b.text));
   sections.push(section("fortune", "이미 가지고 있는, 사랑에서 빛나는 좋은 패", "success/fortune", fortune));
   const balance = loveBalance(state, voice?.id ?? "natal");
-  if (balance) sections.push(section("balance", "나와 달라서 오히려 편한 사람의 이미지", "relationships", [balance.block]));
+  if (balance) sections.push(section("balance", "나와 달라서 오히려 편한 사람의 이미지", "relationships", [balance.block, balance.meeting]));
   const turn = loveFusionTurn(state, voice?.fusion.ruleId);
   if (turn) sections.push(section("fusion-turn", turn.fusion.kind === "complement" ? "마음이 밖으로 나오는 나만의 통로" : "밖에서 본 내가 전부는 아닙니다", "love", [turn.block]));
   const charm = packet.selected.some(m => ["sinsal_dohwa", "sinsal_hongyeom"].includes(m.feature));

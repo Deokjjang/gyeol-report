@@ -38,7 +38,10 @@ export function relationshipMbtiReading(type: string | null | undefined, roots: 
     // Multi-root alternatives in the copy name only confirmed roots. This is
     // textual realization of this exact allowlist, not dynamic interpretation.
     const present = roots.filter(m => labels.split("|").includes(materialLabel(m))).map(materialLabel);
-    const text = scene.replace(/비견·관성|인성·문창|재관|화개나 비견|정인·정재|비견·편인·화개|비견·역마·식신|비견·역마|비견·편인|현침·문창·정인|현침과 편인/g, () => present.join("·"));
+    const sourceScene = chapter === "pair-nonromantic" && id === "likes_and_dislikes_visible"
+      ? "좋아하는 취향과 그렇지 않은 취향이 표정에 잘 드러나요. ENFP의 솔직한 반응에 비견의 자기 기준과 홍염의 가까이서 전해지는 매력이 겹칩니다. 모임에서 메뉴 하나를 고를 때도 진짜 신나는 순간은 숨기기 어렵죠. 그 반응 덕분에 친구들은 무엇을 함께하면 즐거울지 알아채기 쉬워요."
+      : scene;
+    const text = sourceScene.replace(/비견·관성|인성·문창|재관|화개나 비견|정인·정재|비견·편인·화개|비견·역마·식신|비견·역마|비견·편인|현침·문창·정인|현침과 편인/g, () => present.join("·"));
     // A few source lines discuss two separate faces, not alternatives. Both
     // must really be present; never silently turn one into the other.
     if (id === "hard_to_enter_reliable_once_in" && !(present.includes("정인") && present.includes("비견"))) continue;

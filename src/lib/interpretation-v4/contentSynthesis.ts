@@ -3,13 +3,15 @@ import { chapterMbtiReadings } from "./contentMbti";
 import { relationshipMbtiReading } from "./contentRelationshipMbti";
 import { auditContent } from "./contentQuality";
 import { whyMaterial } from "./contentWhy";
+import { rhythmReading, elementCharacter } from "./productRhythm";
+import { plannedAssertion } from "./assertionCopy";
 import { paragraph, proof, particle } from "./copyRealizer";
 import { sentences, sentenceKey } from "./editorialGuard";
 import type { NarrativeBlock, NarrativeInput, NarrativeSection, MaterialPacket } from "./narrativeTypes";
 import type { SeedRole } from "./materialDepthTypes";
 import type { Domain, FusionInterpretation } from "./types";
 
-export const CONTENT_REVISION = "v4-content-synthesis-13a-1";
+export const CONTENT_REVISION = "v4-content-synthesis-13b-1";
 type Readable = { headline: string; opening: readonly NarrativeBlock[]; sections: readonly NarrativeSection[]; finalLine: string };
 type Product = "comprehensive" | "career" | "love" | "major" | "annual";
 const LOVE_ROOTS: Readonly<Record<string, readonly string[]>> = {
@@ -32,13 +34,16 @@ const roleFor: Record<Domain, SeedRole> = { identity: "inside", strengths: "stre
 export function conversationalVoice(text: string, offset = 0): string {
   return sentences(text).map((sentence, i) => {
     if ((i + offset) % 3 === 0) return sentence;
+    for (const [from, to] of [["움직입니다.", "움직여요."], ["놓입니다.", "놓여요."], ["닮았습니다.", "닮았어요."]] as const) {
+      if (sentence.endsWith(from)) return sentence.slice(0, -from.length) + to;
+    }
     const simple: readonly [string, string][] = [["있습니다.", "있어요."], ["없습니다.", "없어요."], ["됩니다.", "돼요."], ["합니다.", "해요."], ["싶습니다.", "싶어요."], ["않습니다.", "않아요."], ["다릅니다.", "달라요."], ["모릅니다.", "몰라요."], ["어렵습니다.", "어려워요."], ["좋습니다.", "좋아요."], ["큽니다.", "커요."], ["바랍니다.", "바라요."], ["느낍니다.", "느껴요."], ["봅니다.", "봐요."], ["만듭니다.", "만들어요."], ["찾습니다.", "찾아요."], ["낫습니다.", "나아요."], ["보입니다.", "보여요."], ["가깝습니다.", "가까워요."], ["쌓입니다.", "쌓여요."], ["바뀝니다.", "바뀌어요."], ["해집니다.", "해져요."], ["남습니다.", "남아요."], ["나옵니다.", "나와요."], ["놓칩니다.", "놓쳐요."]];
     for (const [from, to] of simple) if (sentence.endsWith(from)) {
       // 후보입니다/정보입니다 contain the same suffix as the verb 보입니다.
       if (from === "보입니다." && !/(?:^|\s)보입니다\.$/.test(sentence)) continue;
       return sentence.slice(0, -from.length) + to;
     }
-    if (/(?:편|힘|것|사람|기운|구조|쪽|셈|때문|모습|이야기|이유|재능|장점|기준|순간|자리|자산|식|확장|과정|매력|패|시간|힌트|장면|태도|길|즐거움)입니다\.$/.test(sentence)) {
+    if (/(?:편|힘|것|사람|기운|구조|쪽|셈|때문|모습|이야기|이유|재능|장점|기준|순간|자리|자산|식|확장|과정|매력|패|시간|힌트|장면|태도|길|즐거움|기분|뜻)입니다\.$/.test(sentence)) {
       const noun = sentence.slice(0, -4), code = noun.charCodeAt(noun.length - 1) - 0xac00;
       if (code >= 0 && code <= 11171) return noun + (code % 28 ? "이에요." : "예요.");
     }
@@ -80,7 +85,7 @@ function fusionReason(f: FusionInterpretation, pool: ContentEvidencePool, domain
  * Existing product scenes are inputs, not the entire finished chapter anymore. */
 export function composeEvidenceChapters<T extends Readable>(input: NarrativeInput, packet: MaterialPacket, draft: T, product: Product) {
   const pool = buildContentEvidencePool(input.calculation, packet), state = createContentSelection();
-  const definitions = new Set<string>(), traits = new Set<string>(), fusionRealized = new Map<string, number>();
+  const definitions = new Set<string>(), traits = new Set<string>(), fusionRealized = new Map<string, number>(), bridges = new Set<string>();
   const reserved = new Set<string>();
   const plans: ChapterEvidencePlan[] = [];
   // Reserve authored scenes before allocating new material. This prevents a
@@ -98,8 +103,9 @@ export function composeEvidenceChapters<T extends Readable>(input: NarrativeInpu
     return [paragraph(`${plan.id}-why-${m.feature}`, text, proof([m], [], [], [CONTENT_REVISION, "content-role:why"]), "positive")];
   });
   const synthesis = (plan: ChapterEvidencePlan): NarrativeBlock[] => {
-    if (product === "love" || ["relationships", "marriage"].includes(plan.domain)) {
-      const reading = relationshipMbtiReading(input.mbti, pool.materials, plan.id, traits);
+    if (product === "love" || (product === "comprehensive" && ["relationships", "marriage", "love"].includes(plan.domain))) {
+      const chapter = product === "comprehensive" && plan.domain === "relationships" ? "pair-nonromantic" : plan.id;
+      const reading = relationshipMbtiReading(input.mbti, pool.materials, chapter, traits);
       if (reading) {
         traits.add(reading.id);
         return [paragraph(`${plan.id}-synthesis-${reading.id}`, reading.text,
@@ -108,18 +114,29 @@ export function composeEvidenceChapters<T extends Readable>(input: NarrativeInpu
     }
     // Domain-specific DB trait before a repeat of a global voice. Exact source
     // trait + exact supported feature, including reviewed contrary money goals.
-    const lensDomain = product === "love" && ["strengths", "success/fortune", "identity"].includes(plan.domain) ? "love" : plan.domain;
+    const lensDomain = product === "love" ? (plan.id === "home" ? "marriage" : "love")
+      : product === "career" && ["relationships", "marriage", "love"].includes(plan.domain) ? "work" : plan.domain;
     const readings = chapterMbtiReadings(input.mbti, [...plan.roots, ...pool.materials.filter(m => !plan.roots.includes(m))], lensDomain, traits);
     if (readings[0]) {
       const reading = readings[0]; traits.add(reading.id);
       const label = materialLabel(reading.root);
       const type = reading.id.split(":")[0];
-      const behavior = reading.behavior.replace(type, reading.kind === "tension" ? `실속을 챙기는 ${label}와 달리 ${type}` : `${label}의 결이 겹치는 ${type}`);
-      return [paragraph(`${plan.id}-synthesis-${reading.id}`, `${behavior} ${reading.combined}`,
+      const relationKey = `${reading.root.feature}:${["career", "workplace"].includes(reading.area) ? "work" : reading.area}:${reading.kind}`;
+      const bridge = bridges.has(relationKey) ? "" : reading.kind === "tension" ? `실속을 챙기는 ${label}의 방향과는 다른 마음도 있는 거죠.`
+        : reading.area === "study" ? `배움에서 드러나는 ${label}의 힘과 맞닿는 부분이에요.`
+        : reading.area === "money" ? `돈을 대하는 이 모습에는 ${label}의 현실적인 결도 함께 있어요.`
+        : ["career", "workplace"].includes(reading.area) ? `사주의 ${label}도 일에서 같은 장점을 비춥니다.`
+        : `${label}의 장점이 ${type}의 행동에서 더 알아보기 쉽게 드러나는 셈이죠.`;
+      bridges.add(relationKey);
+      return [paragraph(`${plan.id}-synthesis-${reading.id}`, `${reading.behavior} ${bridge} ${reading.combined}`,
         proof([reading.root], [], [], [reading.provenance, `content-synthesis:${reading.kind}:${reading.coverage}`, CONTENT_REVISION]), "positive", `synthesis:${reading.area}:${reading.id}`)];
     }
     const f = plan.fusion;
     if (!f) return [];
+    // Product meaning wins over a generic domain label on a source section.
+    // A missing love/work lens must not be filled with the opposite scene.
+    if (product === "career" && ["love", "marriage", "relationships"].includes(f.domain)) return [];
+    if (product === "love" && !["love", "marriage", "relationships", "identity"].includes(f.domain)) return [];
     if (sentences(f.insightSeed).some(t => reserved.has(sentenceKey(t)))) return [];
     const occurrence = fusionRealized.get(f.ruleId) ?? 0;
     if (occurrence) return [];
@@ -152,11 +169,12 @@ export function composeEvidenceChapters<T extends Readable>(input: NarrativeInpu
     }
     // Keep the powerful original scenes; main chapters now have explanation,
     // two-root depth and a genuinely bound MBTI lens rather than one voice card.
+    const claim = s.id === "fortune" ? plannedAssertion(plan) : null;
     const blocks = opening ? [...existing.slice(0, 2), ...why.slice(0, 1), ...fusion, ...existing.slice(2)] :
       plan.fusion?.kind === "contrast" ? [...existing.slice(0, 1), ...fusion, ...why, ...existing.slice(1), ...depth] :
       ["money", "study"].includes(s.domain) ? [...existing, ...why, ...fusion, ...depth] :
       [...existing.slice(0, 1), ...why, ...existing.slice(1), ...fusion, ...depth];
-    return { ...s, blocks };
+    return { ...s, blocks: claim ? [claim, ...blocks] : blocks };
   };
   const opening = extend({ id: "core", title: draft.headline, domain: product === "career" ? "work" : product === "love" ? "love" : "identity", blocks: draft.opening }, true).blocks;
   const sections = draft.sections.map(s => /^(year-|month-|transition-)/.test(s.id) ? { ...s, blocks: voice(s.blocks) } : extend(s));
@@ -173,22 +191,18 @@ export function composeEvidenceChapters<T extends Readable>(input: NarrativeInpu
     }
   }
   const yinYang = pool.yinYang;
-  if (yinYang.complete && yinYang.total === 8 && product === "comprehensive") {
-    const index = sections.findIndex(s => s.id === "portrait");
-    if (index >= 0) {
-      const text = yinYang.direction === "mixed"
-        ? "천간과 지지의 음양은 한쪽으로 치우치지 않아요. 먼저 움직여 알아보는 모습과 안에서 정리하는 모습을 함께 떠올릴 수 있습니다. 모임에서는 결정을 잘 내리던 사람이 집에 와서야 자기 기분을 돌아보는 식이죠. 어느 한쪽만 진짜 성격이라고 고를 필요는 없어요."
-        : yinYang.direction === "outward"
-          ? "확인된 여덟 글자에서는 양이 더 많아요. 시작하고 바깥에 꺼내보는 리듬을 떠올릴 수 있죠. 기다리기만 할 때보다 작은 선택이라도 직접 해보면 답답함이 풀리는 모습을 살펴볼 만합니다. 다만 이것만으로 외향적인 사람이라고 정하지는 않아요. 혼자 일해도 시작하는 힘은 충분히 쓸 수 있거든요."
-          : "확인된 여덟 글자에서는 음이 더 많아요. 안에서 모으고 관찰한 뒤 정리하는 리듬을 떠올릴 수 있죠. 신나는 모임을 다녀와서도 혼자 누워 그날의 말을 다시 생각하는 장면과 닮았습니다. 조용한 기운이 많다는 것과 사람들 앞에서 말이 적다는 것은 다른 이야기예요.";
-      sections[index] = { ...sections[index], blocks: [...sections[index].blocks, paragraph("yin-yang-rhythm", text,
-        { features: ["natal:yin-yang"], seedIds: [], fusionIds: [], sourceRefs: yinYang.provenance }, "observation", "after-gathering-rhythm")] };
-    }
+  if (product === "comprehensive" || product === "career" || product === "love") {
+    const rhythm = rhythmReading(input, pool, product);
+    const index = sections.findIndex(s => s.id === (product === "comprehensive" ? "portrait" : product === "career" ? "fit" : "intimacy"));
+    if (rhythm && index >= 0) sections[index] = { ...sections[index], blocks: [...sections[index].blocks, rhythm.block] };
+    const element = elementCharacter(pool);
+    const place = sections.findIndex(s => s.id === (product === "comprehensive" ? "environment" : "balance"));
+    if (element && place >= 0) sections[place] = { ...sections[place], blocks: [element.block, ...sections[place].blocks] };
   }
   const core = plans[0];
   const narrative = { ...draft, opening: realizeChapterVoice(opening), sections: sections.map(s => ({ ...s, blocks: realizeChapterVoice(s.blocks) })) };
   return { narrative, contentAudit: auditContent(narrative), contentPlan: { revision: CONTENT_REVISION,
     coreGyeol: { headline: draft.headline, features: core.roots.map(m => m.feature), fusion: core.fusion?.ruleId ?? null },
-    chapters: plans.map(p => ({ id: p.id, domain: p.domain, features: p.roots.map(m => m.feature), fusion: p.fusion?.ruleId ?? null, consideredFusionIds: p.consideredFusionIds, reasons: p.reasons })),
+    chapters: plans.map(p => ({ id: p.id, domain: p.domain, assertion: p.assertion, theme: p.theme, independentFeatures: p.independentFeatures, features: p.roots.map(m => m.feature), fusion: p.fusion?.ruleId ?? null, consideredFusionIds: p.consideredFusionIds, reasons: p.reasons })),
     mbtiTraits: [...traits], yinYang, held: pool.held, strength: pool.strength } };
 }
