@@ -52,8 +52,8 @@ beforeAll(async () => {
   }
 }, 60000);
 
-describe("Phase13B six-product editorial audit (Phase7A/13A baselines retained separately)", () => {
-  it.each(Object.entries(baseline.rows))("%s: Phase13B reviewed prose, selection and proofs remain deterministic", (id, expected) => {
+describe("Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately)", () => {
+  it.each(Object.entries(baseline.rows))("%s: reviewed prose, selection and proofs remain deterministic", (id, expected) => {
     const r = rows.find(r => r.id === id)!;
     expect(digest(r.narrative)).toBe(expected.after);
     expect(digest(editorialInvariant(packets[id] as Record<string, unknown>, r.narrative))).toBe(expected.invariant);

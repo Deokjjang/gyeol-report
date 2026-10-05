@@ -1,53 +1,53 @@
 {
-  "revision": "v4-content-synthesis-13b-1",
+  "revision": "v4-content-13c1-comprehensive-13b-other-products",
   "rows": {
     "comprehensive-01-seojin": {
-      "after": "2e08c1c61cbc4f1f11fcbd754f8322520e1ae60213ef655d0edbf71ad93d3a6b",
-      "invariant": "7c9614e45d81f4d031f2381cb67633f43e786ca777718ccf3db772d3337d24d5"
+      "after": "db6bccbbe0274d1eed9571721bd8b5deaf7dcbf7366de083e1d4ce8957508fc7",
+      "invariant": "dc994e7e4c053ddb2e34025465166c64771977a5162aff1d9232aed422b3f348"
     },
     "comprehensive-02-seoyun": {
-      "after": "14609cdac3bf0b47490a5f7c04420993eb9fb56f9368c63d79cb886359a26249",
-      "invariant": "212d3573c81c949afde32586bae1d826b49d734eb91dd7fd1d7d31a76def4721"
+      "after": "13002a2375889fbb023f4d3a63c6bd8bd3a642db4203d80a83481ba816e36283",
+      "invariant": "c7a82321f848b61ae7538f395ccfab57dc872ed5bfc88d7f964b871f745a4ac5"
     },
     "comprehensive-03-jia": {
-      "after": "84b6e97752af873dfed4b914dcf2fb7cfecd15d5630fb015b7c66f64cf084d41",
-      "invariant": "d0bda1e1ed481b1bfda9531d6171b7d9f958a1da210d95afd8c792af2314458a"
+      "after": "3323e202a8ef00bb1fd02e1a16ab1d14bb6d1d328103497cdf75dd0ba80c1d41",
+      "invariant": "a0cd23a65f8e3946e38797b373f2105a445003e6c179f3176c9c0c97be05e8e4"
     },
     "comprehensive-04-daeun": {
-      "after": "5896cadc29a2794f610aeb1506f4bd47c2ec26c784b5710fb7251ccedb15dd89",
-      "invariant": "fddef1fbf89cf2697d3bb4505647f23f74646cd25370b4c24806dca483b60e77"
+      "after": "956dff23036520fec1f2dfc67575b5f3af6f0e94ac9c1935be631dad6a1d8dce",
+      "invariant": "d4f4b36c1fbc6e5ba8cd4fee379fa4c7da4b98bf05cfe109f77b38bae39c3b70"
     },
     "comprehensive-05-sua": {
-      "after": "97da55c14d56f5637696b1e4a250d3bf25ac5b96870e5374cdd3318bb2d6c0c9",
-      "invariant": "b88f81e111f88478216b3b12b2523448a6f69896058d4e0626a2e7640e924f67"
+      "after": "5fa6ef1775fd7e1ac4e35a5e08cf119c8e926404e07b4c8ffbf9b0cb5e1e925d",
+      "invariant": "fc8398acd3a4e7402fd6d5e9a1c51aac697595a19d8a5aec9bb6e672153818ba"
     },
     "comprehensive-06-yerin": {
-      "after": "6f2c6b3b4824d362bcaa0b99a87d08c833e2e5b8d8b9b5803c5601ad9c211eef",
-      "invariant": "27e54a531433dd5a42a269484b53ee5315f866d31a8f8b4ec04513ff04ff6a92"
+      "after": "5008114acb2e547f3d51fcbaae330b48c2bd35b058d306e99c75b9615b5ff19a",
+      "invariant": "cb4128ec9314a6ed60a4efe98fd847d27a9919c4dc5bcdfb98436b34ac07604d"
     },
     "comprehensive-07-nayeong": {
-      "after": "819ea2f12b569e3010f59df376c45e151abc86b451b43fdcc246d5336a3c2185",
-      "invariant": "197804556641d7322bf2113d568a98d785a4b139916ed208acceac108243e22a"
+      "after": "c5b56c114031d53fac2ca312dbf4c3dea05f01a88c139b22dcf357f1cb355118",
+      "invariant": "b5463b7ba4c55b73773fb46c469e225e5cc81b33131d2f8c1ecb12a12eb04c57"
     },
     "comprehensive-08-yujin": {
-      "after": "f330ea68876f2d17e3dd3fc11bfa1085207c4be420295b695e8182cf61d7c546",
-      "invariant": "12a83082fd751df18699a03ce054b4841625241446b3f68da017f08c5785217f"
+      "after": "d60fe703c0592181e85c5417cf5ae4e820f99eb4ca20768505637466bd6716dd",
+      "invariant": "42fffe44451dc7a54686534bb201a70f7178ece8b71c9ee499e576d07a58c0db"
     },
     "comprehensive-09-harin": {
-      "after": "323c8cd083b69745dd3d4a84e75e5b1ea508fdf1a461c7c889d1630619af7f3e",
-      "invariant": "0e756dfcd777bb7bd120a51f2400e4527213ea6b9eedf0fd19759cdbfb9334a3"
+      "after": "57ef77a7dd3df5ee5a8b9c0c9f7d8458f9a38efc34c47206145cb470f620bd20",
+      "invariant": "ebb829e0fb8e70e62f593269c8555a5db00c964381d199f4da556fd97fe0f442"
     },
     "comprehensive-10-minjae": {
-      "after": "e05523833c1915b6535df09eb2a787fdf795b1cb336085567b453f40ea8618a6",
-      "invariant": "500ad3b7212cd3270ba017e9266e2245d67a4b1c87203f52cac049ca3440d7ae"
+      "after": "8395229a5a80ce8411e6320cf2450fd071ff253124399cd21d9d4ac166bcdccb",
+      "invariant": "a3a6dcef98fa54779b0e2d57af02291e7af8d1def44f38194e4eb1a3da5c0a3f"
     },
     "comprehensive-11-doyun": {
-      "after": "71183e17a5fd89a3e3ec3ca7a09f0d3f888ed6a923e079b1ac74726c5463b2e9",
-      "invariant": "2a98039b376ce18e9af3761e53c541e4e55249cb8fadc1a3030e0a497fbb7495"
+      "after": "f1013a0e1817a012401aad84f75a54fce46258231f2d1549ba58b14754d02672",
+      "invariant": "e63825d4d60fffd82d044c06e95b7fb83351fd8dd9cc9de382af89aa0ee38a58"
     },
     "comprehensive-12-junseo": {
-      "after": "d800e85611dbee0e16a550a0b426963b1abcf016d74e14ed06ed3d534bb56cda",
-      "invariant": "ce3888121be0175916bbf54e9be0dd5f5da1c6875c6b508f500183acb1afb783"
+      "after": "fa8677747b171491619cf7aee696c0c3b311324c5543cf9073eaedcbe404b96f",
+      "invariant": "92b98e90790fbe394e67273832166061b97c7cce466ed0214f92432a29997e33"
     },
     "career-01-minjae": {
       "after": "4df278f6be5a4ced72f8772f29b5ac822ae10b717fdfd70e4229f2199c048319",
@@ -194,8 +194,8 @@
       "invariant": "6251bf237acec04512a26ebc1a6f4b490f275432abd11888b62deaa613dbef57"
     },
     "golden-ENTJ-comprehensive": {
-      "after": "2e08c1c61cbc4f1f11fcbd754f8322520e1ae60213ef655d0edbf71ad93d3a6b",
-      "invariant": "7c9614e45d81f4d031f2381cb67633f43e786ca777718ccf3db772d3337d24d5"
+      "after": "db6bccbbe0274d1eed9571721bd8b5deaf7dcbf7366de083e1d4ce8957508fc7",
+      "invariant": "dc994e7e4c053ddb2e34025465166c64771977a5162aff1d9232aed422b3f348"
     },
     "golden-ENTJ-career": {
       "after": "6887fca1d854596435a4139b7366bad93bb319f66c87b0b1e9708d68ebb0952b",
@@ -218,8 +218,8 @@
       "invariant": "e909baac82fc3f899570bb53cc5fc9fc490354af699ee904d6b2a8bcc355844c"
     },
     "golden-INTP-comprehensive": {
-      "after": "819ea2f12b569e3010f59df376c45e151abc86b451b43fdcc246d5336a3c2185",
-      "invariant": "197804556641d7322bf2113d568a98d785a4b139916ed208acceac108243e22a"
+      "after": "c5b56c114031d53fac2ca312dbf4c3dea05f01a88c139b22dcf357f1cb355118",
+      "invariant": "b5463b7ba4c55b73773fb46c469e225e5cc81b33131d2f8c1ecb12a12eb04c57"
     },
     "golden-INTP-career": {
       "after": "4d6f669325ff487e433108a5217b1acd90408ff5f9ec97a242b1450fb3393c68",
@@ -242,8 +242,8 @@
       "invariant": "1515127a50432c14edd30e53448c89082f799eb472642dd3d337ac5a477576ea"
     },
     "golden-ENFP-comprehensive": {
-      "after": "14609cdac3bf0b47490a5f7c04420993eb9fb56f9368c63d79cb886359a26249",
-      "invariant": "212d3573c81c949afde32586bae1d826b49d734eb91dd7fd1d7d31a76def4721"
+      "after": "13002a2375889fbb023f4d3a63c6bd8bd3a642db4203d80a83481ba816e36283",
+      "invariant": "c7a82321f848b61ae7538f395ccfab57dc872ed5bfc88d7f964b871f745a4ac5"
     },
     "golden-ENFP-career": {
       "after": "65f2f580a6c0c9d3bb4a542c6bffa27d634d06a627a083bb3299b7faa296402d",

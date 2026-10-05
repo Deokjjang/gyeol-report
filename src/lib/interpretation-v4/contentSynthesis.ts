@@ -10,6 +10,7 @@ import { sentences, sentenceKey } from "./editorialGuard";
 import type { NarrativeBlock, NarrativeInput, NarrativeSection, MaterialPacket } from "./narrativeTypes";
 import type { SeedRole } from "./materialDepthTypes";
 import type { Domain, FusionInterpretation } from "./types";
+import { comprehensiveReadings, type ComprehensivePlan } from "./comprehensivePlan";
 
 export const CONTENT_REVISION = "v4-content-synthesis-13b-1";
 type Readable = { headline: string; opening: readonly NarrativeBlock[]; sections: readonly NarrativeSection[]; finalLine: string };
@@ -83,7 +84,7 @@ function fusionReason(f: FusionInterpretation, pool: ContentEvidencePool, domain
 /** Deterministic chapter planner → allocated evidence → authored scenes →
  * explanation / MBTI synthesis → voice. No UI, network or calculation writes.
  * Existing product scenes are inputs, not the entire finished chapter anymore. */
-export function composeEvidenceChapters<T extends Readable>(input: NarrativeInput, packet: MaterialPacket, draft: T, product: Product) {
+export function composeEvidenceChapters<T extends Readable>(input: NarrativeInput, packet: MaterialPacket, draft: T, product: Product, comprehensive?: ComprehensivePlan) {
   const pool = buildContentEvidencePool(input.calculation, packet), state = createContentSelection();
   const definitions = new Set<string>(), traits = new Set<string>(), fusionRealized = new Map<string, number>(), bridges = new Set<string>();
   const reserved = new Set<string>();
@@ -103,7 +104,7 @@ export function composeEvidenceChapters<T extends Readable>(input: NarrativeInpu
     return [paragraph(`${plan.id}-why-${m.feature}`, text, proof([m], [], [], [CONTENT_REVISION, "content-role:why"]), "positive")];
   });
   const synthesis = (plan: ChapterEvidencePlan): NarrativeBlock[] => {
-    if (product === "love" || (product === "comprehensive" && ["relationships", "marriage", "love"].includes(plan.domain))) {
+    if (product === "love" || (!comprehensive && product === "comprehensive" && ["relationships", "marriage", "love"].includes(plan.domain))) {
       const chapter = product === "comprehensive" && plan.domain === "relationships" ? "pair-nonromantic" : plan.id;
       const reading = relationshipMbtiReading(input.mbti, pool.materials, chapter, traits);
       if (reading) {
@@ -116,13 +117,14 @@ export function composeEvidenceChapters<T extends Readable>(input: NarrativeInpu
     // trait + exact supported feature, including reviewed contrary money goals.
     const lensDomain = product === "love" ? (plan.id === "home" ? "marriage" : "love")
       : product === "career" && ["relationships", "marriage", "love"].includes(plan.domain) ? "work" : plan.domain;
-    const readings = chapterMbtiReadings(input.mbti, [...plan.roots, ...pool.materials.filter(m => !plan.roots.includes(m))], lensDomain, traits);
+    const readingRoots = [...plan.roots, ...pool.materials.filter(m => !plan.roots.includes(m))];
+    const readings = comprehensive ? comprehensiveReadings(comprehensive, lensDomain, readingRoots, traits) : chapterMbtiReadings(input.mbti, readingRoots, lensDomain, traits);
     if (readings[0]) {
       const reading = readings[0]; traits.add(reading.id);
       const label = materialLabel(reading.root);
       const type = reading.id.split(":")[0];
       const relationKey = `${reading.root.feature}:${["career", "workplace"].includes(reading.area) ? "work" : reading.area}:${reading.kind}`;
-      const bridge = bridges.has(relationKey) ? "" : reading.kind === "tension" ? `실속을 챙기는 ${label}의 방향과는 다른 마음도 있는 거죠.`
+      const bridge = bridges.has(relationKey) || (comprehensive && reading.kind === "tension") ? "" : reading.kind === "tension" ? `실속을 챙기는 ${label}의 방향과는 다른 마음도 있는 거죠.`
         : reading.area === "study" ? `배움에서 드러나는 ${label}의 힘과 맞닿는 부분이에요.`
         : reading.area === "money" ? `돈을 대하는 이 모습에는 ${label}의 현실적인 결도 함께 있어요.`
         : ["career", "workplace"].includes(reading.area) ? `사주의 ${label}도 일에서 같은 장점을 비춥니다.`
@@ -133,6 +135,7 @@ export function composeEvidenceChapters<T extends Readable>(input: NarrativeInpu
     }
     const f = plan.fusion;
     if (!f) return [];
+    if (comprehensive && f.myeongliEvidence.some(d => comprehensive.peopleLuck.includes(contentFeature(d.evidence.feature)))) return [];
     // Product meaning wins over a generic domain label on a source section.
     // A missing love/work lens must not be filled with the opposite scene.
     if (product === "career" && ["love", "marriage", "relationships"].includes(f.domain)) return [];
@@ -151,7 +154,11 @@ export function composeEvidenceChapters<T extends Readable>(input: NarrativeInpu
     if (s.id === "final" || s.id === "direction") return { ...s, blocks: voice(s.blocks) };
     const sceneRoots = s.blocks.flatMap(b => b.proof.features.map(contentFeature)).filter(f => pool.materials.some(m => m.feature === f));
     const preferred = [...new Set([...sceneRoots, ...(product === "love" ? LOVE_ROOTS[s.id] ?? [] : [])])];
-    const plan = planChapter(pool, state, s.id, s.domain, preferred, sceneRoots); plans.push(plan);
+    const chapterPool = comprehensive && s.id !== "fortune" ? { ...pool,
+      materials: pool.materials.filter(m => !comprehensive.peopleLuck.includes(m.feature)),
+      fusions: pool.fusions.filter(f => !f.myeongliEvidence.some(d => comprehensive.peopleLuck.includes(contentFeature(d.evidence.feature)))) } : pool;
+    const plan = planChapter(chapterPool, state, s.id, s.domain, preferred, sceneRoots); plans.push(plan);
+    if (comprehensive && (["environment", "fortune"].includes(s.id) || (s.id === "core" && comprehensive.core))) return { ...s, blocks: voice(s.blocks) };
     // A reader's context, recommendations and conditional parenting are not
     // rewritten into a generic personality claim. Retain their authored scenes.
     const fixedContext = ["current", "roles", "organization", "home", "parenting", "direction", "final", "balance", "environment", "fusion-turn"].includes(s.id);
@@ -191,7 +198,7 @@ export function composeEvidenceChapters<T extends Readable>(input: NarrativeInpu
     }
   }
   const yinYang = pool.yinYang;
-  if (product === "comprehensive" || product === "career" || product === "love") {
+  if (!comprehensive && (product === "comprehensive" || product === "career" || product === "love")) {
     const rhythm = rhythmReading(input, pool, product);
     const index = sections.findIndex(s => s.id === (product === "comprehensive" ? "portrait" : product === "career" ? "fit" : "intimacy"));
     if (rhythm && index >= 0) sections[index] = { ...sections[index], blocks: [...sections[index].blocks, rhythm.block] };

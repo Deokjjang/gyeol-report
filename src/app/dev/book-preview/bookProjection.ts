@@ -11,6 +11,7 @@ import { MAJOR_MEANINGS } from "../../../lib/interpretation-v4/majorMaterials";
 import { friendlyTransition } from "../../../lib/interpretation-v4/periodPlanner";
 import { godEffects } from "../../../lib/interpretation-v4/compatibilityInteractions";
 import { composeBookNavigation } from "./bookNavigation";
+import { comprehensiveBookContents, COMPREHENSIVE_PLAIN_MEANINGS, COMPREHENSIVE_STAGE_MEANINGS } from "./comprehensiveBook";
 import { describeReportShare } from "../../../lib/sharing/reportShareMetadata";
 import type { NarrativeBlock, MaterialPacket } from "../../../lib/interpretation-v4/narrativeTypes";
 import type { GenerationPersonInput } from "../../../lib/report-generation/reportInputAdapter";
@@ -68,7 +69,8 @@ export function bookFeatureInventory(e: V4RuntimeEvidence, slot: "person" | "per
     for (const stage of row.twelveLifeStage ?? []) if (!entries.some(v => v.key === `stage:${stage}`)) entries.push({ key: `stage:${stage}`, strong: false,
       display: { name: stage, person: name, group: "십이운성", meaning: "일간과 지지의 관계를 성장의 단계에 빗대어 보는 이름.", manifestation: "" } });
   }
-  return entries;
+  return e.composition.product === "saju_mbti_full" ? entries.map(entry => ({ ...entry, display: { ...entry.display,
+    meaning: (entry.display.group === "십이운성" ? COMPREHENSIVE_STAGE_MEANINGS[entry.display.name] : COMPREHENSIVE_PLAIN_MEANINGS[entry.key]) ?? entry.display.meaning } })) : entries;
 }
 
 function personView(p: GenerationPersonInput, role: string, table: BookPerson["table"]): BookPerson {
@@ -202,5 +204,6 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
   }
   pages.push({ kind: "back", title: "이 책 공유하기", finalLine: view.finalLine });
   const share = describeReportShare({ productSlug: e.input.productSlug, draft: view });
-  return { bookId, title, names, people, context, pages: composeBookNavigation(pages), readingDate: e.generatedAt.slice(0, 10), share: { title: `${names} · ${title}`, description: share.description } };
+  const navigation = composeBookNavigation(pages);
+  return { bookId, title, names, people, context, pages: c.product === "saju_mbti_full" ? comprehensiveBookContents(navigation) : navigation, readingDate: e.generatedAt.slice(0, 10), share: { title: `${names} · ${title}`, description: share.description } };
 }
