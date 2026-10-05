@@ -32,7 +32,22 @@ export const BIPOLAR_DIRECTIONS = {
 export type EvidenceKind = "TRAIT" | "DYNAMIC" | "FORTUNE";
 export type EvidenceTier = "CORE" | "SUPPORT" | "AMPLIFIER";
 export type InterpretationContext = "identity" | "work" | "money" | "social" | "love" | "stress" | "learning" | "recovery";
-export type FoundationEvidenceSource = "yin_yang" | "element" | "heavenly_stem" | "earthly_branch" | "ten_god";
+export type FoundationEvidenceSource = "yin_yang" | "element" | "heavenly_stem" | "earthly_branch" | "ten_god" | "relation" | "twelve_stage" | "shinsal" | "gwiin";
+export const DYNAMIC_TAGS = [
+  "BINDING", "COORDINATION", "MUTUAL_PULL", "COMPROMISE", "PAIR_COHESION", "COOPERATION", "MUTUAL_ADJUSTMENT",
+  "STRONG_COHERENCE", "SHARED_DIRECTION", "ENERGY_CONCENTRATION", "PARTIAL_COHERENCE", "POTENTIAL_COMMON_GROUND",
+  "CHANGE_PRESSURE", "DIRECT_CONFLICT", "REPOSITIONING", "MOVEMENT", "INTERNAL_PRESSURE", "REPETITIVE_FRICTION", "SELF_DEMAND",
+  "BREAK_AND_REBUILD", "PLAN_DISRUPTION", "MAINTENANCE_FRICTION", "UNSPOKEN_MISMATCH", "EXPECTATION_GAP", "SUBTLE_HURT",
+  "ATTRACTION_FRICTION", "LINGERING_EMOTION", "FIXATION", "RESENTMENT_LOOP", "EMPTY_SLOT", "REINTERPRETATION", "LOOSENED_ATTACHMENT",
+  "BEGINNING", "EXPERIMENT", "ROLE_FORMATION", "SELF_STANDING", "PEAK_FORCE", "SELECTIVE_USE", "MAINTENANCE", "RELEASE",
+  "STORAGE", "RESET", "LATENT_POTENTIAL", "NURTURE", "COMPETITIVE_PRESSURE", "CONSTRAINT_STRATEGY", "EXTERNAL_LIMIT",
+  "DELAY_REVIEW", "VISIBILITY_RISK", "LOAD_FATIGUE", "LOCAL_MOVEMENT", "VISIBILITY", "LEADERSHIP", "POSITION", "DEPTH_SOLITUDE",
+] as const;
+export type DynamicTag = typeof DYNAMIC_TAGS[number];
+export const FORTUNE_TAGS = ["HELPER_LUCK", "RELATION_RESOURCE", "CONFLICT_SOFTENING", "RECOVERY", "RELATION_SOFTENING", "INSIGHT",
+  "WRITING_EXPRESSION", "LEARNING_SUPPORT", "ACCUMULATION", "VISIBLE_AUTHORITY", "POSITION", "RECOGNITION", "MOVEMENT_OPPORTUNITY",
+  "FIRST_IMPRESSION", "SOCIAL_VISIBILITY", "INTIMATE_CHARM"] as const;
+export type FortuneTag = typeof FORTUNE_TAGS[number];
 export type AxisContribution = { axis: SemanticAxis; value: number };
 export type EvidenceAtom = {
   id: string;
@@ -50,7 +65,29 @@ export type EvidenceAtom = {
   humanDescription?: string;
   positiveMeaning?: string;
   shadowMeaning?: string;
+  dynamicTags?: readonly DynamicTag[];
+  /** Support signals only; not customer fortune claims. */
+  fortuneTags?: Partial<Record<FortuneTag, number>>;
   metadata?: Record<string, unknown>;
+};
+export type SupplementSemanticDefinition = {
+  kind: EvidenceKind;
+  tier: "SUPPORT" | "AMPLIFIER";
+  family: string;
+  axes: SemanticSignature;
+  dynamicTags: readonly DynamicTag[];
+  fortuneTags: Partial<Record<FortuneTag, number>>;
+  contexts: readonly InterpretationContext[];
+  easyMeaning: string;
+  humanDescription: string;
+  positiveMeaning?: string;
+  shadowMeaning?: string;
+  image?: string;
+  riskTags?: readonly ("VOLATILITY" | "OVERDRIVE" | "RUMINATION" | "FIXATION")[];
+  /** Editorial contribution, never a formation/strength threshold. */
+  rawWeight: number;
+  contentPriority: number;
+  stablePriority: number;
 };
 export type AxisContributionSource = {
   evidenceId: string;
