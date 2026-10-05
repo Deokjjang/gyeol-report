@@ -257,7 +257,7 @@ export const YIN_YANG_ELEMENT_RULES = [
 ] as const satisfies readonly PolarityRule[];
 
 const CANDIDATE_PRIORITY = { ELEMENT_PAIR: 20, STRONGEST_WEAKEST: 30, YIN_YANG_ELEMENT: 10 } as const;
-function candidate(rule: RuleCopy, source: FoundationSynthesisCandidate["source"], key: string, evidenceIds: string[]): FoundationSynthesisCandidate {
+function candidate(rule: RuleCopy, source: keyof typeof CANDIDATE_PRIORITY, key: string, evidenceIds: string[]): FoundationSynthesisCandidate {
   return {
     id: `foundation:${source}:${key}`, source, semanticTheme: rule.semanticTheme, evidenceIds,
     primaryAxes: [...rule.primaryAxes], contexts: [...rule.contexts], humanDescription: rule.humanDescription,

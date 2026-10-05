@@ -2,7 +2,7 @@ import type { ElementLabel, SajuCalcResult } from "../saju/types";
 import { buildYinYangEvidence, type YinYangState } from "./foundationYinYang";
 import { ELEMENT_STATE_MULTIPLIERS, FOUNDATION_ELEMENTS, buildElementEvidence, type ElementKey, type FoundationElementInput, type FoundationElementState } from "./foundationElements";
 import { buildFoundationCandidates, foundationExtrema } from "./foundationSynthesis";
-import { FOUNDATION_VERSION, SEMANTIC_AXES, type AxisContributionSource, type EvidenceAtom, type FoundationResult, type FoundationSynthesisCandidate, type SemanticAxis } from "./semanticCore";
+import { FOUNDATION_VERSION, aggregateSemanticEvidence, type AxisContributionSource, type EvidenceAtom, type FoundationResult, type FoundationSynthesisCandidate, type SemanticAxis } from "./semanticCore";
 
 export type FoundationInput = {
   yinYang: { yinCount: number; yangCount: number; metadata?: Record<string, unknown> };
@@ -39,18 +39,7 @@ export function buildFoundationProfile(input: FoundationInput): FoundationResult
     { ...yyEvidence, metadata: { ...input.yinYang.metadata, ...yyEvidence.metadata } },
     ...FOUNDATION_ELEMENTS.map(e => buildElementEvidence(e, input.elements[e])),
   ];
-  const axes = Object.fromEntries(SEMANTIC_AXES.map(axis => [axis, 0])) as Record<SemanticAxis, number>;
-  const contributions: FoundationSemanticProfile["contributions"] = {};
-  // Explicit axis and evidence order; candidate axes are never counted twice.
-  for (const axis of SEMANTIC_AXES) {
-    for (const atom of evidence) {
-      const rawValue = atom.axes[axis];
-      if (rawValue === undefined) continue;
-      const weightedValue = atom.weight === 0 ? 0 : rawValue * atom.weight;
-      axes[axis] += weightedValue;
-      (contributions[axis] ??= []).push({ evidenceId: atom.id, sourceType: atom.sourceType, sourceKey: atom.sourceKey, rawValue, weightedValue });
-    }
-  }
+  const { axes, contributions } = aggregateSemanticEvidence(evidence);
   return { ok: true, value: {
     registryVersion: FOUNDATION_VERSION, axes, contributions, evidence,
     synthesisCandidates: buildFoundationCandidates(input.elements, { state: yinYang.value.state, evidenceId: yyEvidence.id }),

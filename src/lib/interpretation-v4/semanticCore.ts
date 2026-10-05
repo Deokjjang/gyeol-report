@@ -1,4 +1,4 @@
-/** Phase13D-1A only. Not imported by the current writer or Book projection. */
+/** Shared foundation only. Not imported by the current writer or Book projection. */
 export const FOUNDATION_VERSION = "semantic-foundation-13d-1a-v1" as const;
 
 export const BIPOLAR_AXES = [
@@ -32,7 +32,7 @@ export const BIPOLAR_DIRECTIONS = {
 export type EvidenceKind = "TRAIT" | "DYNAMIC" | "FORTUNE";
 export type EvidenceTier = "CORE" | "SUPPORT" | "AMPLIFIER";
 export type InterpretationContext = "identity" | "work" | "money" | "social" | "love" | "stress" | "learning" | "recovery";
-export type FoundationEvidenceSource = "yin_yang" | "element";
+export type FoundationEvidenceSource = "yin_yang" | "element" | "heavenly_stem" | "earthly_branch" | "ten_god";
 export type AxisContribution = { axis: SemanticAxis; value: number };
 export type EvidenceAtom = {
   id: string;
@@ -61,7 +61,8 @@ export type AxisContributionSource = {
 };
 export type FoundationSynthesisCandidate = {
   id: string;
-  source: "ELEMENT_PAIR" | "STRONGEST_WEAKEST" | "YIN_YANG_ELEMENT";
+  source: "ELEMENT_PAIR" | "STRONGEST_WEAKEST" | "YIN_YANG_ELEMENT" | "STEM" | "BRANCH" |
+    "TEN_GOD_FAMILY_PAIR" | "TEN_GOD_CHAIN" | "SPECIFIC_TEN_GOD" | "DAY_MASTER_TEN_GOD";
   semanticTheme: string;
   evidenceIds: string[];
   primaryAxes: SemanticAxis[];
@@ -79,3 +80,19 @@ export type FoundationResult<T> = { ok: true; value: T } | {
   ok: false;
   error: "INVALID_YIN_YANG_COUNTS" | "INCOMPLETE_CHART" | "INVALID_ELEMENT_INPUT" | "CONFLICTING_ELEMENT_LABELS";
 };
+
+/** Shared contribution ledger. Composite candidates never add the same axes again. */
+export function aggregateSemanticEvidence(evidence: readonly EvidenceAtom[]) {
+  const axes = Object.fromEntries(SEMANTIC_AXES.map(axis => [axis, 0])) as Record<SemanticAxis, number>;
+  const contributions: Partial<Record<SemanticAxis, AxisContributionSource[]>> = {};
+  for (const axis of SEMANTIC_AXES) {
+    for (const atom of evidence) {
+      const rawValue = atom.axes[axis];
+      if (rawValue === undefined) continue;
+      const weightedValue = atom.weight === 0 ? 0 : rawValue * atom.weight;
+      axes[axis] += weightedValue;
+      (contributions[axis] ??= []).push({ evidenceId: atom.id, sourceType: atom.sourceType, sourceKey: atom.sourceKey, rawValue, weightedValue });
+    }
+  }
+  return { axes, contributions };
+}
