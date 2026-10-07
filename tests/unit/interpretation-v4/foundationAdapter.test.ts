@@ -91,11 +91,12 @@ describe("Phase13D-1A stays off all six product paths", () => {
   it("only foundation modules reference the foundation; no writer/UI/calculation import", () => {
     const allowed = new Set(["semanticCore.ts", "foundationYinYang.ts", "foundationElements.ts", "foundationSynthesis.ts", "foundationProfile.ts",
       "foundationPillars.ts", "foundationTenGods.ts", "foundationTenGodSynthesis.ts", "foundationNatalProfile.ts",
-      "foundationRelations.ts", "foundationTwelveStages.ts", "foundationShinsal.ts", "foundationShinsalFamilies.ts", "foundationSupplement.ts"]);
+      "foundationRelations.ts", "foundationTwelveStages.ts", "foundationShinsal.ts", "foundationShinsalFamilies.ts", "foundationSupplement.ts",
+      "foundationIntegratedProfile.ts", "foundationRanking.ts", "foundationTension.ts", "foundationDiagnostics.ts"]);
     function files(dir: string): string[] {
       return readdirSync(dir, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? files(join(dir, entry.name)) : /\.tsx?$/.test(entry.name) ? [join(dir, entry.name)] : []);
     }
-    const consumers = files("src").filter(file => /["'][^"']*\/(?:semanticCore|foundationYinYang|foundationElements|foundationSynthesis|foundationProfile|foundationPillars|foundationTenGods|foundationTenGodSynthesis|foundationNatalProfile|foundationRelations|foundationTwelveStages|foundationShinsal|foundationShinsalFamilies|foundationSupplement)["']/.test(readFileSync(file, "utf8")));
+    const consumers = files("src").filter(file => /["'][^"']*\/(?:semanticCore|foundationYinYang|foundationElements|foundationSynthesis|foundationProfile|foundationPillars|foundationTenGods|foundationTenGodSynthesis|foundationNatalProfile|foundationRelations|foundationTwelveStages|foundationShinsal|foundationShinsalFamilies|foundationSupplement|foundationIntegratedProfile|foundationRanking|foundationTension|foundationDiagnostics)["']/.test(readFileSync(file, "utf8")));
     expect(consumers.length).toBeGreaterThan(0);
     for (const file of consumers) expect(allowed.has(file.split("/").at(-1)!)).toBe(true);
     for (const name of allowed) {
