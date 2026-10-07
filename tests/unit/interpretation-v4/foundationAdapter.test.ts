@@ -93,12 +93,21 @@ describe("Phase13D-1A stays off all six product paths", () => {
       "foundationPillars.ts", "foundationTenGods.ts", "foundationTenGodSynthesis.ts", "foundationNatalProfile.ts",
       "foundationRelations.ts", "foundationTwelveStages.ts", "foundationShinsal.ts", "foundationShinsalFamilies.ts", "foundationSupplement.ts",
       "foundationIntegratedProfile.ts", "foundationRanking.ts", "foundationTension.ts", "foundationDiagnostics.ts"]);
+    // 13D-2A shares only the 36-axis vocabulary. It may not consume actual
+    // Myeongli foundation evidence/profiles, and foundation remains MBTI-free.
+    const mbtiAxisOnly = new Set(["mbtiSemanticCore.ts", "mbtiDimensionPriors.ts", "mbtiSemanticAnnotations.ts", "mbtiSemanticProfile.ts"]);
     function files(dir: string): string[] {
       return readdirSync(dir, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? files(join(dir, entry.name)) : /\.tsx?$/.test(entry.name) ? [join(dir, entry.name)] : []);
     }
     const consumers = files("src").filter(file => /["'][^"']*\/(?:semanticCore|foundationYinYang|foundationElements|foundationSynthesis|foundationProfile|foundationPillars|foundationTenGods|foundationTenGodSynthesis|foundationNatalProfile|foundationRelations|foundationTwelveStages|foundationShinsal|foundationShinsalFamilies|foundationSupplement|foundationIntegratedProfile|foundationRanking|foundationTension|foundationDiagnostics)["']/.test(readFileSync(file, "utf8")));
     expect(consumers.length).toBeGreaterThan(0);
-    for (const file of consumers) expect(allowed.has(file.split("/").at(-1)!)).toBe(true);
+    for (const file of consumers) {
+      const name = file.split("/").at(-1)!;
+      if (mbtiAxisOnly.has(name)) {
+        expect(file).toBe(`src/lib/interpretation-v4/${name}`);
+        expect(readFileSync(file, "utf8")).not.toMatch(/from ["'][^"']*\/foundation[^"']*["']/);
+      } else expect(allowed.has(name), file).toBe(true);
+    }
     for (const name of allowed) {
       const text = readFileSync(`src/lib/interpretation-v4/${name}`, "utf8");
       expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|analyzeFullElements\(/);
