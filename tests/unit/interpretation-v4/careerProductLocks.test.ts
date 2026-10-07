@@ -6,6 +6,8 @@ import { projectBook } from "../../../src/app/dev/book-preview/bookProjection";
 import { RUNTIME_FIXTURES, SHADOW_CLOCK } from "./runtimeFixtures";
 import { composeLoveNarrative } from "../../../src/lib/interpretation-v4/loveComposer";
 import { composeCompatibilityNarrative } from "../../../src/lib/interpretation-v4/compatibilityComposer";
+import { composeMajorFortuneNarrative } from "../../../src/lib/interpretation-v4/majorComposer";
+import { composeAnnualFortuneNarrative } from "../../../src/lib/interpretation-v4/annualComposer";
 import { projectV4Composition } from "../../../src/lib/interpretation-v4/runtimeProjection";
 import { createProductPreviewSnapshot, type ProductPreviewSnapshotDraft } from "../../../src/lib/report-generation/productPreviewSnapshot";
 import { storedBook } from "../../../src/lib/book/storedReport";
@@ -22,11 +24,13 @@ const locks: Record<string, readonly string[]> = {
 it.each(RUNTIME_FIXTURES.filter(f => f.id !== "career"))("$id customer/evidence/Book stays frozen", async f => {
   const result = await generateV4ShadowReport(f.payload, SHADOW_CLOCK);
   if (!result.ok) return expect.unreachable(JSON.stringify(result));
-  // 7B activates the two relationship products. Keep testing their pre-7B
-  // frozen snapshot projection, rather than silently replacing legacy hashes.
-  if (f.id === "love" || f.id === "compatibility") {
+  // Keep pre-integration snapshot hashes, including time products switched in
+  // 7C. Stored legacy reports must never be silently regenerated or upgraded.
+  if (f.id !== "comprehensive") {
     const e = result.evidencePacket as V4RuntimeEvidence;
-    const old = f.id === "compatibility" ? composeCompatibilityNarrative(f.payload) : e.input.kind === "loveMarriageChild"
+    const old = f.id === "major" ? await composeMajorFortuneNarrative(f.payload, SHADOW_CLOCK.evaluatedAt)
+      : f.id === "annual" ? await composeAnnualFortuneNarrative(f.payload, { currentDate: SHADOW_CLOCK.evaluatedAt })
+      : f.id === "compatibility" ? composeCompatibilityNarrative(f.payload) : e.input.kind === "loveMarriageChild"
       ? composeLoveNarrative({ calculation: e.calculations.person, name: e.input.person.name, mbti: e.input.person.mbtiType, context: e.input.userContext }) : null;
     if (!old?.ok) return expect.unreachable();
     const composition = { product: e.productType, result: old } as V4RuntimeEvidence["composition"];

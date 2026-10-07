@@ -19,6 +19,8 @@ import type { LoveProduct } from "./loveProductAdapter";
 import type { CompatibilityProduct } from "./compatibilityProductAdapter";
 import type { composeMajorFortuneNarrative } from "./majorComposer";
 import type { composeAnnualFortuneNarrative } from "./annualComposer";
+import type { MajorProduct } from "./majorProductAdapter";
+import type { AnnualProduct } from "./annualProductAdapter";
 import { buildCompatibilityIndex } from "./compatibilityIndex";
 import type { V4CustomerReport, V4CustomerSection, V4CustomerTables, V4ShadowView } from "./runtimeTypes";
 
@@ -28,8 +30,8 @@ export type V4Composition =
   | { product: "career_money_study"; result: Success<ReturnType<typeof composeCareerNarrative>> | CareerProduct }
   | { product: "love_marriage_child"; result: Success<ReturnType<typeof composeLoveNarrative>> | LoveProduct }
   | { product: "saju_mbti_compatibility"; result: Success<ReturnType<typeof composeCompatibilityNarrative>> | CompatibilityProduct }
-  | { product: "major_fortune"; result: Success<ReturnType<typeof composeMajorFortuneNarrative>> }
-  | { product: "annual_fortune"; result: Success<ReturnType<typeof composeAnnualFortuneNarrative>> };
+  | { product: "major_fortune"; result: Success<ReturnType<typeof composeMajorFortuneNarrative>> | MajorProduct }
+  | { product: "annual_fortune"; result: Success<ReturnType<typeof composeAnnualFortuneNarrative>> | AnnualProduct };
 export type V4RuntimeEvidence = {
   readonly version: "v4-runtime-evidence-1";
   readonly mode: "shadow";

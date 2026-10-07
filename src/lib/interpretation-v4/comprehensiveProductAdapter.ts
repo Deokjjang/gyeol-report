@@ -68,7 +68,9 @@ export function buildV4ComprehensiveProduct(input: NarrativeInput) {
     else sections.push({ id: ids[id], title: section.title, domain: domains[id], blocks });
   }
   const last = draft.sections.C10.blocks.at(-1);
-  const finalLine = last?.sentences.find(s => s.sourcePhraseId.endsWith(":core-recall"))?.text;
+  // Sparse/unknown-MBTI manuscripts may close with an approved operating rule
+  // rather than core recall. Keep that frozen sentence; never invent a closer.
+  const finalLine = last?.sentences.find(s => s.sourcePhraseId.endsWith(":core-recall"))?.text ?? last?.sentences.at(-1)?.text;
   if (!opening.length || !finalLine || !sections.some(s => s.id === "direction")) return fail("COMPREHENSIVE_PRIMARY_CONTENT_MISSING");
   const narrative = { version: "v4-comprehensive-narrative-1", headline: draft.sections.C1.title,
     opening, sections, finalLine, finalProof: proof(last!.sentences.flatMap(s => s.evidenceIds)) } satisfies ComprehensiveNarrative;

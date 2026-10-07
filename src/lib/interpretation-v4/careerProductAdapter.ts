@@ -110,6 +110,25 @@ export function buildV4CareerProduct(input: NarrativeInput) {
     const rendered = renderer.render(source.candidate, "K10", source.context, { text: rule.text, title: rule.title, ref: `strength-use:${rule.axis}` });
     if (rendered) { operating.push(rendered); ruleHeadings.push(rule.title); }
   }
+  // Sparse natal-only profiles can select strengths whose axes have no use rule.
+  // Introduce one other already-approved work strength before its existing rule;
+  // do not invent a problem, relax Core validation, or infer an unknown MBTI.
+  if (!operating.length) {
+    for (const rule of STRENGTH_USE_RULES) {
+      const source = selection.candidates.find(c => !c.factBomb && !c.fortune && c.sourceType !== "GUIDANCE"
+        && c.contexts.includes("work") && c.primaryAxes.includes(rule.axis)
+        && (selectedProofAxes(c, profiles)[rule.axis] ?? 0) > 0
+        && !renderer.rendered.some(r => r.source === c.id));
+      if (!source) continue;
+      const strength = renderer.render(source, "K2", "work");
+      if (!strength) continue;
+      const strengths = sections.find(s => s.id === "strengths");
+      if (strengths) sections[sections.indexOf(strengths)] = { ...strengths, blocks: [...strengths.blocks, strength] };
+      else add("strengths", voice.strengthTitle, "strengths", [strength]);
+      const use = renderer.render(source, "K10", "work", { text: rule.text, title: rule.title, ref: `strength-use:${rule.axis}` });
+      if (use) { operating.push(use); ruleHeadings.push(rule.title); break; }
+    }
+  }
   if (!operating.length) return fail("CAREER_OPERATING_RULES_MISSING");
   add("direction", "다음에는 어떤 일을 맡길 사람으로 남을까", "strengths", operating);
   const order = selection.learning ? ["strengths", "current", "study", "fit", "roles", "fortune", "money", "shadow", "organization", "balance", "direction"]

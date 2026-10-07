@@ -19,8 +19,8 @@ import { buildV4ComprehensiveProduct } from "./comprehensiveProductAdapter";
 import { buildV4CareerProduct } from "./careerProductAdapter";
 import { buildV4LoveProduct } from "./loveProductAdapter";
 import { buildV4CompatibilityProduct } from "./compatibilityProductAdapter";
-import { composeMajorFortuneNarrative } from "./majorComposer";
-import { composeAnnualFortuneNarrative } from "./annualComposer";
+import { buildV4MajorProduct } from "./majorProductAdapter";
+import { buildV4AnnualProduct } from "./annualProductAdapter";
 import { projectV4Composition, validateV4Publication, v4Digest, type V4Composition, type V4RuntimeEvidence } from "./runtimeProjection";
 import type { NarrativeInput } from "./narrativeTypes";
 
@@ -53,11 +53,11 @@ export async function generateV4ShadowReport(payload: unknown, clock: V4ShadowCl
       calculations.personA = pairCalculations.personA;
       calculations.personB = pairCalculations.personB;
     } else if (input.kind === "majorFortune") {
-      const result = await composeMajorFortuneNarrative(payload, clock.evaluatedAt);
+      const result = await buildV4MajorProduct(payload, clock.evaluatedAt);
       if (!result.ok) return failure("V4_MAJOR_GENERATION_FAILED");
       composition = { product: "major_fortune", result }; calculations.person = result.evidence.calculation;
     } else if (input.kind === "annualFortune") {
-      const result = await composeAnnualFortuneNarrative(payload, { currentDate: clock.evaluatedAt, ...(clock.policyDate ? { policyDate: clock.policyDate } : {}) });
+      const result = await buildV4AnnualProduct(payload, { currentDate: clock.evaluatedAt, ...(clock.policyDate ? { policyDate: clock.policyDate } : {}) });
       if (!result.ok) return failure("V4_ANNUAL_GENERATION_FAILED");
       composition = { product: "annual_fortune", result }; calculations.person = result.evidence.calculation;
     } else {
