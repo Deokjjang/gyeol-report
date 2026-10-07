@@ -1,0 +1,33 @@
+import { defineClaim as d, axis as a, axisGate as ag, any, family, fortune } from "./claimCore";
+
+const position = () => any(fortune("POSITION"), fortune("RECOGNITION"), fortune("VISIBLE_AUTHORITY"));
+export const STATUS_CLAIMS = [
+  d({ id: "S01_LEADERSHIP", category: "LEADERSHIP", semanticTheme: "LEADERSHIP", requiredAxes: [a("LEADERSHIP")], exclusivityGroup: "LEADERSHIP_CORE",
+    claimsByLevel: { 2: "필요한 순간에는 앞에서 방향을 잡는 편입니다.", 3: "사람들이 망설일 때 앞에서 방향을 정하고 이끄는 성향이 강합니다." } }),
+  d({ id: "S02_RESPONSIBLE_LEADER", category: "LEADERSHIP", semanticTheme: "RESPONSIBLE_LEADERSHIP", requiredAxes: [a("LEADERSHIP"), a("DUTY")],
+    preferredFusionIds: ["C027"], exclusivityGroup: "LEADERSHIP_CORE", priority: 60,
+    claimsByLevel: { 2: "앞에 서는 것보다 결과에 대한 책임까지 지려는 편입니다.", 3: "결정만 하는 사람이 아니라 결과에 대한 책임까지 지려는 리더형에 가깝습니다." } }),
+  d({ id: "S03_HIGH_POSITION", category: "HIGH_POSITION", semanticTheme: "HIGH_POSITION", contexts: ["work", "identity"], requiredAxes: [a("STATUS_DRIVE")],
+    requiredConditions: [family("OFFICER"), any(ag("LEADERSHIP"), ag("DUTY")), position()], minimumIndependentMyeongliFamilies: 3,
+    minLevel: 3, maxLevel: 4, fortuneClaim: true, exclusivityGroup: "HONOR_POSITION", priority: 85,
+    claimsByLevel: { 3: "높은 책임을 맡는 자리에서 장점이 살아날 근거가 있습니다.", 4: "높은 직책이나 리더 자리를 노려볼 만합니다." } }),
+  d({ id: "S04_HONOR_FORTUNE", category: "HONOR", semanticTheme: "HONOR_AND_RECOGNITION", contexts: ["work", "identity"], requiredAxes: [a("STATUS_DRIVE")],
+    requiredConditions: [family("OFFICER"), position()], minimumIndependentMyeongliFamilies: 2,
+    minLevel: 3, maxLevel: 4, fortuneClaim: true, exclusivityGroup: "HONOR_POSITION", priority: 80,
+    claimsByLevel: { 3: "인정과 명예를 중요하게 보는 구조가 강합니다.", 4: "명예와 인정 쪽에는 좋은 기운이 있습니다." } }),
+  d({ id: "S05_PROMOTION_RESPONSIBILITY", category: "HIGH_POSITION", semanticTheme: "PROMOTION_RESPONSIBILITY", contexts: ["work"],
+    requiredAxes: [a("DUTY"), a("STATUS_DRIVE"), a("PRACTICALITY", "SUPPORT")], requiredConditions: [family("OFFICER", "SUPPORT")], exclusivityGroup: "HONOR_POSITION",
+    claimsByLevel: { 2: "잘한 결과가 쌓이면 더 큰 책임을 맡고 싶어 하는 편입니다.", 3: "성과가 쌓일수록 승진이나 더 큰 책임을 맡는 방향과 잘 맞습니다." } }),
+  d({ id: "S06_PRESENCE", category: "STRENGTH", semanticTheme: "VISIBLE_PRESENCE", contexts: ["identity", "work", "social"], requiredAxes: [a("CHARISMA")],
+    requiredConditions: [any(ag("EXPRESSION", "SUPPORT"), ag("LEADERSHIP", "SUPPORT"), fortune("SOCIAL_VISIBILITY"))], exclusivityGroup: "CHARM_VISIBILITY",
+    claimsByLevel: { 2: "사람 앞에 섰을 때 존재감이 잘 드러나는 편입니다.", 3: "사람 앞에서 말하거나 이끌 때 존재감이 크게 살아나는 편입니다." } }),
+  d({ id: "S07_STATUS_DESIRE", category: "IDENTITY", semanticTheme: "STATUS_DESIRE", requiredAxes: [a("STATUS_DRIVE", "STRONG")], exclusivityGroup: "STATUS_DESIRE",
+    claimsByLevel: { 2: "성과만큼 제대로 인정받는 것도 중요하게 생각합니다.", 3: "돈만큼 명예와 인정도 중요하게 생각하는 사람입니다." } }),
+  d({ id: "S08_MONEY_AND_HONOR", category: "SUCCESS", semanticTheme: "WEALTH_AND_HONOR", contexts: ["money", "work"],
+    requiredAxes: [a("RESOURCE_SENSE"), a("STATUS_DRIVE")], requiredConditions: [family("WEALTH"), family("OFFICER"), any(ag("GOAL_DRIVE"), ag("LEADERSHIP")), position()],
+    minimumIndependentMyeongliFamilies: 3, minLevel: 3, maxLevel: 4, fortuneClaim: true, exclusivityGroup: "HONOR_POSITION", priority: 100,
+    claimsByLevel: { 3: "돈과 인정 두 가지를 함께 중요하게 보는 좋은 구조가 있습니다.", 4: "돈과 명예를 같이 노려볼 만한 패입니다." } }),
+  d({ id: "S09_JANGSEONG_BANAN_COMPOSITE", category: "HONOR", semanticTheme: "LEADERSHIP_POSITION_IMAGE", contexts: ["work", "identity"], requiredAxes: [],
+    requiredConditions: [{ kind: "source", key: "JANGSEONG" }, { kind: "source", key: "BANAN" }, any(family("OFFICER"), ag("LEADERSHIP"))], exclusivityGroup: "HONOR_POSITION",
+    claimsByLevel: { 2: "앞에 서는 것뿐 아니라 책임 있는 자리에서 인정받고 싶은 마음도 강해질 수 있습니다.", 3: "장성과 반안이 함께 받쳐주면 앞에서 이끌고 높은 책임을 맡는 쪽이 더 선명해집니다." } }),
+];

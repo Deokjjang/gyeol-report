@@ -287,11 +287,12 @@ describe("source boundaries, circularity, determinism and product lock", () => {
   });
   it("foundation/MBTI inputs remain independent; fusion modules are not imported by any customer path", () => {
     const directory = "src/lib/interpretation-v4", files = ["fusionCore", "fusionContext", "fusionMeanings", "fusionComplementRegistry", "fusionProfileAdapter", "fusionTension", "fusionRanking", "fusionDiagnostics", "fusionSemanticProfile"];
+    const claimBoundary = ["claimCore", "claimEvidence", "claimEvaluator", "claimDiagnostics", "claimProfile"];
     function walk(dir: string): string[] { return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []); }
     for (const file of walk("src")) {
       const text = readFileSync(file, "utf8");
       if (files.some(f => file === `${directory}/${f}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|process\.env|fetch\(|runtimeShadow|bookProjection|Composer|report-knowledge\/mbti/);
-      else for (const name of files) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
+      else if (!claimBoundary.some(f => file === `${directory}/${f}.ts`)) for (const name of files) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
     }
     expect(FUSION_RANK_POLICY.specificity).toEqual({ REINFORCE: 1, TENSION: 1.15, COMPLEMENT: 1.1 });
   });

@@ -97,6 +97,7 @@ describe("Phase13D-1A stays off all six product paths", () => {
     // Myeongli foundation evidence/profiles, and foundation remains MBTI-free.
     const mbtiAxisOnly = new Set(["mbtiSemanticCore.ts", "mbtiDimensionPriors.ts", "mbtiSemanticAnnotations.ts", "mbtiSemanticProfile.ts"]);
     const fusionBoundary = new Set(["fusionCore.ts", "fusionContext.ts", "fusionMeanings.ts", "fusionComplementRegistry.ts", "fusionProfileAdapter.ts", "fusionTension.ts", "fusionRanking.ts", "fusionDiagnostics.ts", "fusionSemanticProfile.ts"]);
+    const claimBoundary = new Set(["claimCore.ts", "claimEvidence.ts", "claimEvaluator.ts", "claimDiagnostics.ts", "claimProfile.ts"]);
     function files(dir: string): string[] {
       return readdirSync(dir, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? files(join(dir, entry.name)) : /\.tsx?$/.test(entry.name) ? [join(dir, entry.name)] : []);
     }
@@ -107,7 +108,7 @@ describe("Phase13D-1A stays off all six product paths", () => {
       if (mbtiAxisOnly.has(name)) {
         expect(file).toBe(`src/lib/interpretation-v4/${name}`);
         expect(readFileSync(file, "utf8")).not.toMatch(/from ["'][^"']*\/foundation[^"']*["']/);
-      } else if (fusionBoundary.has(name)) expect(file).toBe(`src/lib/interpretation-v4/${name}`);
+      } else if (fusionBoundary.has(name) || claimBoundary.has(name)) expect(file).toBe(`src/lib/interpretation-v4/${name}`);
       else expect(allowed.has(name), file).toBe(true);
     }
     for (const name of allowed) {
