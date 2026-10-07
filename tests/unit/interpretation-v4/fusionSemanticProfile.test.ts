@@ -287,7 +287,7 @@ describe("source boundaries, circularity, determinism and product lock", () => {
   });
   it("foundation/MBTI inputs remain independent; fusion modules are not imported by any customer path", () => {
     const directory = "src/lib/interpretation-v4", files = ["fusionCore", "fusionContext", "fusionMeanings", "fusionComplementRegistry", "fusionProfileAdapter", "fusionTension", "fusionRanking", "fusionDiagnostics", "fusionSemanticProfile"];
-    const claimBoundary = ["claimCore", "claimEvidence", "claimEvaluator", "claimDiagnostics", "claimProfile", "personalResonanceCore", "personalResonanceRules", "personalResonanceEvidence", "personalResonanceRanking", "personalResonanceEvaluator", "traitArc", "coreGyeol", "personalResonanceDiagnostics", "personalResonanceProfile", "guidanceCore", "guidanceEvidence"];
+    const claimBoundary = ["claimCore", "claimEvidence", "claimEvaluator", "claimDiagnostics", "claimProfile", "personalResonanceCore", "personalResonanceRules", "personalResonanceEvidence", "personalResonanceRanking", "personalResonanceEvaluator", "traitArc", "coreGyeol", "personalResonanceDiagnostics", "personalResonanceProfile", "guidanceCore", "guidanceEvidence", "comprehensivePlanCore"];
     function walk(dir: string): string[] { return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []); }
     for (const file of walk("src")) {
       const text = readFileSync(file, "utf8");
