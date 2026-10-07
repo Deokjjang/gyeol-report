@@ -290,7 +290,7 @@ describe("source boundaries, circularity, determinism and product lock", () => {
     const claimBoundary = ["claimCore", "claimEvidence", "claimEvaluator", "claimDiagnostics", "claimProfile", "personalResonanceCore", "personalResonanceRules", "personalResonanceEvidence", "personalResonanceRanking", "personalResonanceEvaluator", "traitArc", "coreGyeol", "personalResonanceDiagnostics", "personalResonanceProfile", "guidanceCore", "guidanceEvidence", "comprehensivePlanCore"];
     function walk(dir: string): string[] { return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []); }
     for (const file of walk("src")) {
-      if (["comprehensiveProductAdapter", "careerProductAdapter"].some(n => file === `${directory}/${n}.ts`)) continue;
+      if (["comprehensiveProductAdapter", "careerProductAdapter", "relationshipProductView", "compatibilityProductView"].some(n => file === `${directory}/${n}.ts`)) continue;
       const text = readFileSync(file, "utf8");
       if (files.some(f => file === `${directory}/${f}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|process\.env|fetch\(|runtimeShadow|bookProjection|Composer|report-knowledge\/mbti/);
       else if (["narrativeCore", "narrativeConnectors", "narrativeSceneCore", "narrativeMbtiReason"].some(f => file === `${directory}/${f}.ts`)) {

@@ -215,11 +215,12 @@ export async function generateCompatibilityProductDraft(
 
 export function buildCompatibilityEvidenceFromGenerationInput(
   input: CompatibilityGenerationInput,
+  calculated?: { personA: SajuCalcResult; personB: SajuCalcResult },
 ): CompatibilityEvidencePacket {
   const personAInput = toCompatibilityPersonInput("personA", input.personA);
   const personBInput = toCompatibilityPersonInput("personB", input.personB);
-  const personASaju = calculateCompatibilitySaju(input.personA);
-  const personBSaju = calculateCompatibilitySaju(input.personB);
+  const personASaju = calculated?.personA ?? calculateCompatibilitySaju(input.personA);
+  const personBSaju = calculated?.personB ?? calculateCompatibilitySaju(input.personB);
   const compatibilityInput: CompatibilityInput = {
     productType: "saju_mbti_compatibility",
     productVersion: "1.0",

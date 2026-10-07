@@ -4,6 +4,11 @@ import { generateV4ShadowReport } from "../../../src/lib/interpretation-v4/runti
 import { v4Digest, type V4RuntimeEvidence } from "../../../src/lib/interpretation-v4/runtimeProjection";
 import { projectBook } from "../../../src/app/dev/book-preview/bookProjection";
 import { RUNTIME_FIXTURES, SHADOW_CLOCK } from "./runtimeFixtures";
+import { composeLoveNarrative } from "../../../src/lib/interpretation-v4/loveComposer";
+import { composeCompatibilityNarrative } from "../../../src/lib/interpretation-v4/compatibilityComposer";
+import { projectV4Composition } from "../../../src/lib/interpretation-v4/runtimeProjection";
+import { createProductPreviewSnapshot, type ProductPreviewSnapshotDraft } from "../../../src/lib/report-generation/productPreviewSnapshot";
+import { storedBook } from "../../../src/lib/book/storedReport";
 
 // Captured at 871c10f before switching the Career entry. Full frozen evidence,
 // public prose and Book projection, including new 13D-6B Comprehensive.
@@ -17,6 +22,26 @@ const locks: Record<string, readonly string[]> = {
 it.each(RUNTIME_FIXTURES.filter(f => f.id !== "career"))("$id customer/evidence/Book stays frozen", async f => {
   const result = await generateV4ShadowReport(f.payload, SHADOW_CLOCK);
   if (!result.ok) return expect.unreachable(JSON.stringify(result));
+  // 7B activates the two relationship products. Keep testing their pre-7B
+  // frozen snapshot projection, rather than silently replacing legacy hashes.
+  if (f.id === "love" || f.id === "compatibility") {
+    const e = result.evidencePacket as V4RuntimeEvidence;
+    const old = f.id === "compatibility" ? composeCompatibilityNarrative(f.payload) : e.input.kind === "loveMarriageChild"
+      ? composeLoveNarrative({ calculation: e.calculations.person, name: e.input.person.name, mbti: e.input.person.mbtiType, context: e.input.userContext }) : null;
+    if (!old?.ok) return expect.unreachable();
+    const composition = { product: e.productType, result: old } as V4RuntimeEvidence["composition"];
+    const { contentDigest: _, ...body } = { ...e, composition }; void _;
+    const sealed = { ...body, contentDigest: v4Digest(body) };
+    expect([v4Digest(projectV4Composition(composition)), v4Digest(sealed), v4Digest(projectBook(sealed))]).toEqual(locks[f.id]);
+    const snapshot = createProductPreviewSnapshot({ reportId: `legacy-${f.id}`, createdAtIso: sealed.generatedAt,
+      productKey: sealed.input.productKey, productSlug: sealed.input.productSlug,
+      draft: projectV4Composition(composition) as unknown as ProductPreviewSnapshotDraft, evidencePacket: sealed });
+    if (!snapshot.ok) return expect.unreachable(JSON.stringify(snapshot));
+    const saved = JSON.parse(JSON.stringify(snapshot.value));
+    expect(storedBook(saved)?.data).toEqual(projectBook(sealed));
+    expect(storedBook(saved, "https://gyeolreport.com/r/abcdefghijklmnopqrstuvwx")?.data).toEqual(projectBook(sealed));
+    return;
+  }
   expect([v4Digest(result.draft), v4Digest(result.evidencePacket), v4Digest(projectBook(result.evidencePacket as V4RuntimeEvidence))]).toEqual(locks[f.id]);
   expect(result.externalCalls).toEqual([]);
 }, 120000);

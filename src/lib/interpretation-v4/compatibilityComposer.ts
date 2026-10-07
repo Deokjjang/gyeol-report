@@ -1,4 +1,4 @@
-import { compatibilityNarrativeEvidence } from "./compatibilityEvidence";
+import { compatibilityNarrativeEvidence, type PairEvidence } from "./compatibilityEvidence";
 import { compatibilityCharacter } from "./compatibilityCharacters";
 import { compatibilityCategoryCopy } from "./compatibilityCategoryCopy";
 import { compatibilityDirectionBlock, compatibilityPairBasis, compatibilityPairScene, pairProof } from "./compatibilityInteractions";
@@ -12,8 +12,8 @@ import type { CompatibilityNarrative } from "./compatibilityNarrativeTypes";
 import type { NarrativeBlock, NarrativeSection } from "./narrativeTypes";
 
 /** Offline text/structured packet only. No writer API, report route, storage or UI. */
-export function composeCompatibilityNarrative(payload: unknown) {
-  const evidence = compatibilityNarrativeEvidence(payload);
+export function composeCompatibilityNarrative(payload: unknown, calculatedEvidence?: PairEvidence) {
+  const evidence = calculatedEvidence ?? compatibilityNarrativeEvidence(payload);
   if (!evidence.ok) return evidence;
   const a = compatibilityCharacter(evidence.persons.personA), b = compatibilityCharacter(evidence.persons.personB);
   if (!a || !b) return { ok: false as const, errors: ["UNVERIFIED_PAIR_NATAL_PROFILE"] };

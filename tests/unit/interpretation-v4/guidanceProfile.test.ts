@@ -116,7 +116,7 @@ describe("actual DOB/source coverage and six-product isolation", () => {
   it("3C remains entirely off customer runtime, all previous layers and side effects", () => {
     function walk(dir: string): string[] { return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []); }
     for (const file of walk("src")) {
-      if (["comprehensiveProductAdapter", "careerProductAdapter"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) continue;
+      if (["comprehensiveProductAdapter", "careerProductAdapter", "relationshipProductView"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) continue;
       const text = readFileSync(file, "utf8");
       if (modules.some(n => file === `src/lib/interpretation-v4/${n}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|Composer|bookProjection|runtimeShadow|supabase|openai/i);
       else if (!["comprehensivePlanCore", "comprehensiveDiagnostics", "narrativeSceneCore", "narrativeTitleShort", "operatingRuleRegistry", "operatingRuleBuilder"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) for (const name of modules) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));

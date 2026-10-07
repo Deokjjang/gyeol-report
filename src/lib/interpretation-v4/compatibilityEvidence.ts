@@ -6,17 +6,18 @@ import { createBranchRef, detectCrossBranchRelations } from "../report-knowledge
 import { buildCompatibilityDirectionEvidence } from "../report-knowledge/compatibilityDirectionEvidence";
 import { buildMyeongliMaterialPacket } from "./materialPacket";
 import { projectYinYang } from "./contentEvidence";
+import type { SajuCalcResult } from "../saju/types";
 
 /** Projection of existing canonical adapters, NOT a second compatibility engine.
  * The legacy packet stays local: no scores, old prose or role-less assignment is
  * copied into the V4 contract. Unknown-hour evidence remains canonical/partial. */
-export function compatibilityNarrativeEvidence(payload: unknown) {
+export function compatibilityNarrativeEvidence(payload: unknown, calculated?: { personA: SajuCalcResult; personB: SajuCalcResult }) {
   const normalized = normalizeReportInputPayload(payload);
   if (!normalized.ok || normalized.value.kind !== "compatibility" || normalized.value.compatibilityRoleVersion !== COMPATIBILITY_ROLE_VERSION)
     return { ok: false as const, errors: ["V4_COMPATIBILITY_FIXED_ROLE_INPUT_REQUIRED"] };
   const input = normalized.value;
-  const calculations = { personA: calculateCompatibilitySaju(input.personA), personB: calculateCompatibilitySaju(input.personB) };
-  const base = buildCompatibilityEvidenceFromGenerationInput(input);
+  const calculations = calculated ?? { personA: calculateCompatibilitySaju(input.personA), personB: calculateCompatibilitySaju(input.personB) };
+  const base = buildCompatibilityEvidenceFromGenerationInput(input, calculations);
   const natalPacket = { ...base, natalTableEvidence: buildProductNatalTables(base) };
   const existing = { direction: buildCompatibilityDirectionEvidence(base.input, base.personAChartSummary, base.personBChartSummary, input.relationshipType) };
   // The legacy detector picks the first matching trine reference. Feed it a

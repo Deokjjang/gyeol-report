@@ -17,8 +17,8 @@ import type { ReliabilityStore } from "../payment/paidReportReliabilityStore";
 import { getAnnualPurchasePolicyDate } from "../payment/annualPurchasePolicy";
 import { buildV4ComprehensiveProduct } from "./comprehensiveProductAdapter";
 import { buildV4CareerProduct } from "./careerProductAdapter";
-import { composeLoveNarrative } from "./loveComposer";
-import { composeCompatibilityNarrative } from "./compatibilityComposer";
+import { buildV4LoveProduct } from "./loveProductAdapter";
+import { buildV4CompatibilityProduct } from "./compatibilityProductAdapter";
 import { composeMajorFortuneNarrative } from "./majorComposer";
 import { composeAnnualFortuneNarrative } from "./annualComposer";
 import { projectV4Composition, validateV4Publication, v4Digest, type V4Composition, type V4RuntimeEvidence } from "./runtimeProjection";
@@ -46,11 +46,12 @@ export async function generateV4ShadowReport(payload: unknown, clock: V4ShadowCl
     const input = normalized.value, calculations: Record<string, SajuCalcResult> = {};
     let composition: V4Composition;
     if (input.kind === "compatibility") {
-      const result = composeCompatibilityNarrative(payload);
+      const pairCalculations = { personA: calculateCompatibilitySaju(input.personA), personB: calculateCompatibilitySaju(input.personB) };
+      const result = buildV4CompatibilityProduct(payload, pairCalculations);
       if (!result.ok) return failure("V4_COMPATIBILITY_GENERATION_FAILED");
       composition = { product: "saju_mbti_compatibility", result };
-      calculations.personA = calculateCompatibilitySaju(input.personA);
-      calculations.personB = calculateCompatibilitySaju(input.personB);
+      calculations.personA = pairCalculations.personA;
+      calculations.personB = pairCalculations.personB;
     } else if (input.kind === "majorFortune") {
       const result = await composeMajorFortuneNarrative(payload, clock.evaluatedAt);
       if (!result.ok) return failure("V4_MAJOR_GENERATION_FAILED");
@@ -74,7 +75,7 @@ export async function generateV4ShadowReport(payload: unknown, clock: V4ShadowCl
         if (!result.ok) return failure("V4_CAREER_GENERATION_FAILED");
         composition = { product: "career_money_study", result };
       } else {
-        const result = composeLoveNarrative(narrativeInput);
+        const result = buildV4LoveProduct(narrativeInput);
         if (!result.ok) return failure("V4_LOVE_GENERATION_FAILED");
         composition = { product: "love_marriage_child", result };
       }

@@ -127,7 +127,7 @@ describe("actual 12-person review cohort and isolation", () => {
     function walk(dir: string): string[] { return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []); }
     for (const file of walk("src")) {
       // Product adapters may consume normalization/types; schedulers and core remain isolated.
-      if (["comprehensiveProductAdapter", "careerProductSelection", "careerProductNarrative"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) continue;
+      if (["comprehensiveProductAdapter", "careerProductSelection", "careerProductNarrative", "relationshipProductView", "relationshipProductNarrative"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) continue;
       const text = readFileSync(file, "utf8");
       if (modules.some(m => file === `src/lib/interpretation-v4/${m}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|from ["'][^"']*(?:Composer|bookProjection|runtimeShadow|supabase|openai)/i);
       else if (!["narrativeSceneCore", "narrativeTitleCore", "comprehensiveNarrativeAdapter", "comprehensiveManuscriptCore", "comprehensiveSectionRenderer", "comprehensiveManuscriptValidator", "comprehensiveManuscriptRenderer", "narrativeMbtiReason", "narrativeMeaningSignature", "narrativePositiveReward", "narrativeTitleShort", "comprehensiveManuscriptPolish", "operatingRuleCore", "operatingRuleBuilder", "narrativeHumanFirst", "narrativeHumanSurface", "narrativeCausality", "narrativeRecovery"].some(m => file === `src/lib/interpretation-v4/${m}.ts`)) for (const m of modules) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${m}["']`));

@@ -15,6 +15,8 @@ import type { composeCareerNarrative } from "./careerComposer";
 import type { CareerProduct } from "./careerProductAdapter";
 import type { composeLoveNarrative } from "./loveComposer";
 import type { composeCompatibilityNarrative } from "./compatibilityComposer";
+import type { LoveProduct } from "./loveProductAdapter";
+import type { CompatibilityProduct } from "./compatibilityProductAdapter";
 import type { composeMajorFortuneNarrative } from "./majorComposer";
 import type { composeAnnualFortuneNarrative } from "./annualComposer";
 import { buildCompatibilityIndex } from "./compatibilityIndex";
@@ -24,8 +26,8 @@ type Success<T> = Extract<Awaited<T>, { ok: true }>;
 export type V4Composition =
   | { product: "saju_mbti_full"; result: Success<ReturnType<typeof composeComprehensiveNarrative>> | ComprehensiveProduct }
   | { product: "career_money_study"; result: Success<ReturnType<typeof composeCareerNarrative>> | CareerProduct }
-  | { product: "love_marriage_child"; result: Success<ReturnType<typeof composeLoveNarrative>> }
-  | { product: "saju_mbti_compatibility"; result: Success<ReturnType<typeof composeCompatibilityNarrative>> }
+  | { product: "love_marriage_child"; result: Success<ReturnType<typeof composeLoveNarrative>> | LoveProduct }
+  | { product: "saju_mbti_compatibility"; result: Success<ReturnType<typeof composeCompatibilityNarrative>> | CompatibilityProduct }
   | { product: "major_fortune"; result: Success<ReturnType<typeof composeMajorFortuneNarrative>> }
   | { product: "annual_fortune"; result: Success<ReturnType<typeof composeAnnualFortuneNarrative>> };
 export type V4RuntimeEvidence = {
