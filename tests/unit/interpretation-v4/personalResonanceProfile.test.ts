@@ -100,7 +100,7 @@ describe("personal resonance profile boundary", () => {
     for (const file of walk("src")) {
       const text = readFileSync(file, "utf8");
       if (modules.some(n => file === `src/lib/interpretation-v4/${n}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|Composer|bookProjection|runtimeShadow|supabase|openai|WorkMode|LifeStatus/);
-      else if (!["guidanceCore", "guidanceProblems", "guidanceEvidence", "guidanceConflictResolver", "guidanceDiagnostics", "comprehensiveCandidateAdapter", "comprehensiveDiagnostics"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) for (const name of modules) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
+      else if (!["comprehensiveProductAdapter", "guidanceCore", "guidanceProblems", "guidanceEvidence", "guidanceConflictResolver", "guidanceDiagnostics", "comprehensiveCandidateAdapter", "comprehensiveDiagnostics"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) for (const name of modules) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
     }
     expect(PERSONAL_RESONANCE_REGISTRY).toHaveLength(96);
     expect(stableResonanceValue({ b: 2, a: 1 })).toBe(stableResonanceValue({ a: 1, b: 2 }));

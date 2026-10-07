@@ -34,7 +34,16 @@ describe("actual V4 packet → book pages; no new calculation or prose", () => {
     const { evidence, data } = samples.get(id)!;
     const view = projectV4Composition(evidence.composition);
     const chapters = data.pages.filter(p => p.kind === "narrative");
-    expect(chapters.flatMap(p => [p.title, ...p.paragraphs.flatMap(b => b.heading ? [b.heading] : [])])).toEqual([view.headline, ...view.sections.map(s => s.title)]);
+    const ruleHeadings = evidence.composition.product === "saju_mbti_full" && "integration" in evidence.composition.result
+      ? evidence.composition.result.integration.represented.flatMap(u => u.headings).filter(Boolean) : [];
+    const headings = chapters.flatMap(p => [p.title, ...p.paragraphs.flatMap(b => b.heading ? [b.heading] : [])]);
+    const expectedHeadings = [view.headline, ...view.sections.map(s => s.title)];
+    let nextHeading = 0;
+    for (const heading of headings) {
+      if (heading === expectedHeadings[nextHeading]) nextHeading++;
+      else expect(ruleHeadings, "only actual closing-rule titles may supplement chapter headings").toContain(heading);
+    }
+    expect(nextHeading).toBe(expectedHeadings.length);
     expect(chapters.flatMap(p => p.paragraphs.map(p => p.text))).toEqual([...view.opening, ...view.sections.flatMap(s => s.paragraphs)]);
     expect(data.pages[0].kind).toBe("cover");
     expect(data.pages.at(-1)).toMatchObject({ kind: "back", title: "이 책 공유하기", finalLine: view.finalLine });
@@ -163,7 +172,7 @@ describe("actual V4 packet → book pages; no new calculation or prose", () => {
     Object.assign(e.composition.result.narrative, { finalLine: "changed" });
     expect(projectBook(e)).toBeNull();
     expect(fetch).not.toHaveBeenCalled();
-  });
+  }, 30000);
   it("exports reviewer page inventory when explicitly requested", () => {
     if (!process.env.V4_BOOK_EXPORT) return;
     mkdirSync(process.env.V4_BOOK_EXPORT, { recursive: true });

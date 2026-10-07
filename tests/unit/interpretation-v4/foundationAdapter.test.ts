@@ -112,7 +112,7 @@ describe("Phase13D-1A stays off all six product paths", () => {
       } else if (["narrativeTerminology.ts", "comprehensiveNarrativeAdapter.ts"].includes(name)) {
         expect(file).toBe(`src/lib/interpretation-v4/${name}`);
         expect(readFileSync(file, "utf8")).not.toMatch(/from ["'][^"']*\/(?:foundationProfile|foundationIntegratedProfile|calculateSaju)["']/);
-      } else if (fusionBoundary.has(name) || claimBoundary.has(name) || resonanceBoundary.has(name)) expect(file).toBe(`src/lib/interpretation-v4/${name}`);
+      } else if (name === "comprehensiveProductAdapter.ts" || fusionBoundary.has(name) || claimBoundary.has(name) || resonanceBoundary.has(name)) expect(file).toBe(`src/lib/interpretation-v4/${name}`);
       else expect(allowed.has(name), file).toBe(true);
     }
     for (const name of allowed) {

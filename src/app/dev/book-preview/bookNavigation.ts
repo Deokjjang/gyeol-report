@@ -2,7 +2,7 @@ import type { BookPage } from "./bookTypes";
 
 /** Page numbers are derived after composition. Stable section IDs remain valid
  * if an adjacent short chapter is joined; no narrative sentence is deleted. */
-export function composeBookNavigation(input: BookPage[]): BookPage[] {
+export function composeBookNavigation(input: BookPage[], separateUnits: readonly string[] = []): BookPage[] {
   let appendix = 0;
   const original = input.map(p => { const id = p.id ?? `${p.kind}${"person" in p ? `-${p.person}` : p.kind === "appendix" ? `-${++appendix}` : ""}`;
     return { ...p, id, anchors: p.anchors ?? [id] }; });
@@ -10,7 +10,7 @@ export function composeBookNavigation(input: BookPage[]): BookPage[] {
   for (const p of original) {
     const previous = grouped.at(-1);
     const short = previous?.kind === "narrative" && (previous.paragraphs.reduce((n, v) => n + v.text.length, 0) < 260 || (p.kind === "narrative" && p.paragraphs.reduce((n, v) => n + v.text.length, 0) < 260));
-    if (short && p.kind === "narrative" && previous.notes.length + p.notes.length <= 2) {
+    if (short && p.kind === "narrative" && !separateUnits.includes(p.id) && !separateUnits.includes(previous.id ?? "") && previous.notes.length + p.notes.length <= 2) {
       const offset = previous.notes.length;
       previous.paragraphs = [...previous.paragraphs, ...p.paragraphs.map((v, i) => ({ ...v, ...(i === 0 ? { heading: p.title, anchorId: p.id } : {}), notes: v.notes.map(n => n + offset) }))];
       previous.notes = [...previous.notes, ...p.notes];

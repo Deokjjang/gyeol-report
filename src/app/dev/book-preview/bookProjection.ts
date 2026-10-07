@@ -12,6 +12,7 @@ import { friendlyTransition } from "../../../lib/interpretation-v4/periodPlanner
 import { godEffects } from "../../../lib/interpretation-v4/compatibilityInteractions";
 import { composeBookNavigation } from "./bookNavigation";
 import { comprehensiveBookContents, COMPREHENSIVE_PLAIN_MEANINGS, COMPREHENSIVE_STAGE_MEANINGS } from "./comprehensiveBook";
+import { comprehensiveRuleHeadings, comprehensiveProductContents } from "../../../lib/book/comprehensiveBookAdapter";
 import { describeReportShare } from "../../../lib/sharing/reportShareMetadata";
 import type { NarrativeBlock, MaterialPacket } from "../../../lib/interpretation-v4/narrativeTypes";
 import type { GenerationPersonInput } from "../../../lib/report-generation/reportInputAdapter";
@@ -193,7 +194,7 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
       good: MAJOR_MEANINGS[m.god].gift, caution: m.action?.avoid, importance: m.plan?.importance, boundary: m.boundary,
       markers: unique(c.result.evidence.months.find(v => v.month === m.month)!.transit.accepted.flatMap(f => f.observations.map(o => o.label))), page: sectionPages.get(`month-${m.month}`)! }));
   }
-  const used = new Set([...c.result.narrative.opening, ...c.result.narrative.sections.flatMap(s => s.blocks)].flatMap(b => b.proof.features.map(featureKey)));
+  const used = new Set([...c.result.narrative.opening, ...Array.from(c.result.narrative.sections).flatMap(s => s.blocks)].flatMap(b => b.proof.features.map(featureKey)));
   const ordered = (entries: Entry[]) => entries.map(f => ({ ...f.display, core: used.has(f.key) })).sort((a, b) => (a.group ?? "").localeCompare(b.group ?? "") || a.name.localeCompare(b.name));
   // One compact appendix per person, not one page per ten definitions.
   let from = 1;
@@ -204,6 +205,9 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
   }
   pages.push({ kind: "back", title: "이 책 공유하기", finalLine: view.finalLine });
   const share = describeReportShare({ productSlug: e.input.productSlug, draft: view });
-  const navigation = composeBookNavigation(pages);
-  return { bookId, title, names, people, context, pages: c.product === "saju_mbti_full" ? comprehensiveBookContents(navigation) : navigation, readingDate: e.generatedAt.slice(0, 10), share: { title: `${names} · ${title}`, description: share.description } };
+  const integration = c.product === "saju_mbti_full" && "integration" in c.result ? c.result.integration : null;
+  // The closing manual's own title must not replace its first rule subtitle
+  // when the preceding chapter happens to be short. Legacy books are unchanged.
+  const navigation = composeBookNavigation(integration ? comprehensiveRuleHeadings(pages, integration.represented) : pages, integration ? ["chapter-direction"] : []);
+  return { bookId, title, names, people, context, pages: integration ? comprehensiveProductContents(navigation) : c.product === "saju_mbti_full" ? comprehensiveBookContents(navigation) : navigation, readingDate: e.generatedAt.slice(0, 10), share: { title: `${names} · ${title}`, description: share.description } };
 }

@@ -8,8 +8,9 @@ import type { SajuCalcResult } from "../saju/types";
 import { buildCanonicalManseRyeokTableData, withConsistentNatalMarkers } from "../report-tables/manseRyeokTableData";
 import type { MbtiCommonProfileTableData, MbtiPreferenceAxisOption } from "../report-tables/types";
 import type { CanonicalNatalTableEvidence } from "../report-knowledge/natalTableEvidence";
-import type { NarrativeSection } from "./narrativeTypes";
+import type { ComprehensiveNarrative, NarrativeSection } from "./narrativeTypes";
 import type { composeComprehensiveNarrative } from "./comprehensiveComposer";
+import type { ComprehensiveProduct } from "./comprehensiveProductAdapter";
 import type { composeCareerNarrative } from "./careerComposer";
 import type { composeLoveNarrative } from "./loveComposer";
 import type { composeCompatibilityNarrative } from "./compatibilityComposer";
@@ -20,7 +21,7 @@ import type { V4CustomerReport, V4CustomerSection, V4CustomerTables, V4ShadowVie
 
 type Success<T> = Extract<Awaited<T>, { ok: true }>;
 export type V4Composition =
-  | { product: "saju_mbti_full"; result: Success<ReturnType<typeof composeComprehensiveNarrative>> }
+  | { product: "saju_mbti_full"; result: Success<ReturnType<typeof composeComprehensiveNarrative>> | ComprehensiveProduct }
   | { product: "career_money_study"; result: Success<ReturnType<typeof composeCareerNarrative>> }
   | { product: "love_marriage_child"; result: Success<ReturnType<typeof composeLoveNarrative>> }
   | { product: "saju_mbti_compatibility"; result: Success<ReturnType<typeof composeCompatibilityNarrative>> }
@@ -48,10 +49,11 @@ export function stableV4Json(v: unknown): string {
 }
 export const v4Digest = (v: unknown) => createHash("sha256").update(stableV4Json(v)).digest("hex");
 const section = (s: NarrativeSection): V4CustomerSection => ({ title: s.title, paragraphs: s.blocks.map(b => b.text) });
+type ReadableNarrative = Pick<ComprehensiveNarrative, "headline" | "opening" | "sections" | "finalLine">;
 
 /** Allowlist only. No spread of composer objects into a customer projection. */
 export function projectV4Composition(c: V4Composition): V4CustomerReport {
-  const n = c.result.narrative;
+  const n: ReadableNarrative = c.result.narrative;
   const common: V4CustomerReport = { version: "v4-runtime-shadow-1", reportVersion: "v4", productVersion: "v4", productType: c.product,
     headline: n.headline, opening: n.opening.map(b => b.text), sections: n.sections.map(section), finalLine: n.finalLine };
   if (c.product === "love_marriage_child") return { ...common, relationshipStatus: c.result.narrative.relationshipStatus };
@@ -79,7 +81,8 @@ export function validateV4Publication(product: string, draft: unknown, evidence:
   const errors: string[] = [];
   try {
     if (!isRecord(evidence) || evidence.version !== "v4-runtime-evidence-1" || evidence.mode !== "shadow" || !isRecord(evidence.composition)) return { ok: false, errors: ["V4_EVIDENCE_REQUIRED"] };
-    const e = evidence as unknown as V4RuntimeEvidence, c = e.composition, n = c.result.narrative;
+    const e = evidence as unknown as V4RuntimeEvidence, c = e.composition;
+    const n: ReadableNarrative = c.result.narrative;
     if (e.productType !== product || c.product !== product || e.input.productKey !== product || c.result.ok !== true) errors.push("V4_PRODUCT_MISMATCH");
     if (!instantOK(e.generatedAt)) errors.push("V4_CLOCK_REQUIRED");
     const expected = projectV4Composition(c);

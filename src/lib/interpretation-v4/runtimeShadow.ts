@@ -15,7 +15,7 @@ import type { ProductGenerationResult } from "../report-generation/productGenera
 import { runPaidReportJob, type ProductGenerator } from "../payment/paidReportReliability";
 import type { ReliabilityStore } from "../payment/paidReportReliabilityStore";
 import { getAnnualPurchasePolicyDate } from "../payment/annualPurchasePolicy";
-import { composeComprehensiveNarrative } from "./comprehensiveComposer";
+import { buildV4ComprehensiveProduct } from "./comprehensiveProductAdapter";
 import { composeCareerNarrative } from "./careerComposer";
 import { composeLoveNarrative } from "./loveComposer";
 import { composeCompatibilityNarrative } from "./compatibilityComposer";
@@ -35,7 +35,7 @@ export async function generateV4ShadowReport(payload: unknown, clock: V4ShadowCl
     clock.policyDate && !Number.isFinite(Date.parse(clock.policyDate))) return failure("V4_EXPLICIT_CLOCK_REQUIRED");
   // The legacy normalizer tolerates unknown context strings. Shadow generation
   // is fail-closed without changing that legacy input behavior.
-  if (isRecord(payload) && payload.productKey !== "saju_mbti_compatibility") {
+  if (isRecord(payload) && payload.productKey !== "saju_mbti_compatibility" && payload.productKey !== "saju_mbti_full") {
     const c = payload.userContext;
     if (!isRecord(c) || !JOB_STATUSES.includes(c.jobStatus as never) || !RELATIONSHIP_STATUSES.includes(c.relationshipStatus as never) ||
       typeof c.detailJob !== "string" || c.detailJob.length > 200) return failure("V4_CONTEXT_INVALID");
@@ -66,8 +66,8 @@ export async function generateV4ShadowReport(payload: unknown, clock: V4ShadowCl
       const narrativeInput: NarrativeInput = { calculation, name: input.person.name, mbti: input.person.mbtiType,
         context: { jobStatus: input.userContext.jobStatus, detailJob: input.userContext.detailJob, relationshipStatus: input.userContext.relationshipStatus } };
       if (input.kind === "comprehensiveV2") {
-        const result = composeComprehensiveNarrative(narrativeInput);
-        if (!result.ok) return failure("V4_COMPREHENSIVE_GENERATION_FAILED");
+        const result = buildV4ComprehensiveProduct(narrativeInput);
+        if (!result.ok) return failure(result.errors.join(";"));
         composition = { product: "saju_mbti_full", result };
       } else if (input.kind === "careerMoneyStudy") {
         const result = composeCareerNarrative(narrativeInput);

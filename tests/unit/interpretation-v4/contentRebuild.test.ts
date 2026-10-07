@@ -102,7 +102,9 @@ describe("Phase13A real-calculation content review exports", () => {
       if (dir) {
         mkdirSync(`${dir}/runtime`, { recursive: true });
         writeFileSync(`${dir}/runtime/${fixture.id}-${c.product}.txt`, narrativeText(c.result.narrative));
-        writeFileSync(`${dir}/runtime/${fixture.id}-${c.product}.json`, JSON.stringify({ payload, narrative: c.result.narrative, contentAudit: c.result.contentAudit, contentPlan: c.result.contentPlan, book }, null, 2));
+        writeFileSync(`${dir}/runtime/${fixture.id}-${c.product}.json`, JSON.stringify({ payload, narrative: c.result.narrative,
+          contentAudit: "contentAudit" in c.result ? c.result.contentAudit : undefined,
+          contentPlan: "contentPlan" in c.result ? c.result.contentPlan : undefined, book }, null, 2));
       }
     }
   }, 30000);
