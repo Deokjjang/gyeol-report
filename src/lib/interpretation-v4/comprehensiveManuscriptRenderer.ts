@@ -5,6 +5,9 @@ import { validateComprehensiveManuscript } from "./comprehensiveManuscriptValida
 import { GYEOL_COMPREHENSIVE_MANUSCRIPT_VERSION, type ManuscriptInput, type ComprehensiveManuscriptDraft } from "./comprehensiveManuscriptCore";
 import { buildComprehensiveEditorialPlan } from "./comprehensiveEditorialPlan";
 import { renderComprehensiveBridge } from "./comprehensiveBridgeRenderer";
+import { renderOperatingManual } from "./operatingRuleRenderer";
+import { GYEOL_MANUSCRIPT_POLISH_VERSION } from "./comprehensiveManuscriptPolish";
+import { auditManuscriptQuality } from "./manuscriptQualityAudit";
 
 /** Standalone draft boundary. No packet, product writer, filesystem or UI dependency. */
 export function renderComprehensiveManuscript(input: ManuscriptInput) {
@@ -17,6 +20,9 @@ export function renderComprehensiveManuscript(input: ManuscriptInput) {
     diagnostics: { warnings: [], suppressed: [] }, debug: { sources: {}, bridgeDecisions: [], coreRecall: [] },
     validation: { hardViolations: [], warnings: [], scores: {}, heuristicNotice: "" } };
   for (const [index, id] of COMPREHENSIVE_SECTIONS.entries()) {
+    if(id==="C10") {
+      const rendered=renderOperatingManual(input,draft);draft.sections.C10=rendered.section;draft.narrativeMemory=rendered.memory;continue;
+    }
     let localDiagnostics: ComprehensiveManuscriptDraft["diagnostics"] = { warnings: [], suppressed: [] };
     let localDebug: ComprehensiveManuscriptDraft["debug"] = { sources: {}, bridgeDecisions: [], coreRecall: [] };
     let rendered = renderComprehensiveSection(input, id, draft.narrativeMemory, localDiagnostics, localDebug);
@@ -39,15 +45,14 @@ export function renderComprehensiveManuscript(input: ManuscriptInput) {
     draft.diagnostics.suppressed.push(...localDiagnostics.suppressed);
     Object.assign(draft.debug.sources, localDebug.sources); draft.debug.bridgeDecisions.push(bridgeDecision);
   }
-  draft.debug.coreRecall = draft.sections.C10.sourceCandidateIds.filter(id => {
-    const c = input.plan.candidates.find(c => c.id === id)!;
-    return c.sourceId === input.plan.finalCoreRecallIntent.operatingPrincipleGuidanceId;
-  });
+  draft.debug.coreRecall = draft.sections.C10.blocks.flatMap(b=>b.sentences.filter(s=>s.sourcePhraseId.endsWith(":core-recall")).map(s=>s.id));
+  draft.diagnostics.warnings.push(`QUALITY_VERSION:${GYEOL_MANUSCRIPT_POLISH_VERSION}`);
   draft.terminologyUsage = draft.narrativeMemory.language.usedTermDefinitions;
   draft.explicitMbtiUsage = draft.narrativeMemory.language.usedExplicitMbtiMentions;
   draft.sceneUsage = draft.narrativeMemory.usedScenes; draft.titleUsage = draft.narrativeMemory.usedTitles;
   draft.semanticThemeUsage = draft.narrativeMemory.language.usedSemanticThemes;
   draft.fullText = COMPREHENSIVE_SECTIONS.map(id => `${draft.sections[id].title}\n\n${draft.sections[id].plainText}`).join("\n\n");
   draft.validation = validateComprehensiveManuscript(input, draft);
+  draft.debug.quality = auditManuscriptQuality(draft);
   return { ok: true as const, draft };
 }

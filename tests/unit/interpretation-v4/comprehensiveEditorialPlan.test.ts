@@ -128,7 +128,7 @@ describe("actual 12-person review cohort and isolation", () => {
     for (const file of walk("src")) {
       const text = readFileSync(file, "utf8");
       if (modules.some(m => file === `src/lib/interpretation-v4/${m}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|from ["'][^"']*(?:Composer|bookProjection|runtimeShadow|supabase|openai)/i);
-      else if (!["narrativeSceneCore", "narrativeTitleCore", "comprehensiveNarrativeAdapter", "comprehensiveManuscriptCore", "comprehensiveSectionRenderer", "comprehensiveManuscriptValidator", "comprehensiveManuscriptRenderer"].some(m => file === `src/lib/interpretation-v4/${m}.ts`)) for (const m of modules) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${m}["']`));
+      else if (!["narrativeSceneCore", "narrativeTitleCore", "comprehensiveNarrativeAdapter", "comprehensiveManuscriptCore", "comprehensiveSectionRenderer", "comprehensiveManuscriptValidator", "comprehensiveManuscriptRenderer", "narrativeMbtiReason", "narrativeMeaningSignature", "narrativePositiveReward", "narrativeTitleShort", "comprehensiveManuscriptPolish", "operatingRuleCore", "operatingRuleBuilder"].some(m => file === `src/lib/interpretation-v4/${m}.ts`)) for (const m of modules) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${m}["']`));
     }
   });
 });

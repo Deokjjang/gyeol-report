@@ -5,6 +5,8 @@ import { TITLE_SKELETONS } from "./narrativeTitleRegistry";
 import { NARRATIVE_SCENES } from "./narrativeSceneRegistry";
 import { chooseNarrativeScene } from "./narrativeSceneCore";
 import { selectedProofAxes } from "./comprehensiveNarrativeAdapter";
+import { buildOperatingRules } from "./operatingRuleBuilder";
+import { shortTitleChoices } from "./narrativeTitleShort";
 export function validateComprehensiveManuscript(input: ManuscriptInput, draft: ComprehensiveManuscriptDraft): ManuscriptValidation {
   const hardViolations: NarrativeIssue[] = [], warnings: NarrativeIssue[] = [];
   const hard = (code: string, refs: string[] = []) => hardViolations.push({ code, refs });
@@ -23,6 +25,8 @@ export function validateComprehensiveManuscript(input: ManuscriptInput, draft: C
   }
   for (const s of sentences) {
     if (/[A-Z]{2,}_[A-Z_]+|actual-source|(?:natal|supplement|foundation|editorial):/.test(s.text)) hard("INTERNAL_IDENTIFIER_EXPOSURE", [s.id]);
+    if (/\b(?:Fe|Fi|Te|Ti|Ne|Ni|Se|Si)\b/i.test(s.text)) hard("MBTI_FUNCTION_JARGON",[s.id]);
+    if (/보조합니다|보조하는|힘을 보탭니다/.test(s.text)) hard("CUSTOMER_META_LANGUAGE",[s.id]);
     if (seen.has(s.text)) hard("EXACT_SENTENCE_REPEAT", [s.id]); seen.add(s.text);
     if (s.termDefinitionKey) { if (terms.has(s.termDefinitionKey)) hard("TERM_REDEFINITION", [s.id]); terms.add(s.termDefinitionKey); }
   }
@@ -30,10 +34,11 @@ export function validateComprehensiveManuscript(input: ManuscriptInput, draft: C
     const c = input.plan.candidates.find(c => c.id === title.candidateId);
     const titlePlan = input.plan.sections[title.sectionId];
     const eligibleAnchor = c && (titlePlan.primaryCandidateIds.includes(c.id) || titlePlan.placements.some(p => p.candidateId === c.id)
-      && (!titlePlan.primaryCandidateIds.length || title.sectionId === "C10" && c.sourceType === "GUIDANCE"));
+      && (!titlePlan.primaryCandidateIds.length || title.sectionId === "C9" || title.sectionId === "C10" && c.sourceType === "GUIDANCE"));
     if (!eligibleAnchor || !c || title.sourceText !== c.sourceText || !draft.sections[title.sectionId].blocks[0]?.sourceUnitIds.includes(title.candidateId)) hard("TITLE_SOURCE_VIOLATION", [title.candidateId]);
     const spec = TITLE_SKELETONS.find(s => s.id === title.skeletonId);
     if (spec && (!spec.required.every(w => title.sourceText.includes(w)) || (c?.claimLevel ?? 2) < spec.minLevel)) hard("TITLE_UNGROUNDED", [title.skeletonId]);
+    if(title.skeletonId==="APPROVED_SHORT" && (!c||!shortTitleChoices(c).includes(title.text))) hard("TITLE_UNGROUNDED",[title.skeletonId]);
     if (title.text.length > 50) warn("LONG_SOURCE_TITLE", [title.sectionId]);
   }
   for (let n = 2; n < draft.titleUsage.length; n++) if (draft.titleUsage.slice(n - 2, n + 1).every(t => t.type === draft.titleUsage[n].type)) hard("TITLE_TYPE_REPEAT", [draft.titleUsage[n].sectionId]);
@@ -67,6 +72,13 @@ export function validateComprehensiveManuscript(input: ManuscriptInput, draft: C
   }
   const earlier = new Set(sections.slice(0, 9).flatMap(s => s.evidenceIds));
   const c10 = draft.sections.C10;
+  const eligible=buildOperatingRules(input,draft).eligible;
+  for(const rule of c10.operatingRules??[]) {
+    const expected=eligible.find(r=>r.id===rule.candidateId);
+    if(draft.debug.operatingRules && !rule.source)hard("MISSING_OPERATING_RULE_SOURCE",[rule.candidateId]);
+    if(rule.source && (!expected || JSON.stringify(expected)!==JSON.stringify(rule.source)))hard("UNSUPPORTED_OPERATING_RULE",[rule.candidateId]);
+    if(rule.source && !rule.source.introducedInSection.length)hard("C10_NO_ANTECEDENT",[rule.candidateId]);
+  }
   for (const id of c10.evidenceIds) if (!earlier.has(id)) hard("C10_NEW_EVIDENCE", [id]);
   for (const rule of c10.operatingRules ?? []) if (!rule.antecedentCandidateIds.some(id => sections.slice(0, 9).some(s => s.sourceCandidateIds.includes(id)))) hard("C10_NO_ANTECEDENT", [rule.candidateId]);
   if ((c10.operatingRules?.length ?? 0) < 3) warn("MANUAL_BELOW_TARGET");

@@ -1,6 +1,7 @@
 import type { ComprehensiveSectionId, EditorialCandidate } from "./comprehensivePlanCore";
 import { GYEOL_TITLE_ENGINE_VERSION, TITLE_SKELETONS, type TitleType } from "./narrativeTitleRegistry";
 import { stableVariants } from "./narrativeVariant";
+import { shortTitleChoices } from "./narrativeTitleShort";
 export type TitleUse = { sectionId: ComprehensiveSectionId; candidateId: string; text: string; type: TitleType; skeletonId: string; family: string; sourceText: string };
 const allowed: Record<ComprehensiveSectionId, readonly TitleType[]> = {
   C1: ["T1_DIRECT_JUDGMENT", "T2_HUMAN_CONTRADICTION", "T3_LIFE_SCENE"], C2: ["T1_DIRECT_JUDGMENT", "T2_HUMAN_CONTRADICTION", "T3_LIFE_SCENE"],
@@ -18,6 +19,7 @@ export function chooseNarrativeTitle(c: EditorialCandidate, sectionId: Comprehen
   const selected = stableVariants(eligible, `${key}|${sectionId}|${c.id}|${GYEOL_TITLE_ENGINE_VERSION}`)[0];
   // Exact source fallback never invents a title's meaning or truncates a condition.
   const fallbackType = types.find(t => !(used.length >= 2 && used.slice(-2).every(u => u.type === t))) ?? types[0];
-  return { sectionId, candidateId: c.id, sourceText: c.sourceText, text: selected?.text ?? c.sourceText.replace(/[.]$/, ""),
-    type: selected?.type ?? fallbackType, skeletonId: selected?.id ?? "SOURCE_VERBATIM", family: selected?.family ?? `source:${c.id}` };
+  const short=shortTitleChoices(c).find(t=>!used.some(u=>u.text===t));
+  return { sectionId, candidateId: c.id, sourceText: c.sourceText, text: selected?.text ?? short ?? c.sourceText.replace(/[.]$/, ""),
+    type: selected?.type ?? fallbackType, skeletonId: selected?.id ?? (short?"APPROVED_SHORT":"SOURCE_VERBATIM"), family: selected?.family ?? `source:${c.id}` };
 }

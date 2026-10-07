@@ -13,7 +13,11 @@ const endings = [
   ["됩니다.", "돼요.", "되죠."], ["싶어 합니다.", "싶어 해요.", "싶어 하죠."],
   ["움직입니다.", "움직여요.", "움직이죠."], ["보입니다.", "보여요.", "보이죠."],
 ] as const;
-const manuscriptEndings = [["않습니다.", "않아요.", "않죠."], ["좋습니다.", "좋아요.", "좋죠."]] as const;
+const manuscriptEndings = [["않습니다.", "않아요.", "않죠."], ["좋습니다.", "좋아요.", "좋죠."], ["맞습니다.", "맞아요.", "맞죠."],
+  ["이어갑니다.", "이어가요.", "이어가죠."], ["챙깁니다.", "챙겨요.", "챙기죠."], ["잡습니다.", "잡아요.", "잡죠."],
+  ["나타납니다.", "나타나요.", "나타나죠."], ["찾습니다.", "찾아요.", "찾죠."], ["바꿉니다.", "바꿔요.", "바꾸죠."],
+  ["붙듭니다.", "붙들어요.", "붙들죠."], ["알아차립니다.", "알아차려요.", "알아차리죠."], ["전합니다.", "전해요.", "전하죠."],
+] as const;
 export type NarrativeSurface = { id: string; text: string; ending: EndingStyle };
 /** Small, closed suffix whitelist. Never removes modality, negation or changes claim content. */
 export function narrativeSurfaces(phrase: NarrativePhrase, preserveDirect = false, allowActionEndings = false): NarrativeSurface[] {

@@ -118,7 +118,7 @@ describe("actual DOB/source coverage and six-product isolation", () => {
     for (const file of walk("src")) {
       const text = readFileSync(file, "utf8");
       if (modules.some(n => file === `src/lib/interpretation-v4/${n}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|Composer|bookProjection|runtimeShadow|supabase|openai/i);
-      else if (!["comprehensivePlanCore", "comprehensiveDiagnostics", "narrativeSceneCore"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) for (const name of modules) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
+      else if (!["comprehensivePlanCore", "comprehensiveDiagnostics", "narrativeSceneCore", "narrativeTitleShort", "operatingRuleRegistry", "operatingRuleBuilder"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) for (const name of modules) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
     }
     const evaluator = readFileSync("src/lib/interpretation-v4/guidanceEvidence.ts", "utf8");
     expect(evaluator).not.toMatch(/rawJobText|lifeStatus|relationshipStatus|GuidanceUserContext/);

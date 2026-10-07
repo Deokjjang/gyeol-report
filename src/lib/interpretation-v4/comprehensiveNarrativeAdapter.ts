@@ -6,6 +6,10 @@ import { termDefinitionPhrase, NARRATIVE_IMAGES } from "./narrativeTerminology";
 import { chooseNarrativeScene, type SceneUse } from "./narrativeSceneCore";
 import { NARRATIVE_SCENES } from "./narrativeSceneRegistry";
 import { hasExplicitMbti, hasFusionComparison } from "./narrativeSurface";
+import { humanMbtiReason } from "./narrativeMbtiReason";
+import { polishComprehensiveSource } from "./comprehensiveManuscriptPolish";
+import { humanOutcome } from "./narrativeHumanOutcome";
+import { GUIDANCE_SHORT_TITLES } from "./operatingRuleRegistry";
 
 export type AdaptedNarrativeSource = { candidate: EditorialCandidate; placement: CandidatePlacement; source: NarrativeSourceUnit;
   intent: NarrativeIntent; scene?: SceneUse; provenance: string[]; diagnostics: string[] };
@@ -18,6 +22,12 @@ function atomLabel(e: EvidenceAtom): string | undefined {
   return typeof e.metadata?.label === "string" ? e.metadata.label : undefined;
 }
 const sentence = (s: string) => /[.?]$/.test(s.trim()) ? s.trim() : /다$|요$|죠$/.test(s.trim()) ? `${s.trim()}.` : `${s.trim()}입니다.`;
+function easyCustomerDefinition(e: EvidenceAtom) {
+  // Definition-only surface, not a change to the semantic atom or its weight.
+  return sentence(e.easyMeaning.replace(/쪽을 보조하는 기운/g,"모습과 관련된 기운")
+    .replace(/눈을 보조하는 기운/g,"눈에 해당하는 기운")
+    .replace(/시간을 보조하는 기운/g,"시간과 관련된 기운"));
+}
 export function selectedProofAxes(c: EditorialCandidate, i: ComprehensivePlanInputs): SemanticSignature {
   const axes: SemanticSignature = {};
   for (const e of i.myeongli.evidence.filter(e => c.myeongliEvidenceIds.includes(e.id))) for (const axis of c.primaryAxes) axes[axis] = (axes[axis] ?? 0) + (e.axes[axis] ?? 0) * e.weight;
@@ -53,7 +63,7 @@ export function adaptComprehensiveSource(plan: ComprehensiveEditorialPlan, i: Co
     // SHORT is reserved upstream; the manual retains the concrete, contextual advice.
     if (placement.guidanceRenderIntent === "SHORT_GUIDANCE" && g.diagnostics.action !== g.customerAdvice) {
       phrases.splice(0, phrases.length);
-      add("ACTION", g.diagnostics.action, "GUIDANCE", "source-action");
+      add("ACTION", GUIDANCE_SHORT_TITLES[g.selectedStrategyIds[0]] ?? g.diagnostics.action, "GUIDANCE", "source-action");
     }
     if (placement.guidanceRenderIntent === "FULL_GUIDANCE") add("DIRECT_CLAIM", g.problemDescription, "SYNTHESIS", "problem");
     // The rationale is source data, not a new behavior diagnosis.
@@ -77,28 +87,27 @@ export function adaptComprehensiveSource(plan: ComprehensiveEditorialPlan, i: Co
   const textRole = c.fortune ? "GOOD_RESULT" : "DIRECT_CLAIM";
   add(textRole, humanCopy, c.sourceType === "MYEONGLI_PATTERN" ? "MYEONGLI" : "SYNTHESIS", "human");
 
-  if (fusion && placement.presentationIntent === "EXPLICIT") {
+  const visibleMbti = fusion && placement.presentationIntent === "EXPLICIT" ? humanMbtiReason(i, fusion, sectionId, memory) : undefined;
+  if (fusion && placement.presentationIntent === "EXPLICIT" && !visibleMbti) {
+    intent = "HUMAN"; source.fusionType = undefined;
+    diagnostics.push("MBTI_VISIBLE_DOMAIN_SUPPRESSED");
+  }
+  if (fusion && placement.presentationIntent === "EXPLICIT" && visibleMbti) {
     // Actual annotated source only. No dimension-prior or notable-pair reference substitutes.
-    const nodes = i.mbti.sourceNodes.filter(n => fusion.mbti.sourceNodeIds.includes(n.id)
-      && i.mbti.annotations.some(a => a.sourceNodeId === n.id && a.annotationConfidence !== "REFERENCE_ONLY"));
-    const nodeScore = (id: string) => i.mbti.contributions.filter(a => a.sourceNodeId === id && a.axis === fusion.mbti.side.axis && a.contexts.includes(context))
-      .reduce((n, a) => n + Math.abs(a.effectiveValue), 0);
-    const unusedNodes = nodes.filter(n => typeof n.value === "string" && n.value.trim()
-      && !Object.keys(memory.usedPhrases).some(t => t.includes(String(n.value).split(/[.]\s/)[0])));
-    const roleSpecific = (domain: string | null) => domain === "PARENTS" || domain === "CHILDREN";
-    const node = unusedNodes.sort((a, b) => Number(roleSpecific(a.sourceDomain)) - Number(roleSpecific(b.sourceDomain))
-      || nodeScore(b.id) - nodeScore(a.id) || String(a.value).length - String(b.value).length)[0];
     const side = fusion.conditionSplit?.sides;
-    const myReason = proof[0]?.humanDescription ?? atoms.find(e => e.humanDescription && c.primaryAxes.some(a => e.axes[a]))?.humanDescription;
-    add("MYEONGLI_REASON", myReason, "MYEONGLI", "fusion-my");
-    const quote = node ? String(node.value).replace(/[.]$/, "") : undefined;
-    const typeLabel = node && !hasExplicitMbti(String(node.value)) ? `${i.mbti.mbtiType} ` : "";
-    const mbtiText = node?.sourceDomain === "PARENTS" ? `부모 역할을 맡는다면, ${typeLabel}설명에는 ‘${quote}’라는 모습도 있어요.`
-      : node?.sourceDomain === "CHILDREN" ? `어린 시절을 다루는 ${typeLabel}설명에는 ‘${quote}’라는 모습도 있어요.`
-      : node ? hasExplicitMbti(String(node.value)) ? `‘${quote}’라는 설명도 함께 볼 만해요.` : `${i.mbti.mbtiType}에서도 ‘${quote}’라는 모습이 나와요.` : undefined;
-    if (node && roleSpecific(node.sourceDomain)) diagnostics.push("ROLE_SPECIFIC_MBTI_SOURCE_QUALIFIED");
-    // Keep a single explicit mention even when the quoted source contains two sentences.
-    add("MBTI_REASON", mbtiText, "MBTI_ACTUAL", "fusion-mbti", { refs: { ...refs, mbtiSourceNodeIds: node ? [node.id] : [...fusion.mbti.sourceNodeIds] } });
+    const mySide = fusion.myeongli.side;
+    const reasonAtom = atoms.filter(e=>(e.axes[mySide.axis]??0)*mySide.direction>0)
+      .sort((a,b)=>Number(!!atomLabel(b) && !memory.usedTermDefinitions.includes(`${b.sourceType}:${b.sourceKey}`))-Number(!!atomLabel(a) && !memory.usedTermDefinitions.includes(`${a.sourceType}:${a.sourceKey}`))
+        || Math.abs(b.axes[mySide.axis]??0)*b.weight-Math.abs(a.axes[mySide.axis]??0)*a.weight)[0];
+    const myReason = reasonAtom?.humanDescription ?? humanOutcome(mySide.axis,mySide.direction);
+    const label = reasonAtom && atomLabel(reasonAtom), key = reasonAtom && `${reasonAtom.sourceType}:${reasonAtom.sourceKey}`;
+    if(reasonAtom && label && key && !memory.usedTermDefinitions.includes(key)) {
+      const term={key,displayName:label,easyDefinition:easyCustomerDefinition(reasonAtom),exposurePriority:1,sourceEvidenceIds:[reasonAtom.id]};
+      source.evidenceTerms=[...(source.evidenceTerms??[]),term];
+      const definition=termDefinitionPhrase(term,source);if(definition)phrases.push(definition);
+    } else add("MYEONGLI_REASON", myReason, "MYEONGLI", "fusion-my", reasonAtom?{refs:{...refs,evidenceIds:[reasonAtom.id]}}:{});
+    diagnostics.push(`MBTI_VISIBLE_SOURCE:${visibleMbti.nodeId}:${visibleMbti.family}`);
+    add("MBTI_REASON", visibleMbti.text, "MBTI_ACTUAL", "fusion-mbti", { refs: { ...refs, mbtiSourceNodeIds: [visibleMbti.nodeId] } });
     if (fusion.type === "TENSION") {
       // Rationale is an internal rule identifier, not customer prose. The already
       // resolved sides supply the condition; the source below supplies the conclusion.
@@ -124,7 +133,7 @@ export function adaptComprehensiveSource(plan: ComprehensiveEditorialPlan, i: Co
       const owner = plan.terminologyOwnership.find(t => t.termKey === key && t.definitionOwner === sectionId);
       const label = atomLabel(e);
       if (owner && label && !memory.usedTermDefinitions.includes(key) && !source.evidenceTerms?.some(t => t.key === key)) {
-        const term = { key, displayName: label, easyDefinition: sentence(e.easyMeaning), exposurePriority: 1, sourceEvidenceIds: [e.id] };
+        const term = { key, displayName: label, easyDefinition: easyCustomerDefinition(e), exposurePriority: 1, sourceEvidenceIds: [e.id] };
         source.evidenceTerms = [...(source.evidenceTerms ?? []), term];
         const definition = termDefinitionPhrase(term, source);
         if (definition) phrases.push(definition);
@@ -161,5 +170,5 @@ export function adaptComprehensiveSource(plan: ComprehensiveEditorialPlan, i: Co
   }
   if (placement.presentationIntent === "HIDDEN") source.phrases = phrases.filter(p => p.role !== "MBTI_REASON" && !hasExplicitMbti(p.text) && !hasFusionComparison(p.text));
   if (source.phrases.length < 2) diagnostics.push("LIMITED_SELECTED_SOURCE_NO_PADDING");
-  return { candidate: c, placement, source, intent, scene, provenance: [...placement.provenanceEvidenceIds], diagnostics };
+  return polishComprehensiveSource({ candidate: c, placement, source, intent, scene, provenance: [...placement.provenanceEvidenceIds], diagnostics }, i, sectionId);
 }

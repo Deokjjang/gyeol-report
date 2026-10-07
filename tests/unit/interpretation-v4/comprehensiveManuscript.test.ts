@@ -59,13 +59,21 @@ describe("actual twelve-person manuscripts", () => {
       const s = d.sections[id];
       if (s.blocks.length) expect(s.title.length).toBeGreaterThan(0);
       for (const b of s.blocks) {
+        if(id==="C10") { expect(s.operatingRules?.some(r=>b.sourceUnitIds.includes(r.candidateId))).toBe(true);continue; }
         const placement = plan.sections[id].placements.find(p => b.sourceUnitIds.includes(p.candidateId))!;
         const c = plan.candidates.find(c => c.id === placement.candidateId)!;
-        if (c.fusionType && placement.presentationIntent === "EXPLICIT") {
+        if (c.fusionType && placement.presentationIntent === "EXPLICIT" && !(d.debug.sources[`${id}:${c.id}`] as {diagnostics?:string[]})?.diagnostics?.includes("MBTI_VISIBLE_DOMAIN_SUPPRESSED")) {
           expect(b.sentenceRoles).toContain("MYEONGLI_REASON"); expect(b.sentenceRoles).toContain("MBTI_REASON");
         }
       }
     }
     expect(new Set(d.titleUsage.map(t => t.text)).size).toBe(d.titleUsage.length);
+    const last = d.sections.C10.blocks.at(-1);
+    if (last && d.debug.coreRecall.length) {
+      expect(last.sentences.length).toBeGreaterThanOrEqual(2);
+      expect(last.sentences.length).toBeLessThanOrEqual(3);
+      expect(last.sentences[0].sourcePhraseId).toMatch(/:core-recall$/);
+      expect(last.sentences.some(s => s.role === "ACTION")).toBe(true);
+    }
   }, 60000);
 });

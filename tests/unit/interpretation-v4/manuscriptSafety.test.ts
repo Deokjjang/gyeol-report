@@ -138,6 +138,7 @@ describe("manuscript boundary and section contracts", () => {
   }, 60000);
   it("new draft layer has no existing customer, Book, provider, or calculation consumer", () => {
     const names = ["narrativeSceneCore", "narrativeScenePersonal", "narrativeSceneSocial", "narrativeSceneWork", "narrativeSceneRegistry", "narrativeTitleCore", "narrativeTitleRegistry", "comprehensiveNarrativeAdapter", "comprehensiveManuscriptCore", "comprehensiveSectionRenderer", "comprehensiveBridgeRenderer", "comprehensiveManuscriptRenderer", "comprehensiveManuscriptValidator"];
+    names.push("narrativeHumanOutcome", "narrativeMbtiReason", "narrativeMeaningSignature", "narrativePositiveReward", "narrativeTitleShort", "comprehensiveManuscriptPolish", "operatingRuleCore", "operatingRuleRegistry", "operatingRuleBuilder", "operatingRuleRenderer", "manuscriptQualityAudit");
     const walk = (dir: string): string[] => readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []);
     for (const file of walk("src")) {
       const text = readFileSync(file, "utf8");

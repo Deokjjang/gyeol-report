@@ -4,6 +4,7 @@ import type { NarrativeRequest, NarrativeRenderResult } from "./narrativeCore";
 import { adaptComprehensiveSource } from "./comprehensiveNarrativeAdapter";
 import { renderNarrativeBlock } from "./narrativeBlockRenderer";
 import { chooseNarrativeTitle } from "./narrativeTitleCore";
+import { meaningSignature, repeatedMeaning, recoveryRelevant } from "./narrativeMeaningSignature";
 
 export function renderComprehensiveSection(input: ManuscriptInput, id: ComprehensiveSectionId, memory: ManuscriptMemory,
   diagnostics: ComprehensiveManuscriptDraft["diagnostics"], debug: ComprehensiveManuscriptDraft["debug"]) {
@@ -16,7 +17,7 @@ export function renderComprehensiveSection(input: ManuscriptInput, id: Comprehen
   // Only move the scheduler's selected closing operating principle to the end.
   // No new advice or fallback to the unselected candidate pool.
   const closing = input.plan.finalCoreRecallIntent.operatingPrincipleGuidanceId;
-  const placements = id === "C10" ? [...plan.placements].sort((a, b) =>
+  const placements = id === "C9" ? [...plan.placements].sort((a,b)=>Number(recoveryRelevant(input.plan.candidates.find(c=>c.id===b.candidateId)!))-Number(recoveryRelevant(input.plan.candidates.find(c=>c.id===a.candidateId)!))) : id === "C10" ? [...plan.placements].sort((a, b) =>
     Number(input.plan.candidates.find(c => c.id === a.candidateId)?.sourceId === closing)
     - Number(input.plan.candidates.find(c => c.id === b.candidateId)?.sourceId === closing)) : plan.placements;
   for (const placement of placements) {
@@ -24,6 +25,19 @@ export function renderComprehensiveSection(input: ManuscriptInput, id: Comprehen
     if (!adapted) { section.validation.hardViolations.push({ code: "INVALID_PLACED_SOURCE", refs: [placement.candidateId] }); continue; }
     debug.sources[`${id}:${placement.candidateId}`] = adapted;
     const c = adapted.candidate;
+    const openingCore=id==="C1"?input.plan.candidates.find(x=>x.sourceType==="CORE_GYEOL" && section.sourceCandidateIds.includes(x.id)):undefined;
+    if(openingCore && c.sourceType==="PERSONAL_RESONANCE" && openingCore.resonanceIds.includes(c.sourceId)
+      && c.broadTheme===openingCore.broadTheme && c.primaryAxes.every(a=>openingCore.primaryAxes.includes(a))) {
+      diagnostics.suppressed.push({sectionId:id,candidateId:c.id,reasons:["CORE_IDENTITY_ALREADY_INTRODUCED",openingCore.id]});continue;
+    }
+    const meaning=meaningSignature(c,id,placement), duplicate=repeatedMeaning(meaning,next.meanings??[]);
+    const preserveQuestion=id==="C8" && (placement.context==="money" || !section.blocks.length);
+    if(duplicate && !preserveQuestion && c.sourceType!=="CORE_GYEOL" && !c.fortune && id!=="C3") {
+      diagnostics.suppressed.push({sectionId:id,candidateId:c.id,reasons:["SEMANTIC_SAME_ROLE",duplicate.candidateId]});continue;
+    }
+    if(id==="C9" && !recoveryRelevant(c) && placements.some(p=>recoveryRelevant(input.plan.candidates.find(c=>c.id===p.candidateId)!))) {
+      diagnostics.suppressed.push({sectionId:id,candidateId:c.id,reasons:["RECOVERY_PRIORITY_NOT_GROWTH"]});continue;
+    }
     if (c.sourceType === "GUIDANCE" && id !== "C10" && !placement.preferredAdvice) {
       diagnostics.suppressed.push({ sectionId: id, candidateId: c.id, reasons: ["GUIDANCE_RESERVED_FOR_MANUAL"] }); continue;
     }
@@ -37,10 +51,13 @@ export function renderComprehensiveSection(input: ManuscriptInput, id: Comprehen
     const continuations = adapted.intent === "GUIDANCE" ? ["P17"] : adapted.intent === "FORTUNE" ? ["P18"] : adapted.intent === "FACT_BOMB" ? ["P20"]
       : adapted.intent === "HUMAN" ? ["P19", "P24"] : adapted.intent === "COMPLEMENT" ? ["P22", "P25"] : adapted.intent === "REINFORCE" ? ["P23"] : adapted.intent === "TENSION" ? ["P26"] : [];
     for (const patternId of continuations) attempts.push(renderNarrativeBlock({ ...request, patternId }, next.language));
-    const min = id === "C6" || id === "C10" || c.sourceType === "GUIDANCE" ? 1 : 2;
+    const rewardDepth = ["C4", "C5"].includes(id) && !adapted.source.fusionType
+      && ["MYEONGLI_REASON", "CLOSER"].every(role=>adapted.source.phrases.some(p=>p.role===role));
+    const min = id === "C6" || id === "C10" || c.sourceType === "GUIDANCE" ? 1 : rewardDepth ? 3 : 2;
     const complete = (r: NarrativeRenderResult) => r.ok && r.block.sentences.length >= min
       && (!coreOpening || r.block.sentences[0]?.role === "DIRECT_CLAIM")
-      && (!(c.fusionType && placement.presentationIntent === "EXPLICIT")
+      && (!rewardDepth || ["MYEONGLI_REASON", "CLOSER"].every(role=>r.block.sentenceRoles.some(r=>r===role)))
+      && (!(adapted.source.fusionType && placement.presentationIntent === "EXPLICIT")
         || ["MYEONGLI_REASON", "MBTI_REASON"].every(role => r.block.sentenceRoles.some(r => r === role)));
     let result = attempts.find(complete);
     // Bounded surface/order search, never a change of evidence or sentence meaning.
@@ -58,11 +75,12 @@ export function renderComprehensiveSection(input: ManuscriptInput, id: Comprehen
       continue;
     }
     next.language = result.nextMemory;
+    next.meanings=[...(next.meanings??[]),meaning];
     section.blocks.push(result.block); section.sourceCandidateIds.push(c.id);
     section.evidenceIds.push(...result.block.sentences.flatMap(s => s.evidenceIds)); section.semanticThemes.push(c.broadTheme);
     section.terminologyUsed.push(...result.block.terminologyUsed);
     section.validation.warnings.push(...result.block.validation.warnings);
-    if (!section.title && (placement.role === "PRIMARY" || !plan.primaryCandidateIds.length || id === "C10" && c.sourceType === "GUIDANCE")) {
+    if (!section.title && (placement.role === "PRIMARY" || !plan.primaryCandidateIds.length || id === "C9" || id === "C10" && c.sourceType === "GUIDANCE")) {
       const title = chooseNarrativeTitle(c, id, next.usedTitles, input.reportStableKey);
       section.title = title.text; next.usedTitles.push(title);
     }
