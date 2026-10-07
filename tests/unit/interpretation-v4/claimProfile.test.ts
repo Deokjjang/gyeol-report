@@ -140,7 +140,7 @@ describe("real source coverage and runtime separation", () => {
     const resonanceBoundary = ["personalResonanceCore", "personalResonanceRules", "personalResonanceEvidence", "personalResonanceEvaluator", "traitArc", "personalResonanceDiagnostics", "personalResonanceProfile", "guidanceCore", "guidanceEvidence", "guidanceProfile", "comprehensiveCandidateAdapter"];
     function walk(dir: string): string[] { return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []); }
     for (const file of walk("src")) {
-      if (file === `${directory}/comprehensiveProductAdapter.ts`) continue;
+      if (["comprehensiveProductAdapter", "careerProductAdapter"].some(n => file === `${directory}/${n}.ts`)) continue;
       const text = readFileSync(file, "utf8");
       if (names.some(name => file === `${directory}/${name}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|Composer|bookProjection|runtimeShadow|supabase|openai|C[1-9]-C10|LifeStatus/);
       else if (!resonanceBoundary.some(name => file === `${directory}/${name}.ts`)) for (const name of names) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));

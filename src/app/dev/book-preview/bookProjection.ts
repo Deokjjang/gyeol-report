@@ -13,6 +13,7 @@ import { godEffects } from "../../../lib/interpretation-v4/compatibilityInteract
 import { composeBookNavigation } from "./bookNavigation";
 import { comprehensiveBookContents, COMPREHENSIVE_PLAIN_MEANINGS, COMPREHENSIVE_STAGE_MEANINGS } from "./comprehensiveBook";
 import { comprehensiveRuleHeadings, comprehensiveProductContents } from "../../../lib/book/comprehensiveBookAdapter";
+import { careerRuleHeadings } from "../../../lib/book/careerBookAdapter";
 import { describeReportShare } from "../../../lib/sharing/reportShareMetadata";
 import type { NarrativeBlock, MaterialPacket } from "../../../lib/interpretation-v4/narrativeTypes";
 import type { GenerationPersonInput } from "../../../lib/report-generation/reportInputAdapter";
@@ -206,8 +207,9 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
   pages.push({ kind: "back", title: "이 책 공유하기", finalLine: view.finalLine });
   const share = describeReportShare({ productSlug: e.input.productSlug, draft: view });
   const integration = c.product === "saju_mbti_full" && "integration" in c.result ? c.result.integration : null;
+  const career = c.product === "career_money_study" && "integration" in c.result ? c.result.integration : null;
   // The closing manual's own title must not replace its first rule subtitle
   // when the preceding chapter happens to be short. Legacy books are unchanged.
-  const navigation = composeBookNavigation(integration ? comprehensiveRuleHeadings(pages, integration.represented) : pages, integration ? ["chapter-direction"] : []);
+  const navigation = composeBookNavigation(integration ? comprehensiveRuleHeadings(pages, integration.represented) : career ? careerRuleHeadings(pages, career.ruleHeadings) : pages, integration || career ? ["chapter-direction"] : []);
   return { bookId, title, names, people, context, pages: integration ? comprehensiveProductContents(navigation) : c.product === "saju_mbti_full" ? comprehensiveBookContents(navigation) : navigation, readingDate: e.generatedAt.slice(0, 10), share: { title: `${names} · ${title}`, description: share.description } };
 }

@@ -12,6 +12,7 @@ import type { ComprehensiveNarrative, NarrativeSection } from "./narrativeTypes"
 import type { composeComprehensiveNarrative } from "./comprehensiveComposer";
 import type { ComprehensiveProduct } from "./comprehensiveProductAdapter";
 import type { composeCareerNarrative } from "./careerComposer";
+import type { CareerProduct } from "./careerProductAdapter";
 import type { composeLoveNarrative } from "./loveComposer";
 import type { composeCompatibilityNarrative } from "./compatibilityComposer";
 import type { composeMajorFortuneNarrative } from "./majorComposer";
@@ -22,7 +23,7 @@ import type { V4CustomerReport, V4CustomerSection, V4CustomerTables, V4ShadowVie
 type Success<T> = Extract<Awaited<T>, { ok: true }>;
 export type V4Composition =
   | { product: "saju_mbti_full"; result: Success<ReturnType<typeof composeComprehensiveNarrative>> | ComprehensiveProduct }
-  | { product: "career_money_study"; result: Success<ReturnType<typeof composeCareerNarrative>> }
+  | { product: "career_money_study"; result: Success<ReturnType<typeof composeCareerNarrative>> | CareerProduct }
   | { product: "love_marriage_child"; result: Success<ReturnType<typeof composeLoveNarrative>> }
   | { product: "saju_mbti_compatibility"; result: Success<ReturnType<typeof composeCompatibilityNarrative>> }
   | { product: "major_fortune"; result: Success<ReturnType<typeof composeMajorFortuneNarrative>> }

@@ -35,7 +35,9 @@ describe("actual V4 packet → book pages; no new calculation or prose", () => {
     const view = projectV4Composition(evidence.composition);
     const chapters = data.pages.filter(p => p.kind === "narrative");
     const ruleHeadings = evidence.composition.product === "saju_mbti_full" && "integration" in evidence.composition.result
-      ? evidence.composition.result.integration.represented.flatMap(u => u.headings).filter(Boolean) : [];
+      ? evidence.composition.result.integration.represented.flatMap(u => u.headings).filter(Boolean)
+      : evidence.composition.product === "career_money_study" && "integration" in evidence.composition.result
+        ? evidence.composition.result.integration.ruleHeadings : [];
     const headings = chapters.flatMap(p => [p.title, ...p.paragraphs.flatMap(b => b.heading ? [b.heading] : [])]);
     const expectedHeadings = [view.headline, ...view.sections.map(s => s.title)];
     let nextHeading = 0;

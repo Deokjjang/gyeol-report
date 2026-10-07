@@ -16,7 +16,7 @@ import { runPaidReportJob, type ProductGenerator } from "../payment/paidReportRe
 import type { ReliabilityStore } from "../payment/paidReportReliabilityStore";
 import { getAnnualPurchasePolicyDate } from "../payment/annualPurchasePolicy";
 import { buildV4ComprehensiveProduct } from "./comprehensiveProductAdapter";
-import { composeCareerNarrative } from "./careerComposer";
+import { buildV4CareerProduct } from "./careerProductAdapter";
 import { composeLoveNarrative } from "./loveComposer";
 import { composeCompatibilityNarrative } from "./compatibilityComposer";
 import { composeMajorFortuneNarrative } from "./majorComposer";
@@ -70,7 +70,7 @@ export async function generateV4ShadowReport(payload: unknown, clock: V4ShadowCl
         if (!result.ok) return failure(result.errors.join(";"));
         composition = { product: "saju_mbti_full", result };
       } else if (input.kind === "careerMoneyStudy") {
-        const result = composeCareerNarrative(narrativeInput);
+        const result = buildV4CareerProduct(narrativeInput);
         if (!result.ok) return failure("V4_CAREER_GENERATION_FAILED");
         composition = { product: "career_money_study", result };
       } else {
