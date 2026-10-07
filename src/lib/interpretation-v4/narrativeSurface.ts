@@ -16,10 +16,11 @@ export function permittedSurfaces(request: NarrativeRequest, phrase: NarrativePh
   const text = phraseFragments(phrase)[fragment]; if (!text) return [];
   const direct = preservePhraseDirectness(phrase);
   const easy = direct || phrase.role === "ACTION" || phrase.termDefinitionKey ? text : realizeEasyNounSlots(text, request.context);
-  const surfaces = narrativeSurfaces({ ...phrase, text: easy }, direct);
+  const surfaces = narrativeSurfaces({ ...phrase, text: easy }, direct, request.engineVersion === "comprehensive-manuscript-13d-5b-v1");
   // Only an already established reinforcement can have a rhetorical two-source summary.
   // Complement/Tension never replace their third human interpretation with this summary.
   if (request.source.fusionType === "REINFORCE" && phrase.role === "FUSION" && fragment === 0
+    && request.engineVersion !== "comprehensive-manuscript-13d-5b-v1"
     && phraseFragments(phrase).length === 1 && request.presentationIntent === "EXPLICIT"
     && phrase.refs.evidenceIds.length && phrase.refs.mbtiSourceNodeIds.length
     && request.source.phrases.some(p => p.origin === "MBTI_ACTUAL" && p.refs.mbtiSourceNodeIds.length)) {

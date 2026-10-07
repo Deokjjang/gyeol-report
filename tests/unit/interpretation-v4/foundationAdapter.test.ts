@@ -95,7 +95,7 @@ describe("Phase13D-1A stays off all six product paths", () => {
       "foundationIntegratedProfile.ts", "foundationRanking.ts", "foundationTension.ts", "foundationDiagnostics.ts"]);
     // 13D-2A shares only the 36-axis vocabulary. It may not consume actual
     // Myeongli foundation evidence/profiles, and foundation remains MBTI-free.
-    const mbtiAxisOnly = new Set(["mbtiSemanticCore.ts", "mbtiDimensionPriors.ts", "mbtiSemanticAnnotations.ts", "mbtiSemanticProfile.ts", "narrativeCore.ts", "narrativeVocabulary.ts"]);
+    const mbtiAxisOnly = new Set(["mbtiSemanticCore.ts", "mbtiDimensionPriors.ts", "mbtiSemanticAnnotations.ts", "mbtiSemanticProfile.ts", "narrativeCore.ts", "narrativeVocabulary.ts", "narrativeSceneCore.ts"]);
     const fusionBoundary = new Set(["fusionCore.ts", "fusionContext.ts", "fusionMeanings.ts", "fusionComplementRegistry.ts", "fusionProfileAdapter.ts", "fusionTension.ts", "fusionRanking.ts", "fusionDiagnostics.ts", "fusionSemanticProfile.ts"]);
     const claimBoundary = new Set(["claimCore.ts", "claimEvidence.ts", "claimEvaluator.ts", "claimDiagnostics.ts", "claimProfile.ts"]);
     const resonanceBoundary = new Set(["personalResonanceCore.ts", "personalResonanceRules.ts", "personalResonanceEvidence.ts", "personalResonanceDiagnostics.ts", "personalResonanceProfile.ts", "guidanceCore.ts", "guidanceProblems.ts", "guidanceEvidence.ts", "comprehensivePlanCore.ts", "comprehensiveCandidateAdapter.ts", "comprehensiveSectionContracts.ts", "comprehensiveConflictGraph.ts"]);
@@ -109,7 +109,7 @@ describe("Phase13D-1A stays off all six product paths", () => {
       if (mbtiAxisOnly.has(name)) {
         expect(file).toBe(`src/lib/interpretation-v4/${name}`);
         expect(readFileSync(file, "utf8")).not.toMatch(/from ["'][^"']*\/foundation[^"']*["']/);
-      } else if (name === "narrativeTerminology.ts") {
+      } else if (["narrativeTerminology.ts", "comprehensiveNarrativeAdapter.ts"].includes(name)) {
         expect(file).toBe(`src/lib/interpretation-v4/${name}`);
         expect(readFileSync(file, "utf8")).not.toMatch(/from ["'][^"']*\/(?:foundationProfile|foundationIntegratedProfile|calculateSaju)["']/);
       } else if (fusionBoundary.has(name) || claimBoundary.has(name) || resonanceBoundary.has(name)) expect(file).toBe(`src/lib/interpretation-v4/${name}`);

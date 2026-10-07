@@ -13,13 +13,14 @@ const endings = [
   ["됩니다.", "돼요.", "되죠."], ["싶어 합니다.", "싶어 해요.", "싶어 하죠."],
   ["움직입니다.", "움직여요.", "움직이죠."], ["보입니다.", "보여요.", "보이죠."],
 ] as const;
+const manuscriptEndings = [["않습니다.", "않아요.", "않죠."], ["좋습니다.", "좋아요.", "좋죠."]] as const;
 export type NarrativeSurface = { id: string; text: string; ending: EndingStyle };
 /** Small, closed suffix whitelist. Never removes modality, negation or changes claim content. */
-export function narrativeSurfaces(phrase: NarrativePhrase, preserveDirect = false): NarrativeSurface[] {
+export function narrativeSurfaces(phrase: NarrativePhrase, preserveDirect = false, allowActionEndings = false): NarrativeSurface[] {
   const text = normalizeNarrativeText(phrase.text);
   const ending = preserveDirect ? "DIRECT" : phrase.endingStyle ?? detectEnding(text);
   const result: NarrativeSurface[] = [{ id: "SOURCE", text, ending }];
-  if (preserveDirect || phrase.role === "ACTION" || ending === "QUESTION") return result;
+  if (preserveDirect || phrase.role === "ACTION" && !allowActionEndings || ending === "QUESTION") return result;
   // 입니다 is also the final substring of verbs like 움직입니다/보입니다.
   // Only reviewed noun predicates may use the copula transform.
   if (/(?:편|사람|기회|뜻|것|패|성향|기운|장점|때문|부분|모습|이유)입니다\.$/.test(text)) {
@@ -29,7 +30,7 @@ export function narrativeSurfaces(phrase: NarrativePhrase, preserveDirect = fals
       result.push({ id: "OBSERVATION", text: `${root}${(code - 0xac00) % 28 ? "이죠." : "죠."}`, ending: "OBSERVATION_JYO" });
     }
   } else {
-    const row = [...endings].sort((a, b) => b[0].length - a[0].length).find(([formal]) => text.endsWith(formal));
+    const row = [...endings, ...(allowActionEndings ? manuscriptEndings : [])].sort((a, b) => b[0].length - a[0].length).find(([formal]) => text.endsWith(formal));
     if (row) {
       const root = text.slice(0, -row[0].length);
       result.push({ id: "SOFT", text: root + row[1], ending: "SOFT_YO" }, { id: "OBSERVATION", text: root + row[2], ending: "OBSERVATION_JYO" });

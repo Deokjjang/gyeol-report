@@ -26,6 +26,8 @@ function selectSentences(request: NarrativeRequest, memory: NarrativeMemory, ord
   for (const role of order) {
     const options = stableVariants(phrases.filter(p => p.role === role), narrativeSeed(request, role));
     for (const phrase of options) {
+      if (request.engineVersion === "comprehensive-manuscript-13d-5b-v1" && result.some(s =>
+        normalizeNarrativeText(request.source.phrases.find(p => p.id === s.sourcePhraseId)?.text ?? "") === normalizeNarrativeText(phrase.text))) continue;
       const draft: NarrativeSentenceDraft[] = []; const localEndings = [...endings];
       let localExplicit = explicit, localQuestions = questions, localSectionQuestions = sectionQuestions;
       const fragments = phraseFragments(phrase);
