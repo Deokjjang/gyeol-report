@@ -137,7 +137,7 @@ describe("real source coverage and runtime separation", () => {
   });
   it("new modules have no customer, calculation, provider, side-effect or scheduler consumer", () => {
     const directory = "src/lib/interpretation-v4", names = ["claimCore", "claimEvidence", "claimEvaluator", "claimDiagnostics", "claimProfile", "claimRegistry", "claimRegistryMoney", "claimRegistryStatus", "claimRegistrySuccess", "claimRegistrySocial", "claimRegistryFactBomb"];
-    const resonanceBoundary = ["personalResonanceCore", "personalResonanceRules", "personalResonanceEvidence", "personalResonanceEvaluator", "traitArc", "personalResonanceDiagnostics", "personalResonanceProfile"];
+    const resonanceBoundary = ["personalResonanceCore", "personalResonanceRules", "personalResonanceEvidence", "personalResonanceEvaluator", "traitArc", "personalResonanceDiagnostics", "personalResonanceProfile", "guidanceCore", "guidanceEvidence", "guidanceProfile"];
     function walk(dir: string): string[] { return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []); }
     for (const file of walk("src")) {
       const text = readFileSync(file, "utf8");
