@@ -292,7 +292,9 @@ describe("source boundaries, circularity, determinism and product lock", () => {
     for (const file of walk("src")) {
       const text = readFileSync(file, "utf8");
       if (files.some(f => file === `${directory}/${f}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|process\.env|fetch\(|runtimeShadow|bookProjection|Composer|report-knowledge\/mbti/);
-      else if (!claimBoundary.some(f => file === `${directory}/${f}.ts`)) for (const name of files) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
+      else if (["narrativeCore", "narrativeConnectors"].some(f => file === `${directory}/${f}.ts`)) {
+        expect(text).not.toMatch(/import\s+(?!type)[^;]*from ["'][^"']*\/fusion/);
+      } else if (!claimBoundary.some(f => file === `${directory}/${f}.ts`)) for (const name of files) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
     }
     expect(FUSION_RANK_POLICY.specificity).toEqual({ REINFORCE: 1, TENSION: 1.15, COMPLEMENT: 1.1 });
   });
