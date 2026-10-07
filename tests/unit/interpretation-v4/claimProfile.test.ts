@@ -137,11 +137,12 @@ describe("real source coverage and runtime separation", () => {
   });
   it("new modules have no customer, calculation, provider, side-effect or scheduler consumer", () => {
     const directory = "src/lib/interpretation-v4", names = ["claimCore", "claimEvidence", "claimEvaluator", "claimDiagnostics", "claimProfile", "claimRegistry", "claimRegistryMoney", "claimRegistryStatus", "claimRegistrySuccess", "claimRegistrySocial", "claimRegistryFactBomb"];
+    const resonanceBoundary = ["personalResonanceCore", "personalResonanceRules", "personalResonanceEvidence", "personalResonanceEvaluator", "traitArc", "personalResonanceDiagnostics", "personalResonanceProfile"];
     function walk(dir: string): string[] { return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []); }
     for (const file of walk("src")) {
       const text = readFileSync(file, "utf8");
       if (names.some(name => file === `${directory}/${name}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|Composer|bookProjection|runtimeShadow|supabase|openai|C[1-9]-C10|LifeStatus/);
-      else for (const name of names) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
+      else if (!resonanceBoundary.some(name => file === `${directory}/${name}.ts`)) for (const name of names) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
     }
   });
 });

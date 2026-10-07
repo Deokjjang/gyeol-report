@@ -253,7 +253,7 @@ describe("adversarial annotation validation", () => {
     function files(dir: string): string[] {
       return readdirSync(dir, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? files(join(dir, entry.name)) : /\.tsx?$/.test(entry.name) ? [join(dir, entry.name)] : []);
     }
-    const fusionBoundary = ["fusionCore.ts", "fusionProfileAdapter.ts", "fusionDiagnostics.ts", "fusionSemanticProfile.ts", "claimEvidence.ts", "claimDiagnostics.ts", "claimProfile.ts"];
+    const fusionBoundary = ["fusionCore.ts", "fusionProfileAdapter.ts", "fusionDiagnostics.ts", "fusionSemanticProfile.ts", "claimEvidence.ts", "claimDiagnostics.ts", "claimProfile.ts", "personalResonanceEvidence.ts", "personalResonanceProfile.ts"];
     for (const file of files("src").filter(f => ![...own, ...fusionBoundary].some(name => f === `${directory}/${name}`))) {
       const text = readFileSync(file, "utf8");
       for (const name of names) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
