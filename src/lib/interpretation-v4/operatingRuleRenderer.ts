@@ -3,6 +3,7 @@ import { GYEOL_COMPREHENSIVE_MANUSCRIPT_VERSION } from "./comprehensiveManuscrip
 import { buildOperatingRules } from "./operatingRuleBuilder";
 import { renderNarrativeBlock } from "./narrativeBlockRenderer";
 import type { NarrativeSourceUnit } from "./narrativeCore";
+import { coreRecallSurface } from "./narrativeHumanSurface";
 
 export function renderOperatingManual(input:ManuscriptInput,draft:ComprehensiveManuscriptDraft){
   const {eligible,selected}=buildOperatingRules(input,draft);
@@ -14,8 +15,9 @@ export function renderOperatingManual(input:ManuscriptInput,draft:ComprehensiveM
   for(const rule of ordered){
     const refs={evidenceIds:rule.evidenceIds,claimIds:rule.sourceClaimIds,fusionIds:rule.sourceFusionIds,resonanceIds:rule.sourceResonanceIds,guidanceIds:rule.sourceGuidanceIds.length?rule.sourceGuidanceIds:[rule.id],mbtiSourceNodeIds:rule.mbtiSourceNodeIds};
     const source:NarrativeSourceUnit={id:rule.id,sourceType:"GUIDANCE",semanticTheme:rule.semanticTheme,primaryAxes:[],contexts:["identity"],confidence:rule.confidence,directnessLevel:2,metadata:{problemAlreadyExplained:true},phrases:[{id:`${rule.id}:action`,role:"ACTION",text:rule.ruleText,semanticTheme:rule.semanticTheme,primaryAxes:[],contexts:["identity"],refs,directnessLevel:2,origin:"GUIDANCE"}]};
-    if(rule.id===closingRule?.id && core && /사람입니다[.]$/.test(core.sourceText)) {
-      source.phrases=[...source.phrases,{id:`${rule.id}:core-recall`,role:"DIRECT_CLAIM",text:core.sourceText.replace(/사람입니다[.]$/,"사람이라는 점을 잊지 않는 게 중요합니다."),
+    const recall=core&&coreRecallSurface(core);
+    if(rule.id===closingRule?.id && core && recall) {
+      source.phrases=[...source.phrases,{id:`${rule.id}:core-recall`,role:"DIRECT_CLAIM",text:recall,
         semanticTheme:rule.semanticTheme,primaryAxes:[],contexts:["identity"],directnessLevel:2,origin:"SYNTHESIS",
         refs:{evidenceIds:core.myeongliEvidenceIds,claimIds:core.claimIds,fusionIds:core.fusionIds,resonanceIds:core.resonanceIds,guidanceIds:[],mbtiSourceNodeIds:core.mbtiSourceNodeIds}}];
     }

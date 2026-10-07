@@ -4,9 +4,10 @@ import type { SceneUse } from "./narrativeSceneCore";
 import type { TitleUse } from "./narrativeTitleCore";
 import type { MeaningSignature } from "./narrativeMeaningSignature";
 import type { OperatingRuleCandidate } from "./operatingRuleCore";
+import type { NarrativeRhythmSignature } from "./narrativeRhythm";
 export const GYEOL_COMPREHENSIVE_MANUSCRIPT_VERSION = "comprehensive-manuscript-13d-5b-v1";
 export type ManuscriptInput = { reportStableKey: string; plan: ComprehensiveEditorialPlan; profiles: ComprehensivePlanInputs };
-export type ManuscriptMemory = { language: NarrativeMemory; usedScenes: SceneUse[]; usedTitles: TitleUse[]; meanings?: MeaningSignature[] };
+export type ManuscriptMemory = { language: NarrativeMemory; usedScenes: SceneUse[]; usedTitles: TitleUse[]; meanings?: MeaningSignature[]; rhythms?: NarrativeRhythmSignature[] };
 export type RenderedComprehensiveSection = {
   sectionId: ComprehensiveSectionId; sectionKind: SectionKind; title: string; blocks: NarrativeBlockDraft[];
   bridgeIn?: NarrativeSentenceDraft; plainText: string; sourceCandidateIds: string[]; evidenceIds: string[];

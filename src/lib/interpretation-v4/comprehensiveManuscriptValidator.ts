@@ -7,6 +7,7 @@ import { chooseNarrativeScene } from "./narrativeSceneCore";
 import { selectedProofAxes } from "./comprehensiveNarrativeAdapter";
 import { buildOperatingRules } from "./operatingRuleBuilder";
 import { shortTitleChoices } from "./narrativeTitleShort";
+import { statusVocabulary } from "./narrativeHumanFirst";
 export function validateComprehensiveManuscript(input: ManuscriptInput, draft: ComprehensiveManuscriptDraft): ManuscriptValidation {
   const hardViolations: NarrativeIssue[] = [], warnings: NarrativeIssue[] = [];
   const hard = (code: string, refs: string[] = []) => hardViolations.push({ code, refs });
@@ -38,7 +39,7 @@ export function validateComprehensiveManuscript(input: ManuscriptInput, draft: C
     if (!eligibleAnchor || !c || title.sourceText !== c.sourceText || !draft.sections[title.sectionId].blocks[0]?.sourceUnitIds.includes(title.candidateId)) hard("TITLE_SOURCE_VIOLATION", [title.candidateId]);
     const spec = TITLE_SKELETONS.find(s => s.id === title.skeletonId);
     if (spec && (!spec.required.every(w => title.sourceText.includes(w)) || (c?.claimLevel ?? 2) < spec.minLevel)) hard("TITLE_UNGROUNDED", [title.skeletonId]);
-    if(title.skeletonId==="APPROVED_SHORT" && (!c||!shortTitleChoices(c).includes(title.text))) hard("TITLE_UNGROUNDED",[title.skeletonId]);
+    if(title.skeletonId==="APPROVED_SHORT" && (!c||!shortTitleChoices(c).map(t=>statusVocabulary(t,input.profiles.guidance.context.lifeStatus)).includes(title.text))) hard("TITLE_UNGROUNDED",[title.skeletonId]);
     if (title.text.length > 50) warn("LONG_SOURCE_TITLE", [title.sectionId]);
   }
   for (let n = 2; n < draft.titleUsage.length; n++) if (draft.titleUsage.slice(n - 2, n + 1).every(t => t.type === draft.titleUsage[n].type)) hard("TITLE_TYPE_REPEAT", [draft.titleUsage[n].sectionId]);

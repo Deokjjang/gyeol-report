@@ -27,7 +27,7 @@ export function narrativeSurfaces(phrase: NarrativePhrase, preserveDirect = fals
   if (preserveDirect || phrase.role === "ACTION" && !allowActionEndings || ending === "QUESTION") return result;
   // 입니다 is also the final substring of verbs like 움직입니다/보입니다.
   // Only reviewed noun predicates may use the copula transform.
-  if (/(?:편|사람|기회|뜻|것|패|성향|기운|장점|때문|부분|모습|이유)입니다\.$/.test(text)) {
+  if (/(?:편|사람|기회|뜻|것|패|성향|기운|장점|때문|부분|모습|이유)입니다\.$/.test(text) || allowActionEndings && /쪽입니다\.$/.test(text)) {
     const root = text.slice(0, -4); const code = root.charCodeAt(root.length - 1);
     if (code >= 0xac00 && code <= 0xd7a3) {
       result.push({ id: "SOFT", text: `${root}${(code - 0xac00) % 28 ? "이에요." : "예요."}`, ending: "SOFT_YO" });

@@ -254,7 +254,7 @@ describe("narrative output is not accepted merely because it has source IDs", ()
     for (const file of walk("src")) {
       const text = readFileSync(file, "utf8");
       if (names.some(n => file === `src/lib/interpretation-v4/${n}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|runtimeShadow|bookProjection|from ["'][^"']*(?:Composer|supabase|openai|toss|guidanceProfile|claimProfile|fusionSemanticProfile)/);
-      else if (!["narrativeSceneCore", "narrativeTitleCore", "comprehensiveNarrativeAdapter", "comprehensiveManuscriptCore", "comprehensiveSectionRenderer", "comprehensiveBridgeRenderer", "comprehensiveManuscriptValidator", "comprehensiveManuscriptRenderer", "comprehensiveManuscriptPolish", "narrativeMbtiReason", "operatingRuleRenderer", "manuscriptQualityAudit"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) for (const name of names) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
+      else if (!["narrativeSceneCore", "narrativeTitleCore", "comprehensiveNarrativeAdapter", "comprehensiveManuscriptCore", "comprehensiveSectionRenderer", "comprehensiveBridgeRenderer", "comprehensiveManuscriptValidator", "comprehensiveManuscriptRenderer", "comprehensiveManuscriptPolish", "narrativeMbtiReason", "operatingRuleRenderer", "manuscriptQualityAudit", "narrativeHumanFirst", "narrativeRhythm", "manuscriptHumanAudit"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) for (const name of names) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
     }
   });
 });

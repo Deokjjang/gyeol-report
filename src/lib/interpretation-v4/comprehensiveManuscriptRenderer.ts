@@ -8,6 +8,7 @@ import { renderComprehensiveBridge } from "./comprehensiveBridgeRenderer";
 import { renderOperatingManual } from "./operatingRuleRenderer";
 import { GYEOL_MANUSCRIPT_POLISH_VERSION } from "./comprehensiveManuscriptPolish";
 import { auditManuscriptQuality } from "./manuscriptQualityAudit";
+import { auditHumanManuscript } from "./manuscriptHumanAudit";
 
 /** Standalone draft boundary. No packet, product writer, filesystem or UI dependency. */
 export function renderComprehensiveManuscript(input: ManuscriptInput) {
@@ -54,5 +55,6 @@ export function renderComprehensiveManuscript(input: ManuscriptInput) {
   draft.fullText = COMPREHENSIVE_SECTIONS.map(id => `${draft.sections[id].title}\n\n${draft.sections[id].plainText}`).join("\n\n");
   draft.validation = validateComprehensiveManuscript(input, draft);
   draft.debug.quality = auditManuscriptQuality(draft);
+  draft.debug.quality.humanFirst = auditHumanManuscript(draft,input);
   return { ok: true as const, draft };
 }

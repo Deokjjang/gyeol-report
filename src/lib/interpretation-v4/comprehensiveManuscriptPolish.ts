@@ -4,8 +4,12 @@ import type { NarrativePhrase } from "./narrativeCore";
 import { humanOutcome, strongestHumanAxis, HUMAN_VALUE, REINFORCE_OUTCOMES } from "./narrativeHumanOutcome";
 import { fortuneReason, fortuneSupportReason, planFortuneReasons, positiveReward } from "./narrativePositiveReward";
 import type { SemanticSignature, SemanticAxis } from "./semanticCore";
+import { statusVocabulary, workBlockIntent } from "./narrativeHumanFirst";
+import { causalAxes, reasonLink } from "./narrativeCausality";
+import { directHumanSurface, fusionHumanSurface, WORK_APPLICATION, RELATION_APPLICATION, AXIS_HUMAN_REASON } from "./narrativeHumanSurface";
+import { termDefinitionText } from "./narrativeTerminology";
 
-export const GYEOL_MANUSCRIPT_POLISH_VERSION = "comprehensive-quality-13d-6a-v1";
+export const GYEOL_MANUSCRIPT_POLISH_VERSION = "comprehensive-quality-13d-6a2-v1";
 export const META_LANGUAGE = /보조합니다|보조하는|보태는 신호|힘을 보탭니다|강점이 있습니다|장점이 있습니다|근거가 있습니다/;
 /** Suffix-only, role-scoped realization. Never replaces predicates throughout an arbitrary paragraph. */
 export function humanizeSourceClause(text:string) {
@@ -24,7 +28,7 @@ export function polishComprehensiveSource(adapted:AdaptedNarrativeSource,i:Compr
   const sourceAxes:SemanticSignature=Object.assign({},...atoms.map(e=>e.axes));
   const reinforce=c.fusionType==="REINFORCE"?i.fusion.reinforce.find(f=>f.id===c.sourceId):undefined;
   if(c.sourceId==="F01_STUBBORN" && out.placement.reuseIntent==="DIFFERENT_APPLICATION" && ["social","love"].includes(out.placement.context)) {
-    for(const p of phrases) if(p.role==="DIRECT_CLAIM") p.text="가까운 사람과 의견이 엇갈려도 납득되지 않으면 자기 뜻을 쉽게 거두지 않습니다.";
+    for(const p of phrases) if(p.role==="DIRECT_CLAIM") p.text="가까운 사람의 말이어도 납득되지 않으면 다시 묻고, 한번 정한 생각을 쉽게 바꾸지는 않습니다.";
   }
   for(const p of phrases){
     if(p.role==="ACTION"||p.role==="LIFE_SCENE"||p.termDefinitionKey||p.role==="MBTI_REASON") continue;
@@ -79,6 +83,59 @@ export function polishComprehensiveSource(adapted:AdaptedNarrativeSource,i:Compr
     const reward=positiveReward(c,atoms);
     if(reward) add(direct,"CLOSER",reward,"reward");
     out.diagnostics.push(`FORTUNE_REASON_PLAN:${JSON.stringify(plan)}`);
+  }
+  const actualFusion = [...i.fusion.reinforce,...i.fusion.tensions,...i.fusion.complements].find(f=>f.id===c.sourceId);
+  // A primary's human reading is not the unrelated positiveMeaning on a many-axis atom.
+  if (actualFusion && direct) {
+    if (actualFusion.type === "REINFORCE") direct.text = humanOutcome(actualFusion.myeongli.side.axis,actualFusion.myeongli.side.direction) ?? direct.text;
+    else direct.text = humanizeSourceClause(c.sourceText);
+  }
+  const directSurface=directHumanSurface(c);
+  if(direct && directSurface) direct.text=directSurface;
+  const fusionSurface=fusionHumanSurface(c);
+  if(fusionSurface) for(const p of phrases)if(p.role==="FUSION"||p.role==="DIRECT_CLAIM")p.text=fusionSurface;
+  const roleApplication=out.placement.reuseIntent==="DIFFERENT_APPLICATION";
+  if(direct && roleApplication && !c.fusionType && !c.fortune && !c.factBomb) {
+    const registry=section==="C8"?WORK_APPLICATION:section==="C7"?RELATION_APPLICATION:undefined;
+    const axis=registry&&strongestHumanAxis(c.primaryAxes.filter(a=>!!registry[a]),sourceAxes);
+    if(axis && registry?.[axis])direct.text=registry[axis]!;
+  }
+  // Do not turn a work-process candidate into a money claim with a prefix.
+  if(section==="C8") out.diagnostics.push(`C8_INTENT:${workBlockIntent(c)}`);
+  for(let n=phrases.length-1;n>=0;n--) {
+    const p=phrases[n];
+    if(p.id.endsWith(":context-recall")) {phrases.splice(n,1);continue;}
+    p.text=statusVocabulary(p.text,i.guidance.context.lifeStatus);
+    if(p.role==="MYEONGLI_REASON" && !c.fortune) {
+      const term=p.termDefinitionKey&&src.evidenceTerms?.find(t=>t.key===p.termDefinitionKey);
+      const proof=atoms.filter(e=>(term?term.sourceEvidenceIds:p.refs.evidenceIds).includes(e.id));
+      const linked=proof.filter(e=>reasonLink(c,e));
+      const side=actualFusion?.myeongli.side;
+      const a=linked.find(e=>side && (e.axes[side.axis]??0)*side.direction>0) ?? linked[0];
+      const axis=a && (side && (a.axes[side.axis]??0)*side.direction>0 ? side.axis : strongestHumanAxis(causalAxes(c,a),a.axes));
+      const human=a&&axis?((a.axes[axis]??0)>0?AXIS_HUMAN_REASON[axis]:undefined)??humanOutcome(axis,a.axes[axis]??0):undefined;
+      if(!human) {phrases.splice(n,1);out.diagnostics.push(`CAUSAL_REASON_SUPPRESSED:${p.id}`);continue;}
+      if(term) {
+        term.easyDefinition=human;
+        // Korean termDefinitionPhrase owns the subject particle.
+        p.text=termDefinitionText(term);
+      } else p.text=human;
+      p.refs={...p.refs,evidenceIds:[a!.id]};
+      out.diagnostics.push(`CAUSAL_LINK:${JSON.stringify(reasonLink(c,a!))}`);
+    }
+    if(p.role==="CLOSER" && !c.fortune && /^A\d/.test(c.sourceId)) {
+      // Quiet charm is a valid selected Claim, but depth alone is not a charm explanation.
+      const proof=atoms.filter(e=>p.refs.evidenceIds.includes(e.id));
+      const axis=proof.flatMap(e=>causalAxes(c,e).filter(a=>(e.axes[a]??0)>0).map(axis=>({e,axis})))[0];
+      if(!axis) {phrases.splice(n,1);out.diagnostics.push("CHARM_REWARD_SOURCE_SCARCITY");}
+      else { p.text=humanOutcome(axis.axis,axis.e.axes[axis.axis]!)!;p.refs={...p.refs,evidenceIds:[axis.e.id]}; }
+    }
+  }
+  // The resolved third interpretation is the person, not a label about two systems.
+  if(actualFusion?.type==="TENSION") {
+    const contrast=phrases.find(p=>p.role==="CONTRAST");
+    const side=actualFusion.mbti.side;
+    if(contrast) contrast.text=humanOutcome(side.axis,side.direction)??contrast.text;
   }
   // Avoid a second verbatim conclusion inside the same block. Keep the richer closing role.
   src.phrases=phrases.filter((p,n)=> !phrases.slice(0,n).some(prev=>prev.text===p.text&&prev.role===p.role));

@@ -125,7 +125,7 @@ describe("manuscript boundary and section contracts", () => {
       const custom = structuredClone(input); custom.plan.sections.C1.bridgeIntent = intent;
       const target = { ...after, semanticThemes: [...before.semanticThemes], sectionKind: intent === "REINFORCE_TO_TENSION" ? "TENSION" as const : intent === "STRENGTH_TO_FORTUNE" ? "GOOD_FORTUNE" as const : "REINFORCE" as const };
       const b = renderComprehensiveBridge(custom, before, target, { language: freshNarrativeMemory(), usedScenes: [], usedTitles: [] });
-      expect(b.used, intent).toBe(true);
+      expect(b.used || b.reason === "HUMAN_SECTION_OPENING_INSTEAD_OF_SYSTEM_BRIDGE", intent).toBe(true);
       if (b.used) expect(b.sentence.role).toBe("CLOSER");
     }
   }, 60000);
@@ -139,6 +139,7 @@ describe("manuscript boundary and section contracts", () => {
   it("new draft layer has no existing customer, Book, provider, or calculation consumer", () => {
     const names = ["narrativeSceneCore", "narrativeScenePersonal", "narrativeSceneSocial", "narrativeSceneWork", "narrativeSceneRegistry", "narrativeTitleCore", "narrativeTitleRegistry", "comprehensiveNarrativeAdapter", "comprehensiveManuscriptCore", "comprehensiveSectionRenderer", "comprehensiveBridgeRenderer", "comprehensiveManuscriptRenderer", "comprehensiveManuscriptValidator"];
     names.push("narrativeHumanOutcome", "narrativeMbtiReason", "narrativeMeaningSignature", "narrativePositiveReward", "narrativeTitleShort", "comprehensiveManuscriptPolish", "operatingRuleCore", "operatingRuleRegistry", "operatingRuleBuilder", "operatingRuleRenderer", "manuscriptQualityAudit");
+    names.push("narrativeHumanFirst", "narrativeRhythm", "narrativeCausality", "narrativeRecovery", "narrativeHumanSurface", "manuscriptHumanAudit");
     const walk = (dir: string): string[] => readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []);
     for (const file of walk("src")) {
       const text = readFileSync(file, "utf8");

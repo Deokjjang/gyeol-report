@@ -2,6 +2,7 @@ import { SECTION_BRIDGE_REGISTRY } from "./narrativeConnectors";
 import { renderNarrativeBlock } from "./narrativeBlockRenderer";
 import type { ManuscriptInput, ManuscriptMemory, RenderedComprehensiveSection } from "./comprehensiveManuscriptCore";
 import type { NarrativeSourceUnit } from "./narrativeCore";
+import { classifyCustomerSentence } from "./narrativeHumanFirst";
 
 export function renderComprehensiveBridge(input: ManuscriptInput, before: RenderedComprehensiveSection, after: RenderedComprehensiveSection, memory: ManuscriptMemory) {
   const intent = input.plan.sections[before.sectionId].bridgeIntent;
@@ -10,6 +11,8 @@ export function renderComprehensiveBridge(input: ManuscriptInput, before: Render
     && (intent === "IDENTITY_TO_REINFORCE" ? after.sectionKind === "REINFORCE" : intent === "STRENGTH_TO_FORTUNE" ? after.sectionKind === "GOOD_FORTUNE"
       : intent === "REINFORCE_TO_TENSION" ? after.sectionKind === "TENSION" : intent === "RECOVERY_TO_MANUAL" ? true : common);
   if (!safe || !intent) return { used: false as const, reason: "FLOW_ALREADY_SUFFICIENT_OR_NO_SHARED_MEANING", memory, intent };
+  if(classifyCustomerSentence({text:SECTION_BRIDGE_REGISTRY[intent],role:"CLOSER"})==="META_EXPLANATION")
+    return {used:false as const,reason:"HUMAN_SECTION_OPENING_INSTEAD_OF_SYSTEM_BRIDGE",memory,intent};
   const source: NarrativeSourceUnit = { id: `bridge:${before.sectionId}:${after.sectionId}`, sourceType: "SECTION_BRIDGE", semanticTheme: `bridge:${intent}`,
     primaryAxes: [], contexts: ["identity"], confidence: "HIGH", directnessLevel: 0,
     phrases: [{ id: `bridge:${intent}`, role: "CLOSER", text: SECTION_BRIDGE_REGISTRY[intent], semanticTheme: `bridge:${intent}`, primaryAxes: [],

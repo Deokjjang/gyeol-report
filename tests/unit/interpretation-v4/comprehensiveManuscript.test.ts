@@ -68,6 +68,8 @@ describe("actual twelve-person manuscripts", () => {
       }
     }
     expect(new Set(d.titleUsage.map(t => t.text)).size).toBe(d.titleUsage.length);
+    // All selected core shapes in the real cohort have grounded non-verbatim recall.
+    expect(d.debug.coreRecall).toHaveLength(1);
     const last = d.sections.C10.blocks.at(-1);
     if (last && d.debug.coreRecall.length) {
       expect(last.sentences.length).toBeGreaterThanOrEqual(2);
