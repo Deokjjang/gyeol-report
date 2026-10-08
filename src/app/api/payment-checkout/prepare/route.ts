@@ -5,6 +5,8 @@ import { randomUUID } from "node:crypto";
 
 import { NextRequest, NextResponse } from "next/server";
 import { accountPublicEnabled } from "../../../../lib/account/gate";
+import { isPublicSameOrigin } from "../../../../lib/account/origin";
+import { bookExperiencePublicEnabled } from "../../../../lib/book/publicGate";
 
 import type { PaymentCheckoutSessionDraft } from "../../../../lib/payment/paymentCheckoutSessionTypes";
 import { preparePaymentCheckoutSession } from "../../../../lib/payment/paymentCheckoutSessionBoundary";
@@ -314,7 +316,7 @@ function createOptionalTossCheckoutRequest(
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
-  if (accountPublicEnabled() && request.headers.get("origin") !== "https://gyeolreport.com") return new NextResponse(null, { status: 403 });
+  if (accountPublicEnabled() && !isPublicSameOrigin(request)) return new NextResponse(null, { status: 403 });
   if (!isProductionCheckoutAvailable()) {
     return createErrorResponse("PAYMENT_CHECKOUT_UNAVAILABLE", "현재 결제를 준비 중입니다. 잠시 후 다시 확인해 주세요.", 503);
   }
@@ -367,6 +369,10 @@ export async function POST(request: Request): Promise<NextResponse> {
   const inputSnapshot = { ...json.inputSnapshot };
   delete inputSnapshot.annualCommerceAcceptance;
   delete inputSnapshot.consentEvidence;
+  // Fulfillment version is server-owned, frozen with the purchase, and cannot
+  // be selected by a query, cookie or caller-provided snapshot field.
+  delete inputSnapshot.bookGeneration;
+  if (bookExperiencePublicEnabled()) inputSnapshot.bookGeneration = { version: "v4", evaluatedAt: acceptedAt.toISOString() };
   // Production must reject unfulfillable inputs before any payment is launched.
   {
     const normalized = normalizeReportInputPayload(inputSnapshot.reportInputPayload, { now: () => acceptedAt });

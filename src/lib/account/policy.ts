@@ -1,4 +1,5 @@
 import { CHECKOUT_POLICY_VERSIONS } from "../legal/policyVersions";
+import { bookForProduct } from "../book/product";
 
 export const ACCOUNT_POLICY_VERSIONS = { terms: CHECKOUT_POLICY_VERSIONS.terms, privacy: CHECKOUT_POLICY_VERSIONS.privacy } as const;
 export const ACCOUNT_PROVIDERS = ["kakao", "google"] as const;
@@ -23,6 +24,11 @@ export function accountSession(identity: AccountIdentity | null, snapshot?: Acco
 export function safeAccountNext(value: unknown, local = false): string {
   const fallback = local ? "/dev/account" : "/account";
   if (typeof value !== "string") return fallback;
+  const inputPath = local ? "/dev/book-flow/input" : "/report/new";
+  if (value.startsWith(`${inputPath}?product=`)) {
+    const product = value.slice(`${inputPath}?product=`.length);
+    if (bookForProduct(product)) return `${inputPath}?product=${product}`;
+  }
   const allowed = local ? ["/dev/account", "/dev/book-flow", "/dev/book-flow/input"] : ["/account", "/", "/report/new"];
   const report = local ? /^\/dev\/book-flow\/report\/(?:book-local-[a-f0-9-]{36}|report_[a-z0-9_-]{13,80})$/i : /^\/reports\/report_[a-z0-9_-]{13,80}$/i;
   if (report.test(value)) return value;

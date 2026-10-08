@@ -2,6 +2,7 @@ import "server-only";
 import { NextRequest, NextResponse } from "next/server";
 import type { AccountPort } from "../account/handler";
 import { accountSession } from "../account/policy";
+import { isPublicSameOrigin } from "../account/origin";
 import { claimCookieName, claimHash, type LibraryPort } from "../library/server";
 import { issuePublishedReportShare, loadSharedReport, validShareReportId, sharePort, type ShareStorePort } from "../sharing/reportShareStore";
 import type { ReportGenerationInput } from "../report-generation/reportInputAdapter";
@@ -44,7 +45,7 @@ export async function prepareBookShare(request: NextRequest, auth: AccountPort, 
   const json = (body: object, status: number) => auth.finish(NextResponse.json(body, { status, headers: BOOK_SHARE_HEADERS }));
   const url = new URL(request.url); if (local && request.headers.get("host")) url.host = request.headers.get("host")!;
   if (request.method !== "POST") return json({}, 405);
-  if (request.headers.get("origin") !== (local ? url.origin : "https://gyeolreport.com")) return json({}, 403);
+  if (!(local ? request.headers.get("origin") === url.origin : isPublicSameOrigin(request))) return json({}, 403);
   if (Number(request.headers.get("content-length") ?? 0) > 1024) return json({}, 413);
   try {
     const raw = await request.text(); if (raw.length > 1024) return json({}, 413);

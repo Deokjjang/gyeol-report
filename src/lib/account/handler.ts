@@ -1,6 +1,7 @@
 import { randomBytes, timingSafeEqual } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { ACCOUNT_POLICY_VERSIONS, ACCOUNT_PROVIDERS, accountSession, safeAccountNext, validConsentSubmission, type AccountIdentity, type AccountProvider, type AccountSnapshot } from "./policy";
+import { publicRequestOrigin } from "./origin";
 
 export type AccountPort = {
   currentUser(): Promise<AccountIdentity | null>;
@@ -19,7 +20,8 @@ const noStore = { "Cache-Control": "private, no-store, max-age=0", "Vary": "Cook
 export async function handleAccount(request: NextRequest, action: string, port: AccountPort, local = false): Promise<NextResponse> {
   const url = new URL(request.url);
   if (local && request.headers.get("host")) url.host = request.headers.get("host")!;
-  const origin = local ? url.origin : "https://gyeolreport.com";
+  const origin = local ? url.origin : publicRequestOrigin(request);
+  if (!origin) return NextResponse.json({}, { status: 403, headers: noStore });
   const api = local ? "/dev/account/api" : "/auth", home = local ? "/dev/account" : "/account", login = local ? "/dev/account?view=login" : "/login";
   const finish = (response: NextResponse) => { for (const [k, v] of Object.entries(noStore)) response.headers.set(k, v); return port.finish(response); };
   const json = (body: object, status = 200) => finish(NextResponse.json(body, { status }));

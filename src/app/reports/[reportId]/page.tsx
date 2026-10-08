@@ -1590,6 +1590,10 @@ export default async function ReportResultPage({
   if (state.kind === "productPreview") {
   const reportId = routeParams.reportId ?? "";
   const isPaid = state.productPreview.access.mode === "paid";
+  if (isPaid && state.productPreview.productVersion === "v4" && accountPublicEnabled()) {
+    const { canReadPurchasedBook } = await import("../../../lib/book/ownerAccess");
+    if (!await canReadPurchasedBook(reportId)) return renderUnavailableState();
+  }
 
   const url = isPaid
     ? await existingReportShareUrl(reportId)

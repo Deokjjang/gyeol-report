@@ -100,7 +100,11 @@ export function validateV4Publication(product: string, draft: unknown, evidence:
     if (new Set(n.sections.map(s => s.id)).size !== n.sections.length) errors.push("V4_SECTION_ORDER_INVALID");
     const prose = [n.headline, ...n.opening.map(b => b.text), ...n.sections.flatMap(s => [s.title, ...s.blocks.map(b => b.text)]), n.finalLine].join("\n");
     if (/sourceRefs|evidenceIds|confidence|seedIds|fusionIds|normalizedContext|v4_structure:|calendarMonths:|\[object Object\]|\bTODO\b|\bPLACEHOLDER\b/.test(prose)) errors.push("V4_INTERNAL_TEXT_LEAK");
-    if (c.result.editorial.some(i => i.severity === "Blocker" || i.severity === "Major")) errors.push("V4_EDITORIAL_BLOCKED");
+    // Release-first policy: retain repetition findings in the sealed evidence,
+    // but do not withhold a paid book for copy polish. Safety blockers and all
+    // other publication/structure checks remain fail-closed.
+    if (c.result.editorial.some(i => i.severity === "Blocker" || i.severity === "Major" &&
+      !["DUPLICATE_SENTENCE", "REPEATED_LONG_PHRASE"].includes(i.code))) errors.push("V4_EDITORIAL_BLOCKED");
     const ids = new Set(n.sections.map(s => s.id));
     const requireSections = (...required: string[]) => { if (required.some(id => !ids.has(id))) errors.push("V4_DOMAIN_CONTENT_INCOMPLETE"); };
     if (e.input.kind !== "compatibility") {

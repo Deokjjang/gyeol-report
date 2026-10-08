@@ -19,7 +19,7 @@ import { interaction, syncLocalFacts } from "../../lib/analytics/client";
 
 type CheckoutProps = { payload: ReportInputPayload; now: string; internal: boolean; onPublishing: () => void; onError: (message: string) => void };
 export function BookCheckout(props: CheckoutProps) {
-  const { session } = useAccountSession(true, props.internal);
+  const { session } = useAccountSession(props.internal);
   // A status change remounts the receipt; prior consent is never silently carried over.
   return <BookCheckoutReceipt key={session.status} {...props} session={session} />;
 }
@@ -46,8 +46,15 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
   const ready = isDevTossCheckoutLegalConfirmationComplete(snapshot, consents, new Date(now));
   const selected = items.find(c => c.id === detail);
   const submit = async () => {
-    if (!internal || lock.current || !ready || (method==="payment"&&!coupon.quote&&!couponOrder)) return;
+    if (lock.current || !ready || (internal&&method==="payment"&&!coupon.quote&&!couponOrder)) return;
     lock.current = true; setBusy(true); onError("");
+    if (!internal) {
+      // Reuse the existing production prepare + validated Toss SDK launcher.
+      // Local preview below still requires its explicit mock runtime.
+      const result = await runDevTossCheckout(snapshot, consents, undefined, { productType: payload.productKey, easyPay: "TOSSPAY" });
+      if (!result.ok) { onError(result.messageKo); lock.current = false; setBusy(false); }
+      return;
+    }
     if (method === "ticket") {
       ticketRequest.current ??= crypto.randomUUID();
       try {
@@ -116,7 +123,8 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
       {items.map(c => <div className={s.consentRow} key={c.id}><label><input type="checkbox" checked={consents[c.id]} disabled={!allowed || busy} onChange={e => setConsents({ ...consents, [c.id]: e.target.checked })} />[필수] {label(c.id)}</label><button type="button" onClick={() => setDetail(c.id)} aria-label={`${label(c.id)} 상세 보기`}>보기 ›</button></div>)}
     </fieldset>
     {!allowed ? <p role="alert">만 14세 이상만 이용할 수 있습니다.</p> : null}
-    <button type="button" className={s.orderButton} disabled={!ready || busy || !internal || (method==="payment"&&!coupon.quote&&!couponOrder)} onClick={submit}>{busy && method === "ticket" ? "이용권으로 책을 만드는 중" : internal ? method === "ticket" ? "리포트 이용권 1장 사용" : "모의 결제 · 책 발행" : "결제 연결 준비 중"} →</button>
+    {!internal && session.status !== "member" ? <a href={`/login?next=${encodeURIComponent(`/report/new?product=${payload.productKey}`)}`}>로그인하고 이어서 구매하기</a> : null}
+    <button type="button" className={s.orderButton} disabled={!ready || busy || (internal&&method==="payment"&&!coupon.quote&&!couponOrder)} onClick={submit}>{busy && method === "ticket" ? "이용권으로 책을 만드는 중" : internal ? method === "ticket" ? "리포트 이용권 1장 사용" : "모의 결제 · 책 발행" : "결제하기"} →</button>
     {detail ? <DetailSheet title={selected ? label(selected.id) : "구매 안내"} onClose={() => setDetail(null)}>{selected ? <p>{selected.id === "policyAgreement" && session.status === "member" ? "환불정책을 확인하고 동의합니다." : selected.label}</p> : null}<p>{prePaymentRefundNoticeKo}</p><p>{prePaymentPrivacyNoticeKo}</p>{LEGAL_TITLES.map((title, i) => <details key={title} open={detail === `policy-${i}`}><summary>{title} +</summary><LegalDocument index={i} onNavigate={n => setDetail(`policy-${n}`)} /></details>)}</DetailSheet> : null}
   </div>;
 }

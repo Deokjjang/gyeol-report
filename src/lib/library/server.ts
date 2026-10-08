@@ -3,6 +3,7 @@ import { createHash, randomBytes } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import type { AccountPort } from "../account/handler";
 import { accountSession } from "../account/policy";
+import { isPublicSameOrigin } from "../account/origin";
 import { libraryItem, purchaseMetadata, validLibraryReportId, type ClaimState, type LibraryRow } from "./model";
 
 export type PurchaseBinding = { orderId: string; buyerId: string | null; claimHash: string | null; displayName: string; selectedYear: string | null };
@@ -36,7 +37,7 @@ export async function handleLibrary(request: NextRequest, action: string, auth: 
   if (request.method !== (action === "claim" ? "POST" : "GET")) return json({}, 405);
   const url = new URL(request.url);
   if (local && request.headers.get("host")) url.host = request.headers.get("host")!;
-  if (action === "claim" && request.headers.get("origin") !== (local ? url.origin : "https://gyeolreport.com")) return json({}, 403);
+  if (action === "claim" && !(local ? request.headers.get("origin") === url.origin : isPublicSameOrigin(request))) return json({}, 403);
   try {
     const user = await auth.currentUser(), snapshot = user ? await auth.read(user) : undefined;
     if (snapshot === null) return json({ error: "서재를 확인하지 못했습니다. 다시 시도해 주세요." }, 503);

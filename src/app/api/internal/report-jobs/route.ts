@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { timingSafeEqual } from "node:crypto";
 import { createPaidReportReliabilityStore } from "../../../../lib/payment/paidReportReliabilityStore";
-import { runPaidReportJob } from "../../../../lib/payment/paidReportReliability";
+import { runPublicPaidReportJob } from "../../../../lib/book/paidRuntime";
 import { recoverPendingPayment } from "../../../../lib/payment/paymentConfirmRecovery";
 import { resolveReportWriterRuntime } from "../../../../lib/report-generation/reportWriterRuntime";
 import { confirmTossPayment } from "../../../../lib/payment/tossConfirmClient";
@@ -22,6 +22,6 @@ export async function GET(request: Request) {
     ? recoverPendingPayment(store, (payment, signal) => confirmTossPayment({ ...payment, signal, secretKey: process.env.TOSS_PAYMENTS_SECRET_KEY ?? "" }))
       .catch(() => ({ ok: false }))
     : Promise.resolve();
-  const [result] = await Promise.all([runPaidReportJob(store, resolveReportWriterRuntime()), recovery]);
+  const [result] = await Promise.all([runPublicPaidReportJob(store, resolveReportWriterRuntime()), recovery]);
   return NextResponse.json({ ok: result.ok }, { status: result.ok ? 200 : 503 });
 }
