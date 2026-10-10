@@ -1,5 +1,7 @@
 # GYEOL-V4-LAUNCH-EVENT-01
 
+> Historical implementation record. Its October 29 / 72-hour schedule and automatic SCHEDULED activation are superseded by [LAUNCH-EVENT-SCHEDULE-FIX](v4-launch-event-schedule-fix.md). Use that document for current operating dates and activation requirements. Reward caps and the fixed November 1 expiry remain unchanged.
+
 ## Scope / activation boundary
 
 - Base: `v4/ticket-commerce-04a` / `8f4b35a9c13128d9b7fe2e325d77891f9f869f3f`.

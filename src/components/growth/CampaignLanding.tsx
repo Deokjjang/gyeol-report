@@ -73,7 +73,7 @@ export function CampaignLanding({ campaign, utm, member = false, local = false }
         {current.launchEvent ? <small>{LAUNCH_NOTICE}</small> : null}
         {eligible && current.offer !== "NONE" ? <small>신규 계정에 한해 지급됩니다. 친구 초대·다른 캠페인의 신규가입 혜택과 중복되지 않습니다.</small> : null}
         {eligible || state === "BENEFIT_ALREADY_GRANTED" ? <small>{current.eligibility}</small> : null}
-        {current.startsAt ? <small>시작 · {date(current.startsAt)} KST</small> : null}{current.endsAt ? <small>종료 · {date(current.endsAt)} KST</small> : null}
+        {current.startsAt ? <small>{current.launchEvent ? "최초 시작 가능" : "시작"} · {date(current.startsAt)} KST</small> : null}{current.endsAt ? <small>종료 · {date(current.endsAt)} KST</small> : null}
         {current.active && remaining !== null && remaining > 0 ? <p className={s.countdown} data-countdown><small>종료까지</small><time dateTime={current.endsAt!}>{campaignCountdown(remaining)}</time></p> : null}
         {(eligible || state === "BENEFIT_ALREADY_GRANTED") && current.coupon ? <small>쿠폰 사용기한 · {date(current.coupon.expiresAt)} KST<br/>최소 주문금액 {current.coupon.minOrder.toLocaleString("ko-KR")}원 · {current.coupon.products.length ? current.coupon.products.map(k => BOOKS.find(b => b.productKey === k)?.title.replace("\n", " ") ?? "").join(", ") : "6상품 적용"} · 이용권과 동시 사용 불가</small> : null}
       </section>

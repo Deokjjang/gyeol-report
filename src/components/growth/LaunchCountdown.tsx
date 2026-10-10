@@ -36,13 +36,14 @@ export function LaunchCountdown({ local = false }: { local?: boolean }) {
   const { view, remaining } = useLaunchEvent(local);
   // A countdown can remove a benefit, but cannot promote SCHEDULED to ACTIVE.
   const state = view?.state === "ACTIVE" && remaining === 0 ? "ENDED" : view?.state;
-  const label = state === "SCHEDULED" ? "이벤트 시작까지" : state === "ACTIVE" ? "이벤트 종료까지" : state === "ENDED" ? "이벤트가 종료되었습니다" : state === "PAUSED" ? "이벤트 혜택이 잠시 중단되었습니다" : "이벤트 혜택 상태를 확인하고 있습니다";
+  const label = state === "SCHEDULED" ? remaining === null ? "공개·운영 활성화를 기다리고 있습니다" : "이벤트 시작 가능 시각까지" : state === "ACTIVE" ? "이벤트 종료까지" : state === "ENDED" ? "이벤트가 종료되었습니다" : state === "PAUSED" ? "이벤트 혜택이 잠시 중단되었습니다" : "이벤트 혜택 상태를 확인하고 있습니다";
+  const title = state === "ACTIVE" ? "이벤트 진행 중" : state === "ENDED" ? "이벤트 종료" : state === "PAUSED" ? "이벤트 일시 중단" : "이벤트 시작 대기";
   const eligible = state === "ACTIVE" && remaining !== null && remaining > 0 && view?.campaignAvailable && view.budgetApproved && view.campaignSlug;
-  return <section className={s.event} aria-label="3일 한정 이벤트" data-launch-state={state ?? "UNAVAILABLE"}>
-    <div className={s.heading}><p>GYEOL REPORT <span>LIMITED EVENT</span></p><h2>단 3일, 나의 결을 발견하는 시간</h2><small>10.29 — 10.31</small></div>
+  return <section className={s.event} aria-label="이벤트 카운트다운" data-launch-state={state ?? "UNAVAILABLE"}>
+    <div className={s.heading}><p>EVENT COUNTDOWN</p><h2>{title}</h2><small>11월 1일 00:00 종료</small></div>
     <div className={s.clock}><p role="status">{label}</p>{remaining !== null && (state === "SCHEDULED" || state === "ACTIVE") ? <>
       <time aria-hidden="true" dateTime={state === "SCHEDULED" ? view?.startsAt : view?.endsAt}>{launchCountdown(remaining)}</time>
-      <span className={s.srOnly}>{state === "SCHEDULED" ? "10월 29일 00:00" : "11월 1일 00:00"} KST 기준</span>
+      <span className={s.srOnly}>{state === "SCHEDULED" ? "10월 11일 00:00 이후 공개·운영 활성화 시 시작" : "11월 1일 00:00 종료"} KST 기준</span>
     </> : <small>책 선택과 유료 구매는 계속 이용할 수 있습니다.</small>}</div>
     <details className={s.notice}><summary>기간·혜택 안내</summary><p>{LAUNCH_NOTICE}</p><p>자격과 남은 이벤트 예산을 서버에서 확인한 뒤 지급합니다. 카카오톡 채널 친구 추가는 필수 조건이 아닙니다.</p></details>
     {eligible ? <a className={s.entry} href={`${local ? "/dev" : ""}/campaign/${view.campaignSlug}`}>이벤트 참여 안내 →</a> : null}

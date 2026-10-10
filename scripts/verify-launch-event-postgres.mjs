@@ -10,10 +10,10 @@ const inspect = JSON.parse(spawnSync('docker', ['inspect', container], {encoding
 assert.equal(inspect.HostConfig.NetworkMode,'none'); assert(inspect.Config.Image.startsWith('postgres:16-alpine'));
 assert(Object.hasOwn(inspect.HostConfig.Tmpfs,'/var/lib/postgresql/data')); assert.equal(inspect.HostConfig.Binds?.length??0,0);
 assert.equal(Object.keys(inspect.HostConfig.PortBindings??{}).length,0);
-const output='/private/tmp/gyeol-v4-launch-event-01'; mkdirSync(output,{recursive:true});
+const output='/private/tmp/gyeol-v4-launch-event-schedule-fix'; mkdirSync(output,{recursive:true});
 const pids=new Set(), results=[];
 const q=v=>`'${String(v).replaceAll("'","''")}'`, j=v=>`${q(JSON.stringify(v))}::jsonb`;
-const start='2026-10-28T15:00:00Z', end='2026-10-31T15:00:00Z';
+const start='2026-10-10T15:00:00Z', end='2026-10-31T15:00:00Z';
 const versions={terms:'2026-06-14.1',privacy:'2026-09-22.1'};
 const hash=()=>randomBytes(32).toString('hex');
 function sql(query,role='',db=database) {
@@ -61,7 +61,7 @@ async function referred(i) {const b=await setupReferred(i);assert((await referra
 async function check(name,run) {
   await sql('truncate launch_event_policy,growth_campaigns,report_ticket_grants,referral_invites,campaign_attributions,new_user_acquisitions cascade;');
   await clock(start);
-  await sql(`insert into growth_campaigns(public_slug,name,message,status,starts_at,ends_at,offer_type,ticket_quantity) values('launch-local','ISOLATED ONLY','로컬 검수','SCHEDULED',${q(start)},${q(end)},'REPORT_TICKET',1);
+  await sql(`insert into growth_campaigns(public_slug,name,message,status,starts_at,ends_at,offer_type,ticket_quantity) values('launch-local','ISOLATED ONLY','로컬 검수','ACTIVE',${q(start)},${q(end)},'REPORT_TICKET',1);
     insert into launch_event_policy(id,campaign_id,total_limit,campaign_limit,referral_limit,inviter_limit,approved_at) select 'launch-20261029',id,100,100,100,100,launch_test_now()-interval '1 day' from growth_campaigns;`);
   await run();results.push({name,pass:true});process.stdout.write(`PASS ${name}\n`);
 }
@@ -75,12 +75,24 @@ try {
   await sql("create schema auth;create table auth.users(id uuid primary key,created_at timestamptz default now());grant usage on schema public,auth to anon,authenticated,service_role;create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;");
   const member=['supabase/migrations/20260929113608_report_share_links.sql',...migrations.filter(n=>n.startsWith('20261003')).sort().map(n=>`supabase/migrations/${n}`),'supabase/migrations/20261010095005_v4_ticket_bundle_commerce.sql','scripts/report_ticket_publication_queue_patch.sql','supabase/migrations/20261010132645_v4_launch_event.sql'];
   for(const f of member)await sql(readFileSync(f,'utf8'));
+  await sql(readFileSync('supabase/migrations/20261010135755_v4_launch_event_schedule_fix.sql','utf8'));
   // Only this isolated DB receives a clock shim. Shipped SQL always uses DB clock.
   await sql(`create table launch_test_clock(value timestamptz);insert into launch_test_clock values(${q(start)});grant select on launch_test_clock to service_role;create function launch_test_now() returns timestamptz language sql volatile as $$ select value from public.launch_test_clock $$;`);
   const defs=JSON.parse(await sql("select json_agg(pg_get_functiondef(p.oid)) from pg_proc p join pg_namespace n on n.oid=p.pronamespace where n.nspname='public' and p.proname<>'launch_test_now' and p.prokind='f';"));
   for(const def of defs)if(/clock_timestamp\(\)|\bnow\(\)/.test(def))await sql(def.replace(/(?:pg_catalog\.)?clock_timestamp\(\)|\bnow\(\)/g,'public.launch_test_now()'));
   const defaults=JSON.parse(await sql("select json_agg(c) from (select table_schema,table_name,column_name,column_default from information_schema.columns where table_schema in ('public','auth') and column_default ~ '(clock_timestamp|now)\\(\\)' and data_type='timestamp with time zone') c;"));
   for(const d of defaults)await sql(`alter table ${d.table_schema}.${d.table_name} alter column ${d.column_name} set default ${d.column_default.replace(/(?:pg_catalog\.)?clock_timestamp\(\)|\bnow\(\)/g,'public.launch_test_now()')};`);
+  await check('new start boundaries / explicit activation / fixed expiry',async()=>{
+    for(const [at,state] of [['2026-10-10T14:59:59Z','SCHEDULED'],[start,'ACTIVE'],['2026-10-12T03:00:00Z','ACTIVE'],['2026-10-28T15:00:00Z','ACTIVE'],['2026-10-31T14:59:59Z','ACTIVE'],[end,'ENDED']]){
+      await clock(at);assert.equal(JSON.parse(await sql('select launch_event_state();')).state,state);
+    }
+    await clock('2026-10-12T03:00:00Z');await sql("update growth_campaigns set status='SCHEDULED';");
+    assert.equal(JSON.parse(await sql('select launch_event_state();')).state,'SCHEDULED');
+    assert.equal((await campaign('capture',null,{slug:'launch-local',contextHash:hash()})).ok,false);
+    await clock('2026-10-30T03:00:00Z');await sql("update growth_campaigns set status='ACTIVE';");await acquire();
+    assert.equal(await count('report_ticket_grants',`expires_at=${q(end)}`),1);
+    await clock(end);assert.equal((await campaign('capture',null,{slug:'launch-local',contextHash:hash()})).ok,false);
+  });
   await check('100 concurrent callback retries / one acquisition',async()=>{
     const a=await setupAcquisition();
     for(let n=0;n<10;n++)assert((await Promise.all(Array.from({length:10},()=>campaign('attribute',a.user,a.data,true)))).every(r=>r.ok));
@@ -132,7 +144,7 @@ try {
     await acquire();for(const role of ['anon','authenticated'])for(const query of ["select launch_event_state();","select book_referrals('attribute',null,'{}');","select * from launch_event_policy;","select report_tickets('grant',null,'{}');"])
       await assert.rejects(sql(query,role),/permission denied/);
     await assert.rejects(sql('update report_ticket_grants set expires_at=null;','service_role'),/permission denied|IMMUTABLE/);
-    await sql('update launch_event_policy set approved_at=null,total_limit=null;');assert.equal(JSON.parse(await sql('select launch_event_state();')).state,'PAUSED');
+    await sql('update launch_event_policy set approved_at=null,total_limit=null;');assert.equal(JSON.parse(await sql('select launch_event_state();')).state,'SCHEDULED');
   });
   const deadlocks=Number(await sql('select deadlocks from pg_stat_database where datname=current_database();'));assert.equal(deadlocks,0);
   const report={kind:'POSTGRES_REAL_CONNECTION_PASS',version:await sql('select version();'),independentBackends:pids.size,maxConcurrent:10,deadlocks,results,note:'Clock simulation only in isolated SQL DB. Minimal publication snapshots exercise SQL ownership/expiry. Real six-product completeness is tested separately.'};

@@ -3,14 +3,16 @@ import { randomUUID, randomBytes, createHash } from "node:crypto";
 import type { PGlite } from "@electric-sql/pglite";
 import { ticketPublicationSql } from "./ticketPublicationSql";
 import { ACCOUNT_POLICY_VERSIONS } from "../../src/lib/account/policy";
-import { LAUNCH_MIGRATION } from "../../src/lib/growth/launchLocal";
-export const START = "2026-10-28T15:00:00Z", END = "2026-10-31T15:00:00Z";
+import { LAUNCH_MIGRATION, LAUNCH_SCHEDULE_MIGRATION } from "../../src/lib/growth/launchLocal";
+export const START = "2026-10-10T15:00:00Z", END = "2026-10-31T15:00:00Z";
 export const versions = ACCOUNT_POLICY_VERSIONS;
-export async function launchSql(beforeMigration?: (db: PGlite) => Promise<void>) {
+export async function launchSql(beforeMigration?: (db: PGlite) => Promise<void>, beforeSchedule?: (db: PGlite) => Promise<void>) {
   const base = await ticketPublicationSql(), db = base.db;
   await db.exec("reset role");
   if (beforeMigration) await beforeMigration(db);
   await db.exec(readFileSync(LAUNCH_MIGRATION, "utf8"));
+  if (beforeSchedule) await beforeSchedule(db);
+  await db.exec(readFileSync(LAUNCH_SCHEDULE_MIGRATION, "utf8"));
   // ISOLATED TEST DB ONLY. No shipped clock parameter/session setting exists.
   await db.exec(`create table public.launch_test_clock(value timestamptz); insert into launch_test_clock values('${START}');
     grant select on launch_test_clock to service_role;
@@ -36,7 +38,7 @@ export function launchHelpers(db: PGlite) {
   const hash = () => createHash("sha256").update(randomUUID()).digest("hex");
   const policy = async (budget: number | null = 100) => {
     await db.query(`insert into growth_campaigns(public_slug,name,message,status,starts_at,ends_at,offer_type,ticket_quantity)
-      values('launch-20261029','LOCAL TEST','단 3일','SCHEDULED',$1,$2,'REPORT_TICKET',1) on conflict(public_slug) do update set status='SCHEDULED'`, [START,END]);
+      values('launch-20261029','LOCAL TEST','이벤트 안내','ACTIVE',$1,$2,'REPORT_TICKET',1) on conflict(public_slug) do update set status='ACTIVE'`, [START,END]);
     await db.query(`insert into launch_event_policy(id,campaign_id,total_limit,campaign_limit,referral_limit,inviter_limit,approved_at)
       select 'launch-20261029',id,$1,$1,$1,$1,case when $1::int is not null then public.launch_test_now()-interval '1 day' end from growth_campaigns where public_slug='launch-20261029'
       on conflict(id) do update set total_limit=$1,campaign_limit=$1,referral_limit=$1,inviter_limit=$1,approved_at=excluded.approved_at`, [budget]);
