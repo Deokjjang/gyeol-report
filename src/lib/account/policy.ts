@@ -29,7 +29,7 @@ export function safeAccountNext(value: unknown, local = false): string {
     const product = value.slice(`${inputPath}?product=`.length);
     if (bookForProduct(product)) return `${inputPath}?product=${product}`;
   }
-  const allowed = local ? ["/dev/account", "/dev/book-flow", "/dev/book-flow/input"] : ["/account", "/", "/report/new"];
+  const allowed = local ? ["/dev/account", "/dev/account/tickets", "/dev/book-flow", "/dev/book-flow/input"] : ["/account", "/account/tickets", "/", "/report/new"];
   const report = local ? /^\/dev\/book-flow\/report\/(?:book-local-[a-f0-9-]{36}|report_[a-z0-9_-]{13,80})$/i : /^\/reports\/report_[a-z0-9_-]{13,80}$/i;
   if (report.test(value)) return value;
   return allowed.includes(value) ? value : fallback;

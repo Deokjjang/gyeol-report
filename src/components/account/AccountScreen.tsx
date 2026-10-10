@@ -8,7 +8,7 @@ import s from "./account.module.css";
 import { Library } from "./Library";
 import { interaction } from "../../lib/analytics/client";
 
-export function AccountScreen({ local = false, loginError = false, next }: { local?: boolean; loginError?: boolean; next?: string }) {
+export function AccountScreen({ local = false, loginError = false, next, ticketShopEnabled = false }: { local?: boolean; loginError?: boolean; next?: string; ticketShopEnabled?: boolean }) {
   const { session, loaded, error, refresh, base } = useAccountSession(local);
   const [checked, setChecked] = useState({ terms: false, privacy: false }), [detail, setDetail] = useState<number | null>(null), [message, setMessage] = useState(loginError ? "로그인을 완료하지 못했습니다. 다시 시도하거나 로그인 없이 계속할 수 있습니다." : ""), [busy, setBusy] = useState(false);
   const all = checked.terms && checked.privacy, some = checked.terms || checked.privacy, allRef = useRef<HTMLInputElement>(null), lock = useRef(false), requestId = useRef("");
@@ -49,6 +49,7 @@ export function AccountScreen({ local = false, loginError = false, next }: { loc
         <button className={s.small} disabled={busy} onClick={() => run("logout")}>로그아웃</button>
       </> : <>
         <p className={s.eyebrow}>ACCOUNT</p><h1>내 서재</h1><p>{session.displayName}님, 반갑습니다.</p>
+        {local || ticketShopEnabled ? <nav aria-label="내 계정"><Link href={local ? "/dev/account" : "/account"} aria-current="page">내 서재</Link> · <Link href={local ? "/dev/account/tickets" : "/account/tickets"}>내 이용권 →</Link></nav> : null}
         <Library local={local} />
         <details className={s.accountInfo}><summary>계정 정보</summary><p>{session.displayName}</p></details>
         <button className={s.small} disabled={busy} onClick={() => run("logout")}>로그아웃</button>

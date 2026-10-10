@@ -7,6 +7,7 @@ import { createCheckoutConsentEvidence } from "../payment/checkoutConsent";
 import { isRecord } from "../report-generation/productPublishGate";
 import { enqueueTicketPublication, validTicketRequestId, type TicketPublicationStore } from "./publication";
 import type { TicketResult } from "./service";
+import { createHash } from "node:crypto";
 
 const messages: Record<string, string> = {
   QUEUED: "책 발행을 준비하고 있습니다.", RUNNING: "책을 만들고 있습니다.", COMPLETED: "책이 완성되었습니다.",
@@ -23,6 +24,8 @@ export async function handleTicketPublication(request: NextRequest, action: stri
   try {
     const user = await auth.currentUser();
     if (!user) return json({ ok: false, code: "MEMBER_REQUIRED" }, 401);
+    const expected = request.headers.get("x-ticket-account");
+    if (expected && expected !== createHash("sha256").update(`bundle-ui-v1:${user.id}`).digest("hex")) return json({ ok: false, code: "ACCOUNT_CHANGED", message: "원래 계정으로 로그인한 뒤 발행 상태를 확인해 주세요." }, 409);
     const account = await auth.read(user);
     if (account === null) return json({ ok: false, code: "STORAGE_UNAVAILABLE" }, 503);
     if (account.profile?.id !== user.id || accountSession(user, account).status !== "member") return json({ ok: false, code: "MEMBER_CONSENT_REQUIRED" }, 401);

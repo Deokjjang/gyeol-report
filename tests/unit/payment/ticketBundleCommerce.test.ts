@@ -1,4 +1,4 @@
-import { randomUUID } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import { readFileSync, readdirSync } from "node:fs";
 import { beforeAll, beforeEach, afterAll, describe, expect, it, vi } from "vitest";
 import type { PGlite } from "@electric-sql/pglite";
@@ -39,7 +39,7 @@ function auth(user: string | null = A, consent = true): AccountPort {
     start: async () => null, exchange: async () => false, logout: async () => true, consent: async () => true, authorizationOrigin: "https://example.invalid", finish: r => r };
 }
 function request(action: string, body?: unknown, origin = "https://gyeolreport.com") {
-  return new NextRequest(`https://gyeolreport.com/api/ticket-bundles/${action}`, { method: action === "history" ? "GET" : "POST", headers: { origin, "content-type": "application/json" }, ...(body === undefined ? {} : { body: JSON.stringify(body) }) });
+  return new NextRequest(`https://gyeolreport.com/api/ticket-bundles/${action}`, { method: action === "history" ? "GET" : "POST", headers: { origin, "content-type": "application/json", "x-ticket-account": createHash("sha256").update(`bundle-ui-v1:${A}`).digest("hex") }, ...(body === undefined ? {} : { body: JSON.stringify(body) }) });
 }
 beforeAll(async () => {
   ({ db, store: direct } = await paidWorkerSql());
@@ -203,13 +203,14 @@ describe("member bundle commerce: real isolated SQL + mock provider", () => {
     for(const a of [auth(null),auth(A,false)])expect((await handleBundleCommerce(request("prepare",{bundleId:"PACK_3",requestId:randomUUID()}),"prepare",a,store,provider,config)).status).toBe(401);
     expect((await handleBundleCommerce(request("prepare",{},"https://evil.invalid"),"prepare",auth(),store,provider,config)).status).toBe(403);
     expect((await handleBundleCommerce(request("prepare",{huge:"가".repeat(3000)}),"prepare",auth(),store,provider,config)).status).toBe(413);
-    const r=await handleBundleCommerce(request("prepare",{bundleId:"PACK_3",requestId:randomUUID()}),"prepare",auth(),store,provider,config);
+    const r=await handleBundleCommerce(request("prepare",{bundleId:"PACK_3",requestId:randomUUID(),consent:{version:"test-only",product:true,digitalDelivery:true,purchasePolicy:true}}),"prepare",auth(),store,provider,config,{purchasePolicyVersion:"test-only"});
     const body=await r.json();expect(body.tossCheckoutRequest.requestPayment.amount).toEqual({currency:"KRW",value:4290});
     const paid=await handleBundleCommerce(request("confirm",{orderId:body.order.providerOrderId,paymentKey:"secret-payment",amount:4290}),"confirm",auth(),store,provider,config);
     expect(paid.status).toBe(200);expect(await paid.text()).not.toMatch(/secret-payment|confirm_token|paymentKey|user_id/);
   });
   it("closed routes create no dependencies and never switch public gates",async()=>{
-    expect(GET().status).toBe(404);expect(POST().status).toBe(404);expect(ticketBundleCommerceEnabled()).toBe(false);expect(accountPublicEnabled()).toBe(false);
+    const context={params:Promise.resolve({action:"prepare"})};
+    expect((await GET(request("history"),context)).status).toBe(404);expect((await POST(request("prepare",{}),context)).status).toBe(404);expect(ticketBundleCommerceEnabled()).toBe(false);expect(accountPublicEnabled()).toBe(false);
   });
   it("Toss request uses server order and rejects unsafe redirects",async()=>{
     const o=await create();expect(bundleCheckout(o,config,"회원")?.requestPayment.orderName).toBe("결리포트 이용권 5장");

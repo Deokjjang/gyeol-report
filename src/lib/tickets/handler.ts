@@ -5,6 +5,7 @@ import type { AccountPort } from "../account/handler";
 import { createCheckoutConsentEvidence } from "../payment/checkoutConsent";
 import { isRecord } from "../report-generation/productPublishGate";
 import { redeemReportTicket, type TicketStore } from "./service";
+import { createHash } from "node:crypto";
 
 export async function handleTickets(request: NextRequest, action: string, auth: AccountPort, store: TicketStore) {
   const json = (body: object, status = 200) => auth.finish(NextResponse.json(body, { status, headers: { "Cache-Control": "private, no-store", "Vary": "Cookie", "Referrer-Policy": "no-referrer" } }));
@@ -15,6 +16,8 @@ export async function handleTickets(request: NextRequest, action: string, auth: 
   try {
     const user = await auth.currentUser(), snapshot = user ? await auth.read(user) : null;
     if (!user || !snapshot || accountSession(user, snapshot).status !== "member") return json({}, 401);
+    const expected = request.headers.get("x-ticket-account");
+    if (expected && expected !== createHash("sha256").update(`bundle-ui-v1:${user.id}`).digest("hex")) return json({ code: "ACCOUNT_CHANGED" }, 409);
     if (action !== "redeem") {
       const result = await store.call(action, user.id);
       return result.ok ? json({ quantity: result.quantity, ...(result.referralNotice ? { referralNotice: result.referralNotice } : {}), ...(result.campaignNotice ? { campaignNotice: result.campaignNotice } : {}), ...(action === "history" ? { history: result.history } : {}) }) : json({}, 503);

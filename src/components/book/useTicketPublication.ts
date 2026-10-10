@@ -3,8 +3,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import type { ReportInputPayload } from "../../lib/report-generation/reportInputTypes";
 import { createCheckoutConsentAssertion, type CheckoutLegalConfirmations } from "../../lib/payment/checkoutConsent";
 
-type Pending = { requestId: string; fingerprint: string };
-const validPending = (v: unknown): v is Pending => !!v && typeof v === "object" && "requestId" in v && "fingerprint" in v && typeof v.requestId === "string" && /^[a-f0-9-]{36}$/i.test(v.requestId) && typeof v.fingerprint === "string" && /^[a-f0-9]{64}$/.test(v.fingerprint);
+type Pending = { requestId: string; fingerprint: string; scope?: string };
+const validPending = (v: unknown): v is Pending => !!v && typeof v === "object" && "requestId" in v && "fingerprint" in v && typeof v.requestId === "string" && /^[a-f0-9-]{36}$/i.test(v.requestId) && typeof v.fingerprint === "string" && /^[a-f0-9]{64}$/.test(v.fingerprint) && (!("scope" in v) || (typeof v.scope === "string" && /^[a-f0-9]{64}$/.test(v.scope)));
 export const ticketPendingKey = (product: string) => `gyeol-ticket-publication-v1:${product}`;
 export const checkoutReturnKey = (product: string) => `gyeol-book-receipt-return-v1:${product}`;
 
@@ -56,7 +56,7 @@ export function useTicketPublication(product: string, enabled: boolean) {
       busy = true; controller = new AbortController();
       deadline = setTimeout(() => controller?.abort(), 20_000);
       try {
-        const response = await fetch(`/auth/ticket-status?requestId=${encodeURIComponent(pending.requestId)}`, { cache: "no-store", signal: controller.signal });
+        const response = await fetch(`/auth/ticket-status?requestId=${encodeURIComponent(pending.requestId)}`, { cache: "no-store", signal: controller.signal, ...(pending.scope ? { headers: { "x-ticket-account": pending.scope } } : {}) });
         const body = await response.json();
         if (!stopped && current.current?.requestId === pending.requestId) accept(body);
       } catch { if (!stopped) setMessage("발행 상태를 확인 중입니다. 잠시 후 다시 확인합니다."); }
@@ -67,20 +67,21 @@ export function useTicketPublication(product: string, enabled: boolean) {
     window.addEventListener("focus", focus); document.addEventListener("visibilitychange", focus);
     return () => { stopped = true; clearInterval(timer); clearTimeout(deadline); controller?.abort(); window.removeEventListener("focus", focus); document.removeEventListener("visibilitychange", focus); };
   }, [enabled, pending, completedUrl, accept]);
-  const submit = async (payload: ReportInputPayload, consents: CheckoutLegalConfirmations) => {
+  const submit = async (payload: ReportInputPayload, consents: CheckoutLegalConfirmations, scope?: string) => {
     if (!enabled || !loaded || sending.current || completedUrl) return;
     sending.current = true; setSubmitting(true); setRetryable(false);
     const controller = new AbortController();
     const deadline = setTimeout(() => controller.abort(), 20_000);
     try {
       const fingerprint = Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(payload))))).map(b => b.toString(16).padStart(2, "0")).join("");
+      if (current.current?.scope && current.current.scope !== scope) { setMessage("원래 계정으로 로그인한 뒤 발행 상태를 확인해 주세요."); return; }
       if (current.current && current.current.fingerprint !== fingerprint) { setMessage("이전 발행 결과를 확인 중입니다. 입력을 바꾸어 중복 발행하지 않습니다."); return; }
-      const value = current.current ?? { requestId: crypto.randomUUID(), fingerprint };
+      const value = current.current ?? { requestId: crypto.randomUUID(), fingerprint, ...(scope ? { scope } : {}) };
       // If persistence fails, do not send a reservation that cannot be recovered.
       sessionStorage.setItem(key, JSON.stringify(value));
       sessionStorage.setItem(checkoutReturnKey(product), "1");
       current.current = value; setPending(value); setMessage("책 발행을 준비하고 있습니다.");
-      const response = await fetch("/auth/ticket-redeem", { method: "POST", signal: controller.signal, headers: { "content-type": "application/json" }, body: JSON.stringify({ requestId: value.requestId, payload, consent: createCheckoutConsentAssertion(consents) }) });
+      const response = await fetch("/auth/ticket-redeem", { method: "POST", signal: controller.signal, headers: { "content-type": "application/json", ...(scope ? { "x-ticket-account": scope } : {}) }, body: JSON.stringify({ requestId: value.requestId, payload, consent: createCheckoutConsentAssertion(consents) }) });
       const body = await response.json();
       if (!mounted.current) return;
       // Only definitive pre-reservation rejections release the method lock.

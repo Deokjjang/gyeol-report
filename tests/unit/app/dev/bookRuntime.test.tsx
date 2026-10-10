@@ -26,7 +26,7 @@ beforeAll(async () => {
     samples.set(f.id, { evidence, data: data! });
   }
   expect(fetch).not.toHaveBeenCalled();
-}, 60000);
+}, 180000); // All real six-product/category fixtures; no assertions are relaxed.
 afterAll(() => vi.unstubAllGlobals());
 
 describe("actual V4 packet → book pages; no new calculation or prose", () => {

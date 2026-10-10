@@ -36,6 +36,14 @@ afterEach(() => { mountCleanup?.(); mountCleanup = undefined; vi.useRealTimers()
 async function mount(enabled = true) { readHook(enabled); mountCleanup = hooks.effects[0](); await vi.advanceTimersByTimeAsync(0); return readHook(enabled); }
 
 describe("ticket publication client recovery callbacks", () => {
+  it("owner-scoped receipt retry cannot move an old reservation to another member", async () => {
+    const hook = await mount();
+    await hook.submit(payload, consent, "a".repeat(64));
+    expect(vi.mocked(fetch).mock.calls[0][1]?.headers).toMatchObject({"x-ticket-account":"a".repeat(64)});
+    const count=vi.mocked(fetch).mock.calls.length;
+    await readHook().submit(payload,consent,"b".repeat(64));
+    expect(fetch).toHaveBeenCalledTimes(count);expect(readHook().message).toContain("원래 계정");
+  });
   it("approval persists request before network, rapid clicks reserve once, sends no authority fields", async () => {
     const hook = await mount();
     let release!: (r: Response) => void;

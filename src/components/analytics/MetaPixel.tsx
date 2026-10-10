@@ -21,12 +21,14 @@ const PIXEL_ID =
 
 export default function MetaPixel() {
   const pathname = usePathname();
+  const bundleCallback = pathname?.startsWith("/account/tickets/checkout/") || pathname?.startsWith("/dev/account/tickets/");
   useEffect(() => {
+    if (bundleCallback) return;
     if (pathname) pageView(pathname);
     void syncLocalFacts();
-  }, [pathname]);
+  }, [pathname, bundleCallback]);
 
-  if (!PIXEL_ID || process.env.NODE_ENV !== "production") {
+  if (bundleCallback || !PIXEL_ID || process.env.NODE_ENV !== "production") {
     return null;
   }
 
