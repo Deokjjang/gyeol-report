@@ -32,7 +32,9 @@ export async function handleLocalBundle(request: NextRequest, action: string) {
       return (await tx.query<{ r: BundleResult }>("select ticket_bundle_commerce($1,$2,$3::jsonb) r", [a, mapped, JSON.stringify(data)])).rows[0].r;
     });
   } };
-  const url = new URL(request.url), origin = url.origin;
+  const url = new URL(request.url);
+  if (request.headers.get("host")) url.host = request.headers.get("host")!;
+  const origin = url.origin;
   if (action === "mock") {
     if (request.method !== "POST" || request.headers.get("origin") !== origin) return new NextResponse(null, { status: 403 });
     const raw = await request.text(); if (raw.length > 300) return new NextResponse(null, { status: 400 });
@@ -51,5 +53,13 @@ export async function handleLocalBundle(request: NextRequest, action: string) {
     if (!status || p.paymentKey !== `local-mock-${found.order?.orderId}`) return { ok: false, error: { code: "TOSS_CONFIRM_PROVIDER_ERROR", message: "Local approval unavailable" } };
     if (status === "PENDING" && !recovery) return { ok: false, error: { code: "TOSS_CONFIRM_PROVIDER_ERROR", message: "Local pending" } };
     return { ok: true, confirm: { provider: "toss", paymentKeyReceived: true, paymentKeyVerified: true, currency: "KRW", orderId: p.orderId, amount: p.amount, status: status === "ABORTED" ? "ABORTED" : "DONE", approvedAt: new Date().toISOString() } };
-  }, { clientKey: "local-mock-only", successUrl: `${origin}/dev/account/tickets/checkout/success`, failUrl: `${origin}/dev/account/tickets/checkout/fail`, allowLocalhostRedirects: true }, { tickets, localOrigin: origin, purchasePolicyVersion: MOCK_BUNDLE_POLICY });
+  }, { clientKey: "local-mock-only", successUrl: `${origin}/dev/account/tickets/checkout/success`, failUrl: `${origin}/dev/account/tickets/checkout/fail`, allowLocalhostRedirects: true }, {
+    tickets, localOrigin: origin, purchasePolicyVersion: MOCK_BUNDLE_POLICY,
+    lookup: async order => {
+      const outcome = state.__bundleLocalOutcomes?.get(`${id}:${order.providerOrderId}`);
+      if (!outcome || outcome === "PENDING") return { ok: false };
+      return { ok: true, paymentKey: `local-mock-${order.orderId}`, confirm: { provider: "toss", paymentKeyReceived: true, paymentKeyVerified: true,
+        currency: "KRW", orderId: order.providerOrderId, amount: order.amount, status: outcome === "ABORTED" ? "ABORTED" : "DONE", approvedAt: new Date().toISOString() } };
+    },
+  });
 }

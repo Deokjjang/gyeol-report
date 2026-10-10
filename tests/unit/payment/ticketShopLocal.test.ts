@@ -20,11 +20,14 @@ describe("actual localhost mock checkout (no provider)", () => {
     expect(await account.exchange(new URL(login!).searchParams.get("code")!)).toBe(true);
     const user = (await account.currentUser())!; expect(await account.consent(user, randomUUID(), "first_login")).toBe(true);
     const cookie = account.finish(new NextResponse()).cookies.get("gyeol-local-account")!;
-    const req = (action: string, body?: object, scope?: string) => new NextRequest(`http://localhost/dev/account/tickets/api/${action}`, { method: body ? "POST" : "GET", headers: { origin: "http://localhost", cookie: `${cookie.name}=${cookie.value}`, "content-type": "application/json", ...(scope ? { "x-ticket-account": scope } : {}) }, ...(body ? { body: JSON.stringify(body) } : {}) });
+    // Next dev may retain localhost in request.url while the browser uses 127.0.0.1.
+    const req = (action: string, body?: object, scope?: string) => new NextRequest(`http://localhost:3112/dev/account/tickets/api/${action}`, { method: body ? "POST" : "GET", headers: { host: "127.0.0.1:3112", origin: "http://127.0.0.1:3112", cookie: `${cookie.name}=${cookie.value}`, "content-type": "application/json", ...(scope ? { "x-ticket-account": scope } : {}) }, ...(body ? { body: JSON.stringify(body) } : {}) });
     const state = await handleLocalBundle(req("state"), "state"); expect(state.status, await state.clone().text()).toBe(200);
     const { scope, quantity } = await state.json(); expect(quantity).toBe(0);
     const prepare = await handleLocalBundle(req("prepare", { bundleId: "PACK_3", requestId: randomUUID(), consent: { version: MOCK_BUNDLE_POLICY, product: true, digitalDelivery: true, purchasePolicy: true } }, scope), "prepare");
     expect(prepare.status, await prepare.clone().text()).toBe(200); const { order } = await prepare.json();
+    const wrongOrigin = req("prepare", {}); wrongOrigin.headers.set("origin", "http://localhost:3112");
+    expect((await handleLocalBundle(wrongOrigin, "prepare")).status).toBe(403);
     const mock = await handleLocalBundle(req("mock", { orderId: order.orderId, outcome: "GRANT_PENDING" }), "mock");
     const payment = await mock.json();
     const confirmation = await handleLocalBundle(req("confirm", payment, scope), "confirm");

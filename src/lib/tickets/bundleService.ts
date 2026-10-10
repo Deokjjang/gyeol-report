@@ -6,6 +6,8 @@ import { ticketBundle } from "./bundleCatalog";
 import type { BundleOrder, BundleResult, BundleStore } from "./bundleTypes";
 
 export type BundleProvider = (input: TossConfirmRequest, recovery: boolean) => Promise<TossConfirmClientResult>;
+// Server-only lookup: paymentKey is never returned by the commerce handler.
+export type BundleOrderLookup = (order: BundleOrder) => Promise<(Extract<TossConfirmClientResult, { ok: true }> & { paymentKey: string }) | { ok: false }>;
 export type BundleCheckoutConfig = { clientKey: string; successUrl: string; failUrl: string; allowLocalhostRedirects?: boolean };
 const failure = (code: string): BundleResult => ({ ok: false, code });
 
@@ -37,8 +39,28 @@ export async function confirmBundleOrder(store: BundleStore, userId: string, inp
   try { return await settleBundleClaim(store, userId, await store.call("claim", userId, { ...input }), input.paymentKey, provider); }
   catch { return failure("PAYMENT_RECONCILIATION_REQUIRED"); }
 }
-export async function recoverBundleOrder(store: BundleStore, userId: string, orderId: string, provider: BundleProvider): Promise<BundleResult> {
+export async function recoverBundleOrder(store: BundleStore, userId: string, orderId: string, provider: BundleProvider, lookup?: BundleOrderLookup): Promise<BundleResult> {
   try {
+    const current = await store.call("read", userId, { orderId });
+    if (!current.ok || !current.order) return current;
+    if (current.order.status === "READY") {
+      // No callback/key reached us. Read the owned, immutable provider order;
+      // not-found, READY and IN_PROGRESS are not proof of non-payment.
+      const found = await lookup?.(current.order);
+      if (!found?.ok) return { ...current, ok: false, pending: true, code: "UNKNOWN_PAYMENT_STATE" };
+      const receipt = found.confirm;
+      if (!found.paymentKey || found.paymentKey.length > 200 || receipt.provider !== "toss" || receipt.orderId !== current.order.providerOrderId
+        || receipt.amount !== current.order.amount || receipt.currency !== "KRW" || receipt.paymentKeyVerified !== true) return failure("PROVIDER_MISMATCH");
+      if (!["DONE", "CANCELED", "PARTIAL_CANCELED", "ABORTED", "EXPIRED"].includes(receipt.status)
+        || (receipt.status === "DONE" && (!receipt.approvedAt || !Number.isFinite(Date.parse(receipt.approvedAt))))) {
+        return { ...current, ok: false, pending: true, code: "UNKNOWN_PAYMENT_STATE" };
+      }
+      const claim = await store.call("claim", userId, { orderId, paymentKey: found.paymentKey, amount: current.order.amount });
+      // A durable claim serializes grant/terminal transitions. This recovery path
+      // consumes a verified GET fact only; it never calls payment confirmation.
+      return settleBundleClaim(store, userId, claim, found.paymentKey, async () => found);
+    }
+    if (["GRANTED", "FAILED", "REFUND_PENDING", "REFUNDED"].includes(current.order.status)) return current;
     const claim = await store.call("recover", userId, { orderId });
     return await settleBundleClaim(store, userId, claim, claim.paymentKey ?? "", provider);
   } catch { return failure("PAYMENT_RECONCILIATION_REQUIRED"); }

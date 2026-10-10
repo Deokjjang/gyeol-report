@@ -11,13 +11,16 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
   const { createBundleStore } = await import("../../../../lib/tickets/bundleSupabase");
   const { createTicketStore } = await import("../../../../lib/tickets/supabase");
   const { handleBundleCommerce } = await import("../../../../lib/tickets/bundleHandler");
-  const { confirmTossBundlePayment } = await import("../../../../lib/payment/tossConfirmClient");
+  const { confirmTossBundlePayment, lookupTossBundleOrder } = await import("../../../../lib/payment/tossConfirmClient");
   try {
     const auth = createAccountPort(request);
     if (!auth) return NextResponse.json({ ok: false }, { status: 503 });
     return await handleBundleCommerce(request, (await context.params).action, auth, createBundleStore(),
       (input, recovery) => confirmTossBundlePayment({ ...input, secretKey: process.env.TOSS_PAYMENTS_SECRET_KEY ?? "" }, recovery),
-      { clientKey: process.env.NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY ?? "", successUrl: `${origin}/account/tickets/checkout/success`, failUrl: `${origin}/account/tickets/checkout/fail` }, { tickets: createTicketStore() });
+      { clientKey: process.env.NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY ?? "", successUrl: `${origin}/account/tickets/checkout/success`, failUrl: `${origin}/account/tickets/checkout/fail` }, {
+        tickets: createTicketStore(),
+        lookup: order => lookupTossBundleOrder({ orderId: order.providerOrderId, amount: order.amount, secretKey: process.env.TOSS_PAYMENTS_SECRET_KEY ?? "" }),
+      });
   } catch { return NextResponse.json({ ok: false, code: "STORAGE_UNAVAILABLE" }, { status: 503, headers: { "Cache-Control": "private, no-store" } }); }
 }
 export const GET = handle;

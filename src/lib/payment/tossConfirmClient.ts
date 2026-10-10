@@ -298,3 +298,22 @@ export async function confirmTossBundlePayment(input: ConfirmTossPaymentInput, r
     return result.ok && result.confirm.status === "IN_PROGRESS" ? confirmTossPayment(strict) : result;
   } catch { return failure("TOSS_CONFIRM_PROVIDER_ERROR", "Toss payment lookup is pending."); }
 }
+
+// Official orderId lookup for a lost bundle callback. Read-only: even an
+// IN_PROGRESS response does not authorize a new confirm request here.
+export async function lookupTossBundleOrder(input: Omit<ConfirmTossPaymentInput, "paymentKey">): Promise<(Extract<TossConfirmClientResult, { ok: true }> & { paymentKey: string }) | { ok: false }> {
+  if (!isNonEmptyString(input.secretKey) || !/^bundle_toss_[a-f0-9]{32}$/.test(input.orderId)
+    || !Number.isSafeInteger(input.amount) || input.amount < 100) return { ok: false };
+  try {
+    return await withDeadline(async signal => {
+      const response = await (input.fetchImpl ?? fetch)(`https://api.tosspayments.com/v1/payments/orders/${encodeURIComponent(input.orderId)}`, {
+        method: "GET", signal, headers: { authorization: createAuthorizationHeader(input.secretKey) },
+      });
+      if (!response.ok) return { ok: false as const };
+      const body = await readJsonSafely(response);
+      if (!isRecord(body) || !isNonEmptyString(body.paymentKey) || body.paymentKey.length > 200) return { ok: false as const };
+      const result = mapTossConfirmResponse(body, { orderId: input.orderId, amount: input.amount, paymentKey: body.paymentKey }, true);
+      return result.ok ? { ...result, paymentKey: body.paymentKey } : { ok: false as const };
+    }, TOSS_CONFIRM_TIMEOUT_MS, input.signal);
+  } catch { return { ok: false }; }
+}

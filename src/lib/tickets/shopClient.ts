@@ -38,7 +38,13 @@ export function safeBundleOrder(value: unknown): value is BundleOrder {
 }
 export async function launchBundleCheckout(checkout: BundleCheckout) {
   // Reuse the SDK loader, not the direct-report launcher/metadata contract.
-  const { loadTossPaymentsBrowserSdk } = await import("../payment/tossBrowserSdkLoader");
-  const sdk = await loadTossPaymentsBrowserSdk(checkout.clientKey);
-  await sdk.payment({ customerKey: checkout.customerKey }).requestPayment(checkout.requestPayment);
+  let payment;
+  try {
+    const { loadTossPaymentsBrowserSdk } = await import("../payment/tossBrowserSdkLoader");
+    const sdk = await loadTossPaymentsBrowserSdk(checkout.clientKey);
+    payment = sdk.payment({ customerKey: checkout.customerKey });
+  } catch { return "not-started" as const; }
+  // Once invoked, rejection/cancel is uncertain. Do not unlock another charge.
+  await payment.requestPayment(checkout.requestPayment);
+  return "returned" as const;
 }

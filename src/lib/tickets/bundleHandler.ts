@@ -4,7 +4,7 @@ import type { AccountPort } from "../account/handler";
 import { accountSession, ACCOUNT_POLICY_VERSIONS } from "../account/policy";
 import { publicRequestOrigin } from "../account/origin";
 import { isRecord } from "../report-generation/productPublishGate";
-import { bundleCheckout, prepareBundleOrder, confirmBundleOrder, recoverBundleOrder, type BundleProvider, type BundleCheckoutConfig } from "./bundleService";
+import { bundleCheckout, prepareBundleOrder, confirmBundleOrder, recoverBundleOrder, type BundleProvider, type BundleCheckoutConfig, type BundleOrderLookup } from "./bundleService";
 import type { BundleStore } from "./bundleTypes";
 import { createHash } from "node:crypto";
 import { BUNDLE_PURCHASE_POLICY_VERSION, validBundleConsent } from "./shopContract";
@@ -13,11 +13,13 @@ import { ticketBundle } from "./bundleCatalog";
 
 // Dedicated member store handler; all public commerce gates remain OFF.
 export async function handleBundleCommerce(request: NextRequest, action: string, auth: AccountPort, store: BundleStore, provider: BundleProvider, config: BundleCheckoutConfig,
-  options: { tickets?: TicketStore; purchasePolicyVersion?: string | null; localOrigin?: string } = {}) {
+  options: { tickets?: TicketStore; purchasePolicyVersion?: string | null; localOrigin?: string; lookup?: BundleOrderLookup } = {}) {
   const json = (body: object, status = 200) => auth.finish(NextResponse.json(body, { status, headers: { "Cache-Control": "private, no-store", Vary: "Cookie", "Referrer-Policy": "no-referrer" } }));
   if (!["prepare", "confirm", "recover", "history", "state"].includes(action)) return json({}, 404);
   if (request.method !== (["history", "state"].includes(action) ? "GET" : "POST")) return json({}, 405);
-  const local = ["development", "test"].includes(process.env.NODE_ENV) && options.localOrigin === new URL(request.url).origin && ["localhost", "127.0.0.1", "[::1]"].includes(new URL(request.url).hostname);
+  const localUrl = new URL(request.url);
+  if (["development", "test"].includes(process.env.NODE_ENV) && options.localOrigin && request.headers.get("host")) localUrl.host = request.headers.get("host")!;
+  const local = ["development", "test"].includes(process.env.NODE_ENV) && options.localOrigin === localUrl.origin && ["localhost", "127.0.0.1", "[::1]"].includes(localUrl.hostname);
   const origin = local ? options.localOrigin : publicRequestOrigin(request);
   if (!origin || (request.method === "POST" && request.headers.get("origin") !== origin)) return json({}, 403);
   try {
@@ -66,7 +68,7 @@ export async function handleBundleCommerce(request: NextRequest, action: string,
     } else {
       const current = await store.call("read", user.id, { orderId: body.orderId });
       if (!current.ok) return json({ ok: false, code: "ORDER_NOT_FOUND" }, 404);
-      result = current.order && ["READY", "GRANTED", "FAILED", "REFUND_PENDING", "REFUNDED"].includes(current.order.status) ? current : await recoverBundleOrder(store, user.id, body.orderId, provider);
+      result = await recoverBundleOrder(store, user.id, body.orderId, provider, options.lookup);
     }
     if ((await auth.currentUser())?.id !== user.id) return json({}, 401);
     if (!result.order) {

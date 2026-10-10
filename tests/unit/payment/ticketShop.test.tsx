@@ -120,6 +120,15 @@ describe("shop browser contracts (not a visual browser test)", () => {
     expect(prepared.tossCheckoutRequest.metadata).not.toHaveProperty("reportId");
     expect(requestPayment.mock.calls[0][0].amount.value).toBe(4290);
   });
+  it("SDK load failure is safe to retry; rejection after requestPayment stays uncertain",async()=>{
+    const prepared=await (await invoke("prepare",{bundleId:"PACK_3",requestId:randomUUID(),consent})).json();
+    vi.mocked(loadTossPaymentsBrowserSdk).mockRejectedValueOnce(Error("load failed"));
+    expect(await launchBundleCheckout(prepared.tossCheckoutRequest)).toBe("not-started");
+    const requestPayment=vi.fn().mockRejectedValue(Error("window closed"));
+    vi.mocked(loadTossPaymentsBrowserSdk).mockResolvedValueOnce({payment:()=>({requestPayment})});
+    await expect(launchBundleCheckout(prepared.tossCheckoutRequest)).rejects.toThrow("window closed");
+    expect(requestPayment).toHaveBeenCalledOnce();
+  });
   it("ledger labels never display raw reasons; refund distinction stays accurate", () => {
     expect(ticketEventLabel("GRANT", "PAID_BUNDLE_PACK_5")).toBe("유료 구매 지급");
     expect(ticketEventLabel("REVERSAL", "INTERNAL_FAILURE")).toBe("발행 실패 · 이용권 복구");

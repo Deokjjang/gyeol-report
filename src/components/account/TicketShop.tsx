@@ -85,7 +85,9 @@ export function TicketShop({ local = false, callback = false, policyVersion = nu
       if (scope.current !== owner) return;
       if (safeBundleOrder(data.order)) {
         const confirmed: BundleOrder = data.order;
-        setOrder(confirmed); setMessage(bundleStatusText[confirmed.status]);
+        setOrder(confirmed); setMessage(data.code === "UNKNOWN_PAYMENT_STATE"
+          ? "결제 여부를 아직 확인할 수 없습니다. 새로 결제하지 말고 같은 주문을 다시 확인해 주세요. 계속 확인되지 않으면 고객 문의를 이용해 주세요."
+          : bundleStatusText[confirmed.status]);
         if (p?.orderId === confirmed.orderId && ["GRANTED", "FAILED", "REFUNDED"].includes(confirmed.status)) { sessionStorage.removeItem(bundlePendingKey); setPending(null); setSelection(null); setConsent({}); }
         if (data.order.status === "GRANTED") {
           const fresh = await request("state", undefined, owner);
@@ -127,7 +129,12 @@ export function TicketShop({ local = false, callback = false, policyVersion = nu
       if (!check.r.ok || check.data.scope !== owner || scope.current !== owner) return;
       p = { ...p, launched: true }; sessionStorage.setItem(bundlePendingKey, JSON.stringify(p)); setPending(p); setMessage(local ? "모의 결제창으로 이동 중" : "결제창으로 이동 중");
       if (local) window.location.assign(`${path}/mock?orderId=${o.orderId}`);
-      else await launchBundleCheckout(checkout);
+      else if (await launchBundleCheckout(checkout) === "not-started") {
+        // requestPayment was never invoked. Retry this same prepared order only.
+        if (scope.current !== owner) return;
+        p = { ...p, launched: false }; sessionStorage.setItem(bundlePendingKey, JSON.stringify(p)); setPending(p);
+        setMessage("결제창을 불러오지 못했습니다. 같은 주문으로 다시 시도해 주세요.");
+      }
     } catch { setMessage("결제창 상태를 확인하지 못했습니다. 기존 주문을 확인해 주세요."); }
     finally { lock.current = false; setBusy(false); }
   }

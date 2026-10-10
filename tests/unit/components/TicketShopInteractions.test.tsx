@@ -13,11 +13,13 @@ import { TicketSummary } from "../../../src/components/account/TicketSummary";
 import { BookInput, Fields } from "../../../src/components/book/BookInput";
 vi.mock("next/navigation",()=>({useSearchParams:()=>new URLSearchParams("product=career_money_study")}));
 import { bundlePendingKey, bundleReturnKey, MOCK_BUNDLE_POLICY } from "../../../src/lib/tickets/shopContract";
+vi.mock("../../../src/lib/tickets/shopClient", async original => ({ ...await original<typeof import("../../../src/lib/tickets/shopClient")>(), launchBundleCheckout: vi.fn() }));
+import { launchBundleCheckout } from "../../../src/lib/tickets/shopClient";
 const scope = "a".repeat(64), other = "b".repeat(64), values = new Map<string,string>();
 const order = { orderId:`bundle_${"c".repeat(32)}`,providerOrderId:`bundle_toss_${"d".repeat(32)}`,bundleId:"PACK_5",quantity:5,amount:6890,currency:"KRW",status:"READY",requestedAt:"2026-10-10T00:00:00Z" };
 const response = (data: object, status=200) => new Response(JSON.stringify(data),{status});
-let cleanup: (()=>void)|void;
-const render = (callback=false) => { hooks.index=0;hooks.effects=[]; return TicketShop({local:true,callback,policyVersion:MOCK_BUNDLE_POLICY}); };
+let cleanup: (()=>void)|void, local = true;
+const render = (callback=false) => { hooks.index=0;hooks.effects=[]; return TicketShop({local,callback,policyVersion:MOCK_BUNDLE_POLICY}); };
 type Node = ReactElement<Record<string,unknown>>;
 function nodes(node: ReactNode): Node[] { if (Array.isArray(node)) return node.flatMap(nodes); if (!React.isValidElement<Record<string,unknown>>(node)) return []; return [node,...nodes(node.props.children as ReactNode)]; }
 function text(node: ReactNode): string { return typeof node === "string" || typeof node === "number" ? String(node) : Array.isArray(node) ? node.map(text).join("") : React.isValidElement<Record<string,unknown>>(node) ? text(node.props.children as ReactNode) : ""; }
@@ -31,7 +33,7 @@ function select() {
   for(let i=0;i<3;i++) { const check=nodes(render()).filter(n=>n.type==="input"&&n.props.type==="checkbox")[i]; (check.props.onChange as (e:unknown)=>void)({target:{checked:true}}); }
 }
 beforeEach(()=>{
-  hooks.slots=[];values.clear();vi.useFakeTimers();vi.stubGlobal("crypto",webcrypto);
+  hooks.slots=[];values.clear();local=true;vi.mocked(launchBundleCheckout).mockReset();vi.useFakeTimers();vi.stubGlobal("crypto",webcrypto);
   vi.stubGlobal("sessionStorage",{getItem:(k:string)=>values.get(k)??null,setItem:(k:string,v:string)=>values.set(k,v),removeItem:(k:string)=>values.delete(k)});
   vi.stubGlobal("BroadcastChannel",undefined); vi.stubGlobal("document",Object.assign(new EventTarget(),{hidden:false}));
   vi.stubGlobal("window",Object.assign(new EventTarget(),{location:{href:"http://localhost/dev/account/tickets",pathname:"/dev/account/tickets",assign:vi.fn()},history:{state:{},replaceState:vi.fn()}}));
@@ -61,6 +63,18 @@ describe("shop real component callbacks, not browser visual QA",()=>{
   it("storage failure makes zero orders; no durable hint means no network prepare",async()=>{
     await mount();select();vi.mocked(fetch).mockClear();vi.stubGlobal("sessionStorage",{getItem:()=>null,setItem:()=>{throw Error("full");}});
     click("이용권 5장 구매");await flush();expect(fetch).not.toHaveBeenCalled();
+  });
+  it.each(["not-started","uncertain"])("SDK %s only unlocks when requestPayment was never called",async outcome=>{
+    local=false; await mount(); select();
+    vi.mocked(fetch).mockImplementation(async url=>String(url).endsWith("/state")?response({scope,quantity:0}):response({ok:true,order,tossCheckoutRequest:{customerKey:`member_${scope}`,metadata:{bundleOrderId:order.orderId},requestPayment:{orderId:order.providerOrderId,amount:{value:6890}}}}));
+    if(outcome==="not-started")vi.mocked(launchBundleCheckout).mockResolvedValue("not-started");
+    else vi.mocked(launchBundleCheckout).mockRejectedValue(Error("request was invoked"));
+    click("이용권 5장 구매"); await flush();
+    const saved=JSON.parse(values.get(bundlePendingKey)!); expect(saved.launched).toBe(outcome!=="not-started");
+    click("이용권 5장 구매"); await flush();
+    const preparations=vi.mocked(fetch).mock.calls.filter(([u])=>String(u).endsWith("/prepare"));
+    expect(preparations).toHaveLength(outcome==="not-started"?2:1);
+    expect(new Set(preparations.map(([,init])=>JSON.parse(String(init?.body)).requestId))).toEqual(new Set([saved.requestId]));
   });
   it("same-name account switch clears previous balance/pending/return, never reuses its authority",async()=>{
     values.set(bundlePendingKey,JSON.stringify({requestId:randomUUID(),scope,bundleId:"PACK_5",orderId:order.orderId}));
