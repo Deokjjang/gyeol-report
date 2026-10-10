@@ -1,18 +1,18 @@
 import { expect, it, vi } from "vitest";
 import { writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 vi.mock("server-only", () => ({}));
 import { generateV4ShadowReport } from "../../../src/lib/interpretation-v4/runtimeShadow";
 import * as manuscript from "../../../src/lib/interpretation-v4/comprehensiveManuscriptRenderer";
 import { singleRuntimeInput, SHADOW_CLOCK } from "./runtimeFixtures";
 import { validateV4Publication, v4Digest, projectV4Composition, type V4RuntimeEvidence } from "../../../src/lib/interpretation-v4/runtimeProjection";
 import { projectBook } from "../../../src/app/dev/book-preview/bookProjection";
+import { storedBook } from "../../../src/lib/book/storedReport";
+import { createProductPreviewSnapshot, type ProductPreviewSnapshotDraft } from "../../../src/lib/report-generation/productPreviewSnapshot";
 
 it.each([
-  { date: "1993-02-06", blocker: false }, { date: "1988-03-22", blocker: false },
-  // Additional bounded probe, NOT a publication success. Present at the base
-  // too: C7 support spends PR015's sole direct phrase before its C8 primary.
-  { date: "1994-11-18", blocker: true },
-])("sparse $date (additional unresolved blocker: $blocker)", async ({ date, blocker }) => {
+  { date: "1993-02-06" }, { date: "1988-03-22" }, { date: "1994-11-18" },
+])("sparse $date must publish (never count an expected manuscript failure as success)", async ({ date }) => {
   const render = vi.spyOn(manuscript, "renderComprehensiveManuscript");
   const input = singleRuntimeInput("saju_mbti_full", "saju-mbti-full", {
     id: "release-sparse", name: "출시검수1", date, gender: "FEMALE", mbti: "",
@@ -22,12 +22,16 @@ it.each([
   const source = render.mock.calls.at(-1)![0];
   const rendered = render.mock.results.at(-1)!.value as Extract<ReturnType<typeof manuscript.renderComprehensiveManuscript>, { ok: true }>;
   render.mockRestore();
-  if (process.env.RELEASE_SPARSE_EXPORT) writeFileSync(`/private/tmp/gyeol-sparse-${date}.json`, JSON.stringify({ source, rendered, result }, null, 2));
-  if (blocker) {
-    expect(result).toMatchObject({ ok: false, externalCalls: [], error: { validationErrors: ["COMPREHENSIVE_MANUSCRIPT_UNSAFE"] } });
-    expect(rendered.draft.validation.hardViolations).toContainEqual({ code: "PRIMARY_NOT_RENDERED", refs: ["editorial:PERSONAL_RESONANCE:resonance:PR015"] });
-    return;
-  }
+  if (process.env.RELEASE_SPARSE_EXPORT) writeFileSync(`/private/tmp/gyeol-sparse-${date}.json`, JSON.stringify({
+    ok: result.ok, hard: rendered.draft.validation.hardViolations, suppressed: rendered.draft.diagnostics.suppressed,
+    sections: Object.values(rendered.draft.sections).map(s => ({ id: s.sectionId, candidates: s.sourceCandidateIds })),
+    placements: [source.plan.sections.C7.placements, source.plan.sections.C8.placements],
+    phraseRoles: Object.entries(rendered.draft.debug.sources).filter(([key]) => key.endsWith("resonance:PR015")).map(([key, value]) => ({
+      key, phrases: (value as { source: { phrases: { id: string; role: string; text: string }[] } }).source.phrases.map(p => ({
+        id: p.id, role: p.role, textDigest: createHash("sha256").update(p.text).digest("hex"),
+      })),
+    })),
+  }, null, 2));
   expect(result, JSON.stringify({ result: result.ok ? true : result, hard: rendered.draft.validation.hardViolations, suppressed: rendered.draft.diagnostics.suppressed })).toMatchObject({ ok: true, externalCalls: [] });
   expect(rendered.draft.validation.hardViolations).toEqual([]);
   expect(Object.keys(source.plan.sections)).toEqual(["C1","C2","C3","C4","C5","C6","C7","C8","C9","C10"]);
@@ -52,6 +56,15 @@ it.each([
     for (const b of section.blocks) expect(b.proof.sourceRefs.length).toBeGreaterThan(0);
   }
   const book = projectBook(e)!;
+  const snapshot = createProductPreviewSnapshot({ reportId: "sparse-local", productKey: e.input.productKey,
+    productSlug: e.input.productSlug, createdAtIso: e.generatedAt,
+    draft: result.draft as unknown as ProductPreviewSnapshotDraft, evidencePacket: e });
+  expect(snapshot.ok).toBe(true);
+  if (snapshot.ok) {
+    const saved = JSON.parse(JSON.stringify(snapshot.value));
+    expect(storedBook(saved)?.data).toEqual(book);
+    expect(storedBook(saved, "http://localhost/r/local-only")?.data).toEqual(book);
+  }
   expect(book.people[0].table.manse.stemRow.hour).toBeNull();
   expect(e.mbtiTables.person).toBeNull();
   if (date === "1993-02-06") {

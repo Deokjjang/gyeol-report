@@ -129,6 +129,14 @@ describe("actual 12-person review cohort and isolation", () => {
       // Product adapters may consume normalization/types; schedulers and core remain isolated.
       if (["comprehensiveProductAdapter", "careerProductSelection", "careerProductNarrative", "relationshipProductView", "relationshipProductNarrative"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) continue;
       const text = readFileSync(file, "utf8");
+      if (file === "src/lib/interpretation-v4/timeProductContext.ts") {
+        // Approved Major/Annual integration reuses candidates and types, not
+        // the Comprehensive scheduler/allocation or its section rendering.
+        for (const m of modules.filter(m => !["comprehensiveCandidateAdapter", "comprehensivePlanCore"].includes(m))) {
+          expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${m}["']`));
+        }
+        continue;
+      }
       if (modules.some(m => file === `src/lib/interpretation-v4/${m}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|from ["'][^"']*(?:Composer|bookProjection|runtimeShadow|supabase|openai)/i);
       else if (!["narrativeSceneCore", "narrativeTitleCore", "comprehensiveNarrativeAdapter", "comprehensiveManuscriptCore", "comprehensiveSectionRenderer", "comprehensiveManuscriptValidator", "comprehensiveManuscriptRenderer", "narrativeMbtiReason", "narrativeMeaningSignature", "narrativePositiveReward", "narrativeTitleShort", "comprehensiveManuscriptPolish", "operatingRuleCore", "operatingRuleBuilder", "narrativeHumanFirst", "narrativeHumanSurface", "narrativeCausality", "narrativeRecovery"].some(m => file === `src/lib/interpretation-v4/${m}.ts`)) for (const m of modules) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${m}["']`));
     }
