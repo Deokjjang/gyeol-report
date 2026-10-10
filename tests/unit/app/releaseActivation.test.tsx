@@ -89,9 +89,12 @@ describe("release gate combinations and real checkout route", () => {
   });
   it("production checkout presentation uses public session and the existing launcher, not dev mocks", () => {
     const source = readFileSync("src/components/book/BookCheckout.tsx", "utf8");
-    expect(source).toContain("useAccountSession(props.internal)"); expect(source).toContain("runDevTossCheckout(snapshot, consents, undefined");
-    const html = renderToStaticMarkup(<BookCheckout payload={RUNTIME_FIXTURES[0].payload as ReportInputPayload} now={SHADOW_CLOCK.evaluatedAt} internal={false} onPublishing={() => {}} onError={() => {}} />);
-    expect(html).toContain("결제하기"); expect(html).not.toContain("결제 연결 준비 중"); expect(html).toContain("로그인하고 이어서 구매하기");
+    expect(source).toContain("useAccountSession(props.internal, authEnabled)"); expect(source).toContain("runDevTossCheckout(snapshot, consents, undefined");
+    const html = renderToStaticMarkup(<BookCheckout payload={RUNTIME_FIXTURES[0].payload as ReportInputPayload} now={SHADOW_CLOCK.evaluatedAt} internal={false} authEnabled onPublishing={() => {}} onError={() => {}} />);
+    // SSR cannot know the session yet: do not expose a checkout until verified.
+    expect(html).toContain("로그인 상태를 확인하고 있습니다."); expect(html).not.toContain("결제하기"); expect(html).not.toContain("모의 결제");
+    const gated = renderToStaticMarkup(<BookCheckout payload={RUNTIME_FIXTURES[0].payload as ReportInputPayload} now={SHADOW_CLOCK.evaluatedAt} internal={false} authEnabled={false} onPublishing={() => {}} onError={() => {}} />);
+    expect(gated).toContain("결제하기"); expect(gated).not.toContain("로그인하고 이어서 구매하기");
   });
   it("login return allows only canonical product routes, not open redirects", () => {
     for (const f of RUNTIME_FIXTURES) expect(safeAccountNext(`/report/new?product=${f.payload.productKey}`)).toBe(`/report/new?product=${f.payload.productKey}`);

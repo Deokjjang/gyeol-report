@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { NextRequest } from "next/server";
+import { readFileSync } from "node:fs";
 import { ticketAuth } from "../../helpers/ticketPublicationSql";
 const setup = vi.hoisted(() => ({ book: false, account: false, auth: vi.fn(), store: vi.fn(), batch: vi.fn(), handler: vi.fn() }));
 vi.mock("../../../src/lib/book/publicGate", () => ({ bookExperiencePublicEnabled: () => setup.book }));
@@ -12,6 +13,13 @@ import { GET, POST } from "../../../src/app/auth/[action]/route";
 import { GET as worker } from "../../../src/app/api/internal/report-ticket-jobs/route";
 afterEach(() => { vi.clearAllMocks(); vi.unstubAllEnvs(); setup.book = false; setup.account = false; });
 describe("public ticket gates before dependency construction", () => {
+  it("release config schedules both isolated workers once per minute", () => {
+    const config = JSON.parse(readFileSync("vercel.json", "utf8"));
+    expect(config.crons).toEqual([
+      { path: "/api/internal/report-jobs", schedule: "* * * * *" },
+      { path: "/api/internal/report-ticket-jobs", schedule: "* * * * *" },
+    ]);
+  });
   it.each([[false,false],[true,false],[false,true]])("Book %s / Account %s rejects redeem/status before Auth/DB", async (book, account) => {
     setup.book = book; setup.account = account;
     for (const action of ["ticket-redeem", "ticket-status"]) {

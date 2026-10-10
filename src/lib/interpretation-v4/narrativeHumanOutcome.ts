@@ -111,6 +111,7 @@ export function mbtiHumanBehavior(axis: SemanticAxis, value: number) {
 
 /** Context is a use of the already-supported behavior, not a personality diagnosis. */
 export const HUMAN_VALUE: Partial<Record<SemanticAxis, string>> = {
+  STRUCTURE_STYLE: "여러 일을 함께 맡아도 기준과 순서를 잡아두면, 빠뜨린 일을 뒤늦게 수습하는 수고를 줄일 수 있어요.",
   DEPTH: "답이 쉽게 나오지 않는 문제를 만났을 때, 한 번 더 파고드는 과정이 남이 놓친 이유를 찾게 해줍니다.",
   PRECISION: "작은 틀림이 결과를 바꾸는 일에서는, 남들이 넘어간 부분을 다시 보는 눈을 실제로 쓸 수 있어요.",
   ADAPTABILITY: "처음 세운 방법이 통하지 않을 때도 끝이라고 보지 않아요. 지금 할 수 있는 다른 길을 찾는 쪽입니다.",

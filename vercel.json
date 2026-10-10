@@ -1,3 +1,6 @@
 {
-  "crons": [{ "path": "/api/internal/report-jobs", "schedule": "* * * * *" }]
+  "crons": [
+    { "path": "/api/internal/report-jobs", "schedule": "* * * * *" },
+    { "path": "/api/internal/report-ticket-jobs", "schedule": "* * * * *" }
+  ]
 }
