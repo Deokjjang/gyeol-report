@@ -86,14 +86,14 @@
 .bookShell { position: relative; max-width: 700px; margin: 18px auto 35px; height: calc(100svh - 126px); min-height: 380px; border: 1px solid var(--rule); background: #fff; box-shadow: 5px 5px 0 #f4f4f4, 6px 6px 0 #d6d6d6; perspective: 1800px; }
 /* Contain perspective overflow; only the current chapter scrolls, not the body. */
 .bookShell { overflow: clip; }
-.pageScroll { height: calc(100% - 54px); padding: 38px 58px 65px; overflow-y: auto; overflow-x: hidden; scrollbar-width: thin; overscroll-behavior: contain; touch-action: pan-y; scroll-padding-block: 24px; }
+.pageScroll { height: calc(100% - 54px - env(safe-area-inset-bottom, 0px)); padding: 38px 58px 65px; overflow-y: auto; overflow-x: hidden; scrollbar-width: thin; overscroll-behavior: contain; touch-action: pan-y; scroll-padding-block: 24px; }
 .pageScroll input, .pageScroll select, .pageScroll button { scroll-margin-block: 28px; }
 .pageScroll:focus { outline: none; }
 .eyebrow { font-size: 10px; letter-spacing: .1em; color: var(--muted); margin-bottom: 23px !important; line-height: 1.6; }
 .pageScroll h1 { font-size: 30px; line-height: 1.35; font-weight: 600; letter-spacing: -.055em; max-width: 530px; text-wrap: balance; margin-bottom: 24px; }
 .pageScroll h2 { font-size: 20px; line-height: 1.5; font-weight: 600; letter-spacing: -.035em; }
 .hint { font-size: 12px; color: var(--muted); line-height: 1.8; }
-.pageNav { position: absolute; bottom: 0; left: 0; right: 0; height: 54px; display: grid; grid-template-columns: 80px minmax(0, 1fr) 80px; align-items: center; gap: 6px; padding: 0 20px; border-top: 1px solid var(--rule); background: inherit; }
+.pageNav { position: absolute; bottom: 0; left: 0; right: 0; height: calc(54px + env(safe-area-inset-bottom, 0px)); display: grid; grid-template-columns: 80px minmax(0, 1fr) 80px; align-items: center; gap: 6px; padding: 0 20px env(safe-area-inset-bottom, 0px); border-top: 1px solid var(--rule); background: inherit; }
 .pageNav > span { display: flex; justify-content: center; align-items: baseline; flex-wrap: wrap; text-align: center; gap: 4px 9px; font-size: 10px; line-height: 1.5; font-variant-numeric: tabular-nums; }
 .pageNav > span strong { font-size: 12px; font-weight: 500; white-space: nowrap; }
 .pageNav > span > span { white-space: nowrap; }
@@ -326,8 +326,7 @@
   .bookShell { width: 100%; height: calc(100dvh - 64px); margin: 0; border: none; box-shadow: none; min-height: 280px; }
   .pageScroll { padding: 27px 28px 50px; }
   .pageScroll h1 { font-size: 28px; margin-bottom: 24px; }
-  .pageNav { padding: 0 16px; height: 54px; grid-template-columns: 76px minmax(0, 1fr) 76px; }
-  .pageScroll { height: calc(100% - 54px); }
+  .pageNav { padding-inline: 16px; grid-template-columns: 76px minmax(0, 1fr) 76px; }
   .fields { gap: 24px 20px; margin-top: 27px; }
   .fields label { font-size: 12px; }
   .choices { gap: 23px; }

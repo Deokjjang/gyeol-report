@@ -12,7 +12,7 @@ import { runTicketPublicationJob, runTicketPublicationBatch } from "../../../src
 import { readOwnedTicketReport } from "../../../src/lib/tickets/ownerRead";
 import { createCheckoutConsentAssertion, createCheckoutConsentEvidence } from "../../../src/lib/payment/checkoutConsent";
 import { confirmedAdultDevTossCheckoutLegalConfirmations as agreed } from "../../../src/components/payment/DevTossCheckoutLauncher";
-import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
+import { RUNTIME_FIXTURES, singleRuntimeInput } from "../interpretation-v4/runtimeFixtures";
 import { BOOK_FIXTURES } from "../../../src/app/dev/book-preview/runtimeBooks";
 import { storedBook } from "../../../src/lib/book/storedReport";
 import { prepareBookShare, loadSharedBookData } from "../../../src/lib/book/shareServer";
@@ -21,7 +21,12 @@ import { normalizeReportInputPayload } from "../../../src/lib/report-generation/
 import { generateV4ShadowReport } from "../../../src/lib/interpretation-v4/runtimeShadow";
 
 const now = new Date("2026-10-10T03:00:00Z"), consent = createCheckoutConsentEvidence(createCheckoutConsentAssertion(agreed), "1990-01-01", now)!;
-const fixtures = RUNTIME_FIXTURES.map(f => ({ ...f, payload: f.id === "annual" ? { ...f.payload, productOptions: { selectedYear: "2026" } } : f.payload }));
+const fixtures = [...RUNTIME_FIXTURES.map(f => ({ ...f, payload: f.id === "annual" ? { ...f.payload, productOptions: { selectedYear: "2026" } } : f.payload })),
+  { id: "comprehensive-sparse", payload: singleRuntimeInput("saju_mbti_full", "saju-mbti-full", {
+    id: "sparse", name: "출시검수1", date: "1993-02-06", gender: "FEMALE", mbti: "",
+    context: { jobStatus: "", detailJob: "", relationshipStatus: "single" },
+  }) },
+];
 let local: Awaited<ReturnType<typeof ticketPublicationSql>>;
 const grant = (quantity = 1, user = A, extra: Record<string, unknown> = {}) => local.tickets.call("grant", user, { quantity, sourceType: "manual", sourceRef: randomUUID(), key: randomUUID(), reason: "LOCAL_TEST", ...extra });
 const reserve = (payload: unknown = fixtures[0].payload, key: string = randomUUID(), user = A, queue = local.queue) => enqueueTicketPublication(queue, user, key, payload, consent, now);
@@ -110,7 +115,7 @@ describe("public ticket queue: real SQL chain, deterministic V4, no financial ca
     }
   });
   it.each(fixtures)("$id real queue → V4 → owner/Book/library/share, stable clock and no side effects", async f => {
-    await grant(); const queued = await reserve(f.payload);
+    await grant(); const requestId = randomUUID(), queued = await reserve(f.payload, requestId);
     expect(queued).toMatchObject({ state: "QUEUED" });
     expect(await runTicketPublicationJob(local.queue)).toMatchObject({ state: "COMPLETED" });
     const reportId = String(queued.reportId);
@@ -136,6 +141,12 @@ describe("public ticket queue: real SQL chain, deterministic V4, no financial ca
     expect((await loadSharedBookData(model.shareToken, sqlBookSharePort(local.db)))?.data).toEqual(book.data);
     const after = await local.queue.call("status", A, { redemptionId: queued.redemptionId });
     expect(after.state).toBe("COMPLETED"); expect((await local.tickets.call("summary", A)).quantity).toBe(0);
+    if (f.id === "comprehensive-sparse") {
+      expect(await reserve(f.payload, requestId)).toMatchObject({ state: "COMPLETED", reportId });
+      expect(await runTicketPublicationJob(local.queue)).toMatchObject({ empty: true });
+      expect((await local.db.query("select * from report_ticket_ledger where event_type='REDEEM'")).rows).toHaveLength(1);
+      expect((await local.db.query("select * from paid_report_snapshots where published_at is not null")).rows).toHaveLength(1);
+    }
     exports.push({ id: f.id, input: f.payload, reportId, book, contentHash: createHash("sha256").update(JSON.stringify(owner.snapshot.draft)).digest("hex") });
     await local.db.exec("reset role");
     for (const table of ["payment_orders", "report_generation_jobs", "ticket_bundle_orders", "coupon_redemptions", "referral_attributions", "campaign_attributions", "meta_purchase_dispatches"]) expect((await local.db.query(`select * from ${table}`)).rows).toHaveLength(0);

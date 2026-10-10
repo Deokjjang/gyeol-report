@@ -51,6 +51,11 @@ export function allocateComprehensiveMaterials(rows: readonly C[], input: Compre
         if (!(s === "C6" && c.factBomb)) return block(c, s, "CONDITIONAL_STORY_OWNS_SIDES");
       }
     } else if (role === "SUPPORT") {
+      // The renderer suppresses this identity restatement. Reject it before it
+      // spends the shared support budget, so a separately proven shadow or
+      // application can still be allocated later in the book.
+      if (s === "C1" && core && c.sourceType === "PERSONAL_RESONANCE" && core.resonanceIds.includes(c.sourceId)
+        && c.broadTheme === core.broadTheme && c.primaryAxes.every(a => core.primaryAxes.includes(a))) return block(c, s, "CORE_IDENTITY_ALREADY_INTRODUCED");
       if (section.supportingCandidateIds.length >= contracts[s].maxSupport) return false;
       if (used.some(x => x.p.role === "SUPPORT" && x.c.broadTheme === c.broadTheme)) return block(c, s, "THEME_SUPPORT_BUDGET");
       const linkedAdvice = c.sourceType === "GUIDANCE" && used.some(x => x.s === s && c.precursorIds.some(id => [x.c.sourceId, ...x.c.claimIds, ...x.c.resonanceIds, ...x.c.traitArcIds, ...x.c.fusionIds].includes(id)));

@@ -108,12 +108,13 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
     if (step === total - 1 && (internal || requiredGender)) {
       setChecking(true); const attempt = ++validationId.current;
       try {
-        const response = await fetch(internal ? "/dev/book-flow/api" : "/api/reports/validate-input", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(internal ? { operation: "validate", payload } : payload) });
+        const localValidation = internal && !requiredGender;
+        const response = await fetch(localValidation ? "/dev/book-flow/api" : "/api/reports/validate-input", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(localValidation ? { operation: "validate", payload } : payload) });
         // Public preflight endpoint intentionally accepts only Dayun products;
         // other public products are checked by the unchanged checkout server.
         const result = await response.json();
         if (attempt !== validationId.current) return;
-        if (!result.ok) { setMessage(typeof result.error === "string" ? result.error : "입력 정보를 확인해 주세요."); return; }
+        if (!result.ok) { setMessage(typeof result.message === "string" ? result.message : typeof result.error === "string" ? result.error : "입력 정보를 확인해 주세요."); return; }
       } catch { setMessage("입력을 확인하지 못했습니다. 다시 시도해 주세요."); return; }
       finally { setChecking(false); }
     }

@@ -67,10 +67,9 @@ const edgeCases = RUNTIME_FIXTURES.flatMap((f, index) => ["unknown", "approximat
     payload.relationshipType = mode === "unknown" ? "parentChild" : "managerReport";
     Object.assign(payload.personB, { birthDate: "2008-06-03" });
   }
-  // Visible release blockers, NOT passing publication cases. Keep the original
-  // inputs and assert the safe rejection rather than weakening either gate.
-  const expectedBlocker = mode === "unknown" && f.id === "comprehensive" ? "V4_CONTENT_INCOMPLETE"
-    : mode === "unknown" && f.id === "annual" ? "DAYUN_UNCERTAIN" : null;
+  // Annual uncertainty remains a legitimate pre-purchase rejection; sparse
+  // Comprehensive must publish through the unchanged completeness gate.
+  const expectedBlocker = mode === "unknown" && f.id === "annual" ? "DAYUN_UNCERTAIN" : null;
   return { id: `${f.id}-${mode}`, payload, expectedBlocker };
 }));
 it.each(edgeCases)("release bounded edge $id (known blocker: $expectedBlocker)", async ({ payload, expectedBlocker }) => {
