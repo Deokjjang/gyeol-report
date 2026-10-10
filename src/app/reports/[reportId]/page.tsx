@@ -1563,6 +1563,19 @@ export default async function ReportResultPage({
   params,
 }: ReportResultPageProps) {
   const routeParams = await params;
+  // Ticket publications have no payment order. Read under authenticated owner
+  // authority first; never emit a Meta Purchase for a ticket-origin book.
+  if (bookExperiencePublicEnabled() && accountPublicEnabled()) {
+    const { loadOwnedTicketBook } = await import("../../../lib/book/ownerAccess");
+    const ticket = await loadOwnedTicketBook(routeParams.reportId ?? "");
+    if (ticket.kind === "ticketBook") {
+      const { StoredBookReport } = await import("../../../lib/book/storedReport");
+      return <StoredBookReport snapshot={ticket.snapshot} shareOwner={{ reportId: ticket.snapshot.reportId }} />;
+    }
+    if (ticket.kind === "storageError") return <ResultShell><p role="alert">책의 열람 정보를 확인하지 못했습니다. 잠시 후 다시 열어 주세요.</p></ResultShell>;
+    if (ticket.kind === "expired") return renderExpiredState();
+    if (ticket.kind === "invalidSnapshot") return renderInvalidSnapshotState();
+  }
   const state = await loadPageState(routeParams.reportId ?? "");
 
   if (state.kind === "processing") return <><MetaPurchaseTracker reportId={routeParams.reportId ?? ""} /><ReportGenerationStatus attention={state.attention} delayed={state.delayed} /></>;

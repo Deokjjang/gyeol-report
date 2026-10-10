@@ -13,6 +13,7 @@ import { BookCheckout } from "./BookCheckout";
 import s from "../../app/dev/book-preview/book.module.css";
 import f from "./flow.module.css";
 import { interaction } from "../../lib/analytics/client";
+import { checkoutReturnKey, ticketPendingKey } from "./useTicketPublication";
 
 export function Fields({ person, change, prefix, role, errors, now, requiredGender }: { person: PersonInputState; change: (value: PersonInputState) => void; prefix: string; role: string; errors: Record<string, string>; now: string; requiredGender: boolean }) {
   const error = (key: string) => errors[`${prefix}.${key}`] ? <small id={`${prefix}-${key}-error`} role="alert" className={f.error}>{errors[`${prefix}.${key}`]}</small> : null;
@@ -30,13 +31,13 @@ export function MbtiInput({ person, change, role }: { person: PersonInputState; 
   return <label>{role} MBTI<select value={person.mbtiType} onChange={e => change({ ...person, mbtiType: e.target.value })}>{MBTI_TYPES.map(v => <option key={v} value={v}>{v || "모름"}</option>)}</select></label>;
 }
 
-export function BookInput({ internal, now, initial }: { internal: boolean; now: string; initial?: BookFormState }) {
+export function BookInput({ internal, now, initial, authEnabled = internal }: { internal: boolean; now: string; initial?: BookFormState; authEnabled?: boolean }) {
   const params = useSearchParams(), book = bookForProduct(params.get("product") ?? "") ?? BOOKS[0];
   // Product is the component key supplied by the wrapper below via navigation;
   // drafts are additionally namespaced per product and cannot activate routes.
-  return <BookForm key={book.id} book={book} internal={internal} now={now} initial={initial} />;
+  return <BookForm key={book.id} book={book} internal={internal} now={now} initial={initial} authEnabled={authEnabled} />;
 }
-function BookForm({ book, internal, now, initial }: { book: typeof BOOKS[number]; internal: boolean; now: string; initial?: BookFormState }) {
+function BookForm({ book, internal, now, initial, authEnabled }: { book: typeof BOOKS[number]; internal: boolean; now: string; initial?: BookFormState; authEnabled: boolean }) {
   useEffect(() => { interaction("book_viewed", book.productKey); }, [book.productKey]);
   const policy = getAnnualFortuneCommerceYearPolicy(new Date(now)), key = `gyeol-book-input-v1:${book.productKey}`;
   const [state, setState] = useState(initial ?? emptyBookForm(policy.currentYear)), [step, setStep] = useState(0), [ready, setReady] = useState(false);
@@ -47,7 +48,19 @@ function BookForm({ book, internal, now, initial }: { book: typeof BOOKS[number]
   const payload = bookInputPayload(book, state), title = readerTitle(book, state.person.selectedYear);
   useEffect(() => {
     const restore = setTimeout(() => {
-      if (!initial) { try { const saved = restoreBookForm(JSON.parse(sessionStorage.getItem(key) ?? "null"), policy.currentYear); if (saved) setState(saved); } catch { /* unavailable storage does not block input */ } }
+      if (!initial) { try {
+        const saved = restoreBookForm(JSON.parse(sessionStorage.getItem(key) ?? "null"), policy.currentYear);
+        if (saved) {
+          setState(saved);
+          const returnToReceipt = sessionStorage.getItem(checkoutReturnKey(book.productKey)) === "1" || sessionStorage.getItem(ticketPendingKey(book.productKey)) !== null;
+          const persons = pair ? [saved.person, saved.personB] : [saved.person];
+          if (returnToReceipt && persons.every(p => Object.keys(personErrors(p, now, requiredGender)).length === 0)) {
+            // Local hint only. No restored consent, balance, gate or publication.
+            reachedStep.current = total; setStep(total);
+            window.history.replaceState({ ...window.history.state, bookInputProduct: book.id, bookInputPage: total }, "");
+          }
+        }
+      } catch { /* unavailable storage does not block input */ } }
       setReady(true);
     }, 0);
     // Preserve Next's history metadata. Browser back/forward restores only a
@@ -59,7 +72,7 @@ function BookForm({ book, internal, now, initial }: { book: typeof BOOKS[number]
       setPublishing(false); setMessage("");
     };
     window.addEventListener("popstate", back); return () => { clearTimeout(restore); window.removeEventListener("popstate", back); };
-  }, [key, policy.currentYear, initial, book.id]);
+  }, [key, policy.currentYear, initial, book.id, book.productKey, now, pair, requiredGender, total]);
   useEffect(() => { if (ready) { try { sessionStorage.setItem(key, JSON.stringify({ version: 1, state })); } catch { /* optional local draft */ } } }, [state, ready, key]);
   useEffect(() => { scroll.current?.scrollTo({ top: 0 }); scroll.current?.focus({ preventScroll: true }); }, [step]);
   useEffect(() => { if (!publishing) return; const timer = setInterval(() => setDecoration(n => Math.min(3, n + 1)), 1000); return () => clearInterval(timer); }, [publishing]);
@@ -93,7 +106,7 @@ function BookForm({ book, internal, now, initial }: { book: typeof BOOKS[number]
     <header className={s.header}><a href={home} className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기 ×</a></header>
     {publishing ? <div data-observed-status="REQUESTED" data-intermediate-states="decorative"><Publishing book={book} name={state.person.name} state={PUBLISHING_STATES[decoration]} notice="내부 검수 · 실제 결제 없음" /><p className={f.status} role="status">책을 생성하고 있습니다. 종이·제본 움직임은 연출이며 진행률이 아닙니다.</p></div> : null}
     <section className={s.bookShell} hidden={publishing}><div className={s.pageScroll} ref={scroll} tabIndex={-1} role="region" aria-label="책 입력">
-      {!ready ? <p role="status">입력 준비 중</p> : receipt ? <BookCheckout payload={payload} now={now} internal={internal} onPublishing={() => { setDecoration(0); setPublishing(true); }} onError={text => { if (text) setPublishing(false); setMessage(text); }} /> : <form noValidate onSubmit={e => { e.preventDefault(); void next(); }}>
+      {!ready ? <p role="status">입력 준비 중</p> : receipt ? <BookCheckout payload={payload} now={now} internal={internal} authEnabled={authEnabled} onPublishing={() => { setDecoration(0); setPublishing(true); }} onError={text => { if (text) setPublishing(false); setMessage(text); }} /> : <form noValidate onSubmit={e => { e.preventDefault(); void next(); }}>
         <p className={s.eyebrow}>{title} / {String(step + 1).padStart(2, "0")}</p><h1>{step === 0 ? "이 책의 주인공" : step === 1 ? "지금의 나" : book.id === "annual" ? "읽고 싶은 한 해" : "지금의 관계"}</h1>
         {step === 0 ? <>{pair ? <label>관계 유형<select value={state.category} onChange={e => update({ ...state, category: e.target.value as CompatibilityRelationshipType })}>{CATEGORIES.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label> : null}<Fields person={state.person} change={p => update({ ...state, person: { ...state.person, ...p } })} prefix="a" role={pair ? roles.personA : "주인공"} errors={errors} now={now} requiredGender={requiredGender} />{pair ? <Fields person={state.personB} change={p => update({ ...state, personB: p })} prefix="b" role={roles.personB} errors={errors} now={now} requiredGender={false} /> : null}</> : null}
         {step === 1 ? <div className={s.fields}><MbtiInput person={state.person} change={p => update({ ...state, person: { ...state.person, ...p } })} role={pair ? roles.personA : ""} />{pair ? <MbtiInput person={state.personB} change={p => update({ ...state, personB: p })} role={roles.personB} /> : <>

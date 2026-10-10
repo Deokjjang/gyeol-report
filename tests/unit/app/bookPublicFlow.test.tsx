@@ -134,7 +134,7 @@ describe("presentation contracts", () => {
   it("guest required consent, no fake member bypass, compact collapsed details", () => {
     const payload = RUNTIME_FIXTURES[0].payload as ReportInputPayload;
     expect(prepareLocalBook({ ...request(payload), consent: createCheckoutConsentAssertion({ ...agreed, policyAgreement: false }) }, now)).toMatchObject({ ok: false });
-    const html = renderToStaticMarkup(<BookCheckout payload={payload} now={now.toISOString()} internal onPublishing={() => {}} onError={() => {}} />);
+    const html = renderToStaticMarkup(<BookCheckout payload={payload} now={now.toISOString()} internal authEnabled={false} onPublishing={() => {}} onError={() => {}} />);
     expect(html).toContain("전체 동의"); expect(html).not.toContain("<dialog"); expect(html).not.toContain("마케팅"); expect(html).not.toContain("회원 미리보기");
     expect(src("src/components/book/BookCheckout.tsx")).toContain("indeterminate = some && !all");
   });

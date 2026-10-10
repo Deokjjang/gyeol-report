@@ -1,9 +1,32 @@
 import { expect } from "vitest";
+import { readFileSync } from "node:fs";
 
 /** Exact Phase 8C read-only consumers plus Phase 9A's server-only stored reader
  * and development mock publisher; never a blanket route exception. Client
  * consumers get types only. Book tests enforce production OFF / dev 404. */
 export function isVerifiedBookConsumer(file: string, source: string): boolean {
+  if (file === "src/lib/tickets/publicationWorker.ts") {
+    expect(source).toMatch(/^import "server-only";/);
+    expect(source).toContain('store.call("claim", null)');
+    expect(source).toContain("generateReportSnapshot");
+    expect(source).toContain("validateV4Publication");
+    expect(source).toContain('new Date(job.policyAt).toISOString()');
+    expect(source).not.toMatch(/createClient|fetch\(|process\.env|TossPayments|new OpenAI/);
+    const route = readFileSync("src/app/api/internal/report-ticket-jobs/route.ts", "utf8");
+    expect(route).toContain("timingSafeEqual");
+    expect(route).toContain("if (!bookExperiencePublicEnabled() || !accountPublicEnabled())");
+    expect(route.indexOf("if (!bookExperiencePublicEnabled()")).toBeLessThan(route.indexOf('await import("../../../../lib/tickets/publicationWorker")'));
+    return true;
+  }
+  if (file === "src/lib/tickets/ownerRead.ts") {
+    expect(source).toMatch(/^import "server-only";/);
+    expect(source).toContain("await auth.currentUser()");
+    expect(source).toContain('store.call("read", user.id, { reportId })');
+    expect(source).toContain('snapshot.productVersion !== "v4"');
+    expect(source).toContain("projectV4Snapshot(snapshot)");
+    expect(source).not.toMatch(/runtimeShadow|generateV4|process\.env|fetch\(/);
+    return true;
+  }
   if (file === "src/lib/book/paidRuntime.ts") {
     expect(source).toMatch(/^import "server-only";/);
     expect(source).toContain("if (!bookExperiencePublicEnabled()) return runPaidReportJob(store, runtime)");
