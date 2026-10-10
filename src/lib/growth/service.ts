@@ -8,6 +8,7 @@ import type { TicketStore } from "../tickets/service";
 import { BOOK_SHARE_HEADERS } from "../book/shareServer";
 import { CAMPAIGN_SLUG, campaignUtm, type CampaignPresentation } from "./model";
 import { getReportProductCatalog } from "../payment/reportProductCatalog";
+import { isPublicSameOrigin } from "../account/origin";
 export type CampaignResult = { ok: boolean; settled?: boolean; maxAge?: number; notice?: string | null;
   presentation?: CampaignPresentation; contexts?: Array<{kind:"campaign"|"referral";hash:string;acquiredAt:string}>;
   items?: Array<{reportId:string;snapshot:unknown}> };
@@ -20,7 +21,7 @@ export async function campaignPresentation(store:CampaignStore,slug:string) {
 export async function captureCampaign(request:NextRequest,auth:AccountPort,store:CampaignStore,local=false) {
   const json=(body:object,status=200)=>auth.finish(NextResponse.json(body,{status,headers:BOOK_SHARE_HEADERS}));
   const url=new URL(request.url);if(local&&request.headers.get("host"))url.host=request.headers.get("host")!;
-  if(request.method!=="POST"||request.headers.get("origin")!==(local?url.origin:"https://gyeolreport.com"))return json({},403);
+  if(request.method!=="POST"||!(local?request.headers.get("origin")===url.origin:isPublicSameOrigin(request)))return json({},403);
   try {
     const raw=await request.text();if(raw.length>2048)return json({},413);
     const b=JSON.parse(raw);

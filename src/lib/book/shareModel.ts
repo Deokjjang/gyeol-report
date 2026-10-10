@@ -8,7 +8,7 @@ export type BookShareModel = {
   bookTitle: string; issueNumber: string; coverColor: string;
   displayName: string; displayTitle: string; reportVersion: "v4";
   publishedAt: string | null; expiresAt: string | null; isShareable: boolean;
-  referral?: { token: string; url: string; mayJoin: boolean };
+  referral?: { token: string; url: string; mayJoin: boolean; launchEvent?: boolean };
 };
 // Allowlisted presentation only. Never contains a private report URL or input packet.
 export function projectBookShare(input: { productType: string; names: string; selectedYear?: string; shareUrl?: string | null; publishedAt?: string; expiresAt?: string }): BookShareModel | null {

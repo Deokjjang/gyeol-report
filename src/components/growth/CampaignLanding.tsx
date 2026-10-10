@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { BOOKS } from "../../lib/book/product";
 import { campaignOffer, campaignRemaining, campaignCountdown, type CampaignView, type CampaignState } from "../../lib/growth/model";
 import { interaction } from "../../lib/analytics/client";
+import { LAUNCH_NOTICE } from "../../lib/growth/launchEvent";
 import s from "./campaign.module.css";
 
 const stateCopy: Record<CampaignState, string> = {
@@ -17,6 +18,7 @@ export function CampaignLanding({ campaign, utm, member = false, local = false }
   const home = local ? "/dev/book-flow" : "/", busyRef = useRef(false);
   const [current, setCurrent] = useState(campaign), [remaining, setRemaining] = useState(campaignRemaining(campaign, 0));
   const [busy, setBusy] = useState(false), [error, setError] = useState("");
+  const [unavailable, setUnavailable] = useState(false);
   useEffect(() => {
     interaction("campaign_landing_opened", undefined, campaign.slug);
     let cancelled = false, inFlight = false, anchor = performance.now(), snapshot = campaign;
@@ -30,9 +32,10 @@ export function CampaignLanding({ campaign, utm, member = false, local = false }
         if (r.ok && !cancelled) {
           const c = await r.json() as CampaignView;
           snapshot = c; anchor = requested; // Conservative RTT: never extend by network latency.
+          setUnavailable(false);
           setCurrent(c); setRemaining(campaignRemaining(c, performance.now() - anchor));
-        }
-      } catch { /* A stale local clock can hide a CTA, never authorize a claim. */ }
+        } else if (!cancelled) setUnavailable(true);
+      } catch { if (!cancelled) setUnavailable(true); }
       finally { inFlight = false; }
     };
     const tick = () => setRemaining(campaignRemaining(snapshot, performance.now() - anchor));
@@ -43,7 +46,7 @@ export function CampaignLanding({ campaign, utm, member = false, local = false }
     return () => { cancelled = true; abort.abort(); clearInterval(clock); clearInterval(poll); window.removeEventListener("focus", visible); document.removeEventListener("visibilitychange", visible); };
   }, [campaign, local]);
   const state = remaining === 0 && current.state !== "BENEFIT_ALREADY_GRANTED" ? "ENDED" : current.state;
-  const eligible = state === "ACTIVE_ELIGIBLE";
+  const eligible = !unavailable && state === "ACTIVE_ELIGIBLE";
   async function begin() {
     if (busyRef.current) return;
     interaction("campaign_cta_clicked", undefined, current.slug);
@@ -66,7 +69,8 @@ export function CampaignLanding({ campaign, utm, member = false, local = false }
       <p className={s.eyebrow}>A BOOK ABOUT YOU</p><h1>{current.headline}</h1><p className={s.description}>{current.description}</p>
       <section className={s.books} aria-label="여섯 권의 책">{BOOKS.map(b => <div key={b.id}><span style={{ background: b.color, color: b.ink }}><small>GYEOL<br/>REPORT</small><strong>{b.title.replace("\n", " ")}</strong><small>ISSUE {b.issue}</small></span></div>)}</section>
       <p className={s.note}>나라는 사람부터 일, 사랑, 두 사람의 관계와 시간의 흐름까지.<br/>지금 궁금한 이야기를 골라보세요.</p>
-      <section className={s.offer} aria-label="캠페인 혜택"><p>{eligible ? campaignOffer(current) : stateCopy[state]}</p>
+      <section className={s.offer} aria-label="캠페인 혜택"><p>{unavailable ? "이벤트 혜택을 확인하지 못했습니다. 책 선택과 유료 구매는 계속 이용할 수 있습니다." : eligible ? campaignOffer(current) : stateCopy[state]}</p>
+        {current.launchEvent ? <small>{LAUNCH_NOTICE}</small> : null}
         {eligible && current.offer !== "NONE" ? <small>신규 계정에 한해 지급됩니다. 친구 초대·다른 캠페인의 신규가입 혜택과 중복되지 않습니다.</small> : null}
         {eligible || state === "BENEFIT_ALREADY_GRANTED" ? <small>{current.eligibility}</small> : null}
         {current.startsAt ? <small>시작 · {date(current.startsAt)} KST</small> : null}{current.endsAt ? <small>종료 · {date(current.endsAt)} KST</small> : null}

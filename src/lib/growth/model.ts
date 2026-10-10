@@ -2,6 +2,7 @@ export type CampaignPresentation = {
   slug: string; message: string; active: boolean; status: string;
   offer: "NONE" | "REPORT_TICKET" | "COUPON"; quantity: number | null;
   startsAt: string | null; endsAt: string | null;
+  launchEvent?: boolean;
   coupon: null | { name: string; type: "fixed_amount" | "percentage"; value: number; maxDiscount: number | null; minOrder: number; products: string[]; expiresAt: string };
 };
 export const CAMPAIGN_SLUG = /^[a-z0-9][a-z0-9-]{2,63}$/;

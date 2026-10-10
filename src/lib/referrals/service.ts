@@ -10,8 +10,9 @@ import type { BookShareModel } from "../book/shareModel";
 import { SHARE_TOKEN_PATTERN } from "../sharing/reportShareMetadata";
 import type { TicketStore } from "../tickets/service";
 import type { ReliabilityStore } from "../payment/paidReportReliabilityStore";
+import { isPublicSameOrigin } from "../account/origin";
 
-export type ReferralResult = { ok: boolean; attributed?: boolean; items?: Array<{ reportId: string; snapshot: unknown }>; snapshot?: unknown; referred?: boolean; inviter?: boolean };
+export type ReferralResult = { ok: boolean; attributed?: boolean; rewardAvailable?: boolean; launchEvent?: boolean; items?: Array<{ reportId: string; snapshot: unknown }>; snapshot?: unknown; referred?: boolean; inviter?: boolean };
 export type ReferralStore = { call(action: string, user: string | null, data?: Record<string, unknown>): Promise<ReferralResult> };
 export const REFERRAL_TOKEN = /^rf_[A-Za-z0-9_-]{43}$/;
 export const referralHash = (value: string) => createHash("sha256").update(value).digest("hex");
@@ -26,19 +27,19 @@ export async function attachReferral(model: BookShareModel, reportId: string, sn
   if (!user || !account || accountSession(user, account).status !== "member" || !model.shareToken || !validReferralSnapshot(snapshot)) return model;
   const token = `rf_${randomBytes(32).toString("base64url")}`;
   const result = await store.call("create", user.id, { reportId, snapshot, shareToken: model.shareToken, tokenHash: referralHash(token) });
-  return result.ok ? { ...model, referral: { token, url: `${model.shareUrl}?ref=${token}`, mayJoin: false } } : model;
+  return result.ok ? { ...model, referral: { token, url: `${model.shareUrl}?ref=${token}`, mayJoin: false, launchEvent: result.launchEvent } } : model;
 }
 export async function referralPresentation(model: BookShareModel, token: unknown, auth: AccountPort, store: ReferralStore) {
   if (typeof token !== "string" || !REFERRAL_TOKEN.test(token)) return model;
   const checked = await store.call("inspect", null, { tokenHash: referralHash(token), shareToken: model.shareToken });
   if (!checked.ok || !validReferralSnapshot(checked.snapshot)) return model;
-  return { ...model, referral: { token, url: `${model.shareUrl}?ref=${token}`, mayJoin: !await auth.currentUser() } };
+  return { ...model, referral: { token, url: `${model.shareUrl}?ref=${token}`, mayJoin: checked.rewardAvailable !== false && !await auth.currentUser(), launchEvent: checked.launchEvent } };
 }
 // The only browser mutation is capture. No grant/qualify/user ID fields accepted.
 export async function captureReferral(request: NextRequest, auth: AccountPort, store: ReferralStore, local = false) {
   const json = (body: object, status = 200) => auth.finish(NextResponse.json(body, { status, headers: BOOK_SHARE_HEADERS }));
   const url = new URL(request.url); if (local && request.headers.get("host")) url.host = request.headers.get("host")!;
-  if (request.method !== "POST" || request.headers.get("origin") !== (local ? url.origin : "https://gyeolreport.com")) return json({}, 403);
+  if (request.method !== "POST" || !(local ? request.headers.get("origin") === url.origin : isPublicSameOrigin(request))) return json({}, 403);
   try {
     const raw = await request.text(); if (raw.length > 512) return json({}, 413);
     const body = JSON.parse(raw);
@@ -50,7 +51,7 @@ export async function captureReferral(request: NextRequest, auth: AccountPort, s
     const secret = randomBytes(32).toString("hex");
     const data = { tokenHash: referralHash(body.ref), shareToken: body.shareToken, contextHash: referralHash(secret) };
     const checked = await store.call("inspect", null, data);
-    if (!checked.ok || !validReferralSnapshot(checked.snapshot)) return json({ next: local ? "/dev/book-flow" : "/" });
+    if (!checked.ok || checked.rewardAvailable === false || !validReferralSnapshot(checked.snapshot)) return json({ next: local ? "/dev/book-flow" : "/" });
     if (!cookie && !(await store.call("capture", null, data)).ok) return json({}, 503);
     const response = json({ next: local ? "/dev/account?view=login" : "/login" });
     if (!cookie) response.cookies.set(referralCookie(local), secret, { httpOnly: true, secure: !local, sameSite: "lax", path: "/", maxAge: 600 });

@@ -1,0 +1,15 @@
+.event { color: #111; background: #fff; margin: 0 auto; padding: 20px 0 12px; width: min(89.6%, 920px); border-block: 1px solid #dedede; display: grid; grid-template-columns: 1fr auto; gap: 10px 24px; font-family: inherit; }
+.event + section { min-height: max(490px, calc(100svh - 280px)); }
+.heading p { font-size: 10px; letter-spacing: .08em; margin: 0 0 8px; }
+.heading p span { margin-left: 12px; color: #666; }
+.heading h2 { font: inherit; font-size: 20px; font-weight: 650; letter-spacing: -.04em; margin: 0 0 6px; }
+.heading small, .clock p, .clock small { font-size: 11px; color: #555; margin: 0; }
+.clock { text-align: right; align-self: center; }
+.clock time { display: block; font-size: 26px; font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; white-space: nowrap; margin-top: 5px; letter-spacing: .02em; }
+.notice { font-size: 11px; color: #555; line-height: 1.7; grid-column: 1 / -1; }
+.notice summary { width: fit-content; cursor: pointer; }
+.notice p { margin: 6px 0 0; max-width: 760px; }
+.entry { grid-column: 1 / -1; width: fit-content; font-size: 12px; color: #111; text-underline-offset: 4px; }
+.srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 600px) { .event { grid-template-columns: 1fr; gap: 9px; padding-top: 14px; } .heading h2 { font-size: 18px; } .clock { text-align: left; } .clock time { font-size: 25px; margin-top: 3px; } }
+@media (prefers-reduced-motion: reduce) { .event * { animation: none; transition: none; } }

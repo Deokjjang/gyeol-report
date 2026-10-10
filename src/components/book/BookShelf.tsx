@@ -8,6 +8,7 @@ import { BOOKS, readerTitle } from "../../lib/book/product";
 import s from "../../app/dev/book-preview/book.module.css";
 import { AccountEntry } from "../account/AccountSession";
 import { interaction } from "../../lib/analytics/client";
+import { LaunchCountdown } from "../growth/LaunchCountdown";
 
 export function BookShelf({ inputPath, year, authEnabled = false }: { inputPath: string; year: number; authEnabled?: boolean }) {
   const [current, setCurrent] = useState(0);
@@ -24,6 +25,7 @@ export function BookShelf({ inputPath, year, authEnabled = false }: { inputPath:
   }, []);
   const select = (n: number) => { auto.current?.interact(); setCurrent(wrapBook(n)); interaction("book_selected", BOOKS[wrapBook(n)].productKey); };
   return <main className={s.root} data-book-home><header className={s.header}><Link href="/" className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></Link>{authEnabled ? <AccountEntry local={inputPath === "/dev/book-flow/input"} /> : <span className={s.login} aria-label="로그인 준비 중">로그인</span>}</header>
+    <LaunchCountdown local={inputPath === "/dev/book-flow/input"} />
     <section className={s.home} aria-label="여섯 권의 책 고르기" tabIndex={0}
       onKeyDown={e => { if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); select(current + (e.key === "ArrowRight" ? 1 : -1)); } }}
       onPointerEnter={e => { if (e.pointerType === "mouse" && matchMedia("(hover: hover)").matches) { hovering.current = true; refresh.current(); } }} onPointerLeave={() => { hovering.current = false; refresh.current(); }}
