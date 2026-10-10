@@ -144,6 +144,16 @@ describe("manuscript boundary and section contracts", () => {
     for (const file of walk("src")) {
       if (["comprehensiveProductAdapter", "careerProductAdapter", "careerProductNarrative", "relationshipProductNarrative", "compatibilityProductAdapter", "timeProductContext"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) continue;
       const text = readFileSync(file, "utf8");
+      const contractDependencies: Record<string, string[]> = {
+        comprehensiveRenderability: ["comprehensiveNarrativeAdapter", "comprehensiveManuscriptCore"],
+        comprehensiveSectionContracts: ["narrativeRecovery"],
+      };
+      const contract = Object.keys(contractDependencies).find(n => file === `src/lib/interpretation-v4/${n}.ts`);
+      if (contract) {
+        expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|from ["'][^"']*(?:runtimeShadow|bookProjection|supabase|openai|Composer)/);
+        for (const n of names.filter(n => !contractDependencies[contract].includes(n))) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${n}["']`));
+        continue;
+      }
       if (names.some(n => file === `src/lib/interpretation-v4/${n}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|from ["'][^"']*(?:runtimeShadow|bookProjection|supabase|openai|Composer)/);
       else for (const n of names) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${n}["']`));
     }

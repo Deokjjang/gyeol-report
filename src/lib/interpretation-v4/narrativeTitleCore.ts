@@ -10,8 +10,9 @@ const allowed: Record<ComprehensiveSectionId, readonly TitleType[]> = {
   C5: ["T4_GOOD_FORTUNE"], C6: ["T5_FACT_BOMB", "T3_LIFE_SCENE"], C7: ["T1_DIRECT_JUDGMENT", "T2_HUMAN_CONTRADICTION", "T3_LIFE_SCENE"],
   C8: ["T1_DIRECT_JUDGMENT", "T3_LIFE_SCENE", "T4_GOOD_FORTUNE", "T6_ACTION_DIRECTION"], C9: ["T2_HUMAN_CONTRADICTION", "T3_LIFE_SCENE", "T6_ACTION_DIRECTION"], C10: ["T6_ACTION_DIRECTION"],
 };
-export function chooseNarrativeTitle(c: EditorialCandidate, sectionId: ComprehensiveSectionId, used: readonly TitleUse[], key: string, lifeStatus?: string): TitleUse {
-  const types = sectionId === "C5" && !c.fortune ? ["T1_DIRECT_JUDGMENT" as const] : allowed[sectionId];
+export function chooseNarrativeTitle(c: EditorialCandidate, sectionId: ComprehensiveSectionId, used: readonly TitleUse[], key: string, lifeStatus?: string, nextRequiredType?: TitleType): TitleUse {
+  const permitted = sectionId === "C5" && !c.fortune ? ["T1_DIRECT_JUDGMENT" as const] : allowed[sectionId];
+  const types = permitted.filter(t => !(t === nextRequiredType && used.at(-1)?.type === t));
   const eligible = TITLE_SKELETONS.filter(s => types.includes(s.type) && s.required.every(word => c.sourceText.includes(word))
     && (s.type !== "T4_GOOD_FORTUNE" || c.fortune && c.sourceType === "CLAIM")
     && (s.type !== "T5_FACT_BOMB" || c.factBomb) && (s.type !== "T6_ACTION_DIRECTION" || c.sourceType === "GUIDANCE")

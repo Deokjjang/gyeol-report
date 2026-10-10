@@ -13,6 +13,7 @@ export const NARRATIVE_PIPELINE_STEPS = ["SOURCE_VALIDITY", "CLAIM_STRENGTH", "C
 
 function availablePhrases(request: NarrativeRequest, memory: NarrativeMemory): NarrativePhrase[] {
   return request.source.phrases.filter(p => p.origin !== "MBTI_REFERENCE"
+    && !phraseFragments(p).some(text => request.reservedPhraseTexts?.includes(normalizeNarrativeText(text)))
     && (!p.termDefinitionKey || !memory.usedTermDefinitions.includes(p.termDefinitionKey))
     && (!p.imageKey || !memory.usedImages.includes(p.imageKey))
     && (!(p.role === "CONTRAST" || p.thirdInterpretation) || request.source.fusionType !== "TENSION" || request.source.conditionSplit?.resolved)

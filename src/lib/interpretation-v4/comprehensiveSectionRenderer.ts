@@ -8,6 +8,7 @@ import { meaningSignature, repeatedMeaning, recoveryRelevant } from "./narrative
 import { humanFirstPenalty } from "./narrativeHumanFirst";
 import { rhythmPenalty, rhythmSignature } from "./narrativeRhythm";
 import { classifyRecovery } from "./narrativeRecovery";
+import { comprehensiveRequirements, reservedPrimaryPhrases } from "./comprehensiveRenderability";
 
 export function renderComprehensiveSection(input: ManuscriptInput, id: ComprehensiveSectionId, memory: ManuscriptMemory,
   diagnostics: ComprehensiveManuscriptDraft["diagnostics"], debug: ComprehensiveManuscriptDraft["debug"]) {
@@ -51,20 +52,14 @@ export function renderComprehensiveSection(input: ManuscriptInput, id: Comprehen
     const request: NarrativeRequest = { source: adapted.source, reportStableKey: input.reportStableKey, sectionId: id, intent: adapted.intent,
       depthIntent: plan.depthIntent, context: placement.context, presentationIntent: placement.presentationIntent,
       ...(coreOpening ? { patternId: "P01" } : {}),
-      engineVersion: GYEOL_COMPREHENSIVE_MANUSCRIPT_VERSION,
+      engineVersion: GYEOL_COMPREHENSIVE_MANUSCRIPT_VERSION, requirements: comprehensiveRequirements(adapted, id),
+      reservedPhraseTexts: reservedPrimaryPhrases(input, id, next),
       explicitMbtiBudget: Math.min(input.plan.explicitMbtiBudget.max, explicitStart + plan.maxExplicitMbti), occurrenceIndex: section.blocks.length };
     const attempts = [renderNarrativeBlock(request, next.language)];
     const continuations = adapted.intent === "GUIDANCE" ? ["P17"] : adapted.intent === "FORTUNE" ? ["P18"] : adapted.intent === "FACT_BOMB" ? ["P20"]
       : adapted.intent === "HUMAN" ? ["P19", "P24"] : adapted.intent === "COMPLEMENT" ? ["P22", "P30", "P25"] : adapted.intent === "REINFORCE" ? ["P28", "P29", "P23"] : adapted.intent === "TENSION" ? ["P27", "P26"] : [];
     for (const patternId of continuations) attempts.push(renderNarrativeBlock({ ...request, patternId }, next.language));
-    const rewardDepth = ["C4", "C5"].includes(id) && !adapted.source.fusionType
-      && ["MYEONGLI_REASON", "CLOSER"].every(role=>adapted.source.phrases.some(p=>p.role===role));
-    const min = id === "C6" || id === "C10" || c.sourceType === "GUIDANCE" ? 1 : rewardDepth ? 3 : 2;
-    const complete = (r: NarrativeRenderResult) => r.ok && r.block.sentences.length >= min
-      && (!coreOpening || r.block.sentences[0]?.role === "DIRECT_CLAIM")
-      && (!rewardDepth || ["MYEONGLI_REASON", "CLOSER"].every(role=>r.block.sentenceRoles.some(r=>r===role)))
-      && (!(adapted.source.fusionType && placement.presentationIntent === "EXPLICIT")
-        || ["MYEONGLI_REASON", "MBTI_REASON"].every(role => r.block.sentenceRoles.some(r => r === role)));
+    const complete = (r: NarrativeRenderResult) => r.ok;
     const surfacePenalty=(r:NarrativeRenderResult)=>humanFirstPenalty(r.block.sentences,id)+rhythmPenalty(rhythmSignature(r.block,meaning),next.rhythms??[])
       + (adapted.intent==="TENSION" && !r.block.sentences[0]?.sourcePhraseId.endsWith(":third")?5:0)
       + (adapted.intent==="REINFORCE" && !["P28","P29"].includes(r.block.patternId.split(":")[0])?3:0);
@@ -73,6 +68,16 @@ export function renderComprehensiveSection(input: ManuscriptInput, id: Comprehen
     for (let variant = 1; !result && variant <= 5; variant++) {
       for (const patternId of [request.patternId, ...continuations]) {
         const r = renderNarrativeBlock({ ...request, patternId, occurrenceIndex: variant + section.blocks.length * 10 }, next.language);
+        attempts.push(r);
+        if (complete(r)) { result = r; break; }
+      }
+    }
+    // A primary may itself own the only available expression. Do not sacrifice
+    // it to a speculative future reservation; allocation must reconcile that
+    // conflict. Optional supports never receive this exemption.
+    if (!result && placement.role === "PRIMARY" && request.reservedPhraseTexts?.length) {
+      for (let variant = 0; !result && variant <= 5; variant++) for (const patternId of [request.patternId, ...continuations]) {
+        const r = renderNarrativeBlock({ ...request, reservedPhraseTexts: [], patternId, occurrenceIndex: variant + section.blocks.length * 10 }, next.language);
         attempts.push(r);
         if (complete(r)) { result = r; break; }
       }
@@ -91,7 +96,8 @@ export function renderComprehensiveSection(input: ManuscriptInput, id: Comprehen
     section.terminologyUsed.push(...result.block.terminologyUsed);
     section.validation.warnings.push(...result.block.validation.warnings);
     if (!section.title && (placement.role === "PRIMARY" || !plan.primaryCandidateIds.length || id === "C9" || id === "C10" && c.sourceType === "GUIDANCE")) {
-      const title = chooseNarrativeTitle(c, id, next.usedTitles, input.reportStableKey,input.profiles.guidance.context.lifeStatus);
+      const title = chooseNarrativeTitle(c, id, next.usedTitles, input.reportStableKey,input.profiles.guidance.context.lifeStatus,
+        id === "C4" && input.plan.sections.C5.sectionKind === "POSITIVE_POTENTIAL" && input.plan.sections.C5.placements.length ? "T1_DIRECT_JUDGMENT" : undefined);
       section.title = title.text; next.usedTitles.push(title);
     }
     if (adapted.scene && result.block.sentences.some(s => s.role === "LIFE_SCENE")) {

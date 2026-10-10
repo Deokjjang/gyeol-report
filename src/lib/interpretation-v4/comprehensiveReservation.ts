@@ -19,7 +19,7 @@ export function reserveComprehensiveMaterials(rows: readonly EditorialCandidate[
       selected.push(c); themeOwners.set(c.broadTheme, s); reservations.push({ stage, candidateId: c.id, sectionId: s, status: "PLANNED" });
     }
   };
-  pick("C1", 1, "RESERVE_CORE");
+  pick("C1", 1, "RESERVE_CORE", c => !rows.some(c => c.sourceType === "CORE_GYEOL") || c.sourceType === "CORE_GYEOL");
   pick("C2", 1, "RESERVE_REINFORCE");
   pick("C3", 1, "RESERVE_TENSION_OR_COMPLEMENT");
   pick("C5", kinds.C5 === "GOOD_FORTUNE" ? 3 : 1, "RESERVE_FORTUNE", c => kinds.C5 === "GOOD_FORTUNE" || !c.contexts.includes("money") && !c.contexts.includes("recovery") && !c.internalComplexity);

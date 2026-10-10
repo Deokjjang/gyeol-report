@@ -129,6 +129,10 @@ describe("actual 12-person review cohort and isolation", () => {
       // Product adapters may consume normalization/types; schedulers and core remain isolated.
       if (["comprehensiveProductAdapter", "careerProductSelection", "careerProductNarrative", "relationshipProductView", "relationshipProductNarrative"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) continue;
       const text = readFileSync(file, "utf8");
+      if (file === "src/lib/interpretation-v4/comprehensiveRenderability.ts") {
+        for (const m of modules.filter(m => m !== "comprehensivePlanCore")) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${m}["']`));
+        continue;
+      }
       if (file === "src/lib/interpretation-v4/timeProductContext.ts") {
         // Approved Major/Annual integration reuses candidates and types, not
         // the Comprehensive scheduler/allocation or its section rendering.

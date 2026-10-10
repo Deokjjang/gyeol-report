@@ -52,7 +52,7 @@ describe("actual twelve-person manuscripts", () => {
     expect(d.fullText).not.toMatch(/[A-Z]{2,}_[A-Z_]+|actual-source|(?:natal|supplement|foundation|editorial):/);
     if (!profiles.mbti.available) expect(d.explicitMbtiUsage).toBe(0);
     expect(d.sections.C1.blocks[0]?.sentences[0]?.role).toBe("DIRECT_CLAIM");
-    expect(d.sections.C1.blocks[0]?.sourceUnitIds).toContain(plan.sections.C1.primaryCandidateIds[0]);
+    expect(d.sections.C1.blocks[0]?.sourceUnitIds).toContain(result.plan.sections.C1.primaryCandidateIds[0]);
     for (const id of ["C1", "C6", "C9"] as const) expect(d.sections[id].sceneIds.length).toBeLessThanOrEqual(1);
     for (const id of ["C5", "C10"] as const) expect(d.sections[id].sceneIds).toEqual([]);
     for (const id of COMPREHENSIVE_SECTIONS) {
@@ -60,8 +60,8 @@ describe("actual twelve-person manuscripts", () => {
       if (s.blocks.length) expect(s.title.length).toBeGreaterThan(0);
       for (const b of s.blocks) {
         if(id==="C10") { expect(s.operatingRules?.some(r=>b.sourceUnitIds.includes(r.candidateId))).toBe(true);continue; }
-        const placement = plan.sections[id].placements.find(p => b.sourceUnitIds.includes(p.candidateId))!;
-        const c = plan.candidates.find(c => c.id === placement.candidateId)!;
+        const placement = result.plan.sections[id].placements.find(p => b.sourceUnitIds.includes(p.candidateId))!;
+        const c = result.plan.candidates.find(c => c.id === placement.candidateId)!;
         if (c.fusionType && placement.presentationIntent === "EXPLICIT" && !(d.debug.sources[`${id}:${c.id}`] as {diagnostics?:string[]})?.diagnostics?.includes("MBTI_VISIBLE_DOMAIN_SUPPRESSED")) {
           expect(b.sentenceRoles).toContain("MYEONGLI_REASON"); expect(b.sentenceRoles).toContain("MBTI_REASON");
         }

@@ -37,11 +37,12 @@ it.each(stabilityFixtures(cohort))("$id $precision publishes with actual roles, 
   spy.mockRestore();
   planSpy.mockRestore();
   const draft = rendered?.ok ? rendered.draft : undefined;
+  const effectivePlan = rendered?.ok ? rendered.plan : input?.plan;
   const sections = draft ? COMPREHENSIVE_SECTIONS.map(s => draft.sections[s]) : [];
   const sentences = sections.flatMap(s => s.blocks.flatMap(b => b.sentences));
   // C10 is compiled from introduced evidence into operating-rule IDs, not the
   // scheduler's guidance candidate IDs. Audit its presence separately.
-  const missing = input ? sections.filter(s => s.sectionId !== "C10").flatMap(s => input.plan.sections[s.sectionId].primaryCandidateIds.filter(id => !s.sourceCandidateIds.includes(id)).map(id => ({ section: s.sectionId, candidate: id }))) : [];
+  const missing = effectivePlan ? sections.filter(s => s.sectionId !== "C10").flatMap(s => effectivePlan.sections[s.sectionId].primaryCandidateIds.filter(id => !s.sourceCandidateIds.includes(id)).map(id => ({ section: s.sectionId, candidate: id }))) : [];
   const row = { id: f.id, product: "saju_mbti_full", precision: f.precision, mbti: f.payload.person.mbtiType || "unknown",
     inputDigest: hash(f.payload), status: result.ok ? "SUPPORTED_PUBLICATION_PASS" : expectedRejection ? "EXPECTED_PREPAYMENT_REJECTION" : "UNEXPECTED_PUBLICATION_FAILURE",
     stage: result.ok ? "published" : draft ? draft.validation.hardViolations.length ? "manuscript" : "publication" : "upstream",
@@ -50,8 +51,9 @@ it.each(stabilityFixtures(cohort))("$id $precision publishes with actual roles, 
     sectionCoverage: sections.filter(s => s.blocks.length).map(s => s.sectionId), missingPrimary: missing,
     roles: sections.map(s => ({ section: s.sectionId, roles: s.blocks.map(b => b.sentenceRoles) })),
     exactDuplicates: sentences.length - new Set(sentences.map(s => s.text)).size,
-    evidenceOwnership: input?.plan.qualityAudit.exactEvidenceOveruse,
-    semanticOveruse: input?.plan.qualityAudit.semanticThemeOveruse,
+    evidenceOwnership: effectivePlan?.qualityAudit.exactEvidenceOveruse,
+    semanticOveruse: effectivePlan?.qualityAudit.semanticThemeOveruse,
+    renderability: rendered?.ok ? rendered.renderability : undefined,
     evidenceDigest: hash(input?.profiles.myeongli), draftDigest: hash(result.ok ? result.draft : null),
     suppressed: draft?.diagnostics.suppressed,
     sourceRoles: draft ? missing.map(m => {
@@ -77,6 +79,8 @@ it.each(stabilityFixtures(cohort))("$id $precision publishes with actual roles, 
   expect(validateV4Publication(e.productType, result.draft, e)).toEqual({ ok: true, errors: [] });
   expect(!!book).toBe(true); row.book = !!book;
   expect(draft?.validation.hardViolations).toEqual([]);
+  expect(missing).toEqual([]);
+  expect(rendered?.ok && rendered.renderability.passes <= 4).toBe(true);
   expect(row.exactDuplicates).toBe(0);
   expect(row.evidenceOwnership).toEqual([]);
   expect(row.semanticOveruse).toEqual([]);

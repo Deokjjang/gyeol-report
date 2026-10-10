@@ -54,20 +54,23 @@ describe("13D-6B actual customer generation to persisted Book", () => {
     if (!manuscript.ok) return expect.unreachable();
     for (const unit of result.integration.represented) {
       const id = unit.unit as keyof typeof manuscript.draft.sections;
-      expect(unit.primary).toEqual(plan.sections[id].primaryCandidateIds);
+      expect(unit.primary).toEqual(manuscript.plan.sections[id].primaryCandidateIds);
       expect(unit.rendered).toEqual(manuscript.draft.sections[id].blocks.flatMap(b => b.sourceUnitIds));
       // The frozen C10 builder selects its own operating rules. Compare that
       // final selection, not unselected preliminary scheduler suggestions.
       if (id === "C10") expect(unit.rendered).toEqual(manuscript.draft.sections.C10.operatingRules!.map(r => r.candidateId));
       else for (const primary of unit.primary) {
-        expect(unit.rendered.includes(primary) || manuscript.draft.diagnostics.suppressed.some(s => s.sectionId === id && s.candidateId === primary), primary).toBe(true);
+        expect(unit.rendered.includes(primary), primary).toBe(true);
       }
     }
     const chapters = data.pages.filter(p => p.kind === "narrative");
     const texts = chapters.flatMap(p => p.paragraphs.map(b => b.text));
     expect(texts).toEqual(Object.values(manuscript.draft.sections).flatMap(s => s.blocks.map(b => b.plainText)));
     expect(texts.join("\n")).not.toMatch(unsafe);
-    expect(data.pages.filter(p => p.kind === "contents").find(p => p.id === "contents")?.entries.map(e => e.title)).toEqual(labels);
+    expect(data.pages.filter(p => p.kind === "contents").find(p => p.id === "contents")?.entries.map(e => e.title),
+      JSON.stringify({ rejected: manuscript.renderability.rejected, initialRelation: plan.sections.C7.placements, finalRelation: manuscript.plan.sections.C7.placements,
+        reservations: plan.reservations.filter(r => ["C7", "C9"].includes(r.sectionId)),
+        relationRejections: plan.suppressedCandidates.filter(r => r.sectionId === "C7") })).toEqual(labels);
     for (const page of data.pages) {
       if (page.kind === "contents") for (const entry of page.entries) {
         expect(data.pages[entry.page].id === entry.targetId || data.pages[entry.page].anchors?.includes(entry.targetId), entry.targetId).toBe(true);

@@ -7,6 +7,7 @@ import { reserveComprehensiveMaterials } from "./comprehensiveReservation";
 import { allocateComprehensiveMaterials } from "./comprehensiveAllocator";
 import { assignEditorialOwnership, buildEditorialThemeBudget, finalizeEditorialSections } from "./comprehensiveEvidenceOwnership";
 import { auditComprehensivePlan } from "./comprehensiveQualityAudit";
+import type { RenderabilityExclusion } from "./comprehensiveRenderability";
 
 export const COMPREHENSIVE_EDITORIAL_STEPS = [
   "COLLECT_ALL", "FILTER_INVALID", "DEDUP_UNDERLYING", "SEMANTIC_DUPLICATE_VIEW", "CONFLICT_GRAPH",
@@ -17,7 +18,7 @@ export const COMPREHENSIVE_EDITORIAL_STEPS = [
 
 /** Opt-in, deterministic, candidate-only boundary. Intentionally has no caller
  * in customer generation, versioned packets, or the Book experience. */
-export function buildComprehensiveEditorialPlan(input: ComprehensivePlanInputs): ComprehensivePlanResult {
+export function buildComprehensiveEditorialPlan(input: ComprehensivePlanInputs, exclusions: readonly RenderabilityExclusion[] = []): ComprehensivePlanResult {
   const before = JSON.stringify(input), diagnostics = emptyComprehensiveDiagnostics();
   diagnostics.hardErrors = inspectComprehensiveInputs(input);
   if (diagnostics.hardErrors.length) return { ok: false, diagnostics };
@@ -26,8 +27,9 @@ export function buildComprehensiveEditorialPlan(input: ComprehensivePlanInputs):
   const candidates = filtered.eligible.map(c => ({ ...c, evidenceIds: editorialUnique(c.evidenceIds), underlyingEvidenceIds: editorialUnique(c.underlyingEvidenceIds), priorityScore: Math.max(...c.preferredSections.map(s => editorialScore(c, s)), 0) }));
   const graph = buildEditorialConflictGraph(candidates, input);
   const { reservations, kinds } = reserveComprehensiveMaterials(candidates, input.mbti.available);
+  for (let n = reservations.length - 1; n >= 0; n--) if (exclusions.some(e => e.section === reservations[n].sectionId && e.candidateId === reservations[n].candidateId)) reservations.splice(n, 1);
   for (const c of candidates) { const r = reservations.find(r => r.candidateId === c.id); if (r) c.reservedFor = r.sectionId; }
-  const allocated = allocateComprehensiveMaterials(candidates, input, kinds, reservations, graph.edges);
+  const allocated = allocateComprehensiveMaterials(candidates, input, kinds, reservations, graph.edges, exclusions);
   const ownership = assignEditorialOwnership(allocated.sections, candidates, input);
   const themeBudget = buildEditorialThemeBudget(allocated.sections, candidates);
   const fusionBudget = finalizeEditorialSections(allocated.sections, candidates, input.mbti.available);

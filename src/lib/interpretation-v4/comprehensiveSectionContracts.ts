@@ -1,5 +1,6 @@
 import type { ComprehensiveSectionId as S, EditorialCandidate, EditorialEmotion, EditorialSource, SectionBridgeIntent, SectionKind, SectionSlot, ComprehensiveSectionPlan } from "./comprehensivePlanCore";
 import type { InterpretationContext } from "./semanticCore";
+import { classifyRecovery } from "./narrativeRecovery";
 
 type Contract = { purpose: string; kind: SectionKind; maxPrimary: number; target: [number, number]; maxSupport: number;
   sources: EditorialSource[]; contexts: InterpretationContext[]; slots: SectionSlot[]; emotions: EditorialEmotion[]; score: number;
@@ -23,11 +24,15 @@ export const CLAIM_SECTION_PREFERENCES: Record<string, S[]> = {
 };
 export function sectionFit(c: EditorialCandidate, s: S): number {
   if (!c.allowedSections.includes(s) || !COMPREHENSIVE_SECTION_CONTRACTS[s].sources.includes(c.sourceType)) return 0;
+  // Use the renderer's existing recovery classification before reservation or
+  // budget consumption. Generic traits do not become recovery applications.
+  if (s === "C9" && classifyRecovery(c).kind === "GENERIC_TRAIT") return 0;
   return c.preferredSections.includes(s) ? 1 : .8;
 }
 export function primarySectionEligible(c: EditorialCandidate, s: S, kind: SectionKind): boolean {
   if (!c.primaryEligible || !sectionFit(c, s)) return false;
-  if (s === "C1") return c.sourceType === "CORE_GYEOL";
+  if (s === "C1") return c.sourceType === "CORE_GYEOL" || c.contexts.includes("identity") && !c.fortune && !c.factBomb
+    && !c.internalComplexity && c.positiveValence > c.negativeValence && ["PERSONAL_RESONANCE", "CLAIM", "MYEONGLI_PATTERN"].includes(c.sourceType);
   if (s === "C2") return kind === "MYEONGLI_CONFIRMATION" ? c.sourceType === "MYEONGLI_PATTERN" && c.independentFamilies.length >= 2 && !c.internalComplexity : c.fusionType === "REINFORCE";
   if (s === "C3") return kind === "TENSION" ? c.fusionType === "TENSION" && c.conditionSplit?.resolved === true : kind === "COMPLEMENT_SURPRISE" ? c.fusionType === "COMPLEMENT" : !!c.internalComplexity || c.elementComposite;
   if (s === "C4") return c.positiveValence > c.negativeValence && !c.fortune && c.sourceType !== "GUIDANCE" && c.arcRole !== "SHADOW" && !c.internalComplexity && !c.primaryAxes.includes("RECOVERY_NEED") && !c.contexts.every(x => ["love", "recovery", "stress"].includes(x));

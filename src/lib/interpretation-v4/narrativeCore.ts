@@ -81,6 +81,10 @@ export type NarrativeRequest = {
   /** Upstream allocation caps, never guessed by the renderer. */
   semanticThemeBudget?: number; engineVersion?: string; occurrenceIndex?: number;
   patternId?: string; connectorIntent?: "REASON" | "ADD" | "TURN" | "SUMMARY";
+  /** Optional caller contract. Selection and validation must agree on completeness. */
+  requirements?: { minSentences: number; roles: readonly SentenceRole[]; firstRole?: SentenceRole };
+  /** Exact upstream phrase texts reserved for later mandatory content. */
+  reservedPhraseTexts?: readonly string[];
 };
 export type NarrativeBlockDraft = {
   id: string; sourceUnitIds: string[]; patternId: string; patternFamily: string;

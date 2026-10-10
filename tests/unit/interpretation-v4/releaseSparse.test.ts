@@ -34,6 +34,17 @@ it.each([
   }, null, 2));
   expect(result, JSON.stringify({ result: result.ok ? true : result, hard: rendered.draft.validation.hardViolations, suppressed: rendered.draft.diagnostics.suppressed })).toMatchObject({ ok: true, externalCalls: [] });
   expect(rendered.draft.validation.hardViolations).toEqual([]);
+  expect(rendered.renderability.passes).toBeLessThanOrEqual(4);
+  for (const section of Object.values(rendered.draft.sections).filter(s => s.sectionId !== "C10")) {
+    expect(rendered.plan.sections[section.sectionId].primaryCandidateIds.every(id => section.sourceCandidateIds.includes(id))).toBe(true);
+  }
+  if (date === "1994-11-18") {
+    const primary = source.plan.sections.C8.primaryCandidateIds.find(id => id.endsWith("resonance:PR015"))!;
+    expect(rendered.plan.sections.C8.primaryCandidateIds).toContain(primary);
+    expect(rendered.draft.sections.C8.sourceCandidateIds).toContain(primary);
+    expect(rendered.draft.sections.C7.sourceCandidateIds.length).toBeGreaterThan(0);
+    expect(rendered.draft.sections.C7.sourceCandidateIds).not.toContain(primary);
+  }
   expect(Object.keys(source.plan.sections)).toEqual(["C1","C2","C3","C4","C5","C6","C7","C8","C9","C10"]);
   expect(source.profiles.mbti.available).toBe(false);
   expect(source.plan.diagnostics.hardErrors).toEqual([]);
@@ -68,7 +79,10 @@ it.each([
   expect(book.people[0].table.manse.stemRow.hour).toBeNull();
   expect(e.mbtiTables.person).toBeNull();
   if (date === "1993-02-06") {
-    expect(e.composition.result.narrative.sections).toHaveLength(5);
+    // The previously starved relation application is now evidence-backed too.
+    // Keep the extra chapter; do not trim it to the historical minimum fixture.
+    expect(e.composition.result.narrative.sections).toHaveLength(6);
+    expect(e.composition.result.narrative.sections.some(s => s.id === "relationships")).toBe(true);
     expect(source.plan.sections.C1.supportingCandidateIds).not.toContain("editorial:PERSONAL_RESONANCE:resonance:PR018");
     const shadow = source.plan.sections.C6.placements.find(p => p.candidateId === "editorial:CLAIM:F04_OVERWORK");
     expect(shadow).toMatchObject({ role: "SUPPORT" });

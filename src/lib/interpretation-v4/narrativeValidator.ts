@@ -3,7 +3,7 @@ import { NARRATIVE_PATTERNS } from "./narrativePatterns";
 import { CONDITION_SPLIT_SURFACES, NARRATIVE_CONNECTORS } from "./narrativeConnectors";
 import { NARRATIVE_IMAGES, termDefinitionText } from "./narrativeTerminology";
 import { FORBIDDEN_ABSTRACT_PHRASES, TRACKED_NARRATIVE_WORDS } from "./narrativeVocabulary";
-import { hasExplicitMbti, hasFusionComparison, permittedSurfaces, preservePhraseDirectness } from "./narrativeSurface";
+import { hasExplicitMbti, hasFusionComparison, permittedSurfaces, preservePhraseDirectness, phraseFragments } from "./narrativeSurface";
 import { memoryCount, narrativeSubject, narrativeWordCount, openingFamily } from "./narrativeMemory";
 import { allowsEnding, detectEnding } from "./narrativeEndings";
 import { normalizeNarrativeText, sentenceLength, sentenceLengthClass } from "./narrativeVariant";
@@ -64,6 +64,9 @@ export function validateNarrativeBlock(request: NarrativeRequest, block: Narrati
   if (!pattern || pattern.intent !== request.intent || !pattern.compatibleSourceTypes.includes(source.sourceType)
     || (pattern.compatibleFusionTypes && (!source.fusionType || !pattern.compatibleFusionTypes.includes(source.fusionType)))) hard("PATTERN_MISMATCH");
   const roles = block.sentences.map(s => s.role);
+  if (request.requirements && (block.sentences.length < request.requirements.minSentences
+    || !request.requirements.roles.every(role => roles.includes(role))
+    || request.requirements.firstRole && roles[0] !== request.requirements.firstRole)) hard("REQUIRED_CONTENT_MISSING");
   const collapsed = roles.filter((r, i) => i === 0 || r !== roles[i - 1]);
   const subsequence = (order: readonly SentenceRole[]) => {
     let i = 0; return collapsed.every(role => { const found = order.indexOf(role, i); i = found + 1; return found >= 0; });
@@ -83,6 +86,7 @@ export function validateNarrativeBlock(request: NarrativeRequest, block: Narrati
   for (const s of block.sentences) {
     const p = source.phrases.find(p => p.id === s.sourcePhraseId);
     if (!p) { hard("UNSUPPORTED_SENTENCE", [s.id]); continue; }
+    if (phraseFragments(p).some(text => request.reservedPhraseTexts?.includes(normalizeNarrativeText(text)))) hard("PRIMARY_PHRASE_RESERVED", [p.id]);
     const connector = s.connectorId ? NARRATIVE_CONNECTORS.find(c => c.id === s.connectorId && c.prefix) : undefined;
     const surface = permittedSurfaces(request, p, s.sourceSentenceIndex).find(v => v.id === s.variantId);
     if (!surface || normalizeNarrativeText((connector?.prefix ?? "") + surface.text) !== s.text || (s.connectorId && !connector)) hard("UNSUPPORTED_SENTENCE", [s.id]);

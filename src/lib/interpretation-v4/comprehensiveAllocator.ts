@@ -2,6 +2,7 @@ import { COMPREHENSIVE_SECTIONS, type ComprehensiveSectionId as S, type Comprehe
 import { COMPREHENSIVE_SECTION_CONTRACTS as contracts, primarySectionEligible, sectionFit } from "./comprehensiveSectionContracts";
 import { editorialOrder, editorialScore } from "./comprehensiveScoring";
 import { editorialUnique } from "./comprehensiveCandidateAdapter";
+import type { RenderabilityExclusion } from "./comprehensiveRenderability";
 
 export function emptyEditorialSections(kinds: Record<S, SectionKind>, input: ComprehensivePlanInputs): Record<S, ComprehensiveSectionPlan> {
   return Object.fromEntries(COMPREHENSIVE_SECTIONS.map((s): [S, ComprehensiveSectionPlan] => {
@@ -14,7 +15,7 @@ export function emptyEditorialSections(kinds: Record<S, SectionKind>, input: Com
 
 /** Allocation uses reservations for the whole book. C1's proof/details are
  * deliberately filled after C4/C7/C8/C9, not greedily at the opening. */
-export function allocateComprehensiveMaterials(rows: readonly C[], input: ComprehensivePlanInputs, kinds: Record<S, SectionKind>, reservations: EditorialReservation[], graph: readonly EditorialConflictEdge[]) {
+export function allocateComprehensiveMaterials(rows: readonly C[], input: ComprehensivePlanInputs, kinds: Record<S, SectionKind>, reservations: EditorialReservation[], graph: readonly EditorialConflictEdge[], exclusions: readonly RenderabilityExclusion[] = []) {
   const sections = emptyEditorialSections(kinds, input), suppressed: EditorialSuppression[] = [];
   const byId = new Map(rows.map(c => [c.id, c]));
   const core = rows.find(c => c.sourceType === "CORE_GYEOL");
@@ -28,6 +29,8 @@ export function allocateComprehensiveMaterials(rows: readonly C[], input: Compre
 
   function place(c: C, s: S, role: CandidatePlacement["role"] = "PRIMARY", slot?: SectionSlot): boolean {
     const section = sections[s], used = assigned(), primaries = primary();
+    const unavailable = exclusions.find(e => e.section === s && e.candidateId === c.id);
+    if (unavailable) return block(c, s, `RENDERABILITY:${unavailable.reason}`);
     if (section.placements.some(p => p.candidateId === c.id)) return false;
     if (!sectionFit(c, s)) return false;
     if (s === "C6" && c.factBomb && used.some(x => x.s === s && x.c.factBomb && conflicts(c, x.c).some(e => e.kind === "SEMANTIC_DUPLICATE"))) return block(c, s, "SAME_FACT_BOMB_PROBLEM");
@@ -100,6 +103,7 @@ export function allocateComprehensiveMaterials(rows: readonly C[], input: Compre
   }
   // Reserve identities without exposing their source proof at this stage.
   if (core) place(core, "C1");
+  if (!core) fill("C1");
   for (const s of ["C2", "C3", "C5", "C6"] as const) {
     for (const r of reservations.filter(r => r.sectionId === s && r.stage !== "RESERVE_TRAIT_ARC")) { const c = byId.get(r.candidateId); if (c) place(c, s); }
     fill(s);
@@ -130,6 +134,15 @@ export function allocateComprehensiveMaterials(rows: readonly C[], input: Compre
   // and never consume a second primary theme or repeat a term definition.
   for (const s of ["C7", "C8", "C9"] as const) {
     for (const c of ranked(s).filter(c => c.sourceType !== "GUIDANCE" && c.contexts.some(ctx => contracts[s].contexts.includes(ctx)) && (s !== "C9" || c.elementComposite || c.strongYinYang || c.primaryAxes.includes("RECOVERY_NEED")) && (!c.fortune || s === "C7" && c.claimCategory === "PEOPLE_LUCK" || s === "C8" && ["MONEY_FORTUNE", "HONOR", "HIGH_POSITION", "SUCCESS"].includes(c.claimCategory ?? "")) && primary().some(x => x.s !== s && x.c.id === c.id && x.p.context !== (contracts[s].contexts.find(ctx => c.contexts.includes(ctx)) ?? c.contexts[0])))) place(c, s, "SUPPORT");
+  }
+  // A failed or already-starved relation application gets an independently
+  // grounded source even when its primary theme is owned by another chapter.
+  // Keep all existing support/theme/conflict limits; do not promote weak proof.
+  for (const s of ["C7", "C8", "C9"] as const) if ((s === "C7" || exclusions.some(e => e.section === s)) && !sections[s].placements.length) {
+    for (const c of ranked(s).filter(c => c.primaryEligible && !c.factBomb && !c.fortune && c.sourceType !== "GUIDANCE"
+      && (s !== "C9" || c.primaryAxes.includes("RECOVERY_NEED")))) {
+      if (place(c, s, "SUPPORT")) break;
+    }
   }
   // Optional advice belongs only beside an already introduced problem/trait.
   for (const s of ["C6", "C7", "C8", "C9"] as const) {

@@ -61,7 +61,7 @@ export function buildV4ComprehensiveProduct(input: NarrativeInput) {
     }));
     // Bridges are optional connective copy, not primary material. Keep every
     // selected paragraph atomic, including tension sides and fortune reasons.
-    represented.push({ unit: id, chapter: ids[id], primary: plan.value.sections[id].primaryCandidateIds,
+    represented.push({ unit: id, chapter: ids[id], primary: rendered.plan.sections[id].primaryCandidateIds,
       rendered: section.blocks.flatMap(block => block.sourceUnitIds),
       headings: section.blocks.map(block => section.operatingRules?.find(rule => block.sourceUnitIds.includes(rule.candidateId))?.source?.shortTitle ?? "") });
     if (id === "C1") opening = blocks;

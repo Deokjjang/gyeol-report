@@ -253,6 +253,19 @@ describe("narrative output is not accepted merely because it has source IDs", ()
     function walk(dir: string): string[] { return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []); }
     for (const file of walk("src")) {
       const text = readFileSync(file, "utf8");
+      // Actual product adapters were integrated after this language-only gate.
+      // Permit exactly their existing language dependencies, never reverse imports.
+      const approved: Record<string, string[]> = {
+        careerProductNarrative: ["narrativeCore", "narrativeMemory", "narrativeBlockRenderer"],
+        relationshipProductNarrative: ["narrativeCore", "narrativeMemory", "narrativeBlockRenderer"],
+        timeProductContext: ["narrativeCore", "narrativeMemory", "narrativeBlockRenderer"],
+        comprehensiveRenderability: ["narrativeCore", "narrativeVariant", "narrativeSurface"],
+      };
+      const consumer = Object.keys(approved).find(n => file === `src/lib/interpretation-v4/${n}.ts`);
+      if (consumer) {
+        for (const name of names.filter(n => !approved[consumer].includes(n))) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
+        continue;
+      }
       if (names.some(n => file === `src/lib/interpretation-v4/${n}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|runtimeShadow|bookProjection|from ["'][^"']*(?:Composer|supabase|openai|toss|guidanceProfile|claimProfile|fusionSemanticProfile)/);
       else if (!["narrativeSceneCore", "narrativeTitleCore", "comprehensiveNarrativeAdapter", "comprehensiveManuscriptCore", "comprehensiveSectionRenderer", "comprehensiveBridgeRenderer", "comprehensiveManuscriptValidator", "comprehensiveManuscriptRenderer", "comprehensiveManuscriptPolish", "narrativeMbtiReason", "operatingRuleRenderer", "manuscriptQualityAudit", "narrativeHumanFirst", "narrativeRhythm", "manuscriptHumanAudit"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) for (const name of names) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
     }
