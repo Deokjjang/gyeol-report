@@ -101,7 +101,7 @@ describe("12A actual SQL acquisition authority",()=>{
     const a=await attr(id);expect(a.status).toBe("BENEFIT_GRANTED");expect(await balance(id)).toBe(0);
     expect((await db.query("select 1 from coupon_grants where user_id=$1",[id])).rows).toHaveLength(1);
     const coupons=sqlCouponStore(db),who={user:id,actor:`user:${id}`},selection={grantId:String(a.coupon_grant_id)};
-    expect(await quoteCoupon(coupons,who,"saju_mbti_full",selection)).toMatchObject({ok:true,originalAmount:1290,discountAmount:300,finalAmount:990});
+    expect(await quoteCoupon(coupons,who,"saju_mbti_full",selection)).toMatchObject({ok:true,originalAmount:1490,discountAmount:300,finalAmount:1190});
     expect((await quoteCoupon(coupons,{user:await newUser(),actor:"other"},"saju_mbti_full",selection)).ok).toBe(false);
     const order=await reserveCouponOrder(coupons,who,{requestId:randomUUID(),payload:payload(0),consent:createCheckoutConsentAssertion(confirmedAdultDevTossCheckoutLegalConfirmations),selection,claimHash:null});expect(order.ok).toBe(true);
     const result=await confirmCouponOrder(coupons,who,order.orderId!,"LOCAL_MOCK",async p=>({ok:true,confirm:{provider:"toss",paymentKeyReceived:true,orderId:p.orderId,amount:p.amount,status:"DONE"}}));expect(result.ok).toBe(true);
@@ -109,7 +109,7 @@ describe("12A actual SQL acquisition authority",()=>{
   });
   it("invalid/exhausted coupon cannot leave grant or acquisition; original quote checks reused",async()=>{
     await expect(db.exec("update coupon_definitions set product_ids=ARRAY['missing_product'] where campaign_ref='LOCAL_ACQUISITION_TEST'")).rejects.toThrow();
-    for(const clause of ["is_active=false","discount_value=1290","min_order_amount=2000"]){
+    for(const clause of ["is_active=false","discount_value=1490","min_order_amount=2000"]){
       const s=await capture("book-coupon"),id=await newUser();await db.exec(`update coupon_definitions set ${clause} where campaign_ref='LOCAL_ACQUISITION_TEST'`);
       expect((await settle(id,s)).ok).toBe(false);expect((await db.query("select 1 from coupon_grants where user_id=$1",[id])).rows).toHaveLength(0);
       expect((await db.query("select 1 from new_user_acquisitions where user_id=$1",[id])).rows).toHaveLength(0);

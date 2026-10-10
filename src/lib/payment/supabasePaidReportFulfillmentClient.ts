@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 
+import { isDirectReportPaymentAmount } from "./reportProductCatalog";
 import type {
   FulfillPaidPaymentOrderInput,
   FulfillPaidPaymentOrderResult,
@@ -164,7 +165,7 @@ function mapRpcRow(
     !isNonEmptyString(row.report_id) ||
     row.product_type !== "saju_mbti_full" ||
     row.status !== "paid" ||
-    row.amount !== 1290 ||
+    !isDirectReportPaymentAmount(row.amount) ||
     row.currency !== "KRW" ||
     !isTimestamp(row.created_at) ||
     !isTimestamp(row.updated_at)

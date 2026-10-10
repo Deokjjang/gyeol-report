@@ -38,7 +38,7 @@ try{
   let report;
   if(mode==="coupon"){
     receipt(0);cli("wait","select[aria-label=\"보유 쿠폰\"]");const grant=ev("document.querySelector('select[aria-label=\"보유 쿠폰\"] option:nth-child(2)').value");cli("snapshot","-i");cli("select","select[aria-label=\"보유 쿠폰\"]",grant);cli("wait","--text","검수용 300원 할인 · 적용됨");
-    check("existing quote 1290 minus 300",ev("document.querySelector('[aria-label=\"쿠폰 적용 금액\"]').innerText.includes('₩990')"));sizes("coupon-receipt");cli("find","label","전체 동의","check");click("모의 결제 · 책 발행 →");cli("wait","[data-book-report]");report=ev("location.pathname");sizes("coupon-book");
+    check("existing quote 1490 minus 300",ev("document.querySelector('[aria-label=\"쿠폰 적용 금액\"]').innerText.includes('₩1,190')"));sizes("coupon-receipt");cli("find","label","전체 동의","check");click("모의 결제 · 책 발행 →");cli("wait","[data-book-report]");report=ev("location.pathname");sizes("coupon-book");
     open("/dev/account");cli("wait","ul[aria-label=\"내 책 목록\"]");check("coupon actual publication owned",ev(`!!document.querySelector('a[href="${report}"]')`));check("coupon did not grant tickets",summary().quantity===0);
   }else{
     report=createTicket(0);final();ev("window.__copied='';Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async v=>{window.__copied=v}}})");click("공유 링크 복사");cli("wait","--text","복사됨");

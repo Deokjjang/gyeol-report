@@ -47,6 +47,7 @@ beforeAll(async () => {
   for (const file of readdirSync("supabase/migrations").filter(name => /^\d{4}_.*\.sql$/u.test(name)).sort()) await db.exec(readFileSync(`supabase/migrations/${file}`, "utf8").replace(/^\uFEFF/u, ""));
   for (const file of ["supabase/migrations/20260920163924_production_reliability_reconcile.sql", "scripts/paid_report_quarantine_recovery_patch.sql", "scripts/paid_payment_confirm_recovery_queue_patch.sql", "scripts/paid_report_publish_expiry_patch.sql", "scripts/paid_report_external_call_guard_patch.sql"]) await db.exec(readFileSync(file, "utf8"));
   await db.exec(patch);
+  await db.exec(readFileSync("supabase/migrations/20261010095005_v4_ticket_bundle_commerce.sql", "utf8").split("create table public.ticket_bundle_orders")[0] + "commit;");
   store = { async call(action, data = {}) {
     const result = await db.query<{ value: ReliabilityResult }>("select public.paid_report_reliability($1,$2::jsonb) as value", [action, JSON.stringify(data)]);
     return result.rows[0].value;
@@ -109,7 +110,7 @@ describe("public prepare consent boundary with real durable SQL and mock provide
     const body = { ...requestBody(), productType: key, inputSnapshot: { reportInputPayload: reportInput(key, slug) } };
     const result = await prepare(body);
     expect(result.status, JSON.stringify(result.body)).toBe(200);
-    expect(result.body.paymentOrder).toMatchObject({ productType: key, amount: 1290, currency: "KRW", status: "ready" });
+    expect(result.body.paymentOrder).toMatchObject({ productType: key, amount: 1490, currency: "KRW", status: "ready" });
     expect(JSON.stringify(result.body.tossCheckoutRequest)).toContain("/payments/toss/success");
     expect(JSON.stringify(result.body.tossCheckoutRequest)).toContain("/payments/toss/fail");
     expect(JSON.stringify(result.body)).not.toMatch(/consentEvidence|policyVersions|assertions/);
@@ -182,8 +183,8 @@ describe("public prepare consent boundary with real durable SQL and mock provide
   it("callback/recovery/retry/admin retry preserve original evidence and never expose it in reports", async () => {
     const { body } = await prepare(requestBody());
     const original = (await orders())[0].input_snapshot;
-    const payment = { orderId: body.paymentOrder.providerOrderId as string, paymentKey: "mock-payment", amount: 1290 };
-    const provider = vi.fn(async () => ({ ok: true as const, confirm: { provider: "toss" as const, paymentKeyReceived: true as const, orderId: payment.orderId, amount: 1290, status: "DONE" } }));
+    const payment = { orderId: body.paymentOrder.providerOrderId as string, paymentKey: "mock-payment", amount: 1490 };
+    const provider = vi.fn(async () => ({ ok: true as const, confirm: { provider: "toss" as const, paymentKeyReceived: true as const, orderId: payment.orderId, amount: 1490, status: "DONE" } }));
     await store.call("confirm_claim", payment);
     await db.exec("update payment_orders set confirm_lease_until=now()-interval '1 second'");
     expect(await recoverPendingPayment(store, provider)).toMatchObject({ ok: true });

@@ -95,7 +95,7 @@ function isPreparedTossSession(value: unknown, verifiedOrderAmount?: number): va
   );
 }
 
-function isValidRedirectUrl(
+export function isValidRedirectUrl(
   value: unknown,
   allowLocalhostRedirects: boolean,
 ): value is string {

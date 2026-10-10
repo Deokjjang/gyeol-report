@@ -23,9 +23,9 @@ try{
   cli("--allowed-domains","127.0.0.1","open",origin+"/dev/book-flow");cli("set","viewport","390","844");cli("set","media","light","reduced-motion");cli("wait","--load","networkidle");
   check("initial load",ev("document.body.innerText.includes('나에 관한 한 권')&&!document.querySelector('[data-nextjs-dialog]')"));
   check("explicit local fixture only",post("fixture").body.ok);receipt();sizes("no-coupon");
-  check("normal price 1290",ev("document.querySelector('[data-book-checkout]').innerText.includes('1,290원')"));
-  apply("GYEOL300");cli("wait","--text","300원 할인 · 적용됨");check("fixed price 990",ev("document.querySelector('[aria-label=\"쿠폰 적용 금액\"]').innerText.includes('₩990')"));sizes("fixed");
-  apply("20PERCENT");cli("wait","--text","20% 할인 · 적용됨");check("percentage price 1032",ev("document.querySelector('[aria-label=\"쿠폰 적용 금액\"]').innerText.includes('₩1,032')"));sizes("percentage");
+  check("normal price 1490",ev("document.querySelector('[data-book-checkout]').innerText.includes('1,490원')"));
+  apply("GYEOL300");cli("wait","--text","300원 할인 · 적용됨");check("fixed price 1190",ev("document.querySelector('[aria-label=\"쿠폰 적용 금액\"]').innerText.includes('₩1,190')"));sizes("fixed");
+  apply("20PERCENT");cli("wait","--text","20% 할인 · 적용됨");check("percentage price 1192",ev("document.querySelector('[aria-label=\"쿠폰 적용 금액\"]').innerText.includes('₩1,192')"));sizes("percentage");
   for(const [code,message] of [["INVALID_CODE","쿠폰 코드를 확인해 주세요."],["EXPIRED","사용 기간이 지난 쿠폰입니다."],["CAREER_ONLY","이 상품에는 적용할 수 없는 쿠폰입니다."],["MEMBER_ONLY","회원만 사용할 수 있는 쿠폰입니다."]]){
     apply(code);cli("wait","--text",message);check(code+" rejects",ev(`document.body.innerText.includes(${JSON.stringify(message)})`));shot(`390-${code.toLowerCase()}`);
   }
@@ -35,14 +35,14 @@ try{
   check("explicit ticket fixture",ev("fetch('/dev/account/api/ticket-fixture',{method:'POST',body:'one'}).then(r=>r.json()).then(b=>b.ok)"));receipt();cli("wait","select[aria-label=\"보유 쿠폰\"]");
   cli("snapshot","-i");const grant=ev("document.querySelector('select[aria-label=\"보유 쿠폰\"] option:nth-child(2)').value");cli("select","select[aria-label=\"보유 쿠폰\"]",grant);cli("wait","--text","회원 300원 할인 · 적용됨");sizes("member-coupon");
   const ticketLabel=ev("[...document.querySelectorAll('label')].find(e=>e.textContent.includes('리포트 이용권 1장 사용')).textContent.trim()");checkLabel(ticketLabel);check("ticket disables coupon UI",ev("document.querySelector('input[placeholder=\"코드 입력\"]').matches(':disabled')&&!document.querySelector('[aria-label=\"쿠폰 적용 금액\"]')"));sizes("ticket-exclusive");
-  checkLabel("1,290원 결제");check("payment restores coupon quote",ev("document.querySelector('[aria-label=\"쿠폰 적용 금액\"]').innerText.includes('₩990')"));
+  checkLabel("1,490원 결제");check("payment restores coupon quote",ev("document.querySelector('[aria-label=\"쿠폰 적용 금액\"]').innerText.includes('₩1,190')"));
   checkLabel("전체 동의");click("모의 결제 · 책 발행 →");cli("wait","[data-book-report]");const memberUrl=ev("location.pathname");check("member coupon actual book",memberUrl.includes("report_"));
   open("/dev/account");cli("wait","ul[aria-label=\"내 책 목록\"]");check("coupon book linked to library",ev(`!!document.querySelector('a[href="${memberUrl}"]')`));sizes("library");
   open(guestUrl);cli("wait","[data-book-report]");check("guest proof retained after login",ev("!!document.querySelector('[data-book-report]')"));
   for(let n=0;n<80&&ev("document.querySelector('[data-page]').dataset.page!=='back'");n++)click("다음 페이지");
   cli("wait","--text","내 서재에 보관하기");click("내 서재에 보관하기");cli("wait","--text","내 서재에 보관했습니다.");check("guest coupon book claim uses existing proof",true);shot("390-guest-claimed");
   // Six server-priced products, tampering rejected before monetary persistence.
-  for(const f of fixtures){const q=post("quote",{productType:f.payload.productKey,selection:{code:"20PERCENT"}});check(`${f.id} pricing`,q.body.finalAmount===1032);}
+  for(const f of fixtures){const q=post("quote",{productType:f.payload.productKey,selection:{code:"20PERCENT"}});check(`${f.id} pricing`,q.body.finalAmount===1192);}
   for(const field of ["finalAmount","user_id","discount_value","ticket"]){check(`tamper ${field}`,post("quote",{productType:"saju_mbti_full",[field]:1}).status===400);}
   check("resources stay local",ev("performance.getEntriesByType('resource').every(r=>new URL(r.name).origin===location.origin)"));
   writeFileSync(`${out}/browser-results.json`,JSON.stringify({checks,guestUrl,memberUrl,result:"PASS"},null,2));process.stdout.write(`${checks.length} checks PASS\n`);

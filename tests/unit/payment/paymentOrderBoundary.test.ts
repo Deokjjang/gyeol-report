@@ -47,7 +47,7 @@ describe("payment order boundary", () => {
       order: {
         productType: "saju_mbti_full",
         provider: "toss",
-        amount: 1290,
+        amount: 1490,
         currency: "KRW",
         status: "ready",
         inputSnapshot,
@@ -72,7 +72,7 @@ describe("payment order boundary", () => {
       order: {
         productType: "saju_mbti_full",
         provider: "kakao_pay",
-        amount: 1290,
+        amount: 1490,
         currency: "KRW",
         status: "ready",
       },
@@ -89,7 +89,7 @@ describe("payment order boundary", () => {
       ok: true,
       order: {
         productType: "saju_mbti_full",
-        amount: 1290,
+        amount: 1490,
         currency: "KRW",
       },
     });
@@ -108,7 +108,7 @@ describe("payment order boundary", () => {
     expect(result).toMatchObject({
       ok: true,
       order: {
-        amount: 1290,
+        amount: 1490,
         currency: "KRW",
         status: "ready",
       },
@@ -151,7 +151,7 @@ describe("payment order boundary", () => {
         ok: true,
         order: {
           productType,
-          amount: 1290,
+          amount: 1490,
           currency: "KRW",
           status: "ready",
         },

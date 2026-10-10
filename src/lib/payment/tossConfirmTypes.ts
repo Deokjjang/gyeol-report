@@ -13,6 +13,9 @@ export type TossConfirmSafeResult = {
   readonly method?: string;
   readonly approvedAt?: string;
   readonly rawPaymentStatus?: string;
+  // Only set by strict provider-body identity verification, never echoed input.
+  readonly currency?: "KRW";
+  readonly paymentKeyVerified?: true;
 };
 
 export type TossConfirmErrorCode =

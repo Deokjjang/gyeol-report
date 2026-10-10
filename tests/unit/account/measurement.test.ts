@@ -95,7 +95,7 @@ describe("12B server campaign and measurement authority", () => {
     expect(count.campaign_benefit_granted).toBe(1); expect(facts).toEqual(await measurementFacts(port,id));
     expect(JSON.stringify(facts)).not.toMatch(/snapshot|birthDate|mbtiType|personA|displayName|context_hash/);
   },30000);
-  it("coupon Purchase actual 990, before generation; concurrent callbacks/refresh/tabs once", async () => {
+  it("coupon Purchase actual 1190, before generation; concurrent callbacks/refresh/tabs once", async () => {
     const id = await acquired("book-coupon");
     const grant = (await db.query<{coupon_grant_id:string}>("select coupon_grant_id from campaign_attributions where user_id=$1",[id])).rows[0].coupon_grant_id;
     const identity = {user:id,actor:`user:${id}`}, store = sqlCouponStore(db);
@@ -103,11 +103,11 @@ describe("12B server campaign and measurement authority", () => {
     expect(reserve.ok).toBe(true);
     const paid = await confirmCouponOrder(store,identity,reserve.orderId!,`mock-${reserve.orderId}`,async p=>({ok:true,confirm:{provider:"toss",paymentKeyReceived:true,orderId:p.orderId,amount:p.amount,status:"DONE",approvedAt:new Date().toISOString()}}));
     expect(paid.ok).toBe(true);
-    const facts = await measurementFacts(port,id); expect(facts.find(f=>f.event==="payment_succeeded")?.value).toBe(990);
+    const facts = await measurementFacts(port,id); expect(facts.find(f=>f.event==="payment_succeeded")?.value).toBe(1190);
     expect(facts.some(f=>f.event==="report_published")).toBe(false);
     const claims = await Promise.all(Array.from({length:12},()=>claimPurchase(port,paid.reportId!)));
-    const only = claims.flatMap(c=>c.purchase?[c.purchase]:[]); expect(only).toHaveLength(1); expect(only[0].value).toBe(990);
-    expect(metaPurchase(only[0])?.params.value).toBe(990); expect(only[0].eventId).toBe(facts.find(f=>f.event==="payment_succeeded")?.eventId);
+    const only = claims.flatMap(c=>c.purchase?[c.purchase]:[]); expect(only).toHaveLength(1); expect(only[0].value).toBe(1190);
+    expect(metaPurchase(only[0])?.params.value).toBe(1190); expect(only[0].eventId).toBe(facts.find(f=>f.event==="payment_succeeded")?.eventId);
     await runLocalBookJob(sqlCouponReliability(db));
     expect((await claimPurchase(port,paid.reportId!)).duplicate).toBe(true);
     const complete = await measurementFacts(port,id); expect(funnelCounts(complete).report_published).toBe(1);

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, Fragment, type CSSProperties } from "react";
+import { REPORT_PRICE_LABEL_KO } from "../../../lib/payment/reportProductCatalog";
 import type { ReportTableElementColorToken } from "../../../lib/report-tables/types";
 import { prePaymentRefundNoticeKo } from "../../../lib/legal/refundPolicy";
 import { prePaymentPrivacyNoticeKo } from "../../../lib/legal/privacyPolicy";
@@ -43,7 +44,7 @@ export function Receipt({ book, person, title, member, setMember, consents, setC
     <div className={s.modeSwitch} role="group" aria-label="영수증 체험 상태">{[false, true].map(m => <button type="button" key={String(m)} aria-pressed={member === m} onClick={() => setMember(m)}>{m ? "회원" : "비회원"}</button>)}</div>
     <div className={s.receipt}>
       <p className={s.micro}>GYEOL REPORT</p><h1>발행 주문서</h1><p className={s.micro}>PUBLISHING ORDER — PREVIEW</p>
-      <dl>{[["TITLE", title ?? book.title.replace("\n", " ")], ["ISSUED TO", person.name], ["BIRTH", `${person.birth.replaceAll("-", ".")} / ${person.precision === "unknown" ? "시간 모름" : person.time + (person.precision === "approximate" ? "경" : "")}`], ["MBTI", person.mbti || "모름"], ["PRICE", "₩1,290"]].map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
+      <dl>{[["TITLE", title ?? book.title.replace("\n", " ")], ["ISSUED TO", person.name], ["BIRTH", `${person.birth.replaceAll("-", ".")} / ${person.precision === "unknown" ? "시간 모름" : person.time + (person.precision === "approximate" ? "경" : "")}`], ["MBTI", person.mbti || "모름"], ["PRICE", REPORT_PRICE_LABEL_KO]].map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
       <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />결제 완료 후 즉시 생성, 최대 24시간 이내 제공<br />생성일로부터 90일 · 결제 후 온라인 열람</p>
       {member ? <p className={s.receiptNote}>회원 미리보기 · 가입 약관 동의 가정, 실제 적용 전 검토 필요.</p> : null}
       <fieldset className={s.consents}><legend className={s.srOnly}>약관 및 개인정보 동의</legend>

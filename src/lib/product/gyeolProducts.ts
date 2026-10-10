@@ -1,5 +1,4 @@
-const PRODUCT_PRICE_KO = "1,290원";
-const PRODUCT_PRICE_AMOUNT = 1290;
+import { REPORT_PRICE_KRW as PRODUCT_PRICE_AMOUNT, REPORT_PRICE_LABEL_KO as PRODUCT_PRICE_KO } from "../payment/reportProductCatalog";
 const PRODUCT_POLICY_SUMMARY_KO =
   "무형재화/디지털 콘텐츠 · 결제 완료 후 즉시 생성, 최대 24시간 이내 제공 · 생성일로부터 90일 온라인 열람";
 const PRODUCT_REFUND_SUMMARY_KO =

@@ -1,11 +1,9 @@
+import { isDirectReportPaymentAmount } from "../../../../../lib/payment/reportProductCatalog";
 import { confirmPaidReport } from "../../../../../lib/payment/paidReportReliability";
 import { createPaidReportReliabilityStore } from "../../../../../lib/payment/paidReportReliabilityStore";
 import { NextResponse } from "next/server";
 
-import {
-  confirmTossPayment,
-  TOSS_CONFIRM_REQUIRED_AMOUNT,
-} from "../../../../../lib/payment/tossConfirmClient";
+import { confirmTossPayment } from "../../../../../lib/payment/tossConfirmClient";
 import type { FulfillPaidPaymentOrderResult } from "../../../../../lib/payment/paidReportFulfillmentTypes";
 import type { MarkTossPaymentOrderPaidResult } from "../../../../../lib/payment/tossPaymentOrderPaidTypes";
 import type {
@@ -140,7 +138,7 @@ function parseConfirmRequest(
     };
   }
 
-  if (value.amount !== TOSS_CONFIRM_REQUIRED_AMOUNT) {
+  if (!isDirectReportPaymentAmount(value.amount)) {
     return {
       ok: false,
       response: createErrorResponse(

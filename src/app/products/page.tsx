@@ -1,4 +1,5 @@
 import ProductGrid from "../../components/product/ProductGrid";
+import { REPORT_PRICE_LABEL_KO } from "../../lib/payment/reportProductCatalog";
 import { GYEOL_HOME_PRODUCT_GRID } from "../../lib/product/gyeolProducts";
 
 export default function ProductsPage() {
@@ -11,7 +12,7 @@ export default function ProductsPage() {
             결리포트에서 제공하는 리포트
           </h1>
           <p className="max-w-2xl text-sm leading-6 text-neutral-600">
-            6개 리포트 모두 1,290원에 제공되는 자동 생성 디지털
+            6개 리포트 모두 {REPORT_PRICE_LABEL_KO}에 제공되는 자동 생성 디지털
             콘텐츠입니다. 결제 후 입력값을 바탕으로 생성되며 생성일로부터
             90일간 온라인에서 열람할 수 있습니다.
           </p>

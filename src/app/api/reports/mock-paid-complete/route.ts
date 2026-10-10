@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import { REPORT_PRICE_KRW } from "../../../../lib/payment/reportProductCatalog";
 
 import { NextResponse } from "next/server";
 
@@ -23,7 +24,7 @@ type MockPaidReportErrorCode =
 const mockApiEnabledEnv = "MOCK_PAID_REPORT_API_ENABLED";
 const defaultMockPaymentMethod: PaymentProviderId = "toss";
 const paymentStatus = "paid" as const;
-const paymentAmount = 1290;
+const paymentAmount = REPORT_PRICE_KRW;
 const paymentCurrency = "KRW";
 
 function createErrorResponse(

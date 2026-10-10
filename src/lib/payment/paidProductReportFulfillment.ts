@@ -12,7 +12,7 @@ import type { ReportInputPayload } from "../report-generation/reportInputTypes";
 import type { ReportWriterRuntime } from "../report-generation/reportWriterRuntime";
 import { buildReportPersistencePayload } from "../report/reportPersistencePayload";
 import type { ReportOutput } from "../report/types";
-import { getReportProduct } from "./reportProductCatalog";
+import { getReportProduct, isDirectReportPaymentAmount } from "./reportProductCatalog";
 import type { PaymentOrderRecord } from "./paymentOrderPersistenceTypes";
 
 export type PaidProductReportFulfillmentErrorCode =
@@ -171,7 +171,7 @@ export async function fulfillPaidProductReport(
 
   if (
     product === null ||
-    input.order.amount !== product.amount ||
+    !isDirectReportPaymentAmount(input.order.amount) ||
     input.order.currency !== product.currency ||
     input.order.providerPaymentId === null
   ) {

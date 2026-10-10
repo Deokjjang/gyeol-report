@@ -9,7 +9,7 @@ import type { FormEvent } from "react";
 
 import PaidFunnelHeader from "../../../components/payment/PaidFunnelHeader";
 import styles from "../../../components/payment/paidFunnel.module.css";
-import { getReportProduct } from "../../../lib/payment/reportProductCatalog";
+import { getReportProduct, REPORT_PRICE_LABEL_KO } from "../../../lib/payment/reportProductCatalog";
 import TossPaymentWidgetLauncher, {
   isTossPaymentWidgetInputComplete,
 } from "../../../components/payment/TossPaymentWidgetLauncher";
@@ -38,9 +38,9 @@ const ANNUAL_FORTUNE_PRODUCT_KEY = "annual_fortune";
 const ANNUAL_FORTUNE_PRODUCT_SLUG = "annual-fortune";
 const SAJU_MBTI_FULL_PRODUCT_KEY = "saju_mbti_full";
 const SAJU_MBTI_FULL_PRODUCT_SLUG = "saju-mbti-full";
-const ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO = "결제금액 1,290원";
+const ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO = `결제금액 ${REPORT_PRICE_LABEL_KO}`;
 const ACTIVE_REPORT_FORMAT_LABEL_KO = "자동 생성 디지털 리포트";
-const CHECKOUT_CTA_LABEL_KO = "1,290원 결제하고 리포트 생성하기";
+const CHECKOUT_CTA_LABEL_KO = `${REPORT_PRICE_LABEL_KO} 결제하고 리포트 생성하기`;
 const PRODUCT_SERVICE_POLICY_NOTICE_KO =
   "무형재화/디지털 콘텐츠입니다. 결제 완료 후 즉시 생성되며, 시스템 상황에 따라 최대 24시간 이내 제공됩니다. 생성일로부터 90일간 온라인 열람 가능합니다.";
 const PRODUCT_REFUND_POLICY_NOTICE_KO =
@@ -86,7 +86,7 @@ const DEFAULT_SELECTED_REPORT_PRODUCT = {
   fullNameKo: ACTIVE_REPORT_PRODUCT.fullNameKo,
   inputTitleKo: "종합 리포트 입력",
   introKo:
-    "생년월일시와 MBTI를 입력하고 확인한 뒤 1,290원 결제창으로 이동합니다. 리포트는 결제 승인 후 생성됩니다. 자동 생성 디지털 리포트이며 상담이 아닌 참고용 리포트입니다.",
+    `생년월일시와 MBTI를 입력하고 확인한 뒤 ${REPORT_PRICE_LABEL_KO} 결제창으로 이동합니다. 리포트는 결제 승인 후 생성됩니다. 자동 생성 디지털 리포트이며 상담이 아닌 참고용 리포트입니다.`,
   formatLabelKo: ACTIVE_REPORT_FORMAT_LABEL_KO,
   deliveryTypeKo: ACTIVE_REPORT_PRODUCT.deliveryTypeKo,
   statusLabelKo: "구매 가능",
@@ -106,8 +106,8 @@ const CAREER_MONEY_STUDY_SELECTED_REPORT_PRODUCT = {
   deliveryTypeKo: "온라인 리포트",
   statusLabelKo: "구매 가능",
   isPurchasable: true,
-  listPriceKo: "1,290원",
-  priceKo: "1,290원",
+  listPriceKo: REPORT_PRICE_LABEL_KO,
+  priceKo: REPORT_PRICE_LABEL_KO,
 } as const satisfies SelectedReportProduct;
 
 const LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT = {
@@ -121,8 +121,8 @@ const LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT = {
   deliveryTypeKo: "온라인 리포트",
   statusLabelKo: "구매 가능",
   isPurchasable: true,
-  listPriceKo: "1,290원",
-  priceKo: "1,290원",
+  listPriceKo: REPORT_PRICE_LABEL_KO,
+  priceKo: REPORT_PRICE_LABEL_KO,
 } as const satisfies SelectedReportProduct;
 
 const COMPATIBILITY_SELECTED_REPORT_PRODUCT = {
@@ -137,8 +137,8 @@ const COMPATIBILITY_SELECTED_REPORT_PRODUCT = {
   deliveryTypeKo: "온라인 리포트",
   statusLabelKo: "구매 가능",
   isPurchasable: true,
-  listPriceKo: "1,290원",
-  priceKo: "1,290원",
+  listPriceKo: REPORT_PRICE_LABEL_KO,
+  priceKo: REPORT_PRICE_LABEL_KO,
 } as const satisfies SelectedReportProduct;
 
 const MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT = {
@@ -153,8 +153,8 @@ const MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT = {
   deliveryTypeKo: "온라인 리포트",
   statusLabelKo: "구매 가능",
   isPurchasable: true,
-  listPriceKo: "1,290원",
-  priceKo: "1,290원",
+  listPriceKo: REPORT_PRICE_LABEL_KO,
+  priceKo: REPORT_PRICE_LABEL_KO,
 } as const satisfies SelectedReportProduct;
 
 const ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT = {
@@ -169,8 +169,8 @@ const ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT = {
   deliveryTypeKo: "온라인 리포트",
   statusLabelKo: "구매 가능",
   isPurchasable: true,
-  listPriceKo: "1,290원",
-  priceKo: "1,290원",
+  listPriceKo: REPORT_PRICE_LABEL_KO,
+  priceKo: REPORT_PRICE_LABEL_KO,
 } as const satisfies SelectedReportProduct;
 
 const SAJU_MBTI_FULL_SELECTED_REPORT_PRODUCT = {
@@ -185,8 +185,8 @@ const SAJU_MBTI_FULL_SELECTED_REPORT_PRODUCT = {
   deliveryTypeKo: "온라인 리포트",
   statusLabelKo: "구매 가능",
   isPurchasable: true,
-  listPriceKo: "1,290원",
-  priceKo: "1,290원",
+  listPriceKo: REPORT_PRICE_LABEL_KO,
+  priceKo: REPORT_PRICE_LABEL_KO,
 } as const satisfies SelectedReportProduct;
 
 const mbtiTypes = MBTI_TYPES.filter((type) => type !== "");

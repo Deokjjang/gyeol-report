@@ -14,7 +14,7 @@ const request = {
   secretKey,
   paymentKey: "pay_confirm_test_key",
   orderId: "provider_order_confirm_test",
-  amount: 1290,
+  amount: 1490,
 } as const;
 
 function createJsonResponse(body: unknown, status = 200): Response {
@@ -31,7 +31,7 @@ function createSuccessFetch(body?: Record<string, unknown>) {
     createJsonResponse(
       body ?? {
         orderId: request.orderId,
-        totalAmount: 1290,
+        totalAmount: 1490,
         currency: "KRW",
         status: "DONE",
         method: "카드",
@@ -110,7 +110,7 @@ describe("Toss confirm client", () => {
     expectFetchNotCalled(fetchImpl);
   });
 
-  it("requires amount 1290", async () => {
+  it("requires amount 1490", async () => {
     const fetchImpl = createSuccessFetch();
     const result = await confirmTossPayment({
       ...request,
@@ -155,7 +155,7 @@ describe("Toss confirm client", () => {
   it("sanitizes success response", async () => {
     const fetchImpl = createSuccessFetch({
       orderId: request.orderId,
-      totalAmount: 1290,
+      totalAmount: 1490,
       currency: "KRW",
       status: "DONE",
       method: "간편결제",
@@ -173,7 +173,7 @@ describe("Toss confirm client", () => {
         provider: "toss",
         paymentKeyReceived: true,
         orderId: request.orderId,
-        amount: 1290,
+        amount: 1490,
         status: "DONE",
         method: "간편결제",
         approvedAt: "2026-06-11T12:00:00+09:00",
@@ -193,7 +193,7 @@ describe("Toss confirm client", () => {
     });
     const currencyFetch = createSuccessFetch({
       orderId: request.orderId,
-      totalAmount: 1290,
+      totalAmount: 1490,
       currency: "USD",
       status: "DONE",
     });
@@ -288,7 +288,7 @@ describe("Toss confirm client", () => {
       "paymentKey",
       "orderId",
       "amount",
-      "1290",
+      "REPORT_PRICE_KRW",
     ];
     const blockedMarkers = [
       "TOSS" + "_SECRET" + "_KEY",

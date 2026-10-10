@@ -1,3 +1,4 @@
+import { isDirectReportPaymentAmount } from "../../../../lib/payment/reportProductCatalog";
 import { ReportStatusView } from "../../../../components/report/ReportStatusView";
 import { confirmPaidReport } from "../../../../lib/payment/paidReportReliability";
 import { createPaidReportReliabilityStore } from "../../../../lib/payment/paidReportReliabilityStore";
@@ -24,7 +25,6 @@ type InitialSuccessState =
   | "payment_failed"
   | "generation_failed";
 
-const requiredPaymentAmount = 1290;
 const tossConfirmApiEnabledEnv = "TOSS_CONFIRM_API_ENABLED";
 const tossSecretKeyEnv = "TOSS_PAYMENTS_SECRET_KEY";
 const paidGenerationFailureMessage =
@@ -49,7 +49,7 @@ function parseInitialState(input: {
     return "missing";
   }
 
-  if (Number(input.amount) !== requiredPaymentAmount) {
+  if (!isDirectReportPaymentAmount(Number(input.amount))) {
     return "amount_mismatch";
   }
 

@@ -22,9 +22,9 @@ describe("report product catalog", () => {
       productType: "saju_mbti_full",
       labelKo: "사주×MBTI 종합 리포트",
       descriptionKo: "명리 구조와 MBTI 행동 패턴을 함께 읽는 종합 리포트입니다.",
-      amount: 1290,
+      amount: 1490,
       currency: "KRW",
-      priceLabelKo: "1,290원",
+      priceLabelKo: "1,490원",
       isPurchasable: true,
     });
     expect(isPurchasableReportProduct("saju_mbti_full")).toBe(true);
@@ -45,7 +45,7 @@ describe("report product catalog", () => {
       const product = getReportProduct(productType);
 
       expect(product?.isPurchasable).toBe(true);
-      expect(product?.amount).toBe(1290);
+      expect(product?.amount).toBe(1490);
       expect(product?.currency).toBe("KRW");
       expect(isPurchasableReportProduct(productType)).toBe(true);
     }

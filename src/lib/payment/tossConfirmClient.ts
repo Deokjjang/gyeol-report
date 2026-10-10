@@ -1,4 +1,5 @@
 import { withDeadline } from "../network/withDeadline";
+import { REPORT_PRICE_KRW, isDirectReportPaymentAmount } from "./reportProductCatalog";
 import { Buffer } from "node:buffer";
 
 import type {
@@ -11,7 +12,7 @@ import type {
 export const TOSS_CONFIRM_API_URL =
   "https://api.tosspayments.com/v1/payments/confirm";
 export const TOSS_CONFIRM_TIMEOUT_MS = 15_000;
-export const TOSS_CONFIRM_REQUIRED_AMOUNT = 1290;
+export const TOSS_CONFIRM_REQUIRED_AMOUNT = REPORT_PRICE_KRW;
 const tossConfirmRequiredCurrency = "KRW";
 
 type TossConfirmFetchResponse = {
@@ -27,8 +28,9 @@ type TossConfirmFetch = (
 
 type ConfirmTossPaymentInput = TossConfirmRequest & {
   // Internal order snapshot authority, never forwarded from a request body.
-  // Existing callers retain the exact 1,290-won contract.
+  // Historical direct-order amounts remain valid; DB claim verifies the snapshot.
   readonly expectedAmount?: number;
+  readonly verifyIdentity?: boolean;
   readonly secretKey: string;
   readonly fetchImpl?: TossConfirmFetch;
   readonly signal?: AbortSignal;
@@ -140,6 +142,7 @@ async function readJsonSafely(response: TossConfirmFetchResponse): Promise<unkno
 function mapTossConfirmResponse(
   body: unknown,
   request: TossConfirmRequest,
+  verifyIdentity = false,
 ): TossConfirmClientResult {
   if (!isRecord(body)) {
     return failure(
@@ -152,6 +155,9 @@ function mapTossConfirmResponse(
   const amount = readNumberField(body, "amount");
   const currency = readStringField(body, "currency");
   const responseOrderId = readStringField(body, "orderId");
+  if (verifyIdentity && (body.paymentKey !== request.paymentKey || responseOrderId !== request.orderId || currency !== "KRW" || totalAmount !== request.amount)) {
+    return failure("TOSS_CONFIRM_PROVIDER_ERROR", "Toss payment identity does not match the verified order.");
+  }
 
   if (
     totalAmount !== undefined &&
@@ -193,6 +199,7 @@ function mapTossConfirmResponse(
     orderId: request.orderId,
     amount: request.amount,
     status,
+    ...(verifyIdentity ? { currency: "KRW" as const, paymentKeyVerified: true as const } : {}),
     ...(method === undefined ? {} : { method }),
     ...(approvedAt === undefined ? {} : { approvedAt }),
     ...(status === "UNKNOWN" ? {} : { rawPaymentStatus: status }),
@@ -221,8 +228,8 @@ export async function confirmTossPayment(
     );
   }
 
-  const expectedAmount = input.expectedAmount ?? TOSS_CONFIRM_REQUIRED_AMOUNT;
-  if (!Number.isSafeInteger(expectedAmount) || expectedAmount < 100 || input.amount !== expectedAmount) {
+  const expectedAmount = input.expectedAmount ?? input.amount;
+  if (!Number.isSafeInteger(expectedAmount) || expectedAmount < 100 || input.amount !== expectedAmount || (input.expectedAmount === undefined && !isDirectReportPaymentAmount(input.amount))) {
     return failure(
       "TOSS_CONFIRM_AMOUNT_MISMATCH",
       "Toss confirm amount does not match the order amount.",
@@ -272,5 +279,22 @@ export async function confirmTossPayment(
     return failure("TOSS_CONFIRM_AMOUNT_MISMATCH", "Toss confirm amount does not match the verified order amount.");
   }
 
-  return mapTossConfirmResponse(body, input);
+  return mapTossConfirmResponse(body, input, input.verifyIdentity);
+}
+
+// Recovery only reads the provider fact first. A previous successful approval is
+// not reconfirmed/charged. IN_PROGRESS may finish the same authenticated payment.
+export async function confirmTossBundlePayment(input: ConfirmTossPaymentInput, recovery = false): Promise<TossConfirmClientResult> {
+  const strict = { ...input, expectedAmount: input.expectedAmount ?? input.amount, verifyIdentity: true };
+  if (!recovery) return confirmTossPayment(strict);
+  if (!isNonEmptyString(input.secretKey) || !isNonEmptyString(input.paymentKey)) return failure("TOSS_CONFIRM_CONFIG_MISSING", "Toss configuration is missing.");
+  try {
+    const fetchImpl = input.fetchImpl ?? fetch;
+    const result = await withDeadline(async signal => {
+      const response = await fetchImpl(`https://api.tosspayments.com/v1/payments/${encodeURIComponent(input.paymentKey)}`, { method: "GET", signal, headers: { authorization: createAuthorizationHeader(input.secretKey) } });
+      if (!response.ok) return failure("TOSS_CONFIRM_PROVIDER_ERROR", "Toss payment lookup is pending.");
+      return mapTossConfirmResponse(await readJsonSafely(response), input, true);
+    }, TOSS_CONFIRM_TIMEOUT_MS, input.signal);
+    return result.ok && result.confirm.status === "IN_PROGRESS" ? confirmTossPayment(strict) : result;
+  } catch { return failure("TOSS_CONFIRM_PROVIDER_ERROR", "Toss payment lookup is pending."); }
 }

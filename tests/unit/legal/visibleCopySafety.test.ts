@@ -49,7 +49,7 @@ describe("visible copy safety", () => {
     ].join("\n");
 
     expect(source).toContain("판매가");
-    expect(source).toContain("1,290원");
+    expect(source).toContain("REPORT_PRICE_LABEL_KO");
     expect(source).toContain("생성일로부터 90일");
     expect(source).not.toContain("런칭가");
     expect(source).not.toContain("990원");

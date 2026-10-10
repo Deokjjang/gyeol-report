@@ -40,7 +40,7 @@ try {
   cli("--allowed-domains", "127.0.0.1", "open", origin + "/dev/account"); cli("set", "viewport", "390", "844"); cli("set", "media", "light", "reduced-motion"); cli("wait", "--load", "networkidle");
   cli("snapshot", "-i"); check("local server has content, no overlay", ev("document.body.innerText.includes('내 이야기를 이어서')&&!document.querySelector('[data-nextjs-dialog]')")); shot("390-login");
   // Guest gets a private cookie when the existing mock checkout creates its order.
-  const guest = create("major"); check("guest has no login requirement and still pays 1290", guest.amount === 1290);
+  const guest = create("major"); check("guest has no login requirement and still pays 1490", guest.amount === 1490);
   open(guest.url); cli("wait", "[data-book-report]"); backCover(); cli("wait", "--text", "내 서재에 보관하기"); shot("390-guest-save");
   check("capability absent from JS cookies", !ev("document.cookie").includes("claim-"));
   check("claim proof absent from report URL", !ev("location.href").includes("claim"));

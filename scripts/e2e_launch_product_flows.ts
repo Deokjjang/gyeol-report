@@ -61,7 +61,7 @@ const productCases: readonly E2eProductCase[] = [
   {
     productSlug: "saju-mbti-full",
     urlPath: "/report/new?product=saju-mbti-full",
-    ctaLabel: "1,290원 결제하고 종합 리포트 생성하기",
+    ctaLabel: "1,490원 결제하고 종합 리포트 생성하기",
     resultMarkers: [
       "종합 리포트",
       "오행 분포",
@@ -76,7 +76,7 @@ const productCases: readonly E2eProductCase[] = [
   {
     productSlug: "career-money-study",
     urlPath: "/report/new?product=career-money-study",
-    ctaLabel: "1,290원 결제하고 직업 리포트 생성하기",
+    ctaLabel: "1,490원 결제하고 직업 리포트 생성하기",
     resultMarkers: [
       "직업·커리어·돈·학업 리포트",
       "만세력",
@@ -90,7 +90,7 @@ const productCases: readonly E2eProductCase[] = [
   {
     productSlug: "love-marriage-child",
     urlPath: "/report/new?product=love-marriage-child",
-    ctaLabel: "1,290원 결제하고 연애 리포트 생성하기",
+    ctaLabel: "1,490원 결제하고 연애 리포트 생성하기",
     resultMarkers: [
       "연애·결혼·자녀 리포트",
       "만세력",
@@ -104,7 +104,7 @@ const productCases: readonly E2eProductCase[] = [
   {
     productSlug: "major-fortune",
     urlPath: "/report/new?product=major-fortune",
-    ctaLabel: "1,290원 결제하고 대운 리포트 생성하기",
+    ctaLabel: "1,490원 결제하고 대운 리포트 생성하기",
     resultMarkers: [
       "대운 리포트",
       "만세력",
@@ -119,7 +119,7 @@ const productCases: readonly E2eProductCase[] = [
   {
     productSlug: "annual-fortune",
     urlPath: "/report/new?product=annual-fortune",
-    ctaLabel: "1,290원 결제하고 세운 리포트 생성하기",
+    ctaLabel: "1,490원 결제하고 세운 리포트 생성하기",
     resultMarkers: [
       "세운 리포트",
       "만세력",
@@ -138,7 +138,7 @@ const productCases: readonly E2eProductCase[] = [
   {
     productSlug: "compatibility",
     urlPath: "/report/new?product=compatibility",
-    ctaLabel: "1,290원 결제하고 궁합 리포트 생성하기",
+    ctaLabel: "1,490원 결제하고 궁합 리포트 생성하기",
     resultMarkers: [
       "궁합 리포트",
       "두 사람 기초표",

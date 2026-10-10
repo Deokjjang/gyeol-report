@@ -5,7 +5,7 @@ import { GYEOL_BUSINESS_INFO } from "../../../lib/legal/businessInfo";
 import { GYEOL_PRODUCTS } from "../../../lib/product/gyeolProducts";
 
 const product = GYEOL_PRODUCTS[0];
-const paymentPriceLabelKo = "결제금액 1,290원";
+const paymentPriceLabelKo = `결제금액 ${product.priceKo}`;
 
 const reportContents = [
   "사주 기본 구조",
@@ -87,7 +87,7 @@ export default function SajuMbtiFullProductPage() {
               href="/report/new?product=saju-mbti-full"
               className="inline-flex w-full items-center justify-center rounded-lg bg-neutral-950 px-5 py-4 text-sm font-bold text-white transition hover:bg-neutral-800 sm:w-auto"
             >
-              1,290원 결제하고 리포트 생성하기
+              {product.priceKo} 결제하고 리포트 생성하기
             </Link>
           </div>
           <ProductVisual />
@@ -199,7 +199,7 @@ export default function SajuMbtiFullProductPage() {
               href="/report/new?product=saju-mbti-full"
               className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-4 text-sm font-bold text-neutral-950 transition hover:bg-neutral-100"
             >
-              1,290원 결제하고 리포트 생성하기
+              {product.priceKo} 결제하고 리포트 생성하기
             </Link>
           </div>
         </section>

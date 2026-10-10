@@ -72,7 +72,7 @@ try {
     }
     if (id === "annual") { selectLabel("선택 연도", state.person.selectedYear); clickText("다음 페이지 →"); }
     until("[data-book-checkout]");
-    check(`${id} actual catalog price`, ev("document.querySelector('[data-book-checkout]').innerText.includes('1,290원')"));
+    check(`${id} actual catalog price`, ev("document.querySelector('[data-book-checkout]').innerText.includes('1,490원')"));
     check(`${id} consent default collapsed`, ev("document.querySelectorAll('dialog').length===0 && Array.from(document.querySelectorAll('[data-book-checkout] input[type=checkbox]')).every(e=>!e.checked)"));
     if (id === "full") {
       sizes("receipt"); clickText("보기 ›"); until("dialog[open]"); shot("390-consent-detail"); clickText("×");

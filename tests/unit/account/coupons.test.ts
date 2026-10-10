@@ -38,23 +38,23 @@ beforeAll(async()=>{db=await createCouponTestDatabase();await db.query("insert i
 beforeEach(async()=>{await db.exec("reset role;truncate coupon_definitions,payment_orders cascade;");await seedCouponFixtures(db);await db.exec("set role service_role");mock.mockClear();});
 afterAll(async()=>{await db?.close();});
 describe("coupon pricing / SQL authority",()=>{
-  it("no coupon remains 1290 for all six; quote never reserves",async()=>{
-    for(const p of getReportProductCatalog())expect(await quoteCoupon(store,guest(),p.productType)).toMatchObject({originalAmount:1290,discountAmount:0,finalAmount:1290});
+  it("no coupon remains 1490 for all six; quote never reserves",async()=>{
+    for(const p of getReportProductCatalog())expect(await quoteCoupon(store,guest(),p.productType)).toMatchObject({originalAmount:1490,discountAmount:0,finalAmount:1490});
     expect((await db.query("select * from coupon_redemptions")).rows).toHaveLength(0);
   });
   it.each(getReportProductCatalog())("$productType fixed 300 and 20 percent",async p=>{
-    expect(await quote("GYEOL300",guest(),p.productType)).toMatchObject({originalAmount:1290,discountAmount:300,finalAmount:990});
-    expect(await quote("20PERCENT",member(),p.productType)).toMatchObject({discountAmount:258,finalAmount:1032});
+    expect(await quote("GYEOL300",guest(),p.productType)).toMatchObject({originalAmount:1490,discountAmount:300,finalAmount:1190});
+    expect(await quote("20PERCENT",member(),p.productType)).toMatchObject({discountAmount:298,finalAmount:1192});
   });
   it("percentage floor in integer KRW and max_discount",async()=>{
     await db.exec("update coupon_definitions set discount_value=33 where code='20PERCENT'");
-    expect(await quote("20PERCENT")).toMatchObject({discountAmount:425,finalAmount:865});
+    expect(await quote("20PERCENT")).toMatchObject({discountAmount:491,finalAmount:999});
     await db.exec("update coupon_definitions set max_discount=200 where code='20PERCENT'");
-    expect(await quote("20PERCENT")).toMatchObject({discountAmount:200,finalAmount:1090});
+    expect(await quote("20PERCENT")).toMatchObject({discountAmount:200,finalAmount:1290});
   });
   it("zero/free/below CARD minimum are rejected, never converted to tickets",async()=>{
-    for(const amount of [1191,1290,1500]){await db.query("update coupon_definitions set discount_value=$1 where code='GYEOL300'",[amount]);expect(await quote()).toMatchObject({ok:false,code:"MINIMUM_PAYMENT"});}
-    await db.exec("update coupon_definitions set discount_value=1190 where code='GYEOL300'");expect(await quote()).toMatchObject({finalAmount:100});
+    for(const amount of [1391,1490,1500]){await db.query("update coupon_definitions set discount_value=$1 where code='GYEOL300'",[amount]);expect(await quote()).toMatchObject({ok:false,code:"MINIMUM_PAYMENT"});}
+    await db.exec("update coupon_definitions set discount_value=1390 where code='GYEOL300'");expect(await quote()).toMatchObject({finalAmount:100});
     expect((await db.query("select * from report_ticket_ledger")).rows).toHaveLength(0);
   });
   it("product scope, min order, inactive/start/end",async()=>{
@@ -83,7 +83,7 @@ describe("coupon pricing / SQL authority",()=>{
     const d=(await db.query<{id:string;expires_at:string}>("update coupon_definitions set code=null where code='MEMBER_ONLY' returning id,expires_at::text")).rows[0];
     const g=await store.call("grant",member(),{couponId:d.id,sourceType:"manual",sourceRef:"private",key:"private",expiresAt:new Date(now.getTime()+30*86400000).toISOString()});
     const q=await quoteCoupon(store,member(),"saju_mbti_full",{grantId:String(g.grantId)});
-    expect(q).toMatchObject({ok:true,finalAmount:990});
+    expect(q).toMatchObject({ok:true,finalAmount:1190});
     expect(Date.parse((q.coupon as {expiresAt:string}).expiresAt)).toBe(Date.parse(d.expires_at));
     expect(await quoteCoupon(store,member(B),"saju_mbti_full",{grantId:String(g.grantId)})).toMatchObject({ok:false});
     expect(await quote("MEMBER_ONLY")).toMatchObject({ok:false});
@@ -123,8 +123,8 @@ describe("reserve/redeem/release and monetary snapshots",()=>{
   });
   it("reserved definition expiry/settings changes freeze quote for short completion window",async()=>{
     const r=await reserve();await db.exec("update coupon_definitions set discount_value=400,is_active=false,expires_at=now()-interval '1 second' where code='GYEOL300'");
-    expect((await complete(r.orderId!)).state).toBe("REDEEMED");expect(mock.mock.calls[0][0].amount).toBe(990);
-    expect((await db.query<{amount:number}>("select amount from payment_orders")).rows[0].amount).toBe(990);
+    expect((await complete(r.orderId!)).state).toBe("REDEEMED");expect(mock.mock.calls[0][0].amount).toBe(1190);
+    expect((await db.query<{amount:number}>("select amount from payment_orders")).rows[0].amount).toBe(1190);
   });
   it("abandon expiry releases without extending expired definition; late confirm blocked",async()=>{
     const r=await reserve();await db.exec("reset role;alter table coupon_redemptions disable trigger coupon_redemption_audit;update coupon_redemptions set reserved_at=reserved_at-interval '11 minutes',reserve_until=reserve_until-interval '11 minutes';alter table coupon_redemptions enable trigger coupon_redemption_audit;set role service_role;");
@@ -162,8 +162,8 @@ describe("reserve/redeem/release and monetary snapshots",()=>{
   });
   it.each(fixtures)("$id coupon → paid worker → unchanged real V4 content/library",async f=>{
     const r=await reserve("GYEOL300",member(),randomUUID(),f.payload);expect(r.ok).toBe(true);
-    expect(localCouponCheckout(f.payload.productKey,r)?.requestPayment.amount).toEqual({currency:"KRW",value:990});
-    const c=await complete(r.orderId!);expect(c.state).toBe("REDEEMED");expect(mock.mock.calls[0][0].amount).toBe(990);
+    expect(localCouponCheckout(f.payload.productKey,r)?.requestPayment.amount).toEqual({currency:"KRW",value:1190});
+    const c=await complete(r.orderId!);expect(c.state).toBe("REDEEMED");expect(mock.mock.calls[0][0].amount).toBe(1190);
     const generated=await generateV4ShadowReport(f.payload,{evaluatedAt:now.toISOString(),policyDate:now.toISOString()});expect(generated.ok).toBe(true);
     const finish=await runPaidReportJob(sqlCouponReliability(db),{enabled:false,reason:"flag_disabled"},async()=>generated,validateV4Publication);expect(finish.ok).toBe(true);
     const read=await sqlCouponReliability(db).call("read_report",{reportId:c.reportId});expect(read.status).toBe("COMPLETED");

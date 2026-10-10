@@ -109,13 +109,13 @@ describe("payment checkout prepare route", () => {
     expect(body.paymentOrder).toMatchObject({
       productType: "saju_mbti_full",
       provider: "toss",
-      amount: 1290,
+      amount: 1490,
       currency: "KRW",
       status: "ready",
     });
     expect(body.checkoutSession).toMatchObject({
       productLabelKo: "사주×MBTI 종합 리포트",
-      amount: 1290,
+      amount: 1490,
       currency: "KRW",
       status: "prepared",
     });
@@ -131,7 +131,7 @@ describe("payment checkout prepare route", () => {
         customerName: "결리포트 고객",
         amount: {
           currency: "KRW",
-          value: 1290,
+          value: 1490,
         },
       },
       metadata: {
@@ -175,7 +175,7 @@ describe("payment checkout prepare route", () => {
     expect(response.status).toBe(200);
     expect(body.paymentOrder).toMatchObject({
       provider: "kakao_pay",
-      amount: 1290,
+      amount: 1490,
       currency: "KRW",
     });
     expect(body).not.toHaveProperty("tossCheckoutRequest");

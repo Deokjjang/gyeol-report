@@ -1,3 +1,4 @@
+import { isDirectReportPaymentAmount } from "./reportProductCatalog";
 import type {
   MarkTossPaymentOrderPaidInput,
   MarkTossPaymentOrderPaidResult,
@@ -80,7 +81,7 @@ function parseInput(
     };
   }
 
-  if (input.amount !== 1290) {
+  if (!isDirectReportPaymentAmount(input.amount)) {
     return {
       ok: false,
       result: failure(
@@ -118,7 +119,7 @@ function parseInput(
     value: {
       providerOrderId: input.providerOrderId.trim(),
       providerPaymentId: input.providerPaymentId.trim(),
-      amount: 1290,
+      amount: input.amount,
       currency: "KRW",
       ...(input.paidAt === undefined ? {} : { paidAt: input.paidAt }),
     },

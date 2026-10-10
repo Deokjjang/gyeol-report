@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 
+import { isDirectReportPaymentAmount } from "./reportProductCatalog";
 import type {
   MarkTossPaymentOrderPaidInput,
   MarkTossPaymentOrderPaidResult,
@@ -162,7 +163,7 @@ function mapRpcRow(
     !isNonEmptyString(row.provider_order_id) ||
     row.product_type !== "saju_mbti_full" ||
     row.provider !== "toss" ||
-    row.amount !== 1290 ||
+    !isDirectReportPaymentAmount(row.amount) ||
     row.currency !== "KRW" ||
     row.status !== "paid" ||
     !isTimestamp(row.paid_at) ||

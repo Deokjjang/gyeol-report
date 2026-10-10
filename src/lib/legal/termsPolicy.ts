@@ -1,4 +1,5 @@
 import { GYEOL_BUSINESS_INFO } from "./businessInfo";
+import { REPORT_PRICE_LABEL_KO } from "../payment/reportProductCatalog";
 import { refundPolicyRequiredNotices } from "./refundPolicy";
 
 export type TermsPolicySection = {
@@ -38,7 +39,7 @@ export const termsPolicySections = [
       "판매 상품: 사주×MBTI 종합 리포트, 직업·커리어·돈·학업 리포트, 연애·결혼·자녀 리포트, 궁합 리포트, 대운 리포트, 세운 리포트",
       "궁합 리포트는 연애, 결혼, 부모·자식, 직장 동료, 상사·부하, 사업/협업, 친구/인간관계 카테고리를 포함합니다.",
       "상품 유형: 입력값 기반 자동 생성 디지털 리포트",
-      "실제 결제금액: 상품별 1,290원",
+      `실제 결제금액: 상품별 ${REPORT_PRICE_LABEL_KO}`,
       "제공 방식: 결제 후 온라인 열람",
       "서비스 제공기간: 결제 완료 후 즉시 생성, 최대 24시간 이내 제공",
       "열람 가능 기간: 생성일로부터 90일",

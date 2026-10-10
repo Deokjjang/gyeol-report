@@ -75,7 +75,7 @@ describe("Toss payment success page", () => {
     expect(html).toContain("결제 승인에 필요한 정보가 누락되었습니다.");
   });
 
-  it("shows amount mismatch state for non-1290 amount", async () => {
+  it("shows amount mismatch state for unsupported direct-report amount", async () => {
     const html = await renderSuccessPage({
       paymentKey: "pay_wrong_amount",
       orderId: "provider_order",
@@ -94,7 +94,7 @@ describe("Toss payment success page", () => {
       "confirmTossPayment",
       "confirmPaidReport",
       "createPaidReportReliabilityStore",
-      "requiredPaymentAmount = 1290",
+      "isDirectReportPaymentAmount",
       "redirect(`/reports/${finalState.redirectReportId}?purchase=1`)",
       paidGenerationFailureMessageSourceMarker(),
     ];
