@@ -2,6 +2,7 @@ import { randomBytes, timingSafeEqual } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { ACCOUNT_POLICY_VERSIONS, ACCOUNT_PROVIDERS, accountSession, safeAccountNext, validConsentSubmission, type AccountIdentity, type AccountProvider, type AccountSnapshot } from "./policy";
 import { publicRequestOrigin } from "./origin";
+import { channelOnboarding } from "./channelOnboarding";
 
 export type AccountPort = {
   currentUser(): Promise<AccountIdentity | null>;
@@ -56,7 +57,9 @@ export async function handleAccount(request: NextRequest, action: string, port: 
       const user = await port.currentUser();
       const snapshot = user ? await port.read(user) : undefined;
       if (snapshot === null) return json({ error: "로그인 상태를 확인하지 못했습니다." }, 503);
-      return json(accountSession(user, snapshot));
+      const session = accountSession(user, snapshot);
+      const channelPrompt = channelOnboarding(user, session);
+      return json({ ...session, ...(channelPrompt ? { channelPrompt } : {}) });
     }
     if (action === "logout") {
       const ok = await port.logout();

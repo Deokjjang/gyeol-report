@@ -15,6 +15,7 @@ import f from "./flow.module.css";
 import { interaction } from "../../lib/analytics/client";
 import { checkoutReturnKey, ticketPendingKey } from "./useTicketPublication";
 import { bundleReturnKey } from "../../lib/tickets/shopContract";
+import { AccountChannelOnboarding } from "../account/AccountSession";
 
 export function Fields({ person, change, prefix, role, errors, now, requiredGender }: { person: PersonInputState; change: (value: PersonInputState) => void; prefix: string; role: string; errors: Record<string, string>; now: string; requiredGender: boolean }) {
   const error = (key: string) => errors[`${prefix}.${key}`] ? <small id={`${prefix}-${key}-error`} role="alert" className={f.error}>{errors[`${prefix}.${key}`]}</small> : null;
@@ -124,6 +125,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
   const relation = <label>관계 상태<select value={state.person.relationshipStatus} onChange={e => update({ ...state, person: { ...state.person, relationshipStatus: e.target.value } })}>{RELATIONSHIPS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>;
   const home = internal ? "/dev/book-flow" : "/";
   return <main className={`${s.root} ${f.flow}`} data-book-input data-step={step} style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties}>
+    {authEnabled && ready && !receipt && !publishing && !checking ? <AccountChannelOnboarding local={internal} /> : null}
     <header className={s.header}><a href={home} className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기 ×</a></header>
     {publishing ? <div data-observed-status="REQUESTED" data-intermediate-states="decorative"><Publishing book={book} name={state.person.name} state={PUBLISHING_STATES[decoration]} notice="내부 검수 · 실제 결제 없음" /><p className={f.status} role="status">책을 생성하고 있습니다. 종이·제본 움직임은 연출이며 진행률이 아닙니다.</p></div> : null}
     <section className={s.bookShell} hidden={publishing}><div className={s.pageScroll} ref={scroll} tabIndex={-1} role="region" aria-label="책 입력">

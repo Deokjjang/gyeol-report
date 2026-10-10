@@ -1,8 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
-  <title>Gyeol Report</title>
-  <circle cx="48" cy="48" r="47" fill="#080807"/>
-  <circle cx="48" cy="48" r="30" fill="none" stroke="#6e5939" stroke-width="1.5"/>
-  <path d="M27 69a30 30 0 0 1 42-42" fill="none" stroke="#f0d5a0" stroke-width="4" stroke-linecap="round"/>
-  <ellipse cx="48" cy="48" rx="43" ry="19" transform="rotate(-35 48 48)" fill="none" stroke="#c7a46a" stroke-width="1.5"/>
-  <circle cx="83" cy="24" r="3" fill="#f0d5a0"/>
+  <title>결리포트 — 펼쳐진 책</title>
+  <path fill="#111111" d="M0 0h96v96H0z"/>
+  <path fill="#FAF9F6" d="M16 24c11-2 21 0 29 6v44c-8-6-18-8-29-6V24Zm64 0c-11-2-21 0-29 6v44c8-6 18-8 29-6V24Z"/>
 </svg>

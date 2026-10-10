@@ -7,9 +7,10 @@ import { announceAccountChange, useAccountSession } from "./AccountSession";
 import s from "./account.module.css";
 import { Library } from "./Library";
 import { interaction } from "../../lib/analytics/client";
+import { KakaoChannelPrompt } from "./KakaoChannelPrompt";
 
 export function AccountScreen({ local = false, loginError = false, next, ticketShopEnabled = false }: { local?: boolean; loginError?: boolean; next?: string; ticketShopEnabled?: boolean }) {
-  const { session, loaded, error, refresh, base } = useAccountSession(local);
+  const { session, loaded, error, refresh, base, verifying } = useAccountSession(local);
   const [checked, setChecked] = useState({ terms: false, privacy: false }), [detail, setDetail] = useState<number | null>(null), [message, setMessage] = useState(loginError ? "로그인을 완료하지 못했습니다. 다시 시도하거나 로그인 없이 계속할 수 있습니다." : ""), [busy, setBusy] = useState(false);
   const all = checked.terms && checked.privacy, some = checked.terms || checked.privacy, allRef = useRef<HTMLInputElement>(null), lock = useRef(false), requestId = useRef("");
   useEffect(() => { if (allRef.current) allRef.current.indeterminate = some && !all; }, [all, some, session.status]);
@@ -58,5 +59,6 @@ export function AccountScreen({ local = false, loginError = false, next, ticketS
       {session.status !== "member" ? <Link className={s.guest} href={guest}>로그인 없이도 책을 만들 수 있습니다. →</Link> : null}
     </section>
     {detail !== null ? <DetailSheet title={LEGAL_TITLES[detail]} onClose={() => setDetail(null)}><LegalDocument index={detail} onNavigate={setDetail} /></DetailSheet> : null}
+    <KakaoChannelPrompt session={session} local={local} enabled={loaded && !verifying && !error && !busy && detail === null} />
   </main>;
 }

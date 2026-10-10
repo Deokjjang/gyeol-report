@@ -7,7 +7,7 @@ export type AccountProvider = typeof ACCOUNT_PROVIDERS[number];
 export type ConsentRecord = { consent_type: "terms" | "privacy" | "marketing"; document_version: string; is_agreed: boolean; required: boolean; recorded_at: string };
 export type AccountIdentity = { id: string; displayName: string; provider: AccountProvider; createdAt?: string };
 export type AccountSnapshot = { profile: AccountIdentity | null; consents: ConsentRecord[] };
-export type AccountSession = { status: "guest" | "needs_consent" | "member"; displayName?: string };
+export type AccountSession = { status: "guest" | "needs_consent" | "member"; displayName?: string; channelPrompt?: { scope: string; channelPublicId: string } };
 export const GUEST_SESSION: AccountSession = { status: "guest" };
 
 // Records arrive newest first (DB monotonic id, not a client timestamp).

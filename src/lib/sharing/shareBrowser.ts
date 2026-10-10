@@ -4,6 +4,7 @@ export type KakaoSdk = {
   init(key: string): void;
   isInitialized(): boolean;
   Share: { sendDefault(card: ReturnType<typeof kakaoShareCard>): void };
+  Channel?: { addChannel(settings: { channelPublicId: string }): void };
 };
 
 export function kakaoShareCard(data: ReportShareData, presentation = { imageUrl: SHARE_IMAGE, width: 1536, height: 1024, button: "리포트 보기" }) {
