@@ -1,0 +1,378 @@
+{
+  "date": "2026-10-10",
+  "base": "86a21ecad26ebc137195d85ae479929271b869d8",
+  "before": {
+    "mode": "before",
+    "batch": null,
+    "completed": 8,
+    "wallMs": 32724.274584,
+    "cpuMs": 34253.013,
+    "peakRssMiB": 1091.46875,
+    "metrics": [
+      {
+        "product": "comprehensive",
+        "wallMs": 8546.80375,
+        "cpuMs": 8710.838,
+        "rssMiB": 701.40625,
+        "peakRssMiB": 746.4375,
+        "rpcCount": 3
+      },
+      {
+        "product": "career",
+        "wallMs": 1890.8857090000001,
+        "cpuMs": 2175.903,
+        "rssMiB": 678.3125,
+        "peakRssMiB": 746.4375,
+        "rpcCount": 3
+      },
+      {
+        "product": "love",
+        "wallMs": 2769.884624999999,
+        "cpuMs": 2891.753,
+        "rssMiB": 730.0625,
+        "peakRssMiB": 746.4375,
+        "rpcCount": 3
+      },
+      {
+        "product": "compatibility",
+        "wallMs": 5260.453417000001,
+        "cpuMs": 5522.917,
+        "rssMiB": 804.203125,
+        "peakRssMiB": 859.4375,
+        "rpcCount": 3
+      },
+      {
+        "product": "major",
+        "wallMs": 2626.4015,
+        "cpuMs": 2814.476,
+        "rssMiB": 890.828125,
+        "peakRssMiB": 900.203125,
+        "rpcCount": 3
+      },
+      {
+        "product": "annual",
+        "wallMs": 2789.0855420000007,
+        "cpuMs": 2892.303,
+        "rssMiB": 974.953125,
+        "peakRssMiB": 996.5,
+        "rpcCount": 4
+      },
+      {
+        "product": "comprehensive",
+        "wallMs": 7170.714125000002,
+        "cpuMs": 7510.704,
+        "rssMiB": 1044.796875,
+        "peakRssMiB": 1091.46875,
+        "rpcCount": 3
+      },
+      {
+        "product": "career",
+        "wallMs": 1669.3398749999978,
+        "cpuMs": 1733.573,
+        "rssMiB": 1048.875,
+        "peakRssMiB": 1091.46875,
+        "rpcCount": 3
+      }
+    ],
+    "digests": [
+      "e98f9196f7ddcbf48821e3ade6f72f8bd6ed6f37e2a2858d055e8e8505565d86",
+      "3a0d6635f4087ab6e0a4461fd7fd448d5b193e80c55d0eaef3a17f06fb0b8a30",
+      "649b479598adb00821efbe2080b26a7827f88ba3349383826b70db367873c781",
+      "6eef77284d6daa97d481fb7da3f8340e07e4a481a4dbbfe57b87b31310d33b54",
+      "49e57f36c13b9b60fe22f5c74bfc6d83932dee76b15c8887091264dfe57ada76",
+      "8677587928ca235e17a5b65e2d50c3aab64f47d04c47fc07f73ccf891155848f",
+      "94c34ca390f652e8b389ad9796b9d830f2fd51ba68e1a72593c552220a7f8892",
+      "e2b8403bba59f12547340ba1b17ab9acc49cf1404a86698af18ada45a2b7a6ef"
+    ],
+    "scope": "local sequential real V4 with synthetic store, includes cold runtime imports, no DB/network/provider; before=8 individual invocations without cron waits; after=one bounded invocation"
+  },
+  "after": {
+    "mode": "after",
+    "batch": {
+      "ok": true,
+      "processed": 8,
+      "completed": 8,
+      "retrying": 0,
+      "attention": 0,
+      "stop": "job_limit"
+    },
+    "completed": 8,
+    "wallMs": 31417.288625000005,
+    "cpuMs": 32822.753,
+    "peakRssMiB": 1009.875,
+    "metrics": [
+      {
+        "product": "comprehensive",
+        "wallMs": 9106.069541,
+        "cpuMs": 9229.933,
+        "rssMiB": 706.890625,
+        "peakRssMiB": 752.03125,
+        "rpcCount": 3
+      },
+      {
+        "product": "career",
+        "wallMs": 1451.0759579999994,
+        "cpuMs": 1663.963,
+        "rssMiB": 693.46875,
+        "peakRssMiB": 752.03125,
+        "rpcCount": 3
+      },
+      {
+        "product": "love",
+        "wallMs": 2073.818374999999,
+        "cpuMs": 2185.902,
+        "rssMiB": 745.171875,
+        "peakRssMiB": 752.03125,
+        "rpcCount": 3
+      },
+      {
+        "product": "compatibility",
+        "wallMs": 4937.036792000001,
+        "cpuMs": 5214.218,
+        "rssMiB": 802.078125,
+        "peakRssMiB": 857.3125,
+        "rpcCount": 3
+      },
+      {
+        "product": "major",
+        "wallMs": 2626.3589580000007,
+        "cpuMs": 2771.742,
+        "rssMiB": 841.9375,
+        "peakRssMiB": 857.3125,
+        "rpcCount": 3
+      },
+      {
+        "product": "annual",
+        "wallMs": 2805.0398749999986,
+        "cpuMs": 2912.195,
+        "rssMiB": 927.328125,
+        "peakRssMiB": 948.875,
+        "rpcCount": 4
+      },
+      {
+        "product": "comprehensive",
+        "wallMs": 7003.199499999999,
+        "cpuMs": 7371.404,
+        "rssMiB": 962.75,
+        "peakRssMiB": 1009.875,
+        "rpcCount": 3
+      },
+      {
+        "product": "career",
+        "wallMs": 1413.9940830000014,
+        "cpuMs": 1472.838,
+        "rssMiB": 971.578125,
+        "peakRssMiB": 1009.875,
+        "rpcCount": 3
+      }
+    ],
+    "digests": [
+      "e98f9196f7ddcbf48821e3ade6f72f8bd6ed6f37e2a2858d055e8e8505565d86",
+      "3a0d6635f4087ab6e0a4461fd7fd448d5b193e80c55d0eaef3a17f06fb0b8a30",
+      "649b479598adb00821efbe2080b26a7827f88ba3349383826b70db367873c781",
+      "6eef77284d6daa97d481fb7da3f8340e07e4a481a4dbbfe57b87b31310d33b54",
+      "49e57f36c13b9b60fe22f5c74bfc6d83932dee76b15c8887091264dfe57ada76",
+      "8677587928ca235e17a5b65e2d50c3aab64f47d04c47fc07f73ccf891155848f",
+      "94c34ca390f652e8b389ad9796b9d830f2fd51ba68e1a72593c552220a7f8892",
+      "e2b8403bba59f12547340ba1b17ab9acc49cf1404a86698af18ada45a2b7a6ef"
+    ],
+    "scope": "local sequential real V4 with synthetic store, includes cold runtime imports, no DB/network/provider; before=8 individual invocations without cron waits; after=one bounded invocation"
+  },
+  "capacity": {
+    "classification": "LOCAL_SQL_SIMULATION_NOT_PRODUCTION",
+    "assumptions": {
+      "measuredFinanceWallMs": [
+        6870.175,
+        1397,
+        2007,
+        4864,
+        2538,
+        2767
+      ],
+      "measuredFinanceCpuMs": [
+        7185.072,
+        1512,
+        2115,
+        5079,
+        2666,
+        2904
+      ],
+      "rpcPerJobMs": 400,
+      "expirePerInvocationMs": 200,
+      "firstAttemptFailureFraction": 0.01,
+      "rss": "admission bypassed in simulation; real generation memory measured separately",
+      "cron": "60 seconds, serialized, no skipped invocation assumed",
+      "snapshots": "small SQL envelopes; real publication validators covered separately"
+    },
+    "reports": [
+      {
+        "scenario": "burst100",
+        "mode": "before",
+        "completed": 100,
+        "reports": 100,
+        "attempts": 101,
+        "completed24h": 100,
+        "remaining24h": 0,
+        "failedAttempts": 1,
+        "duplicatePublications": 0,
+        "invocations": 101,
+        "claims": 101,
+        "observedHours": 1.6833333333333333,
+        "meanDeliverySeconds": 3034.0222897500003,
+        "maxDeliverySeconds": 6007.4701749999995,
+        "oldestPendingSeconds": 0,
+        "modeledGenerationCpuSeconds": 366.45329599999985,
+        "actualSimulationWallMs": 222.88629199999968,
+        "actualSimulationCpuMs": 426.89,
+        "simulatorPeakRssMiB": 1753.515625
+      },
+      {
+        "scenario": "burst100",
+        "mode": "after",
+        "completed": 100,
+        "reports": 100,
+        "attempts": 101,
+        "completed24h": 100,
+        "remaining24h": 0,
+        "failedAttempts": 1,
+        "duplicatePublications": 0,
+        "invocations": 13,
+        "claims": 102,
+        "observedHours": 0.21666666666666667,
+        "meanDeliverySeconds": 370.08723775000016,
+        "maxDeliverySeconds": 744.9683500000001,
+        "oldestPendingSeconds": 0,
+        "modeledGenerationCpuSeconds": 366.45329599999985,
+        "actualSimulationWallMs": 137.36349999999993,
+        "actualSimulationCpuMs": 169.503,
+        "simulatorPeakRssMiB": 1753.515625
+      },
+      {
+        "scenario": "queue1000",
+        "mode": "before",
+        "completed": 1000,
+        "reports": 1000,
+        "attempts": 1010,
+        "completed24h": 1000,
+        "remaining24h": 0,
+        "failedAttempts": 10,
+        "duplicatePublications": 0,
+        "invocations": 1010,
+        "claims": 1010,
+        "observedHours": 16.833333333333332,
+        "meanDeliverySeconds": 30355.548705224945,
+        "maxDeliverySeconds": 60547.470174999995,
+        "oldestPendingSeconds": 0,
+        "modeledGenerationCpuSeconds": 3621.512312000009,
+        "actualSimulationWallMs": 6689.414125000001,
+        "actualSimulationCpuMs": 6931.34,
+        "simulatorPeakRssMiB": 1753.515625
+      },
+      {
+        "scenario": "queue1000",
+        "mode": "after",
+        "completed": 1000,
+        "reports": 1000,
+        "attempts": 1010,
+        "completed24h": 1000,
+        "remaining24h": 0,
+        "failedAttempts": 10,
+        "duplicatePublications": 0,
+        "invocations": 127,
+        "claims": 1011,
+        "observedHours": 2.1166666666666667,
+        "meanDeliverySeconds": 3783.3478603750086,
+        "maxDeliverySeconds": 7570.408175,
+        "oldestPendingSeconds": 0,
+        "modeledGenerationCpuSeconds": 3621.5123120000094,
+        "actualSimulationWallMs": 4218.124125,
+        "actualSimulationCpuMs": 4298.006,
+        "simulatorPeakRssMiB": 1753.515625
+      },
+      {
+        "scenario": "daily1000",
+        "mode": "before",
+        "completed": 1000,
+        "reports": 1000,
+        "attempts": 1010,
+        "completed24h": 1000,
+        "remaining24h": 0,
+        "failedAttempts": 10,
+        "duplicatePublications": 0,
+        "invocations": 1440,
+        "claims": 1440,
+        "observedHours": 24,
+        "meanDeliverySeconds": 33.40870522499973,
+        "maxDeliverySeconds": 67.47017500000075,
+        "oldestPendingSeconds": 0,
+        "modeledGenerationCpuSeconds": 3621.512312000009,
+        "actualSimulationWallMs": 7939.162792000001,
+        "actualSimulationCpuMs": 8050.417,
+        "simulatorPeakRssMiB": 1753.515625
+      },
+      {
+        "scenario": "daily1000",
+        "mode": "after",
+        "completed": 1000,
+        "reports": 1000,
+        "attempts": 1010,
+        "completed24h": 1000,
+        "remaining24h": 0,
+        "failedAttempts": 10,
+        "duplicatePublications": 0,
+        "invocations": 1440,
+        "claims": 2450,
+        "observedHours": 24,
+        "meanDeliverySeconds": 33.40870522499973,
+        "maxDeliverySeconds": 67.47017500000075,
+        "oldestPendingSeconds": 0,
+        "modeledGenerationCpuSeconds": 3621.512312000009,
+        "actualSimulationWallMs": 10351.578708000001,
+        "actualSimulationCpuMs": 10422.638,
+        "simulatorPeakRssMiB": 1753.515625
+      },
+      {
+        "scenario": "daily10000",
+        "mode": "before",
+        "completed": 1425,
+        "reports": 1425,
+        "attempts": 1440,
+        "completed24h": 1425,
+        "remaining24h": 8575,
+        "failedAttempts": 15,
+        "duplicatePublications": 0,
+        "invocations": 1440,
+        "claims": 1440,
+        "observedHours": 24,
+        "meanDeliverySeconds": 36991.477398105315,
+        "maxDeliverySeconds": 82394.607,
+        "oldestPendingSeconds": 83808,
+        "modeledGenerationCpuSeconds": 5151.974351999999,
+        "actualSimulationWallMs": 108033.68925,
+        "actualSimulationCpuMs": 108096.718,
+        "simulatorPeakRssMiB": 1753.515625
+      },
+      {
+        "scenario": "daily10000",
+        "mode": "after",
+        "completed": 9996,
+        "reports": 9996,
+        "attempts": 10096,
+        "completed24h": 9996,
+        "remaining24h": 4,
+        "failedAttempts": 100,
+        "duplicatePublications": 0,
+        "invocations": 1440,
+        "claims": 11075,
+        "observedHours": 24,
+        "meanDeliverySeconds": 21.283360401662286,
+        "maxDeliverySeconds": 100.5373500000015,
+        "oldestPendingSeconds": 34.56,
+        "modeledGenerationCpuSeconds": 36156.21140000031,
+        "actualSimulationWallMs": 265598.668417,
+        "actualSimulationCpuMs": 265896.901,
+        "simulatorPeakRssMiB": 1753.515625
+      }
+    ]
+  }
+}

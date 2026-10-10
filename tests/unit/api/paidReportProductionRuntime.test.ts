@@ -100,6 +100,24 @@ describe("production paid report runtime boundaries", () => {
     expect(mocks.runJob).toHaveBeenCalledTimes(1);
   });
 
+  it("runs at most eight sequential completed jobs with one expiry and one recovery claim", async () => {
+    vi.stubEnv("TOSS_CONFIRM_API_ENABLED", "1");
+    mocks.storeCall.mockResolvedValue({ ok: true });
+    mocks.runJob.mockResolvedValue({ ok: true, status: "COMPLETED" });
+    const response = await runWorker(authorizedRequest("/api/internal/report-jobs", "mock-cron-secret"));
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ ok: true });
+    expect(mocks.runJob).toHaveBeenCalledTimes(8);
+    expect(mocks.storeCall.mock.calls.map(c => c[0])).toEqual(["expire", "claim_payment_recovery"]);
+    expect(mocks.confirmProvider).not.toHaveBeenCalled();
+  });
+
+  it("expiry storage failure prevents new work and preserves the 503 response", async () => {
+    mocks.storeCall.mockResolvedValue({ ok: false, code: "DURABLE_STORAGE_FAILED" });
+    expect((await runWorker(authorizedRequest("/api/internal/report-jobs", "mock-cron-secret"))).status).toBe(503);
+    expect(mocks.runJob).not.toHaveBeenCalled(); expect(mocks.confirmProvider).not.toHaveBeenCalled();
+  });
+
   it("V4 query/cookie hints cannot replace the default generation or publication contract", async () => {
     mocks.storeCall.mockResolvedValue({ ok: true });
     const request = new Request("http://localhost/api/internal/report-jobs?reportVersion=v4&mode=shadow", {

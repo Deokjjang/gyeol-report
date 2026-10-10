@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { timingSafeEqual } from "node:crypto";
 import { createPaidReportReliabilityStore } from "../../../../lib/payment/paidReportReliabilityStore";
-import { runPublicPaidReportJob } from "../../../../lib/book/paidRuntime";
+import { runPaidReportBatch } from "../../../../lib/book/paidWorkerBatch";
 import { recoverPendingPayment } from "../../../../lib/payment/paymentConfirmRecovery";
 import { resolveReportWriterRuntime } from "../../../../lib/report-generation/reportWriterRuntime";
 import { confirmTossPayment } from "../../../../lib/payment/tossConfirmClient";
@@ -14,6 +14,7 @@ export async function GET(request: Request) {
   if (!process.env.CRON_SECRET || Buffer.byteLength(actual) !== Buffer.byteLength(expected) || !timingSafeEqual(Buffer.from(actual), Buffer.from(expected))) {
     return NextResponse.json({ ok: false }, { status: 401 });
   }
+  const startedAt = performance.now();
   const store = createPaidReportReliabilityStore();
   const expired = await store.call("expire");
   if (!expired.ok) return NextResponse.json({ ok: false }, { status: 503 });
@@ -22,6 +23,6 @@ export async function GET(request: Request) {
     ? recoverPendingPayment(store, (payment, signal) => confirmTossPayment({ ...payment, signal, secretKey: process.env.TOSS_PAYMENTS_SECRET_KEY ?? "" }))
       .catch(() => ({ ok: false }))
     : Promise.resolve();
-  const [result] = await Promise.all([runPublicPaidReportJob(store, resolveReportWriterRuntime()), recovery]);
+  const [result] = await Promise.all([runPaidReportBatch(store, resolveReportWriterRuntime(), { startedAt }), recovery]);
   return NextResponse.json({ ok: result.ok }, { status: result.ok ? 200 : 503 });
 }
