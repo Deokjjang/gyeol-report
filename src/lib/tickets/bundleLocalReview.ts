@@ -9,8 +9,9 @@ import { localTicketDatabase, localTicketStore, localTicketUserId } from "./loca
 import { handleBundleCommerce } from "./bundleHandler";
 import { MOCK_BUNDLE_POLICY } from "./shopContract";
 import type { BundleResult, BundleStore } from "./bundleTypes";
+import type { RefundResult, RefundStore } from "./refundContract";
 
-const state = globalThis as typeof globalThis & { __bundleLocalSetup?: Promise<void>; __bundleLocalOutcomes?: Map<string, string>; __bundleGrantDelay?: Set<string> };
+const state = globalThis as typeof globalThis & { __bundleLocalSetup?: Promise<void>; __refundLocalSetup?: Promise<void>; __bundleLocalOutcomes?: Map<string, string>; __bundleGrantDelay?: Set<string> };
 export async function handleLocalBundle(request: NextRequest, action: string) {
   if (!localAccountAllowed(request)) return new NextResponse(null, { status: 404 });
   const auth = createLocalAccountPort(request), db = await localTicketDatabase(), tickets = await localTicketStore();
@@ -19,9 +20,17 @@ export async function handleLocalBundle(request: NextRequest, action: string) {
     await db.exec(await readFile("supabase/migrations/20261010095005_v4_ticket_bundle_commerce.sql", "utf8"));
   })();
   await state.__bundleLocalSetup;
+  state.__refundLocalSetup ??= (async () => { await db.exec(await readFile("supabase/migrations/20261010143147_v4_ticket_refunds.sql", "utf8")); })();
+  await state.__refundLocalSetup;
   const user = await auth.currentUser(), snapshot = user ? await auth.read(user) : null;
   if (!user || !snapshot || accountSession(user, snapshot).status !== "member") return NextResponse.json({ ok: false }, { status: 401 });
   const id = localTicketUserId(user.id);
+  const refunds: RefundStore = { async call(a, u, data) {
+    return db.transaction(async tx => {
+      await tx.exec("set local role service_role");
+      return (await tx.query<{ r: RefundResult }>("select ticket_bundle_refunds_rpc($1,$2,$3::jsonb) r", [a, localTicketUserId(u), JSON.stringify(data)])).rows[0].r;
+    });
+  } };
   const store: BundleStore = { async call(a, u, data = {}) {
     if (a === "grant" && state.__bundleGrantDelay?.delete(String(data.orderId))) return { ok: false, code: "LOCAL_GRANT_DELAY" };
     return db.transaction(async tx => {
@@ -54,7 +63,7 @@ export async function handleLocalBundle(request: NextRequest, action: string) {
     if (status === "PENDING" && !recovery) return { ok: false, error: { code: "TOSS_CONFIRM_PROVIDER_ERROR", message: "Local pending" } };
     return { ok: true, confirm: { provider: "toss", paymentKeyReceived: true, paymentKeyVerified: true, currency: "KRW", orderId: p.orderId, amount: p.amount, status: status === "ABORTED" ? "ABORTED" : "DONE", approvedAt: new Date().toISOString() } };
   }, { clientKey: "local-mock-only", successUrl: `${origin}/dev/account/tickets/checkout/success`, failUrl: `${origin}/dev/account/tickets/checkout/fail`, allowLocalhostRedirects: true }, {
-    tickets, localOrigin: origin, purchasePolicyVersion: MOCK_BUNDLE_POLICY,
+    tickets, refunds, localOrigin: origin, purchasePolicyVersion: MOCK_BUNDLE_POLICY,
     lookup: async order => {
       const outcome = state.__bundleLocalOutcomes?.get(`${id}:${order.providerOrderId}`);
       if (!outcome || outcome === "PENDING") return { ok: false };

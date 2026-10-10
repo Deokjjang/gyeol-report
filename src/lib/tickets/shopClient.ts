@@ -33,7 +33,7 @@ export function readBookReturn(storage: Pick<Storage, "getItem">, scope: string)
 export function safeBundleOrder(value: unknown): value is BundleOrder {
   if (!value || typeof value !== "object") return false;
   const o = value as BundleOrder, b = ticketBundle(o.bundleId);
-  return !!b && validBundleOrderId(o.orderId) && validBundleOrderId(o.providerOrderId) && o.amount === b.amount && o.quantity === b.quantity && o.currency === "KRW"
+  return !!b && validBundleOrderId(o.orderId) && validBundleOrderId(o.providerOrderId) && Number.isSafeInteger(o.amount) && o.amount >= 100 && o.quantity === b.quantity && o.currency === "KRW"
     && ["READY", "CONFIRMING", "PAID_PENDING_GRANT", "GRANTED", "REFUND_PENDING", "REFUNDED", "FAILED"].includes(o.status);
 }
 export async function launchBundleCheckout(checkout: BundleCheckout) {

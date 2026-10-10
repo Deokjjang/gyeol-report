@@ -10,12 +10,14 @@ import { createHash } from "node:crypto";
 import { BUNDLE_PURCHASE_POLICY_VERSION, validBundleConsent } from "./shopContract";
 import type { TicketStore } from "./service";
 import { ticketBundle } from "./bundleCatalog";
+import { refundReasons, type RefundStore } from "./refundContract";
 
 // Dedicated member store handler; all public commerce gates remain OFF.
 export async function handleBundleCommerce(request: NextRequest, action: string, auth: AccountPort, store: BundleStore, provider: BundleProvider, config: BundleCheckoutConfig,
-  options: { tickets?: TicketStore; purchasePolicyVersion?: string | null; localOrigin?: string; lookup?: BundleOrderLookup } = {}) {
+  options: { tickets?: TicketStore; refunds?: RefundStore; purchasePolicyVersion?: string | null; localOrigin?: string; lookup?: BundleOrderLookup } = {}) {
   const json = (body: object, status = 200) => auth.finish(NextResponse.json(body, { status, headers: { "Cache-Control": "private, no-store", Vary: "Cookie", "Referrer-Policy": "no-referrer" } }));
-  if (!["prepare", "confirm", "recover", "history", "state"].includes(action)) return json({}, 404);
+  const refundAction = action === "refund-quote" ? "quote" : action === "refund-request" ? "request" : action === "refund-withdraw" ? "withdraw" : null;
+  if (!["prepare", "confirm", "recover", "history", "state"].includes(action) && !refundAction) return json({}, 404);
   if (request.method !== (["history", "state"].includes(action) ? "GET" : "POST")) return json({}, 405);
   const localUrl = new URL(request.url);
   if (["development", "test"].includes(process.env.NODE_ENV) && options.localOrigin && request.headers.get("host")) localUrl.host = request.headers.get("host")!;
@@ -33,7 +35,7 @@ export async function handleBundleCommerce(request: NextRequest, action: string,
     if (action === "state") {
       const balance = await options.tickets?.call("summary", user.id);
       if ((await auth.currentUser())?.id !== user.id) return json({}, 401);
-      return balance?.ok && Number.isInteger(balance.quantity) && Number(balance.quantity) >= 0 ? json({ ok: true, scope, quantity: balance.quantity }) : json({ ok: false, code: "STORAGE_UNAVAILABLE" }, 503);
+      return balance?.ok && Number.isInteger(balance.quantity) && Number(balance.quantity) >= 0 ? json({ ok: true, scope, quantity: balance.quantity, ...(Number.isInteger(balance.heldQuantity) && Number(balance.heldQuantity) > 0 ? { heldQuantity: balance.heldQuantity } : {}) }) : json({ ok: false, code: "STORAGE_UNAVAILABLE" }, 503);
     }
     if (action === "history") {
       const r = await store.call("history", user.id);
@@ -47,9 +49,18 @@ export async function handleBundleCommerce(request: NextRequest, action: string,
     while (true) { const next = await reader.read(); if (next.done) break; size += next.value.byteLength; if (size > 4096) { await reader.cancel(); return json({}, 413); } chunks.push(next.value); }
     let body: unknown;
     try { body = JSON.parse(Buffer.concat(chunks).toString("utf8")); } catch { return json({}, 400); }
-    const fields = action === "prepare" ? ["bundleId", "requestId", "consent"] : action === "confirm" ? ["orderId", "paymentKey", "amount"] : ["orderId"];
+    const fields = refundAction ? (refundAction === "request" ? ["bundleOrderId", "requestId", "reasonCode"] : refundAction === "withdraw" ? ["bundleOrderId", "requestId"] : ["bundleOrderId"]) : action === "prepare" ? ["bundleId", "requestId", "consent"] : action === "confirm" ? ["orderId", "paymentKey", "amount"] : ["orderId"];
     if (!isRecord(body) || Object.keys(body).some(k => !fields.includes(k))) return json({ ok: false, code: "INVALID_INPUT" }, 400);
     if ((await auth.currentUser())?.id !== user.id) return json({}, 401);
+    if (refundAction) {
+      if (!expected || !options.refunds) return json({ ok: false, code: "REFUND_UNAVAILABLE" }, 503);
+      if (typeof body.bundleOrderId !== "string" || !/^bundle_[a-f0-9]{32}$/.test(body.bundleOrderId)
+        || (refundAction !== "quote" && (typeof body.requestId !== "string" || !/^[a-zA-Z0-9_-]{16,100}$/.test(body.requestId)))
+        || (refundAction === "request" && (typeof body.reasonCode !== "string" || !Object.hasOwn(refundReasons, body.reasonCode)))) return json({ ok: false, code: "INVALID_INPUT" }, 400);
+      const result = await options.refunds.call(refundAction, user.id, body);
+      if ((await auth.currentUser())?.id !== user.id) return json({}, 401);
+      return json({ ok: result.ok, code: result.code, quote: result.quote, refund: result.refund }, result.ok ? 200 : result.code === "ORDER_NOT_FOUND" ? 404 : 409);
+    }
     let result;
     if (action === "prepare") {
       if (!ticketBundle(body.bundleId) || typeof body.requestId !== "string" || !/^[a-zA-Z0-9_-]{16,100}$/.test(body.requestId)) return json({ ok: false, code: "INVALID_INPUT" }, 400);

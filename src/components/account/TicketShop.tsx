@@ -9,8 +9,10 @@ import type { TicketBundleId } from "../../lib/tickets/bundleCatalog";
 import { announceAccountChange } from "./AccountSession";
 import { checkoutReturnKey } from "../book/useTicketPublication";
 import s from "./ticketShop.module.css";
+import { TicketRefund } from "./TicketRefund";
+import { refundPolicyCopy, refundRightsCopy } from "../../lib/tickets/refundContract";
 
-type Balance = { scope: string; quantity: number };
+type Balance = { scope: string; quantity: number; heldQuantity?: number };
 type LedgerEntry = { event: string; quantity: number; at: string; reason: string };
 const won = (value: number) => `${value.toLocaleString("ko-KR")}원`;
 const date = (v: string) => Number.isFinite(Date.parse(v)) ? new Date(v).toLocaleDateString("ko-KR", { timeZone: "Asia/Seoul" }) : "날짜 확인 중";
@@ -42,7 +44,7 @@ export function TicketShop({ local = false, callback = false, policyVersion = nu
       if (controller.signal.aborted) return;
       if (!r.ok || !/^[a-f0-9]{64}$/.test(data.scope) || !Number.isInteger(data.quantity) || data.quantity < 0) { setState(r.status === 401 ? "login" : "error"); return; }
       if (scope.current && scope.current !== data.scope) { setConsent({}); setSelection(null); setOrder(null); }
-      scope.current = data.scope; setBalance({ scope: data.scope, quantity: data.quantity }); setState("ready");
+      scope.current = data.scope; setBalance({ scope: data.scope, quantity: data.quantity, heldQuantity: data.heldQuantity }); setState("ready");
       const saved = readPendingBundle(sessionStorage);
       if (saved && saved.scope !== data.scope) {
         sessionStorage.removeItem(bundlePendingKey); sessionStorage.removeItem(bundleReturnKey); setPending(null);
@@ -91,7 +93,7 @@ export function TicketShop({ local = false, callback = false, policyVersion = nu
         if (p?.orderId === confirmed.orderId && ["GRANTED", "FAILED", "REFUNDED"].includes(confirmed.status)) { sessionStorage.removeItem(bundlePendingKey); setPending(null); setSelection(null); setConsent({}); }
         if (data.order.status === "GRANTED") {
           const fresh = await request("state", undefined, owner);
-          if (scope.current === owner && fresh.r.ok && fresh.data.scope === owner) setBalance({ scope: owner, quantity: fresh.data.quantity });
+          if (scope.current === owner && fresh.r.ok && fresh.data.scope === owner) setBalance({ scope: owner, quantity: fresh.data.quantity, heldQuantity: fresh.data.heldQuantity });
           announceAccountChange();
         }
       } else setMessage("결제 상태를 확인하지 못했습니다. 같은 주문을 다시 확인해 주세요. 새 결제는 하지 마세요.");
@@ -148,6 +150,7 @@ export function TicketShop({ local = false, callback = false, policyVersion = nu
       if (scope.current !== owner || !check.r.ok) return;
       if (!purchases.r.ok || !usage.r.ok || !Array.isArray(purchases.data.orders) || !Array.isArray(usage.data.history)) { setHistoryError(true); return; }
       setHistory(purchases.data.orders.filter(safeBundleOrder)); setLedger(usage.data.history);
+      setBalance({ scope: owner, quantity: check.data.quantity, heldQuantity: check.data.heldQuantity });
     } catch { setHistoryError(true); }
   }
   function returnToBook() {
@@ -169,18 +172,19 @@ export function TicketShop({ local = false, callback = false, policyVersion = nu
         {state === "login" ? <Link href={login}>로그인하고 이어서 확인하기 →</Link> : state === "error" ? <button onClick={() => void refresh()}>다시 확인</button> : null}
       </section>
       {state === "ready" ? <>
+        {balance?.heldQuantity ? <p className={s.note}>환불 검토로 {balance.heldQuantity}장 사용 보류 중입니다. 해당 구매가 소비 순서상 먼저이면 다른 이용권이 있어도 발행은 보류될 수 있습니다. 구매 내역에서 처리 상태와 철회 가능 여부를 확인해 주세요.</p> : null}
         {callback || pending || order ? <section className={s.recovery}><h2>{order?.status === "GRANTED" ? `구매한 이용권 ${order.quantity}장` : "기존 구매 확인"}</h2><p>{order ? bundleStatusText[order.status] : "결제 결과를 확인하기 전에는 새로 결제하지 마세요."}</p>
           {order?.status === "GRANTED" ? <>{returnProduct ? <button className={s.primary} onClick={returnToBook}>계속해서 책 발행하기 →</button> : <Link className={s.primary} href={path}>내 이용권으로 돌아가기 →</Link>}<Link href={home}>책 고르기 →</Link></> : <button disabled={busy} onClick={() => void recover()}>같은 주문 다시 확인</button>}
         </section> : null}
         {!callback ? <div className={s.purchase}><fieldset className={s.editions} disabled={busy || !!pending?.launched}><legend>이용권 선택</legend>{editions.map(b => <label key={b.id} className={s.edition} data-selected={selection === b.id}><input type="radio" name="edition" value={b.id} checked={selection === b.id} onChange={() => { if (!pending || pending.bundleId === b.id) { setSelection(b.id); setConsent({}); } else setMessage("준비 중인 주문을 먼저 확인해 주세요."); }} /><span><strong>{String(b.quantity).padStart(2, "0")}</strong><small>{b.quantity === 1 ? "EDITION" : "EDITIONS"}</small></span><span><b>{won(b.amount)}</b><small>권당 {won(b.unit)}</small><small>{b.saving ? `${won(b.saving)} 절약` : "리포트 1권"}</small></span></label>)}</fieldset>
           <section className={s.summary}><h2>주문 요약</h2>{selected ? <dl><dt>선택한 이용권</dt><dd>{selected.quantity}장</dd><dt>정가</dt><dd>{won(selected.regular)}</dd><dt>할인</dt><dd>−{won(selected.saving)}</dd><dt>최종 결제</dt><dd><strong>{won(selected.amount)}</strong></dd></dl> : <p>구매할 이용권 수량을 선택해 주세요.</p>}
             <p className={s.note}>6상품 공통 · 리포트 발행 시 1장 차감<br />발행한 리포트는 생성일로부터 90일 동안 열람할 수 있습니다. 이용권 사용 유효기간과는 다릅니다.</p>
-            <details><summary>구매·환불 안내</summary><p>디지털 이용권은 결제 승인과 지급 확인 후 계정에 제공됩니다.</p><p>이용권 유효기간, 미사용·부분 사용 환불 및 할인 공제 기준은 승인 대기 중입니다. 실제 판매는 열리지 않습니다.</p></details>
+            <details><summary>구매·환불 안내</summary><p>디지털 이용권은 결제 승인과 지급 확인 후 계정에 제공됩니다.</p><p>{refundPolicyCopy}</p><p>{refundRightsCopy} 실제 판매는 열리지 않습니다.</p></details>
             {BUNDLE_PURCHASE_FIELDS.map((key, i) => <label className={s.consent} key={key}><input type="checkbox" checked={!!consent[key]} disabled={busy || !selected || !policyVersion} onChange={e => setConsent(c => ({ ...c, [key]: e.target.checked }))} />[필수] {["선택한 상품·수량·가격 확인", "디지털 이용권 제공 방식 확인", local ? "모의 구매·환불 안내 확인" : "구매·환불 안내 동의"][i]}</label>)}
             {!policyVersion ? <p className={s.note}>구매 정책 승인 전에는 결제할 수 없습니다.</p> : !BUNDLE_PURCHASE_FIELDS.every(k => consent[k]) ? <p className={s.note}>상품 선택과 필수 확인 후 진행할 수 있습니다.</p> : null}
             <button className={s.primary} disabled={blocked} onClick={() => void purchase()}>{busy ? "구매 상태 확인 중" : selected ? `이용권 ${selected.quantity}장 구매하기` : "이용권을 선택해 주세요"} →</button>
           </section></div> : null}
-        <section className={s.history}><button aria-expanded={historyOpen} onClick={() => historyOpen ? setHistoryOpen(false) : void loadHistory()}>구매·사용 내역 {historyOpen ? "−" : "+"}</button>{historyOpen ? <>{historyError ? <p role="alert">내역을 확인하지 못했습니다. <button onClick={() => void loadHistory()}>다시 확인</button></p> : history === null || ledger === null ? <p>내역 조회 중</p> : <><h2>유료 구매 내역</h2>{!history.length ? <p>구매 내역이 없습니다.</p> : <ul>{history.map(o => <li key={o.orderId}><span>{date(o.requestedAt)} · 이용권 {o.quantity}장</span><b>{won(o.amount)}</b><span>{bundleStatusText[o.status]}</span><button disabled={busy} onClick={() => void recover(o.orderId)}>상태 확인</button></li>)}</ul>}<h2>이용권 사용·지급 내역</h2>{!ledger.length ? <p>사용·지급 내역이 없습니다.</p> : <ul>{ledger.map((e, i) => <li key={i}><span>{date(e.at)} · {ticketEventLabel(e.event, e.reason)}</span><b>{e.quantity > 0 ? "+" : ""}{e.quantity}장</b></li>)}</ul>}</>}</> : null}</section>
+        <section className={s.history}><button aria-expanded={historyOpen} onClick={() => historyOpen ? setHistoryOpen(false) : void loadHistory()}>구매·사용 내역 {historyOpen ? "−" : "+"}</button>{historyOpen ? <>{historyError ? <p role="alert">내역을 확인하지 못했습니다. <button onClick={() => void loadHistory()}>다시 확인</button></p> : history === null || ledger === null ? <p>내역 조회 중</p> : <><h2>유료 구매 내역</h2>{!history.length ? <p>구매 내역이 없습니다.</p> : <ul>{history.map(o => <li key={o.orderId}><span>{date(o.requestedAt)} · 이용권 {o.quantity}장</span><b>{won(o.amount)}</b><span>{bundleStatusText[o.status]}</span><button disabled={busy} onClick={() => void recover(o.orderId)}>상태 확인</button>{balance && ["GRANTED", "REFUND_PENDING", "REFUNDED"].includes(o.status) ? <TicketRefund key={`${balance.scope}:${o.orderId}`} orderId={o.orderId} scope={balance.scope} request={request} changed={() => void loadHistory()} /> : null}</li>)}</ul>}<h2>이용권 사용·지급 내역</h2>{!ledger.length ? <p>사용·지급 내역이 없습니다.</p> : <ul>{ledger.map((e, i) => <li key={i}><span>{date(e.at)} · {ticketEventLabel(e.event, e.reason)}</span><b>{e.quantity > 0 ? "+" : ""}{e.quantity}장</b></li>)}</ul>}</>}</> : null}</section>
       </> : null}
       <p role="status" aria-live="polite" className={s.message}>{message}</p>
     </div></main>;

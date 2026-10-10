@@ -25,6 +25,7 @@ export function ticketEventLabel(event: string, reason: string) {
   if (event === "REDEEM") return "책 발행 · 1장 사용";
   if (event === "REVERSAL") return "발행 실패 · 이용권 복구";
   if (event === "EXPIRE") return "이용권 만료";
+  if (event === "REFUND") return "구매 환불 · 미사용 이용권 회수";
   if (event !== "GRANT") return "이용권 내역";
   if (reason.startsWith("PAID_BUNDLE_")) return "유료 구매 지급";
   if (reason.includes("REFERRAL")) return "친구 추천 지급";
