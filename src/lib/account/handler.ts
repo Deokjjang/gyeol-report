@@ -22,17 +22,17 @@ export async function handleAccount(request: NextRequest, action: string, port: 
   const url = new URL(request.url);
   if (local && request.headers.get("host")) url.host = request.headers.get("host")!;
   const origin = local ? url.origin : publicRequestOrigin(request);
-  if (!origin) return NextResponse.json({}, { status: 403, headers: noStore });
+  if (!origin) return NextResponse.json({ code: "ACCOUNT_ORIGIN_DENIED", error: "요청 주소를 확인해 주세요." }, { status: 403, headers: noStore });
   const api = local ? "/dev/account/api" : "/auth", home = local ? "/dev/account" : "/account", login = local ? "/dev/account?view=login" : "/login";
   const finish = (response: NextResponse) => { for (const [k, v] of Object.entries(noStore)) response.headers.set(k, v); return port.finish(response); };
   const json = (body: object, status = 200) => finish(NextResponse.json(body, { status }));
   const redirect = (path: string) => finish(NextResponse.redirect(new URL(path, origin), 303));
   const failure = () => redirect(`${login}${login.includes("?") ? "&" : "?"}error=login`);
   const cookieOptions = { httpOnly: true, sameSite: "lax" as const, secure: !local, path: "/", maxAge: 600 };
-  if (!["session", "start", "callback", "consent", "logout"].includes(action)) return json({}, 404);
-  if (request.method !== (["session", "callback"].includes(action) ? "GET" : "POST")) return json({}, 405);
+  if (!["session", "start", "callback", "consent", "logout"].includes(action)) return json({ code: "ACCOUNT_ACTION_NOT_FOUND" }, 404);
+  if (request.method !== (["session", "callback"].includes(action) ? "GET" : "POST")) return json({ code: "ACCOUNT_METHOD_NOT_ALLOWED" }, 405);
   // Browser POSTs must be same-origin; never permit missing Origin to bypass CSRF.
-  if (request.method === "POST" && request.headers.get("origin") !== origin) return json({ error: "요청을 다시 확인해 주세요." }, 403);
+  if (request.method === "POST" && request.headers.get("origin") !== origin) return json({ code: "ACCOUNT_CSRF_DENIED", error: "요청을 다시 확인해 주세요." }, 403);
   try {
     if (action === "callback") {
       const cookie = request.cookies.get(COOKIE)?.value;
@@ -56,7 +56,7 @@ export async function handleAccount(request: NextRequest, action: string, port: 
     if (action === "session") {
       const user = await port.currentUser();
       const snapshot = user ? await port.read(user) : undefined;
-      if (snapshot === null) return json({ error: "로그인 상태를 확인하지 못했습니다." }, 503);
+      if (snapshot === null) return json({ code: "ACCOUNT_SESSION_UNAVAILABLE", error: "로그인 상태를 확인하지 못했습니다." }, 503);
       const session = accountSession(user, snapshot);
       const channelPrompt = channelOnboarding(user, session);
       return json({ ...session, ...(channelPrompt ? { channelPrompt } : {}) });
@@ -68,20 +68,20 @@ export async function handleAccount(request: NextRequest, action: string, port: 
       response.cookies.set(RETURN_COOKIE, "", { ...cookieOptions, maxAge: 0 });
       return response;
     }
-    if (Number(request.headers.get("content-length") ?? 0) > 4096) return json({}, 413);
+    if (Number(request.headers.get("content-length") ?? 0) > 4096) return json({ code: "ACCOUNT_INPUT_TOO_LARGE" }, 413);
     const raw = await request.text();
-    if (raw.length > 4096) return json({}, 413);
+    if (raw.length > 4096) return json({ code: "ACCOUNT_INPUT_TOO_LARGE" }, 413);
     let body: Record<string, unknown>;
-    try { body = JSON.parse(raw); } catch { return json({ error: "입력을 확인해 주세요." }, 400); }
-    if (!body || typeof body !== "object" || Array.isArray(body)) return json({}, 400);
+    try { body = JSON.parse(raw); } catch { return json({ code: "ACCOUNT_INPUT_INVALID", error: "입력을 확인해 주세요." }, 400); }
+    if (!body || typeof body !== "object" || Array.isArray(body)) return json({ code: "ACCOUNT_INPUT_INVALID", error: "입력을 확인해 주세요." }, 400);
     if (action === "start") {
-      if (!ACCOUNT_PROVIDERS.includes(body.provider as AccountProvider) || Object.keys(body).some(k => !["provider", "next"].includes(k))) return json({}, 400);
+      if (!ACCOUNT_PROVIDERS.includes(body.provider as AccountProvider) || Object.keys(body).some(k => !["provider", "next"].includes(k))) return json({ code: "OAUTH_INPUT_INVALID", error: "로그인 요청을 확인해 주세요." }, 400);
       const state = randomBytes(32).toString("hex"), next = safeAccountNext(body.next, local);
       const callback = `${origin}${api}/callback?flow=${state}`;
       const destination = await port.start(body.provider as AccountProvider, callback);
-      if (!destination) return json({ error: "로그인을 시작하지 못했습니다. 다시 시도해 주세요." }, 503);
+      if (!destination) return json({ code: "OAUTH_START_UNAVAILABLE", error: "로그인을 시작하지 못했습니다. 다시 시도해 주세요." }, 503);
       const target = new URL(destination);
-      if (target.origin !== port.authorizationOrigin || (!local && target.pathname !== "/auth/v1/authorize")) return json({}, 503);
+      if (target.origin !== port.authorizationOrigin || (!local && target.pathname !== "/auth/v1/authorize")) return json({ code: "OAUTH_DESTINATION_INVALID", error: "로그인 연결을 확인하지 못했습니다. 다시 시도해 주세요." }, 503);
       const response = json({ url: destination });
       response.cookies.set(COOKIE, JSON.stringify({ state, next, expires: Date.now() + 600_000 }), cookieOptions);
       return response;
@@ -99,6 +99,6 @@ export async function handleAccount(request: NextRequest, action: string, port: 
   } catch {
     // No provider text, codes, tokens, email, or DB diagnostics in public responses.
     if (action === "callback") { const response = failure(); response.cookies.set(COOKIE, "", { ...cookieOptions, maxAge: 0 }); return response; }
-    return json({ error: "요청을 완료하지 못했습니다. 다시 시도하거나 로그인 없이 계속해 주세요." }, 503);
+    return json({ code: "ACCOUNT_REQUEST_FAILED", error: "요청을 완료하지 못했습니다. 다시 시도하거나 로그인 없이 계속해 주세요." }, 503);
   }
 }

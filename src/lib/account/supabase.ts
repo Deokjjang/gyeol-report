@@ -27,7 +27,8 @@ export function createAccountPort(request: NextRequest): AccountPort | null {
       return verified;
     },
     async start(provider, callback) {
-      const { data, error } = await auth.auth.signInWithOAuth({ provider, options: { redirectTo: callback, skipBrowserRedirect: true, ...(provider === "kakao" ? { scopes: "profile_nickname" } : {}) } });
+      // `scopes` appends to GoTrue's Kakao defaults; provider `scope` replaces them.
+      const { data, error } = await auth.auth.signInWithOAuth({ provider, options: { redirectTo: callback, skipBrowserRedirect: true, ...(provider === "kakao" ? { queryParams: { scope: "profile_nickname" } } : {}) } });
       return error ? null : data.url;
     },
     async exchange(code) { const { error } = await auth.auth.exchangeCodeForSession(code); return !error; },

@@ -9,7 +9,7 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
   if (ticketPublication && !bookExperiencePublicEnabled()) return new NextResponse(null, { status: 404 });
   const { createAccountPort } = await import("../../../lib/account/supabase");
   const original = createAccountPort(request);
-  if (!original) return NextResponse.json({ error: "로그인 준비 중입니다. 로그인 없이 계속할 수 있습니다." }, { status: 503, headers: { "Cache-Control": "no-store" } });
+  if (!original) return NextResponse.json({ code: "ACCOUNT_CONFIG_UNAVAILABLE", error: "로그인 준비 중입니다. 로그인 없이 계속할 수 있습니다." }, { status: 503, headers: { "Cache-Control": "no-store" } });
   if (ticketPublication) {
     const { handleTicketPublication } = await import("../../../lib/tickets/publicHandler");
     const { createTicketPublicationStore } = await import("../../../lib/tickets/supabase");

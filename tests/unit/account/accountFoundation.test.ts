@@ -6,6 +6,7 @@ import { handleAccount, type AccountPort } from "../../../src/lib/account/handle
 import { createLocalAccountPort } from "../../../src/lib/account/localReview";
 import { accountPublicEnabled, localAccountAllowed } from "../../../src/lib/account/gate";
 import * as accountGate from "../../../src/lib/account/gate";
+import { createAccountPort } from "../../../src/lib/account/supabase";
 import { GET as publicGet, POST as publicPost } from "../../../src/app/auth/[action]/route";
 import { POST as bookApi } from "../../../src/app/dev/book-flow/api/route";
 import { BookHomeRoute } from "../../../src/components/book/BookRoutes";
@@ -62,6 +63,49 @@ describe("account consent and authority", () => {
   });
 });
 describe("OAuth redirects, CSRF, session", () => {
+  it.each(["google","kakao"])("real SSR SDK creates %s PKCE URL and secure verifier cookie without network calls",async provider=>{
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL","https://project.supabase.co");vi.stubEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY","local-test-public-key");vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY","local-test-only");
+    const request=req("start",{provider}),p=createAccountPort(request)!;
+    const response=await handleAccount(request,"start",p);expect(response.status).toBe(200);
+    const url=new URL((await response.json()).url);
+    expect(url.origin).toBe(p.authorizationOrigin);expect(url.pathname).toBe("/auth/v1/authorize");
+    expect(url.searchParams.get("provider")).toBe(provider);expect(url.searchParams.get("code_challenge_method")).toBe("s256");expect(url.searchParams.has("code_challenge")).toBe(true);
+    expect(new URL(url.searchParams.get("redirect_to")!).pathname).toBe("/auth/callback");
+    const verifier=response.cookies.getAll().find(c=>c.name.includes("code-verifier"));
+    expect(verifier).toMatchObject({httpOnly:true,secure:true,sameSite:"lax",path:"/"});
+    expect(url.searchParams.has("scopes")).toBe(false);
+    expect(url.searchParams.get("scope")).toBe(provider==="kakao"?"profile_nickname":null);
+    expect(fetch).not.toHaveBeenCalled();
+  });
+  it("safe error codes distinguish invalid input, origin, provider and destination failures without secrets", async () => {
+    const p = port();
+    const cases: Array<[NextRequest,string,number,string]> = [
+      [req("start",{provider:"invalid"}),"start",400,"OAUTH_INPUT_INVALID"],
+      [new NextRequest("https://preview.vercel.app/auth/start",{method:"POST",body:"{}"}),"start",403,"ACCOUNT_ORIGIN_DENIED"],
+      [new NextRequest("https://gyeolreport.com/auth/start",{method:"POST",headers:{origin:"https://www.gyeolreport.com"},body:"{}"}),"start",403,"ACCOUNT_CSRF_DENIED"],
+    ];
+    for(const [request,action,status,code] of cases){const r=await handleAccount(request,action,p);expect(r.status).toBe(status);expect(await r.json()).toMatchObject({code});}
+    vi.mocked(p.start).mockResolvedValue(null);
+    expect(await (await handleAccount(req("start",{provider:"google"}),"start",p)).json()).toMatchObject({code:"OAUTH_START_UNAVAILABLE"});
+    vi.mocked(p.start).mockResolvedValue("https://evil.test/auth/v1/authorize?token=private-provider-text");
+    const invalid=await (await handleAccount(req("start",{provider:"kakao"}),"start",p)).json();
+    expect(invalid.code).toBe("OAUTH_DESTINATION_INVALID");expect(JSON.stringify(invalid)).not.toContain("private-provider-text");
+    vi.mocked(p.start).mockRejectedValue(new Error("private-provider-text"));
+    const failed=await (await handleAccount(req("start",{provider:"google"}),"start",p)).json();
+    expect(failed.code).toBe("ACCOUNT_REQUEST_FAILED");expect(JSON.stringify(failed)).not.toContain("private-provider-text");
+  });
+  it.each(["google","kakao"])("www %s callback preserves same-origin state and current consent",async provider=>{
+    const origin="https://www.gyeolreport.com",p=port(),request=(action:string,body?:object)=>new NextRequest(`${origin}/auth/${action}`,{method:body?"POST":"GET",headers:{origin},...(body?{body:JSON.stringify(body)}:{})});
+    const start=await handleAccount(request("start",{provider,next:"/account"}),"start",p);
+    expect(start.status).toBe(200);expect(p.start).toHaveBeenCalledWith(provider,expect.stringContaining(`${origin}/auth/callback?flow=`));
+    const cookie=start.cookies.get("gyeol-auth-flow")!,flow=JSON.parse(cookie.value);
+    expect(cookie).toMatchObject({httpOnly:true,secure:true,sameSite:"lax"});
+    const callback=new NextRequest(`${origin}/auth/callback?flow=${flow.state}&code=local-only`,{headers:{cookie:`${cookie.name}=${encodeURIComponent(cookie.value)}`}});
+    const res=await handleAccount(callback,"callback",p);expect(res.status).toBe(303);expect(res.headers.get("location")).toBe(`${origin}/account`);
+    expect(p.exchange).toHaveBeenCalledWith("local-only");
+    expect((await handleAccount(request("consent",agreed),"consent",p)).status).toBe(200);
+    expect((await handleAccount(request("session"),"session",p)).status).toBe(200);
+  });
   it.each(["kakao", "google"])("%s starts supported OAuth with httpOnly state", async provider => {
     const p = port(); const res = await handleAccount(req("start", { provider }), "start", p);
     expect(res.status).toBe(200); expect(p.start).toHaveBeenCalledWith(provider, expect.stringContaining("/auth/callback?flow="));

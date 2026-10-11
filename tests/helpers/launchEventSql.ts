@@ -3,16 +3,18 @@ import { randomUUID, randomBytes, createHash } from "node:crypto";
 import type { PGlite } from "@electric-sql/pglite";
 import { ticketPublicationSql } from "./ticketPublicationSql";
 import { ACCOUNT_POLICY_VERSIONS } from "../../src/lib/account/policy";
-import { LAUNCH_MIGRATION, LAUNCH_SCHEDULE_MIGRATION } from "../../src/lib/growth/launchLocal";
+import { LAUNCH_MIGRATION, LAUNCH_SCHEDULE_MIGRATION, LAUNCH_UNLIMITED_MIGRATION } from "../../src/lib/growth/launchLocal";
 export const START = "2026-10-10T15:00:00Z", END = "2026-10-31T15:00:00Z";
 export const versions = ACCOUNT_POLICY_VERSIONS;
-export async function launchSql(beforeMigration?: (db: PGlite) => Promise<void>, beforeSchedule?: (db: PGlite) => Promise<void>) {
+export async function launchSql(beforeMigration?: (db: PGlite) => Promise<void>, beforeSchedule?: (db: PGlite) => Promise<void>, beforeUnlimited?: (db: PGlite) => Promise<void>) {
   const base = await ticketPublicationSql(), db = base.db;
   await db.exec("reset role");
   if (beforeMigration) await beforeMigration(db);
   await db.exec(readFileSync(LAUNCH_MIGRATION, "utf8"));
   if (beforeSchedule) await beforeSchedule(db);
   await db.exec(readFileSync(LAUNCH_SCHEDULE_MIGRATION, "utf8"));
+  if (beforeUnlimited) await beforeUnlimited(db);
+  await db.exec(readFileSync(LAUNCH_UNLIMITED_MIGRATION, "utf8"));
   // ISOLATED TEST DB ONLY. No shipped clock parameter/session setting exists.
   await db.exec(`create table public.launch_test_clock(value timestamptz); insert into launch_test_clock values('${START}');
     grant select on launch_test_clock to service_role;

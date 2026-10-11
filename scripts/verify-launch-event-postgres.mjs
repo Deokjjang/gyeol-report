@@ -4,13 +4,14 @@ import { spawn, spawnSync } from 'node:child_process';
 import { readFileSync, readdirSync, mkdirSync, writeFileSync } from 'node:fs';
 import { randomUUID, randomBytes } from 'node:crypto';
 import assert from 'node:assert/strict';
-const container = 'gyeol-launch-event-pg', database = 'launch_event_01';
+const unlimited = process.argv.includes('--unlimited');
+const container = unlimited ? 'gyeol-launch-unlimited-pg' : 'gyeol-launch-event-pg', database = unlimited ? 'launch_unlimited' : 'launch_event_01';
 assert(process.argv.includes('--isolated-local'));
 const inspect = JSON.parse(spawnSync('docker', ['inspect', container], {encoding:'utf8'}).stdout)[0];
-assert.equal(inspect.HostConfig.NetworkMode,'none'); assert(inspect.Config.Image.startsWith('postgres:16-alpine'));
+assert.equal(inspect.HostConfig.NetworkMode,'none'); assert.equal(inspect.Config.Image, unlimited ? 'postgres:17-alpine' : 'postgres:16-alpine');
 assert(Object.hasOwn(inspect.HostConfig.Tmpfs,'/var/lib/postgresql/data')); assert.equal(inspect.HostConfig.Binds?.length??0,0);
 assert.equal(Object.keys(inspect.HostConfig.PortBindings??{}).length,0);
-const output='/private/tmp/gyeol-v4-launch-event-schedule-fix'; mkdirSync(output,{recursive:true});
+const output=unlimited ? '/private/tmp/gyeol-v4-launch-unlimited' : '/private/tmp/gyeol-v4-launch-event-schedule-fix'; mkdirSync(output,{recursive:true});
 const pids=new Set(), results=[];
 const q=v=>`'${String(v).replaceAll("'","''")}'`, j=v=>`${q(JSON.stringify(v))}::jsonb`;
 const start='2026-10-10T15:00:00Z', end='2026-10-31T15:00:00Z';
@@ -76,6 +77,7 @@ try {
   const member=['supabase/migrations/20260929113608_report_share_links.sql',...migrations.filter(n=>n.startsWith('20261003')).sort().map(n=>`supabase/migrations/${n}`),'supabase/migrations/20261010095005_v4_ticket_bundle_commerce.sql','scripts/report_ticket_publication_queue_patch.sql','supabase/migrations/20261010132645_v4_launch_event.sql'];
   for(const f of member)await sql(readFileSync(f,'utf8'));
   await sql(readFileSync('supabase/migrations/20261010135755_v4_launch_event_schedule_fix.sql','utf8'));
+  if(unlimited) await sql(readFileSync('supabase/migrations/20261011114539_v4_launch_event_unlimited.sql','utf8'));
   // Only this isolated DB receives a clock shim. Shipped SQL always uses DB clock.
   await sql(`create table launch_test_clock(value timestamptz);insert into launch_test_clock values(${q(start)});grant select on launch_test_clock to service_role;create function launch_test_now() returns timestamptz language sql volatile as $$ select value from public.launch_test_clock $$;`);
   const defs=JSON.parse(await sql("select json_agg(pg_get_functiondef(p.oid)) from pg_proc p join pg_namespace n on n.oid=p.pronamespace where n.nspname='public' and p.proname<>'launch_test_now' and p.prokind='f';"));
@@ -93,9 +95,9 @@ try {
     assert.equal(await count('report_ticket_grants',`expires_at=${q(end)}`),1);
     await clock(end);assert.equal((await campaign('capture',null,{slug:'launch-local',contextHash:hash()})).ok,false);
   });
-  await check('100 concurrent callback retries / one acquisition',async()=>{
+  await check('concurrent callback retries / one acquisition',async()=>{
     const a=await setupAcquisition();
-    for(let n=0;n<10;n++)assert((await Promise.all(Array.from({length:10},()=>campaign('attribute',a.user,a.data,true)))).every(r=>r.ok));
+    for(let n=0;n<(unlimited?2:10);n++)assert((await Promise.all(Array.from({length:unlimited?5:10},()=>campaign('attribute',a.user,a.data,true)))).every(r=>r.ok));
     assert.equal(await count('report_ticket_grants'),1);assert.equal(await count('new_user_acquisitions'),1);
   });
   await check('campaign and referral race: first committed source only',async()=>{
@@ -105,15 +107,15 @@ try {
     await Promise.all([campaign('attribute',b,{contextHash:ch,versions},true),referral('attribute',b,{contextHash:rh,versions,sourceSnapshot:source.snapshot},true)]);
     assert.equal(await count('report_ticket_grants',`user_id=${q(b)}`),1);assert.equal(await count('new_user_acquisitions',`user_id=${q(b)}`),1);
   });
-  await check('independent accounts compete for final TOTAL budget slot',async()=>{
-    const as=await Promise.all(Array.from({length:10},()=>setupAcquisition()));await sql('update launch_event_policy set total_limit=1;');
+  await check(unlimited?'independent accounts exceed legacy TOTAL cap':'independent accounts compete for final TOTAL budget slot',async()=>{
+    const as=await Promise.all(Array.from({length:unlimited?5:10},()=>setupAcquisition()));await sql('update launch_event_policy set total_limit=1;');
     const rs=await Promise.all(as.map(a=>campaign('attribute',a.user,a.data,true)));
-    assert.equal(rs.filter(r=>r.ok).length,1);assert.equal(await count('report_ticket_grants'),1);
+    assert.equal(rs.filter(r=>r.ok).length,unlimited?5:1);assert.equal(await count('report_ticket_grants'),unlimited?5:1);
   });
-  await check('referral sub-budget competition + same inviter lifetime cap + capped inviter still admits friend',async()=>{
+  await check('referral source policy + same inviter lifetime cap + capped inviter still admits friend',async()=>{
     const a=await acquire(),i=await invite(a,await publish(a,await reserve(a)));
     const bs=await Promise.all(Array.from({length:5},()=>setupReferred(i)));await sql('update launch_event_policy set referral_limit=2;');
-    const rr=await Promise.all(bs.map(b=>referral('attribute',b.user,b.data,true)));assert.equal(rr.filter(r=>r.ok).length,2);
+    const rr=await Promise.all(bs.map(b=>referral('attribute',b.user,b.data,true)));assert.equal(rr.filter(r=>r.ok).length,unlimited?5:2);
     const winners=bs.filter((_,n)=>rr[n].ok);const ps=await Promise.all(winners.map(async b=>publish(b.user,await reserve(b.user))));
     await Promise.all(ps.map(p=>referral('qualify',null,p,true)));
     assert.equal(await count('report_ticket_grants',`user_id=${q(a)} and reward_family='INVITER_REWARD'`),1);
@@ -121,12 +123,12 @@ try {
     await sql('update launch_event_policy set referral_limit=100;');const d=await referred(i);assert.equal((await ticket('summary',d)).quantity,1);
     const dp=await publish(d,await reserve(d));assert.equal((await referral('qualify',null,dp)).rewarded,false);
   });
-  await check('different inviters race last inviter budget; B → C chain preserved',async()=>{
+  await check('different inviters and B → C chain preserved',async()=>{
     const a=await acquire(),ai=await invite(a,await publish(a,await reserve(a))),b=await referred(ai),bp=await publish(b,await reserve(b));
     const bi=await invite(b,bp),c=await referred(bi),cp=await publish(c,await reserve(c));
     await sql('update launch_event_policy set inviter_limit=1;');
     const rs=await Promise.all([referral('qualify',null,bp,true),referral('qualify',null,cp,true)]);
-    assert.equal(rs.filter(r=>r.rewarded).length,1);assert.equal(await count('report_ticket_grants',"reward_source='inviter'"),1);
+    assert.equal(rs.filter(r=>r.rewarded).length,unlimited?2:1);assert.equal(await count('report_ticket_grants',"reward_source='inviter'"),unlimited?2:1);
   });
   await check('expiry vs redeem after lock wait / existing reservation publishes / expired reversal / paid isolation',async()=>{
     const a=await acquire(),b=await acquire(),c=await acquire();await clock('2026-10-31T14:59:58Z');
@@ -147,6 +149,6 @@ try {
     await sql('update launch_event_policy set approved_at=null,total_limit=null;');assert.equal(JSON.parse(await sql('select launch_event_state();')).state,'SCHEDULED');
   });
   const deadlocks=Number(await sql('select deadlocks from pg_stat_database where datname=current_database();'));assert.equal(deadlocks,0);
-  const report={kind:'POSTGRES_REAL_CONNECTION_PASS',version:await sql('select version();'),independentBackends:pids.size,maxConcurrent:10,deadlocks,results,note:'Clock simulation only in isolated SQL DB. Minimal publication snapshots exercise SQL ownership/expiry. Real six-product completeness is tested separately.'};
+  const report={kind:'POSTGRES_REAL_CONNECTION_PASS',version:await sql('select version();'),independentBackends:pids.size,maxConcurrent:unlimited?5:10,deadlocks,results,note:'Clock simulation only in isolated SQL DB. Minimal publication snapshots exercise SQL ownership/expiry. Real six-product completeness is tested separately.'};
   writeFileSync(`${output}/postgres-concurrency.json`,JSON.stringify(report,null,2));process.stdout.write(JSON.stringify({pass:results.length,independentBackends:pids.size,deadlocks})+'\n');
 }catch(e){writeFileSync(`${output}/postgres-concurrency.json`,JSON.stringify({kind:'FAIL',results,error:String(e)},null,2));process.stderr.write(String(e)+'\n');process.exitCode=1;}

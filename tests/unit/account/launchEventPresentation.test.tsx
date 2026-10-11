@@ -11,6 +11,7 @@ import { captureReferral } from "../../../src/lib/referrals/service";
 import { ticketAuth } from "../../helpers/ticketPublicationSql";
 import { GET as publicState } from "../../../src/app/api/launch-event/route";
 import { GET as localState } from "../../../src/app/dev/launch-event/route";
+import * as accountGate from "../../../src/lib/account/gate";
 const view:LaunchEventView={state:"ACTIVE",serverNow:LAUNCH_START,startsAt:LAUNCH_START,endsAt:LAUNCH_END,campaignAvailable:true,referralAvailable:true,inviterAvailable:true,budgetApproved:true,campaignSlug:"launch-local"};
 describe("launch display is not reward authority",()=>{
   it("server monotonic countdown: fixed end, no wall-clock extension, start floor is not activation",()=>{
@@ -52,9 +53,10 @@ describe("launch display is not reward authority",()=>{
     }
     expect(store.call).not.toHaveBeenCalled();
   });
-  it("public Book/Auth gate unchanged OFF and dev inaccessible in Production",async()=>{
+  it("closed server gate denies public status and dev remains inaccessible in Production",async()=>{
+    vi.spyOn(accountGate,"accountPublicEnabled").mockReturnValue(false);
     expect((await publicState()).status).toBe(404);
-    vi.stubEnv("NODE_ENV","production");expect((await localState(new Request("http://localhost/dev/launch-event?now=2026-10-29"))).status).toBe(404);vi.unstubAllEnvs();
+    vi.stubEnv("NODE_ENV","production");expect((await localState(new Request("http://localhost/dev/launch-event?now=2026-10-29"))).status).toBe(404);vi.unstubAllEnvs();vi.restoreAllMocks();
   });
   it("poll/focus/visibility cleanup, isolated 1-second render, no client date/storage/query authorization",()=>{
     const ui=readFileSync("src/components/growth/LaunchCountdown.tsx","utf8"),shelf=readFileSync("src/components/book/BookShelf.tsx","utf8");

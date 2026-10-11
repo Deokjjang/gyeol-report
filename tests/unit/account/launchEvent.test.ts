@@ -17,6 +17,22 @@ beforeEach(async () => {
   await h.clock(START); await h.policy();
 });
 describe("operator-activated launch with fixed end (isolated SQL clock, not OS/client time)", () => {
+  it("forward migration preserves existing policy rows, lifetime guards, function ACLs, indexes and RLS",async()=>{
+    let before:unknown;
+    const fingerprint=async(existing:PGlite)=>({
+      policy:(await existing.query("select to_jsonb(p) v from launch_event_policy p")).rows,
+      guards:(await existing.query("select proname,replace(replace(prosrc,'public.launch_test_now()','clock_timestamp()'),'now()','clock_timestamp()') body,proacl::text from pg_proc where proname in ('launch_reward_guard','report_tickets','book_referrals','guard_acquisition_attribution') order by proname")).rows,
+      security:(await existing.query("select relname,relrowsecurity,relacl::text from pg_class where relname in ('launch_event_policy','report_ticket_grants','report_ticket_ledger','new_user_acquisitions') order by relname")).rows,
+      indexes:(await existing.query("select indexname,indexdef from pg_indexes where tablename in ('report_ticket_grants','new_user_acquisitions') order by indexname")).rows,
+      stateAcl:(await existing.query("select proacl::text from pg_proc where proname='launch_event_state'")).rows,
+    });
+    const old=await launchSql(undefined,undefined,async existing=>{
+      await existing.exec(`insert into growth_campaigns(public_slug,name,message,status,starts_at,ends_at,offer_type,ticket_quantity) values('launch-preserve','TEST','TEST','PAUSED','${START}','${END}','REPORT_TICKET',1);
+        insert into launch_event_policy(id,campaign_id,total_limit,campaign_limit,referral_limit,inviter_limit,approved_at) select 'launch-20261029',id,1,0,0,0,'${START}' from growth_campaigns where public_slug='launch-preserve';`);
+      before=await fingerprint(existing);
+    });
+    try{expect(await fingerprint(old.db)).toEqual(before);expect((await old.h.state()).state).toBe("PAUSED");expect(await old.h.count("report_ticket_grants")).toBe(0);}finally{await old.db.close();}
+  },30000);
   it.each([
     ["2026-10-10T23:59:59+09:00","SCHEDULED"], ["2026-10-11T00:00:00+09:00","ACTIVE"],
     ["2026-10-12T12:00:00+09:00","ACTIVE"], ["2026-10-29T00:00:00+09:00","ACTIVE"],
@@ -113,11 +129,15 @@ describe("operator-activated launch with fixed end (isolated SQL clock, not OS/c
     const c=await h.referred(inv); expect(c.result.ok).toBe(true); expect((await h.acquisition(c.user)).result.ok).toBe(false);
     expect(await h.count("report_ticket_grants",`user_id in ('${b.user}','${c.user}')`)).toBe(2);
   });
-  it("budget total and independent source caps, rollback leaves no partial acquisition",async () => {
-    await h.policy(1); expect((await h.acquisition()).result.ok).toBe(true); expect((await h.acquisition()).result.ok).toBe(false);
-    expect(await h.count("report_ticket_grants")).toBe(1); expect(await h.count("new_user_acquisitions")).toBe(1);
-    await h.policy(10); await db.exec("update launch_event_policy set campaign_limit=1");
-    expect((await h.acquisition()).result.ok).toBe(false); expect((await h.state()).referralAvailable).toBe(true);
+  it("no total/source cap, including null legacy budgets; approval remains mandatory",async () => {
+    await h.policy(1); await db.exec("update launch_event_policy set campaign_limit=0,referral_limit=0,inviter_limit=0");
+    for(let i=0;i<3;i++) expect((await h.acquisition()).result.ok).toBe(true);
+    expect(await h.count("report_ticket_grants")).toBe(3);
+    await db.exec("update launch_event_policy set total_limit=null,campaign_limit=null,referral_limit=null,inviter_limit=null");
+    expect(await h.state()).toMatchObject({state:"ACTIVE",budgetApproved:true,campaignAvailable:true,referralAvailable:true,inviterAvailable:true});
+    expect((await h.acquisition()).result.ok).toBe(true);
+    await db.exec("update launch_event_policy set approved_at=null");
+    expect((await h.state()).state).toBe("SCHEDULED"); expect((await h.acquisition()).result.ok).toBe(false);
   });
   it("all three sources share fixed expiry; last-second reservation publishes after end with 90-day access but no new inviter reward",async () => {
     const a=await h.acquisition(), ap=await h.publish(a.user,await h.reserve(a.user)), inv=await h.invite(a.user,ap.reportId,ap.snapshot);

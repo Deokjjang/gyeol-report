@@ -17,7 +17,8 @@ describe("official Supabase SSR SDK contract, network forbidden", () => {
     expect(url.searchParams.get("provider")).toBe(provider); expect(url.searchParams.get("code_challenge_method")).toBe("s256");
     expect(url.searchParams.get("code_challenge")?.length).toBeGreaterThan(30);
     expect(url.searchParams.get("redirect_to")).toContain("/auth/callback");
-    if (provider === "kakao") expect(url.searchParams.get("scopes")).toBe("profile_nickname");
+    expect(url.searchParams.has("scopes")).toBe(false);
+    expect(url.searchParams.get("scope")).toBe(provider === "kakao" ? "profile_nickname" : null);
     expect(url.href).not.toMatch(/friends|contacts|offline_access/);
     const cookies = p.finish(new NextResponse()).cookies.getAll();
     expect(cookies.some(c => c.name.endsWith("code-verifier") && c.httpOnly && c.secure && c.sameSite === "lax")).toBe(true);
