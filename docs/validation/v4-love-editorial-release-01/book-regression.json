@@ -1,0 +1,757 @@
+[
+  {
+    "id": "A",
+    "pages": 17,
+    "contents": [
+      {
+        "title": "사랑할 때의 나",
+        "targetId": "core",
+        "page": 5
+      },
+      {
+        "title": "나만의 연애 매력",
+        "targetId": "chapter-attraction",
+        "page": 6
+      },
+      {
+        "title": "끌리는 상대와 편안한 관계",
+        "targetId": "chapter-partner",
+        "page": 7
+      },
+      {
+        "title": "호감과 연애의 시작",
+        "targetId": "chapter-current",
+        "page": 8
+      },
+      {
+        "title": "가까워질수록 드러나는 나",
+        "targetId": "chapter-intimacy",
+        "page": 9
+      },
+      {
+        "title": "연애 팩폭과 갈등 해결",
+        "targetId": "chapter-shadow",
+        "page": 10
+      },
+      {
+        "title": "결혼과 함께 사는 생활",
+        "targetId": "chapter-home",
+        "page": 11
+      },
+      {
+        "title": "자녀와 부모 역할",
+        "targetId": "chapter-parenting",
+        "page": 12
+      },
+      {
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "targetId": "chapter-direction",
+        "page": 13
+      }
+    ],
+    "paragraphAnchors": [
+      "love-ch01-p1",
+      "love-ch01-p2",
+      "love-ch01-p3",
+      "love-ch01-p4",
+      "love-ch02-p1",
+      "love-ch02-p2",
+      "love-ch02-p3",
+      "love-ch02-p4",
+      "love-ch03-p1",
+      "love-ch03-p2",
+      "love-ch03-p3",
+      "love-ch03-p4",
+      "love-ch04-p1",
+      "love-ch04-p2",
+      "love-ch04-p3",
+      "love-ch04-p4",
+      "love-ch05-p1",
+      "love-ch05-p2",
+      "love-ch05-p3",
+      "love-ch05-p4",
+      "love-ch06-p1",
+      "love-ch06-p2",
+      "love-ch06-p3",
+      "love-ch06-p4",
+      "love-ch07-p1",
+      "love-ch07-p2",
+      "love-ch07-p3",
+      "love-ch07-p4",
+      "love-ch08-p1",
+      "love-ch08-p2",
+      "love-ch08-p3",
+      "love-ch08-p4",
+      "love-ch09-p1",
+      "love-ch09-p2",
+      "love-ch09-p3",
+      "love-ch09-p4"
+    ],
+    "detailParagraphs": 36,
+    "inputTablesMbtiAppendixBackPresent": true,
+    "narrativeMatchesDraft": true,
+    "allContentsTargetsValid": true,
+    "jsonDirectSharedReplay": "PASS (loveRelease.test.ts)",
+    "footnoteIndicesValid": true
+  },
+  {
+    "id": "B",
+    "pages": 17,
+    "contents": [
+      {
+        "title": "사랑할 때의 나",
+        "targetId": "core",
+        "page": 5
+      },
+      {
+        "title": "나만의 연애 매력",
+        "targetId": "chapter-attraction",
+        "page": 6
+      },
+      {
+        "title": "끌리는 상대와 편안한 관계",
+        "targetId": "chapter-partner",
+        "page": 7
+      },
+      {
+        "title": "호감과 연애의 시작",
+        "targetId": "chapter-current",
+        "page": 8
+      },
+      {
+        "title": "가까워질수록 드러나는 나",
+        "targetId": "chapter-intimacy",
+        "page": 9
+      },
+      {
+        "title": "연애 팩폭과 갈등 해결",
+        "targetId": "chapter-shadow",
+        "page": 10
+      },
+      {
+        "title": "결혼과 함께 사는 생활",
+        "targetId": "chapter-home",
+        "page": 11
+      },
+      {
+        "title": "자녀와 부모 역할",
+        "targetId": "chapter-parenting",
+        "page": 12
+      },
+      {
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "targetId": "chapter-direction",
+        "page": 13
+      }
+    ],
+    "paragraphAnchors": [
+      "love-ch01-p1",
+      "love-ch01-p2",
+      "love-ch01-p3",
+      "love-ch01-p4",
+      "love-ch02-p1",
+      "love-ch02-p2",
+      "love-ch02-p3",
+      "love-ch02-p4",
+      "love-ch03-p1",
+      "love-ch03-p2",
+      "love-ch03-p3",
+      "love-ch03-p4",
+      "love-ch04-p1",
+      "love-ch04-p2",
+      "love-ch04-p3",
+      "love-ch04-p4",
+      "love-ch05-p1",
+      "love-ch05-p2",
+      "love-ch05-p3",
+      "love-ch05-p4",
+      "love-ch06-p1",
+      "love-ch06-p2",
+      "love-ch06-p3",
+      "love-ch06-p4",
+      "love-ch07-p1",
+      "love-ch07-p2",
+      "love-ch07-p3",
+      "love-ch07-p4",
+      "love-ch08-p1",
+      "love-ch08-p2",
+      "love-ch08-p3",
+      "love-ch08-p4",
+      "love-ch09-p1",
+      "love-ch09-p2",
+      "love-ch09-p3",
+      "love-ch09-p4"
+    ],
+    "detailParagraphs": 36,
+    "inputTablesMbtiAppendixBackPresent": true,
+    "narrativeMatchesDraft": true,
+    "allContentsTargetsValid": true,
+    "jsonDirectSharedReplay": "PASS (loveRelease.test.ts)",
+    "footnoteIndicesValid": true
+  },
+  {
+    "id": "C",
+    "pages": 17,
+    "contents": [
+      {
+        "title": "사랑할 때의 나",
+        "targetId": "core",
+        "page": 5
+      },
+      {
+        "title": "나만의 연애 매력",
+        "targetId": "chapter-attraction",
+        "page": 6
+      },
+      {
+        "title": "끌리는 상대와 편안한 관계",
+        "targetId": "chapter-partner",
+        "page": 7
+      },
+      {
+        "title": "호감과 연애의 시작",
+        "targetId": "chapter-current",
+        "page": 8
+      },
+      {
+        "title": "가까워질수록 드러나는 나",
+        "targetId": "chapter-intimacy",
+        "page": 9
+      },
+      {
+        "title": "연애 팩폭과 갈등 해결",
+        "targetId": "chapter-shadow",
+        "page": 10
+      },
+      {
+        "title": "결혼과 함께 사는 생활",
+        "targetId": "chapter-home",
+        "page": 11
+      },
+      {
+        "title": "자녀와 부모 역할",
+        "targetId": "chapter-parenting",
+        "page": 12
+      },
+      {
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "targetId": "chapter-direction",
+        "page": 13
+      }
+    ],
+    "paragraphAnchors": [
+      "love-ch01-p1",
+      "love-ch01-p2",
+      "love-ch01-p3",
+      "love-ch01-p4",
+      "love-ch02-p1",
+      "love-ch02-p2",
+      "love-ch02-p3",
+      "love-ch02-p4",
+      "love-ch03-p1",
+      "love-ch03-p2",
+      "love-ch03-p3",
+      "love-ch03-p4",
+      "love-ch04-p1",
+      "love-ch04-p2",
+      "love-ch04-p3",
+      "love-ch04-p4",
+      "love-ch05-p1",
+      "love-ch05-p2",
+      "love-ch05-p3",
+      "love-ch05-p4",
+      "love-ch06-p1",
+      "love-ch06-p2",
+      "love-ch06-p3",
+      "love-ch06-p4",
+      "love-ch07-p1",
+      "love-ch07-p2",
+      "love-ch07-p3",
+      "love-ch07-p4",
+      "love-ch08-p1",
+      "love-ch08-p2",
+      "love-ch08-p3",
+      "love-ch08-p4",
+      "love-ch09-p1",
+      "love-ch09-p2",
+      "love-ch09-p3",
+      "love-ch09-p4"
+    ],
+    "detailParagraphs": 36,
+    "inputTablesMbtiAppendixBackPresent": true,
+    "narrativeMatchesDraft": true,
+    "allContentsTargetsValid": true,
+    "jsonDirectSharedReplay": "PASS (loveRelease.test.ts)",
+    "footnoteIndicesValid": true
+  },
+  {
+    "id": "D",
+    "pages": 17,
+    "contents": [
+      {
+        "title": "사랑할 때의 나",
+        "targetId": "core",
+        "page": 5
+      },
+      {
+        "title": "나만의 연애 매력",
+        "targetId": "chapter-attraction",
+        "page": 6
+      },
+      {
+        "title": "끌리는 상대와 편안한 관계",
+        "targetId": "chapter-partner",
+        "page": 7
+      },
+      {
+        "title": "호감과 연애의 시작",
+        "targetId": "chapter-current",
+        "page": 8
+      },
+      {
+        "title": "가까워질수록 드러나는 나",
+        "targetId": "chapter-intimacy",
+        "page": 9
+      },
+      {
+        "title": "연애 팩폭과 갈등 해결",
+        "targetId": "chapter-shadow",
+        "page": 10
+      },
+      {
+        "title": "결혼과 함께 사는 생활",
+        "targetId": "chapter-home",
+        "page": 11
+      },
+      {
+        "title": "자녀와 부모 역할",
+        "targetId": "chapter-parenting",
+        "page": 12
+      },
+      {
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "targetId": "chapter-direction",
+        "page": 13
+      }
+    ],
+    "paragraphAnchors": [
+      "love-ch01-p1",
+      "love-ch01-p2",
+      "love-ch01-p3",
+      "love-ch01-p4",
+      "love-ch02-p1",
+      "love-ch02-p2",
+      "love-ch02-p3",
+      "love-ch02-p4",
+      "love-ch03-p1",
+      "love-ch03-p2",
+      "love-ch03-p3",
+      "love-ch03-p4",
+      "love-ch04-p1",
+      "love-ch04-p2",
+      "love-ch04-p3",
+      "love-ch04-p4",
+      "love-ch05-p1",
+      "love-ch05-p2",
+      "love-ch05-p3",
+      "love-ch05-p4",
+      "love-ch06-p1",
+      "love-ch06-p2",
+      "love-ch06-p3",
+      "love-ch06-p4",
+      "love-ch07-p1",
+      "love-ch07-p2",
+      "love-ch07-p3",
+      "love-ch07-p4",
+      "love-ch08-p1",
+      "love-ch08-p2",
+      "love-ch08-p3",
+      "love-ch08-p4",
+      "love-ch09-p1",
+      "love-ch09-p2",
+      "love-ch09-p3",
+      "love-ch09-p4"
+    ],
+    "detailParagraphs": 36,
+    "inputTablesMbtiAppendixBackPresent": true,
+    "narrativeMatchesDraft": true,
+    "allContentsTargetsValid": true,
+    "jsonDirectSharedReplay": "PASS (loveRelease.test.ts)",
+    "footnoteIndicesValid": true
+  },
+  {
+    "id": "E",
+    "pages": 17,
+    "contents": [
+      {
+        "title": "사랑할 때의 나",
+        "targetId": "core",
+        "page": 5
+      },
+      {
+        "title": "나만의 연애 매력",
+        "targetId": "chapter-attraction",
+        "page": 6
+      },
+      {
+        "title": "끌리는 상대와 편안한 관계",
+        "targetId": "chapter-partner",
+        "page": 7
+      },
+      {
+        "title": "호감과 연애의 시작",
+        "targetId": "chapter-current",
+        "page": 8
+      },
+      {
+        "title": "가까워질수록 드러나는 나",
+        "targetId": "chapter-intimacy",
+        "page": 9
+      },
+      {
+        "title": "연애 팩폭과 갈등 해결",
+        "targetId": "chapter-shadow",
+        "page": 10
+      },
+      {
+        "title": "결혼과 함께 사는 생활",
+        "targetId": "chapter-home",
+        "page": 11
+      },
+      {
+        "title": "자녀와 부모 역할",
+        "targetId": "chapter-parenting",
+        "page": 12
+      },
+      {
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "targetId": "chapter-direction",
+        "page": 13
+      }
+    ],
+    "paragraphAnchors": [
+      "love-ch01-p1",
+      "love-ch01-p2",
+      "love-ch01-p3",
+      "love-ch01-p4",
+      "love-ch02-p1",
+      "love-ch02-p2",
+      "love-ch02-p3",
+      "love-ch02-p4",
+      "love-ch03-p1",
+      "love-ch03-p2",
+      "love-ch03-p3",
+      "love-ch03-p4",
+      "love-ch04-p1",
+      "love-ch04-p2",
+      "love-ch04-p3",
+      "love-ch04-p4",
+      "love-ch05-p1",
+      "love-ch05-p2",
+      "love-ch05-p3",
+      "love-ch05-p4",
+      "love-ch06-p1",
+      "love-ch06-p2",
+      "love-ch06-p3",
+      "love-ch06-p4",
+      "love-ch07-p1",
+      "love-ch07-p2",
+      "love-ch07-p3",
+      "love-ch07-p4",
+      "love-ch08-p1",
+      "love-ch08-p2",
+      "love-ch08-p3",
+      "love-ch08-p4",
+      "love-ch09-p1",
+      "love-ch09-p2",
+      "love-ch09-p3",
+      "love-ch09-p4"
+    ],
+    "detailParagraphs": 36,
+    "inputTablesMbtiAppendixBackPresent": true,
+    "narrativeMatchesDraft": true,
+    "allContentsTargetsValid": true,
+    "jsonDirectSharedReplay": "PASS (loveRelease.test.ts)",
+    "footnoteIndicesValid": true
+  },
+  {
+    "id": "F",
+    "pages": 17,
+    "contents": [
+      {
+        "title": "사랑할 때의 나",
+        "targetId": "core",
+        "page": 5
+      },
+      {
+        "title": "나만의 연애 매력",
+        "targetId": "chapter-attraction",
+        "page": 6
+      },
+      {
+        "title": "끌리는 상대와 편안한 관계",
+        "targetId": "chapter-partner",
+        "page": 7
+      },
+      {
+        "title": "호감과 연애의 시작",
+        "targetId": "chapter-current",
+        "page": 8
+      },
+      {
+        "title": "가까워질수록 드러나는 나",
+        "targetId": "chapter-intimacy",
+        "page": 9
+      },
+      {
+        "title": "연애 팩폭과 갈등 해결",
+        "targetId": "chapter-shadow",
+        "page": 10
+      },
+      {
+        "title": "결혼과 함께 사는 생활",
+        "targetId": "chapter-home",
+        "page": 11
+      },
+      {
+        "title": "자녀와 부모 역할",
+        "targetId": "chapter-parenting",
+        "page": 12
+      },
+      {
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "targetId": "chapter-direction",
+        "page": 13
+      }
+    ],
+    "paragraphAnchors": [
+      "love-ch01-p1",
+      "love-ch01-p2",
+      "love-ch01-p3",
+      "love-ch01-p4",
+      "love-ch02-p1",
+      "love-ch02-p2",
+      "love-ch02-p3",
+      "love-ch02-p4",
+      "love-ch03-p1",
+      "love-ch03-p2",
+      "love-ch03-p3",
+      "love-ch03-p4",
+      "love-ch04-p1",
+      "love-ch04-p2",
+      "love-ch04-p3",
+      "love-ch04-p4",
+      "love-ch05-p1",
+      "love-ch05-p2",
+      "love-ch05-p3",
+      "love-ch05-p4",
+      "love-ch06-p1",
+      "love-ch06-p2",
+      "love-ch06-p3",
+      "love-ch06-p4",
+      "love-ch07-p1",
+      "love-ch07-p2",
+      "love-ch07-p3",
+      "love-ch07-p4",
+      "love-ch08-p1",
+      "love-ch08-p2",
+      "love-ch08-p3",
+      "love-ch08-p4",
+      "love-ch09-p1",
+      "love-ch09-p2",
+      "love-ch09-p3",
+      "love-ch09-p4"
+    ],
+    "detailParagraphs": 36,
+    "inputTablesMbtiAppendixBackPresent": true,
+    "narrativeMatchesDraft": true,
+    "allContentsTargetsValid": true,
+    "jsonDirectSharedReplay": "PASS (loveRelease.test.ts)",
+    "footnoteIndicesValid": true
+  },
+  {
+    "id": "G",
+    "pages": 17,
+    "contents": [
+      {
+        "title": "사랑할 때의 나",
+        "targetId": "core",
+        "page": 5
+      },
+      {
+        "title": "나만의 연애 매력",
+        "targetId": "chapter-attraction",
+        "page": 6
+      },
+      {
+        "title": "끌리는 상대와 편안한 관계",
+        "targetId": "chapter-partner",
+        "page": 7
+      },
+      {
+        "title": "호감과 연애의 시작",
+        "targetId": "chapter-current",
+        "page": 8
+      },
+      {
+        "title": "가까워질수록 드러나는 나",
+        "targetId": "chapter-intimacy",
+        "page": 9
+      },
+      {
+        "title": "연애 팩폭과 갈등 해결",
+        "targetId": "chapter-shadow",
+        "page": 10
+      },
+      {
+        "title": "결혼과 함께 사는 생활",
+        "targetId": "chapter-home",
+        "page": 11
+      },
+      {
+        "title": "자녀와 부모 역할",
+        "targetId": "chapter-parenting",
+        "page": 12
+      },
+      {
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "targetId": "chapter-direction",
+        "page": 13
+      }
+    ],
+    "paragraphAnchors": [
+      "love-ch01-p1",
+      "love-ch01-p2",
+      "love-ch01-p3",
+      "love-ch01-p4",
+      "love-ch02-p1",
+      "love-ch02-p2",
+      "love-ch02-p3",
+      "love-ch02-p4",
+      "love-ch03-p1",
+      "love-ch03-p2",
+      "love-ch03-p3",
+      "love-ch03-p4",
+      "love-ch04-p1",
+      "love-ch04-p2",
+      "love-ch04-p3",
+      "love-ch04-p4",
+      "love-ch05-p1",
+      "love-ch05-p2",
+      "love-ch05-p3",
+      "love-ch05-p4",
+      "love-ch06-p1",
+      "love-ch06-p2",
+      "love-ch06-p3",
+      "love-ch06-p4",
+      "love-ch07-p1",
+      "love-ch07-p2",
+      "love-ch07-p3",
+      "love-ch07-p4",
+      "love-ch08-p1",
+      "love-ch08-p2",
+      "love-ch08-p3",
+      "love-ch08-p4",
+      "love-ch09-p1",
+      "love-ch09-p2",
+      "love-ch09-p3",
+      "love-ch09-p4"
+    ],
+    "detailParagraphs": 36,
+    "inputTablesMbtiAppendixBackPresent": true,
+    "narrativeMatchesDraft": true,
+    "allContentsTargetsValid": true,
+    "jsonDirectSharedReplay": "PASS (loveRelease.test.ts)",
+    "footnoteIndicesValid": true
+  },
+  {
+    "id": "H",
+    "pages": 17,
+    "contents": [
+      {
+        "title": "사랑할 때의 나",
+        "targetId": "core",
+        "page": 5
+      },
+      {
+        "title": "나만의 연애 매력",
+        "targetId": "chapter-attraction",
+        "page": 6
+      },
+      {
+        "title": "끌리는 상대와 편안한 관계",
+        "targetId": "chapter-partner",
+        "page": 7
+      },
+      {
+        "title": "호감과 연애의 시작",
+        "targetId": "chapter-current",
+        "page": 8
+      },
+      {
+        "title": "가까워질수록 드러나는 나",
+        "targetId": "chapter-intimacy",
+        "page": 9
+      },
+      {
+        "title": "연애 팩폭과 갈등 해결",
+        "targetId": "chapter-shadow",
+        "page": 10
+      },
+      {
+        "title": "결혼과 함께 사는 생활",
+        "targetId": "chapter-home",
+        "page": 11
+      },
+      {
+        "title": "자녀와 부모 역할",
+        "targetId": "chapter-parenting",
+        "page": 12
+      },
+      {
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "targetId": "chapter-direction",
+        "page": 13
+      }
+    ],
+    "paragraphAnchors": [
+      "love-ch01-p1",
+      "love-ch01-p2",
+      "love-ch01-p3",
+      "love-ch01-p4",
+      "love-ch02-p1",
+      "love-ch02-p2",
+      "love-ch02-p3",
+      "love-ch03-p1",
+      "love-ch03-p2",
+      "love-ch03-p3",
+      "love-ch03-p4",
+      "love-ch04-p1",
+      "love-ch04-p2",
+      "love-ch04-p3",
+      "love-ch04-p4",
+      "love-ch05-p1",
+      "love-ch05-p2",
+      "love-ch05-p4",
+      "love-ch06-p1",
+      "love-ch06-p2",
+      "love-ch06-p3",
+      "love-ch07-p1",
+      "love-ch07-p2",
+      "love-ch07-p3",
+      "love-ch08-p1",
+      "love-ch08-p2",
+      "love-ch08-p3",
+      "love-ch08-p4",
+      "love-ch09-p1",
+      "love-ch09-p2",
+      "love-ch09-p4"
+    ],
+    "detailParagraphs": 31,
+    "inputTablesMbtiAppendixBackPresent": true,
+    "narrativeMatchesDraft": true,
+    "allContentsTargetsValid": true,
+    "jsonDirectSharedReplay": "PASS (loveRelease.test.ts)",
+    "footnoteIndicesValid": true
+  }
+]

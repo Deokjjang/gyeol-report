@@ -1,0 +1,565 @@
+[
+  {
+    "id": "A",
+    "bodyLength": 9041,
+    "paragraphs": 36,
+    "sentences": 143,
+    "chapters": [
+      {
+        "id": "CH01",
+        "title": "사랑할 때의 나",
+        "paragraphs": 4,
+        "bodyLength": 977
+      },
+      {
+        "id": "CH02",
+        "title": "나만의 연애 매력",
+        "paragraphs": 4,
+        "bodyLength": 1014
+      },
+      {
+        "id": "CH03",
+        "title": "끌리는 상대와 편안한 관계",
+        "paragraphs": 4,
+        "bodyLength": 749
+      },
+      {
+        "id": "CH04",
+        "title": "호감과 연애의 시작",
+        "paragraphs": 4,
+        "bodyLength": 1101
+      },
+      {
+        "id": "CH05",
+        "title": "가까워질수록 드러나는 나",
+        "paragraphs": 4,
+        "bodyLength": 1011
+      },
+      {
+        "id": "CH06",
+        "title": "연애 팩폭과 갈등 해결",
+        "paragraphs": 4,
+        "bodyLength": 991
+      },
+      {
+        "id": "CH07",
+        "title": "결혼과 함께 사는 생활",
+        "paragraphs": 4,
+        "bodyLength": 1031
+      },
+      {
+        "id": "CH08",
+        "title": "자녀와 부모 역할",
+        "paragraphs": 4,
+        "bodyLength": 1153
+      },
+      {
+        "id": "CH09",
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "paragraphs": 4,
+        "bodyLength": 998
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    },
+    "editorial": [],
+    "publishedEdition": "love-editorial-release-01-v1",
+    "bodySha256": "a41d314bd658b3aaca5b19524aef567f2096db9e64c5337867e304c7a90bd00e"
+  },
+  {
+    "id": "B",
+    "bodyLength": 8991,
+    "paragraphs": 36,
+    "sentences": 141,
+    "chapters": [
+      {
+        "id": "CH01",
+        "title": "사랑할 때의 나",
+        "paragraphs": 4,
+        "bodyLength": 963
+      },
+      {
+        "id": "CH02",
+        "title": "나만의 연애 매력",
+        "paragraphs": 4,
+        "bodyLength": 1022
+      },
+      {
+        "id": "CH03",
+        "title": "끌리는 상대와 편안한 관계",
+        "paragraphs": 4,
+        "bodyLength": 758
+      },
+      {
+        "id": "CH04",
+        "title": "호감과 연애의 시작",
+        "paragraphs": 4,
+        "bodyLength": 1080
+      },
+      {
+        "id": "CH05",
+        "title": "가까워질수록 드러나는 나",
+        "paragraphs": 4,
+        "bodyLength": 1003
+      },
+      {
+        "id": "CH06",
+        "title": "연애 팩폭과 갈등 해결",
+        "paragraphs": 4,
+        "bodyLength": 1008
+      },
+      {
+        "id": "CH07",
+        "title": "결혼과 함께 사는 생활",
+        "paragraphs": 4,
+        "bodyLength": 1058
+      },
+      {
+        "id": "CH08",
+        "title": "자녀와 부모 역할",
+        "paragraphs": 4,
+        "bodyLength": 1148
+      },
+      {
+        "id": "CH09",
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "paragraphs": 4,
+        "bodyLength": 935
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    },
+    "editorial": [],
+    "publishedEdition": "love-editorial-release-01-v1",
+    "bodySha256": "4efd3aca1de563036c0342e4a9ac2c3bd3c667121d1667fd7a6c7d4f6140d97c"
+  },
+  {
+    "id": "C",
+    "bodyLength": 9712,
+    "paragraphs": 36,
+    "sentences": 144,
+    "chapters": [
+      {
+        "id": "CH01",
+        "title": "사랑할 때의 나",
+        "paragraphs": 4,
+        "bodyLength": 1047
+      },
+      {
+        "id": "CH02",
+        "title": "나만의 연애 매력",
+        "paragraphs": 4,
+        "bodyLength": 1063
+      },
+      {
+        "id": "CH03",
+        "title": "끌리는 상대와 편안한 관계",
+        "paragraphs": 4,
+        "bodyLength": 991
+      },
+      {
+        "id": "CH04",
+        "title": "호감과 연애의 시작",
+        "paragraphs": 4,
+        "bodyLength": 1078
+      },
+      {
+        "id": "CH05",
+        "title": "가까워질수록 드러나는 나",
+        "paragraphs": 4,
+        "bodyLength": 1114
+      },
+      {
+        "id": "CH06",
+        "title": "연애 팩폭과 갈등 해결",
+        "paragraphs": 4,
+        "bodyLength": 1170
+      },
+      {
+        "id": "CH07",
+        "title": "결혼과 함께 사는 생활",
+        "paragraphs": 4,
+        "bodyLength": 1064
+      },
+      {
+        "id": "CH08",
+        "title": "자녀와 부모 역할",
+        "paragraphs": 4,
+        "bodyLength": 1166
+      },
+      {
+        "id": "CH09",
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "paragraphs": 4,
+        "bodyLength": 1003
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    },
+    "editorial": [],
+    "publishedEdition": "love-editorial-release-01-v1",
+    "bodySha256": "09f3aff0475f4431a711c279f0df039ec0053bc2bb3563e7f7c1583b8293f568"
+  },
+  {
+    "id": "D",
+    "bodyLength": 9049,
+    "paragraphs": 36,
+    "sentences": 143,
+    "chapters": [
+      {
+        "id": "CH01",
+        "title": "사랑할 때의 나",
+        "paragraphs": 4,
+        "bodyLength": 997
+      },
+      {
+        "id": "CH02",
+        "title": "나만의 연애 매력",
+        "paragraphs": 4,
+        "bodyLength": 1103
+      },
+      {
+        "id": "CH03",
+        "title": "끌리는 상대와 편안한 관계",
+        "paragraphs": 4,
+        "bodyLength": 716
+      },
+      {
+        "id": "CH04",
+        "title": "호감과 연애의 시작",
+        "paragraphs": 4,
+        "bodyLength": 1097
+      },
+      {
+        "id": "CH05",
+        "title": "가까워질수록 드러나는 나",
+        "paragraphs": 4,
+        "bodyLength": 1005
+      },
+      {
+        "id": "CH06",
+        "title": "연애 팩폭과 갈등 해결",
+        "paragraphs": 4,
+        "bodyLength": 946
+      },
+      {
+        "id": "CH07",
+        "title": "결혼과 함께 사는 생활",
+        "paragraphs": 4,
+        "bodyLength": 1029
+      },
+      {
+        "id": "CH08",
+        "title": "자녀와 부모 역할",
+        "paragraphs": 4,
+        "bodyLength": 1149
+      },
+      {
+        "id": "CH09",
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "paragraphs": 4,
+        "bodyLength": 991
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    },
+    "editorial": [],
+    "publishedEdition": "love-editorial-release-01-v1",
+    "bodySha256": "fff76291a1a0a244aebb4c69479271ebd300bd6db8e6ffbc42e1203f0b526a80"
+  },
+  {
+    "id": "E",
+    "bodyLength": 9039,
+    "paragraphs": 36,
+    "sentences": 143,
+    "chapters": [
+      {
+        "id": "CH01",
+        "title": "사랑할 때의 나",
+        "paragraphs": 4,
+        "bodyLength": 977
+      },
+      {
+        "id": "CH02",
+        "title": "나만의 연애 매력",
+        "paragraphs": 4,
+        "bodyLength": 1014
+      },
+      {
+        "id": "CH03",
+        "title": "끌리는 상대와 편안한 관계",
+        "paragraphs": 4,
+        "bodyLength": 749
+      },
+      {
+        "id": "CH04",
+        "title": "호감과 연애의 시작",
+        "paragraphs": 4,
+        "bodyLength": 1114
+      },
+      {
+        "id": "CH05",
+        "title": "가까워질수록 드러나는 나",
+        "paragraphs": 4,
+        "bodyLength": 1011
+      },
+      {
+        "id": "CH06",
+        "title": "연애 팩폭과 갈등 해결",
+        "paragraphs": 4,
+        "bodyLength": 991
+      },
+      {
+        "id": "CH07",
+        "title": "결혼과 함께 사는 생활",
+        "paragraphs": 4,
+        "bodyLength": 1016
+      },
+      {
+        "id": "CH08",
+        "title": "자녀와 부모 역할",
+        "paragraphs": 4,
+        "bodyLength": 1153
+      },
+      {
+        "id": "CH09",
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "paragraphs": 4,
+        "bodyLength": 998
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    },
+    "editorial": [],
+    "publishedEdition": "love-editorial-release-01-v1",
+    "bodySha256": "fb09e759334900ea7360d70b9bd3b686ce3eedd13efb1a1991a2113d9fb0678b"
+  },
+  {
+    "id": "F",
+    "bodyLength": 8994,
+    "paragraphs": 36,
+    "sentences": 141,
+    "chapters": [
+      {
+        "id": "CH01",
+        "title": "사랑할 때의 나",
+        "paragraphs": 4,
+        "bodyLength": 963
+      },
+      {
+        "id": "CH02",
+        "title": "나만의 연애 매력",
+        "paragraphs": 4,
+        "bodyLength": 1022
+      },
+      {
+        "id": "CH03",
+        "title": "끌리는 상대와 편안한 관계",
+        "paragraphs": 4,
+        "bodyLength": 758
+      },
+      {
+        "id": "CH04",
+        "title": "호감과 연애의 시작",
+        "paragraphs": 4,
+        "bodyLength": 1087
+      },
+      {
+        "id": "CH05",
+        "title": "가까워질수록 드러나는 나",
+        "paragraphs": 4,
+        "bodyLength": 1003
+      },
+      {
+        "id": "CH06",
+        "title": "연애 팩폭과 갈등 해결",
+        "paragraphs": 4,
+        "bodyLength": 1008
+      },
+      {
+        "id": "CH07",
+        "title": "결혼과 함께 사는 생활",
+        "paragraphs": 4,
+        "bodyLength": 1054
+      },
+      {
+        "id": "CH08",
+        "title": "자녀와 부모 역할",
+        "paragraphs": 4,
+        "bodyLength": 1148
+      },
+      {
+        "id": "CH09",
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "paragraphs": 4,
+        "bodyLength": 935
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    },
+    "editorial": [],
+    "publishedEdition": "love-editorial-release-01-v1",
+    "bodySha256": "4e490fc31c29bee5647ed3c6dcd8a9134c5129f410cc3adfd4913b8928da815d"
+  },
+  {
+    "id": "G",
+    "bodyLength": 8900,
+    "paragraphs": 36,
+    "sentences": 141,
+    "chapters": [
+      {
+        "id": "CH01",
+        "title": "사랑할 때의 나",
+        "paragraphs": 4,
+        "bodyLength": 971
+      },
+      {
+        "id": "CH02",
+        "title": "나만의 연애 매력",
+        "paragraphs": 4,
+        "bodyLength": 1069
+      },
+      {
+        "id": "CH03",
+        "title": "끌리는 상대와 편안한 관계",
+        "paragraphs": 4,
+        "bodyLength": 703
+      },
+      {
+        "id": "CH04",
+        "title": "호감과 연애의 시작",
+        "paragraphs": 4,
+        "bodyLength": 1075
+      },
+      {
+        "id": "CH05",
+        "title": "가까워질수록 드러나는 나",
+        "paragraphs": 4,
+        "bodyLength": 940
+      },
+      {
+        "id": "CH06",
+        "title": "연애 팩폭과 갈등 해결",
+        "paragraphs": 4,
+        "bodyLength": 1006
+      },
+      {
+        "id": "CH07",
+        "title": "결혼과 함께 사는 생활",
+        "paragraphs": 4,
+        "bodyLength": 1003
+      },
+      {
+        "id": "CH08",
+        "title": "자녀와 부모 역할",
+        "paragraphs": 4,
+        "bodyLength": 1160
+      },
+      {
+        "id": "CH09",
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "paragraphs": 4,
+        "bodyLength": 957
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    },
+    "editorial": [],
+    "publishedEdition": "love-editorial-release-01-v1",
+    "bodySha256": "d1ede03a397e5e64802697b05f403da93c80bcb8a0fcbba71e8cbbef7b5e575c"
+  },
+  {
+    "id": "H",
+    "bodyLength": 8106,
+    "paragraphs": 31,
+    "sentences": 123,
+    "chapters": [
+      {
+        "id": "CH01",
+        "title": "사랑할 때의 나",
+        "paragraphs": 4,
+        "bodyLength": 1078
+      },
+      {
+        "id": "CH02",
+        "title": "나만의 연애 매력",
+        "paragraphs": 3,
+        "bodyLength": 796
+      },
+      {
+        "id": "CH03",
+        "title": "끌리는 상대와 편안한 관계",
+        "paragraphs": 4,
+        "bodyLength": 1052
+      },
+      {
+        "id": "CH04",
+        "title": "호감과 연애의 시작",
+        "paragraphs": 4,
+        "bodyLength": 1042
+      },
+      {
+        "id": "CH05",
+        "title": "가까워질수록 드러나는 나",
+        "paragraphs": 3,
+        "bodyLength": 794
+      },
+      {
+        "id": "CH06",
+        "title": "연애 팩폭과 갈등 해결",
+        "paragraphs": 3,
+        "bodyLength": 816
+      },
+      {
+        "id": "CH07",
+        "title": "결혼과 함께 사는 생활",
+        "paragraphs": 3,
+        "bodyLength": 787
+      },
+      {
+        "id": "CH08",
+        "title": "자녀와 부모 역할",
+        "paragraphs": 4,
+        "bodyLength": 1071
+      },
+      {
+        "id": "CH09",
+        "title": "사랑에서 가진 좋은 기운과 앞으로의 방향",
+        "paragraphs": 3,
+        "bodyLength": 654
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": [
+        "CH02.P4:NO_INDEPENDENT_CHARM-USE_MATERIAL",
+        "CH05.P3:NO_INDEPENDENT_SPACE_MATERIAL",
+        "CH06.P4:NO_INDEPENDENT_REPAIR_MATERIAL",
+        "CH07.P4:NO_INDEPENDENT_HOUSEHOLD-RULE_MATERIAL",
+        "CH09.P3:NO_INDEPENDENT_REMEMBER-RISK_MATERIAL",
+        "CH02:PARAGRAPH_SHORTAGE",
+        "CH05:PARAGRAPH_SHORTAGE",
+        "CH06:PARAGRAPH_SHORTAGE",
+        "CH07:PARAGRAPH_SHORTAGE",
+        "CH09:PARAGRAPH_SHORTAGE"
+      ]
+    },
+    "editorial": [],
+    "publishedEdition": "love-editorial-release-01-v1",
+    "bodySha256": "ae03cd0218dd67bc163397fe3aa16f693772533c83db1f6abb8966fb53a9ee6f"
+  }
+]

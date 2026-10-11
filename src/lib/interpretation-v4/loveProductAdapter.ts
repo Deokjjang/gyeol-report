@@ -5,8 +5,11 @@ import { buildRelationshipProfiles, projectRelationshipView, selectLoveProductSo
 import { createRelationshipRenderer } from "./relationshipProductNarrative";
 import { reviewNarrative } from "./editorialGuard";
 import type { NarrativeInput, NarrativeBlock, NarrativeProof } from "./narrativeTypes";
+import { renderLoveRelease } from "./loveReleaseRenderer";
+import { validateLoveRelease } from "./loveReleaseValidator";
+import { LOVE_RELEASE_VERSION } from "./loveReleaseContracts";
 
-export const LOVE_PRODUCT_VERSION = "love-product-13d-7b-v1";
+export const LOVE_PRODUCT_VERSION = LOVE_RELEASE_VERSION;
 const compact = <T>(xs: (T | undefined)[]): T[] => xs.filter((x): x is T => x !== undefined);
 const withoutPair = (p: NarrativeProof): NarrativeProof => ({ ...p, sourceRefs: p.sourceRefs.filter(r => !/notablePairs|relationshipHints/.test(r)) });
 
@@ -36,10 +39,17 @@ export function buildV4LoveProduct(input: NarrativeInput) {
     return { ...s, blocks: fresh?.length ? ["home", "repair"].includes(s.id) ? [...fresh, ...retained.slice(0, 1)] : fresh : retained };
   });
   const narrative = { ...legacy.narrative, opening, sections, finalProof: withoutPair(legacy.narrative.finalProof) };
-  return { ...legacy, narrative, writerVersion: LOVE_PRODUCT_VERSION,
+  const release = renderLoveRelease(input, view, narrative, legacy.materials);
+  const readerValidation = validateLoveRelease(release.draft, view, legacy.materials, release.retained);
+  const reviewed = reviewNarrative(release.narrative);
+  const published = !readerValidation.hardErrors.length && release.narrative.opening.length
+    && ["current", "home", "parenting", "fortune", "direction"].every(id => release.narrative.sections.some(s => s.id === id))
+    && !reviewed.some(i => i.severity === "Blocker" || i.severity === "Major" && !["DUPLICATE_SENTENCE", "REPEATED_LONG_PHRASE"].includes(i.code)) ? release.narrative : narrative;
+  return { ...legacy, narrative: published, writerVersion: LOVE_PRODUCT_VERSION,
     mbtiBasis: legacy.mbtiBasis ? { ...legacy.mbtiBasis, pairHint: null } : null,
-    editorial: reviewNarrative(narrative),
+    editorial: published === release.narrative ? reviewed : reviewNarrative(narrative),
     integration: { version: LOVE_PRODUCT_VERSION, represented: renderer.represented, suppressed: renderer.suppressed,
+      publishedEdition: published === release.narrative ? release.draft.version : "love-product-13d-7b-v1", readerEdition: release.draft, readerValidation, readerEditorial: reviewed,
       questions: { L1: "core", L2: "attraction/partner", L3: "expression", L4: "intimacy", L5: "repair", L6: "intimacy/balance", L7: "shadow", L8: "home", L9: "direction" },
       sourceDomains: view.nodes.map(n => ({ id: n.id, domain: n.sourceDomain })),
       personalDigest: createHash("sha256").update(JSON.stringify({ myeongli: built.profiles.myeongli, mbti: built.profiles.mbti, fusion: built.profiles.fusion, claims: built.profiles.claims, resonance: built.profiles.resonance })).digest("hex"),
