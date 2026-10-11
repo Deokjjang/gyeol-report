@@ -97,6 +97,14 @@ describe("Love reader edition", () => {
     if (process.env.LOVE_EDITORIAL_EXPORT === "1") { mkdirSync(root + "/states", { recursive: true }); writeFileSync(`${root}/states/${relationshipStatus || 'unknown'}.json`, JSON.stringify({ personalDigest: r.integration.personalDigest, status: relationshipStatus, current: r.integration.readerEdition.chapters[3], home: r.integration.readerEdition.chapters[6], validation: r.integration.readerValidation }, null, 2)); }
   }, 120000);
   it.each(RUNTIME_FIXTURES)("$id remains identical at the release boundary", async f => {
+    if (f.id === "compatibility") {
+      // The next pair release has its own new-output locks. Retain this
+      // release boundary as an exact replay check for the saved prior edition.
+      const old = JSON.parse(readFileSync("tests/fixtures/completed-report/compatibility-editorial-base.json", "utf8"));
+      expect(v4Digest(storedBook(old.snapshot)?.data)).toBe(locks.compatibility[2]);
+      expect(storedBook(old.snapshot, "https://example.test/r/old-pair")?.data).toEqual(old.book);
+      return;
+    }
     if (f.id === "love") {
       const old = JSON.parse(readFileSync("tests/fixtures/completed-report/love-editorial-base.json", "utf8"));
       expect(storedBook(old.snapshot)?.data).toEqual(old.book); expect(storedBook(structuredClone(old.snapshot), "https://example.test/r/old-love")?.data).toEqual(old.book);
