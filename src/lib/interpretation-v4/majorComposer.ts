@@ -9,6 +9,7 @@ import { paragraph, proof, particle } from "./copyRealizer";
 import { reviewNarrative } from "./editorialGuard";
 import { composeEvidenceChapters } from "./contentSynthesis";
 import { separateMajorChapter } from "./majorEvidenceReading";
+import { withMajorInteractions } from "./majorInteractionReading";
 import { auditContent } from "./contentQuality";
 import { friendlyTransition, planMajorYears } from "./periodPlanner";
 import type { NarrativeBlock, NarrativeSection } from "./narrativeTypes";
@@ -123,6 +124,8 @@ export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt
   const separated = { ...allocated.narrative,
     opening: separateMajorChapter("core", allocated.narrative.opening, e.materials, currentPeriod),
     sections: allocated.narrative.sections.map(s => {
+      const year = years.find(y => s.id === `year-${y.year}`);
+      if (year) return { ...s, blocks: withMajorInteractions(e, year, s.blocks) };
       if (s.id === "next-cycle" && future) {
         const nextProof = proof([], [], [], [...e.sourceRefs, `dayun-cycle:${future.after.index}:${future.after.ganji}`, `period-ten-god:${future.after.tenGod}`]);
         return { ...s, blocks: separateMajorChapter(s.id, s.blocks, e.materials, { ...future.after, proof: nextProof }) };

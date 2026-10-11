@@ -29,6 +29,13 @@ export async function majorNarrativeEvidence(payload: unknown, evaluatedAt: stri
   if (horizon.rows.some(row => !readings.some(year => year.year === row.year)))
     return { ok: false as const, errors: ["CANONICAL_MAJOR_YEAR_EVIDENCE_UNAVAILABLE"] };
   return { ok: true as const, input: context, calculation, materials: buildMyeongliMaterialPacket(context),
+    // Only the original packet's cycle has verified cycle/natal factors.
+    // Do not reuse these factors for other cycles rebuilt above.
+    majorNatal: { cycleIndex: base.currentCycle.index, ganji: base.currentCycle.ganji,
+      relations: base.branchInteractions.flatMap((relation, index) => {
+        const factor = base.decadeReading?.factors.find(f => f.evidenceId === `major:${base.currentCycle.index}:${base.currentCycle.ganji}:natal:${index}`);
+        return factor ? [{ relation, ...factor }] : [];
+      }) },
     evaluatedAt: new Date(instant).toISOString(), currentYear: horizon.currentYear,
     horizon: { from: horizon.from, through: horizon.through, activeCycle: horizon.activeCycle, evaluatedAtKst: horizon.evaluatedAtKst,
       transitions: horizon.transitions.map(t => ({ year: t.year, dateLabel: t.dateLabel, startSolarKst: t.startSolarKst, startSolarRange: t.startSolarRange, before: t.before, after: t.after })),
