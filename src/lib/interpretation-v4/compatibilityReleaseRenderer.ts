@@ -5,6 +5,7 @@ import { compatibilityCategoryCopy, pairMove } from "./compatibilityCategoryCopy
 import { godEffects, pairProof } from "./compatibilityInteractions";
 import { compatibilityGoodCards } from "./compatibilityHarmony";
 import { particle } from "./copyRealizer";
+import { renderCompatibilityTitle } from "./compatibilityTitle";
 import { sentences, sentenceKey } from "./editorialGuard";
 import { humanOutcome } from "./narrativeHumanOutcome";
 import type { PairEvidence } from "./compatibilityEvidence";
@@ -98,7 +99,7 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
       canonicalEvidenceIds: [...new Set([...l.source.canonical, ...(direction ? [direction.relationId] : [])])], individualEvidenceIds: [...l.source.individual], mbtiSourceNodeIds: [...l.source.nodes], fusionIds: [...l.source.fusions],
       relationIds: [...l.source.relations], directionId: direction?.relationId ?? l.source.direction, semanticTheme: `${contract.key}:${pc.purpose}`, sourceCandidateId: l.source.candidateId,
       provenance: { materialId: `pair-release:${contract.id}:${pc.id}:S${i + 1}`, sourceRegistryKey: l.source.id, application: l.application!, sourceRefs: [...l.source.proof.sourceRefs] } }));
-    draft.chapters[c].paragraphs.push({ id, purpose: pc.purpose.replace(/A/g, a.name).replace(/B/g, b.name), text: actual.map(l => l.text).join(" "), sentences: ss });
+    draft.chapters[c].paragraphs.push({ id, purpose: renderCompatibilityTitle(pc.titleTemplate, { personA: a.name, personB: b.name }), text: actual.map(l => l.text).join(" "), sentences: ss });
     actual.forEach(l => { used.add(sentenceKey(l.text)); committed.set(l.source.id, (committed.get(l.source.id) ?? 0) + 1);
       if (l.source.slot && !l.source.individual.length && l.source.nodes.length === 1) l.source.nodes.forEach(id => quotedNodes.add(id)); });
     for (const row of rows) for (const r of [row.core, row.need, row.gift, row.risk]) if (r && actual.some(l => l.text.includes(pairRootName(r)))) rootTerms.add(r.atom.easyMeaning);

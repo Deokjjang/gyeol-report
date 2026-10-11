@@ -5,7 +5,7 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { generateV4ShadowReport } from "../../../src/lib/interpretation-v4/runtimeShadow";
 import { v4Digest, validateV4Publication, type V4RuntimeEvidence } from "../../../src/lib/interpretation-v4/runtimeProjection";
-import { buildV4CompatibilityProduct } from "../../../src/lib/interpretation-v4/compatibilityProductAdapter";
+import { buildV4CompatibilityProduct, type CompatibilityProduct } from "../../../src/lib/interpretation-v4/compatibilityProductAdapter";
 import { composeCompatibilityNarrative } from "../../../src/lib/interpretation-v4/compatibilityComposer";
 import { renderCompatibilityRelease } from "../../../src/lib/interpretation-v4/compatibilityReleaseRenderer";
 import * as releaseRenderer from "../../../src/lib/interpretation-v4/compatibilityReleaseRenderer";
@@ -24,6 +24,7 @@ import { COMPATIBILITY_NARRATIVE_FIXTURES } from "./compatibilityFixtures";
 import { RUNTIME_FIXTURES, SHADOW_CLOCK } from "./runtimeFixtures";
 import locks from "./compatibilityReleaseLocks.json";
 import canonicalLocks from "./compatibilityCanonicalLocks.json";
+import titleSafetyLocks from "./compatibilityTitleSafetyLocks.json";
 const root = "/tmp/gyeol-compatibility-release", base = COMPATIBILITY_NARRATIVE_FIXTURES[0].payload;
 const categories = ["love", "marriage", "parentChild", "coworker", "managerReport", "businessPartner", "friendship"] as const;
 const readers: { id: string; draft: PairReleaseDraft }[] = [];
@@ -36,6 +37,20 @@ function build(payload: unknown) {
   return r;
 }
 function text(d: PairReleaseDraft) { return d.chapters.flatMap(c => c.paragraphs.map(p => p.text)).join("\n"); }
+function verifyTitleOnlyChange(r: CompatibilityProduct, id: keyof typeof titleSafetyLocks) {
+  const frozen = titleSafetyLocks[id], copy = structuredClone(r);
+  const titles = r.integration.readerEdition.chapters.flatMap(c => c.paragraphs.map(p => p.purpose));
+  expect(titles).toEqual(frozen.titles);
+  for (const c of copy.integration.readerEdition.chapters) for (const p of c.paragraphs) p.purpose = "DISPLAY_TITLE";
+  // Captured from exact 72d9a97 before the fix: body, source IDs, themes, index,
+  // both directions, publication and all other metadata must be byte-identical.
+  expect(v4Digest(copy)).toBe(frozen.digest);
+  if (process.env.PAIR_TITLE_EXPORT === "1") {
+    const d = r.integration.readerEdition;
+    mkdirSync("/tmp/gyeol-title-safety", { recursive: true });
+    writeFileSync(`/tmp/gyeol-title-safety/${id}.json`, JSON.stringify({ titles:d.chapters.map(c=>({id:c.id,title:c.title,paragraphs:c.paragraphs.map(p=>({id:p.id,title:p.purpose}))})), bodyLength:d.bodyLength, validation:r.integration.readerValidation }, null, 2));
+  }
+}
 
 describe("Compatibility reader release", () => {
   it.each(COMPATIBILITY_NARRATIVE_FIXTURES)("$id actual manuscript, index and stored reader", async (f) => {
@@ -44,6 +59,7 @@ describe("Compatibility reader release", () => {
     const e = generated.evidencePacket as V4RuntimeEvidence;
     if (e.composition.product !== "saju_mbti_compatibility" || !("integration" in e.composition.result)) return expect.unreachable();
     const r = e.composition.result, d = r.integration.readerEdition, book = projectBook(e);
+    verifyTitleOnlyChange(r, f.id as keyof typeof titleSafetyLocks);
     expect(f.payload).toEqual(before); expect(generated.externalCalls).toEqual([]);
     expect(r.integration.publishedEdition, JSON.stringify(r.integration.readerEditorial)).toBe(COMPATIBILITY_RELEASE_VERSION);
     expect(r.integration.readerValidation).toEqual({hardErrors: [], qualityIssues: []});
@@ -62,10 +78,12 @@ describe("Compatibility reader release", () => {
     expect(book).not.toBeNull(); if (!book) return;
     const prose = book.pages.flatMap(p => p.kind === "narrative" ? p.paragraphs : []);
     expect(prose.map(p => p.text)).toEqual(d.chapters.flatMap(c => c.paragraphs.map(p => p.text)));
+    expect(prose.map(p => p.heading)).toEqual(d.chapters.flatMap(c => c.paragraphs.map(p => p.purpose)));
     expect(prose.every(p => p.heading && p.anchorId)).toBe(true); expect(new Set(prose.map(p => p.anchorId)).size).toBe(36);
     const contents = book.pages.find(p => p.id === "contents"), again = book.pages.find(p => p.id === "read-again");
     expect(contents?.kind === "contents" && contents.entries).toHaveLength(9);
     expect(again?.kind === "contents" && again.entries.filter(e => e.targetId.startsWith("pair-ch"))).toHaveLength(36);
+    expect(again?.kind === "contents" && again.entries.filter(e => e.targetId.startsWith("pair-ch")).map(e => e.title)).toEqual(prose.map(p => p.heading));
     const pair = book.pages.find(p => p.kind === "pair"); if (pair?.kind !== "pair") return expect.unreachable();
     expect(pair.directions.map(d => book.pages[d.page].id)).toEqual(["chapter-direction-ab", "chapter-direction-ba"]);
     const score = book.pages.find(p => p.kind === "score"); expect(score?.kind === "score" && score.total).toBe(r.compatibilityIndex.total);
@@ -118,8 +136,16 @@ describe("Compatibility reader release", () => {
     if(id==="B-mbti"||id==="B-natal") { expect(r.integration.individualDigests.personA).toBe(original.integration.individualDigests.personA);expect(r.integration.readerEdition.chapters[2]).not.toEqual(original.integration.readerEdition.chapters[2]); }
     if(id==="swapped") {expect(r.evidence.invariant).toEqual(original.evidence.invariant);expect(r.evidence.directions.aToB).toEqual(original.evidence.directions.bToA);expect(r.compatibilityIndex).toEqual(original.compatibilityIndex);expect(r.integration.individualDigests.personA).toBe(original.integration.individualDigests.personB);}
     if(id.includes("unknown")) expect(r.integration.readerEdition.chapters[0].paragraphs.map(p=>p.id)).not.toContain("CH01.P3");
-    if(id==="both-unknown") {expect(text(r.integration.readerEdition)).not.toMatch(/\b[EI][SN][TF][JP]\b/);expect(r.integration.readerEdition.chapters.flatMap(c=>c.paragraphs.flatMap(p=>p.sentences.flatMap(s=>s.individualEvidenceIds)))).not.toContainEqual(expect.stringMatching(/hour/));}
+    if(id==="both-unknown") {verifyTitleOnlyChange(r, "both-unknown");expect(text(r.integration.readerEdition)).not.toMatch(/\b[EI][SN][TF][JP]\b/);expect(r.integration.readerEdition.chapters.flatMap(c=>c.paragraphs.flatMap(p=>p.sentences.flatMap(s=>s.individualEvidenceIds)))).not.toContainEqual(expect.stringMatching(/hour/));}
     exportJson(`variant-${id}`,{draft:r.integration.readerEdition,validation:r.integration.readerValidation,editorial:r.integration.readerEditorial,published:r.integration.publishedEdition,digests:r.integration.individualDigests,index:r.compatibilityIndex,directions:r.evidence.directions});
+  },120000);
+  it("foreign names containing A/B stay literal in actual generated headings", () => {
+    const r = build({...base, personA:{...base.personA, name:"A&B"}, personB:{...base.personB, name:"Bobby"}});
+    verifyTitleOnlyChange(r, "special-names");
+    expect(r.integration.readerEdition.chapters[0].paragraphs[2].purpose).toBe("MBTI가 보여주는 우리");
+    expect(r.integration.readerEdition.chapters[1].paragraphs[1].purpose).toBe("A&B님이 관계에서 중요하게 여기는 것");
+    expect(r.integration.readerEdition.chapters[2].paragraphs[1].purpose).toBe("Bobby님이 관계에서 중요하게 여기는 것");
+    expect(r.integration.readerValidation.hardErrors).toEqual([]);
   },120000);
   it.each(RUNTIME_FIXTURES.filter(f=>f.id!=="compatibility"))("$id text, evidence and Book stay exactly at 8410716", async f=>{
     const r=await generateV4ShadowReport(f.payload,SHADOW_CLOCK);if(!r.ok)return expect.unreachable();
