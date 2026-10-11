@@ -21,9 +21,8 @@ export async function renderBookOg(model: BookShareModel) {
       <div style={{ display: "flex", fontSize: name.length > 12 ? 18 : 23, lineHeight: 1.5, flexWrap: "wrap", wordBreak: "break-all" }}>{name || "PERSONAL EDITION"}</div>
     </div>
     <div style={{ display: "flex", flexDirection: "column", width: 540, gap: 36 }}>
-      <div style={{ display: "flex", fontSize: 18, letterSpacing: 3 }}>GYEOL REPORT {model.issueNumber}</div>
-      <div style={{ display: "flex", flexDirection: "column", fontSize: 64, lineHeight: 1.17, letterSpacing: -3 }}>{lines.map((line, i) => <div key={i}>{line}</div>)}</div>
-      <div style={{ display: "flex", fontSize: name.length > 12 ? 23 : 28, lineHeight: 1.5, wordBreak: "break-all" }}>{name}</div>
+      <div style={{ display: "flex", flexDirection: "column", fontSize: 47, lineHeight: 1.4, letterSpacing: -2 }}><div>타고난 결을 읽고,</div><div>삶의 이야기를 펼치다.</div></div>
+      <div style={{ display: "flex", flexDirection: "column", fontSize: 18, letterSpacing: 3, lineHeight: 1.6 }}><div>GYEOL REPORT</div><div>PERSONAL EDITION</div></div>
     </div>
   </div>, { width: 1200, height: 630, fonts: [{ name: "Book", data: await font, weight: 700, style: "normal" }], headers: BOOK_SHARE_HEADERS });
 }

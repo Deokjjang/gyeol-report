@@ -1,23 +1,25 @@
 import Link from "next/link";
-import GyeolBrandHeader from "../brand/GyeolBrandHeader";
+import { BookPublishingVisual } from "./BookPublishingVisual";
 import { GYEOL_BUSINESS_INFO } from "../../lib/legal/businessInfo";
 import styles from "./reportStatus.module.css";
 
 type ReportStatusViewProps = {
-  readonly state: "preparing" | "delayed" | "attention" | "expired" | "payment-check";
+  readonly state: "preparing" | "delayed" | "attention" | "expired" | "payment-check" | "reading" | "unavailable";
   readonly title?: string;
   readonly message?: string;
   readonly support?: boolean;
 };
 
 const copy = {
+  unavailable: { title: "책을 확인하지 못했습니다.", message: "잠시 후 다시 열어 주세요." },
+  reading: { title: "책장을 펼치고 있습니다.", message: "잠시만 기다려 주세요." },
   preparing: {
     title: "리포트를 준비하고 있습니다",
     message: "입력하신 정보를 바탕으로 나를 이해하는 리포트를 구성하고 있습니다.",
   },
   delayed: {
     title: "리포트를 준비하고 있습니다",
-    message: "평소보다 시간이 조금 더 걸리고 있습니다. 완성된 리포트를 보여드릴 수 있도록 준비를 이어가고 있습니다.",
+    message: "평소보다 조금 더 걸리고 있습니다. 완성된 리포트를 보여드릴 수 있도록 준비를 이어가고 있습니다.",
   },
   attention: {
     title: "리포트 준비에 확인이 필요합니다",
@@ -35,33 +37,15 @@ const copy = {
 
 export function ReportStatusView({ state, title, message, support = false }: ReportStatusViewProps) {
   const waiting = state === "preparing" || state === "delayed";
-  const paid = waiting || state === "attention";
   const showSupport = support || state === "attention";
 
   return (
     <main className={styles.page}>
       <div className={styles.container}>
-        <GyeolBrandHeader />
+        <p className={styles.brand}><Link href="/" aria-label="결리포트 홈">GYEOL REPORT</Link></p>
         <section className={styles.content} aria-labelledby="report-status-title">
-          <div className={`${styles.visual} ${waiting ? styles.moving : ""}`} aria-hidden="true">
-            <svg viewBox="0 0 240 240" fill="none" focusable="false" aria-hidden="true">
-              <g stroke="currentColor" strokeWidth="1" strokeLinecap="round">
-                <path d="M24 120H216M120 24V216" opacity=".2" />
-                <circle cx="120" cy="120" r="82" opacity=".35" />
-                <ellipse cx="120" cy="120" rx="94" ry="42" transform="rotate(-35 120 120)" />
-                <ellipse cx="120" cy="120" rx="42" ry="72" transform="rotate(-35 120 120)" opacity=".6" />
-                <path d="M62 62L178 178" opacity=".35" />
-              </g>
-              <g className={styles.nodes}>
-                <circle cx="120" cy="120" r="5" fill="currentColor" />
-                <circle cx="187" cy="73" r="3.5" fill="currentColor" />
-                <circle cx="53" cy="167" r="3" fill="currentColor" />
-                <circle cx="120" cy="38" r="3" fill="currentColor" />
-              </g>
-            </svg>
-          </div>
+          {waiting || state === "payment-check" || state === "reading" ? <BookPublishingVisual animate={waiting} /> : null}
           <div className={styles.body}>
-            {paid ? <p className={styles.eyebrow}>결제가 정상적으로 완료되었습니다.</p> : null}
             <div role="status" aria-live="polite" aria-atomic="true">
               <h1 id="report-status-title" className={styles.title}>{title ?? copy[state].title}</h1>
               <p className={styles.message}>{message ?? copy[state].message}</p>

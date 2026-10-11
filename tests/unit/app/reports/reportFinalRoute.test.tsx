@@ -13,6 +13,8 @@ import { createLoveV3 } from "../../../../src/lib/report-generation/loveV3Genera
 import { createCompatibilityV3 } from "../../../../src/lib/report-generation/compatibilityV3Generation";
 import { createMajorFortuneV3 } from "../../../../src/lib/report-generation/majorFortuneV3Generation";
 
+// Isolated legacy snapshots enter after the unchanged owner lookup.
+vi.mock("../../../../src/lib/book/ownerAccess", () => ({ loadOwnedTicketBook: async () => ({ kind: "absent" }) }));
 vi.mock("../../../../src/lib/reports/supabasePaidReportResultAdapter", () => ({ getPaidReportResult: vi.fn() }));
 
 const products: [ReportProductKey, ReportProductSlug][] = [

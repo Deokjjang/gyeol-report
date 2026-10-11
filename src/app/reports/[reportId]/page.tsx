@@ -339,24 +339,13 @@ function ResultShell({
 }
 
 function renderInvalidState() {
-  return (
-    <ResultShell>
-      <div className="space-y-4 rounded-xl border border-[#d8d1c4] bg-[#fffdf8] p-6 shadow-[0_22px_80px_rgba(40,24,28,0.10)]">
-        <h1 className="text-3xl font-bold tracking-tight text-[#211815]">
-          리포트 정보가 올바르지 않습니다.
-        </h1>
-        <p className="text-base leading-7 text-[#6f675d]">
-          리포트 주소를 다시 확인해 주세요.
-        </p>
-      </div>
-    </ResultShell>
-  );
+  return <ReportStatusView state="unavailable" title="리포트 정보가 올바르지 않습니다." message="리포트 주소를 다시 확인해 주세요." />;
 }
 
 function renderUnavailableState() {
   return (
     <ReportStatusView
-      state="payment-check"
+      state="unavailable"
       title="리포트 상태를 확인하지 못했습니다"
       message="잠시 후 이 주소에서 다시 확인해 주세요. 계속 확인이 어려우시면 고객센터로 문의해 주세요."
       support
@@ -369,18 +358,7 @@ function renderExpiredState() {
 }
 
 function renderInvalidSnapshotState() {
-  return (
-    <ResultShell>
-      <div className="space-y-4 rounded-xl border border-[#d8d1c4] bg-[#fffdf8] p-6 shadow-[0_22px_80px_rgba(40,24,28,0.10)]">
-        <h1 className="text-3xl font-bold tracking-tight text-[#211815]">
-          리포트를 불러오지 못했습니다.
-        </h1>
-        <p className="text-base leading-7 text-[#6f675d]">
-          저장된 리포트 형식을 확인할 수 없습니다.
-        </p>
-      </div>
-    </ResultShell>
-  );
+  return <ReportStatusView state="unavailable" title="리포트를 불러오지 못했습니다." message="저장된 리포트 형식을 확인할 수 없습니다." />;
 }
 
 function renderUnsupportedProductPreviewState() {
@@ -1572,7 +1550,7 @@ export default async function ReportResultPage({
       const { StoredBookReport } = await import("../../../lib/book/storedReport");
       return <StoredBookReport snapshot={ticket.snapshot} shareOwner={{ reportId: ticket.snapshot.reportId }} />;
     }
-    if (ticket.kind === "storageError") return <ResultShell><p role="alert">책의 열람 정보를 확인하지 못했습니다. 잠시 후 다시 열어 주세요.</p></ResultShell>;
+    if (ticket.kind === "storageError") return <ReportStatusView state="unavailable" title="책의 열람 정보를 확인하지 못했습니다." message="잠시 후 다시 열어 주세요." support />;
     if (ticket.kind === "expired") return renderExpiredState();
     if (ticket.kind === "invalidSnapshot") return renderInvalidSnapshotState();
   }

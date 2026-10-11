@@ -9,6 +9,8 @@ vi.mock("../../../src/lib/sharing/reportShareStore", () => ({ existingReportShar
 vi.mock("next/navigation", () => ({ usePathname: () => "/", useSearchParams: () => new URLSearchParams(), notFound: () => { throw new Error("404"); } }));
 import Home from "../../../src/app/page";
 import InputLayout from "../../../src/app/report/new/layout";
+// Mock owner acknowledgement for isolated paid fixtures; owner denial is tested separately.
+vi.mock("../../../src/lib/book/ownerAccess", () => ({ loadOwnedTicketBook: async () => ({ kind: "absent" }), canReadPurchasedBook: async () => true }));
 import ReportPage from "../../../src/app/reports/[reportId]/page";
 import LocalHome from "../../../src/app/dev/book-flow/page";
 import { POST as localApi } from "../../../src/app/dev/book-flow/api/route";

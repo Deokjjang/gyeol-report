@@ -1,4 +1,4 @@
-export const AUTO_INTERVAL = 6500;
+export const AUTO_INTERVAL = 4500;
 export const AUTO_IDLE = 8500;
 
 /** One cancellable timer. No queued intervals after manual input/hidden tabs. */

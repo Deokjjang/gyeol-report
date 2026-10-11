@@ -177,7 +177,8 @@ describe("book preview: development-only presentation", () => {
   it("back cover has exactly three icon actions, without SDK/runtime or second CTA", () => {
     const html = reader("back");
     expect(html.match(/<button\b/g)).toHaveLength(3);
-    expect(html.match(/<svg\b/g)).toHaveLength(3);
+    expect(html.match(/<svg\b/g)).toHaveLength(2);
+    expect(html).toContain("/brand/kakao-talk-share.svg");
     for (const label of ["카카오톡", "공유", "링크 복사"]) expect(html).toContain(label);
     expect(html).not.toMatch(/SHARE YOUR|DISCOVER|내 리포트/);
   });

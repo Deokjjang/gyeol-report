@@ -9,6 +9,8 @@ import * as generation from "../../../../src/lib/report-generation/generateProdu
 const mocks = vi.hoisted(() => ({ call: vi.fn() }));
 vi.mock("next/navigation", () => ({ useRouter: () => ({ refresh: vi.fn() }) }));
 vi.mock("../../../../src/lib/payment/paidReportReliabilityStore", () => ({ createPaidReportReliabilityStore: () => ({ call: mocks.call }) }));
+// These persisted legacy paid fixtures exercise the canonical reader after owner authorization.
+vi.mock("../../../../src/lib/book/ownerAccess", () => ({ loadOwnedTicketBook: async () => ({ kind: "absent" }), canReadPurchasedBook: async () => true }));
 import ReportResultPage from "../../../../src/app/reports/[reportId]/page";
 
 function visibleText(html: string) {
