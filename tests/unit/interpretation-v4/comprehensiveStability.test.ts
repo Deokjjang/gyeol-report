@@ -67,6 +67,7 @@ it.each(stabilityFixtures(cohort))("$id $precision publishes with actual roles, 
       return (a.source?.phrases ?? []).flatMap(p => sentences.filter(s => s.text === p.text && !s.sourceUnitIds.some(id => key.endsWith(id))).map(s => ({ planned: key, phrase: p.id, role: p.role, consumedBy: s.sourceUnitIds, consumedPhrase: s.sourcePhraseId })));
     }) : [],
     book: false, stored: false,
+    reader: null as null | { version: string; length: number; chapters: number; paragraphs: number; quality: string[]; hard: string[] },
   };
   rows.push(row);
   if (expectedRejection) {
@@ -76,6 +77,12 @@ it.each(stabilityFixtures(cohort))("$id $precision publishes with actual roles, 
   }
   if (!result.ok) { expect(row.status, `${f.id}: ${JSON.stringify({ stage: row.stage, violations: row.violations, hard: row.hard })}`).toBe("SUPPORTED_PUBLICATION_PASS"); return; }
   const e = result.evidencePacket as V4RuntimeEvidence, book = projectBook(e);
+  if(e.composition.product==="saju_mbti_full"&&"integration" in e.composition.result) {
+    const {readerEdition:reader,readerValidation:validation}=e.composition.result.integration;
+    row.reader={version:reader.version,length:reader.bodyLength,chapters:reader.chapters.length,
+      paragraphs:reader.chapters.reduce((sum,c)=>sum+c.paragraphs.length,0),quality:validation.qualityIssues,hard:validation.hardErrors};
+    expect(validation.hardErrors).toEqual([]);
+  }
   expect(validateV4Publication(e.productType, result.draft, e)).toEqual({ ok: true, errors: [] });
   expect(!!book).toBe(true); row.book = !!book;
   expect(draft?.validation.hardViolations).toEqual([]);

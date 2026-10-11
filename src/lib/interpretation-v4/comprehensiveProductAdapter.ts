@@ -11,12 +11,14 @@ import { renderComprehensiveManuscript } from "./comprehensiveManuscriptRenderer
 import { COMPREHENSIVE_SECTIONS } from "./comprehensivePlanCore";
 import { buildMyeongliMaterialPacket } from "./materialPacket";
 import type { NarrativeInput, NarrativeBlock, NarrativeSection, ComprehensiveNarrative, NarrativeProof } from "./narrativeTypes";
+import { renderComprehensiveRelease } from "./comprehensiveReleaseRenderer";
+import { validateComprehensiveRelease } from "./comprehensiveReleaseValidator";
 
-export const COMPREHENSIVE_PRODUCT_VERSION = "comprehensive-product-13d-6b-v1";
+export const COMPREHENSIVE_PRODUCT_VERSION = "comprehensive-editorial-release-01-v1";
 const fail = (error: string) => ({ ok: false as const, errors: [error] });
 
-/** One generation-time orchestration boundary. Frozen engines supply every
- * sentence; existing narrative/storage contracts carry the result. Readers do
+/** One generation-time orchestration boundary. Frozen engines supply the
+ * proof; versioned editorial materials supply its reader applications. Readers do
  * not import this module, and old persisted compositions are never regenerated. */
 export function buildV4ComprehensiveProduct(input: NarrativeInput) {
   const m = buildIntegratedMyeongliProfile(input.calculation);
@@ -72,13 +74,22 @@ export function buildV4ComprehensiveProduct(input: NarrativeInput) {
   // rather than core recall. Keep that frozen sentence; never invent a closer.
   const finalLine = last?.sentences.find(s => s.sourcePhraseId.endsWith(":core-recall"))?.text ?? last?.sentences.at(-1)?.text;
   if (!opening.length || !finalLine || !sections.some(s => s.id === "direction")) return fail("COMPREHENSIVE_PRIMARY_CONTENT_MISSING");
-  const narrative = { version: "v4-comprehensive-narrative-1", headline: draft.sections.C1.title,
+  const legacyNarrative = { version: "v4-comprehensive-narrative-1", headline: draft.sections.C1.title,
     opening, sections, finalLine, finalProof: proof(last!.sentences.flatMap(s => s.evidenceIds)) } satisfies ComprehensiveNarrative;
+  const release = renderComprehensiveRelease(input, profiles, rendered.plan, draft);
+  const releaseValidation = validateComprehensiveRelease(release.draft, profiles, rendered.plan);
+  if (releaseValidation.hardErrors.length) return fail("COMPREHENSIVE_RELEASE_UNSAFE");
+  // Quality findings remain diagnostics rather than a new paid-publication gate.
+  const narrative = release.narrative.opening.length && release.narrative.sections.some(s => s.id === "direction")
+    ? release.narrative : legacyNarrative;
   return { ok: true as const, writerVersion: COMPREHENSIVE_PRODUCT_VERSION, narrative,
     // Existing appendix material selection is retained, not used to write prose.
     materials: buildMyeongliMaterialPacket({ calculation: input.calculation, mbti: input.mbti }), editorial: [],
     integration: { reportStableKey, manuscriptVersion: draft.version, coreGyeol: draft.coreGyeol.text, context: g.value.context,
-      explicitMbtiUsage: draft.explicitMbtiUsage, represented, hardViolations: draft.validation.hardViolations,
-      suppressed: draft.diagnostics.suppressed } };
+      explicitMbtiUsage: narrative === release.narrative ? release.draft.explicitMbtiUsage : draft.explicitMbtiUsage,
+      publishedEdition: narrative === release.narrative ? release.draft.version : draft.version,
+      represented, hardViolations: draft.validation.hardViolations,
+      suppressed: draft.diagnostics.suppressed, readerEdition: release.draft,
+      readerValidation: releaseValidation } };
 }
 export type ComprehensiveProduct = Extract<ReturnType<typeof buildV4ComprehensiveProduct>, { ok: true }>;

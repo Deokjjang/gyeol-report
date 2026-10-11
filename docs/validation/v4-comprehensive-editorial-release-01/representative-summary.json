@@ -1,0 +1,66 @@
+[
+  {
+    "id": "01-seojin",
+    "length": 10492,
+    "chapters": 13,
+    "paragraphs": 52,
+    "quality": [],
+    "explicitMbti": 5
+  },
+  {
+    "id": "02-seoyun",
+    "length": 10457,
+    "chapters": 13,
+    "paragraphs": 52,
+    "quality": [],
+    "explicitMbti": 6
+  },
+  {
+    "id": "C-same-chart-INFP",
+    "length": 10593,
+    "chapters": 13,
+    "paragraphs": 52,
+    "quality": [],
+    "explicitMbti": 6
+  },
+  {
+    "id": "D-same-MBTI-other-chart",
+    "length": 10625,
+    "chapters": 13,
+    "paragraphs": 52,
+    "quality": [],
+    "explicitMbti": 7
+  },
+  {
+    "id": "E-unknown-MBTI",
+    "length": 10484,
+    "chapters": 13,
+    "paragraphs": 52,
+    "quality": [],
+    "explicitMbti": 0
+  },
+  {
+    "id": "F-unknown-hour",
+    "length": 10855,
+    "chapters": 13,
+    "paragraphs": 52,
+    "quality": [],
+    "explicitMbti": 7
+  },
+  {
+    "id": "G-student",
+    "length": 10498,
+    "chapters": 13,
+    "paragraphs": 52,
+    "quality": [],
+    "explicitMbti": 5
+  },
+  {
+    "id": "H-married",
+    "length": 10496,
+    "chapters": 13,
+    "paragraphs": 52,
+    "quality": [],
+    "explicitMbti": 5
+  }
+]

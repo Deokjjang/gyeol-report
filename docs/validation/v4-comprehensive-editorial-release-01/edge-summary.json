@@ -1,0 +1,166 @@
+[
+  {
+    "id": "S002",
+    "length": 10403,
+    "chaptersWithBody": 13,
+    "paragraphs": 51,
+    "qualityIssues": [
+      "CH12.P4:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH12:PARAGRAPH_COUNT:3"
+    ],
+    "hardErrors": []
+  },
+  {
+    "id": "S005",
+    "length": 9643,
+    "chaptersWithBody": 13,
+    "paragraphs": 47,
+    "qualityIssues": [
+      "CH07.P2:NO_INDEPENDENT_STRENGTH_SOURCE",
+      "CH07.P3:NO_INDEPENDENT_STRENGTH_SOURCE",
+      "CH12.P2:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH12.P3:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH12.P4:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH07:PARAGRAPH_COUNT:2",
+      "CH12:PARAGRAPH_COUNT:1"
+    ],
+    "hardErrors": []
+  },
+  {
+    "id": "S019",
+    "length": 10706,
+    "chaptersWithBody": 13,
+    "paragraphs": 52,
+    "qualityIssues": [],
+    "hardErrors": []
+  },
+  {
+    "id": "S038",
+    "length": 9953,
+    "chaptersWithBody": 13,
+    "paragraphs": 50,
+    "qualityIssues": [
+      "CH07.P3:NO_INDEPENDENT_STRENGTH_SOURCE",
+      "CH12.P4:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH07:PARAGRAPH_COUNT:3",
+      "CH12:PARAGRAPH_COUNT:3"
+    ],
+    "hardErrors": []
+  },
+  {
+    "id": "S062",
+    "length": 10595,
+    "chaptersWithBody": 13,
+    "paragraphs": 52,
+    "qualityIssues": [],
+    "hardErrors": []
+  },
+  {
+    "id": "S088",
+    "length": 9521,
+    "chaptersWithBody": 12,
+    "paragraphs": 47,
+    "qualityIssues": [
+      "CH07.P3:NO_INDEPENDENT_STRENGTH_SOURCE",
+      "CH12.P1:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH12.P2:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH12.P3:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH12.P4:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH12:CHAPTER_SOURCE_SCARCITY",
+      "CH07:PARAGRAPH_COUNT:3",
+      "CH12:PARAGRAPH_COUNT:0"
+    ],
+    "hardErrors": []
+  },
+  {
+    "id": "S089",
+    "length": 10467,
+    "chaptersWithBody": 13,
+    "paragraphs": 52,
+    "qualityIssues": [],
+    "hardErrors": []
+  },
+  {
+    "id": "S097",
+    "length": 10330,
+    "chaptersWithBody": 13,
+    "paragraphs": 52,
+    "qualityIssues": [],
+    "hardErrors": []
+  },
+  {
+    "id": "S098",
+    "length": 10548,
+    "chaptersWithBody": 13,
+    "paragraphs": 52,
+    "qualityIssues": [],
+    "hardErrors": []
+  },
+  {
+    "id": "S099",
+    "length": 8362,
+    "chaptersWithBody": 11,
+    "paragraphs": 40,
+    "qualityIssues": [
+      "CH07.P2:NO_INDEPENDENT_STRENGTH_SOURCE",
+      "CH07.P3:NO_INDEPENDENT_STRENGTH_SOURCE",
+      "CH10.P3:NO_INDEPENDENT_LOVE_SOURCE",
+      "CH10.P4:NO_INDEPENDENT_LOVE_SOURCE",
+      "CH11.P1:NO_INDEPENDENT_FAMILY_SOURCE",
+      "CH11.P2:NO_INDEPENDENT_FAMILY_SOURCE",
+      "CH11.P3:NO_INDEPENDENT_FAMILY_SOURCE",
+      "CH11.P4:NO_INDEPENDENT_FAMILY_SOURCE",
+      "CH11:CHAPTER_SOURCE_SCARCITY",
+      "CH12.P1:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH12.P2:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH12.P3:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH12.P4:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH12:CHAPTER_SOURCE_SCARCITY",
+      "BODY_LENGTH:8362",
+      "CH07:PARAGRAPH_COUNT:2",
+      "CH10:PARAGRAPH_COUNT:2",
+      "CH11:PARAGRAPH_COUNT:0",
+      "CH12:PARAGRAPH_COUNT:0"
+    ],
+    "hardErrors": []
+  },
+  {
+    "id": "S102",
+    "length": 7894,
+    "chaptersWithBody": 12,
+    "paragraphs": 37,
+    "qualityIssues": [
+      "CH05.P3:NO_INDEPENDENT_STRENGTH_SOURCE",
+      "CH07.P1:NO_INDEPENDENT_STRENGTH_SOURCE",
+      "CH07.P2:NO_INDEPENDENT_STRENGTH_SOURCE",
+      "CH07.P3:NO_INDEPENDENT_STRENGTH_SOURCE",
+      "CH07:CHAPTER_SOURCE_SCARCITY",
+      "CH08.P3:NO_INDEPENDENT_WORK_SOURCE",
+      "CH10.P2:NO_INDEPENDENT_LOVE_SOURCE",
+      "CH10.P3:NO_INDEPENDENT_LOVE_SOURCE",
+      "CH10.P4:NO_INDEPENDENT_LOVE_SOURCE",
+      "CH11.P2:NO_INDEPENDENT_FAMILY_SOURCE",
+      "CH11.P3:NO_INDEPENDENT_FAMILY_SOURCE",
+      "CH11.P4:NO_INDEPENDENT_FAMILY_SOURCE",
+      "CH12.P2:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH12.P3:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "CH12.P4:NO_INDEPENDENT_SOCIAL_SOURCE",
+      "BODY_LENGTH:7894",
+      "CH05:PARAGRAPH_COUNT:3",
+      "CH07:PARAGRAPH_COUNT:0",
+      "CH08:PARAGRAPH_COUNT:3",
+      "CH10:PARAGRAPH_COUNT:1",
+      "CH11:PARAGRAPH_COUNT:1",
+      "CH12:PARAGRAPH_COUNT:1"
+    ],
+    "hardErrors": []
+  },
+  {
+    "id": "S111",
+    "length": 10836,
+    "chaptersWithBody": 13,
+    "paragraphs": 52,
+    "qualityIssues": [],
+    "hardErrors": []
+  }
+]

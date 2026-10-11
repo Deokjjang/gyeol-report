@@ -24,8 +24,7 @@ describe("Phase13B stable chapter navigation and complete presentation", () => {
     const front = b.pages[1], end = b.pages.at(-2)!;
     if (front.kind !== "contents" || end.kind !== "contents") return;
     if (b.bookId === "full") {
-      expect(front.entries.length).toBeGreaterThanOrEqual(4);
-      expect(front.entries.length).toBeLessThanOrEqual(6);
+      expect(front.entries.length).toBe(13);
       expect(end.entries.length).toBeGreaterThan(front.entries.length);
     } else expect(end.entries.slice(1)).toEqual(front.entries);
     expect(new Set(front.entries.map(e => e.targetId)).size).toBe(front.entries.length);

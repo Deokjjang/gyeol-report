@@ -18,7 +18,7 @@ import { SHADOW_CLOCK, singleRuntimeInput } from "./runtimeFixtures";
 const root = "/private/tmp/gyeol-13d6b-comprehensive";
 const rows: unknown[] = [];
 const noop = () => {};
-const labels = ["나를 읽는 두 가지 결", "내가 가진 힘과 좋은 패", "사람 사이에서, 사랑 안에서", "일과 돈에 드러나는 나", "나를 지치게 하는 습관", "이런 나를 오래 잘 쓰는 법"];
+const labels = ["나라는 사람의 핵심", "타고난 기질과 오행", "명리와 MBTI가 만나는 곳", "사람들이 보는 나와 진짜 나", "타고난 장점과 재능", "조금 아픈 팩폭", "내가 가진 좋은 패", "일과 직업·학업", "돈과 재물", "사랑과 연애", "가족과 가까운 사람들", "친구와 사회생활", "나를 가장 잘 사용하는 방법"];
 const payload = (f = NARRATIVE_FIXTURES[0]) => singleRuntimeInput("saju_mbti_full", "saju-mbti-full", f);
 const clone = <T,>(v: T): T => JSON.parse(JSON.stringify(v));
 const unsafe = /\b(?:C(?:10|[1-9])|PR\d+|GS?\d+|SU?\d+|M\d+|F\d+|A\d+|P\d+|C0\d+|Fe|Fi|Te|Ti|Ne|Ni|Se|Si)\b|sourceNodeId|SemanticAxis|Claim Level|\[object Object\]|\b(?:undefined|null|NaN)\b/;
@@ -43,7 +43,7 @@ describe("13D-6B actual customer generation to persisted Book", () => {
     if (e.composition.product !== "saju_mbti_full" || !("integration" in e.composition.result)) return expect.unreachable();
     const result = e.composition.result, original = clone(e), data = projectBook(e)!;
     expect(input).toEqual(before); expect(e).toEqual(original);
-    expect(result.writerVersion).toBe("comprehensive-product-13d-6b-v1");
+    expect(result.writerVersion).toBe("comprehensive-editorial-release-01-v1");
     expect(validateV4Publication("saju_mbti_full", generated.draft, e)).toEqual({ ok: true, errors: [] });
     expect(result.integration.context.rawJobText).toBe(f.context.detailJob);
     const natal = buildIntegratedMyeongliProfile(e.calculations.person);
@@ -65,7 +65,9 @@ describe("13D-6B actual customer generation to persisted Book", () => {
     }
     const chapters = data.pages.filter(p => p.kind === "narrative");
     const texts = chapters.flatMap(p => p.paragraphs.map(b => b.text));
-    expect(texts).toEqual(Object.values(manuscript.draft.sections).flatMap(s => s.blocks.map(b => b.plainText)));
+    expect(texts).toEqual(result.integration.readerEdition.chapters.flatMap(c => c.paragraphs.map(p => p.text)));
+    expect(chapters).toHaveLength(13);
+    expect(result.integration.readerValidation.hardErrors).toEqual([]);
     expect(texts.join("\n")).not.toMatch(unsafe);
     expect(data.pages.filter(p => p.kind === "contents").find(p => p.id === "contents")?.entries.map(e => e.title),
       JSON.stringify({ rejected: manuscript.renderability.rejected, initialRelation: plan.sections.C7.placements, finalRelation: manuscript.plan.sections.C7.placements,
@@ -86,12 +88,8 @@ describe("13D-6B actual customer generation to persisted Book", () => {
     expect(data.pages.at(-1)).toMatchObject({ kind: "back", finalLine: result.narrative.finalLine });
     const closing = chapters.find(p => p.id === "chapter-direction")!;
     expect(closing).toBeDefined();
-    for (const title of result.integration.represented.find(u => u.unit === "C10")!.headings.filter(Boolean)) {
-      expect([closing.title, ...closing.paragraphs.map(p => p.heading)]).toContain(title);
-    }
-    result.integration.represented.find(u => u.unit === "C10")!.headings.forEach((title, i) => {
-      if (title && (i > 0 || title !== closing.title)) expect(closing.paragraphs[i].heading).toBe(title);
-    });
+    const readerClosing = result.integration.readerEdition.chapters.find(c => c.id === "CH13")!;
+    expect(closing.paragraphs.map(p => p.heading)).toEqual(readerClosing.paragraphs.map(p => p.purpose));
     if (!f.mbti) { expect(result.integration.explicitMbtiUsage).toBe(0); expect(texts.join("\n")).not.toMatch(/\b[EI][SN][TF][JP]\b|MBTI를 입력/); }
     const row = { id: f.id, name: f.name, durationMs, pages: data.pages.length, paragraphs: texts.length, appendix: data.pages.filter(p => p.kind === "appendix").flatMap(p => p.items).length, empty: 0, omittedUnits: Object.values(manuscript.draft.sections).filter(s => !s.blocks.length).map(s => s.sectionId), hard: manuscript.draft.validation.hardViolations, digest: v4Digest(data), input };
     rows.push(row);
