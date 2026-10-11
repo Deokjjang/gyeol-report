@@ -1,0 +1,3819 @@
+[
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "대표 업무 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:flexibility:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "구체적 업무 상황",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:flexibility:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "그 방식의 장점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:flexibility:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "기억할 업무 정체성",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:flexibility:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 명리 근거",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ADAPTABILITY:work:ADAPTABILITY:1:ADAPTABILITY:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SAME_DIRECTION_ADAPTABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:ADAPTABILITY:work:ADAPTABILITY:1:ADAPTABILITY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "쉬운 의미",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ADAPTABILITY:work:ADAPTABILITY:1:ADAPTABILITY:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SAME_DIRECTION_ADAPTABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:ADAPTABILITY:work:ADAPTABILITY:1:ADAPTABILITY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "실제 MBTI 업무 특성",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ADAPTABILITY:work:ADAPTABILITY:1:ADAPTABILITY:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:workplace:deadline_sprint_style:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:REINFORCE:ADAPTABILITY:work:ADAPTABILITY:1:ADAPTABILITY:1"
+    ],
+    "semanticTheme": "SAME_DIRECTION_ADAPTABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:ADAPTABILITY:work:ADAPTABILITY:1:ADAPTABILITY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "두 분석의 결합",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ADAPTABILITY:work:ADAPTABILITY:1:ADAPTABILITY:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:workplace:deadline_sprint_style:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:REINFORCE:ADAPTABILITY:work:ADAPTABILITY:1:ADAPTABILITY:1"
+    ],
+    "semanticTheme": "SAME_DIRECTION_ADAPTABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:ADAPTABILITY:work:ADAPTABILITY:1:ADAPTABILITY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "시작 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR009",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "IDEA_FLEX_EXECUTE_STRUCTURED",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:structure:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STRUCTURE_STYLE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR009"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "진행 중 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR009",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "IDEA_FLEX_EXECUTE_STRUCTURED",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:structure:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STRUCTURE_STYLE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR009"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "마무리 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR009",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "IDEA_FLEX_EXECUTE_STRUCTURED",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:structure:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STRUCTURE_STYLE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR009"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "효과적인 조건과 주의점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR009",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "IDEA_FLEX_EXECUTE_STRUCTURED",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:structure:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STRUCTURE_STYLE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR009"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "능력이 살아나는 환경",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:hour:visible:丙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:autonomy:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "적합한 이유",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:hour:visible:丙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:autonomy:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "불편한 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:hour:visible:丙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:autonomy:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:hour:visible:丙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:autonomy:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "주요 강점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR093",
+    "evidenceIds": [
+      "natal:ten-god:year:MINOR:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_AND_REALITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:meaning:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR093"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR093",
+    "evidenceIds": [
+      "natal:ten-god:year:MINOR:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_AND_REALITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:meaning:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR093"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "발휘 장면",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR093",
+    "evidenceIds": [
+      "natal:ten-god:year:MINOR:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_AND_REALITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:meaning:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR093"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "실제 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR093",
+    "evidenceIds": [
+      "natal:ten-god:year:MINOR:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_AND_REALITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:meaning:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR093"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "다른 재능",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:creation:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CREATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:creation:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CREATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "문제 해결 장면",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:creation:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CREATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "발전 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:creation:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CREATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "덜 익숙한 활용 가능성",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C017:work:ADAPTABILITY:1:INITIATIVE:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:career:community_event_starter:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C017:work:ADAPTABILITY:1:INITIATIVE:1"
+    ],
+    "semanticTheme": "START_AND_ADJUST",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C017:work:ADAPTABILITY:1:INITIATIVE:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 결합 근거",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C017:work:ADAPTABILITY:1:INITIATIVE:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:career:community_event_starter:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C017:work:ADAPTABILITY:1:INITIATIVE:1"
+    ],
+    "semanticTheme": "START_AND_ADJUST",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C017:work:ADAPTABILITY:1:INITIATIVE:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "다른 업무의 활용",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C017:work:ADAPTABILITY:1:INITIATIVE:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:career:community_event_starter:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C017:work:ADAPTABILITY:1:INITIATIVE:1"
+    ],
+    "semanticTheme": "START_AND_ADJUST",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C017:work:ADAPTABILITY:1:INITIATIVE:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "가능성의 의미",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C017:work:ADAPTABILITY:1:INITIATIVE:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:career:community_event_starter:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C017:work:ADAPTABILITY:1:INITIATIVE:1"
+    ],
+    "semanticTheme": "START_AND_ADJUST",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C017:work:ADAPTABILITY:1:INITIATIVE:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "공통 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "natal:day:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:stability:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "성과로 바꿀 요소",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "natal:day:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:stability:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "부족해질 부분",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "natal:day:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:stability:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "구체적 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "natal:day:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:stability:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "적합한 직무의 공통점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR096",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "RESPONSIBILITY_AND_SELF_DIRECTION",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:leadership:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DUTY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR096"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR096",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "RESPONSIBILITY_AND_SELF_DIRECTION",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:leadership:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DUTY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR096"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "만족 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR096",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "RESPONSIBILITY_AND_SELF_DIRECTION",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:leadership:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DUTY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR096"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "직업 선택 기준",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR096",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "RESPONSIBILITY_AND_SELF_DIRECTION",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:leadership:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DUTY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR096"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 첫 추천",
+    "sourceCandidateId": "career-route:create",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:create",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "route:create",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "branch:辰",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_munchang",
+        "canonical-natal-table-v1:features:sinsal_hongyeom",
+        "careerContextV3:normalized-dimensions",
+        "dayStem:戊",
+        "docs/product/mbti/source/ENFP.json:traits:thinkingStyle:ne_connection_thinking",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:ENFP:recommendedJobs:콘텐츠 기획자",
+        "natal:gwiin_munchang",
+        "natal:sinsal_hongyeom",
+        "position:day",
+        "position:hour",
+        "sajuFeatureTaxonomy:gwiin_munchang",
+        "sajuFeatureTaxonomy:sinsal_hongyeom",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:HONGYEOMSAL",
+        "shinsal:MUN_CHANG_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwiin:무:신",
+        "v1:gwiin:문창귀인",
+        "v1:sinsal:홍염살",
+        "v4:career-route:create",
+        "v4:career-setting:design",
+        "v4:career-voice:creative",
+        "v4:fusion-rule:enfp-connection",
+        "v4:material-depth:gwiin_munchang",
+        "v4:material-depth:sinsal_hongyeom",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "foundation:element:WATER:BALANCED",
+        "natal:month:branch:亥",
+        "natal:ten-god:day:MAIN:庚",
+        "natal:ten-god:hour:visible:丙",
+        "supplement:marker:GWIMUN",
+        "supplement:marker:MUNCHANG",
+        "supplement:marker:TAEGEUK",
+        "supplement:marker:WOL",
+        "supplement:stage:day:병"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "추천 이유",
+    "sourceCandidateId": "career-route:create",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:create",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "route:create",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "branch:辰",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_munchang",
+        "canonical-natal-table-v1:features:sinsal_hongyeom",
+        "careerContextV3:normalized-dimensions",
+        "dayStem:戊",
+        "docs/product/mbti/source/ENFP.json:traits:thinkingStyle:ne_connection_thinking",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:ENFP:recommendedJobs:콘텐츠 기획자",
+        "natal:gwiin_munchang",
+        "natal:sinsal_hongyeom",
+        "position:day",
+        "position:hour",
+        "sajuFeatureTaxonomy:gwiin_munchang",
+        "sajuFeatureTaxonomy:sinsal_hongyeom",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:HONGYEOMSAL",
+        "shinsal:MUN_CHANG_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwiin:무:신",
+        "v1:gwiin:문창귀인",
+        "v1:sinsal:홍염살",
+        "v4:career-route:create",
+        "v4:career-setting:design",
+        "v4:career-voice:creative",
+        "v4:fusion-rule:enfp-connection",
+        "v4:material-depth:gwiin_munchang",
+        "v4:material-depth:sinsal_hongyeom",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "foundation:element:WATER:BALANCED",
+        "natal:month:branch:亥",
+        "natal:ten-god:day:MAIN:庚",
+        "natal:ten-god:hour:visible:丙",
+        "supplement:marker:GWIMUN",
+        "supplement:marker:MUNCHANG",
+        "supplement:marker:TAEGEUK",
+        "supplement:marker:WOL",
+        "supplement:stage:day:병"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "활용 강점",
+    "sourceCandidateId": "career-route:create",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:create",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "route:create",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "branch:辰",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_munchang",
+        "canonical-natal-table-v1:features:sinsal_hongyeom",
+        "careerContextV3:normalized-dimensions",
+        "dayStem:戊",
+        "docs/product/mbti/source/ENFP.json:traits:thinkingStyle:ne_connection_thinking",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:ENFP:recommendedJobs:콘텐츠 기획자",
+        "natal:gwiin_munchang",
+        "natal:sinsal_hongyeom",
+        "position:day",
+        "position:hour",
+        "sajuFeatureTaxonomy:gwiin_munchang",
+        "sajuFeatureTaxonomy:sinsal_hongyeom",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:HONGYEOMSAL",
+        "shinsal:MUN_CHANG_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwiin:무:신",
+        "v1:gwiin:문창귀인",
+        "v1:sinsal:홍염살",
+        "v4:career-route:create",
+        "v4:career-setting:design",
+        "v4:career-voice:creative",
+        "v4:fusion-rule:enfp-connection",
+        "v4:material-depth:gwiin_munchang",
+        "v4:material-depth:sinsal_hongyeom",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "foundation:element:WATER:BALANCED",
+        "natal:month:branch:亥",
+        "natal:ten-god:day:MAIN:庚",
+        "natal:ten-god:hour:visible:丙",
+        "supplement:marker:GWIMUN",
+        "supplement:marker:MUNCHANG",
+        "supplement:marker:TAEGEUK",
+        "supplement:marker:WOL",
+        "supplement:stage:day:병"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "현실적 조건",
+    "sourceCandidateId": "career-route:create",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:create",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "route:create",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "branch:辰",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_munchang",
+        "canonical-natal-table-v1:features:sinsal_hongyeom",
+        "careerContextV3:normalized-dimensions",
+        "dayStem:戊",
+        "docs/product/mbti/source/ENFP.json:traits:thinkingStyle:ne_connection_thinking",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:ENFP:recommendedJobs:콘텐츠 기획자",
+        "natal:gwiin_munchang",
+        "natal:sinsal_hongyeom",
+        "position:day",
+        "position:hour",
+        "sajuFeatureTaxonomy:gwiin_munchang",
+        "sajuFeatureTaxonomy:sinsal_hongyeom",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:HONGYEOMSAL",
+        "shinsal:MUN_CHANG_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwiin:무:신",
+        "v1:gwiin:문창귀인",
+        "v1:sinsal:홍염살",
+        "v4:career-route:create",
+        "v4:career-setting:design",
+        "v4:career-voice:creative",
+        "v4:fusion-rule:enfp-connection",
+        "v4:material-depth:gwiin_munchang",
+        "v4:material-depth:sinsal_hongyeom",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "foundation:element:WATER:BALANCED",
+        "natal:month:branch:亥",
+        "natal:ten-god:day:MAIN:庚",
+        "natal:ten-god:hour:visible:丙",
+        "supplement:marker:GWIMUN",
+        "supplement:marker:MUNCHANG",
+        "supplement:marker:TAEGEUK",
+        "supplement:marker:WOL",
+        "supplement:stage:day:병"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "다른 실제 추천",
+    "sourceCandidateId": "career-route:experience",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:experience",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "route:experience",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "SajuCalcResult:tenGods.distribution:食神",
+        "calendar:saju-calendar-kst-v2",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/ENFP.json:traits:thinkingStyle:ne_connection_thinking",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:ENFP:recommendedJobs:예술가",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_shi_shen",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v4:career-route:experience",
+        "v4:career-setting:design",
+        "v4:career-voice:creative",
+        "v4:fusion-rule:enfp-connection",
+        "v4:material-depth:ten_god_shi_shen",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "v4:semantic-meaning:ten_god_shi_shen"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "career-route:experience",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:experience",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "route:experience",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "SajuCalcResult:tenGods.distribution:食神",
+        "calendar:saju-calendar-kst-v2",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/ENFP.json:traits:thinkingStyle:ne_connection_thinking",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:ENFP:recommendedJobs:예술가",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_shi_shen",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v4:career-route:experience",
+        "v4:career-setting:design",
+        "v4:career-voice:creative",
+        "v4:fusion-rule:enfp-connection",
+        "v4:material-depth:ten_god_shi_shen",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "v4:semantic-meaning:ten_god_shi_shen"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "발휘 능력",
+    "sourceCandidateId": "career-route:investigate",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:investigate",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "route:investigate",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/ENFP.json:traits:thinkingStyle:ne_connection_thinking",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwimun:pair",
+        "v4:career-route:investigate",
+        "v4:career-setting:design",
+        "v4:career-voice:creative",
+        "v4:fusion-rule:enfp-connection",
+        "v4:material-depth:sinsal_gwimun",
+        "v4:material-depth:ten_god_pian_yin",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "foundation:element:WATER:BALANCED",
+        "natal:month:branch:亥",
+        "natal:ten-god:day:MAIN:庚",
+        "natal:ten-god:hour:visible:丙",
+        "supplement:marker:GWIMUN",
+        "supplement:marker:MUNCHANG",
+        "supplement:marker:TAEGEUK",
+        "supplement:marker:WOL",
+        "supplement:stage:day:병"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "준비와 조건",
+    "sourceCandidateId": "career-route:investigate",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:investigate",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "route:investigate",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/ENFP.json:traits:thinkingStyle:ne_connection_thinking",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwimun:pair",
+        "v4:career-route:investigate",
+        "v4:career-setting:design",
+        "v4:career-voice:creative",
+        "v4:fusion-rule:enfp-connection",
+        "v4:material-depth:sinsal_gwimun",
+        "v4:material-depth:ten_god_pian_yin",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "foundation:element:WATER:BALANCED",
+        "natal:month:branch:亥",
+        "natal:ten-god:day:MAIN:庚",
+        "natal:ten-god:hour:visible:丙",
+        "supplement:marker:GWIMUN",
+        "supplement:marker:MUNCHANG",
+        "supplement:marker:TAEGEUK",
+        "supplement:marker:WOL",
+        "supplement:stage:day:병"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S5",
+    "roleDescription": "준비와 조건",
+    "sourceCandidateId": "career-route:investigate",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:investigate",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "route:investigate:environment",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/ENFP.json:traits:thinkingStyle:ne_connection_thinking",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwimun:pair",
+        "v4:career-route:investigate",
+        "v4:career-setting:design",
+        "v4:career-voice:creative",
+        "v4:fusion-rule:enfp-connection",
+        "v4:material-depth:sinsal_gwimun",
+        "v4:material-depth:ten_god_pian_yin",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "foundation:element:WATER:BALANCED",
+        "natal:month:branch:亥",
+        "natal:ten-god:day:MAIN:庚",
+        "natal:ten-god:hour:visible:丙",
+        "supplement:marker:GWIMUN",
+        "supplement:marker:MUNCHANG",
+        "supplement:marker:TAEGEUK",
+        "supplement:marker:WOL",
+        "supplement:stage:day:병"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 회피 환경",
+    "sourceCandidateId": "career-avoid:0",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "VERIFIED_AVOID_ENVIRONMENT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "avoid:0",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_munchang",
+        "dayStem:戊",
+        "docs/product/mbti/source/ENFP.json:traits:thinkingStyle:ne_connection_thinking",
+        "natal:gwiin_munchang",
+        "position:day",
+        "sajuFeatureTaxonomy:gwiin_munchang",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:MUN_CHANG_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwiin:무:신",
+        "v1:gwiin:문창귀인",
+        "v4:career-route:create:environment",
+        "v4:career-voice:creative",
+        "v4:fusion-rule:enfp-connection",
+        "v4:material-depth:gwiin_munchang",
+        "v4:semantic-meaning:ten_god_pian_yin"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "불편한 이유",
+    "sourceCandidateId": "career-avoid:1",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "VERIFIED_AVOID_ENVIRONMENT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "avoid:1",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "SajuCalcResult:tenGods.distribution:食神",
+        "calendar:saju-calendar-kst-v2",
+        "docs/product/mbti/source/ENFP.json:traits:thinkingStyle:ne_connection_thinking",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_shi_shen",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v4:career-route:experience:environment",
+        "v4:career-voice:creative",
+        "v4:fusion-rule:enfp-connection",
+        "v4:material-depth:ten_god_shi_shen",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "v4:semantic-meaning:ten_god_shi_shen"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "가능한 문제",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "avoid:cost",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "회피와 조정 구분",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "avoid:adjustment",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "협업 특징",
+    "sourceCandidateId": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOOD_RELATION_RECIPROCITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:care:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "direction": 1,
+      "sourceRefs": [
+        "P02_GOOD_RELATION_RECIPROCITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "소통 근거",
+    "sourceCandidateId": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOOD_RELATION_RECIPROCITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:care:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "direction": 1,
+      "sourceRefs": [
+        "P02_GOOD_RELATION_RECIPROCITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "타인에게 주는 장점",
+    "sourceCandidateId": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOOD_RELATION_RECIPROCITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:care:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "direction": 1,
+      "sourceRefs": [
+        "P02_GOOD_RELATION_RECIPROCITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "좋은 협업 조건",
+    "sourceCandidateId": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOOD_RELATION_RECIPROCITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:care:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "direction": 1,
+      "sourceRefs": [
+        "P02_GOOD_RELATION_RECIPROCITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "적합한 역할",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:resource:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRACTICALITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:resource:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRACTICALITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "적용 상황",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:resource:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRACTICALITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "한계",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:resource:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRACTICALITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "반복 위험",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "foundation:element:WOOD:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:persistence:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "foundation:element:WOOD:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:persistence:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "충돌과 성과 비용",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "foundation:element:WOOD:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:persistence:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "조정 행동",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "foundation:element:WOOD:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:persistence:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "편안한 환경",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "natal:day:branch:申"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:flexibility:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "자율성 규칙 소통",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "natal:day:branch:申"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:flexibility:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "피할 문제",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "natal:day:branch:申"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:flexibility:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "개선 방법",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "natal:day:branch:申"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:flexibility:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "입력한 상태",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "연결 강점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR040",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:opportunity:current-strength",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "OPPORTUNITY_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR040"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "가능한 어려움",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR040",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:opportunity:current-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "OPPORTUNITY_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR040"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "현재 활용 능력",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YANG_EARTH",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:drive:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "INITIATIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "개인 근거",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YANG_EARTH",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:drive:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "INITIATIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "실제 가능한 활동",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YANG_EARTH",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:drive:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "INITIATIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "활용 방법",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YANG_EARTH",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:drive:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "INITIATIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "발전 능력",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:戊",
+    "evidenceIds": [
+      "natal:day:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_EARTH_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:boundary:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:戊"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "필요한 이유",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:戊",
+    "evidenceIds": [
+      "natal:day:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_EARTH_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:boundary:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:戊"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "부족해질 부분",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:戊",
+    "evidenceIds": [
+      "natal:day:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_EARTH_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:boundary:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:戊"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "성장 확인",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:戊",
+    "evidenceIds": [
+      "natal:day:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_EARTH_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:boundary:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:戊"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "상태별 우선순위",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "성급한 판단",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "작은 시도",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "다음 단계 기준",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "수익 관련 경향",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:resource:income",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "명리 재물 근거",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:resource:income-basis",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "MBTI 판단 선호",
+    "sourceCandidateId": "mbti:ENFP:traits:money:emotion_purchase_pause:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:money:emotion_purchase_pause:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_DECISION",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "money:actual-mbti",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:ENFP:traits:money:emotion_purchase_pause:plainKo"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "가치 생산 방식",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:resource:income-condition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "검증된 재능",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR040",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:opportunity:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "OPPORTUNITY_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR040"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR040",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:opportunity:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "OPPORTUNITY_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR040"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "직업적 활용",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR040",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:opportunity:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "OPPORTUNITY_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR040"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "경제적 가치 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR040",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:opportunity:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "OPPORTUNITY_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR040"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "가능한 약점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:year:MINOR:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:meaning:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "그 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:year:MINOR:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:meaning:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "지출 기회 시간 위험",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:year:MINOR:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:meaning:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:year:MINOR:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:meaning:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "관리 원칙",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "natal:hour:branch:辰"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "소득 비용 시간",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "natal:hour:branch:辰"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "개인 점검 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "natal:hour:branch:辰"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "현실적인 결론",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "natal:hour:branch:辰"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "학습 특징",
+    "sourceCandidateId": "mbti:ENFP:traits:study:interest_switch_learning:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:study:interest_switch_learning:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "canonical-natal-table-v1:features:gwiin_munchang",
+        "dayStem:戊",
+        "mbti:ENFP:traits:study:interest_switch_learning",
+        "mbti:coverage:direct",
+        "natal:gwiin_munchang",
+        "position:day",
+        "sajuFeatureTaxonomy:gwiin_munchang",
+        "shinsal:MUN_CHANG_GWIIN",
+        "v1:gwiin:무:신",
+        "v1:gwiin:문창귀인",
+        "v4:career-study:ENFP",
+        "v4:material-depth:gwiin_munchang"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 학업 자료",
+    "sourceCandidateId": "mbti:ENFP:traits:study:interest_switch_learning:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:study:interest_switch_learning:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "canonical-natal-table-v1:features:gwiin_munchang",
+        "dayStem:戊",
+        "mbti:ENFP:traits:study:interest_switch_learning",
+        "mbti:coverage:direct",
+        "natal:gwiin_munchang",
+        "position:day",
+        "sajuFeatureTaxonomy:gwiin_munchang",
+        "shinsal:MUN_CHANG_GWIIN",
+        "v1:gwiin:무:신",
+        "v1:gwiin:문창귀인",
+        "v4:career-study:ENFP",
+        "v4:material-depth:gwiin_munchang"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "명리 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "study:natal-basis",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CREATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "적합한 방식",
+    "sourceCandidateId": "mbti:ENFP:traits:study:interest_switch_learning:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:study:interest_switch_learning:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "canonical-natal-table-v1:features:gwiin_munchang",
+        "dayStem:戊",
+        "mbti:ENFP:traits:study:interest_switch_learning",
+        "mbti:coverage:direct",
+        "natal:gwiin_munchang",
+        "position:day",
+        "sajuFeatureTaxonomy:gwiin_munchang",
+        "shinsal:MUN_CHANG_GWIIN",
+        "v1:gwiin:무:신",
+        "v1:gwiin:문창귀인",
+        "v4:career-study:ENFP",
+        "v4:material-depth:gwiin_munchang"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "흥미와 능력 조건",
+    "sourceCandidateId": "mbti:ENFP:traits:study:logic_practice_needed:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:study:logic_practice_needed:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY:logic_practice_needed",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "study:db:logic_practice_needed",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:ENFP:traits:study:logic_practice_needed:plainKo",
+        "mbti:coverage:direct"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "학습 근거",
+    "sourceCandidateId": "mbti:ENFP:traits:study:logic_practice_needed:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:study:logic_practice_needed:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY:logic_practice_needed",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "study:db:logic_practice_needed",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:ENFP:traits:study:logic_practice_needed:plainKo",
+        "mbti:coverage:direct"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "학습 활동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "study:activity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CREATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "환경",
+    "sourceCandidateId": "mbti:ENFP:traits:study:logic_practice_needed:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:study:logic_practice_needed:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY:logic_practice_needed",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "study:db:logic_practice_needed",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:ENFP:traits:study:logic_practice_needed:plainKo",
+        "mbti:coverage:direct"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "가능한 실수",
+    "sourceCandidateId": "mbti:ENFP:traits:study:interest_switch_learning:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:study:interest_switch_learning:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "study:risk:interest_switch_learning",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "canonical-natal-table-v1:features:gwiin_munchang",
+        "dayStem:戊",
+        "mbti:ENFP:traits:study:interest_switch_learning",
+        "mbti:coverage:direct",
+        "natal:gwiin_munchang",
+        "position:day",
+        "sajuFeatureTaxonomy:gwiin_munchang",
+        "shinsal:MUN_CHANG_GWIIN",
+        "v1:gwiin:무:신",
+        "v1:gwiin:문창귀인",
+        "v4:career-study:ENFP",
+        "v4:material-depth:gwiin_munchang",
+        "mbti:ENFP:traits:study:interest_switch_learning:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "원인",
+    "sourceCandidateId": "mbti:ENFP:traits:study:interest_switch_learning:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:study:interest_switch_learning:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "study:risk:interest_switch_learning",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "canonical-natal-table-v1:features:gwiin_munchang",
+        "dayStem:戊",
+        "mbti:ENFP:traits:study:interest_switch_learning",
+        "mbti:coverage:direct",
+        "natal:gwiin_munchang",
+        "position:day",
+        "sajuFeatureTaxonomy:gwiin_munchang",
+        "shinsal:MUN_CHANG_GWIIN",
+        "v1:gwiin:무:신",
+        "v1:gwiin:문창귀인",
+        "v4:career-study:ENFP",
+        "v4:material-depth:gwiin_munchang",
+        "mbti:ENFP:traits:study:interest_switch_learning:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "지속성 비용",
+    "sourceCandidateId": "mbti:ENFP:traits:study:interest_switch_learning:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:study:interest_switch_learning:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "study:risk:interest_switch_learning",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "canonical-natal-table-v1:features:gwiin_munchang",
+        "dayStem:戊",
+        "mbti:ENFP:traits:study:interest_switch_learning",
+        "mbti:coverage:direct",
+        "natal:gwiin_munchang",
+        "position:day",
+        "sajuFeatureTaxonomy:gwiin_munchang",
+        "shinsal:MUN_CHANG_GWIIN",
+        "v1:gwiin:무:신",
+        "v1:gwiin:문창귀인",
+        "v4:career-study:ENFP",
+        "v4:material-depth:gwiin_munchang",
+        "mbti:ENFP:traits:study:interest_switch_learning:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "학습 방법",
+    "sourceCandidateId": "mbti:ENFP:traits:study:interest_switch_learning:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENFP:traits:study:interest_switch_learning:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "study:risk:interest_switch_learning",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "canonical-natal-table-v1:features:gwiin_munchang",
+        "dayStem:戊",
+        "mbti:ENFP:traits:study:interest_switch_learning",
+        "mbti:coverage:direct",
+        "natal:gwiin_munchang",
+        "position:day",
+        "sajuFeatureTaxonomy:gwiin_munchang",
+        "shinsal:MUN_CHANG_GWIIN",
+        "v1:gwiin:무:신",
+        "v1:gwiin:문창귀인",
+        "v4:career-study:ENFP",
+        "v4:material-depth:gwiin_munchang",
+        "mbti:ENFP:traits:study:interest_switch_learning:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "발전 능력",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:creation:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CREATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "능력의 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:creation:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CREATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "상태별 전략",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:creation:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CREATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "실력 확인",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:creation:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CREATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "승인된 긍정 특징",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:autonomy:positive-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:autonomy:positive-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "발휘 상황",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:autonomy:positive-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "실현 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:autonomy:positive-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "타인에게 주는 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR096",
+    "evidenceIds": [
+      "natal:ten-god:year:visible:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "RESPONSIBILITY_AND_SELF_DIRECTION",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:leadership:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DUTY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR096"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR096",
+    "evidenceIds": [
+      "natal:ten-god:year:visible:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "RESPONSIBILITY_AND_SELF_DIRECTION",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:leadership:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DUTY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR096"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "인정받을 상황",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR096",
+    "evidenceIds": [
+      "natal:ten-god:year:visible:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "RESPONSIBILITY_AND_SELF_DIRECTION",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:leadership:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DUTY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR096"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "드러내는 방법",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR096",
+    "evidenceIds": [
+      "natal:ten-god:year:visible:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "RESPONSIBILITY_AND_SELF_DIRECTION",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:leadership:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DUTY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR096"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "중요 위험",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:year:branch:戌"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:persistence:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "원인",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:year:branch:戌"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:persistence:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "기회와 비용",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:year:branch:戌"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:persistence:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "과사용 방지",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:year:branch:戌"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:persistence:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "활용 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:resource:positive-activation",
+      "application": "RECALL",
+      "axis": "PRACTICALITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "가치가 커질 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:resource:positive-activation",
+      "application": "RECALL",
+      "axis": "PRACTICALITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "피할 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:resource:positive-activation",
+      "application": "RECALL",
+      "axis": "PRACTICALITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "현실적 희망",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:resource:positive-activation",
+      "application": "RECALL",
+      "axis": "PRACTICALITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "핵심 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR040",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:opportunity:career-choice",
+      "application": "RECALL",
+      "axis": "OPPORTUNITY_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR040"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "중요한 이유",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR040",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:opportunity:career-choice",
+      "application": "RECALL",
+      "axis": "OPPORTUNITY_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR040"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "선택 질문",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR040",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:opportunity:career-choice",
+      "application": "RECALL",
+      "axis": "OPPORTUNITY_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR040"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "잘못된 선택 방지",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR040",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:opportunity:career-choice",
+      "application": "RECALL",
+      "axis": "OPPORTUNITY_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR040"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "소개된 위험",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:day:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:boundary:risk-reminder",
+      "application": "RECALL",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "연결 이유",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:day:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:boundary:risk-reminder",
+      "application": "RECALL",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "악화 조건",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:day:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:boundary:risk-reminder",
+      "application": "RECALL",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "보완 방법",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:day:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:boundary:risk-reminder",
+      "application": "RECALL",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "첫 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR009",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "IDEA_FLEX_EXECUTE_STRUCTURED",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:structure:integrated-growth",
+      "application": "RECALL",
+      "axis": "STRUCTURE_STYLE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR009"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "장기 능력",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR009",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "IDEA_FLEX_EXECUTE_STRUCTURED",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:structure:integrated-growth",
+      "application": "RECALL",
+      "axis": "STRUCTURE_STYLE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR009"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "일 돈 학업 연결",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR009",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "IDEA_FLEX_EXECUTE_STRUCTURED",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:structure:integrated-growth",
+      "application": "RECALL",
+      "axis": "STRUCTURE_STYLE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR009"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "성장 확인",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR009",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "IDEA_FLEX_EXECUTE_STRUCTURED",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:structure:integrated-growth",
+      "application": "RECALL",
+      "axis": "STRUCTURE_STYLE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR009"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "소개된 강점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:flexibility:closing",
+      "application": "RECALL",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "긍정 가능성",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:flexibility:closing",
+      "application": "RECALL",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "기억할 원칙",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:flexibility:closing",
+      "application": "RECALL",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "개인별 마무리",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CHANGE_WITH_BASE",
+    "lifeStatus": "freelancer",
+    "jobContext": "브랜드 디자이너",
+    "provenance": {
+      "materialId": "career:flexibility:closing",
+      "application": "RECALL",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR024"
+      ]
+    }
+  }
+]

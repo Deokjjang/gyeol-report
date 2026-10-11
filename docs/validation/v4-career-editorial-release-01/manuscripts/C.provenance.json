@@ -1,0 +1,3812 @@
+[
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "대표 업무 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:day:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:autonomy:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "구체적 업무 상황",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:day:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:autonomy:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "그 방식의 장점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:day:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:autonomy:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "기억할 업무 정체성",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:day:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:autonomy:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 명리 근거",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:AUTONOMY:learning:AUTONOMY:1:AUTONOMY:1",
+    "evidenceIds": [
+      "natal:day:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SAME_DIRECTION_AUTONOMY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:AUTONOMY:learning:AUTONOMY:1:AUTONOMY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "쉬운 의미",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:AUTONOMY:learning:AUTONOMY:1:AUTONOMY:1",
+    "evidenceIds": [
+      "natal:day:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SAME_DIRECTION_AUTONOMY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:AUTONOMY:learning:AUTONOMY:1:AUTONOMY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "실제 MBTI 업무 특성",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:AUTONOMY:learning:AUTONOMY:1:AUTONOMY:1",
+    "evidenceIds": [
+      "natal:day:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:identity:authentic_inner_values:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:REINFORCE:AUTONOMY:learning:AUTONOMY:1:AUTONOMY:1"
+    ],
+    "semanticTheme": "SAME_DIRECTION_AUTONOMY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:AUTONOMY:learning:AUTONOMY:1:AUTONOMY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "두 분석의 결합",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:AUTONOMY:learning:AUTONOMY:1:AUTONOMY:1",
+    "evidenceIds": [
+      "natal:day:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:identity:authentic_inner_values:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:REINFORCE:AUTONOMY:learning:AUTONOMY:1:AUTONOMY:1"
+    ],
+    "semanticTheme": "SAME_DIRECTION_AUTONOMY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:AUTONOMY:learning:AUTONOMY:1:AUTONOMY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "시작 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:day:branch:申"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:flexibility:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "진행 중 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:day:branch:申"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:flexibility:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "마무리 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:day:branch:申"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:flexibility:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "효과적인 조건과 주의점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:day:branch:申"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:flexibility:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "능력이 살아나는 환경",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:month:branch:未"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:stability:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "적합한 이유",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:month:branch:未"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:stability:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "불편한 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:month:branch:未"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:stability:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:month:branch:未"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:stability:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "주요 강점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:month:stem:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:learning:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "LEARNING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:month:stem:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:learning:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "LEARNING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "발휘 장면",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:month:stem:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:learning:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "LEARNING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "실제 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:month:stem:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:learning:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "LEARNING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "다른 재능",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:WOOD:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:opportunity:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:WOOD:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:opportunity:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "문제 해결 장면",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:WOOD:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:opportunity:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "발전 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:WOOD:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:opportunity:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "덜 익숙한 활용 가능성",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C001:learning:PRECISION:1:CARE:1",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:identity:gentle_joan_of_arc:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C001:learning:PRECISION:1:CARE:1"
+    ],
+    "semanticTheme": "KIND_PRECISION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C001:learning:PRECISION:1:CARE:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 결합 근거",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C001:learning:PRECISION:1:CARE:1",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:identity:gentle_joan_of_arc:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C001:learning:PRECISION:1:CARE:1"
+    ],
+    "semanticTheme": "KIND_PRECISION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C001:learning:PRECISION:1:CARE:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "다른 업무의 활용",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C001:learning:PRECISION:1:CARE:1",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:identity:gentle_joan_of_arc:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C001:learning:PRECISION:1:CARE:1"
+    ],
+    "semanticTheme": "KIND_PRECISION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C001:learning:PRECISION:1:CARE:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "가능성의 의미",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C001:learning:PRECISION:1:CARE:1",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:identity:gentle_joan_of_arc:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C001:learning:PRECISION:1:CARE:1"
+    ],
+    "semanticTheme": "KIND_PRECISION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C001:learning:PRECISION:1:CARE:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "공통 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:ten-god:day:SUB:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:depth:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "성과로 바꿀 요소",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:ten-god:day:SUB:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:depth:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "부족해질 부분",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:ten-god:day:SUB:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:depth:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "구체적 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:ten-god:day:SUB:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:depth:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "적합한 직무의 공통점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:precision:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:precision:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "만족 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:precision:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "직업 선택 기준",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:precision:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 첫 추천",
+    "sourceCandidateId": "career-route:lead",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:lead",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "route:lead",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_gabmok",
+        "SajuCalcResult:tenGods.distribution:劫財",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_gapsin",
+        "canonical-natal-table-v1:features:sinsal_yangin",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_gapsin",
+        "natal:sinsal_yangin",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:symbolicImage",
+        "sajuFeatureTaxonomy:sinsal_yangin",
+        "sajuKnowledgeBase:day_master_gabmok",
+        "sajuKnowledgeBase:ten_god_jie_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:갑신",
+        "v1:yangin:갑:묘",
+        "v4:career-route:lead",
+        "v4:career-setting:sales_operations",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_gabmok",
+        "v4:material-depth:day_pillar_gapsin",
+        "v4:material-depth:sinsal_yangin",
+        "v4:material-depth:ten_god_jie_cai",
+        "v4:semantic-meaning:ten_god_jie_cai",
+        "natal:day:stem:甲",
+        "natal:ten-god:day:MAIN:庚",
+        "natal:ten-god:day:SUB:壬",
+        "natal:ten-god:hour:visible:丁",
+        "natal:ten-god:month:SUB:丁",
+        "natal:ten-god:year:MAIN:丁",
+        "natal:ten-god:year:visible:庚",
+        "natal:year:stem:庚",
+        "supplement:marker:YANGIN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "추천 이유",
+    "sourceCandidateId": "career-route:lead",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:lead",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "route:lead",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_gabmok",
+        "SajuCalcResult:tenGods.distribution:劫財",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_gapsin",
+        "canonical-natal-table-v1:features:sinsal_yangin",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_gapsin",
+        "natal:sinsal_yangin",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:symbolicImage",
+        "sajuFeatureTaxonomy:sinsal_yangin",
+        "sajuKnowledgeBase:day_master_gabmok",
+        "sajuKnowledgeBase:ten_god_jie_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:갑신",
+        "v1:yangin:갑:묘",
+        "v4:career-route:lead",
+        "v4:career-setting:sales_operations",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_gabmok",
+        "v4:material-depth:day_pillar_gapsin",
+        "v4:material-depth:sinsal_yangin",
+        "v4:material-depth:ten_god_jie_cai",
+        "v4:semantic-meaning:ten_god_jie_cai",
+        "natal:day:stem:甲",
+        "natal:ten-god:day:MAIN:庚",
+        "natal:ten-god:day:SUB:壬",
+        "natal:ten-god:hour:visible:丁",
+        "natal:ten-god:month:SUB:丁",
+        "natal:ten-god:year:MAIN:丁",
+        "natal:ten-god:year:visible:庚",
+        "natal:year:stem:庚",
+        "supplement:marker:YANGIN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "활용 강점",
+    "sourceCandidateId": "career-route:lead",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:lead",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "route:lead",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_gabmok",
+        "SajuCalcResult:tenGods.distribution:劫財",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_gapsin",
+        "canonical-natal-table-v1:features:sinsal_yangin",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_gapsin",
+        "natal:sinsal_yangin",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:symbolicImage",
+        "sajuFeatureTaxonomy:sinsal_yangin",
+        "sajuKnowledgeBase:day_master_gabmok",
+        "sajuKnowledgeBase:ten_god_jie_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:갑신",
+        "v1:yangin:갑:묘",
+        "v4:career-route:lead",
+        "v4:career-setting:sales_operations",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_gabmok",
+        "v4:material-depth:day_pillar_gapsin",
+        "v4:material-depth:sinsal_yangin",
+        "v4:material-depth:ten_god_jie_cai",
+        "v4:semantic-meaning:ten_god_jie_cai",
+        "natal:day:stem:甲",
+        "natal:ten-god:day:MAIN:庚",
+        "natal:ten-god:day:SUB:壬",
+        "natal:ten-god:hour:visible:丁",
+        "natal:ten-god:month:SUB:丁",
+        "natal:ten-god:year:MAIN:丁",
+        "natal:ten-god:year:visible:庚",
+        "natal:year:stem:庚",
+        "supplement:marker:YANGIN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "현실적 조건",
+    "sourceCandidateId": "career-route:lead",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:lead",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "route:lead",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_gabmok",
+        "SajuCalcResult:tenGods.distribution:劫財",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_gapsin",
+        "canonical-natal-table-v1:features:sinsal_yangin",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_gapsin",
+        "natal:sinsal_yangin",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:symbolicImage",
+        "sajuFeatureTaxonomy:sinsal_yangin",
+        "sajuKnowledgeBase:day_master_gabmok",
+        "sajuKnowledgeBase:ten_god_jie_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:갑신",
+        "v1:yangin:갑:묘",
+        "v4:career-route:lead",
+        "v4:career-setting:sales_operations",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_gabmok",
+        "v4:material-depth:day_pillar_gapsin",
+        "v4:material-depth:sinsal_yangin",
+        "v4:material-depth:ten_god_jie_cai",
+        "v4:semantic-meaning:ten_god_jie_cai",
+        "natal:day:stem:甲",
+        "natal:ten-god:day:MAIN:庚",
+        "natal:ten-god:day:SUB:壬",
+        "natal:ten-god:hour:visible:丁",
+        "natal:ten-god:month:SUB:丁",
+        "natal:ten-god:year:MAIN:丁",
+        "natal:ten-god:year:visible:庚",
+        "natal:year:stem:庚",
+        "supplement:marker:YANGIN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "다른 실제 추천",
+    "sourceCandidateId": "career-route:market",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:market",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "route:market",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_gabmok",
+        "SajuCalcResult:tenGods.distribution:正財",
+        "basis:BRANCH_GROUP_TO_BRANCH",
+        "basis:YEAR_BRANCH_TO_BRANCH",
+        "branch:申",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_gapsin",
+        "canonical-natal-table-v1:features:twelve_sinsal_yeokma",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_gapsin",
+        "natal:twelve_sinsal_yeokma",
+        "position:day",
+        "reference:YEAR_BRANCH",
+        "referenceBranch:午",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:symbolicImage",
+        "sajuFeatureTaxonomy:twelve_sinsal_yeokma",
+        "sajuKnowledgeBase:day_master_gabmok",
+        "sajuKnowledgeBase:ten_god_zheng_cai",
+        "shinsal:TWELVE_YEOKMASAL",
+        "shinsal:YEOKMASAL",
+        "source:BRANCH_GROUP_TO_BRANCH",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:갑신",
+        "v1:sinsal:역마살",
+        "v4:career-route:market",
+        "v4:career-setting:sales_operations",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_gabmok",
+        "v4:material-depth:day_pillar_gapsin",
+        "v4:material-depth:ten_god_zheng_cai",
+        "v4:material-depth:twelve_sinsal_yeokma",
+        "v4:semantic-meaning:ten_god_zheng_cai",
+        "yearBranch:午"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "career-route:market",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:market",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "route:market",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_gabmok",
+        "SajuCalcResult:tenGods.distribution:正財",
+        "basis:BRANCH_GROUP_TO_BRANCH",
+        "basis:YEAR_BRANCH_TO_BRANCH",
+        "branch:申",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_gapsin",
+        "canonical-natal-table-v1:features:twelve_sinsal_yeokma",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_gapsin",
+        "natal:twelve_sinsal_yeokma",
+        "position:day",
+        "reference:YEAR_BRANCH",
+        "referenceBranch:午",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:symbolicImage",
+        "sajuFeatureTaxonomy:twelve_sinsal_yeokma",
+        "sajuKnowledgeBase:day_master_gabmok",
+        "sajuKnowledgeBase:ten_god_zheng_cai",
+        "shinsal:TWELVE_YEOKMASAL",
+        "shinsal:YEOKMASAL",
+        "source:BRANCH_GROUP_TO_BRANCH",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:갑신",
+        "v1:sinsal:역마살",
+        "v4:career-route:market",
+        "v4:career-setting:sales_operations",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_gabmok",
+        "v4:material-depth:day_pillar_gapsin",
+        "v4:material-depth:ten_god_zheng_cai",
+        "v4:material-depth:twelve_sinsal_yeokma",
+        "v4:semantic-meaning:ten_god_zheng_cai",
+        "yearBranch:午"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "발휘 능력",
+    "sourceCandidateId": "career-route:experience",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:experience",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "route:experience",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_gabmok",
+        "SajuCalcResult:tenGods.distribution:劫財",
+        "basis:BRANCH_GROUP_TO_BRANCH",
+        "basis:YEAR_BRANCH_TO_BRANCH",
+        "branch:卯",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_gapsin",
+        "canonical-natal-table-v1:features:sinsal_dohwa",
+        "canonical-natal-table-v1:features:twelve_sinsal_nyeonsal",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:INFP:recommendedJobs:사진사·여행가·비평가",
+        "natal:day_pillar_gapsin",
+        "natal:sinsal_dohwa",
+        "natal:twelve_sinsal_nyeonsal",
+        "position:hour",
+        "reference:YEAR_BRANCH",
+        "referenceBranch:午",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:symbolicImage",
+        "sajuFeatureTaxonomy:sinsal_dohwa",
+        "sajuKnowledgeBase:day_master_gabmok",
+        "sajuKnowledgeBase:ten_god_jie_cai",
+        "shinsal:DOHWASAL",
+        "shinsal:TWELVE_NYEONSAL",
+        "source:BRANCH_GROUP_TO_BRANCH",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:갑신",
+        "v1:sinsal:년살",
+        "v1:sinsal:도화살",
+        "v4:career-route:experience",
+        "v4:career-setting:sales_operations",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_gabmok",
+        "v4:material-depth:day_pillar_gapsin",
+        "v4:material-depth:sinsal_dohwa",
+        "v4:material-depth:ten_god_jie_cai",
+        "v4:semantic-meaning:ten_god_jie_cai",
+        "yearBranch:午"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "준비와 조건",
+    "sourceCandidateId": "career-route:experience",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:experience",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "route:experience",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_gabmok",
+        "SajuCalcResult:tenGods.distribution:劫財",
+        "basis:BRANCH_GROUP_TO_BRANCH",
+        "basis:YEAR_BRANCH_TO_BRANCH",
+        "branch:卯",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_gapsin",
+        "canonical-natal-table-v1:features:sinsal_dohwa",
+        "canonical-natal-table-v1:features:twelve_sinsal_nyeonsal",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:INFP:recommendedJobs:사진사·여행가·비평가",
+        "natal:day_pillar_gapsin",
+        "natal:sinsal_dohwa",
+        "natal:twelve_sinsal_nyeonsal",
+        "position:hour",
+        "reference:YEAR_BRANCH",
+        "referenceBranch:午",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:symbolicImage",
+        "sajuFeatureTaxonomy:sinsal_dohwa",
+        "sajuKnowledgeBase:day_master_gabmok",
+        "sajuKnowledgeBase:ten_god_jie_cai",
+        "shinsal:DOHWASAL",
+        "shinsal:TWELVE_NYEONSAL",
+        "source:BRANCH_GROUP_TO_BRANCH",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:갑신",
+        "v1:sinsal:년살",
+        "v1:sinsal:도화살",
+        "v4:career-route:experience",
+        "v4:career-setting:sales_operations",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_gabmok",
+        "v4:material-depth:day_pillar_gapsin",
+        "v4:material-depth:sinsal_dohwa",
+        "v4:material-depth:ten_god_jie_cai",
+        "v4:semantic-meaning:ten_god_jie_cai",
+        "yearBranch:午"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S5",
+    "roleDescription": "준비와 조건",
+    "sourceCandidateId": "career-route:experience",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:experience",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "route:experience:environment",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_gabmok",
+        "SajuCalcResult:tenGods.distribution:劫財",
+        "basis:BRANCH_GROUP_TO_BRANCH",
+        "basis:YEAR_BRANCH_TO_BRANCH",
+        "branch:卯",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_gapsin",
+        "canonical-natal-table-v1:features:sinsal_dohwa",
+        "canonical-natal-table-v1:features:twelve_sinsal_nyeonsal",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:INFP:recommendedJobs:사진사·여행가·비평가",
+        "natal:day_pillar_gapsin",
+        "natal:sinsal_dohwa",
+        "natal:twelve_sinsal_nyeonsal",
+        "position:hour",
+        "reference:YEAR_BRANCH",
+        "referenceBranch:午",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:symbolicImage",
+        "sajuFeatureTaxonomy:sinsal_dohwa",
+        "sajuKnowledgeBase:day_master_gabmok",
+        "sajuKnowledgeBase:ten_god_jie_cai",
+        "shinsal:DOHWASAL",
+        "shinsal:TWELVE_NYEONSAL",
+        "source:BRANCH_GROUP_TO_BRANCH",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:갑신",
+        "v1:sinsal:년살",
+        "v1:sinsal:도화살",
+        "v4:career-route:experience",
+        "v4:career-setting:sales_operations",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_gabmok",
+        "v4:material-depth:day_pillar_gapsin",
+        "v4:material-depth:sinsal_dohwa",
+        "v4:material-depth:ten_god_jie_cai",
+        "v4:semantic-meaning:ten_god_jie_cai",
+        "yearBranch:午"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 회피 환경",
+    "sourceCandidateId": "career-avoid:0",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "VERIFIED_AVOID_ENVIRONMENT",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "avoid:0",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_gabmok",
+        "canonical-natal-table-v1:features:day_pillar_gapsin",
+        "canonical-natal-table-v1:features:sinsal_yangin",
+        "natal:day_pillar_gapsin",
+        "natal:sinsal_yangin",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:symbolicImage",
+        "sajuFeatureTaxonomy:sinsal_yangin",
+        "sajuKnowledgeBase:day_master_gabmok",
+        "v1:dayPillar:갑신",
+        "v1:yangin:갑:묘",
+        "v4:career-route:lead:environment",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_gabmok",
+        "v4:material-depth:day_pillar_gapsin",
+        "v4:material-depth:sinsal_yangin"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "불편한 이유",
+    "sourceCandidateId": "career-avoid:1",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "VERIFIED_AVOID_ENVIRONMENT",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "avoid:1",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_gabmok",
+        "SajuCalcResult:tenGods.distribution:正財",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_gapsin",
+        "natal:day_pillar_gapsin",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_gapsin:symbolicImage",
+        "sajuKnowledgeBase:day_master_gabmok",
+        "sajuKnowledgeBase:ten_god_zheng_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:갑신",
+        "v4:career-route:market:environment",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_gabmok",
+        "v4:material-depth:day_pillar_gapsin",
+        "v4:material-depth:ten_god_zheng_cai",
+        "v4:semantic-meaning:ten_god_zheng_cai"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "가능한 문제",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "avoid:cost",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "회피와 조정 구분",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "avoid:adjustment",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "협업 특징",
+    "sourceCandidateId": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOOD_RELATION_RECIPROCITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:care:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "P02_GOOD_RELATION_RECIPROCITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "소통 근거",
+    "sourceCandidateId": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOOD_RELATION_RECIPROCITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:care:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "P02_GOOD_RELATION_RECIPROCITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "타인에게 주는 장점",
+    "sourceCandidateId": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOOD_RELATION_RECIPROCITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:care:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "P02_GOOD_RELATION_RECIPROCITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "좋은 협업 조건",
+    "sourceCandidateId": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOOD_RELATION_RECIPROCITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:care:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "P02_GOOD_RELATION_RECIPROCITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "적합한 역할",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:year:stem:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:drive:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "ACTION_TEMPO",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:year:stem:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:drive:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "ACTION_TEMPO",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "적용 상황",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:year:stem:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:drive:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "ACTION_TEMPO",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "한계",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:year:stem:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:drive:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "ACTION_TEMPO",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "반복 위험",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:meaning:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:meaning:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "충돌과 성과 비용",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:meaning:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "조정 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:meaning:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "편안한 환경",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:ten-god:hour:visible:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:autonomy:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "자율성 규칙 소통",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:ten-god:hour:visible:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:autonomy:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "피할 문제",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:ten-god:hour:visible:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:autonomy:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "개선 방법",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:ten-god:hour:visible:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:autonomy:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "입력한 상태",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "연결 강점",
+    "sourceCandidateId": "editorial:CLAIM:SU01_GOAL_FINISHER",
+    "evidenceIds": [
+      "foundation:element:EARTH:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOAL_COMPLETION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:persistence:current-strength",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU01_GOAL_FINISHER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "가능한 어려움",
+    "sourceCandidateId": "editorial:CLAIM:SU01_GOAL_FINISHER",
+    "evidenceIds": [
+      "foundation:element:EARTH:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOAL_COMPLETION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:persistence:current-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU01_GOAL_FINISHER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "현재 활용 능력",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:ten-god:month:SUB:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:flexibility:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "개인 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:ten-god:month:SUB:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:flexibility:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "실제 가능한 활동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:ten-god:month:SUB:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:flexibility:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "활용 방법",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:ten-god:month:SUB:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:flexibility:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "발전 능력",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:month:stem:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:learning:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "LEARNING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "필요한 이유",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:month:stem:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:learning:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "LEARNING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "부족해질 부분",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:month:stem:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:learning:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "LEARNING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "성장 확인",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:month:stem:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:learning:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "LEARNING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "상태별 우선순위",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "성급한 판단",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "작은 시도",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "다음 단계 기준",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "수익 관련 경향",
+    "sourceCandidateId": "career-natal-money:ten_god_zheng_cai",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NATAL_ECONOMIC_VALUE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "money:retained:ten_god_zheng_cai",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:正財",
+        "calendar:saju-calendar-kst-v2",
+        "sajuKnowledgeBase:ten_god_zheng_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v4:career-natal-money:ten_god_zheng_cai",
+        "v4:material-depth:ten_god_zheng_cai",
+        "v4:semantic-meaning:ten_god_zheng_cai"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "명리 재물 근거",
+    "sourceCandidateId": "career-natal-money:ten_god_zheng_cai",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NATAL_ECONOMIC_VALUE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "money:retained:ten_god_zheng_cai",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:正財",
+        "calendar:saju-calendar-kst-v2",
+        "sajuKnowledgeBase:ten_god_zheng_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v4:career-natal-money:ten_god_zheng_cai",
+        "v4:material-depth:ten_god_zheng_cai",
+        "v4:semantic-meaning:ten_god_zheng_cai"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "MBTI 판단 선호",
+    "sourceCandidateId": "mbti:INFP:traits:money:buffer_and_auto_money:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:money:buffer_and_auto_money:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_DECISION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "money:actual-mbti",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:INFP:traits:money:buffer_and_auto_money:plainKo"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "가치 생산 방식",
+    "sourceCandidateId": "career-natal-money:ten_god_zheng_cai",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NATAL_ECONOMIC_VALUE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "money:retained:ten_god_zheng_cai",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:正財",
+        "calendar:saju-calendar-kst-v2",
+        "sajuKnowledgeBase:ten_god_zheng_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v4:career-natal-money:ten_god_zheng_cai",
+        "v4:material-depth:ten_god_zheng_cai",
+        "v4:semantic-meaning:ten_god_zheng_cai"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "검증된 재능",
+    "sourceCandidateId": "editorial:CLAIM:SU01_GOAL_FINISHER",
+    "evidenceIds": [
+      "foundation:element:EARTH:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOAL_COMPLETION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:persistence:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU01_GOAL_FINISHER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:CLAIM:SU01_GOAL_FINISHER",
+    "evidenceIds": [
+      "foundation:element:EARTH:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOAL_COMPLETION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:persistence:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU01_GOAL_FINISHER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "직업적 활용",
+    "sourceCandidateId": "editorial:CLAIM:SU01_GOAL_FINISHER",
+    "evidenceIds": [
+      "foundation:element:EARTH:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOAL_COMPLETION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:persistence:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU01_GOAL_FINISHER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "경제적 가치 조건",
+    "sourceCandidateId": "editorial:CLAIM:SU01_GOAL_FINISHER",
+    "evidenceIds": [
+      "foundation:element:EARTH:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOAL_COMPLETION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:persistence:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU01_GOAL_FINISHER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "가능한 약점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:meaning:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "그 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:meaning:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "지출 기회 시간 위험",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:meaning:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:meaning:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "관리 원칙",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:己"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "소득 비용 시간",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:己"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "개인 점검 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:己"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "현실적인 결론",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:己"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "학습 특징",
+    "sourceCandidateId": "mbti:INFP:traits:study:storytelling_learning:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:study:storytelling_learning:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "mbti:INFP:traits:study:storytelling_learning",
+        "mbti:coverage:direct",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "v1:gwimun:pair",
+        "v4:career-study:INFP",
+        "v4:material-depth:sinsal_gwimun"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 학업 자료",
+    "sourceCandidateId": "mbti:INFP:traits:study:storytelling_learning:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:study:storytelling_learning:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "mbti:INFP:traits:study:storytelling_learning",
+        "mbti:coverage:direct",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "v1:gwimun:pair",
+        "v4:career-study:INFP",
+        "v4:material-depth:sinsal_gwimun"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "명리 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:ten-god:day:SUB:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "study:natal-basis",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "적합한 방식",
+    "sourceCandidateId": "mbti:INFP:traits:study:storytelling_learning:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:study:storytelling_learning:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "mbti:INFP:traits:study:storytelling_learning",
+        "mbti:coverage:direct",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "v1:gwimun:pair",
+        "v4:career-study:INFP",
+        "v4:material-depth:sinsal_gwimun"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "흥미와 능력 조건",
+    "sourceCandidateId": "mbti:INFP:traits:study:math_logic_gap:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:study:math_logic_gap:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY:math_logic_gap",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "study:db:math_logic_gap",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:INFP:traits:study:math_logic_gap:plainKo",
+        "mbti:coverage:direct"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "학습 근거",
+    "sourceCandidateId": "mbti:INFP:traits:study:math_logic_gap:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:study:math_logic_gap:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY:math_logic_gap",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "study:db:math_logic_gap",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:INFP:traits:study:math_logic_gap:plainKo",
+        "mbti:coverage:direct"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "학습 활동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:ten-god:day:SUB:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "study:activity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "환경",
+    "sourceCandidateId": "mbti:INFP:traits:study:math_logic_gap:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:study:math_logic_gap:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY:math_logic_gap",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "study:db:math_logic_gap",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:INFP:traits:study:math_logic_gap:plainKo",
+        "mbti:coverage:direct"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "가능한 실수",
+    "sourceCandidateId": "mbti:INFP:traits:study:storytelling_learning:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:study:storytelling_learning:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "study:risk:storytelling_learning",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "mbti:INFP:traits:study:storytelling_learning",
+        "mbti:coverage:direct",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "v1:gwimun:pair",
+        "v4:career-study:INFP",
+        "v4:material-depth:sinsal_gwimun",
+        "mbti:INFP:traits:study:storytelling_learning:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "원인",
+    "sourceCandidateId": "mbti:INFP:traits:study:storytelling_learning:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:study:storytelling_learning:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "study:risk:storytelling_learning",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "mbti:INFP:traits:study:storytelling_learning",
+        "mbti:coverage:direct",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "v1:gwimun:pair",
+        "v4:career-study:INFP",
+        "v4:material-depth:sinsal_gwimun",
+        "mbti:INFP:traits:study:storytelling_learning:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "지속성 비용",
+    "sourceCandidateId": "mbti:INFP:traits:study:storytelling_learning:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:study:storytelling_learning:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "study:risk:storytelling_learning",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "mbti:INFP:traits:study:storytelling_learning",
+        "mbti:coverage:direct",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "v1:gwimun:pair",
+        "v4:career-study:INFP",
+        "v4:material-depth:sinsal_gwimun",
+        "mbti:INFP:traits:study:storytelling_learning:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "학습 방법",
+    "sourceCandidateId": "mbti:INFP:traits:study:storytelling_learning:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INFP:traits:study:storytelling_learning:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "study:risk:storytelling_learning",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "mbti:INFP:traits:study:storytelling_learning",
+        "mbti:coverage:direct",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "v1:gwimun:pair",
+        "v4:career-study:INFP",
+        "v4:material-depth:sinsal_gwimun",
+        "mbti:INFP:traits:study:storytelling_learning:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "발전 능력",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:ten-god:day:SUB:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:depth:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "능력의 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:ten-god:day:SUB:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:depth:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "상태별 전략",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:ten-god:day:SUB:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:depth:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "실력 확인",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:ten-god:day:SUB:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:depth:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "승인된 긍정 특징",
+    "sourceCandidateId": "editorial:CLAIM:P01_PEOPLE_LUCK",
+    "evidenceIds": [
+      "supplement:marker:CHEONEUL",
+      "natal:month:stem:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PEOPLE_LUCK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "fortune:approved",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "P01_PEOPLE_LUCK"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거",
+    "sourceCandidateId": "editorial:CLAIM:P01_PEOPLE_LUCK",
+    "evidenceIds": [
+      "supplement:marker:CHEONEUL",
+      "natal:month:stem:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PEOPLE_LUCK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "fortune:approved",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "P01_PEOPLE_LUCK"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "발휘 상황",
+    "sourceCandidateId": "editorial:CLAIM:P01_PEOPLE_LUCK",
+    "evidenceIds": [
+      "supplement:marker:CHEONEUL",
+      "natal:month:stem:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PEOPLE_LUCK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "fortune:approved",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "P01_PEOPLE_LUCK"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "실현 조건",
+    "sourceCandidateId": "editorial:CLAIM:P01_PEOPLE_LUCK",
+    "evidenceIds": [
+      "supplement:marker:CHEONEUL",
+      "natal:month:stem:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PEOPLE_LUCK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "fortune:approved",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "P01_PEOPLE_LUCK"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "타인에게 주는 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:hour:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:precision:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:hour:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:precision:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "인정받을 상황",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:hour:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:precision:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "드러내는 방법",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:hour:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:precision:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "중요 위험",
+    "sourceCandidateId": "editorial:CLAIM:F07_OVERCARE",
+    "evidenceIds": [
+      "natal:hour:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OVERCARE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:care:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "F07_OVERCARE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "원인",
+    "sourceCandidateId": "editorial:CLAIM:F07_OVERCARE",
+    "evidenceIds": [
+      "natal:hour:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OVERCARE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:care:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "F07_OVERCARE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "기회와 비용",
+    "sourceCandidateId": "editorial:CLAIM:F07_OVERCARE",
+    "evidenceIds": [
+      "natal:hour:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OVERCARE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:care:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "F07_OVERCARE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "과사용 방지",
+    "sourceCandidateId": "editorial:CLAIM:F07_OVERCARE",
+    "evidenceIds": [
+      "natal:hour:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OVERCARE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:care:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "F07_OVERCARE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "활용 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:WOOD:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:opportunity:positive-activation",
+      "application": "RECALL",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "가치가 커질 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:WOOD:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:opportunity:positive-activation",
+      "application": "RECALL",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "피할 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:WOOD:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:opportunity:positive-activation",
+      "application": "RECALL",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "현실적 희망",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:WOOD:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:opportunity:positive-activation",
+      "application": "RECALL",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "핵심 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:year:stem:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:drive:career-choice",
+      "application": "RECALL",
+      "axis": "ACTION_TEMPO",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "중요한 이유",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:year:stem:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:drive:career-choice",
+      "application": "RECALL",
+      "axis": "ACTION_TEMPO",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "선택 질문",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:year:stem:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:drive:career-choice",
+      "application": "RECALL",
+      "axis": "ACTION_TEMPO",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "잘못된 선택 방지",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+    "evidenceIds": [
+      "natal:year:stem:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_THEN_MOVE",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:drive:career-choice",
+      "application": "RECALL",
+      "axis": "ACTION_TEMPO",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR001"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "소개된 위험",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:meaning:risk-reminder",
+      "application": "RECALL",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "연결 이유",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:meaning:risk-reminder",
+      "application": "RECALL",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "악화 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:meaning:risk-reminder",
+      "application": "RECALL",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "보완 방법",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR045",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MEANING_OVER_MONEY_RISK",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:meaning:risk-reminder",
+      "application": "RECALL",
+      "axis": "MEANING",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR045"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "첫 행동",
+    "sourceCandidateId": "editorial:CLAIM:SU01_GOAL_FINISHER",
+    "evidenceIds": [
+      "foundation:element:EARTH:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOAL_COMPLETION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:persistence:integrated-growth",
+      "application": "RECALL",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU01_GOAL_FINISHER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "장기 능력",
+    "sourceCandidateId": "editorial:CLAIM:SU01_GOAL_FINISHER",
+    "evidenceIds": [
+      "foundation:element:EARTH:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOAL_COMPLETION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:persistence:integrated-growth",
+      "application": "RECALL",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU01_GOAL_FINISHER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "일 돈 학업 연결",
+    "sourceCandidateId": "editorial:CLAIM:SU01_GOAL_FINISHER",
+    "evidenceIds": [
+      "foundation:element:EARTH:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOAL_COMPLETION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:persistence:integrated-growth",
+      "application": "RECALL",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU01_GOAL_FINISHER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "성장 확인",
+    "sourceCandidateId": "editorial:CLAIM:SU01_GOAL_FINISHER",
+    "evidenceIds": [
+      "foundation:element:EARTH:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GOAL_COMPLETION",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:persistence:integrated-growth",
+      "application": "RECALL",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU01_GOAL_FINISHER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "소개된 강점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:day:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:autonomy:closing",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "긍정 가능성",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:day:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:autonomy:closing",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "기억할 원칙",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:day:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:autonomy:closing",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "개인별 마무리",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR011",
+    "evidenceIds": [
+      "natal:day:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARN_IN_OWN_WAY",
+    "lifeStatus": "employee",
+    "jobContext": "B2B SaaS 영업기획",
+    "provenance": {
+      "materialId": "career:autonomy:closing",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR011"
+      ]
+    }
+  }
+]

@@ -46,7 +46,7 @@ describe("13D-7A Career actual generation and frozen Book", () => {
     const e = result.evidencePacket as V4RuntimeEvidence;
     if (e.composition.product !== "career_money_study" || !("integration" in e.composition.result)) return expect.unreachable();
     const r = e.composition.result, data = projectBook(e)!;
-    expect(r.writerVersion).toBe("career-product-13d-7a-v1");
+    expect(r.writerVersion).toBe("career-editorial-release-01-v1");
     expect(validateV4Publication("career_money_study", result.draft, e)).toEqual({ ok: true, errors: [] });
     const text = [...r.narrative.opening, ...r.narrative.sections.flatMap(s => s.blocks)].map(b => b.text).join("\n");
     expect(text).not.toMatch(/SemanticAxis|sourceNodeId|confidence|\bK(?:10|[1-9])\b|PR\d+|guidance:|fusion:|editorial:|궁합 점수|배우자 예측|사업하면 성공|무조건 승진|CEO가 됩니다|큰돈을 법니다/);
@@ -67,7 +67,7 @@ describe("13D-7A Career actual generation and frozen Book", () => {
     if (!f.context.jobStatus) expect(text).not.toMatch(/수입이 잠시 쉬는|지금은 쉬|현재 회사|승진/);
     if (!f.mbti) { expect(r.integration.explicitMbtiUsage).toBe(0); expect(text).not.toMatch(/\b[EI][SN][TF][JP]\b/); }
     const chapters = data.pages.filter(p => p.kind === "narrative");
-    expect(chapters.find(p => p.id === "chapter-direction")?.paragraphs.map(p => p.heading)).toEqual(r.integration.ruleHeadings);
+    expect(chapters.find(p => p.id === "chapter-direction")?.paragraphs.map(p => p.heading)).toEqual(r.integration.readerEdition.chapters.find(c => c.key === "direction")!.paragraphs.map(p => p.purpose));
     expect(chapters.flatMap(p => p.paragraphs.map(b => b.text))).toEqual([...r.narrative.opening, ...r.narrative.sections.flatMap(s => s.blocks)].map(b => b.text));
     for (const page of data.pages) {
       const html = renderToStaticMarkup(<BookReader data={data} page={page} onNote={no} onPage={no} onShare={no} />);

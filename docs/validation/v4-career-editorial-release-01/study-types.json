@@ -1,0 +1,306 @@
+[
+  {
+    "mbti": "ENFJ",
+    "bodyLength": 9698,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "ENFP",
+    "bodyLength": 9704,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "ENTJ",
+    "bodyLength": 9736,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "ENTP",
+    "bodyLength": 9699,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "ESFJ",
+    "bodyLength": 9669,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "ESFP",
+    "bodyLength": 9625,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "ESTJ",
+    "bodyLength": 9809,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "ESTP",
+    "bodyLength": 9764,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "INFJ",
+    "bodyLength": 9646,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "INFP",
+    "bodyLength": 9737,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "INTJ",
+    "bodyLength": 9760,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "INTP",
+    "bodyLength": 9670,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "ISFJ",
+    "bodyLength": 9667,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "ISFP",
+    "bodyLength": 9719,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "ISTJ",
+    "bodyLength": 9710,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  },
+  {
+    "mbti": "ISTP",
+    "bodyLength": 9707,
+    "paragraphCounts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    }
+  }
+]

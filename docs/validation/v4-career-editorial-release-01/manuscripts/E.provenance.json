@@ -1,0 +1,3965 @@
+[
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "대표 업무 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR022",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "BUILD_AND_SHOW",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:expression:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR022"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "구체적 업무 상황",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR022",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "BUILD_AND_SHOW",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:expression:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR022"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "그 방식의 장점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR022",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "BUILD_AND_SHOW",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:expression:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR022"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "기억할 업무 정체성",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR022",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "BUILD_AND_SHOW",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:expression:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR022"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 명리 근거",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SAME_DIRECTION_ADAPTABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "쉬운 의미",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SAME_DIRECTION_ADAPTABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "실제 MBTI 업무 특성",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:strengths:accepts_good_criticism:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1"
+    ],
+    "semanticTheme": "SAME_DIRECTION_ADAPTABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "두 분석의 결합",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:strengths:accepts_good_criticism:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1"
+    ],
+    "semanticTheme": "SAME_DIRECTION_ADAPTABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "시작 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:flexibility:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "진행 중 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:flexibility:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "마무리 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:flexibility:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "효과적인 조건과 주의점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:flexibility:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "능력이 살아나는 환경",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:autonomy:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "적합한 이유",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:autonomy:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "불편한 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:autonomy:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:autonomy:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "주요 강점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR010",
+    "evidenceIds": [
+      "natal:hour:stem:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "FAST_BUT_NOT_RECKLESS",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:precision:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR010"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR010",
+    "evidenceIds": [
+      "natal:hour:stem:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "FAST_BUT_NOT_RECKLESS",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:precision:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR010"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "발휘 장면",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR010",
+    "evidenceIds": [
+      "natal:hour:stem:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "FAST_BUT_NOT_RECKLESS",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:precision:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR010"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "실제 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR010",
+    "evidenceIds": [
+      "natal:hour:stem:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "FAST_BUT_NOT_RECKLESS",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:precision:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR010"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "다른 재능",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR050",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NOTICE_BUT_DECIDE_MYSELF",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:care:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR050"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR050",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NOTICE_BUT_DECIDE_MYSELF",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:care:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR050"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "문제 해결 장면",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR050",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NOTICE_BUT_DECIDE_MYSELF",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:care:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR050"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "발전 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR050",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NOTICE_BUT_DECIDE_MYSELF",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:care:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR050"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "덜 익숙한 활용 가능성",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C002:learning:DEPTH:1:PRECISION:1",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:thinkingStyle:debate_as_processing:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C002:learning:DEPTH:1:PRECISION:1"
+    ],
+    "semanticTheme": "ROOT_CAUSE_ANALYSIS",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C002:learning:DEPTH:1:PRECISION:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 결합 근거",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C002:learning:DEPTH:1:PRECISION:1",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:thinkingStyle:debate_as_processing:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C002:learning:DEPTH:1:PRECISION:1"
+    ],
+    "semanticTheme": "ROOT_CAUSE_ANALYSIS",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C002:learning:DEPTH:1:PRECISION:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "다른 업무의 활용",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C002:learning:DEPTH:1:PRECISION:1",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:thinkingStyle:debate_as_processing:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C002:learning:DEPTH:1:PRECISION:1"
+    ],
+    "semanticTheme": "ROOT_CAUSE_ANALYSIS",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C002:learning:DEPTH:1:PRECISION:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "가능성의 의미",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C002:learning:DEPTH:1:PRECISION:1",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:thinkingStyle:debate_as_processing:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C002:learning:DEPTH:1:PRECISION:1"
+    ],
+    "semanticTheme": "ROOT_CAUSE_ANALYSIS",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C002:learning:DEPTH:1:PRECISION:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "공통 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:creation:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "성과로 바꿀 요소",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:creation:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "부족해질 부분",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:creation:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "구체적 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:creation:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "적합한 직무의 공통점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:WOOD:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:opportunity:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:WOOD:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:opportunity:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "만족 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:WOOD:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:opportunity:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "직업 선택 기준",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:WOOD:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:opportunity:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 첫 추천",
+    "sourceCandidateId": "career-route:lead",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:lead",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "route:lead",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏官",
+        "SajuCalcResult:tenGods.distribution:正官",
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:flaw_detection",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:possibility_scanning",
+        "getTenGod:壬:乙:傷官",
+        "getTenGod:壬:己:正官",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:ENTP:recommendedJobs:정치인",
+        "natal:sinsal_hyeonchim",
+        "pillars:day:壬辰",
+        "pillars:hour:辛丑",
+        "pillars:month:乙亥",
+        "pillars:year:己卯",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:丑:己:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:辰:乙:SUB:0.3",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "sajuFeatureTaxonomy:ten_god_zheng_guan",
+        "sajuKnowledgeBase:sinsal_hyeonchim",
+        "sajuKnowledgeBase:ten_god_qi_sha",
+        "sajuKnowledgeBase:ten_god_zheng_guan",
+        "shinsal:HYEONCHIMSAL",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4-structure-evidence-1",
+        "v4:career-route:lead",
+        "v4:career-setting:unknown",
+        "v4:career-voice:challenger",
+        "v4:fusion-rule:entp-needle",
+        "v4:fusion-rule:entp-question-authority-structure",
+        "v4:fusion-rule:entp-rules",
+        "v4:material-depth:ten_god_qi_sha",
+        "v4:material-depth:ten_god_zheng_guan",
+        "v4:semantic-meaning:sinsal_hyeonchim",
+        "v4:semantic-meaning:ten_god_qi_sha",
+        "v4:semantic-meaning:ten_god_zheng_guan",
+        "v4:structure-material:hurtingOfficerMeetsOfficer",
+        "v4:structure-rule:hurtingOfficerMeetsOfficer",
+        "foundation:element:EARTH:STRONG",
+        "foundation:yin_yang:STRONG_YIN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "추천 이유",
+    "sourceCandidateId": "career-route:lead",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:lead",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "route:lead",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏官",
+        "SajuCalcResult:tenGods.distribution:正官",
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:flaw_detection",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:possibility_scanning",
+        "getTenGod:壬:乙:傷官",
+        "getTenGod:壬:己:正官",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:ENTP:recommendedJobs:정치인",
+        "natal:sinsal_hyeonchim",
+        "pillars:day:壬辰",
+        "pillars:hour:辛丑",
+        "pillars:month:乙亥",
+        "pillars:year:己卯",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:丑:己:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:辰:乙:SUB:0.3",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "sajuFeatureTaxonomy:ten_god_zheng_guan",
+        "sajuKnowledgeBase:sinsal_hyeonchim",
+        "sajuKnowledgeBase:ten_god_qi_sha",
+        "sajuKnowledgeBase:ten_god_zheng_guan",
+        "shinsal:HYEONCHIMSAL",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4-structure-evidence-1",
+        "v4:career-route:lead",
+        "v4:career-setting:unknown",
+        "v4:career-voice:challenger",
+        "v4:fusion-rule:entp-needle",
+        "v4:fusion-rule:entp-question-authority-structure",
+        "v4:fusion-rule:entp-rules",
+        "v4:material-depth:ten_god_qi_sha",
+        "v4:material-depth:ten_god_zheng_guan",
+        "v4:semantic-meaning:sinsal_hyeonchim",
+        "v4:semantic-meaning:ten_god_qi_sha",
+        "v4:semantic-meaning:ten_god_zheng_guan",
+        "v4:structure-material:hurtingOfficerMeetsOfficer",
+        "v4:structure-rule:hurtingOfficerMeetsOfficer",
+        "foundation:element:EARTH:STRONG",
+        "foundation:yin_yang:STRONG_YIN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "활용 강점",
+    "sourceCandidateId": "career-route:lead",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:lead",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "route:lead",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏官",
+        "SajuCalcResult:tenGods.distribution:正官",
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:flaw_detection",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:possibility_scanning",
+        "getTenGod:壬:乙:傷官",
+        "getTenGod:壬:己:正官",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:ENTP:recommendedJobs:정치인",
+        "natal:sinsal_hyeonchim",
+        "pillars:day:壬辰",
+        "pillars:hour:辛丑",
+        "pillars:month:乙亥",
+        "pillars:year:己卯",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:丑:己:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:辰:乙:SUB:0.3",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "sajuFeatureTaxonomy:ten_god_zheng_guan",
+        "sajuKnowledgeBase:sinsal_hyeonchim",
+        "sajuKnowledgeBase:ten_god_qi_sha",
+        "sajuKnowledgeBase:ten_god_zheng_guan",
+        "shinsal:HYEONCHIMSAL",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4-structure-evidence-1",
+        "v4:career-route:lead",
+        "v4:career-setting:unknown",
+        "v4:career-voice:challenger",
+        "v4:fusion-rule:entp-needle",
+        "v4:fusion-rule:entp-question-authority-structure",
+        "v4:fusion-rule:entp-rules",
+        "v4:material-depth:ten_god_qi_sha",
+        "v4:material-depth:ten_god_zheng_guan",
+        "v4:semantic-meaning:sinsal_hyeonchim",
+        "v4:semantic-meaning:ten_god_qi_sha",
+        "v4:semantic-meaning:ten_god_zheng_guan",
+        "v4:structure-material:hurtingOfficerMeetsOfficer",
+        "v4:structure-rule:hurtingOfficerMeetsOfficer",
+        "foundation:element:EARTH:STRONG",
+        "foundation:yin_yang:STRONG_YIN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "현실적 조건",
+    "sourceCandidateId": "career-route:lead",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:lead",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "route:lead",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏官",
+        "SajuCalcResult:tenGods.distribution:正官",
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:flaw_detection",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:possibility_scanning",
+        "getTenGod:壬:乙:傷官",
+        "getTenGod:壬:己:正官",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:ENTP:recommendedJobs:정치인",
+        "natal:sinsal_hyeonchim",
+        "pillars:day:壬辰",
+        "pillars:hour:辛丑",
+        "pillars:month:乙亥",
+        "pillars:year:己卯",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:丑:己:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:辰:乙:SUB:0.3",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "sajuFeatureTaxonomy:ten_god_zheng_guan",
+        "sajuKnowledgeBase:sinsal_hyeonchim",
+        "sajuKnowledgeBase:ten_god_qi_sha",
+        "sajuKnowledgeBase:ten_god_zheng_guan",
+        "shinsal:HYEONCHIMSAL",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4-structure-evidence-1",
+        "v4:career-route:lead",
+        "v4:career-setting:unknown",
+        "v4:career-voice:challenger",
+        "v4:fusion-rule:entp-needle",
+        "v4:fusion-rule:entp-question-authority-structure",
+        "v4:fusion-rule:entp-rules",
+        "v4:material-depth:ten_god_qi_sha",
+        "v4:material-depth:ten_god_zheng_guan",
+        "v4:semantic-meaning:sinsal_hyeonchim",
+        "v4:semantic-meaning:ten_god_qi_sha",
+        "v4:semantic-meaning:ten_god_zheng_guan",
+        "v4:structure-material:hurtingOfficerMeetsOfficer",
+        "v4:structure-rule:hurtingOfficerMeetsOfficer",
+        "foundation:element:EARTH:STRONG",
+        "foundation:yin_yang:STRONG_YIN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "다른 실제 추천",
+    "sourceCandidateId": "career-route:review",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:review",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "route:review",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:flaw_detection",
+        "getTenGod:壬:乙:傷官",
+        "getTenGod:壬:己:正官",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:ENTP:recommendedJobs:법조인",
+        "natal:sinsal_gwimun",
+        "natal:sinsal_hyeonchim",
+        "pillars:day:壬辰",
+        "pillars:hour:辛丑",
+        "pillars:month:乙亥",
+        "pillars:year:己卯",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:丑:己:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:辰:乙:SUB:0.3",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "sajuKnowledgeBase:sinsal_hyeonchim",
+        "shinsal:HYEONCHIMSAL",
+        "v1:gwimun:pair",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4-structure-evidence-1",
+        "v4:career-route:review",
+        "v4:career-setting:unknown",
+        "v4:career-voice:challenger",
+        "v4:fusion-rule:entp-needle",
+        "v4:fusion-rule:entp-question-authority-structure",
+        "v4:material-depth:sinsal_gwimun",
+        "v4:material-depth:sinsal_hyeonchim",
+        "v4:semantic-meaning:sinsal_hyeonchim",
+        "v4:structure-material:hurtingOfficerMeetsOfficer",
+        "v4:structure-rule:hurtingOfficerMeetsOfficer",
+        "foundation:element:WATER:STRONG",
+        "mbti:ENTP:traits:thinkingStyle:debate_as_processing:plainKo",
+        "mbti:ENTP:traits:thinkingStyle:flaw_detection:plainKo",
+        "mbti:ENTP:traits:thinkingStyle:logical_core_detection:plainKo",
+        "mbti:ENTP:traits:workplace:constructive_critic:plainKo",
+        "natal:day:stem:壬",
+        "natal:month:branch:亥",
+        "natal:ten-god:day:SUB:乙",
+        "natal:ten-god:month:visible:乙",
+        "natal:ten-god:year:MAIN:乙",
+        "supplement:marker:GWIMUN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "career-route:review",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:review",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "route:review",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:flaw_detection",
+        "getTenGod:壬:乙:傷官",
+        "getTenGod:壬:己:正官",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:ENTP:recommendedJobs:법조인",
+        "natal:sinsal_gwimun",
+        "natal:sinsal_hyeonchim",
+        "pillars:day:壬辰",
+        "pillars:hour:辛丑",
+        "pillars:month:乙亥",
+        "pillars:year:己卯",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:丑:己:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:辰:乙:SUB:0.3",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "sajuKnowledgeBase:sinsal_hyeonchim",
+        "shinsal:HYEONCHIMSAL",
+        "v1:gwimun:pair",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4-structure-evidence-1",
+        "v4:career-route:review",
+        "v4:career-setting:unknown",
+        "v4:career-voice:challenger",
+        "v4:fusion-rule:entp-needle",
+        "v4:fusion-rule:entp-question-authority-structure",
+        "v4:material-depth:sinsal_gwimun",
+        "v4:material-depth:sinsal_hyeonchim",
+        "v4:semantic-meaning:sinsal_hyeonchim",
+        "v4:structure-material:hurtingOfficerMeetsOfficer",
+        "v4:structure-rule:hurtingOfficerMeetsOfficer",
+        "foundation:element:WATER:STRONG",
+        "mbti:ENTP:traits:thinkingStyle:debate_as_processing:plainKo",
+        "mbti:ENTP:traits:thinkingStyle:flaw_detection:plainKo",
+        "mbti:ENTP:traits:thinkingStyle:logical_core_detection:plainKo",
+        "mbti:ENTP:traits:workplace:constructive_critic:plainKo",
+        "natal:day:stem:壬",
+        "natal:month:branch:亥",
+        "natal:ten-god:day:SUB:乙",
+        "natal:ten-god:month:visible:乙",
+        "natal:ten-god:year:MAIN:乙",
+        "supplement:marker:GWIMUN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "발휘 능력",
+    "sourceCandidateId": "career-route:create",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:create",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "route:create",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:傷官",
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:flaw_detection",
+        "getTenGod:壬:乙:傷官",
+        "getTenGod:壬:己:正官",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:sinsal_hyeonchim",
+        "pillars:day:壬辰",
+        "pillars:hour:辛丑",
+        "pillars:month:乙亥",
+        "pillars:year:己卯",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:丑:己:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:辰:乙:SUB:0.3",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "sajuKnowledgeBase:sinsal_hyeonchim",
+        "sajuKnowledgeBase:ten_god_shang_guan",
+        "shinsal:HYEONCHIMSAL",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4-structure-evidence-1",
+        "v4:career-route:create",
+        "v4:career-setting:unknown",
+        "v4:career-voice:challenger",
+        "v4:fusion-rule:entp-needle",
+        "v4:fusion-rule:entp-question-authority-structure",
+        "v4:material-depth:ten_god_shang_guan",
+        "v4:material-depth:v4_structure:hurtingOfficerMeetsOfficer",
+        "v4:semantic-meaning:sinsal_hyeonchim",
+        "v4:semantic-meaning:ten_god_shang_guan",
+        "v4:structure-material:hurtingOfficerMeetsOfficer",
+        "v4:structure-rule:hurtingOfficerMeetsOfficer",
+        "foundation:element:WATER:STRONG",
+        "foundation:yin_yang:STRONG_YIN",
+        "mbti:ENTP:traits:career:entrepreneurial_drive:plainKo",
+        "mbti:ENTP:traits:career:tech_problem_solver:plainKo",
+        "mbti:ENTP:traits:strengths:creative_problem_solving:plainKo",
+        "mbti:ENTP:traits:workplace:brainstorming_leader:plainKo",
+        "natal:month:branch:亥",
+        "supplement:marker:GWIMUN",
+        "supplement:marker:HWAGAE",
+        "supplement:marker:WOL",
+        "supplement:stage:year:사"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "준비와 조건",
+    "sourceCandidateId": "career-route:create",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:create",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "route:create",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:傷官",
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:flaw_detection",
+        "getTenGod:壬:乙:傷官",
+        "getTenGod:壬:己:正官",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:sinsal_hyeonchim",
+        "pillars:day:壬辰",
+        "pillars:hour:辛丑",
+        "pillars:month:乙亥",
+        "pillars:year:己卯",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:丑:己:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:辰:乙:SUB:0.3",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "sajuKnowledgeBase:sinsal_hyeonchim",
+        "sajuKnowledgeBase:ten_god_shang_guan",
+        "shinsal:HYEONCHIMSAL",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4-structure-evidence-1",
+        "v4:career-route:create",
+        "v4:career-setting:unknown",
+        "v4:career-voice:challenger",
+        "v4:fusion-rule:entp-needle",
+        "v4:fusion-rule:entp-question-authority-structure",
+        "v4:material-depth:ten_god_shang_guan",
+        "v4:material-depth:v4_structure:hurtingOfficerMeetsOfficer",
+        "v4:semantic-meaning:sinsal_hyeonchim",
+        "v4:semantic-meaning:ten_god_shang_guan",
+        "v4:structure-material:hurtingOfficerMeetsOfficer",
+        "v4:structure-rule:hurtingOfficerMeetsOfficer",
+        "foundation:element:WATER:STRONG",
+        "foundation:yin_yang:STRONG_YIN",
+        "mbti:ENTP:traits:career:entrepreneurial_drive:plainKo",
+        "mbti:ENTP:traits:career:tech_problem_solver:plainKo",
+        "mbti:ENTP:traits:strengths:creative_problem_solving:plainKo",
+        "mbti:ENTP:traits:workplace:brainstorming_leader:plainKo",
+        "natal:month:branch:亥",
+        "supplement:marker:GWIMUN",
+        "supplement:marker:HWAGAE",
+        "supplement:marker:WOL",
+        "supplement:stage:year:사"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S5",
+    "roleDescription": "준비와 조건",
+    "sourceCandidateId": "career-route:create",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:create",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "route:create:environment",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:傷官",
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:flaw_detection",
+        "getTenGod:壬:乙:傷官",
+        "getTenGod:壬:己:正官",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:sinsal_hyeonchim",
+        "pillars:day:壬辰",
+        "pillars:hour:辛丑",
+        "pillars:month:乙亥",
+        "pillars:year:己卯",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:丑:己:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:辰:乙:SUB:0.3",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "sajuKnowledgeBase:sinsal_hyeonchim",
+        "sajuKnowledgeBase:ten_god_shang_guan",
+        "shinsal:HYEONCHIMSAL",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4-structure-evidence-1",
+        "v4:career-route:create",
+        "v4:career-setting:unknown",
+        "v4:career-voice:challenger",
+        "v4:fusion-rule:entp-needle",
+        "v4:fusion-rule:entp-question-authority-structure",
+        "v4:material-depth:ten_god_shang_guan",
+        "v4:material-depth:v4_structure:hurtingOfficerMeetsOfficer",
+        "v4:semantic-meaning:sinsal_hyeonchim",
+        "v4:semantic-meaning:ten_god_shang_guan",
+        "v4:structure-material:hurtingOfficerMeetsOfficer",
+        "v4:structure-rule:hurtingOfficerMeetsOfficer",
+        "foundation:element:WATER:STRONG",
+        "foundation:yin_yang:STRONG_YIN",
+        "mbti:ENTP:traits:career:entrepreneurial_drive:plainKo",
+        "mbti:ENTP:traits:career:tech_problem_solver:plainKo",
+        "mbti:ENTP:traits:strengths:creative_problem_solving:plainKo",
+        "mbti:ENTP:traits:workplace:brainstorming_leader:plainKo",
+        "natal:month:branch:亥",
+        "supplement:marker:GWIMUN",
+        "supplement:marker:HWAGAE",
+        "supplement:marker:WOL",
+        "supplement:stage:year:사"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 회피 환경",
+    "sourceCandidateId": "career-avoid:0",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "VERIFIED_AVOID_ENVIRONMENT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "avoid:0",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏官",
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:flaw_detection",
+        "getTenGod:壬:乙:傷官",
+        "getTenGod:壬:己:正官",
+        "natal:sinsal_hyeonchim",
+        "pillars:day:壬辰",
+        "pillars:hour:辛丑",
+        "pillars:month:乙亥",
+        "pillars:year:己卯",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:丑:己:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:辰:乙:SUB:0.3",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "sajuKnowledgeBase:sinsal_hyeonchim",
+        "sajuKnowledgeBase:ten_god_qi_sha",
+        "shinsal:HYEONCHIMSAL",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4-structure-evidence-1",
+        "v4:career-route:lead:environment",
+        "v4:career-voice:challenger",
+        "v4:fusion-rule:entp-needle",
+        "v4:fusion-rule:entp-question-authority-structure",
+        "v4:material-depth:ten_god_qi_sha",
+        "v4:semantic-meaning:sinsal_hyeonchim",
+        "v4:semantic-meaning:ten_god_qi_sha",
+        "v4:structure-material:hurtingOfficerMeetsOfficer",
+        "v4:structure-rule:hurtingOfficerMeetsOfficer"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "불편한 이유",
+    "sourceCandidateId": "career-avoid:1",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "VERIFIED_AVOID_ENVIRONMENT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "avoid:1",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:flaw_detection",
+        "getTenGod:壬:乙:傷官",
+        "getTenGod:壬:己:正官",
+        "natal:sinsal_gwimun",
+        "natal:sinsal_hyeonchim",
+        "pillars:day:壬辰",
+        "pillars:hour:辛丑",
+        "pillars:month:乙亥",
+        "pillars:year:己卯",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:丑:己:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:辰:乙:SUB:0.3",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "sajuKnowledgeBase:sinsal_hyeonchim",
+        "shinsal:HYEONCHIMSAL",
+        "v1:gwimun:pair",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4-structure-evidence-1",
+        "v4:career-route:review:environment",
+        "v4:career-voice:challenger",
+        "v4:fusion-rule:entp-needle",
+        "v4:fusion-rule:entp-question-authority-structure",
+        "v4:material-depth:sinsal_gwimun",
+        "v4:semantic-meaning:sinsal_hyeonchim",
+        "v4:structure-material:hurtingOfficerMeetsOfficer",
+        "v4:structure-rule:hurtingOfficerMeetsOfficer"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "가능한 문제",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "avoid:cost",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "회피와 조정 구분",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "avoid:adjustment",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "협업 특징",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR022",
+    "evidenceIds": [
+      "natal:ten-god:day:SUB:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "BUILD_AND_SHOW",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:expression:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR022"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "소통 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR022",
+    "evidenceIds": [
+      "natal:ten-god:day:SUB:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "BUILD_AND_SHOW",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:expression:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR022"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "타인에게 주는 장점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR022",
+    "evidenceIds": [
+      "natal:ten-god:day:SUB:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "BUILD_AND_SHOW",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:expression:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR022"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "좋은 협업 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR022",
+    "evidenceIds": [
+      "natal:ten-god:day:SUB:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "BUILD_AND_SHOW",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:expression:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR022"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "적합한 역할",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:ELEMENT_PAIR:WOOD_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_WITH_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:resource:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRACTICALITY",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:ELEMENT_PAIR:WOOD_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:ELEMENT_PAIR:WOOD_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_WITH_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:resource:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRACTICALITY",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:ELEMENT_PAIR:WOOD_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "적용 상황",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:ELEMENT_PAIR:WOOD_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_WITH_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:resource:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRACTICALITY",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:ELEMENT_PAIR:WOOD_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "한계",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:ELEMENT_PAIR:WOOD_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_WITH_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:resource:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRACTICALITY",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:ELEMENT_PAIR:WOOD_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "반복 위험",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR079",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YIN"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINKING_PREVENTS_REST",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:depth:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR079"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR079",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YIN"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINKING_PREVENTS_REST",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:depth:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR079"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "충돌과 성과 비용",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR079",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YIN"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINKING_PREVENTS_REST",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:depth:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR079"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "조정 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR079",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YIN"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINKING_PREVENTS_REST",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:depth:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR079"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "편안한 환경",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:day:branch:辰"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:stability:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "자율성 규칙 소통",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:day:branch:辰"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:stability:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "피할 문제",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:day:branch:辰"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:stability:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "개선 방법",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:day:branch:辰"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:stability:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "입력한 상태",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "연결 강점",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YIN_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YIN_EARTH",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:persistence:current-strength",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YIN_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "가능한 어려움",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YIN_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YIN_EARTH",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:persistence:current-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YIN_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "현재 활용 능력",
+    "sourceCandidateId": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_DESIRE",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:drive:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "GOAL_DRIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU02_GROWTH_DESIRE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "개인 근거",
+    "sourceCandidateId": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_DESIRE",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:drive:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "GOAL_DRIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU02_GROWTH_DESIRE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "실제 가능한 활동",
+    "sourceCandidateId": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_DESIRE",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:drive:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "GOAL_DRIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU02_GROWTH_DESIRE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "활용 방법",
+    "sourceCandidateId": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_DESIRE",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:drive:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "GOAL_DRIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU02_GROWTH_DESIRE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "발전 능력",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YIN_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YIN_EARTH",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:leadership:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DUTY",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YIN_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "필요한 이유",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YIN_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YIN_EARTH",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:leadership:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DUTY",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YIN_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "부족해질 부분",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YIN_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YIN_EARTH",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:leadership:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DUTY",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YIN_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "성장 확인",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YIN_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YIN_EARTH",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:leadership:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DUTY",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YIN_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "상태별 우선순위",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "성급한 판단",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "작은 시도",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "다음 단계 기준",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "수익 관련 경향",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:resource:income",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "명리 재물 근거",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:resource:income-basis",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "MBTI 판단 선호",
+    "sourceCandidateId": "mbti:ENTP:traits:money:idea_to_revenue_filter:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:money:idea_to_revenue_filter:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_DECISION",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "money:actual-mbti",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:ENTP:traits:money:idea_to_revenue_filter:plainKo"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "가치 생산 방식",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:resource:income-condition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "검증된 재능",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YIN_WOOD",
+    "evidenceIds": [
+      "foundation:element:WOOD:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YIN_WOOD",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:persistence:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YIN_WOOD"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YIN_WOOD",
+    "evidenceIds": [
+      "foundation:element:WOOD:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YIN_WOOD",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:persistence:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YIN_WOOD"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "직업적 활용",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YIN_WOOD",
+    "evidenceIds": [
+      "foundation:element:WOOD:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YIN_WOOD",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:persistence:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YIN_WOOD"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "경제적 가치 조건",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YIN_WOOD",
+    "evidenceIds": [
+      "foundation:element:WOOD:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YIN_WOOD",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:persistence:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YIN_WOOD"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "가능한 약점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR079",
+    "evidenceIds": [
+      "natal:month:branch:亥"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINKING_PREVENTS_REST",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:depth:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR079"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "그 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR079",
+    "evidenceIds": [
+      "natal:month:branch:亥"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINKING_PREVENTS_REST",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:depth:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR079"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "지출 기회 시간 위험",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR079",
+    "evidenceIds": [
+      "natal:month:branch:亥"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINKING_PREVENTS_REST",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:depth:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR079"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR079",
+    "evidenceIds": [
+      "natal:month:branch:亥"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINKING_PREVENTS_REST",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:depth:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR079"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "관리 원칙",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:hour:branch:丑"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "소득 비용 시간",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:hour:branch:丑"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "개인 점검 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:hour:branch:丑"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "현실적인 결론",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:hour:branch:丑"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "학습 특징",
+    "sourceCandidateId": "mbti:ENTP:traits:study:interest_based_learning:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:study:interest_based_learning:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "mbti:ENTP:traits:study:interest_based_learning",
+        "mbti:coverage:direct",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "v1:gwimun:pair",
+        "v4:career-study:ENTP",
+        "v4:material-depth:sinsal_gwimun"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 학업 자료",
+    "sourceCandidateId": "mbti:ENTP:traits:study:interest_based_learning:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:study:interest_based_learning:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "mbti:ENTP:traits:study:interest_based_learning",
+        "mbti:coverage:direct",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "v1:gwimun:pair",
+        "v4:career-study:ENTP",
+        "v4:material-depth:sinsal_gwimun"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "명리 근거",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:ELEMENT_PAIR:WOOD_WATER",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARNING_TO_EXPANSION",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "study:natal-basis",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "LEARNING",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:ELEMENT_PAIR:WOOD_WATER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "적합한 방식",
+    "sourceCandidateId": "mbti:ENTP:traits:study:interest_based_learning:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:study:interest_based_learning:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "mbti:ENTP:traits:study:interest_based_learning",
+        "mbti:coverage:direct",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "v1:gwimun:pair",
+        "v4:career-study:ENTP",
+        "v4:material-depth:sinsal_gwimun"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "흥미와 능력 조건",
+    "sourceCandidateId": "mbti:ENTP:traits:study:cramming_and_notes:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:study:cramming_and_notes:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY:cramming_and_notes",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "study:db:cramming_and_notes",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:ENTP:traits:study:cramming_and_notes:plainKo",
+        "mbti:coverage:direct"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "학습 근거",
+    "sourceCandidateId": "mbti:ENTP:traits:study:cramming_and_notes:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:study:cramming_and_notes:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY:cramming_and_notes",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "study:db:cramming_and_notes",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:ENTP:traits:study:cramming_and_notes:plainKo",
+        "mbti:coverage:direct"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "학습 활동",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:ELEMENT_PAIR:WOOD_WATER",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARNING_TO_EXPANSION",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "study:activity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "LEARNING",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:ELEMENT_PAIR:WOOD_WATER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "환경",
+    "sourceCandidateId": "mbti:ENTP:traits:study:cramming_and_notes:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:study:cramming_and_notes:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY:cramming_and_notes",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "study:db:cramming_and_notes",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:ENTP:traits:study:cramming_and_notes:plainKo",
+        "mbti:coverage:direct"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "가능한 실수",
+    "sourceCandidateId": "mbti:ENTP:traits:study:interest_based_learning:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:study:interest_based_learning:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "study:risk:interest_based_learning",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "mbti:ENTP:traits:study:interest_based_learning",
+        "mbti:coverage:direct",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "v1:gwimun:pair",
+        "v4:career-study:ENTP",
+        "v4:material-depth:sinsal_gwimun",
+        "mbti:ENTP:traits:study:interest_based_learning:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "원인",
+    "sourceCandidateId": "mbti:ENTP:traits:study:interest_based_learning:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:study:interest_based_learning:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "study:risk:interest_based_learning",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "mbti:ENTP:traits:study:interest_based_learning",
+        "mbti:coverage:direct",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "v1:gwimun:pair",
+        "v4:career-study:ENTP",
+        "v4:material-depth:sinsal_gwimun",
+        "mbti:ENTP:traits:study:interest_based_learning:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "지속성 비용",
+    "sourceCandidateId": "mbti:ENTP:traits:study:interest_based_learning:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:study:interest_based_learning:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "study:risk:interest_based_learning",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "mbti:ENTP:traits:study:interest_based_learning",
+        "mbti:coverage:direct",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "v1:gwimun:pair",
+        "v4:career-study:ENTP",
+        "v4:material-depth:sinsal_gwimun",
+        "mbti:ENTP:traits:study:interest_based_learning:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "학습 방법",
+    "sourceCandidateId": "mbti:ENTP:traits:study:interest_based_learning:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:ENTP:traits:study:interest_based_learning:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "study:risk:interest_based_learning",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "canonical-natal-table-v1:features:sinsal_gwimun",
+        "mbti:ENTP:traits:study:interest_based_learning",
+        "mbti:coverage:direct",
+        "natal:sinsal_gwimun",
+        "sajuFeatureTaxonomy:sinsal_gwimun",
+        "v1:gwimun:pair",
+        "v4:career-study:ENTP",
+        "v4:material-depth:sinsal_gwimun",
+        "mbti:ENTP:traits:study:interest_based_learning:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "발전 능력",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:ELEMENT_PAIR:WOOD_WATER",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARNING_TO_EXPANSION",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:learning:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "LEARNING",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:ELEMENT_PAIR:WOOD_WATER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "능력의 가치",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:ELEMENT_PAIR:WOOD_WATER",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARNING_TO_EXPANSION",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:learning:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "LEARNING",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:ELEMENT_PAIR:WOOD_WATER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "상태별 전략",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:ELEMENT_PAIR:WOOD_WATER",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARNING_TO_EXPANSION",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:learning:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "LEARNING",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:ELEMENT_PAIR:WOOD_WATER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "실력 확인",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:ELEMENT_PAIR:WOOD_WATER",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "LEARNING_TO_EXPANSION",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:learning:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "LEARNING",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:ELEMENT_PAIR:WOOD_WATER"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "승인된 긍정 특징",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:ten-god:year:MAIN:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:flexibility:positive-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:ten-god:year:MAIN:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:flexibility:positive-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "발휘 상황",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:ten-god:year:MAIN:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:flexibility:positive-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "실현 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+    "evidenceIds": [
+      "natal:ten-god:year:MAIN:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NEW_WORK_STABLE_LIFE",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:flexibility:positive-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CHANGE_ORIENTATION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR019"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "타인에게 주는 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR010",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "FAST_BUT_NOT_RECKLESS",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:precision:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR010"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR010",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "FAST_BUT_NOT_RECKLESS",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:precision:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR010"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "인정받을 상황",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR010",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "FAST_BUT_NOT_RECKLESS",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:precision:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR010"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "드러내는 방법",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR010",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "FAST_BUT_NOT_RECKLESS",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:precision:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR010"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "중요 위험",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR079",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YIN"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINKING_PREVENTS_REST",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:depth:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR079"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "원인",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR079",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YIN"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINKING_PREVENTS_REST",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:depth:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR079"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "기회와 비용",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR079",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YIN"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINKING_PREVENTS_REST",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:depth:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR079"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "과사용 방지",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR079",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YIN"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINKING_PREVENTS_REST",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:depth:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR079"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "활용 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR050",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NOTICE_BUT_DECIDE_MYSELF",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:care:positive-activation",
+      "application": "RECALL",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR050"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "가치가 커질 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR050",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NOTICE_BUT_DECIDE_MYSELF",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:care:positive-activation",
+      "application": "RECALL",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR050"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "피할 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR050",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NOTICE_BUT_DECIDE_MYSELF",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:care:positive-activation",
+      "application": "RECALL",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR050"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "현실적 희망",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR050",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NOTICE_BUT_DECIDE_MYSELF",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:care:positive-activation",
+      "application": "RECALL",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR050"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "핵심 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:creation:career-choice",
+      "application": "RECALL",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "중요한 이유",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:creation:career-choice",
+      "application": "RECALL",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "선택 질문",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:creation:career-choice",
+      "application": "RECALL",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "잘못된 선택 방지",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "foundation:element:WATER:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:creation:career-choice",
+      "application": "RECALL",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "소개된 위험",
+    "sourceCandidateId": "editorial:CLAIM:F02_SHARP_SPEECH",
+    "evidenceIds": [
+      "natal:hour:stem:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SHARP_SPEECH",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:precision:risk-reminder",
+      "application": "RECALL",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "F02_SHARP_SPEECH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "연결 이유",
+    "sourceCandidateId": "editorial:CLAIM:F02_SHARP_SPEECH",
+    "evidenceIds": [
+      "natal:hour:stem:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SHARP_SPEECH",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:precision:risk-reminder",
+      "application": "RECALL",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "F02_SHARP_SPEECH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "악화 조건",
+    "sourceCandidateId": "editorial:CLAIM:F02_SHARP_SPEECH",
+    "evidenceIds": [
+      "natal:hour:stem:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SHARP_SPEECH",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:precision:risk-reminder",
+      "application": "RECALL",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "F02_SHARP_SPEECH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "보완 방법",
+    "sourceCandidateId": "editorial:CLAIM:F02_SHARP_SPEECH",
+    "evidenceIds": [
+      "natal:hour:stem:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SHARP_SPEECH",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:precision:risk-reminder",
+      "application": "RECALL",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "F02_SHARP_SPEECH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "첫 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:autonomy:integrated-growth",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "장기 능력",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:autonomy:integrated-growth",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "일 돈 학업 연결",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:autonomy:integrated-growth",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "성장 확인",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:month:MAIN:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:autonomy:integrated-growth",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "소개된 강점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR022",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "BUILD_AND_SHOW",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:expression:closing",
+      "application": "RECALL",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR022"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "긍정 가능성",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR022",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "BUILD_AND_SHOW",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:expression:closing",
+      "application": "RECALL",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR022"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "기억할 원칙",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR022",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "BUILD_AND_SHOW",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:expression:closing",
+      "application": "RECALL",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR022"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "개인별 마무리",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR022",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "BUILD_AND_SHOW",
+    "lifeStatus": "student",
+    "jobContext": "컴퓨터공학 전공",
+    "provenance": {
+      "materialId": "career:expression:closing",
+      "application": "RECALL",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR022"
+      ]
+    }
+  }
+]

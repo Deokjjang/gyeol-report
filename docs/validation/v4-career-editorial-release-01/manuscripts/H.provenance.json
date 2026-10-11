@@ -1,0 +1,3151 @@
+[
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "대표 업무 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "구체적 업무 상황",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "그 방식의 장점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "기억할 업무 정체성",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 명리 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:work-basis",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "쉬운 의미",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:work-basis",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "실제 MBTI 업무 특성",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:work-basis",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "두 분석의 결합",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:work-basis",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "시작 방식",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "진행 중 행동",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "마무리 방식",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "효과적인 조건과 주의점",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "능력이 살아나는 환경",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR053",
+    "evidenceIds": [
+      "natal:day:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SEE_ERROR_STAY_GENTLE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR053"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "적합한 이유",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR053",
+    "evidenceIds": [
+      "natal:day:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SEE_ERROR_STAY_GENTLE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR053"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "불편한 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR053",
+    "evidenceIds": [
+      "natal:day:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SEE_ERROR_STAY_GENTLE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR053"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR053",
+    "evidenceIds": [
+      "natal:day:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SEE_ERROR_STAY_GENTLE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR053"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "주요 강점",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "발휘 장면",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "실제 가치",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "다른 재능",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:month:branch:巳"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:month:branch:巳"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "문제 해결 장면",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:month:branch:巳"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "발전 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:month:branch:巳"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "덜 익숙한 활용 가능성",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR053",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SEE_ERROR_STAY_GENTLE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:talent-transfer",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR053"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 결합 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR053",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SEE_ERROR_STAY_GENTLE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:talent-transfer",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR053"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "다른 업무의 활용",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR053",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SEE_ERROR_STAY_GENTLE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:talent-transfer",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR053"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "가능성의 의미",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR053",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SEE_ERROR_STAY_GENTLE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:talent-transfer",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR053"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "공통 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "성과로 바꿀 요소",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "부족해질 부분",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "구체적 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "적합한 직무의 공통점",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "만족 조건",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "직업 선택 기준",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 첫 추천",
+    "sourceCandidateId": "career-route:lead",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:lead",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "route:lead",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_jeonghwa",
+        "SajuCalcResult:tenGods.distribution:劫財",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_jeongmyo",
+        "canonical-natal-table-v1:features:sinsal_yangin",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_jeongmyo",
+        "natal:sinsal_yangin",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:symbolicImage",
+        "sajuFeatureTaxonomy:sinsal_yangin",
+        "sajuKnowledgeBase:day_master_jeonghwa",
+        "sajuKnowledgeBase:ten_god_jie_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:정묘",
+        "v1:yangin:정:사",
+        "v4:career-route:lead",
+        "v4:career-setting:recovery",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_jeonghwa",
+        "v4:material-depth:day_pillar_jeongmyo",
+        "v4:material-depth:sinsal_yangin",
+        "v4:material-depth:ten_god_jie_cai",
+        "v4:semantic-meaning:ten_god_jie_cai"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "추천 이유",
+    "sourceCandidateId": "career-route:lead",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:lead",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "route:lead",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_jeonghwa",
+        "SajuCalcResult:tenGods.distribution:劫財",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_jeongmyo",
+        "canonical-natal-table-v1:features:sinsal_yangin",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_jeongmyo",
+        "natal:sinsal_yangin",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:symbolicImage",
+        "sajuFeatureTaxonomy:sinsal_yangin",
+        "sajuKnowledgeBase:day_master_jeonghwa",
+        "sajuKnowledgeBase:ten_god_jie_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:정묘",
+        "v1:yangin:정:사",
+        "v4:career-route:lead",
+        "v4:career-setting:recovery",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_jeonghwa",
+        "v4:material-depth:day_pillar_jeongmyo",
+        "v4:material-depth:sinsal_yangin",
+        "v4:material-depth:ten_god_jie_cai",
+        "v4:semantic-meaning:ten_god_jie_cai"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "활용 강점",
+    "sourceCandidateId": "career-route:lead",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:lead",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "route:lead",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_jeonghwa",
+        "SajuCalcResult:tenGods.distribution:劫財",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_jeongmyo",
+        "canonical-natal-table-v1:features:sinsal_yangin",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_jeongmyo",
+        "natal:sinsal_yangin",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:symbolicImage",
+        "sajuFeatureTaxonomy:sinsal_yangin",
+        "sajuKnowledgeBase:day_master_jeonghwa",
+        "sajuKnowledgeBase:ten_god_jie_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:정묘",
+        "v1:yangin:정:사",
+        "v4:career-route:lead",
+        "v4:career-setting:recovery",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_jeonghwa",
+        "v4:material-depth:day_pillar_jeongmyo",
+        "v4:material-depth:sinsal_yangin",
+        "v4:material-depth:ten_god_jie_cai",
+        "v4:semantic-meaning:ten_god_jie_cai"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "현실적 조건",
+    "sourceCandidateId": "career-route:lead",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:lead",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "route:lead",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_jeonghwa",
+        "SajuCalcResult:tenGods.distribution:劫財",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_jeongmyo",
+        "canonical-natal-table-v1:features:sinsal_yangin",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_jeongmyo",
+        "natal:sinsal_yangin",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:symbolicImage",
+        "sajuFeatureTaxonomy:sinsal_yangin",
+        "sajuKnowledgeBase:day_master_jeonghwa",
+        "sajuKnowledgeBase:ten_god_jie_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:정묘",
+        "v1:yangin:정:사",
+        "v4:career-route:lead",
+        "v4:career-setting:recovery",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_jeonghwa",
+        "v4:material-depth:day_pillar_jeongmyo",
+        "v4:material-depth:sinsal_yangin",
+        "v4:material-depth:ten_god_jie_cai",
+        "v4:semantic-meaning:ten_god_jie_cai"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "다른 실제 추천",
+    "sourceCandidateId": "career-route:experience",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:experience",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "route:experience",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_jeonghwa",
+        "SajuCalcResult:tenGods.distribution:劫財",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_jeongmyo",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_jeongmyo",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:symbolicImage",
+        "sajuKnowledgeBase:day_master_jeonghwa",
+        "sajuKnowledgeBase:ten_god_jie_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:정묘",
+        "v4:career-route:experience",
+        "v4:career-setting:recovery",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_jeonghwa",
+        "v4:material-depth:day_pillar_jeongmyo",
+        "v4:material-depth:ten_god_jie_cai",
+        "v4:semantic-meaning:ten_god_jie_cai"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "career-route:experience",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:experience",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "route:experience",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_jeonghwa",
+        "SajuCalcResult:tenGods.distribution:劫財",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_jeongmyo",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_jeongmyo",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:symbolicImage",
+        "sajuKnowledgeBase:day_master_jeonghwa",
+        "sajuKnowledgeBase:ten_god_jie_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:정묘",
+        "v4:career-route:experience",
+        "v4:career-setting:recovery",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_jeonghwa",
+        "v4:material-depth:day_pillar_jeongmyo",
+        "v4:material-depth:ten_god_jie_cai",
+        "v4:semantic-meaning:ten_god_jie_cai"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "발휘 능력",
+    "sourceCandidateId": "career-route:investigate",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:investigate",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "route:investigate",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_jeonghwa",
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_jeongmyo",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_jeongmyo",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:symbolicImage",
+        "sajuKnowledgeBase:day_master_jeonghwa",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:정묘",
+        "v4:career-route:investigate",
+        "v4:career-setting:recovery",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_jeonghwa",
+        "v4:material-depth:day_pillar_jeongmyo",
+        "v4:material-depth:ten_god_pian_yin",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "natal:day:stem:丁",
+        "natal:month:branch:巳",
+        "natal:ten-god:day:MAIN:乙",
+        "natal:ten-god:month:SUB:戊",
+        "natal:ten-god:month:visible:乙",
+        "natal:ten-god:year:MAIN:乙",
+        "natal:year:stem:丁",
+        "supplement:marker:HYEONCHIM",
+        "supplement:marker:TAEGEUK",
+        "supplement:stage:day:병",
+        "supplement:stage:year:병"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "준비와 조건",
+    "sourceCandidateId": "career-route:investigate",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:investigate",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "route:investigate",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_jeonghwa",
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_jeongmyo",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_jeongmyo",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:symbolicImage",
+        "sajuKnowledgeBase:day_master_jeonghwa",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:정묘",
+        "v4:career-route:investigate",
+        "v4:career-setting:recovery",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_jeonghwa",
+        "v4:material-depth:day_pillar_jeongmyo",
+        "v4:material-depth:ten_god_pian_yin",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "natal:day:stem:丁",
+        "natal:month:branch:巳",
+        "natal:ten-god:day:MAIN:乙",
+        "natal:ten-god:month:SUB:戊",
+        "natal:ten-god:month:visible:乙",
+        "natal:ten-god:year:MAIN:乙",
+        "natal:year:stem:丁",
+        "supplement:marker:HYEONCHIM",
+        "supplement:marker:TAEGEUK",
+        "supplement:stage:day:병",
+        "supplement:stage:year:병"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S5",
+    "roleDescription": "준비와 조건",
+    "sourceCandidateId": "career-route:investigate",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:investigate",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "route:investigate:environment",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_jeonghwa",
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_jeongmyo",
+        "careerContextV3:normalized-dimensions",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:day_pillar_jeongmyo",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:symbolicImage",
+        "sajuKnowledgeBase:day_master_jeonghwa",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:정묘",
+        "v4:career-route:investigate",
+        "v4:career-setting:recovery",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_jeonghwa",
+        "v4:material-depth:day_pillar_jeongmyo",
+        "v4:material-depth:ten_god_pian_yin",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "natal:day:stem:丁",
+        "natal:month:branch:巳",
+        "natal:ten-god:day:MAIN:乙",
+        "natal:ten-god:month:SUB:戊",
+        "natal:ten-god:month:visible:乙",
+        "natal:ten-god:year:MAIN:乙",
+        "natal:year:stem:丁",
+        "supplement:marker:HYEONCHIM",
+        "supplement:marker:TAEGEUK",
+        "supplement:stage:day:병",
+        "supplement:stage:year:병"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 회피 환경",
+    "sourceCandidateId": "career-avoid:0",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "VERIFIED_AVOID_ENVIRONMENT",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "avoid:0",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_jeonghwa",
+        "canonical-natal-table-v1:features:day_pillar_jeongmyo",
+        "canonical-natal-table-v1:features:sinsal_yangin",
+        "natal:day_pillar_jeongmyo",
+        "natal:sinsal_yangin",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:symbolicImage",
+        "sajuFeatureTaxonomy:sinsal_yangin",
+        "sajuKnowledgeBase:day_master_jeonghwa",
+        "v1:dayPillar:정묘",
+        "v1:yangin:정:사",
+        "v4:career-route:lead:environment",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_jeonghwa",
+        "v4:material-depth:day_pillar_jeongmyo",
+        "v4:material-depth:sinsal_yangin"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "불편한 이유",
+    "sourceCandidateId": "career-avoid:1",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "VERIFIED_AVOID_ENVIRONMENT",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "avoid:1",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:saju-calendar-kst-v2:day_master_jeonghwa",
+        "SajuCalcResult:tenGods.distribution:劫財",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:day_pillar_jeongmyo",
+        "natal:day_pillar_jeongmyo",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:coreKeywords",
+        "sajuDayPillarKnowledge:day_pillar_jeongmyo:symbolicImage",
+        "sajuKnowledgeBase:day_master_jeonghwa",
+        "sajuKnowledgeBase:ten_god_jie_cai",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:dayPillar:정묘",
+        "v4:career-route:experience:environment",
+        "v4:career-voice:natal",
+        "v4:material-depth:day_master_jeonghwa",
+        "v4:material-depth:day_pillar_jeongmyo",
+        "v4:material-depth:ten_god_jie_cai",
+        "v4:semantic-meaning:ten_god_jie_cai"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "가능한 문제",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "avoid:cost",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "회피와 조정 구분",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "avoid:adjustment",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "협업 특징",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR053",
+    "evidenceIds": [
+      "natal:year:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SEE_ERROR_STAY_GENTLE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR053"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "소통 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR053",
+    "evidenceIds": [
+      "natal:year:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SEE_ERROR_STAY_GENTLE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR053"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "타인에게 주는 장점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR053",
+    "evidenceIds": [
+      "natal:year:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SEE_ERROR_STAY_GENTLE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR053"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "좋은 협업 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR053",
+    "evidenceIds": [
+      "natal:year:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SEE_ERROR_STAY_GENTLE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR053"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "적합한 역할",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "적용 상황",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "한계",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "편안한 환경",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:year:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "자율성 규칙 소통",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:year:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "피할 문제",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:year:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "개선 방법",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:year:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "입력한 상태",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "연결 강점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:year:MAIN:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:current-strength",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "가능한 어려움",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:year:MAIN:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:current-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "발전 능력",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "필요한 이유",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "부족해질 부분",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "성장 확인",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "상태별 우선순위",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "성급한 판단",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "작은 시도",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "다음 단계 기준",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "수익 관련 경향",
+    "sourceCandidateId": "career-natal-money:sinsal_hyeonchim",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NATAL_ECONOMIC_VALUE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "money:retained:sinsal_hyeonchim",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "natal:sinsal_hyeonchim",
+        "position:day",
+        "position:year",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "shinsal:HYEONCHIMSAL",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4:career-natal-money:sinsal_hyeonchim",
+        "v4:material-depth:sinsal_hyeonchim"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "명리 재물 근거",
+    "sourceCandidateId": "career-natal-money:sinsal_hyeonchim",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NATAL_ECONOMIC_VALUE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "money:retained:sinsal_hyeonchim",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "natal:sinsal_hyeonchim",
+        "position:day",
+        "position:year",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "shinsal:HYEONCHIMSAL",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4:career-natal-money:sinsal_hyeonchim",
+        "v4:material-depth:sinsal_hyeonchim"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "MBTI 판단 선호",
+    "sourceCandidateId": "career-natal-money:sinsal_hyeonchim",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NATAL_ECONOMIC_VALUE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "money:retained:sinsal_hyeonchim",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "natal:sinsal_hyeonchim",
+        "position:day",
+        "position:year",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "shinsal:HYEONCHIMSAL",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4:career-natal-money:sinsal_hyeonchim",
+        "v4:material-depth:sinsal_hyeonchim"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "가치 생산 방식",
+    "sourceCandidateId": "career-natal-money:sinsal_hyeonchim",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "NATAL_ECONOMIC_VALUE",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "money:retained:sinsal_hyeonchim",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:BRANCH_ONLY",
+        "branch:卯",
+        "canonical-natal-table-v1:features:sinsal_hyeonchim",
+        "natal:sinsal_hyeonchim",
+        "position:day",
+        "position:year",
+        "sajuFeatureTaxonomy:sinsal_hyeonchim",
+        "shinsal:HYEONCHIMSAL",
+        "v1:hyeonchim:묘",
+        "v1:sinsal:현침살",
+        "v4:career-natal-money:sinsal_hyeonchim",
+        "v4:material-depth:sinsal_hyeonchim"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "검증된 재능",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:year:MAIN:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:year:MAIN:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "직업적 활용",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:year:MAIN:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "경제적 가치 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:year:MAIN:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "가능한 약점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR056",
+    "evidenceIds": [
+      "natal:day:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PEOPLE_PLEASE_THEN_TIRED",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR056"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "그 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR056",
+    "evidenceIds": [
+      "natal:day:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PEOPLE_PLEASE_THEN_TIRED",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR056"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "지출 기회 시간 위험",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR056",
+    "evidenceIds": [
+      "natal:day:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PEOPLE_PLEASE_THEN_TIRED",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR056"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR056",
+    "evidenceIds": [
+      "natal:day:branch:卯"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PEOPLE_PLEASE_THEN_TIRED",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR056"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "관리 원칙",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "소득 비용 시간",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "개인 점검 방식",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "현실적인 결론",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "학습 특징",
+    "sourceCandidateId": "career-study:natal",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:卯",
+        "canonical-natal-table-v1:features:gwiin_taegeuk",
+        "dayStem:丁",
+        "natal:gwiin_taegeuk",
+        "position:day",
+        "position:year",
+        "sajuFeatureTaxonomy:gwiin_taegeuk",
+        "shinsal:TAEGEUK_GWIIN",
+        "v1:gwiin:태극귀인",
+        "v4:career-study:natal",
+        "v4:material-depth:gwiin_taegeuk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 학업 자료",
+    "sourceCandidateId": "career-study:natal",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:卯",
+        "canonical-natal-table-v1:features:gwiin_taegeuk",
+        "dayStem:丁",
+        "natal:gwiin_taegeuk",
+        "position:day",
+        "position:year",
+        "sajuFeatureTaxonomy:gwiin_taegeuk",
+        "shinsal:TAEGEUK_GWIIN",
+        "v1:gwiin:태극귀인",
+        "v4:career-study:natal",
+        "v4:material-depth:gwiin_taegeuk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "명리 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:ten-god:month:SUB:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "study:natal-basis",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "적합한 방식",
+    "sourceCandidateId": "career-study:natal",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:卯",
+        "canonical-natal-table-v1:features:gwiin_taegeuk",
+        "dayStem:丁",
+        "natal:gwiin_taegeuk",
+        "position:day",
+        "position:year",
+        "sajuFeatureTaxonomy:gwiin_taegeuk",
+        "shinsal:TAEGEUK_GWIIN",
+        "v1:gwiin:태극귀인",
+        "v4:career-study:natal",
+        "v4:material-depth:gwiin_taegeuk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "흥미와 능력 조건",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:learning-environment",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "학습 근거",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:learning-environment",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "학습 활동",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:learning-environment",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "환경",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:persistence:learning-environment",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "발전 능력",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:ten-god:month:SUB:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "능력의 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:ten-god:month:SUB:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "상태별 전략",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:ten-god:month:SUB:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "실력 확인",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:ten-god:month:SUB:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "타인에게 주는 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "인정받을 상황",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "드러내는 방법",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "THINK_AND_RECHECK",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:depth:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR007"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "핵심 조건",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:career-choice",
+      "application": "RECALL",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "중요한 이유",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:career-choice",
+      "application": "RECALL",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "선택 질문",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:career-choice",
+      "application": "RECALL",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "잘못된 선택 방지",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:丁",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_FIRE_YIN",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:expression:career-choice",
+      "application": "RECALL",
+      "axis": "EXPRESSION",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:丁"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "소개된 위험",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR056",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PEOPLE_PLEASE_THEN_TIRED",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:risk-reminder",
+      "application": "RECALL",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR056"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "연결 이유",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR056",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PEOPLE_PLEASE_THEN_TIRED",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:risk-reminder",
+      "application": "RECALL",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR056"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "악화 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR056",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PEOPLE_PLEASE_THEN_TIRED",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:risk-reminder",
+      "application": "RECALL",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR056"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "보완 방법",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR056",
+    "evidenceIds": [
+      "natal:month:stem:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PEOPLE_PLEASE_THEN_TIRED",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:care:risk-reminder",
+      "application": "RECALL",
+      "axis": "CARE",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR056"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "첫 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:month:branch:巳"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:integrated-growth",
+      "application": "RECALL",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "장기 능력",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:month:branch:巳"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:integrated-growth",
+      "application": "RECALL",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "일 돈 학업 연결",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:month:branch:巳"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:integrated-growth",
+      "application": "RECALL",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "성장 확인",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:month:branch:巳"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:integrated-growth",
+      "application": "RECALL",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "소개된 강점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:closing",
+      "application": "RECALL",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "긍정 가능성",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:closing",
+      "application": "RECALL",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "기억할 원칙",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:closing",
+      "application": "RECALL",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "개인별 마무리",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR003",
+    "evidenceIds": [
+      "natal:day:stem:丁"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRECISE_FIRST",
+    "lifeStatus": "unemployed",
+    "jobContext": "이전 직업 바리스타",
+    "provenance": {
+      "materialId": "career:precision:closing",
+      "application": "RECALL",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR003"
+      ]
+    }
+  }
+]
