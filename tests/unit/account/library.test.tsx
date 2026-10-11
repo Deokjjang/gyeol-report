@@ -18,6 +18,7 @@ import { RUNTIME_FIXTURES, SHADOW_CLOCK } from "../interpretation-v4/runtimeFixt
 import type { ReportInputPayload } from "../../../src/lib/report-generation/reportInputTypes";
 import { GET } from "../../../src/app/auth/[action]/route";
 import { POST as localApi } from "../../../src/app/dev/book-flow/api/route";
+import * as accountGate from "../../../src/lib/account/gate";
 const origin = "https://gyeolreport.com", id = "report_12345678901234567890", secret = "a".repeat(64);
 const A: AccountIdentity = { id: "user-a", provider: "kakao", displayName: "검수" }, B: AccountIdentity = { id: "user-b", provider: "google", displayName: "검수" };
 const records = Object.entries(ACCOUNT_POLICY_VERSIONS).map(([consent_type, document_version]) => ({ consent_type: consent_type as "terms" | "privacy", document_version, required: true, is_agreed: true, recorded_at: "2026-10-03T00:00:00Z" }));
@@ -26,7 +27,7 @@ function auth(user: AccountIdentity | null = A, agreed = true): AccountPort {
 }
 function port(): LibraryPort { return { bind: vi.fn(async () => true), orderForReport: vi.fn(async () => "po-private"), claim: vi.fn(async () => "owned" as const), list: vi.fn(async () => []) }; }
 function request(action: string, body?: unknown, cookie = "") { return new NextRequest(`${origin}/auth/library-${action}${body === undefined && action !== "list" ? `?reportId=${id}` : ""}`, { method: body === undefined ? "GET" : "POST", headers: { origin, cookie, "content-type": "application/json" }, ...(body === undefined ? {} : { body: JSON.stringify(body) }) }); }
-afterEach(() => vi.unstubAllEnvs());
+afterEach(() => { vi.unstubAllEnvs(); vi.restoreAllMocks(); });
 describe("server claim boundary", () => {
   it("checkout uses getUser not payload authority; guest capability is 256-bit HttpOnly Secure and never JSON", async () => {
     const p = port();
@@ -71,6 +72,7 @@ describe("server claim boundary", () => {
     expect((await handleLibrary(req, "list", auth(), p)).status).toBe(200); expect(p.list).toHaveBeenCalledWith(A.id);
   });
   it("closed public gate prevents all library routes and local APIs in production", async () => {
+    vi.spyOn(accountGate, "accountPublicEnabled").mockReturnValue(false);
     for (const action of ["library-list", "library-status", "library-claim"]) expect((await GET(request("list"), { params: Promise.resolve({ action }) })).status).toBe(404);
     vi.stubEnv("NODE_ENV", "production"); expect((await localApi(new Request("http://127.0.0.1/dev/book-flow/api", { method: "POST", body: "{}" }))).status).toBe(404);
     expect(await createLocalLibraryPort().list(A.id)).toBeNull();

@@ -1,8 +1,8 @@
 import "server-only";
 
 // Independent from Book activation. No env/cookie/query/client override.
-// Provider configuration, legal audit and local migration review precede activation.
-export function accountPublicEnabled(): boolean { return false; }
+// Approved direct-sales release; OAuth configuration is a deployment prerequisite.
+export function accountPublicEnabled(): boolean { return true; }
 export function localAccountAllowed(request: Request): boolean {
   if (process.env.NODE_ENV !== "development") return false;
   const url = new URL(request.url), host = request.headers.get("host");

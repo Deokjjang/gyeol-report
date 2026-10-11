@@ -1,7 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { NextRequest } from "next/server";
-import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
 import { createLocalShareFixture, localBookShareDatabase, sqlBookShareLibrary, sqlBookSharePort } from "../../../src/lib/book/shareLocalReview";
 import { loadBookShare, loadSharedBookData, prepareBookShare } from "../../../src/lib/book/shareServer";
@@ -22,6 +22,7 @@ import { GET as publicData } from "../../../src/app/r/[token]/book-data/route";
 import { GET as publicOg } from "../../../src/app/r/[token]/book-og/route";
 import { bookExperiencePublicEnabled } from "../../../src/lib/book/publicGate";
 import { accountPublicEnabled } from "../../../src/lib/account/gate";
+import * as accountGate from "../../../src/lib/account/gate";
 import type { BookShareModel } from "../../../src/lib/book/shareModel";
 import type { PGlite } from "@electric-sql/pglite";
 import type { AccountPort } from "../../../src/lib/account/handler";
@@ -32,6 +33,7 @@ import SharedPage, { generateMetadata } from "../../../src/app/r/[token]/page";
 const origin = "http://127.0.0.1:3189";
 const req = (body: unknown, cookie = "", source = origin) => new NextRequest(`${origin}/dev/book-flow/share`, { method: "POST", headers: { host: "127.0.0.1:3189", origin: source, cookie }, body: JSON.stringify(body) });
 const noOp = () => {};
+afterEach(() => { vi.restoreAllMocks(); });
 let db: PGlite;
 const fixtures: Array<{ id: string; reportId: string; cookie: string; model: BookShareModel }> = [];
 beforeAll(async () => {
@@ -155,6 +157,8 @@ describe("V4 Book share, real V4 generation and existing SQL", () => {
     expect((await base.find("report_id", f.reportId))?.token).toBe(f.model.shareToken);
   });
   it("gates OFF deny public issue/read/OG even with query overrides; no referrals/rewards", async () => {
+    vi.spyOn(publicGate, "bookExperiencePublicEnabled").mockReturnValue(false);
+    vi.spyOn(accountGate, "accountPublicEnabled").mockReturnValue(false);
     expect(bookExperiencePublicEnabled()).toBe(false); expect(accountPublicEnabled()).toBe(false);
     expect((await publicShare(req({ reportId: fixtures[0].reportId }, fixtures[0].cookie))).status).toBe(404);
     const params = Promise.resolve({ token: fixtures[0].model.shareToken! }), r = new Request(`${origin}/r/x/book-data?v4=true`);

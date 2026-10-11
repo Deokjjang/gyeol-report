@@ -170,8 +170,8 @@ describe("ticket HTTP authority",()=>{
     const a=auth();vi.mocked(a.currentUser).mockResolvedValueOnce({id:A,provider:"kakao",displayName:"검수"}).mockResolvedValueOnce(null);
     expect((await handleTickets(req("redeem",body),"redeem",a,port)).status).toBe(401);expect(port.call).not.toHaveBeenCalled();
   });
-  it("public Book/Auth gates remain literal OFF; public redemption checks both before Auth/DB",()=>{
-    for(const f of ["src/lib/account/gate.ts","src/lib/book/publicGate.ts"])expect(readFileSync(f,"utf8")).toContain("return false;");
+  it("approved Book/Auth gates are ON; public redemption still checks both before Auth/DB",()=>{
+    for(const f of ["src/lib/account/gate.ts","src/lib/book/publicGate.ts"])expect(readFileSync(f,"utf8")).toContain("return true;");
     const route=readFileSync("src/app/auth/[action]/route.ts","utf8");
     expect(route).toContain('if (!accountPublicEnabled())');
     expect(route).toContain('if (ticketPublication && !bookExperiencePublicEnabled())');

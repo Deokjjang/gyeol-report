@@ -5,6 +5,7 @@ import { ACCOUNT_POLICY_VERSIONS, accountSession, needsRequiredReconsent, safeAc
 import { handleAccount, type AccountPort } from "../../../src/lib/account/handler";
 import { createLocalAccountPort } from "../../../src/lib/account/localReview";
 import { accountPublicEnabled, localAccountAllowed } from "../../../src/lib/account/gate";
+import * as accountGate from "../../../src/lib/account/gate";
 import { GET as publicGet, POST as publicPost } from "../../../src/app/auth/[action]/route";
 import { POST as bookApi } from "../../../src/app/dev/book-flow/api/route";
 import { BookHomeRoute } from "../../../src/components/book/BookRoutes";
@@ -22,7 +23,7 @@ const req = (action: string, body?: unknown, cookie = "", query = "") => new Nex
 function port(snapshot: AccountSnapshot | null = { profile: null, consents: [] }): AccountPort {
   return { authorizationOrigin: "https://project.supabase.co", currentUser: vi.fn(async () => user), start: vi.fn(async (_p, callback) => `https://project.supabase.co/auth/v1/authorize?redirect_to=${encodeURIComponent(callback)}`), exchange: vi.fn(async () => true), logout: vi.fn(async () => true), read: vi.fn(async () => snapshot), consent: vi.fn(async () => true), finish: r => r };
 }
-afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
+afterEach(() => { vi.restoreAllMocks(); vi.useRealTimers(); vi.unstubAllEnvs(); });
 describe("account consent and authority", () => {
   it("OAuth success alone is not an active account", () => expect(accountSession(user, { profile: null, consents: [] }).status).toBe("needs_consent"));
   it("current versions activate; newest old/withdrawn/missing required remains stale", () => {
@@ -99,16 +100,17 @@ describe("OAuth redirects, CSRF, session", () => {
   });
   it("metadata is a bounded cosmetic fallback, not authority", () => { expect(safeDisplayName(undefined)).toBe("회원"); expect(safeDisplayName("x".repeat(100))).toHaveLength(40); expect(safeDisplayName("<admin>\u0001")).toBe("admin"); });
 });
-describe("local adapter and OFF gates", () => {
+describe("local adapter and server-controlled release gates", () => {
   it("Book header only enables account entry from the server's independent gate", async () => {
-    expect((await BookHomeRoute({ internal: false })).props.authEnabled).toBe(false);
+    expect((await BookHomeRoute({ internal: false })).props.authEnabled).toBe(true);
     expect((await BookHomeRoute({ internal: true })).props.authEnabled).toBe(true);
   });
   it("auth is independent and cannot be enabled by query/cookie", async () => {
+    vi.spyOn(accountGate, "accountPublicEnabled").mockReturnValue(false);
     expect(accountPublicEnabled()).toBe(false);
     expect((await publicGet(req("session", undefined, "auth=true", "?enabled=1"), { params: Promise.resolve({ action: "session" }) })).status).toBe(404);
     expect((await publicPost(req("start", { provider: "kakao" }), { params: Promise.resolve({ action: "start" }) })).status).toBe(404);
-    expect(readFileSync("src/lib/book/publicGate.ts", "utf8")).toContain("return false");
+    expect(readFileSync("src/lib/book/publicGate.ts", "utf8")).toContain("return true");
   });
   it("local path unavailable in production and on non-loopback hosts", () => {
     vi.stubEnv("NODE_ENV", "production"); expect(createLocalAccountPort(req("session"))).toBeNull(); expect(localAccountAllowed(req("session"))).toBe(false);

@@ -143,6 +143,7 @@ describe("public paid worker → existing V4 engine → frozen snapshot → Book
     const response = await POST(request(f.payload)); expect(response.status).toBe(200);
     const body = await response.json(), order = state.orders[0], input = order.inputSnapshot as Record<string, unknown>;
     const amount = getReportProduct(f.payload.productKey)!.amount;
+    expect(amount).toBe(1490);
     expect(body.paymentOrder.amount).toBe(amount); expect(body.checkoutSession.amount).toBe(amount); expect(body.tossCheckoutRequest.requestPayment.amount.value).toBe(amount); expect(order.amount).toBe(amount);
     let snapshot: unknown;
     const store: ReliabilityStore = { call: vi.fn(async (action, data) => {
@@ -185,7 +186,7 @@ describe("original V4 book authority", () => {
     expect(await bindCheckout(request(), NextResponse.json({}), "order", {}, a, state.library as LibraryPort)).toBeNull();
     expect(await canReadPurchasedBook(reportId)).toBe(false);
   });
-  it("public gates remain server constants OFF", () => {
-    for (const path of ["src/lib/book/publicGate.ts", "src/lib/account/gate.ts"]) expect(readFileSync(path, "utf8")).toMatch(/PublicEnabled\(\): boolean \{ return false; \}/);
+  it("approved direct-sales gates are server constants ON", () => {
+    for (const path of ["src/lib/book/publicGate.ts", "src/lib/account/gate.ts"]) expect(readFileSync(path, "utf8")).toMatch(/PublicEnabled\(\): boolean \{ return true; \}/);
   });
 });

@@ -199,14 +199,14 @@ describe("coupon HTTP isolation",()=>{
   const origin="http://127.0.0.1:3190";
   function auth():AccountPort{const user={id:A,provider:"kakao" as const,displayName:"검수"};return {currentUser:async()=>user,read:async()=>({profile:user,consents:Object.entries(ACCOUNT_POLICY_VERSIONS).map(([consent_type,document_version])=>({consent_type:consent_type as "terms"|"privacy",document_version,required:true,is_agreed:true,recorded_at:now.toISOString()}))}),finish:r=>r,authorizationOrigin:origin,start:async()=>null,exchange:async()=>false,logout:async()=>true,consent:async()=>false};}
   function req(body:unknown){return new NextRequest(`${origin}/dev/account/api/coupon-quote`,{method:"POST",headers:{host:"127.0.0.1:3190",origin},body:JSON.stringify(body)});}
-  it("amount/owner/expiry/limits/stacking/ticket fields rejected before store; public gate off",async()=>{
+  it("amount/owner/expiry/limits/stacking/ticket fields rejected before store; local coupon API remains isolated",async()=>{
     vi.stubEnv("NODE_ENV","development");const port:CouponStore={call:vi.fn(async()=>({ok:true}))};
     try{
       for(const field of ["originalPrice","discount","finalAmount","user_id","ownerId","expires_at","usage_limit","ticket","couponId"]){expect((await handleLocalCoupons(req({productType:"saju_mbti_full",[field]:1}),"quote",auth(),port)).status).toBe(400);}
       expect((await handleLocalCoupons(req({productType:"saju_mbti_full",selection:{code:"GYEOL300",grantId:randomUUID()}}),"quote",auth(),port)).status).toBe(400);
       const cross=req({});cross.headers.set("origin","https://evil.test");expect((await handleLocalCoupons(cross,"quote",auth(),port)).status).toBe(403);
       expect(port.call).not.toHaveBeenCalled();vi.stubEnv("NODE_ENV","production");expect((await handleLocalCoupons(req({}),"quote",auth(),port)).status).toBe(404);
-      for(const f of ["src/lib/account/gate.ts","src/lib/book/publicGate.ts"])expect(readFileSync(f,"utf8")).toContain("return false;");
+      for(const f of ["src/lib/account/gate.ts","src/lib/book/publicGate.ts"])expect(readFileSync(f,"utf8")).toContain("return true;");
     }finally{vi.unstubAllEnvs();}
   });
   it("ticket redemption rejects coupon selection instead of consuming both",async()=>{

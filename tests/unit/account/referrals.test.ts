@@ -1,6 +1,6 @@
 import { randomBytes, randomUUID } from "node:crypto";
 import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
-import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { NextRequest } from "next/server";
 import type { PGlite } from "@electric-sql/pglite";
 import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
@@ -21,6 +21,7 @@ import { bookNativeData, bookKakaoCard, bookShareMetadata } from "../../../src/l
 import { confirmPaidReport } from "../../../src/lib/payment/paidReportReliability";
 import { runLocalBookJob } from "../../../src/lib/book/localReview";
 import { withReferralPublication } from "../../../src/lib/referrals/service";
+import * as accountGate from "../../../src/lib/account/gate";
 const origin="http://127.0.0.1:3189", A=localTicketUserId("inviter"), anonymous:AccountPort={currentUser:async()=>null,start:async()=>null,exchange:async()=>false,logout:async()=>true,read:async()=>({profile:null,consents:[]}),consent:async()=>false,authorizationOrigin:origin,finish:r=>r};
 let db:PGlite, store:ReferralStore, reportId:string, model:BookShareModel, snapshot:unknown;
 const request=(body:unknown,cookie="",source=origin)=>new NextRequest(`${origin}/dev/book-flow/referral`,{method:"POST",headers:{host:"127.0.0.1:3189",origin:source,cookie},body:JSON.stringify(body)});
@@ -50,6 +51,7 @@ beforeAll(async()=>{
   if(process.env.REFERRAL_REVIEW_EXPORT){mkdirSync(process.env.REFERRAL_REVIEW_EXPORT,{recursive:true});writeFileSync(`${process.env.REFERRAL_REVIEW_EXPORT}/fixtures.json`,JSON.stringify(RUNTIME_FIXTURES));}
 },30000);
 afterAll(async()=>{await db?.close();});
+afterEach(() => vi.restoreAllMocks());
 describe("11B actual SQL + existing ticket ledger",()=>{
   it("owner account only; opaque credentials separate; social metadata unchanged",async()=>{
     const link=await invite();expect(link.referral?.token).toMatch(/^rf_[A-Za-z0-9_-]{43}$/);expect(link.referral?.token).not.toBe(link.shareToken);
@@ -65,6 +67,7 @@ describe("11B actual SQL + existing ticket ledger",()=>{
     for(const ref of [model.shareToken,`rf_${randomBytes(32).toString("base64url")}`]) expect((await captureReferral(request({shareToken:model.shareToken,ref}),anonymous,store,true)).cookies.getAll()).toHaveLength(0);
     expect((await captureReferral(request({shareToken:model.shareToken,ref:link.referral!.token,next:"https://evil.example"}),anonymous,store,true)).status).toBe(400);
     expect((await captureReferral(request({shareToken:model.shareToken,ref:link.referral!.token},"","https://evil.example"),anonymous,store,true)).status).toBe(403);
+    vi.spyOn(accountGate, "accountPublicEnabled").mockReturnValue(false);
     expect((await publicCapture(request({}))).status).toBe(404);
   });
   it("new verified identity + current consent, callback/consent retries B+1 exactly once; no A at signup",async()=>{

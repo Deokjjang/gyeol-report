@@ -65,6 +65,6 @@ describe("canonical browser adapter, no Meta network", () => {
     expect(form).toContain('useEffect(() => { interaction("book_viewed"');expect(checkout).toContain('useEffect(() => { interaction("checkout_started"');
     for(const p of ["components/book/BookCheckout.tsx","app/report/new/page.tsx","components/payment/DevTossCheckoutLauncher.tsx"])expect(read(p)).not.toContain('window.fbq');
     expect(read("components/analytics/MetaPixel.tsx")).not.toContain("fbq('track', 'PageView')");
-    expect(read("lib/book/publicGate.ts")).toContain("return false");expect(read("lib/account/gate.ts")).toContain("return false");
+    expect(read("lib/book/publicGate.ts")).toContain("return true");expect(read("lib/account/gate.ts")).toContain("return true");
   });
 });

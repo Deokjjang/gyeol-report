@@ -1,5 +1,5 @@
 import "server-only";
 
 // Deliberately no env, request, cookie, query, payload or client override.
-// Activation requires a separately reviewed server-code change.
-export function bookExperiencePublicEnabled(): boolean { return false; }
+// Approved direct-sales release. Paid ticket commerce remains separately OFF.
+export function bookExperiencePublicEnabled(): boolean { return true; }

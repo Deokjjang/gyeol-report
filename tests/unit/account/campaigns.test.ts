@@ -157,6 +157,6 @@ describe("12A actual SQL acquisition authority",()=>{
     expect(JSON.stringify(events)).not.toMatch(/displayName|birthDate|snapshot|user_id|email|narrative|context_hash/);
     for(const role of ["anon","authenticated"]){await db.exec(`set role ${role}`);for(const table of ["growth_campaigns","campaign_attributions","new_user_acquisitions"]){for(const sql of [`select * from ${table}`,`update ${table} set ${table==="growth_campaigns"?"status=status":"user_id=user_id"}`,`delete from ${table}`])await expect(db.exec(sql)).rejects.toThrow(/permission denied/);}
       await expect(db.exec("select growth_campaign('attribute',null,'{}')")).rejects.toThrow(/permission denied/);await db.exec("reset role");}
-    for(const f of ["src/lib/book/publicGate.ts","src/lib/account/gate.ts"])expect(readFileSync(f,"utf8")).toContain("return false;");
+    for(const f of ["src/lib/book/publicGate.ts","src/lib/account/gate.ts"])expect(readFileSync(f,"utf8")).toContain("return true;");
   });
 });

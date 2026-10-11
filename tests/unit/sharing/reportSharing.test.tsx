@@ -14,6 +14,8 @@ const mocks = vi.hoisted(() => ({
   call: vi.fn(), fail: false,
 }));
 vi.mock("../../../src/lib/payment/paidReportReliabilityStore", () => ({ createPaidReportReliabilityStore: () => ({ call: mocks.call }) }));
+// Guest V3 reads have no member ticket ownership; Next request headers are not present in this SSR fixture.
+vi.mock("../../../src/lib/book/ownerAccess", () => ({ loadOwnedTicketBook: vi.fn(async () => ({ kind: "absent" })) }));
 vi.mock("@supabase/supabase-js", () => ({ createClient: () => ({
   from: () => {
     let field = "", value = "";

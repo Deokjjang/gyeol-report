@@ -140,13 +140,13 @@ describe("12C fail-closed routes and side-effect boundary", () => {
     vi.stubEnv("VERCEL", ""); vi.stubEnv("CI", ""); vi.stubEnv("NODE_ENV", "development");
     expect((await POST(request())).status).toBe(400);
   });
-  it("manual adapter never invokes business writers and public gates remain false", () => {
+  it("manual adapter never invokes business writers even with public launch gates ON", () => {
     const adapter = source("src/app/dev/content-review/generate.ts");
     expect(adapter).not.toMatch(/from ["'].*(?:localReview|payment|tickets|coupons|referrals|growth|library|analytics|supabase)/);
     expect(adapter).toContain("generateV4ShadowReport(payload"); expect(adapter).toContain("validateV4Publication(");
     expect(fetch).not.toHaveBeenCalled();
     expect(effects.database).not.toHaveBeenCalled();
-    expect(bookExperiencePublicEnabled()).toBe(false); expect(accountPublicEnabled()).toBe(false);
+    expect(bookExperiencePublicEnabled()).toBe(true); expect(accountPublicEnabled()).toBe(true);
     const ui = source("src/app/dev/content-review/ReviewBook.tsx");
     expect(ui).toContain("BookReadingPresentation"); expect(ui).not.toContain("shareOwner="); expect(ui).not.toContain("saveToLibrary=");
     expect(source("src/app/dev/content-review/storage.ts")).toContain("gyeol:manual-content-review:v1");

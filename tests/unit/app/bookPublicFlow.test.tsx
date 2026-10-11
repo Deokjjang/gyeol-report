@@ -46,7 +46,7 @@ afterEach(() => { route.enabled = false; vi.unstubAllEnvs(); vi.useRealTimers();
 describe("server-authority OFF route boundary", () => {
   it("actual constant has no external inputs or environment activation", async () => {
     const gate = await vi.importActual<typeof import("../../../src/lib/book/publicGate")>("../../../src/lib/book/publicGate");
-    expect(gate.bookExperiencePublicEnabled()).toBe(false);
+    expect(gate.bookExperiencePublicEnabled()).toBe(true);
     expect(src("src/lib/book/publicGate.ts")).not.toMatch(/process\.env|cookies\(|headers\(|searchParams|localStorage|getItem/);
     expect(src("src/lib/book/publicGate.ts")).toMatch(/^import "server-only"/);
   });

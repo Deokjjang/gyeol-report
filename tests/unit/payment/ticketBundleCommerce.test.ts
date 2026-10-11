@@ -210,7 +210,7 @@ describe("member bundle commerce: real isolated SQL + mock provider", () => {
   });
   it("closed routes create no dependencies and never switch public gates",async()=>{
     const context={params:Promise.resolve({action:"prepare"})};
-    expect((await GET(request("history"),context)).status).toBe(404);expect((await POST(request("prepare",{}),context)).status).toBe(404);expect(ticketBundleCommerceEnabled()).toBe(false);expect(accountPublicEnabled()).toBe(false);
+    expect((await GET(request("history"),context)).status).toBe(404);expect((await POST(request("prepare",{}),context)).status).toBe(404);expect(ticketBundleCommerceEnabled()).toBe(false);expect(accountPublicEnabled()).toBe(true);
   });
   it("Toss request uses server order and rejects unsafe redirects",async()=>{
     const o=await create();expect(bundleCheckout(o,config,"회원")?.requestPayment.orderName).toBe("결리포트 이용권 5장");
