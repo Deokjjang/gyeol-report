@@ -1,0 +1,1214 @@
+[
+  {
+    "id": "A",
+    "version": "comprehensive-editorial-finish-02-v1",
+    "characters": 10391,
+    "chapters": 13,
+    "paragraphs": 52,
+    "hardErrors": [],
+    "qualityIssues": [],
+    "explicitMbti": 6,
+    "allocationComplete": true,
+    "proof": [
+      {
+        "slot": "CH07.P1",
+        "material": "fortune:editorial:CLAIM:P01_PEOPLE_LUCK",
+        "source": "editorial:CLAIM:P01_PEOPLE_LUCK",
+        "roots": [
+          "natal:hour:branch:卯",
+          "natal:hour:stem:丁",
+          "natal:month:branch:未",
+          "natal:month:stem:癸",
+          "supplement:marker:CHEONDEOK",
+          "supplement:marker:CHEONEUL",
+          "supplement:marker:DOHWA",
+          "supplement:marker:HONGYEOM",
+          "supplement:marker:WOLDEOK",
+          "supplement:relation:natal:BRANCH_COMBINATION:year:month:午未"
+        ],
+        "axis": null,
+        "direction": null,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH07.P2",
+        "material": "fortune:editorial:CLAIM:A02_INTIMATE_CHARM",
+        "source": "editorial:CLAIM:A02_INTIMATE_CHARM",
+        "roots": [
+          "natal:hour:branch:卯",
+          "natal:hour:stem:丁",
+          "natal:month:branch:未",
+          "natal:month:stem:癸",
+          "supplement:marker:DOHWA",
+          "supplement:marker:HONGYEOM",
+          "supplement:marker:WOLDEOK"
+        ],
+        "axis": null,
+        "direction": null,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH07.P3",
+        "material": "application:order:positive",
+        "source": "editorial:CLAIM:SU04_EXPERTISE",
+        "roots": [
+          "natal:day:branch:申"
+        ],
+        "axis": "PRECISION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P4",
+        "material": "positive-activation:order",
+        "source": "editorial:CLAIM:SU04_EXPERTISE",
+        "roots": [
+          "natal:day:branch:申"
+        ],
+        "axis": "PRECISION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH09.P1",
+        "material": "application:action:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+        "roots": [
+          "natal:year:stem:庚"
+        ],
+        "axis": "ACTION_TEMPO",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P2",
+        "material": "application:care:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "roots": [
+          "natal:month:stem:癸"
+        ],
+        "axis": "SOCIAL_ATTUNEMENT",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P3",
+        "material": "application:research:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+        "roots": [
+          "natal:ten-god:day:SUB:壬"
+        ],
+        "axis": "DEPTH",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P4",
+        "material": "application:self:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "roots": [
+          "foundation:element:METAL:BALANCED"
+        ],
+        "axis": "BOUNDARY",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH12.P1",
+        "material": "application:order:social",
+        "source": "editorial:CLAIM:SU04_EXPERTISE",
+        "roots": [
+          "natal:day:branch:申"
+        ],
+        "axis": "PRECISION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P2",
+        "material": "application:growth:social",
+        "source": "editorial:CLAIM:M06_BIG_MONEY_DESIRE",
+        "roots": [
+          "foundation:element:WOOD:BALANCED"
+        ],
+        "axis": "GOAL_DRIVE",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P3",
+        "material": "application:self:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "roots": [
+          "natal:ten-god:hour:visible:丁"
+        ],
+        "axis": "AUTONOMY",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P4",
+        "material": "application:research:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+        "roots": [
+          "natal:ten-god:day:SUB:壬"
+        ],
+        "axis": "DEPTH",
+        "direction": 1,
+        "application": "RECALL"
+      }
+    ]
+  },
+  {
+    "id": "B",
+    "version": "comprehensive-editorial-finish-02-v1",
+    "characters": 10113,
+    "chapters": 13,
+    "paragraphs": 52,
+    "hardErrors": [],
+    "qualityIssues": [],
+    "explicitMbti": 4,
+    "allocationComplete": true,
+    "proof": [
+      {
+        "slot": "CH07.P1",
+        "material": "application:flexible:positive",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+        "roots": [
+          "foundation:yin_yang:STRONG_YANG"
+        ],
+        "axis": "CHANGE_ORIENTATION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P2",
+        "material": "application:steady:positive",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+        "roots": [
+          "natal:hour:branch:辰"
+        ],
+        "axis": "STABILITY",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P3",
+        "material": "application:chance:positive",
+        "source": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+        "roots": [
+          "natal:ten-god:month:MAIN:壬"
+        ],
+        "axis": "OPPORTUNITY_SENSE",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P4",
+        "material": "positive-activation:flexible",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+        "roots": [
+          "foundation:yin_yang:STRONG_YANG"
+        ],
+        "axis": "CHANGE_ORIENTATION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH09.P1",
+        "material": "application:care:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "roots": [
+          "natal:month:stem:乙"
+        ],
+        "axis": "SOCIAL_ATTUNEMENT",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P2",
+        "material": "application:self:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "roots": [
+          "natal:year:branch:戌"
+        ],
+        "axis": "BOUNDARY",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P3",
+        "material": "application:resources:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR093",
+        "roots": [
+          "foundation:element:METAL:BALANCED"
+        ],
+        "axis": "PRACTICALITY",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P4",
+        "material": "application:order:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR009",
+        "roots": [
+          "natal:ten-god:month:visible:乙"
+        ],
+        "axis": "STRUCTURE_STYLE",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH12.P1",
+        "material": "application:flexible:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+        "roots": [
+          "foundation:yin_yang:STRONG_YANG"
+        ],
+        "axis": "CHANGE_ORIENTATION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P2",
+        "material": "application:steady:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR019",
+        "roots": [
+          "natal:hour:branch:辰"
+        ],
+        "axis": "STABILITY",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P3",
+        "material": "application:chance:social",
+        "source": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+        "roots": [
+          "natal:ten-god:month:MAIN:壬"
+        ],
+        "axis": "OPPORTUNITY_SENSE",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P4",
+        "material": "application:care:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "roots": [
+          "natal:hour:stem:丙"
+        ],
+        "axis": "SOCIAL_ATTUNEMENT",
+        "direction": 1,
+        "application": "RECALL"
+      }
+    ]
+  },
+  {
+    "id": "C",
+    "version": "comprehensive-editorial-finish-02-v1",
+    "characters": 10418,
+    "chapters": 13,
+    "paragraphs": 52,
+    "hardErrors": [],
+    "qualityIssues": [],
+    "explicitMbti": 7,
+    "allocationComplete": true,
+    "proof": [
+      {
+        "slot": "CH07.P1",
+        "material": "fortune:editorial:CLAIM:P01_PEOPLE_LUCK",
+        "source": "editorial:CLAIM:P01_PEOPLE_LUCK",
+        "roots": [
+          "natal:hour:branch:卯",
+          "natal:hour:stem:丁",
+          "natal:month:branch:未",
+          "natal:month:stem:癸",
+          "supplement:marker:CHEONDEOK",
+          "supplement:marker:CHEONEUL",
+          "supplement:marker:DOHWA",
+          "supplement:marker:HONGYEOM",
+          "supplement:marker:WOLDEOK",
+          "supplement:relation:natal:BRANCH_COMBINATION:year:month:午未"
+        ],
+        "axis": null,
+        "direction": null,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH07.P2",
+        "material": "fortune:editorial:CLAIM:A02_INTIMATE_CHARM",
+        "source": "editorial:CLAIM:A02_INTIMATE_CHARM",
+        "roots": [
+          "natal:hour:branch:卯",
+          "natal:hour:stem:丁",
+          "natal:month:branch:未",
+          "natal:month:stem:癸",
+          "supplement:marker:DOHWA",
+          "supplement:marker:HONGYEOM",
+          "supplement:marker:WOLDEOK"
+        ],
+        "axis": null,
+        "direction": null,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH07.P3",
+        "material": "application:craft:positive",
+        "source": "editorial:TRAIT_ARC:trait-arc:BUILD_AND_SHOW:STRENGTH",
+        "roots": [
+          "foundation:element:FIRE:BALANCED"
+        ],
+        "axis": "CREATION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P4",
+        "material": "positive-activation:craft",
+        "source": "editorial:TRAIT_ARC:trait-arc:BUILD_AND_SHOW:STRENGTH",
+        "roots": [
+          "foundation:element:FIRE:BALANCED"
+        ],
+        "axis": "CREATION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH09.P1",
+        "material": "application:research:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+        "roots": [
+          "natal:ten-god:day:SUB:壬"
+        ],
+        "axis": "DEPTH",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P2",
+        "material": "application:order:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR007",
+        "roots": [
+          "natal:day:branch:申"
+        ],
+        "axis": "PRECISION",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P3",
+        "material": "application:care:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "roots": [
+          "natal:month:branch:未"
+        ],
+        "axis": "CARE",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P4",
+        "material": "application:self:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "roots": [
+          "natal:ten-god:hour:visible:丁"
+        ],
+        "axis": "AUTONOMY",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH12.P1",
+        "material": "application:craft:social",
+        "source": "editorial:TRAIT_ARC:trait-arc:BUILD_AND_SHOW:STRENGTH",
+        "roots": [
+          "foundation:element:FIRE:BALANCED"
+        ],
+        "axis": "CREATION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P2",
+        "material": "application:voice:social",
+        "source": "editorial:CLAIM:A04_QUIET_CHARM",
+        "roots": [
+          "natal:year:branch:午"
+        ],
+        "axis": "ENERGY_DIRECTION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P3",
+        "material": "application:action:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+        "roots": [
+          "natal:year:stem:庚"
+        ],
+        "axis": "ACTION_TEMPO",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P4",
+        "material": "application:research:social",
+        "source": "editorial:CLAIM:SU04_EXPERTISE",
+        "roots": [
+          "natal:ten-god:month:visible:癸"
+        ],
+        "axis": "LEARNING",
+        "direction": 1,
+        "application": "RECALL"
+      }
+    ]
+  },
+  {
+    "id": "D",
+    "version": "comprehensive-editorial-finish-02-v1",
+    "characters": 10375,
+    "chapters": 13,
+    "paragraphs": 52,
+    "hardErrors": [],
+    "qualityIssues": [],
+    "explicitMbti": 7,
+    "allocationComplete": true,
+    "proof": [
+      {
+        "slot": "CH07.P1",
+        "material": "fortune:editorial:CLAIM:A05_ROMANTIC_VISIBILITY",
+        "source": "editorial:CLAIM:A05_ROMANTIC_VISIBILITY",
+        "roots": [
+          "natal:day:stem:辛",
+          "natal:hour:branch:卯",
+          "natal:hour:stem:辛",
+          "natal:month:branch:卯",
+          "natal:month:stem:丁",
+          "supplement:marker:DOHWA",
+          "supplement:marker:NYEON",
+          "supplement:marker:WOLDEOK",
+          "supplement:stage:day:목욕"
+        ],
+        "axis": null,
+        "direction": null,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH07.P2",
+        "material": "application:quiet:positive",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR073",
+        "roots": [
+          "natal:year:branch:子"
+        ],
+        "axis": "RECOVERY_NEED",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P3",
+        "material": "application:direct:positive",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR054",
+        "roots": [
+          "natal:day:stem:辛"
+        ],
+        "axis": "COMMUNICATION_STYLE",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P4",
+        "material": "positive-activation:quiet",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR073",
+        "roots": [
+          "natal:year:branch:子"
+        ],
+        "axis": "RECOVERY_NEED",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH09.P1",
+        "material": "application:care:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "roots": [
+          "natal:month:branch:卯"
+        ],
+        "axis": "CARE",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P2",
+        "material": "application:research:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR001",
+        "roots": [
+          "foundation:yin_yang:STRONG_YIN"
+        ],
+        "axis": "DEPTH",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P3",
+        "material": "application:flexible:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR009",
+        "roots": [
+          "natal:day:branch:亥"
+        ],
+        "axis": "ADAPTABILITY",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P4",
+        "material": "application:self:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "roots": [
+          "foundation:element:METAL:BALANCED"
+        ],
+        "axis": "BOUNDARY",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH12.P1",
+        "material": "application:quiet:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR073",
+        "roots": [
+          "natal:year:branch:子"
+        ],
+        "axis": "RECOVERY_NEED",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P2",
+        "material": "application:order:social",
+        "source": "editorial:CLAIM:SU04_EXPERTISE",
+        "roots": [
+          "natal:month:stem:丁"
+        ],
+        "axis": "PRECISION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P3",
+        "material": "application:self:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "roots": [
+          "natal:hour:stem:辛"
+        ],
+        "axis": "BOUNDARY",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P4",
+        "material": "application:growth:social",
+        "source": "editorial:CLAIM:M06_BIG_MONEY_DESIRE",
+        "roots": [
+          "natal:ten-god:month:visible:丁"
+        ],
+        "axis": "GOAL_DRIVE",
+        "direction": 1,
+        "application": "RECALL"
+      }
+    ]
+  },
+  {
+    "id": "S002",
+    "version": "comprehensive-editorial-finish-02-v1",
+    "characters": 10535,
+    "chapters": 13,
+    "paragraphs": 52,
+    "hardErrors": [],
+    "qualityIssues": [],
+    "explicitMbti": 7,
+    "allocationComplete": true,
+    "proof": [
+      {
+        "slot": "CH07.P1",
+        "material": "fortune:editorial:CLAIM:A02_INTIMATE_CHARM",
+        "source": "editorial:CLAIM:A02_INTIMATE_CHARM",
+        "roots": [
+          "natal:day:branch:未",
+          "natal:day:stem:癸",
+          "natal:month:stem:乙",
+          "supplement:marker:HONGYEOM",
+          "supplement:stage:month:관대"
+        ],
+        "axis": null,
+        "direction": null,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH07.P2",
+        "material": "application:order:positive",
+        "source": "editorial:CLAIM:SU04_EXPERTISE",
+        "roots": [
+          "natal:year:branch:申"
+        ],
+        "axis": "PRECISION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P3",
+        "material": "application:steady:positive",
+        "source": "editorial:CLAIM:M02_ACCUMULATION",
+        "roots": [
+          "foundation:element:EARTH:STRONG"
+        ],
+        "axis": "STABILITY",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P4",
+        "material": "positive-activation:order",
+        "source": "editorial:CLAIM:SU04_EXPERTISE",
+        "roots": [
+          "natal:year:branch:申"
+        ],
+        "axis": "PRECISION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH09.P1",
+        "material": "application:research:money",
+        "source": "editorial:CLAIM:SU04_EXPERTISE",
+        "roots": [
+          "natal:ten-god:year:MAIN:庚"
+        ],
+        "axis": "LEARNING",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P2",
+        "material": "application:quiet:money",
+        "source": "editorial:CLAIM:A04_QUIET_CHARM",
+        "roots": [
+          "foundation:element:WATER:BALANCED"
+        ],
+        "axis": "ENERGY_DIRECTION",
+        "direction": -1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P3",
+        "material": "application:flexible:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR009",
+        "roots": [
+          "natal:month:stem:乙"
+        ],
+        "axis": "ADAPTABILITY",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P4",
+        "material": "application:steady:money",
+        "source": "editorial:CLAIM:M02_ACCUMULATION",
+        "roots": [
+          "natal:month:branch:丑"
+        ],
+        "axis": "STABILITY",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH12.P1",
+        "material": "application:care:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR068",
+        "roots": [
+          "natal:day:branch:未"
+        ],
+        "axis": "SOCIAL_ATTUNEMENT",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P2",
+        "material": "application:order:social",
+        "source": "editorial:CLAIM:SU04_EXPERTISE",
+        "roots": [
+          "natal:year:branch:申"
+        ],
+        "axis": "PRECISION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P3",
+        "material": "application:steady:social",
+        "source": "editorial:CLAIM:M02_ACCUMULATION",
+        "roots": [
+          "natal:month:branch:丑"
+        ],
+        "axis": "STABILITY",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P4",
+        "material": "application:resources:social",
+        "source": "editorial:CLAIM:M01_REALISTIC_MONEY_SENSE",
+        "roots": [
+          "foundation:element:EARTH:STRONG"
+        ],
+        "axis": "RESOURCE_SENSE",
+        "direction": 1,
+        "application": "RECALL"
+      }
+    ]
+  },
+  {
+    "id": "S005",
+    "version": "comprehensive-editorial-finish-02-v1",
+    "characters": 10373,
+    "chapters": 13,
+    "paragraphs": 52,
+    "hardErrors": [],
+    "qualityIssues": [],
+    "explicitMbti": 7,
+    "allocationComplete": true,
+    "proof": [
+      {
+        "slot": "CH07.P1",
+        "material": "application:care:positive",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR068",
+        "roots": [
+          "natal:hour:stem:丙"
+        ],
+        "axis": "SOCIAL_ATTUNEMENT",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P2",
+        "material": "application:order:positive",
+        "source": "editorial:CLAIM:SU04_EXPERTISE",
+        "roots": [
+          "foundation:element:METAL:BALANCED"
+        ],
+        "axis": "PRECISION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P3",
+        "material": "application:research:positive",
+        "source": "editorial:CLAIM:A04_QUIET_CHARM",
+        "roots": [
+          "foundation:element:WATER:BALANCED"
+        ],
+        "axis": "DEPTH",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P4",
+        "material": "positive-activation:care",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR068",
+        "roots": [
+          "natal:hour:stem:丙"
+        ],
+        "axis": "SOCIAL_ATTUNEMENT",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH09.P1",
+        "material": "application:steady:money",
+        "source": "editorial:CLAIM:M02_ACCUMULATION",
+        "roots": [
+          "natal:hour:branch:辰"
+        ],
+        "axis": "STABILITY",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P2",
+        "material": "application:quiet:money",
+        "source": "editorial:CLAIM:A04_QUIET_CHARM",
+        "roots": [
+          "natal:day:stem:癸"
+        ],
+        "axis": "ENERGY_DIRECTION",
+        "direction": -1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P3",
+        "material": "application:resources:money",
+        "source": "editorial:CLAIM:M01_REALISTIC_MONEY_SENSE",
+        "roots": [
+          "foundation:element:METAL:BALANCED"
+        ],
+        "axis": "PRACTICALITY",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P4",
+        "material": "application:order:money",
+        "source": "editorial:CLAIM:SU04_EXPERTISE",
+        "roots": [
+          "natal:day:branch:酉"
+        ],
+        "axis": "PRECISION",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH12.P1",
+        "material": "application:care:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR068",
+        "roots": [
+          "natal:hour:stem:丙"
+        ],
+        "axis": "SOCIAL_ATTUNEMENT",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P2",
+        "material": "application:order:social",
+        "source": "editorial:CLAIM:SU04_EXPERTISE",
+        "roots": [
+          "foundation:element:METAL:BALANCED"
+        ],
+        "axis": "PRECISION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P3",
+        "material": "application:quiet:social",
+        "source": "editorial:CLAIM:A04_QUIET_CHARM",
+        "roots": [
+          "foundation:element:WATER:BALANCED"
+        ],
+        "axis": "ENERGY_DIRECTION",
+        "direction": -1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P4",
+        "material": "application:steady:social",
+        "source": "editorial:CLAIM:M02_ACCUMULATION",
+        "roots": [
+          "foundation:element:EARTH:STRONG"
+        ],
+        "axis": "STABILITY",
+        "direction": 1,
+        "application": "RECALL"
+      }
+    ]
+  },
+  {
+    "id": "S038",
+    "version": "comprehensive-editorial-finish-02-v1",
+    "characters": 10207,
+    "chapters": 13,
+    "paragraphs": 52,
+    "hardErrors": [],
+    "qualityIssues": [],
+    "explicitMbti": 4,
+    "allocationComplete": true,
+    "proof": [
+      {
+        "slot": "CH07.P1",
+        "material": "application:research:positive",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR015",
+        "roots": [
+          "natal:month:branch:丑"
+        ],
+        "axis": "ACTION_TEMPO",
+        "direction": -1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P2",
+        "material": "application:steady:positive",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR064",
+        "roots": [
+          "natal:month:branch:丑"
+        ],
+        "axis": "STABILITY",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P3",
+        "material": "application:direct:positive",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR002",
+        "roots": [
+          "foundation:element:METAL:BALANCED"
+        ],
+        "axis": "COMMUNICATION_STYLE",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P4",
+        "material": "positive-activation:research",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR015",
+        "roots": [
+          "natal:month:branch:丑"
+        ],
+        "axis": "ACTION_TEMPO",
+        "direction": -1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH09.P1",
+        "material": "application:order:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR068",
+        "roots": [
+          "natal:hour:branch:酉"
+        ],
+        "axis": "PRECISION",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P2",
+        "material": "application:resources:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR093",
+        "roots": [
+          "natal:year:stem:戊"
+        ],
+        "axis": "PRACTICALITY",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P3",
+        "material": "application:care:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "roots": [
+          "natal:month:stem:乙"
+        ],
+        "axis": "CARE",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P4",
+        "material": "application:self:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "roots": [
+          "natal:day:stem:戊"
+        ],
+        "axis": "BOUNDARY",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH12.P1",
+        "material": "application:research:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR015",
+        "roots": [
+          "natal:month:branch:丑"
+        ],
+        "axis": "ACTION_TEMPO",
+        "direction": -1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P2",
+        "material": "application:steady:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR064",
+        "roots": [
+          "natal:day:branch:辰"
+        ],
+        "axis": "STABILITY",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P3",
+        "material": "application:direct:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR002",
+        "roots": [
+          "foundation:element:METAL:BALANCED"
+        ],
+        "axis": "COMMUNICATION_STYLE",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P4",
+        "material": "application:resources:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR093",
+        "roots": [
+          "natal:year:stem:戊"
+        ],
+        "axis": "PRACTICALITY",
+        "direction": 1,
+        "application": "RECALL"
+      }
+    ]
+  },
+  {
+    "id": "S088",
+    "version": "comprehensive-editorial-finish-02-v1",
+    "characters": 10275,
+    "chapters": 13,
+    "paragraphs": 52,
+    "hardErrors": [],
+    "qualityIssues": [],
+    "explicitMbti": 5,
+    "allocationComplete": true,
+    "proof": [
+      {
+        "slot": "CH07.P1",
+        "material": "fortune:editorial:CLAIM:A05_ROMANTIC_VISIBILITY",
+        "source": "editorial:CLAIM:A05_ROMANTIC_VISIBILITY",
+        "roots": [
+          "foundation:element:FIRE:STRONG",
+          "natal:day:stem:丁",
+          "natal:month:branch:午",
+          "natal:ten-god:day:MAIN:己",
+          "natal:ten-god:month:SUB:己",
+          "natal:ten-god:month:visible:甲",
+          "natal:year:stem:丙",
+          "supplement:marker:DOHWA",
+          "supplement:marker:NYEON",
+          "supplement:marker:WOLDEOK",
+          "supplement:stage:year:양"
+        ],
+        "axis": null,
+        "direction": null,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH07.P2",
+        "material": "application:action:positive",
+        "source": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+        "roots": [
+          "foundation:yin_yang:STRONG_YANG"
+        ],
+        "axis": "INITIATIVE",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P3",
+        "material": "application:order:positive",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR068",
+        "roots": [
+          "natal:ten-god:year:MAIN:戊"
+        ],
+        "axis": "PRECISION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH07.P4",
+        "material": "positive-activation:action",
+        "source": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+        "roots": [
+          "foundation:yin_yang:STRONG_YANG"
+        ],
+        "axis": "INITIATIVE",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH09.P1",
+        "material": "application:resources:money",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR037",
+        "roots": [
+          "natal:day:branch:丑"
+        ],
+        "axis": "RESOURCE_SENSE",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P2",
+        "material": "application:voice:money",
+        "source": "editorial:CLAIM:A03_EXPRESSIVE_CHARM",
+        "roots": [
+          "natal:month:branch:午"
+        ],
+        "axis": "EXPRESSION",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P3",
+        "material": "application:care:money",
+        "source": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+        "roots": [
+          "natal:ten-god:month:visible:甲"
+        ],
+        "axis": "CARE",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH09.P4",
+        "material": "application:steady:money",
+        "source": "editorial:CLAIM:M05_STABLE_INCOME",
+        "roots": [
+          "natal:day:branch:丑"
+        ],
+        "axis": "STABILITY",
+        "direction": 1,
+        "application": "CONDITIONAL_APPLICATION"
+      },
+      {
+        "slot": "CH12.P1",
+        "material": "application:action:social",
+        "source": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+        "roots": [
+          "foundation:yin_yang:STRONG_YANG"
+        ],
+        "axis": "INITIATIVE",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P2",
+        "material": "application:order:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR068",
+        "roots": [
+          "natal:ten-god:year:MAIN:戊"
+        ],
+        "axis": "PRECISION",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P3",
+        "material": "application:resources:social",
+        "source": "editorial:PERSONAL_RESONANCE:resonance:PR037",
+        "roots": [
+          "natal:ten-god:hour:visible:庚"
+        ],
+        "axis": "RESOURCE_SENSE",
+        "direction": 1,
+        "application": "RECALL"
+      },
+      {
+        "slot": "CH12.P4",
+        "material": "application:steady:social",
+        "source": "editorial:CLAIM:M05_STABLE_INCOME",
+        "roots": [
+          "foundation:element:EARTH:STRONG"
+        ],
+        "axis": "STABILITY",
+        "direction": 1,
+        "application": "RECALL"
+      }
+    ]
+  }
+]

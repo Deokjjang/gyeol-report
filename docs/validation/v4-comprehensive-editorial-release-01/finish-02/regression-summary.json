@@ -1,0 +1,91 @@
+{
+  "note": "96+24 ran once. S017 generic Fusion bridge was then omitted from prose; original candidate reservations stay unchanged. Final reader suite 24/24 and S017 1/1 passed. Cohort lengths below are from the once-run cohort, before that copy-only omission.",
+  "cohorts": [
+    {
+      "cohort": "training",
+      "cases": 96,
+      "status": {
+        "SUPPORTED_PUBLICATION_PASS": 88,
+        "EXPECTED_PREPAYMENT_REJECTION": 8
+      },
+      "normalCases": 49,
+      "normalComplete": 49,
+      "normalCharacterRange": [
+        10108,
+        10698
+      ],
+      "normalQuality": [
+        {
+          "id": "S017",
+          "issues": [
+            "LONG_PHRASE_REUSE:1"
+          ]
+        }
+      ],
+      "hardErrors": []
+    },
+    {
+      "cohort": "holdout",
+      "cases": 24,
+      "status": {
+        "SUPPORTED_PUBLICATION_PASS": 21,
+        "EXPECTED_PREPAYMENT_REJECTION": 3
+      },
+      "normalCases": 12,
+      "normalComplete": 12,
+      "normalCharacterRange": [
+        10229,
+        10823
+      ],
+      "normalQuality": [],
+      "hardErrors": []
+    }
+  ],
+  "S017Final": {
+    "characters": 10294,
+    "paragraphs": 52,
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": [],
+      "longPhrases": [],
+      "notice": "자동 진단은 원고 전문의 독자 관점 검수를 대신하지 않습니다."
+    }
+  },
+  "unknown": [
+    {
+      "id": "S099",
+      "characters": 9257,
+      "paragraphs": 46,
+      "hardErrors": [],
+      "shortages": [
+        "CH10.P3:NO_INDEPENDENT_LOVE_SOURCE",
+        "CH10.P4:NO_INDEPENDENT_LOVE_SOURCE",
+        "CH11.P1:NO_INDEPENDENT_FAMILY_SOURCE",
+        "CH11.P2:NO_INDEPENDENT_FAMILY_SOURCE",
+        "CH11.P3:NO_INDEPENDENT_FAMILY_SOURCE",
+        "CH11.P4:NO_INDEPENDENT_FAMILY_SOURCE",
+        "CH11:CHAPTER_SOURCE_SCARCITY"
+      ]
+    },
+    {
+      "id": "S102",
+      "characters": 9092,
+      "paragraphs": 45,
+      "hardErrors": [],
+      "shortages": [
+        "CH05.P3:NO_INDEPENDENT_STRENGTH_SOURCE",
+        "CH08.P3:NO_INDEPENDENT_WORK_SOURCE",
+        "CH10.P3:NO_INDEPENDENT_LOVE_SOURCE",
+        "CH10.P4:NO_INDEPENDENT_LOVE_SOURCE",
+        "CH11.P2:NO_INDEPENDENT_FAMILY_SOURCE",
+        "CH11.P3:NO_INDEPENDENT_FAMILY_SOURCE",
+        "CH11.P4:NO_INDEPENDENT_FAMILY_SOURCE"
+      ]
+    }
+  ],
+  "relatedTests": {
+    "passed": 123,
+    "initialRuntimeHookTimeout": "60000ms under concurrent test load; standalone retry 40/40 passed"
+  },
+  "readerTests": 24
+}

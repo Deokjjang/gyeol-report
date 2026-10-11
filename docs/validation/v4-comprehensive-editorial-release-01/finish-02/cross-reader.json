@@ -1,0 +1,371 @@
+[
+  {
+    "left": "01-seojin",
+    "right": "02-seoyun",
+    "sameParagraphs": [
+      "CH05.P3",
+      "CH08.P2",
+      "CH10.P2",
+      "CH10.P3",
+      "CH11.P1",
+      "CH11.P2"
+    ],
+    "differentProofSameCopy": [
+      "CH05.P3",
+      "CH08.P2",
+      "CH10.P2",
+      "CH10.P3",
+      "CH11.P1",
+      "CH11.P2"
+    ],
+    "sharedSentences": 39,
+    "totalSentences": 178,
+    "chapters": [
+      {
+        "id": "CH01",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH05",
+        "identicalParagraphs": 1,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH06",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH07",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH09",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH10",
+        "identicalParagraphs": 2,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH12",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH13",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      }
+    ],
+    "qualityIssues": [
+      "CH05.P3:DIFFERENT_PROOF_SAME_COPY",
+      "CH08.P2:DIFFERENT_PROOF_SAME_COPY",
+      "CH10.P2:DIFFERENT_PROOF_SAME_COPY",
+      "CH10.P3:DIFFERENT_PROOF_SAME_COPY",
+      "CH11.P1:DIFFERENT_PROOF_SAME_COPY",
+      "CH11.P2:DIFFERENT_PROOF_SAME_COPY"
+    ]
+  },
+  {
+    "left": "01-seojin",
+    "right": "C-same-chart-INFP",
+    "sameParagraphs": [
+      "CH01.P2",
+      "CH02.P1",
+      "CH02.P3",
+      "CH07.P1",
+      "CH07.P2",
+      "CH08.P2"
+    ],
+    "differentProofSameCopy": [
+      "CH08.P2"
+    ],
+    "sharedSentences": 52,
+    "totalSentences": 178,
+    "chapters": [
+      {
+        "id": "CH01",
+        "identicalParagraphs": 1,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH05",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH06",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH07",
+        "identicalParagraphs": 2,
+        "firstSentenceEqual": true
+      },
+      {
+        "id": "CH09",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH10",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH12",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH13",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      }
+    ],
+    "qualityIssues": [
+      "CH08.P2:DIFFERENT_PROOF_SAME_COPY"
+    ]
+  },
+  {
+    "left": "01-seojin",
+    "right": "D-same-MBTI-other-chart",
+    "sameParagraphs": [
+      "CH03.P2",
+      "CH09.P4",
+      "CH10.P1",
+      "CH11.P3",
+      "CH13.P2",
+      "CH13.P3"
+    ],
+    "differentProofSameCopy": [
+      "CH03.P2",
+      "CH10.P1",
+      "CH11.P3",
+      "CH13.P2",
+      "CH13.P3"
+    ],
+    "sharedSentences": 66,
+    "totalSentences": 178,
+    "chapters": [
+      {
+        "id": "CH01",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH05",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH06",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH07",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH09",
+        "identicalParagraphs": 1,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH10",
+        "identicalParagraphs": 1,
+        "firstSentenceEqual": true
+      },
+      {
+        "id": "CH12",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH13",
+        "identicalParagraphs": 2,
+        "firstSentenceEqual": false
+      }
+    ],
+    "qualityIssues": [
+      "CH03.P2:DIFFERENT_PROOF_SAME_COPY",
+      "CH10.P1:DIFFERENT_PROOF_SAME_COPY",
+      "CH11.P3:DIFFERENT_PROOF_SAME_COPY",
+      "CH13.P2:DIFFERENT_PROOF_SAME_COPY",
+      "CH13.P3:DIFFERENT_PROOF_SAME_COPY"
+    ]
+  },
+  {
+    "left": "02-seoyun",
+    "right": "C-same-chart-INFP",
+    "sameParagraphs": [
+      "CH08.P2"
+    ],
+    "differentProofSameCopy": [
+      "CH08.P2"
+    ],
+    "sharedSentences": 29,
+    "totalSentences": 175,
+    "chapters": [
+      {
+        "id": "CH01",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH05",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH06",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH07",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH09",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH10",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH12",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH13",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      }
+    ],
+    "qualityIssues": [
+      "CH08.P2:DIFFERENT_PROOF_SAME_COPY"
+    ]
+  },
+  {
+    "left": "02-seoyun",
+    "right": "D-same-MBTI-other-chart",
+    "sameParagraphs": [],
+    "differentProofSameCopy": [],
+    "sharedSentences": 34,
+    "totalSentences": 175,
+    "chapters": [
+      {
+        "id": "CH01",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH05",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH06",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH07",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH09",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH10",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH12",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH13",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      }
+    ],
+    "qualityIssues": []
+  },
+  {
+    "left": "C-same-chart-INFP",
+    "right": "D-same-MBTI-other-chart",
+    "sameParagraphs": [
+      "CH08.P3"
+    ],
+    "differentProofSameCopy": [
+      "CH08.P3"
+    ],
+    "sharedSentences": 35,
+    "totalSentences": 179,
+    "chapters": [
+      {
+        "id": "CH01",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH05",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH06",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH07",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH09",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH10",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH12",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      },
+      {
+        "id": "CH13",
+        "identicalParagraphs": 0,
+        "firstSentenceEqual": false
+      }
+    ],
+    "qualityIssues": [
+      "CH08.P3:DIFFERENT_PROOF_SAME_COPY"
+    ]
+  }
+]

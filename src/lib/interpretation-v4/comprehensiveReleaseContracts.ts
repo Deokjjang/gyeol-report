@@ -1,7 +1,7 @@
 import type { Domain } from "./types";
 import type { InterpretationContext } from "./semanticCore";
 
-export const COMPREHENSIVE_RELEASE_VERSION = "comprehensive-editorial-release-01-v1" as const;
+export const COMPREHENSIVE_RELEASE_VERSION = "comprehensive-editorial-finish-02-v1" as const;
 /** Reader contracts are independent of the frozen C1-C10 scheduler. */
 export const COMPREHENSIVE_READER_CHAPTERS = [
   {

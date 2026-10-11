@@ -29,6 +29,7 @@ export function validateComprehensiveRelease(draft:ReleaseDraft,profiles:Compreh
       if(/sourceRefs|evidenceIds|sourceCandidateId|[A-Z]{2,}_[A-Z_]+|(?:natal|editorial|foundation):|undefined|\[object Object\]/.test(s.text))hardErrors.push(`${p.id}:INTERNAL_TEXT_LEAK`);
       if(!profiles.mbti.available&&/\b[EI][SN][TF][JP]\b/.test(s.text))hardErrors.push(`${p.id}:INVENTED_MBTI`);
       if((s.text.match(/\b[EI][SN][TF][JP]\b/g)??[]).some(type=>type!==profiles.mbti.mbtiType))hardErrors.push(`${p.id}:WRONG_MBTI_TYPE`);
+      if(s.provenance.application==="RECALL"&&s.evidenceIds.some(id=>!introduced.has(id)))qualityIssues.push(`${p.id}:RECALL_UNINTRODUCED_PROOF`);
       if(c.id==="CH13"&&s.evidenceIds.some(id=>!introduced.has(id)))qualityIssues.push(`${p.id}:CLOSING_NEW_EVIDENCE`);
       if(texts.has(s.text))qualityIssues.push(`${p.id}:DUPLICATE_SENTENCE:${texts.get(s.text)}`);else texts.set(s.text,p.id);
     }
@@ -47,4 +48,25 @@ export function validateComprehensiveRelease(draft:ReleaseDraft,profiles:Compreh
   }
   if(longPhrases.length)qualityIssues.push(`LONG_PHRASE_REUSE:${longPhrases.length}`);
   return {hardErrors:[...new Set(hardErrors)],qualityIssues:[...new Set(qualityIssues)],longPhrases,notice:"자동 진단은 원고 전문의 독자 관점 검수를 대신하지 않습니다."};
+}
+
+/** Cross-reader copy audit, deliberately separate from publication eligibility.
+ * Shared signed traits can legitimately share language; the report records
+ * exact overlap and different-proof/same-copy instead of pretending variation. */
+export function compareComprehensiveReaders(readers:{id:string;draft:ReleaseDraft}[]) {
+  return readers.flatMap((left,i)=>readers.slice(i+1).map(right=>{
+    const rows=left.draft.chapters.flatMap(c=>c.paragraphs), other=right.draft.chapters.flatMap(c=>c.paragraphs);
+    const sameParagraphs=rows.filter(p=>other.some(q=>q.id===p.id&&q.text===p.text)).map(p=>p.id);
+    const proof=(p:typeof rows[number])=>JSON.stringify(p.sentences.map(s=>[s.evidenceIds,s.mbtiSourceNodeIds,s.fusionIds,s.provenance.axis,s.provenance.direction]));
+    const differentProofSameCopy=rows.filter(p=>other.some(q=>q.id===p.id&&q.text===p.text&&proof(p)!==proof(q))).map(p=>p.id);
+    const sentences=rows.flatMap(p=>p.sentences.map(s=>s.text)), others=new Set(other.flatMap(p=>p.sentences.map(s=>s.text)));
+    const sharedSentences=sentences.filter(s=>others.has(s)).length;
+    const chapters=["CH01","CH05","CH06","CH07","CH09","CH10","CH12","CH13"].map(id=>{
+      const a=rows.filter(p=>p.id.startsWith(id)),b=other.filter(p=>p.id.startsWith(id));
+      return {id,identicalParagraphs:a.filter(p=>b.some(q=>q.id===p.id&&q.text===p.text)).length,
+        firstSentenceEqual:a[0]?.sentences[0]?.text===b[0]?.sentences[0]?.text};
+    });
+    return {left:left.id,right:right.id,sameParagraphs,differentProofSameCopy,sharedSentences,totalSentences:sentences.length,chapters,
+      qualityIssues:differentProofSameCopy.map(id=>`${id}:DIFFERENT_PROOF_SAME_COPY`)};
+  }));
 }
