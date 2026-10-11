@@ -146,28 +146,28 @@
       "invariant": "94660a38a0c4cfec643b3ff1fb12d7387fd74dbd5d14e3180970b7c05d6a79d3"
     },
     "major-01-business": {
-      "after": "53ceda81ff6919779f8a2bcc27505ea6db7cddfab4ce8c39294d4f6a3d29762a",
-      "invariant": "9ed6127b7dfa8ac09f5991703fa6e0bf633a6d12cf52a2f549065f8b05356fcd"
+      "after": "6ea0f180f010b0c9f28c1785d2a410edfd9a2b9988a6e95bc00c7832b2d25ebb",
+      "invariant": "ccc5039c8215e829800acde8d5e223117473dbccf93772d7e995a25fed19e0e0"
     },
     "major-02-employee": {
-      "after": "8d5f9897a577f563db10544b354061685a092cb3b532117d0363c97cb436297c",
-      "invariant": "06caba8a667108c6c86a58affd62615e5a694a07f18cd04430f624db8528424c"
+      "after": "6a4d669717f09cb0edf84bfb7fb88d8962eac311bf137c91b85c4fb4384b15ce",
+      "invariant": "80ed271d007b7b7d89257dad51e7fbac17b420eaf455c3a9ac3db29d92602cae"
     },
     "major-03-freelance": {
-      "after": "55a865f019d0c1f5b2fd2da738d49f646a1657d1531fd982dd6acffc2615f4c2",
-      "invariant": "cc3f38a59ae03ec849944cd2c4d236046224bf444508808a6a32348b4f797471"
+      "after": "925c6e44789e136a88bd19657c0650640103da60d191658d805d86b93b13e35e",
+      "invariant": "c73c111da016d0f71bf7afd7996e2e5540670b34ddf8dbc1a71f9f73bae54594"
     },
     "major-04-student": {
-      "after": "8461b28696a5a318bf54230e318bd945b00f6316a9bfbd9713edf7e3e6a114c0",
-      "invariant": "c9d53295d97a914cf703dfa72764df2b7a2b64f407ed07f45eec02bd97996e32"
+      "after": "f756d6679e28edb31900d7ed95f5c87952c1f824db7cf5ea72337676f98ac855",
+      "invariant": "b9be2b56e80676ec1e899f3979e99f80f5f48b023e237cdf079f283ed222d2f3"
     },
     "major-05-unknown": {
-      "after": "da0cb3f72c5fbc9ada9ec3189477e3850ffb67c6b14e7054b7a59b3d1655d34e",
-      "invariant": "f6f454657b17ab1bcd2a457c815d98b85b7853034b9221c5c513e81458f9d723"
+      "after": "e2e7d5e4bd9dc2ad9496541206caa9faac51996fc9af7b539ed153c2673ea268",
+      "invariant": "27b0185d82236bd7008bd8364ff91e0c6cf0b96189137cc1b42ac3bf8ba621d8"
     },
     "major-06-transition": {
-      "after": "a296157545e1c9bf72b3d07e6d2f6053fa21f1ba7cf0563644231198678a09f1",
-      "invariant": "7c13d7dc8154726c4b001eaccebcdee50651ec3029d301f3b8ee7651daacf6ee"
+      "after": "0cb253d925f437b49c05f499192c9131bdd345810b1bb582cc9a360ef1dbf0a3",
+      "invariant": "fdb766ef4881eaa11c222a3d297161161907a274e5d1f93d82b52ba5a27607c2"
     },
     "annual-01-business": {
       "after": "4c7221e6c7842e679d8a0c07f7a8f81044d9517bfb0ec4f235ea110f0688eb37",
@@ -206,8 +206,8 @@
       "invariant": "dc0f09aa1008315d56ab61336b62bab0939ce5ef5330c254cb1df954622df643"
     },
     "golden-ENTJ-major": {
-      "after": "8d5f9897a577f563db10544b354061685a092cb3b532117d0363c97cb436297c",
-      "invariant": "06caba8a667108c6c86a58affd62615e5a694a07f18cd04430f624db8528424c"
+      "after": "6a4d669717f09cb0edf84bfb7fb88d8962eac311bf137c91b85c4fb4384b15ce",
+      "invariant": "80ed271d007b7b7d89257dad51e7fbac17b420eaf455c3a9ac3db29d92602cae"
     },
     "golden-ENTJ-annual": {
       "after": "cd0f2a63b607378bd830755afa0b52135a19a85d60356f9342df790002e0c714",
@@ -230,8 +230,8 @@
       "invariant": "0dedbcebc38039466d4bbde1ca28e9bb5295710a3ee360ec33f3fb2fe44895b3"
     },
     "golden-INTP-major": {
-      "after": "963b78df33ce1ca9f6e1fa814eed891a2894bcca2ff7924dc81d940e3e9d5cd5",
-      "invariant": "e4418439c502b4400b30c5b9164261f928c17a6b0dc7d3d899a17812d50f6bdd"
+      "after": "1b3dcd9ae6dc0d231b38d75feae3cb19372ce7fccb6064f4457545edf03b35af",
+      "invariant": "000cede562dbcba64018fee9100d62f145b21b00c3ef6798c7fa10ae2b34a553"
     },
     "golden-INTP-annual": {
       "after": "2eed4c4811e640fd80f380152c42286140a8a3678b341f96219ca362b35a7bfd",
@@ -254,8 +254,8 @@
       "invariant": "46d40b261f5771bb18371b5c372de0f90f0faddd56a9d6e40bae167fbf1d35a2"
     },
     "golden-ENFP-major": {
-      "after": "55a865f019d0c1f5b2fd2da738d49f646a1657d1531fd982dd6acffc2615f4c2",
-      "invariant": "cc3f38a59ae03ec849944cd2c4d236046224bf444508808a6a32348b4f797471"
+      "after": "925c6e44789e136a88bd19657c0650640103da60d191658d805d86b93b13e35e",
+      "invariant": "c73c111da016d0f71bf7afd7996e2e5540670b34ddf8dbc1a71f9f73bae54594"
     },
     "golden-ENFP-annual": {
       "after": "c73998624c2bde9f507ad15bf70a7b910d6970106f888e552ab93ffe59c78f77",

@@ -8,6 +8,8 @@ import { MAJOR_MEANINGS, MAJOR_ELEMENT_IMAGES, MAJOR_VOICE } from "./majorMateri
 import { paragraph, proof, particle } from "./copyRealizer";
 import { reviewNarrative } from "./editorialGuard";
 import { composeEvidenceChapters } from "./contentSynthesis";
+import { separateMajorChapter } from "./majorEvidenceReading";
+import { auditContent } from "./contentQuality";
 import { friendlyTransition, planMajorYears } from "./periodPlanner";
 import type { NarrativeBlock, NarrativeSection } from "./narrativeTypes";
 
@@ -26,13 +28,14 @@ export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt
   const source = proof([], [], [], [...e.sourceRefs, ...c.provenance, `dayun-cycle:${now.index}:${now.ganji}`, `period-ten-god:${now.tenGod}`]);
   const b = (id: string, text: string, tone: NarrativeBlock["tone"] = "positive") => paragraph(id, text,
     id.startsWith("final-") ? proof([], [], [], [...source.sourceRefs, `period-ten-god:${last.cycle.tenGod}`, `dayun-cycle:${last.cycle.index}:${last.cycle.ganji}`]) :
+    id === "next-boundary" && future ? proof([], [], [], [...source.sourceRefs, `dayun-cycle:${future.after.index}:${future.after.ganji}`, `period-ten-god:${future.after.tenGod}`]) :
     id === "element-life" ? proof([], [], [], [...source.sourceRefs, ...now.elements.map(element => `period-element:${element}`)]) : source, tone);
   const section = (id: string, title: string, blocks: readonly NarrativeBlock[], domain: NarrativeSection["domain"] = "success/fortune"): NarrativeSection => ({ id, title, domain, blocks });
   const headline = `${e.input.name}님, ${c.noun} — ${destination.theme}까지 이어갈 힘`;
   const strength = pillar.material.seeds.find(s => s.role === "strength")!;
   const natalScene = pillar.material.seeds.find(s => s.role === "scene");
   const opening = [
-    b("big-flow", `${e.input.name}님이 지금 지나고 있는 ${now.ganji} 대운의 중심은 ‘${m.theme}’입니다. 예전과 같은 일을 해도 ‘${m.next}’ 쪽에 더 마음이 가는 변화예요. 지금은 특히 ${particle(m.money, "을", "를")} 가까이서 보게 되는 시기죠.`),
+    b("big-flow", `${e.input.name}님이 지금 지나고 있는 ${now.ganji} 대운에서 읽는 십성은 ${now.tenGod}입니다. 이 시기의 중심은 ‘${m.theme}’입니다. 예전과 같은 일을 해도 ‘${m.next}’ 쪽에 더 마음이 가는 변화예요. 지금은 특히 ${particle(m.money, "을", "를")} 가까이서 보게 되는 시기죠.`),
     b("first-gift", `이 흐름의 좋은 패는 ${m.gift}입니다. ‘${c.scenes[now.tenGod][0]}’ 같은 순간을 떠올려볼까요? ${MAJOR_VOICE[now.tenGod].opening}`),
     b("next-boundary", future ? `${friendlyTransition(future.dateLabel)}, ${future.before.ganji}에서 ${withKoreanParticle(`${future.after.ganji} 대운`, "to")} 큰 장이 넘어갑니다. 지금의 ‘${m.theme}’에서 ‘${MAJOR_MEANINGS[future.after.tenGod].theme}’ 쪽으로 관심의 중심도 옮겨갈 전망이에요. 다음 장에도 ${particle(c.craft, "을", "를")} 함께 가져갑니다.` : `${e.horizon.through}년까지 이어지는 큰 배경은 ‘${destination.theme}’입니다. 큰 장이 같아도 ${particle(m.work, "을", "를")} 다루는 장면은 해마다 달라집니다. 뒤의 연도별 이야기에서는 ${particle(c.noun, "에", "에")} 힘을 더할 시기와 다른 경험을 보탤 시기를 나눠 읽을 수 있습니다.`),
     paragraph("natal-strength", `${strength.text} ${natalScene?.text ?? ""}`, proof([pillar], [strength, ...(natalScene ? [natalScene] : [])])),
@@ -94,7 +97,7 @@ export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt
     const next = MAJOR_MEANINGS[future.after.tenGod];
     const nextProof = proof([], [], [], [...e.sourceRefs, `dayun-cycle:${future.after.index}:${future.after.ganji}`, `period-ten-god:${future.after.tenGod}`]);
     sections.push(section("next-cycle", `다음 대운, ${withKoreanParticle(next.theme, "object")} 내 것으로 만드는 장`, [
-      paragraph("next-work", `일에서는 ${next.work}에 힘을 줄 차례입니다. ${MAJOR_VOICE[future.after.tenGod].opening}`, nextProof),
+      paragraph("next-work", `다음 ${future.after.ganji} 대운에서 읽는 십성은 ${future.after.tenGod}입니다. 지금의 ${now.tenGod} 흐름에서 ‘${next.theme}’ 쪽으로 무게가 옮겨갑니다. 일에서는 ${next.work}에 힘을 줄 차례입니다. ${MAJOR_VOICE[future.after.tenGod].opening}`, { ...nextProof, sourceRefs: [...new Set([...nextProof.sourceRefs, ...source.sourceRefs])] }),
       paragraph("next-money", `돈의 중심은 ${next.money}입니다. 한 번의 성과 뒤에도 ${particle(next.gift, "을", "를")} 계속 쓸 수 있는 조건을 남기는 쪽이 좋습니다.`, nextProof),
       paragraph("next-people", `사람에게서는 ${next.people}의 가치가 커집니다. 생활에서는 ${particle(next.home, "을", "를")} 함께 다루게 돼요. ${particle(next.life, "을", "를")} 남기는 선택까지 들어와야 바깥의 성취도 내 생활로 가져올 수 있습니다.`, nextProof),
       paragraph("next-risk", `${particle(next.cost, "은", "는")} 경계할 부분입니다. ${next.life}도 일정에 남겨두면 다음 장을 오래 쓸 여유가 생겨요.`, nextProof, "observation"),
@@ -115,7 +118,20 @@ export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt
   ]));
   const narrative = { version: "v4-major-fortune-narrative-1" as const, headline, opening, sections,
     finalLine: `${particle(c.craft, "은", "는")} 사라지지 않습니다 — ${particle(c.noun, "에서", "에서")} 키운 힘으로 ${particle(destination.work, "을", "를")} 만날 차례입니다.`, finalProof: source };
-  const composed = composeEvidenceChapters(e.input, e.materials, narrative, "major");
+  const allocated = composeEvidenceChapters(e.input, e.materials, narrative, "major");
+  const currentPeriod = { ...now, proof: source };
+  const separated = { ...allocated.narrative,
+    opening: separateMajorChapter("core", allocated.narrative.opening, e.materials, currentPeriod),
+    sections: allocated.narrative.sections.map(s => {
+      if (s.id === "next-cycle" && future) {
+        const nextProof = proof([], [], [], [...e.sourceRefs, `dayun-cycle:${future.after.index}:${future.after.ganji}`, `period-ten-god:${future.after.tenGod}`]);
+        return { ...s, blocks: separateMajorChapter(s.id, s.blocks, e.materials, { ...future.after, proof: nextProof }) };
+      }
+      return ["current-context", "relationships"].includes(s.id)
+        ? { ...s, blocks: separateMajorChapter(s.id, s.blocks, e.materials, currentPeriod) } : s;
+    }),
+  };
+  const composed = { ...allocated, narrative: separated, contentAudit: auditContent(separated) };
   const publishedYears = years.map(y => ({ ...y, blocks: composed.narrative.sections.find(s => s.id === `year-${y.year}`)!.blocks }));
   const publishedTransitions = transitions.map(t => ({ ...t, blocks: composed.narrative.sections.find(s => s.id === `transition-${t.year}`)!.blocks }));
   return { ok: true as const, ...composed, evidence: e, yearPlan, years: publishedYears, transitions: publishedTransitions, materials: e.materials,
