@@ -1,4 +1,5 @@
 import { MAJOR_MEANINGS } from "./majorMaterials";
+import { withKoreanParticle } from "../report-knowledge/koreanCopyUtils";
 import { majorAnnualStory } from "./majorAnnualStories";
 import { majorHarmonyCopy } from "./majorHarmonyCopy";
 import { paragraph, proof, particle } from "./copyRealizer";
@@ -29,7 +30,7 @@ export function majorYearNarrative(e: MajorEvidence, y: MajorYearEvidence, c: Ma
   if (harmony && importance === "HIGH") {
     add("harmony", majorHarmonyCopy(y.annual.tenGod, story.topic, story.setting, mature, y.timePosition === "past"));
   }
-  if (transition) add("boundary", `${friendlyTransition(transition.dateLabel)}${y.timePosition === "past" ? "을 경계로" : "부터"} ${transition.before.ganji}에서 ${transition.after.ganji}로 ${y.timePosition === "past" ? "옮겨온 해입니다" : "넘어가는 해입니다"}. ${particle(MAJOR_MEANINGS[transition.after.tenGod].theme, "과", "와")} ${particle(story.topic, "을", "를")} 이어볼 때, 전환 뒤에 남길 몫도 달라 보입니다.`);
+  if (transition) add("boundary", `${friendlyTransition(transition.dateLabel)}${y.timePosition === "past" ? "을 경계로" : "부터"} ${transition.before.ganji}에서 ${withKoreanParticle(`${transition.after.ganji} 대운`, "to")} ${y.timePosition === "past" ? "옮겨온 해입니다" : "넘어가는 해입니다"}. ${particle(MAJOR_MEANINGS[transition.after.tenGod].theme, "과", "와")} ${particle(story.topic, "을", "를")} 이어볼 때, 전환 뒤에 남길 몫도 달라 보입니다.`);
   if (["식신", "상관"].includes(y.annual.tenGod)) [blocks[0], blocks[1]] = [blocks[1], blocks[0]];
   if (y.annual.tenGod === "정인" && harmony && blocks.length > 2) [blocks[0], blocks[2]] = [blocks[2], blocks[0]];
   const title = `${a.titles[mature ? 1 : 0]}${transition ? " — 큰 배경도 바뀝니다" : ""}`;

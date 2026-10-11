@@ -146,27 +146,27 @@
       "invariant": "94660a38a0c4cfec643b3ff1fb12d7387fd74dbd5d14e3180970b7c05d6a79d3"
     },
     "major-01-business": {
-      "after": "febc5f093ea60bd9cf976f621210c74ed6d154b198a9f06ddde6f9ff8228bd80",
+      "after": "53ceda81ff6919779f8a2bcc27505ea6db7cddfab4ce8c39294d4f6a3d29762a",
       "invariant": "9ed6127b7dfa8ac09f5991703fa6e0bf633a6d12cf52a2f549065f8b05356fcd"
     },
     "major-02-employee": {
-      "after": "b15af9859ef4a60f21d534874c3f40127c746c582afcbc5fde619e431263599e",
+      "after": "8d5f9897a577f563db10544b354061685a092cb3b532117d0363c97cb436297c",
       "invariant": "06caba8a667108c6c86a58affd62615e5a694a07f18cd04430f624db8528424c"
     },
     "major-03-freelance": {
-      "after": "04a496a3f46fb184782c0314c352cbde73810bd31c8f3845f62ed871eab2d1b7",
+      "after": "55a865f019d0c1f5b2fd2da738d49f646a1657d1531fd982dd6acffc2615f4c2",
       "invariant": "cc3f38a59ae03ec849944cd2c4d236046224bf444508808a6a32348b4f797471"
     },
     "major-04-student": {
-      "after": "beeac3022612643722b59128b26017593f3b1902cfc3145c6607dfa44dc1eb94",
+      "after": "8461b28696a5a318bf54230e318bd945b00f6316a9bfbd9713edf7e3e6a114c0",
       "invariant": "c9d53295d97a914cf703dfa72764df2b7a2b64f407ed07f45eec02bd97996e32"
     },
     "major-05-unknown": {
-      "after": "1be1e3c02f036f8c141e436aa40ba5ea1d59a2e7d1e76c7488b5bb30f3b892fa",
+      "after": "da0cb3f72c5fbc9ada9ec3189477e3850ffb67c6b14e7054b7a59b3d1655d34e",
       "invariant": "f6f454657b17ab1bcd2a457c815d98b85b7853034b9221c5c513e81458f9d723"
     },
     "major-06-transition": {
-      "after": "dbcb0e22242e2b86207f10c392ec997ee80840703b8668b649ff081bf1ecb7ea",
+      "after": "a296157545e1c9bf72b3d07e6d2f6053fa21f1ba7cf0563644231198678a09f1",
       "invariant": "7c13d7dc8154726c4b001eaccebcdee50651ec3029d301f3b8ee7651daacf6ee"
     },
     "annual-01-business": {
@@ -206,7 +206,7 @@
       "invariant": "dc0f09aa1008315d56ab61336b62bab0939ce5ef5330c254cb1df954622df643"
     },
     "golden-ENTJ-major": {
-      "after": "b15af9859ef4a60f21d534874c3f40127c746c582afcbc5fde619e431263599e",
+      "after": "8d5f9897a577f563db10544b354061685a092cb3b532117d0363c97cb436297c",
       "invariant": "06caba8a667108c6c86a58affd62615e5a694a07f18cd04430f624db8528424c"
     },
     "golden-ENTJ-annual": {
@@ -230,7 +230,7 @@
       "invariant": "0dedbcebc38039466d4bbde1ca28e9bb5295710a3ee360ec33f3fb2fe44895b3"
     },
     "golden-INTP-major": {
-      "after": "ff767e1fa318fbcfc4321bf9304eec01c2b194338f4251eb103c59c186c80360",
+      "after": "963b78df33ce1ca9f6e1fa814eed891a2894bcca2ff7924dc81d940e3e9d5cd5",
       "invariant": "e4418439c502b4400b30c5b9164261f928c17a6b0dc7d3d899a17812d50f6bdd"
     },
     "golden-INTP-annual": {
@@ -254,7 +254,7 @@
       "invariant": "46d40b261f5771bb18371b5c372de0f90f0faddd56a9d6e40bae167fbf1d35a2"
     },
     "golden-ENFP-major": {
-      "after": "04a496a3f46fb184782c0314c352cbde73810bd31c8f3845f62ed871eab2d1b7",
+      "after": "55a865f019d0c1f5b2fd2da738d49f646a1657d1531fd982dd6acffc2615f4c2",
       "invariant": "cc3f38a59ae03ec849944cd2c4d236046224bf444508808a6a32348b4f797471"
     },
     "golden-ENFP-annual": {

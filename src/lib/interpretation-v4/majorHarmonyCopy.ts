@@ -30,5 +30,5 @@ export function majorHarmonyCopy(god: TenGod, topic: string, scene: string, matu
     정인: `${o} 배웠던 자리에서 이제는 내 경험을 보탤 차례도 생깁니다. ${scene}에서 상대가 혼자 해내는 모습을 보면 도움을 주고받는 관계의 보람이 선명해집니다.`,
   };
   const text = (mature ? later : first)[god];
-  return past ? `${p(topic, "과", "와")} 맞물렸던 인연을 지금의 장면에 비춰 돌아볼 만합니다: ${text}` : text;
+  return past ? `그 무렵 ${p(topic, "과", "와")} 맞물린 인연이 있었다면, 이런 장면에 비춰 돌아볼 만합니다: ${text}` : text;
 }

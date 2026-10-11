@@ -1,0 +1,26 @@
+{
+  "base": "dc6de2ded7754a3a3b117d7efc49326a9cbed7d2",
+  "clock": {
+    "evaluatedAt": "2026-10-12T12:00:00+09:00"
+  },
+  "rows": {
+    "01-business": {
+      "invariant": "0f6feb6237ab356ec6f18b8b18a1de542fbb1e7433414275fdd05910d87e2826"
+    },
+    "02-employee": {
+      "invariant": "53af68039b8a43a72c327154bc63141c8a44234a67d7fbe8d2cbe558bf3b7977"
+    },
+    "03-freelance": {
+      "invariant": "4335ac39e3b2e88695ca8921d160e632dd9fff729143e7ff53de8801a92f0437"
+    },
+    "04-time-unknown": {
+      "invariant": "894636f87f2fa8dd5e792318b768494f33b827743471c6ebd206257d6d94609f"
+    },
+    "05-mbti-unknown": {
+      "invariant": "83b7552065ca6eced061a7b4c05850874143fa87854bd0c866c9fbef7c266e9a"
+    },
+    "06-both-unknown": {
+      "invariant": "adc946e06cca02a8da660dc91ffa0fde084cd79d37981b1af514ea5eaa4a1b7b"
+    }
+  }
+}
