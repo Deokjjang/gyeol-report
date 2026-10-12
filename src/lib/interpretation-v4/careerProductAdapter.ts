@@ -60,7 +60,7 @@ export function buildV4CareerProduct(input: NarrativeInput) {
   const pillar = packet.selected.find(m => m.material.category === "dayPillar"), master = packet.selected.find(m => m.material.category === "dayMaster");
   if (!pillar || !master) return fail("CAREER_NATAL_MATERIAL_MISSING");
   const state: NarrativeState = { input, packet, pillar, master, usedSeeds: new Set(), featureUses: new Map() };
-  const voice = selectCareerVoice(state), context = careerWorkNarrative(input), routes = careerRecommendations(state, voice, context), study = careerStudy(state);
+  const voice = selectCareerVoice(state), context = careerWorkNarrative(input), routes = careerRecommendations(state, voice, context, true), study = careerStudy(state);
   const contextProof: NarrativeProof = { features: [], seedIds: [], fusionIds: [], sourceRefs: context.sourceRefs };
   const block = (id: string, text: string, proof: NarrativeProof, tone: NarrativeBlock["tone"] = "positive"): NarrativeBlock => ({ id, text, proof, tone, mode: "prose" });
   const blocks = (q: CareerQuestion) => compact(selection.selected.filter(p => p.question === q).map(p => renderer.placement(p)));

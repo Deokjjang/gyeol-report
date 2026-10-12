@@ -1,0 +1,782 @@
+[
+  {
+    "id": "A",
+    "workFunction": "engineering",
+    "routes": [
+      {
+        "route": "investigate",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 0,
+          "occupation": 3,
+          "materialCount": 1
+        },
+        "score": 4,
+        "materials": [
+          {
+            "feature": "twelve_sinsal_hwagae",
+            "label": "화개살"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "manage",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 2,
+          "occupation": 0,
+          "materialCount": 2
+        },
+        "score": 4,
+        "materials": [
+          {
+            "feature": "gwiin_jaego",
+            "label": "재고귀인"
+          },
+          {
+            "feature": "ten_god_zheng_cai",
+            "label": "정재"
+          },
+          {
+            "feature": "ten_god_zheng_guan",
+            "label": "정관"
+          },
+          {
+            "feature": "ten_god_zheng_yin",
+            "label": "정인"
+          }
+        ],
+        "matchedJobs": [
+          {
+            "job": "공무원",
+            "reason": "규칙, 절차, 책임, 장기 근속이 중요한 환경이라 ISTJ의 성실함과 안정성이 잘 살아난다.",
+            "matchingTraits": [
+              "public_institution_fit",
+              "rule_following_reliability"
+            ],
+            "matchingMyeongliSignals": [
+              "정관",
+              "정재",
+              "토"
+            ],
+            "sourceCoverage": "direct"
+          },
+          {
+            "job": "회계사",
+            "reason": "숫자, 기록, 검증, 오류 확인이 중요한 직업이라 ISTJ의 정확성과 반복 숙련이 돈이 된다.",
+            "matchingTraits": [
+              "precision_profession_fit",
+              "efficient_error_detection"
+            ],
+            "matchingMyeongliSignals": [
+              "정재",
+              "금",
+              "문창귀인"
+            ],
+            "sourceCoverage": "direct"
+          }
+        ],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "teach",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 2,
+          "occupation": 0,
+          "materialCount": 2
+        },
+        "score": 4,
+        "materials": [
+          {
+            "feature": "gwiin_cheoneul",
+            "label": "천을귀인"
+          },
+          {
+            "feature": "ten_god_zheng_yin",
+            "label": "정인"
+          }
+        ],
+        "matchedJobs": [
+          {
+            "job": "교사",
+            "reason": "규칙, 성실함, 반복 지도, 평가 기준이 있는 환경에서 안정적인 권위를 만들 수 있다.",
+            "matchingTraits": [
+              "teacher_favored_student",
+              "diligent_responsible_parent"
+            ],
+            "matchingMyeongliSignals": [
+              "정인",
+              "정관"
+            ],
+            "sourceCoverage": "direct"
+          }
+        ],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "lead",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 0,
+          "occupation": 0,
+          "materialCount": 2
+        },
+        "score": 2,
+        "materials": [
+          {
+            "feature": "ten_god_jie_cai",
+            "label": "겁재"
+          },
+          {
+            "feature": "ten_god_zheng_guan",
+            "label": "정관"
+          },
+          {
+            "feature": "twelve_sinsal_banan",
+            "label": "반안살"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "market",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 0,
+          "occupation": 0,
+          "materialCount": 2
+        },
+        "score": 2,
+        "materials": [
+          {
+            "feature": "gwiin_jaego",
+            "label": "재고귀인"
+          },
+          {
+            "feature": "ten_god_pian_cai",
+            "label": "편재"
+          },
+          {
+            "feature": "ten_god_zheng_cai",
+            "label": "정재"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "create",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 0,
+          "occupation": 0,
+          "materialCount": 1
+        },
+        "score": 1,
+        "materials": [
+          {
+            "feature": "sinsal_hongyeom",
+            "label": "홍염살"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "experience",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 0,
+          "occupation": 0,
+          "materialCount": 1
+        },
+        "score": 1,
+        "materials": [
+          {
+            "feature": "ten_god_jie_cai",
+            "label": "겁재"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": []
+      }
+    ]
+  },
+  {
+    "id": "B",
+    "workFunction": "design",
+    "routes": [
+      {
+        "route": "create",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 2,
+          "occupation": 3,
+          "materialCount": 2
+        },
+        "score": 7,
+        "materials": [
+          {
+            "feature": "gwiin_munchang",
+            "label": "문창귀인"
+          },
+          {
+            "feature": "sinsal_hongyeom",
+            "label": "홍염살"
+          },
+          {
+            "feature": "ten_god_shi_shen",
+            "label": "식신"
+          }
+        ],
+        "matchedJobs": [
+          {
+            "job": "콘텐츠 기획자",
+            "reason": "평범한 사건에도 이야기와 유머를 더하고, 사람들에게 공유할 만한 소재를 잘 만든다.",
+            "matchingTraits": [
+              "imaginative_storytelling",
+              "random_but_charming_speech",
+              "community_event_starter"
+            ],
+            "matchingMyeongliSignals": [
+              "문창귀인",
+              "도화살",
+              "천문성"
+            ],
+            "sourceCoverage": "inferred"
+          }
+        ],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "experience",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 2,
+          "occupation": 3,
+          "materialCount": 1
+        },
+        "score": 6,
+        "materials": [
+          {
+            "feature": "ten_god_shi_shen",
+            "label": "식신"
+          }
+        ],
+        "matchedJobs": [
+          {
+            "job": "예술가",
+            "reason": "상상력, 감정 표현, 자기만의 개성, 창의적 스토리텔링을 작품으로 풀어내기 좋다.",
+            "matchingTraits": [
+              "arts_and_creative_field",
+              "creative_imagination",
+              "expressive_authenticity"
+            ],
+            "matchingMyeongliSignals": [
+              "도화살",
+              "홍염살",
+              "식신"
+            ],
+            "sourceCoverage": "direct"
+          }
+        ],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "investigate",
+        "components": {
+          "fusion": 3,
+          "mbtiJobMatch": 0,
+          "occupation": 0,
+          "materialCount": 2
+        },
+        "score": 5,
+        "materials": [
+          {
+            "feature": "sinsal_gwimun",
+            "label": "귀문관살"
+          },
+          {
+            "feature": "ten_god_pian_yin",
+            "label": "편인"
+          },
+          {
+            "feature": "twelve_sinsal_hwagae",
+            "label": "화개살"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": [
+          "enfp-connection"
+        ]
+      },
+      {
+        "route": "teach",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 2,
+          "occupation": 0,
+          "materialCount": 2
+        },
+        "score": 4,
+        "materials": [
+          {
+            "feature": "gwiin_cheondeok",
+            "label": "천덕귀인"
+          },
+          {
+            "feature": "gwiin_munchang",
+            "label": "문창귀인"
+          },
+          {
+            "feature": "gwiin_woldeok",
+            "label": "월덕귀인"
+          }
+        ],
+        "matchedJobs": [
+          {
+            "job": "교육자",
+            "reason": "밝은 에너지와 스토리텔링으로 학습 동기를 만들고, 학생의 가능성을 발견하는 데 강하다.",
+            "matchingTraits": [
+              "education_motivator",
+              "interest_switch_learning",
+              "encouragement_over_criticism"
+            ],
+            "matchingMyeongliSignals": [
+              "문창귀인",
+              "정인",
+              "식신"
+            ],
+            "sourceCoverage": "direct"
+          },
+          {
+            "job": "언어 회화 강사",
+            "reason": "말을 거는 데 두려움이 없고, 실제 대화 속에서 언어를 익히고 전달하는 강점이 크다.",
+            "matchingTraits": [
+              "language_conversation_strength",
+              "easy_conversation",
+              "education_motivator"
+            ],
+            "matchingMyeongliSignals": [
+              "문창귀인",
+              "도화살",
+              "역마살"
+            ],
+            "sourceCoverage": "direct"
+          }
+        ],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "lead",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 0,
+          "occupation": 0,
+          "materialCount": 2
+        },
+        "score": 2,
+        "materials": [
+          {
+            "feature": "ten_god_qi_sha",
+            "label": "편관"
+          },
+          {
+            "feature": "ten_god_zheng_guan",
+            "label": "정관"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "manage",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 0,
+          "occupation": 0,
+          "materialCount": 2
+        },
+        "score": 2,
+        "materials": [
+          {
+            "feature": "gwiin_jaego",
+            "label": "재고귀인"
+          },
+          {
+            "feature": "ten_god_zheng_guan",
+            "label": "정관"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "market",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 0,
+          "occupation": 0,
+          "materialCount": 2
+        },
+        "score": 2,
+        "materials": [
+          {
+            "feature": "gwiin_jaego",
+            "label": "재고귀인"
+          },
+          {
+            "feature": "ten_god_pian_cai",
+            "label": "편재"
+          },
+          {
+            "feature": "twelve_sinsal_yeokma",
+            "label": "역마살"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "review",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 0,
+          "occupation": 0,
+          "materialCount": 1
+        },
+        "score": 1,
+        "materials": [
+          {
+            "feature": "sinsal_gwimun",
+            "label": "귀문관살"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": []
+      }
+    ]
+  },
+  {
+    "id": "C",
+    "workFunction": "sales_operations",
+    "routes": [
+      {
+        "route": "lead",
+        "components": {
+          "fusion": 3,
+          "mbtiJobMatch": 2,
+          "occupation": 3,
+          "materialCount": 2
+        },
+        "score": 10,
+        "materials": [
+          {
+            "feature": "sinsal_yangin",
+            "label": "양인살"
+          },
+          {
+            "feature": "ten_god_jie_cai",
+            "label": "겁재"
+          },
+          {
+            "feature": "ten_god_qi_sha",
+            "label": "편관"
+          },
+          {
+            "feature": "twelve_sinsal_banan",
+            "label": "반안살"
+          },
+          {
+            "feature": "twelve_sinsal_jangseong",
+            "label": "장성살"
+          }
+        ],
+        "matchedJobs": [
+          {
+            "job": "기업 CEO",
+            "reason": "목표 설정, 조직화, 사람과 자원 동원, 고성과 추구가 핵심 강점과 직접 맞는다.",
+            "matchingTraits": [
+              "commanding_goal_builder",
+              "large_team_manager",
+              "entrepreneurial_income_potential"
+            ],
+            "matchingMyeongliSignals": [
+              "편관",
+              "편재",
+              "정관"
+            ],
+            "sourceCoverage": "direct"
+          },
+          {
+            "job": "정치인",
+            "reason": "대중적 존재감, 장기 전략, 통솔력, 공동 목표를 통해 사람을 모으는 역량을 쓸 수 있다.",
+            "matchingTraits": [
+              "public_presence_private_distance",
+              "future_change_leader",
+              "commanding_goal_builder"
+            ],
+            "matchingMyeongliSignals": [
+              "편관",
+              "정관",
+              "도화살"
+            ],
+            "sourceCoverage": "direct"
+          },
+          {
+            "job": "건설 관리자",
+            "reason": "대규모 팀, 일정, 자원, 현장 문제를 통합 관리해야 하므로 ENTJ의 통솔력과 맞다.",
+            "matchingTraits": [
+              "large_team_manager",
+              "crisis_momentum",
+              "objective_performance_environment"
+            ],
+            "matchingMyeongliSignals": [
+              "편관",
+              "정재",
+              "토"
+            ],
+            "sourceCoverage": "direct"
+          },
+          {
+            "job": "코치 또는 감독",
+            "reason": "사람의 역량을 진단하고 목표 달성까지 밀어붙이는 리더십을 쓸 수 있다.",
+            "matchingTraits": [
+              "talent_diagnosis",
+              "commanding_goal_builder",
+              "direct_feedback_leader"
+            ],
+            "matchingMyeongliSignals": [
+              "편관",
+              "정관",
+              "비견"
+            ],
+            "sourceCoverage": "direct"
+          }
+        ],
+        "proofFusionRuleIds": [
+          "entj-pressure"
+        ]
+      },
+      {
+        "route": "market",
+        "components": {
+          "fusion": 3,
+          "mbtiJobMatch": 0,
+          "occupation": 3,
+          "materialCount": 2
+        },
+        "score": 8,
+        "materials": [
+          {
+            "feature": "ten_god_zheng_cai",
+            "label": "정재"
+          },
+          {
+            "feature": "twelve_sinsal_yeokma",
+            "label": "역마살"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": [
+          "entj-wealth"
+        ]
+      },
+      {
+        "route": "manage",
+        "components": {
+          "fusion": 3,
+          "mbtiJobMatch": 2,
+          "occupation": 0,
+          "materialCount": 2
+        },
+        "score": 7,
+        "materials": [
+          {
+            "feature": "ten_god_zheng_cai",
+            "label": "정재"
+          },
+          {
+            "feature": "ten_god_zheng_yin",
+            "label": "정인"
+          }
+        ],
+        "matchedJobs": [
+          {
+            "job": "회계직",
+            "reason": "공정한 평가, 정확한 수치, 구조적 판단을 요구하는 직무와 맞는다.",
+            "matchingTraits": [
+              "objective_performance_environment",
+              "objective_metric_investing",
+              "time_attack_processing"
+            ],
+            "matchingMyeongliSignals": [
+              "정재",
+              "정관",
+              "금"
+            ],
+            "sourceCoverage": "direct"
+          },
+          {
+            "job": "건설 관리자",
+            "reason": "대규모 팀, 일정, 자원, 현장 문제를 통합 관리해야 하므로 ENTJ의 통솔력과 맞다.",
+            "matchingTraits": [
+              "large_team_manager",
+              "crisis_momentum",
+              "objective_performance_environment"
+            ],
+            "matchingMyeongliSignals": [
+              "편관",
+              "정재",
+              "토"
+            ],
+            "sourceCoverage": "direct"
+          }
+        ],
+        "proofFusionRuleIds": [
+          "entj-wealth"
+        ]
+      },
+      {
+        "route": "review",
+        "components": {
+          "fusion": 3,
+          "mbtiJobMatch": 2,
+          "occupation": 0,
+          "materialCount": 2
+        },
+        "score": 7,
+        "materials": [
+          {
+            "feature": "sinsal_gwimun",
+            "label": "귀문관살"
+          },
+          {
+            "feature": "sinsal_hyeonchim",
+            "label": "현침살"
+          },
+          {
+            "feature": "ten_god_shang_guan",
+            "label": "상관"
+          }
+        ],
+        "matchedJobs": [
+          {
+            "job": "법조인",
+            "reason": "논리, 비판, 언쟁, 명료한 주장, 강한 협상력과 직접 연결된다.",
+            "matchingTraits": [
+              "challenge_communication",
+              "clear_assertive_language",
+              "resilience_under_resistance"
+            ],
+            "matchingMyeongliSignals": [
+              "현침살",
+              "정관",
+              "편관"
+            ],
+            "sourceCoverage": "direct"
+          }
+        ],
+        "proofFusionRuleIds": [
+          "entj-needle"
+        ]
+      },
+      {
+        "route": "create",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 0,
+          "occupation": 0,
+          "materialCount": 2
+        },
+        "score": 2,
+        "materials": [
+          {
+            "feature": "sinsal_hongyeom",
+            "label": "홍염살"
+          },
+          {
+            "feature": "ten_god_shang_guan",
+            "label": "상관"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "experience",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 0,
+          "occupation": 0,
+          "materialCount": 2
+        },
+        "score": 2,
+        "materials": [
+          {
+            "feature": "sinsal_dohwa",
+            "label": "도화살"
+          },
+          {
+            "feature": "ten_god_jie_cai",
+            "label": "겁재"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "teach",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 0,
+          "occupation": 0,
+          "materialCount": 2
+        },
+        "score": 2,
+        "materials": [
+          {
+            "feature": "gwiin_cheondeok",
+            "label": "천덕귀인"
+          },
+          {
+            "feature": "gwiin_cheoneul",
+            "label": "천을귀인"
+          },
+          {
+            "feature": "gwiin_woldeok",
+            "label": "월덕귀인"
+          },
+          {
+            "feature": "ten_god_zheng_yin",
+            "label": "정인"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": []
+      },
+      {
+        "route": "investigate",
+        "components": {
+          "fusion": 0,
+          "mbtiJobMatch": 0,
+          "occupation": 0,
+          "materialCount": 1
+        },
+        "score": 1,
+        "materials": [
+          {
+            "feature": "sinsal_gwimun",
+            "label": "귀문관살"
+          }
+        ],
+        "matchedJobs": [],
+        "proofFusionRuleIds": []
+      }
+    ]
+  }
+]

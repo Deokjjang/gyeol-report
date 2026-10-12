@@ -1,0 +1,96 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-career-editorial-quality-fix-01
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts (42 tests | 4 failed) 87475ms
+     × 'love' previous saved edition remains identical 2083ms
+     × 'compatibility' previous saved edition remains identical 4985ms
+     × 'major' previous saved edition remains identical 2615ms
+     × 'annual' previous saved edition remains identical 2817ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'love' previous saved edition remains identical
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "dc65e1cff1fdaef863b242387ca333913335507ca0c3e296eb399150c0f16ae8",
+-   "d2b6fc40dcafd7de79170fb641dc45acf42fcf7749de8e83f766d1105c8d5fce",
+-   "17571a8443a3a6a43c54c2d517ec88c6f2898b07f92b6328a2f591db54ba3978",
++   "4a610a2e2e166190b4d70a60f06e518da9e7d04740ec09aea209ecc447ae1f75",
++   "a307fa4d9eb3e19273ae194992f44f359ab8e6653edabc36cfb2f4f01a521951",
++   "c2863326afbcc25a104e524e9c053482c059f6be8e8299e04383ee4207bef8cd",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts:122:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'compatibility' previous saved edition remains identical
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "da6593ae6c10583c2a6f28ee29c26b5609b409b4edcccde35dd512bb1b2454f4",
+-   "d0694ae557383ea3cd0b4cacd3f51cb7ac2d096c3e70ec3cc593b32fe44c6d7e",
+-   "e161afa18d5465c6ff7e4cd46b6c13d7e8e48bcc851ca65dd9d3fbebe24b5696",
++   "55b8e4d7439587f853e5c6a6a2d511754728254901b4de4e3df27319c82399f8",
++   "79484205c266eb517312fc76ae176604fca93430635019800b6af9c6649839d8",
++   "9eb2548876dd027bd5e6966975c4de24a5bf0f2928a47b14d89b8011944211f2",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts:122:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'major' previous saved edition remains identical
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "8c911d6dc3d24f4be969bf7017d1b098a7523078d8018115db7fa5187ce21dde",
+-   "cdb60d8939e2e97cd06840093ada974b11b9369b6b06f881b788eac3f54d1f3a",
+-   "a774832dc671df08d9c2395850a54bfe1e8446d9e72256695d4107244c27752b",
++   "f0df621dc197bf2604926eee3ad18385d6408b098380f164b50ac36b62d45542",
++   "25d8a3f67cc16c63206461e9f0692556917b6388e99312c79e71e9b89cfa63bd",
++   "8977a758906c8dcf9b650b0d2227c41f91f51c18bdd5f4b9baeae50647476aed",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts:122:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'annual' previous saved edition remains identical
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "58150101a8224de5ddd09f6fee598e67f39ee0ed8a83a238efbfc43706c1d378",
+-   "fd698806ddf394fd2c3d4c145a1e2471f4b834c1dad3b5596ea37522a8c8a634",
+-   "ba2cf9b612db5290bd1bf55bd639d750364fbe5eb5366bee106e2a4e88284626",
++   "09d928411701ede168998d1ed173502d13de513b974dc5722659a4b8611631ef",
++   "670bc4183acb4f12c1b0abd8bdb7d00ea4746cd7e2cadc8181d86f8d5d3c6b91",
++   "ad291065771ec0cc45ca4e445cb8c3ee589330c3a58355ef811ef9871c8b3801",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts:122:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  4 failed | 86 passed (90)
+   Start at  18:32:58
+   Duration  90.92s (transform 5.11s, setup 57ms, import 6.49s, tests 154.59s, environment 0ms)

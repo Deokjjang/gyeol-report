@@ -1,0 +1,8 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-career-editorial-quality-fix-01
+
+
+ Test Files  1 passed (1)
+      Tests  14 passed (14)
+   Start at  18:56:07
+   Duration  44.27s (transform 1.63s, setup 18ms, import 2.02s, tests 42.05s, environment 0ms)

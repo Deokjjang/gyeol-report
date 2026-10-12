@@ -1,11 +1,11 @@
 import type { Domain } from "./types";
 import type { JobStatus } from "../report-generation/reportInputTypes";
 
-export const CAREER_RELEASE_VERSION = "career-editorial-release-01-v1" as const;
+export const CAREER_RELEASE_VERSION = "career-editorial-quality-fix-01-v1" as const;
 const chapter = (id: string, key: string, title: string, domain: Domain, paragraphs: readonly (readonly [string, string, string, string, string])[]) => ({
   id, key, title, domain, paragraphs: paragraphs.map(([purpose, ...sentences], i) => ({ id: `P${i + 1}`, purpose, sentences })),
 });
-/** Independent reader questions; K1-K10 and the recommendation ranking stay intact. */
+/** Independent reader questions; K1-K10 and the recommendation order stay intact. */
 export const CAREER_READER_CHAPTERS = [
   chapter("CH01", "core", "나는 어떻게 일하는 사람인가", "identity", [
     ["타고난 업무 성향", "대표 업무 방식", "구체적 업무 상황", "그 방식의 장점", "기억할 업무 정체성"],

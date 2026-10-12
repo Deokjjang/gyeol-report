@@ -1,0 +1,64 @@
+
+ RUN  v4.1.5 /Users/Deokmin/Dev/projects/gyeol-report
+
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts (5 tests | 2 failed) 21295ms
+   × 'major' customer/evidence/Book stays frozen 2658ms
+   × 'annual' customer/evidence/Book stays frozen 2861ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/interpretation-v4/careerProductLocks.test.ts > 'major' customer/evidence/Book stays frozen
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "71465d70a0800b6d7430b45287e47afe5438919c6cb56d99deef9a875d51a15b",
+-   "cf9b8c3aaef4fb7488028e622b023ebe9db3cb677e469bb3c30ec9f82bd56dfd",
+-   "eb31c1fe7addcee764b3df970a892850180cb9751d73c2ecbd5198e96e821204",
++   "30329502d3ba587fe0d2e5f8cdb3d7f7f8421ff716c6dc2e3ba3d54877ec5198",
++   "ae09260dce69fd9c56658713ad52d4d5d458a35f0616bccda9bd5b0e00f3b3ed",
++   "498791a90d5061b48e3027235d777457dfd565be84cdef5adcae178397e9977c",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108
+     38|     const { contentDigest: _, ...body } = { ...e, composition }; void …
+     39|     const sealed = { ...body, contentDigest: v4Digest(body) };
+     40|     expect([v4Digest(projectV4Composition(composition)), v4Digest(seal…
+       |                                                                                                            ^
+     41|     const snapshot = createProductPreviewSnapshot({ reportId: `legacy-…
+     42|       productKey: sealed.input.productKey, productSlug: sealed.input.p…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerProductLocks.test.ts > 'annual' customer/evidence/Book stays frozen
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "8525e0e39cc824c3f1f9cdd763cb33bfd4402c9718f6ba6d1e4a33f69309be5f",
+-   "85e4470a0b5a60c0e89c634dae80915263744f26dbef600e11132092d0c74125",
+-   "d21b5665c2e24402bf37a1a33021e47c5f1ccefa42f22c402c4ed2ee2acba69f",
++   "b085a76a5c9e6244ccc5d82af65ebf2421a17ac7afcb0c7d140ec0b22c21bc92",
++   "65916d3cfcc32c7580473edec9789e0c29046acee2d26891e23aae8f9f8074e4",
++   "f7a728055fc22816fe116f66119c3dd1eeb23189eb49cc5efe6ca4179a929010",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108
+     38|     const { contentDigest: _, ...body } = { ...e, composition }; void …
+     39|     const sealed = { ...body, contentDigest: v4Digest(body) };
+     40|     expect([v4Digest(projectV4Composition(composition)), v4Digest(seal…
+       |                                                                                                            ^
+     41|     const snapshot = createProductPreviewSnapshot({ reportId: `legacy-…
+     42|       productKey: sealed.input.productKey, productSlug: sealed.input.p…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 3 passed (5)
+   Start at  18:47:14
+   Duration  23.90s (transform 1.92s, setup 24ms, import 2.37s, tests 21.30s, environment 0ms)
