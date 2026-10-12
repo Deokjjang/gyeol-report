@@ -38,8 +38,12 @@ export function majorInteractionReading(e: MajorEvidence, y: MajorYearEvidence) 
     && ["충", "형"].includes(r.relation.type) && r.actors === tension.actors
     && [...r.relation.branches].sort().join("") === [...tension.relation.branches].sort().join(""))] : [];
   const transition = e.horizon.transitions.find(t => t.year === y.year);
-  const describe = (r: NonNullable<ReturnType<typeof bind>>) =>
-    `${y.year}년${transition && r.scope === "cycle" ? " 전환이 완료된 뒤의" : ""} ${r.actors}, ${y.annual.ganji}(${y.annual.tenGod}) 세운의 ${y.annual.ganji.slice(-1)} 사이의 ${r.relation.branches.join("·")} ${p(r.relation.type, "topic")} ${p(`‘${r.meaning}’`, "object")} ${y.annual.tenGod} 흐름과 함께 살펴볼 근거입니다.`;
+  const describe = (group: NonNullable<ReturnType<typeof bind>>[]) => {
+    const first = group[0];
+    if (!first) return "";
+    const meanings = group.map(r => `${r.relation.branches.join("·")} ${r.relation.type}에서는 ${p(`‘${r.meaning}’`, "object")}`);
+    return `${y.year}년${transition && first.scope === "cycle" ? " 전환이 완료된 뒤의" : ""} ${first.actors}, ${y.annual.ganji}(${y.annual.tenGod}) 세운의 ${y.annual.ganji.slice(-1)} 사이의 ${meanings.join(", ")} ${y.annual.tenGod} 흐름과 함께 살펴보세요.`;
+  };
   const timing = transition
     ? `${transition.dateLabel}을 경계로 ${transition.before.ganji}에서 ${p(`${transition.after.ganji} 대운`, "to")} 넘어갑니다. 이 해의 ${cycle.ganji}(${cycle.tenGod}) 대운과 세운 설명은 전환이 완료된 뒤의 흐름으로 읽어주세요.` : "";
   const background = validPeriod
@@ -58,8 +62,8 @@ export function majorInteractionReading(e: MajorEvidence, y: MajorYearEvidence) 
   return { background, majorNatal,
     backgroundIds: validPeriod ? [`dayun-cycle:${cycle.index}:${cycle.ganji}`, `period-ten-god:${cycle.tenGod}`,
       ...(transition ? [`dayun-cycle:${transition.before.index}:${transition.before.ganji}`, `transition:${transition.startSolarKst ?? transition.dateLabel}`] : [])] : [],
-    tension: tensions.map(describe).join(" "), tensionIds: tensions.map(r => r.id),
-    harmony: harmony ? describe(harmony) : "", harmonyIds: harmony ? [harmony.id] : [],
+    tension: describe(tensions), tensionIds: tensions.map(r => r.id),
+    harmony: harmony ? describe([harmony]) : "", harmonyIds: harmony ? [harmony.id] : [],
   };
 }
 

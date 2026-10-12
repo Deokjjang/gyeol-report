@@ -96,7 +96,7 @@ describe("Major editorial assembly safety", () => {
       const blocks = n.sections.flatMap(s => s.blocks);
       expect(blocks.find(b => b.id === "transition-2034-work")!.text).toContain("‘밖에서 들어오는 제안’으로 달라집니다.");
       expect(blocks.find(b => b.id === "2029-character")!.text).toContain("오래 남길 내 몫을 생각하는 시간이 반갑습니다.");
-      expect(blocks.find(b => b.id === "2036-gift")!.text).toContain("꾸준히 보여줄 솜씨가 나를 다시 찾을 이유가 됩니다.");
+      expect(blocks.find(b => b.id === "2036-gift")!.proof.seedIds).toContain("sinsal_hongyeom:strength");
     }
   });
 
@@ -109,6 +109,7 @@ describe("Major editorial assembly safety", () => {
       expect(money.portrait.startsWith(`${withKoreanParticle(money.topic, "object")} 생각하는 시간이 반갑습니다.`)).toBe(true);
       const craft = majorAnnualStory("식신", context, true, false, false, distant);
       expect(craft.gift.startsWith(`${withKoreanParticle(craft.topic, "subject")} 나를 다시 찾을 이유가 됩니다.`)).toBe(true);
+      if (distant) expect(craft.gift).toContain("꾸준히 보여줄 솜씨가 나를 다시 찾을 이유가 됩니다.");
     }
   });
 });

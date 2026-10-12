@@ -1,8 +1,8 @@
 {
-  "base": "3449e7336b41442a6c2e5c545dcd535578eb544e",
+  "base": "1bfe836f76d3384de27ae3e3f4e99aa0017339a2",
   "rows": {
     "01-business": {
-      "frozen": "976bcab9b9630b3a5a9e1483309640d5d170cd6af2d857dd066465768a4325f8",
+      "frozen": "2e9f71a12ddf36f1196c3ee8a306bac79b79cc2e800bdc21f9292a985489280f",
       "blocks": {
         "big-flow": {
           "length": 144,
@@ -152,7 +152,7 @@
       }
     },
     "02-employee": {
-      "frozen": "1c05e3202273371696aaa321384b3bca404984390ad3fdb4d899f0ad8aa98595",
+      "frozen": "84b801e69968bed7205cdbd04651a46f9fb9569e5eb8f7553de44190a4079c92",
       "blocks": {
         "big-flow": {
           "length": 143,
@@ -307,7 +307,7 @@
       }
     },
     "03-freelance": {
-      "frozen": "01e515a30bd489ca2c803ea5d2aa6b0a5e28fe61c01b1f449c823aa8d843ea04",
+      "frozen": "17c83c12452a03d4c2260eae2eee86568754648957289c5164f780657072f71c",
       "blocks": {
         "big-flow": {
           "length": 134,
@@ -457,7 +457,7 @@
       }
     },
     "04-time-unknown": {
-      "frozen": "ec8058de8d7d84dfee2f4e27f1245af4d2a8bde8f2150b9ff9d7ddaf92ba9bdb",
+      "frozen": "b94823ea34ee954fb8c15151d2df0aea126a653094706da5ce86670d0707a9dc",
       "blocks": {
         "big-flow": {
           "length": 144,
@@ -607,7 +607,7 @@
       }
     },
     "05-mbti-unknown": {
-      "frozen": "8cd80a7ad87739f72e86a649206f8acf19eda8923fd20d4bd41adebe0bb88d32",
+      "frozen": "c4899fc2c98120ccf5c164ccd4c9e8a8b8d2ad2ba7240cd1ed20fc95257d4fe8",
       "blocks": {
         "big-flow": {
           "length": 144,
@@ -742,7 +742,7 @@
       }
     },
     "06-both-unknown": {
-      "frozen": "fe0eb2ad2ea5951ffa0dadee5f3261c6ed07fe9392d04a75818190c7bb3e4926",
+      "frozen": "d2d589fe4d7de0a4c39d35838b44476d3dc0f0454d9b2535e72978e2ce4d0572",
       "blocks": {
         "big-flow": {
           "length": 144,
@@ -872,5 +872,5 @@
       }
     }
   },
-  "revision": "major-interaction-depth-01"
+  "revision": "major-personalization-01"
 }

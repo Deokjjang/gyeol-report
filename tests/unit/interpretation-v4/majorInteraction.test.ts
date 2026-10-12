@@ -20,7 +20,7 @@ beforeAll(async () => {
 }, 120000);
 
 describe("Major verified annual interaction explanations", () => {
-  it.each(MAJOR_SAFETY_CASES)("$id: immutable calculations, all original sentences, IDs, MBTI/Fusion and selection", ({ id }) => {
+  it.each(MAJOR_SAFETY_CASES)("$id: immutable calculations, reviewed copy, IDs, MBTI/Fusion and selection", ({ id }) => {
     const r = results.get(id)!;
     const evidence = Object.fromEntries(Object.entries(r.evidence).filter(([key]) => key !== "majorNatal"));
     const frozen = { ...Object.fromEntries(["materials", "yearPlan", "transitions", "behaviorBasis", "completeness", "contentPlan", "integration"].map(k => [k, r[k as keyof Result]])), evidence,
