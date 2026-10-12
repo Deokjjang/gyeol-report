@@ -43,7 +43,7 @@ describe("13D-6B actual customer generation to persisted Book", () => {
     if (e.composition.product !== "saju_mbti_full" || !("integration" in e.composition.result)) return expect.unreachable();
     const result = e.composition.result, original = clone(e), data = projectBook(e)!;
     expect(input).toEqual(before); expect(e).toEqual(original);
-    expect(result.writerVersion).toBe("comprehensive-editorial-finish-02-v1");
+    expect(result.writerVersion).toBe("comprehensive-editorial-quality-fix-01-v1");
     expect(validateV4Publication("saju_mbti_full", generated.draft, e)).toEqual({ ok: true, errors: [] });
     expect(result.integration.context.rawJobText).toBe(f.context.detailJob);
     const natal = buildIntegratedMyeongliProfile(e.calculations.person);

@@ -1,0 +1,53 @@
+{
+  "base": "c048218cc5961e0f53a1deab2603511e17559fc3",
+  "branch": "v4/comprehensive-editorial-quality-fix-01",
+  "originalStatus": " M .gitignore\n M AGENTS.md\n?? supabase/.temp/",
+  "originalFileHashCount": 1857,
+  "originalFileHashDifferences": [],
+  "profilesAndCalculationsUnchanged": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "otherProductByteParity": [
+    "career",
+    "love",
+    "compatibility",
+    "major-fortune",
+    "annual-fortune"
+  ],
+  "typescript": {
+    "baseline": 390,
+    "after": 390,
+    "new": 0
+  },
+  "comprehensiveTests": {
+    "passed": 54,
+    "skipped": 1
+  },
+  "runtimeShadow": {
+    "passed": 40
+  },
+  "bookNavigation": {
+    "passed": 13,
+    "baselineFailures": 3
+  },
+  "bookProjection": {
+    "passed": 26,
+    "baselineFailures": 10
+  },
+  "v3Regression": {
+    "passed": 6
+  },
+  "apiTests": {
+    "passed": 2,
+    "baselineFailures": 22
+  },
+  "lint": "PASS",
+  "build": "BASELINE_PAGE_EXPORT_FAILURE",
+  "nft": "UNVERIFIED_BEFORE_TRACING",
+  "releaseQuality": "PARTIAL"
+}

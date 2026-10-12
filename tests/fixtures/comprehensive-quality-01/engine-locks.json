@@ -1,0 +1,32 @@
+[
+  {
+    "id": "A",
+    "calculationsSha256": "b579b8c0981b7a8b22a1a6da366fe307294a3210348e6cb7d7d0847d5f0a9127",
+    "profilesSha256": "fecd642bea07c2daad5bcbaca0c532094738d54d1d330c9d56b93dc72b2099fc"
+  },
+  {
+    "id": "B",
+    "calculationsSha256": "340f187429f2e1814c1b6f38371d1dd52be4ed241d37955cf9ffb8db62738677",
+    "profilesSha256": "e43d49fa2588423283c82b7d46691c83bd6584c45a5d1b5f3504c01dfd22806f"
+  },
+  {
+    "id": "C",
+    "calculationsSha256": "34f33fc5c78755bda542be994fba442a95e83105b605a05a218223b34236a623",
+    "profilesSha256": "98bc97d7575d2a1e214d5abae5f12cbe1618285fb16b89a8a80653bc246dde94"
+  },
+  {
+    "id": "D",
+    "calculationsSha256": "be1c8780bf0a3c3d49ea43b5cf11032e78eb986e2fe30951d9a8218d14b8441b",
+    "profilesSha256": "ff6d22c56905a5c24b6b21708198f3ba9d9e9423b7846534e16fe51193249523"
+  },
+  {
+    "id": "E",
+    "calculationsSha256": "b579b8c0981b7a8b22a1a6da366fe307294a3210348e6cb7d7d0847d5f0a9127",
+    "profilesSha256": "c08c6475a5ab4620d1dd5d7f019428d524996f545be8e7b568fac846b76a6aca"
+  },
+  {
+    "id": "F",
+    "calculationsSha256": "be1c8780bf0a3c3d49ea43b5cf11032e78eb986e2fe30951d9a8218d14b8441b",
+    "profilesSha256": "2a95fb2bac013dab9a98d12a1d9e1ef6e7a8c2e869fbce7856554faf2e77c2e3"
+  }
+]

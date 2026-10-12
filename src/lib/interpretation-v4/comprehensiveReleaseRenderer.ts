@@ -3,12 +3,14 @@ import type { ComprehensiveEditorialPlan, ComprehensivePlanInputs, Comprehensive
 import type { ComprehensiveManuscriptDraft } from "./comprehensiveManuscriptCore";
 import type { EvidenceAtom, SemanticAxis } from "./semanticCore";
 import { COMPREHENSIVE_READER_CHAPTERS, COMPREHENSIVE_RELEASE_VERSION } from "./comprehensiveReleaseContracts";
-import { RELEASE_FACETS, RELEASE_RISKS, RELEASE_RISK_SCENES, RELEASE_SOCIAL_INTENT, RELEASE_CLOSINGS, RELEASE_SOCIAL_BOUNDARY_RISK, RELEASE_SOCIAL_REPAIR, RELEASE_SOCIAL_LEARNING_FIT, RELEASE_MONEY_VALUE, RELEASE_MONEY_AXES, RELEASE_POSITIVE, RELEASE_POSITIVE_ACTIVATION, RELEASE_SOCIAL_VALUE, RELEASE_SOCIAL_FIT, type ReleaseContext } from "./comprehensiveReleaseMaterials";
+import { RELEASE_FACETS, RELEASE_RISKS, RELEASE_RISK_SCENES, RELEASE_SOCIAL_INTENT, RELEASE_CLOSINGS, RELEASE_SOCIAL_BOUNDARY_RISK, RELEASE_SOCIAL_REPAIR, RELEASE_SOCIAL_LEARNING_FIT, RELEASE_MONEY_VALUE, RELEASE_MONEY_AXES, RELEASE_POSITIVE, RELEASE_POSITIVE_ACTIVATION, RELEASE_SOCIAL_FIT, type ReleaseContext } from "./comprehensiveReleaseMaterials";
 import { collectReleaseSources, freshReleaseAllocation, selectReleaseSource, commitReleaseSource, allocateReleaseDemands, releaseAtomName, type ReleasePreflight, type ReleaseSource } from "./comprehensiveReleaseSources";
 import { humanOutcome, mbtiHumanBehavior } from "./narrativeHumanOutcome";
 import { humanizeSourceClause } from "./comprehensiveManuscriptPolish";
 import { humanMbtiReason } from "./narrativeMbtiReason";
 import { freshNarrativeMemory } from "./narrativeMemory";
+import { withKoreanParticle } from "../report-knowledge/koreanCopyUtils";
+import { READER_FIRST_IMPRESSION, READER_PRIORITIES, READER_TALENT_PRACTICE, READER_FRIEND_VALUE, READER_MONEY_VALUE, READER_TALENT_SELECTION } from "./comprehensiveReaderApplications";
 
 export type ReleaseSentence = {
   chapterId: string; paragraphId: string; sentenceRole: string; roleDescription: string; text: string;
@@ -25,12 +27,6 @@ const meaningQuote = (s:string) => {
   return `‘${text}’${last>=0xac00&&last<=0xd7a3&&(last-0xac00)%28!==0?"이라는":"라는"}`;
 };
 const mbtiDomainLabels: Record<string,string> = {MONEY:"돈 관리",INVESTMENT:"자원 선택",LOVE:"애정 표현",MARRIAGE:"가까운 관계",RELATIONSHIPS:"관계 방식",COMMUNICATION:"대화 방식",WORK:"업무 방식",CAREER:"직업 선호",STUDY:"학습 방식",THINKING:"사고 방식",IDENTITY:"행동 선호",STRENGTHS:"강점"};
-// Reader realizations of these actual scoring nodes. Detecting another person's
-// truth or mind is not a verified capability; preserve the observation preference.
-const mbtiReaderCopy: Record<string,string> = {
-  "mbti:ENFP:traits:thinkingStyle:question_burst_pattern:plainKo":"ENFP의 사고 자료에서는 설명이 모호할 때 질문으로 전체 맥락을 알아보려는 선호를 읽습니다. 질문을 더하는 재미와 실제 답을 듣는 시간을 나누면, 새로운 연결을 찾는 힘을 이해까지 이어 갈 수 있습니다.",
-  "mbti:INFP:traits:thinkingStyle:contextual_truth_detection:plainKo":"INFP의 사고 자료에는 말의 뉘앙스와 행동의 맥락을 함께 살피려는 선호가 있습니다. 이는 상대의 진심을 맞힌다는 뜻이 아니므로, 알아차린 차이는 확인할 질문으로 사용하는 편이 좋습니다.",
-};
 const riskMessage = (facet:string,context:ReleaseContext) => RELEASE_RISKS[facet]?.[context] ?? RELEASE_FACETS[facet].risk;
 const workIntro: Record<string,string> = {student:"지금 학생으로 배우는 과정에서는 남보다 앞선 진도만큼, 스스로 설명할 수 있게 된 내용에도 기준을 두어 보세요.",job_seeker:"취업을 준비하는 지금은 직무 이름만 고르기보다 잘할 수 있는 행동을 실제로 보여 줄 작은 과제를 정해 보세요.",employee:"지금의 직장생활에서는 맡은 범위 안에서 해볼 작은 개선과 새롭게 배울 능력을 연결해 볼 수 있습니다.",freelancer:"프리랜서로 일하는 지금은 잘하는 작업과 계속 맡을 수 있는 조건을 함께 정하면 배울 방향도 분명해집니다.",self_employed:"자영업에서는 직접 잘하는 일과 도움을 받아 유지할 일을 나누면 새로 익힐 능력을 고르기 쉬워집니다.",business_owner:"사업을 운영하는 지금은 혼자 해내는 능력과 다른 사람에게 전할 수 있는 방식을 함께 키워 볼 수 있습니다.",homemaker:"가사를 돌보는 현재에도 자신을 위해 배우고 싶은 한 가지를 정해 작은 시간을 남겨 보세요.",unemployed:"지금 일을 쉬고 있다면 곧바로 성과를 내야 한다는 부담보다 다시 시도할 수 있는 작은 배움부터 골라도 좋습니다.",other:"현재 하는 일의 이름보다 실제로 어떤 과제를 다룰 때 힘이 살아나는지 살펴보면 배움의 방향을 찾기 쉽습니다.","":"일과 배움에서 어떤 방식을 쓸 때 이해와 결과가 함께 남는지 살펴보세요."};
 const loveIntro: Record<string,string> = {single:"지금 솔로라면 누군가를 만나기 위해 자신을 바꾸기 전에, 가까워졌을 때 편안할 관계의 조건부터 알아두면 좋습니다.",some:"지금처럼 서로 알아가는 단계에서는 반응 하나로 마음을 결론 내리기보다 관심을 나눌 작은 제안을 해보세요.",dating:"연애 중인 지금은 마음이 같다는 확인만큼 서로가 편하게 느끼는 대화의 방식도 함께 알아갈 수 있습니다.",marriage_preparing:"결혼을 준비하는 지금은 좋은 마음과 함께 일상에서 합의할 역할과 선택의 기준도 이야기해 보세요.",married:"기혼인 현재에는 가까운 생활에서 반복할 수 있는 작은 소통의 방법을 함께 정하는 것이 도움이 될 수 있습니다.","":"관계가 어떤 단계이든 자신이 편안한 친밀감의 조건을 알고 전하는 일이 좋은 출발점이 됩니다."};
@@ -52,8 +48,9 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
   let explicitMbti=0;
   const rootOwnership = new Map<string,{evidenceId:string;owner:string;applications:string[]}>();
   const seenText = new Set<string>();
+  const hasText = (text:string) => [...seenText].some(prior=>prior.includes(text));
   const introduced = new Set<string>();
-  const selectedStrengths: string[]=[];
+  const selectedStrengths: ReleaseSource[]=[];
   let coreSource: ReleaseSource | undefined;
   let current:ReleaseChapter;
   const blockMeaning=(key:string)=>{memory.meanings.add(key);preflight?.blocked.add(key);};
@@ -81,37 +78,63 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
     const n=profiles.mbti.annotations.find(a=>!mbtiNodes.has(a.sourceNodeId)&&!mbtiAxes.has(`${s.axis}:${s.direction}`)&&a.annotationConfidence!=="REFERENCE_ONLY"&&domains.includes(a.sourceDomain)&&(a.axes[s.axis]??0)*s.direction>0
       && profiles.mbti.sourceNodes.some(n=>n.id===a.sourceNodeId&&n.classification==="SCORING_SEMANTIC"));
     const term=`${s.atom.sourceType}:${s.atom.sourceKey}`;
-    if(current.id>="CH04"&&terms.has(term)&&n&&type&&explicitMbti<7){mbtiNodes.add(n.sourceNodeId);mbtiAxes.add(`${s.axis}:${s.direction}`);explicitMbti++;return {text:`${type}의 ${mbtiDomainLabels[n.sourceDomain]??"선택 방식"}에서도 ${mbtiHumanBehavior(s.axis,s.direction)}`,mbti:[n.sourceNodeId]};}
-    if(!terms.has(term)&&terms.size<10){terms.add(term);return {text:`${releaseAtomName(s.atom)}에는 ${meaningQuote(s.atom.easyMeaning)} 뜻이 담겨 있습니다.`,mbti:[]};}
-    // Do not repeat a definition to force four sentences. The three authored
-    // application sentences remain a complete, source-backed paragraph.
-    return {text:"",mbti:[]};
+    // Reusing proof in a new domain must still explain the connection. A
+    // definition budget is not a reason to silently drop the Myeongli reason.
+    const root = `${releaseAtomName(s.atom)}에서는 ${meaningQuote(s.atom.easyMeaning)} 면을 읽습니다.`;
+    const introducedTerm=terms.has(term);
+    terms.add(term);
+    if(current.id>="CH04"&&n&&type&&explicitMbti<7){mbtiNodes.add(n.sourceNodeId);mbtiAxes.add(`${s.axis}:${s.direction}`);explicitMbti++;return {text:`${introducedTerm?"":root+" "}${type}의 ${mbtiDomainLabels[n.sourceDomain]??"선택 방식"} 자료에서도 ${mbtiHumanBehavior(s.axis,s.direction)}`,mbti:[n.sourceNodeId]};}
+    return {text:introducedTerm?"":root,mbti:[]};
   }
   function application(p:number,context:ReleaseContext,preferred:readonly string[]=[],risk=false,intro?:string) {
-    const slot=`${current.id}.P${p+1}`, recall=context==="positive"||current.id==="CH13"||current.id==="CH12"||current.id==="CH05"&&p===3;
-    preflight?.demands.push({slot,context,preferred});
-    const base=recall?pool.filter(s=>introduced.has(s.atom.id)&&(memory.uses.get(s.facet)??0)>0):pool;
-    const material=(s:ReleaseSource)=>current.id==="CH09"&&p===1?RELEASE_MONEY_VALUE[s.facet]:context==="money"&&s.direction===1&&RELEASE_MONEY_AXES[s.axis]?RELEASE_MONEY_AXES[s.axis]:context==="positive"?RELEASE_POSITIVE[s.facet]:current.id==="CH12"&&p===1?RELEASE_SOCIAL_VALUE[s.facet]:current.id==="CH12"&&p===3?s.axis==="LEARNING"&&s.direction===1?RELEASE_SOCIAL_LEARNING_FIT:RELEASE_SOCIAL_FIT[s.facet]:RELEASE_FACETS[s.facet].applications[context];
-    let candidates=base.filter(s=>{const a=material(s);return a&&!seenText.has(risk?RELEASE_RISK_SCENES[s.facet]?.[context]??a[1]:a[1])&&!seenText.has(a[2])
-      &&!seenText.has(intro??(risk?riskMessage(s.facet,context):a[0]));});
+    const slot=`${current.id}.P${p+1}`, recall=context==="positive"||current.id>="CH08";
+    const separateQuestion=current.id==="CH04"&&p===0||current.id==="CH09"&&p===1||current.id==="CH12"&&(p===1||p===3);
+    const selectionMemory=separateQuestion?{...memory,meanings:new Set([...memory.meanings].filter(k=>!k.endsWith(`:${context}`)))}:memory;
+    // Later chapters apply already introduced proof to genuinely different
+    // reader questions. They do not spend another primary-definition slot.
+    const base=recall?pool.filter(s=>introduced.has(s.atom.id)):pool;
+    const material=(s:ReleaseSource)=>current.id==="CH04"&&p===0?READER_FIRST_IMPRESSION[s.facet]:current.id==="CH09"&&p===1?READER_MONEY_VALUE[s.facet]??RELEASE_MONEY_VALUE[s.facet]:context==="money"&&s.direction===1&&RELEASE_MONEY_AXES[s.axis]?RELEASE_MONEY_AXES[s.axis]:context==="positive"?RELEASE_POSITIVE[s.facet]:current.id==="CH12"&&p===1?READER_FRIEND_VALUE[s.facet]:current.id==="CH12"&&p===3?s.axis==="LEARNING"&&s.direction===1?RELEASE_SOCIAL_LEARNING_FIT:RELEASE_SOCIAL_FIT[s.facet]:RELEASE_FACETS[s.facet].applications[context];
+    const wealth=base.filter(s=>s.atom.sourceType==="ten_god"&&["正財","偏財"].includes(s.atom.sourceKey));
+    const eligibleBase=current.id==="CH09"&&p===1&&wealth.length?wealth:base;
+    let candidates=eligibleBase.filter(s=>{const a=material(s);
+      if(context==="positive"&&(!s.atom.positiveMeaning||s.facet===coreSource?.facet))return false;
+      if(context==="work"&&!s.atom.contexts.includes("work"))return false;return a&&!hasText(risk?RELEASE_RISK_SCENES[s.facet]?.[context]??a[1]:a[1])&&!hasText(a[2])
+      &&!hasText(intro??(risk?riskMessage(s.facet,context):a[0]));});
+    const usedFacets=new Set(current.paragraphs.filter(p=>p.semanticKey.startsWith("application:")).map(p=>p.semanticKey.split(":")[1]));
+    const distinct=candidates.filter(s=>!usedFacets.has(s.facet));
+    if(distinct.length&&!(current.id==="CH09"&&risk))candidates=distinct;
+    // Rank an economic caution by existing domain evidence, not by a
+    // universal price-comparison scene or a type-name template.
+    if(current.id==="CH09"&&risk&&profiles.mbti.available){
+      const ranked=[...candidates].sort((a,b)=>(profiles.mbti.contextAxes.money?.[b.axis]??0)*b.direction-(profiles.mbti.contextAxes.money?.[a.axis]??0)*a.direction);
+      const strongest=ranked[0];
+      if(strongest&&(profiles.mbti.contextAxes.money?.[strongest.axis]??0)*strongest.direction>0)preferred=[strongest.facet];
+    }
+    preflight?.demands.push({slot,context,preferred,recall,eligible:candidates.map(s=>`${s.atom.id}|${s.facet}`)});
     while(candidates.length) {
     const reserved=assignments?.get(slot);
     const validReserved=reserved&&candidates.some(s=>s.candidate.id===reserved.candidate.id&&s.atom.id===reserved.atom.id&&s.facet===reserved.facet)
-      ?selectReleaseSource([reserved],context,memory,plan,preferred,recall):undefined;
-    const s=validReserved??selectReleaseSource(candidates,context,memory,plan,preferred,recall);
+      ?selectReleaseSource([reserved],context,selectionMemory,plan,preferred,recall):undefined;
+    const s=validReserved??selectReleaseSource(candidates,context,selectionMemory,plan,preferred,recall)
+      ??selectReleaseSource(candidates.filter(s=>introduced.has(s.atom.id)),context,selectionMemory,plan,preferred,true);
+    const appliedRecall=recall||!!s&&introduced.has(s.atom.id)&&((memory.rootUses.get(s.atom.id)??0)>=3||(memory.uses.get(s.facet)??0)>=5);
     if(!s)break;
     const before={terms:new Set(terms),nodes:new Set(mbtiNodes),axes:new Set(mbtiAxes),explicitMbti};
-    const f=RELEASE_FACETS[s.facet], a=material(s)!, r=recall||current.id==="CH01"&&p===0||current.id==="CH05"&&p===3?{text:"",mbti:[]}:reason(s,context);
+    const f=RELEASE_FACETS[s.facet], a=material(s)!, r=current.id==="CH01"&&p===0||context==="positive"||current.id==="CH09"&&p===1?{text:"",mbti:[]}:reason(s,context);
     let texts=[intro??a[0],r.text,a[1],a[2]];
     if(risk) texts=current.id==="CH12"&&s.axis==="BOUNDARY"&&s.direction===1
       ?[RELEASE_SOCIAL_BOUNDARY_RISK[0],r.text,RELEASE_SOCIAL_BOUNDARY_RISK[1],RELEASE_SOCIAL_BOUNDARY_RISK[2]]
       :[riskMessage(s.facet,context),r.text,RELEASE_RISK_SCENES[s.facet]?.[context]??a[1],current.id==="CH12"?RELEASE_SOCIAL_REPAIR[s.facet]:a[2]];
     if(current.id==="CH01"&&p===0) texts=[humanOutcome(s.axis,s.direction)!,`비유하자면 ${f.image}에 가깝습니다.`,a[1],a[2]];
-    if(current.id==="CH05"&&p===3) texts=[`앞서 읽은 재능 중 ${f.image} 같은 면을 오래 쓰려면, 힘을 더하기보다 필요한 순간을 고르는 기준이 중요합니다.`,f.risk,a[1],a[2]];
-    if(add(p,texts,{source:s.candidate.id,ids:[s.atom.id],mbti:r.mbti,theme:s.candidate.semanticTheme,context,material:`application:${s.facet}:${context}`,recall,axis:s.axis,direction:s.direction})) {
-      commitReleaseSource(s,context,memory,recall);
+    if(current.id==="CH09"&&p===1&&!wealth.length)texts=[`수입과 연결해 볼 바탕은 ${releaseAtomName(s.atom)}에서 읽은 기질입니다.`,a[0],a[1],a[2]];
+    if(current.id==="CH09"&&p===1&&wealth.length)texts=[`재물과 연결해 읽는 근거는 ${releaseAtomName(s.atom)}입니다. ${meaningQuote(s.atom.easyMeaning)} 뜻을 수입의 경로와 자원의 활용에 적용합니다.`,a[0],a[1],a[2]];
+    if(context==="positive") texts=[`${withKoreanParticle(releaseAtomName(s.atom),"topic")} ${meaningQuote(s.atom.easyMeaning)} 뜻으로 읽습니다.`,s.atom.positiveMeaning!,a[1],a[2]];
+    if(add(p,texts,{source:s.candidate.id,ids:[s.atom.id],mbti:r.mbti,theme:s.candidate.semanticTheme,context,material:`application:${s.facet}:${separateQuestion?slot:context}`,recall:appliedRecall,axis:s.axis,direction:s.direction})) {
+      const priorMeaning=memory.meanings.has(`${s.facet}:${context}`);
+      commitReleaseSource(s,context,memory,appliedRecall);
+      if(separateQuestion&&!priorMeaning)memory.meanings.delete(`${s.facet}:${context}`);
       if(current.id==="CH01"&&p===0){coreSource=s;const d=preflight?.demands.at(-1);if(d)d.fixed=s;}
-      if(current.id==="CH05"&&p<3)selectedStrengths.push(s.facet);
+      if(current.id==="CH05"&&p<3)selectedStrengths.push(s);
       return;
     }else {
       shortages.pop();
@@ -142,8 +165,12 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
         const facet=Object.entries(RELEASE_FACETS).find(([,r])=>r.axes.some(([a,d])=>a===f.myeongli.side.axis&&d===f.myeongli.side.direction));
         const context:ReleaseContext=p===1?"work":p===3?"inner":"identity";
         const applied=facet?.[1].applications[context];
-        const texts=f.type==="TENSION"?[side,`${releaseAtomName(atom)}에는 ${meaningQuote(atom.easyMeaning)} 뜻이 담겨 있습니다.`,mbti.text,humanizeSourceClause(f.sourceDescription)]
-          :[scope??side,`${releaseAtomName(atom)}에서는 ${meaningQuote(atom.easyMeaning)} 명리적 이유를 읽습니다.`,mbti.text,applied?.[1]??humanizeSourceClause(f.sourceDescription)];
+        const mbtiFacet=Object.values(RELEASE_FACETS).find(r=>r.axes.some(([axis,direction])=>axis===f.mbti.side.axis&&direction===f.mbti.side.direction));
+        const mbtiApplication=mbtiFacet?.applications[context]?.find(t=>![...seenText].some(prior=>prior.includes(t))&&!applied?.includes(t));
+        const mbtiText=mbtiAxes.has(`${f.mbti.side.axis}:${f.mbti.side.direction}`)&&mbtiApplication?`${profiles.mbti.mbtiType}의 ${mbtiDomainLabels[mbti.domain??"IDENTITY"]??"행동 선호"} 자료를 이 상황에 적용하면, ${mbtiApplication}`:mbti.text;
+        const split=f.conditionSplit?.resolved?f.conditionSplit.sides:undefined;
+        const texts=f.type==="TENSION"?[side,`${releaseAtomName(atom)}에는 ${meaningQuote(atom.easyMeaning)} 뜻이 담겨 있습니다.`,mbtiText,split?`${split.myeongli}의 반응과 ${split.mbti}의 반응을 나누어 보면, 한쪽이 진짜 성격이고 다른 쪽이 거짓이라는 결론 없이 각 필요를 살필 수 있습니다.`:humanizeSourceClause(f.sourceDescription)]
+          :[scope??side,`${releaseAtomName(atom)}에서는 ${meaningQuote(atom.easyMeaning)} 명리적 이유를 읽습니다.`,mbtiText,applied?.[1]??humanizeSourceClause(f.sourceDescription)];
         return [{f,mbti,source,texts,facet,context,atom}];
       });
     const found=explicitMbti<7?options.find(o=>o.texts.every(t=>!seenText.has(sentence(t)))):undefined;
@@ -167,11 +194,15 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
           // Keep the existing candidate reservation while omitting the
           // repeated, non-informative bridge from customer prose.
           const bridge=`${releaseAtomName(atom)}에서 읽은 경향도 ${context==="learning"?"배움":context==="work"?"업무":context==="inner"?"혼자 생각하는 시간":"앞으로의 선택"}에서는 어떤 조건에 쓰이는지 살펴야 합니다.`;
-          const texts=[scope??a[0],bridge,mbtiReaderCopy[node.id]??String(node.value),a[1]];
+          const mbtiFacet=Object.values(RELEASE_FACETS).find(r=>r.axes.some(([axis,direction])=>axis===f.mbti.side.axis&&direction===f.mbti.side.direction));
+          const mbtiApplication=mbtiFacet?.applications[context]?.find(t=>!a.includes(t)&&![...seenText].some(prior=>prior.includes(t)))
+            ??mbtiFacet?.applications.work?.find(t=>![...seenText].some(prior=>prior.includes(t)));
+          if(!mbtiApplication)continue;
+          const texts=[scope??a[0],bridge,`${profiles.mbti.mbtiType}의 ${mbtiDomainLabels[node.sourceDomain??"IDENTITY"]??"행동 선호"} 자료를 이 상황에 적용하면, ${mbtiApplication}`,a[1]];
           if(texts.some(t=>seenText.has(sentence(t)))||fusionBridges.has(bridge))continue;
           usedFusion.add(f.id);mbtiNodes.add(node.id);mbtiAxes.add(`${f.mbti.side.axis}:${f.mbti.side.direction}`);explicitMbti++;
           blockMeaning(`${facet[0]}:${context}`);
-          if(add(p,[texts[0],"",texts[2],texts[3]],{source:source.id,ids:f.myeongli.evidenceIds,mbti:[node.id],fusion:[f.id],theme:f.semanticTheme,context,material:`fusion:${f.id}:${context}`}))fusionBridges.add(bridge);
+          if(add(p,[texts[0],`${releaseAtomName(atom)}의 ${meaningQuote(atom.easyMeaning)} 뜻이 이 해석의 명리 쪽 출발점입니다.`,texts[2],texts[3]],{source:source.id,ids:f.myeongli.evidenceIds,mbti:[node.id],fusion:[f.id],theme:f.semanticTheme,context,material:`fusion:${f.id}:${context}`}))fusionBridges.add(bridge);
           return;
         }
       }
@@ -207,15 +238,20 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
           const row=strong[0]??elements.find(e=>e.sourceKey===foundation.strongest)??elements[0];
           facts(0,elements,[strong.length?`전체 오행에서는 ${strong.map(e=>names[e.sourceKey]).join("·")} 기운이 상대적으로 두드러지는 구성입니다.`:"오행에서 특별히 강하다고 분류된 기운은 없어, 여러 기운이 함께 작동하는 구성을 읽습니다.",
             `${names[row.sourceKey]}의 의미는 ${clause(row.easyMeaning)}이라는 방향에서 이해할 수 있습니다.`,
-            "같은 오행 수라도 위치와 십성에 따라 쓰임은 달라집니다.",
+            `같은 ${names[row.sourceKey]} 기운이라도 위치와 십성에 따라 쓰임은 달라집니다.`,
             "자연스럽게 쓰는 힘과 연습할 방식을 구분하면, 오행이 생활의 단서가 됩니다."],"element-configuration");
-          application(1,"strength");
+          const strength=pool.find(s=>s.atom.id===row.id);
+          if(strength){const a=RELEASE_FACETS[strength.facet].applications.learning!;facts(1,[row],[`${names[row.sourceKey]} 기운의 ${meaningQuote(row.easyMeaning)} 뜻을 배움에도 연결해 볼 수 있습니다.`,a[0],a[1],a[2]],"element-strength-application");}
+          else facts(1,[row],[`${names[row.sourceKey]}의 ${meaningQuote(row.easyMeaning)} 뜻은 기운의 작동 방식을 설명합니다.`,"강한 오행 하나가 모든 재능을 대신하지는 않으며, 함께 놓인 기둥과 십성의 의미를 살펴야 합니다.","자주 쓰는 방식을 알아두면 필요한 상황에 힘을 배정하고 다른 방식도 시험할 기준이 됩니다."],"element-strength-application");
           const balance=weak.length?weak:[row];
           facts(2,balance,[weak.length?`${weak.map(e=>names[e.sourceKey]).join("·")} 기운은 상대적으로 약하지만, 관련 능력이 없다는 판정은 아닙니다.`:"상대적으로 약하다고 분류된 오행이 없어도 모든 상황에서 늘 균형 있게 행동한다는 뜻은 아닙니다.",
             weak.length?`${names[balance[0].sourceKey]}의 과제는 ${meaningQuote(balance[0].easyMeaning)} 방향을 필요한 상황에서 연습하는 것으로 볼 수 있습니다.`:`${names[row.sourceKey]}의 ${clause(row.easyMeaning)}이라는 힘도 과하게 쓰면 다른 선택을 살필 여지가 줄 수 있습니다.`,
             "어떤 준비나 도움이 있을 때 더 쉽게 할 수 있는지 확인해 보세요.",
             "작은 계획·기록·대화로 시험하면, 평가 대신 균형을 찾는 방법이 남습니다."],"element-balance");
-          application(3,"work");
+          const alternate=elements.find(e=>e.id!==row.id&&pool.some(s=>s.atom.id===e.id&&RELEASE_FACETS[s.facet].applications.direction!.every(t=>!seenText.has(t))));
+          const use=alternate&&pool.find(s=>s.atom.id===alternate.id&&RELEASE_FACETS[s.facet].applications.direction!.every(t=>!seenText.has(t)));
+          if(use){const a=RELEASE_FACETS[use.facet].applications.direction!;facts(3,[row,use.atom],[`${names[row.sourceKey]}의 쓰임에 ${names[use.atom.sourceKey]}의 ${meaningQuote(use.atom.easyMeaning)} 면을 함께 고려해 봅니다.`,a[0],a[1],a[2]],"element-use-in-life");}
+          else facts(3,[row],[`${names[row.sourceKey]}의 작동 방식을 생활에 쓸 때는 어떤 상황에서 도움이 되는지 먼저 살펴보세요.`,"새 일을 시작한다면 익숙한 방식으로 작은 부분을 해 보고, 그 방식만으로 풀리지 않은 조건은 따로 남겨 볼 수 있습니다.","좋아진 결과와 여전히 필요한 도움을 나누면, 타고난 기질을 모든 상황의 정답으로 쓰지 않고 필요한 곳에 배정하게 됩니다."],"element-use-in-life");
         } else {
           const natal=profiles.myeongli.foundation.pillars.filter(e=>e.metadata?.pillar!=="hour");
           facts(0,natal,["출생시간이 확정되지 않은 입력에서는 시주를 보태어 완전한 오행 구성을 만든 것처럼 설명하지 않습니다.","현재 확인된 년주·월주·일주의 기질은 읽을 수 있지만, 여덟 글자 전체를 전제로 한 오행의 우세와 부족은 유보합니다.","시간을 모른다는 이유로 임의의 시주를 넣으면 기운의 배분과 해석 조건까지 달라지므로, 확인한 범위와 모르는 범위를 구분합니다.","다음 해석은 실제로 남아 있는 기둥의 근거를 사용하며, 확인되지 않은 부분을 능력의 부재로 연결하지 않습니다."],"unknown-hour-boundary");
@@ -223,28 +259,41 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
         }break;
       }
       case "CH03": {
-        fusionParagraph(0,"REINFORCE");fusionParagraph(1,"REINFORCE");fusionParagraph(2,"TENSION");
+        fusionParagraph(0,"REINFORCE");fusionParagraph(1,"COMPLEMENT");fusionParagraph(2,"TENSION");
         const previous=current.paragraphs.flatMap(p=>p.sentences.flatMap(s=>s.fusionIds));
-        const f=[...profiles.fusion.reinforce,...profiles.fusion.tensions,...profiles.fusion.complements].find(f=>previous.includes(f.id));
+        const f=[...profiles.fusion.complements,...profiles.fusion.tensions,...profiles.fusion.reinforce].find(f=>previous.includes(f.id));
         const source=f&&plan.candidates.find(c=>c.fusionIds.includes(f.id)&&c.primaryEligible&&!c.invalidReasons.length);
         const facet=f&&Object.entries(RELEASE_FACETS).find(([,r])=>r.axes.some(([a,d])=>a===f.myeongli.side.axis&&d===f.myeongli.side.direction));
         const a=facet?.[1].applications.inner;
-        const texts=f&&a?[humanizeSourceClause(f.sourceDescription),a[0],a[1],a[2]]:[];
+        const mbti=f&&humanMbtiReason(profiles,f,"C3",freshNarrativeMemory());
+        const atom=f&&profiles.myeongli.evidence.find(e=>f.myeongli.evidenceIds.includes(e.id)&&(e.axes[f.myeongli.side.axis]??0)*f.myeongli.side.direction>0);
+
+        const texts=f&&a&&mbti&&atom?[`${releaseAtomName(atom)}의 ${meaningQuote(atom.easyMeaning)} 면과 ${profiles.mbti.mbtiType}의 행동 선호를 함께 활용할 때는 순서를 정하는 편이 좋습니다.`,
+          humanizeSourceClause(f.sourceDescription),"타고난 기질이 가리키는 힘을 쓸 과제와 행동 선호가 편안해하는 과정을 나누어 고르면, 두 설명을 함께 활용할 수 있습니다.",a[1]]:[];
         if(f&&source&&facet&&texts.every(t=>!seenText.has(sentence(t)))&&!memory.meanings.has(`${facet[0]}:inner`)) {
-          add(3,texts,{source:source.id,ids:f.myeongli.evidenceIds,fusion:[f.id],theme:f.semanticTheme,context:"inner",material:`fusion-recall:${f.id}:inner`,recall:true});
-          blockMeaning(`${facet[0]}:inner`);
+          add(3,texts,{source:source.id,ids:f.myeongli.evidenceIds,mbti:mbti?[mbti.nodeId]:[],fusion:[f.id],theme:f.semanticTheme,context:"inner",material:`fusion-recall:${f.id}:inner`,recall:true});
+          explicitMbti++;blockMeaning(`${facet[0]}:inner`);
         }else application(3,"inner",["research","self","care"]);
         break;
       }
       case "CH04": application(0,"social");application(1,"inner");application(2,"love");application(3,"family");break;
-      case "CH05": application(0,"strength");application(1,"strength");application(2,"strength");application(3,"direction",selectedStrengths);break;
+      case "CH05": {
+        application(0,"strength");application(1,"strength");application(2,"strength");
+        const first=selectedStrengths[0];
+        if(first){const a=READER_TALENT_PRACTICE[first.facet];add(3,[`이 장의 첫 번째 재능을 발전시킬 때는 잘하는 행동을 모든 상황에 적용하기보다 필요한 과제를 고르는 편이 좋습니다.`,a[0],a[1]],{source:first.candidate.id,ids:[first.atom.id],theme:first.candidate.semanticTheme,context:"direction",material:`talent-maintenance:${first.facet}`,recall:true,axis:first.axis,direction:first.direction});blockMeaning(`${first.facet}:direction`);}
+        break;
+      }
       case "CH06": {
         const factCandidates=legacy.sections.C6.blocks.flatMap(b=>b.sourceUnitIds).map(id=>plan.candidates.find(c=>c.id===id)).filter(c=>c?.factBomb&&!c.invalidReasons.length);
         const preferredPool=pool.filter(s=>factCandidates.some(c=>c!.primaryAxes.includes(s.axis)&&c!.myeongliEvidenceIds.includes(s.atom.id)));
         const usable=(s:ReleaseSource)=>s.facet!==coreSource?.facet&&![...RELEASE_FACETS[s.facet].applications.direction!,RELEASE_FACETS[s.facet].applications.stress![1],RELEASE_FACETS[s.facet].applications.social![1]].some(t=>seenText.has(t));
         const preferredEligible=preferredPool.filter(usable);
         const eligible=preferredEligible.length?preferredEligible:pool.filter(usable);
-        const selected=assignments?.get("CH06.P1")??selectReleaseSource(eligible,"stress",memory,plan);
+        const stressSupport=(c:NonNullable<typeof factCandidates[number]>)=>Math.max(0,...c.primaryAxes.map(axis=>profiles.mbti.contextAxes.stress?.[axis]??0));
+        const rankedFacts=profiles.mbti.available?[...factCandidates].sort((a,b)=>stressSupport(b!)-stressSupport(a!)):factCandidates;
+        const firstFact=rankedFacts.find(c=>eligible.some(s=>c!.primaryAxes.includes(s.axis)&&c!.myeongliEvidenceIds.includes(s.atom.id)));
+        const strongest=firstFact&&eligible.filter(s=>firstFact.primaryAxes.includes(s.axis)&&firstFact.myeongliEvidenceIds.includes(s.atom.id));
+        const selected=assignments?.get("CH06.P1")??(strongest&&selectReleaseSource(strongest,"stress",memory,plan))??selectReleaseSource(eligible,"stress",memory,plan);
         preflight?.demands.push({slot:"CH06.P1",context:"stress",preferred:[],fixed:selected});
         const fact=selected&&factCandidates.find(c=>c!.primaryAxes.includes(selected.axis)&&c!.myeongliEvidenceIds.includes(selected.atom.id));
         const s=selected&&{...selected,candidate:fact??selected.candidate};
@@ -284,7 +333,7 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
               :reasons.map(s=>s.text).join(" ");
             const fortuneFacet=family==="PEOPLE_LUCK"||family==="CHARM_INTIMACY"?"care":family==="CHARM_VISIBILITY"?"voice":family==="HONOR_POSITION"?"steady":"resources";
             blockMeaning(`${fortuneFacet}:positive`);
-            if(claim&&reasons.length)add(p,[claim.text,reasonText,scene,close],{source:candidate.id,ids:rootIds,theme:candidate.semanticTheme,context:"identity",material:`fortune:${candidate.id}`});
+            if(claim&&reasons.length){if(!add(p,[claim.text,reasonText,scene,close],{source:candidate.id,ids:rootIds,theme:candidate.semanticTheme,context:"identity",material:`fortune:${candidate.id}`})){shortages.pop();application(p,"positive");}}
             else application(p,"positive");
           }else application(p,"positive");
         }
@@ -313,8 +362,18 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
       case "CH11": application(0,"family");application(1,"family");application(2,"family",[],true);application(3,"family");break;
       case "CH12": application(0,"social");application(1,"social");application(2,"social",[],true);application(3,"social");break;
       case "CH13": {
-        application(0,"direction",coreSource?[coreSource.facet]:[]);application(1,"direction",["research","order","direct"]);application(2,"direction",["resources","care","self","steady"]);
-        if(coreSource){const f=RELEASE_FACETS[coreSource.facet];add(3,[`${f.image} 같은 힘은 일·돈·관계에서 조건을 바꾸어 쓸 수 있습니다.`,...RELEASE_CLOSINGS[coreSource.facet]],{source:coreSource.candidate.id,ids:[coreSource.atom.id],theme:coreSource.candidate.semanticTheme,context:"direction",material:"core-recall:closing",recall:true});}
+        const core=coreSource, talent=selectedStrengths[0];
+        const shadow=chapters.find(c=>c.id==="CH06")?.paragraphs[0]?.sentences[0];
+        const overuse=shadow&&pool.find(s=>s.atom.id===shadow.evidenceIds[0]&&s.axis===shadow.provenance.axis&&s.direction===shadow.provenance.direction);
+        const emit=(p:number,s:ReleaseSource,texts:string[],material:string)=>add(p,texts,{source:s.candidate.id,ids:[s.atom.id],theme:s.candidate.semanticTheme,context:"direction",material,recall:true,axis:s.axis,direction:s.direction});
+        if(core){const a=RELEASE_FACETS[core.facet].applications.direction!;emit(0,core,[`첫 장에서 읽은 ${meaningQuote(core.atom.easyMeaning)} 성향을 선택에 쓸 때는, 잘할 수 있는지와 지금 필요한 일을 구분해 보세요.`,a[0],a[1]],"core:decision-criterion");}
+        if(talent){emit(1,talent,[`재능을 쓸 과제는 ${meaningQuote(talent.atom.easyMeaning)} 힘이 실제 결과에 필요한지를 기준으로 고를 수 있습니다.`,READER_TALENT_SELECTION[talent.facet],"그 과제에서 바꿀 부분 하나와 이미 충분한 부분 하나를 구분하면, 장점을 더 세게 쓰는 대신 어디에 써야 하는지 판단하게 됩니다."],`talent:bounded-use:${talent.facet}`);}
+        if(overuse){emit(2,overuse,[`팩폭 장에서 본 약점은 문제가 커진 뒤 반성하기보다 선택 직전에 확인할 신호로 쓸 수 있습니다.`,RELEASE_CLOSINGS[overuse.facet][1],READER_TALENT_PRACTICE[overuse.facet][2]],`shadow:before-choice:${overuse.facet}`);}
+        if(core&&talent&&overuse){const added=add(3,[READER_PRIORITIES[core.facet][0],READER_PRIORITIES[talent.facet][1],READER_PRIORITIES[overuse.facet][2]],{source:core.candidate.id,ids:[core.atom.id],theme:core.candidate.semanticTheme,context:"direction",material:"core:three-domain-priority",recall:true,axis:core.axis,direction:core.direction});
+          if(added){const last=current.paragraphs.at(-1)!;[core,talent,overuse].forEach((source,index)=>{const sent=last.sentences[index];sent.sourceCandidateId=source.candidate.id;sent.evidenceIds=[source.atom.id];sent.semanticTheme=source.candidate.semanticTheme;sent.provenance={...sent.provenance,source:source.candidate.id,axis:source.axis,direction:source.direction};
+              const ownership=rootOwnership.get(source.atom.id);if(ownership&&!ownership.applications.includes(last.id))ownership.applications.push(last.id);
+            });last.legacySections=[...new Set(plan.evidenceOwnership.filter(o=>last.sentences.some(s=>s.evidenceIds.includes(o.evidenceId))).map(o=>o.primaryOwner))];}
+        }
         break;
       }
     }

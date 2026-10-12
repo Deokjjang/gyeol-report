@@ -14,7 +14,7 @@ import type { NarrativeInput, NarrativeBlock, NarrativeSection, ComprehensiveNar
 import { renderComprehensiveRelease } from "./comprehensiveReleaseRenderer";
 import { validateComprehensiveRelease } from "./comprehensiveReleaseValidator";
 
-export const COMPREHENSIVE_PRODUCT_VERSION = "comprehensive-editorial-finish-02-v1";
+export const COMPREHENSIVE_PRODUCT_VERSION = "comprehensive-editorial-quality-fix-01-v1";
 const fail = (error: string) => ({ ok: false as const, errors: [error] });
 
 /** One generation-time orchestration boundary. Frozen engines supply the

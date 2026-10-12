@@ -1,0 +1,68 @@
+{
+  "before": [
+    {
+      "pair": "AB",
+      "sameParagraphs": [],
+      "sharedSentences": 39,
+      "totalLeftSentences": 178
+    },
+    {
+      "pair": "AC",
+      "sameParagraphs": [
+        "CH01.P1",
+        "CH01.P4",
+        "CH02.P1",
+        "CH06.P1",
+        "CH06.P3",
+        "CH06.P4",
+        "CH09.P1",
+        "CH09.P4",
+        "CH13.P2",
+        "CH13.P4"
+      ],
+      "sharedSentences": 59,
+      "totalLeftSentences": 178
+    },
+    {
+      "pair": "BC",
+      "sameParagraphs": [],
+      "sharedSentences": 25,
+      "totalLeftSentences": 179
+    }
+  ],
+  "after": [
+    {
+      "pair": "AB",
+      "sameParagraphs": [
+        "CH05.P2",
+        "CH07.P4"
+      ],
+      "sharedSentences": 48,
+      "totalLeftSentences": 179
+    },
+    {
+      "pair": "AC",
+      "sameParagraphs": [
+        "CH01.P1",
+        "CH01.P4",
+        "CH02.P1",
+        "CH02.P2",
+        "CH06.P1",
+        "CH06.P3",
+        "CH06.P4",
+        "CH08.P3",
+        "CH09.P4",
+        "CH13.P1",
+        "CH13.P3"
+      ],
+      "sharedSentences": 76,
+      "totalLeftSentences": 179
+    },
+    {
+      "pair": "BC",
+      "sameParagraphs": [],
+      "sharedSentences": 24,
+      "totalLeftSentences": 179
+    }
+  ]
+}
