@@ -16,7 +16,7 @@ export function loveReleaseSources(view: RelationshipView) {
 export type LoveReleaseSource = ReturnType<typeof loveReleaseSources>[number];
 export function loveSourceName(atom: EvidenceAtom) {
   const position = ({ year: "년주", month: "월주", day: "일주", hour: "시주" } as Record<string, string>)[String(atom.metadata?.pillar)] ?? "원국";
-  if (atom.sourceType === "ten_god") return `${position} ${TEN_GOD_SEMANTICS[atom.sourceKey as keyof typeof TEN_GOD_SEMANTICS]?.label ?? atom.sourceKey}`;
+  if (atom.sourceType === "ten_god") return `${position} ${atom.metadata?.slot === "branch" ? "지장간" : "천간"} ${TEN_GOD_SEMANTICS[atom.sourceKey as keyof typeof TEN_GOD_SEMANTICS]?.label ?? atom.sourceKey}`;
   if (atom.sourceType === "element") return `${({ WOOD: "목", FIRE: "화", EARTH: "토", METAL: "금", WATER: "수" } as Record<string, string>)[atom.sourceKey] ?? atom.sourceKey} 기운`;
   if (atom.sourceType === "yin_yang") return atom.sourceKey.includes("YANG") ? "원국의 양 기운" : "원국의 음 기운";
   if (atom.sourceType === "heavenly_stem" || atom.sourceType === "earthly_branch") {

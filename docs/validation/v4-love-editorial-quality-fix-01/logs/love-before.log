@@ -1,0 +1,64 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-love-editorial-quality-fix-01
+
+ ❯ tests/unit/interpretation-v4/loveRelease.test.ts (39 tests | 2 failed) 134459ms
+     × 'major' remains identical at the release boundary 2598ms
+     × 'annual' remains identical at the release boundary 2802ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/interpretation-v4/loveRelease.test.ts > Love reader edition > 'major' remains identical at the release boundary
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "8c911d6dc3d24f4be969bf7017d1b098a7523078d8018115db7fa5187ce21dde",
+-   "cdb60d8939e2e97cd06840093ada974b11b9369b6b06f881b788eac3f54d1f3a",
+-   "a774832dc671df08d9c2395850a54bfe1e8446d9e72256695d4107244c27752b",
++   "f0df621dc197bf2604926eee3ad18385d6408b098380f164b50ac36b62d45542",
++   "25d8a3f67cc16c63206461e9f0692556917b6388e99312c79e71e9b89cfa63bd",
++   "8977a758906c8dcf9b650b0d2227c41f91f51c18bdd5f4b9baeae50647476aed",
+  ]
+
+ ❯ tests/unit/interpretation-v4/loveRelease.test.ts:123:123
+    121|     }
+    122|     const r = await generateV4ShadowReport(f.payload, SHADOW_CLOCK); i…
+    123|     expect([v4Digest(r.draft), v4Digest(r.evidencePacket), v4Digest(pr…
+       |                                                                                                                           ^
+    124|   }, 120000);
+    125|   it("rejects invented roots, child inference and reversed axes withou…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/interpretation-v4/loveRelease.test.ts > Love reader edition > 'annual' remains identical at the release boundary
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "58150101a8224de5ddd09f6fee598e67f39ee0ed8a83a238efbfc43706c1d378",
+-   "fd698806ddf394fd2c3d4c145a1e2471f4b834c1dad3b5596ea37522a8c8a634",
+-   "ba2cf9b612db5290bd1bf55bd639d750364fbe5eb5366bee106e2a4e88284626",
++   "09d928411701ede168998d1ed173502d13de513b974dc5722659a4b8611631ef",
++   "670bc4183acb4f12c1b0abd8bdb7d00ea4746cd7e2cadc8181d86f8d5d3c6b91",
++   "ad291065771ec0cc45ca4e445cb8c3ee589330c3a58355ef811ef9871c8b3801",
+  ]
+
+ ❯ tests/unit/interpretation-v4/loveRelease.test.ts:123:123
+    121|     }
+    122|     const r = await generateV4ShadowReport(f.payload, SHADOW_CLOCK); i…
+    123|     expect([v4Digest(r.draft), v4Digest(r.evidencePacket), v4Digest(pr…
+       |                                                                                                                           ^
+    124|   }, 120000);
+    125|   it("rejects invented roots, child inference and reversed axes withou…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  2 failed | 104 passed (106)
+   Start at  19:04:45
+   Duration  137.36s (transform 2.64s, setup 55ms, import 3.60s, tests 137.16s, environment 0ms)
