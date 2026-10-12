@@ -1,0 +1,1157 @@
+{
+  "note": "1,770개 쌍의 문자열 근접도를 전수 계산하되 의미 품질을 자동 PASS 처리하지 않는다. 동일 천간·지지의 물상과 조건은 공유할 수 있다. 대비 문장·생활 장면은 개별 독해 대상이다. 공통 안전문·긍정/위험 메타데이터 재사용은 새 독립 주장으로 세지 않는다.",
+  "dayPillarPairCount": 1770,
+  "exactProfileDuplicates": [],
+  "exactDayDomainDuplicates": [],
+  "highestLexicalNeighbors": [
+    {
+      "a": "completion:day_pillar:辛未",
+      "b": "completion:day_pillar:癸未",
+      "trigramJaccard": 0.1982,
+      "sameStem": false,
+      "sameBranch": true
+    },
+    {
+      "a": "completion:day_pillar:壬午",
+      "b": "completion:day_pillar:壬戌",
+      "trigramJaccard": 0.1026,
+      "sameStem": true,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:乙亥",
+      "b": "completion:day_pillar:壬申",
+      "trigramJaccard": 0.1009,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:甲戌",
+      "b": "completion:day_pillar:壬戌",
+      "trigramJaccard": 0.1008,
+      "sameStem": false,
+      "sameBranch": true
+    },
+    {
+      "a": "completion:day_pillar:甲午",
+      "b": "completion:day_pillar:丙申",
+      "trigramJaccard": 0.1008,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:庚寅",
+      "b": "completion:day_pillar:壬戌",
+      "trigramJaccard": 0.1008,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:庚申",
+      "b": "completion:day_pillar:辛酉",
+      "trigramJaccard": 0.0982,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:乙丑",
+      "b": "completion:day_pillar:癸巳",
+      "trigramJaccard": 0.097,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:辛酉",
+      "b": "completion:day_pillar:壬子",
+      "trigramJaccard": 0.0926,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:乙酉",
+      "b": "completion:day_pillar:辛巳",
+      "trigramJaccard": 0.0917,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:戊申",
+      "b": "completion:day_pillar:辛丑",
+      "trigramJaccard": 0.0917,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:丁酉",
+      "b": "completion:day_pillar:辛酉",
+      "trigramJaccard": 0.0885,
+      "sameStem": false,
+      "sameBranch": true
+    },
+    {
+      "a": "completion:day_pillar:壬申",
+      "b": "completion:day_pillar:壬午",
+      "trigramJaccard": 0.0885,
+      "sameStem": true,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:辛亥",
+      "b": "completion:day_pillar:壬申",
+      "trigramJaccard": 0.0877,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:庚申",
+      "b": "completion:day_pillar:壬子",
+      "trigramJaccard": 0.087,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:乙卯",
+      "b": "completion:day_pillar:癸丑",
+      "trigramJaccard": 0.0855,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:辛卯",
+      "b": "completion:day_pillar:辛亥",
+      "trigramJaccard": 0.0855,
+      "sameStem": true,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:癸酉",
+      "b": "completion:day_pillar:癸丑",
+      "trigramJaccard": 0.0855,
+      "sameStem": true,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:癸卯",
+      "b": "completion:day_pillar:癸亥",
+      "trigramJaccard": 0.0855,
+      "sameStem": true,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:丙午",
+      "b": "completion:day_pillar:丁巳",
+      "trigramJaccard": 0.0847,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:甲辰",
+      "b": "completion:day_pillar:戊辰",
+      "trigramJaccard": 0.084,
+      "sameStem": false,
+      "sameBranch": true
+    },
+    {
+      "a": "completion:day_pillar:壬午",
+      "b": "completion:day_pillar:壬寅",
+      "trigramJaccard": 0.0833,
+      "sameStem": true,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:丁丑",
+      "b": "completion:day_pillar:庚子",
+      "trigramJaccard": 0.082,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:辛丑",
+      "b": "completion:day_pillar:癸丑",
+      "trigramJaccard": 0.0813,
+      "sameStem": false,
+      "sameBranch": true
+    },
+    {
+      "a": "completion:day_pillar:辛酉",
+      "b": "completion:day_pillar:癸丑",
+      "trigramJaccard": 0.0811,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:丁卯",
+      "b": "completion:day_pillar:癸亥",
+      "trigramJaccard": 0.0806,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:丙申",
+      "b": "completion:day_pillar:戊子",
+      "trigramJaccard": 0.0794,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:戊辰",
+      "b": "completion:day_pillar:癸巳",
+      "trigramJaccard": 0.0794,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:乙未",
+      "b": "completion:day_pillar:癸卯",
+      "trigramJaccard": 0.0787,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:壬申",
+      "b": "completion:day_pillar:癸酉",
+      "trigramJaccard": 0.0783,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:庚辰",
+      "b": "completion:day_pillar:庚子",
+      "trigramJaccard": 0.0776,
+      "sameStem": true,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:癸卯",
+      "b": "completion:day_pillar:癸丑",
+      "trigramJaccard": 0.0776,
+      "sameStem": true,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:丁亥",
+      "b": "completion:day_pillar:壬申",
+      "trigramJaccard": 0.0769,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:戊寅",
+      "b": "completion:day_pillar:己亥",
+      "trigramJaccard": 0.0769,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:戊寅",
+      "b": "completion:day_pillar:癸未",
+      "trigramJaccard": 0.0769,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:辛未",
+      "b": "completion:day_pillar:癸巳",
+      "trigramJaccard": 0.0769,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:戊寅",
+      "b": "completion:day_pillar:庚寅",
+      "trigramJaccard": 0.0763,
+      "sameStem": false,
+      "sameBranch": true
+    },
+    {
+      "a": "completion:day_pillar:乙亥",
+      "b": "completion:day_pillar:丁亥",
+      "trigramJaccard": 0.0756,
+      "sameStem": false,
+      "sameBranch": true
+    },
+    {
+      "a": "completion:day_pillar:丙申",
+      "b": "completion:day_pillar:戊申",
+      "trigramJaccard": 0.0756,
+      "sameStem": false,
+      "sameBranch": true
+    },
+    {
+      "a": "completion:day_pillar:丁丑",
+      "b": "completion:day_pillar:癸巳",
+      "trigramJaccard": 0.0752,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:甲辰",
+      "b": "completion:day_pillar:癸亥",
+      "trigramJaccard": 0.075,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:庚辰",
+      "b": "completion:day_pillar:癸未",
+      "trigramJaccard": 0.075,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:乙亥",
+      "b": "completion:day_pillar:乙巳",
+      "trigramJaccard": 0.0744,
+      "sameStem": true,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:己亥",
+      "b": "completion:day_pillar:癸未",
+      "trigramJaccard": 0.0744,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:庚辰",
+      "b": "completion:day_pillar:庚戌",
+      "trigramJaccard": 0.0738,
+      "sameStem": true,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:壬寅",
+      "b": "completion:day_pillar:壬戌",
+      "trigramJaccard": 0.0738,
+      "sameStem": true,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:甲戌",
+      "b": "completion:day_pillar:庚寅",
+      "trigramJaccard": 0.0732,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:丙申",
+      "b": "completion:day_pillar:壬午",
+      "trigramJaccard": 0.0732,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:戊子",
+      "b": "completion:day_pillar:壬午",
+      "trigramJaccard": 0.0732,
+      "sameStem": false,
+      "sameBranch": false
+    },
+    {
+      "a": "completion:day_pillar:庚戌",
+      "b": "completion:day_pillar:壬戌",
+      "trigramJaccard": 0.0732,
+      "sameStem": false,
+      "sameBranch": true
+    }
+  ],
+  "allDayPillarContrasts": [
+    {
+      "id": "completion:day_pillar:甲子",
+      "core": "곧게 세우는 목표와 뒤에서 받아들이는 배움의 조합",
+      "contrast": [
+        "甲寅의 자기 뿌리와 달리 子의 수기·인성이라는 배움의 통로가 중심이다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六甲日詩 / 子",
+        "proposition": "甲坐子는 沐浴의 이름과 별개로 子中癸의 생조를 함께 본다. 六甲日詩는 계절 재검토를 요구한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:甲戌",
+      "core": "큰 원칙을 현실의 자원과 검증 기준에 착지시키는 조합",
+      "contrast": [
+        "甲辰의 습토·수기와 달리 戌의 조토·화기라는 조건을 먼저 구분한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六甲日詩 / 戌",
+        "proposition": "六甲日詩는 戌中의 戊와 辛, 火氣를 함께 언급한다. 한 가지 재관 이름만으로 길흉을 정하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:甲申",
+      "core": "자기 방향을 외부의 엄격한 시험과 맞대는 조합",
+      "contrast": [
+        "甲寅의 내부 추진과 달리 申의 금기·수기 안에서 기준을 검증받는 상황을 구분한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六甲日詩 / 申",
+        "proposition": "六甲日詩는 申中庚의 압력과 가을 조건을 언급한다. 제화·생조 여부 없이 위해를 확정할 수 없다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:甲午",
+      "core": "방향을 공개적인 표현과 산출로 밀어내는 조합",
+      "contrast": [
+        "甲子的 수기·배움과 달리 午의 화기·표현이 앞에 놓인다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六甲日詩 / 午",
+        "proposition": "六甲日詩는 午中己財와 丁傷官을 짚으며 여름 조건을 별도로 둔다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:甲辰",
+      "core": "큰 줄기를 세우되 여러 가능성을 안에 보관하는 조합",
+      "contrast": [
+        "甲戌의 마감·조토와 달리 辰은 습토와 봄의 잔여 목기를 구분해 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六甲日詩 / 辰",
+        "proposition": "六甲日詩는 辰의 財庫 비유와 수기의 발생을 함께 든다. 창고를 실제 재산으로 읽지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:甲寅",
+      "core": "세운 목표를 자기 뿌리에서 밀어 올리는 조합",
+      "contrast": [
+        "甲申의 외부 검증과 달리 寅은 일간과 같은 목기의 뿌리가 중심이다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六甲日詩 / 寅",
+        "proposition": "六甲日詩는 寅을 甲의 建祿 자리로 설명하되 財官과 월시의 조건을 별도로 검토한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:乙丑",
+      "core": "유연한 성장 방향을 차갑고 복합적인 토양에서 조율하는 조합",
+      "contrast": [
+        "乙未의 온조한 잔여 화기와 달리 丑은 한습·금수 저장의 조건이다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六乙日詩 / 丑",
+        "proposition": "六乙日詩는 丑中己辛癸의 財官印과 금국·합화 조건을 언급한다. 합화 성립은 이 자료에서 판정하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:乙亥",
+      "core": "유연한 목기가 배움과 큰 흐름의 지원을 만나는 조합",
+      "contrast": [
+        "乙卯의 같은 목기 집중과 달리 亥의 수기·생조를 통하는 점을 구분한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六乙日詩 / 亥",
+        "proposition": "六乙日詩는 亥에서의 死 명칭과 壬의 生氣印綬를 함께 읽는다. 死를 실제 죽음으로 해석하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:乙酉",
+      "core": "부드러운 조정 방식이 선명한 평가 기준과 맞닿는 조합",
+      "contrast": [
+        "乙卯의 자기 기반과 달리 酉의 금기·편관 관계가 중심이며 동일한 부드러움으로 뭉뚱그리지 않는다."
+      ],
+      "source": {
+        "sourceId": "completion-sm5",
+        "locator": "論偏官 / 天元坐煞 (乙酉例)",
+        "proposition": "卷四 六乙日詩 전사에는 酉의 독립 항목이 빠져 있다. 卷五 天元坐煞는 甲申·乙酉를 예로 들고 身旺·제화 조건을 둔다."
+      },
+      "pending": [
+        "六乙日詩의 酉 누락을 영인본과 교감할 것. 별도 天元坐煞 절만 현재 직접 확인함."
+      ]
+    },
+    {
+      "id": "completion:day_pillar:乙未",
+      "core": "부드러운 성장과 저장된 온기·현실 자원을 함께 다루는 조합",
+      "contrast": [
+        "乙丑의 한습과 달리 未의 잔여 丁火·乙木을 구분한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六乙日詩 / 未",
+        "proposition": "六乙日詩는 未의 木本局·己財와 丁傷官이라는 표현을 쓴다. 丁의 명칭은 현행 乙→丁 食神과 충돌하므로 전사 확인 사실만 남기고 십성 정의로 사용하지 않는다."
+      },
+      "pending": [
+        "六乙日詩의 丁傷官은 현행 乙丁 食神과 충돌한다. 십성 정의로 채택하지 않고 영인본·타 판본을 교감할 것."
+      ]
+    },
+    {
+      "id": "completion:day_pillar:乙巳",
+      "core": "유연한 목기가 강한 표현과 현실 검증의 열기를 만나는 조합",
+      "contrast": [
+        "乙亥의 받아들이는 수기와 달리 巳의 화기·산출 조건을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六乙日詩 / 巳",
+        "proposition": "六乙日詩는 巳의 金局·化金 조건을 든다. 성별에 따른 배우자 위해 단정은 해석 재료에서 제외한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:乙卯",
+      "core": "유연하지만 자기 성장 방향은 놓지 않는 겹목 조합",
+      "contrast": [
+        "乙酉의 외부 검증과 달리 卯의 같은 목기 기반을 분리해 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六乙日詩 / 卯",
+        "proposition": "六乙日詩는 卯의 乙坐祿과 財官의 별도 조건을 설명한다. 목기가 같다고 자동으로 성취가 생기지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:丙寅",
+      "core": "밝게 드러내는 힘을 배움과 시작의 연료로 받치는 조합",
+      "contrast": [
+        "丙午의 같은 화기 집중과 달리 寅의 목기·생조를 거친다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六丙日詩 / 寅",
+        "proposition": "六丙日詩는 寅의 長生·食神 생왕을 들고 월시를 재검토한다. 수명 예언은 채택하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:丙子",
+      "core": "밝은 표현과 차가운 규율이 나란히 놓이는 조합",
+      "contrast": [
+        "丙午의 화기와 반대되는 子의 수기를 구분하며 원문 오자를 장간 데이터로 가져오지 않는다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六丙日詩 / 子",
+        "proposition": "六丙日詩는 子의 官鄉과 得時를 강조한다. 子中辛이라는 전사 표현은 현행 장간 癸와 맞지 않아 문자 교감 보류다."
+      },
+      "pending": [
+        "六丙日詩의 子中辛 표현을 영인본과 교감할 것. 현행 子癸를 변경하지 않음."
+      ]
+    },
+    {
+      "id": "completion:day_pillar:丙戌",
+      "core": "표현의 열기를 결과가 남는 틀 안에 담는 조합",
+      "contrast": [
+        "丙辰의 습토·관성 저장과 달리 戌의 조토·화기 저장을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六丙日詩 / 戌",
+        "proposition": "六丙日詩는 戌의 辛金 잔여와 火墓·여름의 財官 조건을 설명한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:丙申",
+      "core": "공개적인 추진을 실용 자원과 외부 시험에 연결하는 조합",
+      "contrast": [
+        "丙寅의 목기 생조와 달리 申의 금수 조건에서 산출의 효용을 검증한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六丙日詩 / 申",
+        "proposition": "六丙日詩는 申中庚財·壬煞와 通月을 함께 짚는다. 재·살의 존재가 수익·재난을 뜻하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:丙午",
+      "core": "드러나는 화기가 같은 화기 기반 위에서 크게 작동하는 조합",
+      "contrast": [
+        "丙子의 수기 규율과 달리 午의 화기 집중이 조건이며 성격의 강함과 동일시하지 않는다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六丙日詩 / 午",
+        "proposition": "六丙日詩는 午를 日刃·火旺으로 설명하며 다른 글자의 조절을 본다. 배우자 위해 예언은 배제한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:丙辰",
+      "core": "밝은 생각을 습한 토양의 기록과 조절로 받치는 조합",
+      "contrast": [
+        "丙戌의 조토·화고와 달리 辰의 습토·수기 저장을 구분한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六丙日詩 / 辰",
+        "proposition": "六丙日詩는 辰을 官庫로 부르고 겨울 및 시주의 조건을 든다. 庫는 실제 공직·재산의 보증이 아니다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:丁卯",
+      "core": "섬세한 표현을 지속적으로 길러 주는 배움의 토양과 연결하는 조합",
+      "contrast": [
+        "丁酉의 금기·자원 검증과 달리 卯의 목기 생조가 중심이다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六丁日詩 / 卯",
+        "proposition": "六丁日詩는 卯의 財官 무기와 다른 기둥의 조건을 설명한다. 별개로 기존 장간 卯乙은 丁의 생조 관계다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:丁丑",
+      "core": "작은 불빛이 차갑게 저장된 현실 조건을 천천히 다루는 조합",
+      "contrast": [
+        "丁未의 온조한 목화 잔여와 달리 丑의 한습·금수라는 환경을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六丁日詩 / 丑",
+        "proposition": "六丁日詩는 丑의 金庫·癸水 잔여를 들어 財官과 월시의 조건을 함께 본다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:丁亥",
+      "core": "섬세한 표현이 넓은 수기·규율·배움과 맞닿는 조합",
+      "contrast": [
+        "丁巳의 화기 기반과 달리 亥의 수기 환경 속에서 불의 유지 조건을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六丁日詩 / 亥",
+        "proposition": "六丁日詩는 亥의 壬官과 日貴 이름을 들며 시주 조건을 더한다. 귀인 명칭만으로 지위를 보장하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:丁酉",
+      "core": "정교한 불빛을 구체적인 자원과 완성 기준에 비추는 조합",
+      "contrast": [
+        "丁卯의 배움 생조와 달리 酉의 금기·편재 자원에 표현이 닿는 점을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六丁日詩 / 酉",
+        "proposition": "六丁日詩는 酉에서 長生·學堂을 언급한다. 이는 음간 운성의 해당 전승이며 학업 성적을 보증하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:丁未",
+      "core": "안에 남은 온기와 배움을 지속 가능한 돌봄으로 잇는 조합",
+      "contrast": [
+        "丁丑의 한습·금수 저장과 달리 未의 목화 잔여가 유지 조건이다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六丁日詩 / 未",
+        "proposition": "六丁日詩는 未의 木餘氣·印生身을 설명한다. 목기의 지원과 화토의 조절을 분리해 본다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:丁巳",
+      "core": "섬세한 집중을 스스로 유지하는 화기 기반에 올리는 조합",
+      "contrast": [
+        "丁亥의 수기 환경과 달리 巳의 화기 내부 기반이 중심이다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六丁日詩 / 巳",
+        "proposition": "六丁日詩는 巳의 火旺·丙戊 작용과 다른 글자의 조절을 본다. 친족 위해 단정은 제외한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:戊辰",
+      "core": "큰 틀을 유지하면서 안의 여러 자원을 조정하는 조합",
+      "contrast": [
+        "戊戌의 조토·화기와 달리 辰의 습토·수목 잔여를 구분한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六戊日詩 / 辰",
+        "proposition": "六戊日詩는 辰을 壬癸의 庫로 비유하고 乙餘氣를 들어 財官의 사용 조건을 살핀다. 이는 현재 辰戊乙癸 저장 집합을 다시 정의하는 구절이 아니다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:戊寅",
+      "core": "유지하려는 큰 틀이 새 방향과 요구를 받아 조정되는 조합",
+      "contrast": [
+        "戊申의 산출·자원 통로와 달리 寅의 목기 규율과 화기 생조를 함께 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六戊日詩 / 寅",
+        "proposition": "六戊日詩는 寅中甲의 偏官과 火生土의 도움을 함께 설명한다. 압력만 떼어 내 흉으로 읽지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:戊子",
+      "core": "큰 기반을 유동적인 필요와 자원 흐름에 연결하는 조합",
+      "contrast": [
+        "戊午의 화기 지원과 달리 子의 수기·재성 흐름이 접점이다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六戊日詩 / 子",
+        "proposition": "六戊日詩는 子中癸財를 짚고 다른 기둥의 조건을 든다. 水財를 실제 소득으로 바로 읽지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:戊戌",
+      "core": "큰 틀과 경계가 건조한 저장 기반에서 겹치는 조합",
+      "contrast": [
+        "戊辰의 습토·수기 저장과 달리 戌의 조토·화기 저장을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六戊日詩 / 戌",
+        "proposition": "六戊日詩는 戊戌의 魁罡 논법과 다른 격에 들어가는 경우를 구분한다. 단일 일주로 격을 확정하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:戊申",
+      "core": "큰 기반에서 산출과 유동 자원의 통로를 여는 조합",
+      "contrast": [
+        "戊寅의 규율·생조와 달리 申의 금수·산출 경로가 차이다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六戊日詩 / 申",
+        "proposition": "六戊日詩는 申의 壬長生·甲絶을 들어 財와 官을 나누어 설명한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:戊午",
+      "core": "큰 틀이 온기와 지원을 강하게 받는 조합",
+      "contrast": [
+        "戊子의 유동 재성 접점과 달리 午의 인성·화기 지원을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六戊日詩 / 午",
+        "proposition": "六戊日詩는 午의 日刃과 印綬를 함께 언급하고 화월 조건을 더한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:己巳",
+      "core": "작은 현실을 돌보는 토양에 강한 온기가 공급되는 조합",
+      "contrast": [
+        "己亥의 수목 흐름과 달리 巳의 화기 생조가 중심이다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六己日詩 / 巳",
+        "proposition": "六己日詩는 巳의 丙旺·印生身과 水絶木病 조건을 언급한다. 財官 부재를 평생 결핍으로 읽지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:己卯",
+      "core": "세밀한 현실 조정이 선명한 외부 요구와 만나는 조합",
+      "contrast": [
+        "己酉의 금기·산출과 달리 卯의 목기·규율을 상대한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六己日詩 / 卯",
+        "proposition": "六己日詩는 卯中乙의 偏官과 己土司令·得地의 힘을 함께 요구한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:己丑",
+      "core": "작은 토양이 한습한 저장 구조에서 자원을 천천히 다루는 조합",
+      "contrast": [
+        "己未의 온조·목화 잔여와 달리 丑의 한습·금수 저장을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六己日詩 / 丑",
+        "proposition": "六己日詩는 丑의 財鄉과 월의 도움을 함께 든다. 藏財를 실제 저축액으로 읽지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:己亥",
+      "core": "세밀한 생활 기반이 흐르는 자원과 성장 요구를 만나는 조합",
+      "contrast": [
+        "己巳의 익숙한 화기 지원과 달리 亥의 수목·재관 접점을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六己日詩 / 亥",
+        "proposition": "六己日詩는 亥를 財官 자리로 설명하면서 다른 기둥·시주를 확인한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:己酉",
+      "core": "세밀한 토양이 정돈된 산출의 통로를 만나는 조합",
+      "contrast": [
+        "己卯의 규율 압력과 달리 酉의 금기·산출에 힘을 쓰는 점이 다르다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六己日詩 / 酉",
+        "proposition": "六己日詩는 酉에서 財祿이 등을 진다고 표현한다. 기존 장간 辛은 己의 食神 관계로 별도 대조한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:己未",
+      "core": "생활을 기르는 토양에 온기와 성장의 잔여가 함께 남는 조합",
+      "contrast": [
+        "己丑의 차가운 저장과 달리 未의 목화 잔여를 보되 둘 다 土라는 이유로 동일시하지 않는다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六己日詩 / 未",
+        "proposition": "六己日詩는 未의 官庫·有木無水와 시주 조건을 짚는다. 庫를 미래 직위로 해석하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:庚午",
+      "core": "큰 결단을 규율과 배움으로 다듬는 조합",
+      "contrast": [
+        "庚子의 수기·산출과 달리 午의 화토·관인 접점을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六庚日詩 / 午",
+        "proposition": "六庚日詩는 午의 丁己를 官印으로 설명하고 金敗라는 명칭만으로 불리함을 정하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:庚辰",
+      "core": "단단한 결단이 습토의 자원 저장과 만나는 조합",
+      "contrast": [
+        "庚戌의 조토·화기와 달리 辰의 습토·수목 잔여가 조절 조건이다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六庚日詩 / 辰",
+        "proposition": "六庚日詩는 辰의 魁罡 이름·乙餘氣와 다른 격에 드는 조건을 병기한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:庚寅",
+      "core": "단단한 실행이 성장 자원과 외부 과제를 동시에 상대하는 조합",
+      "contrast": [
+        "庚申의 자기 기반과 달리 寅의 목화·재관 환경에서 실행을 시험한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六庚日詩 / 寅",
+        "proposition": "六庚日詩는 寅의 財煞 생왕과 身旺·化鬼 조건을 함께 든다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:庚子",
+      "core": "단단한 생각이 많은 설명과 산출로 풀려 나가는 조합",
+      "contrast": [
+        "庚午의 관인 규율과 달리 子의 수기·상관 산출을 구분한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六庚日詩 / 子",
+        "proposition": "六庚日詩는 子의 金沈 비유와 월·丁火의 조절을 든다. 실제 침몰·사고 해석은 배제한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:庚戌",
+      "core": "단단한 결단을 건조한 저장과 검증의 환경에 두는 조합",
+      "contrast": [
+        "庚辰의 습토·수기와 달리 戌의 조토·화기 조건을 구분한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六庚日詩 / 戌",
+        "proposition": "六庚日詩는 戌의 魁罡과 火氣·身煞 강약을 구분한다. 괴강 이름으로 성품을 확정하지 않는다."
+      },
+      "pending": [
+        "六庚日詩의 戌中旺丙 표현은 현행 戌戊辛丁 고정 장간과 구별해 교감한다. 새 丙 근거를 만들지 않음."
+      ]
+    },
+    {
+      "id": "completion:day_pillar:庚申",
+      "core": "단단한 판단이 같은 금기의 기반을 갖는 조합",
+      "contrast": [
+        "庚寅의 외부 재관 환경과 달리 申의 같은 금기 기반을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六庚日詩 / 申",
+        "proposition": "六庚日詩는 申의 自坐建祿을 든다. 身旺 명칭을 성취·수명 보증으로 사용하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:辛未",
+      "core": "정교한 구별이 온조한 자원·압력·지원의 혼합과 만나는 조합",
+      "contrast": [
+        "辛丑의 차가운 금수 저장과 달리 未의 목화 잔여가 요구 조건이다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六辛日詩 / 未",
+        "proposition": "六辛日詩는 未中木財·丁煞·己倒食을 들고 身旺·생조 조건을 본다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:辛巳",
+      "core": "정교한 금기가 강한 열과 규율 속에서 다듬어지는 조합",
+      "contrast": [
+        "辛亥의 수기·산출 환경과 달리 巳의 화토·관인 조건을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六辛日詩 / 巳",
+        "proposition": "六辛日詩는 巳의 官印과 死地에도 의지할 조건이 있음을 설명한다. 死는 사건이 아니다."
+      },
+      "pending": [
+        "六辛日詩의 丙戌建祿 표기는 원문 글자 교감 필요. 현행 丙戊庚 장간을 유지하며 戌을 천간으로 취급하지 않음."
+      ]
+    },
+    {
+      "id": "completion:day_pillar:辛卯",
+      "core": "정교한 판단을 성장하는 실용 자원에 적용하는 조합",
+      "contrast": [
+        "辛酉의 자기 금기 기반과 달리 卯의 목기·재성 자원을 상대한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六辛日詩 / 卯",
+        "proposition": "六辛日詩는 卯의 財地와 身衰 명칭을 나누고 시주의 도움을 본다. 재지가 실제 부를 뜻하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:辛丑",
+      "core": "정교한 금기가 한습한 저장 기반에서 천천히 산출을 준비하는 조합",
+      "contrast": [
+        "辛未의 목화 부담과 달리 丑의 금수 저장·산출 통로를 구분한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六辛日詩 / 丑",
+        "proposition": "六辛日詩는 丑中癸食과 財官의 별도 조건을 든다. 장간·월령·투출은 서로 다른 정보다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:辛亥",
+      "core": "정교한 구별을 넓은 정보와 표현의 흐름에 풀어내는 조합",
+      "contrast": [
+        "辛巳의 규율·열기와 달리 亥의 수기 산출·목기 접점이 중심이다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六辛日詩 / 亥",
+        "proposition": "六辛日詩는 亥의 沐浴과 財生官絶을 병기한다. 名稱 하나로 연애·성적 행실을 판단하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:辛酉",
+      "core": "정교한 구별과 같은 금기의 기준이 겹치는 조합",
+      "contrast": [
+        "辛卯의 외부 자원 비교와 달리 酉의 자기 금기 기반을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六辛日詩 / 酉",
+        "proposition": "六辛日詩는 酉의 辛建祿과 財官의 별도 조건을 설명한다. 같은 기운의 집중을 우월함으로 읽지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:壬申",
+      "core": "넓은 흐름이 배움과 금기의 지원을 받는 조합",
+      "contrast": [
+        "壬寅의 목화 산출·자원과 달리 申의 금기 생조가 통로다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六壬日詩 / 申",
+        "proposition": "六壬日詩는 申의 長生·學堂을 들고 財官의 별도 조건을 본다. 지적 능력·학력을 보증하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:壬午",
+      "core": "넓은 흐름이 따뜻한 자원과 생활의 규율에 닿는 조합",
+      "contrast": [
+        "壬子의 같은 수기 집중과 달리 午의 화토·재관 조건을 구분한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六壬日詩 / 午",
+        "proposition": "六壬日詩는 午의 祿馬同鄉·財官을 설명한다. 실제 지위·재산을 뜻하는 것으로 승격하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:壬辰",
+      "core": "넓은 수기가 습토의 저장·경계와 만나는 조합",
+      "contrast": [
+        "壬戌의 조토·화기 자원과 달리 辰의 수기 저장이 같은 흐름을 받아 준다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六壬日詩 / 辰",
+        "proposition": "六壬日詩는 辰의 魁罡·制禦와 다른 격의 조건을 나누어 설명한다. 단일 일주로 격을 판정하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:壬寅",
+      "core": "넓은 흐름을 성장과 산출의 방향으로 내보내는 조합",
+      "contrast": [
+        "壬申의 받아들이는 금기와 달리 寅의 목화·산출 자원을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六壬日詩 / 寅",
+        "proposition": "六壬日詩는 寅의 財食 생왕·水火旣濟 비유를 들고 시주의 조건을 더한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:壬子",
+      "core": "넓은 흐름과 같은 수기의 기반이 겹치는 조합",
+      "contrast": [
+        "壬午의 화토·재관 접점과 달리 子의 수기 집중을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六壬日詩 / 子",
+        "proposition": "六壬日詩는 子의 日刃·飛天祿馬 논법을 언급한다. 다른 원국 조건 없는 격 적용은 금지한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:壬戌",
+      "core": "넓은 흐름을 건조한 저장·자원·책임에 연결하는 조합",
+      "contrast": [
+        "壬辰의 수기 저장과 달리 戌의 화기·조토라는 다른 환경이다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六壬日詩 / 戌",
+        "proposition": "六壬日詩는 戌의 財官雙美·玄武當權 이름과 다른 기둥의 배합을 요구한다."
+      },
+      "pending": [
+        "六壬日詩의 身作丙戊 표현을 현행 戌戊辛丁 및 해당 분야 관법과 분리 교감. 丙 저장 근거로 쓰지 않음."
+      ]
+    },
+    {
+      "id": "completion:day_pillar:癸酉",
+      "core": "미세한 수기가 정돈된 배움과 검증의 지원을 받는 조합",
+      "contrast": [
+        "癸卯의 목기 산출과 달리 酉의 금기 생조·인성 통로를 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六癸日詩 / 酉",
+        "proposition": "六癸日詩는 酉의 衰敗 명칭과 身旺月의 도움을 함께 설명한다. 단계명을 현실 실패로 읽지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:癸未",
+      "core": "미세한 흐름이 온조한 토양의 자원·압력과 만나는 조합",
+      "contrast": [
+        "癸丑의 한습 저장과 달리 未의 목화 잔여·조토 조건을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六癸日詩 / 未",
+        "proposition": "六癸日詩는 未의 偏官偏財와 身旺·제화 조건을 든다. 질박하다는 원문 평을 고정 성격으로 승인하지 않는다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:癸巳",
+      "core": "미세한 수기를 열기·자원·규율·지원의 혼합에 적용하는 조합",
+      "contrast": [
+        "癸亥의 같은 수기 기반과 달리 巳의 화토금·재관인 환경이다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六癸日詩 / 巳",
+        "proposition": "六癸日詩는 巳의 財官印 생왕을 언급하고 시주 조건을 둔다. 세 이름의 완비가 성공 보증은 아니다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:癸卯",
+      "core": "미세한 수기가 부드러운 성장과 산출로 이어지는 조합",
+      "contrast": [
+        "癸酉의 금기·배움 지원과 달리 卯의 목기·식신 산출을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六癸日詩 / 卯",
+        "proposition": "六癸日詩는 卯의 長生學堂·食神 건왕과 財官의 별도 조건을 설명한다."
+      },
+      "pending": []
+    },
+    {
+      "id": "completion:day_pillar:癸丑",
+      "core": "미세한 수기가 한습한 저장과 경계의 토양에 놓이는 조합",
+      "contrast": [
+        "癸未의 온조·목화와 달리 丑의 한습·금수 저장을 구분한다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六癸日詩 / 丑",
+        "proposition": "六癸日詩는 丑의 己專位·七煞와 刃의 충파 조건을 든다. 음간 양인 학설 차이는 별도 보류한다."
+      },
+      "pending": [
+        "음간 양인 포함 학설 차이와 해당 구절의 글자 교감. 현행 판정과 분리."
+      ]
+    },
+    {
+      "id": "completion:day_pillar:癸亥",
+      "core": "미세한 수기와 넓은 수기 기반이 이어지는 조합",
+      "contrast": [
+        "癸巳의 재관인 외부 조건과 달리 亥의 수기 기반을 본다."
+      ],
+      "source": {
+        "sourceId": "completion-sm4",
+        "locator": "論十干坐支兼得月時及行運吉凶 / 六癸日詩 / 亥",
+        "proposition": "六癸日詩는 亥多·癸亥時 등 飛沖의 조건을 특정한다. 한 개 亥에서 가상의 財官을 생성하지 않는다."
+      },
+      "pending": []
+    }
+  ],
+  "legacyRepeatedGroupCount": 558,
+  "legacyRepeatedGroupsPreserved": true,
+  "legacySourceManifest": "docs/validation/v4-foundation-saju-knowledge-expansion-01/knowledge-duplication.json"
+}
