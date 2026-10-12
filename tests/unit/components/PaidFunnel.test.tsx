@@ -1,10 +1,11 @@
 import { readFileSync } from "node:fs";
 import { isValidElement, type ReactElement, type ReactNode } from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import NewReportPage, {
+import NewReportPage from "../../../src/app/report/new/page";
+import {
   getAnnualFortuneYearOptions,
   getAsiaSeoulCurrentYear,
-} from "../../../src/app/report/new/page";
+} from "../../../src/app/report/new/annualYearOptions";
 import Launcher from "../../../src/components/payment/DevTossCheckoutLauncher";
 import { getReportProduct } from "../../../src/lib/payment/reportProductCatalog";
 import { prePaymentRefundNoticeKo } from "../../../src/lib/legal/refundPolicy";
@@ -115,7 +116,7 @@ describe("paid funnel contracts and progressive review", () => {
     expect(elements(checkout().tree).filter(el => el.props["data-easy-pay"]).every(el => el.props.disabled)).toBe(true);
     releasePrepare(Response.json({ ok: true, tossCheckoutRequest: {
       provider: "toss", clientKey: "synthetic-client", metadata: { paymentOrderId: "order_qa", productType: "saju_mbti_full" },
-      requestPayment: { method: "CARD", orderId: "provider_qa", orderName: "종합", amount: { currency: "KRW", value: 1290 }, customerName: "합성 고객", successUrl: "https://example.test/payments/toss/success", failUrl: "https://example.test/payments/toss/fail" },
+      requestPayment: { method: "CARD", orderId: "provider_qa", orderName: "종합", amount: { currency: "KRW", value: 1490 }, customerName: "합성 고객", successUrl: "https://example.test/payments/toss/success", failUrl: "https://example.test/payments/toss/fail" },
     } }));
     await vi.advanceTimersByTimeAsync(0);
     expect(requestPayment).toHaveBeenCalledTimes(1);
@@ -162,7 +163,7 @@ describe("paid funnel contracts and progressive review", () => {
   });
   it.each(products)("%s preserves product, catalog price, required fields and five separate consents", async (slug, type) => {
     hooks.product = slug;
-    expect(getReportProduct(type)?.amount).toBe(1290);
+    expect(getReportProduct(type)?.amount).toBe(1490);
     expect(checkout().entry.props.productType).toBe(type);
     expect(paymentButton()).toBeUndefined();
     expect(JSON.stringify(checkout().tree)).toContain("필수 정보를 입력하면 결제 전 내용을 확인할 수 있습니다.");

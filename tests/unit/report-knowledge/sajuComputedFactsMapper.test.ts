@@ -35,7 +35,7 @@ const deokminSampleFacts = {
 } as const satisfies ComputedSajuFacts;
 
 function expectIncludes(input: MappedSajuKnowledgeInput, ids: readonly string[]): void {
-  expect(input.sajuEntryIds).toEqual(expect.arrayContaining(ids));
+  expect(input.sajuEntryIds).toEqual(expect.arrayContaining([...ids]));
 }
 
 describe("saju computed facts mapper", () => {

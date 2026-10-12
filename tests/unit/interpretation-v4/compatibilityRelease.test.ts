@@ -1,3 +1,4 @@
+import timeProductLocks from "../../fixtures/release-technical-01/time-product-locks.json";
 import { describe, it, expect, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
@@ -147,9 +148,16 @@ describe("Compatibility reader release", () => {
     expect(r.integration.readerEdition.chapters[2].paragraphs[1].purpose).toBe("Bobby님이 관계에서 중요하게 여기는 것");
     expect(r.integration.readerValidation.hardErrors).toEqual([]);
   },120000);
-  it.each(RUNTIME_FIXTURES.filter(f=>f.id!=="compatibility"))("$id text, evidence and Book stay exactly at 8410716", async f=>{
+  it.each(RUNTIME_FIXTURES.filter(f=>f.id!=="compatibility"))("$id text, evidence and Book stay at their frozen integrated edition", async f=>{
+    // Major/Annual were released after these original boundary locks. Their
+    // integrated output is frozen at 964e6b9; original historical locks remain.
+    const timeLock = f.id === "major" || f.id === "annual" ? timeProductLocks[f.id] : null;
+    if (timeLock) {
+      expect(f.payload).toEqual(timeLock.payload);
+      expect(SHADOW_CLOCK).toEqual(timeLock.clock);
+    }
     const r=await generateV4ShadowReport(f.payload,SHADOW_CLOCK);if(!r.ok)return expect.unreachable();
-    expect([v4Digest(r.draft),v4Digest(r.evidencePacket),v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(locks[f.id as keyof typeof locks]);
+    expect([v4Digest(r.draft),v4Digest(r.evidencePacket),v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(timeLock?.hashes ?? locks[f.id as keyof typeof locks]);
   },120000);
   it.each(["parentChild", "managerReport"] as const)("%s swapped people keep fixed A/B responsibilities", relationshipType=>{
     const payload={...base,relationshipType}, a=build(payload),b=build({...payload,personA:payload.personB,personB:payload.personA});

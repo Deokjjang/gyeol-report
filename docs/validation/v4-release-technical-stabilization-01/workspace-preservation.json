@@ -1,0 +1,106 @@
+{
+  "existingWorktreeCount": 10,
+  "allUnchanged": true,
+  "worktrees": [
+    {
+      "path": "/Users/Deokmin/Dev/projects/gyeol-report",
+      "headBefore": "c048218cc5961e0f53a1deab2603511e17559fc3",
+      "headAfter": "c048218cc5961e0f53a1deab2603511e17559fc3",
+      "statusBefore": " M .gitignore\n M AGENTS.md\n?? supabase/.temp/\n",
+      "statusAfter": " M .gitignore\n M AGENTS.md\n?? supabase/.temp/\n",
+      "fileCount": 1857,
+      "filesSha256": "ee91c3ee70eeaa38c9ef425e24c21d5052adeb3c181c692f45441c96a5672276",
+      "allFileBytesUnchanged": true
+    },
+    {
+      "path": "/private/tmp/gyeol-annual-fortune-reader-quality-polish-01",
+      "headBefore": "f1994d13eb1ac40b913ec1419a1e0c24e7c89407",
+      "headAfter": "f1994d13eb1ac40b913ec1419a1e0c24e7c89407",
+      "statusBefore": "",
+      "statusAfter": "",
+      "fileCount": 1856,
+      "filesSha256": "ba0eff5da4e945d93a0e56346c1b649aca06a429061d2b3b1f35ca3f935799cc",
+      "allFileBytesUnchanged": true
+    },
+    {
+      "path": "/private/tmp/gyeol-career-editorial-quality-fix-01",
+      "headBefore": "80409f8a96c5a2b4bf93792ea6f5d1c97bbc1fa4",
+      "headAfter": "80409f8a96c5a2b4bf93792ea6f5d1c97bbc1fa4",
+      "statusBefore": "",
+      "statusAfter": "",
+      "fileCount": 1888,
+      "filesSha256": "8fd28bbb45c27b7e5dccff05739768ac021ea39c27fd14713a7cedd2a480abe2",
+      "allFileBytesUnchanged": true
+    },
+    {
+      "path": "/private/tmp/gyeol-compatibility-editorial-quality-fix-01",
+      "headBefore": "21da9173461f3530c5e945e4d306303e7660986b",
+      "headAfter": "21da9173461f3530c5e945e4d306303e7660986b",
+      "statusBefore": "",
+      "statusAfter": "",
+      "fileCount": 1870,
+      "filesSha256": "06da32ba2b7692bde7f2f7734a3f33bf08d99bdba2cd20a9790fb1c36fd87c0c",
+      "allFileBytesUnchanged": true
+    },
+    {
+      "path": "/private/tmp/gyeol-comprehensive-editorial-quality-fix-01",
+      "headBefore": "1edcf3fb9f22e42b144706bd4b25ea2fb5c89462",
+      "headAfter": "1edcf3fb9f22e42b144706bd4b25ea2fb5c89462",
+      "statusBefore": "",
+      "statusAfter": "",
+      "fileCount": 1870,
+      "filesSha256": "b01bed37979165caebd92bac895af816e7b8f26aad24a2ae43aade319e302460",
+      "allFileBytesUnchanged": true
+    },
+    {
+      "path": "/private/tmp/gyeol-love-editorial-quality-fix-01",
+      "headBefore": "544f14c36ba5de557b1d746879f1a69a5f57817f",
+      "headAfter": "544f14c36ba5de557b1d746879f1a69a5f57817f",
+      "statusBefore": "",
+      "statusAfter": "",
+      "fileCount": 1889,
+      "filesSha256": "4aa16b8ed587397661de7af54942cef61e21e5e443479dd502c3ec27bc8620c0",
+      "allFileBytesUnchanged": true
+    },
+    {
+      "path": "/private/tmp/gyeol-major-fortune-reader-quality-polish-01",
+      "headBefore": "9460df97d929735d2d835216952948a202ad8af3",
+      "headAfter": "9460df97d929735d2d835216952948a202ad8af3",
+      "statusBefore": "",
+      "statusAfter": "",
+      "fileCount": 1851,
+      "filesSha256": "9c181adc90437227696a69231546c6f9b0e52409cb2173385576921cca6b0425",
+      "allFileBytesUnchanged": true
+    },
+    {
+      "path": "/private/tmp/gyeol-six-product-common-editorial-polish-01",
+      "headBefore": "964e6b9a1b248c67e695f112615873f232d9320e",
+      "headAfter": "964e6b9a1b248c67e695f112615873f232d9320e",
+      "statusBefore": "",
+      "statusAfter": "",
+      "fileCount": 2073,
+      "filesSha256": "0aaf36b93e225c6c68ad3ffdd04f4d424090221e7b3b9c11503b19d61bf465c3",
+      "allFileBytesUnchanged": true
+    },
+    {
+      "path": "/private/tmp/gyeol-six-product-integration-01",
+      "headBefore": "a46eff86e305f5a58721bdd83a2249686e54be4c",
+      "headAfter": "a46eff86e305f5a58721bdd83a2249686e54be4c",
+      "statusBefore": "",
+      "statusAfter": "",
+      "fileCount": 2034,
+      "filesSha256": "1ebcbe8b28ede39a23b67442c365d4a7ac251511292525caa4f38c0d1bb5e500",
+      "allFileBytesUnchanged": true
+    },
+    {
+      "path": "/Users/Deokmin/Documents/Codex/2026-09-29/referenced-chatgpt-conversation-this-is-an/work/gyeol-share-brand",
+      "headBefore": "4e25b8775c3947e4a3d661f0e23c87950d15c8d4",
+      "headAfter": "4e25b8775c3947e4a3d661f0e23c87950d15c8d4",
+      "statusBefore": "",
+      "statusAfter": "",
+      "fileCount": 1079,
+      "filesSha256": "917bd96a1400442afd6bfd7260af201b9902345a686cf161b9558fcd9cf5364a",
+      "allFileBytesUnchanged": true
+    }
+  ]
+}

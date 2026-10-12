@@ -118,7 +118,7 @@ describe("saju symbolic nickname", () => {
       missingElements: ["wood", "metal"],
       usefulElements: ["wood", "metal"],
       tenGodSignals: [
-        { tenGod: "bi_jian", strength: "present" },
+        { tenGod: "bijian", strength: "present" },
         { tenGod: "shi_shen", strength: "present" },
       ],
       specialPatterns: ["no_resource"],

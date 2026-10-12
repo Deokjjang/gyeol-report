@@ -1,3 +1,4 @@
+import type { ProductPreviewSnapshotDraft } from "../../../../src/lib/report-generation/productPreviewSnapshot";
 import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it, vi } from "vitest";
 import ReportResultPage from "../../../../src/app/reports/[reportId]/page";
@@ -33,7 +34,7 @@ it.each(products)("%s generate → publish → saved paid route → exactly one 
           : productKey === "major_fortune" ? await createMajorFortuneV3(input)
             : await generateProductReport(input, { enabled: false, reason: "flag_disabled" }, "deterministic_fallback");
   expect(generated).toBeTruthy(); if (!generated || !("draft" in generated)) return;
-  const snapshot = createProductPreviewSnapshot({ reportId, createdAtIso: createdAt, productKey, productSlug, draft: generated.draft, evidencePacket: generated.evidencePacket });
+  const snapshot = createProductPreviewSnapshot({ reportId, createdAtIso: createdAt, productKey, productSlug, draft: generated.draft as ProductPreviewSnapshotDraft, evidencePacket: generated.evidencePacket });
   expect(snapshot.ok).toBe(true); if (!snapshot.ok) return;
   const runtime = createReportPersistenceRuntime({ mode: "preview_memory" });
   expect(runtime.ok).toBe(true); if (!runtime.ok) return;

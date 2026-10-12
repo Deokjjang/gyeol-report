@@ -36,7 +36,7 @@ describe("report quality fixture matrix", () => {
       "ENTP",
       "ISFP",
       "ESTJ",
-    ]) {
+    ] as const) {
       expect(uniqueMbtiTypes.has(mbti)).toBe(true);
     }
   });
@@ -162,7 +162,7 @@ describe("report quality fixture matrix", () => {
     expect(serializedLabels).toContain("원진살");
     expect(serializedLabels).toContain("백호대살");
     expect(serializedLabels).toContain("공망");
-    for (const focus of ["money", "work", "love", "study", "growth"]) {
+    for (const focus of ["money", "work", "love", "study", "growth"] as const) {
       expect(focusTags.has(focus)).toBe(true);
     }
     expect(focusTags.has("positive")).toBe(true);

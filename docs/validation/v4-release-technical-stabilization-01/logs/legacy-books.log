@@ -1,0 +1,8 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-release-technical-stabilization-01
+
+
+ Test Files  1 passed (1)
+      Tests  18 passed (18)
+   Start at  01:17:16
+   Duration  2.94s (transform 1.22s, setup 19ms, import 1.52s, tests 1.21s, environment 0ms)

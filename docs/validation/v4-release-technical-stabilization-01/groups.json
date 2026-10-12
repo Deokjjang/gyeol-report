@@ -1,0 +1,45 @@
+{
+  "comprehensive": [
+    "tests/unit/interpretation-v4/comprehensiveQuality.test.ts",
+    "tests/unit/interpretation-v4/comprehensiveProduct.test.tsx"
+  ],
+  "career": [
+    "tests/unit/interpretation-v4/careerQuality.test.ts",
+    "tests/unit/interpretation-v4/careerProduct.test.tsx"
+  ],
+  "love": [
+    "tests/unit/interpretation-v4/loveQuality.test.ts",
+    "tests/unit/interpretation-v4/loveRelease.test.ts",
+    "tests/unit/interpretation-v4/loveSafety.test.ts"
+  ],
+  "major": [
+    "tests/unit/interpretation-v4/majorReaderQuality.test.ts",
+    "tests/unit/interpretation-v4/majorInteraction.test.ts",
+    "tests/unit/interpretation-v4/majorEditorialSafety.test.ts"
+  ],
+  "shared": [
+    "tests/unit/interpretation-v4/annualReaderQuality.test.ts",
+    "tests/unit/interpretation-v4/annualEditorialQuality.test.ts",
+    "tests/unit/interpretation-v4/timeProduct.test.tsx",
+    "tests/unit/app/bookPublicFlow.test.tsx",
+    "tests/unit/app/dev/bookReading13b.test.tsx",
+    "tests/unit/api/bookAnnualPreflight.test.ts"
+  ],
+  "protected": [
+    "tests/unit/interpretation-v3/v2Regression.test.tsx",
+    "tests/unit/app/paidShareReportPageSource.test.ts",
+    "tests/unit/payment/annualPurchaseYearPolicy.test.ts"
+  ],
+  "access": [
+    "tests/unit/app/ticketOwnerRoute.test.tsx",
+    "tests/unit/payment/reportPublishExpiry.test.tsx",
+    "tests/unit/sharing/bookSharing.test.tsx"
+  ],
+  "parity": [
+    "tests/unit/interpretation-v4/sixProductIntegration.test.ts"
+  ],
+  "compatibility": [
+    "tests/unit/interpretation-v4/compatibilityQuality.test.tsx",
+    "tests/unit/interpretation-v4/compatibilityRelease.test.ts"
+  ]
+}

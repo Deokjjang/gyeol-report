@@ -1,3 +1,5 @@
+import { assert } from "vitest";
+import type { NarrativeAudit } from "../../../src/lib/interpretation-v3/mbtiNarrative";
 import { writeFileSync } from "node:fs";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -66,7 +68,8 @@ it("five V3 products project identical confirmed natal marker positions without 
   const pair = createCompatibilityV3({ ...compatibilityFixture(), personA: payload.person })!;
   const major = (await createMajorFortuneV3(payload, { now }))!;
   for (const report of [full, career, love, pair, major]) {
-    const audit = report.draft.narrativeAudit!;
+    assert("narrativeAudit" in report.draft && Array.isArray(report.draft.narrativeAudit));
+    const audit: readonly NarrativeAudit[] = report.draft.narrativeAudit;
     // Pair editorial already contains MBTI scenes; its shared injection is
     // deliberately confined to the two directed perspectives, not every chapter.
     expect(audit.length).toBeGreaterThanOrEqual(report === pair ? 2 : 3);

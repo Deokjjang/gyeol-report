@@ -1,3 +1,4 @@
+import { analyzeSajuStructure } from "../../../src/lib/saju/structureAnalysis";
 import { describe, expect, it } from "vitest";
 
 import { extractSajuTags } from "@/lib/saju/extractTags";
@@ -6,7 +7,7 @@ import type { SajuCalcResult, TenGod } from "@/lib/saju/types";
 function createBaseResult(
   distributionOverrides: Partial<Record<TenGod, number>>,
 ): SajuCalcResult {
-  return {
+  const base = {
     input: {
       birthDate: "2024-02-04",
       birthTime: "17:27",
@@ -70,7 +71,8 @@ function createBaseResult(
       branchClashes: [],
     },
     notices: [],
-  };
+  } satisfies Omit<SajuCalcResult, "shinsal" | "structureAnalysis">;
+  return { ...base, shinsal: [], structureAnalysis: analyzeSajuStructure(base) };
 }
 
 function getCodes(result: SajuCalcResult): string[] {

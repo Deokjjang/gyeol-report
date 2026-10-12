@@ -1,3 +1,5 @@
+import type { ReportOutput } from "../../../src/lib/report/types";
+import type { CompatibilityPersonChartSummary } from "../../../src/lib/report-knowledge/compatibilityTypes";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -28,13 +30,21 @@ const runtimeSource = readFileSync(runtimeSourcePath, "utf8");
 const createdAt = "2026-01-01T00:00:00.000Z";
 const laterAt = "2026-01-02T00:00:00.000Z";
 
-const minimalReport = {
+const minimalReport: ReportOutput = {
   version: "v1",
   titleKo: "결리포트",
   subtitleKo: "사주와 MBTI로 읽는 나의 결",
   sections: [],
   notices: [],
-} as const;
+};
+
+function chart(role: "personA" | "personB"): CompatibilityPersonChartSummary {
+  return { role, displayName: role === "personA" ? "A" : "B", birthTimeConfidence: "unknown",
+    pillars: { year: "갑자", month: "병인", day: "갑자" }, dayMaster: "갑", dayPillar: "갑자", featureIds: [], featureLabels: [], diagnosticFeatureLabels: [],
+    sajuFacts: { dayMaster: "갑", dayPillar: "갑자", heavenlyStems: [], earthlyBranches: [],
+      fiveElementCounts: { wood: 0, fire: 0, earth: 0, metal: 0, water: 0 }, excessiveElements: [], missingElements: [],
+      tenGodSignals: [], specialPatterns: [], sinsal: [], gwiin: [] } };
+}
 
 const compatibilityDraft = {
   version: "compatibility_v1_draft",
@@ -60,8 +70,8 @@ const compatibilityDraft = {
     },
   },
   chartComparison: {
-    personA: {},
-    personB: {},
+    personA: chart("personA"),
+    personB: chart("personB"),
   },
   keyCompatibilityPoints: {
     attractionPoints: ["끌림"],
@@ -87,7 +97,7 @@ const compatibilityDraft = {
   chapters: [],
   finalAdvice: ["조언"],
   safetyNotes: ["안내"],
-} as ProductPreviewSnapshotDraft;
+} satisfies ProductPreviewSnapshotDraft;
 
 function createRecord(
   overrides: Partial<PersistedReportRecord> = {},
@@ -194,6 +204,7 @@ describe("createInMemoryReportPersistenceAdapter", () => {
   it("creates and finds a product preview snapshot", async () => {
     const adapter = createInMemoryReportPersistenceAdapter();
     const record = createProductPreviewRecord();
+    if (record.reportSnapshot.snapshotKind !== "product_preview") return expect.unreachable();
 
     const createResult = await adapter.create({ record });
     const findResult = await adapter.find({ reportId: record.reportId });

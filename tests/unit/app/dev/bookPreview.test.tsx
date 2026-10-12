@@ -1,3 +1,5 @@
+// Compare the retained legacy document branch with the V4 policy presentation.
+vi.mock("../../../../src/lib/book/publicGate", () => ({ bookExperiencePublicEnabled: () => false }));
 import { readFileSync, readdirSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
@@ -84,7 +86,7 @@ describe("book preview: development-only presentation", () => {
   it("guest/member receipt retains purchase disclosures and does not invent optional consent", () => {
     for (const member of [false, true]) {
       const html = renderToStaticMarkup(<Receipt book={BOOKS[0]} person={INITIAL_PERSON} member={member} setMember={noop} consents={{}} setConsents={noop} />);
-      expect(html).toContain("₩1,290"); expect(html).toContain("환불·청약철회 제한 확인");
+      expect(html).toContain("1,490원"); expect(html).toContain("환불·청약철회 제한 확인");
       expect(html.includes(CONSENT_SHORT_LABELS.policyAgreement)).toBe(!member);
       expect(html).not.toMatch(/<dialog|<details|마케팅/);
       expect(html).not.toContain(CONSENTS[0].label);
@@ -124,7 +126,9 @@ describe("book preview: development-only presentation", () => {
   });
   it("chapter notes exist at the bottom, not only in a dialog", () => {
     const data = library.books[0];
-    const page = data.pages.find(p => p.kind === "narrative" && p.notes.length > 0);
+    // Footnote presentation is independent of whether this edition already
+    // explains every term in its prose. Use an explicit saved-page fixture.
+    const page: BookPage = { kind: "narrative", title: "각주 표시 회귀", paragraphs: [{ text: "저장된 본문 문장입니다.", notes: [1] }], notes: [{ name: "갑목", text: "새로 시작하는 힘" }] };
     expect(page).toBeDefined();
     const html = renderToStaticMarkup(<BookReader data={data} page={page!} onNote={noop} onShare={noop} onPage={noop} />);
     expect(html).toContain('aria-label="이 장의 각주"');

@@ -80,9 +80,9 @@ function collectVisibleDraftText(
     ...draft.majorFortuneTimelineRows.flatMap((row) => [
       row.oneLine,
       row.strategy,
-      row.yearDetail.coreFlow,
-      row.yearDetail.realWorldScenes,
-      row.yearDetail.cautionPoint,
+      "coreFlow" in row.yearDetail ? row.yearDetail.coreFlow : "",
+      "realWorldScenes" in row.yearDetail ? row.yearDetail.realWorldScenes : "",
+      "cautionPoint" in row.yearDetail ? row.yearDetail.cautionPoint : "",
       row.yearDetail.actionStandard,
     ]),
     ...(draft.riskManagement ?? []),

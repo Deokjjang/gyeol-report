@@ -119,7 +119,7 @@ describe("compatibilityReportDraftValidator", () => {
   });
 
   it("fails when score summary is missing", () => {
-    const draft = { ...createValidCompatibilityDraft() } as Partial<CompatibilityReportDraft>;
+    const draft = { ...createValidCompatibilityDraft() } as { -readonly [K in keyof CompatibilityReportDraft]?: CompatibilityReportDraft[K] };
     delete draft.scoreSummary;
 
     expect(validate(draft).ok).toBe(false);

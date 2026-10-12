@@ -1,0 +1,14 @@
+[
+  {
+    "file": "src/lib/report-knowledge/compatibilityScoreEngine.ts",
+    "before": "ecd1ca589a9a023abc3cc659025bc6af77c388e46a2fca2cbfe969825ce4c3be",
+    "after": "ecd1ca589a9a023abc3cc659025bc6af77c388e46a2fca2cbfe969825ce4c3be",
+    "runtimeEqual": true
+  },
+  {
+    "file": "src/lib/report-generation/compatibilityReportDraftValidator.ts",
+    "before": "52db6ac2f061119c2079f15d7302ce855ee2c4067d6acff90e44237f51b6e417",
+    "after": "52db6ac2f061119c2079f15d7302ce855ee2c4067d6acff90e44237f51b6e417",
+    "runtimeEqual": true
+  }
+]

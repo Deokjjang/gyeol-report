@@ -15,9 +15,9 @@ import TossPaymentWidgetLauncher, {
 } from "../../../components/payment/TossPaymentWidgetLauncher";
 import { GYEOL_PRODUCTS } from "../../../lib/product/gyeolProducts";
 import {
-  getAnnualFortuneCommerceYearPolicy,
-  getAnnualFortuneCurrentYear,
-} from "../../../lib/report-knowledge/annualFortuneYearRules";
+  getAnnualFortuneYearOptions,
+  getAsiaSeoulCurrentYear,
+} from "./annualYearOptions";
 import type { ReportProductType } from "../../../lib/payment/reportProductTypes";
 import { MBTI_TYPES, compatibilityRoleLabels } from "../../../lib/report-generation/reportInputTypes";
 import type {
@@ -296,14 +296,6 @@ const annualDetailedJobOptions = [
   "자영업자",
   "기타 직접 입력",
 ] as const;
-
-export const getAsiaSeoulCurrentYear = getAnnualFortuneCurrentYear;
-
-export function getAnnualFortuneYearOptions(
-  referenceDate = new Date(),
-): readonly number[] {
-  return getAnnualFortuneCommerceYearPolicy(referenceDate).selectableYears;
-}
 
 function createCompatibilityPersonInputState(): CompatibilityPersonInputState {
   return {

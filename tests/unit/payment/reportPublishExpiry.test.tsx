@@ -8,6 +8,8 @@ import { generateProductReport } from "../../../src/lib/report-generation/genera
 import type { ProductGenerationSuccessResult } from "../../../src/lib/report-generation/productGenerationDispatcher";
 import { privacyPolicyRetentionRows } from "../../../src/lib/legal/privacyPolicy";
 
+// Isolated SQL expiry snapshots enter after the separately tested owner lookup.
+vi.mock("../../../src/lib/book/ownerAccess", () => ({ loadOwnedTicketBook: async () => ({ kind: "absent" }) }));
 vi.mock("next/navigation", () => ({ useRouter: () => ({ refresh: vi.fn() }) }));
 vi.mock("../../../src/lib/payment/paidReportReliabilityStore", () => ({ createPaidReportReliabilityStore: () => store }));
 import ReportResultPage from "../../../src/app/reports/[reportId]/page";

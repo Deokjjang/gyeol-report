@@ -1,0 +1,443 @@
+.next/types/app/report/new/page.ts(14,13): error TS2344: Type 'OmitWithTag<typeof import("/private/tmp/gyeol-release-technical-stabilization-01/src/app/report/new/page"), "default" | "config" | "metadata" | "dynamic" | "runtime" | "generateStaticParams" | ... 9 more ... | "generateViewport", "">' does not satisfy the constraint '{ [x: string]: never; }'.
+  Property 'getAsiaSeoulCurrentYear' is incompatible with index signature.
+    Type '(referenceDate?: Date) => number' is not assignable to type 'never'.
+tests/unit/api/createReport.test.ts(3,49): error TS2307: Cannot find module '@/lib/api/createReport' or its corresponding type declarations.
+tests/unit/api/createReport.test.ts(4,44): error TS2307: Cannot find module '@/lib/validation/types' or its corresponding type declarations.
+tests/unit/api/createReport.test.ts(108,40): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/api/createReport.test.ts(130,49): error TS7006: Parameter 'section' implicitly has an 'any' type.
+tests/unit/api/createReport.test.ts(165,40): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/api/createReport.test.ts(178,49): error TS7006: Parameter 'section' implicitly has an 'any' type.
+tests/unit/api/createReport.test.ts(199,40): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/api/createReport.test.ts(216,40): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/api/createReportRoute.test.ts(5,22): error TS2307: Cannot find module '@/app/api/reports/create/route' or its corresponding type declarations.
+tests/unit/api/createReportRoute.test.ts(6,48): error TS2307: Cannot find module '@/lib/persistence/reportPersistenceRuntime' or its corresponding type declarations.
+tests/unit/api/createReportRoute.test.ts(7,44): error TS2307: Cannot find module '@/lib/validation/types' or its corresponding type declarations.
+tests/unit/api/createReportRoute.test.ts(324,19): error TS2551: Property 'report' does not exist on type 'ApiSuccessBody | ProductApiSuccessBody'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'ProductApiSuccessBody'.
+tests/unit/api/createReportRoute.test.ts(325,19): error TS2551: Property 'report' does not exist on type 'ApiSuccessBody | ProductApiSuccessBody'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'ProductApiSuccessBody'.
+tests/unit/api/createReportRoute.test.ts(326,19): error TS2551: Property 'report' does not exist on type 'ApiSuccessBody | ProductApiSuccessBody'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'ProductApiSuccessBody'.
+tests/unit/api/createReportRoute.test.ts(328,14): error TS2551: Property 'report' does not exist on type 'ApiSuccessBody | ProductApiSuccessBody'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'ProductApiSuccessBody'.
+tests/unit/api/createReportRoute.test.ts(328,35): error TS7006: Parameter 'section' implicitly has an 'any' type.
+tests/unit/api/createReportRoute.test.ts(334,19): error TS2551: Property 'report' does not exist on type 'ApiSuccessBody | ProductApiSuccessBody'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'ProductApiSuccessBody'.
+tests/unit/api/createReportRoute.test.ts(592,48): error TS2551: Property 'report' does not exist on type 'ApiSuccessBody | ProductApiSuccessBody'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'ProductApiSuccessBody'.
+tests/unit/api/createReportRoute.test.ts(611,19): error TS2551: Property 'report' does not exist on type 'ApiSuccessBody | ProductApiSuccessBody'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'ProductApiSuccessBody'.
+tests/unit/api/createReportRoute.test.ts(634,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(635,19): error TS2339: Property 'errors' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'errors' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(635,31): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/api/createReportRoute.test.ts(650,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(651,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(652,19): error TS2339: Property 'errors' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'errors' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(653,19): error TS2339: Property 'errors' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'errors' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(653,31): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/api/createReportRoute.test.ts(673,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(677,19): error TS2339: Property 'errors' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'errors' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(691,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(692,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(693,19): error TS2339: Property 'errors' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'errors' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(711,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(712,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(713,19): error TS2339: Property 'errors' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'errors' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(714,19): error TS2339: Property 'errors' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'errors' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(714,31): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/app/reports/reportFinalRoute.test.tsx(36,111): error TS2322: Type 'unknown' is not assignable to type 'ProductPreviewSnapshotDraft'.
+tests/unit/app/reports/reportResultPage.test.tsx(166,7): error TS2322: Type '{ role: "personA" | "personB"; displayName: string; mbti: "INTP" | "ENTJ"; birthTimeConfidence: string; pillars: { year: string; month: string; day: string; }; dayMaster: string; dayPillar: string; featureIds: never[]; featureLabels: never[]; diagnosticFeatureLabels: never[]; sajuFacts: { ...; }; }' is not assignable to type 'CompatibilityPersonChartSummary'.
+  Types of property 'birthTimeConfidence' are incompatible.
+    Type 'string' is not assignable to type '"unknown" | "known"'.
+tests/unit/app/reports/reportResultPage.test.tsx(171,7): error TS2322: Type '{ role: "personA" | "personB"; displayName: string; mbti: "INTP" | "ENTJ"; birthTimeConfidence: string; pillars: { year: string; month: string; day: string; }; dayMaster: string; dayPillar: string; featureIds: never[]; featureLabels: never[]; diagnosticFeatureLabels: never[]; sajuFacts: { ...; }; }' is not assignable to type 'CompatibilityPersonChartSummary'.
+  Types of property 'birthTimeConfidence' are incompatible.
+    Type 'string' is not assignable to type '"unknown" | "known"'.
+tests/unit/app/reports/reportResultPage.test.tsx(1079,9): error TS2322: Type '{ readonly version: "v1"; readonly titleKo: "상품 미리보기"; readonly subtitleKo: "상품 미리보기 snapshot"; readonly sections: readonly []; readonly notices: readonly []; }' is not assignable to type 'ReportOutput'.
+  Types of property 'sections' are incompatible.
+    The type 'readonly []' is 'readonly' and cannot be assigned to the mutable type 'ReportSection[]'.
+tests/unit/bridge/evaluate.test.ts(2,40): error TS2307: Cannot find module '@/lib/bridge/evaluate' or its corresponding type declarations.
+tests/unit/bridge/evaluate.test.ts(3,32): error TS2307: Cannot find module '@/lib/mbti/types' or its corresponding type declarations.
+tests/unit/bridge/evaluate.test.ts(4,30): error TS2307: Cannot find module '@/lib/saju/tags' or its corresponding type declarations.
+tests/unit/bridge/evaluate.test.ts(52,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/bridge/evaluate.test.ts(85,10): error TS7006: Parameter 'signal' implicitly has an 'any' type.
+tests/unit/bridge/evaluate.test.ts(98,10): error TS7006: Parameter 'signal' implicitly has an 'any' type.
+tests/unit/bridge/evaluate.test.ts(112,32): error TS7006: Parameter 'signal' implicitly has an 'any' type.
+tests/unit/bridge/rules.test.ts(2,30): error TS2307: Cannot find module '@/lib/bridge/rules' or its corresponding type declarations.
+tests/unit/bridge/rules.test.ts(3,35): error TS2307: Cannot find module '@/lib/bridge/types' or its corresponding type declarations.
+tests/unit/bridge/rules.test.ts(42,30): error TS7006: Parameter 'rule' implicitly has an 'any' type.
+tests/unit/bridge/rules.test.ts(46,35): error TS7006: Parameter 'rule' implicitly has an 'any' type.
+tests/unit/bridge/rules.test.ts(78,8): error TS7006: Parameter 'rule' implicitly has an 'any' type.
+tests/unit/bridge/rules.test.ts(93,8): error TS7006: Parameter 'rule' implicitly has an 'any' type.
+tests/unit/bridge/rules.test.ts(104,8): error TS7006: Parameter 'rule' implicitly has an 'any' type.
+tests/unit/bridge/rules.test.ts(126,30): error TS7006: Parameter 'rule' implicitly has an 'any' type.
+tests/unit/bridge/rules.test.ts(127,25): error TS7006: Parameter 'rule' implicitly has an 'any' type.
+tests/unit/interpretation-v3/commonFinal.test.tsx(69,32): error TS2339: Property 'narrativeAudit' does not exist on type 'LoveV3Draft | CompatibilityV3Draft | MajorFortuneV3Draft | (ComprehensiveV3Draft & { narrativeEdition: "mbti-library-1" | "mbti-library-2"; narrativeAudit: readonly NarrativeAudit[]; rhythmWarnings: readonly string[]; } & { ...; }) | (CareerV3Draft & ... 1 more ... & { ...; })'.
+  Property 'narrativeAudit' does not exist on type 'LoveV3Draft'.
+tests/unit/interpretation-v3/commonFinal.test.tsx(73,30): error TS7006: Parameter 'a' implicitly has an 'any' type.
+tests/unit/interpretation-v3/commonFinal.test.tsx(74,30): error TS7006: Parameter 'a' implicitly has an 'any' type.
+tests/unit/launchFlags.test.ts(16,8): error TS2307: Cannot find module '@/lib/launchFlags' or its corresponding type declarations.
+tests/unit/mbti/sajuSuggestion.test.ts(2,44): error TS2307: Cannot find module '@/lib/mbti/sajuSuggestion' or its corresponding type declarations.
+tests/unit/mbti/sajuSuggestion.test.ts(3,31): error TS2307: Cannot find module '@/lib/mbti/types' or its corresponding type declarations.
+tests/unit/mbti/sajuSuggestion.test.ts(4,43): error TS2307: Cannot find module '@/lib/saju/tags' or its corresponding type declarations.
+tests/unit/mbti/sajuSuggestion.test.ts(65,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/mbti/sajuSuggestion.test.ts(68,38): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/mbti/sajuSuggestion.test.ts(196,42): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/mbti/types.test.ts(9,8): error TS2307: Cannot find module '@/lib/mbti/types' or its corresponding type declarations.
+tests/unit/mbti/types.test.ts(12,43): error TS7006: Parameter 'trait' implicitly has an 'any' type.
+tests/unit/mbti/types.test.ts(144,16): error TS18046: 'trait' is of type 'unknown'.
+tests/unit/payment/paidProductReportFulfillment.test.ts(48,34): error TS2339: Property 'person' does not exist on type 'ReportInputPayload'.
+  Property 'person' does not exist on type 'CompatibilityReportInputPayload'.
+tests/unit/payment/paidProductReportFulfillment.test.ts(49,32): error TS2339: Property 'person' does not exist on type 'ReportInputPayload'.
+  Property 'person' does not exist on type 'CompatibilityReportInputPayload'.
+tests/unit/payment/paidProductReportFulfillment.test.ts(96,26): error TS2339: Property 'productPreview' does not exist on type 'PublicReportPreviewRecord'.
+  Property 'productPreview' does not exist on type 'PublicComprehensiveReportPreviewRecord'.
+tests/unit/payment/tossClientCheckoutTypes.test.ts(58,41): error TS2554: Expected 0 arguments, but got 1.
+tests/unit/payment/tossConfirmClient.test.ts(140,24): error TS2493: Tuple type '[]' of length '0' has no element at index '0'.
+tests/unit/payment/tossConfirmClient.test.ts(141,12): error TS2532: Object is possibly 'undefined'.
+tests/unit/payment/tossConfirmClient.test.ts(141,24): error TS2493: Tuple type '[]' of length '0' has no element at index '1'.
+tests/unit/payment/tossConfirmClient.test.ts(142,35): error TS2493: Tuple type '[]' of length '0' has no element at index '1'.
+tests/unit/payment/tossConfirmClient.test.ts(145,35): error TS2493: Tuple type '[]' of length '0' has no element at index '1'.
+tests/unit/payment/tossConfirmClient.test.ts(148,40): error TS2493: Tuple type '[]' of length '0' has no element at index '1'.
+tests/unit/payments/inMemoryPaymentAdapter.test.ts(3,46): error TS2307: Cannot find module '@/lib/payments/inMemoryPaymentAdapter' or its corresponding type declarations.
+tests/unit/payments/inMemoryPaymentAdapter.test.ts(4,35): error TS2307: Cannot find module '@/lib/payments/paymentTypes' or its corresponding type declarations.
+tests/unit/payments/inMemoryPaymentAdapter.test.ts(276,21): error TS7006: Parameter 'summary' implicitly has an 'any' type.
+tests/unit/payments/inMemoryPaymentAdapter.test.ts(282,28): error TS7006: Parameter 'summary' implicitly has an 'any' type.
+tests/unit/payments/inMemoryPaymentAdapter.test.ts(286,26): error TS7006: Parameter 'summary' implicitly has an 'any' type.
+tests/unit/payments/inMemoryPaymentAdapter.test.ts(290,28): error TS7006: Parameter 'summary' implicitly has an 'any' type.
+tests/unit/payments/inMemoryPaymentAdapter.test.ts(294,25): error TS7006: Parameter 'summary' implicitly has an 'any' type.
+tests/unit/payments/paymentIds.test.ts(6,8): error TS2307: Cannot find module '@/lib/payments/paymentIds' or its corresponding type declarations.
+tests/unit/persistence/inMemoryReportPersistenceAdapter.test.ts(5,56): error TS2307: Cannot find module '@/lib/persistence/inMemoryReportPersistenceAdapter' or its corresponding type declarations.
+tests/unit/persistence/inMemoryReportPersistenceAdapter.test.ts(9,8): error TS2307: Cannot find module '@/lib/persistence/reportPersistenceRuntime' or its corresponding type declarations.
+tests/unit/persistence/inMemoryReportPersistenceAdapter.test.ts(10,44): error TS2307: Cannot find module '@/lib/persistence/reportPersistenceTypes' or its corresponding type declarations.
+tests/unit/persistence/inMemoryReportPersistenceAdapter.test.ts(15,8): error TS2307: Cannot find module '@/lib/report-generation/productPreviewSnapshot' or its corresponding type declarations.
+tests/unit/persistence/inMemoryReportPersistenceAdapter.test.ts(405,28): error TS7006: Parameter 'record' implicitly has an 'any' type.
+tests/unit/persistence/inMemoryReportPersistenceAdapter.test.ts(410,34): error TS7006: Parameter 'record' implicitly has an 'any' type.
+tests/unit/persistence/inMemoryReportPersistenceAdapter.test.ts(414,32): error TS7006: Parameter 'record' implicitly has an 'any' type.
+tests/unit/persistence/paidReportLookupBoundary.test.ts(10,8): error TS2307: Cannot find module '@/lib/persistence/paidReportLookupBoundary' or its corresponding type declarations.
+tests/unit/persistence/paidReportLookupBoundary.test.ts(11,39): error TS2307: Cannot find module '@/lib/persistence/reportShareTokenIssuer' or its corresponding type declarations.
+tests/unit/persistence/paidReportLookupBoundary.test.ts(12,42): error TS2307: Cannot find module '@/lib/persistence/reportPersistenceTypes' or its corresponding type declarations.
+tests/unit/persistence/paidReportLookupBoundary.test.ts(13,35): error TS2307: Cannot find module '@/lib/report/types' or its corresponding type declarations.
+tests/unit/persistence/paidReportLookupBoundary.test.ts(81,35): error TS7006: Parameter 'accessTokenHash' implicitly has an 'any' type.
+tests/unit/persistence/paidReportStorageBoundary.test.ts(5,39): error TS2307: Cannot find module '@/lib/persistence/paidReportStorageBoundary' or its corresponding type declarations.
+tests/unit/persistence/paidReportStorageBoundary.test.ts(13,8): error TS2307: Cannot find module '@/lib/persistence/reportPersistenceAdapter' or its corresponding type declarations.
+tests/unit/persistence/paidReportStorageBoundary.test.ts(19,8): error TS2307: Cannot find module '@/lib/persistence/reportPersistenceTypes' or its corresponding type declarations.
+tests/unit/persistence/paidReportStorageBoundary.test.ts(20,35): error TS2307: Cannot find module '@/lib/report/types' or its corresponding type declarations.
+tests/unit/persistence/paidReportStorageBoundary.test.ts(96,18): error TS7006: Parameter 'input' implicitly has an 'any' type.
+tests/unit/persistence/reportAccessTokenHash.test.ts(6,8): error TS2307: Cannot find module '@/lib/persistence/reportAccessTokenHash' or its corresponding type declarations.
+tests/unit/persistence/reportPersistenceIds.test.ts(8,8): error TS2307: Cannot find module '@/lib/persistence/reportPersistenceIds' or its corresponding type declarations.
+tests/unit/persistence/reportPersistenceRuntime.test.ts(5,47): error TS2307: Cannot find module '@/lib/persistence/reportPersistenceAdapter' or its corresponding type declarations.
+tests/unit/persistence/reportPersistenceRuntime.test.ts(14,8): error TS2307: Cannot find module '@/lib/persistence/reportPersistenceRuntime' or its corresponding type declarations.
+tests/unit/persistence/reportShareTokenIssuer.test.ts(8,8): error TS2307: Cannot find module '@/lib/persistence/reportShareTokenIssuer' or its corresponding type declarations.
+tests/unit/persistence/reportShareTokenIssuer.test.ts(9,47): error TS2307: Cannot find module '@/lib/report/reportPersistencePayload' or its corresponding type declarations.
+tests/unit/persistence/reportShareTokenIssuer.test.ts(10,35): error TS2307: Cannot find module '@/lib/report/types' or its corresponding type declarations.
+tests/unit/persistence/supabasePaidReportLookupRpcRow.test.ts(6,8): error TS2307: Cannot find module '@/lib/persistence/supabasePaidReportLookupRpcRow' or its corresponding type declarations.
+tests/unit/persistence/supabasePaidReportLookupRpcRow.test.ts(7,35): error TS2307: Cannot find module '@/lib/report/types' or its corresponding type declarations.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(8,8): error TS2307: Cannot find module '@/lib/persistence/reportPersistenceAdapter' or its corresponding type declarations.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(12,8): error TS2307: Cannot find module '@/lib/persistence/supabaseReportPersistenceAdapter' or its corresponding type declarations.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(17,8): error TS2307: Cannot find module '@/lib/persistence/supabaseReportPersistenceClient' or its corresponding type declarations.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(18,40): error TS2307: Cannot find module '@/lib/persistence/supabaseReportPersistenceMapper' or its corresponding type declarations.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(22,8): error TS2307: Cannot find module '@/lib/persistence/reportPersistenceTypes' or its corresponding type declarations.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(23,35): error TS2307: Cannot find module '@/lib/report/types' or its corresponding type declarations.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(175,24): error TS7006: Parameter 'row' implicitly has an 'any' type.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(181,24): error TS7006: Parameter 'reportId' implicitly has an 'any' type.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(181,34): error TS7006: Parameter 'patch' implicitly has an 'any' type.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(195,26): error TS7006: Parameter 'reportId' implicitly has an 'any' type.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(201,39): error TS7006: Parameter 'accessTokenHash' implicitly has an 'any' type.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(212,23): error TS7006: Parameter 'input' implicitly has an 'any' type.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(476,25): error TS7006: Parameter 'record' implicitly has an 'any' type.
+tests/unit/persistence/supabaseReportPersistenceClient.test.ts(5,71): error TS2307: Cannot find module '@/lib/persistence/supabaseReportPersistenceClient' or its corresponding type declarations.
+tests/unit/persistence/supabaseReportPersistenceClient.test.ts(6,40): error TS2307: Cannot find module '@/lib/persistence/supabaseReportPersistenceMapper' or its corresponding type declarations.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(8,8): error TS2307: Cannot find module '@/lib/persistence/supabaseReportPersistenceMapper' or its corresponding type declarations.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(12,8): error TS2307: Cannot find module '@/lib/persistence/supabaseReportPersistenceMapper' or its corresponding type declarations.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(13,44): error TS2307: Cannot find module '@/lib/persistence/reportPersistenceTypes' or its corresponding type declarations.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(14,35): error TS2307: Cannot find module '@/lib/report/types' or its corresponding type declarations.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(204,12): error TS18046: 'row' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(205,12): error TS18046: 'row' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(206,12): error TS18046: 'row' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(207,12): error TS18046: 'row' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(208,12): error TS18046: 'row' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(209,12): error TS18046: 'row' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(210,12): error TS18046: 'row' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(211,12): error TS18046: 'row' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(227,12): error TS18046: 'record' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(235,12): error TS18046: 'row' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(236,12): error TS18046: 'restoredRecord' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(244,12): error TS18046: 'row' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(245,12): error TS18046: 'row' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(246,12): error TS18046: 'restoredRecord' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceMapper.test.ts(247,12): error TS18046: 'restoredRecord' is of type 'unknown'.
+tests/unit/persistence/supabaseReportPersistenceSdkClient.test.ts(5,48): error TS2307: Cannot find module '@/lib/persistence/supabaseReportPersistenceClient' or its corresponding type declarations.
+tests/unit/persistence/supabaseReportPersistenceSdkClient.test.ts(9,8): error TS2307: Cannot find module '@/lib/persistence/supabaseReportPersistenceSdkClient' or its corresponding type declarations.
+tests/unit/report-generation/annualFortuneReportDraftValidator.test.ts(222,31): error TS2352: Conversion of type 'AnnualFortuneReportDraft | undefined' to type 'Record<string, unknown>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'AnnualFortuneReportDraft' is not comparable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'AnnualFortuneReportDraft'.
+tests/unit/report-generation/annualFortuneReportDraftValidator.test.ts(510,12): error TS2704: The operand of a 'delete' operator cannot be a read-only property.
+tests/unit/report-generation/compatibilityGenerationHandler.test.ts(13,3): error TS2459: Module '"../../../src/lib/report-generation/reportInputAdapter"' declares 'CompatibilityRelationshipType' locally, but it is not exported.
+tests/unit/report-generation/compatibilityReportDraftValidator.test.ts(123,12): error TS2704: The operand of a 'delete' operator cannot be a read-only property.
+tests/unit/report-generation/compatibilityReportDraftValidator.test.ts(522,7): error TS2345: Argument of type '"businessPartner"' is not assignable to parameter of type 'CompatibilityRelationshipType'.
+tests/unit/report-generation/compatibilityReportDraftValidator.test.ts(526,7): error TS2345: Argument of type '"businessPartner"' is not assignable to parameter of type 'CompatibilityRelationshipType'.
+tests/unit/report-generation/comprehensiveReportDraftValidator.test.ts(536,14): error TS2532: Object is possibly 'undefined'.
+tests/unit/report-generation/comprehensiveReportProfileTableBuilder.test.ts(70,12): error TS18048: 'profileTable.fiveElementBadges' is possibly 'undefined'.
+tests/unit/report-generation/comprehensiveReportProfileTableBuilder.test.ts(71,12): error TS18048: 'profileTable.fiveElementBadges' is possibly 'undefined'.
+tests/unit/report-generation/comprehensiveReportProfileTableBuilder.test.ts(72,12): error TS18048: 'profileTable.fiveElementBadges' is possibly 'undefined'.
+tests/unit/report-generation/comprehensiveReportProfileTableBuilder.test.ts(73,12): error TS18048: 'profileTable.fiveElementBadges' is possibly 'undefined'.
+tests/unit/report-generation/comprehensiveReportProfileTableBuilder.test.ts(74,12): error TS18048: 'profileTable.fiveElementBadges' is possibly 'undefined'.
+tests/unit/report-generation/majorFortuneGenerationHandler.test.ts(83,22): error TS2339: Property 'coreFlow' does not exist on type 'MajorFortuneTimelineYearDetail'.
+  Property 'coreFlow' does not exist on type 'MajorFortuneTimelineYearLegacyDetail'.
+tests/unit/report-generation/majorFortuneGenerationHandler.test.ts(84,22): error TS2339: Property 'realWorldScenes' does not exist on type 'MajorFortuneTimelineYearDetail'.
+  Property 'realWorldScenes' does not exist on type 'MajorFortuneTimelineYearLegacyDetail'.
+tests/unit/report-generation/majorFortuneGenerationHandler.test.ts(85,22): error TS2339: Property 'cautionPoint' does not exist on type 'MajorFortuneTimelineYearDetail'.
+  Property 'cautionPoint' does not exist on type 'MajorFortuneTimelineYearLegacyDetail'.
+tests/unit/report-generation/majorFortuneReportDraftValidator.test.ts(725,12): error TS2704: The operand of a 'delete' operator cannot be a read-only property.
+tests/unit/report-generation/majorFortuneReportDraftValidator.test.ts(821,12): error TS2704: The operand of a 'delete' operator cannot be a read-only property.
+tests/unit/report-generation/openaiComprehensiveReportWriter.test.ts(183,5): error TS2322: Type 'string' is not assignable to type '"" | MbtiType'.
+tests/unit/report-generation/openaiComprehensiveReportWriter.test.ts(502,9): error TS2322: Type 'string[] | readonly { readonly text?: string | undefined; }[]' is not assignable to type '{ readonly text?: string | undefined; } | readonly { readonly text?: string | undefined; }[]'.
+  Type 'string[]' is not assignable to type '{ readonly text?: string | undefined; } | readonly { readonly text?: string | undefined; }[]'.
+    Type 'string[]' is not assignable to type 'readonly { readonly text?: string | undefined; }[]'.
+      Type 'string' has no properties in common with type '{ readonly text?: string | undefined; }'.
+tests/unit/report-generation/openaiComprehensiveReportWriter.test.ts(504,66): error TS18046: 'content' is of type 'unknown'.
+tests/unit/report-generation/productPreviewSnapshot.test.ts(201,16): error TS2352: Conversion of type '{ productType: "annual_fortune"; version: "compatibility_v1_draft"; productVersion: "1.0"; relationshipType: CompatibilityRelationshipType; ... 11 more ...; safetyNotes: readonly string[]; }' to type 'ProductPreviewSnapshotDraft' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ productType: "annual_fortune"; version: "compatibility_v1_draft"; productVersion: "1.0"; relationshipType: CompatibilityRelationshipType; ... 11 more ...; safetyNotes: readonly string[]; }' is not comparable to type 'AnnualFortuneReportDraft | AnnualV3Draft'.
+    Type '{ productType: "annual_fortune"; version: "compatibility_v1_draft"; productVersion: "1.0"; relationshipType: CompatibilityRelationshipType; ... 11 more ...; safetyNotes: readonly string[]; }' is not comparable to type 'AnnualV3Draft'.
+      Type '{ productType: "annual_fortune"; version: "compatibility_v1_draft"; productVersion: "1.0"; relationshipType: CompatibilityRelationshipType; personALabel: string; ... 10 more ...; safetyNotes: readonly string[]; }' is missing the following properties from type 'Omit<AnnualFortuneReportDraft, "version" | "productVersion">': personLabel, mode, headline, targetYear, and 19 more.
+tests/unit/report-generation/productPreviewSnapshot.test.ts(217,16): error TS2352: Conversion of type '{ productVersion: ""; version: "compatibility_v1_draft"; productType: "saju_mbti_compatibility"; relationshipType: CompatibilityRelationshipType; ... 11 more ...; safetyNotes: readonly string[]; }' to type 'ProductPreviewSnapshotDraft' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ productVersion: ""; version: "compatibility_v1_draft"; productType: "saju_mbti_compatibility"; relationshipType: CompatibilityRelationshipType; ... 11 more ...; safetyNotes: readonly string[]; }' is not comparable to type 'CompatibilityReportDraft'.
+    Types of property 'productVersion' are incompatible.
+      Type '""' is not comparable to type '"1.0"'.
+tests/unit/report-knowledge/compatibilityEvidenceBuilder.test.ts(102,54): error TS2345: Argument of type 'string' is not assignable to parameter of type 'CompatibilityRelationshipCategoryInput'.
+tests/unit/report-knowledge/compatibilityEvidenceBuilder.test.ts(130,54): error TS2345: Argument of type 'string' is not assignable to parameter of type 'CompatibilityRelationshipCategoryInput'.
+tests/unit/report-knowledge/compatibilityScoreEngine.test.ts(13,7): error TS2322: Type 'CompatibilityRelationshipCategoryInput' is not assignable to type 'CompatibilityRelationshipType'.
+  Type '"businessPartner"' is not assignable to type 'CompatibilityRelationshipType'.
+tests/unit/report-knowledge/compatibilityScoreEngine.test.ts(40,7): error TS2322: Type 'CompatibilityRelationshipCategoryInput' is not assignable to type 'CompatibilityRelationshipType'.
+  Type '"businessPartner"' is not assignable to type 'CompatibilityRelationshipType'.
+tests/unit/report-knowledge/compatibilityScoreEngine.test.ts(50,7): error TS2322: Type 'CompatibilityRelationshipCategoryInput' is not assignable to type 'CompatibilityRelationshipType'.
+  Type '"businessPartner"' is not assignable to type 'CompatibilityRelationshipType'.
+tests/unit/report-knowledge/comprehensiveReportEvidenceInputBuilder.test.ts(419,30): error TS2345: Argument of type 'readonly string[]' is not assignable to parameter of type 'WithAsymmetricMatcher<string>[]'.
+  The type 'readonly string[]' is 'readonly' and cannot be assigned to the mutable type 'WithAsymmetricMatcher<string>[]'.
+tests/unit/report-knowledge/reportQualityFixtureMatrix.test.ts(40,34): error TS2345: Argument of type 'string' is not assignable to parameter of type '"INTJ" | "INTP" | "ENTJ" | "ENTP" | "INFJ" | "INFP" | "ENFP" | "ISTJ" | "ISFJ" | "ESTJ" | "ISFP" | "ESTP" | "ESFP"'.
+tests/unit/report-knowledge/reportQualityFixtureMatrix.test.ts(166,28): error TS2345: Argument of type 'string' is not assignable to parameter of type '"personality" | "relationship" | "work" | "money" | "love" | "family" | "study" | "environment" | "growth" | "positive" | "warning" | "mixed"'.
+tests/unit/report-knowledge/sajuComputedFactsMapper.test.ts(38,61): error TS2345: Argument of type 'readonly string[]' is not assignable to parameter of type 'WithAsymmetricMatcher<string>[]'.
+  The type 'readonly string[]' is 'readonly' and cannot be assigned to the mutable type 'WithAsymmetricMatcher<string>[]'.
+tests/unit/report-knowledge/sajuSymbolicNickname.test.ts(121,11): error TS2820: Type '"bi_jian"' is not assignable to type 'TenGod'. Did you mean '"bijian"'?
+tests/unit/report-tables/careerReportTablePresenter.test.ts(88,45): error TS18047: 'note.plainKo' is possibly 'null'.
+tests/unit/report-tables/careerReportTablePresenter.test.ts(91,45): error TS18047: 'note.plainKo' is possibly 'null'.
+tests/unit/report-tables/careerReportTablePresenter.test.ts(94,45): error TS18047: 'note.plainKo' is possibly 'null'.
+tests/unit/report/buildReport.test.ts(3,40): error TS2307: Cannot find module '@/lib/bridge/evaluate' or its corresponding type declarations.
+tests/unit/report/buildReport.test.ts(4,32): error TS2307: Cannot find module '@/lib/mbti/types' or its corresponding type declarations.
+tests/unit/report/buildReport.test.ts(5,29): error TS2307: Cannot find module '@/lib/report/buildReport' or its corresponding type declarations.
+tests/unit/report/buildReport.test.ts(6,42): error TS2307: Cannot find module '@/lib/report/pipeline' or its corresponding type declarations.
+tests/unit/report/buildReport.test.ts(7,31): error TS2307: Cannot find module '@/lib/saju/calculateSaju' or its corresponding type declarations.
+tests/unit/report/buildReport.test.ts(8,37): error TS2307: Cannot find module '@/lib/saju/dayPillarProfile' or its corresponding type declarations.
+tests/unit/report/buildReport.test.ts(9,33): error TS2307: Cannot find module '@/lib/saju/extractTags' or its corresponding type declarations.
+tests/unit/report/buildReport.test.ts(10,34): error TS2307: Cannot find module '@/lib/report/types' or its corresponding type declarations.
+tests/unit/report/buildReport.test.ts(11,30): error TS2307: Cannot find module '@/lib/saju/tags' or its corresponding type declarations.
+tests/unit/report/buildReport.test.ts(12,36): error TS2307: Cannot find module '@/lib/saju/types' or its corresponding type declarations.
+tests/unit/report/buildReport.test.ts(187,33): error TS7006: Parameter 'section' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(199,33): error TS7006: Parameter 'section' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(207,28): error TS7006: Parameter 'section' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(229,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(255,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(258,8): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(280,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(282,8): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(287,8): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(297,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(300,8): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(313,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(334,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(336,47): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(344,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(360,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(391,10): error TS7006: Parameter 'section' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(410,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(413,34): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(418,10): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(445,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(455,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(469,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(472,34): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(544,8): error TS7006: Parameter 'section' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(547,8): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(549,44): error TS7006: Parameter 'section' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(551,8): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(559,33): error TS7006: Parameter 'section' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(610,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(629,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(644,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(649,10): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(704,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(775,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(797,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(811,16): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(812,13): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(814,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(828,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(839,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(869,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(904,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(913,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(923,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(924,41): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(936,21): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(948,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(961,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(967,34): error TS7006: Parameter 'signal' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(977,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(980,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(1033,10): error TS7006: Parameter 'reportSection' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(1047,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(1101,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(1103,45): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(1153,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(1157,31): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(1163,28): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(1164,32): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(1196,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(1199,8): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(1201,32): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(1267,30): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/buildReport.test.ts(1273,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/pipeline.test.ts(3,42): error TS2307: Cannot find module '@/lib/report/pipeline' or its corresponding type declarations.
+tests/unit/report/pipeline.test.ts(4,49): error TS2307: Cannot find module '@/lib/report/types' or its corresponding type declarations.
+tests/unit/report/pipeline.test.ts(5,44): error TS2307: Cannot find module '@/lib/validation/types' or its corresponding type declarations.
+tests/unit/report/pipeline.test.ts(66,33): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/report/pipeline.test.ts(87,42): error TS7006: Parameter 'section' implicitly has an 'any' type.
+tests/unit/report/pipeline.test.ts(101,8): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/pipeline.test.ts(117,8): error TS7006: Parameter 'block' implicitly has an 'any' type.
+tests/unit/report/pipeline.test.ts(181,46): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/pipeline.test.ts(195,47): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/pipeline.test.ts(231,33): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/report/pipeline.test.ts(246,33): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/report/pipeline.test.ts(257,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/report/reportPersistencePayload.test.ts(5,33): error TS2307: Cannot find module '@/lib/persistence/reportPersistenceIds' or its corresponding type declarations.
+tests/unit/report/reportPersistencePayload.test.ts(14,8): error TS2307: Cannot find module '@/lib/report/reportPersistencePayload' or its corresponding type declarations.
+tests/unit/report/reportPersistencePayload.test.ts(15,35): error TS2307: Cannot find module '@/lib/report/types' or its corresponding type declarations.
+tests/unit/saju/advancedTags.test.ts(3,33): error TS2307: Cannot find module '@/lib/saju/extractTags' or its corresponding type declarations.
+tests/unit/saju/advancedTags.test.ts(4,45): error TS2307: Cannot find module '@/lib/saju/types' or its corresponding type declarations.
+tests/unit/saju/advancedTags.test.ts(77,39): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/advancedTags.test.ts(87,28): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/advancedTags.test.ts(96,27): error TS7006: Parameter 'value' implicitly has an 'any' type.
+tests/unit/saju/advancedTags.test.ts(108,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/advancedTags.test.ts(116,27): error TS7006: Parameter 'value' implicitly has an 'any' type.
+tests/unit/saju/advancedTags.test.ts(251,10): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/analyze.test.ts(10,8): error TS2307: Cannot find module '@/lib/saju/analyze' or its corresponding type declarations.
+tests/unit/saju/analyze.test.ts(11,29): error TS2307: Cannot find module '@/lib/saju/types' or its corresponding type declarations.
+tests/unit/saju/analyze.test.ts(67,23): error TS18046: 'sum' is of type 'unknown'.
+tests/unit/saju/analyze.test.ts(67,29): error TS18046: 'count' is of type 'unknown'.
+tests/unit/saju/analyze.test.ts(143,23): error TS18046: 'sum' is of type 'unknown'.
+tests/unit/saju/analyze.test.ts(143,29): error TS18046: 'count' is of type 'unknown'.
+tests/unit/saju/calculateSaju.test.ts(5,31): error TS2307: Cannot find module '@/lib/saju/calculateSaju' or its corresponding type declarations.
+tests/unit/saju/calculateSaju.test.ts(6,44): error TS2307: Cannot find module '@/lib/saju/types' or its corresponding type declarations.
+tests/unit/saju/calculateSaju.test.ts(83,10): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/calculateSajuShinsal.test.ts(3,31): error TS2307: Cannot find module '@/lib/saju/calculateSaju' or its corresponding type declarations.
+tests/unit/saju/calculateSajuShinsal.test.ts(4,36): error TS2307: Cannot find module '@/lib/saju/types' or its corresponding type declarations.
+tests/unit/saju/calculateSajuShinsal.test.ts(33,39): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/calculateSajuShinsal.test.ts(48,39): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/calculateSajuShinsal.test.ts(57,24): error TS7006: Parameter 'code' implicitly has an 'any' type.
+tests/unit/saju/calculateSajuShinsal.test.ts(68,10): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/calculateSajuShinsal.test.ts(85,28): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/calculateSajuShinsal.test.ts(106,35): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+tests/unit/saju/dayPillar.test.ts(3,43): error TS2307: Cannot find module '@/lib/saju/pillars' or its corresponding type declarations.
+tests/unit/saju/dayPillarProfile.test.ts(5,8): error TS2307: Cannot find module '@/lib/saju/dayPillarProfile' or its corresponding type declarations.
+tests/unit/saju/dayPillarProfile.test.ts(6,37): error TS2307: Cannot find module '@/lib/saju/dayPillarProfiles' or its corresponding type declarations.
+tests/unit/saju/dayPillarProfile.test.ts(104,44): error TS7006: Parameter 'profile' implicitly has an 'any' type.
+tests/unit/saju/extractTags.test.ts(3,31): error TS2307: Cannot find module '@/lib/saju/calculateSaju' or its corresponding type declarations.
+tests/unit/saju/extractTags.test.ts(4,33): error TS2307: Cannot find module '@/lib/saju/extractTags' or its corresponding type declarations.
+tests/unit/saju/extractTags.test.ts(5,36): error TS2307: Cannot find module '@/lib/saju/types' or its corresponding type declarations.
+tests/unit/saju/extractTags.test.ts(25,53): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/extractTags.test.ts(56,29): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/extractTags.test.ts(57,28): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/extractTags.test.ts(81,29): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/extractTags.test.ts(90,37): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/extractTags.test.ts(97,28): error TS7006: Parameter 'value' implicitly has an 'any' type.
+tests/unit/saju/extractTags.test.ts(118,29): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/extractTags.test.ts(133,44): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/extractTags.test.ts(135,48): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/hiddenStems.test.ts(9,8): error TS2307: Cannot find module '@/lib/saju/analyze' or its corresponding type declarations.
+tests/unit/saju/hiddenStems.test.ts(68,33): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+tests/unit/saju/hourPillar.test.ts(6,8): error TS2307: Cannot find module '@/lib/saju/pillars' or its corresponding type declarations.
+tests/unit/saju/lunarJavascriptPillars.test.ts(3,31): error TS2307: Cannot find module '@/lib/saju/calculateSaju' or its corresponding type declarations.
+tests/unit/saju/lunarJavascriptPillars.test.ts(4,60): error TS2307: Cannot find module '@/lib/saju/lunarJavascriptPillars' or its corresponding type declarations.
+tests/unit/saju/lunarJavascriptPillars.test.ts(5,47): error TS2307: Cannot find module '@/lib/saju/solarTerms' or its corresponding type declarations.
+tests/unit/saju/lunarJavascriptPillars.test.ts(6,44): error TS2307: Cannot find module '@/lib/saju/types' or its corresponding type declarations.
+tests/unit/saju/relations.test.ts(6,8): error TS2307: Cannot find module '@/lib/saju/relations' or its corresponding type declarations.
+tests/unit/saju/relations.test.ts(158,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/relations.test.ts(159,45): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/relations.test.ts(160,40): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(2,31): error TS2307: Cannot find module '@/lib/saju/shinsal' or its corresponding type declarations.
+tests/unit/saju/shinsal.test.ts(3,32): error TS2307: Cannot find module '@/lib/saju/analyze' or its corresponding type declarations.
+tests/unit/saju/shinsal.test.ts(19,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(33,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(48,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(61,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(73,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(82,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(91,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(97,10): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(107,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(124,24): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(130,35): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(148,16): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(149,13): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(162,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsal.test.ts(171,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsalTags.test.ts(3,31): error TS2307: Cannot find module '@/lib/saju/calculateSaju' or its corresponding type declarations.
+tests/unit/saju/shinsalTags.test.ts(4,33): error TS2307: Cannot find module '@/lib/saju/extractTags' or its corresponding type declarations.
+tests/unit/saju/shinsalTags.test.ts(5,36): error TS2307: Cannot find module '@/lib/saju/types' or its corresponding type declarations.
+tests/unit/saju/shinsalTags.test.ts(20,38): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/shinsalTags.test.ts(28,39): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/shinsalTags.test.ts(45,44): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/shinsalTags.test.ts(50,37): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/shinsalTags.test.ts(58,28): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsalTags.test.ts(71,8): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/shinsalTags.test.ts(74,8): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/shinsalTags.test.ts(87,8): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/shinsalTags.test.ts(90,8): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/shinsalTags.test.ts(102,47): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/shinsalTags.test.ts(104,16): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/shinsalTags.test.ts(105,13): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/shinsalTags.test.ts(117,23): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/shinsalTags.test.ts(136,8): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+tests/unit/saju/structureAnalysis.test.ts(3,38): error TS2307: Cannot find module '@/lib/saju/structureAnalysis' or its corresponding type declarations.
+tests/unit/saju/structureAnalysis.test.ts(5,37): error TS2307: Cannot find module '@/lib/saju/types' or its corresponding type declarations.
+tests/unit/saju/structureAnalysis.test.ts(49,51): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/structureAnalysis.test.ts(63,51): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/structureAnalysis.test.ts(70,40): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/tenGods.test.ts(3,27): error TS2307: Cannot find module '@/lib/saju/tenGods' or its corresponding type declarations.
+tests/unit/saju/tenGods.test.ts(4,43): error TS2307: Cannot find module '@/lib/saju/types' or its corresponding type declarations.
+tests/unit/saju/twelveShinsal.test.ts(2,31): error TS2307: Cannot find module '@/lib/saju/shinsal' or its corresponding type declarations.
+tests/unit/saju/twelveShinsal.test.ts(3,32): error TS2307: Cannot find module '@/lib/saju/analyze' or its corresponding type declarations.
+tests/unit/saju/twelveShinsal.test.ts(32,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/twelveShinsal.test.ts(54,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/twelveShinsal.test.ts(70,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/twelveShinsal.test.ts(85,35): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/twelveShinsal.test.ts(100,13): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/twelveShinsal.test.ts(101,16): error TS7006: Parameter 'code' implicitly has an 'any' type.
+tests/unit/saju/twelveShinsal.test.ts(120,16): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/twelveShinsal.test.ts(121,13): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/twelveShinsal.test.ts(137,18): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/twelveShinsal.test.ts(138,16): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/twelveShinsal.test.ts(150,15): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/twelveShinsal.test.ts(171,8): error TS7006: Parameter 'item' implicitly has an 'any' type.
+tests/unit/saju/yearMonthPillar.test.ts(6,8): error TS2307: Cannot find module '@/lib/saju/pillars' or its corresponding type declarations.
+tests/unit/sharing/paidDeliveryCompleteness.test.tsx(89,161): error TS2322: Type 'unknown' is not assignable to type 'ProductPreviewSnapshotDraft'.
+tests/unit/validation/reportRequest.test.ts(3,39): error TS2307: Cannot find module '@/lib/validation/reportRequest' or its corresponding type declarations.
+tests/unit/validation/reportRequest.test.ts(7,8): error TS2307: Cannot find module '@/lib/validation/types' or its corresponding type declarations.
+tests/unit/validation/reportRequest.test.ts(120,33): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/validation/reportRequest.test.ts(128,33): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/validation/reportRequest.test.ts(262,41): error TS7006: Parameter 'error' implicitly has an 'any' type.

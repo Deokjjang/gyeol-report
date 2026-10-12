@@ -1,3 +1,4 @@
+import timeProductLocks from "../../fixtures/release-technical-01/time-product-locks.json";
 import { describe, it, expect, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
@@ -119,8 +120,15 @@ describe("Love reader edition", () => {
       for (const key of ["bookId", "title", "names", "people", "context", "share", "readingDate"] as const) expect(book[key]).toEqual(old.book[key]);
       return;
     }
+    // Major/Annual were released after these original boundary locks. Their
+    // integrated output is frozen at 964e6b9; original historical locks remain.
+    const timeLock = f.id === "major" || f.id === "annual" ? timeProductLocks[f.id] : null;
+    if (timeLock) {
+      expect(f.payload).toEqual(timeLock.payload);
+      expect(SHADOW_CLOCK).toEqual(timeLock.clock);
+    }
     const r = await generateV4ShadowReport(f.payload, SHADOW_CLOCK); if (!r.ok) return expect.unreachable();
-    expect([v4Digest(r.draft), v4Digest(r.evidencePacket), v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(locks[f.id as keyof typeof locks]);
+    expect([v4Digest(r.draft), v4Digest(r.evidencePacket), v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(timeLock?.hashes ?? locks[f.id as keyof typeof locks]);
   }, 120000);
   it("rejects invented roots, child inference and reversed axes without changing the paid gate", () => {
     const input = fixtureInput(A), built = buildRelationshipProfiles(input), r = buildV4LoveProduct(input); if (!built.ok || !r.ok) return expect.unreachable();

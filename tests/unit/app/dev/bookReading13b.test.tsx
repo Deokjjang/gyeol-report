@@ -23,8 +23,8 @@ describe("Phase13B stable chapter navigation and complete presentation", () => {
     expect(b.pages.at(-2)).toMatchObject({ kind: "contents", title: "다시 펼쳐보기" });
     const front = b.pages[1], end = b.pages.at(-2)!;
     if (front.kind !== "contents" || end.kind !== "contents") return;
-    if (b.bookId === "full") {
-      expect(front.entries.length).toBe(13);
+    if (["full", "career", "love", "compatibility"].includes(b.bookId)) {
+      expect(front.entries.length).toBe(b.bookId === "full" ? 13 : 9);
       expect(end.entries.length).toBeGreaterThan(front.entries.length);
     } else expect(end.entries.slice(1)).toEqual(front.entries);
     expect(new Set(front.entries.map(e => e.targetId)).size).toBe(front.entries.length);

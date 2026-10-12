@@ -1,7 +1,10 @@
+import { BookLegalPage } from "../../../src/components/book/BookLegalRoutes";
+// Compare the retained legacy document branch with the V4 policy presentation.
+vi.mock("../../../src/lib/book/publicGate", () => ({ bookExperiencePublicEnabled: () => false }));
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import Terms from "../../../src/app/terms/page";
 import Privacy from "../../../src/app/privacy/page";
 import Refund from "../../../src/app/refund/page";
@@ -42,7 +45,7 @@ describe("legal document rendering", () => {
       expect(html).toContain(`<h2>${section.titleKo}</h2>`);
       for (const paragraph of section.bodyKo) expect(text(html)).toContain(paragraph);
     }
-    for (const condition of ["상품별 1,290원", "최대 24시간 이내 제공", "생성일로부터 90일", "만 19세 미만", "만 14세 미만", "고의 또는 중대한 과실", "7일 이내"]) {
+    for (const condition of ["상품별 1,490원", "최대 24시간 이내 제공", "생성일로부터 90일", "만 19세 미만", "만 14세 미만", "고의 또는 중대한 과실", "7일 이내"]) {
       expect(text(html)).toContain(condition);
     }
     expect(html).not.toContain(business.businessAddressKo);
@@ -123,5 +126,21 @@ describe("legal document rendering", () => {
     const css = readFileSync("src/components/legal/legal.module.css", "utf8");
     for (const marker of [":focus-visible", "prefers-reduced-motion", "overflow-wrap: anywhere", "font-size: 16px", "min-height: 44px"]) expect(css).toContain(marker);
     expect(css).not.toMatch(/transition:\s*all|animation:/);
+  });
+});
+
+describe("current V4 legal presentation", () => {
+  it.each([0, 1, 2, 3])("document %i opens its own accordion and preserves all policy text", index => {
+    const html = renderToStaticMarkup(<BookLegalPage index={index} />);
+    expect(html.match(/<main\b/g)).toHaveLength(1);
+    expect(html.match(/<h1\b/g)).toHaveLength(1);
+    const panels = [...html.matchAll(/<details([^>]*)>/g)];
+    expect(panels).toHaveLength(4);
+    expect(panels.map(panel => panel[1].includes("open"))).toEqual([0, 1, 2, 3].map(i => i === index));
+    for (const section of termsPolicySections) for (const paragraph of section.bodyKo) expect(text(html)).toContain(paragraph);
+    for (const row of refundPolicyStateRows) expect(text(html)).toContain(row.handlingKo);
+    for (const item of privacy.privacyPolicyCollectionItems) expect(text(html)).toContain(item);
+    expect(text(html)).toContain("support@gyeolreport.com");
+    expect(html).toContain('href="http://pf.kakao.com/_sbHaX/chat"');
   });
 });
