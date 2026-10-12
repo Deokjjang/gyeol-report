@@ -1,0 +1,8 @@
+
+ RUN  v4.1.5 /tmp/gyeol-six-product-integration-01
+
+
+ Test Files  1 passed (1)
+      Tests  18 passed (18)
+   Start at  23:29:44
+   Duration  2.46s (transform 998ms, setup 23ms, import 1.24s, tests 1.07s, environment 0ms)

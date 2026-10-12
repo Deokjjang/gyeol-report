@@ -1,0 +1,12 @@
+import {it,expect,afterAll} from '/Users/Deokmin/Dev/projects/gyeol-report/node_modules/vitest/dist/index.js';
+import {readFileSync,writeFileSync} from 'node:fs';
+import {storedBook} from '@/lib/book/storedReport';
+import {v4Digest} from '@/lib/interpretation-v4/runtimeProjection';
+const cases=[...['S','A','B','C','D','E','F','S-mbti'].map(id=>({group:'major',id})),...['H','A','B','C','D','E','F','H2025','H2027','C2028'].map(id=>({group:'annual',id}))],rows=[];
+it.each(cases)('$group/$id previous paid edition owner/shared replay is immutable',f=>{
+ const dir='/tmp/gyeol-'+f.group+'-reader-validation/before/',{book}=JSON.parse(readFileSync(dir+f.id+'.json','utf8'));
+ const saved=JSON.parse(readFileSync(dir+f.id+'.snapshot.json','utf8')),before=v4Digest(saved);
+ expect(storedBook(saved)?.data).toEqual(book);expect(storedBook(saved,'https://gyeolreport.com/r/abcdefghijklmnopqrstuvwx')?.data).toEqual(book);expect(v4Digest(saved)).toBe(before);
+ rows.push({...f,snapshot:before,book:v4Digest(book),immutable:true});
+});
+afterAll(()=>writeFileSync('/tmp/gyeol-six-integration-validation/legacy-books.json',JSON.stringify(rows,null,2)));

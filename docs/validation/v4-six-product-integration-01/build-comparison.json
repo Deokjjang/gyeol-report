@@ -1,0 +1,28 @@
+{
+  "fullBuild": {
+    "before": {
+      "status": "FAIL",
+      "file": "src/app/report/new/page.tsx",
+      "error": "getAsiaSeoulCurrentYear",
+      "compiled": true
+    },
+    "after": {
+      "status": "FAIL",
+      "file": "src/app/report/new/page.tsx",
+      "error": "getAnnualFortuneYearOptions",
+      "compiled": true
+    }
+  },
+  "compileTracing": {
+    "before": {
+      "traceStageReached": true,
+      "warnings": [],
+      "mode": "compile only; not a release build"
+    },
+    "after": {
+      "traceStageReached": true,
+      "warnings": [],
+      "mode": "compile only; not a release build"
+    }
+  }
+}

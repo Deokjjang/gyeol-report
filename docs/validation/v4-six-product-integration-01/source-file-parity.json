@@ -1,0 +1,212 @@
+[
+  {
+    "product": "major",
+    "path": "src/app/dev/book-preview/bookProjection.ts",
+    "source": "9460df97d929735d2d835216952948a202ad8af3",
+    "byteEqual": true
+  },
+  {
+    "product": "major",
+    "path": "src/lib/interpretation-v4/majorAnnualStories.ts",
+    "source": "9460df97d929735d2d835216952948a202ad8af3",
+    "byteEqual": true
+  },
+  {
+    "product": "major",
+    "path": "src/lib/interpretation-v4/majorComposer.ts",
+    "source": "9460df97d929735d2d835216952948a202ad8af3",
+    "byteEqual": true
+  },
+  {
+    "product": "major",
+    "path": "src/lib/interpretation-v4/majorHarmonyCopy.ts",
+    "source": "9460df97d929735d2d835216952948a202ad8af3",
+    "byteEqual": true
+  },
+  {
+    "product": "major",
+    "path": "src/lib/interpretation-v4/majorInteractionReading.ts",
+    "source": "9460df97d929735d2d835216952948a202ad8af3",
+    "byteEqual": true
+  },
+  {
+    "product": "major",
+    "path": "src/lib/interpretation-v4/majorPeriodCopy.ts",
+    "source": "9460df97d929735d2d835216952948a202ad8af3",
+    "byteEqual": true
+  },
+  {
+    "product": "major",
+    "path": "src/lib/interpretation-v4/majorYearNarrative.ts",
+    "source": "9460df97d929735d2d835216952948a202ad8af3",
+    "byteEqual": true
+  },
+  {
+    "product": "major",
+    "path": "src/lib/interpretation-v4/majorYearPersonalization.ts",
+    "source": "9460df97d929735d2d835216952948a202ad8af3",
+    "byteEqual": true
+  },
+  {
+    "product": "comprehensive",
+    "path": "src/lib/interpretation-v4/comprehensiveProductAdapter.ts",
+    "source": "1edcf3fb9f22e42b144706bd4b25ea2fb5c89462",
+    "byteEqual": true
+  },
+  {
+    "product": "comprehensive",
+    "path": "src/lib/interpretation-v4/comprehensiveReaderApplications.ts",
+    "source": "1edcf3fb9f22e42b144706bd4b25ea2fb5c89462",
+    "byteEqual": true
+  },
+  {
+    "product": "comprehensive",
+    "path": "src/lib/interpretation-v4/comprehensiveReleaseContracts.ts",
+    "source": "1edcf3fb9f22e42b144706bd4b25ea2fb5c89462",
+    "byteEqual": true
+  },
+  {
+    "product": "comprehensive",
+    "path": "src/lib/interpretation-v4/comprehensiveReleaseRenderer.ts",
+    "source": "1edcf3fb9f22e42b144706bd4b25ea2fb5c89462",
+    "byteEqual": true
+  },
+  {
+    "product": "comprehensive",
+    "path": "src/lib/interpretation-v4/comprehensiveReleaseSources.ts",
+    "source": "1edcf3fb9f22e42b144706bd4b25ea2fb5c89462",
+    "byteEqual": true
+  },
+  {
+    "product": "career",
+    "path": "src/lib/interpretation-v4/careerProductAdapter.ts",
+    "source": "80409f8a96c5a2b4bf93792ea6f5d1c97bbc1fa4",
+    "byteEqual": true
+  },
+  {
+    "product": "career",
+    "path": "src/lib/interpretation-v4/careerQualityApplications.ts",
+    "source": "80409f8a96c5a2b4bf93792ea6f5d1c97bbc1fa4",
+    "byteEqual": true
+  },
+  {
+    "product": "career",
+    "path": "src/lib/interpretation-v4/careerRecommendations.ts",
+    "source": "80409f8a96c5a2b4bf93792ea6f5d1c97bbc1fa4",
+    "byteEqual": true
+  },
+  {
+    "product": "career",
+    "path": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+    "source": "80409f8a96c5a2b4bf93792ea6f5d1c97bbc1fa4",
+    "byteEqual": true
+  },
+  {
+    "product": "career",
+    "path": "src/lib/interpretation-v4/careerReleaseRenderer.ts",
+    "source": "80409f8a96c5a2b4bf93792ea6f5d1c97bbc1fa4",
+    "byteEqual": true
+  },
+  {
+    "product": "career",
+    "path": "src/lib/interpretation-v4/careerReleaseSources.ts",
+    "source": "80409f8a96c5a2b4bf93792ea6f5d1c97bbc1fa4",
+    "byteEqual": true
+  },
+  {
+    "product": "love",
+    "path": "src/lib/interpretation-v4/loveReleaseApplications.ts",
+    "source": "544f14c36ba5de557b1d746879f1a69a5f57817f",
+    "byteEqual": true
+  },
+  {
+    "product": "love",
+    "path": "src/lib/interpretation-v4/loveReleaseContext.ts",
+    "source": "544f14c36ba5de557b1d746879f1a69a5f57817f",
+    "byteEqual": true
+  },
+  {
+    "product": "love",
+    "path": "src/lib/interpretation-v4/loveReleaseContracts.ts",
+    "source": "544f14c36ba5de557b1d746879f1a69a5f57817f",
+    "byteEqual": true
+  },
+  {
+    "product": "love",
+    "path": "src/lib/interpretation-v4/loveReleaseParenting.ts",
+    "source": "544f14c36ba5de557b1d746879f1a69a5f57817f",
+    "byteEqual": true
+  },
+  {
+    "product": "love",
+    "path": "src/lib/interpretation-v4/loveReleaseRenderer.ts",
+    "source": "544f14c36ba5de557b1d746879f1a69a5f57817f",
+    "byteEqual": true
+  },
+  {
+    "product": "love",
+    "path": "src/lib/interpretation-v4/loveReleaseSources.ts",
+    "source": "544f14c36ba5de557b1d746879f1a69a5f57817f",
+    "byteEqual": true
+  },
+  {
+    "product": "compatibility",
+    "path": "src/lib/interpretation-v4/compatibilityReleaseApplications.ts",
+    "source": "21da9173461f3530c5e945e4d306303e7660986b",
+    "byteEqual": true
+  },
+  {
+    "product": "compatibility",
+    "path": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+    "source": "21da9173461f3530c5e945e4d306303e7660986b",
+    "byteEqual": true
+  },
+  {
+    "product": "compatibility",
+    "path": "src/lib/interpretation-v4/compatibilityReleaseMaterials.ts",
+    "source": "21da9173461f3530c5e945e4d306303e7660986b",
+    "byteEqual": true
+  },
+  {
+    "product": "compatibility",
+    "path": "src/lib/interpretation-v4/compatibilityReleaseRenderer.ts",
+    "source": "21da9173461f3530c5e945e4d306303e7660986b",
+    "byteEqual": true
+  },
+  {
+    "product": "compatibility",
+    "path": "src/lib/interpretation-v4/compatibilityReleaseSources.ts",
+    "source": "21da9173461f3530c5e945e4d306303e7660986b",
+    "byteEqual": true
+  },
+  {
+    "product": "annual",
+    "path": "src/lib/interpretation-v4/annualComposer.ts",
+    "source": "f1994d13eb1ac40b913ec1419a1e0c24e7c89407",
+    "byteEqual": true
+  },
+  {
+    "product": "annual",
+    "path": "src/lib/interpretation-v4/annualEvidenceReading.ts",
+    "source": "f1994d13eb1ac40b913ec1419a1e0c24e7c89407",
+    "byteEqual": true
+  },
+  {
+    "product": "annual",
+    "path": "src/lib/interpretation-v4/annualInteractionReading.ts",
+    "source": "f1994d13eb1ac40b913ec1419a1e0c24e7c89407",
+    "byteEqual": true
+  },
+  {
+    "product": "annual",
+    "path": "src/lib/interpretation-v4/annualMonthNarrative.ts",
+    "source": "f1994d13eb1ac40b913ec1419a1e0c24e7c89407",
+    "byteEqual": true
+  },
+  {
+    "product": "annual",
+    "path": "src/lib/interpretation-v4/annualMonthPractice.ts",
+    "source": "f1994d13eb1ac40b913ec1419a1e0c24e7c89407",
+    "byteEqual": true
+  }
+]
