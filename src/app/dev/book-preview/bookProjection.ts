@@ -72,7 +72,7 @@ export function bookFeatureInventory(e: V4RuntimeEvidence, slot: "person" | "per
     for (const hidden of row.hiddenStems ?? []) if (!entries.some(v => v.key === `hidden:${hidden}`)) entries.push({ key: `hidden:${hidden}`, strong: false,
       display: { name: hidden, person: name, group: "지장간", meaning: [...MATERIAL_BY_FEATURE.values()].find(m => m.label === hidden.split(" ")[1])?.positiveMeaning ?? "표의 해당 기둥 안에 함께 담긴 기운.", manifestation: "" } });
     for (const stage of row.twelveLifeStage ?? []) if (!entries.some(v => v.key === `stage:${stage}`)) entries.push({ key: `stage:${stage}`, strong: false,
-      display: { name: stage, person: name, group: "십이운성", meaning: "일간과 지지의 관계를 성장의 단계에 빗대어 보는 이름.", manifestation: "" } });
+      display: { name: stage, person: name, group: "십이운성", meaning: (e.bookEditorialRevision === "common-editorial-01" ? COMPREHENSIVE_STAGE_MEANINGS[stage] : undefined) ?? "일간과 지지의 관계를 성장의 단계에 빗대어 보는 이름.", manifestation: "" } });
   }
   return e.composition.product === "saju_mbti_full" ? entries.map(entry => ({ ...entry, display: { ...entry.display,
     meaning: (entry.display.group === "십이운성" ? COMPREHENSIVE_STAGE_MEANINGS[entry.display.name] : COMPREHENSIVE_PLAIN_MEANINGS[entry.key]) ?? entry.display.meaning } })) : entries;

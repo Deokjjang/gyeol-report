@@ -8,8 +8,9 @@ import { v4Digest, validateV4Publication, type V4RuntimeEvidence } from "../../.
 import { projectBook } from "../../../src/app/dev/book-preview/bookProjection";
 import { createProductPreviewSnapshot, type ProductPreviewSnapshotDraft } from "../../../src/lib/report-generation/productPreviewSnapshot";
 import { storedBook } from "../../../src/lib/book/storedReport";
-import { MAJOR_SAFETY_CASES, MAJOR_SAFETY_CLOCK, majorSafetyInvariant } from "./majorEditorialSafetyFixtures";
-import locks from "./majorEditorialSafetyLocks.json";
+import { MAJOR_SAFETY_CASES, MAJOR_SAFETY_CLOCK } from "./majorEditorialSafetyFixtures";
+import editions from "../../fixtures/common-editorial-01/edition-locks.json";
+import { editorialInvariants } from "./editorialInvariants";
 
 type Generated = Extract<Awaited<ReturnType<typeof generateV4ShadowReport>>, { ok: true }>;
 const generated = new Map<string, Generated & { evidencePacket: V4RuntimeEvidence }>();
@@ -40,12 +41,13 @@ describe("Major editorial assembly safety", () => {
     expect(withKoreanParticle(word, "to")).toBe(to);
   });
 
-  it.each(MAJOR_SAFETY_CASES)("$id: only authorized copy changes; calendar, proofs and all other prose stay frozen", ({ id, payload }) => {
+  it.each(MAJOR_SAFETY_CASES)("$id: common editorial copy preserves calendar, selected evidence and paragraph proofs", ({ id, payload }) => {
     const g = generated.get(id)!;
     expect(g.evidencePacket.composition.product).toBe("major_fortune");
     if (g.evidencePacket.composition.product !== "major_fortune") return;
     const r = g.evidencePacket.composition.result;
-    expect(v4Digest(majorSafetyInvariant(r))).toBe(locks.rows[id as keyof typeof locks.rows].invariant);
+    const key = "ABCDEF"[MAJOR_SAFETY_CASES.findIndex(f => f.id === id)];
+    expect(v4Digest(editorialInvariants(g.evidencePacket))).toBe(editions.find(f => f.product === "major" && f.id === key)!.invariant);
     expect(r.contentAudit.hedgeChapters).toEqual(auditContent(r.narrative).hedgeChapters);
     expect(r.years.map(y => y.year)).toEqual(Array.from({ length: 14 }, (_, i) => 2023 + i));
     expect(r.completeness).toMatchObject({ years: 14, futureYears: 10, ages: true, final: true });

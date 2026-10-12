@@ -243,7 +243,7 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
       L(`${scene.influence}, ${P}의 ${particle(from.gift.material.gift, "이", "가")} ${Q}에게 도움이 될 수 있습니다`, s),
       L(i === 0 ? `${Q}에게 익숙한 것은 ${act(to)}이며, 상대의 도움을 받아도 이 방식으로 직접 참여할 몫은 남겨둘 만합니다` : `${Q}은 ${particle(act(to), "을", "를")} 바탕으로 자기 답을 찾는 편이므로, ${P}의 기여를 받아도 선택을 직접 확인할 여지는 필요합니다`, ts, "SOURCE"),
       L(e.category === "parentChild" && i === 1 ? `자녀 ${P}의 시도를 보며 부모 ${Q}이 새 관점을 배울 수 있지만, 부모의 어려움을 해결하는 역할까지 자녀에게 맡기지는 않아야 합니다` : e.category === "managerReport" && i === 1 ? `팀원 ${P}의 제안은 상사 ${Q}의 판단에 정보를 더해줄 수 있으며, 최종 권한과 책임이 팀원에게 넘어가는 것은 아닙니다` : i === 0 ? `${P}이 가능한 도움을 먼저 설명하고 ${Q}이 쓸 부분을 고르면, 서로의 좋은 면을 같은 방식으로 바꾸지 않아도 함께 시도할 폭이 넓어집니다` : `${Q}이 평소 혼자 확인하던 부분에 ${P}의 관점을 보태보면, 도움을 받으면서도 최종 선택은 직접 할 수 있습니다`, s),
-      L(`${Q}이 어떤 도움이 실제로 필요했는지 알려주면, ${P}도 수고를 더 늘리기보다 필요한 곳에 힘을 쓸 수 있습니다`, ts)]); }
+      L(i === 0 ? `${Q}이 어떤 도움이 실제로 필요했는지 알려주면, ${P}도 수고를 더 늘리기보다 필요한 곳에 힘을 쓸 수 있습니다` : `${P}이 보탠 뒤 ${Q}이 혼자 이어갈 부분까지 정하면, 다음에도 같은 도움을 기다려야 하는 부담을 줄일 수 있습니다`, ts)]); }
     if (from.risk && to.need) { const rs = root(from.slot, from.risk), ns = root(to.slot, to.need), n = node(to.slot, to.need.material.axis); add(c, 2, [
       L(`${scene.burden}, ${P}의 ${particle(from.risk.material.risk, "이", "가")} ${Q}에게는 부담으로 커질 수 있습니다`, rs),
       L(i === 0 ? `${Q}에게 필요한 ${particle(to.need.material.need, "이", "가")} 빠지면, 도움의 크기보다 자신이 참여할 자리가 있는지를 먼저 묻게 되기 때문입니다` : `${Q}은 ${particle(to.need.material.need, "을", "를")} 중요하게 여기는 만큼, 선의로 건넨 행동도 자신의 기준을 무시한다고 느끼면 받아들이기 어려울 수 있습니다`, ns),
@@ -253,7 +253,7 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
       L(i === 0 ? `${P}이 영향을 건네기 전에 시도할 일은 ‘${from.risk.material.adjust}’입니다` : `${P}은 ‘${from.risk.material.adjust}’부터 시작해 ${Q}에게 어떤 도움이 필요한지 들을 수 있습니다`, rs),
       L(i === 0 ? `${Q}에게 ${particle(to.need.material.need, "을", "를")} 남기는 방법을 물으면, 호의를 줄이기보다 받아들일 수 있는 형태로 바꿀 수 있습니다` : `${Q}이 바라는 ${particle(to.need.material.need, "을", "를")} 건드리지 않도록 도움을 제안하면, 거절도 관계를 끊는 말 대신 범위를 맞추는 대답이 됩니다`, ns),
       L(e.category === "parentChild" ? i === 0 ? "부모는 해도 되는 범위와 위험할 때 도울 방법을 설명하고, 자녀가 직접 고를 작은 선택을 남길 수 있습니다" : "자녀는 해보고 싶은 일과 도움이 필요한 곳을 말할 수 있으며, 부모가 안전과 최종 결정의 책임을 맡아야 합니다" : e.category === "managerReport" ? i === 0 ? "상사는 꼭 지킬 결과와 팀원이 바꿔도 되는 방법을 구분해 전달해야, 자율성을 주었다는 말이 실제 권한이 됩니다" : "팀원은 직접 판단한 부분과 상사의 결정이 필요한 부분을 나눠 보고하면, 제안의 책임 범위를 분명하게 지킬 수 있습니다" : i === 0 ? `${P}이 제안을 확정하기 전에 ${Q}이 수정하거나 거절할 수 있는 시점을 정해두면, 서로의 속도가 달라도 함께 판단할 자리가 생깁니다` : `${P}은 무엇을 해주겠다는 말 뒤에 ${Q}이 직접 고를 부분도 밝혀둘 수 있으며, 답이 늦어도 준비한 도움부터 밀어붙이지 않는 편이 좋습니다`, rs),
-      L(`${Q}이 자기 답을 낼 수 있을 때 ${P}의 자극도 따르라는 요구보다 새로운 선택의 계기로 남습니다`, ds)]); }
+      L(i === 0 ? `${Q}이 자기 답을 낼 수 있을 때 ${P}의 자극도 따르라는 요구보다 새로운 선택의 계기로 남습니다` : `${Q}이 이번 제안에서 고른 부분과 보류한 부분을 알려주면, ${P}도 다음에는 필요한 범위에 맞춰 의견을 건넬 수 있습니다`, ds)]); }
   }
   if (friction) { const s = comparison(friction); add(6, 0, [
     L(`${scene.conflict} 두 사람의 다른 첫 반응이 드러날 수 있습니다`, s),

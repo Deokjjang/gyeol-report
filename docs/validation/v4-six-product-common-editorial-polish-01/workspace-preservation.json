@@ -1,0 +1,65 @@
+{
+  "/Users/Deokmin/Dev/projects/gyeol-report": {
+    "beforeHead": "c048218cc5961e0f53a1deab2603511e17559fc3",
+    "afterHead": "c048218cc5961e0f53a1deab2603511e17559fc3",
+    "status": " M .gitignore\n M AGENTS.md\n?? supabase/.temp/\n",
+    "unchanged": true,
+    "trackedAndUntrackedFiles": 1857
+  },
+  "/private/tmp/gyeol-annual-fortune-reader-quality-polish-01": {
+    "beforeHead": "f1994d13eb1ac40b913ec1419a1e0c24e7c89407",
+    "afterHead": "f1994d13eb1ac40b913ec1419a1e0c24e7c89407",
+    "status": "",
+    "unchanged": true,
+    "trackedAndUntrackedFiles": 1856
+  },
+  "/private/tmp/gyeol-career-editorial-quality-fix-01": {
+    "beforeHead": "80409f8a96c5a2b4bf93792ea6f5d1c97bbc1fa4",
+    "afterHead": "80409f8a96c5a2b4bf93792ea6f5d1c97bbc1fa4",
+    "status": "",
+    "unchanged": true,
+    "trackedAndUntrackedFiles": 1888
+  },
+  "/private/tmp/gyeol-compatibility-editorial-quality-fix-01": {
+    "beforeHead": "21da9173461f3530c5e945e4d306303e7660986b",
+    "afterHead": "21da9173461f3530c5e945e4d306303e7660986b",
+    "status": "",
+    "unchanged": true,
+    "trackedAndUntrackedFiles": 1870
+  },
+  "/private/tmp/gyeol-comprehensive-editorial-quality-fix-01": {
+    "beforeHead": "1edcf3fb9f22e42b144706bd4b25ea2fb5c89462",
+    "afterHead": "1edcf3fb9f22e42b144706bd4b25ea2fb5c89462",
+    "status": "",
+    "unchanged": true,
+    "trackedAndUntrackedFiles": 1870
+  },
+  "/private/tmp/gyeol-love-editorial-quality-fix-01": {
+    "beforeHead": "544f14c36ba5de557b1d746879f1a69a5f57817f",
+    "afterHead": "544f14c36ba5de557b1d746879f1a69a5f57817f",
+    "status": "",
+    "unchanged": true,
+    "trackedAndUntrackedFiles": 1889
+  },
+  "/private/tmp/gyeol-major-fortune-reader-quality-polish-01": {
+    "beforeHead": "9460df97d929735d2d835216952948a202ad8af3",
+    "afterHead": "9460df97d929735d2d835216952948a202ad8af3",
+    "status": "",
+    "unchanged": true,
+    "trackedAndUntrackedFiles": 1851
+  },
+  "/private/tmp/gyeol-six-product-integration-01": {
+    "beforeHead": "a46eff86e305f5a58721bdd83a2249686e54be4c",
+    "afterHead": "a46eff86e305f5a58721bdd83a2249686e54be4c",
+    "status": "",
+    "unchanged": true,
+    "trackedAndUntrackedFiles": 2034
+  },
+  "/Users/Deokmin/Documents/Codex/2026-09-29/referenced-chatgpt-conversation-this-is-an/work/gyeol-share-brand": {
+    "beforeHead": "4e25b8775c3947e4a3d661f0e23c87950d15c8d4",
+    "afterHead": "4e25b8775c3947e4a3d661f0e23c87950d15c8d4",
+    "status": "",
+    "unchanged": true,
+    "trackedAndUntrackedFiles": 1079
+  }
+}

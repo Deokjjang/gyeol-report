@@ -134,6 +134,7 @@ describe("13D-7A Career actual generation and frozen Book", () => {
     const old = composeCareerNarrative({ ...fixtureInput(NARRATIVE_FIXTURES[9]), calculation: e.calculations.person });
     if (!old.ok) return expect.unreachable();
     const { contentDigest: _, ...body } = { ...e, composition: { product: "career_money_study" as const, result: old } }; void _;
+    delete body.bookEditorialRevision; // Saved editions predate the new appendix copy.
     const sealed = { ...body, contentDigest: v4Digest(body) };
     expect(v4Digest(projectV4Composition(sealed.composition))).toBe("da397c9052a3cd3bd8af9941ebe9783eff0c8732bd7abf77a36280b99e72fb99");
     expect(v4Digest(storedBook(snapshot(sealed))!.data)).toBe("648361de2423428cb2524fad6929d89c552355684d9a0b6333662e85fdf13e30");

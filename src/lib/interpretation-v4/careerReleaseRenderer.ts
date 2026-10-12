@@ -42,8 +42,8 @@ export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfi
   const sourceRefs = (r: CareerReleaseSource): Refs => ({ source: r.candidate.id, roots: [r.atom.id], nodes: [], fusion: [], theme: r.candidate.semanticTheme,
     material: `career:${r.facet}`, row: r, sourceRefs: [r.candidate.sourceId] });
   const reason = (r: CareerReleaseSource) => terms.has(`${r.atom.sourceType}:${r.atom.sourceKey}`)
-    ? `${current.title}에서는 ${careerAtomName(r.atom)}의 성향을 ${CAREER_TASKS[r.facet].task}에 연결해 읽습니다.`
-    : `${careerAtomName(r.atom)}에 담긴 ‘${quote(r.atom.easyMeaning)}’의 뜻이 이 업무 경향의 명리 근거입니다.`;
+    ? ""
+    : `${careerAtomName(r.atom)}에서 읽는 명리적 뜻은 ‘${quote(r.atom.easyMeaning)}’입니다.`;
   const rootLine = (text: string, r: CareerReleaseSource, material: string): Line => ({ text, refs: { ...sourceRefs(r), material } });
   function add(p: number, lines: Line[]) {
     const contract = CAREER_READER_CHAPTERS.find(c => c.id === current.id)!.paragraphs[p];
@@ -216,7 +216,7 @@ export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfi
     } else if (c.id === "CH05") {
       const row = eligible([], false, false)[0];
       if (row) add(0, [
-        { text: input.context.detailJob ? `입력한 현재 직업은 ‘${input.context.detailJob}’이며, 고용 형태나 직급을 더 추정하지 않습니다.` : status[0], refs: contextRefs },
+        { text: input.context.detailJob ? `현재 알려준 일인 ‘${input.context.detailJob}’에 비춰 다음 선택을 살펴보겠습니다.` : status[0], refs: contextRefs },
         rootLine(`${particle(CAREER_RELEASE_MATERIALS[row.facet].label, "을", "를")} 지금 맡을 과제에 적용할 범위를 정해 볼 만합니다.`, row, `career:${row.facet}:current-strength`),
         rootLine(`현재 과제 하나에 ‘${CAREER_TASKS[row.facet].test}’를 적용하고, 그 전후에 달라진 판단을 비교해 보세요.`, row, `career:${row.facet}:current-scene`),
         { text: jobSteps?.[0] ?? status[3], refs: contextRefs },
@@ -305,10 +305,10 @@ export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfi
         `${particle(CAREER_TASKS[r.facet].result, "이", "가")} 그 자리에서도 가치로 인정돼야, 내 능력과 실제 역할이 만날 수 있습니다.`,
         `상담에서는 ${particle(CAREER_TASKS[r.facet].criterion, "이", "가")} 있는지 묻고, 결과를 평가할 기준도 확인할 만합니다.`,
         "실제 하루의 과제를 알면, 강점을 쓰기 어려운 자리를 구분할 수 있습니다."], main ? [main.facet] : [], false, true);
-      application(1, "risk-reminder", (m, r) => [`선택 앞에서도 ${particle(CAREER_TASKS[r.facet].trap, "을", "를")} 경계해야 하며, 앞서 읽은 약점은 큰 결정에서도 반복될 수 있습니다.`,
+      application(1, "risk-reminder", (m, r) => [`앞서 읽은 약점을 새 역할의 선택 기준으로 옮겨보면, ${particle(CAREER_TASKS[r.facet].criterion, "이", "가")} 실제로 주어지는지 물어볼 수 있습니다.`,
         `${particle(m.label, "이", "가")} 필요한 일일수록 같은 방식에만 기대기 쉬우므로, 결과와 지금의 부담을 함께 돌아보아야 합니다.`,
-        "요청이 늘고 시간이 줄어들면 평소의 방법을 자동으로 반복하기 쉬우니, 합의한 범위가 바뀌었는지부터 살펴야 합니다.",
-        `앞선 위험에 대응해 ‘${CAREER_TASKS[r.facet].test}’를 실행한 뒤 결과와 부담의 변화를 대조하면, 조정할 부분이 구체적으로 보입니다.`], [], true, true);
+        `면담에서는 ${particle(CAREER_TASKS[r.facet].result, "을", "를")} 평가하는 방법과, 그 일을 위해 쓸 수 있는 시간을 함께 물어보세요.`,
+        "잘할 수 있다는 이유만으로 그 역할을 골라야 하는 것은 아니며, 필요한 권한과 시간을 얻기 어려운 조건도 선택에 포함할 만합니다."], [], true, true);
       application(2, "integrated-growth", (m, r) => [`${input.context.detailJob ? `입력한 ${input.context.detailJob}의 과제에서도 먼저` : "먼저"} ${particle(CAREER_TASKS[r.facet].task, "을", "를")} 해낸 과정을 남겨, 고른 방법과 결과를 함께 보여 줄 만합니다.`,
         `장기적으로 ${particle(CAREER_TASKS[r.facet].skill, "을", "를")} 다른 조건의 과제에도 적용하면, 맡을 범위가 넓어집니다.`,
         `${particle(CAREER_TASKS[r.facet].result, "을", "를")} 대가를 이야기할 근거로 남기면, 배운 양보다 제공한 가치로 자신을 설명하기 좋습니다.`,

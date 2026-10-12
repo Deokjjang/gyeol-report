@@ -5,6 +5,7 @@ import { createMajorFortuneV3 } from "../../../src/lib/report-generation/majorFo
 import { majorInteractionReading, withMajorInteractions } from "../../../src/lib/interpretation-v4/majorInteractionReading";
 import { MAJOR_SAFETY_CASES, MAJOR_SAFETY_CLOCK } from "./majorEditorialSafetyFixtures";
 import locks from "./majorInteractionLocks.json";
+import editions from "../../fixtures/common-editorial-01/edition-locks.json";
 
 type Result = Extract<V4RuntimeEvidence["composition"], { product: "major_fortune" }>["result"];
 const results = new Map<string, Result>();
@@ -28,7 +29,8 @@ describe("Major verified annual interaction explanations", () => {
       years: r.years.map(year => Object.fromEntries(Object.entries(year).filter(([key]) => key !== "blocks"))) };
     const old = locks.rows[id as keyof typeof locks.rows];
     expect(v4Digest(frozen)).toBe(old.invariant);
-    expect(v4Digest(r.years.flatMap(y => y.blocks.map(b => ({ id: b.id, text: b.text.slice(-old.lengths[b.id as keyof typeof old.lengths]) }))))).toBe(old.texts);
+    const key = "ABCDEF"[MAJOR_SAFETY_CASES.findIndex(f => f.id === id)];
+    expect(v4Digest(r.narrative)).toBe(editions.find(f => f.product === "major" && f.id === key)!.hashes.narrative);
     expect(v4Digest(r.years.flatMap(y => y.blocks.map(b => ({ id: b.id, proof: b.id === `${y.year}-character` ? y.proof : b.proof }))))).toBe(old.proofs);
     expect(r.editorial).toEqual([]);
     expect(r.years.flatMap(y => y.blocks.map(b => b.text)).join(" ")).not.toContain("목소리’이라는");

@@ -1,0 +1,20 @@
+{
+  "before": 390,
+  "after": 390,
+  "newLocationAndCode": [],
+  "removedLocationAndCode": [],
+  "messageOrderOnlyDifferences": [
+    {
+      "locationAndCode": "tests/unit/interpretation-v3/commonFinal.test.tsx(69,32): TS2339",
+      "before": "tests/unit/interpretation-v3/commonFinal.test.tsx(69,32): error TS2339: Property 'narrativeAudit' does not exist on type 'LoveV3Draft | CompatibilityV3Draft | MajorFortuneV3Draft | (ComprehensiveV3Draft & { narrativeEdition: \"mbti-library-1\" | \"mbti-library-2\"; narrativeAudit: readonly NarrativeAudit[]; rhythmWarnings: readonly string[]; } & { ...; }) | (CareerV3Draft & ... 1 more ... & { ...; })'.",
+      "after": "tests/unit/interpretation-v3/commonFinal.test.tsx(69,32): error TS2339: Property 'narrativeAudit' does not exist on type 'MajorFortuneV3Draft | LoveV3Draft | CompatibilityV3Draft | (ComprehensiveV3Draft & { narrativeEdition: \"mbti-library-1\" | \"mbti-library-2\"; narrativeAudit: readonly NarrativeAudit[]; rhythmWarnings: readonly string[]; } & { ...; }) | (CareerV3Draft & ... 1 more ... & { ...; })'.",
+      "classification": "same union members; print order only"
+    },
+    {
+      "locationAndCode": "tests/unit/report-knowledge/reportQualityFixtureMatrix.test.ts(166,28): TS2345",
+      "before": "tests/unit/report-knowledge/reportQualityFixtureMatrix.test.ts(166,28): error TS2345: Argument of type 'string' is not assignable to parameter of type '\"personality\" | \"relationship\" | \"work\" | \"money\" | \"love\" | \"family\" | \"study\" | \"environment\" | \"growth\" | \"positive\" | \"warning\" | \"mixed\"'.",
+      "after": "tests/unit/report-knowledge/reportQualityFixtureMatrix.test.ts(166,28): error TS2345: Argument of type 'string' is not assignable to parameter of type '\"work\" | \"money\" | \"study\" | \"love\" | \"growth\" | \"positive\" | \"mixed\" | \"family\" | \"personality\" | \"relationship\" | \"environment\" | \"warning\"'.",
+      "classification": "same union members; print order only"
+    }
+  ]
+}

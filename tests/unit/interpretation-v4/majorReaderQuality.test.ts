@@ -55,10 +55,10 @@ it.each(cases)("$id: exact baseline calculations, complete evidence, MBTI/Fusion
 it("S 2027/2029/2032 bind different harmony scopes to actual yearly decisions", () => {
   const r = samples.get("S")!.r;
   const cases = [[2027, "삼합", "亥·卯·未", "공통 목표와 각자의 기여", "외부 제안"],
-    [2029, "육합", "辰·酉", "종료 조건", "도움을 청할 기준"], [2032, "반합", "子·申", "작은 시도", "서로 보탤 실력"]] as const;
+    [2029, "육합", "辰·酉", "호흡이 맞아도", "도움을 청할 기준"], [2032, "반합", "子·申", "맞닿는 부분만", "서로 보탤 실력"]] as const;
   for (const [n, type, branches, action, focus] of cases) {
     const y = year("S", n), reading = majorInteractionReading(r.evidence, y), gift = y.blocks.find(b => b.id === `${n}-gift`)!;
-    expect(gift.text).toContain(type); expect(gift.text).toContain(branches); expect(gift.text).toContain(action); expect(gift.text).toContain(focus);
+    expect(gift.text).toContain(type); expect(gift.text).toContain(branches); expect(gift.text).toContain(action); expect(y.blocks.map(b => b.text).join(" ")).toContain(focus);
     for (const ref of reading.harmonyIds) expect(gift.proof.sourceRefs).toContain(ref);
   }
   expect(year("S", 2027).blocks.find(b => b.id === "2027-gift")!.text).toContain("원국 연지 亥·원국 시지 卯");

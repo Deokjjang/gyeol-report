@@ -24,7 +24,7 @@
         "contentVersion": "v4"
       }
     },
-    "sha256": "faa46cea0c98916daf2e48ccf1c38832ca5b9dec0f4b559923e54ab6c1a9493f"
+    "sha256": "0ed98a4907b21386a30c03b85c4b93d902b9b87df0bb19aa8c2c095019a29737"
   },
   {
     "id": "01-comprehensive",
@@ -51,7 +51,7 @@
         "contentVersion": "v4"
       }
     },
-    "sha256": "4257048f3f5cba0a10986f98c2b30cf90dc22aa4a0f9df682d90b452ff91cafc"
+    "sha256": "a89d947e2547aaeba4d2df723b6c6dd0d31770cb775399de326a9e2005b7265c"
   },
   {
     "id": "06-annual-fortune",
@@ -79,7 +79,7 @@
         "selectedYear": "2026"
       }
     },
-    "sha256": "49a25ea9bfb765453ec80ccc86b615b3658f1f8c7ae8ad6f9730d518f196e4e4"
+    "sha256": "3a437388ceffd7fd7fa1cf048efb7afe87515b04a1c9e33dfc24c33ad828eda5"
   },
   {
     "id": "04-compatibility",
@@ -109,7 +109,7 @@
         "approximateBirthTimeSlot": ""
       }
     },
-    "sha256": "3546789c1194f8a89e4f8c2898256dec4b78d6756045281c3526805948d0febd"
+    "sha256": "cef9d7d499d9b977a049a76d1fd286143e833bb1a7c38ebfeb37e965874e2fcc"
   },
   {
     "id": "03-love",
@@ -136,6 +136,6 @@
         "contentVersion": "v4"
       }
     },
-    "sha256": "7d7b37ea00d38572e944ab32d84b3a850fe7413f1d2aa8957b52f5aa1f897673"
+    "sha256": "dcce55906db9d3a907bc666e2924863292604fcb8ce86e41ab1c57a8aad85720"
   }
 ]

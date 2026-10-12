@@ -224,7 +224,7 @@ export function renderLoveRelease(input: NarrativeInput, view: RelationshipView,
           && profiles.mbti.annotations.some(a => a.sourceNodeId === n.id && a.annotationConfidence !== "REFERENCE_ONLY" && (a.axes[r.axis] ?? 0) * r.direction > 0))
           .sort((a, b) => Number(b.sourceDomain === "LOVE") - Number(a.sourceDomain === "LOVE") || a.id.localeCompare(b.id))[0];
         add(1, [
-          `${particle(loveSourceName(r.atom), "은", "는")} ‘${meaning(r.atom.easyMeaning)}’의 뜻으로 읽는 근거이며, 이 힘 자체가 나쁜 것은 아닙니다.`,
+          `${loveSourceName(r.atom)}에서 읽은 ${particle(m.label, "은", "는")} 장점이지만, 언제 어떻게 쓰는지에 따라 상대가 받는 느낌은 달라질 수 있습니다.`,
           `문제는 ${particle(m.need, "을", "를")} 원하는 마음이 강해질 때, 상대도 같은 방법을 원한다는 전제를 먼저 둘 수 있다는 점입니다.`,
           LOVE_QUESTION_DETAILS[r.facet].cause,
         ].map(text => ({ text, refs: refs(r, "risk-cause") })).concat(node ? [{

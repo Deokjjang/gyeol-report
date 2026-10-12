@@ -112,9 +112,9 @@ describe("Love reader edition", () => {
       const book = projectBook(fresh.evidencePacket as V4RuntimeEvidence); if (!book) return expect.unreachable();
       const preserved = new Set(["cover", "input", "manse", "mbti", "back"]);
       expect(book.pages.filter(p => preserved.has(p.kind))).toEqual(old.book.pages.filter((p: { kind: string }) => preserved.has(p.kind)));
-      // The inventory/copy is frozen; `core` is the edition's actual body-use
-      // marker, so an old unused hero must not be relabeled as new evidence.
-      const inventory = (pages: typeof book.pages) => pages.flatMap(p => p.kind === "appendix" ? p.items.map(item => { const copy = { ...item }; delete copy.core; return copy; }) : []);
+      // Preserve inventory/order and non-stage copy. New stage definitions are
+      // checked separately; the saved edition above retains its original copy.
+      const inventory = (pages: typeof book.pages) => pages.flatMap(p => p.kind === "appendix" ? p.items.map(item => { const copy = { ...item }; delete copy.core; if (copy.group === "십이운성") copy.meaning = "<edition-stage-definition>"; return copy; }) : []);
       expect(inventory(book.pages)).toEqual(inventory(old.book.pages));
       for (const key of ["bookId", "title", "names", "people", "context", "share", "readingDate"] as const) expect(book[key]).toEqual(old.book[key]);
       return;

@@ -37,6 +37,8 @@ export type V4RuntimeEvidence = {
   readonly mode: "shadow";
   readonly productType: V4Composition["product"];
   readonly generatedAt: string;
+  /** New Book copy only; absent on immutable earlier editions. */
+  readonly bookEditorialRevision?: "common-editorial-01";
   readonly input: ReportGenerationInput;
   readonly composition: V4Composition;
   readonly calculations: Readonly<Record<string, SajuCalcResult>>;

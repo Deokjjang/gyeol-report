@@ -20,15 +20,14 @@ const meanings: Record<AnnualBranchInteractionType, string> = {
 // Reviewed relationActions supply the constraint; the actual monthly topic
 // supplies the decision. A natal day branch does not imply a romantic scene.
 function application(type: AnnualBranchInteractionType, practice: ReturnType<typeof annualMonthPractice>) {
-  const check = `‘${practice.check}’`;
   const constraints: Record<AnnualBranchInteractionType, string> = {
-    충: `기존 일정과 겹친다면 ${p(check, "object")} 먼저 조정해보세요.`,
-    형: `같은 부담이 되풀이된다면 ${p(check, "object")} 다시 정해보세요.`,
-    파: `이미 정해둔 방식이 있다면 ${check} 중 손볼 부분부터 작게 바꿔보세요.`,
-    해: `설명을 주고받을 때는 ${p(check, "object")} 서로 같은 뜻으로 이해했는지도 물어보세요.`,
-    육합: `함께하기 편해도 ${p(check, "object")} 각자 확인한 뒤 움직여보세요.`,
-    삼합: `힘을 모을 사람이 있다면 ${p(check, "object")} 각자의 기여와 함께 정해보세요.`,
-    반합: `연결 가능성은 열어두되 ${check} 중 아직 모르는 부분은 작은 시도로 확인해보세요.`,
+    충: "새로 할 일 때문에 미뤄야 할 기존 약속이 있는지도 살펴보세요.",
+    형: "반복할수록 부담이 커진다면, 의지만 더 쓰기보다 맡은 범위와 쉬어 갈 때를 바꿔보세요.",
+    파: "바꾼 뒤에는 함께하던 사람도 달라진 순서를 알고 있는지 확인해보세요.",
+    해: "설명한 내용과 상대가 이해한 내용을 맞춰보면, 말하지 않은 기대를 찾기 좋습니다.",
+    육합: "서로 맞는 부분과 각자 결정할 부분을 나누면, 함께 움직이면서도 자신의 선택을 지킬 수 있어요.",
+    삼합: "시작할 때의 열정뿐 아니라 누가 무엇을 끝낼지도 정해두면, 모인 힘을 결과로 이어가기 좋습니다.",
+    반합: "한 번의 연결로 역할과 비용까지 합의됐다고 여기지 말고, 다음에도 함께할 조건을 따로 물어보세요.",
   };
   return { action: `${practice.action} ${constraints[type]}`, avoid: practice.avoid };
 }
@@ -112,7 +111,9 @@ export function annualMonthInteractions(e: AnnualEvidence, m: AnnualMonthEvidenc
   // A supportive contact does not remove a separate tension. Keep both scopes
   // above, and use the tension's reviewed adjustment criterion when both exist.
   const constraint = harmony(primary.fact.type) && secondary ? secondary.fact.type : primary.fact.type;
-  const applied = application(constraint, practice);
+  const constraintKey = `application-constraint:${constraint}`;
+  const applied = used.has(constraintKey) ? { action: practice.action, avoid: practice.avoid } : application(constraint, practice);
+  used.add(constraintKey);
   const bridge = used.has("relationship-limit") ? "" : " 이 관계만으로 현실의 결과가 정해지는 것은 아닙니다.";
   used.add("relationship-limit");
   const use = ` 실제 선택에서는 ${practice.question} 살펴보는 데 참고할 만해요.`;

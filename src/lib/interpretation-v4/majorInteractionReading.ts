@@ -73,8 +73,8 @@ export function majorInteractionReading(e: MajorEvidence, y: MajorYearEvidence, 
   const describe = (group: NonNullable<ReturnType<typeof bind>>[]) => {
     const first = group[0];
     if (!first) return "";
-    const meanings = group.map(r => `${r.relation.branches.join("·")} ${r.relation.type}: ${definition(r.relation.type, r.meaning)}`);
-    return `${y.year}년${transition ? " 전환이 완료된 뒤의 구간에서," : ""} ${first.actors}, ${y.annual.ganji}(${y.annual.tenGod}) 세운의 ${y.annual.ganji.slice(-1)} 사이에는 ${meanings.join(". ")}.`;
+    const meanings = group.map(r => `${p(`${r.relation.branches.join("·")} ${r.relation.type}`, "topic")} ${definition(r.relation.type, r.meaning)}`);
+    return `${y.year}년${transition ? " 전환이 완료된 뒤의 구간에서" : ""}, ${first.actors} 및 세운 ${y.annual.ganji}(${y.annual.tenGod})의 지지 ${y.annual.ganji.slice(-1)} 사이에서 읽는 ${meanings.join(". ")}.`;
   };
   const timing = majorYearPeriod(e, y).explanation;
   const background = validPeriod
@@ -105,7 +105,11 @@ export function majorInteractionReading(e: MajorEvidence, y: MajorYearEvidence, 
   return { background, majorNatal,
     backgroundIds: validPeriod ? ["v4:major-reader-periods-01", `dayun-cycle:${cycle.index}:${cycle.ganji}`, `period-ten-god:${cycle.tenGod}`,
       ...(transition ? [`dayun-cycle:${transition.before.index}:${transition.before.ganji}`, `transition:${transition.startSolarKst ?? transition.dateLabel}`] : [])] : [],
-    harmonyAction: application(harmony), tensionAction: application(tension),
+    harmonyAction: harmony && tension
+      ? harmony.relation.type === "삼합" ? `각자 끝낼 몫을 나눌 때 ${p(`‘${check}’`, "object")} 이 해에 함께 조정할 조건으로 놓아보세요.`
+        : harmony.relation.type === "육합" ? `호흡이 맞아도 ${p(`‘${check}’`, "object")} 정할 때는 함께 나타난 긴장을 덮으면서까지 약속을 넓히지는 않아도 됩니다.`
+        : `맞닿는 부분만 시험하며 ${p(`‘${check}’`, "object")} 먼저 확인하되, 모든 조건에 동의할 필요는 없습니다.`
+      : application(harmony), tensionAction: application(tension),
     // When a connection and a strain share participants, explain that one
     // meeting once; retain separate supportive/cautionary decisions and proofs.
     tension: sameActors ? "" : describe(tensions), tensionIds: tensions.map(r => r.id),

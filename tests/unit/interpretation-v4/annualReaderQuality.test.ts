@@ -56,9 +56,10 @@ it("H2/H4/H5 use different decisions for different real contacts, including the 
   const ms = samples.get("H")!.r.months;
   expect(ms[1].action.action).toContain("참여 비용");
   expect(ms[3].action.action).toContain("도움을 청할 기준");
-  expect(ms[3].action.action).toContain("부담이 되풀이된다면");
+  expect(ms[3].blocks.find(b => b.id.endsWith("-interaction"))!.text).toContain("되풀이되는 부담");
   expect(ms[4].action.action).toContain("기한과 완료 기준");
-  expect(ms[4].action.action).toContain("연결 가능성");
+  expect(ms[4].blocks.find(b => b.id.endsWith("-interaction"))!.text).toContain("반합");
+  expect(ms[4].action.action).not.toContain("연결 가능성은 열어두되");
   for (const n of [2, 4, 5]) expect(ms[n - 1].action.action).not.toContain("이미 합의한 부분");
   const apr = ms[3].blocks.find(b => b.id.endsWith("-interaction"))!;
   expect(apr.text).toMatch(/원국 월지 子.*辰·子 반합.*원국 연지 辰.*辰·辰 형/);
@@ -69,14 +70,15 @@ it("H10 connects both exact natal actors to output and scheduling, never guarant
   const m = samples.get("H")!.r.months[9], b = m.blocks.find(b => b.id.endsWith("-interaction"))!;
   expect(b.text).toMatch(/원국 일지 午·시지 午.*戌·午 반합.*원국 연지 辰.*辰·戌 충/);
   expect(b.text).toContain("실제 결과로 보여줄");
-  expect(m.action.action).toMatch(/발표나 실습.*기존 일정.*완성할 범위와 마무리 순서/);
+  expect(m.action.action).toMatch(/발표나 실습.*작은 결과 하나를 완성/);
+  expect(b.text).toContain("일정과 역할을 조정");
   expect(b.proof.sourceRefs).toEqual(expect.arrayContaining(["month-v2:2026:10:2:month:2026:10:branch:반합:戌午", "month-v2:2026:10:2:month:2026:10:branch:충:辰戌"]));
 });
 
 it("H12 keeps external opportunity, time/cost, learning and the actual clash in one domain", () => {
   const m = samples.get("H")!.r.months[11];
   expect(m.god).toBe("편재");
-  expect(m.action.action).toMatch(/외부 활동의 시간·비용·배울 내용.*기존 일정/);
+  expect(m.action.action).toMatch(/외부 활동의 시간·비용·배울 내용.*감당할 경험/);
   expect(m.blocks.map(b => b.text).join(" ")).not.toContain("가까운 사람과 정하는 약속");
   expect(m.blocks.find(b => b.id.endsWith("-interaction"))!.text).toMatch(/子·午 충.*子·辰 반합/);
   expect(samples.get("H")!.r.months[1].action).not.toEqual(m.action);

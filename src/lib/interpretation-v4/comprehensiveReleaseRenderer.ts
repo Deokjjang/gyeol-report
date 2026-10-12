@@ -379,6 +379,25 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
     }
     if(!current.paragraphs.length)shortages.push(`${current.id}:CHAPTER_SOURCE_SCARCITY`);
   }
+  // Finalize copy only after the existing allocation and duplicate guards.
+  // A Fusion definition must not select a different candidate merely because
+  // its wording was shortened. Keep the paragraph's other proof-bearing lines.
+  const explained = new Set<string>();
+  for (const chapter of chapters) for (const paragraph of chapter.paragraphs) {
+    const retained: ReleaseSentence[] = [];
+    for (const line of paragraph.sentences) {
+      const atom = profiles.myeongli.evidence.find(a => line.evidenceIds.includes(a.id)
+        && line.text.includes(releaseAtomName(a)) && line.text.includes(meaningQuote(a.easyMeaning)));
+      const key = atom && `${atom.sourceType}:${atom.sourceKey}`;
+      const definition = line.provenance.materialId.startsWith("fusion:") && line.sentenceRole === "S2"
+        || line.provenance.materialId.endsWith(":positive") && line.sentenceRole === "S1";
+      if (!(key && explained.has(key) && definition && !line.mbtiSourceNodeIds.length
+        && paragraph.sentences.length > 3)) retained.push(line);
+      if (key) explained.add(key);
+    }
+    paragraph.sentences = retained;
+    paragraph.text = retained.map(s => s.text).join(" ");
+  }
   const blocks=(c:ReleaseChapter):NarrativeBlock[]=>c.paragraphs.map(p=>({id:p.id,text:p.text,mode:"prose",tone:c.id==="CH06"?"shadow":c.id==="CH13"?"direction":"positive",
     proof:{features:[],seedIds:[],fusionIds:[...new Set(p.sentences.flatMap(s=>s.fusionIds))],sourceRefs:[...new Set(p.sentences.flatMap(s=>[...s.evidenceIds,...s.mbtiSourceNodeIds]))]}}));
   const closing=chapters.at(-1)!.paragraphs.at(-1);

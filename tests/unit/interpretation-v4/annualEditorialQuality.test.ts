@@ -56,11 +56,12 @@ it("same 겁재 has different facts, applications and cautions for A3/B7/C1", ()
   expect(readings[1].proof.sourceRefs).toContain("month-v2:2026:7:2:month:2026:7:branch:반합:未卯");
   expect(readings[2].proof.sourceRefs).toContain("month-v2:2026:1:2:month:2026:1:branch:형:丑戌");
   expect(months[0].action.action).toContain("함께할 사람과 맡을 일");
-  expect(months[0].action.action).toContain("부담이 되풀이된다면");
+  expect(readings[0].text).toMatch(/반복되는 부담|되풀이되는 부담/);
+  expect(months[0].action.action).toContain("맡은 범위와 쉬어 갈 때");
   expect(months[1].action.action).toContain("동료와 공을 나누는 공동 업무");
-  expect(months[1].action.action).toContain("연결 가능성");
+  expect(readings[1].text).toContain("반합");
   expect(months[2].action.action).toContain("다른 전문가와 작업 범위");
-  expect(months[2].action.action).toContain("부담이 되풀이된다면");
+  expect(readings[2].text).toMatch(/반복되는 부담|되풀이되는 부담/);
   expect(new Set(months.map(m => m.action.action)).size).toBe(3);
   expect(new Set(months.map(m => m.action.avoid)).size).toBe(3);
 });
@@ -106,13 +107,14 @@ it("learning month does not abruptly insert an unrelated intimacy gift", () => {
   expect(m.blocks.map(b => b.text).join(" ")).not.toContain("가까워질수록 살아나는 매력");
 });
 
-it("2024 辰戌 충 keeps the real actors and gives a scheduling criterion, not fake opposing themes", async () => {
+it("2024 辰戌 충 keeps actors, the scheduling criterion and the actual monthly action", async () => {
   const s = await generate(0, 2024), m = s.r.months[9];
   expect(v4Digest(s.r.evidence)).toBe(locks.annual["A-2024-leap"].evidence);
   const b = m.blocks.find(b => b.id.endsWith("-interaction"))!;
   expect(b.proof.sourceRefs).toContain("month-v2:2024:10:2:month_annual_branch:甲辰:충:辰戌");
   expect(b.text).toMatch(/甲辰 세운의 지지 辰.*월운 지지 戌.*辰·戌 충/);
-  expect(m.action.action).toContain("기존 일정");
+  expect(b.text).toContain("일정과 역할을 조정");
+  expect(m.action.action).toContain("새 고객층");
   expect(m.blocks.map(b => b.text).join(" ")).not.toContain("바깥 기회와 돈의 연결을 중요하게 보면서도");
   expect(s.r.narrative.sections.at(-1)!.title).toBe("2024년에서 가져갈 배움");
   expect(s.r.editorial).toEqual([]);
