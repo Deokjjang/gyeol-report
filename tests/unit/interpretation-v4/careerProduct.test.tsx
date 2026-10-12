@@ -46,7 +46,7 @@ describe("13D-7A Career actual generation and frozen Book", () => {
     const e = result.evidencePacket as V4RuntimeEvidence;
     if (e.composition.product !== "career_money_study" || !("integration" in e.composition.result)) return expect.unreachable();
     const r = e.composition.result, data = projectBook(e)!;
-    expect(r.writerVersion).toBe("career-editorial-release-01-v1");
+    expect(r.writerVersion).toBe("career-editorial-quality-fix-01-v1");
     expect(validateV4Publication("career_money_study", result.draft, e)).toEqual({ ok: true, errors: [] });
     const text = [...r.narrative.opening, ...r.narrative.sections.flatMap(s => s.blocks)].map(b => b.text).join("\n");
     expect(text).not.toMatch(/SemanticAxis|sourceNodeId|confidence|\bK(?:10|[1-9])\b|PR\d+|guidance:|fusion:|editorial:|궁합 점수|배우자 예측|사업하면 성공|무조건 승진|CEO가 됩니다|큰돈을 법니다/);

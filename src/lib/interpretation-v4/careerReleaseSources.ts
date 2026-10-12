@@ -25,8 +25,8 @@ export function careerAtomName(e: EvidenceAtom) {
   const position = ({ year: "년주", month: "월주", day: "일주", hour: "시주" } as Record<string, string>)[String(e.metadata?.pillar)] ?? "원국";
   if (e.sourceType === "heavenly_stem") return `${e.metadata?.isDayMaster ? "일간" : `${position} 천간`} ${stems[e.sourceKey] ?? e.sourceKey}`;
   if (e.sourceType === "earthly_branch") return `${position} 지지 ${branches[e.sourceKey] ?? e.sourceKey}`;
-  if (e.sourceType === "ten_god") return `${position} ${TEN_GOD_SEMANTICS[e.sourceKey as keyof typeof TEN_GOD_SEMANTICS]?.label ?? e.sourceKey}`;
-  if (e.sourceType === "yin_yang") return e.sourceKey.includes("YANG") ? "원국의 양 기운" : "원국의 음 기운";
+  if (e.sourceType === "ten_god") return `${position}${e.metadata?.slot === "branch" ? " 지장간" : " 천간"} ${TEN_GOD_SEMANTICS[e.sourceKey as keyof typeof TEN_GOD_SEMANTICS]?.label ?? e.sourceKey}`;
+  if (e.sourceType === "yin_yang") return `원국의 보이는 천간·지지 중 ${e.sourceKey.includes("YANG") ? "양" : "음"} 기운${typeof e.metadata?.yangCount === "number" && typeof e.metadata?.yinCount === "number" ? `(${e.metadata.yangCount}양·${e.metadata.yinCount}음)` : ""}`;
   if (e.sourceType === "element") return `${({ WOOD: "목", FIRE: "화", EARTH: "토", METAL: "금", WATER: "수" } as Record<string, string>)[e.sourceKey] ?? e.sourceKey} 기운`;
   return typeof e.metadata?.label === "string" ? e.metadata.label : "원국에서 확인된 성향";
 }
