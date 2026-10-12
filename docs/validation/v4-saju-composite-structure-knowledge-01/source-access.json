@@ -1,0 +1,65 @@
+[
+  {
+    "id": "sm1",
+    "url": "https://zh.wikisource.org/wiki/三命通會_(四庫全書本)/卷01",
+    "bytes": 190560,
+    "sha256": "569edb7bcaacb0227208683b34bf58b214a88ad5a381386d86ab82d2e11b67ca",
+    "accessed": "2026-10-13",
+    "scope": "論五行의 木·火·土·金·水, 徐大升 논설. 상생 과용·계절·강약 부분을 읽음.",
+    "status": "raw_html_captured"
+  },
+  {
+    "id": "sm5",
+    "url": "https://zh.wikisource.org/wiki/三命通會_(四庫全書本)/卷05",
+    "bytes": 205078,
+    "sha256": "051ba10cdd68d681b3a9d9001c0d18bebb7a7e2adbe8f1d273d49e4cf20a96e7",
+    "accessed": "2026-10-13",
+    "scope": "正官·偏官·正財·偏財·印綬·傷官·食神 관련 성립·거류·생제 조건.",
+    "status": "raw_html_captured"
+  },
+  {
+    "id": "dt",
+    "url": "https://zh.wikisource.org/wiki/滴天髓",
+    "bytes": 162728,
+    "sha256": "a37edddffb6d8589aac087a62a3083adb63e2cb1b3a7ecc32a4b3a0d14055c88",
+    "accessed": "2026-10-13",
+    "scope": "衰旺·中和·寒暖 안의 燥濕·月令·通隔·母子와 천간·지지의 조건.",
+    "status": "raw_html_captured"
+  },
+  {
+    "id": "zp6",
+    "url": "https://www.donglishuzhai.net/chapter/3719.html",
+    "bytes": 23587,
+    "sha256": "c46006b3aaa18530b4a7197c4249073ad1cb1165b812ab964ca323f0c88e78fd",
+    "accessed": "2026-10-13",
+    "scope": "월령 외 다른 자리의 손익, 통근과 천간 동류 수의 차이.",
+    "status": "raw_html_captured"
+  },
+  {
+    "id": "zp8",
+    "url": "https://www.donglishuzhai.net/chapter/3721.html",
+    "bytes": 23847,
+    "sha256": "6831ea3827b02ab4e245d115a9ca247aa244d5dd9298fc7e34a158b79146de49",
+    "accessed": "2026-10-13",
+    "scope": "월령 주객과 財生官·官印·殺印·食財의 역할 차이.",
+    "status": "raw_html_captured"
+  },
+  {
+    "id": "zp9",
+    "url": "https://www.donglishuzhai.net/chapter/3722.html",
+    "bytes": 23829,
+    "sha256": "19daa7fe89ccc99a45eee7da288d8cedb644770c5731c3271c5ceb2c6a6acdc7",
+    "accessed": "2026-10-13",
+    "scope": "성립·파괴·구응을 나누는 조건. 식재·재관·인성 및 관살의 반전 조건.",
+    "status": "raw_html_captured"
+  },
+  {
+    "id": "zp14",
+    "url": "https://www.donglishuzhai.net/chapter/3727.html",
+    "bytes": 23201,
+    "sha256": "c0906fbab51e573e0075f2f311b0c4ec494fe835821bb5288aa5d4a104e91875",
+    "accessed": "2026-10-13",
+    "scope": "월령 격국과 한난의 상호 검토, 겨울·여름의 목 및 금수상관 예외.",
+    "status": "raw_html_captured"
+  }
+]
