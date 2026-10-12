@@ -1,0 +1,261 @@
+[
+  {
+    "id": "mpr:INTJ:ENTP",
+    "pointer": "/relationshipHints/notablePairs/2/reportLine",
+    "text": "INTJ와 ENTP는 지적 전류가 강한 조합이지만, 토론을 신뢰와 공감으로 받쳐주지 않으면 가장 흥미로운 사람이 가장 피곤한 상대가 됩니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:INTP:INTP",
+    "pointer": "/relationshipHints/notablePairs/2/sharedGround/0",
+    "text": "서로의 사고 방식, 귀차니즘, 지적 몰입, 개인주의를 가장 쉽게 이해한다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:INTP:INTP",
+    "pointer": "/relationshipHints/notablePairs/2/reportLine",
+    "text": "INTP와 INTP는 서로를 가장 편하게 이해하지만, 둘 다 미루면 관계도 생활도 아이디어 상태로 남습니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:INTP:ESFJ",
+    "pointer": "/relationshipHints/notablePairs/3/reportLine",
+    "text": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:INTP:INTJ",
+    "pointer": "/relationshipHints/notablePairs/4/reportLine",
+    "text": "INTP와 INTJ는 지적 유대가 강하지만, 계획과 자유의 기준이 갈라지면 가장 잘 통하던 대화가 가장 날카로운 전투가 됩니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:INTP:ESTJ",
+    "pointer": "/relationshipHints/notablePairs/11/reportLine",
+    "text": "INTP와 ESTJ는 서로에게 필요한 것을 가지고 있지만, 통제와 회피가 시작되면 가장 매력적인 차이가 가장 피곤한 차이가 됩니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ENTP:ISFJ",
+    "pointer": "/relationshipHints/notablePairs/0/reportLine",
+    "text": "ENTP와 ISFJ는 서로의 반대편을 채우는 조합이지만, 매력만 믿고 구조를 만들지 않으면 이상적인 궁합도 쉽게 피로해진다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ENTP:INTP",
+    "pointer": "/relationshipHints/notablePairs/3/lovePattern",
+    "text": "연애에서는 대화가 가장 큰 매력이다. 서로의 생각을 흥미롭게 여기고 부담 없는 친구 같은 편안함을 느낀다. 다만 감정 표현이 부족하면 관계가 지적 동맹으로만 남아 연애의 온도가 낮아질 수 있다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ENTP:ENFJ",
+    "pointer": "/relationshipHints/notablePairs/8/reportLine",
+    "text": "ENTP와 ENFJ는 존경과 보호 본능이 생기기 쉬운 조합이지만, 맞춰 주는 사람이 고정되면 관계의 균형이 무너진다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:INFJ:ENFP",
+    "pointer": "/relationshipHints/notablePairs/1/reportLine",
+    "text": "INFJ와 ENFP는 깊이와 활력이 만나는 보완 관계이며, INFJ의 안정감과 ENFP의 생동감이 균형을 이룰 때 가장 풍부해집니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:INFP:ESTJ",
+    "pointer": "/relationshipHints/notablePairs/3/reportLine",
+    "text": "INFP와 ESTJ는 최강점과 최약점이 맞물리는 강한 보완 관계지만, 존중 없이 만나면 가장 쉽게 상처와 평가로 번질 수 있습니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:INFP:ESTP",
+    "pointer": "/relationshipHints/notablePairs/6/repairStrategy/1",
+    "text": "INFP는 ESTP의 즉흥성을 무조건 천박함으로 보지 않는다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ENFJ:ESTP",
+    "pointer": "/relationshipHints/notablePairs/2/sharedGround/0",
+    "text": "가장 쉽고 빠르게 시작되는 관계로, 서로를 활동적으로 자극한다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ENFP:ENFP",
+    "pointer": "/relationshipHints/notablePairs/0/reportLine",
+    "text": "ENFP와 ENFP는 서로를 가장 빨리 이해하지만, 닮은 약점까지 증폭되기 때문에 자유만큼 구조가 필요하다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ENFP:INFJ",
+    "pointer": "/relationshipHints/notablePairs/2/reportLine",
+    "text": "ENFP와 INFJ는 활기와 안정이 맞물리는 강한 보완 조합이지만, 즉흥성과 구조성을 서로 고치려 들지 않을 때 가장 풍부해진다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ISTJ:ENFJ",
+    "pointer": "/relationshipHints/notablePairs/4/friction/2",
+    "text": "논쟁이 시작되면 서로의 가장 아픈 지점을 정확히 건드리기 쉽다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ISTJ:ISTP",
+    "pointer": "/relationshipHints/notablePairs/9/marriagePattern",
+    "text": "결혼하면 ISTJ는 생활의 규칙과 장기 계획을 세우려 하고, ISTP는 그때그때 가장 효율적인 방식을 택하려 한다. 이 조합은 실용성은 강하지만 감정 표현이 적어 관계가 건조해질 수 있으므로, 정기적인 대화 루틴이 필요하다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ISFJ:ISFJ",
+    "pointer": "/relationshipHints/notablePairs/0/reportLine",
+    "text": "ISFJ와 ISFJ는 서로를 가장 편하게 이해하지만, 둘 다 조용히 참기 시작하면 안정이 아니라 정체가 되는 조합입니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ISFJ:ENTJ",
+    "pointer": "/relationshipHints/notablePairs/6/marriagePattern",
+    "text": "장기 관계에서는 싸울 때의 언어와 역할 통제가 가장 큰 위험이다. ENTJ가 지시처럼 말하고 ISFJ가 참고 맞추기만 하면 상처가 누적되며, 돈과 가족 책임을 명확히 나눠야 재반격보다 회복이 빨라진다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ESTJ:INFJ",
+    "pointer": "/relationshipHints/notablePairs/9/reportLine",
+    "text": "ESTJ와 INFJ는 서로를 가장 낯설게 느끼는 조합이지만, 이상을 현실로 고정하고 현실을 더 넓게 보는 훈련이 되면 큰 성장 자극이 됩니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ESTJ:INFP",
+    "pointer": "/relationshipHints/notablePairs/12/label",
+    "text": "가장 큰 충돌과 성장 가능성을 동시에 가진 관계",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ESTJ:INFP",
+    "pointer": "/relationshipHints/notablePairs/12/marriagePattern",
+    "text": "결혼에서는 생활 안정과 감정적 의미를 동시에 다뤄야 한다. ESTJ가 현실을 책임지고 INFP가 관계의 마음을 돌볼 수 있지만, 서로의 언어를 번역하지 않으면 가장 큰 피로를 만든다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ESTJ:INFP",
+    "pointer": "/relationshipHints/notablePairs/12/reportLine",
+    "text": "ESTJ와 INFP는 가장 낯선 기준을 가진 조합이지만, 감정과 실행을 서로 배울 때 가장 큰 성장 가능성을 품습니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ESFJ:ESFJ",
+    "pointer": "/relationshipHints/notablePairs/3/reportLine",
+    "text": "ESFJ와 ESFJ는 서로를 가장 쉽게 이해하지만, 같은 욕구가 겹치는 만큼 인정과 감사가 빠지면 따뜻함이 경쟁으로 변합니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ESFJ:ISFP",
+    "pointer": "/relationshipHints/notablePairs/11/reportLine",
+    "text": "ESFJ와 ISFP는 초반의 부드러움이 강하지만, 통제와 자유의 감각을 맞추지 못하면 가장 가까운 사이에서 가장 크게 오해합니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ISTP:ENTJ",
+    "pointer": "/relationshipHints/notablePairs/7/sharedGround/0",
+    "text": "ENTJ는 목표와 성과를 빠르게 구조화하고, ISTP는 현장에서 가장 효율적인 해법을 찾아낸다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ISTP:ISTJ",
+    "pointer": "/relationshipHints/notablePairs/10/marriagePattern",
+    "text": "결혼하면 ISTJ는 생활의 규칙과 장기 계획을 세우려 하고, ISTP는 그때그때 가장 효율적인 방식을 택하려 한다. 이 조합은 실용성은 강하지만 감정 표현이 적어 관계가 건조해질 수 있으므로, 정기적인 대화 루틴이 필요하다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ISTP:ESTJ",
+    "pointer": "/relationshipHints/notablePairs/12/sharedGround/1",
+    "text": "ESTJ는 역할과 절차로 일을 밀고 가고, ISTP는 현장에서 가장 효율적인 방법을 찾아낸다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ISFP:ISFP",
+    "pointer": "/relationshipHints/notablePairs/0/reportLine",
+    "text": "ISFP와 ISFP는 가장 편안하게 감정을 이해하지만, 둘 다 미루고 침묵하면 관계가 부드럽게 멈춰버릴 수 있습니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ISFP:ENTJ",
+    "pointer": "/relationshipHints/notablePairs/3/reportLine",
+    "text": "ISFP와 ENTJ는 감각과 구조가 강하게 보완되는 조합이지만, ENTJ의 말이 세지면 ISFP가 가장 먼저 닫힙니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ISFP:ESFJ",
+    "pointer": "/relationshipHints/notablePairs/5/marriagePattern",
+    "text": "장기 관계에서는 동거가 가장 큰 시험이다. 생활 규칙을 ESFJ 방식으로만 정하면 ISFP는 구속감을 느끼고, ISFP가 계속 피하면 ESFJ는 불안해진다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ISFP:ENTP",
+    "pointer": "/relationshipHints/notablePairs/7/lovePattern",
+    "text": "초반에는 자유롭고 색다른 끌림이 생길 수 있다. 하지만 ENTP가 토론으로 감정을 다루고 ISFP가 침묵으로 감정을 지키면 서로를 가장 피곤하게 만든다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ISFP:ENTP",
+    "pointer": "/relationshipHints/notablePairs/7/reportLine",
+    "text": "ISFP와 ENTP는 자유로운 공통점이 있어도 갈등 방식이 너무 달라, 토론과 침묵이 부딪히면 가장 빨리 지치는 조합입니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ISFP:ESTP",
+    "pointer": "/relationshipHints/notablePairs/9/reportLine",
+    "text": "ISFP와 ESTP는 감각적 재미는 있지만, ESTP의 장난이 선을 넘으면 ISFP가 가장 빨리 닫히는 조합입니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ISFP:INFP",
+    "pointer": "/relationshipHints/notablePairs/14/sharedGround/0",
+    "text": "최강점과 최약점이 같아 서로를 이해하기 쉽다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ESTP:INFP",
+    "pointer": "/relationshipHints/notablePairs/3/reportLine",
+    "text": "ESTP와 INFP는 자유라는 단어를 공유하지만, 한쪽은 경험의 자유를 원하고 한쪽은 마음의 진정성을 원하므로 번역 없이 부딪히면 가장 피로한 관계가 됩니다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  },
+  {
+    "id": "mpr:ESTP:INTJ",
+    "pointer": "/relationshipHints/notablePairs/4/repairStrategy/0",
+    "text": "INTJ는 ESTP의 즉흥성을 무조건 무모함으로 보지 말고 실제 기회인지 함께 검토한다.",
+    "status": "source_claim_screen_hit_not_automatically_false",
+    "review": "최상급·역할·예측 표현을 신규 승인 주장으로 복제하지 않음; 일부는 위험 경고나 비유일 수 있음"
+  }
+]

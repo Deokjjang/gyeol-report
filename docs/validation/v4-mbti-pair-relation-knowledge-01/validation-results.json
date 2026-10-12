@@ -1,0 +1,88 @@
+{
+  "baseSha": "818b71112922bd06f4ac5d7b566324dcf33cf4c6",
+  "baseline": {
+    "testFiles": 2,
+    "passed": 36,
+    "failed": 3,
+    "typescriptDiagnostics": 0
+  },
+  "relatedAfter": {
+    "testFiles": 22,
+    "passed": 1235,
+    "failed": 3,
+    "exitCode": 1
+  },
+  "newPairTests": {
+    "passed": 41,
+    "failed": 0
+  },
+  "sixProductIntegration": {
+    "testFiles": 1,
+    "passed": 64,
+    "failed": 0,
+    "exitCode": 0,
+    "casesInclude": "62 successful Books and 2 expected unsupported DAYUN cases; frozen calculation/evidence/narrative/Book/snapshot hashes; six earlier saved Books owner/shared replay"
+  },
+  "totalAfter": {
+    "testFiles": 23,
+    "passed": 1299,
+    "existingFailed": 3,
+    "newFailed": 0,
+    "baselineReproductionNotDoubleCounted": true
+  },
+  "unchangedFailures": [
+    {
+      "file": "tests/unit/interpretation-v4/foundationAdapter.test.ts:116",
+      "name": "only foundation modules reference the foundation; no writer/UI/calculation import",
+      "message": "careerReleaseMaterials.ts: expected false to be true",
+      "status": "reproduced_before_and_after_unchanged"
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts:50",
+      "name": "rejects major_fortune bypass before order writes and allows stable input",
+      "message": "SyntaxError: Unexpected end of JSON input",
+      "status": "reproduced_before_and_after_unchanged"
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts:50",
+      "name": "rejects annual_fortune bypass before order writes and allows stable input",
+      "message": "SyntaxError: Unexpected end of JSON input",
+      "status": "reproduced_before_and_after_unchanged"
+    }
+  ],
+  "typescript": {
+    "before": 0,
+    "after": 0,
+    "new": 0,
+    "exitCode": 0
+  },
+  "lint": {
+    "exitCode": 0,
+    "warnings": 0
+  },
+  "productionBuild": {
+    "exitCode": 0,
+    "staticPages": 47,
+    "nftWarnings": 0,
+    "newWarnings": 0,
+    "command": "OPENAI_REPORT_WRITER_ENABLED=0 TOSS_CONFIRM_API_ENABLED=0 PAID_REPORT_RELIABILITY_ENABLED=0 npm run build -- --webpack",
+    "fontDownloadOnlyNetwork": "No provider/production mutation; test networkGuard active"
+  },
+  "diffCheck": {
+    "staged": {
+      "exitCode": 0
+    },
+    "unstaged": {
+      "exitCode": 0
+    },
+    "newFilesOnly": 53
+  },
+  "humanReview": {
+    "jointManuscripts": 136,
+    "directedViews": 256,
+    "originalReportLines": 256,
+    "sourceFieldsPointersAndHashesCompared": 256,
+    "externalEmpiricalPairValidation": false
+  },
+  "scope": "offline research only; no customer approval or runtime import"
+}

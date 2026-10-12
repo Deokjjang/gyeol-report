@@ -1,0 +1,13 @@
+{
+  "types": 16,
+  "traits": 1213,
+  "individualConditional": 512,
+  "pairs": 256,
+  "direct": 158,
+  "inferred": 98,
+  "labelMismatch": 148,
+  "sameLine": 40,
+  "genericLine": 72,
+  "sourceFiles": 995,
+  "priorResearchFiles": 46
+}

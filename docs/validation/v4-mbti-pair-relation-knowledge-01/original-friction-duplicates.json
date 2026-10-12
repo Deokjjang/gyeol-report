@@ -1,0 +1,191 @@
+[
+  {
+    "text": "둘 다 가능성을 계속 열어 두려 하므로 약속, 결론, 생활 책임이 뒤로 밀릴 수 있다.",
+    "pairs": [
+      "mpr:ENTP:ENFP",
+      "mpr:ENFP:ENTP"
+    ]
+  },
+  {
+    "text": "ENTP는 말로 실험하고 ISTP는 행동으로 실험하기 때문에, 대화와 실행의 속도가 다르게 느껴진다.",
+    "pairs": [
+      "mpr:ENTP:ISTP",
+      "mpr:ISTP:ENTP"
+    ]
+  },
+  {
+    "text": "ENTP의 끝없는 반박은 ISTP에게 피곤한 소음처럼 느껴질 수 있고, ISTP의 짧은 반응은 ENTP에게 재미없는 벽처럼 보일 수 있다.",
+    "pairs": [
+      "mpr:ENTP:ISTP",
+      "mpr:ISTP:ENTP"
+    ]
+  },
+  {
+    "text": "둘 다 자율성을 중시해 책임과 일정이 흐려지면 관계가 산만해진다.",
+    "pairs": [
+      "mpr:ENTP:ISTP",
+      "mpr:ISTP:ENTP"
+    ]
+  },
+  {
+    "text": "ENTP는 말로 가능성을 확장하고 ESTP는 행동으로 효과를 확인하려 한다.",
+    "pairs": [
+      "mpr:ENTP:ESTP",
+      "mpr:ESTP:ENTP"
+    ]
+  },
+  {
+    "text": "ESTP는 ENTP의 긴 논쟁을 피곤하게 느낄 수 있고, ENTP는 ESTP가 생각보다 반응이 앞선다고 느낄 수 있다.",
+    "pairs": [
+      "mpr:ENTP:ESTP",
+      "mpr:ESTP:ENTP"
+    ]
+  },
+  {
+    "text": "둘 다 즉흥성이 강해 장기 책임과 감정 정리는 뒤로 밀릴 수 있다.",
+    "pairs": [
+      "mpr:ENTP:ESTP",
+      "mpr:ESTP:ENTP"
+    ]
+  },
+  {
+    "text": "둘 다 새로움을 좋아해 장기 책임, 돈, 생활 루틴을 뒤로 미루면 관계는 재미있지만 안정감이 부족해진다.",
+    "pairs": [
+      "mpr:ENTP:ESFP",
+      "mpr:ESFP:ENTP"
+    ]
+  },
+  {
+    "text": "ISTJ의 현실적 지적은 INFJ에게 차갑게 느껴질 수 있고, INFJ의 상징적 표현은 ISTJ에게 모호하고 비현실적으로 보일 수 있다.",
+    "pairs": [
+      "mpr:INFJ:ISTJ",
+      "mpr:ISTJ:INFJ"
+    ]
+  },
+  {
+    "text": "ENFP는 감정의 의미와 관계의 가능성을 자주 확인하고 싶어 하지만, ISTP는 말보다 행동과 효율을 더 신뢰한다.",
+    "pairs": [
+      "mpr:ENFP:ISTP",
+      "mpr:ISTP:ENFP"
+    ]
+  },
+  {
+    "text": "ISTP의 짧고 건조한 반응은 ENFP에게 무관심처럼 느껴질 수 있고, ENFP의 감정적 확장은 ISTP에게 과한 부담으로 느껴질 수 있다.",
+    "pairs": [
+      "mpr:ENFP:ISTP",
+      "mpr:ISTP:ENFP"
+    ]
+  },
+  {
+    "text": "갈등이 생기면 ENFP는 마음을 풀기 위한 대화를 원하고, ISTP는 문제를 단순화하거나 거리를 두려 하면서 서로 더 서운해질 수 있다.",
+    "pairs": [
+      "mpr:ENFP:ISTP",
+      "mpr:ISTP:ENFP"
+    ]
+  },
+  {
+    "text": "ENFP는 감정과 가능성의 의미를 중요하게 보지만, ESTP는 지금 통하는 행동과 현실 감각을 더 신뢰한다.",
+    "pairs": [
+      "mpr:ENFP:ESTP",
+      "mpr:ESTP:ENFP"
+    ]
+  },
+  {
+    "text": "ESTP의 직설적이고 장난스러운 반응은 ENFP에게 마음을 가볍게 다루는 태도로 느껴질 수 있고, ENFP의 감정적 해석은 ESTP에게 과한 의미 부여로 보일 수 있다.",
+    "pairs": [
+      "mpr:ENFP:ESTP",
+      "mpr:ESTP:ENFP"
+    ]
+  },
+  {
+    "text": "둘 다 즉흥성이 있어 즐거움은 빠르지만 장기 책임과 조용한 감정 점검은 쉽게 밀릴 수 있다.",
+    "pairs": [
+      "mpr:ENFP:ESTP",
+      "mpr:ESTP:ENFP"
+    ]
+  },
+  {
+    "text": "ISTJ의 피드백은 ISFP에게 혹평처럼 들릴 수 있다.",
+    "pairs": [
+      "mpr:ISTJ:ISFP",
+      "mpr:ISFP:ISTJ"
+    ]
+  },
+  {
+    "text": "ISTJ는 약속과 절차를 통해 안정을 만들고, ISTP는 상황에 맞는 자율 판단을 통해 효율을 만든다.",
+    "pairs": [
+      "mpr:ISTJ:ISTP",
+      "mpr:ISTP:ISTJ"
+    ]
+  },
+  {
+    "text": "ISTJ는 ISTP를 불안정하거나 책임감이 약하다고 느낄 수 있고, ISTP는 ISTJ를 답답하고 통제적이라고 느낄 수 있다.",
+    "pairs": [
+      "mpr:ISTJ:ISTP",
+      "mpr:ISTP:ISTJ"
+    ]
+  },
+  {
+    "text": "갈등이 생기면 ISTJ는 규칙과 약속을 꺼내고, ISTP는 지금 상황에 맞는 융통성을 요구하면서 부딪히기 쉽다.",
+    "pairs": [
+      "mpr:ISTJ:ISTP",
+      "mpr:ISTP:ISTJ"
+    ]
+  },
+  {
+    "text": "ISTJ는 계획과 약속이 지켜져야 안심하지만, ESFP는 상황과 기분에 따라 유연하게 움직이는 편이다.",
+    "pairs": [
+      "mpr:ISTJ:ESFP",
+      "mpr:ESFP:ISTJ"
+    ]
+  },
+  {
+    "text": "갈등이 생기면 ISTJ는 규칙을 강화하고 ESFP는 분위기와 감정을 앞세우며 서로의 언어가 달라진다.",
+    "pairs": [
+      "mpr:ISTJ:ESFP",
+      "mpr:ESFP:ISTJ"
+    ]
+  },
+  {
+    "text": "ESFP는 표현과 즉각적인 반응을 원하지만, ISTP는 조용히 관찰하고 필요한 순간에만 말하는 편이다.",
+    "pairs": [
+      "mpr:ISTP:ESFP",
+      "mpr:ESFP:ISTP"
+    ]
+  },
+  {
+    "text": "ESFP의 감정 표현과 사교성은 ISTP에게 과한 자극이 될 수 있고, ISTP의 무덤덤함은 ESFP에게 재미없거나 차갑게 느껴질 수 있다.",
+    "pairs": [
+      "mpr:ISTP:ESFP",
+      "mpr:ESFP:ISTP"
+    ]
+  },
+  {
+    "text": "둘 다 현재의 즐거움과 자율성을 좋아해 장기 계획과 돈 관리를 미루면 현실 부담이 쌓인다.",
+    "pairs": [
+      "mpr:ISTP:ESFP",
+      "mpr:ESFP:ISTP"
+    ]
+  },
+  {
+    "text": "ESTP는 문제를 빠르게 해결하고 장난스럽게 넘기려 하지만, ESFP는 감정의 반응과 분위기를 더 중요하게 본다.",
+    "pairs": [
+      "mpr:ESTP:ESFP",
+      "mpr:ESFP:ESTP"
+    ]
+  },
+  {
+    "text": "ESTP의 직설은 ESFP에게 상처가 될 수 있고, ESFP의 감정 표현은 ESTP에게 과한 반응처럼 느껴질 수 있다.",
+    "pairs": [
+      "mpr:ESTP:ESFP",
+      "mpr:ESFP:ESTP"
+    ]
+  },
+  {
+    "text": "둘 다 현재의 재미와 사람 만남을 좋아해 돈, 일정, 장기 책임이 뒤로 밀릴 수 있다.",
+    "pairs": [
+      "mpr:ESTP:ESFP",
+      "mpr:ESFP:ESTP"
+    ]
+  }
+]

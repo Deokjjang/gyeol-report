@@ -1,0 +1,135 @@
+[
+  {
+    "text": "두 사람 모두 정해진 방식에 갇히기보다 직접 시험하고 새로운 방법을 찾는 쪽에 끌린다.",
+    "pairs": [
+      "mpr:ENTP:ISTP",
+      "mpr:ISTP:ENTP"
+    ]
+  },
+  {
+    "text": "ENTP는 아이디어와 논쟁으로 가능성을 넓히고, ISTP는 실제 장비와 상황을 다루며 가능성을 검증한다.",
+    "pairs": [
+      "mpr:ENTP:ISTP",
+      "mpr:ISTP:ENTP"
+    ]
+  },
+  {
+    "text": "서로에게 지나친 형식과 감정 의례를 요구하지 않아 초반에는 가볍고 자극적인 관계가 된다.",
+    "pairs": [
+      "mpr:ENTP:ISTP",
+      "mpr:ISTP:ENTP"
+    ]
+  },
+  {
+    "text": "ENTP는 새로운 아이디어와 논쟁으로 가능성을 만들고, ESTP는 그 가능성을 현장에서 바로 시험한다.",
+    "pairs": [
+      "mpr:ENTP:ESTP",
+      "mpr:ESTP:ENTP"
+    ]
+  },
+  {
+    "text": "둘 다 지루한 규칙과 반복보다 변화, 자극, 자유로운 시도를 좋아한다.",
+    "pairs": [
+      "mpr:ENTP:ESTP",
+      "mpr:ESTP:ENTP"
+    ]
+  },
+  {
+    "text": "함께 있으면 대화와 행동이 빠르게 이어져 관계가 정체되지 않는다.",
+    "pairs": [
+      "mpr:ENTP:ESTP",
+      "mpr:ESTP:ENTP"
+    ]
+  },
+  {
+    "text": "두 사람 모두 불필요한 형식과 과한 통제를 싫어하고, 각자의 자율성을 중요하게 여긴다.",
+    "pairs": [
+      "mpr:ENFP:ISTP",
+      "mpr:ISTP:ENFP"
+    ]
+  },
+  {
+    "text": "ENFP는 가능성과 사람의 마음을 직관적으로 읽고, ISTP는 상황의 원리와 실제 작동 방식을 빠르게 파악한다.",
+    "pairs": [
+      "mpr:ENFP:ISTP",
+      "mpr:ISTP:ENFP"
+    ]
+  },
+  {
+    "text": "서로의 독립성을 존중한다면 친구처럼 가볍고 부담 없는 접점은 만들 수 있다.",
+    "pairs": [
+      "mpr:ENFP:ISTP",
+      "mpr:ISTP:ENFP"
+    ]
+  },
+  {
+    "text": "초반에는 서로의 활기와 즉흥성이 잘 맞아 지루하지 않은 관계가 되기 쉽다.",
+    "pairs": [
+      "mpr:ENFP:ESTP",
+      "mpr:ESTP:ENFP"
+    ]
+  },
+  {
+    "text": "두 사람 모두 현실 감각이 강해 허황된 약속보다 눈에 보이는 책임과 능력을 더 신뢰한다.",
+    "pairs": [
+      "mpr:ISTJ:ISTP",
+      "mpr:ISTP:ISTJ"
+    ]
+  },
+  {
+    "text": "초반에는 서로를 과하게 부담스럽게 만들지 않는 조용한 안정감이 있다.",
+    "pairs": [
+      "mpr:ISTJ:ISTP",
+      "mpr:ISTP:ISTJ"
+    ]
+  },
+  {
+    "text": "겉으로는 조용하고 부드러워 보여 초반에는 비슷하다고 느끼기 쉽다.",
+    "pairs": [
+      "mpr:ISFJ:ISFP",
+      "mpr:ISFP:ISFJ"
+    ]
+  },
+  {
+    "text": "두 사람 모두 지금 눈앞의 현실, 몸으로 느끼는 경험, 직접 해보는 활동에 강하다.",
+    "pairs": [
+      "mpr:ISTP:ESFP",
+      "mpr:ESFP:ISTP"
+    ]
+  },
+  {
+    "text": "ESFP는 분위기와 사람을 살리고, ISTP는 상황의 구조와 실제 해결책을 빠르게 잡는다.",
+    "pairs": [
+      "mpr:ISTP:ESFP",
+      "mpr:ESFP:ISTP"
+    ]
+  },
+  {
+    "text": "함께 움직이고 경험하는 데서 친밀감이 생기기 쉬워 정적인 관계보다 활동적인 관계에서 잘 맞는다.",
+    "pairs": [
+      "mpr:ISTP:ESFP",
+      "mpr:ESFP:ISTP"
+    ]
+  },
+  {
+    "text": "두 사람 모두 현재의 경험, 사람과의 교류, 몸으로 느끼는 즐거움에 강하게 반응한다.",
+    "pairs": [
+      "mpr:ESTP:ESFP",
+      "mpr:ESFP:ESTP"
+    ]
+  },
+  {
+    "text": "ESTP는 현장의 기회와 문제 해결을, ESFP는 분위기와 감정의 생동감을 빠르게 살린다.",
+    "pairs": [
+      "mpr:ESTP:ESFP",
+      "mpr:ESFP:ESTP"
+    ]
+  },
+  {
+    "text": "함께 있으면 활동성과 사교성이 커져 주변까지 밝고 역동적인 분위기가 된다.",
+    "pairs": [
+      "mpr:ESTP:ESFP",
+      "mpr:ESFP:ESTP"
+    ]
+  }
+]

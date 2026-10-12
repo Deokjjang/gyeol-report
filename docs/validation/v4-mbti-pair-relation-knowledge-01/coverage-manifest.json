@@ -1,0 +1,2094 @@
+{
+  "task": "V4-MBTI-PAIR-RELATION-KNOWLEDGE-01",
+  "baseSha": "818b71112922bd06f4ac5d7b566324dcf33cf4c6",
+  "branch": "v4/mbti-pair-relation-knowledge-01",
+  "types": 16,
+  "directionalRecords": 256,
+  "differentTypeUnorderedGroups": 120,
+  "sameTypeGroups": 16,
+  "jointManuallyAuthoredDossiers": 136,
+  "directionSpecificViewpoints": 240,
+  "sameTypeViews": 16,
+  "uniqueFictionalScenes": 272,
+  "sceneReferencesAcrossViews": 512,
+  "sourceLocalDirect": 158,
+  "sourceLocalInferred": 98,
+  "directPromotions": 0,
+  "labelMismatchDirections": 148,
+  "rawSourceNameMismatchDirections": 144,
+  "genericOriginalLines": 72,
+  "identicalReverseLines": 40,
+  "relationNameVariants": 86,
+  "missingReverseRecords": 0,
+  "connectedToRuntime": false,
+  "approvedForCustomer": false,
+  "empiricallyValidatedPairLaws": 0,
+  "validation": {
+    "status": "passed_with_3_reproduced_baseline_failures",
+    "newPairTestsPassed": 41,
+    "totalTestsPassed": 1299,
+    "existingFailures": 3,
+    "newFailures": 0,
+    "typescriptNewErrors": 0,
+    "buildPassed": true,
+    "lintPassed": true,
+    "runtimeImportMatches": 0,
+    "preservedOldSrcFiles": 995
+  },
+  "cells": [
+    {
+      "id": "mpr:INTJ:INTJ",
+      "jointReviewId": "mpj:INTJ:INTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:INTJ:INTP",
+      "jointReviewId": "mpj:INTJ:INTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:INTJ",
+      "jointReviewId": "mpj:INTJ:INTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTJ:ENTJ",
+      "jointReviewId": "mpj:INTJ:ENTJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:INTJ",
+      "jointReviewId": "mpj:INTJ:ENTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTJ:ENTP",
+      "jointReviewId": "mpj:INTJ:ENTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:INTJ",
+      "jointReviewId": "mpj:INTJ:ENTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTJ:INFJ",
+      "jointReviewId": "mpj:INTJ:INFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:INTJ",
+      "jointReviewId": "mpj:INTJ:INFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTJ:INFP",
+      "jointReviewId": "mpj:INTJ:INFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:INTJ",
+      "jointReviewId": "mpj:INTJ:INFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTJ:ENFJ",
+      "jointReviewId": "mpj:INTJ:ENFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:INTJ",
+      "jointReviewId": "mpj:INTJ:ENFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTJ:ENFP",
+      "jointReviewId": "mpj:INTJ:ENFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:INTJ",
+      "jointReviewId": "mpj:INTJ:ENFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTJ:ISTJ",
+      "jointReviewId": "mpj:INTJ:ISTJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:INTJ",
+      "jointReviewId": "mpj:INTJ:ISTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTJ:ISFJ",
+      "jointReviewId": "mpj:INTJ:ISFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:INTJ",
+      "jointReviewId": "mpj:INTJ:ISFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTJ:ESTJ",
+      "jointReviewId": "mpj:INTJ:ESTJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:INTJ",
+      "jointReviewId": "mpj:INTJ:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTJ:ESFJ",
+      "jointReviewId": "mpj:INTJ:ESFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:INTJ",
+      "jointReviewId": "mpj:INTJ:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTJ:ISTP",
+      "jointReviewId": "mpj:INTJ:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:INTJ",
+      "jointReviewId": "mpj:INTJ:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTJ:ISFP",
+      "jointReviewId": "mpj:INTJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:INTJ",
+      "jointReviewId": "mpj:INTJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTJ:ESTP",
+      "jointReviewId": "mpj:INTJ:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:INTJ",
+      "jointReviewId": "mpj:INTJ:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTJ:ESFP",
+      "jointReviewId": "mpj:INTJ:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:INTJ",
+      "jointReviewId": "mpj:INTJ:ESFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:INTP",
+      "jointReviewId": "mpj:INTP:INTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:INTP:ENTJ",
+      "jointReviewId": "mpj:INTP:ENTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:INTP",
+      "jointReviewId": "mpj:INTP:ENTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:ENTP",
+      "jointReviewId": "mpj:INTP:ENTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:INTP",
+      "jointReviewId": "mpj:INTP:ENTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:INFJ",
+      "jointReviewId": "mpj:INTP:INFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:INTP",
+      "jointReviewId": "mpj:INTP:INFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:INFP",
+      "jointReviewId": "mpj:INTP:INFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:INTP",
+      "jointReviewId": "mpj:INTP:INFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:ENFJ",
+      "jointReviewId": "mpj:INTP:ENFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:INTP",
+      "jointReviewId": "mpj:INTP:ENFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:ENFP",
+      "jointReviewId": "mpj:INTP:ENFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:INTP",
+      "jointReviewId": "mpj:INTP:ENFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:ISTJ",
+      "jointReviewId": "mpj:INTP:ISTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:INTP",
+      "jointReviewId": "mpj:INTP:ISTJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:ISFJ",
+      "jointReviewId": "mpj:INTP:ISFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:INTP",
+      "jointReviewId": "mpj:INTP:ISFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:ESTJ",
+      "jointReviewId": "mpj:INTP:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:INTP",
+      "jointReviewId": "mpj:INTP:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:ESFJ",
+      "jointReviewId": "mpj:INTP:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:INTP",
+      "jointReviewId": "mpj:INTP:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:ISTP",
+      "jointReviewId": "mpj:INTP:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:INTP",
+      "jointReviewId": "mpj:INTP:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:ISFP",
+      "jointReviewId": "mpj:INTP:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:INTP",
+      "jointReviewId": "mpj:INTP:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:ESTP",
+      "jointReviewId": "mpj:INTP:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:INTP",
+      "jointReviewId": "mpj:INTP:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INTP:ESFP",
+      "jointReviewId": "mpj:INTP:ESFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:INTP",
+      "jointReviewId": "mpj:INTP:ESFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:ENTJ",
+      "jointReviewId": "mpj:ENTJ:ENTJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:ENTJ:ENTP",
+      "jointReviewId": "mpj:ENTJ:ENTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:ENTJ",
+      "jointReviewId": "mpj:ENTJ:ENTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:INFJ",
+      "jointReviewId": "mpj:ENTJ:INFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:ENTJ",
+      "jointReviewId": "mpj:ENTJ:INFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:INFP",
+      "jointReviewId": "mpj:ENTJ:INFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:ENTJ",
+      "jointReviewId": "mpj:ENTJ:INFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:ENFJ",
+      "jointReviewId": "mpj:ENTJ:ENFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:ENTJ",
+      "jointReviewId": "mpj:ENTJ:ENFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:ENFP",
+      "jointReviewId": "mpj:ENTJ:ENFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:ENTJ",
+      "jointReviewId": "mpj:ENTJ:ENFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:ISTJ",
+      "jointReviewId": "mpj:ENTJ:ISTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:ENTJ",
+      "jointReviewId": "mpj:ENTJ:ISTJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:ISFJ",
+      "jointReviewId": "mpj:ENTJ:ISFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:ENTJ",
+      "jointReviewId": "mpj:ENTJ:ISFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:ESTJ",
+      "jointReviewId": "mpj:ENTJ:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:ENTJ",
+      "jointReviewId": "mpj:ENTJ:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:ESFJ",
+      "jointReviewId": "mpj:ENTJ:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:ENTJ",
+      "jointReviewId": "mpj:ENTJ:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:ISTP",
+      "jointReviewId": "mpj:ENTJ:ISTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:ENTJ",
+      "jointReviewId": "mpj:ENTJ:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:ISFP",
+      "jointReviewId": "mpj:ENTJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:ENTJ",
+      "jointReviewId": "mpj:ENTJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:ESTP",
+      "jointReviewId": "mpj:ENTJ:ESTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:ENTJ",
+      "jointReviewId": "mpj:ENTJ:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTJ:ESFP",
+      "jointReviewId": "mpj:ENTJ:ESFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:ENTJ",
+      "jointReviewId": "mpj:ENTJ:ESFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:ENTP",
+      "jointReviewId": "mpj:ENTP:ENTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:ENTP:INFJ",
+      "jointReviewId": "mpj:ENTP:INFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:ENTP",
+      "jointReviewId": "mpj:ENTP:INFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:INFP",
+      "jointReviewId": "mpj:ENTP:INFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:ENTP",
+      "jointReviewId": "mpj:ENTP:INFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:ENFJ",
+      "jointReviewId": "mpj:ENTP:ENFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:ENTP",
+      "jointReviewId": "mpj:ENTP:ENFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:ENFP",
+      "jointReviewId": "mpj:ENTP:ENFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:ENTP",
+      "jointReviewId": "mpj:ENTP:ENFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:ISTJ",
+      "jointReviewId": "mpj:ENTP:ISTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:ENTP",
+      "jointReviewId": "mpj:ENTP:ISTJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:ISFJ",
+      "jointReviewId": "mpj:ENTP:ISFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:ENTP",
+      "jointReviewId": "mpj:ENTP:ISFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:ESTJ",
+      "jointReviewId": "mpj:ENTP:ESTJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:ENTP",
+      "jointReviewId": "mpj:ENTP:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:ESFJ",
+      "jointReviewId": "mpj:ENTP:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:ENTP",
+      "jointReviewId": "mpj:ENTP:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:ISTP",
+      "jointReviewId": "mpj:ENTP:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:ENTP",
+      "jointReviewId": "mpj:ENTP:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:ISFP",
+      "jointReviewId": "mpj:ENTP:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:ENTP",
+      "jointReviewId": "mpj:ENTP:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:ESTP",
+      "jointReviewId": "mpj:ENTP:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:ENTP",
+      "jointReviewId": "mpj:ENTP:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENTP:ESFP",
+      "jointReviewId": "mpj:ENTP:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:ENTP",
+      "jointReviewId": "mpj:ENTP:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:INFJ",
+      "jointReviewId": "mpj:INFJ:INFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:INFJ:INFP",
+      "jointReviewId": "mpj:INFJ:INFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:INFJ",
+      "jointReviewId": "mpj:INFJ:INFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:ENFJ",
+      "jointReviewId": "mpj:INFJ:ENFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:INFJ",
+      "jointReviewId": "mpj:INFJ:ENFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:ENFP",
+      "jointReviewId": "mpj:INFJ:ENFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:INFJ",
+      "jointReviewId": "mpj:INFJ:ENFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:ISTJ",
+      "jointReviewId": "mpj:INFJ:ISTJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:INFJ",
+      "jointReviewId": "mpj:INFJ:ISTJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:ISFJ",
+      "jointReviewId": "mpj:INFJ:ISFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:INFJ",
+      "jointReviewId": "mpj:INFJ:ISFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:ESTJ",
+      "jointReviewId": "mpj:INFJ:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:INFJ",
+      "jointReviewId": "mpj:INFJ:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:ESFJ",
+      "jointReviewId": "mpj:INFJ:ESFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:INFJ",
+      "jointReviewId": "mpj:INFJ:ESFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:ISTP",
+      "jointReviewId": "mpj:INFJ:ISTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:INFJ",
+      "jointReviewId": "mpj:INFJ:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:ISFP",
+      "jointReviewId": "mpj:INFJ:ISFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:INFJ",
+      "jointReviewId": "mpj:INFJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:ESTP",
+      "jointReviewId": "mpj:INFJ:ESTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:INFJ",
+      "jointReviewId": "mpj:INFJ:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFJ:ESFP",
+      "jointReviewId": "mpj:INFJ:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:INFJ",
+      "jointReviewId": "mpj:INFJ:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:INFP",
+      "jointReviewId": "mpj:INFP:INFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:INFP:ENFJ",
+      "jointReviewId": "mpj:INFP:ENFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:INFP",
+      "jointReviewId": "mpj:INFP:ENFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:ENFP",
+      "jointReviewId": "mpj:INFP:ENFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:INFP",
+      "jointReviewId": "mpj:INFP:ENFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:ISTJ",
+      "jointReviewId": "mpj:INFP:ISTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:INFP",
+      "jointReviewId": "mpj:INFP:ISTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:ISFJ",
+      "jointReviewId": "mpj:INFP:ISFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:INFP",
+      "jointReviewId": "mpj:INFP:ISFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:ESTJ",
+      "jointReviewId": "mpj:INFP:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:INFP",
+      "jointReviewId": "mpj:INFP:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:ESFJ",
+      "jointReviewId": "mpj:INFP:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:INFP",
+      "jointReviewId": "mpj:INFP:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:ISTP",
+      "jointReviewId": "mpj:INFP:ISTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:INFP",
+      "jointReviewId": "mpj:INFP:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:ISFP",
+      "jointReviewId": "mpj:INFP:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:INFP",
+      "jointReviewId": "mpj:INFP:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:ESTP",
+      "jointReviewId": "mpj:INFP:ESTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:INFP",
+      "jointReviewId": "mpj:INFP:ESTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:INFP:ESFP",
+      "jointReviewId": "mpj:INFP:ESFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:INFP",
+      "jointReviewId": "mpj:INFP:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:ENFJ",
+      "jointReviewId": "mpj:ENFJ:ENFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:ENFJ:ENFP",
+      "jointReviewId": "mpj:ENFJ:ENFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:ENFJ",
+      "jointReviewId": "mpj:ENFJ:ENFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:ISTJ",
+      "jointReviewId": "mpj:ENFJ:ISTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:ENFJ",
+      "jointReviewId": "mpj:ENFJ:ISTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:ISFJ",
+      "jointReviewId": "mpj:ENFJ:ISFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:ENFJ",
+      "jointReviewId": "mpj:ENFJ:ISFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:ESTJ",
+      "jointReviewId": "mpj:ENFJ:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:ENFJ",
+      "jointReviewId": "mpj:ENFJ:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:ESFJ",
+      "jointReviewId": "mpj:ENFJ:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:ENFJ",
+      "jointReviewId": "mpj:ENFJ:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:ISTP",
+      "jointReviewId": "mpj:ENFJ:ISTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:ENFJ",
+      "jointReviewId": "mpj:ENFJ:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:ISFP",
+      "jointReviewId": "mpj:ENFJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:ENFJ",
+      "jointReviewId": "mpj:ENFJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:ESTP",
+      "jointReviewId": "mpj:ENFJ:ESTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:ENFJ",
+      "jointReviewId": "mpj:ENFJ:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFJ:ESFP",
+      "jointReviewId": "mpj:ENFJ:ESFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:ENFJ",
+      "jointReviewId": "mpj:ENFJ:ESFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:ENFP",
+      "jointReviewId": "mpj:ENFP:ENFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:ENFP:ISTJ",
+      "jointReviewId": "mpj:ENFP:ISTJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:ENFP",
+      "jointReviewId": "mpj:ENFP:ISTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:ISFJ",
+      "jointReviewId": "mpj:ENFP:ISFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:ENFP",
+      "jointReviewId": "mpj:ENFP:ISFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:ESTJ",
+      "jointReviewId": "mpj:ENFP:ESTJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:ENFP",
+      "jointReviewId": "mpj:ENFP:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:ESFJ",
+      "jointReviewId": "mpj:ENFP:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:ENFP",
+      "jointReviewId": "mpj:ENFP:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:ISTP",
+      "jointReviewId": "mpj:ENFP:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:ENFP",
+      "jointReviewId": "mpj:ENFP:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:ISFP",
+      "jointReviewId": "mpj:ENFP:ISFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:ENFP",
+      "jointReviewId": "mpj:ENFP:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:ESTP",
+      "jointReviewId": "mpj:ENFP:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:ENFP",
+      "jointReviewId": "mpj:ENFP:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ENFP:ESFP",
+      "jointReviewId": "mpj:ENFP:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:ENFP",
+      "jointReviewId": "mpj:ENFP:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:ISTJ",
+      "jointReviewId": "mpj:ISTJ:ISTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:ISTJ:ISFJ",
+      "jointReviewId": "mpj:ISTJ:ISFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:ISTJ",
+      "jointReviewId": "mpj:ISTJ:ISFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:ESTJ",
+      "jointReviewId": "mpj:ISTJ:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:ISTJ",
+      "jointReviewId": "mpj:ISTJ:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:ESFJ",
+      "jointReviewId": "mpj:ISTJ:ESFJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:ISTJ",
+      "jointReviewId": "mpj:ISTJ:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:ISTP",
+      "jointReviewId": "mpj:ISTJ:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:ISTJ",
+      "jointReviewId": "mpj:ISTJ:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:ISFP",
+      "jointReviewId": "mpj:ISTJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:ISTJ",
+      "jointReviewId": "mpj:ISTJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:ESTP",
+      "jointReviewId": "mpj:ISTJ:ESTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:ISTJ",
+      "jointReviewId": "mpj:ISTJ:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTJ:ESFP",
+      "jointReviewId": "mpj:ISTJ:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:ISTJ",
+      "jointReviewId": "mpj:ISTJ:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:ISFJ",
+      "jointReviewId": "mpj:ISFJ:ISFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:ISFJ:ESTJ",
+      "jointReviewId": "mpj:ISFJ:ESTJ",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:ISFJ",
+      "jointReviewId": "mpj:ISFJ:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:ESFJ",
+      "jointReviewId": "mpj:ISFJ:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:ISFJ",
+      "jointReviewId": "mpj:ISFJ:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:ISTP",
+      "jointReviewId": "mpj:ISFJ:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:ISFJ",
+      "jointReviewId": "mpj:ISFJ:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:ISFP",
+      "jointReviewId": "mpj:ISFJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:ISFJ",
+      "jointReviewId": "mpj:ISFJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:ESTP",
+      "jointReviewId": "mpj:ISFJ:ESTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:ISFJ",
+      "jointReviewId": "mpj:ISFJ:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFJ:ESFP",
+      "jointReviewId": "mpj:ISFJ:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:ISFJ",
+      "jointReviewId": "mpj:ISFJ:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:ESTJ",
+      "jointReviewId": "mpj:ESTJ:ESTJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:ESTJ:ESFJ",
+      "jointReviewId": "mpj:ESTJ:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:ESTJ",
+      "jointReviewId": "mpj:ESTJ:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:ISTP",
+      "jointReviewId": "mpj:ESTJ:ISTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:ESTJ",
+      "jointReviewId": "mpj:ESTJ:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:ISFP",
+      "jointReviewId": "mpj:ESTJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:ESTJ",
+      "jointReviewId": "mpj:ESTJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:ESTP",
+      "jointReviewId": "mpj:ESTJ:ESTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:ESTJ",
+      "jointReviewId": "mpj:ESTJ:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTJ:ESFP",
+      "jointReviewId": "mpj:ESTJ:ESFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:ESTJ",
+      "jointReviewId": "mpj:ESTJ:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:ESFJ",
+      "jointReviewId": "mpj:ESFJ:ESFJ",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:ESFJ:ISTP",
+      "jointReviewId": "mpj:ESFJ:ISTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:ESFJ",
+      "jointReviewId": "mpj:ESFJ:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:ISFP",
+      "jointReviewId": "mpj:ESFJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:ESFJ",
+      "jointReviewId": "mpj:ESFJ:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:ESTP",
+      "jointReviewId": "mpj:ESFJ:ESTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:ESFJ",
+      "jointReviewId": "mpj:ESFJ:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFJ:ESFP",
+      "jointReviewId": "mpj:ESFJ:ESFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:ESFJ",
+      "jointReviewId": "mpj:ESFJ:ESFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:ISTP",
+      "jointReviewId": "mpj:ISTP:ISTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:ISTP:ISFP",
+      "jointReviewId": "mpj:ISTP:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:ISTP",
+      "jointReviewId": "mpj:ISTP:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:ESTP",
+      "jointReviewId": "mpj:ISTP:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:ISTP",
+      "jointReviewId": "mpj:ISTP:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISTP:ESFP",
+      "jointReviewId": "mpj:ISTP:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:ISTP",
+      "jointReviewId": "mpj:ISTP:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:ISFP",
+      "jointReviewId": "mpj:ISFP:ISFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:ISFP:ESTP",
+      "jointReviewId": "mpj:ISFP:ESTP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:ISFP",
+      "jointReviewId": "mpj:ISFP:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ISFP:ESFP",
+      "jointReviewId": "mpj:ISFP:ESFP",
+      "sourceCoverage": "direct",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:ISFP",
+      "jointReviewId": "mpj:ISFP:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESTP:ESTP",
+      "jointReviewId": "mpj:ESTP:ESTP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    },
+    {
+      "id": "mpr:ESTP:ESFP",
+      "jointReviewId": "mpj:ESTP:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:ESTP",
+      "jointReviewId": "mpj:ESTP:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": false
+    },
+    {
+      "id": "mpr:ESFP:ESFP",
+      "jointReviewId": "mpj:ESFP:ESFP",
+      "sourceCoverage": "inferred",
+      "sourceTraitCount": 12,
+      "targetTraitCount": 12,
+      "sameType": true
+    }
+  ],
+  "uniqueTraitPointers": 192,
+  "uniqueLocalTraitIdStrings": 188,
+  "sourceTraitReferenceOccurrences": 3072,
+  "targetTraitReferenceOccurrences": 3072,
+  "uniqueSceneTexts": 272,
+  "humanSemanticReview": "semantic-review.md"
+}

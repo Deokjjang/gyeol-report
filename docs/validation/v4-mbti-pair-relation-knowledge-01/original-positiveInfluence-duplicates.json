@@ -1,0 +1,254 @@
+[
+  {
+    "text": "ENTP는 ENFP가 감정적으로 확신한 아이디어를 더 넓은 관점에서 검증하게 만든다.",
+    "pairs": [
+      "mpr:ENTP:ENFP",
+      "mpr:ENFP:ENTP"
+    ]
+  },
+  {
+    "text": "ENFP는 ENTP가 사람의 마음을 지나치게 실험 대상으로 다루지 않도록 따뜻한 기준을 제공한다.",
+    "pairs": [
+      "mpr:ENTP:ENFP",
+      "mpr:ENFP:ENTP"
+    ]
+  },
+  {
+    "text": "토론과 애정의 경계를 지키면 서로의 창의성을 크게 자극한다.",
+    "pairs": [
+      "mpr:ENTP:ENFP",
+      "mpr:ENFP:ENTP"
+    ]
+  },
+  {
+    "text": "ENTP는 ISTP에게 더 많은 선택지와 관점을 제공하고, ISTP는 ENTP의 아이디어를 실제로 되는 것과 안 되는 것으로 가른다.",
+    "pairs": [
+      "mpr:ENTP:ISTP",
+      "mpr:ISTP:ENTP"
+    ]
+  },
+  {
+    "text": "서로의 실험 방식을 존중하면 창의성과 현실성이 함께 생긴다.",
+    "pairs": [
+      "mpr:ENTP:ISTP",
+      "mpr:ISTP:ENTP"
+    ]
+  },
+  {
+    "text": "재미와 도전이 있는 프로젝트에서는 강한 시너지가 나온다.",
+    "pairs": [
+      "mpr:ENTP:ISTP",
+      "mpr:ISTP:ENTP"
+    ]
+  },
+  {
+    "text": "ENTP는 ESTP에게 더 넓은 관점과 새로운 선택지를 제공한다.",
+    "pairs": [
+      "mpr:ENTP:ESTP",
+      "mpr:ESTP:ENTP"
+    ]
+  },
+  {
+    "text": "ESTP는 ENTP의 아이디어가 현실에서 통하는지 빠르게 검증해 준다.",
+    "pairs": [
+      "mpr:ENTP:ESTP",
+      "mpr:ESTP:ENTP"
+    ]
+  },
+  {
+    "text": "재미와 실험이 있는 관계에서는 서로의 활력을 크게 키운다.",
+    "pairs": [
+      "mpr:ENTP:ESTP",
+      "mpr:ESTP:ENTP"
+    ]
+  },
+  {
+    "text": "ENTP는 ESFP에게 더 넓은 관점과 새로운 선택지를 열어 준다.",
+    "pairs": [
+      "mpr:ENTP:ESFP",
+      "mpr:ESFP:ENTP"
+    ]
+  },
+  {
+    "text": "ESFP는 ENTP가 말로만 가능성을 굴리지 않고 실제 사람과 분위기 속에서 반응을 보게 만든다.",
+    "pairs": [
+      "mpr:ENTP:ESFP",
+      "mpr:ESFP:ENTP"
+    ]
+  },
+  {
+    "text": "토론과 표현의 선을 지키면 두 사람은 서로에게 강한 활력과 창의성을 준다.",
+    "pairs": [
+      "mpr:ENTP:ESFP",
+      "mpr:ESFP:ENTP"
+    ]
+  },
+  {
+    "text": "ISTJ는 INFJ의 이상을 생활 속 실행 계획으로 내려앉히는 힘을 준다.",
+    "pairs": [
+      "mpr:INFJ:ISTJ",
+      "mpr:ISTJ:INFJ"
+    ]
+  },
+  {
+    "text": "INFJ는 ISTJ가 놓치기 쉬운 사람의 감정 변화와 관계의 장기적 분위기를 알려 준다.",
+    "pairs": [
+      "mpr:INFJ:ISTJ",
+      "mpr:ISTJ:INFJ"
+    ]
+  },
+  {
+    "text": "ISTP는 ENFP가 복잡하게 느끼는 문제를 실제로 가능한 행동 단위로 줄여 준다.",
+    "pairs": [
+      "mpr:ENFP:ISTP",
+      "mpr:ISTP:ENFP"
+    ]
+  },
+  {
+    "text": "ENFP는 ISTP가 사람의 마음과 관계의 맥락을 놓치지 않도록 부드럽게 환기한다.",
+    "pairs": [
+      "mpr:ENFP:ISTP",
+      "mpr:ISTP:ENFP"
+    ]
+  },
+  {
+    "text": "서로에게 너무 많은 정서적 역할을 요구하지 않으면 현실성과 따뜻함이 조금씩 보완된다.",
+    "pairs": [
+      "mpr:ENFP:ISTP",
+      "mpr:ISTP:ENFP"
+    ]
+  },
+  {
+    "text": "ESTP는 ENFP가 생각과 감정 속에서 맴돌 때 실제 경험과 행동으로 나오게 만든다.",
+    "pairs": [
+      "mpr:ENFP:ESTP",
+      "mpr:ESTP:ENFP"
+    ]
+  },
+  {
+    "text": "ENFP는 ESTP가 순간의 재미만 보지 않고 사람의 마음과 관계의 의미를 생각하게 돕는다.",
+    "pairs": [
+      "mpr:ENFP:ESTP",
+      "mpr:ESTP:ENFP"
+    ]
+  },
+  {
+    "text": "서로의 속도를 존중하면 활기와 정서적 풍부함이 함께 생긴다.",
+    "pairs": [
+      "mpr:ENFP:ESTP",
+      "mpr:ESTP:ENFP"
+    ]
+  },
+  {
+    "text": "ESFP는 ENFP가 머릿속 가능성에만 머물지 않고 현실의 즐거움을 직접 누리게 한다.",
+    "pairs": [
+      "mpr:ENFP:ESFP",
+      "mpr:ESFP:ENFP"
+    ]
+  },
+  {
+    "text": "ENFP는 ESFP가 순간의 재미 뒤에 있는 마음의 방향과 미래 선택지를 보게 돕는다.",
+    "pairs": [
+      "mpr:ENFP:ESFP",
+      "mpr:ESFP:ENFP"
+    ]
+  },
+  {
+    "text": "서로의 활력을 인정하면 관계가 밝고 따뜻하게 유지된다.",
+    "pairs": [
+      "mpr:ENFP:ESFP",
+      "mpr:ESFP:ENFP"
+    ]
+  },
+  {
+    "text": "ISTJ는 ISTP에게 지속성과 책임 구조를 제공하고, ISTP는 ISTJ에게 유연성과 현장 대응력을 제공한다.",
+    "pairs": [
+      "mpr:ISTJ:ISTP",
+      "mpr:ISTP:ISTJ"
+    ]
+  },
+  {
+    "text": "둘이 서로의 방식을 존중하면 안정성과 실전성이 함께 살아난다.",
+    "pairs": [
+      "mpr:ISTJ:ISTP",
+      "mpr:ISTP:ISTJ"
+    ]
+  },
+  {
+    "text": "생활 문제를 해결하는 능력은 좋은 편이라 감정만 격해지지 않으면 현실 조율이 가능하다.",
+    "pairs": [
+      "mpr:ISTJ:ISTP",
+      "mpr:ISTP:ISTJ"
+    ]
+  },
+  {
+    "text": "ISTJ는 ESFP에게 장기 책임과 생활 안정의 힘을 제공한다.",
+    "pairs": [
+      "mpr:ISTJ:ESFP",
+      "mpr:ESFP:ISTJ"
+    ]
+  },
+  {
+    "text": "ESFP는 ISTJ가 지나치게 무겁고 반복적인 생활에 갇히지 않도록 즐거움과 표현을 더해 준다.",
+    "pairs": [
+      "mpr:ISTJ:ESFP",
+      "mpr:ESFP:ISTJ"
+    ]
+  },
+  {
+    "text": "안정과 활력의 역할을 나누면 생활과 관계가 함께 살아난다.",
+    "pairs": [
+      "mpr:ISTJ:ESFP",
+      "mpr:ESFP:ISTJ"
+    ]
+  },
+  {
+    "text": "ESFP는 ISTP에게 관계의 밝은 표현과 즐거움을 더해 준다.",
+    "pairs": [
+      "mpr:ISTP:ESFP",
+      "mpr:ESFP:ISTP"
+    ]
+  },
+  {
+    "text": "ISTP는 ESFP가 순간의 분위기에 휩쓸릴 때 현실적인 판단과 기술적 해결책을 제공한다.",
+    "pairs": [
+      "mpr:ISTP:ESFP",
+      "mpr:ESFP:ISTP"
+    ]
+  },
+  {
+    "text": "서로의 활동성을 존중하면 즐거움과 실용성이 함께 살아난다.",
+    "pairs": [
+      "mpr:ISTP:ESFP",
+      "mpr:ESFP:ISTP"
+    ]
+  },
+  {
+    "text": "서로의 선의를 인정하면 안정과 활력이 함께 살아난다.",
+    "pairs": [
+      "mpr:ESTP:ISFJ",
+      "mpr:ESFP:ISFJ"
+    ]
+  },
+  {
+    "text": "ESFP는 ESTP에게 사람의 감정과 즐거운 표현을 더해 준다.",
+    "pairs": [
+      "mpr:ESTP:ESFP",
+      "mpr:ESFP:ESTP"
+    ]
+  },
+  {
+    "text": "ESTP는 ESFP가 분위기에 휩쓸릴 때 현실적인 판단과 빠른 해결책을 제공한다.",
+    "pairs": [
+      "mpr:ESTP:ESFP",
+      "mpr:ESFP:ESTP"
+    ]
+  },
+  {
+    "text": "서로의 활동성을 긍정적으로 쓰면 밝고 강한 현장형 커플이 된다.",
+    "pairs": [
+      "mpr:ESTP:ESFP",
+      "mpr:ESFP:ESTP"
+    ]
+  }
+]

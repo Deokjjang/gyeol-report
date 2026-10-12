@@ -1,0 +1,263 @@
+export const MBTI_PAIR_RESEARCH_SOURCES = [
+  {
+    "id": "user-source:INTJ",
+    "title": "INTJ 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/INTJ.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:INTP",
+    "title": "INTP 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/INTP.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:ENTJ",
+    "title": "ENTJ 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/ENTJ.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:ENTP",
+    "title": "ENTP 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/ENTP.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:INFJ",
+    "title": "INFJ 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/INFJ.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:INFP",
+    "title": "INFP 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/INFP.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:ENFJ",
+    "title": "ENFJ 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/ENFJ.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:ENFP",
+    "title": "ENFP 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/ENFP.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:ISTJ",
+    "title": "ISTJ 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/ISTJ.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:ISFJ",
+    "title": "ISFJ 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/ISFJ.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:ESTJ",
+    "title": "ESTJ 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/ESTJ.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:ESFJ",
+    "title": "ESFJ 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/ESFJ.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:ISTP",
+    "title": "ISTP 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/ISTP.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:ISFP",
+    "title": "ISFP 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/ISFP.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:ESTP",
+    "title": "ESTP 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/ESTP.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:ESFP",
+    "title": "ESFP 사용자 제공 원천 정리",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/ESFP.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "원문·경로·hash·sourceCoverage 확인",
+    "typeDefinition": "기존 MBTI 네 글자와 로컬 trait 정의",
+    "relationBasis": "로컬 notablePairs; direct도 원저자·실증 검증 아님",
+    "limit": "개별 행동·관계 결과·Socionics 대응 미확인"
+  },
+  {
+    "id": "user-source:local",
+    "title": "기존 16유형 관계명 집합",
+    "author": "기존 사용자 제공·편집 자료; 최초 저자 미확인",
+    "location": "docs/product/mbti/source/*.json",
+    "accessed": "2026-10-13",
+    "verifiedScope": "16파일의 256원문과 86명칭 전수 대조",
+    "typeDefinition": "로컬 MBTI 유형 표기",
+    "relationBasis": "용어 집합을 참조하는 공통 출처 식별자",
+    "limit": "원저자 계보와 외부 유형 체계 대응 미확인"
+  },
+  {
+    "id": "mbf:relationships",
+    "title": "Personality Type and Relationships",
+    "author": "Myers & Briggs Foundation",
+    "location": "https://www.myersbriggs.org/type-in-my-life/personality-type-and-relationships/home.htm",
+    "accessed": "2026-10-13",
+    "verifiedScope": "최적·더 성공하는 유형 조합을 정하지 않으며 유형 외 관계 요인도 고려",
+    "typeDefinition": "MBTI 선호",
+    "relationBasis": "일반 활용 지침",
+    "limit": "신규 256기록의 경험적 근거 아님"
+  },
+  {
+    "id": "iis:basic",
+    "title": "Basic categories of Socionics",
+    "author": "International Institute of Socionics",
+    "location": "https://socionic.info/en/et/buklet.html",
+    "accessed": "2026-10-13",
+    "verifiedScope": "Model A·TIM·관계 명칭 목록·요청/감독의 비대칭 구분",
+    "typeDefinition": "정보대사형 TIM, Model A",
+    "relationBasis": "해당 학파의 모형 설명",
+    "limit": "페이지의 최적 관계·건강·실증 주장 자체를 독립 검증하지 않음; MBTI 대응 승인 아님"
+  },
+  {
+    "id": "bukalov:2012",
+    "title": "Описания интертипных отношений, №4 2012 pp38–44",
+    "author": "А. В. Букалов / International Institute of Socionics",
+    "location": "https://publishing.socionic.info/socionics/article/download/950/901",
+    "accessed": "2026-10-13",
+    "verifiedScope": "14관계·12대칭/2비대칭 구분; 동일·듀얼 Model A 설명",
+    "typeDefinition": "TIM·Model A",
+    "relationBasis": "저자의 이론·사례 설명",
+    "limit": "유명인 유형 추정·성공 사례를 사실 근거로 채택하지 않음; MBTI 페어 실증 아님"
+  },
+  {
+    "id": "gulenko:systems",
+    "title": "Speaking Different Languages, Striving for the Same (1996, revised 2001)",
+    "author": "Victor Gulenko; authorized translation Dmitri Lytov",
+    "location": "https://socionic.info/pdf/Speaking%20Different%20Languages.pdf",
+    "accessed": "2026-10-13",
+    "verifiedScope": "pp1–3의 기준·기호·유형 정의 차이, 대응표의 가설적 성격",
+    "typeDefinition": "저자의 Socionics와 미국 유형론 비교",
+    "relationBasis": "다른 체계의 비교 논의",
+    "limit": "저자의 대응표를 현재 MBTI 입력에 적용하지 않음; 보편적 대응 합의 아님"
+  },
+  {
+    "id": "shs:relations",
+    "title": "Intertype relationships in socionics",
+    "author": "Humanitarian Socionics / Viktor Gulenko school",
+    "location": "https://socioniks.net/en/relation/",
+    "accessed": "2026-10-13",
+    "verifiedScope": "관계명·짧은 정의·Benefit/Revision 비대칭; 절대 궁합 부정",
+    "typeDefinition": "Humanitarian Socionics, 다른 학파와 구분",
+    "relationBasis": "해당 학파의 관계 모형",
+    "limit": "정신건강·절대성 표현 채택 금지; 심리적 서열·MBTI 관계 법칙 아님"
+  },
+  {
+    "id": "wikisocion:terms",
+    "title": "Intertype relations",
+    "author": "Wikisocion community editors (secondary glossary)",
+    "location": "https://wikisocion.github.io/content/intertype.html",
+    "accessed": "2026-10-13",
+    "verifiedScope": "영어 별칭 Activity/Activation, Business/Look-a-Like/Cooperation, Kindred/Comparative, Contrary/Extinguishment 등",
+    "typeDefinition": "Socionics 영어 용어 정리",
+    "relationBasis": "2차 용어 사전; 고유 원전 아님",
+    "limit": "별칭 후보 비교에만 사용; 원천 작성자의 계보·정확한 번역 의도 미확인"
+  }
+] as const;
+
+export const MBTI_PAIR_RESEARCH_POLICY = {
+  reverseMissing: "missing_do_not_invent",
+  unknownType: "no_research_record_no_type_guess",
+  typeSystemMapping: "not_established",
+  connectedToRuntime: false,
+  approvedForCustomer: false,
+} as const;

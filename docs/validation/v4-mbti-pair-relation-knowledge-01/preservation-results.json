@@ -1,0 +1,36 @@
+{
+  "existingWorktrees": 18,
+  "totalWithNewWorktree": 19,
+  "allExistingHeadsBranchesStatusesFileHashesPreserved": true,
+  "originalCheckout": {
+    "head": "c048218cc5961e0f53a1deab2603511e17559fc3",
+    "branch": "v4/annual-editorial-quality-fix-01",
+    "status": " M .gitignore\n M AGENTS.md\n?? supabase/.temp/\n",
+    "dirtyFileCount": 11
+  },
+  "filePreservation": {
+    "source-preservation.json": {
+      "files": 995,
+      "changed": []
+    },
+    "original-json-preservation.json": {
+      "files": 16,
+      "changed": []
+    },
+    "individual-research-preservation.json": {
+      "files": 46,
+      "changed": []
+    }
+  },
+  "bundleCheck": {
+    "scannedJavaScriptFiles": 458,
+    "researchSentinelMatches": []
+  },
+  "protectedActions": {
+    "masterChanged": false,
+    "productionDeployed": false,
+    "databaseWrites": false,
+    "financialActions": false,
+    "eventActivated": false
+  }
+}
