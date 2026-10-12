@@ -1,0 +1,783 @@
+{
+  "A": {
+    "before": {
+      "chapters": 9,
+      "paragraphs": 35,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "length": 9278,
+      "sentences": 140,
+      "edition": "compatibility-editorial-release-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": [
+          "CH09.P1:INSUFFICIENT_DISTINCT_MATERIAL",
+          "CH09:PARAGRAPH_SHORTAGE"
+        ]
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 10,
+        "다음 만남의 시간과 장소를 고르는 날": 8,
+        "바뀌는 이유를 미리 알 수 있는 약속": 6,
+        "내 방식도 존중받는 대화": 6,
+        "각자의 장점을 나눠 쓸 여지": 3
+      }
+    },
+    "after": {
+      "chapters": 9,
+      "paragraphs": 36,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "length": 9823,
+      "sentences": 144,
+      "edition": "compatibility-editorial-quality-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 0,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 5,
+        "내 방식도 존중받는 대화": 0,
+        "각자의 장점을 나눠 쓸 여지": 0
+      }
+    }
+  },
+  "B": {
+    "before": {
+      "chapters": 9,
+      "paragraphs": 36,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "length": 9436,
+      "sentences": 145,
+      "edition": "compatibility-editorial-release-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 0,
+        "다음 만남의 시간과 장소를 고르는 날": 7,
+        "바뀌는 이유를 미리 알 수 있는 약속": 3,
+        "내 방식도 존중받는 대화": 0,
+        "각자의 장점을 나눠 쓸 여지": 0
+      }
+    },
+    "after": {
+      "chapters": 9,
+      "paragraphs": 36,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "length": 9617,
+      "sentences": 144,
+      "edition": "compatibility-editorial-quality-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 0,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 5,
+        "내 방식도 존중받는 대화": 0,
+        "각자의 장점을 나눠 쓸 여지": 0
+      }
+    }
+  },
+  "C": {
+    "before": {
+      "chapters": 9,
+      "paragraphs": 35,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "length": 9278,
+      "sentences": 140,
+      "edition": "compatibility-editorial-release-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": [
+          "CH09.P1:INSUFFICIENT_DISTINCT_MATERIAL",
+          "CH09:PARAGRAPH_SHORTAGE"
+        ]
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 10,
+        "다음 만남의 시간과 장소를 고르는 날": 8,
+        "바뀌는 이유를 미리 알 수 있는 약속": 6,
+        "내 방식도 존중받는 대화": 6,
+        "각자의 장점을 나눠 쓸 여지": 3
+      }
+    },
+    "after": {
+      "chapters": 9,
+      "paragraphs": 36,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "length": 9822,
+      "sentences": 144,
+      "edition": "compatibility-editorial-quality-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 0,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 5,
+        "내 방식도 존중받는 대화": 0,
+        "각자의 장점을 나눠 쓸 여지": 0
+      }
+    }
+  },
+  "D": {
+    "before": {
+      "chapters": 9,
+      "paragraphs": 35,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "length": 9252,
+      "sentences": 140,
+      "edition": "compatibility-editorial-release-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": [
+          "CH09.P1:INSUFFICIENT_DISTINCT_MATERIAL",
+          "CH09:PARAGRAPH_SHORTAGE"
+        ]
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 10,
+        "다음 만남의 시간과 장소를 고르는 날": 8,
+        "바뀌는 이유를 미리 알 수 있는 약속": 0,
+        "내 방식도 존중받는 대화": 6,
+        "각자의 장점을 나눠 쓸 여지": 3
+      }
+    },
+    "after": {
+      "chapters": 9,
+      "paragraphs": 36,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "length": 9743,
+      "sentences": 144,
+      "edition": "compatibility-editorial-quality-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 0,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 0,
+        "내 방식도 존중받는 대화": 0,
+        "각자의 장점을 나눠 쓸 여지": 0
+      }
+    }
+  },
+  "E": {
+    "before": {
+      "chapters": 9,
+      "paragraphs": 34,
+      "perChapter": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "length": 8792,
+      "sentences": 134,
+      "edition": "compatibility-editorial-release-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": [
+          "CH01.P3:UNKNOWN_MBTI_NO_PAIR_INFERENCE",
+          "CH09.P1:INSUFFICIENT_DISTINCT_MATERIAL",
+          "CH01:PARAGRAPH_SHORTAGE",
+          "CH09:PARAGRAPH_SHORTAGE"
+        ]
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 10,
+        "다음 만남의 시간과 장소를 고르는 날": 8,
+        "바뀌는 이유를 미리 알 수 있는 약속": 3,
+        "내 방식도 존중받는 대화": 8,
+        "각자의 장점을 나눠 쓸 여지": 3
+      }
+    },
+    "after": {
+      "chapters": 9,
+      "paragraphs": 36,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "length": 9860,
+      "sentences": 144,
+      "edition": "compatibility-editorial-quality-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 0,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 10,
+        "내 방식도 존중받는 대화": 0,
+        "각자의 장점을 나눠 쓸 여지": 0
+      }
+    }
+  },
+  "F": {
+    "before": {
+      "chapters": 9,
+      "paragraphs": 34,
+      "perChapter": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "length": 8743,
+      "sentences": 134,
+      "edition": "compatibility-editorial-release-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": [
+          "CH01.P3:UNKNOWN_MBTI_NO_PAIR_INFERENCE",
+          "CH09.P1:INSUFFICIENT_DISTINCT_MATERIAL",
+          "CH01:PARAGRAPH_SHORTAGE",
+          "CH09:PARAGRAPH_SHORTAGE"
+        ]
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 10,
+        "다음 만남의 시간과 장소를 고르는 날": 8,
+        "바뀌는 이유를 미리 알 수 있는 약속": 0,
+        "내 방식도 존중받는 대화": 8,
+        "각자의 장점을 나눠 쓸 여지": 3
+      }
+    },
+    "after": {
+      "chapters": 9,
+      "paragraphs": 36,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "length": 9693,
+      "sentences": 144,
+      "edition": "compatibility-editorial-quality-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 0,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 0,
+        "내 방식도 존중받는 대화": 0,
+        "각자의 장점을 나눠 쓸 여지": 0
+      }
+    }
+  },
+  "marriage": {
+    "before": {
+      "chapters": 9,
+      "paragraphs": 35,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "length": 9354,
+      "sentences": 140,
+      "edition": "compatibility-editorial-release-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": [
+          "CH09.P1:INSUFFICIENT_DISTINCT_MATERIAL",
+          "CH09:PARAGRAPH_SHORTAGE"
+        ]
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 10,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 6,
+        "내 방식도 존중받는 대화": 6,
+        "각자의 장점을 나눠 쓸 여지": 3
+      }
+    },
+    "after": {
+      "chapters": 9,
+      "paragraphs": 36,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "length": 9865,
+      "sentences": 144,
+      "edition": "compatibility-editorial-quality-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 0,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 5,
+        "내 방식도 존중받는 대화": 0,
+        "각자의 장점을 나눠 쓸 여지": 0
+      }
+    }
+  },
+  "parentChild": {
+    "before": {
+      "chapters": 9,
+      "paragraphs": 35,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "length": 9366,
+      "sentences": 140,
+      "edition": "compatibility-editorial-release-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": [
+          "CH09.P1:INSUFFICIENT_DISTINCT_MATERIAL",
+          "CH09:PARAGRAPH_SHORTAGE"
+        ]
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 10,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 6,
+        "내 방식도 존중받는 대화": 6,
+        "각자의 장점을 나눠 쓸 여지": 3
+      }
+    },
+    "after": {
+      "chapters": 9,
+      "paragraphs": 36,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "length": 9791,
+      "sentences": 144,
+      "edition": "compatibility-editorial-quality-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 0,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 5,
+        "내 방식도 존중받는 대화": 0,
+        "각자의 장점을 나눠 쓸 여지": 0
+      }
+    }
+  },
+  "coworker": {
+    "before": {
+      "chapters": 9,
+      "paragraphs": 35,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "length": 9415,
+      "sentences": 140,
+      "edition": "compatibility-editorial-release-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": [
+          "CH09.P1:INSUFFICIENT_DISTINCT_MATERIAL",
+          "CH09:PARAGRAPH_SHORTAGE"
+        ]
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 10,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 6,
+        "내 방식도 존중받는 대화": 6,
+        "각자의 장점을 나눠 쓸 여지": 3
+      }
+    },
+    "after": {
+      "chapters": 9,
+      "paragraphs": 36,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "length": 9883,
+      "sentences": 144,
+      "edition": "compatibility-editorial-quality-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 0,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 5,
+        "내 방식도 존중받는 대화": 0,
+        "각자의 장점을 나눠 쓸 여지": 0
+      }
+    }
+  },
+  "managerReport": {
+    "before": {
+      "chapters": 9,
+      "paragraphs": 35,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "length": 9418,
+      "sentences": 140,
+      "edition": "compatibility-editorial-release-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": [
+          "CH09.P1:INSUFFICIENT_DISTINCT_MATERIAL",
+          "CH09:PARAGRAPH_SHORTAGE"
+        ]
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 10,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 6,
+        "내 방식도 존중받는 대화": 6,
+        "각자의 장점을 나눠 쓸 여지": 3
+      }
+    },
+    "after": {
+      "chapters": 9,
+      "paragraphs": 36,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "length": 9844,
+      "sentences": 144,
+      "edition": "compatibility-editorial-quality-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 0,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 5,
+        "내 방식도 존중받는 대화": 0,
+        "각자의 장점을 나눠 쓸 여지": 0
+      }
+    }
+  },
+  "businessPartner": {
+    "before": {
+      "chapters": 9,
+      "paragraphs": 35,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "length": 9432,
+      "sentences": 140,
+      "edition": "compatibility-editorial-release-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": [
+          "CH09.P1:INSUFFICIENT_DISTINCT_MATERIAL",
+          "CH09:PARAGRAPH_SHORTAGE"
+        ]
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 10,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 6,
+        "내 방식도 존중받는 대화": 6,
+        "각자의 장점을 나눠 쓸 여지": 3
+      }
+    },
+    "after": {
+      "chapters": 9,
+      "paragraphs": 36,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "length": 9888,
+      "sentences": 144,
+      "edition": "compatibility-editorial-quality-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 0,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 5,
+        "내 방식도 존중받는 대화": 0,
+        "각자의 장점을 나눠 쓸 여지": 0
+      }
+    }
+  },
+  "friendship": {
+    "before": {
+      "chapters": 9,
+      "paragraphs": 35,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "length": 9409,
+      "sentences": 140,
+      "edition": "compatibility-editorial-release-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": [
+          "CH09.P1:INSUFFICIENT_DISTINCT_MATERIAL",
+          "CH09:PARAGRAPH_SHORTAGE"
+        ]
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 10,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 6,
+        "내 방식도 존중받는 대화": 6,
+        "각자의 장점을 나눠 쓸 여지": 3
+      }
+    },
+    "after": {
+      "chapters": 9,
+      "paragraphs": 36,
+      "perChapter": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "length": 9854,
+      "sentences": 144,
+      "edition": "compatibility-editorial-quality-01-v1",
+      "validation": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "editorial": [],
+      "phraseCounts": {
+        "내게 익숙한 방식으로": 0,
+        "다음 만남의 시간과 장소를 고르는 날": 0,
+        "바뀌는 이유를 미리 알 수 있는 약속": 5,
+        "내 방식도 존중받는 대화": 0,
+        "각자의 장점을 나눠 쓸 여지": 0
+      }
+    }
+  }
+}

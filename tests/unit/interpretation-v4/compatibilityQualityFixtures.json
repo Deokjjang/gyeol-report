@@ -1,0 +1,656 @@
+{
+  "cases": [
+    {
+      "id": "A",
+      "payload": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "love",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      }
+    },
+    {
+      "id": "B",
+      "payload": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "love",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "김태오",
+          "birthDate": "1988-11-06",
+          "birthTime": "16:45",
+          "gender": "MALE",
+          "mbtiType": "ISTJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "박소민",
+          "birthDate": "1996-05-24",
+          "birthTime": "22:10",
+          "gender": "FEMALE",
+          "mbtiType": "ENFP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      }
+    },
+    {
+      "id": "C",
+      "payload": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "love",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      }
+    },
+    {
+      "id": "D",
+      "payload": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "love",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      }
+    },
+    {
+      "id": "E",
+      "payload": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "love",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      }
+    },
+    {
+      "id": "F",
+      "payload": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "love",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "",
+          "gender": "MALE",
+          "mbtiType": "",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "",
+          "gender": "FEMALE",
+          "mbtiType": "",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      }
+    },
+    {
+      "id": "marriage",
+      "payload": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "marriage",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      }
+    },
+    {
+      "id": "parentChild",
+      "payload": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "parentChild",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      }
+    },
+    {
+      "id": "coworker",
+      "payload": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "coworker",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      }
+    },
+    {
+      "id": "managerReport",
+      "payload": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "managerReport",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      }
+    },
+    {
+      "id": "businessPartner",
+      "payload": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "businessPartner",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      }
+    },
+    {
+      "id": "friendship",
+      "payload": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "friendship",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      }
+    }
+  ],
+  "before": {
+    "A": {
+      "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+      "natalTables": "36fcdfbfe5fa25e039c920c1f036ee215a4c389ae159fa16e226347461c03cfe",
+      "mbtiTables": "1f1cbdd9d889692c51806ed17910587f97f7874860ebab65de0aa7dfa878bab5",
+      "index": "827b40a39f07ec3fcc5d4f0ababcb9c11cf92344bf6270f214f94832261aafeb",
+      "directions": "08ca208c805c457fce4f40475321591defad150c01bd3ae8b69c0bd2e7df58e6",
+      "invariant": "86aa317bd3a495daf8cf0491bb204265ed53e5105cb0a3f4629a51dc26f9ed00",
+      "individuals": "6f211dc1a58d879d14b6d4bd00f544f5b0a1a3a3240a73e4a951a34a04360b7f"
+    },
+    "B": {
+      "calculations": "9de93dfa450ace7be118278d7eefa2c8cfa56c1acb2c851ef136ebe83e39fc80",
+      "natalTables": "34235e0ef87f71658c84f8e638d7d79cab0a69a4b29ef76b4b96f5d3b86deaa5",
+      "mbtiTables": "4a8228c616ab3571f5f7d5b6b4e99fe4e7c5fe1d6b6e80dd5dfaaf04946ed880",
+      "index": "fadfa6a3e14dce82aa8e2b7935c3aad0e6f91af94e3493021d4451197632f60f",
+      "directions": "95e232ccd46be89d3e8c9803c177a8c104b87d199bc6138cba856afe667ec168",
+      "invariant": "9125fdb8a6652fe1f9b6f55ac71bed08306690cc1e1b07ca850e3998f9a03eaf",
+      "individuals": "8f3c58cf6abc4568d9daf0c1349f39a2d664b004d109bf4c4fe56abfff753a61"
+    },
+    "C": {
+      "calculations": "0d0a7291017dfc758fc6d5c9e7721088c01407a9409f1c671b4e2f696ddad00f",
+      "natalTables": "b66c43c9b82958ae9e829604ad276efae34c69f2f6e8eda45906c8d3cd61d49c",
+      "mbtiTables": "7749afcfd219fc1cb151dea2284ee60469ecc8d0b08941439ce02a0ee71973fb",
+      "index": "2621510da752e22027be033ba8942f79f2d304ed9da872e08e44540e2dbadd45",
+      "directions": "3585ef587d1d1b87a386b4bfcf75b76193cf8a57875b46470c6d82af4435525f",
+      "invariant": "86aa317bd3a495daf8cf0491bb204265ed53e5105cb0a3f4629a51dc26f9ed00",
+      "individuals": "1f62a1b4344e460a3fc228f9cfed5cb2a8e6abb26e58f12e08b4e9adc6e518f4"
+    },
+    "D": {
+      "calculations": "1200725713a09ec2349e35748ce5bd82b9e1bef2408c6bed4b773ae006f402a5",
+      "natalTables": "351e58a36b2be230be67a0ef72e4c2e396f526203c7b1e7c183997febd1d4ac7",
+      "mbtiTables": "1f1cbdd9d889692c51806ed17910587f97f7874860ebab65de0aa7dfa878bab5",
+      "index": "f0cf3f8be281c6ed82c7cdb8a4c8c391cbde0b2adaba03e1c79a338d04cbba85",
+      "directions": "c6e0582dfafec24d9e280a5d919125a0c105fb6d1631374f7be468b3f118a2d9",
+      "invariant": "e9defed129eee9475a2c163761fd3fe51db1f601b9db11b9b5556b0480486ed0",
+      "individuals": "5952e2b4ff7884992101b635f2fa0403823eda417c69c5a2e0f151cd464d8bb1"
+    },
+    "E": {
+      "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+      "natalTables": "36fcdfbfe5fa25e039c920c1f036ee215a4c389ae159fa16e226347461c03cfe",
+      "mbtiTables": "e175bd5b25e3c83cc29272084ba054f3d11cd3d2fb31be04279c15e3797f8ec1",
+      "index": "77121a5cf3a30ef7bbee2cfd664253587dd31a9f655e7c9edde92cbc5dead135",
+      "directions": "7bc6dbf97a9406f083967c2a3d94ab92c167317c734c4996a0c0565547d36caa",
+      "invariant": "86aa317bd3a495daf8cf0491bb204265ed53e5105cb0a3f4629a51dc26f9ed00",
+      "individuals": "fc3497ea4a7c882dbbfbb4a476957b7d6fcb187710bc8a23c894cb9a3da8bf8e"
+    },
+    "F": {
+      "calculations": "1200725713a09ec2349e35748ce5bd82b9e1bef2408c6bed4b773ae006f402a5",
+      "natalTables": "351e58a36b2be230be67a0ef72e4c2e396f526203c7b1e7c183997febd1d4ac7",
+      "mbtiTables": "e175bd5b25e3c83cc29272084ba054f3d11cd3d2fb31be04279c15e3797f8ec1",
+      "index": "79a72ef1d6eb029468d415019fa88bcd3f3ecc7c7479e4c257bd1b8967ae08f2",
+      "directions": "3efa03bd10279838a46ceb819daa52de62b8bbbc13f2ec6500297a3e2e602f0e",
+      "invariant": "e9defed129eee9475a2c163761fd3fe51db1f601b9db11b9b5556b0480486ed0",
+      "individuals": "accff61cceed783d512d439397d6005c2c8b884444a73b1b202b5602f1b50381"
+    },
+    "marriage": {
+      "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+      "natalTables": "36fcdfbfe5fa25e039c920c1f036ee215a4c389ae159fa16e226347461c03cfe",
+      "mbtiTables": "1f1cbdd9d889692c51806ed17910587f97f7874860ebab65de0aa7dfa878bab5",
+      "index": "1e8be6e7fd0644df194739898818b121c50ea6cb180f0ed12804bb4a45393037",
+      "directions": "08ca208c805c457fce4f40475321591defad150c01bd3ae8b69c0bd2e7df58e6",
+      "invariant": "86aa317bd3a495daf8cf0491bb204265ed53e5105cb0a3f4629a51dc26f9ed00",
+      "individuals": "6f211dc1a58d879d14b6d4bd00f544f5b0a1a3a3240a73e4a951a34a04360b7f"
+    },
+    "parentChild": {
+      "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+      "natalTables": "36fcdfbfe5fa25e039c920c1f036ee215a4c389ae159fa16e226347461c03cfe",
+      "mbtiTables": "1f1cbdd9d889692c51806ed17910587f97f7874860ebab65de0aa7dfa878bab5",
+      "index": "4dc7629befc9a22d26ad3aac68a9b1358ac45685f621714ae3755e24a36e27f4",
+      "directions": "08ca208c805c457fce4f40475321591defad150c01bd3ae8b69c0bd2e7df58e6",
+      "invariant": "86aa317bd3a495daf8cf0491bb204265ed53e5105cb0a3f4629a51dc26f9ed00",
+      "individuals": "6f211dc1a58d879d14b6d4bd00f544f5b0a1a3a3240a73e4a951a34a04360b7f"
+    },
+    "coworker": {
+      "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+      "natalTables": "36fcdfbfe5fa25e039c920c1f036ee215a4c389ae159fa16e226347461c03cfe",
+      "mbtiTables": "1f1cbdd9d889692c51806ed17910587f97f7874860ebab65de0aa7dfa878bab5",
+      "index": "abafaaf0fe74c0238e28ae7f25e0ce5d28287ffb2e919f00ffcd5200a1a50ba6",
+      "directions": "08ca208c805c457fce4f40475321591defad150c01bd3ae8b69c0bd2e7df58e6",
+      "invariant": "86aa317bd3a495daf8cf0491bb204265ed53e5105cb0a3f4629a51dc26f9ed00",
+      "individuals": "6f211dc1a58d879d14b6d4bd00f544f5b0a1a3a3240a73e4a951a34a04360b7f"
+    },
+    "managerReport": {
+      "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+      "natalTables": "36fcdfbfe5fa25e039c920c1f036ee215a4c389ae159fa16e226347461c03cfe",
+      "mbtiTables": "1f1cbdd9d889692c51806ed17910587f97f7874860ebab65de0aa7dfa878bab5",
+      "index": "89a8978ddbf160f3fd53fba8d1f125a9ba5b19467e5449cbf0f06218fa36497b",
+      "directions": "08ca208c805c457fce4f40475321591defad150c01bd3ae8b69c0bd2e7df58e6",
+      "invariant": "86aa317bd3a495daf8cf0491bb204265ed53e5105cb0a3f4629a51dc26f9ed00",
+      "individuals": "6f211dc1a58d879d14b6d4bd00f544f5b0a1a3a3240a73e4a951a34a04360b7f"
+    },
+    "businessPartner": {
+      "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+      "natalTables": "36fcdfbfe5fa25e039c920c1f036ee215a4c389ae159fa16e226347461c03cfe",
+      "mbtiTables": "1f1cbdd9d889692c51806ed17910587f97f7874860ebab65de0aa7dfa878bab5",
+      "index": "0ffab552fb246c999c698e609646a30c4d4468b55f83eb0886232091f5fbfd5b",
+      "directions": "08ca208c805c457fce4f40475321591defad150c01bd3ae8b69c0bd2e7df58e6",
+      "invariant": "86aa317bd3a495daf8cf0491bb204265ed53e5105cb0a3f4629a51dc26f9ed00",
+      "individuals": "6f211dc1a58d879d14b6d4bd00f544f5b0a1a3a3240a73e4a951a34a04360b7f"
+    },
+    "friendship": {
+      "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+      "natalTables": "36fcdfbfe5fa25e039c920c1f036ee215a4c389ae159fa16e226347461c03cfe",
+      "mbtiTables": "1f1cbdd9d889692c51806ed17910587f97f7874860ebab65de0aa7dfa878bab5",
+      "index": "458cb62b15686b596779a745db091602ded8f9db7a7f4d79a332a123fd938349",
+      "directions": "08ca208c805c457fce4f40475321591defad150c01bd3ae8b69c0bd2e7df58e6",
+      "invariant": "86aa317bd3a495daf8cf0491bb204265ed53e5105cb0a3f4629a51dc26f9ed00",
+      "individuals": "6f211dc1a58d879d14b6d4bd00f544f5b0a1a3a3240a73e4a951a34a04360b7f"
+    }
+  },
+  "otherProducts": [
+    {
+      "id": "01-comprehensive",
+      "input": {
+        "productKey": "saju_mbti_full",
+        "productSlug": "saju-mbti-full",
+        "person": {
+          "name": "김하린",
+          "birthDate": "1992-03-17",
+          "birthTime": "09:20",
+          "gender": "FEMALE",
+          "mbtiType": "ENFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "userContext": {
+          "jobStatus": "",
+          "detailJob": "",
+          "relationshipStatus": "",
+          "focusAreas": []
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "digests": [
+        "2935b27e23d1fbb6f326f1bda9d403db917219ddf429a528990fb126aa0e4d6d",
+        "45831a52a964f41491297338b183c129dc77814e6a3d515929b47bc55dbfdc27",
+        "9f50c7e8d09f9af84a013aa510bc51e08ba09f1925236b6f8b35d7f7d0ce7bf9"
+      ]
+    },
+    {
+      "id": "02-career",
+      "input": {
+        "productKey": "career_money_study",
+        "productSlug": "career-money-study",
+        "person": {
+          "name": "박도윤",
+          "birthDate": "1988-11-06",
+          "birthTime": "16:45",
+          "gender": "MALE",
+          "mbtiType": "ISTJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "userContext": {
+          "jobStatus": "employee",
+          "detailJob": "개발자",
+          "relationshipStatus": "",
+          "focusAreas": []
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "digests": [
+        "b33157c04f5765779f68be294243facf72976d9abaf08aa3d74d0d634840241f",
+        "55486ad26cbca35b36607f0f002c3242fe5f43f5e439e420b8acd94e956f6a1c",
+        "d4bc24011f3a7962035ac7fbb99ee013c3d8a90be684b59ff7d9b270f02698f3"
+      ]
+    },
+    {
+      "id": "03-love",
+      "input": {
+        "productKey": "love_marriage_child",
+        "productSlug": "love-marriage-child",
+        "person": {
+          "name": "최서아",
+          "birthDate": "1996-05-24",
+          "birthTime": "22:10",
+          "gender": "FEMALE",
+          "mbtiType": "INFP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "userContext": {
+          "jobStatus": "",
+          "detailJob": "",
+          "relationshipStatus": "single",
+          "focusAreas": []
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "digests": [
+        "00e77c1567676ab6bb9e34ccd651756f647b8c7ae07d6df5293ef243bf6d3b2e",
+        "ffccc7b6ef8ca34cab8fd881f377fedd4a5a1d0f504406ab098fd4c42ed202f2",
+        "b183ec4dd3f673acb417891f2afdd19946b88307270fd5dcd9aafb4cf9b13a68"
+      ]
+    },
+    {
+      "id": "05-major-fortune",
+      "input": {
+        "productKey": "major_fortune",
+        "productSlug": "major-fortune",
+        "person": {
+          "name": "윤시우",
+          "birthDate": "1983-09-02",
+          "birthTime": "05:10",
+          "gender": "MALE",
+          "mbtiType": "ENTJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "userContext": {
+          "jobStatus": "employee",
+          "detailJob": "기획자",
+          "relationshipStatus": "",
+          "focusAreas": []
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "digests": [
+        "61356d5847b2bb35f28f4f2bc51f9f720d586f88019707367845be697ee2b202",
+        "a129b395fad20b7b77bb2bf85d005d7b8f73eca45c03eef475d76da4dd5a1146",
+        "058b63d58e948647071a16d7d749942291783278966a75d210ad4a25eb15539c"
+      ]
+    },
+    {
+      "id": "06-annual-fortune",
+      "input": {
+        "productKey": "annual_fortune",
+        "productSlug": "annual-fortune",
+        "person": {
+          "name": "한예린",
+          "birthDate": "2000-12-14",
+          "birthTime": "11:50",
+          "gender": "FEMALE",
+          "mbtiType": "INTJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "userContext": {
+          "jobStatus": "student",
+          "detailJob": "",
+          "relationshipStatus": "",
+          "focusAreas": []
+        },
+        "productOptions": {
+          "contentVersion": "v4",
+          "selectedYear": "2026"
+        }
+      },
+      "digests": [
+        "c3107346248c1c63a2ed2e27498709ddde1636b891e4067351911187bab0a0e1",
+        "c9b7c4a13aeb8cea2fe2a33d4543f64ed7c2679e8534f481ed07dd42f3893920",
+        "80b44421f94d83259a258d5d87b8dda57234eaee0953d429cf47b856e3d6f49f"
+      ]
+    }
+  ]
+}

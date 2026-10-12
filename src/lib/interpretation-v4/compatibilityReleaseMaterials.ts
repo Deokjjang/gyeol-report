@@ -3,6 +3,7 @@ import type { PairCategory } from "./compatibilityNarrativeTypes";
 /** Authored manifestations licensed by an existing signed personal axis.
  * These clauses never determine a score, a type or a cross-person relation. */
 export const PAIR_RELEASE_FACETS: readonly { axis: SemanticAxis; sign: 1 | -1; act: string; need: string; gift: string; risk: string; adjust: string }[] = [
+  { axis: "PRECISION", sign: 1, act: "작은 차이와 빠진 조건까지 확인하는 방식", need: "앞뒤가 맞는 설명을 듣고 판단할 시간", gift: "그냥 넘겼다면 놓칠 부분을 찾아내는 꼼꼼함", risk: "작은 틀림을 고치다 상대의 수고까지 부정하는 말", adjust: "지금 꼭 고칠 것과 취향이 다른 부분을 구분하기" },
   { axis: "AUTONOMY", sign: 1, act: "스스로 판단한 뒤 선택을 알리는 방식", need: "내가 직접 고를 수 있는 여지", gift: "상대 대신 결정하지 않는 담백함", risk: "함께 정할 일까지 혼자 끝내는 행동", adjust: "내 선택이 상대의 일정도 바꾸는지 먼저 묻기" },
   { axis: "BOUNDARY", sign: 1, act: "가능한 부탁과 어려운 부탁을 구분하는 방식", need: "무리한 몫을 거절할 수 있는 선", gift: "지킬 수 있는 약속을 분명하게 하는 태도", risk: "필요한 설명보다 거절이 먼저 나오는 반응", adjust: "어려운 이유와 대신 할 수 있는 범위를 같이 말하기" },
   { axis: "CARE", sign: 1, act: "상대가 빠뜨린 작은 필요를 챙기는 방식", need: "도움을 당연하게 넘기지 않는 반응", gift: "불편을 알아채고 손을 보태는 세심함", risk: "부탁받지 않은 일까지 떠맡고 서운해하는 행동", adjust: "도움이 필요한지 묻고 내가 감당할 몫도 정하기" },
