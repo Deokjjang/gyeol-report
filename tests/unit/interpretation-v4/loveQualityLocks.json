@@ -1,0 +1,192 @@
+{
+  "A": {
+    "calculations": "1c46f577701e75dd77957c6b6043cd9a6bdc6197f0f0c66f2ee50e99e2e53b72",
+    "personalDigest": "eeec427cdf66eea9b3fa7d4da3f4f8e72029122adcf62da253a4736edbf1e883",
+    "mbtiTables": "482f150bbd083b2f84a75da4eef9a96ff45633ec8c100fd232aa539ec993ff38",
+    "natalTableEvidence": "b8dc319e62b171fdad6ae62c1323c4a58fe21c469873d0dbebcd965c88e29083"
+  },
+  "B": {
+    "calculations": "666d22660b0b76edae5040842b3d648075a13a73c81c1e5a4721f1c0601e1a74",
+    "personalDigest": "3ab642609d84ead7432009c0c2419eb49cdb26d0866944dc717985671cadfd52",
+    "mbtiTables": "39d01937f73e23c1fdbb27106c0a2541631918e73b30900e5ff479d6b785fdb0",
+    "natalTableEvidence": "6fdacfb9f16017521ba061ef0ab07c71348fbec0b16ef2a6aa44d749fc57cebc"
+  },
+  "C": {
+    "calculations": "775a59ebb9b6f6559ab4f2ca35cded018a7be714954a45718fc8bbe6625acfd1",
+    "personalDigest": "19c4406667ec141b8f00e0072d3831677f6d73a37b035387f0917eb7fec2a4a7",
+    "mbtiTables": "c3e57873fd1e2f23581aec07e4c8f88e2a88664c112eb15410c791e713d8c207",
+    "natalTableEvidence": "650bed2db1522f61e20e6f83e7dc994b8898594c194b2a0cdb831257d8b2bf02"
+  },
+  "D": {
+    "calculations": "0653c360334416c6b55bf7c9dfda4c3638e008d472f03539391b42a1a119367c",
+    "personalDigest": "067fd0b3d1d8eea02c76e92e00bd2ae8d4354a40ae5c6f9f4f2928526815b078",
+    "mbtiTables": "482f150bbd083b2f84a75da4eef9a96ff45633ec8c100fd232aa539ec993ff38",
+    "natalTableEvidence": "82a30761c002e62821c60eb902084227a50ba60a7956d772fe552256abe90ad3"
+  },
+  "E": {
+    "calculations": "1c46f577701e75dd77957c6b6043cd9a6bdc6197f0f0c66f2ee50e99e2e53b72",
+    "personalDigest": "872b38a1471e915f65592d24c2f43b002616d2a53d577ff6d224316f5e58559d",
+    "mbtiTables": "737b092d3740383053331b6dd494811d007c0417ea5f2635d8e9846ba2f840e5",
+    "natalTableEvidence": "b8dc319e62b171fdad6ae62c1323c4a58fe21c469873d0dbebcd965c88e29083"
+  },
+  "F": {
+    "calculations": "0653c360334416c6b55bf7c9dfda4c3638e008d472f03539391b42a1a119367c",
+    "personalDigest": "23a44650d7a3f00860efb1b7b4ee73927feb65ed091fcd931eac74c380efba56",
+    "mbtiTables": "737b092d3740383053331b6dd494811d007c0417ea5f2635d8e9846ba2f840e5",
+    "natalTableEvidence": "82a30761c002e62821c60eb902084227a50ba60a7956d772fe552256abe90ad3"
+  },
+  "01-comprehensive": {
+    "input": {
+      "productKey": "saju_mbti_full",
+      "productSlug": "saju-mbti-full",
+      "person": {
+        "name": "김하린",
+        "birthDate": "1992-03-17",
+        "birthTime": "09:20",
+        "gender": "FEMALE",
+        "mbtiType": "ENFJ",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "",
+        "detailJob": "",
+        "relationshipStatus": "",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4"
+      }
+    },
+    "digests": [
+      "e75875822c3d2ef8732d23c20a82c7f80ffaaa8f2f4fd317cd3c8a22ef0dc307",
+      "b8d89307058654796614e57e4c75cdf0335778d1098a3f9ebbf80a2605046660",
+      "a7faa10e810ce976a2fec22e916c356b0791c33e33ff44c168ed242316a79609"
+    ]
+  },
+  "02-career": {
+    "input": {
+      "productKey": "career_money_study",
+      "productSlug": "career-money-study",
+      "person": {
+        "name": "박도윤",
+        "birthDate": "1988-11-06",
+        "birthTime": "16:45",
+        "gender": "MALE",
+        "mbtiType": "ISTJ",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "employee",
+        "detailJob": "개발자",
+        "relationshipStatus": "",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4"
+      }
+    },
+    "digests": [
+      "e52a72a110964dcb98ca968c526f1785328e0a1a4b9493e6cf95fcc51ebc61c1",
+      "17709547386b3d1e58f35c5c26b5a06742b86ea8217ab7a0fd7c7bbc7d3fe180",
+      "fa8c2df852d038beaac6a602ad229b93c51077b57dd7e3506538388cc0b66bbd"
+    ]
+  },
+  "04-compatibility": {
+    "input": {
+      "productKey": "saju_mbti_compatibility",
+      "productSlug": "compatibility",
+      "relationshipType": "love",
+      "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+      "personA": {
+        "name": "이준혁",
+        "birthDate": "1991-08-12",
+        "birthTime": "07:30",
+        "gender": "MALE",
+        "mbtiType": "ESTP",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "personB": {
+        "name": "정유진",
+        "birthDate": "1994-01-19",
+        "birthTime": "13:40",
+        "gender": "FEMALE",
+        "mbtiType": "ISFJ",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      }
+    },
+    "digests": [
+      "4efa89d9668e4380d892ec5f4a604f267bc5633b8d6841f3282a679a8c1aad5c",
+      "97dbef1bd003840ace64b07ab1a0bb7d94aa5a3e65ddb0996feedb5730ac56d5",
+      "9638ad3e83d1430f65fa48378452751979588c97d9c262c2055aa678bb85fc1b"
+    ]
+  },
+  "05-major-fortune": {
+    "input": {
+      "productKey": "major_fortune",
+      "productSlug": "major-fortune",
+      "person": {
+        "name": "윤시우",
+        "birthDate": "1983-09-02",
+        "birthTime": "05:10",
+        "gender": "MALE",
+        "mbtiType": "ENTJ",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "employee",
+        "detailJob": "기획자",
+        "relationshipStatus": "",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4"
+      }
+    },
+    "digests": [
+      "f7271b3cbc47a53122e58e9abc947f3f8ede218a6a78671cfce03c8823b111cc",
+      "6966da4e5062099390e4bb317a018a953a718f065c37533060ab0a617f4f7080",
+      "0cb5bf03fbce81b1089142401b035d8efb410375c3fa97f4b6d6786a227068e2"
+    ]
+  },
+  "06-annual-fortune": {
+    "input": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "한예린",
+        "birthDate": "2000-12-14",
+        "birthTime": "11:50",
+        "gender": "FEMALE",
+        "mbtiType": "INTJ",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "student",
+        "detailJob": "",
+        "relationshipStatus": "",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4",
+        "selectedYear": "2026"
+      }
+    },
+    "digests": [
+      "2be440331dde5779e6b9caec2d889c54c43b7c9b028ee1685adcfbc690b52831",
+      "9fb8d1d303f7d1f30145bebe9b7810656ea32bf96a11f5a5c9265cd062f99667",
+      "50213a34ed37e2cb8be8720e7e3d1630ae42d7fe190b6701b37b23130cbce439"
+    ]
+  }
+}

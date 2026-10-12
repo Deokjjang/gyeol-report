@@ -3,16 +3,14 @@ import { LOVE_RELEASE_MATERIALS } from "./loveReleaseMaterials";
 import { LOVE_RELEASE_CONTEXT } from "./loveReleaseContext";
 import { loveReleaseSources, loveSourceName, type LoveReleaseSource } from "./loveReleaseSources";
 import type { RelationshipView } from "./relationshipProductView";
-import type { NarrativeInput, NarrativeBlock, NarrativeProof, NarrativeState, MaterialPacket } from "./narrativeTypes";
+import type { NarrativeInput, NarrativeBlock, NarrativeProof, MaterialPacket } from "./narrativeTypes";
 import type { LoveNarrative } from "./loveNarrativeTypes";
-import { selectLoveVoice } from "./loveVoices";
-import { loveBalance } from "./loveBalance";
-import { loveFusionTurn } from "./loveFusionScenes";
 import { particle } from "./copyRealizer";
 import { getMbtiSourceProfile } from "../report-knowledge/mbti/sourceRuntimeAdapter";
 import { fusionHumanSurface } from "./narrativeHumanSurface";
-import { humanOutcome } from "./narrativeHumanOutcome";
-import { LOVE_PARENTING_RISK, LOVE_PARENTING_RISK_TRAITS } from "./loveReleaseParenting";
+import { mbtiHumanBehavior } from "./narrativeHumanOutcome";
+import { LOVE_PARENTING_RISK, LOVE_PARENTING_RISK_TRAITS, LOVE_PARENTING_STRENGTHS } from "./loveReleaseParenting";
+import { LOVE_RELATIONSHIP_SCENES, LOVE_QUESTION_DETAILS } from "./loveReleaseApplications";
 type Refs = { source: string; roots?: string[]; nodes?: string[]; fusion?: string[]; theme: string; material: string; refs: readonly string[]; row?: LoveReleaseSource; recall?: boolean };
 type Line = { text: string; refs: Refs };
 type Material = (typeof LOVE_RELEASE_MATERIALS)[string];
@@ -22,24 +20,20 @@ const quote = (s: string) => s.replace(/[.!?]$/, "");
 const meaning = (s: string) => quote(s).replace(/입니다$/, "");
 /** Independent generation-time edition. No IO, new source inference or paid gate. */
 export function renderLoveRelease(input: NarrativeInput, view: RelationshipView, legacy: LoveNarrative, packet: MaterialPacket) {
+  void packet; // Keep the existing generation adapter signature; source validation uses this packet downstream.
   const profiles = view.profiles, pool = loveReleaseSources(view), seen = new Set<string>(), used = new Map<string, number>(), usedRoots = new Map<string, number>();
   const chosen: LoveReleaseSource[] = [], terms = new Set<string>();
   const draft: LoveReleaseDraft = { version: LOVE_RELEASE_VERSION, chapters: [], bodyLength: 0, shortages: [] };
   const retained: Record<string, NarrativeProof> = {};
-  const state: NarrativeState = { input, packet, pillar: packet.selected.find(m => m.material.category === "dayPillar")!, master: packet.selected.find(m => m.material.category === "dayMaster")!, usedSeeds: new Set(), featureUses: new Map() };
-  const voice = selectLoveVoice(state), context = LOVE_RELEASE_CONTEXT[input.context.relationshipStatus];
+  const context = LOVE_RELEASE_CONTEXT[input.context.relationshipStatus], usedFusions = new Set<string>();
   let current: LoveReleaseDraft["chapters"][number], main: LoveReleaseSource | undefined, risk: LoveReleaseSource | undefined;
   const refs = (r: LoveReleaseSource, key: string, recall = false): Refs => ({ source: r.candidate.id, roots: [r.atom.id], nodes: [], fusion: [], theme: r.candidate.semanticTheme, material: `love:${r.facet}:${key}`, refs: [r.candidate.sourceId], row: r, recall });
   const termKey = (r: LoveReleaseSource) => r.atom.easyMeaning;
-  const applications: Record<string, string> = {
-    CH01: "사랑에서 중요하게 여기는 조건의 바탕입니다", CH02: "상대가 내 좋은 면을 알아보는 방식에도 드러날 수 있습니다",
-    CH03: "편안한 관계를 고르는 기준과 연결됩니다", CH04: "관심을 주고받는 행동에 적용해 볼 수 있습니다",
-    CH05: "가까워진 뒤에 필요한 배려에서도 읽을 수 있습니다", CH06: "한 가지 방식으로만 쓰이면 대화의 부담도 커질 수 있습니다",
-    CH07: "공동생활을 선택할 때의 기준으로 옮겨볼 수 있습니다", CH08: "본인의 돌봄 방식에도 조건부로 이어질 수 있습니다",
-    CH09: "좋은 관계를 이어가는 자원으로 다시 살펴볼 수 있습니다",
-  };
-  const reason = (r: LoveReleaseSource) => !terms.has(termKey(r)) ? `${loveSourceName(r.atom)}에서 읽는 ‘${meaning(r.atom.easyMeaning)}’의 의미가 이 성향의 바탕입니다.`
-    : `${loveSourceName(r.atom)}에서 읽은 성향은 ${applications[current.id]}.`;
+  // Explain a term once. Reusing its proof in a new question does not require
+  // repeating its definition or inventing a filler sentence.
+  const reason = (r: LoveReleaseSource) => terms.has(termKey(r)) ? "" :
+    r.atom.sourceType === "ten_god" ? `명리에서 ${particle(loveSourceName(r.atom), "은", "는")} ‘${meaning(r.atom.easyMeaning)}’이라는 뜻으로 풀이합니다.` :
+    `${particle(loveSourceName(r.atom), "은", "는")} ‘${meaning(r.atom.easyMeaning)}’의 뜻으로 읽습니다.`;
   function add(p: number, lines: Line[]) {
     const contract = LOVE_READER_CHAPTERS.find(c => c.id === current.id)!.paragraphs[p], id = `${current.id}.${contract.id}`;
     const actual = lines.filter(l => l.text?.trim()).map(l => ({ ...l, text: terminal(l.text) }));
@@ -48,14 +42,17 @@ export function renderLoveRelease(input: NarrativeInput, view: RelationshipView,
       sourceCandidateId: l.refs.source, evidenceIds: [...(l.refs.roots ?? [])], mbtiSourceNodeIds: [...(l.refs.nodes ?? [])], fusionIds: [...(l.refs.fusion ?? [])], semanticTheme: l.refs.theme,
       relationshipStatus: input.context.relationshipStatus, context: current.key,
       provenance: { materialId: l.refs.material, application: l.refs.recall ? "RECALL" : l.refs.row ? "CONDITIONAL_APPLICATION" : "SOURCE", sourceRefs: [...l.refs.refs], ...(l.refs.row ? { axis: l.refs.row.axis, direction: l.refs.row.direction } : {}) } }));
-    current.paragraphs.push({ id, purpose: contract.purpose, text: actual.map(l => l.text).join(" "), sentences });
+    const continuing = ["dating", "marriage_preparing", "married"].includes(input.context.relationshipStatus);
+    const purpose = current.id === "CH04" && continuing ? ["지금의 관계에 관심을 전하는 나", contract.purpose, "익숙한 사이에서 생길 수 있는 오해", "지금의 관심을 새로 전할 때"][p] : contract.purpose;
+    current.paragraphs.push({ id, purpose, text: actual.map(l => l.text).join(" "), sentences });
     actual.forEach(l => seen.add(l.text)); return true;
   }
   function eligible(preferred: readonly string[], factBomb: boolean, recall: boolean) {
     return pool.filter(r => r.candidate.factBomb === factBomb && (!recall || chosen.some(s => s.atom.id === r.atom.id && s.facet === r.facet))
       && (recall || (used.get(r.facet) ?? 0) < 6) && !current.paragraphs.some(p => p.sentences.some(s => s.provenance.materialId.startsWith(`love:${r.facet}:`))))
       .sort((a, b) => (current.id === "CH01" && !current.paragraphs.length ? Number(!!b.atom.metadata?.isDayMaster) - Number(!!a.atom.metadata?.isDayMaster) : 0)
-        || Number(preferred.includes(b.facet)) - Number(preferred.includes(a.facet)) || (current.id === "CH06" && !current.paragraphs.length ? Number(b.candidate.rank === "SIGNATURE") - Number(a.candidate.rank === "SIGNATURE") || b.candidate.priorityScore - a.candidate.priorityScore : 0)
+        || (current.id === "CH01" && !current.paragraphs.length ? Math.abs(b.atom.axes[b.axis] ?? 0) - Math.abs(a.atom.axes[a.axis] ?? 0) : 0)
+        || Number(preferred.includes(b.facet)) - Number(preferred.includes(a.facet)) || (current.id === "CH06" && !current.paragraphs.length ? Number(b.candidate.rank === "SIGNATURE") - Number(a.candidate.rank === "SIGNATURE") || b.candidate.priorityScore - a.candidate.priorityScore || b.atom.weight - a.atom.weight : 0)
         || (used.get(a.facet) ?? 0) - (used.get(b.facet) ?? 0)
         || (current.id === "CH01" && !current.paragraphs.length ? (profiles.mbti.contextAxes.love?.[b.axis] ?? 0) * b.direction - (profiles.mbti.contextAxes.love?.[a.axis] ?? 0) * a.direction : 0)
         || Number(b.candidate.sourceType === "PERSONAL_RESONANCE") - Number(a.candidate.sourceType === "PERSONAL_RESONANCE")
@@ -78,63 +75,62 @@ export function renderLoveRelease(input: NarrativeInput, view: RelationshipView,
     if (!add(p, lines.map(text => ({ text, refs: source })))) return false;
     retained[source.source] = proof; return true;
   }
-  function voiceParagraph(p: number, field: "expression" | "attraction" | "partner" | "intimacy" | "repair" | "home", area: "love" | "marriage", lead = "") {
-    return !!voice && asset(p, voice[field], voice.basis(area), `voice:${voice.id}:${field}`, lead);
-  }
   function fusionParagraph(p: number, kind: "REINFORCE" | "COMPLEMENT" | "TENSION") {
-    const row = view.candidates.filter(c => c.sourceType === "FUSION" && c.fusionType === kind && c.mbtiSourceNodeIds.some(id => view.nodes.some(n => n.id === id && ["LOVE", "RELATIONSHIPS", "COMMUNICATION", "MARRIAGE"].includes(n.sourceDomain!))))
-      .sort((a, b) => b.priorityScore - a.priorityScore)[0];
-    const fusion = row && [...profiles.fusion.reinforce, ...profiles.fusion.complements, ...profiles.fusion.tensions].find(f => f.id === row.sourceId);
-    const atom = row && profiles.myeongli.evidence.find(a => row.myeongliEvidenceIds.includes(a.id) && (a.axes[fusion?.myeongli.side.axis ?? "CARE"] ?? 0) * (fusion?.myeongli.side.direction ?? 1) > 0);
-    const domains = kind === "REINFORCE" ? ["LOVE", "RELATIONSHIPS"] : ["LOVE", "RELATIONSHIPS", "COMMUNICATION", "MARRIAGE"];
-    const node = row && view.nodes.find(n => row.mbtiSourceNodeIds.includes(n.id) && typeof n.value === "string" && n.id.endsWith(":plainKo") && domains.includes(n.sourceDomain!));
-    if (row && fusion && atom && node) {
-      const source: Refs = { source: row.id, roots: [atom.id], nodes: [node.id], fusion: [fusion.id], theme: row.semanticTheme, material: `fusion:${kind}`, refs: [row.sourceId] };
-      const material = Object.values(LOVE_RELEASE_MATERIALS).find(m => m.axes.some(([axis, sign]) => axis === fusion.myeongli.side.axis && sign === fusion.myeongli.side.direction));
-      const conclusion = kind === "REINFORCE" && material ? `이 두 모습이 겹치면 ${particle(material.need, "을", "를")} 더 중요하게 느낄 수 있어, 가까운 사람에게도 ${particle(material.act, "이", "가")} 마음을 전하는 통로가 됩니다.`
-        : fusionHumanSurface(row) ?? humanOutcome(fusion.myeongli.side.axis, fusion.myeongli.side.direction);
-      if (conclusion && add(p, [
-        { text: `${particle(loveSourceName(atom), "은", "는")} 이 관계 성향을 설명하는 실제 원국 근거입니다.`, refs: { ...source, nodes: [], fusion: [] } },
-        { text: `${loveSourceName(atom)}에 담긴 뜻은 ‘${meaning(atom.easyMeaning)}’입니다.`, refs: { ...source, nodes: [], fusion: [] } },
-        { text: `${profiles.mbti.mbtiType}의 관계 자료에서는 ‘${quote(loveSentences(String(node.value))[0])}’의 경향을 함께 살펴볼 수 있습니다.`, refs: { ...source, roots: [], fusion: [] } },
+    // Both sides must support the displayed reading. A related node with a
+    // different signed axis is not an explanation of this Fusion.
+    const candidates = view.candidates.filter(c => c.sourceType === "FUSION" && !usedFusions.has(c.sourceId)
+      && (c.fusionType === kind || kind === "REINFORCE" && c.fusionType === "COMPLEMENT"))
+      .sort((a, b) => Number(b.fusionType === kind) - Number(a.fusionType === kind) || b.priorityScore - a.priorityScore || a.id.localeCompare(b.id));
+    for (const row of candidates) {
+      const fusion = [...profiles.fusion.reinforce, ...profiles.fusion.complements, ...profiles.fusion.tensions].find(f => f.id === row.sourceId);
+      if (!fusion || fusion.type === "TENSION" && (!fusion.conditionSplit?.resolved || !fusion.conditionSplit.sides)) continue;
+      const side = fusion.mbti.side;
+      const node = view.nodes.filter(n => row.mbtiSourceNodeIds.includes(n.id) && fusion.mbti.sourceNodeIds.includes(n.id)
+        && ["LOVE", "RELATIONSHIPS", "COMMUNICATION", "MARRIAGE"].includes(n.sourceDomain!) && n.classification === "SCORING_SEMANTIC"
+        && profiles.mbti.annotations.some(a => a.sourceNodeId === n.id && a.annotationConfidence !== "REFERENCE_ONLY" && (a.axes[side.axis] ?? 0) * side.direction > 0))
+        .sort((a, b) => Number(b.sourceDomain === "LOVE") - Number(a.sourceDomain === "LOVE") || a.id.localeCompare(b.id))[0];
+      const atom = profiles.myeongli.evidence.filter(a => row.myeongliEvidenceIds.includes(a.id) && fusion.myeongli.evidenceIds.includes(a.id)
+        && a.tier !== "AMPLIFIER" && (a.axes[fusion.myeongli.side.axis] ?? 0) * fusion.myeongli.side.direction > 0)
+        .sort((a, b) => (usedRoots.get(a.id) ?? 0) - (usedRoots.get(b.id) ?? 0) || b.weight - a.weight || a.id.localeCompare(b.id))[0];
+      const behavior = mbtiHumanBehavior(side.axis, side.direction);
+      const natalBehavior = mbtiHumanBehavior(fusion.myeongli.side.axis, fusion.myeongli.side.direction);
+      if (!atom || !node || !behavior || !natalBehavior) continue;
+      const source: Refs = { source: row.id, roots: [atom.id], nodes: [node.id], fusion: [fusion.id], theme: row.semanticTheme, material: `fusion:${fusion.type}`, refs: [row.sourceId] };
+      const m = Object.values(LOVE_RELEASE_MATERIALS).find(m => m.axes.some(([axis, sign]) => axis === fusion.myeongli.side.axis && sign === fusion.myeongli.side.direction));
+      const mbtiText = node.id.includes(":boundary_against_cruelty:") ? `${profiles.mbti.mbtiType}의 관계 성향에서도, 무례하거나 불공평한 대우에는 거리를 두고 자기 기준을 지키려는 면을 살펴볼 만합니다.`
+        : `${profiles.mbti.mbtiType}에서는 ${behavior.replace(/합니다\.$/, "하는 경향을 참고할 만합니다.").replace(/봅니다\.$/, "보는 경향을 참고할 만합니다.")}`;
+      const conclusion = fusion.type === "REINFORCE" && m ? (side.axis === "BOUNDARY" ? "가까워지고 싶은 마음과 별개로 서로 존중받을 선을 중요하게 본다는 점이 겹치며, 친밀함을 위해 불편한 대우까지 참을 필요는 없다는 기준으로 활용할 만합니다."
+        : `두 해석이 만나는 지점은 ${m.need}이며, 유형 설명에 나를 맞추기보다 실제 관계에서 이 조건이 편안함을 주는지 살펴보면 좋습니다.`)
+        : fusion.type === "COMPLEMENT" ? fusionHumanSurface(row) : undefined;
+      // No guessed time/condition split and no invented bridge when unavailable.
+      if (!conclusion || !add(p, [
+        { text: `${loveSourceName(atom)}의 성향을 관계에 적용하면, ${natalBehavior.replace(/합니다\.$/, "하는 면을 살펴볼 수 있습니다.").replace(/봅니다\.$/, "보는 면을 살펴볼 수 있습니다.")}`, refs: { ...source, nodes: [], fusion: [] } },
+        { text: mbtiText, refs: { ...source, roots: [], fusion: [] } },
         { text: loveSentences(conclusion)[0], refs: source },
-      ])) return;
+      ])) continue;
+      usedFusions.add(fusion.id); usedRoots.set(atom.id, (usedRoots.get(atom.id) ?? 0) + 1); terms.add(atom.easyMeaning); return;
     }
-    const turn = kind !== "REINFORCE" && loveFusionTurn(state, voice?.fusion.ruleId);
-    if (turn && asset(p, turn.block.text, turn.block.proof, `fusion-turn:${turn.fusion.ruleId}`)) return;
-    if (kind === "REINFORCE" && profiles.mbti.mbtiType) {
-      const matches = eligible(["care", "depth", "autonomy"], false, false).map(r => ({ r, node: view.nodes.find(n => n.sourceDomain === "LOVE" && n.id.endsWith(":plainKo") && typeof n.value === "string"
-        && profiles.mbti.annotations.some(a => a.sourceNodeId === n.id && (a.axes[r.axis] ?? 0) * r.direction > 0)) }));
-      const { r, node } = matches.find(m => m.node) ?? {};
-      if (r && node) {
-        const source = refs(r, "individual-love-basis"), m = LOVE_RELEASE_MATERIALS[r.facet];
-        if (add(p, [
-          { text: `${particle(loveSourceName(r.atom), "은", "는")} 사랑에서 나타나는 기본 성향을 읽을 실제 원국 근거입니다.`, refs: source },
-          { text: `${loveSourceName(r.atom)}의 ‘${meaning(r.atom.easyMeaning)}’의 의미를 사랑에서의 행동에 연결해 읽습니다.`, refs: source },
-          { text: `${profiles.mbti.mbtiType}의 실제 연애 자료에는 ‘${quote(loveSentences(String(node.value))[0])}’의 경향이 있습니다.`, refs: { source: node.id, nodes: [node.id], theme: "LOVE_SOURCE", material: "love:mbti-basis", refs: [node.id] } },
-          { text: m.expression, refs: source },
-        ])) { chosen.push(r); terms.add(termKey(r)); used.set(r.facet, (used.get(r.facet) ?? 0) + 1); return; }
-      }
-    }
-    application(p, `fusion-${kind.toLowerCase()}-fallback`, (m, r) => [m.style, reason(r), m.private, m.hope], ["depth", "care", "autonomy"]);
+    application(p, `fusion-${kind.toLowerCase()}-fallback`, (m, r) => [
+      `관계에서 따로 살펴볼 힘은 ${m.label}입니다.`, reason(r),
+      `이 성향은 ${m.need}에서 편하게 쓰이기 좋으며, 장점이 있다는 것과 모든 관계에서 그 장점이 환영받는 것은 다릅니다.`,
+      `실제로 ${particle(m.act, "을", "를")} 해보았을 때 서로의 부담이 줄어드는지 확인하면, 나에게 맞는 방식과 익숙해서 반복한 방식을 구분할 수 있습니다.`,
+    ], ["depth", "care", "stability"]);
   }
   const raw = getMbtiSourceProfile(input.mbti), parenting = raw?.traits?.parenting ?? [];
   function parentParagraph(p: number, index: number, riskSlot = false) {
-    const trait = riskSlot ? parenting.find(t => t.id === LOVE_PARENTING_RISK_TRAITS[raw!.type]) : parenting.filter(t => t.plainKo && t.positiveUse)[index];
-    const field = riskSlot ? "risk" : p === 1 ? "positiveUse" : "plainKo", text = trait?.[field];
+    const authored = raw && LOVE_PARENTING_STRENGTHS[raw.type]?.[index];
+    const trait = parenting.find(t => t.id === (riskSlot ? LOVE_PARENTING_RISK_TRAITS[raw!.type] : authored?.[0]));
+    const field = riskSlot ? "risk" : p === 1 ? "positiveUse" : "plainKo";
     const node = trait && profiles.mbti.sourceNodes.find(n => n.id === `mbti:${raw!.type}:traits:parenting:${trait.id}:${field}`);
-    if (!text || !node || !raw) return false;
+    if (!trait?.[field] || !node || !raw || !authored) return false;
     const r = eligible(["care", "duty", "autonomy", "precision"], false, false)[0]; if (!r) return false;
-    const m = LOVE_RELEASE_MATERIALS[r.facet];
     const source: Refs = { source: node.id, nodes: [node.id], theme: `OWN_PARENTING:${trait.id}`, material: `parenting:own:${trait.id}:${field}`, refs: [node.id] };
     const lines = riskSlot ? [
-      { text: `부모 역할을 맡는다면 ${raw.type}의 양육 자료에서 짚은 ‘${quote(loveSentences(text)[0])}’의 위험을 자기 행동과 대조할 수 있습니다.`, refs: source },
       ...LOVE_PARENTING_RISK[raw.type].map(text => ({ text, refs: source })),
     ] : [
-      { text: `양육을 선택한다면 ${raw.type}의 본인 양육 자료에 있는 ‘${quote(loveSentences(text)[0])}’의 경향을 참고할 수 있습니다.`, refs: source },
-      { text: p === 0 ? `${loveSourceName(r.atom)}의 성향도 돌봄을 제공하는 본인의 반응에 적용해 볼 수 있습니다.` : `${particle(loveSourceName(r.atom), "은", "는")} 아이의 성격이 아니라 어른이 어떤 도움을 줄지 살피는 근거입니다.`, refs: refs(r, `parent-basis-${p}`) },
-      { text: m.parent, refs: refs(r, `parent-action-${p}`) },
-      { text: p === 0 ? "부모에게 자연스러운 방식이 아이에게도 늘 편한 방식은 아니므로, 좋은 의도보다 아이의 반응을 보며 도움의 크기를 맞추는 일이 중요합니다." : "함께 해본 뒤 무엇이 즐거웠고 무엇이 어려웠는지 물으면, 내가 잘 가르쳤다는 느낌과 아이가 직접 얻은 경험을 나누어 볼 수 있습니다.", refs: source },
+      { text: authored[1], refs: source },
+      { text: authored[2], refs: source },
+      { text: LOVE_RELEASE_MATERIALS[r.facet].parent, refs: refs(r, `parent-action-${p}`) },
     ];
     if (!add(p, lines)) return false;
     used.set(r.facet, (used.get(r.facet) ?? 0) + 1); terms.add(termKey(r)); chosen.push(r); return true;
@@ -142,80 +138,164 @@ export function renderLoveRelease(input: NarrativeInput, view: RelationshipView,
   for (const chapter of LOVE_READER_CHAPTERS) {
     current = { id: chapter.id, key: chapter.key, title: chapter.title, paragraphs: [] }; draft.chapters.push(current);
     if (chapter.id === "CH01") {
-      main = application(0, "identity", (m, r) => [`사랑할 때 먼저 드러나는 힘은 ${m.label}이며, ‘${meaning(r.atom.easyMeaning)}’의 뜻과 연결되는 모습입니다.`, m.style, m.expression, m.hope]);
+      main = application(0, "identity", (m, r) => [
+        `사랑을 시작하고 이어가는 기본 힘은 ${m.label}이며, ${loveSourceName(r.atom)}의 ‘${meaning(r.atom.easyMeaning)}’에서 읽는 모습입니다.`,
+        m.style, `이 모습이 잘 쓰이면 ${m.need}에서 자신의 마음도 덜 감추게 됩니다.`,
+      ]);
       fusionParagraph(1, "REINFORCE");
-      if (!voiceParagraph(2, "expression", "love")) application(2, "expression", (m, r) => [m.expression, reason(r), m.risk, `마음이 잘 전해지려면 ${particle(m.need, "이", "가")} 필요하며, 표현한 양보다 상대가 알아들은 관심이 무엇인지가 중요합니다.`], ["expression", "quiet", "direct"]);
-      application(3, "love-value", (m, r) => [`사랑에서 중요한 조건은 ${m.need}입니다.`, reason(r), m.partner, `이 조건이 없다면 ${particle(m.trap, "이", "가")} 강해질 수 있어, 가까워질수록 자기 방식도 설명할 여유가 필요합니다.`], ["meaning", "autonomy", "stability"]);
+      application(2, "expression", (m, r) => [m.expression, reason(r),
+        `애정을 주는 방식과 받고 싶은 방식이 같지는 않을 수 있어, ${particle(m.need, "이", "가")} 필요하다는 마음도 상대에게 알려줄 만합니다.`,
+        LOVE_QUESTION_DETAILS[r.facet].receive,
+      ], ["expression", "quiet", "direct"]);
+      application(3, "love-value", (m, r) => [`사랑에서 포기하기 어려운 가치는 ${m.need}입니다.`, reason(r),
+        "취미나 대화 주제가 잘 맞는 즐거움과, 중요한 선택에서 나를 존중받는 느낌은 별개의 조건입니다.",
+        `관계를 오래 이어갈지 생각할 때는 ${particle(m.act, "을", "를")} 해도 서로의 자리가 남는지 살피면, 순간의 호감과 지키고 싶은 가치를 구분하기 좋습니다.`,
+      ], ["meaning", "autonomy", "stability"]);
     } else if (chapter.id === "CH02") {
-      application(0, "first-charm", (m, r) => [`처음 만나는 자리에서는 ${particle(m.label, "이", "가")} 사람을 편하게 하는 장점이 될 수 있습니다.`, reason(r), m.first, "모든 사람의 호감을 얻는다는 뜻은 아니며, 내 관심을 강요하지 않고 상대가 참여할 여지가 있을 때 더 편한 매력으로 느껴지기 좋습니다."]);
-      application(1, "close-charm", (m, r) => [`처음의 인상과 별개로 가까워진 뒤에는 ${particle(m.label, "이", "가")} 관계의 다른 좋은 면으로 드러날 수 있습니다.`, reason(r), m.private, `이 매력은 ${particle(m.act, "을", "를")} 자연스럽게 이어갈 때, 특별히 잘 보이려던 하루보다 오래 믿을 이유가 됩니다.`]);
+      application(0, "first-charm", (m, r) => [`첫 만남에서 드러날 매력은 ${m.label}입니다.`, reason(r), m.first,
+        LOVE_QUESTION_DETAILS[r.facet].charm]);
+      application(1, "close-charm", (m, r) => [`시간을 함께 보내며 알게 될 좋은 면은 ${m.label}입니다.`, reason(r), m.private,
+        LOVE_QUESTION_DETAILS[r.facet].privateValue]);
       fusionParagraph(2, "COMPLEMENT");
-      application(3, "charm-use", m => [`매력을 잘 쓰려면 ${particle(m.label, "을", "를")} 더 크게 증명하기보다 상대가 편하게 받을 자리를 살펴야 합니다.`, m.risk, `다음 대화에서는 ${particle(m.act, "을", "를")} 작은 크기로 시도하면, 강점이 부담으로 바뀌기 전에 반응을 알아가기 좋습니다.`, m.hope]);
+      application(3, "charm-use", (m, r) => [`또 다른 매력인 ${particle(m.label, "은", "는")} 힘을 빼고 쓸 때 더 편하게 전해집니다.`, reason(r),
+        `예를 들어 ${particle(m.act, "을", "를")} 한 뒤 잠시 반응을 기다리면, 상대가 좋아하는지 확인하기 전에 더 많이 보여주려 애쓰지 않아도 됩니다.`,
+        "내가 잘하는 행동을 상대도 반길 때 매력이 관계의 즐거움으로 이어지며, 반응이 다르다는 이유만으로 내 장점의 가치가 없어지는 것은 아닙니다."], ["boundary", "meaning", "direct", "stability"]);
     } else if (chapter.id === "CH03") {
-      if (!voiceParagraph(0, "attraction", "love")) application(0, "attracted", (m, r) => [m.partner, `끌림의 바탕에는 ${loveSourceName(r.atom)}에서 읽은 나의 성향이 있으며, 상대의 사주나 특정 MBTI를 예측한 해석은 아닙니다.`, m.first, "눈길을 끄는 조건과 함께 있을 때의 편안함은 다를 수 있으므로, 첫 인상의 크기만으로 원하는 관계를 모두 알 수는 없습니다."]);
-      if (!voiceParagraph(1, "partner", "love")) application(1, "comfortable", (m, r) => [`오래 편안할 조건은 ${m.need}이며, 취향이 전부 같아야 한다는 뜻은 아닙니다.`, reason(r), m.partner, `서로 맞추는 과정에서는 ${particle(m.act, "을", "를")} 해도 관계가 불안해지지 않는지 살피면, 겉으로 좋은 조건과 실제 편안함을 가르기 좋습니다.`]);
-      const balance = loveBalance(state, voice?.id ?? "natal");
-      if (!(balance && asset(2, balance.block.text, balance.block.proof, "symbolic-balance"))) fusionParagraph(2, "TENSION");
-      application(3, "choice", (m, r) => [`관계를 고를 때에는 ${particle(m.need, "이", "가")} 실제로 있는지 보는 편이 중요합니다.`, reason(r), `한 번의 멋진 말보다 ${particle(m.act, "을", "를")} 했을 때 서로 어떤 반응을 보이는지 살펴볼 만합니다.`, "서로 다를 때도 의견을 말할 수 있다면 편안함은 무조건 맞춰준 결과와 구분되며, 상대의 유형을 미리 정하지 않아도 원하는 관계는 더 분명해집니다."]);
+      application(0, "attracted", (m, r) => [`마음이 움직일 만한 조건으로는 이런 행동을 살펴볼 수 있습니다: ${m.partner}`,
+        `${loveSourceName(r.atom)}의 ‘${meaning(r.atom.easyMeaning)}’에서 읽는 나의 필요를 관계에 옮긴 조건이며, 아직 알지 못하는 상대의 성격을 정해둔 것은 아닙니다.`,
+        `호감이 생긴다면 ${particle(m.need, "이", "가")} 평소 행동에서도 이어지는지 볼 만합니다.`,
+      ]);
+      application(1, "comfortable", (m, r) => [`함께 있을 때 긴장을 덜어줄 조건은 ${m.need}입니다.`, reason(r), m.partner,
+        `생각이 다른 날에 ${particle(m.act, "을", "를")} 해보아도 대화가 이어지는지 보면, 취향이 같은 사람과 조율할 수 있는 사람의 차이가 드러납니다.`]);
+      application(2, "helpful-difference", (m, r) => [LOVE_RELATIONSHIP_SCENES[r.facet].difference, reason(r),
+        `차이가 도움이 되려면 ${particle(m.need, "이", "가")} 먼저 지켜져야 하며, 한 사람이 계속 참아서 균형을 만드는 것과는 다릅니다.`,
+        "작은 약속을 서로 다른 방법으로 정해본 뒤 누가 무엇을 편하게 느꼈는지 이야기하면, 반대 성향이라는 이름보다 실제로 보완되는 행동을 확인할 수 있습니다."]);
+      application(3, "choice", (m, r) => [`관계를 선택할 때에는 ${particle(m.need, "을", "를")} 말로 동의하는 데서 그치지 않는지 확인할 만합니다.`, reason(r),
+        `내가 ${particle(m.act, "을", "를")} 했을 때 상대도 자신의 사정을 알려주는지, 한쪽만 계속 양보하지 않아도 다음 약속을 만들 수 있는지 살펴보세요.`,
+        LOVE_QUESTION_DETAILS[r.facet].choice]);
     } else if (chapter.id === "CH04") {
-      application(0, "current-interest", (m, r) => [context.start, reason(r), m.first, `관심이 매력으로 전해지려면 ${particle(m.act, "을", "를")} 하되, 상대의 답을 내 기대에 맞게 대신 만들어두지 않을 여지가 필요합니다.`]);
-      application(1, "pace", (m, r) => [m.expression, reason(r), "내 마음이 정리된 속도와 상대가 대답할 속도는 다를 수 있어, 빠른 반응만이 진심이라는 기준을 두면 편한 표현도 시험처럼 느껴질 수 있습니다.", context.pace], ["initiative", "quiet", "depth", "flexibility"]);
-      application(2, "early-risk", (m, r) => [`관심을 주고받는 과정에서는 ${particle(m.trap, "을", "를")} 특히 돌아볼 만합니다.`, reason(r), m.earlyRisk, `오해를 줄이려면 ${particle(m.act, "을", "를")} 먼저 해보고, 상대가 실제로 말한 것과 내가 덧붙인 뜻을 나누어 보는 편이 좋습니다.`], [], true);
-      application(3, "start-choice", m => [`관계가 어떤 단계이든 ${particle(m.label, "을", "를")} 상대를 설득하는 수단으로만 쓰지 않는 편이 좋습니다.`, m.style, "관심을 표현한 뒤에는 다른 속도나 거절도 말할 여지를 남겨야, 서두르는 사람과 주저하는 사람 모두 자기 마음으로 참여할 수 있습니다.", m.hope]);
+      application(0, "current-interest", (m, r) => [context.start, reason(r), m.expression,
+        input.context.relationshipStatus === "married" ? "생활에 필요한 일을 주고받은 대화와, 상대 자체가 반가워서 건넨 관심을 나누어 보면 일상을 함께 운영하는 것에 가려진 애정을 살펴볼 수 있습니다."
+          : input.context.relationshipStatus === "dating" ? "다음 만남을 정하는 일과 요즘 무엇이 반가운지 말하는 일을 따로 두면, 익숙하게 만난다는 사실에 가려진 현재의 관심을 드러내기 좋습니다."
+          : "상대의 반응을 관계의 결론으로 서둘러 읽기보다, 다음 대화나 만남에도 서로 관심을 이어가는지 알아갈 시간이 필요합니다."]);
+      application(1, "pace", (m, r) => [context.pace, reason(r),
+        `마음을 보이는 속도에는 ${particle(m.need, "이", "가")} 영향을 줄 수 있으므로, 내 방식이 편하다는 이유로 상대도 같은 속도를 원한다고 정하지 않을 만합니다.`,
+        input.context.relationshipStatus === "married" || input.context.relationshipStatus === "marriage_preparing" ? "결정해야 할 이야기에는 시간을 정하되 감정을 나누는 대화까지 같은 마감에 넣지 않으면, 당장 답할 일과 충분히 들을 일을 구분할 수 있습니다."
+          : "제안을 건넨 뒤 가능한 때와 어려운 때를 서로 알려주면, 빠른 답장만으로 관심의 크기를 확인하려는 부담을 줄일 수 있습니다.",
+      ], ["expression", "depth", "stability"]);
+      application(2, "early-risk", (m, r) => [
+        input.context.relationshipStatus === "married" ? "이미 함께하는 사이에서는 무엇을 원하는지 서로 알 것이라는 기대 때문에, 새로 달라진 필요를 묻는 일이 생략되기 쉽습니다."
+          : input.context.relationshipStatus === "dating" ? "연애 중이라도 표현의 뜻을 이미 안다고 정하면, 지금 원하는 반응과 익숙하게 주던 반응의 차이를 놓치기 쉽습니다."
+          : input.context.relationshipStatus === "marriage_preparing" ? "결혼 준비가 바쁠 때 모든 제안이 처리할 일로 들리면, 함께 기대하는 마음을 말할 틈까지 줄어들기 쉽습니다."
+          : "알아가는 때에는 호감이 큰 만큼 상대의 한 번의 반응에 많은 뜻을 담아 읽기 쉽습니다.",
+        reason(r), ["", "single", "some"].includes(input.context.relationshipStatus) ? m.earlyRisk
+          : `지금은 ${particle(m.act, "을", "를")} 익숙한 요구로만 전하기보다, 요즘 편하게 받을 방식이 무엇인지 새로 물어보는 편이 좋습니다.`,
+        "실제 들은 답과 내가 기대했던 답을 나누어 말하면, 상대를 설득하기 전에 지금 조율할 것이 무엇인지 찾기 좋습니다.",
+      ], [], true);
+      application(3, "start-choice", (m, r) => [
+        input.context.relationshipStatus === "married" ? "지금 관계의 관심을 새롭게 만들고 싶다면, 생활을 잘 처리했다는 보고와 함께하고 싶다는 제안을 구분해볼 만합니다."
+          : input.context.relationshipStatus === "dating" ? "현재 연애에서 원하는 시간을 새로 제안할 때는 예전처럼 해야 한다는 요구보다 요즘 해보고 싶은 일을 말해볼 만합니다."
+          : input.context.relationshipStatus === "marriage_preparing" ? "준비를 잘 마치는 목표와 별개로 둘이 즐길 작은 시간을 남기면, 결정할 일이 없어도 함께할 이유를 지킬 수 있습니다."
+          : "새로운 관계를 시작할 때에는 좋은 반응을 얻는 것만큼 서로 자기 뜻으로 참여하는지도 중요합니다.",
+        `여기서 활용할 힘은 ${m.label}이며, ${loveSourceName(r.atom)}에서 읽은 성향을 관계의 제안으로 옮겨볼 수 있습니다.`,
+        ["dating", "marriage_preparing", "married"].includes(input.context.relationshipStatus) ? m.hope : m.first]);
     } else if (chapter.id === "CH05") {
-      if (!voiceParagraph(0, "intimacy", "marriage")) application(0, "private-self", (m, r) => [m.private, reason(r), `가까운 사람에게 ${particle(m.act, "을", "를")} 편하게 할 수 있다면, 처음 잘 보이려고 애쓸 때와 다른 장점도 드러나기 좋습니다.`, "처음과 달라진 모습이 곧 마음이 줄었다는 뜻은 아니며, 긴장이 풀린 뒤 어떤 필요를 서로 나누는지가 친밀함의 다른 단서가 됩니다."]);
-      application(1, "intimate-need", (m, r) => [`깊은 관계에서도 ${particle(m.need, "이", "가")} 필요하며, 가까운 사이라는 이유로 그 조건이 사라지지는 않습니다.`, reason(r), m.partner, `이 필요를 말하지 않으면 ${particle(m.trap, "이", "가")} 반복될 수 있어, 상대가 이미 안다고 정하지 않는 대화가 중요합니다.`]);
-      application(2, "space", (m, r) => [`애정과 개인 공간의 균형에서는 ${particle(m.label, "을", "를")} 사랑의 크기와 별개로 볼 필요가 있습니다.`, reason(r), m.private, "만나고 싶은 날과 혼자 쉬고 싶은 날이 다를 때는 마음의 우열을 정하기보다 함께할 때와 다시 이야기할 때를 알려주면, 거리가 곧 불안이 되지 않을 수 있습니다."], ["autonomy", "boundary", "depth"]);
-      application(3, "lasting-strength", (m, r) => [`오래 관계를 이어가는 데에는 ${particle(m.label, "이", "가")} 반복되는 하루의 힘이 될 수 있습니다.`, reason(r), m.home, `다만 ${particle(m.trap, "이", "가")} 강해지지 않는지 함께 돌아보아야, 처음의 좋은 마음을 한 사람의 의무로만 남기지 않을 수 있습니다.`], ["stability", "duty", "care"]);
+      application(0, "private-self", (m, r) => [m.private, reason(r),
+        "처음에는 잘 보이려 숨기던 피로와 사소한 취향도 가까운 사이에서는 드러날 수 있으며, 달라진 모습만으로 애정이 줄었다고 판단할 필요는 없습니다.",
+        `평소 ${particle(m.need, "을", "를")} 원한다는 마음을 알리면, 좋은 인상을 유지하려 애쓰기보다 실제로 어떤 때 쉬고 어떤 때 가까워지고 싶은지 나누기 좋습니다.`]);
+      application(1, "intimate-need", (m, r) => [`친밀해질수록 살펴볼 정서적 조건은 ${m.need}입니다.`, reason(r),
+        LOVE_QUESTION_DETAILS[r.facet].intimate,
+        `부담스러운 날에는 ${particle(m.act, "을", "를")} 작게 시작해보면, 무엇이 부족한지 따지기 전에 서로 편해질 도움의 크기를 고를 수 있습니다.`]);
+      application(2, "space", (m, r) => [LOVE_RELATIONSHIP_SCENES[r.facet].space, reason(r),
+        "개인 공간을 정하는 대화에서는 함께할 의사가 있는지와 지금 쉴 시간이 필요한지를 따로 알려주는 편이 좋습니다.",
+        "잠깐 떨어져 있는 동안 무엇을 해야 사랑을 증명한 셈인지 정하기보다, 다시 만날 때 서로 덜 지쳐 있는지를 살피면 거리도 친밀함을 지키는 방식이 됩니다."]);
+      application(3, "lasting-strength", (m, r) => [`오래 가까워지는 힘은 ${particle(m.label, "을", "를")} 처음과 같은 모습으로만 쓰지 않는 데 있습니다.`, reason(r),
+        `예전에는 반가웠던 ${particle(m.act, "이", "가")} 지금도 필요한지 물으면, 상대를 잘 안다는 확신 때문에 바뀐 필요를 지나치지 않기 좋습니다.`,
+        "익숙한 애정을 지키면서도 받는 방식은 다시 고를 수 있어야, 처음의 장점이 계속 요구되는 역할로 굳지 않고 관계와 함께 자랍니다."]);
     } else if (chapter.id === "CH06") {
-      risk = application(0, "fact-bomb", (m, r) => [loveSentences(r.candidate.sourceText)[0], m.cost, `내 의도는 관계를 지키는 것일 수 있어도 ${particle(m.trap, "이", "가")} 반복되면, 상대는 내 진심보다 자신에게 요구된 반응을 먼저 느낄 수 있습니다.`, m.punch], [], true);
-      if (risk) {
-        const r = risk, node = view.nodes.find(n => r.candidate.mbtiSourceNodeIds.includes(n.id) && n.id.endsWith(":plainKo") && typeof n.value === "string");
-        add(1, [
-          { text: `${particle(loveSourceName(r.atom), "은", "는")} 앞에서 읽은 약점의 실제 명리 근거입니다.`, refs: refs(r, "risk-cause") },
-          { text: `‘${meaning(r.atom.easyMeaning)}’의 힘도 가까운 관계에서 한 가지 반응에만 쓰이면, 좋은 의도를 전하기보다 자기 방식부터 지키게 될 수 있습니다.`, refs: refs(r, "risk-cause") },
-          node ? { text: `${profiles.mbti.mbtiType}의 실제 관계 자료에는 ‘${quote(loveSentences(String(node.value))[0])}’의 경향이 있어, 같은 장면에서 어떤 반응이 앞서는지 대조할 수 있습니다.`, refs: { source: node.id, nodes: [node.id], theme: r.candidate.semanticTheme, material: "risk:mbti", refs: [node.id] } }
-            : { text: "이 부분에 맞는 MBTI 관계 근거를 따로 확인하지 못했다면 성격 유형의 이유를 덧붙이지 않고, 실제 원국에서 읽힌 위험만 살펴보는 편이 정확합니다.", refs: refs(r, "risk-scope") },
-          { text: `결국 이 문제는 ${particle(LOVE_RELEASE_MATERIALS[r.facet].need, "을", "를")} 원하는 마음이, 상대도 참여할 과정 없이 자기 방식으로만 해결되려 할 때 커질 수 있습니다.`, refs: refs(r, "risk-meaning") },
-        ]);
-      } else fusionParagraph(1, "TENSION");
+      risk = application(0, "fact-bomb", m => [
+        `연애에서 가장 먼저 돌아볼 취약점은 ${particle(m.label, "을", "를")} 한 가지 방식으로만 밀어붙일 때 나타납니다.`,
+        m.risk, m.punch,
+      ], [], true);
       if (risk) {
         const r = risk, m = LOVE_RELEASE_MATERIALS[r.facet];
-        add(2, [
-          `피곤하거나 답을 빨리 받고 싶은 날에는 ${particle(m.trap, "이", "가")} 더 쉽게 나올 수 있습니다.`,
-          `내 쪽에서는 ${particle(m.need, "을", "를")} 지키려는 반응일 수 있지만, 그 마음까지 상대에게 알려져 있다는 보장은 없습니다.`,
-          `상대에게도 자기 생각을 고를 틈이 필요할 수 있어, 내 의도를 설명하는 것과 다른 답을 듣는 일은 함께 남겨둘 만합니다.`,
-          `서로의 답을 들을 틈 없이 ${particle(m.trap, "을", "를")} 계속하면, 처음의 문제보다 대화에서 밀려났다는 느낌이 더 오래 남을 수 있습니다.`,
+        const node = view.nodes.filter(n => n.classification === "SCORING_SEMANTIC"
+          && ["LOVE", "RELATIONSHIPS", "COMMUNICATION", "MARRIAGE"].includes(n.sourceDomain!)
+          && profiles.mbti.annotations.some(a => a.sourceNodeId === n.id && a.annotationConfidence !== "REFERENCE_ONLY" && (a.axes[r.axis] ?? 0) * r.direction > 0))
+          .sort((a, b) => Number(b.sourceDomain === "LOVE") - Number(a.sourceDomain === "LOVE") || a.id.localeCompare(b.id))[0];
+        add(1, [
+          `${particle(loveSourceName(r.atom), "은", "는")} ‘${meaning(r.atom.easyMeaning)}’의 뜻으로 읽는 근거이며, 이 힘 자체가 나쁜 것은 아닙니다.`,
+          `문제는 ${particle(m.need, "을", "를")} 원하는 마음이 강해질 때, 상대도 같은 방법을 원한다는 전제를 먼저 둘 수 있다는 점입니다.`,
+          LOVE_QUESTION_DETAILS[r.facet].cause,
+        ].map(text => ({ text, refs: refs(r, "risk-cause") })).concat(node ? [{
+          text: `${profiles.mbti.mbtiType}에서도 ${mbtiHumanBehavior(r.axis, r.direction)!.replace(/합니다\.$/, "하는 면이 있는지 함께 대조해볼 만합니다.").replace(/봅니다\.$/, "보는 면이 있는지 함께 대조해볼 만합니다.")}`,
+          refs: { source: node.id, nodes: [node.id], theme: r.candidate.semanticTheme, material: "risk:aligned-mbti", refs: [node.id] },
+        }] : []));
+        add(2, [LOVE_RELATIONSHIP_SCENES[r.facet].conflict,
+          LOVE_QUESTION_DETAILS[r.facet].escalation,
+          `대화를 멈추더라도 ${m.need}까지 포기한 것은 아니라는 점을 알려주면, 쉴 시간을 갖는 일과 관계를 거부하는 일을 구분할 수 있습니다.`,
         ].map(text => ({ text, refs: refs(r, "conflict", true) })));
-      } else application(2, "conflict", (m, r) => [m.earlyRisk, reason(r), m.cost, m.punch], [], true);
-      if (!voiceParagraph(3, "repair", "love")) application(3, "repair", m => [m.repair, `대화에서는 ${particle(m.act, "을", "를")} 먼저 시도해, 상대의 성격을 고치려는 말보다 함께 다룰 장면을 하나 남기는 편이 좋습니다.`, "다음에 비슷한 일이 생기면 어떤 말로 잠시 멈추고 언제 다시 이야기할지 정해두면, 감정을 없애지 않고도 같은 다툼을 반복할 비용을 줄이기 좋습니다.", m.hope]);
+        add(3, [m.repair,
+          "상대도 자기 쪽에서 본 일을 말한 뒤 한 번만 다르게 해볼 행동과 돌아볼 때를 정하면, 누가 맞는지를 끝없이 따지기보다 바뀌는지 확인할 약속이 남습니다.",
+          `화해는 ${particle(m.label, "을", "를")} 버리는 일이 아니라, 내 진심을 전하면서 상대가 다른 답을 보탤 자리를 되찾는 일입니다.`,
+        ].map(text => ({ text, refs: refs(r, "repair", true) })));
+      } else {
+        fusionParagraph(1, "TENSION");
+        application(2, "conflict", (m, r) => [m.earlyRisk, reason(r), m.cost, m.punch], [], true);
+        application(3, "repair", (m, r) => [m.repair, reason(r), m.expression, m.hope]);
+      }
     } else if (chapter.id === "CH07") {
-      if (!voiceParagraph(0, "home", "marriage", context.home)) application(0, "household", (m, r) => [`${context.home} ${particle(m.label, "이", "가")} 반복되는 하루에도 드러날 수 있습니다.`, reason(r), m.home, "함께 맡을 일과 각자 쉬는 방식을 말로 나눌 때, 이 장점도 생활의 힘이 됩니다."]);
-      application(1, "household-strength", (m, r) => [`공동생활에서 줄 수 있는 다른 힘은 ${m.label}이며, 사랑하는 마음이 어떤 수고로 이어지는지 보이는 부분입니다.`, reason(r), m.home, `함께 맡을 일을 이야기할 때 ${particle(m.act, "을", "를")} 시도하면, 좋은 의도를 알아주길 기다리기보다 실제로 편해질 생활을 만들기 좋습니다.`]);
-      application(2, "household-risk", (m, r) => [`함께 살게 되는 경우 ${particle(m.trap, "이", "가")} 생활의 마찰로 이어지는지 특히 돌아볼 만합니다.`, reason(r), `집안일의 기준이나 공동 지출을 정할 때도 ${particle(m.need, "이", "가")} 중요하지만, 내게 익숙한 기준을 이미 합의한 약속으로 보지는 않아야 합니다.`, m.repair], [], true);
-      application(3, "household-rule", (m, r) => [`오래 함께할 생활의 기준은 ${particle(m.need, "을", "를")} 일상에서도 지킬 수 있는가입니다.`, reason(r), "돈과 가족 일정처럼 서로 다른 익숙함이 만나는 일은 바뀐 부담을 다시 말할 수 있어야 하며, 한 번 정한 역할이 영원한 몫이 될 필요는 없습니다.", m.hope]);
+      application(0, "household", (m, r) => [`${context.home}, ${particle(m.label, "이", "가")} 생활을 운영하는 방식에도 이어질 수 있습니다.`, reason(r),
+        LOVE_RELATIONSHIP_SCENES[r.facet].household,
+        "잘 맞는 생활은 모든 기준이 같아서 생기기보다, 누가 무엇을 결정하고 어디까지 맡을지 서로 알아볼 수 있을 때 만들기 쉽습니다."]);
+      application(1, "household-strength", (m, r) => [`공동생활의 역할을 나눌 때 활용할 다른 힘은 ${m.label}입니다.`, reason(r),
+        LOVE_RELATIONSHIP_SCENES[r.facet].household,
+        "분담은 눈앞의 일을 반씩 하는 것에 그치지 않으며, 준비를 기억하고 끝난 뒤 확인하는 일까지 맡은 몫에 포함해야 한쪽이 계속 관리자 역할을 하지 않게 됩니다."]);
+      application(2, "household-risk", (m, r) => [`이미 함께 사는 경우든 앞으로 공동생활을 선택하든, ${particle(m.need, "은", "는")} 생활비와 가족 일정을 맞출 때에도 필요한 조건입니다.`, reason(r),
+        LOVE_RELATIONSHIP_SCENES[r.facet].household,
+        "합의하지 않은 기대가 어긋났을 때는 잘못한 사람부터 고르기보다 무엇을 각자 당연하게 여겼는지 적어보면, 애정의 크기와 생활 규칙의 차이를 나누어 다루기 좋습니다."], [], true);
+      application(3, "household-rule", (m, r) => [`오래 함께할 조건은 ${particle(m.label, "이", "가")} 한 사람의 고정된 역할로만 남지 않는 것입니다.`, reason(r),
+        "업무가 몰리거나 건강과 수입이 달라지는 때에는 예전의 분담이 공평하지 않을 수 있으므로, 임시로 바꿀 몫과 다시 돌아볼 날을 함께 남길 필요가 있습니다.",
+        "각자 쓸 수 있는 돈과 시간도 공동 책임 옆에 마련하면, 생활을 잘 유지하기 위해 개인의 즐거움을 모두 미뤄야 하는 관계에서 벗어나기 좋습니다."]);
     } else if (chapter.id === "CH08") {
-      if (!parentParagraph(0, 0)) application(0, "parent-self", (m, r) => [m.parent, reason(r), `돌봄을 맡는다면 ${particle(m.act, "을", "를")} 아이의 반응에 맞게 작게 적용할 수 있습니다.`, "현재 자녀가 있다는 뜻이나 미래 자녀의 성격을 예측하는 말은 아니며, 부모 역할을 선택할 때 본인의 도움 방식을 살펴보는 해석입니다."], ["care", "duty", "autonomy"]);
-      if (!parentParagraph(1, 1)) application(1, "parent-value", (m, r) => [`양육을 선택할 때 ${particle(m.label, "이", "가")} 아이가 직접 해볼 자리를 만드는 데도 도움이 될 수 있습니다.`, reason(r), m.parent, "어른이 만족한 결과만 남기기보다 아이가 무엇을 직접 고르고 해봤는지 돌아보면, 돌봄을 제공한 양과 아이가 얻은 경험을 함께 볼 수 있습니다."]);
-      if (!parentParagraph(2, 0, true)) application(2, "parent-risk", (m, r) => [`부모 역할에서도 ${particle(m.trap, "이", "가")} 강해지면 좋은 의도가 부담으로 바뀔 수 있습니다.`, reason(r), m.parent, "내가 걱정한 일과 아이가 실제로 요청한 도움을 먼저 나누면, 보호하려는 마음 때문에 필요한 시도까지 대신하는 일을 줄이기 좋습니다."], [], true);
-      application(3, "parent-direction", m => [`나에게 맞는 부모 역할을 생각한다면 ${particle(m.label, "을", "를")} 아이를 내 방식으로 만드는 도구로 쓰지 않는 편이 중요합니다.`, m.parent, `일상에서는 ${particle(m.act, "을", "를")} 어른의 답을 먼저 주는 대신 아이가 말할 틈을 만드는 방식으로 적용할 수 있습니다.`, "완벽한 부모의 모습을 예고한 것은 아니며, 아이를 알아가면서 내 도움도 바꿀 수 있는 어른이 되는 일이 따뜻한 출발입니다."]);
+      if (!parentParagraph(0, 0)) application(0, "parent-self", (m, r) => [m.parent, reason(r),
+        "돌봄을 선택한다면 내가 익숙하게 주는 도움을 상대가 요청한 도움과 나누어 볼 필요가 있습니다.",
+        "바로 대신하기 전에 스스로 해볼 부분과 함께할 부분을 물으면, 부모에게 편한 방법이 언제나 당사자에게도 편한 방법은 아니라는 점을 놓치지 않기 좋습니다."], ["care", "duty", "autonomy"]);
+      if (!parentParagraph(1, 1)) application(1, "parent-value", (m, r) => [`양육에서 활용할 힘은 ${m.label}이며, ${loveSourceName(r.atom)}에서 읽은 본인의 성향을 조건부로 적용한 해석입니다.`,
+        m.parent, "가르칠 일을 한꺼번에 대신하기보다 지금 스스로 고를 수 있는 작은 몫을 남기면, 도움을 받은 결과와 직접 해본 경험을 함께 마련할 수 있습니다.",
+        "어려워했던 부분을 들은 뒤 다음에 바꿀 도움을 정하면, 양육의 강점도 처음 정한 방식 하나에 머물지 않습니다."]);
+      if (!parentParagraph(2, 0, true)) application(2, "parent-risk", (m, r) => [
+        `돌봄에서도 ${particle(m.label, "을", "를")} 지나치게 밀면 좋은 의도가 부담이 될 수 있습니다.`, reason(r), m.parent,
+        "안전상 반드시 지킬 한계와 취향에 따라 고를 부분을 나누면, 어른의 걱정 때문에 필요한 선택까지 대신하는 일을 줄이기 좋습니다."], [], true);
+      application(3, "parent-direction", (m, r) => [`부모 역할에서 ${particle(m.label, "은", "는")} 어른이 활용할 도움의 방식이며, 아이도 같은 방식으로 반응해야 한다는 기준은 아닙니다.`, reason(r),
+        "고를 수 있는 방법은 열어두되 선택한 뒤 맡을 작은 일은 함께 정하면, 독립성과 책임을 서로 반대되는 목표로 두지 않아도 됩니다.",
+        "끝낸 뒤 잘못된 결과만 평가하지 않고 어디에서 도움이 필요했는지 들으면, 스스로 해볼 자유와 어려울 때 어른을 찾을 신뢰가 함께 남습니다."]);
     } else if (chapter.id === "CH09") {
       const fortune = legacy.sections.find(s => s.id === "fortune")?.blocks;
-      if (!fortune?.some(b => asset(0, b.text, b.proof, `approved-fortune:${b.id}`))) application(0, "positive-force", (m, r) => [`사랑에서 가진 좋은 힘은 ${particle(m.label, "이", "가")} 관계 안에서 실제로 쓰일 수 있다는 점입니다.`, reason(r), m.partner, "좋은 인연이나 결혼 시기를 보장하는 예고가 아니라, 이 힘을 알아주는 관계와 서로 참여할 선택이 있을 때 살아나는 가능성으로 읽을 수 있습니다."]);
-      application(1, "relationship-gift", (m, r) => [`앞선 좋은 기운과 별개로 ${particle(m.label, "이", "가")} 상대에게 줄 수 있는 관계의 재능입니다.`, reason(r), m.first, `이 힘을 오래 쓰려면 ${particle(m.trap, "이", "가")} 강해지지 않게 돌아보아야, 좋은 모습을 유지하느라 내 마음을 감추지 않을 수 있습니다.`]);
-      application(2, "remember-risk", m => [`더 좋은 관계를 위해 기억할 것은 ${particle(m.need, "을", "를")} 혼자 만들 수는 없다는 점입니다.`, `앞에서 읽은 ${particle(m.trap, "이", "가")} 반복되면, 애쓰는 양은 늘어도 상대가 참여할 자리는 줄어들 수 있습니다.`, `다음에는 ${particle(m.act, "을", "를")} 먼저 해보고, 어떤 마음을 실제로 나누었는지 돌아보면 내 의도와 상대의 반응을 함께 알아가기 좋습니다.`, m.hope], [], true, true);
+      const approved = fortune?.some(b => {
+        const lead = loveSentences(b.text).slice(0, 2).join(" ");
+        return asset(0, `${lead} 가까워질 기회가 생겨도 서로 마음을 알아갈 시간과 실제 선택이 있어야 관계로 이어집니다. 좋은 기운을 호감이나 결혼의 보장으로 여기기보다, 내가 편하게 드러날 자리를 알아보는 가능성으로 받아들이면 좋습니다.`, b.proof, `approved-fortune:${b.id}`);
+      });
+      if (!approved) application(0, "positive-force", (m, r) => [`사랑에서 활용할 좋은 자원은 ${m.label}입니다.`, reason(r),
+        "특정한 인연이나 시기를 보장하는 표시는 아니며, 실제 만남에서 서로 참여할 여지가 있을 때 관계의 힘으로 쓰일 수 있습니다.", m.hope]);
+      application(1, "relationship-gift", (m, r) => [`앞에서 읽은 ${particle(m.label, "은", "는")} 상대에게 줄 수 있는 힘이면서 나도 받아도 되는 배려입니다.`,
+        `${loveSourceName(r.atom)}에서 읽은 장점을 주는 역할로만 쓰지 않아도 된다는 점이 중요합니다.`,
+        `내가 ${particle(m.act, "을", "를")} 할 때 상대에게도 같은 참여를 요청할 수 있다면, 매력을 증명하는 수고와 서로 편해지는 노력을 나누어 볼 수 있습니다.`,
+      ], [], false, true);
+      application(2, "remember-risk", (m, r) => [`관계의 선택을 바꿀 때는 앞서 읽은 ${particle(m.need, "을", "를")} 계속 혼자 책임지고 있지는 않은지 볼 만합니다.`,
+        `${loveSourceName(r.atom)}의 힘이 애쓰는 방향으로만 쓰일 때와, 상대의 응답을 기다리는 여유가 있을 때를 비교해보세요.`,
+        "내가 바꿔볼 행동과 상대에게 요청할 행동을 나누는 것이 중요하며, 모든 관계의 결과를 내 성향 하나로 떠안을 필요는 없습니다."], [], true, true);
       const last = main ?? chosen[0];
       if (last) {
         const m = LOVE_RELEASE_MATERIALS[last.facet];
         add(3, [
-          `당신의 사랑에는 ${particle(m.label, "이", "가")} 있으며, 가까운 사람에게 남기는 행동에서 그 모습이 드러납니다.`,
-          `${particle(m.act, "을", "를")} 자연스럽게 할 수 있는 관계가 이 힘을 살려줍니다.`,
-          `앞으로도 ${particle(m.need, "이", "가")} 서로에게 남는지 살펴, 좋은 마음을 한쪽의 노력으로만 만들지 않을 만합니다.`,
-          `사랑 안에서 ${particle(m.label, "을", "를")} 알아보는 일은, 누군가에게 맞는 사람이 되기 전에 내가 줄 수 있고 받아도 되는 마음을 아는 일입니다.`,
+          `처음에 읽은 ${particle(m.label, "은", "는")} 누군가에게 선택받기 위해 끝없이 증명해야 할 조건이 아닙니다.`,
+          ...LOVE_QUESTION_DETAILS[last.facet].closing,
         ].map(text => ({ text, refs: refs(last, "closing", true) })));
       }
     }
   }
+
   draft.bodyLength = draft.chapters.flatMap(c => c.paragraphs.map(p => p.text)).join("\n\n").length;
   const block = (p: LoveReleaseDraft["chapters"][number]["paragraphs"][number]): NarrativeBlock => ({ id: p.id, text: p.text, mode: "prose", tone: /CH06|CH04.P3|CH07.P3|CH08.P3/.test(p.id) ? "shadow" : "positive",
     proof: { features: [...new Set(p.sentences.flatMap(s => retained[s.sourceCandidateId]?.features ?? []))],

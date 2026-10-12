@@ -1,0 +1,89 @@
+{
+  "baseSha": "c048218cc5961e0f53a1deab2603511e17559fc3",
+  "branch": "v4/love-editorial-quality-fix-01",
+  "clock": "2026-10-12T12:00:00+09:00",
+  "loveTests": {
+    "before": {
+      "passed": 104,
+      "failed": 2,
+      "total": 106
+    },
+    "after": {
+      "passed": 120,
+      "failed": 2,
+      "total": 122
+    },
+    "newTests": 16,
+    "failureNamesUnchanged": true,
+    "failures": [
+      "FAIL  tests/unit/interpretation-v4/loveRelease.test.ts > Love reader edition > 'annual' remains identical at the release boundary",
+      "FAIL  tests/unit/interpretation-v4/loveRelease.test.ts > Love reader edition > 'major' remains identical at the release boundary"
+    ]
+  },
+  "boundaryTests": {
+    "beforeAndAfter": {
+      "passed": 5,
+      "failed": 24,
+      "total": 29
+    },
+    "failureNamesUnchanged": true,
+    "failures": [
+      "FAIL  tests/unit/api/bookAnnualPreflight.test.ts > uncertain Annual fails before order, local redeem or production queue; exact correction can retry",
+      "FAIL  tests/unit/interpretation-v4/careerProductLocks.test.ts > 'annual' customer/evidence/Book stays frozen",
+      "FAIL  tests/unit/interpretation-v4/careerProductLocks.test.ts > 'major' customer/evidence/Book stays frozen",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > admin retry and duplicate callbacks leave original durable context and identity intact",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > automatic retries and real deterministic fallback preserve accepted policy",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > invalid-date paid context never invokes generation, reaches attention, preserves PAID",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > missing paid context never invokes generation, reaches attention, preserves PAID",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > new checkout at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) for 2021 returns 400",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > new checkout at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) for 2022 returns 200",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > new checkout at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) for 2027 returns 200",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > new checkout at Thu Dec 31 2026 23:59:59 GMT+0900 (Korean Standard Time) for 2020 returns 400",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > new checkout at Thu Dec 31 2026 23:59:59 GMT+0900 (Korean Standard Time) for 2021 returns 200",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > new checkout at Thu Dec 31 2026 23:59:59 GMT+0900 (Korean Standard Time) for 2027 returns 400",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > other product career_money_study keeps price, input and paid generation without annual context",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > other product love_marriage_child keeps price, input and paid generation without annual context",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > other product major_fortune keeps price, input and paid generation without annual context",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > other product saju_mbti_compatibility keeps price, input and paid generation without annual context",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > other product saju_mbti_full keeps price, input and paid generation without annual context",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > paid 2021 generates after rollover/delay at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) using original selected-year Dayun",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > paid 2021 generates after rollover/delay at Mon Feb 15 2027 00:00:00 GMT+0900 (Korean Standard Time) using original selected-year Dayun",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > rejects spoofed old acceptance both beside and inside the public payload",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > tampered-year paid context never invokes generation, reaches attention, preserves PAID",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > writer outage in 2027 immediately delivers fallback using the accepted 2026 policy",
+      "FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > wrong-version paid context never invokes generation, reaches attention, preserves PAID"
+    ]
+  },
+  "bookPublicFlow": {
+    "beforeAndAfter": {
+      "passed": 31,
+      "failed": 0
+    }
+  },
+  "capture": {
+    "passed": 11,
+    "failed": 0
+  },
+  "lint": "PASS",
+  "typescript": {
+    "before": 390,
+    "after": 390,
+    "added": [],
+    "removed": []
+  },
+  "build": {
+    "before": "FAIL src/app/report/new/page.tsx invalid Page export getAsiaSeoulCurrentYear",
+    "after": "FAIL same file invalid Page export getAnnualFortuneYearOptions",
+    "nftStageReached": false,
+    "deployReady": false
+  },
+  "originalWorktree": {
+    "protectedHashesMatched": 1857,
+    "dirtyFilesPreserved": 11,
+    "branchAndHeadPreserved": true
+  },
+  "productionActions": [],
+  "otherProductHashes": "5/5 PASS (preservation.json)",
+  "crossPersonGlobalCommonSentenceReduction": "PARTIAL 83 -> 87; not claimed as improvement",
+  "nextPhaseStarted": false
+}

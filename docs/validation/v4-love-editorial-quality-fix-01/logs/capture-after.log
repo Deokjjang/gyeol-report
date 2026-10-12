@@ -1,0 +1,8 @@
+
+ RUN  v4.1.5 /tmp/gyeol-love-editorial-quality-fix-01
+
+
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Start at  19:38:57
+   Duration  45.63s (transform 2.36s, setup 24ms, import 2.93s, tests 42.53s, environment 0ms)
