@@ -1,0 +1,4167 @@
+{
+  "reviewMethod": "Manually grouped practical intent. Different source conditions remain linked. Families may overlap across domains; no count is presented as new scientific facts. Exact and near-text comparisons are separate screens.",
+  "families": {
+    "rule-purpose": 7,
+    "self-choice": 17,
+    "fact-vs-inference": 13,
+    "role-conditions": 9,
+    "handoff-repeatability": 11,
+    "authority-reporting": 11,
+    "shared-consent": 4,
+    "spending-purpose": 15,
+    "hypothesis-limits": 12,
+    "preference-vs-evidence": 7,
+    "scope-completion": 12,
+    "expression-consent": 18,
+    "shared-planning": 5,
+    "emotional-translation": 7,
+    "child-agency": 17,
+    "rule-explanation": 9,
+    "expression-options": 10,
+    "contact-expectations": 11,
+    "trust-repair": 7,
+    "message-context": 11,
+    "feedback-delivery": 8,
+    "revision-test": 3,
+    "supported-action": 12,
+    "overgeneralization": 11,
+    "bounded-help": 8,
+    "explicit-needs": 9,
+    "model-scope": 5,
+    "external-utility": 5,
+    "management-check": 8,
+    "decision-pause": 6,
+    "understanding-vs-recall": 5,
+    "pace-space": 11,
+    "personal-space": 10,
+    "caregiver-boundary": 1,
+    "help-without-ranking": 7,
+    "support-consent": 7,
+    "clear-boundary": 9,
+    "observable-utility": 12,
+    "unspoken-need": 7,
+    "unfinished-transition": 9,
+    "small-completion": 8,
+    "decision-criteria": 10,
+    "feedback-contract": 8,
+    "change-record": 6,
+    "independent-review": 7,
+    "feedback-learning": 6,
+    "listening-confirmation": 4,
+    "responsibility-overload": 5,
+    "assumption-question": 7,
+    "scope-compensation": 7,
+    "workload-boundary": 7,
+    "daily-responsibility": 10,
+    "safety-boundary": 8,
+    "support-boundary": 5,
+    "experience-feedback": 6,
+    "privacy-expression": 3,
+    "experience-concept": 9,
+    "respect-difference": 7,
+    "receiver-agency": 5,
+    "care-boundary": 5,
+    "reflective-check": 4,
+    "activity-choice": 6,
+    "need-clarification": 1,
+    "reciprocity": 2
+  },
+  "assignments": [
+    {
+      "id": "mkr:INTJ:identity:01",
+      "domain": "identity",
+      "family": "rule-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "의심을 대안으로 바꾸기",
+      "behavior": "불편한 규칙과 대안을 함께 적기"
+    },
+    {
+      "id": "mkr:INTJ:identity:02",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "독립 판단의 공유 시점",
+      "behavior": "결론 전에 판단 기준을 공개하기"
+    },
+    {
+      "id": "mkr:INTJ:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "fact-vs-inference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "구조와 예외를 함께 보기",
+      "behavior": "모델 밖 사례를 따로 기록하기"
+    },
+    {
+      "id": "mkr:INTJ:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "fact-vs-inference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "모순의 중요도 나누기",
+      "behavior": "결정에 영향 주는 오류부터 논의"
+    },
+    {
+      "id": "mkr:INTJ:career:01",
+      "domain": "career",
+      "family": "role-conditions",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "권한의 크기보다 범위",
+      "behavior": "결정 가능한 항목과 승인 항목 구분"
+    },
+    {
+      "id": "mkr:INTJ:career:02",
+      "domain": "career",
+      "family": "handoff-repeatability",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "지식을 재사용 가능한 도구로",
+      "behavior": "판단 과정을 작은 문서로 남기기"
+    },
+    {
+      "id": "mkr:INTJ:workplace:01",
+      "domain": "workplace",
+      "family": "authority-reporting",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "비공식 소통의 용도 구분",
+      "behavior": "결정 정보와 사담을 분리해 요청"
+    },
+    {
+      "id": "mkr:INTJ:workplace:02",
+      "domain": "workplace",
+      "family": "authority-reporting",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "책임과 권한의 불일치 설명",
+      "behavior": "막힌 결정과 필요한 승인을 특정"
+    },
+    {
+      "id": "mkr:INTJ:money:01",
+      "domain": "money",
+      "family": "shared-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "개인 설계와 공동 합의",
+      "behavior": "효율안과 상대의 우선순위를 함께 기록"
+    },
+    {
+      "id": "mkr:INTJ:money:02",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "지출 목표의 종료 조건",
+      "behavior": "구매 목적과 사용 종료 기준 적기"
+    },
+    {
+      "id": "mkr:INTJ:investment:01",
+      "domain": "investment",
+      "family": "hypothesis-limits",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "반유행도 검증 대상",
+      "behavior": "찬성 근거와 반대 근거를 같이 검토"
+    },
+    {
+      "id": "mkr:INTJ:investment:02",
+      "domain": "investment",
+      "family": "preference-vs-evidence",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "모델의 변경 조건",
+      "behavior": "가정이 깨지는 관찰 조건을 명시"
+    },
+    {
+      "id": "mkr:INTJ:study:01",
+      "domain": "study",
+      "family": "scope-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "설계 이전의 첫 확인",
+      "behavior": "작은 문제 하나를 풀어 빈틈 찾기"
+    },
+    {
+      "id": "mkr:INTJ:study:02",
+      "domain": "study",
+      "family": "scope-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "깊이와 범위의 분리",
+      "behavior": "필수 범위와 탐구 범위 나누기"
+    },
+    {
+      "id": "mkr:INTJ:love:01",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "방향 확인과 현재의 즐거움",
+      "behavior": "미래 질문 뒤 오늘 좋았던 점 묻기"
+    },
+    {
+      "id": "mkr:INTJ:love:02",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "지식 공유의 초대 확인",
+      "behavior": "더 듣고 싶은지 먼저 묻기"
+    },
+    {
+      "id": "mkr:INTJ:marriage:01",
+      "domain": "marriage",
+      "family": "shared-planning",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "미래 계획의 변경권",
+      "behavior": "계획을 다시 논의할 조건 정하기"
+    },
+    {
+      "id": "mkr:INTJ:marriage:02",
+      "domain": "marriage",
+      "family": "emotional-translation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "책임과 애정의 별도 확인",
+      "behavior": "상대가 체감한 도움을 물어보기"
+    },
+    {
+      "id": "mkr:INTJ:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "답보다 생각 과정 듣기",
+      "behavior": "아이의 가설을 먼저 말하게 하기"
+    },
+    {
+      "id": "mkr:INTJ:parenting:02",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자료 제공의 적정량",
+      "behavior": "필요한 도움의 범위를 먼저 확인"
+    },
+    {
+      "id": "mkr:INTJ:child:01",
+      "domain": "child",
+      "family": "rule-explanation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "규칙 질문의 뜻 확인",
+      "behavior": "반항인지 이해 요청인지 직접 묻기"
+    },
+    {
+      "id": "mkr:INTJ:child:02",
+      "domain": "child",
+      "family": "expression-options",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "몰입과 생활의 연결",
+      "behavior": "중단 예고와 다음 시작 시간을 합의"
+    },
+    {
+      "id": "mkr:INTJ:relationships:01",
+      "domain": "relationships",
+      "family": "contact-expectations",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "선별과 접근 가능성",
+      "behavior": "연락 가능한 방식을 알려주기"
+    },
+    {
+      "id": "mkr:INTJ:relationships:02",
+      "domain": "relationships",
+      "family": "trust-repair",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "경계 침해와 회복 조건",
+      "behavior": "중단 요청과 회복 가능 조건 구분"
+    },
+    {
+      "id": "mkr:INTJ:communication:01",
+      "domain": "communication",
+      "family": "message-context",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "정확성과 수신 준비",
+      "behavior": "지금 피드백을 원하는지 확인"
+    },
+    {
+      "id": "mkr:INTJ:communication:02",
+      "domain": "communication",
+      "family": "feedback-delivery",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "추상 설명의 착지점",
+      "behavior": "실제 선택 하나에 연결하기"
+    },
+    {
+      "id": "mkr:INTJ:strengths:01",
+      "domain": "strengths",
+      "family": "revision-test",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "침착함의 정보 수집",
+      "behavior": "기준과 아직 모르는 사실 분리"
+    },
+    {
+      "id": "mkr:INTJ:strengths:02",
+      "domain": "strengths",
+      "family": "supported-action",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "개선안의 작은 검증",
+      "behavior": "일부 범위에서 반응을 확인"
+    },
+    {
+      "id": "mkr:INTJ:risks:01",
+      "domain": "risks",
+      "family": "overgeneralization",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "발언자와 근거의 분리",
+      "behavior": "제안의 근거만 익명으로 검토"
+    },
+    {
+      "id": "mkr:INTJ:risks:02",
+      "domain": "risks",
+      "family": "overgeneralization",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "계획 밖 몸과 현장",
+      "behavior": "현장 관찰과 휴식 필요 확인"
+    },
+    {
+      "id": "mkr:INTJ:growth:01",
+      "domain": "growth",
+      "family": "bounded-help",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "피드백 내용과 순서 분리",
+      "behavior": "목표 확인 뒤 한 가지 수정 제안"
+    },
+    {
+      "id": "mkr:INTJ:growth:02",
+      "domain": "growth",
+      "family": "explicit-needs",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "소통 형식의 실험",
+      "behavior": "같은 내용을 예시와 문서로 비교"
+    },
+    {
+      "id": "mkr:INTP:identity:01",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "침묵 속 참여 방식",
+      "behavior": "생각할 시간과 회신 시점 알리기"
+    },
+    {
+      "id": "mkr:INTP:identity:02",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자율성과 설명 책임",
+      "behavior": "혼자 결정할 범위부터 합의"
+    },
+    {
+      "id": "mkr:INTP:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "model-scope",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "모델과 관찰의 간격",
+      "behavior": "설명 못 하는 사례도 함께 적기"
+    },
+    {
+      "id": "mkr:INTP:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "model-scope",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "반론을 수정 재료로",
+      "behavior": "반론이 바꾸는 전제를 특정"
+    },
+    {
+      "id": "mkr:INTP:career:01",
+      "domain": "career",
+      "family": "external-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자율 업무의 외부 완료 기준",
+      "behavior": "받는 사람이 쓸 결과 형태 합의"
+    },
+    {
+      "id": "mkr:INTP:career:02",
+      "domain": "career",
+      "family": "handoff-repeatability",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "설명의 시제품화",
+      "behavior": "가장 작은 사용 예를 만들기"
+    },
+    {
+      "id": "mkr:INTP:workplace:01",
+      "domain": "workplace",
+      "family": "authority-reporting",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "숙고의 시간 계약",
+      "behavior": "질문과 검토 시간을 요청"
+    },
+    {
+      "id": "mkr:INTP:workplace:02",
+      "domain": "workplace",
+      "family": "authority-reporting",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "흐릿한 요구의 구체화",
+      "behavior": "완료 기준과 생략 가능 범위 질문"
+    },
+    {
+      "id": "mkr:INTP:money:01",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관심사 구매의 사용 조건",
+      "behavior": "끝낼 결과와 사용 시점을 적기"
+    },
+    {
+      "id": "mkr:INTP:money:02",
+      "domain": "money",
+      "family": "management-check",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관리 자동화의 확인 책임",
+      "behavior": "주기적으로 내역을 직접 확인"
+    },
+    {
+      "id": "mkr:INTP:investment:01",
+      "domain": "investment",
+      "family": "hypothesis-limits",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "설명의 우아함과 검증",
+      "behavior": "관찰 자료와 가정 부분 구분"
+    },
+    {
+      "id": "mkr:INTP:investment:02",
+      "domain": "investment",
+      "family": "decision-pause",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "분석의 종료 조건",
+      "behavior": "무엇이 더 필요하며 언제 보류할지 적기"
+    },
+    {
+      "id": "mkr:INTP:study:01",
+      "domain": "study",
+      "family": "understanding-vs-recall",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "이해와 재현의 구분",
+      "behavior": "책을 덮고 자기 말로 설명"
+    },
+    {
+      "id": "mkr:INTP:study:02",
+      "domain": "study",
+      "family": "scope-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "흥미 없는 필수 범위",
+      "behavior": "짧은 필수 구간 뒤 탐구 시간 배치"
+    },
+    {
+      "id": "mkr:INTP:love:01",
+      "domain": "love",
+      "family": "pace-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관심과 여유의 명시",
+      "behavior": "연락 방식과 혼자 시간 설명"
+    },
+    {
+      "id": "mkr:INTP:love:02",
+      "domain": "love",
+      "family": "pace-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "친밀감의 작은 응답",
+      "behavior": "가능한 짧은 응답 방식 찾기"
+    },
+    {
+      "id": "mkr:INTP:marriage:01",
+      "domain": "marriage",
+      "family": "personal-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "공간과 가사 책임 구분",
+      "behavior": "개인 시간과 공통 책임을 따로 정하기"
+    },
+    {
+      "id": "mkr:INTP:marriage:02",
+      "domain": "marriage",
+      "family": "emotional-translation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "정서 확인의 형식 선택",
+      "behavior": "서로 편한 확인 방법 질문"
+    },
+    {
+      "id": "mkr:INTP:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "질문에 답하기 전 기다림",
+      "behavior": "아이 생각을 먼저 듣기"
+    },
+    {
+      "id": "mkr:INTP:parenting:02",
+      "domain": "parenting",
+      "family": "caregiver-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "돌봄과 혼자 시간의 조정",
+      "behavior": "대체 돌봄과 다시 만날 시간 정하기"
+    },
+    {
+      "id": "mkr:INTP:child:01",
+      "domain": "child",
+      "family": "help-without-ranking",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관심 편차의 관찰",
+      "behavior": "아는 것과 도움이 필요한 것 분리"
+    },
+    {
+      "id": "mkr:INTP:child:02",
+      "domain": "child",
+      "family": "rule-explanation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "규칙의 이유 설명",
+      "behavior": "안전 목적과 선택 가능 범위 전달"
+    },
+    {
+      "id": "mkr:INTP:relationships:01",
+      "domain": "relationships",
+      "family": "contact-expectations",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "적은 교류와 도움 요청",
+      "behavior": "필요할 때 요청할 통로 남기기"
+    },
+    {
+      "id": "mkr:INTP:relationships:02",
+      "domain": "relationships",
+      "family": "support-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "거리두기의 의사 표시",
+      "behavior": "중단 이유와 재개 가능 여부 알리기"
+    },
+    {
+      "id": "mkr:INTP:communication:01",
+      "domain": "communication",
+      "family": "message-context",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "설명 시작의 공통 기반",
+      "behavior": "상대가 알고 싶은 범위 질문"
+    },
+    {
+      "id": "mkr:INTP:communication:02",
+      "domain": "communication",
+      "family": "clear-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "정확한 말과 감정의 구분",
+      "behavior": "사실의 수정과 상대 평가를 나누기"
+    },
+    {
+      "id": "mkr:INTP:strengths:01",
+      "domain": "strengths",
+      "family": "observable-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "반론을 받을 수 있는 작업",
+      "behavior": "수정할 전제와 유지할 범위 표시"
+    },
+    {
+      "id": "mkr:INTP:strengths:02",
+      "domain": "strengths",
+      "family": "observable-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "장기 탐색의 중간 흔적",
+      "behavior": "작은 발견을 문서로 남기기"
+    },
+    {
+      "id": "mkr:INTP:risks:01",
+      "domain": "risks",
+      "family": "unspoken-need",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "적용되지 않은 분석 확인",
+      "behavior": "누가 쓸지 먼저 물어보기"
+    },
+    {
+      "id": "mkr:INTP:risks:02",
+      "domain": "risks",
+      "family": "unfinished-transition",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "사회적 신호의 직접 확인",
+      "behavior": "상대의 기대를 질문으로 확인"
+    },
+    {
+      "id": "mkr:INTP:growth:01",
+      "domain": "growth",
+      "family": "small-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "동기를 작은 결과와 연결",
+      "behavior": "오늘 끝낼 최소 산출물 지정"
+    },
+    {
+      "id": "mkr:INTP:growth:02",
+      "domain": "growth",
+      "family": "small-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "완료와 추가 탐구 분리",
+      "behavior": "현재 답과 후속 질문을 따로 저장"
+    },
+    {
+      "id": "mkr:ENTJ:identity:01",
+      "domain": "identity",
+      "family": "rule-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "목표 설정의 참여권",
+      "behavior": "각자 원하는 결과부터 듣기"
+    },
+    {
+      "id": "mkr:ENTJ:identity:02",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "변화의 비용 드러내기",
+      "behavior": "바뀌는 부담과 지원을 함께 제시"
+    },
+    {
+      "id": "mkr:ENTJ:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "decision-criteria",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "목표와 수단의 적합성",
+      "behavior": "목표 외에 지켜야 할 조건 명시"
+    },
+    {
+      "id": "mkr:ENTJ:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "decision-criteria",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "미래 위험의 현재 크기",
+      "behavior": "실제 영향과 추정 영향을 분리"
+    },
+    {
+      "id": "mkr:ENTJ:career:01",
+      "domain": "career",
+      "family": "role-conditions",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "주도권과 지원 자원",
+      "behavior": "결정권과 지원 인력을 함께 확인"
+    },
+    {
+      "id": "mkr:ENTJ:career:02",
+      "domain": "career",
+      "family": "handoff-repeatability",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "확장의 운영 준비",
+      "behavior": "현재 운영이 반복 가능한지 점검"
+    },
+    {
+      "id": "mkr:ENTJ:workplace:01",
+      "domain": "workplace",
+      "family": "feedback-contract",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "위임의 확인 지점",
+      "behavior": "방법 대신 결과와 확인 시점 합의"
+    },
+    {
+      "id": "mkr:ENTJ:workplace:02",
+      "domain": "workplace",
+      "family": "change-record",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "피드백의 공개 범위",
+      "behavior": "사람 평가 없이 행동과 영향 설명"
+    },
+    {
+      "id": "mkr:ENTJ:money:01",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "속도를 사는 지출",
+      "behavior": "절약 시간과 유지 비용 함께 기록"
+    },
+    {
+      "id": "mkr:ENTJ:money:02",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "확장의 생활 부담",
+      "behavior": "생활 비용과 사업 비용 구분"
+    },
+    {
+      "id": "mkr:ENTJ:investment:01",
+      "domain": "investment",
+      "family": "independent-review",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "지표 선택의 편향 확인",
+      "behavior": "선택하지 않은 지표도 살피기"
+    },
+    {
+      "id": "mkr:ENTJ:investment:02",
+      "domain": "investment",
+      "family": "independent-review",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "검토자에게 반대권 주기",
+      "behavior": "철회 의견도 불이익 없이 받기"
+    },
+    {
+      "id": "mkr:ENTJ:study:01",
+      "domain": "study",
+      "family": "feedback-learning",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "토론의 학습 목적",
+      "behavior": "승패보다 바뀐 이해를 기록"
+    },
+    {
+      "id": "mkr:ENTJ:study:02",
+      "domain": "study",
+      "family": "understanding-vs-recall",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "빠른 답의 재확인",
+      "behavior": "조건과 질문 대상을 다시 읽기"
+    },
+    {
+      "id": "mkr:ENTJ:love:01",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "데이트 계획의 선택권",
+      "behavior": "상대가 바꾸고 싶은 부분 묻기"
+    },
+    {
+      "id": "mkr:ENTJ:love:02",
+      "domain": "love",
+      "family": "pace-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "목표 응원과 시간 배분",
+      "behavior": "실제로 함께할 시간을 합의"
+    },
+    {
+      "id": "mkr:ENTJ:marriage:01",
+      "domain": "marriage",
+      "family": "shared-planning",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "공동 목표의 동의 확인",
+      "behavior": "각자 원하는 생활을 먼저 적기"
+    },
+    {
+      "id": "mkr:ENTJ:marriage:02",
+      "domain": "marriage",
+      "family": "emotional-translation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "집에서의 평가 멈춤",
+      "behavior": "일정 점검과 쉬는 대화 구분"
+    },
+    {
+      "id": "mkr:ENTJ:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자유의 작은 연습",
+      "behavior": "안전한 선택부터 함께 정하기"
+    },
+    {
+      "id": "mkr:ENTJ:parenting:02",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "성취 기준과 아이의 바람",
+      "behavior": "아이의 관심과 부담 먼저 질문"
+    },
+    {
+      "id": "mkr:ENTJ:child:01",
+      "domain": "child",
+      "family": "expression-options",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자기 의견과 경청의 병행",
+      "behavior": "다른 아이의 선택도 묻게 하기"
+    },
+    {
+      "id": "mkr:ENTJ:child:02",
+      "domain": "child",
+      "family": "help-without-ranking",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "생각 존중과 안전 경계",
+      "behavior": "선택 이유와 바꿀 수 없는 조건 제시"
+    },
+    {
+      "id": "mkr:ENTJ:relationships:01",
+      "domain": "relationships",
+      "family": "support-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "토론과 친밀감의 구분",
+      "behavior": "토론을 계속해도 좋은지 묻기"
+    },
+    {
+      "id": "mkr:ENTJ:relationships:02",
+      "domain": "relationships",
+      "family": "contact-expectations",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "유용한 도움의 동의",
+      "behavior": "상대가 원하는 도움부터 확인"
+    },
+    {
+      "id": "mkr:ENTJ:communication:01",
+      "domain": "communication",
+      "family": "message-context",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "명료한 주장과 질문 시간",
+      "behavior": "반대와 질문을 받는 시간을 남기기"
+    },
+    {
+      "id": "mkr:ENTJ:communication:02",
+      "domain": "communication",
+      "family": "listening-confirmation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "기다림의 명시적 약속",
+      "behavior": "답할 시점과 형식을 함께 정하기"
+    },
+    {
+      "id": "mkr:ENTJ:strengths:01",
+      "domain": "strengths",
+      "family": "observable-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "해결할 문제의 선택",
+      "behavior": "중요도와 맡을 책임부터 정하기"
+    },
+    {
+      "id": "mkr:ENTJ:strengths:02",
+      "domain": "strengths",
+      "family": "supported-action",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "저항의 정보 가치",
+      "behavior": "반대 이유가 제약인지 불안인지 확인"
+    },
+    {
+      "id": "mkr:ENTJ:risks:01",
+      "domain": "risks",
+      "family": "overgeneralization",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "목표 밖 영향 점검",
+      "behavior": "누가 비용을 부담하는지 질문"
+    },
+    {
+      "id": "mkr:ENTJ:risks:02",
+      "domain": "risks",
+      "family": "responsibility-overload",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "휴식을 성과 조건과 분리",
+      "behavior": "쉬고 싶은 필요 자체를 인정"
+    },
+    {
+      "id": "mkr:ENTJ:growth:01",
+      "domain": "growth",
+      "family": "explicit-needs",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "피드백의 후속 확인",
+      "behavior": "받은 사람이 실행 가능했는지 묻기"
+    },
+    {
+      "id": "mkr:ENTJ:growth:02",
+      "domain": "growth",
+      "family": "assumption-question",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "결정의 신뢰 비용",
+      "behavior": "과정에서 누락된 동의를 돌아보기"
+    },
+    {
+      "id": "mkr:ENTP:identity:01",
+      "domain": "identity",
+      "family": "rule-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "규칙 의심의 목적",
+      "behavior": "바꿔야 할 피해와 대안 구분"
+    },
+    {
+      "id": "mkr:ENTP:identity:02",
+      "domain": "identity",
+      "family": "rule-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "도전 선택의 여유",
+      "behavior": "지금 맡은 책임과 함께 검토"
+    },
+    {
+      "id": "mkr:ENTP:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "decision-criteria",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "가능성의 비교 기준",
+      "behavior": "무엇을 비교할지 먼저 정하기"
+    },
+    {
+      "id": "mkr:ENTP:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "decision-criteria",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "큰 그림 뒤의 첫 순서",
+      "behavior": "실행 첫 단계부터 덧붙이기"
+    },
+    {
+      "id": "mkr:ENTP:career:01",
+      "domain": "career",
+      "family": "external-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "제안과 사용 반응의 연결",
+      "behavior": "작은 사용 실험으로 반응 확인"
+    },
+    {
+      "id": "mkr:ENTP:career:02",
+      "domain": "career",
+      "family": "scope-compensation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "새 문제와 유지 업무",
+      "behavior": "유지할 책임도 미리 확인"
+    },
+    {
+      "id": "mkr:ENTP:workplace:01",
+      "domain": "workplace",
+      "family": "authority-reporting",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자율 방식과 보고 약속",
+      "behavior": "진행 알림의 최소 단위 합의"
+    },
+    {
+      "id": "mkr:ENTP:workplace:02",
+      "domain": "workplace",
+      "family": "workload-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "운영 역할의 공정한 분담",
+      "behavior": "기여와 보상까지 함께 협의"
+    },
+    {
+      "id": "mkr:ENTP:money:01",
+      "domain": "money",
+      "family": "management-check",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "아이디어 비용의 합계",
+      "behavior": "각 비용을 한 목록에서 보기"
+    },
+    {
+      "id": "mkr:ENTP:money:02",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "수익 가설과 고객 요구",
+      "behavior": "누가 무엇에 비용을 낼지 질문"
+    },
+    {
+      "id": "mkr:ENTP:investment:01",
+      "domain": "investment",
+      "family": "hypothesis-limits",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "흥미로운 주제와 자금 판단",
+      "behavior": "학습 메모와 투자 결정을 분리"
+    },
+    {
+      "id": "mkr:ENTP:investment:02",
+      "domain": "investment",
+      "family": "hypothesis-limits",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "실험의 범위 고정",
+      "behavior": "종료 조건과 바꿀 조건 구분"
+    },
+    {
+      "id": "mkr:ENTP:study:01",
+      "domain": "study",
+      "family": "scope-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "질문의 학습 순서",
+      "behavior": "필수 질문과 확장 질문 분리"
+    },
+    {
+      "id": "mkr:ENTP:study:02",
+      "domain": "study",
+      "family": "feedback-learning",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "반복을 변형 과제로",
+      "behavior": "같은 개념을 다른 예로 설명"
+    },
+    {
+      "id": "mkr:ENTP:love:01",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "빠른 대화와 관계 동의",
+      "behavior": "상대의 속도와 기대를 질문"
+    },
+    {
+      "id": "mkr:ENTP:love:02",
+      "domain": "love",
+      "family": "pace-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자유의 상호 조건",
+      "behavior": "상대에게도 같은 선택권 확인"
+    },
+    {
+      "id": "mkr:ENTP:marriage:01",
+      "domain": "marriage",
+      "family": "personal-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "새로움의 공동 선택",
+      "behavior": "둘 다 원하는 변화부터 질문"
+    },
+    {
+      "id": "mkr:ENTP:marriage:02",
+      "domain": "marriage",
+      "family": "daily-responsibility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자유를 지키는 반복 책임",
+      "behavior": "반복 업무의 담당과 완료 확인 정하기"
+    },
+    {
+      "id": "mkr:ENTP:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "토론의 힘 차이 인식",
+      "behavior": "설득 전에 아이 설명을 끝까지 듣기"
+    },
+    {
+      "id": "mkr:ENTP:parenting:02",
+      "domain": "parenting",
+      "family": "safety-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자유와 안전의 별도 조건",
+      "behavior": "안전 조건 안에서 선택하게 하기"
+    },
+    {
+      "id": "mkr:ENTP:child:01",
+      "domain": "child",
+      "family": "rule-explanation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "질문의 시기와 통로",
+      "behavior": "지금 지킬 조건과 나중 토론 구분"
+    },
+    {
+      "id": "mkr:ENTP:child:02",
+      "domain": "child",
+      "family": "rule-explanation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "호기심의 작은 실험",
+      "behavior": "함께 검증 가능한 질문 하나 선택"
+    },
+    {
+      "id": "mkr:ENTP:relationships:01",
+      "domain": "relationships",
+      "family": "contact-expectations",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "친화력 뒤의 관심 확인",
+      "behavior": "상대가 더 나누고 싶은 주제 묻기"
+    },
+    {
+      "id": "mkr:ENTP:relationships:02",
+      "domain": "relationships",
+      "family": "support-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "감정을 논점과 분리",
+      "behavior": "반박 대신 경험의 뜻을 질문"
+    },
+    {
+      "id": "mkr:ENTP:communication:01",
+      "domain": "communication",
+      "family": "message-context",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "빠른 연결에 중간 단계 추가",
+      "behavior": "연결 근거 한 단계를 명시"
+    },
+    {
+      "id": "mkr:ENTP:communication:02",
+      "domain": "communication",
+      "family": "message-context",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "농담과 반박의 허용 범위",
+      "behavior": "상대도 즐기는지 확인"
+    },
+    {
+      "id": "mkr:ENTP:strengths:01",
+      "domain": "strengths",
+      "family": "revision-test",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "우회로의 제약 검토",
+      "behavior": "기존 제약을 다시 대조"
+    },
+    {
+      "id": "mkr:ENTP:strengths:02",
+      "domain": "strengths",
+      "family": "revision-test",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "좋은 비판의 정의",
+      "behavior": "근거와 전달 불편함을 나누기"
+    },
+    {
+      "id": "mkr:ENTP:risks:01",
+      "domain": "risks",
+      "family": "unfinished-transition",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "착수와 완료의 비용",
+      "behavior": "현재 약속의 종료 조건 확인"
+    },
+    {
+      "id": "mkr:ENTP:risks:02",
+      "domain": "risks",
+      "family": "overgeneralization",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "옳은 문제와 개입 시점",
+      "behavior": "해결에 필요한 동의와 경로 확인"
+    },
+    {
+      "id": "mkr:ENTP:growth:01",
+      "domain": "growth",
+      "family": "small-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "동시 착수의 선택",
+      "behavior": "한 안의 여러 해결법부터 시험"
+    },
+    {
+      "id": "mkr:ENTP:growth:02",
+      "domain": "growth",
+      "family": "bounded-help",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "해결하지 않는 동행",
+      "behavior": "조언 동의 전 곁에서 듣기"
+    },
+    {
+      "id": "mkr:INFJ:identity:01",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "의미를 자기 언어로 확인",
+      "behavior": "그 일이 중요한 이유를 구체화"
+    },
+    {
+      "id": "mkr:INFJ:identity:02",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관찰과 자기 표현의 간격",
+      "behavior": "잠정 의견임을 밝히고 공유"
+    },
+    {
+      "id": "mkr:INFJ:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "fact-vs-inference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "패턴의 확인 질문",
+      "behavior": "관찰과 해석을 나눠 물어보기"
+    },
+    {
+      "id": "mkr:INFJ:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "decision-criteria",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "앞날 가정의 점검 시점",
+      "behavior": "무엇이 달라지면 수정할지 적기"
+    },
+    {
+      "id": "mkr:INFJ:career:01",
+      "domain": "career",
+      "family": "external-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "도움의 결과와 경계",
+      "behavior": "업무 범위와 담당 밖 요청 구분"
+    },
+    {
+      "id": "mkr:INFJ:career:02",
+      "domain": "career",
+      "family": "scope-compensation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "비전을 전달할 산출물",
+      "behavior": "대상과 실제 쓰임을 함께 정하기"
+    },
+    {
+      "id": "mkr:INFJ:workplace:01",
+      "domain": "workplace",
+      "family": "workload-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "몰입을 위한 연락 경계",
+      "behavior": "응답 시간과 업무 시간을 분리"
+    },
+    {
+      "id": "mkr:INFJ:workplace:02",
+      "domain": "workplace",
+      "family": "authority-reporting",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "정서 관찰의 공식 전달",
+      "behavior": "추측 대신 관찰 행동을 전달"
+    },
+    {
+      "id": "mkr:INFJ:money:01",
+      "domain": "money",
+      "family": "support-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "도움 지출의 동의 범위",
+      "behavior": "가능한 범위와 기간을 먼저 말하기"
+    },
+    {
+      "id": "mkr:INFJ:money:02",
+      "domain": "money",
+      "family": "management-check",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "완성 기준과 공개 기준",
+      "behavior": "판매 약속과 추가 개선을 구분"
+    },
+    {
+      "id": "mkr:INFJ:investment:01",
+      "domain": "investment",
+      "family": "preference-vs-evidence",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "가치 동의와 자료 확인",
+      "behavior": "가치 주장과 확인 자료 구분"
+    },
+    {
+      "id": "mkr:INFJ:investment:02",
+      "domain": "investment",
+      "family": "hypothesis-limits",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "불편한 정보의 접근 방식",
+      "behavior": "감당 가능한 점검 형식 정하기"
+    },
+    {
+      "id": "mkr:INFJ:study:01",
+      "domain": "study",
+      "family": "scope-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "깊은 질문의 제출 형태",
+      "behavior": "지금 답할 질문 하나를 문서화"
+    },
+    {
+      "id": "mkr:INFJ:study:02",
+      "domain": "study",
+      "family": "feedback-learning",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "글과 말의 선택권",
+      "behavior": "먼저 메모로 정리하고 설명"
+    },
+    {
+      "id": "mkr:INFJ:love:01",
+      "domain": "love",
+      "family": "pace-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "신중함과 의사의 전달",
+      "behavior": "관심과 필요한 시간을 구분해 설명"
+    },
+    {
+      "id": "mkr:INFJ:love:02",
+      "domain": "love",
+      "family": "pace-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "장소 선호의 상호 확인",
+      "behavior": "공간과 대화 양을 조절해 보기"
+    },
+    {
+      "id": "mkr:INFJ:marriage:01",
+      "domain": "marriage",
+      "family": "shared-planning",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "가치 합의와 생활 합의",
+      "behavior": "뜻이 같은 부분과 역할을 따로 논의"
+    },
+    {
+      "id": "mkr:INFJ:marriage:02",
+      "domain": "marriage",
+      "family": "personal-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "회복 시간의 예고",
+      "behavior": "다시 대화할 시점을 함께 알리기"
+    },
+    {
+      "id": "mkr:INFJ:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "의견을 듣는 집의 조건",
+      "behavior": "동의하지 않아도 말할 수 있게 하기"
+    },
+    {
+      "id": "mkr:INFJ:parenting:02",
+      "domain": "parenting",
+      "family": "experience-feedback",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "의미와 실제 행동 연결",
+      "behavior": "왜 필요한지 생활 장면으로 확인"
+    },
+    {
+      "id": "mkr:INFJ:child:01",
+      "domain": "child",
+      "family": "expression-options",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "말 이외의 의견 통로",
+      "behavior": "글이나 그림으로 먼저 표현 허용"
+    },
+    {
+      "id": "mkr:INFJ:child:02",
+      "domain": "child",
+      "family": "help-without-ranking",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "돕는 행동 뒤의 부담",
+      "behavior": "원해서 하는지 직접 확인"
+    },
+    {
+      "id": "mkr:INFJ:relationships:01",
+      "domain": "relationships",
+      "family": "support-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "깊이와 상대의 경계",
+      "behavior": "서로 나누고 싶은 범위 질문"
+    },
+    {
+      "id": "mkr:INFJ:relationships:02",
+      "domain": "relationships",
+      "family": "contact-expectations",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관찰한 신호의 재확인",
+      "behavior": "뜻을 추측하기 전에 사실 확인"
+    },
+    {
+      "id": "mkr:INFJ:communication:01",
+      "domain": "communication",
+      "family": "clear-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "우회 표현의 요청 명시",
+      "behavior": "마지막에 원하는 행동을 덧붙이기"
+    },
+    {
+      "id": "mkr:INFJ:communication:02",
+      "domain": "communication",
+      "family": "clear-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "부드러운 거절의 선명함",
+      "behavior": "불가 범위와 가능한 범위 나누기"
+    },
+    {
+      "id": "mkr:INFJ:strengths:01",
+      "domain": "strengths",
+      "family": "observable-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "통찰의 확인 가능한 부분",
+      "behavior": "관찰한 근거와 제안을 나누기"
+    },
+    {
+      "id": "mkr:INFJ:strengths:02",
+      "domain": "strengths",
+      "family": "supported-action",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "비전의 작은 생활 단위",
+      "behavior": "지금 바꿀 한 행동으로 구체화"
+    },
+    {
+      "id": "mkr:INFJ:risks:01",
+      "domain": "risks",
+      "family": "responsibility-overload",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "남의 감정과 자기 책임",
+      "behavior": "들은 일과 내가 맡을 일 분리"
+    },
+    {
+      "id": "mkr:INFJ:risks:02",
+      "domain": "risks",
+      "family": "unspoken-need",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "갈등 회피의 전달 비용",
+      "behavior": "작은 요청부터 안전하게 전달"
+    },
+    {
+      "id": "mkr:INFJ:growth:01",
+      "domain": "growth",
+      "family": "assumption-question",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자기 해석을 질문으로",
+      "behavior": "다르게 이해한 부분이 있는지 묻기"
+    },
+    {
+      "id": "mkr:INFJ:growth:02",
+      "domain": "growth",
+      "family": "bounded-help",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "필요한 만큼만 돕기",
+      "behavior": "상대가 원한 범위에서 멈추기"
+    },
+    {
+      "id": "mkr:INFP:identity:01",
+      "domain": "identity",
+      "family": "privacy-expression",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "가치와 공개 범위 구분",
+      "behavior": "무엇을 밝힐지 스스로 선택"
+    },
+    {
+      "id": "mkr:INFP:identity:02",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "부드러움 속 기준 표현",
+      "behavior": "싫은 이유와 원하는 대안 말하기"
+    },
+    {
+      "id": "mkr:INFP:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "decision-criteria",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "가치 충돌의 구체화",
+      "behavior": "어떤 가치끼리 충돌하는지 적기"
+    },
+    {
+      "id": "mkr:INFP:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "decision-criteria",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "상상과 타인 뜻의 구분",
+      "behavior": "실제 원하는 바를 직접 질문"
+    },
+    {
+      "id": "mkr:INFP:career:01",
+      "domain": "career",
+      "family": "scope-compensation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "의미 있는 일의 제공 범위",
+      "behavior": "무엇을 어디까지 제공할지 명시"
+    },
+    {
+      "id": "mkr:INFP:career:02",
+      "domain": "career",
+      "family": "scope-compensation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "취향과 타인 사용의 연결",
+      "behavior": "받는 사람의 용도를 확인"
+    },
+    {
+      "id": "mkr:INFP:workplace:01",
+      "domain": "workplace",
+      "family": "feedback-contract",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "피드백을 작업 단위로",
+      "behavior": "사람 평가와 수정 항목 분리"
+    },
+    {
+      "id": "mkr:INFP:workplace:02",
+      "domain": "workplace",
+      "family": "authority-reporting",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자율성의 최소 영역",
+      "behavior": "선택 가능한 방법을 확인"
+    },
+    {
+      "id": "mkr:INFP:money:01",
+      "domain": "money",
+      "family": "support-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "선의와 대가의 구분",
+      "behavior": "받을 대가와 무료 범위를 나누기"
+    },
+    {
+      "id": "mkr:INFP:money:02",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "작은 지출의 정서 기능",
+      "behavior": "원한 휴식과 실제 사용을 살피기"
+    },
+    {
+      "id": "mkr:INFP:investment:01",
+      "domain": "investment",
+      "family": "preference-vs-evidence",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "좋은 뜻과 확인 자료 분리",
+      "behavior": "마음에 든 이유와 자료를 따로 적기"
+    },
+    {
+      "id": "mkr:INFP:investment:02",
+      "domain": "investment",
+      "family": "hypothesis-limits",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "이야기 애착의 수정 조건",
+      "behavior": "반대 자료도 읽을 수 있게 남기기"
+    },
+    {
+      "id": "mkr:INFP:study:01",
+      "domain": "study",
+      "family": "experience-concept",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "이야기와 정확한 개념",
+      "behavior": "기억한 이야기와 정의를 대조"
+    },
+    {
+      "id": "mkr:INFP:study:02",
+      "domain": "study",
+      "family": "scope-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "의미와 마감의 병행",
+      "behavior": "최소 제출 조건부터 정하기"
+    },
+    {
+      "id": "mkr:INFP:love:01",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "교감의 상호 확인",
+      "behavior": "나누고 싶은 감정의 범위 묻기"
+    },
+    {
+      "id": "mkr:INFP:love:02",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "비판에서 요청 추출",
+      "behavior": "표현의 불편과 요구를 나누기"
+    },
+    {
+      "id": "mkr:INFP:marriage:01",
+      "domain": "marriage",
+      "family": "personal-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "헌신과 개인 여백",
+      "behavior": "혼자 쓸 시간도 공동 일정에 포함"
+    },
+    {
+      "id": "mkr:INFP:marriage:02",
+      "domain": "marriage",
+      "family": "personal-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "내면 존중의 행동 요청",
+      "behavior": "존중받고 싶은 구체적 행동 말하기"
+    },
+    {
+      "id": "mkr:INFP:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자율성과 안전의 안내",
+      "behavior": "선택권과 안전 경계를 함께 설명"
+    },
+    {
+      "id": "mkr:INFP:parenting:02",
+      "domain": "parenting",
+      "family": "safety-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "공감 뒤의 실제 지원",
+      "behavior": "듣고 난 뒤 필요한 도움 질문"
+    },
+    {
+      "id": "mkr:INFP:child:01",
+      "domain": "child",
+      "family": "expression-options",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "표현 형식의 선택",
+      "behavior": "글 그림 말 중 편한 방식 제안"
+    },
+    {
+      "id": "mkr:INFP:child:02",
+      "domain": "child",
+      "family": "expression-options",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "창작의 뜻 먼저 듣기",
+      "behavior": "잘했는지보다 담은 뜻 질문"
+    },
+    {
+      "id": "mkr:INFP:relationships:01",
+      "domain": "relationships",
+      "family": "respect-difference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "가치 공유와 차이 허용",
+      "behavior": "공통 가치와 다른 선택을 구분"
+    },
+    {
+      "id": "mkr:INFP:relationships:02",
+      "domain": "relationships",
+      "family": "respect-difference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "간섭 없는 지원의 제안",
+      "behavior": "필요할 때 요청할 수 있다고 알리기"
+    },
+    {
+      "id": "mkr:INFP:communication:01",
+      "domain": "communication",
+      "family": "clear-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "은유 뒤의 명시적 뜻",
+      "behavior": "원하는 행동을 덧붙이기"
+    },
+    {
+      "id": "mkr:INFP:communication:02",
+      "domain": "communication",
+      "family": "feedback-delivery",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "비판의 범위 확인",
+      "behavior": "어느 부분에 대한 말인지 질문"
+    },
+    {
+      "id": "mkr:INFP:strengths:01",
+      "domain": "strengths",
+      "family": "observable-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "중재자의 자기 의견",
+      "behavior": "중립 역할과 자기 한계도 밝히기"
+    },
+    {
+      "id": "mkr:INFP:strengths:02",
+      "domain": "strengths",
+      "family": "receiver-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "수용과 동의의 차이",
+      "behavior": "존중과 행동 허용을 따로 판단"
+    },
+    {
+      "id": "mkr:INFP:risks:01",
+      "domain": "risks",
+      "family": "unspoken-need",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "감정의 표현 가능 단위",
+      "behavior": "지금 말할 한 가지 필요부터 적기"
+    },
+    {
+      "id": "mkr:INFP:risks:02",
+      "domain": "risks",
+      "family": "responsibility-overload",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "신뢰와 자원 배분",
+      "behavior": "시간과 돈의 사용 범위를 점검"
+    },
+    {
+      "id": "mkr:INFP:growth:01",
+      "domain": "growth",
+      "family": "assumption-question",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "가치의 다른 구현 찾기",
+      "behavior": "같은 가치를 지킬 다른 방법 탐색"
+    },
+    {
+      "id": "mkr:INFP:growth:02",
+      "domain": "growth",
+      "family": "explicit-needs",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "표현을 작은 행동으로",
+      "behavior": "진짜로 느낀 한 가지를 구체화"
+    },
+    {
+      "id": "mkr:ENFJ:identity:01",
+      "domain": "identity",
+      "family": "care-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "도움의 주인 확인",
+      "behavior": "원하는 변화부터 질문"
+    },
+    {
+      "id": "mkr:ENFJ:identity:02",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관계 밖 자기 기준",
+      "behavior": "내가 원한 역할도 따로 적기"
+    },
+    {
+      "id": "mkr:ENFJ:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "fact-vs-inference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "감정 정보와 사실 정보",
+      "behavior": "당사자 의견과 확인 사실 구분"
+    },
+    {
+      "id": "mkr:ENFJ:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "reflective-check",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "회고의 책임 범위",
+      "behavior": "자기 행동과 통제 못 한 조건 분리"
+    },
+    {
+      "id": "mkr:ENFJ:career:01",
+      "domain": "career",
+      "family": "role-conditions",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "격려의 실제 지원 조건",
+      "behavior": "기회와 요구 자원을 함께 확인"
+    },
+    {
+      "id": "mkr:ENFJ:career:02",
+      "domain": "career",
+      "family": "scope-compensation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "돕는 역할의 평가 기준",
+      "behavior": "기여를 평가하는 방식 질문"
+    },
+    {
+      "id": "mkr:ENFJ:workplace:01",
+      "domain": "workplace",
+      "family": "workload-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "팀 분위기와 업무 책임",
+      "behavior": "챙길 일과 타인 책임 구분"
+    },
+    {
+      "id": "mkr:ENFJ:workplace:02",
+      "domain": "workplace",
+      "family": "feedback-contract",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "협업 속 반대 의견",
+      "behavior": "동의하지 않는 의견도 요청"
+    },
+    {
+      "id": "mkr:ENFJ:money:01",
+      "domain": "money",
+      "family": "support-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "지원 전 책임 확인",
+      "behavior": "받는 사람 책임과 내 범위 구분"
+    },
+    {
+      "id": "mkr:ENFJ:money:02",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "호감과 지출의 분리",
+      "behavior": "비용 없는 표현도 선택"
+    },
+    {
+      "id": "mkr:ENFJ:investment:01",
+      "domain": "investment",
+      "family": "independent-review",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관계 추천의 검증 경계",
+      "behavior": "관계 신뢰와 자료를 따로 검토"
+    },
+    {
+      "id": "mkr:ENFJ:investment:02",
+      "domain": "investment",
+      "family": "independent-review",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "평판과 실제 조건 비교",
+      "behavior": "이미지 밖 확인 항목을 적기"
+    },
+    {
+      "id": "mkr:ENFJ:study:01",
+      "domain": "study",
+      "family": "understanding-vs-recall",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "함께 배우기와 혼자 확인",
+      "behavior": "설명 뒤 혼자 다시 풀기"
+    },
+    {
+      "id": "mkr:ENFJ:study:02",
+      "domain": "study",
+      "family": "scope-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "격려 역할의 시간 경계",
+      "behavior": "자기 공부 시간도 예약"
+    },
+    {
+      "id": "mkr:ENFJ:love:01",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "애정과 원하는 도움",
+      "behavior": "상대가 좋아하는 표현을 질문"
+    },
+    {
+      "id": "mkr:ENFJ:love:02",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "미래 대화의 속도",
+      "behavior": "상대가 원하는 논의 시점 확인"
+    },
+    {
+      "id": "mkr:ENFJ:marriage:01",
+      "domain": "marriage",
+      "family": "daily-responsibility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "공동 돌봄의 책임표",
+      "behavior": "보이지 않는 준비도 나눠 기록"
+    },
+    {
+      "id": "mkr:ENFJ:marriage:02",
+      "domain": "marriage",
+      "family": "personal-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관계망과 사생활의 경계",
+      "behavior": "공유할 정보와 쉬는 시간 합의"
+    },
+    {
+      "id": "mkr:ENFJ:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "지도 전 아이의 뜻",
+      "behavior": "하고 싶은 이유를 먼저 듣기"
+    },
+    {
+      "id": "mkr:ENFJ:parenting:02",
+      "domain": "parenting",
+      "family": "experience-feedback",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "경험 뒤의 다른 감상",
+      "behavior": "좋았는지 정답 없이 질문"
+    },
+    {
+      "id": "mkr:ENFJ:child:01",
+      "domain": "child",
+      "family": "help-without-ranking",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "조력 역할의 선택권",
+      "behavior": "그 역할이 편한지 확인"
+    },
+    {
+      "id": "mkr:ENFJ:child:02",
+      "domain": "child",
+      "family": "rule-explanation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "발언 기회와 경청",
+      "behavior": "다른 아이 말도 듣게 하기"
+    },
+    {
+      "id": "mkr:ENFJ:relationships:01",
+      "domain": "relationships",
+      "family": "respect-difference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "좋은 가능성과 실제 동의",
+      "behavior": "상대가 약속한 범위만 기대"
+    },
+    {
+      "id": "mkr:ENFJ:relationships:02",
+      "domain": "relationships",
+      "family": "contact-expectations",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "넓은 교류의 유지 비용",
+      "behavior": "관계별로 가능한 참여 수준 알리기"
+    },
+    {
+      "id": "mkr:ENFJ:communication:01",
+      "domain": "communication",
+      "family": "feedback-delivery",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "설득 뒤의 자발적 동의",
+      "behavior": "거절하거나 수정할 여지 확인"
+    },
+    {
+      "id": "mkr:ENFJ:communication:02",
+      "domain": "communication",
+      "family": "feedback-delivery",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "부드러운 피드백의 명료함",
+      "behavior": "바꿀 행동 하나를 분명히 말하기"
+    },
+    {
+      "id": "mkr:ENFJ:strengths:01",
+      "domain": "strengths",
+      "family": "receiver-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "동원의 목적을 함께 정하기",
+      "behavior": "참여 이유와 기대를 먼저 듣기"
+    },
+    {
+      "id": "mkr:ENFJ:strengths:02",
+      "domain": "strengths",
+      "family": "receiver-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "성장 지원의 확인 기준",
+      "behavior": "받는 사람이 도움을 평가하게 하기"
+    },
+    {
+      "id": "mkr:ENFJ:risks:01",
+      "domain": "risks",
+      "family": "responsibility-overload",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "감정 책임의 분리",
+      "behavior": "내 행동과 상대 감정을 구분"
+    },
+    {
+      "id": "mkr:ENFJ:risks:02",
+      "domain": "risks",
+      "family": "overgeneralization",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "가치 반대의 내용 확인",
+      "behavior": "사람 평가 전 이유를 듣기"
+    },
+    {
+      "id": "mkr:ENFJ:growth:01",
+      "domain": "growth",
+      "family": "assumption-question",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "도움 뒤의 자기 상태 확인",
+      "behavior": "자기 필요와 남은 여유 기록"
+    },
+    {
+      "id": "mkr:ENFJ:growth:02",
+      "domain": "growth",
+      "family": "assumption-question",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "감정과 근거의 병렬 정리",
+      "behavior": "느낀 점과 확인 사실을 따로 쓰기"
+    },
+    {
+      "id": "mkr:ENFP:identity:01",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "가능성과 현재 책임의 연결",
+      "behavior": "지금 선택할 한 가지를 정하기"
+    },
+    {
+      "id": "mkr:ENFP:identity:02",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "밝은 표현과 회복 공간",
+      "behavior": "혼자 시간을 미리 설명"
+    },
+    {
+      "id": "mkr:ENFP:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "fact-vs-inference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "연결의 뜻과 확인 사실",
+      "behavior": "공통점과 다른 조건을 함께 적기"
+    },
+    {
+      "id": "mkr:ENFP:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "reflective-check",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "비판 뒤의 생각 정리",
+      "behavior": "요청한 수정만 먼저 추출"
+    },
+    {
+      "id": "mkr:ENFP:career:01",
+      "domain": "career",
+      "family": "external-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "여러 기회의 공통 방향",
+      "behavior": "함께 남길 경험과 결과를 고르기"
+    },
+    {
+      "id": "mkr:ENFP:career:02",
+      "domain": "career",
+      "family": "handoff-repeatability",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "사람 연결의 후속 책임",
+      "behavior": "누가 다음 연락을 맡을지 확인"
+    },
+    {
+      "id": "mkr:ENFP:workplace:01",
+      "domain": "workplace",
+      "family": "feedback-contract",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "새로움과 마무리의 묶음",
+      "behavior": "끝낼 조건도 함께 정하기"
+    },
+    {
+      "id": "mkr:ENFP:workplace:02",
+      "domain": "workplace",
+      "family": "change-record",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "후속 관리의 눈에 보이는 형식",
+      "behavior": "다음 행동과 담당을 한곳에 적기"
+    },
+    {
+      "id": "mkr:ENFP:money:01",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "경험 구매의 실제 욕구",
+      "behavior": "원하는 경험과 총비용을 같이 보기"
+    },
+    {
+      "id": "mkr:ENFP:money:02",
+      "domain": "money",
+      "family": "management-check",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "감정과 결제 시점 분리",
+      "behavior": "시간을 둔 뒤 같은 필요인지 확인"
+    },
+    {
+      "id": "mkr:ENFP:investment:01",
+      "domain": "investment",
+      "family": "preference-vs-evidence",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "비전 이야기의 근거 구분",
+      "behavior": "확인 가능한 주장만 따로 적기"
+    },
+    {
+      "id": "mkr:ENFP:investment:02",
+      "domain": "investment",
+      "family": "decision-pause",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관심 전환의 기록 보존",
+      "behavior": "이전 판단의 이유도 남기기"
+    },
+    {
+      "id": "mkr:ENFP:study:01",
+      "domain": "study",
+      "family": "scope-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "흥미 연결과 완료 확인",
+      "behavior": "한 단위의 끝을 작게 정하기"
+    },
+    {
+      "id": "mkr:ENFP:study:02",
+      "domain": "study",
+      "family": "experience-concept",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "설명한 내용의 정확성",
+      "behavior": "예시와 원래 정의를 대조"
+    },
+    {
+      "id": "mkr:ENFP:love:01",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "따뜻한 반응과 호감 구분",
+      "behavior": "관계 의사를 모호하지 않게 설명"
+    },
+    {
+      "id": "mkr:ENFP:love:02",
+      "domain": "love",
+      "family": "pace-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "열정의 속도 맞추기",
+      "behavior": "상대가 편한 연락 빈도 묻기"
+    },
+    {
+      "id": "mkr:ENFP:marriage:01",
+      "domain": "marriage",
+      "family": "shared-planning",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "새 경험의 공동 선택",
+      "behavior": "각자 즐거운 변화부터 제안"
+    },
+    {
+      "id": "mkr:ENFP:marriage:02",
+      "domain": "marriage",
+      "family": "daily-responsibility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자유와 생활 약속의 연결",
+      "behavior": "공동 책임의 변경도 합의"
+    },
+    {
+      "id": "mkr:ENFP:parenting:01",
+      "domain": "parenting",
+      "family": "experience-feedback",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "즐거움 뒤의 아이 의견",
+      "behavior": "어른의 기대와 아이 선호 구분"
+    },
+    {
+      "id": "mkr:ENFP:parenting:02",
+      "domain": "parenting",
+      "family": "experience-feedback",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "경험의 작은 회고",
+      "behavior": "좋았던 점과 싫었던 점 듣기"
+    },
+    {
+      "id": "mkr:ENFP:child:01",
+      "domain": "child",
+      "family": "activity-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "교류와 혼자 놀이의 선택",
+      "behavior": "혼자 놀 선택도 열어두기"
+    },
+    {
+      "id": "mkr:ENFP:child:02",
+      "domain": "child",
+      "family": "activity-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "흥미 편차의 환경 확인",
+      "behavior": "난도와 형식 등 조건을 비교"
+    },
+    {
+      "id": "mkr:ENFP:relationships:01",
+      "domain": "relationships",
+      "family": "contact-expectations",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "넓은 관계의 기대 수준",
+      "behavior": "가능한 약속만 분명히 말하기"
+    },
+    {
+      "id": "mkr:ENFP:relationships:02",
+      "domain": "relationships",
+      "family": "respect-difference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "호불호와 예의의 구분",
+      "behavior": "상대 평가 대신 자기 선호 설명"
+    },
+    {
+      "id": "mkr:ENFP:communication:01",
+      "domain": "communication",
+      "family": "message-context",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "연상의 연결 표시",
+      "behavior": "왜 이어졌는지 짧게 설명"
+    },
+    {
+      "id": "mkr:ENFP:communication:02",
+      "domain": "communication",
+      "family": "feedback-delivery",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "격려와 수정 정보 병행",
+      "behavior": "좋은 점과 바꿀 점을 구체화"
+    },
+    {
+      "id": "mkr:ENFP:strengths:01",
+      "domain": "strengths",
+      "family": "observable-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "새 조합의 작은 검토",
+      "behavior": "어느 필요를 해결하는지 확인"
+    },
+    {
+      "id": "mkr:ENFP:strengths:02",
+      "domain": "strengths",
+      "family": "supported-action",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "큰 문제의 우선 대응",
+      "behavior": "가능한 선택과 필요한 지원 정리"
+    },
+    {
+      "id": "mkr:ENFP:risks:01",
+      "domain": "risks",
+      "family": "unfinished-transition",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "반응 없는 일의 지속 조건",
+      "behavior": "자기 완료 기준을 다시 확인"
+    },
+    {
+      "id": "mkr:ENFP:risks:02",
+      "domain": "risks",
+      "family": "unfinished-transition",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "새 착수 전 남은 약속",
+      "behavior": "미완료 약속을 먼저 표시"
+    },
+    {
+      "id": "mkr:ENFP:growth:01",
+      "domain": "growth",
+      "family": "small-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "열정의 완료 구조",
+      "behavior": "최소 결과와 마감을 먼저 정하기"
+    },
+    {
+      "id": "mkr:ENFP:growth:02",
+      "domain": "growth",
+      "family": "bounded-help",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "거절과 대안의 분리",
+      "behavior": "가능한 범위만 선택해 말하기"
+    },
+    {
+      "id": "mkr:ISTJ:identity:01",
+      "domain": "identity",
+      "family": "rule-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "익숙한 절차의 실제 용도",
+      "behavior": "지키려는 목적부터 설명"
+    },
+    {
+      "id": "mkr:ISTJ:identity:02",
+      "domain": "identity",
+      "family": "care-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "루틴 변경의 준비 조건",
+      "behavior": "유지할 기준과 바꿀 순서 구분"
+    },
+    {
+      "id": "mkr:ISTJ:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "model-scope",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "경험 사례의 적용 범위",
+      "behavior": "이번 조건과 같은지 비교"
+    },
+    {
+      "id": "mkr:ISTJ:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "model-scope",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "깊은 집중의 우선순위",
+      "behavior": "요구 범위와 세부 개선 구분"
+    },
+    {
+      "id": "mkr:ISTJ:career:01",
+      "domain": "career",
+      "family": "role-conditions",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "완수 역할의 업무 조건",
+      "behavior": "기준과 예외 처리 경로 확인"
+    },
+    {
+      "id": "mkr:ISTJ:career:02",
+      "domain": "career",
+      "family": "handoff-repeatability",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "반복 품질의 변경 기록",
+      "behavior": "오류와 수정 이력을 남기기"
+    },
+    {
+      "id": "mkr:ISTJ:workplace:01",
+      "domain": "workplace",
+      "family": "authority-reporting",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "비공식 부탁의 공식 범위",
+      "behavior": "기존 일정과 우선순위를 확인"
+    },
+    {
+      "id": "mkr:ISTJ:workplace:02",
+      "domain": "workplace",
+      "family": "change-record",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "기준 변경의 전달 방식",
+      "behavior": "누가 어떤 기준을 바꿨는지 기록"
+    },
+    {
+      "id": "mkr:ISTJ:money:01",
+      "domain": "money",
+      "family": "shared-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "문서와 관계의 역할",
+      "behavior": "금액과 기한을 같이 확인"
+    },
+    {
+      "id": "mkr:ISTJ:money:02",
+      "domain": "money",
+      "family": "management-check",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "예산과 변경 여지",
+      "behavior": "이유와 바꿀 항목을 표시"
+    },
+    {
+      "id": "mkr:ISTJ:investment:01",
+      "domain": "investment",
+      "family": "hypothesis-limits",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "검증된 방식의 현재 조건",
+      "behavior": "언제 유효했는지 함께 확인"
+    },
+    {
+      "id": "mkr:ISTJ:investment:02",
+      "domain": "investment",
+      "family": "hypothesis-limits",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "점검 규칙의 예외",
+      "behavior": "규칙 변경의 근거를 기록"
+    },
+    {
+      "id": "mkr:ISTJ:study:01",
+      "domain": "study",
+      "family": "experience-concept",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "새 형식의 작은 적응",
+      "behavior": "기존 개념과 다른 요구를 표시"
+    },
+    {
+      "id": "mkr:ISTJ:study:02",
+      "domain": "study",
+      "family": "scope-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "매뉴얼과 원리의 연결",
+      "behavior": "왜 그 순서인지 설명해 보기"
+    },
+    {
+      "id": "mkr:ISTJ:love:01",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "약속과 애정의 별도 전달",
+      "behavior": "지킨 일과 느낀 마음을 함께 말하기"
+    },
+    {
+      "id": "mkr:ISTJ:love:02",
+      "domain": "love",
+      "family": "pace-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "느린 신뢰의 속도 설명",
+      "behavior": "관심이 없는 것과 구분해 말하기"
+    },
+    {
+      "id": "mkr:ISTJ:marriage:01",
+      "domain": "marriage",
+      "family": "daily-responsibility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "역할 고정의 재검토",
+      "behavior": "현재 부담에 맞는지 다시 묻기"
+    },
+    {
+      "id": "mkr:ISTJ:marriage:02",
+      "domain": "marriage",
+      "family": "emotional-translation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "변화의 임시 규칙",
+      "behavior": "시험 기간과 점검 시점 합의"
+    },
+    {
+      "id": "mkr:ISTJ:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "책임의 발달 수준",
+      "behavior": "나이와 실제 가능한 범위 확인"
+    },
+    {
+      "id": "mkr:ISTJ:parenting:02",
+      "domain": "parenting",
+      "family": "safety-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "방법이 다른 독립성",
+      "behavior": "결과와 안전 조건만 함께 확인"
+    },
+    {
+      "id": "mkr:ISTJ:child:01",
+      "domain": "child",
+      "family": "help-without-ranking",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "책임 뒤의 도움 요청",
+      "behavior": "어려운 부분도 말하게 하기"
+    },
+    {
+      "id": "mkr:ISTJ:child:02",
+      "domain": "child",
+      "family": "help-without-ranking",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "소수 친구의 만족 확인",
+      "behavior": "아이가 편안한지 먼저 듣기"
+    },
+    {
+      "id": "mkr:ISTJ:relationships:01",
+      "domain": "relationships",
+      "family": "trust-repair",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "예의 기준의 설명",
+      "behavior": "싫은 행동과 요청을 구체화"
+    },
+    {
+      "id": "mkr:ISTJ:relationships:02",
+      "domain": "relationships",
+      "family": "trust-repair",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "완벽한 관계 책임 내려놓기",
+      "behavior": "할 수 있는 관계 방식 제안"
+    },
+    {
+      "id": "mkr:ISTJ:communication:01",
+      "domain": "communication",
+      "family": "clear-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "불편함의 조기 표현",
+      "behavior": "작은 사실과 요청부터 전달"
+    },
+    {
+      "id": "mkr:ISTJ:communication:02",
+      "domain": "communication",
+      "family": "feedback-delivery",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "사과와 해명의 순서",
+      "behavior": "미안한 행동을 먼저 말하기"
+    },
+    {
+      "id": "mkr:ISTJ:strengths:01",
+      "domain": "strengths",
+      "family": "supported-action",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "완수 기준의 외부 확인",
+      "behavior": "받는 사람이 필요한 결과인지 확인"
+    },
+    {
+      "id": "mkr:ISTJ:strengths:02",
+      "domain": "strengths",
+      "family": "observable-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "절차의 안정과 예외 경로",
+      "behavior": "매뉴얼 밖 상황의 전달처 정하기"
+    },
+    {
+      "id": "mkr:ISTJ:risks:01",
+      "domain": "risks",
+      "family": "overgeneralization",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "변화의 실제 부담 찾기",
+      "behavior": "무엇이 달라져 어려운지 특정"
+    },
+    {
+      "id": "mkr:ISTJ:risks:02",
+      "domain": "risks",
+      "family": "overgeneralization",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "경험 판단의 반례",
+      "behavior": "이번에 다른 정보를 찾아보기"
+    },
+    {
+      "id": "mkr:ISTJ:growth:01",
+      "domain": "growth",
+      "family": "explicit-needs",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "피드백의 이해 확인",
+      "behavior": "상대가 이해한 요청을 듣기"
+    },
+    {
+      "id": "mkr:ISTJ:growth:02",
+      "domain": "growth",
+      "family": "explicit-needs",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "검토 가능한 새 방식",
+      "behavior": "작게 적용하고 비교 기준 정하기"
+    },
+    {
+      "id": "mkr:ISFJ:identity:01",
+      "domain": "identity",
+      "family": "care-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "보호의 대상과 한계",
+      "behavior": "원하는 지원과 자기 여유 확인"
+    },
+    {
+      "id": "mkr:ISFJ:identity:02",
+      "domain": "identity",
+      "family": "care-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "조용함 속 단호한 의사",
+      "behavior": "불가한 행동을 분명히 전달"
+    },
+    {
+      "id": "mkr:ISFJ:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "fact-vs-inference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "경험 기억의 현재 확인",
+      "behavior": "상대의 지금 필요를 다시 묻기"
+    },
+    {
+      "id": "mkr:ISFJ:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "reflective-check",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관계 고려 뒤의 자기 분석",
+      "behavior": "혼자 정리할 시간을 요청"
+    },
+    {
+      "id": "mkr:ISFJ:career:01",
+      "domain": "career",
+      "family": "scope-compensation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "세심한 도움의 업무 가시화",
+      "behavior": "준비와 후속 업무도 기록"
+    },
+    {
+      "id": "mkr:ISFJ:career:02",
+      "domain": "career",
+      "family": "handoff-repeatability",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "돌봄 운영의 인계 가능성",
+      "behavior": "주의 사항을 문서로 넘기기"
+    },
+    {
+      "id": "mkr:ISFJ:workplace:01",
+      "domain": "workplace",
+      "family": "workload-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "상세 안내의 적정량",
+      "behavior": "상대에게 필요한 수준부터 묻기"
+    },
+    {
+      "id": "mkr:ISFJ:workplace:02",
+      "domain": "workplace",
+      "family": "workload-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "추가 챙김의 역할 확인",
+      "behavior": "기존 역할과 우선순위를 질문"
+    },
+    {
+      "id": "mkr:ISFJ:money:01",
+      "domain": "money",
+      "family": "support-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "작은 돌봄 비용의 합계",
+      "behavior": "반복 비용을 한데 기록"
+    },
+    {
+      "id": "mkr:ISFJ:money:02",
+      "domain": "money",
+      "family": "management-check",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자기 몫의 필요 명시",
+      "behavior": "자기에게 필요한 항목도 포함"
+    },
+    {
+      "id": "mkr:ISFJ:investment:01",
+      "domain": "investment",
+      "family": "independent-review",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "추천과 독립 확인",
+      "behavior": "소개 내용과 실제 자료 대조"
+    },
+    {
+      "id": "mkr:ISFJ:investment:02",
+      "domain": "investment",
+      "family": "decision-pause",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "생활 부담의 실제 정보",
+      "behavior": "본인의 생활 조건부터 확인"
+    },
+    {
+      "id": "mkr:ISFJ:study:01",
+      "domain": "study",
+      "family": "understanding-vs-recall",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "반복과 꺼내 쓰기의 구분",
+      "behavior": "자료 없이 설명해 보기"
+    },
+    {
+      "id": "mkr:ISFJ:study:02",
+      "domain": "study",
+      "family": "feedback-learning",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "확신 부족의 확인 단위",
+      "behavior": "바꾼 이유를 짧게 기록"
+    },
+    {
+      "id": "mkr:ISFJ:love:01",
+      "domain": "love",
+      "family": "need-clarification",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "배려 속 원하는 것 말하기",
+      "behavior": "내가 바라는 표현도 요청"
+    },
+    {
+      "id": "mkr:ISFJ:love:02",
+      "domain": "love",
+      "family": "reciprocity",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "조심스러운 갈등의 사실화",
+      "behavior": "관찰한 행동과 요청만 전달"
+    },
+    {
+      "id": "mkr:ISFJ:marriage:01",
+      "domain": "marriage",
+      "family": "daily-responsibility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "감사의 내용과 분담",
+      "behavior": "한 일을 인정하고 다음 분담 확인"
+    },
+    {
+      "id": "mkr:ISFJ:marriage:02",
+      "domain": "marriage",
+      "family": "emotional-translation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "생활 역할의 재선택",
+      "behavior": "계속 맡고 싶은지 다시 질문"
+    },
+    {
+      "id": "mkr:ISFJ:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "예측 가능한 선택권",
+      "behavior": "루틴 안에서 고를 부분 마련"
+    },
+    {
+      "id": "mkr:ISFJ:parenting:02",
+      "domain": "parenting",
+      "family": "safety-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "도움의 필요 재확인",
+      "behavior": "어디까지 도움이 필요한지 묻기"
+    },
+    {
+      "id": "mkr:ISFJ:child:01",
+      "domain": "child",
+      "family": "expression-options",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "순응 속 자기 의견",
+      "behavior": "다른 생각도 말해도 된다고 알리기"
+    },
+    {
+      "id": "mkr:ISFJ:child:02",
+      "domain": "child",
+      "family": "rule-explanation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "현실 경험의 상상 확장",
+      "behavior": "다른 결말을 함께 상상"
+    },
+    {
+      "id": "mkr:ISFJ:relationships:01",
+      "domain": "relationships",
+      "family": "respect-difference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "기억한 배려의 현재성",
+      "behavior": "지금도 같은 필요인지 확인"
+    },
+    {
+      "id": "mkr:ISFJ:relationships:02",
+      "domain": "relationships",
+      "family": "support-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "집단 안정과 자기 불편",
+      "behavior": "내가 원치 않는 행동도 알리기"
+    },
+    {
+      "id": "mkr:ISFJ:communication:01",
+      "domain": "communication",
+      "family": "listening-confirmation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "경청 뒤의 자기 응답",
+      "behavior": "내 의견도 말할 순서를 요청"
+    },
+    {
+      "id": "mkr:ISFJ:communication:02",
+      "domain": "communication",
+      "family": "clear-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "단어 선택의 종료 기준",
+      "behavior": "완벽한 말보다 진짜 의사를 전하기"
+    },
+    {
+      "id": "mkr:ISFJ:strengths:01",
+      "domain": "strengths",
+      "family": "observable-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "세부 관찰의 확인",
+      "behavior": "추측 대신 상대에게 확인"
+    },
+    {
+      "id": "mkr:ISFJ:strengths:02",
+      "domain": "strengths",
+      "family": "supported-action",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "도움의 인계와 공유",
+      "behavior": "누구나 이어받을 기록 남기기"
+    },
+    {
+      "id": "mkr:ISFJ:risks:01",
+      "domain": "risks",
+      "family": "overgeneralization",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관습의 현재 목적",
+      "behavior": "지금도 목적에 맞는지 질문"
+    },
+    {
+      "id": "mkr:ISFJ:risks:02",
+      "domain": "risks",
+      "family": "responsibility-overload",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "도움 뒤의 여유 확인",
+      "behavior": "추가로 할 수 있는 범위를 말하기"
+    },
+    {
+      "id": "mkr:ISFJ:growth:01",
+      "domain": "growth",
+      "family": "explicit-needs",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "거절의 최소 문장",
+      "behavior": "이유 전체 대신 불가 범위를 전달"
+    },
+    {
+      "id": "mkr:ISFJ:growth:02",
+      "domain": "growth",
+      "family": "bounded-help",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "쓸모 없는 휴식의 허용",
+      "behavior": "성과 없는 즐거움을 선택"
+    },
+    {
+      "id": "mkr:ESTJ:identity:01",
+      "domain": "identity",
+      "family": "rule-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "책임 기준의 상호 확인",
+      "behavior": "서로 가능한 수준부터 합의"
+    },
+    {
+      "id": "mkr:ESTJ:identity:02",
+      "domain": "identity",
+      "family": "rule-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "질서와 목적의 관계",
+      "behavior": "규칙이 해결할 문제를 설명"
+    },
+    {
+      "id": "mkr:ESTJ:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "fact-vs-inference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "사실의 출처 확인",
+      "behavior": "확인 사실과 전달 받은 말을 나누기"
+    },
+    {
+      "id": "mkr:ESTJ:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "decision-criteria",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "효율 변화의 비교 기준",
+      "behavior": "무엇이 좋아져야 하는지 정하기"
+    },
+    {
+      "id": "mkr:ESTJ:career:01",
+      "domain": "career",
+      "family": "role-conditions",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "운영 책임의 권한 조건",
+      "behavior": "인력·일정의 조정 권한 확인"
+    },
+    {
+      "id": "mkr:ESTJ:career:02",
+      "domain": "career",
+      "family": "role-conditions",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "숫자 밖 운영 품질",
+      "behavior": "누락과 유지 부담도 함께 확인"
+    },
+    {
+      "id": "mkr:ESTJ:workplace:01",
+      "domain": "workplace",
+      "family": "feedback-contract",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "기대치의 실제 이해",
+      "behavior": "상대가 이해한 완료 기준 듣기"
+    },
+    {
+      "id": "mkr:ESTJ:workplace:02",
+      "domain": "workplace",
+      "family": "change-record",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "위임과 중간 수정 구분",
+      "behavior": "합의된 범위와 새 요구를 분리"
+    },
+    {
+      "id": "mkr:ESTJ:money:01",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "역할 지출의 실제 필요",
+      "behavior": "누가 왜 필요한지 구체화"
+    },
+    {
+      "id": "mkr:ESTJ:money:02",
+      "domain": "money",
+      "family": "shared-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "손익표 밖 공동 동의",
+      "behavior": "계산 근거와 상대 우선순위 확인"
+    },
+    {
+      "id": "mkr:ESTJ:investment:01",
+      "domain": "investment",
+      "family": "preference-vs-evidence",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "객관 지표의 선택 이유",
+      "behavior": "왜 그 지표를 쓰는지 명시"
+    },
+    {
+      "id": "mkr:ESTJ:investment:02",
+      "domain": "investment",
+      "family": "independent-review",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "공동재정의 거절권",
+      "behavior": "동의하지 않을 선택권 보장"
+    },
+    {
+      "id": "mkr:ESTJ:study:01",
+      "domain": "study",
+      "family": "experience-concept",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "반복 절차의 이유 설명",
+      "behavior": "다른 조건에도 통하는지 확인"
+    },
+    {
+      "id": "mkr:ESTJ:study:02",
+      "domain": "study",
+      "family": "scope-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "계획의 회복 규칙",
+      "behavior": "필수와 보충 범위를 나누기"
+    },
+    {
+      "id": "mkr:ESTJ:love:01",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "행동 배려의 의미 확인",
+      "behavior": "상대가 원하는 방식인지 질문"
+    },
+    {
+      "id": "mkr:ESTJ:love:02",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "명확한 요구와 선택권",
+      "behavior": "요청과 필수 조건을 구분"
+    },
+    {
+      "id": "mkr:ESTJ:marriage:01",
+      "domain": "marriage",
+      "family": "daily-responsibility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "생활 문제와 감정 순서",
+      "behavior": "느낀 부담부터 서로 듣기"
+    },
+    {
+      "id": "mkr:ESTJ:marriage:02",
+      "domain": "marriage",
+      "family": "emotional-translation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "운영 규칙의 공동 결정",
+      "behavior": "누가 바꿀 수 있는지도 합의"
+    },
+    {
+      "id": "mkr:ESTJ:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "규칙과 수정 가능 범위",
+      "behavior": "안전 규칙과 선택 규칙 구분"
+    },
+    {
+      "id": "mkr:ESTJ:parenting:02",
+      "domain": "parenting",
+      "family": "safety-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "성장에 따른 재협상",
+      "behavior": "현재 가능한 책임을 함께 확인"
+    },
+    {
+      "id": "mkr:ESTJ:child:01",
+      "domain": "child",
+      "family": "rule-explanation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "리더 역할의 경청 조건",
+      "behavior": "동료가 원하는 역할을 묻게 하기"
+    },
+    {
+      "id": "mkr:ESTJ:child:02",
+      "domain": "child",
+      "family": "rule-explanation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "공정한 규칙의 예외 설명",
+      "behavior": "왜 다른 지원이 필요한지 설명"
+    },
+    {
+      "id": "mkr:ESTJ:relationships:01",
+      "domain": "relationships",
+      "family": "trust-repair",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "약속 판단의 사정 확인",
+      "behavior": "행동의 영향과 이유를 각각 확인"
+    },
+    {
+      "id": "mkr:ESTJ:relationships:02",
+      "domain": "relationships",
+      "family": "trust-repair",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "외향성과 개인 시간",
+      "behavior": "필요한 시간을 솔직히 알리기"
+    },
+    {
+      "id": "mkr:ESTJ:communication:01",
+      "domain": "communication",
+      "family": "feedback-delivery",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "교정의 목적과 요청",
+      "behavior": "무엇을 바꿀지와 이유를 함께 말하기"
+    },
+    {
+      "id": "mkr:ESTJ:communication:02",
+      "domain": "communication",
+      "family": "listening-confirmation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "직설 뒤의 반대 허용",
+      "behavior": "빠진 사정이 있는지 질문"
+    },
+    {
+      "id": "mkr:ESTJ:strengths:01",
+      "domain": "strengths",
+      "family": "supported-action",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "일관된 실행의 조건",
+      "behavior": "자원과 마감의 변화를 알리기"
+    },
+    {
+      "id": "mkr:ESTJ:strengths:02",
+      "domain": "strengths",
+      "family": "observable-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "반복 기준의 개선",
+      "behavior": "재작업과 예외를 기록"
+    },
+    {
+      "id": "mkr:ESTJ:risks:01",
+      "domain": "risks",
+      "family": "overgeneralization",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "형식 불편과 실제 손해",
+      "behavior": "문제 영향과 단순 낯섦 구분"
+    },
+    {
+      "id": "mkr:ESTJ:risks:02",
+      "domain": "risks",
+      "family": "overgeneralization",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "역할과 사람 가치 분리",
+      "behavior": "제안 내용만 먼저 검토"
+    },
+    {
+      "id": "mkr:ESTJ:growth:01",
+      "domain": "growth",
+      "family": "bounded-help",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "직설의 전달 결과 확인",
+      "behavior": "상대가 무엇을 이해했는지 질문"
+    },
+    {
+      "id": "mkr:ESTJ:growth:02",
+      "domain": "growth",
+      "family": "bounded-help",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "위임 기준과 방법 자유",
+      "behavior": "결과 기준만 명확히 합의"
+    },
+    {
+      "id": "mkr:ESFJ:identity:01",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "소속과 개인 선택",
+      "behavior": "하고 싶은 일과 기대 역할 구분"
+    },
+    {
+      "id": "mkr:ESFJ:identity:02",
+      "domain": "identity",
+      "family": "care-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "챙김의 수신 동의",
+      "behavior": "상대가 편한 표현 방식 질문"
+    },
+    {
+      "id": "mkr:ESFJ:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "fact-vs-inference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "쓰임과 근거의 구분",
+      "behavior": "어디에 쓰며 무엇이 확인됐는지 묻기"
+    },
+    {
+      "id": "mkr:ESFJ:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "fact-vs-inference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "분위기 판단의 보류",
+      "behavior": "조용한 의견도 따로 듣기"
+    },
+    {
+      "id": "mkr:ESFJ:career:01",
+      "domain": "career",
+      "family": "handoff-repeatability",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관계 기억의 업무 경계",
+      "behavior": "기억한 정보의 사용 동의 확인"
+    },
+    {
+      "id": "mkr:ESFJ:career:02",
+      "domain": "career",
+      "family": "handoff-repeatability",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "반복 서비스의 인계",
+      "behavior": "누구나 쓸 기록으로 정리"
+    },
+    {
+      "id": "mkr:ESFJ:workplace:01",
+      "domain": "workplace",
+      "family": "workload-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "칭찬과 업무 범위 구분",
+      "behavior": "추가 업무의 우선순위를 확인"
+    },
+    {
+      "id": "mkr:ESFJ:workplace:02",
+      "domain": "workplace",
+      "family": "feedback-contract",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "팀 사기와 개인 의사",
+      "behavior": "참여하지 않을 선택도 허용"
+    },
+    {
+      "id": "mkr:ESFJ:money:01",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관계 행사 비용의 우선순위",
+      "behavior": "원하는 참여와 의무 지출 구분"
+    },
+    {
+      "id": "mkr:ESFJ:money:02",
+      "domain": "money",
+      "family": "support-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "감사 표현의 다른 수단",
+      "behavior": "비용 외의 방법도 제안"
+    },
+    {
+      "id": "mkr:ESFJ:investment:01",
+      "domain": "investment",
+      "family": "independent-review",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "사회적 추천의 사실 분리",
+      "behavior": "누가 확인한 자료인지 질문"
+    },
+    {
+      "id": "mkr:ESFJ:investment:02",
+      "domain": "investment",
+      "family": "decision-pause",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "거절과 관계 유지",
+      "behavior": "판단 보류 의사를 분명히 말하기"
+    },
+    {
+      "id": "mkr:ESFJ:study:01",
+      "domain": "study",
+      "family": "experience-concept",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "실용 예시와 개념 연결",
+      "behavior": "예시 밖에도 통하는 원리 적기"
+    },
+    {
+      "id": "mkr:ESFJ:study:02",
+      "domain": "study",
+      "family": "feedback-learning",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "모임 반응과 학습 상태",
+      "behavior": "혼자 풀어본 기록도 확인"
+    },
+    {
+      "id": "mkr:ESFJ:love:01",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "상호 표현의 방식 확인",
+      "behavior": "좋아하는 관심 표현을 서로 묻기"
+    },
+    {
+      "id": "mkr:ESFJ:love:02",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "보살핌 전 선택권",
+      "behavior": "필요한 도움인지 먼저 확인"
+    },
+    {
+      "id": "mkr:ESFJ:marriage:01",
+      "domain": "marriage",
+      "family": "daily-responsibility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "행사 책임의 실제 분담",
+      "behavior": "준비·연락·비용을 각각 나누기"
+    },
+    {
+      "id": "mkr:ESFJ:marriage:02",
+      "domain": "marriage",
+      "family": "personal-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "챙김과 관리의 경계",
+      "behavior": "스스로 고를 영역을 남기기"
+    },
+    {
+      "id": "mkr:ESFJ:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "보호와 의견의 분리",
+      "behavior": "위험 조건과 다른 의견을 구분"
+    },
+    {
+      "id": "mkr:ESFJ:parenting:02",
+      "domain": "parenting",
+      "family": "safety-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "도움 전 아이 시도",
+      "behavior": "아이에게 가능한 해결부터 질문"
+    },
+    {
+      "id": "mkr:ESFJ:child:01",
+      "domain": "child",
+      "family": "expression-options",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "예고가 필요한 상황",
+      "behavior": "다음 순서와 바뀐 이유 알려주기"
+    },
+    {
+      "id": "mkr:ESFJ:child:02",
+      "domain": "child",
+      "family": "rule-explanation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "분위기와 자기 감정 구분",
+      "behavior": "아이 자신의 느낌도 따로 묻기"
+    },
+    {
+      "id": "mkr:ESFJ:relationships:01",
+      "domain": "relationships",
+      "family": "contact-expectations",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "안부 연락의 선호 확인",
+      "behavior": "상대가 편한 연락 빈도 확인"
+    },
+    {
+      "id": "mkr:ESFJ:relationships:02",
+      "domain": "relationships",
+      "family": "support-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "맞장구 뒤 실제 이해",
+      "behavior": "상대 뜻을 자기 말로 확인"
+    },
+    {
+      "id": "mkr:ESFJ:communication:01",
+      "domain": "communication",
+      "family": "feedback-delivery",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "따뜻한 시작과 실제 요청",
+      "behavior": "좋은 말 뒤 요청을 구체화"
+    },
+    {
+      "id": "mkr:ESFJ:communication:02",
+      "domain": "communication",
+      "family": "listening-confirmation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "과정 설명의 상대 수준",
+      "behavior": "이미 아는 범위를 질문"
+    },
+    {
+      "id": "mkr:ESFJ:strengths:01",
+      "domain": "strengths",
+      "family": "observable-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "필요한 실무 조치 확인",
+      "behavior": "상대가 원하는 조치를 먼저 묻기"
+    },
+    {
+      "id": "mkr:ESFJ:strengths:02",
+      "domain": "strengths",
+      "family": "supported-action",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "사회적 회복의 선택권",
+      "behavior": "말할 상대의 여유도 확인"
+    },
+    {
+      "id": "mkr:ESFJ:risks:01",
+      "domain": "risks",
+      "family": "unspoken-need",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "거절의 범위 묻기",
+      "behavior": "그 일과 관계 전체를 구분"
+    },
+    {
+      "id": "mkr:ESFJ:risks:02",
+      "domain": "risks",
+      "family": "overgeneralization",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "집단 합의의 개인 검토",
+      "behavior": "내 근거도 별도로 확인"
+    },
+    {
+      "id": "mkr:ESFJ:growth:01",
+      "domain": "growth",
+      "family": "bounded-help",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "지원의 동의 확인",
+      "behavior": "원하는 도움인지 먼저 묻기"
+    },
+    {
+      "id": "mkr:ESFJ:growth:02",
+      "domain": "growth",
+      "family": "assumption-question",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "편들기 전 사실 확인",
+      "behavior": "위로와 사실 판단을 나누기"
+    },
+    {
+      "id": "mkr:ISTP:identity:01",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "행동으로 보이는 참여",
+      "behavior": "무엇을 했고 남았는지 알리기"
+    },
+    {
+      "id": "mkr:ISTP:identity:02",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "필요한 에너지의 선택",
+      "behavior": "도움이 필요한 경계를 정하기"
+    },
+    {
+      "id": "mkr:ISTP:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "fact-vs-inference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "속으로 끝낸 판단의 근거",
+      "behavior": "핵심 이유 한 단계를 설명"
+    },
+    {
+      "id": "mkr:ISTP:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "fact-vs-inference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "원리와 관찰의 대조",
+      "behavior": "확인한 것과 추정한 것 분리"
+    },
+    {
+      "id": "mkr:ISTP:career:01",
+      "domain": "career",
+      "family": "role-conditions",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "현장 자율성의 안전 경계",
+      "behavior": "방법 재량과 안전 조건 확인"
+    },
+    {
+      "id": "mkr:ISTP:career:02",
+      "domain": "career",
+      "family": "handoff-repeatability",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "문제 해결의 전달물",
+      "behavior": "다음 사람이 쓸 기록 남기기"
+    },
+    {
+      "id": "mkr:ISTP:workplace:01",
+      "domain": "workplace",
+      "family": "authority-reporting",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "최소 보고의 합의",
+      "behavior": "필요한 결과와 위험 정보는 정하기"
+    },
+    {
+      "id": "mkr:ISTP:workplace:02",
+      "domain": "workplace",
+      "family": "authority-reporting",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "간섭과 안전 확인 구분",
+      "behavior": "어떤 확인이 필요한지 질문"
+    },
+    {
+      "id": "mkr:ISTP:money:01",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "도구의 쓰임과 총비용",
+      "behavior": "사용 빈도와 유지 비용 확인"
+    },
+    {
+      "id": "mkr:ISTP:money:02",
+      "domain": "money",
+      "family": "management-check",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자유를 위한 기본 관리",
+      "behavior": "필수 지출의 확인 방식 정하기"
+    },
+    {
+      "id": "mkr:ISTP:investment:01",
+      "domain": "investment",
+      "family": "hypothesis-limits",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "간단한 기준의 한계",
+      "behavior": "생략되는 정보도 표시"
+    },
+    {
+      "id": "mkr:ISTP:investment:02",
+      "domain": "investment",
+      "family": "preference-vs-evidence",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "사용 품질과 투자 조건 구분",
+      "behavior": "제품 경험과 다른 자료를 구분"
+    },
+    {
+      "id": "mkr:ISTP:study:01",
+      "domain": "study",
+      "family": "experience-concept",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "실습과 설명의 왕복",
+      "behavior": "작동 이유를 한 번 설명"
+    },
+    {
+      "id": "mkr:ISTP:study:02",
+      "domain": "study",
+      "family": "experience-concept",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "이론을 쓰는 작은 장면",
+      "behavior": "실제로 확인할 예 하나 찾기"
+    },
+    {
+      "id": "mkr:ISTP:love:01",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "행동 배려의 뜻 전하기",
+      "behavior": "도운 이유도 짧게 말하기"
+    },
+    {
+      "id": "mkr:ISTP:love:02",
+      "domain": "love",
+      "family": "pace-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "혼자 시간의 연락 약속",
+      "behavior": "다시 연락할 시점 알리기"
+    },
+    {
+      "id": "mkr:ISTP:marriage:01",
+      "domain": "marriage",
+      "family": "personal-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "개인 시간과 공동 책임",
+      "behavior": "각자 시간 전후 맡을 일 합의"
+    },
+    {
+      "id": "mkr:ISTP:marriage:02",
+      "domain": "marriage",
+      "family": "daily-responsibility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "실용 지출의 공동 동의",
+      "behavior": "사용 목적과 예산 우선순위 설명"
+    },
+    {
+      "id": "mkr:ISTP:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "탐험의 안전 조건",
+      "behavior": "혼자 해볼 범위와 도움 신호 정하기"
+    },
+    {
+      "id": "mkr:ISTP:parenting:02",
+      "domain": "parenting",
+      "family": "safety-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "사생활 존중과 접근 통로",
+      "behavior": "도움 요청할 방법도 알려주기"
+    },
+    {
+      "id": "mkr:ISTP:child:01",
+      "domain": "child",
+      "family": "expression-options",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "짧은 답의 이해 확인",
+      "behavior": "선택이나 시연으로 확인"
+    },
+    {
+      "id": "mkr:ISTP:child:02",
+      "domain": "child",
+      "family": "help-without-ranking",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "혼자 놀이의 안전 점검",
+      "behavior": "방해 적은 환경과 안전 확인"
+    },
+    {
+      "id": "mkr:ISTP:relationships:01",
+      "domain": "relationships",
+      "family": "contact-expectations",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "낮은 간섭의 관심 표현",
+      "behavior": "필요할 때 도울 수 있음을 알리기"
+    },
+    {
+      "id": "mkr:ISTP:relationships:02",
+      "domain": "relationships",
+      "family": "support-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "거리두기와 대화 재개",
+      "behavior": "쉬는 시간과 재개 의사 전달"
+    },
+    {
+      "id": "mkr:ISTP:communication:01",
+      "domain": "communication",
+      "family": "message-context",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "간결한 말의 맥락 보충",
+      "behavior": "이유나 의사를 한 줄 더하기"
+    },
+    {
+      "id": "mkr:ISTP:communication:02",
+      "domain": "communication",
+      "family": "clear-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "마음에 없는 위로의 대안",
+      "behavior": "사실인 관심만 말하기"
+    },
+    {
+      "id": "mkr:ISTP:strengths:01",
+      "domain": "strengths",
+      "family": "supported-action",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "즉시 행동의 확인 단계",
+      "behavior": "안전과 확인 사실부터 점검"
+    },
+    {
+      "id": "mkr:ISTP:strengths:02",
+      "domain": "strengths",
+      "family": "supported-action",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "현실 조정의 공유",
+      "behavior": "무엇을 왜 바꿨는지 알리기"
+    },
+    {
+      "id": "mkr:ISTP:risks:01",
+      "domain": "risks",
+      "family": "unspoken-need",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "감정 신호의 확인 질문",
+      "behavior": "상대가 원하는 반응을 묻기"
+    },
+    {
+      "id": "mkr:ISTP:risks:02",
+      "domain": "risks",
+      "family": "unfinished-transition",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "지루한 업무의 최소 완료",
+      "behavior": "남은 책임과 인계 조건 정하기"
+    },
+    {
+      "id": "mkr:ISTP:growth:01",
+      "domain": "growth",
+      "family": "explicit-needs",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "마음의 최소 번역",
+      "behavior": "지금 상태와 필요한 것을 짧게 말하기"
+    },
+    {
+      "id": "mkr:ISTP:growth:02",
+      "domain": "growth",
+      "family": "small-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "장기 목표의 짧은 동작",
+      "behavior": "지금 할 단계와 다음 확인 정하기"
+    },
+    {
+      "id": "mkr:ISFP:identity:01",
+      "domain": "identity",
+      "family": "privacy-expression",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "온화함과 자기 기준",
+      "behavior": "존중과 동의를 구분해 말하기"
+    },
+    {
+      "id": "mkr:ISFP:identity:02",
+      "domain": "identity",
+      "family": "privacy-expression",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "사적인 취향의 공개 선택",
+      "behavior": "편한 부분부터 공유"
+    },
+    {
+      "id": "mkr:ISFP:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "decision-criteria",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "느낌과 사실의 역할",
+      "behavior": "선호와 확인 정보를 나눠 적기"
+    },
+    {
+      "id": "mkr:ISFP:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "decision-criteria",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "열린 선택의 종료 시점",
+      "behavior": "지금 정할 범위만 좁히기"
+    },
+    {
+      "id": "mkr:ISFP:career:01",
+      "domain": "career",
+      "family": "external-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "취향과 의뢰 요구의 연결",
+      "behavior": "내 선호와 고객 요구 구분"
+    },
+    {
+      "id": "mkr:ISFP:career:02",
+      "domain": "career",
+      "family": "scope-compensation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자율 작업의 수정 조건",
+      "behavior": "피드백 시점과 범위 합의"
+    },
+    {
+      "id": "mkr:ISFP:workplace:01",
+      "domain": "workplace",
+      "family": "feedback-contract",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "존중받는 피드백의 형식",
+      "behavior": "공간과 구체적 수정 기준 요청"
+    },
+    {
+      "id": "mkr:ISFP:workplace:02",
+      "domain": "workplace",
+      "family": "workload-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "갈등 전에 필요한 시간",
+      "behavior": "잠깐 멈춤과 다음 대화 제안"
+    },
+    {
+      "id": "mkr:ISFP:money:01",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "편안함 소비의 사용 확인",
+      "behavior": "실제로 쓸 장면과 비용 확인"
+    },
+    {
+      "id": "mkr:ISFP:money:02",
+      "domain": "money",
+      "family": "management-check",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "추가 작업의 대가 설명",
+      "behavior": "약속한 범위와 추가 요구 구분"
+    },
+    {
+      "id": "mkr:ISFP:investment:01",
+      "domain": "investment",
+      "family": "preference-vs-evidence",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "취향 애착의 자료 구분",
+      "behavior": "사용 감상과 실제 조건을 나누기"
+    },
+    {
+      "id": "mkr:ISFP:investment:02",
+      "domain": "investment",
+      "family": "decision-pause",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "압박에서 판단 시간 확보",
+      "behavior": "확인 전 보류 의사를 말하기"
+    },
+    {
+      "id": "mkr:ISFP:study:01",
+      "domain": "study",
+      "family": "experience-concept",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "직접 경험 뒤의 설명",
+      "behavior": "무엇을 배웠는지 자기 말로 정리"
+    },
+    {
+      "id": "mkr:ISFP:study:02",
+      "domain": "study",
+      "family": "feedback-learning",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "구체적 피드백의 적용",
+      "behavior": "바꿀 행동 한 가지를 요청"
+    },
+    {
+      "id": "mkr:ISFP:love:01",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "느린 표현의 관심 확인",
+      "behavior": "원하는 속도를 짧게 말하기"
+    },
+    {
+      "id": "mkr:ISFP:love:02",
+      "domain": "love",
+      "family": "reciprocity",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "상대 바람과 자기 선호",
+      "behavior": "내가 원하는 것도 같이 제안"
+    },
+    {
+      "id": "mkr:ISFP:marriage:01",
+      "domain": "marriage",
+      "family": "personal-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "편안한 공간의 공동 정의",
+      "behavior": "각자 편한 환경을 구체화"
+    },
+    {
+      "id": "mkr:ISFP:marriage:02",
+      "domain": "marriage",
+      "family": "daily-responsibility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "조용한 예산·역할 합의",
+      "behavior": "필수 약속부터 간단히 정하기"
+    },
+    {
+      "id": "mkr:ISFP:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "직접 경험의 선택권",
+      "behavior": "원하는 체험과 쉬는 선택을 함께 주기"
+    },
+    {
+      "id": "mkr:ISFP:parenting:02",
+      "domain": "parenting",
+      "family": "experience-feedback",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "체험 뒤 감정의 확인",
+      "behavior": "좋았던 점과 어려운 점 듣기"
+    },
+    {
+      "id": "mkr:ISFP:child:01",
+      "domain": "child",
+      "family": "activity-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "재미와 필요한 과제 연결",
+      "behavior": "즐거운 형식 안에 작은 과제 제안"
+    },
+    {
+      "id": "mkr:ISFP:child:02",
+      "domain": "child",
+      "family": "expression-options",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "시각 표현의 뜻 듣기",
+      "behavior": "미적 평가 전에 의도를 질문"
+    },
+    {
+      "id": "mkr:ISFP:relationships:01",
+      "domain": "relationships",
+      "family": "respect-difference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "화합과 다른 의견",
+      "behavior": "동의 못 하는 부분만 짧게 말하기"
+    },
+    {
+      "id": "mkr:ISFP:relationships:02",
+      "domain": "relationships",
+      "family": "trust-repair",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "수용과 부탁의 범위",
+      "behavior": "허용할 행동과 불가 범위 구분"
+    },
+    {
+      "id": "mkr:ISFP:communication:01",
+      "domain": "communication",
+      "family": "clear-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "침묵의 뜻 알리기",
+      "behavior": "필요한 시간과 재개 의사 전달"
+    },
+    {
+      "id": "mkr:ISFP:communication:02",
+      "domain": "communication",
+      "family": "clear-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "짧은 거절의 실습",
+      "behavior": "원치 않는 행동을 한 문장으로"
+    },
+    {
+      "id": "mkr:ISFP:strengths:01",
+      "domain": "strengths",
+      "family": "observable-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "체감 표현의 설명 가능성",
+      "behavior": "상대가 느낄 쓰임도 물어보기"
+    },
+    {
+      "id": "mkr:ISFP:strengths:02",
+      "domain": "strengths",
+      "family": "receiver-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "현장 공감의 확인",
+      "behavior": "필요를 직접 물어보기"
+    },
+    {
+      "id": "mkr:ISFP:risks:01",
+      "domain": "risks",
+      "family": "unspoken-need",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "선택 보류의 실제 이유",
+      "behavior": "정보 부족과 갈등 부담 구분"
+    },
+    {
+      "id": "mkr:ISFP:risks:02",
+      "domain": "risks",
+      "family": "unspoken-need",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "수긍 뒤 자기 의사",
+      "behavior": "나중에 바뀐 선호도 전달"
+    },
+    {
+      "id": "mkr:ISFP:growth:01",
+      "domain": "growth",
+      "family": "explicit-needs",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "경계의 조기 전달",
+      "behavior": "작은 요청부터 말하기"
+    },
+    {
+      "id": "mkr:ISFP:growth:02",
+      "domain": "growth",
+      "family": "explicit-needs",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "회복 뒤 결정",
+      "behavior": "안전하다면 쉬고 다시 검토"
+    },
+    {
+      "id": "mkr:ESTP:identity:01",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "해보는 선택의 확인 범위",
+      "behavior": "안전한 범위와 관찰 목표 정하기"
+    },
+    {
+      "id": "mkr:ESTP:identity:02",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "현재 적응과 약속 연결",
+      "behavior": "달라진 선택을 관련자에게 알리기"
+    },
+    {
+      "id": "mkr:ESTP:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "fact-vs-inference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "현재 신호와 해석 구분",
+      "behavior": "관찰과 예상 뜻을 분리"
+    },
+    {
+      "id": "mkr:ESTP:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "fact-vs-inference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "상황 조율의 후속 확인",
+      "behavior": "상대가 어떻게 받아들였는지 묻기"
+    },
+    {
+      "id": "mkr:ESTP:career:01",
+      "domain": "career",
+      "family": "handoff-repeatability",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "현장 제안의 후속 약속",
+      "behavior": "조건과 다음 연락을 기록"
+    },
+    {
+      "id": "mkr:ESTP:career:02",
+      "domain": "career",
+      "family": "role-conditions",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "실시간 업무의 승인 경계",
+      "behavior": "직접 결정할 범위 확인"
+    },
+    {
+      "id": "mkr:ESTP:workplace:01",
+      "domain": "workplace",
+      "family": "authority-reporting",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "즉시 대응과 위험 알림",
+      "behavior": "안전 조건과 가능한 대안부터 확인"
+    },
+    {
+      "id": "mkr:ESTP:workplace:02",
+      "domain": "workplace",
+      "family": "change-record",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "빠른 승인과 사후 기록",
+      "behavior": "결정 이유를 뒤에 남기기"
+    },
+    {
+      "id": "mkr:ESTP:money:01",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "즉시 즐거움의 총비용",
+      "behavior": "후속 비용과 기존 지출 확인"
+    },
+    {
+      "id": "mkr:ESTP:money:02",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "빠른 수입 제안의 조건",
+      "behavior": "지급 시점과 제공 범위 확인"
+    },
+    {
+      "id": "mkr:ESTP:investment:01",
+      "domain": "investment",
+      "family": "hypothesis-limits",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "진입 전에 필요한 자료",
+      "behavior": "확인 못 한 조건을 먼저 적기"
+    },
+    {
+      "id": "mkr:ESTP:investment:02",
+      "domain": "investment",
+      "family": "hypothesis-limits",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "최근 결과와 판단 근거",
+      "behavior": "관찰 기간의 한계를 기록"
+    },
+    {
+      "id": "mkr:ESTP:study:01",
+      "domain": "study",
+      "family": "experience-concept",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "체험 뒤 오류 기록",
+      "behavior": "틀린 지점과 이유를 바로 적기"
+    },
+    {
+      "id": "mkr:ESTP:study:02",
+      "domain": "study",
+      "family": "scope-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "짧은 목표의 전체 연결",
+      "behavior": "각 구간이 전체 어디인지 표시"
+    },
+    {
+      "id": "mkr:ESTP:love:01",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "활동 데이트의 동의",
+      "behavior": "상대의 흥미와 부담 확인"
+    },
+    {
+      "id": "mkr:ESTP:love:02",
+      "domain": "love",
+      "family": "pace-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "넓은 교류의 관계 경계",
+      "behavior": "서로 편한 연락과 약속을 합의"
+    },
+    {
+      "id": "mkr:ESTP:marriage:01",
+      "domain": "marriage",
+      "family": "daily-responsibility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "빠른 생활 결정의 협의",
+      "behavior": "상대 일정과 동의를 먼저 확인"
+    },
+    {
+      "id": "mkr:ESTP:marriage:02",
+      "domain": "marriage",
+      "family": "personal-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "개인 자유의 실제 분담",
+      "behavior": "각자 시간과 맡을 일을 함께 정하기"
+    },
+    {
+      "id": "mkr:ESTP:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "경험 기회의 아이 선택",
+      "behavior": "어른의 추천과 아이 의사를 구분"
+    },
+    {
+      "id": "mkr:ESTP:parenting:02",
+      "domain": "parenting",
+      "family": "safety-boundary",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자유 안의 안전 설명",
+      "behavior": "멈출 조건과 도움 방법 정하기"
+    },
+    {
+      "id": "mkr:ESTP:child:01",
+      "domain": "child",
+      "family": "activity-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "경쟁 놀이의 선택권",
+      "behavior": "승패 없는 방식도 열어두기"
+    },
+    {
+      "id": "mkr:ESTP:child:02",
+      "domain": "child",
+      "family": "expression-options",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "진지한 대화의 짧은 단위",
+      "behavior": "한 질문씩 구체적으로 묻기"
+    },
+    {
+      "id": "mkr:ESTP:relationships:01",
+      "domain": "relationships",
+      "family": "trust-repair",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "함께 활동과 관계 회복",
+      "behavior": "불편했던 점도 확인"
+    },
+    {
+      "id": "mkr:ESTP:relationships:02",
+      "domain": "relationships",
+      "family": "contact-expectations",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "넓은 교류의 약속 관리",
+      "behavior": "지킬 약속만 확정해 알리기"
+    },
+    {
+      "id": "mkr:ESTP:communication:01",
+      "domain": "communication",
+      "family": "message-context",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "유머의 상대 동의",
+      "behavior": "상대 반응과 중단 요청 존중"
+    },
+    {
+      "id": "mkr:ESTP:communication:02",
+      "domain": "communication",
+      "family": "message-context",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "짧은 설명의 필수 정보",
+      "behavior": "이유와 다음 행동도 포함"
+    },
+    {
+      "id": "mkr:ESTP:strengths:01",
+      "domain": "strengths",
+      "family": "supported-action",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "적응 뒤의 확인",
+      "behavior": "다른 사람의 제약도 점검"
+    },
+    {
+      "id": "mkr:ESTP:strengths:02",
+      "domain": "strengths",
+      "family": "supported-action",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관찰한 정보의 공유",
+      "behavior": "본 것과 추측을 나눠 전달"
+    },
+    {
+      "id": "mkr:ESTP:risks:01",
+      "domain": "risks",
+      "family": "unfinished-transition",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "행동 전 영향의 범위",
+      "behavior": "누가 영향을 받는지 먼저 확인"
+    },
+    {
+      "id": "mkr:ESTP:risks:02",
+      "domain": "risks",
+      "family": "unfinished-transition",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "책임 종료의 명료함",
+      "behavior": "남은 역할을 끝내거나 인계"
+    },
+    {
+      "id": "mkr:ESTP:growth:01",
+      "domain": "growth",
+      "family": "small-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "짧은 목표의 검토 연결",
+      "behavior": "완료 뒤 다음 단계도 기록"
+    },
+    {
+      "id": "mkr:ESTP:growth:02",
+      "domain": "growth",
+      "family": "assumption-question",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "촉을 질문으로 검증",
+      "behavior": "직접 확인할 질문으로 바꾸기"
+    },
+    {
+      "id": "mkr:ESFP:identity:01",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "현재 즐거움의 개인 기준",
+      "behavior": "내가 원하는 참여도 확인"
+    },
+    {
+      "id": "mkr:ESFP:identity:02",
+      "domain": "identity",
+      "family": "self-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "호불호의 존중 표현",
+      "behavior": "다른 사람의 선택도 열어두기"
+    },
+    {
+      "id": "mkr:ESFP:thinkingStyle:01",
+      "domain": "thinkingStyle",
+      "family": "model-scope",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "경험과 일반화의 간격",
+      "behavior": "다른 조건에도 같은지 질문"
+    },
+    {
+      "id": "mkr:ESFP:thinkingStyle:02",
+      "domain": "thinkingStyle",
+      "family": "reflective-check",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "긍정적 해석과 필요한 조치",
+      "behavior": "그래도 남은 문제를 적기"
+    },
+    {
+      "id": "mkr:ESFP:career:01",
+      "domain": "career",
+      "family": "role-conditions",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "즐거운 경험의 제공 조건",
+      "behavior": "준비·운영·정리 범위도 확인"
+    },
+    {
+      "id": "mkr:ESFP:career:02",
+      "domain": "career",
+      "family": "handoff-repeatability",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "콘텐츠 반응과 실제 요구",
+      "behavior": "대상의 필요와 사용 맥락 확인"
+    },
+    {
+      "id": "mkr:ESFP:workplace:01",
+      "domain": "workplace",
+      "family": "feedback-contract",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "즉흥 대응의 마무리",
+      "behavior": "남은 작업과 담당을 기록"
+    },
+    {
+      "id": "mkr:ESFP:workplace:02",
+      "domain": "workplace",
+      "family": "change-record",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "반응 없는 업무의 확인점",
+      "behavior": "작은 완료 피드백을 요청"
+    },
+    {
+      "id": "mkr:ESFP:money:01",
+      "domain": "money",
+      "family": "shared-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "함께 즐기는 비용의 동의",
+      "behavior": "참여자 각자의 부담 확인"
+    },
+    {
+      "id": "mkr:ESFP:money:02",
+      "domain": "money",
+      "family": "spending-purpose",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "꾸밈 소비와 자기 필요",
+      "behavior": "실제 사용과 타인 반응을 구분"
+    },
+    {
+      "id": "mkr:ESFP:investment:01",
+      "domain": "investment",
+      "family": "decision-pause",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "주변 반응과 검토 시간",
+      "behavior": "관심과 결정 사이 시간을 두기"
+    },
+    {
+      "id": "mkr:ESFP:investment:02",
+      "domain": "investment",
+      "family": "hypothesis-limits",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "보이는 목표와 필요한 자료",
+      "behavior": "목표와 수단의 조건을 따로 검토"
+    },
+    {
+      "id": "mkr:ESFP:study:01",
+      "domain": "study",
+      "family": "understanding-vs-recall",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "말로 설명한 뒤 점검",
+      "behavior": "자료 없이 핵심을 다시 정리"
+    },
+    {
+      "id": "mkr:ESFP:study:02",
+      "domain": "study",
+      "family": "scope-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "짧은 단위의 반복 흔적",
+      "behavior": "한 회차의 결과를 표시"
+    },
+    {
+      "id": "mkr:ESFP:love:01",
+      "domain": "love",
+      "family": "expression-consent",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "표현의 방식과 상대 여유",
+      "behavior": "상대가 편한 방식도 묻기"
+    },
+    {
+      "id": "mkr:ESFP:love:02",
+      "domain": "love",
+      "family": "pace-space",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "함께 시간의 실제 질",
+      "behavior": "각자 좋았던 시간의 뜻을 확인"
+    },
+    {
+      "id": "mkr:ESFP:marriage:01",
+      "domain": "marriage",
+      "family": "shared-planning",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "표현과 지출의 합의",
+      "behavior": "서로 원하는 방식과 비용 확인"
+    },
+    {
+      "id": "mkr:ESFP:marriage:02",
+      "domain": "marriage",
+      "family": "emotional-translation",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "관심 확인의 다른 방식",
+      "behavior": "애정 표현의 개인차를 질문"
+    },
+    {
+      "id": "mkr:ESFP:parenting:01",
+      "domain": "parenting",
+      "family": "child-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "즐거움과 안전의 균형",
+      "behavior": "즐길 선택과 멈출 조건 함께 정하기"
+    },
+    {
+      "id": "mkr:ESFP:parenting:02",
+      "domain": "parenting",
+      "family": "experience-feedback",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "어른과 아이의 반응 차이",
+      "behavior": "아이가 원하는 즐거움을 묻기"
+    },
+    {
+      "id": "mkr:ESFP:child:01",
+      "domain": "child",
+      "family": "activity-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "밖 활동과 쉬기 선택",
+      "behavior": "조용한 공간도 함께 제공"
+    },
+    {
+      "id": "mkr:ESFP:child:02",
+      "domain": "child",
+      "family": "activity-choice",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "꾸미기 관심의 의미",
+      "behavior": "좋아하는 점을 먼저 듣기"
+    },
+    {
+      "id": "mkr:ESFP:relationships:01",
+      "domain": "relationships",
+      "family": "contact-expectations",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "자기 일화와 상대 이야기",
+      "behavior": "상대가 말할 순서도 남기기"
+    },
+    {
+      "id": "mkr:ESFP:relationships:02",
+      "domain": "relationships",
+      "family": "respect-difference",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "다른 교류 속도의 존중",
+      "behavior": "함께할 활동과 대화 양을 묻기"
+    },
+    {
+      "id": "mkr:ESFP:communication:01",
+      "domain": "communication",
+      "family": "message-context",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "솔직한 공개의 범위",
+      "behavior": "내 정보와 남의 정보를 구분"
+    },
+    {
+      "id": "mkr:ESFP:communication:02",
+      "domain": "communication",
+      "family": "message-context",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "가치 의견의 구체화",
+      "behavior": "이유와 원하는 행동을 덧붙이기"
+    },
+    {
+      "id": "mkr:ESFP:strengths:01",
+      "domain": "strengths",
+      "family": "observable-utility",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "적응의 관찰 결과",
+      "behavior": "편했던 것과 어려웠던 것을 기록"
+    },
+    {
+      "id": "mkr:ESFP:strengths:02",
+      "domain": "strengths",
+      "family": "receiver-agency",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "서프라이즈의 상대 선호",
+      "behavior": "상대가 좋아할 방식인지 확인"
+    },
+    {
+      "id": "mkr:ESFP:risks:01",
+      "domain": "risks",
+      "family": "unfinished-transition",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "지루함 속 필요한 책임",
+      "behavior": "최소 완료와 인계 범위 정하기"
+    },
+    {
+      "id": "mkr:ESFP:risks:02",
+      "domain": "risks",
+      "family": "unfinished-transition",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "기분 전환과 문제 확인",
+      "behavior": "남아 있는 문제도 따로 기록"
+    },
+    {
+      "id": "mkr:ESFP:growth:01",
+      "domain": "growth",
+      "family": "small-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "재미와 종료의 연결",
+      "behavior": "끝낼 결과를 먼저 보이게 하기"
+    },
+    {
+      "id": "mkr:ESFP:growth:02",
+      "domain": "growth",
+      "family": "small-completion",
+      "novelty": "contextual_conditional_application; not a new exclusive type fact",
+      "focus": "마무리의 다음 행동",
+      "behavior": "남은 연락과 정리를 확인"
+    }
+  ]
+}

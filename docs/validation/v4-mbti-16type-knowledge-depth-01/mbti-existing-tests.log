@@ -1,0 +1,12 @@
+
+> gyeol-report@0.1.0 test
+> vitest run tests/unit/interpretation-v4/mbtiSemanticProfile.test.ts tests/unit/report-knowledge/mbtiKnowledgeBase.test.ts tests/unit/report-knowledge/mbtiTypeKnowledgeBase.test.ts tests/unit/report-knowledge/mbti/sourceRuntimeAdapter.test.ts tests/unit/report-knowledge/mbtiProductRouting.test.ts tests/unit/report-tables/mbtiSourceRegistry.test.ts
+
+
+ RUN  v4.1.5 /private/tmp/gyeol-mbti-16type-knowledge-depth-01
+
+
+ Test Files  6 passed (6)
+      Tests  187 passed (187)
+   Start at  06:54:40
+   Duration  2.77s (transform 707ms, setup 115ms, import 868ms, tests 2.59s, environment 0ms)

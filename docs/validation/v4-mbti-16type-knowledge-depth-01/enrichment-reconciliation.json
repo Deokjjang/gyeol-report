@@ -1,0 +1,676 @@
+[
+  {
+    "type": "INTJ",
+    "pointer": "docs/product/mbti/source/INTJ.json#/enrichment/missingAreas/0",
+    "original": "group-only relationship pair detail needs later source expansion",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "INTJ",
+    "pointer": "docs/product/mbti/source/INTJ.json#/enrichment/missingAreas/1",
+    "original": "investment detail is inferred from strategy and evidence traits",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:INTJ:investment:01",
+      "mkr:INTJ:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "INTJ",
+    "pointer": "docs/product/mbti/source/INTJ.json#/enrichment/missingAreas/2",
+    "original": "specific marriage conflict cases beyond source summary",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:INTJ:marriage:01",
+      "mkr:INTJ:marriage:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "INTJ",
+    "pointer": "docs/product/mbti/source/INTJ.json#/enrichment/missingAreas/3",
+    "original": "sex/intimacy wording intentionally omitted for product safety",
+    "disposition": "excluded_sensitive_claim_no_reconstruction",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "INTP",
+    "pointer": "docs/product/mbti/source/INTP.json#/enrichment/missingAreas/0",
+    "original": "marriage-specific source detail is limited beyond love and parenting sections",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:INTP:marriage:01",
+      "mkr:INTP:marriage:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "INTP",
+    "pointer": "docs/product/mbti/source/INTP.json#/enrichment/missingAreas/1",
+    "original": "investment detail is mostly inferred from research and xNTx investment note",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:INTP:investment:01",
+      "mkr:INTP:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "INTP",
+    "pointer": "docs/product/mbti/source/INTP.json#/enrichment/missingAreas/2",
+    "original": "some relationship pairs have shorter source explanations than ESFJ INTJ INFJ pairs",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "INTP",
+    "pointer": "docs/product/mbti/source/INTP.json#/enrichment/missingAreas/3",
+    "original": "health and diagnosis-like wording from source was not used in product traits",
+    "disposition": "excluded_sensitive_claim_no_reconstruction",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ENTJ",
+    "pointer": "docs/product/mbti/source/ENTJ.json#/enrichment/missingAreas/0",
+    "original": "투자 성향은 직접 전략 단서가 적어 고소득·기업가성·전략 판단 성향을 기반으로 일부 추론함",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ENTJ:money:01",
+      "mkr:ENTJ:money:02",
+      "mkr:ENTJ:investment:01",
+      "mkr:ENTJ:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ENTJ",
+    "pointer": "docs/product/mbti/source/ENTJ.json#/enrichment/missingAreas/1",
+    "original": "직업 목록은 매우 많으나 상품 추천에는 대표 직업과 핵심 직군 위주로 구조화함",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ENTJ:career:01",
+      "mkr:ENTJ:career:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ENTJ",
+    "pointer": "docs/product/mbti/source/ENTJ.json#/enrichment/missingAreas/2",
+    "original": "질병·우울증·성별 통계처럼 민감하거나 진단처럼 보일 수 있는 내용은 상품 문장으로 직접 사용하지 않도록 제외함",
+    "disposition": "excluded_sensitive_claim_no_reconstruction",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ENTP",
+    "pointer": "docs/product/mbti/source/ENTP.json#/enrichment/missingAreas/0",
+    "original": "investment direct detail",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ENTP:investment:01",
+      "mkr:ENTP:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ENTP",
+    "pointer": "docs/product/mbti/source/ENTP.json#/enrichment/missingAreas/1",
+    "original": "marriage direct detail",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ENTP:marriage:01",
+      "mkr:ENTP:marriage:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "INFJ",
+    "pointer": "docs/product/mbti/source/INFJ.json#/enrichment/missingAreas/0",
+    "original": "investment source detail is not directly provided",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:INFJ:investment:01",
+      "mkr:INFJ:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "INFJ",
+    "pointer": "docs/product/mbti/source/INFJ.json#/enrichment/missingAreas/1",
+    "original": "some relationship pairs only provide relation titles without explanatory content",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "INFJ",
+    "pointer": "docs/product/mbti/source/INFJ.json#/enrichment/missingAreas/2",
+    "original": "money details are limited mostly to income tendency and career value orientation",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:INFJ:career:01",
+      "mkr:INFJ:career:02",
+      "mkr:INFJ:money:01",
+      "mkr:INFJ:money:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "INFJ",
+    "pointer": "docs/product/mbti/source/INFJ.json#/enrichment/missingAreas/3",
+    "original": "health and crime-stat style source fragments were excluded from product traits to avoid diagnosis-like or stigmatizing output",
+    "disposition": "excluded_sensitive_claim_no_reconstruction",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "INFP",
+    "pointer": "docs/product/mbti/source/INFP.json#/enrichment/missingAreas/0",
+    "original": "investment source detail is not directly provided",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:INFP:investment:01",
+      "mkr:INFP:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "INFP",
+    "pointer": "docs/product/mbti/source/INFP.json#/enrichment/missingAreas/1",
+    "original": "health and diagnosis-like source fragments were excluded from product traits",
+    "disposition": "excluded_sensitive_claim_no_reconstruction",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "INFP",
+    "pointer": "docs/product/mbti/source/INFP.json#/enrichment/missingAreas/2",
+    "original": "some relationship descriptions are short and may benefit from later MBTI-RELATION-GAP-FILL expansion",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "INFP",
+    "pointer": "docs/product/mbti/source/INFP.json#/enrichment/missingAreas/3",
+    "original": "money details are mostly based on income tendency, low material drive, and career fit",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:INFP:career:01",
+      "mkr:INFP:career:02",
+      "mkr:INFP:money:01",
+      "mkr:INFP:money:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ENFJ",
+    "pointer": "docs/product/mbti/source/ENFJ.json#/enrichment/missingAreas/0",
+    "original": "investment direct detail",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ENFJ:investment:01",
+      "mkr:ENFJ:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ENFJ",
+    "pointer": "docs/product/mbti/source/ENFJ.json#/enrichment/missingAreas/1",
+    "original": "money direct detail",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ENFJ:money:01",
+      "mkr:ENFJ:money:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ENFJ",
+    "pointer": "docs/product/mbti/source/ENFJ.json#/enrichment/missingAreas/2",
+    "original": "avoidJobs direct list",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ENFJ:career:01",
+      "mkr:ENFJ:career:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ENFP",
+    "pointer": "docs/product/mbti/source/ENFP.json#/enrichment/missingAreas/0",
+    "original": "investment direct detail",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ENFP:investment:01",
+      "mkr:ENFP:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ENFP",
+    "pointer": "docs/product/mbti/source/ENFP.json#/enrichment/missingAreas/1",
+    "original": "money direct detail",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ENFP:money:01",
+      "mkr:ENFP:money:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ENFP",
+    "pointer": "docs/product/mbti/source/ENFP.json#/enrichment/missingAreas/2",
+    "original": "marriage direct detail",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ENFP:marriage:01",
+      "mkr:ENFP:marriage:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ENFP",
+    "pointer": "docs/product/mbti/source/ENFP.json#/enrichment/missingAreas/3",
+    "original": "ISFP relation detail",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ENFP",
+    "pointer": "docs/product/mbti/source/ENFP.json#/enrichment/missingAreas/4",
+    "original": "ISTP relation detail",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ENFP",
+    "pointer": "docs/product/mbti/source/ENFP.json#/enrichment/missingAreas/5",
+    "original": "specific job list",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ENFP:career:01",
+      "mkr:ENFP:career:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTJ",
+    "pointer": "docs/product/mbti/source/ISTJ.json#/enrichment/missingAreas/0",
+    "original": "INFJ relation detail",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTJ",
+    "pointer": "docs/product/mbti/source/ISTJ.json#/enrichment/missingAreas/1",
+    "original": "ISTP relation detail",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTJ",
+    "pointer": "docs/product/mbti/source/ISTJ.json#/enrichment/missingAreas/2",
+    "original": "ISFJ relation detail",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTJ",
+    "pointer": "docs/product/mbti/source/ISTJ.json#/enrichment/missingAreas/3",
+    "original": "ENTP relation detail",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTJ",
+    "pointer": "docs/product/mbti/source/ISTJ.json#/enrichment/missingAreas/4",
+    "original": "ESFP relation detail",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTJ",
+    "pointer": "docs/product/mbti/source/ISTJ.json#/enrichment/missingAreas/5",
+    "original": "INTP relation detail",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTJ",
+    "pointer": "docs/product/mbti/source/ISTJ.json#/enrichment/missingAreas/6",
+    "original": "ESFJ relation detail",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTJ",
+    "pointer": "docs/product/mbti/source/ISTJ.json#/enrichment/missingAreas/7",
+    "original": "ENTJ relation detail",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTJ",
+    "pointer": "docs/product/mbti/source/ISTJ.json#/enrichment/missingAreas/8",
+    "original": "investment detail beyond stable accumulation",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ISTJ:investment:01",
+      "mkr:ISTJ:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTJ",
+    "pointer": "docs/product/mbti/source/ISTJ.json#/enrichment/missingAreas/9",
+    "original": "sexual intimacy tone for compatibility product",
+    "disposition": "excluded_sensitive_claim_no_reconstruction",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISFJ",
+    "pointer": "docs/product/mbti/source/ISFJ.json#/enrichment/missingAreas/0",
+    "original": "full 16-type relation matrix",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISFJ",
+    "pointer": "docs/product/mbti/source/ISFJ.json#/enrichment/missingAreas/1",
+    "original": "specific investment examples beyond conservative money style",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ISFJ:money:01",
+      "mkr:ISFJ:money:02",
+      "mkr:ISFJ:investment:01",
+      "mkr:ISFJ:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISFJ",
+    "pointer": "docs/product/mbti/source/ISFJ.json#/enrichment/missingAreas/2",
+    "original": "more direct recommended job list from future source expansion",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ISFJ:career:01",
+      "mkr:ISFJ:career:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISFJ",
+    "pointer": "docs/product/mbti/source/ISFJ.json#/enrichment/missingAreas/3",
+    "original": "health-sensitive wording review for HSP/chronic-pain source noise",
+    "disposition": "excluded_sensitive_claim_no_reconstruction",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ESTJ",
+    "pointer": "docs/product/mbti/source/ESTJ.json#/enrichment/missingAreas/0",
+    "original": "investment details are inferred from stability, profit-loss calculation, and conservative risk attitude",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ESTJ:investment:01",
+      "mkr:ESTJ:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ESTJ",
+    "pointer": "docs/product/mbti/source/ESTJ.json#/enrichment/missingAreas/1",
+    "original": "health and crime statistics were excluded from product traits to avoid diagnosis or deterministic judgment",
+    "disposition": "excluded_sensitive_claim_no_reconstruction",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ESTJ",
+    "pointer": "docs/product/mbti/source/ESTJ.json#/enrichment/missingAreas/2",
+    "original": "raw source has fewer direct career sub-scenes than relationship and workplace sections",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ESFJ",
+    "pointer": "docs/product/mbti/source/ESFJ.json#/enrichment/missingAreas/0",
+    "original": "투자 성향은 직접 근거가 부족하여 안정 선호와 주변 추천 민감성을 기반으로 추론함",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ESFJ:investment:01",
+      "mkr:ESFJ:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ESFJ",
+    "pointer": "docs/product/mbti/source/ESFJ.json#/enrichment/missingAreas/1",
+    "original": "직업별 세부 근무 조건과 장기 성장 경로는 추가 보강 필요",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ESFJ:career:01",
+      "mkr:ESFJ:career:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ESFJ",
+    "pointer": "docs/product/mbti/source/ESFJ.json#/enrichment/missingAreas/2",
+    "original": "ESFJ의 건강·질병 통계성 언급은 상품 리포트의 진단 표현으로 쓰지 않도록 제외함",
+    "disposition": "excluded_sensitive_claim_no_reconstruction",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTP",
+    "pointer": "docs/product/mbti/source/ISTP.json#/enrichment/missingAreas/0",
+    "original": "ENFJ relation detail",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTP",
+    "pointer": "docs/product/mbti/source/ISTP.json#/enrichment/missingAreas/1",
+    "original": "ESTP relation detail",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTP",
+    "pointer": "docs/product/mbti/source/ISTP.json#/enrichment/missingAreas/2",
+    "original": "INFJ relation detail",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTP",
+    "pointer": "docs/product/mbti/source/ISTP.json#/enrichment/missingAreas/3",
+    "original": "ENFP conflict relation detail",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTP",
+    "pointer": "docs/product/mbti/source/ISTP.json#/enrichment/missingAreas/4",
+    "original": "full 16-type relation matrix",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTP",
+    "pointer": "docs/product/mbti/source/ISTP.json#/enrichment/missingAreas/5",
+    "original": "money style beyond practical spending",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ISTP:money:01",
+      "mkr:ISTP:money:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTP",
+    "pointer": "docs/product/mbti/source/ISTP.json#/enrichment/missingAreas/6",
+    "original": "investment detail beyond quality/risk preference",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ISTP:investment:01",
+      "mkr:ISTP:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISTP",
+    "pointer": "docs/product/mbti/source/ISTP.json#/enrichment/missingAreas/7",
+    "original": "marriage conflict examples beyond freedom boundary",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ISTP:marriage:01",
+      "mkr:ISTP:marriage:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISFP",
+    "pointer": "docs/product/mbti/source/ISFP.json#/enrichment/missingAreas/0",
+    "original": "full 16-type relation matrix",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISFP",
+    "pointer": "docs/product/mbti/source/ISFP.json#/enrichment/missingAreas/1",
+    "original": "more specific money and investment cases beyond source text",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ISFP:money:01",
+      "mkr:ISFP:money:02",
+      "mkr:ISFP:investment:01",
+      "mkr:ISFP:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISFP",
+    "pointer": "docs/product/mbti/source/ISFP.json#/enrichment/missingAreas/2",
+    "original": "health-sensitive wording review for heart and blood pressure source noise",
+    "disposition": "excluded_sensitive_claim_no_reconstruction",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ISFP",
+    "pointer": "docs/product/mbti/source/ISFP.json#/enrichment/missingAreas/3",
+    "original": "more direct school and career remediation examples for science and engineering weakness",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ISFP:career:01",
+      "mkr:ISFP:career:02",
+      "mkr:ISFP:study:01",
+      "mkr:ISFP:study:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ESTP",
+    "pointer": "docs/product/mbti/source/ESTP.json#/enrichment/missingAreas/0",
+    "original": "relationship source only directly names Beta comfort types and INFP conflict, so most pair detail is inferred from ESTP traits",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ESTP",
+    "pointer": "docs/product/mbti/source/ESTP.json#/enrichment/missingAreas/1",
+    "original": "investment details are inferred from risk appetite, betting, thrill seeking, and short-term realism",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ESTP:investment:01",
+      "mkr:ESTP:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ESTP",
+    "pointer": "docs/product/mbti/source/ESTP.json#/enrichment/missingAreas/2",
+    "original": "health, crime, and diagnosis-like statistical fragments were excluded from product traits",
+    "disposition": "excluded_sensitive_claim_no_reconstruction",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ESTP",
+    "pointer": "docs/product/mbti/source/ESTP.json#/enrichment/missingAreas/3",
+    "original": "marriage details are inferred from love style and freedom-responsibility traits because direct marriage source is sparse",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ESTP:marriage:01",
+      "mkr:ESTP:marriage:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ESFP",
+    "pointer": "docs/product/mbti/source/ESFP.json#/enrichment/missingAreas/0",
+    "original": "투자 성향은 충동성·즉시 보상 선호·경험 소비 성향을 기반으로 추론해 보강함",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ESFP:investment:01",
+      "mkr:ESFP:investment:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ESFP",
+    "pointer": "docs/product/mbti/source/ESFP.json#/enrichment/missingAreas/1",
+    "original": "ESTP 유사관계는 제목 수준 단서만 있고 상세 설명이 없어 MBTI-RELATION-GAP-FILL 단계에서 보강 필요",
+    "disposition": "pair_depth_deferred",
+    "candidateIds": [],
+    "directUpgrade": false
+  },
+  {
+    "type": "ESFP",
+    "pointer": "docs/product/mbti/source/ESFP.json#/enrichment/missingAreas/2",
+    "original": "직업 분야는 연예인·영업·딜러·서비스직 중심 단서가 강해 세부 산업과 장기 성장 경로는 추가 보강 필요",
+    "disposition": "conditional_supplement_primary_provenance_still_unverified",
+    "candidateIds": [
+      "mkr:ESFP:career:01",
+      "mkr:ESFP:career:02"
+    ],
+    "directUpgrade": false
+  },
+  {
+    "type": "ESFP",
+    "pointer": "docs/product/mbti/source/ESFP.json#/enrichment/missingAreas/3",
+    "original": "지능·학업·ADHD 등 민감하거나 진단처럼 보일 수 있는 통계성 표현은 상품 리포트 문장으로 직접 사용하지 않도록 제외함",
+    "disposition": "excluded_sensitive_claim_no_reconstruction",
+    "candidateIds": [],
+    "directUpgrade": false
+  }
+]
