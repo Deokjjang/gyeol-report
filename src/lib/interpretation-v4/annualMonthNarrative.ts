@@ -1,5 +1,4 @@
 import type { TenGod } from "../report-knowledge/annualFortuneTypes";
-import { getTenGodForStemPair } from "../report-knowledge/annualFortuneYearRules";
 import { withKoreanParticle } from "../report-knowledge/koreanCopyUtils";
 import type { AnnualEvidence, AnnualMonthEvidence } from "./annualEvidence";
 import type { MajorContext } from "./majorContext";
@@ -12,8 +11,9 @@ import { annualGiftTitle, annualMonthLead } from "./annualRealization";
 import { periodExplanation } from "./contentPeriod";
 import { planAnnualMonths, monthBoundaryDescription } from "./periodPlanner";
 import { monthlyAction } from "./monthActions";
+import { annualMonthInteractions } from "./annualInteractionReading";
 
-export type AnnualEditorialState = { godUses: Map<TenGod, number>; features: Set<string>; relations: Set<string>; fusions: Set<string>; natalRoots?: Set<string> };
+export type AnnualEditorialState = { godUses: Map<TenGod, number>; features: Set<string>; relations: Set<string>; fusions: Set<string>; natalRoots?: Set<string>; interactions?: Set<string> };
 const tags: Record<TenGod, readonly string[]> = {
   비견: ["autonomy", "solitude"], 겁재: ["sociability", "help", "leadership"], 식신: ["expression", "practical-learning", "experimentation"],
   상관: ["precision", "decisive-correction", "expression", "experimentation"], 편재: ["wealth", "mobility", "experience-spending"], 정재: ["wealth", "consistency", "accumulation"],
@@ -72,17 +72,27 @@ export function annualMonthNarrative(e: AnnualEvidence, m: AnnualMonthEvidence, 
   const occurrence = state.godUses.get(god) ?? 0;
   state.godUses.set(god, occurrence + 1);
   const variant = occurrence % 2, story = ANNUAL_MONTH_STORIES[god][variant], source = proof([], [], [], m.sourceRefs);
-  const selected = plan.depth === "brief" ? undefined : m.transit.accepted.find(f => ANNUAL_TRANSIT_STORIES[f.feature] && !state.features.has(f.feature));
+  const fits = (theme: string) => ["helpers", "kindness", "mediation"].includes(theme)
+    || (["learning", "solitude", "explanation"].includes(theme) && ["정인", "편인", "식신", "상관"].includes(god))
+    || (["first-impression", "intimacy"].includes(theme) && ["정관", "식신", "상관", "비견", "겁재", "편재"].includes(god))
+    || (theme === "mobility" && ["편재", "식신", "상관"].includes(god))
+    || (["leadership", "status"].includes(theme) && ["정관", "편관", "비견", "겁재"].includes(god));
+  const selected = plan.depth === "brief" ? undefined : m.transit.accepted.find(f =>
+    ANNUAL_TRANSIT_STORIES[f.feature] && !state.features.has(f.feature) && fits(ANNUAL_TRANSIT_STORIES[f.feature].theme));
   if (selected) state.features.add(selected.feature);
   const gift = selected ? ANNUAL_TRANSIT_STORIES[selected.feature] : undefined;
-  const aligned = !gift || ["helpers", "kindness", "mediation"].includes(gift.theme)
-    || (["learning", "solitude", "explanation"].includes(gift.theme) && ["정인", "편인", "식신", "상관"].includes(god))
-    || (["first-impression", "intimacy"].includes(gift.theme) && ["정관", "식신", "상관", "비견", "겁재", "편재"].includes(god))
-    || (gift.theme === "mobility" && ["편재", "식신", "상관"].includes(god))
-    || (["leadership", "status"].includes(gift.theme) && ["정관", "편관", "비견", "겁재"].includes(god));
+  const aligned = !gift || fits(gift.theme);
   const title = gift && selected && aligned ? annualGiftTitle(selected.feature, c.mode, gift.title) : story.title;
   const timeLead = annualMonthLead(god, variant, m.time, m.month);
-  const blocks: NarrativeBlock[] = [paragraph(`month-${m.month}-meaning`, `${timeLead} ${story.meaning}`, source, "positive")];
+  state.interactions ??= new Set();
+  const reading = annualMonthInteractions(e, m, god, state.interactions);
+  const pillar = m.focus.monthPillar.stem + m.focus.monthPillar.branch;
+  const basisKey = `basis:${pillar}:${god}`;
+  const basis = state.interactions.has(basisKey)
+    ? `절입 전까지는 앞 달의 ${pillar} 월운이 이어지므로, ${god}의 주제도 함께 살펴봅니다.`
+    : `${pillar} 월운에서 ${e.raw.dayMaster} 일간을 기준으로 ${god === m.focus.stemTenGod ? "월간" : "월지 본기"}을 읽으면 ${god}입니다.`;
+  state.interactions.add(basisKey);
+  const blocks: NarrativeBlock[] = [paragraph(`month-${m.month}-meaning`, `${timeLead} ${basis} ${story.meaning}`, source, "positive")];
   const setting = c.scenes[god][variant];
   const settingLead = m.time === "past" ? `${particle(setting, "에", "에")} 비춰 읽어볼 만합니다.`
     : `${particle(setting, "을", "를")} 생각하면 이 흐름이 더 가까워집니다.`;
@@ -106,7 +116,7 @@ export function annualMonthNarrative(e: AnnualEvidence, m: AnnualMonthEvidence, 
   const relationKey = relation?.type ?? (wonjin ? "원진" : undefined);
   // At most two distinct relation scenes; generic repetition isn't more depth.
   const relationCount = [...state.relations].filter(k => !k.startsWith("cross:")).length;
-  if (plan.depth !== "brief" && relationKey && !state.relations.has(relationKey) && relationCount < 2) {
+  if (!reading && plan.depth !== "brief" && relationKey && !state.relations.has(relationKey) && relationCount < 2) {
     const variant = relationCount;
     state.relations.add(relationKey);
     blocks.push(paragraph(`month-${m.month}-relationship`, relationshipProse(e.input.context.relationshipStatus, relationKey, variant),
@@ -123,22 +133,12 @@ export function annualMonthNarrative(e: AnnualEvidence, m: AnnualMonthEvidence, 
     const passed = Date.parse(t.startKst) <= Date.parse(e.clock.currentDate);
     blocks.push(paragraph(`month-${m.month}-transition`, `${m.month}월 ${Number(t.startKst.slice(8, 10))}일${passed ? "을 지나며" : "부터"} 큰 배경도 달라${passed ? "진 구간입니다" : "집니다"}. ${particle(MAJOR_MEANINGS[before.god].theme, "을", "를")} 바라보던 데서 ${withKoreanParticle(MAJOR_MEANINGS[after.god].theme, "to")} 무게가 옮겨${passed ? "갔는지 돌아볼 만합니다" : "갈 전망입니다"}.`, proof([], [], [], t.sourceRefs)));
   }
-  // Annual/Dayun interactions stay attached to the exact focus segment. One
-  // concise crossover scene is enough; never promote conditional candidates.
-  const cross = m.focus.relationFacts.find(f => f.source !== "month_natal_branch" && f.source !== "month_natal_element" && f.certainty === "confirmed" && ["육합", "반합", "충"].includes(f.type));
-  if (plan.depth !== "brief" && cross && !state.relations.has(`cross:${cross.type}`) && [...state.relations].filter(k => k.startsWith("cross:")).length < 2) {
-    state.relations.add(`cross:${cross.type}`);
-    const counterpart = "counterpart" in cross ? cross.counterpart : null;
-    const cycle = counterpart?.scope === "dayun" ? e.raw.customerDayun?.cycles.find(c => c.index === counterpart.cycleIndex) : null;
-    const annual = MAJOR_MEANINGS[getTenGodForStemPair(e.raw.dayMaster, cycle?.stem ?? m.focus.effectiveAnnualPillar.stem)];
-    blocks.push(paragraph(`month-${m.month}-cross`, cross.type === "충"
-      ? `이 달의 속도와 ${cross.source === "month_annual_branch" ? "한 해" : "큰 흐름"}의 속도가 다르게 느껴질 수 있습니다. ${particle(annual.theme, "을", "를")} 중요하게 보면서도 당장 ${particle(MAJOR_MEANINGS[god].work, "을", "를")} 챙기고 싶어지는 식이에요. 한쪽을 실패로 볼 필요 없이 순서를 나누는 것이 어울립니다.`
-      : cross.type === "육합" ? `${cross.source === "month_annual_branch" ? "한 해의 방향" : "오래 이어온 큰 흐름"}과 이 달의 움직임을 함께 써볼 접점이 있습니다. ${particle(annual.theme, "을", "를")} 멀리 있는 목표로만 두지 않고 ${particle(setting, "에서도", "에서도")} 작게 실행해볼 만해요.`
-        : annual.work === MAJOR_MEANINGS[god].work ? `${particle(annual.work, "은", "는")} 이 달과 더 긴 흐름이 같이 바라보는 주제입니다. 오래 생각하던 것을 ${particle(setting, "에서", "에서")} 구체화해볼 여지가 있어요. 계획의 크기를 늘리지 않아도 실제로 한 걸음 옮기는 일이 충분히 의미 있습니다.`
-          : `${particle(annual.work, "과", "와")} ${particle(MAJOR_MEANINGS[god].work, "을", "를")} 함께 가져갈 연결점이 보입니다. 둘 중 하나를 버려야만 앞으로 갈 수 있는 흐름은 아니에요. ${particle(setting, "에서", "에서")} 두 관심사가 서로에게 도움이 되는 부분을 찾아볼 만합니다.`, proof([], [], [], [cross.id, ...m.focus.evidenceIds]), "positive"));
-  }
-  const action = monthlyAction(god, occurrence);
-  blocks.push(paragraph(`month-${m.month}-action`, `${m.time === "past" ? "이 달에서 가져갈 한 가지" : "이번 달 한 가지"} · ${action.action} 피할 것 · ${action.avoid}.`, source, "direction"));
+  if (reading) blocks.push(paragraph(`month-${m.month}-interaction`, reading.text,
+    proof([], [], [], reading.sourceRefs), "observation"));
+  // A repeated relation/topic adds no new practical question. Keep its real
+  // actors above and use the distinct, existing ten-god application here.
+  const action = reading && !reading.repeatedApplication ? { action: reading.action, avoid: reading.avoid } : monthlyAction(god, occurrence);
+  blocks.push(paragraph(`month-${m.month}-action`, `${m.time === "past" ? "이 달에서 가져갈 한 가지" : "이번 달 한 가지"} · ${action.action} 피할 것 · ${action.avoid}.`, reading ? proof([], [], [], [...m.sourceRefs, ...reading.sourceRefs]) : source, "direction"));
   return { month: m.month, title, plan, action, boundary: monthBoundaryDescription(m), strongestTheme: gift && aligned ? gift.theme : MAJOR_MEANINGS[god].theme, god, occurrence, time: m.time, focus: m.focus,
     selectedTransit: selected ?? null, selectedRelation: relationKey ?? null, behavior: behavior?.fusion ?? null,
     sceneFamily: `${c.mode}:${story.scene}`, blocks, provenance: m.sourceRefs };

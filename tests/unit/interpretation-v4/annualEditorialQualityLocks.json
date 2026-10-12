@@ -1,0 +1,97 @@
+{
+  "base": "4e8deb242f78310ff9bc3fbcba4fb364a48503e4",
+  "annual": {
+    "A": {
+      "evidence": "942b52a2006e248391ce831454ece1eb4702e3d6c45f1756184f6793d2cb2926",
+      "materials": "3f568f80cac2cbb2e05113d3f20369c61a7426cc0808b46b928bddb0c683d714",
+      "integration": "a7f30f634d9ff0627786df882531e9e8681917f18887cd099eb6704e9778ec4c"
+    },
+    "B": {
+      "evidence": "8fdade5ed4086936a7eb7d0180f4ae58171b7d07065eae2f666c36f122511176",
+      "materials": "c64115ac21c9e8d158e9d5b028629c1b919fc72c1e4d11f7f2fece98a5c5735d",
+      "integration": "5a64189d53ccd13349bcf4c23d84c43711dc008905f4b8f802130cb3dcb46bf5"
+    },
+    "C": {
+      "evidence": "511f15f3261fdd9f5b000cf9f5af6512440ac87c279f9d430ece5fe517817415",
+      "materials": "3565bdb1051839462112048a105a9554756ce252924cba5634f0c1c2f06fb6dd",
+      "integration": "1c3c833652e769aa2d42373d534d095449e593b5eae2f3daf3cba1aa3f9c7446"
+    },
+    "D": {
+      "evidence": "61b9c74e3bcd7378eb2a8b232dd90653ac5eb38dafd1f490e57ae80ee12e718d",
+      "materials": "6738c47062d40b54bbf4220c4cf60852c282772633f4d1303e2ecefa24c946cd",
+      "integration": "69beff2e29c4740f486c7238afc2aa01d6406ebcebf6c875495b063de4b85899"
+    },
+    "E": {
+      "evidence": "fe2e5757771eecd41356c748c5dc305127b937462fe9aed88d3c11fc507bbf1d",
+      "materials": "57afb8d0b055c32faa64b973752b51764fdf2ddf677e4033660d1373b89f6083",
+      "integration": "0933d3f14e79e0f0391521761c9ae8dfbfb60953b06c2979c47bb72939fe4cc8"
+    },
+    "F": {
+      "evidence": "4434a98e369ce1e7e646c4010455e2063b05ce0b3fbaa5ce59627e1f35a64482",
+      "materials": "e516d33072762c5ac82a97eecaf8686aaf21fffe1f4983af261d53b679e18278",
+      "integration": "c31abcc3dacbd2e725b3f4fe4840c5675b7c1bbbac4ac28d2bc6ddf62d68afd4"
+    },
+    "A-2024-leap": {
+      "evidence": "4af6354387c4fb755c2930298f5c3b9d89038412e12d32395cee5161fc7dbfd7",
+      "materials": "3f568f80cac2cbb2e05113d3f20369c61a7426cc0808b46b928bddb0c683d714",
+      "integration": "7b5b7cfe0abd902c3932888b97338d8663588affccf756fb6817c7903edf886c"
+    },
+    "A-2025": {
+      "evidence": "6d17610a6d601bb775cff37ea9f477f6a410a3627db819d30cabed8d59cc9f97",
+      "materials": "3f568f80cac2cbb2e05113d3f20369c61a7426cc0808b46b928bddb0c683d714",
+      "integration": "f536fe0c438641cfbc1001f20fb91f0f808e8ad9c0881ccf493792b7bbbff994"
+    },
+    "A-2027-simulation": {
+      "evidence": "76a257d6cff6dae29affae1fa5457b06f36e2b48877afcb1afa75acd24ba293a",
+      "materials": "3f568f80cac2cbb2e05113d3f20369c61a7426cc0808b46b928bddb0c683d714",
+      "integration": "4dc0c828538eb89515362ac71e98489a4d3c6f0beaad9a3c82faf34e8a47a463"
+    },
+    "C-2028-simulation": {
+      "evidence": "38cce3df8a7bce5189fe79deca0633b1adbd14624f97ae2b10c9a2b44dd7ca20",
+      "materials": "3565bdb1051839462112048a105a9554756ce252924cba5634f0c1c2f06fb6dd",
+      "integration": "d401125e69d5e4781bbb79df2694b2690493439750ccc617b7881d7bee7d2519"
+    }
+  },
+  "products": [
+    {
+      "id": "comprehensive",
+      "hashes": [
+        "79e6f83b152d9efbeea6ffacbeba6b65682da18728571b1f45457449d3d3b1f0",
+        "2900b5ded09c8403b3900dbbf1aa8b2ee8be4f759c0158e45a44eb0301c296cc",
+        "58743a77315ab1692f1b8a353a676398adc191f011a3de918f749d8d6ae55665"
+      ]
+    },
+    {
+      "id": "career",
+      "hashes": [
+        "cf8006c7ef39a7c986ec15d30977d2f77050ba18140893d1daf964a2bf99e509",
+        "56b68d15525f3800f20bb50327a36c60d4f800ae26e4e9080fc2d5c3c113f50a",
+        "4f1a98cf950f73182c3e560916fe0dc70e43575c420a5bf388eb676a2eb30935"
+      ]
+    },
+    {
+      "id": "love",
+      "hashes": [
+        "4a610a2e2e166190b4d70a60f06e518da9e7d04740ec09aea209ecc447ae1f75",
+        "f50b3e2b28c46dbb253c6ac5129d1ed8733fb513b50c247d83c4093636bc2739",
+        "3c826b32120ba77d6600b5d27b2a963bd0ff2d6e8b611f1f335437e7a0430416"
+      ]
+    },
+    {
+      "id": "compatibility",
+      "hashes": [
+        "55b8e4d7439587f853e5c6a6a2d511754728254901b4de4e3df27319c82399f8",
+        "4451cb445500b0a758f77bc7b95dd48e403014850ad9808311bf352394d34a32",
+        "0e0a0e3da84d6d8e45824affddbfdafdcac7915b0a0c849d08318de95417725c"
+      ]
+    },
+    {
+      "id": "major",
+      "hashes": [
+        "f0df621dc197bf2604926eee3ad18385d6408b098380f164b50ac36b62d45542",
+        "5e2402a47e2a712b53d51bf19d3f24483e225246db7f20e6206032677536871c",
+        "bbe970a9c5acb9abfc529c98bc9e6e1008e1ffbd553c26a337af7c3585ae0754"
+      ]
+    }
+  ]
+}
