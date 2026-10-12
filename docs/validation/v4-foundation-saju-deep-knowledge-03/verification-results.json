@@ -1,0 +1,75 @@
+{
+  "baseline-tests": {
+    "numTotalTests": 101,
+    "numPassedTests": 100,
+    "numFailedTests": 1,
+    "numPendingTests": 0,
+    "success": false,
+    "failures": [
+      {
+        "file": "foundationAdapter.test.ts",
+        "name": "Phase13D-1A stays off all six product paths only foundation modules reference the foundation; no writer/UI/calculation import",
+        "message": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality"
+      }
+    ]
+  },
+  "knowledge-final": {
+    "numTotalTests": 232,
+    "numPassedTests": 231,
+    "numFailedTests": 1,
+    "numPendingTests": 0,
+    "success": false,
+    "failures": [
+      {
+        "file": "foundationAdapter.test.ts",
+        "name": "Phase13D-1A stays off all six product paths only foundation modules reference the foundation; no writer/UI/calculation import",
+        "message": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality"
+      }
+    ]
+  },
+  "related-final": {
+    "numTotalTests": 82,
+    "numPassedTests": 82,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true,
+    "failures": []
+  },
+  "six-product-final": {
+    "numTotalTests": 64,
+    "numPassedTests": 64,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true,
+    "failures": []
+  },
+  "baseSha": "771e4393bb445743359cbcb651d95ed02f2f7a4b",
+  "branch": "v4/foundation-saju-deep-knowledge-03",
+  "typescript": {
+    "beforeDiagnostics": 0,
+    "afterDiagnostics": 0,
+    "command": "node_modules/.bin/tsc --noEmit --incremental false"
+  },
+  "lint": {
+    "status": "PASS",
+    "command": "npm run lint"
+  },
+  "build": {
+    "status": "PASS",
+    "staticPages": 47,
+    "nftWarnings": 0,
+    "warningTypes": [],
+    "sandboxFirstAttempt": "FAIL: Google Fonts DNS ENOTFOUND, same command rerun with public font access",
+    "command": "OPENAI_REPORT_WRITER_ENABLED=0 TOSS_CONFIRM_API_ENABLED=0 PAID_REPORT_RELIABILITY_ENABLED=0 npm run build -- --webpack"
+  },
+  "newRegressions": 0,
+  "sourceFilesProtected": 902,
+  "existingRecordsPreserved": 1117,
+  "workspacePreservation": {
+    "existingWorktrees": 13,
+    "allHeadsBranchesStatusesAndFileHashesUnchanged": true,
+    "originalDirtyFiles": 11
+  },
+  "productionChanges": false,
+  "connectedToRuntime": false
+}
