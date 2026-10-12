@@ -1,0 +1,124 @@
+{
+  "annual": {
+    "H": {
+      "invariant": "8c60e877b1f98581f85235d1ed0ae3a21cef5bc20e3eb8e8833ba19c1d4659ea",
+      "evidence": "b53be9a696d72ef361b8ab6efec4fe8cdd71f0b215edb05edf915b445495528f",
+      "materials": "02bd7e37abbe8f1225ffa53445a822c3dc7af77f8a36d1c5e6b1282da1c15575",
+      "integration": "7c9c7547b0011a4b5dba75c07189b5d06c51d25e2c80e041c84f7f7449fbf899"
+    },
+    "A": {
+      "invariant": "3f9507633041629ee099b8704f00f9ad9c612711a767c7572bb6917449867e12",
+      "evidence": "942b52a2006e248391ce831454ece1eb4702e3d6c45f1756184f6793d2cb2926",
+      "materials": "3f568f80cac2cbb2e05113d3f20369c61a7426cc0808b46b928bddb0c683d714",
+      "integration": "a7f30f634d9ff0627786df882531e9e8681917f18887cd099eb6704e9778ec4c"
+    },
+    "B": {
+      "invariant": "21a2fa2d18ca761e9ee146a02303e9318bae89ffef0f5ea40c551d0c42e0847c",
+      "evidence": "8fdade5ed4086936a7eb7d0180f4ae58171b7d07065eae2f666c36f122511176",
+      "materials": "c64115ac21c9e8d158e9d5b028629c1b919fc72c1e4d11f7f2fece98a5c5735d",
+      "integration": "5a64189d53ccd13349bcf4c23d84c43711dc008905f4b8f802130cb3dcb46bf5"
+    },
+    "C": {
+      "invariant": "9fd2771f96ce82282543b7e1f66847d93f817314dac52cb62fb1cfd2dfe04b19",
+      "evidence": "511f15f3261fdd9f5b000cf9f5af6512440ac87c279f9d430ece5fe517817415",
+      "materials": "3565bdb1051839462112048a105a9554756ce252924cba5634f0c1c2f06fb6dd",
+      "integration": "1c3c833652e769aa2d42373d534d095449e593b5eae2f3daf3cba1aa3f9c7446"
+    },
+    "D": {
+      "invariant": "107a6e55099c606d9a52e61b9a2deee28ef0c8fac248b90ff53bf1ce7c580440",
+      "evidence": "61b9c74e3bcd7378eb2a8b232dd90653ac5eb38dafd1f490e57ae80ee12e718d",
+      "materials": "6738c47062d40b54bbf4220c4cf60852c282772633f4d1303e2ecefa24c946cd",
+      "integration": "69beff2e29c4740f486c7238afc2aa01d6406ebcebf6c875495b063de4b85899"
+    },
+    "E": {
+      "invariant": "3545c7321594e8177be78243cad6479b6e15602b009d010f4c7ef336162ef4b0",
+      "evidence": "fe2e5757771eecd41356c748c5dc305127b937462fe9aed88d3c11fc507bbf1d",
+      "materials": "57afb8d0b055c32faa64b973752b51764fdf2ddf677e4033660d1373b89f6083",
+      "integration": "0933d3f14e79e0f0391521761c9ae8dfbfb60953b06c2979c47bb72939fe4cc8"
+    },
+    "F": {
+      "invariant": "4399d176ad6194315980c61ffcde30f22a06ae28c9b6f9a7f286e0d4ce93a032",
+      "evidence": "4434a98e369ce1e7e646c4010455e2063b05ce0b3fbaa5ce59627e1f35a64482",
+      "materials": "e516d33072762c5ac82a97eecaf8686aaf21fffe1f4983af261d53b679e18278",
+      "integration": "c31abcc3dacbd2e725b3f4fe4840c5675b7c1bbbac4ac28d2bc6ddf62d68afd4"
+    },
+    "H2025": {
+      "invariant": "0ebae2eafb05000bad77269460b1a42149f8e93893dc46b1cfa1b3ab19239b8a",
+      "evidence": "a2e821f631f190bc95b2880c7064cff63921326acb634d4edbdbf0a5266e02bc",
+      "materials": "02bd7e37abbe8f1225ffa53445a822c3dc7af77f8a36d1c5e6b1282da1c15575",
+      "integration": "847108ed1c2092ed2a711f09b126319127be939516094f456008e98ac5a197c7"
+    },
+    "H2027": {
+      "invariant": "d91647ff0a9bbfaee342efbcddb44cbcd7882dea53394b113b226749e9d31988",
+      "evidence": "9cc49071dce27a7db921ed6d60239cf0cf9e140484351b580fc08e15f005d2d8",
+      "materials": "02bd7e37abbe8f1225ffa53445a822c3dc7af77f8a36d1c5e6b1282da1c15575",
+      "integration": "c55894887c48c189749150dd8ed40bbaadc7ee8624854345e52e88bd5a483184"
+    },
+    "C2028": {
+      "invariant": "ac70df694e4716433fe658000c3d8ef13f1e37871810850789a21532087a40ac",
+      "evidence": "38cce3df8a7bce5189fe79deca0633b1adbd14624f97ae2b10c9a2b44dd7ca20",
+      "materials": "3565bdb1051839462112048a105a9554756ce252924cba5634f0c1c2f06fb6dd",
+      "integration": "d401125e69d5e4781bbb79df2694b2690493439750ccc617b7881d7bee7d2519"
+    },
+    "H-employee": {
+      "invariant": "7f71ce5177c42634857bdb373a3ebfa7c7c1f97aef3256766277f3d0fe1688a7",
+      "evidence": "f9d68025df614e908a4f5e88d50e17b19f6b0efce474abc238af170671b0d279",
+      "materials": "02bd7e37abbe8f1225ffa53445a822c3dc7af77f8a36d1c5e6b1282da1c15575",
+      "integration": "65ed2608c0db8a858abee7f3d1ccd3215b2795542595435eb4dc4a20bb694487"
+    },
+    "H-freelancer": {
+      "invariant": "a514beed2464b165d34d68d3abb95ac1ce9ae22c593cb27682a90af355298e51",
+      "evidence": "b7bf53ebb6e28f716b1a8c0c134646cda54081140f8f695dd6ff1595eb6d9e19",
+      "materials": "02bd7e37abbe8f1225ffa53445a822c3dc7af77f8a36d1c5e6b1282da1c15575",
+      "integration": "f1cc8634b0fc5f0336146c77561988cb9ff596fb18f7848e2313278c214d7640"
+    },
+    "H-business_owner": {
+      "invariant": "8b735de101f3c6ac6dd95cec902028dcce916bbf9235e2148b874353fddfc61b",
+      "evidence": "aaff85f3fd559fea5135c500b558e20c57aee301acbc87b9647fd49afb76eff9",
+      "materials": "02bd7e37abbe8f1225ffa53445a822c3dc7af77f8a36d1c5e6b1282da1c15575",
+      "integration": "74bbf9b9636d2f41549f8b0f846f7534da1ff1c6a0d7ee6678d84916fc75142f"
+    }
+  },
+  "products": [
+    {
+      "id": "comprehensive",
+      "hashes": [
+        "79e6f83b152d9efbeea6ffacbeba6b65682da18728571b1f45457449d3d3b1f0",
+        "2900b5ded09c8403b3900dbbf1aa8b2ee8be4f759c0158e45a44eb0301c296cc",
+        "58743a77315ab1692f1b8a353a676398adc191f011a3de918f749d8d6ae55665"
+      ]
+    },
+    {
+      "id": "career",
+      "hashes": [
+        "cf8006c7ef39a7c986ec15d30977d2f77050ba18140893d1daf964a2bf99e509",
+        "56b68d15525f3800f20bb50327a36c60d4f800ae26e4e9080fc2d5c3c113f50a",
+        "4f1a98cf950f73182c3e560916fe0dc70e43575c420a5bf388eb676a2eb30935"
+      ]
+    },
+    {
+      "id": "love",
+      "hashes": [
+        "4a610a2e2e166190b4d70a60f06e518da9e7d04740ec09aea209ecc447ae1f75",
+        "f50b3e2b28c46dbb253c6ac5129d1ed8733fb513b50c247d83c4093636bc2739",
+        "3c826b32120ba77d6600b5d27b2a963bd0ff2d6e8b611f1f335437e7a0430416"
+      ]
+    },
+    {
+      "id": "compatibility",
+      "hashes": [
+        "55b8e4d7439587f853e5c6a6a2d511754728254901b4de4e3df27319c82399f8",
+        "4451cb445500b0a758f77bc7b95dd48e403014850ad9808311bf352394d34a32",
+        "0e0a0e3da84d6d8e45824affddbfdafdcac7915b0a0c849d08318de95417725c"
+      ]
+    },
+    {
+      "id": "major",
+      "hashes": [
+        "f0df621dc197bf2604926eee3ad18385d6408b098380f164b50ac36b62d45542",
+        "5e2402a47e2a712b53d51bf19d3f24483e225246db7f20e6206032677536871c",
+        "bbe970a9c5acb9abfc529c98bc9e6e1008e1ffbd553c26a337af7c3585ae0754"
+      ]
+    }
+  ]
+}

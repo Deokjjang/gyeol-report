@@ -55,9 +55,12 @@ it("same 겁재 has different facts, applications and cautions for A3/B7/C1", ()
   expect(readings[0].proof.sourceRefs).toContain("month-v2:2026:3:2:month:2026:3:branch:형:子卯");
   expect(readings[1].proof.sourceRefs).toContain("month-v2:2026:7:2:month:2026:7:branch:반합:未卯");
   expect(readings[2].proof.sourceRefs).toContain("month-v2:2026:1:2:month:2026:1:branch:형:丑戌");
-  expect(months[0].action.action).toContain("배우자");
-  expect(months[1].action.action).toContain("합의한 부분");
-  expect(months[2].action.action).toContain("책임이 끝날 조건");
+  expect(months[0].action.action).toContain("함께할 사람과 맡을 일");
+  expect(months[0].action.action).toContain("부담이 되풀이된다면");
+  expect(months[1].action.action).toContain("동료와 공을 나누는 공동 업무");
+  expect(months[1].action.action).toContain("연결 가능성");
+  expect(months[2].action.action).toContain("다른 전문가와 작업 범위");
+  expect(months[2].action.action).toContain("부담이 되풀이된다면");
   expect(new Set(months.map(m => m.action.action)).size).toBe(3);
   expect(new Set(months.map(m => m.action.avoid)).size).toBe(3);
 });

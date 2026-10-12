@@ -48,7 +48,7 @@ export async function composeAnnualFortuneNarrative(payload: unknown, clock: Ann
   const atYear = e.time === "past" ? `${e.selectedYear}년을 돌아보면` : e.time === "future" ? `다가올 ${e.selectedYear}년에는` : `${e.selectedYear}년을 보면`;
   const opening = [
     b("annual-opening", `${atYear} ${e.raw.annualGanji.ganji} 세운의 천간은 ${e.raw.dayMaster} 일간에게 ${god}입니다. ${particle(meaning.theme, "을", "를")} 한 해의 중심에 놓아볼 수 있습니다. ${year.opening}`),
-    b("annual-context", `${e.time === "past" ? "지금의 직업이 과거에도 같았다고 정해두지는 않습니다. 아래 장면은 현재 알려준 경험에 비춰 돌아보는 이야기입니다. " : ""}${c.raw ? `${withKoreanParticle(`‘${c.raw}’`, "called")} 현재 맥락에서는` : "지금의 생활에서는"} ${particle(c.craft, "을", "를")} ${particle(meaning.work, "과", "와")} 이어볼 만합니다. ${particle(meaning.money, "도", "도")} 함께 보는 동안 ${particle(meaning.people, "과", "와")} 어떤 이야기를 나눌지 궁금해집니다.`),
+    b("annual-context", `${e.time === "past" ? "지금의 직업이 과거에도 같았다고 정해두지는 않습니다. 아래 장면은 현재 알려준 경험에 비춰 돌아보는 이야기입니다. " : "앞으로의 장면은 지금 알려준 생활에 비춰보는 예시입니다. 상황이 달라진다면 새 생활에 맞게 적용해볼 수 있어요. "}${c.raw ? `${withKoreanParticle(`‘${c.raw}’`, "called")} 현재 맥락에서는` : "지금의 생활에서는"} ${particle(c.craft, "을", "를")} ${particle(meaning.work, "과", "와")} 이어볼 만합니다. ${particle(meaning.money, "도", "도")} 함께 보는 동안 ${particle(meaning.people, "과", "와")} 어떤 이야기를 나눌지 궁금해집니다.`),
     b("annual-gift", year.gift),
     b("annual-shadow", year.caution, "shadow"),
   ];
@@ -57,8 +57,12 @@ export async function composeAnnualFortuneNarrative(payload: unknown, clock: Ann
   if (longGod) opening.push(b("annual-long-view", `${e.time === "past" ? "그해 초반의 큰 배경을 돌아보면" : e.time === "future" ? "그해 초반의 긴 흐름에서는" : "지금의 더 큰 배경에서는"} ${mainPeriod.cycles[0].cycle.ganji} 대운의 ${withKoreanParticle(longGod, "object")} 읽습니다. 이 대운에서는 ${withKoreanParticle(`‘${MAJOR_MEANINGS[longGod].theme}’`, "object")} 중심에 놓습니다. ${god === longGod ? "한 해도 같은 주제를 비추니 오래 해온 선택을 더 선명하게 볼 만합니다." : `한 해의 ${particle(meaning.theme, "은", "는")} 그 길 안에서 새롭게 다뤄볼 부분입니다.`}`));
   const sections: NarrativeSection[] = [];
   const crossBlocks = e.crossPeriods.map((p, i) => {
-    const start = `${Number(p.startKst.slice(5, 7))}월 ${Number(p.startKst.slice(8, 10))}일`, end = getAnnualFortuneSeoulDateParts(new Date(Date.parse(p.endKstExclusive) - 1));
-    const label = `${start}부터 ${end.month}월 ${end.day}일까지${p.time === "past" ? "를 돌아보면" : p.time === "future" ? "를 내다보면" : " 이어지는 지금 흐름에서는"}`;
+    const at = (kst: string) => `${Number(kst.slice(5, 7))}월 ${Number(kst.slice(8, 10))}일 ${kst.slice(11, 19)} KST`;
+    const end = getAnnualFortuneSeoulDateParts(new Date(Date.parse(p.endKstExclusive) - 1));
+    const range = p.endKstExclusive.slice(0, 4) === String(e.selectedYear)
+      ? `${at(p.startKst)}부터 ${at(p.endKstExclusive)} 직전까지`
+      : `${at(p.startKst)}부터 ${end.month}월 ${end.day}일까지`;
+    const label = `${range}${p.time === "past" ? "의 흐름을 돌아보면" : p.time === "future" ? "의 흐름을 내다보면" : " 이어지는 지금 흐름에서는"}`;
     const effective = p.segment.effectiveAnnualPillar.stem + p.segment.effectiveAnnualPillar.branch;
     const carryover = effective !== e.raw.annualGanji.ganji;
     const text = carryover ? `새 달력을 펼쳐도 ${particle(MAJOR_MEANINGS[p.annualGod].theme, "을", "를")} 다루던 앞선 흐름이 잠시 이어집니다. ${p.cycles[0] ? `큰 배경인 ${particle(MAJOR_MEANINGS[p.cycles[0].god].theme, "도", "도")} 이 구간에서는 그대로입니다. ` : ""}2월 초를 지나며 한 해의 관심이 바뀌므로 1월부터 모든 것을 새로 정할 필요는 없습니다.` : crossText(p);
@@ -95,9 +99,9 @@ export async function composeAnnualFortuneNarrative(payload: unknown, clock: Ann
     opening, sections, finalLine: `${e.selectedYear}년, ${year.final}.`, finalProof: source };
   const allocated = composeEvidenceChapters(e.input, e.materials, narrative, "annual");
   const composed = { ...allocated, narrative: { ...allocated.narrative,
-    opening: separateAnnualChapter("core", allocated.narrative.opening, e.materials),
+    opening: separateAnnualChapter("core", allocated.narrative.opening, e.materials, c),
     sections: allocated.narrative.sections.map(s => ["dayun-cross", "fortune", "annual-relationship"].includes(s.id)
-      ? { ...s, blocks: separateAnnualChapter(s.id, s.blocks, e.materials) } : s),
+      ? { ...s, blocks: separateAnnualChapter(s.id, s.blocks, e.materials, c) } : s),
   } };
   const publishedMonths = months.map(m => ({ ...m, blocks: composed.narrative.sections.find(s => s.id === `month-${m.month}`)!.blocks }));
   return { ok: true as const, ...composed, yearMap: annualYearMap(e), evidence: e, months: publishedMonths, materials: e.materials,
