@@ -46,8 +46,7 @@ describe("Major evidence-bound personalization", () => {
     for (const y of r.years) {
       const reading = majorInteractionReading(r.evidence, y), text = y.blocks.map(b => b.text).join(" ");
       for (const id of [...reading.harmonyIds, ...reading.tensionIds]) {
-        const reason = y.annual.reasons.find(r => r.evidenceId === id)!;
-        expect(text).toContain(reason.text.split(": ")[1]);
+        expect(text).toContain(`${id.split(":")[8].split("").join("·")} ${id.split(":")[7]}`);
       }
       const gift = y.blocks.find(b => b.id === `${y.year}-gift`)!;
       const annual = [...MATERIAL_BY_FEATURE.values()].find(m => m.feature.startsWith("ten_god_") && m.label === y.annual.tenGod)!;

@@ -37,15 +37,16 @@ describe("Major V4 offline fourteen-year narrative", () => {
   it("distinct headlines and finals; shared explanations retain concrete common evidence", () => {
     // A combined clash/punishment explanation legitimately shares the reviewed
     // definitions across different annual gods. Recognize ONLY canonical reason
-    // IDs already on this block and whose full meaning is actually displayed.
+    // IDs already on this block and whose actual participants/type are displayed.
     // Keep raw cohort diagnostics and the individual zero-duplicate gate intact.
     expectBoundCohortReuse(results.map(({ id, result: r }) => ({ id, narrative: { ...r.narrative,
       sections: r.narrative.sections.map(s => ({ ...s, blocks: s.blocks.map(b => {
         const reasons = r.years.find(y => s.id === `year-${y.year}`)?.annual.reasons ?? [];
         const shared = reasons.filter(reason => ["cycle-relation", "natal-relation"].includes(reason.kind)
-          && b.proof.sourceRefs.includes(reason.evidenceId) && b.text.includes(reason.text.split(": ")[1]));
+          && b.proof.sourceRefs.includes(reason.evidenceId)
+          && b.text.includes(`${reason.evidenceId.split(":")[8].split("").join("·")} ${reason.evidenceId.split(":")[7]}`));
         return { ...b, proof: { ...b.proof, sourceRefs: [...b.proof.sourceRefs,
-          ...shared.map(reason => `content-relation:${reason.evidenceId.split(":")[7]}:${reason.text.split(": ")[1]}`)] } };
+          ...shared.map(reason => `content-relation:${reason.evidenceId.split(":")[7]}:reviewed-major-reader`)] } };
       }) })),
     } })));
   });

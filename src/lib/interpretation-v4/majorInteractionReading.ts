@@ -1,6 +1,7 @@
 import { withKoreanParticle as p } from "../report-knowledge/koreanCopyUtils";
+import { majorYearPeriod } from "./majorPeriodCopy";
 import { MAJOR_MEANINGS } from "./majorMaterials";
-import type { AnnualBranchInteraction } from "../report-knowledge/annualFortuneTypes";
+import type { AnnualBranchInteraction, TenGod } from "../report-knowledge/annualFortuneTypes";
 import type { MajorEvidence, MajorYearEvidence } from "./majorEvidence";
 import type { NarrativeBlock } from "./narrativeTypes";
 
@@ -8,9 +9,31 @@ const positions = { year: "연지", month: "월지", day: "일지", hour: "시�
 const harmonyTypes = ["육합", "삼합", "반합"];
 type Scope = "cycle" | "natal";
 
+// The reviewed annualMonthRelationFacts.branchReadings / annualFortuneReading
+// relationActions distinguish the scope of a connection. These are limited
+// reading questions, not new meanings or events inferred from branch pairs.
+const harmonyMeanings = {
+  육합: "서로 연결되는 흐름을 약속과 협업의 접점으로 읽습니다",
+  삼합: "세 지지가 모이는 흐름을 함께 추진할 일의 접점으로 읽습니다",
+  반합: "일부 지지가 연결되는 흐름이며, 완성된 삼합으로 확대하지 않습니다",
+};
+const checks: Record<TenGod, readonly [string, string]> = {
+  비견: ["내가 직접 고를 부분과 함께 지킬 기준", "계속 지킬 방향과 다시 열어둘 선택"],
+  겁재: ["서로 보탤 실력과 공동 비용", "결과에 남길 기여와 다음 협업의 분담"],
+  식신: ["처음 보여줄 결과의 완성 기준", "다시 만들 수 있는 순서와 공유할 방법"],
+  상관: ["불편했던 절차와 바꿔볼 범위", "고친 방법의 전후 차이와 다른 사람이 써볼 조건"],
+  편재: ["외부 제안에 투입할 시간과 돌아올 몫", "제안들 가운데 감당할 비용과 이어갈 조건"],
+  정재: ["고정 수입·지출과 남는 여유", "결과를 계속 내기 위한 비용과 내 생활의 몫"],
+  편관: ["먼저 처리할 요구와 도움을 청할 기준", "결정할 권한과 책임의 끝"],
+  정관: ["맡을 범위와 끝냈다고 볼 기준", "다음 역할에 보여줄 경험과 함께 지킬 기준"],
+  편인: ["확인할 가정과 조사를 끝낼 기준", "서로 다른 설명을 시험할 작은 적용"],
+  정인: ["도움받을 부분과 혼자 써볼 과제", "상대가 다시 써볼 설명과 빠진 순서"],
+};
+
+
 /** Bind existing relations to their existing reason IDs. No relation detection,
  * new meanings, annual selection, or inference from ambiguous `plain` labels. */
-export function majorInteractionReading(e: MajorEvidence, y: MajorYearEvidence) {
+export function majorInteractionReading(e: MajorEvidence, y: MajorYearEvidence, explained = new Set<string>()) {
   const cycle = y.cycle;
   const prefix = `major:${cycle.index}:${cycle.ganji}:year:${y.year}:${y.annual.ganji}`;
   const validPeriod = y.annual.evidenceIds.includes(prefix);
@@ -37,19 +60,39 @@ export function majorInteractionReading(e: MajorEvidence, y: MajorYearEvidence) 
   const tensions = tension ? [tension, ...relations.filter(r => r !== tension && r.scope === tension.scope
     && ["충", "형"].includes(r.relation.type) && r.actors === tension.actors
     && [...r.relation.branches].sort().join("") === [...tension.relation.branches].sort().join(""))] : [];
+  const sameActors = harmony && tension && harmony.scope === tension.scope && harmony.actors === tension.actors
+    && [...harmony.relation.branches].sort().join("") === [...tension.relation.branches].sort().join("");
   const transition = e.horizon.transitions.find(t => t.year === y.year);
+  const definition = (type: AnnualBranchInteraction["type"], meaning: string) => {
+    const first = !explained.has(type); explained.add(type);
+    if (first) return harmonyMeanings[type as keyof typeof harmonyMeanings] ?? `‘${meaning}’을 살필 조건입니다`;
+    return ({ 육합: "함께하기 쉬운 접점입니다", 삼합: "여러 힘이 모일 접점입니다", 반합: "일부가 맞닿는 접점입니다", 충: "기존 배치와 새 요구를 조정할 자리입니다", 형: "되풀이되는 부담을 점검할 자리입니다", 파: "세부 방식을 손볼 자리입니다", 해: "드러내지 않은 불편을 확인할 자리입니다" })[type];
+  };
+  const previous = e.years.find(v => v.year < y.year && v.annual.tenGod === y.annual.tenGod);
+  const check = checks[y.annual.tenGod][previous ? 1 : 0];
   const describe = (group: NonNullable<ReturnType<typeof bind>>[]) => {
     const first = group[0];
     if (!first) return "";
-    const meanings = group.map(r => `${r.relation.branches.join("·")} ${r.relation.type}에서는 ${p(`‘${r.meaning}’`, "object")}`);
-    return `${y.year}년${transition && first.scope === "cycle" ? " 전환이 완료된 뒤의" : ""} ${first.actors}, ${y.annual.ganji}(${y.annual.tenGod}) 세운의 ${y.annual.ganji.slice(-1)} 사이의 ${meanings.join(", ")} ${y.annual.tenGod} 흐름과 함께 살펴보세요.`;
+    const meanings = group.map(r => `${r.relation.branches.join("·")} ${r.relation.type}: ${definition(r.relation.type, r.meaning)}`);
+    return `${y.year}년${transition ? " 전환이 완료된 뒤의 구간에서," : ""} ${first.actors}, ${y.annual.ganji}(${y.annual.tenGod}) 세운의 ${y.annual.ganji.slice(-1)} 사이에는 ${meanings.join(". ")}.`;
   };
-  const timing = transition
-    ? `${transition.dateLabel}을 경계로 ${transition.before.ganji}에서 ${p(`${transition.after.ganji} 대운`, "to")} 넘어갑니다. 이 해의 ${cycle.ganji}(${cycle.tenGod}) 대운과 세운 설명은 전환이 완료된 뒤의 흐름으로 읽어주세요.` : "";
+  const timing = majorYearPeriod(e, y).explanation;
   const background = validPeriod
-    ? `${timing}${timing ? " " : ""}${y.year}년은 ${cycle.ganji} 대운의 ${cycle.tenGod}, ${y.annual.ganji} 세운의 ${p(y.annual.tenGod, "subject")} 만나는 해입니다. ${cycle.tenGod === y.annual.tenGod
-      ? `장기 과제인 ${p(`‘${MAJOR_MEANINGS[cycle.tenGod].theme}’`, "object")} 같은 관점에서 다시 살펴볼 때예요.`
-      : `큰 배경인 ‘${MAJOR_MEANINGS[cycle.tenGod].theme}’ 속에서 ${y.year}년에는 ‘${MAJOR_MEANINGS[y.annual.tenGod].theme}’에 주목합니다.`}` : "";
+    ? `${timing}${timing ? " " : ""}${transition ? "전환 이후에는" : `${y.year}년은`} ${cycle.ganji} 대운의 ${cycle.tenGod}, ${y.annual.ganji} 세운의 ${p(y.annual.tenGod, "subject")} 만나는 흐름입니다. ${previous
+      ? `같은 ${p(y.annual.tenGod, "object")} 읽었던 ${previous.year}년(${previous.cycle.ganji}·${previous.cycle.tenGod})과 비교하며, ${p(`‘${check}’`, "object")} ‘${MAJOR_MEANINGS[cycle.tenGod].theme}’의 관점에서 살펴볼 만해요.`
+      : cycle.tenGod === y.annual.tenGod ? `장기 과제인 ${p(`‘${MAJOR_MEANINGS[cycle.tenGod].theme}’`, "object")} 같은 관점에서 다시 살펴볼 때예요.`
+      : `큰 배경인 ‘${MAJOR_MEANINGS[cycle.tenGod].theme}’ 속에서 ‘${MAJOR_MEANINGS[y.annual.tenGod].theme}’에 주목합니다.`}` : "";
+  const application = (r: NonNullable<ReturnType<typeof bind>> | undefined) => {
+    if (!r) return "";
+    const target = p(`‘${check}’`, "object");
+    if (r.relation.type === "육합") return `${target} 함께 맡을 범위와 종료 조건에 맞춰보세요.`;
+    if (r.relation.type === "삼합") return `함께 추진할 일이 있다면 ${target} 공통 목표와 각자의 기여에 비춰 정해보세요.`;
+    if (r.relation.type === "반합") return `${target} 작은 시도로 확인한 뒤 연결을 넓혀보세요.`;
+    if (r.relation.type === "충") return `기존 일정과 새 요구가 다르다면 ${target} 먼저 조정해보세요.`;
+    if (r.relation.type === "형") return `같은 부담이 되풀이된다면 ${target} 어디까지 감당할지 다시 정해보세요.`;
+    if (r.relation.type === "파") return `유지하던 방식 가운데 ${target} 손볼 필요가 있는지 확인해보세요.`;
+    return `겉으로 말하지 못한 불편이 있다면 ${target} 상대가 이해한 내용과 나란히 놓아보세요.`;
+  };
   // Current packet only; show its lasting natal relationship once, in the
   // current-year chapter. Other cycles have no safely carried factors here.
   const majorNatal = y.timePosition === "current" && validPeriod && !transition
@@ -57,29 +100,34 @@ export function majorInteractionReading(e: MajorEvidence, y: MajorYearEvidence) 
     ? e.majorNatal.relations.slice(0, 1).flatMap(f => {
       const actors = natalActors(f.relation), meaning = f.text.split(": ")[1];
       if (!meaning || !actors.length || actors.some(a => !a) || !f.relation.branches.includes(cycle.ganji.slice(-1) as typeof f.relation.branches[number])) return [];
-      return [{ id: f.evidenceId, text: `한 해의 세운과는 따로, ${cycle.ganji}(${cycle.tenGod}) 대운의 지지 ${cycle.ganji.slice(-1)}, ${actors.join("·")} 사이에는 ${f.relation.branches.join("·")} ${f.relation.type} 관계가 있습니다. ${p(`‘${meaning}’`, "topic")} ${cycle.tenGod} 대운 전체의 점검점이며, 특정 연도의 사건을 확정하지 않습니다.` }];
+      return [{ id: f.evidenceId, text: `한 해의 세운과 구분해, ${cycle.ganji}(${cycle.tenGod}) 대운의 지지 ${cycle.ganji.slice(-1)}, ${actors.join("·")} 사이에는 ${f.relation.branches.join("·")} ${f.relation.type}: ${definition(f.relation.type, meaning)}. ${cycle.ganji} 대운의 이 관계를 특정 연도의 사건으로 단정하지 않습니다.` }];
     }) : [];
   return { background, majorNatal,
-    backgroundIds: validPeriod ? [`dayun-cycle:${cycle.index}:${cycle.ganji}`, `period-ten-god:${cycle.tenGod}`,
+    backgroundIds: validPeriod ? ["v4:major-reader-periods-01", `dayun-cycle:${cycle.index}:${cycle.ganji}`, `period-ten-god:${cycle.tenGod}`,
       ...(transition ? [`dayun-cycle:${transition.before.index}:${transition.before.ganji}`, `transition:${transition.startSolarKst ?? transition.dateLabel}`] : [])] : [],
-    tension: describe(tensions), tensionIds: tensions.map(r => r.id),
-    harmony: harmony ? describe([harmony]) : "", harmonyIds: harmony ? [harmony.id] : [],
+    harmonyAction: application(harmony), tensionAction: application(tension),
+    // When a connection and a strain share participants, explain that one
+    // meeting once; retain separate supportive/cautionary decisions and proofs.
+    tension: sameActors ? "" : describe(tensions), tensionIds: tensions.map(r => r.id),
+    harmony: harmony ? describe(sameActors ? [harmony, ...tensions] : [harmony]) : "",
+    harmonyIds: harmony ? [harmony.id] : [],
   };
 }
 
-/** Attach explanations after voice realization so every existing sentence,
- * scene selection, paragraph ID and ordering remains unchanged. */
-export function withMajorInteractions(e: MajorEvidence, y: MajorYearEvidence, blocks: readonly NarrativeBlock[]): NarrativeBlock[] {
-  const reading = majorInteractionReading(e, y);
+/** Attach bound relations and limited practice after the natal reading. */
+export function withMajorInteractions(e: MajorEvidence, y: MajorYearEvidence, blocks: readonly NarrativeBlock[], explained = new Set<string>()): NarrativeBlock[] {
+  const reading = majorInteractionReading(e, y, explained);
   const harmonyBlock = blocks.some(b => b.id === `${y.year}-harmony`) ? "harmony" : "gift";
   return blocks.map(b => {
     const character = b.id === `${y.year}-character`;
     const prefix = character ? [reading.background, ...reading.majorNatal.map(r => r.text)].filter(Boolean).join(" ")
       : b.id === `${y.year}-friction` ? reading.tension
       : b.id === `${y.year}-${harmonyBlock}` ? reading.harmony : "";
-    if (!prefix) return b;
-    return { ...b, text: `${prefix} ${b.text}`, proof: character
+    const action = b.id === `${y.year}-friction` ? reading.tensionAction
+      : b.id === `${y.year}-${harmonyBlock}` ? reading.harmonyAction : "";
+    if (!prefix && !action) return b;
+    return { ...b, text: [prefix, b.text, action].filter(Boolean).join(" "), proof: character
       ? { ...b.proof, sourceRefs: [...new Set([...b.proof.sourceRefs, ...reading.backgroundIds, ...reading.majorNatal.map(r => r.id)])] }
-      : b.proof };
+      : { ...b.proof, sourceRefs: [...new Set([...b.proof.sourceRefs, ...(b.id === `${y.year}-friction` ? reading.tensionIds : [...reading.harmonyIds, ...(!reading.tension ? reading.tensionIds : [])])])] } };
   });
 }

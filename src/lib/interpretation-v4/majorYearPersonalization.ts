@@ -36,6 +36,7 @@ export function createMajorYearPersonalization(e: MajorEvidence, reserved: reado
     if (!god || !y.annual.evidenceIds.length) return [...blocks];
     const domains: readonly Domain[] = ["정재", "편재"].includes(y.annual.tenGod) ? ["money", "work"]
       : ["정인", "편인"].includes(y.annual.tenGod) ? ["study", "work"]
+      : ["식신", "상관"].includes(y.annual.tenGod) ? ["work", "study"]
       : y.annual.tenGod === "겁재" ? ["relationships", "work"] : ["work", "relationships"];
     const eligible = e.materials.selected.filter(m => m.evidence.length && m.evidence.every(d => d.usable && d.strength === "strong")
       && (MATERIAL_BY_FEATURE.get(m.feature)?.semanticTags.some(tag => god.semanticTags.includes(tag))
@@ -65,17 +66,18 @@ export function createMajorYearPersonalization(e: MajorEvidence, reserved: reado
     const giftSeed = strength ?? seed;
     const extra = proof([root], [giftSeed], [], god.sourceRefs);
     const replacements = new Map<string, { text: string; proof: NarrativeProof }>();
-    replacements.set("gift", { text: `${y.year}년의 선택에 보탤 내 바탕은 원국의 ${label} 성향입니다. ${conversationalVoice(giftSeed.text, 1)}`, proof: extra });
+    replacements.set("gift", { text: `${domain === "study" ? "배우는 방식에는" : domain === "money" ? "돈을 다루는 평소 기준에는" : domain === "relationships" ? "함께할 때의 반응에는" : "일을 풀어가는 방식에는"} 원국의 ${withKoreanParticle(label, "subject")} 드러납니다. ${conversationalVoice(giftSeed.text, 1)}`, proof: extra });
     if (shadow && blocks.some(b => b.id === `${y.year}-friction`)) {
       reserve(shadow);
-      const action = sentences(blocks.find(b => b.id === `${y.year}-friction`)!.text).at(-1);
-      replacements.set("friction", { text: `${y.year}년에 이 강점을 쓸 때는 ${label}의 반대편도 살펴보세요. ${conversationalVoice(shadow.text, 1)}${action ? ` ${action}` : ""}`, proof: proof([root], [shadow]) });
+      // Do not append an unrelated annual warning to this natal shadow.
+      // Its concrete adjustment follows the verified relation reading instead.
+      replacements.set("friction", { text: `타고난 ${label} 성향에서 주의할 부분도 있습니다. ${conversationalVoice(shadow.text, 1)}`, proof: proof([root], [shadow]) });
     }
     const focus = domain === "money" ? "지출 기준" : domain === "study" ? "학습 습관" : domain === "relationships" ? "관계 속 경계" : "역할 선택";
     if (reading || fusion || question) {
       const lens = reading ? `${reading.behavior} ${reading.combined}` : fusion ? conversationalVoice(fusion.insightSeed, 1) : "";
-      const intro = reading || fusion ? `${y.year}년의 사건 예측과는 별개로, 원국 ${label} 성향과 ${e.input.mbti}의 평소 반응도 함께 봅니다.`
-        : `${y.year}년의 ${withKoreanParticle(focus, "object")} 생각할 때는 원국 ${label} 성향을 이런 질문에 비춰보세요.`;
+      const intro = reading || fusion ? `${e.input.mbti}의 평소 반응과 타고난 ${label} 성향을 나란히 보면 선택의 기준도 보입니다.`
+        : `${withKoreanParticle(focus, "object")} 생각할 때 원국의 ${withKoreanParticle(label, "subject")} 어떤 모습인지 떠올려볼까요?`;
       const text = [intro, lens, question?.text].filter(Boolean).join(" ");
       if (question) reserve(question);
       if (reading) traits.add(reading.id);

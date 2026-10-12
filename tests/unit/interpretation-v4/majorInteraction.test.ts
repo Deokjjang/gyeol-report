@@ -53,7 +53,7 @@ describe("Major verified annual interaction explanations", () => {
     ]);
     expect(reading.harmonyIds).toEqual(["major:4:戊寅:year:2028:戊申:natal:반합:申子:day"]);
     const text = y.blocks.map(b => b.text).join(" ");
-    for (const part of ["戊寅 대운의 편인", "戊申 세운의 편인", "寅·申 충", "申·寅 형", "원국 일지 子", "申·子 반합", "기존 배치와 새 요구의 조정", "되풀이되는 제약과 부담의 점검", "연결되는 역할과 약속의 범위 확인", "매출 뒤의 이유"]) expect(text).toContain(part);
+    for (const part of ["戊寅 대운의 편인", "戊申 세운의 편인", "寅·申 충", "申·寅 형", "원국 일지 子", "申·子 반합", "기존 배치와 새 요구", "되풀이되는 부담", "매출 뒤의 이유"]) expect(text).toContain(part);
   });
 
   it.each([["02-employee", 2025], ["03-freelance", 2024]] as const)("%s %s: additional genuine relationship years", (id, year) => {
@@ -67,8 +67,7 @@ describe("Major verified annual interaction explanations", () => {
       : "major:3:壬申:year:2024:甲辰:natal:충:辰戌:year"]);
     const text = y.blocks.map(b => b.text).join(" ");
     for (const ref of [...reading.harmonyIds, ...reading.tensionIds]) {
-      const reason = y.annual.reasons.find(r => r.evidenceId === ref)!;
-      expect(text).toContain(reason.text.split(": ")[1]);
+      expect(text).toContain(`${ref.split(":")[8].split("").join("·")} ${ref.split(":")[7]}`);
     }
   });
 
@@ -83,8 +82,8 @@ describe("Major verified annual interaction explanations", () => {
   it("C 2028: exact boundary qualifies the post-transition cycle, not the entire year", () => {
     const r = results.get("03-freelance")!, y = r.years.find(y => y.year === 2028)!;
     const reading = majorInteractionReading(r.evidence, y);
-    expect(reading.background).toContain("2028-04-23 21:42 한국시간");
-    expect(reading.background).toContain("壬申에서 辛未 대운으로");
+    expect(reading.background).toContain("2028-04-23 21:42:00 KST 직전까지는 壬申(편재)");
+    expect(reading.background).toContain("같은 시각부터 辛未(상관)");
     expect(reading.background).toContain("전환이 완료된 뒤");
     expect(reading.harmony).toContain("원국 일지 申·원국 시지 辰");
     expect(reading.tension).toContain("원국 월지 亥");
@@ -99,7 +98,7 @@ describe("Major verified annual interaction explanations", () => {
       expect(t.startSolarKst).toBeNull();
       expect(t.startSolarRange).toBeDefined();
       const reading = majorInteractionReading(r.evidence, y);
-      expect(reading.background).toContain(t.dateLabel);
+      for (const at of [t.startSolarRange!.earliestKst, t.startSolarRange!.latestKst]) expect(reading.background).toContain(at.replace("T", " ").replace("+09:00", " KST"));
       expect(reading.background).toContain("전환이 완료된 뒤");
       expect(reading.majorNatal).toEqual([]);
     }

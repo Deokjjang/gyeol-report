@@ -10,6 +10,7 @@ import { reviewNarrative } from "./editorialGuard";
 import { composeEvidenceChapters } from "./contentSynthesis";
 import { separateMajorChapter } from "./majorEvidenceReading";
 import { createMajorYearPersonalization } from "./majorYearPersonalization";
+import { majorYearPeriod } from "./majorPeriodCopy";
 import { withMajorInteractions } from "./majorInteractionReading";
 import { auditContent } from "./contentQuality";
 import { friendlyTransition, planMajorYears } from "./periodPlanner";
@@ -39,13 +40,13 @@ export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt
   const opening = [
     b("big-flow", `${e.input.name}님이 지금 지나고 있는 ${now.ganji} 대운에서 읽는 십성은 ${now.tenGod}입니다. 이 시기의 중심은 ‘${m.theme}’입니다. 예전과 같은 일을 해도 ‘${m.next}’ 쪽에 더 마음이 가는 변화예요. 지금은 특히 ${particle(m.money, "을", "를")} 가까이서 보게 되는 시기죠.`),
     b("first-gift", `이 흐름의 좋은 패는 ${m.gift}입니다. ‘${c.scenes[now.tenGod][0]}’ 같은 순간을 떠올려볼까요? ${MAJOR_VOICE[now.tenGod].opening}`),
-    b("next-boundary", future ? `${friendlyTransition(future.dateLabel)}, ${future.before.ganji}에서 ${withKoreanParticle(`${future.after.ganji} 대운`, "to")} 큰 장이 넘어갑니다. 지금의 ‘${m.theme}’에서 ‘${MAJOR_MEANINGS[future.after.tenGod].theme}’ 쪽으로 관심의 중심도 옮겨갈 전망이에요. 다음 장에도 ${particle(c.craft, "을", "를")} 함께 가져갑니다.` : `${e.horizon.through}년까지 이어지는 큰 배경은 ‘${destination.theme}’입니다. 큰 장이 같아도 ${particle(m.work, "을", "를")} 다루는 장면은 해마다 달라집니다. 뒤의 연도별 이야기에서는 ${particle(c.noun, "에", "에")} 힘을 더할 시기와 다른 경험을 보탤 시기를 나눠 읽을 수 있습니다.`),
+    b("next-boundary", future ? `${friendlyTransition(future.dateLabel)}, ${future.before.ganji}에서 ${withKoreanParticle(`${future.after.ganji} 대운`, "to")} 큰 장이 넘어갑니다. 지금의 ‘${m.theme}’에서 ‘${MAJOR_MEANINGS[future.after.tenGod].theme}’ 쪽으로 관심의 중심도 옮겨갈 전망이에요. ${withKoreanParticle(`‘${c.craft}’`, "object")} 다음 장에서는 어디에 써볼지 생각해볼 만해요.` : `${e.horizon.through}년까지 이어지는 큰 배경은 ‘${destination.theme}’입니다. 큰 장이 같아도 ${particle(m.work, "을", "를")} 다루는 장면은 해마다 달라집니다. 뒤의 연도별 이야기에서는 ${particle(c.noun, "에", "에")} 힘을 더할 시기와 다른 경험을 보탤 시기를 나눠 읽을 수 있습니다.`),
     paragraph("natal-strength", `${strength.text} ${natalScene?.text ?? ""}`, proof([pillar], [strength, ...(natalScene ? [natalScene] : [])])),
   ];
   const sections: NarrativeSection[] = [], behavior = majorBehavior(e, c, now.tenGod, "now");
   if (behavior) opening.push(behavior.block);
   sections.push(section("current-context", e.input.context.jobStatus === "unemployed" ? "쉬는 지금도 다음에 가져갈 실력은 남아 있습니다" : `${c.raw || "지금의 경험"}에서 출발하되, 그 자리에만 묶이지는 않습니다`, [
-    b("current-setting", `지금의 경험에 이 흐름을 적용해본다면, ‘${c.scenes[now.tenGod][1]}’ 같은 장면을 떠올릴 수 있습니다. ${particle(m.work, "이", "가")} 왜 요즘 더 신경 쓰이는지 생각해보면, 단순히 일이 많아서만은 아닐 거예요. ${particle(c.craft, "을", "를")} 어디에 쓰느냐에 따라 똑같이 바쁜 하루도 만족감이 달라집니다.`),
+    b("current-setting", `직업·생활이 과거나 미래에도 같다고 가정하지 않고, 입력 당시의 ‘${c.raw || "생활"}’에 비춰 아래 예시를 살펴봅니다. 지금의 경험에 이 흐름을 적용해본다면, ‘${c.scenes[now.tenGod][1]}’ 같은 장면을 떠올릴 수 있습니다. ${particle(m.work, "이", "가")} 왜 요즘 더 신경 쓰이는지 생각해보면, 단순히 일이 많아서만은 아닐 거예요. ${particle(c.craft, "을", "를")} 어디에 쓰느냐에 따라 똑같이 바쁜 하루도 만족감이 달라집니다.`),
     b("money-flow", `돈에서는 ${particle(m.money, "을", "를")} 먼저 봅니다. ${particle(m.cost, "이", "가")} 커지면 잘하고도 생활은 제자리처럼 느껴질 수 있어요. ${MAJOR_VOICE[now.tenGod].money}`),
   ], "work"));
   const gifts: Record<string, string> = { gwiin_cheoneul: "막힐 때 좋은 도움과 연결될 사람복", gwiin_jaego: "돈만 아니라 기술과 고객까지 쌓아둘 축적복", twelve_sinsal_jangseong: "앞에 서서 중심을 잡는 리더십", twelve_sinsal_banan: "자리와 인정을 붙잡는 힘", gwiin_munchang: "배운 것을 쉬운 말로 펼칠 표현력", gwiin_hakdang: "하나를 제대로 익혀 남길 학습의 힘", twelve_sinsal_yeokma: "움직이며 낯선 기회를 발견하는 감각", sinsal_hongyeom: "가까워질수록 살아나는 친밀한 매력", sinsal_dohwa: "첫인상에서 사람의 눈에 들어오는 매력", gwiin_geumyeo: "사람과 생활에서 좋은 것을 알아보는 안목", gwiin_amrok: "겉으로 드러나지 않아도 실속을 챙기는 힘" };
@@ -110,7 +111,7 @@ export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt
   const years = e.years.map(y => majorYearNarrative(e, y, c, periodRoots, yearPlan.find(p => p.year === y.year)!.importance));
   for (const y of years) {
     const transition = e.horizon.transitions.find(t => t.year === y.year);
-    sections.push(section(`year-${y.year}`, `${y.year}년 · ${y.age}세 · 세운 ${y.annual.ganji} · 대운 ${transition ? `${transition.before.ganji} → ${transition.after.ganji}` : y.cycle.ganji} · ${y.timePosition === "past" ? "돌아보기" : y.timePosition === "current" ? "지금" : "앞으로"}\n${y.title}`, y.blocks));
+    sections.push(section(`year-${y.year}`, `${y.year}년 · ${y.age}세 · 세운 ${y.annual.ganji} · 대운 ${transition ? `${transition.before.ganji} → ${transition.after.ganji}` : y.cycle.ganji} · ${y.timePosition === "past" ? "돌아보기" : y.timePosition === "current" ? "지금" : "앞으로"}\n${y.title}${transition ? ` · ${majorYearPeriod(e, y).label}` : ""}`, y.blocks));
   }
   sections.push(section("final", `${e.horizon.through}년의 나에게 남겨줄 것`, [
     b("final-strength", `${e.input.name}님에게 이미 있는 것은 ${c.craft}입니다. ${future ? `${future.year}년의 전환을 거치며` : "앞으로의 여러 해를 지나며"} ‘${destination.work}’까지 다뤄볼 수 있는 사람으로 넓어지는 쪽을 바라볼 만합니다.`),
@@ -123,11 +124,12 @@ export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt
   const allocated = composeEvidenceChapters(e.input, e.materials, narrative, "major");
   const personalizeYear = createMajorYearPersonalization(e, [...allocated.narrative.opening, ...allocated.narrative.sections.filter(s => !s.id.startsWith("year-")).flatMap(s => s.blocks)]);
   const currentPeriod = { ...now, proof: source };
+  const explainedInteractions = new Set<string>();
   const separated = { ...allocated.narrative,
     opening: separateMajorChapter("core", allocated.narrative.opening, e.materials, currentPeriod),
     sections: allocated.narrative.sections.map(s => {
       const year = years.find(y => s.id === `year-${y.year}`);
-      if (year) return { ...s, blocks: withMajorInteractions(e, year, personalizeYear(year, s.blocks)) };
+      if (year) return { ...s, blocks: withMajorInteractions(e, year, personalizeYear(year, s.blocks), explainedInteractions) };
       if (s.id === "next-cycle" && future) {
         const nextProof = proof([], [], [], [...e.sourceRefs, `dayun-cycle:${future.after.index}:${future.after.ganji}`, `period-ten-god:${future.after.tenGod}`]);
         return { ...s, blocks: separateMajorChapter(s.id, s.blocks, e.materials, { ...future.after, proof: nextProof }) };
