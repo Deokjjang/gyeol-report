@@ -1,27 +1,28 @@
 {
-  "base": "1bfe836f76d3384de27ae3e3f4e99aa0017339a2",
+  "base": "4e8deb242f78310ff9bc3fbcba4fb364a48503e4",
   "clock": {
     "evaluatedAt": "2026-10-12T12:00:00+09:00"
   },
   "rows": {
     "01-business": {
-      "invariant": "a0225cf1c4263965c8663a91013e2fe713f24b8b7d2553aa90b43347921b6089"
+      "invariant": "3836934d3c2bfeafdb765a6ac455b07247cd0047fa6ed1fc1d8eaa3a0994aaec"
     },
     "02-employee": {
-      "invariant": "d6df122f2192042cfdfe675432253260a3b731f3d394efc581260fa3d348deaa"
+      "invariant": "1a3bdc19e74ecdd23024e2b546ba23803fa159c565d5d8e521a1ca6377ea19fb"
     },
     "03-freelance": {
-      "invariant": "fdd90653d45fa0890e049c105dafb28d4a629b7baa108d3d9d07b59cf4cc8045"
+      "invariant": "1d11ac7dd3045e021e1904c98eff88569e5c72baeebb6a95926fd48f6f3d5e30"
     },
     "04-time-unknown": {
-      "invariant": "9d5aa20d18df8b97e381f3f58e8be6df0f2351d5caf4dd461e0cf587af6bab6c"
+      "invariant": "2a55c4f402503e1e7b9e0eb40d3af60215aaf7704e43661ccb470e134e5a3ace"
     },
     "05-mbti-unknown": {
-      "invariant": "a7a55b030d481adbe0c2111f8bbfd997b4293266ef13b9e0e00d271b8a468849"
+      "invariant": "368f948ec156cbb411e677884e2bb449d04889e3810559f5d5ad35bb5832d467"
     },
     "06-both-unknown": {
-      "invariant": "d6e529db5ddc0e06203871f23d40d971eeccc522a5bb9f5b65c76f2fcf102989"
+      "invariant": "227cbf5c243265d94f1f379d22c919229e4c60a3e285df934d68e83bfe7a318f"
     }
   },
-  "revision": "major-personalization-01"
+  "revision": "v4-major-fortune-reader-quality-polish-01",
+  "previousBase": "1bfe836f76d3384de27ae3e3f4e99aa0017339a2"
 }

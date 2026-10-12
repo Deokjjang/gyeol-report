@@ -96,7 +96,9 @@ describe("Major editorial assembly safety", () => {
       const blocks = n.sections.flatMap(s => s.blocks);
       expect(blocks.find(b => b.id === "transition-2034-work")!.text).toContain("‘밖에서 들어오는 제안’으로 달라집니다.");
       expect(blocks.find(b => b.id === "2029-character")!.text).toContain("오래 남길 내 몫을 생각하는 시간이 반갑습니다.");
-      expect(blocks.find(b => b.id === "2036-gift")!.proof.seedIds).toContain("sinsal_hongyeom:strength");
+      const gift = blocks.find(b => b.id === "2036-gift")!;
+      expect(gift.proof.features).not.toContain("sinsal_hongyeom");
+      expect(gift.proof.seedIds.some(id => /:(work|study)$/.test(id))).toBe(true);
     }
   });
 

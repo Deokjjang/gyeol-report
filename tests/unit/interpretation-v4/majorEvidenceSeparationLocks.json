@@ -1,12 +1,12 @@
 {
-  "base": "1bfe836f76d3384de27ae3e3f4e99aa0017339a2",
+  "base": "4e8deb242f78310ff9bc3fbcba4fb364a48503e4",
   "rows": {
     "01-business": {
-      "frozen": "2e9f71a12ddf36f1196c3ee8a306bac79b79cc2e800bdc21f9292a985489280f",
+      "frozen": "ffc532f6be8bfa197ebe48d8657b4700a464f861d71d137f0c6f49e8295e6a5e",
       "blocks": {
         "big-flow": {
-          "length": 144,
-          "text": "8e0141e231b7d92464adf33bbe71fa24d1829e0d4001e77e4249f1186e42edd4",
+          "length": 165,
+          "text": "7df9c4cf63c778bb0162ffcaaad012a0a227e3aa425b08df568d8b042a9b326c",
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "first-gift": {
@@ -15,19 +15,19 @@
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "core-why-sinsal_gwimun": {
-          "length": 83,
-          "text": "bd68a0cf51787749b7c063a8e652435c113949b90c5a47e51dc6ed72defafd60",
+          "length": 110,
+          "text": "ff4a15cfa6cc61b52fc815519c028bef23d31c9dc652ebcae8cd849136141e60",
           "proof": "d1e18a7fddec8dbdfcf01f751d76f23b096936e5a1bd4643d351265f00896cea"
         },
         "core-synthesis-INFJ:helping_profession_fit": {
-          "length": 160,
-          "text": "7ecf8d0dd084df7cc0496eec6dd553bc640829abc1c5683b328ce0ec2d21aef1",
+          "length": 209,
+          "text": "1d81d6bb65805f78d055adb841a0a26a145704262f82fae2e13a7bf478bad47a",
           "proof": "a68b6592089f2e33d73109f96b8782f435a76f267c0b027ba6834290dfc72389"
         },
         "next-boundary": {
-          "length": 152,
-          "text": "59d03b3949ab5cf6c8f5a4edc8006a77f9b68ce4bfdff9b256f1b3e283a3839f",
-          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+          "length": 163,
+          "text": "441a5e706cba13852cc93b80b092bd8269d1f41d9b27c68e9f2fb7eb474d323b",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
         },
         "natal-strength": {
           "length": 66,
@@ -40,13 +40,13 @@
           "proof": "b096512409c031587f60d8c1d0b5b4b5ea5b96957d20ec85ed00bdd19330add3"
         },
         "current-setting": {
-          "length": 186,
-          "text": "386f4c415e59d3d4cca64af06f972b1b7625bb5b18f2129737db3b87a23414c1",
+          "length": 253,
+          "text": "46373f93bc5d353e162b838bb5753a0a871c2a2aca9b2923255c092b002f9494",
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "current-context-why-ten_god_zheng_yin": {
-          "length": 77,
-          "text": "97d71e7e9c760cfac792f694ab9ce2c5831afa7a03687fd7c7489b31d69a8db3",
+          "length": 116,
+          "text": "276d35b07827161d7f59c3a8d36b16bb943bf3fb52e7c33335a8608490c0c9a3",
           "proof": "cf664eb33e30cd86703a53d01bd96a43ae4a05afbe68448320e0a2091fae96c1"
         },
         "current-context-why-gwiin_cheoneul": {
@@ -85,8 +85,8 @@
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "relationships-why-ten_god_shang_guan": {
-          "length": 70,
-          "text": "6fbd1e5101e130ab2795b39782dcdf572bf2e29f84a7b2a7bea4dc3352f16a26",
+          "length": 107,
+          "text": "bdde9f312e3a4d4becd7bad2646614d8681d85b0648289f693593ac3b947cdd9",
           "proof": "d97718d53ec916d5a965b8a292a7d6d307142322c89000ce6eb5bb9a25f16ead"
         },
         "element-life": {
@@ -105,13 +105,13 @@
           "proof": "42c6ba739e5cc1dc78bea13fdc3ce62316b5678c775caada80f2314c33b759d7"
         },
         "next-work": {
-          "length": 111,
-          "text": "cfac3532ab2ae9a311d30671fb0a4e66608af4ec6e9507e0b386fc2be5db3417",
-          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+          "length": 183,
+          "text": "f57a70b5a9f1ed0dc68309e0ec3b6a0db9c893d7bb1ff1de940b40670ca2395a",
+          "proof": "4143e391dee274f42a66c649de67dc22d7f3624c401f6fcc2cfc0843f1afe7e0"
         },
         "next-cycle-why-ten_god_zheng_cai": {
-          "length": 72,
-          "text": "4a4951785b868f3665dd477c03d83c89a9781d7c0c75e86719f84f44c451d4f0",
+          "length": 112,
+          "text": "94ce4b2191824d21affa71a7882b804c67f1a5a5d4a79c7624cba6845bec5fda",
           "proof": "485a761664e54aabc637e0bf5734ee40fe2da3e72a4a5def6316fc5bff98c538"
         },
         "next-cycle-why-twelve_sinsal_banan": {
@@ -135,8 +135,8 @@
           "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
         },
         "next-cycle-synthesis-INFJ:meaning_first_income_risk": {
-          "length": 176,
-          "text": "9a2f34698d0dba83a46e822d3982e8852a970b141a0d0846c77295ab56fb9304",
+          "length": 227,
+          "text": "59b7088d8b0edbc9d50efe037999b964416403a596640becf2d1af575fc1553a",
           "proof": "32522268d406caab3a6bf5e5838958d34d81e8b0d58b430078b895756f10ccf4"
         },
         "year-2026-natal-response": {
@@ -152,11 +152,11 @@
       }
     },
     "02-employee": {
-      "frozen": "84b801e69968bed7205cdbd04651a46f9fb9569e5eb8f7553de44190a4079c92",
+      "frozen": "975d59e600a7c35176969efc26824700f9deb50ad4a3b2d022546611390f2d78",
       "blocks": {
         "big-flow": {
-          "length": 143,
-          "text": "476c55e657a4d0c8ba0384efc51baa397bffc841d0cf4b76c222454d83ae92c4",
+          "length": 164,
+          "text": "d9945dcb60de5619331d100fa39a2402d3a3763a9ba339199216d523c6af0e5e",
           "proof": "6b4ab5d407e3c8f12b690f14a8a4c1c7666dcf53f862c5cce529c0ad0cee29a8"
         },
         "first-gift": {
@@ -165,19 +165,19 @@
           "proof": "6b4ab5d407e3c8f12b690f14a8a4c1c7666dcf53f862c5cce529c0ad0cee29a8"
         },
         "core-why-sinsal_hyeonchim": {
-          "length": 73,
-          "text": "23b07befea97ba2b266c52cb991f9f12984a19735dd6aa3f6fc135f1b5469fe7",
+          "length": 99,
+          "text": "db14e7fdef1144c5c1508a403fd1612593fada9c6d1284b03b435be9fb32af73",
           "proof": "3d8fa0649ba58189aaccd95ba55775a36be989940fafb48132888ce8a81afff9"
         },
         "core-synthesis-ENTJ:executive_natural_habitat": {
-          "length": 132,
-          "text": "2a714a6621645a23d35c65907c3ab9a4f5b2bd9d4dba46b029cf189ccbfe9505",
+          "length": 179,
+          "text": "1d2a7b1d54816b6da2da2e348c6b8fca316b1f7661cde0afc7f3994c3cbb07bc",
           "proof": "ab7a1803784a03cf4dee2ff128f485b70ff4f7673efa344e6df4df10344e1ba4"
         },
         "next-boundary": {
-          "length": 141,
-          "text": "0bc85c182b1d07b7a6f1463d2b1a7245d74da023d65db6b7fd03ad51e66126dd",
-          "proof": "6b4ab5d407e3c8f12b690f14a8a4c1c7666dcf53f862c5cce529c0ad0cee29a8"
+          "length": 152,
+          "text": "449e4010309da04899402854564eda94302e609ce117aa05a3010943802934de",
+          "proof": "0b378ad0c704dbe4e185b1adf8652f9b15ea515179364ae240fb903ca8a98f2a"
         },
         "natal-strength": {
           "length": 65,
@@ -190,13 +190,13 @@
           "proof": "2f1a7f45c9781a92dce70c91e6477531f81dcd8981c3dfca94fe2c76986e9f3f"
         },
         "current-setting": {
-          "length": 177,
-          "text": "e708451e2f2f2de8e58fa940d56e34e1692a334342ba7d3493cbbbca4de85e00",
+          "length": 246,
+          "text": "2eada55d7de81823dc92835a73d48ca6ab4ad46ce942a9d32fd22295fe209030",
           "proof": "6b4ab5d407e3c8f12b690f14a8a4c1c7666dcf53f862c5cce529c0ad0cee29a8"
         },
         "current-context-why-ten_god_qi_sha": {
-          "length": 70,
-          "text": "72a76b72c131a2cff9aa2141bf25f5abc9d6ff3a2f6ddeaaa842357404a79c3d",
+          "length": 109,
+          "text": "0bb49474da4a0219a7a110a015bda34e1f8c8f6dc09b2fe31b12fab4d579a675",
           "proof": "319327c58190cd71a92b1d9ba38b23ca4404ed793b6b419a93f64b60362655f2"
         },
         "current-context-why-gwiin_cheoneul": {
@@ -210,8 +210,8 @@
           "proof": "6b4ab5d407e3c8f12b690f14a8a4c1c7666dcf53f862c5cce529c0ad0cee29a8"
         },
         "current-context-synthesis-entj-pressure": {
-          "length": 100,
-          "text": "1fc3f0dcc9c06c8ff797fd8314181d5b225bc7bb34a43974a4826544e1fa5ceb",
+          "length": 143,
+          "text": "6175210f6e6122f98c2cd57e1b30b1bc1a06c39cc714104dbc4595151f46329b",
           "proof": "d3cd96035e0c1a4f79507cf1e4d7a6ffb7bff8fe48b862afa3fb61b2e3aacf72"
         },
         "current-context-manifest-ten_god_qi_sha": {
@@ -240,8 +240,8 @@
           "proof": "6b4ab5d407e3c8f12b690f14a8a4c1c7666dcf53f862c5cce529c0ad0cee29a8"
         },
         "relationships-why-ten_god_shang_guan": {
-          "length": 70,
-          "text": "6fbd1e5101e130ab2795b39782dcdf572bf2e29f84a7b2a7bea4dc3352f16a26",
+          "length": 107,
+          "text": "bdde9f312e3a4d4becd7bad2646614d8681d85b0648289f693593ac3b947cdd9",
           "proof": "d97718d53ec916d5a965b8a292a7d6d307142322c89000ce6eb5bb9a25f16ead"
         },
         "relationships-why-gwiin_cheondeok": {
@@ -265,13 +265,13 @@
           "proof": "f2d1eadf632fcec87702f81fc08428d5246cce0d969dfaf10f84673300d2ec5d"
         },
         "next-work": {
-          "length": 95,
-          "text": "b2878a291d627d5540244ff335c7e70baa365f6fb517cb4d040805ad4907acaf",
-          "proof": "bbb6e7af4cba0ef2c195c25e18cfb73bd06196fbf6c95086933423535e51f3ee"
+          "length": 162,
+          "text": "7d0e889ff5e03651e20e29b869f4445892c5e870d67e2415132d5030f18921e4",
+          "proof": "e8e25c17ea8ffc7a78f111658e53ecd4078daa275302a86703d616e5e87c1a8e"
         },
         "next-cycle-why-ten_god_zheng_cai": {
-          "length": 72,
-          "text": "4a4951785b868f3665dd477c03d83c89a9781d7c0c75e86719f84f44c451d4f0",
+          "length": 112,
+          "text": "94ce4b2191824d21affa71a7882b804c67f1a5a5d4a79c7624cba6845bec5fda",
           "proof": "485a761664e54aabc637e0bf5734ee40fe2da3e72a4a5def6316fc5bff98c538"
         },
         "next-cycle-why-gwiin_woldeok": {
@@ -295,8 +295,8 @@
           "proof": "bbb6e7af4cba0ef2c195c25e18cfb73bd06196fbf6c95086933423535e51f3ee"
         },
         "next-cycle-synthesis-entj-wealth": {
-          "length": 102,
-          "text": "fb761b1e663914f305eddfc0ce363419a3aa65d1765723dd79b58c86ade9151d",
+          "length": 153,
+          "text": "ddbef76f0583733821f944817bd9e5ca5702559d7ba318f902af70318028cff7",
           "proof": "8394b3ce9eb28dc9a70c40e2d9eb5e12bbd55d85d162ae81ce7f428492139697"
         },
         "year-2030-natal-response": {
@@ -307,11 +307,11 @@
       }
     },
     "03-freelance": {
-      "frozen": "17c83c12452a03d4c2260eae2eee86568754648957289c5164f780657072f71c",
+      "frozen": "519a1615a8470eb16f005db27e172e6133b1cf76b47375e93c3ca9628e6008c0",
       "blocks": {
         "big-flow": {
-          "length": 134,
-          "text": "89e6ce5814bfa0e1c10772eeda3b08bc806b2a41fa2ff26a5e09bdb490687eda",
+          "length": 155,
+          "text": "5a47385cade61a261205dfd111d87a101d2307d6b748663901c15f5cd4682ac5",
           "proof": "c37de7bbbe0d0a0aed5d2b4967f0be4f1df968635a977dc835fdc7c406e78cb6"
         },
         "first-gift": {
@@ -320,19 +320,19 @@
           "proof": "c37de7bbbe0d0a0aed5d2b4967f0be4f1df968635a977dc835fdc7c406e78cb6"
         },
         "core-why-ten_god_pian_yin": {
-          "length": 73,
-          "text": "96bad6cb4e4d640176d3af99368e5551f07f64e9a349e93ab19dc4f5d3ea99b6",
+          "length": 98,
+          "text": "4cc67f2cb082c5c0b65899cdcffc613d8a81af6d9b45669501e45252c6b65739",
           "proof": "a1656f845b838ab4dc1b346c1478e33f9fe2e98a369464afd8fb411ea305ed43"
         },
         "core-synthesis-ENFP:counseling_fit": {
-          "length": 142,
-          "text": "6537ffe7736ff95656dcbec4eef8e8d3261d55ec3c66386c3e1de74d7e557f7d",
+          "length": 189,
+          "text": "3bc721f31d2ac12baf2dc5d5b7bccdf5a6fc1cb981ea2933aec77a7f9b1c0237",
           "proof": "485f53f499281809044fbbbee5c0f3d69c77496343179be0c50927e5a4861bcf"
         },
         "next-boundary": {
-          "length": 142,
-          "text": "9a1bf7f1c98542ff9d1647985b154726ecc7dd358cc8161888e71a4e25687a2b",
-          "proof": "c37de7bbbe0d0a0aed5d2b4967f0be4f1df968635a977dc835fdc7c406e78cb6"
+          "length": 153,
+          "text": "4a73a5fbf50051f0934108ab92e3cef2af6d2cce8f370e1a68de7abab51360d0",
+          "proof": "3d4cd7b9290b026f0fa0280f96a52c6c085ebb681572a8b38ece29101e170a15"
         },
         "natal-strength": {
           "length": 74,
@@ -345,13 +345,13 @@
           "proof": "04a06a6e3b08da6b6addb662c10d01ed9084f1c048690518f27215bce654baf7"
         },
         "current-setting": {
-          "length": 186,
-          "text": "7718399f9f31f704fff56af744251dd4c204856e4d49ec8c4d0b39b6827de70b",
+          "length": 250,
+          "text": "94e2d0b4a9f7e057806b699416c3e3ebec2bdd29e12e59cbcca0b8f80817bb62",
           "proof": "c37de7bbbe0d0a0aed5d2b4967f0be4f1df968635a977dc835fdc7c406e78cb6"
         },
         "current-context-why-ten_god_bijian": {
-          "length": 67,
-          "text": "561e8c1d7a8e22eff477bfc724dee7d321dd748259a6732f2862cc77b7c71668",
+          "length": 106,
+          "text": "e67de0806c759154f0b207427baf51739e6018500fd6cc24cb50acb009538c56",
           "proof": "e49a4d500e6c2cc164ab756dd1bcfaf461480b15cdbe0351137d46753fb95f1e"
         },
         "current-context-why-gwiin_jaego": {
@@ -390,8 +390,8 @@
           "proof": "c37de7bbbe0d0a0aed5d2b4967f0be4f1df968635a977dc835fdc7c406e78cb6"
         },
         "relationships-why-ten_god_zheng_guan": {
-          "length": 79,
-          "text": "35096f5c330ecef029a1f48b31f271f19b9068fd6b3389fd7fc4e02feced08e5",
+          "length": 116,
+          "text": "da4da2424caf657bfe0993369490c7fb1df669e2f02516408b46d14af9298eec",
           "proof": "5d3a263a1a27babe01b7efc5e2eccb797c0274ff820610cbe28b2a2007f9b5c3"
         },
         "relationships-why-gwiin_cheondeok": {
@@ -415,13 +415,13 @@
           "proof": "e37f574a07c89bbc5b16fb5d134df417db9e4f082d5ac447a66984a27a5d5619"
         },
         "next-work": {
-          "length": 115,
-          "text": "56fb1790b8937ed2f69c1e990a9f11be7883bf21e590bc1373548d6bb44047e3",
-          "proof": "a381bb8d0084ee25cb20301cce6f4248d8c38c4ceda3f6a93a9128695981cd6d"
+          "length": 184,
+          "text": "430c46712fd3a7463dda645de126dc6f04a7ed4916996477b14c4e8544537c7a",
+          "proof": "5d91a6c2a441f49efa539af52f1869778ea973433016aa72ff0465c926c3b80b"
         },
         "next-cycle-why-ten_god_qi_sha": {
-          "length": 70,
-          "text": "72a76b72c131a2cff9aa2141bf25f5abc9d6ff3a2f6ddeaaa842357404a79c3d",
+          "length": 110,
+          "text": "d62d1e8ddcf70ff467053d308d37e53b86f7e23378fcfdf4668c7a42a5138d12",
           "proof": "319327c58190cd71a92b1d9ba38b23ca4404ed793b6b419a93f64b60362655f2"
         },
         "next-cycle-why-gwiin_munchang": {
@@ -445,8 +445,8 @@
           "proof": "a381bb8d0084ee25cb20301cce6f4248d8c38c4ceda3f6a93a9128695981cd6d"
         },
         "next-cycle-synthesis-ENFP:experience_spending": {
-          "length": 163,
-          "text": "2b31094b5af7d514f79b2d6f5ce82e6182996eeec82df5e7fd62662f1ea45173",
+          "length": 214,
+          "text": "ceb933fb3b5ba906aba17efeb415d4212f0127476a78dd3123e84ee04307e1f6",
           "proof": "d900ed853eed97babba7e018087e9f220933a86ca8540c334a603b57a10b142a"
         },
         "year-2026-natal-response": {
@@ -457,11 +457,11 @@
       }
     },
     "04-time-unknown": {
-      "frozen": "b94823ea34ee954fb8c15151d2df0aea126a653094706da5ce86670d0707a9dc",
+      "frozen": "8be0cb81bd2f9c0166f81205ac10146a144069fdf7515db216be97543f7d6059",
       "blocks": {
         "big-flow": {
-          "length": 144,
-          "text": "8e0141e231b7d92464adf33bbe71fa24d1829e0d4001e77e4249f1186e42edd4",
+          "length": 165,
+          "text": "7df9c4cf63c778bb0162ffcaaad012a0a227e3aa425b08df568d8b042a9b326c",
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "first-gift": {
@@ -470,19 +470,19 @@
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "core-why-sinsal_gwimun": {
-          "length": 83,
-          "text": "bd68a0cf51787749b7c063a8e652435c113949b90c5a47e51dc6ed72defafd60",
+          "length": 110,
+          "text": "ff4a15cfa6cc61b52fc815519c028bef23d31c9dc652ebcae8cd849136141e60",
           "proof": "d1e18a7fddec8dbdfcf01f751d76f23b096936e5a1bd4643d351265f00896cea"
         },
         "core-synthesis-INFJ:helping_profession_fit": {
-          "length": 160,
-          "text": "7ecf8d0dd084df7cc0496eec6dd553bc640829abc1c5683b328ce0ec2d21aef1",
+          "length": 209,
+          "text": "1d81d6bb65805f78d055adb841a0a26a145704262f82fae2e13a7bf478bad47a",
           "proof": "a68b6592089f2e33d73109f96b8782f435a76f267c0b027ba6834290dfc72389"
         },
         "next-boundary": {
-          "length": 151,
-          "text": "ed215c98f5a93292e3b76a77b97d29dfb89510f05661a6b4e458f769814c83d8",
-          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+          "length": 162,
+          "text": "c67c87cd47861dbc9cfcbd6e77962a6a3dace2fe1596b8034da3cb27a8d47be4",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
         },
         "natal-strength": {
           "length": 66,
@@ -495,13 +495,13 @@
           "proof": "83c502f3c99cb39f96943cc491e481c958ef4a88f28d9d9c01d7705629379a7d"
         },
         "current-setting": {
-          "length": 186,
-          "text": "386f4c415e59d3d4cca64af06f972b1b7625bb5b18f2129737db3b87a23414c1",
+          "length": 253,
+          "text": "46373f93bc5d353e162b838bb5753a0a871c2a2aca9b2923255c092b002f9494",
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "current-context-why-ten_god_shi_shen": {
-          "length": 76,
-          "text": "5f05c6a92f841215a3165f9437b93c8f2310cbbd7d3a4d857884f0fb33d2afb3",
+          "length": 115,
+          "text": "7d2226884929a01bde1c0fb97c4e802232ba4e0d9685e2b0fdb271a709f7bec8",
           "proof": "232434703e29041fd9a589cd2e17888eff526b0630feacbd7c5d5cf9de3d306b"
         },
         "current-context-why-gwiin_cheoneul": {
@@ -540,8 +540,8 @@
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "relationships-why-ten_god_shang_guan": {
-          "length": 70,
-          "text": "6fbd1e5101e130ab2795b39782dcdf572bf2e29f84a7b2a7bea4dc3352f16a26",
+          "length": 107,
+          "text": "bdde9f312e3a4d4becd7bad2646614d8681d85b0648289f693593ac3b947cdd9",
           "proof": "d97718d53ec916d5a965b8a292a7d6d307142322c89000ce6eb5bb9a25f16ead"
         },
         "element-life": {
@@ -560,13 +560,13 @@
           "proof": "42c6ba739e5cc1dc78bea13fdc3ce62316b5678c775caada80f2314c33b759d7"
         },
         "next-work": {
-          "length": 111,
-          "text": "cfac3532ab2ae9a311d30671fb0a4e66608af4ec6e9507e0b386fc2be5db3417",
-          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+          "length": 183,
+          "text": "f57a70b5a9f1ed0dc68309e0ec3b6a0db9c893d7bb1ff1de940b40670ca2395a",
+          "proof": "4143e391dee274f42a66c649de67dc22d7f3624c401f6fcc2cfc0843f1afe7e0"
         },
         "next-cycle-why-ten_god_zheng_cai": {
-          "length": 72,
-          "text": "4a4951785b868f3665dd477c03d83c89a9781d7c0c75e86719f84f44c451d4f0",
+          "length": 112,
+          "text": "94ce4b2191824d21affa71a7882b804c67f1a5a5d4a79c7624cba6845bec5fda",
           "proof": "485a761664e54aabc637e0bf5734ee40fe2da3e72a4a5def6316fc5bff98c538"
         },
         "next-cycle-why-twelve_sinsal_banan": {
@@ -590,8 +590,8 @@
           "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
         },
         "next-cycle-synthesis-INFJ:meaning_first_income_risk": {
-          "length": 176,
-          "text": "9a2f34698d0dba83a46e822d3982e8852a970b141a0d0846c77295ab56fb9304",
+          "length": 227,
+          "text": "59b7088d8b0edbc9d50efe037999b964416403a596640becf2d1af575fc1553a",
           "proof": "32522268d406caab3a6bf5e5838958d34d81e8b0d58b430078b895756f10ccf4"
         },
         "year-2026-natal-response": {
@@ -607,11 +607,11 @@
       }
     },
     "05-mbti-unknown": {
-      "frozen": "c4899fc2c98120ccf5c164ccd4c9e8a8b8d2ad2ba7240cd1ed20fc95257d4fe8",
+      "frozen": "e4db60ead95ac3c569338da41e7bdac3448525d4c1e5e81b0b920db15f6a7766",
       "blocks": {
         "big-flow": {
-          "length": 144,
-          "text": "8e0141e231b7d92464adf33bbe71fa24d1829e0d4001e77e4249f1186e42edd4",
+          "length": 165,
+          "text": "7df9c4cf63c778bb0162ffcaaad012a0a227e3aa425b08df568d8b042a9b326c",
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "first-gift": {
@@ -620,14 +620,14 @@
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "core-why-day_pillar_gyeongja": {
-          "length": 70,
-          "text": "e25f03497c341ef2fb0035a76b2a28e09673b24b81a1b2391f1af6bda1aea862",
+          "length": 97,
+          "text": "63afe8fb25909c6f85963f26b524c15bed825953a78730201dc83ecbf5470a2e",
           "proof": "987526782f0875412842b2e50fd9622bb4ac5ddba8dbc3b1ff3a39266b2037b5"
         },
         "next-boundary": {
-          "length": 152,
-          "text": "59d03b3949ab5cf6c8f5a4edc8006a77f9b68ce4bfdff9b256f1b3e283a3839f",
-          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+          "length": 163,
+          "text": "441a5e706cba13852cc93b80b092bd8269d1f41d9b27c68e9f2fb7eb474d323b",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
         },
         "natal-strength": {
           "length": 66,
@@ -640,13 +640,13 @@
           "proof": "b096512409c031587f60d8c1d0b5b4b5ea5b96957d20ec85ed00bdd19330add3"
         },
         "current-setting": {
-          "length": 186,
-          "text": "386f4c415e59d3d4cca64af06f972b1b7625bb5b18f2129737db3b87a23414c1",
+          "length": 253,
+          "text": "46373f93bc5d353e162b838bb5753a0a871c2a2aca9b2923255c092b002f9494",
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "current-context-why-ten_god_zheng_yin": {
-          "length": 77,
-          "text": "97d71e7e9c760cfac792f694ab9ce2c5831afa7a03687fd7c7489b31d69a8db3",
+          "length": 116,
+          "text": "276d35b07827161d7f59c3a8d36b16bb943bf3fb52e7c33335a8608490c0c9a3",
           "proof": "cf664eb33e30cd86703a53d01bd96a43ae4a05afbe68448320e0a2091fae96c1"
         },
         "current-context-why-gwiin_cheoneul": {
@@ -680,8 +680,8 @@
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "relationships-why-ten_god_shang_guan": {
-          "length": 70,
-          "text": "6fbd1e5101e130ab2795b39782dcdf572bf2e29f84a7b2a7bea4dc3352f16a26",
+          "length": 107,
+          "text": "bdde9f312e3a4d4becd7bad2646614d8681d85b0648289f693593ac3b947cdd9",
           "proof": "d97718d53ec916d5a965b8a292a7d6d307142322c89000ce6eb5bb9a25f16ead"
         },
         "relationships-why-sinsal_gwimun": {
@@ -705,13 +705,13 @@
           "proof": "d4c28d5077b775c6b28f186ce070006b563f50f0ebb8522d5524cb0268733da2"
         },
         "next-work": {
-          "length": 111,
-          "text": "cfac3532ab2ae9a311d30671fb0a4e66608af4ec6e9507e0b386fc2be5db3417",
-          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+          "length": 183,
+          "text": "f57a70b5a9f1ed0dc68309e0ec3b6a0db9c893d7bb1ff1de940b40670ca2395a",
+          "proof": "4143e391dee274f42a66c649de67dc22d7f3624c401f6fcc2cfc0843f1afe7e0"
         },
         "next-cycle-why-ten_god_zheng_cai": {
-          "length": 72,
-          "text": "4a4951785b868f3665dd477c03d83c89a9781d7c0c75e86719f84f44c451d4f0",
+          "length": 112,
+          "text": "94ce4b2191824d21affa71a7882b804c67f1a5a5d4a79c7624cba6845bec5fda",
           "proof": "485a761664e54aabc637e0bf5734ee40fe2da3e72a4a5def6316fc5bff98c538"
         },
         "next-cycle-why-twelve_sinsal_banan": {
@@ -742,11 +742,11 @@
       }
     },
     "06-both-unknown": {
-      "frozen": "d2d589fe4d7de0a4c39d35838b44476d3dc0f0454d9b2535e72978e2ce4d0572",
+      "frozen": "602e1a50b541da267119847a367181a970eb945f75ac4b52a99efa0498b12daa",
       "blocks": {
         "big-flow": {
-          "length": 144,
-          "text": "8e0141e231b7d92464adf33bbe71fa24d1829e0d4001e77e4249f1186e42edd4",
+          "length": 165,
+          "text": "7df9c4cf63c778bb0162ffcaaad012a0a227e3aa425b08df568d8b042a9b326c",
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "first-gift": {
@@ -755,14 +755,14 @@
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "core-why-day_pillar_gyeongja": {
-          "length": 70,
-          "text": "e25f03497c341ef2fb0035a76b2a28e09673b24b81a1b2391f1af6bda1aea862",
+          "length": 97,
+          "text": "63afe8fb25909c6f85963f26b524c15bed825953a78730201dc83ecbf5470a2e",
           "proof": "987526782f0875412842b2e50fd9622bb4ac5ddba8dbc3b1ff3a39266b2037b5"
         },
         "next-boundary": {
-          "length": 151,
-          "text": "ed215c98f5a93292e3b76a77b97d29dfb89510f05661a6b4e458f769814c83d8",
-          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+          "length": 162,
+          "text": "c67c87cd47861dbc9cfcbd6e77962a6a3dace2fe1596b8034da3cb27a8d47be4",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
         },
         "natal-strength": {
           "length": 66,
@@ -775,13 +775,13 @@
           "proof": "b1c597c86e2cd76224c23b7367d099b92c4a80b959a0720fa4c5b7b575cf1169"
         },
         "current-setting": {
-          "length": 186,
-          "text": "386f4c415e59d3d4cca64af06f972b1b7625bb5b18f2129737db3b87a23414c1",
+          "length": 253,
+          "text": "46373f93bc5d353e162b838bb5753a0a871c2a2aca9b2923255c092b002f9494",
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "current-context-why-ten_god_shi_shen": {
-          "length": 76,
-          "text": "5f05c6a92f841215a3165f9437b93c8f2310cbbd7d3a4d857884f0fb33d2afb3",
+          "length": 115,
+          "text": "7d2226884929a01bde1c0fb97c4e802232ba4e0d9685e2b0fdb271a709f7bec8",
           "proof": "232434703e29041fd9a589cd2e17888eff526b0630feacbd7c5d5cf9de3d306b"
         },
         "current-context-why-gwiin_cheoneul": {
@@ -815,8 +815,8 @@
           "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
         },
         "relationships-why-ten_god_shang_guan": {
-          "length": 70,
-          "text": "6fbd1e5101e130ab2795b39782dcdf572bf2e29f84a7b2a7bea4dc3352f16a26",
+          "length": 107,
+          "text": "bdde9f312e3a4d4becd7bad2646614d8681d85b0648289f693593ac3b947cdd9",
           "proof": "d97718d53ec916d5a965b8a292a7d6d307142322c89000ce6eb5bb9a25f16ead"
         },
         "relationships-why-sinsal_gwimun": {
@@ -840,13 +840,13 @@
           "proof": "d4c28d5077b775c6b28f186ce070006b563f50f0ebb8522d5524cb0268733da2"
         },
         "next-work": {
-          "length": 111,
-          "text": "cfac3532ab2ae9a311d30671fb0a4e66608af4ec6e9507e0b386fc2be5db3417",
-          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+          "length": 183,
+          "text": "f57a70b5a9f1ed0dc68309e0ec3b6a0db9c893d7bb1ff1de940b40670ca2395a",
+          "proof": "4143e391dee274f42a66c649de67dc22d7f3624c401f6fcc2cfc0843f1afe7e0"
         },
         "next-cycle-why-ten_god_zheng_cai": {
-          "length": 72,
-          "text": "4a4951785b868f3665dd477c03d83c89a9781d7c0c75e86719f84f44c451d4f0",
+          "length": 112,
+          "text": "94ce4b2191824d21affa71a7882b804c67f1a5a5d4a79c7624cba6845bec5fda",
           "proof": "485a761664e54aabc637e0bf5734ee40fe2da3e72a4a5def6316fc5bff98c538"
         },
         "next-cycle-why-twelve_sinsal_banan": {
@@ -872,5 +872,6 @@
       }
     }
   },
-  "revision": "major-personalization-01"
+  "revision": "v4-major-fortune-reader-quality-polish-01",
+  "previousBase": "1bfe836f76d3384de27ae3e3f4e99aa0017339a2"
 }

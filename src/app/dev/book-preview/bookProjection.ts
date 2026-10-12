@@ -1,4 +1,5 @@
 import "server-only";
+import { majorYearPeriod } from "../../../lib/interpretation-v4/majorPeriodCopy";
 import { projectV4Composition, projectV4Tables, validateV4Publication, type V4RuntimeEvidence } from "../../../lib/interpretation-v4/runtimeProjection";
 import { buildV4Evidence, evaluateEvidence } from "../../../lib/interpretation-v4/evidencePolicy";
 import { canonicalV4Feature, MATERIAL_BY_FEATURE } from "../../../lib/interpretation-v4/materialRegistry";
@@ -153,7 +154,9 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
     if (c.product === "major_fortune") {
       const year = c.result.years.find(y => section.id === `year-${y.year}`);
       if (year) {
-        extra.push({ name: `${year.year}년 · ${year.annual.tenGod}`, text: `${year.annual.ganji} 세운 · ${year.cycle.ganji} 대운 · ${year.protagonist}` });
+        // Existing saved manuscripts retain their original Book presentation.
+        const period = year.blocks.some(b => b.proof.sourceRefs.includes("v4:major-reader-periods-01")) ? majorYearPeriod(c.result.evidence, year) : null;
+        extra.push({ name: period?.label ? `${year.annual.ganji} 세운` : `${year.year}년 · ${year.annual.tenGod}`, text: `${year.annual.ganji} 세운 · ${period?.cycle ?? year.cycle.ganji} 대운 · ${year.protagonist}${period?.label ? ` · ${period.label} · 아래 관계는 전환 완료 뒤 기간` : ""}` });
         for (const r of [year.selectedRelation.harmony, year.selectedRelation.tension]) if (r) extra.push({ name: `${r.branches.join("")} ${r.type}`, text: r.plain });
       }
       const transition = c.result.transitions.find(t => section.id === `transition-${t.year}`);
@@ -184,9 +187,13 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
   }
   if (c.product === "major_fortune") {
     const timeline = pages.find(p => p.kind === "timeline")! as Extract<BookPage, { kind: "timeline" }>;
-    timeline.years = c.result.years.map(y => ({ year: y.year, age: y.age, cycle: y.cycle.ganji, annual: y.annual.ganji,
-      theme: y.protagonist, good: y.goodTheme, caution: y.cautionTheme, title: y.title, time: timeLabel[y.timePosition], page: sectionPages.get(`year-${y.year}`)!,
-      importance: y.importance, transition: c.result.transitions.find(t => t.year === y.year) ? friendlyTransition(c.result.transitions.find(t => t.year === y.year)!.dateLabel) : null }));
+    timeline.years = c.result.years.map(y => {
+      const t = c.result.transitions.find(t => t.year === y.year);
+      const period = y.blocks.some(b => b.proof.sourceRefs.includes("v4:major-reader-periods-01")) ? majorYearPeriod(c.result.evidence, y) : null;
+      return { year: y.year, age: y.age, cycle: period?.cycle ?? y.cycle.ganji, annual: y.annual.ganji,
+        theme: y.protagonist, good: y.goodTheme, caution: y.cautionTheme, title: y.title, time: timeLabel[y.timePosition], page: sectionPages.get(`year-${y.year}`)!,
+        importance: y.importance, transition: period?.label || (t ? friendlyTransition(t.dateLabel) : null) };
+    });
     timeline.transitions = c.result.transitions.map(t => ({ date: friendlyTransition(t.dateLabel), exact: t.dateLabel, before: t.before.ganji, after: t.after.ganji, page: sectionPages.get(`transition-${t.year}`)! }));
   }
   if (c.product === "annual_fortune") {
