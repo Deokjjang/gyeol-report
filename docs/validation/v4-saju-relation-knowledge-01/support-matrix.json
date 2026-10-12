@@ -1,0 +1,272 @@
+[
+  {
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "id": "natal",
+    "definition": "한 사람의 확정된 원국 안의 서로 다른 기둥 자리. 원생 관계와 원진살 투영을 구별한다.",
+    "supported": [
+      "stem_hap",
+      "yukhap",
+      "chung",
+      "wonjin"
+    ],
+    "unsupported": [
+      "samhap",
+      "hyeong",
+      "hae",
+      "banhap",
+      "pa"
+    ],
+    "producers": [
+      {
+        "path": "src/lib/saju/relations.ts",
+        "symbol": "analyzeRelations",
+        "behavior": "모든 실제 기둥쌍에서 천간합·육합·충만 검출. 인접성·합화·강도 판정 없음."
+      },
+      {
+        "path": "src/lib/report-knowledge/sajuComputedFeatureExtractor.ts",
+        "symbol": "hasPair / extract",
+        "behavior": "정규화 원국 branches에서 원진6쌍의 존재를 특징으로 검출. 실제 일치쌍을 반환하지 않는다."
+      },
+      {
+        "path": "src/lib/interpretation-v4/foundationSupplement.ts",
+        "symbol": "WONJIN_MATCHED_PAIR_NOT_EXPOSED",
+        "behavior": "원진살을 원진 관계에 투영하고 동일 원진살 marker를 별도 중복 출력에서 제외한다."
+      }
+    ],
+    "positions": "연·월·일·시의 실제 위치를 보존. 미상 시주는 없음으로 확정하지 않으며 새 시주를 넣지 않는다.",
+    "multiplicity": "원생 쌍의 위치별 존재와 의미의 독립성은 다르다. 원진 투영은 일치쌍 추정 금지.",
+    "timeBoundary": "출생 구조의 존재 사실이며 세운의 연도나 월운의 구간을 원국 성향으로 옮기지 않는다.",
+    "doNotTransfer": [
+      "삼합·반합·형·파·해의 의미 레지스트리 존재를 원국 producer 지원으로 취급하지 않는다.",
+      "원진살·원진 관계를 두 개의 독립 증거로 합산하지 않는다."
+    ],
+    "handoff": [
+      "원생·특징·투영의 생산자 종류를 구별할 것.",
+      "추후 근거 연결은 실제 위치·쌍 노출이 있는지부터 검토할 것."
+    ]
+  },
+  {
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "id": "cross_person",
+    "definition": "A와 B 두 원국 사이에 실제 참여 소유자가 분리된 교차 지지 관계.",
+    "supported": [
+      "yukhap",
+      "samhap",
+      "banhap",
+      "chung",
+      "hae"
+    ],
+    "unsupported": [
+      "stem_hap",
+      "hyeong",
+      "pa",
+      "wonjin"
+    ],
+    "producers": [
+      {
+        "path": "src/lib/report-knowledge/compatibilityRelationRules.ts",
+        "symbol": "detectCrossBranchRelations",
+        "behavior": "교차쌍 육합→충→해 검사; 삼합4조합과 반합12쌍은 전체 ref 중 각 지지 첫 ref를 고른 후 owners.size>1 확인."
+      }
+    ],
+    "positions": "A/B 소유자와 연월일시 ref 유지. 두 사람의 원국 내부 관계와 다르다.",
+    "multiplicity": "중복 지지의 첫 ref 선택으로 가능한 다른 교차 배치가 누락될 수 있다. 삼합과 구성 반합이 함께 나타나도 독립 결과로 가산하지 않는다.",
+    "timeBoundary": "출생 구조 간 관계의 존재이며 친밀감·사업 결과·기간 효과의 실측이 아니다.",
+    "doNotTransfer": [
+      "천간합·형·파·원진은 교차 producer 미지원.",
+      "각자의 일간→상대 천간 십성 방향과 대칭 관계를 혼동하지 않는다."
+    ],
+    "handoff": [
+      "학설별 인접·일지 조건은 기존 교차 정책에 자동 반영하지 않을 것.",
+      "현행 첫 ref 한계는 기록만 하고 검출 함수를 변경하지 않을 것."
+    ]
+  },
+  {
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "id": "natal_major",
+    "definition": "확정되거나 범위가 표시된 대운 지지와 그 사람 원국의 관계.",
+    "supported": [
+      "yukhap",
+      "samhap",
+      "banhap",
+      "chung",
+      "hyeong",
+      "hae",
+      "pa"
+    ],
+    "unsupported": [
+      "stem_hap",
+      "wonjin"
+    ],
+    "producers": [
+      {
+        "path": "src/lib/report-knowledge/majorFortuneEvidence.ts",
+        "symbol": "getMajorFortuneBranchInteractions",
+        "behavior": "getAnnualBranchInteractions를 majorBranch와 natalBranches로 재사용한다."
+      },
+      {
+        "path": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+        "symbol": "natalRelations / cycleRelations",
+        "behavior": "대운과 원국의 결과와 세운→대운·세운→원국 결과를 따로 보존한다."
+      },
+      {
+        "path": "src/lib/report-knowledge/majorFortuneEvidence.ts",
+        "symbol": "buildStrongYearsWithinCycle / buildCycleYearTimeline / buildMajorFortuneTimelineRows / buildCurrentAnnualCross",
+        "behavior": "레거시 보조 경로는 natalBranches에 [currentCycle.branch, ...natalBranches]를 전달한다. 실제 배열은 기간+원국 혼합이고 ordinal 위치 표시를 원국 위치로 곧바로 해석할 수 없다. 최신 decadeReading의 분리 경로와 구별한다."
+      }
+    ],
+    "positions": "원국의 위치와 대운의 참여 지지를 분리한다. ordinal natalBranches는 실제 연월일시 순서여야 한다.",
+    "multiplicity": "쌍 관계와 세 지지 전체 그룹의 집결은 다르다. 대운 지지가 빠진 순수 원국 그룹을 대운 관계로 만들지 않는다.",
+    "timeBoundary": "해당 대운의 시작·종료·전환 범위를 따른다. 시간 미상에서 확정하지 못한 전환은 조건부다.",
+    "doNotTransfer": [
+      "기간 지지를 태어난 기둥으로 넣지 않는다.",
+      "천간합·원진·합화는 이 지지 함수의 결과가 아니다."
+    ],
+    "handoff": [
+      "기간별 상호작용 DB는 후속 작업이며 이번 자료는 연결하지 않는다.",
+      "전환 전후의 실효 대운을 구분해야 한다.",
+      "혼합 배열의 결과를 실제 원국 위치·대운 참여자로 재분류하려면 별도 provenance 검증이 필요하다. 이번 작업에서 계산·표시를 수정하지 않는다."
+    ]
+  },
+  {
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "id": "natal_annual",
+    "definition": "해당 세운 지지와 실제 원국 지지의 관계.",
+    "supported": [
+      "yukhap",
+      "samhap",
+      "banhap",
+      "chung",
+      "hyeong",
+      "hae",
+      "pa"
+    ],
+    "unsupported": [
+      "stem_hap",
+      "wonjin"
+    ],
+    "producers": [
+      {
+        "path": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+        "symbol": "getAnnualBranchInteractions",
+        "behavior": "쌍 육합·충·형·해·파와 삼합/반합 그룹을 구분. 삼합은 실제 합집합3지지, 반합은2지지."
+      },
+      {
+        "path": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+        "symbol": "natalRelations",
+        "behavior": "세운과 원국의 관계를 세운과 대운의 관계와 분리한다."
+      }
+    ],
+    "positions": "세운은 기간 참여자, 원국은 target 위치로 보존한다. 원국과 같은 지지가 세운에도 있으면 별개 실제 자리다.",
+    "multiplicity": "자형은 실제 기간 자리와 원국 자리가 같은 지지일 때 성립 가능. 단일 지지 하나를 두 번 세지 않는다.",
+    "timeBoundary": "선택 연도·실제 절기 기준의 적용 구간을 유지하며 달력 연도의 모든 순간과 같다고 간주하지 않는다.",
+    "doNotTransfer": [
+      "세운과 원국의 충을 타고난 원국 충으로 서술하지 않는다.",
+      "천간 십성과 천간합을 혼동하지 않는다."
+    ],
+    "handoff": [
+      "연도별 실제 근거·기간을 후속 검토 시 제공할 것.",
+      "모든 연도에 관계가 있다고 가정하지 않을 것."
+    ]
+  },
+  {
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "id": "natal_month",
+    "definition": "절기 구간의 월운과 원국 사이 관계. 기본 지지 관계와 확장 원진 경로는 다르다.",
+    "supported": [
+      "yukhap",
+      "samhap",
+      "banhap",
+      "chung",
+      "hyeong",
+      "hae",
+      "pa",
+      "wonjin"
+    ],
+    "unsupported": [
+      "stem_hap"
+    ],
+    "producers": [
+      {
+        "path": "src/lib/report-knowledge/annualMonthRelationFacts.ts",
+        "symbol": "monthly relation facts",
+        "behavior": "월지→원국에 연도 관계 함수를 재사용하는 기본 경로."
+      },
+      {
+        "path": "src/lib/report-knowledge/annualMonthJie.ts",
+        "symbol": "segmentFacts",
+        "behavior": "각 절기·연주·대운 전환 구간에서 월지→원국을 계산한다."
+      },
+      {
+        "path": "src/lib/report-knowledge/annualMonthExtendedEvidence.ts",
+        "symbol": "relationPairs.wonjin",
+        "behavior": "월지와 각각의 원국 지지에서 원진6쌍을 확인하고 anchor/target/sourceRefs와 시작·종료를 보존한다."
+      }
+    ],
+    "positions": "월지 anchor와 원국 target 위치를 보존. 원국 원진 투영의 쌍 미노출 한계와 월운 확장 쌍 노출은 서로 다르다.",
+    "multiplicity": "원진의 월별 여러 표시가 같은 원국 기호의 독립 위험을 늘리는 것은 아니다.",
+    "timeBoundary": "월 이름보다 실제 segment 시작·종료를 사용한다. 절입·입춘·대운 전환을 넘겨 고정 적용하지 않는다.",
+    "doNotTransfer": [
+      "월운 원진 지원을 대운·연운·교차 원진 지원으로 확대하지 않는다.",
+      "월운 신호를 평생 성향으로 바꾸지 않는다."
+    ],
+    "handoff": [
+      "월운 관계를 지금 생성기에 새로 연결하지 않는다.",
+      "확장 관계와 기본 관계의 실제 producer와 기간을 따로 기록할 것."
+    ]
+  },
+  {
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "id": "between_periods",
+    "definition": "명시적으로 구현된 세운↔대운 및 월운↔세운/대운의 두 기간 지지 관계.",
+    "supported": [
+      "yukhap",
+      "banhap",
+      "chung",
+      "hyeong",
+      "hae",
+      "pa"
+    ],
+    "unsupported": [
+      "stem_hap",
+      "samhap",
+      "wonjin"
+    ],
+    "producers": [
+      {
+        "path": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+        "symbol": "cycleRelations",
+        "behavior": "세운 지지와 해당 cycle 지지 한 자리만 비교한다. 두 지지로 완성 삼합을 만들지 않는다."
+      },
+      {
+        "path": "src/lib/report-knowledge/annualMonthJie.ts",
+        "symbol": "segmentFacts / getBranchPairRelations",
+        "behavior": "월지와 effectiveAnnualPillar 및 activeDayunContext.cycles를 각각 비교한다. 대운 불확실 구간은 conditional."
+      }
+    ],
+    "positions": "각 참여자의 month/annual/major 출처를 남기며 원국 참여자로 바꾸지 않는다.",
+    "multiplicity": "현재 쌍 함수는 삼합 전체의3기간 합집합을 새로 판정하지 않는다. 같은 지지2기간은 실제2자리일 때만 자형이다.",
+    "timeBoundary": "구간 교집합만 적용하며 대운 전환 이전의 관계를 연도 전체에 적용하지 않는다.",
+    "doNotTransfer": [
+      "모든 기간 조합을 지원한다고 가정하지 않는다.",
+      "천간합·삼합 전체·원진의 기간간 producer는 확인되지 않았다."
+    ],
+    "handoff": [
+      "대운·세운·월운 기간 상호작용 DB는 별도 후속 작업이다.",
+      "현재 계산의 certainty·전환 범위·기존 Evidence ID를 그대로 받아야 한다.",
+      "majorFortuneEvidence의 혼합 대운+원국 배열은 실제3참여 그룹을 반환할 수도 있지만 일반적인3기간 삼합 producer는 아니다. 기존 배열의 위치 오프셋 한계를 기록하고 승인 전 재검토한다."
+    ]
+  }
+]

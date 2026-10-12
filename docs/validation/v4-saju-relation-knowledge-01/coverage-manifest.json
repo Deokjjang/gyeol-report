@@ -1,0 +1,881 @@
+{
+  "baseSha": "95d59c50600a504b40bc9a031c96dee7ba0a1694",
+  "runtimeConnected": false,
+  "approvedCustomerApplications": 0,
+  "counts": {
+    "profiles": 9,
+    "combinations": 64,
+    "existingTableCombinations": 62,
+    "historicalGroupOnly": 2,
+    "domainBundles": 72,
+    "modernReviewLenses": 144,
+    "unverifiedDirectProjections": 72,
+    "rejected": 12
+  },
+  "cells": [
+    {
+      "id": "foundation:relation:stem_hap::personality",
+      "targetId": "foundation:relation:stem_hap",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:stem_hap:personality",
+        "rr:boundary:stem_hap:personality"
+      ]
+    },
+    {
+      "id": "foundation:relation:stem_hap::career",
+      "targetId": "foundation:relation:stem_hap",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:stem_hap:career",
+        "rr:boundary:stem_hap:career"
+      ]
+    },
+    {
+      "id": "foundation:relation:stem_hap::money",
+      "targetId": "foundation:relation:stem_hap",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:stem_hap:money",
+        "rr:boundary:stem_hap:money"
+      ]
+    },
+    {
+      "id": "foundation:relation:stem_hap::study",
+      "targetId": "foundation:relation:stem_hap",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:stem_hap:study",
+        "rr:boundary:stem_hap:study"
+      ]
+    },
+    {
+      "id": "foundation:relation:stem_hap::love",
+      "targetId": "foundation:relation:stem_hap",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:stem_hap:love",
+        "rr:boundary:stem_hap:love"
+      ]
+    },
+    {
+      "id": "foundation:relation:stem_hap::marriage",
+      "targetId": "foundation:relation:stem_hap",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:stem_hap:marriage",
+        "rr:boundary:stem_hap:marriage"
+      ]
+    },
+    {
+      "id": "foundation:relation:stem_hap::family",
+      "targetId": "foundation:relation:stem_hap",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:stem_hap:family",
+        "rr:boundary:stem_hap:family"
+      ]
+    },
+    {
+      "id": "foundation:relation:stem_hap::relationships",
+      "targetId": "foundation:relation:stem_hap",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:stem_hap:relationships",
+        "rr:boundary:stem_hap:relationships"
+      ]
+    },
+    {
+      "id": "foundation:relation:yukhap::personality",
+      "targetId": "foundation:relation:yukhap",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:yukhap:personality",
+        "rr:boundary:yukhap:personality"
+      ]
+    },
+    {
+      "id": "foundation:relation:yukhap::career",
+      "targetId": "foundation:relation:yukhap",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:yukhap:career",
+        "rr:boundary:yukhap:career"
+      ]
+    },
+    {
+      "id": "foundation:relation:yukhap::money",
+      "targetId": "foundation:relation:yukhap",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:yukhap:money",
+        "rr:boundary:yukhap:money"
+      ]
+    },
+    {
+      "id": "foundation:relation:yukhap::study",
+      "targetId": "foundation:relation:yukhap",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:yukhap:study",
+        "rr:boundary:yukhap:study"
+      ]
+    },
+    {
+      "id": "foundation:relation:yukhap::love",
+      "targetId": "foundation:relation:yukhap",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:yukhap:love",
+        "rr:boundary:yukhap:love"
+      ]
+    },
+    {
+      "id": "foundation:relation:yukhap::marriage",
+      "targetId": "foundation:relation:yukhap",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:yukhap:marriage",
+        "rr:boundary:yukhap:marriage"
+      ]
+    },
+    {
+      "id": "foundation:relation:yukhap::family",
+      "targetId": "foundation:relation:yukhap",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:yukhap:family",
+        "rr:boundary:yukhap:family"
+      ]
+    },
+    {
+      "id": "foundation:relation:yukhap::relationships",
+      "targetId": "foundation:relation:yukhap",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:yukhap:relationships",
+        "rr:boundary:yukhap:relationships"
+      ]
+    },
+    {
+      "id": "foundation:relation:chung::personality",
+      "targetId": "foundation:relation:chung",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:chung:personality",
+        "rr:boundary:chung:personality"
+      ]
+    },
+    {
+      "id": "foundation:relation:chung::career",
+      "targetId": "foundation:relation:chung",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:chung:career",
+        "rr:boundary:chung:career"
+      ]
+    },
+    {
+      "id": "foundation:relation:chung::money",
+      "targetId": "foundation:relation:chung",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:chung:money",
+        "rr:boundary:chung:money"
+      ]
+    },
+    {
+      "id": "foundation:relation:chung::study",
+      "targetId": "foundation:relation:chung",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:chung:study",
+        "rr:boundary:chung:study"
+      ]
+    },
+    {
+      "id": "foundation:relation:chung::love",
+      "targetId": "foundation:relation:chung",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:chung:love",
+        "rr:boundary:chung:love"
+      ]
+    },
+    {
+      "id": "foundation:relation:chung::marriage",
+      "targetId": "foundation:relation:chung",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:chung:marriage",
+        "rr:boundary:chung:marriage"
+      ]
+    },
+    {
+      "id": "foundation:relation:chung::family",
+      "targetId": "foundation:relation:chung",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:chung:family",
+        "rr:boundary:chung:family"
+      ]
+    },
+    {
+      "id": "foundation:relation:chung::relationships",
+      "targetId": "foundation:relation:chung",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:chung:relationships",
+        "rr:boundary:chung:relationships"
+      ]
+    },
+    {
+      "id": "foundation:relation:samhap::personality",
+      "targetId": "foundation:relation:samhap",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:samhap:personality",
+        "rr:boundary:samhap:personality"
+      ]
+    },
+    {
+      "id": "foundation:relation:samhap::career",
+      "targetId": "foundation:relation:samhap",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:samhap:career",
+        "rr:boundary:samhap:career"
+      ]
+    },
+    {
+      "id": "foundation:relation:samhap::money",
+      "targetId": "foundation:relation:samhap",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:samhap:money",
+        "rr:boundary:samhap:money"
+      ]
+    },
+    {
+      "id": "foundation:relation:samhap::study",
+      "targetId": "foundation:relation:samhap",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:samhap:study",
+        "rr:boundary:samhap:study"
+      ]
+    },
+    {
+      "id": "foundation:relation:samhap::love",
+      "targetId": "foundation:relation:samhap",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:samhap:love",
+        "rr:boundary:samhap:love"
+      ]
+    },
+    {
+      "id": "foundation:relation:samhap::marriage",
+      "targetId": "foundation:relation:samhap",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:samhap:marriage",
+        "rr:boundary:samhap:marriage"
+      ]
+    },
+    {
+      "id": "foundation:relation:samhap::family",
+      "targetId": "foundation:relation:samhap",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:samhap:family",
+        "rr:boundary:samhap:family"
+      ]
+    },
+    {
+      "id": "foundation:relation:samhap::relationships",
+      "targetId": "foundation:relation:samhap",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:samhap:relationships",
+        "rr:boundary:samhap:relationships"
+      ]
+    },
+    {
+      "id": "foundation:relation:hyeong::personality",
+      "targetId": "foundation:relation:hyeong",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hyeong:personality",
+        "rr:boundary:hyeong:personality"
+      ]
+    },
+    {
+      "id": "foundation:relation:hyeong::career",
+      "targetId": "foundation:relation:hyeong",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hyeong:career",
+        "rr:boundary:hyeong:career"
+      ]
+    },
+    {
+      "id": "foundation:relation:hyeong::money",
+      "targetId": "foundation:relation:hyeong",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hyeong:money",
+        "rr:boundary:hyeong:money"
+      ]
+    },
+    {
+      "id": "foundation:relation:hyeong::study",
+      "targetId": "foundation:relation:hyeong",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hyeong:study",
+        "rr:boundary:hyeong:study"
+      ]
+    },
+    {
+      "id": "foundation:relation:hyeong::love",
+      "targetId": "foundation:relation:hyeong",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hyeong:love",
+        "rr:boundary:hyeong:love"
+      ]
+    },
+    {
+      "id": "foundation:relation:hyeong::marriage",
+      "targetId": "foundation:relation:hyeong",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hyeong:marriage",
+        "rr:boundary:hyeong:marriage"
+      ]
+    },
+    {
+      "id": "foundation:relation:hyeong::family",
+      "targetId": "foundation:relation:hyeong",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hyeong:family",
+        "rr:boundary:hyeong:family"
+      ]
+    },
+    {
+      "id": "foundation:relation:hyeong::relationships",
+      "targetId": "foundation:relation:hyeong",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hyeong:relationships",
+        "rr:boundary:hyeong:relationships"
+      ]
+    },
+    {
+      "id": "foundation:relation:hae::personality",
+      "targetId": "foundation:relation:hae",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hae:personality",
+        "rr:boundary:hae:personality"
+      ]
+    },
+    {
+      "id": "foundation:relation:hae::career",
+      "targetId": "foundation:relation:hae",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hae:career",
+        "rr:boundary:hae:career"
+      ]
+    },
+    {
+      "id": "foundation:relation:hae::money",
+      "targetId": "foundation:relation:hae",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hae:money",
+        "rr:boundary:hae:money"
+      ]
+    },
+    {
+      "id": "foundation:relation:hae::study",
+      "targetId": "foundation:relation:hae",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hae:study",
+        "rr:boundary:hae:study"
+      ]
+    },
+    {
+      "id": "foundation:relation:hae::love",
+      "targetId": "foundation:relation:hae",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hae:love",
+        "rr:boundary:hae:love"
+      ]
+    },
+    {
+      "id": "foundation:relation:hae::marriage",
+      "targetId": "foundation:relation:hae",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hae:marriage",
+        "rr:boundary:hae:marriage"
+      ]
+    },
+    {
+      "id": "foundation:relation:hae::family",
+      "targetId": "foundation:relation:hae",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hae:family",
+        "rr:boundary:hae:family"
+      ]
+    },
+    {
+      "id": "foundation:relation:hae::relationships",
+      "targetId": "foundation:relation:hae",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:hae:relationships",
+        "rr:boundary:hae:relationships"
+      ]
+    },
+    {
+      "id": "foundation:relation:banhap::personality",
+      "targetId": "foundation:relation:banhap",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:banhap:personality",
+        "rr:boundary:banhap:personality"
+      ]
+    },
+    {
+      "id": "foundation:relation:banhap::career",
+      "targetId": "foundation:relation:banhap",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:banhap:career",
+        "rr:boundary:banhap:career"
+      ]
+    },
+    {
+      "id": "foundation:relation:banhap::money",
+      "targetId": "foundation:relation:banhap",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:banhap:money",
+        "rr:boundary:banhap:money"
+      ]
+    },
+    {
+      "id": "foundation:relation:banhap::study",
+      "targetId": "foundation:relation:banhap",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:banhap:study",
+        "rr:boundary:banhap:study"
+      ]
+    },
+    {
+      "id": "foundation:relation:banhap::love",
+      "targetId": "foundation:relation:banhap",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:banhap:love",
+        "rr:boundary:banhap:love"
+      ]
+    },
+    {
+      "id": "foundation:relation:banhap::marriage",
+      "targetId": "foundation:relation:banhap",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:banhap:marriage",
+        "rr:boundary:banhap:marriage"
+      ]
+    },
+    {
+      "id": "foundation:relation:banhap::family",
+      "targetId": "foundation:relation:banhap",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:banhap:family",
+        "rr:boundary:banhap:family"
+      ]
+    },
+    {
+      "id": "foundation:relation:banhap::relationships",
+      "targetId": "foundation:relation:banhap",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:banhap:relationships",
+        "rr:boundary:banhap:relationships"
+      ]
+    },
+    {
+      "id": "foundation:relation:pa::personality",
+      "targetId": "foundation:relation:pa",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:pa:personality",
+        "rr:boundary:pa:personality"
+      ]
+    },
+    {
+      "id": "foundation:relation:pa::career",
+      "targetId": "foundation:relation:pa",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:pa:career",
+        "rr:boundary:pa:career"
+      ]
+    },
+    {
+      "id": "foundation:relation:pa::money",
+      "targetId": "foundation:relation:pa",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:pa:money",
+        "rr:boundary:pa:money"
+      ]
+    },
+    {
+      "id": "foundation:relation:pa::study",
+      "targetId": "foundation:relation:pa",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:pa:study",
+        "rr:boundary:pa:study"
+      ]
+    },
+    {
+      "id": "foundation:relation:pa::love",
+      "targetId": "foundation:relation:pa",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:pa:love",
+        "rr:boundary:pa:love"
+      ]
+    },
+    {
+      "id": "foundation:relation:pa::marriage",
+      "targetId": "foundation:relation:pa",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:pa:marriage",
+        "rr:boundary:pa:marriage"
+      ]
+    },
+    {
+      "id": "foundation:relation:pa::family",
+      "targetId": "foundation:relation:pa",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:pa:family",
+        "rr:boundary:pa:family"
+      ]
+    },
+    {
+      "id": "foundation:relation:pa::relationships",
+      "targetId": "foundation:relation:pa",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:pa:relationships",
+        "rr:boundary:pa:relationships"
+      ]
+    },
+    {
+      "id": "foundation:relation:wonjin::personality",
+      "targetId": "foundation:relation:wonjin",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:wonjin:personality",
+        "rr:boundary:wonjin:personality"
+      ]
+    },
+    {
+      "id": "foundation:relation:wonjin::career",
+      "targetId": "foundation:relation:wonjin",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:wonjin:career",
+        "rr:boundary:wonjin:career"
+      ]
+    },
+    {
+      "id": "foundation:relation:wonjin::money",
+      "targetId": "foundation:relation:wonjin",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:wonjin:money",
+        "rr:boundary:wonjin:money"
+      ]
+    },
+    {
+      "id": "foundation:relation:wonjin::study",
+      "targetId": "foundation:relation:wonjin",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:wonjin:study",
+        "rr:boundary:wonjin:study"
+      ]
+    },
+    {
+      "id": "foundation:relation:wonjin::love",
+      "targetId": "foundation:relation:wonjin",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:wonjin:love",
+        "rr:boundary:wonjin:love"
+      ]
+    },
+    {
+      "id": "foundation:relation:wonjin::marriage",
+      "targetId": "foundation:relation:wonjin",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:wonjin:marriage",
+        "rr:boundary:wonjin:marriage"
+      ]
+    },
+    {
+      "id": "foundation:relation:wonjin::family",
+      "targetId": "foundation:relation:wonjin",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:wonjin:family",
+        "rr:boundary:wonjin:family"
+      ]
+    },
+    {
+      "id": "foundation:relation:wonjin::relationships",
+      "targetId": "foundation:relation:wonjin",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION_WITH_E_DIRECT_PROJECTION_BOUNDARY",
+      "approvedApplication": false,
+      "researchRefs": [
+        "rr:application:wonjin:relationships",
+        "rr:boundary:wonjin:relationships"
+      ]
+    }
+  ]
+}

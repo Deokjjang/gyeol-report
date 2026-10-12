@@ -1,0 +1,122 @@
+{
+  "existingWorktrees": 15,
+  "allExistingWorktreesIdentical": true,
+  "originalDirtyFiles": 11,
+  "originalHead": "c048218cc5961e0f53a1deab2603511e17559fc3",
+  "originalBranch": "v4/annual-editorial-quality-fix-01",
+  "originalStatusBefore": " M .gitignore\n M AGENTS.md\n?? supabase/.temp/\n",
+  "originalStatusAfter": " M .gitignore\n M AGENTS.md\n?? supabase/.temp/\n",
+  "checks": [
+    "각 worktree HEAD",
+    "각 worktree branch",
+    "각 worktree status",
+    "추적·비무시 미추적 파일 SHA-256"
+  ],
+  "worktrees": [
+    {
+      "path": "/Users/Deokmin/Dev/projects/gyeol-report",
+      "head": "c048218cc5961e0f53a1deab2603511e17559fc3",
+      "branch": "v4/annual-editorial-quality-fix-01",
+      "statusPreserved": true,
+      "filesPreserved": true
+    },
+    {
+      "path": "/private/tmp/gyeol-annual-fortune-reader-quality-polish-01",
+      "head": "f1994d13eb1ac40b913ec1419a1e0c24e7c89407",
+      "branch": "v4/annual-fortune-reader-quality-polish-01",
+      "statusPreserved": true,
+      "filesPreserved": true
+    },
+    {
+      "path": "/private/tmp/gyeol-career-editorial-quality-fix-01",
+      "head": "80409f8a96c5a2b4bf93792ea6f5d1c97bbc1fa4",
+      "branch": "v4/career-editorial-quality-fix-01",
+      "statusPreserved": true,
+      "filesPreserved": true
+    },
+    {
+      "path": "/private/tmp/gyeol-compatibility-editorial-quality-fix-01",
+      "head": "21da9173461f3530c5e945e4d306303e7660986b",
+      "branch": "v4/compatibility-editorial-quality-fix-01",
+      "statusPreserved": true,
+      "filesPreserved": true
+    },
+    {
+      "path": "/private/tmp/gyeol-comprehensive-editorial-quality-fix-01",
+      "head": "1edcf3fb9f22e42b144706bd4b25ea2fb5c89462",
+      "branch": "v4/comprehensive-editorial-quality-fix-01",
+      "statusPreserved": true,
+      "filesPreserved": true
+    },
+    {
+      "path": "/private/tmp/gyeol-foundation-saju-deep-knowledge-03",
+      "head": "7ff6aba0c9e0abd74284a388369b20ff6229be38",
+      "branch": "v4/foundation-saju-deep-knowledge-03",
+      "statusPreserved": true,
+      "filesPreserved": true
+    },
+    {
+      "path": "/private/tmp/gyeol-foundation-saju-knowledge-completion-02",
+      "head": "771e4393bb445743359cbcb651d95ed02f2f7a4b",
+      "branch": "v4/foundation-saju-knowledge-completion-02",
+      "statusPreserved": true,
+      "filesPreserved": true
+    },
+    {
+      "path": "/private/tmp/gyeol-foundation-saju-knowledge-expansion-01",
+      "head": "5e96d1c3663b92ff85f2d8c08b9a682058aef922",
+      "branch": "v4/foundation-saju-knowledge-expansion-01",
+      "statusPreserved": true,
+      "filesPreserved": true
+    },
+    {
+      "path": "/private/tmp/gyeol-love-editorial-quality-fix-01",
+      "head": "544f14c36ba5de557b1d746879f1a69a5f57817f",
+      "branch": "v4/love-editorial-quality-fix-01",
+      "statusPreserved": true,
+      "filesPreserved": true
+    },
+    {
+      "path": "/private/tmp/gyeol-major-fortune-reader-quality-polish-01",
+      "head": "9460df97d929735d2d835216952948a202ad8af3",
+      "branch": "v4/major-fortune-reader-quality-polish-01",
+      "statusPreserved": true,
+      "filesPreserved": true
+    },
+    {
+      "path": "/private/tmp/gyeol-release-technical-stabilization-01",
+      "head": "be4054671d166b3a11127c5bf013b77eab5cd919",
+      "branch": "v4/release-technical-stabilization-01",
+      "statusPreserved": true,
+      "filesPreserved": true
+    },
+    {
+      "path": "/private/tmp/gyeol-saju-composite-structure-knowledge-01",
+      "head": "95d59c50600a504b40bc9a031c96dee7ba0a1694",
+      "branch": "v4/saju-composite-structure-knowledge-01",
+      "statusPreserved": true,
+      "filesPreserved": true
+    },
+    {
+      "path": "/private/tmp/gyeol-six-product-common-editorial-polish-01",
+      "head": "964e6b9a1b248c67e695f112615873f232d9320e",
+      "branch": "v4/six-product-common-editorial-polish-01",
+      "statusPreserved": true,
+      "filesPreserved": true
+    },
+    {
+      "path": "/private/tmp/gyeol-six-product-integration-01",
+      "head": "a46eff86e305f5a58721bdd83a2249686e54be4c",
+      "branch": "v4/six-product-integration-01",
+      "statusPreserved": true,
+      "filesPreserved": true
+    },
+    {
+      "path": "/Users/Deokmin/Documents/Codex/2026-09-29/referenced-chatgpt-conversation-this-is-an/work/gyeol-share-brand",
+      "head": "4e25b8775c3947e4a3d661f0e23c87950d15c8d4",
+      "branch": "feat/share-brand-system",
+      "statusPreserved": true,
+      "filesPreserved": true
+    }
+  ]
+}

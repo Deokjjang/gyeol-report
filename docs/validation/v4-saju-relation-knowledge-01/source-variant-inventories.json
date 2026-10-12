@@ -1,0 +1,138 @@
+{
+  "runtimeChanges": false,
+  "variants": [
+    {
+      "id": "repo:half12",
+      "sourceIds": [
+        "repo"
+      ],
+      "combinations": [
+        "申子",
+        "申辰",
+        "子辰",
+        "亥卯",
+        "亥未",
+        "卯未",
+        "寅午",
+        "寅戌",
+        "午戌",
+        "巳酉",
+        "巳丑",
+        "酉丑"
+      ],
+      "status": "existing_table",
+      "limitation": "세 구성 중 모든2쌍; 성립·강도에 대한 전승 합의와 같지 않음."
+    },
+    {
+      "id": "modern:half8-with-king",
+      "sourceIds": [
+        "half"
+      ],
+      "combinations": [
+        "申子",
+        "子辰",
+        "亥卯",
+        "卯未",
+        "寅午",
+        "午戌",
+        "巳酉",
+        "酉丑"
+      ],
+      "status": "review_inventory",
+      "limitation": "실제 확인한 왕지 기준과4삼합을 대조해 작성. 별도 판정기를 만들지 않았다."
+    },
+    {
+      "id": "modern:half4-without-king",
+      "sourceIds": [
+        "half"
+      ],
+      "combinations": [
+        "申辰",
+        "亥未",
+        "寅戌",
+        "巳丑"
+      ],
+      "status": "disputed",
+      "limitation": "미채택 또는 약한 부분 연결 견해. 없는 왕지를 채우지 않음."
+    },
+    {
+      "id": "sm2:hyeong-direction",
+      "sourceIds": [
+        "sm2"
+      ],
+      "combinations": [
+        "寅→巳",
+        "巳→申",
+        "申→寅",
+        "丑→戌",
+        "戌→未",
+        "未→丑",
+        "子→卯",
+        "卯→子",
+        "辰→辰",
+        "午→午",
+        "酉→酉",
+        "亥→亥"
+      ],
+      "status": "historical_transcription",
+      "limitation": "子卯 상형2방향을 합치면 현행 비방향11쌍과 구성 대응. 전통 방향의 생활 효력은 미검증."
+    },
+    {
+      "id": "sm2:hyeong-groups-main",
+      "sourceIds": [
+        "sm2"
+      ],
+      "combinations": [
+        "寅巳申:無恩",
+        "丑戌未:恃勢",
+        "子卯:無禮",
+        "辰午酉亥:自刑 각 실제 반복"
+      ],
+      "status": "historical_transcription",
+      "limitation": "같은 절 三車一覧 인용은 無恩/恃勢를 바꿔 부름; 두 견해 유지."
+    },
+    {
+      "id": "sm2:earth-four-branches",
+      "sourceIds": [
+        "sm2"
+      ],
+      "combinations": [
+        "辰戌丑未"
+      ],
+      "status": "outside_current_three_member_inventory",
+      "limitation": "四庫土局의4구성.64대상 조합·현행 삼합4그룹·새 producer에 포함하지 않음."
+    },
+    {
+      "id": "modern:wonjin6-adjacent",
+      "sourceIds": [
+        "wonjin"
+      ],
+      "combinations": [
+        "子未",
+        "丑午",
+        "寅酉",
+        "卯申",
+        "辰亥",
+        "巳戌"
+      ],
+      "status": "modern_author_view",
+      "limitation": "저자는 원국 인접·교차 일지 중심 조건을 주장. 프로젝트 원국 전체쌍·교차 미지원과 다름."
+    },
+    {
+      "id": "repo:wonjin6-all-natal-pairs",
+      "sourceIds": [
+        "repo"
+      ],
+      "combinations": [
+        "子未",
+        "丑午",
+        "寅酉",
+        "卯申",
+        "辰亥",
+        "巳戌"
+      ],
+      "status": "existing_feature_table",
+      "limitation": "원국 facts는 실제 쌍 ref 미노출; 월운 확장에는 별도 sourceRefs 있음."
+    }
+  ]
+}

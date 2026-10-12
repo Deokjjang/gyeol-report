@@ -1,0 +1,874 @@
+{
+  "method": "실제 구성·성립/작용·누락·대칭/방향·범위·출처를 대조하고 생활 질문의 대상과 판단 기준을 독해 검토. 문자열 고유성은 보조 검사뿐이다.",
+  "counts": {
+    "traditionalRelationFactsClaimed": null,
+    "combinationDossiers": 64,
+    "domainBundles": 72,
+    "modernLenses": 144,
+    "directProjectionBoundaries": 72,
+    "customerApproved": 0
+  },
+  "profileComparisons": [
+    {
+      "profileId": "rr:profile:stem_hap",
+      "mechanism": "상생·상극만으로 읽던 두 오행에 배합에 의한 작용의 얽힘이라는 검토 변수가 더해진다. 누구의 십성이 묶이는지 확인하지 않으면 합의 이득을 정할 수 없다.",
+      "nearestDifferences": [
+        {
+          "other": "yukhap",
+          "difference": "천간의 노출된 작용 배합과 지지의 정해진 짝은 대상 층위가 다르다."
+        },
+        {
+          "other": "banhap",
+          "difference": "자평진전의 원거리 천간 半合 표현을 지지 반합 ID와 합치지 않는다."
+        }
+      ],
+      "comboDifferences": [
+        {
+          "id": "rr:combination:stem_hap:甲己",
+          "difference": "乙庚과 달리 목·토의 배합이며 전통 화기 방향은 토다. 화토 판정은 지원하지 않는다."
+        },
+        {
+          "id": "rr:combination:stem_hap:乙庚",
+          "difference": "甲己와 같은 목 참여라도 상대는 금이고 본래 금극목 관계다."
+        },
+        {
+          "id": "rr:combination:stem_hap:丙辛",
+          "difference": "丁壬도 화·수가 관련되지만 이 쌍의 원래 두 오행은 화·금이다."
+        },
+        {
+          "id": "rr:combination:stem_hap:丁壬",
+          "difference": "丙辛과 원래 오행·전통 화기 방향이 다르며 같은 관계 심리로 복제하지 않는다."
+        },
+        {
+          "id": "rr:combination:stem_hap:戊癸",
+          "difference": "甲己와 토가 참여해도 상대는 수이며 화기 논의는 화다."
+        }
+      ],
+      "domainAngles": [
+        {
+          "domain": "personality",
+          "question": "맞추는 과정에서 내 판단의 기준도 남아 있는가?",
+          "secondQuestion": "여러 사람에게 한 약속이 서로 양립하는가?",
+          "limit": "쟁합 검출만으로 우유부단함을 진단하지 않는다."
+        },
+        {
+          "domain": "career",
+          "question": "협업이 전문 기능을 살리는가, 필요한 역할을 묶는가?",
+          "secondQuestion": "파트너가 바뀌어도 내 전문성이 남는가?",
+          "limit": "합화 오행을 새 직종 추천 근거로 쓰지 않는다."
+        },
+        {
+          "domain": "money",
+          "question": "공동 약정이 유동성과 선택권을 얼마나 묶는가?",
+          "secondQuestion": "상대의 재무 상태가 바뀌어도 의무가 같은가?",
+          "limit": "합이 위험을 낮춘다는 금융 조언이 아니다."
+        },
+        {
+          "domain": "study",
+          "question": "함께 정리한 답을 스스로 설명할 수 있는가?",
+          "secondQuestion": "공동 자료의 오류를 누가 검토하는가?",
+          "limit": "합화로 학습 능력이 변했다고 설명하지 않는다."
+        },
+        {
+          "domain": "love",
+          "question": "서로 맞추는 약속에 자발적 동의가 있는가?",
+          "secondQuestion": "제삼자와의 약속이 둘의 합의를 방해하는가?",
+          "limit": "쟁합을 삼각관계로 번역하지 않는다."
+        },
+        {
+          "domain": "marriage",
+          "question": "함께 정한 생활 규칙에 각자의 결정권이 남는가?",
+          "secondQuestion": "환경이 바뀌면 어떤 합의를 먼저 다시 볼 것인가?",
+          "limit": "그 사건이 발생한다고 예고하지 않는다."
+        },
+        {
+          "domain": "family",
+          "question": "가족 간 약속이 보호와 독립을 함께 남기는가?",
+          "secondQuestion": "묵시적 약속을 서로 같은 뜻으로 이해하는가?",
+          "limit": "명리만으로 가족 의무를 부과하지 않는다."
+        },
+        {
+          "domain": "relationships",
+          "question": "함께하는 모임에서 내 역할과 이탈 선택권이 분명한가?",
+          "secondQuestion": "중재가 당사자의 책임을 대신하고 있지는 않은가?",
+          "limit": "천간의 쌍으로 사회성을 평가하지 않는다."
+        }
+      ]
+    },
+    {
+      "profileId": "rr:profile:yukhap",
+      "mechanism": "삼합의 생왕고 완성보다 두 자리 사이의 맞물림을 다룬다. 원래 생극과 지장간은 배합 후에도 검토 대상이다.",
+      "nearestDifferences": [
+        {
+          "other": "samhap",
+          "difference": "두 자리의 배합과 세 단계의 집결은 같은 협력 문장의 다른 이름이 아니다."
+        },
+        {
+          "other": "hae",
+          "difference": "육해는 합과 충의 방해 연결을 설명하는 다른 쌍이다."
+        }
+      ],
+      "comboDifferences": [
+        {
+          "id": "rr:combination:yukhap:子丑",
+          "difference": "午未 역시 토 참여 육합이나 상대 오행과 계절이 다르다."
+        },
+        {
+          "id": "rr:combination:yukhap:寅亥",
+          "difference": "巳申과 같은 합·파 겹침이나 본래 오행은 수생목이다."
+        },
+        {
+          "id": "rr:combination:yukhap:卯戌",
+          "difference": "辰酉와 다른 목토 배합이며 卯의 충 상대 酉를 실제로 보아야 해충 문맥이 성립한다."
+        },
+        {
+          "id": "rr:combination:yukhap:辰酉",
+          "difference": "子丑의 토수 제약과 달리 대표 오행은 토생금이다."
+        },
+        {
+          "id": "rr:combination:yukhap:巳申",
+          "difference": "寅亥는 생조를 포함하지만 巳申의 대표 오행은 화극금이다."
+        },
+        {
+          "id": "rr:combination:yukhap:午未",
+          "difference": "子丑과 모두 토 참여지만 화생토와 동절 토수는 다르다."
+        }
+      ],
+      "domainAngles": [
+        {
+          "domain": "personality",
+          "question": "특정 상대와 맞을 때의 방식이 혼자일 때도 유지되는가?",
+          "secondQuestion": "둘의 편안함이 다른 의견을 배제하는가?",
+          "limit": "음양 배합을 성격의 우열로 쓰지 않는다."
+        },
+        {
+          "domain": "career",
+          "question": "두 업무의 접점이 실제 인수인계에서 맞물리는가?",
+          "secondQuestion": "둘의 합의가 팀 전체의 기준과 같은가?",
+          "limit": "육합과 파가 겹쳐도 협력이 파괴된다고 예고하지 않는다."
+        },
+        {
+          "domain": "money",
+          "question": "둘이 묶는 지출의 사용 조건이 실제로 맞는가?",
+          "secondQuestion": "둘 중 하나가 참여를 그만두면 어떻게 정산하는가?",
+          "limit": "지지의 화오행을 수익률로 환산하지 않는다."
+        },
+        {
+          "domain": "study",
+          "question": "서로 보완하는 공부가 빈틈을 드러내는가, 감추는가?",
+          "secondQuestion": "둘이 같은 오개념을 공유하지 않는가?",
+          "limit": "쌍의 존재가 학습 능력 근거는 아니다."
+        },
+        {
+          "domain": "love",
+          "question": "둘의 편안한 맞물림이 실제 필요와도 일치하는가?",
+          "secondQuestion": "가까워질 때 선택권이 줄어들지는 않는가?",
+          "limit": "검출된 짝이 상대의 동의를 대신하지 않는다."
+        },
+        {
+          "domain": "marriage",
+          "question": "함께 사는 두 사람의 분담이 실제 생활과 맞는가?",
+          "secondQuestion": "둘의 결속이 주변의 필요한 도움을 차단하는가?",
+          "limit": "짝의 결합을 폐쇄적 가족 규범으로 만들지 않는다."
+        },
+        {
+          "domain": "family",
+          "question": "세대 간 지원이 실제 필요한 방식으로 연결되는가?",
+          "secondQuestion": "지원이 중단될 때 대안이 있는가?",
+          "limit": "합이 있다는 이유로 부양 의무를 늘리지 않는다."
+        },
+        {
+          "domain": "relationships",
+          "question": "친한 두 사람의 연결이 모임 전체에도 열려 있는가?",
+          "secondQuestion": "새 사람이 기존 짝에 들어갈 통로가 있는가?",
+          "limit": "관계가 대칭이어도 현실 권력은 같다고 가정하지 않는다."
+        }
+      ]
+    },
+    {
+      "profileId": "rr:profile:chung",
+      "mechanism": "대향 관계는 두 기능을 기존 배치 그대로 유지하기 어려운 조건을 검토하게 한다. 변화의 좋고 나쁨은 실제 대상의 역할에 달려 있다.",
+      "nearestDifferences": [
+        {
+          "other": "pa",
+          "difference": "충은 대향 여섯 쌍이고 파는 다른 여섯 쌍이다. 둘 다 변화라는 말만으로 정의할 수 없다."
+        },
+        {
+          "other": "hyeong",
+          "difference": "형의 순환·자형·부분 구성을 대향 충으로 환원하지 않는다."
+        }
+      ],
+      "comboDifferences": [
+        {
+          "id": "rr:combination:chung:子午",
+          "difference": "丑未와 달리 대표 오행이 수화의 직접 제어다."
+        },
+        {
+          "id": "rr:combination:chung:丑未",
+          "difference": "辰戌과 함께 토충이나 丑·未 장간과 계절이 다르다."
+        },
+        {
+          "id": "rr:combination:chung:寅申",
+          "difference": "卯酉의 목금 충보다 寅申은 각 장간이 복수이며 형에도 참여한다."
+        },
+        {
+          "id": "rr:combination:chung:卯酉",
+          "difference": "寅申과 다르게 본기 중심 장간과 해충 예의 구성 조건을 검토한다."
+        },
+        {
+          "id": "rr:combination:chung:辰戌",
+          "difference": "丑未와 계절·장간이 다르고 토라는 공통명만으로 같은 의미를 복제하지 않는다."
+        },
+        {
+          "id": "rr:combination:chung:巳亥",
+          "difference": "子午보다 장간 구성이 복수이고 두 생지의 여력을 별도로 본다."
+        }
+      ],
+      "domainAngles": [
+        {
+          "domain": "personality",
+          "question": "상반된 요구 앞에서 무엇을 바꾸고 무엇을 지킬 것인가?",
+          "secondQuestion": "반복된 불편이 환경 때문인지 내 기준 때문인지 구별했는가?",
+          "limit": "명리 충이 심리 진단을 대신하지 않는다."
+        },
+        {
+          "domain": "career",
+          "question": "직무 요구가 충돌할 때 이동보다 먼저 조정할 것은 무엇인가?",
+          "secondQuestion": "변화에서 잃지 말아야 할 전문 자원은 무엇인가?",
+          "limit": "지지 위치를 회사나 상사 사건과 고정 대응하지 않는다."
+        },
+        {
+          "domain": "money",
+          "question": "지출 요구가 충돌할 때 보호할 자금은 무엇인가?",
+          "secondQuestion": "변경이 부담을 해결하는가, 손실만 확정하는가?",
+          "limit": "충을 금융 매매 신호로 사용하지 않는다."
+        },
+        {
+          "domain": "study",
+          "question": "서로 다른 공부 방식이 충돌할 때 무엇으로 효과를 판단할 것인가?",
+          "secondQuestion": "새 방법에 적응할 시간을 실제로 주었는가?",
+          "limit": "관계 기호를 학습 효율 수치로 만들지 않는다."
+        },
+        {
+          "domain": "love",
+          "question": "서로 원하는 거리와 속도가 다를 때 무엇을 협의할 수 있는가?",
+          "secondQuestion": "조정할 차이와 타협할 수 없는 안전 문제가 구별되는가?",
+          "limit": "대립을 성장 기회라며 피해를 견디게 하지 않는다."
+        },
+        {
+          "domain": "marriage",
+          "question": "공동 생활의 오래된 규칙을 어떤 기준으로 바꿀 것인가?",
+          "secondQuestion": "한 사람의 적응 비용만 커지는 변경은 아닌가?",
+          "limit": "시주 미상을 가족 사건으로 보충하지 않는다."
+        },
+        {
+          "domain": "family",
+          "question": "세대의 기대가 다를 때 경계와 돌봄을 어떻게 나눌 것인가?",
+          "secondQuestion": "거리 조정이 필요한 사람에게 돌봄 공백을 만드는가?",
+          "limit": "충을 가족 단절의 처방으로 쓰지 않는다."
+        },
+        {
+          "domain": "relationships",
+          "question": "모임의 다른 가치가 드러났을 때 함께할 범위는 어디까지인가?",
+          "secondQuestion": "중재가 필요한 문제와 각자 선택할 문제가 나뉘는가?",
+          "limit": "한 번의 충을 모든 관계에 확대하지 않는다."
+        }
+      ]
+    },
+    {
+      "profileId": "rr:profile:samhap",
+      "mechanism": "시작·중심·갈무리의 세 역할이 하나의 오행으로 조직된다는 설명은 둘의 친화성과 다른 정보다. 중심과 마무리가 실제로 있는지를 구별할 수 있다.",
+      "nearestDifferences": [
+        {
+          "other": "banhap",
+          "difference": "세 역할의 모두 존재와 두 역할의 부분 연결은 구별된다."
+        },
+        {
+          "other": "yukhap",
+          "difference": "여섯 짝 배합과 네 개 생왕고 집합은 구성 원리가 다르다."
+        }
+      ],
+      "comboDifferences": [
+        {
+          "id": "rr:combination:samhap:申子辰",
+          "difference": "세 지지의 대표 오행은 금·수·토이며 각 글자를 모두 수로 지우지 않는다."
+        },
+        {
+          "id": "rr:combination:samhap:亥卯未",
+          "difference": "대표 오행 수·목·토의 조합으로 寅卯辰 방합과 다른 목록이다."
+        },
+        {
+          "id": "rr:combination:samhap:寅午戌",
+          "difference": "대표 오행 목·화·토이며 寅戌만 있는 경우에는 午가 없다."
+        },
+        {
+          "id": "rr:combination:samhap:巳酉丑",
+          "difference": "대표 오행 화·금·토이며 申酉戌 방합이나 午未 육합과 다르다."
+        }
+      ],
+      "domainAngles": [
+        {
+          "domain": "personality",
+          "question": "여러 기능이 한 방향으로 모일 때 빠뜨리는 관점은 없는가?",
+          "secondQuestion": "세 자리가 실제로 있어도 기능이 고르게 쓰이는가?",
+          "limit": "생왕고를 현대 심리 발달 단계의 사실로 삼지 않는다."
+        },
+        {
+          "domain": "career",
+          "question": "기획·실행·축적 과정이 실제로 이어지는가?",
+          "secondQuestion": "어느 단계가 빠져도 이름만 완성인 체계는 아닌가?",
+          "limit": "원국 삼합을 세 사람 팀의 궁합으로 옮기지 않는다."
+        },
+        {
+          "domain": "money",
+          "question": "돈의 유입·사용·보존이 실제 하나의 계획으로 이어지는가?",
+          "secondQuestion": "수익 단계와 자금 회수 단계가 같은가?",
+          "limit": "수국·금국 등의 이름을 자산 종류로 고정하지 않는다."
+        },
+        {
+          "domain": "study",
+          "question": "이해한 내용을 적용하고 오래 유지하는 단계까지 갖췄는가?",
+          "secondQuestion": "세 단계 중 실제 약한 곳이 어디인가?",
+          "limit": "생왕고의 전통적 순서를 교육 효과의 실증으로 쓰지 않는다."
+        },
+        {
+          "domain": "love",
+          "question": "둘을 둘러싼 생활 요소가 관계의 방향과 함께 맞는가?",
+          "secondQuestion": "주변의 지지가 당사자의 선택을 대신하는가?",
+          "limit": "세 사람 사이의 합은 실제 교차 생산자 결과만 사용한다."
+        },
+        {
+          "domain": "marriage",
+          "question": "공동 생활의 결정·실행·유지가 실제로 연결되는가?",
+          "secondQuestion": "기존 분담이 계획 이후에도 지속 가능한가?",
+          "limit": "합국이 완성됐다는 이유로 준비 부족을 지우지 않는다."
+        },
+        {
+          "domain": "family",
+          "question": "여러 세대의 지원이 돌봄 공백 없이 이어지는가?",
+          "secondQuestion": "지원자의 휴식은 체계 안에 포함되는가?",
+          "limit": "삼합 세 자리를 가족 세 명으로 자동 대응하지 않는다."
+        },
+        {
+          "domain": "relationships",
+          "question": "모임의 공동 목표가 검토와 견제까지 포함하는가?",
+          "secondQuestion": "공동 성과가 누구의 노동에 기대는가?",
+          "limit": "동일 삼합의 반합 신호를 별도 성과로 더하지 않는다."
+        }
+      ]
+    },
+    {
+      "profileId": "rr:profile:hyeong",
+      "mechanism": "형은 대향이 아닌 순환·반복의 상호 제약을 다룬다. 반복 조건과 다중 대상이 있어 단순 두 방향 충돌보다 구성 검토가 더 필요하다.",
+      "nearestDifferences": [
+        {
+          "other": "chung",
+          "difference": "형의 비대향·순환·자형 조건과 충의 대향은 다르다."
+        },
+        {
+          "other": "pa",
+          "difference": "戌未·巳申의 겹침은 의미가 같다는 증거가 아니다."
+        }
+      ],
+      "comboDifferences": [
+        {
+          "id": "rr:combination:hyeong:寅巳",
+          "difference": "巳申과 달리 寅巳는 육해에도 포함되고 육합은 아니다."
+        },
+        {
+          "id": "rr:combination:hyeong:巳申",
+          "difference": "寅申과 달리 육합·파에 겹치고 충 쌍은 아니다."
+        },
+        {
+          "id": "rr:combination:hyeong:申寅",
+          "difference": "寅巳·巳申과 달리 대향 충을 포함한다."
+        },
+        {
+          "id": "rr:combination:hyeong:丑戌",
+          "difference": "戌未와 달리 현행 파 표의 동일 쌍이 아니다."
+        },
+        {
+          "id": "rr:combination:hyeong:戌未",
+          "difference": "丑戌과 달리 파에 겹치고 丑未처럼 충 쌍은 아니다."
+        },
+        {
+          "id": "rr:combination:hyeong:未丑",
+          "difference": "丑戌·戌未와 달리 대향 충이 함께 있다."
+        },
+        {
+          "id": "rr:combination:hyeong:子卯",
+          "difference": "순환 삼형과 달리 子卯의 이자 관계 자체가 형 분류다."
+        },
+        {
+          "id": "rr:combination:hyeong:辰辰",
+          "difference": "午午·酉酉·亥亥와 대표 오행·장간이 달라 같은 심리를 복제하지 않는다."
+        },
+        {
+          "id": "rr:combination:hyeong:午午",
+          "difference": "辰辰의 저장 지지와 달리 午는 화 왕지의 반복이다."
+        },
+        {
+          "id": "rr:combination:hyeong:酉酉",
+          "difference": "午午와 같은 왕지 반복이나 대표 오행과 제어 대상이 다르다."
+        },
+        {
+          "id": "rr:combination:hyeong:亥亥",
+          "difference": "辰辰과 수에 관련되지만 亥는 수 생왕 논의와 목 장간을 가진다."
+        },
+        {
+          "id": "rr:combination:hyeong:寅巳申",
+          "difference": "같은 세 자리에는 육합·해·충·파가 일부 겹치므로 형만으로 전체를 축약하지 않는다."
+        },
+        {
+          "id": "rr:combination:hyeong:丑戌未",
+          "difference": "三土 집합과 四庫 辰戌丑未는 글자 수도 구성도 다르다."
+        }
+      ],
+      "domainAngles": [
+        {
+          "domain": "personality",
+          "question": "자기 기준을 반복 점검하는 과정이 실제 수정으로 이어지는가?",
+          "secondQuestion": "검토를 멈추게 하는 기준이 있는가?",
+          "limit": "자형 한 글자만으로 반복 관계를 성립시키지 않는다."
+        },
+        {
+          "domain": "career",
+          "question": "규칙·권한·책임이 실제 업무에서 엇갈리는가?",
+          "secondQuestion": "세 쌍의 표 일치를 삼자 구조 전체로 착각하지 않는가?",
+          "limit": "삼형의 존재를 권한 문제의 원인으로 단정하지 않는다."
+        },
+        {
+          "domain": "money",
+          "question": "정산·납부 절차가 서로 모순 없이 실행되는가?",
+          "secondQuestion": "확인 비용이 실제 위험보다 과도하지 않은가?",
+          "limit": "형의 명칭으로 불법 행위를 추정하지 않는다."
+        },
+        {
+          "domain": "study",
+          "question": "문제풀이와 평가 기준이 어디에서 어긋나는가?",
+          "secondQuestion": "평가 기준 자체가 불명확한 것은 아닌가?",
+          "limit": "전통 삼형의 이름을 교육적 처벌의 정당화로 쓰지 않는다."
+        },
+        {
+          "domain": "love",
+          "question": "서로 당연하게 여기는 관계 규칙이 실제로 합의됐는가?",
+          "secondQuestion": "반복 대화에서 책임을 한쪽에만 돌리는가?",
+          "limit": "학대가 실제 있으면 상호 조정의 문제로 축소하지 않는다."
+        },
+        {
+          "domain": "marriage",
+          "question": "생활 의무를 정한 규칙이 서로 충돌하지 않는가?",
+          "secondQuestion": "규칙을 바꿀 권한이 양쪽에 있는가?",
+          "limit": "무은·무례 같은 전통 이름을 배우자 낙인으로 쓰지 않는다."
+        },
+        {
+          "domain": "family",
+          "question": "세대마다 다른 도리의 기준을 누가 부담하고 있는가?",
+          "secondQuestion": "같은 요청을 여러 사람이 반복하는가?",
+          "limit": "삼형의 세 글자를 가족의 가해·피해 역할로 나누지 않는다."
+        },
+        {
+          "domain": "relationships",
+          "question": "모임의 예의와 책임 기준을 모두 알고 있는가?",
+          "secondQuestion": "중재자가 사실과 평판을 구별하는가?",
+          "limit": "형의 역사적 분류를 현대 제재 근거로 쓰지 않는다."
+        }
+      ]
+    },
+    {
+      "profileId": "rr:profile:hae",
+      "mechanism": "충처럼 직접 대향하는 관계가 아니라 결속과 대립이 엇갈리는 방해 설명이다. 관계도와 실제 의도는 별개다.",
+      "nearestDifferences": [
+        {
+          "other": "wonjin",
+          "difference": "육해6쌍과 원진6쌍은 子未·丑午 두 쌍만 겹치며 동일 분류가 아니다."
+        },
+        {
+          "other": "chung",
+          "difference": "직접 대향과 합의 매개 방해 설명은 다르다."
+        }
+      ],
+      "comboDifferences": [
+        {
+          "id": "rr:combination:hae:子未",
+          "difference": "丑午도 원진·해가 겹치나 기본 수토·화토 구성이 다르다."
+        },
+        {
+          "id": "rr:combination:hae:丑午",
+          "difference": "子未는 대표 토수 제약, 丑午는 대표 화토 생조가 있다."
+        },
+        {
+          "id": "rr:combination:hae:寅巳",
+          "difference": "申亥도 각 생지 논설이 있지만 寅巳는 형에도 속한다."
+        },
+        {
+          "id": "rr:combination:hae:卯辰",
+          "difference": "酉戌과 다른 대표 목토 관계이며 봄 방합의 일부라는 사실이 육해를 지우지 않는다."
+        },
+        {
+          "id": "rr:combination:hae:申亥",
+          "difference": "寅巳와 달리 동일쌍 형은 없고 각각 삼합 소속도 다르다."
+        },
+        {
+          "id": "rr:combination:hae:酉戌",
+          "difference": "卯辰과 달리 대표 토금 생조와 고전 주객 차이가 명시된다."
+        }
+      ],
+      "domainAngles": [
+        {
+          "domain": "personality",
+          "question": "기대했던 연결이 막힐 때 숨은 조건을 확인하는가?",
+          "secondQuestion": "내 기대가 상대에게 전달됐는가?",
+          "limit": "고전의 매개 지지가 원국에 실제 있다고 가정하지 않는다."
+        },
+        {
+          "domain": "career",
+          "question": "협업을 막는 중간 절차나 의존 과업이 무엇인가?",
+          "secondQuestion": "필요한 정보를 같은 시점에 받았는가?",
+          "limit": "합이 충에 방해받는 전통 설명을 실제 조직 원인으로 단정하지 않는다."
+        },
+        {
+          "domain": "money",
+          "question": "기대한 입금과 실제 사용 가능한 돈 사이에 어떤 조건이 있는가?",
+          "secondQuestion": "한 수입의 지연이 다른 의무를 막는가?",
+          "limit": "해의 전통적 이름을 신용 평가로 쓰지 않는다."
+        },
+        {
+          "domain": "study",
+          "question": "이해하려는 과목에 필요한 선수 지식이 빠져 있지 않은가?",
+          "secondQuestion": "자료 부족과 이해 부족을 구별했는가?",
+          "limit": "관계 기호가 선수 지식을 특정해 주지는 않는다."
+        },
+        {
+          "domain": "love",
+          "question": "서로 말하지 않은 기대가 관계를 어렵게 하는가?",
+          "secondQuestion": "제삼자의 말이 당사자의 설명을 대신하는가?",
+          "limit": "전통 매개 구조를 제삼자의 실재나 개입으로 번역하지 않는다."
+        },
+        {
+          "domain": "marriage",
+          "question": "공동 생활에서 당연하다고 여긴 기대를 서로 아는가?",
+          "secondQuestion": "한쪽의 지원자가 다른 쪽의 부담을 늘리는가?",
+          "limit": "합과 충의 전통 도식을 실제 양가 관계로 고정하지 않는다."
+        },
+        {
+          "domain": "family",
+          "question": "도움을 주는 뜻과 받는 사람이 필요한 것이 같은가?",
+          "secondQuestion": "가족 간 전달자가 요청을 바꾸지는 않았는가?",
+          "limit": "존재하지 않는 지지나 가족 역할을 매개자로 채우지 않는다."
+        },
+        {
+          "domain": "relationships",
+          "question": "전달 과정에서 기대와 정보가 달라진 지점은 어디인가?",
+          "secondQuestion": "누가 어떤 정보를 받을 권한이 있었는가?",
+          "limit": "모든 지연을 관계의 흉함으로 묶지 않는다."
+        }
+      ]
+    },
+    {
+      "profileId": "rr:profile:banhap",
+      "mechanism": "시작과 중심, 중심과 저장, 시작과 저장은 빠진 역할이 다르다. 단순 약한 삼합이라는 말보다 부족한 구성의 종류가 새 정보다.",
+      "nearestDifferences": [
+        {
+          "other": "samhap",
+          "difference": "없는 세 번째 구성과 화국을 대신 주장하지 않는다."
+        },
+        {
+          "other": "stem_hap",
+          "difference": "원거리 천간 합에 쓰인 半合 용어는 이 지지 관계와 별개다."
+        }
+      ],
+      "comboDifferences": [
+        {
+          "id": "rr:combination:banhap:申子",
+          "difference": "子辰은 왕고이고 申辰은 왕지 없는 생고다."
+        },
+        {
+          "id": "rr:combination:banhap:申辰",
+          "difference": "申子·子辰과 달리 왕지 포함8쌍에 들지 않는다."
+        },
+        {
+          "id": "rr:combination:banhap:子辰",
+          "difference": "申子의 생왕 부분과 빠진 역할이 다르다."
+        },
+        {
+          "id": "rr:combination:banhap:亥卯",
+          "difference": "卯未는 왕고이고 亥未는 왕지 없는 생고다."
+        },
+        {
+          "id": "rr:combination:banhap:亥未",
+          "difference": "亥卯·卯未와 왕지 포함 여부가 다르다."
+        },
+        {
+          "id": "rr:combination:banhap:卯未",
+          "difference": "亥卯와 빠진 구성의 역할이 다르다."
+        },
+        {
+          "id": "rr:combination:banhap:寅午",
+          "difference": "午戌은 왕고, 寅戌은 왕지 없는 생고다."
+        },
+        {
+          "id": "rr:combination:banhap:寅戌",
+          "difference": "寅午·午戌과 달리 엄격8쌍 목록에서 제외된다."
+        },
+        {
+          "id": "rr:combination:banhap:午戌",
+          "difference": "寅午의 생왕 부분과 없는 역할이 다르다."
+        },
+        {
+          "id": "rr:combination:banhap:巳酉",
+          "difference": "酉丑은 왕고, 巳丑는 왕지 없는 생고다."
+        },
+        {
+          "id": "rr:combination:banhap:巳丑",
+          "difference": "巳酉·酉丑와 왕지 유무가 다르다."
+        },
+        {
+          "id": "rr:combination:banhap:酉丑",
+          "difference": "巳酉와 빠진 역할이 다르며 子丑 육합과도 다르다."
+        }
+      ],
+      "domainAngles": [
+        {
+          "domain": "personality",
+          "question": "내가 갖춘 일부 기능과 아직 없는 조건을 구분하는가?",
+          "secondQuestion": "왕지 없는 쌍을 같은 작용으로 취급했는가?",
+          "limit": "현행12쌍 정책을 전승 전체의 합의로 말하지 않는다."
+        },
+        {
+          "domain": "career",
+          "question": "연결된 업무 두 단계 사이 또는 이후에 무엇이 빠져 있는가?",
+          "secondQuestion": "현재 쌍이 어떤 삼합의 부분인지 확인했는가?",
+          "limit": "없는 지지를 Evidence로 발급하지 않는다."
+        },
+        {
+          "domain": "money",
+          "question": "수입과 지출 사이에 보존·회수 조건이 빠져 있지 않은가?",
+          "secondQuestion": "없는 조건이 들어올 것이라는 기대에 빚을 내는가?",
+          "limit": "누락 지지의 미래 도래를 투자 시점으로 쓰지 않는다."
+        },
+        {
+          "domain": "study",
+          "question": "이해와 적용 중 무엇을 했고 무엇을 아직 확인하지 않았는가?",
+          "secondQuestion": "빠진 단계를 상대나 자료가 대신하고 있는가?",
+          "limit": "왕지 포함 여부가 성적 차이를 설명한다는 근거는 없다."
+        },
+        {
+          "domain": "love",
+          "question": "친밀감 외에 합의하지 않은 생활 조건은 무엇인가?",
+          "secondQuestion": "부분 연결을 완성시키려고 제삼자를 상정하는가?",
+          "limit": "삼합의 누락 지지를 사람으로 번역하지 않는다."
+        },
+        {
+          "domain": "marriage",
+          "question": "공동 생활의 일부 합의 뒤에 필요한 실행 자원이 있는가?",
+          "secondQuestion": "누락된 부담이 한 사람에게 자동 배정되는가?",
+          "limit": "부분 조합을 현실의 결함으로 낙인찍지 않는다."
+        },
+        {
+          "domain": "family",
+          "question": "가족 지원의 일부 연결만으로 전체 돌봄이 된다고 보는가?",
+          "secondQuestion": "지원자가 빠지는 상황을 고려했는가?",
+          "limit": "누락 지지를 가족의 출생·사망으로 설명하지 않는다."
+        },
+        {
+          "domain": "relationships",
+          "question": "부분적인 공감이 모임 전체의 합의로 확대되고 있는가?",
+          "secondQuestion": "빠진 의견을 편의상 동의로 기록했는가?",
+          "limit": "반합과 삼합을 별개 협력 효과로 중복 집계하지 않는다."
+        }
+      ]
+    },
+    {
+      "profileId": "rr:profile:pa",
+      "mechanism": "파 연구는 어떤 배합·기존 유지 조건이 달라지는지 확인하는 문제다. 관계별 임의의 감정·사건 의미를 만들기보다 겹침과 다른 생극을 검토한다.",
+      "nearestDifferences": [
+        {
+          "other": "chung",
+          "difference": "대향 충과 다른 여섯 조합이며 강도가 약하다는 현대 견해는 계산된 수치가 아니다."
+        },
+        {
+          "other": "yukhap",
+          "difference": "寅亥·巳申의 겹침은 합의 취소 또는 파의 자동 승리를 뜻하지 않는다."
+        }
+      ],
+      "comboDifferences": [
+        {
+          "id": "rr:combination:pa:子酉",
+          "difference": "寅亥·巳申과 달리 동일쌍 육합에 속하지 않는다."
+        },
+        {
+          "id": "rr:combination:pa:丑辰",
+          "difference": "未戌은 형에도 겹치지만 丑辰은 현행 동일쌍 형이 아니다."
+        },
+        {
+          "id": "rr:combination:pa:寅亥",
+          "difference": "巳申의 합·형·파와 달리 동일쌍 형은 없다."
+        },
+        {
+          "id": "rr:combination:pa:卯午",
+          "difference": "子酉도 생조지만 오행·계절이 달라 같은 고유 성격을 복제하지 않는다."
+        },
+        {
+          "id": "rr:combination:pa:巳申",
+          "difference": "寅亥와 달리 본래 화극금·형이 함께 관여한다."
+        },
+        {
+          "id": "rr:combination:pa:未戌",
+          "difference": "丑辰과 달리 동일쌍 형에 속하고 丑未충과는 목록이 다르다."
+        }
+      ],
+      "domainAngles": [
+        {
+          "domain": "personality",
+          "question": "수정해야 할 습관과 유지할 습관을 구분하는가?",
+          "secondQuestion": "변경에 대한 동의와 되돌릴 방법이 있는가?",
+          "limit": "현대 비유를 고전의 인격 정의로 제시하지 않는다."
+        },
+        {
+          "domain": "career",
+          "question": "기존 운영의 어느 부분을 고쳐야 실제 문제가 줄어드는가?",
+          "secondQuestion": "변경의 책임자와 복구 기준이 분명한가?",
+          "limit": "파와 육합이 겹친다고 협력을 취소하지 않는다."
+        },
+        {
+          "domain": "money",
+          "question": "유지 비용이 커진 약정을 어떤 조건에서 수정할 것인가?",
+          "secondQuestion": "단기 절약이 장기 의무를 늘리는가?",
+          "limit": "현대 제공자의 파 설명을 금융 사실로 승격하지 않는다."
+        },
+        {
+          "domain": "study",
+          "question": "기존 학습 자료에서 고쳐야 할 오류가 무엇인가?",
+          "secondQuestion": "오류가 자료 때문인지 적용 방식 때문인지 확인했는가?",
+          "limit": "변경 장면을 파에 고유한 학습 효능으로 말하지 않는다."
+        },
+        {
+          "domain": "love",
+          "question": "바꾸기로 한 약속의 범위와 동의를 서로 아는가?",
+          "secondQuestion": "한쪽만 규칙을 바꾸는 상황은 아닌가?",
+          "limit": "지지의 파를 실제 계약 파기로 번역하지 않는다."
+        },
+        {
+          "domain": "marriage",
+          "question": "공동 생활의 오래된 장치를 어떻게 안전하게 고칠 것인가?",
+          "secondQuestion": "바뀐 분담을 언제 다시 평가할 것인가?",
+          "limit": "기존 결속이 자동으로 해체됐다고 주장하지 않는다."
+        },
+        {
+          "domain": "family",
+          "question": "가족 관습 중 필요한 기능과 바꿀 형식을 나눌 수 있는가?",
+          "secondQuestion": "형식을 바꾸면서 지원이 사라지지는 않는가?",
+          "limit": "파에 고유한 가족 사건 의미는 미검증이다."
+        },
+        {
+          "domain": "relationships",
+          "question": "모임의 낡은 규칙을 바꾸는 절차가 합의되어 있는가?",
+          "secondQuestion": "변경이 특정 사람을 배제하는가?",
+          "limit": "겹친 합·형·파를 사건의 순서로 만들지 않는다."
+        }
+      ]
+    },
+    {
+      "profileId": "rr:profile:wonjin",
+      "mechanism": "현재 자료가 허용하는 것은 표의6쌍과 서로 다른 전승 조건의 대조다. 당사자의 감정·관계 결과는 이 기호로 알 수 없다.",
+      "nearestDifferences": [
+        {
+          "other": "hae",
+          "difference": "여섯 쌍 전체가 같지 않으며 학술·전승의 정의도 별도다."
+        },
+        {
+          "other": "hyeong",
+          "difference": "자형의 반복과 원진의 서로 다른 두 지지는 구성부터 다르다."
+        }
+      ],
+      "comboDifferences": [
+        {
+          "id": "rr:combination:wonjin:子未",
+          "difference": "원진 중 육해와 겹치는2쌍의 하나이고 귀문 쌍은 아니다."
+        },
+        {
+          "id": "rr:combination:wonjin:丑午",
+          "difference": "子未와 함께 육해 중복이지만 귀문에도 겹친다는 점이 다르다."
+        },
+        {
+          "id": "rr:combination:wonjin:寅酉",
+          "difference": "현행 동일쌍 해·귀문이 아니며 寅申충과 혼동하지 않는다."
+        },
+        {
+          "id": "rr:combination:wonjin:卯申",
+          "difference": "卯酉충·卯辰해와 다른 조합이다."
+        },
+        {
+          "id": "rr:combination:wonjin:辰亥",
+          "difference": "다른 원진쌍보다 강하다는 새 점수는 만들지 않는다."
+        },
+        {
+          "id": "rr:combination:wonjin:巳戌",
+          "difference": "巳申의 합·형·파와 달리 해당 동일쌍 검출 목록에 없다."
+        }
+      ],
+      "domainAngles": [
+        {
+          "domain": "personality",
+          "question": "확인한 사실과 내가 추정한 의도를 구분하는가?",
+          "secondQuestion": "확인을 반복하는 것이 부담을 늘리는가?",
+          "limit": "이 질문은 일반적 소통 점검이며 원진 고유 효능이 아니다."
+        },
+        {
+          "domain": "career",
+          "question": "동료의 실제 업무 행동과 평판을 구별하고 있는가?",
+          "secondQuestion": "기호 때문에 채용·협업 기회를 제한하는가?",
+          "limit": "교차 궁합 원진은 현행 생산자 미지원이다."
+        },
+        {
+          "domain": "money",
+          "question": "친분이나 불편한 느낌 대신 거래 조건을 확인하는가?",
+          "secondQuestion": "감정적 화해가 정산 의무를 대신하는가?",
+          "limit": "원진 조합별 재무 효과의 직접 근거는 없다."
+        },
+        {
+          "domain": "study",
+          "question": "타인의 반응에 대한 추측이 실제 학습 피드백을 가리는가?",
+          "secondQuestion": "학습 모임의 참여가 자발적인가?",
+          "limit": "원진이 학습 효율에 작용한다는 자료는 미확인이다."
+        },
+        {
+          "domain": "love",
+          "question": "상대의 감정을 기호가 아니라 당사자에게 확인하는가?",
+          "secondQuestion": "거절을 숨은 호감으로 바꾸고 있는가?",
+          "limit": "원국 원진살을 두 사람의 원진으로 투영하지 않는다."
+        },
+        {
+          "domain": "marriage",
+          "question": "실제 생활 문제가 관계 이름 때문에 과장되고 있지는 않은가?",
+          "secondQuestion": "해석을 관계 유지나 해소의 압박으로 쓰는가?",
+          "limit": "특정 원진 쌍의 혼인 효력은 확인되지 않았다."
+        },
+        {
+          "domain": "family",
+          "question": "가족의 의사를 실제로 듣고 있는가, 기호로 대신 설명하는가?",
+          "secondQuestion": "상대가 답하지 않을 권리를 인정하는가?",
+          "limit": "원진살과 귀문의 중복으로 정신·건강 위험을 강화하지 않는다."
+        },
+        {
+          "domain": "relationships",
+          "question": "실제 불편한 접촉과 이름 때문에 생긴 선입견을 구별하는가?",
+          "secondQuestion": "관계 개선을 명분으로 접촉을 강요하는가?",
+          "limit": "일반 소통 질문을 원진 특유의 해법으로 포장하지 않는다."
+        }
+      ]
+    }
+  ],
+  "sharedConceptsNotNewFacts": [
+    "확인·동의·안전·실제 맥락은 전 자료의 공통 제한이며 신규 명리 의미로 세지 않는다.",
+    "각 삼합의 생왕·왕고·생고 현대 장면은 구성의 차이를 검토하는 비유다. 구성 수가12개라고12개 독립 심리 효과가 증명된 것은 아니다.",
+    "파·원진의 조합 고유 생활 효력은 미확인이다. 오행·음양·장간·겹친 표·전승 조건의 정보는 보존하되 독특한 성격을 창작하지 않는다.",
+    "주 질문과 두 번째 질문은 같은 칸의 다른 검토 각도이며2개의 검증된 명리 사실로 집계하지 않는다."
+  ],
+  "limitations": [
+    "문헌 전사는 전통의 존재 확인이며 개인 예측의 경험적 검증이 아니다.",
+    "명리 별칭과 현대 생활 은유 사이의 인과를 입증하지 않았다.",
+    "같은 안전 원칙이 반복된다는 이유로 재사용 자료 수를 부풀리지 않는다."
+  ]
+}

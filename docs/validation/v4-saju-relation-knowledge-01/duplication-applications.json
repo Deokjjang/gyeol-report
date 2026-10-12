@@ -1,0 +1,12 @@
+{
+  "exactRepeatedFields": {
+    "readerQuestion": [],
+    "positive": [],
+    "risk": [],
+    "excess": [],
+    "unexpected": [],
+    "conditionalScene": [],
+    "contrast": []
+  },
+  "interpretation": "고유한 문장 수가 고유한 명리 사실 수를 보장하지 않는다. 내용의 공통점과 한계는 semantic-audit에 별도 기록."
+}
