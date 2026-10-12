@@ -60,7 +60,7 @@ export function commitReleaseSource(row:ReleaseSource,context:ReleaseContext,mem
     memory.uses.set(row.facet,(memory.uses.get(row.facet)??0)+1);
   }
 }
-export type ReleaseDemand = {slot:string;context:ReleaseContext;preferred:readonly string[];fixed?:ReleaseSource};
+export type ReleaseDemand = {slot:string;context:ReleaseContext;preferred:readonly string[];fixed?:ReleaseSource;recall?:boolean;eligible?:string[]};
 export type ReleasePreflight = {demands:ReleaseDemand[];blocked:Set<string>};
 /** Reserve all discovered chapter questions together. Existing primary limits
  * (three/root, five/facet) remain intact. CH05 maintenance, CH07 opportunity
@@ -68,7 +68,7 @@ export type ReleasePreflight = {demands:ReleaseDemand[];blocked:Set<string>};
 export function allocateReleaseDemands(pool:ReleaseSource[], preflight:ReleasePreflight, plan:ComprehensiveEditorialPlan) {
   const memory=freshReleaseAllocation();preflight.blocked.forEach(k=>memory.meanings.add(k));
   const choices=new Map<string,ReleaseSource>();
-  const demands=preflight.demands.filter(d=>!d.slot.startsWith("CH12")&&!d.slot.startsWith("CH13")&&d.slot!=="CH05.P4"&&d.context!=="positive");
+  const demands=preflight.demands.filter(d=>!d.slot.startsWith("CH12")&&!d.slot.startsWith("CH13")&&d.slot!=="CH05.P4"&&!d.recall&&d.context!=="positive");
   const independent=pool.filter((s,i)=>pool.findIndex(r=>r.facet===s.facet&&r.atom.id===s.atom.id)===i);
   let complete=true;const failures:string[]=[];
   for(const d of demands.filter(d=>d.fixed)) {
@@ -79,7 +79,7 @@ export function allocateReleaseDemands(pool:ReleaseSource[], preflight:ReleasePr
     if(!row){complete=false;failures.push(`FIXED:${d.slot}`);break;}choices.set(d.slot,row);commitReleaseSource(row,d.context,memory);
   }
   const pending=demands.filter(d=>!d.fixed);
-  const available=new Map(pending.map(d=>[d.slot,independent.filter(row=>!!selectReleaseSource([row],d.context,memory,plan,d.preferred))]));
+  const available=new Map(pending.map(d=>[d.slot,independent.filter(row=>(!d.eligible||d.eligible.includes(`${row.atom.id}|${row.facet}`))&&!!selectReleaseSource([row],d.context,memory,plan,d.preferred))]));
   type Edge={to:string;capacity:number;reverse:Edge};
   const graph=new Map<string,Edge[]>();
   const edge=(from:string,to:string,capacity:number)=>{
@@ -129,8 +129,8 @@ export function allocateReleaseDemands(pool:ReleaseSource[], preflight:ReleasePr
   if(!complete) {choices.clear();for(const d of demands)if(d.fixed)choices.set(d.slot,d.fixed);}
   const socialMemory=freshReleaseAllocation();preflight.blocked.forEach(k=>socialMemory.meanings.add(k));
   for(const d of demands){const row=choices.get(d.slot);if(row)commitReleaseSource(row,d.context,socialMemory);}
-  for(const d of preflight.demands.filter(d=>d.slot.startsWith("CH12")||d.slot==="CH05.P4"||d.context==="positive")) {
-    const prior=pool.filter(s=>[...choices.entries()].some(([slot,r])=>slot<d.slot&&r.atom.id===s.atom.id&&r.facet===s.facet));
+  for(const d of preflight.demands.filter(d=>d.recall||d.slot.startsWith("CH12")||d.slot==="CH05.P4"||d.context==="positive")) {
+    const prior=pool.filter(s=>(!d.eligible||d.eligible.includes(`${s.atom.id}|${s.facet}`))&&[...choices.entries()].some(([slot,r])=>slot<d.slot&&r.atom.id===s.atom.id&&r.facet===s.facet));
     const row=selectReleaseSource(prior,d.context,socialMemory,plan,d.preferred,true);
     if(row){choices.set(d.slot,row);commitReleaseSource(row,d.context,socialMemory,true);}
   }
