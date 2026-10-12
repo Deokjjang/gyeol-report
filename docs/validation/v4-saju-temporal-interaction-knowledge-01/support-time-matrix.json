@@ -1,0 +1,1062 @@
+[
+  {
+    "id": "tr:relation:stem_hap:natal_dayun",
+    "relation": "stem_hap",
+    "scope": "natal_dayun",
+    "producerSupport": "unsupported",
+    "producerRefs": [],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. 원국-대운 검증 근거는 원래 packet의 cycle에 한정하며 다음 cycle로 복사하지 않는다.",
+    "definitionRef": "rr:profile:stem_hap",
+    "combinationRefs": [
+      "rr:combination:stem_hap:甲己",
+      "rr:combination:stem_hap:乙庚",
+      "rr:combination:stem_hap:丙辛",
+      "rr:combination:stem_hap:丁壬",
+      "rr:combination:stem_hap:戊癸"
+    ]
+  },
+  {
+    "id": "tr:relation:stem_hap:natal_saeun",
+    "relation": "stem_hap",
+    "scope": "natal_saeun",
+    "producerSupport": "partial",
+    "producerRefs": [
+      "annualFortuneEvidence:natalAnnualRelations + annualEvidence:annualStemRelations"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. V4 선택 연주 투영은 구간별 실효 연주 ledger가 아니므로 입춘 전 적용을 승인하지 않는다.",
+    "definitionRef": "rr:profile:stem_hap",
+    "combinationRefs": [
+      "rr:combination:stem_hap:甲己",
+      "rr:combination:stem_hap:乙庚",
+      "rr:combination:stem_hap:丙辛",
+      "rr:combination:stem_hap:丁壬",
+      "rr:combination:stem_hap:戊癸"
+    ]
+  },
+  {
+    "id": "tr:relation:stem_hap:natal_wolun",
+    "relation": "stem_hap",
+    "scope": "natal_wolun",
+    "producerSupport": "unsupported",
+    "producerRefs": [],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:stem_hap",
+    "combinationRefs": [
+      "rr:combination:stem_hap:甲己",
+      "rr:combination:stem_hap:乙庚",
+      "rr:combination:stem_hap:丙辛",
+      "rr:combination:stem_hap:丁壬",
+      "rr:combination:stem_hap:戊癸"
+    ]
+  },
+  {
+    "id": "tr:relation:stem_hap:dayun_saeun",
+    "relation": "stem_hap",
+    "scope": "dayun_saeun",
+    "producerSupport": "unsupported",
+    "producerRefs": [],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. major 연도 row의 단일 cycleRelations는 전환 이전 전체를 설명하지 않는다; 구간별 annual crossPeriods와 구별한다.",
+    "definitionRef": "rr:profile:stem_hap",
+    "combinationRefs": [
+      "rr:combination:stem_hap:甲己",
+      "rr:combination:stem_hap:乙庚",
+      "rr:combination:stem_hap:丙辛",
+      "rr:combination:stem_hap:丁壬",
+      "rr:combination:stem_hap:戊癸"
+    ]
+  },
+  {
+    "id": "tr:relation:stem_hap:dayun_wolun",
+    "relation": "stem_hap",
+    "scope": "dayun_wolun",
+    "producerSupport": "unsupported",
+    "producerRefs": [],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:stem_hap",
+    "combinationRefs": [
+      "rr:combination:stem_hap:甲己",
+      "rr:combination:stem_hap:乙庚",
+      "rr:combination:stem_hap:丙辛",
+      "rr:combination:stem_hap:丁壬",
+      "rr:combination:stem_hap:戊癸"
+    ]
+  },
+  {
+    "id": "tr:relation:stem_hap:saeun_wolun",
+    "relation": "stem_hap",
+    "scope": "saeun_wolun",
+    "producerSupport": "unsupported",
+    "producerRefs": [],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:stem_hap",
+    "combinationRefs": [
+      "rr:combination:stem_hap:甲己",
+      "rr:combination:stem_hap:乙庚",
+      "rr:combination:stem_hap:丙辛",
+      "rr:combination:stem_hap:丁壬",
+      "rr:combination:stem_hap:戊癸"
+    ]
+  },
+  {
+    "id": "tr:relation:yukhap:natal_dayun",
+    "relation": "yukhap",
+    "scope": "natal_dayun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "majorFortuneEvidence:branchInteractions"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. 원국-대운 검증 근거는 원래 packet의 cycle에 한정하며 다음 cycle로 복사하지 않는다.",
+    "definitionRef": "rr:profile:yukhap",
+    "combinationRefs": [
+      "rr:combination:yukhap:子丑",
+      "rr:combination:yukhap:寅亥",
+      "rr:combination:yukhap:卯戌",
+      "rr:combination:yukhap:辰酉",
+      "rr:combination:yukhap:巳申",
+      "rr:combination:yukhap:午未"
+    ]
+  },
+  {
+    "id": "tr:relation:yukhap:natal_saeun",
+    "relation": "yukhap",
+    "scope": "natal_saeun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualFortuneEvidence:natalAnnualRelations + annualEvidence:annualStemRelations"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:yukhap",
+    "combinationRefs": [
+      "rr:combination:yukhap:子丑",
+      "rr:combination:yukhap:寅亥",
+      "rr:combination:yukhap:卯戌",
+      "rr:combination:yukhap:辰酉",
+      "rr:combination:yukhap:巳申",
+      "rr:combination:yukhap:午未"
+    ]
+  },
+  {
+    "id": "tr:relation:yukhap:natal_wolun",
+    "relation": "yukhap",
+    "scope": "natal_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthRelationFacts + annualMonthExtendedEvidence"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:yukhap",
+    "combinationRefs": [
+      "rr:combination:yukhap:子丑",
+      "rr:combination:yukhap:寅亥",
+      "rr:combination:yukhap:卯戌",
+      "rr:combination:yukhap:辰酉",
+      "rr:combination:yukhap:巳申",
+      "rr:combination:yukhap:午未"
+    ]
+  },
+  {
+    "id": "tr:relation:yukhap:dayun_saeun",
+    "relation": "yukhap",
+    "scope": "dayun_saeun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualEvidence:crossPeriods + majorFortuneDecadeReading:cycleRelations"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. major 연도 row의 단일 cycleRelations는 전환 이전 전체를 설명하지 않는다; 구간별 annual crossPeriods와 구별한다.",
+    "definitionRef": "rr:profile:yukhap",
+    "combinationRefs": [
+      "rr:combination:yukhap:子丑",
+      "rr:combination:yukhap:寅亥",
+      "rr:combination:yukhap:卯戌",
+      "rr:combination:yukhap:辰酉",
+      "rr:combination:yukhap:巳申",
+      "rr:combination:yukhap:午未"
+    ]
+  },
+  {
+    "id": "tr:relation:yukhap:dayun_wolun",
+    "relation": "yukhap",
+    "scope": "dayun_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthJie:month_dayun_branch"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:yukhap",
+    "combinationRefs": [
+      "rr:combination:yukhap:子丑",
+      "rr:combination:yukhap:寅亥",
+      "rr:combination:yukhap:卯戌",
+      "rr:combination:yukhap:辰酉",
+      "rr:combination:yukhap:巳申",
+      "rr:combination:yukhap:午未"
+    ]
+  },
+  {
+    "id": "tr:relation:yukhap:saeun_wolun",
+    "relation": "yukhap",
+    "scope": "saeun_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthJie:month_annual_branch"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:yukhap",
+    "combinationRefs": [
+      "rr:combination:yukhap:子丑",
+      "rr:combination:yukhap:寅亥",
+      "rr:combination:yukhap:卯戌",
+      "rr:combination:yukhap:辰酉",
+      "rr:combination:yukhap:巳申",
+      "rr:combination:yukhap:午未"
+    ]
+  },
+  {
+    "id": "tr:relation:chung:natal_dayun",
+    "relation": "chung",
+    "scope": "natal_dayun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "majorFortuneEvidence:branchInteractions"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. 원국-대운 검증 근거는 원래 packet의 cycle에 한정하며 다음 cycle로 복사하지 않는다.",
+    "definitionRef": "rr:profile:chung",
+    "combinationRefs": [
+      "rr:combination:chung:子午",
+      "rr:combination:chung:丑未",
+      "rr:combination:chung:寅申",
+      "rr:combination:chung:卯酉",
+      "rr:combination:chung:辰戌",
+      "rr:combination:chung:巳亥"
+    ]
+  },
+  {
+    "id": "tr:relation:chung:natal_saeun",
+    "relation": "chung",
+    "scope": "natal_saeun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualFortuneEvidence:natalAnnualRelations + annualEvidence:annualStemRelations"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:chung",
+    "combinationRefs": [
+      "rr:combination:chung:子午",
+      "rr:combination:chung:丑未",
+      "rr:combination:chung:寅申",
+      "rr:combination:chung:卯酉",
+      "rr:combination:chung:辰戌",
+      "rr:combination:chung:巳亥"
+    ]
+  },
+  {
+    "id": "tr:relation:chung:natal_wolun",
+    "relation": "chung",
+    "scope": "natal_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthRelationFacts + annualMonthExtendedEvidence"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:chung",
+    "combinationRefs": [
+      "rr:combination:chung:子午",
+      "rr:combination:chung:丑未",
+      "rr:combination:chung:寅申",
+      "rr:combination:chung:卯酉",
+      "rr:combination:chung:辰戌",
+      "rr:combination:chung:巳亥"
+    ]
+  },
+  {
+    "id": "tr:relation:chung:dayun_saeun",
+    "relation": "chung",
+    "scope": "dayun_saeun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualEvidence:crossPeriods + majorFortuneDecadeReading:cycleRelations"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. major 연도 row의 단일 cycleRelations는 전환 이전 전체를 설명하지 않는다; 구간별 annual crossPeriods와 구별한다.",
+    "definitionRef": "rr:profile:chung",
+    "combinationRefs": [
+      "rr:combination:chung:子午",
+      "rr:combination:chung:丑未",
+      "rr:combination:chung:寅申",
+      "rr:combination:chung:卯酉",
+      "rr:combination:chung:辰戌",
+      "rr:combination:chung:巳亥"
+    ]
+  },
+  {
+    "id": "tr:relation:chung:dayun_wolun",
+    "relation": "chung",
+    "scope": "dayun_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthJie:month_dayun_branch"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:chung",
+    "combinationRefs": [
+      "rr:combination:chung:子午",
+      "rr:combination:chung:丑未",
+      "rr:combination:chung:寅申",
+      "rr:combination:chung:卯酉",
+      "rr:combination:chung:辰戌",
+      "rr:combination:chung:巳亥"
+    ]
+  },
+  {
+    "id": "tr:relation:chung:saeun_wolun",
+    "relation": "chung",
+    "scope": "saeun_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthJie:month_annual_branch"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:chung",
+    "combinationRefs": [
+      "rr:combination:chung:子午",
+      "rr:combination:chung:丑未",
+      "rr:combination:chung:寅申",
+      "rr:combination:chung:卯酉",
+      "rr:combination:chung:辰戌",
+      "rr:combination:chung:巳亥"
+    ]
+  },
+  {
+    "id": "tr:relation:samhap:natal_dayun",
+    "relation": "samhap",
+    "scope": "natal_dayun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "majorFortuneEvidence:branchInteractions"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. 원국-대운 검증 근거는 원래 packet의 cycle에 한정하며 다음 cycle로 복사하지 않는다.",
+    "definitionRef": "rr:profile:samhap",
+    "combinationRefs": [
+      "rr:combination:samhap:申子辰",
+      "rr:combination:samhap:亥卯未",
+      "rr:combination:samhap:寅午戌",
+      "rr:combination:samhap:巳酉丑"
+    ]
+  },
+  {
+    "id": "tr:relation:samhap:natal_saeun",
+    "relation": "samhap",
+    "scope": "natal_saeun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualFortuneEvidence:natalAnnualRelations + annualEvidence:annualStemRelations"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:samhap",
+    "combinationRefs": [
+      "rr:combination:samhap:申子辰",
+      "rr:combination:samhap:亥卯未",
+      "rr:combination:samhap:寅午戌",
+      "rr:combination:samhap:巳酉丑"
+    ]
+  },
+  {
+    "id": "tr:relation:samhap:natal_wolun",
+    "relation": "samhap",
+    "scope": "natal_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthRelationFacts + annualMonthExtendedEvidence"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:samhap",
+    "combinationRefs": [
+      "rr:combination:samhap:申子辰",
+      "rr:combination:samhap:亥卯未",
+      "rr:combination:samhap:寅午戌",
+      "rr:combination:samhap:巳酉丑"
+    ]
+  },
+  {
+    "id": "tr:relation:samhap:dayun_saeun",
+    "relation": "samhap",
+    "scope": "dayun_saeun",
+    "producerSupport": "unsupported",
+    "producerRefs": [],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. major 연도 row의 단일 cycleRelations는 전환 이전 전체를 설명하지 않는다; 구간별 annual crossPeriods와 구별한다.",
+    "definitionRef": "rr:profile:samhap",
+    "combinationRefs": [
+      "rr:combination:samhap:申子辰",
+      "rr:combination:samhap:亥卯未",
+      "rr:combination:samhap:寅午戌",
+      "rr:combination:samhap:巳酉丑"
+    ]
+  },
+  {
+    "id": "tr:relation:samhap:dayun_wolun",
+    "relation": "samhap",
+    "scope": "dayun_wolun",
+    "producerSupport": "unsupported",
+    "producerRefs": [],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:samhap",
+    "combinationRefs": [
+      "rr:combination:samhap:申子辰",
+      "rr:combination:samhap:亥卯未",
+      "rr:combination:samhap:寅午戌",
+      "rr:combination:samhap:巳酉丑"
+    ]
+  },
+  {
+    "id": "tr:relation:samhap:saeun_wolun",
+    "relation": "samhap",
+    "scope": "saeun_wolun",
+    "producerSupport": "unsupported",
+    "producerRefs": [],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:samhap",
+    "combinationRefs": [
+      "rr:combination:samhap:申子辰",
+      "rr:combination:samhap:亥卯未",
+      "rr:combination:samhap:寅午戌",
+      "rr:combination:samhap:巳酉丑"
+    ]
+  },
+  {
+    "id": "tr:relation:hyeong:natal_dayun",
+    "relation": "hyeong",
+    "scope": "natal_dayun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "majorFortuneEvidence:branchInteractions"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. 원국-대운 검증 근거는 원래 packet의 cycle에 한정하며 다음 cycle로 복사하지 않는다. 참조64개 중 전체 삼형2개는 모든 기간 producer에서 G다.",
+    "definitionRef": "rr:profile:hyeong",
+    "combinationRefs": [
+      "rr:combination:hyeong:寅巳",
+      "rr:combination:hyeong:巳申",
+      "rr:combination:hyeong:申寅",
+      "rr:combination:hyeong:丑戌",
+      "rr:combination:hyeong:戌未",
+      "rr:combination:hyeong:未丑",
+      "rr:combination:hyeong:子卯",
+      "rr:combination:hyeong:辰辰",
+      "rr:combination:hyeong:午午",
+      "rr:combination:hyeong:酉酉",
+      "rr:combination:hyeong:亥亥",
+      "rr:combination:hyeong:寅巳申",
+      "rr:combination:hyeong:丑戌未"
+    ]
+  },
+  {
+    "id": "tr:relation:hyeong:natal_saeun",
+    "relation": "hyeong",
+    "scope": "natal_saeun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualFortuneEvidence:natalAnnualRelations + annualEvidence:annualStemRelations"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. 참조64개 중 전체 삼형2개는 모든 기간 producer에서 G다.",
+    "definitionRef": "rr:profile:hyeong",
+    "combinationRefs": [
+      "rr:combination:hyeong:寅巳",
+      "rr:combination:hyeong:巳申",
+      "rr:combination:hyeong:申寅",
+      "rr:combination:hyeong:丑戌",
+      "rr:combination:hyeong:戌未",
+      "rr:combination:hyeong:未丑",
+      "rr:combination:hyeong:子卯",
+      "rr:combination:hyeong:辰辰",
+      "rr:combination:hyeong:午午",
+      "rr:combination:hyeong:酉酉",
+      "rr:combination:hyeong:亥亥",
+      "rr:combination:hyeong:寅巳申",
+      "rr:combination:hyeong:丑戌未"
+    ]
+  },
+  {
+    "id": "tr:relation:hyeong:natal_wolun",
+    "relation": "hyeong",
+    "scope": "natal_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthRelationFacts + annualMonthExtendedEvidence"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. 참조64개 중 전체 삼형2개는 모든 기간 producer에서 G다.",
+    "definitionRef": "rr:profile:hyeong",
+    "combinationRefs": [
+      "rr:combination:hyeong:寅巳",
+      "rr:combination:hyeong:巳申",
+      "rr:combination:hyeong:申寅",
+      "rr:combination:hyeong:丑戌",
+      "rr:combination:hyeong:戌未",
+      "rr:combination:hyeong:未丑",
+      "rr:combination:hyeong:子卯",
+      "rr:combination:hyeong:辰辰",
+      "rr:combination:hyeong:午午",
+      "rr:combination:hyeong:酉酉",
+      "rr:combination:hyeong:亥亥",
+      "rr:combination:hyeong:寅巳申",
+      "rr:combination:hyeong:丑戌未"
+    ]
+  },
+  {
+    "id": "tr:relation:hyeong:dayun_saeun",
+    "relation": "hyeong",
+    "scope": "dayun_saeun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualEvidence:crossPeriods + majorFortuneDecadeReading:cycleRelations"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. major 연도 row의 단일 cycleRelations는 전환 이전 전체를 설명하지 않는다; 구간별 annual crossPeriods와 구별한다. 참조64개 중 전체 삼형2개는 모든 기간 producer에서 G다.",
+    "definitionRef": "rr:profile:hyeong",
+    "combinationRefs": [
+      "rr:combination:hyeong:寅巳",
+      "rr:combination:hyeong:巳申",
+      "rr:combination:hyeong:申寅",
+      "rr:combination:hyeong:丑戌",
+      "rr:combination:hyeong:戌未",
+      "rr:combination:hyeong:未丑",
+      "rr:combination:hyeong:子卯",
+      "rr:combination:hyeong:辰辰",
+      "rr:combination:hyeong:午午",
+      "rr:combination:hyeong:酉酉",
+      "rr:combination:hyeong:亥亥",
+      "rr:combination:hyeong:寅巳申",
+      "rr:combination:hyeong:丑戌未"
+    ]
+  },
+  {
+    "id": "tr:relation:hyeong:dayun_wolun",
+    "relation": "hyeong",
+    "scope": "dayun_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthJie:month_dayun_branch"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. 참조64개 중 전체 삼형2개는 모든 기간 producer에서 G다.",
+    "definitionRef": "rr:profile:hyeong",
+    "combinationRefs": [
+      "rr:combination:hyeong:寅巳",
+      "rr:combination:hyeong:巳申",
+      "rr:combination:hyeong:申寅",
+      "rr:combination:hyeong:丑戌",
+      "rr:combination:hyeong:戌未",
+      "rr:combination:hyeong:未丑",
+      "rr:combination:hyeong:子卯",
+      "rr:combination:hyeong:辰辰",
+      "rr:combination:hyeong:午午",
+      "rr:combination:hyeong:酉酉",
+      "rr:combination:hyeong:亥亥",
+      "rr:combination:hyeong:寅巳申",
+      "rr:combination:hyeong:丑戌未"
+    ]
+  },
+  {
+    "id": "tr:relation:hyeong:saeun_wolun",
+    "relation": "hyeong",
+    "scope": "saeun_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthJie:month_annual_branch"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. 참조64개 중 전체 삼형2개는 모든 기간 producer에서 G다.",
+    "definitionRef": "rr:profile:hyeong",
+    "combinationRefs": [
+      "rr:combination:hyeong:寅巳",
+      "rr:combination:hyeong:巳申",
+      "rr:combination:hyeong:申寅",
+      "rr:combination:hyeong:丑戌",
+      "rr:combination:hyeong:戌未",
+      "rr:combination:hyeong:未丑",
+      "rr:combination:hyeong:子卯",
+      "rr:combination:hyeong:辰辰",
+      "rr:combination:hyeong:午午",
+      "rr:combination:hyeong:酉酉",
+      "rr:combination:hyeong:亥亥",
+      "rr:combination:hyeong:寅巳申",
+      "rr:combination:hyeong:丑戌未"
+    ]
+  },
+  {
+    "id": "tr:relation:hae:natal_dayun",
+    "relation": "hae",
+    "scope": "natal_dayun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "majorFortuneEvidence:branchInteractions"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. 원국-대운 검증 근거는 원래 packet의 cycle에 한정하며 다음 cycle로 복사하지 않는다.",
+    "definitionRef": "rr:profile:hae",
+    "combinationRefs": [
+      "rr:combination:hae:子未",
+      "rr:combination:hae:丑午",
+      "rr:combination:hae:寅巳",
+      "rr:combination:hae:卯辰",
+      "rr:combination:hae:申亥",
+      "rr:combination:hae:酉戌"
+    ]
+  },
+  {
+    "id": "tr:relation:hae:natal_saeun",
+    "relation": "hae",
+    "scope": "natal_saeun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualFortuneEvidence:natalAnnualRelations + annualEvidence:annualStemRelations"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:hae",
+    "combinationRefs": [
+      "rr:combination:hae:子未",
+      "rr:combination:hae:丑午",
+      "rr:combination:hae:寅巳",
+      "rr:combination:hae:卯辰",
+      "rr:combination:hae:申亥",
+      "rr:combination:hae:酉戌"
+    ]
+  },
+  {
+    "id": "tr:relation:hae:natal_wolun",
+    "relation": "hae",
+    "scope": "natal_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthRelationFacts + annualMonthExtendedEvidence"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:hae",
+    "combinationRefs": [
+      "rr:combination:hae:子未",
+      "rr:combination:hae:丑午",
+      "rr:combination:hae:寅巳",
+      "rr:combination:hae:卯辰",
+      "rr:combination:hae:申亥",
+      "rr:combination:hae:酉戌"
+    ]
+  },
+  {
+    "id": "tr:relation:hae:dayun_saeun",
+    "relation": "hae",
+    "scope": "dayun_saeun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualEvidence:crossPeriods + majorFortuneDecadeReading:cycleRelations"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. major 연도 row의 단일 cycleRelations는 전환 이전 전체를 설명하지 않는다; 구간별 annual crossPeriods와 구별한다.",
+    "definitionRef": "rr:profile:hae",
+    "combinationRefs": [
+      "rr:combination:hae:子未",
+      "rr:combination:hae:丑午",
+      "rr:combination:hae:寅巳",
+      "rr:combination:hae:卯辰",
+      "rr:combination:hae:申亥",
+      "rr:combination:hae:酉戌"
+    ]
+  },
+  {
+    "id": "tr:relation:hae:dayun_wolun",
+    "relation": "hae",
+    "scope": "dayun_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthJie:month_dayun_branch"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:hae",
+    "combinationRefs": [
+      "rr:combination:hae:子未",
+      "rr:combination:hae:丑午",
+      "rr:combination:hae:寅巳",
+      "rr:combination:hae:卯辰",
+      "rr:combination:hae:申亥",
+      "rr:combination:hae:酉戌"
+    ]
+  },
+  {
+    "id": "tr:relation:hae:saeun_wolun",
+    "relation": "hae",
+    "scope": "saeun_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthJie:month_annual_branch"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:hae",
+    "combinationRefs": [
+      "rr:combination:hae:子未",
+      "rr:combination:hae:丑午",
+      "rr:combination:hae:寅巳",
+      "rr:combination:hae:卯辰",
+      "rr:combination:hae:申亥",
+      "rr:combination:hae:酉戌"
+    ]
+  },
+  {
+    "id": "tr:relation:banhap:natal_dayun",
+    "relation": "banhap",
+    "scope": "natal_dayun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "majorFortuneEvidence:branchInteractions"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. 원국-대운 검증 근거는 원래 packet의 cycle에 한정하며 다음 cycle로 복사하지 않는다.",
+    "definitionRef": "rr:profile:banhap",
+    "combinationRefs": [
+      "rr:combination:banhap:申子",
+      "rr:combination:banhap:申辰",
+      "rr:combination:banhap:子辰",
+      "rr:combination:banhap:亥卯",
+      "rr:combination:banhap:亥未",
+      "rr:combination:banhap:卯未",
+      "rr:combination:banhap:寅午",
+      "rr:combination:banhap:寅戌",
+      "rr:combination:banhap:午戌",
+      "rr:combination:banhap:巳酉",
+      "rr:combination:banhap:巳丑",
+      "rr:combination:banhap:酉丑"
+    ]
+  },
+  {
+    "id": "tr:relation:banhap:natal_saeun",
+    "relation": "banhap",
+    "scope": "natal_saeun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualFortuneEvidence:natalAnnualRelations + annualEvidence:annualStemRelations"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:banhap",
+    "combinationRefs": [
+      "rr:combination:banhap:申子",
+      "rr:combination:banhap:申辰",
+      "rr:combination:banhap:子辰",
+      "rr:combination:banhap:亥卯",
+      "rr:combination:banhap:亥未",
+      "rr:combination:banhap:卯未",
+      "rr:combination:banhap:寅午",
+      "rr:combination:banhap:寅戌",
+      "rr:combination:banhap:午戌",
+      "rr:combination:banhap:巳酉",
+      "rr:combination:banhap:巳丑",
+      "rr:combination:banhap:酉丑"
+    ]
+  },
+  {
+    "id": "tr:relation:banhap:natal_wolun",
+    "relation": "banhap",
+    "scope": "natal_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthRelationFacts + annualMonthExtendedEvidence"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:banhap",
+    "combinationRefs": [
+      "rr:combination:banhap:申子",
+      "rr:combination:banhap:申辰",
+      "rr:combination:banhap:子辰",
+      "rr:combination:banhap:亥卯",
+      "rr:combination:banhap:亥未",
+      "rr:combination:banhap:卯未",
+      "rr:combination:banhap:寅午",
+      "rr:combination:banhap:寅戌",
+      "rr:combination:banhap:午戌",
+      "rr:combination:banhap:巳酉",
+      "rr:combination:banhap:巳丑",
+      "rr:combination:banhap:酉丑"
+    ]
+  },
+  {
+    "id": "tr:relation:banhap:dayun_saeun",
+    "relation": "banhap",
+    "scope": "dayun_saeun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualEvidence:crossPeriods + majorFortuneDecadeReading:cycleRelations"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. major 연도 row의 단일 cycleRelations는 전환 이전 전체를 설명하지 않는다; 구간별 annual crossPeriods와 구별한다.",
+    "definitionRef": "rr:profile:banhap",
+    "combinationRefs": [
+      "rr:combination:banhap:申子",
+      "rr:combination:banhap:申辰",
+      "rr:combination:banhap:子辰",
+      "rr:combination:banhap:亥卯",
+      "rr:combination:banhap:亥未",
+      "rr:combination:banhap:卯未",
+      "rr:combination:banhap:寅午",
+      "rr:combination:banhap:寅戌",
+      "rr:combination:banhap:午戌",
+      "rr:combination:banhap:巳酉",
+      "rr:combination:banhap:巳丑",
+      "rr:combination:banhap:酉丑"
+    ]
+  },
+  {
+    "id": "tr:relation:banhap:dayun_wolun",
+    "relation": "banhap",
+    "scope": "dayun_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthJie:month_dayun_branch"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:banhap",
+    "combinationRefs": [
+      "rr:combination:banhap:申子",
+      "rr:combination:banhap:申辰",
+      "rr:combination:banhap:子辰",
+      "rr:combination:banhap:亥卯",
+      "rr:combination:banhap:亥未",
+      "rr:combination:banhap:卯未",
+      "rr:combination:banhap:寅午",
+      "rr:combination:banhap:寅戌",
+      "rr:combination:banhap:午戌",
+      "rr:combination:banhap:巳酉",
+      "rr:combination:banhap:巳丑",
+      "rr:combination:banhap:酉丑"
+    ]
+  },
+  {
+    "id": "tr:relation:banhap:saeun_wolun",
+    "relation": "banhap",
+    "scope": "saeun_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthJie:month_annual_branch"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:banhap",
+    "combinationRefs": [
+      "rr:combination:banhap:申子",
+      "rr:combination:banhap:申辰",
+      "rr:combination:banhap:子辰",
+      "rr:combination:banhap:亥卯",
+      "rr:combination:banhap:亥未",
+      "rr:combination:banhap:卯未",
+      "rr:combination:banhap:寅午",
+      "rr:combination:banhap:寅戌",
+      "rr:combination:banhap:午戌",
+      "rr:combination:banhap:巳酉",
+      "rr:combination:banhap:巳丑",
+      "rr:combination:banhap:酉丑"
+    ]
+  },
+  {
+    "id": "tr:relation:pa:natal_dayun",
+    "relation": "pa",
+    "scope": "natal_dayun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "majorFortuneEvidence:branchInteractions"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. 원국-대운 검증 근거는 원래 packet의 cycle에 한정하며 다음 cycle로 복사하지 않는다.",
+    "definitionRef": "rr:profile:pa",
+    "combinationRefs": [
+      "rr:combination:pa:子酉",
+      "rr:combination:pa:丑辰",
+      "rr:combination:pa:寅亥",
+      "rr:combination:pa:卯午",
+      "rr:combination:pa:巳申",
+      "rr:combination:pa:未戌"
+    ]
+  },
+  {
+    "id": "tr:relation:pa:natal_saeun",
+    "relation": "pa",
+    "scope": "natal_saeun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualFortuneEvidence:natalAnnualRelations + annualEvidence:annualStemRelations"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:pa",
+    "combinationRefs": [
+      "rr:combination:pa:子酉",
+      "rr:combination:pa:丑辰",
+      "rr:combination:pa:寅亥",
+      "rr:combination:pa:卯午",
+      "rr:combination:pa:巳申",
+      "rr:combination:pa:未戌"
+    ]
+  },
+  {
+    "id": "tr:relation:pa:natal_wolun",
+    "relation": "pa",
+    "scope": "natal_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthRelationFacts + annualMonthExtendedEvidence"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:pa",
+    "combinationRefs": [
+      "rr:combination:pa:子酉",
+      "rr:combination:pa:丑辰",
+      "rr:combination:pa:寅亥",
+      "rr:combination:pa:卯午",
+      "rr:combination:pa:巳申",
+      "rr:combination:pa:未戌"
+    ]
+  },
+  {
+    "id": "tr:relation:pa:dayun_saeun",
+    "relation": "pa",
+    "scope": "dayun_saeun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualEvidence:crossPeriods + majorFortuneDecadeReading:cycleRelations"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. major 연도 row의 단일 cycleRelations는 전환 이전 전체를 설명하지 않는다; 구간별 annual crossPeriods와 구별한다.",
+    "definitionRef": "rr:profile:pa",
+    "combinationRefs": [
+      "rr:combination:pa:子酉",
+      "rr:combination:pa:丑辰",
+      "rr:combination:pa:寅亥",
+      "rr:combination:pa:卯午",
+      "rr:combination:pa:巳申",
+      "rr:combination:pa:未戌"
+    ]
+  },
+  {
+    "id": "tr:relation:pa:dayun_wolun",
+    "relation": "pa",
+    "scope": "dayun_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthJie:month_dayun_branch"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:pa",
+    "combinationRefs": [
+      "rr:combination:pa:子酉",
+      "rr:combination:pa:丑辰",
+      "rr:combination:pa:寅亥",
+      "rr:combination:pa:卯午",
+      "rr:combination:pa:巳申",
+      "rr:combination:pa:未戌"
+    ]
+  },
+  {
+    "id": "tr:relation:pa:saeun_wolun",
+    "relation": "pa",
+    "scope": "saeun_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthJie:month_annual_branch"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:pa",
+    "combinationRefs": [
+      "rr:combination:pa:子酉",
+      "rr:combination:pa:丑辰",
+      "rr:combination:pa:寅亥",
+      "rr:combination:pa:卯午",
+      "rr:combination:pa:巳申",
+      "rr:combination:pa:未戌"
+    ]
+  },
+  {
+    "id": "tr:relation:wonjin:natal_dayun",
+    "relation": "wonjin",
+    "scope": "natal_dayun",
+    "producerSupport": "unsupported",
+    "producerRefs": [],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. 원국-대운 검증 근거는 원래 packet의 cycle에 한정하며 다음 cycle로 복사하지 않는다.",
+    "definitionRef": "rr:profile:wonjin",
+    "combinationRefs": [
+      "rr:combination:wonjin:子未",
+      "rr:combination:wonjin:丑午",
+      "rr:combination:wonjin:寅酉",
+      "rr:combination:wonjin:卯申",
+      "rr:combination:wonjin:辰亥",
+      "rr:combination:wonjin:巳戌"
+    ]
+  },
+  {
+    "id": "tr:relation:wonjin:natal_saeun",
+    "relation": "wonjin",
+    "scope": "natal_saeun",
+    "producerSupport": "unsupported",
+    "producerRefs": [],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:wonjin",
+    "combinationRefs": [
+      "rr:combination:wonjin:子未",
+      "rr:combination:wonjin:丑午",
+      "rr:combination:wonjin:寅酉",
+      "rr:combination:wonjin:卯申",
+      "rr:combination:wonjin:辰亥",
+      "rr:combination:wonjin:巳戌"
+    ]
+  },
+  {
+    "id": "tr:relation:wonjin:natal_wolun",
+    "relation": "wonjin",
+    "scope": "natal_wolun",
+    "producerSupport": "supported",
+    "producerRefs": [
+      "annualMonthRelationFacts + annualMonthExtendedEvidence"
+    ],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:wonjin",
+    "combinationRefs": [
+      "rr:combination:wonjin:子未",
+      "rr:combination:wonjin:丑午",
+      "rr:combination:wonjin:寅酉",
+      "rr:combination:wonjin:卯申",
+      "rr:combination:wonjin:辰亥",
+      "rr:combination:wonjin:巳戌"
+    ]
+  },
+  {
+    "id": "tr:relation:wonjin:dayun_saeun",
+    "relation": "wonjin",
+    "scope": "dayun_saeun",
+    "producerSupport": "unsupported",
+    "producerRefs": [],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다. major 연도 row의 단일 cycleRelations는 전환 이전 전체를 설명하지 않는다; 구간별 annual crossPeriods와 구별한다.",
+    "definitionRef": "rr:profile:wonjin",
+    "combinationRefs": [
+      "rr:combination:wonjin:子未",
+      "rr:combination:wonjin:丑午",
+      "rr:combination:wonjin:寅酉",
+      "rr:combination:wonjin:卯申",
+      "rr:combination:wonjin:辰亥",
+      "rr:combination:wonjin:巳戌"
+    ]
+  },
+  {
+    "id": "tr:relation:wonjin:dayun_wolun",
+    "relation": "wonjin",
+    "scope": "dayun_wolun",
+    "producerSupport": "unsupported",
+    "producerRefs": [],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:wonjin",
+    "combinationRefs": [
+      "rr:combination:wonjin:子未",
+      "rr:combination:wonjin:丑午",
+      "rr:combination:wonjin:寅酉",
+      "rr:combination:wonjin:卯申",
+      "rr:combination:wonjin:辰亥",
+      "rr:combination:wonjin:巳戌"
+    ]
+  },
+  {
+    "id": "tr:relation:wonjin:saeun_wolun",
+    "relation": "wonjin",
+    "scope": "saeun_wolun",
+    "producerSupport": "unsupported",
+    "producerRefs": [],
+    "timeQualification": "각 구간 [start,end) 보존; conditional 후보와 confirmed 관계를 구별한다.",
+    "definitionRef": "rr:profile:wonjin",
+    "combinationRefs": [
+      "rr:combination:wonjin:子未",
+      "rr:combination:wonjin:丑午",
+      "rr:combination:wonjin:寅酉",
+      "rr:combination:wonjin:卯申",
+      "rr:combination:wonjin:辰亥",
+      "rr:combination:wonjin:巳戌"
+    ]
+  }
+]

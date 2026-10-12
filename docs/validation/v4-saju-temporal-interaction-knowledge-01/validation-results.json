@@ -1,0 +1,43 @@
+{
+  "baseSha": "3117327c80e8a35e9a476646114ffc3ae42f93ed",
+  "evaluatedAt": "2026-10-12T12:00:00+09:00",
+  "typescriptBefore": 0,
+  "typescriptAfter": 0,
+  "lintExit": 0,
+  "buildExit": 0,
+  "buildCommand": "OPENAI_REPORT_WRITER_ENABLED=0 TOSS_CONFIRM_API_ENABLED=0 PAID_REPORT_RELIABILITY_ENABLED=0 npm run build -- --webpack",
+  "staticPages": "47/47",
+  "nftWarnings": 0,
+  "externalWriterInvoked": false,
+  "productionDeployment": false,
+  "existingSourceFilesUnchanged": 961,
+  "preexistingWorktreesUnchanged": 16,
+  "totalWorktrees": 17,
+  "originalDirtyFilesPreserved": 11,
+  "newRuntimeImports": 0,
+  "baselineKnownFailure": {
+    "passed": 19,
+    "failed": 1,
+    "test": "foundationAdapter.test.ts:116",
+    "message": "careerReleaseMaterials.ts unexpected foundation reference"
+  },
+  "relatedTests": {
+    "passed": 1018,
+    "failed": 3,
+    "files": 14,
+    "newRegressions": 0
+  },
+  "newTestsPassed": 198,
+  "allSixProductDigestCasesPassed": 64,
+  "knownFailureBaseline": {
+    "Phase13D-1A stays off all six product paths only foundation modules reference the foundation; no writer/UI/calculation import": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality",
+    "customer Dayun production boundaries rejects major_fortune bypass before order writes and allows stable input": "SyntaxError: Unexpected end of JSON input",
+    "customer Dayun production boundaries rejects annual_fortune bypass before order writes and allows stable input": "SyntaxError: Unexpected end of JSON input"
+  },
+  "additionalBaselineDayun": {
+    "passed": 17,
+    "failed": 2,
+    "rootCause": "test requests https://example.test without official Origin; existing same-origin guard returns empty 403; old test calls json()"
+  },
+  "diffCheck": "PASS"
+}
