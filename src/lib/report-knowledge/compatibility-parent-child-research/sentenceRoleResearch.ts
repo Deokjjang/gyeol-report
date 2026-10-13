@@ -1,0 +1,2500 @@
+/** Static parent/child research. No runtime binding, age inference or customer approval. */
+import type { RoleResearch } from "./researchTypes";
+export const PC_ROLES: readonly RoleResearch[] = [
+  {
+    "id": "pcpr:role:CH01.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1.S1",
+    "originalRole": "특징적인 조합",
+    "materialIds": [
+      "pcpr:material:CH01.P1:predictability-with-room-to-try",
+      "pcpr:material:CH01.P1:autonomy-with-adult-responsibility"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1.S2",
+    "originalRole": "대표 성향 대비",
+    "materialIds": [
+      "pcpr:material:CH01.P1:predictability-with-room-to-try",
+      "pcpr:material:CH01.P1:autonomy-with-adult-responsibility"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1.S3",
+    "originalRole": "함께하는 장면",
+    "materialIds": [
+      "pcpr:material:CH01.P1:predictability-with-room-to-try",
+      "pcpr:material:CH01.P1:autonomy-with-adult-responsibility"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1.S4",
+    "originalRole": "관계의 상징",
+    "materialIds": [
+      "pcpr:material:CH01.P1:predictability-with-room-to-try",
+      "pcpr:material:CH01.P1:autonomy-with-adult-responsibility"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2.S1",
+    "originalRole": "실제 명리 관계",
+    "materialIds": [
+      "pcpr:material:CH01.P2:harmony-not-parenting-proof",
+      "pcpr:material:CH01.P2:clash-not-disobedience"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2.S2",
+    "originalRole": "쉬운 의미",
+    "materialIds": [
+      "pcpr:material:CH01.P2:harmony-not-parenting-proof",
+      "pcpr:material:CH01.P2:clash-not-disobedience"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2.S3",
+    "originalRole": "상호 영향",
+    "materialIds": [
+      "pcpr:material:CH01.P2:harmony-not-parenting-proof",
+      "pcpr:material:CH01.P2:clash-not-disobedience"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2.S4",
+    "originalRole": "강점과 주의 조건",
+    "materialIds": [
+      "pcpr:material:CH01.P2:harmony-not-parenting-proof",
+      "pcpr:material:CH01.P2:clash-not-disobedience"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3.S1",
+    "originalRole": "A의 실제 MBTI",
+    "materialIds": [
+      "pcpr:material:CH01.P3:pair-is-not-development-test",
+      "pcpr:material:CH01.P3:same-type-not-same-power"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3.S2",
+    "originalRole": "B의 실제 MBTI",
+    "materialIds": [
+      "pcpr:material:CH01.P3:pair-is-not-development-test",
+      "pcpr:material:CH01.P3:same-type-not-same-power"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3.S3",
+    "originalRole": "공통점과 차이",
+    "materialIds": [
+      "pcpr:material:CH01.P3:pair-is-not-development-test",
+      "pcpr:material:CH01.P3:same-type-not-same-power"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3.S4",
+    "originalRole": "상호작용",
+    "materialIds": [
+      "pcpr:material:CH01.P3:pair-is-not-development-test",
+      "pcpr:material:CH01.P3:same-type-not-same-power"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4.S1",
+    "originalRole": "좋은 점",
+    "materialIds": [
+      "pcpr:material:CH01.P4:fixed-role-not-age-diagnosis",
+      "pcpr:material:CH01.P4:adult-child-has-own-life"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4.S2",
+    "originalRole": "조심할 차이",
+    "materialIds": [
+      "pcpr:material:CH01.P4:fixed-role-not-age-diagnosis",
+      "pcpr:material:CH01.P4:adult-child-has-own-life"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4.S3",
+    "originalRole": "관계별 조건",
+    "materialIds": [
+      "pcpr:material:CH01.P4:fixed-role-not-age-diagnosis",
+      "pcpr:material:CH01.P4:adult-child-has-own-life"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH01.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4.S4",
+    "originalRole": "앞으로의 질문",
+    "materialIds": [
+      "pcpr:material:CH01.P4:fixed-role-not-age-diagnosis",
+      "pcpr:material:CH01.P4:adult-child-has-own-life"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1.S1",
+    "originalRole": "대표 행동",
+    "materialIds": [
+      "pcpr:material:CH02.P1:a-standards-with-explanation",
+      "pcpr:material:CH02.P1:a-values-with-open-question",
+      "pcpr:material:CH02.P1:a-effort-without-future-script"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1.S2",
+    "originalRole": "명리 근거",
+    "materialIds": [
+      "pcpr:material:CH02.P1:a-standards-with-explanation",
+      "pcpr:material:CH02.P1:a-values-with-open-question",
+      "pcpr:material:CH02.P1:a-effort-without-future-script"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1.S3",
+    "originalRole": "MBTI 선호",
+    "materialIds": [
+      "pcpr:material:CH02.P1:a-standards-with-explanation",
+      "pcpr:material:CH02.P1:a-values-with-open-question",
+      "pcpr:material:CH02.P1:a-effort-without-future-script"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1.S4",
+    "originalRole": "B와의 관계",
+    "materialIds": [
+      "pcpr:material:CH02.P1:a-standards-with-explanation",
+      "pcpr:material:CH02.P1:a-values-with-open-question",
+      "pcpr:material:CH02.P1:a-effort-without-future-script"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2.S1",
+    "originalRole": "관계 조건",
+    "materialIds": [
+      "pcpr:material:CH02.P2:a-rest-needs-adult-support",
+      "pcpr:material:CH02.P2:a-alone-time-with-return",
+      "pcpr:material:CH02.P2:a-anchor-without-emotional-debt"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2.S2",
+    "originalRole": "실제 이유",
+    "materialIds": [
+      "pcpr:material:CH02.P2:a-rest-needs-adult-support",
+      "pcpr:material:CH02.P2:a-alone-time-with-return",
+      "pcpr:material:CH02.P2:a-anchor-without-emotional-debt"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2.S3",
+    "originalRole": "B와의 장면",
+    "materialIds": [
+      "pcpr:material:CH02.P2:a-rest-needs-adult-support",
+      "pcpr:material:CH02.P2:a-alone-time-with-return",
+      "pcpr:material:CH02.P2:a-anchor-without-emotional-debt"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2.S4",
+    "originalRole": "충족될 때",
+    "materialIds": [
+      "pcpr:material:CH02.P2:a-rest-needs-adult-support",
+      "pcpr:material:CH02.P2:a-alone-time-with-return",
+      "pcpr:material:CH02.P2:a-anchor-without-emotional-debt"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3.S1",
+    "originalRole": "특징적 강점",
+    "materialIds": [
+      "pcpr:material:CH02.P3:a-question-partner-not-examiner",
+      "pcpr:material:CH02.P3:a-space-with-available-help",
+      "pcpr:material:CH02.P3:a-experience-with-safety-plan"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "pcpr:material:CH02.P3:a-question-partner-not-examiner",
+      "pcpr:material:CH02.P3:a-space-with-available-help",
+      "pcpr:material:CH02.P3:a-experience-with-safety-plan"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3.S3",
+    "originalRole": "B에게 좋은 상황",
+    "materialIds": [
+      "pcpr:material:CH02.P3:a-question-partner-not-examiner",
+      "pcpr:material:CH02.P3:a-space-with-available-help",
+      "pcpr:material:CH02.P3:a-experience-with-safety-plan"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3.S4",
+    "originalRole": "유지 조건",
+    "materialIds": [
+      "pcpr:material:CH02.P3:a-question-partner-not-examiner",
+      "pcpr:material:CH02.P3:a-space-with-available-help",
+      "pcpr:material:CH02.P3:a-experience-with-safety-plan"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4.S1",
+    "originalRole": "과사용 위험",
+    "materialIds": [
+      "pcpr:material:CH02.P4:a-rule-correction-without-humiliation",
+      "pcpr:material:CH02.P4:a-harmony-must-allow-disagreement",
+      "pcpr:material:CH02.P4:a-insight-needs-verification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4.S2",
+    "originalRole": "원인",
+    "materialIds": [
+      "pcpr:material:CH02.P4:a-rule-correction-without-humiliation",
+      "pcpr:material:CH02.P4:a-harmony-must-allow-disagreement",
+      "pcpr:material:CH02.P4:a-insight-needs-verification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4.S3",
+    "originalRole": "B가 받는 뜻",
+    "materialIds": [
+      "pcpr:material:CH02.P4:a-rule-correction-without-humiliation",
+      "pcpr:material:CH02.P4:a-harmony-must-allow-disagreement",
+      "pcpr:material:CH02.P4:a-insight-needs-verification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH02.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4.S4",
+    "originalRole": "조절 행동",
+    "materialIds": [
+      "pcpr:material:CH02.P4:a-rule-correction-without-humiliation",
+      "pcpr:material:CH02.P4:a-harmony-must-allow-disagreement",
+      "pcpr:material:CH02.P4:a-insight-needs-verification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1.S1",
+    "originalRole": "독립적 행동",
+    "materialIds": [
+      "pcpr:material:CH03.P1:b-interest-not-achievement-label",
+      "pcpr:material:CH03.P1:b-fairness-question-not-rebellion",
+      "pcpr:material:CH03.P1:b-expression-without-talent-prediction"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1.S2",
+    "originalRole": "명리 근거",
+    "materialIds": [
+      "pcpr:material:CH03.P1:b-interest-not-achievement-label",
+      "pcpr:material:CH03.P1:b-fairness-question-not-rebellion",
+      "pcpr:material:CH03.P1:b-expression-without-talent-prediction"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1.S3",
+    "originalRole": "MBTI 선호",
+    "materialIds": [
+      "pcpr:material:CH03.P1:b-interest-not-achievement-label",
+      "pcpr:material:CH03.P1:b-fairness-question-not-rebellion",
+      "pcpr:material:CH03.P1:b-expression-without-talent-prediction"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1.S4",
+    "originalRole": "A와의 관계",
+    "materialIds": [
+      "pcpr:material:CH03.P1:b-interest-not-achievement-label",
+      "pcpr:material:CH03.P1:b-fairness-question-not-rebellion",
+      "pcpr:material:CH03.P1:b-expression-without-talent-prediction"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2.S1",
+    "originalRole": "관계 조건",
+    "materialIds": [
+      "pcpr:material:CH03.P2:b-predictable-help-sequence",
+      "pcpr:material:CH03.P2:b-quiet-route-to-help",
+      "pcpr:material:CH03.P2:b-gentle-feedback-without-fragile-label"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2.S2",
+    "originalRole": "독립적 이유",
+    "materialIds": [
+      "pcpr:material:CH03.P2:b-predictable-help-sequence",
+      "pcpr:material:CH03.P2:b-quiet-route-to-help",
+      "pcpr:material:CH03.P2:b-gentle-feedback-without-fragile-label"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2.S3",
+    "originalRole": "A와의 장면",
+    "materialIds": [
+      "pcpr:material:CH03.P2:b-predictable-help-sequence",
+      "pcpr:material:CH03.P2:b-quiet-route-to-help",
+      "pcpr:material:CH03.P2:b-gentle-feedback-without-fragile-label"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2.S4",
+    "originalRole": "충족될 때",
+    "materialIds": [
+      "pcpr:material:CH03.P2:b-predictable-help-sequence",
+      "pcpr:material:CH03.P2:b-quiet-route-to-help",
+      "pcpr:material:CH03.P2:b-gentle-feedback-without-fragile-label"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3.S1",
+    "originalRole": "특징적 강점",
+    "materialIds": [
+      "pcpr:material:CH03.P3:b-questions-expand-parent-information",
+      "pcpr:material:CH03.P3:b-peer-care-not-family-regulator",
+      "pcpr:material:CH03.P3:b-deep-interest-with-change-option"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3.S2",
+    "originalRole": "독립적 근거",
+    "materialIds": [
+      "pcpr:material:CH03.P3:b-questions-expand-parent-information",
+      "pcpr:material:CH03.P3:b-peer-care-not-family-regulator",
+      "pcpr:material:CH03.P3:b-deep-interest-with-change-option"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3.S3",
+    "originalRole": "A에게 좋은 상황",
+    "materialIds": [
+      "pcpr:material:CH03.P3:b-questions-expand-parent-information",
+      "pcpr:material:CH03.P3:b-peer-care-not-family-regulator",
+      "pcpr:material:CH03.P3:b-deep-interest-with-change-option"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3.S4",
+    "originalRole": "유지 조건",
+    "materialIds": [
+      "pcpr:material:CH03.P3:b-questions-expand-parent-information",
+      "pcpr:material:CH03.P3:b-peer-care-not-family-regulator",
+      "pcpr:material:CH03.P3:b-deep-interest-with-change-option"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4.S1",
+    "originalRole": "과사용 위험",
+    "materialIds": [
+      "pcpr:material:CH03.P4:b-brief-answer-still-has-choice",
+      "pcpr:material:CH03.P4:b-agreement-can-hide-unasked-view",
+      "pcpr:material:CH03.P4:b-active-interest-not-risk-identity"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4.S2",
+    "originalRole": "원인",
+    "materialIds": [
+      "pcpr:material:CH03.P4:b-brief-answer-still-has-choice",
+      "pcpr:material:CH03.P4:b-agreement-can-hide-unasked-view",
+      "pcpr:material:CH03.P4:b-active-interest-not-risk-identity"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4.S3",
+    "originalRole": "A가 받는 뜻",
+    "materialIds": [
+      "pcpr:material:CH03.P4:b-brief-answer-still-has-choice",
+      "pcpr:material:CH03.P4:b-agreement-can-hide-unasked-view",
+      "pcpr:material:CH03.P4:b-active-interest-not-risk-identity"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH03.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4.S4",
+    "originalRole": "조절 행동",
+    "materialIds": [
+      "pcpr:material:CH03.P4:b-brief-answer-still-has-choice",
+      "pcpr:material:CH03.P4:b-agreement-can-hide-unasked-view",
+      "pcpr:material:CH03.P4:b-active-interest-not-risk-identity"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1.S1",
+    "originalRole": "검증된 공통점 또는 다른 기여",
+    "materialIds": [
+      "pcpr:material:CH04.P1:shared-curiosity-with-no-performance",
+      "pcpr:material:CH04.P1:opportunity-with-child-voice",
+      "pcpr:material:CH04.P1:knowledge-support-without-perfect-child"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1.S2",
+    "originalRole": "각자 근거",
+    "materialIds": [
+      "pcpr:material:CH04.P1:shared-curiosity-with-no-performance",
+      "pcpr:material:CH04.P1:opportunity-with-child-voice",
+      "pcpr:material:CH04.P1:knowledge-support-without-perfect-child"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1.S3",
+    "originalRole": "함께하는 행동",
+    "materialIds": [
+      "pcpr:material:CH04.P1:shared-curiosity-with-no-performance",
+      "pcpr:material:CH04.P1:opportunity-with-child-voice",
+      "pcpr:material:CH04.P1:knowledge-support-without-perfect-child"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1.S4",
+    "originalRole": "강점의 조건",
+    "materialIds": [
+      "pcpr:material:CH04.P1:shared-curiosity-with-no-performance",
+      "pcpr:material:CH04.P1:opportunity-with-child-voice",
+      "pcpr:material:CH04.P1:knowledge-support-without-perfect-child"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2.S1",
+    "originalRole": "검증된 보완 또는 다른 장점",
+    "materialIds": [
+      "pcpr:material:CH04.P2:different-expression-equal-respect",
+      "pcpr:material:CH04.P2:structure-with-flexible-method",
+      "pcpr:material:CH04.P2:quiet-and-spoken-routes"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "pcpr:material:CH04.P2:different-expression-equal-respect",
+      "pcpr:material:CH04.P2:structure-with-flexible-method",
+      "pcpr:material:CH04.P2:quiet-and-spoken-routes"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2.S3",
+    "originalRole": "도움의 장면",
+    "materialIds": [
+      "pcpr:material:CH04.P2:different-expression-equal-respect",
+      "pcpr:material:CH04.P2:structure-with-flexible-method",
+      "pcpr:material:CH04.P2:quiet-and-spoken-routes"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2.S4",
+    "originalRole": "좋은 차이의 경계",
+    "materialIds": [
+      "pcpr:material:CH04.P2:different-expression-equal-respect",
+      "pcpr:material:CH04.P2:structure-with-flexible-method",
+      "pcpr:material:CH04.P2:quiet-and-spoken-routes"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3.S1",
+    "originalRole": "관계별 상황",
+    "materialIds": [
+      "pcpr:material:CH04.P3:young-signal-and-response",
+      "pcpr:material:CH04.P3:effort-not-comparison",
+      "pcpr:material:CH04.P3:adult-resource-with-consent"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3.S2",
+    "originalRole": "A의 기여",
+    "materialIds": [
+      "pcpr:material:CH04.P3:young-signal-and-response",
+      "pcpr:material:CH04.P3:effort-not-comparison",
+      "pcpr:material:CH04.P3:adult-resource-with-consent"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3.S3",
+    "originalRole": "B의 기여",
+    "materialIds": [
+      "pcpr:material:CH04.P3:young-signal-and-response",
+      "pcpr:material:CH04.P3:effort-not-comparison",
+      "pcpr:material:CH04.P3:adult-resource-with-consent"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3.S4",
+    "originalRole": "함께 얻는 결과",
+    "materialIds": [
+      "pcpr:material:CH04.P3:young-signal-and-response",
+      "pcpr:material:CH04.P3:effort-not-comparison",
+      "pcpr:material:CH04.P3:adult-resource-with-consent"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4.S1",
+    "originalRole": "가치 있는 특징",
+    "materialIds": [
+      "pcpr:material:CH04.P4:harmony-needs-child-consent",
+      "pcpr:material:CH04.P4:care-is-not-fixed-family-role",
+      "pcpr:material:CH04.P4:change-rules-with-development"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4.S2",
+    "originalRole": "좋은 관계의 조건",
+    "materialIds": [
+      "pcpr:material:CH04.P4:harmony-needs-child-consent",
+      "pcpr:material:CH04.P4:care-is-not-fixed-family-role",
+      "pcpr:material:CH04.P4:change-rules-with-development"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4.S3",
+    "originalRole": "과사용 위험",
+    "materialIds": [
+      "pcpr:material:CH04.P4:harmony-needs-child-consent",
+      "pcpr:material:CH04.P4:care-is-not-fixed-family-role",
+      "pcpr:material:CH04.P4:change-rules-with-development"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH04.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4.S4",
+    "originalRole": "활용 방향",
+    "materialIds": [
+      "pcpr:material:CH04.P4:harmony-needs-child-consent",
+      "pcpr:material:CH04.P4:care-is-not-fixed-family-role",
+      "pcpr:material:CH04.P4:change-rules-with-development"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1.S1",
+    "originalRole": "A→B 영향",
+    "materialIds": [
+      "pcpr:material:CH05.P1:ab-rule-as-explanation",
+      "pcpr:material:CH05.P1:ab-support-without-answer-ownership",
+      "pcpr:material:CH05.P1:ab-new-opportunity-with-safety",
+      "pcpr:material:CH05.P1:ab-pressure-is-not-protection"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1.S2",
+    "originalRole": "받는 사람 기준 십성",
+    "materialIds": [
+      "pcpr:material:CH05.P1:ab-rule-as-explanation",
+      "pcpr:material:CH05.P1:ab-support-without-answer-ownership",
+      "pcpr:material:CH05.P1:ab-new-opportunity-with-safety",
+      "pcpr:material:CH05.P1:ab-pressure-is-not-protection"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1.S3",
+    "originalRole": "구체적 행동",
+    "materialIds": [
+      "pcpr:material:CH05.P1:ab-rule-as-explanation",
+      "pcpr:material:CH05.P1:ab-support-without-answer-ownership",
+      "pcpr:material:CH05.P1:ab-new-opportunity-with-safety",
+      "pcpr:material:CH05.P1:ab-pressure-is-not-protection"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1.S4",
+    "originalRole": "B에게 남는 의미",
+    "materialIds": [
+      "pcpr:material:CH05.P1:ab-rule-as-explanation",
+      "pcpr:material:CH05.P1:ab-support-without-answer-ownership",
+      "pcpr:material:CH05.P1:ab-new-opportunity-with-safety",
+      "pcpr:material:CH05.P1:ab-pressure-is-not-protection"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2.S1",
+    "originalRole": "도움 되는 강점",
+    "materialIds": [
+      "pcpr:material:CH05.P2:ab-preview-before-change",
+      "pcpr:material:CH05.P2:ab-notice-without-mind-reading",
+      "pcpr:material:CH05.P2:ab-help-one-step-then-return",
+      "pcpr:material:CH05.P2:ab-allow-wrong-first-answer"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "pcpr:material:CH05.P2:ab-preview-before-change",
+      "pcpr:material:CH05.P2:ab-notice-without-mind-reading",
+      "pcpr:material:CH05.P2:ab-help-one-step-then-return",
+      "pcpr:material:CH05.P2:ab-allow-wrong-first-answer"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2.S3",
+    "originalRole": "관계별 장면",
+    "materialIds": [
+      "pcpr:material:CH05.P2:ab-preview-before-change",
+      "pcpr:material:CH05.P2:ab-notice-without-mind-reading",
+      "pcpr:material:CH05.P2:ab-help-one-step-then-return",
+      "pcpr:material:CH05.P2:ab-allow-wrong-first-answer"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2.S4",
+    "originalRole": "발휘 조건",
+    "materialIds": [
+      "pcpr:material:CH05.P2:ab-preview-before-change",
+      "pcpr:material:CH05.P2:ab-notice-without-mind-reading",
+      "pcpr:material:CH05.P2:ab-help-one-step-then-return",
+      "pcpr:material:CH05.P2:ab-allow-wrong-first-answer"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3.S1",
+    "originalRole": "부담 행동",
+    "materialIds": [
+      "pcpr:material:CH05.P3:ab-expectation-becomes-result-debt",
+      "pcpr:material:CH05.P3:ab-protection-removes-small-choice",
+      "pcpr:material:CH05.P3:ab-debate-overwhelms-child",
+      "pcpr:material:CH05.P3:ab-care-asks-for-parent-comfort"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3.S2",
+    "originalRole": "검증된 차이",
+    "materialIds": [
+      "pcpr:material:CH05.P3:ab-expectation-becomes-result-debt",
+      "pcpr:material:CH05.P3:ab-protection-removes-small-choice",
+      "pcpr:material:CH05.P3:ab-debate-overwhelms-child",
+      "pcpr:material:CH05.P3:ab-care-asks-for-parent-comfort"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3.S3",
+    "originalRole": "의도와 경험",
+    "materialIds": [
+      "pcpr:material:CH05.P3:ab-expectation-becomes-result-debt",
+      "pcpr:material:CH05.P3:ab-protection-removes-small-choice",
+      "pcpr:material:CH05.P3:ab-debate-overwhelms-child",
+      "pcpr:material:CH05.P3:ab-care-asks-for-parent-comfort"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3.S4",
+    "originalRole": "악화 조건",
+    "materialIds": [
+      "pcpr:material:CH05.P3:ab-expectation-becomes-result-debt",
+      "pcpr:material:CH05.P3:ab-protection-removes-small-choice",
+      "pcpr:material:CH05.P3:ab-debate-overwhelms-child",
+      "pcpr:material:CH05.P3:ab-care-asks-for-parent-comfort"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4.S1",
+    "originalRole": "조정할 행동",
+    "materialIds": [
+      "pcpr:material:CH05.P4:ab-return-choice-before-commitment",
+      "pcpr:material:CH05.P4:ab-explain-protection-and-try",
+      "pcpr:material:CH05.P4:ab-listen-before-answer",
+      "pcpr:material:CH05.P4:ab-parent-support-outside-child"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4.S2",
+    "originalRole": "B의 필요",
+    "materialIds": [
+      "pcpr:material:CH05.P4:ab-return-choice-before-commitment",
+      "pcpr:material:CH05.P4:ab-explain-protection-and-try",
+      "pcpr:material:CH05.P4:ab-listen-before-answer",
+      "pcpr:material:CH05.P4:ab-parent-support-outside-child"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4.S3",
+    "originalRole": "확인할 실천",
+    "materialIds": [
+      "pcpr:material:CH05.P4:ab-return-choice-before-commitment",
+      "pcpr:material:CH05.P4:ab-explain-protection-and-try",
+      "pcpr:material:CH05.P4:ab-listen-before-answer",
+      "pcpr:material:CH05.P4:ab-parent-support-outside-child"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH05.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4.S4",
+    "originalRole": "A→B 가능성",
+    "materialIds": [
+      "pcpr:material:CH05.P4:ab-return-choice-before-commitment",
+      "pcpr:material:CH05.P4:ab-explain-protection-and-try",
+      "pcpr:material:CH05.P4:ab-listen-before-answer",
+      "pcpr:material:CH05.P4:ab-parent-support-outside-child"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1.S1",
+    "originalRole": "B→A 영향",
+    "materialIds": [
+      "pcpr:material:CH06.P1:ba-question-not-parent-evaluation",
+      "pcpr:material:CH06.P1:ba-peer-voice-not-peer-duty",
+      "pcpr:material:CH06.P1:ba-new-interest-not-teaching-job",
+      "pcpr:material:CH06.P1:ba-enjoyment-not-family-mood-task"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1.S2",
+    "originalRole": "받는 사람 기준 십성",
+    "materialIds": [
+      "pcpr:material:CH06.P1:ba-question-not-parent-evaluation",
+      "pcpr:material:CH06.P1:ba-peer-voice-not-peer-duty",
+      "pcpr:material:CH06.P1:ba-new-interest-not-teaching-job",
+      "pcpr:material:CH06.P1:ba-enjoyment-not-family-mood-task"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1.S3",
+    "originalRole": "다른 방향 행동",
+    "materialIds": [
+      "pcpr:material:CH06.P1:ba-question-not-parent-evaluation",
+      "pcpr:material:CH06.P1:ba-peer-voice-not-peer-duty",
+      "pcpr:material:CH06.P1:ba-new-interest-not-teaching-job",
+      "pcpr:material:CH06.P1:ba-enjoyment-not-family-mood-task"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1.S4",
+    "originalRole": "A에게 남는 의미",
+    "materialIds": [
+      "pcpr:material:CH06.P1:ba-question-not-parent-evaluation",
+      "pcpr:material:CH06.P1:ba-peer-voice-not-peer-duty",
+      "pcpr:material:CH06.P1:ba-new-interest-not-teaching-job",
+      "pcpr:material:CH06.P1:ba-enjoyment-not-family-mood-task"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2.S1",
+    "originalRole": "도움 되는 강점",
+    "materialIds": [
+      "pcpr:material:CH06.P2:ba-small-no-informs-support",
+      "pcpr:material:CH06.P2:ba-written-view-changes-parent-assumption",
+      "pcpr:material:CH06.P2:ba-practical-trial-informs-guidance",
+      "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2.S2",
+    "originalRole": "독립적 근거",
+    "materialIds": [
+      "pcpr:material:CH06.P2:ba-small-no-informs-support",
+      "pcpr:material:CH06.P2:ba-written-view-changes-parent-assumption",
+      "pcpr:material:CH06.P2:ba-practical-trial-informs-guidance",
+      "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2.S3",
+    "originalRole": "관계별 장면",
+    "materialIds": [
+      "pcpr:material:CH06.P2:ba-small-no-informs-support",
+      "pcpr:material:CH06.P2:ba-written-view-changes-parent-assumption",
+      "pcpr:material:CH06.P2:ba-practical-trial-informs-guidance",
+      "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2.S4",
+    "originalRole": "발휘 조건",
+    "materialIds": [
+      "pcpr:material:CH06.P2:ba-small-no-informs-support",
+      "pcpr:material:CH06.P2:ba-written-view-changes-parent-assumption",
+      "pcpr:material:CH06.P2:ba-practical-trial-informs-guidance",
+      "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3.S1",
+    "originalRole": "부담 행동",
+    "materialIds": [
+      "pcpr:material:CH06.P3:ba-question-treated-as-rejection",
+      "pcpr:material:CH06.P3:ba-quiet-response-increases-parent-demand",
+      "pcpr:material:CH06.P3:ba-interest-changes-parent-plan",
+      "pcpr:material:CH06.P3:ba-care-becomes-parent-dependence"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3.S2",
+    "originalRole": "검증된 차이",
+    "materialIds": [
+      "pcpr:material:CH06.P3:ba-question-treated-as-rejection",
+      "pcpr:material:CH06.P3:ba-quiet-response-increases-parent-demand",
+      "pcpr:material:CH06.P3:ba-interest-changes-parent-plan",
+      "pcpr:material:CH06.P3:ba-care-becomes-parent-dependence"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3.S3",
+    "originalRole": "의도와 경험",
+    "materialIds": [
+      "pcpr:material:CH06.P3:ba-question-treated-as-rejection",
+      "pcpr:material:CH06.P3:ba-quiet-response-increases-parent-demand",
+      "pcpr:material:CH06.P3:ba-interest-changes-parent-plan",
+      "pcpr:material:CH06.P3:ba-care-becomes-parent-dependence"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3.S4",
+    "originalRole": "악화 조건",
+    "materialIds": [
+      "pcpr:material:CH06.P3:ba-question-treated-as-rejection",
+      "pcpr:material:CH06.P3:ba-quiet-response-increases-parent-demand",
+      "pcpr:material:CH06.P3:ba-interest-changes-parent-plan",
+      "pcpr:material:CH06.P3:ba-care-becomes-parent-dependence"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4.S1",
+    "originalRole": "조정할 행동",
+    "materialIds": [
+      "pcpr:material:CH06.P4:ba-option-to-question-safely",
+      "pcpr:material:CH06.P4:ba-brief-help-request-is-enough",
+      "pcpr:material:CH06.P4:ba-change-can-be-reported-not-defended",
+      "pcpr:material:CH06.P4:ba-care-can-stop-without-guilt"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4.S2",
+    "originalRole": "A의 필요",
+    "materialIds": [
+      "pcpr:material:CH06.P4:ba-option-to-question-safely",
+      "pcpr:material:CH06.P4:ba-brief-help-request-is-enough",
+      "pcpr:material:CH06.P4:ba-change-can-be-reported-not-defended",
+      "pcpr:material:CH06.P4:ba-care-can-stop-without-guilt"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4.S3",
+    "originalRole": "확인할 실천",
+    "materialIds": [
+      "pcpr:material:CH06.P4:ba-option-to-question-safely",
+      "pcpr:material:CH06.P4:ba-brief-help-request-is-enough",
+      "pcpr:material:CH06.P4:ba-change-can-be-reported-not-defended",
+      "pcpr:material:CH06.P4:ba-care-can-stop-without-guilt"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH06.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4.S4",
+    "originalRole": "B→A 가능성",
+    "materialIds": [
+      "pcpr:material:CH06.P4:ba-option-to-question-safely",
+      "pcpr:material:CH06.P4:ba-brief-help-request-is-enough",
+      "pcpr:material:CH06.P4:ba-change-can-be-reported-not-defended",
+      "pcpr:material:CH06.P4:ba-care-can-stop-without-guilt"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1.S1",
+    "originalRole": "불일치 또는 확인할 조건",
+    "materialIds": [
+      "pcpr:material:CH07.P1:expectation-and-interest-differ",
+      "pcpr:material:CH07.P1:privacy-and-safety-are-different",
+      "pcpr:material:CH07.P1:device-rule-needs-reason",
+      "pcpr:material:CH07.P1:adult-contact-is-not-permission"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1.S2",
+    "originalRole": "각자의 성향",
+    "materialIds": [
+      "pcpr:material:CH07.P1:expectation-and-interest-differ",
+      "pcpr:material:CH07.P1:privacy-and-safety-are-different",
+      "pcpr:material:CH07.P1:device-rule-needs-reason",
+      "pcpr:material:CH07.P1:adult-contact-is-not-permission"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1.S3",
+    "originalRole": "다른 이해",
+    "materialIds": [
+      "pcpr:material:CH07.P1:expectation-and-interest-differ",
+      "pcpr:material:CH07.P1:privacy-and-safety-are-different",
+      "pcpr:material:CH07.P1:device-rule-needs-reason",
+      "pcpr:material:CH07.P1:adult-contact-is-not-permission"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1.S4",
+    "originalRole": "답답함의 이유",
+    "materialIds": [
+      "pcpr:material:CH07.P1:expectation-and-interest-differ",
+      "pcpr:material:CH07.P1:privacy-and-safety-are-different",
+      "pcpr:material:CH07.P1:device-rule-needs-reason",
+      "pcpr:material:CH07.P1:adult-contact-is-not-permission"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2.S1",
+    "originalRole": "실제 충돌 또는 부재",
+    "materialIds": [
+      "pcpr:material:CH07.P2:clash-without-family-blame",
+      "pcpr:material:CH07.P2:harm-not-wonjin-child",
+      "pcpr:material:CH07.P2:no-relation-is-not-missing-bond",
+      "pcpr:material:CH07.P2:harmony-and-disagreement-coexist"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2.S2",
+    "originalRole": "쉬운 의미",
+    "materialIds": [
+      "pcpr:material:CH07.P2:clash-without-family-blame",
+      "pcpr:material:CH07.P2:harm-not-wonjin-child",
+      "pcpr:material:CH07.P2:no-relation-is-not-missing-bond",
+      "pcpr:material:CH07.P2:harmony-and-disagreement-coexist"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2.S3",
+    "originalRole": "다른 반응",
+    "materialIds": [
+      "pcpr:material:CH07.P2:clash-without-family-blame",
+      "pcpr:material:CH07.P2:harm-not-wonjin-child",
+      "pcpr:material:CH07.P2:no-relation-is-not-missing-bond",
+      "pcpr:material:CH07.P2:harmony-and-disagreement-coexist"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2.S4",
+    "originalRole": "긍정적 여지",
+    "materialIds": [
+      "pcpr:material:CH07.P2:clash-without-family-blame",
+      "pcpr:material:CH07.P2:harm-not-wonjin-child",
+      "pcpr:material:CH07.P2:no-relation-is-not-missing-bond",
+      "pcpr:material:CH07.P2:harmony-and-disagreement-coexist"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3.S1",
+    "originalRole": "반복 문제",
+    "materialIds": [
+      "pcpr:material:CH07.P3:result-debt-loop",
+      "pcpr:material:CH07.P3:protection-question-test-loop",
+      "pcpr:material:CH07.P3:debate-silence-loop",
+      "pcpr:material:CH07.P3:child-comfort-parent-loop"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3.S2",
+    "originalRole": "방향별 원인",
+    "materialIds": [
+      "pcpr:material:CH07.P3:result-debt-loop",
+      "pcpr:material:CH07.P3:protection-question-test-loop",
+      "pcpr:material:CH07.P3:debate-silence-loop",
+      "pcpr:material:CH07.P3:child-comfort-parent-loop"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3.S3",
+    "originalRole": "악화 장면",
+    "materialIds": [
+      "pcpr:material:CH07.P3:result-debt-loop",
+      "pcpr:material:CH07.P3:protection-question-test-loop",
+      "pcpr:material:CH07.P3:debate-silence-loop",
+      "pcpr:material:CH07.P3:child-comfort-parent-loop"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3.S4",
+    "originalRole": "직설적 결론",
+    "materialIds": [
+      "pcpr:material:CH07.P3:result-debt-loop",
+      "pcpr:material:CH07.P3:protection-question-test-loop",
+      "pcpr:material:CH07.P3:debate-silence-loop",
+      "pcpr:material:CH07.P3:child-comfort-parent-loop"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4.S1",
+    "originalRole": "주의 상황",
+    "materialIds": [
+      "pcpr:material:CH07.P4:comparison-removes-own-question",
+      "pcpr:material:CH07.P4:digital-monitoring-is-not-trust",
+      "pcpr:material:CH07.P4:adult-choice-not-permanent-approval",
+      "pcpr:material:CH07.P4:coercion-not-equal-style-conflict"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4.S2",
+    "originalRole": "A의 기대",
+    "materialIds": [
+      "pcpr:material:CH07.P4:comparison-removes-own-question",
+      "pcpr:material:CH07.P4:digital-monitoring-is-not-trust",
+      "pcpr:material:CH07.P4:adult-choice-not-permanent-approval",
+      "pcpr:material:CH07.P4:coercion-not-equal-style-conflict"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4.S3",
+    "originalRole": "B의 기대",
+    "materialIds": [
+      "pcpr:material:CH07.P4:comparison-removes-own-question",
+      "pcpr:material:CH07.P4:digital-monitoring-is-not-trust",
+      "pcpr:material:CH07.P4:adult-choice-not-permanent-approval",
+      "pcpr:material:CH07.P4:coercion-not-equal-style-conflict"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH07.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4.S4",
+    "originalRole": "다르게 전달되는 뜻",
+    "materialIds": [
+      "pcpr:material:CH07.P4:comparison-removes-own-question",
+      "pcpr:material:CH07.P4:digital-monitoring-is-not-trust",
+      "pcpr:material:CH07.P4:adult-choice-not-permanent-approval",
+      "pcpr:material:CH07.P4:coercion-not-equal-style-conflict"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1.S1",
+    "originalRole": "앞선 갈등 질문",
+    "materialIds": [
+      "pcpr:material:CH08.P1:repair-result-debt",
+      "pcpr:material:CH08.P1:repair-protection-test",
+      "pcpr:material:CH08.P1:repair-debate-and-return",
+      "pcpr:material:CH08.P1:repair-parent-emotional-responsibility"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1.S2",
+    "originalRole": "실제 원인",
+    "materialIds": [
+      "pcpr:material:CH08.P1:repair-result-debt",
+      "pcpr:material:CH08.P1:repair-protection-test",
+      "pcpr:material:CH08.P1:repair-debate-and-return",
+      "pcpr:material:CH08.P1:repair-parent-emotional-responsibility"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1.S3",
+    "originalRole": "각자 필요",
+    "materialIds": [
+      "pcpr:material:CH08.P1:repair-result-debt",
+      "pcpr:material:CH08.P1:repair-protection-test",
+      "pcpr:material:CH08.P1:repair-debate-and-return",
+      "pcpr:material:CH08.P1:repair-parent-emotional-responsibility"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1.S4",
+    "originalRole": "조정 기준",
+    "materialIds": [
+      "pcpr:material:CH08.P1:repair-result-debt",
+      "pcpr:material:CH08.P1:repair-protection-test",
+      "pcpr:material:CH08.P1:repair-debate-and-return",
+      "pcpr:material:CH08.P1:repair-parent-emotional-responsibility"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2.S1",
+    "originalRole": "A의 전략",
+    "materialIds": [
+      "pcpr:material:CH08.P2:a-change-expectation-before-enrollment",
+      "pcpr:material:CH08.P2:a-reduce-unnecessary-restriction",
+      "pcpr:material:CH08.P2:a-receive-before-rebuttal",
+      "pcpr:material:CH08.P2:a-stop-comfort-demand"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2.S2",
+    "originalRole": "필요한 이유",
+    "materialIds": [
+      "pcpr:material:CH08.P2:a-change-expectation-before-enrollment",
+      "pcpr:material:CH08.P2:a-reduce-unnecessary-restriction",
+      "pcpr:material:CH08.P2:a-receive-before-rebuttal",
+      "pcpr:material:CH08.P2:a-stop-comfort-demand"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2.S3",
+    "originalRole": "실천 방법",
+    "materialIds": [
+      "pcpr:material:CH08.P2:a-change-expectation-before-enrollment",
+      "pcpr:material:CH08.P2:a-reduce-unnecessary-restriction",
+      "pcpr:material:CH08.P2:a-receive-before-rebuttal",
+      "pcpr:material:CH08.P2:a-stop-comfort-demand"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2.S4",
+    "originalRole": "B에게 남는 변화",
+    "materialIds": [
+      "pcpr:material:CH08.P2:a-change-expectation-before-enrollment",
+      "pcpr:material:CH08.P2:a-reduce-unnecessary-restriction",
+      "pcpr:material:CH08.P2:a-receive-before-rebuttal",
+      "pcpr:material:CH08.P2:a-stop-comfort-demand"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3.S1",
+    "originalRole": "B의 전략",
+    "materialIds": [
+      "pcpr:material:CH08.P3:child-question-route-parent-receives",
+      "pcpr:material:CH08.P3:child-short-request-parent-supports",
+      "pcpr:material:CH08.P3:child-change-parent-replans",
+      "pcpr:material:CH08.P3:child-boundary-parent-seeks-adult"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3.S2",
+    "originalRole": "필요한 이유",
+    "materialIds": [
+      "pcpr:material:CH08.P3:child-question-route-parent-receives",
+      "pcpr:material:CH08.P3:child-short-request-parent-supports",
+      "pcpr:material:CH08.P3:child-change-parent-replans",
+      "pcpr:material:CH08.P3:child-boundary-parent-seeks-adult"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3.S3",
+    "originalRole": "다른 실천 방법",
+    "materialIds": [
+      "pcpr:material:CH08.P3:child-question-route-parent-receives",
+      "pcpr:material:CH08.P3:child-short-request-parent-supports",
+      "pcpr:material:CH08.P3:child-change-parent-replans",
+      "pcpr:material:CH08.P3:child-boundary-parent-seeks-adult"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3.S4",
+    "originalRole": "A에게 남는 변화",
+    "materialIds": [
+      "pcpr:material:CH08.P3:child-question-route-parent-receives",
+      "pcpr:material:CH08.P3:child-short-request-parent-supports",
+      "pcpr:material:CH08.P3:child-change-parent-replans",
+      "pcpr:material:CH08.P3:child-boundary-parent-seeks-adult"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4.S1",
+    "originalRole": "공동 목표",
+    "materialIds": [
+      "pcpr:material:CH08.P4:young-rule-repair-with-model",
+      "pcpr:material:CH08.P4:teen-device-rule-review",
+      "pcpr:material:CH08.P4:adult-consent-and-contact-review",
+      "pcpr:material:CH08.P4:safety-support-not-forced-reunion"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4.S2",
+    "originalRole": "A의 역할",
+    "materialIds": [
+      "pcpr:material:CH08.P4:young-rule-repair-with-model",
+      "pcpr:material:CH08.P4:teen-device-rule-review",
+      "pcpr:material:CH08.P4:adult-consent-and-contact-review",
+      "pcpr:material:CH08.P4:safety-support-not-forced-reunion"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4.S3",
+    "originalRole": "B의 역할",
+    "materialIds": [
+      "pcpr:material:CH08.P4:young-rule-repair-with-model",
+      "pcpr:material:CH08.P4:teen-device-rule-review",
+      "pcpr:material:CH08.P4:adult-consent-and-contact-review",
+      "pcpr:material:CH08.P4:safety-support-not-forced-reunion"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH08.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4.S4",
+    "originalRole": "관계별 원칙",
+    "materialIds": [
+      "pcpr:material:CH08.P4:young-rule-repair-with-model",
+      "pcpr:material:CH08.P4:teen-device-rule-review",
+      "pcpr:material:CH08.P4:adult-consent-and-contact-review",
+      "pcpr:material:CH08.P4:safety-support-not-forced-reunion"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1.S1",
+    "originalRole": "긍정적 특징",
+    "materialIds": [
+      "pcpr:material:CH09.P1:recall-curiosity-with-choice",
+      "pcpr:material:CH09.P1:recall-opportunity-with-voice",
+      "pcpr:material:CH09.P1:recall-learning-with-mistake-space"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1.S2",
+    "originalRole": "실제 명리·MBTI",
+    "materialIds": [
+      "pcpr:material:CH09.P1:recall-curiosity-with-choice",
+      "pcpr:material:CH09.P1:recall-opportunity-with-voice",
+      "pcpr:material:CH09.P1:recall-learning-with-mistake-space"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1.S3",
+    "originalRole": "함께하는 장점",
+    "materialIds": [
+      "pcpr:material:CH09.P1:recall-curiosity-with-choice",
+      "pcpr:material:CH09.P1:recall-opportunity-with-voice",
+      "pcpr:material:CH09.P1:recall-learning-with-mistake-space"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1.S4",
+    "originalRole": "지속 조건",
+    "materialIds": [
+      "pcpr:material:CH09.P1:recall-curiosity-with-choice",
+      "pcpr:material:CH09.P1:recall-opportunity-with-voice",
+      "pcpr:material:CH09.P1:recall-learning-with-mistake-space"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2.S1",
+    "originalRole": "검증된 좋은 기운",
+    "materialIds": [
+      "pcpr:material:CH09.P2:recall-harmony-needs-support",
+      "pcpr:material:CH09.P2:recall-care-without-role-transfer",
+      "pcpr:material:CH09.P2:recall-many-routes-to-trust"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2.S2",
+    "originalRole": "근거와 의미",
+    "materialIds": [
+      "pcpr:material:CH09.P2:recall-harmony-needs-support",
+      "pcpr:material:CH09.P2:recall-care-without-role-transfer",
+      "pcpr:material:CH09.P2:recall-many-routes-to-trust"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2.S3",
+    "originalRole": "관계의 가능성",
+    "materialIds": [
+      "pcpr:material:CH09.P2:recall-harmony-needs-support",
+      "pcpr:material:CH09.P2:recall-care-without-role-transfer",
+      "pcpr:material:CH09.P2:recall-many-routes-to-trust"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2.S4",
+    "originalRole": "현실적 활용",
+    "materialIds": [
+      "pcpr:material:CH09.P2:recall-harmony-needs-support",
+      "pcpr:material:CH09.P2:recall-care-without-role-transfer",
+      "pcpr:material:CH09.P2:recall-many-routes-to-trust"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3.S1",
+    "originalRole": "조율 원칙",
+    "materialIds": [
+      "pcpr:material:CH09.P3:recall-expectation-repair",
+      "pcpr:material:CH09.P3:recall-protection-repair",
+      "pcpr:material:CH09.P3:recall-parent-regulation-repair"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3.S2",
+    "originalRole": "개인별 이유",
+    "materialIds": [
+      "pcpr:material:CH09.P3:recall-expectation-repair",
+      "pcpr:material:CH09.P3:recall-protection-repair",
+      "pcpr:material:CH09.P3:recall-parent-regulation-repair"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3.S3",
+    "originalRole": "실천 행동",
+    "materialIds": [
+      "pcpr:material:CH09.P3:recall-expectation-repair",
+      "pcpr:material:CH09.P3:recall-protection-repair",
+      "pcpr:material:CH09.P3:recall-parent-regulation-repair"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3.S4",
+    "originalRole": "지속 조건",
+    "materialIds": [
+      "pcpr:material:CH09.P3:recall-expectation-repair",
+      "pcpr:material:CH09.P3:recall-protection-repair",
+      "pcpr:material:CH09.P3:recall-parent-regulation-repair"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4.S1",
+    "originalRole": "특징적인 상호작용",
+    "materialIds": [
+      "pcpr:material:CH09.P4:recall-young-support-and-small-choice",
+      "pcpr:material:CH09.P4:recall-adult-support-and-boundary",
+      "pcpr:material:CH09.P4:recall-role-changes-with-context"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4.S2",
+    "originalRole": "함께 만드는 가치",
+    "materialIds": [
+      "pcpr:material:CH09.P4:recall-young-support-and-small-choice",
+      "pcpr:material:CH09.P4:recall-adult-support-and-boundary",
+      "pcpr:material:CH09.P4:recall-role-changes-with-context"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4.S3",
+    "originalRole": "기억할 기준",
+    "materialIds": [
+      "pcpr:material:CH09.P4:recall-young-support-and-small-choice",
+      "pcpr:material:CH09.P4:recall-adult-support-and-boundary",
+      "pcpr:material:CH09.P4:recall-role-changes-with-context"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "pcpr:role:CH09.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4.S4",
+    "originalRole": "관계별 결론",
+    "materialIds": [
+      "pcpr:material:CH09.P4:recall-young-support-and-small-choice",
+      "pcpr:material:CH09.P4:recall-adult-support-and-boundary",
+      "pcpr:material:CH09.P4:recall-role-changes-with-context"
+    ],
+    "independentFactCount": 0
+  }
+];

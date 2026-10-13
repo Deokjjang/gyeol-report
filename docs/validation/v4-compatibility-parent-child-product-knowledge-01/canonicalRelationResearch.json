@@ -1,0 +1,2455 @@
+[
+  {
+    "id": "pcpr:relation:rr:combination:banhap:申子",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:banhap:申子",
+    "relation": "banhap",
+    "members": [
+      "申",
+      "子"
+    ],
+    "originalHash": "ce3de3577c501eb53df213c59fffceace976f71b50474af1391bc6ac16413583",
+    "actualCrossProducerKind": "half_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "수국의 생지申·왕지子 두 자리이며 辰은 실제로 없다면 보충하지 않는다.",
+    "exclusions": [
+      "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "삼합 원리의 생왕 부분, 현대 왕지 포함 반합 전승과 저장소12쌍 정책에 모두 속한다.",
+      "sourceRefs": [
+        {
+          "sourceId": "half",
+          "locator": "반합 / 유파 차이"
+        }
+      ]
+    },
+    "positiveSource": "시작과 중심의 연결 가능성을 제한적으로 검토한다.",
+    "riskSource": "갈무리 辰이 있다고 가정해 완성 화국으로 읽지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [
+      "pcpr:material:CH04.P4:harmony-needs-child-consent",
+      "pcpr:material:CH09.P2:recall-harmony-needs-support"
+    ],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:banhap:申辰",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:banhap:申辰",
+    "relation": "banhap",
+    "members": [
+      "申",
+      "辰"
+    ],
+    "originalHash": "d2b0019a7944dc526ddbd748bce850c5f7dd6013af1a52d818db666dc137d6ae",
+    "actualCrossProducerKind": "half_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "수국의 생지申·고지辰이며 왕지子가 없다면 없다 그대로 둔다.",
+    "exclusions": [
+      "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "왕지 없는 생고는 미채택·약한 반합이라는 현대 이견이 있다. 고전 완전 화국이 아니다.",
+      "sourceRefs": [
+        {
+          "sourceId": "half",
+          "locator": "반합 / 유파 차이"
+        }
+      ]
+    },
+    "positiveSource": "중심 역할이 확인되지 않은 연결로 검토 범위를 제한할 수 있다.",
+    "riskSource": "子를 공허로 채워 수국의 힘을 확정하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:banhap:子辰",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:banhap:子辰",
+    "relation": "banhap",
+    "members": [
+      "子",
+      "辰"
+    ],
+    "originalHash": "c596e9d7894db8ba0e6c7be3dfdc7b3138039e6823d9ab089c6ab56af902a5db",
+    "actualCrossProducerKind": "half_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "왕지子·고지辰 두 자리와 생지申의 실제 유무를 확인한다.",
+    "exclusions": [
+      "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "수국의 왕고 부분이며 부분 구성과 세 자리 완성은 다르다.",
+      "sourceRefs": [
+        {
+          "sourceId": "half",
+          "locator": "반합 / 유파 차이"
+        }
+      ]
+    },
+    "positiveSource": "중심과 갈무리의 연결을 별도 관점으로 검토한다.",
+    "riskSource": "시작 기능申까지 있다고 쓰지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:banhap:亥卯",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:banhap:亥卯",
+    "relation": "banhap",
+    "members": [
+      "亥",
+      "卯"
+    ],
+    "originalHash": "ab4730a6fa1dcd1bd9b2fab3f95b9be9d911bde7a313f0d516c9752c304230e0",
+    "actualCrossProducerKind": "half_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "목국 생지亥·왕지卯의 실제 두 자리이며 未를 가정하지 않는다.",
+    "exclusions": [
+      "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "왕지 포함 생왕 반합으로 현대 전승과 코드에 모두 해당한다.",
+      "sourceRefs": [
+        {
+          "sourceId": "half",
+          "locator": "반합 / 유파 차이"
+        }
+      ]
+    },
+    "positiveSource": "시작과 중심에 해당하는 부분 연결을 연구할 수 있다.",
+    "riskSource": "목 연결을 성장·합격의 보장으로 바꾸지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:banhap:亥未",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:banhap:亥未",
+    "relation": "banhap",
+    "members": [
+      "亥",
+      "未"
+    ],
+    "originalHash": "b0cc6ba7edfdd050cd3ac77264515070a420e0f633097852eaffb7e59a9989c2",
+    "actualCrossProducerKind": "half_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "목국 생지亥·고지未이며 왕지卯가 빠진 구성을 보존한다.",
+    "exclusions": [
+      "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "왕지 없는 반합은 이견 대상이며12쌍 검출과 보편 성립을 구별한다.",
+      "sourceRefs": [
+        {
+          "sourceId": "half",
+          "locator": "반합 / 유파 차이"
+        }
+      ]
+    },
+    "positiveSource": "중심 역할의 부재를 검토 질문으로 드러낼 수 있다.",
+    "riskSource": "없는 卯를 있다고 하거나 미약한 완전 목국이라 수치화하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:banhap:卯未",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:banhap:卯未",
+    "relation": "banhap",
+    "members": [
+      "卯",
+      "未"
+    ],
+    "originalHash": "cae41671c73ae0db4e9897a366536dddd5ba441a0b912a99e016367df254305b",
+    "actualCrossProducerKind": "half_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "목국 왕지卯·고지未 두 자리와 亥의 실제 유무를 확인한다.",
+    "exclusions": [
+      "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "왕고 부분이며 완전 삼합으로 확장하지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "half",
+          "locator": "반합 / 유파 차이"
+        }
+      ]
+    },
+    "positiveSource": "중심의 작용과 갈무리의 연결을 따로 볼 수 있다.",
+    "riskSource": "잘 마무리한다는 성격이나 가족 안정으로 단정하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:banhap:寅午",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:banhap:寅午",
+    "relation": "banhap",
+    "members": [
+      "寅",
+      "午"
+    ],
+    "originalHash": "5c093f6bea990242e0485f12a4ae31a972fe3a584d5aa3637eb2ac28149ecdde",
+    "actualCrossProducerKind": "half_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "화국 생지寅·왕지午의 실제 두 자리이며 戌을 채우지 않는다.",
+    "exclusions": [
+      "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "왕지 포함 생왕 부분이며 실제 합화는 다른 검토다.",
+      "sourceRefs": [
+        {
+          "sourceId": "half",
+          "locator": "반합 / 유파 차이"
+        }
+      ]
+    },
+    "positiveSource": "추진의 시작과 중심이 연결되는 조건을 살필 수 있다.",
+    "riskSource": "발표 성공·열정·명성을 기호에서 추정하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:banhap:寅戌",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:banhap:寅戌",
+    "relation": "banhap",
+    "members": [
+      "寅",
+      "戌"
+    ],
+    "originalHash": "82d70726cee29e2916434b473902d5e65484575800c2b91a3243aa0d633a9e53",
+    "actualCrossProducerKind": "half_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "화국 생지寅·고지戌이며 왕지午가 빠졌는지 확인한다.",
+    "exclusions": [
+      "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "왕지 없는 부분 연결의 미채택·약화 견해와 현행 검출을 따로 둔다.",
+      "sourceRefs": [
+        {
+          "sourceId": "half",
+          "locator": "반합 / 유파 차이"
+        }
+      ]
+    },
+    "positiveSource": "중심 역할이 확인되지 않았음을 연구 한계로 남길 수 있다.",
+    "riskSource": "지장간火가 있다는 이유로 실제 午를 생성하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:banhap:午戌",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:banhap:午戌",
+    "relation": "banhap",
+    "members": [
+      "午",
+      "戌"
+    ],
+    "originalHash": "cb717535f3b7aaadc1a2a5e4508693d0838bef619891a3ddf52b58c7fb6b0c44",
+    "actualCrossProducerKind": "half_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "화국 왕지午·고지戌 두 자리와 寅의 실제 유무를 확인한다.",
+    "exclusions": [
+      "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "왕고 부분이며 셋의 모두 존재와 다르다.",
+      "sourceRefs": [
+        {
+          "sourceId": "half",
+          "locator": "반합 / 유파 차이"
+        }
+      ]
+    },
+    "positiveSource": "중심과 정리의 역할을 비교할 수 있다.",
+    "riskSource": "화국의 완성·인기·정리 능력을 단정하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:banhap:巳酉",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:banhap:巳酉",
+    "relation": "banhap",
+    "members": [
+      "巳",
+      "酉"
+    ],
+    "originalHash": "e79faa69830efdee8244d0e9415a71e01d06091c9d1630020dafb3f26585e747",
+    "actualCrossProducerKind": "half_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "금국 생지巳·왕지酉의 실제 두 글자이며 丑은 없다면 채우지 않는다.",
+    "exclusions": [
+      "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "왕지 포함 생왕 반합 전승이며 완전 금국과 다르다.",
+      "sourceRefs": [
+        {
+          "sourceId": "half",
+          "locator": "반합 / 유파 차이"
+        }
+      ]
+    },
+    "positiveSource": "시작과 중심의 부분 연결을 살필 수 있다.",
+    "riskSource": "금국의 재물·판단 능력을 작은 연결에서 확정하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:banhap:巳丑",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:banhap:巳丑",
+    "relation": "banhap",
+    "members": [
+      "巳",
+      "丑"
+    ],
+    "originalHash": "dc69a8aae08baf86316066beadab02cbb8ae1275a108c3e95695af195ce6003b",
+    "actualCrossProducerKind": "half_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "금국 생지巳·고지丑이며 왕지酉가 빠진 구성을 유지한다.",
+    "exclusions": [
+      "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "왕지 없는 부분 전승 차이로 직접 효과는 미확정이다.",
+      "sourceRefs": [
+        {
+          "sourceId": "half",
+          "locator": "반합 / 유파 차이"
+        }
+      ]
+    },
+    "positiveSource": "필요한 중심 기능을 별도로 요구할 연구 질문이 된다.",
+    "riskSource": "없던 酉의 판단 기능을 장간만으로 채웠다고 하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:banhap:酉丑",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:banhap:酉丑",
+    "relation": "banhap",
+    "members": [
+      "酉",
+      "丑"
+    ],
+    "originalHash": "57fb11e21be3da0bea5e063438b0320106c75779dd28cdbd21ccdd51bc28cf7c",
+    "actualCrossProducerKind": "half_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "금국 왕지酉·고지丑 두 실제 자리와 巳의 유무를 확인한다.",
+    "exclusions": [
+      "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "왕고 부분으로 현대 왕지8쌍 전승에 속한다.",
+      "sourceRefs": [
+        {
+          "sourceId": "half",
+          "locator": "반합 / 유파 차이"
+        }
+      ]
+    },
+    "positiveSource": "중심과 보존의 연결 범위를 검토할 수 있다.",
+    "riskSource": "금이 완성됐으니 돈을 잘 지킨다는 능력으로 바꾸지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:chung:子午",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:chung:子午",
+    "relation": "chung",
+    "members": [
+      "子",
+      "午"
+    ],
+    "originalHash": "71d8187b4eb1e7cbe80be0ae4dc99c0236f88b2c42eb07c857236af8c3a7a970",
+    "actualCrossProducerKind": "clash",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "子水·午火의 대향과 월령별 왕쇠를 검토한다.",
+    "exclusions": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "수화 충이며 적천수는 자왕오쇠와 자쇠오왕을 같은 결과로 보지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論衝擊"
+        }
+      ]
+    },
+    "positiveSource": "필요 없어진 배치를 바꿀 조건인지 검토할 수 있다.",
+    "riskSource": "충이라는 이유만으로 화·수 중 한쪽이 항상 사라진다고 할 수 없다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [
+      "pcpr:material:CH07.P2:clash-without-family-blame"
+    ],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:chung:丑未",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:chung:丑未",
+    "relation": "chung",
+    "members": [
+      "丑",
+      "未"
+    ],
+    "originalHash": "2475980f197143ce968a967f5cf9e9f1319529e7bf8c6d4b5a1cb9dd42668cb7",
+    "actualCrossProducerKind": "clash",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "겨울 丑土·여름 未土의 두 자리와 장간 구성을 확인한다.",
+    "exclusions": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "사고지 토의 충이다. 충해야 창고가 열린다는 보편 결론은 미확정이다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論衝擊"
+        }
+      ]
+    },
+    "positiveSource": "같은 토라도 다른 저장 구성을 가진다는 비교가 가능하다.",
+    "riskSource": "토가 같으니 무작용이라는 해석과 개고재물 예언을 모두 제한한다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:chung:寅申",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:chung:寅申",
+    "relation": "chung",
+    "members": [
+      "寅",
+      "申"
+    ],
+    "originalHash": "8bc86e5662ba7e4334aac0944e8847d66269ce4944cff4b31275d9d1ce9c0d8a",
+    "actualCrossProducerKind": "clash",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "寅木·申金의 대향과 장간의 여러 생극을 함께 검토한다.",
+    "exclusions": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "대표 목금 충이며 형 표에도 같은 쌍이 있다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論衝擊"
+        }
+      ]
+    },
+    "positiveSource": "배치 변경의 필요와 보존할 기능을 같이 살필 수 있다.",
+    "riskSource": "충·형의 겹침을 두 개의 독립 불행으로 세지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [
+      "pcpr:material:CH01.P2:clash-not-disobedience",
+      "pcpr:material:CH07.P2:harmony-and-disagreement-coexist"
+    ],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:chung:卯酉",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:chung:卯酉",
+    "relation": "chung",
+    "members": [
+      "卯",
+      "酉"
+    ],
+    "originalHash": "816780c16770b4b666c61c8b8c57352900aee418996b9fddbee95b9b0bdca3cd",
+    "actualCrossProducerKind": "clash",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "卯木·酉金의 두 자리와 각 월령·뿌리를 확인한다.",
+    "exclusions": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "목금 대향이며 자평진전은 辰·戌·다른 삼합의 개입 예를 비교한다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論衝擊"
+        }
+      ]
+    },
+    "positiveSource": "서로 맞지 않는 기준의 구체적 수정 지점을 질문할 수 있다.",
+    "riskSource": "酉金이 언제나 卯木을 압도한다고 고정할 수 없다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:chung:辰戌",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:chung:辰戌",
+    "relation": "chung",
+    "members": [
+      "辰",
+      "戌"
+    ],
+    "originalHash": "f11e39321b88a0db28eeabfd8ed3f432585832ea09f5925f34c69c621432f9ba",
+    "actualCrossProducerKind": "clash",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "辰土·戌土와 각 지장간·건습·월령을 확인한다.",
+    "exclusions": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "사고지 충이며 단순 토 개수나 자동 개고 해석으로 환원하지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論衝擊"
+        }
+      ]
+    },
+    "positiveSource": "서로 다른 저장·지원 구성을 비교할 연구 조건이 된다.",
+    "riskSource": "충하면 숨은 재물이 나온다는 독립 명제는 반려한다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:chung:巳亥",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:chung:巳亥",
+    "relation": "chung",
+    "members": [
+      "巳",
+      "亥"
+    ],
+    "originalHash": "52ed3dc5f84987f7d537335f5b2f6aa6142618d329f0d55af0f06bf3685bd00c",
+    "actualCrossProducerKind": "clash",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "巳火·亥水의 실제 대향과 각 장간의 기세를 확인한다.",
+    "exclusions": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "수화 충이나 巳·亥는 서로 다른 삼합의 생지다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論衝擊"
+        }
+      ]
+    },
+    "positiveSource": "기존 기능이 어느 환경에서 제한되는지 질문할 수 있다.",
+    "riskSource": "오행 대표값 하나로 장간의 모든 작용이 취소된다고 하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hae:子未",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hae:子未",
+    "relation": "hae",
+    "members": [
+      "子",
+      "未"
+    ],
+    "originalHash": "bc9b8234ebd6265493d706d54a563baa70d2a82231df764aa4df97e49dfe3fb2",
+    "actualCrossProducerKind": "harm",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "子·未 두 실제 글자와 각 계절·장간을 확인한다.",
+    "exclusions": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "육해의 子未는 합·충 매개 설명과 토수 여력 논설을 가진다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論六害"
+        }
+      ]
+    },
+    "positiveSource": "기대가 연결되지 않는 조건을 구체적으로 확인할 질문이 가능하다.",
+    "riskSource": "원진에도 겹치지만 감정 갈등 두 배로 세지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [
+      "pcpr:material:CH07.P2:harm-not-wonjin-child"
+    ],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hae:丑午",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hae:丑午",
+    "relation": "hae",
+    "members": [
+      "丑",
+      "午"
+    ],
+    "originalHash": "c8c9bc2ff0f4432401fe3ffb89d80c300d928b68db5c68bbe28bf7f684e5b7a8",
+    "actualCrossProducerKind": "harm",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "丑·午의 실제 두 자리와 하절 화·동절 장간 조건을 확인한다.",
+    "exclusions": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "육해 전승은 대표 오행뿐 아니라 丑의 장간 논의를 포함한다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論六害"
+        }
+      ]
+    },
+    "positiveSource": "같은 지원으로 보이는 작용의 다른 영향을 검토할 수 있다.",
+    "riskSource": "화생토만으로 해가 무효라 하거나 원진과 합산하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hae:寅巳",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hae:寅巳",
+    "relation": "hae",
+    "members": [
+      "寅",
+      "巳"
+    ],
+    "originalHash": "c49615baffa2cb7a0e621505914a422bd840aaa5b6adbb5978169947726bb9fe",
+    "actualCrossProducerKind": "harm",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "寅·巳 두 실제 위치와 申·亥 등의 다른 관계를 확인한다.",
+    "exclusions": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "육해와 순환형 일부가 겹치는 쌍이다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論六害"
+        }
+      ]
+    },
+    "positiveSource": "공통된 출발 기능도 서로 다른 작용을 가질 수 있음을 검토한다.",
+    "riskSource": "형과 해의 공존을 숨은 적의나 관재로 바꾸지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hae:卯辰",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hae:卯辰",
+    "relation": "hae",
+    "members": [
+      "卯",
+      "辰"
+    ],
+    "originalHash": "793282932db2efb6b5c157f5f8f3e41729a32c9122bac84bb5e1f82a2bdd1f95",
+    "actualCrossProducerKind": "harm",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "卯·辰의 실제 두 자리와 목토의 기세를 확인한다.",
+    "exclusions": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "육해의 한 쌍이며 고전은 목·토의 조건을 서술한다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論六害"
+        }
+      ]
+    },
+    "positiveSource": "가까운 위치나 상생 이미지가 자동 일치를 뜻하지 않음을 살필 수 있다.",
+    "riskSource": "봄 지지라는 공통점으로 실제 파괴·배신·건강 문제를 예언하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hae:申亥",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hae:申亥",
+    "relation": "hae",
+    "members": [
+      "申",
+      "亥"
+    ],
+    "originalHash": "3d6bf32c26566260ceac063b4bbe98da67faca7d344e03f7952ab2f3c6411251",
+    "actualCrossProducerKind": "harm",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "申·亥 두 실제 글자와 각 장간의 연결을 확인한다.",
+    "exclusions": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "육해 전승의 경쟁·생왕 논설을 역사적 조건으로만 읽는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論六害"
+        }
+      ]
+    },
+    "positiveSource": "생조의 대표값과 방해 관계가 병존함을 검토한다.",
+    "riskSource": "금생수니 항상 유리하거나 해니 은밀한 배신이라고 할 수 없다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hae:酉戌",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hae:酉戌",
+    "relation": "hae",
+    "members": [
+      "酉",
+      "戌"
+    ],
+    "originalHash": "4dbbc5d88fbbe6dc3353ba3a24d672ca87475f3ee96e5fb3dad2ceb9c2a06588",
+    "actualCrossProducerKind": "harm",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "酉·戌 두 실제 위치와 금·토·戌 장간을 함께 확인한다.",
+    "exclusions": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "고전에는 酉見戌·戌見酉의 비대칭 평가가 있으나 현행 표는 대칭이다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論六害"
+        }
+      ]
+    },
+    "positiveSource": "검출 대칭과 해석 주객의 차이를 구별할 수 있다.",
+    "riskSource": "토생금 한 줄로 장간·방해를 없애거나 비대칭 길흉을 계산된 사실이라 하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hyeong:寅巳",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hyeong:寅巳",
+    "relation": "hyeong",
+    "members": [
+      "寅",
+      "巳"
+    ],
+    "originalHash": "e1d6dc1c220c78d660878b1753eae6b70bc4e0f7615e9c37cd98e8e4908f998f",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "寅·巳의 실제 두 자리이며 申이 없다면 삼형 전체는 아니다.",
+    "exclusions": [
+      "한 개 辰만으로 辰辰 자형을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "삼명통회의 寅→巳 방향 일부; 無恩·恃勢 명칭 이견을 보존한다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論三刑"
+        }
+      ]
+    },
+    "positiveSource": "상생 대표값 속에도 장간별 제약이 있을 조건을 검토한다.",
+    "riskSource": "현행 해와의 겹침으로 독립 위험을 더하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hyeong:巳申",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hyeong:巳申",
+    "relation": "hyeong",
+    "members": [
+      "巳",
+      "申"
+    ],
+    "originalHash": "754c2589972fee263073fe1778a66ab9def107f967268c58daaab1ca62dcf6d3",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "巳·申의 실제 두 자리만으로 寅까지 있다고 할 수 없다.",
+    "exclusions": [
+      "한 개 辰만으로 辰辰 자형을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "巳→申의 형 방향 일부이며 현대 대칭 함수는 역순도 같은 쌍으로 낸다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論三刑"
+        }
+      ]
+    },
+    "positiveSource": "결속과 제약의 공존을 검토할 수 있다.",
+    "riskSource": "육합·형·파의 겹침을 3배 위험이나 순서 있는 사건으로 만들지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hyeong:申寅",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hyeong:申寅",
+    "relation": "hyeong",
+    "members": [
+      "申",
+      "寅"
+    ],
+    "originalHash": "661a4f65a7dd9e1a9a5429d702273f151ae4d59b2c3ecc995b37166221b6c001",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "申·寅의 실제 두 자리, 巳의 유무를 따로 기록한다.",
+    "exclusions": [
+      "한 개 辰만으로 辰辰 자형을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "申→寅은 순환형의 일부이며 충에도 해당한다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論三刑"
+        }
+      ]
+    },
+    "positiveSource": "대향과 순환 분류의 서로 다른 조건을 함께 볼 수 있다.",
+    "riskSource": "충이니 모든 형 작용을 알았다고 하거나 형이니 사고를 추가하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hyeong:丑戌",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hyeong:丑戌",
+    "relation": "hyeong",
+    "members": [
+      "丑",
+      "戌"
+    ],
+    "originalHash": "609ed4bec47237d2937b10cfb310ad03d82443856d54953a76d157ba6d52fd55",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "丑·戌 두 저장 지지의 실제 자리와 未의 유무를 확인한다.",
+    "exclusions": [
+      "한 개 辰만으로 辰辰 자형을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "丑→戌 방향의 일부; 未 없는 상태를 완전 丑戌未라 하지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論三刑"
+        }
+      ]
+    },
+    "positiveSource": "장간의 서로 다른 제약을 구체적으로 비교할 수 있다.",
+    "riskSource": "같은 토의 반복으로 모든 기능이 같다고 하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hyeong:戌未",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hyeong:戌未",
+    "relation": "hyeong",
+    "members": [
+      "戌",
+      "未"
+    ],
+    "originalHash": "a957a4d6a86b3f1062355290d8e5fb87b7024538356adad11cc69eae0296d887",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "戌·未의 실제 두 자리와 丑의 유무를 확인한다.",
+    "exclusions": [
+      "한 개 辰만으로 辰辰 자형을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "戌→未 방향의 일부이며 현재 육파 표와 겹친다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論三刑"
+        }
+      ]
+    },
+    "positiveSource": "형의 순환 조건과 파의 분류를 나누어 검토한다.",
+    "riskSource": "형·파가 함께 있으니 배신·처벌이 온다고 단정하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hyeong:未丑",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hyeong:未丑",
+    "relation": "hyeong",
+    "members": [
+      "未",
+      "丑"
+    ],
+    "originalHash": "9f43f8bff6fe22e0d1212e9a6424501acaba859a7bc49181098697b6315dc3c0",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "未·丑의 실제 두 자리와 戌의 유무를 확인한다.",
+    "exclusions": [
+      "한 개 辰만으로 辰辰 자형을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "未→丑 방향의 일부이며 丑未충과 같은 구성이다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論三刑"
+        }
+      ]
+    },
+    "positiveSource": "계절·장간 차이와 순환 일부를 함께 검토한다.",
+    "riskSource": "토충·형이 있다는 이유로 재고가 열리거나 가족 문제가 난다고 하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hyeong:子卯",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hyeong:子卯",
+    "relation": "hyeong",
+    "members": [
+      "子",
+      "卯"
+    ],
+    "originalHash": "af06acf541bf67e6b04c3a2c5dc2de98756f5078c1b763667f2583ae3ab4c5a3",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "子·卯 서로 다른 실제 위치가 필요하며 반복과 합해법을 함께 검토한다.",
+    "exclusions": [
+      "한 개 辰만으로 辰辰 자형을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "無禮之刑 전승이지만 무례한 인격·성별 도덕성으로 쓰지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論三刑"
+        }
+      ]
+    },
+    "positiveSource": "대표 수생목이 곧 무제약 관계가 아니라는 검토가 가능하다.",
+    "riskSource": "상생이니 형이 없다고 하거나 형이니 부모자녀 불화를 예언하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hyeong:辰辰",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hyeong:辰辰",
+    "relation": "hyeong",
+    "members": [
+      "辰",
+      "辰"
+    ],
+    "originalHash": "5551738141657826c014527c228e7402a3d66ce46bab87d73bae4951d577863d",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "서로 다른 두 자리에 辰이 실제 반복되어야 한다.",
+    "exclusions": [
+      "한 개 辰만으로 辰辰 자형을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "고전의 辰見辰 자형과 제형 조건; 하나의 辰을 복제하지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論三刑"
+        }
+      ]
+    },
+    "positiveSource": "같은 기호 반복과 주변 구성의 차이를 함께 살필 수 있다.",
+    "riskSource": "수묘 반복을 우울·자해·자기파괴로 읽지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hyeong:午午",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hyeong:午午",
+    "relation": "hyeong",
+    "members": [
+      "午",
+      "午"
+    ],
+    "originalHash": "76880b17396cb7bfafd96c0747665c8f37348f4623492c63762d7aeb52ee315e",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "서로 다른 실제 두 위치의 午와 화의 월령·제어를 확인한다.",
+    "exclusions": [
+      "한 개 辰만으로 辰辰 자형을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "午見午 자형 전승이며 고전은 제어가 있는 경우를 별도 논한다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論三刑"
+        }
+      ]
+    },
+    "positiveSource": "집중된 작용의 과도를 조절할 조건을 검토할 수 있다.",
+    "riskSource": "화 반복으로 분노·사고·심장질환을 확정하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hyeong:酉酉",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hyeong:酉酉",
+    "relation": "hyeong",
+    "members": [
+      "酉",
+      "酉"
+    ],
+    "originalHash": "c58f30095c5876206cd1636393092b3440dc37d0bedb0d272e91381ffdec2cb0",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "두 별도 위치의 酉를 확인하고 금의 계절·다른 작용을 본다.",
+    "exclusions": [
+      "한 개 辰만으로 辰辰 자형을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "酉見酉 자형 전승; 고전의 과강·제형 논설은 현대 완벽주의의 증거가 아니다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論三刑"
+        }
+      ]
+    },
+    "positiveSource": "같은 기능의 집중에 조절이 필요한지 질문할 수 있다.",
+    "riskSource": "금 반복으로 냉혹·범죄·정신 문제를 부여하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hyeong:亥亥",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hyeong:亥亥",
+    "relation": "hyeong",
+    "members": [
+      "亥",
+      "亥"
+    ],
+    "originalHash": "ccb902cd99cfe7b29234bcd61507649fc1644cfa379f76b4d94de2ba078e4fe3",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "두 실제 위치의 亥와 수·목 장간 및 계절을 확인한다.",
+    "exclusions": [
+      "한 개 辰만으로 辰辰 자형을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "亥見亥 자형 전승; 수의 기세와 제약을 함께 논한다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論三刑"
+        }
+      ]
+    },
+    "positiveSource": "기호 반복만으로 결론 내리지 않고 구성의 여력을 살필 수 있다.",
+    "riskSource": "반복 수로 비밀·불안·질병을 추정하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hyeong:寅巳申",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hyeong:寅巳申",
+    "relation": "hyeong",
+    "members": [
+      "寅",
+      "巳",
+      "申"
+    ],
+    "originalHash": "87a101538420a1e2fb5be5207be89f94ec5515d8f8b4b0984580865124f5aeb2",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "寅·巳·申의 세 다른 실제 글자를 모두 확인한다.",
+    "exclusions": [
+      "한 개 辰만으로 辰辰 자형을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "고전 전체 순환형. 현행 함수의 세 쌍을 묶은 새 전체 Evidence는 만들지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論三刑"
+        }
+      ]
+    },
+    "positiveSource": "다중 제약의 참여자를 각각 구분하는 연구가 가능하다.",
+    "riskSource": "세 방향 전체를 흉사 확정 또는 위험3배로 읽지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:hyeong:丑戌未",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:hyeong:丑戌未",
+    "relation": "hyeong",
+    "members": [
+      "丑",
+      "戌",
+      "未"
+    ],
+    "originalHash": "28e07842568db0b7753adfc13e02cd7f05255f7cb8c235ad7bd56ffafcb357b0",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "丑·戌·未 세 저장 지지를 모두 확인한다.",
+    "exclusions": [
+      "한 개 辰만으로 辰辰 자형을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "고전 전체 삼형이며 無恩·恃勢 명칭을 바꾸는 전승이 병기되어 있다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論三刑"
+        }
+      ]
+    },
+    "positiveSource": "같은 토 안의 다른 장간과 관계를 함께 검토할 수 있다.",
+    "riskSource": "토3개만 세어 장간·계절과 전체 기세를 생략하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:pa:子酉",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:pa:子酉",
+    "relation": "pa",
+    "members": [
+      "子",
+      "酉"
+    ],
+    "originalHash": "cf6de464603607f3bd72515e4823f56664f255bba546198763d9491b4462e463",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "子水·酉金의 실제 두 자리와 본래 금생수 관계를 확인한다.",
+    "exclusions": [
+      "파를 배신·계약 파기·수술·자기파괴로 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "현대 파6쌍의 하나. 현재 표의 고전 직접 전거·조합 고유 사건 의미는 미확인이다.",
+      "sourceRefs": [
+        {
+          "sourceId": "pa",
+          "locator": "여섯 쌍 / 파를 쓰지 않는 사람들"
+        }
+      ]
+    },
+    "positiveSource": "생조와 파 표의 분류가 다름을 비교하는 연구가 가능하다.",
+    "riskSource": "금이 녹슨다는 비유를 관계 법칙·건강 위험으로 사용하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:pa:丑辰",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:pa:丑辰",
+    "relation": "pa",
+    "members": [
+      "丑",
+      "辰"
+    ],
+    "originalHash": "6a4922f97d3acfa36321b3c9f7a1f5e61f3f1346a597632f16e4a80574fae8d5",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "丑·辰 두 토 지지와 서로 다른 장간·계절을 확인한다.",
+    "exclusions": [
+      "파를 배신·계약 파기·수술·자기파괴로 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "현대 파 표의 토토 쌍이며 개고재물 해석을 입증하지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "pa",
+          "locator": "여섯 쌍 / 파를 쓰지 않는 사람들"
+        }
+      ]
+    },
+    "positiveSource": "같은 토 대표값으로 사라지는 구성 차이를 드러낼 수 있다.",
+    "riskSource": "창고 균열 비유로 재산 손실을 확정하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:pa:寅亥",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:pa:寅亥",
+    "relation": "pa",
+    "members": [
+      "寅",
+      "亥"
+    ],
+    "originalHash": "1f47413cb1f0cfa42759c241287abe75cbbc6a534e03101f277f672a6fbac7a9",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "寅木·亥水의 실제 두 자리와 생조·육합 겹침을 기록한다.",
+    "exclusions": [
+      "파를 배신·계약 파기·수술·자기파괴로 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "현대 표는 육합과 파가 함께 있는 쌍으로 둔다. 단일한 고전 결론은 미확인이다.",
+      "sourceRefs": [
+        {
+          "sourceId": "pa",
+          "locator": "여섯 쌍 / 파를 쓰지 않는 사람들"
+        }
+      ]
+    },
+    "positiveSource": "연결의 존재와 유지 방식의 적합성을 나누어 질문할 수 있다.",
+    "riskSource": "합 다음 반드시 파가 온다는 시계열을 만들지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:pa:卯午",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:pa:卯午",
+    "relation": "pa",
+    "members": [
+      "卯",
+      "午"
+    ],
+    "originalHash": "c1897c61cf8da2f1ae4a84b6a7f5b33ac32ce3cdcd261b5b35624e3702626a8a",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "卯木·午火 실제 두 자리와 목생화·계절을 확인한다.",
+    "exclusions": [
+      "파를 배신·계약 파기·수술·자기파괴로 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "현대 파6쌍 중 하나이며 생활 효과의 고전 직접 근거는 미확인이다.",
+      "sourceRefs": [
+        {
+          "sourceId": "pa",
+          "locator": "여섯 쌍 / 파를 쓰지 않는 사람들"
+        }
+      ]
+    },
+    "positiveSource": "생조와 유지 조건의 차이를 검토할 수 있다.",
+    "riskSource": "목이 불타 없어진다는 물리 비유로 소진·질병을 확정하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:pa:巳申",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:pa:巳申",
+    "relation": "pa",
+    "members": [
+      "巳",
+      "申"
+    ],
+    "originalHash": "a3eb79594b86f5ef7e5fb1235592f3ccdeed72e7181e608cdc318c1640bf06e6",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "巳火·申金 실제 두 자리와 육합·형의 겹침을 기록한다.",
+    "exclusions": [
+      "파를 배신·계약 파기·수술·자기파괴로 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "현대 파 표의 겹침 쌍. 세 이름의 독립 효력은 확인되지 않았다.",
+      "sourceRefs": [
+        {
+          "sourceId": "pa",
+          "locator": "여섯 쌍 / 파를 쓰지 않는 사람들"
+        }
+      ]
+    },
+    "positiveSource": "협업과 제약·수정의 질문을 각각 분리할 수 있다.",
+    "riskSource": "합·형·파를 협력→고통→배신이라는 사건 서사로 바꾸지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:pa:未戌",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:pa:未戌",
+    "relation": "pa",
+    "members": [
+      "未",
+      "戌"
+    ],
+    "originalHash": "f08585f662e616c0c69dad7144e2fa06b53662be468736440d8941ccec4a1ba8",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "未·戌 실제 두 토 자리와 장간·형 겹침을 확인한다.",
+    "exclusions": [
+      "파를 배신·계약 파기·수술·자기파괴로 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "현대 파6쌍의 하나이며 고전 순환형의 일부이기도 하다.",
+      "sourceRefs": [
+        {
+          "sourceId": "pa",
+          "locator": "여섯 쌍 / 파를 쓰지 않는 사람들"
+        }
+      ]
+    },
+    "positiveSource": "같은 조합에 붙은 다른 분류의 목적을 대조할 수 있다.",
+    "riskSource": "형·파 공존으로 계약 파기나 법적 문제를 보장하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:samhap:申子辰",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:samhap:申子辰",
+    "relation": "samhap",
+    "members": [
+      "申",
+      "子",
+      "辰"
+    ],
+    "originalHash": "8bd6b3683c1a12bd3d192984f4888fbd20546f157d4e6390a403b5b1967b54fe",
+    "actualCrossProducerKind": "three_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "申·子·辰 세 다른 글자와 수의 생왕고 역할을 확인한다.",
+    "exclusions": [
+      "반합에 없는 글자를 가정해 삼합을 완성하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "생·왕·고의 수국 전승; 한 글자가 없으면 완전 삼합 화국과 다르다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論支元三合"
+        }
+      ]
+    },
+    "positiveSource": "시작·중심·갈무리의 실제 집결을 검토할 수 있다.",
+    "riskSource": "수의 집결을 누구에게나 유익한 유연성·재물로 바꾸지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:samhap:亥卯未",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:samhap:亥卯未",
+    "relation": "samhap",
+    "members": [
+      "亥",
+      "卯",
+      "未"
+    ],
+    "originalHash": "df23be69e3ac3428a5ad72d93951f4a50cc70f93a41d00b7fc900964c812128e",
+    "actualCrossProducerKind": "three_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "亥·卯·未의 목 생왕고 실제 세 자리와 월령을 확인한다.",
+    "exclusions": [
+      "반합에 없는 글자를 가정해 삼합을 완성하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "목국 전승이며 부족한 卯·未·亥를 다른 기호로 대체하지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論支元三合"
+        }
+      ]
+    },
+    "positiveSource": "한 방향을 지속할 구성인지 전체 여력을 비교할 수 있다.",
+    "riskSource": "목 집결을 자동 성장·합격·사업 확장으로 해석하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:samhap:寅午戌",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:samhap:寅午戌",
+    "relation": "samhap",
+    "members": [
+      "寅",
+      "午",
+      "戌"
+    ],
+    "originalHash": "7e9740f2494fabec7d0fd3dd166caf5e5ed83de625e91010ed337f96ca963c2d",
+    "actualCrossProducerKind": "three_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "寅·午·戌 세 실제 글자와 화의 생왕고·기세를 확인한다.",
+    "exclusions": [
+      "반합에 없는 글자를 가정해 삼합을 완성하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "화국 전승이며 합국과 실제 화기의 우세 판정은 다르다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論支元三合"
+        }
+      ]
+    },
+    "positiveSource": "실제 추진 역할이 연결될 조건을 검토한다.",
+    "riskSource": "화국을 유명세·열정·공개 성공으로 단정하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:samhap:巳酉丑",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:samhap:巳酉丑",
+    "relation": "samhap",
+    "members": [
+      "巳",
+      "酉",
+      "丑"
+    ],
+    "originalHash": "48e5174bd147bc38e3462cdae5bbf33b7d9118e2667543aa8f5c131f3ab10454",
+    "actualCrossProducerKind": "three_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "巳·酉·丑의 금 생왕고 세 구성과 계절·통근을 확인한다.",
+    "exclusions": [
+      "반합에 없는 글자를 가정해 삼합을 완성하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "금국 전승이며 酉 없는 巳丑는 왕지 없는 부분 조합이다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論支元三合"
+        }
+      ]
+    },
+    "positiveSource": "여러 기능이 한 판단 기준으로 모이는 조건을 살필 수 있다.",
+    "riskSource": "금 집결을 금융 능력·냉정함·부를 증명하는 자료로 쓰지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:stem_hap:甲己",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:stem_hap:甲己",
+    "relation": "stem_hap",
+    "members": [
+      "甲",
+      "己"
+    ],
+    "originalHash": "6482135a7302dbde1f573ea2d98a9499738c88b36c5be704f2bcc8aa454c5727",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "甲木과 己土가 겉 천간에 각각 있어야 하며 갑목의 통근과 기토의 계절 여력을 비교한다.",
+    "exclusions": [
+      "한 천간만 존재하거나 음양이 다르다는 이유만으로 임의 쌍을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "中正之合이라는 고전 별칭과 토화 논의가 있으나 인품의 중정함을 증명하지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論十干合 / 論十干化氣"
+        }
+      ]
+    },
+    "positiveSource": "필요한 기능을 해치지 않는 배합이면 서로의 작용을 조절할 조건을 검토한다.",
+    "riskSource": "목극토와 합의 얽힘이 있으므로 기토가 배합만으로 강해졌다고 하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:stem_hap:乙庚",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:stem_hap:乙庚",
+    "relation": "stem_hap",
+    "members": [
+      "乙",
+      "庚"
+    ],
+    "originalHash": "827437ba3143f3f895c916365ac84fe21138c308fb53f953b49471d09ed82372",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "乙木·庚金의 노출과 각 통근을 확인하고 금왕 계절과 목의 여력을 별도로 본다.",
+    "exclusions": [
+      "한 천간만 존재하거나 음양이 다르다는 이유만으로 임의 쌍을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "仁義之合·금화가 전통 명칭이며 강유 조절이라는 상징이 인격의 의로움을 뜻하지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論十干合 / 論十干化氣"
+        }
+      ]
+    },
+    "positiveSource": "제어와 배합이 동시에 검토되므로 양쪽 기능이 남는 조정을 질문할 수 있다.",
+    "riskSource": "庚金의 제어를 합이 자동으로 없앤다고 읽을 수 없다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:stem_hap:丙辛",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:stem_hap:丙辛",
+    "relation": "stem_hap",
+    "members": [
+      "丙",
+      "辛"
+    ],
+    "originalHash": "89e3c0d5b17c09f3c2da0c34f5aa65f7a01a7d84a8a91823ed24f8fc4acf6335",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "丙火·辛金을 실제로 확인하고 화금의 여력·월령·화신 수의 조건을 따로 검토한다.",
+    "exclusions": [
+      "한 천간만 존재하거나 음양이 다르다는 이유만으로 임의 쌍을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "威制之合·수화 논의가 있으나 권위·성적 행동·도덕성의 고전 단정을 사용하지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論十干合 / 論十干化氣"
+        }
+      ]
+    },
+    "positiveSource": "필요한 제어를 배합 속에서 어떻게 유지할지 살피는 후보가 된다.",
+    "riskSource": "화가 금을 제어하는 조건을 수화 확정으로 지우면 실제 근거가 사라진다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:stem_hap:丁壬",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:stem_hap:丁壬",
+    "relation": "stem_hap",
+    "members": [
+      "丁",
+      "壬"
+    ],
+    "originalHash": "bfe9e1536cda0d3c80f9251388d5295e7cbe92ed86ee66cd9adf307c16720900",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "丁火·壬水의 겉 천간 쌍과 각 뿌리·월령을 확인한다.",
+    "exclusions": [
+      "한 천간만 존재하거나 음양이 다르다는 이유만으로 임의 쌍을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "淫慝之合이라는 역사적 명칭은 기록하되 음란·외도·인격 낙인은 반려한다. 목화는 별도 조건이다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論十干合 / 論十干化氣"
+        }
+      ]
+    },
+    "positiveSource": "상반된 작용을 함께 검토하며 어느 역할을 보존할지 질문할 수 있다.",
+    "riskSource": "수극화와 합을 실제 감정의 끌림으로 바로 바꾸는 오류를 경계한다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:stem_hap:戊癸",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:stem_hap:戊癸",
+    "relation": "stem_hap",
+    "members": [
+      "戊",
+      "癸"
+    ],
+    "originalHash": "4495df61d2851a4fa923fcd01028fe30963f2cab3ec8c03ff150124e0b6c1d09",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "戊土·癸水의 실제 노출과 토수의 여력을 확인하며 계절과 방해를 남긴다.",
+    "exclusions": [
+      "한 천간만 존재하거나 음양이 다르다는 이유만으로 임의 쌍을 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "無情之合·화화 설명을 고전 별칭으로만 기록한다. 나이 차 혼인·무정함을 예언하지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論十干合 / 論十干化氣"
+        }
+      ]
+    },
+    "positiveSource": "제약과 연결이 함께 있는 조건에서 실제 부담 배분을 살필 수 있다.",
+    "riskSource": "토극수의 제약을 합 또는 화화가 자동 해소했다고 할 수 없다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:wonjin:子未",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:wonjin:子未",
+    "relation": "wonjin",
+    "members": [
+      "子",
+      "未"
+    ],
+    "originalHash": "8e7df60a16274c333fb005d1c75a0442bda7b0ec5df1ce7c926aa2c5ef3ddb61",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "子·未 실제 두 자리와 facts의 원진살 신호·육해 중복을 확인한다.",
+    "exclusions": [
+      "끌림·집착·혐오·외도·관계 실패를 실제 감정이나 사건으로 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "현대 저자의6쌍 표와 프로젝트 표가 일치한다. 고전 기원·고유 감정 예측은 미확인이다.",
+      "sourceRefs": [
+        {
+          "sourceId": "wonjin",
+          "locator": "적용 / 성립의 여러 방법 / 인접 기준 / 참고자료"
+        }
+      ]
+    },
+    "positiveSource": "실제 기대 차이가 확인될 때만 검증 질문을 작성할 수 있다.",
+    "riskSource": "육해와 원진을 독립 위험2개로 더하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [
+      "pcpr:material:CH07.P2:harm-not-wonjin-child"
+    ],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:wonjin:丑午",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:wonjin:丑午",
+    "relation": "wonjin",
+    "members": [
+      "丑",
+      "午"
+    ],
+    "originalHash": "5bb0a469afc91ad8f9c0cf82bd27eeb6e7cf1872be0f0fe80d64e53f5c70f5d8",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "丑·午 실제 두 자리와 원진살·육해·귀문 중복을 확인한다.",
+    "exclusions": [
+      "끌림·집착·혐오·외도·관계 실패를 실제 감정이나 사건으로 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "확인한 현대 원진표에 포함되며 인접 조건과 프로젝트 전체쌍 조건은 다르다.",
+      "sourceRefs": [
+        {
+          "sourceId": "wonjin",
+          "locator": "적용 / 성립의 여러 방법 / 인접 기준 / 참고자료"
+        }
+      ]
+    },
+    "positiveSource": "실제 의도와 수용이 다를 때 확인할 질문을 남길 수 있다.",
+    "riskSource": "세 이름이 겹쳐 강한 감정·정신 문제를 추정하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:wonjin:寅酉",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:wonjin:寅酉",
+    "relation": "wonjin",
+    "members": [
+      "寅",
+      "酉"
+    ],
+    "originalHash": "b7d43ffa1d8c2c0a109ad5ea04a295f7ed06b7cc2b2b3a7da2a194c8d04e79b9",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "寅·酉 실제 두 자리와 소유자·인접 여부를 확인한다.",
+    "exclusions": [
+      "끌림·집착·혐오·외도·관계 실패를 실제 감정이나 사건으로 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "현대 원진6쌍 표에 있으나 조합 고유 예측과 고전 전거는 미확인이다.",
+      "sourceRefs": [
+        {
+          "sourceId": "wonjin",
+          "locator": "적용 / 성립의 여러 방법 / 인접 기준 / 참고자료"
+        }
+      ]
+    },
+    "positiveSource": "당사자의 차이를 기호 없이 구체화하는 질문으로 제한한다.",
+    "riskSource": "호랑이와 닭의 동물 비유를 사람의 적의로 바꾸지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:wonjin:卯申",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:wonjin:卯申",
+    "relation": "wonjin",
+    "members": [
+      "卯",
+      "申"
+    ],
+    "originalHash": "0a4e67e064de516f0cf91a775a2b43ccc56e6fde76f77c14ba4b86c3a1082543",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "卯·申 실제 두 자리와 원진살·귀문 중복을 확인한다.",
+    "exclusions": [
+      "끌림·집착·혐오·외도·관계 실패를 실제 감정이나 사건으로 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "현대 전승표 일치만 확인했으며 정신적 특성의 근거가 아니다.",
+      "sourceRefs": [
+        {
+          "sourceId": "wonjin",
+          "locator": "적용 / 성립의 여러 방법 / 인접 기준 / 참고자료"
+        }
+      ]
+    },
+    "positiveSource": "실제 오해를 확인한 경우에만 대화 질문을 검토한다.",
+    "riskSource": "귀문 중복을 집착·정신질환·초능력으로 증폭하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:wonjin:辰亥",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:wonjin:辰亥",
+    "relation": "wonjin",
+    "members": [
+      "辰",
+      "亥"
+    ],
+    "originalHash": "76d908ba5aa217a642e48d1cd466ffdbcdb051cfcc33e4202e088889c76178e6",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "辰·亥 실제 두 자리와 원진살·귀문 중복을 확인한다.",
+    "exclusions": [
+      "끌림·집착·혐오·외도·관계 실패를 실제 감정이나 사건으로 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "현대 저자는 강도 서열을 주장하지만 검증된 비교 근거는 확인하지 못해 채택하지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "wonjin",
+          "locator": "적용 / 성립의 여러 방법 / 인접 기준 / 참고자료"
+        }
+      ]
+    },
+    "positiveSource": "실제 불편이 확인된다면 판단 근거를 점검하는 질문만 가능하다.",
+    "riskSource": "가장 파괴적이라는 서열·질병·관계 실패를 반려한다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:wonjin:巳戌",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:wonjin:巳戌",
+    "relation": "wonjin",
+    "members": [
+      "巳",
+      "戌"
+    ],
+    "originalHash": "e2c6b134af8c098123048a4b21ad6c848eccdcb1bfe09474153d4a0f46dad157",
+    "actualCrossProducerKind": null,
+    "crossSupport": "unsupported_withhold",
+    "formation": "巳·戌 실제 두 자리와 원진살·귀문 중복을 확인한다.",
+    "exclusions": [
+      "끌림·집착·혐오·외도·관계 실패를 실제 감정이나 사건으로 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "E_UNVERIFIED",
+      "text": "현대6쌍 전승에서 확인했으며 고전 기원·특수 사건 의미는 미확인이다.",
+      "sourceRefs": [
+        {
+          "sourceId": "wonjin",
+          "locator": "적용 / 성립의 여러 방법 / 인접 기준 / 참고자료"
+        }
+      ]
+    },
+    "positiveSource": "실제 경계가 다른 경우에만 요청을 구체화할 수 있다.",
+    "riskSource": "뱀·개의 동물 관계를 사람의 천성·애증으로 옮기지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:yukhap:子丑",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:yukhap:子丑",
+    "relation": "yukhap",
+    "members": [
+      "子",
+      "丑"
+    ],
+    "originalHash": "4dea97f188169831baa4da4834947255b9af2b2dffaee5b735c26d39bd345219",
+    "actualCrossProducerKind": "six_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "子水·丑土가 실제 별도 자리에 있어야 하며 동절 토수의 여력을 검토한다.",
+    "exclusions": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "육합 목록의 한 쌍이다. 고전의 주객별 평가와 현행 대칭 검출은 다르다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論支元六合"
+        }
+      ]
+    },
+    "positiveSource": "배합과 본래 토수 제약이 공존하는 조건을 확인할 수 있다.",
+    "riskSource": "丑의 장간과 계절을 생략하고 합화토를 확정하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [
+      "pcpr:material:CH01.P2:harmony-not-parenting-proof",
+      "pcpr:material:CH07.P2:harmony-and-disagreement-coexist"
+    ],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:yukhap:寅亥",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:yukhap:寅亥",
+    "relation": "yukhap",
+    "members": [
+      "寅",
+      "亥"
+    ],
+    "originalHash": "66977d9d7d0fad1e41529dae178aa3f04ac03c5d2d5308d985ada195293dcead",
+    "actualCrossProducerKind": "six_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "寅木·亥水의 실제 두 자리와 목을 돕는 수의 여력을 확인한다.",
+    "exclusions": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "육합 전승이며 현행 파 표와도 겹친다. 합 뒤 파괴라는 사건 순서가 아니다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論支元六合"
+        }
+      ]
+    },
+    "positiveSource": "생조와 배합이 함께 나타나는 구성을 검토할 수 있다.",
+    "riskSource": "생조가 과하거나 다른 필요한 기능을 묶는지 추가 검토가 필요하다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:yukhap:卯戌",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:yukhap:卯戌",
+    "relation": "yukhap",
+    "members": [
+      "卯",
+      "戌"
+    ],
+    "originalHash": "429d5cbb4f3a84e844f712fbbd5877a4a04a0c2f5c0f0320c4e472af207d1785",
+    "actualCrossProducerKind": "six_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "卯木·戌土가 있어야 하며 목토의 기세·戌의 장간을 함께 검토한다.",
+    "exclusions": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "육합 쌍으로 자평진전의 卯酉충 해법 예에 등장하지만 자동 해충 규칙은 아니다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論支元六合"
+        }
+      ]
+    },
+    "positiveSource": "제약과 배합이 겹치는 구성을 전체 관계도에서 비교할 수 있다.",
+    "riskSource": "戌이 다른 삼합에 참여하면 해충이 유지된다고 단정할 수 없다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:yukhap:辰酉",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:yukhap:辰酉",
+    "relation": "yukhap",
+    "members": [
+      "辰",
+      "酉"
+    ],
+    "originalHash": "42fe16f3d9b7e8015f4f2ace9ab6275e8c8084bfe872c8149fe69bc3281afa51",
+    "actualCrossProducerKind": "six_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "辰土·酉金의 두 자리와 장간·금의 여력을 확인한다.",
+    "exclusions": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "육합이며 卯酉충의 해법 예가 있으나 원국 전체의 배합 조건이 필요하다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論支元六合"
+        }
+      ]
+    },
+    "positiveSource": "토생금과 배합의 관계를 분리하여 필요한 지원을 살필 수 있다.",
+    "riskSource": "辰이 수국·충 등에 관여하면 같은 기능으로 고정할 수 없다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:yukhap:巳申",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:yukhap:巳申",
+    "relation": "yukhap",
+    "members": [
+      "巳",
+      "申"
+    ],
+    "originalHash": "eff82069234df3024ebc91f1a18e238937e5f767658973b6e17ac5b2df08bd71",
+    "actualCrossProducerKind": "six_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "巳火·申金의 실제 두 자리와 계절별 여력을 확인한다.",
+    "exclusions": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "육합 쌍이자 현행 형·파의 겹침이다. 고전 원리와 현대 파 표를 같은 전거로 합치지 않는다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論支元六合"
+        }
+      ]
+    },
+    "positiveSource": "결속과 제약이 공존하는 구성을 한 가지 길흉으로 축약하지 않을 수 있다.",
+    "riskSource": "합이 있으니 형·파가 사라졌다고 하거나 셋이면 위험3배라고 할 수 없다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  },
+  {
+    "id": "pcpr:relation:rr:combination:yukhap:午未",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceId": "rr:combination:yukhap:午未",
+    "relation": "yukhap",
+    "members": [
+      "午",
+      "未"
+    ],
+    "originalHash": "e8625a157bf62ac4600e367e2255ff045393333307ea832d67fbf0cd50119a3f",
+    "actualCrossProducerKind": "six_harmony",
+    "crossSupport": "membership_only_actual_refs_required",
+    "formation": "午火·未土의 실제 쌍과 하절 기세·건습을 확인한다.",
+    "exclusions": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "traditional": {
+      "class": "A_HISTORICAL_TEXT",
+      "text": "육합의 한 쌍이며 화토 논의와 현실 궁합 성공은 별개다.",
+      "sourceRefs": [
+        {
+          "sourceId": "sm2",
+          "locator": "論支元六合"
+        }
+      ]
+    },
+    "positiveSource": "생조와 배합이 어떤 기능에 집중되는지 검토할 수 있다.",
+    "riskSource": "화생토만 보고 전체에 필요한 균형이라고 확정하지 않는다.",
+    "applicationGate": "실제 양쪽 관계 ID·기둥·refs·고정 역할 확인. 전통 관계 분류로 양육 성공·자녀 복종·가족 불행을 판정하지 않음. 원국 내부·기간·미지원 관계와 구분.",
+    "materialRefs": [],
+    "notNewInterpretation": true
+  }
+]

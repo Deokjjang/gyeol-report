@@ -1,0 +1,54 @@
+{
+  "priorLove": 80,
+  "priorMarriage": 112,
+  "parentChild": 120,
+  "meaningComparison": [
+    [
+      "CARE",
+      "연애의 상호 배려",
+      "결혼의 완결 업무·관리 책임",
+      "부모의 안전·반응 조절·성인 지원; 자녀의 배려는 의무 아님"
+    ],
+    [
+      "AUTONOMY",
+      "친밀감 속의 거리와 연락",
+      "개인/공동 비용·공간의 선택권",
+      "미성년의 실제 가능한 작은 선택과 성인 자녀의 독립 동의를 구분"
+    ],
+    [
+      "CH05/06",
+      "표현과 수신의 양방향 부담",
+      "준비·인수인계·결정권의 비용",
+      "A는 보호·지원 책임, B는 정보·질문의 가능성. 자녀가 부모를 고치지 않음"
+    ],
+    [
+      "CH07",
+      "관계의 해석 속도·확인 반복",
+      "허락·관리·완료 기준 반복",
+      "성과 빚·보호 검사·반박·위로 요구. 권한을 가진 부모의 반복 행동 점검"
+    ],
+    [
+      "CH08",
+      "동의한 대화·거리·연결",
+      "완료·정보·권한·역할 재협의",
+      "부모의 실제 수정·안전 유지·성인 지원, 자녀의 표현·중단·지원 통로"
+    ],
+    [
+      "CH09",
+      "친밀감의 실제 도입 의미 회수",
+      "공동생활 선택과 유지 조건 회수",
+      "역할·발달 맥락·원천·실제 표시의 호환성. 새 가족 사실 도입 금지"
+    ]
+  ],
+  "legitimateReuse": [
+    "canonical definitions and support inventory",
+    "individual source with actual owner",
+    "directed generic Pair references",
+    "Fusion definitions with original contexts",
+    "36/144 original contracts"
+  ],
+  "normalizedIdenticalCoreWithPrior": [],
+  "sourceReuseIsNotNewFact": true,
+  "noRankingOfCategories": true,
+  "humanReview": "human-review.md"
+}

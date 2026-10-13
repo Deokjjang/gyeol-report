@@ -1,0 +1,170 @@
+[
+  {
+    "id": "pcpr:reuse:0",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH01",
+      "CH04"
+    ],
+    "sharedMeaning": "첫 관계 기준과 실제 긍정 조건",
+    "differentInformation": [
+      "부모의 보호와 자녀의 탐색은 어떤 다른 책임을 가지는가?",
+      "공통점이 있어도 실수·거절·보호받을 자리를 어떻게 남기는가?"
+    ],
+    "reuseCondition": "같은 실제 사람·역할·원천·맥락의 호환 의미만 재사용. 개인 root·역할 링크·회수를 독립 사실로 세지 않음.",
+    "duplicateRisk": "이름·역할명만 교환하거나 모든 갈등을 같은 대화 조언으로 축소",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "pcpr:reuse:1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH02",
+      "CH03"
+    ],
+    "sharedMeaning": "부모 책임과 자녀의 표현·선택",
+    "differentInformation": [
+      "부모 A가 기준과 가치를 제공할 때 남겨야 할 자리는 무엇인가?",
+      "자녀 B의 관심과 질문을 능력 사실 없이 어떻게 들을 수 있는가?"
+    ],
+    "reuseCondition": "같은 실제 사람·역할·원천·맥락의 호환 의미만 재사용. 개인 root·역할 링크·회수를 독립 사실로 세지 않음.",
+    "duplicateRisk": "이름·역할명만 교환하거나 모든 갈등을 같은 대화 조언으로 축소",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "pcpr:reuse:2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH04",
+      "CH09"
+    ],
+    "sharedMeaning": "긍정 발견과 실제 도입된 의미 회수",
+    "differentInformation": [
+      "공통점이 있어도 실수·거절·보호받을 자리를 어떻게 남기는가?",
+      "실제 도입된 긍정 원천을 어떤 지원·선택 조건과 회수하는가?"
+    ],
+    "reuseCondition": "같은 실제 사람·역할·원천·맥락의 호환 의미만 재사용. 개인 root·역할 링크·회수를 독립 사실로 세지 않음.",
+    "duplicateRisk": "이름·역할명만 교환하거나 모든 갈등을 같은 대화 조언으로 축소",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "pcpr:reuse:3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH05",
+      "CH06"
+    ],
+    "sharedMeaning": "부모 지원의 영향과 자녀 관점의 정보",
+    "differentInformation": [
+      "자녀 B 기준의 실제 십성과 A 원천은 어떤 지원 질문을 만드는가?",
+      "부모 A 기준의 실제 십성과 B 원천은 어떤 새 정보를 줄 수 있는가?"
+    ],
+    "reuseCondition": "같은 실제 사람·역할·원천·맥락의 호환 의미만 재사용. 개인 root·역할 링크·회수를 독립 사실로 세지 않음.",
+    "duplicateRisk": "이름·역할명만 교환하거나 모든 갈등을 같은 대화 조언으로 축소",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "pcpr:reuse:4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH05",
+      "CH07"
+    ],
+    "sharedMeaning": "부모 기여와 권한·기대의 과용",
+    "differentInformation": [
+      "자녀 B 기준의 실제 십성과 A 원천은 어떤 지원 질문을 만드는가?",
+      "기대·사생활·기기·성인 연락에서 무엇이 다른 질문인가?"
+    ],
+    "reuseCondition": "같은 실제 사람·역할·원천·맥락의 호환 의미만 재사용. 개인 root·역할 링크·회수를 독립 사실로 세지 않음.",
+    "duplicateRisk": "이름·역할명만 교환하거나 모든 갈등을 같은 대화 조언으로 축소",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "pcpr:reuse:5",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH06",
+      "CH07"
+    ],
+    "sharedMeaning": "자녀 표현과 부모 해석이 만드는 반복",
+    "differentInformation": [
+      "부모 A 기준의 실제 십성과 B 원천은 어떤 새 정보를 줄 수 있는가?",
+      "기대·사생활·기기·성인 연락에서 무엇이 다른 질문인가?"
+    ],
+    "reuseCondition": "같은 실제 사람·역할·원천·맥락의 호환 의미만 재사용. 개인 root·역할 링크·회수를 독립 사실로 세지 않음.",
+    "duplicateRisk": "이름·역할명만 교환하거나 모든 갈등을 같은 대화 조언으로 축소",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "pcpr:reuse:6",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH07",
+      "CH08"
+    ],
+    "sharedMeaning": "반복의 조건과 부모가 바꿀 행동",
+    "differentInformation": [
+      "기대·사생활·기기·성인 연락에서 무엇이 다른 질문인가?",
+      "앞선 반복을 부모 책임 중심의 어떤 확인 절차로 바꿀 수 있는가?"
+    ],
+    "reuseCondition": "같은 실제 사람·역할·원천·맥락의 호환 의미만 재사용. 개인 root·역할 링크·회수를 독립 사실로 세지 않음.",
+    "duplicateRisk": "이름·역할명만 교환하거나 모든 갈등을 같은 대화 조언으로 축소",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "pcpr:reuse:7",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH08",
+      "CH09"
+    ],
+    "sharedMeaning": "구체 조정과 지속할 경계",
+    "differentInformation": [
+      "앞선 반복을 부모 책임 중심의 어떤 확인 절차로 바꿀 수 있는가?",
+      "실제 도입된 긍정 원천을 어떤 지원·선택 조건과 회수하는가?"
+    ],
+    "reuseCondition": "같은 실제 사람·역할·원천·맥락의 호환 의미만 재사용. 개인 root·역할 링크·회수를 독립 사실로 세지 않음.",
+    "duplicateRisk": "이름·역할명만 교환하거나 모든 갈등을 같은 대화 조언으로 축소",
+    "independentFactsAdded": 0
+  }
+]

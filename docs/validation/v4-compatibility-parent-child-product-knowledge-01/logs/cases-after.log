@@ -1,0 +1,7 @@
+RUN  v4.1.5 /private/tmp/gyeol-compatibility-parent-child-product-knowledge-01
+
+
+ Test Files  1 passed (1)
+      Tests  34 passed (34)
+   Start at  02:38:07
+   Duration  173.98s (transform 1.92s, setup 18ms, import 2.38s, tests 171.41s, environment 0ms)

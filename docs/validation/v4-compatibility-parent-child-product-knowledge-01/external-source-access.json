@@ -1,0 +1,116 @@
+{
+  "accessed": [
+    {
+      "institution": "Harvard Center on the Developing Child",
+      "title": "Serve and Return",
+      "url": "https://developingchild.harvard.edu/key-concept/serve-and-return/",
+      "publishedOrUpdated": null,
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Key Takeaways; responsive relationships; caregiver supports",
+      "contexts": [
+        "YOUNG"
+      ],
+      "summary": "어린 자녀가 보내는 관심 신호를 알아보고 응답하는 관계 및 보호자 지원을 검토한다.",
+      "limit": "개인 발달 검사·뇌 발달 예측·MBTI별 효과 아님. 관련 원전 전체 열람 아님."
+    },
+    {
+      "institution": "UNICEF Europe and Central Asia",
+      "title": "11 tips for communicating with your teen",
+      "url": "https://www.unicef.org/eca/stories/11-tips-communicating-your-teen",
+      "publishedOrUpdated": "2022-06-05",
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Build on your relationship; Be an active listener, items 5–11",
+      "contexts": [
+        "TEEN"
+      ],
+      "summary": "의견을 판단하기 전 듣고 확인하며, 말할 준비가 되지 않았을 때 강요하지 않는 소통을 참고한다.",
+      "limit": "유형별 심리 효과·진단·가족 관계 사실을 입증하지 않음."
+    },
+    {
+      "institution": "CDC",
+      "title": "ACTIVITY: Emotion Coaching Teens",
+      "url": "https://www.cdc.gov/parenting-teens/media/pdfs/essentialsParentingTeens-EmotionCoachingActivity.pdf",
+      "publishedOrUpdated": null,
+      "accessedAt": "2026-10-14",
+      "access": "pdf_actually_accessed",
+      "section": "PDF pages 1–4, especially page 2 pause/apology",
+      "contexts": [
+        "TEEN"
+      ],
+      "summary": "부모가 반응 전 감정을 가다듬고 잘못한 반응을 인정하는 연습을 검토한다.",
+      "limit": "치료·효과 보장 아님. 보호자 중단 때 필요한 안전 돌봄을 버리는 지침 아님."
+    },
+    {
+      "institution": "CDC",
+      "title": "Tips for Creating Rules",
+      "url": "https://www.cdc.gov/parenting-toddlers/structure-rules/rules.html",
+      "publishedOrUpdated": "2026-04-30",
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Identify family rules; Explain; Follow, ages 2–4 resource",
+      "contexts": [
+        "YOUNG"
+      ],
+      "summary": "실행할 수 있는 구체적인 규칙과 어른의 일관성을 확인한다.",
+      "limit": "실제 능력을 나이·유형으로 확정하지 않음. 처벌 계획·강제 복종으로 전용하지 않음."
+    },
+    {
+      "institution": "CDC",
+      "title": "Tips for Giving Directions",
+      "url": "https://www.cdc.gov/parenting-toddlers/communication/giving-directions.html",
+      "publishedOrUpdated": "2026-04-30",
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Clear directions; Encourage positive choices; safety, ages 2–4 resource",
+      "contexts": [
+        "YOUNG"
+      ],
+      "summary": "어린 자녀에게 이해할 수 있는 행동 설명과 실제 가능한 작은 선택을 제공하는 범위를 참고한다.",
+      "limit": "모든 나이에 같은 선택 수·훈육을 적용하지 않음. 위험을 자녀의 선택 책임으로 넘기지 않음."
+    },
+    {
+      "institution": "WHO",
+      "title": "Parenting intervention guidelines overview, children aged 0–17",
+      "url": "https://www.who.int/teams/social-determinants-of-health/violence-prevention/parenting-guidelines",
+      "publishedOrUpdated": "2023-02-10",
+      "accessedAt": "2026-10-14",
+      "access": "overview_page_actually_accessed",
+      "section": "Overview and scope; guideline listing",
+      "contexts": [
+        "YOUNG",
+        "SCHOOL",
+        "TEEN"
+      ],
+      "summary": "학대·가혹한 양육을 줄이기 위한 전문적인 부모 지원의 범위와 안전 경계를 확인한다.",
+      "limit": "WHO가 본 상품을 지지한다는 뜻 아님. 전체 guideline·GRADE 원문 검증 아님. NCBI 본문은 captcha로 확인 못함."
+    },
+    {
+      "institution": "Penn State Office of Parent and Family Engagement",
+      "title": "Parent & Family Resources",
+      "url": "https://studentaffairs.psu.edu/about/audience/parents-families/resources",
+      "publishedOrUpdated": null,
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Helping Your Student Use Campus Resources; Problem Solving Resources",
+      "contexts": [
+        "ADULT"
+      ],
+      "summary": "대학생이 문제 해결과 지원 요청을 직접 이끌도록 부모가 정보와 경청을 제공하는 대학 맥락을 참고한다.",
+      "limit": "대학 전환 맥락을 모든 성인 자녀에게 일반화하지 않음. 미국 개인정보 법률을 한국에 적용하지 않음. 과거 guide PDF는 redirect되어 미열람."
+    }
+  ],
+  "notAccessed": [
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK589378/",
+      "result": "captcha; no full-text verification claimed"
+    },
+    {
+      "url": "https://studentaffairs.psu.edu/sites/default/files/PP_ParentsandFamiliesGuide_Accessible.pdf",
+      "result": "redirected to current parent/family landing page; historical PDF not read"
+    }
+  ],
+  "noPaidApiUsed": true,
+  "noInstitutionEndorsementClaimed": true
+}
