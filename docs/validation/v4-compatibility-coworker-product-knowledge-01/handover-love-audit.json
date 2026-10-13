@@ -1,0 +1,44 @@
+[
+  {
+    "file": "docs/validation/v4-compatibility-love-product-knowledge-01/README.md",
+    "sha256": "9d9bbadf5e971ce1ff0f2acf9be7869aec26cc5b62d9f60f2277de0399c96a06",
+    "bytes": 14809,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-love-product-knowledge-01/coverage-manifest.json",
+    "sha256": "f16383f8e031cc160f47522cf4ccf349cdc731f7ce4f1f7e02a252186cefe2d9",
+    "bytes": 2206,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-love-product-knowledge-01/binding-handoff.md",
+    "sha256": "3565cd964c1f52d9a8d672a08e4b7f68a73dc84bd5f64c4327fec7514ba49ec7",
+    "bytes": 2398,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-love-product-knowledge-01/runtime-path-audit.md",
+    "sha256": "4952bd14544f985bed65d82f1f20eb5dcc782fed818d227eeb320bf8ee4558da",
+    "bytes": 4751,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-love-product-knowledge-01/materials-review.md",
+    "sha256": "37764f5e3bfb82b42083ea19361235739f89cdaafc45c329d60cce57caf3d105",
+    "bytes": 237212,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-love-product-knowledge-01/duplication-audit.json",
+    "sha256": "136f4f0dd03db464bebeac2d9377bc7937eaad4640152b69bff34fc3bc418bcb",
+    "bytes": 6587,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "topic": "업무 분담",
+    "materialRef": "cwpr:material:CH07.P1:division-gap",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "책임 경계",
+    "materialRef": "cwpr:material:CH07.P1:responsibility-border",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "완료 기준",
+    "materialRef": "cwpr:material:CH07.P1:completion-mismatch",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "검토 깊이",
+    "materialRef": "cwpr:material:CH07.P1:review-depth-gap",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "마감",
+    "materialRef": "cwpr:material:CH07.P1:deadline-dependency",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "우선순위",
+    "materialRef": "cwpr:material:CH07.P1:priority-conflict",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "업무 요청",
+    "materialRef": "cwpr:material:CH07.P3:request-without-input",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "피드백 전달",
+    "materialRef": "cwpr:material:CH07.P3:feedback-as-person-score",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "피드백 수신",
+    "materialRef": "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "수정 횟수·종료",
+    "materialRef": "cwpr:material:CH07.P3:revision-without-stop",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "추가 업무",
+    "materialRef": "cwpr:material:CH07.P3:additional-work-hidden",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "정보 공유",
+    "materialRef": "cwpr:material:CH07.P3:information-silo",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "인수인계 누락",
+    "materialRef": "cwpr:material:CH07.P3:handoff-omission",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "중복 작업",
+    "materialRef": "cwpr:material:CH07.P4:duplicate-edit",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "기여 인정",
+    "materialRef": "cwpr:material:CH07.P4:credit-erasure",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "회의",
+    "materialRef": "cwpr:material:CH07.P4:meeting-closure-gap",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "결정 지연",
+    "materialRef": "cwpr:material:CH07.P4:meeting-closure-gap",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "의견 충돌",
+    "materialRef": "cwpr:material:CH07.P4:disagreement-becomes-competence",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "작업물과 개인 평가",
+    "materialRef": "cwpr:material:CH07.P3:feedback-as-person-score",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "topic": "반복 피로",
+    "materialRef": "cwpr:material:CH07.P4:fatigue-without-rebalance",
+    "notAdditionalIndependentFact": true
+  }
+]

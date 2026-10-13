@@ -1,0 +1,752 @@
+/** Static offline coworker research. No runtime registration or customer approval. */
+import type { ParagraphResearch } from "./researchTypes";
+export const CW_PARAGRAPHS: readonly ParagraphResearch[] = [
+  {
+    "id": "cwpr:paragraph:CH01.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1",
+    "originalPurpose": "두 사람을 한마디로 설명하면",
+    "titleTemplate": "두 사람을 한마디로 설명하면",
+    "readerQuestion": "협업 착수 전에 두 사람이 어떤 다른 정보를 필요로 할 수 있는가?",
+    "materialIds": [
+      "cwpr:material:CH01.P1:question-before-start",
+      "cwpr:material:CH01.P1:standard-and-experiment",
+      "cwpr:material:CH01.P1:focus-and-contact",
+      "cwpr:material:CH01.P1:output-not-rank"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH01.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2",
+    "originalPurpose": "명리에서 보는 두 사람의 관계",
+    "titleTemplate": "명리에서 보는 두 사람의 관계",
+    "readerQuestion": "실제 명리 관계와 업무 능력을 어떻게 구별하는가?",
+    "materialIds": [
+      "cwpr:material:CH01.P2:harmony-is-classification",
+      "cwpr:material:CH01.P2:clash-not-failure",
+      "cwpr:material:CH01.P2:missing-relation-withhold",
+      "cwpr:material:CH01.P2:three-part-formation"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH01.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3",
+    "originalPurpose": "MBTI가 보여주는 우리",
+    "titleTemplate": "MBTI가 보여주는 우리",
+    "readerQuestion": "각자의 사고·전달 선호에서 어떤 업무 질문을 확인하는가?",
+    "materialIds": [
+      "cwpr:material:CH01.P3:spoken-versus-private",
+      "cwpr:material:CH01.P3:pace-and-done",
+      "cwpr:material:CH01.P3:shared-precision-not-proof",
+      "cwpr:material:CH01.P3:unknown-type-no-substitution"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH01.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4",
+    "originalPurpose": "이 관계를 이해하는 가장 중요한 기준",
+    "titleTemplate": "이 관계를 이해하는 가장 중요한 기준",
+    "readerQuestion": "작업 단계·지원·결과·반복의 경계를 어떻게 잡는가?",
+    "materialIds": [
+      "cwpr:material:CH01.P4:phase-before-person",
+      "cwpr:material:CH01.P4:support-not-transfer",
+      "cwpr:material:CH01.P4:result-and-respect",
+      "cwpr:material:CH01.P4:repeat-or-project"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH02.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1",
+    "originalPurpose": "A의 관계 성향",
+    "titleTemplate": "{{A}}의 관계 성향",
+    "readerQuestion": "A는 기록·시연·모델·목적 중 무엇부터 이해할 수 있는가?",
+    "materialIds": [
+      "cwpr:material:CH02.P1:a-verified-record",
+      "cwpr:material:CH02.P1:a-first-practical-trial",
+      "cwpr:material:CH02.P1:a-logical-model",
+      "cwpr:material:CH02.P1:a-shared-purpose"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH02.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2",
+    "originalPurpose": "A가 관계에서 중요하게 여기는 것",
+    "titleTemplate": "{{A:subject}} 관계에서 중요하게 여기는 것",
+    "readerQuestion": "A가 편하게 일할 재량·집중·피드백·기준은 무엇인가?",
+    "materialIds": [
+      "cwpr:material:CH02.P2:a-method-discretion",
+      "cwpr:material:CH02.P2:a-focus-window",
+      "cwpr:material:CH02.P2:a-feedback-dignity",
+      "cwpr:material:CH02.P2:a-clear-criteria"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH02.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3",
+    "originalPurpose": "A가 관계에 가져오는 장점",
+    "titleTemplate": "{{A:subject}} 관계에 가져오는 장점",
+    "readerQuestion": "A의 검토·경로·참여·발상은 언제 결과물에 기여할 수 있는가?",
+    "materialIds": [
+      "cwpr:material:CH02.P3:a-system-review",
+      "cwpr:material:CH02.P3:a-reroute-proposal",
+      "cwpr:material:CH02.P3:a-participation-signal",
+      "cwpr:material:CH02.P3:a-new-links"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH02.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4",
+    "originalPurpose": "A가 조심해야 할 부분",
+    "titleTemplate": "{{A:subject}} 조심해야 할 부분",
+    "readerQuestion": "A의 지적·지원·몰입·즉시 변경은 언제 동료의 비용이 되는가?",
+    "materialIds": [
+      "cwpr:material:CH02.P4:a-public-critique-cost",
+      "cwpr:material:CH02.P4:a-rescue-without-consent",
+      "cwpr:material:CH02.P4:a-sprint-dependency",
+      "cwpr:material:CH02.P4:a-fast-fix-without-notice"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH03.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1",
+    "originalPurpose": "B의 관계 성향",
+    "titleTemplate": "{{B}}의 관계 성향",
+    "readerQuestion": "B는 현재 관찰·가치·사례·정리를 어떤 다른 정보로 가져오는가?",
+    "materialIds": [
+      "cwpr:material:CH03.P1:b-current-observation",
+      "cwpr:material:CH03.P1:b-value-filter",
+      "cwpr:material:CH03.P1:b-procedure-memory",
+      "cwpr:material:CH03.P1:b-private-synthesis"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH03.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2",
+    "originalPurpose": "B가 관계에서 중요하게 여기는 것",
+    "titleTemplate": "{{B:subject}} 관계에서 중요하게 여기는 것",
+    "readerQuestion": "B가 일할 순서·재량·검토 시간·탐색 범위는 무엇인가?",
+    "materialIds": [
+      "cwpr:material:CH03.P2:b-next-step-needed",
+      "cwpr:material:CH03.P2:b-bounded-autonomy",
+      "cwpr:material:CH03.P2:b-time-to-answer",
+      "cwpr:material:CH03.P2:b-meaning-and-contact"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH03.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3",
+    "originalPurpose": "B가 관계에 가져오는 장점",
+    "titleTemplate": "{{B:subject}} 관계에 가져오는 장점",
+    "readerQuestion": "B의 지원·완료 기준·정의 검토·전달 조정은 언제 유용한가?",
+    "materialIds": [
+      "cwpr:material:CH03.P3:b-practical-assistance",
+      "cwpr:material:CH03.P3:b-clear-completion",
+      "cwpr:material:CH03.P3:b-contradiction-question",
+      "cwpr:material:CH03.P3:b-social-translation"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH03.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4",
+    "originalPurpose": "B가 조심해야 할 부분",
+    "titleTemplate": "{{B:subject}} 조심해야 할 부분",
+    "readerQuestion": "B의 침묵·지시·중재·추가 수락은 어떤 확인을 필요로 하는가?",
+    "materialIds": [
+      "cwpr:material:CH03.P4:b-hidden-disagreement",
+      "cwpr:material:CH03.P4:b-directive-without-authority",
+      "cwpr:material:CH03.P4:b-relational-overload",
+      "cwpr:material:CH03.P4:b-praise-without-scope"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH04.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1",
+    "originalPurpose": "두 사람의 공통점",
+    "titleTemplate": "두 사람의 공통점",
+    "readerQuestion": "비슷한 선호를 검토·목적·실행·지원의 서로 다른 작업에 어떻게 쓰는가?",
+    "materialIds": [
+      "cwpr:material:CH04.P1:shared-records-different-checks",
+      "cwpr:material:CH04.P1:shared-space-different-questions",
+      "cwpr:material:CH04.P1:shared-values-usable-output",
+      "cwpr:material:CH04.P1:shared-action-no-double-work",
+      "cwpr:material:CH04.P1:shared-care-no-invisible-task"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH04.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2",
+    "originalPurpose": "서로 다른 장점이 만날 때",
+    "titleTemplate": "서로 다른 장점이 만날 때",
+    "readerQuestion": "다른 관점은 어떤 인터페이스·검증 조건 아래 연결될 수 있는가?",
+    "materialIds": [
+      "cwpr:material:CH04.P2:idea-to-test",
+      "cwpr:material:CH04.P2:structure-and-detail",
+      "cwpr:material:CH04.P2:direct-and-receivable",
+      "cwpr:material:CH04.P2:future-and-current-constraint",
+      "cwpr:material:CH04.P2:autonomy-and-continuity"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH04.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3",
+    "originalPurpose": "함께 있을 때 좋은 순간",
+    "titleTemplate": "함께 있을 때 좋은 순간",
+    "readerQuestion": "병렬 검토·초안·지원·기여·예외가 실제 결과로 만나려면 무엇이 필요한가?",
+    "materialIds": [
+      "cwpr:material:CH04.P3:parallel-review-rejoin",
+      "cwpr:material:CH04.P3:draft-before-polish",
+      "cwpr:material:CH04.P3:help-with-explicit-return",
+      "cwpr:material:CH04.P3:recognize-integration-labor",
+      "cwpr:material:CH04.P3:routine-exception-window"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH04.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4",
+    "originalPurpose": "이 관계에서 키울 수 있는 좋은 힘",
+    "titleTemplate": "이 관계에서 키울 수 있는 좋은 힘",
+    "readerQuestion": "반복 신뢰·이견·지원 한도·학습·여력에서 무엇을 키울 수 있는가?",
+    "materialIds": [
+      "cwpr:material:CH04.P4:reliable-minimum",
+      "cwpr:material:CH04.P4:dissent-as-testable-choice",
+      "cwpr:material:CH04.P4:sustainable-help",
+      "cwpr:material:CH04.P4:learning-after-work",
+      "cwpr:material:CH04.P4:capacity-before-expansion"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH05.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1",
+    "originalPurpose": "A는 B에게 어떤 자극을 주는가",
+    "titleTemplate": "{{A:topic}} {{B}}에게 어떤 자극을 주는가",
+    "readerQuestion": "B 수신 기준 십성과 A의 제안이 어떤 다른 업무 질문을 만드는가?",
+    "materialIds": [
+      "cwpr:material:CH05.P1:ab-peer-draft",
+      "cwpr:material:CH05.P1:ab-resource-boundary",
+      "cwpr:material:CH05.P1:ab-produced-example",
+      "cwpr:material:CH05.P1:ab-corrective-question",
+      "cwpr:material:CH05.P1:ab-alternative-window"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH05.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2",
+    "originalPurpose": "A가 B에게 주는 좋은 영향",
+    "titleTemplate": "{{A:subject}} {{B}}에게 주는 좋은 영향",
+    "readerQuestion": "A의 기록·기준·제약·배경·지원이 B에게 도착할 조건은 무엇인가?",
+    "materialIds": [
+      "cwpr:material:CH05.P2:ab-continuous-record",
+      "cwpr:material:CH05.P2:ab-criterion-not-command",
+      "cwpr:material:CH05.P2:ab-constraint-check",
+      "cwpr:material:CH05.P2:ab-background-not-answer",
+      "cwpr:material:CH05.P2:ab-supported-learning"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH05.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3",
+    "originalPurpose": "A의 행동이 B에게 부담이 되는 순간",
+    "titleTemplate": "{{A}}의 행동이 {{B}}에게 부담이 되는 순간",
+    "readerQuestion": "A의 검토·도움·결론·우선순위·발상이 언제 B의 비용이 되는가?",
+    "materialIds": [
+      "cwpr:material:CH05.P3:ab-review-scope-creep",
+      "cwpr:material:CH05.P3:ab-help-replaces-work",
+      "cwpr:material:CH05.P3:ab-decision-too-soon",
+      "cwpr:material:CH05.P3:ab-changing-priority",
+      "cwpr:material:CH05.P3:ab-ideas-become-obligation"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH05.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4",
+    "originalPurpose": "A가 영향력을 잘 사용하는 방법",
+    "titleTemplate": "{{A:subject}} 영향력을 잘 사용하는 방법",
+    "readerQuestion": "A는 요청·피드백·인계·실험·지원을 어떤 확인 행동으로 바꾸는가?",
+    "materialIds": [
+      "cwpr:material:CH05.P4:ab-request-with-acceptance",
+      "cwpr:material:CH05.P4:ab-fix-one-item",
+      "cwpr:material:CH05.P4:ab-pass-uncertainty",
+      "cwpr:material:CH05.P4:ab-propose-reversible-test",
+      "cwpr:material:CH05.P4:ab-capacity-query"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH06.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1",
+    "originalPurpose": "B는 A에게 어떤 자극을 주는가",
+    "titleTemplate": "{{B:topic}} {{A}}에게 어떤 자극을 주는가",
+    "readerQuestion": "A 수신 기준 십성과 B의 검토·중복·표현·절차·연결은 어떤 질문인가?",
+    "materialIds": [
+      "cwpr:material:CH06.P1:ba-independent-second-view",
+      "cwpr:material:CH06.P1:ba-overlap-not-rivalry",
+      "cwpr:material:CH06.P1:ba-shown-not-promised",
+      "cwpr:material:CH06.P1:ba-change-the-premise",
+      "cwpr:material:CH06.P1:ba-new-connection-with-limits"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH06.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2",
+    "originalPurpose": "B가 A에게 주는 좋은 영향",
+    "titleTemplate": "{{B:subject}} {{A}}에게 주는 좋은 영향",
+    "readerQuestion": "B의 마무리·절차·여력·가설·질문 지원은 언제 A에게 도움이 되는가?",
+    "materialIds": [
+      "cwpr:material:CH06.P2:ba-closure-list",
+      "cwpr:material:CH06.P2:ba-rule-explanation",
+      "cwpr:material:CH06.P2:ba-resource-warning",
+      "cwpr:material:CH06.P2:ba-other-model",
+      "cwpr:material:CH06.P2:ba-question-channel"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH06.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3",
+    "originalPurpose": "B의 행동이 A에게 부담이 되는 순간",
+    "titleTemplate": "{{B}}의 행동이 {{A}}에게 부담이 되는 순간",
+    "readerQuestion": "B의 세부·침묵·새 대안·의도 해석·접점 요구는 언제 부담이 되는가?",
+    "materialIds": [
+      "cwpr:material:CH06.P3:ba-detail-cost",
+      "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+      "cwpr:material:CH06.P3:ba-late-change-after-start",
+      "cwpr:material:CH06.P3:ba-observe-is-judge",
+      "cwpr:material:CH06.P3:ba-social-participation-duty"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH06.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4",
+    "originalPurpose": "B가 영향력을 잘 사용하는 방법",
+    "titleTemplate": "{{B:subject}} 영향력을 잘 사용하는 방법",
+    "readerQuestion": "B는 검토·인수·분석·막힘·지원 한도를 어떻게 전달하는가?",
+    "materialIds": [
+      "cwpr:material:CH06.P4:ba-prioritize-review",
+      "cwpr:material:CH06.P4:ba-confirm-receipt",
+      "cwpr:material:CH06.P4:ba-ask-one-assumption",
+      "cwpr:material:CH06.P4:ba-report-blocker-not-person",
+      "cwpr:material:CH06.P4:ba-decline-addition"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH07.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1",
+    "originalPurpose": "가장 중요한 차이",
+    "titleTemplate": "가장 중요한 차이",
+    "readerQuestion": "분담·책임·완료·검토·의존 마감·우선순위에서 어떤 다른 공백이 있는가?",
+    "materialIds": [
+      "cwpr:material:CH07.P1:division-gap",
+      "cwpr:material:CH07.P1:responsibility-border",
+      "cwpr:material:CH07.P1:completion-mismatch",
+      "cwpr:material:CH07.P1:review-depth-gap",
+      "cwpr:material:CH07.P1:deadline-dependency",
+      "cwpr:material:CH07.P1:priority-conflict"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH07.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2",
+    "originalPurpose": "명리에서 보이는 충돌",
+    "titleTemplate": "명리에서 보이는 충돌",
+    "readerQuestion": "실제 충·해·반합·미지원·미검출·동일 의미를 어떻게 구별하는가?",
+    "materialIds": [
+      "cwpr:material:CH07.P2:clash-and-current-work",
+      "cwpr:material:CH07.P2:harm-not-hostility",
+      "cwpr:material:CH07.P2:half-harmony-not-agreement",
+      "cwpr:material:CH07.P2:unsupported-punishment",
+      "cwpr:material:CH07.P2:no-relation-current-issue",
+      "cwpr:material:CH07.P2:same-source-no-false-conflict"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH07.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3",
+    "originalPurpose": "이 관계의 팩폭",
+    "titleTemplate": "이 관계의 팩폭",
+    "readerQuestion": "요청·피드백·수정·추가 업무·정보·인계에서 어떤 비용이 생기는가?",
+    "materialIds": [
+      "cwpr:material:CH07.P3:request-without-input",
+      "cwpr:material:CH07.P3:feedback-as-person-score",
+      "cwpr:material:CH07.P3:revision-without-stop",
+      "cwpr:material:CH07.P3:additional-work-hidden",
+      "cwpr:material:CH07.P3:information-silo",
+      "cwpr:material:CH07.P3:handoff-omission"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH07.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4",
+    "originalPurpose": "갈등이 커지는 조건",
+    "titleTemplate": "갈등이 커지는 조건",
+    "readerQuestion": "중복·기여·회의·이견·피로·부당행위는 어떤 다른 문제인가?",
+    "materialIds": [
+      "cwpr:material:CH07.P4:duplicate-edit",
+      "cwpr:material:CH07.P4:credit-erasure",
+      "cwpr:material:CH07.P4:meeting-closure-gap",
+      "cwpr:material:CH07.P4:disagreement-becomes-competence",
+      "cwpr:material:CH07.P4:fatigue-without-rebalance",
+      "cwpr:material:CH07.P4:coercion-not-style"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH08.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1",
+    "originalPurpose": "우리에게 필요한 조율",
+    "titleTemplate": "우리에게 필요한 조율",
+    "readerQuestion": "앞서 소개한 공백을 어떤 사실·필요·권한의 확인 절차로 바꾸는가?",
+    "materialIds": [
+      "cwpr:material:CH08.P1:repair-unowned-integration",
+      "cwpr:material:CH08.P1:repair-support-exit",
+      "cwpr:material:CH08.P1:repair-done-state",
+      "cwpr:material:CH08.P1:repair-review-level",
+      "cwpr:material:CH08.P1:repair-dependency-time",
+      "cwpr:material:CH08.P1:repair-priority-escalation"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH08.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2",
+    "originalPurpose": "A가 바꾸면 좋은 행동",
+    "titleTemplate": "{{A:subject}} 바꾸면 좋은 행동",
+    "readerQuestion": "A는 변경·피드백·수정·추가 요청·인계·권한을 어떻게 조정하는가?",
+    "materialIds": [
+      "cwpr:material:CH08.P2:a-change-with-record",
+      "cwpr:material:CH08.P2:a-separate-observation",
+      "cwpr:material:CH08.P2:a-limit-revision",
+      "cwpr:material:CH08.P2:a-request-full-impact",
+      "cwpr:material:CH08.P2:a-handoff-status",
+      "cwpr:material:CH08.P2:a-do-not-claim-authority"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH08.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3",
+    "originalPurpose": "B가 바꾸면 좋은 행동",
+    "titleTemplate": "{{B:subject}} 바꾸면 좋은 행동",
+    "readerQuestion": "B는 수신·검토·통합·막힘·의도·여력을 어떻게 다르게 알리는가?",
+    "materialIds": [
+      "cwpr:material:CH08.P3:b-receive-not-accept",
+      "cwpr:material:CH08.P3:b-name-pending-review",
+      "cwpr:material:CH08.P3:b-state-integration-limit",
+      "cwpr:material:CH08.P3:b-make-blocker-visible",
+      "cwpr:material:CH08.P3:b-ask-intent-without-excusing",
+      "cwpr:material:CH08.P3:b-limit-invisible-help"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH08.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4",
+    "originalPurpose": "둘이 함께 지킬 약속",
+    "titleTemplate": "둘이 함께 지킬 약속",
+    "readerQuestion": "두 사람은 결정 상태·기여·안전·근거·공통·변경을 어떻게 확인하는가?",
+    "materialIds": [
+      "cwpr:material:CH08.P4:joint-meeting-decision-log",
+      "cwpr:material:CH08.P4:joint-credit-check",
+      "cwpr:material:CH08.P4:joint-boundary-for-risk",
+      "cwpr:material:CH08.P4:joint-relation-gate",
+      "cwpr:material:CH08.P4:joint-common-not-conflict",
+      "cwpr:material:CH08.P4:joint-change-review"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH09.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1",
+    "originalPurpose": "두 사람이 가진 좋은 힘",
+    "titleTemplate": "두 사람이 가진 좋은 힘",
+    "readerQuestion": "실제로 도입된 공통 기준·지원·이견·학습만 어떻게 지속하는가?",
+    "materialIds": [
+      "cwpr:material:CH09.P1:recall-different-checks",
+      "cwpr:material:CH09.P1:recall-scope-of-help",
+      "cwpr:material:CH09.P1:recall-testable-dissent",
+      "cwpr:material:CH09.P1:recall-learning-procedure"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH09.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2",
+    "originalPurpose": "함께 활용할 수 있는 좋은 기운",
+    "titleTemplate": "함께 활용할 수 있는 좋은 기운",
+    "readerQuestion": "도입된 기여·인계·개인 Fusion·여력의 좋은 가능성을 어떻게 활용하는가?",
+    "materialIds": [
+      "cwpr:material:CH09.P2:recall-idea-test",
+      "cwpr:material:CH09.P2:recall-handoff-interface",
+      "cwpr:material:CH09.P2:recall-bounded-support-fusion",
+      "cwpr:material:CH09.P2:recall-capacity-choice"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH09.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3",
+    "originalPurpose": "관계를 오래 지키는 선택",
+    "titleTemplate": "관계를 오래 지키는 선택",
+    "readerQuestion": "실제로 표시된 완료·검토·인계·안전 조율만 어떻게 회수하는가?",
+    "materialIds": [
+      "cwpr:material:CH09.P3:recall-actual-done",
+      "cwpr:material:CH09.P3:recall-review-priority",
+      "cwpr:material:CH09.P3:recall-handoff-responsibility",
+      "cwpr:material:CH09.P3:recall-safe-support"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "cwpr:paragraph:CH09.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4",
+    "originalPurpose": "우리라는 관계의 마지막 메시지",
+    "titleTemplate": "우리라는 관계의 마지막 메시지",
+    "readerQuestion": "권한·기여·결과·신뢰의 기준으로 어떤 다음 선택을 남기는가?",
+    "materialIds": [
+      "cwpr:material:CH09.P4:recall-work-not-rank",
+      "cwpr:material:CH09.P4:recall-credit-next-task",
+      "cwpr:material:CH09.P4:recall-difference-with-output",
+      "cwpr:material:CH09.P4:recall-change-without-history"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  }
+];

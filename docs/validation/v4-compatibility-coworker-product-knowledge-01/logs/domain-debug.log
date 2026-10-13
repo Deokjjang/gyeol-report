@@ -1,0 +1,26 @@
+RUN  v4.1.5 /private/tmp/gyeol-compatibility-coworker-product-knowledge-01
+
+ ❯ tests/unit/report-knowledge/compatibilityCoworkerGenerationPreservation.test.ts (38 tests | 1 failed | 37 skipped) 5170ms
+   × audits actual coworker profile, projection, eligible candidates and reader-selected MBTI nodes separately 5169ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/report-knowledge/compatibilityCoworkerGenerationPreservation.test.ts > audits actual coworker profile, projection, eligible candidates and reader-selected MBTI nodes separately
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/report-knowledge/compatibilityCoworkerGenerationPreservation.test.ts:49:1606
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 37 skipped (38)
+   Start at  03:52:41
+   Duration  7.08s (transform 1.41s, setup 15ms, import 1.75s, tests 5.17s, environment 0ms)

@@ -1,0 +1,91 @@
+RUN  v4.1.5 /private/tmp/gyeol-compatibility-coworker-product-knowledge-01
+
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx (36 tests | 11 failed) 57188ms
+     × 'career': every original paragraph and final line in original order 2ms
+     × 'love': every original paragraph and final line in original order 3ms
+     × 'compatibility': every original paragraph and final line in original order 0ms
+     × 'pair-02-marriage': every original paragraph and final line in original order 0ms
+     × 'pair-03-parent': every original paragraph and final line in original order 0ms
+     × 'pair-04-coworker': every original paragraph and final line in original order 0ms
+     × 'pair-05-manager': every original paragraph and final line in original order 0ms
+     × 'pair-06-business': every original paragraph and final line in original order 0ms
+     × 'pair-07-friend': every original paragraph and final line in original order 1ms
+     × 'pair-08-love': every original paragraph and final line in original order 0ms
+     × 14 years, 10 future years, all ages, transitions and clickable full narratives 2ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 11 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'career': every original paragraph and final line in original order
+AssertionError: only actual closing-rule titles may supplement chapter headings: expected [ '도울 범위를 먼저 정하세요', '중요한 오류부터 보세요' ] to include '나는 어떻게 일하는 사람인가'
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:46:100
+     44|     for (const heading of headings) {
+     45|       if (heading === expectedHeadings[nextHeading]) nextHeading++;
+     46|       else expect(ruleHeadings, "only actual closing-rule titles may s…
+       |                                                                                                    ^
+     47|     }
+     48|     expect(nextHeading).toBe(expectedHeadings.length);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/11]⎯
+
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'love': every original paragraph and final line in original order
+AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '사랑할 때의 나'
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:46:100
+     44|     for (const heading of headings) {
+     45|       if (heading === expectedHeadings[nextHeading]) nextHeading++;
+     46|       else expect(ruleHeadings, "only actual closing-rule titles may s…
+       |                                                                                                    ^
+     47|     }
+     48|     expect(nextHeading).toBe(expectedHeadings.length);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/11]⎯
+
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'compatibility': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-02-marriage': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-03-parent': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-04-coworker': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-05-manager': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-06-business': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-07-friend': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-08-love': every original paragraph and final line in original order
+AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:46:100
+     44|     for (const heading of headings) {
+     45|       if (heading === expectedHeadings[nextHeading]) nextHeading++;
+     46|       else expect(ruleHeadings, "only actual closing-rule titles may s…
+       |                                                                                                    ^
+     47|     }
+     48|     expect(nextHeading).toBe(expectedHeadings.length);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/11]⎯
+
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 14 years, 10 future years, all ages, transitions and clickable full narratives
+AssertionError: expected [ 2031, 48, '丁卯 → 丙寅', '辛亥', …(1) ] to deeply equal [ 2031, 48, '丙寅', '辛亥', …(1) ]
+
+- Expected
++ Received
+
+  [
+    2031,
+    48,
+-   "丙寅",
++   "丁卯 → 丙寅",
+    "辛亥",
+    "배워둔 것이 나 대신 문을 열어줍니다 — 큰 배경도 바뀝니다",
+  ]
+
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:115:59
+    113|     page.years.forEach((y, i) => {
+    114|       const original = e.composition.product === "major_fortune" ? e.c…
+    115|       expect([y.year, y.age, y.cycle, y.annual, y.title]).toEqual([ori…
+       |                                                           ^
+    116|       expect(data.pages[y.page].kind).toBe("narrative");
+    117|     });
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:113:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/11]⎯
+
+
+ Test Files  1 failed | 4 passed (5)
+      Tests  11 failed | 99 passed (110)
+   Start at  03:54:21
+   Duration  150.73s (transform 1.85s, setup 32ms, import 3.36s, tests 146.82s, environment 0ms)

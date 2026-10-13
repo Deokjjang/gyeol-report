@@ -1,0 +1,114 @@
+/** Static offline coworker research. No runtime registration or customer approval. */
+import type { MaterialView } from "./researchTypes";
+export const CW_PLANNING_EXECUTION_RESEARCH: readonly MaterialView[] = [
+  {
+    "id": "cwpr:view:planningExecutionResearch:material:CH01.P1:question-before-start",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH01.P1:question-before-start",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:planningExecutionResearch:material:CH01.P1:standard-and-experiment",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH01.P1:standard-and-experiment",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:planningExecutionResearch:material:CH02.P1:a-first-practical-trial",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH02.P1:a-first-practical-trial",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:planningExecutionResearch:material:CH03.P2:b-next-step-needed",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH03.P2:b-next-step-needed",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:planningExecutionResearch:material:CH03.P2:b-meaning-and-contact",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH03.P2:b-meaning-and-contact",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:planningExecutionResearch:material:CH04.P1:shared-action-no-double-work",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH04.P1:shared-action-no-double-work",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:planningExecutionResearch:material:CH04.P2:idea-to-test",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH04.P2:idea-to-test",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:planningExecutionResearch:material:CH05.P1:ab-peer-draft",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH05.P1:ab-peer-draft",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:planningExecutionResearch:material:CH05.P1:ab-produced-example",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH05.P1:ab-produced-example",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:planningExecutionResearch:material:CH05.P4:ab-propose-reversible-test",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH05.P4:ab-propose-reversible-test",
+    "notAdditionalIndependentFact": true
+  }
+];

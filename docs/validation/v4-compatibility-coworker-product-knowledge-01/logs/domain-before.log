@@ -1,0 +1,7 @@
+RUN  v4.1.5 /private/tmp/gyeol-compatibility-coworker-knowledge-validation/base
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 37 skipped (38)
+   Start at  03:53:40
+   Duration  8.83s (transform 1.27s, setup 16ms, import 1.57s, tests 7.12s, environment 0ms)

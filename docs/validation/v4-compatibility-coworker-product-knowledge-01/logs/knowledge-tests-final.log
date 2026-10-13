@@ -1,0 +1,7 @@
+RUN  v4.1.5 /private/tmp/gyeol-compatibility-coworker-product-knowledge-01
+
+
+ Test Files  1 passed (1)
+      Tests  1175 passed (1175)
+   Start at  03:52:54
+   Duration  2.23s (transform 748ms, setup 15ms, import 1.00s, tests 1.07s, environment 0ms)

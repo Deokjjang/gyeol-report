@@ -1,0 +1,81 @@
+/** Static offline coworker research. No runtime registration or customer approval. */
+import type { MaterialView } from "./researchTypes";
+export const CW_FEEDBACK_RESEARCH: readonly MaterialView[] = [
+  {
+    "id": "cwpr:view:feedbackResearch:material:CH01.P4:result-and-respect",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH01.P4:result-and-respect",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:feedbackResearch:material:CH02.P2:a-feedback-dignity",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH02.P2:a-feedback-dignity",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:feedbackResearch:material:CH04.P2:direct-and-receivable",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH04.P2:direct-and-receivable",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:feedbackResearch:material:CH05.P1:ab-corrective-question",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH05.P1:ab-corrective-question",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:feedbackResearch:material:CH05.P4:ab-fix-one-item",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH05.P4:ab-fix-one-item",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:feedbackResearch:material:CH07.P3:feedback-as-person-score",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH07.P3:feedback-as-person-score",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:feedbackResearch:material:CH08.P2:a-separate-observation",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH08.P2:a-separate-observation",
+    "notAdditionalIndependentFact": true
+  }
+];

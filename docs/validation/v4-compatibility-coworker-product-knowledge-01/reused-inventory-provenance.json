@@ -1,0 +1,50 @@
+[
+  {
+    "file": "docs/validation/v4-compatibility-love-product-knowledge-01/pair-contract-matrix.json",
+    "sha256": "2ca547709775ea577154e14766dbe2931629358a107881a3068b2086462f6ff6",
+    "reusedInventoryNotNewFact": true,
+    "sourceUnchanged": true
+  },
+  {
+    "file": "docs/validation/v4-compatibility-love-product-knowledge-01/pair-paragraph-matrix.json",
+    "sha256": "ecdb5dfecc7d3d5bca07d517e7d4aa8a7541ccb0b3b09a23b6325715104b00c6",
+    "reusedInventoryNotNewFact": true,
+    "sourceUnchanged": true
+  },
+  {
+    "file": "docs/validation/v4-compatibility-love-product-knowledge-01/pair-role-matrix.json",
+    "sha256": "4f1e44a1f046f1ef81ed0b03b2d4810d6477791728c739b74cd4e40dd846074d",
+    "reusedInventoryNotNewFact": true,
+    "sourceUnchanged": true
+  },
+  {
+    "file": "docs/validation/v4-compatibility-love-product-knowledge-01/canonical-relation-source-audit.json",
+    "sha256": "4fc5b59514bbb9296ce180d6ca0de1144dc19ed2a6ace466ee746fb661d2eba9",
+    "reusedInventoryNotNewFact": true,
+    "sourceUnchanged": true
+  },
+  {
+    "file": "docs/validation/v4-compatibility-love-product-knowledge-01/mbti-pair-source-audit.json",
+    "sha256": "fa963b4f4ae52204c94fa219d05b6d26c5d58bcb2d9ab06b5755c4fbf8cc2a40",
+    "reusedInventoryNotNewFact": true,
+    "sourceUnchanged": true
+  },
+  {
+    "file": "docs/validation/v4-compatibility-love-product-knowledge-01/individual-fusion-source-crosswalk.json",
+    "sha256": "b1e81e559b56eb3994c90aa507028c3b6c6945ad0053634cc4e9b77387ea6120",
+    "reusedInventoryNotNewFact": true,
+    "sourceUnchanged": true
+  },
+  {
+    "file": "docs/validation/v4-compatibility-love-product-knowledge-01/inherited-source-crosswalk.json",
+    "sha256": "674993601a7f813a8aaf8bdd6c074dff5aa1b30e380b7de65d9fd6b3e2447bf3",
+    "reusedInventoryNotNewFact": true,
+    "sourceUnchanged": true
+  },
+  {
+    "file": "docs/validation/v4-compatibility-love-product-knowledge-01/mbti-person-owner-inventory.json",
+    "sha256": "06084838698f41bd30132817e1cb9dc86060b0185aab86946ff3e5c65eb0d353",
+    "reusedInventoryNotNewFact": true,
+    "sourceUnchanged": true
+  }
+]

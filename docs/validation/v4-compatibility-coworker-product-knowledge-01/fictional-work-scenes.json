@@ -1,0 +1,2926 @@
+[
+  {
+    "materialId": "cwpr:material:CH01.P1:question-before-start",
+    "stage": "goal",
+    "output": "착수 질문표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 새 과제의 목표와 미확인 조건을 함께 적는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "먼저 읽을 질문 전달",
+      "personB": "되돌릴 수 있는 첫 확인 제안"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P1:standard-and-experiment",
+    "stage": "plan",
+    "output": "실험 범위표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 제안서의 필수 항목과 실험 항목을 나눈다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필수 기준의 이유 공유",
+      "personB": "한정된 대안 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P1:focus-and-contact",
+    "stage": "information",
+    "output": "정보 접점표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 공동 문서를 각자 읽고 질문만 모은다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "응답 가능한 시점 알림",
+      "personB": "공동 확인할 목표 정리"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P1:output-not-rank",
+    "stage": "goal",
+    "output": "담당 확인표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 완료 기준의 승인자가 알려지지 않았다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "확인된 담당만 말함",
+      "personB": "추가 지원의 한도 말함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P2:harmony-is-classification",
+    "stage": "goal",
+    "output": "근거 설명 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 같은 일정에 참여한다면 담당부터 묻는다.",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 맡을 범위 제안",
+      "personB": "가능한 수신 범위 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P2:clash-not-failure",
+    "stage": "plan",
+    "output": "변경 질문 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 작업 방식이 바뀐다면 영향을 묻는다.",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "바뀔 조건 기록",
+      "personB": "영향받는 작업 알림"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P2:missing-relation-withhold",
+    "stage": "information",
+    "output": "근거 부재 안내",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 계산에 관계 ID가 없다면 일반 질문만 남긴다.",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "업무 정보 확인",
+      "personB": "성향 판정 보류"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P2:three-part-formation",
+    "stage": "review",
+    "output": "관계 구성표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 근거가 두 글자만 담았다면 종류를 다시 확인한다.",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "실제 refs 확인",
+      "personB": "설명 범위 점검"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P3:spoken-versus-private",
+    "stage": "draft",
+    "output": "회의 가설 목록",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 아이디어 회의 뒤 각자의 확정 의견을 받는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "가설과 결론 표시",
+      "personB": "검토 뒤 답할 시점 제안"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P3:pace-and-done",
+    "stage": "plan",
+    "output": "시연 인계표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 빠른 시연 뒤 넘길 시각을 따로 적는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필수 조건 요약",
+      "personB": "검토 시간 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P3:shared-precision-not-proof",
+    "stage": "review",
+    "output": "검토 항목표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 보고서에 수치 검토와 개념 검토를 나눈다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "실제 자료 기준 확인",
+      "personB": "정의와 결론 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P3:unknown-type-no-substitution",
+    "stage": "information",
+    "output": "선호 확인 질문",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상으로 검토 방식부터 물어본다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자신이 편한 자료 말함",
+      "personB": "원하는 전달 방식 제안"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P4:phase-before-person",
+    "stage": "goal",
+    "output": "단계 지도",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 산출물의 현재 단계를 적는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "현재 단계 공유",
+      "personB": "다음 수신 조건 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P4:support-not-transfer",
+    "stage": "execution",
+    "output": "지원 범위표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 자료 정리만 지원한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "가능한 도움 범위 말함",
+      "personB": "남은 담당 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P4:result-and-respect",
+    "stage": "feedback",
+    "output": "피드백 기준",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 문서 오류의 위치와 요청을 함께 남긴다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "관찰한 사실만 전달",
+      "personB": "받은 뜻을 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH01.P4:repeat-or-project",
+    "stage": "maintenance",
+    "output": "갱신 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 같은 일을 다시 한다면 바뀐 조건만 찾는다.",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "변경 조건 공유",
+      "personB": "유지 가능한 부분 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P1:a-verified-record",
+    "stage": "information",
+    "output": "기록 비교표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 예전 문서를 참고한다면 날짜와 조건을 함께 본다.",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "적용 가능한 범위 표시",
+      "personB": "달라진 조건 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P1:a-first-practical-trial",
+    "stage": "draft",
+    "output": "소규모 시연",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 되돌릴 수 있는 시제품을 만든다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "시험 범위와 중단 조건 표시",
+      "personB": "필요한 확인 자료 요청"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P1:a-logical-model",
+    "stage": "information",
+    "output": "가정표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 분석의 전제와 미확인 부분을 적는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "전제 두 개부터 전달",
+      "personB": "다른 가정의 근거 요청"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P1:a-shared-purpose",
+    "stage": "goal",
+    "output": "목표 설명문",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 공동 과제의 사용자를 묻는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "목표의 이유 제안",
+      "personB": "자기 이해한 산출물 말함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P2:a-method-discretion",
+    "stage": "plan",
+    "output": "재량 범위표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 문서 작성 방식을 고른다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "고정 결과와 선택 방법 표시",
+      "personB": "수신 규격 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P2:a-focus-window",
+    "stage": "execution",
+    "output": "집중·접점 일정",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 혼자 검토할 시간을 확보한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "확인 가능한 시점 알림",
+      "personB": "급한 조건과 일반 질문 구분"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P2:a-feedback-dignity",
+    "stage": "feedback",
+    "output": "수정 대화 요청",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 초안에 의견을 받는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "장소·범위·시간 요청",
+      "personB": "오류 위치와 기준 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P2:a-clear-criteria",
+    "stage": "plan",
+    "output": "필수 기준표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 요청서에 필수 항목만 표시한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "기준의 출처 알림",
+      "personB": "적용 범위 재확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P3:a-system-review",
+    "stage": "review",
+    "output": "논리 검토 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 표의 전제와 결과가 다르다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "재현 가능한 자료 제시",
+      "personB": "확인할 반례 요청"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P3:a-reroute-proposal",
+    "stage": "execution",
+    "output": "변경 대안표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 의존 자료가 늦게 온다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "바꿀 경로와 유지분 제시",
+      "personB": "자기 영향 작업 알림"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P3:a-participation-signal",
+    "stage": "midpoint",
+    "output": "질문 수집 문서",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 점검 회의 뒤 문서 질문을 받는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "여러 응답 통로 마련",
+      "personB": "필요한 정보만 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P3:a-new-links",
+    "stage": "draft",
+    "output": "대안 카드",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 참고 사례를 다른 과제에 시험한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "차이와 시험 조건 표시",
+      "personB": "지금 확인할 하나 선택"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P4:a-public-critique-cost",
+    "stage": "feedback",
+    "output": "검토 의견",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 회의에서 오류를 지적한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "사실·영향·요청 구분",
+      "personB": "수정 대상 재확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P4:a-rescue-without-consent",
+    "stage": "execution",
+    "output": "지원 한도 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 동료의 자료 정리를 돕는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "맡을 부분과 한도 알림",
+      "personB": "필요한 도움의 범위 답함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P4:a-sprint-dependency",
+    "stage": "execution",
+    "output": "중간 인계 일정",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 마감 전 자료를 기다리는 작업이 있다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "초안 인계 시점 합의",
+      "personB": "필요한 최소 항목 말함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH02.P4:a-fast-fix-without-notice",
+    "stage": "revision",
+    "output": "변경 통지",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 현장 제약 때문에 항목을 바꾼다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "변경분·이유·미확정 표시",
+      "personB": "이해한 변경을 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P1:b-current-observation",
+    "stage": "information",
+    "output": "현장 조건 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 한 구간을 확인했다면 관찰 범위를 표시한다.",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "추가 확인할 자료 요청",
+      "personB": "관찰·추측 구분 전달"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P1:b-value-filter",
+    "stage": "goal",
+    "output": "사용 목적 질문",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 과제의 수혜자를 다시 묻는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "공동 목표의 기준 공유",
+      "personB": "자기 질문의 이유 설명"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P1:b-procedure-memory",
+    "stage": "plan",
+    "output": "예시 차이표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 양식의 새 항목을 검토한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "바뀐 항목의 이유 제공",
+      "personB": "예시와 차이 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P1:b-private-synthesis",
+    "stage": "information",
+    "output": "미확정 질문표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 검토 중 막힌 전제를 알린다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "현재 필요한 답의 범위 말함",
+      "personB": "확정분과 미확정분 분리"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P2:b-next-step-needed",
+    "stage": "plan",
+    "output": "다음 단계표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 두 단계가 이어지는 과제라면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "확인된 순서만 안내",
+      "personB": "다음 수신 조건 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P2:b-bounded-autonomy",
+    "stage": "execution",
+    "output": "수신 규격표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 자료를 다른 도구로 정리한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "수신 규격 확인",
+      "personB": "도구 변경의 영향 알림"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P2:b-time-to-answer",
+    "stage": "review",
+    "output": "사전 질문지",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 회의 전 두 질문을 전달받는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필수 결정 질문 구분",
+      "personB": "검토 뒤 답할 시점 제안"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P2:b-meaning-and-contact",
+    "stage": "draft",
+    "output": "시험 제안",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다른 방법을 제안한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "지금 검토 가능한 범위 말함",
+      "personB": "제안·실행 구분"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P3:b-practical-assistance",
+    "stage": "execution",
+    "output": "지원 결과",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 자료 변환 한 건을 돕는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필요한 한 작업 요청",
+      "personB": "가능 범위와 결과 알림"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P3:b-clear-completion",
+    "stage": "approval",
+    "output": "완료 기준표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 전달 전 필수 조건을 모은다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필수 항목 검토",
+      "personB": "승인자 미확인 표시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P3:b-contradiction-question",
+    "stage": "review",
+    "output": "정의 대조표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 두 문서의 완료 의미가 다르다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "사용 맥락 설명",
+      "personB": "비교할 정의 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P3:b-social-translation",
+    "stage": "delivery",
+    "output": "사용 질문 기록",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 사용 설명을 보여주고 질문을 받는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필수 정보 목록 공유",
+      "personB": "받은 질문을 그대로 기록"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P4:b-hidden-disagreement",
+    "stage": "feedback",
+    "output": "의견 상태표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 초안 동의 여부가 분명하지 않다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "수락·검토·보류 구분 질문",
+      "personB": "답할 수 있는 부분만 표시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P4:b-directive-without-authority",
+    "stage": "revision",
+    "output": "변경 제안 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 수정 방식을 동료에게 권한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "권한·범위 재확인",
+      "personB": "명령 대신 이유와 제안 표시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P4:b-relational-overload",
+    "stage": "maintenance",
+    "output": "지원 경계표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 동료 상담이 본업을 밀어낸다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필요한 업무 지원을 구체화",
+      "personB": "시간·범위의 한도 말함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH03.P4:b-praise-without-scope",
+    "stage": "execution",
+    "output": "추가 요청표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 칭찬 뒤 새 요청이 온다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "기존 작업의 영향 말함",
+      "personB": "수락 범위 재협의"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P1:shared-records-different-checks",
+    "stage": "plan",
+    "output": "검토 양식",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 요청 양식을 함께 검토한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "누락 항목 확인",
+      "personB": "다음 순서 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P1:shared-space-different-questions",
+    "stage": "review",
+    "output": "전제·범위표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 설명의 전제와 적용 범위를 나눈다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "원인 질문 목록",
+      "personB": "전체 구조 요약"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P1:shared-values-usable-output",
+    "stage": "goal",
+    "output": "목적·대상표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 안내문의 대상과 쓰임을 정한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "중요한 목적 제시",
+      "personB": "확인할 사용자 질문 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P1:shared-action-no-double-work",
+    "stage": "execution",
+    "output": "시험 배분표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 작은 실험 두 개를 나눈다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "먼저 시작한 대상 표시",
+      "personB": "다른 대상 선택·확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P1:shared-care-no-invisible-task",
+    "stage": "maintenance",
+    "output": "지원 목록",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 회의 준비와 후속 정리를 나눈다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "준비 항목 표시",
+      "personB": "마무리 범위 표시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P2:idea-to-test",
+    "stage": "draft",
+    "output": "시험물",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 새 방법 하나를 시연한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "시험할 가설 선택",
+      "personB": "가능한 작은 구현 범위 제안"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P2:structure-and-detail",
+    "stage": "review",
+    "output": "대조 검토서",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 보고서의 논리와 표를 나눈다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "결론에 필요한 순서 정리",
+      "personB": "항목의 자료 출처 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P2:direct-and-receivable",
+    "stage": "feedback",
+    "output": "수정 요청서",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 초안 의견을 한 항목씩 주고받는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "근거와 요청 제시",
+      "personB": "받은 뜻·가능 시간 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P2:future-and-current-constraint",
+    "stage": "plan",
+    "output": "경로 비교표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 계획에 필요한 자료가 없다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "대안과 재검토 조건 표시",
+      "personB": "현재 가능한 단계 제안"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P2:autonomy-and-continuity",
+    "stage": "handoff",
+    "output": "인계 묶음",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 서로 다른 도구로 만든 자료를 넘긴다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "수신 가능한 형태 준비",
+      "personB": "누락·접근 가능성 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P3:parallel-review-rejoin",
+    "stage": "review",
+    "output": "통합 검토본",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 두 검토본을 하나로 합친다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 수정분 표시",
+      "personB": "충돌 항목 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P3:draft-before-polish",
+    "stage": "draft",
+    "output": "방향 확인 초안",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 첫 초안에서 방향만 확인한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "미완성 범위 표시",
+      "personB": "이번 검토할 항목만 선택"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P3:help-with-explicit-return",
+    "stage": "execution",
+    "output": "지원 종료 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 한 항목을 같이 해결한 뒤 돌려준다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "도울 부분과 종료 표시",
+      "personB": "남은 담당·상태 알림"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P3:recognize-integration-labor",
+    "stage": "delivery",
+    "output": "기여 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 공동 결과물을 전달한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 작업과 도움 출처 기록",
+      "personB": "통합·검토 기여 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P3:routine-exception-window",
+    "stage": "maintenance",
+    "output": "예외 기록",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 한 번만 순서를 바꿔야 한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "유지할 절차 확인",
+      "personB": "예외의 이유·기간 제안"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P4:reliable-minimum",
+    "stage": "maintenance",
+    "output": "반복 확인 목록",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다음 작업에 인계 항목 두 개를 남긴다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "가능한 일정 알림",
+      "personB": "변경 시 알릴 신호 제안"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P4:dissent-as-testable-choice",
+    "stage": "review",
+    "output": "대안 비교서",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 두 대안을 같은 조건에 비교한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "대안의 전제 제시",
+      "personB": "반례와 검토 기준 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P4:sustainable-help",
+    "stage": "maintenance",
+    "output": "지원 한도 합의",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 반복 지원의 범위를 다시 본다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "가능 시간과 한도 제시",
+      "personB": "필요한 일부 지원 선택"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P4:learning-after-work",
+    "stage": "maintenance",
+    "output": "절차 학습 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 작업 뒤 확인할 절차를 적는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "유지할 행동 제안",
+      "personB": "바꿀 확인 단계 제안"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH04.P4:capacity-before-expansion",
+    "stage": "plan",
+    "output": "여력 비교표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 새 과제를 함께 제안받는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "기존 약속과 여력 공유",
+      "personB": "줄이거나 미룰 항목 제안"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P1:ab-peer-draft",
+    "stage": "draft",
+    "output": "비교 초안",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 초안을 B에게 먼저 넘긴다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "대안·미확정 표시",
+      "personB": "확인할 필수 항목 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P1:ab-resource-boundary",
+    "stage": "plan",
+    "output": "자원 요청표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 작업 순서를 바꿔 자원을 쓰려 한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필요 자원과 이유 제시",
+      "personB": "자기 가능 시간 말함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P1:ab-produced-example",
+    "stage": "draft",
+    "output": "시험 예시",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 시험물을 B에게 보여준다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "시험 조건·한계 설명",
+      "personB": "실제 사용 목적 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P1:ab-corrective-question",
+    "stage": "review",
+    "output": "반례 질문",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 논리 의견을 B에게 보낸다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "전제·영향·요청 표시",
+      "personB": "확인할 항목과 시간 답함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P1:ab-alternative-window",
+    "stage": "plan",
+    "output": "한정 시험안",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 새 도구를 한 항목에 시험한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "바뀔 범위·기간 제시",
+      "personB": "기존 인계에 영향 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P2:ab-continuous-record",
+    "stage": "handoff",
+    "output": "인계 목록",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 B가 작업을 이어받는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "최신본·미완료 표시",
+      "personB": "접근·이해 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P2:ab-criterion-not-command",
+    "stage": "review",
+    "output": "검토 기준안",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 B의 초안을 검토한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "기준 출처와 이유 제시",
+      "personB": "자기 방법의 경계 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P2:ab-constraint-check",
+    "stage": "midpoint",
+    "output": "제약 점검표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 중간 검토에서 제약을 묻는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "확인 사실·가설 분리",
+      "personB": "현재 가능한 대응 말함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P2:ab-background-not-answer",
+    "stage": "information",
+    "output": "근거 요약문",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 B가 첫 행동을 묻는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "핵심·근거·미확정 구분",
+      "personB": "지금 필요한 질문 하나 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P2:ab-supported-learning",
+    "stage": "feedback",
+    "output": "질문·지원표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 수정 방법을 함께 살핀다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "원하는 지원 종류 질문",
+      "personB": "필요한 항목만 요청"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P3:ab-review-scope-creep",
+    "stage": "review",
+    "output": "수정 범위표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 최종 검토에 새 요청이 쌓인다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필수·후속 항목 분리",
+      "personB": "남은 시간·영향 답함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P3:ab-help-replaces-work",
+    "stage": "execution",
+    "output": "지원 변경 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 A가 B의 작업 일부를 돕는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "지원 범위·변경 기록",
+      "personB": "받을 도움과 유지분 선택"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P3:ab-decision-too-soon",
+    "stage": "approval",
+    "output": "검토 상태표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 결론 전에 B 검토가 끝나지 않았다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "결정 질문·필요 시각 제시",
+      "personB": "미검토 항목 표시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P3:ab-changing-priority",
+    "stage": "execution",
+    "output": "우선순위 변경안",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 급한 작업을 앞당기려 한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "뒤로 갈 작업까지 제안",
+      "personB": "현재 진행·의존성 알림"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P3:ab-ideas-become-obligation",
+    "stage": "draft",
+    "output": "제안 상태표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 대안이 여러 개 생긴다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "제안·확정·보관 구분",
+      "personB": "현재 가능한 범위 답함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P4:ab-request-with-acceptance",
+    "stage": "handoff",
+    "output": "요청 확인표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 B에게 결과물 일부를 요청한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필수 정보·수락 질문",
+      "personB": "가능 범위·보류 답함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P4:ab-fix-one-item",
+    "stage": "feedback",
+    "output": "항목 의견서",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 표 한 칸의 근거가 없다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "위치·영향·질문 제시",
+      "personB": "확인할 원자료 답함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P4:ab-pass-uncertainty",
+    "stage": "handoff",
+    "output": "상태 포함 인계",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 파일과 미완료 항목을 B에게 넘긴다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "최신본·불확실성 표시",
+      "personB": "접근·다음 단계 되확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P4:ab-propose-reversible-test",
+    "stage": "draft",
+    "output": "한정 실험 계획",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 한 항목만 새 방법으로 비교한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "시험·중단·평가 제안",
+      "personB": "필수 기준·위험 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH05.P4:ab-capacity-query",
+    "stage": "execution",
+    "output": "지원 확인 카드",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 한 작업의 막힌 부분을 돕는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "가능 시간·항목 제안",
+      "personB": "필요한 도움·담당 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P1:ba-independent-second-view",
+    "stage": "review",
+    "output": "용어 비교 질문",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 같은 용어로 다른 판단을 했다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "사용한 맥락 설명",
+      "personB": "정의와 질문 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P1:ba-overlap-not-rivalry",
+    "stage": "execution",
+    "output": "중복 작업 지도",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 두 사람이 같은 표를 고친다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "진행한 부분 알림",
+      "personB": "중복·남은 담당 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P1:ba-shown-not-promised",
+    "stage": "draft",
+    "output": "표현 초안",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 안내문의 표현 예시를 A에게 보인다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필수 목표·검토 조건 제시",
+      "personB": "표현 의도와 한계 설명"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P1:ba-change-the-premise",
+    "stage": "review",
+    "output": "예외 질문서",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 현행 양식의 예외를 B가 묻는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "규정의 실제 이유 설명",
+      "personB": "예외 자료와 질문 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P1:ba-new-connection-with-limits",
+    "stage": "plan",
+    "output": "추가 자료 카드",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다른 사례를 B가 가져온다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "현재 범위·우선 질문 공유",
+      "personB": "자료의 차이·보류 가능성 설명"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P2:ba-closure-list",
+    "stage": "delivery",
+    "output": "후속 항목표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 전달 후 남은 항목을 B가 정리한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "남은 담당·요청 상태 확인",
+      "personB": "미완료·후속 구분 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P2:ba-rule-explanation",
+    "stage": "plan",
+    "output": "최소 절차안",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 인계 절차를 B가 설명한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "불편한 단계와 이유 질문",
+      "personB": "필수 근거·선호 구분"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P2:ba-resource-warning",
+    "stage": "midpoint",
+    "output": "담당 영향표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 A의 추가 지원 범위를 점검한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "현재 가능한 지원 말함",
+      "personB": "영향받는 담당 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P2:ba-other-model",
+    "stage": "review",
+    "output": "가설 대조표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 원인 가설 두 개를 대조한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "현재 자료와 결정 질문 제시",
+      "personB": "반례·시험 자료 제안"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P2:ba-question-channel",
+    "stage": "feedback",
+    "output": "지원 통로 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 A에게 필요한 질문 통로를 묻는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "업무상 필요한 범위 말함",
+      "personB": "원하는 지원·통로 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P3:ba-detail-cost",
+    "stage": "review",
+    "output": "수정 이유표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 초안에 형식 의견이 계속 붙는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "목적·필수 조건 재확인",
+      "personB": "이번 수정의 이유 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+    "stage": "handoff",
+    "output": "인수 상태표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 인계 파일이 열리지 않는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "접근 문제의 질문 수신",
+      "personB": "사용 불가·필요 자료 표시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P3:ba-late-change-after-start",
+    "stage": "revision",
+    "output": "변경 근거표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 실행 뒤 다른 방법이 떠오른다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "재작업 영향 공유",
+      "personB": "새 근거·보관 선택 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P3:ba-observe-is-judge",
+    "stage": "feedback",
+    "output": "의도 확인 질문",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 짧은 답을 부정적으로 들었다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "말한 목적·기준 설명",
+      "personB": "관찰·받은 영향 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P3:ba-social-participation-duty",
+    "stage": "maintenance",
+    "output": "접점 구분 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 회의 뒤 사적 대화가 이어진다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필요한 정보·시간 경계 말함",
+      "personB": "업무 요청과 친목 초대 구분"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P4:ba-prioritize-review",
+    "stage": "feedback",
+    "output": "우선 의견표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 여러 검토 의견을 정리한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "가능한 시간·범위 답함",
+      "personB": "필수·후속·선호 구분"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P4:ba-confirm-receipt",
+    "stage": "handoff",
+    "output": "인수 확인서",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 전달된 자료가 일부만 보인다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "최신본·권한 상태 답함",
+      "personB": "접근·필요 항목 되확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P4:ba-ask-one-assumption",
+    "stage": "review",
+    "output": "핵심 질문 카드",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 결정 전에 전제 하나가 빠졌다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "확인 가능한 현재 정보 답함",
+      "personB": "핵심 전제·후속 질문 분리"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P4:ba-report-blocker-not-person",
+    "stage": "execution",
+    "output": "작업 상태 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 작업이 막혔다면 현재 상태만 먼저 남긴다.",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필요 자료·지원 질문",
+      "personB": "막힘·다음 확인 시점 알림"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH06.P4:ba-decline-addition",
+    "stage": "maintenance",
+    "output": "추가 지원 답변",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 추가 업무 때문에 인계가 밀린다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "꼭 필요한 항목·다른 경로 제시",
+      "personB": "가능 범위·기존 영향 알림"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P1:division-gap",
+    "stage": "plan",
+    "output": "통합 담당 질문",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 공동 문서의 통합자가 없다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 완료 범위 표시",
+      "personB": "남은 통합 작업 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P1:responsibility-border",
+    "stage": "execution",
+    "output": "지원 종료 질문",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 반복 요청의 담당이 불명확하다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "이번 필요한 범위 제시",
+      "personB": "가능 범위·종료 알림"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P1:completion-mismatch",
+    "stage": "approval",
+    "output": "상태 기준표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 초안과 승인본이 섞였다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "현재 파일 상태 표시",
+      "personB": "사용에 필요한 조건 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P1:review-depth-gap",
+    "stage": "review",
+    "output": "검토 수준표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 표 한 칸에서 질문이 커진다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "확인할 오류 범위 제시",
+      "personB": "원인 검토의 필요 근거 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P1:deadline-dependency",
+    "stage": "handoff",
+    "output": "의존 일정표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 B 검토가 A 초안 뒤에만 가능하다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "초안 일부의 준비 시점 알림",
+      "personB": "필수 인계 항목·필요 시점 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P1:priority-conflict",
+    "stage": "execution",
+    "output": "충돌 요청표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 상충한 요청 두 개가 왔다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 요청의 근거 공유",
+      "personB": "밀릴 작업의 영향 기록"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P2:clash-and-current-work",
+    "stage": "revision",
+    "output": "근거·의견 대조",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 수정 방향이 다르다면 실제 근거와 의견을 따로 적는다.",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 의견의 자료 제시",
+      "personB": "다른 기준의 이유 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P2:harm-not-hostility",
+    "stage": "feedback",
+    "output": "수신 차이 질문",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 말이 다르게 전달됐다면 관찰과 추측을 나눈다.",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "관찰한 표현만 말함",
+      "personB": "받은 뜻을 확인 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P2:half-harmony-not-agreement",
+    "stage": "plan",
+    "output": "분담 확인서",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 작업 분담을 말로만 정했다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "이해한 범위 적음",
+      "personB": "서로 다른 항목 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P2:unsupported-punishment",
+    "stage": "review",
+    "output": "미지원 기록",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 원진 연구만 참고하려 한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "실제 계산 결과 확인",
+      "personB": "해석 적용 보류"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P2:no-relation-current-issue",
+    "stage": "review",
+    "output": "사실 확인표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 결과물 누락을 점검한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "사실 상태 공유",
+      "personB": "필요 항목 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P2:same-source-no-false-conflict",
+    "stage": "plan",
+    "output": "공통 조건표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 두 사람이 같은 절차를 원한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 적용 범위 말함",
+      "personB": "같은 조건인지 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P3:request-without-input",
+    "stage": "information",
+    "output": "요청 항목표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 자료 없이 결과만 요청받는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "목적·입력·기한 제시",
+      "personB": "누락 입력 표시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P3:feedback-as-person-score",
+    "stage": "feedback",
+    "output": "관찰 의견",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 표의 오류를 검토한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "위치·영향만 말함",
+      "personB": "확인 자료·수정 범위 답함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P3:revision-without-stop",
+    "stage": "revision",
+    "output": "수정 종료표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 검토마다 새 선호가 붙는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필수 근거·완료 기준 제시",
+      "personB": "현재 가능 범위 답함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P3:additional-work-hidden",
+    "stage": "execution",
+    "output": "요청 영향도",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 작은 변경이 연결 파일을 바꾼다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "의존 작업 확인",
+      "personB": "가능 범위·밀릴 일 알림"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P3:information-silo",
+    "stage": "information",
+    "output": "버전 확인표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 서로 다른 파일을 쓰고 있다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "최신본·변경분 표시",
+      "personB": "접근·사용본 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P3:handoff-omission",
+    "stage": "handoff",
+    "output": "상태 인계표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 인계 자료에 상태가 없다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "미완료·다음 단계 알림",
+      "personB": "받을 범위·이해 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P4:duplicate-edit",
+    "stage": "revision",
+    "output": "편집 상태표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 같은 문단이 두 버전으로 갈렸다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 변경·근거 표시",
+      "personB": "수신본·통합 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P4:credit-erasure",
+    "stage": "delivery",
+    "output": "기여 확인표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 공동 결과물의 작성 이력이 빠졌다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 기여·지원 출처 말함",
+      "personB": "확인된 작업 기록"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P4:meeting-closure-gap",
+    "stage": "plan",
+    "output": "결정 질문표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 회의 뒤 담당이 없다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 다음 행동·질문 표시",
+      "personB": "미결정·필요 자료 정리"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P4:disagreement-becomes-competence",
+    "stage": "feedback",
+    "output": "판단 기준표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 두 안이 다른 기준으로 평가됐다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 판단 기준 공유",
+      "personB": "비교할 자료 제안"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P4:fatigue-without-rebalance",
+    "stage": "maintenance",
+    "output": "여력 재검토표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 반복 지원으로 계획이 밀린다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "작업·지원의 시간 영향 공유",
+      "personB": "가능 여력·조정 요청"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH07.P4:coercion-not-style",
+    "stage": "feedback",
+    "output": "지원 필요 기록",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 보복이 걱정돼 의견을 못 내는 상황이라면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "실제 안전·지원 선택 확인",
+      "personB": "동의 없이 화해 강요하지 않음"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P1:repair-unowned-integration",
+    "stage": "plan",
+    "output": "통합 체크표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 제출본 통합이 비어 있다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "완료분·남은 연결 표시",
+      "personB": "통합에 필요한 항목 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P1:repair-support-exit",
+    "stage": "execution",
+    "output": "지원 복귀표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 지원이 계속 담당이 됐다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "요청·종료 조건 재제안",
+      "personB": "가능 범위·원래 담당 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P1:repair-done-state",
+    "stage": "approval",
+    "output": "파일 상태 합의",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 파일의 사용 가능 여부가 다르게 이해됐다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "파일 상태·미완료 표시",
+      "personB": "필요 상태를 되확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P1:repair-review-level",
+    "stage": "review",
+    "output": "검토 범위 합의",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 수치 오류와 산식 질문을 나눈다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "현재 오류·영향 설명",
+      "personB": "확대 검토의 필요 근거 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P1:repair-dependency-time",
+    "stage": "handoff",
+    "output": "부분 인계 일정",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 전체 초안 전에 일부 인계가 가능하다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "먼저 줄 항목·상태 표시",
+      "personB": "필수 검토 시간 제안"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P1:repair-priority-escalation",
+    "stage": "plan",
+    "output": "우선 조정 요청",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 같은 시간의 두 요청을 정리한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "확인된 요청·시한 기록",
+      "personB": "대체·지연 영향 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P2:a-change-with-record",
+    "stage": "revision",
+    "output": "변경 기록",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 새 버전을 B에게 넘긴다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "버전·변경·미확정 표시",
+      "personB": "받은 버전·질문 되확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P2:a-separate-observation",
+    "stage": "feedback",
+    "output": "항목 피드백",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 B의 표에 오류가 보인다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "사실·영향·질문 제시",
+      "personB": "확인 자료와 받은 뜻 답함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P2:a-limit-revision",
+    "stage": "revision",
+    "output": "필수·후속 목록",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 A의 새 의견이 반복된다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "항목의 필요 근거 분류",
+      "personB": "현재 가능 범위 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P2:a-request-full-impact",
+    "stage": "execution",
+    "output": "추가 영향 질문",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 작은 수정으로 다른 파일도 바뀐다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "목적·대체 가능 범위 제시",
+      "personB": "연결 작업·일정 영향 알림"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P2:a-handoff-status",
+    "stage": "handoff",
+    "output": "상태 인계 묶음",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 인계 묶음을 A가 준비한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "최신본·미완료·다음 단계 표시",
+      "personB": "접근·수락 가능 범위 답함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P2:a-do-not-claim-authority",
+    "stage": "approval",
+    "output": "결정권 확인 질문",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 두 안 중 하나를 골라야 한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 기준·제안 표시",
+      "personB": "다른 기준·자료 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P3:b-receive-not-accept",
+    "stage": "information",
+    "output": "요청 응답표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 급한 요청의 자료가 없다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "목적·자료·기한 답함",
+      "personB": "이해·수락 상태 분리"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P3:b-name-pending-review",
+    "stage": "review",
+    "output": "검토 중간표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 B의 분석이 계속된다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "현재 결정 질문 제시",
+      "personB": "확정분·미확정분·다음 확인 표시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P3:b-state-integration-limit",
+    "stage": "revision",
+    "output": "충돌 항목표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 B의 수정본과 A의 수정본이 다르다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 변경·기준 공유",
+      "personB": "버전·충돌·미통합 표시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P3:b-make-blocker-visible",
+    "stage": "execution",
+    "output": "의존 자료 요청",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 검토가 앞선 초안을 기다린다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "가능한 일부와 상태 답함",
+      "personB": "최소 자료·필요 시점 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P3:b-ask-intent-without-excusing",
+    "stage": "feedback",
+    "output": "의도·영향 질문",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 짧은 답을 무시로 들었다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "말한 목적·수정 가능 행동 답함",
+      "personB": "관찰·받은 영향·질문 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P3:b-limit-invisible-help",
+    "stage": "maintenance",
+    "output": "여력 요청 메모",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 반복 지원으로 현재 담당이 밀린다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "요청 범위·대안 경로 확인",
+      "personB": "담당 영향·가능 한도 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P4:joint-meeting-decision-log",
+    "stage": "plan",
+    "output": "결정·보류 기록",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 회의 뒤 후속을 정한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "가능한 행동·수락 상태 말함",
+      "personB": "미확정·필요 자료 정리"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P4:joint-credit-check",
+    "stage": "delivery",
+    "output": "기여 출처 기록",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 공동 문서에 출처를 남긴다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "확인된 자기 기여·지원 말함",
+      "personB": "확인된 검토·통합 기여 말함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P4:joint-boundary-for-risk",
+    "stage": "feedback",
+    "output": "지원 통로 질문",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 의견에 보복이 걱정되는 상황이라면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "안전한 별도 통로 확인",
+      "personB": "동의 없는 대면·화해 요구 금지"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P4:joint-relation-gate",
+    "stage": "review",
+    "output": "근거 상태표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 미지원 정의와 실제 관계가 섞였다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "실제 ID·종류 확인",
+      "personB": "업무 사실 질문만 남김"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P4:joint-common-not-conflict",
+    "stage": "plan",
+    "output": "공통·합의표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 같은 절차를 원하지만 분담이 비어 있다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 수락 범위 확인",
+      "personB": "현재 합의 항목 되확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH08.P4:joint-change-review",
+    "stage": "maintenance",
+    "output": "변경 후 확인표",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 수정 범위를 바꾼 뒤 다시 확인한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "실제 변경분·미해결 표시",
+      "personB": "수신 결과·다음 질문 표시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P1:recall-different-checks",
+    "stage": "maintenance",
+    "output": "다음 검토 기준",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다음 양식에서도 앞선 검토 기준을 쓴다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "유지할 항목 확인",
+      "personB": "달라진 조건 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P1:recall-scope-of-help",
+    "stage": "maintenance",
+    "output": "지원 원칙",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다음 막힘에도 일부 지원을 묻는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "가능 범위 재확인",
+      "personB": "필요한 지원만 선택"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P1:recall-testable-dissent",
+    "stage": "maintenance",
+    "output": "이견 비교 원칙",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다음 대안을 비교한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 전제 표시",
+      "personB": "필요 반례 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P1:recall-learning-procedure",
+    "stage": "maintenance",
+    "output": "학습 원칙",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다음 작업 전에 앞선 질문을 본다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "유지할 확인 행동 선택",
+      "personB": "새 조건·필요 자료 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P2:recall-idea-test",
+    "stage": "draft",
+    "output": "시험 협업 원칙",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 새 대안을 앞선 방식으로 확인한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "현재 가설·한계 표시",
+      "personB": "가능 시험 범위 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P2:recall-handoff-interface",
+    "stage": "handoff",
+    "output": "인계 인터페이스 원칙",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다음 인계에도 같은 규격을 쓴다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "최신 상태·미완료 표시",
+      "personB": "접근·수신 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P2:recall-bounded-support-fusion",
+    "stage": "maintenance",
+    "output": "지원 한도 원칙",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 같은 지원을 다시 검토한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "실제 가능 한도 재확인",
+      "personB": "필요한 지원 범위 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P2:recall-capacity-choice",
+    "stage": "plan",
+    "output": "새 제안 기준",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 새 협업 요청을 받는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "현재 약속과 여력 표시",
+      "personB": "필요 자원·축소안 질문"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P3:recall-actual-done",
+    "stage": "maintenance",
+    "output": "완료 표시 원칙",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다음 전달에 앞선 상태 구분을 쓴다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "현재 상태 표시",
+      "personB": "사용 필요 조건 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P3:recall-review-priority",
+    "stage": "maintenance",
+    "output": "검토 범위 원칙",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다음 검토 의견을 정리한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필수 요청의 근거 표시",
+      "personB": "현재 처리 범위·후속 표시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P3:recall-handoff-responsibility",
+    "stage": "maintenance",
+    "output": "발신·수신 원칙",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다음 인계에 앞선 확인을 쓴다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "상태·불확실성 표시",
+      "personB": "이해·수락 범위 답함"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P3:recall-safe-support",
+    "stage": "maintenance",
+    "output": "안전·지원 원칙",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다음 작업에서 같은 우려가 생긴다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "안전한 확인 통로 선택",
+      "personB": "동의 없는 대면 강요 금지"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P4:recall-work-not-rank",
+    "stage": "maintenance",
+    "output": "담당 확인 원칙",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다음 공동 과제를 시작한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "확인된 담당만 제안",
+      "personB": "권한 미확인 항목 표시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P4:recall-credit-next-task",
+    "stage": "maintenance",
+    "output": "기여·분담 원칙",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다음 과제에 이전 기록을 참고한다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "가능한 현재 담당 말함",
+      "personB": "새 수락 범위 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P4:recall-difference-with-output",
+    "stage": "maintenance",
+    "output": "다음 결과 기준",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다음 검토에서도 서로 다른 항목을 맡는다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 검토 범위 표시",
+      "personB": "미결정·필요 자료 확인"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  },
+  {
+    "materialId": "cwpr:material:CH09.P4:recall-change-without-history",
+    "stage": "maintenance",
+    "output": "다음 확인 원칙",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상 다음 작업에서 조건이 바뀐다면",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "변경·가능 약속 알림",
+      "personB": "받은 결과·다음 질문 제시"
+    },
+    "authority": "UNKNOWN",
+    "jobRole": "UNKNOWN",
+    "notNewFact": true
+  }
+]

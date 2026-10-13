@@ -1,0 +1,44 @@
+[
+  {
+    "file": "docs/validation/v4-compatibility-marriage-product-knowledge-01/README.md",
+    "sha256": "e9159a239567b3e80ce948910785074f8aa1ed8d3253d80406de6846d71a3170",
+    "bytes": 12341,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-marriage-product-knowledge-01/coverage-manifest.json",
+    "sha256": "a08536684a0b4727cf0c82119db304fce6d4b03855e4414c28dba4cac19a0512",
+    "bytes": 3191,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-marriage-product-knowledge-01/binding-handoff.md",
+    "sha256": "32d8f6fb1a0a0877761a709fc97da2c85b0f0cd4a436cde970c40027d1fb00bb",
+    "bytes": 3221,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-marriage-product-knowledge-01/runtime-path-audit.md",
+    "sha256": "3c32d4e1ee415fcbc03356707429a090ecf325ba5e66b97a8d4263e04ec24f71",
+    "bytes": 4300,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-marriage-product-knowledge-01/materials-review.md",
+    "sha256": "93c9b585b8b9dd7d8e890bb20baf9ac3cb00e6fd8080f98eb9661c9da1075668",
+    "bytes": 219714,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-marriage-product-knowledge-01/duplication-audit.json",
+    "sha256": "549fa88eb9eda44f4972ffaef2c3f4a6f269ce30761376f8200bd4512728dfcc",
+    "bytes": 6395,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  }
+]
