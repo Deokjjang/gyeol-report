@@ -1,0 +1,322 @@
+{
+  "baseSha": "565c4613d4e01d65510380e0f597c535f81396c0",
+  "known33Reproduced": true,
+  "additionalBaselineFailures": 6,
+  "totalUniqueExistingFailures": 39,
+  "newFailures": 0,
+  "existingTestsEditedDeletedOrSkipped": false,
+  "failures": [
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'career': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [ '도울 범위를 먼저 정하세요', '중요한 오류부터 보세요' ] to include '나는 어떻게 일하는 사람인가'",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'compatibility': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'love': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '사랑할 때의 나'",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-02-marriage': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-03-parent': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-04-coworker': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-05-manager': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-06-business': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-07-friend': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-08-love': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 14 years, 10 future years, all ages, transitions and clickable full narratives",
+      "firstError": "AssertionError: expected [ 2031, 48, '丁卯 → 丙寅', '辛亥', …(1) ] to deeply equal [ 2031, 48, '丙寅', '辛亥', …(1) ]",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'annual' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'compatibility' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'comprehensive' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'love' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'major' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'annual' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'compatibility' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'comprehensive' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'love' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'major' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+      "name": "section-specific allocations, reservations, fallback and budgets C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+      "firstError": "AssertionError: expected [] to include 'composite'",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+      "name": "section-specific allocations, reservations, fallback and budgets recovery-axis Fusion can serve C9 even when its original application is work",
+      "firstError": "AssertionError: expected false to be true // Object.is equality",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+      "name": "actual 12-person review cohort and isolation scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+      "firstError": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/…/comprehensivePlanCore[\"']",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+      "name": "Phase13D-1A stays off all six product paths only foundation modules reference the foundation; no writer/UI/calculation import",
+      "firstError": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "name": "customer Dayun production boundaries rejects annual_fortune bypass before order writes and allows stable input",
+      "firstError": "SyntaxError: Unexpected end of JSON input",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "name": "customer Dayun production boundaries rejects major_fortune bypass before order writes and allows stable input",
+      "firstError": "SyntaxError: Unexpected end of JSON input",
+      "classification": "known_27",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts",
+      "name": "preserves all 3073 pre-existing source/test/knowledge/report files byte for byte",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "classification": "historical_file_hash_6",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts",
+      "name": "preserves all 2755 pre-existing tracked source/test/knowledge/report files byte for byte",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "classification": "historical_file_hash_6",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityLoveResearch.test.ts",
+      "name": "preserves all 2435 existing tracked source, research, Book and fixture hashes",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "classification": "historical_file_hash_6",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts",
+      "name": "preserves all 2904 pre-existing tracked source/test/knowledge/report files byte for byte",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "classification": "historical_file_hash_6",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts",
+      "name": "preserves 2531 original tracked source, research, UI, Book, contract and fixture files",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "classification": "historical_file_hash_6",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts",
+      "name": "preserves 2639 original tracked source/research/Book/UI/test hashes",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "classification": "historical_file_hash_6",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '01-business': base calculations, all 14 year stories, transitions and selection remain identical",
+      "firstError": "AssertionError: expected '8083bc24276c5586ec058942b27600524131f…' to be 'ffc532f6be8bfa197ebe48d8657b4700a464f…' // Object.is equality",
+      "classification": "additional_historical_major_narrative_hash_6",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '02-employee': base calculations, all 14 year stories, transitions and selection remain identical",
+      "firstError": "AssertionError: expected '19ca502fb92b5dcbdba2f0ba6be3e6c5ba49f…' to be '975d59e600a7c35176969efc26824700f9deb…' // Object.is equality",
+      "classification": "additional_historical_major_narrative_hash_6",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '03-freelance': base calculations, all 14 year stories, transitions and selection remain identical",
+      "firstError": "AssertionError: expected 'ba50e8da08e85a81df99f25584e6556399e10…' to be '519a1615a8470eb16f005db27e172e6133b1c…' // Object.is equality",
+      "classification": "additional_historical_major_narrative_hash_6",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '04-time-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+      "firstError": "AssertionError: expected 'fab24c2772ad32df2d1310295b69a07769182…' to be '8be0cb81bd2f9c0166f81205ac10146a14406…' // Object.is equality",
+      "classification": "additional_historical_major_narrative_hash_6",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '05-mbti-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+      "firstError": "AssertionError: expected '24d6674e675d5e2567fe9c9dad6404f536c91…' to be 'e4db60ead95ac3c569338da41e7bdac344852…' // Object.is equality",
+      "classification": "additional_historical_major_narrative_hash_6",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '06-both-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+      "firstError": "AssertionError: expected 'cc574e5b36614f4868bda18a73b34d0b00f2e…' to be '602e1a50b541da267119847a367181a970eb9…' // Object.is equality",
+      "classification": "additional_historical_major_narrative_hash_6",
+      "reproducedAtBaseSha": true,
+      "firstErrorBeforeAfterIdentical": true
+    }
+  ]
+}

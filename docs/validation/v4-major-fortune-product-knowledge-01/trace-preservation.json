@@ -1,0 +1,13 @@
+{
+  "defaultBuild": "Next.js16.2.4 Turbopack",
+  "allAppTraceCount": 88,
+  "unnecessaryRawResearchAndValidationFiles": 0,
+  "target": {
+    "file": ".next/server/app/dev/account/api/[action]/route.js.nft.json",
+    "fileCount": 430,
+    "pathBytes": 31731151
+  },
+  "maxPathBytes": 54618281,
+  "traceFixSourceSha256": "931e1eba5d0bd46190d8a4e7eba1a45b376fd49819e8304416ded45aa7eab6c3",
+  "isExactRemoteFunctionPackageMeasurement": false
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "scope": "natal_dayun",
+    "producer": "majorFortuneEvidence:getMajorFortuneBranchInteractions",
+    "supported": [
+      "육합",
+      "삼합_with_actual_3_participants",
+      "반합",
+      "충",
+      "형_pair",
+      "파",
+      "해"
+    ],
+    "unsupported": [
+      "천간합",
+      "합화",
+      "원진",
+      "full_three_punishment_verdict",
+      "relation_strength",
+      "good_bad_score"
+    ],
+    "flow": "base currentCycle branchInteractions -> decade factors (at most2) -> majorEvidence.majorNatal -> current nontransition-year explanation (at most1)",
+    "limit": "Other cycles rebuilt for years do not carry newly calculated cycle/natal factors."
+  },
+  {
+    "scope": "natal_saeun",
+    "producer": "majorFortuneDecadeReading:annual.natalRelations",
+    "supported": [
+      "육합",
+      "삼합_with_actual_3_participants",
+      "반합",
+      "충",
+      "형_pair",
+      "파",
+      "해"
+    ],
+    "unsupported": [
+      "unknown_hour_participant",
+      "stem_hap",
+      "transformation",
+      "event_forecast"
+    ],
+    "flow": "existing year/ganji -> natal branches in year/month/day/hour order -> relations/reasons/evidenceIds -> verified bind -> lead harmony/tension",
+    "limit": "Calendar-year summary does not become precise Ipchun segmented annual evidence."
+  },
+  {
+    "scope": "dayun_saeun",
+    "producer": "majorFortuneDecadeReading:annual.cycleRelations",
+    "supported": [
+      "육합",
+      "반합",
+      "충",
+      "형_pair",
+      "파",
+      "해"
+    ],
+    "unsupported": [
+      "삼합_with_only_two_participants",
+      "stem_hap",
+      "wonjin",
+      "pre_transition_cycle_relations_in_after_row",
+      "relation_strength"
+    ],
+    "flow": "calendar row selected cycle branch + annual branch -> relations -> original reason ID -> after-transition-qualified text",
+    "limit": "Only after-cycle relation packet exists for transition year; never apply to before interval."
+  },
+  {
+    "scope": "natal_dayun_saeun",
+    "producer": null,
+    "supported": [
+      "side_by_side_comparison_of_separately_verified_pairs"
+    ],
+    "unsupported": [
+      "dedicated_three_layer_formation_verdict",
+      "composite_strength",
+      "automatic_resolution_or_cancelation",
+      "new_relation_from_one_pair"
+    ],
+    "flow": "No dedicated composite verdict in major V4 packet.",
+    "limit": "Future Binding must verify independently supported pairs and intersect periods; research does not fill facts."
+  }
+]

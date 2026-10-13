@@ -1,0 +1,894 @@
+[
+  {
+    "file": "src/lib/saju/customerDayun.ts",
+    "sha256": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123",
+    "symbols": [
+      {
+        "line": 10,
+        "text": "export const DAYUN_UNCERTAIN_MESSAGE = \"선택하신 출생시간 정보로는 대운 기준이 하나로 확정되지 않습니다. 정확한 출생시간을 입력해 주세요.\";"
+      },
+      {
+        "line": 11,
+        "text": "export type CustomerDayunInput = BirthTimeInput & { birthDate: string; gender: unknown; name?: string };"
+      },
+      {
+        "line": 12,
+        "text": "export type DayunTimeRange = { earliestKst: string; latestKst: string };"
+      },
+      {
+        "line": 13,
+        "text": "export type CustomerDayunCycle = MajorFortuneCycle & {"
+      },
+      {
+        "line": 17,
+        "text": "export type CustomerDayun = {"
+      },
+      {
+        "line": 38,
+        "text": "export type DayunSelection = {"
+      },
+      {
+        "line": 74,
+        "text": "export function formatDayunKst(instant: number): string {"
+      },
+      {
+        "line": 88,
+        "text": "export function calculateCustomerDayun(input: CustomerDayunInput): { ok: true; value: CustomerDayun } | Failure {"
+      },
+      {
+        "line": 155,
+        "text": "export function selectCustomerDayun(basis: CustomerDayun, targetYear: number, now?: Date): { ok: true; value: DayunSelection } | Failure {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/saju/types.ts",
+    "sha256": "d87ba142d78c8ae9dd2d58648cb28a205977aaa2f3cb142a9e6c11263a85986c",
+    "symbols": [
+      {
+        "line": 5,
+        "text": "export const SAJU_CALC_SPEC_VERSION = \"SAJU_CALC_SPEC_v0.1\" as const;"
+      },
+      {
+        "line": 7,
+        "text": "export type HeavenlyStem ="
+      },
+      {
+        "line": 19,
+        "text": "export type EarthlyBranch ="
+      },
+      {
+        "line": 33,
+        "text": "export type FiveElement = \"WOOD\" | \"FIRE\" | \"EARTH\" | \"METAL\" | \"WATER\";"
+      },
+      {
+        "line": 35,
+        "text": "export type YinYang = \"YANG\" | \"YIN\";"
+      },
+      {
+        "line": 37,
+        "text": "export type TenGod ="
+      },
+      {
+        "line": 49,
+        "text": "export type Pillar = {"
+      },
+      {
+        "line": 54,
+        "text": "export type CalendarType = \"SOLAR\" | \"LUNAR\";"
+      },
+      {
+        "line": 56,
+        "text": "export type Gender = \"MALE\" | \"FEMALE\" | \"OTHER_OR_UNSPECIFIED\";"
+      },
+      {
+        "line": 58,
+        "text": "export type SajuCalcInput = {"
+      },
+      {
+        "line": 70,
+        "text": "export type ElementLabel ="
+      },
+      {
+        "line": 87,
+        "text": "export type YinYangLabel = \"YIN_HEAVY\" | \"YANG_HEAVY\" | \"BALANCED\";"
+      },
+      {
+        "line": 89,
+        "text": "export type HiddenStemEntry = {"
+      },
+      {
+        "line": 96,
+        "text": "export type SajuCalcResult = {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/saju/lunarJavascriptPillars.ts",
+    "sha256": "eff812c0acb2d730ddeccf4304e150942f36c5c700bb10c4f31e8d0f89cf19f1",
+    "symbols": [
+      {
+        "line": 6,
+        "text": "export type LunarJavascriptPillarSet = {"
+      },
+      {
+        "line": 14,
+        "text": "export function createSajuCalendarContext(solarDateTimeKst: string) {"
+      },
+      {
+        "line": 39,
+        "text": "export function getLunarJavascriptPillarsFromSolarDateTime("
+      }
+    ]
+  },
+  {
+    "file": "src/lib/saju/solarTerms.ts",
+    "sha256": "4069419419f2872c4849883633674edae76ae2bac91cda991efdf8d85cee8e60",
+    "symbols": [
+      {
+        "line": 187,
+        "text": "export function getSolarTermContext(solarDateTimeKst: string) {"
+      },
+      {
+        "line": 229,
+        "text": "export function getSolarTermInstants(startKst: string, endKst: string): readonly number[] {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/majorFortuneTypes.ts",
+    "sha256": "02b2918fc71e6dbedd261a953fa1546b59bfd955f065e5fac9acb63fd5fb5a45",
+    "symbols": [
+      {
+        "line": 13,
+        "text": "export type MajorFortuneCycleBasis ="
+      },
+      {
+        "line": 18,
+        "text": "export interface MajorFortuneCycle {"
+      },
+      {
+        "line": 33,
+        "text": "export interface MajorFortuneCycleAccess {"
+      },
+      {
+        "line": 41,
+        "text": "export interface MajorFortuneSignal {"
+      },
+      {
+        "line": 56,
+        "text": "export type MajorFortuneDomainFlowKey ="
+      },
+      {
+        "line": 64,
+        "text": "export interface MajorFortuneEvidencePacket {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/majorFortuneRules.ts",
+    "sha256": "ef21ccd5d75a40bf43109a35866dbb612295afa84ce10ef722dadd75a9c91e93",
+    "symbols": [
+      {
+        "line": 62,
+        "text": "export function getMajorFortuneGanjiInfo(ganji: string): {"
+      },
+      {
+        "line": 84,
+        "text": "export function hydrateMajorFortuneCycle(input: {"
+      },
+      {
+        "line": 105,
+        "text": "export function getMajorFortuneCycleForYear(params: {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/majorFortuneEvidence.ts",
+    "sha256": "e0ac28c618a81da2523c7a79f3bc0b4bbbb8b5d071d6f20dd8d7e93ccc5e3305",
+    "symbols": [
+      {
+        "line": 639,
+        "text": "export function buildMajorFortuneElementEffect(params: {"
+      },
+      {
+        "line": 684,
+        "text": "export function getMajorFortuneBranchInteractions(params: {"
+      },
+      {
+        "line": 2052,
+        "text": "export interface MajorFortuneEvidenceMatrixQualitySummary {"
+      },
+      {
+        "line": 2188,
+        "text": "export function summarizeMajorFortuneEvidenceMatrixQuality("
+      },
+      {
+        "line": 2223,
+        "text": "export function buildMajorFortuneEvidence(input: {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+    "sha256": "a64f62449cc09b079996ae70a1d8397dda8e111558dc18fb61e19e0261e596f4",
+    "symbols": [
+      {
+        "line": 13,
+        "text": "export interface MajorDecadeReason {"
+      },
+      {
+        "line": 19,
+        "text": "export interface MajorDecadeYear {"
+      },
+      {
+        "line": 33,
+        "text": "export interface MajorDecadeReading {"
+      },
+      {
+        "line": 71,
+        "text": "export function buildMajorFortuneDecadeReading(packet: MajorFortuneEvidencePacket): MajorDecadeReading {"
+      },
+      {
+        "line": 156,
+        "text": "export function withMajorFortuneDecadeReading(packet: MajorFortuneEvidencePacket): MajorFortuneEvidencePacket {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+    "sha256": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe",
+    "symbols": [
+      {
+        "line": 15,
+        "text": "export const ANNUAL_FORTUNE_TIME_ZONE = \"Asia/Seoul\";"
+      },
+      {
+        "line": 16,
+        "text": "export const ANNUAL_FORTUNE_COMMERCE_YEAR_COUNT = 6;"
+      },
+      {
+        "line": 18,
+        "text": "export type AnnualFortuneSeoulDateParts = {"
+      },
+      {
+        "line": 24,
+        "text": "export type AnnualFortuneCommerceYearPolicy = {"
+      },
+      {
+        "line": 38,
+        "text": "export function getAnnualFortuneSeoulDateParts("
+      },
+      {
+        "line": 49,
+        "text": "export function getAnnualFortuneCurrentYear("
+      },
+      {
+        "line": 55,
+        "text": "export function getAnnualFortuneCommerceYearPolicy("
+      },
+      {
+        "line": 72,
+        "text": "export function isAnnualFortuneCommerceYearSelectable("
+      },
+      {
+        "line": 338,
+        "text": "export function getStemElement(stem: HeavenlyStem): FiveElement {"
+      },
+      {
+        "line": 342,
+        "text": "export function getBranchElement(branch: EarthlyBranch): FiveElement {"
+      },
+      {
+        "line": 346,
+        "text": "export function getStemYinYang(stem: HeavenlyStem): YinYang {"
+      },
+      {
+        "line": 350,
+        "text": "export function getBranchYinYang(branch: EarthlyBranch): YinYang {"
+      },
+      {
+        "line": 354,
+        "text": "export function getGeneratedElement(element: FiveElement): FiveElement {"
+      },
+      {
+        "line": 358,
+        "text": "export function getAnnualGanjiInfo(year: number): AnnualGanjiInfo {"
+      },
+      {
+        "line": 384,
+        "text": "export function getAnnualMonthGanjiInfo(params: {"
+      },
+      {
+        "line": 426,
+        "text": "export function getAnnualFortuneYearAccess(params: {"
+      },
+      {
+        "line": 488,
+        "text": "export function getTenGodForStemPair("
+      },
+      {
+        "line": 556,
+        "text": "export function getBranchPairRelations(left: EarthlyBranch, right: EarthlyBranch): readonly Pick<AnnualBranchInteraction, \"type\" | \"branches\">[] {"
+      },
+      {
+        "line": 664,
+        "text": "export function getAnnualBranchInteractions(params: {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v3/majorFortuneHorizon.ts",
+    "sha256": "718f70b7232ece56447d8c62927068c73973cbe18d6aef7808e43428be2ae983",
+    "symbols": [
+      {
+        "line": 15,
+        "text": "export const MAJOR_HORIZON_VERSION = \"major_fortune_v3.0-editorial.3\" as const;"
+      },
+      {
+        "line": 16,
+        "text": "export type HorizonCycle = { index: number; ganji: string; tenGod: TenGod; elements: readonly string[]; startYear: number; endYear: number; theme: string };"
+      },
+      {
+        "line": 17,
+        "text": "export type HorizonTransition = {"
+      },
+      {
+        "line": 21,
+        "text": "export type MajorHorizon = {"
+      },
+      {
+        "line": 116,
+        "text": "export function buildMajorFortuneHorizon(base: MajorFortuneReportDraft, packet: MajorFortuneEvidencePacket, facts: readonly Evidence[], calculation: SajuCalcRes"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v3/majorFortuneOutlook.ts",
+    "sha256": "3feee56d312506a5d0e2b1d67038fd7a61b45038b36b4c2ff19a4669b77c143a",
+    "symbols": [
+      {
+        "line": 15,
+        "text": "export const MAJOR_OUTLOOK_VERSION = \"major_fortune_v3.0-editorial.4\" as const;"
+      },
+      {
+        "line": 42,
+        "text": "export function buildMajorFortuneOutlook(base: MajorFortuneReportDraft, packet: MajorFortuneEvidencePacket, facts: readonly Evidence[], calculation: SajuCalcRes"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v3/majorFortuneFinalPolish.ts",
+    "sha256": "06d8b44d9d2c0fa97a02668c5216b1ed0d9bf79d16c3bb22d6ddc700f91c6525",
+    "symbols": [
+      {
+        "line": 12,
+        "text": "export const MAJOR_FINAL_VERSION = \"major_fortune_v3.0-editorial.5\" as const;"
+      },
+      {
+        "line": 82,
+        "text": "export function buildMajorFortuneFinal(base: MajorFortuneReportDraft, packet: MajorFortuneEvidencePacket, facts: readonly Evidence[], calculation: SajuCalcResul"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/majorEvidence.ts",
+    "sha256": "455b538aeb5e7bb233db32a01f24e2ce43061a03333fcb372d7e7a8314c05407",
+    "symbols": [
+      {
+        "line": 12,
+        "text": "export async function majorNarrativeEvidence(payload: unknown, evaluatedAt: string) {"
+      },
+      {
+        "line": 50,
+        "text": "export type MajorEvidence = Extract<Awaited<ReturnType<typeof majorNarrativeEvidence>>, { ok: true }>;"
+      },
+      {
+        "line": 51,
+        "text": "export type MajorYearEvidence = MajorEvidence[\"years\"][number];"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/majorComposer.ts",
+    "sha256": "3252dc1b6c1a6b3721a0d055686233cd7e996232d99f61afca494a8b47c0dcbc",
+    "symbols": [
+      {
+        "line": 20,
+        "text": "export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt: string) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/majorProductAdapter.ts",
+    "sha256": "e453ea018a4fb95e38de12adbe4fb6709b8a3372d6bec7a21e3b376be1d53e44",
+    "symbols": [
+      {
+        "line": 6,
+        "text": "export const MAJOR_PRODUCT_VERSION = \"major-product-13d-7c-v1\";"
+      },
+      {
+        "line": 10,
+        "text": "export async function buildV4MajorProduct(payload: unknown, evaluatedAt: string) {"
+      },
+      {
+        "line": 40,
+        "text": "export type MajorProduct = Extract<Awaited<ReturnType<typeof buildV4MajorProduct>>, { ok: true }>;"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/majorYearNarrative.ts",
+    "sha256": "39db26694107283c76db5e0f0cfce2ecab501c29bdf423131629b87aa8048023",
+    "symbols": [
+      {
+        "line": 11,
+        "text": "export function majorYearNarrative(e: MajorEvidence, y: MajorYearEvidence, c: MajorContext, usedRoots = new Set<string>(), importance: PeriodImportance = planMa"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/majorInteractionReading.ts",
+    "sha256": "b0b026b1c3bc0ef2babe2621d0367e85f4334243c644ae68d72d4b19d13e7d70",
+    "symbols": [
+      {
+        "line": 36,
+        "text": "export function majorInteractionReading(e: MajorEvidence, y: MajorYearEvidence, explained = new Set<string>()) {"
+      },
+      {
+        "line": 122,
+        "text": "export function withMajorInteractions(e: MajorEvidence, y: MajorYearEvidence, blocks: readonly NarrativeBlock[], explained = new Set<string>()): NarrativeBlock["
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/majorPeriodCopy.ts",
+    "sha256": "9a51297c2e937664ffc4e1a5db433dfbb9a517a4d4f4bf570a19a408ddd047e8",
+    "symbols": [
+      {
+        "line": 4,
+        "text": "export function majorYearPeriod(e: MajorEvidence, y: Pick<MajorYearEvidence, \"year\" | \"cycle\">) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/majorContext.ts",
+    "sha256": "68de3ab18f90d6f4de37345fee9fadee498f90d91a85d6cb2b7d74b254c25e56",
+    "symbols": [
+      {
+        "line": 62,
+        "text": "export function majorContext(input: NarrativeInput) {"
+      },
+      {
+        "line": 83,
+        "text": "export type MajorContext = ReturnType<typeof majorContext>;"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/majorMaterials.ts",
+    "sha256": "5022f9f4cbcf18ed74ac3d3e191ce8a2b9c1e6e0ec938b901dffd0ae2127b4c0",
+    "symbols": [
+      {
+        "line": 5,
+        "text": "export const MAJOR_MEANINGS: Record<TenGod, { theme: string; gift: string; cost: string; work: string; money: string; people: string; home: string; life: string"
+      },
+      {
+        "line": 17,
+        "text": "export const MAJOR_ELEMENT_IMAGES: Record<string, string> = {"
+      },
+      {
+        "line": 23,
+        "text": "export const MAJOR_VOICE: Record<TenGod, { opening: string; money: string; relationship: string; confidence: string; closing: string }> = {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/majorAnnualStories.ts",
+    "sha256": "92172f34e8b063346a057363ce52d83ede68bb76e541bba9587e5648c5f56cfa",
+    "symbols": [
+      {
+        "line": 22,
+        "text": "export function majorAnnualStory(god: TenGod, context: MajorContext, mature: boolean, past: boolean, current: boolean, distant = false) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/majorYearPersonalization.ts",
+    "sha256": "5eef99c41e0cbe442b17d5b6db07457f140abcca504649582adb3b2c75521601",
+    "symbols": [
+      {
+        "line": 15,
+        "text": "export function createMajorYearPersonalization(e: MajorEvidence, reserved: readonly NarrativeBlock[]) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/majorEvidenceReading.ts",
+    "sha256": "a94563882c12b12462577927e203b7f1c39a83dcb62f15bbf7a4977dd5fbcbd7",
+    "symbols": [
+      {
+        "line": 13,
+        "text": "export function separateMajorChapter(id: string, blocks: readonly NarrativeBlock[], packet: MaterialPacket, period: MajorPeriod): NarrativeBlock[] {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/majorBehavior.ts",
+    "sha256": "93d00b7d6a9c97c14819f6f8c99af40bf0b36d182826b62ad42e905b7fad1aea",
+    "symbols": [
+      {
+        "line": 10,
+        "text": "export function majorBehavior(e: MajorEvidence, c: MajorContext, god: TenGod, stage: \"now\" | \"next\") {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/periodPlanner.ts",
+    "sha256": "ed0a1c4b9d35c656bd8c2df9ea72140d696e18167b4cf8743f7d7e75dc1cf39c",
+    "symbols": [
+      {
+        "line": 4,
+        "text": "export type PeriodImportance = \"HIGH\" | \"MEDIUM\" | \"BACKGROUND\";"
+      },
+      {
+        "line": 6,
+        "text": "export function planMajorYears(e: MajorEvidence) {"
+      },
+      {
+        "line": 22,
+        "text": "export function planAnnualMonths(e: AnnualEvidence) {"
+      },
+      {
+        "line": 39,
+        "text": "export function annualYearMap(e: AnnualEvidence) {"
+      },
+      {
+        "line": 54,
+        "text": "export function monthBoundaryDescription(m: AnnualMonthEvidence) {"
+      },
+      {
+        "line": 63,
+        "text": "export function friendlyTransition(label: string) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/timeProductContext.ts",
+    "sha256": "ca3fd07c2fdd39a43c3e1694f3c36b156c26750a8d5290c31cac0a93958c32c6",
+    "symbols": [
+      {
+        "line": 18,
+        "text": "export type TimeProductPeriod = {"
+      },
+      {
+        "line": 22,
+        "text": "export type TimeContextProjection = {"
+      },
+      {
+        "line": 36,
+        "text": "export function createTimeProductContext(input: NarrativeInput, version: string) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeShadow.ts",
+    "sha256": "6c0fe9e34c523442d4964bcb2328eb4964f2eb9426c3ca0ae0d472f7b79adef2",
+    "symbols": [
+      {
+        "line": 27,
+        "text": "export type V4ShadowClock = { readonly evaluatedAt: string; readonly policyDate?: string };"
+      },
+      {
+        "line": 33,
+        "text": "export async function generateV4ShadowReport(payload: unknown, clock: V4ShadowClock): Promise<ProductGenerationResult> {"
+      },
+      {
+        "line": 105,
+        "text": "export async function runV4ShadowJob(localStore: ReliabilityStore, clock: V4ShadowClock) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "sha256": "793ef8b1dce3b693e01a6a243a7dfcca793af467b7ac232b1219523029a2feee",
+    "symbols": [
+      {
+        "line": 28,
+        "text": "export type V4Composition ="
+      },
+      {
+        "line": 35,
+        "text": "export type V4RuntimeEvidence = {"
+      },
+      {
+        "line": 52,
+        "text": "export function stableV4Json(v: unknown): string {"
+      },
+      {
+        "line": 57,
+        "text": "export const v4Digest = (v: unknown) => createHash(\"sha256\").update(stableV4Json(v)).digest(\"hex\");"
+      },
+      {
+        "line": 62,
+        "text": "export function projectV4Composition(c: V4Composition): V4CustomerReport {"
+      },
+      {
+        "line": 87,
+        "text": "export function validateV4Publication(product: string, draft: unknown, evidence: unknown): { ok: boolean; errors: string[] } {"
+      },
+      {
+        "line": 172,
+        "text": "export function projectV4Tables(e: V4RuntimeEvidence): V4CustomerTables {"
+      },
+      {
+        "line": 188,
+        "text": "export function projectV4Snapshot(snapshot: unknown): V4ShadowView | null {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-generation/majorFortuneGenerationHandler.ts",
+    "sha256": "702921647894f7da98453c11809ee8ee612ac102d696b88c8806c290b5bd5960",
+    "symbols": [
+      {
+        "line": 45,
+        "text": "export type MajorFortuneGenerationErrorCode ="
+      },
+      {
+        "line": 50,
+        "text": "export type MajorFortuneGenerationResult ="
+      },
+      {
+        "line": 66,
+        "text": "export type MajorFortuneGenerationHandlerOptions = {"
+      },
+      {
+        "line": 123,
+        "text": "export async function generateMajorFortuneProductDraft("
+      },
+      {
+        "line": 216,
+        "text": "export function calculateMajorFortuneSaju("
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-generation/majorFortuneV3Generation.ts",
+    "sha256": "c7ee6d2dc869eb67616755a99b9fb99ff855b0f344bc3954928adfc2b089bf5a",
+    "symbols": [
+      {
+        "line": 28,
+        "text": "export async function createMajorFortuneV3(payload: unknown, options: { now?: () => Date; edition?: \"legacy-depth\" | \"legacy-horizon\" | \"legacy-outlook\" | \"lega"
+      },
+      {
+        "line": 43,
+        "text": "export function validateMajorFortuneV3(draft: unknown, evidence: unknown): readonly string[] {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-generation/productGenerationDispatcher.ts",
+    "sha256": "5c9a88ad616591f53d530968b9facaa9f442d4ac53250386f51c454941b1a4dc",
+    "symbols": [
+      {
+        "line": 39,
+        "text": "export type ProductGenerationErrorCode ="
+      },
+      {
+        "line": 45,
+        "text": "export type ProductGenerationSuccessResult = {"
+      },
+      {
+        "line": 52,
+        "text": "export type ProductGenerationNotImplementedResult = {"
+      },
+      {
+        "line": 61,
+        "text": "export type ProductGenerationInvalidInputResult = {"
+      },
+      {
+        "line": 71,
+        "text": "export type ProductGenerationResult = ("
+      },
+      {
+        "line": 76,
+        "text": "export type ProductGenerationHandler = ("
+      },
+      {
+        "line": 81,
+        "text": "export type ProductGenerationDispatcherOptions = {"
+      },
+      {
+        "line": 100,
+        "text": "export function createProductGenerationDispatcherOptionsFromWriterRuntime("
+      },
+      {
+        "line": 122,
+        "text": "export function getProductGenerationHandler("
+      },
+      {
+        "line": 128,
+        "text": "export function dispatchProductGenerationInput("
+      },
+      {
+        "line": 158,
+        "text": "export function prepareProductGenerationFromPayload("
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-generation/productPreviewSnapshot.ts",
+    "sha256": "339ef6fdad096da95457bb9694b7727dd22604c88a8de0dea5433b32b2319274",
+    "symbols": [
+      {
+        "line": 19,
+        "text": "export const PRODUCT_PREVIEW_PRODUCT_TYPES = ["
+      },
+      {
+        "line": 28,
+        "text": "export type ProductPreviewProductType ="
+      },
+      {
+        "line": 31,
+        "text": "export type ComprehensiveV2ProductPreviewDraft ="
+      },
+      {
+        "line": 36,
+        "text": "export type ProductPreviewSnapshotDraft ="
+      },
+      {
+        "line": 50,
+        "text": "export type ProductPreviewSnapshotAccess = {"
+      },
+      {
+        "line": 56,
+        "text": "export type ProductPreviewSnapshot = {"
+      },
+      {
+        "line": 73,
+        "text": "export type ProductPreviewSnapshotErrorCode ="
+      },
+      {
+        "line": 82,
+        "text": "export type ProductPreviewSnapshotResult ="
+      },
+      {
+        "line": 92,
+        "text": "export type CreateProductPreviewSnapshotParams = {"
+      },
+      {
+        "line": 111,
+        "text": "export function createProductPreviewSnapshot("
+      },
+      {
+        "line": 177,
+        "text": "export function isProductPreviewSnapshot("
+      },
+      {
+        "line": 235,
+        "text": "export type { ReportProductKey, ReportProductSlug };"
+      }
+    ]
+  },
+  {
+    "file": "src/app/dev/book-preview/bookProjection.ts",
+    "sha256": "1759e0707414c5eef5f4efc9e067b2f4b54b9693743d80e5352463537996e222",
+    "symbols": [
+      {
+        "line": 40,
+        "text": "export function bookFeatureInventory(e: V4RuntimeEvidence, slot: \"person\" | \"personA\" | \"personB\", name: string): Entry[] {"
+      },
+      {
+        "line": 88,
+        "text": "export function projectBook(e: V4RuntimeEvidence): BookData | null {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/book/storedReport.tsx",
+    "sha256": "ea5748a27f7f6fdad4a3faefb01546d2f855e7365541f6c4c676eaa18b6a5590",
+    "symbols": [
+      {
+        "line": 11,
+        "text": "export const validateBookPublication: typeof validateProductPublication = (product, draft, evidence) =>"
+      },
+      {
+        "line": 15,
+        "text": "export function storedBook(snapshot: unknown, shareUrl?: string | null) {"
+      },
+      {
+        "line": 22,
+        "text": "export function StoredBookReport({ snapshot, shareUrl, home, saveToLibrary, shareOwner }: { snapshot: unknown; shareUrl?: string | null; home?: string; saveToLi"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/book/paidRuntime.ts",
+    "sha256": "9130235b1bdcc313fc5806952df600ef8129aa5e3a402cd46b15fbafaba5fe59",
+    "symbols": [
+      {
+        "line": 12,
+        "text": "export async function runPublicPaidReportJob(store: ReliabilityStore, runtime: ReportWriterRuntime) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/tickets/publicationWorker.ts",
+    "sha256": "9c8061b72cc096c8bf0c12d283ace23a651fdefb3feee4d5aa42c94cd76fef42",
+    "symbols": [
+      {
+        "line": 13,
+        "text": "export const TICKET_WORKER_LIMITS = { maxJobs: 2, claimWindowMs: 30_000, maxRssBytes: 1.25 * 1024 ** 3 } as const;"
+      },
+      {
+        "line": 14,
+        "text": "export async function runTicketPublicationJob(store: TicketPublicationStore, generate?: ProductGenerator): Promise<TicketResult> {"
+      },
+      {
+        "line": 46,
+        "text": "export async function runTicketPublicationBatch(store: TicketPublicationStore, dependencies: { now?: () => number; rss?: () => number; runJob?: typeof runTicket"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/payment/paidReportReliability.ts",
+    "sha256": "c63a8d5d7216b6d613626e30e20362fe636352fb081a7508876e2e96f4ef7f78",
+    "symbols": [
+      {
+        "line": 13,
+        "text": "export async function confirmPaidReport(input: TossConfirmRequest, store: ReliabilityStore,"
+      },
+      {
+        "line": 32,
+        "text": "export type ProductGenerator = (payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance) => Pr"
+      },
+      {
+        "line": 35,
+        "text": "export async function generateReportSnapshot(job: { payload: unknown; product_type: string; report_id: string; created_at: string }, runtime: ReportWriterRuntim"
+      },
+      {
+        "line": 59,
+        "text": "export async function runPaidReportJob(store: ReliabilityStore, runtime: ReportWriterRuntime, generate: ProductGenerator = generateProductReport, validatePublic"
+      },
+      {
+        "line": 100,
+        "text": "export async function readPublishedReport(store: ReliabilityStore, reportId: string, validatePublication = validateProductPublication) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/tickets/localDatabase.ts",
+    "sha256": "931e1eba5d0bd46190d8a4e7eba1a45b376fd49819e8304416ded45aa7eab6c3",
+    "symbols": [
+      {
+        "line": 10,
+        "text": "export async function createTicketTestDatabase(): Promise<PGlite> {"
+      },
+      {
+        "line": 23,
+        "text": "export function sqlTicketStore(db: PGlite): TicketStore {"
+      },
+      {
+        "line": 27,
+        "text": "export function failNextLocalTicketPublish(user: string) {"
+      },
+      {
+        "line": 30,
+        "text": "export const localTicketUserId = (user: string) => {"
+      },
+      {
+        "line": 34,
+        "text": "export async function localTicketStore(): Promise<TicketStore | null> {"
+      },
+      {
+        "line": 49,
+        "text": "export async function localTicketDatabase() {"
+      },
+      {
+        "line": 54,
+        "text": "export async function grantTestReportTickets(store: TicketStore, user: string, scenario: \"one\" | \"several\") {"
+      }
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "fixedClock": "2026-10-12T12:00:00+09:00",
+  "actualMajorBooks": 6,
+  "calculationEvidenceDraftNarrativeBookDigests": 30,
+  "allDigestsIdentical": true,
+  "fullObservationsEqual": true,
+  "observationDigestBefore": "5758fef184e47e99e9111547e321649a65d9813738b291f3717f15e7715b676e",
+  "observationDigestAfter": "5758fef184e47e99e9111547e321649a65d9813738b291f3717f15e7715b676e",
+  "exactAndRangeBoundaryCasesIdentical": true,
+  "shiftedBaseYearPreserved": true,
+  "existingSixProductFrozenChecks": 64,
+  "externalPaidCalls": 0,
+  "productionDatabaseWrites": 0,
+  "existingCustomerBooksReadOrWritten": 0
+}

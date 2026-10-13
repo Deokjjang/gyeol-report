@@ -1,0 +1,6 @@
+{
+  "pairFiles": 16,
+  "pairRecords": 256,
+  "policy": "single-person major product has no second-person input; pair results do not become personal time facts; no directional pair binding",
+  "preservation": "exact record locators in inherited-research-inventory.json"
+}

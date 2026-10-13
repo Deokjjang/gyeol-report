@@ -1,0 +1,530 @@
+[
+  {
+    "caseId": "01-business",
+    "selectedNatalMaterials": 17,
+    "availableNatalSeeds": 205,
+    "actuallyDisplayedNatalFeatureRoots": [
+      "sinsal_gwimun",
+      "day_pillar_gyeongja",
+      "gwiin_cheoneul",
+      "ten_god_zheng_yin",
+      "sinsal_dohwa",
+      "ten_god_shang_guan",
+      "ten_god_zheng_cai",
+      "twelve_sinsal_banan",
+      "sinsal_hyeonchim",
+      "twelve_sinsal_jangseong",
+      "ten_god_zheng_guan",
+      "day_master_gyeonggeum",
+      "ten_god_shi_shen"
+    ],
+    "availableFusionIds": [
+      "infj-depth",
+      "infj-marriage"
+    ],
+    "actuallyDisplayedFusionIds": [
+      "fusion:COMPLEMENT:C077:social:CARE:1:AUTONOMY:1",
+      "fusion:REINFORCE:CARE:social:CARE:1:CARE:1"
+    ],
+    "timeRepresented": [
+      {
+        "period": "current-dayun",
+        "candidate": "editorial:MYEONGLI_PATTERN:tension:SELF_AND_PRESSURE",
+        "theme": "AUTONOMY_AND_SELF_DIRECTION",
+        "natalEvidence": [
+          "natal:day:stem:庚",
+          "natal:ten-god:day:MAIN:癸",
+          "natal:ten-god:month:MAIN:丁",
+          "natal:ten-god:year:SUB:癸"
+        ],
+        "timeEvidence": [
+          "majorFortuneV3Generation:createMajorFortuneV3:writer-disabled",
+          "majorFortuneHorizon:14-year-window",
+          "majorFortuneDecadeReading:major-decade-v2",
+          "calendar:saju-calendar-kst-v2",
+          "dayun:dayun-kst-sect2-v1",
+          "dayun-cycle:4:戊寅",
+          "period-ten-god:편인"
+        ],
+        "mbtiNodes": [],
+        "pattern": "P01:0"
+      },
+      {
+        "period": "year-2026",
+        "candidate": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+        "theme": "SUCCESS_STYLE",
+        "natalEvidence": [
+          "foundation:element:WOOD:BALANCED",
+          "natal:hour:branch:卯",
+          "natal:month:stem:壬",
+          "natal:ten-god:year:MINOR:辛",
+          "natal:year:stem:乙"
+        ],
+        "timeEvidence": [
+          "major:4:戊寅:year:2026:丙午",
+          "major:4:戊寅:year:2026:丙午:ten-god",
+          "major:4:戊寅:year:2026:丙午:cycle:반합:午寅:cycle",
+          "major:4:戊寅:year:2026:丙午:natal:해:丑午:year",
+          "major:4:戊寅:year:2026:丙午:natal:형:午午:month",
+          "major:4:戊寅:year:2026:丙午:natal:충:子午:day",
+          "major:4:戊寅:year:2026:丙午:natal:파:卯午:hour"
+        ],
+        "mbtiNodes": [],
+        "pattern": "P24:0"
+      },
+      {
+        "period": "year-2033",
+        "candidate": "editorial:PERSONAL_RESONANCE:resonance:PR061",
+        "theme": "pr-duplicate:resonance:PR050:resonance:PR055:resonance:PR061:resonance:PR072:resonance:PR089",
+        "natalEvidence": [
+          "natal:hour:branch:卯",
+          "natal:hour:stem:己",
+          "natal:ten-god:day:MAIN:癸",
+          "natal:ten-god:hour:visible:己",
+          "natal:ten-god:month:SUB:己",
+          "natal:ten-god:month:visible:壬",
+          "natal:ten-god:year:MAIN:己",
+          "natal:ten-god:year:SUB:癸",
+          "natal:year:stem:乙"
+        ],
+        "timeEvidence": [
+          "major:5:丁丑:year:2033:癸丑",
+          "major:5:丁丑:year:2033:癸丑:ten-god",
+          "major:5:丁丑:year:2033:癸丑:boundary",
+          "major:5:丁丑:year:2033:癸丑:natal:해:丑午:month",
+          "major:5:丁丑:year:2033:癸丑:natal:육합:子丑:day"
+        ],
+        "mbtiNodes": [],
+        "pattern": "P01:1"
+      }
+    ],
+    "numberOfDisplayedBlocks": 118,
+    "sparseBranchRelationYears": [],
+    "transitionYears": [
+      2023,
+      2033
+    ],
+    "notAllCandidatesDisplayed": true
+  },
+  {
+    "caseId": "02-employee",
+    "selectedNatalMaterials": 25,
+    "availableNatalSeeds": 291,
+    "actuallyDisplayedNatalFeatureRoots": [
+      "sinsal_hyeonchim",
+      "day_pillar_gapsin",
+      "ten_god_qi_sha",
+      "gwiin_cheoneul",
+      "sinsal_dohwa",
+      "ten_god_shang_guan",
+      "gwiin_cheondeok",
+      "ten_god_zheng_cai",
+      "gwiin_woldeok",
+      "ten_god_zheng_yin",
+      "sinsal_yangin",
+      "ten_god_jie_cai",
+      "sinsal_gwimun",
+      "twelve_sinsal_banan",
+      "twelve_sinsal_jangseong"
+    ],
+    "availableFusionIds": [
+      "entj-needle",
+      "entj-pressure",
+      "entj-wealth"
+    ],
+    "actuallyDisplayedFusionIds": [
+      "entj-pressure",
+      "entj-wealth",
+      "fusion:COMPLEMENT:C026:identity:SOCIAL_ATTUNEMENT:1:LEADERSHIP:1"
+    ],
+    "timeRepresented": [
+      {
+        "period": "current-dayun",
+        "candidate": "editorial:MYEONGLI_PATTERN:tension:SELF_AND_PRESSURE",
+        "theme": "AUTONOMY_AND_SELF_DIRECTION",
+        "natalEvidence": [
+          "natal:day:stem:甲",
+          "natal:ten-god:day:MAIN:庚",
+          "natal:ten-god:day:SUB:壬",
+          "natal:ten-god:hour:visible:丁",
+          "natal:ten-god:month:SUB:丁",
+          "natal:ten-god:year:MAIN:丁",
+          "natal:ten-god:year:visible:庚",
+          "natal:year:stem:庚",
+          "supplement:marker:YANGIN"
+        ],
+        "timeEvidence": [
+          "majorFortuneV3Generation:createMajorFortuneV3:writer-disabled",
+          "majorFortuneHorizon:14-year-window",
+          "majorFortuneDecadeReading:major-decade-v2",
+          "calendar:saju-calendar-kst-v2",
+          "dayun:dayun-kst-sect2-v1",
+          "dayun-cycle:4:己卯",
+          "period-ten-god:정재"
+        ],
+        "mbtiNodes": [],
+        "pattern": "P01:0"
+      },
+      {
+        "period": "year-2030",
+        "candidate": "editorial:PERSONAL_RESONANCE:resonance:PR059",
+        "theme": "READ_ROOM_AND_LEAD",
+        "natalEvidence": [
+          "natal:hour:branch:卯",
+          "natal:hour:stem:丁",
+          "natal:month:branch:未",
+          "natal:month:stem:癸",
+          "natal:ten-god:day:MAIN:庚",
+          "natal:ten-god:year:visible:庚",
+          "supplement:marker:DOHWA",
+          "supplement:marker:JANGSEONG",
+          "supplement:marker:WOLDEOK",
+          "supplement:stage:hour:제왕"
+        ],
+        "timeEvidence": [
+          "major:4:己卯:year:2030:庚戌",
+          "major:4:己卯:year:2030:庚戌:ten-god",
+          "major:4:己卯:year:2030:庚戌:cycle:육합:卯戌:cycle",
+          "major:4:己卯:year:2030:庚戌:natal:반합:戌午:year",
+          "major:4:己卯:year:2030:庚戌:natal:형:戌未:month",
+          "major:4:己卯:year:2030:庚戌:natal:파:未戌:month",
+          "major:4:己卯:year:2030:庚戌:natal:육합:卯戌:hour"
+        ],
+        "mbtiNodes": [],
+        "pattern": "P24:0"
+      }
+    ],
+    "numberOfDisplayedBlocks": 118,
+    "sparseBranchRelationYears": [
+      2028
+    ],
+    "transitionYears": [
+      2024,
+      2034
+    ],
+    "notAllCandidatesDisplayed": true
+  },
+  {
+    "caseId": "03-freelance",
+    "selectedNatalMaterials": 23,
+    "availableNatalSeeds": 270,
+    "actuallyDisplayedNatalFeatureRoots": [
+      "ten_god_pian_yin",
+      "day_pillar_musin",
+      "ten_god_shi_shen",
+      "ten_god_bijian",
+      "gwiin_jaego",
+      "gwiin_amrok",
+      "gwiin_munchang",
+      "ten_god_zheng_guan",
+      "gwiin_cheondeok",
+      "ten_god_qi_sha",
+      "ten_god_pian_cai",
+      "sinsal_gwimun",
+      "day_master_muto"
+    ],
+    "availableFusionIds": [
+      "enfp-connection"
+    ],
+    "actuallyDisplayedFusionIds": [],
+    "timeRepresented": [
+      {
+        "period": "current-dayun",
+        "candidate": "editorial:MYEONGLI_PATTERN:tension:EXPAND_AND_MAINTAIN",
+        "theme": "GROWTH_AND_EXPANSION",
+        "natalEvidence": [
+          "foundation:element:EARTH:STRONG",
+          "foundation:element:WOOD:BALANCED",
+          "foundation:yin_yang:STRONG_YANG",
+          "natal:day:stem:戊",
+          "natal:hour:branch:辰",
+          "natal:month:stem:乙",
+          "natal:ten-god:day:SUB:壬",
+          "natal:ten-god:hour:MINOR:癸",
+          "natal:ten-god:month:MAIN:壬",
+          "natal:ten-god:year:MINOR:丁",
+          "natal:year:branch:戌",
+          "natal:year:stem:甲",
+          "supplement:marker:JAEGO",
+          "supplement:stage:year:묘"
+        ],
+        "timeEvidence": [
+          "majorFortuneV3Generation:createMajorFortuneV3:writer-disabled",
+          "majorFortuneHorizon:14-year-window",
+          "majorFortuneDecadeReading:major-decade-v2",
+          "calendar:saju-calendar-kst-v2",
+          "dayun:dayun-kst-sect2-v1",
+          "dayun-cycle:3:壬申",
+          "period-ten-god:편재"
+        ],
+        "mbtiNodes": [],
+        "pattern": "P01:1"
+      },
+      {
+        "period": "year-2026",
+        "candidate": "editorial:MYEONGLI_PATTERN:tension:SELF_AND_PRESSURE",
+        "theme": "AUTONOMY_AND_SELF_DIRECTION",
+        "natalEvidence": [
+          "natal:day:stem:戊",
+          "natal:ten-god:day:MINOR:戊",
+          "natal:ten-god:hour:MAIN:戊",
+          "natal:ten-god:hour:SUB:乙",
+          "natal:ten-god:hour:visible:丙",
+          "natal:ten-god:month:SUB:甲",
+          "natal:ten-god:month:visible:乙",
+          "natal:ten-god:year:MAIN:戊",
+          "natal:ten-god:year:SUB:辛",
+          "natal:ten-god:year:visible:甲",
+          "natal:year:branch:戌",
+          "natal:year:stem:甲"
+        ],
+        "timeEvidence": [
+          "major:3:壬申:year:2026:丙午",
+          "major:3:壬申:year:2026:丙午:ten-god",
+          "major:3:壬申:year:2026:丙午:natal:반합:午戌:year",
+          "major:3:壬申:year:2026:丙午:element:fire:missing"
+        ],
+        "mbtiNodes": [],
+        "pattern": "P24:0"
+      }
+    ],
+    "numberOfDisplayedBlocks": 116,
+    "sparseBranchRelationYears": [],
+    "transitionYears": [
+      2028
+    ],
+    "notAllCandidatesDisplayed": true
+  },
+  {
+    "caseId": "04-time-unknown",
+    "selectedNatalMaterials": 16,
+    "availableNatalSeeds": 194,
+    "actuallyDisplayedNatalFeatureRoots": [
+      "sinsal_gwimun",
+      "day_pillar_gyeongja",
+      "gwiin_cheoneul",
+      "ten_god_shi_shen",
+      "sinsal_dohwa",
+      "ten_god_zheng_yin",
+      "ten_god_shang_guan",
+      "ten_god_zheng_cai",
+      "twelve_sinsal_banan",
+      "twelve_sinsal_jangseong",
+      "ten_god_zheng_guan",
+      "day_master_gyeonggeum"
+    ],
+    "availableFusionIds": [
+      "infj-depth",
+      "infj-marriage"
+    ],
+    "actuallyDisplayedFusionIds": [
+      "fusion:REINFORCE:PATTERN_SENSE:identity:PATTERN_SENSE:1:PATTERN_SENSE:1",
+      "fusion:REINFORCE:EXPRESSION:social:EXPRESSION:1:EXPRESSION:1"
+    ],
+    "timeRepresented": [
+      {
+        "period": "current-dayun",
+        "candidate": "editorial:FUSION:fusion:REINFORCE:PATTERN_SENSE:identity:PATTERN_SENSE:1:PATTERN_SENSE:1",
+        "theme": "fusion-duplicate:fusion:COMPLEMENT:C002:identity:PRECISION:1:DEPTH:1",
+        "natalEvidence": [
+          "natal:day:branch:子",
+          "natal:month:stem:壬",
+          "supplement:marker:GWIMUN"
+        ],
+        "timeEvidence": [
+          "majorFortuneV3Generation:createMajorFortuneV3:writer-disabled",
+          "majorFortuneHorizon:14-year-window",
+          "majorFortuneDecadeReading:major-decade-v2",
+          "calendar:saju-calendar-kst-v2",
+          "dayun:dayun-kst-sect2-v1",
+          "dayun-cycle:4:戊寅",
+          "period-ten-god:편인"
+        ],
+        "mbtiNodes": [
+          "mbti:INFJ:traits:identity:quiet_visionary:plainKo"
+        ],
+        "pattern": "P28:0"
+      },
+      {
+        "period": "year-2026",
+        "candidate": "editorial:MYEONGLI_PATTERN:tension:SELF_AND_PRESSURE",
+        "theme": "AUTONOMY_AND_SELF_DIRECTION",
+        "natalEvidence": [
+          "natal:day:stem:庚",
+          "natal:ten-god:day:MAIN:癸",
+          "natal:ten-god:month:MAIN:丁",
+          "natal:ten-god:year:SUB:癸"
+        ],
+        "timeEvidence": [
+          "major:4:戊寅:year:2026:丙午",
+          "major:4:戊寅:year:2026:丙午:ten-god",
+          "major:4:戊寅:year:2026:丙午:cycle:반합:午寅:cycle",
+          "major:4:戊寅:year:2026:丙午:natal:해:丑午:year",
+          "major:4:戊寅:year:2026:丙午:natal:형:午午:month",
+          "major:4:戊寅:year:2026:丙午:natal:충:子午:day"
+        ],
+        "mbtiNodes": [],
+        "pattern": "P01:0"
+      },
+      {
+        "period": "year-2033",
+        "candidate": "editorial:FUSION:fusion:REINFORCE:EXPRESSION:social:EXPRESSION:1:EXPRESSION:1",
+        "theme": "fusion-duplicate:fusion:COMPLEMENT:C050:identity:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+        "natalEvidence": [
+          "natal:month:branch:午",
+          "natal:ten-god:day:MAIN:癸",
+          "natal:ten-god:month:visible:壬",
+          "natal:ten-god:year:SUB:癸",
+          "supplement:marker:DOHWA",
+          "supplement:stage:month:목욕"
+        ],
+        "timeEvidence": [
+          "major:5:丁丑:year:2033:癸丑",
+          "major:5:丁丑:year:2033:癸丑:ten-god",
+          "major:5:丁丑:year:2033:癸丑:boundary",
+          "major:5:丁丑:year:2033:癸丑:natal:해:丑午:month",
+          "major:5:丁丑:year:2033:癸丑:natal:육합:子丑:day"
+        ],
+        "mbtiNodes": [
+          "mbti:INFJ:traits:strengths:creative_vision:plainKo"
+        ],
+        "pattern": "P28:0"
+      }
+    ],
+    "numberOfDisplayedBlocks": 118,
+    "sparseBranchRelationYears": [],
+    "transitionYears": [
+      2023,
+      2033
+    ],
+    "notAllCandidatesDisplayed": true
+  },
+  {
+    "caseId": "05-mbti-unknown",
+    "selectedNatalMaterials": 17,
+    "availableNatalSeeds": 205,
+    "actuallyDisplayedNatalFeatureRoots": [
+      "day_pillar_gyeongja",
+      "ten_god_zheng_yin",
+      "gwiin_cheoneul",
+      "sinsal_dohwa",
+      "ten_god_shang_guan",
+      "sinsal_gwimun",
+      "ten_god_zheng_cai",
+      "twelve_sinsal_banan",
+      "sinsal_hyeonchim",
+      "twelve_sinsal_jangseong",
+      "ten_god_zheng_guan",
+      "day_master_gyeonggeum",
+      "ten_god_shi_shen"
+    ],
+    "availableFusionIds": [],
+    "actuallyDisplayedFusionIds": [],
+    "timeRepresented": [
+      {
+        "period": "current-dayun",
+        "candidate": "editorial:MYEONGLI_PATTERN:tension:SELF_AND_PRESSURE",
+        "theme": "AUTONOMY_AND_SELF_DIRECTION",
+        "natalEvidence": [
+          "natal:day:stem:庚",
+          "natal:ten-god:day:MAIN:癸",
+          "natal:ten-god:month:MAIN:丁",
+          "natal:ten-god:year:SUB:癸"
+        ],
+        "timeEvidence": [
+          "majorFortuneV3Generation:createMajorFortuneV3:writer-disabled",
+          "majorFortuneHorizon:14-year-window",
+          "majorFortuneDecadeReading:major-decade-v2",
+          "calendar:saju-calendar-kst-v2",
+          "dayun:dayun-kst-sect2-v1",
+          "dayun-cycle:4:戊寅",
+          "period-ten-god:편인"
+        ],
+        "mbtiNodes": [],
+        "pattern": "P01:0"
+      },
+      {
+        "period": "year-2026",
+        "candidate": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+        "theme": "SUCCESS_STYLE",
+        "natalEvidence": [
+          "foundation:element:WOOD:BALANCED",
+          "natal:hour:branch:卯",
+          "natal:month:stem:壬",
+          "natal:ten-god:year:MINOR:辛",
+          "natal:year:stem:乙"
+        ],
+        "timeEvidence": [
+          "major:4:戊寅:year:2026:丙午",
+          "major:4:戊寅:year:2026:丙午:ten-god",
+          "major:4:戊寅:year:2026:丙午:cycle:반합:午寅:cycle",
+          "major:4:戊寅:year:2026:丙午:natal:해:丑午:year",
+          "major:4:戊寅:year:2026:丙午:natal:형:午午:month",
+          "major:4:戊寅:year:2026:丙午:natal:충:子午:day",
+          "major:4:戊寅:year:2026:丙午:natal:파:卯午:hour"
+        ],
+        "mbtiNodes": [],
+        "pattern": "P24:0"
+      }
+    ],
+    "numberOfDisplayedBlocks": 115,
+    "sparseBranchRelationYears": [],
+    "transitionYears": [
+      2023,
+      2033
+    ],
+    "notAllCandidatesDisplayed": true
+  },
+  {
+    "caseId": "06-both-unknown",
+    "selectedNatalMaterials": 16,
+    "availableNatalSeeds": 194,
+    "actuallyDisplayedNatalFeatureRoots": [
+      "day_pillar_gyeongja",
+      "ten_god_shi_shen",
+      "gwiin_cheoneul",
+      "sinsal_dohwa",
+      "ten_god_shang_guan",
+      "sinsal_gwimun",
+      "ten_god_zheng_cai",
+      "twelve_sinsal_banan",
+      "ten_god_zheng_yin",
+      "twelve_sinsal_jangseong",
+      "ten_god_zheng_guan",
+      "day_master_gyeonggeum"
+    ],
+    "availableFusionIds": [],
+    "actuallyDisplayedFusionIds": [],
+    "timeRepresented": [
+      {
+        "period": "current-dayun",
+        "candidate": "editorial:MYEONGLI_PATTERN:tension:IDEAS_TO_MAKING",
+        "theme": "CREATION_AND_OUTPUT",
+        "natalEvidence": [
+          "natal:day:branch:子",
+          "natal:ten-god:month:visible:壬",
+          "supplement:marker:GWIMUN",
+          "supplement:stage:day:사"
+        ],
+        "timeEvidence": [
+          "majorFortuneV3Generation:createMajorFortuneV3:writer-disabled",
+          "majorFortuneHorizon:14-year-window",
+          "majorFortuneDecadeReading:major-decade-v2",
+          "calendar:saju-calendar-kst-v2",
+          "dayun:dayun-kst-sect2-v1",
+          "dayun-cycle:4:戊寅",
+          "period-ten-god:편인"
+        ],
+        "mbtiNodes": [],
+        "pattern": "P01:1"
+      }
+    ],
+    "numberOfDisplayedBlocks": 114,
+    "sparseBranchRelationYears": [],
+    "transitionYears": [
+      2023,
+      2033
+    ],
+    "notAllCandidatesDisplayed": true
+  }
+]

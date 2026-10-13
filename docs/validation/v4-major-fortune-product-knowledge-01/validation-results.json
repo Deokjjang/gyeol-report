@@ -1,0 +1,64 @@
+{
+  "baseSha": "565c4613d4e01d65510380e0f597c535f81396c0",
+  "tests": {
+    "baseline-regression": {
+      "passed": 225,
+      "failed": 27,
+      "pending": 0
+    },
+    "after-regression": {
+      "passed": 225,
+      "failed": 27,
+      "pending": 0
+    },
+    "baseline-inherited": {
+      "passed": 9298,
+      "failed": 6,
+      "pending": 0
+    },
+    "after-inherited": {
+      "passed": 9298,
+      "failed": 6,
+      "pending": 0
+    },
+    "baseline-major-separation": {
+      "passed": 3,
+      "failed": 6,
+      "pending": 0
+    },
+    "major-regression": {
+      "passed": 162,
+      "failed": 6,
+      "pending": 0
+    },
+    "new-tests-final": {
+      "passed": 1671,
+      "failed": 0,
+      "pending": 0
+    }
+  },
+  "uniqueRelatedFiles": 26,
+  "totalRelatedPasses": 11356,
+  "totalExistingFailures": 39,
+  "known33Reproduced": true,
+  "additionalBaselineMajorNarrativeHashFailures": 6,
+  "newFailures": 0,
+  "typescriptBefore": 0,
+  "typescriptAfter": 0,
+  "newTypeScriptDiagnostics": 0,
+  "lint": "PASS",
+  "defaultProductionBuild": "PASS",
+  "buildWarnings": 0,
+  "diffCheck": "PASS",
+  "sixProductCalculationsEvidenceNarrativesBookSnapshot": "64 unchanged frozen integration checks",
+  "actualMajorDigests": "30/30 equal",
+  "allBaseFilesUnchanged": true,
+  "allExistingResearchPreserved": true,
+  "allOriginalWorktreesPreserved": true,
+  "newRuntimeImports": 0,
+  "newResearchConnected": false,
+  "productionWrites": 0,
+  "paidCalls": 0,
+  "wholeProjectSuiteRerun": false,
+  "preview": "exact pushed SHA READY must be checked; receipt added after push"
+}
