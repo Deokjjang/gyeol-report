@@ -1,0 +1,13 @@
+{
+  "deploymentId": "dpl_9UEmMxPwftCQpQc6QKXD4bkbsojq",
+  "url": "https://gyeol-report-1apg8a3rg-gyeol-report-s-projects.vercel.app",
+  "branch": "v4/major-fortune-product-knowledge-01",
+  "sha": "a29ef84a3d66260f22f4cfa1594152176738ce88",
+  "state": "READY",
+  "target": null,
+  "projectId": "prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+  "createdAt": 1791932125846,
+  "readyStateConfirmed": true,
+  "productionDeploymentExecuted": false,
+  "warningCountNotAssertedFromTruncatedLogs": true
+}

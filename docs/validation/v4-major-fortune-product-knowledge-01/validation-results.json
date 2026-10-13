@@ -60,5 +60,11 @@
   "productionWrites": 0,
   "paidCalls": 0,
   "wholeProjectSuiteRerun": false,
-  "preview": "exact pushed SHA READY must be checked; receipt added after push"
+  "preview": {
+    "implementationSha": "a29ef84a3d66260f22f4cfa1594152176738ce88",
+    "state": "READY",
+    "target": null,
+    "receipt": "preview-receipt.json",
+    "documentationOnlyFollowUpShaVerifiedInFinalResponse": true
+  }
 }

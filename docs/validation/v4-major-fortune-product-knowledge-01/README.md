@@ -146,6 +146,8 @@ MBTI 16유형의 기존 512개 연구 레코드는 locator와 전체 원래 상�
 
 ## Git·Preview·종료
 
-신규 대운 연구·두 테스트·본 검증 폴더만 commit/push한다. 정확한 push SHA의 Preview 결과는 검증 receipt와 최종 응답에 기록한다. master·Production 배포·이벤트 활성화는 실행하지 않는다.
+신규 대운 연구·두 테스트·본 검증 폴더만 구현 커밋 `a29ef84a3d66260f22f4cfa1594152176738ce88`으로 commit/push했다. 원격 SHA 일치 및 해당 SHA의 [Vercel Preview READY](https://gyeol-report-1apg8a3rg-gyeol-report-s-projects.vercel.app)를 확인했다. [검증 receipt](preview-receipt.json)의 target은 null(Preview)이다. 원격 로그가 일부 축약돼 원격 경고 수 0을 별도로 주장하지 않는다.
+
+이 결과를 기록하는 문서 전용 후속 커밋의 최종 원격 SHA와 정확한 Preview 상태는 최종 응답에서 확인한다. master·Production 배포·이벤트 활성화는 실행하지 않았다.
 
 현재 단계는 독립 연구 인수 준비 완료다. 고객용 원고나 판매 품질 PASS, Production 배포 승인을 뜻하지 않는다. 세운 12개월 DB·표현 DB·전체 출처 검증·실제 Binding·선택·배정·생성기 작업을 시작하지 않고 종료한다.
