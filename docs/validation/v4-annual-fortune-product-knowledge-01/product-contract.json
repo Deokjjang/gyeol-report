@@ -1,0 +1,48 @@
+{
+  "productKey": "annual_fortune",
+  "productSlug": "annual-fortune",
+  "normalizedKind": "annualFortune",
+  "selectedYear": {
+    "commercePolicy": "current KST year-5 through current year inclusive",
+    "count": 6,
+    "example": {
+      "policyDate": "2026-10-12T12:00:00+09:00",
+      "allowed": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "future2028": "SELECTED_YEAR_INVALID"
+    },
+    "offlinePolicyDate": "existing validation argument only; no actual commerce permission or policy change"
+  },
+  "structure": {
+    "selectedYearCount": 1,
+    "civilMonths": 12,
+    "order": "1 through 12",
+    "monthlyCalculationVersion": "annual-month-jie-kst-v2",
+    "interval": "[startKst,endKstExclusive)",
+    "variableSegmentCount": true,
+    "originalChapterStructureUnchanged": true
+  },
+  "annualIdentity": {
+    "annualGanji": "nominal selectedYear",
+    "effectiveAnnualPillar": "canonical segment start; previous annual pillar before Ipchun",
+    "yearStemRelations": "not automatically valid before Ipchun",
+    "flowGod": "cycle stem reference, not natal dayMaster reference"
+  },
+  "dayun": {
+    "exact": "new cycle from T",
+    "range": "uncertain [earliest,latest); new cycle from latest",
+    "preFirst": "low-level calendar supports no active cycle; actual generation may reject selected year without cycle",
+    "conditionalRelationsNotAllConfirmed": true
+  },
+  "book": {
+    "storedSnapshotImmutable": true,
+    "noNewStorageSchema": true,
+    "noNewDatabaseCall": true
+  }
+}

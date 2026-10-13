@@ -1,0 +1,17 @@
+{
+  "fixedClock": "2026-10-12T12:00:00+09:00",
+  "actualAnnualBooks": 11,
+  "months": 132,
+  "calculationEvidenceDraftNarrativeBookDigests": 55,
+  "allDigestsIdentical": true,
+  "fullObservationsEqual": true,
+  "observationDigestBefore": "73a1879147e9f9e4da036510ef52d06db8cce18f8558e75baf91e7cb3ecc59e9",
+  "observationDigestAfter": "73a1879147e9f9e4da036510ef52d06db8cce18f8558e75baf91e7cb3ecc59e9",
+  "exactAndRangeBoundaryCasesIdentical": true,
+  "commerceFutureRejected": true,
+  "offlineFuturePolicyDateNotCommerceAuthorization": true,
+  "existingSixProductFrozenChecks": 64,
+  "externalPaidCalls": 0,
+  "productionDatabaseWrites": 0,
+  "existingCustomerBooksReadOrWritten": 0
+}

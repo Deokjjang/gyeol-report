@@ -1,0 +1,1241 @@
+{
+  "registryRecords": 1792,
+  "authoredConditionalStudies": 109,
+  "referenceViews": 1634,
+  "newCalculatedEvidence": 0,
+  "newApprovedCustomerClaims": 0,
+  "authoredExactSameFieldMatches": [],
+  "repeatedActualSentences": [
+    {
+      "text": "도움을받거나배움의실마리를찾았던장면이있었는지살펴볼만합니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 1,
+          "blockId": "month-1-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 5,
+          "blockId": "month-5-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 9,
+          "blockId": "month-9-meaning"
+        }
+      ]
+    },
+    {
+      "text": "혼자힘으로만풀지않아도되는배움의흐름입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 1,
+          "blockId": "month-1-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 5,
+          "blockId": "month-5-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 9,
+          "blockId": "month-9-meaning"
+        }
+      ]
+    },
+    {
+      "text": "경험있는사람의짧은설명이길게붙들던문제를다른모양으로보여주기도하죠.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 1,
+          "blockId": "month-1-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 5,
+          "blockId": "month-5-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 9,
+          "blockId": "month-9-meaning"
+        }
+      ]
+    },
+    {
+      "text": "배워두면계속쓸수있는기반과도움에마음을열어볼만해요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 1,
+          "blockId": "month-1-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 5,
+          "blockId": "month-5-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 9,
+          "blockId": "month-9-meaning"
+        }
+      ]
+    },
+    {
+      "text": "이관계만으로현실의결과가정해지는것은아닙니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 1,
+          "blockId": "month-1-interaction"
+        },
+        {
+          "caseId": "B",
+          "month": 1,
+          "blockId": "month-1-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 1,
+          "blockId": "month-1-interaction"
+        }
+      ]
+    },
+    {
+      "text": "실제선택에서는받은설명을스스로어디까지써볼수있는지살펴보는데참고할만해요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 1,
+          "blockId": "month-1-interaction"
+        },
+        {
+          "caseId": "B",
+          "month": 5,
+          "blockId": "month-5-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 9,
+          "blockId": "month-9-interaction"
+        }
+      ]
+    },
+    {
+      "text": "설명한내용과상대가이해한내용을맞춰보면,말하지않은기대를찾기좋아요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 1,
+          "blockId": "month-1-action"
+        },
+        {
+          "caseId": "B",
+          "month": 4,
+          "blockId": "month-4-action"
+        },
+        {
+          "caseId": "C",
+          "month": 3,
+          "blockId": "month-3-action"
+        }
+      ]
+    },
+    {
+      "text": "남의기대와내취향사이에서무엇을골랐는지돌아볼만한달입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 2,
+          "blockId": "month-2-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 6,
+          "blockId": "month-6-meaning"
+        }
+      ]
+    },
+    {
+      "text": "여럿이좋다고하는길도내가원하는길인지한번더보게되는흐름입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 2,
+          "blockId": "month-2-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 6,
+          "blockId": "month-6-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 10,
+          "blockId": "month-10-meaning"
+        }
+      ]
+    },
+    {
+      "text": "남의속도를따라가는것보다스스로끝을정하는쪽에힘이붙어요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 2,
+          "blockId": "month-2-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 6,
+          "blockId": "month-6-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 10,
+          "blockId": "month-10-meaning"
+        }
+      ]
+    },
+    {
+      "text": "허락을기다리던작은선택에내이름을붙여볼만해요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 2,
+          "blockId": "month-2-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 6,
+          "blockId": "month-6-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 10,
+          "blockId": "month-10-meaning"
+        }
+      ]
+    },
+    {
+      "text": "실제선택에서는스스로고를부분과도움받을부분이어디인지살펴보는데참고할만해요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 2,
+          "blockId": "month-2-interaction"
+        },
+        {
+          "caseId": "B",
+          "month": 6,
+          "blockId": "month-6-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 10,
+          "blockId": "month-10-interaction"
+        }
+      ]
+    },
+    {
+      "text": "한번의연결로역할과비용까지합의됐다고여기지말고,다음에도함께할조건을따로물어보세요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 2,
+          "blockId": "month-2-action"
+        },
+        {
+          "caseId": "B",
+          "month": 7,
+          "blockId": "month-7-action"
+        }
+      ]
+    },
+    {
+      "text": "누군가와함께해서조금더용기가났던장면이있었는지떠올려봅니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 3,
+          "blockId": "month-3-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 7,
+          "blockId": "month-7-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 1,
+          "blockId": "month-1-meaning"
+        }
+      ]
+    },
+    {
+      "text": "비슷한열정을가진사람과같이움직일힘이붙는달입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 3,
+          "blockId": "month-3-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 7,
+          "blockId": "month-7-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 1,
+          "blockId": "month-1-meaning"
+        }
+      ]
+    },
+    {
+      "text": "혼자서는귀찮았던일도누군가먼저해보자고하면갑자기재미있어지죠.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 3,
+          "blockId": "month-3-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 7,
+          "blockId": "month-7-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 1,
+          "blockId": "month-1-meaning"
+        }
+      ]
+    },
+    {
+      "text": "의욕을주고받는관계가작은시작의크기를바꿀수있어요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 3,
+          "blockId": "month-3-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 7,
+          "blockId": "month-7-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 1,
+          "blockId": "month-1-meaning"
+        }
+      ]
+    },
+    {
+      "text": "실제선택에서는각자의실력이어떤부분을채워줄수있는지살펴보는데참고할만해요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 3,
+          "blockId": "month-3-interaction"
+        },
+        {
+          "caseId": "B",
+          "month": 7,
+          "blockId": "month-7-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 1,
+          "blockId": "month-1-interaction"
+        }
+      ]
+    },
+    {
+      "text": "반복할수록부담이커진다면,의지만더쓰기보다맡은범위와쉬어갈때를바꿔보세요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 3,
+          "blockId": "month-3-action"
+        },
+        {
+          "caseId": "B",
+          "month": 5,
+          "blockId": "month-5-action"
+        },
+        {
+          "caseId": "C",
+          "month": 1,
+          "blockId": "month-1-action"
+        }
+      ]
+    },
+    {
+      "text": "계획만하던것을손으로해본경험이있었다면그즐거움을다시볼만합니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 4,
+          "blockId": "month-4-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 8,
+          "blockId": "month-8-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 2,
+          "blockId": "month-2-meaning"
+        }
+      ]
+    },
+    {
+      "text": "생각만하던것을직접만들어보여주는쪽으로힘이나가는달입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 4,
+          "blockId": "month-4-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 8,
+          "blockId": "month-8-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 2,
+          "blockId": "month-2-meaning"
+        }
+      ]
+    },
+    {
+      "text": "완벽한설명보다작은완성이더설득력있게느껴져요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 4,
+          "blockId": "month-4-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 8,
+          "blockId": "month-8-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 2,
+          "blockId": "month-2-meaning"
+        }
+      ]
+    },
+    {
+      "text": "해본것이눈앞에남으면자신감도막연한기분이아니게돼요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 4,
+          "blockId": "month-4-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 8,
+          "blockId": "month-8-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 2,
+          "blockId": "month-2-meaning"
+        }
+      ]
+    },
+    {
+      "text": "실제선택에서는배운것을어디까지실제결과로보여줄수있는지살펴보는데참고할만해요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 4,
+          "blockId": "month-4-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 2,
+          "blockId": "month-2-interaction"
+        }
+      ]
+    },
+    {
+      "text": "바꾼뒤에는함께하던사람도달라진순서를알고있는지확인해보세요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 4,
+          "blockId": "month-4-action"
+        },
+        {
+          "caseId": "B",
+          "month": 3,
+          "blockId": "month-3-action"
+        }
+      ]
+    },
+    {
+      "text": "당연하게따르던방식에질문이생겼다면그때의눈을다시믿어봐도좋습니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 5,
+          "blockId": "month-5-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 9,
+          "blockId": "month-9-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 3,
+          "blockId": "month-3-meaning"
+        }
+      ]
+    },
+    {
+      "text": "불편한데모두그냥따르던방식이유난히잘보이는흐름입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 5,
+          "blockId": "month-5-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 9,
+          "blockId": "month-9-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 3,
+          "blockId": "month-3-meaning"
+        }
+      ]
+    },
+    {
+      "text": "말만빠른사람이아니라다른답을보여줄수있는사람이될기회예요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 5,
+          "blockId": "month-5-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 9,
+          "blockId": "month-9-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 3,
+          "blockId": "month-3-meaning"
+        }
+      ]
+    },
+    {
+      "text": "틀렸다고지적하는순간보다바꾼뒤편해지는장면에서표현력이빛납니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 5,
+          "blockId": "month-5-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 9,
+          "blockId": "month-9-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 3,
+          "blockId": "month-3-meaning"
+        }
+      ]
+    },
+    {
+      "text": "실제선택에서는기존방법에서무엇을바꾸면실제로나아지는지살펴보는데참고할만해요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 5,
+          "blockId": "month-5-interaction"
+        },
+        {
+          "caseId": "B",
+          "month": 9,
+          "blockId": "month-9-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 3,
+          "blockId": "month-3-interaction"
+        }
+      ]
+    },
+    {
+      "text": "평소와다른만남에서얻은힌트가있었는지찾아볼시기입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 6,
+          "blockId": "month-6-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 4,
+          "blockId": "month-4-meaning"
+        }
+      ]
+    },
+    {
+      "text": "익숙한울타리밖의제안과경험을돈의길로연결해볼흐름입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 6,
+          "blockId": "month-6-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 10,
+          "blockId": "month-10-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 4,
+          "blockId": "month-4-meaning"
+        }
+      ]
+    },
+    {
+      "text": "처음에는별생각없이들은이야기가내가가진기술의다른쓰임을보여줄수있어요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 6,
+          "blockId": "month-6-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 10,
+          "blockId": "month-10-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 4,
+          "blockId": "month-4-meaning"
+        }
+      ]
+    },
+    {
+      "text": "넓게만나는감각이현실적인기회를알아보는눈이돼요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 6,
+          "blockId": "month-6-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 10,
+          "blockId": "month-10-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 4,
+          "blockId": "month-4-meaning"
+        }
+      ]
+    },
+    {
+      "text": "실제선택에서는낯선제안에서무엇을직접경험할수있는지살펴보는데참고할만해요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 6,
+          "blockId": "month-6-interaction"
+        },
+        {
+          "caseId": "B",
+          "month": 10,
+          "blockId": "month-10-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 4,
+          "blockId": "month-4-interaction"
+        }
+      ]
+    },
+    {
+      "text": "수고한만큼생활은편해졌는지살펴보며읽을만한달입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 7,
+          "blockId": "month-7-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 1,
+          "blockId": "month-1-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 5,
+          "blockId": "month-5-meaning"
+        }
+      ]
+    },
+    {
+      "text": "돈을움직이기보다내생활안에남기는힘이선명한달입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 7,
+          "blockId": "month-7-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 1,
+          "blockId": "month-1-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 5,
+          "blockId": "month-5-meaning"
+        }
+      ]
+    },
+    {
+      "text": "가격과약속,계속나가는비용처럼평소작게넘기던숫자의무게가달라져요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 7,
+          "blockId": "month-7-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 1,
+          "blockId": "month-1-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 5,
+          "blockId": "month-5-meaning"
+        }
+      ]
+    },
+    {
+      "text": "조용히쌓는재물의좋은패를써볼만한구간입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 7,
+          "blockId": "month-7-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 1,
+          "blockId": "month-1-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 5,
+          "blockId": "month-5-meaning"
+        }
+      ]
+    },
+    {
+      "text": "막힌곳을정확히이야기하면경험있는사람의한마디가혼자보지못한길을열어줄여지가있어요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 7,
+          "blockId": "month-7-gift"
+        },
+        {
+          "caseId": "B",
+          "month": 1,
+          "blockId": "month-1-gift"
+        },
+        {
+          "caseId": "C",
+          "month": 7,
+          "blockId": "month-7-gift"
+        }
+      ]
+    },
+    {
+      "text": "도움을받는일이내능력을줄이는것은아닙니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 7,
+          "blockId": "month-7-gift"
+        },
+        {
+          "caseId": "B",
+          "month": 1,
+          "blockId": "month-1-gift"
+        },
+        {
+          "caseId": "C",
+          "month": 7,
+          "blockId": "month-7-gift"
+        }
+      ]
+    },
+    {
+      "text": "7월절입뒤구간을보면원국시지卯,월운지지未사이의未·卯반합은일부가맞닿는접점입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 7,
+          "blockId": "month-7-interaction"
+        },
+        {
+          "caseId": "B",
+          "month": 7,
+          "blockId": "month-7-interaction"
+        }
+      ]
+    },
+    {
+      "text": "실제선택에서는다음에도이어갈수있는생활의크기가얼마인지살펴보는데참고할만해요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 7,
+          "blockId": "month-7-interaction"
+        },
+        {
+          "caseId": "B",
+          "month": 1,
+          "blockId": "month-1-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 5,
+          "blockId": "month-5-interaction"
+        }
+      ]
+    },
+    {
+      "text": "새로할일때문에미뤄야할기존약속이있는지도살펴보세요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 7,
+          "blockId": "month-7-action"
+        },
+        {
+          "caseId": "B",
+          "month": 1,
+          "blockId": "month-1-action"
+        },
+        {
+          "caseId": "C",
+          "month": 2,
+          "blockId": "month-2-action"
+        }
+      ]
+    },
+    {
+      "text": "쉽지않은판단앞에서내가어떤순서를골랐는지돌아볼만합니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 8,
+          "blockId": "month-8-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 2,
+          "blockId": "month-2-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 6,
+          "blockId": "month-6-meaning"
+        }
+      ]
+    },
+    {
+      "text": "어려운문제앞에서중심을잡는힘이부각되는달입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 8,
+          "blockId": "month-8-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 2,
+          "blockId": "month-2-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 6,
+          "blockId": "month-6-meaning"
+        }
+      ]
+    },
+    {
+      "text": "편한일만골라서존재감이생기는흐름은아니에요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 8,
+          "blockId": "month-8-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 2,
+          "blockId": "month-2-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 6,
+          "blockId": "month-6-meaning"
+        }
+      ]
+    },
+    {
+      "text": "답이늦어질수록누군가정해야하는자리에서판단력과리더십을보여줄여지가있어요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 8,
+          "blockId": "month-8-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 2,
+          "blockId": "month-2-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 6,
+          "blockId": "month-6-meaning"
+        }
+      ]
+    },
+    {
+      "text": "실제선택에서는어떤판단을먼저하고어디서도움을청할지살펴보는데참고할만해요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 8,
+          "blockId": "month-8-interaction"
+        },
+        {
+          "caseId": "B",
+          "month": 2,
+          "blockId": "month-2-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 6,
+          "blockId": "month-6-interaction"
+        }
+      ]
+    },
+    {
+      "text": "누가나를믿었는지,나는어떤약속을지켰는지떠올려볼시간입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 9,
+          "blockId": "month-9-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 3,
+          "blockId": "month-3-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 7,
+          "blockId": "month-7-meaning"
+        }
+      ]
+    },
+    {
+      "text": "실력을보여주는데서책임을맡길사람으로보이는쪽에무게가있어요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 9,
+          "blockId": "month-9-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 3,
+          "blockId": "month-3-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 7,
+          "blockId": "month-7-meaning"
+        }
+      ]
+    },
+    {
+      "text": "지킨약속과일정한태도가이름을만들어주는결이에요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 9,
+          "blockId": "month-9-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 3,
+          "blockId": "month-3-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 7,
+          "blockId": "month-7-meaning"
+        }
+      ]
+    },
+    {
+      "text": "요란하게앞서지않아도남들이기대할수있는사람이되는데명예운을써볼만해요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 9,
+          "blockId": "month-9-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 3,
+          "blockId": "month-3-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 7,
+          "blockId": "month-7-meaning"
+        }
+      ]
+    },
+    {
+      "text": "실제선택에서는믿고맡길수있다는말을어떤결과로보여줄지살펴보는데참고할만해요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 9,
+          "blockId": "month-9-interaction"
+        },
+        {
+          "caseId": "B",
+          "month": 3,
+          "blockId": "month-3-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 7,
+          "blockId": "month-7-interaction"
+        }
+      ]
+    },
+    {
+      "text": "10월지금,이이야기를가장가까운하루에비춰볼때입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 10,
+          "blockId": "month-10-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 10,
+          "blockId": "month-10-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 10,
+          "blockId": "month-10-meaning"
+        }
+      ]
+    },
+    {
+      "text": "당장쓸모를말하기어려운질문에도오래머물수있는달입니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 10,
+          "blockId": "month-10-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 4,
+          "blockId": "month-4-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 8,
+          "blockId": "month-8-meaning"
+        }
+      ]
+    },
+    {
+      "text": "남의답을빨리외우기보다왜그런지혼자확인하는시간이더재미있어져요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 10,
+          "blockId": "month-10-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 4,
+          "blockId": "month-4-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 8,
+          "blockId": "month-8-meaning"
+        }
+      ]
+    },
+    {
+      "text": "조금다른길로이해한것이결국내전문성의색깔이될수있어요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 10,
+          "blockId": "month-10-meaning"
+        },
+        {
+          "caseId": "B",
+          "month": 4,
+          "blockId": "month-4-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 8,
+          "blockId": "month-8-meaning"
+        }
+      ]
+    },
+    {
+      "text": "실제선택에서는어떤가정을확인해야궁금했던차이를설명할수있는지살펴보는데참고할만해요.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 10,
+          "blockId": "month-10-interaction"
+        },
+        {
+          "caseId": "B",
+          "month": 4,
+          "blockId": "month-4-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 8,
+          "blockId": "month-8-interaction"
+        }
+      ]
+    },
+    {
+      "text": "한편乙巳세운의지지巳,월운지지丑사이의巳·丑반합은일부가맞닿는접점이며,완성된합의까지뜻하지는않아요.",
+      "locations": [
+        {
+          "caseId": "B",
+          "month": 1,
+          "blockId": "month-1-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 1,
+          "blockId": "month-1-interaction"
+        }
+      ]
+    },
+    {
+      "text": "그시절자꾸마음에걸렸던질문이지금도남아있는지돌아봅니다.",
+      "locations": [
+        {
+          "caseId": "B",
+          "month": 4,
+          "blockId": "month-4-meaning"
+        },
+        {
+          "caseId": "C",
+          "month": 8,
+          "blockId": "month-8-meaning"
+        }
+      ]
+    },
+    {
+      "text": "4월절입뒤구간을보면원국일지申,월운지지辰사이의辰·申반합은일부가맞닿는접점입니다.",
+      "locations": [
+        {
+          "caseId": "B",
+          "month": 4,
+          "blockId": "month-4-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 4,
+          "blockId": "month-4-interaction"
+        }
+      ]
+    },
+    {
+      "text": "한편원국일지申,월운지지巳사이의巳·申육합은서로맞춰함께움직일접점입니다.",
+      "locations": [
+        {
+          "caseId": "B",
+          "month": 5,
+          "blockId": "month-5-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 5,
+          "blockId": "month-5-interaction"
+        }
+      ]
+    },
+    {
+      "text": "6월절입뒤구간을보면丙午세운의지지午,월운지지午사이의午·午형은되풀이되는부담을살필조건입니다.",
+      "locations": [
+        {
+          "caseId": "B",
+          "month": 6,
+          "blockId": "month-6-interaction"
+        },
+        {
+          "caseId": "C",
+          "month": 6,
+          "blockId": "month-6-interaction"
+        }
+      ]
+    }
+  ],
+  "reusedActualNatalRoots": [],
+  "semanticEquivalenceNotProvenByStringTest": true,
+  "referenceViewsNotIndependentMeanings": true,
+  "tenGodRepetitionNotIndependentFacts": true,
+  "noNewScoresOrWeights": true,
+  "humanReview": "human-review.md"
+}

@@ -1,0 +1,83 @@
+{
+  "actualPrimaryCases": [
+    "A",
+    "B",
+    "C"
+  ],
+  "actualMonths": 36,
+  "exactRepeatedParagraphGroups": [
+    {
+      "text": "사람복을써볼만한달입니다.막힌곳을정확히이야기하면경험있는사람의한마디가혼자보지못한길을열어줄여지가있어요.도움을받는일이내능력을줄이는것은아닙니다.",
+      "locations": [
+        {
+          "caseId": "A",
+          "month": 7,
+          "blockId": "month-7-gift"
+        },
+        {
+          "caseId": "B",
+          "month": 1,
+          "blockId": "month-1-gift"
+        },
+        {
+          "caseId": "C",
+          "month": 7,
+          "blockId": "month-7-gift"
+        }
+      ]
+    }
+  ],
+  "withinPersonRepeatedGods": [
+    {
+      "caseGod": "A:정인",
+      "months": [
+        1,
+        11
+      ]
+    },
+    {
+      "caseGod": "A:비견",
+      "months": [
+        2,
+        12
+      ]
+    },
+    {
+      "caseGod": "B:정재",
+      "months": [
+        1,
+        11
+      ]
+    },
+    {
+      "caseGod": "B:편관",
+      "months": [
+        2,
+        12
+      ]
+    },
+    {
+      "caseGod": "C:겁재",
+      "months": [
+        1,
+        11
+      ]
+    },
+    {
+      "caseGod": "C:식신",
+      "months": [
+        2,
+        12
+      ]
+    }
+  ],
+  "stringUniquenessNotSemanticNoveltyProof": true,
+  "recurringSemanticPatterns": [
+    "same tenGod definition across different months",
+    "scene nouns vary while action skeleton recurs",
+    "same natal root proof reused",
+    "relation definition/reminder may share adjustment criterion"
+  ],
+  "review": "human-review.md",
+  "newResearchDoesNotChangeCurrentProse": true
+}
